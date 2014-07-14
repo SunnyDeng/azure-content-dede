@@ -1,0 +1,2 @@
+> [WACOM.NOTE] 
+Die Datei .publishsettings enthält Ihre Anmeldeinformationen (unverschlüsselt), die zum Verwalten Ihrer Azure-Abonnements und -Dienste verwendet werden. Die bewährte Sicherheitsmethode für diese Datei besteht im vorübergehenden Speichern außerhalb Ihrer Quellcodeverzeichnisse (beispielsweise im Ordner "Libraries\\Documents"). Löschen Sie sie nach Abschluss des Importvorgangs. Böswillige Benutzer, die Zugriff auf die Datei.publishsettings erlangen, können Ihre Azure-Dienste bearbeiten, erstellen und löschen.
