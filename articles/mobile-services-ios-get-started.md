@@ -41,11 +41,11 @@ In diesem Abschnitt erstellen Sie eine neue iOS-App, die mit dem mobilen Dienst 
 
 2.  Klicken Sie auf der Registerkarte "Quickstart" auf **iOS** unter der **Auswahlplattform**, und erweitern Sie die Option **Erstellen einer neuen iOS-App**.
 
-        ![][6]
+	![][6]
 
-        Dadurch werden drei einfache Schritte zum Erstellen einer iOS-App angezeigt, die mit dem mobilen Dienst verbunden wird.
+	Dadurch werden drei einfache Schritte zum Erstellen einer iOS-App angezeigt, die mit dem mobilen Dienst verbunden wird.
 
-![][7]
+	![][7]
 
 1.  Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Xcode] v4.4 oder eine neuere Version herunter, und installieren Sie diese.
 
@@ -53,7 +53,7 @@ In diesem Abschnitt erstellen Sie eine neue iOS-App, die mit dem mobilen Dienst 
 
 3.  Klicken Sie unter **Ihre App herunterladen und ausführen** auf **Download**.
 
-Dadurch wird das Projekt für die Beispielanwendung der *To-do-List* heruntergeladen, die zusammen mit dem Mobile Services iOS SDK mit dem mobilen Dienst verbunden ist. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
+	Dadurch wird das Projekt für die Beispielanwendung der *To-do-List* heruntergeladen, die zusammen mit dem Mobile Services iOS SDK mit dem mobilen Dienst verbunden ist. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
 
 Ausführen der neuen iOS-App
 ---------------------------
@@ -68,9 +68,39 @@ Ausführen der neuen iOS-App
 
     ![](./media/mobile-services-ios-get-started/mobile-data-browse.png)
 
-    ## Nachdem Sie Quickstart abgeschlossen haben, können Sie nun in den nächsten Schritten erfahren, wie Sie zusätzliche wichtige Aufgaben unter Mobile Services durchführen: \* [Erste Schritte mit Daten]
-    Informationen über das Speichern und Abfragen von Daten mit Mobile Services. \* [Erste Schritte mit Authentifizierung]
-    Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter. \* [Erste Schritte mit Pushbenachrichtigungen]
-    Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App. [Erste Schritte mit Mobile Services]:\#getting-started [Erstellen eines neuen mobilen Dienstes]:\#create-new-service [Definieren der mobilen Dienstinstanz]:\#define-mobile-service-instance [Nächste Schritte]:\#next-steps [0]: ./media/mobile-services-ios-get-started/mobile-quickstart-completed-ios.png [6]: ./media/mobile-services-ios-get-started/mobile-portal-quickstart-ios.png [7]: ./media/mobile-services-ios-get-started/mobile-quickstart-steps-ios.png [8]: ./media/mobile-services-ios-get-started/mobile-xcode-project.png [10]: ./media/mobile-services-ios-get-started/mobile-quickstart-startup-ios.png [11]: ./media/mobile-services-ios-get-started/mobile-data-tab.png [12]: ./media/mobile-services-ios-get-started/mobile-data-browse.png [Erste Schritte mit Daten]: /en-us/develop/mobile/tutorials/get-started-with-data-ios [Erste Schritte mit Authentifizierung]: /en-us/develop/mobile/tutorials/get-started-with-users-ios [Erste Schritte mit Pushbenachrichtigungen]: /en-us/develop/mobile/tutorials/get-started-with-push-ios [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533 [Verwaltungsportal]: https://manage.windowsazure.com/ [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532 [.NET-Backend-Version]: /en-us/documentation/articles/mobile-services-dotnet-backend-ios-get-started
+## Nachdem Sie
+Quickstart abgeschlossen haben, können Sie nun in den nächsten Schritten erfahren, wie Sie zusätzliche wichtige Aufgaben unter Mobile Services durchführen: 
+* [Erste Schritte mit Daten]
 
+Informationen über das Speichern und Abfragen von Daten mit Mobile Services. 
+* [Erste Schritte mit Authentifizierung]
 
+Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter. 
+* [Erste Schritte mit Pushbenachrichtigungen]
+
+Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App. 
+
+<!-- Anchors. -->
+[Erste Schritte mit Mobile Services]:\#getting-started 
+[Erstellen eines neuen mobilen Dienstes]:\#create-new-service 
+[Definieren der mobilen Dienstinstanz]:\#define-mobile-service-instance 
+[Nächste Schritte]:\#next-steps 
+
+<!-- URLs. -->
+[Erste Schritte mit Daten]: /en-us/develop/mobile/tutorials/get-started-with-data-ios 
+[Erste Schritte mit Authentifizierung]: /en-us/develop/mobile/tutorials/get-started-with-users-ios 
+[Erste Schritte mit Pushbenachrichtigungen]: /en-us/develop/mobile/tutorials/get-started-with-push-ios 
+
+[Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533 
+[Verwaltungsportal]: https://manage.windowsazure.com/ 
+[XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532 
+[.NET-Backend-Version]: /en-us/documentation/articles/mobile-services-dotnet-backend-ios-get-started
+
+<!-- Images. -->
+[0]: ./media/mobile-services-ios-get-started/mobile-quickstart-completed-ios.png
+[6]: ./media/mobile-services-ios-get-started/mobile-portal-quickstart-ios.png
+[7]: ./media/mobile-services-ios-get-started/mobile-quickstart-steps-ios.png
+[8]: ./media/mobile-services-ios-get-started/mobile-xcode-project.png
+[10]: ./media/mobile-services-ios-get-started/mobile-quickstart-startup-ios.png
+[11]: ./media/mobile-services-ios-get-started/mobile-data-tab.png
+[12]: ./media/mobile-services-ios-get-started/mobile-data-browse.png
