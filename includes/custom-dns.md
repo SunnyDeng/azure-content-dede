@@ -1,3 +1,4 @@
+
 # Configuring a custom domain name for an Azure cloud service
 
 When you create an application in Azure, Azure provides a subdomain on the cloudapp.net domain so your users can access your application on a URL like http://&lt;*myapp*>.cloudapp.net. However, you can also expose your application on your own domain name, such as contoso.com.

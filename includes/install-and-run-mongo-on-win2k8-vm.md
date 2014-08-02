@@ -5,12 +5,7 @@ Follow these steps to install and run MongoDB on a virtual machine running Windo
 <p>MongoDB security features, such as authentication and IP address binding, are not enabled by default. Security features should be enabled before deploying MongoDB to a production environment.  See <a href="http://www.mongodb.org/display/DOCS/Security+and+Authentication">Security and Authentication</a> for more information.</p>
 </div>
 
-1. After you've connected to the virtual machine using Remote Desktop, open Internet Explorer from the **Start** menu.
-2. Select the **Tools** button in the upper right corner.  In **Internet Options**, select the **Security** tab, and then select the **Trusted Sites** icon, and finally click the **Sites** button. Add *http://\*.mongodb.org* to the list of trusted sites.
-3. Go to [Downloads- MongoDB] [MongoDownloads].
-4. Find the most recent release in the **Production Release (Recommended)** section and click the ***2008+** link in the Windows 64-bit column.  Click **Save As** and save the zip file to the desktop.
-5. Right-click on the zip file and select **Extract All...**  Specify "C:\" and click **Extract**.  After the files have been extracted, you may wish to rename the install folder to something simpler.  "MongoDB", for example.
-6. Create MongoDB data and log directories in the data disk (drive **F:**, for example) you created in the steps above. From **Start**, select **Command Prompt** to open a command prompt window.  Enter:
+1. After you've connected to the virtual machine using Remote Desktop, open Internet Explorer from the **Start** menu. 2. Select the **Tools** button in the upper right corner.  In **Internet Options**, select the **Security** tab, and then select the **Trusted Sites** icon, and finally click the **Sites** button. Add *http://\*.mongodb.org* to the list of trusted sites. 3. Go to [Downloads- MongoDB] [MongoDownloads]. 4. Find the most recent release in the **Production Release (Recommended)** section and click the ***2008+** link in the Windows 64-bit column.  Click **Save As** and save the zip file to the desktop. 5. Right-click on the zip file and select **Extract All...**  Specify "C:\" and click **Extract**.  After the files have been extracted, you may wish to rename the install folder to something simpler.  "MongoDB", for example. 6. Create MongoDB data and log directories in the data disk (drive **F:**, for example) you created in the steps above. From **Start**, select **Command Prompt** to open a command prompt window.  Enter:
 
 		C:\> F:
 		F:\> mkdir \MongoData

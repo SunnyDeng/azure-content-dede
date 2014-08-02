@@ -1,13 +1,19 @@
+* Klicken Sie auf **Anmelden**, und geben Sie die Anmeldeinformationen für Ihr Azure-Konto ein.
+  
+  Diese Methode ist schneller und einfacher, dabei werden Azure SQL-Datenbank oder Azure Mobile Services jedoch nicht im Fenster **Server-Explorer** angezeigt.
 
-   * Click **Sign In**, and then enter the credentials for your Azure account.
+* Klicken Sie auf **Abonnements verwalten**, um ein Verwaltungszertifikat zu installieren, das den Zugriff auf Ihr Konto ermöglicht.
+  
+  Klicken Sie im Dialogfeld **Azure-Abonnements verwalten** auf die Registerkarte **Zertifikate**, und klicken Sie dann auf **Importieren**. Befolgen Sie die Anweisungen zum Herunterladen und Importieren einer Abonnementdatei (die Datei trägt auch den Namen *.publishsettings*) für Ihr Azure-Konto.
+  
+	<div class="dev-callout"><strong>Sicherheitshinweis:</strong>
+    Laden Sie die Abonnementdatei in einen Ordner außerhalb Ihrer Quellcodeverzeichnisse herunter (beispielsweise in den Ordner "Downloads"), und löschen Sie sie nach Abschluss des Importvorgangs. Böswillige Benutzer, die Zugriff auf die Abonnementdatei erlangen, können Ihre Azure-Dienste bearbeiten, erstellen und löschen.
+  
+  
+  </div>
 
-     This method is quicker and easier, but if you use this method you won't be able to see Azure SQL Database or Mobile Services in the **Server Explorer** window.
+	Weitere Informationen finden Sie unter [Verbinden mit Azure in Visual Studio][1].
 
-   * Click **Manage subscriptions** in order to install a management certificate that enables access to your account.
 
-     In the **Manage Azure Subscriptions** dialog box, click the **Certificates** tab, and then click **Import**. Follow the directions to download and import a subscription file (also called a *.publishsettings* file) for your Azure account.
 
-     <div class="dev-callout"><strong>Security Note:</strong>
-     <p>Download the subscription file to a folder outside your source code directories (for example, in the Downloads folder), and then delete it once the import has completed. A malicious user who gains access to the subscription file can edit, create, and delete your Azure services.</p></div>
-
-   For more information, see [How to Connect to Azure from Visual Studio](http://go.microsoft.com/fwlink/?LinkId=324796).
+[1]: http://go.microsoft.com/fwlink/?LinkId=324796

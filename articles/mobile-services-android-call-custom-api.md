@@ -1,0 +1,40 @@
+<properties writer="ricksal" pageTitle="Call a custom API from an Android client | Mobile Dev Center" metaKeywords="" description="Learn how to define a custom API and then call it from an Android app that uses Azure Mobile Services." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga" />
+
+Aufrufen einer benutzerdefinierten API aus dem Client
+=====================================================
+
+[Windows Store C\#](/en-us/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api "Windows Store C#")[Windows Store JavaScript](/en-us/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "Windows Store JavaScript")[Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-call-custom-api "Windows Phone")[iOS](/en-us/documentation/articles/mobile-services-ios-call-custom-api "iOS")[Android](/en-us/documentation/articles/mobile-services-android-call-custom-api "Android")
+
+[.NET backend](/en-us/documentation/articles/mobile-services-dotnet-backend-android-call-custom-api ".NET backend") | [JavaScript backend](/en-us/documentation/articles/mobile-services-android-call-custom-api "JavaScript backend")
+
+In diesem Thema wird gezeigt, wie Sie eine benutzerdefinierte API aus einer Android-App aufrufen. Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats.
+
+Mit der im Rahmen dieses Themas erstellten benutzerdefinierten API können Sie eine einzelne POST-Anforderung senden, die das *completed*-Kennzeichen für sämtliche todo-Einträge in der Tabelle Ihres mobilen Diensts auf `true` setzt. Ohne diese benutzerdefinierte API müsste der Client einzelne Anforderungen senden, um das Kennzeichen für jeden einzelnen todo-Eintrag in der Tabelle zu aktualisieren.
+
+Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-android-get-started/) oder [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-android-get-started-data/) erstellen. Dafür führen Sie die folgenden Schritte aus:
+
+1.  [Definieren der benutzerdefinierten API](#define-custom-api)
+2.  [Aktualisieren der App zum Aufruf der benutzerdefinierten API](#update-app)
+3.  [Testen der App](#test-app)
+
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-android-get-started/) oder [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-android-get-started-data/) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+
+Definieren der benutzerdefinierten API
+--------------------------------------
+
+[WACOM.INCLUDE [mobile-services-create-custom-api](../includes/mobile-services-create-custom-api.md)]
+
+[WACOM.INCLUDE [mobile-services-android-call-custom-api](../includes/mobile-services-android-call-custom-api.md)]
+
+Nächste Schritte
+----------------
+
+Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Android-App aufgerufen haben, können Sie weitere Einzelheiten über die folgenden Mobile Services-Themen erfahren:
+
+-   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/?LinkId=262293)
+  <br/>Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
+
+-   [Speichern von Serverskripts in der Quellcodeverwaltung](/en-us/documentation/articles/mobile-services-store-scripts-source-control)
+  <br/> Erfahren Sie, wie Sie die Quellcodeverwaltungsfunktion nutzen können, um benutzerdefinierten API-Skript-Code einfacher und sicherer zu entwickeln und zu veröffentlichen.
+
+
