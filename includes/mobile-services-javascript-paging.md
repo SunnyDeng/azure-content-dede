@@ -1,58 +1,57 @@
 
 
-1. In Visual Studio, open the project that you modified when you completed the tutorial **Get started with data**.
+1.  Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm **Erste Schritte mit Daten** geändert haben.
 
-2. Press the **F5** key to run the app, then type text in **Insert a TodoItem** and click **Save**.
+2.  Drücken Sie die Taste **F5**, um die App auszuführen, geben Sie dann einen Text in **Insert a TodoItem** ein, und klicken Sie auf **Save**.
 
-3. Repeat the previous step at least three times, so that you have more than three items stored in the TodoItem table. 
+3.  Wiederholen Sie den vorherigen Schritt mindestens drei Mal, sodass Ihre TodoItem-Tabelle mehr als drei Elemente enthält.
 
-2. In the default.js file, replace the **RefreshTodoItems** method with the following code:
+4.  Ersetzen Sie in der Datei default.js die vorhandene **RefreshTodoItems**-Methode durch den folgenden Code:
 
-        var refreshTodoItems = function () {
-            // Define a filtered query that returns the top 3 items.
-            todoTable.where({ complete: false })
-                .take(3)
-                .read()
-                .done(function (results) {
-                    todoItems = new WinJS.Binding.List(results);
-                    listItems.winControl.itemDataSource = todoItems.dataSource;
-                });
-        };
+         var refreshTodoItems = function () {
+             // Define a filtered query that returns the top 3 items.
+             todoTable.where({ complete: false })
+                 .take(3)
+                 .read()
+                 .done(function (results) {
+                     todoItems = new WinJS.Binding.List(results);
+                     listItems.winControl.itemDataSource = todoItems.dataSource;
+                 });
+         };
 
-  	This query, when executed during data binding, returns the top three items that are not marked as completed.
+	Diese Abfrage gibt bei Ausführung während der Datenbindung die ersten drei Elemente zurück, die nicht als abgeschlossen markiert sind.
 
-3. Press the **F5** key to run the app.
+1.  Drücken Sie **F5**, um die App auszuführen.
 
-  	Notice that only the first three results from the TodoItem table are displayed. 
+	Beachten Sie, dass nur die ersten drei Ergebnisse aus der TodoItem-Tabelle angezeigt werden.
 
-4. (Optional) View the URI of the request sent to the mobile service by using message inspection software, such as browser developer tools or [Fiddler]. 
+1.  (Optional) Sie können den URI der Anfrage an den mobilen Service anzeigen, indem Sie Tools zur Nachrichteninspektion verwenden, wie z. B. Browser-Entwicklertools oder [Fiddler](http://go.microsoft.com/fwlink/?LinkID=262412).
 
-   	Notice that the **take(3)** method was translated into the query option **$top=3** in the query URI.
+        Beachten Sie, dass die **take(3)**-Methode in der Abfrage-URI als **$top=3** übersetzt wurde.
 
-5. Update the **RefreshTodoItems** method once more with the following code:
-            
-        var refreshTodoItems = function () {
-            // Define a filtered query that skips the first 3 items and 
-            // then returns the next 3 items.
-            todoTable.where({ complete: false })
-                .skip(3)
-                .take(3)
-                .read()
-                .done(function (results) {
-                    todoItems = new WinJS.Binding.List(results);
-                    listItems.winControl.itemDataSource = todoItems.dataSource;
-                });
-        };
+2.  Ersetzen Sie die **RefreshTodoItems**-Methode durch den folgenden Code:
 
-   	This query skips the first three results and returns the next three after that. This is effectively the second "page" of data, where the page size is three items.
+         var refreshTodoItems = function () {
+             // Define a filtered query that skips the first 3 items and 
+             // then returns the next 3 items.
+             todoTable.where({ complete: false })
+                 .skip(3)
+                 .take(3)
+                 .read()
+                 .done(function (results) {
+                     todoItems = new WinJS.Binding.List(results);
+                     listItems.winControl.itemDataSource = todoItems.dataSource;
+                 });
+         };
 
-    <div class="dev-callout"><b>Note</b>
-    <p>This tutorial uses a simplified scenario by passing hard-coded paging values to the <strong>Take</strong> and <strong>Skip</strong> methods. In a real-world app, you can use queries similar to the above with a pager control or comparable UI to let users navigate to previous and next pages.  You can also call the  <strong>includeTotalCount</strong> method to get the total count of items available on the server, along with the paged data.</p>
-    </div>
+	Diese Abfrage überspringt die ersten drei Ergebnisse und gibt die folgenden drei zurück. Dies ist die zweite "Seite" der Daten für eine Seitengröße von drei Elementen.
 
-6. (Optional) Again view the URI of the request sent to the mobile service. 
+    **Hinweis**
 
-   	Notice that the **skip(3)** method was translated into the query option **$skip=3** in the query URI.
+    Dieses Lernprogramm übergibt zur Vereinfachung fest codierte Werte an die **Take**- und **Skip**-Methoden. Tatsächliche Anwendungen können ähnliche Abfragen mit einem Pagersteuerelement oder einer ähnlichen Benutzersteuerung ausführen, um zur vorherigen bzw. nächsten Seite zu navigieren. Alternativ können Sie die **includeTotalCount**-Methode aufrufen, um die Gesamtzahl der Elemente auf dem Server zusammen mit den Paging-Daten abzurufen.
 
-<!-- URLs -->
-[Fiddler]: http://go.microsoft.com/fwlink/?LinkID=262412
+3.  (Optional) Sehen Sie sich erneut den URI der Anfrage an den mobilen Service an.
+
+	Beachten Sie, dass die **skip(3)**-Methode in der Abfrage-URI als **$skip=3** übersetzt wurde.
+
+

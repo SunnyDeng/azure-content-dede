@@ -1,73 +1,63 @@
 
 
-1. If you have not already registered your app, navigate to the [Submit an app page] at the Dev Center for Windows Store apps, log on with your Microsoft account, and then click **App name**.
+1.  Falls Sie Ihre App noch nicht registriert haben, navigieren Sie im Entwicklungscenter für Windows Store-Apps zu [Submit an app page](http://go.microsoft.com/fwlink/p/?LinkID=266582), melden Sie sich mit Ihrem Microsoft-Konto an, und klicken Sie dann auf **App-Name**.
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-submit-win8-app.png)
+      ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-submit-win8-app.png)
 
-2. Type a name for your app in **App name**, click **Reserve app name**, and then click **Save**.
+2.  Geben Sie einen Namen für die App unter **App-Name** ein, klicken Sie auf **App-Name reservieren** und dann auf **Speichern**.
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-name.png)
+      ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-name.png)
 
-   	This creates a new Windows Store registration for your app.
+      Auf diese Weise wird eine neue Windows Store-Registrierung für Ihre App erstellt.
 
-3. In Visual Studio 2012 Express for Windows 8, open the project that you created when you completed the tutorial [Get started with Mobile Services].
+3.  Öffnen Sie in Visual Studio 2012 Express für Windows 8 das Projekt, das Sie erstellt haben, als Sie das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-get-started/) abgeschlossen haben.
 
-4. In solution explorer, right-click the project, click **Store**, and then click **Associate App with the Store...**. 
+4.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und klicken Sie auf **Speichern**. Klicken Sie dann auf **App mit Store verknüpfen**.
 
-  	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-store-association.png)
+    ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-store-association.png)
+ 
+    Daraufhin wird der Assistent **App mit Windows Store verknüpfen** angezeigt.
 
-   	This displays the **Associate Your App with the Windows Store** Wizard.
+1.  Klicken Sie im Assistenten auf **Anmelden**. Melden Sie sich dann mit Ihrem Microsoft-Konto an.
 
-5. In the wizard, click **Sign in** and then login with your Microsoft account.
+2.  Wählen Sie die App aus, die Sie in Schritt 2 registriert haben, klicken Sie auf **Weiter** und dann auf **Zuordnen**.
 
-6. Select the app that you registered in step 2, click **Next**, and then click **Associate**.
+      ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-select-app-name.png)
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-select-app-name.png)
+      Auf diese Weise werden die erforderlichen Windows Store-Registrierungsinformationen zum Anwendungsmanifest hinzugefügt.    
 
-   	This adds the required Windows Store registration information to the application manifest.    
+3.  Klicken Sie auf der Windows-Entwicklungscenter-Seite für die neue App auf **Dienste**.
 
-7. Back in the Windows Dev Center page for your new app, click **Services**. 
+      ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit-app.png) 
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit-app.png) 
+4.  Klicken Sie auf der Seite "Dienste" auf **Live-Dienste-Website** unter **Azure Mobile Services**.
 
-8. In the Services page, click **Live Services site** under **Azure Mobile Services**.
+    ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit2-app.png)
 
-	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit2-app.png)
+5.  Klicken Sie auf **Authentifizieren des Diensts**, und notieren Sie sich die Werte von **Geheimer Clientschlüssel** und **Paket-Sicherheits-ID (SID)**.
 
-9. Click **Authenticating your service** and make a note of the values of **Client secret** and **Package security identifier (SID)**. 
+      ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-push-auth.png)
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-push-auth.png)
+    **Sicherheitshinweis**
 
-    <div class="dev-callout"><b>Security Note</b>
-	<p>The client secret and package SID are important security credentials. Do not share these secrets with anyone or distribute them with your app.</p>
-    </div> 
+    Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Informationen nicht weiter, und verteilen Sie sie nicht mit Ihrer Anwendung.
 
-10. Log on to the [Azure Management Portal], click **Mobile Services**, and then click your app.
+6.  Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an, klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-selection.png)
+    ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-selection.png)
 
-11. Click the **Push** tab, click **Enable enhanced push**, and click **Yes** to accept the configuration change.
+1.  Klicken Sie auf die Registerkarte **Push** und dann auf **Erweiterten Push aktivieren**. Wählen Sie anschließend **Ja** aus, um die Konfigurationsänderung zu übernehmen.
 
+    ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-enable-enhanced-push.png)
 
-	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-enable-enhanced-push.png)
+    Daraufhin wird die Konfiguration Ihres mobilen Diensts aktualisiert, sodass erweiterte Pushbenachrichtigungsfunktionen, die von Notification Hubs zur Verfügung gestellt werden, genutzt werden können. Die Nutzung einiger Notification Hubs ist bei Ihrem kostenpflichtigen mobilen Dienst kostenlos. Weitere Informationen finden Sie unter [Mobile Services – Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=311786).
 
-	This updates the configuration of your mobile service to use the enhanced push notification functionality provided by Notification Hubs. Some Notification Hubs usage is free with your paid mobile service. For more information, see [Mobile Services Pricing Details](http://go.microsoft.com/fwlink/p/?LinkID=311786).
+    **Wichtig**
 
-    <div class="dev-callout"><b>Important</b>
-	<p>This operation resets your push credentials and changes the behavior of the push methods in your scripts. These changes cannot be reverted. Do not use this method to add a notification hub to a production mobile service. For guidance on how to enable enhanced push notifications in a production mobile service, see <a href="http://go.microsoft.com/fwlink/p/?LinkId=391951">this guidance</a>.</p>
-    </div>
+    Durch diesen Vorgang werden Ihre Pushanmeldeinformationen zurückgesetzt, und darüber hinaus wird das Verhalten der Pushmethoden in Ihren Skripts geändert. Diese Änderungen können nicht mehr rückgängig gemacht werden. Verwenden Sie diese Methode nicht, wenn Sie einer Produktionsumgebung im mobilen Dienst einen Benachrichtigungshub hinzufügen möchten. Anweisungen zum Aktivieren der erweiterten Pushbenachrichtigungen in einer Produktionsumgebung im mobilen Dienst finden Sie in [dieser Anleitung](http://go.microsoft.com/fwlink/p/?LinkId=391951).
 
-12. Enter the **Client secret** and **Package SID** values obtained from WNS in Step 4, and then click **Save**.
+2.  Geben Sie die Werte für **Geheimer Clientschlüssel** und **Paket-SID** ein, die Sie von WNS in Schritt 4 erhalten haben. Klicken Sie dann auf **Speichern**.
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-push-tab.png)
+    ![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-push-tab.png)
 
-	>[WACOM.NOTE]When you set your WNS credentials for enhanced push notifications in the **Push** tab in the portal, they are shared with Notification Hubs to configure the notification hub with your app.
-
-<!-- Anchors. -->
-
-
-
-<!-- URLs. -->
-[Get started with Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-get-started/
-[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Azure Management Portal]: https://manage.windowsazure.com/
+    >[WACOM.NOTE]Wenn Sie Ihre WNS-Anmeldeinformationen für erweiterte Pushbenachrichtigungen auf der Registerkarte **Push** im Portal festlegen, werden diese für Notification Hubs freigegeben, sodass der Benachrichtigungshub mit Ihrer App konfiguriert wird.

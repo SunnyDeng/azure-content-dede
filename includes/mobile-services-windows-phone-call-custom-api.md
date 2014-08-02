@@ -1,65 +1,69 @@
-##<a name="update-app"></a>Update the app to call the custom API
+<h2><a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API</h2>
 
-1. In Visual Studio 2012 Express for Windows Phone, open the MainPage.xaml file in your quickstart project, locate the **Button** element named `ButtonRefresh`, and replace it with the following XAML code: 
+Aktualisieren der App zum Aufruf der benutzerdefinierten API
+------------------------------------------------------------
 
-        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button Width="225" Name="ButtonRefresh" 
-                Click="ButtonRefresh_Click">Refresh</Button>
-            <Button Width="225"  Name="ButtonCompleteAll" 
-                Click="ButtonCompleteAll_Click">Complete All</Button>
-        </StackPanel>
+1.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone die Datei MainPage.xaml in Ihrem Schnellstart-Projekt, suchen Sie das Element **Schaltfläche** namens `ButtonRefresh`, und ersetzen Sie es durch den folgenden XAML-Code:
 
-	This adds a new button to the page. 
+         <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
+             <Button Width="225" Name="ButtonRefresh" 
+                 Click="ButtonRefresh_Click">Refresh</Button>
+             <Button Width="225"  Name="ButtonCompleteAll" 
+                 Click="ButtonCompleteAll_Click">Complete All</Button>
+         </StackPanel>
 
-2. Open the MainPage.xaml.cs code file, and add the following class definition code:
+    Auf diese Weise wird eine neue Schaltfläche zur Seite hinzugefügt.
 
-	    public class MarkAllResult
-	    {
-	        public int Count { get; set; }
-	    }
+2.  Öffnen Sie die Codedatei MainPage.xaml.cs, und fügen Sie den folgenden Klassendefinitionscode hinzu:
 
-	This class is used to hold the row count value returned by the custom API. 
+         public class MarkAllResult
+         {
+             public int Count { get; set; }
+         }
 
-3. Locate the **RefreshTodoItems** method in the **MainPage** class, and make sure that the `query` is defined by using the following **Where** method:
+    Diese Klasse dient zur Aufnahme des von der benutzerdefinierten API zurückgegebenen Zeilenanzahlwerts.
 
-        .Where(todoItem => todoItem.Complete == false)
+3.  Suchen Sie die Methode **RefreshTodoItems** in der **MainPage**-Klasse, und stellen Sie sicher, dass `query` durch die folgende **Where**-Methode definiert ist:
 
-	This filters the items so that completed items are not returned by the query.
+         .Where(todoItem => todoItem.Complete == false)
 
-3. In the **MainPage** class, add the following method:
+    Hierdurch werden die Elemente so gefiltert, dass abgeschlossene Elemente von der Abfrage nicht zurückgegeben werden.
 
-		private async void ButtonCompleteAll_Click(object sender, RoutedEventArgs e)
-		{
-		    string message;
-		    try
-		    {
-		        // Asynchronously call the custom API using the POST method. 
-		        var result = await App.MobileService
-		            .InvokeApiAsync<MarkAllResult>("completeAll", 
-		            System.Net.Http.HttpMethod.Post, null);
-		        message =  result.Count + " item(s) marked as complete.";
-		        RefreshTodoItems();
-		    }
-		    catch (MobileServiceInvalidOperationException ex)
-		    {
-		        message = ex.Message;                
-		    }
-		
-		    MessageBox.Show(message);  
-		}
+4.  Fügen Sie in der **MainPage**-Klasse die folgende Methode hinzu:
 
-	This method handles the **Click** event for the new button. The **InvokeApiAsync** method is called on the client, which sends a request to the new custom API. The result returned by the custom API is displayed in a message dialog.
+         private async void ButtonCompleteAll_Click(object sender, RoutedEventArgs e)
+         {
+             string message;
+             try
+             {
+                 // Asynchronously call the custom API using the POST method. 
+                 var result = await App.MobileService
+                     .InvokeApiAsync<MarkAllResult>("completeAll", 
+                     System.Net.Http.HttpMethod.Post, null);
+                 message =  result.Count + " item(s) marked as complete.";
+                 RefreshTodoItems();
+             }
+             catch (MobileServiceInvalidOperationException ex)
+             {
+                 message = ex.Message;                
+             }
+            
+             MessageBox.Show(message);  
+         }
 
-## <a name="test-app"></a>Test the app
+    Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die **InvokeApiAsync**-Methode wird beim Client aufgerufen, der eine Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API erhaltene Ergebnis wird in einem Meldungsdialogfeld angezeigt.
 
-1. In Visual Studio, press the **F5** key to rebuild the project and start the app.
+Testen der App
+--------------
 
-2. In the app, type some text in **Insert a TodoItem**, then tap **Save**.
+1.  Drücken Sie in Visual Studio die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
-3. Repeat the previous step until you have added several todo items to the list.
+2.  Geben Sie in der App in **Insert a TodoItem** Text ein, und tippen Sie dann auf **Save**.
 
-4. Tap the **Complete All** button.
+3.  Wiederholen Sie den vorherigen Schritt, bis Sie der Liste mehrere todo-Einträge hinzugefügt haben.
 
-  	![](./media/mobile-services-windows-phone-call-custom-api/mobile-custom-api-windows-phone-completed.png)
+4.  Tippen Sie auf die Schaltfläche **Complete All**.
 
-	A message box is displayed that indicates the number of items marked complete and the filtered query is executed again, which clears all items from the list.
+	![](./media/mobile-services-windows-phone-call-custom-api/mobile-custom-api-windows-phone-completed.png)
+
+    Ein Meldungsfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, wodurch alle Elemente aus der Liste gelöscht werden.

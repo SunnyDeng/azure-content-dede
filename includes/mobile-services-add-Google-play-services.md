@@ -1,28 +1,25 @@
 
 
-1. Open the Android SDK Manager by clicking **Window** from the top toolbar of Eclipse. Locate the target version of the Android SDK that is specified in your project properties, open it, and choose **Google APIs**.
+1.  Öffnen Sie den Android SDK Manager, indem Sie in der oberen Eclipse-Symbolleiste auf **Window** klicken. Suchen Sie die in den Projekteigenschaften angegebene Android SDK-Zielversion, öffnen Sie sie, und wählen Sie **Google APIs**.
 
-2. Scroll down to **Extras**, expand it, and choose **Google Play Services**, as shown below. Click **Install Packages**. Note the SDK path, for use in the following step. Restart Eclipse.
+2.  Scrollen Sie nach unten zu **Extras**, erweitern Sie diese, und wählen Sie **Google Play Services**, wie unten gezeigt. Klicken Sie auf **Install Packages**. Beachten Sie den SDK-Pfad für den folgenden Schritt. Starten Sie Eclipse neu.
 
-   	![](./media/notification-hubs-android-get-started/notification-hub-create-android-app4.png)
+	![](./media/notification-hubs-android-get-started/notification-hub-create-android-app4.png)
 
+3.  Installieren Sie das Google Play Services SDK in Ihrem Projekt. Klicken Sie in Eclipse auf **File**, dann auf **Import**. Wählen Sie **Android**, dann **Existing Android Code into Workspace**, und klicken Sie auf **Next**. Klicken Sie auf **Browse**, navigieren Sie zum Android-SDK-Pfad (normalerweise in einem Ordner namens `adt-bundle-windows-x86_64`), gehen Sie dann zum Unterordner `\extras\google\google_play_services\libproject`, wählen Sie dort den Ordner google-play-services-lib, und klicken Sie auf **OK**. Aktivieren Sie das Kontrollkästchen **Copy projects into workspace**, und klicken Sie dann auf **Finish**.
 
-3. Install the Google Play Services SDK in your project. In Eclipse, click **File**, then **Import**. Select **Android**, then **Existing Android Code into Workspace**, and click **Next**. Click **Browse**, navigate to the Android SDK path (usually in a folder named `adt-bundle-windows-x86_64`), then go to the `\extras\google\google_play_services\libproject` subfolder, and there select the google-play-services-lib folder, and click **OK**. Check the **Copy projects into workspace** checkbox, and then click **Finish**.
+    ![](./media/mobile-services-android-get-started-push/mobile-eclipse-import-Play-library.png)
 
-	![](./media/mobile-services-android-get-started-push/mobile-eclipse-import-Play-library.png)
+4.  Nun müssen Sie einen Bezug von Ihrem Projekt zur soeben importierten Google Play Services SDK-Bibliothek herstellen.
 
-5. Next you must reference the Google Play Services SDK library that you just imported, from your project. 
+5.  Klicken Sie im **Paket-Explorer** mit der rechten Maustaste auf Ihr Projekt, und wählen Sie *Eigenschaften*.
 
-2. In **Package Explorer**, right-click your project and choose *Properties*.
- 
-3. In the Properties window, choose Android on the left.
+6.  Im Eigenschaften-Fenster wählen Sie Android auf der linken Seite.
 
-	![](./media/mobile-services-android-get-started-push/mobile-google-set-project-properties.png)
+    ![](./media/mobile-services-android-get-started-push/mobile-google-set-project-properties.png)
 
+7.  Im **Library**-Abschnitt wählen Sie **Add**, wählen Sie dann das Google Play Services-Projekt (*google-play-services-lib*) aus, und klicken Sie auf **OK**.
 
-5.  In the **Library** section, choose **Add** , and select the Google Play Services project (*google-play-services-lib*) and click **OK**.
-
-6. Click **Apply** and then **OK**.
-
+8.  Klicken Sie auf **Apply**, dann auf **OK**.
 
 

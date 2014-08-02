@@ -1,11 +1,13 @@
 
 
-The mobile service project that you download lets you to run your new mobile service right on your local computer or virtual machine. This makes it easy to debug your service code before you even publish it to Azure.
+Mit dem mobilen Dienstprojekt, das Sie herunterladen, können Sie Ihren neuen mobilen Dienst direkt auf Ihrem lokalen Computer oder einem virtuellen Computer ausführen. Das macht das Debuggen des Dienstcodes einfacher, bevor Sie ihn in Azure veröffentlichen.
 
-1. Browse to the location where you saved the compressed project files, expand the files on your computer, and open the solution file in Visual Studio.
+1.  Navigieren Sie zu dem Verzeichnis, in dem Sie die komprimierten Projektdateien gespeichert haben, erweitern Sie die Dateien auf Ihrem Computer, und öffnen Sie die Projektmappen-Datei in Visual Studio.
 
-2. Press the **F5** key to rebuild the project and start the mobile service locally.
+2.  Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und den mobilen Dienst lokal zu starten.
 
-	![](./media/mobile-services-dotnet-backend-test-local-service/mobile-service-startup.png)
+    ![](./media/mobile-services-dotnet-backend-test-local-service/mobile-service-startup.png)
 
-	A web page is displayed after the mobile service starts successfully.
+    Nachdem der mobile Dienst erfolgreich erstellt wurde, wird eine Webseite angezeigt.
+
+

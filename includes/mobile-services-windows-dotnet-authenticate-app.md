@@ -1,44 +1,47 @@
 
-1. Open the project file mainpage.xaml.cs and add the following using statement:
 
-        using Windows.UI.Popups;
+1.  Öffnen Sie die Projektdatei "mainpage.xaml.cs", und fügen Sie den folgenden Ausdruck ein:
 
-6. Add the following code snippet to the MainPage class:
-	
-        private MobileServiceUser user;
-        private async System.Threading.Tasks.Task AuthenticateAsync()
-        {
-            while (user == null)
-            {
-                string message;
-                try
-                {
-                    user = await App.MobileService
-                        .LoginAsync(MobileServiceAuthenticationProvider.Facebook);
-                    message = 
-                        string.Format("You are now logged in - {0}", user.UserId);
-                }
-                catch (InvalidOperationException)
-                {
-                    message = "You must log in. Login Required";
-                }
-                        
-                var dialog = new MessageDialog(message);
-                dialog.Commands.Add(new UICommand("OK"));
-                await dialog.ShowAsync();
-            }
-        }
+         using Windows.UI.Popups;
 
-    This creates a member variable for storing the current user and a method to handle the authentication process. The user is authenticated by using a Facebook login. If you are using an identity provider other than Facebook, change the value of **MobileServiceAuthenticationProvider** above to the value for your provider.
+2.  Fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
 
-8. Replace the existing **OnNavigatedTo** method override with the following method that calls the new **Authenticate** method:
+         private MobileServiceUser user;
+         private async System.Threading.Tasks.Task AuthenticateAsync()
+         {
+             while (user == null)
+             {
+                 string message;
+                 try
+                 {
+                     user = await App.MobileService
+                         .LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+                     message = 
+                         string.Format("You are now logged in - {0}", user.UserId);
+                 }
+                 catch (InvalidOperationException)
+                 {
+                     message = "You must log in. Login Required";
+                 }
+                            
+                 var dialog = new MessageDialog(message);
+                 dialog.Commands.Add(new UICommand("OK"));
+                 await dialog.ShowAsync();
+             }
+         }
 
-        protected override async void OnNavigatedTo(NavigationEventArgs e)
-        {
-            await AuthenticateAsync();
-            RefreshTodoItems();
-        }
-		
-9. Press the F5 key to run the app and sign into the app with your chosen identity provider. 
+    Auf diese Weise wird eine Membervariable zum Speichern des aktuellen Benutzers erstellt und eine Methode zur Verarbeitung des Authentifizierungsprozesses. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für **MobileServiceAuthenticationProvider** oben entsprechend Ihrem Anbieter.
 
-   	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
+3.  Ersetzen Sie die vorhandene Methodenüberschreibung **OnNavigatedTo** mit der folgenden Methode, die die neue Methode **Authentifizieren** aufruft:
+
+         protected override async void OnNavigatedTo(NavigationEventArgs e)
+         {
+             await AuthenticateAsync();
+             RefreshTodoItems();
+         }
+
+4.  Drücken Sie F5, um die App auszuführen und sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App anzumelden.
+
+      Wenn Sie erfolgreich angemeldet sind, sollte die App ohne Fehler ausgeführt werden, und Sie sollten in der Lage sein, Mobile Services abzufragen und Daten zu aktualisieren.
+
+

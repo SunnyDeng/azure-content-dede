@@ -1,41 +1,41 @@
-In this section we will modify the model of our database by adding a new timestamp field named **CompleteDate**. This field will record the last time the todo item was completed. Entity Framework will update the database based on our model change using a default database initializer class derived from [DropCreateDatabaseIfModelChanges](http://go.microsoft.com/fwlink/?LinkId=394621). 
+In diesem Abschnitt ändern wir das Modell unserer Datenbank, indem wir ein neues Zeitstempelfeld namens **CompleteDate** hinzufügen. In diesem Feld wird die Zeit aufgezeichnet, zu der das todo-Element zuletzt abgeschlossen wurde. Entity Framework aktualisiert die Datenbank auf Grundlage unserer Modelländerung mittels einer von [DropCreateDatabaseIfModelChanges](http://go.microsoft.com/fwlink/?LinkId=394621) abgeleiteten Standard-Datenbankinitialisiererklasse.
 
-1. In Solution Explorer for Visual Studio, expand the **App_Start** folder in the todolist service project. Open the WebApiConfig.cs file.
+1.  Erweitern Sie im Projektmappen-Explorer für Visual Studio den Ordner **App\_Start** im Aufgabenlistenserviceprojekt. Öffnen Sie die Datei WebApiConfig.cs.
 
-2. In the WebApiConfig.cs file, notice that your default database initializer class is derived from the `DropCreateDatabaseIfModelChanges` class. This means any change to the model will result in the table being dropped and recreated to accommodate the new model. So the data in the table will be lost and the table will be re-seeded. Modify the Seed method of the database initializer so that the seed data is as follows as save the WebApiConfig.cs file.
+2.  Beachten Sie in der WebApiConfig.cs-Datei, dass die Standard-Datenbankinitialisiererklasse von der `DropCreateDatabaseIfModelChanges`-Klasse abgeleitet wird. Dies bedeutet, dass jede Änderung am Modell dazu führt, dass die Tabelle gelöscht und dem neuen Modell entsprechend erneut erstellt wird. Die Daten in der Tabelle gehen also verloren, und es wird ein erneutes Seeding für die Tabelle ausgeführt. Ändern Sie die Seed-Methode des Datenbankinitialisierers so, dass die Seed-Daten wie folgt sind, und speichern Sie die WebApiConfig.cs-Datei.
 
-    >[WACOM.NOTE] When using the default database initializer, Entity Framework will drop and recreate the database whenever it detects a data model change in the Code First model definition. To make this data model change and maintain existing data in the database, you must use Code First Migrations. For more information, see [How to Use Code First Migrations to Update the Data Model](./articles/mobile-services-dotnet-backend-use-code-first-migrations).
+    > [WACOM.NOTE] Bei Verwendung des Standard-Datenbankinitialisierers löscht Entity Framework die Datenbank und erstellt sie erneut, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells](./articles/mobile-services-dotnet-backend-use-code-first-migrations).
 
-        List<TodoItem> todoItems = new List<TodoItem>
-        {
-          new TodoItem { Id = "1", Text = "First seed item", Complete = false },
-          new TodoItem { Id = "2", Text = "Second seed item", Complete = false },
-        };
-     
+         List<TodoItem> todoItems = new List<TodoItem>
+         {
+           new TodoItem { Id = "1", Text = "First seed item", Complete = false },
+           new TodoItem { Id = "2", Text = "Second seed item", Complete = false },
+         };
 
-3. In Solution Explorer for Visual Studio, expand the **DataObjects** folder in the todolist service project. Open the TodoItem.cs file and update the TodoItem class to include the CompleteDate field as follows. Then save the TodoItem.cs file.
+3.  Erweitern Sie im Projektmappen-Explorer für Visual Studio den Ordner **DataObjects** im Aufgabenlistenserviceprojekt. Öffnen Sie die Datei TodoItem.cs, und aktualisieren Sie die TodoItem-Klasse so, dass das Feld CompleteDate enthalten ist, wie folgt. Speichern Sie dann die TodoItem.cs-Datei.
 
-        public class TodoItem : EntityData
-        {
-          public string Text { get; set; }
-          public bool Complete { get; set; }
-          public System.DateTime? CompleteDate { get; set; }
-        }
+         public class TodoItem : EntityData
+         {
+           public string Text { get; set; }
+           public bool Complete { get; set; }
+           public System.DateTime
+         CompleteDate { get; set; }
+         }
 
-4. In Solution Explorer for Visual Studio, expand the **Controllers** folder in the todolist service project. Open the TodoItemController.cs file and update the `PatchTodoItem` method so that it will set the **CompleteDate** when the **Complete** property is changing from false to true. Then save the TodoItemController.cs file.
+4.  Erweitern Sie im Projektmappen-Explorer für Visual Studio den Ordner **Controller** im Aufgabenlistenserviceprojekt. Öffnen Sie die Datei TodoItemController.cs, und aktualisieren Sie die `PatchTodoItem`-Methode, sodass **CompleteDate** gesetzt wird, wenn sich die Eigenschaft **Complete** von "false" zu "true" ändert. Speichern Sie dann die TodoItemController.cs-Datei.
 
-        public Task<TodoItem> PatchTodoItem(string id, Delta<TodoItem> patch)
-        {
-            // If complete is being set to true and was false, set CompleteDate
-            if ((patch.GetEntity().Complete == true) &&
-                (GetTodoItem(id).Queryable.Single().Complete == false))
-            {
-                patch.TrySetPropertyValue("CompleteDate", System.DateTime.Now);
-            }
-            return UpdateAsync(id, patch);
-        }
+         public Task<TodoItem> PatchTodoItem(string id, Delta<TodoItem> patch)
+         {
+             // If complete is being set to true and was false, set CompleteDate
+             if ((patch.GetEntity().Complete == true) &&
+                 (GetTodoItem(id).Queryable.Single().Complete == false))
+             {
+                 patch.TrySetPropertyValue("CompleteDate", System.DateTime.Now);
+             }
+             return UpdateAsync(id, patch);
+         }
 
+5.  Erstellen Sie das Aufgabenlisten-.NET-Backend-Serviceprojekt erneut, und vergewissern Sie sich, dass keine Buildfehler vorliegen.
 
-5. Rebuild the todolist .NET backend service project and verify that you have no build errors. 
+Als Nächstes aktualisieren Sie die Client-App, um die neuen **CompleteDate**-Daten anzuzeigen.
 
-Next, you will update the client app to display the new **CompleteDate** data.

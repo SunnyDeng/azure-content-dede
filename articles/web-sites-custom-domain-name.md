@@ -53,7 +53,7 @@ Um Ihre benutzerdefinierte Domäne mit einer Azure-Website zu verknüpfen, müss
     **Erweitert** zu finden sein.
     
     * Auf der Seite sind wahrscheinlich schon einige Einträge erstellt
-      worden, z. B. ein Eintrag, der \'**@**\' oder \'\*\' mit einer
+      worden, z. B. ein Eintrag, der '**@**' oder '\*' mit einer
       Seite zum Domainparking verknüpft. Sie kann auch Einträge für
       allgemeine Unterdomänen wie **www** enthalten.
     * Auf der Seite werden **A-Datensätze** und **CNAME-Datensätze**
@@ -105,10 +105,10 @@ Um Ihre benutzerdefinierte Domäne mit einer Azure-Website zu verknüpfen, müss
      
       > [WACOM.NOTE] Um eine Stammdomäne (z. B. **contoso.com**) einer
       > Azure-Website zuzuordnen, nehmen Sie oft eine Zuordnung von
-      > \'**@**\' oder einem leeren Eintrag zur virtuellen IP-Adresse
+      > '**@**' oder einem leeren Eintrag zur virtuellen IP-Adresse
       > vor. Um eine Platzhalterzuordnung zu erstellen, die alle
       > Unterdomänen mit der virtuellen IP-Adresse verknüpft, nehmen Sie
-      > in der Regel eine Zuordnung von \'\*\' zur virtuellen IP-Adresse
+      > in der Regel eine Zuordnung von '\*' zur virtuellen IP-Adresse
       > vor.
       > 
       > Wie die Zuordnung eines Stamms oder Platzhalters genau

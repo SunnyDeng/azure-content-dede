@@ -1,28 +1,30 @@
 
 
-1. Open the project file QSTodoListViewController.m and in the **viewDidLoad** method, remove the following code that reloads the data into the table:
+1.  Öffnen Sie die Projektdatei QSTodoListViewController.m, und entfernen Sie in der **viewDidLoad**-Methode den folgenden Code, der die Daten erneut in die Tabelle lädt:
 
-        [self refresh];
+         [self refresh];
 
-2.	Just after the **viewDidLoad** method, add the following code:  
+2.  Unmittelbar nach der **viewDidLoad**-Methode fügen Sie den folgenden Code ein:
 
         - (void)viewDidAppear:(BOOL)animated
         {
             MSClient *client = self.todoService.client;
-            
+                
             if (client.currentUser != nil) {
                 return;
             }
-            
+                
             [client loginWithProvider:@"facebook" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
                 [self refresh];
             }];
         }
 
-    <div class="dev-callout"><b>Note</b>
-	<p>If you are using an identity provider other than Facebook, change the value passed to <strong>loginWithProvider</strong> above to one of the following: <em>microsoftaccount</em>, <em>facebook</em>, <em>twitter</em>, or <em>google</em>.</p>
-    </div>
-		
-3. Press the **Run** button to build the project, start the app in the iPhone emulator, then log-on with your chosen identity provider.
+    **Hinweis**
 
-   	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
+    Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an **oginWithProvider** oben übergebenen Wert auf einen der folgenden Werte: *microsoftaccount*, *facebook*, *twitter* oder *google*.
+
+3.  Klicken Sie auf die Schaltfläche **Run**, um das Projekt zu erstellen, starten Sie die App im iPhone-Emulator, und melden Sie sich dann mit dem ausgewählten Identitätsanbieter an.
+
+	Wenn Sie erfolgreich angemeldet sind, sollte die App ohne Fehler ausgeführt werden, und Sie sollten in der Lage sein, Mobile Services abzufragen und Daten zu aktualisieren.
+
+

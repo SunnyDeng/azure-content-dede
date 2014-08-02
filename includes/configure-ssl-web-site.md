@@ -1,490 +1,576 @@
-#Enable HTTPS for an Azure web site
 
-When someone visits your web site using HTTPS, the communication between the web site and the browser is secured using Secure Socket Layer (SSL) encryption. This is the most commonly used method of securing data sent across the internet, and assures visitors that their transactions with your site are secure. This article discusses how to enable HTTPS for an Azure Web Site. 
+# Aktivieren von HTTPS für eine Azure-Website
 
-> [WACOM.NOTE] In order to enable HTTPS for custom domain names, you must configure your web sites for standard mode. This may incur additional costs if you are currently using free or shared mode. For more information on shared and standard mode pricing, see [Pricing Details][pricing].
+Wenn ein Benutzer Ihre Website über HTTPS besucht, wird die Kommunikation zwischen der Website und dem Browser mit der Secure Socket Layer (SSL)-Verschlüsselung geschützt. Dies ist die gängigste Methode zum Schützen von Daten, die über das Internet gesendet werden, und bietet Besuchern die Sicherheit, dass ihre Transaktionen mit Ihrer Website sicher sind. In diesem Artikel wird erläutert, wie HTTPS für eine Azure-Website aktiviert wird.
 
-<a href="bkmk_azurewebsites"></a><h2>The \*.azurewebsites.net domain</h2>
+> [WACOM.NOTE] Um HTTPS für benutzerdefinierte Domänennamen zu aktivieren, müssen Sie Ihre Websites für den Standardmodus konfigurieren. Dadurch entstehen eventuell zusätzliche Kosten, wenn Sie derzeit den kostenlosen oder Freigabemodus verwenden. Weitere Informationen über Preise für den Freigabe- oder Standardmodus finden Sie unter [Preisübersicht][1].
 
-If you are not planning on using a custom domain name, but are instead planning on using the \*.azurewebsites.net domain assigned to your web site by Azure (for example, contoso.azurewebsites.net,) then your site is already secured by a certificate provided by Microsoft. You can use **https://mywebsite.azurewebsites.net** to access your site securely.
+[](bkmk_azurewebsites)<h2 data-morhtml="true">Die Domäne *.azurewebsites.net</h2>
 
-The rest of this document provides details on enabling HTTPS for custom domain names, such as **contoso.com**, **www.contoso.com**, or **\*.contoso.com**
+Wenn Sie keinen benutzerdefinierten Domänennamen verwenden möchten, sondern stattdessen die Domäne *.azurewebsites.net verwenden möchten, die Ihrer Website von Azure zugewiesen wird (z. B. contoso.azurewebsites.net), wird Ihre Website bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt. Sie können **https://meinewebsite.azurewebsites.net** für den geschützten Zugriff auf Ihre Website verwenden.
 
-<a href="bkmk_domainname"></a><h2>Custom domain names</h2>
+In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänennamen wie **contoso.com**, **www.contoso.com** oder **\*.contoso.com** aktiviert wird.
 
-To enable HTTPS for a custom domain name, such as **contoso.com**, you must register a custom domain name with a domain name registrar. For more information on how to configure the domain name of an Azure Web Site, see [Configuring a custom domain name for an Azure Web Site](/en-us/develop/net/common-tasks/custom-dns-web-site/). Once you have registered a custom domain name and configured your web site to respond to the custom name, you must request an SSL certificate for the domain. 
+[](bkmk_domainname)<h2 data-morhtml="true">Benutzerdefinierte Domänennamen</h2>
 
-Registering a domain name also enables you to create subdomains such as **www.contoso.com** or **mail.contoso.com**. Before requesting an SSL certificate you must first determine which domain names will be secured by the certificate. This will determine what type of certificate you must obtain. If you just need to secure a single domain name such as **contoso.com** or **www.contoso.com** a basic certificate will probably be sufficient. If you need to secure multiple domain names, such as **contoso.com**, **www.contoso.com**, and **mail.contoso.com**, then a wildcard certificate, or a certificate with Subject Alternate Name (subjectAltName, SAN) will be required.
+Wenn Sie HTTPS für einen benutzerdefinierten Domänennamen wie **contoso.com** aktivieren möchten, müssen Sie einen benutzerdefinierten Domänennamen bei einer Domänennamen-Registrierungsstelle registrieren. Weitere Informationen zum Konfigurieren des Domänennamens einer Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/). Nachdem Sie einen benutzerdefinierten Domänennamen registriert und Ihre Website zur Reaktion auf den benutzerdefinierten Namen konfiguriert haben, müssen Sie ein SSL-Zertifikat für die Domäne anfordern.
 
-> [WACOM.NOTE] Most browsers will display a warning if the domain name specified in the certificate does not match the domain name that was entered in the browser. For example, if the certificate only lists www.contoso.com, but login.contoso.com is the domain name used to access the site in Internet Explorer, you will receive a warning that "The security certificate presented by this website was issued for a different website's address."
+Wenn Sie einen Domänennamen registrieren, können Sie auch Unterdomänen wie **www.contoso.com** oder **mail.contoso.com** erstellen. Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht wahrscheinlich ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen wie **contoso.com**, **www.contoso.com** und **mail.contoso.com** schützen müssen, wird ein Platzhalterzertifikat oder ein Zertifikat mit einem alternativen Antragstellernamen (subjectAltName, SAN) benötigt.
 
-**Basic certificates** are certificates where the Common Name (CN) of the certificate is set to the specific domain or subdomain that clients will use to visit the site. For example, **www.contoso.com**. These certificates only secure the single domain name specified by the CN.
+> [WACOM.NOTE] In den meisten Browsern wird eine Warnung angezeigt, wenn der im Zertifikat angegebene Domänenname nicht mit dem im Browser eingegebenen Domänennamen übereinstimmt. Wenn im Zertifikat z. B. nur
+> www.contoso.com aufgeführt wird, der Zugriff auf die Website in
+> Internet Explorer jedoch über den Domänennamen login.contoso.com
+> erfolgt, wird folgende Warnung angezeigt: "Das Sicherheitszertifikat
+> dieser Website wurde für die Adresse einer anderen Website
+> ausgestellt."
 
-**Wildcard certificates** are certificates where the CN of the certificate contains a wildcard '\*' at the subdomain level. This allows the certificate to match a single level of subdomains for a given domain. For example, a wildcard certificate for **\*.contoso.com** would be valid for **www.contoso.com**, **payment.contoso.com**, and **login.contoso.com**. It would not be valid for **test.login.contoso.com**, as this adds an extra subdomain level. It would also not be valid for **contoso.com**, as this is the root domain level and not a subdomain.
+**Basiszertifikate** sind Zertifikate, bei denen der allgemeine Name (Common Name, CN) im Zertifikat auf die spezifische Domäne oder Unterdomäne eingestellt ist, die Clients zum Besuchen der Website verwenden, zum Beispiel **www.contoso.com**. Diese Zertifikate schützen nur den vom CN angegebenen einzelnen Domänennamen.
 
-A wildcard certificate is what Microsoft provides for the \*.azurewebsites.net domain name automatically created for your web site.
+**Platzhalterzertifikate** sind Zertifikate, bei denen der CN des Zertifikats den Platzhalter '\*' auf Unterdomänenebene enthält. So kann das Zertifikat für eine bestimmte Domäne einer einzelnen Unterdomänenebene entsprechen. Ein Platzhalterzertifikat für **\*.contoso.com** gilt beispielsweise für **www.contoso.com**, **payment.contoso.com** und **login.contoso.com**. Es gilt hingegen nicht für **test.login.contoso.com**, da hier eine zusätzliche Unterdomänenebene hinzukommt. Es gilt auch nicht für **contoso.com**, da es sich hierbei um die Stammdomänenebene und nicht um eine Unterdomäne handelt.
 
-**subjectAltName** is an certificate extension that allows various values, or Subject Alternate Names, to be associated with a certificate. For the purpose of SSL certificates, this allows you to add additional DNS names that the certificate will be valid against. For example, a certificate using subjectAltName may have a CN of **contoso.com**, but may also have alternate names of **www.contoso.com**, **payment.contoso.com**, **test.login.contoso.com**, and even **fabrikam.com**. Such a certificate would be valid for all domain names specified in the Common Name and subjectAltName.
+Microsoft stellt für den Domänennamen *.azurewebsites.net, der für Ihre Website automatisch erstellt wird, ein Platzhalterzertifikat bereit.
 
-It is possible for a certificate to provide support for both wildcards and subjectAltName.
+**subjectAltName** ist eine Zertifikatserweiterung, die es ermöglicht, mit einem Zertifikat verschiedene Werte oder alternative Antragstellernamen zu verknüpfen. Bei SSL-Zertifikaten können Sie zusätzliche DNS-Namen hinzufügen, für die das Zertifikat gültig ist. Ein Zertifikat, das subjectAltName verwendet, kann z. B. den CN **contoso.com** haben, aber auch alternative Namen wie **www.contoso.com**, **payment.contoso.com**, **test.login.contoso.com** und sogar **fabrikam.com**. Ein solches Zertifikat ist für alle Domänennamen gültig, die im allgemeinen Namen und in subjectAltName angegeben sind.
 
-<a href="bkmk_getcert"></a><h2>Get a certificate</h2>
+Ein Zertifikat kann sowohl Platzhalter als auch subjectAltName unterstützen.
 
-SSL certificates used with Azure Web Sites must be signed by a Certificate Authority (CA), a trusted third-party who issues certificates for this purpose. If you do not already have one, you will need to obtain one from a company that sells SSL certificates. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
+[](bkmk_getcert)<h2 data-morhtml="true">Erhalten eines Zertifikats</h2>
 
-The certificate must meet the following requirements for SSL certificates in Azure:
+Für Azure-Websites verwendete SSL-Zertifikate müssen von einer Zertifizierungsstelle signiert sein, einem vertrauenswürdigen Dritten, der Zertifikate für diesen Zweck ausgibt. Wenn Sie noch kein Zertifikat haben, müssen Sie eines von einem Unternehmen erwerben, das SSL-Zertifikate verkauft. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][2] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] -- in englischer Sprache) im Microsoft TechNet Wiki.
 
-* The certificate must contain a private key.
+Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure erfüllen:
 
-* The certificate must be created for key exchange, exportable to a Personal Information Exchange (.pfx) file.
+* Das Zertifikat muss einen privaten Schlüssel enthalten.
 
-* The certificate's subject name must match the domain used to access the web site. If you need to serve multiple domains with this certificate, you will need to use a wildcard value or specify subjectAltName values as discussed previously.
+* Das Zertifikat muss für den Schlüsselaustausch erstellt werden und in eine PFX-Datei (Persönlicher Informationsaustausch) exportiert werden können.
 
-	* For information on configuring a custom domain name for an Azure Web Site, see [Configuring a custom domain name for an Azure Web Site][customdomain].
-	
-	> [WACOM.NOTE] Do not attempt to obtain or generate a certificate for the azurewebsites.net domain.
+* Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf die Website zugegriffen wird. Wenn dieses Zertifikat für mehrere Domänen gelten soll, müssen Sie, wie oben erläutert, einen Platzhalterwert verwenden oder Werte für alternative Antragstellernamen angeben.
+  
+  * Informationen zum Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/).
 
-* The certificate should use a minimum of 2048-bit encryption.
 
-> [WACOM.NOTE] Certificates issued from private CA servers are not supported by Azure Web Sites.
+ 
+  > [WACOM.NOTE] Versuchen Sie nicht, für die Domäne azurewebsites.net
+  > ein Zertifikat zu erhalten oder zu generieren.
 
-To get an SSL certificate from a Certificate Authority you must generate a Certificate Signing Request (CSR), which is sent to the CA. The CA will then return a certificate that is used to complete the CSR. Two common ways to generate a CSR are by using the certmgr.exe or [OpenSSL][openssl] applications. Certmgr.exe is only available on Windows, while OpenSSL is available for most platforms. The steps for using both of these utilities are below.
+* Das Zertifikat muss mindestens eine 2048-Bit-Verschlüsselung haben.
 
-You may also need to obtain **intermediate certificates** (also known as chain certificates), if these are used by your CA. The use of intermediate certificates is considered more secure than 'unchained certificates', so it is common for a CA to use them. Intermediate certificates are often provided as a separate download from the CAs web site. The steps in this article provide steps on how to ensure that any intermediate certificates are merged with the certificate uploaded to your Azure web site. 
+> [WACOM.NOTE] Von Servern privater Zertifizierungsstellen ausgegebene
+> Zertifikate werden von Azure-Websites nicht unterstützt.
 
-> [WACOM.NOTE] When following either series of steps, you will be prompted to enter a **Common Name**. If you will be obtaining a wildcard certificate for use with multiple domains (www.contoso.com, sales.contoso.com,) then this value should be \*.domainname (for example, \*.contoso.com). If you will be obtaining a certificate for a single domain name, this value must be the exact value that users will enter in the browser to visit your web site. For example, www.contoso.com.
->
-> If you need to support both a wildcard name like \*.contoso.com and a root domain name like contoso.com, you can use a wildcard Subject Alternative Name (SAN) certificate. For an example of creating a certificate request that uses the SubjectAltName extensions, see [SubjectAltName certificate](#bkmk_subjectaltname).
+Um von einer Zertifizierungsstelle ein SSL-Zertifikat zu erhalten, müssen Sie eine Zertifikatsignieranforderung (Certificate Signing Request, CSR) generieren, die an die Zertifizierungsstelle gesendet wird. Die Zertifizierungsstelle sendet ein Zertifikat zurück, mit dem die CSR vervollständigt wird. Zwei gängige Möglichkeiten zum Generieren einer CSR sind die Verwendung von certmgr.exe oder von
+[OpenSSL][3]-Anwendungen. Certmgr.exe steht nur unter Windows zur
+Verfügung, während OpenSSL für die meisten Plattformen verfügbar ist. Eine Anleitung zu diesen beiden Dienstprogrammen finden Sie weiter unten.
+
+Eventuell müssen Sie auch **Zwischenzertifikate** (auch Kettenzertifikate genannt) beziehen, wenn diese von Ihrer Zertifizierungsstelle verwendet werden. Zwischenzertifikate gelten als sicherer als 'nicht verkettete Zertifikate', sodass sie von Zertifizierungsstellen üblicherweise verwendet werden. Zwischenzertifikate werden auf der Website der Zertifizierungsstelle häufig als separater Download bereitgestellt. In diesem Artikel wird dargestellt, wie Sie sicherstellen können, dass Zwischenzertifikate mit dem Zertifikat zusammengeführt werden, das zu Ihrer Azure-Website hochgeladen wurde.
+
+> [WACOM.NOTE] Bei jeder dieser Vorgehensweisen werden Sie aufgefordert,
+> einen **allgemeinen Namen** einzugeben. Wenn Sie ein
+> Platzhalterzertifikat für mehrere Domänen (www.contoso.com,
+> sales.contoso.com) erhalten, muss dieser Wert *.domänenname (z. B.
+> *.contoso.com) lauten. Wenn Sie ein Zertifikat für einen einzelnen
+> Domänenname erhalten, muss dieser Wert genau mit dem Wert
+> übereinstimmen, den die Benutzer im Browser eingeben, um Ihre Website
+> zu besuchen, zum Beispiel www.contoso.com.
 > 
-> For more information on how to configure the domain name of an Azure Web Site, see <a href="/en-us/develop/net/common-tasks/custom-dns-web-site/">Configuring a custom domain name for an Azure Web Site</a>.
-
-###Get a certificate using Certreq.exe (Windows only)
-
-Certreq.exe is Windows utility for creating certificate requests. It has been part of the base Windows installation since Windows XP/Windows Server 2000, so should be available on recent Windows systems. Use the following steps to obtain an SSL certificate using certreq.exe.
-
-If you wish to create a self-signed certificate for testing, see the [Self-signed Certificates](#bkmk_selfsigned) section of this document.
-
-If you wish to use the IIS Manager to create a certificate request, see the [Get a certificate using IIS Manager](#bkmk_iismgr) section.
-
-1. Open **Notepad** and create a new document that contains the following. Replace **mysite.com** on the Subject line with the custom domain name of your web site. For example, Subject = "CN=www.contoso.com".
-
-		[NewRequest]
-		Subject = "CN=mysite.com"
-		Exportable = TRUE
-		KeyLength = 2048
-		KeySpec = 1
-		KeyUsage = 0xA0
-		MachineKeySet = True
-		ProviderName = "Microsoft RSA SChannel Cryptographic Provider"
-		ProviderType = 12
-		RequestType = CMC
-
-		[EnhancedKeyUsageExtension]
-		OID=1.3.6.1.5.5.7.3.1
-
-	For more information on the options specified above, as well as other available options, see the [Certreq reference documentationn](http://technet.microsoft.com/library/cc725793.aspx).
-
-2. Save the text file as **myrequest.txt**.
-
-3. From the **Start Screen** or **Start Menu**, run **cmd.exe**.
-
-4. From the command prompt, use the following command to create the certificate request file:
-
-		certreq -new \path\to\myrequest.txt \path\to\create\myrequest.csr
-
-	Specify the path to the **myrequest.txt** file created in step 1, and the path to use when creating the **myrequest.csr** file.
-
-5. Submit the **myrequest.csr** to a Certificate Authority to obtain an SSL certificate. This may involve uploading the file, or opening the file in Notepad and pasting the contents directly into a web form.
-
-	For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
-
-6. Once the Certificate Authority has provided you with a certificate (.CER) file, save this file to the computer used to generate the request, and then use the following command to accept the request and complete the certificate generation process.
-
-		certreq -accept -user mycert.cer
-
-	In this case, the **mycert.cer** certificate received from the Certificate Authority will be used to complete the signature of the certificate. No file will be created; instead, the certificate will be stored in the Windows certificate store.
-
-6. If your CA uses intermediate certificates, you must install these certificates before exporting the certificate in the next steps. Usually these certificates are provided as a separate download from your CA, and are provided in several formats for different web server types. Select the version that is provided for Microsoft IIS.
-
-	Once you have downloaded the certificate, right click on it in explorer and select **Install certificate**. Use the default values in the **Certificate Import Wizard**, and continue selecting **Next** until the import has completed.
-
-7. To export the certificate from the certificate store, run **certmgr.msc** from the **Start Screen** or **Start Menu**. When **Certificate Manager** appears, expand the **Personal** folder, and then select **Certificates**. In the **Issued To** field, look for an entry with the custom domain name you requested a certificate for. In the **Issued By** field, it should list the Certificate Authority you used for this certificate.
-
-	![insert image of cert manager here][certmgr]
-
-9. Right click the certificate and select **All Tasks**, and then select **Export**. In the **Certificate Export Wizard**, click **Next** and then select **Yes, export the private key**. Click **Next**.
-
-	![Export the private key][certwiz1]
-
-10. Select **Personal Information Exchange - PKCS #12**, **Include all certificates in the certificate chain**, and **Export all extended properties**. Click **Next**.
-
-	![include all certs and extended properties][certwiz2]
-
-11. Select **Password**, and then enter and confirm the password. Click **Next**.
-
-	![specify a password][certwiz3]
-
-12. Provide a path and filename that will contain the exported certificate. The filename should have an extension of **.pfx**. Click **Next** to complete the process.
-
-	![provide a file path][certwiz4]
-
-You can now upload the exported PFX file to your Azure Web Site.
-
-###Get a certificate using OpenSSL
-
-1. Generate a private key and Certificate Signing Request by using the following from a command-line, bash or terminal session:
-
-		openssl req -new -nodes -keyout myserver.key -out server.csr -newkey rsa:2048
-
-2. When prompted, enter the appropriate information. For example:
-
- 		Country Name (2 letter code) 
-        State or Province Name (full name) []: Washington
-        Locality Name (eg, city) []: Redmond
-        Organization Name (eg, company) []: Microsoft
-        Organizational Unit Name (eg, section) []: Azure
-        Common Name (eg, YOUR name) []: www.microsoft.com
-        Email Address []:
-
-		Please enter the following 'extra' attributes to be sent with your certificate request
-
-       	A challenge password []: 
-
-	Once this process completes, you should have two files; **myserver.key** and **server.csr**. The **server.csr** contains the Certificate Signing Request.
-
-3. Submit your CSR to a Certificate Authority to obtain an SSL certificate. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
-
-4. Once you have obtained a certificate from a CA, save it to a file named **myserver.crt**. If your CA provided the certificate in a text format, simply paste the certificate text into the **myserver.crt** file. The file contents should be similar to the following when viewed in a text editor:
-
-		-----BEGIN CERTIFICATE-----
-		MIIDJDCCAgwCCQCpCY4o1LBQuzANBgkqhkiG9w0BAQUFADBUMQswCQYDVQQGEwJV
-		UzELMAkGA1UECBMCV0ExEDAOBgNVBAcTB1JlZG1vbmQxEDAOBgNVBAsTB0NvbnRv
-		c28xFDASBgNVBAMTC2NvbnRvc28uY29tMB4XDTE0MDExNjE1MzIyM1oXDTE1MDEx
-		NjE1MzIyM1owVDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAldBMRAwDgYDVQQHEwdS
-		ZWRtb25kMRAwDgYDVQQLEwdDb250b3NvMRQwEgYDVQQDEwtjb250b3NvLmNvbTCC
-		ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN96hBX5EDgULtWkCRK7DMM3
-		enae1LT9fXqGlbA7ScFvFivGvOLEqEPD//eLGsf15OYHFOQHK1hwgyfXa9sEDPMT
-		3AsF3iWyF7FiEoR/qV6LdKjeQicJ2cXjGwf3G5vPoIaYifI5r0lhgOUqBxzaBDZ4
-		xMgCh2yv7NavI17BHlWyQo90gS2X5glYGRhzY/fGp10BeUEgIs3Se0kQfBQOFUYb
-		ktA6802lod5K0OxlQy4Oc8kfxTDf8AF2SPQ6BL7xxWrNl/Q2DuEEemjuMnLNxmeA
-		Ik2+6Z6+WdvJoRxqHhleoL8ftOpWR20ToiZXCPo+fcmLod4ejsG5qjBlztVY4qsC
-		AwEAATANBgkqhkiG9w0BAQUFAAOCAQEAVcM9AeeNFv2li69qBZLGDuK0NDHD3zhK
-		Y0nDkqucgjE2QKUuvVSPodz8qwHnKoPwnSrTn8CRjW1gFq5qWEO50dGWgyLR8Wy1
-		F69DYsEzodG+shv/G+vHJZg9QzutsJTB/Q8OoUCSnQS1PSPZP7RbvDV9b7Gx+gtg
-		7kQ55j3A5vOrpI8N9CwdPuimtu6X8Ylw9ejWZsnyy0FMeOPpK3WTkDMxwwGxkU3Y
-		lCRTzkv6vnHrlYQxyBLOSafCB1RWinN/slcWSLHADB6R+HeMiVKkFpooT+ghtii1
-		A9PdUQIhK9bdaFicXPBYZ6AgNVuGtfwyuS5V6ucm7RE6+qf+QjXNFg==
-		-----END CERTIFICATE-----
-
-	Save the file.
-
-5. From the command-line, Bash or terminal session, use the following command to convert the **myserver.key** and **myserver.crt** into **myserver.pfx**, which is the format required by Azure Web Sites:
-
-		openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt
-
-	When prompted, enter a password to secure the .pfx file.
-
-	<div class="dev-callout"> 
-	<b>Note</b>
-	<p>If your CA uses intermediate certificates, you must install these certificates before exporting the certificate in the next step. Usually these certificates are provided as a separate download from your CA, and are provided in several formats for different web server types. Select the version that is provided as a PEM file (.pem file extension.)</p>
-	<p>The follow command demonstrates how to create a .pfx file that includes intermediate certificates, which are contained in the <b>intermediate-cets.pem</b> file:</p>
-	<pre><code>
-	openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
-	</code></pre>
-	</div>
-
-	After running this command, you should have a **myserver.pfx** file suitable for use with Azure Web Sites.
-
-<a href="bkmk_standardmode"></a><h2>Configure standard mode</h2>
-
-Enabling HTTPS for a custom domain is only available for the standard mode of Azure web sites. Use the following steps to switch to standard mode.
-
-> [WACOM.NOTE] Before switching a web site from the free web site mode to the standard web site mode, you should remove spending caps in place for your Web Site subscription, otherwise you risk your site becoming unavailable if you reach your caps before the billing period ends. For more information on shared and standard mode pricing, see [Pricing Details][pricing].
-
-1. In your browser, open the [Management Portal][portal].
-
-2. In the **Web Sites** tab, click the name of your web site.
-
-	![selecting a web site][website]
-
-3. Click the **SCALE** tab.
-
-	![The scale tab][scale]
-
-4. In the **general** section, set the web site mode by clicking **STANDARD**.
-
-	![standard mode selected][standard]
-
-5. Click **Save**. When prompted, click **Yes**.
-
-	> [WACOM.NOTE] If you receive a "Configuring scale for web site '&lt;site name&gt;' failed" error you can use the details button to get more information. You may receive a "Not enough available standard instance servers to satisfy this request." error. If you receive this error, please contact [Azure support](http://www.windowsazure.com/en-us/support/options/).
-
-<a href="bkmk_configuressl"></a><h2>Configure SSL</h2>
-
-Before performing the steps in this section, you must have associated a custom domain name with your Azure Web Site. For more information, see [Configuring a custom domain name for an Azure Web Site][customdomain].
-
-1. In your browser, open the [Azure Management Portal][portal].
-
-2. In the **Web Sites** tab, click the name of your site and then select the **CONFIGURE** tab.
-
-	![the configure tab][configure]
-
-3. In the **certificates** section, click **upload a certificate**
-
-	![upload a certificate][uploadcert]
-
-4. Using the **Upload a certificate** dialog, select the .pfx certificate file created earlier using the IIS Manager or OpenSSL. Specify the password, if any, that was used to secure the .pfx file. Finally, click the **check** to upload the certificate.
-
-	![upload certificate dialog][uploadcertdlg]
-
-5. In the **ssl bindings** section of the **CONFIGURE** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni] (SNI) or IP based SSL.
-
-	![ssl bindings][sslbindings]
-	
-	* IP based SSL associates a certificate with a domain name by mapping the dedicated public IP address of the server to the domain name. This requires each domain name (contoso.com, fabricam.com, etc.) associated with your service to have a dedicated IP address. This is the traditional method of associating SSL certificates with a web server.
-
-	* SNI based SSL is an extension to SSL and [Transport Layer Security][tls] (TLS) that allows multiple domains to share the same IP address, with separate security certificates for each domain. Most modern browsers (including Internet Explorer, Chrome, Firefox and Opera) support SNI, however older browsers may not support SNI. For more information on SNI, see the [Server Name Indication][sni] article on Wikipedia.
-
-6. Click **Save** to save the changes and enable SSL.
-
-> [WACOM.NOTE] If you selected **IP based SSL** and your custom domain is configured using an A record, you must perform the following additional steps:
->
-> 1. After you have configured an IP based SSL binding, a dedicated IP address is assigned to your web site. You can find this IP address on the **Dashboard** page of your web site, in the **quick glance** section. It will be listed as **Virtual IP Address**:
->    
->     ![Virtual IP address](./media/configure-ssl-web-site/staticip.png)
->    
->     Note that this IP address will be different than the virtual IP address used previously to configure the A record for your domain. If you are configured to use SNI based SSL, or are not configured to use SSL, no address will be listed for this entry.
->
-> 2. Using the tools provided by your domain name registrar, modify the A record for your custom domain name to point to the IP address from the previous step.
-
-
-At this point, you should be able to visit your web site using HTTPS to verify that the certificate has been configured correctly.
-
-<a href="bkmk_subjectaltname"></a><h2>SubjectAltName certificates (Optional)</h2>
-
-OpenSSL can be used to create a certificate request that uses the SubjectAltName extension to support multiple domain names with a single certificate, however it requires a configuration file. The following steps walk through creating a configuration file, and then using it to request a certificate.
-
-1. Create a new file named __sancert.cnf__ and use the following as the contents of the file:
- 
-		# -------------- BEGIN custom sancert.cnf -----
-		HOME = .
-		oid_section = new_oids
-		[ new_oids ]
-		[ req ]
-		default_days = 730
-		distinguished_name = req_distinguished_name
-		encrypt_key = no
-		string_mask = nombstr
-		req_extensions = v3_req # Extensions to add to certificate request
-		[ req_distinguished_name ]
-		countryName = Country Name (2 letter code)
-		countryName_default = 
-		stateOrProvinceName = State or Province Name (full name)
-		stateOrProvinceName_default = 
-		localityName = Locality Name (eg, city)
-		localityName_default = 
-		organizationalUnitName  = Organizational Unit Name (eg, section)
-		organizationalUnitName_default  = 
-		commonName              = Your common name (eg, domain name)
-		commonName_default      = www.mydomain.com
-		commonName_max = 64
-		[ v3_req ]
-		subjectAltName=DNS:ftp.mydomain.com,DNS:blog.mydomain.com,DNS:*.mydomain.com
-		# -------------- END custom sancert.cnf -----
-
-	Note the line that begins with 'subjectAltName'. Replace the domain names currently listed with domain names you wish to support in addition to the common name. For example:
-
-		subjectAltName=DNS:sales.contoso.com,DNS:support.contoso.com,DNS:fabrikam.com
-
-	You do not need to change the commonName_default field, as you will be prompted to enter your common name in one of the following steps.
-
-2. Save the __sancert.cnf__ file.
-
-1. Generate a private key and Certificate Signing Request by using the sancert.cnf configuration file. From a bash or terminal session, use the following command:
-
-		openssl req -new -nodes -keyout myserver.key -out server.csr -newkey rsa:2048 -config sancert.cnf
-
-2. When prompted, enter the appropriate information. For example:
-
- 		Country Name (2 letter code) []: US
-        State or Province Name (full name) []: Washington
-        Locality Name (eg, city) []: Redmond
-        Organizational Unit Name (eg, section) []: Azure
-        Your common name (eg, domain name) []: www.microsoft.com
- 
-
-	Once this process completes, you should have two files; **myserver.key** and **server.csr**. The **server.csr** contains the Certificate Signing Request.
-
-3. Submit your CSR to a Certificate Authority to obtain an SSL certificate. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
-
-4. Once you have obtained a certificate from a CA, save it to a file named **myserver.crt**. If your CA provided the certificate in a text format, simply paste the certificate text into the **myserver.crt** file. The file contents should be similar to the following when viewed in a text editor:
-
-		-----BEGIN CERTIFICATE-----
-		MIIDJDCCAgwCCQCpCY4o1LBQuzANBgkqhkiG9w0BAQUFADBUMQswCQYDVQQGEwJV
-		UzELMAkGA1UECBMCV0ExEDAOBgNVBAcTB1JlZG1vbmQxEDAOBgNVBAsTB0NvbnRv
-		c28xFDASBgNVBAMTC2NvbnRvc28uY29tMB4XDTE0MDExNjE1MzIyM1oXDTE1MDEx
-		NjE1MzIyM1owVDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAldBMRAwDgYDVQQHEwdS
-		ZWRtb25kMRAwDgYDVQQLEwdDb250b3NvMRQwEgYDVQQDEwtjb250b3NvLmNvbTCC
-		ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN96hBX5EDgULtWkCRK7DMM3
-		enae1LT9fXqGlbA7ScFvFivGvOLEqEPD//eLGsf15OYHFOQHK1hwgyfXa9sEDPMT
-		3AsF3iWyF7FiEoR/qV6LdKjeQicJ2cXjGwf3G5vPoIaYifI5r0lhgOUqBxzaBDZ4
-		xMgCh2yv7NavI17BHlWyQo90gS2X5glYGRhzY/fGp10BeUEgIs3Se0kQfBQOFUYb
-		ktA6802lod5K0OxlQy4Oc8kfxTDf8AF2SPQ6BL7xxWrNl/Q2DuEEemjuMnLNxmeA
-		Ik2+6Z6+WdvJoRxqHhleoL8ftOpWR20ToiZXCPo+fcmLod4ejsG5qjBlztVY4qsC
-		AwEAATANBgkqhkiG9w0BAQUFAAOCAQEAVcM9AeeNFv2li69qBZLGDuK0NDHD3zhK
-		Y0nDkqucgjE2QKUuvVSPodz8qwHnKoPwnSrTn8CRjW1gFq5qWEO50dGWgyLR8Wy1
-		F69DYsEzodG+shv/G+vHJZg9QzutsJTB/Q8OoUCSnQS1PSPZP7RbvDV9b7Gx+gtg
-		7kQ55j3A5vOrpI8N9CwdPuimtu6X8Ylw9ejWZsnyy0FMeOPpK3WTkDMxwwGxkU3Y
-		lCRTzkv6vnHrlYQxyBLOSafCB1RWinN/slcWSLHADB6R+HeMiVKkFpooT+ghtii1
-		A9PdUQIhK9bdaFicXPBYZ6AgNVuGtfwyuS5V6ucm7RE6+qf+QjXNFg==
-		-----END CERTIFICATE-----
-
-	Save the file.
-
-5. From the command-line, Bash or terminal session, use the following command to convert the **myserver.key** and **myserver.crt** into **myserver.pfx**, which is the format required by Azure Web Sites:
-
-		openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt
-
-	When prompted, enter a password to secure the .pfx file.
-
-	<div class="dev-callout"> 
-	<b>Note</b>
-	<p>If your CA uses intermediate certificates, you must install these certificates before exporting the certificate in the next step. Usually these certificates are provided as a separate download from your CA, and are provided in several formats for different web server types. Select the version that is provided as a PEM file (.pem file extension.)</p>
-	<p>The follow command demonstrates how to create a .pfx file that includes intermediate certificates, which are contained in the <b>intermediate-cets.pem</b> file:</p>
-	<pre><code>
-	openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
-	</code></pre>
-	</div>
-
-	After running this command, you should have a **myserver.pfx** file suitable for use with Azure Web Sites.
-
-##<a name="bkmk_iismgr"></a>Get a certificate using the IIS Manager (Optional)
-
-If you are familiar with IIS Manager, you can use it to generate a certificate that can be used with Azure Web Sites.
-
-1. Generate a Certificate Signing Request (CSR) with IIS Manager to send to the Certificate Authority. For more information on generating a CSR, see [Request an Internet Server Certificate (IIS 7)][iiscsr].
-
-2. Submit your CSR to a Certificate Authority to obtain an SSL certificate. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
-
-3. Complete the CSR with the certificate provided by the Certificate Authority vendor. For more information on completing the CSR, see [Install an Internet Server Certificate (IIS 7)][installcertiis].
-
-4. If your CA uses intermediate certificates, you must install these certificates before exporting the certificate in the next step. Usually these certificates are provided as a separate download from your CA, and are provided in several formats for different web server types. Select the version that is provided for Microsoft IIS.
-
-	Once you have downloaded the certificate, right click on it in explorer and select **Install certificate**. Use the default values in the **Certificate Import Wizard**, and continue selecting **Next** until the import has completed.
-
-4. Export the certificate from IIS Manager For more information on exporting the certificate, see [Export a Server Certificate (IIS 7)][exportcertiis]. The exported file will be used in later steps to upload to Azure for use with your Azure Web Site.
-
-	<div class="dev-callout"> 
-	<b>Note</b>
-	<p>During the export process, be sure to select the option <strong>Yes, export the private key</strong>. This will include the private key in the exported certificate.</p>
-	</div>
-
-	<div class="dev-callout"> 
-	<b>Note</b>
-	<p>During the export process, be sure to select the option <strong>include all certs in the certification path</strong> and and <strong>Export all extended properties</strong>. This will include any intermediate certificates in the exported certificate.</p>
-	</div>
-
-<a href="bkmk_selfsigned"></a><h2>Self-signed certificates (Optional)</h2>
-
-In some cases you may wish to obtain a certificate for testing, and delay purchasing one from a trusted CA until you go into production. Self-signed certificates can fill this gap. A self-signed certificate is a certificate you create and sign as if you were a Certificate Authority. While this certificate can be used to secure a web site, most browsers will return errors when visiting the site as the certificate was not signed by a trusted CA. Some browsers may even refuse to allow you to view the site.
-
-While there are multiple ways to create a self-signed certificate, this article only provides information on using **makecert** and **OpenSSL**.
-
-###Create a self-signed certificate using makecert
-
-You can create a test certificate from a Windows system that has Visual Studio installed by performing the following steps:
-
-1. From the **Start Menu** or **Start Screen**, search for **Developer Command Prompt**. Finally, right-click **Developer Command Prompt** and select **Run As Administrator**.
-
-	If you receive a User Account Control dialog, select **Yes** to continue.
-
-2. From the Developer Command Prompt, use the following command to create a new self-signed certificate. You must substitute **serverdnsname** with the DNS of your web site.
-
-		makecert -r -pe -b 01/01/2013 -e 01/01/2014 -eku 1.3.6.1.5.5.7.3.1 -ss My -n CN=serverdnsname -sky exchange -sp "Microsoft RSA SChannel Cryptographic Provider" -sy 12 -len 2048
-
-	This command will create a certificate that is good between the dates of 01/01/2013 and 01/01/2014, and will store the location in the CurrentUser certificate store.
-
-3. From the **Start Menu** or **Start Screen**, search for **Windows PowerShell** and start this application.
-
-4. From the Windows PowerShell prompt, use the following commands to export the certificate created previously:
-
-		$mypwd = ConvertTo-SecureString -String "password" -Force -AsPlainText
-		get-childitem cert:\currentuser\my -dnsname serverdnsname | export-pfxcertificate -filepath file-to-export-to.pfx -password $mypwd
-
-	This stores the specified password as a secure string in $mypwd, then finds the certificate by using the DNS name specified by the **dnsname** parameter, and exports to the file specified by the **filepath** parameter. The secure string containing the password is used to secure the exported file.
-
-###Create a self-signed certificate using OpenSSL
-
-1. Create a new document named **serverauth.cnf**, using the following as the contents of this file:
-
-        [ req ]
-        default_bits           = 2048
-        default_keyfile        = privkey.pem
-        distinguished_name     = req_distinguished_name
-        attributes             = req_attributes
-        x509_extensions        = v3_ca
-
-        [ req_distinguished_name ]
-        countryName			= Country Name (2 letter code)
-        countryName_min			= 2
-        countryName_max			= 2
-        stateOrProvinceName		= State or Province Name (full name)
-        localityName			= Locality Name (eg, city)
-        0.organizationName		= Organization Name (eg, company)
-        organizationalUnitName		= Organizational Unit Name (eg, section)
-        commonName			= Common Name (eg, your website's domain name)
-        commonName_max			= 64
-        emailAddress			= Email Address
-        emailAddress_max		= 40
-
-        [ req_attributes ]
-        challengePassword		= A challenge password
-        challengePassword_min		= 4
-        challengePassword_max		= 20
-
-        [ v3_ca ]
-         subjectKeyIdentifier=hash
-         authorityKeyIdentifier=keyid:always,issuer:always
-         basicConstraints = CA:false
-         keyUsage=nonRepudiation, digitalSignature, keyEncipherment
-         extendedKeyUsage = serverAuth
-
-	This specifies the configuration settings required to produce an SSL certificate that can be used by Azure Web Sites.
-
-2. Generate a new self-signed certificate by using the following from a command-line, bash or terminal session:
-
-		openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myserver.key -out myserver.crt -config serverauth.cnf
-
-	This creates a new certificate using the configuration settings specified in the **serverauth.cnf** file.
-
-3. To export the certificate to a .PFX file that can be uploaded to an Azure Web Site, use the following command:
-
-		openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt
-
-	When prompted, enter a password to secure the .pfx file.
-
-	The **myserver.pfx** produced by this command can be used to secure your Azure Web Site for testing purposes.
-
-[customdomain]: /en-us/develop/net/common-tasks/custom-dns-web-site/
-[iiscsr]: http://technet.microsoft.com/en-us/library/cc732906(WS.10).aspx
-[cas]: http://go.microsoft.com/fwlink/?LinkID=269988
-[installcertiis]: http://technet.microsoft.com/en-us/library/cc771816(WS.10).aspx
-[exportcertiis]: http://technet.microsoft.com/en-us/library/cc731386(WS.10).aspx
-[openssl]: http://www.openssl.org/
-[portal]: https://manage.windowsazure.com/
-[tls]: http://en.wikipedia.org/wiki/Transport_Layer_Security
-[staticip]: ./media/configure-ssl-web-site/staticip.png
-[website]: ./media/configure-ssl-web-site/sslwebsite.png
-[scale]: ./media/configure-ssl-web-site/sslscale.png
-[standard]: ./media/configure-ssl-web-site/sslreserved.png
-[pricing]: https://www.windowsazure.com/en-us/pricing/details/
-[configure]: ./media/configure-ssl-web-site/sslconfig.png
-[uploadcert]: ./media/configure-ssl-web-site/ssluploadcert.png
-[uploadcertdlg]: ./media/configure-ssl-web-site/ssluploaddlg.png
-[sslbindings]: ./media/configure-ssl-web-site/sslbindings.png
-[sni]: http://en.wikipedia.org/wiki/Server_Name_Indication
-[certmgr]: ./media/configure-ssl-web-site/waws-certmgr.png
-[certwiz1]: ./media/configure-ssl-web-site/waws-certwiz1.png
-[certwiz2]: ./media/configure-ssl-web-site/waws-certwiz2.png
-[certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
-[certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
+> Wenn Sie einen Platzhalternamen wie *.contoso.com und einen
+> Stammdomänennamen wie contoso.com unterstützen müssen, können Sie ein
+> Platzhalterzertifikat für einen alternativen Antragstellernamen
+> verwenden. Ein Beispiel zum Erstellen einer Zertifikatanforderung,
+> welche die SubjectAltName-Erweiterungen verwendet, finden Sie unter
+> [SubjectAltName-Zertifikat](#bkmk_subjectaltname).
+> 
+> Weitere Informationen zum Konfigurieren des Domänennamens einer
+> Azure-Website finden Sie unter [Konfigurieren eines
+> benutzerdefinierten Domänennamens für eine
+> Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/).
+
+### Beziehen eines Zertifikats mit Certreq.exe (nur Windows)
+
+Certreq.exe ist ein Windows-Dienstprogramm zum Erstellen von Zertifikatanforderungen. Es gehört seit Windows XP/Windows Server 2000 zur Windows-Basisinstallation und dürfte daher auf Windows-Systemen jüngeren Datums verfügbar sein. Gehen Sie folgendermaßen vor, um mit certreq.exe ein SSL-Zertifikat zu erhalten.
+
+Informationen zum Erstellen eines selbstsignierten Zertifikats für Testzwecke finden Sie im Abschnitt [Selbstsignierte Zertifikate](#bkmk_selfsigned) dieses Dokuments.
+
+Informationen zum Erstellen einer Zertifikatanforderung mit dem IIS-Manager finden Sie unter [Erhalten eines Zertifikats mit dem IIS-Manager](#bkmk_iismgr).
+
+1.  Öffnen Sie den **Editor**, und erstellen Sie ein neues Dokument mit folgendem Inhalt. Ersetzen Sie **mysite.com** in der Zeile "Subject" durch den benutzerdefinierten Domänennamen Ihrer Website. Zum Beispiel: Subject = "CN=www.contoso.com".
+    
+         [NewRequest]
+         Subject = "CN=mysite.com"
+         Exportable = TRUE
+         KeyLength = 2048
+         KeySpec = 1
+         KeyUsage = 0xA0
+         MachineKeySet = True
+         ProviderName = "Microsoft RSA SChannel Cryptographic Provider"
+         ProviderType = 12
+         RequestType = CMC
+        
+         [EnhancedKeyUsageExtension]
+         OID=1.3.6.1.5.5.7.3.1
+    
+    Weitere Informationen über die oben angegebenen Optionen sowie über
+    weitere verfügbare Optionen finden Sie in der
+    [Certreq-Referenzdokumentation][4] (in englischer Sprache).
+
+2.  Speichern Sie die Textdatei unter **myrequest.txt**.
+
+3.  Führen Sie auf der **Startseite** oder im **Startmenü** **cmd.exe** aus.
+
+4.  Geben Sie an der Eingabeaufforderung den folgenden Befehl ein, um die Zertifikatanforderungsdatei zu erstellen:
+    
+         certreq -new \path\to\myrequest.txt \path\to\create\myrequest.csr
+    
+    Geben Sie den Pfad zu der in Schritt 1 erstellten Datei **myrequest.txt** an sowie den Pfad, der beim Erstellen der Datei **myrequest.csr** verwendet werden soll.
+
+5.  Senden Sie die Datei **myrequest.csr** an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Dazu müssen Sie die Datei eventuell hochladen oder im Editor öffnen und den Inhalt direkt in ein Webformular eingeben.
+    
+    Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][2] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm[Mitgliedszertifizierungsstellen] -- in englischer Sprache) im Microsoft TechNet Wiki.
+
+6.  Wenn die Zertifizierungsstelle Ihnen eine Zertifikatdatei (.CER) zur Verfügung gestellt hat, speichern Sie diese Datei auf dem Computer, mit dem die Anforderung generiert wurde. Verwenden Sie anschließend den folgenden Befehl, um die Anforderung zu akzeptieren und den Prozess der Zertifikatgenerierung abzuschließen.
+    
+         certreq -accept -user mycert.cer
+    
+    In diesem Fall dient das Zertifikat **mycert.cer**, das Sie von der Zertifizierungsstelle erhalten haben, dazu, die Signatur des Zertifikats zu vervollständigen. Es wird keine Datei erstellt, sondern das Zertifikat wird im Windows-Zertifikatspeicher abgelegt.
+
+7.  Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat in den nächsten Schritten exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die für Microsoft IIS bereitgestellte Version.
+    
+    Klicken Sie nach dem Herunterladen des Zertifikats im Explorer mit der rechten Maustaste darauf, und wählen Sie **Zertifikat installieren**. Verwenden Sie die Standardwerte im **Zertifikat-Importassistenten**, und wählen Sie **Weiter** aus, bis der Import abgeschlossen ist.
+
+8.  Um das Zertifikat aus dem Zertifikatspeicher zu exportieren, führen Sie **certmgr.msc** auf der **Startseite** oder im **Startmenü** aus. Wenn **Zertifikat-Manager** angezeigt wird, erweitern Sie den Ordner **Persönlich**, und wählen Sie dann **Zertifikate** aus. Suchen Sie im Feld **Ausgestellt für** nach einem Eintrag mit dem benutzerdefinierten Domänennamen, für den Sie ein Zertifikat angefordert haben. Im Feld **Ausgestellt von** muss die Zertifizierungsstelle aufgeführt werden, die Sie für dieses Zertifikat verwendet haben.
+    
+    ![hier Bild von Zertifikat-Manager
+    einfügen](./media/configure-ssl-web-site/waws-certmgr.png)
+
+9.  Klicken Sie mit der rechten Maustaste auf das Zertifikat, und wählen Sie **Alle Aufgaben** und anschließend **Exportieren**. Klicken Sie im **Zertifikat-Exportassistenten** auf **Weiter**, und wählen Sie dann **Ja, privaten Schlüssel exportieren**. Klicken Sie auf **Weiter**.
+    
+    ![Privaten Schlüssel
+    exportieren](./media/configure-ssl-web-site/waws-certwiz1.png)
+
+10. Wählen Sie **Persönlicher Informationsaustausch - PKCS #12**, **Alle Zertifikate in der Zertifikatkette berücksichtigen** und **Alle erweiterten Eigenschaften exportieren**. Klicken Sie auf **Weiter**.
+    
+    ![Alle Zertifikate und erweiterten Eigenschaften
+    berücksichtigen](./media/configure-ssl-web-site/waws-certwiz2.png)
+
+11. Wählen Sie **Kennwort** aus. Geben Sie das Kennwort ein, und bestätigen Sie es. Klicken Sie auf **Weiter**.
+    
+    ![Kennwort
+    angeben](./media/configure-ssl-web-site/waws-certwiz3.png)
+
+12. Geben Sie einen Pfad und Dateinamen an, in dem das exportierte Zertifikat enthalten ist. Der Dateiname muss die Erweiterung **.pfx** haben. Klicken Sie auf **Weiter**, um den Prozess abzuschließen.
+    
+    ![Dateipfad
+    angeben](./media/configure-ssl-web-site/waws-certwiz4.png)
+
+Jetzt können Sie die exportierte PFX-Datei zu Ihrer Azure-Website hochladen.
+
+### Erhalten eines Zertifikats mit OpenSSL
+
+1.  Generieren Sie einen privaten Schlüssel und eine Zertifikatsignieranforderung, indem Sie Folgendes in einer Befehlszeile, einer Bash- oder Terminalsitzung eingeben:
+    
+         openssl req -new -nodes -keyout myserver.key -out server.csr -newkey rsa:2048
+
+2.  Geben Sie bei Aufforderung die entsprechenden Informationen ein. Zum Beispiel:
+
+		Ländername (Code aus zwei Buchstaben)
+        Name des Bundeslands/der Provinz (vollständiger Name) []: Washington
+        Ortsname (z. B. Stadt) []: Redmond
+        Organisationsname (z. B. Firma) []: Microsoft
+        Name der Organisationseinheit (z. B. Abteilung) []: Azure
+        Allgemeiner Name (z. B. Ihr Name) []: www.microsoft.com
+        E-Mail-Adresse []:
+    
+    	Geben Sie die folgenden 'zusätzlichen' Attribute ei, die mit der Zertifikatanforderung gesendet werden sollen
+    
+       	ein abzurufendes Kennwort []: 
+    
+    Nach Abschluss dieses Prozesses haben Sie zwei Dateien: **myserver.key** und **server.csr**. Die Datei **server.csr** enthält die Zertifikatsignieranforderung.
+
+1.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][2] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] -- in englischer Sprache) im Microsoft TechNet Wiki.
+
+2.  Sobald Sie ein Zertifikat von einer Zertifizierungsstelle erhalten haben, speichern Sie es in einer Datei mit dem Namen **myserver.crt**. Wenn die Zertifizierungsstelle das Zertifikat im Textformat bereitgestellt hat, fügen Sie den Zertifikattext einfach in die Datei **myserver.crt** ein. In einem Texteditor sieht der Dateiinhalt etwa folgendermaßen aus:
+    
+         -----BEGIN CERTIFICATE-----
+         MIIDJDCCAgwCCQCpCY4o1LBQuzANBgkqhkiG9w0BAQUFADBUMQswCQYDVQQGEwJV
+         UzELMAkGA1UECBMCV0ExEDAOBgNVBAcTB1JlZG1vbmQxEDAOBgNVBAsTB0NvbnRv
+         c28xFDASBgNVBAMTC2NvbnRvc28uY29tMB4XDTE0MDExNjE1MzIyM1oXDTE1MDEx
+         NjE1MzIyM1owVDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAldBMRAwDgYDVQQHEwdS
+         ZWRtb25kMRAwDgYDVQQLEwdDb250b3NvMRQwEgYDVQQDEwtjb250b3NvLmNvbTCC
+         ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN96hBX5EDgULtWkCRK7DMM3
+         enae1LT9fXqGlbA7ScFvFivGvOLEqEPD//eLGsf15OYHFOQHK1hwgyfXa9sEDPMT
+         3AsF3iWyF7FiEoR/qV6LdKjeQicJ2cXjGwf3G5vPoIaYifI5r0lhgOUqBxzaBDZ4
+         xMgCh2yv7NavI17BHlWyQo90gS2X5glYGRhzY/fGp10BeUEgIs3Se0kQfBQOFUYb
+         ktA6802lod5K0OxlQy4Oc8kfxTDf8AF2SPQ6BL7xxWrNl/Q2DuEEemjuMnLNxmeA
+         Ik2+6Z6+WdvJoRxqHhleoL8ftOpWR20ToiZXCPo+fcmLod4ejsG5qjBlztVY4qsC
+         AwEAATANBgkqhkiG9w0BAQUFAAOCAQEAVcM9AeeNFv2li69qBZLGDuK0NDHD3zhK
+         Y0nDkqucgjE2QKUuvVSPodz8qwHnKoPwnSrTn8CRjW1gFq5qWEO50dGWgyLR8Wy1
+         F69DYsEzodG+shv/G+vHJZg9QzutsJTB/Q8OoUCSnQS1PSPZP7RbvDV9b7Gx+gtg
+         7kQ55j3A5vOrpI8N9CwdPuimtu6X8Ylw9ejWZsnyy0FMeOPpK3WTkDMxwwGxkU3Y
+         lCRTzkv6vnHrlYQxyBLOSafCB1RWinN/slcWSLHADB6R+HeMiVKkFpooT+ghtii1
+         A9PdUQIhK9bdaFicXPBYZ6AgNVuGtfwyuS5V6ucm7RE6+qf+QjXNFg==
+         -----END CERTIFICATE-----
+    
+    Speichern Sie die Datei.
+
+3.  Verwenden Sie in der Befehlszeile, der Bash- oder Terminalsitzung den folgenden Befehl, um **myserver.key** und **myserver.crt** in **myserver.pfx** zu konvertieren, das Format, das von Azure-Websites benötigt wird:
+    
+         openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt
+    
+    Geben Sie bei der entsprechenden Aufforderung ein Kennwort ein, um die PFX-Datei zu schützen.
+    
+    <div  class="dev-callout" markdown="1">
+
+**Hinweis**
+Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei(Dateierweiterung .pem) bereitgestellt wird.
+
+
+Der folgende Befehl zeigt, wie eine PFX-Datei erstellt wird, die Zwischenzertifikate enthält, die in der Datei
+**intermediate-cets.pem** enthalten sind:
+
+
+
+		openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
+
+
+
+</div>
+
+    
+Nach der Ausführung dieses Befehls verfügen Sie über die Datei **myserver.pfx**, die für Azure-Websites geeignet ist.
+
+[](bkmk_standardmode)<h2 data-morhtml="true">Konfigurieren des Standardmodus</h2>
+
+Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für den Standardmodus von Azure-Websites zur Verfügung. Gehen Sie folgendermaßen vor, um zum Standardmodus zu wechseln.
+
+> [WACOM.NOTE] Bevor Sie eine Website vom kostenlosen Websitemodus zum
+> Standard-Websitemodus umschalten, müssen Sie die für Ihr
+> Website-Abonnement geltende Ausgabekapazität entfernen. Andernfalls
+> besteht das Risiko, dass Ihre Website nicht mehr verfügbar ist, wenn
+> Sie Ihre Ausgabekapazität vor dem Ende der Abrechnungsperiode
+> erreichen. Weitere Informationen über Preise für den Freigabe- oder
+> Standardmodus finden Sie unter [Preisübersicht][1].
+
+1.  Öffnen Sie das [Verwaltungsportal][5] in Ihrem Browser.
+
+2.  Klicken Sie auf der Registerkarte **Websites** auf den Namen Ihrer Website.
+    
+    ![Website
+    auswählen](./media/configure-ssl-web-site/sslwebsite.png)
+
+3.  Klicken Sie auf die Registerkarte **SCALE**.
+    
+    ![Die Registerkarte
+    "Skalierung"](./media/configure-ssl-web-site/sslscale.png)
+
+4.  Legen Sie im Abschnitt **Allgemein** den Websitemodus durch Klicken auf **Standard** fest.
+    
+    ![Standardmodus
+    ausgewählt](./media/configure-ssl-web-site/sslreserved.png)
+
+5.  Klicken Sie auf **Speichern**. Klicken Sie bei der entsprechenden Aufforderung auf **Ja**.
+
+
+   
+    > [WACOM.NOTE] Wenn die Fehlermeldung "Configuring scale for web
+    > site '<site name>' failed" angezeigt wird, können Sie mit
+    > der Schaltfläche "Details" weitere Informationen abrufen.
+    > Eventuell wird die Fehlermeldung "Not enough available standard
+    > instance servers to satisfy this request." angezeigt. Wenn diese
+    > Fehlermeldung angezeigt wird, rufen Sie [Supportoptionen für
+    > Azure][6] auf.
+
+[](bkmk_configuressl)<h2 data-morhtml="true">Konfigurieren von SSL</h2>
+
+Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie mit Ihrer Azure-Website einen benutzerdefinierten Domänennamen verknüpft haben. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/).
+
+1.  Öffnen Sie das [Azure Verwaltungsportal][5] in Ihrem Browser.
+
+2.  Klicken Sie auf der Registerkarte **Websites** auf den Namen Ihrer Website, und wählen Sie die Registerkarte **Konfigurieren** aus.
+    
+    ![Die Registerkarte
+    "Konfigurieren"](./media/configure-ssl-web-site/sslconfig.png)
+
+3.  Klicken Sie im Abschnitt **Zertifikate** auf **Upload a Certificate**.
+    
+    ![Zertifikat
+    hochladen](./media/configure-ssl-web-site/ssluploadcert.png)
+
+4.  Wählen Sie mit dem Dialogfeld **Upload a Certificate** die zuvor mit dem IIS-Manager oder mit OpenSSL erstellte PFX-Zertifikatdatei aus. Geben Sie ggf. das Kennwort ein, mit dem die PFX-Datei geschützt wurde. Klicken Sie zum Schluss auf das Häkchen****, um das Zertifikat hochzuladen.
+    
+    ![Dialogfeld zum Hochladen des
+    Zertifikats](./media/configure-ssl-web-site/ssluploaddlg.png)
+
+5.  Wählen Sie auf der Registerkarte **Konfigurieren** im Abschnitt **SSL-Bindungen** mit den Dropdownlisten den Domänennamen, der mit SSL geschützt werden soll, sowie das zu verwendende Zertifikat aus. Sie können auch auswählen, ob die SSL auf Basis der [Servernamensanzeige][7] (Server Name Indication, SNI) oder eine IP-basierte SSL verwendet werden soll.
+    
+    ![SSL-Bindungen](./media/configure-ssl-web-site/sslbindings.png)
+    
+    * Bei IP-basiertem SSL wird ein Zertifikat mit einem Domänennamen verknüpft, indem die dedizierte öffentliche IP-Adresse des Servers dem Domänennamen zugeordnet wird. Voraussetzung dafür ist, dass jeder mit Ihrem Dienst verknüpfte Domänenname (contoso.com, fabricam.com usw.) eine dedizierte IP-Adresse hat. Dies ist die herkömmliche Methode der Verknüpfung von SSL-Zertifikaten mit einem Webserver.
+    
+    * SNI-basiertes SSL ist eine Erweiterung für SSL und [Transport Layer Security][8] (TLS). Dabei können mehrere Domänen die gleiche IP-Adresse gemeinsam nutzen, während jede Domäne über eigene Sicherheitszertifikate verfügt. Die meisten modernen Browser (einschließlich Internet Explorer, Chrome, Firefox und Opera) unterstützen SNI, ältere Browser hingegen möglicherweise nicht. Weitere Informationen über SNI finden Sie im Wikipedia-Artikel [Server Name Indication][7] (in englischer Sprache).
+
+6.  Klicken Sie auf **Speichern**, um die Änderungen zu speichern und SSL zu aktivieren.
+
+> [WACOM.NOTE] Wenn Sie **IP based SSL** ausgewählt haben und Ihre
+> benutzerdefinierte Domäne einen A-Datensatz verwendet, müssen Sie die
+> folgenden zusätzlichen Schritte ausführen:
+> 
+> 1.  Nach der Konfiguration einer IP-basierten SSL-Bindung wird Ihrer
+>     Website eine dedizierte IP-Adresse zugewiesen. Sie finden diese
+>     IP-Adresse auf der Seite **Dashboard** Ihrer Website im Abschnitt
+>     **quick glance**. Sie wird als **Virtuelle IP-Adresse**
+>     aufgeführt:
+>     
+>     ![Virtuelle
+>     IP-Adresse](./media/configure-ssl-web-site/staticip.png)
+>     
+>     Diese IP-Adresse unterscheidet sich von der virtuellen IP-Adresse,
+>     die zuvor zum Konfigurieren des A-Datensatzes für Ihre Domäne
+>     verwendet wurde. Wenn SNI-basiertes SSL konfiguriert bzw. wenn die
+>     Verwendung von SSL nicht konfiguriert ist, wird für diesen Eintrag
+>     keine Adresse aufgeführt.
+> 
+> 2.  Ändern Sie mit den von der Domänennamen-Registrierungsstelle
+>     bereitgestellten Tools den A-Datensatz für den benutzerdefinierten
+>     Domänennamen, sodass dieser auf die im vorherigen Schritt genannte
+>     IP-Adresse verweist.
+
+Jetzt sollten Sie in der Lage sein, Ihre Website über HTTPS aufzurufen, um zu überprüfen, ob das Zertifikat einwandfrei konfiguriert wurde.
+
+[](bkmk_subjectaltname)<h2 data-morhtml="true">SubjectAltName-Zertifikate (optional)</h2>
+
+Mit OpenSSL kann eine Zertifikatanforderung erstellt werden, welche die SubjectAltName-Erweiterung verwendet, sodass mehrere Domänennamen mit einem Zertifikat unterstützt werden können. Dazu wird jedoch eine Konfigurationsdatei benötigt. Im Folgenden wird erläutert, wie eine Konfigurationsdatei erstellt wird und wie damit ein Zertifikat angefordert wird.
+
+1.  Erstellen Sie eine neue Datei mit dem Namen **sancert.cnf**, und verwenden Sie für die Datei den folgenden Inhalt:
+
+		 # -------------- BEGIN custom sancert.cnf -----
+         HOME = .
+         oid_section = new_oids
+         [ new_oids ]
+         [ req ]
+         default_days = 730
+         distinguished_name     = req_distinguished_name
+         encrypt_key = no
+         string_mask = nombstr
+         req_extensions = v3_req # Erweiterungen zum Hinzufügen einer Zertifikatanforderung
+         [ req_distinguished_name ]
+         countryName = Ländername (Code aus 2 Buchstaben)
+         countryName_default = 
+         stateOrProvinceName = Name des Bundeslands/der Provinz (vollständiger Name)
+         stateOrProvinceName_default = 
+         localityName = Ortsname (z.B. Stadt)
+         localityName_default = 
+         organizationalUnitName  = Name der Organisationseinheit (z. B. Abteilung)
+         organizationalUnitName_default  = 
+         commonName              = Ihr allgemeiner Namen (z. B. Domänenname)
+         commonName_default      = www.mydomain.com
+         commonName_max = 64
+         [ v3_req ]
+         subjectAltName=DNS:ftp.mydomain.com,DNS:blog.mydomain.com,DNS:*.mydomain.com
+
+		 # -------------- END custom sancert.cnf -----
+    
+    Beachten Sie die Zeile, die mit 'subjectAltName' beginnt. Ersetzen Sie die derzeit aufgelisteten Domänennamen durch die Domänennamen, die zusätzlich zum allgemeinen Namen unterstützt werden sollen. Zum Beispiel:
+    
+         subjectAltName=DNS:sales.contoso.com,DNS:support.contoso.com,DNS:fabrikam.com
+    
+    Das Feld "commonName_default" müssen Sie nicht ändern, da Sie in einem der folgenden Schritte aufgefordert werden, Ihren allgemeinen Namen einzugeben.
+
+2.  Speichern Sie die Datei **sancert.cnf**.
+
+3.  Generieren Sie einen privaten Schlüssel und die Zertifikatsignieranforderung mithilfe der Konfigurationsdatei sancert.cnf. Verwenden Sie in einer Bash- oder Terminalsitzung den folgenden Befehl:
+    
+         openssl req -new -nodes -keyout myserver.key -out server.csr -newkey rsa:2048 -config sancert.cnf
+
+4.  Geben Sie bei Aufforderung die entsprechenden Informationen ein. Zum Beispiel:
+
+		Ländername (Code aus zwei Buchstaben) []: US
+        Name des Bundeslands/der Provinz (vollständiger Name) []: Washington
+        Ortsname (z. B. Stadt) []: Redmond
+        Name der Organisationseinheit (z. B. Abteilung) []: Azure
+        Ihr allgemeiner Name (z. B. Domänenname) []: www.microsoft.com
+     
+    
+    Nach Abschluss dieses Prozesses haben Sie zwei Dateien: **myserver.key** und **server.csr**. Die Datei **server.csr** enthält die Zertifikatsignieranforderung.
+
+1.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][2] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] -- in englischer Sprache) im Microsoft TechNet Wiki.
+
+2.  Sobald Sie ein Zertifikat von einer Zertifizierungsstelle erhalten haben, speichern Sie es in einer Datei mit dem Namen **myserver.crt**. Wenn die Zertifizierungsstelle das Zertifikat im Textformat bereitgestellt hat, fügen Sie den Zertifikattext einfach in die Datei **myserver.crt** ein. In einem Texteditor sieht der Dateiinhalt etwa folgendermaßen aus:
+    
+         -----BEGIN CERTIFICATE-----
+         MIIDJDCCAgwCCQCpCY4o1LBQuzANBgkqhkiG9w0BAQUFADBUMQswCQYDVQQGEwJV
+         UzELMAkGA1UECBMCV0ExEDAOBgNVBAcTB1JlZG1vbmQxEDAOBgNVBAsTB0NvbnRv
+         c28xFDASBgNVBAMTC2NvbnRvc28uY29tMB4XDTE0MDExNjE1MzIyM1oXDTE1MDEx
+         NjE1MzIyM1owVDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAldBMRAwDgYDVQQHEwdS
+         ZWRtb25kMRAwDgYDVQQLEwdDb250b3NvMRQwEgYDVQQDEwtjb250b3NvLmNvbTCC
+         ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN96hBX5EDgULtWkCRK7DMM3
+         enae1LT9fXqGlbA7ScFvFivGvOLEqEPD//eLGsf15OYHFOQHK1hwgyfXa9sEDPMT
+         3AsF3iWyF7FiEoR/qV6LdKjeQicJ2cXjGwf3G5vPoIaYifI5r0lhgOUqBxzaBDZ4
+         xMgCh2yv7NavI17BHlWyQo90gS2X5glYGRhzY/fGp10BeUEgIs3Se0kQfBQOFUYb
+         ktA6802lod5K0OxlQy4Oc8kfxTDf8AF2SPQ6BL7xxWrNl/Q2DuEEemjuMnLNxmeA
+         Ik2+6Z6+WdvJoRxqHhleoL8ftOpWR20ToiZXCPo+fcmLod4ejsG5qjBlztVY4qsC
+         AwEAATANBgkqhkiG9w0BAQUFAAOCAQEAVcM9AeeNFv2li69qBZLGDuK0NDHD3zhK
+         Y0nDkqucgjE2QKUuvVSPodz8qwHnKoPwnSrTn8CRjW1gFq5qWEO50dGWgyLR8Wy1
+         F69DYsEzodG+shv/G+vHJZg9QzutsJTB/Q8OoUCSnQS1PSPZP7RbvDV9b7Gx+gtg
+         7kQ55j3A5vOrpI8N9CwdPuimtu6X8Ylw9ejWZsnyy0FMeOPpK3WTkDMxwwGxkU3Y
+         lCRTzkv6vnHrlYQxyBLOSafCB1RWinN/slcWSLHADB6R+HeMiVKkFpooT+ghtii1
+         A9PdUQIhK9bdaFicXPBYZ6AgNVuGtfwyuS5V6ucm7RE6+qf+QjXNFg==
+         -----END CERTIFICATE-----
+    
+    Speichern Sie die Datei.
+
+3.  Verwenden Sie in der Befehlszeile, der Bash- oder Terminalsitzung den folgenden Befehl, um **myserver.key** und **myserver.crt** in **myserver.pfx** zu konvertieren, das Format, das von Azure-Websites benötigt wird:
+    
+         openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt
+    
+    Geben Sie bei der entsprechenden Aufforderung ein Kennwort ein, um die PFX-Datei zu schützen.
+    
+    <div  class="dev-callout" markdown="1">
+
+**Hinweis**
+Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei
+(Dateierweiterung .pem) bereitgestellt wird.
+
+
+Der folgende Befehl zeigt, wie eine PFX-Datei erstellt wird, die Zwischenzertifikate enthält, die in der Datei
+**intermediate-cets.pem** enthalten sind:
+
+
+
+		openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
+
+
+
+</div>
+
+    
+Nach der Ausführung dieses Befehls verfügen Sie über die Datei **myserver.pfx**, die für Azure-Websites geeignet ist.
+
+## <a name="bkmk_iismgr"></a>Erhalten eines Zertifikats mit dem IIS-Manager (optional)
+
+Wenn Sie mit IIS-Manager vertraut sind, können Sie damit ein Zertifikat generieren, das für Azure-Websites verwendet werden kann.
+
+1.  Generieren Sie mit IIS-Manager eine Zertifikatsignieranforderung (CSR), die an die Zertifizierungsstelle gesendet wird. Weitere Informationen zum Generieren einer CSR finden Sie unter [Anfordern eines Internetserverzertifikats (IIS 7)][9].
+
+2.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][2] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] -- in englischer Sprache) im Microsoft TechNet Wiki.
+
+3.  Tragen Sie in die CSR das von der Zertifizierungsstelle bereitgestellte Zertifikat ein. Weitere Informationen zum Ausfüllen der CSR finden Sie unter [Installieren eines Internetserverzertifikats (IIS 7)][10].
+
+4.  Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur
+    Verfügung gestellt. Wählen Sie die für Microsoft IIS bereitgestellte Version.
+    
+    Klicken Sie nach dem Herunterladen des Zertifikats im Explorer mit der rechten Maustaste darauf, und wählen Sie **Zertifikat installieren**. Verwenden Sie die Standardwerte im **Zertifikat-Importassistenten**, und wählen Sie **Weiter** aus, bis der Import abgeschlossen ist.
+
+5.  Exportieren Sie das Zertifikat aus IIS Manager. Weitere Informationen zum Exportieren des Zertifikats finden Sie unter [Exportieren eines Serverzertifikats (IIS 7)][11]. Die exportierte Datei wird später nach Azure hochgeladen, um für Ihre Azure-Website verwendet zu werden.
+    
+    <div  class="dev-callout" markdown="1">
+
+	<b>Hinweis</b>
+	<p>Aktivieren Sie während des Exportprozesses die Option <b>Ja, privaten Schlüssel exportieren</b>. Damit wird der private Schlüssel in das exportierte Zertifikat einbezogen.</p>
+
+
+    </div>
+
+    
+    <div  class="dev-callout" markdown="1">
+
+	<b>Hinweis</b>
+	Aktivieren Sie während des Exportprozesses die Optionen <b>Alle Zertifikate im Zertifizierungspfad einbeziehen</b> und <b>Alle erweiterten Eigenschaften exportieren</b>. Damit werden alle Zwischenzertifikate in das exportierte Zertifikat einbezogen.
+
+
+    </div>
+
+
+[](bkmk_selfsigned)<h2 data-morhtml="true">Selbstsignierte Zertifikate (optional)</h2>
+
+In bestimmten Fällen möchten Sie eventuell ein Zertifikat für Testzwecke erhalten und den Kauf eines Zertifikats von einer vertrauenswürdigen Zertifizierungsstelle verzögern, bis Sie die Produktion aufnehmen. Diese Lücke kann durch selbstsignierte Zertifikate gefüllt werden. Ein selbstsigniertes Zertifikat ist ein Zertifikat, das Sie erstellen und signieren, als wären Sie eine Zertifizierungsstelle. Zwar kann mit diesem Zertifikat eine Website geschützt werden, die meisten Browser geben jedoch Fehler zurück, wenn die Website besucht wird, da das Zertifikat nicht von einer vertrauenswürdigen Zertifizierungsstelle signiert wurde. Einige Browser verweigern möglicherweise sogar den Aufruf der Website.
+
+Es gibt zwar viele Möglichkeiten, ein selbstsigniertes Zertifikat zu erstellen, dieser Artikel enthält jedoch nur Erläuterungen zur Verwendung von **makecert** und **OpenSSL**.
+
+### Erstellen eines selbstsignierten Zertifikats mit makecert
+
+Mit den folgenden Schritten können Sie ein Testzertifikat mit einem Windows-System erstellen, in dem Visual Studio installiert ist:
+
+1.  Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Developer-Eingabeaufforderung**. Klicken Sie dann mit der rechten Maustaste auf **Developer-Eingabeaufforderung**, und wählen Sie **Als Administrator ausführen**.
+    
+    Wenn das Dialogfeld "Benutzerkontensteuerung" angezeigt wird, wählen Sie **Ja**, um fortzufahren.
+
+2.  Geben Sie an der Developer-Eingabeaufforderung den folgenden Befehl ein, um ein neues selbstsigniertes Zertifikat zu erstellen. **serverdnsname** muss durch den DNS-Namen Ihrer Website ersetzt werden.
+    
+         makecert -r -pe -b 01/01/2013 -e 01/01/2014 -eku 1.3.6.1.5.5.7.3.1 -ss My -n CN=serverdnsname -sky exchange -sp "Microsoft RSA SChannel Cryptographic Provider" -sy 12 -len 2048
+    
+    Mit diesem Befehl wird ein Zertifikat erstellt, das zwischen dem 01.01.2013 und dem 01.01.2014 gültig ist und den Speicherort im Zertifikatspeicher "CurrentUser" ablegt.
+
+3.  Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Windows PowerShell**, und starten Sie diese Anwendung.
+
+4.  Geben Sie an der Eingabeaufforderung von Windows PowerShell die folgenden Befehle ein, um das zuvor erstellte Zertifikat zu exportieren:
+    
+         $mypwd = ConvertTo-SecureString -String "password" -Force -AsPlainText
+         get-childitem cert:\currentuser\my -dnsname serverdnsname | export-pfxcertificate -filepath file-to-export-to.pfx -password $mypwd
+    
+    Damit wird das angegebene Kennwort in $mypwd als geschützte Zeichenfolge gespeichert. Anschließend wird das Zertifikat mithilfe des DNS-Namens gesucht, der mit dem Parameter **dnsname** angegeben wird, und in die mit dem Parameter **filepath** angegebene Datei exportiert. Die exportierte Datei wird mit der geschützten Zeichenfolge geschützt, die das Kennwort enthält.
+
+### Erstellen eines selbstsignierten Zertifikats mit OpenSSL
+
+1.  Erstellen Sie ein neues Dokument mit dem Namen **serverauth.cnf**, und verwenden Sie für die Datei den folgenden Inhalt:
+    
+         [ req ]
+         default_bits           = 2048
+         default_keyfile        = privkey.pem
+         distinguished_name     = req_distinguished_name
+         attributes             = req_attributes
+         x509_extensions        = v3_ca
+        
+         [ req_distinguished_name ]
+         countryName			= Ländername (Code aus zwei Buchstaben)
+         countryName_min			= 2
+         countryName_max			= 2
+         stateOrProvinceName		= Name des Bundeslands/der Provinz (vollständiger Name)
+         localityName			= Ortsname (z. B. Stadt)
+         0.organizationName		= Organisationsname (z. B. Firma)
+         organizationalUnitName		= Name der Organisationseinheit (z. B. Abteilung)
+         commonName			= allgemeiner Name (z. B. der Domänennamen Ihrer Website)
+         commonName_max			= 64
+         emailAddress			= E-Mail-Adresse
+         emailAddress_max		= 40
+        
+         [ req_attributes ]
+         challengePassword		= abzufragendes Kennwort
+         challengePassword_min		= 4
+         challengePassword_max		= 20
+        
+         [ v3_ca ]
+          subjectKeyIdentifier=hash
+          authorityKeyIdentifier=keyid:always,issuer:always
+          basicConstraints = CA:false
+          keyUsage=nonRepudiation, digitalSignature, keyEncipherment
+          extendedKeyUsage = serverAuth
+    
+    Damit werden die Konfigurationseinstellungen festgelegt, die zum Erzeugen eines SSL-Zertifikats erforderlich sind, das von Azure-Websites verwendet werden kann.
+
+2.  Generieren Sie ein neues selbstsigniertes Zertifikat, indem Sie Folgendes in einer Befehlszeile, einer Bash- oder Terminalsitzung eingeben:
+    
+         openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myserver.key -out myserver.crt -config serverauth.cnf
+    
+    Damit wird unter Verwendung der in der Datei **serverauth.cnf** festgelegten Konfigurationseinstellungen ein neues Zertifikat erstellt.
+
+3.  Verwenden Sie den folgenden Befehl, um das Zertifikat in eine PFX-Datei zu exportieren, die zu einer Azure-Website hochgeladen werden kann:
+    
+         openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt
+    
+    Geben Sie bei der entsprechenden Aufforderung ein Kennwort ein, um die PFX-Datei zu schützen.
+    
+    Die mit diesem Befehl erzeugte Datei **myserver.pfx** kann für Testzwecke zum Schützen der Azure-Website verwendet werden.
+
+
+
+[1]: https://www.windowsazure.com/en-us/pricing/details/
+[2]: http://go.microsoft.com/fwlink/?LinkID=269988
+[3]: http://www.openssl.org/
+[4]: http://technet.microsoft.com/library/cc725793.aspx
+[5]: https://manage.windowsazure.com/
+[6]: http://www.windowsazure.com/en-us/support/options/
+[7]: http://en.wikipedia.org/wiki/Server_Name_Indication
+[8]: http://en.wikipedia.org/wiki/Transport_Layer_Security
+[9]: http://technet.microsoft.com/en-us/library/cc732906(WS.10).aspx
+[10]: http://technet.microsoft.com/en-us/library/cc771816(WS.10).aspx
+[11]: http://technet.microsoft.com/en-us/library/cc731386(WS.10).aspx

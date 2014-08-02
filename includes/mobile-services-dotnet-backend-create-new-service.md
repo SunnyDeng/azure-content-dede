@@ -1,40 +1,37 @@
 
 
-Follow these steps to create a new mobile service.
+Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstellen.
 
-1.	Log into the [Management Portal]. 
+1.  Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an.
 
-2.	At the bottom of the navigation pane, click **+NEW**.
+2.  Klicken Sie unten im Navigationsbereich auf **+NEW**.
 
-	![](./media/mobile-services-dotnet-backend-create-new-service/plus-new.png)
+    ![](./media/mobile-services-dotnet-backend-create-new-service/plus-new.png)
 
-3.	Expand **Compute** and **Mobile Service**, then click **Create**.
+3.  Erweitern Sie **Compute** und **Mobile Service**, und klicken Sie dann auf **Erstellen**.
 
-	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create.png)
+    ![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create.png)
 
-	This displays the **New Mobile Service** dialog.
+    Das Dialogfeld **New Mobile Service** wird angezeigt.
 
-4.	In the **Create a mobile service** page, select **Create a free 20 MB SQL Database**, select **.NET** runtime, then type a subdomain name for the new mobile service in the **URL** textbox and wait for name verification. Once name verification completes, click the right arrow button to go to the next page.	
+4.  Wählen Sie auf der Seite **Create a mobile service** die Option **Create a free 20 MB SQL Database** und die Laufzeit **.NET** aus. Geben Sie dann einen Unterdomänennamen für den neuen mobilen Dienst im Textfeld **URL** ein, und warten Sie, bis der Name überprüft wurde. Nachdem der Name fertig überprüft wurde, klicken Sie auf den Pfeil nach rechts, um die nächste Seite aufzurufen.
 
-	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page1.png)
+    ![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page1.png)
 
-   	This displays the **Specify database settings** page.
+    Dadurch wird die Seite **Specify database settings** angezeigt.
 
-	<div class="dev-callout"> 
-	<b>Note</b> 
-	<p>As part of this tutorial, you create a new SQL Database instance and server. You can reuse this new database and administer it as you would any other SQL Database instance. If you already have a database in the same region as the new mobile service, you can instead choose <strong>Use existing Database</strong> and then select that database. The use of a database in a different region is not recommended because of additional bandwidth costs and higher latencies.</p></div>	
+    <div class="dev-callout"> 
+    <b>Hinweis</b> 
+    <p>Im Rahmen dieses Lernprogramms erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank in derselben Region wie der neue mobile Dienst verfügen, können Sie stattdessen <strong>Vorhandene Datenbank verwenden</strong> und dann diese Datenbank auswählen. Die Verwendung einer Datenbank in einer anderen Region wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann.</p></div>   
 
-6.	In **Name**, type the name of the new database, then type **Login name**, which is the administrator login name for the new SQL Database server, type and confirm the password, and click the check button to complete the process.
+1.  Geben Sie unter **Name** den Namen der neuen Datenbank ein. Geben Sie dann den **Anmeldenamen** ein. Dies ist der Administratoranmeldename für den neuen SQL-Datenbankserver. Geben Sie das Kennwort ein, und bestätigen Sie es, und klicken Sie dann auf den Häkchenknopf, um den Vorgang abzuschließen.
 
-	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page2.png)
+    ![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page2.png)
 
-	<div class="dev-callout"> 
-	<b>Note</b> 
-	<p>When the password that you supply does not meet the minimum requirements or when there is a mismatch, a warning is displayed. <br/>We recommend that you make a note of the administrator login name and password that you specify; you will need this information to reuse the SQL Database instance or the server in the future.</p> 
-	</div>
+    **Hinweis**
 
-You have now created a new mobile service that can be used by your mobile apps.
+    Wenn das eingegebene Kennwort nicht den Mindestanforderungen entspricht oder es keine Übereinstimmung gibt, wird eine Warnung angezeigt.
+    Es wird empfohlen, sich den Anmeldenamen und das Kennwort des Administrators zu notieren. Sie benötigen diese Informationen, um die SQL-Datenbankinstanz oder den Server in der Zukunft wiederzuverwenden.
 
+Sie haben nun einen neuen mobilen Dienst erstellt, der von Ihren mobilen Apps verwendet werden kann.
 
-<!-- URLs. -->
-[Management Portal]: https://manage.windowsazure.com/

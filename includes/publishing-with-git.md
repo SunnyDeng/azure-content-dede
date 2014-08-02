@@ -232,15 +232,15 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 
 * * *
 
-**Symptom**: Couldn\'t resolve host \'hostname\'
+**Symptom**: Couldn't resolve host 'hostname'
 
-**Ursache**: Dieser Fehler kann auftreten, wenn die Adressinformationen, die beim Erstellen der \'azure\'-Remotewebsite eingegeben wurden, falsch waren.
+**Ursache**: Dieser Fehler kann auftreten, wenn die Adressinformationen, die beim Erstellen der 'azure'-Remotewebsite eingegeben wurden, falsch waren.
 
-**Lösung**: Verwenden Sie den Befehl `git remote -v`, um alle Remote-Websites zusammen mit der jeweils zugehörigen URL aufzulisten. Überprüfen Sie, ob die URL für die \'azure\'-Remotewebsite korrekt ist. Entfernen Sie diese Remote-Website bei Bedarf und erstellen Sie sie mit der korrekten URL neu.
+**Lösung**: Verwenden Sie den Befehl `git remote -v`, um alle Remote-Websites zusammen mit der jeweils zugehörigen URL aufzulisten. Überprüfen Sie, ob die URL für die 'azure'-Remotewebsite korrekt ist. Entfernen Sie diese Remote-Website bei Bedarf und erstellen Sie sie mit der korrekten URL neu.
 
 * * *
 
-**Symptom**: No refs in common and none specified; doing nothing. Sie sollten eine Verzweigung wie \'master\' angeben.
+**Symptom**: No refs in common and none specified; doing nothing. Sie sollten eine Verzweigung wie 'master' angeben.
 
 **Ursache**: Dieser Fehler kann auftreten, wenn Sie beim Ausführen eines Git-Push-Vorgangs keine Verzweigung angeben und den von Git verwendeten "push.default"-Wert nicht festgelegt haben.
 
@@ -252,7 +252,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 
 **Symptom**: src refspec [branchname] does not match any.
 
-**Ursache**: Dieser Fehler kann auftreten, wenn Sie versuchen, auf eine andere Verzweigung als die Hauptverzweigung auf der \'azure\'-Remotewebsite per Push zu übertragen.
+**Ursache**: Dieser Fehler kann auftreten, wenn Sie versuchen, auf eine andere Verzweigung als die Hauptverzweigung auf der 'azure'-Remotewebsite per Push zu übertragen.
 
 **Lösung**: Führen Sie den Push-Vorgang unter Angabe der Hauptverzweigung erneut durch. Zum Beispiel:
 
@@ -266,7 +266,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 
 **Lösung**: Zusätzliche Meldungen mit "npm ERR!" sollten vor diesem Fehler protokolliert werden und können zusätzlichen Kontext für diesen Fehler bereitstellen. Es folgen bekannte Ursachen für diesen Fehler und die entsprechende "npm ERR!"-Meldung:
 
-* **Fehlerhafte "package.json"-Datei**: npm ERR! Couldn\'t read dependencies.
+* **Fehlerhafte "package.json"-Datei**: npm ERR! Couldn't read dependencies.
 
 * **Systemeigenes Modul ohne binäre Distribution für Windows**:
   

@@ -1,68 +1,71 @@
 
-##<a name="update-app"></a>Update the app to call the custom API
 
-1. In Visual Studio, open the MainPage.xaml file in your quickstart project, locate the **Button** element named `ButtonRefresh`, and replace it with the following XAML code: 
+Aktualisieren der App zum Aufruf der benutzerdefinierten API
+------------------------------------------------------------
 
-		<StackPanel Orientation="Horizontal">
-	        <Button Margin="72,0,0,0" Name="ButtonRefresh" 
-	                Click="ButtonRefresh_Click">Refresh</Button>
-	        <Button Margin="12,0,0,0" Name="ButtonCompleteAll" 
-	                Click="ButtonCompleteAll_Click">Complete All</Button>
-	    </StackPanel>
+1.  Öffnen Sie in Visual Studio die Datei MainPage.xaml in Ihrem Schnellstart-Projekt, suchen Sie das Element **Schaltfläche** namens `ButtonRefresh`, und ersetzen Sie es durch den folgenden XAML-Code:
 
-	This adds a new button to the page. 
+         <StackPanel Orientation="Horizontal">
+             <Button Margin="72,0,0,0" Name="ButtonRefresh" 
+                     Click="ButtonRefresh_Click">Refresh</Button>
+             <Button Margin="12,0,0,0" Name="ButtonCompleteAll" 
+                     Click="ButtonCompleteAll_Click">Complete All</Button>
+         </StackPanel>
 
-2. Open the MainPage.xaml.cs code file, and add the following class definition code:
+    Auf diese Weise wird eine neue Schaltfläche zur Seite hinzugefügt.
 
-	    public class MarkAllResult
-	    {
-	        public int Count { get; set; }
-	    }
+2.  Öffnen Sie die Codedatei MainPage.xaml.cs, und fügen Sie den folgenden Klassendefinitionscode hinzu:
 
-	This class is used to hold the row count value returned by the custom API. 
+         public class MarkAllResult
+         {
+             public int Count { get; set; }
+         }
 
-3. Locate the **RefreshTodoItems** method in the **MainPage** class, and make sure that the `query` is defined by using the following **Where** method:
+    Diese Klasse dient zur Aufnahme des von der benutzerdefinierten API zurückgegebenen Zeilenanzahlwerts.
 
-        .Where(todoItem => todoItem.Complete == false)
+3.  Suchen Sie die Methode **RefreshTodoItems** in der **MainPage**-Klasse, und stellen Sie sicher, dass `query` durch die folgende **Where**-Methode definiert ist:
 
-	This filters the items so that completed items are not returned by the query.
+         .Where(todoItem => todoItem.Complete == false)
 
-3. In the **MainPage** class, add the following method:
+    Hierdurch werden die Elemente so gefiltert, dass abgeschlossene Elemente von der Abfrage nicht zurückgegeben werden.
 
-		private async void ButtonCompleteAll_Click(object sender, RoutedEventArgs e)
-		{
-		    string message;
-		    try
-		    {
-		        // Asynchronously call the custom API using the POST method. 
-		        var result = await App.MobileService
-		            .InvokeApiAsync<MarkAllResult>("completeAll", 
-		            System.Net.Http.HttpMethod.Post, null);
-		        message =  result.Count + " item(s) marked as complete.";
-		        RefreshTodoItems();
-		    }
-		    catch (MobileServiceInvalidOperationException ex)
-		    {
-		        message = ex.Message;                
-		    }
-		
-		    var dialog = new MessageDialog(message);
-		    dialog.Commands.Add(new UICommand("OK"));
-		    await dialog.ShowAsync();
-		}
+4.  Fügen Sie in der **MainPage**-Klasse die folgende Methode hinzu:
 
-	This method handles the **Click** event for the new button. The [InvokeApiAsync](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx) method is called on the client, which sends a POST request to the new custom API. The result returned by the custom API is displayed in a message dialog, as are any errors.
+         private async void ButtonCompleteAll_Click(object sender, RoutedEventArgs e)
+         {
+             string message;
+             try
+             {
+                 // Asynchronously call the custom API using the POST method. 
+                 var result = await App.MobileService
+                     .InvokeApiAsync<MarkAllResult>("completeAll", 
+                     System.Net.Http.HttpMethod.Post, null);
+                 message =  result.Count + " item(s) marked as complete.";
+                 RefreshTodoItems();
+             }
+             catch (MobileServiceInvalidOperationException ex)
+             {
+                 message = ex.Message;                
+             }
+            
+             var dialog = new MessageDialog(message);
+             dialog.Commands.Add(new UICommand("OK"));
+             await dialog.ShowAsync();
+         }
 
-## <a name="test-app"></a>Test the app
+    Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die [InvokeApiAsync](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx)-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
 
-1. In Visual Studio, press the **F5** key to rebuild the project and start the app.
+Testen der App
+--------------
 
-2. In the app, type some text in **Insert a TodoItem**, then click **Save**.
+1.  Drücken Sie in Visual Studio die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
-3. Repeat the previous step until you have added several todo items to the list.
+2.  Geben Sie in der App in **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
 
-4. Click the **Complete All** button.
+3.  Wiederholen Sie den vorherigen Schritt, bis Sie der Liste mehrere todo-Einträge hinzugefügt haben.
 
-  	![](./media/mobile-services-windows-store-dotnet-call-custom-api/mobile-custom-api-windows-store-completed.png)
+4.  Klicken Sie auf die Schaltfläche **Complete All**.
 
-	A message dialog is displayed that indicates the number of items marked complete and the filtered query is executed again, which clears all items from the list.
+	![](./media/mobile-services-windows-store-dotnet-call-custom-api/mobile-custom-api-windows-store-completed.png)
+
+    Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, wodurch alle Elemente aus der Liste gelöscht werden.

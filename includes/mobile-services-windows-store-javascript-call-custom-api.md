@@ -1,63 +1,66 @@
 
-##<a name="update-app"></a>Update the app to call the custom API
 
-1. In Visual Studio, open the default.html file in your quickstart project, locate the **button** element named `buttonRefresh`, and add the following new element right after it: 
+Aktualisieren der App zum Aufruf der benutzerdefinierten API
+------------------------------------------------------------
 
-		<button id="buttonCompleteAll" style="margin-left: 5px">Complete All</button>
+1.  Öffnen Sie in Visual Studio die Datei default.html in Ihrem Schnellstart-Projekt, suchen Sie das Element **Schaltfläche** namens `buttonRefresh`, und fügen Sie das folgende neue Element direkt dahinter ein:
 
-	This adds a new button to the page. 
+         <button id="buttonCompleteAll" style="margin-left: 5px">Complete All</button>
 
-2. Open the default.js code file in the `js` project folder, locate the **refreshTodoItems** function and make sure that this function contains the following code:
+    Auf diese Weise wird eine neue Schaltfläche zur Seite hinzugefügt.
 
-	    todoTable.where({ complete: false })
-	       .read()
-	       .done(function (results) {
-	           todoItems = new WinJS.Binding.List(results);
-	           listItems.winControl.itemDataSource = todoItems.dataSource;
-	       });            
+2.  Öffnen Sie die Codedatei default.js im `js`-Projektordner, suchen Sie die Funktion **refreshTodoItems** und stellen Sie sicher, dass diese Funktion den folgenden Code enthält:
 
-	This filters the items so that completed items are not returned by the query.
+         todoTable.where({ complete: false })
+            .read()
+            .done(function (results) {
+                todoItems = new WinJS.Binding.List(results);
+                listItems.winControl.itemDataSource = todoItems.dataSource;
+            });            
 
-3. After the **refreshTodoItems** function, add the following code:
+    Hierdurch werden die Elemente so gefiltert, dass abgeschlossene Elemente von der Abfrage nicht zurückgegeben werden.
 
-		var completeAllTodoItems = function () {
-		    var okCommand = new Windows.UI.Popups.UICommand("OK");
-		
-		    // Asynchronously call the custom API using the POST method. 
-		    mobileService.invokeApi("completeall", {
-		        body: null,
-		        method: "post"
-		    }).done(function (results) {
-		        var message = results.result.count + " item(s) marked as complete.";
-		        var dialog = new Windows.UI.Popups.MessageDialog(message);
-		        dialog.commands.append(okCommand);
-		        dialog.showAsync().done(function () {
-		            refreshTodoItems();
-		        });
-		    }, function (error) {
-		        var dialog = new Windows.UI.Popups
-		            .MessageDialog(error.message);
-		        dialog.commands.append(okCommand);
-		        dialog.showAsync().done();
-		    });
-		};
+3.  Nach der Funktion **refreshTodoItems** fügen Sie den folgenden Code ein:
 
-        buttonCompleteAll.addEventListener("click", function () {
-            completeAllTodoItems();
-        });
+         var completeAllTodoItems = function () {
+             var okCommand = new Windows.UI.Popups.UICommand("OK");
+            
+             // Asynchronously call the custom API using the POST method. 
+             mobileService.invokeApi("completeall", {
+                 body: null,
+                 method: "post"
+             }).done(function (results) {
+                 var message = results.result.count + " item(s) marked as complete.";
+                 var dialog = new Windows.UI.Popups.MessageDialog(message);
+                 dialog.commands.append(okCommand);
+                 dialog.showAsync().done(function () {
+                     refreshTodoItems();
+                 });
+             }, function (error) {
+                 var dialog = new Windows.UI.Popups
+                     .MessageDialog(error.message);
+                 dialog.commands.append(okCommand);
+                 dialog.showAsync().done();
+             });
+         };
 
-	This method handles the **Click** event for the new button. The **InvokeApiAsync** method is called on the client, which sends a POST request to the new custom API. The result returned by the custom API is displayed in a message dialog, as are any errors.
+         buttonCompleteAll.addEventListener("click", function () {
+             completeAllTodoItems();
+         });
 
-## <a name="test-app"></a>Test the app
+    Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die **InvokeApiAsync**-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
 
-1. In Visual Studio, press the **F5** key to rebuild the project and start the app.
+Testen der App
+--------------
 
-2. In the app, type some text in **Insert a TodoItem**, then click **Save**.
+1.  Drücken Sie in Visual Studio die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
-3. Repeat the previous step until you have added several todo items to the list.
+2.  Geben Sie in der App in **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
 
-4. Click the **Complete All** button.
+3.  Wiederholen Sie den vorherigen Schritt, bis Sie der Liste mehrere todo-Einträge hinzugefügt haben.
 
-  	![](./media/mobile-services-windows-store-javascript-call-custom-api/mobile-custom-api-windows-store-completed.png)
+4.  Klicken Sie auf die Schaltfläche **Complete All**.
 
-	A message dialog is displayed that indicates the number of items marked complete and the filtered query is executed again, which clears all items from the list.
+	![](./media/mobile-services-windows-store-javascript-call-custom-api/mobile-custom-api-windows-store-completed.png)
+
+    Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, wodurch alle Elemente aus der Liste gelöscht werden.

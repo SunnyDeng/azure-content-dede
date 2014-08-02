@@ -1,24 +1,27 @@
 
 
-After testing the Windows Store app against the local mobile service, the final stage of this tutorial is to publish the mobile service to Azure and run the app against the live service.
+Nachdem Sie die Windows Store-App anhand des lokalen mobilen Diensts getestet haben, besteht der letzte Schritt dieses Lernprogramms im Veröffentlichen des mobilen Diensts in Azure und Ausführen der App mit einem Live-Dienst.
 
-1. In Solution Explorer, right-click the mobile service project and click **Publish**
+1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das mobile Dienstprojekt und anschließend auf **Veröffentlichen**.
 
-	![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish.png)
+    ![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish.png)
 
-	This displays the Publish Web dialog box.
+    Daraufhin wird das Dialogfeld "Web veröffentlichen" angezeigt.
 
-2. Click **Import**, click **Browse**, navigate to the location where you earlier saved the publish profile file, Select the publish profile file, click **OK**.
+2.  Klicken Sie auf **Importieren**, dann auf **Durchsuchen**, navigieren Sie zum Speicherort der zuvor gespeicherten Veröffentlichungsprofildatei, wählen Sie die Veröffentlichungsprofildatei aus, und klicken Sie auf **OK**.
 
-	![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-import-profile.png)
+    ![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-import-profile.png)
 
-	This loads the information needed by Visual Studio to publish your mobile service to Azure. 
-	
-	<div class="dev-callout"><strong>Security note</strong> <p>After importing the publish profile, consider deleting the downloaded file as it contains information that can be used by others to access your services.</p></div>
+    Daraufhin werden die von Visual Studio benötigten Informationen zum Veröffentlichen Ihres mobilen Diensts in Azure geladen.
 
-3. Click **Validate connection** to verify that publishing is correctly configured, then click **Publish**.
+    **Sicherheitshinweis**
 
-	![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-2.png)
+    Nach dem Importieren des Veröffentlichungsprofils sollten Sie die heruntergeladene Datei löschen, da sie Informationen enthält, die von anderen Personen für den Zugriff auf Ihre Dienste verwendet werden können.
 
-	After publishing succeeds, you will again see the confirmation page that the mobile service is up and running, this time in Azure.
+3.  Klicken Sie auf **Verbindung prüfen**, um sicherzustellen, dass die Veröffentlichung richtig konfiguriert ist, und klicken Sie dann auf **Veröffentlichen**.
+
+    ![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-2.png)
+
+    Nachdem die Veröffentlichung erfolgreich durchgeführt wurde, wird erneut die Seite zur Bestätigung angezeigt, dass der Dienst ausgeführt wird, diesmal in Azure.
+
 
