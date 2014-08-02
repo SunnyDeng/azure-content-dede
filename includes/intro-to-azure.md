@@ -276,7 +276,7 @@ Doch diese SDKs unterstützen Sie nicht nur beim Erstellen von Azure-Anwendungen
 <h2><a id="start" ></a>Erste Schritte</h2>
 
 
-Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt darin, Ihre erste Azure-Anwendung zu schreiben. Wählen Sie die gewünschte Sprache, [holen Sie sich das entsprechende SDK](/en-us/downloads/), und los geht's. Cloud-Computing ist der neue Standard -- machen Sie jetzt den ersten Schritt.
+Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt darin, Ihre erste Azure-Anwendung zu schreiben. Wählen Sie die gewünschte Sprache, [holen Sie sich das entsprechende SDK](/en-us/downloads/), und los geht\'s. Cloud-Computing ist der neue Standard -- machen Sie jetzt den ersten Schritt.
 
 
 

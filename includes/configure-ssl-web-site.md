@@ -3,13 +3,18 @@
 
 Wenn ein Benutzer Ihre Website über HTTPS besucht, wird die Kommunikation zwischen der Website und dem Browser mit der Secure Socket Layer (SSL)-Verschlüsselung geschützt. Dies ist die gängigste Methode zum Schützen von Daten, die über das Internet gesendet werden, und bietet Besuchern die Sicherheit, dass ihre Transaktionen mit Ihrer Website sicher sind. In diesem Artikel wird erläutert, wie HTTPS für eine Azure-Website aktiviert wird.
 
-> [WACOM.NOTE] Um HTTPS für benutzerdefinierte Domänennamen zu aktivieren, müssen Sie Ihre Websites für den Standardmodus konfigurieren. Dadurch entstehen eventuell zusätzliche Kosten, wenn Sie derzeit den kostenlosen oder Freigabemodus verwenden. Weitere Informationen über Preise für den Freigabe- oder Standardmodus finden Sie unter [Preisübersicht][1].
+> [WACOM.NOTE] Um HTTPS für benutzerdefinierte Domänennamen zu
+> aktivieren, müssen Sie Ihre Websites für den Standardmodus
+> konfigurieren. Dadurch entstehen eventuell zusätzliche Kosten, wenn
+> Sie derzeit den kostenlosen oder Freigabemodus verwenden. Weitere
+> Informationen über Preise für den Freigabe- oder Standardmodus finden
+> Sie unter [Preisübersicht][1].
 
 [](bkmk_azurewebsites)<h2 data-morhtml="true">Die Domäne *.azurewebsites.net</h2>
 
 Wenn Sie keinen benutzerdefinierten Domänennamen verwenden möchten, sondern stattdessen die Domäne *.azurewebsites.net verwenden möchten, die Ihrer Website von Azure zugewiesen wird (z. B. contoso.azurewebsites.net), wird Ihre Website bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt. Sie können **https://meinewebsite.azurewebsites.net** für den geschützten Zugriff auf Ihre Website verwenden.
 
-In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänennamen wie **contoso.com**, **www.contoso.com** oder **\*.contoso.com** aktiviert wird.
+In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänennamen wie **contoso.com**, **www.contoso.com** oder ***.contoso.com** aktiviert wird.
 
 [](bkmk_domainname)<h2 data-morhtml="true">Benutzerdefinierte Domänennamen</h2>
 
@@ -17,7 +22,9 @@ Wenn Sie HTTPS für einen benutzerdefinierten Domänennamen wie **contoso.com** 
 
 Wenn Sie einen Domänennamen registrieren, können Sie auch Unterdomänen wie **www.contoso.com** oder **mail.contoso.com** erstellen. Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht wahrscheinlich ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen wie **contoso.com**, **www.contoso.com** und **mail.contoso.com** schützen müssen, wird ein Platzhalterzertifikat oder ein Zertifikat mit einem alternativen Antragstellernamen (subjectAltName, SAN) benötigt.
 
-> [WACOM.NOTE] In den meisten Browsern wird eine Warnung angezeigt, wenn der im Zertifikat angegebene Domänenname nicht mit dem im Browser eingegebenen Domänennamen übereinstimmt. Wenn im Zertifikat z. B. nur
+> [WACOM.NOTE] In den meisten Browsern wird eine Warnung angezeigt, wenn
+> der im Zertifikat angegebene Domänenname nicht mit dem im Browser
+> eingegebenen Domänennamen übereinstimmt. Wenn im Zertifikat z. B. nur
 > www.contoso.com aufgeführt wird, der Zugriff auf die Website in
 > Internet Explorer jedoch über den Domänennamen login.contoso.com
 > erfolgt, wird folgende Warnung angezeigt: "Das Sicherheitszertifikat
@@ -26,7 +33,7 @@ Wenn Sie einen Domänennamen registrieren, können Sie auch Unterdomänen wie **
 
 **Basiszertifikate** sind Zertifikate, bei denen der allgemeine Name (Common Name, CN) im Zertifikat auf die spezifische Domäne oder Unterdomäne eingestellt ist, die Clients zum Besuchen der Website verwenden, zum Beispiel **www.contoso.com**. Diese Zertifikate schützen nur den vom CN angegebenen einzelnen Domänennamen.
 
-**Platzhalterzertifikate** sind Zertifikate, bei denen der CN des Zertifikats den Platzhalter '\*' auf Unterdomänenebene enthält. So kann das Zertifikat für eine bestimmte Domäne einer einzelnen Unterdomänenebene entsprechen. Ein Platzhalterzertifikat für **\*.contoso.com** gilt beispielsweise für **www.contoso.com**, **payment.contoso.com** und **login.contoso.com**. Es gilt hingegen nicht für **test.login.contoso.com**, da hier eine zusätzliche Unterdomänenebene hinzukommt. Es gilt auch nicht für **contoso.com**, da es sich hierbei um die Stammdomänenebene und nicht um eine Unterdomäne handelt.
+**Platzhalterzertifikate** sind Zertifikate, bei denen der CN des Zertifikats den Platzhalter '*' auf Unterdomänenebene enthält. So kann das Zertifikat für eine bestimmte Domäne einer einzelnen Unterdomänenebene entsprechen. Ein Platzhalterzertifikat für ***.contoso.com** gilt beispielsweise für **www.contoso.com**, **payment.contoso.com** und **login.contoso.com**. Es gilt hingegen nicht für **test.login.contoso.com**, da hier eine zusätzliche Unterdomänenebene hinzukommt. Es gilt auch nicht für **contoso.com**, da es sich hierbei um die Stammdomänenebene und nicht um eine Unterdomäne handelt.
 
 Microsoft stellt für den Domänennamen *.azurewebsites.net, der für Ihre Website automatisch erstellt wird, ein Platzhalterzertifikat bereit.
 

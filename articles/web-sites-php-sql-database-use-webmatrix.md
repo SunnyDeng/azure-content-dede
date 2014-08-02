@@ -5,9 +5,9 @@ Erstellen und Bereitstellen einer PHP-Website und SQL-Datenbank mit WebMatrix
 
 In diesem Lernprogramm wird gezeigt, wie Sie WebMatrix nutzen, um eine PHP-Anwendung, die eine Azure-SQL-Datenbank verwendet, zu entwickeln und auf einer Azure-Website bereitzustellen. WebMatrix ist ein kostenloses Webentwicklungstool von Microsoft, das alles enthält, was Sie für die Entwicklung von Websites benötigen. WebMatrix unterstützt PHP und enthält IntelliSense für die PHP-Entwicklung.
 
-Dieses Lernprogramm geht davon aus, dass Sie [SQL Server Express](http://www.microsoft.com/en-us/download/details.aspx?id=29062) auf Ihrem Computer installiert haben, sodass Sie eine Anwendung lokal testen können. Sie können das Lernprogramm jedoch auch durchführen, ohne SQL Server Express installiert zu haben. Sie können stattdessen die Anwendung auch direkt in Azure-Websites bereitstellen.
+Dieses Lernprogramm geht davon aus, dass Sie [SQL Server Express](http://www.microsoft.com/en-us/download/details.aspx?id=29062) auf Ihrem Computer installiert haben, sodass Sie eine Anwendung lokal testen können. Sie können das Lernprogramm jedoch auch durchführen, ohne SQL Server Express installiert zu haben. Sie können stattdessen die Anwendung auch direkt in Azure-Websites bereitstellen:
 
-Nach der Durchführung dieses Lernprogramms haben Sie eine in Azure ausgeführte PHP-SQL-Datenbank.
+Nachdem Sie diese Anleitung durchgearbeitet haben, werden Sie eine in Azure ausgeführte PHP-/SQL-Website besitzen.
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -54,21 +54,21 @@ Erstellen einer Website und SQL-Datenbank
 
     ![Neue Website benutzerdefiniert erstellen](./media/web-sites-php-sql-database-use-webmatrix/NewWebSite2.png)
 
-    Geben Sie einen Wert für **URL** ein, wählen Sie die Option zum Erstellen einer neuen SQL-Datenbank**** aus der Dropdown-Liste **DATENBANK** aus, und wählen Sie das Datencenter für Ihre Website aus der Dropdown-Liste **REGION** aus. Klicken Sie unten im Dialogfeld auf den Pfeil.
+    Geben Sie einen Wert für **URL** ein, wählen Sie **Create a New SQL Database** (Neue SQL-Datenbank erstellen) aus der Dropdown-Liste **DATENBANK** aus, und wählen Sie das Datencenter für Ihre Website aus der Dropdown-Liste **REGION** aus. Klicken Sie unten im Dialogfeld auf den Pfeil.
 
     ![Websitedetails eingeben](./media/web-sites-php-sql-database-use-webmatrix/NewWebSite3_SQL.png)
 
-4.  Geben Sie einen Wert für den **NAMEN** der Datenbank ein, und wählen Sie **NEW SQL Database server**. Geben Sie einen Anmeldenamen und ein Kennwort für den Server ein (und bestätigen Sie das Kennwort). Wählen Sie die Region, in der der neue SQL-Datenbankserver erstellt wird.
+4.  Geben Sie einen Wert für den **NAMEN** der Datenbank ein, und wählen Sie **NEW SQL Database server** (NEUER SQL-Datenbankserver). Geben Sie einen Anmeldenamen und ein Kennwort für den Server ein (und bestätigen Sie das Kennwort). Wählen Sie die Region, in der der neue SQL-Datenbankserver erstellt wird.
 
-    ![SQL-Datenbankeinstellungen eingeben](./media/web-sites-php-sql-database-use-webmatrix/NewWebSite4_SQL.png)
+    ![SQL-Datenbank-Einstellungen einfügen](./media/web-sites-php-sql-database-use-webmatrix/NewWebSite4_SQL.png)
 
-    Wenn die Website erstellt wurde, wird der Text **Creation of Web Site "[SITENAME]" succeeded** angezeigt. Als nächstes erhalten Sie die Verbindungsinformationen für die Datenbank.
+    Wenn die Website erstellt wurde, wird der Text **Creation of Web Site "[SITENAME]" succeeded** (Die Erstellung der Website „[Websitename]“ wurde abgeschlossen) angezeigt. Als nächstes erhalten Sie die Verbindungsinformationen für die Datenbank.
 
-5.  Klicken Sie auf **LINKED RESOURCES** und anschließend auf den Namen der Datenbank.
+5.  Klicken Sie auf **LINKED RESOURCES** (verknüpfte Ressourcen), und anschließend auf den Namen der Datenbank.
 
     ![Verknüpfte Ressourcen](./media/web-sites-php-sql-database-use-webmatrix/NewWebSite6_SQL.png)
 
-6.  Klicken Sie auf **View connection strings**.
+6.  Klicken Sie auf **View connection strings** (Verbindungszeichenfolgen anzeigen).
 
     ![Verbindungszeichenfolge](./media/web-sites-php-sql-database-use-webmatrix/NewWebSite7.png)
 
@@ -87,7 +87,7 @@ Sie können WebMatrix aus dem [Verwaltungsportal](https://manage.windowsazure.co
 
 2.  Nachdem WebMatrix installiert ist, wird es versuchen, die Website als WebMatrix-Projekt zu öffnen. Sie können die Live-Website direkt bearbeiten oder eine lokale Kopie herunterladen. Wählen Sie für dieses Lernprogramm das Bearbeiten einer lokalen Kopie.
 
-3.  Wenn Sie aufgefordert werden, die Website herunterzuladen, wählen Sie **Yes, install from the Template Gallery**.
+3.  Wenn Sie aufgefordert werden, die Website herunterzuladen, wählen Sie **Yes, install from the Template Gallery** (Ja, von Vorlagenkatalog installieren).
 
     ![Website herunterladen](./media/web-sites-php-sql-database-use-webmatrix/download-site-1.png)
 
@@ -95,7 +95,7 @@ Sie können WebMatrix aus dem [Verwaltungsportal](https://manage.windowsazure.co
 
     ![Website von Vorlage](./media/web-sites-php-sql-database-use-webmatrix/site-from-template.png)
 
-5.  Wählen Sie die Vorlage **Empty Site**. Geben Sie einen Namen für die Website an, und klicken Sie auf **NEXT**.
+5.  Wählen Sie die Vorlage **Empty Site** (leere Website). Geben Sie einen Namen für die Website an, und klicken Sie auf **NEXT** (Weiter).
 
     ![Namen für Website angeben](./media/web-sites-php-sql-database-use-webmatrix/site-from-template-2.png)
 
@@ -106,7 +106,7 @@ Entwickeln der Anwendung
 
 In den nächsten Schritten werden Sie die Tasklist-Anwendung entwickeln, indem Sie die zuvor heruntergeladenen Dateien hinzufügen und einige Änderungen vornehmen. Sie können jedoch auch eigene Dateien hinzufügen oder neue Dateien erstellen.
 
-1.  Fügen Sie bei in WebMatrix geöffneter Website die Anwendungsdateien hinzu, indem Sie auf **Add Existing** klicken:
+1.  Fügen Sie bei in WebMatrix geöffneter Website die Anwendungsdateien hinzu, indem Sie auf **Add Existing** (vorhandene hinzufügen) klicken:
 
     ![WebMatrix – Vorhandene Dateien hinzufügen](./media/web-sites-php-sql-database-use-webmatrix/edit_addexisting.png)
 
@@ -122,11 +122,11 @@ In den nächsten Schritten werden Sie die Tasklist-Anwendung entwickeln, indem S
 
     Speichern Sie die Datei `taskmodel.php`.
 
-3.  Damit die Anwendung ausgeführt werden kann, muss die Tabelle `items` erstellt werden. Klicken Sie mit der rechten Maustaste auf die Datei `createtable.php`, und wählen Sie **Launch in browser**. Dadurch wird `createtable.php` im Browser gestartet und Code ausgeführt, wodurch die Tabelle `items` in der Datenbank `tasklist` erstellt wird.
+3.  Damit die Anwendung ausgeführt werden kann, muss die Tabelle `items` erstellt werden. Klicken Sie mit der rechten Maustaste auf die Datei `createtable.php`, und wählen Sie **Launch in browser** (In Browser starten). Dadurch wird `createtable.php` im Browser gestartet und Code ausgeführt, wodurch die Tabelle `items` in der Datenbank `tasklist` erstellt wird.
 
     ![WebMatrix – createtable.php im Browser starten](./media/web-sites-php-sql-database-use-webmatrix/edit_run.png)
 
-4.  Sie können die Anwendung jetzt lokal testen. Klicken Sie mit der rechten Maustaste auf die Datei `index.php`, und wählen Sie **Launch in browser**. Testen Sie die Anwendung, indem Sie Elemente hinzufügen, diese als erledigt markieren und löschen.
+4.  Sie können die Anwendung jetzt lokal testen. Klicken Sie mit der rechten Maustaste auf die Datei `index.php`, und wählen Sie **Launch in browser** (In Browser starten). Testen Sie die Anwendung, indem Sie Elemente hinzufügen, diese als erledigt markieren und löschen.
 
 Veröffentlichen der Anwendung
 -----------------------------
@@ -143,7 +143,7 @@ Bevor die Anwendung in Azure-Websites veröffentlicht wird, müssen die Verbindu
 
     Speichern Sie die Datei `taskmodel.php`.
 
-2.  Klicken Sie in WebMatrix auf **Veröffentlichen** und anschließend auf **Weiter** im Dialogfeld **Vorschau veröffentlichen**.
+2.  Klicken Sie in WebMatrix auf **Publish** (Veröffentlichen), und anschließend auf **Continue** (Weiter) im Dialogfeld **Publish Preview** (Veröffentlichungsvorschau).
 
     ![WebMatrix – Veröffentlichen](./media/web-sites-php-sql-database-use-webmatrix/edit_publish.png)
 
@@ -156,13 +156,16 @@ Bevor die Anwendung in Azure-Websites veröffentlicht wird, müssen die Verbindu
 
 Sie können die Anwendung einfach ändern, indem Sie die lokale Kopie der zuvor heruntergeladenen Website bearbeiten und dann erneut veröffentlichen. Alternativ können Sie die Änderung auch direkt im Remotemodus vornehmen. In diesem Fall nehmen Sie eine einfache Änderung an der Kopfzeile der Datei `index.php` vor, und speichern diese direkt in der Live-Website.
 
-1.  Klicken Sie in WebMatrix auf die Remote-Registerkarte der Website, und wählen Sie **Open Remote View**. Dadurch wird die Remote-Website für die direkte Bearbeitung geöffnet. ![WebMatrix – Remote-Ansicht öffnen](./media/web-sites-php-sql-database-use-webmatrix/OpenRemoteView.png)
+1.  Klicken Sie in WebMatrix auf die Remote-Registerkarte der Website, und wählen Sie **Open Remote View** (Remote-Ansicht öffnen). Dadurch wird die Remote-Website für die direkte Bearbeitung geöffnet.
+	![WebMatrix – Remote-Ansicht öffnen](./media/web-sites-php-sql-database-use-webmatrix/OpenRemoteView.png)
 
-2.  Öffnen Sie durch Doppelklick die Datei `index.php`. ![WebMatrix – Indexdatei öffnen](./media/web-sites-php-sql-database-use-webmatrix/Remote_editIndex.png)
+2.  Öffnen Sie durch Doppelklick die Datei `index.php`.
+	![WebMatrix – Indexdatei öffnen](./media/web-sites-php-sql-database-use-webmatrix/Remote_editIndex.png)
 
 3.  Ändern Sie **My ToDo List** in **My Task List** in den Tags **Titel** und **h1**, und speichern Sie die Datei.
 
-4.  Klicken Sie nach dem Speichern auf die Run-Schaltfläche, um die Änderungen an der Live-Website anzuzeigen. ![WebMatrix – Website in Remote starten](./media/web-sites-php-sql-database-use-webmatrix/Remote_run.png)
+4.  Klicken Sie nach dem Speichern auf die Run-Schaltfläche, um die Änderungen an der Live-Website anzuzeigen.
+	![WebMatrix – Website in Remote starten](./media/web-sites-php-sql-database-use-webmatrix/Remote_run.png)
 
 Nächste Schritte
 ----------------
