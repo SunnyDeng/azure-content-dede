@@ -491,7 +491,7 @@ Im folgenden werden wichtige Sicherheitsknöpfe von WIF aufgeführt. Die unten s
   aufgeführt werden.
 * **cookieHandler requireSsl="true"**. Legt fest, ob Sitzungs-Cookies
   über das SSL-Protokoll übertragen werden.
-* **wsFederation\'s requireHttps="true"**. Legt fest ob die
+* **wsFederation's requireHttps="true"**. Legt fest ob die
   Kommunikation des Verbundprotokolls mit dem Identitätsanbieter über
   das SSL-Protokoll erfolgt.
 * **tokenReplayDetection enabled="true"**. Legt fest ob die Funktion zur
