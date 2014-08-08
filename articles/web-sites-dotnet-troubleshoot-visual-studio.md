@@ -29,7 +29,7 @@ Sie lernen Folgendes:
 11. [Anzeigen von Protokollen für fehlgeschlagene Anforderungen](#failedrequestlogs)
 12. [Nächste Schritte](#nextsteps)
 
-Voraussetzungen
+<a name="prerequisites"></a>Voraussetzungen
 ---------------
 
 Dieses Lernprogramm verwendet Entwicklungsumgebung, Webprojekt und Azure-Website, die Sie unter [Erste Schritte mit Windows Azure und ASP.NET](/en-us/develop/net/tutorials/get-started/) eingerichtet haben. Die Codebeispiele in diesem Lernprogramm stammen aus einer C\# MVC-Webanwendung. Die Prozeduren gelten jedoch auch für die Problembehandlung in Visual Basic- und Web Forms-Anwendungen.
@@ -38,7 +38,7 @@ Zum Remotedebuggen benötigen Sie Visual Studio 2013 oder Visual Studio 2012 mit
 
 Die Streamingprotokoll-Funktion funktioniert nur für Anwendungen, die das .NET Framework 4 oder später verwenden.
 
-Site-Konfiguration und -Verwaltung
+<a name="sitemanagement"></a>Site-Konfiguration und -Verwaltung
 ----------------------------------
 
 Visual Studio bietet Zugriff auf einen Teil der Site-Verwaltungsfunktionen und Konfigurationseinstellungen aus dem Verwaltungsportal. In diesem Abschnitt lernen Sie die verfügbaren Optionen kennen.
@@ -68,7 +68,7 @@ Visual Studio bietet Zugriff auf einen Teil der Site-Verwaltungsfunktionen und K
 
     Falls Sie eine Verwaltungsaufgabe ausführen möchten, die in diesem Fenster nicht angeboten wird, können Sie auf **Alle Website-Einstellungen** klicken, um das Verwaltungsportal in einem Browserfenster zu öffnen. Weitere Informationen finden Sie unter [Konfigurieren von Websites](/en-us/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
 
-Remoteansicht
+<a name="remoteview"></a>Remoteansicht
 -------------
 
 Die `customErrors`-Kennzeichnung in der Datei Web.config ist üblicherweise auf `On` oder `RemoteOnly` eingestellt. Auf diese Weise erhalten Sie keine hilfreiche Fehlermeldung, wenn ein Problem auftritt. Für viele Fehler bekommen Sie eine der folgenden Seiten angezeigt.
@@ -110,7 +110,7 @@ Der einfachste Weg für die Suche nach der Fehlerursache ist die Aktivierung det
 
 Änderungen an der Datei Web.config ist nur eines der Szenarien, in denen die Möglichkeit zum Lesen und Bearbeiten der Dateien in Ihrer Azure-Website sie Problembehandlung erleichtert.
 
-Remotedebuggen
+<a name="remotedebug"></a>Remotedebuggen
 --------------
 
 Falls die detaillierte Fehlermeldung nicht genügend Informationen liefert und sich der Fehler nicht lokal reproduzieren lässt, können Sie die Website remote im Debugmodus ausführen. Im Debugmodus können Sie Breakpoints setzen, den Speicher direkt manipulieren, Code schrittweise durchlaufen und sogar den Codepfad ändern.
@@ -211,7 +211,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 -   Nun können Sie den Debugger manuell an beliebige Prozesse anhängen. Sie können nicht nur den Website-Prozess (w3wp.exe) debuggen, sondern auch andere Prozesse wie z. B. [WebJobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter [Debuggen in Visual Studio](http://msdn.microsoft.com/en-us/library/vstudio/sc65sadd.aspx).
 
-Übersicht über ProtokolleÜbersicht über Diagnoseprotokolle
+<a name="logsoverview"></a>Übersicht über ProtokolleÜbersicht über Diagnoseprotokolle
 ----------------------------------------------------------
 
 ASP.NET-Anwendungen in Azure-Websites können die folgenden Arten von Protokollen generieren:
@@ -229,7 +229,7 @@ Protokollierung kann die Leistung von Websites beeinträchtigen. Daher können S
 
 Die Protokolle werden in den Ordner *LogFiles* im Dateisystem Ihrer Website geschrieben. Webserver- und Anwendungsprotokolle können auch in ein Azure-Speicherkonto geschrieben werden. Speicherkonten bieten mehr Kapazität für Protokolle als das Dateisystem. Protokolle im Dateisystem sind beschränkt auf 100 Megabyte. (Protokolle im Dateisystem werden nur für kurze Zeit aufbewahrt. Azure löscht alte Protokolldateien, um Platz für neue Dateien zu machen, wenn das Limit erreicht ist.)
 
-AnwendungsprotokolleErstellen und Anzeigen von Anwendungs-Ablaufprotokollen
+<a name="apptracelogs"></a>AnwendungsprotokolleErstellen und Anzeigen von Anwendungs-Ablaufprotokollen
 ---------------------------------------------------------------------------
 
 In diesem Abschnitt werden Sie die folgenden Aufgaben ausführen:
@@ -392,7 +392,7 @@ Diese Schaltflächen bieten die folgenden Funktionen:
 
 Wenn Sie eine Suchzeichenfolge oder einen regulären Ausdruck eingeben, filtert Visual Studio die Protokollinformationen clientseitig. Daher können Sie die Kriterien eingeben, nachdem die Protokolle im **Ausgabefenster** angezeigt wurden, und Sie können die Filterkriterien ändern, ohne die Protokolle neu generieren zu müssen.
 
-WebserverprotokolleAnzeigen von Webserverprotokollen
+<a name="webserverlogs"></a>WebserverprotokolleAnzeigen von Webserverprotokollen
 ----------------------------------------------------
 
 Webserverprotokolle zeichnen sämtliche HTTP-Aktivitäten der Website auf Sie müssen diese Protokolle für die Website aktivieren und Visual Studio mitteilen, dass Sie diese überwachen möchten, um sie im **Ausgabefenster** anzeigen zu können
@@ -419,7 +419,7 @@ Bei der ersten Aktivierung der Webserverprotokolle in Visual Studio schreibt Azu
 
 Wenn Sie die Webserverprotokollierung für ein Azure-Speicherkonto im Verwaltungsportal aktivieren und die Protokollierung anschließend in Visual Studio deaktivieren, werden die Speicherkontoeinstellungen bei der nächsten Aktivierung wiederhergestellt.
 
-FehlerprotokolleAnzeigen detaillierter Fehlermeldungsprotokolle
+<a name="detailederrorlogs">FehlerprotokolleAnzeigen detaillierter Fehlermeldungsprotokolle
 ---------------------------------------------------------------
 
 Die detaillierten Fehlerprotokolle liefern zusätzliche Informationen über HTTP-Anforderungen, die zu einer Fehlerantwort geführt haben (400 oder höher). Sie müssen diese Protokolle für die Website aktivieren und Visual Studio mitteilen, dass Sie diese überwachen möchten, um sie im **Ausgabefenster** anzeigen zu können
@@ -444,7 +444,7 @@ Die detaillierten Fehlerprotokolle liefern zusätzliche Informationen über HTTP
 
     ![Detailliertes Fehlerprotokoll im Browserfenster](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-detailederrorloginbrowser.png)
 
-Herunterladen von ProtokollenHerunterladen von Protokollen aus dem Dateisystem
+<a name="downloadlogs"></a>Herunterladen von ProtokollenHerunterladen von Protokollen aus dem Dateisystem
 ------------------------------------------------------------------------------
 
 Alle Protokolle, die Sie im **Ausgabefenster** überwachen können, lassen sich auch als *.zip*-Datei herunterladen.
@@ -467,7 +467,7 @@ Alle Protokolle, die Sie im **Ausgabefenster** überwachen können, lassen sich 
 
     (Der Ordner *deployments* enthält Dateien der Quellcodeverwaltung und hat nichts mit der Veröffentlichung in Visual Studio zu tun. Der Ordner *Git* enthält Ablaufverfolgungsprotokolle für die Quellcodeverwaltung und den Protokollstreamingdienst.)
 
-SpeicherprotokolleAnzeigen von Speicherprotokollen
+<a name="storagelogs"></a>SpeicherprotokolleAnzeigen von Speicherprotokollen
 --------------------------------------------------
 
 Ablaufverfolgungsprotokolle von Anwendungen können auch an Azure-Speicherkonten geschickt und anschließend in Visual Studio angezeigt werden. Dazu müssen Sie ein Speicherkonto erstellen, Speicherprotokolle im Verwaltungsportal aktivieren und können diese anschließend in der Registerkarte **Protokolle** im Fenster **Azure-Website** anzeigen.
@@ -550,7 +550,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
     ![Ablaufverfolgungstabelle im Server-Explorer](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracetablerow.png)
 
-Protokolle für fehlgeschlagene AnforderungenAnzeige von Protokollen für fehlgeschlagene Anforderungen
+<a name="failedrequestlogs"></a>Protokolle für fehlgeschlagene AnforderungenAnzeige von Protokollen für fehlgeschlagene Anforderungen
 -----------------------------------------------------------------------------------------------------
 
 Anhand der Protokolle für fehlgeschlagene Anforderungen können Sie im Detail herausfinden, wie IIS HTTP-Anforderungen bearbeitet, z. B. in Szenarien mit URL-Neuschreibung oder bei Authentifizierungsproblemen.
@@ -605,7 +605,7 @@ Sie können die Protokolle für fehlgeschlagene Anforderungen entweder direkt ü
 
     ![Verfolgung fehlgeschlagener Anforderungen im Browser](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-failedrequestinbrowser.png)
 
-Nächste SchritteNächste Schritte
+<a name="nextsteps"></a>Nächste SchritteNächste Schritte
 --------------------------------
 
 Sie haben gelernt, wie Visual Studio die Anzeige der Protokolle von Azure-Websites erleichtert. Möglicherweise möchten Sie mehr über die Problembehandlung in Azure-Websites, die Ablaufverfolgung in ASP.NET-Anwendungen und die Analyse von Webserverprotokollen erfahren.

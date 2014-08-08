@@ -15,7 +15,7 @@ Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/#create-new-service) oder [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-dotnet) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
-Definieren der benutzerdefinierten API
+<a name="define-custom-api"></a>Definieren der benutzerdefinierten API
 --------------------------------------
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
@@ -80,15 +80,13 @@ Definieren der benutzerdefinierten API
 
     Die Funktion **exports.get** wird verwendet, da der Client eine GET-Anfrage für den Zugriff auf die tile-Vorlage sendet.
 
-   	<div class="dev-callout"><b>Note</b>
-   		<p>Dieses API-Skript verwendet das Node.js-Modul <a href="http://go.microsoft.com/fwlink/p/
-        LinkId=306750">wns</a>, das durch die <strong>require</strong>-Funktion referenziert wird. Dieses Modul unterscheidet sich vom <a href="http://go.microsoft.com/fwlink/p/
-        LinkId=260591">wns-Objekt</a> , das vom <a href="http://msdn.microsoft.com/en-us/library/windowsazure/jj554217.aspx">push-Objekt</a> zurückgegeben wird, welches zum Versand von Pushbenachrichtigungen aus Serverskripts dient.</p>
-        </div>
+	**Note**
+	
+	Dieses API-Skript verwendet das Node.js <a href="http://go.microsoft.com/fwlink/p/?LinkId=306750">wns-Modul</a>, das durch die <strong>require</strong>-Funktion referenziert wird. Dieses Modul unterscheidet sich vom <a href="http://go.microsoft.com/fwlink/p/LinkId=260591">wns-Objekt</a> , das vom <a href="http://msdn.microsoft.com/en-us/library/windowsazure/jj554217.aspx">push-Objekt</a> zurückgegeben wird, welches zum Versand von Pushbenachrichtigungen aus Serverskripts dient.
 
 Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen zu verschicken, die das Live Tile durch Anfragen an die neue benutzerdefinierte API aktualisiert.
 
-Aktualisieren der AppAktualisieren der App zum Aktivieren periodischer Benachrichtigungen
+<a name="update-app"></a>Aktualisieren der AppAktualisieren der App zum Aktivieren periodischer Benachrichtigungen
 -----------------------------------------------------------------------------------------
 
 1.  Drücken Sie in Visual Studio die Taste F5, um die Schnellstart-App aus dem vorherigen Lernprogramm auszuführen.
@@ -108,7 +106,7 @@ Aktualisieren der AppAktualisieren der App zum Aktivieren periodischer Benachric
 
     Dieser Code aktiviert periodische Benachrichtigungen zur Abfrage von Tile-Vorlagendaten aus der neuen **tiles**-API. Wählen Sie einen passenden Wert unter [PeriodicUpdateRecurrance] für das Aktualisierungsintervall Ihrer Daten aus.
 
-Testen der App
+<a name="test-app"></a>Testen der App
 --------------
 
 1.  Drücken Sie in Visual Studio die Taste F5, um die App erneut auszuführen.
@@ -135,9 +133,31 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 
 
 
+<!-- Anchors. -->
+[Definieren der benutzerdefinierten API]: #define-custom-api
+[Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen]: #update-app
+[Testen der App]: #test-app
+[Next Steps]: #next-steps
+
 <!-- Images. -->
 [0]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-services-selection.png
 [1]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-create.png
 [2]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-create-dialog.png
 [3]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-select.png
 [4]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-live-tile.png
+
+<!-- URLs. -->
+[Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/?LinkID=257677
+[Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+[My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
+[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
+[Get started with data]: /en-us/develop/mobile/tutorials/get-started-with-data-dotnet
+[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-dotnet
+[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-dotnet
+[JavaScript and HTML]: mobile-services-win8-javascript/
+
+[Azure Management Portal]: https://manage.windowsazure.com/
+[Periodic notifications]: http://msdn.microsoft.com/en-us/library/windows/apps/jj150587.aspx
+
+[Mobile Services .NET How-to Conceptual Reference]: /en-us/develop/mobile/how-to-guides/work-with-net-client-library
+

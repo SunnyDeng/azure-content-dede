@@ -1,4 +1,4 @@
-<properties linkid="manage-scenarios-how-to-scale-websites" urlDisplayName="How to scale" pageTitle="How to scale web sites - Microsoft Azure service management" metaKeywords="Azure scaling web sites" description="Learn how to scale web sites in Azure to use Free, Shared, Basic and Standard web hosting plans." metaCanonical="" services="web-sites" documentationCenter="" title="How to Scale Web Sites" authors="timamm" solutions="" writer="timamm" manager="paulettm" editor="mollybos" />
+properties linkid="manage-scenarios-how-to-scale-websites" urlDisplayName="How to scale" pageTitle="How to scale web sites - Microsoft Azure service management" metaKeywords="Azure scaling web sites" description="Learn how to scale web sites in Azure to use Free, Shared, Basic and Standard web hosting plans." metaCanonical="" services="web-sites" documentationCenter="" title="How to Scale Web Sites" authors="timamm" solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
 
 Skalieren von Websites
 ======================
@@ -21,7 +21,7 @@ Themen in diesem Artikel:
 -   [Entwicklerfunktionen](#devfeatures)
 -   [Andere Funktionen](#OtherFeatures)
 
-## Skalierung auf Shared- oder Basic-Planmodus
+## <a name="scalingsharedorbasic"></a>Skalierung auf Shared- oder Basic-Planmodus
 
 1.  Öffnen Sie das [Verwaltungsportal](https://manage.windowsazure.com/) in Ihrem Browser.
 
@@ -105,7 +105,7 @@ Themen in diesem Artikel:
 
 1.  Um die Anzahl der Instanzen, die Ihre Website bei Laständerungen verwendet, dynamisch anzupassen, aktivieren Sie die Option **Scale by Metric** durch Auswahl von **CPU**.
 
-    ![Scale By Metric](./media/web-sites-scale/ScaleByMetric)
+    ![Scale By Metric](./media/web-sites-scale/13ScaleByMetric.png)
 
     Das Diagramm zeigt die Anzahl der Instanzen an, die in der letzten Woche verwendet wurden. Sie können das Diagramm zur Überwachung der Skalierungsaktivität verwenden.
 
@@ -184,4 +184,30 @@ hängen vom Webhosting-Planmodus ab; die folgenden entwicklungsbezogenen Funktio
 
     [Wie sollte man Azure-Websites skalieren - mit Stefan Schackow](http://www.windowsazure.com/en-us/documentation/videos/how-azure-web-sites-scale/)
 
+<!-- LINKS -->
+[vmsizes]:http://go.microsoft.com/fwlink/?LinkId=309169
+[SQLaccountsbilling]:http://go.microsoft.com/fwlink/?LinkId=234930
+[azuresubscriptions]:http://go.microsoft.com/fwlink/?LinkID=235288
+[portal]: https://manage.windowsazure.com/
+
+<!-- IMAGES -->
+[SelectWebsite]: ./media/web-sites-scale/01SelectWebSite.png
+[SelectScaleTab]: ./media/web-sites-scale/02SelectScaleTab.png
+
+[ChooseWHP]: ./media/web-sites-scale/03aChooseWHP.png
+[ChooseBasicInstanceSize]: ./media/web-sites-scale/03bChooseBasicInstanceSize.png
+[ChooseBasicInstanceCount]: ./media/web-sites-scale/04ChooseBasicInstanceCount.png
+[SaveButton]: ./media/web-sites-scale/05SaveButton.png
+[BasicComplete]: ./media/web-sites-scale/06BasicComplete.png
+[ChooseStandard]: ./media/web-sites-scale/07ChooseStandard.png
+[CapacitySectionStandard]: ./media/web-sites-scale/08CapacitySectionStandard.png
+[ChooseInstanceSize]: ./media/web-sites-scale/09ChooseInstanceSize.png
+[SetUpScheduleTimesButton]: ./media/web-sites-scale/10SetUpScheduleTimesButton.png
+[SetUpScheduleTimesDialog]: ./media/web-sites-scale/11SetUpScheduleTimesDialog.png
+[EditScaleSettingsForSchedule]: ./media/web-sites-scale/12EditScaleSettingsForSchedule.png
+[ScaleByMetric]: ./media/web-sites-scale/13ScaleByMetric.png
+[InstanceCount]: ./media/web-sites-scale/14InstanceCount.png
+[TargetCPU]: ./media/web-sites-scale/15TargetCPU.png
+[LinkedResources]: ./media/web-sites-scale/16LinkedResources.png
+[ScaleDatabase]: ./media/web-sites-scale/17ScaleDatabase.png
 

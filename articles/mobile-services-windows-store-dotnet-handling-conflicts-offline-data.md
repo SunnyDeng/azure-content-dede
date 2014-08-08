@@ -1,5 +1,7 @@
 
 
+<properties linkid="develop-mobile-tutorials-handle-conflcits-offline-data-dotnet" urlDisplayName="Handle Conflicts with Offline Data" pageTitle="Handle Conflicts with offline data in Mobile Services (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to handle conflicts with offline data in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling conflicts with offline data in Mobile Services" authors="wesmc" />
+
 Behandeln von Konflikten mit Offlinedaten in Mobile Services
 ============================================================
 
@@ -21,7 +23,7 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 In diesem Lernprogramm wird Visual Studio 2013 für Windows 8.1 verwendet.
 
-Herunterladen des Beispielprojekts
+<a name="download-app"></a>Herunterladen des Beispielprojekts
 ----------------------------------
 
 Dieses Lernprogramm baut auf dem [Handling conflicts code sample](http://go.microsoft.com/fwlink/?LinkId=394787) (Codebeispiel zur Behandlung von Konflikten) auf. Dabei handelt es sich um ein Windows Store-App-Projekt in Visual Studio 2013. Die Benutzeroberfläche für diese App ähnelt der App im Lernprogramm [Erste Schritte mit Offlinedaten](/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data). Der Unterschied besteht darin, dass für jedes TodoItem eine neue Datumsspalte vorhanden ist.
@@ -36,7 +38,7 @@ Dieses Lernprogramm baut auf dem [Handling conflicts code sample](http://go.micr
 
 Beachten Sie, dass noch keine Verbindung zwischen der App und einem mobilen Dienst besteht, daher erzeugen die Schaltflächen **Push** und **Pull** Ausnahmefehler.
 
-Hinzufügen einer Spalte zum Datenmodell
+<a name="add-column"></a>Hinzufügen einer Spalte zum Datenmodell
 ---------------------------------------
 
 In diesem Abschnitt aktualisieren Sie die Datenbank für Ihren mobilen Dienst so, dass eine TodoItem-Tabelle mit einer Spalte für das Fälligkeitsdatum enthalten ist. In der App können Sie das Fälligkeitsdatum für ein Element in der Laufzeit ändern, sodass Sie in einem späteren Abschnitt diese Lernprogramms Synchronisierungskonflikte generieren können.
@@ -47,7 +49,7 @@ Die `TodoItem`-Klasse im Beispiel ist in "MainPage.xaml.cs" definiert. Beachten 
 
 Aktualisieren Sie die Datenbank so, dass diese Tabelle enthalten ist.
 
-### Aktualisieren der Datenbank für mobile Dienste mit .NET-Backend
+### <a name="dotnet-backend"></a>Aktualisieren der Datenbank für mobile Dienste mit .NET-Backend
 
 Wenn Sie für Ihren mobilen Dienst das .NET-Backend verwenden, führen Sie diese Schritte aus, um das Schema für die Datenbank zu aktualisieren.
 
@@ -76,7 +78,7 @@ Wenn Sie für Ihren mobilen Dienst das .NET-Backend verwenden, führen Sie diese
 
 5.  Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Projekt für den mobilen Dienst mit .NET-Backend, und klicken Sie auf **Veröffentlichen**, um Ihre Änderungen zu veröffentlichen.
 
-### Aktualisieren der Datenbank für mobile Dienste mit JavaScript-Backend
+### <a name="javascript-backend"></a>Aktualisieren der Datenbank für mobile Dienste mit JavaScript-Backend
 
 Für mobile Dienste mit JavaScript-Backend fügen Sie eine neue Tabelle mit dem Namen **TodoWithDate** hinzu. Führen Sie die folgenden Schritte aus, um die Tabelle **TodoWithDate** für mobile Dienste mit JavaScript-Backend hinzuzufügen.
 
@@ -86,7 +88,7 @@ Für mobile Dienste mit JavaScript-Backend fügen Sie eine neue Tabelle mit dem 
 
 3.  Klicken Sie unten auf der Seite auf **Erstellen**, und erstellen Sie eine neue Tabelle mit dem Namen **TodoWithDate**.
 
-Testen der App mit dem mobilen Dienst
+<a name="test-app"></a>Testen der App mit dem mobilen Dienst
 -------------------------------------
 
 Testen Sie jetzt die App mit Mobile Services.
@@ -122,7 +124,7 @@ Testen Sie jetzt die App mit Mobile Services.
 
 	![][3]
 
-Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts
+<a name="handle-conflict"></a>Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts
 ---------------------------------------------------------------
 
 In einem realen Szenario würde ein Synchronisierungskonflikt auftreten, wenn eine App Aktualisierungen per Push-Vorgang auf einen Datensatz in der Datenbank überträgt und dann eine andere App versucht, eine Änderung per Push-Vorgang auf denselben Datensatz zu übertragen, jedoch basierend auf einer veralteten Version dieses Datensatzes. Wenn eine Instanz der App versucht, denselben Datensatz zu aktualisieren, ohne den aktualisierten Datensatz per Pull-Vorgang abzurufen, tritt ein Konflikt auf, und dieser wird in der App als `MobileServicePreconditionFailedException` erfasst.

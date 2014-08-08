@@ -1,4 +1,5 @@
 
+<properties linkid="develop-mobile-tutorials-get-started-offline-data-dotnet" urlDisplayName="Getting Started with Offline Data" pageTitle="Get started with offline data in Mobile Services (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to use offline data in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with offline data in Mobile Services" authors="wesmc" />
 
 Erste Schritte mit Offlinedaten in Mobile Services
 ==================================================
@@ -28,7 +29,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 > [WACOM.NOTE] Um dieses Lernprogramm abzuschließen, benötigen Sie ein Windows Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=AE564AB28).
 
-Aktualisieren der App für die Unterstützung von Offlinefunktionen
+<a name="enable-offline-app"></a>Aktualisieren der App für die Unterstützung von Offlinefunktionen
 -----------------------------------------------------------------
 
 Offlinefunktionen von Azure Mobile Services ermöglichen Ihnen die Interaktion mit einer lokalen Datenbank, wenn Sie den mobilen Dienst offline verwenden. Initialisieren Sie `MobileServiceClient.SyncContext` in einem lokalen Speicher, um diese Funktionen in der App zu verwenden. Erstellen Sie dann für die Tabelle einen Verweis über die Schnittstelle `IMobileServiceSyncTable`.
@@ -159,7 +160,7 @@ In diesem Abschnitt wird SQLite als lokaler Speicher für die Offlinefunktionen 
 
 10. Führen Sie die App noch nicht aus. Drücken Sie die Taste **F7**, um das Projekt erneut zu erstellen. Prüfen Sie, ob Buildfehler aufgetreten sind.
 
-Testen der App in einem Offlineszenario
+<a name="test-offline-app"></a>Testen der App in einem Offlineszenario
 ---------------------------------------
 
 In diesem Abschnitt trennen Sie die Verbindung zwischen App und mobilem Dienst, um ein Offlineszenario darzustellen. Dann fügen Sie einige Datenelemente hinzu, die im lokalen Speicher aufbewahrt werden.
@@ -179,7 +180,7 @@ Beachten Sie, dass in diesem Abschnitt keinerlei Verbindung zwischen App und mob
 
 3.  Schließen Sie die App und starten Sie sie erneut, um zu überprüfen, ob die neuen Elemente dauerhaft im lokalen Speicher gespeichert wurden.
 
-Aktualisieren der App zur Herstellung einer Verbindung mit dem mobilen Dienst
+<a name="update-online-app"></a>Aktualisieren der App zur Herstellung einer Verbindung mit dem mobilen Dienst
 -----------------------------------------------------------------------------
 
 In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies simuliert, dass die App von einem Offlinestatus in einen Onlinestatus mit dem mobilen Dienst wechselt.
@@ -191,7 +192,7 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
              "Your AppKey"
          );
 
-Testen der App mit Verbindung zum mobilen Dienst
+<a name="test-online-app"></a>Testen der App mit Verbindung zum mobilen Dienst
 ------------------------------------------------
 
 In diesem Abschnitt testen Sie die Push- und Pull-Vorgänge zur Synchronisierung des lokalen Speichers mit der Datenbank des mobilen Dienstes.
@@ -245,4 +246,35 @@ Nächste Schritte
 ----------------
 
 -   [Behandeln von Konflikten mit Offlineunterstützung für Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/)
+
+<!-- Anchors. -->
+[Update the app to support offline features]: #enable-offline-app
+[Test the app in an offline Scenario]: #test-offline-app
+[Update the app to reconnect your mobile service]: #update-online-app
+[Test the app connected to the Mobile Service]: #test-online-app
+[Next Steps]:#next-steps
+
+<!-- Images -->
+[0]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-todoitem-data-browse.png
+[1]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
+[2]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-sqlitestore-nuget.png
+[3]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-sqlitepcl-nuget.png
+[4]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-offline-app-run1.png
+[5]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-online-app-run1.png
+[6]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-data-browse.png
+[7]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-data-browse2.png
+[8]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-online-app-run2.png
+[9]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-online-app-run3.png
+[10]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-data-browse3.png
+
+
+<!-- URLs. -->
+[Handling conflicts with offline support for Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/ 
+[Getting Started Offline Sample]: http://go.microsoft.com/fwlink/?LinkId=394777
+[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
+[Getting Started]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
+[Get started with data]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
+[Get started with Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-get-started/
+[SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
+
 

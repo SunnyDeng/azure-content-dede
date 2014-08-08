@@ -15,28 +15,28 @@ Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/#create-new-service) oder [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/started-with-data-js) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
-Definieren der benutzerdefinierten API
+<a name="define-custom-api">Definieren der benutzerdefinierten API
 --------------------------------------
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-      ![](./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-services-selection.png)
+	![](./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-services-selection.png)
 
 2.  Klicken Sie auf die Registerkarte **API** und dann auf **Create a custom API**.
 
-     ![](./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-create.png)
+	![](./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-create.png)
 
-     Das Dialogfeld **Create a new custom API** wird angezeigt.
+	Das Dialogfeld **Create a new custom API** wird angezeigt.
 
 3.  Ändern Sie **Get permission** zu **Everyone**, geben Sie *tiles* unter **API name** ein und klicken Sie auf das Kontrollkästchen.
 
-      ![](./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-create-dialog.png)
+	![](./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-create-dialog.png)
 
-    Daraufhin wird die neue API mit öffentlichem GET-Zugriff erstellt.
+	Daraufhin wird die neue API mit öffentlichem GET-Zugriff erstellt.
 
 4.  Klicken Sie auf den neuen Eintrag tiles in der API-Tabelle.
 
-    ![](./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-select.png)
+	![](./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-select.png)
 
 5.  Klicken Sie auf die Registerkarte **Skript**, und ersetzen Sie den vorhandenen Code durch den folgenden:
 
@@ -88,7 +88,7 @@ Definieren der benutzerdefinierten API
 
 Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen zu verschicken, die das Live Tile durch Anfragen an die neue benutzerdefinierte API aktualisiert.
 
-Aktualisieren der AppAktualisieren der App zum Aktivieren periodischer Benachrichtigungen
+<a name="update-app">Aktualisieren der AppAktualisieren der App zum Aktivieren periodischer Benachrichtigungen
 -----------------------------------------------------------------------------------------
 
 1.  Drücken Sie in Visual Studio die Taste F5, um die Schnellstart-App aus dem vorherigen Lernprogramm auszuführen.
@@ -105,7 +105,7 @@ Aktualisieren der AppAktualisieren der App zum Aktivieren periodischer Benachric
 
     Dieser Code aktiviert periodische Benachrichtigungen zur Abfrage von Tile-Vorlagendaten aus der neuen **tiles**-API. Wählen Sie einen passenden Wert unter [PeriodicUpdateRecurrance] für das Aktualisierungsintervall Ihrer Daten aus.
 
-Testen der App
+<a name="test-app"></a>Testen der App
 --------------
 
 1.  Drücken Sie in Visual Studio die Taste F5, um die App erneut auszuführen.
@@ -128,3 +128,28 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
     <br/>Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
 
 
+<!-- Anchors. -->
+[Definieren der benutzerdefinierten API]: #define-custom-api
+[Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen]: #update-app
+[Testen der App]: #test-app
+[Next Steps]: #next-steps
+
+<!-- Images. -->
+[0]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-services-selection.png
+[1]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-create.png
+[2]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-create-dialog.png
+[3]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-select.png
+[4]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-live-tile.png
+
+<!-- URLs. -->
+[Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/?LinkID=257677
+[Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+[My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
+[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
+[Get started with data]: /en-us/develop/mobile/tutorials/started-with-data-js
+[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-js
+[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-js
+[JavaScript and HTML]: mobile-services-win8-javascript/
+
+[Azure Management Portal]: https://manage.windowsazure.com/
+[Periodic notifications]: http://msdn.microsoft.com/en-us/library/windows/apps/jj150587.aspx

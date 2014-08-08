@@ -51,7 +51,7 @@ Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können
 
 [WACOM.INCLUDE [install-sdk-2012-only](../includes/install-sdk-2012-only.md)]
 
-Erstellen eines SpeicherkontosErstellen eines Azure-Speicherkontos
+<a name="createWASA"></a>Erstellen eines SpeicherkontosErstellen eines Azure-Speicherkontos
 ------------------------------------------------------------------
 
 Bei der Ausführung der Beispielanwendung in Visual Studio haben Sie Zugriff auf Tabellen, Warteschlangen und Blobs im Azure-Entwicklungsspeicher oder in einem Azure-Speicherkonto in der Cloud. Der Entwicklungsspeicher verwendet eine lokale SQL Server Express LocalDB-Datenbank, um die Funktionsweise des Azure-Speichers in der Cloud zu emulieren. In diesem Lernprogramm verwenden Sie zunächst den Entwicklungsspeicher und lernen anschließend, wie Sie die Anwendung in Visual Studio für die Verwendung eines Cloud-Speicherkontos konfigurieren können. In diesem Abschnitt des Lernprogramms erstellen Sie das Azure-Speicherkonto, das Sie später im Lernprogramm in Visual Studio konfigurieren.
@@ -96,7 +96,7 @@ Bei der Ausführung der Beispielanwendung in Visual Studio haben Sie Zugriff auf
 
 9.  Kopieren Sie einen dieser Schlüssel für den nächsten Abschnitt in die Zwischenablage.
 
-Installieren des ASEInstallieren des Azure-Speicher-Explorers
+<a name="installASE"></a>Installieren des ASEInstallieren des Azure-Speicher-Explorers
 -------------------------------------------------------------
 
 Mit dem **Azure-Speicher-Explorer** (ASE) können Sie Azure-Speichertabellen, Warteschlangen und Blobs abfragen und aktualisieren. Sie werden den ASE in diesem Lernprogramm verwenden, um zu prüfen, ob Ihre Daten korrekt aktualisiert wurden und um Testdaten zu erstellen.
@@ -117,7 +117,7 @@ Mit dem **Azure-Speicher-Explorer** (ASE) können Sie Azure-Speichertabellen, Wa
 
 Für die Arbeit mit Azure-Speicher stehen noch andere Tools zur Verfügung. Weitere Informationen finden Sie unter [Azure Storage Explorers (2014)](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) (Azure-Speicher-Explorer (2014), in englischer Sprache).
 
-Erstellen eines Cloud-DienstesErstellen eines Cloud-Dienstes
+<a name="createcloudsvc"></a>Erstellen eines Cloud-DienstesErstellen eines Cloud-Dienstes
 ------------------------------------------------------------
 
 1.  Öffnen Sie das [Azure Verwaltungsportal](http://manage.windowsazure.com) in Ihrem Browser.
@@ -146,7 +146,7 @@ Erstellen eines Cloud-DienstesErstellen eines Cloud-Dienstes
 
     Sie können mit dem nächsten Schritt fortfahren, ohne auf den Abschluss dieses Schritts zu warten.
 
-Herunterladen und AusführenHerunterladen und Ausführen der abgeschlossenen Lösung
+<a name="downloadcnfg"></a>Herunterladen und AusführenHerunterladen und Ausführen der abgeschlossenen Lösung
 ---------------------------------------------------------------------------------
 
 1.  Laden Sie die [abgeschlossene Lösung](http://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36) herunter und entzippen Sie das Archiv.
@@ -209,7 +209,7 @@ Herunterladen und AusführenHerunterladen und Ausführen der abgeschlossenen Lö
 
 Die Daten, die Sie eingegeben und angezeigt haben, werden im Azure-Entwicklungsspeicher gespeichert. Der Entwicklungsspeicher verwendet eine lokale SQL Server Express LocalDB-Datenbank, um die Funktionsweise des Azure-Speichers in der Cloud zu emulieren. Die Anwendung verwendet den Entwicklungsspeicher, da das Projekt beim Herunterladen so vorkonfiguriert war. Diese Einstellung befindet sich in den *.cscfg*-Dateien im **AzureEmailService**-Projekt. Die *ServiceConfiguration.Local.cscfg*-Datei enthält Einstellungen für die lokale Ausführung in Visual Studio, und die *ServiceConfiguration.Cloud.cscfg*-Datei enthält Einstellungen für die Bereitstellung der Anwendung in der Cloud. Später werden Sie lernen, wie Sie die Anwendung für Ihr zuvor erstelltes Azure-Speicherkonto konfigurieren können.
 
-EntwicklungsspeicherAnzeigen des Entwicklungsspeichers in Visual Studio
+<a name="StorageExpVS"></a>EntwicklungsspeicherAnzeigen des Entwicklungsspeichers in Visual Studio
 -----------------------------------------------------------------------
 
 Der **Azure-Speicher-Browser** im **Server-Explorer** bietet eine praktische schreibgeschützte Ansicht von Azure-Speicherressourcen.
@@ -234,7 +234,7 @@ Mit dem Speicher-Browser in Visual Studio können Sie keine Azure-Speicherressou
 
 > [WACOM.NOTE] Mit dem neuesten SDK können Sie im **Server Explorer** auch Entwicklungsspeicher aktualisieren.
 
-Verwenden Ihres SpeicherkontosKonfigurieren Sie die Anwendung, um Ihr Azure-Speicherkonto zu verwenden
+<a name="conf4azureStorage"></a>Verwenden Ihres SpeicherkontosKonfigurieren Sie die Anwendung, um Ihr Azure-Speicherkonto zu verwenden
 ------------------------------------------------------------------------------------------------------
 
 Sie werden nun die Anwendung konfigurieren, sodass diese bei der Ausführung in Visual Studio Ihr Azure-Speicherkonto anstatt des Entwicklungsspeichers verwendet. Seit der Version 1.8 des SDK gibt es hierfür eine neue Methode. Bei der älteren Methode müssen Sie Einstellungen aus dem Azure-Verwaltungsportal kopieren und einfügen. Die folgenden Schritte beschreiben den neueren Weg zum Konfigurieren der Einstellungen für das Azure-Speicherkonto.
@@ -369,7 +369,7 @@ Falls Sie den Azure-Speicheremulator nicht verwenden, können Sie den Projektsta
 
     ![ASE](./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-se4.png)
 
-SendGridKonfigurieren der Anwendung für SendGrid
+<a name="sendGrid"></a>SendGridKonfigurieren der Anwendung für SendGrid
 ------------------------------------------------
 
 Diese Beispielanwendung verwendet SendGrid für den E-Mail-Versand. Um E-Mails mit SendGrid zu verschicken, müssen Sie zunächst ein SendGrid-Konto einrichten und anschließend eine Konfigurationsdatei mit Ihren SendGrid-Anmeldeinformationen aktualisieren.
@@ -394,7 +394,7 @@ Die folgenden Schritte beschreiben, wie Sie die Eigenschaften ändern können, i
 
 Bei der Bearbeitung der Cloud-Konfigurationsdatei konfigurieren Sie die Einstellungen, die bei der Ausführung der Anwendung in der Cloud verwendet werden. Falls die Anwendung auch bei der lokalen Ausführung E-Mails verschicken soll, müssen Sie auch die Daten *ServiceConfiguration.Local.cscfg* ändern.
 
-Bereitstellen der AnwendungBereitstellen der Anwendung für Azure
+<a name="deployAz"></a>Bereitstellen der AnwendungBereitstellen der Anwendung für Azure
 ----------------------------------------------------------------
 
 Sie können die Anwendung bereitstellen, indem Sie entweder ein Paket in Visual Studio erstellen und dieses im Azure-Verwaltungsportal hochladen, oder Sie können das Projekt direkt in Visual Studio veröffentlichen. In diesem Lernprogramm lernen Sie die Veröffentlichungsmethode kennen.
@@ -485,7 +485,7 @@ Sie können die Verbindungszeichenfolgen in derselben GUI konfigurieren (achten 
 
     ![pub](./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-12.png)
 
-ProduktionÜberführen der Anwendung von Staging zu Produktion
+<a name="swap"></a>ProduktionÜberführen der Anwendung von Staging zu Produktion
 ------------------------------------------------------------
 
 1.  Klicken Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com) im linken Bereich auf das Symbol **Cloud-Dienste** und wählen Sie Ihren Cloud-Dienst aus.
@@ -506,7 +506,7 @@ ProduktionÜberführen der Anwendung von Staging zu Produktion
 
     Falls Sie die Speicherkonto-Einstellungen nicht geändert haben, werden bei der Ausführung der Anwendung in der Cloud die Daten angezeigt, die Sie beim Test der Anwendung in der Stagingumgebung eingegeben haben.
 
-AblaufverfolgungKonfigurieren von Ablaufverfolgung und Anzeigen der Ablaufverfolgungsdaten
+<a name="trace"></a>AblaufverfolgungKonfigurieren von Ablaufverfolgung und Anzeigen der Ablaufverfolgungsdaten
 ------------------------------------------------------------------------------------------
 
 Die Ablaufverfolgung ist ein unschätzbares Werkzeug zum Debuggen von Cloud-Anwendungen. In diesem Abschnitt des Lernprogramms lernen Sie, wie Sie die Ablaufverfolgungsdaten anzeigen können.
@@ -540,7 +540,7 @@ Die Ablaufverfolgung ist ein unschätzbares Werkzeug zum Debuggen von Cloud-Anwe
 
     ![Dashboard](./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-trc.png)
 
-Hinzufügen einer RolleninstanzHinzufügen einer weiteren Workerrolle für zusätzliche Lastanforderungen
+<a name="addRole"></a>Hinzufügen einer RolleninstanzHinzufügen einer weiteren Workerrolle für zusätzliche Lastanforderungen
 -----------------------------------------------------------------------------------------------------
 
 Für die Skalierung der Ressourcen in Azure-Rollen existieren zwei Ansätze: Sie können entweder die [Größe der virtuellen Computer](http://msdn.microsoft.com/en-us/library/windowsazure/ee814754.aspx "VM-Größen") und/oder die Anzahl der laufenden virtuellen Computer anpassen.
@@ -577,11 +577,95 @@ Die folgenden Schritte beschreiben, wie Sie Ihre Anwendung mithilfe des Azure-Ve
 
     ![Instanzen anzeigen](./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-in2.png)
 
-Nächste SchritteNächste Schritte
+<a name="nextsteps"></a>Nächste SchritteNächste Schritte
 --------------------------------
 
 Sie haben gelernt, wie Sie die fertige Anwendung konfigurieren, bereitstellen und skalieren können. In den weiteren Lernprogrammen lernen Sie, die Anwendung von Grund auf zu erstellen. Im [nächsten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/) werden Sie die Webrolle erstellen.
 
 Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
 [Lernprogramm 3](/en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/)
+
+
+[Set up the development environment]: #setupdevenv
+[Set up a free Azure account]: #setupwindowsazure
+[Create an Azure Storage account]: #createWASA
+[Install Azure Storage Explorer]: #installASE
+[Create a Cloud Service]: #createcloudsvc
+[Download and run the completed solution]: #downloadcnfg
+[View developer storage in Visual Studio]: #StorageExpVS
+[Configure the application for Azure Storage]: #conf4azureStorage
+[Deploy the application to Azure]: #deployAz
+[Promote the application from staging to production]: #swap
+[Configure the application to use SendGrid]: #sendGrid
+[Configure and view trace data]: #trace
+[Add another worker role instance to handle increased load]: #addRole
+
+[firsttutorial]: /en-us/develop/net/tutorials/multi-tier-web-site/1-overview/
+
+[tut3]: /en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/
+[tut5]: /en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
+[NewPortal]: http://manage.windowsazure.com
+[managestorage]: /en-us/manage/services/storage/how-to-manage-a-storage-account/
+[autoscalingappblock]: /en-us/develop/net/how-to-guides/autoscaling/
+
+
+[mtas-portal-new-storage]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png
+[mtas-storage-quick]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-storage-quick.png
+[mtas-create-storage-url-test]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-storage-url-test.png
+[mtas-manage-keys]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-manage-keys.png
+[mtas-guid-keys]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-guid-keys.PNG
+[mtas-new-cloud]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-new-cloud.png
+[mtas-create-cloud]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-cloud.png
+[mtas-ase-add]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-ase-add.png
+[mtas-ase-add2]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-ase-add2.png
+
+[mtas-rt-prop]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-rt-prop.png
+[mtas-mailinglist1]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-mailinglist1.png
+[mtas-create1]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create1.png
+[mtas-mailing-list-index-page]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-mailing-list-index-page.png
+[mtas-subscribers-index-page]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-subscribers-index-page.png
+[mtas-message-create-page]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-message-create-page.png
+[mtas-message-index-page]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-message-index-page.png
+[mtas-serverExplorer]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-serverExplorer.png
+[mtas-wasVSdata]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-wasVSdata.png
+[mtas-elip]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-elip.png
+[mtas-enter]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-enter.png
+[mtas-ase1]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-ase1.png
+
+
+[mtas-se3]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-se3.png
+[mtas-aesp]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-aesp.png
+[mtas-1]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-1.png
+[mtas-se4]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-se4.png
+
+
+
+
+
+
+
+
+
+[mtas-c6]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c6.png
+[mtas-c7]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c7.png
+
+[mtas-sg]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-sg.png
+[mtas-trc]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-trc.png
+[mtas-instanceCnt]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-instanceCnt.png
+
+[mtas-in3]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-in3.png
+[mtas-in2]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-in2.png
+[mtas-3]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-3.png
+[mtas-5]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-5.png
+[mtas-6]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-6.png
+[mtas-16]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-16.png
+[mtas-7]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-7.png
+[mtas-8]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-8.png
+[mtas-9]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-9.png
+[mtas-11]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-11.png
+[mtas-12]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-12.png
+[mtas-c55]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c55.png
+
+[mtas-19]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-19.png
+
 
