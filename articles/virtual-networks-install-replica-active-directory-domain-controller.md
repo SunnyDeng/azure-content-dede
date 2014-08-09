@@ -3,7 +3,7 @@
 Installieren eines Active Directory-Replikatdomänencontrollers in Azure Virtual Networks
 ========================================================================================
 
-In diesem Lernprogramm werden Sie durch die Schritte zum Installieren eines zusätzlichen Domänencontrollers aus Ihrer Active Directory-Unternehmensgesamtstruktur auf einem virtuellen Computer (VM) in [Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx) geführt. Im Lernprogramm wird das virtuelle Netzwerk für die VM mit dem Netzwerk in Ihrem Unternehmen verbunden. Konzeptuelle Hilfe zum Installieren von Active Directory-Domänendiensten (AD DS) auf Azure Virtual Network finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/jj156090.aspx).
+In diesem Lernprogramm werden Sie durch die Schritte zum Installieren eines zusätzlichen Domänencontrollers aus Ihrer Active Directory-Unternehmensgesamtstruktur auf einem virtuellen Computer (VM) in [Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx) geführt. Im Lernprogramm wird das virtuelle Netzwerk für die VM mit dem Netzwerk in Ihrem Unternehmen verbunden. Konzeptuelle Hilfe zum Installieren von Active Directory-Domänendiensten (AD DS) auf Azure Virtual Network finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx).
 
 Inhaltsverzeichnis
 ------------------
@@ -22,9 +22,9 @@ Inhaltsverzeichnis
 Voraussetzungen
 ---------------
 
--   [Erstellen Sie ein virtuelles Netzwerk für standortübergreifende Verbindungen](http://www.windowsazure.com/en-us/manage/services/networking/cross-premises-connectivity/), das zwischen dem virtuellen Azure-Netzwerk und dem Unternehmensnetzwerk konfiguriert wird.
+-   [Erstellen Sie ein virtuelles Netzwerk für standortübergreifende Verbindungen](http://www.windowsazure.com/de-de/manage/services/networking/cross-premises-connectivity/), das zwischen dem virtuellen Azure-Netzwerk und dem Unternehmensnetzwerk konfiguriert wird.
 -   Erstellen Sie einen Clouddienst im virtuellen Netzwerk.
--   Stellen Sie zwei VMs im Clouddienst bereit, die Teil des virtuellen Netzwerks sind (geben Sie das Subnetz an, in dem sich die VM befinden soll). Weitere Informationen finden Sie unter [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](http://www.windowsazure.com/en-us/manage/services/networking/add-a-vm-to-a-virtual-network/). Eine VM muss mindestens die Größe L haben, damit zwei Datenträger daran angeschlossen werden können. Die Datenträger werden zum Speichern der folgenden Daten benötigt:
+-   Stellen Sie zwei VMs im Clouddienst bereit, die Teil des virtuellen Netzwerks sind (geben Sie das Subnetz an, in dem sich die VM befinden soll). Weitere Informationen finden Sie unter [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](http://www.windowsazure.com/de-de/manage/services/networking/add-a-vm-to-a-virtual-network/). Eine VM muss mindestens die Größe L haben, damit zwei Datenträger daran angeschlossen werden können. Die Datenträger werden zum Speichern der folgenden Daten benötigt:
     -   Active Directory-Datenbank und -protokolle
     -   Sicherungen des Systemstatus
 -   Ein Unternehmensnetzwerk mit zwei VMs (**YourPrimaryDC** und **FileServer**).
@@ -39,7 +39,7 @@ Sie müssen Ihre eigene DNS-Infrastruktur angeben, damit AD DS in Azure Virtual
 
 **Hinweis**
 
-Wenn Sie die Schritte unter [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](/en-us/manage/services/networking/active-directory-forest/) bereits ausgeführt haben, müssen Sie möglicherweise AD DS aus dem Domänencontroller im virtuellen Azure-Netzwerk entfernen, bevor Sie mit diesem Lernprogramm beginnen. Weitere Informationen zum Entfernen von AD DS finden Sie unter [Entfernen eines Domänencontrollers aus einer Domäne](http://technet.microsoft.com/en-us/library/cc771844(v=WS.10).aspx).
+Wenn Sie die Schritte unter [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](/de-de/manage/services/networking/active-directory-forest/) bereits ausgeführt haben, müssen Sie möglicherweise AD DS aus dem Domänencontroller im virtuellen Azure-Netzwerk entfernen, bevor Sie mit diesem Lernprogramm beginnen. Weitere Informationen zum Entfernen von AD DS finden Sie unter [Entfernen eines Domänencontrollers aus einer Domäne](http://technet.microsoft.com/en-us/library/cc771844(v=WS.10).aspx).
 
 Schritt 1: Überprüfen der statischen IP-Adresse für "YourPrimaryDC"
 -------------------------------------------------------------------
@@ -234,7 +234,7 @@ Schritt 5: Überprüfen der Installation
 
 Führen Sie nach der Konfiguration des Domänencontrollers das folgende Windows PowerShell-Cmdlet aus, um weitere virtuelle Maschinen bereitzustellen und automatisch bei der Bereitstellung zur Domäne hinzuzufügen. Die Konfliktlösereinstellungen des DNS-Clients für die VMs müssen konfiguriert sein, wenn die VMs bereitgestellt werden. Setzen Sie die richtigen Namen für Ihre Domäne, den VM-Namen usw. ein.
 
-Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Erste Schritte mit Azure PowerShell](http://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx) und [Azure-Cmdlets für die Verwaltung](http://msdn.microsoft.com/en-us/library/windowsazure/jj152841).
+Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Erste Schritte mit Azure PowerShell](http://msdn.microsoft.com/de-de/library/windowsazure/jj156055.aspx) und [Azure-Cmdlets für die Verwaltung](http://msdn.microsoft.com/de-de/library/windowsazure/jj152841).
 
 
 Schritt 6: Bereitstellen eines virtuellen Computers, der beim Start in die Domäne eingebunden ist
@@ -303,10 +303,10 @@ Schritt 8: Testen der Authentifizierung und Autorisierung
 Weitere Informationen
 ---------------------
 
--   [Virtuelles Azure-Netzwerk](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx)
+-   [Virtuelles Azure-Netzwerk](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx)
 
--   [Azure PowerShell](http://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx)
+-   [Azure PowerShell](http://msdn.microsoft.com/de-de/library/windowsazure/jj156055.aspx)
 
--   [Azure-Cmdlets für die Verwaltung](http://msdn.microsoft.com/en-us/library/windowsazure/jj152841)
+-   [Azure-Cmdlets für die Verwaltung](http://msdn.microsoft.com/de-de/library/windowsazure/jj152841)
 
 

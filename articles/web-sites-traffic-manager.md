@@ -21,7 +21,7 @@ Azure Traffic Manager verwendet drei verschiedene Lastenausgleichsmethoden. Dies
 
 -   **Leistung**: Mithilfe der Leistungsmethode wird der Verkehr anhand der kürzesten Roundtripzeit an Clients verteilt. Die Leistungsmethode kann für Websites innerhalb derselben Region oder in verschiedenen Regionen verwendet werden.
 
-Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/en-us/library/windowsazure/dn339010.aspx).
+Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/de-de/library/windowsazure/dn339010.aspx).
 
 Azure-Websites und Traffic Manager-Profile
 ------------------------------------------
@@ -40,16 +40,16 @@ Beachten Sie die folgenden Aspekte, wenn Sie Azure Traffic Manager mit Azure ver
 
 -   Nachdem Sie einem Profil eine Website hinzugefügt haben, wird in der **Site-URL** im Dashboard der Portalseite der Website die benutzerdefinierte Domänen-URL der Website angezeigt, wenn Sie eine eingerichtet haben. Anderenfalls wird die URL des Traffic Manager-Profils angezeigt (z. B. `contoso.trafficmgr.com`). Sowohl der direkte Domänenname der Website als auch die Traffic Manager-URL werden auf der Konfigurationsseite der Website im Abschnitt **Domänennamen** angezeigt.
 
--   Ihre benutzerdefinierten Domänennamen funktionieren wie erwartet. Sie fügen sie Ihren Websites hinzu, müssen jedoch auch die DNS-Zuordnung konfigurieren, um auf die Traffic Manager-URL zu verweisen. Informationen zum Einrichten einer benutzerdefinierten Domäne für eine Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](https://www.windowsazure.com/en-us/documentation/articles/web-sites-custom-domain-name/).
+-   Ihre benutzerdefinierten Domänennamen funktionieren wie erwartet. Sie fügen sie Ihren Websites hinzu, müssen jedoch auch die DNS-Zuordnung konfigurieren, um auf die Traffic Manager-URL zu verweisen. Informationen zum Einrichten einer benutzerdefinierten Domäne für eine Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](https://www.windowsazure.com/de-de/documentation/articles/web-sites-custom-domain-name/).
 
 -   Sie können einem Azure Traffic Manager-Profil nur Websites hinzufügen, die sich im Standardmodus befinden.
 
 Nächste Schritte
 ----------------
 
-Einen Überblick über die Konzepte und technischen Aspekte von Azure Traffic Manager finden Sie unter [Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/hh744833.aspx).
+Einen Überblick über die Konzepte und technischen Aspekte von Azure Traffic Manager finden Sie unter [Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx).
 
-Informationen über das Konfigurieren von Azure Traffic Manager, darunter auch für den Einsatz von Azure-Websites, finden Sie unter [Traffic Manager-Konfigurationsaufgaben](http://msdn.microsoft.com/en-us/library/windowsazure/hh744830.aspx).
+Informationen über das Konfigurieren von Azure Traffic Manager, darunter auch für den Einsatz von Azure-Websites, finden Sie unter [Traffic Manager-Konfigurationsaufgaben](http://msdn.microsoft.com/de-de/library/windowsazure/hh744830.aspx).
 
-Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/en-us/library/windowsazure/dn339010.aspx).
+Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/de-de/library/windowsazure/dn339010.aspx).
 

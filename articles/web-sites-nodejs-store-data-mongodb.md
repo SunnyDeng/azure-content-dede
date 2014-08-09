@@ -1,4 +1,4 @@
-<properties linkid="develop-node-website-with-mongodb-mac" urlDisplayName="Web site with MongoDB" pageTitle="Node.js web site with MongoDB on a VM - Azure tutorial" metaKeywords="Azure tutorial MongoDB, MongoDB store data, access data MongoDB Node, Azure Node app" description="A tutorial that teaches you how to use MongoDB to store and access data from a Node application hosted on Azure." metaCanonical="http://www.windowsazure.com/en-us/develop/nodejs/tutorials/website-with-mongodb-mongolab/" services="web-sites,virtual-machines" documentationCenter="Node.js" title="Node.js Web Application with Storage on MongoDB (Virtual Machine)" authors="" solutions="" writer="" manager="" editor="" />
+<properties linkid="develop-node-website-with-mongodb-mac" urlDisplayName="Web site with MongoDB" pageTitle="Node.js web site with MongoDB on a VM - Azure tutorial" metaKeywords="Azure tutorial MongoDB, MongoDB store data, access data MongoDB Node, Azure Node app" description="A tutorial that teaches you how to use MongoDB to store and access data from a Node application hosted on Azure." metaCanonical="http://www.windowsazure.com/de-de/develop/nodejs/tutorials/website-with-mongodb-mongolab/" services="web-sites,virtual-machines" documentationCenter="Node.js" title="Node.js Web Application with Storage on MongoDB (Virtual Machine)" authors="" solutions="" writer="" manager="" editor="" />
 
 Erstellen einer Node.js-Anwendung auf Azure mit MongoDB auf einem virtuellen Computer
 =====================================================================================
@@ -13,7 +13,7 @@ Sie erhalten Informationen zu folgenden Themen:
 
 In diesem Lernprogramm erstellen Sie eine einfache webbasierte Anwendung zur Aufgabenverwaltung, mit der Sie Aufgaben erstellen, abrufen und vervollständigen können. Die Aufgaben werden in MongoDB gespeichert.
 
-> [WACOM.NOTE] In diesem Programm wird eine Instanz von MongoDB verwendet, die auf einem virtuellen Computer installiert ist. Wenn Sie lieber eine gehostete MongoDB-Instanz verwenden möchten, die von MongoLabs bereitgestellt wird, finden Sie weitere Informationen unter [Erstellen einer Node.js-Anwendung auf Azure mit MongoDB mithilfe des MongoLab-Add-Ons](/en-us/develop/nodejs/tutorials/website-with-mongodb-mongolab/).
+> [WACOM.NOTE] In diesem Programm wird eine Instanz von MongoDB verwendet, die auf einem virtuellen Computer installiert ist. Wenn Sie lieber eine gehostete MongoDB-Instanz verwenden möchten, die von MongoLabs bereitgestellt wird, finden Sie weitere Informationen unter [Erstellen einer Node.js-Anwendung auf Azure mit MongoDB mithilfe des MongoLab-Add-Ons](/de-de/develop/nodejs/tutorials/website-with-mongodb-mongolab/).
 
 Die Projektdateien für dieses Lernprogramm werden in einem Verzeichnis namens **tasklist** gespeichert, und die fertige Anwendung sieht etwa wie folgt aus:
 
@@ -67,7 +67,7 @@ Sie können zwar einen neuen virtuellen Computer erstellen und dann anhand der [
 
     > [WACOM.NOTE] Für dieses Lernprogramm benötigen Sie SSH, um eine Remote-Verbindung zum virtuellen Computer herzustellen. Aktivieren Sie **Use a password**, und geben Sie ein Kennwort an, falls Sie nicht mit der Verwendung von Zertifikaten mit SSH vertraut sind.
     >
-    > Informationen zur Verwendung von SSH mit einem virtuellen Linux-Computer auf Azure finden Sie unter [Verwenden von SSH mit Linux auf Azure](http://www.windowsazure.com/en-us/documentation/articles/linux-use-ssh-key/).
+    > Informationen zur Verwendung von SSH mit einem virtuellen Linux-Computer auf Azure finden Sie unter [Verwenden von SSH mit Linux auf Azure](http://www.windowsazure.com/de-de/documentation/articles/linux-use-ssh-key/).
 
 7.  Geben Sie an, ob ein neuer oder vorhandener Clouddienst verwendet werden soll, sowie die Region, in der der virtuelle Computer erstellt wird. Klicken Sie auf den Pfeil, um fortzufahren.
 
@@ -374,13 +374,13 @@ Bereitstellen der Anwendung in Azure
 
 Die Schritte in diesem Abschnitt verwenden die Azure-Befehlszeilentools zum Erstellen einer neuen Azure-Website und stellen die Anwendung dann mit Git bereit. Zur Durchführung dieser Schritte benötigen Sie ein Azure-Abonnement.
 
-> [WACOM.NOTE] Diese Schritte können auch über das Azure-Portal ausgeführt werden. Informationen zur Verwendung des Azure-Portals zum Bereitstellen einer Node.js-Anwendung finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/).
+> [WACOM.NOTE] Diese Schritte können auch über das Azure-Portal ausgeführt werden. Informationen zur Verwendung des Azure-Portals zum Bereitstellen einer Node.js-Anwendung finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/).
 
 > [WACOM.NOTE] Falls dies die erste von Ihnen erstellte Azure-Website ist, müssen Sie das Azure-Portal verwenden, um die Anwendung bereitzustellen.
 
 ### Installieren der Azure plattformübergreifenden Befehlszeilenschnittstelle
 
-Die Azure plattformübergreifende Befehlszeilenschnittstelle (xplat-cli) ermöglicht das Ausführen von Verwaltungsvorgängen für Azure-Dienste. Falls Sie nicht bereits xplat-cli in Ihrer Entwicklungsumgebung installiert und konfiguriert haben, finden Sie weitere Informationen unter [Installieren und Konfigurieren der Azure plattformübergreifenden Befehlszeilenschnittstelle](/en-us/documentation/articles/xplat-cli/).
+Die Azure plattformübergreifende Befehlszeilenschnittstelle (xplat-cli) ermöglicht das Ausführen von Verwaltungsvorgängen für Azure-Dienste. Falls Sie nicht bereits xplat-cli in Ihrer Entwicklungsumgebung installiert und konfiguriert haben, finden Sie weitere Informationen unter [Installieren und Konfigurieren der Azure plattformübergreifenden Befehlszeilenschnittstelle](/de-de/documentation/articles/xplat-cli/).
 
 ### Erstellen einer Azure-Website
 
@@ -411,7 +411,7 @@ Die Azure plattformübergreifende Befehlszeilenschnittstelle (xplat-cli) ermögl
          info:   Executing `git remote add azure http://username@mongodbtasklist.azurewebsites.net/mongodbtasklist.git`
          info:   site create command OK
 
-    > [WACOM.NOTE\> Falls dies die erste Azure-Website für Ihr Abonnement ist, werden Sie angewiesen, das Portal zum Erstellen der Website zu verwenden. Weitere Informationen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/).
+    > [WACOM.NOTE\> Falls dies die erste Azure-Website für Ihr Abonnement ist, werden Sie angewiesen, das Portal zum Erstellen der Website zu verwenden. Weitere Informationen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/).
 
 ### Festlegen der MONGODB\_URL-Umgebungsvariable
 
@@ -457,16 +457,16 @@ Damit wird eine neue Anwendungseinstellung für die Website erstellt, die verwen
 Nächste Schritte
 ----------------
 
-Die Schritte in diesem Artikel beschreiben zwar die Verwendung von MongoDB zum Speichern von Informationen, Sie können jedoch auch den Azure-Tabellendienst verwenden. Weitere Informationen dazu finden Sie unter [Node.js-Webanwendung mit dem Azure-Tabellendienst](/en-us/develop/nodejs/tutorials/web-site-with-storage/).
+Die Schritte in diesem Artikel beschreiben zwar die Verwendung von MongoDB zum Speichern von Informationen, Sie können jedoch auch den Azure-Tabellendienst verwenden. Weitere Informationen dazu finden Sie unter [Node.js-Webanwendung mit dem Azure-Tabellendienst](/de-de/develop/nodejs/tutorials/web-site-with-storage/).
 
-Wenn Sie erfahren möchten, wie Sie eine von MongoLabs bereitgestellte gehostete MongoDB-Instanz verwenden, finden Sie weitere Informationen unter [Erstellen einer Node.js-Anwendung auf Azure mit MongoDB mithilfe des MongoLab-Add-Ons](/en-us/develop/nodejs/tutorials/website-with-mongodb-mongolab/).
+Wenn Sie erfahren möchten, wie Sie eine von MongoLabs bereitgestellte gehostete MongoDB-Instanz verwenden, finden Sie weitere Informationen unter [Erstellen einer Node.js-Anwendung auf Azure mit MongoDB mithilfe des MongoLab-Add-Ons](/de-de/develop/nodejs/tutorials/website-with-mongodb-mongolab/).
 
 Informationen zur Sicherheit von MongoDB finden Sie unter [MongoDB-Sicherheit](http://docs.mongodb.org/manual/security/).
 
 Zusätzliche Ressourcen
 ----------------------
 
-[Azure-Befehlszeilentool für Mac und Linux](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/)
+[Azure-Befehlszeilentool für Mac und Linux](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/)
 
- [Veröffentlichen auf Azure-Websites mit Git](/en-us/develop/nodejs/common-tasks/publishing-with-git/)
+ [Veröffentlichen auf Azure-Websites mit Git](/de-de/develop/nodejs/common-tasks/publishing-with-git/)
 

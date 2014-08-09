@@ -26,18 +26,18 @@ Weitere Informationen</th>
 <tr class="odd">
 <td align="left">Azure Media Encoder
 Zur Ausführung von Codieraufgaben mit dem Media Encoder.
-<a href="http://msdn.microsoft.com/en-us/library/jj129582.aspx">Systemvoreinstellungen für den Azure Media Encoder</a></td>
+<a href="http://msdn.microsoft.com/de-de/library/jj129582.aspx">Systemvoreinstellungen für den Azure Media Encoder</a></td>
 <td align="left">Azure Media Packager
 Konvertiert Medienobjekte von .mp4 in das Smooth Streaming-Format. Konvertiert außerdem Medienobjekte vom Smooth Streaming-Format in das Apple HTTP Live Streaming (HLS)-Format.
-<a href="http://msdn.microsoft.com/en-us/library/hh973635.aspx">Systemvoreinstellungen für den Azure Media Packager</a></td>
+<a href="http://msdn.microsoft.com/de-de/library/hh973635.aspx">Systemvoreinstellungen für den Azure Media Packager</a></td>
 <td align="left">Azure Media Encryptor
 Verschlüsselt Medienobjekte mit dem PlayReady-Schutz.
-<a href="http://msdn.microsoft.com/en-us/library/hh973610.aspx">Systemvoreinstellungen für den Azure Media Packager</a></td>
+<a href="http://msdn.microsoft.com/de-de/library/hh973610.aspx">Systemvoreinstellungen für den Azure Media Packager</a></td>
 </tr>
 </tbody>
 </table>
 
-Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Das folgende Beispiel setzt eine Variable auf Modulebene mit dem Namen **\_context** voraus, die Zugriff auf den Serverkontext bietet. Siehe [Gewusst wie: Programmgesteuertes Verbinden mit Mediendiensten](http://www.windowsazure.com/en-us/develop/media-services/how-to-guides/set-up-computer-for-media-services).
+Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Das folgende Beispiel setzt eine Variable auf Modulebene mit dem Namen **\_context** voraus, die Zugriff auf den Serverkontext bietet. Siehe [Gewusst wie: Programmgesteuertes Verbinden mit Mediendiensten](http://www.windowsazure.com/de-de/develop/media-services/how-to-guides/set-up-computer-for-media-services).
 
 	private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
 	{

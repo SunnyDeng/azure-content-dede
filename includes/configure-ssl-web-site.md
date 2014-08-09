@@ -13,7 +13,7 @@ In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie H
 
 [](bkmk_domainname)<h2 data-morhtml="true">Benutzerdefinierte Domänennamen</h2>
 
-Wenn Sie HTTPS für einen benutzerdefinierten Domänennamen wie **contoso.com** aktivieren möchten, müssen Sie einen benutzerdefinierten Domänennamen bei einer Domänennamen-Registrierungsstelle registrieren. Weitere Informationen zum Konfigurieren des Domänennamens einer Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/). Nachdem Sie einen benutzerdefinierten Domänennamen registriert und Ihre Website zur Reaktion auf den benutzerdefinierten Namen konfiguriert haben, müssen Sie ein SSL-Zertifikat für die Domäne anfordern.
+Wenn Sie HTTPS für einen benutzerdefinierten Domänennamen wie **contoso.com** aktivieren möchten, müssen Sie einen benutzerdefinierten Domänennamen bei einer Domänennamen-Registrierungsstelle registrieren. Weitere Informationen zum Konfigurieren des Domänennamens einer Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/de-de/develop/net/common-tasks/custom-dns-web-site/). Nachdem Sie einen benutzerdefinierten Domänennamen registriert und Ihre Website zur Reaktion auf den benutzerdefinierten Namen konfiguriert haben, müssen Sie ein SSL-Zertifikat für die Domäne anfordern.
 
 Wenn Sie einen Domänennamen registrieren, können Sie auch Unterdomänen wie **www.contoso.com** oder **mail.contoso.com** erstellen. Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht wahrscheinlich ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen wie **contoso.com**, **www.contoso.com** und **mail.contoso.com** schützen müssen, wird ein Platzhalterzertifikat oder ein Zertifikat mit einem alternativen Antragstellernamen (subjectAltName, SAN) benötigt.
 
@@ -46,7 +46,7 @@ Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure er
 
 * Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf die Website zugegriffen wird. Wenn dieses Zertifikat für mehrere Domänen gelten soll, müssen Sie, wie oben erläutert, einen Platzhalterwert verwenden oder Werte für alternative Antragstellernamen angeben.
   
-  * Informationen zum Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/).
+  * Informationen zum Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/de-de/develop/net/common-tasks/custom-dns-web-site/).
 
 
  
@@ -83,7 +83,7 @@ Eventuell müssen Sie auch **Zwischenzertifikate** (auch Kettenzertifikate genan
 > Weitere Informationen zum Konfigurieren des Domänennamens einer
 > Azure-Website finden Sie unter [Konfigurieren eines
 > benutzerdefinierten Domänennamens für eine
-> Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/).
+> Azure-Website](/de-de/develop/net/common-tasks/custom-dns-web-site/).
 
 ### Beziehen eines Zertifikats mit Certreq.exe (nur Windows)
 
@@ -281,7 +281,7 @@ Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für de
 
 [](bkmk_configuressl)<h2 data-morhtml="true">Konfigurieren von SSL</h2>
 
-Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie mit Ihrer Azure-Website einen benutzerdefinierten Domänennamen verknüpft haben. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/).
+Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie mit Ihrer Azure-Website einen benutzerdefinierten Domänennamen verknüpft haben. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/de-de/develop/net/common-tasks/custom-dns-web-site/).
 
 1.  Öffnen Sie das [Azure Verwaltungsportal][5] in Ihrem Browser.
 
@@ -568,7 +568,7 @@ Mit den folgenden Schritten können Sie ein Testzertifikat mit einem Windows-Sys
 [3]: http://www.openssl.org/
 [4]: http://technet.microsoft.com/library/cc725793.aspx
 [5]: https://manage.windowsazure.com/
-[6]: http://www.windowsazure.com/en-us/support/options/
+[6]: http://www.windowsazure.com/de-de/support/options/
 [7]: http://en.wikipedia.org/wiki/Server_Name_Indication
 [8]: http://en.wikipedia.org/wiki/Transport_Layer_Security
 [9]: http://technet.microsoft.com/en-us/library/cc732906(WS.10).aspx

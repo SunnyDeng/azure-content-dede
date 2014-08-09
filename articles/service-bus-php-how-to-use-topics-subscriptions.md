@@ -106,7 +106,7 @@ Das folgende Beispiel zeigt, wie Sie einen **ServiceBusRestProxy** instanziieren
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen finden Sie unter: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179357
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179357
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -141,7 +141,7 @@ Themenabonnements werden ebenfalls mit der **ServiceBusRestProxy-\>createSubscri
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen finden Sie unter: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179357
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179357
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -149,7 +149,7 @@ Themenabonnements werden ebenfalls mit der **ServiceBusRestProxy-\>createSubscri
 
 ### Erstellen von Abonnements mit Filtern
 
-Sie können auch Filter einrichten, durch die Sie angeben können, welche an ein Thema gesendeten Nachrichten in einem bestimmten Themenabonnement angezeigt werden sollen. Der flexibelste von Abonnements unterstützte Filtertyp ist **SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen über SqlFilters finden Sie in der [Eigenschaft SqlFilter.SqlExpression](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx).
+Sie können auch Filter einrichten, durch die Sie angeben können, welche an ein Thema gesendeten Nachrichten in einem bestimmten Themenabonnement angezeigt werden sollen. Der flexibelste von Abonnements unterstützte Filtertyp ist **SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen über SqlFilters finden Sie in der [Eigenschaft SqlFilter.SqlExpression](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx).
 
     > [WACOM.NOTE]
     > Jede Regel in einem Abonnement verarbeitet eingehende Nachrichten unabhängig und fügt Ihre Ergebnisnachrichten zu dem Abonnement hinzu. Zusätzlich existiert für jedes neue Abonnement eine Standard-<b>Regel</b> mit einem Filter, der alle Nachrichten aus einem Thema zum Abonnement hinzufügt. Wenn Sie nur Nachrichten erhalten wollen, die auf Ihren Filter passen, müssen Sie die Standardregel entfernen. Sie können die Standardregel entfernen, indem Sie die <b>ServiceBusRestProxy->deleteRule</b>-Methode anwenden.
@@ -205,7 +205,7 @@ Um eine Nachricht an ein Service Bus-Thema zu senden, ruft Ihre Anwendung die **
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen finden Sie unter: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/hh780775
+        // http://msdn.microsoft.com/de-de/library/windowsazure/hh780775
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -270,7 +270,7 @@ Das folgende Beispiel zeigt, wie eine Nachricht mit dem nicht standardmäßig ve
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen finden Sie unter:
-        // http://msdn.microsoft.com/en-us/library/windowsazure/hh780735
+        // http://msdn.microsoft.com/de-de/library/windowsazure/hh780735
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -308,7 +308,7 @@ Im folgenden Beispiel wird gezeigt, wie ein Thema (`mytopic`) und die darin regi
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen finden Sie unter: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179357
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179357
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -321,5 +321,5 @@ Wenn Sie die **deleteSubscription**-Methode verwenden, können Sie ein Abonnemen
 Nächste Schritte
 ----------------
 
-Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/en-us/library/windowsazure/hh367516.aspx).
+Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx).
 

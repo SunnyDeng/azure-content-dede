@@ -1,9 +1,9 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-push-ios" urlDisplayName="Get Started with Push (iOS)" pageTitle="Get started with push notifications (iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your iOS app." metaCanonical="http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-push-dotnet/" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-mobile-tutorials-get-started-with-push-ios" urlDisplayName="Get Started with Push (iOS)" pageTitle="Get started with push notifications (iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your iOS app." metaCanonical="http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-push-dotnet/" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="" solutions="" manager="" editor="" />
 
 Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 ============================================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/get-started-with-push-dotnet "Windows Store C#")[Windows Store JavaScript](/en-us/develop/mobile/tutorials/get-started-with-push-js "Windows Store JavaScript")[Windows Phone](/en-us/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/get-started-with-push-ios "iOS")[Android](/en-us/develop/mobile/tutorials/get-started-with-push-android "Android")[Xamarin.iOS](/en-us/develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/en-us/develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-push-dotnet "Windows Store C#")[Windows Store JavaScript](/de-de/develop/mobile/tutorials/get-started-with-push-js "Windows Store JavaScript")[Windows Phone](/de-de/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/get-started-with-push-ios "iOS")[Android](/de-de/develop/mobile/tutorials/get-started-with-push-android "Android")[Xamarin.iOS](/de-de/develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android")
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung an eine iOS-App senden. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Services (APNS) Pushbenachrichtigungen zum Schnellstart-Projekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
@@ -11,7 +11,7 @@ Sie können sich eine Videoversion dieses Lernprogramms ansehen, indem Sie recht
 
 [Lernprogramm ansehen](http://channel9.msdn.com/posts/iOS-Support-in-Windows-Azure-Mobile-Services) [Video abspielen](http://channel9.msdn.com/posts/iOS-Support-in-Windows-Azure-Mobile-Services) 10:37
 
-> [WACOM.NOTE] In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen mithilfe der Legacyunterstützung von Mobile Services aktivieren. Azure Notification Hubs ist in Mobile Services integriert, damit Sie vorlagenbasierte und plattformübergreifende Pushbenachrichtigungen an Millionen von Geräte senden können. Standardmäßig sind Pushbenachrichtigungen unter Verwendung von Notification Hubs nicht aktiviert, und es gibt derzeit keine Notification Hub-Unterstützung für iOS in den Mobile Services-Bibliotheken. Sie können jedoch mithilfe von Notification Hub-Bibliotheken Pushbenachrichtigungen von Ihrem mobilen Dienst senden. Weitere Informationen finden Sie unter [Erste Schritte mit Notification Hubs](/en-us/documentation/articles/notification-hubs-ios-get-started/).
+> [WACOM.NOTE] In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen mithilfe der Legacyunterstützung von Mobile Services aktivieren. Azure Notification Hubs ist in Mobile Services integriert, damit Sie vorlagenbasierte und plattformübergreifende Pushbenachrichtigungen an Millionen von Geräte senden können. Standardmäßig sind Pushbenachrichtigungen unter Verwendung von Notification Hubs nicht aktiviert, und es gibt derzeit keine Notification Hub-Unterstützung für iOS in den Mobile Services-Bibliotheken. Sie können jedoch mithilfe von Notification Hub-Bibliotheken Pushbenachrichtigungen von Ihrem mobilen Dienst senden. Weitere Informationen finden Sie unter [Erste Schritte mit Notification Hubs](/de-de/documentation/articles/notification-hubs-ios-get-started/).
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
@@ -32,7 +32,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
     > [WACOM.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-ios) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-ios) abschließen.
 
 Der Apple Push Notification Service (APNS) verwendet Zertifikate zur Authentifizierung Ihres mobilen Dienstes. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service](http://go.microsoft.com/fwlink/p/?LinkId=272584).
 
@@ -331,7 +331,7 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 Nächste Schritte
 ----------------
 
-In diesem einfachen Beispiel empfängt ein Benutzer eine Benachrichtigung mit den soeben eingegebenen Daten. Der von APNS verwendete Gerätetoken wird vom Client in der Anforderung an den mobilen Dienst geliefert. Im nächsten Lernprogramm [Pushbenachrichtigungen an App-Benutzer](/en-us/develop/mobile/tutorials/push-notifications-to-users-ios) werden wir eine eigene Gerätetabelle zum Speichern von Gerätetoken erstellen und beim Auftreten einer Einfügung eine Pushbenachrichtigung an alle gespeicherten Kanäle aussenden.
+In diesem einfachen Beispiel empfängt ein Benutzer eine Benachrichtigung mit den soeben eingegebenen Daten. Der von APNS verwendete Gerätetoken wird vom Client in der Anforderung an den mobilen Dienst geliefert. Im nächsten Lernprogramm [Pushbenachrichtigungen an App-Benutzer](/de-de/develop/mobile/tutorials/push-notifications-to-users-ios) werden wir eine eigene Gerätetabelle zum Speichern von Gerätetoken erstellen und beim Auftreten einer Einfügung eine Pushbenachrichtigung an alle gespeicherten Kanäle aussenden.
 
 
 <!-- Images. -->

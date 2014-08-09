@@ -5,7 +5,7 @@ Aktivieren der Diagnoseprotokollierung für Azure-Websites
 
 Azure bietet integrierte Diagnosefunktionen zur Unterstützung des Debugging einer auf Azure-Websites gehosteten Anwendung. In diesem Artikel erfahren Sie, wie Sie die Diagnoseprotokollierung aktivieren und Instrumentierung zu Ihrer Anwendung hinzufügen und wie Sie die von Azure protokollierten Informationen abrufen.
 
-> [WACOM.NOTE] In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem Azure-Verwaltungsportal, der Azure PowerShell und der Azure plattformübergreifenden Befehlszeilenschnittstelle beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+> [WACOM.NOTE] In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem Azure-Verwaltungsportal, der Azure PowerShell und der Azure plattformübergreifenden Befehlszeilenschnittstelle beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
 Inhaltsverzeichnis
 ------------------
@@ -31,13 +31,13 @@ Unter "site diagnostics" können Sie Folgendes aktivieren oder deaktivieren:
 
 ### Anwendungsdiagnose
 
-Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/en-us/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungs-Diagnoseprotokoll aufzuzeichnen. Beispiel:
+Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/de-de/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungs-Diagnoseprotokoll aufzuzeichnen. Beispiel:
 
     System.Diagnostics.Trace.TraceError("Wenn Sie dies lesen, ist ein Fehler aufgetreten");
 
 Anwendungsdiagnosen ermöglichen Ihnen, Fehler in der laufenden Anwendung zu ermitteln, indem Informationen ausgegeben werden, sobald bestimmte Codes verwendet werden. Dies ist besonders nützlich, wenn Sie versuchen zu bestimmen, warum ein bestimmter Pfad vom Code verwendet wurde, in der Regel wenn der Pfad einen Fehler oder anderes unerwünschtes Verhalten verursacht.
 
-Informationen zum Arbeiten mit Anwendungsdiagnosen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](http://www.windowsazure.com/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+Informationen zum Arbeiten mit Anwendungsdiagnosen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](http://www.windowsazure.com/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
 > [WACOM.NOTE] Im Gegensatz zum Ändern der Datei "web.config" wird durch das Aktivieren der Anwendungsdiagnose oder durch das Ändern des Diagnoseprotokollumfangs nicht die Anwendungsdomäne neu gestartet, in der die Anwendung ausgeführt wird.
 
@@ -51,7 +51,7 @@ Bei Aktivierung von **application diagnostics** müssen Sie auch **logging level
 
 Bei Aktivierung von **site diagnostics** müssen Sie **storage** oder **file system** für die Option **web server logging** auswählen. Durch Auswahl von **storage** können Sie ein Speicherkonto festlegen und dann einen Blob-Container hinzufügen, in den die Protokolle geschrieben werden. Alle anderen Protokolle für **site diagnostics** werden nur in das Dateisystem geschrieben.
 
-> [WACOM.NOTE] In **table storage** oder **blob storage** gespeicherte Informationen können nur über einen Speicherclient oder eine Anwendung aufgerufen werden, die direkt mit diesen Speichersystemen arbeiten. Beispielsweise enthält Visual Studio 2013 einen Speicher-Explorer, mit dem Tabellen- oder Blob-Speicher erkundet werden können, und HDInsight kann auf die im Blob-Speicher gespeicherten Daten zugreifen. Sie können auch mithilfe der [Azure SDKs](http://www.windowsazure.com/en-us/downloads/#) eine Anwendung schreiben, die auf den Azure-Speicher zugreift.
+> [WACOM.NOTE] In **table storage** oder **blob storage** gespeicherte Informationen können nur über einen Speicherclient oder eine Anwendung aufgerufen werden, die direkt mit diesen Speichersystemen arbeiten. Beispielsweise enthält Visual Studio 2013 einen Speicher-Explorer, mit dem Tabellen- oder Blob-Speicher erkundet werden können, und HDInsight kann auf die im Blob-Speicher gespeicherten Daten zugreifen. Sie können auch mithilfe der [Azure SDKs](http://www.windowsazure.com/de-de/downloads/#) eine Anwendung schreiben, die auf den Azure-Speicher zugreift.
 
 Die folgenden Einstellungen sind bei der Aktivierung von **application diagnostics** verfügbar:
 
@@ -63,7 +63,7 @@ Die folgenden Einstellungen sind bei der Aktivierung von **application diagnosti
 
 > [WACOM.NOTE] Sie können gleichzeitig eine Kombination aus Dateisystem-, Tabellen- und Blob-Speicher aktivieren und jeweils individuelle Konfigurationen der Protokollierungsebene festlegen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im Blob-Speicher protokollieren, während die Dateisystemprotokollierung ausführlich erfolgt.
 
-> [WACOM.NOTE] Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [WACOM.NOTE] Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ## Vorgehensweise: Herunterladen von Protokollen
 
@@ -95,7 +95,7 @@ Starten Sie zum Herunterladen der Protokolldateien eine neue Instanz von Azure P
 
 Daraufhin werden die Protokolle für die Website, die durch den Parameter **-Name** angegeben wird, in der Datei **logs.zip** im aktuellen Verzeichnis gespeichert.
 
-> [WACOM.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [WACOM.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ### Herunterladen mit Azure-Befehlszeilentools
 
@@ -105,7 +105,7 @@ Zum Herunterladen der Protokolldateien mit den Azure-Befehlszeilentools öffnen 
 
 Daraufhin werden die Protokolle für die Website namens "websitename" in der Datei **diagnostics.zip** im aktuellen Verzeichnis gespeichert.
 
-> [WACOM.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+> [WACOM.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
 ## Vorgehensweise: Streaming von Protokollen
 
@@ -133,7 +133,7 @@ Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **-
 
 Eine Liste der verfügbaren Pfade wird mit dem Parameter "-ListPath" angezeigt.
 
-> [WACOM.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [WACOM.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ### Streaming mit Azure-Befehlszeilentools
 
@@ -151,7 +151,7 @@ Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **-
 
     azure site log tail websitename --path http
 
-> [WACOM.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+> [WACOM.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
 ## Vorgehensweise: Verstehen von Diagnoseprotokollen
 
@@ -336,8 +336,8 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 
 ## Nächste Schritte
 
--   [Überwachen von Websites](/en-us/manage/services/web-sites/how-to-monitor-websites/)
--   [Lernprogramm – Problembehandlung von Websites](/en-us/develop/net/best-practices/troubleshooting-web-sites/)
--   [Problembehandlung von Azure-Websites in Visual Studio](/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)
+-   [Überwachen von Websites](/de-de/manage/services/web-sites/how-to-monitor-websites/)
+-   [Lernprogramm – Problembehandlung von Websites](/de-de/develop/net/best-practices/troubleshooting-web-sites/)
+-   [Problembehandlung von Azure-Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)
 -   [Analyse von Website-Protokollen in HDInsight](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
 

@@ -5,7 +5,7 @@ Verwenden von Leistungsindikatoren in Azure
 
 Sie können in einer Azure-Anwendung Leistungsindikatoren verwenden, um Daten zu sammeln, mit deren Hilfe Systemengpässe ermittelt und die System- sowie Anwendungsleistung optimiert werden können. In Windows Server 2008, Windows Server 2012, IIS und ASP.NET verfügbare Leistungsindikatoren können erfasst und verwendet werden, um die Intaktheit der Azure-Anwendung zu ermitteln.
 
-In diesem Thema wird erläutert, wie Leistungsindikatoren in Ihrer Anwendung mithilfe der Konfigurationsdatei diagnostics.wadcfg aktiviert werden. Informationen zum Überwachen der Leistung Ihrer Anwendung im [Azure-Verwaltungsportal](http://manage.windowsazure.com) finden Sie unter [Überwachen von Cloud-Diensten](https://www.windowsazure.com/en-us/manage/services/cloud-services/how-to-monitor-a-cloud-service/). Weitere ausführliche Anweisungen zum Erstellen einer Protokollierungs- und Nachverfolgungsstrategie und zum Verwenden von Diagnose- und anderen Methoden zum Beheben von Problemen und Optimieren von Azure-Anwendungen finden Sie unter [Troubleshooting Best Practices for Developing Azure Applications](http://msdn.microsoft.com/en-us/library/windowsazure/hh771389.aspx) (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache).
+In diesem Thema wird erläutert, wie Leistungsindikatoren in Ihrer Anwendung mithilfe der Konfigurationsdatei diagnostics.wadcfg aktiviert werden. Informationen zum Überwachen der Leistung Ihrer Anwendung im [Azure-Verwaltungsportal](http://manage.windowsazure.com) finden Sie unter [Überwachen von Cloud-Diensten](https://www.windowsazure.com/de-de/manage/services/cloud-services/how-to-monitor-a-cloud-service/). Weitere ausführliche Anweisungen zum Erstellen einer Protokollierungs- und Nachverfolgungsstrategie und zum Verwenden von Diagnose- und anderen Methoden zum Beheben von Problemen und Optimieren von Azure-Anwendungen finden Sie unter [Troubleshooting Best Practices for Developing Azure Applications](http://msdn.microsoft.com/de-de/library/windowsazure/hh771389.aspx) (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache).
 
 Die vorliegende Aufgabe umfasst die folgenden Schritte:
 
@@ -19,7 +19,7 @@ Die vorliegende Aufgabe umfasst die folgenden Schritte:
 Voraussetzungen
 ---------------
 
-In diesem Artikel wird davon ausgegangen, dass Sie den Diagnosemonitor in die Anwendung importiert und die Konfigurationsdatei diagnostics.wadcfg der Visual Studio-Projektmappe hinzugefügt haben. Weitere Informationen finden Sie unter den Schritten 1 und 2 in [Aktivieren der Diagnose in Azure](https://www.windowsazure.com/en-us/develop/net/common-tasks/diagnostics/).
+In diesem Artikel wird davon ausgegangen, dass Sie den Diagnosemonitor in die Anwendung importiert und die Konfigurationsdatei diagnostics.wadcfg der Visual Studio-Projektmappe hinzugefügt haben. Weitere Informationen finden Sie unter den Schritten 1 und 2 in [Aktivieren der Diagnose in Azure](https://www.windowsazure.com/de-de/develop/net/common-tasks/diagnostics/).
 
 Schritt 1: Sammeln und Speichern von Daten der Leistungsindikatoren
 -------------------------------------------------------------------
@@ -53,7 +53,7 @@ Es gibt zahlreiche Leistungsindikatoren, die Sie erfassen können. Das folgende 
         <PerformanceCounterConfiguration counterSpecifier="\.NET CLR Jit(_Global_)\% Time in Jit" sampleRate="PT30S" />
         </PerformanceCounters>    
 
-Das Attribut **bufferQuotaInMB** gibt die maximale Größe des Dateisystemspeichers an, der für den Datensammlungstyp (Azure-Protokolle, IIS-Protokolle usw.) zur Verfügung steht. Der Standardwert ist 0. Wenn das Kontingent erreicht ist, werden die ältesten Daten gelöscht, sobald neue Daten hinzugefügt werden. Die Summe aller **bufferQuotaInMB**-Eigenschaften müssen größer sein als der Wert des Attributs **OverallQuotaInMB**. Ausführlichere Informationen dazu, wie Sie feststellen, wie viel Speicher für die Sammlung von Diagnosedaten erforderlich ist, finden Sie im Abschnitt "Setup WAD" im Artikel [Troubleshooting Best Practices for Developing Azure Applications](http://msdn.microsoft.com/en-us/library/windowsazure/hh771389.aspx) (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache).
+Das Attribut **bufferQuotaInMB** gibt die maximale Größe des Dateisystemspeichers an, der für den Datensammlungstyp (Azure-Protokolle, IIS-Protokolle usw.) zur Verfügung steht. Der Standardwert ist 0. Wenn das Kontingent erreicht ist, werden die ältesten Daten gelöscht, sobald neue Daten hinzugefügt werden. Die Summe aller **bufferQuotaInMB**-Eigenschaften müssen größer sein als der Wert des Attributs **OverallQuotaInMB**. Ausführlichere Informationen dazu, wie Sie feststellen, wie viel Speicher für die Sammlung von Diagnosedaten erforderlich ist, finden Sie im Abschnitt "Setup WAD" im Artikel [Troubleshooting Best Practices for Developing Azure Applications](http://msdn.microsoft.com/de-de/library/windowsazure/hh771389.aspx) (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache).
 
 Das Attribut **scheduledTransferPeriod** gibt das auf die nächste Minute gerundete Intervall zwischen geplanten Datenübertragungen an. In den folgenden Beispielen ist es auf PT30M (30 Minuten) festgelegt. Wenn das Übertragungsintervall auf einen kleinen Wert wie z. B. 1 Minute festgelegt wird, hat dies in der Produktion negative Auswirkungen auf die Anwendungsleistung, kann jedoch beim Testen nützlich sein, um festzustellen, ob die Diagnose schnell arbeitet. Das geplante Übertragungsintervall muss so klein sein, dass Diagnosedaten in der Instanz nicht überschrieben werden, andererseits aber auch so groß, dass die Leistung der Anwendung nicht beeinträchtigt wird.
 
@@ -159,7 +159,7 @@ Wenn diese Schritte abgeschlossen sind, werden Daten des benutzerdefinierten Lei
 Schritt 3: Abfragen von Leistungsindikatordaten
 -----------------------------------------------
 
-Wenn Ihre Anwendung bereitgestellt ist und ausgeführt wird, beginnt der Diagnosemonitor mit dem Erfassen von Leistungsindikatoren und dem Speichern dieser Daten im Azure-Speicher. Mit Tools wie **Server-Explorer in Visual Studio**, [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/) oder [Azure Diagnostics Manager](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx) von Cerebrata zeigen Sie die Daten der Leistungsindikatoren in der Tabelle **WADPerformanceCountersTable** an. Sie können den Tabellendienst mit [C\#][], [Java](http://www.windowsazure.com/en-us/develop/java/how-to-guides/table-service/), [Node.js][], [Python](http://www.windowsazure.com/en-us/develop/python/how-to-guides/table-service/) oder [PHP](http://www.windowsazure.com/en-us/develop/php/how-to-guides/table-service/) auch programmgesteuert abfragen.
+Wenn Ihre Anwendung bereitgestellt ist und ausgeführt wird, beginnt der Diagnosemonitor mit dem Erfassen von Leistungsindikatoren und dem Speichern dieser Daten im Azure-Speicher. Mit Tools wie **Server-Explorer in Visual Studio**, [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/) oder [Azure Diagnostics Manager](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx) von Cerebrata zeigen Sie die Daten der Leistungsindikatoren in der Tabelle **WADPerformanceCountersTable** an. Sie können den Tabellendienst mit [C\#][], [Java](http://www.windowsazure.com/de-de/develop/java/how-to-guides/table-service/), [Node.js][], [Python](http://www.windowsazure.com/de-de/develop/python/how-to-guides/table-service/) oder [PHP](http://www.windowsazure.com/de-de/develop/php/how-to-guides/table-service/) auch programmgesteuert abfragen.
 
 Das folgende C\#-Beispiel zeigt eine einfache Abfrage der Tabelle **WADPerformanceCountersTable** und speichert die Diagnosedaten in einer CSV-Datei. Wenn Sie die Leistungsindikatoren in einer CSV-Datei speichern, können Sie die Daten mit den grafischen Darstellungsfunktionen von Microsoft Excel oder eines anderen Tools darstellen. Fügen Sie einen Verweis auf die Datei Microsoft.WindowsAzure.Storage.dll hinzu, die im Azure SDK für .NET Oktober 2012 und höher enthalten ist. Die Assembly wird im Verzeichnis %Program Files%\\Microsoft SDKs\\Windows Azure.NET SDK\\version-num\\ref\\ installiert.
 
@@ -237,20 +237,20 @@ Nächste Schritte
 
 Nachdem Sie sich mit den Grundlagen der Erfassung von Leistungsindikatoren vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Problembehandlungsszenarien implementiert werden.
 
--   [Troubleshooting Best Practices for Developing Azure Applications (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache)](http://msdn.microsoft.com/en-us/library/windowsazure/hh771389.aspx)
--   [Überwachen von Cloud-Diensten](https://www.windowsazure.com/en-us/manage/services/cloud-services/how-to-monitor-a-cloud-service/)
--   [Verwenden des Anwendungsblocks für die automatische Skalierung](http://www.windowsazure.com/en-us/develop/net/how-to-guides/autoscaling/)
--   [Building Elastic and Resilient Cloud Apps (Erstellen elastischer und robuster Cloud-Apps)](http://msdn.microsoft.com/en-us/library/hh680949(PandP.50).aspx)
+-   [Troubleshooting Best Practices for Developing Azure Applications (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache)](http://msdn.microsoft.com/de-de/library/windowsazure/hh771389.aspx)
+-   [Überwachen von Cloud-Diensten](https://www.windowsazure.com/de-de/manage/services/cloud-services/how-to-monitor-a-cloud-service/)
+-   [Verwenden des Anwendungsblocks für die automatische Skalierung](http://www.windowsazure.com/de-de/develop/net/how-to-guides/autoscaling/)
+-   [Building Elastic and Resilient Cloud Apps (Erstellen elastischer und robuster Cloud-Apps)](http://msdn.microsoft.com/de-de/library/hh680949(PandP.50).aspx)
 
 Zusätzliche Ressourcen
 ----------------------
 
--   [Aktivieren der Diagnose in Azure](https://www.windowsazure.com/en-us/develop/net/common-tasks/diagnostics/)
--   [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](http://msdn.microsoft.com/en-us/library/windowsazure/gg433048.aspx)
--   [Debuggen von Cloud-Diensten](http://msdn.microsoft.com/en-us/library/windowsazure/ee405479.aspx)
+-   [Aktivieren der Diagnose in Azure](https://www.windowsazure.com/de-de/develop/net/common-tasks/diagnostics/)
+-   [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](http://msdn.microsoft.com/de-de/library/windowsazure/gg433048.aspx)
+-   [Debuggen von Cloud-Diensten](http://msdn.microsoft.com/de-de/library/windowsazure/ee405479.aspx)
 
 
-  [Overview of Creating and Using Performance Counters in an Azure Application]: http://msdn.microsoft.com/en-us/library/windowsazure/hh411520.aspx
+  [Overview of Creating and Using Performance Counters in an Azure Application]: http://msdn.microsoft.com/de-de/library/windowsazure/hh411520.aspx
   [Prerequisites]: #prereqs
   [Step 1: Collect and store data from performance counters]: #step1
   [Step 2: (Optional) Create custom performance counters]: #step2
@@ -258,19 +258,19 @@ Zusätzliche Ressourcen
   [Next Steps]: #nextsteps
   [Additional Resources]: #additional
   
-  [Collecting Logging Data by Using Azure Diagnostics]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433048.aspx
-  [Debugging an Azure Application]: http://msdn.microsoft.com/en-us/library/windowsazure/ee405479.aspx
-  [How to Use the Autoscaling Application Block]: http://www.windowsazure.com/en-us/develop/net/how-to-guides/autoscaling/
-  [Troubleshooting Best Practices for Developing Azure Applications]: http://msdn.microsoft.com/en-us/library/windowsazure/hh771389.aspx
-  [Enabling Diagnostics in Azure]: https://www.windowsazure.com/en-us/develop/net/common-tasks/diagnostics/
-  [How to use the Table Storage Service]: http://www.windowsazure.com/en-us/develop/net/how-to-guides/table-services/
+  [Collecting Logging Data by Using Azure Diagnostics]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433048.aspx
+  [Debugging an Azure Application]: http://msdn.microsoft.com/de-de/library/windowsazure/ee405479.aspx
+  [How to Use the Autoscaling Application Block]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/autoscaling/
+  [Troubleshooting Best Practices for Developing Azure Applications]: http://msdn.microsoft.com/de-de/library/windowsazure/hh771389.aspx
+  [Enabling Diagnostics in Azure]: https://www.windowsazure.com/de-de/develop/net/common-tasks/diagnostics/
+  [How to use the Table Storage Service]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/table-services/
   [Azure Storage Explorer]: http://azurestorageexplorer.codeplex.com/
   
-  [Java]: http://www.windowsazure.com/en-us/develop/java/how-to-guides/table-service/
-  [Python]: http://www.windowsazure.com/en-us/develop/python/how-to-guides/table-service/
-  [PHP]: http://www.windowsazure.com/en-us/develop/php/how-to-guides/table-service/
+  [Java]: http://www.windowsazure.com/de-de/develop/java/how-to-guides/table-service/
+  [Python]: http://www.windowsazure.com/de-de/develop/python/how-to-guides/table-service/
+  [PHP]: http://www.windowsazure.com/de-de/develop/php/how-to-guides/table-service/
   
-  [Building Elastic and Resilient Cloud Apps]: http://msdn.microsoft.com/en-us/library/hh680949(PandP.50).aspx
+  [Building Elastic and Resilient Cloud Apps]: http://msdn.microsoft.com/de-de/library/hh680949(PandP.50).aspx
   [Azure Management Portal]: http://manage.windowsazure.com
   [Azure Diagnostics Manager]: http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx
-  [How to Monitor Cloud Services]: https://www.windowsazure.com/en-us/manage/services/cloud-services/how-to-monitor-a-cloud-service/
+  [How to Monitor Cloud Services]: https://www.windowsazure.com/de-de/manage/services/cloud-services/how-to-monitor-a-cloud-service/

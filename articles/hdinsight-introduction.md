@@ -98,11 +98,11 @@ Nächste Schritte: Ressourcen für HDInsight
 
 -   [HDInsight-Dokumentation](http://go.microsoft.com/fwlink/?LinkID=285601): Dokumentationsseite für Azure HDInsight mit Links auf Artikel Videos und weitere Ressourcen.
 
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/): Lernprogramm für den schnellen Einstieg in HDInsight.
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/): Lernprogramm für den schnellen Einstieg in HDInsight.
 
--   [Ausführen der HDInsight-Beispiele](/en-us/manage/services/hdinsight/howto-run-samples/): Lernprogramm zum Ausführen der Beispiele die mit HDInsight geliefert werden.
+-   [Ausführen der HDInsight-Beispiele](/de-de/manage/services/hdinsight/howto-run-samples/): Lernprogramm zum Ausführen der Beispiele die mit HDInsight geliefert werden.
 
--   [Große Datenmengen in Azure](http://www.windowsazure.com/en-us/home/scenarios/big-data/): Beispiele für große Datenmengen, die zeigen, was Sie mit Azure machen können.
+-   [Große Datenmengen in Azure](http://www.windowsazure.com/de-de/home/scenarios/big-data/): Beispiele für große Datenmengen, die zeigen, was Sie mit Azure machen können.
 
 -   [Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx): Referenzdokumentation für die HDInsight SDK.
 
@@ -110,17 +110,17 @@ Nächste Schritte: Ressourcen für HDInsight
 
 -   [Azure Homepage](https://www.windowsazure.com/en-us/): Szenarios, Anmeldung für kostenlose Testversion, Entwicklungstools und Dokumentation, die Sie benötigen, um mit dem Aufbau der Anwendung zu beginnen.
 
--   [Azure SQL-Datenbank](http://msdn.microsoft.com/en-us/library/windowsazure/ee336279.aspx): MSDN-Dokumentation für SQL-Datenbank.
+-   [Azure SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/ee336279.aspx): MSDN-Dokumentation für SQL-Datenbank.
 
--   [Managementportal für SQL-Datenbank](http://msdn.microsoft.com/en-us/library/windowsazure/gg442309.aspx): Einfaches und unkompliziertes Datenbankmanagementtool für die Verwaltung einer SQL-Datenbank in der Cloud.
+-   [Managementportal für SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/gg442309.aspx): Einfaches und unkompliziertes Datenbankmanagementtool für die Verwaltung einer SQL-Datenbank in der Cloud.
 
 -   [Adventure Works für SQL-Datenbank](http://msftdbprodsamples.codeplex.com/releases/view/37304): Download-Seite für SQL-Beispieldatenbank.
 
 **Microsoft: Business Intelligence**
 
--   [Verbinden von Excel mit HDInsight über Power Query](/en-us/manage/services/hdinsight/connect-excel-with-power-query/): Erfahren Sie, wie Sie mithilfe von Microsoft Power Query Excel mit dem Azure-Speicherkonto verbinden, in dem die Daten für Ihren HDInsight-Cluster gespeichert werden.
+-   [Verbinden von Excel mit HDInsight über Power Query](/de-de/manage/services/hdinsight/connect-excel-with-power-query/): Erfahren Sie, wie Sie mithilfe von Microsoft Power Query Excel mit dem Azure-Speicherkonto verbinden, in dem die Daten für Ihren HDInsight-Cluster gespeichert werden.
 
--   [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](/en-us/manage/services/hdinsight/connect-excel-with-hive-ODBC/): Erfahren Sie, wie Sie Daten von Azure HDInsight über den Microsoft Hive ODBC-Driver importieren können.
+-   [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](/de-de/manage/services/hdinsight/connect-excel-with-hive-ODBC/): Erfahren Sie, wie Sie Daten von Azure HDInsight über den Microsoft Hive ODBC-Driver importieren können.
 
 -   [Microsoft BI PowerPivot](http://www.microsoft.com/en-us/bi/PowerPivot.aspx): Downloads und Informationen zu leistungsstarken Datenmashups und Tools zum Durchsuchen von Daten.
 

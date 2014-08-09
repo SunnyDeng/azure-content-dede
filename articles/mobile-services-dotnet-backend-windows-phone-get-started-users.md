@@ -3,8 +3,8 @@
 Erste Schritte bei der Authentifizierung in Mobile Services
 ===========================================================
 
-[Windows Store C\#](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users "Windows Store C#")[Windows Store JavaScript](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users "Windows Store JavaScript")[Windows Phone](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users "Windows Phone")[iOS](/en-us/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users "iOS")
-[.NET backend](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/ ".NET backend") | [JavaScript backend](/en-us/documentation/articles/mobile-services-windows-phone-get-started-users/ "JavaScript backend")
+[Windows Store C\#](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users "Windows Store C#")[Windows Store JavaScript](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users "Windows Store JavaScript")[Windows Phone](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users "Windows Phone")[iOS](/de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users "iOS")
+[.NET backend](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/ ".NET backend") | [JavaScript backend](/de-de/documentation/articles/mobile-services-windows-phone-get-started-users/ "JavaScript backend")
 
 In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ihre Windows Phone-App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
@@ -14,9 +14,9 @@ Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von A
 2.  [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer](#permissions)
 3.  [Hinzufügen von Authentifizierung zur App](#add-authentication)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/) abschließen.
 
-> [WACOM.NOTE]Dieses Lernprogramm zeigt Ihnen die grundlegende Methode von Mobile Services zur Authentifizierung von Benutzern mithilfe einer Vielzahl von Identitätsanbietern. Diese Methode lässt sich einfach konfigurieren und unterstützt verschiedene Anbieter. Allerdings müssen Sie sich mit dieser Methode auch bei jedem Start Ihrer App anmelden. Wenn Sie stattdessen Live Connect für eine einmalige Anmeldung in Ihrer Windows Store App verwenden möchten, finden Sie hierzu weitere Information unter [Einmalige Anmeldung für Windows Phone Apps mithilfe von Live Connect](/en-us/documentation/articles/mobile-services-windows-phone-single-sign-on).
+> [WACOM.NOTE]Dieses Lernprogramm zeigt Ihnen die grundlegende Methode von Mobile Services zur Authentifizierung von Benutzern mithilfe einer Vielzahl von Identitätsanbietern. Diese Methode lässt sich einfach konfigurieren und unterstützt verschiedene Anbieter. Allerdings müssen Sie sich mit dieser Methode auch bei jedem Start Ihrer App anmelden. Wenn Sie stattdessen Live Connect für eine einmalige Anmeldung in Ihrer Windows Store App verwenden möchten, finden Sie hierzu weitere Information unter [Einmalige Anmeldung für Windows Phone Apps mithilfe von Live Connect](/de-de/documentation/articles/mobile-services-windows-phone-single-sign-on).
 
 Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 ----------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ Einschränken von Berechtigungen für authentifizierte Benutzer
 
 [WACOM.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
-1.  Öffnen Sie in Visual Studio 2013 das Projekt, das Sie beim Abschluss des Lernprogramms [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/) erstellt haben.
+1.  Öffnen Sie in Visual Studio 2013 das Projekt, das Sie beim Abschluss des Lernprogramms [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/) erstellt haben.
 
 2.  Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
 
@@ -48,5 +48,5 @@ Hinzufügen von Authentifizierung zur App
 Nächste Schritte
 ----------------
 
-Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutzern](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts) werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET unter [Mobile Services .NET – Erstellen einer konzeptionellen Referenz](/en-us/develop/mobile/how-to-guides/work-with-net-client-library).
+Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutzern](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts) werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET unter [Mobile Services .NET – Erstellen einer konzeptionellen Referenz](/de-de/develop/mobile/how-to-guides/work-with-net-client-library).
 

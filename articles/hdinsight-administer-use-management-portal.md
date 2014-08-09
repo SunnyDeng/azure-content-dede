@@ -5,9 +5,9 @@ Verwalten von HDInsight-Clustern mit dem Verwaltungsportal
 
 Mit dem Azure-Verwaltungsportal können Sie HDInsight-Cluster bereitstellen, das Hadoop-Benutzerkennwort ändern und RDP aktivieren, sodass Sie auf die Hadoop-Befehlszeile im Cluster zugreifen können. Außer dem Verwaltungsportal stehen auch andere Tools zum Verwalten von HDInsight zur Verfügung.
 
--   Weitere Informationen zum Verwalten von HDInsight mit Azure PowerShell finden Sie unter [Verwalten von HDInsight mit PowerShell](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/).
+-   Weitere Informationen zum Verwalten von HDInsight mit Azure PowerShell finden Sie unter [Verwalten von HDInsight mit PowerShell](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/).
 
--   Weitere Informationen zum Verwalten von HDInsight mit den plattformübergreifenden Befehlszeilentools finden Sie unter [Verwalten von HDInsight mit der plattformübergreifenden Befehlszeile](/en-us/manage/services/hdinsight/administer-hdinsight-using-command-line-interface/).
+-   Weitere Informationen zum Verwalten von HDInsight mit den plattformübergreifenden Befehlszeilentools finden Sie unter [Verwalten von HDInsight mit der plattformübergreifenden Befehlszeile](/de-de/manage/services/hdinsight/administer-hdinsight-using-command-line-interface/).
 
 **Voraussetzungen:**
 
@@ -29,9 +29,9 @@ Themen in diesem Artikel
 Bereitstellen eines HDInsight-Clusters
 --------------------------------------
 
-HDInsight-Cluster können mit verschiedenen Methoden erstellt werden, in diesem Artikel wird lediglich die Verwendung der Option "Schnellerfassung" im Azure-Verwaltungsportal behandelt. Weitere Methoden werden unter [Bereitstellen eines HDInsight-Clusters](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/) erläutert.
+HDInsight-Cluster können mit verschiedenen Methoden erstellt werden, in diesem Artikel wird lediglich die Verwendung der Option "Schnellerfassung" im Azure-Verwaltungsportal behandelt. Weitere Methoden werden unter [Bereitstellen eines HDInsight-Clusters](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/) erläutert.
 
-HDInsight-Cluster verwenden Azure-Blob-Speichercontainer als Standarddateisystem. Weitere Informationen über Azure-Blob-Speicher und dessen nahtlose Integration in HDInsight-Cluster finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/en-us/manage/services/hdinsight/howto-blob-store/).
+HDInsight-Cluster verwenden Azure-Blob-Speichercontainer als Standarddateisystem. Weitere Informationen über Azure-Blob-Speicher und dessen nahtlose Integration in HDInsight-Cluster finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/de-de/manage/services/hdinsight/howto-blob-store/).
 
 Ein Azure-Speicherkonto muss in demselben Rechenzentrum erstellt werden, in dem der HDInsight-Cluster bereitgestellt werden soll. Derzeit können HDInsight-Cluster in fünf Rechenzentren bereitgestellt werden:
 
@@ -41,7 +41,7 @@ Ein Azure-Speicherkonto muss in demselben Rechenzentrum erstellt werden, in dem 
 -   USA (Osten)
 -   USA (Westen)
 
-Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](/en-us/manage/services/storage/how-to-create-a-storage-account/).
+Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](/de-de/manage/services/storage/how-to-create-a-storage-account/).
 
 **So stellen Sie einen HDInsight-Cluster bereit**
 
@@ -65,14 +65,14 @@ Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter 
 Anpassen von HDInsight-Clustern
 -------------------------------
 
-In HDInsight kann eine Vielzahl von Hadoop-Komponenten verwendet werden. Eine Liste der überprüften und unterstützten Komponenten finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](/en-us/manage/services/hdinsight/versioning-in-hdinsight/). Die HDInsight-Anpassung kann mit einem der folgenden Verfahren durchgeführt werden:
+In HDInsight kann eine Vielzahl von Hadoop-Komponenten verwendet werden. Eine Liste der überprüften und unterstützten Komponenten finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](/de-de/manage/services/hdinsight/versioning-in-hdinsight/). Die HDInsight-Anpassung kann mit einem der folgenden Verfahren durchgeführt werden:
 
--   Sie können die Clusteranpassungsparameter im HDInsight .NET-SDK oder in Azure PowerShell während der Clusterbereitstellung verwenden. Dies bewirkt, dass diese Konfigurationsänderungen während der gesamten Lebensdauer des Clusters erhalten bleiben und sich Reimagings von Clusterknoten, die die Azure-Plattform regelmäßig zu Wartungszwecken durchführt, nicht darauf auswirken. Weitere Informationen zur Verwendung der Clusteranpassungsparameter finden Sie unter [Bereitstellen eines HDInsight-Clusters](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/).
--   Einige systemeigene Java-Komponenten wie Mahout und Cascading können als JAR-Dateien auf dem Cluster ausgeführt werden. Diese JAR-Dateien können an Azure-Blob-Speicher (WASB) verteilt und mit den Verfahren zur Übermittelung von Hadoop-Jobs an HDInsight-Cluster gesendet werden. Weitere Informationen finden Sie unter [Programmgesteuerte Übermittlung von Hadoop-Jobs](/en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/).
+-   Sie können die Clusteranpassungsparameter im HDInsight .NET-SDK oder in Azure PowerShell während der Clusterbereitstellung verwenden. Dies bewirkt, dass diese Konfigurationsänderungen während der gesamten Lebensdauer des Clusters erhalten bleiben und sich Reimagings von Clusterknoten, die die Azure-Plattform regelmäßig zu Wartungszwecken durchführt, nicht darauf auswirken. Weitere Informationen zur Verwendung der Clusteranpassungsparameter finden Sie unter [Bereitstellen eines HDInsight-Clusters](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/).
+-   Einige systemeigene Java-Komponenten wie Mahout und Cascading können als JAR-Dateien auf dem Cluster ausgeführt werden. Diese JAR-Dateien können an Azure-Blob-Speicher (WASB) verteilt und mit den Verfahren zur Übermittelung von Hadoop-Jobs an HDInsight-Cluster gesendet werden. Weitere Informationen finden Sie unter [Programmgesteuerte Übermittlung von Hadoop-Jobs](/de-de/manage/services/hdinsight/submit-hadoop-jobs-programmatically/).
 
-    > [WACOM.NOTE] Wenn Sie Probleme bei der Bereitstellung von JAR-Dateien an HDInsight-Cluster oder beim Aufrufen von JAR-Dateien für HDInsight-Cluster haben, wenden Sie sich an den [Microsoft-Support](http://www.windowsazure.com/en-us/support/options/).
+    > [WACOM.NOTE] Wenn Sie Probleme bei der Bereitstellung von JAR-Dateien an HDInsight-Cluster oder beim Aufrufen von JAR-Dateien für HDInsight-Cluster haben, wenden Sie sich an den [Microsoft-Support](http://www.windowsazure.com/de-de/support/options/).
 
-    > Weder Mahout noch Cascading werden von HDInsight unterstützt; es steht kein Microsoft-Support zur Verfügung. Listen der unterstützten Komponenten finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](/en-us/manage/services/hdinsight/versioning-in-hdinsight/).
+    > Weder Mahout noch Cascading werden von HDInsight unterstützt; es steht kein Microsoft-Support zur Verfügung. Listen der unterstützten Komponenten finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](/de-de/manage/services/hdinsight/versioning-in-hdinsight/).
 
 Die Installation von benutzerdefinierter Software auf dem Cluster über eine Remotedesktopverbindung wird nicht unterstützt. Speichern Sie nach Möglichkeit keine Dateien auf den Laufwerken des Hauptknotens, da diese verloren gehen, wenn Sie die Cluster neu erstellen müssen. Wir empfehlen die Speicherung von Dateien im Azure-Blob-Speicher. Blob-Speicher ist persistent.
 
@@ -151,7 +151,7 @@ Diese Aufgabe kann auch mithilfe der folgenden Azure PowerShell-Cmdlets ausgefü
 -   Grant-AzureHDInsightHttpServicesAccess
 -   Revoke-AzureHDInsightHttpServicesAccess
 
-Weitere Informationen finden Sie unter [Verwalten von HDInsight mit PowerShell](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/).
+Weitere Informationen finden Sie unter [Verwalten von HDInsight mit PowerShell](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/).
 
 Öffnen der Hadoop-Befehlszeile
 ------------------------------
@@ -187,10 +187,10 @@ Nächste Schritte
 
 In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Verwaltungsportal erstellt und wie das Hadoop-Befehlszeilentool geöffnet wird. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Verwalten von HDInsight mit PowerShell](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/)
--   [Verwalten von HDInsight mit der plattformübergreifenden Befehlszeile](/en-us/manage/services/hdinsight/administer-hdinsight-using-command-line-interface/)
--   [Bereitstellen eines HDInsight-Clusters](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/)
--   [Programmgesteuerte Übermittlung von Hadoop-Jobs](/en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/)
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](/en-us/manage/services/hdinsight/versioning-in-hdinsight/)
+-   [Verwalten von HDInsight mit PowerShell](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/)
+-   [Verwalten von HDInsight mit der plattformübergreifenden Befehlszeile](/de-de/manage/services/hdinsight/administer-hdinsight-using-command-line-interface/)
+-   [Bereitstellen eines HDInsight-Clusters](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/)
+-   [Programmgesteuerte Übermittlung von Hadoop-Jobs](/de-de/manage/services/hdinsight/submit-hadoop-jobs-programmatically/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](/de-de/manage/services/hdinsight/versioning-in-hdinsight/)
 

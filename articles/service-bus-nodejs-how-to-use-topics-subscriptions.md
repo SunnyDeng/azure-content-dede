@@ -26,7 +26,7 @@ Inhaltsverzeichnis
 Erstellen einer Node.js-Anwendung
 ---------------------------------
 
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js-Clouddienst](/en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/) (mithilfe von Windows PowerShell) oder [Website mit WebMatrix](/en-us/develop/nodejs/tutorials/web-site-with-webmatrix/).
+Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js-Clouddienst](/de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/) (mithilfe von Windows PowerShell) oder [Website mit WebMatrix](/de-de/develop/nodejs/tutorials/web-site-with-webmatrix/).
 
 Konfigurieren der Anwendung zur Verwendung eines Service Bus
 ------------------------------------------------------------
@@ -63,9 +63,9 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_SERVICEBUS\_NAMESPACE und AZURE\_SERVICEBUS\_ACCESS\_KEY die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Service Bus benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **createServiceBusService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Cloud-Dienst finden Sie unter [Node.js-Clouddienst mit Speicher](/en-us/develop/nodejs/tutorials/web-app-with-storage/).
+Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Cloud-Dienst finden Sie unter [Node.js-Clouddienst mit Speicher](/de-de/develop/nodejs/tutorials/web-app-with-storage/).
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher](/en-us/develop/nodejs/tutorials/web-site-with-storage/).
+Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher](/de-de/develop/nodejs/tutorials/web-site-with-storage/).
 
 Erstellen eines Themas
 ----------------------
@@ -136,7 +136,7 @@ Abonnements sind dauerhaft und existieren solange, bis sie oder das mit ihnen ve
 
 Sie können auch Filter einrichten, durch die Sie angeben können, welche an ein Thema gesendeten Nachrichten in einem bestimmten Themenabonnement angezeigt werden sollen.
 
-Der von Abonnements unterstützte flexibelste Filtertyp ist **SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können, finden Sie in der Syntax [SqlFilter.SqlExpression](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx).
+Der von Abonnements unterstützte flexibelste Filtertyp ist **SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können, finden Sie in der Syntax [SqlFilter.SqlExpression](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx).
 
 Sie können mithilfe der **createRule**-Methode des **ServiceBusService**-Objekts Filter zu einem Abonnement hinzufügen. Durch diese Methode können Sie neue Filter zu einem vorhandenen Abonnement hinzufügen.
 
@@ -301,8 +301,8 @@ Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/en-us/library/hh367516.aspx).
--   API-Referenz für [SqlFilter](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx).
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/de-de/library/hh367516.aspx).
+-   API-Referenz für [SqlFilter](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx).
 -   Besuchen Sie das [Azure SDK für Node](https://github.com/WindowsAzure/azure-sdk-for-node)-Repository auf GitHub.
 
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
@@ -320,11 +320,11 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden 
   [How to: Delete Topics and Subscriptions]: #How_to_Delete_Topics_and_Subscriptions
   [1]: #Next_Steps
   [Azure Management Portal]: http://manage.windowsazure.com
-  [SqlFilter.SqlExpression]: http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [Queues, Topics, and Subscriptions]: http://msdn.microsoft.com/en-us/library/hh367516.aspx
-  [SqlFilter]: http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
-  [Web Site with WebMatrix]: /en-us/develop/nodejs/tutorials/web-site-with-webmatrix/
-  [Node.js Cloud Service]: /en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [Create and deploy a Node.js application to an Azure Web Site]: /en-us/develop/nodejs/tutorials/create-a-website-(mac)/
-  [Node.js Cloud Service with Storage]: /en-us/develop/nodejs/tutorials/web-app-with-storage/
-  [Node.js Web Application with Storage]: /en-us/develop/nodejs/tutorials/web-site-with-storage/
+  [SqlFilter.SqlExpression]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
+  [Queues, Topics, and Subscriptions]: http://msdn.microsoft.com/de-de/library/hh367516.aspx
+  [SqlFilter]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
+  [Web Site with WebMatrix]: /de-de/develop/nodejs/tutorials/web-site-with-webmatrix/
+  [Node.js Cloud Service]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Create and deploy a Node.js application to an Azure Web Site]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
+  [Node.js Cloud Service with Storage]: /de-de/develop/nodejs/tutorials/web-app-with-storage/
+  [Node.js Web Application with Storage]: /de-de/develop/nodejs/tutorials/web-site-with-storage/

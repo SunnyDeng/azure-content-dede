@@ -104,7 +104,7 @@ Ein häufiges Entwurfsmuster, für das Tabellenspeicher in Frage kommt, ist eine
 
 Nähere Informationen zum Tabellenspeicher finden Sie unter:
 
--   [Windows Azure-Tabellenspeicher und Windows Azure SQL-Datenbank – Vergleich und Gegenüberstellung](http://msdn.microsoft.com/en-us/library/jj553018.aspx)
+-   [Windows Azure-Tabellenspeicher und Windows Azure SQL-Datenbank – Vergleich und Gegenüberstellung](http://msdn.microsoft.com/de-de/library/jj553018.aspx)
 -   [Azure Table Storage Performance Considerations](http://go.microsoft.com/fwlink/?LinkId=252663)
 -   [SQL Azure and Microsoft Azure Table Storage](http://go.microsoft.com/fwlink/?LinkId=252664)
 -   [Improving Performance by Batching Azure Table Storage Inserts](http://go.microsoft.com/fwlink/?LinkID=252665), wo einige Leistungsergebnisse diskutiert werden.
@@ -202,8 +202,8 @@ Es gibt vier Hauptarten von Nicht-SQL-Datenspeicher:
 Azure stellt direkte Unterstützung für Hadoop bereit und ermöglicht auch die Nutzung anderer Technologien. Weitere Informationen zum Azure HDInsight-Dienst finden Sie unter:
 
 -   [Große Datenmengen](/en-us/solutions/big-data/)
--   [Azure HDInsight-Dienst](/en-us/documentation/services/hdinsight/)
--   [Erste Schritte mit dem Azure HDInsight-Dienst](/en-us/documentation/articles/hdinsight-get-started/)
+-   [Azure HDInsight-Dienst](/de-de/documentation/services/hdinsight/)
+-   [Erste Schritte mit dem Azure HDInsight-Dienst](/de-de/documentation/articles/hdinsight-get-started/)
 
 Eine Diskussion von Fragen, die mit den verschiedenen Nicht-SQL-Speichermethoden verbunden sind, finden Sie unter:
 

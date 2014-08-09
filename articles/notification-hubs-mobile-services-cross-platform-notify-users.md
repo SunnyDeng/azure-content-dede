@@ -3,9 +3,9 @@
 Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs
 ===================================================================================
 
-[Mobile Services](/en-us/manage/services/notification-hubs/notify-users-xplat-mobile-services/ "Mobile Services") [ASP.NET](/en-us/manage/services/notification-hubs/notify-users-xplat-aspnet/ "ASP.NET")
+[Mobile Services](/de-de/manage/services/notification-hubs/notify-users-xplat-mobile-services/ "Mobile Services") [ASP.NET](/de-de/manage/services/notification-hubs/notify-users-xplat-aspnet/ "ASP.NET")
 
-Im vorherigen Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users) haben Sie gelernt, wie Sie Pushbenachrichtigungen an alle Geräte eines bestimmten authentifizierten Benutzers senden können. Dieses Lernprogramm benötigte mehrere Anfragen für den Versand einer Benachrichtigung an jede unterstützte Client-Plattform. Notification Hubs unterstützen Vorlagen, mit denen Sie angeben können, wie ein bestimmtes Gerät Benachrichtigungen empfangen soll. Damit können Sie den Versand plattformübergreifender Benachrichtigungen vereinfachen. Dieser Artikel beschreibt den Einsatz von Vorlagen für den Versand einer plattformunabhängigen Benachrichtigung für alle Plattformen mit nur einer Anfrage. Weitere Informationen zu Vorlagen finden Sie unter [Benachrichtigungshubs im Überblick](http://go.microsoft.com/fwlink/p/?LinkId=317339).
+Im vorherigen Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users) haben Sie gelernt, wie Sie Pushbenachrichtigungen an alle Geräte eines bestimmten authentifizierten Benutzers senden können. Dieses Lernprogramm benötigte mehrere Anfragen für den Versand einer Benachrichtigung an jede unterstützte Client-Plattform. Notification Hubs unterstützen Vorlagen, mit denen Sie angeben können, wie ein bestimmtes Gerät Benachrichtigungen empfangen soll. Damit können Sie den Versand plattformübergreifender Benachrichtigungen vereinfachen. Dieser Artikel beschreibt den Einsatz von Vorlagen für den Versand einer plattformunabhängigen Benachrichtigung für alle Plattformen mit nur einer Anfrage. Weitere Informationen zu Vorlagen finden Sie unter [Benachrichtigungshubs im Überblick](http://go.microsoft.com/fwlink/p/?LinkId=317339).
 
 **Hinweis**
 
@@ -98,13 +98,13 @@ Nächste Schritte
 
 Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notification Hubs und Vorlagen in den folgenden Themen:
 
--   **Verwenden von Notification Hubs zum Senden von Nachrichten ([Windows Store C\#](/en-us/manage/services/notification-hubs/breaking-news-dotnet) / [iOS](/en-us/manage/services/notification-hubs/breaking-news-ios))**
+-   **Verwenden von Notification Hubs zum Senden von Nachrichten ([Windows Store C\#](/de-de/manage/services/notification-hubs/breaking-news-dotnet) / [iOS](/de-de/manage/services/notification-hubs/breaking-news-ios))**
     Demonstriert ein weiteres Szenario für Vorlagen
 
 -   **[Benachrichtigungshubs im Überblick](http://go.microsoft.com/fwlink/p/?LinkId=317339)**
     Dieser Übersichtsartikel enthält weitere Detailinformationen zu Vorlagen.
 
--   **[Notification Hub How to for Windows Store](http://msdn.microsoft.com/en-us/library/windowsazure/jj927172.aspx)** (in englischer Sprache)
+-   **[Notification Hub How to for Windows Store](http://msdn.microsoft.com/de-de/library/windowsazure/jj927172.aspx)** (in englischer Sprache)
     Enthält eine Sprachreferenz für Vorlagen.
 
 

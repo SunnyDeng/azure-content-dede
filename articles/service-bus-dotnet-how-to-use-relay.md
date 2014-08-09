@@ -242,7 +242,7 @@ Nächste SchritteNächste Schritte
 
 Nachdem Sie nun mit den Grundlagen des Service Bus-**Relay**diensts vertraut sind, finden Sie unter diesen Links weitere Informationen.
 
--   Erstellen eines Diensts: [Erstellen eines Diensts für Service Bus](http://msdn.microsoft.com/en-us/library/windowsazure/ee173564.aspx)
--   Erstellen des Clients: [Erstellen einer Service Bus-Clientanwendung](http://msdn.microsoft.com/en-us/library/windowsazure/ee173543.aspx).
+-   Erstellen eines Diensts: [Erstellen eines Diensts für Service Bus](http://msdn.microsoft.com/de-de/library/windowsazure/ee173564.aspx)
+-   Erstellen des Clients: [Erstellen einer Service Bus-Clientanwendung](http://msdn.microsoft.com/de-de/library/windowsazure/ee173543.aspx).
 -   Service Bus-Beispiele: Download von [Azure-Beispielen](http://code.msdn.microsoft.com/windowsazure).
 

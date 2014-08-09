@@ -7,7 +7,7 @@ Erstellen von Echtzeit-Apps mit Mobile Services und Pusher
 
 In diesem Thema erfahren Sie, wie Sie Echtzeitfunktionen zu Ihrer Azure Mobile Services-basierten App hinzufügen können. Abschließend werden die TodoList-Daten in Echtzeit in allen laufenden Instanzen Ihrer App synchronisiert.
 
-Im Lernprogramm [Pushbenachrichtigungen an Benutzer](/en-us/develop/mobile/tutorials/push-notifications-to-users-ios) wird beschrieben, wie Sie Pushbenachrichtigungen verwenden können, um Benutzer über neue Elemente in der Todo-Liste zu informieren. Pushbenachrichtigungen bieten eine hervorragende Möglichkeit, gelegentliche Änderungen anzuzeigen. In einigen Fällen benötigt eine App allerdings regelmäßige Echtzeitbenachrichtigungen. Echtzeitbenachrichtigungen können mithilfe der Pusher API zu Ihrem mobilen Dienst hinzugefügt werden. In diesem Lernprogramm werden Pusher mit Mobile Services eingesetzt, um eine Todo-Liste im synchronisierten Zustand zu belassen, wenn Änderungen an einer beliebigen laufenden Instanz der App vorgenommen werden.
+Im Lernprogramm [Pushbenachrichtigungen an Benutzer](/de-de/develop/mobile/tutorials/push-notifications-to-users-ios) wird beschrieben, wie Sie Pushbenachrichtigungen verwenden können, um Benutzer über neue Elemente in der Todo-Liste zu informieren. Pushbenachrichtigungen bieten eine hervorragende Möglichkeit, gelegentliche Änderungen anzuzeigen. In einigen Fällen benötigt eine App allerdings regelmäßige Echtzeitbenachrichtigungen. Echtzeitbenachrichtigungen können mithilfe der Pusher API zu Ihrem mobilen Dienst hinzugefügt werden. In diesem Lernprogramm werden Pusher mit Mobile Services eingesetzt, um eine Todo-Liste im synchronisierten Zustand zu belassen, wenn Änderungen an einer beliebigen laufenden Instanz der App vorgenommen werden.
 
 Pusher stellt einen cloudbasierten Dienst dar, der, wie etwa Mobile Services, das Erstellen von Echtzeit-Apps erheblich vereinfacht. Sie können Pusher verwenden, um rasch Live-Umfragen, Chatrooms, Multiplayer-Spiele und gemeinschaftliche Apps einzurichten und um Live-Daten und Inhalte zu übertragen. Und dies ist erst der Anfang! Weitere Informationen finden Sie unter <http://pusher.com>.
 
@@ -18,7 +18,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zum Hinzufüg
 3.  [Installieren von Serverskripts](#install-scripts)
 4.  [Testen Ihrer App](#test-app)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started) abschließen.
 
 Erstellen eines neuen Pusher-Kontos
 -----------------------------------

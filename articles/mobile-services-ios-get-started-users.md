@@ -3,8 +3,8 @@
 Erste Schritte bei der Authentifizierung in Mobile Services
 ===========================================================
 
-[Windows Store C\#](/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-users "Windows Store C#")[Windows Store JavaScript](/en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-users "Windows Store JavaScript")[Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-get-started-users "Windows Phone")[iOS](/en-us/documentation/articles/mobile-services-ios-get-started-users "iOS")[Android](/en-us/documentation/articles/mobile-services-android-get-started-users "Android")[HTML](/en-us/documentation/articles/mobile-services-html-get-started-users "HTML")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-mobile-services-ios-get-started-users "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-mobile-services-android-get-started-users "Xamarin.Android")
-[.NET-Backend](/en-us/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/ ".NET-Backend") | [JavaScript-Backend](/en-us/documentation/articles/mobile-services-ios-get-started-users/ "JavaScript-Backend")
+[Windows Store C\#](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-users "Windows Store C#")[Windows Store JavaScript](/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users "Windows Store JavaScript")[Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-get-started-users "Windows Phone")[iOS](/de-de/documentation/articles/mobile-services-ios-get-started-users "iOS")[Android](/de-de/documentation/articles/mobile-services-android-get-started-users "Android")[HTML](/de-de/documentation/articles/mobile-services-html-get-started-users "HTML")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started-users "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started-users "Xamarin.Android")
+[.NET-Backend](/de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/ ".NET-Backend") | [JavaScript-Backend](/de-de/documentation/articles/mobile-services-ios-get-started-users/ "JavaScript-Backend")
 
 Dieses Thema beschreibt die Authentifizierung von Benutzern in Azure Mobile Services aus Ihrer iOS-App. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
@@ -28,7 +28,7 @@ Einschränken von Berechtigungen für authentifizierte Benutzer
 
 [WACOM.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
-1.  Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-ios-get-started) erstellt haben.
+1.  Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-ios-get-started) erstellt haben.
 
 2.  Klicken Sie auf **Ausführen**, das Projekt zu erstellen und die App im iPhone-Emulator zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) geworfen wird.
 
@@ -57,12 +57,12 @@ Im nächsten Lernprogramm [Serviceseitige Autorisierung von Mobile Services-Benu
 [Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582 
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039 
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253 
-[Einmalige Anmeldung für Windows Store Apps mithilfe von Live Connect]: /en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet 
-[Erste Schritte mit Mobile Services]: /en-us/develop/mobile/tutorials/get-started-ios 
-[Erste Schritte mit Daten]: /en-us/develop/mobile/tutorials/get-started-with-data-ios 
-[Erste Schritte mit Authentifizierung]: /en-us/develop/mobile/tutorials/get-started-with-users-ios 
-[Erste Schritte mit Pushbenachrichtigungen]: /en-us/develop/mobile/tutorials/get-started-with-push-ios 
-[Autorisieren von Benutzern mit Skripts]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-ios??
+[Einmalige Anmeldung für Windows Store Apps mithilfe von Live Connect]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet 
+[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-ios 
+[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-ios 
+[Erste Schritte mit Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-ios 
+[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-ios 
+[Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios??
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
 
@@ -87,11 +87,11 @@ Im nächsten Lernprogramm [Serviceseitige Autorisierung von Mobile Services-Benu
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Single sign-on for Windows Store apps by using Live Connect]: /en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-ios
-[Get started with data]: /en-us/develop/mobile/tutorials/get-started-with-data-ios
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-ios
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-ios
-[Authorize users with scripts]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-ios
+[Single sign-on for Windows Store apps by using Live Connect]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-ios
+[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-ios
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-ios
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-ios
+[Authorize users with scripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios
 
 [Azure Management Portal]: https://manage.windowsazure.com/

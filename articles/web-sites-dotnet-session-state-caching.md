@@ -7,7 +7,7 @@ In diesem Thema wird erläutert, wie Sie den Azure Cache Service (Vorschau) zur 
 
 Ohne externen Anbieter wird der Sitzungsstatus prozessintern auf dem Webserver, der die Website hostet, gespeichert. Für Azure-Websites gibt es zwei Probleme mit dem prozessinternen Sitzungsstatus. Erstens ist für Websites mit mehreren Instanzen der auf einer Instanz gespeicherte Sitzungsstatus für die anderen Instanzen nicht sichtbar. Da eine Benutzeranforderung an jede Instanz weitergeleitet werden kann, sind die Sitzungsinformationen nicht unbedingt vorhanden. Zweitens können Änderungen an der Konfiguration dazu führen, dass die Website auf einem ganz anderen Server ausgeführt wird.
 
-Der Cache Service (Vorschau) bietet einen verteilten Zwischenspeicherungsdienst außerhalb der Website. Dies löst das Problem mit dem prozessinternen Sitzungsstatus. Weitere Informationen zur Verwendung des Sitzungsstatus finden Sie unter [Überblick über den ASP.NET-Sitzungsstatus](http://msdn.microsoft.com/en-us/library/ms178581.aspx).
+Der Cache Service (Vorschau) bietet einen verteilten Zwischenspeicherungsdienst außerhalb der Website. Dies löst das Problem mit dem prozessinternen Sitzungsstatus. Weitere Informationen zur Verwendung des Sitzungsstatus finden Sie unter [Überblick über den ASP.NET-Sitzungsstatus](http://msdn.microsoft.com/de-de/library/ms178581.aspx).
 
 Die grundlegenden Schritte zur Verwendung des Cache Service (Vorschau) für das Zwischenspeichern des Sitzungsstatus umfassen:
 
@@ -38,7 +38,7 @@ Erstellen des Caches
 Konfigurieren des ASP.NET-Projekts
 ----------------------------------
 
-1.  Vergewissern Sie sich zuerst, dass Sie das neueste **Azure SDK für .NET** [installiert](http://www.windowsazure.com/en-us/downloads/?sdk=net) haben.
+1.  Vergewissern Sie sich zuerst, dass Sie das neueste **Azure SDK für .NET** [installiert](http://www.windowsazure.com/de-de/downloads/?sdk=net) haben.
 
 2.  Klicken Sie im **Projektmappen-Explorer** in Visual Studio mit der rechten Maustaste auf das ASP.NET-Projekt, und wählen Sie dann **Manage NuGet Packages** aus. (Bei Verwendung von WebMatrix klicken Sie stattdessen in der Symbolleiste auf die Schaltfläche **NuGet**.)
 
@@ -87,5 +87,5 @@ Der folgende Code ruft den Wert aus dem Sitzungsstatus ab.
     if (objValue != null)
        strValue = (string)obj;  
 
-Weitere Informationen zur Verwendung des ASP.NET-Sitzungsstatus finden Sie unter [Überblick über den ASP.NET-Sitzungsstatus](http://msdn.microsoft.com/en-us/library/ms178581.aspx).
+Weitere Informationen zur Verwendung des ASP.NET-Sitzungsstatus finden Sie unter [Überblick über den ASP.NET-Sitzungsstatus](http://msdn.microsoft.com/de-de/library/ms178581.aspx).
 

@@ -21,9 +21,9 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -   Microsoft Visual Studio 2012 Express für Windows 8 oder eine höhere Version
 -   [Windows Phone SDK 8.0](http://www.microsoft.com/en-us/download/details.aspx?id=35471) oder höher
 -   NuGet Package Manager installiert für Microsoft Visual Studio.
--   [Azure-Speicherkonto](/en-us/manage/services/storage/how-to-create-a-storage-account)
+-   [Azure-Speicherkonto](/de-de/manage/services/storage/how-to-create-a-storage-account)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-phone-get-started) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-phone-get-started) abschließen.
 
 Installieren des Speicherclients für Windows Store-Apps
 -------------------------------------------------------
@@ -52,15 +52,15 @@ Nächste Schritte
 
 Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen Dienstes in den Blob-Dienst sicher hochzuladen, können Sie sich einigen anderen Themen aus dem Bereich Back-End-Dienste und Integration zuwenden:
 
--   [Senden von E-Mails in Mobile Services mit SendGrid](/en-us/develop/mobile/tutorials/send-email-with-sendgrid/)
+-   [Senden von E-Mails in Mobile Services mit SendGrid](/de-de/develop/mobile/tutorials/send-email-with-sendgrid/)
 
     Lernen Sie, wie Sie mithilfe des E-Mail-Dienstes SendGrid eine E-Mail-Funktion zu Ihrem mobilen Dienst hinzufügen können. In diesem Thema wird erläutert, wie serverseitige Skripts zum Senden von E-Mails mithilfe von SendGrid hinzugefügt werden
 
--   [Planen von Back-End-Aufträgen in Mobile Services](/en-us/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
+-   [Planen von Back-End-Aufträgen in Mobile Services](/de-de/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
 
     Lernen Sie, wie Sie die Auftragsplanerfunktion in Mobile Services zur Definition von Skriptcode verwenden können, der gemäß einem von Ihnen definierten Zeitplan ausgeführt wird.
 
--   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/en-us/develop/mobile/how-to-guides/work-with-net-client-library)
+-   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/de-de/develop/mobile/how-to-guides/work-with-net-client-library)
 
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET
 

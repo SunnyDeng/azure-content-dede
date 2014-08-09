@@ -9,7 +9,7 @@ In diesem Thema werden Verwaltungsaufgaben beschrieben, deren regelmäßige Ausf
 
 2.  Überprüfen Sie Ihre Identitätsanbieter, Dienstidentitäten, Regeln und Portaladministratoren, und entfernen Sie sie, sofern sie veraltet sind.
 
-Weitere Informationen zu ACS finden Sie unter [Access Control Service 2.0](http://msdn.microsoft.com/en-us/library/gg429786.aspx).
+Weitere Informationen zu ACS finden Sie unter [Access Control Service 2.0](http://msdn.microsoft.com/de-de/library/gg429786.aspx).
 
 Verwaltungsrichtlinien für Zertifikate und Schlüssel
 ----------------------------------------------------
@@ -38,13 +38,13 @@ Dies sind die allgemeinen Schritte zur Durchführung eines Rollovers für Dienst
 
 Wenn ein Zertifikat oder ein Schlüssel abläuft, schlägt die Ausgabe von Tokens durch ACS fehl. Dadurch funktioniert die vertrauende Seite nicht mehr ordnungsgemäß. Abgelaufene Zertifikate und Schlüssel werden von ACS ignoriert. Dies führt zu Ausnahmefehlern, als wenn von vornherein kein Zertifikat oder Schlüssel konfiguriert worden wäre. In den folgenden Abschnitten finden Sie Informationen zu allen von ACS verwalteten Zertifikaten und Schlüsseln, zu ihrer Erneuerung sowie dazu, wie Sie erkennen, wann sie abgelaufen sind und erneuert werden müssen.
 
--   Der Abschnitt "Zertifikate und Schlüssel" im ACS-Verwaltungsportal hilft Ihnen, Zertifikate und Schlüssel für Dienst-Namespaces und Anwendungen der vertrauenden Seite zu verwalten. Weitere Informationen über diese Arten von Anmeldeinformationen erhalten Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/en-us/library/gg185932.aspx).
--   Der Abschnitt "Dienstidentitäten" im ACS-Verwaltungsportal hilft Ihnen bei der Verwaltung von Anmeldeinformationen (Zertifikate, Schlüssel oder Kennwörter) für Dienstidentitäten. Weitere Informationen über Dienstidentitäten erhalten Sie unter [Dienstidentitäten](http://msdn.microsoft.com/en-us/library/gg185945.aspx).
--   Der Abschnitt "Verwaltungsdienst" im ACS-Verwaltungsportal hilft Ihnen bei der Verwaltung von Anmeldeinformationen (Zertifikate, Schlüssel oder Kennwörter) für den ACS-Verwaltungsdienst. Weitere Informationen über den ACS-Verwaltungsdienst erhalten sie unter [ACS-Verwaltungsdienst](http://msdn.microsoft.com/en-us/library/gg185972.aspx).
+-   Der Abschnitt "Zertifikate und Schlüssel" im ACS-Verwaltungsportal hilft Ihnen, Zertifikate und Schlüssel für Dienst-Namespaces und Anwendungen der vertrauenden Seite zu verwalten. Weitere Informationen über diese Arten von Anmeldeinformationen erhalten Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/de-de/library/gg185932.aspx).
+-   Der Abschnitt "Dienstidentitäten" im ACS-Verwaltungsportal hilft Ihnen bei der Verwaltung von Anmeldeinformationen (Zertifikate, Schlüssel oder Kennwörter) für Dienstidentitäten. Weitere Informationen über Dienstidentitäten erhalten Sie unter [Dienstidentitäten](http://msdn.microsoft.com/de-de/library/gg185945.aspx).
+-   Der Abschnitt "Verwaltungsdienst" im ACS-Verwaltungsportal hilft Ihnen bei der Verwaltung von Anmeldeinformationen (Zertifikate, Schlüssel oder Kennwörter) für den ACS-Verwaltungsdienst. Weitere Informationen über den ACS-Verwaltungsdienst erhalten sie unter [ACS-Verwaltungsdienst](http://msdn.microsoft.com/de-de/library/gg185972.aspx).
 
-Es gibt einige Typen von Zertifikaten und Schlüsseln, die im ACS-Verwaltungsportal nicht sichtbar sind. Speziell im Falle von WS-Federation-Identitätsanbietern wie AD FS müssen Sie die Gültigkeit der von den Identitätsanbietern verwendeten Zertifikate proaktiv prüfen. Aktuell sind die über die Metadaten der WS-Federation-Identitätsanbieter verfügbaren Zertifikate nicht im ACS-Verwaltungsportal sichtbar. Um die Gültigkeit der Zertifikate zu prüfen, ermitteln Sie mithilfe des Verwaltungsdienstes das Gültigkeits- und das Ablaufdatum, also die Eigenschaften StartDate und EndDate des [IdentityProviderKey](http://msdn.microsoft.com/en-us/library/hh124084.aspx). Wenn das Zertifikat oder der Schlüssel abläuft und deshalb ungültig wird, beginnt ACS, für das Zertifikat bzw. den Schlüssel spezifische Ausnahmefehler [ACS-Fehlercodes](http://msdn.microsoft.com/en-us/library/gg185949.aspx) auszulösen. Die speziellen Fehlercodes finden Sie in den Abschnitten unten.
+Es gibt einige Typen von Zertifikaten und Schlüsseln, die im ACS-Verwaltungsportal nicht sichtbar sind. Speziell im Falle von WS-Federation-Identitätsanbietern wie AD FS müssen Sie die Gültigkeit der von den Identitätsanbietern verwendeten Zertifikate proaktiv prüfen. Aktuell sind die über die Metadaten der WS-Federation-Identitätsanbieter verfügbaren Zertifikate nicht im ACS-Verwaltungsportal sichtbar. Um die Gültigkeit der Zertifikate zu prüfen, ermitteln Sie mithilfe des Verwaltungsdienstes das Gültigkeits- und das Ablaufdatum, also die Eigenschaften StartDate und EndDate des [IdentityProviderKey](http://msdn.microsoft.com/de-de/library/hh124084.aspx). Wenn das Zertifikat oder der Schlüssel abläuft und deshalb ungültig wird, beginnt ACS, für das Zertifikat bzw. den Schlüssel spezifische Ausnahmefehler [ACS-Fehlercodes](http://msdn.microsoft.com/de-de/library/gg185949.aspx) auszulösen. Die speziellen Fehlercodes finden Sie in den Abschnitten unten.
 
-Sie können die Zertifikate und Schlüssel programmiert aktualisieren, indem Sie den [ACS-Verwaltungsdienst](http://msdn.microsoft.com/en-us/library/gg185972.aspx) verwenden. Sie können auch das Codebeispiel "KeyManagement" prüfen, das als Teil von [Codebeispiel: Verwaltungsdienst](http://msdn.microsoft.com/en-us/library/gg185970.aspx) zum Herunterladen erhältlich ist.
+Sie können die Zertifikate und Schlüssel programmiert aktualisieren, indem Sie den [ACS-Verwaltungsdienst](http://msdn.microsoft.com/de-de/library/gg185972.aspx) verwenden. Sie können auch das Codebeispiel "KeyManagement" prüfen, das als Teil von [Codebeispiel: Verwaltungsdienst](http://msdn.microsoft.com/de-de/library/gg185970.aspx) zum Herunterladen erhältlich ist.
 
 Verfügbare Zertifikate und Schlüssel
 ------------------------------------
@@ -104,7 +104,7 @@ Sie können Token-Signaturzertifikate mithilfe des Abschnitts "Zertifikate und S
 
 10. Klicken Sie nach einer angemessenen Frist unter dem Abschnitt "Token-Signatur" der Seite "Zertifikate und Schlüssel" auf die Schaltfläche "Löschen", um das alte Zertifikat aus der ACS-Konfiguration zu entfernen.
 
-Weitere Informationen finden Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/en-us/library/gg185932.aspx).
+Weitere Informationen finden Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/de-de/library/gg185932.aspx).
 
 Nach dem Ablauf von Signaturzertifikaten erhalten Sie die folgenden Fehlermeldungen, wenn Sie versuchen, ein Token anzufordern:
 
@@ -161,7 +161,7 @@ Sie können Token-Signaturschlüssel mithilfe des Abschnitts "Zertifikate und Sc
 
 10. Klicken Sie nach einer angemessenen Frist unter dem Abschnitt "Token-Signatur" der Seite "Zertifikate und Schlüssel" auf die Schaltfläche "Löschen", um den alten Schlüssel aus der ACS-Konfiguration zu entfernen.
 
-Weitere Informationen finden Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/en-us/library/gg185932.aspx).
+Weitere Informationen finden Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/de-de/library/gg185932.aspx).
 
 Nach dem Ablauf von Signaturschlüsseln erhalten Sie die folgenden Fehlermeldungen, wenn Sie versuchen, ein Token anzufordern:
 
@@ -212,7 +212,7 @@ Sie können Token-Verschlüsselungszertifikate mithilfe des Abschnitts "Zertifik
 7.  Konfigurieren Sie das neue Verschlüsselungszertifikat in ACS neben dem vorhandenen ablaufenden Zertifikat, indem Sie auf die Schaltfläche "Hinzufügen" klicken.
 8.  Löschen Sie das alte Verschlüsselungszertifikat, indem Sie auf die Schaltfläche "Löschen" klicken.
 
-Weitere Informationen finden Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/en-us/library/gg185932.aspx).
+Weitere Informationen finden Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/de-de/library/gg185932.aspx).
 
 Nach dem Ablauf von Verschlüsselungszertifikaten erhalten Sie die folgenden Fehlermeldungen, wenn Sie versuchen, ein Token anzufordern:
 
@@ -269,7 +269,7 @@ Sie können Token-Entschlüsselungszertifikate mithilfe des Abschnitts "Zertifik
 
 10. Klicken Sie nach einer angemessenen Frist unter dem Abschnitt "Token-Signatur" der Seite "Zertifikate und Schlüssel" auf die Schaltfläche "Löschen", um das alte Zertifikat aus der ACS-Konfiguration zu entfernen.
 
-Weitere Informationen finden Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/en-us/library/gg185932.aspx).
+Weitere Informationen finden Sie unter [Zertifikate und Schlüssel](http://msdn.microsoft.com/de-de/library/gg185932.aspx).
 
 Nach dem Ablauf von Entschlüsselungszertifikaten erhalten Sie die folgenden Fehlermeldungen, wenn Sie versuchen, ein Token anzufordern:
 
@@ -323,7 +323,7 @@ Sie können Anmeldeinformationen für Dienstidentitäten direkt über die Seite 
 
 9.  Klicken Sie auf die Schaltfläche "Löschen", um das alte Zertifikat oder den alten Schlüssel zu entfernen, wenn alle Clients aktualisiert sind (oder nach einer angemessenen Frist).
 
-Weitere Informationen finden Sie unter [Dienstidentitäten](http://msdn.microsoft.com/en-us/library/gg185945.aspx).
+Weitere Informationen finden Sie unter [Dienstidentitäten](http://msdn.microsoft.com/de-de/library/gg185945.aspx).
 
 Im Folgenden finden Sie die Ausnahmefehler, die ACS auslöst, wenn die Anmeldeinformationen abgelaufen sind.
 
@@ -343,7 +343,7 @@ Im Folgenden finden Sie die Ausnahmefehler, die ACS auslöst, wenn die Anmeldein
 </tr>
 </table>
 
-Folgen Sie zur Überprüfung und Aktualisierung der Ablaufdaten von symmetrischen Schlüsseln oder Kennwörtern oder zum Hochladen neuer Zertifikate als Anmeldeinformationen für Dienstidentitäten den unter [Gewusst wie: Hinzufügen von Dienstidentitäten mit einem X.509-Zertifikat, Kennwort oder symmetrischen Schlüssel](http://msdn.microsoft.com/en-us/library/gg185924.aspx) genannten Anweisungen. Eine Liste von Anmeldeinformationen für Dienstidentitäten ist auf der Seite "Bearbeiten der Dienstidentität" verfügbar.
+Folgen Sie zur Überprüfung und Aktualisierung der Ablaufdaten von symmetrischen Schlüsseln oder Kennwörtern oder zum Hochladen neuer Zertifikate als Anmeldeinformationen für Dienstidentitäten den unter [Gewusst wie: Hinzufügen von Dienstidentitäten mit einem X.509-Zertifikat, Kennwort oder symmetrischen Schlüssel](http://msdn.microsoft.com/de-de/library/gg185924.aspx) genannten Anweisungen. Eine Liste von Anmeldeinformationen für Dienstidentitäten ist auf der Seite "Bearbeiten der Dienstidentität" verfügbar.
 
 Anmeldeinformationen für den Verwaltungsdienst
 ----------------------------------------------
@@ -384,7 +384,7 @@ Sie können die Anmeldeinformationen für den Verwaltungsdienst auf der Seite "V
 
 9.  Klicken Sie auf die Schaltfläche "Löschen", um das alte Zertifikat oder den alten Schlüssel zu entfernen, wenn alle Clients aktualisiert sind (oder nach einer angemessenen Frist).
 
-Weitere Informationen finden Sie unter [ACS-Verwaltungsdienst](http://msdn.microsoft.com/en-us/library/gg185972.aspx).
+Weitere Informationen finden Sie unter [ACS-Verwaltungsdienst](http://msdn.microsoft.com/de-de/library/gg185972.aspx).
 
 ACS löst folgende Ausnahmefehler aus, wenn diese Anmeldeinformationen abgelaufen sind:
 
@@ -409,7 +409,7 @@ Eine Liste von Anmeldeinformationen für das ACS-Verwaltungsdienstkonto ist auf 
 Zertifikat des WS-Federation-Identitätsanbieters
 ------------------------------------------------
 
-Das Zertifikat des WS-Federation-Identitätsanbieters steht über seine Metadaten zur Verfügung. Beim Konfigurieren eines WS-Federation-Identitätsanbieters, z. B. AD FS, wird das WS-Federation-Signaturzertifikat über per URL oder als Datei erhältliche WS-Federation-Metadaten konfiguriert. Weitere Informationen dazu erhalten Sie unter [WS-Federation-Identitätsanbieter](http://msdn.microsoft.com/en-us/library/gg185933.aspx) und [Gewusst wie: Konfigurieren von AD FS 2.0 als Identitätsanbieter](http://msdn.microsoft.com/en-us/library/gg185961.aspx). Sobald Sie den WS-Federation-Identitätsanbieter konfiguriert haben, fragen Sie die Gültigkeit seiner Zertifikate mithilfe des ACS-Verwaltungsdiensts ab. Bitte beachten Sie, dass die Schlüssel bei jedem weiteren Hochladen der Metadaten über das ACS-Verwaltungsportal oder den ACS-Verwaltungsdienst ausgetauscht werden.
+Das Zertifikat des WS-Federation-Identitätsanbieters steht über seine Metadaten zur Verfügung. Beim Konfigurieren eines WS-Federation-Identitätsanbieters, z. B. AD FS, wird das WS-Federation-Signaturzertifikat über per URL oder als Datei erhältliche WS-Federation-Metadaten konfiguriert. Weitere Informationen dazu erhalten Sie unter [WS-Federation-Identitätsanbieter](http://msdn.microsoft.com/de-de/library/gg185933.aspx) und [Gewusst wie: Konfigurieren von AD FS 2.0 als Identitätsanbieter](http://msdn.microsoft.com/de-de/library/gg185961.aspx). Sobald Sie den WS-Federation-Identitätsanbieter konfiguriert haben, fragen Sie die Gültigkeit seiner Zertifikate mithilfe des ACS-Verwaltungsdiensts ab. Bitte beachten Sie, dass die Schlüssel bei jedem weiteren Hochladen der Metadaten über das ACS-Verwaltungsportal oder den ACS-Verwaltungsdienst ausgetauscht werden.
 
 Im Folgenden finden Sie die Ausnahmefehler, die ACS auslöst, wenn das Zertifikat abgelaufen ist:
 

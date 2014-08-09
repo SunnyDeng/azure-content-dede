@@ -91,7 +91,7 @@ Erstellen einer PHP-Anwendung
 
 PHP-Anwendungen, die den Twilio-Dienst verwenden und in Azure ausgeführt werden, unterscheiden sich nicht von anderen PHP-Anwendungen, die den Twilio-Dienst verwenden. Twilio-Dienste sind REST-basiert und können in PHP auf verschiedene Arten aufgerufen werden. Dieser Artikel konzentriert sich auf die Verwendung von Twilio mit der [Twilio-Bibliothek für PHP von Github](https://github.com/twilio/twilio-php). Weitere Informationen zur Verwendung der Twilio-Bibliothek für PHP finden Sie unter <http://readthedocs.org/docs/twilio-php/en/latest/index.html>.
 
-Ausführliche Informationen zur Erstellung und Bereitstellung von Twilio/PHP-Anwendungen in Azure finden Sie unter [How to Make a Phone Call Using Twilio in a Java Application on Azure](http://windowsazure.com/en-us/documentation/articles/partner-twilio-php-make-phone-call) (Ausführen eines Telefonanrufs mit Twilio in einer Java-Anwendung in Azure, in englischer Sprache).
+Ausführliche Informationen zur Erstellung und Bereitstellung von Twilio/PHP-Anwendungen in Azure finden Sie unter [How to Make a Phone Call Using Twilio in a Java Application on Azure](http://windowsazure.com/de-de/documentation/articles/partner-twilio-php-make-phone-call) (Ausführen eines Telefonanrufs mit Twilio in einer Java-Anwendung in Azure, in englischer Sprache).
 
 Konfigurieren einer Anwendung für die Verwendung von Twilio-Bibliotheken
 ------------------------------------------------------------------------
@@ -250,7 +250,7 @@ Sobald Sie Ihre PHP-Seite mit den TwiML-Antworten eingerichtet haben, können Si
 		echo 'Error: ' . $e->getMessage();
 	}
 
-Weitere Informationen zur Verwendung von Twilio in Azure mit PHP finden Sie unter [Tätigen eines Telefonanrufs mithilfe von Twilio in einer PHP-Anwendung auf Azure](http://windowsazure.com/en-us/documentation/articles/partner-twilio-php-make-phone-call).
+Weitere Informationen zur Verwendung von Twilio in Azure mit PHP finden Sie unter [Tätigen eines Telefonanrufs mithilfe von Twilio in einer PHP-Anwendung auf Azure](http://windowsazure.com/de-de/documentation/articles/partner-twilio-php-make-phone-call).
 
 Gewusst wie: Verwenden zusätzlicher Twilio-Dienste
 --------------------------------------------------

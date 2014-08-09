@@ -381,7 +381,7 @@ Da Sie jetzt die Grundlagen der Verwendung des Anwendungsblocks für die automat
 [Hosten des Anwendungsblocks für die automatische Skalierung in einer Workerrolle]: http://msdn.microsoft.com/de-de/library/hh680914(PandP.50).aspx 
 [Implementieren des Drosselungsverhaltens]: http://msdn.microsoft.com/de-de/library/hh680896(PandP.50).aspx 
 [Grundlegendes zu Regelrängen und Abstimmung]: http://msdn.microsoft.com/de-de/library/hh680923(PandP.50).aspx 
-[Erweitern und Ändern des Anwendungsblocks für die automatische Skalierung]: http://msdn.microsoft.com/en-us/library/hh680889(PandP.50).aspx 
+[Erweitern und Ändern des Anwendungsblocks für die automatische Skalierung]: http://msdn.microsoft.com/de-de/library/hh680889(PandP.50).aspx 
 [Verwenden des Optimizing Stabilizer zur Verhinderung hochfrequenter Oszillation und zur Optimierung von Kosten]: http://msdn.microsoft.com/de-de/library/hh680951(PandP.50).aspx 
 [Verwenden von Benachrichtigungen und manueller Skalierung]: http://msdn.microsoft.com/de-de/library/hh680885(PandP.50).aspx 
 [Definieren von Skalierungsgruppen]: http://msdn.microsoft.com/de-de/library/hh680902(PandP.50).aspx 

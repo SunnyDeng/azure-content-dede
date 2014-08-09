@@ -64,7 +64,7 @@ Vorgehensweise: Aktualisieren der Konfiguration des Clouddiensts
 
     c. Wenn Ihr Clouddienst Rollen enthält, die nur eine Instanz haben, aktivieren Sie das Kontrollkästchen **Apply configuration even if one or more roles contain a single instance**, um die Konfigurationsupdates zu aktivieren, damit die Rollen fortgesetzt werden können.
 
-    Nur wenn Sie für jede Rolle mindestens zwei Instanzen definieren, kann Azure während der Updates der Dienstkonfiguration eine Verfügbarkeit des Clouddiensts von mindestens 99,95 Prozent garantieren. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://www.windowsazure.com/en-us/support/legal/sla/).
+    Nur wenn Sie für jede Rolle mindestens zwei Instanzen definieren, kann Azure während der Updates der Dienstkonfiguration eine Verfügbarkeit des Clouddiensts von mindestens 99,95 Prozent garantieren. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://www.windowsazure.com/de-de/support/legal/sla/).
 
     d. Klicken Sie auf "OK" (Häkchen).
 
@@ -80,7 +80,7 @@ Wenn der Clouddienst mindestens zwei verbundene virtuelle Windows Server-Compute
 
 ### Konfigurieren des Remotezugriffs in der Dienstdefinitionsdatei
 
-Fügen Sie der Dienstdefinitionsdatei (.csdef) **Import**-Elemente hinzu, um die Module RemoteAccess und RemoteForwarder in das Dienstmodell zu importieren. Wenn diese Module vorhanden sind, fügt Azure die Konfigurationseinstellungen für Remotedesktop zur Dienstkonfigurationsdatei hinzu. Um die Remotedesktopkonfiguration abzuschließen, müssen Sie ein Zertifikat in Azure importieren und das Zertifikat in der Dienstkonfigurationsdatei angeben. Weitere Informationen finden Sie unter [Einrichten einer Remotedesktopverbindung für eine Rolle in Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/hh124107.aspx).
+Fügen Sie der Dienstdefinitionsdatei (.csdef) **Import**-Elemente hinzu, um die Module RemoteAccess und RemoteForwarder in das Dienstmodell zu importieren. Wenn diese Module vorhanden sind, fügt Azure die Konfigurationseinstellungen für Remotedesktop zur Dienstkonfigurationsdatei hinzu. Um die Remotedesktopkonfiguration abzuschließen, müssen Sie ein Zertifikat in Azure importieren und das Zertifikat in der Dienstkonfigurationsdatei angeben. Weitere Informationen finden Sie unter [Einrichten einer Remotedesktopverbindung für eine Rolle in Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/hh124107.aspx).
 
 ### Aktivieren oder Ändern des Remotezugriffs für Rolleninstanzen im Verwaltungsportal
 

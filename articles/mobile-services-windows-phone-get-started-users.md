@@ -3,8 +3,8 @@
 Erste Schritte bei der Authentifizierung in Mobile Services
 ===========================================================
 
-[Windows Store C\#](/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-users "Windows Store C#")[Windows Store JavaScript](/en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-users "Windows Store JavaScript")[Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-get-started-users "Windows Phone")[iOS](/en-us/documentation/articles/mobile-services-ios-get-started-users "iOS")[Android](/en-us/documentation/articles/mobile-services-android-get-started-users "Android")[HTML](/en-us/documentation/articles/mobile-services-html-get-started-users "HTML")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-mobile-services-ios-get-started-users "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-mobile-services-android-get-started-users "Xamarin.Android")
-[.NET backend](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/ ".NET backend") | [JavaScript backend](/en-us/documentation/articles/mobile-services-windows-phone-get-started-users/ "JavaScript backend")
+[Windows Store C\#](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-users "Windows Store C#")[Windows Store JavaScript](/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users "Windows Store JavaScript")[Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-get-started-users "Windows Phone")[iOS](/de-de/documentation/articles/mobile-services-ios-get-started-users "iOS")[Android](/de-de/documentation/articles/mobile-services-android-get-started-users "Android")[HTML](/de-de/documentation/articles/mobile-services-html-get-started-users "HTML")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started-users "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started-users "Xamarin.Android")
+[.NET backend](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/ ".NET backend") | [JavaScript backend](/de-de/documentation/articles/mobile-services-windows-phone-get-started-users/ "JavaScript backend")
 
 In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ihre App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
@@ -16,7 +16,7 @@ Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von A
 2.  [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer](#permissions)
 3.  [Hinzufügen von Authentifizierung zur App](#add-authentication)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-wp8) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-wp8) abschließen.
 
 Registrieren Ihrer AppRegistrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 --------------------------------------------------------------------------------------------------------
@@ -35,11 +35,11 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 
 3.  Wählen Sie aus der Liste unten einen unterstützten Identitätsanbieter aus, und folgen Sie den unten aufgeführten Schritten, um Ihre App bei diesem Anbieter zu registrieren:
 
--   [Microsoft-Konto](/en-us/develop/mobile/how-to-guides/register-for-microsoft-authentication/)
--   [Facebook-Login](/en-us/develop/mobile/how-to-guides/register-for-facebook-authentication/)
--   [Twitter-Login](/en-us/develop/mobile/how-to-guides/register-for-twitter-authentication/)
--   [Google-Login](/en-us/develop/mobile/how-to-guides/register-for-google-authentication/)
--   [Azure Active Directory](/en-us/documentation/articles/mobile-services-how-to-register-active-directory-authentication/)
+-   [Microsoft-Konto](/de-de/develop/mobile/how-to-guides/register-for-microsoft-authentication/)
+-   [Facebook-Login](/de-de/develop/mobile/how-to-guides/register-for-facebook-authentication/)
+-   [Twitter-Login](/de-de/develop/mobile/how-to-guides/register-for-twitter-authentication/)
+-   [Google-Login](/de-de/develop/mobile/how-to-guides/register-for-google-authentication/)
+-   [Azure Active Directory](/de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/)
 
     Notieren Sie die Clientidentität und die geheimen Werte, die vom Anbieter generiert wurden.
 
@@ -64,7 +64,7 @@ Einschränken von Berechtigungen für authentifizierte Benutzer
 
     ![][5]
 
-3.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie erstellt haben, als Sie das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-wp8) abgeschlossen haben.
+3.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie erstellt haben, als Sie das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-wp8) abgeschlossen haben.
 
 4.  Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
 
@@ -80,7 +80,7 @@ Hinzufügen von Authentifizierung zur App
 Nächste Schritte
 ----------------
 
-Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutzern](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-wp8) werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern.
+Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutzern](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-wp8) werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern.
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -97,10 +97,10 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 
 <!-- URLs. -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-wp8
-[Get started with data]: /en-us/develop/mobile/tutorials/started-with-data-wp8
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-wp8
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-wp8
-[Authorize users with scripts]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-wp8
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-wp8
+[Get started with data]: /de-de/develop/mobile/tutorials/started-with-data-wp8
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-wp8
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-wp8
+[Authorize users with scripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-wp8
 
 [Azure Management Portal]: https://manage.windowsazure.com/

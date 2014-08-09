@@ -1,7 +1,7 @@
 
 # Erstellen einer MySQL-Datenbank in Azure
 
-Diese Anleitung zeigt, wie Sie mit [ClearDB][1] eine MySQL-Datenbank über den [Azure Store](/en-us/store/overview/) erstellen und wie Sie eine MySQL-Datenbank als verknüpfte Ressource erstellen, wenn Sie eine [Azure-Website](/en-us/manage/services/web-sites/) erstellen. [ClearDB][1] ist ein fehlertoleranter Datenbank-Dienstanbieter, mit dem Sie MySQL-Datenbanken in Azure-Datencentern ausführen und verwalten und aus jeder Anwendung Verbindungen zu diesen herstellen können.
+Diese Anleitung zeigt, wie Sie mit [ClearDB][1] eine MySQL-Datenbank über den [Azure Store](/en-us/store/overview/) erstellen und wie Sie eine MySQL-Datenbank als verknüpfte Ressource erstellen, wenn Sie eine [Azure-Website](/de-de/manage/services/web-sites/) erstellen. [ClearDB][1] ist ein fehlertoleranter Datenbank-Dienstanbieter, mit dem Sie MySQL-Datenbanken in Azure-Datencentern ausführen und verwalten und aus jeder Anwendung Verbindungen zu diesen herstellen können.
 
 ## Inhaltsverzeichnis
 
@@ -51,7 +51,7 @@ Gehen Sie folgendermaßen vor, um eine MySQL-Datenbank über den [Azure Store](/
 <h2><a id="CreateForWebSite" ></a>Gewusst wie: Erstellen einer MySQL-Datenbank als verknüpfte Ressource für eine Azure-Website</h2>
 
 
-Um beim Erstellen einer [Azure-Website](/en-us/manage/services/web-sites/) eine MySQL-Datenbank als verknüpfte Ressource zu erstellen, gehen Sie folgendermaßen vor:
+Um beim Erstellen einer [Azure-Website](/de-de/manage/services/web-sites/) eine MySQL-Datenbank als verknüpfte Ressource zu erstellen, gehen Sie folgendermaßen vor:
 
 1.  Melden Sie sich im [Azure-Verwaltungsportal][2] an. 2.  Klicken Sie unten auf der Seite auf **+NEU**, wählen Sie **COMPUTE**, **WEBSITE** und **CREATE WITH DATABASE**.
     
@@ -89,7 +89,7 @@ Um beim Erstellen einer [Azure-Website](/en-us/manage/services/web-sites/) eine 
     anzeigen](./media/create-mysql-db/shown-conn-string.png)
 <div class="dev-callout"> 
 <b>Hinweis</b> 
-<p>Ihre Websiteanwendung greift über den Namen der Verbindungszeichenfolge auf Verbindungszeichenfolge zu. In .NET-Anwendungen stehen Verbindungszeichenfolgen im Objekt <b>connectionStrings</b> zur Verfügung. In anderen Programmiersprachen stehen Verbindungszeichenfolgen als Umgebungsvariablen zur Verfügung. Weitere Informationen finden Sie unter <a href="/en-us/manage/services/web-sites/how-to-configure-websites/">Konfigurieren von Websites</a>.</p> 
+<p>Ihre Websiteanwendung greift über den Namen der Verbindungszeichenfolge auf Verbindungszeichenfolge zu. In .NET-Anwendungen stehen Verbindungszeichenfolgen im Objekt <b>connectionStrings</b> zur Verfügung. In anderen Programmiersprachen stehen Verbindungszeichenfolgen als Umgebungsvariablen zur Verfügung. Weitere Informationen finden Sie unter <a href="/de-de/manage/services/web-sites/how-to-configure-websites/">Konfigurieren von Websites</a>.</p> 
 </div>
 
  

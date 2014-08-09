@@ -9,7 +9,7 @@ In diesem Lernprogramm wird die Erstellung einer sicheren ASP.NET MVC 5-Webanwe
 
 Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht
 über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web
-Express automatisch durch das SDK installiert. Sie können kostenlos mit der Entwicklung für Azure beginnen. Wenn Sie Visual Studio 2012 verwenden möchten, arbeiten Sie das [vorherige Lernprogramm](/en-us/develop/net/tutorials/web-site-with-sql-database-vs2012/) durch. Diese Version des Lernprogramms ist wesentlich einfacher als die vorherige Version.
+Express automatisch durch das SDK installiert. Sie können kostenlos mit der Entwicklung für Azure beginnen. Wenn Sie Visual Studio 2012 verwenden möchten, arbeiten Sie das [vorherige Lernprogramm](/de-de/develop/net/tutorials/web-site-with-sql-database-vs2012/) durch. Diese Version des Lernprogramms ist wesentlich einfacher als die vorherige Version.
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine sichere datengesteuerte Webanwendung, die unter Rückgriff auf eine Clouddatenbank in der Cloud ausgeführt wird.
 
@@ -990,9 +990,9 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist bzw. verbessert we
 [7]: http://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx
 [8]: http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 [9]: http://curah.microsoft.com/55636/aspnet-identity
-[10]: http://msdn.microsoft.com/en-us/library/ms228053.aspx
-[11]: http://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute.aspx
-[12]: http://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute.aspx
+[10]: http://msdn.microsoft.com/de-de/library/ms228053.aspx
+[11]: http://msdn.microsoft.com/de-de/library/system.web.mvc.authorizeattribute.aspx
+[12]: http://msdn.microsoft.com/de-de/library/system.web.mvc.requirehttpsattribute.aspx
 [13]: http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx
 [14]: http://www.asp.net/web-pages/tutorials/security/16-adding-security-and-membership
 [15]: http://www.beabigrockstar.com/pretty-social-login-buttons-for-asp-net-mvc-5/

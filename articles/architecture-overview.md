@@ -14,31 +14,31 @@ Erfahren Sie, wie Sie häufig verwendete Entwurfsmuster in Azure implementieren 
 Entwurfsmuster
 --------------
 
-### [Konkurrierende Consumer](http://msdn.microsoft.com/en-us/library/dn568101.aspx)
+### [Konkurrierende Consumer](http://msdn.microsoft.com/de-de/library/dn568101.aspx)
 
 ![Konkurrierende Consumer](./media/architecture-overview/CompetingConsumers.png)
 
 Mehrere nebenläufige Consumer können Nachrichten verarbeiten, die über denselben Nachrichtenkanal eingegangen sind. Dieses Muster ermöglicht ein System, mit dem mehrere Nachrichten gleichzeitig verarbeitet werden können. So wird der Durchsatz optimiert, Skalierbarkeit und Verfügbarkeit werden erhöht und die Arbeitsauslastung wird ausgeglichen.
 
-### [Zuständigkeitstrennung für Befehle und Abfragen](http://msdn.microsoft.com/en-us/library/dn568103.aspx)
+### [Zuständigkeitstrennung für Befehle und Abfragen](http://msdn.microsoft.com/de-de/library/dn568103.aspx)
 
 ![Zuständigkeitstrennung für Befehle und Abfragen](./media/architecture-overview/CQRS.png)
 
 Trennen Sie Vorgänge, die Daten lesen, von Vorgängen, die Daten aktualisieren, durch unterschiedliche Schnittstellen. Mit diesem Muster können Sie Leistung, Skalierbarkeit und Sicherheit optimieren. Sie erreichen dank höherer Flexibilität im Laufe der Zeit eine Weiterentwicklung des Systems. Außerdem können Sie verhindern, dass Aktualisierungsbefehle auf Domänenebene Zusammenführungskonflikte auslösen.
 
-### [Auswahl einer übergeordneten Instanz](http://msdn.microsoft.com/en-us/library/dn568104.aspx)
+### [Auswahl einer übergeordneten Instanz](http://msdn.microsoft.com/de-de/library/dn568104.aspx)
 
 ![Auswahl einer übergeordneten Instanz](./media/architecture-overview/LeaderElection.png)
 
 Sie können die Aktionen koordinieren, die eine Sammlung zusammenarbeitender Aufgabeninstanzen in einer dezentralen Anwendung ausführt. Wählen Sie eine übergeordnete Instanz aus, die für die Verwaltung der anderen Instanzen zuständig ist. Mit diesem Muster können Sie sicherstellen, dass Aufgabeninstanzen nicht miteinander in Konflikt geraten, bei gemeinsam genutzten Ressourcen Konflikte auslösen oder unabsichtlich Vorgänge stören, die andere Aufgabeninstanzen durchführen.
 
-### [Pipes und Filter](http://msdn.microsoft.com/en-us/library/dn568100.aspx)
+### [Pipes und Filter](http://msdn.microsoft.com/de-de/library/dn568100.aspx)
 
 ![Pipes und Filter](./media/architecture-overview/PipesAndFilters.png)
 
 Sie können eine Aufgabe, die komplexe Verarbeitung umfasst, in einer Reihe separater Elemente zerlegen, die erneut verwendet werden können. Mit diesem Muster können Sie Leistung, Skalierbarkeit und Wiederverwendbarkeit optimieren, indem Aufgabenelemente, die für die Verarbeitung zuständig sind, unabhängig bereitgestellt und skaliert werden.
 
-### [Eingeschränkter Schlüssel](http://msdn.microsoft.com/en-us/library/dn568102.aspx)
+### [Eingeschränkter Schlüssel](http://msdn.microsoft.com/de-de/library/dn568102.aspx)
 
 ![Eingeschränkter Schlüssel](./media/architecture-overview/ValetKey.png)
 
@@ -46,5 +46,5 @@ Sie können ein Token oder einen Schlüssel verwenden, um Clients eingeschränkt
 
 ### Zusätzliche Anleitungen
 
-Informationen zu weiteren Entwicklungsmustern in Azure finden Sie unter [Cloudentwicklungsmuster](http://msdn.microsoft.com/en-us/library/dn568099.aspx).
+Informationen zu weiteren Entwicklungsmustern in Azure finden Sie unter [Cloudentwicklungsmuster](http://msdn.microsoft.com/de-de/library/dn568099.aspx).
 

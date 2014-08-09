@@ -3,7 +3,7 @@
 Benachrichtigen von Benutzern mit Notification Hubs
 ===================================================
 
-[Mobile Services](/en-us/manage/services/notification-hubs/notify-users "Mobile Services")[ASP.NET](/en-us/manage/services/notification-hubs/notify-users-aspnet "ASP.NET")
+[Mobile Services](/de-de/manage/services/notification-hubs/notify-users "Mobile Services")[ASP.NET](/de-de/manage/services/notification-hubs/notify-users-aspnet "ASP.NET")
 
 In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Ein ASP.NET Web-API-Backend wird verwendet, um Clients zu authentifizieren und Benachrichtigungen zu generieren. Dieses Lernprogramm basiert auf dem Benachrichtigungshub, den Sie im vorherigen Lernprogramm **Erste Schritte mit Notification Hubs** erstellt haben. Der Benachrichtigungsregistrierungscode wird vom Client zum Backend-Dienst verschoben. So wird sichergestellt, dass die Registrierung erst dann abgeschlossen wird, wenn ein Client durch den Dienst positiv authentifiziert wurde. Das bedeutet auch, dass die Anmeldeinformationen des Benachrichtigungshubs nicht mit der Client-App verteilt werden. Der Dienst steuert auch die Tags, die während der Registrierung angefordert werden.
 
@@ -17,11 +17,11 @@ Voraussetzungen
 ---------------
 
 -   Visual Studio 2012. Sie können sowohl Visual Studio Express 2012 für das Web als auch Visual Studio Express 2012 für Windows 8 verwenden, um entsprechend die ASP.NET-Anwendung und die Windows Store-App zu erstellen.
--   Dieses Lernprogramm basiert auf der App und dem Benachrichtigungshub, die Sie im vorherigen Lernprogramm **Erste Schritte mit Notification Hubs** erstellt haben. Bevor Sie dieses Lernprogramm starten, müssen Sie zunächst das Lernprogramm **Erste Schritte mit Notification Hubs** ([Windows Store C\#](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet)/[iOS](/en-us/manage/services/notification-hubs/get-started-notification-hubs-ios)/[Android](/en-us/manage/services/notification-hubs/get-started-notification-hubs-android)) abschließen.
+-   Dieses Lernprogramm basiert auf der App und dem Benachrichtigungshub, die Sie im vorherigen Lernprogramm **Erste Schritte mit Notification Hubs** erstellt haben. Bevor Sie dieses Lernprogramm starten, müssen Sie zunächst das Lernprogramm **Erste Schritte mit Notification Hubs** ([Windows Store C\#](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet)/[iOS](/de-de/manage/services/notification-hubs/get-started-notification-hubs-ios)/[Android](/de-de/manage/services/notification-hubs/get-started-notification-hubs-android)) abschließen.
 
 **Hinweis**
 
-Das ASP.NET Web-API-Projekt, das Sie in diesem Lernprogramm erstellen, wird auf Ihrem lokalen Computer ausgeführt. Sie können ein ASP.NET Web-API-Projekt auch in Azure veröffentlichen. Weitere Informationen finden Sie unter [Erstellen eines für Mobiltelefone optimierten REST-Dienstes, der ASP.NET Web-API und SQL-Datenbank verwendet](/en-us/develop/net/tutorials/rest-service-using-web-api/).
+Das ASP.NET Web-API-Projekt, das Sie in diesem Lernprogramm erstellen, wird auf Ihrem lokalen Computer ausgeführt. Sie können ein ASP.NET Web-API-Projekt auch in Azure veröffentlichen. Weitere Informationen finden Sie unter [Erstellen eines für Mobiltelefone optimierten REST-Dienstes, der ASP.NET Web-API und SQL-Datenbank verwendet](/de-de/develop/net/tutorials/rest-service-using-web-api/).
 
 Erstellen der ASP.NET-AppErstellen einer ASP.NET-Anwendung mit Authentifizierung
 --------------------------------------------------------------------------------
@@ -314,8 +314,8 @@ Die App, die Sie beim Abschließen des Lernprogramms **Erste Schritte mit Notifi
 
 2.  Befolgen Sie die Schritte einer der folgenden Versionen von **Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe der ASP.NET Web-API**, je nach Ihrer Client-Plattform:
 
-    -   [Windows Store C\#-Version](/en-us/manage/services/notification-hubs/register-users-aspnet-dotnet)
-    -   [iOS-Version](/en-us/manage/services/notification-hubs/howto-register-user-with-aspnet-ios)
+    -   [Windows Store C\#-Version](/de-de/manage/services/notification-hubs/register-users-aspnet-dotnet)
+    -   [iOS-Version](/de-de/manage/services/notification-hubs/howto-register-user-with-aspnet-ios)
 
 3.  Führen Sie die aktualisierte App aus, melden Sie sich mit derselben Zeichenfolge für Benutzername und Kennwort bei dem Dienst an, und stellen Sie dann sicher, dass die Registrierungs-ID angezeigt wird, die der Benachrichtigung zugeordnet ist.
 
@@ -323,7 +323,7 @@ Die App, die Sie beim Abschließen des Lernprogramms **Erste Schritte mit Notifi
 
     **Hinweis**
 
-    Es wird ein Fehler am Backend angezeigt, wenn keine Registrierung für eine Plattform vorliegt, an die eine Benachrichtigung gesendet werden soll. In diesem Fall kann dieser Fehler ignoriert werden. Unter [Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users-xplat-aspnet) erfahren Sie, wie Sie diese Situation durch die Verwendung von Vorlagen vermeiden.
+    Es wird ein Fehler am Backend angezeigt, wenn keine Registrierung für eine Plattform vorliegt, an die eine Benachrichtigung gesendet werden soll. In diesem Fall kann dieser Fehler ignoriert werden. Unter [Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users-xplat-aspnet) erfahren Sie, wie Sie diese Situation durch die Verwendung von Vorlagen vermeiden.
 
 4.  (Optional) Stellen Sie die Client-App auf einem zweiten Gerät bereit, führen Sie die App aus, und fügen Sie Text ein.
 
@@ -334,11 +334,11 @@ Nächste Schritte
 
 Da Sie dieses Lernprogramm nun abgeschlossen haben, können Sie die folgenden Lernprogramme abschließen:
 
--   **Verwenden von Notification Hubs zum Senden von Nachrichten ([Windows Store C\#](/en-us/manage/services/notification-hubs/breaking-news-dotnet) / [iOS](/en-us/manage/services/notification-hubs/breaking-news-dotnet))**
+-   **Verwenden von Notification Hubs zum Senden von Nachrichten ([Windows Store C\#](/de-de/manage/services/notification-hubs/breaking-news-dotnet) / [iOS](/de-de/manage/services/notification-hubs/breaking-news-dotnet))**
     In diesem plattformspezifischen Lernprogramm erfahren Sie, wie Sie Tags verwenden, um Benutzern die Möglichkeit zu geben, verschiedene Benachrichtigungen zu abonnieren, die sie interessieren.
 
--   **[Send cross-platform notifications to users with Notification Hubs](/en-us/manage/services/notification-hubs/notify-users-xplat-aspnet) (Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs, in englischer Sprache)**
+-   **[Send cross-platform notifications to users with Notification Hubs](/de-de/manage/services/notification-hubs/notify-users-xplat-aspnet) (Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs, in englischer Sprache)**
     Dieses Lernprogramm ergänzt das aktuelle Lernprogramm **Benachrichtigen von Benutzern mit Notification Hubs** und zeigt die Verwendung plattformspezifischer Vorlagen zur Registrierung von Benachrichtigungen. So können Sie Benachrichtigungen über eine einzige Methode in Ihrem serverseitigen Code senden.
 
-Weitere Informationen zu Notification Hubs finden Sie unter [Azure Notification Hubs](http://msdn.microsoft.com/en-us/library/windowsazure/jj927170.aspx).
+Weitere Informationen zu Notification Hubs finden Sie unter [Azure Notification Hubs](http://msdn.microsoft.com/de-de/library/windowsazure/jj927170.aspx).
 

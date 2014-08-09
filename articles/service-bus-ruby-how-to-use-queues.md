@@ -25,7 +25,7 @@ Inhaltsverzeichnis
 Erstellen einer Ruby-Anwendung
 ------------------------------
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Erstellen einer Ruby-Anwendung in Azure](/en-us/develop/ruby/tutorials/web-app-with-linux-vm/).
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Erstellen einer Ruby-Anwendung in Azure](/de-de/develop/ruby/tutorials/web-app-with-linux-vm/).
 
 Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus
 ---------------------------------------------------------------
@@ -116,8 +116,8 @@ Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/en-us/library/windowsazure/hh367516.aspx)
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx)
 -   Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-Einen Vergleich zwischen den in diesem Artikel besprochenen Azure Servicebus-Warteschlangen und den unter [Verwenden des Azure-Warteschlangendiensts](/en-us/develop/ruby/how-to-guides/queue-service/) besprochenen Azure-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/en-us/library/windowsazure/hh767287.aspx)
+Einen Vergleich zwischen den in diesem Artikel besprochenen Azure Servicebus-Warteschlangen und den unter [Verwenden des Azure-Warteschlangendiensts](/de-de/develop/ruby/how-to-guides/queue-service/) besprochenen Azure-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/de-de/library/windowsazure/hh767287.aspx)
 

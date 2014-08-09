@@ -3,11 +3,11 @@
 Erste Schritte mit Azure und ASP.NET
 ====================================
 
-[Visual Studio 2013](/en-us/develop/net/tutorials/get-started/ "Visual Studio 2013")[Visual Studio 2012](/en-us/develop/net/tutorials/get-started-vs2012/ "Visual Studio 2012")
+[Visual Studio 2013](/de-de/develop/net/tutorials/get-started/ "Visual Studio 2013")[Visual Studio 2012](/de-de/develop/net/tutorials/get-started-vs2012/ "Visual Studio 2012")
 
 **Hinweis**
 
-Es ist eine [neuere Version dieses Lernprogramms](/en-us/develop/net/tutorials/get-started/) verfügbar. Sie können trotzdem diese Version ausführen, wenn Sie Visual Studio 2012 verwenden möchten, sie enthält jedoch nicht alle neuen Azure SDK-Funktionen.
+Es ist eine [neuere Version dieses Lernprogramms](/de-de/develop/net/tutorials/get-started/) verfügbar. Sie können trotzdem diese Version ausführen, wenn Sie Visual Studio 2012 verwenden möchten, sie enthält jedoch nicht alle neuen Azure SDK-Funktionen.
 
 In diesem Lernprogramm wird die Bereitstellung einer ASP.NET-Webanwendung für eine Azure-Website mit dem Assistenten "Web veröffentlichen" in Visual Studio 2012 oder Visual Studio 2012 Express für das Web gezeigt. Wenn Sie möchten, können Sie den Schritten des Lernprogramms mit Visual Studio 2010 oder Visual Web Developer Express 2010 folgen.
 
@@ -185,7 +185,7 @@ Sie können das Azure-Verwaltungsportal zum Löschen Ihrer Website verwenden. Au
 
 ![Registerkarte "Dashboard" im Verwaltungsportal](./media/web-sites-dotnet-get-started-vs2012/MPStopStartDelete.png)
 
-Sie können viele andere Websiteeinstellungen auf der Registerkarte **Konfigurieren** ändern. Weitere Informationen finden Sie unter [Verwalten von Websites](/en-us/manage/services/web-sites/how-to-manage-websites/).
+Sie können viele andere Websiteeinstellungen auf der Registerkarte **Konfigurieren** ändern. Weitere Informationen finden Sie unter [Verwalten von Websites](/de-de/manage/services/web-sites/how-to-manage-websites/).
 
 ### Skalieren einer Website
 
@@ -193,7 +193,7 @@ Wenn es sich um eine öffentliche Website handelt und nach und nach mehr Datenve
 
 ![Registerkarte "Skalierung" im Verwaltungsportal](./media/web-sites-dotnet-get-started-vs2012/MPScale.png)
 
-Weitere Informationen finden Sie unter [Skalieren von Websites](/en-us/manage/services/web-sites/how-to-scale-websites/). (Das Hinzufügen von Serverressourcen zum Skalieren einer Website ist nicht kostenfrei.)
+Weitere Informationen finden Sie unter [Skalieren von Websites](/de-de/manage/services/web-sites/how-to-scale-websites/). (Das Hinzufügen von Serverressourcen zum Skalieren einer Website ist nicht kostenfrei.)
 
 ### Problembehandlung für eine Website
 
@@ -201,13 +201,13 @@ Bei der Problembehandlung kann eine Einbeziehung der Ausgabe der Ablaufverfolgun
 
 ![Protokolle in Visual Studio](./media/web-sites-dotnet-get-started-vs2012/LogsInVS.png)
 
-Weitere Informationen finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+Weitere Informationen finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
 ### Hinzufügen von Datenbank- und Autorisierungsfunktionalität
 
-Die meisten Produktionswebsites verwenden eine Datenbank und schränken einige Websitefunktionen auf bestimmte autorisierte Benutzer ein. Ein Lernprogramm mit den ersten Schritten bezüglich Datenbankzugriff, Authentifizierung und Autorisierung finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank für eine Azure-Website](/en-us/develop/net/tutorials/web-site-with-sql-database/).
+Die meisten Produktionswebsites verwenden eine Datenbank und schränken einige Websitefunktionen auf bestimmte autorisierte Benutzer ein. Ein Lernprogramm mit den ersten Schritten bezüglich Datenbankzugriff, Authentifizierung und Autorisierung finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank für eine Azure-Website](/de-de/develop/net/tutorials/web-site-with-sql-database/).
 
 ### Entscheiden, ob die Anwendung in einem Clouddienst ausgeführt werden soll
 
-In einigen Szenarien empfiehlt es sich, die Anwendung in einem Azure-Clouddienst auszuführen statt auf einer Azure-Website. Weitere Informationen finden Sie unter [Azure-Ausführungsmodelle](/en-us/develop/net/fundamentals/compute/) und [Azure-Websites, Cloud Services und VMs: Wann eignet sich welche Komponente?](http://msdn.microsoft.com/en-us/library/windowsazure/jj218759.aspx) Unter [.NET-Anwendung mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/) finden Sie eine Lernprogrammreihe, in der die Erstellung einer ASP.NET-Webanwendung mit mehreren Ebenen und die Bereitstellung dieser Anwendung für einen Clouddienst gezeigt wird.
+In einigen Szenarien empfiehlt es sich, die Anwendung in einem Azure-Clouddienst auszuführen statt auf einer Azure-Website. Weitere Informationen finden Sie unter [Azure-Ausführungsmodelle](/de-de/develop/net/fundamentals/compute/) und [Azure-Websites, Cloud Services und VMs: Wann eignet sich welche Komponente?](http://msdn.microsoft.com/de-de/library/windowsazure/jj218759.aspx) Unter [.NET-Anwendung mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/) finden Sie eine Lernprogrammreihe, in der die Erstellung einer ASP.NET-Webanwendung mit mehreren Ebenen und die Bereitstellung dieser Anwendung für einen Clouddienst gezeigt wird.
 

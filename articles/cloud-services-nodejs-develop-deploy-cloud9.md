@@ -120,7 +120,7 @@ Erstellen einer Bereitstellung
 
     4.  Klicken Sie nach Auswahl der Datei auf **Upload**.
 
-4.  Klicken Sie auf **+ Create new**, um einen neuen gehosteten Dienst zu erstellen. Ein *gehosteter Dienst* ist der Container, in dem die Anwendung gehostet wird, wenn diese in Azure bereitgestellt wird. Weitere Informationen erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/en-us/library/windowsazure/jj155995.aspx).
+4.  Klicken Sie auf **+ Create new**, um einen neuen gehosteten Dienst zu erstellen. Ein *gehosteter Dienst* ist der Container, in dem die Anwendung gehostet wird, wenn diese in Azure bereitgestellt wird. Weitere Informationen erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx).
 
     ![neue Bereitstellung erstellen](./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_createdeployment.png)
 
@@ -151,9 +151,9 @@ Bereitstellen zur Azure-Produktionsumgebung
 
     ![Nachricht "Keine web.config-Datei gefunden"](./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_no_web_config.png)
 
-5.  Wenn Sie dieses Projekt erstmalig zu Azure bereitstellen, erhalten Sie eine Fehlermeldung **'No 'csdef' file present'**. Wählen Sie **Yes**, um die .csdef-Datei zu erstellen. Dadurch wird eine 'ServiceDefinition.csdef'-Datei zu Ihrem Projekt hinzugefügt. "ServiceDefinition.csdef" ist eine Azure-spezifische Datei, die für die Veröffentlichung Ihrer Anwendung erforderlich ist. Weitere Informationen erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/en-us/library/windowsazure/jj155995.aspx).
+5.  Wenn Sie dieses Projekt erstmalig zu Azure bereitstellen, erhalten Sie eine Fehlermeldung **'No 'csdef' file present'**. Wählen Sie **Yes**, um die .csdef-Datei zu erstellen. Dadurch wird eine 'ServiceDefinition.csdef'-Datei zu Ihrem Projekt hinzugefügt. "ServiceDefinition.csdef" ist eine Azure-spezifische Datei, die für die Veröffentlichung Ihrer Anwendung erforderlich ist. Weitere Informationen erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx).
 
-6.  Sie werden aufgefordert, die Instanzengröße für diese Anwendung auszuwählen. Wählen Sie **Small**, und klicken Sie dann auf **Create**. Weitere Details zu Azure-VM-Größen finden Sie unter [Konfiguration der Größe einer virtuellen Maschine](http://msdn.microsoft.com/en-us/library/windowsazure/ee814754.aspx).
+6.  Sie werden aufgefordert, die Instanzengröße für diese Anwendung auszuwählen. Wählen Sie **Small**, und klicken Sie dann auf **Create**. Weitere Details zu Azure-VM-Größen finden Sie unter [Konfiguration der Größe einer virtuellen Maschine](http://msdn.microsoft.com/de-de/library/windowsazure/ee814754.aspx).
 
     ![Werte für csdef-Datei angeben](./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_createcsdef.png)
 
@@ -201,7 +201,7 @@ Bereitstellen der Aktualisierung zur Azure-Stagingumgebung
 Überführen der Aktualisierung zur Produktion über VIP-Austausch
 ---------------------------------------------------------------
 
-Wenn ein Dienst zur Produktions- oder Stagingumgebung bereitgestellt wird, wird dem Dienst in dieser Umgebung eine virtuelle IP-Adresse (VIP) zugewiesen. Wenn Sie einen Dienst von der Bereitstellungsumgebung zur Produktionsumgebung überführen möchten, kann dies ohne erneute Bereitstellung erfolgen, indem ein VIP-Austausch erfolgt, welcher die Staging- und Produktionsbereitstellungen tauscht. Ein VIP-Austausch überführt die gestestete Staginganwendung ohne Ausfallzeiten in der Produktionsumgebung in die Produktion. Weitere Informationen finden Sie unter [Übersicht über das Verwalten von Bereitstellungen in Windows Azure.](http://msdn.microsoft.com/en-us/library/windowsazure/gg433027.aspx)
+Wenn ein Dienst zur Produktions- oder Stagingumgebung bereitgestellt wird, wird dem Dienst in dieser Umgebung eine virtuelle IP-Adresse (VIP) zugewiesen. Wenn Sie einen Dienst von der Bereitstellungsumgebung zur Produktionsumgebung überführen möchten, kann dies ohne erneute Bereitstellung erfolgen, indem ein VIP-Austausch erfolgt, welcher die Staging- und Produktionsbereitstellungen tauscht. Ein VIP-Austausch überführt die gestestete Staginganwendung ohne Ausfallzeiten in der Produktionsumgebung in die Produktion. Weitere Informationen finden Sie unter [Übersicht über das Verwalten von Bereitstellungen in Windows Azure.](http://msdn.microsoft.com/de-de/library/windowsazure/gg433027.aspx)
 
 1.  Klicken Sie im Bereitstellungsdialogfeld auf den Link **Open portal**, um das Azure-Verwaltungsportal zu öffnen.
 

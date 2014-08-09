@@ -263,8 +263,8 @@ Nächste Schritte
 
 [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Blob-Dienst](../storage-dotnet-shared-access-signature-part-2/)
 
-[Verwalten des Zugriffs auf Azure-Speicherressourcen](http://msdn.microsoft.com/en-us/library/windowsazure/ee393343.aspx)
+[Verwalten des Zugriffs auf Azure-Speicherressourcen](http://msdn.microsoft.com/de-de/library/windowsazure/ee393343.aspx)
 
-[Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)](http://msdn.microsoft.com/en-us/library/windowsazure/ee395415.aspx)
+[Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)](http://msdn.microsoft.com/de-de/library/windowsazure/ee395415.aspx)
 
 [Einführung in Tabellen und Warteschlangen mit SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)

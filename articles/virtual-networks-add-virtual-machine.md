@@ -3,7 +3,7 @@
 Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk
 ==================================================================
 
-In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines Azure-Speicherkontos und eines virtuellen Azure-Computers (VM) geführt, den Sie zu einem [virtuellen Netzwerk](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx) hinzufügen.
+In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines Azure-Speicherkontos und eines virtuellen Azure-Computers (VM) geführt, den Sie zu einem [virtuellen Netzwerk](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx) hinzufügen.
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben.
 
@@ -25,14 +25,14 @@ Voraussetzungen
 
 -   Führen Sie eines der folgenden Lernprogramme aus:
 
-    -   [Erstellen eines virtuellen Netzwerks in Azure](/en-us/manage/services/networking/create-a-virtual-network/)
+    -   [Erstellen eines virtuellen Netzwerks in Azure](/de-de/manage/services/networking/create-a-virtual-network/)
 
         ODER
 
-    -   [Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen](/en-us/manage/services/networking/cross-premises-connectivity/)
+    -   [Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen](/de-de/manage/services/networking/cross-premises-connectivity/)
 -   Windows Live-Konto mit mindestens einem gültigen aktiven Abonnement
 
--   Die Namen der folgenden Komponenten aus [Erstellen eines virtuellen Netzwerks in Azure](/en-us/manage/services/networking/create-a-virtual-network/) oder [Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen](/en-us/manage/services/networking/cross-premises-connectivity/):
+-   Die Namen der folgenden Komponenten aus [Erstellen eines virtuellen Netzwerks in Azure](/de-de/manage/services/networking/create-a-virtual-network/) oder [Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen](/de-de/manage/services/networking/cross-premises-connectivity/):
 
     -   Affinitätsgruppe, die Sie dem virtuellen Netzwerk zugewiesen haben
 
@@ -133,14 +133,14 @@ Erstellen eines virtuellen Computers und Bereitstellen für ein virtuelles Netzw
 Nächste Schritte
 ----------------
 
-Informationen zum Installieren eines weiteren Domänencontrollers für Ihre lokale Active Directory-Domäne auf der gerade erstellten VM finden Sie unter [Installieren eines Active Directory-Replikatdomänencontrollers in Azure Virtual Network](/en-us/manage/services/networking/replica-domain-controller/).
+Informationen zum Installieren eines weiteren Domänencontrollers für Ihre lokale Active Directory-Domäne auf der gerade erstellten VM finden Sie unter [Installieren eines Active Directory-Replikatdomänencontrollers in Azure Virtual Network](/de-de/manage/services/networking/replica-domain-controller/).
 
 Weitere Informationen
 ---------------------
 
--   [Virtuelles Azure-Netzwerk](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx)
+-   [Virtuelles Azure-Netzwerk](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx)
 
--   [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/en-us/library/windowsazure/jj156097.aspx)
+-   [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/de-de/library/windowsazure/jj156097.aspx)
 
 
 <!-- LINKS -->

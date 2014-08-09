@@ -315,7 +315,7 @@ Verwenden Sie den folgenden Befehl, um die Befehlszeilentools zu installieren:
 
     npm install azure-cli -g
 
-Wenn Sie bereits das **Azure-SDK für Node.js** aus dem [Azure-Entwicklercenter](/en-us/develop/nodejs/) installiert haben, sollten auch die Befehlszeilentools bereits installiert sein. Weitere Informationen finden Sie im Thema zum [Azure-Befehlszeilentool für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+Wenn Sie bereits das **Azure-SDK für Node.js** aus dem [Azure-Entwicklercenter](/de-de/develop/nodejs/) installiert haben, sollten auch die Befehlszeilentools bereits installiert sein. Weitere Informationen finden Sie im Thema zum [Azure-Befehlszeilentool für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
 Obwohl die Azure-Befehlszeilentools vor allem für Mac-und Linux-Benutzer erstellt wurden, basieren sie auf "Node.js" und sollten auf allen Systemen funktionieren, die Node ausführen können.
 

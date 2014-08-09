@@ -53,7 +53,7 @@ Aktualisieren der App zum Aufruf der benutzerdefinierten API
              await dialog.ShowAsync();
          }
 
-    Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die [InvokeApiAsync](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx)-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
+    Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die [InvokeApiAsync](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx)-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
 
 Testen der App
 --------------

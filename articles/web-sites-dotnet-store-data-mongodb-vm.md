@@ -36,8 +36,8 @@ In diesem Abschnitt lernen Sie, wie Sie in Azure einen virtuellen Computer erste
 
 Bei diesem Lernprogramm wird vorausgesetzt, dass Sie in Azure einen virtuellen Computer erstellt haben. Nach dem Erstellen des virtuellen Computers müssen Sie MongoDB auf dem virtuellen Computer installieren:
 
--   Informationen zum Erstellen eines virtuellen Windows-Computers und zum Installieren von MongoDB finden Sie unter [Install MongoDB on a virtual machine running Windows Server in Azure](/en-us/manage/windows/common-tasks/install-mongodb/) (Installieren von MongoDB auf einem virtuellen Computer mit Windows Server in Azure, in englischer Sprache).
--   Wenn Sie hingegen einen virtuellen Linux-Computer und MongoDB installieren möchten, finden Sie entsprechende Informationen unter [Install MongoDB on a virtual machine running CentOS Linux in Azure](/en-us/manage/linux/common-tasks/mongodb-on-a-linux-vm/) (Installieren von MongoDB auf einem virtuellen Computer mit CentOS Linux in Azure, in englischer Sprache).
+-   Informationen zum Erstellen eines virtuellen Windows-Computers und zum Installieren von MongoDB finden Sie unter [Install MongoDB on a virtual machine running Windows Server in Azure](/de-de/manage/windows/common-tasks/install-mongodb/) (Installieren von MongoDB auf einem virtuellen Computer mit Windows Server in Azure, in englischer Sprache).
+-   Wenn Sie hingegen einen virtuellen Linux-Computer und MongoDB installieren möchten, finden Sie entsprechende Informationen unter [Install MongoDB on a virtual machine running CentOS Linux in Azure](/de-de/manage/linux/common-tasks/mongodb-on-a-linux-vm/) (Installieren von MongoDB auf einem virtuellen Computer mit CentOS Linux in Azure, in englischer Sprache).
 
 Nachdem Sie den virtuellen Computer in Azure erstellt und MongoDB installiert haben, merken Sie sich den DNS-Namen des virtuellen Computers (z. B. "testlinuxvm.cloudapp.net") und den externen Port für MongoDB, den Sie im Endpunkt angegeben haben. Sie benötigen diese Informationen später im Lernprogramm.
 

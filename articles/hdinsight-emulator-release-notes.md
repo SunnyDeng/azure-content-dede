@@ -68,7 +68,7 @@ V0.4.0.0, veröffentlicht am 25.03.2013
 
 -   Verbindung mit mehreren Clustern sowohl in lokalen Installationen als auch in Remote-Anwendungen über den Azure HDInsight-Dienst.
 
--   Weitere Informationen zum HDInsight-Dienst erhalten Sie unter http://www.windowsazure.com/en-us/manage/services/hdinsight.
+-   Weitere Informationen zum HDInsight-Dienst erhalten Sie unter http://www.windowsazure.com/de-de/manage/services/hdinsight.
 
 -   Konfiguration von ASV in einem lokalen Cluster
 
@@ -255,5 +255,5 @@ Allgemeine bekannte Probleme
 Nächste Schritte
 ----------------
 
--   [Erste Schritte mit dem HDInsight Emulator](/en-us/documentation/articles/hdinsight-get-started-emulator/)
+-   [Erste Schritte mit dem HDInsight Emulator](/de-de/documentation/articles/hdinsight-get-started-emulator/)
 

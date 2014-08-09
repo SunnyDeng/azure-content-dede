@@ -3,9 +3,9 @@
 Erste Schritte mit Mobile Services
 ==================================
 
-[Windows Store](/en-us/documentation/articles/mobile-services-windows-store-get-started "Windows Store")[Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-get-started "Windows Phone")[iOS](/en-us/documentation/articles/mobile-services-ios-get-started "iOS")[Android](/en-us/documentation/articles/mobile-services-android-get-started "Android")[HTML](/en-us/documentation/articles/mobile-services-html-get-started "HTML")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-mobile-services-ios-get-started "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-mobile-services-android-get-started "Xamarin.Android")[Sencha](/en-us/documentation/articles/partner-sencha-mobile-services-get-started/ "Sencha")[PhoneGap](/en-us/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/ "PhoneGap")
+[Windows Store](/de-de/documentation/articles/mobile-services-windows-store-get-started "Windows Store")[Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-get-started "Windows Phone")[iOS](/de-de/documentation/articles/mobile-services-ios-get-started "iOS")[Android](/de-de/documentation/articles/mobile-services-android-get-started "Android")[HTML](/de-de/documentation/articles/mobile-services-html-get-started "HTML")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started "Xamarin.Android")[Sencha](/de-de/documentation/articles/partner-sencha-mobile-services-get-started/ "Sencha")[PhoneGap](/de-de/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/ "PhoneGap")
 
-[.NET-Back-End](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/ ".NET-Back-End") | [JavaScript-Back-End](/en-us/documentation/articles/mobile-services-windows-phone-get-started/ "JavaScript-Back-End")
+[.NET-Back-End](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/ ".NET-Back-End") | [JavaScript-Back-End](/de-de/documentation/articles/mobile-services-windows-phone-get-started/ "JavaScript-Back-End")
 
 In diesem Lernprogramm wird das Hinzufügen eines cloudbasierten Back-End-Diensts zu einer Windows Phone 8-App mit Azure Mobile Services erläutert. Im Rahmen dieses Lernprogramms erstellen Sie einen neuen mobilen Dienst und eine einfache App für eine *To-do-Liste*, die App-Daten in dem neuen mobilen Dienst speichert.
 
@@ -13,7 +13,7 @@ Wenn Sie sich lieber ein Video anschauen möchten, im Clip rechts werden dieselb
 
 [Tutorial anschauen](http://go.microsoft.com/fwlink/?LinkId=290816) [Video abspielen](http://go.microsoft.com/fwlink/?LinkId=290816) 13:18
 
-Im Rahmen dieses Lernprogramms erstellen Sie einen neuen mobilen Dienst und eine einfache App für eine *To-do-Liste*, die App-Daten in dem neuen mobilen Dienst speichert. Der mobile Dienst, den Sie erstellen, verwendet für die serverseitige Geschäftslogik JavaScript. Informationen zum Erstellen eines mobile Diensts, dessen serverseitige Geschäftslogik Sie in den unterstützen .NET-Sprachen mit Visual Studio schreiben können, finden Sie in der [.NET-Back-End-Version](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started) dieses Themas.
+Im Rahmen dieses Lernprogramms erstellen Sie einen neuen mobilen Dienst und eine einfache App für eine *To-do-Liste*, die App-Daten in dem neuen mobilen Dienst speichert. Der mobile Dienst, den Sie erstellen, verwendet für die serverseitige Geschäftslogik JavaScript. Informationen zum Erstellen eines mobile Diensts, dessen serverseitige Geschäftslogik Sie in den unterstützen .NET-Sprachen mit Visual Studio schreiben können, finden Sie in der [.NET-Back-End-Version](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started) dieses Themas.
 
 Screenshot der fertigen App:
 
@@ -23,7 +23,7 @@ Screenshot der fertigen App:
 
 Sie benötigen ein Azure-Konto mit aktivierter "Azure Mobile Services"-Funktion, um dieses Lernprogramm auszuführen.
 
--   Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Windows Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A30A4DDE2&returnurl=http%3A%2F%2FFen-us%2Fdocumentation%2Farticles%2Fmobile-services-windows-phone-get-started%2F).
+-   Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Windows Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A30A4DDE2&returnurl=http%3A%2F%2FFen-us%2Fdocumentation%2Farticles%2Fmobile-services-windows-phone-get-started%2F).
 
 Erstellen eines neuen mobilen Diensts
 -------------------------------------
@@ -85,13 +85,13 @@ Nächste Schritte
 
 Sie haben den Schnellstart abgeschlossen und können nun mit weiteren wichtigen Aufgaben in Mobile Services fortfahren:
 
--   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-wp8)
+-   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-wp8)
     Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8)
+-   [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8)
     Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-wp8)
+-   [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-wp8)
     Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 

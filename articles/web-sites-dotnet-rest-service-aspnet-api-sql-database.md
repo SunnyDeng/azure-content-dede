@@ -5,7 +5,7 @@ REST-Dienst verwendet ASP.NET Web-API und SQL-Datenbank
 
 ***Von [Rick Anderson](https://twitter.com/RickAndMSFT) und Tom Dykstra. Aktualisiert März 2014.***
 
-In diesem Lernprogramm wird die Bereitstellung einer ASP.NET-Webanwendung für eine Azure-Website mit dem Assistenten "Web veröffentlichen" in Visual Studio 2013 oder Visual Studio 2013 for Web Express gezeigt. (Wenn Sie Visual Studio 2012 verwenden möchten, finden Sie weitere Informationen in der [vorherigen Version dieses Lernprogramms](/en-us/develop/net/tutorials/get-started-vs2012/).)
+In diesem Lernprogramm wird die Bereitstellung einer ASP.NET-Webanwendung für eine Azure-Website mit dem Assistenten "Web veröffentlichen" in Visual Studio 2013 oder Visual Studio 2013 for Web Express gezeigt. (Wenn Sie Visual Studio 2012 verwenden möchten, finden Sie weitere Informationen in der [vorherigen Version dieses Lernprogramms](/de-de/develop/net/tutorials/get-started-vs2012/).)
 
 Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Auf diese Weise können Sie völlig kostenlos mit der Entwicklung für Azure beginnen.
 
@@ -805,14 +805,14 @@ Die Anwendung wird nun in der Cloud ausgeführt und verwendet die SQL-Datenbank 
 Nächste Schritte
 ----------------
 
-Eine echte Anwendung benötigt eine Authentifizierung und Autorisierung, und Sie würden für diesen Zweck die Mitgliedsdatenbank verwenden. Das Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank](http://www.windowsazure.com/en-us/develop/net/tutorials/web-site-with-sql-database/) basiert auf diesem Lernprogramm und zeigt, wie Sie eine Web-Anwendung mithilfe der Mitgliedsdatenbank bereitstellen.
+Eine echte Anwendung benötigt eine Authentifizierung und Autorisierung, und Sie würden für diesen Zweck die Mitgliedsdatenbank verwenden. Das Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank](http://www.windowsazure.com/de-de/develop/net/tutorials/web-site-with-sql-database/) basiert auf diesem Lernprogramm und zeigt, wie Sie eine Web-Anwendung mithilfe der Mitgliedsdatenbank bereitstellen.
 
 Daten können außerdem über den Azure-Speicher in einer Azure-Anwendung gespeichert werden. Dieser Speicher bietet nichtrelationale Datenspeicherung in Form von Blobs und Tabellen. Die folgenden Links bieten weitere Informationen zu WEB API, ASP.NET MVC und Windows Azure.
 
 -   [Erste Schritte in Entity Framework mit MVC](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)
 -   [Einleitung zu ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 -   [Ihre erste ASP.NET WEB-API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
--   [Debugging WAWS](http://www.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+-   [Debugging WAWS](http://www.windowsazure.com/de-de/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) sowie Tom Dykstra und Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) geschrieben.
 

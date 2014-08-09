@@ -3,7 +3,7 @@
 
 Wenn Sie eine Website erstellen, bietet Azure eine benutzerfreundliche Unterdomäne in der Domäne azurewebsites.net, damit Ihre Benutzer über eine URL wie http://<mysite>.azurewebsites.net auf Ihre Website zugreifen können. Wenn Sie Ihre Website jedoch für den Freigabe- oder Standardmodus konfigurieren möchten, können Sie Ihre Website Ihrem eigenen Domänennamen zuweisen.
 
-Optional können Sie Azure Traffic Manager verwenden, um einen Lastenausgleich des auf Ihrer Website eingehenden Verkehrs herzustellen. Weitere Informationen zur Verwendung von Traffic Manager für Websites finden Sie unter [Controlling Azure Web Sites Traffic with Azure Traffic Manager](/en-us/documentation/articles/web-sites-traffic-manager/)(Kontrolle des Verkehrs auf einer Azure-Website mithilfe des Azure Traffic Manager, in englischer Sprache).
+Optional können Sie Azure Traffic Manager verwenden, um einen Lastenausgleich des auf Ihrer Website eingehenden Verkehrs herzustellen. Weitere Informationen zur Verwendung von Traffic Manager für Websites finden Sie unter [Controlling Azure Web Sites Traffic with Azure Traffic Manager](/de-de/documentation/articles/web-sites-traffic-manager/)(Kontrolle des Verkehrs auf einer Azure-Website mithilfe des Azure Traffic Manager, in englischer Sprache).
 
 > [WACOM.NOTE] Die Vorgehensweisen in dieser Aufgabe gelten für
 > Azure-Web Sites. Informationen zu Clouddiensten finden Sie unter
@@ -62,7 +62,7 @@ Ein A-Datensatz weist eine Domäne wie **contoso.com** oder **www.contoso.com** 
 > [WACOM.NOTE] A-Datensätze können nicht für einen Lastenausgleich mit
 > Traffic Manager verwendet werden. Weitere Informationen erhalten Sie
 > unter [Controlling Azure Web Sites Traffic with Azure Traffic
-> Manager](/en-us/documentation/articles/web-sites-traffic-manager/)
+> Manager](/de-de/documentation/articles/web-sites-traffic-manager/)
 > (Kontrolle des Verkehrs auf einer Azure-Website mithilfe des Azure
 > Traffic Manager, in englischer Sprache).
 
@@ -405,16 +405,16 @@ Sobald die Konfiguration abgeschlossen ist, wird der benutzerdefinierte Domänen
 
 
 
-[1]: http://www.windowsazure.com/en-us/develop/net/common-tasks/custom-dns/
-[2]: http://www.windowsazure.com/en-us/pricing/details/web-sites/
+[1]: http://www.windowsazure.com/de-de/develop/net/common-tasks/custom-dns/
+[2]: http://www.windowsazure.com/de-de/pricing/details/web-sites/
 [3]: http://en.wikipedia.org/wiki/CNAME_record
 [4]: http://tools.ietf.org/html/rfc1035
 [5]: https://www.windowsazure.com/en-us/pricing/details/
 [6]: http://manage.windowsazure.com
-[7]: http://msdn.microsoft.com/en-us/library/windowsazure/dn339012.aspx
-[8]: http://msdn.microsoft.com/en-us/library/windowsazure/hh744839.aspx
-[9]: http://www.windowsazure.com/en-us/manage/install-and-configure-windows-powershell/
-[10]: http://www.windowsazure.com/en-us/manage/install-and-configure-cli/
+[7]: http://msdn.microsoft.com/de-de/library/windowsazure/dn339012.aspx
+[8]: http://msdn.microsoft.com/de-de/library/windowsazure/hh744839.aspx
+[9]: http://www.windowsazure.com/de-de/manage/install-and-configure-windows-powershell/
+[10]: http://www.windowsazure.com/de-de/manage/install-and-configure-cli/
 [11]: http://www.digwebinterface.com/
-[12]: http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-manage-websites/
-[13]: http://www.windowsazure.com/en-us/develop/net/common-tasks/enable-ssl-web-site/
+[12]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-manage-websites/
+[13]: http://www.windowsazure.com/de-de/develop/net/common-tasks/enable-ssl-web-site/

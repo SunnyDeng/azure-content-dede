@@ -9,7 +9,7 @@ Mit den Azure-Mediendiensten können Sie einen Auftrag übermitteln, der den Mic
 
 Das folgende Beispiel zeigt, wie ein einfacher Auftrag erstellt wird, um PlayReady Protection bereitzustellen.
 
-1.  Rufen Sie die Konfigurationsdaten ab. Sie können eine Beispielkonfigurationsdatei des Themas [Aufgabenvoreinstellung für Azure Media Encryptor](http://msdn.microsoft.com/en-us/library/hh973610.aspx) erhalten.
+1.  Rufen Sie die Konfigurationsdaten ab. Sie können eine Beispielkonfigurationsdatei des Themas [Aufgabenvoreinstellung für Azure Media Encryptor](http://msdn.microsoft.com/de-de/library/hh973610.aspx) erhalten.
 2.  Hochladen einer MP4-Eingabedatei
 3.  Umwandeln der MP4-Datei in ein Smooth Streaming-Medienobjekt
 4.  Verschlüsseln des Medienobjekts mit PlayReady
@@ -104,7 +104,7 @@ private static IJob CreatePlayReadyProtectionJob(string inputMediaFilePath, stri
 
 Weitere Informationen zu PlayReady Protection finden Sie unter:
 
--   [Schützen von Medienobjekten mit Microsoft PlayReady](http://msdn.microsoft.com/en-us/library/dn189154.aspx)
+-   [Schützen von Medienobjekten mit Microsoft PlayReady](http://msdn.microsoft.com/de-de/library/dn189154.aspx)
 -   [Microsoft PlayReady](http://www.microsoft.com/PlayReady/)
 
 Nächste Schritte

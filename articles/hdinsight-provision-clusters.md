@@ -23,11 +23,11 @@ Themen in diesem Artikel
 Das Azure-Verwaltungsportal
 ---------------------------
 
-HDInsight-Cluster verwenden Azure-Blob-Speichercontainer als Standarddateisystem. Sie benötigen ein Speicherkonto im entsprechenden Rechenzentrum, um ein HDInsight-Cluster erstellen zu können. Weitere Informationen finden Sie unter [Use Azure Blob Storage with HDInsight](/en-us/manage/services/hdinsight/howto-blob-store/) (Verwenden von Azure Blob-Speicher mit HDInsight, in englischer Sprache). Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](/en-us/manage/services/storage/how-to-create-a-storage-account/).
+HDInsight-Cluster verwenden Azure-Blob-Speichercontainer als Standarddateisystem. Sie benötigen ein Speicherkonto im entsprechenden Rechenzentrum, um ein HDInsight-Cluster erstellen zu können. Weitere Informationen finden Sie unter [Use Azure Blob Storage with HDInsight](/de-de/manage/services/hdinsight/howto-blob-store/) (Verwenden von Azure Blob-Speicher mit HDInsight, in englischer Sprache). Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](/de-de/manage/services/storage/how-to-create-a-storage-account/).
 
 > [WACOM.NOTE] Aktuell unterstützen nur die Regionen Südostasien, Nordeuropa, Westeuropa, USA Ost und USA West die Hostingfunktion für HDInsight-Cluster.
 
-Dieser Artikel beschreibt die Erstellung eines HDInsight-Clusters mithilfe der benutzerdefinierten Erstellungsoption. Weitere Informationen zur Schnellerfassungs-Option finden Sie unter [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/).
+Dieser Artikel beschreibt die Erstellung eines HDInsight-Clusters mithilfe der benutzerdefinierten Erstellungsoption. Weitere Informationen zur Schnellerfassungs-Option finden Sie unter [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/).
 
 **So erstellen Sie ein HDInsight-Cluster über die benutzerdefinierte Erstellungsoption**
 
@@ -55,7 +55,7 @@ Dieser Artikel beschreibt die Erstellung eines HDInsight-Clusters mithilfe der b
 		</tr>
      	<tr data-morhtml="true">
 			<td data-morhtml="true">HDINSIGHT VERSION</td>
-         	<td data-morhtml="true">W&auml;hlen Sie die Version aus. Die Standardversion ist 2.0 mit Hadoop 1.2-Clustern.  Version 3.0 verwendet Hadoop 2.2-Cluster. Weitere Informationen finden Sie unter <a data-morhtml="true" href="http://www.windowsazure.com/en-us/manage/services/hdinsight/versioning-in-hdinsight/">Welche Version von Hadoop ist in Azure HDInsight enthalten?</a>.</td>
+         	<td data-morhtml="true">W&auml;hlen Sie die Version aus. Die Standardversion ist 2.0 mit Hadoop 1.2-Clustern.  Version 3.0 verwendet Hadoop 2.2-Cluster. Weitere Informationen finden Sie unter <a data-morhtml="true" href="http://www.windowsazure.com/de-de/manage/services/hdinsight/versioning-in-hdinsight/">Welche Version von Hadoop ist in Azure HDInsight enthalten?</a>.</td>
 		</tr>
      	<tr data-morhtml="true">
 			<td data-morhtml="true">REGION</td>
@@ -154,7 +154,7 @@ Die Bereitstellung eines Clusters kann mehrere Minuten in Anspruch nehmen. Nach 
 Die Azure PowerShell
 --------------------
 
-Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und die Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight Powershell-Cmdlets finden Sie unter [Installieren und Konfigurieren der Azure-PowerShell](/en-us/documentation/articles/install-configure-powershell/). Weitere Informationen zur Verwendung von PowerShell mit HDInsight finden Sie unter [Administer HDInsight using PowerShell](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/) (Verwalten von HDInsight mit PowerShell, in englischer Sprache). Eine Liste der HDInsight PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz](http://msdn.microsoft.com/en-us/library/windowsazure/dn479228.aspx).
+Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und die Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight Powershell-Cmdlets finden Sie unter [Installieren und Konfigurieren der Azure-PowerShell](/de-de/documentation/articles/install-configure-powershell/). Weitere Informationen zur Verwendung von PowerShell mit HDInsight finden Sie unter [Administer HDInsight using PowerShell](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/) (Verwalten von HDInsight mit PowerShell, in englischer Sprache). Eine Liste der HDInsight PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz](http://msdn.microsoft.com/de-de/library/windowsazure/dn479228.aspx).
 
 Die folgenden Prozeduren müssen für die Bereitstellung eines HDInsight-Clusters mithilfe der PowerShell ausgeführt werden:
 
@@ -274,7 +274,7 @@ Sie können ein Cluster auch bereitstellen und für die Verbindung mit mehr als 
 Die plattformübergreifende Befehlszeile
 ---------------------------------------
 
-Eine weitere Möglichkeit zur Bereitstellung von HDInsight-Clustern ist die plattformübergreifende Befehlszeile. Das Befehlszeilentool ist in Node.js implementiert. Dieses Tool kann auf allen Plattformen verwendet werden, die Node.js unterstützen, inklusive Windows, Mac und Linux. Das Befehlszeilentool ist Open Source. Der Quellcode liegt auf GitHub unter <https://github.com/WindowsAzure/azure-sdk-tools-xplat>. Eine allgemeine Anleitung für die Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilentools für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/). Umfassendes Referenzmaterial finden Sie unter [Azure-Befehlszeilentool für Mac und Linux](/en-us/manage/linux/other-resources/command-line-tools/). Dieser Artikel behandelt nur die Befehlszeilenschnittstelle unter Windows.
+Eine weitere Möglichkeit zur Bereitstellung von HDInsight-Clustern ist die plattformübergreifende Befehlszeile. Das Befehlszeilentool ist in Node.js implementiert. Dieses Tool kann auf allen Plattformen verwendet werden, die Node.js unterstützen, inklusive Windows, Mac und Linux. Das Befehlszeilentool ist Open Source. Der Quellcode liegt auf GitHub unter <https://github.com/WindowsAzure/azure-sdk-tools-xplat>. Eine allgemeine Anleitung für die Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilentools für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/). Umfassendes Referenzmaterial finden Sie unter [Azure-Befehlszeilentool für Mac und Linux](/de-de/manage/linux/other-resources/command-line-tools/). Dieser Artikel behandelt nur die Befehlszeilenschnittstelle unter Windows.
 
 Die folgenden Prozeduren müssen für die Bereitstellung eines HDInsight-Clusters in der plattformübergreifenden Befehlszeile ausgeführt werden:
 
@@ -309,7 +309,7 @@ Sie können die Befehlszeilenschnittstelle entweder über den *Node.js-Paketmana
 
 **So installieren Sie die Befehlszeilenschnittstelle mit dem Windows Installer**
 
-1.  Öffnen Sie die Webseite **http://www.windowsazure.com/en-us/downloads/**.
+1.  Öffnen Sie die Webseite **http://www.windowsazure.com/de-de/downloads/**.
 2.  Blättern Sie nach unten zum Bereich **Befehlszeilentools**, klicken Sie auf **Plattformübergreifende Befehlszeilenschnittstelle** und führen Sie den Webplattform-Installer aus.
 
 Bevor Sie die Befehlszeilenschnittstelle verwenden können, müssen Sie die Konnektivität zwischen Ihrer Arbeitsstation und Azure konfigurieren. Die Befehlszeilenschnittstelle verwendet Ihre Azure-Kontoinformationen, um sich mit Ihrem Benutzerkonto zu verbinden. Sie finden diese Informationen in Azure in einer Einstellungsveröffentlichungsdatei. Die Einstellungsveröffentlichungsdatei kann anschließend als persistente lokale Einstellung importiert werden und wird von der Befehlszeilenschnittstelle in späteren Operationen verwendet. Sie müssen Ihre Veröffentlichungseinstellungen nur einmal importieren.
@@ -343,7 +343,7 @@ HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Sie be
 
           azure account storage create [options] <StorageAccountName>
 
-Weitere Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Verwaltungsportal finden Sie unter [Erstellen eines Speicherkontos](/en-us/manage/services/storage/how-to-create-a-storage-account/).
+Weitere Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Verwaltungsportal finden Sie unter [Erstellen eines Speicherkontos](/de-de/manage/services/storage/how-to-create-a-storage-account/).
 
 Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlüssel nicht kennen, können Sie diese Informationen mit den folgenden Befehlen abrufen:
 
@@ -354,7 +354,7 @@ Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlü
     -- Schlüssel für ein Speicherkonto auflisten
     azure account storage keys list <StorageAccountName>
 
-Details zum Abrufen dieser Informationen im Verwaltungsportal finden Sie im Bereich *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [Verwalten von Speicherkonten](/en-us/manage/services/storage/how-to-manage-a-storage-account/).
+Details zum Abrufen dieser Informationen im Verwaltungsportal finden Sie im Bereich *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [Verwalten von Speicherkonten](/de-de/manage/services/storage/how-to-manage-a-storage-account/).
 
 Der Befehl *azure hdinsight cluster create* erstellt den Container, falls dieser nicht existiert. Falls Sie den Container zuvor erstellen möchten, können Sie den folgenden Befehl verwenden:
 
@@ -527,30 +527,30 @@ Nächste Schritte
 
 In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsight-Clustern kennen gelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Administer HDInsight using PowerShell (Verwalten von HDInsight mit PowerShell, in englischer Sprache)](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/)
--   [Programmgesteuerte Übermittlung von Hadoop-Aufgaben](/en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Administer HDInsight using PowerShell (Verwalten von HDInsight mit PowerShell, in englischer Sprache)](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/)
+-   [Programmgesteuerte Übermittlung von Hadoop-Aufgaben](/de-de/manage/services/hdinsight/submit-hadoop-jobs-programmatically/)
 -   [Dokumentation des Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx)
 
-[hdinsight-version]: /en-us/manage/services/hdinsight/versioning-in-hdinsight/
+[hdinsight-version]: /de-de/manage/services/hdinsight/versioning-in-hdinsight/
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx
-[hdinsight-getting-started]: /en-us/manage/services/hdinsight/get-started-hdinsight/
-[hdinsight-storage]: /en-us/manage/services/hdinsight/howto-blob-store/
-[hdinsight-admin-powershell]: /en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/
-[hdinsight-submit-jobs]: /en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
-[hdinsight-configure-powershell]: /en-us/manage/services/hdinsight/install-and-configure-powershell-for-hdinsight/ 
-[hdinsight-powershell-reference]: http://msdn.microsoft.com/en-us/library/windowsazure/dn479228.aspx
+[hdinsight-getting-started]: /de-de/manage/services/hdinsight/get-started-hdinsight/
+[hdinsight-storage]: /de-de/manage/services/hdinsight/howto-blob-store/
+[hdinsight-admin-powershell]: /de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/
+[hdinsight-submit-jobs]: /de-de/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
+[hdinsight-configure-powershell]: /de-de/manage/services/hdinsight/install-and-configure-powershell-for-hdinsight/ 
+[hdinsight-powershell-reference]: http://msdn.microsoft.com/de-de/library/windowsazure/dn479228.aspx
 
-[azure-create-storageaccount]: /en-us/manage/services/storage/how-to-create-a-storage-account/ 
+[azure-create-storageaccount]: /de-de/manage/services/storage/how-to-create-a-storage-account/ 
 [azure-management-portal]: https://manage.windowsazure.com/
-[azure-command-line-tools]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
-[azure-command-line-tool]: /en-us/manage/linux/other-resources/command-line-tools/
-[azure-manage-storageaccount]: /en-us/manage/services/storage/how-to-manage-a-storage-account/
+[azure-command-line-tools]: /de-de/develop/nodejs/how-to-guides/command-line-tools/
+[azure-command-line-tool]: /de-de/manage/linux/other-resources/command-line-tools/
+[azure-manage-storageaccount]: /de-de/manage/services/storage/how-to-manage-a-storage-account/
 [azure-purchase-options]: https://www.windowsazure.com/en-us/pricing/purchase-options/
 [azure-member-offers]: https://www.windowsazure.com/en-us/pricing/member-offers/
 [azure-free-trial]: https://www.windowsazure.com/en-us/pricing/free-trial/
 
-[Powershell-install-configure]: /en-us/documentation/articles/install-configure-powershell/
+[Powershell-install-configure]: /de-de/documentation/articles/install-configure-powershell/
 
 
 [image-customprovision-page1]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page1.png 

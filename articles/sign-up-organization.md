@@ -17,7 +17,7 @@ Möchten Sie sich als Organisation bei Azure anmelden? [**Jetzt anmelden**](http
 
 **Zusätzliche Ressourcen**
 
--   [Was ist Azure AD?](/en-us/manage/services/identity/what-is-windows-azure-active-directory/)
+-   [Was ist Azure AD?](/de-de/manage/services/identity/what-is-windows-azure-active-directory/)
 -   [Azure AD-Bibliothek auf TechNet](http://technet.microsoft.com/en-us/library/hh967619.aspx)
 -   [Azure AD-Bibliothek auf MSDN](http://msdn.microsoft.com/library/windowsazure/jj673460.aspx)
 

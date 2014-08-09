@@ -3,11 +3,11 @@
 Node.js-Webanwendung mit Speicher
 =================================
 
-In diesem Lernprogramm erweitern Sie die Anwendung aus dem Lernprogramm [Node.js-Webanwendung mit Express](http://www.windowsazure.com/en-us/develop/nodejs/tutorials/web-app-with-express/), indem Sie die Azure-Clientbibliotheken für Node.js für die Arbeit mit Datenverwaltungsdiensten verwenden. Sie werden Ihre Anwendung erweitern und eine webbasierte Anwendung mit Aufgabenlisten erstellen, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren.
+In diesem Lernprogramm erweitern Sie die Anwendung aus dem Lernprogramm [Node.js-Webanwendung mit Express](http://www.windowsazure.com/de-de/develop/nodejs/tutorials/web-app-with-express/), indem Sie die Azure-Clientbibliotheken für Node.js für die Arbeit mit Datenverwaltungsdiensten verwenden. Sie werden Ihre Anwendung erweitern und eine webbasierte Anwendung mit Aufgabenlisten erstellen, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren.
 
-Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Node.js oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx).
+Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Node.js oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx).
 
-Dieses Lernprogramm setzt voraus, dass Sie die Lernprogramme [Node.js-Webanwendung](http://www.windowsazure.com/en-us/develop/nodejs/tutorials/getting-started/) und [Node.js mit Express](http://www.windowsazure.com/en-us/develop/nodejs/tutorials/web-app-with-express/) abgeschlossen haben.
+Dieses Lernprogramm setzt voraus, dass Sie die Lernprogramme [Node.js-Webanwendung](http://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/) und [Node.js mit Express](http://www.windowsazure.com/de-de/develop/nodejs/tutorials/web-app-with-express/) abgeschlossen haben.
 
 Sie erhalten Informationen zu folgenden Themen:
 

@@ -3,9 +3,9 @@
 Überprüfen und Ändern von Daten in Mobile Services mithilfe von Serverskripts
 =============================================================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows Store C#") [Windows Store JavaScript](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows Store JavaScript") [Windows Phone](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone") [iOS](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS") [Android](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-android "Android") [HTML](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML") [Xamarin.iOS](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS") [Xamarin.Android](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows Store C#") [Windows Store JavaScript](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows Store JavaScript") [Windows Phone](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone") [iOS](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS") [Android](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-android "Android") [HTML](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML") [Xamarin.iOS](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS") [Xamarin.Android](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android")
 
-[.NET-Backend](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-validate-modify-data/ ".NET-Backend") | [JavaScript-Backend](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "JavaScript-Backend")
+[.NET-Backend](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-validate-modify-data/ ".NET-Backend") | [JavaScript-Backend](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "JavaScript-Backend")
 
 In diesem Thema erfahren Sie, wie Sie Serverskripts in Azure Mobile Services nutzen. Serverskripts sind in einem mobilen Dienst registriert und können verwendet werden, um eine Vielzahl an Vorgängen für Daten, die eingefügt und aktualisiert werden, durchzuführen, einschließlich Überprüfen und Ändern. In diesem Lernprogramm definieren und registrieren Sie Serverskripts, die Daten prüfen und ändern. Da sich das Verhalten von serverseitigen Skripts häufig auf den Client auswirkt, werden Sie auch Ihre Windows Phone 8-App aktualisieren, um von diesen neuen Verhalten zu profitieren.
 
@@ -18,7 +18,7 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 3.  [Zeitstempel beim Einfügen hinzufügen](#add-timestamp)
 4.  [Client zum Anzeigen des Zeitstempels aktualisieren](#update-client-timestamp)
 
-Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-wp8). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-wp8) abschließen.
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-wp8). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-wp8) abschließen.
 
 Überprüfung hinzufügen
 ----------------------
@@ -58,7 +58,7 @@ Aktualisieren des Clients
 
 Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen Sie Ihre App aktualisieren, damit sie Fehlerantworten der Überprüfung verarbeiten kann.
 
-1.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-wp8) abgeschlossen haben.
+1.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-wp8) abgeschlossen haben.
 
 2.  Drücken Sie die Taste **F5**, um die App auszuführen, geben Sie dann einen Text mit mehr als zehn Zeichen in das Textfeld ein, und klicken Sie auf **Save**.
 
@@ -195,12 +195,12 @@ Nächste Schritte
 
 Da Sie dieses Lernprogramm nun abgeschlossen haben, können Sie mit dem letzten Lernprogramm der Datenreihe fortfahren:
 
-Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Pushbenachrichtigungen verwendet. Weitere Informationen finden Sie in den folgenden Lernprogrammen: [Optimieren von Abfragen mit Paging](/en-us/develop/mobile/tutorials/add-paging-to-data-wp8).
+Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Pushbenachrichtigungen verwendet. Weitere Informationen finden Sie in den folgenden Lernprogrammen: [Optimieren von Abfragen mit Paging](/de-de/develop/mobile/tutorials/add-paging-to-data-wp8).
 
--   [Autorisieren von Benutzern mit Skripts](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-wp8)
+-   [Autorisieren von Benutzern mit Skripts](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-wp8)
     <br/>Erfahren Sie, wie Sie Daten basierend auf der ID eines authentifizierten Benutzers filtern.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-wp8)
+-   [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-wp8)
     <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/?LinkId=262293)

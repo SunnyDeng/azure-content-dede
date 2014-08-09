@@ -3,7 +3,7 @@
 Erste Schritte mit Notification Hubs
 ====================================
 
-[Windows Store C\#](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet "Windows Store C#")[Windows Phone](/en-us/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone")[iOS](/en-us/documentation/articles/notification-hubs-ios-get-started/ "iOS")[Android](/en-us/documentation/articles/notification-hubs-android-get-started/ "Android")[Kindle](/en-us/documentation/articles/notification-hubs-kindle-get-started/ "Kindle")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android")
+[Windows Store C\#](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet "Windows Store C#")[Windows Phone](/de-de/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone")[iOS](/de-de/documentation/articles/notification-hubs-ios-get-started/ "iOS")[Android](/de-de/documentation/articles/notification-hubs-android-get-started/ "Android")[Kindle](/de-de/documentation/articles/notification-hubs-kindle-get-started/ "Kindle")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android")
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an eine Android-App senden. In diesem Lernprogramm erstellen Sie eine leere Android-App, die Pushbenachrichtigungen über Google Cloud Messaging (GCM) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
 
@@ -26,7 +26,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
 **Hinweis**
 
-Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F).
+Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F).
 
 Aktivieren von Google Cloud Messaging
 -------------------------------------
@@ -218,7 +218,7 @@ Verbinden Ihrer App mit dem Notification Hub
 Versenden von Benachrichtigungen an die App
 -------------------------------------------
 
-Sie können Benachrichtigungen mit Notification Hubs von jedem Back-End aus versenden, das unsere [REST-Schnittstelle](http://msdn.microsoft.com/en-us/library/windowsazure/dn223264.aspx) verwendet. In diesem Lernprogramm zeigen wir zwei Möglichkeiten für den Versand von Benachrichtigungen: mit einer .NET-Konsolenanwendung und mit einem Mobile Service unter Verwendung eines Knotenskripts.
+Sie können Benachrichtigungen mit Notification Hubs von jedem Back-End aus versenden, das unsere [REST-Schnittstelle](http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx) verwendet. In diesem Lernprogramm zeigen wir zwei Möglichkeiten für den Versand von Benachrichtigungen: mit einer .NET-Konsolenanwendung und mit einem Mobile Service unter Verwendung eines Knotenskripts.
 
 ### Senden von Benachrichtigungen mit einer .NET-Konsolenanwendung:
 
@@ -251,7 +251,7 @@ Sie können Benachrichtigungen mit Notification Hubs von jedem Back-End aus vers
 
 ### Versenden einer Benachrichtigung über einen Mobile Service
 
-1.  Melden Sie sich am [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an, und wählen Sie Ihren Mobile Service aus. Wenn Sie noch keinen Mobile Service haben, folgen Sie der Anleitung [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/#create-new-service).
+1.  Melden Sie sich am [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an, und wählen Sie Ihren Mobile Service aus. Wenn Sie noch keinen Mobile Service haben, folgen Sie der Anleitung [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started/#create-new-service).
 
 2.  Wählen Sie oben die Registerkarte **Scheduler**.
 
@@ -317,7 +317,7 @@ Unabhängig vom Gerät folgt folgender Schritt:
 Nächste Schritte
 ----------------
 
-In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Geräte versendet. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users-aspnet). Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, können Sie [Verwenden von Notification Hubs zum Übermitteln von Nachrichten](/en-us/manage/services/notification-hubs/breaking-news-dotnet) lesen. Mehr zur Verwendung von Notification Hubs erfahren Sie in [Notification Hubs-Leitfaden](http://msdn.microsoft.com/en-us/library/jj927170.aspx) und in [Notification Hubs für Android](http://msdn.microsoft.com/en-us/library/dn282661.aspx).
+In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Geräte versendet. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users-aspnet). Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, können Sie [Verwenden von Notification Hubs zum Übermitteln von Nachrichten](/de-de/manage/services/notification-hubs/breaking-news-dotnet) lesen. Mehr zur Verwendung von Notification Hubs erfahren Sie in [Notification Hubs-Leitfaden](http://msdn.microsoft.com/de-de/library/jj927170.aspx) und in [Notification Hubs für Android](http://msdn.microsoft.com/de-de/library/dn282661.aspx).
 
 
 
@@ -355,18 +355,18 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
-[Get started with data]: /en-us/develop/mobile/tutorials/get-started-with-data-android
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-android
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-android
-[Push notifications to app users]: /en-us/develop/mobile/tutorials/push-notifications-to-users-android
-[Authorize users with scripts]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-android
-[JavaScript and HTML]: /en-us/develop/mobile/tutorials/get-started-with-push-js
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
+[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-android
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-android
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-android
+[Push notifications to app users]: /de-de/develop/mobile/tutorials/push-notifications-to-users-android
+[Authorize users with scripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-android
+[JavaScript and HTML]: /de-de/develop/mobile/tutorials/get-started-with-push-js
 [Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
 [Azure Management Portal]: https://manage.windowsazure.com/
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs Guidance]: http://msdn.microsoft.com/en-us/library/jj927170.aspx
-[Notification Hubs How-To for Android]: http://msdn.microsoft.com/en-us/library/dn282661.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
+[Notification Hubs How-To for Android]: http://msdn.microsoft.com/de-de/library/dn282661.aspx
 
-[Use Notification Hubs to push notifications to users]: /en-us/manage/services/notification-hubs/notify-users-aspnet
-[Use Notification Hubs to send breaking news]: /en-us/manage/services/notification-hubs/breaking-news-dotnet
+[Use Notification Hubs to push notifications to users]: /de-de/manage/services/notification-hubs/notify-users-aspnet
+[Use Notification Hubs to send breaking news]: /de-de/manage/services/notification-hubs/breaking-news-dotnet

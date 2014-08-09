@@ -3,7 +3,7 @@
 Erstellen der Workerrolle B (E-Mail-Versand) für die Anwendung Azure-E-Mail-Dienst - 5 von 5
 ============================================================================================
 
-Dies ist das fünfte von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Beispielanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).
+Dies ist das fünfte von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Beispielanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -107,7 +107,7 @@ Hinzufügen von ProjekteinstellungenHinzufügen von Projekteinstellungen
 
 Ebenso wie Workerrolle A benötigt Workerrolle B Anmeldeinformationen für ein Speicherkonto, um mit Tabellen, Warteschlangen und Blobs zu arbeiten. Zum Senden von E-Mails benötigt die Workerrolle darüber hinaus Anmeldeinformationen, die in Aufrufe des SendGrid-Diensts eingebettet werden. Und um einen Link zum Abbestellen zu konstruieren, der in von der Workerrolle gesendete E-Mails eingefügt wird, muss die Workerrolle die URL der Anwendung kennen. Diese Werte werden in Projekteinstellungen gespeichert.
 
-Bei Speicherkonto-Anmeldeinformationen führen Sie das gleiche Verfahren wie im [dritten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/#configstorage) aus.
+Bei Speicherkonto-Anmeldeinformationen führen Sie das gleiche Verfahren wie im [dritten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/#configstorage) aus.
 
 1.  Klicken Sie im **Projektmappen-Explorer** unter **Rollen** im Cloudprojekt mit der rechten Maustaste auf **WorkerRoleB**, und wählen Sie **Eigenschaften**.
 
@@ -133,7 +133,7 @@ Bei Speicherkonto-Anmeldeinformationen führen Sie das gleiche Verfahren wie im 
 
 11. Klicken Sie auf der Registerkarte **Einstellungen** im Fenster **Eigenschaften** auf **Einstellung hinzufügen**, und fügen Sie anschließend drei neue Einstellungen vom Typ **Zeichenfolge** hinzu:
 
-    -   **Name**: SendGridUserName, **Wert**: der SendGrid-Benutzername, den Sie im [zweiten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/) festgelegt haben.
+    -   **Name**: SendGridUserName, **Wert**: der SendGrid-Benutzername, den Sie im [zweiten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/) festgelegt haben.
 
     -   **Name**: SendGridPassword, **Wert**: das SendGrid-Kennwort.
 
@@ -278,13 +278,13 @@ Bei Speicherkonto-Anmeldeinformationen führen Sie das gleiche Verfahren wie im 
                          System.Threading.Thread.Sleep(1000 * 60);
                      }
 
-    Dieser Ruhezustand soll die Azure Storage-Transaktionskosten minimieren, wie im [vorherigen Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/) erläutert wurde.
+    Dieser Ruhezustand soll die Azure Storage-Transaktionskosten minimieren, wie im [vorherigen Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/) erläutert wurde.
 
-    Wenn ein Warteschlangenelement mit der [GetMessage](http://msdn.microsoft.com/en-us/library/windowsazure/ee741827.aspx)-Methode aus der Warteschlange abgerufen wird, wird das betreffende Warteschlangenelement für alle anderen Worker- und Webrollen, die auf die Warteschlange zugreifen, für 30 Sekunden unsichtbar. Auf diese Weise wird sichergestellt, dass nur eine Workerrolleninstanz eine bestimmte Warteschlangennachricht zur Verarbeitung abrufen kann. Sie können diese *Exklusivitätszeit* (die Zeit, während der das Warteschlangenelement unsichtbar ist) explizit festlegen, indem Sie der `GetMessage`-Methode einen Parameter für das [Sichtbarkeits-Zeitlimit](http://msdn.microsoft.com/en-us/library/windowsazure/ee758454.aspx) übergeben. Wenn die Workerrolle zur Verarbeitung einer Warteschlangennachricht mehr als 30 Sekunden benötigt, müssen Sie die Exklusivitätszeit erhöhen, um andere Rolleninstanzen daran zu hindern, die gleiche Nachricht zu verarbeiten.
+    Wenn ein Warteschlangenelement mit der [GetMessage](http://msdn.microsoft.com/de-de/library/windowsazure/ee741827.aspx)-Methode aus der Warteschlange abgerufen wird, wird das betreffende Warteschlangenelement für alle anderen Worker- und Webrollen, die auf die Warteschlange zugreifen, für 30 Sekunden unsichtbar. Auf diese Weise wird sichergestellt, dass nur eine Workerrolleninstanz eine bestimmte Warteschlangennachricht zur Verarbeitung abrufen kann. Sie können diese *Exklusivitätszeit* (die Zeit, während der das Warteschlangenelement unsichtbar ist) explizit festlegen, indem Sie der `GetMessage`-Methode einen Parameter für das [Sichtbarkeits-Zeitlimit](http://msdn.microsoft.com/de-de/library/windowsazure/ee758454.aspx) übergeben. Wenn die Workerrolle zur Verarbeitung einer Warteschlangennachricht mehr als 30 Sekunden benötigt, müssen Sie die Exklusivitätszeit erhöhen, um andere Rolleninstanzen daran zu hindern, die gleiche Nachricht zu verarbeiten.
 
     Sie sollten die Exklusivitätszeit allerdings nicht auf einen zu großen Wert festlegen. Wenn die Exklusivitätszeit z. B. auf 48 Stunden festgelegt ist und die Workerrolle nach dem Entfernen einer Nachricht aus der Warteschlange unerwartet heruntergefahren wird, kann die Nachricht für 48 Stunden von keiner anderen Workerrolle verarbeitet werden. Die maximale Exklusivitätszeit beträgt sieben Tage.
 
-    Mit der [GetMessages](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.cloudqueue.getmessages.aspx)-Methode (beachten Sie das "s" am Ende des Namens) können bis zu 32 Nachrichten in einem Aufruf aus der Warteschlange abgerufen werden. Bei jedem Warteschlangenzugriff fallen geringe Transaktionskosten an; die Transaktionskosten sind gleich, unabhängig davon, ob 32 oder null Nachrichten zurückgegeben werden. Mit dem folgenden Code werden bis zu 32 Nachrichten in einem Aufruf abgerufen und verarbeitet.
+    Mit der [GetMessages](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.storageclient.cloudqueue.getmessages.aspx)-Methode (beachten Sie das "s" am Ende des Namens) können bis zu 32 Nachrichten in einem Aufruf aus der Warteschlange abgerufen werden. Bei jedem Warteschlangenzugriff fallen geringe Transaktionskosten an; die Transaktionskosten sind gleich, unabhängig davon, ob 32 oder null Nachrichten zurückgegeben werden. Mit dem folgenden Code werden bis zu 32 Nachrichten in einem Aufruf abgerufen und verarbeitet.
 
     	 foreach (CloudQueueMessage msg in sendEmailQueue.GetMessages(32))
          {
@@ -558,7 +558,7 @@ TestenTesten der Workerrolle B
 Nächste SchritteNächste Schritte
 --------------------------------
 
-Sie haben jetzt die Azure-E-Mail-Dienstanwendung von Grund auf erstellt und das Ergebnis entspricht dem fertigen Projekt, das Sie heruntergeladen haben. Um die Anwendung in der Cloud bereitzustellen und zu testen und um sie zur Produktion heraufzustufen, können Sie die gleichen Prozeduren verwenden wie im [zweiten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/). Wenn Sie die alternative Architektur erstellen möchten, finden Sie im [Lernprogramm Erste Schritte mit Azure Web Sites](/en-us/develop/net/tutorials/get-started) Informationen über das Bereitstellen des MVC-Projekts auf einer Azure-Website.
+Sie haben jetzt die Azure-E-Mail-Dienstanwendung von Grund auf erstellt und das Ergebnis entspricht dem fertigen Projekt, das Sie heruntergeladen haben. Um die Anwendung in der Cloud bereitzustellen und zu testen und um sie zur Produktion heraufzustufen, können Sie die gleichen Prozeduren verwenden wie im [zweiten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/). Wenn Sie die alternative Architektur erstellen möchten, finden Sie im [Lernprogramm Erste Schritte mit Azure Web Sites](/de-de/develop/net/tutorials/get-started) Informationen über das Bereitstellen des MVC-Projekts auf einer Azure-Website.
 
 Weitere Informationen zu Azure Storage finden Sie in der folgenden Ressource:
 
@@ -568,25 +568,25 @@ Weitere Informationen zum Azure-Tabellendienst finden Sie in den folgenden Resso
 
 -   [Essential Knowledge for Azure Table Storage](http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-azure-table-storage.aspx) (Grundlegende Kenntnisse zu Azure Table Storage, in englischer Sprache; Blog von Bruno Terkaly)
 -   [How to get the most out of Windows Azure Tables](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx) (Optimale Nutzung von Windows Azure-Tabellen, in englischer Sprache; Blog des Azure Storage-Teams)
--   [How to use Table Storage from .NET (Verwenden des Tabellenspeicherdiensts in .NET, in englischer Sprache)](http://www.windowsazure.com/en-us/develop/net/how-to-guides/table-services/)
+-   [How to use Table Storage from .NET (Verwenden des Tabellenspeicherdiensts in .NET, in englischer Sprache)](http://www.windowsazure.com/de-de/develop/net/how-to-guides/table-services/)
 -   [Windows Azure Storage Client Library 2.0 Tables Deep Dive](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx) (Arbeiten mit Tabellen der Azure-Speicherclientbibliothek 2.0, in englischer Sprache; Blog des Azure Storage-Teams)
--   [Real World: Designing a Scalable Partitioning Strategy for Azure Table Storage (Design einer skalierbaren Partitionierungsstrategie für Azure-Tabellenspeicher, in englischer Sprache)](http://msdn.microsoft.com/en-us/library/windowsazure/hh508997.aspx)
+-   [Real World: Designing a Scalable Partitioning Strategy for Azure Table Storage (Design einer skalierbaren Partitionierungsstrategie für Azure-Tabellenspeicher, in englischer Sprache)](http://msdn.microsoft.com/de-de/library/windowsazure/hh508997.aspx)
 
 Weitere Informationen zum Azure-Warteschlangendienst und zu Azure Service Bus-Warteschlangen finden Sie in den folgenden Ressourcen:
 
 -   [Queue-Centric Work Pattern (Building Real-World Cloud Apps with Windows Azure) [Warteschlangenorientiertes Arbeitsmuster (Erstellen von Cloud-Anwendungen mit Azure), in englischer Sprache]](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)
--   [Windows Azure-Warteschlangen und Windows Azure Service Bus-Warteschlangen - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/en-us/library/windowsazure/hh767287.aspx)
--   [How to use the Queue Storage Service in .NET (Verwenden des Warteschlangenspeicherdiensts in .NET, in englischer Sprache)](/en-us/develop/net/how-to-guides/queue-service/)
+-   [Windows Azure-Warteschlangen und Windows Azure Service Bus-Warteschlangen - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/de-de/library/windowsazure/hh767287.aspx)
+-   [How to use the Queue Storage Service in .NET (Verwenden des Warteschlangenspeicherdiensts in .NET, in englischer Sprache)](/de-de/develop/net/how-to-guides/queue-service/)
 
 Weitere Informationen zum Azure-Blob-Dienst finden Sie in den folgenden Ressourcen:
 
 -   [Unstructured Blob Storage (Building Real-World Cloud Apps with Windows Azure) [Unstrukturierter Blob-Speicher (Erstellen von Cloud-Anwendungen mit Azure), in englischer Sprache]](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage)
--   [How to use Blob Storage from .NET (Verwenden des Azure Blob-Speicherdiensts in .NET, in englischer Sprache)](/en-us/develop/net/how-to-guides/blob-storage/)
+-   [How to use Blob Storage from .NET (Verwenden des Azure Blob-Speicherdiensts in .NET, in englischer Sprache)](/de-de/develop/net/how-to-guides/blob-storage/)
 
 Weitere Informationen zur automatischen Skalierung von Azure-Cloud-Dienst-Rollen finden Sie in den folgenden Ressourcen:
 
--   [Verwenden des Anwendungsblocks für die automatische Skalierung](/en-us/develop/net/how-to-guides/autoscaling/)
--   [Autoscaling and Windows Azure (Automatische Skalierung und Azure, in englischer Sprache)](http://msdn.microsoft.com/en-us/library/hh680945(v=PandP.50).aspx)
+-   [Verwenden des Anwendungsblocks für die automatische Skalierung](/de-de/develop/net/how-to-guides/autoscaling/)
+-   [Autoscaling and Windows Azure (Automatische Skalierung und Azure, in englischer Sprache)](http://msdn.microsoft.com/de-de/library/hh680945(v=PandP.50).aspx)
 -   [Building Elastic, Autoscalable Solutions with Azure](http://channel9.msdn.com/Events/WindowsAzureConf/2012/B04) (Erstellen elastischer, automatisch skalierbarer Projektmappen mit Azure, Video auf MSDN Channel 9, in englischer Sprache)
 
 DanksagungenDanksagungen
@@ -618,17 +618,17 @@ Diese Lernprogramme und die Beispielanwendung wurden von [Rick Anderson](http://
 
 
 
-[firsttutorial]: /en-us/develop/net/tutorials/multi-tier-web-site/1-overview/
-[tut2]: /en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
-[tut3configstorage]: /en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/#configstorage
-[tut4]: /en-us/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
-[queuehowto]: /en-us/develop/net/how-to-guides/queue-service/
+[firsttutorial]: /de-de/develop/net/tutorials/multi-tier-web-site/1-overview/
+[tut2]: /de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
+[tut3configstorage]: /de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/#configstorage
+[tut4]: /de-de/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
+[queuehowto]: /de-de/develop/net/how-to-guides/queue-service/
 
-[blobhowto]: /en-us/develop/net/how-to-guides/blob-storage/
-[GetMessage]: http://msdn.microsoft.com/en-us/library/windowsazure/ee741827.aspx
-[getstartedtutorial]: /en-us/develop/net/tutorials/get-started
-[sbqueuecomparison]: http://msdn.microsoft.com/en-us/library/windowsazure/hh767287.aspx
-[autoscalingappblock]: /en-us/develop/net/how-to-guides/autoscaling/
+[blobhowto]: /de-de/develop/net/how-to-guides/blob-storage/
+[GetMessage]: http://msdn.microsoft.com/de-de/library/windowsazure/ee741827.aspx
+[getstartedtutorial]: /de-de/develop/net/tutorials/get-started
+[sbqueuecomparison]: http://msdn.microsoft.com/de-de/library/windowsazure/hh767287.aspx
+[autoscalingappblock]: /de-de/develop/net/how-to-guides/autoscaling/
 
 
 [mtas-new-worker-role-project]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-b/mtas-new-worker-role-project.png
@@ -641,4 +641,4 @@ Diese Lernprogramme und die Beispielanwendung wurden von [Rick Anderson](http://
 
 
 [mtas-worker-b-settings]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-b/mtas-worker-b-settings.png
-[autoscaling-and-windows-azure]: http://msdn.microsoft.com/en-us/library/hh680945(v=PandP.50).aspx
+[autoscaling-and-windows-azure]: http://msdn.microsoft.com/de-de/library/hh680945(v=PandP.50).aspx

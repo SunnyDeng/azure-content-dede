@@ -79,8 +79,8 @@ Wenn Sie die Remotedesktop-Verbindung zu den Rolleninstanzen in der Cloud nicht 
 Zusätzliche Ressourcen
 ----------------------
 
--   [Fernzugriff auf Rolleninstanzen in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/hh124107.aspx)
--   [Verwendung von Remotedesktop mit Azure-Rollen](http://msdn.microsoft.com/en-us/library/windowsazure/gg443832.aspx)
+-   [Fernzugriff auf Rolleninstanzen in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/hh124107.aspx)
+-   [Verwendung von Remotedesktop mit Azure-Rollen](http://msdn.microsoft.com/de-de/library/windowsazure/gg443832.aspx)
 
 
   [Step 1: Configure the service for Remote Desktop access using Azure PowerShell]: #step1
@@ -99,5 +99,5 @@ Zusätzliche Ressourcen
   [6]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-13.png
   [7]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-14.png
   
-  [Remotely Accessing Role Instances in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/hh124107.aspx
-  [Using Remote Desktop with Azure Roles]: http://msdn.microsoft.com/en-us/library/windowsazure/gg443832.aspx
+  [Remotely Accessing Role Instances in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/hh124107.aspx
+  [Using Remote Desktop with Azure Roles]: http://msdn.microsoft.com/de-de/library/windowsazure/gg443832.aspx

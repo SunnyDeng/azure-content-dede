@@ -5,7 +5,7 @@ Konfigurieren der Traffic Manager-Einstellungen
 
 Azure Traffic Manager ermöglicht Ihnen, die Verteilung von Benutzerdatenverkehr in gehosteten Azure-Diensten zu steuern.
 
-Traffic Manager funktioniert durch das Anwenden eines intelligenten Richtlinienmodus auf die DNS-Abfragen im Hauptdomänennamen des Unternehmens. Aktualisieren Sie die DNS-Ressourceneinträge, die zu Ihrem Unternehmen gehören, sodass sie auf die Traffic Manager-Domänen verweisen. Traffic Manager-Richtlinien, die mit diesen Domänen verbunden sind, lösen dann die DNS-Abfragen im Hauptdomänennamen des Unternehmens in die IP-Adressen bestimmter in Azure gehosteter Dienste auf, die in den Traffic Manager-Richtlinien aufgeführt sind. Weitere Informationen finden Sie unter [Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/hh744833.aspx).
+Traffic Manager funktioniert durch das Anwenden eines intelligenten Richtlinienmodus auf die DNS-Abfragen im Hauptdomänennamen des Unternehmens. Aktualisieren Sie die DNS-Ressourceneinträge, die zu Ihrem Unternehmen gehören, sodass sie auf die Traffic Manager-Domänen verweisen. Traffic Manager-Richtlinien, die mit diesen Domänen verbunden sind, lösen dann die DNS-Abfragen im Hauptdomänennamen des Unternehmens in die IP-Adressen bestimmter in Azure gehosteter Dienste auf, die in den Traffic Manager-Richtlinien aufgeführt sind. Weitere Informationen finden Sie unter [Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx).
 
 Inhaltsverzeichnis
 ------------------
@@ -130,7 +130,7 @@ Außerdem können Sie einzelne gehostete Dienste deaktivieren, die Teil der Traf
 
 2.  Klicken Sie in der oberen Symbolleiste auf **Disable Service Policy**. Die Schaltfläche ist abgeblendet, wenn Sie einen gehosteten Dienst auswählen, der bereits deaktiviert ist.
 
-3.  Der Datenverkehr wird nun nicht mehr an den gehosteten Dienst geleitet, basierend auf der für die Traffic Manager-Domäne eingestellten DNS-TTL-Zeitdauer, die Teil der Richtlinie ist. Weitere Informationen finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zum Überwachen von gehosteten Diensten in Azure Traffic Manager.
+3.  Der Datenverkehr wird nun nicht mehr an den gehosteten Dienst geleitet, basierend auf der für die Traffic Manager-Domäne eingestellten DNS-TTL-Zeitdauer, die Teil der Richtlinie ist. Weitere Informationen finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zum Überwachen von gehosteten Diensten in Azure Traffic Manager.
 
 ### So aktivieren Sie einen gehosteten Dienst
 
@@ -162,7 +162,7 @@ Gewusst wie: Gleichmäßiger Lastenausgleich von Datenverkehr über mehrere geho
 
 Ein häufiges Lastenausgleichsmuster ist das Bereitstellen eines Satzes identischer gehosteter Dienste und das Senden von Datenverkehr an alle mit der Roundrobin-Methode. In diesem Artikel werden die Schritte zum Einrichten einer Traffic Manager-Domäne und der Richtlinie zum Durchführen dieser Art von Lastenausgleich erläutert.
 
-Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
+Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
 
 1.  **Stellen Sie Ihre gehosteten Dienste** in der Produktionsumgebung bereit. Informationen zur Entwicklung und Bereitstellung finden Sie unter [In Azure gehostete Dienste](http://msdn.microsoft.com/library/gg432967.aspx).
 
@@ -176,13 +176,13 @@ Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic 
 
 4.  **Wählen Sie ein Abonnement aus.** Richtlinien und Domänen sind mit einem einzigen Abonnement verknüpft.
 
-5.  **Wählen Sie die Roundrobin-Lastenausgleichsmethode.** Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
+5.  **Wählen Sie die Roundrobin-Lastenausgleichsmethode.** Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
 
 6.  **Suchen Sie die gehosteten Dienste, und fügen Sie sie zur Richtlinie hinzu.** Verwenden Sie das Filterfeld, um gehostete Dienste zu suchen, welche die von Ihnen eingegebene Zeichenfolge enthalten. Leeren Sie das Feld, um alle gehosteten Dienste in der Produktion für das in Schritt 4 ausgewählte Abonnement anzuzeigen. Fügen Sie sie mithilfe der Pfeilschaltflächen zur Richtlinie hinzu. Die Reihenfolge im Feld **Selected DNS names** hat keinen Einfluss auf diese Lastenausgleichsmethode.
 
-7.  **Richten Sie die Überwachung ein.** Durch die Überwachung wird sichergestellt, dass kein Datenverkehr an gehostete Dienste, die offline sind, gesendet wird. Sie müssen einen bestimmten Pfad und einen Dateinamen einrichten. Weitere Informationen finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zum Überwachen von gehosteten Diensten in Azure Traffic Manager.
+7.  **Richten Sie die Überwachung ein.** Durch die Überwachung wird sichergestellt, dass kein Datenverkehr an gehostete Dienste, die offline sind, gesendet wird. Sie müssen einen bestimmten Pfad und einen Dateinamen einrichten. Weitere Informationen finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zum Überwachen von gehosteten Diensten in Azure Traffic Manager.
 
-8.  **Benennen Sie die Traffic Manager-Domäne.** Geben Sie Ihrer Domäne einen eindeutigen Namen. Sie können nur den Präfix für Ihre Domäne angeben. Lassen Sie den Wert für die DNS-Gültigkeitsdauer (TTL) auf dem Standardwert. Weitere Informationen zu den Auswirkungen dieser Einstellung finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zu den empfohlenen Methoden für gehostete Dienste und Richtlinien bei der Verwendung von Azure Traffic Manager.
+8.  **Benennen Sie die Traffic Manager-Domäne.** Geben Sie Ihrer Domäne einen eindeutigen Namen. Sie können nur den Präfix für Ihre Domäne angeben. Lassen Sie den Wert für die DNS-Gültigkeitsdauer (TTL) auf dem Standardwert. Weitere Informationen zu den Auswirkungen dieser Einstellung finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zu den empfohlenen Methoden für gehostete Dienste und Richtlinien bei der Verwendung von Azure Traffic Manager.
 
     Das Dialogfeld **Create Traffic Manager policy** sollte in etwa wie im folgenden Beispiel aussehen.
 
@@ -199,7 +199,7 @@ Gewusst wie: Erstellen von Failover-Richtlinien
 
 Häufig möchte ein Unternehmen die Zuverlässigkeit seiner Dienste gewährleisten. Dazu werden Sicherungsdienste bereitgestellt, falls der primäre Dienst ausfällt. Ein häufiges Muster für Dienst-Failover ist das Bereitstellen eines Satzes identischer gehosteter Dienste und das Senden von Datenverkehr an den primären Dienst (mit einer Liste von einer oder mehreren Sicherungen). In diesem Artikel werden die Schritte zum Einrichten einer Traffic Manager-Richtlinie zum Durchführen dieser Art von Failover-Sicherung erläutert.
 
-Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
+Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
 
 1.  **Stellen Sie Ihre gehosteten Dienste** in der Produktionsumgebung bereit. Informationen zur Entwicklung und Bereitstellung finden Sie unter [In Azure gehostete Dienste](http://msdn.microsoft.com/library/gg432967.aspx).
 
@@ -213,13 +213,13 @@ Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic 
 
 4.  **Wählen Sie ein Abonnement aus.** Richtlinien und Domänen sind mit einem einzigen Abonnement verknüpft.
 
-5.  **Wählen Sie die Failover-Richtlinie als Lastenausgleichsmethode.** Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
+5.  **Wählen Sie die Failover-Richtlinie als Lastenausgleichsmethode.** Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
 
 6.  **Suchen Sie die gehosteten Dienste, und fügen Sie sie zur Richtlinie hinzu.** Verwenden Sie das Filterfeld, um gehostete Dienste zu suchen, welche die von Ihnen eingegebene Zeichenfolge enthalten. Leeren Sie das Feld, um alle gehosteten Dienste in der Produktion für das in Schritt 4 ausgewählte Abonnement anzuzeigen. Fügen Sie sie mithilfe der Pfeilschaltflächen zur Richtlinie hinzu. Wenn Sie die Lastenausgleichsmethode **Failover** auswählen, ist die Reihenfolge der ausgewählten Dienste wichtig. Der primäre gehostete Dienst befindet sich ganz oben. Verwenden Sie die Aufwärts- und Abwärtspfeile, um die Reihenfolge nach Bedarf anzupassen.
 
-7.  Durch die Überwachung wird sichergestellt, dass kein Datenverkehr an gehostete Dienste, die offline sind, gesendet wird. Das Verwenden einer Failover-Richtlinie ohne Einrichten einer Überwachung ist sinnlos, da der Verkehr an den primären gehosteten Dienst gesendet wird, selbst wenn dieser gehostete Dienst als offline angezeigt wird. Um die gehosteten Dienste zu überwachen, müssen Sie einen bestimmten Pfad und einen Dateinamen angeben. Weitere Informationen finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zum Überwachen von gehosteten Diensten in Azure Traffic Manager.
+7.  Durch die Überwachung wird sichergestellt, dass kein Datenverkehr an gehostete Dienste, die offline sind, gesendet wird. Das Verwenden einer Failover-Richtlinie ohne Einrichten einer Überwachung ist sinnlos, da der Verkehr an den primären gehosteten Dienst gesendet wird, selbst wenn dieser gehostete Dienst als offline angezeigt wird. Um die gehosteten Dienste zu überwachen, müssen Sie einen bestimmten Pfad und einen Dateinamen angeben. Weitere Informationen finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zum Überwachen von gehosteten Diensten in Azure Traffic Manager.
 
-8.  **Benennen Sie die Traffic Manager-Domäne.** Geben Sie Ihrer Domäne einen eindeutigen Namen. Sie können nur den Präfix für Ihre Domäne angeben. Lassen Sie den Wert für die **DNS-Gültigkeitsdauer (TTL)** auf dem Standardwert. Weitere Informationen zu den Auswirkungen dieser Einstellung finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zu den empfohlenen Methoden für gehostete Dienste und Richtlinien bei der Verwendung von Azure Traffic Manager.
+8.  **Benennen Sie die Traffic Manager-Domäne.** Geben Sie Ihrer Domäne einen eindeutigen Namen. Sie können nur den Präfix für Ihre Domäne angeben. Lassen Sie den Wert für die **DNS-Gültigkeitsdauer (TTL)** auf dem Standardwert. Weitere Informationen zu den Auswirkungen dieser Einstellung finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zu den empfohlenen Methoden für gehostete Dienste und Richtlinien bei der Verwendung von Azure Traffic Manager.
 
     Das Dialogfeld **Create Traffic Manager policy** sollte in etwa wie im folgenden Beispiel aussehen.
 
@@ -234,11 +234,11 @@ Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic 
 Gewusst wie: Weiterleiten von eingehendem Verkehr an gehostete Dienste basierend auf Netzwerkleistung
 -----------------------------------------------------------------------------------------------------
 
-Um Lastenausgleich für gehostete Dienste, die sich in verschiedenen Datencentern rund um den Globus befinden, einzurichten, können Sie eingehenden Verkehr an den nächstgelegenen gehosteten Dienst leiten. Obwohl sich "nächstgelegen" direkt auf die geografische Entfernung beziehen kann, bezieht es sich möglicherweise auch auf den Standort mit der niedrigsten Latenz beim Bearbeiten der Anfrage. Die leistungsbezogene Lastenausgleichsmethode ermöglicht Ihnen eine Verteilung basierend auf Standort und Latenz, kann jedoch nicht die Echtzeitänderungen in der Netzwerkkonfiguration bzw. Last berücksichtigen. Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
+Um Lastenausgleich für gehostete Dienste, die sich in verschiedenen Datencentern rund um den Globus befinden, einzurichten, können Sie eingehenden Verkehr an den nächstgelegenen gehosteten Dienst leiten. Obwohl sich "nächstgelegen" direkt auf die geografische Entfernung beziehen kann, bezieht es sich möglicherweise auch auf den Standort mit der niedrigsten Latenz beim Bearbeiten der Anfrage. Die leistungsbezogene Lastenausgleichsmethode ermöglicht Ihnen eine Verteilung basierend auf Standort und Latenz, kann jedoch nicht die Echtzeitänderungen in der Netzwerkkonfiguration bzw. Last berücksichtigen. Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
 
 Die folgenden Schritte führen Sie durch diesen Prozess:
 
-1.  **Stellen Sie Ihre gehosteten Dienste** in der Produktionsumgebung bereit. Weitere Informationen erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/en-us/library/windowsazure/gg432967.aspx). Lesen Sie außerdem den Abschnitt zu den empfohlenen Methoden für gehostete Dienste und Richtlinien in der [Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring).
+1.  **Stellen Sie Ihre gehosteten Dienste** in der Produktionsumgebung bereit. Weitere Informationen erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/de-de/library/windowsazure/gg432967.aspx). Lesen Sie außerdem den Abschnitt zu den empfohlenen Methoden für gehostete Dienste und Richtlinien in der [Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring).
 
 2.  **Melden Sie sich beim Traffic Manager-Bereich im Verwaltungsportal** unter <http://manage.windowsazure.com> an. Klicken Sie links unten auf der Portalseite auf **Virtuelles Netzwerk**, und wählen Sie im linken Fensterbereich die Option **Traffic Manager** aus.
 
@@ -250,13 +250,13 @@ Die folgenden Schritte führen Sie durch diesen Prozess:
 
 4.  **Wählen Sie ein Abonnement aus.** Richtlinien und Domänen sind mit einem einzigen Abonnement verknüpft.
 
-5.  **Wählen Sie die Lastenausgleichsmethode "Leistung" aus.** Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
+5.  **Wählen Sie die Lastenausgleichsmethode "Leistung" aus.** Weitere Informationen zu den verschiedenen Lastenausgleichsmethoden von Traffic Manager finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx) im Abschnitt zu den Lastenausgleichsmethoden in Azure Traffic Manager.
 
 6.  **Suchen Sie die gehosteten Dienste, und fügen Sie sie zur Richtlinie hinzu.** Verwenden Sie das Filterfeld, um gehostete Dienste zu suchen, welche die von Ihnen eingegebene Zeichenfolge enthalten. Leeren Sie das Feld, um alle gehosteten Dienste in der Produktion für das in Schritt 4 ausgewählte Abonnement anzuzeigen. Fügen Sie sie mithilfe der Pfeilschaltflächen zur Richtlinie hinzu. Die Reihenfolge im Feld **Selected DNS names** hat keinen Einfluss auf diese Lastenausgleichsmethode.
 
-7.  **Richten Sie die Überwachung ein.** Durch die Überwachung wird sichergestellt, dass kein Datenverkehr an gehostete Dienste, die offline sind, gesendet wird. Sie müssen einen bestimmten Pfad und einen Dateinamen einrichten. Weitere Informationen finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zum Überwachen von gehosteten Diensten in Azure Traffic Manager.
+7.  **Richten Sie die Überwachung ein.** Durch die Überwachung wird sichergestellt, dass kein Datenverkehr an gehostete Dienste, die offline sind, gesendet wird. Sie müssen einen bestimmten Pfad und einen Dateinamen einrichten. Weitere Informationen finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zum Überwachen von gehosteten Diensten in Azure Traffic Manager.
 
-8.  **Benennen Sie die Traffic Manager-Domäne.** Geben Sie Ihrer Domäne einen eindeutigen Namen. Sie können nur den Präfix für Ihre Domäne angeben. Lassen Sie den Wert für die **DNS-Gültigkeitsdauer (TTL)** auf dem Standardwert. Weitere Informationen zu den Auswirkungen dieser Einstellung finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/en-us/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zu den empfohlenen Methoden für gehostete Dienste und Richtlinien bei der Verwendung von Azure Traffic Manager.
+8.  **Benennen Sie die Traffic Manager-Domäne.** Geben Sie Ihrer Domäne einen eindeutigen Namen. Sie können nur den Präfix für Ihre Domäne angeben. Lassen Sie den Wert für die **DNS-Gültigkeitsdauer (TTL)** auf dem Standardwert. Weitere Informationen zu den Auswirkungen dieser Einstellung finden Sie unter [Azure Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/5229dd1c-5a91-4869-8522-bed8597d9cf5#BKMK_Monitoring) im Abschnitt zu den empfohlenen Methoden für gehostete Dienste und Richtlinien bei der Verwendung von Azure Traffic Manager.
 
     Das Dialogfeld **Create Traffic Manager policy** sollte in etwa wie im folgenden Beispiel aussehen.
 

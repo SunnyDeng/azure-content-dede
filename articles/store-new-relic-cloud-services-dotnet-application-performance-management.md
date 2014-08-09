@@ -17,7 +17,7 @@ Sonderpreis für New Relic im Azure Store
 
 New Relic Standard ist für Azure-Benutzer kostenlos; New Relic Pro wird basierend auf der Instanzgröße für Azure-Clouddienste angeboten
 
-Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](http://www.windowsazure.com/en-us/gallery/store/new-relic/new-relic/).
+Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](http://www.windowsazure.com/de-de/gallery/store/new-relic/new-relic/).
 
 **Hinweis:**
 
@@ -78,7 +78,7 @@ Um sich direkt im Azure Store bei New Relic anmelden, führen Sie diese drei ein
 
     ![Cloudprojekt veröffentlichen](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget09.png)
 
-**Hinweis:** Wenn Sie diese App zum ersten Mal in Azure bereitstellen, werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Weitere Informationen finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website](/en-us/develop/net/tutorials/get-started/).
+**Hinweis:** Wenn Sie diese App zum ersten Mal in Azure bereitstellen, werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Weitere Informationen finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website](/de-de/develop/net/tutorials/get-started/).
 
 ![Veröffentlichungseinstellungen](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget10.png)
 

@@ -3,11 +3,11 @@
 Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Dienstes
 ===============================================================================================
 
-[Windows Store C\#](/en-us/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications/ "Windows Store C#")[iOS](/en-us/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications/ "iOS")
+[Windows Store C\#](/de-de/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications/ "Windows Store C#")[iOS](/de-de/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications/ "iOS")
 
-In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mit Azure Notification Hubs anfordern können, wenn die Registrierung von Azure Mobile Services durchgeführt wird. Dieses Lernprogramm baut auf dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users) auf. Sie müssen zuvor die Schritte in diesem Lernprogramm abgeschlossen haben, in denen der authentifizierte Mobile Service erstellt wird. Weitere Informationen zum Benachrichtigen von Benutzern finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users).
+In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mit Azure Notification Hubs anfordern können, wenn die Registrierung von Azure Mobile Services durchgeführt wird. Dieses Lernprogramm baut auf dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users) auf. Sie müssen zuvor die Schritte in diesem Lernprogramm abgeschlossen haben, in denen der authentifizierte Mobile Service erstellt wird. Weitere Informationen zum Benachrichtigen von Benutzern finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users).
 
-1.  Öffnen Sie in Xcode die Datei "QSTodoService.h" in dem Projekt, das Sie erstellt haben, als Sie das als Voraussetzung erforderliche Lernprogramm [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-ios/) absolviert haben, und fügen Sie die folgende **deviceToken**-Eigenschaft hinzu:
+1.  Öffnen Sie in Xcode die Datei "QSTodoService.h" in dem Projekt, das Sie erstellt haben, als Sie das als Voraussetzung erforderliche Lernprogramm [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-ios/) absolviert haben, und fügen Sie die folgende **deviceToken**-Eigenschaft hinzu:
 
          @property (nonatomic) NSData* deviceToken;
 
@@ -42,7 +42,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
     **Hinweis**
 
-    Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der Methode **registerNativeWithDeviceToken** aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/en-us/manage/services/notification-hubs/get-started-notification-hubs-ios/) haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
+    Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der Methode **registerNativeWithDeviceToken** aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/de-de/manage/services/notification-hubs/get-started-notification-hubs-ios/) haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
 
 4.  (Optional) Fügen Sie in der Datei "QSAppDelegate.m" die folgende Handlermethode hinzu:
 
@@ -74,7 +74,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
              }
 
 
-    Diese Methode konstruiert eine json-Nutzlast, die das Gerätetoken enthält. Dann ruft sie die benutzerdefinierte API in Ihrem mobilen Dienst auf, um sich für die Benachrichtigung zu registrieren. Diese Methode erstellt ein Gerätetoken für Pushbenachrichtigungen und sendet es, zusammen mit dem Gerätetyp, an die benutzerdefinierte API-Methode, die eine Registrierung in Notification Hubs erstellt. Diese benutzerdefinierte API wurde in [Benachrichtigen von Benutzern mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users) definiert.
+    Diese Methode konstruiert eine json-Nutzlast, die das Gerätetoken enthält. Dann ruft sie die benutzerdefinierte API in Ihrem mobilen Dienst auf, um sich für die Benachrichtigung zu registrieren. Diese Methode erstellt ein Gerätetoken für Pushbenachrichtigungen und sendet es, zusammen mit dem Gerätetyp, an die benutzerdefinierte API-Methode, die eine Registrierung in Notification Hubs erstellt. Diese benutzerdefinierte API wurde in [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users) definiert.
 
 2.  Fügen Sie schließlich in der **viewDidAppear**-Methode einen Aufruf für die neue **registerForNotificationsWithBackEnd**-Methode hinzu, nachdem der Benutzer erfolgreich authentifiziert wurde, wie im folgenden Beispiel gezeigt:
 
@@ -96,5 +96,5 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
     Auf diese Weise wird sichergestellt, dass die Registrierung bei jedem Laden der Seite angefordert wird. In Ihrer App können Sie diese Registrierung auch nur von Zeit zu Zeit durchführen, um sicherzustellen, dass die Registrierung aktuell ist.
 
-Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen von Benutzern mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users) zurückkehren und den mobilen Dienst aktualisieren, um Benachrichtigungen mit Notification Hubs zu senden.
+Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users) zurückkehren und den mobilen Dienst aktualisieren, um Benachrichtigungen mit Notification Hubs zu senden.
 

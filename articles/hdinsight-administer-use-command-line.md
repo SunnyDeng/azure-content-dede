@@ -7,7 +7,7 @@ In diesem Artikel erfahren Sie, wie Sie HDInsight-Cluster mit der plattformüber
 
 Das Befehlszeilentool ist Open Source. Der Quellcode liegt auf GitHub unter <https://github.com/WindowsAzure/azure-sdk-tools-xplat>.
 
-Dieser Artikel behandelt nur die Befehlszeilenschnittstelle unter Windows. Eine allgemeine Anleitung für die Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilentools für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/). Umfassendes Referenzmaterial finden Sie unter [Azure-Befehlszeilentool für Mac und Linux](/en-us/manage/linux/other-resources/command-line-tools/).
+Dieser Artikel behandelt nur die Befehlszeilenschnittstelle unter Windows. Eine allgemeine Anleitung für die Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilentools für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/). Umfassendes Referenzmaterial finden Sie unter [Azure-Befehlszeilentool für Mac und Linux](/de-de/manage/linux/other-resources/command-line-tools/).
 
 **Voraussetzungen:**
 
@@ -55,7 +55,7 @@ Sie können die Befehlszeilenschnittstelle entweder über den *Node.js-Paketmana
 
 **So installieren Sie die Befehlszeilenschnittstelle mit dem Windows Installer**
 
-1.  Öffnen Sie die Webseite **http://www.windowsazure.com/en-us/downloads/**.
+1.  Öffnen Sie die Webseite **http://www.windowsazure.com/de-de/downloads/**.
 2.  Blättern Sie nach unten zum Bereich **Befehlszeilentools**, klicken Sie auf **Plattformübergreifende Befehlszeilenschnittstelle** und führen Sie den Webplattform-Installer aus.
 
 Download und Import der Veröffentlichungseinstellungen für das Azure-Konto
@@ -103,7 +103,7 @@ Nachdem Sie die Datei mit Veröffentlichungseinstellungen importiert haben, kön
 <li>USA (West)</li>
 </ul>
 
-Weitere Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Verwaltungsportal finden Sie unter [Erstellen eines Speicherkontos](/en-us/manage/services/storage/how-to-create-a-storage-account/).
+Weitere Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Verwaltungsportal finden Sie unter [Erstellen eines Speicherkontos](/de-de/manage/services/storage/how-to-create-a-storage-account/).
 
 Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlüssel nicht kennen, können Sie diese Informationen mit den folgenden Befehlen abrufen:
 
@@ -114,7 +114,7 @@ Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlü
     -- Schlüssel für ein Speicherkonto auflisten
     azure account storage keys list <StorageAccountName>
 
-Details zum Abrufen dieser Informationen im Verwaltungsportal finden Sie im Bereich *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [How to Manage Storage Accounts](/en-us/manage/services/storage/how-to-manage-a-storage-account/) (Verwalten von Speicherkonten, in englischer Sprache).
+Details zum Abrufen dieser Informationen im Verwaltungsportal finden Sie im Bereich *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [How to Manage Storage Accounts](/de-de/manage/services/storage/how-to-manage-a-storage-account/) (Verwalten von Speicherkonten, in englischer Sprache).
 
 Der Befehl *azure hdinsight cluster create* erstellt den Container, falls dieser nicht existiert. Falls Sie den Container zuvor erstellen möchten, können Sie den folgenden Befehl verwenden:
 
@@ -170,9 +170,9 @@ Nächste Schritte
 
 Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluster auszuführen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Verwalten von HDInsight-Clustern mit dem Verwaltungsportal](/en-us/manage/services/hdinsight/howto-administer-hdinsight/)
--   [Verwalten von HDInsight mit PowerShell](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/)
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Verwenden des Azure-Befehlszeilentools für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/)
--   [Azure-Befehlszeilentool für Mac und Linux](/en-us/manage/linux/other-resources/command-line-tools/)
+-   [Verwalten von HDInsight-Clustern mit dem Verwaltungsportal](/de-de/manage/services/hdinsight/howto-administer-hdinsight/)
+-   [Verwalten von HDInsight mit PowerShell](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Verwenden des Azure-Befehlszeilentools für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/)
+-   [Azure-Befehlszeilentool für Mac und Linux](/de-de/manage/linux/other-resources/command-line-tools/)
 

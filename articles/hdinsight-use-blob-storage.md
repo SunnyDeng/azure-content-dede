@@ -125,7 +125,7 @@ Bestimmte MapReduce-Jobs und -Pakete können zu Zwischenergebnissen führen, die
 
 ## <a id="preparingblobstorage" ></a>Vorbereiten eines Containers für Blob-Speicher
 
-Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto](/en-us/manage/services/storage/how-to-create-a-storage-account/).
+Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto](/de-de/manage/services/storage/how-to-create-a-storage-account/).
 Dabei geben Sie ein Azure-Datencenter an, in dem die mithilfe dieses Kontos erstellten Objekte gespeichert werden. Das Cluster und das Speicherkonto müssen im selben Datencenter gehostet werden.
 (Hive-Metastore-SQL-Datenbanken und Oozie-Metastore-SQL-Datenbanken
 müssen sich ebenfalls im selben Datencenter befinden.) Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Container in Ihrem Speicherkonto. Dieser Container kann ein außerhalb von HDInsight erstellter Blob-Speichercontainer sein, oder es handelt sich um einen Container, der für ein HDInsight-Cluster erstellt wird.
@@ -133,7 +133,7 @@ müssen sich ebenfalls im selben Datencenter befinden.) Ein Blob gehört unabhä
 ### Erstellen eines Blob-Containers für HDInsight mithilfe des Verwaltungsportals
 
 Wenn Sie ein HDInsight-Cluster im Azure-Verwaltungsportal bereitstellen, haben Sie zwei Optionen: *Schnellerstellung* und *Benutzerdefinierte Erstellung*. Für die Schnellerstellung muss das Azure-Speicherkonto bereits vorher erstellt worden sein. Informationen dazu finden Sie unter
-[Erstellen eines Speicherkontos](/en-us/manage/services/storage/how-to-create-a-storage-account/).
+[Erstellen eines Speicherkontos](/de-de/manage/services/storage/how-to-create-a-storage-account/).
 
 Wenn Sie die Option "Schnellerstellung" verwenden, können Sie ein vorhandenes Speicherkonto auswählen. Während des Bereitstellungsprozesses wird ein neuer Container mit dem Namen des HDInsight-Clusters erstellt. Dieser Container wird als Standard-Dateisystem verwendet.
 
@@ -289,5 +289,5 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 
 
 
-[1]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179354.aspx
-[2]: http://msdn.microsoft.com/en-us/library/windowsazure/dd135733.aspx
+[1]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179354.aspx
+[2]: http://msdn.microsoft.com/de-de/library/windowsazure/dd135733.aspx

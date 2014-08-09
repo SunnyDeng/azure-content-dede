@@ -7,7 +7,7 @@ Socket.IO ermöglicht die Echtzeitkommunikation zwischen Ihrem node.js-Server un
 
 **Hinweis**
 
-Die Verfahren dieser Aufgabe gelten für Azure-Websites; für Cloud-Dienste informieren Sie sich unter [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst](http://www.windowsazure.com/en-us/develop/nodejs/tutorials/app-using-socketio/).
+Die Verfahren dieser Aufgabe gelten für Azure-Websites; für Cloud-Dienste informieren Sie sich unter [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst](http://www.windowsazure.com/de-de/develop/nodejs/tutorials/app-using-socketio/).
 
 Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
@@ -68,7 +68,7 @@ Befolgen Sie diese Schritte, um eine Azure-Website zu erstellen, und aktivieren 
 
 **Hinweis**
 
-Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A7171371E).
+Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E).
 
 1.  Wechseln Sie über die Befehlszeile in das Verzeichnis **\\node\\chat**, und verwenden Sie folgenden Befehl, um eine neue Azure-Website zu erstellen und ein Git-Repository für die Website und das lokale Verzeichnis zu aktivieren. Dadurch wird auch ein Git-Remoterepository namens 'azure' erstellt.
 
@@ -118,5 +118,5 @@ Zur Vereinfachung beschränkt sich dieses Beispiel auf das Chatten zwischen Benu
 Nächste Schritte
 ----------------
 
-In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung erstellt wird, die in einer Azure-Website gehostet wird. Sie können diese Anwendung auch als Azure-Cloud-Dienst hosten. Die dafür erforderlichen Schritte finden Sie unter [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst](/en-us/develop/nodejs/tutorials/app-using-socketio/).
+In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung erstellt wird, die in einer Azure-Website gehostet wird. Sie können diese Anwendung auch als Azure-Cloud-Dienst hosten. Die dafür erforderlichen Schritte finden Sie unter [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst](/de-de/develop/nodejs/tutorials/app-using-socketio/).
 

@@ -17,8 +17,8 @@ Weitere Informationen zu Pig Latin finden Sie unter [Pig Latin-Referenzhandbuch 
 
 Beachten Sie die folgenden Voraussetzungen, bevor Sie mit diesem Artikel beginnen:
 
--   Ein Azure HDInsight-Cluster. Anweisungen finden Sie unter [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/) or [Bereitstellen eines HDInsight-Clusters](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/).
--   Installieren und konfigurieren Sie Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+-   Ein Azure HDInsight-Cluster. Anweisungen finden Sie unter [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/) or [Bereitstellen eines HDInsight-Clusters](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/).
+-   Installieren und konfigurieren Sie Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 **Geschätzter Zeitaufwand:** 30 Minuten
 
@@ -55,7 +55,7 @@ Die zweite Abbildung zeigt die Datentransformation:
 Upload der Datendatei in den Blob-Speicher
 ------------------------------------------
 
-HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Weitere Informationen finden Sie unter [Use Azure Blob Storage with HDInsight](/en-us/manage/services/hdinsight/howto-blob-store/) (Verwenden von Azure Blob-Speicher mit HDInsight, in englischer Sprache). In diesem Artikel verwenden Sie eine log4j-Beispieldatei, die mit dem HDInsight-Cluster unter *\\example\\data\\sample.log* verteilt wird. Informationen zum Hochladen von Daten finden Sie unter [Upload Data to HDInsight](/en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/) (Hochladen von Daten zu HDInsight, in englischer Sprache).
+HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Weitere Informationen finden Sie unter [Use Azure Blob Storage with HDInsight](/de-de/manage/services/hdinsight/howto-blob-store/) (Verwenden von Azure Blob-Speicher mit HDInsight, in englischer Sprache). In diesem Artikel verwenden Sie eine log4j-Beispieldatei, die mit dem HDInsight-Cluster unter *\\example\\data\\sample.log* verteilt wird. Informationen zum Hochladen von Daten finden Sie unter [Upload Data to HDInsight](/de-de/manage/services/hdinsight/howto-upload-data-to-hdinsight/) (Hochladen von Daten zu HDInsight, in englischer Sprache).
 
 Mit der folgenden Syntax können Sie auf Dateien zugreifen:
 
@@ -171,11 +171,11 @@ In dieser Sitzung werden Sie einige Pig Latin-Anweisungen und die Ausgabe nach d
 Ausführen von Pig Latin in der PowerShell
 -----------------------------------------
 
-Dieser Abschnitt enthält Anweisungen für PowerShell-Cmdlets. Zuvor müssen Sie jedoch Ihre lokale Umgebung einrichten und die Verbindung zu Azure konfigurieren. Details finden Sie unter [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/) oder [Administer HDInsight using PowerShell](/en-use/manage/services/hdinsight/administer-hdinsight-using-powershell/) (Verwalten von HDInsight mit PowerShell, in englischer Sprache).
+Dieser Abschnitt enthält Anweisungen für PowerShell-Cmdlets. Zuvor müssen Sie jedoch Ihre lokale Umgebung einrichten und die Verbindung zu Azure konfigurieren. Details finden Sie unter [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/) oder [Administer HDInsight using PowerShell](/en-use/manage/services/hdinsight/administer-hdinsight-using-powershell/) (Verwalten von HDInsight mit PowerShell, in englischer Sprache).
 
 **So führen Sie Pig Latin in der PowerShell aus**
 
-1.  Öffnen Sie ein Azure PowerShell-Konsolenfenster. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+1.  Öffnen Sie ein Azure PowerShell-Konsolenfenster. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 2.  Führen Sie den folgenden Befehl aus, um sich mit Ihrem Azure-Abonnement zu verbinden:
 
          Add-AzureAccount
@@ -229,26 +229,26 @@ Nächste Schritte
 
 Pig ist hilfreich für die Datenanalyse, aber andere in HDInsight enthaltene Sprachen sind möglicherweise ebenfalls interessant für Sie. Hive bietet eine SQL-ähnliche Abfragesprache, mit der Sie Daten in HDInsight schnell und einfach abfragen können, und MapReduce-Aufgaben in Java eignen sich gut für komplexe Datenanalysen. Weitere Informationen finden Sie unter den folgenden Links:
 
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Upload data to HDInsight (Hochladen von Daten zu HDInsight, in englischer Sprache)](/en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/)
--   [Verwenden von Hive mit HDInsight](/en-us/manage/services/hdinsight/using-hive-with-hdinsight/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Upload data to HDInsight (Hochladen von Daten zu HDInsight, in englischer Sprache)](/de-de/manage/services/hdinsight/howto-upload-data-to-hdinsight/)
+-   [Verwenden von Hive mit HDInsight](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/)
 
 [piglatin-manual-1]: http://pig.apache.org/docs/r0.7.0/piglatin_ref1.html
 [piglatin-manual-2]: http://pig.apache.org/docs/r0.7.0/piglatin_ref2.html
 [apachepig-home]: http://pig.apache.org/
 
 
-[hdinsight-storage]: /en-us/manage/services/hdinsight/howto-blob-store/
-[hdinsight-upload-data]: /en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/
-[hdinsight-getting-started]: /en-us/manage/services/hdinsight/get-started-hdinsight/
+[hdinsight-storage]: /de-de/manage/services/hdinsight/howto-blob-store/
+[hdinsight-upload-data]: /de-de/manage/services/hdinsight/howto-upload-data-to-hdinsight/
+[hdinsight-getting-started]: /de-de/manage/services/hdinsight/get-started-hdinsight/
 [hdinsight-admin-powershell]: /en-use/manage/services/hdinsight/administer-hdinsight-using-powershell/
 
-[hdinsight-using-hive]: /en-us/manage/services/hdinsight/using-hive-with-hdinsight/
+[hdinsight-using-hive]: /de-de/manage/services/hdinsight/using-hive-with-hdinsight/
 
-[hdinsight-provision]: /en-us/manage/services/hdinsight/provision-hdinsight-clusters/
-[hdinsight-configure-powershell]: /en-us/manage/services/hdinsight/install-and-configure-powershell-for-hdinsight/ 
+[hdinsight-provision]: /de-de/manage/services/hdinsight/provision-hdinsight-clusters/
+[hdinsight-configure-powershell]: /de-de/manage/services/hdinsight/install-and-configure-powershell-for-hdinsight/ 
 
-[Powershell-install-configure]: /en-us/documentation/articles/install-configure-powershell/
+[Powershell-install-configure]: /de-de/documentation/articles/install-configure-powershell/
 
 [image-hdi-log4j-sample]: ./media/hdinsight-use-pig/HDI.wholesamplefile.png
 [image-hdi-pig-data-transformation]: ./media/hdinsight-use-pig/HDI.DataTransformation.gif

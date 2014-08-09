@@ -41,7 +41,7 @@ Die VHDs in der Galerie und auf VMDepot beinhalten frische Microsoft- und Linux-
 -   BizTalk Server
 -   SharePoint Server
 
-Geben Sie zusätzlich zur VHD noch die Größe Ihres neuen virtuellen Computers an. Die kompletten Merkmale der einzelnen Größen finden Sie in der [Azure-Bibliothek](http://msdn.microsoft.com/en-us/library/windowsazure/dn197896.aspx).
+Geben Sie zusätzlich zur VHD noch die Größe Ihres neuen virtuellen Computers an. Die kompletten Merkmale der einzelnen Größen finden Sie in der [Azure-Bibliothek](http://msdn.microsoft.com/de-de/library/windowsazure/dn197896.aspx).
 
 -   **Sehr klein**, mit einem freigegebenen CPU-Kern und 768 MB Arbeitsspeicher.
 -   **Klein**, mit 1 CPU-Kern und 1,75GB Arbeitsspeicher.

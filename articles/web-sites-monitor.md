@@ -119,7 +119,7 @@ Sie können die folgenden Anwendungsdiagnose-Optionen aktivieren oder deaktivier
 
     Zur Angabe des Azure-Speicherkontos und des Blobs aktivieren Sie **On**, wählen **Logging Level** aus und legen **Manage Blob Storage** fest. Geben Sie das Speicherkonto, den Blob-Container und den zu verwendenden Blob-Namen an, oder erstellen Sie einen neuen Container mit Blob.
 
-Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Speicherkonten](https://www.windowsazure.com/en-us/manage/services/storage/how-to-manage-a-storage-account/).
+Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Speicherkonten](https://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/).
 **Hinweis**
 
 Anwendungsprotokollierung in einer Tabelle oder einem Blob-Speicher wird nur für .NET-Anwendungen unterstützt.
@@ -133,14 +133,14 @@ Da die Anwendungsprotokollierung im Speicher die Verwendung eines Speicherclient
 
 Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden.
 
-Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/).
+Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 **Hinweis**
 
 Die Anwendungsprotokollierung beruht auf Protokollinformationen, die von Ihrer Anwendung erzeugt werden. Die verwendete Methode zum Erzeugen von Protokollinformationen sowie das Format der Informationen hängt von der Sprache ab, in der Ihre Anwendung geschrieben ist. Erläuterungen zur sprachspezifischen Verwendung der Anwendungsprotokollierung finden Sie in den folgenden Artikeln:
 
--   **.NET** - [Aktivieren der Diagnoseprotokollierung für Azure-Websites](/en-us/develop/net/common-tasks/diagnostics-logging-and-instrumentation/)
--   **Node.js** - [Debuggen einer Node.js-Anwendung auf Azure-Websites](/en-us/develop/nodejs/how-to-guides/Debug-Website/)
+-   **.NET** - [Aktivieren der Diagnoseprotokollierung für Azure-Websites](/de-de/develop/net/common-tasks/diagnostics-logging-and-instrumentation/)
+-   **Node.js** - [Debuggen einer Node.js-Anwendung auf Azure-Websites](/de-de/develop/nodejs/how-to-guides/Debug-Website/)
 
 Anwendungsprotokollierung in einer Tabelle oder einem Blob-Speicher wird nur für .NET-Anwendungen unterstützt.
 
@@ -150,7 +150,7 @@ Der Abschnitt **site diagnostics** der Verwaltungsseite **Configure** steuert di
 
 -   **Web Server Logging** - Aktivieren Sie die Webserverprotokollierung, um Website-Protokolle im erweiterten W3C-Protokolldateiformat zu speichern. Die Webserverprotokollierung erzeugt einen Datensatz aller eingehenden Anfragen an die Website, mit Informationen wie Client-IP-Adresse, angeforderte URI, HTTP-Statuscode der Antwort sowie Benutzer-Agent-Zeichenfolge des Clients. Sie können die Protokolle auf einem Azure-Speicherkonto oder im Dateisystem speichern.
 
-   Um die Webserverprotokolle in einem Azure-Speicherkonto zu speichern, wählen Sie **Storage** und dann **manage storage** aus, um ein Speicherkonto und einen Azure Blob-Container anzugeben, in dem die Protokolle gespeichert werden. Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Speicherkonten](https://www.windowsazure.com/en-us/manage/services/storage/how-to-manage-a-storage-account/).
+   Um die Webserverprotokolle in einem Azure-Speicherkonto zu speichern, wählen Sie **Storage** und dann **manage storage** aus, um ein Speicherkonto und einen Azure Blob-Container anzugeben, in dem die Protokolle gespeichert werden. Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Speicherkonten](https://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/).
 
    Um die Webserverprotokolle im Dateisystem zu speichern, wählen Sie **File System** aus. Daraufhin wird das Feld **Quota** aktiviert, in dem Sie den maximalen Speicherplatz für die Protokolldateien angeben können. Die Mindestgröße beträgt 25 MB, das Maximum 100 MB. Die Standardgröße ist 35 MB.
 
@@ -204,7 +204,7 @@ Protokolldateien können entweder mit FTP, Azure PowerShell oder den Azure-Befeh
 
     **Hinweis**
 
-    Falls **Azure PowerShell** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Erste Schritte mit Azure PowerShell-Cmdlets](http://msdn.microsoft.com/en-us/library/windowsazure/jj554332.aspx).
+    Falls **Azure PowerShell** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Erste Schritte mit Azure PowerShell-Cmdlets](http://msdn.microsoft.com/de-de/library/windowsazure/jj554332.aspx).
 
 2.  Geben Sie an der Eingabeaufforderung von Azure PowerShell den folgenden Befehl ein, um die Protokolldateien herunterzuladen:
 
@@ -233,7 +233,7 @@ Sie können auch einen Live-Stream der Protokollereignisse mit dem folgenden Bef
 Daraufhin werden die Protokollinformationen an der Eingabeaufforderung, PowerShell, Bash- oder Terminalsitzung angezeigt, von der der Befehl ausgeführt wird.
 **Hinweis**
 
-Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
 ### Lesen der Protokolldateien
 
@@ -297,8 +297,8 @@ Nachdem Sie die Endpunktüberwachung konfiguriert haben, können Sie Details zu 
 
 Weitere Informationen zur Web-Endpunktüberwachung erhalten Sie in den folgenden Videos:
 
--   [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endpunktüberwachung](http://www.windowsazure.com/en-us/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
+-   [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endpunktüberwachung](http://www.windowsazure.com/de-de/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
 
--   [Pflegen von Azure-Websites plus Endpunktüberwachung - mit Stefan Schackow](http://www.windowsazure.com/en-us/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
+-   [Pflegen von Azure-Websites plus Endpunktüberwachung - mit Stefan Schackow](http://www.windowsazure.com/de-de/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
 
 

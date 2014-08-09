@@ -3,7 +3,7 @@
 # Erste Schritte mit Azure und ASP.NET
 
  
-<div  class="dev-center-tutorial-selector sublanding"><a href="/en-us/develop/net/tutorials/get-started/" title="Visual Studio 2013" class="current">Visual Studio 2013</a><a href="/en-us/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012">Visual Studio 2012</a></div>
+<div  class="dev-center-tutorial-selector sublanding"><a href="/de-de/develop/net/tutorials/get-started/" title="Visual Studio 2013" class="current">Visual Studio 2013</a><a href="/de-de/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012">Visual Studio 2012</a></div>
 
  In diesem Lernprogramm wird die Erstellung einer ASP.NET-Webanwendung
 und Bereitstellung für eine Windows Azure-Website mit Visual Studio 2013 oder Visual Studio 2013 for Web Express gezeigt. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie keine Erfahrung mit der Verwendung von Azure oder ASP.NET haben. Nach Abschluss des Lernprogramms verfügen Sie
@@ -354,37 +354,37 @@ In diesem Lernprogramm wurde die schnellste Methode zum Erstellen und Bereitstel
 Übersicht über andere Möglichkeiten der Bereitstellung mit Visual Studio
 oder durch die [Automatisierung der Bereitstellung][2] über ein
 [Quellcode-Verwaltungssystem][3] finden Sie unter [Bereitstellen einer
-Azure-Website](/en-us/documentation/articles/web-sites-deploy/").
+Azure-Website](/de-de/documentation/articles/web-sites-deploy/").
 
 Die Bereitstellung kann u. a. durch die Verwendung von Windows PowerShell-Skripten automatisiert werden. Visual Studio und Azure vereinfachen diese Aufgabe durch die Generierung von PowerShell-Skripten, mit denen Sie dieselben Bereitstellungsvorgänge ausführen können wie in Visual Studio. Weitere Informationen finden Sie unter [Automate Everything (Building Real-World Cloud Apps with Azure)][4] (in englischer Sprache).
 
 ### Verwalten einer Website
 
-Das [Azure-Verwaltungsportal](en-us/services/management-portal/) ist eine Weboberfläche, die das Verwalten und Überwachen Ihrer Azure-Dienste ermöglicht, z. B. Websites, Clouddienste, virtuelle Computer und Datenbanken. Informationen zu den Möglichkeiten des Portals finden Sie unter [https://manage.windowsazure.com](). Melden Sie sich mit dem Benutzernamen und Kennwort für ein Konto mit Administratorberechtigungen für Ihr Azure-Abonnement an. Weitere Informationen finden Sie unter [How to Manage Web Sites](/en-us/manage/services/web-sites/how-to-manage-websites/)
+Das [Azure-Verwaltungsportal](en-us/services/management-portal/) ist eine Weboberfläche, die das Verwalten und Überwachen Ihrer Azure-Dienste ermöglicht, z. B. Websites, Clouddienste, virtuelle Computer und Datenbanken. Informationen zu den Möglichkeiten des Portals finden Sie unter [https://manage.windowsazure.com](). Melden Sie sich mit dem Benutzernamen und Kennwort für ein Konto mit Administratorberechtigungen für Ihr Azure-Abonnement an. Weitere Informationen finden Sie unter [How to Manage Web Sites](/de-de/manage/services/web-sites/how-to-manage-websites/)
 (Verwalten von Websites, in englischer Sprache).
 
 Außerdem können Sie einige Website-Verwaltungsfunktionen direkt über den Server-Explorer in Visual Studio ausführen. Informationen zu den möglichen Aktionen im Server-Explorer finden Sie unter
 [Problembehandlung von Azure-Websites in Visual
-Studio](/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
 ### Skalieren einer Website
 
-Wenn es sich um eine öffentliche Website handelt und nach und nach mehr Datenverkehr auftritt, können die Reaktionszeiten nachlassen. Um dies zu verhindern, können Sie auf der Registerkarte **Skalierung** im Verwaltungsportal einfach Serverressourcen hinzufügen. Weitere Informationen finden Sie unter [Skalieren von Websites](/en-us/manage/services/web-sites/how-to-scale-websites/). (Das Hinzufügen von Serverressourcen zum Skalieren einer Website ist nicht kostenfrei.)
+Wenn es sich um eine öffentliche Website handelt und nach und nach mehr Datenverkehr auftritt, können die Reaktionszeiten nachlassen. Um dies zu verhindern, können Sie auf der Registerkarte **Skalierung** im Verwaltungsportal einfach Serverressourcen hinzufügen. Weitere Informationen finden Sie unter [Skalieren von Websites](/de-de/manage/services/web-sites/how-to-scale-websites/). (Das Hinzufügen von Serverressourcen zum Skalieren einer Website ist nicht kostenfrei.)
 
 ### Problembehandlung für eine Website
 
-Bei der Problembehandlung kann eine Einbeziehung der Ausgabe der Ablaufverfolgung oder Protokolle hilfreich sein. Visual Studio enthält integrierte Tools, die die Anzeige von Azure-Protokollen vereinfachen, da sie in Echtzeit erstellt werden. Darüber hinaus ist die Ausführung in Azure remote im Debugmodus möglich. Weitere Informationen finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+Bei der Problembehandlung kann eine Einbeziehung der Ausgabe der Ablaufverfolgung oder Protokolle hilfreich sein. Visual Studio enthält integrierte Tools, die die Anzeige von Azure-Protokollen vereinfachen, da sie in Echtzeit erstellt werden. Darüber hinaus ist die Ausführung in Azure remote im Debugmodus möglich. Weitere Informationen finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
 ### Hinzufügen von Datenbank- und Autorisierungsfunktionalität
 
-Die meisten Produktionswebsites verwenden eine Datenbank und schränken einige Websitefunktionen auf bestimmte autorisierte Benutzer ein. Ein Lernprogramm mit den ersten Schritten bezüglich Datenbankzugriff, Authentifizierung und Autorisierung finden Sie unter [ Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](/en-us/develop/net/tutorials/web-site-with-sql-database/).
+Die meisten Produktionswebsites verwenden eine Datenbank und schränken einige Websitefunktionen auf bestimmte autorisierte Benutzer ein. Ein Lernprogramm mit den ersten Schritten bezüglich Datenbankzugriff, Authentifizierung und Autorisierung finden Sie unter [ Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](/de-de/develop/net/tutorials/web-site-with-sql-database/).
 
 ### Entscheiden, ob die Anwendung in einem Clouddienst ausgeführt werden soll
 
 In Azure können Sie Webanwendungen in Websites ausführen, die denen in diesem Lernprogramm ähneln, oder in Clouddiensten oder virtuellen Computern. Weitere Informationen finden Sie unter
-[Azure-Ausführungsmodelle](/en-us/develop/net/fundamentals/compute/) und
+[Azure-Ausführungsmodelle](/de-de/develop/net/fundamentals/compute/) und
 [Azure-Websites, Cloud Services und VMs: Wann eignet sich welche
-Komponente?](/en-us/manage/services/web-sites/choose-web-app-service/)
+Komponente?](/de-de/manage/services/web-sites/choose-web-app-service/)
 
 
 

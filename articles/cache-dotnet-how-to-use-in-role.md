@@ -170,7 +170,7 @@ Das NuGet-Paket fügt außerdem die Einstellung **ClientDiagnosticLevel** zu den
       </ConfigurationSettings>
     </Role>
 
-> Der In-Role Cache bietet sowohl einen Cacheserver als auch eine Cacheclient-Diagnosestufe. Die Diagnosestufe ist eine einzelne Einstellung, die festlegt, welche Diagnosedaten für das Caching gesammelt werden. Weitere Informationen finden Sie unter [Problembehebung und Diagnose für In-Role Caches](http://msdn.microsoft.com/en-us/library/windowsazure/hh914135.aspx)
+> Der In-Role Cache bietet sowohl einen Cacheserver als auch eine Cacheclient-Diagnosestufe. Die Diagnosestufe ist eine einzelne Einstellung, die festlegt, welche Diagnosedaten für das Caching gesammelt werden. Weitere Informationen finden Sie unter [Problembehebung und Diagnose für In-Role Caches](http://msdn.microsoft.com/de-de/library/windowsazure/hh914135.aspx)
 
 Das NuGet-Paket fügt außerdem Referenzen zu den folgenden Assemblys hinzu:
 
@@ -296,7 +296,7 @@ Der Session State Provider für In-Role Caches ist ein außerprozessmäßiger Sp
 
 Entfernen Sie Kommentare aus dem angegebenen Abschnitt, um den Session State Provider für In-Role Cache zu aktivieren. Der Standardcache wird im bereitgestellten Codeausschnitt angegeben. Geben Sie den gewünschten Cache im **cacheName**-Attribut an, wenn ein anderer Cache verwendet werden soll.
 
-Weitere Informationen zur Verwendung des Caching-Services Session State Provider finden Sie unter [Session State Provider für In-Role Cache](http://msdn.microsoft.com/en-us/library/windowsazure/gg185668.aspx).
+Weitere Informationen zur Verwendung des Caching-Services Session State Provider finden Sie unter [Session State Provider für In-Role Cache](http://msdn.microsoft.com/de-de/library/windowsazure/gg185668.aspx).
 
 ## Vorgehensweise: Speichern der ASP.NET-Seitenausgabe im Cache
 
@@ -325,14 +325,14 @@ Fügen Sie jeder Seite, für die Sie die Ausgabe zwischenspeichern möchten, ein
 
 In diesem Beispiel verbleiben die zwischengespeicherten Daten 60 Sekunden lang im Cache. Für jede Parameterkombination wird eine andere Version der Seite zwischengespeichert. Weitere Informationen zu den verfügbaren Optionen finden Sie unter [OutputCache-Direktive](http://go.microsoft.com/fwlink/?LinkId=251979).
 
-Weitere Informationen zur Verwendung des Output Cache Providers für In-Role Cache finden Sie unter [Output Cache Provider für In-Role Cache](http://msdn.microsoft.com/en-us/library/windowsazure/gg185662.aspx).
+Weitere Informationen zur Verwendung des Output Cache Providers für In-Role Cache finden Sie unter [Output Cache Provider für In-Role Cache](http://msdn.microsoft.com/de-de/library/windowsazure/gg185662.aspx).
 
 ## Nächste Schritte
 
 Nachdem Sie sich nun mit den Grundlagen von In-Role Cache vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Cachingaufgaben ausgeführt werden.
 
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [In-Role Cache](http://www.microsoft.com/en-us/showcase/Search.aspx?phrase=azure+caching)
--   Erfahren Sie, wie Sie die Migration auf den In-Role Cache durchführen: [Migration auf den In-Role Cache](http://msdn.microsoft.com/en-us/library/hh914163.aspx)
--   Sehen Sie sich die Beispiele an: [In-Role Cache Beispiele](http://msdn.microsoft.com/en-us/library/jj189876.aspx)
+-   Erfahren Sie, wie Sie die Migration auf den In-Role Cache durchführen: [Migration auf den In-Role Cache](http://msdn.microsoft.com/de-de/library/hh914163.aspx)
+-   Sehen Sie sich die Beispiele an: [In-Role Cache Beispiele](http://msdn.microsoft.com/de-de/library/jj189876.aspx)
 -   Sehen Sie sich [Maximale Leistung: Beschleunigen der Clouddienste mit Azure-Caching](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/WAD-B326#fbid=kmrzkRxQ6gU) von TechEd 2013 zum In-Role Caching an.
 

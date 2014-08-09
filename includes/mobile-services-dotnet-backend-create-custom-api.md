@@ -43,7 +43,7 @@
              }
          }
 
-    Ersetzen Sie im obigen Code `todolistContext` durch den Namen von DbContext für Ihr Datenmodell, der aus dem Namen des mobilen Services und dem Anhang `Context` bestehen sollte. Dieser Code verwendet die [Datenbankklasse](http://msdn.microsoft.com/en-us/library/system.data.entity.database(v=vs.113).aspx), um direkt auf die **TodoItems**-Tabelle zuzugreifen und alle Elemente als abgeschlossen zu markieren. Diese Methode unterstützt eine POST-Anfrage, und die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
+    Ersetzen Sie im obigen Code `todolistContext` durch den Namen von DbContext für Ihr Datenmodell, der aus dem Namen des mobilen Services und dem Anhang `Context` bestehen sollte. Dieser Code verwendet die [Datenbankklasse](http://msdn.microsoft.com/de-de/library/system.data.entity.database(v=vs.113).aspx), um direkt auf die **TodoItems**-Tabelle zuzugreifen und alle Elemente als abgeschlossen zu markieren. Diese Methode unterstützt eine POST-Anfrage, und die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
 
     > [WACOM.NOTE] Es werden Standardberechtigungen eingerichtet, das heißt, jeder Benutzer der App kann die benutzerdefinierte API aufrufen. Der Anwendungsschlüssel wird jedoch nicht verteilt bzw. sicher gespeichert und gilt daher nicht als sichere Anmeldeinformation. Deshalb sollten Sie in Erwägung ziehen, den Zugriff für Vorgänge, durch die Daten geändert werden oder die sich auf den mobilen Service auswirken, auf authentifizierte Benutzer zu beschränken.
 

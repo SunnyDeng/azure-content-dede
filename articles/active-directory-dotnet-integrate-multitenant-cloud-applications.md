@@ -6,7 +6,7 @@ Integrieren von Cloud-Anwendungen für mehrere Mandanten in Azure Active Directo
 Einführung
 ----------
 
-Azure Active Directory (Azure AD) ist ein moderner, REST-basierter Dienst, der Identitätsverwaltung und Funktionen zur Zugriffssteuerung für Cloudanwendungen bietet. Azure AD lasst sich ohne weiteres in Cloud-Dienste sowie Azure, Microsoft Office 365, Dynamics CRM Online und Windows Intune integrieren. Vorhandene lokale Active Directory-Bereitstellungen können Azure AD ebenfalls umfassend nutzen. Wenn Sie mehr erfahren möchten, rufen Sie die Seite [Azure: die Cloud-Plattform von Microsoft](http://www.windowsazure.com/en-us/home/features/identity/) unter [windowsazure.com][] auf.
+Azure Active Directory (Azure AD) ist ein moderner, REST-basierter Dienst, der Identitätsverwaltung und Funktionen zur Zugriffssteuerung für Cloudanwendungen bietet. Azure AD lasst sich ohne weiteres in Cloud-Dienste sowie Azure, Microsoft Office 365, Dynamics CRM Online und Windows Intune integrieren. Vorhandene lokale Active Directory-Bereitstellungen können Azure AD ebenfalls umfassend nutzen. Wenn Sie mehr erfahren möchten, rufen Sie die Seite [Azure: die Cloud-Plattform von Microsoft](http://www.windowsazure.com/de-de/home/features/identity/) unter [windowsazure.com][] auf.
 
 Diese Anleitung ist für .NET-Entwickler bestimmt, die eine Anwendung für mehrere Mandanten in Azure AD integrieren möchten. Sie lernen Folgendes:
 
@@ -14,7 +14,7 @@ Diese Anleitung ist für .NET-Entwickler bestimmt, die eine Anwendung für mehre
 -   Einmalige Anmeldung mit Azure AD ermöglichen
 -   Verzeichnisdaten eines Kunden mit der Azure AD-Graph-API abfragen
 
-Die zu dieser Anleitung gehörende Beispielanwendung können Sie [hier herunterladen](http://go.microsoft.com/fwlink/?LinkId=271213). Das Beispiel kann ohne Änderungen ausgeführt werden. Sie müssen jedoch möglicherweise die [Anschlusszuweisung in Visual Studio](http://msdn.microsoft.com/en-us/library/ms178109(v=vs.100).aspx) ändern, um HTTPS verwenden zu können. Folgen Sie den Anweisungen im Link, legen Sie jedoch im Abschnitt "bindings" der Datei ApplicationHost.config "https" als Bindungsprotokoll fest. Alle Codeausschnitte in den folgenden Schritten stammen aus dem Beispiel.
+Die zu dieser Anleitung gehörende Beispielanwendung können Sie [hier herunterladen](http://go.microsoft.com/fwlink/?LinkId=271213). Das Beispiel kann ohne Änderungen ausgeführt werden. Sie müssen jedoch möglicherweise die [Anschlusszuweisung in Visual Studio](http://msdn.microsoft.com/de-de/library/ms178109(v=vs.100).aspx) ändern, um HTTPS verwenden zu können. Folgen Sie den Anweisungen im Link, legen Sie jedoch im Abschnitt "bindings" der Datei ApplicationHost.config "https" als Bindungsprotokoll fest. Alle Codeausschnitte in den folgenden Schritten stammen aus dem Beispiel.
 
 > [WACOM.NOTE] Das Beispiel für eine Verzeichnis-App für mehrere Mandanten dient nur der Veranschaulichung. Dieses Beispiel (einschließlich der unterstützenden Bibliotheksklassen) sollte nicht in der Produktion verwendet werden.
 
@@ -42,13 +42,13 @@ In diesem Abschnitt wird erläutert, wie Sie eine Client-ID und einen geheimen C
 
 ### Schritt 1: Erstellen eines Kontos mit dem Microsoft-Verkäuferdashboard
 
-Um Anwendungen zu entwickeln und zu veröffentlichen, die sich in Azure AD integrieren lassen, müssen Sie ein Konto für [Microsoft-Verkäuferdashboard](https://sellerdashboard.microsoft.com/) anmelden. Anschließend werden Sie aufgefordert, als Unternehmen oder als Privatperson [ein Kontoprofil zu erstellen](http://msdn.microsoft.com/en-us/library/jj552460.aspx). Dieses Profil dient zum Veröffentlichen von Anwendungen auf dem Azure Marketplace oder auf anderen Marketplaces und wird zum Generieren von Client-ID und geheimem Clientschlüssel benötigt.
+Um Anwendungen zu entwickeln und zu veröffentlichen, die sich in Azure AD integrieren lassen, müssen Sie ein Konto für [Microsoft-Verkäuferdashboard](https://sellerdashboard.microsoft.com/) anmelden. Anschließend werden Sie aufgefordert, als Unternehmen oder als Privatperson [ein Kontoprofil zu erstellen](http://msdn.microsoft.com/de-de/library/jj552460.aspx). Dieses Profil dient zum Veröffentlichen von Anwendungen auf dem Azure Marketplace oder auf anderen Marketplaces und wird zum Generieren von Client-ID und geheimem Clientschlüssel benötigt.
 
 Neuen Konten wird der Status "Account Pending Approval" zugewiesen. Dieser Status hindert Sie nicht daran, mit der Entwicklung zu beginnen – Sie können weiterhin Client-IDs sowie Entwurfs-App-Einträge erstellen. Ein App-Eintrag kann jedoch erst nach der Genehmigung des Kontos selbst zur Genehmigung übermittelt werden. Kunden können den übermittelten App-Eintrag auf dem Azure Marketplace erst nach der Genehmigung sehen.
 
 ### Schritt 2: Abrufen einer Client-ID für Ihre Anwendung
 
-Zur Integration Ihrer Anwendung in Azure AD werden Client-ID und geheimer Clientschlüssel benötigt. Eine Client-ID ist der eindeutige Bezeichner der Anwendung und dient hauptsächlich dazu, eine Anwendung für die einmalige Anmeldung oder für Authentifizierungsanrufe von Azure AD Graph zu identifizieren. Weitere Informationen zum Beziehen von Client-ID und geheimem Clientschlüssel finden Sie unter [Erstellen von Client-IDs und geheimen Clientschlüsseln im Microsoft-Verkäuferdashboard](http://msdn.microsoft.com/en-us/library/jj552461.aspx).
+Zur Integration Ihrer Anwendung in Azure AD werden Client-ID und geheimer Clientschlüssel benötigt. Eine Client-ID ist der eindeutige Bezeichner der Anwendung und dient hauptsächlich dazu, eine Anwendung für die einmalige Anmeldung oder für Authentifizierungsanrufe von Azure AD Graph zu identifizieren. Weitere Informationen zum Beziehen von Client-ID und geheimem Clientschlüssel finden Sie unter [Erstellen von Client-IDs und geheimen Clientschlüsseln im Microsoft-Verkäuferdashboard](http://msdn.microsoft.com/de-de/library/jj552461.aspx).
 
 > [WACOM.NOTE] Da Ihre Client-ID und Ihr geheimer Clientschlüssel in dieser Anwendung später benötigt werden, sollten Sie sich beides notieren.
 
@@ -235,7 +235,7 @@ Nach der Validierung des Tokens wird der Benutzer bei der Anwendung angemeldet. 
 Teil 4: Zugreifen auf Azure AD Graph
 ------------------------------------
 
-In diesem Abschnitt wird beschrieben, wie Sie ein Zugriffstoken erhalten und die Azure AD Graph-API aufrufen, um auf die Verzeichnisdaten eines Mandanten zuzugreifen. Während das während der Anmeldung erhaltene Token z. B. Benutzerinformationen wie Namen und E-Mail-Adresse enthält, benötigt Ihre Anwendung möglicherweise auch Informationen wie Gruppenmitgliedschaften oder den Namen des Vorgesetzten des Benutzers. Diese Informationen können mithilfe der Graph-API aus dem Verzeichnis des Mandanten abgerufen werden. Weitere Informationen über die Graph-API finden Sie in [diesem Thema](http://msdn.microsoft.com/en-us/library/windowsazure/hh974476.aspx).
+In diesem Abschnitt wird beschrieben, wie Sie ein Zugriffstoken erhalten und die Azure AD Graph-API aufrufen, um auf die Verzeichnisdaten eines Mandanten zuzugreifen. Während das während der Anmeldung erhaltene Token z. B. Benutzerinformationen wie Namen und E-Mail-Adresse enthält, benötigt Ihre Anwendung möglicherweise auch Informationen wie Gruppenmitgliedschaften oder den Namen des Vorgesetzten des Benutzers. Diese Informationen können mithilfe der Graph-API aus dem Verzeichnis des Mandanten abgerufen werden. Weitere Informationen über die Graph-API finden Sie in [diesem Thema](http://msdn.microsoft.com/de-de/library/windowsazure/hh974476.aspx).
 
 Bevor Ihre Anwendung Azure AD Graph aufrufen kann, muss sie sich selbst authentifizieren und ein Zugriffstoken beziehen. Zugriffstoken werden durch Authentifizierung Ihrer Anwendung mit der Client-ID und dem geheimen Clientschlüssel abgerufen. In den folgenden Schritten werden die folgenden Verfahren erläutert:
 
@@ -388,7 +388,7 @@ Das Attribut *Policy* in den obigen Beispielen beschreibt den Typ der angeforder
 
 Mit dem optionalen Element *Reason* können Sie (in mehreren Kulturen) Ihre Begründung für die erforderliche Berechtigungsebene angeben. Dieser Text wird auf der Zustimmungsseite angezeigt, um dem Kunden bei der Genehmigung oder Ablehnung Ihrer Anwendung zu helfen.
 
-Mit der neuen Client-ID und dem Anwendungsmanifest können Sie einen Anwendungseintrag erstellen, wenn Sie den Anweisungen unter [Hinzufügen von Apps im Microsoft-Verkäuferdashboard](http://msdn.microsoft.com/en-us/library/jj552465.aspx) folgen. Wählen Sie beim Erstellen eines Anwendungseintrags unbedingt den Azure AD-Anwendungstyp aus. Klicken Sie nach dem Erstellen des Anwendungseintrags auf "submit", um die Anwendung auf dem Azure Marketplace zu veröffentlichen. Sie müssen warten, bis Ihre Anwendung genehmigt ist, erst danach ist die Veröffentlichung abgeschlossen.
+Mit der neuen Client-ID und dem Anwendungsmanifest können Sie einen Anwendungseintrag erstellen, wenn Sie den Anweisungen unter [Hinzufügen von Apps im Microsoft-Verkäuferdashboard](http://msdn.microsoft.com/de-de/library/jj552465.aspx) folgen. Wählen Sie beim Erstellen eines Anwendungseintrags unbedingt den Azure AD-Anwendungstyp aus. Klicken Sie nach dem Erstellen des Anwendungseintrags auf "submit", um die Anwendung auf dem Azure Marketplace zu veröffentlichen. Sie müssen warten, bis Ihre Anwendung genehmigt ist, erst danach ist die Veröffentlichung abgeschlossen.
 
 **Hinweis**
 

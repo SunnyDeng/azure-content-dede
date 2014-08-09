@@ -9,9 +9,9 @@ Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die r
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
--   Einen HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/)
+-   Einen HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/)
 
--   Eine Arbeitsstation, auf der Azure PowerShell installiert und konfiguriert ist. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/manage/install-and-configure-windows-powershell/).
+-   Eine Arbeitsstation, auf der Azure PowerShell installiert und konfiguriert ist. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/manage/install-and-configure-windows-powershell/).
 
 **Geschätzter Zeitaufwand:** 30 Minuten
 
@@ -38,14 +38,14 @@ Bei der Ausgabe des MapReduce-Jobs handelt es sich um einen Satz Schlüssel/Wert
 
 Für die Ausführung eines MapReduce-Jobs sind folgende Elemente erforderlich:
 
--   Ein MapReduce-Programm. In diesem Lernprogramm verwenden Sie das in HDInsight-Clustern enthaltene Wortzählprogramm, sodass Sie kein eigenes Programm schreiben müssen. Es befindet sich in */example/jars/hadoop-examples.jar*. In HDInsight-Clustern der Version 3.0 lautet der Dateiname *hadoop-mapreduce-examples.jar*. Anweisungen zum Schreiben eines eigenen MapReduce-Jobs finden Sie unter [Entwickeln von Java MapReduce-Programmen für HDInsight](/en-us/documentation/articles/hdinsight-develop-deploy-java-mapreduce/).
--   Eine Eingabedatei. Sie verwenden */example/data/gutenberg/davinci.txt* als Eingabedatei. Informationen zum Hochladen von Dateien finden Sie unter [Hochladen von Daten zu HDInsight](/en-us/documentation/articles/hdinsight-upload-data/).
+-   Ein MapReduce-Programm. In diesem Lernprogramm verwenden Sie das in HDInsight-Clustern enthaltene Wortzählprogramm, sodass Sie kein eigenes Programm schreiben müssen. Es befindet sich in */example/jars/hadoop-examples.jar*. In HDInsight-Clustern der Version 3.0 lautet der Dateiname *hadoop-mapreduce-examples.jar*. Anweisungen zum Schreiben eines eigenen MapReduce-Jobs finden Sie unter [Entwickeln von Java MapReduce-Programmen für HDInsight](/de-de/documentation/articles/hdinsight-develop-deploy-java-mapreduce/).
+-   Eine Eingabedatei. Sie verwenden */example/data/gutenberg/davinci.txt* als Eingabedatei. Informationen zum Hochladen von Dateien finden Sie unter [Hochladen von Daten zu HDInsight](/de-de/documentation/articles/hdinsight-upload-data/).
 -   Einen Ordner für die Ausgabedatei. Sie verwenden */example/data/WordCountOutput* als Ordner für die Ausgabedatei. Das System erstellt den Ordner, falls dieser nicht vorhanden ist. Der MapReduce-Job schlägt fehl, falls der Ordner bereits existiert. Wenn Sie den MapReduce-Job zum zweiten Mal ausführen möchten, müssen Sie entweder den vorhandenen Ausgabeordner löschen oder einen anderen Ausgabeordner angeben.
 
 Ausführen des Beispiels mit Azure PowerShell
 --------------------------------------------
 
-1.  Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/manage/install-and-configure-windows-powershell/).
+1.  Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/manage/install-and-configure-windows-powershell/).
 
 2.  Legen Sie die zwei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
 
@@ -206,10 +206,10 @@ Nächste Schritte
 
 MapReduce bietet zwar leistungsstarke Diagnosemöglichkeiten, ist jedoch ggf. etwas kompliziert in der Anwendung. Andere Sprachen wie Pig und Hive sind benutzerfreundlichere Alternativen für die Arbeit mit HDInsight-Daten. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Entwickeln von Java MapReduce-Programmen für HDInsight](/en-us/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
--   [Entwickeln von Hadoop-Streaming-MapReduce-Programmen in C\# für HDInsight](/en-us/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
--   [Verwenden von Hive mit HDInsight](/en-us/documentation/articles/hdinsight-use-hive/)
--   [Verwenden von Pig mit HDInsight](/en-us/documentation/articles/hdinsight-use-pig/)
--   [Ausführen der HDInsight-Beispiele](/en-us/documentation/articles/hdinsight-run-samples/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Entwickeln von Java MapReduce-Programmen für HDInsight](/de-de/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
+-   [Entwickeln von Hadoop-Streaming-MapReduce-Programmen in C\# für HDInsight](/de-de/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
+-   [Verwenden von Hive mit HDInsight](/de-de/documentation/articles/hdinsight-use-hive/)
+-   [Verwenden von Pig mit HDInsight](/de-de/documentation/articles/hdinsight-use-pig/)
+-   [Ausführen der HDInsight-Beispiele](/de-de/documentation/articles/hdinsight-run-samples/)
 

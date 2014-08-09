@@ -7,7 +7,7 @@ Operationsprotokolle sind eine Verwaltungsdienstfunktion aus dem Azure-Verwaltun
 
 **Hinweis**
 
-Diese Funktion erstellt nur Protokolle für Verwaltungsoperationen in BizTalk Services, beispielsweise wenn der Dienst gestartet oder gesichert wurde usw. Diese Operationen werden nachverfolgt, unabhängig davon, ob sie aus dem Azure-Verwaltungsportal oder mit den [REST-APIs für BizTalk Services](http://msdn.microsoft.com/en-us/library/windowsazure/dn232347.aspx) ausgeführt werden. Eine vollständige Liste der Operationen, die mit Verwaltungsdiensten nachverfolgt werden, finden Sie unter [Operationen, die mit Azure Management Services nachverfolgt werden](#bizops).
+Diese Funktion erstellt nur Protokolle für Verwaltungsoperationen in BizTalk Services, beispielsweise wenn der Dienst gestartet oder gesichert wurde usw. Diese Operationen werden nachverfolgt, unabhängig davon, ob sie aus dem Azure-Verwaltungsportal oder mit den [REST-APIs für BizTalk Services](http://msdn.microsoft.com/de-de/library/windowsazure/dn232347.aspx) ausgeführt werden. Eine vollständige Liste der Operationen, die mit Verwaltungsdiensten nachverfolgt werden, finden Sie unter [Operationen, die mit Azure Management Services nachverfolgt werden](#bizops).
 
 Dies umfasst Protokolle für Aktivitäten bezüglich der Laufzeit von BizTalk Services (beispielsweise Meldungen, die von Brücken verarbeitet werden usw.). Verwenden Sie im BizTalk Services-Portal die Ansicht "Überwachung", um diese Protokolle anzeigen zu können. Weitere Informationen finden Sie unter [Tracking Messages](http://msdn.microsoft.com/library/windowsazure/hh949805.aspx) (Nachverfolgung von Meldungen, in englischer Sprache).
 

@@ -22,8 +22,8 @@ Anwendungsentwickler können ihre Anwendungen in Azure AD integrieren, um ihren 
 **Zusätzliche Ressourcen**
 
 * [Als Unternehmen für Azure
-  registrieren](/en-us/manage/services/identity/organizational-account/)
-* [Azure-Identität](/en-us/manage/windows/fundamentals/identity/)
+  registrieren](/de-de/manage/services/identity/organizational-account/)
+* [Azure-Identität](/de-de/manage/windows/fundamentals/identity/)
 * [TechNet-Bibliothek zu Azure AD][4]
 * [Informationen in MSDN zu Azure AD][5]
 

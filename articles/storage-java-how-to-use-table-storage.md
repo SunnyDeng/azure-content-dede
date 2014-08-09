@@ -37,7 +37,7 @@ Erstellen eines Azure-Speicherkontos
 Erstellen einer Java-Anwendung
 ------------------------------
 
-In diesem Leitfaden werden Sie Speicherfunktionen verwenden, die lokal in einer Java-Anwendung oder in Code ausgeführt werden können, der in einer Webrolle oder in einer Workerrolle in Azure ausgeführt wird. Es wird vorausgesetzt, dass Sie das Java Development Kit (JDK) heruntergeladen und installiert, die Anweisungen zur Installation der Azure-Bibliotheken für Java und des Azure SDK in [Azure SDK für Java](http://www.windowsazure.com/en-us/develop/java/) befolgt und in Ihrem Abonnement ein Azure-Speicherkonto angelegt haben.
+In diesem Leitfaden werden Sie Speicherfunktionen verwenden, die lokal in einer Java-Anwendung oder in Code ausgeführt werden können, der in einer Webrolle oder in einer Workerrolle in Azure ausgeführt wird. Es wird vorausgesetzt, dass Sie das Java Development Kit (JDK) heruntergeladen und installiert, die Anweisungen zur Installation der Azure-Bibliotheken für Java und des Azure SDK in [Azure SDK für Java](http://www.windowsazure.com/de-de/develop/java/) befolgt und in Ihrem Abonnement ein Azure-Speicherkonto angelegt haben.
 
 Sie können die Anwendung mit beliebigen Entwicklungstools erstellen, unter anderem auch mit Notepad. Sie müssen lediglich wissen, wie Sie ein Java-Projekt kompilieren und auf die Azure-Bibliotheken für Java verweisen.
 

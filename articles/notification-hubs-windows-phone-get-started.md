@@ -3,7 +3,7 @@
 Erste Schritte mit Benachrichtigungshubs
 ========================================
 
-[Windows Store C#](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet "Windows Store C#")[Windows Phone](/en-us/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone")[iOS](/en-us/documentation/articles/notification-hubs-ios-get-started/ "iOS")[Android](/en-us/documentation/articles/notification-hubs-android-get-started/ "Android")[Kindle](/en-us/documentation/articles/notification-hubs-kindle-get-started/ "Kindle")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android")
+[Windows Store C#](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet "Windows Store C#")[Windows Phone](/de-de/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone")[iOS](/de-de/documentation/articles/notification-hubs-ios-get-started/ "iOS")[Android](/de-de/documentation/articles/notification-hubs-android-get-started/ "Android")[Kindle](/de-de/documentation/articles/notification-hubs-kindle-get-started/ "Kindle")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android")
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Benachrichtigungshubs Pushbenachrichtigungen an eine Windows Phone 8-Anwendung senden können. In diesem Lernprogramm erstellen Sie eine leere Windows Phone 8-App, die Pushbenachrichtigungen mithilfe des Microsoft-Pushbenachrichtigungsdienst (MPNS) erhält. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Benachrichtigungshub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
 
@@ -21,7 +21,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen B
 
 **Hinweis**
 
-Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F).
+Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F).
 
 Erstellen Ihres BenachrichtigungshubsErstellen Ihres Benachrichtigungshubs
 --------------------------------------------------------------------------
@@ -56,7 +56,7 @@ Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren I
 
 **Hinweis**
 
-Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. Im nicht authentifizierten MPNS-Modus liegen Einschränkungen für Benachrichtigungen vor, die Sie an jeden Kanal senden können. Benachrichtigungshubs unterstützen den [authentifizierten MPNS-Modus](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff941099(v=vs.105).aspx).
+Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. Im nicht authentifizierten MPNS-Modus liegen Einschränkungen für Benachrichtigungen vor, die Sie an jeden Kanal senden können. Benachrichtigungshubs unterstützen den [authentifizierten MPNS-Modus](http://msdn.microsoft.com/de-de/library/windowsphone/develop/ff941099(v=vs.105).aspx).
 
 Verbinden Ihrer AppVerbinden Ihrer App mit dem Benachrichtigungshub
 -------------------------------------------------------------------
@@ -109,7 +109,7 @@ Verbinden Ihrer AppVerbinden Ihrer App mit dem Benachrichtigungshub
 Senden einer BenachrichtigungSenden einer Benachrichtigung von Ihrem Back-End aus
 ---------------------------------------------------------------------------------
 
-Sie können Benachrichtigungen mit Benachrichtigungshubs von jedem beliebigen Back-End aus mithilfe der [REST-Schnittstelle](http://msdn.microsoft.com/en-us/library/windowsazure/dn223264.aspx) senden. Dieses Lernprogramm sendet Benachrichtigungen mit einer .NET-Konsolenanwendung und mit einem Mobile Service mithilfe eines Knotenskripts.
+Sie können Benachrichtigungen mit Benachrichtigungshubs von jedem beliebigen Back-End aus mithilfe der [REST-Schnittstelle](http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx) senden. Dieses Lernprogramm sendet Benachrichtigungen mit einer .NET-Konsolenanwendung und mit einem Mobile Service mithilfe eines Knotenskripts.
 
 Senden von Benachrichtigungen mit einer .NET-App:
 
@@ -150,10 +150,10 @@ Senden von Benachrichtigungen mit einer .NET-App:
 
 6.  Drücken Sie die Taste **F5**, um die App auszuführen. Sie sollten dann eine Popupbenachrichtigung erhalten. Stellen Sie sicher, dass Ihr Windows Phone-Emulator ausgeführt wird und Ihre App geschlossen ist.
 
-Sie finden alle möglichen Nutzlasten auf MSDN im [Toast-Katalog](http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj662938(v=vs.105).aspx) und im [Kachelkatalog](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202948(v=vs.105).aspx).
+Sie finden alle möglichen Nutzlasten auf MSDN im [Toast-Katalog](http://msdn.microsoft.com/de-de/library/windowsphone/develop/jj662938(v=vs.105).aspx) und im [Kachelkatalog](http://msdn.microsoft.com/de-de/library/windowsphone/develop/hh202948(v=vs.105).aspx).
 
 Nächste Schritte
 ----------------
 
-In diesem einfachen Beispiel übertragen Sie Benachrichtigungen an all Ihre Windows Phone 8-Geräte. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Benachrichtigungshubs](/en-us/manage/services/notification-hubs/notify-users-aspnet). Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten](/en-us/manage/services/notification-hubs/breaking-news-dotnet) weitere Informationen. Weitere Informationen zur Verwendung von Benachrichtigungshubs finden Sie in der [Benachrichtigungshubs-Anleitung](http://msdn.microsoft.com/en-us/library/jj927170.aspx).
+In diesem einfachen Beispiel übertragen Sie Benachrichtigungen an all Ihre Windows Phone 8-Geräte. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Benachrichtigungshubs](/de-de/manage/services/notification-hubs/notify-users-aspnet). Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten](/de-de/manage/services/notification-hubs/breaking-news-dotnet) weitere Informationen. Weitere Informationen zur Verwendung von Benachrichtigungshubs finden Sie in der [Benachrichtigungshubs-Anleitung](http://msdn.microsoft.com/de-de/library/jj927170.aspx).
 

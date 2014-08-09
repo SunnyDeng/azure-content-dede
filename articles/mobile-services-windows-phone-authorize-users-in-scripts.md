@@ -3,13 +3,13 @@
 Dienstweite Autorisierung von Mobile Services-Benutzern
 =======================================================
 
-[Windows Store C\#](/en-us/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts "Windows Store C#")[Windows Store JavaScript](/en-us/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts "Windows Store JavaScript")[Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts "Windows Phone")[iOS](/en-us/documentation/articles/mobile-services-ios-authorize-users-in-scripts "iOS")[Android](/en-us/documentation/articles/mobile-services-android-authorize-users-in-scripts "Android")[HTML](/en-us/documentation/articles/mobile-services-html-authorize-users-in-scripts "HTML")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-mobile-services-ios-authorize-users-in-scripts "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-mobile-services-android-authorize-users-in-scripts "Xamarin.Android")
+[Windows Store C\#](/de-de/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts "Windows Store C#")[Windows Store JavaScript](/de-de/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts "Windows Store JavaScript")[Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts "Windows Phone")[iOS](/de-de/documentation/articles/mobile-services-ios-authorize-users-in-scripts "iOS")[Android](/de-de/documentation/articles/mobile-services-android-authorize-users-in-scripts "Android")[HTML](/de-de/documentation/articles/mobile-services-html-authorize-users-in-scripts "HTML")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-authorize-users-in-scripts "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-authorize-users-in-scripts "Xamarin.Android")
 
-[.NET backend](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts/ ".NET backend") | [JavaScript backend](/en-us/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts/ "JavaScript backend")
+[.NET backend](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts/ ".NET backend") | [JavaScript backend](/de-de/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts/ "JavaScript backend")
 
 In diesem Thema erfahren Sie, wie Sie Serverskripts verwenden, um authentifizierte Benutzer für den Zugriff auf Daten in Azure Mobile Services von einer Windows Phone 8-App zu autorisieren. In diesem Lernprogramm registrieren Sie Skripts mit Mobile Services, um Abfragen basierend auf der Benutzer-ID eines authentifizierten Benutzers zu filtern, sodass jeder Benutzer nur seine eigenen Daten sehen kann.
 
-Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart, und baut auf dem vorherigen Lernprogramm [Erste Schritte bei der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8) auf. Sie müssen zuerst [Erste Schritte bei der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart, und baut auf dem vorherigen Lernprogramm [Erste Schritte bei der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8) auf. Sie müssen zuerst [Erste Schritte bei der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
 [Lernprogramm ansehen](http://go.microsoft.com/fwlink/?LinkId=298630) [Video abspielen](http://go.microsoft.com/fwlink/?LinkId=298630) 15:00:00
 
@@ -55,7 +55,7 @@ Da die Schnellstart-App Daten liest und einfügt, müssen Sie Skripts für diese
 Testen der App
 --------------
 
-1.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte bei der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8) abgeschlossen haben.
+1.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte bei der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8) abgeschlossen haben.
 
 2.  Drücken Sie F5, um die App auszuführen und sich mit dem ausgewählten Identitätsanbieter anzumelden.
 
@@ -74,10 +74,10 @@ Nächste Schritte
 
 Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mit Authentifizierung veranschaulichen. Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-wp8)
+-   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-wp8)
   <br/>Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-wp8)
+-   [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-wp8)
   <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/?LinkId=262293)

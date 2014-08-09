@@ -3,7 +3,7 @@
 Behandeln von Schreibkonflikten in Datenbanken
 ==============================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows Store C#") [Windows Store JavaScript](/en-us/develop/mobile/tutorials/handle-database-write-conflicts-javascript/ "Windows Store JavaScript") [Windows Phone](/en-us/develop/mobile/tutorials/handle-database-write-conflicts-wp8/ "Windows Phone")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows Store C#") [Windows Store JavaScript](/de-de/develop/mobile/tutorials/handle-database-write-conflicts-javascript/ "Windows Store JavaScript") [Windows Phone](/de-de/develop/mobile/tutorials/handle-database-write-conflicts-wp8/ "Windows Phone")
 
 Dieses Lernprogramm beschreibt die Behandlung von Konflikten, die auftreten, wenn zwei oder mehr Clients in denselben Datenbankeintrag in einer Windows Phone 8-App schreiben. In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Mobile Services bietet Unterstützung für die Erkennung und Auflösung dieser Konflikte. Dieser Artikel beschreibt die Schritte, mit denen Sie Datenbank-Schreibkonflikte sowohl auf dem Server als auch in Ihrer Anwendung behandeln können.
 
@@ -18,8 +18,8 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -   Microsoft Visual Studio 2012 Express für Windows Phone 8 oder eine höhere Version.
 -   [Windows Phone 8 SDK](http://go.microsoft.com/fwlink/p/?LinkID=268374) auf Windows 8.
--   [Azure-Konto](http://www.windowsazure.com/en-us/pricing/free-trial/)
--   Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-wp8) abschließen.
+-   [Azure-Konto](http://www.windowsazure.com/de-de/pricing/free-trial/)
+-   Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-wp8) abschließen.
 -   Azure Mobile Services NuGet-Paket 1.1.0 oder neuer. Führen Sie die folgenden Schritte aus, um die neueste Version herunterzuladen:
     1.  Öffnen Sie das Projekt in Visual Studio, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt und wählen Sie dann **Manage NuGet Packages** aus.
 
@@ -34,7 +34,7 @@ Aktualisieren der AnwendungAktualisieren der Anwendung, um Änderungen zu ermög
 
 In diesem Abschnitt aktualisieren Sie die TodoList-Benutzeroberfläche, um Änderungen an den Textelementen in einem Listenfeld-Steuerelement zu ermöglichen. Das Listenfeld enthält ein Kontrollkästchen und ein TextBox-Steuerelement für jeden Eintrag in der Datenbanktabelle. Sie können das Textfeld des TodoItems ändern. Die Anwendung verarbeitet das `LostFocus`-Ereignis von dieser TextBox, um das Element in der Datenbank zu aktualisieren.
 
-1.  Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit mobilen Diensten](/en-us/develop/mobile/tutorials/get-started-wp8) heruntergeladen haben.
+1.  Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit mobilen Diensten](/de-de/develop/mobile/tutorials/get-started-wp8) heruntergeladen haben.
 2.  Öffnen Sie die Datei MainPage.xaml im Projektmappen-Explorer in Visual Studio, ersetzen Sie die `phone:LongListSelector`-Definition durch die folgende ListBox-Definition und speichern Sie Ihre Änderungen.
 
          <ListBox Grid.Row="4" Grid.ColumnSpan="2" Name="ListItems">
@@ -275,18 +275,18 @@ Nächste Schritte
 
 In diesem Lernprogramm wurden die Grundlagen der Behandlung von Schreibkonflikten in Windows Phone 8-Apps bei der Arbeit mit Daten in Mobile Services gezeigt. Anschließend könnten Sie eines der folgenden Lernprogramme in unserer Daten-Reihe ausführen:
 
--   [Prüfen und Ändern von Daten mit Skripten](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-wp8)
+-   [Prüfen und Ändern von Daten mit Skripten](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8)
     Informationen zur Verwendung von Serverskripts in Mobile Services, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
--   [Optimieren von Abfragen mittels Paging](/en-us/develop/mobile/tutorials/add-paging-to-data-wp8)
+-   [Optimieren von Abfragen mittels Paging](/de-de/develop/mobile/tutorials/add-paging-to-data-wp8)
     Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
 Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem der folgenden Windows Phone 8-Lernprogramme versuchen:
 
--   [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8)
+-   [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8)
     Informationen zur Authentifizierung von Benutzern Ihrer App.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-wp8)
+-   [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-wp8)
     Verschicken Sie mithilfe Ihres mobilen Dienstes eine einfache Pushbenachrichtigung an Ihre App.
 
 
@@ -317,14 +317,14 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 
 <!-- URLs. -->
 [Optimistic Concurrency Control]: http://go.microsoft.com/fwlink/?LinkId=330935
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
-[Azure Account]: http://www.windowsazure.com/en-us/pricing/free-trial/
-[Validate and modify data with scripts]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-wp8
-[Refine queries with paging]: /en-us/develop/mobile/tutorials/add-paging-to-data-wp8
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-wp8
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
+[Azure Account]: http://www.windowsazure.com/de-de/pricing/free-trial/
+[Validate and modify data with scripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8
+[Refine queries with paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-wp8
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-wp8
 [Get started with data]: ./mobile-services-get-started-with-data-wp8.md
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-wp8
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-wp8
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-wp8
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-wp8
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/

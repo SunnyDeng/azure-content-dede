@@ -3,19 +3,19 @@
 Erstellen eines virtuellen Netzwerks in Azure
 =============================================
 
-Dieses Lernprogramm führt Sie durch die Schritte zum Erstellen eines allgemeinen virtuellen Azure-Netzwerks mit dem Azure-Verwaltungsportal. Weitere Informationen zu Azure Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx).
+Dieses Lernprogramm führt Sie durch die Schritte zum Erstellen eines allgemeinen virtuellen Azure-Netzwerks mit dem Azure-Verwaltungsportal. Weitere Informationen zu Azure Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx).
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Ziel ist es, Sie mit den Schritten zum Erstellen eines virtuellen Netzwerks vertraut zu machen. Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx).
+Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Ziel ist es, Sie mit den Schritten zum Erstellen eines virtuellen Netzwerks vertraut zu machen. Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx).
 
 Nach Abschluss dieses Lernprogramms verfügen Sie über ein virtuelles Netzwerk, in dem Sie Ihre Azure-Dienste und virtuellen Computer bereitstellen können.
 
 **Hinweis**
 
-Dieses Lernprogramm zeigt Ihnen nicht den Erstellungsprozess bei einer standortübergreifenden Konfiguration. Ein Lernprogramm für das Erstellen einer virtuellen Netzwerks mit einer standortübergreifenden Verbindung zwischen Standorten (z. B. Verbindung mit Active Directory oder SharePoint in Ihrem Unternehmen) finden Sie unter [Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen](/en-us/manage/services/networking/cross-premises-connectivity/).
+Dieses Lernprogramm zeigt Ihnen nicht den Erstellungsprozess bei einer standortübergreifenden Konfiguration. Ein Lernprogramm für das Erstellen einer virtuellen Netzwerks mit einer standortübergreifenden Verbindung zwischen Standorten (z. B. Verbindung mit Active Directory oder SharePoint in Ihrem Unternehmen) finden Sie unter [Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen](/de-de/manage/services/networking/cross-premises-connectivity/).
 
 Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie unter [Azure Virtual Network-Konfigurationsaufgaben](http://go.microsoft.com/fwlink/?LinkId=296652).
 
-Richtlinien zum Bereitstellen von AD DS auf Azure Virtual Machines finden Sie unter [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines](http://msdn.microsoft.com/en-us/library/windowsazure/jj156090.aspx).
+Richtlinien zum Bereitstellen von AD DS auf Azure Virtual Machines finden Sie unter [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines](http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx).
 
 Ziele
 -----
@@ -88,22 +88,22 @@ Erstellen eines virtuellen Netzwerks
 
 4.  Nachdem das virtuelle Netzwerk erstellt wurde, können Sie mit den folgenden Lernprogrammen fortfahren:
 
-    -   [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](/en-us/manage/services/networking/add-a-vm-to-a-virtual-network/) – Verwenden Sie dieses grundlegende Lernprogramm, um in Ihrem virtuellen Netzwerk einen virtuellen Computer zu installieren.
+    -   [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](/de-de/manage/services/networking/add-a-vm-to-a-virtual-network/) – Verwenden Sie dieses grundlegende Lernprogramm, um in Ihrem virtuellen Netzwerk einen virtuellen Computer zu installieren.
 
-    -   Weitere Informationen über virtuelle Computer und Installationsoptionen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](/en-us/manage/windows/how-to-guides/custom-create-a-vm/) und [Azure Virtual Machines](/en-us/manage/windows/).
+    -   Weitere Informationen über virtuelle Computer und Installationsoptionen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](/de-de/manage/windows/how-to-guides/custom-create-a-vm/) und [Azure Virtual Machines](/de-de/manage/windows/).
 
-    -   [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](/en-us/manage/services/networking/active-directory-forest/) – Verwenden Sie dieses Lernprogramm, um eine neue Active Directory-Gesamtstruktur ohne Verbindung zu einem anderen Netzwerk zu installieren. Das Lernprogramm erläutert die spezifischen Schritte, die zum Erstellen eines virtuellen Computers für eine neue Gesamtstrukturinstallation erforderlich sind. Wenn Sie dieses Lernprogramm verwenden möchten, erstellen Sie keine virtuellen Computer mit dem Verwaltungsportal.
+    -   [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](/de-de/manage/services/networking/active-directory-forest/) – Verwenden Sie dieses Lernprogramm, um eine neue Active Directory-Gesamtstruktur ohne Verbindung zu einem anderen Netzwerk zu installieren. Das Lernprogramm erläutert die spezifischen Schritte, die zum Erstellen eines virtuellen Computers für eine neue Gesamtstrukturinstallation erforderlich sind. Wenn Sie dieses Lernprogramm verwenden möchten, erstellen Sie keine virtuellen Computer mit dem Verwaltungsportal.
 
 Siehe auch
 ----------
 
--   [Überblick über Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx)
+-   [Überblick über Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx)
 
 -   [Häufig gestellte Fragen über Azure Virtual Network](http://go.microsoft.com/fwlink/?LinkId=296650)
 
 -   [Azure Virtual Network-Konfigurationsaufgaben](http://go.microsoft.com/fwlink/?LinkId=296652)
 
--   [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/en-us/library/windowsazure/jj156097.aspx)
+-   [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/de-de/library/windowsazure/jj156097.aspx)
 
 -   [Überblick über die Azure-Namensauflösung](http://go.microsoft.com/fwlink/?LinkId=248097)
 

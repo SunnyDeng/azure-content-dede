@@ -3,7 +3,7 @@
 Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 ============================================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/get-started-with-push-dotnet "Windows Store C#")[Windows Store JavaScript](/en-us/develop/mobile/tutorials/get-started-with-push-js "Windows Store JavaScript")[Windows Phone](/en-us/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/get-started-with-push-ios "iOS")[Android](/en-us/develop/mobile/tutorials/get-started-with-push-android "Android")[Xamarin.iOS](/en-us/develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/en-us/develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-push-dotnet "Windows Store C#")[Windows Store JavaScript](/de-de/develop/mobile/tutorials/get-started-with-push-js "Windows Store JavaScript")[Windows Phone](/de-de/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/get-started-with-push-ios "iOS")[Android](/de-de/develop/mobile/tutorials/get-started-with-push-android "Android")[Xamarin.iOS](/de-de/develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android")
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services Pushbenachrichtigungen an eine Xamarin.Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe des Google Cloud Messaging (GCM)-Service zu dem Schnellstartprojekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
@@ -19,7 +19,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -   Ein aktives Google-Konto
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-xamarin-android) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-xamarin-android) abschließen.
 
 Registrieren Ihrer AppRegistrieren Ihrer App für Pushbenachrichtigungen
 -----------------------------------------------------------------------
@@ -214,7 +214,7 @@ Laden Sie das [abgeschlossene Beispielprojekt](http://go.microsoft.com/fwlink/p/
 Nächste Schritte
 ----------------
 
-In diesem einfachen Beispiel empfängt ein Benutzer eine Pushbenachrichtigung mit den soeben eingegebenen Daten. Im nächsten Lernprogramm [Pushbenachrichtigungen an App-Benutzer](/en-us/develop/mobile/tutorials/push-notifications-to-users-android) werden wir eine eigene Gerätetabelle zum Speichern von Gerätetoken erstellen und beim Auftreten einer Einfügung eine Pushbenachrichtigung an alle gespeicherten Kanäle aussenden.
+In diesem einfachen Beispiel empfängt ein Benutzer eine Pushbenachrichtigung mit den soeben eingegebenen Daten. Im nächsten Lernprogramm [Pushbenachrichtigungen an App-Benutzer](/de-de/develop/mobile/tutorials/push-notifications-to-users-android) werden wir eine eigene Gerätetabelle zum Speichern von Gerätetoken erstellen und beim Auftreten einer Einfügung eine Pushbenachrichtigung an alle gespeicherten Kanäle aussenden.
 
 
 <!-- Anchors. -->
@@ -245,16 +245,16 @@ In diesem einfachen Beispiel empfängt ein Benutzer eine Pushbenachrichtigung mi
 [Google apis]: http://go.microsoft.com/fwlink/p/?LinkId=268303
 [Android Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-xamarin-android
-[Get started with data]: /en-us/develop/mobile/tutorials/get-started-with-data-xamarin-android
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-xamarin-android
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-xamarin-android
-[Push notifications to app users]: /en-us/develop/mobile/tutorials/push-notifications-to-users-android
-[Authorize users with scripts]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-android
+[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android
+[Push notifications to app users]: /de-de/develop/mobile/tutorials/push-notifications-to-users-android
+[Authorize users with scripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Mobile Services Xamarin conceptual]: /en-us/develop/mobile/how-to-guides/work-with-xamarin-client-library
+[Mobile Services Xamarin conceptual]: /de-de/develop/mobile/how-to-guides/work-with-xamarin-client-library
 [gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
 [PushSharp Github page]: https://github.com/Redth/PushSharp

@@ -86,7 +86,7 @@ Erstellen einer Ruby-Anwendung
 
 Ruby-Anwendungen, die den Twilio-Dienst verwenden und in Azure ausgeführt werden, unterscheiden sich nicht von anderen Ruby-Anwendungen, die den Twilio-Dienst verwenden. Twilio-Dienste sind RESTful-basiert und können in Ruby auf verschiedene Arten aufgerufen werden. Dieser Artikel konzentriert sich auf die Verwendung von Twilio mit der [Twilio-Bibliothek für Ruby](https://www.twilio.com/docs/ruby/install).
 
-Richten SIe zuerst einen [neuen virtuellen Linux-Computer auf Azure](http://www.windowsazure.com/en-us/develop/ruby/tutorials/web-app-with-linux-vm/) ein, der als Host für Ihre neue Ruby-Webanwendung fungiert. Ignorieren Sie die Schritte zur Erstellung einer Rails-App, und erstellen Sie nur den virtuellen Computer. Erstellen Sie auch unbedingt einen Endpunkt mit dem externen Port 80 und dem internen Port 5000.
+Richten SIe zuerst einen [neuen virtuellen Linux-Computer auf Azure](http://www.windowsazure.com/de-de/develop/ruby/tutorials/web-app-with-linux-vm/) ein, der als Host für Ihre neue Ruby-Webanwendung fungiert. Ignorieren Sie die Schritte zur Erstellung einer Rails-App, und erstellen Sie nur den virtuellen Computer. Erstellen Sie auch unbedingt einen Endpunkt mit dem externen Port 80 und dem internen Port 5000.
 
 Im Beispiel unten verwenden wir [Sinatra](http://www.sinatrarb.com/), ein sehr einfaches Web-Framework für Ruby. Sie können die Twilio-Hilfsbibliothek für Ruby aber auch mit jedem anderen Web-Framework verwenden, z. B. Ruby on Rails.
 

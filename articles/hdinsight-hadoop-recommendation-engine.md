@@ -23,7 +23,7 @@ Dieses Lernprogramm umfasst die folgenden Abschnitte:
 Setup und Konfiguration
 -----------------------
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Azure und die HDInsight-Vorschau eingerichtet und einen HDInsight-Cluster zum Ausführen eines Beispiels erstellt haben. Wenn Sie diese Voraussetzungen noch nicht erfüllen, finden Sie entsprechende Anweisungen im Lernprogramm [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/).
+Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Azure und die HDInsight-Vorschau eingerichtet und einen HDInsight-Cluster zum Ausführen eines Beispiels erstellt haben. Wenn Sie diese Voraussetzungen noch nicht erfüllen, finden Sie entsprechende Anweisungen im Lernprogramm [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/).
 
 Überprüfen und Formatieren der Daten
 ------------------------------------

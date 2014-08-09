@@ -21,8 +21,8 @@ Erstellen eines Teamprojekts
 2.  Klicken Sie unten links auf **Neu**.
 3.  Klicken Sie auf **Teamprojekt**.
 4.  Geben Sie dem Teamprojekt einen Namen. Sie können den Namen des Teamprojekts nicht mehr ändern, nachdem es erstellt wurde.
-5.  Wählen Sie den Typ der Versionskontrolle aus, den Sie für das Projekt verwenden möchten. Sie können entweder Git (ein verteiltes Versionskontrollsystem) oder Team Foundation Version Control (ein zentralisiertes Versionskontrollsystem) auswählen. Sie sind nicht sicher, welches System Sie verwenden sollten? [Hier](http://msdn.microsoft.com/en-us/library/ms181368.aspx) erhalten Sie weitere Informationen.
-6.  Wählen Sie die Prozessvorlage aus. Einen Vergleich der Prozessvorlagen finden Sie unter [Arbeiten mit Teamprojektartefakten](http://msdn.microsoft.com/en-us/library/ms400752.aspx).
+5.  Wählen Sie den Typ der Versionskontrolle aus, den Sie für das Projekt verwenden möchten. Sie können entweder Git (ein verteiltes Versionskontrollsystem) oder Team Foundation Version Control (ein zentralisiertes Versionskontrollsystem) auswählen. Sie sind nicht sicher, welches System Sie verwenden sollten? [Hier](http://msdn.microsoft.com/de-de/library/ms181368.aspx) erhalten Sie weitere Informationen.
+6.  Wählen Sie die Prozessvorlage aus. Einen Vergleich der Prozessvorlagen finden Sie unter [Arbeiten mit Teamprojektartefakten](http://msdn.microsoft.com/de-de/library/ms400752.aspx).
 7.  Wählen Sie das Visual Studio Online-Konto aus, das verwendet wird, um dieses Teamprojekt zu erstellen, Benutzer hinzuzufügen und die Ressourcennutzung zu überwachen.
 8.  Lassen Sie das Kontrollkästchen **Add to Startboard** aktiviert, damit das neue Teamprojekt automatisch auf dem Startboard angezeigt wird.
 9.  Klicken Sie auf **Erstellen**.

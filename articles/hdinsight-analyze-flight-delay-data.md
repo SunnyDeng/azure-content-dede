@@ -9,8 +9,8 @@ Hive ermöglicht die Ausführung eines MapReduce-Jobs über eine SQL-ähnliche S
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
--   Ein Azure HDInsight-Cluster. Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erste Schritte mit HDInsight](/en-us/documentation/articles/hdinsight-get-started/) oder [Bereitstellen von HDInsight-Clustern](/en-us/documentation/articles/hdinsight-provision-clusters/).
--   Eine Arbeitsstation, auf der Azure PowerShell installiert und konfiguriert ist. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+-   Ein Azure HDInsight-Cluster. Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erste Schritte mit HDInsight](/de-de/documentation/articles/hdinsight-get-started/) oder [Bereitstellen von HDInsight-Clustern](/de-de/documentation/articles/hdinsight-provision-clusters/).
+-   Eine Arbeitsstation, auf der Azure PowerShell installiert und konfiguriert ist. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 **Geschätzter Zeitaufwand:** 30 Minuten
 
@@ -34,9 +34,9 @@ In diesem Lernprogramm werden Daten zur termingemäßen Leistung von Airline-Fl�
 
 **Verstehen des HDInsight-Speichers**
 
-HDInsight verwendet zur Datenspeicherung den Azure-Blob-Speicher. Dieser heißt *WASB* oder *Azure-Speicher-Blob*. Der WASB ist die Implementierung von HDFS von Microsoft im Azure-Blob-Speicher. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/en-us/documentation/articles/hdinsight-use-blob-storage/).
+HDInsight verwendet zur Datenspeicherung den Azure-Blob-Speicher. Dieser heißt *WASB* oder *Azure-Speicher-Blob*. Der WASB ist die Implementierung von HDFS von Microsoft im Azure-Blob-Speicher. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/de-de/documentation/articles/hdinsight-use-blob-storage/).
 
-Wenn Sie einen HDInsight-Cluster bereitstellen, wird ein Blob-Speichercontainer als Standarddateisystem festgelegt, wie in HDFS. Zusätzlich zu diesem Container können Sie während des Bereitstellungsprozesses weitere Container aus demselben Azure-Speicherkonto oder anderen Azure-Speicherkonten hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern](/en-us/documentation/articles/hdinsight-provision-clusters/).
+Wenn Sie einen HDInsight-Cluster bereitstellen, wird ein Blob-Speichercontainer als Standarddateisystem festgelegt, wie in HDFS. Zusätzlich zu diesem Container können Sie während des Bereitstellungsprozesses weitere Container aus demselben Azure-Speicherkonto oder anderen Azure-Speicherkonten hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern](/de-de/documentation/articles/hdinsight-provision-clusters/).
 
 Zur Vereinfachung des PowerShell-Skripts in diesem Lernprogramm sind alle Dateien im Standarddateisystem-Container gespeichert. Dieser liegt unter */tutorials/flightdelays*. Standardmäßig hat dieser Container den gleichen Namen wie das HDInsight-Cluster.
 
@@ -46,7 +46,7 @@ Die WASB-Syntax lautet folgendermaßen:
 
 > [WACOM.NOTE] Nur die Syntax *wasb://* wird für HDInsight-Cluster der Version 3.0 unterstützt. Die ältere Syntax *asv://* wird für HDInsight-Cluster der Versionen 2.1 und 1.6 unterstützt, jedoch nicht für HDInsight-Cluster der Version 3.0 oder höhere Versionen.
 
-> Der WASB-Pfad ist der virtuelle Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/en-us/documentation/articles/hdinsight-use-blob-storage/).
+> Der WASB-Pfad ist der virtuelle Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/de-de/documentation/articles/hdinsight-use-blob-storage/).
 
 Auf Dateien, die im Standarddateisystem-Container gespeichert sind, können Sie aus HDInsight zugreifen. Verwenden Sie dazu eine der folgenden URIs (verwenden Sie flightdelays.hql als Beispiel):
 
@@ -101,7 +101,7 @@ Weitere Informationen finden Sie unter [HDInsight: Hive Internal and External Ta
 
 **Hochladen der Daten zu Flugverspätungen in den Azure-Blob-Speicher**
 
-1.  Öffnen Sie Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+1.  Öffnen Sie Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 2.  Führen Sie den folgenden Befehl aus, um sich mit Ihrem Azure-Abonnement zu verbinden:
 
          Add-AzureAccount
@@ -384,7 +384,7 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 Ausführen eines HiveQL-Skripts
 ------------------------------
 
-Sie können mehrere Azure PowerShell-Cmdlets für das Ausführen von Hive verwenden. In diesem Lernprogramm wird Invoke-Hive verwendet. Weitere Methoden finden Sie unter [Verwenden von Hive mit HDInsight](/en-us/documentation/articles/hdinsight-use-hive/). Mit Invoke-Hive können Sie entweder eine HiveQL-Anweisung oder ein HiveQL-Skript ausführen. Verwenden Sie das HiveQL-Skript, das Sie erstellt und in den Azure-Blob-Speicher hochgeladen haben.
+Sie können mehrere Azure PowerShell-Cmdlets für das Ausführen von Hive verwenden. In diesem Lernprogramm wird Invoke-Hive verwendet. Weitere Methoden finden Sie unter [Verwenden von Hive mit HDInsight](/de-de/documentation/articles/hdinsight-use-hive/). Mit Invoke-Hive können Sie entweder eine HiveQL-Anweisung oder ein HiveQL-Skript ausführen. Verwenden Sie das HiveQL-Skript, das Sie erstellt und in den Azure-Blob-Speicher hochgeladen haben.
 
 Es existiert ein bekanntes Problem bezüglich des Hive-Pfades. Eine Anleitung zur Behebung des Problems finden Sie im [TechNet Wiki](http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx).
 
@@ -519,11 +519,11 @@ Nächste Schritte
 
 Jetzt haben Sie erfahren, wie Sie Folgendes vornehmen können: Dateien in den Blob-Speicher hochladen, eine Hive-Tabelle mit Daten aus dem Blob-Speicher füllen, Hive-Abfragen ausführen und Sqoop verwenden, um Daten aus dem HDFS in Azure-SQL-Datenbank zu exportieren. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Getting Started with HDInsight](/en-us/documentation/articles/hdinsight-get-started/)
--   [Verwenden von Hive mit HDInsight](/en-us/documentation/articles/hdinsight-use-hive/)
--   [Verwenden von Oozie mit HDInsight](/en-us/documentation/articles/hdinsight-use-oozie/)
+-   [Getting Started with HDInsight](/de-de/documentation/articles/hdinsight-get-started/)
+-   [Verwenden von Hive mit HDInsight](/de-de/documentation/articles/hdinsight-use-hive/)
+-   [Verwenden von Oozie mit HDInsight](/de-de/documentation/articles/hdinsight-use-oozie/)
 -   [Use Sqoop with HDInsight (Verwenden von Sqoop mit HDInsight, in englischer Sprache)](../hdinsight-use-sqoop/)
--   [Verwenden von Pig mit HDInsight](/en-us/documentation/articles/hdinsight-use-pig/)
--   [Entwickeln von Java MapReduce-Programmen für HDInsight](/en-us/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
--   [Entwickeln von C\# Hadoop-Streamingprogrammen für HDInsight](/en-us/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
+-   [Verwenden von Pig mit HDInsight](/de-de/documentation/articles/hdinsight-use-pig/)
+-   [Entwickeln von Java MapReduce-Programmen für HDInsight](/de-de/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
+-   [Entwickeln von C\# Hadoop-Streamingprogrammen für HDInsight](/de-de/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
 

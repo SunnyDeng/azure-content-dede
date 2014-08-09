@@ -3,7 +3,7 @@
 Erste Schritte mit Benachrichtigungshubs
 ========================================
 
-[Windows Store C\#](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet "Windows Store C#")[Windows Phone](/en-us/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone")[iOS](/en-us/documentation/articles/notification-hubs-ios-get-started/ "iOS")[Android](/en-us/documentation/articles/notification-hubs-android-get-started/ "Android")[Kindle](/en-us/documentation/articles/notification-hubs-kindle-get-started/ "Kindle")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android")
+[Windows Store C\#](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet "Windows Store C#")[Windows Phone](/de-de/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone")[iOS](/de-de/documentation/articles/notification-hubs-ios-get-started/ "iOS")[Android](/de-de/documentation/articles/notification-hubs-android-get-started/ "Android")[Kindle](/de-de/documentation/articles/notification-hubs-kindle-get-started/ "Kindle")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android")
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Benachrichtigungshubs Pushbenachrichtigungen an eine Windows Store-Anwendung senden können. In diesem Lernprogramm erstellen Sie eine leere Windows Store-App, die Pushbenachrichtigungen mithilfe des Windows-Pushbenachrichtigungsdiensts (WNS) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Benachrichtigungshub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
 
@@ -23,7 +23,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen B
 
 **Hinweis**
 
-Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F).
+Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F).
 
 Registrieren Ihrer AppRegistrieren Ihrer App für den Windows Store
 ------------------------------------------------------------------
@@ -154,7 +154,7 @@ Verbinden Ihrer AppVerbinden Ihrer App mit dem Benachrichtigungshub
 Senden einer BenachrichtigungSenden einer Benachrichtigung von Ihrem Back-End aus
 ---------------------------------------------------------------------------------
 
-Sie können Benachrichtigungen mit Benachrichtigungshubs von jedem beliebigen Back-End aus mithilfe der [REST-Schnittstelle](http://msdn.microsoft.com/en-us/library/windowsazure/dn223264.aspx) senden. In diesem Lernprogramm senden Sie Benachrichtigungen mit einer .NET-Konsolenanwendung und mit einem mobilen Dienst, der ein Knoten-Skript verwendet.
+Sie können Benachrichtigungen mit Benachrichtigungshubs von jedem beliebigen Back-End aus mithilfe der [REST-Schnittstelle](http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx) senden. In diesem Lernprogramm senden Sie Benachrichtigungen mit einer .NET-Konsolenanwendung und mit einem mobilen Dienst, der ein Knoten-Skript verwendet.
 
 So senden Sie Benachrichtigungen mit einer .NET-App:
 
@@ -200,9 +200,9 @@ So senden Sie Benachrichtigungen mit einer .NET-App:
 
 	![][14]
 
-	Sie können alle möglichen Nutzlasten zu MSDN unter [toast catalog](http://msdn.microsoft.com/en-us/library/windows/apps/hh761494.aspx), [tile catalog](http://msdn.microsoft.com/en-us/library/windows/apps/hh761491.aspx) und [badge overview](http://msdn.microsoft.com/en-us/library/windows/apps/hh779719.aspx) ermitteln.
+	Sie können alle möglichen Nutzlasten zu MSDN unter [toast catalog](http://msdn.microsoft.com/de-de/library/windows/apps/hh761494.aspx), [tile catalog](http://msdn.microsoft.com/de-de/library/windows/apps/hh761491.aspx) und [badge overview](http://msdn.microsoft.com/de-de/library/windows/apps/hh779719.aspx) ermitteln.
 
-	Zum Senden einer Benachrichtigung mit Mobile Service folgen Sie den Anweisungen unter [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/#create-new-service). Gehen Sie dann wie folgt vor:
+	Zum Senden einer Benachrichtigung mit Mobile Service folgen Sie den Anweisungen unter [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started/#create-new-service). Gehen Sie dann wie folgt vor:
 
 1.  Melden Sie sich am [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an, und klicken Sie auf "Mobile Service".
 
@@ -236,7 +236,7 @@ So senden Sie Benachrichtigungen mit einer .NET-App:
 Nächste Schritte
 ----------------
 
-In diesem einfachen Beispiel haben Sie Übertragungsbenachrichtigungen an alle Ihre Windows-Geräte gesendet. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Benachrichtigungshubs](/en-us/manage/services/notification-hubs/notify-users-aspnet). Wenn Sie Ihre Benutzer nach Interessengruppen unterteilen möchten, lesen Sie [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten](/en-us/manage/services/notification-hubs/breaking-news-dotnet). Weitere Informationen über die Verwendung von Benachrichtigungshubs finden Sie unter [Benachrichtigungshubs-Leitfaden](http://msdn.microsoft.com/en-us/library/jj927170.aspx) und [Benachrichtigungshubs-Informationen für Windows Store](http://msdn.microsoft.com/en-us/library/jj927172.aspx).
+In diesem einfachen Beispiel haben Sie Übertragungsbenachrichtigungen an alle Ihre Windows-Geräte gesendet. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Benachrichtigungshubs](/de-de/manage/services/notification-hubs/notify-users-aspnet). Wenn Sie Ihre Benutzer nach Interessengruppen unterteilen möchten, lesen Sie [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten](/de-de/manage/services/notification-hubs/breaking-news-dotnet). Weitere Informationen über die Verwendung von Benachrichtigungshubs finden Sie unter [Benachrichtigungshubs-Leitfaden](http://msdn.microsoft.com/de-de/library/jj927170.aspx) und [Benachrichtigungshubs-Informationen für Windows Store](http://msdn.microsoft.com/de-de/library/jj927172.aspx).
 
 <!-- Images. -->
 [0]: ./media/notification-hubs-windows-store-dotnet-get-started/mobile-services-submit-win8-app.png

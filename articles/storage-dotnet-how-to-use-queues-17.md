@@ -3,7 +3,7 @@
 Verwenden des Warteschlangenspeicher-Diensts
 ============================================
 
-[Version 1.7](/en-us/develop/net/how-to-guides/queue-service-v17/ "Version 1.7") [Version 2.0](/en-us/develop/net/how-to-guides/queue-service/ "Version 2.0")
+[Version 1.7](/de-de/develop/net/how-to-guides/queue-service-v17/ "Version 1.7") [Version 2.0](/de-de/develop/net/how-to-guides/queue-service/ "Version 2.0")
 
 In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele sind in C\#-Code geschrieben und verwenden die .NET API. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte](#next-steps).
 
@@ -80,7 +80,7 @@ Bei der Verwendung von Websites oder virtuellen Computern sollten Sie das .NET-K
         </appSettings>
     </configuration>
 
-Weitere Informationen zu Speicherverbindungszeichenfolgen finden Sie unter [Konfigurieren von Azure-Verbindungszeichenfolgen](http://msdn.microsoft.com/en-us/library/windowsazure/ee758697.aspx).
+Weitere Informationen zu Speicherverbindungszeichenfolgen finden Sie unter [Konfigurieren von Azure-Verbindungszeichenfolgen](http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx).
 
 Sie sind nun bereit, um die einzelnen Aufgaben in dieser Anleitung auszuführen.
 
@@ -100,7 +100,7 @@ Sie können Ihre Speicherverbindungszeichenfolge und Speicherkontoinformationen 
 Erstellen einer WarteschlangeGewusst wie: Erstellen einer Warteschlange
 -----------------------------------------------------------------------
 
-Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Der folgende Code erstellt ein **CloudQueueClient**-Objekt. Der gesamte Code in diesem Leitfaden verwendet eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge. Es gibt noch weitere Möglichkeiten zum Erstellen eines **CloudStorageAccount**-Objekts. Ausführliche Informationen dazu finden Sie in der [CloudStorageAccount](http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx)-Dokumentation.
+Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Der folgende Code erstellt ein **CloudQueueClient**-Objekt. Der gesamte Code in diesem Leitfaden verwendet eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge. Es gibt noch weitere Möglichkeiten zum Erstellen eines **CloudStorageAccount**-Objekts. Ausführliche Informationen dazu finden Sie in der [CloudStorageAccount](http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx)-Dokumentation.
 
     // Speicherkonto aus Verbindungszeichenfolge abrufen
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -265,11 +265,11 @@ Nächste Schritte
 Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 -   Vollständige Informationen zu verfügbaren APIs finden Sie in der Warteschlangendienst-Referenzdokumentation:
-    -   [Referenz zur .NET-Clientbibliothek](http://msdn.microsoft.com/en-us/library/windowsazure/wl_svchosting_mref_reference_home)
-    -   [REST-API-Referenz](http://msdn.microsoft.com/en-us/library/windowsazure/dd179355)
--   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure-Speicher finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx).
+    -   [Referenz zur .NET-Clientbibliothek](http://msdn.microsoft.com/de-de/library/windowsazure/wl_svchosting_mref_reference_home)
+    -   [REST-API-Referenz](http://msdn.microsoft.com/de-de/library/windowsazure/dd179355)
+-   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure-Speicher finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx).
 -   Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
-    -   Verwenden Sie [Tabellenspeicher](/en-us/develop/net/how-to-guides/table-services/) zum Speichern strukturierter Daten.
-    -   Verwenden Sie [Blobspeicher](/en-us/develop/net/how-to-guides/blob-storage/) zum Speichern unstrukturierter Daten.
-    -   Verwenden Sie eine [SQL-Datenbank](/en-us/develop/net/how-to-guides/sql-database/) zum Speichern relationaler Daten.
+    -   Verwenden Sie [Tabellenspeicher](/de-de/develop/net/how-to-guides/table-services/) zum Speichern strukturierter Daten.
+    -   Verwenden Sie [Blobspeicher](/de-de/develop/net/how-to-guides/blob-storage/) zum Speichern unstrukturierter Daten.
+    -   Verwenden Sie eine [SQL-Datenbank](/de-de/develop/net/how-to-guides/sql-database/) zum Speichern relationaler Daten.
 

@@ -230,5 +230,5 @@ Um einen nicht mehr benötigten Bereitstellungs-Steckplatz zu löschen, verwende
 
 
 
-[1]: http://www.windowsazure.com/en-us/documentation/articles/install-configure-powershell
-[2]: http://www.windowsazure.com/en-us/documentation/articles/xplat-cli
+[1]: http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell
+[2]: http://www.windowsazure.com/de-de/documentation/articles/xplat-cli

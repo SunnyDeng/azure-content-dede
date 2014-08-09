@@ -157,7 +157,7 @@ In diesem Lernprogramm werden [Git](http://git-scm.com/) und [GitHub](https://gi
 Erstellen eines virtuellen Azure-Computers
 ------------------------------------------
 
-Folgen Sie den [hier](/en-us/manage/linux/tutorials/virtual-machine-from-gallery/) angegebenen Anweisungen zum Erstellen eines virtuellen Azure-Computers, der Linux hostet.
+Folgen Sie den [hier](/de-de/manage/linux/tutorials/virtual-machine-from-gallery/) angegebenen Anweisungen zum Erstellen eines virtuellen Azure-Computers, der Linux hostet.
 
 **Hinweis**
 
@@ -385,16 +385,16 @@ Nächste Schritte
 
 In diesem Artikel haben Sie erfahren, wie Sie eine grundlegende formularbasierte Rails-Anwendung erstellen und auf einem virtuellen Azure-Computer mit Capistrano veröffentlichen. Der virtuelle Computer verwendet Unicorn und Nginx zum Verarbeiten von Webanforderungen an die Anwendung.
 
-Ein einfaches Beispiel zum Erstellen und Bereitstellen einer Rails-Anwendung auf einer Azure-VM, bei dem nur SSH verwendet wird, finden Sie unter [Hosten einer Ruby on Rails-Webanwendung mit einem virtuellen Linux-Computer](/en-us/develop/ruby/tutorials/web-app-with-linux-vm/).
+Ein einfaches Beispiel zum Erstellen und Bereitstellen einer Rails-Anwendung auf einer Azure-VM, bei dem nur SSH verwendet wird, finden Sie unter [Hosten einer Ruby on Rails-Webanwendung mit einem virtuellen Linux-Computer](/de-de/develop/ruby/tutorials/web-app-with-linux-vm/).
 
 Wenn Sie mehr über Ruby on Rails erfahren möchten, rufen Sie die Seite [Ruby on Rails Guides](http://guides.rubyonrails.org/) auf.
 
 Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Dienste von der Ruby-Anwendung aus finden Sie unter:
 
--   [Speichern von unstrukturierten Daten mit Blobs](/en-us/develop/ruby/how-to-guides/blob-storage/)
+-   [Speichern von unstrukturierten Daten mit Blobs](/de-de/develop/ruby/how-to-guides/blob-storage/)
 
--   [Speichern von Schlüssel/Wert-Paaren mit Tabellen](/en-us/develop/ruby/how-to-guides/table-service/)
+-   [Speichern von Schlüssel/Wert-Paaren mit Tabellen](/de-de/develop/ruby/how-to-guides/table-service/)
 
--   [Bereitstellen von breitbandigen Inhalten über das Content Delivery Network](/en-us/develop/ruby/app-services/)
+-   [Bereitstellen von breitbandigen Inhalten über das Content Delivery Network](/de-de/develop/ruby/app-services/)
 
 

@@ -16,7 +16,7 @@ Mithilfe dieses Tutoriums erstellen Sie eine einfache Webanwendung für die Regi
 
 **Hinweis**
 
-Um an diesem Tutorium teilnehmen zu können, benötigen Sie ein Azure-Konto mit aktivierter Azure-Websitefunktion. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A74E0F923).
+Um an diesem Tutorium teilnehmen zu können, benötigen Sie ein Azure-Konto mit aktivierter Azure-Websitefunktion. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A74E0F923).
 
 Einrichten der Entwicklungsumgebung
 -----------------------------------

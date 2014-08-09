@@ -3,8 +3,8 @@
 Dienstweite Autorisierung von Mobile Services-Benutzern
 =======================================================
 
-[Windows Store C\#](/en-us/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts "Windows Store C#")[Windows Store JavaScript](/en-us/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts "Windows Store JavaScript")[Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts "Windows Phone")[iOS](/en-us/documentation/articles/mobile-services-ios-authorize-users-in-scripts "iOS")[Android](/en-us/documentation/articles/mobile-services-android-authorize-users-in-scripts "Android")[HTML](/en-us/documentation/articles/mobile-services-html-authorize-users-in-scripts "HTML")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-mobile-services-ios-authorize-users-in-scripts "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-mobile-services-android-authorize-users-in-scripts "Xamarin.Android")
-[.NET backend](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts/ ".NET backend") | [JavaScript backend](/en-us/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts/ "JavaScript backend")
+[Windows Store C\#](/de-de/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts "Windows Store C#")[Windows Store JavaScript](/de-de/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts "Windows Store JavaScript")[Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts "Windows Phone")[iOS](/de-de/documentation/articles/mobile-services-ios-authorize-users-in-scripts "iOS")[Android](/de-de/documentation/articles/mobile-services-android-authorize-users-in-scripts "Android")[HTML](/de-de/documentation/articles/mobile-services-html-authorize-users-in-scripts "HTML")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-authorize-users-in-scripts "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-authorize-users-in-scripts "Xamarin.Android")
+[.NET backend](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts/ ".NET backend") | [JavaScript backend](/de-de/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts/ "JavaScript backend")
 
 In diesem Thema erfahren Sie, wie Sie authentifizierte Benutzer für den Zugriff auf Daten in Azure Mobile Services von einer Windows Store-App autorisieren. In diesem Lernprogramm registrieren Sie Skripts mit Mobile Services, um Abfragen basierend auf der Benutzer-ID eines authentifizierten Benutzers zu filtern, sodass jeder Benutzer nur seine eigenen Daten sehen kann.
 
@@ -12,7 +12,7 @@ Sie können sich eine Videoversion dieses Lernprogramms ansehen, indem Sie recht
 
 [Lernprogramm ansehen](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Windows-Store-app-Authenticate-and-Authorize-users-with-Server-Scripts-in-Windows-Azure-Mobile-Servi) [Video abspielen](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Windows-Store-app-Authenticate-and-Authorize-users-with-Server-Scripts-in-Windows-Azure-Mobile-Servi) 13:52
 
-Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart, und baut auf dem vorherigen Lernprogramm [Erste Schritte bei der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-dotnet) auf. Sie müssen zuerst [Erste Schritte bei der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-dotnet) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart, und baut auf dem vorherigen Lernprogramm [Erste Schritte bei der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-dotnet) auf. Sie müssen zuerst [Erste Schritte bei der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-dotnet) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
 Registrieren von Skripts
 ------------------------
@@ -56,7 +56,7 @@ Da die Schnellstart-App Daten liest und einfügt, müssen Sie Skripts für diese
 Testen der App
 --------------
 
-1.  Öffnen Sie in Visual Studio 2012 Express für Windows 8 das Projekt, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte bei der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-dotnet) abgeschlossen haben.
+1.  Öffnen Sie in Visual Studio 2012 Express für Windows 8 das Projekt, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte bei der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-dotnet) abgeschlossen haben.
 
 2.  Drücken Sie F5, um die App auszuführen und sich mit dem ausgewählten Identitätsanbieter anzumelden.
 
@@ -77,16 +77,16 @@ Nächste Schritte
 
 Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mit Authentifizierung veranschaulichen. Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/)
+-   [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/)
     <br/>Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-dotnet)
+-   [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-dotnet)
     <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/?LinkId=262293)
     <br/>Lernen Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
--   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/en-us/develop/mobile/how-to-guides/work-with-net-client-library)
+-   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/de-de/develop/mobile/how-to-guides/work-with-net-client-library)
     <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 
@@ -104,11 +104,11 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/?LinkID=257677
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
 [My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
-[Get started with data]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-dotnet
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-dotnet
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
+[Get started with data]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-dotnet
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-dotnet
 [JavaScript and HTML]: mobile-services-win8-javascript/
 
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Mobile Services .NET How-to Conceptual Reference]: /en-us/develop/mobile/how-to-guides/work-with-net-client-library
+[Mobile Services .NET How-to Conceptual Reference]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library

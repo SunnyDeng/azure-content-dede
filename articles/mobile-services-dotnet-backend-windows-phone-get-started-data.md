@@ -3,12 +3,12 @@
 Erste Schritte mit Daten in Mobile Services
 ===========================================
 
-[Windows Store C\#](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/ "Windows Store C#") [Windows Store JavaScript](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/ "Windows Store JavaScript") [Windows Phone](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/ "Windows Phone")
-[.NET backend](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/ ".NET backend") | [JavaScript backend](/en-us/documentation/articles/mobile-services-windows-phone-get-started-data/ "JavaScript backend")
+[Windows Store C\#](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/ "Windows Store C#") [Windows Store JavaScript](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/ "Windows Store JavaScript") [Windows Phone](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/ "Windows Phone")
+[.NET backend](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/ ".NET backend") | [JavaScript backend](/de-de/documentation/articles/mobile-services-windows-phone-get-started-data/ "JavaScript backend")
 
 In diesem Thema wird das Verwenden von Azure Mobile Services als Back-End-Datenquelle für eine Windows Phone 8-App demonstriert. In diesem Lernprogramm laden Sie ein Visual Studio 2012-Projekt für eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und zeigen die Änderungen an, die beim Ausführen der App vorgenommen wurden.
 
-Der mobile Dienst, den Sie in diesem Lernprogramm erstellen, unterstützt die .NET-Laufzeit im mobilen Dienst. Auf diese Weise können Sie .NET-Sprachen und Visual Studio für serverseitige Geschäftslogik im mobilen Dienst verwenden. Informationen zum Erstellen eines mobilen Dienstes, mit dem Sie serverseitige Geschäftslogik in JavaScript schreiben können, finden Sie in der [JavaScript-Back-End-Version](/en-us/develop/mobile/tutorials/get-started-with-data-wp8) dieses Themas.
+Der mobile Dienst, den Sie in diesem Lernprogramm erstellen, unterstützt die .NET-Laufzeit im mobilen Dienst. Auf diese Weise können Sie .NET-Sprachen und Visual Studio für serverseitige Geschäftslogik im mobilen Dienst verwenden. Informationen zum Erstellen eines mobilen Dienstes, mit dem Sie serverseitige Geschäftslogik in JavaScript schreiben können, finden Sie in der [JavaScript-Back-End-Version](/de-de/develop/mobile/tutorials/get-started-with-data-wp8) dieses Themas.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
@@ -24,7 +24,7 @@ Dieses Lernprogramm erfordert Visual Studio 2012 und das [Windows Phone 8 SDK](h
 
 **Hinweis**
 
-Sie benötigen außerdem ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie hier [Kostenloses Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F).
+Sie benötigen außerdem ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie hier [Kostenloses Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F).
 
 Herunterladen des ProjektsHerunterladen des GetStartedWithData-Projekts
 -----------------------------------------------------------------------
@@ -270,18 +270,18 @@ Nächste Schritte
 
 Dieses Lernprogramm hat die Grundlagen der Zusammenarbeit einer Windows Phone 8-App mit Daten in Mobile Services, die mit der .Net-Laufzeit erstellt werden, demonstriert. Als Nächstes können Sie eines der folgenden Lernprogramme ausführen, das auf der GetStartedWithData-App aufbaut, die Sie in diesem Lernprogramm erstellt haben:
 
--   [Prüfen und Ändern von Daten mit Skripten](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-wp8)
+-   [Prüfen und Ändern von Daten mit Skripten](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8)
     <br/>Informationen zur Verwendung von Serverskripts in Mobile Services, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
--   [Optimieren von Abfragen mittels Paging](/en-us/develop/mobile/tutorials/add-paging-to-data-wp8)
+-   [Optimieren von Abfragen mittels Paging](/de-de/develop/mobile/tutorials/add-paging-to-data-wp8)
     <br/>Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
 Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Lernprogramme ausprobieren:
 
--   [Erste Schritte mit der Authentifizierung](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/)
+-   [Erste Schritte mit der Authentifizierung](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/)
     Informationen zur Authentifizierung von Benutzern Ihrer App.
 
--   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/en-us/develop/mobile/how-to-guides/work-with-net-client-library)
+-   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/de-de/develop/mobile/how-to-guides/work-with-net-client-library)
     Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 <!-- Images. -->
@@ -314,20 +314,20 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 
 
 <!-- URLs. -->
-[Validate and modify data with scripts]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-wp8
-[Refine queries with paging]: /en-us/develop/mobile/tutorials/add-paging-to-data-wp8
-[Get started with Mobile Services]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
-[Get started with data]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/
-[Get started with authentication]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/
-[Get started with push notifications]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push/
-[JavaScript and HTML]: /en-us/develop/mobile/tutorials/get-started-with-data-js
-[JavaScript backend version]: /en-us/develop/mobile/tutorials/get-started-with-data-wp8
+[Validate and modify data with scripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8
+[Refine queries with paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-wp8
+[Get started with Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
+[Get started with data]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/
+[Get started with authentication]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/
+[Get started with push notifications]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push/
+[JavaScript and HTML]: /de-de/develop/mobile/tutorials/get-started-with-data-js
+[JavaScript backend version]: /de-de/develop/mobile/tutorials/get-started-with-data-wp8
 
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 [Developer Code Samples site]:  http://go.microsoft.com/fwlink/p/?linkid=271146
-[Mobile Services .NET How-to Conceptual Reference]: /en-us/develop/mobile/how-to-guides/work-with-net-client-library
+[Mobile Services .NET How-to Conceptual Reference]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 [How to add a new Windows Firewall port rule]:  http://go.microsoft.com/fwlink/?LinkId=392240

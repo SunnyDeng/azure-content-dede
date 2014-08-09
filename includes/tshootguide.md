@@ -9,7 +9,7 @@ Wenn Sie eine Anwendung erstellen, die auf einem virtuellen Computer von Azure a
 
 Unter Azure werden Anwendungen verteilt und mit mehreren Instanzen ausgeführt, sodass sie sich unter Umständen schlecht debuggen lassen. Für diese Art von Anwendungen reichen die Standardtools und -ansätze bei der Problembehandlung nicht aus. In diesem Thema werden verschiedene bewährte Problembehandlungsmethoden besprochen. Es enthält außerdem Links zu ausführlichen Informationen über die beschriebenen Methoden.
 
-**Hinweis**: Dieses Thema basiert auf der Annahme, dass Sie entweder eine Anwendung entwickeln oder eine Azure-Anwendung erfolgreich bereitgestellt haben und dass nun etwas Unerwartetes vorgefallen ist. Es wird nicht erläutert, wie Sie eine Anwendung auf Azure bereitstellen. Weitere Informationen zur Entwicklung und Bereitstellung Ihrer Azure-Anwendung finden Sie unter [https://www.windowsazure.com/en-us/develop/overview/][1].
+**Hinweis**: Dieses Thema basiert auf der Annahme, dass Sie entweder eine Anwendung entwickeln oder eine Azure-Anwendung erfolgreich bereitgestellt haben und dass nun etwas Unerwartetes vorgefallen ist. Es wird nicht erläutert, wie Sie eine Anwendung auf Azure bereitstellen. Weitere Informationen zur Entwicklung und Bereitstellung Ihrer Azure-Anwendung finden Sie unter [https://www.windowsazure.com/de-de/develop/overview/][1].
 
 In diesem Thema werden zunächst einige bewährte Methoden beschrieben, die Ihnen dabei helfen, Ihre Anwendung so zu entwickeln, dass im Falle eines Problems eine effektive Problembehandlung möglich ist. (Wenn Sie nicht bereits beim Entwurf der Anwendung darauf achten, dass Sie den Codeverlauf später nachvollziehen können, lässt sich im Falle eines Problems dessen Ursache nur schwer ermitteln.) Diese bewährten Methoden gelten für alle auf Azure ausgeführten Anwendungstypen, unabhängig vom Anwendungsmodell und von der verwendeten Sprache.
 
@@ -214,7 +214,7 @@ Azure-Websites ermöglichen die Konfiguration der folgenden Diagnoseoptionen:
 * Detaillierte Fehlermeldungen
 * Verfolgung fehlgeschlagener Anforderungen
 
-Weitere Informationen zu diesen Themen finden Sie unter: [Problembehandlung in einer Azure-Website](/en-us/develop/net/best-practices/troubleshooting-web-sites/).
+Weitere Informationen zu diesen Themen finden Sie unter: [Problembehandlung in einer Azure-Website](/de-de/develop/net/best-practices/troubleshooting-web-sites/).
 
 Wenn Webserverprotokolle für Azure-Websites aktiviert sind, zeichnet die Website alle HTTP-Transaktionen in einer Protokolldatei mit dem
 [erweiterten W3C-Protokolldateiformat][26] auf. Für Abfragen in der Protokolldatei können Sie dann [Log Parser][27] verwenden. Beispiele für Log Parser-Abfragen finden Sie auf [Log Parser Plus][28] und [TechNet Log Parser Examples][29]. Wenn Sie Ausgaben vom Typ CHART auf einem Computer mit Office 2007/2010 generieren möchten, installieren Sie [Office 2003 Web Components][30] entsprechend den Anweisungen auf [Log
@@ -308,7 +308,7 @@ Es gibt viele unterstützte Bibliotheken, die bewährte Methoden für asynchrone
 
 Unter den nachfolgenden Links werden Entwürfe oder Verfahren zur Vermeidung von Problemen, die eine Problembehandlung erforderlich machen, sowie Positionen, an denen eine Ablaufverfolgung oder Protokollierung hinzugefügt werden sollte, besprochen.
 
-* Speicherstatus und Fehlercodes: [http://msdn.microsoft.com/en-us/library/windowsazure/dd179382.aspx][37]
+* Speicherstatus und Fehlercodes: [http://msdn.microsoft.com/de-de/library/windowsazure/dd179382.aspx][37]
 
 * Speicheranalyse: [http://blogs.msdn.com/b/windowsazurestorage/archive/2011/08/03/windows-azure-storage-analytics.aspx][38] (siehe die drei Links unter "Weitere Informationen" am Ende des Dokuments)
 
@@ -378,9 +378,9 @@ Weitere Informationen über allgemeine Servicebusfehler und Methoden, wie Sie di
 Problembehandlung
 
 * Fehlercodes:
-  [http://msdn.microsoft.com/en-us/library/windowsazure/gg185949.aspx][52]
+  [http://msdn.microsoft.com/de-de/library/windowsazure/gg185949.aspx][52]
 * Einschränkungen des ACS:
-  [http://msdn.microsoft.com/en-us/library/windowsazure/gg185909.aspx][53]
+  [http://msdn.microsoft.com/de-de/library/windowsazure/gg185909.aspx][53]
 
 <h2><a id="SQLTroubleshooting" ></a>Problembehandlung in Azure SQL-Datenbank</h2>
 
@@ -421,7 +421,7 @@ SQL-Datenbankabfragen können aus verschiedenen Gründen fehlschlagen, z. B. ei
 
 Azure SQL-Datenbank erfordert aufgrund der Umgebung und der verfügbaren Tools eine eigene Sicherungs- und Wiederherstellungsstrategie. In vielerlei Hinsicht wurden die Risiken dadurch minimiert, dass sich die Datenbank in den Microsoft-Datencentern befindet. Die heute verfügbaren Tools decken weitere Sicherheitsfaktoren ab. In Zukunft wird es jedoch noch bessere Tools geben, die uns diese Aufgabe weiter vereinfachen. Red-gate veröffentlichte kürzlich ein kostenloses Tool für die Sicherung und Wiederherstellung von SQL-Datenbanken, welches Sie unter diesem Link finden: [http://www.red-gate.com/products/dba/sql-azure-backup/][66].
 
-Mit SQL Data Sync können Sie mühelos bidirektionale Synchronisierungen über die Data Sync-Website erstellen und planen, ohne eine einzige Codezeile schreiben zu müssen. Weitere Informationen finden Sie hier: [http://msdn.microsoft.com/en-us/library/windowsazure/hh456371.aspx][67].
+Mit SQL Data Sync können Sie mühelos bidirektionale Synchronisierungen über die Data Sync-Website erstellen und planen, ohne eine einzige Codezeile schreiben zu müssen. Weitere Informationen finden Sie hier: [http://msdn.microsoft.com/de-de/library/windowsazure/hh456371.aspx][67].
 
 Weiterer Informationen zu Sicherungs- und Wiederherstellungsstrategien für SQL-Datenbanken finden Sie in den folgenden Artikeln:
 
@@ -430,17 +430,17 @@ Weiterer Informationen zu Sicherungs- und Wiederherstellungsstrategien für SQL-
   [http://social.technet.microsoft.com/wiki/contents/articles/1792.sql-azure-backup-and-restore-strategy.aspx][68]
 * In diesem Thema wird erklärt, wie Sie eine Datenbank in einer anderen
   Datenbank auf dem gleichen Server sichern:
-  [http://msdn.microsoft.com/en-us/library/windowsazure/ff951631.aspx][69]
+  [http://msdn.microsoft.com/de-de/library/windowsazure/ff951631.aspx][69]
 * In diesem Thema wird erklärt, wie Sie eine vorhandene
   SQL-Datenbankinstanz in einen BLOB auf einem bestimmten Speicherkonto
   exportieren:
-  [http://msdn.microsoft.com/en-us/library/windowsazure/hh335292.aspx][70]
+  [http://msdn.microsoft.com/de-de/library/windowsazure/hh335292.aspx][70]
 * In diesem Thema wird erklärt, wie Sie eine vorhandene
   SQL-Datenbankinstanz aus einer bacpac-Datei in einem BLOB importieren:
-  [http://msdn.microsoft.com/en-us/library/windowsazure/hh335291.aspx][71]
+  [http://msdn.microsoft.com/de-de/library/windowsazure/hh335291.aspx][71]
 * In diesem Thema werden die Funktionen für unterbrechungsfreie
   Geschäftsabläufe der SQL-Datenbank beschrieben:
-  [http://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx][72]
+  [http://msdn.microsoft.com/de-de/library/windowsazure/hh852669.aspx][72]
 
 <h2><a id="Cache" ></a>Azure Caching</h2>
 
@@ -460,10 +460,10 @@ Weitere Informationen zu kontingentbezogenen Fehlern finden Sie unter [Informati
 
 
 
-[1]: https://www.windowsazure.com/en-us/develop/overview/
-[2]: http://msdn.microsoft.com/en-us/library/hh680918%28v=pandp.50%29.aspx
+[1]: https://www.windowsazure.com/de-de/develop/overview/
+[2]: http://msdn.microsoft.com/de-de/library/hh680918%28v=pandp.50%29.aspx
 [3]: http://nuget.org/packages/Microsoft.Experience.CloudFx
-[4]: http://msdn.microsoft.com/en-us/magazine/ff714589.aspx
+[4]: http://msdn.microsoft.com/de-de/magazine/ff714589.aspx
 [5]: http://www.microsoft.com/download/en/details.aspx?id=11324
 [6]: http://www.microsoft.com/en-us/server-cloud/system-center/operations-manager.aspx
 [7]: http://wapmmc.codeplex.com/
@@ -477,13 +477,13 @@ Weitere Informationen zu kontingentbezogenen Fehlern finden Sie unter [Informati
 [15]: http://www.alertbot.com/products/website-monitoring/default.aspx
 [16]: http://www.apicasystem.com/integration-partners/
 [17]: http://www.microsoft.com/en-us/server-cloud/system-center/avicode.aspx
-[18]: http://msdn.microsoft.com/en-us/library/windowsazure/hh369930.aspx
+[18]: http://msdn.microsoft.com/de-de/library/windowsazure/hh369930.aspx
 [19]: http://azurevmassist.codeplex.com/
 [20]: https://github.com/dannycoates/node-inspector
 [21]: http://weblogs.asp.net/jimwang/archive/2012/04/17/debugging-node-node-inspector-in-the-azure-emulator.aspx
 [22]: https://github.com/windowsazure/iisnode/downloads
 [23]: http://howtonode.org/debugging-with-node-inspector
-[24]: http://msdn.microsoft.com/en-us/library/dd264915.aspx
+[24]: http://msdn.microsoft.com/de-de/library/dd264915.aspx
 [25]: http://www.fiddler2.com/fiddler2/
 [26]: http://go.microsoft.com/fwlink/?LinkID=90561
 [27]: http://go.microsoft.com/fwlink/?LinkId=246619
@@ -491,12 +491,12 @@ Weitere Informationen zu kontingentbezogenen Fehlern finden Sie unter [Informati
 [29]: http://technet.microsoft.com/en-us/library/ee692659.aspx
 [30]: http://www.microsoft.com/downloads/en/details.aspx?familyid=7287252C-402E-4F72-97A5-E0FD290D4B76&displaylang=enBlockquote
 [31]: http://logparserplus.com/article/2
-[32]: http://msdn.microsoft.com/en-us/library/7a50syb3%28v=vs.90%29.aspx
+[32]: http://msdn.microsoft.com/de-de/library/7a50syb3%28v=vs.90%29.aspx
 [33]: http://technet.microsoft.com/en-us/edge/Video/hh867800
 [34]: https://www.suse.com/documentation/
 [35]: https://help.ubuntu.com/
 [36]: http://centos.org/
-[37]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179382.aspx
+[37]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179382.aspx
 [38]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/08/03/windows-azure-storage-analytics.aspx
 [39]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/02/03/overview-of-retry-policies-in-the-windows-azure-storage-client-library.aspx
 [40]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx
@@ -504,19 +504,19 @@ Weitere Informationen zu kontingentbezogenen Fehlern finden Sie unter [Informati
 [42]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/04/17/windows-azure-storage-explorers.aspx
 [43]: http://www.cloudberrylab.com/free-microsoft-azure-explorer.aspx
 [44]: http://en.wikipedia.org/wiki/Enterprise_service_bus
-[45]: http://msdn.microsoft.com/en-us/library/windowsazure/ee732538.aspx
+[45]: http://msdn.microsoft.com/de-de/library/windowsazure/ee732538.aspx
 [46]: http://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a
-[47]: http://msdn.microsoft.com/en-us/library/windowsazure/ee706729.aspx
-[48]: http://msdn.microsoft.com/en-us/library/hh851746(VS.103).aspx
-[49]: http://msdn.microsoft.com/en-us/library/hh418082.aspx
-[50]: http://msdn.microsoft.com/en-us/library/windowsazure/hh545245.aspx
-[51]: http://msdn.microsoft.com/en-us/library/windowsazure/ee706702.aspx
-[52]: http://msdn.microsoft.com/en-us/library/windowsazure/gg185949.aspx
-[53]: http://msdn.microsoft.com/en-us/library/windowsazure/gg185909.aspx
+[47]: http://msdn.microsoft.com/de-de/library/windowsazure/ee706729.aspx
+[48]: http://msdn.microsoft.com/de-de/library/hh851746(VS.103).aspx
+[49]: http://msdn.microsoft.com/de-de/library/hh418082.aspx
+[50]: http://msdn.microsoft.com/de-de/library/windowsazure/hh545245.aspx
+[51]: http://msdn.microsoft.com/de-de/library/windowsazure/ee706702.aspx
+[52]: http://msdn.microsoft.com/de-de/library/windowsazure/gg185949.aspx
+[53]: http://msdn.microsoft.com/de-de/library/windowsazure/gg185909.aspx
 [54]: http://go.microsoft.com/fwlink/p/?LinkId=168847
 [55]: http://social.technet.microsoft.com/wiki/contents/articles/sql-azure-connectivity-troubleshooting-guide.aspx
-[56]: http://msdn.microsoft.com/en-us/library/ee730906.aspx
-[57]: http://msdn.microsoft.com/en-us/library/ms186351(SQL.100).aspx
+[56]: http://msdn.microsoft.com/de-de/library/ee730906.aspx
+[57]: http://msdn.microsoft.com/de-de/library/ms186351(SQL.100).aspx
 [58]: http://social.technet.microsoft.com/wiki/contents/articles/1104.troubleshoot-and-optimize-queries-with-sql-azure.aspx
 [59]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2011/DBI314
 [60]: http://blogs.msdn.com/b/sqlazure/archive/2010/07/27/10043069.aspx?PageIndex=2#comments
@@ -524,12 +524,12 @@ Weitere Informationen zu kontingentbezogenen Fehlern finden Sie unter [Informati
 [62]: http://go.microsoft.com/fwlink/p/?LinkId=166622
 [63]: http://social.technet.microsoft.com/wiki/contents/articles/4235.retry-logic-for-transient-failures-in-sql-azure.aspx
 [64]: http://code.msdn.microsoft.com/windowsazure/SQL-Azure-Retry-Logic-2d0a8401
-[65]: http://msdn.microsoft.com/en-us/library/hh680934(PandP.50).aspx
+[65]: http://msdn.microsoft.com/de-de/library/hh680934(PandP.50).aspx
 [66]: http://www.red-gate.com/products/dba/sql-azure-backup/
-[67]: http://msdn.microsoft.com/en-us/library/windowsazure/hh456371.aspx
+[67]: http://msdn.microsoft.com/de-de/library/windowsazure/hh456371.aspx
 [68]: http://social.technet.microsoft.com/wiki/contents/articles/1792.sql-azure-backup-and-restore-strategy.aspx
-[69]: http://msdn.microsoft.com/en-us/library/windowsazure/ff951631.aspx
-[70]: http://msdn.microsoft.com/en-us/library/windowsazure/hh335292.aspx
-[71]: http://msdn.microsoft.com/en-us/library/windowsazure/hh335291.aspx
-[72]: http://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx
-[73]: http://msdn.microsoft.com/en-us/library/gg185683.aspx
+[69]: http://msdn.microsoft.com/de-de/library/windowsazure/ff951631.aspx
+[70]: http://msdn.microsoft.com/de-de/library/windowsazure/hh335292.aspx
+[71]: http://msdn.microsoft.com/de-de/library/windowsazure/hh335291.aspx
+[72]: http://msdn.microsoft.com/de-de/library/windowsazure/hh852669.aspx
+[73]: http://msdn.microsoft.com/de-de/library/gg185683.aspx

@@ -3,7 +3,7 @@
 Erstellen der Workerrolle A (E-Mail-Planer) für die Anwendung Azure-E-Mail-Dienst - 4 von 5
 ===========================================================================================
 
-Dies ist das vierte von fünf Lernprogrammen, die erläutern, wie die Beispielanwendung Azure-E-Mail-Dienst erstellt und bereitgestellt wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).
+Dies ist das vierte von fünf Lernprogrammen, die erläutern, wie die Beispielanwendung Azure-E-Mail-Dienst erstellt und bereitgestellt wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -155,7 +155,7 @@ Hinzufügen von WorkerrollencodeHinzufügen von Code, der beim Start der Workerr
 
     Sie haben zuvor möglicherweise Dokumentation zum Arbeiten mit Azure-Speicher gesehen, die den Initialisierungscode in einer Schleife zeigt, mit dem Transportfehler festgestellt werden. Dieser Code wird nicht mehr benötigt, da die API jetzt über einen integrierten Wiederholungsmechanismus verfügt, der vorübergehende Netzwerkfehler für bis zu drei zusätzliche Versuche abfängt.
 
-    Die `ConfigureDiagnostics`-Methode, die von der `OnStart`-Methode aufgerufen wird, richtet die Ablaufverfolgung ein, sodass Sie die Ausgabe der Methoden `Trace.Information` und `Trace.Error` sehen können. Diese Methode wird im [zweiten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/) erläutert.
+    Die `ConfigureDiagnostics`-Methode, die von der `OnStart`-Methode aufgerufen wird, richtet die Ablaufverfolgung ein, sodass Sie die Ausgabe der Methoden `Trace.Information` und `Trace.Error` sehen können. Diese Methode wird im [zweiten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/) erläutert.
 
     Mit der `OnStop`-Methode wird die globale Variable `onStopCalled` auf True festgelegt. Danach wird darauf gewartet, dass die `Run`-Methode die globale Variable `returnedFromRunMethod` auf True festlegt. Damit wird signalisiert, dass ein sauberes Herunterfahren ausgeführt werden kann.
 
@@ -265,7 +265,7 @@ Hinzufügen von WorkerrollencodeHinzufügen von Code, der beim Start der Workerr
              }
          }
 
-    Sämtliche Arbeitsschritte werden in einer unendlichen Schleife in einem `while`-Block ausgeführt, und der gesamte Code im `while`-Block wird von einem `try`-`catch`-Block umschlossen, um unbehandelte Ausnahmen zu verhindern. Wenn eine unbehandelte Ausnahme auftritt, löst Azure das Ereignis [UnhandledException](http://msdn.microsoft.com/en-us/library/system.appdomain.unhandledexception.aspx) aus, der Workerprozess wird beendet, und die Rolle wird offline geschaltet. Die Workerrolle wird von Azure neu gestartet, dies dauert jedoch einige Minuten. Der `try`-Block ruft `TraceError` auf, um den Fehler aufzuzeichnen, und geht dann für 60 Sekunden in den Ruhezustand, damit die Fehlermeldung nicht zu häufig wiederholt wird, wenn der Fehler dauerhaft ist. In einer Produktionsanwendung können Sie einem Administrator im `try`-Block eine E-Mail senden.
+    Sämtliche Arbeitsschritte werden in einer unendlichen Schleife in einem `while`-Block ausgeführt, und der gesamte Code im `while`-Block wird von einem `try`-`catch`-Block umschlossen, um unbehandelte Ausnahmen zu verhindern. Wenn eine unbehandelte Ausnahme auftritt, löst Azure das Ereignis [UnhandledException](http://msdn.microsoft.com/de-de/library/system.appdomain.unhandledexception.aspx) aus, der Workerprozess wird beendet, und die Rolle wird offline geschaltet. Die Workerrolle wird von Azure neu gestartet, dies dauert jedoch einige Minuten. Der `try`-Block ruft `TraceError` auf, um den Fehler aufzuzeichnen, und geht dann für 60 Sekunden in den Ruhezustand, damit die Fehlermeldung nicht zu häufig wiederholt wird, wenn der Fehler dauerhaft ist. In einer Produktionsanwendung können Sie einem Administrator im `try`-Block eine E-Mail senden.
 
     Die `Run`-Methode verarbeitet eine Abfrage von `message`-Zeilen in der Tabelle `message`, deren geplantes Datum vor morgen liegt:
 
@@ -317,7 +317,7 @@ Hinzufügen von WorkerrollencodeHinzufügen von Code, der beim Start der Workerr
                  // Ruhezustand für eine Minute, um Abfragekosten zu minimieren.
                  System.Threading.Thread.Sleep(1000 * 60);
 
-    Für jede Azure-Speicherabfrage fallen minimale Gebühren an, auch wenn keine Daten zurückgegeben werden. Ein ständiges Neuscannen würde Ihre Azure-Kosten daher unnötig erhöhen. Zum Zeitpunkt der Erstellung dieses Lernprogramms betragen die Kosten 0,10 Dollar pro Million Transaktionen (eine Abfrage zählt als eine Transaktion). Der Ruhezustand könnte also auf wesentlich weniger als eine Minute verringert werden, und die Kosten für das Durchsuchen der Tabellen nach zu sendenden Nachrichten wären dennoch minimal. Weitere Informationen über die Preisgestaltung finden Sie im [ersten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).
+    Für jede Azure-Speicherabfrage fallen minimale Gebühren an, auch wenn keine Daten zurückgegeben werden. Ein ständiges Neuscannen würde Ihre Azure-Kosten daher unnötig erhöhen. Zum Zeitpunkt der Erstellung dieses Lernprogramms betragen die Kosten 0,10 Dollar pro Million Transaktionen (eine Abfrage zählt als eine Transaktion). Der Ruhezustand könnte also auf wesentlich weniger als eine Minute verringert werden, und die Kosten für das Durchsuchen der Tabellen nach zu sendenden Nachrichten wären dennoch minimal. Weitere Informationen über die Preisgestaltung finden Sie im [ersten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).
 
     **Hinweis zum Threading und zur optimalen CPU-Auslastung:** Die `Run`-Methode enthält zwei Aufgaben (Aufnehmen von E-Mail in eine Warteschlange und Prüfen auf abgeschlossene Nachrichten), die in einem Thread nacheinander ausgeführt werden. Ein kleiner virtueller Computer verfügt über 1,75 GB RAM und nur eine CPU, daher können diese Aufgaben wahrscheinlich ohne weiteres in einem einzelnen Thread nacheinander ausgeführt werden. Angenommen, Ihre Anwendung benötigt mehr Arbeitsspeicher, als auf dem kleinen virtuellen Computer zur Verfügung steht, um effizient ausgeführt zu werden. Ein mittlerer virtueller Computer verfügt über 3,5 GB RAM und zwei CPUs, diese Anwendung verwendet jedoch nur eine CPU, da sie nur einen Thread umfasst. Um alle CPUs zu nutzen, müssten Sie für jede CPU einen Arbeitsthread erstellen. Auch in diesem Fall wird eine einzelne CPU von einem Thread nicht voll ausgelastet. Wenn ein Thread Netzwerk- oder E/A-Aufrufe ausführt, muss er auf den Abschluss des E/A- oder Netzwerkaufrufs warten. Während dieser Zeit führt er keine nützliche Arbeit aus. Wenn die `Run`-Methode mithilfe von zwei Thread implementiert würde, könnte der eine Thread nutzbringend eingesetzt werden, während der andere auf den Abschluss einer Netzwerk- oder E/A-Operation wartet.
 
@@ -576,8 +576,8 @@ TestenTesten der Workerrolle A
 Nächste SchritteNächste Schritte
 --------------------------------
 
-Sie haben jetzt Workerrolle A erstellt und überprüft, ob sie die Warteschlangennachrichten und Tabellenzeilen erstellt, die Workerrolle B benötigt, um E-Mails zu senden. Im [nächsten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/) erstellen und testen Sie Workerrolle B.
+Sie haben jetzt Workerrolle A erstellt und überprüft, ob sie die Warteschlangennachrichten und Tabellenzeilen erstellt, die Workerrolle B benötigt, um E-Mails zu senden. Im [nächsten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/) erstellen und testen Sie Workerrolle B.
 
-Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
-[Lernprogramm 5](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/)
+Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+[Lernprogramm 5](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/)
 

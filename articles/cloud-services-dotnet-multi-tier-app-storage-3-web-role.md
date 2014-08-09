@@ -3,7 +3,7 @@
 Erstellen der Webrolle für die Azure-E-Mail-Dienstanwendung - 3 von 5.
 ======================================================================
 
-Dies ist das dritte von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Dienstanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).
+Dies ist das dritte von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Dienstanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -124,7 +124,7 @@ Um die Speicherung von Ablaufverfolgungsdaten zu aktivieren, öffnen Sie die Dat
         return base.OnStart();
     }
 
-Die Methode `ConfigureDiagnostics` wird im [zweiten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/) genauer erklärt.
+Die Methode `ConfigureDiagnostics` wird im [zweiten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/) genauer erklärt.
 
 NeustartsFügen Sie Code für den effizienten Umgang mit Neustarts hinzu.
 -----------------------------------------------------------------------
@@ -154,7 +154,7 @@ Sobald Azure eine Rolle vom Netz nimmt, hört das Lastenausgleichsmodul auf, Anf
 
 Der gezeigte Code für die `OnStop`-Methode erstellt einen ASP.NET-Leistungsindikator für `Requests Current` (aktuelle Anforderungen). Der Wert des `Requests Current`-Zählers enthält die aktuelle Anzahl der Anforderungen, inklusive solcher, die sich momentan in der Warteschlange befinden, ausgeführt werden oder darauf warten, zum Client geschrieben zu werden. Der Wert von `Requests Current` wird einmal pro Sekunde geprüft, und sobald der Wert null erreicht, wird die `OnStop`-Methode verlassen. Nach Verlassen der `OnStop`-Methode wird die Rolle heruntergefahren.
 
-Ablaufverfolgungsdaten aus der `OnStop`-Methode werden nur gespeichert, wenn eine [bedarfsgesteuerte Übertragung](http://msdn.microsoft.com/en-us/library/windowsazure/gg433075.aspx) durchgeführt wird. Sie können die `OnStop`-Ablaufverfolgungsinformationen in Echtzeit mithilfe des [dbgview](http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx)-Hilfsprogramms über eine Remotedesktopverbindung anzeigen.
+Ablaufverfolgungsdaten aus der `OnStop`-Methode werden nur gespeichert, wenn eine [bedarfsgesteuerte Übertragung](http://msdn.microsoft.com/de-de/library/windowsazure/gg433075.aspx) durchgeführt wird. Sie können die `OnStop`-Ablaufverfolgungsinformationen in Echtzeit mithilfe des [dbgview](http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx)-Hilfsprogramms über eine Remotedesktopverbindung anzeigen.
 
 Aktualisieren der SpeicherclientbibliothekAktualisieren des NuGet-Pakets für die Speicherclientbibliothek
 ---------------------------------------------------------------------------------------------------------
@@ -181,7 +181,7 @@ Das API-Framework für die Arbeit mit Azure-Speichertabellen, Warteschlangen und
 
          using Microsoft.WindowsAzure.StorageClient;
 
-Die Version 1.7 der SCL enthält einen LINQ-Anbieter, der die Programmierung von Tabellenabfragen erleichtert. Zum Zeitpunkt der Erstellung dieses Lernprogramms enthält die Version 2.0 der Tabellendienstebene (Table Service Layer TSL) noch keinen LINQ-Anbieter. Falls Sie LINQ verwenden möchten, steht Ihnen der LINQ-Anbieter aus SCL 1.7 im Namespace [Microsoft.WindowsAzure.Storage.Table.DataServices](http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.table.dataservices.aspx) zur Verfügung. TSL 2.0 wurde zur Verbesserung der Leistung entwickelt, und der 1.7-LINQ-Anbieter zieht keinen Nutzen aus diesen Verbesserungen. Die Beispielanwendung verwendet TSL 2.0 und nutzt daher kein LINQ für Abfragen. Weitere Informationen zu SCL und TSL 2.0 finden Sie in den Ressourcen am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+Die Version 1.7 der SCL enthält einen LINQ-Anbieter, der die Programmierung von Tabellenabfragen erleichtert. Zum Zeitpunkt der Erstellung dieses Lernprogramms enthält die Version 2.0 der Tabellendienstebene (Table Service Layer TSL) noch keinen LINQ-Anbieter. Falls Sie LINQ verwenden möchten, steht Ihnen der LINQ-Anbieter aus SCL 1.7 im Namespace [Microsoft.WindowsAzure.Storage.Table.DataServices](http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.storage.table.dataservices.aspx) zur Verfügung. TSL 2.0 wurde zur Verbesserung der Leistung entwickelt, und der 1.7-LINQ-Anbieter zieht keinen Nutzen aus diesen Verbesserungen. Die Beispielanwendung verwendet TSL 2.0 und nutzt daher kein LINQ für Abfragen. Weitere Informationen zu SCL und TSL 2.0 finden Sie in den Ressourcen am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
 
 > [WACOM.NOTE] In SCL 2.1 wurde die LINQ-Unterstützung wieder eingeführt. Dieses Lernprogramm verwendet allerdings kein LINQ für Speichertabellenabfragen. Die aktuelle SCL-Version unterstützt asynchrone Programmierung. Dieses Lernprogramm enthält allerdings keinen asynchronen Code. Weitere Informationen zu asynchroner Programmierung und ein Codebeispiel für die Verwendung der Azure-SCL finden Sie im folgenden E-Book-Kapitel und dem zugehörigen Downloadprojekt: [Use .NET 4.5’s async support to avoid blocking calls](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async) (Verwenden der asynchronen Funktionen in .NET 4.5 zum Vermeiden von blockierenden Aufrufen, in englischer Sprache).
 
@@ -310,17 +310,17 @@ Die `MailingList`-Entitätsklasse bildet die Zeilen in der Tabelle `MailingList`
              public string Description { get; set; }
          }
 
-    Die TSL 2.0 API für Azure-Speicher verlangt, dass die Entitätsklassen, die Sie für Ihre Tabellenoperationen verwenden, von [TableEntity](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storage.table.tableentity.aspx) abgeleitet werden. Diese Klasse definiert die Felder `PartitionKey`, `RowKey`, `TimeStamp` und `ETag`. Die Eigenschaften `TimeStamp` und `ETag` werden vom System verwendet. Später in diesem Lernprogramm werden Sie sehen, wie die `ETag`-Eigenschaft für die Parallelitätsbehandlung verwendet wird.
+    Die TSL 2.0 API für Azure-Speicher verlangt, dass die Entitätsklassen, die Sie für Ihre Tabellenoperationen verwenden, von [TableEntity](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.storage.table.tableentity.aspx) abgeleitet werden. Diese Klasse definiert die Felder `PartitionKey`, `RowKey`, `TimeStamp` und `ETag`. Die Eigenschaften `TimeStamp` und `ETag` werden vom System verwendet. Später in diesem Lernprogramm werden Sie sehen, wie die `ETag`-Eigenschaft für die Parallelitätsbehandlung verwendet wird.
 
-    (Mit der Klasse [DynamicTableEntity](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storage.table.dynamictableentity.aspx) können Sie mit Tabellenzeilen als Wörterbuchauflistungen von Schlüssel-Wert-Paaren arbeiten, anstatt vordefinierte Modellklassen zu verwenden. Weitere Informationen finden Sie unter [Azure Storage Client Library 2.0 Tables Deep Dive](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx) (Arbeiten mit Tabellen der Azure-Speicherclientbibliothek 2.0, in englischer Sprache).
+    (Mit der Klasse [DynamicTableEntity](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.storage.table.dynamictableentity.aspx) können Sie mit Tabellenzeilen als Wörterbuchauflistungen von Schlüssel-Wert-Paaren arbeiten, anstatt vordefinierte Modellklassen zu verwenden. Weitere Informationen finden Sie unter [Azure Storage Client Library 2.0 Tables Deep Dive](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx) (Arbeiten mit Tabellen der Azure-Speicherclientbibliothek 2.0, in englischer Sprache).
 
     Der Partitionsschlüssel der Tabelle `mailinglist` ist der Listenname. Der Zugriff auf den Partitionsschlüssel in dieser Entitätsklasse erfolgt entweder über die `PartitionKey`-Eigenschaft (definiert in der Klasse `TableEntity`) oder über die `ListName`-Eigenschaft (definiert in der Klasse `MailingList`). Die `ListName`-Eigenschaft verwendet `PartitionKey` als Unterstützungsvariable. Dank der `ListName`-Eigenschaft können Sie einen anschaulicheren Variablennamen im Code verwenden und erleichtern sich die Programmierung der Web-GUI, da die DataAnnotations-Attribute für Formatierung und Prüfung zur `ListName`-Eigenschaft hinzugefügt werden können, jedoch nicht direkt zur `PartitionKey`-Eigenschaft.
 
     Das `RegularExpression`-Attribut in der `ListName`-Eigenschaft weist MVC an, die Benutzereingaben zu prüfen, um sicherzustellen, dass der eingegebene Listenname nur alphanumerische Zeichen oder Unterstriche enthält. Mit dieser Einschränkung werden einfache Listennamen erzwungen, die problemlos in Abfragezeichenfolgen in URLs verwendet werden können.
 
-    **Hinweis:** Falls Sie ein weniger restriktives Format für die Listennamen verwenden möchten, können Sie weitere Zeichen zulassen und die Listennamen vor der Verwendung in Abfragezeichenfolgen per URL-Codierung umwandeln. Bestimmte Zeichen sind jedoch in Partitions- und Zeilenschlüsseln von Azure-Tabellen nicht erlaubt, und Sie müssen zumindest diese Zeichen ausschließen. Weitere Informationen zu problematischen Zeichen in Partitions- und Zeilenschlüsseln finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell](http://msdn.microsoft.com/en-us/library/windowsazure/dd179338.aspx) und [% Character in PartitionKey or RowKey](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/05/28/partitionkey-or-rowkey-containing-the-percent-character-causes-some-windows-azure-tables-apis-to-fail.aspx) (%-Zeichen in Partitions- und Zeilenschlüsseln, in englischer Sprache).
+    **Hinweis:** Falls Sie ein weniger restriktives Format für die Listennamen verwenden möchten, können Sie weitere Zeichen zulassen und die Listennamen vor der Verwendung in Abfragezeichenfolgen per URL-Codierung umwandeln. Bestimmte Zeichen sind jedoch in Partitions- und Zeilenschlüsseln von Azure-Tabellen nicht erlaubt, und Sie müssen zumindest diese Zeichen ausschließen. Weitere Informationen zu problematischen Zeichen in Partitions- und Zeilenschlüsseln finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell](http://msdn.microsoft.com/de-de/library/windowsazure/dd179338.aspx) und [% Character in PartitionKey or RowKey](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/05/28/partitionkey-or-rowkey-containing-the-percent-character-causes-some-windows-azure-tables-apis-to-fail.aspx) (%-Zeichen in Partitions- und Zeilenschlüsseln, in englischer Sprache).
 
-    Die Klasse `MailingList` definiert einen Standardkonstruktor, der für `RowKey` den fest einprogrammierten Wert "mailinglist", da alle Mailinglisten-Zeilen in der Tabelle diesen Wert als Zeilenschlüssel verwenden. (Eine Erklärung der Tabellenstruktur finden Sie im [ersten Lernprogramm in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).) An dieser Stelle könnte jeder beliebige konstante Wert stehen, vorausgesetzt dieser Wert wird nie als E-Mail-Adresse verwendet (der Zeilenschlüssel für Abonnentenzeilen in dieser Tabelle).
+    Die Klasse `MailingList` definiert einen Standardkonstruktor, der für `RowKey` den fest einprogrammierten Wert "mailinglist", da alle Mailinglisten-Zeilen in der Tabelle diesen Wert als Zeilenschlüssel verwenden. (Eine Erklärung der Tabellenstruktur finden Sie im [ersten Lernprogramm in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).) An dieser Stelle könnte jeder beliebige konstante Wert stehen, vorausgesetzt dieser Wert wird nie als E-Mail-Adresse verwendet (der Zeilenschlüssel für Abonnentenzeilen in dieser Tabelle).
 
     Listenname und Absender-E-Mail-Adresse müssen bei der Erstellung neuer `MailingList`-Entitäten immer angegeben werden. Daher haben diese Werte ein `Required`-Attribut.
 
@@ -383,7 +383,7 @@ Die `MailingList`-Entitätsklasse bildet die Zeilen in der Tabelle `MailingList`
              return subscriber;
          }
 
-    Der einzige Unterschied zwischen den beiden Abfragen ist der Modelltyp, der an die [TableOperation.Retrieve](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storage.table.tableoperation.retrieve.aspx)-Methode übergeben wird. Der Modelltyp gibt das Schema (die Eigenschaften) der Zeile(n) an, die Sie als Ergebnis der Abfrage erwarten. Die Zeilen in einer einzigen Tabelle können unterschiedliche Schemata haben. Normalerweise verwenden Sie beim Auslesen einer Zeile denselben Modelltyp wie bei deren Erstellung.
+    Der einzige Unterschied zwischen den beiden Abfragen ist der Modelltyp, der an die [TableOperation.Retrieve](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.storage.table.tableoperation.retrieve.aspx)-Methode übergeben wird. Der Modelltyp gibt das Schema (die Eigenschaften) der Zeile(n) an, die Sie als Ergebnis der Abfrage erwarten. Die Zeilen in einer einzigen Tabelle können unterschiedliche Schemata haben. Normalerweise verwenden Sie beim Auslesen einer Zeile denselben Modelltyp wie bei deren Erstellung.
 
     Auf der **Index**-Seite werden alle Mailinglistenzeilen angezeigt. Daher gibt die Abfrage in der `Index`-Methode alle `MailingList`-Entitäten zurück, die den Zeilenschlüssel "mailinglist" haben (die restlichen Zeilen in der Tabelle haben E-Mail-Adressen als Zeilenschlüssel und enthalten Informationen zu Abonnenten).
 
@@ -761,7 +761,7 @@ Die `Subscriber`-Entitätsklasse bildet die Zeilen in der Tabelle `MailingList` 
          Verified { get; set; }
              }
 
-    Ebenso wie die `MailingList`-Entitätsklasse liest und schreibt die `Subscriber`-Entitätsklasse Zeilen in der Tabelle `mailinglist`. `Subscriber`-Zeilen verwenden die E-Mail-Adresse anstelle der Konstante "mailinglist" als Zeilenschlüssel. (Eine Erklärung der Tabellenstruktur finden Sie im [ersten Lernprogramm in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).) Aus diesem Grund wird eine `EmailAddress`-Eigenschaft definiert, welche die `RowKey`-Eigenschaft als Unterstützungsfeld verwendet, ebenso wie `ListName` die `PartitionKey`-Eigenschaft als Unterstützungsfeld verwendet. Wie bereits erklärt versetzt Sie dies in die Lage, DataAnnotations-Attribute für Formatierung und Prüfung für die Eigenschaften zu verwenden.
+    Ebenso wie die `MailingList`-Entitätsklasse liest und schreibt die `Subscriber`-Entitätsklasse Zeilen in der Tabelle `mailinglist`. `Subscriber`-Zeilen verwenden die E-Mail-Adresse anstelle der Konstante "mailinglist" als Zeilenschlüssel. (Eine Erklärung der Tabellenstruktur finden Sie im [ersten Lernprogramm in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).) Aus diesem Grund wird eine `EmailAddress`-Eigenschaft definiert, welche die `RowKey`-Eigenschaft als Unterstützungsfeld verwendet, ebenso wie `ListName` die `PartitionKey`-Eigenschaft als Unterstützungsfeld verwendet. Wie bereits erklärt versetzt Sie dies in die Lage, DataAnnotations-Attribute für Formatierung und Prüfung für die Eigenschaften zu verwenden.
 
     Der `SubscriberGUID`-Wert wird bei der Erstellung der `Subscriber`-Entität generiert. Dieser Wert wird in Links zum Abonnieren/Abbestellen verwendet, um sicherzustellen, dass nur autorisierte Personen Abonnements für E-Mail-Adressen hinzufügen und entfernen können. Der Wert für `Verified` ist `Falsch`, wenn eine neue Zeile für einen neuen Abonnenten angelegt wird. Der Wert für `Verified` wird erst auf `Wahr` gesetzt, nachdem der neue Abonnent auf den **Bestätigungs**-Link in der Willkommens-E-Mail klickt. Beim Versand von Nachrichten an Listen erhalten diejenigen Abonnenten, bei denen `Verified` = `Falsch` ist, keine E-Mail.
 
@@ -1040,7 +1040,7 @@ Die `Message`-Entitätsklasse bildet die Zeilen in der Tabelle `Message` ab, die
 
    Der Standardkonstruktor setzt außerdem den Standardstatus Pending (ausstehend) für neue `message`-Zeilen.
 
-   Weitere Informationen zur Struktur der Tabelle `message` finden Sie im [ersten Lernprogramm in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).
+   Weitere Informationen zur Struktur der Tabelle `message` finden Sie im [ersten Lernprogramm in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).
 
 ### Fügen Sie den Message MVC-Controller hinzu
 
@@ -1387,7 +1387,7 @@ AbbestellenErstellen und Testen der Abbestellen-Controller und -Ansichten
 
 Als Nächstes werden Sie die GUI für den Abbestellungsprozess implementieren.
 
-**Hinweis:** In diesem Lernprogramm wird lediglich der Controller für den Abbestellungsprozess implementiert, und nicht für den Abonnierungsprozess. Wie bereits im [ersten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/) erklärt, werden GUI und Dienstmethode für den Abonnierungsprozess erst dann implementiert, wenn geeignete Sicherheitsmaßnahmen für die Dienstmethode vorhanden sind. Bis dahin können Sie E-Mail-Adressen in den **Subscriber**-Administratorseiten zu Ihren Listen hinzufügen.
+**Hinweis:** In diesem Lernprogramm wird lediglich der Controller für den Abbestellungsprozess implementiert, und nicht für den Abonnierungsprozess. Wie bereits im [ersten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/) erklärt, werden GUI und Dienstmethode für den Abonnierungsprozess erst dann implementiert, wenn geeignete Sicherheitsmaßnahmen für die Dienstmethode vorhanden sind. Bis dahin können Sie E-Mail-Adressen in den **Subscriber**-Administratorseiten zu Ihren Listen hinzufügen.
 
 ### Fügen Sie das Unsubscribe-Anzeigemodell zum Ordner Models hinzu
 
@@ -1449,7 +1449,7 @@ Das `UnsubscribeVM`-Anzeigemodell übergibt Daten zwischen dem `Unsubscribe`-Con
               return View(unsubscribeVM);
           }
 
-    Hinweis: Die SubscriberGUID ist nicht in Partitions- oder Zeilenschlüssel enthalten, daher nimmt die Leistung dieser Abfrage mit zunehmender Partitionsgröße (Anzahl der E-Mail-Adressen in einer Mailingliste) ab. Weitere Informationen zu Verbesserung der Skalierbarkeit dieser Abfrage finden Sie im [ersten Lernprogramm in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).
+    Hinweis: Die SubscriberGUID ist nicht in Partitions- oder Zeilenschlüssel enthalten, daher nimmt die Leistung dieser Abfrage mit zunehmender Partitionsgröße (Anzahl der E-Mail-Adressen in einer Mailingliste) ab. Weitere Informationen zu Verbesserung der Skalierbarkeit dieser Abfrage finden Sie im [ersten Lernprogramm in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).
 
     Die `HttpPost Index`-Methode verwendet erneut GUID und Listenname, um Abonnenteninformationen abzurufen, und füllt die Eigenschaften des Anzeigemodells aus. Falls die **Confirm-**-Schaltfläche angeklickt wurde, wird anschließend die Abonnentenzeile aus der Tabelle `MailingList` gelöscht. Falls die **Confirm-**-Schaltfläche angeklickt wurde, wird die `Confirm-`-Eigenschaft auf `Wahr` gesetzt, andernfalls wird die `Confirm-`-Eigenschaft auf `Falsch` gesetzt. Der Wert der `Confirm-`Eigenschaft teilt der Ansicht mit, ob die bestätigte oder abgebrochene Version der **Unsubscribe**-Seite angezeigt werden soll.
 
@@ -1597,7 +1597,7 @@ Abrufen der Werte für die Verbindungszeichenfolge aus dem [Azure-Verwaltungspor
 Nächste SchritteNächste Schritte
 --------------------------------
 
-Wie bereits im [ersten Lernprogramm dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/) beschrieben, wird die Erstellung des Abonnementprozesses in diesem Lernprogramm erst dann behandelt, wenn ein gemeinsamer geheimer Schlüssel zur Sicherung der ASP.NET Web-API-Dienstmethode implementiert ist. Sie können die Dienstmethode jedoch auch mit IP-Einschränkungen schützen. Anschließend können Sie Abonnementfunktion mit den folgenden Dateien aus dem heruntergeladenen Projekt hinzufügen.
+Wie bereits im [ersten Lernprogramm dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/) beschrieben, wird die Erstellung des Abonnementprozesses in diesem Lernprogramm erst dann behandelt, wenn ein gemeinsamer geheimer Schlüssel zur Sicherung der ASP.NET Web-API-Dienstmethode implementiert ist. Sie können die Dienstmethode jedoch auch mit IP-Einschränkungen schützen. Anschließend können Sie Abonnementfunktion mit den folgenden Dateien aus dem heruntergeladenen Projekt hinzufügen.
 
 Für die ASP.NET Web-API-Dienstmethode:
 
@@ -1609,8 +1609,8 @@ Für die Webseite, die Abonnenten angezeigt wird, nachdem Sie auf den **Bestäti
 -   Controllers\\SubscribeController.cs
 -   Views\\Subscribe\\Index.cshtml
 
-Im [nächsten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/) werden Sie die Workerrolle A konfigurieren und programmieren, die für die Planung von E-Mails verantwortlich ist.
+Im [nächsten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/) werden Sie die Workerrolle A konfigurieren und programmieren, die für die Planung von E-Mails verantwortlich ist.
 
-Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
-[Lernprogramm 4](/en-us/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/)
+Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+[Lernprogramm 4](/de-de/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/)
 

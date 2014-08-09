@@ -1,9 +1,9 @@
-<properties linkid="websites-global-web-presence" urlDisplayName="Create a Global Web Presence on Azure Web Sites" pageTitle="Create a Global Web Presence on Azure Web Sites" metaKeywords="" description="This guide provides a technical overview of how to host your organization's (.COM) site on Azure Web Sites. This includes deployment, custom domains, SSL, and monitoring." metaCanonical="http://www.windowsazure.com/en-us/documentation/articles/web-sites-global-web-presence-solution-overview/" services="" documentationCenter="" title="Create a Global Web Presence on Azure Web Sites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="websites-global-web-presence" urlDisplayName="Create a Global Web Presence on Azure Web Sites" pageTitle="Create a Global Web Presence on Azure Web Sites" metaKeywords="" description="This guide provides a technical overview of how to host your organization's (.COM) site on Azure Web Sites. This includes deployment, custom domains, SSL, and monitoring." metaCanonical="http://www.windowsazure.com/de-de/documentation/articles/web-sites-global-web-presence-solution-overview/" services="" documentationCenter="" title="Create a Global Web Presence on Azure Web Sites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
 Erstellen einer globalen Webpräsenz auf Azure-Websites
 ======================================================
 
-Dieser Leitfaden bietet einen technischen Überblick über das Hosten der Organisationswebsite (.com) auf Azure. Ein solches Szenario wird auch als globale Webpräsenz bezeichnet. In diesem Leitfaden steht der Einsatz von [Azure-Websites](/en-us/documentation/services/web-sites/) im Vordergrund, da Websites der einfachste und schnellste Weg sind, um eine Webanwendung auf Azure zu erstellen, zu migrieren, zu skalieren und zu verwalten. Einige Anwendungsanforderungen sind jedoch besser für [Azure Cloud Services](/en-us/documentation/services/cloud-services/) oder [Azure Virtual Machines](/en-us/documentation/services/virtual-machines/) mit IIS geeignet. Diese Anwendungen sind ebenfalls gut zum Hosten von Webanwendungen geeignet. Wenn Sie sich noch in der anfänglichen Planungsphase befinden, lesen Sie das Dokument [Azure-Websites, Cloud Services und VMs: Wann eignet sich welche Komponente?](/en-us/manage/services/web-sites/choose-web-app-service). Wenn nicht die Notwendigkeit besteht, Cloud Services oder Virtual Machines zu verwenden, empfehlen wir zum Hosten der globalen Webpräsenz den Einsatz von Websites. In diesem Dokument erhalten Sie Anweisungen für das Verwenden von Websites in einem solchen Szenario.
+Dieser Leitfaden bietet einen technischen Überblick über das Hosten der Organisationswebsite (.com) auf Azure. Ein solches Szenario wird auch als globale Webpräsenz bezeichnet. In diesem Leitfaden steht der Einsatz von [Azure-Websites](/de-de/documentation/services/web-sites/) im Vordergrund, da Websites der einfachste und schnellste Weg sind, um eine Webanwendung auf Azure zu erstellen, zu migrieren, zu skalieren und zu verwalten. Einige Anwendungsanforderungen sind jedoch besser für [Azure Cloud Services](/de-de/documentation/services/cloud-services/) oder [Azure Virtual Machines](/de-de/documentation/services/virtual-machines/) mit IIS geeignet. Diese Anwendungen sind ebenfalls gut zum Hosten von Webanwendungen geeignet. Wenn Sie sich noch in der anfänglichen Planungsphase befinden, lesen Sie das Dokument [Azure-Websites, Cloud Services und VMs: Wann eignet sich welche Komponente?](/de-de/manage/services/web-sites/choose-web-app-service). Wenn nicht die Notwendigkeit besteht, Cloud Services oder Virtual Machines zu verwenden, empfehlen wir zum Hosten der globalen Webpräsenz den Einsatz von Websites. In diesem Dokument erhalten Sie Anweisungen für das Verwenden von Websites in einem solchen Szenario.
 
 In diesem Leitfaden werden die folgenden Themen behandelt:
 
@@ -15,7 +15,7 @@ In diesem Leitfaden werden die folgenden Themen behandelt:
 
 **Hinweis**
 
-In diesem Leitfaden werden einige der häufigsten Themen und Aufgaben vorgestellt, die mit der öffentlichen .COM-Websiteentwicklung abgestimmt werden. Azure-Websites bieten jedoch noch weitere Funktionen, die Sie in Ihrer speziellen Implementierung nutzen können. Diese Funktionen werden in den Leitfäden zu [digitalen Marketingkampagnen](http://www.windowsazure.com/en-us/manage/services/web-sites/digital-marketing-campaign-solution-overview) und [Geschäftsanwendungen](http://www.windowsazure.com/en-us/manage/services/web-sites/business-application-solution-overview) beschrieben.
+In diesem Leitfaden werden einige der häufigsten Themen und Aufgaben vorgestellt, die mit der öffentlichen .COM-Websiteentwicklung abgestimmt werden. Azure-Websites bieten jedoch noch weitere Funktionen, die Sie in Ihrer speziellen Implementierung nutzen können. Diese Funktionen werden in den Leitfäden zu [digitalen Marketingkampagnen](http://www.windowsazure.com/de-de/manage/services/web-sites/digital-marketing-campaign-solution-overview) und [Geschäftsanwendungen](http://www.windowsazure.com/de-de/manage/services/web-sites/business-application-solution-overview) beschrieben.
 
 Erstellen einer Azure-Website
 -----------------------------
@@ -32,7 +32,7 @@ Mit der Option **From Gallery** können Sie eine neue Website mit einem von vers
 
 Wie bei den meisten Services in Azure müssen Sie auch für die neue Website eine Azure-Region auswählen. Azure verfügt über mehrere Regionen rund auf der ganzen Welt. Sobald Sie Ihre Website in einer Region bereitgestellt haben, kann sie global im Internet aufgerufen werden. Mehrere Regionen bieten jedoch eine größere Flexibilität. Ein naheliegender Vorteil ist die Bereitstellung von Websites in Regionen, die Ihren Benutzern am nächsten sind.
 
-Detaillierte Schritte zum Erstellen einer neuen Website finden Sie unter [Erstellen und Bereitstellen einer Website](/en-us/manage/services/web-sites/how-to-create-websites/).
+Detaillierte Schritte zum Erstellen einer neuen Website finden Sie unter [Erstellen und Bereitstellen einer Website](/de-de/manage/services/web-sites/how-to-create-websites/).
 
 Bereitstellen der Website
 -------------------------
@@ -56,7 +56,7 @@ Einige Quellcodeverwaltungstools und FTP-Clients erfordern für den Zugriff eine
 
 Beachten Sie, dass der Bereitstellungs-/FTP-Benutzername eine Kombination aus Websitename und dem von Ihnen angegebenen Benutzernamen ist. Bei der Website "http://contoso.azurewebsite.net" und dem Benutzernamen "eigenerBenutzer" lautet der Benutzername für die Bereitstellung und das FTP "contoso\\eigenerBenutzer".
 
-Sie können sich auch dazu entschließen, die Website über einen Quellcodeverwaltungsservice wie GitHub oder TFS Online bereitzustellen. Klicken Sie auf die Option **Bereitstellung über Quellcodeverwaltung einrichten**. Befolgen Sie dann die Anweisungen des gewählten Quellcodeverwaltungssystems oder -services. Schrittweise Anweisungen für die Veröffentlichung von einem lokalen Git-Repository finden Sie unter [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](/en-us/develop/net/common-tasks/publishing-with-git/).
+Sie können sich auch dazu entschließen, die Website über einen Quellcodeverwaltungsservice wie GitHub oder TFS Online bereitzustellen. Klicken Sie auf die Option **Bereitstellung über Quellcodeverwaltung einrichten**. Befolgen Sie dann die Anweisungen des gewählten Quellcodeverwaltungssystems oder -services. Schrittweise Anweisungen für die Veröffentlichung von einem lokalen Git-Repository finden Sie unter [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](/de-de/develop/net/common-tasks/publishing-with-git/).
 
 Wenn Sie Ihre Website mit Visual Studio erstellen und verwalten möchten, können Sie Inhalte auch direkt aus Visual Studio heraus veröffentlichen. Eine Methode besteht darin, auf die Option **Veröffentlichungsprofil herunterladen** zu klicken. Auf diese Weise, können Sie eine publishsettings-Datei speichern, die für das Webpublishing in Visual Studio importiert werden kann.
 
@@ -74,7 +74,7 @@ Eine weitere Option, mit der Sie Websites aus dem Azure-Verwaltungsportal entwic
 
 ![Globale Website WebMatrix](./media/web-sites-global-web-presence-solution-overview/GlobalWeb_WebMatrix.png)
 
-Weitere Informationen über diese Option finden Sie unter [Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix](/en-us/develop/net/tutorials/get-started/).
+Weitere Informationen über diese Option finden Sie unter [Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix](/de-de/develop/net/tutorials/get-started/).
 
 Auch wenn diese Schritte Ihnen das zur Hand geben, was Sie zum Bereitstellung Ihrer .COM-Website benötigen, sollten Sie dennoch einen Plan für die Verwaltung des laufenden Zyklus zur Inhaltsveröffentlichung aufstellen. Die Optionen können vom Bereitstellen einer benutzerdefinierten Lösung, über die regelmäßige erneute Bereitstellung für eine sich häufig ändernde Website bis hin zu einem Content Management System (CMS) mit vollem Funktionsumfang reichen. Wenn Sie eine neue Website erstellen, sollten Sie beachten, dass es Optionen in der Galerie gibt, um bestehende CMS-Frameworks zu verwenden, z. B. [Drupal](https://drupal.org/) oder [Umbraco](http://umbraco.com/).
 
@@ -127,7 +127,7 @@ Bevor Sie Ihre benutzerdefinierte Domäne in die Liste setzen, müssen Sie sich 
 </tr>
 </table>
 
-Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/).
+Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/de-de/develop/net/common-tasks/custom-dns-web-site/).
 
 Sichern der Website mit SSL
 ---------------------------
@@ -136,7 +136,7 @@ Wenn Ihre Website schreibgeschützte Informationen enthält, müssen Sie keinen 
 
 Azure-Websites stellen automatisch eine sichere Verbindung zur tatsächlichen Website-URL her. Bei der Website http://contoso.azurewebsites.net können Sie beispielsweise über SSL eine Verbindung herstellen, indem Sie "http" einfach in "https" ändern, d. h. **https**://contoso.azurewebsites.net.
 
-Wenn Sie jedoch einen benutzerdefinierten Domänennamen verwenden, müssen Sie einige Schritte durchführen, um über das Azure-Verwaltungsportal Ihrer Website ein Zertifikat hochzuladen und SSL zu aktivieren. Die folgenden Schritte stellen eine Zusammenfassung dieses Verfahrens dar. Detaillierte Anweisungen finden Sie unter [Configuring an SSL certificate for an Azure web site](/en-us/develop/net/common-tasks/enable-ssl-web-site/) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
+Wenn Sie jedoch einen benutzerdefinierten Domänennamen verwenden, müssen Sie einige Schritte durchführen, um über das Azure-Verwaltungsportal Ihrer Website ein Zertifikat hochzuladen und SSL zu aktivieren. Die folgenden Schritte stellen eine Zusammenfassung dieses Verfahrens dar. Detaillierte Anweisungen finden Sie unter [Configuring an SSL certificate for an Azure web site](/de-de/develop/net/common-tasks/enable-ssl-web-site/) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
 
 Besorgen Sie sich zuerst ein SSL-Zertifikat von einer Zertifizierungsstelle. Wenn Sie Ihre Domäne mit mehreren Unterdomänen sichern möchten (z. B. www.contoso.com und staging.contoso.com), müssen Sie ein Platzhalterzertifikat (\*.contoso.com) anfordern. Diese können etwas teurer sein, daher müssen Sie entscheiden, ob die Flexibilität dieses Zertifikatstyps die Kosten rechtfertigt.
 
@@ -152,7 +152,7 @@ Weisen Sie dann im Abschnitt **SSL-Bindungen** das Zertifikat dem Domänennamen 
 
 ![Globale Website SSL-Bindungen](./media/web-sites-global-web-presence-solution-overview/GlobalWeb_SSL_Bindings.png)
 
-Die Option **IP-basierte SSL** ist der herkömmliche Weg, um die öffentliche dedizierte IP-Adresse dem Domänennamen zuzuweisen. Diese Option funktioniert mit allen Browsern. Die Option **SNI SSL** lässt es zu, dass mehrere Domänen sich die gleiche IP-Adresse teilen und doch unterschiedliche zugewiesene SSL-Zertifikate für jede Domäne haben. SNI SSL funktioniert nicht mit einigen älteren Browsern. (Weitere Informationen zur Kompatibilität finden Sie im [Wikipedia-Eintrag zu SNI SSL](http://en.wikipedia.org/wiki/Server_Name_Indication)). Für jedes SSL-Zertifikat fallen monatliche Gebühren (auf Stundenbasis) an, und die Preise variieren je nach Wahl von "IP-basierte SSL" oder "SNI SSL". Preisinformationen finden Sie in der [Websites-Preisübersicht](/en-us/pricing/details/web-sites/#service-ssl). Weitere Informationen zu diesem Prozess finden Sie unter [Configuring an SSL certificate for an Azure web site](/en-us/develop/net/common-tasks/enable-ssl-web-site/) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
+Die Option **IP-basierte SSL** ist der herkömmliche Weg, um die öffentliche dedizierte IP-Adresse dem Domänennamen zuzuweisen. Diese Option funktioniert mit allen Browsern. Die Option **SNI SSL** lässt es zu, dass mehrere Domänen sich die gleiche IP-Adresse teilen und doch unterschiedliche zugewiesene SSL-Zertifikate für jede Domäne haben. SNI SSL funktioniert nicht mit einigen älteren Browsern. (Weitere Informationen zur Kompatibilität finden Sie im [Wikipedia-Eintrag zu SNI SSL](http://en.wikipedia.org/wiki/Server_Name_Indication)). Für jedes SSL-Zertifikat fallen monatliche Gebühren (auf Stundenbasis) an, und die Preise variieren je nach Wahl von "IP-basierte SSL" oder "SNI SSL". Preisinformationen finden Sie in der [Websites-Preisübersicht](/en-us/pricing/details/web-sites/#service-ssl). Weitere Informationen zu diesem Prozess finden Sie unter [Configuring an SSL certificate for an Azure web site](/de-de/develop/net/common-tasks/enable-ssl-web-site/) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
 
 Überwachen der Website
 ----------------------
@@ -177,7 +177,7 @@ Dank dieser Regel werden Administratoren oder andere Verantwortliche per E-Mail 
 
 ![Globale Website Überwachen 4](./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor4.png)
 
-Wenn Sie feststellen, dass die Website skaliert werden muss, können Sie dies auf der Registerkarte **Skalieren** manuell oder mithilfe der Vorschau "Automatisch skalieren" durchführen. Die Registerkarte "Skalieren" bietet Optionen für eine Skalierung nach oben (größere dedizierte Computer) oder eine horizontale Skalierung (zusätzliche gemeinsam verwendete oder dedizierte Instanzen der gleichen Größe). Die Vorschau "Automatisch skalieren" unterstützt jedoch nur die horizontale Skalierung. Weitere Informationen zu dieser Option finden Sie im Abschnitt "Skalieren mit Benutzernachfrage" im Szenario [Digitale Marketingkampagne](/en-us/manage/services/web-sites/digital-marketing-campaign-solution-overview). Siehe auch [Überwachen von Websites](/en-us/manage/services/web-sites/how-to-monitor-websites/).
+Wenn Sie feststellen, dass die Website skaliert werden muss, können Sie dies auf der Registerkarte **Skalieren** manuell oder mithilfe der Vorschau "Automatisch skalieren" durchführen. Die Registerkarte "Skalieren" bietet Optionen für eine Skalierung nach oben (größere dedizierte Computer) oder eine horizontale Skalierung (zusätzliche gemeinsam verwendete oder dedizierte Instanzen der gleichen Größe). Die Vorschau "Automatisch skalieren" unterstützt jedoch nur die horizontale Skalierung. Weitere Informationen zu dieser Option finden Sie im Abschnitt "Skalieren mit Benutzernachfrage" im Szenario [Digitale Marketingkampagne](/de-de/manage/services/web-sites/digital-marketing-campaign-solution-overview). Siehe auch [Überwachen von Websites](/de-de/manage/services/web-sites/how-to-monitor-websites/).
 
 Zusammenfassung
 ---------------
@@ -191,27 +191,27 @@ Beim Erstellen der .COM-Website Ihrer Organisation bestehen die Standardaufgaben
 </tr>
 <tr data-morhtml="true">
    <td data-morhtml="true" valign="middle"><strong data-morhtml="true">Planen</strong></td>
-   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/en-us/manage/services/web-sites/choose-web-app-service">Azure-Websites, Clouddienste und virtuelle Computer: Wann eignet sich welche Komponente?</a></td>
+   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/de-de/manage/services/web-sites/choose-web-app-service">Azure-Websites, Clouddienste und virtuelle Computer: Wann eignet sich welche Komponente?</a></td>
 </tr>
 <tr data-morhtml="true">
    <td data-morhtml="true" valign="middle"><strong data-morhtml="true">Erstellen</strong></td>
-   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-create-websites/">Erstellen und Bereitstellen einer Website</a></td>
+   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-create-websites/">Erstellen und Bereitstellen einer Website</a></td>
 </tr>
 <tr data-morhtml="true">
    <td data-morhtml="true" valign="middle"><strong data-morhtml="true">Bereitstellen</strong></td>
-   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/en-us/develop/net/common-tasks/publishing-with-git/">Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites</a><br data-morhtml="true" />- <a data-morhtml="true" href="http://www.windowsazure.com/en-us/develop/net/tutorials/get-started/">Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website</a><br data-morhtml="true" />- <a data-morhtml="true" href="http://www.windowsazure.com/en-us/develop/net/tutorials/website-with-webmatrix/">Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix</a></td>
+   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/de-de/develop/net/common-tasks/publishing-with-git/">Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites</a><br data-morhtml="true" />- <a data-morhtml="true" href="http://www.windowsazure.com/de-de/develop/net/tutorials/get-started/">Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website</a><br data-morhtml="true" />- <a data-morhtml="true" href="http://www.windowsazure.com/de-de/develop/net/tutorials/website-with-webmatrix/">Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix</a></td>
 </tr>
 <tr data-morhtml="true">
    <td data-morhtml="true" valign="middle"><strong data-morhtml="true">Benutzerdefinierte Domänen</strong></td>
-   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/en-us/develop/net/common-tasks/custom-dns-web-site/">Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website</a></td>
+   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/de-de/develop/net/common-tasks/custom-dns-web-site/">Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website</a></td>
 </tr>
 <tr data-morhtml="true">
    <td data-morhtml="true" valign="middle"><strong data-morhtml="true">SSL</strong></td>
-   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/en-us/develop/net/common-tasks/enable-ssl-web-site/">Konfigurieren eines SSL-Zertifikats für eine Azure-Website</a></td>
+   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/de-de/develop/net/common-tasks/enable-ssl-web-site/">Konfigurieren eines SSL-Zertifikats für eine Azure-Website</a></td>
 </tr>
 <tr data-morhtml="true">
    <td data-morhtml="true" valign="middle"><strong data-morhtml="true">Überwachen</strong></td>
-   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/">Überwachen von Websites</a></td>
+   <td data-morhtml="true" valign="top">- <a data-morhtml="true" href="http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/">Überwachen von Websites</a></td>
 </tr>
 </table>
 

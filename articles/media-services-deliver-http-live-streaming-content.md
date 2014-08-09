@@ -60,8 +60,8 @@ static ILocator GetStreamingHLSOriginLocator( string targetAssetID)
 
 Weitere Informationen zum Bereitstellen von Medienobjekten finden Sie unter:
 
--   [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET](http://msdn.microsoft.com/en-us/library/jj129575.aspx)
--   [Bereitstellen von Medienobjekten mit der Media Services REST-API](http://msdn.microsoft.com/en-us/library/jj129578.aspx)
+-   [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET](http://msdn.microsoft.com/de-de/library/jj129575.aspx)
+-   [Bereitstellen von Medienobjekten mit der Media Services REST-API](http://msdn.microsoft.com/de-de/library/jj129578.aspx)
 
 Nächste Schritte
 ----------------
@@ -73,6 +73,6 @@ Dies ist das letzte Thema der Reihe zur Verwendung von Azure Media Services. Sie
 -   [Erstellen von Anwendungen mit dem Media Services SDK für .NET](http://go.microsoft.com/fwlink/?linkid=247821)
 -   [Erstellen von Anwendungen mit der Azure Media Services REST-API](http://go.microsoft.com/fwlink/?linkid=252967)
 -   [Media Services-Forum](http://social.msdn.microsoft.com/Forums/en-US/MediaServices/threads)
--   [Überwachen eines Media Services-Kontos](http://www.windowsazure.com/en-us/manage/services/media-services/how-to-monitor-a-media-services-account/)
--   [Verwalten von Inhalten in Media Services](http://www.windowsazure.com/en-us/manage/services/media-services/how-to-manage-content-in-media-services/)
+-   [Überwachen eines Media Services-Kontos](http://www.windowsazure.com/de-de/manage/services/media-services/how-to-monitor-a-media-services-account/)
+-   [Verwalten von Inhalten in Media Services](http://www.windowsazure.com/de-de/manage/services/media-services/how-to-manage-content-in-media-services/)
 

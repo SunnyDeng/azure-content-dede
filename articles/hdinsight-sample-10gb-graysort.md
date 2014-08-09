@@ -19,11 +19,11 @@ Ein- und Ausgabeformate der drei Anwendungen lesen und schreiben die Textdateien
 
 **Voraussetzungen**:
 
--   Sie benötigen ein Azure-Abonnement. Hinweise zur Erstellung eines Kontos finden Sie auf der Seite [Azure kostenlos ausprobieren](http://www.windowsazure.com/en-us/pricing/free-trial/).
+-   Sie benötigen ein Azure-Abonnement. Hinweise zur Erstellung eines Kontos finden Sie auf der Seite [Azure kostenlos ausprobieren](http://www.windowsazure.com/de-de/pricing/free-trial/).
 
--   Sie benötigen ein bereitgestelltes HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/)
+-   Sie benötigen ein bereitgestelltes HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/)
 
--   Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+-   Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 Themen in diesem Artikel
 ------------------------
@@ -46,7 +46,7 @@ Für das Beispiel müssen drei Aufgaben ausgeführt werden, die den einzelnen Ma
 
 **Ausführen des TeraGen-Programms**
 
-1.  Öffnen Sie Azure PowerShell. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+1.  Öffnen Sie Azure PowerShell. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 2.  Legen Sie die zwei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
 
          # Angabe des Azure-Abonnementnamens und des HDInsight-Clusternamens.
@@ -398,11 +398,11 @@ Nächste Schritte
 
 Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hive- und MapReduce-Jobs in Azure HDInsight mit Azure PowerShell finden Sie in den folgenden Themen:
 
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Beispiel: Pi-Schätzung](/en-us/manage/services/hdinsight/howto-run-samples/sample-pi-estimator/)
--   [Beispiel: Wortzählung](/en-us/manage/services/hdinsight/howto-run-samples/sample-wordcount/)
--   [Beispiel: C\# Streaming](/en-us/manage/services/hdinsight/howto-run-samples/sample-csharp-streaming/)
--   [Verwenden von Pig mit HDInsight](/en-us/manage/services/hdinsight/using-pig-with-hdinsight/)
--   [Verwenden von Hive mit HDInsight](/en-us/manage/services/hdinsight/using-hive-with-hdinsight/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Beispiel: Pi-Schätzung](/de-de/manage/services/hdinsight/howto-run-samples/sample-pi-estimator/)
+-   [Beispiel: Wortzählung](/de-de/manage/services/hdinsight/howto-run-samples/sample-wordcount/)
+-   [Beispiel: C\# Streaming](/de-de/manage/services/hdinsight/howto-run-samples/sample-csharp-streaming/)
+-   [Verwenden von Pig mit HDInsight](/de-de/manage/services/hdinsight/using-pig-with-hdinsight/)
+-   [Verwenden von Hive mit HDInsight](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/)
 -   [Dokumentation des Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx)
 

@@ -3,11 +3,11 @@
 Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten
 =========================================================================
 
-[Windows Store C\#](/en-us/manage/services/notification-hubs/breaking-news-dotnet "Windows Store C#")[Windows Phone](/en-us/manage/services/notification-hubs/breaking-news-wp8 "Windows Phone")[iOS](/en-us/manage/services/notification-hubs/breaking-news-ios "iOS")
+[Windows Store C\#](/de-de/manage/services/notification-hubs/breaking-news-dotnet "Windows Store C#")[Windows Phone](/de-de/manage/services/notification-hubs/breaking-news-wp8 "Windows Phone")[iOS](/de-de/manage/services/notification-hubs/breaking-news-ios "iOS")
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Benachrichtigungen zu aktuellen Nachrichten an eine Windows Store-Anwendung senden können. Sie werden anschließend in der Lage sein, sich für Kategorien aktueller Nachrichten zu registrieren, die Sie interessieren, und nur Pushbenachrichtigungen für diese Kategorien zu empfangen. Dieses Szenario ist ein häufiges Muster für viele Anwendungen, bei denen Benachrichtigungen an Benutzergruppen gesendet werden müssen, die zuvor Interesse daran bekundet haben, zum Beispiel RSS-Reader, Apps für Musikliebhaber, etc.
 
-Übertragungsszenarien werden durch das Einfügen von einem oder mehreren *Tags* möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Notification Hubs-Leitfaden](http://msdn.microsoft.com/en-us/library/jj927170.aspx).
+Übertragungsszenarien werden durch das Einfügen von einem oder mehreren *Tags* möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Notification Hubs-Leitfaden](http://msdn.microsoft.com/de-de/library/jj927170.aspx).
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung dieses Szenarios behandelt:
 
@@ -16,7 +16,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 3.  [Senden von Benachrichtigungen von Ihrem Back-End aus](#send)
 4.  [Ausführen der Anwendung und Erzeugen von Benachrichtigungen](#test-app)
 
-Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification Hubs](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet/) erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet/) abgeschlossen haben.
+Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification Hubs](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet/) erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet/) abgeschlossen haben.
 
 Hinzufügen der Kategorieauswahl zur App
 ---------------------------------------
@@ -192,11 +192,11 @@ Nächste Schritte
 
 In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategorie übermittelt werden. Sie können nun eines der folgenden Lernprogramme durchführen, die andere komplexe Notification Hubs-Szenarien zeigen:
 
--   [Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten](/en-us/manage/services/notification-hubs/breaking-news-localized-dotnet/)
+-   [Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten](/de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/)
 
     Hier erfahren Sie, wie Sie die App zu aktuellen Nachrichten für das Versenden von lokalisierten Benachrichtigungen erweitern.
 
--   [Benachrichtigen von Benutzern mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users)
+-   [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users)
 
     Hier erfahren Sie, wie Sie Pushbenachrichtigungen an bestimmte authentifizierte Benutzer versenden. Dies ist eine gute Möglichkeit, um Benachrichtigungen nur an bestimmte Benutzer zu versenden.
 
@@ -217,12 +217,12 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 [19]: ./media/notification-hubs-windows-store-dotnet-send-breaking-news/notification-hub-windows-reg-2.png
 
 <!-- URLs.-->
-[get-started]: /en-us/manage/services/notification-hubs/getting-started-windows-dotnet/
-[Use Notification Hubs to broadcast localized breaking news]: /en-us/manage/services/notification-hubs/breaking-news-localized-dotnet/ 
-[Notify users with Notification Hubs]: /en-us/manage/services/notification-hubs/notify-users
-[Mobile Service]: /en-us/develop/mobile/tutorials/get-started/
-[Notification Hubs Guidance]: http://msdn.microsoft.com/en-us/library/jj927170.aspx
-[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/en-us/library/jj927172.aspx
+[get-started]: /de-de/manage/services/notification-hubs/getting-started-windows-dotnet/
+[Use Notification Hubs to broadcast localized breaking news]: /de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/ 
+[Notify users with Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users
+[Mobile Service]: /de-de/develop/mobile/tutorials/get-started/
+[Notification Hubs Guidance]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
+[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253

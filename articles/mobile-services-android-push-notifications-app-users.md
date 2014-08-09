@@ -3,9 +3,9 @@
 Pushbenachrichtigungen an Benutzer über Mobile Services
 =======================================================
 
-[Windows Phone](/en-us/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/push-notifications-to-users-ios "iOS")[Android](/en-us/develop/mobile/tutorials/push-notifications-to-users-android "Android")
+[Windows Phone](/de-de/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/push-notifications-to-users-ios "iOS")[Android](/de-de/develop/mobile/tutorials/push-notifications-to-users-android "Android")
 
-In diesem Thema wird das [vorherige Lernprogramm zu Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-android) weiter ausgebaut, indem eine neue Tabelle hinzugefügt wird. In dieser werden Registrierungs-URIs für Google Cloud Messaging (GCM) gespeichert, welche dann zum Versenden von Pushbenachrichtigungen an mehrere Benutzer der Android-App verwendet werden können. In diesem Lernprogramm wird eine einzige Aktualisierung jedes Mal Pushbenachrichtigungen an alle registrierten Geräte generieren, wenn etwas in die ToDoList-Tabelle eingefügt wird. Im vorherigen Lernprogramm wurde nur eine Benachrichtigung an das Gerät versendet, das die Einfügung vorgenommen hat.
+In diesem Thema wird das [vorherige Lernprogramm zu Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-android) weiter ausgebaut, indem eine neue Tabelle hinzugefügt wird. In dieser werden Registrierungs-URIs für Google Cloud Messaging (GCM) gespeichert, welche dann zum Versenden von Pushbenachrichtigungen an mehrere Benutzer der Android-App verwendet werden können. In diesem Lernprogramm wird eine einzige Aktualisierung jedes Mal Pushbenachrichtigungen an alle registrierten Geräte generieren, wenn etwas in die ToDoList-Tabelle eingefügt wird. Im vorherigen Lernprogramm wurde nur eine Benachrichtigung an das Gerät versendet, das die Einfügung vorgenommen hat.
 
 Dieses Lernprogramm führt Sie in folgenden Schritten zur Aktualisierung von Pushbenachrichtigungen in Ihrer App:
 
@@ -14,7 +14,7 @@ Dieses Lernprogramm führt Sie in folgenden Schritten zur Aktualisierung von Pus
 3.  [Aktualisieren von Serverskripts](#update-scripts)
 4.  [Verifizieren des Pushbenachrichtigungsverhaltens](#test-app)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf, und führt das vorherige Lernprogramm [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-android) weiter fort. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-android) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf, und führt das vorherige Lernprogramm [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-android) weiter fort. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-android) abschließen.
 
 Erstellen einer neuen Tabelle
 -----------------------------
@@ -222,16 +222,16 @@ Nächste Schritte
 
 Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mit Pushbenachrichtigungen veranschaulichen. Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-android)
+-   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-android)
   <br/>Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-android)
+-   [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-android)
   <br/>Lernen Sie, wie Benutzer Ihrer App mit einem Windows-Konto authentifiziert werden.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/?LinkId=262293)
   <br/>Lernen Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
--   [Verwenden der Android-Clientbibliothek für Mobile Services](/en-us/develop/mobile/how-to-guides/work-with-android-client-library)
+-   [Verwenden der Android-Clientbibliothek für Mobile Services](/de-de/develop/mobile/how-to-guides/work-with-android-client-library)
   <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 

@@ -86,5 +86,5 @@ Sie haben Ihren Computer eingerichtet und eine Visual Studio-Lösung für die Pr
 
 
 
-[1]: http://www.windowsazure.com/en-us/manage/services/media-services/how-to-create-a-media-services-account/
+[1]: http://www.windowsazure.com/de-de/manage/services/media-services/how-to-create-a-media-services-account/
 [2]: http://nuget.org/packages/windowsazure.mediaservices

@@ -8,7 +8,7 @@ Dieser Leitfaden zeigt die ersten Schritte der Entwicklung einer Windows Store-A
 Herunterladen erforderlicher Tools
 ----------------------------------
 
--   [Visual Studio 2012](http://msdn.microsoft.com/en-us/library/windows/apps/br211384) vereinfacht das Erstellen, Debuggen, Lokalisieren, Packen und Bereitstellen von Windows Store-Apps.
+-   [Visual Studio 2012](http://msdn.microsoft.com/de-de/library/windows/apps/br211384) vereinfacht das Erstellen, Debuggen, Lokalisieren, Packen und Bereitstellen von Windows Store-Apps.
 -   [Windows Azure Storage Client Library for Windows Runtime](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/05/windows-azure-storage-client-library-for-windows-runtime.aspx) enthält Typen, die für die Kommunikation mit Azure Storage verwendet werden, gepackt in eine Windows Runtime-Komponente.
 -   [WCF Data Services Tools for Windows Store Apps](http://www.microsoft.com/en-us/download/details.aspx?id=30714) erwartet die Add Service Reference-Nutzung durch clientseitige OData-Unterstützung für Windows Store-Apps in Visual Studio 2012.
 
@@ -32,7 +32,7 @@ An diesem Punkt ist Ihre App bereit zur Kommunikation mit den Blob- und Wartesch
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;
 
-Fügen der Seite dann eine Schaltfläche hinzu. Fügen Sie dem **Click**-Ereignis den folgenden Code hinzu, und ändern Sie die Ereignishandlermethode mit dem [async-Schlüsselwort](http://msdn.microsoft.com/en-US/library/vstudio/hh156513.aspx):
+Fügen der Seite dann eine Schaltfläche hinzu. Fügen Sie dem **Click**-Ereignis den folgenden Code hinzu, und ändern Sie die Ereignishandlermethode mit dem [async-Schlüsselwort](http://msdn.microsoft.com/de-de/library/vstudio/hh156513.aspx):
 
     var credentials = new StorageCredentials(accountName, accountKey);
     var account = new CloudStorageAccount(credentials, true);

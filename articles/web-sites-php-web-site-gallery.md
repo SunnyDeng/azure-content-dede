@@ -10,6 +10,6 @@ Nächste Schritte
 
 Sie haben gesehen, wie Sie eine Website über die Galerie erstellen und bereitstellen. Weitere Informationen zum Erstellen, Konfigurieren, Bereitstellen und Skalieren von Azure-Websites erhalten Sie aus den folgenden Quellen:
 
--   [Erstellen einer PHP-MySQL Azure-Website und Bereitstellen mit Git](/en-us/develop/php/tutorials/website-w-mysql-and-git/) - Erstellen Sie eine PHP-Website von Grund auf, und stellen Sie sie mit Git als Azure-Website bereit.
--   [Weitere PHP-Lernprogramme](/en-us/develop/php/tutorials/) - Erstellen Sie weitere Anwendungstypen mit PHP und Azure.
+-   [Erstellen einer PHP-MySQL Azure-Website und Bereitstellen mit Git](/de-de/develop/php/tutorials/website-w-mysql-and-git/) - Erstellen Sie eine PHP-Website von Grund auf, und stellen Sie sie mit Git als Azure-Website bereit.
+-   [Weitere PHP-Lernprogramme](/de-de/develop/php/tutorials/) - Erstellen Sie weitere Anwendungstypen mit PHP und Azure.
 

@@ -3,11 +3,11 @@
 Verwenden von Skripts zur Autorisierung von Benutzern in Mobile Services
 ========================================================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-dotnet "Windows Store C#")[Windows Store JavaScript](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-js "Windows Store JavaScript")[Windows Phone](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-ios "iOS")[Android](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-android "Android")[HTML](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-html "HTML")[iOS C\#](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios "Xamarin.iOS")[Android C\#](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android "Xamarin.Android")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-dotnet "Windows Store C#")[Windows Store JavaScript](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-js "Windows Store JavaScript")[Windows Phone](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios "iOS")[Android](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-android "Android")[HTML](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-html "HTML")[iOS C\#](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios "Xamarin.iOS")[Android C\#](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android "Xamarin.Android")
 
 In diesem Thema erfahren Sie, wie Sie Serverskripts verwenden, um authentifizierte Benutzer für den Zugriff auf Daten in Azure Mobile Services von einer Xamarin.Android-App zu autorisieren. In diesem Lernprogramm registrieren Sie Skripts mit Mobile Services, um Abfragen basierend auf der Benutzer-ID eines authentifizierten Benutzers zu filtern, sodass jeder Benutzer nur seine eigenen Daten sehen kann.
 
-Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart und baut auf dem vorherigen Lernprogramm [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-xamarin-android) auf. Sie müssen zuerst [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-xamarin-android) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart und baut auf dem vorherigen Lernprogramm [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android) auf. Sie müssen zuerst [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
 Registrieren von Skripts
 ------------------------
@@ -51,7 +51,7 @@ Da die Schnellstart-App Daten liest und einfügt, müssen Sie Skripts für diese
 Testen der App
 --------------
 
-1.  Öffnen Sie in Xamarin Studio oder Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-xamarin-android) verändert haben.
+1.  Öffnen Sie in Xamarin Studio oder Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android) verändert haben.
 
 2.  Klicken Sie auf **Run**, um die App zu starten und sich mit dem von Ihnen gewählten Identitätsanbieter anzumelden.
 
@@ -70,10 +70,10 @@ Nächste Schritte
 
 Dies bildet den Abschluss der Lernprogramme, die die Grundlagen der Arbeit mit Authentifizierung veranschaulichen. Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-xamarin-android)
+-   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android)
     Lernen Sie mehr über das Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-xamarin-android)
+-   [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android)
     Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/p/?LinkId=262293)
@@ -93,9 +93,9 @@ Dies bildet den Abschluss der Lernprogramme, die die Grundlagen der Arbeit mit A
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/p/?LinkId=262293
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-xamarin-android
-[Get started with data]: /en-us/develop/mobile/tutorials/get-started-with-data-xamarin-android
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-xamarin-android
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-xamarin-android
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-android
+[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android
 
 [Azure Management Portal]: https://manage.windowsazure.com/

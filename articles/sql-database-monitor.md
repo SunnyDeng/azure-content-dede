@@ -5,5 +5,5 @@
 
 Ihre gewohnten Überwachungs-Tools und Techniken, die Sie für lokale Server verwenden, wie z. B. Auditing-Anmeldungen, Ablaufverfolgungen und Leistungsindikatoren sind für SQL-Datenbanken nicht verfügbar. In Azure können Sie dynamische Verwaltungsansichten (Data Management Views DMVs) verwenden, um Datenkapazität, Abfrageprobleme und aktuelle Verbindungen zu überwachen.
 
-Weitere Informationen finden Sie unter [Überwachung der SQL-Datenbank mit dynamischen Verwaltungssichten](http://msdn.microsoft.com/en-us/library/windowsazure/ff394114.aspx).
+Weitere Informationen finden Sie unter [Überwachung der SQL-Datenbank mit dynamischen Verwaltungssichten](http://msdn.microsoft.com/de-de/library/windowsazure/ff394114.aspx).
 

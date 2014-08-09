@@ -6,7 +6,7 @@ Azure-Websites unterstützen die fortlaufende Bereitstellung von Quellcodeverwal
 In diesem Artikel erfahren Sie, wie Sie Git verwenden, um direkt von Ihrem lokalen Computer aus auf einer Azure-Website zu veröffentlichen
 (in Azure wird diese Methode der Veröffentlichung **Lokales Git** genannt). Außerdem erfahren Sie, wie Sie die fortlaufende Bereitstellung von Repository-Websites wie BitBucket, CodePlex, DropBox, GitHub oder Mercurial aktivieren. Informationen zum Verwenden von TFS für die fortlaufende Bereitstellung finden Sie unter [Continuous delivery to Azure using Visual Studio Online][1] (Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online, in englischer Sprache).
 
-> [WACOM.NOTE] Viele der in diesem Artikel beschriebenen Git-Befehle werden automatisch ausgeführt, wenn Sie eine Website mit den [Azure-Befehlszeilentools für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/) erstellen.
+> [WACOM.NOTE] Viele der in diesem Artikel beschriebenen Git-Befehle werden automatisch ausgeführt, wenn Sie eine Website mit den [Azure-Befehlszeilentools für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/) erstellen.
 
 Die Aufgabe umfasst die folgenden Schritte:
 
@@ -280,19 +280,19 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 
 * [Verwenden von PowerShell für Azure][10]
 * [Verwenden des Azure-Befehlszeilentools für Mac und
-  Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/)
+  Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/)
 * [Git-Dokumentation][11]
 [git-GitHubDeployed-Updated]: ./media/publishing-with-git/git-GitHubDeployed-Updated.png
 
 
-[1]: http://www.windowsazure.com/en-us/develop/net/common-tasks/publishing-with-tfs/
+[1]: http://www.windowsazure.com/de-de/develop/net/common-tasks/publishing-with-tfs/
 [2]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[3]: http://www.windowsazure.com/en-us/develop/overview/
+[3]: http://www.windowsazure.com/de-de/develop/overview/
 [4]: http://manage.windowsazure.com
 [5]: https://help.github.com/articles/create-a-repo
 [6]: http://codeplex.codeplex.com/wikipage?title=Using%20Git%20with%20CodePlex&referringTitle=Source%20control%20clients&ProjectName=codeplex
 [7]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
 [8]: https://gist.github.com/trey/2722927
 [9]: http://mercurial.selenic.com/wiki/QuickStart
-[10]: http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/
+[10]: http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/
 [11]: http://git-scm.com/documentation

@@ -114,7 +114,7 @@ Vorgehensweise: Erstellen einer Warteschlange
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -144,7 +144,7 @@ Verwenden Sie **QueueRestProxy-\>createMessage**, um Nachrichten zu einer Wartes
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -174,7 +174,7 @@ Sie können einen Blick auf die Nachricht(en) am Anfang einer Warteschlange werf
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -229,7 +229,7 @@ Durch diesen Code wird eine Nachricht in zwei Schritten aus der Warteschlange en
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -272,7 +272,7 @@ Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern, ind
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -320,7 +320,7 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -347,7 +347,7 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -375,7 +375,7 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -386,6 +386,6 @@ Nächste Schritte
 
 Da Sie jetzt die Grundlagen des Azure-Warteschlangendiensts erlernt haben, folgen Sie diesem Link, um zu erfahren, wie Sie komplexere Speicheraufgaben ausführen können.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx)
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx)
 -   Besuchen Sie den Blog des Azure-Speicherteams: <http://blogs.msdn.com/b/windowsazurestorage/>;
 

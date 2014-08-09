@@ -12,7 +12,7 @@ Dieses Lernprogramm führt Sie durch die folgenden Schritte:
 3.  [Bereitstellen geänderter Skriptdateien in Ihrem mobilen Dienst](#deploy-scripts).
 4.  [Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts](#use-npm).
 
-Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus einem der Lernprogramme [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started) bzw. [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-dotnet) erstellt haben.
+Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus einem der Lernprogramme [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started) bzw. [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-dotnet) erstellt haben.
 
 Aktivieren der QuellcodeverwaltungAktivieren der Quellcodeverwaltung für Ihren mobilen Dienst
 ---------------------------------------------------------------------------------------------
@@ -75,7 +75,7 @@ Klonen des RepositorysInstallieren von Git und Erstellen des lokalen Repositorys
 
 7.  Öffnen Sie das Unterverzeichnis .\\service\\table und beachten Sie, dass dieses eine TodoItem.json-Datei enthält. Dabei handelt es sich um eine JSON-Darstellung der Operationsberechtigungen für die Tabelle TodoItem.
 
-    Falls Sie Serverskripts für diese Tabelle definiert haben, sehen Sie außerdem eine oder mehrere Dateien mit dem Namen `TodoItem._<operation>_.js`. Diese Dateien enthalten die Skripts für die jeweilige Tabellenoperation. Zeitplanskripts und benutzerdefinierte API-Skripts werden in separaten Ordnern mit den jeweiligen Namen abgelegt. Weitere Informationen finden Sie unter [Quellcodeverwaltung](http://msdn.microsoft.com/en-us/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643).
+    Falls Sie Serverskripts für diese Tabelle definiert haben, sehen Sie außerdem eine oder mehrere Dateien mit dem Namen `TodoItem._<operation>_.js`. Diese Dateien enthalten die Skripts für die jeweilige Tabellenoperation. Zeitplanskripts und benutzerdefinierte API-Skripts werden in separaten Ordnern mit den jeweiligen Namen abgelegt. Weitere Informationen finden Sie unter [Quellcodeverwaltung](http://msdn.microsoft.com/de-de/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643).
 
 Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Serverskripts vornehmen und diese Änderungen anschließend in Ihren mobilen Dienst befördern.
 
@@ -160,10 +160,10 @@ Nächste Schritte
 
 Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer Quellcodeverwaltung zu speichern. Die folgenden Artikel enthalten weiterführende Informationen zu Serverskripts und benutzerdefinierten APIs:
 
--   [Arbeiten mit Serverskripts in Mobile Services](/en-us/develop/mobile/how-to-guides/work-with-server-scripts)
+-   [Arbeiten mit Serverskripts in Mobile Services](/de-de/develop/mobile/how-to-guides/work-with-server-scripts)
     <br/>Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
 
--   [Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt](/en-us/develop/mobile/tutorials/create-pull-notifications-dotnet)
+-   [Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt](/de-de/develop/mobile/tutorials/create-pull-notifications-dotnet)
     <br/>Beschreibt die Verwendung benutzerdefinierter APIs zur Unterstützung regelmäßiger Benachrichtigungen, mit denen Live Tiles in einer Windows Store-App aktualisiert werden.
 
 
@@ -184,17 +184,17 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 
 <!-- URLs. -->
 [Git website]: http://git-scm.com
-[Source control]: http://msdn.microsoft.com/en-us/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
+[Source control]: http://msdn.microsoft.com/de-de/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started
-[Get started with data]: /en-us/develop/mobile/tutorials/get-started-with-data-dotnet
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-dotnet
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-dotnet
-[Authorize users with scripts]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-dotnet
-[Work with server scripts in Mobile Services]: /en-us/develop/mobile/how-to-guides/work-with-server-scripts
-[JavaScript and HTML]: /en-us/develop/mobile/tutorials/get-started-with-users-js
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started
+[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-dotnet
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-dotnet
+[Authorize users with scripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-dotnet
+[Work with server scripts in Mobile Services]: /de-de/develop/mobile/how-to-guides/work-with-server-scripts
+[JavaScript and HTML]: /de-de/develop/mobile/tutorials/get-started-with-users-js
 [WindowsAzure.com]: http://www.windowsazure.com/
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Define a custom API that supports pull notifications]: /en-us/develop/mobile/tutorials/create-pull-notifications-dotnet
+[Define a custom API that supports pull notifications]: /de-de/develop/mobile/tutorials/create-pull-notifications-dotnet
 [Node.js API Documentation: Modules]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid

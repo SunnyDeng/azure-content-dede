@@ -40,8 +40,8 @@ Die Kachel zeigt die Anzahl Jobs an, die ausgeführt wurden, z. B. zeigt das vo
 Weitere Informationen
 ---------------------
 
--   [Gewusst wie: Verwalten von HDInsight](/en-us/manage/services/hdinsight/howto-administer-hdinsight/)
--   [Gewusst wie: Programmgesteuertes Bereitstellen eines HDInsight-Clusters](/en-us/manage/services/hdinsight/howto-deploy-cluster/)
--   [Gewusst wie: Programmgesteuertes Ausführen von Remote-Jobs für Ihren HDInsight-Cluster](/en-us/manage/services/hdinsight/howto-execute-jobs-programmatically/)
--   [Lernprogramm: Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
+-   [Gewusst wie: Verwalten von HDInsight](/de-de/manage/services/hdinsight/howto-administer-hdinsight/)
+-   [Gewusst wie: Programmgesteuertes Bereitstellen eines HDInsight-Clusters](/de-de/manage/services/hdinsight/howto-deploy-cluster/)
+-   [Gewusst wie: Programmgesteuertes Ausführen von Remote-Jobs für Ihren HDInsight-Cluster](/de-de/manage/services/hdinsight/howto-execute-jobs-programmatically/)
+-   [Lernprogramm: Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
 

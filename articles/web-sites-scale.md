@@ -9,7 +9,7 @@ Das Skalieren von Azure-Websites umfasst zwei zusammenhängende Vorgänge: Erste
 
 Die Modusänderung und die Konfiguration erfolgt ganz einfach über die Registerkarte "Scale" des Verwaltungsportals. Sie können nach Bedarf hoch- oder runterskalieren. Diese Änderungen werden innerhalb von Sekunden angewendet und wirken sich auf alle Websites im Webhosting-Plan aus. Dafür muss weder der Code geändert noch Anwendungen erneut bereitgestellt werden.
 
-Informationen zum Webhosting-Plan finden Sie unter [Webhosting-Pläne für Azure-Websites](http://go.microsoft.com/fwlink/?LinkId=9845584). Informationen zur Preisgestaltung und zu den Funktionen der einzelnen Webhosting-Pläne finden Sie unter den [Preisdetails für Websites](http://www.windowsazure.com/en-us/pricing/details/web-sites/).
+Informationen zum Webhosting-Plan finden Sie unter [Webhosting-Pläne für Azure-Websites](http://go.microsoft.com/fwlink/?LinkId=9845584). Informationen zur Preisgestaltung und zu den Funktionen der einzelnen Webhosting-Pläne finden Sie unter den [Preisdetails für Websites](http://www.windowsazure.com/de-de/pricing/details/web-sites/).
 
 > [WACOM.NOTE] Bevor Sie den Webhosting-Planmodus einer Website von **Free** in **Basic** oder **Standard** ändern, müssen Sie zunächst die für Ihr Website-Abonnement geltenden Kostenbeschränkungen aufheben. Informationen zum Ändern oder Anzeigen der Optionen für Ihr Microsoft Azure-Website-Abonnement finden Sie unter [Microsoft Azure-Abonnements](http://go.microsoft.com/fwlink/?LinkID=235288).
 
@@ -153,36 +153,36 @@ hängen vom Webhosting-Planmodus ab; die folgenden entwicklungsbezogenen Funktio
 
 **Web Endpoint Monitoring**
 
--   Die Web-Endpunktüberwachung ist in den Webhosting-Planmodi Basic und Standard verfügbar. Weitere Informationen zur Web-Endpunktüberwachung finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/en-us/documentation/articles/web-sites-monitor/).
+-   Die Web-Endpunktüberwachung ist in den Webhosting-Planmodi Basic und Standard verfügbar. Weitere Informationen zur Web-Endpunktüberwachung finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-monitor/).
 
--   Ausführliche Informationen zu den anderen Funktionen in den Webhosting-Plänen, einschließlich Preisgestaltung und allgemein interessanten Funktionen (auch für Entwickler) finden Sie unter [Preisdetails für Websites](http://www.windowsazure.com/en-us/pricing/details/web-sites/).
+-   Ausführliche Informationen zu den anderen Funktionen in den Webhosting-Plänen, einschließlich Preisgestaltung und allgemein interessanten Funktionen (auch für Entwickler) finden Sie unter [Preisdetails für Websites](http://www.windowsazure.com/de-de/pricing/details/web-sites/).
 
 ## Nächste Schritte
  - Informationen zu den Best Practices für Azure-Websites, einschließlich Aufbau einer skalierbaren, robusten Architektur, finden Sie unter [Best Practices: Windows Azure-Websites (WAWS)](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
 
 -   Informationen zu Preisen, Support und SLAs erhalten Sie unter den folgenden Links.
 
-    [Preisdetails zur Datenübertragung](http://www.windowsazure.com/en-us/pricing/details/data-transfers/)
+    [Preisdetails zur Datenübertragung](http://www.windowsazure.com/de-de/pricing/details/data-transfers/)
 
-    [Supportpläne für Microsoft Azure](http://www.windowsazure.com/en-us/support/plans/)
+    [Supportpläne für Microsoft Azure](http://www.windowsazure.com/de-de/support/plans/)
 
-    [Vereinbarungen zum Servicelevel (SLAs)](http://www.windowsazure.com/en-us/support/legal/sla/)
+    [Vereinbarungen zum Servicelevel (SLAs)](http://www.windowsazure.com/de-de/support/legal/sla/)
 
-    [Preisdetails für SQL-Datenbanken](http://www.windowsazure.com/en-us/pricing/details/sql-database/)
+    [Preisdetails für SQL-Datenbanken](http://www.windowsazure.com/de-de/pricing/details/sql-database/)
 
     [Größen virtueller Computer und Clouddienste für Windows Azure](http://go.microsoft.com/fwlink/?LinkId=309169)
 
-    [Preisdetails für Websites](http://www.windowsazure.com/en-us/pricing/details/web-sites/)
+    [Preisdetails für Websites](http://www.windowsazure.com/de-de/pricing/details/web-sites/)
 
-    [Preisdetails für Websites - SSL-Verbindungen](http://www.windowsazure.com/en-us/pricing/details/web-sites/#ssl-connections)
+    [Preisdetails für Websites - SSL-Verbindungen](http://www.windowsazure.com/de-de/pricing/details/web-sites/#ssl-connections)
 
 -   Die folgenden Links führen zu Videos über die Skalierung von Azure-Websites:
 
-    [Wann sollte man Azure-Websites skalieren - mit Stefan Schackow](http://www.windowsazure.com/en-us/documentation/videos/azure-web-sites-free-vs-standard-scaling/)
+    [Wann sollte man Azure-Websites skalieren - mit Stefan Schackow](http://www.windowsazure.com/de-de/documentation/videos/azure-web-sites-free-vs-standard-scaling/)
 
-    [Automatisches Skalieren von Azure-Websites, CPU-abhängig oder geplant - mit Stefan Schackow](http://www.windowsazure.com/en-us/documentation/videos/auto-scaling-azure-web-sites/)
+    [Automatisches Skalieren von Azure-Websites, CPU-abhängig oder geplant - mit Stefan Schackow](http://www.windowsazure.com/de-de/documentation/videos/auto-scaling-azure-web-sites/)
 
-    [Wie sollte man Azure-Websites skalieren - mit Stefan Schackow](http://www.windowsazure.com/en-us/documentation/videos/how-azure-web-sites-scale/)
+    [Wie sollte man Azure-Websites skalieren - mit Stefan Schackow](http://www.windowsazure.com/de-de/documentation/videos/how-azure-web-sites-scale/)
 
 <!-- LINKS -->
 [vmsizes]:http://go.microsoft.com/fwlink/?LinkId=309169

@@ -1,9 +1,9 @@
-<properties linkid="script-xplat-intro" urlDisplayName="Azure Cross-Platform Command-Line Interface" pageTitle="The Azure Cross-Platform Command-Line Interface" title="The Azure Cross-Platform Command-Line Interface" metaKeywords="Azure cross-platform command-line interface, Azure command-line, azure command-line, azure cli" description="Install and configure the Azure Cross-Platform Command-Line Interface to manage Azure Services" metaCanonical="http://www.windowsazure.com/en-us/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="larryfr" services="" />
+<properties linkid="script-xplat-intro" urlDisplayName="Azure Cross-Platform Command-Line Interface" pageTitle="The Azure Cross-Platform Command-Line Interface" title="The Azure Cross-Platform Command-Line Interface" metaKeywords="Azure cross-platform command-line interface, Azure command-line, azure command-line, azure cli" description="Install and configure the Azure Cross-Platform Command-Line Interface to manage Azure Services" metaCanonical="http://www.windowsazure.com/de-de/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="larryfr" services="" />
 
 Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle
 ===========================================================================================
 
-[PowerShell](/en-us/manage/install-and-configure-windows-powershell/ "PowerShell")[Plattformübergreifende Befehlszeilenschnittstelle](/en-us/manage/install-and-configure-cli/ "Plattformübergreifende Befehlszeilenschnittstelle")
+[PowerShell](/de-de/manage/install-and-configure-windows-powershell/ "PowerShell")[Plattformübergreifende Befehlszeilenschnittstelle](/de-de/manage/install-and-configure-cli/ "Plattformübergreifende Befehlszeilenschnittstelle")
 
 Die plattformübergreifende Azure-Befehlszeilenschnittstelle stellt eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform bereit. Sie bietet ähnliche Funktionen wie das Azure-Verwaltungsportal, z. B. Funktionen zum Verwalten von Websites, virtuellen Computern, mobilen Diensten, SQL-Datenbank und anderen Diensten, die auf der Azure-Plattform zur Verfügung stehen.
 
@@ -96,13 +96,13 @@ Beachten Sie bezüglich der Auswahl der geeigneten Authentifizierungsmethode Fol
     >
     > 5.  Melden Sie sich schließlich vom Azure-Portal ab und dann unter Verwendung des Organisations-Kontos erneut beim Azure-Portal an. Wenn Sie sich zu diesem Zeitpunkt zum ersten Mal mit diesem Konto anmelden, werden Sie aufgefordert, das Kennwort zu ändern.
     >
-    > Weitere Informationen zu Organisations-Konten in Microsoft Azure finden Sie unter [Anmelden bei Microsoft Azure als Organisation](http://www.windowsazure.com/en-us/documentation/articles/sign-up-organization/).
+    > Weitere Informationen zu Organisations-Konten in Microsoft Azure finden Sie unter [Anmelden bei Microsoft Azure als Organisation](http://www.windowsazure.com/de-de/documentation/articles/sign-up-organization/).
 
 -   Bei der Methode mit der Veröffentlichungseinstellungendatei wird ein Zertifikat installiert, das es Ihnen ermöglicht, solange Verwaltungsaufgaben auszuführen, wie das Abonnement und das Zertifikat gültig sind. Auf diese Weise ist es einfacher, die Automatisierung für Aufgaben mit langer Ausführungszeit einzusetzen. Nach dem Herunterladen und Importieren der Informationen müssen Sie diese nicht erneut angeben. Diese Methode erschwert jedoch die Verwaltung des Zugriffs auf ein Abonnement, da jeder, der Zugriff auf das Zertifikat hat, das Abonnement verwalten kann.
 
-Weitere Informationen zur Authentifizierung und Abonnementverwaltung finden Sie unter ["Was ist der Unterschied zwischen kontobasierter Authentifizierung und zertifikatbasierter Authentifizierung"](http://msdn.microsoft.com/en-us/library/windowsazure/hh531793.aspx#BKMK_AccountVCert).
+Weitere Informationen zur Authentifizierung und Abonnementverwaltung finden Sie unter ["Was ist der Unterschied zwischen kontobasierter Authentifizierung und zertifikatbasierter Authentifizierung"](http://msdn.microsoft.com/de-de/library/windowsazure/hh531793.aspx#BKMK_AccountVCert).
 
-Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A7171371E).
+Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E).
 
 ### Verwenden der Anmeldemethode
 
@@ -253,7 +253,7 @@ Verwenden Sie den folgenden Befehl, um wieder zum Azure-Dienstverwaltungsmodus z
 
 > [WACOM.NOTE] Ressourcen-Manager-Modus und Azure-Dienstverwaltungsmodus schließen sich gegenseitig aus. Das heißt, dass Ressourcen, die in einem Modus erstellt wurden, nicht im anderen Modus verwaltet werden können.
 
-Weitere Informationen zum Arbeiten mit dem Ressourcen-Manager und der plattformübergreifenden Befehlszeilenschnittstelle finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](/en-us/documentation/articles/xplat-cli-azure-resource-manager/).
+Weitere Informationen zum Arbeiten mit dem Ressourcen-Manager und der plattformübergreifenden Befehlszeilenschnittstelle finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](/de-de/documentation/articles/xplat-cli-azure-resource-manager/).
 
 ### Arbeiten mit Diensten im Azure-Dienstverwaltungsmodus
 

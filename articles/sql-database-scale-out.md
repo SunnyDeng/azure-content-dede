@@ -26,12 +26,12 @@ Verwenden von Verbunden
 
 Mit SQL-Datenbankverbunden können Sie eine bessere Skalierbarkeit und eine höhere Leistung erzielen. Eine oder mehrere Tabellen in einer Datenbank werden nach Zeile geteilt und auf mehrere Datenbanken (Verbundmitglieder) aufgeteilt. Diese Art der horizontalen Partitionierung wird häufig als "Sharding" bezeichnet. Dieses Verfahren ist primär in Szenarien hilfreich, in denen Skalierbarkeit und Leistung erzielt oder Kapazität verwaltet werden muss.
 
-Verbunde werden nur in der Business-Edition unterstützt. Weitere Informationen finden Sie unter [Verbunde in der Azure SQL-Datenbank](http://msdn.microsoft.com/en-us/library/windowsazure/hh597452.aspx) und [Lernprogramm für SQL-Datenbankverbunde – DBA](http://msdn.microsoft.com/en-us/library/windowsazure/hh778416.aspx).
+Verbunde werden nur in der Business-Edition unterstützt. Weitere Informationen finden Sie unter [Verbunde in der Azure SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/hh597452.aspx) und [Lernprogramm für SQL-Datenbankverbunde – DBA](http://msdn.microsoft.com/de-de/library/windowsazure/hh778416.aspx).
 
 Erwägen anderer Speicherformen
 ------------------------------
 
 Denken Sie daran, dass Azure mehrere Datenspeicherformen unterstützt, darunter Tabellenspeicher und Blob-Speicher. Sofern Sie keine relationalen Funktionen benötigen, ist Tabellen- oder Blob-Speicher eventuell die wirtschaftlichere Lösung.
 
-[Federations in SQL Database]: http://msdn.microsoft.com/en-us/library/windowsazure/hh597452.aspx
-[SQL Database Federations Tutorial - DBA]: http://msdn.microsoft.com/en-us/library/windowsazure/hh778416.aspx
+[Federations in SQL Database]: http://msdn.microsoft.com/de-de/library/windowsazure/hh597452.aspx
+[SQL Database Federations Tutorial - DBA]: http://msdn.microsoft.com/de-de/library/windowsazure/hh778416.aspx

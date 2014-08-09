@@ -10,12 +10,12 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 * Ein Azure-HDInsight-Cluster. Anweisungen hierzu finden Sie unter
   [Erste Schritte mit
-  HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
+  HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
   oder unter [Bereitstellen von
-  HDInsight-Clustern](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/).
+  HDInsight-Clustern](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/).
 * Installieren und konfigurieren Sie Azure PowerShell. Anweisungen
   hierzu finden Sie unter [Installieren und Konfigurieren von Azure
-  PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+  PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 ## Themen in diesem Artikel
 
@@ -29,11 +29,11 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 ## <a id="mapreduce-powershell" ></a> Übermitteln von MapReduce-Jobs mit PowerShell
 
-Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Weitere Informationen zum Verwenden von PowerShell mit HDInsight finden Sie unter [Verwalten von HDInsight mit PowerShell](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/).
+Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Weitere Informationen zum Verwenden von PowerShell mit HDInsight finden Sie unter [Verwalten von HDInsight mit PowerShell](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/).
 
 Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die riesige Datenmengen verarbeiten. HDInsight-Cluster sind in einer JAR-Datei enthalten, die unter
 *\example\jars\hadoop-examples.jar* gespeichert ist und mehrere
-MapReduce-Beispiele enthält. Diese Datei wurde für HDInsight-Cluster der Version 3.0 in hadoop-mapreduce-examples.jar umbenannt. Eines dieser Beispiele dient zum Zählen von Worthäufigkeiten in Quelldateien. In dieser Sitzung lernen Sie die Verwendung von PowerShell auf einer Arbeitsstation, auf der das Wortzählungsbeispiel ausgeführt wird. Weitere Informationen zum Entwickeln und Ausführen von MapReduce-Jobs finden Sie unter [Verwenden von MapReduce mit HDInsight](/en-us/manage/services/hdinsight/using-mapreduce-with-hdinsight/).
+MapReduce-Beispiele enthält. Diese Datei wurde für HDInsight-Cluster der Version 3.0 in hadoop-mapreduce-examples.jar umbenannt. Eines dieser Beispiele dient zum Zählen von Worthäufigkeiten in Quelldateien. In dieser Sitzung lernen Sie die Verwendung von PowerShell auf einer Arbeitsstation, auf der das Wortzählungsbeispiel ausgeführt wird. Weitere Informationen zum Entwickeln und Ausführen von MapReduce-Jobs finden Sie unter [Verwenden von MapReduce mit HDInsight](/de-de/manage/services/hdinsight/using-mapreduce-with-hdinsight/).
 
 **So führen Sie das MapReduce-Programm zum Zählen von Wörtern mit
 PowerShell aus**
@@ -41,7 +41,7 @@ PowerShell aus**
 1.  Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des
     Konsolenfensters von Azure PowerShell finden Sie unter [Installieren
     und Konfigurieren von Azure
-    PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+    PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 2.  Legen Sie die beiden folgenden Variablen fest, indem Sie die
     folgenden PowerShell-Befehle ausführen:
@@ -63,7 +63,7 @@ PowerShell aus**
     Es gibt zwei Argumente. Das erste ist der Name der Quelldatei, das
     zweite ist der Pfad der Ausgabedatei. Weitere Informationen über das
     Präfix wasb finden Sie unter [Verwenden von Azure-Blob-Speicher mit
-    HDInsight](/en-us/manage/services/hdinsight/howto-blob-store/).
+    HDInsight](/de-de/manage/services/hdinsight/howto-blob-store/).
 
 4.  Führen Sie den folgenden Befehl aus, um den MapReduce-Job
     auszuführen:
@@ -166,7 +166,7 @@ Hive-Job zum Auflisten einiger Daten aus der Hive-Tabelle auszuführen.
 1.  Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des
     Konsolenfensters von Azure PowerShell finden Sie unter [Installieren
     und Konfigurieren von Azure
-    PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+    PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 2.  Legen Sie die ersten beiden Variablen in den folgenden Befehlen
     fest, und führen Sie danach die Befehle aus:
@@ -190,7 +190,7 @@ Hive-Job zum Auflisten einiger Daten aus der Hive-Tabelle auszuführen.
     Mit dem Parameter '-File' können Sie eine HiveQL-Skriptdatei im HDFS
     angeben.
 
-Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight](/en-us/manage/services/hdinsight/using-hive-with-hdinsight/).
+Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/).
 
 ## <a  ></a>Übermitteln von Sqoop-Jobs mit PowerShell
 
@@ -198,7 +198,7 @@ Weitere Informationen finden Sie unter [Verwenden von Sqoop mit HDInsight](../hd
 
 ## <a id="mapreduce-sdk" ></a> Übermitteln von MapReduce-Jobs mit HDInsight .NET SDK
 
-Das HDInsight .NET SDK enthält .NET-Clientbibliotheken, die das Arbeiten mit HDInsight-Clustern in .NET vereinfachen. HDInsight-Cluster sind in einer JAR-Datei enthalten, die unter *\example\jars\hadoop-examples.jar* gespeichert ist und mehrere MapReduce-Beispiele enthält. Eines dieser Beispiele dient zum Zählen von Worthäufigkeiten in Quelldateien. In dieser Sitzung lernen Sie, wie Sie eine .NET-Anwendung erstellen, um das Wortzählungsbeispiel auszuführen. Weitere Informationen zum Entwickeln und Ausführen von MapReduce-Jobs finden Sie unter [Verwenden von MapReduce mit HDInsight](/en-us/manage/services/hdinsight/using-mapreduce-with-hdinsight/).
+Das HDInsight .NET SDK enthält .NET-Clientbibliotheken, die das Arbeiten mit HDInsight-Clustern in .NET vereinfachen. HDInsight-Cluster sind in einer JAR-Datei enthalten, die unter *\example\jars\hadoop-examples.jar* gespeichert ist und mehrere MapReduce-Beispiele enthält. Eines dieser Beispiele dient zum Zählen von Worthäufigkeiten in Quelldateien. In dieser Sitzung lernen Sie, wie Sie eine .NET-Anwendung erstellen, um das Wortzählungsbeispiel auszuführen. Weitere Informationen zum Entwickeln und Ausführen von MapReduce-Jobs finden Sie unter [Verwenden von MapReduce mit HDInsight](/de-de/manage/services/hdinsight/using-mapreduce-with-hdinsight/).
 
 Die folgenden Verfahren werden benötigt, um ein HDInsight-Cluster mit dem SDK bereitzustellen:
 
@@ -337,7 +337,7 @@ veröffentlichen Build des SDK von [NuGet][2] installieren. Die Anweisungen dazu
     Es gibt zwei Argumente. Das erste ist der Name der Quelldatei, das
     zweite ist der Pfad der Ausgabedatei. Weitere Informationen über das
     Präfix wasb finden Sie unter [Verwenden von Azure-Blob-Speicher mit
-    HDInsight](/en-us/manage/services/hdinsight/howto-blob-store/).
+    HDInsight](/de-de/manage/services/hdinsight/howto-blob-store/).
 
 12. Hängen Sie in der Main()-Funktion den folgenden Code an, um ein
     JobSubmissionCertificateCredential-Objekt zu erstellen:
@@ -393,7 +393,7 @@ Während die Anwendung in Visual Studio geöffnet ist, drücken Sie **F5**, um d
 
 HDInsight-Cluster enthalten eine Hive-Beispieltabelle mit dem Namen
 *hivesampletable*. In dieser Sitzung erstellen Sie eine .NET-Anwendung,
-um einen Hive-Job zum Auflisten der im HDInsight-Cluster erstellten Hive-Tabellen auszuführen. Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight](/en-us/manage/services/hdinsight/using-hive-with-hdinsight/).
+um einen Hive-Job zum Auflisten der im HDInsight-Cluster erstellten Hive-Tabellen auszuführen. Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/).
 
 Die folgenden Verfahren werden benötigt, um ein HDInsight-Cluster mit dem SDK bereitzustellen:
 
@@ -567,21 +567,21 @@ Während die Anwendung in Visual Studio geöffnet ist, drücken Sie **F5**, um d
 In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsight-Clusters kennen gelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte mit Azure
-  HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
+  HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
 * [Bereitstellen von
-  HDInsight-Clustern](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/)
+  HDInsight-Clustern](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/)
 * [Verwalten von HDInsight mit
-  PowerShell](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/)
+  PowerShell](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/)
 * [HDInsight-Cmdlet-Referenzdokumentation][5]
 * [Verwenden von Hive mit
-  HDInsight](/en-us/manage/services/hdinsight/using-hive-with-hdinsight/)
+  HDInsight](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/)
 * [Verwenden von Pig mit
-  HDInsight](/en-us/manage/services/hdinsight/using-pig-with-hdinsight/)
+  HDInsight](/de-de/manage/services/hdinsight/using-pig-with-hdinsight/)
 
 
 
 [1]: http://hive.apache.org/
 [2]: http://nuget.codeplex.com/wikipage?title=Getting%20Started
 [3]: http://manage.windowsazure.com/
-[4]: http://msdn.microsoft.com/en-us/library/windowsazure/gg551722.aspx
-[5]: http://msdn.microsoft.com/en-us/library/windowsazure/dn479228.aspx
+[4]: http://msdn.microsoft.com/de-de/library/windowsazure/gg551722.aspx
+[5]: http://msdn.microsoft.com/de-de/library/windowsazure/dn479228.aspx

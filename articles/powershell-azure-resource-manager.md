@@ -16,7 +16,7 @@ Bevor Sie Windows PowerShell mit dem Ressourcen-Manager verwenden können, benö
 
 -   Windows PowerShell, Version 3.0 oder neuer. So finden Sie die Version von Windows PowerShell: Geben Sie `$PSVersionTable` ein und vergewissern Sie sich, dass der Wert von `PSVersion` 3.0 oder höher ist. Informationen zum Installieren einer neueren Version finden Sie unter [Windows Management Framework 3.0](http://www.microsoft.com/en-us/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855).
 
--   Azure PowerShell, Version 0.8.0 oder neuer. Informationen zum Installieren der aktuellen Version und zum Verknüpfen mit dem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Windows Azure PowerShell](http://www.windowsazure.com/en-us/documentation/articles/install-configure-powershell/).
+-   Azure PowerShell, Version 0.8.0 oder neuer. Informationen zum Installieren der aktuellen Version und zum Verknüpfen mit dem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Windows Azure PowerShell](http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell/).
 
 Dieses Lernprogramm richtet sich an Windows PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte, wie zum Beispiel Module, Cmdlets und Sitzungen, verstehen. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](http://technet.microsoft.com/en-us/library/hh857337.aspx).
 
@@ -42,7 +42,7 @@ Info zu Azure PowerShell-Modulen
 
 Ab Version 0.8.0 umfasst die Azure PowerShell-Installation drei Windows PowerShell-Module:
 
--   **Azure**: Enthält die herkömmlichen Cmdlets zum Verwalten einzelner Ressourcen, zum Beispiel Speicherkonten, Websites, Datenbanken, virtuelle Computer und Mediendienste. Weitere Informationen finden Sie unter [Azure Service Management Cmdlets](http://msdn.microsoft.com/en-us/library/jj152841.aspx).
+-   **Azure**: Enthält die herkömmlichen Cmdlets zum Verwalten einzelner Ressourcen, zum Beispiel Speicherkonten, Websites, Datenbanken, virtuelle Computer und Mediendienste. Weitere Informationen finden Sie unter [Azure Service Management Cmdlets](http://msdn.microsoft.com/de-de/library/jj152841.aspx).
 
 -   **AzureResourceManager**: Enthält Cmdlets für das Erstellen, Verwalten und Bereitstellen der Azure-Ressourcen für eine Ressourcengruppe. Weitere Informationen finden Sie unter [Azure Resource Manager Cmdlets](http://go.microsoft.com/fwlink/?LinkID=394765).
 
@@ -490,5 +490,5 @@ So erhalten Sie weitere Informationen zum Verwenden von Windows PowerShell mit d
 -   [Azure-Blog](http://blogs.msdn.com/windowsazure): Erhalten Sie Informationen zu neuen Funktionen in Azure.
 -   [Windows PowerShell-Blog](http://blogs.msdn.com/powershell): Erhalten Sie Informationen zu neuen Funktionen in Windows PowerShell.
 -   ["Hey, Scripting Guy!"- Blog](http://blogs.technet.com/b/heyscriptingguy/): Erhalten Sie praktische Tipps und Tricks aus der Community.
--   [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](http://www.windowsazure.com/en-us/documentation/articles/xplat-cli-azure-resource-manager/): Erhalten Sie Informationen zu alternativen Methoden zum Automatisieren von Ressourcen-Manager-Vorgängen.
+-   [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](http://www.windowsazure.com/de-de/documentation/articles/xplat-cli-azure-resource-manager/): Erhalten Sie Informationen zu alternativen Methoden zum Automatisieren von Ressourcen-Manager-Vorgängen.
 

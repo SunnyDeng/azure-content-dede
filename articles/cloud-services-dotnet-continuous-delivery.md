@@ -565,7 +565,7 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure-Clouddienst-Bereitstellung
 
 [Windows Azure-Bibliotheken][]: http://go.microsoft.com/fwlink/?LinkId=257862 
 [Azure-Tools für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=257862 
-[MSBuild-Befehlszeilenreferenz]: http://msdn.microsoft.com/en-us/library/ms164311(v=VS.90).aspx 
+[MSBuild-Befehlszeilenreferenz]: http://msdn.microsoft.com/de-de/library/ms164311(v=VS.90).aspx 
 [1]: http://msdn.microsoft.com/library/ms164311.aspx 
 [Skalieren des Buildsystems]: http://msdn.microsoft.com/library/dd793166.aspx 
 [Konfigurieren eines Buildcomputers]: http://msdn.microsoft.com/library/ms181712.aspx 

@@ -138,5 +138,5 @@ Weitere Informationen zur Beschaffung dieser Bibliotheken und ihrer Verwendung m
 
 [1]: http://aka.ms/lym3vk
 [2]: http://aka.ms/ll1fm3
-[3]: http://msdn.microsoft.com/en-us/library/windowsazure/jj841071.aspx
+[3]: http://msdn.microsoft.com/de-de/library/windowsazure/jj841071.aspx
 [4]: http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf

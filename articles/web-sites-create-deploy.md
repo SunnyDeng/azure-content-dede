@@ -6,7 +6,7 @@ In diesem Thema wird das Erstellen einer Website aus dem Katalog oder
 über das Verwaltungsportal erläutert.
 
 Informationen zum Bereitstellen Ihres Inhalts für eine von Ihnen erstellte Azure-Website finden Sie im Abschnitt **Bereitstellen** unter
-[Azure-Websites](/en-us/documentation/services/web-sites/).
+[Azure-Websites](/de-de/documentation/services/web-sites/).
 
 ## Inhaltsverzeichnis
 
@@ -125,7 +125,7 @@ Websites werden über das Symbol **Löschen** im Azure-Verwaltungsportal gelösc
 ## <a name="nextsteps"></a>Nächste Schritte
 
 Weitere Informationen finden Sie unter
-[Azure-Websites](/en-us/documentation/services/web-sites/).
+[Azure-Websites](/de-de/documentation/services/web-sites/).
 
 
 

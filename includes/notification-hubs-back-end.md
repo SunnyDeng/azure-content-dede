@@ -8,7 +8,7 @@ Beide Back-Ends senden Benachrichtigungen an Windows Store und iOS-Geräte. Sie 
 <h3><a name="console"></a>Senden von Benachrichtigungen von einer Konsolenanwendung aus in C#</h3>
 
 
-Überspringen Sie die Schritte 1 bis 3, wenn Sie eine Konsolenanwendung erstellt haben, als Sie [Erste Schritte mit Notification Hubs](/en-us/documentation/articles/notification-hubs-windows-store-dotnet-get-started/) abgeschlossen haben.
+Überspringen Sie die Schritte 1 bis 3, wenn Sie eine Konsolenanwendung erstellt haben, als Sie [Erste Schritte mit Notification Hubs](/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/) abgeschlossen haben.
 
 1.  Erstellen Sie in Visual Studio eine neue Visual C#-Konsolenanwendung
     
@@ -91,7 +91,7 @@ Sie können jetzt mit [Ausführen der Anwendung und Erzeugen von Benachrichtigun
 
 Um eine Benachrichtigung mithilfe eines mobilen Dienstes zu senden, gehen Sie folgendermaßen vor:
 
-1.  Schließen Sie das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/#create-new-service) ab, um Ihren mobilen Dienst zu erstellen.
+1.  Schließen Sie das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started/#create-new-service) ab, um Ihren mobilen Dienst zu erstellen.
 
 2.  Melden Sie sich beim [Azure-Verwaltungsportal][3] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihren mobilen Dienst.
 
@@ -143,7 +143,7 @@ Um eine Benachrichtigung mithilfe eines mobilen Dienstes zu senden, gehen Sie fo
 		}
 
 	<div class="dev-callout"><b>Hinweis</b>
-		<p>Dieser Code unterstützt Windows Store-, Windows Phone- und iOS-Clients. Send-Methoden geben einen Fehler zurück, wenn eine Registrierung für eine bestimmte Plattform nicht vorhanden ist. Um dies zu vermeiden, können Sie Vorlagenregistrierungen verwenden, um eine einzelne Benachrichtigung an mehrere Plattformen zusenden. Ein Beispiel finden Sie im Thema zum [Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten](/en-us/manage/services/notification-hubs/breaking-news-localized-dotnet/).</p>
+		<p>Dieser Code unterstützt Windows Store-, Windows Phone- und iOS-Clients. Send-Methoden geben einen Fehler zurück, wenn eine Registrierung für eine bestimmte Plattform nicht vorhanden ist. Um dies zu vermeiden, können Sie Vorlagenregistrierungen verwenden, um eine einzelne Benachrichtigung an mehrere Plattformen zusenden. Ein Beispiel finden Sie im Thema zum [Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten](/de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/).</p>
 	</div>
 
 
@@ -165,16 +165,16 @@ Sie können jetzt mit [Ausführen der Anwendung und Erzeugen von Benachrichtigun
 
 
 
-[1]: http://msdn.microsoft.com/en-us/library/windowsazure/dn223264.aspx
+[1]: http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx
 [2]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 [3]: https://manage.windowsazure.com/
 
 
-[get-started]: /en-us/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[get-started]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 [Use Notification Hubs to send notifications to users]: ../notificationhubs/tutorial-notify-users-mobileservices.md
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
 [Azure Management Portal]: https://manage.windowsazure.com/
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs Guidance]: http://msdn.microsoft.com/en-us/library/jj927170.aspx
-[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/en-us/library/jj927172.aspx
-[Notification Hubs REST interface]: http://msdn.microsoft.com/en-us/library/windowsazure/dn223264.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
+[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx
+[Notification Hubs REST interface]: http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx

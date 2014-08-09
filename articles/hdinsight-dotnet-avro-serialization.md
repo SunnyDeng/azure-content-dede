@@ -34,7 +34,7 @@ Szenarien:
 Serialisierung unter Verwendung von Reflection
 ----------------------------------------------
 
-Im Beispiel unten werden eine Klasse und eine Struktur serialisiert, deserialisiert und schließlich mit den Ausgangsinstanzen verglichen, um die Identität sicherzustellen. Das JSON-Schema für die Typen wird automatisch von der Microsoft Avro-Bibliothek erstellt, wobei die Datenvertragsattribute berücksichtigt werden. Die Microsoft Avro-Bibliothek verwendet [Data Contract Serializer](http://msdn.microsoft.com/en-us/library/ms731072(v=vs.110).aspx) um die serialisierten Felder zu identifizieren.
+Im Beispiel unten werden eine Klasse und eine Struktur serialisiert, deserialisiert und schließlich mit den Ausgangsinstanzen verglichen, um die Identität sicherzustellen. Das JSON-Schema für die Typen wird automatisch von der Microsoft Avro-Bibliothek erstellt, wobei die Datenvertragsattribute berücksichtigt werden. Die Microsoft Avro-Bibliothek verwendet [Data Contract Serializer](http://msdn.microsoft.com/de-de/library/ms731072(v=vs.110).aspx) um die serialisierten Felder zu identifizieren.
 
     namespace Microsoft.Hadoop.Avro.Sample
     {
@@ -768,7 +768,7 @@ Die Daten in der Objektcontainerdatei werden nicht komprimiert (Komprimierungsco
 Serialisierung mithilfe von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec
 ----------------------------------------------------------------------------------------------
 
-Die [Avro-Spezifikation](http://avro.apache.org/docs/current/spec.html#Required+Codecs) ermöglicht die Verwendung optionaler Komprimierungscodecs (zusätzlich zu Null und Deflate). Im folgenden Beispiel wird gezeigt, wie ein benutzerdefinierter Komprmierungscodec für Objektcontainerdateien verwendet wird. Im Beispiel wird kein "grundsätzlich" anderer Codec implementiert (wie z. B. Snappy, der in der Avro-Spezifikation als unterstützter optionaler Codec genannt wird). Vielmehr wird die [Deflate](http://msdn.microsoft.com/en-us/library/system.io.compression.deflatestream(v=vs.110).aspx)-Implementierung von .NET Framework 4.5 (mit bessserem auf zlib beruhenden Komprimierungsalgorithmus) verwendet, den viele Entwickler eventuell für vorteilhaft halten.
+Die [Avro-Spezifikation](http://avro.apache.org/docs/current/spec.html#Required+Codecs) ermöglicht die Verwendung optionaler Komprimierungscodecs (zusätzlich zu Null und Deflate). Im folgenden Beispiel wird gezeigt, wie ein benutzerdefinierter Komprmierungscodec für Objektcontainerdateien verwendet wird. Im Beispiel wird kein "grundsätzlich" anderer Codec implementiert (wie z. B. Snappy, der in der Avro-Spezifikation als unterstützter optionaler Codec genannt wird). Vielmehr wird die [Deflate](http://msdn.microsoft.com/de-de/library/system.io.compression.deflatestream(v=vs.110).aspx)-Implementierung von .NET Framework 4.5 (mit bessserem auf zlib beruhenden Komprimierungsalgorithmus) verwendet, den viele Entwickler eventuell für vorteilhaft halten.
 
     // Zur Kompilierung dieses Codes muss der Parameter Target Framework auf ".NET Framework 4.5" festgelegt werden,
     // damit die gewünschte Implementierung des Deflate-Komprimierungsalgorithmus verwendet wird.

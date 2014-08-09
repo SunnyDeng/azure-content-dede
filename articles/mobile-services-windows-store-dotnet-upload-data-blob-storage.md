@@ -3,7 +3,7 @@
 Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage
 ========================================================================
 
-[Windows Store C\#](/en-us/documentation/articles/mobile-services-windows-store-dotnet-upload-data-blob-storage "Windows Store C#")[Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-upload-data-blob-storage "Windows Phone")
+[Windows Store C\#](/de-de/documentation/articles/mobile-services-windows-store-dotnet-upload-data-blob-storage "Windows Store C#")[Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-upload-data-blob-storage "Windows Phone")
 
 In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden können, Ihre App für das Hochladen und Speichern von durch Benutzer erzeugten Bildern in Azure Storage zu aktivieren. Mobile Services verwendet zur Datenspeicherung eine SQL-Datenbank. BLOB (Binary Large Object)-Daten lassen sich allerdings effizienter im Azure-Blob-Speicherdienst speichern.
 
@@ -19,10 +19,10 @@ In diesem Lernprogramm fügen Sie dem Mobile Services-Schnellstart Funktionen zu
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -   Microsoft Visual Studio 2012 Express für Windows 8 oder eine höhere Version
--   [Azure-Speicherkonto](/en-us/manage/services/storage/how-to-create-a-storage-account)
+-   [Azure-Speicherkonto](/de-de/manage/services/storage/how-to-create-a-storage-account)
 -   Eine Kamera oder ein anderes an Ihren Computer angeschlossenes Bildaufnahmegerät
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-get-started) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-store-get-started) abschließen.
 
 Installieren des Speicherclients für Windows Store-Apps
 -------------------------------------------------------
@@ -51,11 +51,11 @@ Nächste Schritte
 
 Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen Dienstes in den Blob-Dienst sicher hochzuladen, können Sie sich einigen anderen Themen aus dem Bereich Backend-Dienste und Integration zuwenden:
 
--   [Senden von E-Mails in Mobile Services mit SendGrid](/en-us/develop/mobile/tutorials/send-email-with-sendgrid/)
+-   [Senden von E-Mails in Mobile Services mit SendGrid](/de-de/develop/mobile/tutorials/send-email-with-sendgrid/)
 
     Lernen Sie, wie Sie mithilfe des E-Mail-Dienstes SendGrid eine E-Mail-Funktion zu Ihrem mobilen Dienst hinzufügen können. In diesem Thema wird erläutert, wie serverseitige Skripts zum Senden von E-Mails mithilfe von SendGrid hinzugefügt werden.
 
--   [Planen von Backend-Aufträgen in Mobile Services](/en-us/documentation/articles/mobile-services-schedule-recurring-tasks)
+-   [Planen von Backend-Aufträgen in Mobile Services](/de-de/documentation/articles/mobile-services-schedule-recurring-tasks)
 
     Lernen Sie, wie Sie die Auftragsplanerfunktoin in Mobile Services zur Definition von Skriptcode verwenden können, der gemäß einem von Ihnen definierten Zeitplan ausgeführt wird.
 
@@ -63,7 +63,7 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 
     Referenzthemen zur Verwendung von Serverskripts zur Ausführung serverseitiger Tasks sowie zur Integration in andere Azure-Komponenten und externe Ressourcen.
 
--   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/en-us/develop/mobile/how-to-guides/work-with-net-client-library)
+-   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/de-de/develop/mobile/how-to-guides/work-with-net-client-library)
 
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET
 

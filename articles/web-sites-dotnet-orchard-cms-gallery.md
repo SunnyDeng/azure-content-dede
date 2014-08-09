@@ -67,6 +67,6 @@ Starten und Verwalten Ihrer Orchard-Website
 Nächste SchritteNächster Schritt
 --------------------------------
 
--   [Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix](/en-us/develop/net/tutorials/website-with-webmatrix/) – Erfahren Sie, wie Sie eine Azure-Website in WebMatrix bearbeiten.
--   [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](/en-us/develop/net/tutorials/web-site-with-sql-database/) – Erfahren Sie, wie Sie mit Visual Studio eine neue Website erstellen.
+-   [Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix](/de-de/develop/net/tutorials/website-with-webmatrix/) – Erfahren Sie, wie Sie eine Azure-Website in WebMatrix bearbeiten.
+-   [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](/de-de/develop/net/tutorials/web-site-with-sql-database/) – Erfahren Sie, wie Sie mit Visual Studio eine neue Website erstellen.
 

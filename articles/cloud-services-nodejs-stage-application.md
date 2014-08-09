@@ -61,7 +61,7 @@ Sie haben nun eine Bereitstellung in Staging getestet und eine Produktionsbereit
 Zusätzliche Ressourcen
 ----------------------
 
--   [Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/ee517253.aspx)
--   [Übersicht über das Verwalten von Bereitstellungen in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/hh386336.aspx)
+-   [Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/ee517253.aspx)
+-   [Übersicht über das Verwalten von Bereitstellungen in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/hh386336.aspx)
 
 

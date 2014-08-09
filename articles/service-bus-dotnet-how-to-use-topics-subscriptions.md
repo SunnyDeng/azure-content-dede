@@ -280,7 +280,7 @@ Nächste SchritteNächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Themen und -Abonnements vertraut sind, finden Sie unter diesen Links weitere Informationen:
 
--   MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/en-us/library/hh367516.aspx).
--   API-Referenz für [SqlFilter](http://msdn.microsoft.com/en-us/library/microsoft.servicebus.messaging.sqlfilter.aspx).
--   Erstellen einer funktionierenden Anwendung, die Nachrichten an eine und aus einer Service Bus-Warteschlange sendet: [.NET-Lernprogramm zu Service Bus-Brokermessaging](http://msdn.microsoft.com/en-us/library/hh367512.aspx).
+-   MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/de-de/library/hh367516.aspx).
+-   API-Referenz für [SqlFilter](http://msdn.microsoft.com/de-de/library/microsoft.servicebus.messaging.sqlfilter.aspx).
+-   Erstellen einer funktionierenden Anwendung, die Nachrichten an eine und aus einer Service Bus-Warteschlange sendet: [.NET-Lernprogramm zu Service Bus-Brokermessaging](http://msdn.microsoft.com/de-de/library/hh367512.aspx).
 

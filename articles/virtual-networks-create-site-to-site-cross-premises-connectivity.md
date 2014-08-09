@@ -5,7 +5,7 @@ Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen
 
 In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines standortübergreifenden virtuellen Netzwerks geführt. Dabei handelt es sich um eine Standort-zu-Standort-Verbindung. Wenn Sie mit Zertifikaten und einem VPN-Client ein Punkt-zu-Standort-VPN erstellen möchten, finden Sie weitere Informationen unter [Konfigurieren eines Punkt-zu-Standort-VPNs mit dem Assistenten im Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkId=296653).
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Es wurde entwickelt, um Ihnen die erforderlichen Schritte zum Erstellen eines virtuellen Standort-zu-Standort-Netzwerks nahezubringen. Wenn Sie nach Entwurfsszenarien und erweiterten Informationen zu Virtual Network suchen, finden Sie weitere Informationen unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx).
+Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Es wurde entwickelt, um Ihnen die erforderlichen Schritte zum Erstellen eines virtuellen Standort-zu-Standort-Netzwerks nahezubringen. Wenn Sie nach Entwurfsszenarien und erweiterten Informationen zu Virtual Network suchen, finden Sie weitere Informationen unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx).
 
 Nach Abschluss dieses Lernprogramms verfügen Sie über ein virtuelles Netzwerk, in dem Sie Ihre Azure-Dienste und virtuellen Azure-Computer bereitstellen können. Diese können dann direkt mit dem Netzwerk Ihres Unternehmens kommunizieren.
 
@@ -15,7 +15,7 @@ Informationen zum Hinzufügen eines virtuellen Computers und Erweitern Ihres lok
 
 -   [Installieren eines Active Directory-Replikatdomänencontrollers in Azure Virtual Network](http://go.microsoft.com/fwlink/?LinkId=299877)
 
-Richtlinien zum Bereitstellen von AD DS auf Azure Virtual Machines finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/jj156090.aspx).
+Richtlinien zum Bereitstellen von AD DS auf Azure Virtual Machines finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx).
 
 Weitere Konfigurationsverfahren und -einstellungen für Virtual Network finden Sie unter [Konfigurationsaufgaben für virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/?LinkId=296652).
 
@@ -96,7 +96,7 @@ Erstellen eines virtuellen Netzwerks
 
 -   **NAME:** Geben Sie *YourCorpHQ* ein.
 
--   **VPN DEVICE IP ADDRESS:** Geben Sie die öffentliche IP-Adresse des VPN-Geräts ein. Wenn Sie diese Informationen nicht kennen, müssen Sie sie in Erfahrung bringen, bevor Sie mit den nächsten Schritten im Assistenten fortfahren. Beachten Sie, dass sich das VPN-Gerät nicht hinter einer NAT befinden darf. Weitere Informationen zu VPN-Geräten finden Sie unter [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/en-us/library/windowsazure/jj156075.aspx).
+-   **VPN DEVICE IP ADDRESS:** Geben Sie die öffentliche IP-Adresse des VPN-Geräts ein. Wenn Sie diese Informationen nicht kennen, müssen Sie sie in Erfahrung bringen, bevor Sie mit den nächsten Schritten im Assistenten fortfahren. Beachten Sie, dass sich das VPN-Gerät nicht hinter einer NAT befinden darf. Weitere Informationen zu VPN-Geräten finden Sie unter [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/de-de/library/windowsazure/jj156075.aspx).
 
 -   **ADRESSRAUM:** Geben Sie *10.1.0.0/16* ein.
 -   **Adressraum hinzufügen:** Dieses Lernprogramm erfordert keinen zusätzlichen Adressraum.
@@ -237,15 +237,15 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
 Weitere Informationen
 ---------------------
 
--   [Virtuelles Azure-Netzwerk](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx)
+-   [Virtuelles Azure-Netzwerk](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx)
 
 -   [FAQs zu virtuellen Netzwerken](http://msdn.microsoft.com/library/windowsazure/dn133803.aspx)
 
--   [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/en-us/library/windowsazure/jj156097.aspx)
+-   [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/de-de/library/windowsazure/jj156097.aspx)
 
--   [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](http://www.windowsazure.com/en-us/manage/services/networking/add-a-vm-to-a-virtual-network/)
+-   [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](http://www.windowsazure.com/de-de/manage/services/networking/add-a-vm-to-a-virtual-network/)
 
--   [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/en-us/library/windowsazure/jj156075.aspx)
+-   [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/de-de/library/windowsazure/jj156075.aspx)
 
 -   [Übersicht über die Azure-Namensauflösung](http://go.microsoft.com/fwlink/?LinkId=248097)
 

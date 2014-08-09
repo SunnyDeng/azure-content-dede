@@ -32,4 +32,4 @@ Mit der folgenden URL kann eine der Warteschlangen im Diagramm adressiert werden
 
 
 
-[1]: http://msdn.microsoft.com/en-us/library/dn249410.aspx
+[1]: http://msdn.microsoft.com/de-de/library/dn249410.aspx

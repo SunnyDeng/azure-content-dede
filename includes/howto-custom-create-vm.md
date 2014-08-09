@@ -56,7 +56,7 @@ Jeder virtuelle Computer ist mit einem Clouddienst verknüpft, entweder direkt o
 
 [1]: http://go.microsoft.com/fwlink/p/?LinkID=294063
 [2]: http://manage.windowsazure.com
-[3]: http://www.windowsazure.com/en-us/manage/windows/how-to-guides/connect-to-a-cloud-service/
-[4]: http://msdn.microsoft.com/en-us/library/windowsazure/
+[3]: http://www.windowsazure.com/de-de/manage/windows/how-to-guides/connect-to-a-cloud-service/
+[4]: http://msdn.microsoft.com/de-de/library/windowsazure/
 [5]: http://go.microsoft.com/FWLink/p/?LinkID=390493
-[6]: http://www.windowsazure.com/en-us/manage/linux/how-to-guides/setup-endpoints/
+[6]: http://www.windowsazure.com/de-de/manage/linux/how-to-guides/setup-endpoints/

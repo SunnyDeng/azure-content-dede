@@ -91,7 +91,7 @@ Alternativ zur Verwendung einer vorhandenen Telefonnummer für Ihre Anwendungen 
 Erstellen einer Azure-Anwendung
 -------------------------------
 
-Ein Azure-Anwendung, die eine Twilio-fähige Anwendung hostet, unterscheidet sich nicht von anderen Azure-Anwendungen. Sie fügen einfach die Twilio-.NET-Bibliothek hinzu und konfigurieren die Rolle für die Verwendung der Twilio-.NET-Bibliotheken. Informationen zum Erstellen eines ersten Azure-Projekts finden Sie unter [Erstellen eines Azure-Projekts mit Visual Studio](http://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx).
+Ein Azure-Anwendung, die eine Twilio-fähige Anwendung hostet, unterscheidet sich nicht von anderen Azure-Anwendungen. Sie fügen einfach die Twilio-.NET-Bibliothek hinzu und konfigurieren die Rolle für die Verwendung der Twilio-.NET-Bibliotheken. Informationen zum Erstellen eines ersten Azure-Projekts finden Sie unter [Erstellen eines Azure-Projekts mit Visual Studio](http://msdn.microsoft.com/de-de/library/windowsazure/ee405487.aspx).
 
 Konfigurieren einer Anwendung für die Verwendung von Twilio-Bibliotheken
 ------------------------------------------------------------------------
@@ -317,7 +317,7 @@ Weitere Informationen über die Verwendung von Twilio auf Azure mit ASP.NET find
 
 [twilio_rest_making_calls]: http://www.twilio.com/docs/api/rest/making-calls
 
-[vs_project]:http://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx
+[vs_project]:http://msdn.microsoft.com/de-de/library/windowsazure/ee405487.aspx
 [nuget]:http://nuget.org/
 [twilio_github_repo]:https://github.com/twilio/twilio-csharp
 

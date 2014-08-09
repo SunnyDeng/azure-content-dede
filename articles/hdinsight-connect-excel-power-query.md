@@ -9,7 +9,7 @@ Ein Schlüsselmerkmal der Microsoft-Lösung für große Datenmengen ist die Inte
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
--   Ein HDInsight-Cluster. Hinweise zu dessen Konfiguration finden Sie unter [Erste Schritte mit Azure HDInsight](/en-us/documentation/articles/hdinsight-get-started/).
+-   Ein HDInsight-Cluster. Hinweise zu dessen Konfiguration finden Sie unter [Erste Schritte mit Azure HDInsight](/de-de/documentation/articles/hdinsight-get-started/).
 -   Einen Computer, auf dem Windows 8, Windows 7, Windows Server 2012 oder Windows Server 2008 R2 läuft.
 -   Office 2013 Professional Plus, Office 365 Pro Plus, Excel 2013 Standalone oder Office 2010 Professional Plus.
 
@@ -63,12 +63,12 @@ Nächste Schritte
 
 In diesem Artikel haben Sie gelernt, wie Sie Daten aus HDInsight mithilfe von Power Query in Excel verwenden können. Sie können Daten auf ähnliche Weise aus HDInsight nach SQL Azure abrufen. Außerdem können Sie Daten nach HDInsight hochladen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](/en-us/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/)
--   [Upload data to HDInsight](/en-us/documentation/articles/hdinsight-upload-data/) (Hochladen von Daten zu HDInsight, in englischer Sprache).
+-   [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](/de-de/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/)
+-   [Upload data to HDInsight](/de-de/documentation/articles/hdinsight-upload-data/) (Hochladen von Daten zu HDInsight, in englischer Sprache).
 
-[hdinsight-excel-odbc]: /en-us/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
-[hdinsight-get-started]: /en-us/documentation/articles/hdinsight-get-started/
-[hdinsight-upload-data]: /en-us/documentation/articles/hdinsight-upload-data/
+[hdinsight-excel-odbc]: /de-de/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-get-started]: /de-de/documentation/articles/hdinsight-get-started/
+[hdinsight-upload-data]: /de-de/documentation/articles/hdinsight-upload-data/
 
 [image-hdi-powerquery-hdi-source]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.SelectHdiSource.png
 [image-hdi-powerquery-importdata]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportData.png 

@@ -9,7 +9,7 @@ Bis Sie die Überwachung für ein Speicherkonto konfigurieren, werden keine Übe
 
 **Hinweis**
 
-Für die Untersuchung von Überwachungsdaten im Verwaltungsportal fallen zusätzliche Kosten an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/en-us/library/windowsazure/hh360997.aspx).
+Für die Untersuchung von Überwachungsdaten im Verwaltungsportal fallen zusätzliche Kosten an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx).
 
 Inhaltsverzeichnis
 ------------------
@@ -46,7 +46,7 @@ Gewusst wie: Konfigurieren der Überwachung für ein Speicherkonto
 
 Nach ungefähr einer Stunde sollten die ersten Überwachungsdaten im Dashboard und auf der Seite **Überwachen** angezeigt werden.
 
-Metriken werden im Speicherkonto in vier Tabellen namens \$MetricsTransactionsBlob, \$MetricsTransactionsTable, \$MetricsTransactionsQueue und \$MetricsCapacityBlob gespeichert. Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](http://msdn.microsoft.com/en-us/library/windowsazure/hh343258.aspx).
+Metriken werden im Speicherkonto in vier Tabellen namens \$MetricsTransactionsBlob, \$MetricsTransactionsTable, \$MetricsTransactionsQueue und \$MetricsCapacityBlob gespeichert. Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](http://msdn.microsoft.com/de-de/library/windowsazure/hh343258.aspx).
 
 Nachdem Sie die Überwachungsstufen und Aufbewahrungsrichtlinien festgelegt haben, können Sie wählen, welche der verfügbaren Metriken im Verwaltungsportal überwacht und welche in Metrikendiagrammen gezeichnet werden sollen. Auf jeder Überwachungsstufe wird ein Standardsatz Metriken angezeigt. Mit **Metriken hinzufügen** können Sie Metriken zur Metrikenliste hinzufügen oder daraus entfernen.
 
@@ -93,7 +93,7 @@ Gewusst wie: Hinzufügen von Metriken zur Metrikentabelle
 
     **Hinweis**
 
-    Berücksichtigen Sie bei der Auswahl der Metriken die Kosten. Für die Aktualisierung von Überwachungsanzeigen fallen Transaktionsgebühren und Kosten für eingehenden Datenverkehr an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/en-us/library/windowsazure/hh360997.aspx).
+    Berücksichtigen Sie bei der Auswahl der Metriken die Kosten. Für die Aktualisierung von Überwachungsanzeigen fallen Transaktionsgebühren und Kosten für eingehenden Datenverkehr an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx).
 
 3.  Klicken Sie auf **Metriken hinzufügen**.
 
@@ -145,5 +145,5 @@ Für jeden für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschla
 
 4.  Klicken Sie auf **Speichern**.
 
-Die Diagnoseprotokolle werden in einem Blob-Container namens \$logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container \$logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse](http://msdn.microsoft.com/en-us/library/windowsazure/hh343262.aspx).
+Die Diagnoseprotokolle werden in einem Blob-Container namens \$logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container \$logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse](http://msdn.microsoft.com/de-de/library/windowsazure/hh343262.aspx).
 

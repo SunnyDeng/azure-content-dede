@@ -83,9 +83,9 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, brauch
 -   Eclipse IDE für Java EE-Entwickler, Indigo oder höher. Dies kann von http://www.eclipse.org/downloads/ heruntergeladen werden.
 -   Eine Distribution eines Java-basierten Webservers oder Anwendungsservers wie Apache Tomcat, GlassFish, JBoss Application Server oder Jetty.
 -   Ein Azure-Abonnement, das von http://www.microsoft.com/windowsazure/offers/ abgerufen werden kann.
--   Das Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies) - CTP vom August 2012. Weitere Informationen finden Sie unter [Installieren des Azure-Plug-Ins für Eclipse mit Java (von Microsoft Open Technologies)](http://msdn.microsoft.com/en-us/library/windowsazure/hh690946.aspx).
+-   Das Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies) - CTP vom August 2012. Weitere Informationen finden Sie unter [Installieren des Azure-Plug-Ins für Eclipse mit Java (von Microsoft Open Technologies)](http://msdn.microsoft.com/de-de/library/windowsazure/hh690946.aspx).
 -   Ein X.509-Zertifikat, das von Ihrer Anwendung verwendet werden kann. Dieses Zertifikat wird sowohl als öffentliches Zertifikat (.cer) als auch im Format Personal Information Exchange (.PFX) benötigt. (Optionen zur Erstellung dieses Zertifikats finden Sie weiter unten in diesem Lernprogramm).
--   Außerdem sollten Sie mit dem Azure-Serveremulator und den Einsatztechniken vertraut sein, die unter [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/en-us/library/windowsazure/hh690944.aspx) diskutiert werden.
+-   Außerdem sollten Sie mit dem Azure-Serveremulator und den Einsatztechniken vertraut sein, die unter [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/de-de/library/windowsazure/hh690944.aspx) diskutiert werden.
 
 Erstellen eines ACS-Namespace
 -----------------------------
@@ -221,7 +221,7 @@ Bereitstellen auf dem Serveremulator
 
 1.  Klicken Sie im Eclipse-Projektexplorer mit der rechten Maustaste auf **MyACSHelloWorld**, auf **Azure** und anschließend auf **Paket für Azure**.
 2.  Geben Sie unter **Projektname** den Text **MyAzureACSProject** ein, und klicken Sie auf **Weiter**.
-3.  Wählen sie ein JDK und einen Anwendungsserver. (Diese Schritte werden detailliert im Lernprogramm [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/en-us/library/windowsazure/hh690944.aspx) beschrieben).
+3.  Wählen sie ein JDK und einen Anwendungsserver. (Diese Schritte werden detailliert im Lernprogramm [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/de-de/library/windowsazure/hh690944.aspx) beschrieben).
 4.  Klicken Sie auf **Fertig stellen**.
 5.  Klicken Sie auf die Schaltfläche **Run in Azure Emulator**.
 6.  Schließen Sie nach dem Start Ihrer Java-Anwendung im Serveremulator alle Instanzen Ihres Browsers, damit andere laufende Browsersitzungen keine Konflikte mit Ihrem ACS-Anmeldungstest auslösen.
@@ -256,16 +256,16 @@ Für eine Bereitstellung in Azure müssen Sie den RP-Bereich und die Rückgabe-U
 
 13. Klicken Sie auf **Fertig stellen**, um das Dialogfeld **Bibliothek bearbeiten** zu schließen.
 14. Klicken Sie auf **OK**, um das Dialogfeld **Eigenschaften für MyACSHelloWorld** zu schließen.
-15. Klicken Sie in Eclipse auf die Schaltfläche **Publish to Azure Cloud**. Befolgen Sie die Anweisungen ähnlich wie im Abschnitt **Bereitstellen der Anwendung in Azure** des Themas [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/en-us/library/windowsazure/hh690944.aspx).
+15. Klicken Sie in Eclipse auf die Schaltfläche **Publish to Azure Cloud**. Befolgen Sie die Anweisungen ähnlich wie im Abschnitt **Bereitstellen der Anwendung in Azure** des Themas [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/de-de/library/windowsazure/hh690944.aspx).
 
 Schließen Sie nach der Bereitstellung Ihrer Webanwendung alle offenen Browser-Sitzungen, und führen Sie Ihre Webanwendung aus. Sie sollten nun die Aufforderung erhalten, sich mit Ihren Anmeldeinformationen für Windows Live ID anzumelden, und danach zur Rückgabe-URL Ihrer RP-Anwendung weitergeleitet werden.
 
-Wenn Sie Ihre ACS-Hallo-Welt-Anwendung nicht mehr benötigen, denken Sie daran, die Bereitstellung zu löschen (Informationen dazu finden Sie im Thema [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/en-us/library/windowsazure/hh690944.aspx).
+Wenn Sie Ihre ACS-Hallo-Welt-Anwendung nicht mehr benötigen, denken Sie daran, die Bereitstellung zu löschen (Informationen dazu finden Sie im Thema [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/de-de/library/windowsazure/hh690944.aspx).
 
 Nächste Schritte
 ----------------
 
-Informationen zur vom ACS an Ihre Anwendung zurückgegebenen Security Assertion Markup Language (SAML) finden Sie unter[How to view SAML returned by the Azure Access Control Service (Anzeigen der vom Azure Access Control Service zurückgegebenen SAML, in englischer Sprache)](/en-us/develop/java/how-to-guides/view-saml-returned-by-acs/). Wenn Sie die ACS-Funktionalität genauer erforschen und mit anspruchsvolleren Szenarien experimentieren möchten, finden Sie weitere Informationen unter [Access Control Service 2.0](http://go.microsoft.com/fwlink/?LinkID=212360).
+Informationen zur vom ACS an Ihre Anwendung zurückgegebenen Security Assertion Markup Language (SAML) finden Sie unter[How to view SAML returned by the Azure Access Control Service (Anzeigen der vom Azure Access Control Service zurückgegebenen SAML, in englischer Sprache)](/de-de/develop/java/how-to-guides/view-saml-returned-by-acs/). Wenn Sie die ACS-Funktionalität genauer erforschen und mit anspruchsvolleren Szenarien experimentieren möchten, finden Sie weitere Informationen unter [Access Control Service 2.0](http://go.microsoft.com/fwlink/?LinkID=212360).
 
 In diesem Beispiel wurde auch die Option **Embed the certificate in the WAR file** verwendet. Diese Option vereinfacht die Bereitstellung des Zertifikats. Wenn Sie stattdessen Ihr Signaturzertifikat von Ihrer WAR-Datei getrennt halten möchten, gehen Sie folgendermaßen vor:
 
@@ -304,7 +304,7 @@ An diesem Punkt wird Ihr Zertifikat in Ihre Bereitstellung aufgenommen. Bitte be
 [Deploy to Azure]: #deploy_azure
 [Next steps]: #next_steps
 [project web site]: http://wastarterkit4java.codeplex.com/releases/view/61026
-[How to view SAML returned by the Azure Access Control Service]: /en-us/develop/java/how-to-guides/view-saml-returned-by-acs/
+[How to view SAML returned by the Azure Access Control Service]: /de-de/develop/java/how-to-guides/view-saml-returned-by-acs/
 [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
 [Windows Identity Foundation]: http://www.microsoft.com/download/en/details.aspx?id=17331
 [Windows Identity Foundation SDK]: http://www.microsoft.com/download/en/details.aspx?id=4451

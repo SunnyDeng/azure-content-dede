@@ -66,7 +66,7 @@ Führen Sie die folgenden Schritte aus, um eine Azure-Website und eine SQL-Daten
 
     ![Angeben der Website-Details](./media/sql-database-nodejs-use-web-site/website_details_sqlazure.jpg)
 
-4.  Geben Sie im Feld **NAME** einen Namen für Ihre Datenbank ein, wählen Sie die **EDITION** [(WEB oder BUSINESS)](http://msdn.microsoft.com/en-us/library/windowsazure/ee621788.aspx), die **MAXIMALE GRÖSSE** für Ihre Datenbank, die **SORTIERUNG** und schließlich **Neuer SQL Datenbankserver**. Klicken Sie unten im Dialogfeld auf den Pfeil.
+4.  Geben Sie im Feld **NAME** einen Namen für Ihre Datenbank ein, wählen Sie die **EDITION** [(WEB oder BUSINESS)](http://msdn.microsoft.com/de-de/library/windowsazure/ee621788.aspx), die **MAXIMALE GRÖSSE** für Ihre Datenbank, die **SORTIERUNG** und schließlich **Neuer SQL Datenbankserver**. Klicken Sie unten im Dialogfeld auf den Pfeil.
 
     ![Angeben der SQL-Datenbankeinstellungen](./media/sql-database-nodejs-use-web-site/database_settings.jpg)
 
@@ -458,9 +458,9 @@ Nächste Schritte
 
 -   [Node.js-Webanwendung mit MongoDB](../store-mongolab-web-sites-nodejs-store-data-mongodb/)
 
--   [Node.js-Webanwendung mit Tabellenspeicher](/en-us/develop/nodejs/tutorials/web-site-with-storage/)
+-   [Node.js-Webanwendung mit Tabellenspeicher](/de-de/develop/nodejs/tutorials/web-site-with-storage/)
 
 Zusätzliche Ressourcen
 ----------------------
 
-[Azure-Befehlszeilentool für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/)
+[Azure-Befehlszeilentool für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/)

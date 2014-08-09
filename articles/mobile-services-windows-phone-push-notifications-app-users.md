@@ -3,9 +3,9 @@
 Pushbenachrichtigungen an Benutzer über Mobile Services
 =======================================================
 
-[Windows Phone](/en-us/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/push-notifications-to-users-ios "iOS")[Android](/en-us/develop/mobile/tutorials/push-notifications-to-users-android "Android")
+[Windows Phone](/de-de/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/push-notifications-to-users-ios "iOS")[Android](/de-de/develop/mobile/tutorials/push-notifications-to-users-android "Android")
 
-In diesem Thema wird das [vorherige Lernprogramm zu Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-wp8) erweitert, indem eine neue Tabelle hinzugefügt wird, die Channel-URIs des Microsoft-Pushbenachrichtigungsdiensts (MPNS) speichert. Diese Channels können anschließend zum Versenden von Pushbenachrichtigungen an Benutzer der Windows Phone 8-App verwendet werden.
+In diesem Thema wird das [vorherige Lernprogramm zu Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-wp8) erweitert, indem eine neue Tabelle hinzugefügt wird, die Channel-URIs des Microsoft-Pushbenachrichtigungsdiensts (MPNS) speichert. Diese Channels können anschließend zum Versenden von Pushbenachrichtigungen an Benutzer der Windows Phone 8-App verwendet werden.
 
 Dieses Lernprogramm führt Sie in folgenden Schritten zur Aktualisierung von Pushbenachrichtigungen in Ihrer App:
 
@@ -14,7 +14,7 @@ Dieses Lernprogramm führt Sie in folgenden Schritten zur Aktualisierung von Pus
 3.  [Aktualisieren von Serverskripts](#update-scripts)
 4.  [Verifizieren des Pushbenachrichtigungsverhaltens](#test-app)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf, und führt das vorherige Lernprogramm [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-wp8) weiter fort. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-wp8) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf, und führt das vorherige Lernprogramm [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-wp8) weiter fort. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-wp8) abschließen.
 
 Erstellen einer neuen Tabelle
 -----------------------------
@@ -40,7 +40,7 @@ Als Nächstes modifizieren Sie die Pushbenachrichtigungs-App zur Speicherung von
 Aktualisieren Ihrer App
 -----------------------
 
-1.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt aus dem Lernprogramm [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-wp8), öffnen Sie die Datei "MainPage.xaml.cs", und entfernen Sie die Eigenschaft **Channel** aus der Klasse **TodoItem**. Dies sollte folgendermaßen aussehen:
+1.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt aus dem Lernprogramm [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-wp8), öffnen Sie die Datei "MainPage.xaml.cs", und entfernen Sie die Eigenschaft **Channel** aus der Klasse **TodoItem**. Dies sollte folgendermaßen aussehen:
 
          public class TodoItem
          {
@@ -186,10 +186,10 @@ Nächste Schritte
 
 Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mit Pushbenachrichtigungen veranschaulichen. Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-wp8)
+-   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-wp8)
     Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8)
+-   [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8)
     Lernen Sie, wie Benutzer Ihrer App mit einem Windows-Konto authentifiziert werden.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/p/?LinkId=262293)
@@ -218,9 +218,9 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/p/?LinkId=262293
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-wp8
-[Get started with data]: /en-us/develop/mobile/tutorials/get-started-with-data-wp8
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-wp8
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-wp8
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-wp8
+[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-wp8
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-wp8
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-wp8
 
 [Azure Management Portal]: https://manage.windowsazure.com/

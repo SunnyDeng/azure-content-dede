@@ -3,7 +3,7 @@
 Verwenden von Service Bus-Themen/-Abonnements
 =============================================
 
-In diesem Leitfaden erfahren Sie, wie Sie Service Bus-Themen und -Abonnements verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java](http://www.windowsazure.com/en-us/develop/java/). Die behandelten Szenarien umfassen das **Erstellen von Themen und Abonnements**, Erstellen von **Abonnementfiltern**, **Senden von Nachrichten an ein Thema**, das **Empfangen von Nachrichten von einem Abonnement** und das **Löschen von Themen und Abonnements**.
+In diesem Leitfaden erfahren Sie, wie Sie Service Bus-Themen und -Abonnements verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java](http://www.windowsazure.com/de-de/develop/java/). Die behandelten Szenarien umfassen das **Erstellen von Themen und Abonnements**, Erstellen von **Abonnementfiltern**, **Senden von Nachrichten an ein Thema**, das **Empfangen von Nachrichten von einem Abonnement** und das **Löschen von Themen und Abonnements**.
 
 Inhaltsverzeichnis
 ------------------

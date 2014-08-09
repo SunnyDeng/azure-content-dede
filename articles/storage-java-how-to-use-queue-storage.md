@@ -3,7 +3,7 @@
 Verwenden des Tabellenspeicherdiensts in Java
 =============================================
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java](http://www.windowsazure.com/en-us/develop/java/). Zu den Szenarien gehören das Einfügen, Einsehen, Abrufen und Löschen von Warteschlangennachrichten sowie das Erstellen und Löschen von Warteschlangen. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java](http://www.windowsazure.com/de-de/develop/java/). Zu den Szenarien gehören das Einfügen, Einsehen, Abrufen und Löschen von Warteschlangennachrichten sowie das Erstellen und Löschen von Warteschlangen. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
 
 Inhaltsverzeichnis
 ------------------
@@ -34,7 +34,7 @@ Erstellen eines Azure-Speicherkontos
 Erstellen einer Java-Anwendung
 ------------------------------
 
-In diesem Leitfaden werden Sie Speicherfunktionen verwenden, die lokal in einer Java-Anwendung oder in Code ausgeführt werden können, der in einer Webrolle oder in einer Workerrolle in Azure ausgeführt wird. Es wird vorausgesetzt, dass Sie das Java Development Kit (JDK) heruntergeladen und installiert und die Anweisungen auf der [Downloadseite des Azure-SDK für Java](http://www.windowsazure.com/en-us/develop/java/) ausgeführt haben, um die Azure-Bibliotheken für Java und das Azure-SDK zu installieren, und dass Sie ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellt haben. Sie können beliebige Entwicklungstools zum Erstellen Ihrer Anwendung verwenden, einschließlich Editor. Sie müssen lediglich wissen, wie Sie ein Java-Projekt kompilieren und auf die Azure-Bibliotheken für Java verweisen.
+In diesem Leitfaden werden Sie Speicherfunktionen verwenden, die lokal in einer Java-Anwendung oder in Code ausgeführt werden können, der in einer Webrolle oder in einer Workerrolle in Azure ausgeführt wird. Es wird vorausgesetzt, dass Sie das Java Development Kit (JDK) heruntergeladen und installiert und die Anweisungen auf der [Downloadseite des Azure-SDK für Java](http://www.windowsazure.com/de-de/develop/java/) ausgeführt haben, um die Azure-Bibliotheken für Java und das Azure-SDK zu installieren, und dass Sie ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellt haben. Sie können beliebige Entwicklungstools zum Erstellen Ihrer Anwendung verwenden, einschließlich Editor. Sie müssen lediglich wissen, wie Sie ein Java-Projekt kompilieren und auf die Azure-Bibliotheken für Java verweisen.
 
 Konfigurieren Ihrer Anwendung für den Zugriff auf den Warteschlangenspeicher
 ----------------------------------------------------------------------------

@@ -14,11 +14,11 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 
 3.  Wählen Sie aus der Liste unten einen unterstützten Identitätsanbieter aus, und folgen Sie den unten aufgeführten Schritten, um Ihre App bei diesem Anbieter zu registrieren:
 
- - [Microsoft Account](/en-us/develop/mobile/how-to-guides/register-for-microsoft-authentication/)
- - [Facebook-Login](/en-us/develop/mobile/how-to-guides/register-for-facebook-authentication/)
- - [Twitter-Login](/en-us/develop/mobile/how-to-guides/register-for-twitter-authentication/)
- - [Google-Login](/en-us/develop/mobile/how-to-guides/register-for-google-authentication/)
- - [Azure Active Directory](/en-us/documentation/articles/mobile-services-how-to-register-active-directory-authentication/)
+ - [Microsoft Account](/de-de/develop/mobile/how-to-guides/register-for-microsoft-authentication/)
+ - [Facebook-Login](/de-de/develop/mobile/how-to-guides/register-for-facebook-authentication/)
+ - [Twitter-Login](/de-de/develop/mobile/how-to-guides/register-for-twitter-authentication/)
+ - [Google-Login](/de-de/develop/mobile/how-to-guides/register-for-google-authentication/)
+ - [Azure Active Directory](/de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/)
 
     Notieren Sie die Clientidentität und die geheimen Werte, die vom Anbieter generiert wurden.
 

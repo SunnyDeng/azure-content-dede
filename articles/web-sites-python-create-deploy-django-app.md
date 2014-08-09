@@ -9,7 +9,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung, die mit dem Django 
 
 [WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-In diesem Lernprogramm wird Python 2.7 und Django 1.4 verwendet. Sie können diese entweder selbst abrufen oder schnell und einfach über den Windows-Installationslink unter <http://www.windowsazure.com/en-us/develop/python/> installieren.
+In diesem Lernprogramm wird Python 2.7 und Django 1.4 verwendet. Sie können diese entweder selbst abrufen oder schnell und einfach über den Windows-Installationslink unter <http://www.windowsazure.com/de-de/develop/python/> installieren.
 
 **Hinweis**: Auf Azure-Websites sind jetzt Python 2.7 und der wfastcgi-Handler vorinstalliert. Web-Frameworks wie Django sind jedoch nicht enthalten. Sie können auch einen anderen Python-Übersetzer verwenden. Dazu müssen Sie ihn nur ins Git-Repository übernehmen und die Website zur Verwendung dieses Übersetzers statt des vorinstallierten Python 2.7-Übersetzers konfigurieren.
 
@@ -123,7 +123,7 @@ Nächste Schritte
 
 Sie können nun die Django-Anwendung mit den bereits verwendeten Tools weiterentwickeln. Falls Sie [Python-Tools für Visual Studio](http://pytools.codeplex.com/) für die Entwicklung verwenden, sollten Sie [VisualGit](http://code.google.com/p/visualgit/) installieren, um die Integration der Quellcodeverwaltung in Visual Studio zu ermöglichen.
 
-Die Anwendung kann auch Abhängigkeiten über Python und Django hinaus aufweisen. Wenn Sie Python über das Installationsprogramm unter <http://www.windowsazure.com/en-us/develop/python/> installiert haben, ist PIP bereits installiert und Sie können damit schnell neue Abhängigkeiten hinzufügen. Um beispielsweise das Natural Language Toolkit und alle seine Abhängigkeiten zu installieren, geben Sie Folgendes ein:
+Die Anwendung kann auch Abhängigkeiten über Python und Django hinaus aufweisen. Wenn Sie Python über das Installationsprogramm unter <http://www.windowsazure.com/de-de/develop/python/> installiert haben, ist PIP bereits installiert und Sie können damit schnell neue Abhängigkeiten hinzufügen. Um beispielsweise das Natural Language Toolkit und alle seine Abhängigkeiten zu installieren, geben Sie Folgendes ein:
 
     pip install nltk
 

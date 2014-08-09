@@ -17,7 +17,7 @@ Dieses Lernprogramm enthält vier Lektionen:
 Voraussetzungen
 ===============
 
--   Windows 8 32 Bit oder 64 Bit. Sie erhalten die [Windows 8 Enterprise-Evaluierungsversion](http://msdn.microsoft.com/en-us/evalcenter/jj554510.aspx) bei MSDN.
+-   Windows 8 32 Bit oder 64 Bit. Sie erhalten die [Windows 8 Enterprise-Evaluierungsversion](http://msdn.microsoft.com/de-de/evalcenter/jj554510.aspx) bei MSDN.
 -   Visual Studio 2012 oder Visual Studio Express 2012 für Windows 8 installiert unter Windows 8. Die Testversion erhalten Sie [hier](http://www.microsoft.com/visualstudio/11/en-us/downloads).
 -   [Microsoft Smooth Streaming Client SDK for Windows 8](http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Homehttp://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home).
 
@@ -30,7 +30,7 @@ In dieser Lektion erstellen Sie eine Windows Store-Anwendung mit einem MediaElem
 
 ![Beispiel für Smooth Streaming Windows Store-Anwendung](./media/media-services-build-smooth-streaming-apps/SSClientWin8-1.png)
 
-Weitere Informationen zum Entwickeln von Windows Store-Anwendungen finden Sie unter [Entwickeln von Apps für Windows 8](http://msdn.microsoft.com/en-us/windows/apps/br229512.aspx). Diese Lektion enthält die folgenden Prozeduren:
+Weitere Informationen zum Entwickeln von Windows Store-Anwendungen finden Sie unter [Entwickeln von Apps für Windows 8](http://msdn.microsoft.com/de-de/windows/apps/br229512.aspx). Diese Lektion enthält die folgenden Prozeduren:
 
 1.  Erstellen eines Windows Store-Projekts
 2.  Entwerfen der Benutzeroberfläche (XAML)

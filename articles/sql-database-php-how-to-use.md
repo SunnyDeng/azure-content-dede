@@ -23,7 +23,7 @@ Inhaltsverzeichnis
 Konzepte
 --------
 
-Da Azure SQL-Datenbank auf SQL Server-Technologien basiert, erfolgt der Zugriff auf SQL-Datenbank aus PHP ganz ähnlich wie der Zugriff auf SQL Server aus PHP. Sie können eine Anwendung lokal (mit SQL Server) entwickeln und dann eine Verbindung zu SQL-Datenbank herstellen, indem Sie lediglich die Verbindungszeichenfolge ändern. Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](http://msdn.microsoft.com/en-us/library/windowsazure/ff394102.aspx).
+Da Azure SQL-Datenbank auf SQL Server-Technologien basiert, erfolgt der Zugriff auf SQL-Datenbank aus PHP ganz ähnlich wie der Zugriff auf SQL Server aus PHP. Sie können eine Anwendung lokal (mit SQL Server) entwickeln und dann eine Verbindung zu SQL-Datenbank herstellen, indem Sie lediglich die Verbindungszeichenfolge ändern. Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](http://msdn.microsoft.com/de-de/library/windowsazure/ff394102.aspx).
 
 Der Zugriff auf SQL-Datenbank aus PHP sollte nach Möglichkeit unter Verwendung der [Microsoft-Treiber für PHP für SQL Server](http://www.microsoft.com/download/en/details.aspx?id=20098) erfolgen. (In den Beispielen dieses Artikels werden diese Treiber verwendet.) Die Microsoft-Treiber für PHP für SQL Server funktionieren nur unter Windows.
 
@@ -113,16 +113,16 @@ In den folgenden Beispielen wird gezeigt, wie Sie mit den Erweiterungen **SQLSRV
 Nächste Schritte
 ----------------
 
-Wie bereits erwähnt, ähnelt die Verwendung von SQL-Datenbank sehr der Verwendung von SQL Server. Nachdem Sie eine Verbindung zu einer SQL-Datenbank hergestellt haben (wie oben beschrieben), können Sie die **SQLSRV**- oder **PDO\_SQLSRV**-API zum Einfügen, Abrufen, Aktualisieren und Löschen von Daten verwenden. Informationen zur **SQLSRV**- und **PDO\_SQLSRV**-API finden Sie in der[Dokumentation für Microsoft-Treiber für PHP für SQL Server](http://msdn.microsoft.com/en-us/library/dd638075(SQL.10).aspx). Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](http://msdn.microsoft.com/en-us/library/windowsazure/ff394102.aspx).
+Wie bereits erwähnt, ähnelt die Verwendung von SQL-Datenbank sehr der Verwendung von SQL Server. Nachdem Sie eine Verbindung zu einer SQL-Datenbank hergestellt haben (wie oben beschrieben), können Sie die **SQLSRV**- oder **PDO\_SQLSRV**-API zum Einfügen, Abrufen, Aktualisieren und Löschen von Daten verwenden. Informationen zur **SQLSRV**- und **PDO\_SQLSRV**-API finden Sie in der[Dokumentation für Microsoft-Treiber für PHP für SQL Server](http://msdn.microsoft.com/de-de/library/dd638075(SQL.10).aspx). Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](http://msdn.microsoft.com/de-de/library/windowsazure/ff394102.aspx).
 
 Ein Beispiel, das die Verwendung von SQL-Datenbank mit PHP auf Azure zeigt, ist auf https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/tasklist-mysql verfügbar.
 
 [download-drivers]: http://www.microsoft.com/download/en/details.aspx?id=20098
-[limitations]: http://msdn.microsoft.com/en-us/library/windowsazure/ff394102.aspx
+[limitations]: http://msdn.microsoft.com/de-de/library/windowsazure/ff394102.aspx
 [odbc-php]: http://www.php.net/odbc
 [manual-config]: http://php.net/manual/en/install.windows.iis7.php
 [install-drivers]: http://php.net/manual/en/sqlsrv.requirements.php
-[driver-docs]: http://msdn.microsoft.com/en-us/library/dd638075(SQL.10).aspx
+[driver-docs]: http://msdn.microsoft.com/de-de/library/dd638075(SQL.10).aspx
 [access-php-odbc]: http://social.technet.microsoft.com/wiki/contents/articles/accessing-sql-azure-from-php.aspx
 [install-sql-express]: http://www.microsoft.com/en-us/download/details.aspx?id=29062
 [preview-portal]: https://manage.windowsazure.com

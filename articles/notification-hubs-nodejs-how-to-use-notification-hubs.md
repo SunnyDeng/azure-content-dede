@@ -17,12 +17,12 @@ Inhaltsverzeichnis
 Was sind Service Bus Notification Hubs?
 ---------------------------------------
 
-Azure Service Bus Notification Hubs bieten eine einfache, plattformübergreifende und skalierbare Infrastruktur für den Versand von Pushbenachrichtigungen an mobile Geräte. Weitere Informationen finden Sie unter [Azure Service Bus Notification Hubs](http://msdn.microsoft.com/en-us/library/windowsazure/jj927170.aspx).
+Azure Service Bus Notification Hubs bieten eine einfache, plattformübergreifende und skalierbare Infrastruktur für den Versand von Pushbenachrichtigungen an mobile Geräte. Weitere Informationen finden Sie unter [Azure Service Bus Notification Hubs](http://msdn.microsoft.com/de-de/library/windowsazure/jj927170.aspx).
 
 Erstellen einer Node.js-Anwendung
 ---------------------------------
 
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js-Clouddienst](/en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/) (mit Windows PowerShell) oder [Website mit WebMatrix](/en-us/develop/nodejs/tutorials/web-site-with-webmatrix/).
+Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js-Clouddienst](/de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/) (mit Windows PowerShell) oder [Website mit WebMatrix](/de-de/develop/nodejs/tutorials/web-site-with-webmatrix/).
 
 Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
 ----------------------------------------------------------------
@@ -136,11 +136,11 @@ Das **MpnsService**-Objekt enthält eine **send**-Methode, mit der Sie Benachric
 -   Tags - der Tag-Bezeichner. Falls kein Tag angegeben ist, wird die Benachrichtigung an alle Clients geschickt
 -   Payload - die Nutzlast der Nachricht als XML
 -   TargetName - 'toast' für Popupbenachrichtigungen. 'token' für Tile-Benachrichtigungen.
--   NotificationClass - Die Priorität der Benachrichtigung. Eine Liste der gültigen Werte finden Sie im Bereich "HTTP Header Elements" von [Push notifications from a server](http://msdn.microsoft.com/en-us/library/hh221551.aspx) (in englischer Sprache).
+-   NotificationClass - Die Priorität der Benachrichtigung. Eine Liste der gültigen Werte finden Sie im Bereich "HTTP Header Elements" von [Push notifications from a server](http://msdn.microsoft.com/de-de/library/hh221551.aspx) (in englischer Sprache).
 -   Options - zusätzliche Anforderungsheader
 -   Callback - die Rückruffunktion
 
-Eine Liste der gültigen Optionen für TargetName, NotificationClass und header finden Sie unter [Push notifications from a server](http://msdn.microsoft.com/en-us/library/hh221551.aspx) (in englischer Sprache).
+Eine Liste der gültigen Optionen für TargetName, NotificationClass und header finden Sie unter [Push notifications from a server](http://msdn.microsoft.com/de-de/library/hh221551.aspx) (in englischer Sprache).
 
 Der folgende Code verwendet die **MpnsService**-Instanz aus **NotificationHubService**, um ein Popup zu schicken:
 
@@ -163,7 +163,7 @@ Das **WnsService**-Objekt enthält eine **send**-Methode, mit der Sie Benachrich
 -   Options - zusätzliche Anforderungsheader
 -   Callback - die Rückruffunktion
 
-Eine Liste der gültigen Typen und Anforderungsheader finden Sie unter [Anforderungs- und Antwortheader des Pushbenachrichtigungsdiensts](http://msdn.microsoft.com/en-us/library/windows/apps/hh465435.aspx).
+Eine Liste der gültigen Typen und Anforderungsheader finden Sie unter [Anforderungs- und Antwortheader des Pushbenachrichtigungsdiensts](http://msdn.microsoft.com/de-de/library/windows/apps/hh465435.aspx).
 
 Der folgende Code verwendet die **WnsService**-Instanz aus **NotificationHubService**, um ein Popup zu schicken:
 
@@ -179,6 +179,6 @@ Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Azure Service Bus Notification Hubs](http://msdn.microsoft.com/en-us/library/windowsazure/jj927170.aspx).
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Azure Service Bus Notification Hubs](http://msdn.microsoft.com/de-de/library/windowsazure/jj927170.aspx).
 -   Besuchen Sie das [Azure SDK für Node](https://github.com/WindowsAzure/azure-sdk-for-node)-Repository auf GitHub.
 

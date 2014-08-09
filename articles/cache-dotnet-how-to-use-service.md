@@ -39,7 +39,7 @@ Cache Service (Vorschau) ist in drei Ausführungen verfügbar:
 -   Standard: Cache mit einer Größe von 1 GB bis 10 GB
 -   Premium: Cache mit einer Größe von 5 GB bis 150 GB
 
-Diese Ausführungen unterscheiden sich hinsichtlich der Features und des Preises. Die Features werden weiter unten in diesem Leitfaden behandelt, weitere Informationen zu den Preisen finden Sie unter [Cache – Preisdetails](http://www.windowsazure.com/en-us/pricing/details/cache/).
+Diese Ausführungen unterscheiden sich hinsichtlich der Features und des Preises. Die Features werden weiter unten in diesem Leitfaden behandelt, weitere Informationen zu den Preisen finden Sie unter [Cache – Preisdetails](http://www.windowsazure.com/de-de/pricing/details/cache/).
 
 Dieser Leitfaden enthält eine Übersicht über die ersten Schritte mit Cache Service (Vorschau). Ausführliche Informationen zu diesen Features über den Umfang dieses Leitfadens für die ersten Schritte hinaus finden Sie in der [Übersicht über Azure Cache Service (Vorschau)](http://go.microsoft.com/fwlink/?LinkId=320830).
 

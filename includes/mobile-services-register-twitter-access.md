@@ -2,7 +2,7 @@
 
 Die neuen Twitter v1.1 APIs erfordern eine Authentifizierung Ihrer App, um auf Ressourcen zugreifen zu können. Zunächst müssen Sie sich die Anmeldedaten für Zugriff mithilfe von OAuth 2.0 besorgen. Anschließend speichern Sie diese sicher in den App-Einstellungen für Ihren mobilen Service.
 
-1.  Führen Sie die Schritte im Thema [Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services](/en-us/documentation/articles/mobile-services-how-to-register-twitter-authentication/) durch, falls noch nicht geschehen.
+1.  Führen Sie die Schritte im Thema [Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services](/de-de/documentation/articles/mobile-services-how-to-register-twitter-authentication/) durch, falls noch nicht geschehen.
 
 	Twitter erstellt die Anmeldedaten, mithilfe derer Sie auf Twitter v1.1 APIs zugreifen können. Diese Anmeldedaten können Sie über die Twitter Developers-Website bekommen.
 
@@ -32,6 +32,6 @@ Die neuen Twitter v1.1 APIs erfordern eine Authentifizierung Ihrer App, um auf R
 
     ![](./media/mobile-services-register-twitter-access/mobile-schedule-job-app-settings.png)
 
-    Dadurch wird das Twitter-Zugriffstoken in den App-Einstellungen gespeichert. Wie die Benutzeranmeldeinformationen auf der Registerkarte **Identität** werden auch die Zugangsberechtigungsdaten verschlüsselt in den App-Einstellungen gespeichert, sodass Sie auf diese in Ihren Serverskripts zugreifen können, ohne die Daten hart in der Skriptdatei codieren zu müssen. Weitere Informationen finden Sie unter [App-Einstellungen](http://msdn.microsoft.com/en-us/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7).
+    Dadurch wird das Twitter-Zugriffstoken in den App-Einstellungen gespeichert. Wie die Benutzeranmeldeinformationen auf der Registerkarte **Identität** werden auch die Zugangsberechtigungsdaten verschlüsselt in den App-Einstellungen gespeichert, sodass Sie auf diese in Ihren Serverskripts zugreifen können, ohne die Daten hart in der Skriptdatei codieren zu müssen. Weitere Informationen finden Sie unter [App-Einstellungen](http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7).
 
 

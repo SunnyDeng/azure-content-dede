@@ -108,7 +108,7 @@ Wenn Sie Verwaltungsvorgänge für den neuen Namespace ausführen möchten (z. 
 
 ### Verwalten eines Servicenamespace mit dem Server-Explorer von Visual Studio:
 
-Führen Sie das [hier](http://http://msdn.microsoft.com/en-us/library/windowsazure/ff687127.aspx) im Abschnitt **So stellen Sie von Visual Studio eine Verbindung mit Azure her** beschriebene Verfahren aus, um in Visual Studio anstatt im Verwaltungsportal einen Namespace zu verwalten und Verbindungsinformationen abzurufen. Bei der Anmeldung bei Azure wird der Knoten **Service Bus** in der Struktur **Microsoft Azure** im Server-Explorer automatisch mit allen Namespaces gefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie dann auf **Eigenschaften**, um die Verbindungszeichenfolge und andere diesem Namespace zugeordnete Metadaten anzuzeigen, die im Bereich **Eigenschaften** in Visual Studio dargestellt werden.
+Führen Sie das [hier](http://http://msdn.microsoft.com/de-de/library/windowsazure/ff687127.aspx) im Abschnitt **So stellen Sie von Visual Studio eine Verbindung mit Azure her** beschriebene Verfahren aus, um in Visual Studio anstatt im Verwaltungsportal einen Namespace zu verwalten und Verbindungsinformationen abzurufen. Bei der Anmeldung bei Azure wird der Knoten **Service Bus** in der Struktur **Microsoft Azure** im Server-Explorer automatisch mit allen Namespaces gefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie dann auf **Eigenschaften**, um die Verbindungszeichenfolge und andere diesem Namespace zugeordnete Metadaten anzuzeigen, die im Bereich **Eigenschaften** in Visual Studio dargestellt werden.
 
 ![](./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/VSProperties.png)
 
@@ -399,7 +399,7 @@ Führen Sie die Anwendung aus, um sicherzustellen, dass sie funktioniert.
     BEREITSTELLEN FÜR AZUREFERTIGSTELLEN DER ANWENDUNG ZUR BEREITSTELLUNG FÜR AZURE
     -------------------------------------------------------------------------------
 
-    Sie können die Anwendung für einen Azure-Clouddienst oder eine Azure-Website bereitstellen. Informationen zum Unterschied zwischen Websites und Clouddiensten finden Sie unter [Azure-Ausführungsmodelle](http://www.windowsazure.com/en-us/develop/net/fundamentals/compute/). Informationen zum Bereitstellen der Anwendung für eine Azure-Website finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website](http://www.windowsazure.com/en-us/develop/net/tutorials/get-started/). Dieser Abschnitt enthält ausführliche Schritte für die Bereitstellung der Anwendung für einen Azure-Clouddienst.
+    Sie können die Anwendung für einen Azure-Clouddienst oder eine Azure-Website bereitstellen. Informationen zum Unterschied zwischen Websites und Clouddiensten finden Sie unter [Azure-Ausführungsmodelle](http://www.windowsazure.com/de-de/develop/net/fundamentals/compute/). Informationen zum Bereitstellen der Anwendung für eine Azure-Website finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website](http://www.windowsazure.com/de-de/develop/net/tutorials/get-started/). Dieser Abschnitt enthält ausführliche Schritte für die Bereitstellung der Anwendung für einen Azure-Clouddienst.
 
     Zur Bereitstellung der Anwendung für einen Clouddienst fügen Sie der Projektmappe ein Bereitstellungsprojekt für das Clouddienstprojekt hinzu. Das Bereitstellungsprojekt enthält Konfigurationsinformationen, die benötigt werden, um die Anwendung ordnungsgemäß in der Cloud auszuführen.
 
@@ -535,7 +535,7 @@ Führen Sie die Anwendung aus, um sicherzustellen, dass sie funktioniert.
 
         ![](./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-service1.png)
 
-Informationen zum Unterschied zwischen Websites und Clouddiensten finden Sie unter [Azure-Ausführungsmodelle](http://www.windowsazure.com/en-us/develop/net/fundamentals/compute/).
+Informationen zum Unterschied zwischen Websites und Clouddiensten finden Sie unter [Azure-Ausführungsmodelle](http://www.windowsazure.com/de-de/develop/net/fundamentals/compute/).
 
 LÖSCHEN DER ANWENDUNGBEENDEN UND LÖSCHEN DER ANWENDUNG
 ------------------------------------------------------
@@ -557,8 +557,8 @@ Nächste SchritteNächste Schritte
 
 Weitere Informationen zu Service Bus finden Sie in den folgenden Ressourcen:
 
--   [Azure Service Bus](http://msdn.microsoft.com/en-us/library/windowsazure/ee732537.aspx)
--   [Gewusst wie-Themen für Service Bus](/en-us/manage/services/service-bus/)
--   [Verwenden von Service Bus-Warteschlangen](/en-us/develop/net/how-to-guides/service-bus-queues/)
+-   [Azure Service Bus](http://msdn.microsoft.com/de-de/library/windowsazure/ee732537.aspx)
+-   [Gewusst wie-Themen für Service Bus](/de-de/manage/services/service-bus/)
+-   [Verwenden von Service Bus-Warteschlangen](/de-de/develop/net/how-to-guides/service-bus-queues/)
 
 

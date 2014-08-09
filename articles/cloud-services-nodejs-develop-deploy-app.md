@@ -5,7 +5,7 @@ Erstellen und Bereitstellen einer Node.js-Anwendung zu einem Azure-Clouddienst
 
 Nach Durchführung dieser Anleitung werden Sie eine einfache Node.js-Anwendung erhalten, die in einem Azure-Clouddienst ausgeführt wird. Clouddienste sind die Bausteine skalierbarer Cloudanwendungen in Azure. Sie ermöglichen die Trennung und unabhängige Verwaltung und Skalierung von Front-End- und Back-End-Komponenten von Anwendungen. Clouddienste bieten stabile und dedizierte virtuelle Computer, um jede Rolle zuverlässig zu hosten.
 
-Weitere Informationen zu Clouddiensten und einen Vergleich hinsichtlich Azure-Websites und virtuellen Computern finden Sie unter [Azure-Websites, Cloud-Dienste und virtuelle Computer: Wann soll welche Technologie eingesetzt werden?](http://msdn.microsoft.com/en-us/library/windowsazure/jj218759.aspx)
+Weitere Informationen zu Clouddiensten und einen Vergleich hinsichtlich Azure-Websites und virtuellen Computern finden Sie unter [Azure-Websites, Cloud-Dienste und virtuelle Computer: Wann soll welche Technologie eingesetzt werden?](http://msdn.microsoft.com/de-de/library/windowsazure/jj218759.aspx)
 
 **Möchten Sie eine einfache Website erstellen?**
 
@@ -15,7 +15,7 @@ In diesem Lernprogramm werden Sie eine einfache Webanwendung erstellen, die in e
 
 Unten finden Sie einen Screenshot der fertig gestellten Anwendung:
 
-![Ein Browserfenster, das die Seite Hallo Welt anzeigt. Die URL zeigt an, dass die Seite auf Azure gehostet wird.](https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png)
+![Ein Browserfenster, das die Seite Hallo Welt anzeigt. Die URL zeigt an, dass die Seite auf Azure gehostet wird.](https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png)
 
 Erstellen einer neuen Knotenanwendung
 -------------------------------------
@@ -46,7 +46,7 @@ Führen Sie folgende Aufgaben durch, um ein neues Azure-Clouddienstprojekt sowie
 
     -   **ServiceConfiguration.Cloud.cscfg**, **ServiceConfiguration.Local.cscfg** und **ServiceDefinition.csdef**. Dies sind Azure-spezifische Dateien, die für die Veröffentlichung der Anwendung erforderlich sind.
 
-    Informationen zu diesen Dateien erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/en-us/library/windowsazure/jj155995.aspx).
+    Informationen zu diesen Dateien erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx).
 
     -   **deploymentSettings.json** speichert lokale Einstellungen, die von den Azure PowerShell-Bereitstellungs-Cmdlets verwendet werden.
 
@@ -142,7 +142,7 @@ Um die Anwendung in Azure bereitzustellen, müssen Sie zuerst die Veröffentlich
 
 3.  Erstellt ein neues **Speicherkonto**, falls noch keines vorhanden ist. Das Azure-Speicherkonto wird verwendet, um das Anwendungspaket während der Bereitstellung zu speichern. Sie können das Speicherkonto problemlos löschen, wenn die Bereitstellung erfolgt ist.
 
-4.  Erstellt einen neuen **Clouddienst**, falls noch keiner vorhanden ist. Ein **Clouddienst** ist der Container, in dem die Anwendung gehostet wird, wenn diese in Azure bereitgestellt wird. Weitere Informationen erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/en-us/library/windowsazure/jj155995.aspx).
+4.  Erstellt einen neuen **Clouddienst**, falls noch keiner vorhanden ist. Ein **Clouddienst** ist der Container, in dem die Anwendung gehostet wird, wenn diese in Azure bereitgestellt wird. Weitere Informationen erhalten Sie unter [Cloud-Dienste](http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx).
 
 5.  Veröffentlicht das Bereitstellungspaket in Azure.
 
@@ -179,7 +179,7 @@ Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherwe
 
     **Hinweis**
 
-    Durch das Löschen dieses Diensts wird das Speicherkonto, das beim erstmaligen Veröffentlichen des Diensts erstellt wurde, nicht gelöscht, und Sie erhalten weiterhin eine Rechnung über den verwendeten Speicherplatz. Weitere Informationen zum Löschen eines Speicherkontos finden Sie unter [Löschen eines Speicherkontos aus einem Azure-Abonnement](http://msdn.microsoft.com/en-us/library/windowsazure/hh531562.aspx).
+    Durch das Löschen dieses Diensts wird das Speicherkonto, das beim erstmaligen Veröffentlichen des Diensts erstellt wurde, nicht gelöscht, und Sie erhalten weiterhin eine Rechnung über den verwendeten Speicherplatz. Weitere Informationen zum Löschen eines Speicherkontos finden Sie unter [Löschen eines Speicherkontos aus einem Azure-Abonnement](http://msdn.microsoft.com/de-de/library/windowsazure/hh531562.aspx).
 
 &lt;/div\>
 

@@ -143,7 +143,7 @@ Nächste Schritte
 
 Nachdem Sie sich nun mit den Grundlagen von Blob-Speicher vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx)
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx)
 -   Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 
   [Next Steps]: #next-steps
@@ -156,5 +156,5 @@ Nachdem Sie sich nun mit den Grundlagen von Blob-Speicher vertraut gemacht haben
   [How To: Download Blobs]: #download-blobs
   [How To: Delete a Blob]: #delete-blobs
   [How To: Upload and Download Large Blobs]: #large-blobs
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

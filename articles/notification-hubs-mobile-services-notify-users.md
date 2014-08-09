@@ -3,7 +3,7 @@
 Benachrichtigen von Benutzern mit Notification Hubs
 ===================================================
 
-[Mobile Services](/en-us/manage/services/notification-hubs/notify-users "Mobile Services")[ASP.NET](/en-us/manage/services/notification-hubs/notify-users-aspnet "ASP.NET")
+[Mobile Services](/de-de/manage/services/notification-hubs/notify-users "Mobile Services")[ASP.NET](/de-de/manage/services/notification-hubs/notify-users-aspnet "ASP.NET")
 
 In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Ein Azure Mobile Services-Backend wird verwendet, um Clients zu authentifizieren und Benachrichtigungen zu generieren. Dieses Lernprogramm basiert auf dem Benachrichtigungshub, den Sie im vorherigen Lernprogramm **Erste Schritte mit Notification Hubs** erstellt haben. Der Benachrichtigungsregistrierungscode wird vom Client zum Backend-Dienst verschoben. So wird sichergestellt, dass die Registrierung erst dann abgeschlossen wird, wenn ein Client durch den Dienst positiv authentifiziert wurde. Das bedeutet auch, dass die Anmeldeinformationen des Benachrichtigungshubs nicht mit der Client-App verteilt werden. Der Dienst steuert auch die Tags, die während der Registrierung angefordert werden.
 
@@ -18,9 +18,9 @@ Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst die folgenden Lernprogramme abschließen:
 
--   **Erste Schritte mit Notification Hubs** ([Windows Store C\#](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet)/[iOS](/en-us/manage/services/notification-hubs/get-started-notification-hubs-ios)/[Android](/en-us/manage/services/notification-hubs/get-started-notification-hubs-android)).
+-   **Erste Schritte mit Notification Hubs** ([Windows Store C\#](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet)/[iOS](/de-de/manage/services/notification-hubs/get-started-notification-hubs-ios)/[Android](/de-de/manage/services/notification-hubs/get-started-notification-hubs-android)).
 
--   **Erste Schritte bei der Authentifizierung in Mobile Services** ([Windows Store C\#](/en-us/develop/mobile/tutorials/get-started-with-users-dotnet/)/[iOS](/en-us/develop/mobile/tutorials/get-started-with-users-ios/)/[Android](/en-us/develop/mobile/tutorials/get-started-with-users-android/))
+-   **Erste Schritte bei der Authentifizierung in Mobile Services** ([Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-users-dotnet/)/[iOS](/de-de/develop/mobile/tutorials/get-started-with-users-ios/)/[Android](/de-de/develop/mobile/tutorials/get-started-with-users-android/))
 
 Dieses Lernprogramm basiert auf der App und dem Benachrichtigungshub, die Sie im vorherigen Lernprogramm **Erste Schritte mit Notification Hubs** erstellt haben. Der authentifizierte mobile Dienst, den Sie unter **Erste Schritte bei der Authentifizierung in Mobile Services** konfiguriert haben, wird verwendet.
 
@@ -144,8 +144,8 @@ Als Nächstes müssen Sie die TodoList-App aktualisieren, um eine Registrierung 
 
 1.  Befolgen Sie die Schritte einer der folgenden Versionen von **Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Dienstes**, je nach Ihrer Client-Plattform:
 
-    -   [Windows Store C\#-Version](/en-us/manage/services/notification-hubs/register-users-mobile-services-dotnet)
-    -   [iOS-Version](/en-us/manage/services/notification-hubs/register-users-ios)
+    -   [Windows Store C\#-Version](/de-de/manage/services/notification-hubs/register-users-mobile-services-dotnet)
+    -   [iOS-Version](/de-de/manage/services/notification-hubs/register-users-ios)
 
 2.  Führen Sie die aktualisierte App aus, melden Sie sich bei Facebook an, und stellen Sie dann sicher, dass die Registrierungs-ID angezeigt wird, die der Benachrichtigung zugeordnet ist.
 
@@ -223,7 +223,7 @@ Da die Benachrichtigungen nun konfiguriert sind, ist es an der Zeit, die App zu 
 
     **Hinweis**
 
-    Es wird ein Fehler am Backend angezeigt, wenn keine Registrierung für eine Plattform vorliegt, an die eine Benachrichtigung gesendet werden soll. In diesem Fall kann dieser Fehler ignoriert werden. Unter [Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs](/en-us/manage/services/notification-hubs/notify-users-xplat-mobile-services/) erfahren Sie, wie Sie diese Situation durch die Verwendung von Vorlagen vermeiden.
+    Es wird ein Fehler am Backend angezeigt, wenn keine Registrierung für eine Plattform vorliegt, an die eine Benachrichtigung gesendet werden soll. In diesem Fall kann dieser Fehler ignoriert werden. Unter [Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users-xplat-mobile-services/) erfahren Sie, wie Sie diese Situation durch die Verwendung von Vorlagen vermeiden.
 
 3.  (Optional) Stellen Sie die Client-App auf einem zweiten Gerät bereit, führen Sie die App aus, und fügen Sie Text ein.
 
@@ -234,11 +234,11 @@ Nächste Schritte
 
 Da Sie dieses Lernprogramm nun abgeschlossen haben, können Sie die folgenden Lernprogramme abschließen:
 
--   **Verwenden von Notification Hubs zum Senden von Nachrichten ([Windows Store C\#](/en-us/manage/services/notification-hubs/breaking-news-dotnet) / [iOS](/en-us/manage/services/notification-hubs/breaking-news-ios))**
+-   **Verwenden von Notification Hubs zum Senden von Nachrichten ([Windows Store C\#](/de-de/manage/services/notification-hubs/breaking-news-dotnet) / [iOS](/de-de/manage/services/notification-hubs/breaking-news-ios))**
     In diesem plattformspezifischen Lernprogramm erfahren Sie, wie Sie Tags verwenden, um Benutzern die Möglichkeit zu geben, verschiedene Benachrichtigungen zu abonnieren, die sie interessieren.
 
--   **[Send cross-platform notifications to users with Notification Hubs](/en-us/manage/services/notification-hubs/notify-users-xplat-mobile-services) (Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs, in englischer Sprache)**
+-   **[Send cross-platform notifications to users with Notification Hubs](/de-de/manage/services/notification-hubs/notify-users-xplat-mobile-services) (Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs, in englischer Sprache)**
     Dieses Lernprogramm ergänzt das aktuelle Lernprogramm **Benachrichtigen von Benutzern mit Notification Hubs** und zeigt die Verwendung plattformspezifischer Vorlagen zur Registrierung von Benachrichtigungen. So können Sie Benachrichtigungen über eine einzige Methode in Ihrem serverseitigen Code senden.
 
-Weitere Informationen zu Notification Hubs finden Sie unter [Azure Notification Hubs](http://msdn.microsoft.com/en-us/library/windowsazure/jj927170.aspx).
+Weitere Informationen zu Notification Hubs finden Sie unter [Azure Notification Hubs](http://msdn.microsoft.com/de-de/library/windowsazure/jj927170.aspx).
 

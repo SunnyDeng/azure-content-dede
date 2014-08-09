@@ -3,7 +3,7 @@
 Erste Schritte bei der Authentifizierung in Mobile Services
 ===========================================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/get-started-with-users-dotnet "Windows Store C#")[Windows Store JavaScript](/en-us/develop/mobile/tutorials/get-started-with-users-js "Windows Store JavaScript")[Windows Phone](/en-us/develop/mobile/tutorials/get-started-with-users-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/get-started-with-users-ios "iOS")[Android](/en-us/develop/mobile/tutorials/get-started-with-users-android "Android")[HTML](/en-us/develop/mobile/tutorials/get-started-with-users-html "HTML")[Xamarin.iOS](/en-us/develop/mobile/tutorials/get-started-with-users-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/en-us/develop/mobile/tutorials/get-started-with-users-xamarin-android "Xamarin.Android")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-users-dotnet "Windows Store C#")[Windows Store JavaScript](/de-de/develop/mobile/tutorials/get-started-with-users-js "Windows Store JavaScript")[Windows Phone](/de-de/develop/mobile/tutorials/get-started-with-users-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/get-started-with-users-ios "iOS")[Android](/de-de/develop/mobile/tutorials/get-started-with-users-android "Android")[HTML](/de-de/develop/mobile/tutorials/get-started-with-users-html "HTML")[Xamarin.iOS](/de-de/develop/mobile/tutorials/get-started-with-users-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android "Xamarin.Android")
 
 Dieses Thema beschreibt die Authentifizierung von Benutzern in mobilen Azure-Diensten aus Ihrer HTML-App. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
@@ -13,7 +13,7 @@ Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von A
 2.  [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer](#permissions)
 3.  [Hinzufügen von Authentifizierung zur App](#add-authentication)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-html) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-html) abschließen.
 
 Registrieren Ihrer AppRegistrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 --------------------------------------------------------------------------------------------------------
@@ -32,11 +32,11 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 
 3.  Wählen Sie aus der Liste unten einen unterstützten Identitätsanbieter aus, und folgen Sie den unten aufgeführten Schritten, um Ihre App bei diesem Anbieter zu registrieren:
 
-	-   [Microsoft Account](/en-us/develop/mobile/how-to-guides/register-for-microsoft-authentication/)
-	-   [Facebook-Login](/en-us/develop/mobile/how-to-guides/register-for-facebook-authentication/)
-	-   [Twitter-Login](/en-us/develop/mobile/how-to-guides/register-for-twitter-authentication/)
-	-   [Google-Login](/en-us/develop/mobile/how-to-guides/register-for-google-authentication/)
-	-   [Azure Active Directory](/en-us/documentation/articles/mobile-services-how-to-register-active-directory-authentication/)
+	-   [Microsoft Account](/de-de/develop/mobile/how-to-guides/register-for-microsoft-authentication/)
+	-   [Facebook-Login](/de-de/develop/mobile/how-to-guides/register-for-facebook-authentication/)
+	-   [Twitter-Login](/de-de/develop/mobile/how-to-guides/register-for-twitter-authentication/)
+	-   [Google-Login](/de-de/develop/mobile/how-to-guides/register-for-google-authentication/)
+	-   [Azure Active Directory](/de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/)
 
     	Notieren Sie die Clientidentität und die geheimen Werte, die vom Anbieter generiert wurden.
 
@@ -151,5 +151,5 @@ Da die Anmeldung in einem Popup erfolgt, sollten Sie die **login**-Methode aus d
 Nächste Schritte
 ----------------
 
-Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-html) werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Weitere Informationen zur Verwendung von mobilen Diensten mit HTML/JavaScript finden Sie unter [Mobile Services HTML/JavaScript How-to Conceptual Reference](/en-us/develop/mobile/how-to-guides/work-with-html-js-client)
+Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-html) werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Weitere Informationen zur Verwendung von mobilen Diensten mit HTML/JavaScript finden Sie unter [Mobile Services HTML/JavaScript How-to Conceptual Reference](/de-de/develop/mobile/how-to-guides/work-with-html-js-client)
 

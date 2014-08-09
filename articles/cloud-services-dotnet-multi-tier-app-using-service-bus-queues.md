@@ -20,7 +20,7 @@ Im Folgenden wird ein Screenshot der fertigen Anwendung angezeigt:
 
 ![](./media/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png)
 
-**Hinweis** Azure bietet ebenfalls Funktionen für Speicher-Warteschlangen. Weitere Informationen zu Speicher- und Servicebus-Warteschlangen in Azure finden Sie unter [Windows Azure-Warteschlangen und Windows Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](http://msdn.microsoft.com/en-us/library/windowsazure/hh767287.aspx).
+**Hinweis** Azure bietet ebenfalls Funktionen für Speicher-Warteschlangen. Weitere Informationen zu Speicher- und Servicebus-Warteschlangen in Azure finden Sie unter [Windows Azure-Warteschlangen und Windows Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](http://msdn.microsoft.com/de-de/library/windowsazure/hh767287.aspx).
 
 [WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
@@ -114,7 +114,7 @@ Namespaces und Entitäten für die Servicebus-Nachrichten können auch im Visual
 
 ### Verwalten von Namespaces und Nachrichten-Entitäten im Visual Studio Server-Explorer
 
-Führen Sie die [hier](http://http://msdn.microsoft.com/en-us/library/windowsazure/ff687127.aspx) im Abschnitt **Verbinden mit Windows Azure in Visual Studio** beschriebenen Schritte aus, um Namespaces zu verwalten und Verbindungsinformationen über Visual Studio anstatt aus dem Verwaltungsportal abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
+Führen Sie die [hier](http://http://msdn.microsoft.com/de-de/library/windowsazure/ff687127.aspx) im Abschnitt **Verbinden mit Windows Azure in Visual Studio** beschriebenen Schritte aus, um Namespaces zu verwalten und Verbindungsinformationen über Visual Studio anstatt aus dem Verwaltungsportal abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
 
 Notieren Sie den Wert **SharedAccessKey** oder kopieren Sie ihn in die Zwischenablage:
 
@@ -488,15 +488,15 @@ Nächste SchritteNächste Schritte
 
 Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
 
--   [Azure-Servicebus](http://msdn.microsoft.com/en-us/library/windowsazure/ee732537.aspx)
--   [Servicebus-Anleitungen](/en-us/manage/services/service-bus/)
--   [Einsatz von Servicebus-Warteschlangen](/en-us/develop/net/how-to-guides/service-bus-queues/)
+-   [Azure-Servicebus](http://msdn.microsoft.com/de-de/library/windowsazure/ee732537.aspx)
+-   [Servicebus-Anleitungen](/de-de/manage/services/service-bus/)
+-   [Einsatz von Servicebus-Warteschlangen](/de-de/develop/net/how-to-guides/service-bus-queues/)
 
 Weitere Informationen über Szenarien mit mehreren Ebenen und die Bereitstellung von Anwendungen in Cloud-Diensten finden Sie unter:
 
--   [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/)
+-   [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/)
 
-Sie können das Front-End einer Anwendung mit mehreren Ebenen anstelle eines Azure-Cloud-Dienstes auch als Azure-Website implementieren. Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle](http://www.windowsazure.com/en-us/develop/net/fundamentals/compute/).
+Sie können das Front-End einer Anwendung mit mehreren Ebenen anstelle eines Azure-Cloud-Dienstes auch als Azure-Website implementieren. Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle](http://www.windowsazure.com/de-de/develop/net/fundamentals/compute/).
 
 Um die Anwendung aus diesem Lernprogramm als Standard-Webprojekt anstelle einer Cloud-Dienst-Webrolle zu erstellen, führen Sie die Schritte in diesem Lernprogramm mit den folgenden Unterschieden aus:
 
@@ -506,5 +506,5 @@ Um die Anwendung aus diesem Lernprogramm als Standard-Webprojekt anstelle einer 
 
 3.  Sie können Front-End und Back-End entweder separat testen oder beide simultan in separaten Visual Studio-Instanzen ausführen.
 
-Informationen zur Bereitstellung des Front-Ends in einer Azure-Website finden Sie unter [Bereitstellung einer ASP.NET-Webanwendung für eine Azure-Website](http://www.windowsazure.com/en-us/develop/net/tutorials/get-started/). Informationen zur Bereitstellung des Back-Ends für einen Azure-Cloud-Dienst finden Sie unter [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).
+Informationen zur Bereitstellung des Front-Ends in einer Azure-Website finden Sie unter [Bereitstellung einer ASP.NET-Webanwendung für eine Azure-Website](http://www.windowsazure.com/de-de/develop/net/tutorials/get-started/). Informationen zur Bereitstellung des Back-Ends für einen Azure-Cloud-Dienst finden Sie unter [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).
 

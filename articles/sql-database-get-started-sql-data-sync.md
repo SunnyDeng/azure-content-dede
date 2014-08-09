@@ -55,7 +55,7 @@ Stellen Sie sicher, dass die folgende Software auf dem Computer installiert ist,
 
 ### Schritt 2b: Installieren eines neuen Client-Agents
 
-Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL Data Sync)](http://msdn.microsoft.com/en-us/library/jj823137.aspx), um den Agent zu installieren.
+Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL Data Sync)](http://msdn.microsoft.com/de-de/library/jj823137.aspx), um den Agent zu installieren.
 
 ### Schritt 2c: Beenden des Assistenten "New SQL Data Sync Agent"
 
@@ -68,7 +68,7 @@ Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL Data Sync)]
 Schritt 3: Registrieren einer SQL Server-Datenbank mit dem Client-Agent
 -----------------------------------------------------------------------
 
-Registrieren Sie nach der Installation des Client-Agents jede lokale SQL Server-Datenbank, die Sie mit dem Agent in eine Synchronisierungsgruppe integrieren möchten. Wenn Sie mit dem Agent eine Datenbank registrieren möchten, folgen Sie den Anweisungen unter [Registrieren einer SQL Server-Datenbank mit dem Client-Agent](http://msdn.microsoft.com/en-us/library/jj823138.aspx).
+Registrieren Sie nach der Installation des Client-Agents jede lokale SQL Server-Datenbank, die Sie mit dem Agent in eine Synchronisierungsgruppe integrieren möchten. Wenn Sie mit dem Agent eine Datenbank registrieren möchten, folgen Sie den Anweisungen unter [Registrieren einer SQL Server-Datenbank mit dem Client-Agent](http://msdn.microsoft.com/de-de/library/jj823138.aspx).
 
 Schritt 4: Erstellen einer Synchronisierungsgruppe
 --------------------------------------------------
@@ -176,7 +176,7 @@ Nächste Schritte
 Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
 -   [Melden Sie sich für das Premium-Angebot für SQL Database an] (../sign-up-for-sql-database-premium/)
--   [SQL Data Sync (WA-Portal)](http://msdn.microsoft.com/en-us/library/windowsazure/jj856263.aspx)
+-   [SQL Data Sync (WA-Portal)](http://msdn.microsoft.com/de-de/library/windowsazure/jj856263.aspx)
 -   [Erste Schritte mit Azure SQL Database](../getting-started-w-sql-databases/)
 -   [SQL Server Database Lifecycle](http://go.microsoft.com/fwlink/?LinkId=275193)
 

@@ -1,6 +1,6 @@
 Ein neues Einfügeskript wird registriert, das beim Einfügen eines neuen Aktivitätselements eine SAS generiert.
 
-0.	Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](/en-us/manage/services/storage/how-to-create-a-storage-account).
+0.	Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](/de-de/manage/services/storage/how-to-create-a-storage-account).
 
 1.	Klicken Sie im Verwaltungsportal auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
 
@@ -94,4 +94,4 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 
 
 
-[1]: http://msdn.microsoft.com/en-us/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[1]: http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

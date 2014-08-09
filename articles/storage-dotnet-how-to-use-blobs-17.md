@@ -3,7 +3,7 @@
 Verwenden des Windows Azure Blob-Speicherdiensts in .NET
 ========================================================
 
-[Version 1.7](/en-us/develop/net/how-to-guides/blob-storage-v17/ "Version 1.7") [Version 2.0](/en-us/develop/net/how-to-guides/blob-storage/ "Version 2.0")
+[Version 1.7](/de-de/develop/net/how-to-guides/blob-storage-v17/ "Version 1.7") [Version 2.0](/de-de/develop/net/how-to-guides/blob-storage/ "Version 2.0")
 
 In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Windows Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C\# geschrieben und verwenden die .NET API. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#next-steps).
 
@@ -75,7 +75,7 @@ Bei Verwendung von Websites oder virtuellen Computern sollten Sie das .NET-Konfi
         </appSettings>
     </configuration>
 
-Weitere Informationen zu Speicherverbindungszeichenfolgen finden Sie unter [Konfigurieren von Windows Azure-Verbindungszeichenfolgen](http://msdn.microsoft.com/en-us/library/windowsazure/ee758697.aspx).
+Weitere Informationen zu Speicherverbindungszeichenfolgen finden Sie unter [Konfigurieren von Windows Azure-Verbindungszeichenfolgen](http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx).
 
 Sie sind nun bereit, um die einzelnen Aufgaben in dieser Anleitung auszuführen.
 
@@ -220,10 +220,10 @@ Nächste SchritteNächste Schritte
 Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 -   Vollständige Informationen zu verfügbaren APIs finden Sie in der Blobdienst-Referenzdokumentation:
-    -   [Referenz zur .NET-Clientbibliothek](http://msdn.microsoft.com/en-us/library/windowsazure/wl_svchosting_mref_reference_home)
-    -   [REST-API-Referenz](http://msdn.microsoft.com/en-us/library/windowsazure/dd179355)
--   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx).
+    -   [Referenz zur .NET-Clientbibliothek](http://msdn.microsoft.com/de-de/library/windowsazure/wl_svchosting_mref_reference_home)
+    -   [REST-API-Referenz](http://msdn.microsoft.com/de-de/library/windowsazure/dd179355)
+-   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx).
 -   Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
-    -   Verwenden Sie [Tabellenspeicher](/en-us/develop/net/how-to-guides/table-services/) zum Speichern strukturierter Daten.
-    -   Verwenden Sie eine [SQL-Datenbank](/en-us/develop/net/how-to-guides/sql-database/) zum Speichern relationaler Daten.
+    -   Verwenden Sie [Tabellenspeicher](/de-de/develop/net/how-to-guides/table-services/) zum Speichern strukturierter Daten.
+    -   Verwenden Sie eine [SQL-Datenbank](/de-de/develop/net/how-to-guides/sql-database/) zum Speichern relationaler Daten.
 

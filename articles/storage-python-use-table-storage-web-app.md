@@ -3,11 +3,11 @@
 Python-Webanwendung mit Tabellenspeicher
 ========================================
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung erstellen können, die den Tabellenspeicher mit den Azure-Clientbibliotheken für Python verwendet. Falls dies Ihre erste Python-App ist, sollten Sie zuvor einen Blick in die [Django Hello World-Webanwendung](http://windowsazure.com/en-us/documentation/articles/virtual-machines-python-django-web-app-windows-server) werfen.
+In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung erstellen können, die den Tabellenspeicher mit den Azure-Clientbibliotheken für Python verwendet. Falls dies Ihre erste Python-App ist, sollten Sie zuvor einen Blick in die [Django Hello World-Webanwendung](http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-django-web-app-windows-server) werfen.
 
 In dieser Anleitung erstellen Sie eine webbasierte Anwendung mit Aufgabenlisten, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren. Wir werden Django als Web-Framework verwenden.
 
-Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Python oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx).
+Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Python oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx).
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -22,7 +22,7 @@ Der folgende Screenshot zeigt eine Abbildung der fertigen Anwendung (die hinzuge
 Einrichten der Entwicklungsumgebung
 -----------------------------------
 
-**Hinweis:** Informationen zur Installation von Python oder den Clientbibliotheken finden Sie im [Python-Installationshandbuch](http://windowsazure.com/en-us/documentation/articles/python-how-to-install).
+**Hinweis:** Informationen zur Installation von Python oder den Clientbibliotheken finden Sie im [Python-Installationshandbuch](http://windowsazure.com/de-de/documentation/articles/python-how-to-install).
 
 *Hinweis für Windows*: Falls Sie den Windows WebPI-Installer verwendet haben, sollten Django und die Clientbibliotheken bereits auf Ihrem Computer installiert sein.
 
@@ -175,13 +175,13 @@ Sie können nun mit **Add Task** eine neue Aufgabe erstellen und anschließend a
 Ausführen der Anwendung im Serveremulator, Veröffentlichen und Anhalten/Löschen Ihrer Anwendung
 -----------------------------------------------------------------------------------------------
 
-Sie haben ihre Anwendung im eingebauten Django-Server ausgeführt und können sie nun im Azure-Emulator (nur unter Windows) bereitstellen und anschließend auf Azure veröffentlichen. Weitere Informationen hierzu finden Sie im Artikel [Django Hello World-Webanwendung](http://windowsazure.com/en-us/documentation/articles/virtual-machines-python-django-web-app-windows-server), der diese Schritte im Detail beschreibt.
+Sie haben ihre Anwendung im eingebauten Django-Server ausgeführt und können sie nun im Azure-Emulator (nur unter Windows) bereitstellen und anschließend auf Azure veröffentlichen. Weitere Informationen hierzu finden Sie im Artikel [Django Hello World-Webanwendung](http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-django-web-app-windows-server), der diese Schritte im Detail beschreibt.
 
 Nächste Schritte
 ----------------
 
 Da Sie jetzt die Grundlagen des Azure-Tabellenspeicherdiensts erlernt haben, folgen Sie diesem Link, um zu erfahren, wie Sie komplexere Speicheraufgaben ausführen können.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx)
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx)
 -   Besuchen Sie den Blog des Azure-Speicherteams: &lt;http://blogs.msdn.com/b/windowsazurestorage/&gt;
 

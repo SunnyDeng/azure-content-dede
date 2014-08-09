@@ -22,7 +22,7 @@ Twilio ist ein Pay-as-you-go-Dienst, also vertragsungebunden. Es fallen keine Ei
 Konzepte
 --------
 
-Die Twilio-API ist eine RESTful-API, die Telefonie- und SMS-Funktionen für Anwendungen bereitstellt. Clientbibliotheken stehen in mehreren Sprachen zur Verfügung; eine Liste finden Sie auf der Seite der [Twilio-API-Bibliotheken](https://www.twilio.com/docs/libraries). Zusätzliche Lernprogramme für die Verwendung von Twilio in Azure-Anwendungen sind verfügbar für [.NET](/en-us/develop/net/how-to-guides/twilio-voice-and-sms-service/), [node.js](/en-us/develop/nodejs/how-to-guides/twilio-voice-and-sms-service/), [Java](/en-us/develop/java/how-to-guides/twilio-voice-and-sms-service/), [PHP](/en-us/develop/php/how-to-guides/twilio-voice-and-sms-service/), [Python](/en-us/develop/python/how-to-guides/twilio-voice-and-sms-service/) und [Ruby](/en-us/develop/ruby/how-to-guides/twilio-voice-and-sms-service/).
+Die Twilio-API ist eine RESTful-API, die Telefonie- und SMS-Funktionen für Anwendungen bereitstellt. Clientbibliotheken stehen in mehreren Sprachen zur Verfügung; eine Liste finden Sie auf der Seite der [Twilio-API-Bibliotheken](https://www.twilio.com/docs/libraries). Zusätzliche Lernprogramme für die Verwendung von Twilio in Azure-Anwendungen sind verfügbar für [.NET](/de-de/develop/net/how-to-guides/twilio-voice-and-sms-service/), [node.js](/de-de/develop/nodejs/how-to-guides/twilio-voice-and-sms-service/), [Java](/de-de/develop/java/how-to-guides/twilio-voice-and-sms-service/), [PHP](/de-de/develop/php/how-to-guides/twilio-voice-and-sms-service/), [Python](/de-de/develop/python/how-to-guides/twilio-voice-and-sms-service/) und [Ruby](/de-de/develop/ruby/how-to-guides/twilio-voice-and-sms-service/).
 
 Schlüsselaspekte der Twilio API sind Twilio-Verben und die Twilio Markup Language (TwiML).
 
@@ -77,14 +77,14 @@ Alternativ zur Verwendung einer vorhandenen Telefonnummer für Ihre Anwendungen 
 Erstellen eines Mobile Service
 ------------------------------
 
-Ein Mobile Service, der eine Twilio-fähige Anwendung hostet, unterscheidet sich nicht von anderen Mobile Services. Sie fügen einfach die Twilio Node.js-Bibliothek hinzu, um aus Ihren benutzerdefinierten Mobile Services API-Skripts auf diese Bibliothek verweisen zu können. Weitere Informationen zur Erstellung Ihres ersten Mobile Service finden Sie unter [Erste Schritte mit Mobile Services](http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started/).
+Ein Mobile Service, der eine Twilio-fähige Anwendung hostet, unterscheidet sich nicht von anderen Mobile Services. Sie fügen einfach die Twilio Node.js-Bibliothek hinzu, um aus Ihren benutzerdefinierten Mobile Services API-Skripts auf diese Bibliothek verweisen zu können. Weitere Informationen zur Erstellung Ihres ersten Mobile Service finden Sie unter [Erste Schritte mit Mobile Services](http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started/).
 
 Konfigurieren einer Anwendung für die Verwendung der Twilio Node.js-Bibliothek
 ------------------------------------------------------------------------------
 
 Twilio stellt eine Node.js-Bibliothek zur Verfügung, die verschiedene Aspekte von Twilio abdeckt, um eine einfache und problemlose Interaktion mit der Twilio-REST-API und dem Twilio-Client zum Generieren von TwiML-Antworten zu bieten.
 
-Sie müssen das npm-Modul von Mobile Services verwenden, um die Twilio Node.js-Bibliothek in Ihrem Mobile Service nutzen zu können. Legen Sie Ihre Skripts dazu in einer Quellcodeverwaltung ab. Das Lernprogramm [Speichern von Skripts in der Quellcodeverwaltung](http://www.windowsazure.com/en-us/develop/mobile/tutorials/store-scripts-in-source-control/) beschreibt die Einrichtung der Quellcodeverwaltung für Ihren Mobile Service und die Speicherung Ihrer Serverskripts in einem Git-Repository.
+Sie müssen das npm-Modul von Mobile Services verwenden, um die Twilio Node.js-Bibliothek in Ihrem Mobile Service nutzen zu können. Legen Sie Ihre Skripts dazu in einer Quellcodeverwaltung ab. Das Lernprogramm [Speichern von Skripts in der Quellcodeverwaltung](http://www.windowsazure.com/de-de/develop/mobile/tutorials/store-scripts-in-source-control/) beschreibt die Einrichtung der Quellcodeverwaltung für Ihren Mobile Service und die Speicherung Ihrer Serverskripts in einem Git-Repository.
 
 Nachdem Sie die Quellcodeverwaltung für Ihren Mobile Service eingerichtet haben, öffnen Sie die Registerkarte Configure im Dashboard Ihres Mobile Service und kopieren Sie die Git-URL
 

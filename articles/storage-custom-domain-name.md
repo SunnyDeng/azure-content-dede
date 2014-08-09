@@ -7,7 +7,7 @@ Sie können eine benutzerdefinierte Domäne für den Zugriff auf Blob-Daten in I
 
 **Hinweis**
 
-Die Vorgehensweisen in dieser Aufgabe gelten für Azure-Speicherkonten. Informationen zu Clouddiensten finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst](/en-us/develop/net/common-tasks/custom-dns/); Informationen zu Websites finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/).
+Die Vorgehensweisen in dieser Aufgabe gelten für Azure-Speicherkonten. Informationen zu Clouddiensten finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst](/de-de/develop/net/common-tasks/custom-dns/); Informationen zu Websites finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/de-de/develop/net/common-tasks/custom-dns-web-site/).
 
 Es gibt zwei Methoden, um Ihre benutzerdefinierte Domäne auf den Blob-Endpunkt für Ihr Speicherkonto zu verweisen. Die einfachste Methode besteht darin, einen CNAME-Datensatz zu erstellen, der Ihre benutzerdefinierte Domäne und Unterdomäne dem Blob-Endpunkt zuordnet. Ein CNAME-Datensatz ist eine DNS-Funktion, die eine Quelldomäne einer Zieldomäne zuordnet. In diesem Fall ist die Quelldomäne Ihre benutzerdefinierte Domäne und Unterdomäne (beachten Sie, dass die Unterdomäne immer erforderlich ist). Die Zieldomäne ist der Blob-Dienstendpunkt.
 
@@ -122,5 +122,5 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte
 Zusätzliche Ressourcen
 ----------------------
 
--   [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne](http://msdn.microsoft.com/en-us/library/windowsazure/gg680307.aspx)
+-   [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne](http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx)
 

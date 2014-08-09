@@ -3,7 +3,7 @@
 Django-Webanwendung "Hello World" (Mac, Linux)
 ==============================================
 
-[Windows](/en-us/develop/python/tutorials/web-app-with-django/ "Windows")[Mac/Linux](/en-us/develop/python/tutorials/django-hello-world-(maclinux)/ "Mac/Linux")
+[Windows](/de-de/develop/python/tutorials/web-app-with-django/ "Windows")[Mac/Linux](/de-de/develop/python/tutorials/django-hello-world-(maclinux)/ "Mac/Linux")
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website unter Azure mithilfe eines virtuellen Linux-Computers hosten können. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Django-basierte Anwendung, die in der Cloud ausgeführt wird.
 
@@ -23,7 +23,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 Erstellen und Konfigurieren eines virtuellen Azure-Computers als Host von Django
 --------------------------------------------------------------------------------
 
-1.  Befolgen Sie die [hier](/en-us/manage/linux/tutorials/virtual-machine-from-gallery/) aufgeführten Anweisungen, um einen virtuellen Azure-Computer mit der *Ubuntu Server 12.04*-Distribution zu erstellen.
+1.  Befolgen Sie die [hier](/de-de/manage/linux/tutorials/virtual-machine-from-gallery/) aufgeführten Anweisungen, um einen virtuellen Azure-Computer mit der *Ubuntu Server 12.04*-Distribution zu erstellen.
 
 **Hinweis:** Sie müssen *nur* den virtuellen Computer erstellen. Hören Sie mit Abschnitt *Anmelden bei einem virtuellen Computer nach dessen Erstellung* auf.
 

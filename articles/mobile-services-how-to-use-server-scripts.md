@@ -46,7 +46,7 @@ In Mobile Services können Sie Ihre eigene Geschäftslogik in Form von JavaScrip
 
 Die Signatur der main-Funktion im Serverskript hängt davon ab, in welchem Kontext das Skript verwendet wird. Sie können auch CommonScript-Code als nodes.js-Module definieren, die von verschiedenen Skripts genutzt werden. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code](#shared-code).
 
-Beschreibungen zu einzelnen Serverskript-Objekten und -Funktionen finden Sie unter [Skriptreferenz für Mobile Services-Server](http://msdn.microsoft.com/en-us/library/windowsazure/jj554226.aspx).
+Beschreibungen zu einzelnen Serverskript-Objekten und -Funktionen finden Sie unter [Skriptreferenz für Mobile Services-Server](http://msdn.microsoft.com/de-de/library/windowsazure/jj554226.aspx).
 
 Tabellenvorgänge
 ----------------
@@ -70,17 +70,17 @@ Tabellen-Skriptfunktionen nehmen immer drei Argumente entgegen.
 
     -   Für Insert- und Update-Vorgänge ist dies ein **Item**-Objekt mit einer JSON-Abbildung der vom entsprechenden Vorgang betroffenen Zeile. Auf diese Weise können Sie die Spaltenwerte mit Namen ansprechen, z. B. *item.Owner*, wobei *Owner* einer der Namen in der JSON-Darstellung ist.
     -   Für Delete-Vorgänge ist dies die ID des zu löschenden Eintrags.
-    -   Für Select-Vorgänge ist das erste Argument ein [Suchabfrageobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj613353.aspx), welches das zurückzuliefernde Rowset angibt.
--   Das zweite Argument ist immer ein [Benutzerobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554220.aspx) und repräsentiert den Benutzer, der die Anforderung übermittelt hat.
+    -   Für Select-Vorgänge ist das erste Argument ein [Suchabfrageobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj613353.aspx), welches das zurückzuliefernde Rowset angibt.
+-   Das zweite Argument ist immer ein [Benutzerobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx) und repräsentiert den Benutzer, der die Anforderung übermittelt hat.
 
--   Das dritte Argument ist immer ein [Anforderungsobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx), mit dem Sie den angeforderten Vorgang und die an den Client geschickte Antwort steuern können.
+-   Das dritte Argument ist immer ein [Anforderungsobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx), mit dem Sie den angeforderten Vorgang und die an den Client geschickte Antwort steuern können.
 
 Dies sind die kanonischen Signaturen der main-Funktion für die Tabellenvorgänge:
 
--   [Insert](http://msdn.microsoft.com/en-us/library/windowsazure/jj554229.aspx): `function insert (item, user, request) { ... }`
--   [Update](http://msdn.microsoft.com/en-us/library/windowsazure/jj554214.aspx): `function update (item, user, request) { ... }`
--   [Delete](http://msdn.microsoft.com/en-us/library/windowsazure/jj554215.aspx): `function del (id, user, request) { ... }`
--   [Read](http://msdn.microsoft.com/en-us/library/windowsazure/jj554224.aspx): `function read (query, user, request) { ... }`
+-   [Insert](http://msdn.microsoft.com/de-de/library/windowsazure/jj554229.aspx): `function insert (item, user, request) { ... }`
+-   [Update](http://msdn.microsoft.com/de-de/library/windowsazure/jj554214.aspx): `function update (item, user, request) { ... }`
+-   [Delete](http://msdn.microsoft.com/de-de/library/windowsazure/jj554215.aspx): `function del (id, user, request) { ... }`
+-   [Read](http://msdn.microsoft.com/de-de/library/windowsazure/jj554224.aspx): `function read (query, user, request) { ... }`
 
 > [WACOM.NOTE]Funktionen, die für den Delete-Vorgang registriert sind, müssen *del* genannt werden, da delete ein reserviertes Schlüsselwort in JavaScript ist.
 
@@ -94,13 +94,13 @@ Sie können Serverskripts, die für einen Tabellenvorgang registriert sind, auf 
 
     ![1](./media/mobile-services-how-to-use-server-scripts/1-mobile-insert-script-users.png)
 
-    Weitere Informationen hierzu finden Sie unter [Validate and modify data in Mobile Services by using server scripts](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/) (Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts, in englischer Sprache).
+    Weitere Informationen hierzu finden Sie unter [Validate and modify data in Mobile Services by using server scripts](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/) (Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts, in englischer Sprache).
 
 -   Mithilfe von Quellcodeverwaltung. Falls Sie Quellcodeverwaltung aktiviert haben, können Sie einfach eine Datei mit dem Namen *`<table>`*.*`<operation>`*.js im Unterordner .\\service\\table in Ihrem Git-Repository erstellen, wobei *`<table>`* der Name der Tabelle ist und *`<operation>`* der zu registrierende Tabellenvorgang. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code](#shared-code).
 
 -   Über die Eingabeaufforderung im Azure-Befehlszeilentool. Weitere Informationen finden Sie unter [Arbeiten mit dem Befehlszeilentool](#command-prompt).
 
-Tabellenvorgänge müssen mindestens eine der folgenden Funktionen des [Anforderungsobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx) aufrufen, um sicherzustellen, dass der Client eine Antwort erhält.
+Tabellenvorgänge müssen mindestens eine der folgenden Funktionen des [Anforderungsobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx) aufrufen, um sicherzustellen, dass der Client eine Antwort erhält.
 
 -   **execute function**: Der Vorgang wird wie angefordert ausgeführt und die Standardantwort zurückgeliefert.
 
@@ -118,7 +118,7 @@ Das folgende Skript ruft die **execute**-Funktion auf, um den vom Client angefor
 
 In diesem Beispiel wird das Element in die Datenbank eingefügt und der entsprechende Statuscode an den Benutzer zurückgeliefert.
 
-Beim Aufruf der **execute**-Funktion wird der Wert für `item`, [query](http://msdn.microsoft.com/en-us/library/windowsazure/jj613353.aspx) oder `id`, der als erstes Argument an die Skriptfunktion übergeben wurde, für den Vorgang verwendet. Für Insert-, Update- oder Query-Vorgänge können Sie Element oder Abfrage modifizieren, bevor Sie **execute** aufrufen:
+Beim Aufruf der **execute**-Funktion wird der Wert für `item`, [query](http://msdn.microsoft.com/de-de/library/windowsazure/jj613353.aspx) oder `id`, der als erstes Argument an die Skriptfunktion übergeben wurde, für den Vorgang verwendet. Für Insert-, Update- oder Query-Vorgänge können Sie Element oder Abfrage modifizieren, bevor Sie **execute** aufrufen:
 
     function insert(item, user, request) { 
         item.scriptComment =
@@ -140,7 +140,7 @@ Beim Aufruf der **execute**-Funktion wird der Wert für `item`, [query](http://m
 
 > [WACOM.NOTE]In Delete-Skripts haben Änderungen am Wert der übergebenen userId-Variable keinen Einfluss darauf, welcher Datensatz gelöscht wird.
 
-Weitere Beispiele finden Sie unter [Lesen und Schreiben von Daten](http://msdn.microsoft.com/en-us/library/windowsazure/jj631640.aspx), [Ändern der Anforderung](http://msdn.microsoft.com/en-us/library/windowsazure/jj631635.aspx) und [Überprüfen von Daten](http://msdn.microsoft.com/en-us/library/windowsazure/jj631638.aspx).
+Weitere Beispiele finden Sie unter [Lesen und Schreiben von Daten](http://msdn.microsoft.com/de-de/library/windowsazure/jj631640.aspx), [Ändern der Anforderung](http://msdn.microsoft.com/de-de/library/windowsazure/jj631635.aspx) und [Überprüfen von Daten](http://msdn.microsoft.com/de-de/library/windowsazure/jj631638.aspx).
 
 ### Gewusst wie: Außerkraftsetzen der Standardantwort
 
@@ -155,7 +155,7 @@ Sie können mithilfe von Skripts auch eine Prüflogik implementieren und das Sta
         }
     }
 
-In diesem Beispiel wird die Anforderung abgelehnt, wenn das einzufügende Element keine `userId`-Eigenschaft hat, die mit der `userId` des [Benutzerobjekts](http://msdn.microsoft.com/en-us/library/windowsazure/jj554220.aspx) übereinstimmt, das für den authentifizierten Client geliefert wurde. In diesem Fall wird der Datenbankvorgang (*insert*) nicht ausgeführt, und der Client erhält eine Antwort mit HTTP-Statuscode 403 und einer benutzerdefinierten Fehlermeldung. Weitere Beispiele finden Sie unter [Ändern der Antwort](http://msdn.microsoft.com/en-us/library/windowsazure/jj631631.aspx).
+In diesem Beispiel wird die Anforderung abgelehnt, wenn das einzufügende Element keine `userId`-Eigenschaft hat, die mit der `userId` des [Benutzerobjekts](http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx) übereinstimmt, das für den authentifizierten Client geliefert wurde. In diesem Fall wird der Datenbankvorgang (*insert*) nicht ausgeführt, und der Client erhält eine Antwort mit HTTP-Statuscode 403 und einer benutzerdefinierten Fehlermeldung. Weitere Beispiele finden Sie unter [Ändern der Antwort](http://msdn.microsoft.com/de-de/library/windowsazure/jj631631.aspx).
 
 ### Gewusst wie: Außer Kraft setzen des Ausführungserfolgs
 
@@ -207,7 +207,7 @@ Die folgende URI für eine POST-Anforderung weist den Service z. B. an, keine Ei
      https://todolist.azure-mobile.net/tables/TodoItem
         duplicateText=false
 
-Diese benutzerdefinierten Abfrageparameter können als JSON-Werte der **parameters**-Eigenschaft des [Anforderungsobjekts](http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx) abgerufen werden. Das **Anforderungsobjekt** wird von Mobile Services für alle Funktionen bereitgestellt, die für einen Tabellenvorgang registriert sind. Das folgende Serverskript für den insert-Vorgang prüft den Wert des Parameters `duplicateText`, bevor der insert-Vorgang ausgeführt wird:
+Diese benutzerdefinierten Abfrageparameter können als JSON-Werte der **parameters**-Eigenschaft des [Anforderungsobjekts](http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx) abgerufen werden. Das **Anforderungsobjekt** wird von Mobile Services für alle Funktionen bereitgestellt, die für einen Tabellenvorgang registriert sind. Das folgende Serverskript für den insert-Vorgang prüft den Wert des Parameters `duplicateText`, bevor der insert-Vorgang ausgeführt wird:
 
      function insert(item, user, request) {
             var todoItemTable = tables.getTable('TodoItem');
@@ -237,7 +237,7 @@ Diese benutzerdefinierten Abfrageparameter können als JSON-Werte der **paramete
             }
         }
 
-Beachten Sie, dass in **insertItemIfNotComplete** die **execute**-Funktion des [Anforderungsobjekts](http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx) aufgerufen wird, um das Element einzufügen, falls kein duplizierter Text vorhanden ist. Andernfalls wird die **respond**-Funktion aufgerufen, um den Client über den duplizierten Text zu informieren.
+Beachten Sie, dass in **insertItemIfNotComplete** die **execute**-Funktion des [Anforderungsobjekts](http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx) aufgerufen wird, um das Element einzufügen, falls kein duplizierter Text vorhanden ist. Andernfalls wird die **respond**-Funktion aufgerufen, um den Client über den duplizierten Text zu informieren.
 
 Beachten Sie die Syntax des Aufrufs an die **success**-Funktion im obigen Code:
 
@@ -255,7 +255,7 @@ In JavaScript ist dies eine kompakte Version des folgenden Codes:
 
 ### Gewusst wie: Arbeiten mit Benutzern
 
-In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=287177) (Erste Schritte zur Authentifizierung, in englischer Sprache). Wenn ein authentifizierter Benutzer einen Tabellenvorgang aufruft, verwendet Mobile Services das [Benutzerobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554220.aspx), um Informationen über den Benutzer an die registrierte Skriptfunktion zu liefern. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. Im folgenden Beispiel wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
+In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=287177) (Erste Schritte zur Authentifizierung, in englischer Sprache). Wenn ein authentifizierter Benutzer einen Tabellenvorgang aufruft, verwendet Mobile Services das [Benutzerobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx), um Informationen über den Benutzer an die registrierte Skriptfunktion zu liefern. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. Im folgenden Beispiel wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
 
     function insert(item, user, request) {
         item.owner = user.userId;
@@ -274,15 +274,15 @@ Im nächsten Beispiel wird ein zusätzlicher Filter für die Abfrage anhand der 
 Benutzerdefinierte API
 ----------------------
 
-Benutzerdefinierte APIs sind Endpunkte in Ihrem Mobile Service, die von einer oder mehreren der Standard-HTTP-Methoden aufgerufen werden: GET, POST, PUT, PATCH, DELETE. Ein separater Funktionsexport kann für jede HTTP-Methode definiert werden, die von der benutzerdefinierten API unterstützt wird, alles zusammen in einer Skriptdatei. Das registrierte Skript wird aufgerufen, wenn eine Anforderung an die benutzerdefinierte API über die entsprechende Methode empfangen wird. Weitere Informationen finden Sie unter [Benutzerdefinierte API](http://msdn.microsoft.com/en-us/library/windowsazure/dn280974.aspx).
+Benutzerdefinierte APIs sind Endpunkte in Ihrem Mobile Service, die von einer oder mehreren der Standard-HTTP-Methoden aufgerufen werden: GET, POST, PUT, PATCH, DELETE. Ein separater Funktionsexport kann für jede HTTP-Methode definiert werden, die von der benutzerdefinierten API unterstützt wird, alles zusammen in einer Skriptdatei. Das registrierte Skript wird aufgerufen, wenn eine Anforderung an die benutzerdefinierte API über die entsprechende Methode empfangen wird. Weitere Informationen finden Sie unter [Benutzerdefinierte API](http://msdn.microsoft.com/de-de/library/windowsazure/dn280974.aspx).
 
-Bei Aufrufen von Funktionen einer benutzerdefinierten API durch die Mobile Services-Runtime werden sowohl [Anforderungs-](http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx) als auch [Antwort-](http://msdn.microsoft.com/en-us/library/windowsazure/dn303373.aspx)Objekt mitgeliefert. Diese Objekte machen die Funktionen der [express.js-Bibliothek](http://go.microsoft.com/fwlink/p/?LinkId=309046) verfügbar, die wiederum von Ihren Skripts verwendet werden können. Die folgende benutzerdefinierte API namens **hello** ist ein sehr einfaches Beispiel und gibt als Antwort auf eine POST-Anforderung *Hello, world!* zurück:
+Bei Aufrufen von Funktionen einer benutzerdefinierten API durch die Mobile Services-Runtime werden sowohl [Anforderungs-](http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx) als auch [Antwort-](http://msdn.microsoft.com/de-de/library/windowsazure/dn303373.aspx)Objekt mitgeliefert. Diese Objekte machen die Funktionen der [express.js-Bibliothek](http://go.microsoft.com/fwlink/p/?LinkId=309046) verfügbar, die wiederum von Ihren Skripts verwendet werden können. Die folgende benutzerdefinierte API namens **hello** ist ein sehr einfaches Beispiel und gibt als Antwort auf eine POST-Anforderung *Hello, world!* zurück:
 
      exports.post = function(request, response) {
             response.send(200, "{ message: 'Hallo Welt!' }");
         } 
 
-Die **send**-Funktion des [Antwortobjekts](http://msdn.microsoft.com/en-us/library/windowsazure/dn303373.aspx) gibt die gewünschte Antwort an den Client zurück. Sie können diesen Code aufrufen, indem Sie eine POST-Anforderung an die folgende URL schicken:
+Die **send**-Funktion des [Antwortobjekts](http://msdn.microsoft.com/de-de/library/windowsazure/dn303373.aspx) gibt die gewünschte Antwort an den Client zurück. Sie können diesen Code aufrufen, indem Sie eine POST-Anforderung an die folgende URL schicken:
 
      https://todolist.azure-mobile.net/api/hello  
 
@@ -296,7 +296,7 @@ Sie können Serverskripts, die für HTTP-Methoden in einem Endpunkt einer benutz
 
     ![2](./media/mobile-services-how-to-use-server-scripts/2-mobile-custom-api-script.png)
 
-    Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Call a custom API from the client](/en-us/develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api) (Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache.
+    Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Call a custom API from the client](/de-de/develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api) (Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache.
 
 -   Mithilfe von Quellcodeverwaltung. Falls Sie Quellcodeverwaltung aktiviert haben, können Sie einfach eine Datei mit dem Namen *`<custom data-morhtml="true"_api>`*.js im Unterordner .\\service\\api in Ihrem Git-Repository erstellen, wobei *`<custom data-morhtml="true"_api>`* der Name der zu registrierenden benutzerdefinierten API ist. Die Skriptdatei enthält eine *exported*-Funktion für jede HTTP-Methode, die von der benutzerdefinierten API verfügbar gemacht wird. Die Berechtigungen werden in einer separaten .json-Datei definiert. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code](#shared-code).
 
@@ -316,7 +316,7 @@ Der Endpunkt der benutzerdefinierten API kann nur mit den HTTP-Methoden aufgeruf
 
 ### Gewusst wie: Senden und Empfangen von Daten als XML
 
-Wenn Clients Daten speichern und abrufen, verwendet Mobile Services JavaScript Object Notation (JSON) für die Darstellung der Daten im Nachrichtentext. In manchen Szenarien macht es jedoch mehr Sinn, stattdessen eine XML-Nutzlast zu verwenden. Windows Store-Apps haben z. B. eine eingebaute Funktion für periodische Benachrichtigungen, die nur mit XML-Diensten funktioniert. Weitere Informationen finden Sie unter [Define a custom API that supports periodic notifications](/en-us/develop/mobile/tutorials/create-pull-notifications-dotnet/) (Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen, in englischer Sprache).
+Wenn Clients Daten speichern und abrufen, verwendet Mobile Services JavaScript Object Notation (JSON) für die Darstellung der Daten im Nachrichtentext. In manchen Szenarien macht es jedoch mehr Sinn, stattdessen eine XML-Nutzlast zu verwenden. Windows Store-Apps haben z. B. eine eingebaute Funktion für periodische Benachrichtigungen, die nur mit XML-Diensten funktioniert. Weitere Informationen finden Sie unter [Define a custom API that supports periodic notifications](/de-de/develop/mobile/tutorials/create-pull-notifications-dotnet/) (Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen, in englischer Sprache).
 
 Die folgende **OrderPizza**-Funktion einer benutzerdefinierten API liefert ein einfaches XML-Dokument als Nutzlast der Antwort zurück.
 
@@ -334,7 +334,7 @@ Sie können diese Funktion aufrufen, indem Sie eine HTTP GET-Anforderung an den 
 
 ### Gewusst wie: Arbeiten mit Benutzern und Headern in benutzerdefinierten APIs
 
-In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=287177) (Erste Schritte zur Authentifizierung, in englischer Sprache). Wenn ein authentifizierter Benutzer eine benutzerdefinierte API aufruft, verwendet Mobile Services das [Benutzerobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554220.aspx), um Informationen über den Benutzer an den Code der benutzerdefinierten API zu liefern. Das [Benutzerobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554220.aspx) ist über die user-Eigenschaft des [Anforderungsobjekts](http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx) zugänglich. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden.
+In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=287177) (Erste Schritte zur Authentifizierung, in englischer Sprache). Wenn ein authentifizierter Benutzer eine benutzerdefinierte API aufruft, verwendet Mobile Services das [Benutzerobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx), um Informationen über den Benutzer an den Code der benutzerdefinierten API zu liefern. Das [Benutzerobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx) ist über die user-Eigenschaft des [Anforderungsobjekts](http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx) zugänglich. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden.
 
 In der folgenden **OrderPizza**-Funktion einer benutzerdefinierten API wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
 
@@ -354,7 +354,7 @@ Sie können diese Funktion aufrufen, indem Sie eine HTTP POST-Anforderung an den
 
      https://<service>.azure-mobile.net/api/orderpizza
 
-Sie können auch auf bestimmte HTTP-Header des [Anforderungsobjekts](http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx) zugreifen, wie der folgende Code zeigt:
+Sie können auch auf bestimmte HTTP-Header des [Anforderungsobjekts](http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx) zugreifen, wie der folgende Code zeigt:
 
      exports.get = function(request, response) {    
             var header = request.header('my-custom-header');
@@ -402,7 +402,7 @@ Die beiden Routen im obigen Beispiel für eine benutzerdefinierte API können wi
 Auftragsplaner
 --------------
 
-Mit Mobile Services können Sie Serverskripts definieren, die entweder als Aufträge nach festem Zeitplan oder bedarfsgesteuert über das Verwaltungsportal ausgeführt werden können. Planmäßige Aufträge sind hilfreich für periodische Aufgaben wie z. B: Aufräumvorgänge in Tabellendaten und Batchverarbeitungen. Weitere Informationen finden Sie unter [Geplante Aufträge](http://msdn.microsoft.com/en-us/library/windowsazure/jj860528.aspx).
+Mit Mobile Services können Sie Serverskripts definieren, die entweder als Aufträge nach festem Zeitplan oder bedarfsgesteuert über das Verwaltungsportal ausgeführt werden können. Planmäßige Aufträge sind hilfreich für periodische Aufgaben wie z. B: Aufräumvorgänge in Tabellendaten und Batchverarbeitungen. Weitere Informationen finden Sie unter [Geplante Aufträge](http://msdn.microsoft.com/de-de/library/windowsazure/jj860528.aspx).
 
 Skripts, die für geplante Aufträge registriert sind, haben eine Hauptfunktion mit demselben Namen wie der geplante Auftrag. Da geplante Aufträge nicht über HTTP-Anforderungen aufgerufen werden, existiert kein Kontext, der von der Server-Runtime übergeben werden kann, und die Funktion nimmt keine Parameter entgegen. Wie auch andere Skriptarten können Sie Unterfunktionen definieren und freigegebene Module einbinden. Weitere Informationen finden Sie unter [Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen](#shared-code).
 
@@ -416,7 +416,7 @@ Geplante Aufträge können auf zwei Arten definiert werden:
 
     ![3](./media/mobile-services-how-to-use-server-scripts/3-mobile-schedule-job-script.png)
 
-    Weitere Informationen hierzu finden Sie unter [Schedule backend jobs in Mobile Services](/en-us/develop/mobile/tutorials/schedule-backend-tasks/) (Planen von Back-End-Aufgaben in Mobile Services, in englischer Sprache).
+    Weitere Informationen hierzu finden Sie unter [Schedule backend jobs in Mobile Services](/de-de/develop/mobile/tutorials/schedule-backend-tasks/) (Planen von Back-End-Aufgaben in Mobile Services, in englischer Sprache).
 
 -   Über die Eingabeaufforderung im Azure-Befehlszeilentool. Weitere Informationen finden Sie unter [Arbeiten mit dem Befehlszeilentool](#command-prompt).
 
@@ -433,8 +433,8 @@ Es folgt eine Liste hilfreicher Module, die Sie über die globale **require**-Fu
 -   **crypto**: Macht die Verschlüsselungsfunktionen von Open SSL verfügbar. Weitere Informationen finden Sie in der [Node.js-Dokumentation](http://go.microsoft.com/fwlink/p/?LinkId=288802).
 -   **path**: Enthält Werkzeuge zum Arbeiten mit Dateipfaden. Weitere Informationen finden Sie in der [Node.js-Dokumentation](http://go.microsoft.com/fwlink/p/?LinkId=288803).
 -   **querystring**: Enthält Werkzeuge zum Arbeiten mit Abfragezeichenfolgen. Weitere Informationen finden Sie in der [Node.js-Dokumentation](http://go.microsoft.com/fwlink/p/?LinkId=288804).
--   **request**: Verschickt HTTP-Anforderungen an externe REST-Dienste wie z. B. Twitter und Facebook. Weitere Informationen finden Sie unter [HTTP-Anforderungen senden](http://msdn.microsoft.com/en-us/library/windowsazure/jj631641.aspx).
--   **sendgrid**: Verschickt E-Mails über den Sendgrid-E-Mail-Dienst in Azure. Weitere Informationen finden Sie unter [Send email from Mobile Services with SendGrid](/en-us/develop/mobile/tutorials/send-email-with-sendgrid/) (E-Mail-Versand in Mobile Services mit SendGrid, in englischer Sprache).
+-   **request**: Verschickt HTTP-Anforderungen an externe REST-Dienste wie z. B. Twitter und Facebook. Weitere Informationen finden Sie unter [HTTP-Anforderungen senden](http://msdn.microsoft.com/de-de/library/windowsazure/jj631641.aspx).
+-   **sendgrid**: Verschickt E-Mails über den Sendgrid-E-Mail-Dienst in Azure. Weitere Informationen finden Sie unter [Send email from Mobile Services with SendGrid](/de-de/develop/mobile/tutorials/send-email-with-sendgrid/) (E-Mail-Versand in Mobile Services mit SendGrid, in englischer Sprache).
 -   **url**: Enthält Werkzeuge zum Analysieren und Auflösen von URLs. Weitere Informationen finden Sie in der [Node.js-Dokumentation](http://go.microsoft.com/fwlink/p/?LinkId=288805).
 -   **util**: Enthält verschiedene Werkzeuge wie z. B. Zeichenfolgenformatierung und Objekttypprüfungen. Weitere Informationen finden Sie in der [Node.js-Dokumentation](http://go.microsoft.com/fwlink/p/?LinkId=288806).
 -   **zlib**: Macht Komprimierungsmethoden wie z. B. gzip und deflate verfügbar. Weitere Informationen finden Sie in der [Node.js-Dokumentation](http://go.microsoft.com/fwlink/p/?LinkId=288807).
@@ -456,7 +456,7 @@ Sie können über Ihre Quellcodeverwaltung und den Node.js-Paket-Manager (npm) s
 
 -   Für die von npm bereitgestellten und installierten Module verwenden Sie die Datei package.json, um anzugeben, welche Pakete von Ihrem Mobile Service installiert werden sollen. Auf diese Weise hat Ihr Dienst immer Zugriff auf die neueste Version der installierten Pakete. Die Datei package.json befindet sich im Verzeichnis `.\service`. Weitere Informationen finden Sie unter [Support for package.json in Azure Mobile Services](http://go.microsoft.com/fwlink/p/?LinkId=391036) (package.json-Unterstützung in Azure Mobile Services, in englischer Sprache).
 
--   Private oder benutzerdefinierte Module können Sie mithilfe von npm manuell in das Verzeichnis `.\service\node_modules` Ihrer Quellcodeverwaltung installieren. Ein Beispiel zum manuellen Hochladen von Modulen finden Sie unter [Leverage shared code and Node.js modules in your server scripts](/en-us/develop/mobile/tutorials/store-scripts-in-source-control/#use-npm) (Einbinden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts, in englischer Sprache).
+-   Private oder benutzerdefinierte Module können Sie mithilfe von npm manuell in das Verzeichnis `.\service\node_modules` Ihrer Quellcodeverwaltung installieren. Ein Beispiel zum manuellen Hochladen von Modulen finden Sie unter [Leverage shared code and Node.js modules in your server scripts](/de-de/develop/mobile/tutorials/store-scripts-in-source-control/#use-npm) (Einbinden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts, in englischer Sprache).
 
     > [WACOM.NOTE]Falls `node_modules` bereits in der Verzeichnishierarchie existiert, erstellt NPM das Unterverzeichnis `\node-uuid` dort, anstatt ein neues `node_modules`-Verzeichnis im Repository anzulegen. In diesem Fall können Sie das existierende `node_modules`-Verzeichnis löschen.
 
@@ -504,15 +504,15 @@ Anschließend können Sie Funktion in einem Tabellenvorgangsskript verwenden:
             }
         }
 
-In diesem Beispiel müssen Sie sowohl ein [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx) als auch ein [Benutzerobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554220.aspx) an die freigegebene Funktion übergeben. Dies liegt daran, dass freigegebene Skripts keinen Zugriff auf das globale [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx) haben, und das [Benutzerobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554220.aspx) nur im Kontext einer Anforderung existiert.
+In diesem Beispiel müssen Sie sowohl ein [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx) als auch ein [Benutzerobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx) an die freigegebene Funktion übergeben. Dies liegt daran, dass freigegebene Skripts keinen Zugriff auf das globale [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx) haben, und das [Benutzerobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx) nur im Kontext einer Anforderung existiert.
 
 Skriptdateien können entweder mithilfe der [Quellcodeverwaltung](#shared-code-source-control) oder über das [Befehlszeilentool](#command-prompt) in das freigegebene Verzeichnis kopiert werden.
 
 ### Gewusst wie: Arbeiten mit App-Einstellungen
 
-Mit Mobile Services können Sie Werte wie z. B. App-Einstellungen sicher speichern und Ihren Serverskripts zur Laufzeit zur Verfügung stellen. Wenn Sie Daten zu den App-Einstellungen Ihres Mobile Service hinzufügen, werden die Name-Wert-Paare verschlüsselt gespeichert und Sie können in Ihren Serverskripts darauf zugreifen, ohne die Daten hart in der Skriptdatei codieren zu müssen. Weitere Informationen finden Sie unter [App-Einstellungen](http://msdn.microsoft.com/en-us/library/dn529070.aspx).
+Mit Mobile Services können Sie Werte wie z. B. App-Einstellungen sicher speichern und Ihren Serverskripts zur Laufzeit zur Verfügung stellen. Wenn Sie Daten zu den App-Einstellungen Ihres Mobile Service hinzufügen, werden die Name-Wert-Paare verschlüsselt gespeichert und Sie können in Ihren Serverskripts darauf zugreifen, ohne die Daten hart in der Skriptdatei codieren zu müssen. Weitere Informationen finden Sie unter [App-Einstellungen](http://msdn.microsoft.com/de-de/library/dn529070.aspx).
 
-Die folgende benutzerdefinierte API verwendet das übergebene [Serviceobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/dn303371.aspx), um den Wert einer App-Einstellung abzurufen.
+Die folgende benutzerdefinierte API verwendet das übergebene [Serviceobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/dn303371.aspx), um den Wert einer App-Einstellung abzurufen.
 
      exports.get = function(request, response) {
         
@@ -536,7 +536,7 @@ Im folgenden Code werden Werte eines Twitter-Zugriffstokens über das Konfigurat
         var accessToken= config.appSettings.TWITTER_ACCESS_TOKEN,
             accessTokenSecret = config.appSettings.TWITTER_ACCESS_TOKEN_SECRET;
 
-Beachten Sie, dass dieser Code auch die Consumer Key-Werte von Twitter abruft und in der Registerkarte **Identität** im Portal speichert. Da das **config-Objekt** in Skripts für Tabellenvorgänge und geplante Aufträge nicht verfügbar ist, muss das Konfigurationsmodul stattdessen auf die App-Einstellungen zugreifen. Ein vollständiges Beispiel finden Sie unter [Schedule backend jobs in Mobile Services](/en-us/develop/mobile/tutorials/schedule-backend-tasks/) (Planen von Back-End-Aufgaben in Mobile Services, in englischer Sprache).
+Beachten Sie, dass dieser Code auch die Consumer Key-Werte von Twitter abruft und in der Registerkarte **Identität** im Portal speichert. Da das **config-Objekt** in Skripts für Tabellenvorgänge und geplante Aufträge nicht verfügbar ist, muss das Konfigurationsmodul stattdessen auf die App-Einstellungen zugreifen. Ein vollständiges Beispiel finden Sie unter [Schedule backend jobs in Mobile Services](/de-de/develop/mobile/tutorials/schedule-backend-tasks/) (Planen von Back-End-Aufgaben in Mobile Services, in englischer Sprache).
 
 Arbeiten mit dem Befehlszeilentool
 ----------------------------------
@@ -580,24 +580,24 @@ Der folgende Befehl gibt Informationen über sämtliche Skriptdateien in Ihrem M
         data:    register_notifications  application  application  user         application  application
         info:    mobile script list command OK
 
-Weitere Informationen finden Sie unter [Commands to manage Azure Mobile Services](/en-us/manage/linux/other-resources/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts) (Befehle zum Verwalten von Azure Mobile Services, in englischer Sprache).
+Weitere Informationen finden Sie unter [Commands to manage Azure Mobile Services](/de-de/manage/linux/other-resources/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts) (Befehle zum Verwalten von Azure Mobile Services, in englischer Sprache).
 
 Arbeiten mit Tabellen
 ---------------------
 
 Serverskripts in Mobile Services benötigen häufig Zugriff auf Tabellen in der Datenbank. Zum Beispiel weil Mobile Services den Status zwischen Skriptausführungen nicht speichert und alle Daten, die zwischen Skriptausführungen erhalten bleiben sollen, in Tabellen gespeichert werden müssen. Es kann auch passieren, dass Sie Einträge in einer Berechtigungstabelle auslesen oder Überwachungsdaten anstelle von normalen Protokolleinträgen speichern müssen, die nur eine begrenzte Lebensdauer haben und nicht programmgesteuert abrufbar sind.
 
-Mobile Services bietet zwei Methoden für den Zugriff auf Tabellen, entweder über das [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554210.aspx) als Proxy oder über Transact-SQL-Abfragen an das [mssql-Objekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx). Das [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554210.aspx) erleichtert den Zugriff auf Tabellendaten aus Ihrem Serverskriptcode heraus. Das [mssql-Objekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx) unterstützt komplexere Datenvorgänge und bietet die größte Flexibilität.
+Mobile Services bietet zwei Methoden für den Zugriff auf Tabellen, entweder über das [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554210.aspx) als Proxy oder über Transact-SQL-Abfragen an das [mssql-Objekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554212.aspx). Das [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554210.aspx) erleichtert den Zugriff auf Tabellendaten aus Ihrem Serverskriptcode heraus. Das [mssql-Objekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554212.aspx) unterstützt komplexere Datenvorgänge und bietet die größte Flexibilität.
 
 ### Gewusst wie: Tabellenzugriff in Skripts
 
-Der einfachste Weg, um in Ihrem Skript auf Tabellen zuzugreifen, ist das [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx). Die **getTable**-Funktion gibt eine [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554210.aspx)-Instanz zurück, die als Proxy für den Zugriff auf die angeforderte Tabelle dient. Sie können anschließend Funktionen des Proxy aufrufen, um Daten auszulesen oder zu ändern.
+Der einfachste Weg, um in Ihrem Skript auf Tabellen zuzugreifen, ist das [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx). Die **getTable**-Funktion gibt eine [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554210.aspx)-Instanz zurück, die als Proxy für den Zugriff auf die angeforderte Tabelle dient. Sie können anschließend Funktionen des Proxy aufrufen, um Daten auszulesen oder zu ändern.
 
-Skripts, die sowohl für Tabellenvorgänge als auch für geplante Aufträge registriert sind, können auf das [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx) als globales Objekt zugreifen. Die folgende Codezeile ruft einen Proxy für die Tabelle *TodoItems* aus dem globalen [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx) ab:
+Skripts, die sowohl für Tabellenvorgänge als auch für geplante Aufträge registriert sind, können auf das [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx) als globales Objekt zugreifen. Die folgende Codezeile ruft einen Proxy für die Tabelle *TodoItems* aus dem globalen [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx) ab:
 
      var todoItemsTable = tables.getTable('TodoItems');
 
-Skripts in benutzerdefinierten APIs können über die **service**-Eigenschaft des übergebenen [Anforderungsobjekts](http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx) auf das [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx) zugreifen. Die folgende Codezeile ruft das [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx) aus der Anforderung ab:
+Skripts in benutzerdefinierten APIs können über die **service**-Eigenschaft des übergebenen [Anforderungsobjekts](http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx) auf das [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx) zugreifen. Die folgende Codezeile ruft das [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx) aus der Anforderung ab:
 
      var todoItemsTable = request.service.tables.getTable('TodoItem');
 
@@ -605,7 +605,7 @@ Skripts in benutzerdefinierten APIs können über die **service**-Eigenschaft de
 
 Freigegebene Funktionen können nicht direkt auf das **Tabellenobjekt** zugreifen. In freigegebenen Funktionen müssen Sie das Tabellenobjekt an die Funktion übergeben.
 
-Sobald Sie ein [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554210.aspx) haben, können Sie die folgenden Funktionen für Tabellenvorgänge aufrufen: insert, update, delete oder read. Das folgende Beispiel ruft Berechtigungen eines Benutzers aus einer Berechtigungstabelle ab:
+Sobald Sie ein [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554210.aspx) haben, können Sie die folgenden Funktionen für Tabellenvorgänge aufrufen: insert, update, delete oder read. Das folgende Beispiel ruft Berechtigungen eines Benutzers aus einer Berechtigungstabelle ab:
 
     function insert(item, user, request) {
         var permissionsTable = tables.getTable('permissions');
@@ -704,13 +704,13 @@ Client- und Mobile Service-Datenbank verwenden unterschiedliche Datentypen. Manc
 
 -   Die spezifischen Typen der Clientsprache werden im JSON-Format serialisiert.
 -   Die JSON-Darstellung wird nach JavaScript übersetzt, bevor sie in den Serverskripts auftaucht.
--   Die JavaScript-Daten werden beim Speichern mit dem [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx) in SQL-Datenbanktypen transformiert.
+-   Die JavaScript-Daten werden beim Speichern mit dem [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx) in SQL-Datenbanktypen transformiert.
 
 Die Transformation vom Clientschema nach JSON unterscheidet sich je nach Plattform. JSON.NET wird im Windows Store und auf Windows Phone-Clients verwendet. Der Android-Client verwendet die gson-Bibliothek. Der iOS-Client verwendet die NSJSONSerialization-Klasse. Diese Bibliotheken verwenden jeweils ihr Standard-Serialisierungsverhalten, allerdings werden Datumsobjekte in JSON-Zeichenfolgen umgewandelt, in denen das Datum nach ISO 8601 codiert ist.
 
-Beim Schreiben von Serverskripts, die [insert-](http://msdn.microsoft.com/en-us/library/windowsazure/jj554229.aspx), [update-](http://msdn.microsoft.com/en-us/library/windowsazure/jj554214.aspx), [read-](http://msdn.microsoft.com/en-us/library/windowsazure/jj554224.aspx) oder [delete-](http://msdn.microsoft.com/en-us/library/windowsazure/jj554215.aspx)-Funktionen verwenden, haben Sie Zugriff auf die JavaScript-Darstellung Ihrer Daten. Mobile Services verwendet die Deserialisierungsfunktion von Node.js ([JSON.parse](http://es5.github.io/#x15.12)), um eingehendes JSON in JavaScript-Objekte zu transformieren. Mobile Services führt jedoch eine Transformation durch, um **Date**-Objekte aus ISO 8601-Zeichenfolgen zu extrahieren.
+Beim Schreiben von Serverskripts, die [insert-](http://msdn.microsoft.com/de-de/library/windowsazure/jj554229.aspx), [update-](http://msdn.microsoft.com/de-de/library/windowsazure/jj554214.aspx), [read-](http://msdn.microsoft.com/de-de/library/windowsazure/jj554224.aspx) oder [delete-](http://msdn.microsoft.com/de-de/library/windowsazure/jj554215.aspx)-Funktionen verwenden, haben Sie Zugriff auf die JavaScript-Darstellung Ihrer Daten. Mobile Services verwendet die Deserialisierungsfunktion von Node.js ([JSON.parse](http://es5.github.io/#x15.12)), um eingehendes JSON in JavaScript-Objekte zu transformieren. Mobile Services führt jedoch eine Transformation durch, um **Date**-Objekte aus ISO 8601-Zeichenfolgen zu extrahieren.
 
-Wenn Sie das [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj614364.aspx) oder das [mssql-Objekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx) verwenden oder Ihre Skripts ausführen, werden die deserialisierten JavaScript-Objekte in Ihre SQL-Datenbank eingefügt. Bei diesem Vorgang werden die Objekteigenschaften auf T-SQL-Datentypen abgebildet:
+Wenn Sie das [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj614364.aspx) oder das [mssql-Objekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554212.aspx) verwenden oder Ihre Skripts ausführen, werden die deserialisierten JavaScript-Objekte in Ihre SQL-Datenbank eingefügt. Bei diesem Vorgang werden die Objekteigenschaften auf T-SQL-Datentypen abgebildet:
 
 <table>
 <colgroup>
@@ -729,7 +729,7 @@ Float(53)</td>
 
 ### Tabellenzugriff mit Transact-SQL
 
-Der einfachste Weg, um in einem Serverskript mit Tabellendaten zu arbeiten, ist das [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554210.aspx) als Proxy. Manche erweiterte Szenarien wie z. B. join-Abfragen und andere komplexe Abfragen sowie das Aufrufen von gespeicherten Prozeduren werden jedoch vom [Tabellenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554210.aspx) nicht unterstützt. In diesen Fällen müssen Sie Transact-SQL-Anweisungen über das [mssql-Objekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx) direkt auf den relationalen Tabellen ausführen. Dieses Objekt bietet die folgenden Funktionen:
+Der einfachste Weg, um in einem Serverskript mit Tabellendaten zu arbeiten, ist das [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554210.aspx) als Proxy. Manche erweiterte Szenarien wie z. B. join-Abfragen und andere komplexe Abfragen sowie das Aufrufen von gespeicherten Prozeduren werden jedoch vom [Tabellenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554210.aspx) nicht unterstützt. In diesen Fällen müssen Sie Transact-SQL-Anweisungen über das [mssql-Objekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554212.aspx) direkt auf den relationalen Tabellen ausführen. Dieses Objekt bietet die folgenden Funktionen:
 
 -   **query**: führt eine Abfrage in Form einer TSQL-Zeichenfolge aus. Die Ergebnisse werden an den **success**-Rückruf des **options**-Objekts zurückgegeben. Die Abfrage kann Parameter enthalten, falls der *params*-Parameter vorhanden ist.
 -   **queryRaw**: wie *query*, allerdings wird das Resultset der Abfrage im "raw"-Format zurückgegeben (siehe Beispiel unten).
@@ -779,7 +779,7 @@ Das folgende Beispiel implementiert eine benutzerdefinierte Autorisierung, indem
 
 #### Gewusst wie: Verknüpfen relationaler Tabellen
 
-Sie können zwei Tabellen mithilfe der **query**-Methode des [mssql-Objekts](http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx) verknüpfen, indem Sie den TSQL-Code übergeben, der die Verknüpfungsanweisung enthält. Nehmen wir an, unsere Tabelle **ToDoItem** enthält einige Datensätze und jeder Datensatz hat eine Eigenschaft **priority**, die einer Spalte in der Tabelle entspricht. Ein Element kann folgendermaßen aussehen:
+Sie können zwei Tabellen mithilfe der **query**-Methode des [mssql-Objekts](http://msdn.microsoft.com/de-de/library/windowsazure/jj554212.aspx) verknüpfen, indem Sie den TSQL-Code übergeben, der die Verknüpfungsanweisung enthält. Nehmen wir an, unsere Tabelle **ToDoItem** enthält einige Datensätze und jeder Datensatz hat eine Eigenschaft **priority**, die einer Spalte in der Tabelle entspricht. Ein Element kann folgendermaßen aussehen:
 
      { text: 'Müll rausbringen', complete: false, priority: 1}
 
@@ -866,13 +866,13 @@ Debugging und Problembehandlung Ihrer Serverskript erledigen Sie am Besten, inde
 
 ### Gewusst wie: Schreiben von Ausgaben in die Mobile Service-Protokolle
 
-Verwenden Sie das globale [Konsolenobjekt](http://msdn.microsoft.com/en-us/library/windowsazure/jj554209.aspx), um in die Protokolle zu schreiben. Mit den Funktionen **log** oder **info** können Sie Warnungen auf der Informationsebene schreiben. Die Funktionen **warning** und **error** schreiben Einträge auf ihrer jeweiligen Ebene, die in den Protokollen hervorgehoben werden.
+Verwenden Sie das globale [Konsolenobjekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554209.aspx), um in die Protokolle zu schreiben. Mit den Funktionen **log** oder **info** können Sie Warnungen auf der Informationsebene schreiben. Die Funktionen **warning** und **error** schreiben Einträge auf ihrer jeweiligen Ebene, die in den Protokollen hervorgehoben werden.
 
 **Hinweis**
 
 Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich am [Verwaltungsportal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus und öffnen Sie die Registerkarte **Protokolle**.
 
-Sie können außerdem die Protokollfunktionen des [Konsolenobjekts](http://msdn.microsoft.com/en-us/library/windowsazure/jj554209.aspx) verwenden, um Ihre Nachrichten mithilfe von Parametern zu formatieren. Im folgenden Beispiel wird ein JSON-Objekt als Parameter an die Nachrichten-Zeichenfolge übergeben:
+Sie können außerdem die Protokollfunktionen des [Konsolenobjekts](http://msdn.microsoft.com/de-de/library/windowsazure/jj554209.aspx) verwenden, um Ihre Nachrichten mithilfe von Parametern zu formatieren. Im folgenden Beispiel wird ein JSON-Objekt als Parameter an die Nachrichten-Zeichenfolge übergeben:
 
     function insert(item, user, request) {
         console.log("Element '%j' für Benutzer '%j' wird eingefügt.", item, user);  

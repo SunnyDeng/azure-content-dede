@@ -7,7 +7,7 @@ In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Di
 
 > [WACOM.NOTE] Der Azure Active Directory-Authentifizierungsanbieter für Mobile Services befindet sich momentan in der Vorschauphase. Bitte kontaktieren Sie <mobileservices@microsoft.com>, falls Sie an der Vorschauphase teilnehmen möchten. Andernfalls ist der Authentifizierungsanbieter nicht in der Registerkarte `Identity` Ihres mobilen Dienstes enthalten.
 
-> [WACOM.NOTE]Wenn Sie auch eine clientgesteuerte Authentifizierung für einmaliges Anmelden (SSO) oder Pushbenachrichtigungen aus einer Windows Store-App bereitstellen möchten, sollten Sie die Registrierung Ihrer App beim Windows Store in Betracht ziehen. Weitere Informationen finden Sie unter [Registrieren Ihrer Windows Store-Apps für die Windows Live Connect-Authentifizierung](/en-us/develop/mobile/how-to-guides/register-for-single-sign-on).
+> [WACOM.NOTE]Wenn Sie auch eine clientgesteuerte Authentifizierung für einmaliges Anmelden (SSO) oder Pushbenachrichtigungen aus einer Windows Store-App bereitstellen möchten, sollten Sie die Registrierung Ihrer App beim Windows Store in Betracht ziehen. Weitere Informationen finden Sie unter [Registrieren Ihrer Windows Store-Apps für die Windows Live Connect-Authentifizierung](/de-de/develop/mobile/how-to-guides/register-for-single-sign-on).
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 

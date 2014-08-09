@@ -53,5 +53,5 @@ Der BLOB-Dienst umfasst die folgenden Komponenten:
 
 
 
-[1]: http://msdn.microsoft.com/en-us/library/dn249410.aspx
-[2]: http://msdn.microsoft.com/en-us/library/windowsazure/ee691964.aspx
+[1]: http://msdn.microsoft.com/de-de/library/dn249410.aspx
+[2]: http://msdn.microsoft.com/de-de/library/windowsazure/ee691964.aspx

@@ -9,7 +9,7 @@
         
     Auf diese Weise wird eine neue Windows Store-Registrierung für Ihre Anwendung erstellt.
 
-3.  Öffnen Sie im Visual Studio 2012 Express für Windows 8 das Projekt, das Sie beim Abschluss des Lernprogramms [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/#create-new-service) erstellt haben.
+3.  Öffnen Sie im Visual Studio 2012 Express für Windows 8 das Projekt, das Sie beim Abschluss des Lernprogramms [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started/#create-new-service) erstellt haben.
 
 4.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Store**, und klicken Sie dann auf **Anwendung dem Store zuordnen**.
 
@@ -71,6 +71,6 @@
 [8]: ./media/mobile-services-register-windows-store-app/mobile-push-tab.png
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure Management Portal]: https://manage.windowsazure.com/

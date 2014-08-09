@@ -36,4 +36,4 @@ Der Tabellenspeicherdienst umfasst die folgenden Komponenten:
 
 
 [1]: http://www.odata.org/
-[2]: http://msdn.microsoft.com/en-us/library/dn249410.aspx
+[2]: http://msdn.microsoft.com/de-de/library/dn249410.aspx

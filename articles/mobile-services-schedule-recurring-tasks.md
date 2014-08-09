@@ -137,7 +137,7 @@ Sie können nun den geplanten Auftrag erstellen, der auf Twitter zugreift und Tw
 
    	Dieses Skript ruft die Twitter-Abfrage-API mit den gespeicherten Anmeldeinformationen auf, um aktuelle Tweets anzufordern, die das Hashtag `#mobileservices` enthalten. Doppelte Tweets und Antworten werden aus den Ergebnissen entfernt, bevor sie in der Tabelle gespeichert werden.
 
-    > [WACOM.NOTE] In diesem Beispiel wird davon ausgegangen, dass während eines jeden geplanten Laufs nur einige Zeilen in die Tabelle eingefügt werden. In jenen Fällen, bei denen eine Vielzahl von Zeilen in eine Schleife eingefügt werden, können Sie bei der Ausführung auf der Free-Ebene eventuell einen Mangel an Verbindungen feststellen. In diesem Fall sollten Sie Einfügungen in Stapeln vornehmen. Weitere Informationen finden Sie unter [Gewusst wie: Ausführen von Masseneinfügungen](/en-us/develop/mobile/how-to-guides/work-with-server-scripts/#bulk-inserts).
+    > [WACOM.NOTE] In diesem Beispiel wird davon ausgegangen, dass während eines jeden geplanten Laufs nur einige Zeilen in die Tabelle eingefügt werden. In jenen Fällen, bei denen eine Vielzahl von Zeilen in eine Schleife eingefügt werden, können Sie bei der Ausführung auf der Free-Ebene eventuell einen Mangel an Verbindungen feststellen. In diesem Fall sollten Sie Einfügungen in Stapeln vornehmen. Weitere Informationen finden Sie unter [Gewusst wie: Ausführen von Masseneinfügungen](/de-de/develop/mobile/how-to-guides/work-with-server-scripts/#bulk-inserts).
 
 5.  Klicken Sie auf **Einmal ausführen**, um das Skript zu testen.
 

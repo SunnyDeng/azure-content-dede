@@ -37,24 +37,24 @@ Vorbereiten Ihrer App
 
 Bevor Sie einen Clouddienst bereitstellen können, müssen Sie das Clouddienstpaket (CSPKG) aus dem Anwendungscode und eine Clouddienst-Konfigurationsdatei (CSCFG) erstellen. Jedes Clouddienstpaket enthält Anwendungsdateien und -konfigurationen. Die Dienstkonfigurationsdatei stellt die Konfigurationseinstellungen bereit.
 
-Das Azure-SDK stellt Tools zum Vorbereiten dieser erforderlichen Bereitstellungsdateien bereit. Sie können das SDK auf der Seite [Azure-Downloads](http://www.windowsazure.com/en-us/develop/downloads/) in der Sprache herunterladen, in der Sie den Anwendungscode entwickeln möchten.
+Das Azure-SDK stellt Tools zum Vorbereiten dieser erforderlichen Bereitstellungsdateien bereit. Sie können das SDK auf der Seite [Azure-Downloads](http://www.windowsazure.com/de-de/develop/downloads/) in der Sprache herunterladen, in der Sie den Anwendungscode entwickeln möchten.
 
 Wenn Sie Clouddienste zum ersten Mal verwenden, können Sie ein beispielhaftes Clouddienstpaket (CSPKG) und eine Clouddienst-Konfigurationsdatei (CSCFG) aus den [Azure-Codebeispielen](http://code.msdn.microsoft.com/windowsazure/) herunterladen.
 
 Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets spezielle Konfigurationen:
 
--   Wenn Sie einen Clouddienst bereitstellen möchten, der Secure Sockets Layer (SSL) für die Datenverschlüsselung verwendet, konfigurieren Sie die Anwendung für SSL. Weitere Informationen finden Sie unter [Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt](http://msdn.microsoft.com/en-us/library/windowsazure/ff795779.aspx).
+-   Wenn Sie einen Clouddienst bereitstellen möchten, der Secure Sockets Layer (SSL) für die Datenverschlüsselung verwendet, konfigurieren Sie die Anwendung für SSL. Weitere Informationen finden Sie unter [Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt](http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx).
 
--   Wenn Sie Remotedesktopverbindungen zu Rolleninstanzen konfigurieren möchten, konfigurieren Sie die Rollen für Remotedesktop. Weitere Informationen zum Vorbereiten der Dienstdefinitionsdateien für den Remotezugriff finden Sie im [Überblick über das Einrichten einer Remotedesktopverbindung für eine Rolle](http://msdn.microsoft.com/en-us/library/windowsazure/gg433010.aspx).
+-   Wenn Sie Remotedesktopverbindungen zu Rolleninstanzen konfigurieren möchten, konfigurieren Sie die Rollen für Remotedesktop. Weitere Informationen zum Vorbereiten der Dienstdefinitionsdateien für den Remotezugriff finden Sie im [Überblick über das Einrichten einer Remotedesktopverbindung für eine Rolle](http://msdn.microsoft.com/de-de/library/windowsazure/gg433010.aspx).
 
--   Wenn Sie die ausführliche Überwachung für den Clouddienst konfigurieren möchten, aktivieren Sie für den Clouddienst die Azure-Diagnose. *Minimale Überwachung* (die Standardüberwachungsstufe) verwendet Leistungsindikatoren, die aus den Hostbetriebssystemen für Rolleninstanzen (virtuelle Computer) erfasst wurden. Bei der "ausführlichen Überwachung" werden zusätzliche Kennzahlen basierend auf Leistungsdaten innerhalb der Rolleninstanzen erfasst, um eine genauere Analyse von Problemen zu ermöglichen, die während der Anwendungsverarbeitung auftreten. Informationen zum Aktivieren der Azure-Diagnose finden Sie unter [Aktivieren der Diagnose in Azure](http://www.windowsazure.com/en-us/develop/net/common-tasks/diagnostics/).
+-   Wenn Sie die ausführliche Überwachung für den Clouddienst konfigurieren möchten, aktivieren Sie für den Clouddienst die Azure-Diagnose. *Minimale Überwachung* (die Standardüberwachungsstufe) verwendet Leistungsindikatoren, die aus den Hostbetriebssystemen für Rolleninstanzen (virtuelle Computer) erfasst wurden. Bei der "ausführlichen Überwachung" werden zusätzliche Kennzahlen basierend auf Leistungsdaten innerhalb der Rolleninstanzen erfasst, um eine genauere Analyse von Problemen zu ermöglichen, die während der Anwendungsverarbeitung auftreten. Informationen zum Aktivieren der Azure-Diagnose finden Sie unter [Aktivieren der Diagnose in Azure](http://www.windowsazure.com/de-de/develop/net/common-tasks/diagnostics/).
 
 Bevor Sie beginnen
 ------------------
 
--   Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite](http://www.windowsazure.com/en-us/develop/downloads/) zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten. (Dazu haben Sie auch später noch die Möglichkeit.)
+-   Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite](http://www.windowsazure.com/de-de/develop/downloads/) zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten. (Dazu haben Sie auch später noch die Möglichkeit.)
 
--   Falls Rolleninstanzen ein Zertifikat erfordern, erstellen Sie die Zertifikate. Clouddienste erfordern eine PFX-Datei mit einem privaten Schlüssel. Sie können die Zertifikate zu Azure hochladen, wenn Sie den Clouddienst erstellen und bereitstellen. Informationen zum Erstellen von Zertifikaten finden Sie unter [Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt](http://msdn.microsoft.com/en-us/library/windowsazure/ff795779.aspx).
+-   Falls Rolleninstanzen ein Zertifikat erfordern, erstellen Sie die Zertifikate. Clouddienste erfordern eine PFX-Datei mit einem privaten Schlüssel. Sie können die Zertifikate zu Azure hochladen, wenn Sie den Clouddienst erstellen und bereitstellen. Informationen zum Erstellen von Zertifikaten finden Sie unter [Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt](http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx).
 
 -   Wenn Sie den Clouddienst für eine Affinitätsgruppe bereitstellen möchten, erstellen Sie die Affinitätsgruppe. Sie können eine Affinitätsgruppe verwenden, um den Clouddienst und andere Azure-Dienste für den gleichen Standort in einer Region bereitzustellen. Sie können die Affinitätsgruppe im Bereich **Netzwerke** des Verwaltungsportals auf der Seite **Affinitätsgruppen** erstellen. Weitere Informationen finden Sie in der Hilfe zur Seite **Affinitätsgruppen**.
 
@@ -69,7 +69,7 @@ Vorgehensweise: Erstellen eines Clouddiensts mithilfe der Schnellerstellung
 
 3.  Wählen Sie unter **Region/Affinitätsgruppe** die geografische Region oder die Affinitätsgruppe aus, für die der Clouddienst bereitgestellt werden soll. Wählen Sie eine Affinitätsgruppe aus, wenn Sie den Clouddienst für den gleichen Standort wie andere Azure-Dienste innerhalb einer Region bereitstellen möchten.
 
-    > [WACOM.NOTE] Um eine Affinitätsgruppe zu erstellen, öffnen Sie den Bereich **Netzwerke** des Verwaltungsportals, klicken Sie auf **Affinitätsgruppen** und klicken Sie dann auf **Neue Affinitätsgruppe erstellen** oder **Erstellen**. Sie können Affinitätsgruppen verwenden, die Sie im früheren Azure-Verwaltungsportal erstellt haben. Sie können Affinitätsgruppen außerdem mithilfe der Azure-Dienstverwaltungs-API erstellen und verwalten. Weitere Informationen finden Sie unter [Vorgänge für Affinitätsgruppen](http://msdn.microsoft.com/en-us/library/windowsazure/ee460798.aspx).
+    > [WACOM.NOTE] Um eine Affinitätsgruppe zu erstellen, öffnen Sie den Bereich **Netzwerke** des Verwaltungsportals, klicken Sie auf **Affinitätsgruppen** und klicken Sie dann auf **Neue Affinitätsgruppe erstellen** oder **Erstellen**. Sie können Affinitätsgruppen verwenden, die Sie im früheren Azure-Verwaltungsportal erstellt haben. Sie können Affinitätsgruppen außerdem mithilfe der Azure-Dienstverwaltungs-API erstellen und verwalten. Weitere Informationen finden Sie unter [Vorgänge für Affinitätsgruppen](http://msdn.microsoft.com/de-de/library/windowsazure/ee460798.aspx).
 
 4.  Klicken Sie auf **Clouddienst erstellen**.
 
@@ -117,11 +117,11 @@ Vorgehensweise: Bereitstellen eines Clouddiensts
 
     ![CloudServices\_QuickStartPage](./media/cloud-services-how-to-create-deploy/CloudServices_QuickStartPage.png)
 
-3.  Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite](http://www.windowsazure.com/en-us/develop/downloads/) zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten.
+3.  Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite](http://www.windowsazure.com/de-de/develop/downloads/) zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten.
 
     Auf der Downloadseite können Sie außerdem Clientbibliotheken und Quellcode für die Entwicklung von Web-Apps in Node.js, Java, PHP und anderen Sprachen installieren, die Sie als skalierbare Azure-Clouddienste bereitstellen können.
 
-    > [WACOM.NOTE] Für zuvor erstellte Clouddienste (die zuvor als *gehostete Dienste* bezeichnet wurden) müssen Sie sicherstellen, dass die Gastbetriebssysteme auf den virtuellen Computern (Rolleninstanzen) mit der von Ihnen installierten Azure-SDK-Version kompatibel sind. Weitere Informationen finden Sie in den [Versionshinweisen zum Azure-SDK](http://msdn.microsoft.com/en-us/library/windowsazure/hh552718.aspx).
+    > [WACOM.NOTE] Für zuvor erstellte Clouddienste (die zuvor als *gehostete Dienste* bezeichnet wurden) müssen Sie sicherstellen, dass die Gastbetriebssysteme auf den virtuellen Computern (Rolleninstanzen) mit der von Ihnen installierten Azure-SDK-Version kompatibel sind. Weitere Informationen finden Sie in den [Versionshinweisen zum Azure-SDK](http://msdn.microsoft.com/de-de/library/windowsazure/hh552718.aspx).
 
 4.  Klicken Sie auf **Neue Produktionsbereitstellung** oder **Neue Stagingbereitstellung**.
 
@@ -139,7 +139,7 @@ Vorgehensweise: Bereitstellen eines Clouddiensts
 
 8.  Falls der Clouddienst Rollen mit nur einer Instanz umfasst, aktivieren Sie das Kontrollkästchen mit der Bezeichnung wie **Auch bereitstellen, wenn eine oder mehrere Rollen eine einzelne Instanz enthalten**, um das Fortsetzen der Bereitstellung zu ermöglichen.
 
-Azure kann nur dann 99,95 % Zugriff auf den Clouddienst während Wartungen und Dienstaktualisierungen garantieren, wenn jede Rolle über mindestens zwei Instanzen verfügt. Bei Bedarf können Sie zusätzliche Rolleninstanzen auf der Seite **Skalieren** nach der Bereitstellung des Clouddiensts hinzufügen. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel (SLAs)](http://www.windowsazure.com/en-us/support/legal/sla/).
+Azure kann nur dann 99,95 % Zugriff auf den Clouddienst während Wartungen und Dienstaktualisierungen garantieren, wenn jede Rolle über mindestens zwei Instanzen verfügt. Bei Bedarf können Sie zusätzliche Rolleninstanzen auf der Seite **Skalieren** nach der Bereitstellung des Clouddiensts hinzufügen. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel (SLAs)](http://www.windowsazure.com/de-de/support/legal/sla/).
 
 1.  Klicken Sie auf "OK" (Häkchen), um die Clouddienstbereitstellung zu starten.
 

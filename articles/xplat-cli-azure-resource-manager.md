@@ -1,4 +1,4 @@
-<properties linkid="script-xplat-intro" urlDisplayName="Microsoft Azure Cross-Platform Command-Line Interface" pageTitle="Using Microsoft Azure Cross-Platform Command-Line Interface with the Resource Manager" title="Using Microsoft Azure Cross-Platform Command-Line Interface with the Resource Manager" metaKeywords="windows azure cross-platform command-line interface Resource Manager, windows azure command-line resource manager, azure command-line resource manager, azure cli resource manager" description="Use the Microsoft Azure Cross-Platform Command-Line Interface with the Resource Manager" metaCanonical="http://www.windowsazure.com/en-us/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="larryfr" services="" />
+<properties linkid="script-xplat-intro" urlDisplayName="Microsoft Azure Cross-Platform Command-Line Interface" pageTitle="Using Microsoft Azure Cross-Platform Command-Line Interface with the Resource Manager" title="Using Microsoft Azure Cross-Platform Command-Line Interface with the Resource Manager" metaKeywords="windows azure cross-platform command-line interface Resource Manager, windows azure command-line resource manager, azure command-line resource manager, azure cli resource manager" description="Use the Microsoft Azure Cross-Platform Command-Line Interface with the Resource Manager" metaCanonical="http://www.windowsazure.com/de-de/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="larryfr" services="" />
 
 Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager
 =================================================================================================
@@ -7,7 +7,7 @@ Vor Kurzem wurde eine Vorschau des Ressourcen-Managers integriert, wobei es sich
 
 > [WACOM.NOTE] Der Ressourcen-Manager befindet sich derzeit in der Vorschau und bietet nicht denselben Umfang an Verwaltungsfunktionen wie die Azure-Dienstverwaltung.
 
-> [WACOM.NOTE] Wenn xplat-cli noch nicht installiert und konfiguriert wurde, finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](/en-us/documentation/articles/xplat-cli/) weitere Anweisungen zum Installieren, Konfigurieren und Verwenden der xplat-cli.
+> [WACOM.NOTE] Wenn xplat-cli noch nicht installiert und konfiguriert wurde, finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](/de-de/documentation/articles/xplat-cli/) weitere Anweisungen zum Installieren, Konfigurieren und Verwenden der xplat-cli.
 
 Ressourcen-Manager
 ------------------
@@ -27,7 +27,7 @@ Authentifizierung
 
 Für die Arbeit mit dem Ressourcen-Manager über die xplat-cli ist es derzeit erforderlich, dass Sie sich mit einem Organisations-Konto bei Microsoft Azure authentifizieren. Die Authentifizierung mit einem Microsoft-Konto oder einem Zertifikat über eine .publishsettings-Datei funktioniert nicht.
 
-Weitere Informationen für die Authentifizierung mit einem Organisations-Konto finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](/en-us/documentation/articles/xplat-cli/).
+Weitere Informationen für die Authentifizierung mit einem Organisations-Konto finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](/de-de/documentation/articles/xplat-cli/).
 
 Arbeiten mit Gruppen und Vorlagen
 ---------------------------------
@@ -162,6 +162,6 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 Nächste Schritte
 ----------------
 
--   Weitere Informationen über die Arbeit mit der plattformübergreifenden Azure-Befehlszeilenschnittstellen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](/en-us/documentation/articles/xplat-cli/).
+-   Weitere Informationen über die Arbeit mit der plattformübergreifenden Azure-Befehlszeilenschnittstellen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](/de-de/documentation/articles/xplat-cli/).
 -   Weitere Informationen über die Arbeit mit dem Ressourcen-Manager in der Windows Azure PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell mit dem Ressourcen-Manager](http://go.microsoft.com/fwlink/?LinkId=394760).
 

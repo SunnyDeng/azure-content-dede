@@ -24,7 +24,7 @@ Inhaltsverzeichnis
 Erstellen einer Node.js-Anwendung
 ---------------------------------
 
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js-Clouddienst](/en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/) (mit Windows PowerShell) oder [Website mit WebMatrix](/en-us/develop/nodejs/tutorials/web-site-with-webmatrix/).
+Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js-Clouddienst](/de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/) (mit Windows PowerShell) oder [Website mit WebMatrix](/de-de/develop/nodejs/tutorials/web-site-with-webmatrix/).
 
 Konfigurieren der Anwendung zur Verwendung von Service Bus
 ----------------------------------------------------------
@@ -61,9 +61,9 @@ Verwenden Sie Editor oder einen anderen Texteditor, um folgenden Code am Anfang 
 
 Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_SERVICEBUS\_NAMESPACE und AZURE\_SERVICEBUS\_ACCESS\_KEY die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Service Bus erforderlich sind. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **createServiceBusService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Clouddienst finden Sie unter [Node.js-Clouddienst mit Speicher](/en-us/develop/nodejs/tutorials/web-app-with-storage/).
+Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Clouddienst finden Sie unter [Node.js-Clouddienst mit Speicher](/de-de/develop/nodejs/tutorials/web-app-with-storage/).
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher](/en-us/develop/nodejs/tutorials/web-site-with-storage/).
+Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher](/de-de/develop/nodejs/tutorials/web-site-with-storage/).
 
 Erstellen einer Warteschlange
 -----------------------------
@@ -171,6 +171,6 @@ Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/en-us/library/windowsazure/hh367516.aspx)
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx)
 -   Besuchen Sie das [Azure SDK für Node](https://github.com/WindowsAzure/azure-sdk-for-node)-Repository auf GitHub.
 

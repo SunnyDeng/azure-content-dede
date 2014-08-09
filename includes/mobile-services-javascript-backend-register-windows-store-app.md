@@ -10,7 +10,7 @@
 
       Auf diese Weise wird eine neue Windows Store-Registrierung für Ihre App erstellt.
 
-3.  Öffnen Sie in Visual Studio 2012 Express für Windows 8 das Projekt, das Sie erstellt haben, als Sie das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-get-started/) abgeschlossen haben.
+3.  Öffnen Sie in Visual Studio 2012 Express für Windows 8 das Projekt, das Sie erstellt haben, als Sie das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-store-get-started/) abgeschlossen haben.
 
 4.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und klicken Sie auf **Speichern**. Klicken Sie dann auf **App mit Store verknüpfen**.
 

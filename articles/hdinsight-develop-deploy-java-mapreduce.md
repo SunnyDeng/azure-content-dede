@@ -9,8 +9,8 @@ In diesem Lernprogramm werden Sie durch ein End-to-End-Szenario vom Entwickeln u
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
--   Installieren Sie den Azure HDInsight Emulator. Informationen dazu finden Sie unter [Get Started using HDInsight Emulator (Erste Schritte mit dem HDInsight-Emulator, in englischer Sprache).](/en-us/manage/services/hdinsight/get-started-with-windows-azure-hdinsight-emulator/).
--   Installieren Sie Azure PowerShell auf dem Emulator-Computer. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+-   Installieren Sie den Azure HDInsight Emulator. Informationen dazu finden Sie unter [Get Started using HDInsight Emulator (Erste Schritte mit dem HDInsight-Emulator, in englischer Sprache).](/de-de/manage/services/hdinsight/get-started-with-windows-azure-hdinsight-emulator/).
+-   Installieren Sie Azure PowerShell auf dem Emulator-Computer. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 -   Schließen Sie ein Azure-Abonnement ab. Informationen dazu finden Sie unter [Erste Schritte mit Azure](https://www.windowsazure.com/en-us/pricing/purchase-options/), [Spezielle Angebote](https://www.windowsazure.com/en-us/pricing/member-offers/) oder [Kostenlose einmonatige Testversion](https://www.windowsazure.com/en-us/pricing/free-trial/).
 
 Themen in diesem Artikel
@@ -141,9 +141,9 @@ Das Testen des MapReduce-Jobs auf dem Emulator umfasst Folgendes:
 3.  Prüfen des Jobstatus
 4.  Abrufen der Ergebnisse des Jobs
 
-Standardmäßig verwendet der HDInsight Emulator als Dateisystem HDFS. Optional können Sie den HDInsight Emulator für eine Verwendung von Azure-Blob-Speicher konfigurieren. Informationen dazu finden Sie unter [Get Started with HDInsight Emulator (Erste Schritte mit dem HDInsight-Emulator, in englischer Sprache).](/en-us/manage/services/hdinsight/get-started-with-windows-azure-hdinsight-emulator/#blobstorage).
+Standardmäßig verwendet der HDInsight Emulator als Dateisystem HDFS. Optional können Sie den HDInsight Emulator für eine Verwendung von Azure-Blob-Speicher konfigurieren. Informationen dazu finden Sie unter [Get Started with HDInsight Emulator (Erste Schritte mit dem HDInsight-Emulator, in englischer Sprache).](/de-de/manage/services/hdinsight/get-started-with-windows-azure-hdinsight-emulator/#blobstorage).
 
-In diesem Lernprogramm verwenden Sie den HDFS-Befehl *copyFromLocal*, um die Datendateien in HDFS hochzuladen. Im nächsten Abschnitt lernen Sie, wie Sie Dateien mithilfe von Azure PowerShell in den Azure-Blob-Speicher hochladen. Weitere Methoden zum Hochladen von Dateien in den Azure-Blob-Speicher finden Sie unter [Hochladen von Daten zu HDInsight](/en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/).
+In diesem Lernprogramm verwenden Sie den HDFS-Befehl *copyFromLocal*, um die Datendateien in HDFS hochzuladen. Im nächsten Abschnitt lernen Sie, wie Sie Dateien mithilfe von Azure PowerShell in den Azure-Blob-Speicher hochladen. Weitere Methoden zum Hochladen von Dateien in den Azure-Blob-Speicher finden Sie unter [Hochladen von Daten zu HDInsight](/de-de/manage/services/hdinsight/howto-upload-data-to-hdinsight/).
 
 In diesem Lernprogramm wird die folgende HDFS-Ordnerstruktur verwendet:
 
@@ -200,7 +200,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop\_home% als
 
     Auf dem Screenshot können Sie sehen, dass die Map- und Reduce-Funktionen zu 100% abgeschlossen sind. Außerdem wird die Job-ID (job\_201312092021\_0002) aufgeführt. Derselbe Bericht kann auch durch Öffnen des Shortcuts **Hadoop MapReduce Status** auf Ihrem Desktop und Suchen nach der Job-ID abgerufen werden.
 
-Die andere Option zur Ausführung eines MapReduce-Jobs ist die Verwendung von Azure PowerShell. Informationen dazu finden Sie unter [Get Started with HDInsight Emulator (Erste Schritte mit dem HDInsight-Emulator, in englischer Sprache).](/en-us/manage/services/hdinsight/get-started-with-windows-azure-hdinsight-emulator/).
+Die andere Option zur Ausführung eines MapReduce-Jobs ist die Verwendung von Azure PowerShell. Informationen dazu finden Sie unter [Get Started with HDInsight Emulator (Erste Schritte mit dem HDInsight-Emulator, in englischer Sprache).](/de-de/manage/services/hdinsight/get-started-with-windows-azure-hdinsight-emulator/).
 
 **Anzeigen der Ergebnisse im HDFS**
 
@@ -233,7 +233,7 @@ In diesem Lernprogramm erstellen Sie einen Container auf einem separaten Speiche
          $containerName_Data = "<ContainerName>"
          $location = "<MicrosoftDataCenter>"  # For example, "East US"
 
-    Der **$subscripionName** wird ihrem Azure-Abonnement zugeordnet. Sie müssen den Variablen **$storageAccountName_Data** und **$containerName_Data** Namen geben. Informationen zu Einschränkungen bei der Benennung finden Sie unter [Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese](http://msdn.microsoft.com/en-us/library/windowsazure/dd135715.aspx).
+    Der **$subscripionName** wird ihrem Azure-Abonnement zugeordnet. Sie müssen den Variablen **$storageAccountName_Data** und **$containerName_Data** Namen geben. Informationen zu Einschränkungen bei der Benennung finden Sie unter [Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese](http://msdn.microsoft.com/de-de/library/windowsazure/dd135715.aspx).
 
 3.  Führen Sie den folgenden Befehl aus, um ein Speicherkonto und einen Blob-Speichercontainer auf diesem Konto zu erstellen.
 
@@ -454,7 +454,7 @@ Das folgende PowerShell-Skript führt die folgenden Aufgaben aus:
 Abrufen der Ergebnisse des MapReduce-Jobs
 -----------------------------------------
 
-In diesem Abschnitt wird erläutert, wie Sie die Ergebnisse herunterladen und anzeigen. Informationen zur Anzeige der Ergebnisse in Excel finden Sie unter [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](/en-us/manage/services/hdinsight/connect-excel-with-hive-ODBC/) und [Verbinden von Excel mit HDInsight über Power Query](/en-us/manage/services/hdinsight/connect-excel-with-power-query/).
+In diesem Abschnitt wird erläutert, wie Sie die Ergebnisse herunterladen und anzeigen. Informationen zur Anzeige der Ergebnisse in Excel finden Sie unter [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](/de-de/manage/services/hdinsight/connect-excel-with-hive-ODBC/) und [Verbinden von Excel mit HDInsight über Power Query](/de-de/manage/services/hdinsight/connect-excel-with-power-query/).
 
 **Abrufen der Ergebnisse**
 
@@ -485,14 +485,14 @@ Nächste Schritte
 
 In diesem Lernprogramm haben Sie gelernt, wie ein Java MapReduce-Job entwickelt wird, wie die Anwendung auf dem HDInsight Emulator getestet wird und wie ein PowerShell-Skript geschrieben wird, um ein HDInsight-Cluster bereitzustellen und den MapReduce-Job auf dem Cluster aufzuführen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Entwickeln von Hadoop-Streaming-MapReduce-Programmen in C\# für HDInsight](/en-us/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Erste Schritte mit dem HDInsight Emulator](/en-us/manage/services/hdinsight/get-started-with-windows-azure-hdinsight-emulator/)
--   [Verwenden von Azure Blob-Speicher mit HDInsight](/en-us/manage/services/hdinsight/howto-blob-store/)
--   [Verwalten von HDInsight mit PowerShell](/en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/)
--   [Hochladen von Daten zu HDInsight](/en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/)
--   [Verwenden von Hive mit HDInsight](/en-us/manage/services/hdinsight/using-hive-with-hdinsight/)
--   [Verwenden von Pig mit HDInsight](/en-us/manage/services/hdinsight/using-pig-with-hdinsight/)
--   [Verbinden von Excel mit HDInsight über Power Query](/en-us/documentation/articles/hdinsight-connect-excel-power-query/)
+-   [Entwickeln von Hadoop-Streaming-MapReduce-Programmen in C\# für HDInsight](/de-de/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Erste Schritte mit dem HDInsight Emulator](/de-de/manage/services/hdinsight/get-started-with-windows-azure-hdinsight-emulator/)
+-   [Verwenden von Azure Blob-Speicher mit HDInsight](/de-de/manage/services/hdinsight/howto-blob-store/)
+-   [Verwalten von HDInsight mit PowerShell](/de-de/manage/services/hdinsight/administer-hdinsight-using-powershell/)
+-   [Hochladen von Daten zu HDInsight](/de-de/manage/services/hdinsight/howto-upload-data-to-hdinsight/)
+-   [Verwenden von Hive mit HDInsight](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/)
+-   [Verwenden von Pig mit HDInsight](/de-de/manage/services/hdinsight/using-pig-with-hdinsight/)
+-   [Verbinden von Excel mit HDInsight über Power Query](/de-de/documentation/articles/hdinsight-connect-excel-power-query/)
 -   [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](../hdinsight-connect-excel-hive-ODBC-driver/)
 

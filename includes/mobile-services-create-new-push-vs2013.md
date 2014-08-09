@@ -1,6 +1,6 @@
 Zunächst verwenden Sie den Assistenten zum Hinzufügen von Pushbenachrichtigungen in Visual Studio 2013, um Ihre App im Windows Store zu registrieren, Ihren mobilen Dienst zur Unterstützung von Pushbenachrichtigungen zu konfigurieren und Ihrer App Code zum Registrieren eines Gerätekanals hinzuzufügen.
 
-1.  Falls noch nicht geschehen, befolgen Sie die Schritte unter [Importieren der publishsettings-Datei in Visual Studio 2013](/en-us/documentation/articles/mobile-services-windows-how-to-import-publishsettings/), um Ihre publisher.settings-Datei in Visual Studio zu importieren.
+1.  Falls noch nicht geschehen, befolgen Sie die Schritte unter [Importieren der publishsettings-Datei in Visual Studio 2013](/de-de/documentation/articles/mobile-services-windows-how-to-import-publishsettings/), um Ihre publisher.settings-Datei in Visual Studio zu importieren.
     
     Sie müssen diesen Schritt nicht durchführen, wenn Sie Visual Studio bereits verwendet haben, um mobile Dienste im Rahmen Ihres Azure-Abonnements zu erstellen oder zu verwalten.
 
@@ -20,7 +20,7 @@ Zunächst verwenden Sie den Assistenten zum Hinzufügen von Pushbenachrichtigung
     
     ![mobile-add-push-notifications-vs2013-3](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-3.png)
 
-5.  Klicken Sie im Dialogfeld **Dienst auswählen** auf den Namen des mobilen Diensts, den Sie erstellt haben, als Sie entweder [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/) oder [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-dotnet/) abgeschlossen haben, und klicken Sie dann auf **Weiter** und **Fertigstellen**.
+5.  Klicken Sie im Dialogfeld **Dienst auswählen** auf den Namen des mobilen Diensts, den Sie erstellt haben, als Sie entweder [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started/) oder [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-dotnet/) abgeschlossen haben, und klicken Sie dann auf **Weiter** und **Fertigstellen**.
     
     Der mobile Dienst wird aktualisiert, um Ihre Anwendungspaket-SID und das Clientgeheimnis zu registrieren. Es wird eine neue Tabelle namens **channels** erstellt. Mobile Services ist nun so konfiguriert, dass es mit Windows Push Notification Services (WNS) funktioniert, um Benachrichtigungen an Ihre App senden zu können.
 <div class="dev-callout">

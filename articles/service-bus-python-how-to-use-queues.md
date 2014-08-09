@@ -87,5 +87,5 @@ Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements.](http://msdn.microsoft.com/en-us/library/windowsazure/hh367516.aspx)
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements.](http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx)
 

@@ -3,13 +3,13 @@
 Authentifizieren Ihrer Windows Phone 8-App mit einmaliger Anmeldung von Live Connect
 ====================================================================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet "Windows Store C#")[Windows Store JavaScript](/en-us/develop/mobile/tutorials/single-sign-on-windows-8-js "Windows Store JavaScript")[Windows Phone](/en-us/develop/mobile/tutorials/single-sign-on-wp8/ "Windows Phone")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet "Windows Store C#")[Windows Store JavaScript](/de-de/develop/mobile/tutorials/single-sign-on-windows-8-js "Windows Store JavaScript")[Windows Phone](/de-de/develop/mobile/tutorials/single-sign-on-wp8/ "Windows Phone")
 
 In diesem Thema erfahren Sie, wie Sie die einmalige Anmeldung von Live Connect verwenden, um Benutzer in Azure Mobile Services über eine Windows Phone 8-App zu authentifizieren. In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe von Live Connect zum Schnellstartprojekt hinzu. Sobald die Authentifizierung durch Live Connect erfolgreich war, wird ein angemeldeter Benutzer mit seinem Namen begrüßt und der Benutzer-ID-Wert wird angezeigt.
 
 **Hinweis**
 
-Dieses Lernprogramm zeigt die Vorteile der Verwendung der einmaligen Anwendung mithilfe von Live Connect für Windows Phone-Apps. Dadurch können Sie einen bereits angemeldeten Benutzer einfacher mit Ihrem Mobile Service authentifizieren. Informationen zu einer generalisierteren Authentifizierung, die verschiedene Authentifizierungsanbieter unterstützt, finden Sie unter [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8/).
+Dieses Lernprogramm zeigt die Vorteile der Verwendung der einmaligen Anwendung mithilfe von Live Connect für Windows Phone-Apps. Dadurch können Sie einen bereits angemeldeten Benutzer einfacher mit Ihrem Mobile Service authentifizieren. Informationen zu einer generalisierteren Authentifizierung, die verschiedene Authentifizierungsanbieter unterstützt, finden Sie unter [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8/).
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung der Live Connect-Authentifizierung behandelt:
 
@@ -22,7 +22,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -   [Live SDK für Windows und Windows Phone](http://go.microsoft.com/fwlink/p/?LinkId=262253)
 -   Microsoft Visual Studio 2012 Express für Windows Phone
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-wp8) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-wp8) abschließen.
 
 Registrieren Ihrer AppRegistrieren Ihrer App bei Live Connect
 -------------------------------------------------------------
@@ -74,7 +74,7 @@ Einschränken von BerechtigungenEinschränken von Berechtigungen für authentifi
 
     ![][15]
 
-3.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie erstellt haben, als Sie das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-wp8) abgeschlossen haben.
+3.  Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie erstellt haben, als Sie das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-wp8) abgeschlossen haben.
 
 4.  Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass eine Ausnahme mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird.
 
@@ -133,7 +133,7 @@ Hinzufügen von AuthentifizierungHinzufügen von Authentifizierung zur App
 
     **Hinweis**
 
-    In einer Windows Phone 8-App wird eine Instanz der Klasse **LiveAuthClient** erstellt, indem der Client-ID-Wert an den Klassenkonstruktor weitergegeben wird. In einer [Windows Store-App](/en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/) wird dieselbe Klasse instanziiert, indem der Umleitungsdomänen-URI weitergegeben wird.
+    In einer Windows Phone 8-App wird eine Instanz der Klasse **LiveAuthClient** erstellt, indem der Client-ID-Wert an den Klassenkonstruktor weitergegeben wird. In einer [Windows Store-App](/de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/) wird dieselbe Klasse instanziiert, indem der Umleitungsdomänen-URI weitergegeben wird.
 
 6.  Löschen Sie die vorhandene Methodenüberschreibung **OnNavigatedTo** oder kommentieren diese aus, und ersetzen Sie diese durch folgende Methode, die das Ereignis **Loaded** für die Seite behandelt.
 
@@ -163,7 +163,7 @@ Hinzufügen von AuthentifizierungHinzufügen von Authentifizierung zur App
 Nächste Schritte
 ----------------
 
-Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-wp8), werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Weitere Informationen zur Verwendung anderer Identitätsanbieter für die Authentifizierung finden Sie unter [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8).
+Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-wp8), werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Weitere Informationen zur Verwendung anderer Identitätsanbieter für die Authentifizierung finden Sie unter [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8).
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -189,10 +189,10 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts](/en-us/develo
 <!-- URLs. -->
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows and Windows Phone]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-wp8
-[Get started with data]: /en-us/develop/mobile/tutorials/get-started-with-data-wp8
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-wp8
-[Get started with push notifications]: /en-us/develop/mobile/tutorials/get-started-with-push-wp8
-[Authorize users with scripts]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-wp8
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-wp8
+[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-wp8
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-wp8
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-wp8
+[Authorize users with scripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-wp8
 
 [Azure Management Portal]: https://manage.windowsazure.com/

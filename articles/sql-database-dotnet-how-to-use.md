@@ -192,13 +192,13 @@ Hier sehen Sie eine Beispiel-Verbindungszeichenfolge:
 
     metadata=res://*/SchoolModel.csdl|res://*/SchoolModel.ssdl|res://*/SchoolModel.msl;provider=System.Data.SqlClient;provider connection string="Data Source=xxxxxxxxxx.database.windows.net;Initial Catalog=School;Persist Security Info=True;User ID=MyAdmin;Password=***********"
 
-Weitere Informationen finden Sie unter [EntityClient-Anbieter für das Entity Framework](http://msdn.microsoft.com/en-us/library/bb738561.aspx).
+Weitere Informationen finden Sie unter [EntityClient-Anbieter für das Entity Framework](http://msdn.microsoft.com/de-de/library/bb738561.aspx).
 
 Nächste Schritte
 ----------------
 
 Sie kennen nun die Grundlagen für Verbindungen zu SQL Database. In den folgenden Ressourcen finden Sie weiterführende Informationen.
 
--   [Entwicklung: Gewusst wie-Themen (SQL Database)](http://msdn.microsoft.com/en-us/library/windowsazure/ee621787.aspx)
--   [SQL Database](http://msdn.microsoft.com/en-us/library/windowsazure/ee336279.aspx)
+-   [Entwicklung: Gewusst wie-Themen (SQL Database)](http://msdn.microsoft.com/de-de/library/windowsazure/ee621787.aspx)
+-   [SQL Database](http://msdn.microsoft.com/de-de/library/windowsazure/ee336279.aspx)
 

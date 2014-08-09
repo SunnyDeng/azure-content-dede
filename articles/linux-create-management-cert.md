@@ -5,7 +5,7 @@ Verwaltungszertifikate für Linux in Azure erstellen
 
 Sie benötigen ein Verwaltungszertifikat, wenn Sie die Dienstverwaltungs-API zur Interaktion mit der Azure-Imageplattform verwenden möchten.
 
-Für die Erstellung und Verwaltung dieser Zertifikate existiert bereits eine Dokumentation unter <http://msdn.microsoft.com/en-us/library/windowsazure/gg551721.aspx>. Sie können Ihr Verwaltungszertifikat auch mit OpenSSL erstellen. Weitere Informationen finden Sie unter [OpenSSL](http://openssl.org/). Diese Dokumentation konzentriert sich jedoch hauptsächlich auf das Silverlight-Portal, das möglicherweise nicht allen Linux-Benutzern zur Verfügung steht. Dort wird beschrieben, wie Sie an diese Zertifikate gelangen, diese mit unseren verschiedenen Tools und Partnern integrieren und für sich selbst verwenden können, bis diese Funktionalität im Azure-Verwaltungsportal zur Verfügung steht.
+Für die Erstellung und Verwaltung dieser Zertifikate existiert bereits eine Dokumentation unter <http://msdn.microsoft.com/de-de/library/windowsazure/gg551721.aspx>. Sie können Ihr Verwaltungszertifikat auch mit OpenSSL erstellen. Weitere Informationen finden Sie unter [OpenSSL](http://openssl.org/). Diese Dokumentation konzentriert sich jedoch hauptsächlich auf das Silverlight-Portal, das möglicherweise nicht allen Linux-Benutzern zur Verfügung steht. Dort wird beschrieben, wie Sie an diese Zertifikate gelangen, diese mit unseren verschiedenen Tools und Partnern integrieren und für sich selbst verwenden können, bis diese Funktionalität im Azure-Verwaltungsportal zur Verfügung steht.
 
 Inhaltsverzeichnis
 ------------------
@@ -75,7 +75,7 @@ Falls Ihr privater Schlüssel zu irgendeinem Zeitpunkt nicht mehr sicher ist, m�
 Erstellen eines Verwaltungszertifikats im Azure-Verwaltungsportal
 -----------------------------------------------------------------
 
-Sie können Verwaltungszertifikate auf verschiedene Arten erstellen. Weitere Informationen zum Erstellen von Zertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg551722.aspx). Nachdem Sie das Zertifikat erstellt haben, fügen Sie es in Azure dem Abonnement hinzu.
+Sie können Verwaltungszertifikate auf verschiedene Arten erstellen. Weitere Informationen zum Erstellen von Zertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg551722.aspx). Nachdem Sie das Zertifikat erstellt haben, fügen Sie es in Azure dem Abonnement hinzu.
 
 1.  Melden Sie sich auf dem Azure-Verwaltungsportal an.
 

@@ -34,7 +34,7 @@ Richten Sie Ihre Entwicklungsumgebung ein, indem Sie das Azure SDK für .NET Fra
 
 Sie werden auch einen Emulator für mobile Browser benötigen. Klicken Sie dazu auf einen der folgenden Links:
 
--   [Windows 7 Phone Emulator](http://msdn.microsoft.com/en-us/library/ff402530(VS.92).aspx). (Dies ist der Emulator, der in den meisten Screenshots dieses Lernprogramms verwendet wird.)
+-   [Windows 7 Phone Emulator](http://msdn.microsoft.com/de-de/library/ff402530(VS.92).aspx). (Dies ist der Emulator, der in den meisten Screenshots dieses Lernprogramms verwendet wird.)
 -   Ändern Sie die Benutzeragentzeichenfolge zur Emulation eines iPhones. Eine Vorgehensweise fnden Sie in [diesem Blog-Eintrag](http://www.howtogeek.com/113439/how-to-change-your-browsers-user-agent-without-installing-any-extensions/).
 -   [Opera Mobile Emulator](http://www.opera.com/developer/tools/mobile/)
 -   [Apple Safari](http://www.apple.com/safari/download/), wobei der Benutzeragent auf iPhone festgelegt ist. Anweisungen zum Festlegen des Benutzeragenten in Safari auf "iPhone" finden Sie im Blog von David Alison unter [How to let Safari pretend it's IE](http://www.davidalison.com/2008/05/how-to-let-safari-pretend-its-ie.html) (Wie Safari seinen IE emuliert, in englischer Sprache).

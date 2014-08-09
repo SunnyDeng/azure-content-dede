@@ -5,11 +5,11 @@ Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschafts-, OAuth- 
 
 ***Von [Rick Anderson](https://twitter.com/RickAndMSFT) und Tom Dykstra. Aktualisiert am 15. Oktober 2013.***
 
-[Visual Studio 2013](/en-us/develop/net/tutorials/web-site-with-sql-database/ "Visual Studio 2013")[Visual Studio 2012](/en-us/develop/net/tutorials/web-site-with-sql-database-vs2012/ "Visual Studio 2012")
+[Visual Studio 2013](/de-de/develop/net/tutorials/web-site-with-sql-database/ "Visual Studio 2013")[Visual Studio 2012](/de-de/develop/net/tutorials/web-site-with-sql-database-vs2012/ "Visual Studio 2012")
 
 **Hinweis**
 
-Es ist eine [aktuellere Version dieses Lernprogramms](/en-us/develop/net/tutorials/web-site-with-sql-database/) verfügbar. Sie können diese Version weiterhin nutzen, wenn Sie Visual Studio 2012 verwenden, die neue Version ist jedoch viel benutzerfreundlicher.
+Es ist eine [aktuellere Version dieses Lernprogramms](/de-de/develop/net/tutorials/web-site-with-sql-database/) verfügbar. Sie können diese Version weiterhin nutzen, wenn Sie Visual Studio 2012 verwenden, die neue Version ist jedoch viel benutzerfreundlicher.
 
 In diesem Lernprogramm wird die Erstellung einer sicheren ASP.NET MVC 4-Webanwendung erläutert, mit der Benutzer sich mithilfe der Anmeldeinformationen von Facebook, Yahoo oder Google anmelden können. Darüber hinaus wird die Anwendung für Azure bereitgestellt.
 
@@ -282,7 +282,7 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
          enable-migrations -ContextTypeName ContactManagerContext
 
     ![enable-migrations](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxE.png) 
-	Sie müssen den Kontexttypnamen angeben (**ContactManagerContext**), da das Projekt zwei aus [DbContext](http://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx) abgeleitete Klassen enthält: den gerade hinzugefügten **ContactManagerContext** und den **UsersContext**, der für die Mitgliedschaftsdatenbank verwendet wird. Die Klasse **ContactManagerContext** wurde vom Gerüstassistenten von Visual Studio hinzugefügt.
+	Sie müssen den Kontexttypnamen angeben (**ContactManagerContext**), da das Projekt zwei aus [DbContext](http://msdn.microsoft.com/de-de/library/system.data.entity.dbcontext(v=VS.103).aspx) abgeleitete Klassen enthält: den gerade hinzugefügten **ContactManagerContext** und den **UsersContext**, der für die Mitgliedschaftsdatenbank verwendet wird. Die Klasse **ContactManagerContext** wurde vom Gerüstassistenten von Visual Studio hinzugefügt.
 
     Mit dem Befehl **enable-migrations** wird der Ordner *Migrations* erstellt und die Datei *Configuration.cs* darin abgelegt. Sie können diese Datei bearbeiten, um "Migrations" zu konfigurieren.
 
@@ -458,9 +458,9 @@ Die Tabelle **webpages\_OAuthMembership** enthält den OAuth-Anbieter, dessen Be
 Schützen der Anwendung durch das Attribut "Authorize"
 -----------------------------------------------------
 
-In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.100).aspx)-Attribut an, um den Zugriff auf die Aktionsmethoden einzuschränken. Anonyme Benutzer können nur die Startseite ansehen. Registrierte Benutzer können Kontaktdetails sowie die Seiten "About" und "Contacts" ansehen. Nur Benutzer mit der Rolle *canEdit* können auf Aktionsmethoden zugreifen, mit denen Daten geändert werden.
+In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/de-de/library/system.web.mvc.authorizeattribute(v=vs.100).aspx)-Attribut an, um den Zugriff auf die Aktionsmethoden einzuschränken. Anonyme Benutzer können nur die Startseite ansehen. Registrierte Benutzer können Kontaktdetails sowie die Seiten "About" und "Contacts" ansehen. Nur Benutzer mit der Rolle *canEdit* können auf Aktionsmethoden zugreifen, mit denen Daten geändert werden.
 
-1.  Fügen Sie der Anwendung die Filter [Authorize](http://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.100).aspx) und [RequireHttps](http://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx) hinzu. Alternativ können Sie das [Authorize](http://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.100).aspx)-Attribut und das [RequireHttps](http://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx)-Attribut jedem Controller hinzufügen, es wird jedoch als Best Practice im Bereich Sicherheit betrachtet, die Attribute der gesamten Anwendung hinzuzufügen. Auf diese Weise wird jeder neu hinzugefügte Controller und jede neu hinzugefügte Aktionsmethode automatisch geschützt und Sie müssen nicht daran denken, die Attribute anzuwenden. Weitere Informationen finden Sie unter [Securing your ASP.NET MVC 4 App and the new AllowAnonymous Attribute](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx) (in englischer Sprache). Öffnen Sie die Datei *App\_Start\\FilterConfig.cs*, und ersetzen Sie die *RegisterGlobalFilters*-Methode durch den folgenden Code.
+1.  Fügen Sie der Anwendung die Filter [Authorize](http://msdn.microsoft.com/de-de/library/system.web.mvc.authorizeattribute(v=vs.100).aspx) und [RequireHttps](http://msdn.microsoft.com/de-de/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx) hinzu. Alternativ können Sie das [Authorize](http://msdn.microsoft.com/de-de/library/system.web.mvc.authorizeattribute(v=vs.100).aspx)-Attribut und das [RequireHttps](http://msdn.microsoft.com/de-de/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx)-Attribut jedem Controller hinzufügen, es wird jedoch als Best Practice im Bereich Sicherheit betrachtet, die Attribute der gesamten Anwendung hinzuzufügen. Auf diese Weise wird jeder neu hinzugefügte Controller und jede neu hinzugefügte Aktionsmethode automatisch geschützt und Sie müssen nicht daran denken, die Attribute anzuwenden. Weitere Informationen finden Sie unter [Securing your ASP.NET MVC 4 App and the new AllowAnonymous Attribute](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx) (in englischer Sprache). Öffnen Sie die Datei *App\_Start\\FilterConfig.cs*, und ersetzen Sie die *RegisterGlobalFilters*-Methode durch den folgenden Code.
 
          public static void
          RegisterGlobalFilters(GlobalFilterCollection filters)
@@ -525,7 +525,7 @@ Azure-Websites enthalten ein gültiges Sicherheitszertifikat, daher wird diese W
 Vorbereiten der DatenbankErstellen eines Datenbereitstellungsskripts
 --------------------------------------------------------------------
 
-Die Mitgliedschaftsdatenbank wird nicht von Entity Framework Code First verwaltet, daher können Sie keine Migrationen verwenden, um sie bereitzustellen. Verwenden Sie den [dbDacFx](http://msdn.microsoft.com/en-us/library/dd394698.aspx)-Anbieter, um das Datenbankschema bereitzustellen. Konfigurieren Sie außerdem das Veröffentlichungsprofil so, dass ein Skript ausgeführt wird, das erste Mitgliedschaftsdaten in Mitgliedschaftstabellen einträgt
+Die Mitgliedschaftsdatenbank wird nicht von Entity Framework Code First verwaltet, daher können Sie keine Migrationen verwenden, um sie bereitzustellen. Verwenden Sie den [dbDacFx](http://msdn.microsoft.com/de-de/library/dd394698.aspx)-Anbieter, um das Datenbankschema bereitzustellen. Konfigurieren Sie außerdem das Veröffentlichungsprofil so, dass ein Skript ausgeführt wird, das erste Mitgliedschaftsdaten in Mitgliedschaftstabellen einträgt
 
 In diesem Lernprogramm wird SQL Server Management Studio (SSMS) zur Erstellung von Datenbereitstellungskripts verwendet.
 
@@ -678,20 +678,20 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 Wie Sie die farbigen Anmeldeschaltflächen für Facebook, Google und Yahoo erhalten, erfahren Sie im Blogeintrag [Customizing External Login Buttons in ASP.NET MVC 4](http://www.beabigrockstar.com/customizing-external-login-buttons-in-asp-net-mvc-4/) (Anpassen von externen Anmeldeschaltflächen in ASP.NET MVC 4, in englischer Sprache). Informationen zur Verwendung der Windows-Authentifizierung finden Sie unter:
 
 -   [Azure-Authentifizierung](http://www.asp.net/vnext/overview/fall-2012-update/windows-azure-authentication)
--   [So erstellen Sie eine Intranetsite mit ASP.NET MVC](http://msdn.microsoft.com/en-us/library/gg703322(v=vs.98).aspx)
+-   [So erstellen Sie eine Intranetsite mit ASP.NET MVC](http://msdn.microsoft.com/de-de/library/gg703322(v=vs.98).aspx)
 
 Daten können außerdem über den Azure-Speicher in einer Azure-Anwendung gespeichert werden. Dieser Speicher bietet nichtrelationale Datenspeicherung in Form von Blobs und Tabellen. Die folgenden Links bieten weitere Informationen zu ASP.NET MVC und Azure.
 
--   [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs](http://www.windowsazure.com/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/)
+-   [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs](http://www.windowsazure.com/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/)
 -   [Einleitung zu ASP.NET MVC 4](http://www.asp.net/mvc/tutorials/mvc-4/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4)
 -   [Erste Schritte in Entity Framework mit MVC](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)
 -   [OAuth 2.0 and Sign-In (OAuth 2.0 und Anmeldung, in englischer Sprache)](http://blogs.msdn.com/b/vbertocci/archive/2013/01/02/oauth-2-0-and-sign-in.aspx)
 
-Sie haben erfahren, wie eine einfache Webanwendung auf einer Azure-Website bereitgestellt wird. Weitere Informationen zur Konfiguration, Verwaltung und Skalierung von Azure-Websites finden Sie auf der Seite [Common Tasks](http://www.windowsazure.com/en-us/develop/net/common-tasks/) in den "Vorgehensweise"-Themen.
+Sie haben erfahren, wie eine einfache Webanwendung auf einer Azure-Website bereitgestellt wird. Weitere Informationen zur Konfiguration, Verwaltung und Skalierung von Azure-Websites finden Sie auf der Seite [Common Tasks](http://www.windowsazure.com/de-de/develop/net/common-tasks/) in den "Vorgehensweise"-Themen.
 
-Informationen zum Debuggen von Azure-Websites finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+Informationen zum Debuggen von Azure-Websites finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
-Informationen zum Bereitstellen einer Anwendung für einen Azure-Clouddienst finden Sie in [der Clouddienstversion dieses Lernprogramms](http://www.windowsazure.com/en-us/develop/net/tutorials/cloud-service-with-sql-database/) sowie unter [Entwickeln von Webanwendungen mit Azure](http://msdn.microsoft.com/en-us/library/Hh674484). Gründe, weshalb Sie die ASP.NET-Webanwendung in einem Azure-Clouddienst statt über eine Azure-Website ausführen sollten, sind unter anderem:
+Informationen zum Bereitstellen einer Anwendung für einen Azure-Clouddienst finden Sie in [der Clouddienstversion dieses Lernprogramms](http://www.windowsazure.com/de-de/develop/net/tutorials/cloud-service-with-sql-database/) sowie unter [Entwickeln von Webanwendungen mit Azure](http://msdn.microsoft.com/de-de/library/Hh674484). Gründe, weshalb Sie die ASP.NET-Webanwendung in einem Azure-Clouddienst statt über eine Azure-Website ausführen sollten, sind unter anderem:
 
 -   Sie benötigen Administratorberechtigungen auf dem Webserver, auf dem die Anwendung ausgeführt wird.
 -   Sie möchten auf den Webserver, auf dem die Anwendung ausgeführt wird, über eine Remotedesktopverbindung zugreifen.
@@ -704,5 +704,5 @@ Weitere Informationen zur Verwendung von SQL-Datenbank finden Sie unter [Arbeite
 Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie in den folgenden Ressourcen:
 
 -   [Erste Schritte in Entity Framework mit MVC](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)
--   [Code First Migrations (Code First-Migrationen, in englischer Sprache)](http://msdn.microsoft.com/en-us/library/hh770484)
+-   [Code First Migrations (Code First-Migrationen, in englischer Sprache)](http://msdn.microsoft.com/de-de/library/hh770484)
 

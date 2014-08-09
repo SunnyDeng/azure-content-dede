@@ -179,11 +179,11 @@ Wenn Sie Ihre Skripte nicht über die WebJobs-Portalseite hochladen möchten, k�
 
 - WebJobs-bezogene Videos:
 
-    [Azure WebJobs 101 - Grundlegende WebJobs mit Jamie Espinosa](http://www.windowsazure.com/en-us/documentation/videos/azure-webjobs-basics/)
+    [Azure WebJobs 101 - Grundlegende WebJobs mit Jamie Espinosa](http://www.windowsazure.com/de-de/documentation/videos/azure-webjobs-basics/)
 
-    [Azure WebJobs 102 – Geplante WebJobs und das WebJobs-Dashboard mit Jamie Espinosa](http://www.windowsazure.com/en-us/documentation/videos/azure-webjobs-schedule-and-dashboard/)
+    [Azure WebJobs 102 – Geplante WebJobs und das WebJobs-Dashboard mit Jamie Espinosa](http://www.windowsazure.com/de-de/documentation/videos/azure-webjobs-schedule-and-dashboard/)
 
-    [Azure Scheduler 101 - Kevin Lam erklärt die Erstellung von Zeitplänen](http://www.windowsazure.com/en-us/documentation/videos/azure-scheduler-how-to/)
+    [Azure Scheduler 101 - Kevin Lam erklärt die Erstellung von Zeitplänen](http://www.windowsazure.com/de-de/documentation/videos/azure-scheduler-how-to/)
 
 
 

@@ -58,7 +58,7 @@ Der Blob-Dienst umfasst die folgenden Komponenten:
 Erstellen eines Azure-Speicherkontos
 ------------------------------------
 
-Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden Schritten können Sie ein Speicherkonto erstellen. (Sie können ein Speicherkonto auch mithilfe der [REST-API](http://msdn.microsoft.com/en-us/library/windowsazure/hh264518.aspx) erstellen.)
+Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden Schritten können Sie ein Speicherkonto erstellen. (Sie können ein Speicherkonto auch mithilfe der [REST-API](http://msdn.microsoft.com/de-de/library/windowsazure/hh264518.aspx) erstellen.)
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
 
@@ -79,7 +79,7 @@ Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden
 Erstellen einer Node.js-Anwendung
 ---------------------------------
 
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js-Cloud-Dienst]({localLink:2221} "Node.js-Webanwendung") (mit der Windows PowerShell), oder [Website mit WebMatrix](/en-us/develop/nodejs/tutorials/web-site-with-webmatrix/).
+Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js-Cloud-Dienst]({localLink:2221} "Node.js-Webanwendung") (mit der Windows PowerShell), oder [Website mit WebMatrix](/de-de/develop/nodejs/tutorials/web-site-with-webmatrix/).
 
 Konfigurieren der Anwendung für den Speicherzugriff
 ---------------------------------------------------
@@ -117,9 +117,9 @@ Einrichten einer Azure-Speicherverbindung
 
 Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_STORAGE\_ACCESS\_KEY die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Falls diese Umgebungsvariablen nicht gesetzt sind, müssen Sie die Kontoinformationen beim Aufruf von **createBlobService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Cloud-Dienst finden Sie unter [Node.js-Clouddienst mit Speicher](/en-us/develop/nodejs/tutorials/web-app-with-storage/).
+Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Cloud-Dienst finden Sie unter [Node.js-Clouddienst mit Speicher](/de-de/develop/nodejs/tutorials/web-app-with-storage/).
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für einen Azure-Cloud-Dienst finden Sie unter [Node.js-Webanwendung mit Speicher](/en-us/develop/nodejs/tutorials/web-site-with-storage/)
+Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für einen Azure-Cloud-Dienst finden Sie unter [Node.js-Webanwendung mit Speicher](/de-de/develop/nodejs/tutorials/web-site-with-storage/)
 
 Vorgehensweise: Erstellen eines Containers
 ------------------------------------------
@@ -235,7 +235,7 @@ Nächste Schritte
 
 Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx).
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx).
 -   Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 -   Besuchen Sie das [Azure SDK für Node](https://github.com/WindowsAzure/azure-sdk-for-node)-Repository auf GitHub.
 

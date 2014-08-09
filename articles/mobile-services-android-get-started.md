@@ -3,9 +3,9 @@
 Erste Schritte mit Mobile Services
 ==================================
 
-[Windows Store](/en-us/documentation/articles/mobile-services-windows-store-get-started "Windows Store") [Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-get-started "Windows Phone") [iOS](/en-us/documentation/articles/mobile-services-ios-get-started "iOS") [Android](/en-us/documentation/articles/mobile-services-android-get-started "Android") [HTML](/en-us/documentation/articles/mobile-services-html-get-started "HTML") [Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-mobile-services-ios-get-started "Xamarin.iOS") [Xamarin.Android](/en-us/documentation/articles/partner-xamarin-mobile-services-android-get-started "Xamarin.Android") [Sencha](/en-us/documentation/articles/partner-sencha-mobile-services-get-started/ "Sencha") [PhoneGap](/en-us/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/ "PhoneGap")
+[Windows Store](/de-de/documentation/articles/mobile-services-windows-store-get-started "Windows Store") [Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-get-started "Windows Phone") [iOS](/de-de/documentation/articles/mobile-services-ios-get-started "iOS") [Android](/de-de/documentation/articles/mobile-services-android-get-started "Android") [HTML](/de-de/documentation/articles/mobile-services-html-get-started "HTML") [Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started "Xamarin.iOS") [Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started "Xamarin.Android") [Sencha](/de-de/documentation/articles/partner-sencha-mobile-services-get-started/ "Sencha") [PhoneGap](/de-de/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/ "PhoneGap")
 
-[.NET-Backend](/en-us/documentation/articles/mobile-services-dotnet-backend-android-get-started/ ".NET-Backend") | [JavaScript-Backend](/en-us/documentation/articles/mobile-services-android-get-started/ "JavaScript-Backend")
+[.NET-Backend](/de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started/ ".NET-Backend") | [JavaScript-Backend](/de-de/documentation/articles/mobile-services-android-get-started/ "JavaScript-Backend")
 
 In diesem Lernprogramm erfahren Sie, wie Sie einen Cloud-basierten Backend-Service mithilfe von Azure Mobile Services zu einer Android-App hinzufügen. Sie erstellen hierzu in diesem Lernprogramm einen neuen Mobile Service und eine einfache *Aufgabenlisten*-App, die App-Daten in dem neuen Mobile Service speichert.
 
@@ -21,7 +21,7 @@ Das heruntergeladene Schnellstartprojekt enthält den Mobile Services SDK für A
 
 **Hinweis**
 
-Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto besitzen, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=AE564AB28).
+Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto besitzen, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28).
 
 Erstellen eines neuen Mobile Service
 ------------------------------------
@@ -93,13 +93,13 @@ Nächste Schritte
 
 Nachdem Sie nun den Schnellstart abgeschlossen haben, erfahren Sie, wie Sie zusätzliche wichtige Aufgaben in Mobile Services durchführen:
 
--   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-android)
+-   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-android)
     Erfahren Sie mehr über das Speichern und Abfragen von Daten mithilfe von Mobile Services.
 
--   [Erste Schritte bei der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-android)
+-   [Erste Schritte bei der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-android)
     Erfahren Sie, wie Sie Benutzer Ihrer App mithilfe eines Identitätsanbieters authentifizieren.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-android)
+-   [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-android)
     Erfahren Sie, wie Sie eine sehr einfache Pushbenachrichtigung an Ihre App senden.
 
 

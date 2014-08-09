@@ -72,5 +72,5 @@ Geben Sie das Kennwort erneut ein. Warten Sie, während die Aktualisierungen ins
 
 
 [1]: http://go.microsoft.com/fwlink/p/?LinkID=294063
-[2]: http://msdn.microsoft.com/en-us/library/ms161962.aspx
+[2]: http://msdn.microsoft.com/de-de/library/ms161962.aspx
 [3]: http://www.puttyssh.org/download.html

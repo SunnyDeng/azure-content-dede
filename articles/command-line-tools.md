@@ -1379,7 +1379,7 @@ Dieser Befehl löscht alle Zeilen aus der Tabelle.
 
 ### Befehle zum Verwalten von Skripts
 
-Mit den Befehlen in diesem Abschnitt können Sie die Serverskripts eines Mobile Service verwalten. Weitere Informationen erhalten Sie unter [Verwenden von Serverskripts in Mobile Services.](http://www.windowsazure.com/en-us/develop/mobile/how-to-guides/work-with-server-scripts/).
+Mit den Befehlen in diesem Abschnitt können Sie die Serverskripts eines Mobile Service verwalten. Weitere Informationen erhalten Sie unter [Verwenden von Serverskripts in Mobile Services.](http://www.windowsazure.com/de-de/develop/mobile/how-to-guides/work-with-server-scripts/).
 
 **mobile script list [Optionen] [Dienstname]**
 
@@ -1437,7 +1437,7 @@ Dieser Befehl löscht das existierende insert-Skript aus der Tabelle TodoItem.
 
 ### Befehle zum Verwalten von geplanten Aufgaben
 
-Mit den Befehlen in diesem Abschnitt können Sie geplanten Aufgaben eines Mobile Service verwalten. Weitere Informationen finden Sie unter [Geplante Aufträge](http://msdn.microsoft.com/en-us/library/windowsazure/jj860528.aspx).
+Mit den Befehlen in diesem Abschnitt können Sie geplanten Aufgaben eines Mobile Service verwalten. Weitere Informationen finden Sie unter [Geplante Aufträge](http://msdn.microsoft.com/de-de/library/windowsazure/jj860528.aspx).
 
 **mobile job list [Optionen] [Dienstname]**
 
@@ -1511,7 +1511,7 @@ Beim Löschen einer Aufgabe wird auch das hochgeladene Skript gelöscht.
 
 ### Befehle zum Skalieren eines Mobile Service
 
-Mit den Befehlen in diesem Abschnitt können Sie einen Mobile Service skalieren. Weitere Informationen finden Sie unter [Scaling a Mobile Service](http://msdn.microsoft.com/en-us/library/windowsazure/jj193178.aspx) (Skalieren von Mobile Services, in englischer Sprache).
+Mit den Befehlen in diesem Abschnitt können Sie einen Mobile Service skalieren. Weitere Informationen finden Sie unter [Scaling a Mobile Service](http://msdn.microsoft.com/de-de/library/windowsazure/jj193178.aspx) (Skalieren von Mobile Services, in englischer Sprache).
 
 **mobile scale show [Optionen] [Dienstname]**
 

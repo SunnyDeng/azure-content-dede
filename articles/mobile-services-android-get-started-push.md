@@ -3,11 +3,11 @@
 Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 ============================================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/get-started-with-push-dotnet "Windows Store C#")[Windows Store JavaScript](/en-us/develop/mobile/tutorials/get-started-with-push-js "Windows Store JavaScript")[Windows Phone](/en-us/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/get-started-with-push-ios "iOS")[Android](/en-us/develop/mobile/tutorials/get-started-with-push-android "Android")[Xamarin.iOS](/en-us/develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/en-us/develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-push-dotnet "Windows Store C#")[Windows Store JavaScript](/de-de/develop/mobile/tutorials/get-started-with-push-js "Windows Store JavaScript")[Windows Phone](/de-de/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/get-started-with-push-ios "iOS")[Android](/de-de/develop/mobile/tutorials/get-started-with-push-android "Android")[Xamarin.iOS](/de-de/develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android")
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung an eine Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe des Google Cloud Messaging (GCM)-Service zu dem Schnellstartprojekt hinzu. Sobald Sie diesen Vorgang abgeschlossen haben, sendet Ihr Mobile Service jedes Mal eine Pushbenachrichtigung, wenn ein Eintrag eingefügt wird.
 
-> [WACOM.NOTE] In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen mithilfe der Legacyunterstützung von Mobile Services aktivieren. Azure Notification Hubs ist in Mobile Services integriert, damit Sie vorlagenbasierte und plattformübergreifende Pushbenachrichtigungen an Millionen von Geräte senden können. Standardmäßig sind Pushbenachrichtigungen unter Verwendung von Notification Hubs nicht aktiviert, und es gibt derzeit keine Notification Hub-Unterstützung für Android in den Mobile Services-Bibliotheken. Sie können jedoch unter Verwendung der Notification Hub-Bibliotheken Pushbenachrichtigungen von Ihrem Mobile Service senden. Weitere Informationen finden Sie unter [Erste Schritte mit Notification Hubs](/en-us/documentation/articles/notification-hubs-android-get-started/).
+> [WACOM.NOTE] In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen mithilfe der Legacyunterstützung von Mobile Services aktivieren. Azure Notification Hubs ist in Mobile Services integriert, damit Sie vorlagenbasierte und plattformübergreifende Pushbenachrichtigungen an Millionen von Geräte senden können. Standardmäßig sind Pushbenachrichtigungen unter Verwendung von Notification Hubs nicht aktiviert, und es gibt derzeit keine Notification Hub-Unterstützung für Android in den Mobile Services-Bibliotheken. Sie können jedoch unter Verwendung der Notification Hub-Bibliotheken Pushbenachrichtigungen von Ihrem Mobile Service senden. Weitere Informationen finden Sie unter [Erste Schritte mit Notification Hubs](/de-de/documentation/articles/notification-hubs-android-get-started/).
 
 Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen:
 
@@ -22,7 +22,7 @@ Voraussetzungen für dieses Lernprogramm:
 -   [Mobile Services Android SDK](https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409)
 -   Ein aktives Google-Konto
 
-Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart. Bevor Sie dieses Lernprogramm starten, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-android) abschließen.
+Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart. Bevor Sie dieses Lernprogramm starten, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-android) abschließen.
 
 Aktivieren von Google Cloud Messaging
 -------------------------------------
@@ -180,5 +180,5 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 Nächste Schritte
 ----------------
 
-In diesem einfachen Beispiel erhält ein Benutzer eine Pushbenachrichtigung mit den Daten, die gerade eingefügt wurden. Der von GCM verwendete Gerätetoken wird durch den Client in der Anforderung an den Mobile Service übermittelt. Im nächsten Lernprogramm [Pushbenachrichtigungen an App-Benutzer](/en-us/develop/mobile/tutorials/push-notifications-to-users-android) erstellen Sie eine separate Gerätetabelle, in der Gerätetoken gespeichert werden, und senden eine Pushbenachrichtigung an alle gespeicherten Channels, wenn etwas eingefügt wird.
+In diesem einfachen Beispiel erhält ein Benutzer eine Pushbenachrichtigung mit den Daten, die gerade eingefügt wurden. Der von GCM verwendete Gerätetoken wird durch den Client in der Anforderung an den Mobile Service übermittelt. Im nächsten Lernprogramm [Pushbenachrichtigungen an App-Benutzer](/de-de/develop/mobile/tutorials/push-notifications-to-users-android) erstellen Sie eine separate Gerätetabelle, in der Gerätetoken gespeichert werden, und senden eine Pushbenachrichtigung an alle gespeicherten Channels, wenn etwas eingefügt wird.
 

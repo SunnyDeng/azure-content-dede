@@ -5,7 +5,7 @@ Konfigurieren von Python mit Azure-Websites
 
 Dieses Lernprogramm beschreibt die Optionen für das Authoring und Konfigurieren einer grundlegenden Web Server Gateway Interface (WSGI)-kompatiblen Python-Anwendung auf Azure-Websites. Die ersten Schritte mit Azure-Websites sind leicht, und Ihre Python-Anwendung kann skaliert und auf andere Azure-Services ausgedehnt werden. Die Azure-Websites-Plattform umfasst Python 2.7 und den allgemeinen FastCGI-Handler "wfastcgi.py" für Python. Sie müssen Ihre Website nur noch so konfigurieren, dass sie den Python-Handler verwendet.
 
-Ein umfassenderes Beispiel für die Konfiguration des Django-Frameworks auf Azure-Websites finden Sie im folgenden Lernprogramm: [http://www.windowsazure.com/de-de/develop/python/tutorials/web-sites-with-django](http://www.windowsazure.com/en-us/develop/python/tutorials/web-sites-with-django).
+Ein umfassenderes Beispiel für die Konfiguration des Django-Frameworks auf Azure-Websites finden Sie im folgenden Lernprogramm: [http://www.windowsazure.com/de-de/develop/python/tutorials/web-sites-with-django](http://www.windowsazure.com/de-de/develop/python/tutorials/web-sites-with-django).
 
 WSGI-Unterstützung
 ------------------
@@ -15,7 +15,7 @@ WSGI ist ein Python-Standard, der in der Spezifikation [PEP 3333](http://www.py
 Website-Erstellung
 ------------------
 
-Für dieses Lernprogramm wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugang zum Azure-Verwaltungsportal haben. Detaillierte Anweisungen zum Erstellen einer Website finden Sie unter [http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-create-websites](http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-create-websites).
+Für dieses Lernprogramm wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugang zum Azure-Verwaltungsportal haben. Detaillierte Anweisungen zum Erstellen einer Website finden Sie unter [http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-create-websites](http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-create-websites).
 
 Wenn Sie noch keine Website haben, können Sie eine über das Azure-Verwaltungsportal erstellen. Wählen Sie die Funktion WEBSITES und dann SCHNELLERFASSUNG, und geben Sie eine URL für Ihre Website an.
 

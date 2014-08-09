@@ -1,6 +1,6 @@
 Der bestehende **TodoItemController** wird aktualisiert, sodass die **PostTodoItem**-Methode eine SAS generiert, wenn ein neues Todo-Element eingefügt wird.
 
-1.  Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](/en-us/manage/services/storage/how-to-create-a-storage-account).
+1.  Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](/de-de/manage/services/storage/how-to-create-a-storage-account).
 
 2.  Klicken Sie im Verwaltungsportal auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
 
@@ -17,7 +17,7 @@ Der bestehende **TodoItemController** wird aktualisiert, sodass die **PostTodoIt
 
     ![](./media/mobile-services-configure-blob-storage/mobile-blob-storage-app-settings.png)
 
-    Der Zugriffsschlüssel des Speicherkontos wird verschlüsselt in den App-Einstellungen gespeichert. Sie können auf diesen Schlüssel von jedem beliebigen Serverskript zur Laufzeit zugreifen. Weitere Informationen finden Sie unter [App-Einstellungen](http://msdn.microsoft.com/en-us/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7).
+    Der Zugriffsschlüssel des Speicherkontos wird verschlüsselt in den App-Einstellungen gespeichert. Sie können auf diesen Schlüssel von jedem beliebigen Serverskript zur Laufzeit zugreifen. Weitere Informationen finden Sie unter [App-Einstellungen](http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7).
 
 3.  Öffnen Sie im Projektmappen-Explorer in Visual Studio die Datei Web.config für das Projekt des mobilen Services, und fügen Sie die folgenden neuen App-Einstellungen hinzu, wobei Sie die Platzhalter durch den Speicherkontonamen und den Zugriffsschlüssel ersetzen, die als App-Einstellungen im Portal festgelegt sind:
 

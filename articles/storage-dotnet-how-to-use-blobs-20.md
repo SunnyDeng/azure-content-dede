@@ -398,9 +398,9 @@ gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speichera
 *  Weitere Informationen zu zusätzlichen Optionen für das Speichern von
   Daten in Azure finden Sie in den anderen Featureleitfäden.
   *  Verwenden Sie
-    [Tabellenspeicher](/en-us/develop/net/how-to-guides/table-services/) zum Speichern strukturierter Daten.
+    [Tabellenspeicher](/de-de/develop/net/how-to-guides/table-services/) zum Speichern strukturierter Daten.
   *  Verwenden Sie eine
-    [SQL-Datenbank](/en-us/develop/net/how-to-guides/sql-database/) zum Speichern relationaler Daten.
+    [SQL-Datenbank](/de-de/develop/net/how-to-guides/sql-database/) zum Speichern relationaler Daten.
   
 
 
@@ -408,11 +408,11 @@ gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speichera
 
 
 
-[1]: http://msdn.microsoft.com/en-us/library/windowsazure/ee758697.aspx
-[2]: http://www.windowsazure.com/en-us/develop/net/#
+[1]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx
+[2]: http://www.windowsazure.com/de-de/develop/net/#
 [3]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
 [4]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
 [5]: http://nuget.org/packages/System.Spatial/5.0.2
-[6]: http://msdn.microsoft.com/en-us/library/windowsazure/dn495001(v=azure.10).aspx
-[7]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179355
-[8]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+[6]: http://msdn.microsoft.com/de-de/library/windowsazure/dn495001(v=azure.10).aspx
+[7]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179355
+[8]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

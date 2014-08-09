@@ -155,7 +155,7 @@ Azure installiert das Modul node-sqlserver während der Laufzeit nicht dynamisch
 
 Das Verzeichnis **node-sqlserver** sollte eine Datei **package.json** enthalten. Das Verzeichnis **lib** sollte eine Datei **sql.js** und eine Datei **sqlserver.node** enthalten. Bei letzterer handelt es sich um die kompilierte Form des Moduls node-sqlserver.
 
-Weitere Informationen zum Bereitstellen einer Node.js-Anwendung für Azure erhalten Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/) und [Node.js-Clouddienst](/en-us/develop/nodejs/tutorials/getting-started/).
+Weitere Informationen zum Bereitstellen einer Node.js-Anwendung für Azure erhalten Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/) und [Node.js-Clouddienst](/de-de/develop/nodejs/tutorials/getting-started/).
 
 Nächste Schritte
 ----------------

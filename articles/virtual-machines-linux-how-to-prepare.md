@@ -3,9 +3,9 @@
 Vorbereiten eines virtuellen Linux-Computers für Azure
 ======================================================
 
-In Azure führt ein virtueller Computer (VM, Virtual Machine) das Betriebssystem aus, welches Sie beim Erstellen des virtuellen Computers auswählen. Azure speichert das Betriebssystem eines virtuellen Computers auf einer virtuellen Festplatte im VHD-Format (.vhd-Datei). Die virtuelle Festplatte (VHD, Virtual Hard Disk) eines Betriebssystems, das für eine Duplizierung vorbereitet wurde, wird als Image bezeichnet. In diesem Artikel wird beschrieben, wie Sie ein eigenes Image erstellen können, indem Sie eine .vhd-Datei mit einem von Ihnen installierten und generalisierten Betriebssystem hochladen. Weitere Informationen zu Datenträgern und Images in Azure finden Sie unter [Verwalten von Datenträgern und Images](http://msdn.microsoft.com/en-us/library/windowsazure/jj672979.aspx).
+In Azure führt ein virtueller Computer (VM, Virtual Machine) das Betriebssystem aus, welches Sie beim Erstellen des virtuellen Computers auswählen. Azure speichert das Betriebssystem eines virtuellen Computers auf einer virtuellen Festplatte im VHD-Format (.vhd-Datei). Die virtuelle Festplatte (VHD, Virtual Hard Disk) eines Betriebssystems, das für eine Duplizierung vorbereitet wurde, wird als Image bezeichnet. In diesem Artikel wird beschrieben, wie Sie ein eigenes Image erstellen können, indem Sie eine .vhd-Datei mit einem von Ihnen installierten und generalisierten Betriebssystem hochladen. Weitere Informationen zu Datenträgern und Images in Azure finden Sie unter [Verwalten von Datenträgern und Images](http://msdn.microsoft.com/de-de/library/windowsazure/jj672979.aspx).
 
-**Hinweis**: Wenn Sie einen virtuellen Computer erstellen, können Sie die Betriebssystemeinstellungen individuell anpassen, um das Ausführen Ihrer Anwendung zu ermöglichen. Die von Ihnen eingestellte Konfiguration wird auf einem Datenträger für den entsprechenden virtuellen Computer gespeichert. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](/en-us/manage/windows/how-to-guides/custom-create-a-vm/).
+**Hinweis**: Wenn Sie einen virtuellen Computer erstellen, können Sie die Betriebssystemeinstellungen individuell anpassen, um das Ausführen Ihrer Anwendung zu ermöglichen. Die von Ihnen eingestellte Konfiguration wird auf einem Datenträger für den entsprechenden virtuellen Computer gespeichert. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](/de-de/manage/windows/how-to-guides/custom-create-a-vm/).
 
 **Wichtig**: Die Azure-Plattform-SLA bezieht sich nur dann auf die virtuellen Computer, die das Linux-Betriebssystem ausführen, wenn eine der bestätigten Distributionen mit den Konfigurationsdetails verwendet wird, die in [diesem Artikel](http://support.microsoft.com/kb/2805216) angegeben sind. Alle Linux-Distributionen, die in der Azure-Image-Galerie bereitgestellt werden, sind bestätigte Distributionen mit der erforderlichen Konfiguration.
 
@@ -14,7 +14,7 @@ Voraussetzungen
 
 In diesem Artikel wird davon ausgegangen, dass Sie über die folgenden Elemente verfügen:
 
--   **Ein Verwaltungszertifikat** - Sie haben ein Verwaltungszertifikat für das Abonnement erstellt, für das Sie eine virtuelle Festplatte hochladen möchten. Sie haben das Zertifikat in eine .cer-Datei exportiert. Weitere Informationen zum Erstellen von Zertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg551722.aspx).
+-   **Ein Verwaltungszertifikat** - Sie haben ein Verwaltungszertifikat für das Abonnement erstellt, für das Sie eine virtuelle Festplatte hochladen möchten. Sie haben das Zertifikat in eine .cer-Datei exportiert. Weitere Informationen zum Erstellen von Zertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg551722.aspx).
 
 -   **In einer .vhd-Datei installiertes Linux-Betriebssystem.** - Sie haben ein unterstütztes Linux-Betriebssystem auf einer virtuellen Festplatte installiert. Zum Erstellen von .vhd-Dateien stehen mehrere verschiedene Tools bereit. Sie können eine Virtualisierungslösung wie etwa Hyper-V verwenden, um die .vhd-Datei zu erstellen und das Betriebssystem zu installieren. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/en-us/library/hh846766.aspx).
 
@@ -24,7 +24,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie über die folgenden Elemente 
 
 -   **Linux Azure-Befehlszeilentool.** Wenn Sie ein Linux-Betriebssystem zum Erstellen des Images nutzen, verwenden Sie dieses Tool zum Hochladen der VHD-Datei. Informationen zum Herunterladen des Tools finden Sie unter [Azure-Befehlszeilentools für Linux und Mac](http://go.microsoft.com/fwlink/?LinkID=253691&clcid=0x409).
 
--   **Add-AzureVhd-Cmdlet** ist Teil des Azure PowerShell-Moduls. Informationen zum Herunterladen dieses Moduls finden Sie unter [Azure-Downloads](/en-us/develop/downloads/). Referenzinformationen hierzu finden Sie unter [Add-AzureVhd](http://msdn.microsoft.com/en-us/library/windowsazure/dn205185.aspx).
+-   **Add-AzureVhd-Cmdlet** ist Teil des Azure PowerShell-Moduls. Informationen zum Herunterladen dieses Moduls finden Sie unter [Azure-Downloads](/de-de/develop/downloads/). Referenzinformationen hierzu finden Sie unter [Add-AzureVhd](http://msdn.microsoft.com/de-de/library/windowsazure/dn205185.aspx).
 
 Beachten Sie bei allen Distributionen Folgendes:
 
@@ -534,7 +534,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
     Wobei `<PathToFile>` den vollständigen Pfad zur .publishsettings-Datei darstellt.
 
-    Weitere Informationen finden Sie unter [Erste Schritte mit Azure Cmdlets](http://msdn.microsoft.com/en-us/library/windowsazure/jj554332.aspx).
+    Weitere Informationen finden Sie unter [Erste Schritte mit Azure Cmdlets](http://msdn.microsoft.com/de-de/library/windowsazure/jj554332.aspx).
 
 Schritt 4: Hochladen des Abbilds zu Azure
 -----------------------------------------
@@ -547,7 +547,7 @@ Führen Sie einen der folgenden Schritte aus:
 
     `Add-AzureVhd -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>`
 
-    Weitere Informationen hierzu finden Sie unter [Add-AzureVhd](http://msdn.microsoft.com/en-us/library/windowsazure/dn205185.aspx).
+    Weitere Informationen hierzu finden Sie unter [Add-AzureVhd](http://msdn.microsoft.com/de-de/library/windowsazure/dn205185.aspx).
 
 -   Verwenden Sie das Linux-Befehlszeilentool zum Hochladen des Images. Sie können ein Image hochladen, indem Sie den folgenden Befehl verwenden:
 
@@ -560,7 +560,7 @@ Im Wesentlichen müssen sämtliche Distributionen, die in Azure ausgeführt werd
 
 Diese Liste umfasst in keinem Fall alle Aspekte, da jede Distribution unterschiedlich ist. Es ist durchaus möglich, dass Sie, selbst wenn Sie alle unten aufgeführten Kriterien erfüllen, ein betreffendes Image noch erheblich optimieren müssen, um gewährleisten zu können, dass es ordnungsgemäß auf der Plattform ausgeführt wird.
 
-Aus diesem Grund wird empfohlen, dass Sie mit einem unserer [Images bestätigt von Partnern](https://www.windowsazure.com/en-us/manage/linux/other-resources/endorsed-distributions/) starten.
+Aus diesem Grund wird empfohlen, dass Sie mit einem unserer [Images bestätigt von Partnern](https://www.windowsazure.com/de-de/manage/linux/other-resources/endorsed-distributions/) starten.
 
 Die unten aufgeführte Liste ersetzt den Schritt 1 des Prozesses zur Erstellung einer eigenen virtuellen Festplatte:
 
@@ -578,7 +578,7 @@ Die unten aufgeführte Liste ersetzt den Schritt 1 des Prozesses zur Erstellung 
 
 6.  Sie sollten sicherstellen, dass alle SCSI-Geräte, die im Kernel gemountet sind, eine I/O-Zeitlimitüberschreitung von mindestens 300 Sekunden beinhalten.
 
-7.  Sie müssen den Azure Linux Agent gemäß den im [Linux Agent Guide](https://www.windowsazure.com/en-us/manage/linux/how-to-guides/linux-agent-guide/) aufgeführten Schritten installieren. Der Agent wurde mit der Apache 2-Lizenz freigegeben. Sie können die aktuellsten Bits unter [Agent GitHub Location](http://go.microsoft.com/fwlink/p/?LinkID=250998&clcid=0x409) abrufen.
+7.  Sie müssen den Azure Linux Agent gemäß den im [Linux Agent Guide](https://www.windowsazure.com/de-de/manage/linux/how-to-guides/linux-agent-guide/) aufgeführten Schritten installieren. Der Agent wurde mit der Apache 2-Lizenz freigegeben. Sie können die aktuellsten Bits unter [Agent GitHub Location](http://go.microsoft.com/fwlink/p/?LinkID=250998&clcid=0x409) abrufen.
 
 8.  Kommentieren Sie in /etc/sudoers die folgende Zeile aus, sofern diese vorhanden ist:
 

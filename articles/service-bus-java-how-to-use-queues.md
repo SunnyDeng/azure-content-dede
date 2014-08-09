@@ -3,7 +3,7 @@
 Verwenden von Service Bus-Warteschlangen
 ========================================
 
-In diesem Leitfaden erfahren Sie, wie Sie die Service Bus-Warteschlangen verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java](http://msdn.microsoft.com/en-us/library/windowsazure/hh690953(v=vs.103).aspx). Die Szenarien behandeln die Themen **Erstellen von Warteschlangen**, **Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**.
+In diesem Leitfaden erfahren Sie, wie Sie die Service Bus-Warteschlangen verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java](http://msdn.microsoft.com/de-de/library/windowsazure/hh690953(v=vs.103).aspx). Die Szenarien behandeln die Themen **Erstellen von Warteschlangen**, **Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**.
 
 Inhaltsverzeichnis
 ------------------
@@ -176,5 +176,5 @@ Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **d
 Nächste Schritte
 ----------------
 
-Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/en-us/library/windowsazure/hh367516.aspx).
+Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx).
 

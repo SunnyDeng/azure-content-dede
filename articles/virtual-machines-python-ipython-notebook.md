@@ -22,11 +22,11 @@ Zunächst müssen Sie einen virtuellen Computer (VM) in Azure erstellen. Diese V
 
 ### Linux-VM
 
-Führen Sie [diese Anweisungen](/en-us/manage/linux/tutorials/virtual-machine-from-gallery/) aus, um einen virtuellen Computer mit einer *OpenSUSE*- oder *Ubuntu*-Distribution zu erstellen. Dieses Lernprogramm verwendet OpenSUSE 12.3 und Ubuntu Server 13.04. Wir gehen vom Standard-Benutzernamen *azureuser* aus.
+Führen Sie [diese Anweisungen](/de-de/manage/linux/tutorials/virtual-machine-from-gallery/) aus, um einen virtuellen Computer mit einer *OpenSUSE*- oder *Ubuntu*-Distribution zu erstellen. Dieses Lernprogramm verwendet OpenSUSE 12.3 und Ubuntu Server 13.04. Wir gehen vom Standard-Benutzernamen *azureuser* aus.
 
 ### Windows-VM
 
-Führen Sie [diese Anweisungen](/en-us/manage/windows/tutorials/virtual-machine-from-gallery/) aus, um einen virtuellen Computer mit einer *Windows Server 2012 Datacenter*-Distribution zu erstellen. In diesem Lernprogramm gehen wir vom Standard-Benutzernamen *azureuser* aus.
+Führen Sie [diese Anweisungen](/de-de/manage/windows/tutorials/virtual-machine-from-gallery/) aus, um einen virtuellen Computer mit einer *Windows Server 2012 Datacenter*-Distribution zu erstellen. In diesem Lernprogramm gehen wir vom Standard-Benutzernamen *azureuser* aus.
 
 Erstellen eines Endpunkts für das IPython-Notizbuch
 ---------------------------------------------------

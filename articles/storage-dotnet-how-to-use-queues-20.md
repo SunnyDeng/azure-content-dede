@@ -80,7 +80,7 @@ Wenn Sie eine Anwendung schreiben, bei der es sich nicht um einen Azure-Clouddie
 		</appSettings\>
     </configuration>
 
-Weitere Informationen zu Speicherverbindungszeichenfolgen finden Sie unter [Konfigurieren von Windows Azure-Verbindungszeichenfolgen](http://msdn.microsoft.com/en-us/library/windowsazure/ee758697.aspx).
+Weitere Informationen zu Speicherverbindungszeichenfolgen finden Sie unter [Konfigurieren von Windows Azure-Verbindungszeichenfolgen](http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx).
 
 Sie sind nun bereit für die Gewusst-wie-Aufgaben in diesem Leitfaden.
 
@@ -91,7 +91,7 @@ Programmgesteuerter ZugriffGewusst wie: Programmgesteuertes Zugreifen auf Wartes
 
 Mithilfe von NuGet können Sie die `Microsoft.WindowsAzure.Storage.dll`-Assembly abrufen. Klicken Sie im ****Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Install**, um das Azure Storage-Paket und die zugehörigen Abhängigkeiten zu installieren.
 
-`Microsoft.WindowsAzure.Storage.dll` ist auch im Azure SDK für .NET enthalten, das aus dem [.NET Developer Center](http://www.windowsazure.com/en-us/develop/net/#) heruntergeladen werden kann. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
+`Microsoft.WindowsAzure.Storage.dll` ist auch im Azure SDK für .NET enthalten, das aus dem [.NET Developer Center](http://www.windowsazure.com/de-de/develop/net/#) heruntergeladen werden kann. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
 
 ### Namespace-Deklarationen
 
@@ -123,7 +123,7 @@ ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch 
 Erstellen einer WarteschlangeGewusst wie: Erstellen einer Warteschlange
 -----------------------------------------------------------------------
 
-Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Mit dem folgenden Code wird ein **CloudQueueClient**-Objekt erstellt. Der gesamte Code in diesem Leitfaden verwendet eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge. Es gibt auch andere Möglichkeiten zum Erstellen eines **CloudStorageAccount**-Objekts. Ausführliche Informationen dazu finden Sie in der [CloudStorageAccount](http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx)-Dokumentation.
+Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Mit dem folgenden Code wird ein **CloudQueueClient**-Objekt erstellt. Der gesamte Code in diesem Leitfaden verwendet eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge. Es gibt auch andere Möglichkeiten zum Erstellen eines **CloudStorageAccount**-Objekts. Ausführliche Informationen dazu finden Sie in der [CloudStorageAccount](http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx)-Dokumentation.
 
     // Speicherkonto aus Verbindungszeichenfolge abrufen.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -296,13 +296,13 @@ Nächste Schritte
 Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 -   Vollständige Informationen zu verfügbaren APIs finden Sie in der Warteschlangendienst-Referenzdokumentation:
-    -   [Referenz zur Speicherclientbibliothek für .NET](http://msdn.microsoft.com/en-us/library/windowsazure/dn495001(v=azure.10).aspx)
-    -   [REST-API-Referenz](http://msdn.microsoft.com/en-us/library/windowsazure/dd179355)
--   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx).
+    -   [Referenz zur Speicherclientbibliothek für .NET](http://msdn.microsoft.com/de-de/library/windowsazure/dn495001(v=azure.10).aspx)
+    -   [REST-API-Referenz](http://msdn.microsoft.com/de-de/library/windowsazure/dd179355)
+-   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx).
 -   Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
-    -   Verwenden Sie [Tabellenspeicher](/en-us/develop/net/how-to-guides/table-services/) zum Speichern strukturierter Daten.
-    -   Verwenden Sie [Blobspeicher](/en-us/develop/net/how-to-guides/blob-storage/) zum Speichern unstrukturierter Daten.
-    -   Verwenden Sie eine [SQL-Datenbank](/en-us/develop/net/how-to-guides/sql-database/) zum Speichern relationaler Daten.
+    -   Verwenden Sie [Tabellenspeicher](/de-de/develop/net/how-to-guides/table-services/) zum Speichern strukturierter Daten.
+    -   Verwenden Sie [Blobspeicher](/de-de/develop/net/how-to-guides/blob-storage/) zum Speichern unstrukturierter Daten.
+    -   Verwenden Sie eine [SQL-Datenbank](/de-de/develop/net/how-to-guides/sql-database/) zum Speichern relationaler Daten.
 
 
 [Next Steps]: #next-steps
@@ -319,13 +319,13 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [How To: Leverage Additional Options for Dequeuing Messages]: #advanced-get
   [How To: Get the Queue Length]: #get-queue-length
   [How To: Delete a Queue]: #delete-queue
-  [Download and install the Azure SDK for .NET]: /en-us/develop/net/
-  [.NET client library reference]: http://msdn.microsoft.com/en-us/library/windowsazure/dn495001(v=azure.10).aspx
-  [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx 
-  [CloudStorageAccount]: http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Download and install the Azure SDK for .NET]: /de-de/develop/net/
+  [.NET client library reference]: http://msdn.microsoft.com/de-de/library/windowsazure/dn495001(v=azure.10).aspx
+  [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/de-de/library/windowsazure/ee405487.aspx 
+  [CloudStorageAccount]: http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Configuring Connection Strings]: http://msdn.microsoft.com/en-us/library/windowsazure/ee758697.aspx
+  [Configuring Connection Strings]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2

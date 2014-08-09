@@ -39,7 +39,7 @@ Wenn Sie die Quellcodeverwaltung bisher noch nicht eingerichtet haben, ist es am
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
 -   [Kontinuierliche Bereitstellung](http://www.visualstudio.com/en-us/learn/continuous-delivery-in-vs). In diesem Lernprogramm wird Schritt für Schritt gezeigt, wie die kontinuierliche Bereitstellung von VSO an eine Azure-Website mithilfe von TFVC eingerichtet wird. Bei TFVC handelt es sich um die zentralisierte Quellcodeverwaltungsoption in VSO. Git ist hingegen die dezentralisierte Quellcodeverwaltungsoption.
--   [Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online](/en-us/documentation/articles/cloud-services-continuous-delivery-use-vso/). In diesem Lernprogramm wird gezeigt, wie Sie sich bei VSO anmelden, wie Sie ein Projekt in der Quellecodeverwaltung einchecken und wie Sie diese für die kontinuierliche Bereitstellung (automatische Bereitstellung) in Azure einrichten. Der Inhalt bezieht sich in erster Linie auf Clouddienste. Zahlreiche Schritte zum Einrichten einer Bereitstellung in Visual Studio Online gelten allerdings auch für Websites.
+-   [Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online](/de-de/documentation/articles/cloud-services-continuous-delivery-use-vso/). In diesem Lernprogramm wird gezeigt, wie Sie sich bei VSO anmelden, wie Sie ein Projekt in der Quellecodeverwaltung einchecken und wie Sie diese für die kontinuierliche Bereitstellung (automatische Bereitstellung) in Azure einrichten. Der Inhalt bezieht sich in erster Linie auf Clouddienste. Zahlreiche Schritte zum Einrichten einer Bereitstellung in Visual Studio Online gelten allerdings auch für Websites.
 
 ### Repository-Websites unter Verwendung von Git
 
@@ -47,7 +47,7 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
--   [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](/en-us/documentation/articles/web-sites-publish-source-control/). In dieser Ressource wird gezeigt, wie Sie Git verwenden, um direkt von Ihrem lokalen Computer aus auf einer Azure-Website zu veröffentlichen (in Azure wird diese Methode der Veröffentlichung "Lokales Git" genannt). Außerdem erfahren Sie, wie Sie die kontinuierliche Bereitstellung von Git-Repositorys über GitHub, CodePlex oder BitBucket aktivieren.
+-   [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](/de-de/documentation/articles/web-sites-publish-source-control/). In dieser Ressource wird gezeigt, wie Sie Git verwenden, um direkt von Ihrem lokalen Computer aus auf einer Azure-Website zu veröffentlichen (in Azure wird diese Methode der Veröffentlichung "Lokales Git" genannt). Außerdem erfahren Sie, wie Sie die kontinuierliche Bereitstellung von Git-Repositorys über GitHub, CodePlex oder BitBucket aktivieren.
 -   [Azure-Forum für Git, Mercurial und DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=azuregit)
 
 ### Repository-Websites unter Verwendung von Mercurial
@@ -56,7 +56,7 @@ Wenn Sie [Mercurial](http://mercurial.selenic.com/) als Quellcodeverwaltungssyst
 
 Weitere Informationen zur Bereitstellung mithilfe von Mercurial finden Sie in den folgenden Ressourcen:
 
--   [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](/en-us/documentation/articles/web-sites-publish-source-control/). Obwohl in diesem Lernprogramm die Veröffentlichung eines Git-Repositorys gezeigt wird, ist der Vorgang bei Mercurial-Repositorys, die in CodePlex oder BitBucket gehostet werden, ähnlich.
+-   [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](/de-de/documentation/articles/web-sites-publish-source-control/). Obwohl in diesem Lernprogramm die Veröffentlichung eines Git-Repositorys gezeigt wird, ist der Vorgang bei Mercurial-Repositorys, die in CodePlex oder BitBucket gehostet werden, ähnlich.
 -   [Azure-Forum für Git, Mercurial und DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=azuregit)
 
 ### DropBox
@@ -78,9 +78,9 @@ WebMatrix kann schnell installiert werden und ist leicht erlernbar. Visual Studi
 
 Weitere Informationen zum Bereitstellen auf Azure-Websites aus Visual Studio finden Sie in den folgenden Ressourcen:
 
--   [Erste Schritte mit Azure und ASP.NET](/en-us/develop/net/tutorials/get-started/). In dieser Ressource wird das Erstellen und Bereitstellen eines einfachen ASP.NET MVC-Webprojekts mithilfe von Visual Studio und Web Deploy erläutert.
--   [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](/en-us/develop/net/tutorials/web-site-with-sql-database/). In dieser Ressource wird das Erstellen und Bereitstellen eines ASP.NET MVC-Webprojekts mit einer SQL-Datenbank unter Verwendung von Visual Studio, Web Deploy und Entity Framework Code First-Migrationen erläutert.
--   [Übersicht über die Webbereitstellung für Visual Studio und ASP.NET](http://msdn.microsoft.com/en-us/library/dd394698.aspx). Einstieg in die Webbereitstellung mithilfe von Visual Studio. Obwohl der Inhalt nicht mehr auf dem neuesten Stand ist, sind Informationen enthalten, die noch immer relevant sind. Dazu gehört eine Übersicht über die Optionen für die Bereitstellung einer Datenbank zusammen mit der Webanwendung und eine Liste mit zusätzlichen Bereitstellungsaufgaben, die Sie möglicherweise noch erledigen müssen oder die Sie manuell konfigurieren, sodass diese Aufgaben von Visual Studio ausgeführt werden. Dieses Thema handelt nicht nur von der Bereitstellung für Azure-Websites, sondern von der Bereitstellung im Allgemeinen.
+-   [Erste Schritte mit Azure und ASP.NET](/de-de/develop/net/tutorials/get-started/). In dieser Ressource wird das Erstellen und Bereitstellen eines einfachen ASP.NET MVC-Webprojekts mithilfe von Visual Studio und Web Deploy erläutert.
+-   [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](/de-de/develop/net/tutorials/web-site-with-sql-database/). In dieser Ressource wird das Erstellen und Bereitstellen eines ASP.NET MVC-Webprojekts mit einer SQL-Datenbank unter Verwendung von Visual Studio, Web Deploy und Entity Framework Code First-Migrationen erläutert.
+-   [Übersicht über die Webbereitstellung für Visual Studio und ASP.NET](http://msdn.microsoft.com/de-de/library/dd394698.aspx). Einstieg in die Webbereitstellung mithilfe von Visual Studio. Obwohl der Inhalt nicht mehr auf dem neuesten Stand ist, sind Informationen enthalten, die noch immer relevant sind. Dazu gehört eine Übersicht über die Optionen für die Bereitstellung einer Datenbank zusammen mit der Webanwendung und eine Liste mit zusätzlichen Bereitstellungsaufgaben, die Sie möglicherweise noch erledigen müssen oder die Sie manuell konfigurieren, sodass diese Aufgaben von Visual Studio ausgeführt werden. Dieses Thema handelt nicht nur von der Bereitstellung für Azure-Websites, sondern von der Bereitstellung im Allgemeinen.
 -   [ASP.NET-Webbereitstellung mithilfe von Visual Studio](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/introduction) Dabei handelt es sich um eine Lernprogrammserie mit zwölf Teilen, in der die Bereitstellungsaufgaben vollständig vorgestellt werden.
 -   [Deploying an ASP.NET Website to Azure in Visual Studio 2012 from a Git Repository directly (Direktes Bereitstellen einer ASP.NET-Website auf Azure in Visual Studio 2012 über ein Git-Repository, in englischer Sprache)](http://www.dotnetcurry.com/ShowArticle.aspx?ID=881). In diesem Artikel wird erläutert, wie ein ASP.NET-Webprojekt in Visual Studio bereitgestellt wird und wie das Git-Plug-In verwendet wird, um den Code für Git zu übernehmen und Azure mit dem Git-Repository zu verknüpfen.
 
@@ -88,9 +88,9 @@ Weitere Informationen zum Bereitstellen auf Azure-Websites aus Visual Studio fin
 
 Weitere Informationen zum Bereitstellen auf Azure-Websites aus WebMatrix finden Sie in den folgenden Ressourcen:
 
--   [Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix](http://www.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-using-webmatrix/). In dieser Ressource wird das Erstellen einer einfachen ASP.NET-Website unter Verwendung einer WebMatrix-Vorlage und das Bereitstellen dieser Website auf einer Azure-Website mithilfe von WebMatrix und Web Deploy erläutert.
--   [Erstellen einer Node.js-Website und Bereitstellen für Azure mit WebMatrix](http://www.windowsazure.com/en-us/documentation/articles/web-sites-nodejs-use-webmatrix/)
--   [Erstellen und Bereitstellen einer PHP-MySQL-Azure-Website über WebMatrix](http://www.windowsazure.com/en-us/documentation/articles/web-sites-php-mysql-use-webmatrix/)
+-   [Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix](http://www.windowsazure.com/de-de/documentation/articles/web-sites-dotnet-using-webmatrix/). In dieser Ressource wird das Erstellen einer einfachen ASP.NET-Website unter Verwendung einer WebMatrix-Vorlage und das Bereitstellen dieser Website auf einer Azure-Website mithilfe von WebMatrix und Web Deploy erläutert.
+-   [Erstellen einer Node.js-Website und Bereitstellen für Azure mit WebMatrix](http://www.windowsazure.com/de-de/documentation/articles/web-sites-nodejs-use-webmatrix/)
+-   [Erstellen und Bereitstellen einer PHP-MySQL-Azure-Website über WebMatrix](http://www.windowsazure.com/de-de/documentation/articles/web-sites-php-mysql-use-webmatrix/)
 -   [WebMatrix 3: Integrated Git and Deployment to Azure (WebMatrix 3: Integriertes Git und Bereitstellung für Azure, in englischer Sprache)](http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD). In diesem Artikel wird das Verwenden von WebMatrix zum Bereitstellen über ein Git-Repository für die Quellcodeverwaltung beschrieben.
 
 Bereitstellen über ein FTP-Dienstprogramm
@@ -102,8 +102,8 @@ Obwohl es ziemlich einfach ist, die Dateien Ihrer Website mithilfe von FTP-Diens
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
--   [Erstellen einer PHP-MySQL-Azure-Website und Bereitstellen über FTP](/en-us/documentation/articles/web-sites-php-mysql-deploy-use-ftp/)
--   [Verwalten von Websites](http://www.windowsazure.com/en-us/documentation/articles/web-sites-manage/). Diese Ressource verfügt über zusätzliche Informationen zum Festlegen von FTP-Anmeldeinformationen, die nicht im PHP-Lernprogramm enthalten sind. Über die Kommentare unten auf der Seite erhalten Sie Informationen über das Abrufen der Anmeldeinformationen, die im Dokument selbst nicht vorhanden sind.
+-   [Erstellen einer PHP-MySQL-Azure-Website und Bereitstellen über FTP](/de-de/documentation/articles/web-sites-php-mysql-deploy-use-ftp/)
+-   [Verwalten von Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-manage/). Diese Ressource verfügt über zusätzliche Informationen zum Festlegen von FTP-Anmeldeinformationen, die nicht im PHP-Lernprogramm enthalten sind. Über die Kommentare unten auf der Seite erhalten Sie Informationen über das Abrufen der Anmeldeinformationen, die im Dokument selbst nicht vorhanden sind.
 
 Bereitstellen über ein lokales Quellcodeverwaltungssystem
 ---------------------------------------------------------
@@ -116,7 +116,7 @@ Bei Team Foundation Server handelt es sich um die lokale Lösung von Microsoft f
 
 Weitere Informationen finden Sie in der folgenden Ressource:
 
--   [Kontinuierliche Bereitstellung für Cloud Services in Azure](/en-us/develop/net/common-tasks/continuous-delivery/). Dieses Dokument ist in erster Linie für einen Azure-Clouddienst bestimmt. Einige Inhalte gelten allerdings auch für Websites.
+-   [Kontinuierliche Bereitstellung für Cloud Services in Azure](/de-de/develop/net/common-tasks/continuous-delivery/). Dieses Dokument ist in erster Linie für einen Azure-Clouddienst bestimmt. Einige Inhalte gelten allerdings auch für Websites.
 
 ### Lokale Git- oder Mercurial-Repositorys
 
@@ -124,7 +124,7 @@ Sie können in Azure die URL eines beliebigen Repositorys eingeben, das Git oder
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
--   [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](/en-us/documentation/articles/web-sites-publish-source-control/). In dieser Ressource wird gezeigt, wie Sie Git verwenden, um direkt von Ihrem lokalen Computer aus auf einer Azure-Website zu veröffentlichen (in Azure wird diese Methode der Veröffentlichung "Lokales Git" genannt). Außerdem erfahren Sie, wie Sie die kontinuierliche Bereitstellung von Git-Repositorys über GitHub, CodePlex oder BitBucket aktivieren.
+-   [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](/de-de/documentation/articles/web-sites-publish-source-control/). In dieser Ressource wird gezeigt, wie Sie Git verwenden, um direkt von Ihrem lokalen Computer aus auf einer Azure-Website zu veröffentlichen (in Azure wird diese Methode der Veröffentlichung "Lokales Git" genannt). Außerdem erfahren Sie, wie Sie die kontinuierliche Bereitstellung von Git-Repositorys über GitHub, CodePlex oder BitBucket aktivieren.
 -   [Publishing to Azure Web Sites from any git/hg repo (Veröffentlichen auf Azure-Websites über git/hg-Repositorys, in englischer Sprache)](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html). Blog von David Ebbo, in dem die Funktion "Externes Repository" in Azure-Websites erklärt wird.
 -   [Azure-Forum für Git, Mercurial und DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=azuregit)
 -   [Deploying TWO websites to Azure from one Git Repository (Bereitstellen von TWO-Websites in Azure über ein Git-Repository, in englischer Sprache)](http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx). Blogeintrag von Scott Hanselman.
@@ -155,7 +155,7 @@ Weitere Informationen finden Sie in der folgenden Ressource:
 
 ### Windows PowerShell
 
-Sie können MSBuild- oder FTP-Funktionen mithilfe von [Windows PowerShell](http://msdn.microsoft.com/en-us/library/dd835506.aspx) ausführen. Wenn dies der Fall ist, können Sie auch eine Sammlung von Windows PowerShell-Cmdlets nutzen, mit denen die Azure-REST-Verwaltungs-API leicht aufgerufen werden kann.
+Sie können MSBuild- oder FTP-Funktionen mithilfe von [Windows PowerShell](http://msdn.microsoft.com/de-de/library/dd835506.aspx) ausführen. Wenn dies der Fall ist, können Sie auch eine Sammlung von Windows PowerShell-Cmdlets nutzen, mit denen die Azure-REST-Verwaltungs-API leicht aufgerufen werden kann.
 
 Weitere Informationen finden Sie in der folgenden Ressource:
 
@@ -191,5 +191,5 @@ Weitere Informationen finden Sie in der folgenden Ressource:
 Nächste Schritte
 ----------------
 
-Weitere Informationen finden Sie im Abschnitt "Bereitstellen" in der [Dokumentation für Azure-Websites](/en-us/documentation/services/web-sites/).
+Weitere Informationen finden Sie im Abschnitt "Bereitstellen" in der [Dokumentation für Azure-Websites](/de-de/documentation/services/web-sites/).
 

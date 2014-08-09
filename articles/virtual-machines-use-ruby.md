@@ -23,7 +23,7 @@ Inhaltsverzeichnis
 Was ist Dienstverwaltung?
 -------------------------
 
-Azure bietet [REST-APIs für Dienstverwaltungsvorgänge](http://msdn.microsoft.com/en-us/library/windowsazure/ee460799.aspx), darunter die Verwaltung von virtuellen Azure-Computern. Das Azure SDK for Ruby zeigt Verwaltungsvorgänge für virtuelle Computer mittels der Klasse **Azure::VirtualMachineService** an. Der Großteil der Verwaltungsfunktionen eines virtuellen Computers, die im [Azure-Verwaltungsportal](https://manage.windowsazure.com) zur Verfügung stehen, kann über diese Klasse aufgerufen werden.
+Azure bietet [REST-APIs für Dienstverwaltungsvorgänge](http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx), darunter die Verwaltung von virtuellen Azure-Computern. Das Azure SDK for Ruby zeigt Verwaltungsvorgänge für virtuelle Computer mittels der Klasse **Azure::VirtualMachineService** an. Der Großteil der Verwaltungsfunktionen eines virtuellen Computers, die im [Azure-Verwaltungsportal](https://manage.windowsazure.com) zur Verfügung stehen, kann über diese Klasse aufgerufen werden.
 
 Auch wenn die Dienstverwaltungs-API dazu verwendet werden kann, eine Vielzahl an auf Azure gehosteten Diensten zu verwalten, enthält dieses Dokument nur Informationen über die Verwaltung von virtuellen Azure-Computern.
 
@@ -41,7 +41,7 @@ Erstellen eines Azure-Verwaltungszertifikats
 
 Wenn Sie Dienstverwaltungsvorgänge ausführen, z. B. solche, die durch die Klasse **Azure::VirtualMachineService** angezeigt werden, müssen Sie Ihre Azure-Abonnement-ID und eine Datei mit einem Verwaltungszertifikat für Ihr Abonnement angeben. Beides wird vom SDK für die Authentifizierung an der Azure-REST-API verwendet.
 
-Verwenden Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli), um die Abonnement-ID und ein Verwaltungszertifikat abzurufen. Weitere Informationen zum Installieren und Konfigurieren der xplat-cli finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://www.windowsazure.com/en-us/manage/install-and-configure-cli/).
+Verwenden Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli), um die Abonnement-ID und ein Verwaltungszertifikat abzurufen. Weitere Informationen zum Installieren und Konfigurieren der xplat-cli finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://www.windowsazure.com/de-de/manage/install-and-configure-cli/).
 
 Nachdem die xplat-cli konfiguriert wurde, können Sie die folgenden Schritte ausführen, um Ihre Azure-Abonnement-ID abzurufen und ein Verwaltungszertifikat zu exportieren:
 
@@ -180,7 +180,7 @@ Im Folgenden finden Sie die für die **create\_virtual\_machine**-Methode verfü
 
 -   **:ssh\_port** - Der öffentliche Port, der für die SSH-Kommunikation verwendet wird. Wenn dieser Parameter nicht angegeben wird, wird standardmäßig der SSH-Port 22 verwendet.
 
--   **:vm\_size** - Die Größe des virtuellen Computers. Dadurch werden die Speichergröße, die Anzahl der Cores, die Bandbreite und andere physische Merkmale des virtuellen Computers bestimmt. Informationen zu verfügbaren Größen und physischen Merkmalen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/dn197896.aspx).
+-   **:vm\_size** - Die Größe des virtuellen Computers. Dadurch werden die Speichergröße, die Anzahl der Cores, die Bandbreite und andere physische Merkmale des virtuellen Computers bestimmt. Informationen zu verfügbaren Größen und physischen Merkmalen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/dn197896.aspx).
 
 -   **:winrm\_transport** - Ein Array der verfügbaren Übertragungsmöglichkeiten für WinRM. Gültige Übertragungsprotokolle sind "http" und "https". Wenn "https" als Übertragungsprotokoll angegeben wurde, müssen Sie auch **:ssh\_private\_key\_file** und **:ssh\_certificate\_file** verwenden, um das zum Sichern der HTTPS-Kommunikation verwendete Zertifikat anzugeben.
 
@@ -359,7 +359,7 @@ Nächste Schritte
 
 Da Sie jetzt die Grundlagen der programmgesteuerten Erstellung von virtuellen Azure-Computern erlernt haben, folgen Sie diesen Links, um mehr über die Arbeit mit virtuellen Computern zu erfahren.
 
--   Besuchen Sie die Seite zu [virtuellen Computern](http://www.windowsazure.com/en-us/documentation/services/virtual-machines/).
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Virtuelle Computer](http://msdn.microsoft.com/en-us/library/windowsazure/jj156003.aspx)
--   Lernen Sie, wie Sie eine [Ruby on Rails-Anwendung auf einem virtuellen Computer](http://www.windowsazure.com/en-us/develop/ruby/tutorials/web-app-with-linux-vm/) hosten können.
+-   Besuchen Sie die Seite zu [virtuellen Computern](http://www.windowsazure.com/de-de/documentation/services/virtual-machines/).
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Virtuelle Computer](http://msdn.microsoft.com/de-de/library/windowsazure/jj156003.aspx)
+-   Lernen Sie, wie Sie eine [Ruby on Rails-Anwendung auf einem virtuellen Computer](http://www.windowsazure.com/de-de/develop/ruby/tutorials/web-app-with-linux-vm/) hosten können.
 

@@ -187,7 +187,7 @@ Sie können außerdem Berechtigungen zum Dienstprinzipal der von Ihnen in Schrit
 
 1.  Laden Sie die Beispielanwendung herunter, und extrahieren Sie sie im gewünschten Ordner.
 2.  Bevor Sie den Beispielcode verwenden können, müssen Sie dem Dienstprinzipal zusätzliche Berechtigungen erteilen. Dank dieser Berechtigungen ist es dem Dienstprinzipal möglich, Daten mithilfe der Graph-API zu lesen. Führen Sie im Menü **Start** die Konsole **Microsoft Online Services-Modul für Windows PowerShell** aus.
-3.  Sie erteilen dem Dienstprinzipal Leseberechtigungen, indem Sie ihn zur Service Support Administrator-Rolle hinzufügen. Weitere Informationen über das Zuweisen von Rollen zum Dienstprinzipal finden Sie unter [Rollenbasierte Zugriffssteuerung für Graph-API](http://msdn.microsoft.com/en-us/library/hh974466.aspx). Geben Sie den folgenden Befehl ein, und drücken Sie die Eingabetaste:
+3.  Sie erteilen dem Dienstprinzipal Leseberechtigungen, indem Sie ihn zur Service Support Administrator-Rolle hinzufügen. Weitere Informationen über das Zuweisen von Rollen zum Dienstprinzipal finden Sie unter [Rollenbasierte Zugriffssteuerung für Graph-API](http://msdn.microsoft.com/de-de/library/hh974466.aspx). Geben Sie den folgenden Befehl ein, und drücken Sie die Eingabetaste:
 
          Add-MsolRoleMember -RoleMemberType "ServicePrincipal" -RoleName "Service Support Administrator" -RoleMemberObjectId $appPrincipal.ObjectId 
 
@@ -222,5 +222,5 @@ Zusammenfassung
 
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine Anwendung für einen einzelnen Mandanten erstellen und konfigurieren können, die die Möglichkeiten einer einmaligen Anwendung mit Azure Active Directory nutzt. Außerdem haben Sie mithilfe der Graph-API auf die Verzeichnisdaten des Mandanten zugegriffen. Es wird empfohlen, dass Sie sich mit der Beispielanwendung vertraut machen, um zu erfassen, wie Sie aus der Graph-API in Ihrer eigenen Anwendung Nutzen ziehen können.
 
-Weitere Informationen zur Graph-API erhalten Sie, wenn [Sie die betreffenden Themen unter MSDN lesen](http://msdn.microsoft.com/en-us/library/hh974476.aspx). Sie können auch Anwendungen für mehrere Mandanten in Azure Active Directory erstellen. Lesen Sie dafür das Lernprogramm [Entwickeln von Cloud-Anwendungen für mehrere Mandanten mit Azure Active Directory](http://g.microsoftonline.com/0AX00en/121).
+Weitere Informationen zur Graph-API erhalten Sie, wenn [Sie die betreffenden Themen unter MSDN lesen](http://msdn.microsoft.com/de-de/library/hh974476.aspx). Sie können auch Anwendungen für mehrere Mandanten in Azure Active Directory erstellen. Lesen Sie dafür das Lernprogramm [Entwickeln von Cloud-Anwendungen für mehrere Mandanten mit Azure Active Directory](http://g.microsoftonline.com/0AX00en/121).
 

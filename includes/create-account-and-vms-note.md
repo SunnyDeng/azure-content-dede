@@ -5,5 +5,5 @@
 
 
 
-[1]: http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits-details/
-[2]: http://www.windowsazure.com/en-us/pricing/free-trial/
+[1]: http://www.windowsazure.com/de-de/pricing/member-offers/msdn-benefits-details/
+[2]: http://www.windowsazure.com/de-de/pricing/free-trial/

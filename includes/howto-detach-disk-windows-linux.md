@@ -56,7 +56,7 @@ Wenn Sie den Namen des Datenträgers gefunden haben, den Sie trennen möchten, g
     
     Der Datenträger verbleibt im Speicher, ist jedoch nicht mehr an einen virtuellen Computer angefügt.
 
-Sie können den Datenträger nun an denselben oder an einen neuen virtuellen Computer anfügen. Anweisungen dazu finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Computer](/en-us/manage/windows/how-to-guides/attach-a-disk/).
+Sie können den Datenträger nun an denselben oder an einen neuen virtuellen Computer anfügen. Anweisungen dazu finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Computer](/de-de/manage/windows/how-to-guides/attach-a-disk/).
 
 
 

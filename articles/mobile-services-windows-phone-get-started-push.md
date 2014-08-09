@@ -3,13 +3,13 @@
 Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 ============================================================
 
-[Windows Store C\#](/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-push "Windows Store C#")[Windows Store JavaScript](/en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-push "Windows Store JavaScript")[Windows Phone](/en-us/documentation/articles/mobile-services-windows-phone-get-started-push "Windows Phone")[iOS](/en-us/documentation/articles/mobile-services-ios-get-started-push "iOS")[Android](/en-us/documentation/articles/mobile-services-android-get-started-push "Android")[Xamarin.iOS](/en-us/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push "Xamarin.iOS")[Xamarin.Android](/en-us/documentation/articles/partner-xamarin-mobile-services-android-get-started-push "Xamarin.Android")
+[Windows Store C\#](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-push "Windows Store C#")[Windows Store JavaScript](/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push "Windows Store JavaScript")[Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-get-started-push "Windows Phone")[iOS](/de-de/documentation/articles/mobile-services-ios-get-started-push "iOS")[Android](/de-de/documentation/articles/mobile-services-android-get-started-push "Android")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started-push "Xamarin.Android")
 
-[.NET-Back-End](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push/ ".NET-Back-End") | [JavaScript-Back-End](/en-us/documentation/articles/mobile-services-windows-phone-get-started-push/ "JavaScript-Back-End")
+[.NET-Back-End](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push/ ".NET-Back-End") | [JavaScript-Back-End](/de-de/documentation/articles/mobile-services-windows-phone-get-started-push/ "JavaScript-Back-End")
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Services Pushbenachrichtigungen an eine Windows Phone 8-App senden können. In diesem Lernprogramm fügen Sie dem Schnellstart-Projekt mit dem Microsoft-Pushbenachrichtigungsdienst (MPNS) Pushbenachrichtigungen hinzu. Nach Abschluss des Lernprogramms sendet Ihr mobiler Dienst bei jedem Einfügen eines Datensatzes eine Pushbenachrichtigung.
 
-> [WACOM.NOTE]Mobile Services sind jetzt in Azure Notification Hubs zur Unterstützung weiterer Pushbenachrichtigungsfunktionen, wie Vorlagen, mehrere Plattformen und Skalierung, integriert. Diese integrierten Funktionen befinden sich gegenwärtig in einem Vorschaustadium. Weitere Informationen finden Sie in dieser Version von [Erste Schritte mit Pushbenachrichtigungen](/en-us/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push/).
+> [WACOM.NOTE]Mobile Services sind jetzt in Azure Notification Hubs zur Unterstützung weiterer Pushbenachrichtigungsfunktionen, wie Vorlagen, mehrere Plattformen und Skalierung, integriert. Diese integrierten Funktionen befinden sich gegenwärtig in einem Vorschaustadium. Weitere Informationen finden Sie in dieser Version von [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push/).
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
@@ -20,9 +20,9 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 
 Für dieses Lernprogramm benötigen Sie [Visual Studio 2012 Express für Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374) oder eine später Version.
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started-wp8) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-wp8) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
-> [WACOM.NOTE]Wenn Sie täglich mehr als 500 Nachrichten pro Benutzer senden, müssen Sie stattdessen Notification Hubs verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit Notification Hubs](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet/).
+> [WACOM.NOTE]Wenn Sie täglich mehr als 500 Nachrichten pro Benutzer senden, müssen Sie stattdessen Notification Hubs verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit Notification Hubs](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet/).
 
 Erstellen einer neuen Tabelle
 -----------------------------
@@ -158,27 +158,27 @@ Nächste Schritte
 
 In diesem Lernprogramm wurden die Grundlagen der von Mobile Services bereitgestellten Pushbenachrichtigungsfunktion gezeigt. Wenn Sie Ihrer App fortgeschrittenere Funktionen, wie z. B. Senden von plattformübergreifenden Benachrichtigungen, abonnementbasiertes Routing oder sehr große Mengen von Benachrichtigungen, hinzufügen möchten, sollten Sie Azure Notification Hubs mit Ihrem mobilen Dienst verwenden. Weitere Informationen finden Sie in einem der folgenden Themen zu Notification Hubs:
 
--   [Erste Schritte mit Notification Hubs](/en-us/manage/services/notification-hubs/get-started-notification-hubs-wp8/)
+-   [Erste Schritte mit Notification Hubs](/de-de/manage/services/notification-hubs/get-started-notification-hubs-wp8/)
     Informationen zur Nutzung von Notification Hubs in Ihrer Windows Store-App.
 
--   [Was sind Notification Hubs?](/en-us/develop/net/how-to-guides/service-bus-notification-hubs/)
+-   [Was sind Notification Hubs?](/de-de/develop/net/how-to-guides/service-bus-notification-hubs/)
     Informationen zum Erstellen und Senden von Benachrichtigungen an Benutzer auf mehreren Plattformen.
 
--   [Senden von Benachrichtigungen an Abonnenten](/en-us/manage/services/notification-hubs/breaking-news-wp8/)
+-   [Senden von Benachrichtigungen an Abonnenten](/de-de/manage/services/notification-hubs/breaking-news-wp8/)
     Informationen zum Registrieren und Empfangen von Pushbenachrichtigungen zu bestimmten Kategorien durch Benutzer.
 
 Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-wp8)
+-   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-wp8)
     Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-wp8)
+-   [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-wp8)
     Informationen zur Authentifizierung von Benutzern Ihrer App mit Windows-Konten.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/?LinkId=262293)
     Informationen zum Registrieren und Verwenden von Serverskripten.
 
--   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/en-us/develop/mobile/how-to-guides/work-with-net-client-library/)
+-   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/de-de/develop/mobile/how-to-guides/work-with-net-client-library/)
     Informationen zur Verwendung von Mobile Services mit .NET.
 
 

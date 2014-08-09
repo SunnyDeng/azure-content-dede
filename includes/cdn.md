@@ -35,7 +35,7 @@ Gehen Sie folgendermaßen vor, um für ein Azure-Abonnement ein neues Speicherko
 Um ein Speicherkonto zu erstellen, müssen Sie entweder der Dienstadministrator oder ein Co-Administrator für das zugehörige Abonnement sein.
 <div class="dev-callout">
 <strong>Hinweis</strong>
-<p>Informationen zum Ausführen dieses Vorgangs mit der Dienstverwaltungs-API von Azure finden Sie unter dem Referenzthema <a href="http://msdn.microsoft.com/en-us/library/windowsazure/hh264518.aspx">Create Storage Account</a> (Erstellen eines Speicherkontos; in englischer Sprache).</p>
+<p>Informationen zum Ausführen dieses Vorgangs mit der Dienstverwaltungs-API von Azure finden Sie unter dem Referenzthema <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh264518.aspx">Create Storage Account</a> (Erstellen eines Speicherkontos; in englischer Sprache).</p>
 </div>
 
  **So erstellen Sie ein Speicherkonto für ein Azure-Abonnement**
@@ -164,12 +164,12 @@ Für das Azure CDN steht zurzeit kein explizites "Bereinigungstool" zur Verfügu
 
 
 
-[1]: http://msdn.microsoft.com/en-us/library/windowsazure/gg680302.aspx
+[1]: http://msdn.microsoft.com/de-de/library/windowsazure/gg680302.aspx
 [2]: https://manage.windowsazure.com/
-[3]: http://msdn.microsoft.com/en-us/library/windowsazure/ee924681.aspx
-[4]: http://msdn.microsoft.com/en-us/library/windowsazure/hh531560.aspx
-[5]: http://msdn.microsoft.com/en-us/library/gg680306.aspx
-[6]: http://msdn.microsoft.com/en-us/library/dd179354.aspx
-[7]: http://msdn.microsoft.com/en-us/library/windowsazure/hh531567.aspx
-[8]: http://msdn.microsoft.com/en-us/library/windowsazure/ee460807.aspx
-[9]: http://msdn.microsoft.com/en-us/library/windowsazure/gg680307.aspx
+[3]: http://msdn.microsoft.com/de-de/library/windowsazure/ee924681.aspx
+[4]: http://msdn.microsoft.com/de-de/library/windowsazure/hh531560.aspx
+[5]: http://msdn.microsoft.com/de-de/library/gg680306.aspx
+[6]: http://msdn.microsoft.com/de-de/library/dd179354.aspx
+[7]: http://msdn.microsoft.com/de-de/library/windowsazure/hh531567.aspx
+[8]: http://msdn.microsoft.com/de-de/library/windowsazure/ee460807.aspx
+[9]: http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx

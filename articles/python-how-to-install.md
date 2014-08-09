@@ -133,7 +133,7 @@ Bei dem ersten Szenario können Sie vielseitige Web-Apps erstellen, die von den 
 
 Bei dem VM-Szenario starten Sie einen virtuellen Linux-Computer Ihrer Wahl (Ubuntu, CentOS, Suse) und führen eine beliebige Anwendung aus bzw. verwalten diese. Beispielsweise können Sie [IPython](http://ipython.org)-REPL/Notebook auf Ihrem Windows/Mac/Linux-Computer ausführen und Ihren Browser auf einen virtuellen Linux- oder Windows-Computer mit Multi-Proc verweisen, der die IPython-Engine auf Azure ausführt. Weitere Informationen zur Installation von IPython finden Sie im entsprechenden Lernprogramm.
 
-Weitere Informationen zur Einrichtung eines virtuellen Linux-Computers finden Sie im [Abschnitt zur Linux-Verwaltung](/en-us/manage/linux/).
+Weitere Informationen zur Einrichtung eines virtuellen Linux-Computers finden Sie im [Abschnitt zur Linux-Verwaltung](/de-de/manage/linux/).
 
 Weitere Software und Ressourcen:
 --------------------------------
@@ -144,7 +144,7 @@ Weitere Software und Ressourcen:
 -   [NumPy – Numerische Bibliothek für Python](http://www.numpy.org)
 -   [Django-Projekt – Ausgereiftes Web-Framework/CMS](http://www.djangoproject.com)
 -   [IPython – Erweitertes REPL/Notebook für Python](http://ipython.org)
--   [IPython Notebook auf Azure](http://windowsazure.com/en-us/documentation/articles/virtual-machines-python-ipython-notebook)
+-   [IPython Notebook auf Azure](http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-ipython-notebook)
 -   [Python Tools for Visual Studio auf CodePlex](http://pytools.codeplex.com)
 -   [Virtualenv](http://pypi.python.org/pypi/virtualenv)
 
@@ -155,7 +155,7 @@ Weitere Software und Ressourcen:
 [NumPy - A numerics library for Python]: http://www.numpy.org
 [Django Project - A mature web framework/CMS]: http://www.djangoproject.com 
 [IPython - an advanced REPL/Notebook for Python]: http://ipython.org
-[IPython Notebook on Azure]: http://windowsazure.com/en-us/documentation/articles/virtual-machines-python-ipython-notebook
+[IPython Notebook on Azure]: http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-ipython-notebook
 [Python Tools for Visual Studio on CodePlex]: http://pytools.codeplex.com 
 [Python Package Index (PyPI)]: http://pypi.python.org/pypi
 [Virtualenv]: http://pypi.python.org/pypi/virtualenv 

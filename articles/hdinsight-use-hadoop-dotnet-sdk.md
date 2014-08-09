@@ -42,7 +42,7 @@ Diese Befehle installieren die Bibliotheken und fügen Verweise zum aktuellen Vi
 Vorbereitung für das Lernprogramm
 ---------------------------------
 
-Sie benötigen ein [Azure-Abonnement](http://www.windowsazure.com/en-us/pricing/free-trial/) und ein [Azure-Speicherkonto](http://www.windowsazure.com/en-us/manage/services/storage/how-to-create-a-storage-account/), bevor Sie fortfahren. Außerdem müssen Sie den Namen Ihres Azure-Speicherkontos und den Kontoschlüssel kennen. Anweisungen zum Abrufen dieser Informationen finden Sie im Abschnitt *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [How to Manage Storage Accounts](/en-us/manage/services/storage/how-to-manage-a-storage-account/) (Verwalten von Speicherkonten, in englischer Sprache).
+Sie benötigen ein [Azure-Abonnement](http://www.windowsazure.com/de-de/pricing/free-trial/) und ein [Azure-Speicherkonto](http://www.windowsazure.com/de-de/manage/services/storage/how-to-create-a-storage-account/), bevor Sie fortfahren. Außerdem müssen Sie den Namen Ihres Azure-Speicherkontos und den Kontoschlüssel kennen. Anweisungen zum Abrufen dieser Informationen finden Sie im Abschnitt *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [How to Manage Storage Accounts](/de-de/manage/services/storage/how-to-manage-a-storage-account/) (Verwalten von Speicherkonten, in englischer Sprache).
 
 Außerdem müssen Sie die in diesem Lernprogramm verwendete Datei Actors.txt herunterladen. Führen Sie die folgenden Schritte aus, um diese Datei in Ihre Entwicklungsumgebung herunterzuladen:
 
@@ -155,7 +155,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Dateien programmgesteuert in Ihr Hadoo
          Console.WriteLine("\nPress any key to continue.");
          Console.ReadKey();
 
-10. Aktualisieren Sie die Konstanten in Ihrer Anwendung. Der Azure HDInsight-Dienst verwendet Azure Blob-Speicher als Standarddateisystem. Bei der Einrichtung von HDInsight wird ein Blob als Standarddateisystem festgelegt. Sie können entweder diesen Standarddateisystem-Container oder einen Container in einem anderen Blob-Speicher verwenden. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/en-us/manage/services/hdinsight/howto-blob-store/).
+10. Aktualisieren Sie die Konstanten in Ihrer Anwendung. Der Azure HDInsight-Dienst verwendet Azure Blob-Speicher als Standarddateisystem. Bei der Einrichtung von HDInsight wird ein Blob als Standarddateisystem festgelegt. Sie können entweder diesen Standarddateisystem-Container oder einen Container in einem anderen Blob-Speicher verwenden. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/de-de/manage/services/hdinsight/howto-blob-store/).
 
     Falls Sie den Standarddateisystem-Container verwenden, finden Sie Speicherkontoname, Speicherschlüssel und Containername in der *c:\\apps\\dist\\hadoop-1.1.0-SNAPSHOT\\conf\>core-site.xml*-Konfigurationsdatei, indem Sie sich mit dem Cluster verbinden. Suchen Sie nach *fs.default.name*, um den Standarddateisystem-Container zu ermitteln; Suchen Sie nach *fs.azure.account.key*, um Speicherkontoname und Kontoschlüssel zu ermitteln.
 
@@ -181,8 +181,8 @@ Nächste Schritte
 
 Sie sind nun in der Lage, eine .NET-Anwendung mit dem Hadoop .NET SDK zu erstellen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Verwenden von Pig mit HDInsight](/en-us/manage/services/hdinsight/using-pig-with-hdinsight/)
--   [Verwenden von MapReduce mit HDInsight](/en-us/manage/services/hdinsight/using-mapreduce-with-hdinsight/)
--   [Verwenden von Hive mit HDInsight](/en-us/manage/services/hdinsight/using-hive-with-hdinsight/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Verwenden von Pig mit HDInsight](/de-de/manage/services/hdinsight/using-pig-with-hdinsight/)
+-   [Verwenden von MapReduce mit HDInsight](/de-de/manage/services/hdinsight/using-mapreduce-with-hdinsight/)
+-   [Verwenden von Hive mit HDInsight](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/)
 

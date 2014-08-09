@@ -3,7 +3,7 @@
 Verwenden der Dienstverwaltung aus Python
 =========================================
 
-In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Dienstverwaltungsaufgaben aus Python erläutert. Die **ServiceManagementService**-Klasse im [Azure-SDK für Python](https://www.windowsazure.com/en-us/develop/python/common-tasks/install-python/) unterstützt den programmgesteuerten Zugriff auf viele der Dienstverwaltungsfunktionen, die im [Verwaltungsportal](https://manage.windowsazure.com/) zur Verfügung stehen (z. B. **Erstellen, Aktualisieren und Löschen von Clouddiensten, Bereitstellungen, Datenverwaltungsdiensten, virtuellen Computern und Affinitätsgruppen**). Diese Funktionalität kann bei der Erstellung von Anwendungen hilfreich sein, die programmgesteuert auf Dienstverwaltungsfunktionen zugreifen müssen.
+In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Dienstverwaltungsaufgaben aus Python erläutert. Die **ServiceManagementService**-Klasse im [Azure-SDK für Python](https://www.windowsazure.com/de-de/develop/python/common-tasks/install-python/) unterstützt den programmgesteuerten Zugriff auf viele der Dienstverwaltungsfunktionen, die im [Verwaltungsportal](https://manage.windowsazure.com/) zur Verfügung stehen (z. B. **Erstellen, Aktualisieren und Löschen von Clouddiensten, Bereitstellungen, Datenverwaltungsdiensten, virtuellen Computern und Affinitätsgruppen**). Diese Funktionalität kann bei der Erstellung von Anwendungen hilfreich sein, die programmgesteuert auf Dienstverwaltungsfunktionen zugreifen müssen.
 
 Inhaltsverzeichnis
 ------------------
@@ -34,12 +34,12 @@ Was ist Dienstverwaltung?
 
 Die Dienstverwaltungs-API bietet programmgesteuerten Zugriff auf viele der im [Verwaltungsportal](https://manage.windowsazure.com/) verfügbaren Dienstverwaltungsfunktionen. Mithilfe des Azure-SDK für Python können Sie Ihre Clouddienste, Speicherkonten und Affinitätsgruppen verwalten.
 
-Um die Dienstverwaltungs-API verwenden zu können, müssen Sie [ein Azure-Konto erstellen](http://www.windowsazure.com/en-us/pricing/free-trial/).
+Um die Dienstverwaltungs-API verwenden zu können, müssen Sie [ein Azure-Konto erstellen](http://www.windowsazure.com/de-de/pricing/free-trial/).
 
 Konzepte
 --------
 
-Das Azure-SDK für Python umfasst die [Azure-Dienstverwaltungs-API](http://msdn.microsoft.com/en-us/library/windowsazure/ee460799.aspx), eine REST-API. Alle API-Vorgänge werden über SSL ausgeführt und mithilfe von X.509s v3-Zertifikaten gegenseitig authentifiziert. Der Zugriff auf die Dienstverwaltung kann über einen in Azure ausgeführten Dienst erfolgen oder direkt über das Internet, und zwar von jeder Anwendung aus, die HTTPS-Anforderungen senden und HTTPS-Antworten empfangen kann.
+Das Azure-SDK für Python umfasst die [Azure-Dienstverwaltungs-API](http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx), eine REST-API. Alle API-Vorgänge werden über SSL ausgeführt und mithilfe von X.509s v3-Zertifikaten gegenseitig authentifiziert. Der Zugriff auf die Dienstverwaltung kann über einen in Azure ausgeführten Dienst erfolgen oder direkt über das Internet, und zwar von jeder Anwendung aus, die HTTPS-Anforderungen senden und HTTPS-Antworten empfangen kann.
 
 Gewusst wie: Herstellen einer Verbindung zur Dienstverwaltung
 -------------------------------------------------------------
@@ -52,7 +52,7 @@ Mithilfe von `makecert.exe` können Sie auf Ihrem Computer ein selbstsigniertes 
 
     makecert -sky exchange -r -n "CN=AzureCertificate" -pe -a sha1 -len 2048 -ss My "AzureCertificate.cer"
 
-Der Befehl erstellt die `.cer`-Datei und installiert sie im **persönlichen** Zertifikatspeicher. Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg551722.aspx).
+Der Befehl erstellt die `.cer`-Datei und installiert sie im **persönlichen** Zertifikatspeicher. Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg551722.aspx).
 
 Nachdem Sie das Zertifikat erstellt haben, müssen Sie die `.cer`-Datei mit der Aktion "Upload" auf der Registerkarte "Einstellungen" des [Verwaltungsportals](https://manage.windowsazure.com/) nach Azure hochladen.
 
@@ -78,7 +78,7 @@ Zum Erstellen des `.pem`-Zertifikats führen Sie diesen Befehl aus:
 
     `openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer`
 
-Weitere Informationen zu Azure-Zertifikaten finden Sie unter [Verwalten von Zertifikaten in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg981929.aspx). Eine vollständige Beschreibung von OpenSSL-Parametern finden Sie in der Dokumentation auf <http://www.openssl.org/docs/apps/openssl.html>.
+Weitere Informationen zu Azure-Zertifikaten finden Sie unter [Verwalten von Zertifikaten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg981929.aspx). Eine vollständige Beschreibung von OpenSSL-Parametern finden Sie in der Dokumentation auf <http://www.openssl.org/docs/apps/openssl.html>.
 
 Nachdem Sie diese Dateien erstellt haben, müssen Sie die `.cer`-Datei mit der Aktion "Upload" auf der Registerkarte "Einstellungen" des [Verwaltungsportals](https://manage.windowsazure.com/) nach Azure hochladen und sich den Speicherort der `.pem`-Datei notieren.
 
@@ -122,7 +122,7 @@ Wenn Sie einen Clouddienst, einen Speicherdienst oder eine Affinitätsgruppe ers
 Gewusst wie: Erstellen eines Clouddiensts
 -----------------------------------------
 
-Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination aus Code und Konfiguration als Azure-[Clouddienst](http://windowsazure.com/en-us/documentation/articles/cloud-services-what-is) bezeichnet (in früheren Azure-Versionen als *gehosteter Dienst*). Mit der Methode **create\_hosted\_service** können Sie einen neuen gehosteten Dienst erstellen, indem Sie einen Namen des gehosteten Diensts (der in Azure eindeutig sein muss), eine Bezeichnung (automatisch base64-codiert), eine Beschreibung und einen Standort angeben. Anstelle eines Standorts können Sie auch eine Affinitätsgruppe für den Dienst angeben.
+Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination aus Code und Konfiguration als Azure-[Clouddienst](http://windowsazure.com/de-de/documentation/articles/cloud-services-what-is) bezeichnet (in früheren Azure-Versionen als *gehosteter Dienst*). Mit der Methode **create\_hosted\_service** können Sie einen neuen gehosteten Dienst erstellen, indem Sie einen Namen des gehosteten Diensts (der in Azure eindeutig sein muss), eine Bezeichnung (automatisch base64-codiert), eine Beschreibung und einen Standort angeben. Anstelle eines Standorts können Sie auch eine Affinitätsgruppe für den Dienst angeben.
 
     from azure import *
     from azure.servicemanagement import *
@@ -171,12 +171,12 @@ Bevor Sie einen Dienst löschen können, müssen zunächst alle Bereitstellungen
 Gewusst wie: Erstellen einer Bereitstellung
 -------------------------------------------
 
-Die Methode **create\_deployment** lädt ein neues [Dienstpaket](http://msdn.microsoft.com/en-us/library/windowsazure/jj155995.aspx) hoch und erstellt eine neue Bereitstellung in der Staging- oder Produktionsumgebung. Für diese Methode sind folgende Parameter verfügbar:
+Die Methode **create\_deployment** lädt ein neues [Dienstpaket](http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx) hoch und erstellt eine neue Bereitstellung in der Staging- oder Produktionsumgebung. Für diese Methode sind folgende Parameter verfügbar:
 
 -   **name**: Der Name des gehosteten Diensts.
 -   **deployment\_name**: Der Name der Bereitstellung.
 -   **slot**: Eine Zeichenfolge, die den Slot `staging` oder `production` angibt.
--   **package\_url**: Die URL für das Bereitstellungspaket (eine .cspgk-Datei). Die Paketdatei muss in einem Azure-Blob-Speicherkonto unter demselben Abonnement gespeichert werden wie der gehostete Dienst, in den das Paket hochgeladen wird. Zum Erstellen eines Bereitstellungspakets können Sie die [Azure-PowerShell-Cmdlets](https://www.windowsazure.com/en-us/develop/php/how-to-guides/powershell-cmdlets/) oder das [CSPack-Befehlszeilentool](http://msdn.microsoft.com/en-us/library/windowsazure/gg432988.aspx) verwenden.
+-   **package\_url**: Die URL für das Bereitstellungspaket (eine .cspgk-Datei). Die Paketdatei muss in einem Azure-Blob-Speicherkonto unter demselben Abonnement gespeichert werden wie der gehostete Dienst, in den das Paket hochgeladen wird. Zum Erstellen eines Bereitstellungspakets können Sie die [Azure-PowerShell-Cmdlets](https://www.windowsazure.com/de-de/develop/php/how-to-guides/powershell-cmdlets/) oder das [CSPack-Befehlszeilentool](http://msdn.microsoft.com/de-de/library/windowsazure/gg432988.aspx) verwenden.
 -   **configuration**: Die base64-codierte Dienstkonfigurationsdatei (.cscfg-Datei).
 -   **label**: Die Bezeichnung für den Namen des gehosteten Diensts (automatisch base64-codiert).
 
@@ -221,7 +221,7 @@ Gewusst wie: Aktualisieren einer Bereitstellung
 
 Ein Bereitstellung kann mit der Methode **change\_deployment\_configuration** oder der Methode **update\_deployment\_status** aktualisiert werden.
 
-Die Methode **change\_deployment\_configuration** ermöglicht das Hochladen einer neuen Dienstkonfigurationsdatei (`.cscfg`), wodurch mehrere Diensteinstellungen geändert werden können (einschließlich der Anzahl der Instanzen in einer Bereitstellung). Weitere Informationen finden Sie unter [Azure-Dienstkonfigurationsschema (.cscfg-Datei)](http://msdn.microsoft.com/en-us/library/windowsazure/ee758710.aspx). Im folgenden Beispiel wird das Hochladen einer neuen Dienstkonfigurationsdatei veranschaulicht:
+Die Methode **change\_deployment\_configuration** ermöglicht das Hochladen einer neuen Dienstkonfigurationsdatei (`.cscfg`), wodurch mehrere Diensteinstellungen geändert werden können (einschließlich der Anzahl der Instanzen in einer Bereitstellung). Weitere Informationen finden Sie unter [Azure-Dienstkonfigurationsschema (.cscfg-Datei)](http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx). Im folgenden Beispiel wird das Hochladen einer neuen Dienstkonfigurationsdatei veranschaulicht:
 
     from azure import *
     from azure.servicemanagement import *
@@ -255,7 +255,7 @@ Mit der Methode **update\_deployment\_status** können Sie den Status einer Bere
 Gewusst wie: Verschieben von Bereitstellungen zwischen Staging und Produktion
 -----------------------------------------------------------------------------
 
-Azure bietet zwei Bereitstellungsumgebungen: Staging und Produktion. Normalerweise wird ein Dienst in der Stagingumgebung bereitgestellt, um ihn zu testen, bevor er in der Produktionsumgebung bereitgestellt wird. Wenn Sie den Dienst von der Staging- in die Produktionsumgebung hochstufen möchten, ist keine erneute Bereitstellung erforderlich. Sie können hierzu einfach die Bereitstellungen austauschen. (Weitere Informationen zum Austauschen von Bereitstellungen finden Sie unter [Verwalten von Bereitstellungen in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433027.aspx).)
+Azure bietet zwei Bereitstellungsumgebungen: Staging und Produktion. Normalerweise wird ein Dienst in der Stagingumgebung bereitgestellt, um ihn zu testen, bevor er in der Produktionsumgebung bereitgestellt wird. Wenn Sie den Dienst von der Staging- in die Produktionsumgebung hochstufen möchten, ist keine erneute Bereitstellung erforderlich. Sie können hierzu einfach die Bereitstellungen austauschen. (Weitere Informationen zum Austauschen von Bereitstellungen finden Sie unter [Verwalten von Bereitstellungen in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433027.aspx).)
 
 Das folgende Beispiel zeigt, wie Sie mithilfe der Methode **swap\_deployment** zwei Bereitstellungen (namens `v1` und `v2`) austauschen. Im Beispiel befindet Bereitstellung `v1` vor dem Aufruf von **swap\_deployment** im Produktionsslot und Bereitstellung `v2` im Stagingslot. Nach Aufruf von **swap\_deployment** befindet sich `v2` im Produktions- und `v1` im Stagingslot.
 
@@ -281,7 +281,7 @@ Verwenden Sie zum Löschen einer Bereitstellung die Methode **delete\_deployment
 Gewusst wie: Erstellen eines Speicherdiensts
 --------------------------------------------
 
-Ein [Speicherdienst](https://www.windowsazure.com/en-us/manage/services/storage/what-is-a-storage-account/) gewährt Ihnen Zugriff auf Azure-[Blobs](https://www.windowsazure.com/en-us/develop/python/how-to-guides/blob-service/), -[Tabellen](https://www.windowsazure.com/en-us/develop/python/how-to-guides/table-service/) und -[Warteschlangen](https://www.windowsazure.com/en-us/develop/python/how-to-guides/queue-service/). Zum Erstellen eines Speicherdiensts müssen Sie Folgendes angeben: einen Namen für den Dienst (bestehend aus 3 bis 24 Kleinbuchstaben und innerhalb von Azure eindeutig), eine Beschreibung, eine Bezeichnung (maximal 100 Zeichen, automatisch base64-codiert) und entweder einen Standort oder eine Affinitätsgruppe. Im folgenden Beispiel wird ein Speicherdienst durch Angabe eines Standorts erstellt. Wenn Sie eine Affinitätsgruppe verwenden möchten, müssen Sie zunächst eine solche Gruppe erstellen (Informationen finden Sie unter [Gewusst wie: Erstellen einer Affinitätsgruppe](#CreateAffinityGroup)) und mit dem Parameter **affinity\_group** festlegen.
+Ein [Speicherdienst](https://www.windowsazure.com/de-de/manage/services/storage/what-is-a-storage-account/) gewährt Ihnen Zugriff auf Azure-[Blobs](https://www.windowsazure.com/de-de/develop/python/how-to-guides/blob-service/), -[Tabellen](https://www.windowsazure.com/de-de/develop/python/how-to-guides/table-service/) und -[Warteschlangen](https://www.windowsazure.com/de-de/develop/python/how-to-guides/queue-service/). Zum Erstellen eines Speicherdiensts müssen Sie Folgendes angeben: einen Namen für den Dienst (bestehend aus 3 bis 24 Kleinbuchstaben und innerhalb von Azure eindeutig), eine Beschreibung, eine Bezeichnung (maximal 100 Zeichen, automatisch base64-codiert) und entweder einen Standort oder eine Affinitätsgruppe. Im folgenden Beispiel wird ein Speicherdienst durch Angabe eines Standorts erstellt. Wenn Sie eine Affinitätsgruppe verwenden möchten, müssen Sie zunächst eine solche Gruppe erstellen (Informationen finden Sie unter [Gewusst wie: Erstellen einer Affinitätsgruppe](#CreateAffinityGroup)) und mit dem Parameter **affinity\_group** festlegen.
 
     from azure import *
     from azure.servicemanagement import *
@@ -510,8 +510,8 @@ Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Dienstverwaltung vertraut sind, finden Sie unter den folgenden Links komplexere Aufgaben.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Clouddienste](http://msdn.microsoft.com/en-us/library/windowsazure/jj155995.aspx)
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Virtuelle Computer](http://msdn.microsoft.com/en-us/library/windowsazure/jj156003.aspx)
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Clouddienste](http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx)
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Virtuelle Computer](http://msdn.microsoft.com/de-de/library/windowsazure/jj156003.aspx)
 
 
 [What is Service Management]: #WhatIs
@@ -535,19 +535,19 @@ Nachdem Sie nun mit den Grundlagen der Dienstverwaltung vertraut sind, finden Si
 [How to: Delete a virtual machine]: #DeleteVM
 [Next Steps]: #NextSteps
 [management-portal]: https://manage.windowsazure.com/
-[svc-mgmt-rest-api]: http://msdn.microsoft.com/en-us/library/windowsazure/ee460799.aspx
+[svc-mgmt-rest-api]: http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx
 
 
-[download-SDK-Python]: https://www.windowsazure.com/en-us/develop/python/common-tasks/install-python/
-[cloud service]:http://windowsazure.com/en-us/documentation/articles/cloud-services-what-is
-[service package]: http://msdn.microsoft.com/en-us/library/windowsazure/jj155995.aspx
-[Azure PowerShell cmdlets]: https://www.windowsazure.com/en-us/develop/php/how-to-guides/powershell-cmdlets/
-[cspack commandline tool]: http://msdn.microsoft.com/en-us/library/windowsazure/gg432988.aspx
-[Deploying an Azure Service]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433027.aspx
-[storage service]: https://www.windowsazure.com/en-us/manage/services/storage/what-is-a-storage-account/
-[azure-blobs]: https://www.windowsazure.com/en-us/develop/python/how-to-guides/blob-service/
-[azure-tables]: https://www.windowsazure.com/en-us/develop/python/how-to-guides/table-service/
-[azure-queues]: https://www.windowsazure.com/en-us/develop/python/how-to-guides/queue-service/
-[Azure Service Configuration Schema (.cscfg)]: http://msdn.microsoft.com/en-us/library/windowsazure/ee758710.aspx
-[Cloud Services]: http://msdn.microsoft.com/en-us/library/windowsazure/jj155995.aspx
-[Virtual Machines]: http://msdn.microsoft.com/en-us/library/windowsazure/jj156003.aspx
+[download-SDK-Python]: https://www.windowsazure.com/de-de/develop/python/common-tasks/install-python/
+[cloud service]:http://windowsazure.com/de-de/documentation/articles/cloud-services-what-is
+[service package]: http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx
+[Azure PowerShell cmdlets]: https://www.windowsazure.com/de-de/develop/php/how-to-guides/powershell-cmdlets/
+[cspack commandline tool]: http://msdn.microsoft.com/de-de/library/windowsazure/gg432988.aspx
+[Deploying an Azure Service]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433027.aspx
+[storage service]: https://www.windowsazure.com/de-de/manage/services/storage/what-is-a-storage-account/
+[azure-blobs]: https://www.windowsazure.com/de-de/develop/python/how-to-guides/blob-service/
+[azure-tables]: https://www.windowsazure.com/de-de/develop/python/how-to-guides/table-service/
+[azure-queues]: https://www.windowsazure.com/de-de/develop/python/how-to-guides/queue-service/
+[Azure Service Configuration Schema (.cscfg)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx
+[Cloud Services]: http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx
+[Virtual Machines]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156003.aspx

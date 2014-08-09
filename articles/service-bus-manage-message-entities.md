@@ -43,7 +43,7 @@ Klicken Sie in der linken Navigationsleiste auf **Service Bus**, um eine Liste d
 
 **Hinweis** Unter Umständen wird der Namespace nicht sofort angezeigt. Die Erstellung des Namespace und Aktualisierung der Portaloberfläche dauert einige Sekunden.
 
-**Hinweis** Wenn Sie ein Relay mit **Quick Create** erstellen, wird kein neuer Relay-Endpunkt erstellt. In diesem Fall wird nur ein Namespace erstellt, unter dem Sie einen Relay-Endpunkt programmgesteuert erstellen können. Weitere Informationen finden Sie in der [Service Bus-Dokumentation](http://www.windowsazure.com/en-us/develop/net/how-to-guides/service-bus-relay/).
+**Hinweis** Wenn Sie ein Relay mit **Quick Create** erstellen, wird kein neuer Relay-Endpunkt erstellt. In diesem Fall wird nur ein Namespace erstellt, unter dem Sie einen Relay-Endpunkt programmgesteuert erstellen können. Weitere Informationen finden Sie in der [Service Bus-Dokumentation](http://www.windowsazure.com/de-de/develop/net/how-to-guides/service-bus-relay/).
 
 ### Benutzerdefiniert erstellen
 

@@ -5,13 +5,13 @@ Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight
 
 Eine wichtige Funktion der Big Data-Lösung von Microsoft ist die Integration von Microsoft Business Intelligence (BI)-Komponenten in Apache Hadoop-Cluster, die über Azure HDInsight bereitgestellt werden. Ein Beispiel für diese Integration ist die Möglichkeit, Excel mit dem Hive-Data Warehouse eines HDInsight Hadoop-Clusters über den Microsoft Hive Open Database Connectivity (ODBC) Driver zu verbinden.
 
-Es ist ebenfalls möglich, die zu einem HDInsight-Cluster gehörigen Daten und andere Datenquellen, einschließlich anderer Hadoop-Cluster (nicht aus HDInsight), zu verbinden. Hierbei verwenden Sie in Excel das Add-In Microsoft Power Query für Excel. Informationen zur Installation und Verwendung von Power Query finden Sie unter [Connect Excel to HDInsight with Power Query](/en-us/documentation/articles/hdinsight-connect-excel-power-query/) (Verbinden von Excel und HDInsight mit Power Query, in englischer Sprache).
+Es ist ebenfalls möglich, die zu einem HDInsight-Cluster gehörigen Daten und andere Datenquellen, einschließlich anderer Hadoop-Cluster (nicht aus HDInsight), zu verbinden. Hierbei verwenden Sie in Excel das Add-In Microsoft Power Query für Excel. Informationen zur Installation und Verwendung von Power Query finden Sie unter [Connect Excel to HDInsight with Power Query](/de-de/documentation/articles/hdinsight-connect-excel-power-query/) (Verbinden von Excel und HDInsight mit Power Query, in englischer Sprache).
 
 **Voraussetzungen**:
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
--   Einen HDInsight-Cluster Hinweise zu dessen Konfiguration finden Sie unter [Erste Schritte mit Azure HDInsight](/en-us/documentation/articles/hdinsight-get-started/).
+-   Einen HDInsight-Cluster Hinweise zu dessen Konfiguration finden Sie unter [Erste Schritte mit Azure HDInsight](/de-de/documentation/articles/hdinsight-get-started/).
 -   Einen Computer, auf dem Windows 8, Windows 7, Windows Server 2012 oder Windows Server 2008 R2 läuft.
 -   Office 2013 Professional Plus, Office 365 Pro Plus, Excel 2013 Standalone oder Office 2010 Professional Plus.
 
@@ -126,7 +126,7 @@ In den folgenden Schritten wird beschrieben, wie Sie mithilfe der ODBC-Datenquel
 5.  Geben Sie im Assistenten erneut das Kennwort für den Cluster ein, und klicken Sie dann auf **Test**, um die Konfiguration zu prüfen.
 6.  Klicken Sie auf **OK**, um den Testdialog zu schließen.
 7.  Klicken Sie auf **OK**. Warten Sie, bis sich der Dialog **Datenbank und Tabelle wählen** öffnet. Dies kann einige Zeit dauern.
-8.  Wählen Sie die Tabelle, die Sie importieren möchten, und klicken Sie dann auf **Weiter**. Die Tabelle *hivesampletable* ist eine Beispieltabelle, die in HDInsight-Clustern enthalten ist. Sie können sie auswählen, wenn Sie noch keine Tabelle erstellt haben. Weitere Informationen zum Ausführen von Hive-Abfragen und Erstellen von Hive-Tabellen finden Sie unter [Use Hive with HDInsight](/en-us/documentation/articles/hdinsight-use-hive/) (Verwenden von Hive mit HDInsight, in englischer Sprache).
+8.  Wählen Sie die Tabelle, die Sie importieren möchten, und klicken Sie dann auf **Weiter**. Die Tabelle *hivesampletable* ist eine Beispieltabelle, die in HDInsight-Clustern enthalten ist. Sie können sie auswählen, wenn Sie noch keine Tabelle erstellt haben. Weitere Informationen zum Ausführen von Hive-Abfragen und Erstellen von Hive-Tabellen finden Sie unter [Use Hive with HDInsight](/de-de/documentation/articles/hdinsight-use-hive/) (Verwenden von Hive mit HDInsight, in englischer Sprache).
 9.  Klicken Sie auf **Fertig stellen**.
 10. Im Dialog **Daten importieren** können Sie die Abfrage ändern oder spezifizieren. Klicken Sie hierfür auf **Eigenschaften**. Dies kann einige Zeit dauern.
 11. Klicken Sie auf die Registerkarte **Definition**, und fügen Sie dann **LIMIT 200** zur Hive-SELECT-Anweisung im Textfeld **Befehlstext** hinzu. Diese Modifikation begrenzt die zurückgegebenen Datensätze auf 200.
@@ -142,17 +142,17 @@ Nächste Schritte
 
 In diesem Artikel haben Sie erfahren, wie Sie den Microsoft Hive ODBC-Treiber verwenden, um Daten aus dem HDInsight-Dienst nach Excel zu übertragen. Ebenso können Sie Daten aus dem HDInsight-Dienst in eine SQL-Datenbank übertragen. Es ist außerdem möglich, Daten in einen HDInsight-Dienst hochzuladen. Weitere Informationen finden Sie unter:
 
--   [Analyze flight delay data using HDInsight (Analysieren von Daten zu Flugverspätungen mithilfe von HDInsight, in englischer Sprache)](/en-us/documentation/articles/hdinsight-analyze-flight-delay-data/)
--   [Upload data to HDInsight (Hochladen von Daten zu HDInsight, in englischer Sprache)](/en-us/documentation/articles/hdinsight-upload-data/)
+-   [Analyze flight delay data using HDInsight (Analysieren von Daten zu Flugverspätungen mithilfe von HDInsight, in englischer Sprache)](/de-de/documentation/articles/hdinsight-analyze-flight-delay-data/)
+-   [Upload data to HDInsight (Hochladen von Daten zu HDInsight, in englischer Sprache)](/de-de/documentation/articles/hdinsight-upload-data/)
 -   [Use Sqoop with HDInsight (Verwenden von Sqoop mit HDInsight, in englischer Sprache)](../hdinsight-use-sqoop/)
 
 
 [hdinsight-sqoop]: ../hdinsight-use-sqoop/
-[hdinsight-analyze-flight-delay-data]: /en-us/documentation/articles/hdinsight-analyze-flight-delay-data/
-[hdinsight-hive]: /en-us/documentation/articles/hdinsight-use-hive/
-[hdinsight-upload-data]: /en-us/documentation/articles/hdinsight-upload-data/
-[hdinsight-power-query]: /en-us/documentation/articles/hdinsight-connect-excel-power-query/
-[hdinsight-get-started]: /en-us/documentation/articles/hdinsight-get-started/
+[hdinsight-analyze-flight-delay-data]: /de-de/documentation/articles/hdinsight-analyze-flight-delay-data/
+[hdinsight-hive]: /de-de/documentation/articles/hdinsight-use-hive/
+[hdinsight-upload-data]: /de-de/documentation/articles/hdinsight-upload-data/
+[hdinsight-power-query]: /de-de/documentation/articles/hdinsight-connect-excel-power-query/
+[hdinsight-get-started]: /de-de/documentation/articles/hdinsight-get-started/
 
 [hive-odbc-driver-download]: http://go.microsoft.com/fwlink/?LinkID=286698
 

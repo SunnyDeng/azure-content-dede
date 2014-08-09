@@ -5,7 +5,7 @@ Registrieren Ihrer Apps für die Verwendung einer Microsoft Account-Anmeldung
 
 In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Live Connect als Authentifizierungsanbieter für Azure Mobile Services zu verwenden.
 
-> [WACOM.NOTE]Wenn Sie auch eine clientgesteuerte Authentifizierung für einmaliges Anmelden (SSO) oder Pushbenachrichtigungen aus einer Windows Store-App bereitstellen möchten, sollten Sie die Registrierung Ihrer App beim Windows Store in Betracht ziehen. Weitere Informationen finden Sie unter [Registrieren Ihrer Windows Store-Apps für die Windows Live Connect-Authentifizierung](/en-us/develop/mobile/how-to-guides/register-for-single-sign-on).
+> [WACOM.NOTE]Wenn Sie auch eine clientgesteuerte Authentifizierung für einmaliges Anmelden (SSO) oder Pushbenachrichtigungen aus einer Windows Store-App bereitstellen möchten, sollten Sie die Registrierung Ihrer App beim Windows Store in Betracht ziehen. Weitere Informationen finden Sie unter [Registrieren Ihrer Windows Store-Apps für die Windows Live Connect-Authentifizierung](/de-de/develop/mobile/how-to-guides/register-for-single-sign-on).
 
 1.  Navigieren Sie im Live Connect Developer Center zur Seite [Eigene Apps](http://go.microsoft.com/fwlink/p/?LinkId=262039), und melden Sie sich, falls erforderlich, mit Ihrem Microsoft-Konto an.
 

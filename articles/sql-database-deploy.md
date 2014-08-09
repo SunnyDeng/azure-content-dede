@@ -19,7 +19,7 @@ Inhaltsverzeichnis
 Vorgehensweise: Erstellen der Schuldatenbank auf einem lokalen Server
 ---------------------------------------------------------------------
 
-Skripte für die Erstellung dieser Datenbank finden Sie unter [Erste Schritte mit der SQL-Datenbankverwaltung](/en-us/manage/services/sql-databases/getting-started-w-sql-databases/). In dieser Anleitung führen Sie diese Skripte in Management Studio aus, um eine lokale Version der Schuldatenbank zu erstellen.
+Skripte für die Erstellung dieser Datenbank finden Sie unter [Erste Schritte mit der SQL-Datenbankverwaltung](/de-de/manage/services/sql-databases/getting-started-w-sql-databases/). In dieser Anleitung führen Sie diese Skripte in Management Studio aus, um eine lokale Version der Schuldatenbank zu erstellen.
 
 1.  Stellen Sie in Management Studio eine Verbindung zu einem lokalen Server her. Klicken Sie mit der rechten Maustaste auf **Datenbanken**, und klicken Sie dann auf **Neue Datenbank**, und geben Sie *Schule* ein.
 

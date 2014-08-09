@@ -3,7 +3,7 @@
 Verwenden von Blob-Speicher aus Java
 ====================================
 
-In diesem Leitfaden wird die Durchführung gängiger Szenarien mit dem Azure-Blob-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java](http://www.windowsazure.com/en-us/develop/java/). Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
+In diesem Leitfaden wird die Durchführung gängiger Szenarien mit dem Azure-Blob-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java](http://www.windowsazure.com/de-de/develop/java/). Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
 
 Inhaltsverzeichnis
 ------------------
@@ -32,7 +32,7 @@ Erstellen eines Azure-Speicherkontos
 Erstellen einer Java-Anwendung
 ------------------------------
 
-In diesem Leitfaden verwenden Sie Speicherfunktionen, die lokal innerhalb einer Java-Anwendung oder in Code innerhalb einer Webrolle oder Workerrolle in Azure ausgeführt werden können. Es wird vorausgesetzt, dass Sie das Java Development Kit (JDK) heruntergeladen und installiert und die Anweisungen auf der [Downloadseite des Azure-SDK für Java](http://www.windowsazure.com/en-us/develop/java/) ausgeführt haben, um die Azure-Bibliotheken für Java und das Azure-SDK zu installieren, und dass Sie ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellt haben.
+In diesem Leitfaden verwenden Sie Speicherfunktionen, die lokal innerhalb einer Java-Anwendung oder in Code innerhalb einer Webrolle oder Workerrolle in Azure ausgeführt werden können. Es wird vorausgesetzt, dass Sie das Java Development Kit (JDK) heruntergeladen und installiert und die Anweisungen auf der [Downloadseite des Azure-SDK für Java](http://www.windowsazure.com/de-de/develop/java/) ausgeführt haben, um die Azure-Bibliotheken für Java und das Azure-SDK zu installieren, und dass Sie ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellt haben.
 
 Sie können beliebige Entwicklungstools zum Erstellen Ihrer Anwendung verwenden, einschließlich Editor. Sie benötigen lediglich die Möglichkeit, ein Java-Projekt zu kompilieren und auf die Azure-Bibliotheken für Java zu verweisen.
 
@@ -214,5 +214,5 @@ Nachdem Sie sich nun mit den Grundlagen von Blob-Speicher vertraut gemacht haben
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure]
 -   Besuchen Sie den Blog des Azure-Speicherteams: http://blogs.msdn.com/b/windowsazurestorage/
 
-[Azure SDK for Java]: http://www.windowsazure.com/en-us/develop/java/
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+[Azure SDK for Java]: http://www.windowsazure.com/de-de/develop/java/
+[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

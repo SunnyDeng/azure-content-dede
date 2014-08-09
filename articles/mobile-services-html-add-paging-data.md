@@ -3,7 +3,7 @@
 Verfeinern von Mobile Services-Abfragen mit Paging
 ==================================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/add-paging-to-data-dotnet "Windows Store C#")[Windows Store JavaScript](/en-us/develop/mobile/tutorials/add-paging-to-data-js "Windows Store JavaScript")[Windows Phone](/en-us/develop/mobile/tutorials/add-paging-to-data-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/add-paging-to-data-ios "iOS")[Android](/en-us/develop/mobile/tutorials/add-paging-to-data-android "Android")[HTML](/en-us/develop/mobile/tutorials/add-paging-to-data-html "HTML")[Xamarin.iOS](/en-us/develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/en-us/develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/add-paging-to-data-dotnet "Windows Store C#")[Windows Store JavaScript](/de-de/develop/mobile/tutorials/add-paging-to-data-js "Windows Store JavaScript")[Windows Phone](/de-de/develop/mobile/tutorials/add-paging-to-data-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/add-paging-to-data-ios "iOS")[Android](/de-de/develop/mobile/tutorials/add-paging-to-data-android "Android")[HTML](/de-de/develop/mobile/tutorials/add-paging-to-data-html "HTML")[Xamarin.iOS](/de-de/develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/de-de/develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android")
 
 In diesem Thema erfahren Sie, wie Sie die aus Azure Mobile Services an Ihre HTML-App zurückgegebene Datenmenge mithilfe von Paging steuern können. Dieses Lernprogramm verwendet die Abfragemethoden **Take** und **Skip** im Client, um bestimmte "Seiten" von Daten abzufragen.
 
@@ -11,9 +11,9 @@ In diesem Thema erfahren Sie, wie Sie die aus Azure Mobile Services an Ihre HTML
 
 Mobile Services verwendet standardmäßig eine Seitengröße von 50 Elementen pro Antwort, um mobile Clients nicht mit Daten zu überfluten. Durch Angabe der Seitengröße können Sie bis zu 1.000 Elemente in einer Antwort abfragen.
 
-Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-html). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zumindest das erste Lernprogramm aus der Daten-Reihe abschließen, [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-html).
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-html). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zumindest das erste Lernprogramm aus der Daten-Reihe abschließen, [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-html).
 
-1.  Führen Sie eine der folgenden Befehlsdateien aus dem **server** Unterordner des Projekts aus, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-html) abgeschlossen haben.
+1.  Führen Sie eine der folgenden Befehlsdateien aus dem **server** Unterordner des Projekts aus, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-html) abgeschlossen haben.
 
     -   **launch-windows** (Windows-Computer)
     -   **launch-mac.command** (Mac OS X-Computer)
@@ -62,5 +62,5 @@ Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorhe
 Nächste Schritte
 ----------------
 
-Dies bildet den Abschluss der Lernprogramm-Reihe über Grundlagen mit Daten in Mobile Services. Lernen Sie unter [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-html), wie Sie Benutzer Ihrer App authentifizieren können. Weitere Informationen zur Verwendung von mobilen Diensten mit HTML/JavaScript finden Sie unter [Mobile Services HTML/JavaScript How-to Conceptual Reference](/en-us/develop/mobile/how-to-guides/work-with-html-js-client)
+Dies bildet den Abschluss der Lernprogramm-Reihe über Grundlagen mit Daten in Mobile Services. Lernen Sie unter [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-html), wie Sie Benutzer Ihrer App authentifizieren können. Weitere Informationen zur Verwendung von mobilen Diensten mit HTML/JavaScript finden Sie unter [Mobile Services HTML/JavaScript How-to Conceptual Reference](/de-de/develop/mobile/how-to-guides/work-with-html-js-client)
 

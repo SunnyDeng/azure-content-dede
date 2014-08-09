@@ -117,7 +117,7 @@ Schritt 4: Hinzufügen von Daten und einem Schema mit dem Transact-SQL-Skript
 
 In diesem Schritt führen Sie zwei Skripte aus. Das erste erstellt ein Schema zur Definition von Tabellen, Spalten und Beziehungen. Das zweite Skript fügt die Daten hinzu. Jeder Schritt wird unabhängig in einer separaten Verbindung durchgeführt. Wenn Sie schon einmal Datenbanken in SQL Server erstellt haben, werden Sie den Unterschied feststellen, dass in der SQL-Datenbank die Befehle CREATE und INSERT separat ausgeführt werden müssen. Die SQL-Datenbank macht dies erforderlich, um Angriffe auf Daten während der Übertragung zu minimieren.
 
-**Hinweis:** Die Schema- und Datenwerte sind aus diesem [MSDN-Artikel](http://msdn.microsoft.com/en-us/library/windowsazure/ee621790.aspx "MSDN-Artikel") übernommen und wurden für die SQL-Datenbank angepasst.
+**Hinweis:** Die Schema- und Datenwerte sind aus diesem [MSDN-Artikel](http://msdn.microsoft.com/de-de/library/windowsazure/ee621790.aspx "MSDN-Artikel") übernommen und wurden für die SQL-Datenbank angepasst.
 
 1.  Wechseln Sie zur Startseite. Im [Verwaltungsportal](http://manage.windowsazure.com) wird nun die Datenbank **School** in der Objektliste auf der Startseite angezeigt.
 
@@ -142,7 +142,7 @@ In diesem Schritt führen Sie zwei Skripte aus. Das erste erstellt ein Schema zu
 Schritt 5: Erstellen des Schemas
 --------------------------------
 
-In diesem Schritt erstellen Sie das Schema mit dem folgenden Skript. Das Skript überprüft zuerst, ob eine Tabelle mit demselben Namen vorhanden ist, um sicherzustellen, dass es keine Namenskonflikte gibt, und erstellt dann die Tabelle mit der Anweisung [CREATE TABLE](http://msdn.microsoft.com/en-us/library/windowsazure/ee336258.aspx). Anschließend verwendet das Skript die Anweisung [ALTER TABLE](http://msdn.microsoft.com/en-us/library/windowsazure/ee336286.aspx), um den Primärschlüssel und die Tabellenbeziehungen anzugeben.
+In diesem Schritt erstellen Sie das Schema mit dem folgenden Skript. Das Skript überprüft zuerst, ob eine Tabelle mit demselben Namen vorhanden ist, um sicherzustellen, dass es keine Namenskonflikte gibt, und erstellt dann die Tabelle mit der Anweisung [CREATE TABLE](http://msdn.microsoft.com/de-de/library/windowsazure/ee336258.aspx). Anschließend verwendet das Skript die Anweisung [ALTER TABLE](http://msdn.microsoft.com/de-de/library/windowsazure/ee336286.aspx), um den Primärschlüssel und die Tabellenbeziehungen anzugeben.
 
 Kopieren Sie das Skript, und fügen Sie es in das Abfragefenster ein. Klicken Sie oben im Fenster auf **Run**, um das Skript auszuführen.
 
@@ -387,7 +387,7 @@ Kopieren Sie das Skript, und fügen Sie es in das Abfragefenster ein. Klicken Si
 Schritt 6: Einfügen von Daten
 -----------------------------
 
-Öffnen Sie ein neues Abfragefenster, und fügen Sie das folgende Skript ein. Führen Sie das Skript zum Einfügen von Daten aus. Dieses Skript verwendet die Anweisung [INSERT](http://msdn.microsoft.com/en-us/library/windowsazure/ee336284.aspx), um Werte in jede Spalte einzufügen.
+Öffnen Sie ein neues Abfragefenster, und fügen Sie das folgende Skript ein. Führen Sie das Skript zum Einfügen von Daten aus. Dieses Skript verwendet die Anweisung [INSERT](http://msdn.microsoft.com/de-de/library/windowsazure/ee336284.aspx), um Werte in jede Spalte einzufügen.
 
 ``` {data-morhtml="true"}
     -- Insert data into the Person table.
@@ -802,12 +802,12 @@ Nächste Schritte
 
 Nachdem Sie nun mit der SQL-Datenbank und den Verwaltungsportalen vertraut sind, können Sie andere Werkzeuge und Techniken ausprobieren, die von den SQL Server-Datenbankadministratoren verwendet werden.
 
-Zur aktiven Verwaltung der neuen Datenbank wird die Installation von SQL Server Management Studio empfohlen. Management Studio ist das primäre Datenbank-Administrationstool zur Verwaltung von SQL-Serverdatenbanken, einschließlich auf Azure. Mithilfe von Management Studio können Sie Abfragen zur künftigen Wiederverwendung speichern, neue Tabellen und gespeicherte Prozeduren hinzufügen und Ihre Transact-SQL-Fertigkeiten in einer funktionsreichen Skriptumgebung mit Syntaxprüfung, IntelliSense und Vorlagen ausbauen. Befolgen Sie dazu die Anweisungen unter [Verwalten von SQL-Datenbanken mit SQL Server Management Studio](http://www.windowsazure.com/en-us/develop/net/common-tasks/sql-azure-management/).
+Zur aktiven Verwaltung der neuen Datenbank wird die Installation von SQL Server Management Studio empfohlen. Management Studio ist das primäre Datenbank-Administrationstool zur Verwaltung von SQL-Serverdatenbanken, einschließlich auf Azure. Mithilfe von Management Studio können Sie Abfragen zur künftigen Wiederverwendung speichern, neue Tabellen und gespeicherte Prozeduren hinzufügen und Ihre Transact-SQL-Fertigkeiten in einer funktionsreichen Skriptumgebung mit Syntaxprüfung, IntelliSense und Vorlagen ausbauen. Befolgen Sie dazu die Anweisungen unter [Verwalten von SQL-Datenbanken mit SQL Server Management Studio](http://www.windowsazure.com/de-de/develop/net/common-tasks/sql-azure-management/).
 
-Kenntnisse der Transact-SQL-Abfrage- und Datendefinitionssprache sind für Datenbankadministratoren unumgänglich. Wenn Sie noch nicht mit Transact-SQL gearbeitet haben, beginnen Sie mit dem [Lernprogramm: Schreiben von Transact-SQL-Anweisungen](http://msdn.microsoft.com/en-us/library/ms365303.aspx), um sich einige grundlegende Kenntnisse anzueignen.
+Kenntnisse der Transact-SQL-Abfrage- und Datendefinitionssprache sind für Datenbankadministratoren unumgänglich. Wenn Sie noch nicht mit Transact-SQL gearbeitet haben, beginnen Sie mit dem [Lernprogramm: Schreiben von Transact-SQL-Anweisungen](http://msdn.microsoft.com/de-de/library/ms365303.aspx), um sich einige grundlegende Kenntnisse anzueignen.
 
 Es gibt noch andere Methoden zum Verschieben einer lokalen Datenbank zur SQL-Datenbank. Falls Sie eine vorhandene Datenbank haben oder Beispieldatenbanken zum Üben heruntergeladen haben, testen Sie folgende alternative Vorgehensweisen:
 
--   [Migration von Datenbanken zur SQL-Datenbank](http://msdn.microsoft.com/en-us/library/windowsazure/ee730904.aspx)
--   [Kopieren von Datenbanken in die SQL-Datenbank](http://msdn.microsoft.com/en-us/library/windowsazure/ff951624.aspx)
+-   [Migration von Datenbanken zur SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/ee730904.aspx)
+-   [Kopieren von Datenbanken in die SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/ff951624.aspx)
 

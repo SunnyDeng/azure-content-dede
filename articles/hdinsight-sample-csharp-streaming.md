@@ -5,11 +5,11 @@ Das HDInsight C\# Streaming-Wortzählbeispiel
 
 Hadoop stellt MapReduce eine Streaming-API zur Verfügung, mit der Sie Map- und Reduce-Funktionen in anderen Sprache als Java schreiben können. In diesem Lernprogramm erfahren Sie, wie Sie MapReduce-Programme in C\# schreiben (diese Sprache verwendet die Hadoop-Streaming-Schnittstelle) und wie Sie die Programme mit Azure PowerShell in Azure HDInsight ausführen.
 
-Im Beispiel ist sowohl der Mapper als auch der Reducer eine ausführbare Datei, die eine Eingabe aus [stdin](http://msdn.microsoft.com/en-us/library/3x292kth(v=vs.110).aspx) liest (zeilenweise) und die Ausgabe in [stdout](http://msdn.microsoft.com/en-us/library/3x292kth(v=vs.110).aspx) schreibt. Das Programm zählt alle Wörter im Text.
+Im Beispiel ist sowohl der Mapper als auch der Reducer eine ausführbare Datei, die eine Eingabe aus [stdin](http://msdn.microsoft.com/de-de/library/3x292kth(v=vs.110).aspx) liest (zeilenweise) und die Ausgabe in [stdout](http://msdn.microsoft.com/de-de/library/3x292kth(v=vs.110).aspx) schreibt. Das Programm zählt alle Wörter im Text.
 
-Wenn eine ausführbare Datei für **Mapper** angegeben wird, ruft jede Mapper-Task die ausführbare Datei als separaten Prozess auf, wenn der Mapper initialisiert wird. Die Mapper-Task konvertiert ihre Eingaben in Zeilen und übermittelt die Zeilen an den [stdin](http://msdn.microsoft.com/en-us/library/3x292kth(v=vs.110).aspx) des Prozesses. In der Zwischenzeit sammelt der Mapper die zeilenbasierten Ausgaben des stdout des Prozesses und konvertiert jede Zeile in ein Schlüssel/Wert-Paar, das als Ausgabe des Mappers gesammelt wird. Standardmäßig ist das Präfix einer Zeile bis zum ersten Tabulatorzeichen der Schlüssel, und der Rest der Zeile (mit Ausnahme des Tabulatorzeichens) ist der Wert. Wenn die Zeile kein Tabulatorzeichen enthält, wird die gesamte Zeile als Schlüssel betrachtet, und der Wert ist null.
+Wenn eine ausführbare Datei für **Mapper** angegeben wird, ruft jede Mapper-Task die ausführbare Datei als separaten Prozess auf, wenn der Mapper initialisiert wird. Die Mapper-Task konvertiert ihre Eingaben in Zeilen und übermittelt die Zeilen an den [stdin](http://msdn.microsoft.com/de-de/library/3x292kth(v=vs.110).aspx) des Prozesses. In der Zwischenzeit sammelt der Mapper die zeilenbasierten Ausgaben des stdout des Prozesses und konvertiert jede Zeile in ein Schlüssel/Wert-Paar, das als Ausgabe des Mappers gesammelt wird. Standardmäßig ist das Präfix einer Zeile bis zum ersten Tabulatorzeichen der Schlüssel, und der Rest der Zeile (mit Ausnahme des Tabulatorzeichens) ist der Wert. Wenn die Zeile kein Tabulatorzeichen enthält, wird die gesamte Zeile als Schlüssel betrachtet, und der Wert ist null.
 
-Wenn eine ausführbare Datei für **Reducer** angegeben wird, ruft jede Reducer-Task die ausführbare Datei als separaten Prozess auf, wenn der Reducer initialisiert wird. Die Reducer-Task konvertiert ihre Schlüssel/Wert-Eingabepaare in Zeilen und übermittelt die Zeilen an den [stdin](http://msdn.microsoft.com/en-us/library/3x292kth(v=vs.110).aspx) des Prozesses. In der Zwischenzeit sammelt der Reducer die zeilenbasierten Ausgaben des [stdout](http://msdn.microsoft.com/en-us/library/3x292kth(v=vs.110).aspx) des Prozesses und konvertiert jede Zeile in ein Schlüssel/Wert-Paar, das als Ausgabe des Reducers gesammelt wird. Standardmäßig ist das Präfix einer Zeile bis zum ersten Tabulatorzeichen der Schlüssel, und der Rest der Zeile (mit Ausnahme des Tabulatorzeichens) ist der Wert.
+Wenn eine ausführbare Datei für **Reducer** angegeben wird, ruft jede Reducer-Task die ausführbare Datei als separaten Prozess auf, wenn der Reducer initialisiert wird. Die Reducer-Task konvertiert ihre Schlüssel/Wert-Eingabepaare in Zeilen und übermittelt die Zeilen an den [stdin](http://msdn.microsoft.com/de-de/library/3x292kth(v=vs.110).aspx) des Prozesses. In der Zwischenzeit sammelt der Reducer die zeilenbasierten Ausgaben des [stdout](http://msdn.microsoft.com/de-de/library/3x292kth(v=vs.110).aspx) des Prozesses und konvertiert jede Zeile in ein Schlüssel/Wert-Paar, das als Ausgabe des Reducers gesammelt wird. Standardmäßig ist das Präfix einer Zeile bis zum ersten Tabulatorzeichen der Schlüssel, und der Rest der Zeile (mit Ausnahme des Tabulatorzeichens) ist der Wert.
 
 Weitere Informationen zur Hadoop-Streaming-Schnittstelle finden Sie unter [HadoopStreaming](http://wiki.apache.org/hadoop/HadoopStreaming) (in englischer Sprache).
 
@@ -20,11 +20,11 @@ Weitere Informationen zur Hadoop-Streaming-Schnittstelle finden Sie unter [Hadoo
 
 **Voraussetzungen**:
 
--   Sie benötigen ein Azure-Abonnement. Optionen zum Anmelden für ein Konto finden Sie auf der Seite [Kostenlose Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/).
+-   Sie benötigen ein Azure-Abonnement. Optionen zum Anmelden für ein Konto finden Sie auf der Seite [Kostenlose Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/).
 
--   Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/)
+-   Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters](/de-de/manage/services/hdinsight/provision-hdinsight-clusters/)
 
--   Sie müssen Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+-   Sie müssen Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 Themen in diesem Artikel
 ------------------------
@@ -41,7 +41,7 @@ Ausführen des Beispiels mit Azure PowerShell
 
 **So führen Sie den MapReduce-Job aus**
 
-1.  Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+1.  Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 2.  Legen Sie die zwei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
 
@@ -145,7 +145,7 @@ Der Mapper-Code in der Datei "cat.cs" verwendet ein StreamReader-Objekt, um die 
         }
     }
 
-Der Reducer-Code in der Datei "wc.cs" verwendet ein [StreamReader](http://msdn.microsoft.com/en-us/library/system.io.streamreader.aspx)-Objekt zum Lesen von Zeichen aus dem Standard-Eingabedatenstrom, die vom cat.exe-Mapper ausgegeben wurden. Beim Lesen der Zeichen mit der [Console.Writeline](http://msdn.microsoft.com/en-us/library/system.console.writeline)-Methode zählt der Code die Wörter, indem Leerzeichen und Zeilenendezeichen am Ende jedes Worts gezählt werden; anschließend wird die Summe mit der [Console.Writeline](http://msdn.microsoft.com/en-us/library/system.console.writeline)-Methode in den Standard-Ausgabedatenstrom geschrieben.
+Der Reducer-Code in der Datei "wc.cs" verwendet ein [StreamReader](http://msdn.microsoft.com/de-de/library/system.io.streamreader.aspx)-Objekt zum Lesen von Zeichen aus dem Standard-Eingabedatenstrom, die vom cat.exe-Mapper ausgegeben wurden. Beim Lesen der Zeichen mit der [Console.Writeline](http://msdn.microsoft.com/de-de/library/system.console.writeline)-Methode zählt der Code die Wörter, indem Leerzeichen und Zeilenendezeichen am Ende jedes Worts gezählt werden; anschließend wird die Summe mit der [Console.Writeline](http://msdn.microsoft.com/de-de/library/system.console.writeline)-Methode in den Standard-Ausgabedatenstrom geschrieben.
 
 Zusammenfassung
 ---------------
@@ -157,11 +157,11 @@ Nächste Schritte
 
 Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hive- und MapReduce-Jobs in Azure HDInsight mit Azure PowerShell finden Sie in den folgenden Themen:
 
--   [Erste Schritte mit Azure HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
--   [Beispiel: Pi-Schätzung](/en-us/manage/services/hdinsight/howto-run-samples/sample-pi-estimator/)
--   [Beispiel: Wortzählung](/en-us/manage/services/hdinsight/howto-run-samples/sample-wordcount/)
--   [Beispiel: 10-GB-Graysort](/en-us/manage/services/hdinsight/howto-run-samples/sample-10gb-graysort/)
--   [Verwenden von Pig mit HDInsight](/en-us/manage/services/hdinsight/using-pig-with-hdinsight/)
--   [Verwenden von Hive mit HDInsight](/en-us/manage/services/hdinsight/using-hive-with-hdinsight/)
+-   [Erste Schritte mit Azure HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
+-   [Beispiel: Pi-Schätzung](/de-de/manage/services/hdinsight/howto-run-samples/sample-pi-estimator/)
+-   [Beispiel: Wortzählung](/de-de/manage/services/hdinsight/howto-run-samples/sample-wordcount/)
+-   [Beispiel: 10-GB-Graysort](/de-de/manage/services/hdinsight/howto-run-samples/sample-10gb-graysort/)
+-   [Verwenden von Pig mit HDInsight](/de-de/manage/services/hdinsight/using-pig-with-hdinsight/)
+-   [Verwenden von Hive mit HDInsight](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/)
 -   [Dokumentation des Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx)
 

@@ -49,6 +49,6 @@ Sie können nun ein Google-Login für die Authentifizierung in Ihrer App verwend
 <!-- URLs. -->
 
 [Google apis]: http://go.microsoft.com/fwlink/p/?LinkId=268303
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-dotnet/
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-dotnet/
 
 [Azure Management Portal]: https://manage.windowsazure.com/

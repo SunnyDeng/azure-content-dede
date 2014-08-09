@@ -3,9 +3,9 @@
 Verwenden der iOS-Clientbibliothek für Mobile Services
 ======================================================
 
-[.NET Framework](/en-us/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework")[HTML/JavaScript](/en-us/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript")[iOS](/en-us/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS")[Android](/en-us/develop/mobile/how-to-guides/work-with-android-client-library/ "Android")[Xamarin](/en-us/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin")
+[.NET Framework](/de-de/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework")[HTML/JavaScript](/de-de/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript")[iOS](/de-de/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS")[Android](/de-de/develop/mobile/how-to-guides/work-with-android-client-library/ "Android")[Xamarin](/de-de/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin")
 
-Dieser Artikel beschreibt gängige Szenarien für die Verwendung des iOS-Clients für Azure Mobile Services. Die Beispiele sind in objective-C geschrieben, und Sie benötigen das [Mobile Services-SDK](https://go.microsoft.com/fwLink/p/?LinkID=266533). Für dieses Lernprogramm benötigen Sie außerdem das [iOS SDK](https://developer.apple.com/xcode). Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst den [Schnellstart für mobile Dienste](/en-us/develop/mobile/tutorials/get-started-ios) absolvieren. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
+Dieser Artikel beschreibt gängige Szenarien für die Verwendung des iOS-Clients für Azure Mobile Services. Die Beispiele sind in objective-C geschrieben, und Sie benötigen das [Mobile Services-SDK](https://go.microsoft.com/fwLink/p/?LinkID=266533). Für dieses Lernprogramm benötigen Sie außerdem das [iOS SDK](https://developer.apple.com/xcode). Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst den [Schnellstart für mobile Dienste](/de-de/develop/mobile/tutorials/get-started-ios) absolvieren. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
 
 Inhaltsverzeichnis
 ------------------
@@ -30,7 +30,7 @@ Inhaltsverzeichnis
 Einrichtung und Voraussetzungen
 -------------------------------
 
-Dieses Lernprogramm setzt voraus, dass Sie einen mobilen Dienst und eine Tabelle erstellt haben. Weitere Informationen finden Sie unter [Erstellen einer Tabelle](http://msdn.microsoft.com/en-us/library/windowsazure/jj193162.aspx). Die Beispiele in diesem Lernprogramm verwenden eine Tabelle mit dem Namen `ToDoItem` und den folgenden Spalten:
+Dieses Lernprogramm setzt voraus, dass Sie einen mobilen Dienst und eine Tabelle erstellt haben. Weitere Informationen finden Sie unter [Erstellen einer Tabelle](http://msdn.microsoft.com/de-de/library/windowsazure/jj193162.aspx). Die Beispiele in diesem Lernprogramm verwenden eine Tabelle mit dem Namen `ToDoItem` und den folgenden Spalten:
 
 -   `id`
 -   `text`
@@ -185,7 +185,7 @@ Mit der Clientbibliothek können Sie zusätzliche Parameter für die Abfragezeic
         @"myKey2" : @"value2",
     };
 
-Diese Parameter werden in der Form `myKey1=value1&myKey2=value2` an die Abfrage-URI angehängt. Weitere Informationen finden Sie unter [Gewusst wie: Zugreifen auf benutzerdefinierte Parameter](/en-us/develop/mobile/how-to-guides/work-with-server-scripts#access-headers).
+Diese Parameter werden in der Form `myKey1=value1&myKey2=value2` an die Abfrage-URI angehängt. Weitere Informationen finden Sie unter [Gewusst wie: Zugreifen auf benutzerdefinierte Parameter](/de-de/develop/mobile/how-to-guides/work-with-server-scripts#access-headers).
 
 Einfügen von DatenGewusst wie: Einfügen von Daten in einen mobilen Dienst
 -------------------------------------------------------------------------
@@ -237,7 +237,7 @@ Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätz
 -   Druckbare Zeichen: **"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
 -   Die IDs "." und ".."
 
-Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](http://www.windowsazure.com/en-us/manage/linux/other-resources/command-line-tools/#Mobile_Tables) (CLI für Mobile Services-Tabellen, in englischer Sprache).
+Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables) (CLI für Mobile Services-Tabellen, in englischer Sprache).
 
 Wenn das dynamische Schema aktiviert ist, generiert Mobile Services automatisch neue Spalten auf Grundlage der Felder des Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://go.microsoft.com/fwlink/p/?LinkId=296271).
 
@@ -283,7 +283,7 @@ Mobile Services unterstützt die folgenden Identitätsanbieter für die Authenti
 -   Twitter
 -   Azure Active Directory
 
-Weitere Informationen zur Konfiguration von Identitätsanbietern finden Sie unter [Get started with authentication](/en-us/develop/mobile/tutorials/get-started-with-users-ios) (Erste Schritte zur Authentifizierung, in englischer Sprache).
+Weitere Informationen zur Konfiguration von Identitätsanbietern finden Sie unter [Get started with authentication](/de-de/develop/mobile/tutorials/get-started-with-users-ios) (Erste Schritte zur Authentifizierung, in englischer Sprache).
 
 Mobile Services unterstützt die beiden folgenden Authentifizierungsabläufe:
 
@@ -291,9 +291,9 @@ Mobile Services unterstützt die beiden folgenden Authentifizierungsabläufe:
 
 -   Im Fall einer clientgesteuerten Anmeldung fordert die App ein Token vom Identitätsanbieter an und legt dieses Token anschließend Mobile Services zur Authentifizierung vor.
 
-Bei erfolgreicher Authentifizierung wird ein Benutzerobjekt zurückgegeben, das die zugewiesene Benutzer-ID und das Authentifizierungstoken enthält. Sie können diese Benutzer-ID in Serverskripts zur Validierung oder Änderung von Anfragen verwenden. Weitere Informationen finden Sie unter [Verwenden von Skripts zum Autorisieren von Benutzern](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-ios). Das Token kann sicher gespeichert und für nachfolgende Anmeldungen wiederverwendet werden.
+Bei erfolgreicher Authentifizierung wird ein Benutzerobjekt zurückgegeben, das die zugewiesene Benutzer-ID und das Authentifizierungstoken enthält. Sie können diese Benutzer-ID in Serverskripts zur Validierung oder Änderung von Anfragen verwenden. Weitere Informationen finden Sie unter [Verwenden von Skripts zum Autorisieren von Benutzern](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios). Das Token kann sicher gespeichert und für nachfolgende Anmeldungen wiederverwendet werden.
 
-Sie können auch Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Weitere Informationen finden Sie unter [Berechtigungen](http://msdn.microsoft.com/en-us/library/windowsazure/jj193161.aspx).
+Sie können auch Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Weitere Informationen finden Sie unter [Berechtigungen](http://msdn.microsoft.com/de-de/library/windowsazure/jj193161.aspx).
 
 ### Servergesteuerte Anmeldung
 
@@ -421,7 +421,7 @@ Im Fehlerfall erhalten Sie weitere Informationen, indem Sie die Datei MSError.h 
 
 Außerdem ist für jeden Fehlercode eine Konstante definiert. Sie finden eine Erklärung dieser Codes in der Datei MSError.h.
 
-Ein Beispiel für die Validierung und Behandlung von Fehlern finden Sie unter [Validate and modify data in Mobile Services by using server scripts](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-ios) (Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts, in englischer Sprache). In diesem Artikel erfolgt die serverseitige Validierung in Form von Serverskripts. Wenn ungültige Daten übermittelt werden, wird eine Fehlermeldung zurückgegeben und vom Client verarbeitet.
+Ein Beispiel für die Validierung und Behandlung von Fehlern finden Sie unter [Validate and modify data in Mobile Services by using server scripts](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-ios) (Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts, in englischer Sprache). In diesem Artikel erfolgt die serverseitige Validierung in Form von Serverskripts. Wenn ungültige Daten übermittelt werden, wird eine Fehlermeldung zurückgegeben und vom Client verarbeitet.
 
 
 <!-- Anchors. -->
@@ -453,19 +453,19 @@ Ein Beispiel für die Validierung und Behandlung von Fehlern finden Sie unter [V
 <!-- Images. -->
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-ios
-[Validate and modify data in Mobile Services by using server scripts]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-ios
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-ios
+[Validate and modify data in Mobile Services by using server scripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-ios
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-ios
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
-[Permissions]: http://msdn.microsoft.com/en-us/library/windowsazure/jj193161.aspx
-[Use scripts to authorize users]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-ios
+[Permissions]: http://msdn.microsoft.com/de-de/library/windowsazure/jj193161.aspx
+[Use scripts to authorize users]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios
 [Dynamic schema]: http://go.microsoft.com/fwlink/p/?LinkId=296271
-[How to: access custom parameters]: /en-us/develop/mobile/how-to-guides/work-with-server-scripts#access-headers
-[Create a table]: http://msdn.microsoft.com/en-us/library/windowsazure/jj193162.aspx
+[How to: access custom parameters]: /de-de/develop/mobile/how-to-guides/work-with-server-scripts#access-headers
+[Create a table]: http://msdn.microsoft.com/de-de/library/windowsazure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: http://www.windowsazure.com/en-us/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+[CLI to manage Mobile Services tables]: http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables

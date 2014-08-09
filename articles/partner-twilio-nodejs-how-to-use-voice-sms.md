@@ -38,7 +38,7 @@ Vor der Verwendung von Twilio-Diensten müssen Sie zuerst [ein Konto anmelden](h
 
 ## Erstellen und Bereitstellen einer node.js-Azure-Website
 
-Als Nächstes müssen Sie eine node.js-Website erstellen, die auf Azure läuft. [Die offizielle Dokumentation dafür finden Sie hier](http://www.windowsazure.com/en-us/develop/nodejs/tutorials/create-a-website-(mac)/). Folgende Schritte sind notwendig:
+Als Nächstes müssen Sie eine node.js-Website erstellen, die auf Azure läuft. [Die offizielle Dokumentation dafür finden Sie hier](http://www.windowsazure.com/de-de/develop/nodejs/tutorials/create-a-website-(mac)/). Folgende Schritte sind notwendig:
 
 -   Anmelden eines Azure-Kontos, wenn Sie nicht bereits über eines verfügen.
 -   Erstellen einer neuen Website mithilfe der Azure-Konsole

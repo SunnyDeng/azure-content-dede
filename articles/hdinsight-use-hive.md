@@ -9,12 +9,12 @@ SQL-ähnliche Skriptsprache namens *HiveQL*, mit der große Datenmengen zusammen
 
 * Sie müssen ein **HDInsight-Cluster** bereitgestellt haben. Eine
   Anleitung zur entsprechenden Vorgehensweise mit dem Azure-Portal
-  finden Sie unter [Erste Schritte mit DInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/).Informationen zu den verschiedenen anderen Arten, auf die solche Cluster erstellt werden können, finden Sie unter [Bereitstellen von
-  HDInsight-Clustern](/en-us/manage/services/hdinsight/provision-hdinsight clusters/).
+  finden Sie unter [Erste Schritte mit DInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/).Informationen zu den verschiedenen anderen Arten, auf die solche Cluster erstellt werden können, finden Sie unter [Bereitstellen von
+  HDInsight-Clustern](/de-de/manage/services/hdinsight/provision-hdinsight clusters/).
 
 * Sie müssen **Azure PowerShell** auf Ihrer Arbeitsstation installiert
   haben. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter
-  [Installieren und Konfigurieren von Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+  [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 
 **Geschätzter Zeitaufwand:** 30 Minuten
 
@@ -43,7 +43,7 @@ Deshalb sind Protokolldateien ein typisches Beispiel für große Datenmengen. HD
 
 ## <a id="uploaddata" ></a>Hochladen von Datendateien in Azure Blob-Speicher
 
-HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Weitere Informationen erhalten Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/en-us/manage/services/hdinsight/howto-blob-store).
+HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Weitere Informationen erhalten Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](/de-de/manage/services/hdinsight/howto-blob-store).
 
 In diesem Beitrag verwenden Sie eine über das HDInsight-Cluster verteilte log4j-Musterdatei, die unter *\example\data\sample.log* gespeichert ist. Jedes Protokoll innerhalb der Datei besteht aus einer Reihe von Feldern, unter denen sich ein Feld namens `[LOG LEVEL]` befindet, das die Art und den Schweregrad des jeweiligen Fehlers anzeigt. Beispiel:
 
@@ -64,7 +64,7 @@ Da die Datei im Standard-Dateisystem gespeichert ist, können Sie auch auf folge
     wasb:///example/data/sample.log
     /example/data/sample.log
 
-Wenn Sie Ihre eigenen log4j-Dateien erstellen möchten, verwenden Sie dafür das Protokollierungsprogramm [Apache Log4j][2]. Informationen zum Hochladen von Daten in Azure Blob-Speicher erhalten Sie unter [Hochladen von Daten in HDInsight](/en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/).
+Wenn Sie Ihre eigenen log4j-Dateien erstellen möchten, verwenden Sie dafür das Protokollierungsprogramm [Apache Log4j][2]. Informationen zum Hochladen von Daten in Azure Blob-Speicher erhalten Sie unter [Hochladen von Daten in HDInsight](/de-de/manage/services/hdinsight/howto-upload-data-to-hdinsight/).
 
 ## <a id="runhivequeries" ></a> Ausführen von Hive-Abfragen mit PowerShell
 
@@ -80,7 +80,7 @@ ausgeführt werden.
 
 1.  Öffnen Sie ein Azure PowerShell-Konsolenfenster. Die Informationen
     dazu finden Sie unter [Installieren und Konfigurieren von Azure
-    PowerShell](/en-us/documentation/articles/install-configure-powershell/).
+    PowerShell](/de-de/documentation/articles/install-configure-powershell/).
 2.  Führen Sie den folgenden Befehl aus, um eine Verbindung zu Ihrem
     Azure-Abonnement herzustellen:
     
@@ -210,18 +210,18 @@ ausgeführt werden.
 Während Hive die Datenabfrage mit einer SQL-ähnlichen Abfragesprache erleichtert, bieten andere in HDInsight verfügbare Komponenten ergänzende Funktionen wie Datenverschiebung und -transformation. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte mit Azure
-  HDInsight](/en-us/manage/services/hdinsight/get-started-hdinsight/)
+  HDInsight](/de-de/manage/services/hdinsight/get-started-hdinsight/)
 * [Analyze flight delay data using HDInsight (Analyse von
   Flugverzögerungsdaten mit
-  HDInsight)](/en-us/documentation/articles/hdinsight-analyze-flight-delay-data/)
+  HDInsight)](/de-de/documentation/articles/hdinsight-analyze-flight-delay-data/)
 * [Verwenden von Oozie mit
-  HDInsight](/en-us/documentation/articles/hdinsight-use-oozie/)
+  HDInsight](/de-de/documentation/articles/hdinsight-use-oozie/)
 * [Programmgesteuerte Ăśbermittlung von
-  Hadoop-Jobs](/en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/)
+  Hadoop-Jobs](/de-de/manage/services/hdinsight/submit-hadoop-jobs-programmatically/)
 * [Hochladen von Daten in
-  HDInsight](/en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/)
+  HDInsight](/de-de/manage/services/hdinsight/howto-upload-data-to-hdinsight/)
 * [Verwenden von Pig mit
-  HDInsight](/en-us/manage/services/hdinsight/using-pig-with-hdinsight/)
+  HDInsight](/de-de/manage/services/hdinsight/using-pig-with-hdinsight/)
 * [SDK-Dokumentation für Azure HDInsight][4]
 
 

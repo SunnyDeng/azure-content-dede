@@ -29,5 +29,5 @@ Für Speicheroperationen benötigen Sie ein Azure-Speicherkonto. Mit den folgend
 
 
 
-[1]: http://msdn.microsoft.com/en-us/library/windowsazure/hh264518.aspx
+[1]: http://msdn.microsoft.com/de-de/library/windowsazure/hh264518.aspx
 [2]: http://manage.windowsazure.com

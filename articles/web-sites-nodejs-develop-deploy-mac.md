@@ -18,7 +18,7 @@ Befolgen Sie diese Schritte, um eine Azure-Website zu erstellen, und aktivieren 
 
 **Hinweis**
 
-Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose einmonatige Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A7171371E).
+Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose einmonatige Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E).
 
 1.  Melden Sie sich beim [Windows Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
 
@@ -147,17 +147,17 @@ Veröffentlichen von Änderungen an Ihrer Anwendung
 Nächste Schritte
 ----------------
 
-In diesem Artikel wurde in den Schritten Azure Portal zum Erstellen einer Website verwendet; dennoch können Sie auch die [Azure-Befehlszeilen-Tools für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/) verwenden, um diese Aufgaben durchzuführen.
+In diesem Artikel wurde in den Schritten Azure Portal zum Erstellen einer Website verwendet; dennoch können Sie auch die [Azure-Befehlszeilen-Tools für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/) verwenden, um diese Aufgaben durchzuführen.
 
-Node.js bietet ein vielseitiges Portfolio an Modulen, die von Ihren Anwendungen verwendet werden können. Weitere Informationen darüber, wie Azure-Website mit Modulen arbeiten, finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen](http://www.windowsazure.com/en-us/develop/nodejs/common-tasks/working-with-node-modules/).
+Node.js bietet ein vielseitiges Portfolio an Modulen, die von Ihren Anwendungen verwendet werden können. Weitere Informationen darüber, wie Azure-Website mit Modulen arbeiten, finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen](http://www.windowsazure.com/de-de/develop/nodejs/common-tasks/working-with-node-modules/).
 
-Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](http://www.windowsazure.com/en-us/develop/nodejs/common-tasks/specifying-a-node-version/).
+Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](http://www.windowsazure.com/de-de/develop/nodejs/common-tasks/specifying-a-node-version/).
 
-Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
+Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
 
 Zusätzliche Ressourcen
 ----------------------
 
--   [Azure PowerShell](/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/)
--   [Azure-Befehlszeilen-Tools für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/)
+-   [Azure PowerShell](/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/)
+-   [Azure-Befehlszeilen-Tools für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/)
 

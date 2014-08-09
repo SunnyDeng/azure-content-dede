@@ -486,7 +486,7 @@ Die Schritte in diesem Abschnitt verwenden die Azure-Befehlszeilentools zum Erst
 
 **Hinweis**
 
-Diese Schritte können auch über das Azure-Portal ausgeführt werden. Informationen zur Verwendung des Azure-Portals zum Bereitstellen einer Node.js-Anwendung finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](http://content-ppe.windowsazure.com/en-us/develop/nodejs/tutorials/create-a-website-(mac)/).
+Diese Schritte können auch über das Azure-Portal ausgeführt werden. Informationen zur Verwendung des Azure-Portals zum Bereitstellen einer Node.js-Anwendung finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](http://content-ppe.windowsazure.com/de-de/develop/nodejs/tutorials/create-a-website-(mac)/).
 
 **Hinweis**
 
@@ -506,7 +506,7 @@ Verwenden Sie den folgenden Befehl, um die Befehlszeilentools zu installieren:
 
 **Hinweis**
 
-Wenn Sie das "Azure-SDK für Node.js" bereits aus dem [Azure-Entwicklercenter](/en-us/develop/nodejs/) installiert haben, sollten auch die Befehlszeilentools bereits installiert sein. Weitere Informationen finden Sie im Thema zum [Azure-Befehlszeilentool für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+Wenn Sie das "Azure-SDK für Node.js" bereits aus dem [Azure-Entwicklercenter](/de-de/develop/nodejs/) installiert haben, sollten auch die Befehlszeilentools bereits installiert sein. Weitere Informationen finden Sie im Thema zum [Azure-Befehlszeilentool für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
 **Hinweis**
 
@@ -581,7 +581,7 @@ Bevor Sie die Befehlszeilentools mit Azure verwenden können, müssen Sie zunäc
 
     **Hinweis**
 
-    Falls dies die erste Azure-Website für Ihr Abonnement ist, werden Sie angewiesen, das Portal zum Erstellen der Website zu verwenden. Weitere Informationen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/).
+    Falls dies die erste Azure-Website für Ihr Abonnement ist, werden Sie angewiesen, das Portal zum Erstellen der Website zu verwenden. Weitere Informationen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/).
 
 ### Veröffentlichen der Anwendung
 
@@ -643,15 +643,15 @@ Nachdem die Änderungen in Azure bereitgestellt wurden, sollte Ihre Webanwendung
 Nächste Schritte
 ----------------
 
-Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendienstes zum Speichern von Informationen, Sie können jedoch auch MongoDB verwenden. Weitere Informationen finden Sie unter [Node.js-Webanwendung mit MongoDB](/en-us/develop/nodejs/tutorials/website-with-mongodb-(Mac)/).
+Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendienstes zum Speichern von Informationen, Sie können jedoch auch MongoDB verwenden. Weitere Informationen finden Sie unter [Node.js-Webanwendung mit MongoDB](/de-de/develop/nodejs/tutorials/website-with-mongodb-(Mac)/).
 
 Zusätzliche Ressourcen
 ----------------------
 
 [Azure-Befehlszeilentool für Mac und Linux]
-[Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /en-us/develop/nodejs/tutorials/create-a-website-(mac)/ 
-[Veröffentlichen auf Azure-Websites mit Git](../CommonTasks/publishing-with-git): /en-us/develop/nodejs/common-tasks/publishing-with-git/ 
-[Azure Developer Center]: /en-us/develop/nodejs/
+[Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/ 
+[Veröffentlichen auf Azure-Websites mit Git](../CommonTasks/publishing-with-git): /de-de/develop/nodejs/common-tasks/publishing-with-git/ 
+[Azure Developer Center]: /de-de/develop/nodejs/
 
 [node]: http://nodejs.org
 [Git]: http://git-scm.com
@@ -659,8 +659,8 @@ Zusätzliche Ressourcen
 [for free]: http://windowsazure.com
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[Node.js Web Application with MongoDB]: /en-us/develop/nodejs/tutorials/website-with-mongodb-(Mac)/
-[Azure command-line tool for Mac and Linux]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
+[Node.js Web Application with MongoDB]: /de-de/develop/nodejs/tutorials/website-with-mongodb-(Mac)/
+[Azure command-line tool for Mac and Linux]: /de-de/develop/nodejs/how-to-guides/command-line-tools/
 [Create and deploy a Node.js application to an Azure Web Site]: ./web-site-with-mongodb-Mac
 [Publishing to Azure Web Sites with Git]: ../CommonTasks/publishing-with-git
 [azure]: https://github.com/WindowsAzure/azure-sdk-for-node

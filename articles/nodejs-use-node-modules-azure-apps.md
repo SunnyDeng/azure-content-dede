@@ -66,12 +66,12 @@ Wenn die Anwendung für die Produktion bereit ist, können Sie die Versionsanfor
 Nächste Schritte
 ----------------
 
-Nachdem Sie wissen, wie Sie Node.js-Module mit Azure verwenden, erfahren Sie nun, wie Sie [die Node.js-Version angeben](/en-us/develop/nodejs/common-tasks/specifying-a-node-version/), [eine Node.js-Website erstellen und bereitstellen](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/) und [wie Sie die Azure-Befehlszeilentools für Mac und Linux verwenden](/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+Nachdem Sie wissen, wie Sie Node.js-Module mit Azure verwenden, erfahren Sie nun, wie Sie [die Node.js-Version angeben](/de-de/develop/nodejs/common-tasks/specifying-a-node-version/), [eine Node.js-Website erstellen und bereitstellen](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/) und [wie Sie die Azure-Befehlszeilentools für Mac und Linux verwenden](/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
 
-[specify the Node.js version]: /en-us/develop/nodejs/common-tasks/specifying-a-node-version/
-[How to use the Azure Command-Line Tools for Mac and Linux]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
-[build and deploy a Node.js Web Site]: /en-us/develop/nodejs/tutorials/create-a-website-(mac)/
-[Node.js Web Application with Storage on MongoDB (MongoLab)]: /en-us/develop/nodejs/tutorials/website-with-mongodb-mongolab/
-[Publishing with Git]: /en-us/develop/nodejs/common-tasks/publishing-with-git/
-[Build and deploy a Node.js application to an Azure Cloud Service]: /en-us/develop/nodejs/tutorials/getting-started/
+[specify the Node.js version]: /de-de/develop/nodejs/common-tasks/specifying-a-node-version/
+[How to use the Azure Command-Line Tools for Mac and Linux]: /de-de/develop/nodejs/how-to-guides/command-line-tools/
+[build and deploy a Node.js Web Site]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
+[Node.js Web Application with Storage on MongoDB (MongoLab)]: /de-de/develop/nodejs/tutorials/website-with-mongodb-mongolab/
+[Publishing with Git]: /de-de/develop/nodejs/common-tasks/publishing-with-git/
+[Build and deploy a Node.js application to an Azure Cloud Service]: /de-de/develop/nodejs/tutorials/getting-started/

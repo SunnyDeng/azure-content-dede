@@ -284,7 +284,7 @@ In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesende
 
 ![](./media/active-directory-dotnet-how-to-use-access-control/rzCl.png)
 
-Weitere Informationen zur Verwendung von Ansprüchen in Ihrer Anwendung siehe die [Windows Identity Foundation-Bibliothek](http://msdn.microsoft.com/en-us/library/hh377151.aspx).
+Weitere Informationen zur Verwendung von Ansprüchen in Ihrer Anwendung siehe die [Windows Identity Foundation-Bibliothek](http://msdn.microsoft.com/de-de/library/hh377151.aspx).
 
 Anzeigen der Anwendung im ACS-Verwaltungsportal
 -----------------------------------------------

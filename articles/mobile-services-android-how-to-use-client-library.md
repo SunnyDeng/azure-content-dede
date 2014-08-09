@@ -3,9 +3,9 @@
 Verwenden der Android-Clientbibliothek für Mobile Services
 ==========================================================
 
-[.NET Framework](/en-us/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework")[HTML/JavaScript](/en-us/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript")[iOS](/en-us/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS")[Android](/en-us/develop/mobile/how-to-guides/work-with-android-client-library/ "Android")[Xamarin](/en-us/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin")
+[.NET Framework](/de-de/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework")[HTML/JavaScript](/de-de/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript")[iOS](/de-de/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS")[Android](/de-de/develop/mobile/how-to-guides/work-with-android-client-library/ "Android")[Xamarin](/de-de/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin")
 
-Dieser Artikel beschreibt gängige Szenarien für die Verwendung des Android-Clients für Azure Mobile Services. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern, Fehlerbehandlung und Anpassungen des Clients. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst den [Schnellstart für mobile Dienste](/en-us/develop/mobile/tutorials/get-started-android/) absolvieren. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
+Dieser Artikel beschreibt gängige Szenarien für die Verwendung des Android-Clients für Azure Mobile Services. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern, Fehlerbehandlung und Anpassungen des Clients. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst den [Schnellstart für mobile Dienste](/de-de/develop/mobile/tutorials/get-started-android/) absolvieren. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
 
 Die Beispiele sind in Java geschrieben, und Sie benötigen das [Mobile Services-SDK](http://go.microsoft.com/fwlink/p/?linkid=280126). Für dieses Lernprogramm benötigen Sie außerdem das [Android SDK](https://go.microsoft.com/fwLink/p/?LinkID=280125&clcid=0x409), das aus der integrierten Entwicklungsumgebung (IDE) Eclipse und dem Android Developer Tools (ADT)-Plugin besteht. Das Mobile Services-SDK unterstützt Android Version 2.2 oder später. Wir empfehlen jedoch die Verwendung von Android 4.2 oder später.
 
@@ -312,7 +312,7 @@ Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätz
 -   Druckbare Zeichen: **"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
 -   Die IDs "." und ".."
 
-Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](http://www.windowsazure.com/en-us/manage/linux/other-resources/command-line-tools/#Mobile_Tables) (CLI für Mobile Services-Tabellen, in englischer Sprache).
+Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables) (CLI für Mobile Services-Tabellen, in englischer Sprache).
 
 Aktualisieren von DatenGewusst wie: Aktualisieren von Daten in einem mobilen Dienst
 -----------------------------------------------------------------------------------
@@ -624,7 +624,7 @@ Was geschieht also, wenn Ihr Token abläuft? In diesem Fall erhalten Sie beim Ve
 FehlerbehandlungGewusst wie: Fehlerbehandlung
 ---------------------------------------------
 
-Sie finden ein Beispiel für Validierung und Fehlerbehandlung [hier](https://www.windowsazure.com/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/). Dieses Beispiel implementiert die Validierung mithilfe von Serverskripts, die im Fehlerfall Ausnahmen zurückgeben und Clientcode, der diese Ausnahmen behandelt.
+Sie finden ein Beispiel für Validierung und Fehlerbehandlung [hier](https://www.windowsazure.com/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/). Dieses Beispiel implementiert die Validierung mithilfe von Serverskripts, die im Fehlerfall Ausnahmen zurückgeben und Clientcode, der diese Ausnahmen behandelt.
 
 Ein weiterer möglicher Ansatz ist ein *globaler* Fehler-Handler. Der gezeigte Code für den Zugriff auf Tabellen in mobilen Diensten verwendet drei verschiedene Rückrufobjekte:
 
@@ -772,8 +772,8 @@ Sie finden die Javadocs-Referenz für die Android Client-API [http://dl.windowsa
 
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started-android/
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-android/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?linkid=280126
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-android/
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-android/
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: http://www.windowsazure.com/en-us/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+[CLI to manage Mobile Services tables]: http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables

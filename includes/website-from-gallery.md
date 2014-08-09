@@ -10,7 +10,7 @@ Sie erstellen einen WordPress-Blog unter Verwendung einer Standardvorlage. In de
 
 ![Wordpress-Blog](./media/website-from-gallery/wordpressgallery-09.png)
 <div class="dev-callout"><strong>Hinweis</strong>
-<p>Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter <a href="http://www.windowsazure.com/en-us/develop/php/tutorials/create-a-windows-azure-account/" target="_blank">Create a Windows Azure account (in englischer Sprache)</a>.</p>
+<p>Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter <a href="http://www.windowsazure.com/de-de/develop/php/tutorials/create-a-windows-azure-account/" target="_blank">Create a Windows Azure account (in englischer Sprache)</a>.</p>
 </div>
 <br />
 

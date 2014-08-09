@@ -1,4 +1,4 @@
-<properties linkid="manage-linux-howto-configure-raid" urlDisplayName="Configure RAID on Linux" pageTitle="Configure software RAID on avirtual machine running Linux in Azure" metaKeywords="raid in Azure, madadm Azure, stripe disks in Azure" description="Learn how to use mdadm to configure RAID on Linux in Azure." metaCanonical="http://www.windowsazure.com/en-us/manage/linux/articles/virtual-machines-linux-configure-raid" services="virtual-machines" documentationCenter="" title="" authors="szark" solutions="" writer="" manager="" editor="" />
+<properties linkid="manage-linux-howto-configure-raid" urlDisplayName="Configure RAID on Linux" pageTitle="Configure software RAID on avirtual machine running Linux in Azure" metaKeywords="raid in Azure, madadm Azure, stripe disks in Azure" description="Learn how to use mdadm to configure RAID on Linux in Azure." metaCanonical="http://www.windowsazure.com/de-de/manage/linux/articles/virtual-machines-linux-configure-raid" services="virtual-machines" documentationCenter="" title="" authors="szark" solutions="" writer="" manager="" editor="" />
 
 Konfigurieren des Software-RAID unter Linux
 ===========================================
@@ -8,9 +8,9 @@ Ein häufiges Szenario ist die Verwendung von Software-RAID auf virtuellen Linux
 Anfügen von Datenträgern
 ------------------------
 
-In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren. In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen. Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Windows Azure-Artikel [Anfügen eines Datenträgers](http://www.windowsazure.com/en-us/documentation/articles/storage-windows-attach-disk/#attachempty).
+In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren. In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen. Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Windows Azure-Artikel [Anfügen eines Datenträgers](http://www.windowsazure.com/de-de/documentation/articles/storage-windows-attach-disk/#attachempty).
 
-    >[WACOM.NOTE] Die Größe "ExtraSmall" für virtuelle Computer unterstützt maximal einen angefügten Datenträger pro virtuellem Computer.  Ausführliche Informationen zu den Größen virtueller Computer und der Anzahl der unterstützten Datenträger finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Azure](http://msdn.microsoft.com/en-us/library/windowsazure/dn197896.aspx).
+    >[WACOM.NOTE] Die Größe "ExtraSmall" für virtuelle Computer unterstützt maximal einen angefügten Datenträger pro virtuellem Computer.  Ausführliche Informationen zu den Größen virtueller Computer und der Anzahl der unterstützten Datenträger finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Azure](http://msdn.microsoft.com/de-de/library/windowsazure/dn197896.aspx).
 
 Installieren des mdadm-Dienstprogramms
 --------------------------------------

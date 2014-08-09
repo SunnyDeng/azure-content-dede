@@ -107,5 +107,5 @@ Wenn Sie einen Windows-Computer verwenden, stellen Sie über PuTTY eine Verbindu
 
 [1]: http://go.microsoft.com/fwlink/p/?LinkID=294063
 [2]: http://manage.windowsazure.com
-[3]: http://msdn.microsoft.com/en-us/library/ms161962.aspx
+[3]: http://msdn.microsoft.com/de-de/library/ms161962.aspx
 [4]: http://www.puttyssh.org/download.html

@@ -36,7 +36,7 @@ Führen Sie die folgenden Schritte aus, um eine Azure-Website und eine SQL-Daten
 
     ![Websitedetails eingeben](./media/web-sites-php-sql-database-deploy-use-git/website_details_sqlazure.jpg)
 
-4.  Geben Sie im Feld **Name** einen Namen für Ihre Datenbank ein, wählen Sie die **Edition** [(WEB oder BUSINESS)](http://msdn.microsoft.com/en-us/library/windowsazure/ee621788.aspx), die **Maximale Größe** für Ihre Datenbank, die **Sortierung** und anschließend **Neuer SQL Datenbankserver**. Klicken Sie unten im Dialogfeld auf den Pfeil.
+4.  Geben Sie im Feld **Name** einen Namen für Ihre Datenbank ein, wählen Sie die **Edition** [(WEB oder BUSINESS)](http://msdn.microsoft.com/de-de/library/windowsazure/ee621788.aspx), die **Maximale Größe** für Ihre Datenbank, die **Sortierung** und anschließend **Neuer SQL Datenbankserver**. Klicken Sie unten im Dialogfeld auf den Pfeil.
 
     ![SQL-Datenbankeinstellungen eingeben](./media/web-sites-php-sql-database-deploy-use-git/database_settings.jpg)
 

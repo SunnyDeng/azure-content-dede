@@ -3,7 +3,7 @@
 Konfigurieren und Bereitstellen der Azure-E-Mail-Dienstanwendung - 2 von 5
 ==========================================================================
 
-Dies ist das zweite von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Dienstanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie](/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/).
+Dies ist das zweite von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Dienstanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie](/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/).
 
 Dieses Lernprogramm zeigt, wie Sie Ihren Computer für die Azure-Entwicklung konfigurieren und die Azure-E-Mail-Dienstanwendung mit einem der folgenden Produkte in einem Azure-Cloud-Dienst bereitstellen können:
 
@@ -74,7 +74,7 @@ Bei der Ausführung der Beispielanwendung in Visual Studio haben Sie Zugriff auf
 
 6.  Wählen Sie in der Dropdownliste **Replikation** den Wert **Lokal redundant** aus.
 
-    Wenn Georeplikation für ein Speicherkonto aktiviert ist, werden dessen Inhalte an einen zweiten Ort repliziert, um im Katastrophenfall eine Failover-Instanz an diesem zweiten Standort zur Verfügung zu haben. Für die Georeplikation können zusätzliche Kosten anfallen. Für Test- und Entwicklungskonten macht es wenig Sinn, für Georeplikation zu bezahlen. Weitere Informationen finden Sie unter [How to Manage Storage Accounts](/en-us/manage/services/storage/how-to-manage-a-storage-account/) (Verwalten von Speicherkonten, in englischer Sprache).
+    Wenn Georeplikation für ein Speicherkonto aktiviert ist, werden dessen Inhalte an einen zweiten Ort repliziert, um im Katastrophenfall eine Failover-Instanz an diesem zweiten Standort zur Verfügung zu haben. Für die Georeplikation können zusätzliche Kosten anfallen. Für Test- und Entwicklungskonten macht es wenig Sinn, für Georeplikation zu bezahlen. Weitere Informationen finden Sie unter [How to Manage Storage Accounts](/de-de/manage/services/storage/how-to-manage-a-storage-account/) (Verwalten von Speicherkonten, in englischer Sprache).
 
 7.  Klicken Sie auf **Speicherkonto erstellen**.
 
@@ -136,7 +136,7 @@ Für die Arbeit mit Azure-Speicher stehen noch andere Tools zur Verfügung. Weit
 
     Sie sollten den Cloud-Dienst in derselben Region erstellen wie Ihr Speicherkonto. Wenn sich Cloud-Dienst und Speicherkonto in unterschiedlichen Datencentern (d. h. unterschiedlichen Regionen) befinden, steigt die Latenz an und Sie müssen für die Bandbreite außerhalb des Datencenters bezahlen. Die Bandbreite innerhalb eines Datencenters ist kostenlos.
 
-    Mit Azure-Affinitätsgruppen können Sie die Distanz zwischen Ressourcen in einem Datencenter und somit die Latenz minimieren. Dieses Lernprogramm verwendet keine Affinitätsgruppen. Anweisungen finden Sie unter [Erstellen einer Affinitätsgruppe in Azure](http://msdn.microsoft.com/en-us/library/jj156209.aspx).
+    Mit Azure-Affinitätsgruppen können Sie die Distanz zwischen Ressourcen in einem Datencenter und somit die Latenz minimieren. Dieses Lernprogramm verwendet keine Affinitätsgruppen. Anweisungen finden Sie unter [Erstellen einer Affinitätsgruppe in Azure](http://msdn.microsoft.com/de-de/library/jj156209.aspx).
 
 6.  Klicken Sie auf **Cloud-Dienst erstellen**.
 
@@ -317,7 +317,7 @@ Sie können die Einstellungen für die Workerrollen entweder mit derselben Proze
 
 2.  Löschen Sie die `Setting`-Elemente für diese beiden Verbindungszeichenfolgen aus den Elementen `WorkerRoleA` und `WorkerRoleB`, und fügen Sie stattdessen die `Setting`-Elements aus dem `MvcWebRole`-Element ein.
 
-Weitere Informationen zu den Konfigurationsdateien finden Sie unter [Konfigurieren eines Azure-Projekts](http://msdn.microsoft.com/en-us/library/windowsazure/ee405486.aspx).
+Weitere Informationen zu den Konfigurationsdateien finden Sie unter [Konfigurieren eines Azure-Projekts](http://msdn.microsoft.com/de-de/library/windowsazure/ee405486.aspx).
 
 ### Testen Sie die nun zur Verwendung Ihres Speicherkontos konfigurierte Anwendung
 
@@ -378,7 +378,7 @@ Diese Beispielanwendung verwendet SendGrid für den E-Mail-Versand. Um E-Mails m
 
 ### SendGrid-Konto erstellen
 
-1.  Folgen Sie den Anweisungen unter [How to Send Email Using SendGrid with Azure](http://www.windowsazure.com/en-us/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid") (E-Mail-Versand mit SendGrid in Azure, in englischer Sprache), um ein kostenloses Konto zu erstellen.
+1.  Folgen Sie den Anweisungen unter [How to Send Email Using SendGrid with Azure](http://www.windowsazure.com/de-de/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid") (E-Mail-Versand mit SendGrid in Azure, in englischer Sprache), um ein kostenloses Konto zu erstellen.
 
 ### Aktualisieren der SendGrid-Anmeldeinformationen in den Workerrollen-Eigenschaften
 
@@ -475,7 +475,7 @@ Sie können die Verbindungszeichenfolgen in derselben GUI konfigurieren (achten 
 
 12. Geben Sie einige Daten auf den Webseiten **Mailing Lists**, **Subscriber** und **Message** ein, um die Anwendung zu testen.
 
-    **Hinweis**: Löschen Sie die Anwendung nach Abschluss Ihrer Tests, um Kosten für nicht genutzte Ressourcen zu vermeiden. Falls Sie ein [kostenloses Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/ "kostenloses Testkonto") verwenden, werden die drei bereitgestellten Rollen Ihr monatliches Limit in etwa zwei Wochen verbrauchen. Um eine Bereitstellung im Azure-Verwaltungsportal zu löschen, klicken Sie am unteren Seitenrand auf **LÖSCHEN** und wählen Sie die entsprechende Staging- oder Produktionsumgebung aus.
+    **Hinweis**: Löschen Sie die Anwendung nach Abschluss Ihrer Tests, um Kosten für nicht genutzte Ressourcen zu vermeiden. Falls Sie ein [kostenloses Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/ "kostenloses Testkonto") verwenden, werden die drei bereitgestellten Rollen Ihr monatliches Limit in etwa zwei Wochen verbrauchen. Um eine Bereitstellung im Azure-Verwaltungsportal zu löschen, klicken Sie am unteren Seitenrand auf **LÖSCHEN** und wählen Sie die entsprechende Staging- oder Produktionsumgebung aus.
 
     ![pub](./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-19.png)
 
@@ -536,20 +536,20 @@ Die Ablaufverfolgung ist ein unschätzbares Werkzeug zum Debuggen von Cloud-Anwe
 
     Die Methode `ConfigureDiagnostics` in den einzelnen Worker- und Webrollen konfiguriert den Ablaufverfolgungs-Listener, sodass dieser Daten aufzeichnet, wenn Sie die Ablaufverfolgungs-API aufrufen. Weitere Informationen finden Sie unter [Using Trace in Azure Cloud Applications (Ablaufverfolgung in Azure-Cloudanwendungen, in englischer Sprache)](http://blogs.msdn.com/b/windowsazure/archive/2012/10/24/using-trace-in-windows-azure-cloud-applications-1.aspx "Using Trace in Azure").
 
-3.  Doppelklicken Sie im **Server-Explorer** auf **WADLogsTable** (erweitern Sie **Storage** / **NameIhresSpeicherkontos** / **Tables**) für das zuvor hinzugefügte Speicherkonto. Sie können einen [WCF Data Services-Filter](http://msdn.microsoft.com/en-us/library/windowsazure/ff683669.aspx "WCF-Filter") eingeben, um die angezeigten Entitäten einzuschränken. In der folgenden Abbildung werden nur Warnungs- und Fehlernachrichten angezeigt.
+3.  Doppelklicken Sie im **Server-Explorer** auf **WADLogsTable** (erweitern Sie **Storage** / **NameIhresSpeicherkontos** / **Tables**) für das zuvor hinzugefügte Speicherkonto. Sie können einen [WCF Data Services-Filter](http://msdn.microsoft.com/de-de/library/windowsazure/ff683669.aspx "WCF-Filter") eingeben, um die angezeigten Entitäten einzuschränken. In der folgenden Abbildung werden nur Warnungs- und Fehlernachrichten angezeigt.
 
     ![Dashboard](./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-trc.png)
 
 <a name="addRole"></a>Hinzufügen einer RolleninstanzHinzufügen einer weiteren Workerrolle für zusätzliche Lastanforderungen
 -----------------------------------------------------------------------------------------------------
 
-Für die Skalierung der Ressourcen in Azure-Rollen existieren zwei Ansätze: Sie können entweder die [Größe der virtuellen Computer](http://msdn.microsoft.com/en-us/library/windowsazure/ee814754.aspx "VM-Größen") und/oder die Anzahl der laufenden virtuellen Computer anpassen.
+Für die Skalierung der Ressourcen in Azure-Rollen existieren zwei Ansätze: Sie können entweder die [Größe der virtuellen Computer](http://msdn.microsoft.com/de-de/library/windowsazure/ee814754.aspx "VM-Größen") und/oder die Anzahl der laufenden virtuellen Computer anpassen.
 
-Die Größe eines virtuellen Computers ist im `vmsize`-Attribut des `WebRole-` bzw. `WorkerRole`-Elements in der Datei *ServiceDefinition.csdef* festgelegt. Mit der Standardeinstellung `Small` erhalten Sie einen Prozessorkern und 1,75 GB Arbeitsspeicher. Für Multithreading-Anwendungen, die viel Arbeitsspeicher, Speicherplatz und Bandbreite verbrauchen, können Sie diese Größe anheben, um deren Leistung zu steigern. Mit der Größe `ExtraLarge` erhalten Sie z. B. 8 Prozessorkerne und 14 GB Arbeitsspeicher. Die Erhöhung von Arbeitsspeicher, Prozessorkernen, Festplatte und Bandbreite in einem einzigen Computer bezeichnet man auch als *vertikale Skalierung*. Gute Kandidaten für vertikale Skalierung sind z. B. ASP.NET-Webanwendungen, die [asynchrone Methoden](http://www.asp.net/mvc/tutorials/mvc-4/using-asynchronous-methods-in-aspnet-mvc-4 "Async MVC") verwenden. Unter [Größen virtueller Computer und Cloud-Dienste für Azure](http://msdn.microsoft.com/en-us/library/windowsazure/ee814754.aspx "VM-Größen") finden Sie eine Liste der Ressourcen für die einzelnen VM-Größen.
+Die Größe eines virtuellen Computers ist im `vmsize`-Attribut des `WebRole-` bzw. `WorkerRole`-Elements in der Datei *ServiceDefinition.csdef* festgelegt. Mit der Standardeinstellung `Small` erhalten Sie einen Prozessorkern und 1,75 GB Arbeitsspeicher. Für Multithreading-Anwendungen, die viel Arbeitsspeicher, Speicherplatz und Bandbreite verbrauchen, können Sie diese Größe anheben, um deren Leistung zu steigern. Mit der Größe `ExtraLarge` erhalten Sie z. B. 8 Prozessorkerne und 14 GB Arbeitsspeicher. Die Erhöhung von Arbeitsspeicher, Prozessorkernen, Festplatte und Bandbreite in einem einzigen Computer bezeichnet man auch als *vertikale Skalierung*. Gute Kandidaten für vertikale Skalierung sind z. B. ASP.NET-Webanwendungen, die [asynchrone Methoden](http://www.asp.net/mvc/tutorials/mvc-4/using-asynchronous-methods-in-aspnet-mvc-4 "Async MVC") verwenden. Unter [Größen virtueller Computer und Cloud-Dienste für Azure](http://msdn.microsoft.com/de-de/library/windowsazure/ee814754.aspx "VM-Größen") finden Sie eine Liste der Ressourcen für die einzelnen VM-Größen.
 
 Workerrolle B ist in dieser Anwendung die einschränkende Komponente unter hoher Last, da diese Rolle für den Versand der E-Mails zuständig ist. (Workerrolle A erstellt lediglich Warteschlangen-Nachrichten und verbraucht daher weniger Ressourcen.) Da Workerrolle B nicht Multithreaded ist und relativ wenig Speicher verbraucht, macht vertikale Skalierung in diesem Fall wenig Sinn. Workerrolle B kann linear skalieren (d. h. die Leistung beinahe verdoppeln, indem Sie die Instanzen verdoppeln), indem Sie die Anzahl der Instanzen erhöhen. Die Erhöhung der Anzahl an Verarbeitungsinstanzen bezeichnet man als *horizontale Skalierung*. Jede Instanz ist mit Kosten verbunden. Sie sollten daher nur dann horizontal skalieren, wenn dies für Ihre Anwendung Sinn macht.
 
-Sie können eine Web- oder Workerrolle horizontal skalieren, indem Sie die Einstellung in der Visual Studio-GUI ändern oder indem Sie die *ServiceConfiguration.\*.cscfg*-Dateien direkt bearbeiten. Die Anzahl der Instanzen ist in der Registerkarte **Konfiguration** im **Eigenschaften**-Fenster der Rolle und im `Instanzen`-Element in den *.cscfg*-Dateien festgelegt. Änderungen an diesen Einstellungen treten erst nach einer erneuten Bereitstellung der aktualisierten Konfigurationsdatei in Kraft. Alternativ können Sie für vorübergehende Lastspitzen die Anzahl der Rolleninstanzen im Azure-Verwaltungsportal ändern. Sie können die Anzahl der Instanzen auch mithilfe der Azure-Verwaltungs-API ändern. Außerdem können Sie den [Autoscaling Application Block](/en-us/develop/net/how-to-guides/autoscaling/) verwenden, um Ihre Anwendung bei erhöhter Last automatisch horizontal zu skalieren. Weitere Informationen zur automatischen Skalierung finden Sie in den Links am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+Sie können eine Web- oder Workerrolle horizontal skalieren, indem Sie die Einstellung in der Visual Studio-GUI ändern oder indem Sie die *ServiceConfiguration.\*.cscfg*-Dateien direkt bearbeiten. Die Anzahl der Instanzen ist in der Registerkarte **Konfiguration** im **Eigenschaften**-Fenster der Rolle und im `Instanzen`-Element in den *.cscfg*-Dateien festgelegt. Änderungen an diesen Einstellungen treten erst nach einer erneuten Bereitstellung der aktualisierten Konfigurationsdatei in Kraft. Alternativ können Sie für vorübergehende Lastspitzen die Anzahl der Rolleninstanzen im Azure-Verwaltungsportal ändern. Sie können die Anzahl der Instanzen auch mithilfe der Azure-Verwaltungs-API ändern. Außerdem können Sie den [Autoscaling Application Block](/de-de/develop/net/how-to-guides/autoscaling/) verwenden, um Ihre Anwendung bei erhöhter Last automatisch horizontal zu skalieren. Weitere Informationen zur automatischen Skalierung finden Sie in den Links am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
 
 In diesem Abschnitt des Lernprogramms werden Sie Workerrolle B mithilfe des Verwaltungsportals horizontal skalieren. Zunächst lernen Sie allerdings, wie Sie dies in Visual Studio erledigen können.
 
@@ -580,10 +580,10 @@ Die folgenden Schritte beschreiben, wie Sie Ihre Anwendung mithilfe des Azure-Ve
 <a name="nextsteps"></a>Nächste SchritteNächste Schritte
 --------------------------------
 
-Sie haben gelernt, wie Sie die fertige Anwendung konfigurieren, bereitstellen und skalieren können. In den weiteren Lernprogrammen lernen Sie, die Anwendung von Grund auf zu erstellen. Im [nächsten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/) werden Sie die Webrolle erstellen.
+Sie haben gelernt, wie Sie die fertige Anwendung konfigurieren, bereitstellen und skalieren können. In den weiteren Lernprogrammen lernen Sie, die Anwendung von Grund auf zu erstellen. Im [nächsten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/) werden Sie die Webrolle erstellen.
 
-Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
-[Lernprogramm 3](/en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/)
+Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+[Lernprogramm 3](/de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/)
 
 
 [Set up the development environment]: #setupdevenv
@@ -600,13 +600,13 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
 [Configure and view trace data]: #trace
 [Add another worker role instance to handle increased load]: #addRole
 
-[firsttutorial]: /en-us/develop/net/tutorials/multi-tier-web-site/1-overview/
+[firsttutorial]: /de-de/develop/net/tutorials/multi-tier-web-site/1-overview/
 
-[tut3]: /en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/
-[tut5]: /en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
+[tut3]: /de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/
+[tut5]: /de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
 [NewPortal]: http://manage.windowsazure.com
-[managestorage]: /en-us/manage/services/storage/how-to-manage-a-storage-account/
-[autoscalingappblock]: /en-us/develop/net/how-to-guides/autoscaling/
+[managestorage]: /de-de/manage/services/storage/how-to-manage-a-storage-account/
+[autoscalingappblock]: /de-de/develop/net/how-to-guides/autoscaling/
 
 
 [mtas-portal-new-storage]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png

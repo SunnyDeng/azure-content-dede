@@ -36,7 +36,7 @@ Erstellen des Caches
 Konfigurieren des ASP.NET-Projekts
 ----------------------------------
 
-1.  Vergewissern Sie sich zuerst, dass Sie das neueste **Azure SDK für .NET** [installiert](http://www.windowsazure.com/en-us/downloads/?sdk=net) haben.
+1.  Vergewissern Sie sich zuerst, dass Sie das neueste **Azure SDK für .NET** [installiert](http://www.windowsazure.com/de-de/downloads/?sdk=net) haben.
 
 2.  Klicken Sie im **Projektmappen-Explorer** in Visual Studio mit der rechten Maustaste auf das ASP.NET-Projekt, und wählen Sie dann **NuGet-Pakete verwalten** aus. (Bei Verwendung von WebMatrix klicken Sie stattdessen in der Symbolleiste auf die Schaltfläche **NuGet**.)
 

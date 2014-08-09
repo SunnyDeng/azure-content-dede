@@ -3,13 +3,13 @@
 Erste Schritte mit Daten in Mobile Services
 ===========================================
 
-[Windows Store C\#](/en-us/develop/mobile/tutorials/get-started-with-data-dotnet "Windows Store C#")[Windows Store JavaScript](/en-us/develop/mobile/tutorials/get-started-with-data-js "Windows Store JavaScript")[Windows Phone](/en-us/develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/get-started-with-data-ios "iOS")[Android](/en-us/develop/mobile/tutorials/get-started-with-data-android "Android")[HTML](/en-us/develop/mobile/tutorials/get-started-with-data-html "HTML")[Xamarin.iOS](/en-us/develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/en-us/develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android")
+[Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-data-dotnet "Windows Store C#")[Windows Store JavaScript](/de-de/develop/mobile/tutorials/get-started-with-data-js "Windows Store JavaScript")[Windows Phone](/de-de/develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/get-started-with-data-ios "iOS")[Android](/de-de/develop/mobile/tutorials/get-started-with-data-android "Android")[HTML](/de-de/develop/mobile/tutorials/get-started-with-data-html "HTML")[Xamarin.iOS](/de-de/develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS")[Xamarin.Android](/de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android")
 
 Dieses Thema beschreibt den Einsatz von Azure Mobile Services für die Nutzung von Daten in HTML-Apps. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Speicher ablegt, einen neuen mobilen Dienst erstellt, den mobilen Dienst mit der App integriert und melden sich anschließend im Azure-Verwaltungsportal an, um die Änderungen an den Daten beim Ausführen der App anzuzeigen.
 
 **Hinweis**
 
-Dieses Lernprogramm vermittelt ein besseres Verständnis davon, wie Sie mit Mobile Services in Azure Daten aus einer HTML-App speichern und abrufen können. Dieses Thema behandelt viele der Schritte, die Ihnen im Mobile Services-Schnellstart abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Serviceshaben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit Mobile Servicesn](/en-us/develop/mobile/tutorials/get-started-html) abschließen.
+Dieses Lernprogramm vermittelt ein besseres Verständnis davon, wie Sie mit Mobile Services in Azure Daten aus einer HTML-App speichern und abrufen können. Dieses Thema behandelt viele der Schritte, die Ihnen im Mobile Services-Schnellstart abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Serviceshaben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit Mobile Servicesn](/de-de/develop/mobile/tutorials/get-started-html) abschließen.
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte behandelt:
 
@@ -21,7 +21,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte behandelt:
 
 **Hinweis**
 
-Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-html%2F).
+Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-html%2F).
 
 ### Weitere Anforderungen
 
@@ -140,7 +140,7 @@ Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst ei
 	![](./media/mobile-services-html-get-started-data/mobile-services-set-cors-localhost.png)
 
     <div class="dev-callout"><b>Hinweis</b>
-    	<p>Wenn Sie die Schnellstart-App auf einem anderen Webserver als dem localhost bereitstellen, müssen Sie den Hostnamen des Webservers zur Liste von <strong>Anforderungen von Hostnamen zulassen</strong> hinzufügen. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dn155871.aspx" target="_blank">Cross-Origin Resource Sharing (CORS)</a>.</p>
+    	<p>Wenn Sie die Schnellstart-App auf einem anderen Webserver als dem localhost bereitstellen, müssen Sie den Hostnamen des Webservers zur Liste von <strong>Anforderungen von Hostnamen zulassen</strong> hinzufügen. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dn155871.aspx" target="_blank">Cross-Origin Resource Sharing (CORS)</a>.</p>
     </div>
 
 Sie können den neuen mobilen Dienst nun als Datenspeicher für die App verwenden.
@@ -284,13 +284,13 @@ Nächste Schritte
 
 In diesem Lernprogramm wurden die Grundlagen für die Integration von Daten in HTML-Apps in Mobile Services behandelt. Als Nächstes können Sie eines der folgenden Lernprogramme ausführen, das auf der GetStartedWithData-App aufbaut, die Sie in diesem Lernprogramm erstellt haben:
 
--   [Prüfen und Ändern von Daten mit Skripten](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-html)
+-   [Prüfen und Ändern von Daten mit Skripten](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-html)
     <br/>Informationen zur Verwendung von Serverskripts in Mobile Servicesn, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
--   [Optimieren von Abfragen mittels Paging](/en-us/develop/mobile/tutorials/add-paging-to-data-html)
+-   [Optimieren von Abfragen mittels Paging](/de-de/develop/mobile/tutorials/add-paging-to-data-html)
     <br/>Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
-Nach Abschluss der Daten-Lernprogramme können Sie herausfinden, wie Sie Benutzer Ihrer App authentifizieren können. Probieren Sie eines der anderen Lernprogramme aus, z. B. [Erste Schritte mit Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-html).
+Nach Abschluss der Daten-Lernprogramme können Sie herausfinden, wie Sie Benutzer Ihrer App authentifizieren können. Probieren Sie eines der anderen Lernprogramme aus, z. B. [Erste Schritte mit Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-html).
 
 
 <!-- Anchors. -->
@@ -316,16 +316,16 @@ Nach Abschluss der Daten-Lernprogramme können Sie herausfinden, wie Sie Benutze
 [11]: ./media/mobile-services-html-get-started-data/mobile-services-set-cors-localhost.png
 
 <!-- URLs. -->
-[Validate and modify data with scripts]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-html
-[Refine queries with paging]: /en-us/develop/mobile/tutorials/add-paging-to-data-html
-[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started
-[Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-html
+[Validate and modify data with scripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-html
+[Refine queries with paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-html
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-html
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
 [GetStartedWithData app]:  http://go.microsoft.com/fwlink/?LinkID=286345
 
-[Mobile Services HTML/JavaScript How-to Conceptual Reference]: /en-us/develop/mobile/how-to-guides/work-with-html-js-client
+[Mobile Services HTML/JavaScript How-to Conceptual Reference]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client
 
-[Cross-origin resource sharing]: http://msdn.microsoft.com/en-us/library/windowsazure/dn155871.aspx
+[Cross-origin resource sharing]: http://msdn.microsoft.com/de-de/library/windowsazure/dn155871.aspx
 

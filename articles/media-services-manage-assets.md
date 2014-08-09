@@ -76,8 +76,8 @@ foreach (IAsset asset in _context.Assets)
 
 Weitere Informationen zum Verwalten von Medienobjekten finden Sie unter:
 
--   [Verwalten von Medienobjekten mit dem Media Services SDK für .NET](http://msdn.microsoft.com/en-us/library/jj129589.aspx)
--   [Verwalten von Medienobjekten mit der Media Services REST-API](http://msdn.microsoft.com/en-us/library/jj129583.aspx)
+-   [Verwalten von Medienobjekten mit dem Media Services SDK für .NET](http://msdn.microsoft.com/de-de/library/jj129589.aspx)
+-   [Verwalten von Medienobjekten mit der Media Services REST-API](http://msdn.microsoft.com/de-de/library/jj129583.aspx)
 
 Nächste Schritte
 ----------------

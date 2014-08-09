@@ -158,13 +158,13 @@ Nächste SchritteNächste Schritte
 
 Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twilio in einer ASP.NET-Webrolle in Azure. Bevor Sie dieses Beispiel in einer Produktionsumgebung bereitstellen, sollten Sie einige Funktionen zur Fehlerbehandlung oder andere Features hinzufügen. Beispiel:
 
--   Anstelle eines Web-Formulars könnten Sie Azure-Blob-Speicher oder eine Azure SQL-Datenbankinstanz zum Speichern von Telefonnummern und Anruftexten verwenden. Weitere Informationen zur Verwendung von Blobs in Azure finden Sie unter [Verwenden des Azure Blob-Speicherdiensts in .NET](https://www.windowsazure.com/en-us/develop/net/how-to-guides/blob-storage/). Weitere Informationen zur Verwendung von SQL-Datenbanken finden Sie unter [Verwenden der Azure SQL-Datenbank in .NET-Anwendungen](https://www.windowsazure.com/en-us/develop/net/how-to-guides/sql-database/).
--   Sie können RoleEnvironment.getConfigurationSettings verwenden, um die Twilio-Konto-ID und das Authentifizierungs-Token aus den Konfigurationseinstellungen Ihrer Anwendung abzurufen, anstelle diese Werte in Ihr Formular fest einzuprogrammieren. Weitere Informationen zur RoleEnvironment-Klasse finden Sie unter [Microsoft.WindowsAzure.ServiceRuntime-Namespace](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx).
+-   Anstelle eines Web-Formulars könnten Sie Azure-Blob-Speicher oder eine Azure SQL-Datenbankinstanz zum Speichern von Telefonnummern und Anruftexten verwenden. Weitere Informationen zur Verwendung von Blobs in Azure finden Sie unter [Verwenden des Azure Blob-Speicherdiensts in .NET](https://www.windowsazure.com/de-de/develop/net/how-to-guides/blob-storage/). Weitere Informationen zur Verwendung von SQL-Datenbanken finden Sie unter [Verwenden der Azure SQL-Datenbank in .NET-Anwendungen](https://www.windowsazure.com/de-de/develop/net/how-to-guides/sql-database/).
+-   Sie können RoleEnvironment.getConfigurationSettings verwenden, um die Twilio-Konto-ID und das Authentifizierungs-Token aus den Konfigurationseinstellungen Ihrer Anwendung abzurufen, anstelle diese Werte in Ihr Formular fest einzuprogrammieren. Weitere Informationen zur RoleEnvironment-Klasse finden Sie unter [Microsoft.WindowsAzure.ServiceRuntime-Namespace](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx).
 -   Lesen Sie die Twilio-Sicherheitsrichtlinien unter [https://www.twilio.com/docs/security](http://www.twilio.com/docs/security).
 -   Weitere Informationen zu Twilio finden Sie unter [https://www.twilio.com/docs](http://www.twilio.com/docs).
 
 Weitere InformationenWeitere Informationen
 ------------------------------------------
 
--   [Verwenden von Twilio für Telefonie- und SMS-Funktionen in einer Webrolle](/en-us/develop/net/how-to-guides/twilio/)
+-   [Verwenden von Twilio für Telefonie- und SMS-Funktionen in einer Webrolle](/de-de/develop/net/how-to-guides/twilio/)
 

@@ -40,7 +40,7 @@ Mit den folgenden Schritten können Sie einen einfachen "Hello World"-Dienst in 
 
     **Hinweis**
 
-    Falls Sie noch nie Veröffentlichungseinstellungen für Ihr Azure-Abonnement importiert haben, erhalten Sie beim Veröffentlichen eine Fehlermeldung. Informationen zum Download und Import der Veröffentlichungseinstellungen für Ihr Abonnement finden Sie unter [Verwenden von Azure PowerShell für Node.js](https://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings)
+    Falls Sie noch nie Veröffentlichungseinstellungen für Ihr Azure-Abonnement importiert haben, erhalten Sie beim Veröffentlichen eine Fehlermeldung. Informationen zum Download und Import der Veröffentlichungseinstellungen für Ihr Abonnement finden Sie unter [Verwenden von Azure PowerShell für Node.js](https://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings)
 
 Der vom **Publish-AzureServiceProject**-Cmdlet zurückgegebene Wert für **Created Website URL** enthält den vollqualifizierten Domänennamen für Ihre gehostete Anwendung. Sie müssen ein SSL-Zertifikat für diesen vollqualifizierten Domänennamen beziehen und in Azure bereitstellen.
 
@@ -126,9 +126,9 @@ Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Ve
 Zusätzliche Ressourcen
 ----------------------
 
-[Verknüpfen eines Zertifikats mit einem Dienst](http://msdn.microsoft.com/en-us/library/windowsazure/gg465718.aspx)
+[Verknüpfen eines Zertifikats mit einem Dienst](http://msdn.microsoft.com/de-de/library/windowsazure/gg465718.aspx)
 
-[Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Webrolle](/en-us/develop/nodejs/common-tasks/enable-ssl/)
+[Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Webrolle](/de-de/develop/nodejs/common-tasks/enable-ssl/)
 
-[Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt](http://msdn.microsoft.com/en-us/library/windowsazure/ff795779.aspx)
+[Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt](http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx)
 

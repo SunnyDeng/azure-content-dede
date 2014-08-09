@@ -36,10 +36,10 @@ Azure-Websites (WAWS) sind eine tolle Lösung für dieses Szenario, da Sie mit e
 
 Für Webentwickler bieten Azure-Websites alles, was diese zur Erstellung anspruchsvoller Webanwendungen benötigen. Azure-Websites ermöglichen nahtlose Integration mit Tools wie Visual Studio und SQL-Datenbank. **Websites** ermöglichen Entwicklern Folgendes:
 
--   Verwenden von Befehlszeilentools für [automatisierte Aufgaben](http://www.windowsazure.com/en-us/documentation/scripts/?services=web-sites)
--   Arbeiten mit gängigen Sprachen wie [.Net](http://www.windowsazure.com/en-us/develop/net/), [PHP](http://www.windowsazure.com/en-us/develop/php/), [Node.js](http://www.windowsazure.com/en-us/develop/nodejs/) und [Python](http://www.windowsazure.com/en-us/develop/python/)
+-   Verwenden von Befehlszeilentools für [automatisierte Aufgaben](http://www.windowsazure.com/de-de/documentation/scripts/?services=web-sites)
+-   Arbeiten mit gängigen Sprachen wie [.Net](http://www.windowsazure.com/de-de/develop/net/), [PHP](http://www.windowsazure.com/de-de/develop/php/), [Node.js](http://www.windowsazure.com/de-de/develop/nodejs/) und [Python](http://www.windowsazure.com/de-de/develop/python/)
 -   Wählen drei verschiedener Skalierungsebenen für die Skalierung auf sehr hohe Kapazitäten
--   Integrieren in andere Azure-Dienste, wie [SQL-Datenbank](http://www.windowsazure.com/en-us/documentation/services/sql-database/), [Service Bus](http://www.windowsazure.com/en-us/documentation/services/service-bus/) und [Speicher](http://www.windowsazure.com/en-us/documentation/services/storage/), oder Partnerangeboten aus dem [Azure Store](http://www.windowsazure.com/en-us/gallery/store/), beispielsweise MySQL und MongoDB
+-   Integrieren in andere Azure-Dienste, wie [SQL-Datenbank](http://www.windowsazure.com/de-de/documentation/services/sql-database/), [Service Bus](http://www.windowsazure.com/de-de/documentation/services/service-bus/) und [Speicher](http://www.windowsazure.com/de-de/documentation/services/storage/), oder Partnerangeboten aus dem [Azure Store](http://www.windowsazure.com/de-de/gallery/store/), beispielsweise MySQL und MongoDB
 -   Integrieren in Tools wie Visual Studio, Git, WebMatrix, WebDeploy, TFS und FTP
 
 ### Ich migriere meine Webanwendung mit mehreren Ebenen und einem Web-Front-End zur Cloud.
@@ -68,7 +68,7 @@ Wenn Ihre Anwendung komplexe Installation oder Konfiguration von Software und Be
 
 Sie können mit allen drei Optionen Open-Source-Sprachen und -Frameworks hosten. **Bei Clouddiensten** müssen Sie Startaufgaben verwenden, um erforderliche Open-Source-Software, die unter Windows ausgeführt wird, zu installieren und zu konfigurieren. Mit **virtuellen Computern** können Sie die Software auf dem Image eines virtuellen Computers installieren und konfigurieren. Dieser kann Windows- oder Linux-basiert sein. Wenn Ihr Open-Source-Framework auf Websites unterstützt wird, ist es viel einfacher, diese Anwendungstypen zu hosten. Dies liegt daran, dass Websites automatisch mit den Sprachen und Frameworks konfiguriert werden können, die Ihre Anwendung benötigt. **Websites** ermöglichen Ihnen Folgendes:
 
--   Verwenden vieler gängiger Open-Source-Sprachen wie [.NET](http://www.windowsazure.com/en-us/develop/net/), [PHP](http://www.windowsazure.com/en-us/develop/php/), [Node.js](http://www.windowsazure.com/en-us/develop/nodejs/) und [Python](http://www.windowsazure.com/en-us/develop/python/)
+-   Verwenden vieler gängiger Open-Source-Sprachen wie [.NET](http://www.windowsazure.com/de-de/develop/net/), [PHP](http://www.windowsazure.com/de-de/develop/php/), [Node.js](http://www.windowsazure.com/de-de/develop/nodejs/) und [Python](http://www.windowsazure.com/de-de/develop/python/)
 -   Einrichten von WordPress, Drupal, Umbraco, DNN und vielen weiteren Webanwendungen von Drittanbietern
 -   Migrieren vorhandener Anwendungen oder Erstellen einer neuen mit der Web App Gallery
 
@@ -259,7 +259,7 @@ In der folgenden Tabelle werden die Funktionen von Websites, Clouddiensten und v
 
 <sup>2</sup>Obwohl eine horizontale Skalierung virtueller Computer auf mehrere Instanzen möglich ist, müssen die Dienste, die auf diesen Computern ausgeführt werden, so geschrieben werden, dass sie diese horizontale Skalierung auffangen. Die Konfiguration eines Lastenausgleichsmoduls ist erforderlich, um Anfragen zwischen den Computern zu leiten. Zuletzt sollte eine Affinitätsgruppe für alle Computer erstellt werden, die an derselben Rolle beteiligt sind. Dies dient zum Schutz vor gleichzeitigen Neustarts bei Wartungs- oder Hardwarefehlern.
 
-<sup>3</sup>Bei Websites wird SSL für benutzerdefinierte Domänennamen nur im Standardmodus unterstützt. Weitere Informationen zur Verwendung von SSL mit Websites finden Sie unter [Configuring an SSL certificate for an Azure Web Site](http://www.windowsazure.com/en-us/develop/net/common-tasks/enable-ssl-web-site/) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
+<sup>3</sup>Bei Websites wird SSL für benutzerdefinierte Domänennamen nur im Standardmodus unterstützt. Weitere Informationen zur Verwendung von SSL mit Websites finden Sie unter [Configuring an SSL certificate for an Azure Web Site](http://www.windowsazure.com/de-de/develop/net/common-tasks/enable-ssl-web-site/) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
 
 <sup>4</sup>Web Deploy wird für Clouddienste unterstützt, wenn die Bereitstellung über einzelne Instanzrollen erfolgt. Produktionsrollen erfordern jedoch mehrere Instanzen zur Erfüllung der Azure-SLA. Daher ist Web Deploy kein geeigneter Bereitstellungsmechanismus für Clouddienste in der Produktion.
 

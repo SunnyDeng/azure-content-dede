@@ -52,11 +52,11 @@ In der Vorabversion von Virtual Machines müssen alle Computer im selben Clouddi
 
 **Schritt 1: Erstellen eines SSH-Schlüsselpaars**
 
-Azure benötigt einen öffentlichen X509-Schlüssel, der bei seiner Bereitstellung entweder PEM- oder DER-kodiert ist. Erstellen Sie ein öffentlich/privates Schlüsselpaar, indem Sie den Anweisungen unter [Verwenden von SSH mit Linux auf Azure](http://www.windowsazure.com/en-us/manage/linux/how-to-guides/ssh-into-linux/) folgen. Wenn Sie putty.exe als SSH-Client auf Windows oder Linux verwenden möchten, müssen Sie den PEM-kodierten privaten RSA-Schlüssel mithilfe von puttygen.exe in das PPK-Format umwandeln. Informationen dazu finden Sie unter [Generating SSH Key Pair for Linux VM Deployment on Windows Azure (Generieren eines SSH-Schlüsselpaars für die Bereitstellung virtueller Linux-Computer auf Windows Azure, in englischer Sprache)](http://blogs.msdn.com/b/hanuk/archive/2012/06/07/generating-ssh-key-pair-for-linux-vm-deployment-on-windows-azure.aspx).
+Azure benötigt einen öffentlichen X509-Schlüssel, der bei seiner Bereitstellung entweder PEM- oder DER-kodiert ist. Erstellen Sie ein öffentlich/privates Schlüsselpaar, indem Sie den Anweisungen unter [Verwenden von SSH mit Linux auf Azure](http://www.windowsazure.com/de-de/manage/linux/how-to-guides/ssh-into-linux/) folgen. Wenn Sie putty.exe als SSH-Client auf Windows oder Linux verwenden möchten, müssen Sie den PEM-kodierten privaten RSA-Schlüssel mithilfe von puttygen.exe in das PPK-Format umwandeln. Informationen dazu finden Sie unter [Generating SSH Key Pair for Linux VM Deployment on Windows Azure (Generieren eines SSH-Schlüsselpaars für die Bereitstellung virtueller Linux-Computer auf Windows Azure, in englischer Sprache)](http://blogs.msdn.com/b/hanuk/archive/2012/06/07/generating-ssh-key-pair-for-linux-vm-deployment-on-windows-azure.aspx).
 
 **Schritt 2: Erstellen eines virtuellen Ubuntu-Computers**
 
-Melden Sie sich zur Erstellung des ersten virtuellen Ubuntu-Computers auf dem Azure-Vorschauportal an, klicken Sie auf **Neu**, auf **Virtueller Computer**, auf **From Gallery** und auf **Ubuntu Server 12.xx**. Klicken Sie dann auf den rechten Pfeil. Ein Lernprogramm, das die Erstellung eines virtuellen Linux-Computers beschreibt, finden Sie unter [Erstellen eines virtuellen Linux-Computers](http://www.windowsazure.com/en-us/manage/linux/tutorials/virtual-machine-from-gallery/).
+Melden Sie sich zur Erstellung des ersten virtuellen Ubuntu-Computers auf dem Azure-Vorschauportal an, klicken Sie auf **Neu**, auf **Virtueller Computer**, auf **From Gallery** und auf **Ubuntu Server 12.xx**. Klicken Sie dann auf den rechten Pfeil. Ein Lernprogramm, das die Erstellung eines virtuellen Linux-Computers beschreibt, finden Sie unter [Erstellen eines virtuellen Linux-Computers](http://www.windowsazure.com/de-de/manage/linux/tutorials/virtual-machine-from-gallery/).
 
 Geben Sie anschließend auf dem Bildschirm "Konfiguration des virtuellen Computers" folgende Informationen ein:
 
@@ -183,7 +183,7 @@ Wiederholen Sie "e" für die weiteren Knoten in diesem Cluster.
 
 Nach dem Erstellen der virtuellen Maschinen ist es nun Zeit, Cassandra auf jeder dieser virtuellen Maschine einzurichten. Da Cassandra in vielen Linux-Distributionen nicht standardmäßig vorhanden ist, beschreiben wir hier einen manuellen Bereitstellungsprozess.
 
-[Bitte beachten Sie, dass wir die Software auf jedem virtuellen Computer manuell installieren. Der Prozess kann allerdings beschleunigt werden, indem wir einen vollständig funktionsfähigen virtuellen Cassandra-Computer einrichten, ihn als Basis-Image erfassen und aus diesem Basis-Image weitere Instanzen erstellen. Die Anweisungen zum Erfassen des Linux-Images finden Sie unter [Erfassen des Images eines virtuellen Linux-Computers](https://www.windowsazure.com/en-us/manage/linux/how-to-guides/capture-an-image/).]
+[Bitte beachten Sie, dass wir die Software auf jedem virtuellen Computer manuell installieren. Der Prozess kann allerdings beschleunigt werden, indem wir einen vollständig funktionsfähigen virtuellen Cassandra-Computer einrichten, ihn als Basis-Image erfassen und aus diesem Basis-Image weitere Instanzen erstellen. Die Anweisungen zum Erfassen des Linux-Images finden Sie unter [Erfassen des Images eines virtuellen Linux-Computers](https://www.windowsazure.com/de-de/manage/linux/how-to-guides/capture-an-image/).]
 
 Aufgabe 2: Einrichten von Cassandra auf jedem virtuellen Computer
 -----------------------------------------------------------------

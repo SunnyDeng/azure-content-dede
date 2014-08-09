@@ -134,7 +134,7 @@ An dieser Stelle sollte es nun möglich sein, die Tomcat-Website über einen ext
 Nächste Schritte
 ----------------
 
--   Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Servicebus und SQL-Datenbank, die Sie möglicherweise zusammen mit Ihren Java-Anwendungen verwenden möchten, finden Sie unter <http://www.windowsazure.com/en-us/develop/java/>.
+-   Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Servicebus und SQL-Datenbank, die Sie möglicherweise zusammen mit Ihren Java-Anwendungen verwenden möchten, finden Sie unter <http://www.windowsazure.com/de-de/develop/java/>.
 
 
 

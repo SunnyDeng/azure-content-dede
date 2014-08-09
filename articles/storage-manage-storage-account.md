@@ -25,7 +25,7 @@ Sie haben drei Optionen zum Replizieren des Speicherkontos:
 
 -   **Schreibgeschützte Georedundante Replikation (nur Vorschau).** Die schreibgeschützte georedundante Replikation repliziert die Daten an einem sekundären geografischen Standort und stellt Lesezugriff auf die Daten am sekundären Standort bereit. Mithilfe der schreibgeschützten georedundanten Replikation können Sie entweder vom primären oder vom sekundären Speicherort aus auf Ihre Daten zugreifen, falls einer der Speicherorte nicht verfügbar ist.
 
-Preisinformationen für die Speicherkontoreplikation finden Sie unter [Speicher – Preisdetails](http://www.windowsazure.com/en-us/pricing/details/storage/).
+Preisinformationen für die Speicherkontoreplikation finden Sie unter [Speicher – Preisdetails](http://www.windowsazure.com/de-de/pricing/details/storage/).
 
 ### So geben Sie Replikationseinstellungen für ein Speicherkonto an
 
@@ -46,7 +46,7 @@ Verwenden Sie im [Verwaltungsportal](http://manage.windowsazure.com) die Option 
 
 ### Kopieren eines Speicherzugriffsschlüssels
 
-Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüssel für die Verwendung in einer Verbindungszeichenfolge zu kopieren. Die Verbindungszeichenfolge benötigt für die Authentifizierung den Namen des Speicherkontos und einen Schlüssel. Informationen zum Konfigurieren von Verbindungszeichenfolgen für den Zugriff auf Azure-Speicherdienste finden Sie unter [Konfigurieren von Verbindungszeichenfolgen](http://msdn.microsoft.com/en-us/library/ee758697.aspx).
+Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüssel für die Verwendung in einer Verbindungszeichenfolge zu kopieren. Die Verbindungszeichenfolge benötigt für die Authentifizierung den Namen des Speicherkontos und einen Schlüssel. Informationen zum Konfigurieren von Verbindungszeichenfolgen für den Zugriff auf Azure-Speicherdienste finden Sie unter [Konfigurieren von Verbindungszeichenfolgen](http://msdn.microsoft.com/de-de/library/ee758697.aspx).
 
 1.  Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com) auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 

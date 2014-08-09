@@ -3,7 +3,7 @@
 So konfigurieren Sie PHP in Azure-Websites
 ==========================================
 
-Hier erfahren Sie, wie Sie die integrierte PHP-Laufzeit in Azure-Websites konfigurieren, eine benutzerdefinierte PHP-Laufzeit angeben und Erweiterungen in Azure-Websites aktivieren. Um Azure-Websites zu nutzen, können Sie sich für eine [kostenlose Testversion](https://www.windowsazure.com/en-us/pricing/free-trial/) anmelden. Um optimal von dieser Anleitung zu profitieren, sollten Sie zuerst eine PHP-Website in Azure-Websites erstellen (siehe [Lernprogramme im PHP Developer Center](https://www.windowsazure.com/en-us/develop/php/tutorials/)). Allgemeine Informationen zur Konfiguration von Websites in Azure-Websites finden Sie unter [How to Configure Web Sites](https://www.windowsazure.com/en-us/manage/services/web-sites/how-to-configure-websites/) (Konfigurieren von Websites, in englischer Sprache).
+Hier erfahren Sie, wie Sie die integrierte PHP-Laufzeit in Azure-Websites konfigurieren, eine benutzerdefinierte PHP-Laufzeit angeben und Erweiterungen in Azure-Websites aktivieren. Um Azure-Websites zu nutzen, können Sie sich für eine [kostenlose Testversion](https://www.windowsazure.com/en-us/pricing/free-trial/) anmelden. Um optimal von dieser Anleitung zu profitieren, sollten Sie zuerst eine PHP-Website in Azure-Websites erstellen (siehe [Lernprogramme im PHP Developer Center](https://www.windowsazure.com/de-de/develop/php/tutorials/)). Allgemeine Informationen zur Konfiguration von Websites in Azure-Websites finden Sie unter [How to Configure Web Sites](https://www.windowsazure.com/de-de/manage/services/web-sites/how-to-configure-websites/) (Konfigurieren von Websites, in englischer Sprache).
 
 Inhaltsverzeichnis
 ------------------
@@ -99,6 +99,6 @@ Nächste Schritte
 
 Nachdem Sie erfahren haben, wie Sie PHP in Azure-Websites konfigurieren, können Sie den Links unten folgen, um mehr über die nächsten Schritte zu erfahren.
 
--   [Configure, monitor, and scale your web sites in Azure (Konfigurieren, Überwachen und Skalieren von Websites in Azure, in englischer Sprache)](http://www.windowsazure.com/en-us/manage/services/web-sites/)
--   [Herunterladen des Azure SDK für PHP](http://www.windowsazure.com/en-us/develop/php/common-tasks/download-php-sdk/)
+-   [Configure, monitor, and scale your web sites in Azure (Konfigurieren, Überwachen und Skalieren von Websites in Azure, in englischer Sprache)](http://www.windowsazure.com/de-de/manage/services/web-sites/)
+-   [Herunterladen des Azure SDK für PHP](http://www.windowsazure.com/de-de/develop/php/common-tasks/download-php-sdk/)
 

@@ -37,7 +37,7 @@ Um dieses neue Feature nutzen zu können, müssen Sie Ihr Abonnement für die Pr
 
     Der Zugriff auf die Vorschau ist aktiven, zahlungspflichtigen Azure-Abonnements vorbehalten. Sie haben die Möglichkeit, mehrere Abonnements zu registrieren, pro Abonnement ist jedoch nur eine Registrierung zulässig.
 
-    Wenn Sie ein Abonnement für die Vorschau registrieren, entstehen Ihnen keine zusätzlichen Kosten. Nachdem die Vorschau jedoch aktiviert und das Premium-Kontingent eingerichtet wurde, unterliegt das Erstellen einer Premium-Datenbank den auf der Seite [Preisdetails zur SQL-Datenbank](http://www.windowsazure.com/en-us/pricing/details/sql-database/) dargelegten Preisinformationen.
+    Wenn Sie ein Abonnement für die Vorschau registrieren, entstehen Ihnen keine zusätzlichen Kosten. Nachdem die Vorschau jedoch aktiviert und das Premium-Kontingent eingerichtet wurde, unterliegt das Erstellen einer Premium-Datenbank den auf der Seite [Preisdetails zur SQL-Datenbank](http://www.windowsazure.com/de-de/pricing/details/sql-database/) dargelegten Preisinformationen.
 
     Der aktuelle Status der Anmeldeanfrage wird in der Liste der Vorschaufeatures angezeigt.
 

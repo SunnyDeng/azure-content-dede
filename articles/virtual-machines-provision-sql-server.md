@@ -15,7 +15,7 @@ In diesem Lernprogramm lernen Sie Folgendes:
 Verbinden mit dem Azure-Verwaltungsportal und Bereitstellen eines virtuellen Computers aus der Galerie
 ------------------------------------------------------------------------------------------------------
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) bei Ihrem Konto an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/) besuchen.
+1.  Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) bei Ihrem Konto an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/) besuchen.
 
 2.  Klicken Sie im Azure-Verwaltungsportal unten links auf der Webseite auf **+NEU**, klicken Sie auf **COMPUTE**, klicken Sie auf **VIRTUELLER COMPUTER** und dann auf **AUS GALERIE**.
 
@@ -24,7 +24,7 @@ Verbinden mit dem Azure-Verwaltungsportal und Bereitstellen eines virtuellen Com
     > [WACOM.NOTE] Wenn Sie einen virtuellen Computer haben, der mithilfe der Plattform-Image-Edition SQL Server 2012 Evaluation erstellt wurde, die während des Vorschauzeitraums verfügbar war, können Sie dieses nicht zu einem stündlich bezahlten Editions-Image in der Galerie upgraden. Sie haben zwei Möglichkeiten:
     > - Sie können einen neuen virtuellen Computer erstellen, indem Sie die stündlich bezahlte SQL Server-Edition aus der Galerie verwenden und die Datenbankdateien zu diesem neuen virtuellen Computer migrieren, wobei Sie den Schritten unter [Migrieren von SQL Server-Datenbankdateien und -Schema zwischen virtuellen Windows Azure-Computern mit Datenträgern](http://go.microsoft.com/fwlink/p/?LinkId=294738) folgen. **Oder**,
 
-    > -   Sie können eine vorhandene Instanz der SQL Server 2012 Evaluation-Edition zu einer anderen Edition von SQL Server 2012 entsprechend der Vereinbarung [Lizenzmobilität durch Software Assurance für Azure](http://www.windowsazure.com/en-us/pricing/license-mobility/) upgraden, indem Sie die Schritte unter [Upgrade zu einer anderen Edition von SQL Server 2012](http://msdn.microsoft.com/library/cc707783.aspx) befolgen. Informationen zum Erwerb der lizenzierten Kopie von SQL Server finden Sie unter [So kaufen Sie SQL Server](http://www.microsoft.com/en-us/sqlserver/get-sql-server/how-to-buy.aspx).
+    > -   Sie können eine vorhandene Instanz der SQL Server 2012 Evaluation-Edition zu einer anderen Edition von SQL Server 2012 entsprechend der Vereinbarung [Lizenzmobilität durch Software Assurance für Azure](http://www.windowsazure.com/de-de/pricing/license-mobility/) upgraden, indem Sie die Schritte unter [Upgrade zu einer anderen Edition von SQL Server 2012](http://msdn.microsoft.com/library/cc707783.aspx) befolgen. Informationen zum Erwerb der lizenzierten Kopie von SQL Server finden Sie unter [So kaufen Sie SQL Server](http://www.microsoft.com/en-us/sqlserver/get-sql-server/how-to-buy.aspx).
 
 4.  Geben Sie auf der Seite **Konfiguration des virtuellen Computers** die folgenden Informationen ein:
 
@@ -166,7 +166,7 @@ Der virtuelle Computer benötigt einen Endpunkt, um nach eingehender TCP-Kommuni
 
     ![Regelname](./media/virtual-machines-provision-sql-server/17Rule-Name.png)
 
-Öffnen Sie gegebenenfalls zusätzliche Ports für andere Komponenten. Weitere Informationen finden Sie unter [Konfigurieren der Windows-Firewall für den SQL Server-Zugriff](http://msdn.microsoft.com/en-us/library/cc646023.aspx).
+Öffnen Sie gegebenenfalls zusätzliche Ports für andere Komponenten. Weitere Informationen finden Sie unter [Konfigurieren der Windows-Firewall für den SQL Server-Zugriff](http://msdn.microsoft.com/de-de/library/cc646023.aspx).
 
 
 ### Konfigurieren von SQL Server für das Lauschen des TCP-Protokolls
@@ -191,7 +191,7 @@ Der virtuelle Computer benötigt einen Endpunkt, um nach eingehender TCP-Kommuni
 
 7.  Schließen Sie den SQL Server-Konfigurations-Manager.
 
-Weitere Informationen zur Aktivierung von Protokollen für SQL Server-Datenbankmodule finden Sie unter [Aktivieren oder Deaktivieren eines Servernetzwerkprotokolls](http://msdn.microsoft.com/en-us/library/ms191294.aspx).
+Weitere Informationen zur Aktivierung von Protokollen für SQL Server-Datenbankmodule finden Sie unter [Aktivieren oder Deaktivieren eines Servernetzwerkprotokolls](http://msdn.microsoft.com/de-de/library/ms191294.aspx).
 
 ### Konfigurieren von SQL Server für die Authentifizierung mit gemischtem Modus
 
@@ -259,7 +259,7 @@ Um von einem anderen Computer aus eine Verbindung zum Datenbankmodul herzustelle
 
 12. Klicken Sie auf OK.
 
-Weitere Informationen zu Anmeldenamen für SQL Server finden Sie unter [Erstellen eines Anmeldenamens](http://msdn.microsoft.com/en-us/library/aa337562.aspx).
+Weitere Informationen zu Anmeldenamen für SQL Server finden Sie unter [Erstellen eines Anmeldenamens](http://msdn.microsoft.com/de-de/library/aa337562.aspx).
 
 
 

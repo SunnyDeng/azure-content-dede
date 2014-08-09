@@ -35,7 +35,7 @@ Um die Dienstverwaltungs-API verwenden zu können, müssen Sie [ein Azure-Konto 
 Konzepte
 --------
 
-Das Azure-SDK für PHP umfasst die [Azure-Dienstverwaltungs-API](http://msdn.microsoft.com/en-us/library/windowsazure/ee460799.aspx), eine REST-API. Alle API-Vorgänge werden über SSL ausgeführt und mithilfe von X.509s v3-Zertifikaten gegenseitig authentifiziert. Der Zugriff auf die Dienstverwaltung kann über einen in Azure ausgeführten Dienst erfolgen oder direkt über das Internet, und zwar von jeder Anwendung aus, die HTTPS-Anforderungen senden und HTTPS-Antworten empfangen kann.
+Das Azure-SDK für PHP umfasst die [Azure-Dienstverwaltungs-API](http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx), eine REST-API. Alle API-Vorgänge werden über SSL ausgeführt und mithilfe von X.509s v3-Zertifikaten gegenseitig authentifiziert. Der Zugriff auf die Dienstverwaltung kann über einen in Azure ausgeführten Dienst erfolgen oder direkt über das Internet, und zwar von jeder Anwendung aus, die HTTPS-Anforderungen senden und HTTPS-Antworten empfangen kann.
 
 Erstellen einer PHP-Anwendung
 -----------------------------
@@ -62,7 +62,7 @@ Zum Erstellen des `.pem`-Zertifikats führen Sie diesen Befehl aus:
 
     `openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer`
 
-Weitere Informationen zu Azure-Zertifikaten finden Sie unter [Übersicht über Zertifikate in Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg981935.aspx). Eine vollständige Beschreibung von OpenSSL-Parametern finden Sie in der Dokumentation auf <http://www.openssl.org/docs/apps/openssl.html>.
+Weitere Informationen zu Azure-Zertifikaten finden Sie unter [Übersicht über Zertifikate in Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg981935.aspx). Eine vollständige Beschreibung von OpenSSL-Parametern finden Sie in der Dokumentation auf <http://www.openssl.org/docs/apps/openssl.html>.
 
 Falls Sie die Datei mit den Veröffentlichungseinstellungen mithilfe der [Azure-Befehlszeilentools](../command-line-tools/) heruntergeladen und importiert haben, können Sie die von den Tools erstellte `.pem`-Datei verwenden und müssen keine eigene erstellen. Die Tools erstellen eine `.cer`-Datei und laden sie nach Azure hoch; außerdem legen sie die entsprechende `.pem`-Datei im `.azure`-Verzeichnis auf Ihrem Computer ab (in Ihrem Benutzerverzeichnis).
 
@@ -104,7 +104,7 @@ Um die für das Hosten von Diensten verfügbaren Standorte aufzulisten, verwende
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -153,7 +153,7 @@ Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination 
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -198,12 +198,12 @@ Bevor Sie einen Dienst löschen können, müssen zunächst alle Bereitstellungen
 Vorgehensweise: Erstellen einer Bereitstellung
 ----------------------------------------------
 
-Die Methode **createDeployment** lädt ein neues [Dienstpaket](http://msdn.microsoft.com/en-us/library/windowsazure/gg433093) hoch und erstellt eine neue Bereitstellung in der Staging- oder Produktionsumgebung. Für diese Methode sind folgende Parameter verfügbar:
+Die Methode **createDeployment** lädt ein neues [Dienstpaket](http://msdn.microsoft.com/de-de/library/windowsazure/gg433093) hoch und erstellt eine neue Bereitstellung in der Staging- oder Produktionsumgebung. Für diese Methode sind folgende Parameter verfügbar:
 
 -   **\$name**: Der Name des gehosteten Diensts.
 -   **\$deploymentName**: Der Name der Bereitstellung.
 -   **\$slot**: Eine Aufzählung, die den Staging- oder Produktionsslot angibt.
--   **\$packageUrl**: Die URL für das Bereitstellungspaket (eine .cspgk-Datei). Die Paketdatei muss in einem Azure-Blob-Speicherkonto unter demselben Abonnement gespeichert werden wie der gehostete Dienst, in den das Paket hochgeladen wird. Zum Erstellen eines Bereitstellungspakets können Sie die [Azure-PowerShell-Cmdlets](../install-configure-powershell/) oder das [CSPack-Befehlszeilentool](http://msdn.microsoft.com/en-us/library/windowsazure/gg432988.aspx) verwenden.
+-   **\$packageUrl**: Die URL für das Bereitstellungspaket (eine .cspgk-Datei). Die Paketdatei muss in einem Azure-Blob-Speicherkonto unter demselben Abonnement gespeichert werden wie der gehostete Dienst, in den das Paket hochgeladen wird. Zum Erstellen eines Bereitstellungspakets können Sie die [Azure-PowerShell-Cmdlets](../install-configure-powershell/) oder das [CSPack-Befehlszeilentool](http://msdn.microsoft.com/de-de/library/windowsazure/gg432988.aspx) verwenden.
 -   **\$configuration**: Die Dienstkonfigurationsdatei (.cscfg-Datei).
 -   **\$label**: Der base64-codierte Name des gehosteten Diensts.
 
@@ -239,7 +239,7 @@ Mit dem folgenden Beispiel wird eine neue Bereitstellung im Produktionsslot eine
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -272,7 +272,7 @@ Vorgehensweise: Aktualisieren einer Bereitstellung
 
 Ein Bereitstellung kann mit der Methode **changeDeploymentConfiguration** oder der Methode **updateDeploymentStatus** aktualisiert werden.
 
-Die Methode **changeDeploymentConfiguration** ermöglicht das Hochladen einer neuen Dienstkonfigurationsdatei (`.cscfg`), wodurch mehrere Diensteinstellungen geändert werden können (einschließlich der Anzahl der Instanzen in einer Bereitstellung). Weitere Informationen finden Sie unter [Azure-Dienstkonfigurationsschema (.cscfg-Datei)](http://msdn.microsoft.com/en-us/library/windowsazure/ee758710.aspx). Im folgenden Beispiel wird das Hochladen einer neuen Dienstkonfigurationsdatei veranschaulicht:
+Die Methode **changeDeploymentConfiguration** ermöglicht das Hochladen einer neuen Dienstkonfigurationsdatei (`.cscfg`), wodurch mehrere Diensteinstellungen geändert werden können (einschließlich der Anzahl der Instanzen in einer Bereitstellung). Weitere Informationen finden Sie unter [Azure-Dienstkonfigurationsschema (.cscfg-Datei)](http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx). Im folgenden Beispiel wird das Hochladen einer neuen Dienstkonfigurationsdatei veranschaulicht:
 
     require_once 'vendor\autoload.php';
 
@@ -298,7 +298,7 @@ Die Methode **changeDeploymentConfiguration** ermöglicht das Hochladen einer ne
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -328,7 +328,7 @@ Mit der Methode **updateDeploymentStatus** können Sie den Status einer Bereitst
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -337,7 +337,7 @@ Mit der Methode **updateDeploymentStatus** können Sie den Status einer Bereitst
 Vorgehensweise: Verschieben von Bereitstellungen zwischen Staging und Produktion
 --------------------------------------------------------------------------------
 
-Azure bietet zwei Bereitstellungsumgebungen: Staging und Produktion. Normalerweise wird ein Dienst in der Stagingumgebung bereitgestellt, um ihn zu testen, bevor er in der Produktionsumgebung bereitgestellt wird. Wenn Sie den Dienst von der Staging- in die Produktionsumgebung hochstufen möchten, ist keine erneute Bereitstellung erforderlich. Sie können hierzu einfach die Bereitstellungen austauschen. (Weitere Informationen zum Austauschen von Bereitstellungen finden Sie unter [Übersicht über das Verwalten von Bereitstellungen in Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/hh386336.aspx).)
+Azure bietet zwei Bereitstellungsumgebungen: Staging und Produktion. Normalerweise wird ein Dienst in der Stagingumgebung bereitgestellt, um ihn zu testen, bevor er in der Produktionsumgebung bereitgestellt wird. Wenn Sie den Dienst von der Staging- in die Produktionsumgebung hochstufen möchten, ist keine erneute Bereitstellung erforderlich. Sie können hierzu einfach die Bereitstellungen austauschen. (Weitere Informationen zum Austauschen von Bereitstellungen finden Sie unter [Übersicht über das Verwalten von Bereitstellungen in Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/hh386336.aspx).)
 
 Das folgende Beispiel zeigt, wie Sie mithilfe der Methode **swapDeployment** zwei Bereitstellungen (namens `v1` und `v2`) austauschen. Im Beispiel befindet sich Bereitstellung `v1` vor dem Aufruf von **swapDeployment** im Produktionsslot und Bereitstellung `v2` im Stagingslot. Nach Aufruf von **swapDeployment** befindet sich `v2` im Produktions- und `v1` im Stagingslot.
 
@@ -355,7 +355,7 @@ Das folgende Beispiel zeigt, wie Sie mithilfe der Methode **swapDeployment** zwe
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -385,7 +385,7 @@ Verwenden Sie zum Löschen einer Bereitstellung die Methode **deleteDeployment**
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -421,7 +421,7 @@ Ein [Speicherdienst](../storage-whatis-account/) gewährt Ihnen Zugriff auf Azur
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -463,7 +463,7 @@ Sie können einen Speicherdienst löschen, indem Sie den Speicherdienstnamen an 
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -498,7 +498,7 @@ Zum Erstellen einer Affinitätsgruppe benötigen Sie einen Namen, eine Bezeichnu
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -540,7 +540,7 @@ Sie können eine Affinitätsgruppe löschen, indem Sie den Gruppennamen an die M
     catch(ServiceException $e){
         // Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
         // Fehlercodes und -meldungen sind hier verfügbar: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/ee460801
+        // http://msdn.microsoft.com/de-de/library/windowsazure/ee460801
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";

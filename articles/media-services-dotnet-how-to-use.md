@@ -9,7 +9,7 @@ Sie können Media Services auch mit den OData-basierten REST-APIs programmieren.
 
 Um die Programmierung mit der Media Services REST-API oder dem Media Services SDK zu beginnen, aktivieren Sie zuerst Ihr Azure-Konto für Media Services, wie unter [Einrichten eines Azure-Kontos für Media Services](#setup-account) beschrieben.
 
-Die aktuelle Media Services SDK-Dokumentation finden Sie [hier](http://msdn.microsoft.com/en-us/library/hh973613.aspx).
+Die aktuelle Media Services SDK-Dokumentation finden Sie [hier](http://msdn.microsoft.com/de-de/library/hh973613.aspx).
 
 Was ist Media Services?
 -----------------------
@@ -28,7 +28,7 @@ Die aktuelle Version von Media Services stellt für die Entwicklung von Medienan
 -   **Codieren**. Codieroperationen umfassen das Codieren, Transformieren und Konvertieren von Medienressourcen. Codieraufgaben können in der Cloud mit dem Azure Media Encoder ausgeführt werden. Die folgenden Codieroptionen stehen zur Verfügung:
     -   Verwenden des Azure Media Encoder und Arbeiten mit einer Reihe von Standardcodecs und -formaten wie dem branchenführenden IIS Smooth Streaming, MP4 und Konvertierung in Apple HTTP Live Streaming
     -   Konvertieren ganzer Bibliotheken oder einzelner Dateien mit umfassender Kontrolle über Ein- und Ausgabe
-    -   Große Anzahl unterstützter Dateitypen, -formate und Codecs (siehe [Unterstützte Codecs und Dateitypen für Windows Azure Media Encoder](http://msdn.microsoft.com/en-us/library/hh973634))
+    -   Große Anzahl unterstützter Dateitypen, -formate und Codecs (siehe [Unterstützte Codecs und Dateitypen für Windows Azure Media Encoder](http://msdn.microsoft.com/de-de/library/hh973634))
     -   Unterstützte Formatkonvertierungen. Mit Media Services können Sie ISO MP4-Dateien (.mp4) in das Smooth Streaming-Dateiformat (PIFF 1.3) (.ismv; isma) konvertieren. Das Smooth Streaming-Dateiformat (PIFF) kann auch in Apple HTTP Live Streaming (.msu8, .ts) konvertiert werden.
 -   **Schützen**. Schützen von Inhalten bedeutet, Live Streaming- oder bedarfsgesteuerte Inhalte zu verschlüsseln, damit sie sicher transportiert, gespeichert und zugestellt werden können. Media Services stellt eine von der DRM-Technologie unabhängige Lösung zum Schützen von Inhalten bereit. Die derzeit unterstützten DRM-Technologien sind Microsoft PlayReady und die gemeinsame MPEG-Verschlüsselung. Die Unterstützung weiterer DRM-Technologien ist vorgesehen.
 -   **Streaming**. Beim Streamen werden Inhalte live oder bedarfsgesteuert an Clients gesendet, oder es können bestimmte Mediendateien aus der Cloud heruntergeladen werden. Media Services stellt eine formatunabhängige Lösung zum Streamen von Inhalten bereit. Media Services unterstützt den Streamingursprung für die Formate Smooth Streaming, Apple HTTP Live Streaming und MP4. Die Unterstützung weiterer Formate ist vorgesehen. Sie können Streaminginhalte auch nahtlos über ein Drittanbieter-CDN übermitteln, das die Skalierung für Millionen von Benutzern ermöglicht.
@@ -78,7 +78,7 @@ Für PCs und Macs können Sie eine Streaming-Anwendung mithilfe von Microsoft Si
 
 Für Windows 8 können Sie Windows Store-Anwendungen mit einer der unterstützten Entwicklungssprachen und Konstrukten wie HTML, Javascript, XAML, C\# und C+ erstellen.
 
--   [Microsoft Smooth Streaming Client SDK for Windows 8](http://go.microsoft.com/fwlink/?LinkID=246146) (in englischer Sprache). Weitere Informationen zum Erstellen einer Windows Store-Anwendung mit diesem SDK finden Sie unter [Erstellen einer Smooth Streaming Windows Store-Anwendung](http://go.microsoft.com/fwlink/?LinkId=271647). Informationen zum Erstellen eines Smooth Streaming-Players in HTML5 finden Sie unter [Walkthrough: Building Your First HTML5 Smooth Streaming Player](http://msdn.microsoft.com/en-us/library/jj573656(v=vs.90).aspx) (Exemplarische Vorgehensweise: Erstellen Ihres ersten HTML5 Smooth Streaming-Players, in englischer Sprache).
+-   [Microsoft Smooth Streaming Client SDK for Windows 8](http://go.microsoft.com/fwlink/?LinkID=246146) (in englischer Sprache). Weitere Informationen zum Erstellen einer Windows Store-Anwendung mit diesem SDK finden Sie unter [Erstellen einer Smooth Streaming Windows Store-Anwendung](http://go.microsoft.com/fwlink/?LinkId=271647). Informationen zum Erstellen eines Smooth Streaming-Players in HTML5 finden Sie unter [Walkthrough: Building Your First HTML5 Smooth Streaming Player](http://msdn.microsoft.com/de-de/library/jj573656(v=vs.90).aspx) (Exemplarische Vorgehensweise: Erstellen Ihres ersten HTML5 Smooth Streaming-Players, in englischer Sprache).
 
 -   [Microsoft Media Platform: Player Framework for Windows 8 Windows Store Applications](http://playerframework.codeplex.com/wikipage?title=Player%20Framework%20for%20Windows%208%20Metro%20Style%20Apps&referringTitle=Home) (Microsoft-Medienplattform: Player-Framework für Windows 8 Windows Store-Anwendungen, in englischer Sprache)
 

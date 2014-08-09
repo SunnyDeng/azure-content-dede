@@ -7,7 +7,7 @@ Konvertieren einer WordPress-Website in eine Multisite
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine vorhandene WordPress-Website, die über die Galerie in Azure erstellt wurde, in eine WordPress Multisite-Installation konvertieren. Darüber hinaus erfahren Sie, wie Sie den einzelnen Unterwebsites eine benutzerdefinierte Domäne in Ihrer Installation zuweisen.
 
-Es wird davon ausgegangen, dass Sie WordPress installiert haben. Wenn dies nicht der Fall ist, folgen Sie der Anleitung unter [Erstellen einer WordPress-Website über die Galerie in Azure](https://www.windowsazure.com/en-us/develop/php/tutorials/website-from-gallery/).
+Es wird davon ausgegangen, dass Sie WordPress installiert haben. Wenn dies nicht der Fall ist, folgen Sie der Anleitung unter [Erstellen einer WordPress-Website über die Galerie in Azure](https://www.windowsazure.com/de-de/develop/php/tutorials/website-from-gallery/).
 
 Das Konvertieren einer vorhandenen WordPress-Einzelsite in eine Multisite ist im Allgemeinen sehr einfach. Viele der hier aufgeführten Schritte stammen direkt von der Seite [Create A Network](http://codex.wordpress.org/Create_A_Network) (Erstellen eines Netzwerks, in englischer Sprache) auf [WordPress Codex](http://codex.wordpress.org) (WordPress-Codex, in englischer Sprache).
 
@@ -18,9 +18,9 @@ Zulassen von Multisite
 
 Sie müssen Multisite zunächst über die Datei `wp-config.php` mit der Konstanten **WP\_ALLOW\_MULTISITE** aktivieren. Es gibt zwei Möglichkeiten zum Bearbeiten von Websitedateien: über FTP und über Git. Wenn Sie sich weder mit der Einrichtung der einen noch der anderen Methode auskennen, finden Sie weitere Informationen in den folgenden Lernprogrammen:
 
--   [PHP-Website mit MySQL und FTP](https://www.windowsazure.com/en-us/develop/php/tutorials/website-w-mysql-and-ftp/#header-0)
+-   [PHP-Website mit MySQL und FTP](https://www.windowsazure.com/de-de/develop/php/tutorials/website-w-mysql-and-ftp/#header-0)
 
--   [PHP-Website mit MySQL und Git](https://www.windowsazure.com/en-us/develop/php/tutorials/website-w-mysql-and-git/#header-1)
+-   [PHP-Website mit MySQL und Git](https://www.windowsazure.com/de-de/develop/php/tutorials/website-w-mysql-and-git/#header-1)
 
 Öffnen Sie die Datei `wp-config.php` mit dem gewünschten Texteditor, und fügen Sie oberhalb der Zeile `/* That's all, stop editing! Happy blogging. */` Folgendes hinzu:
 

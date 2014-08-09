@@ -22,7 +22,7 @@ Gehen Sie wie folgt vor, um eine Azure-Website zu erstellen.
 
 Um an diesem Lernprogramm teilnehmen zu können, benötigen Sie ein Azure-Konto mit aktivierter Azure-Websitefunktion.
 
-Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A7171371E).
+Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E).
 
 1.  Starten Sie WebMatrix.
 2.  Wenn Sie WebMatrix zum ersten Mal verwenden, werden Sie aufgefordert, sich bei Azure anzumelden. Klicken Sie sonst auf die Schaltfläche **Anmelden**, und wählen Sie **Konto hinzufügen**. Melden Sie sich mit Ihrem ****Microsoft-Konto an.
@@ -91,7 +91,7 @@ Sie können die Anwendung auf einfache Weise ändern und neu veröffentlichen. H
 Nächste Schritte
 ----------------
 
-Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](http://www.windowsazure.com/en-us/develop/nodejs/common-tasks/specifying-a-node-version/).
+Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](http://www.windowsazure.com/de-de/develop/nodejs/common-tasks/specifying-a-node-version/).
 
-Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
+Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
 

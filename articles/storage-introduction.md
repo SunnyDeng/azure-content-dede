@@ -117,7 +117,7 @@ Azure Storage stellt Speicherressourcen über eine [REST-API](http://msdn.micros
 
 -   [.NET](http://msdn.microsoft.com/library/dn495001(v=azure.10).aspx)
 -   [Nativer Code](http://msdn.microsoft.com/library/dn495438.aspx)
--   [Java](/en-us/develop/java/)
+-   [Java](/de-de/develop/java/)
 -   [Node.js](../storage/#node)
 -   [PHP](../storage/#php)
 -   [Ruby](../storage/#ruby)
@@ -129,7 +129,7 @@ Nächste Schritte
 
 Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden Ressourcen:
 
--   [Azure Storage-Dokumentation](/en-us/documentation/services/storage/)
+-   [Azure Storage-Dokumentation](/de-de/documentation/services/storage/)
 -   [Skalierbarkeits- und Leistungsziele für Azure Storage](http://msdn.microsoft.com/library/windowsazure/dn249410.aspx)
 
 ### Für .NET-Entwickler

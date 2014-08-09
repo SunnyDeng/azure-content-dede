@@ -105,7 +105,7 @@ Das folgende Beispiel zeigt, wie Sie einen **ServiceBusRestProxy** instanziieren
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und Nachrichten finden Sie unter: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179357
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179357
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -139,7 +139,7 @@ Um eine Nachricht an eine Service Bus-Warteschlange zu senden, ruft Ihre Anwendu
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und Nachrichten finden Sie unter: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/hh780775
+        // http://msdn.microsoft.com/de-de/library/windowsazure/hh780775
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -190,7 +190,7 @@ Das folgende Beispiel zeigt, wie eine Nachricht mit dem nicht standardmäßig ve
     catch(ServiceException $e){
         // Ausnahme anhand von Fehlercodes und Meldungen behandeln.
         // Fehlercodes und Nachrichten finden Sie unter:
-        // http://msdn.microsoft.com/en-us/library/windowsazure/hh780735
+        // http://msdn.microsoft.com/de-de/library/windowsazure/hh780735
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -208,5 +208,5 @@ Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **d
 Nächste Schritte
 ----------------
 
-Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/en-us/library/windowsazure/hh367516.aspx).
+Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx).
 

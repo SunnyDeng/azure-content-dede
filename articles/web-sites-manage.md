@@ -25,9 +25,9 @@ Die Verwaltungsseite **Dashboard** umfasst die folgenden Abschnitte:
  - **Data Out** - Messung der Daten, die von der Website an Clients gesendet wurden.
  - **HTTP Server Errors** - Anzahl der gesendeten Fehlermeldungen zu HTTP "5xx Serverfehler".
  - **Requests** - Anzahl aller Clientanforderungen an die Website.
- <br />**Hinweis:** Sie können zusätzliche Leistungskennzahlen auf der Verwaltungsseite **Monitor** hinzufügen, indem Sie unten auf der Seite auf **Add Metrics** klicken. Weitere Informationen finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/).
+ <br />**Hinweis:** Sie können zusätzliche Leistungskennzahlen auf der Verwaltungsseite **Monitor** hinzufügen, indem Sie unten auf der Seite auf **Add Metrics** klicken. Weitere Informationen finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/).
 
--   **Web Endpoint Status** - Eine Liste von Web-Endpunkten, die zur Überwachung konfiguriert wurden. Falls keine Endpunkte konfiguriert wurden, klicken Sie auf **Configure Web Endpoint Monitoring**, und wechseln Sie zum Abschnitt **Monitoring** der Verwaltungsseite **Configure**. Weitere Informationen finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/).
+-   **Web Endpoint Status** - Eine Liste von Web-Endpunkten, die zur Überwachung konfiguriert wurden. Falls keine Endpunkte konfiguriert wurden, klicken Sie auf **Configure Web Endpoint Monitoring**, und wechseln Sie zum Abschnitt **Monitoring** der Verwaltungsseite **Configure**. Weitere Informationen finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/).
 
 -   **Autoscale Status** - Im Standardmodus können Sie automatisch Ihre Ressourcen skalieren, sodass Sie nur soviel wie nötig ausgeben. Um die automatische Skalierung zu aktivieren, verwenden Sie **Configure Autoscale**, woraufhin Sie zur Seite **Scale** gelangen. Falls sich Ihre Website derzeit im Free- oder Shared-Modus befindet, müssen Sie zum Standardmodus wechseln (auf der Seite **Scale**), bevor Sie automatische Skalierung konfigurieren können. Über **Autoscale Operation Logs** gelangen Sie zum Portal **Management Services**, wo Sie den Verlauf der automatischen Skalierung Ihrer Website anzeigen können. Die Standardabfrage erfolgt für die letzten 24 Stunden, Sie können die Abfrage jedoch anpassen.
 
@@ -48,7 +48,7 @@ Die Verwaltungsseite **Dashboard** umfasst die folgenden Abschnitte:
  - **Management Services** - Klicken Sie auf den Link **Operation Logs**, um die Vorgangsprotokolle für Ihre Website aus dem Microsoft Azure-Verwaltungsdienstportal anzuzeigen.
  - **Virtual IP Address** - Zeigt die virtuelle IP-Adresse der Website an, wenn Sie im Abschnitt **SSL Bindings** der Registerkarte **Configure** eine IP-basierte SSL-Bindung für die Website konfiguriert haben.
  - **Site URL** - Gibt die öffentliche zugängliche Adresse der Website im Internet an.
- - **Compute Mode** - Gibt an, ob die Website im Free-, Shared-, Basic- oder Standardmodus ausgeführt wird. Weitere Informationen zum Webskalierungsgruppen-Modus finden Sie unter [Skalieren von Websites](http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-scale-websites).
+ - **Compute Mode** - Gibt an, ob die Website im Free-, Shared-, Basic- oder Standardmodus ausgeführt wird. Weitere Informationen zum Webskalierungsgruppen-Modus finden Sie unter [Skalieren von Websites](http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-scale-websites).
  - **FTP Hostname** - Gibt die zu verwendende URL an, wenn die Veröffentlichung auf der Website über FTP erfolgt.
  - **FTPS Hostname** - Gibt die zu verwendende URL an, wenn die Veröffentlichung auf der Website über FTPS erfolgt.
  - **Deployment User / FTP User** - Gibt das zu verwendende Konto an, wenn die Bereitstellung der Website auf Microsoft Azure über FTP oder Git erfolgt.
@@ -66,12 +66,12 @@ Diese Registerkarte wird nur angezeigt, wenn Sie die Bereitstellung über die Qu
 Monitor
 -------
 
-Die Verwaltungsseite **Monitor** enthält ein Diagramm mit den Nutzungsinformationen der Website. Standardmäßig zeigt dieses Diagramm dieselben Kennzahlen wie das Diagramm im **Dashboard** an, das oben im Abschnitt "Dashboard" beschrieben ist. Das Diagramm kann auch zur Anzeige der Kennzahlen für HTTP-Erfolge, HTTP-Umleitungen, HTTP 401-Fehler, HTTP 403-Fehler, HTTP 404-Fehler und HTTP 406-Fehler konfiguriert werden. Weitere Informationen zu diesen Kennzahlen finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/).
+Die Verwaltungsseite **Monitor** enthält ein Diagramm mit den Nutzungsinformationen der Website. Standardmäßig zeigt dieses Diagramm dieselben Kennzahlen wie das Diagramm im **Dashboard** an, das oben im Abschnitt "Dashboard" beschrieben ist. Das Diagramm kann auch zur Anzeige der Kennzahlen für HTTP-Erfolge, HTTP-Umleitungen, HTTP 401-Fehler, HTTP 403-Fehler, HTTP 404-Fehler und HTTP 406-Fehler konfiguriert werden. Weitere Informationen zu diesen Kennzahlen finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/).
 
 WebJobs
 -------
 
-Auf der Verwaltungsseite für WebJobs können Sie Aufgaben für Ihre Website bei Bedarf, geplant oder kontinuierlich ausführen lassen. Weitere Informationen finden Sie unter [Verwenden der WebJobs-Funktion auf Microsoft Azure-Websites](http://www.windowsazure.com/en-us/documentation/articles/web-sites-create-web-jobs/).
+Auf der Verwaltungsseite für WebJobs können Sie Aufgaben für Ihre Website bei Bedarf, geplant oder kontinuierlich ausführen lassen. Weitere Informationen finden Sie unter [Verwenden der WebJobs-Funktion auf Microsoft Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-create-web-jobs/).
 
 Configure
 ---------
@@ -93,7 +93,7 @@ Die Verwaltungsseite **Configure** dient zum Festlegen von anwendungsspezifische
 -   **Handler Mappings** - Fügen Sie benutzerdefinierte Skriptprozessoren hinzu, die Anforderungen für bestimmte Dateitypen verarbeiten (z. B. \*.php).
 -   **Virtual Applications and Directories** - Konfigurieren Sie die mit Ihrer Website verknüpften virtuellen Anwendungen und Verzeichnisse. Sie haben außerdem die Möglichkeit, ein virtuelles Verzeichnis als Anwendung in der Website-Konfiguration zu markieren.
 
-Weitere Informationen zur Konfiguration einer Website finden Sie unter [Konfigurieren von Websites](http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-configure-websites).
+Weitere Informationen zur Konfiguration einer Website finden Sie unter [Konfigurieren von Websites](http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-configure-websites).
 
 Scale
 -----
@@ -102,7 +102,7 @@ Auf der Verwaltungsseite **Scale** können Sie den Webskalierungsgruppen-Modus (
 
 Im **Standard**-Modus können Sie außerdem die Kernanzahl und die Speicherkapazität jeder Instanz erhöhen, indem Sie **Instance Size** ändern. Für bessere Kosteneffektivität sollten Sie die Option **Autoscale** verwenden, damit Microsoft Azure die Ressourcen für Ihre Website dynamisch zuweist.
 
-Weitere Informationen zur Konfiguration von Skalierungsoptionen für eine Website finden Sie unter [Skalieren von Websites](http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-scale-websites).
+Weitere Informationen zur Konfiguration von Skalierungsoptionen für eine Website finden Sie unter [Skalieren von Websites](http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-scale-websites).
 
 Verknüpfte Ressourcen
 ---------------------
@@ -112,7 +112,7 @@ Die Verwaltungsseite **Linked Resources** enthält eine Liste der Microsoft Azur
 Backups
 -------
 
-Auf der Verwaltungsseite **Backups** können Sie automatisierte oder manuelle Sicherungen der Website erstellen, die Website in einem vorherigen Zustand wiederherstellen oder eine neue Website basierend auf einer Sicherung erstellen. Weitere Informationen finden Sie unter [Sicherungen von Microsoft Azure-Websites](http://www.windowsazure.com/en-us/documentation/articles/web-sites-backup/) und unter [Wiederherstellen einer Microsoft Azure-Website](http://www.windowsazure.com/en-us/documentation/articles/web-sites-restore/).
+Auf der Verwaltungsseite **Backups** können Sie automatisierte oder manuelle Sicherungen der Website erstellen, die Website in einem vorherigen Zustand wiederherstellen oder eine neue Website basierend auf einer Sicherung erstellen. Weitere Informationen finden Sie unter [Sicherungen von Microsoft Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-backup/) und unter [Wiederherstellen einer Microsoft Azure-Website](http://www.windowsazure.com/de-de/documentation/articles/web-sites-restore/).
 
 Symbole auf der Verwaltungsseite
 --------------------------------

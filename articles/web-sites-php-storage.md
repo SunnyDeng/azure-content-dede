@@ -111,7 +111,7 @@ Bevor Sie Daten speichern können, müssen Sie zuerst einen Container, sprich di
           
           >
 
-    Fehlercodes und eine Meldungsübersicht finden Sie hier: [http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx](http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx)
+    Fehlercodes und eine Meldungsübersicht finden Sie hier: [http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx](http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx)
 
 Abfragen einer Tabelle
 ----------------------
@@ -277,7 +277,7 @@ Die Tasklist-Anwendung bietet die Möglichkeit, ein Element als "abgeschlossen" 
 
           $result = $tableRestProxy->queryEntities('tasks', 'PartitionKey eq 
 
-    Wie Sie sehen hat der übergebene Abfragefilter das Format `Key eq 'Value'`. Eine umfassende Beschreibung der Abfragesyntax finden Sie [hier](http://msdn.microsoft.com/en-us/library/windowsazure/dd894031.aspx).
+    Wie Sie sehen hat der übergebene Abfragefilter das Format `Key eq 'Value'`. Eine umfassende Beschreibung der Abfragesyntax finden Sie [hier](http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx).
 
 -   Dann können Sie die Eigenschaften ändern:
 

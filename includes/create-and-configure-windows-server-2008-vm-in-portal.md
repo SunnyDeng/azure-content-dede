@@ -38,4 +38,4 @@ Führen Sie die folgenden Schritte aus, um einen virtuellen Computer zu erstelle
 
 [1]: http://go.microsoft.com/fwlink/p/?LinkID=294063
 [2]: http://manage.windowsazure.com
-[3]: http://msdn.microsoft.com/en-us/library/ms161962.aspx
+[3]: http://msdn.microsoft.com/de-de/library/ms161962.aspx

@@ -53,7 +53,7 @@ Es gibt drei Möglichkeiten zum Zugreifen auf Diagnoseprotokolle: über das File
 
     npm install azure-cli -g
 
-Nachdem sie installiert wurden, können Sie mit dem Befehl "azure" auf die Tools zugreifen. Sie müssen die Befehlszeilentools zunächst für die Verwendung Ihrer Azure-Abonnements konfigurieren. Informationen hierzu finden Sie im Abschnitt **Herunterladen und Importieren der Veröffentlichungseinstellungen** des Artikels [Verwenden der Azure-Befehlszeilentools](https://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+Nachdem sie installiert wurden, können Sie mit dem Befehl "azure" auf die Tools zugreifen. Sie müssen die Befehlszeilentools zunächst für die Verwendung Ihrer Azure-Abonnements konfigurieren. Informationen hierzu finden Sie im Abschnitt **Herunterladen und Importieren der Veröffentlichungseinstellungen** des Artikels [Verwenden der Azure-Befehlszeilentools](https://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
 ### FTP
 
@@ -98,7 +98,7 @@ Nächste Schritte
 
 In diesem Artikel haben Sie erfahren, wie Sie Diagnoseinformationen für Azure aktivieren und darauf zugreifen. Diese Informationen sind nützlich, um in der Anwendung auftretende Probleme zu analysieren, Sie können jedoch auch auf ein Problem mit einem Modul, das Sie verwenden, hinweisen, oder angeben, dass die von den Azure-Websites verwendete Version von Node.js sich von der in Ihrer Entwicklungsumgebung verwendeten Version unterscheidet.
 
-Weitere Informationen zur Arbeit mit Modulen in Azure finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen](https://www.windowsazure.com/en-us/develop/nodejs/common-tasks/working-with-node-modules/).
+Weitere Informationen zur Arbeit mit Modulen in Azure finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen](https://www.windowsazure.com/de-de/develop/nodejs/common-tasks/working-with-node-modules/).
 
-Weitere Informationen zum Festlegen einer Node.js-Version für Ihre Anwendung finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](https://www.windowsazure.com/en-us/develop/nodejs/common-tasks/specifying-a-node-version/).
+Weitere Informationen zum Festlegen einer Node.js-Version für Ihre Anwendung finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](https://www.windowsazure.com/de-de/develop/nodejs/common-tasks/specifying-a-node-version/).
 

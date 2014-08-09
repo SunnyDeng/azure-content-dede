@@ -32,7 +32,7 @@ Sie lernen Folgendes:
 <a name="prerequisites"></a>Voraussetzungen
 ---------------
 
-Dieses Lernprogramm verwendet Entwicklungsumgebung, Webprojekt und Azure-Website, die Sie unter [Erste Schritte mit Windows Azure und ASP.NET](/en-us/develop/net/tutorials/get-started/) eingerichtet haben. Die Codebeispiele in diesem Lernprogramm stammen aus einer C\# MVC-Webanwendung. Die Prozeduren gelten jedoch auch für die Problembehandlung in Visual Basic- und Web Forms-Anwendungen.
+Dieses Lernprogramm verwendet Entwicklungsumgebung, Webprojekt und Azure-Website, die Sie unter [Erste Schritte mit Windows Azure und ASP.NET](/de-de/develop/net/tutorials/get-started/) eingerichtet haben. Die Codebeispiele in diesem Lernprogramm stammen aus einer C\# MVC-Webanwendung. Die Prozeduren gelten jedoch auch für die Problembehandlung in Visual Basic- und Web Forms-Anwendungen.
 
 Zum Remotedebuggen benötigen Sie Visual Studio 2013 oder Visual Studio 2012 mit Update 4. Die weiteren im Lernprogramm beschriebenen Features funktionieren auch unter Visual Studio 2013 Express für das Web und Visual Studio 2012 Express für das Web.
 
@@ -54,7 +54,7 @@ Visual Studio bietet Zugriff auf einen Teil der Site-Verwaltungsfunktionen und K
 
 2.  Erweitern Sie im **Server-Explorer** den Knoten **Azure** und anschließend den Knoten **Websites**.
 
-3.  Klicken Sie mit der rechten Maustaste auf den Knoten der Website, die Sie in [Erste Schritte mit Windows Azure und ASP.NET](/en-us/develop/net/tutorials/get-started/) erstellt haben, und klicken Sie anschließend auf **Anzeigeeinstellungen**.
+3.  Klicken Sie mit der rechten Maustaste auf den Knoten der Website, die Sie in [Erste Schritte mit Windows Azure und ASP.NET](/de-de/develop/net/tutorials/get-started/) erstellt haben, und klicken Sie anschließend auf **Anzeigeeinstellungen**.
 
     ![Anzeigeeinstellungen im Server-Explorer](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewsettings.png)
 
@@ -66,7 +66,7 @@ Visual Studio bietet Zugriff auf einen Teil der Site-Verwaltungsfunktionen und K
 
     Weitere Informationen zu den Feldern für App-Einstellungen und Verbindungszeichenfolgen in diesem Fenster finden Sie unter [Azure-Websites: How Application Strings and Connection Strings Work](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) (Funktionsweise von Anwendungs- und Verbindungszeichenfolgen, in englischer Sprache).
 
-    Falls Sie eine Verwaltungsaufgabe ausführen möchten, die in diesem Fenster nicht angeboten wird, können Sie auf **Alle Website-Einstellungen** klicken, um das Verwaltungsportal in einem Browserfenster zu öffnen. Weitere Informationen finden Sie unter [Konfigurieren von Websites](/en-us/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
+    Falls Sie eine Verwaltungsaufgabe ausführen möchten, die in diesem Fenster nicht angeboten wird, können Sie auf **Alle Website-Einstellungen** klicken, um das Verwaltungsportal in einem Browserfenster zu öffnen. Weitere Informationen finden Sie unter [Konfigurieren von Websites](/de-de/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
 
 <a name="remoteview"></a>Remoteansicht
 -------------
@@ -117,9 +117,9 @@ Falls die detaillierte Fehlermeldung nicht genügend Informationen liefert und s
 
 Remotedebuggen funktioniert nicht in den Express-Editionen von Visual Studio.
 
-Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP.NET](/en-us/develop/net/tutorials/get-started/) erstellte Projekt remote debuggen können.
+Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP.NET](/de-de/develop/net/tutorials/get-started/) erstellte Projekt remote debuggen können.
 
-1.  Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit Windows Azure und ASP.NET](/en-us/develop/net/tutorials/get-started/) erstellt haben.
+1.  Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit Windows Azure und ASP.NET](/de-de/develop/net/tutorials/get-started/) erstellt haben.
 
 2.  Öffnen Sie die Datei *Controllers\\HomeController.cs*.
 
@@ -136,7 +136,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 5.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und anschließend auf **Veröffentlichen**.
 
-6.  Wählen Sie in der Dropdownliste **Profil** dasselbe Profil aus, das Sie in [Erste Schritte mit Windows Azure und ASP.NET](/en-us/develop/net/tutorials/get-started/) verwendet haben.
+6.  Wählen Sie in der Dropdownliste **Profil** dasselbe Profil aus, das Sie in [Erste Schritte mit Windows Azure und ASP.NET](/de-de/develop/net/tutorials/get-started/) verwendet haben.
 
 7.  Wechseln Sie zur Registerkarte **Einstellungen**, ändern Sie **Konfiguration** auf **Debug** und klicken Sie anschließend auf **Veröffentlichen**.
 
@@ -205,11 +205,11 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
             <httpRuntime targetFramework="4.5" />
           </system.web>
 
--   Falls der Debugger den gewünschten Code nicht schrittweise ausführt, müssen Sie möglicherweise die Einstellung "Nur eigenen Code" ändern. Weitere Informationen finden Sie unter [Schrittweises Durchlaufen für "Nur mein Code" beschränken](http://msdn.microsoft.com/en-us/library/vstudio/y740d9d3.aspx#BKMK_Restrict_stepping_to_Just_My_Code).
+-   Falls der Debugger den gewünschten Code nicht schrittweise ausführt, müssen Sie möglicherweise die Einstellung "Nur eigenen Code" ändern. Weitere Informationen finden Sie unter [Schrittweises Durchlaufen für "Nur mein Code" beschränken](http://msdn.microsoft.com/de-de/library/vstudio/y740d9d3.aspx#BKMK_Restrict_stepping_to_Just_My_Code).
 
 -   Bei Aktivierung der Remotedebuggen-Funktion startet ein Timer auf dem Server, und die Funktion wird nach 48 Stunden automatisch abgeschaltet. Dieses Limit von 48 Stunden existiert aus Sicherheits- und Leistungsgründen. Sie können die Funktion jederzeit und beliebig oft aktivieren. Wenn Sie nicht aktiv debuggen, sollten Sie die Funktion jedoch deaktivieren.
 
--   Nun können Sie den Debugger manuell an beliebige Prozesse anhängen. Sie können nicht nur den Website-Prozess (w3wp.exe) debuggen, sondern auch andere Prozesse wie z. B. [WebJobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter [Debuggen in Visual Studio](http://msdn.microsoft.com/en-us/library/vstudio/sc65sadd.aspx).
+-   Nun können Sie den Debugger manuell an beliebige Prozesse anhängen. Sie können nicht nur den Website-Prozess (w3wp.exe) debuggen, sondern auch andere Prozesse wie z. B. [WebJobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter [Debuggen in Visual Studio](http://msdn.microsoft.com/de-de/library/vstudio/sc65sadd.aspx).
 
 <a name="logsoverview"></a>Übersicht über ProtokolleÜbersicht über Diagnoseprotokolle
 ----------------------------------------------------------
@@ -217,7 +217,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 ASP.NET-Anwendungen in Azure-Websites können die folgenden Arten von Protokollen generieren:
 
 -   **Ablaufverfolgungsprotokolle**
-     Anwendungen erzeugen diese Protokolle, indem sie Methoden der Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/en-us/library/system.diagnostics.trace.aspx) aufrufen.
+     Anwendungen erzeugen diese Protokolle, indem sie Methoden der Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/de-de/library/system.diagnostics.trace.aspx) aufrufen.
 -   **Webserver-Protokolle**
      Der Webserver erstellt einen Protokolleintrag für jede HTTP-Anforderung an die Site.
 -   **Detaillierte Fehlerprotokolle**
@@ -234,7 +234,7 @@ Die Protokolle werden in den Ordner *LogFiles* im Dateisystem Ihrer Website gesc
 
 In diesem Abschnitt werden Sie die folgenden Aufgaben ausführen:
 
--   Hinzufügen von Ablaufverfolgungs-Anweisungen im Webprojekt, das Sie [im vorigen Lernprogramm](/en-us/develop/net/tutorials/get-started/) erstellt haben.
+-   Hinzufügen von Ablaufverfolgungs-Anweisungen im Webprojekt, das Sie [im vorigen Lernprogramm](/de-de/develop/net/tutorials/get-started/) erstellt haben.
 -   Anzeigen der Protokolle, wenn Sie das Projekt lokal ausführen.
 -   Anzeigen der Protokolle, während diese von der Anwendung unter Azure generiert werden.
 
@@ -310,7 +310,7 @@ In diesem Abschnitt werden Sie die folgenden Aufgaben ausführen:
 
     Mit dem `WebPageTraceListener` können Sie die Ablaufverfolgungsausgabe unter `/trace.axd` anzeigen.
 
-1.  Fügen Sie ein [trace](http://msdn.microsoft.com/en-us/library/vstudio/6915t83k(v=vs.100).aspx)-Element unter `<system.web>` in der Web.config-Datei ein, wie im folgenden Beispiel gezeigt:
+1.  Fügen Sie ein [trace](http://msdn.microsoft.com/de-de/library/vstudio/6915t83k(v=vs.100).aspx)-Element unter `<system.web>` in der Web.config-Datei ein, wie im folgenden Beispiel gezeigt:
 
          <trace enabled="true" writeToDiagnosticsTrace="true" mostRecent="true" pageOutput="false" />
 
@@ -415,7 +415,7 @@ Webserverprotokolle zeichnen sämtliche HTTP-Aktivitäten der Website auf Sie m�
 
     ![Webserverprotokolle im Ausgabefenster](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-wslogs.png)
 
-Bei der ersten Aktivierung der Webserverprotokolle in Visual Studio schreibt Azure die Protokolle standardmäßig in das Dateisystem. Alternativ können Sie im Verwaltungsportal angeben, dass die Webserverprotokolle in einen Blob-Container in einem Speicherkonto geschrieben werden sollen. Weitere Informationen finden Sie im Abschnitt **Diagnose** unter [Konfigurieren von Websites](/en-us/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
+Bei der ersten Aktivierung der Webserverprotokolle in Visual Studio schreibt Azure die Protokolle standardmäßig in das Dateisystem. Alternativ können Sie im Verwaltungsportal angeben, dass die Webserverprotokolle in einen Blob-Container in einem Speicherkonto geschrieben werden sollen. Weitere Informationen finden Sie im Abschnitt **Diagnose** unter [Konfigurieren von Websites](/de-de/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
 
 Wenn Sie die Webserverprotokollierung für ein Azure-Speicherkonto im Verwaltungsportal aktivieren und die Protokollierung anschließend in Visual Studio deaktivieren, werden die Speicherkontoeinstellungen bei der nächsten Aktivierung wiederhergestellt.
 
@@ -544,7 +544,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
     ![Speicherprotokolle in der Tabellenansicht](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-    Diese Ansicht enthält zusätzliche Felder, die in keiner der anderen Ansichten angezeigt werden. Außerdem können Sie die Protokolle in dieser Ansicht mithilfe der Abfrage-Generator-GUI filtern. Weitere Informationen finden Sie im Abschnitt "Working with Table Resources - Filtering Entities" (Arbeiten mit Tabellenressourcen - Entitätenfilter" unter [Browsing Storage Resources with Server Explorer](http://msdn.microsoft.com/en-us/library/windowsazure/ff683677.aspx) (Durchsuchen von Speicherressourcen im Server-Explorer, in englischer Sprache).
+    Diese Ansicht enthält zusätzliche Felder, die in keiner der anderen Ansichten angezeigt werden. Außerdem können Sie die Protokolle in dieser Ansicht mithilfe der Abfrage-Generator-GUI filtern. Weitere Informationen finden Sie im Abschnitt "Working with Table Resources - Filtering Entities" (Arbeiten mit Tabellenressourcen - Entitätenfilter" unter [Browsing Storage Resources with Server Explorer](http://msdn.microsoft.com/de-de/library/windowsazure/ff683677.aspx) (Durchsuchen von Speicherressourcen im Server-Explorer, in englischer Sprache).
 
 13. Klicken Sie mit der rechten Maustaste auf eine der Zeilen und klicken Sie anschließend auf **Bearbeiten**, um die Details für eine einzelne Zeile anzuzeigen.
 
@@ -614,14 +614,14 @@ Sie haben gelernt, wie Visual Studio die Anzeige der Protokolle von Azure-Websit
 
 Weitere Informationen zur Problembehandlung in Azure-Websites finden Sie in den folgenden Ressourcen:
 
--   [Problembehandlung in Azure](/en-us/develop/net/best-practices/troubleshooting/)
+-   [Problembehandlung in Azure](/de-de/develop/net/best-practices/troubleshooting/)
      Ein White Paper mit einer kurzen Einführung zu Azure-Websites.
--   [Problembehandlung in Websites](/en-us/develop/net/best-practices/troubleshooting-web-sites/)
+-   [Problembehandlung in Websites](/de-de/develop/net/best-practices/troubleshooting-web-sites/)
      Eine Einleitung mit Fokus auf Azure-Websites.
--   [Aktivieren der Diagnoseprotokollierung für Azure-Websites](/en-us/develop/net/common-tasks/diagnostics-logging-and-instrumentation/)
+-   [Aktivieren der Diagnoseprotokollierung für Azure-Websites](/de-de/develop/net/common-tasks/diagnostics-logging-and-instrumentation/)
      Behandelt im Wesentlichen dieselben Informationen wie dieses Lernprogramm, konzentriert sich jedoch auf das Abrufen der Diagnoseprotokolle ohne Visual Studio.
--   [Überwachung von Websites](/en-us/manage/services/web-sites/how-to-monitor-websites/)
-     Der Abschnitt [Konfigurieren von Diagnose und Herunterladen von Protokollen](/en-us/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics) enthält wichtige Informationen, die nicht in den Dokumenten zu Problembehandlung enthalten sind.
+-   [Überwachung von Websites](/de-de/manage/services/web-sites/how-to-monitor-websites/)
+     Der Abschnitt [Konfigurieren von Diagnose und Herunterladen von Protokollen](/de-de/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics) enthält wichtige Informationen, die nicht in den Dokumenten zu Problembehandlung enthalten sind.
 
 Falls Sie spezifische Fragen zur Problembehandlung haben, können Sie diese in einem der folgenden Foren stellen:
 
@@ -631,7 +631,7 @@ Falls Sie spezifische Fragen zur Problembehandlung haben, können Sie diese in e
 
 ### Debuggen in Visual Studio
 
-Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter dem MSDN-Thema [Debuggen in Visual Studio](http://msdn.microsoft.com/en-us/library/vstudio/sc65sadd.aspx) und unter [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx) (Tipps zum Debuggen in Visual Studio 2010, in englischer Sprache).
+Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter dem MSDN-Thema [Debuggen in Visual Studio](http://msdn.microsoft.com/de-de/library/vstudio/sc65sadd.aspx) und unter [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx) (Tipps zum Debuggen in Visual Studio 2010, in englischer Sprache).
 
 Falls Ihre Website eine Azure-Web-API oder ein Mobile Services-Back-End verwendet und Sie diese Komponenten debuggen möchten, finden Sie weitere Informationen unter [Debugging .NET Backend in Visual Studio](http://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx) (Debuggen von .NET-Back-Ends in Visual Studio, in englischer Sprache).
 
@@ -641,14 +641,14 @@ Momentan sind keine vollständigen und aktuellen Einführungen zur Ablaufverfolg
 
 -   [Monitoring and Telemetry (Building Real-World Cloud Apps with Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry) (Überwachung und Telemetrie (Erstellen von Cloud-Anwendungen mit Azure), in englischer Sprache).
 	<br/>Dieses E-Book-Kapitel enthält Empfehlungen zur Ablaufverfolgung in Azure-Cloudanwendungen.
--   [ASP.NET Tracing](http://msdn.microsoft.com/en-us/library/ms972204.aspx) (Ablaufverfolgung in ASP.NET, in englischer Sprache).
+-   [ASP.NET Tracing](http://msdn.microsoft.com/de-de/library/ms972204.aspx) (Ablaufverfolgung in ASP.NET, in englischer Sprache).
 	<br/>Ein älterer Artikel, der sich jedoch immer noch gut als Einstieg in das Thema eignet.
--   [Trace Listeners](http://msdn.microsoft.com/en-us/library/4y5y10s7.aspx) (Ablaufverfolgungs-Listener, in englischer Sprache)
-     <br/>Informationen über Ablaufverfolgungs-Listener, allerdings wird der [WebPageTraceListener](http://msdn.microsoft.com/en-us/library/system.web.webpagetracelistener.aspx) nicht behandelt.
--   [Exemplarische Vorgehensweise: Integrieren der ASP.NET-Ablaufverfolgung und der System.Diagnostics-Ablaufverfolgung](http://msdn.microsoft.com/en-us/library/b0ectfxd.aspx)
+-   [Trace Listeners](http://msdn.microsoft.com/de-de/library/4y5y10s7.aspx) (Ablaufverfolgungs-Listener, in englischer Sprache)
+     <br/>Informationen über Ablaufverfolgungs-Listener, allerdings wird der [WebPageTraceListener](http://msdn.microsoft.com/de-de/library/system.web.webpagetracelistener.aspx) nicht behandelt.
+-   [Exemplarische Vorgehensweise: Integrieren der ASP.NET-Ablaufverfolgung und der System.Diagnostics-Ablaufverfolgung](http://msdn.microsoft.com/de-de/library/b0ectfxd.aspx)
      <br/>Dieser Artikel ist ebenfalls älteren Datums, enthält jedoch zusätzliche Informationen, die in der Einführung nicht behandelt werden.
 -   [Tracing in ASP.NET MVC Razor Views](http://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx) (Ablaufverfolgung in den ASP.NET MVC-Razoransichten, in englischer Sprache)
-	<br/>Dieser Blogeintrag behandelt neben der Ablaufverfolgung in Razoransichten auch die Erstellung von Fehlerfiltern zur Protokollierung aller Ausnahmefehler in MVC-Anwendungen. Informationen zur Protokollierung aller Ausnahmefehler in Web Forms-Anwendungen finden Sie im Global.asax-Beispiel unter [Vollständiges Beispiel für Fehlerhandler](http://msdn.microsoft.com/en-us/library/bb397417.aspx) auf MSDN. Falls Sie in MVC oder Web Forms bestimmte Ausnahmen protokollieren möchten, diese Ausnahmen jedoch vom Standard-Framework behandelt werden sollen, können Sie diese wie im folgenden Beispiel abfangen und erneut auslösen:
+	<br/>Dieser Blogeintrag behandelt neben der Ablaufverfolgung in Razoransichten auch die Erstellung von Fehlerfiltern zur Protokollierung aller Ausnahmefehler in MVC-Anwendungen. Informationen zur Protokollierung aller Ausnahmefehler in Web Forms-Anwendungen finden Sie im Global.asax-Beispiel unter [Vollständiges Beispiel für Fehlerhandler](http://msdn.microsoft.com/de-de/library/bb397417.aspx) auf MSDN. Falls Sie in MVC oder Web Forms bestimmte Ausnahmen protokollieren möchten, diese Ausnahmen jedoch vom Standard-Framework behandelt werden sollen, können Sie diese wie im folgenden Beispiel abfangen und erneut auslösen:
 
           try
           {
@@ -662,8 +662,8 @@ Momentan sind keine vollständigen und aktuellen Einführungen zur Ablaufverfolg
 
 -   [Ablaufprotokollierung und Streamingdiagnose mit der Azure-Befehlszeile (plus Glimpse!)](http://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)
      <br/>Verwenden der Befehlszeile für die Visual Studio-Aktionen aus diesem Lernprogramm. [Glimpse](http://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) ist ein Tool zum Debuggen von ASP.NET-Anwendungen.
--   [Using Azure Web Site Logging and Diagnostics - with David Ebbo](http://www.windowsazure.com/en-us/documentation/videos/azure-web-site-logging-and-diagnostics/)
-	(Websiteprotokollierung und Diagnose unter Azure mit David Ebbo, in englischer Sprache) und [Streaming Logs from Azure Web Sites - with David Ebbo](http://www.windowsazure.com/en-us/documentation/videos/log-streaming-with-azure-web-sites/)
+-   [Using Azure Web Site Logging and Diagnostics - with David Ebbo](http://www.windowsazure.com/de-de/documentation/videos/azure-web-site-logging-and-diagnostics/)
+	(Websiteprotokollierung und Diagnose unter Azure mit David Ebbo, in englischer Sprache) und [Streaming Logs from Azure Web Sites - with David Ebbo](http://www.windowsazure.com/de-de/documentation/videos/log-streaming-with-azure-web-sites/)
      (Protokollstreaming aus Azure-Websites mit David Ebbo, in englischer Sprache): Videos von Scott Hanselman und David Ebbo.
 
 Für die Fehlerprotokollierung können Sie Open Source-Protokollframeworks wie z. B. [ELMAH](http://nuget.org/packages/elmah/) verwenden, anstatt Ihren eigenen Ablaufverfolgungscode zu schreiben. Weitere Informationen finden Sie unter [Scott Hanselman's blog posts about ELMAH](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx) (Blogeinträge von Scott Hanselmann zu ELMAH, in englischer Sprache).
@@ -691,4 +691,4 @@ Informationen zum Debuggen von Azure Cloud Service im Gegensatz zu Websites find
 
 
 
-[GetStarted]: /en-us/develop/net/tutorials/get-started/
+[GetStarted]: /de-de/develop/net/tutorials/get-started/

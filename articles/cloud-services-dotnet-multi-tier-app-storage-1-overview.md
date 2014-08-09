@@ -59,10 +59,10 @@ LernprogrammeLernprogramme in dieser Serie
 Es folgt eine Liste der Lernprogramme mit einer kurzen Zusammenfassung der Inhalte:
 
 1.  **Einführung in die Azure-E-Mail-Dienstanwendung** (dieses Lernprogramm). Übersicht über die Anwendung und deren Architektur.
-2.  [Konfigurieren und Bereitstellen der Azure-E-Mail-Dienstanwendung](/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/). Herunterladen der Beispielanwendung mit anschließender Konfiguration, lokalen Tests sowie Bereitstellung und Test in der Cloud.
-3.  [Erstellen der Webrolle für die Azure-E-Mail-Dienstanwendung](/en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/). Erstellen der MVC 4-Komponenten für die Anwendung und lokale Tests der Komponenten.
-4.  [Erstellen der Workerrolle A (E-Mail-Planer) für die Azure-E-Mail-Dienstanwendung](/en-us/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/). Erstellen der Back-End-Komponente, die Warteschlangen-Arbeitsaufgaben für den E-Mail-Versand generiert und lokale Tests der Komponente.
-5.  [Erstellen der Workerrolle B (E-Mail-Versand) für die Azure-E-Mail-Dienstanwendung](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/). Erstellen der Back-End-Komponente, die Warteschlangen-Arbeitsaufgaben für den E-Mail-Versand verarbeitet und lokale Tests der Komponente.
+2.  [Konfigurieren und Bereitstellen der Azure-E-Mail-Dienstanwendung](/de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/). Herunterladen der Beispielanwendung mit anschließender Konfiguration, lokalen Tests sowie Bereitstellung und Test in der Cloud.
+3.  [Erstellen der Webrolle für die Azure-E-Mail-Dienstanwendung](/de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/). Erstellen der MVC 4-Komponenten für die Anwendung und lokale Tests der Komponenten.
+4.  [Erstellen der Workerrolle A (E-Mail-Planer) für die Azure-E-Mail-Dienstanwendung](/de-de/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/). Erstellen der Back-End-Komponente, die Warteschlangen-Arbeitsaufgaben für den E-Mail-Versand generiert und lokale Tests der Komponente.
+5.  [Erstellen der Workerrolle B (E-Mail-Versand) für die Azure-E-Mail-Dienstanwendung](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/). Erstellen der Back-End-Komponente, die Warteschlangen-Arbeitsaufgaben für den E-Mail-Versand verarbeitet und lokale Tests der Komponente.
 
 Falls Sie die Anwendung direkt herunterladen und ausprobieren möchten, benötigen Sie nur die ersten zwei Lernprogramme. Falls Sie alle Schritte für die Erstellung einer solchen Anwendung von Grund auf kennenlernen möchten, können Sie die letzten drei Lernprogramme im Anschluss an die ersten zwei durcharbeiten.
 
@@ -105,7 +105,7 @@ Workerrolle B prüft außerdem eine Abonnement-Warteschlange auf neue Arbeitsauf
 TabellenAzure-Tabellen
 ----------------------
 
-Die Azure-E-Mail-Dienstanwendung speichert Daten in Azure-Speichertabellen. Azure-Tabellen sind eine Form von NoSQL-Datenspeicher im Gegensatz zu relationalen Datenbanken wie der [Azure SQL-Datenbank](http://msdn.microsoft.com/en-us/library/windowsazure/ee336279.aspx). Sie sind daher eine gute Wahl, wenn Effizienz und Skalierbarkeit wichtiger sind als Datennormalisierung und relationale Integrität. In dieser Anwendung erstellt eine Workerrolle eine Zeile pro erstellter Arbeitsaufgabe, und eine andere Workerrolle liest und aktualisiert eine Zeile für jede verschickte E-Mail. Dies könnte in einer relationalen Datenbank zu einem Leistungsengpass führen. Außerdem sind Azure-Tabellen günstiger als Azure-SQL. Weitere Informationen zu Azure-Tabellen finden Sie in der Ressourcenliste am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+Die Azure-E-Mail-Dienstanwendung speichert Daten in Azure-Speichertabellen. Azure-Tabellen sind eine Form von NoSQL-Datenspeicher im Gegensatz zu relationalen Datenbanken wie der [Azure SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/ee336279.aspx). Sie sind daher eine gute Wahl, wenn Effizienz und Skalierbarkeit wichtiger sind als Datennormalisierung und relationale Integrität. In dieser Anwendung erstellt eine Workerrolle eine Zeile pro erstellter Arbeitsaufgabe, und eine andere Workerrolle liest und aktualisiert eine Zeile für jede verschickte E-Mail. Dies könnte in einer relationalen Datenbank zu einem Leistungsengpass führen. Außerdem sind Azure-Tabellen günstiger als Azure-SQL. Weitere Informationen zu Azure-Tabellen finden Sie in der Ressourcenliste am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
 
 Der folgende Abschnitt beschreibt den Inhalt der Azure-Tabellen, die von der Azure-E-Mail-Dienstanwendung verwendet werden. Das [Datendiagramm der Azure-E-Mail-Dienstanwendung](#datadiagram) im weiteren Verlauf dieser Seite bildet die Tabellen und ihre Beziehungen ab.
 
@@ -222,7 +222,7 @@ Die folgende Tabelle zeigt die Zeileneigenschaften für diejenigen Zeilen, die I
 
 <td>Wird beim Hinzufügen der E-Mail-Adresse zur Liste generiert. Dieser Wert wird in Links zum Abonnieren/Abbestellen verwendet. Auf diese Weise soll verhindert werden, dass ein Benutzer ein Abonnement eines anderen Benutzers kündigen kann. <br  />
 <br  />
-Manche Abfragen für die Webseiten zum Abonnieren/Abbestellen verwenden nur den Partitionsschlüssel und diese Eigenschaft. Abfragen über eine Partition ohne Zeilenschlüssel schränken die Skalierbarkeit der Anwendung ein, da die Abfragen mit zunehmender Größe der Mailinglisten langsamer werden. Zur Verbesserung der Skalierbarkeit könnten Nachschlagezeilen eingefügt werden, deren Zeilenschlüssel die SubscriberGUID enthält. Pro E-Mail-Adresse könnte z. B. eine Zeile mit dem Zeilenschlüssel "email:student1@domain.com" und eine weitere Zeile für denselben Abonnenten mit dem Zeilenschlüssel "guid:6f32b03b-90ed-41a9-b8ac-c1310c67b66a" angelegt werden. Dies lässt sich leicht implementieren, da atomische Batch-Transaktionen auf Zeilen innerhalb einer Partition einfach zu programmieren sind. Wir hoffen, dass wir diese Funktion bis zur nächsten Version der Beispielanwendung implementieren können. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/windowsazure/hh508997.aspx">Real World: Designing a Scalable Partitioning Strategy for Azure Table Storage (Design einer skalierbaren Partitionierungsstrategie für Azure-Tabellenspeicher, in englischer Sprache)</a>
+Manche Abfragen für die Webseiten zum Abonnieren/Abbestellen verwenden nur den Partitionsschlüssel und diese Eigenschaft. Abfragen über eine Partition ohne Zeilenschlüssel schränken die Skalierbarkeit der Anwendung ein, da die Abfragen mit zunehmender Größe der Mailinglisten langsamer werden. Zur Verbesserung der Skalierbarkeit könnten Nachschlagezeilen eingefügt werden, deren Zeilenschlüssel die SubscriberGUID enthält. Pro E-Mail-Adresse könnte z. B. eine Zeile mit dem Zeilenschlüssel "email:student1@domain.com" und eine weitere Zeile für denselben Abonnenten mit dem Zeilenschlüssel "guid:6f32b03b-90ed-41a9-b8ac-c1310c67b66a" angelegt werden. Dies lässt sich leicht implementieren, da atomische Batch-Transaktionen auf Zeilen innerhalb einer Partition einfach zu programmieren sind. Wir hoffen, dass wir diese Funktion bis zur nächsten Version der Beispielanwendung implementieren können. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh508997.aspx">Real World: Designing a Scalable Partitioning Strategy for Azure Table Storage (Design einer skalierbaren Partitionierungsstrategie für Azure-Tabellenspeicher, in englischer Sprache)</a>
 
 </td>
 
@@ -989,7 +989,7 @@ WarteschlangenAzure-Warteschlangen
 
 Azure-Warteschlangen erleichtern die Kommunikation zwischen den unterschiedlichen Anwendungsebenen und zwischen Workerrollen innerhalb der Back-End-Ebene. Workerrolle A und Workerrolle B kommunizieren mithilfe von Warteschlangen, um die Anwendung skalierbar zu machen. Workerrolle A könnte z. B. eine Zeile pro E-Mail in der Tabelle message anlegen, und Workerrolle B könnte die Tabelle auf Zeilen mit noch nicht verschickten E-Mails prüfen. In diesem Fall wäre es jedoch nicht möglich, die Arbeit auf weitere Instanzen von Workerrolle B aufzuteilen. Bei der Koordination der Arbeit zwischen Workerrolle A und Workerrolle B über Tabellenzeilen lässt sich nicht garantieren, dass jede Tabellenzeile nur von einer Workerrolleninstanz verarbeitet wird. Warteschlangen bieten eben diese Garantie. Wenn eine Workerrolleninstanz eine Arbeitsaufgabe aus der Warteschlange entnimmt, garantiert der Warteschlangendienst, dass keine andere Workerrolleninstanz dieselbe Arbeitsaufgabe entnehmen kann. Diese Exklusivitätsfunktion von Azure-Warteschlangen erleichtert das Aufteilen einer Arbeitslast auf mehrere Instanzen einer Workerrolle.
 
-Azure bietet außerdem noch den Servicebus-Warteschlangendienst. Weitere Informationen zu Azure-Speichertabellen und Servicebus-Warteschlangen finden Sie in der Ressourcenliste am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+Azure bietet außerdem noch den Servicebus-Warteschlangendienst. Weitere Informationen zu Azure-Speichertabellen und Servicebus-Warteschlangen finden Sie in der Ressourcenliste am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
 
 Die Azure-E-Mail-Dienstanwendung verwendet zwei Warteschlangen mit den Namen `AzureMailQueue` und `AzureMailSubscribeQueue`.
 
@@ -1021,7 +1021,7 @@ Das folgende Diagramm enthält Tabellen, Warteschlangen und deren Beziehungen.
 BlobsAzure-Blobs
 ----------------
 
-Blobs sind "binary large objects" (große binäre Objekte). Der Azure-Blobdienst bietet Werkzeuge zum Hochladen und Speichern von Dateien in der Cloud. Weitere Informationen zu Azure-Blobs finden Sie in der Ressourcenliste am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+Blobs sind "binary large objects" (große binäre Objekte). Der Azure-Blobdienst bietet Werkzeuge zum Hochladen und Speichern von Dateien in der Cloud. Weitere Informationen zu Azure-Blobs finden Sie in der Ressourcenliste am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
 
 Administratoren des Azure-E-Mail-Dienstes können den Text von E-Mails im HTML-Format in *.htm*-Dateien und im Nur-Text-Format als *.txt*-Dateien ablegen. Bei der Planung von Nachrichten können sie diese Dateien auf der Webseite **Create Message** hochladen, und der ASP.NET MVC-Controller der Seite speichert die hochgeladene Datei in einem Azure-Blob.
 
@@ -1043,23 +1043,23 @@ Alternativ kann das Front-End in einer Azure-Website ausgeführt werden.
 Konfiguration und Bereitstellung werden vereinfacht, wenn alle Komponenten in einem einzigen Cloud-Dienst untergebracht sind. Wenn Sie die Anwendung mit ASP.NET MVC-Front-End in einer Azure-Website erstellen, müssen Sie die Komponenten separat bereitstellen (Azure-Website und Azure-Cloud-Dienst). Außerdem bieten die Webrollen in Azure-Cloud-Diensten die folgenden Features, die in Azure-Websites nicht verfügbar sind:
 
 -   Unterstützung für benutzerdefinierte Zertifikate und Zertifikate mit Platzhalter.
--   Vollständige Kontrolle über die IIS-Konfiguration. Viele IIS-Features können in Azure-Websites nicht aktiviert werden. Mit Azure-Webrollen können Sie einen Startbefehl definieren, der das [AppCmd](http://www.iis.net/learn/get-started/getting-started-with-iis/getting-started-with-appcmdexe "appCmd")-Programm ausführt, um IIS-Einstellungen zu ändern, die nicht in Ihrer *Web.config*-Datei konfiguriert werden können. Weitere Informationen finden Sie unter [Konfigurieren von IIS-Komponenten in Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg433059.aspx) und [Blockieren des Zugriffs auf eine Webrolle für bestimmte IP-Adressen](http://msdn.microsoft.com/en-us/library/windowsazure/jj154098.aspx).
--   Support für die automatische Skalierung Ihrer Webanwendung mit dem [Anwendungsblock für automatische Skalierung](/en-us/develop/net/how-to-guides/autoscaling/).
+-   Vollständige Kontrolle über die IIS-Konfiguration. Viele IIS-Features können in Azure-Websites nicht aktiviert werden. Mit Azure-Webrollen können Sie einen Startbefehl definieren, der das [AppCmd](http://www.iis.net/learn/get-started/getting-started-with-iis/getting-started-with-appcmdexe "appCmd")-Programm ausführt, um IIS-Einstellungen zu ändern, die nicht in Ihrer *Web.config*-Datei konfiguriert werden können. Weitere Informationen finden Sie unter [Konfigurieren von IIS-Komponenten in Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433059.aspx) und [Blockieren des Zugriffs auf eine Webrolle für bestimmte IP-Adressen](http://msdn.microsoft.com/de-de/library/windowsazure/jj154098.aspx).
+-   Support für die automatische Skalierung Ihrer Webanwendung mit dem [Anwendungsblock für automatische Skalierung](/de-de/develop/net/how-to-guides/autoscaling/).
 -   Möglichkeit zur Ausführung erweiterter Startskripts zum Installieren von Anwendungen, Ändern von Registrierungseinstellungen, Installieren von Leistungsindikatoren usw.
--   Netzwerkisolation für den Einsatz mit [Azure Connect](http://msdn.microsoft.com/en-us/library/windowsazure/gg433122.aspx) und [virtuelle Azure-Netzwerke](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx).
+-   Netzwerkisolation für den Einsatz mit [Azure Connect](http://msdn.microsoft.com/de-de/library/windowsazure/gg433122.aspx) und [virtuelle Azure-Netzwerke](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx).
 -   Remotedesktopzugriff für Debugging und erweiterte Diagnose.
--   Parallele Aktualisierungen mit [VIP-Austausch](http://msdn.microsoft.com/en-us/library/windowsazure/ee517253.aspx "VIP-Swap"). Mit diesem Feature können Sie den Inhalt Ihrer Staging- und Produktionsbereitstellungen tauschen.
+-   Parallele Aktualisierungen mit [VIP-Austausch](http://msdn.microsoft.com/de-de/library/windowsazure/ee517253.aspx "VIP-Swap"). Mit diesem Feature können Sie den Inhalt Ihrer Staging- und Produktionsbereitstellungen tauschen.
 
 Die alternative Architektur bietet möglicherweise Kosteneinsparungen, da eine Azure-Website für dieselbe Kapazität günstiger ist als eine Webrolle in einem Cloud-Dienst. Die Implementierungsunterschiede zwischen den beiden Architekturen werden in späteren Lernprogrammen dieser Serie behandelt.
 
-Weitere Informationen für die Wahl zwischen Azure-Websites und Azure-Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle](http://www.windowsazure.com/en-us/manage/windows/fundamentals/compute/).
+Weitere Informationen für die Wahl zwischen Azure-Websites und Azure-Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle](http://www.windowsazure.com/de-de/manage/windows/fundamentals/compute/).
 
 KostenKosten
 ------------
 
 Dieser Abschnitt enthält eine kurze Übersicht über die Kosten für die Ausführung der Beispielanwendung in Azure unter Verwendung der Tarife von Dezember 2012. Vor kostenbasierten Geschäftsentscheidungen sollten Sie immer die aktuellen Tarife auf den folgenden Webseiten prüfen:
 
--   [Azure-Preisrechner](http://www.windowsazure.com/en-us/pricing/calculator/)
+-   [Azure-Preisrechner](http://www.windowsazure.com/de-de/pricing/calculator/)
 -   [SendGrid Azure](http://sendgrid.com/windowsazure.html)
 
 Die Kosten hängen von der Anzahl der Web- und Workerrolleninstanzen ab, die Sie betreiben. Um sich für die [99,95%-Servicelevel-Vereinbarung (SLA) des Azure-Cloud-Dienstes](https://www.windowsazure.com/en-us/support/legal/sla/ "SLA") zu qualifizieren, müssen Sie mindestens zwei Instanzen pro Rolle bereitstellen. Dies liegt unter anderem daran, dass die virtuellen Computer, auf denen Ihre Anwendung läuft, ca. zwei mal pro Monat für Betriebssystem-Upgrades neu gestartet werden müssen. (Weitere Informationen zu OS-Updates finden Sie unter [Role Instance Restarts Due to OS Upgrades](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx) (Neustarts von Rolleninstanzen für OS-Upgrades, in englischer Sprache).)
@@ -1165,7 +1165,7 @@ Sie sehen also, dass Rolleninstanzen einen Großteil der Gesamtkosten ausmachen.
 
 Es ist auch möglich, sämtlichen Code der beiden Workerrollen in eine Webrolle zu verschieben und alles in einer Webrolle auszuführen. Hintergrundaufgaben werden in ASP.NET jedoch nicht unterstützt und gelten nicht als robust, und eine solche Architektur würde die Skalierbarkeit beeinträchtigen. Weitere Informationen finden Sie unter [The Dangers of Implementing Recurring Background Tasks In ASP.NET](http://haacked.com/archive/2011/10/16/the-dangers-of-implementing-recurring-background-tasks-in-asp-net.aspx) (Die Gefahren wiederkehrender Hintergrundaufgaben in ASP.NET, in englischer Sprache). Siehe auch [How to Combine a Worker and Web Role in Azure](http://www.31a2ba2a-b718-11dc-8314-0800200c9a66.com/2010/12/how-to-combine-worker-and-web-role-in.html) (Kombinieren von Worker- und Webrolle in Azure, in englischer Sprache) und [Combining Multiple Azure Worker Roles into an Azure Web Role](http://www.31a2ba2a-b718-11dc-8314-0800200c9a66.com/2012/02/combining-multiple-azure-worker-roles.html) (Kombinieren von Azure-Workerrollen in einer Azure-Webrolle, in englischer Sprache).
 
-Eine weitere Möglichkeit zur Kostensenkung ist der [Anwendungsblock für automatische Skalierung](/en-us/develop/net/how-to-guides/autoscaling/), um Workerrollen nur während bestimmter Zeitintervalle einzusetzen und nach Abschluss der Arbeit zu löschen. Weitere Informationen zur automatischen Skalierung finden Sie in den Links am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+Eine weitere Möglichkeit zur Kostensenkung ist der [Anwendungsblock für automatische Skalierung](/de-de/develop/net/how-to-guides/autoscaling/), um Workerrollen nur während bestimmter Zeitintervalle einzusetzen und nach Abschluss der Arbeit zu löschen. Weitere Informationen zur automatischen Skalierung finden Sie in den Links am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
 
 Azure bietet in Zukunft möglicherweise einen Benachrichtigungsmechanismus für geplante Neustarts an, sodass Sie eine zusätzliche Webrolle für das Neustart-Zeitfenster starten können. Sie würden sich damit zwar nicht für die 99,95%-SLA qualifizieren, aber könnten Ihre Kosten um beinahe die Hälfte senken und sicherstellen, dass Ihre Webanwendung während des Neustarts verfügbar ist.
 
@@ -1184,9 +1184,9 @@ Weitere Informationen zur Implementierung von Authentifizierung und Autorisierun
 Nächste SchritteNächste Schritte
 --------------------------------
 
-Im [nächsten Lernprogramm](/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/) werden Sie das Beispielprojekt herunterladen, Ihre Entwicklungsumgebung konfigurieren, das Projekt für Ihre Umgebung konfigurieren und anschließend lokal und in der Cloud testen. In den weiteren Lernprogrammen lernen Sie, das Projekt von Grund auf zu erstellen.
+Im [nächsten Lernprogramm](/de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/) werden Sie das Beispielprojekt herunterladen, Ihre Entwicklungsumgebung konfigurieren, das Projekt für Ihre Umgebung konfigurieren und anschließend lokal und in der Cloud testen. In den weiteren Lernprogrammen lernen Sie, das Projekt von Grund auf zu erstellen.
 
-Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
+Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie am Ende des [letzten Lernprogramms in dieser Serie](/de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/).
 
-[Lernprogramm 2](/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/)
+[Lernprogramm 2](/de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/)
 

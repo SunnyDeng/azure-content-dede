@@ -51,7 +51,7 @@ Obwohl Azure verschiedene Standardversionen von Node.js anbietet, kann es sein, 
 
     Dieser Code zeigt beim Aufrufen der Website die verwendete Node.js-Version an.
 
-2.  Erstellen einer neuen Webseite und Abrufen des Website-Namens. Das folgende Beispiel verwendet die [Azure-Befehlszeilentools](/en-us/develop/nodejs/how-to-guides/command-line-tools/), um eine neue Azure Web Site mit dem Namen **mywebsite** zu erstellen und anschließend ein Git-Repository für die Website einzurichten.
+2.  Erstellen einer neuen Webseite und Abrufen des Website-Namens. Das folgende Beispiel verwendet die [Azure-Befehlszeilentools](/de-de/develop/nodejs/how-to-guides/command-line-tools/), um eine neue Azure Web Site mit dem Namen **mywebsite** zu erstellen und anschließend ein Git-Repository für die Website einzurichten.
 
          azure site create mywebsite --git
 
@@ -80,5 +80,5 @@ Obwohl Azure verschiedene Standardversionen von Node.js anbietet, kann es sein, 
 Nächste Schritte
 ----------------
 
-Nachdem Sie gelernt haben, wie Sie die von ihrer Anwendung verwendete Node.js-Version angeben können, empfehlen wir die Themen [Arbeiten mit Modulen](/en-us/develop/nodejs/common-tasks/working-with-node-modules/), [Erstellen und Bereitstellen einer Node.js-Website](/en-us/develop/nodejs/tutorials/create-a-website-(mac)/) und [Verwenden der Azure-Befehlszeilentools für Mac und Linux](/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+Nachdem Sie gelernt haben, wie Sie die von ihrer Anwendung verwendete Node.js-Version angeben können, empfehlen wir die Themen [Arbeiten mit Modulen](/de-de/develop/nodejs/common-tasks/working-with-node-modules/), [Erstellen und Bereitstellen einer Node.js-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/) und [Verwenden der Azure-Befehlszeilentools für Mac und Linux](/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 

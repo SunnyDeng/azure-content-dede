@@ -59,7 +59,7 @@ Standardmäßig kann jedes Media Services-Konto auf bis zu 25 für das Codieren 
 Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor:
 
 1.  Melden Sie sich im [Verwaltungsportal](http://manage.windowsazure.com) an Ihrem Azure-Konto an.
-2.  Wechseln Sie zu [Support](http://www.windowsazure.com/en-us/support/contact/).
+2.  Wechseln Sie zu [Support](http://www.windowsazure.com/de-de/support/contact/).
 3.  Klicken Sie auf "Get Support".
 4.  Wählen Sie Ihr Abonnement aus.
 5.  Wählen Sie unter Supporttyp "Technical" aus.

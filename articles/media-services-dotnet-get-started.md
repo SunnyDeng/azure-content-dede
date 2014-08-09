@@ -27,7 +27,7 @@ Für das Lernprogramm und die Entwicklung mit dem Azure Mediendienste-SDK benöt
 
 **Hinweis**
 
-Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A8A8397B5).
+Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A8A8397B5).
 
 Einrichten Ihres Projekts
 -------------------------
@@ -179,7 +179,7 @@ Fügen Sie einen Aufruf der Methode nach der Zeile **\_context = new CloudMediaC
 Codierung des Medienobjekts auf dem Server und Download des Ausgabe-Medienobjekts
 ---------------------------------------------------------------------------------
 
-In Mediendiensten können Sie Aufträge erstellen, die Medieninhalte auf verschiedene Arten verarbeiten: Codierung, Verschlüsselung, Formatumwandlungen usw. Ein Mediendienste-Auftrag enthält immer eine oder mehrere Aufgaben, in denen die Verarbeitungsdetails festgelegt sind. In diesem Abschnitt erstellen Sie eine einfache Codierungsaufgabe und führen diese anschließend in einem Auftrag mit dem Azure-Medienencoder aus. Die Aufgabe verwendet eine vorkonfigurierte Zeichenfolge, um die auszuführende Codierung anzugeben. Eine Liste der voreingestellten Codierungswerte finden Sie unter [Task Preset Strings for Azure Media Encoder](http://msdn.microsoft.com/en-us/library/windowsazure/jj129582.aspx) (Aufgaben-Voreinstellungen für den Azure-Medienencoder, in englischer Sprache). Mediendienste unterstützen dieselben Ein- und Ausgabeformate für Mediendatei wie der Microsoft Expression Encoder. Eine Liste unterstützter Formate finden Sie unter [Supported File Types for Media Services](http://msdn.microsoft.com/en-us/library/windowsazure/hh973634.aspx) (Unterstützte Dateitypen für Mediendienste, in englischer Sprache).
+In Mediendiensten können Sie Aufträge erstellen, die Medieninhalte auf verschiedene Arten verarbeiten: Codierung, Verschlüsselung, Formatumwandlungen usw. Ein Mediendienste-Auftrag enthält immer eine oder mehrere Aufgaben, in denen die Verarbeitungsdetails festgelegt sind. In diesem Abschnitt erstellen Sie eine einfache Codierungsaufgabe und führen diese anschließend in einem Auftrag mit dem Azure-Medienencoder aus. Die Aufgabe verwendet eine vorkonfigurierte Zeichenfolge, um die auszuführende Codierung anzugeben. Eine Liste der voreingestellten Codierungswerte finden Sie unter [Task Preset Strings for Azure Media Encoder](http://msdn.microsoft.com/de-de/library/windowsazure/jj129582.aspx) (Aufgaben-Voreinstellungen für den Azure-Medienencoder, in englischer Sprache). Mediendienste unterstützen dieselben Ein- und Ausgabeformate für Mediendatei wie der Microsoft Expression Encoder. Eine Liste unterstützter Formate finden Sie unter [Supported File Types for Media Services](http://msdn.microsoft.com/de-de/library/windowsazure/hh973634.aspx) (Unterstützte Dateitypen für Mediendienste, in englischer Sprache).
 
 1.  Fügen Sie die folgende **CreateEncodingJob**-Methode zu Ihrer Klasse hinzu. Diese Methode demonstriert die Ausführung verschiedener Aufgaben für einen Codierungsauftrag:
 
@@ -647,6 +647,6 @@ Nächste Schritte
 
 In diesem Lernprogramm wurden die verschiedenen Programmieraufgaben für die Erstellung einer einfachen Mediendienste-Anwendung beschrieben. Sie kennen nun die grundlegenden Mediendienste-Programmieraufgaben inklusive Abrufen des Serverkontexts, Erstellen und Codieren von Medienobjekten und Herunterladen von Medienobjekt auf dem Server. Weitere Schritte und komplexere Programmieraufgaben finden Sie unter:
 
--   [Verwenden von Mediendiensten](http://www.windowsazure.com/en-us/develop/net/how-to-guides/media-services/)
--   [Erstellen von Anwendungen mit der Mediendienste-REST-API](http://msdn.microsoft.com/en-us/library/windowsazure/hh973618.aspx)
+-   [Verwenden von Mediendiensten](http://www.windowsazure.com/de-de/develop/net/how-to-guides/media-services/)
+-   [Erstellen von Anwendungen mit der Mediendienste-REST-API](http://msdn.microsoft.com/de-de/library/windowsazure/hh973618.aspx)
 

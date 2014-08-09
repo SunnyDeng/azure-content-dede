@@ -17,7 +17,7 @@ In diesem Leitfaden wird beschrieben, wie die gebrokerten Messagingfunktionen vo
 Erste Schritte mit Service Bus
 ==============================
 
-In diesem Leitfaden wird davon ausgegangen, dass Sie bereits einen Service Bus-Namespace haben, der eine Warteschlange mit dem Namen "queue1" enthält. Wenn dies nicht der Fall ist, können Sie den Namespace und die Warteschlange im [Azure-Verwaltungsportal](http://manage.windowsazure.com) erstellen. Weitere Informationen zur Erstellung von Service Bus-Namespaces und Warteschlangen finden Sie in dem Leitfaden mit dem Titel “[Verwenden von Service Bus-Warteschlangen.](https://www.windowsazure.com/en-us/develop/net/how-to-guides/service-bus-queues/)”
+In diesem Leitfaden wird davon ausgegangen, dass Sie bereits einen Service Bus-Namespace haben, der eine Warteschlange mit dem Namen "queue1" enthält. Wenn dies nicht der Fall ist, können Sie den Namespace und die Warteschlange im [Azure-Verwaltungsportal](http://manage.windowsazure.com) erstellen. Weitere Informationen zur Erstellung von Service Bus-Namespaces und Warteschlangen finden Sie in dem Leitfaden mit dem Titel “[Verwenden von Service Bus-Warteschlangen.](https://www.windowsazure.com/de-de/develop/net/how-to-guides/service-bus-queues/)”
 
 Herunterladen der AMQP 1.0 JMS-Clientbibliothek
 -----------------------------------------------
@@ -142,7 +142,7 @@ Dabei bedeuten [jndi\_name] und [physical\_name] Folgendes:
 </table>
 
 
-**Hinweis**: Beim Empfang von einem Service Bus-Themenabonnement sollte der in JNDI angegebene physische Name dem Themennamen entsprechen. Der Abonnementname wird bei der Erstellung des Abonnements im JMS-Anwendungscode angegeben. Im [Entwicklerhandbuch für Service Bus AMQP 1.0](http://msdn.microsoft.com/en-us/library/windowsazure/jj841071.aspx) finden Sie weitere Details zum Arbeiten mit Service Bus-Themenabonnements in JMS.
+**Hinweis**: Beim Empfang von einem Service Bus-Themenabonnement sollte der in JNDI angegebene physische Name dem Themennamen entsprechen. Der Abonnementname wird bei der Erstellung des Abonnements im JMS-Anwendungscode angegeben. Im [Entwicklerhandbuch für Service Bus AMQP 1.0](http://msdn.microsoft.com/de-de/library/windowsazure/jj841071.aspx) finden Sie weitere Details zum Arbeiten mit Service Bus-Themenabonnements in JMS.
 
 ### Schreiben der JMS-Anwendung
 
@@ -280,7 +280,7 @@ In diesem Leitfaden wurde bisher gezeigt, wie Nachrichten mit JMD an den Service
 
 Mithilfe der zuvor beschriebenen beispielhaften JMD-Anwendung und einer ähnlichen .NET-Anwendung aus der separaten Anleitung [Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus](http://aka.ms/lym3vk) können Nachrichten zwischen .NET und Java ausgetauscht werden.
 
-Weitere Informationen und Details zum plattformübergreifenden Messaging mit Service Bus und AMQP 1.0 enthält das [Service Bus AMQP 1.0: Entwicklerhandbuch](http://msdn.microsoft.com/en-us/library/windowsazure/jj841071.aspx).
+Weitere Informationen und Details zum plattformübergreifenden Messaging mit Service Bus und AMQP 1.0 enthält das [Service Bus AMQP 1.0: Entwicklerhandbuch](http://msdn.microsoft.com/de-de/library/windowsazure/jj841071.aspx).
 
 ### Messaging von JMS nach .NET
 
@@ -352,13 +352,13 @@ Zusammenfassung
 
 In diesem Leitfaden wurde gezeigt, wie die gebrokerten Messagingfunktionen von Service Bus (Warteschlange und Themen veröffentlichen/abonnieren) aus Java-Anwendungen mit der beliebten Standard-Programmierschnittstelle JMS und AMQP 1.0 verwendet werden.
 
-Sie können Service Bus AMQP 1.0 auch mit anderen Sprachen verwenden, unter anderem .NET, C, Python und PHP. Komponenten, die mit diesen verschiedenen Sprachen geschrieben wurden, können mit der AMQP 1.0-Unterstützung in Service Bus Nachrichten zuverlässig und bei voller Vertraulichkeit austauschen. Weitere Informationen zur plattformübergreifenden Nachrichtenübermittlung mit Service Bus und AMQP 1.0 finden Sie im [Entwicklerhandbuch für Service Bus AMQP 1.0](http://msdn.microsoft.com/en-us/library/windowsazure/jj841071.aspx).
+Sie können Service Bus AMQP 1.0 auch mit anderen Sprachen verwenden, unter anderem .NET, C, Python und PHP. Komponenten, die mit diesen verschiedenen Sprachen geschrieben wurden, können mit der AMQP 1.0-Unterstützung in Service Bus Nachrichten zuverlässig und bei voller Vertraulichkeit austauschen. Weitere Informationen zur plattformübergreifenden Nachrichtenübermittlung mit Service Bus und AMQP 1.0 finden Sie im [Entwicklerhandbuch für Service Bus AMQP 1.0](http://msdn.microsoft.com/de-de/library/windowsazure/jj841071.aspx).
 
 Weitere Informationen
 ---------------------
 
 -   [AMQP 1.0-Unterstützung in Azure Service Bus](http://aka.ms/pgr3dp)
 -   [Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus](http://aka.ms/lym3vk)
--   [Service Bus AMQP 1.0: Entwicklerhandbuch](http://msdn.microsoft.com/en-us/library/windowsazure/jj841071.aspx)
--   [Verwenden von Service Bus-Warteschlangen](http://www.windowsazure.com/en-us/develop/net/how-to-guides/service-bus-queues/)
+-   [Service Bus AMQP 1.0: Entwicklerhandbuch](http://msdn.microsoft.com/de-de/library/windowsazure/jj841071.aspx)
+-   [Verwenden von Service Bus-Warteschlangen](http://www.windowsazure.com/de-de/develop/net/how-to-guides/service-bus-queues/)
 

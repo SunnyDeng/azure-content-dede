@@ -101,7 +101,7 @@ Die SLA ist in Form eines "Supportfensters" definiert. Ein Supportfenster bezieh
 
 **Weitere Hinweise und Informationen zur Versionsverwaltung**
 
--   Der SQL Server JDBC Driver wird intern von HDInsight und nicht für externe Vorgänge verwendet. Wenn Sie eine Verbindung zu HDInsight über ODBC herstellen möchten, verwenden Sie den Microsoft Hive ODBC Driver. Weitere Informationen zur Verwendung von Hive ODBC finden Sie unter [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](/en-us/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver).
+-   Der SQL Server JDBC Driver wird intern von HDInsight und nicht für externe Vorgänge verwendet. Wenn Sie eine Verbindung zu HDInsight über ODBC herstellen möchten, verwenden Sie den Microsoft Hive ODBC Driver. Weitere Informationen zur Verwendung von Hive ODBC finden Sie unter [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight](/de-de/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver).
 
 -   HDInsight-Clusterversion 3.0 verwendet eine Hadoop-Distribution, die auf der [Hortonworks Data Platform 2.0](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.8.0/bk_releasenotes_hdp_2.0/content/ch_relnotes-hdp2.0.8.0.html) basiert.
 

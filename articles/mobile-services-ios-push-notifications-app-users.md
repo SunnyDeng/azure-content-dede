@@ -3,9 +3,9 @@
 Pushbenachrichtigungen an Benutzer mithilfe von Mobile Services
 ===============================================================
 
-[Windows Phone](/en-us/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone")[iOS](/en-us/develop/mobile/tutorials/push-notifications-to-users-ios "iOS")[Android](/en-us/develop/mobile/tutorials/push-notifications-to-users-android "Android")
+[Windows Phone](/de-de/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone")[iOS](/de-de/develop/mobile/tutorials/push-notifications-to-users-ios "iOS")[Android](/de-de/develop/mobile/tutorials/push-notifications-to-users-android "Android")
 
-Mit diesem Thema wird das [vorherige Pushbenachrichtigungs-Lernprogramm](/en-us/develop/mobile/tutorials/get-started-with-push-ios) erweitert, indem eine neue Tabelle zur Speicherung von Apple Push Notification Service (APNS)-Token hinzugefügt wird. Die Token können verwendet werden, um Pushbenachrichtigungen an Benutzer der iPhone- oder iPad-App zu senden.
+Mit diesem Thema wird das [vorherige Pushbenachrichtigungs-Lernprogramm](/de-de/develop/mobile/tutorials/get-started-with-push-ios) erweitert, indem eine neue Tabelle zur Speicherung von Apple Push Notification Service (APNS)-Token hinzugefügt wird. Die Token können verwendet werden, um Pushbenachrichtigungen an Benutzer der iPhone- oder iPad-App zu senden.
 
 Dieses Lernprogramm zeigt Ihnen die entsprechenden Schritte zur Aktualisierung von Pushbenachrichtigungen in Ihrer App:
 
@@ -14,7 +14,7 @@ Dieses Lernprogramm zeigt Ihnen die entsprechenden Schritte zur Aktualisierung v
 3.  [Aktualisieren von Serverskripts](#update-scripts)
 4.  [Verifizieren des Pushbenachrichtigungs-Verhaltens](#test-app)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf und führt das vorherige Lernprogram [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-ios) weiter fort. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-ios) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf und führt das vorherige Lernprogram [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-ios) weiter fort. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-ios) abschließen.
 
 
 ## <a name="create-table"></a><h2><span class="short-header">Erstellen der Tabelle</span>Erstellen der neuen Gerätetabelle</h2>
@@ -206,11 +206,11 @@ Nächste Schritte
 
 Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mit Pushbenachrichtigungen veranschaulichen. Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-ios)
+-   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-ios)
     
     Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-ios)
+-   [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-ios)
     
     Lernen Sie, wie Benutzer Ihrer App mit einem Windows-Konto authentifiziert werden.
 

@@ -12,7 +12,7 @@ Dieses Lernprogramm führt Sie durch die folgenden Schritte:
 3.  [Aktivieren der New Relic-Entwickleranalyse für den mobilen Dienst](#enable-service).
 4.  [Überwachen des mobilen Diensts im New Relic-Dashboard](#monitor).
 
-Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus einem der Lernprogramme [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/) bzw. [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-dotnet) erstellt haben.
+Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus einem der Lernprogramme [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started/) bzw. [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-dotnet) erstellt haben.
 
 Anmelden bei New Relic über den Azure Store
 -------------------------------------------
@@ -44,7 +44,7 @@ Installieren des New Relic-Moduls
 
 Nachdem Sie sich für den New Relic-Dienst angemeldet haben, müssen Sie das New Relic-Modul "Node.js" in Ihrem mobilen Dienst installieren. Um dieses Modul hochladen zu können, muss die Quellcodeverwaltung für Ihren mobilen Dienst aktiviert sein.
 
-1.  Folgen Sie, falls noch nicht geschehen, den Schritten im Lernprogramm [Speichern von Serverskripts in der Quellcodeverwaltung](/en-us/develop/mobile/tutorials/store-scripts-in-source-control/), um die Quellcodeverwaltung für Ihren mobilen Dienst zu erstellen, das Repository zu klonen und den [Node Package Manager (NPM)](http://nodejs.org/) zu installieren.
+1.  Folgen Sie, falls noch nicht geschehen, den Schritten im Lernprogramm [Speichern von Serverskripts in der Quellcodeverwaltung](/de-de/develop/mobile/tutorials/store-scripts-in-source-control/), um die Quellcodeverwaltung für Ihren mobilen Dienst zu erstellen, das Repository zu klonen und den [Node Package Manager (NPM)](http://nodejs.org/) zu installieren.
 
 2.  Öffnen Sie den Ordner `.\service` in Ihrem lokalen Git-Repository und führen Sie den folgenden Befehl in der Eingabeaufforderung aus:
 

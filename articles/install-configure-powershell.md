@@ -3,7 +3,7 @@
 # Installieren und Konfigurieren von Azure PowerShell
 
  
-<div  class="dev-center-tutorial-selector sublanding"><a href="/en-us/manage/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/en-us/manage/install-and-configure-cli/" title="Plattformübergreifende Befehlszeilenschnittstelle">Plattformübergreifende Befehlszeilenschnittstelle</a></div>
+<div  class="dev-center-tutorial-selector sublanding"><a href="/de-de/manage/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/de-de/manage/install-and-configure-cli/" title="Plattformübergreifende Befehlszeilenschnittstelle">Plattformübergreifende Befehlszeilenschnittstelle</a></div>
 
  Mit Windows PowerShell können Sie eine Vielzahl von Aufgaben in Azure
 interaktiv an einer Eingabeaufforderung oder automatisch durch Skripte durchführen. Azure PowerShell ist ein Modul, das Cmdlets zum Verwalten von Azure durch Windows PowerShell enthält. Sie können diese Cmdlets verwenden, um durch die Azure-Plattform bereitgestellte Lösungen und Dienste zu erstellen, zu testen, bereitzustellen und zu verwalten. In den meisten Fällen können Sie mit den Cmdlets dieselben Aufgaben ausführen wie über das Azure-Verwaltungsportal. Beispielsweise können Sie Clouddienste, virtuelle Computer, virtuelle Netzwerke und Websites erstellen und konfigurieren.
@@ -307,8 +307,8 @@ Im Folgenden werden einige der verfügbaren Ressourcen genannt, in denen Sie erf
 [4]: http://go.microsoft.com/fwlink/?LinkId=320796
 [5]: http://go.microsoft.com/fwlink/?LinkId=324796
 [6]: http://manage.windowsazure.com
-[7]: http://msdn.microsoft.com/en-us/library/windowsazure/gg456328.aspx
-[8]: http://msdn.microsoft.com/en-us/library/windowsazure/jj554330.aspx
+[7]: http://msdn.microsoft.com/de-de/library/windowsazure/gg456328.aspx
+[8]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554330.aspx
 [9]: http://go.microsoft.com/fwlink/p/?LinkId=320212
 [10]: http://go.microsoft.com/fwlink/?LinkId=320213
 [11]: http://go.microsoft.com/fwlink/p/?LinkId=320211

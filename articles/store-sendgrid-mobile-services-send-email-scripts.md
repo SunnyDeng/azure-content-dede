@@ -13,7 +13,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 2.  [Hinzufügen eines Skripts zum Senden von E-Mails](#add-script)
 3.  [Einfügen von Daten zum Empfangen von E-Mails](#insert-data)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started) abschließen.
 
 Erstellen eines neuen KontosErstellen eines neuen SendGrid-Kontos
 -----------------------------------------------------------------

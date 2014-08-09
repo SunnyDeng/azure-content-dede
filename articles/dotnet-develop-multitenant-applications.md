@@ -1,20 +1,20 @@
 <properties linkid="develop-net-architecture-multi-tenant-web-application" urlDisplayName="Multi-Tenant Web Application Pattern" pageTitle="Multi-Tenant Web Application Pattern - Azure Architecture" metaKeywords="" description="Find architectural overviews and design patterns that describe how to implement a multi-tenant web application on Azure." metaCanonical="" services="" documentationCenter=".NET" title="Multitenant Applications in Azure" authors="" solutions="" manager="" editor="" />
 
--   [Compute](/en-us/develop/net/compute/)
--   [Datendienste](/en-us/develop/net/data/)
--   [App-Dienste](/en-us/develop/net/app-services/)
--   [Referenz](/en-us/develop/net/reference/)
--   [Anleitungen](/en-us/develop/net/guidance/)
--   [Architektur](/en-us/develop/net/architecture/)
--   [Beispiele](/en-us/develop/net/samples/)
--   [Szenario-basierte Lernprogramme](/en-us/develop/net/end-to-end-Apps/)
+-   [Compute](/de-de/develop/net/compute/)
+-   [Datendienste](/de-de/develop/net/data/)
+-   [App-Dienste](/de-de/develop/net/app-services/)
+-   [Referenz](/de-de/develop/net/reference/)
+-   [Anleitungen](/de-de/develop/net/guidance/)
+-   [Architektur](/de-de/develop/net/architecture/)
+-   [Beispiele](/de-de/develop/net/samples/)
+-   [Szenario-basierte Lernprogramme](/de-de/develop/net/end-to-end-Apps/)
 
 -   [Foren](/en-us/support/forums/)
 -   In diesem Abschnitt (gehe zu):
--   [Übersichten der Anwendungsarchitektur](/en-us/develop/net/architecture/#overviews)
+-   [Übersichten der Anwendungsarchitektur](/de-de/develop/net/architecture/#overviews)
 -   **Anwendungsmuster: Mehrinstanzenfähige Anwendungen**
--   [Anwendungsmuster: Auslastungstests](/en-us/develop/net/architecture/load-testing-pattern/)
--   [Entwurfsmuster](/en-us/develop/net/architecture/#designpatterns)
+-   [Anwendungsmuster: Auslastungstests](/de-de/develop/net/architecture/load-testing-pattern/)
+-   [Entwurfsmuster](/de-de/develop/net/architecture/#designpatterns)
 
 Mehrinstanzenfähige Anwendungen in Azure
 ========================================
@@ -39,7 +39,7 @@ Eine korrekt implementierte mehrinstanzenfähige Anwendung bietet Benutzern die 
 
 Kurz, obwohl es einige Überlegungen gibt, die Sie bei der Bereitstellung eines hochskalierbaren Dienstes berücksichtigen müssen, gibt es auch einige Ziele und Anforderungen, die bei vielen mehrinstanzenfähigen Anwendungen üblich sind. Einige sind möglicherweise für bestimmte Szenarien nicht relevant, und die Wichtigkeit einzelner Ziele und Anforderungen unterscheidet sich je nach Szenario. Als Anbieter einer mehrinstanzenfähigen Anwendung gibt es für Sie ebenfalls Ziele und Anforderungen wie das Erfüllen der Ziele und Anforderungen des Mandanten, Rentabilität, mehrere Serviceebenen, Bereitstellung, Wartbarkeit, Überwachung und Automatisierung.
 
-Weitere Informationen zu zusätzlichen Überlegungen bei der Entwicklung einer mehrinstanzenfähigen Anwendung finden Sie unter [Hosting a Multi-Tenant Application on Azure](http://msdn.microsoft.com/en-us/library/hh534480.aspx) (Hosten einer mehrinstanzenfähigen Anwendung in Azure, in englischer Sprache).
+Weitere Informationen zu zusätzlichen Überlegungen bei der Entwicklung einer mehrinstanzenfähigen Anwendung finden Sie unter [Hosting a Multi-Tenant Application on Azure](http://msdn.microsoft.com/de-de/library/hh534480.aspx) (Hosten einer mehrinstanzenfähigen Anwendung in Azure, in englischer Sprache).
 
 Azure bietet viele Funktionen, mit denen Sie die entscheidenden Probleme lösen können, die bei der Entwicklung eines mehrinstanzenfähigen Systems auftreten.
 
@@ -86,11 +86,11 @@ Azure bietet viele verschiedene Möglichkeiten zur Bereitstellung neuer Mandante
     -   Kopieren aus einer Masterreferenzdatenbank
     -   Verwenden von Datenbankimport und -export zur Bereitstellung einer neuen Datenbank aus einer Datei
 
-Weiterführende Informationen zur Anwendung von Azure bei mehrinstanzenfähigen Anwendungen finden Sie unter [Designing Multitenant Applications on Azure](http://msdn.microsoft.com/en-us/library/windowsazure/hh689716) (Entwickeln von mehrinstanzenfähigen Anwendungen in Azure, in englischer Sprache).
+Weiterführende Informationen zur Anwendung von Azure bei mehrinstanzenfähigen Anwendungen finden Sie unter [Designing Multitenant Applications on Azure](http://msdn.microsoft.com/de-de/library/windowsazure/hh689716) (Entwickeln von mehrinstanzenfähigen Anwendungen in Azure, in englischer Sprache).
 
 <!--links-->
 
-[Hosting a Multi-Tenant Application on Azure]: http://msdn.microsoft.com/en-us/library/hh534480.aspx
-[Designing Multitenant Applications on Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/hh689716
+[Hosting a Multi-Tenant Application on Azure]: http://msdn.microsoft.com/de-de/library/hh534480.aspx
+[Designing Multitenant Applications on Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/hh689716
 
 

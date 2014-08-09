@@ -45,7 +45,7 @@ Folgende Optionen sind verfügbar, um virtuelle Computer mithilfe von Abbildern 
   mithilfe des Abbilds. Weitere Informationen zum Erstellen und
   Hochladen eines benutzerdefinierten Abbilds finden Sie unter
   [Erstellen und Hochladen einer virtuellen Festplatte mit
-  Linux-Betriebssystem](/en-us/manage/linux/common-tasks/upload-a-vhd/).
+  Linux-Betriebssystem](/de-de/manage/linux/common-tasks/upload-a-vhd/).
 
 Jeder virtuelle Computer befindet sich in einem Clouddienst, entweder alleine oder zusammen mit anderen virtuellen Computern. Sie können virtuelle Computer im selben Clouddienst platzieren, damit die virtuellen Computer miteinander kommunizieren können, und um einen Lastenausgleich zwischen den virtuellen Computern zu ermöglichen sowie hohe Verfügbarkeit der Computer sicherzustellen. Weitere Informationen zu Clouddiensten und virtuellen Computern finden Sie im Abschnitt über Ausführungsmodelle unter [Einführung in Azure][2].
 
@@ -282,9 +282,9 @@ Weitere Informationen zu Linux auf Azure erhalten Sie in den folgenden Artikeln:
 [2]: http://go.microsoft.com/fwlink/p/?LinkId=311926
 [3]: http://manage.windowsazure.com
 [4]: http://go.microsoft.com/FWLink/p/?LinkID=390493
-[5]: http://www.windowsazure.com/en-us/manage/linux/how-to-guides/setup-endpoints/
+[5]: http://www.windowsazure.com/de-de/manage/linux/how-to-guides/setup-endpoints/
 [6]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 [7]: http://www.openssh.org/
-[8]: http://www.windowsazure.com/en-us/manage/linux/how-to-guides/linux-agent-guide/
-[9]: http://www.windowsazure.com/en-us/documentation/articles/introduction-linux/
-[10]: http://www.windowsazure.com/en-us/documentation/articles/xplat-cli/
+[8]: http://www.windowsazure.com/de-de/manage/linux/how-to-guides/linux-agent-guide/
+[9]: http://www.windowsazure.com/de-de/documentation/articles/introduction-linux/
+[10]: http://www.windowsazure.com/de-de/documentation/articles/xplat-cli/

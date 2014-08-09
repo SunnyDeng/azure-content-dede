@@ -5,12 +5,12 @@
 Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk
 ============================================================================================
 
-In diesem Thema wird das Erstellen einer neuen Windows Server Active Directory-Umgebung in einem virtuellen Azure-Netzwerk erläutert, das auf einem virtuellen Computer (Virtual Machine, VM) mit [Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx) läuft. In diesem Fall ist das virtuelle Azure-Netzwerk nicht mit einem lokalen Netzwerk verbunden.
+In diesem Thema wird das Erstellen einer neuen Windows Server Active Directory-Umgebung in einem virtuellen Azure-Netzwerk erläutert, das auf einem virtuellen Computer (Virtual Machine, VM) mit [Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx) läuft. In diesem Fall ist das virtuelle Azure-Netzwerk nicht mit einem lokalen Netzwerk verbunden.
 
 Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
--   Optional können Sie [mit dem Assistenten im Verwaltungsportal ein Standort-zu-Standort-VPN konfigurieren](http://msdn.microsoft.com/en-us/library/windowsazure/dn133795.aspx) und dann entweder eine neue Gesamtstruktur installieren oder eine lokale Gesamtstruktur zu einem virtuellen Azure-Netzwerk erweitern. Erläuterungen hierzu finden Sie unter [Installieren eines Active Directory-Replikatdomänencontrollers unter virtuellen Netzwerken in Windows Azure](http://www.windowsazure.com/en-us/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/).
--   Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/jj156090.aspx).
+-   Optional können Sie [mit dem Assistenten im Verwaltungsportal ein Standort-zu-Standort-VPN konfigurieren](http://msdn.microsoft.com/de-de/library/windowsazure/dn133795.aspx) und dann entweder eine neue Gesamtstruktur installieren oder eine lokale Gesamtstruktur zu einem virtuellen Azure-Netzwerk erweitern. Erläuterungen hierzu finden Sie unter [Installieren eines Active Directory-Replikatdomänencontrollers unter virtuellen Netzwerken in Windows Azure](http://www.windowsazure.com/de-de/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/).
+-   Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx).
 -   Schrittweise Anleitungen, wie Sie auf Azure eine Testumgebung mit AD DS erstellen, finden Sie unter [Test Lab Guide: Windows Server 2012 R2-Basiskonfiguration auf Windows Azure](http://www.microsoft.com/en-us/download/details.aspx?id=41684).
 
 Inhaltsverzeichnis
@@ -59,7 +59,7 @@ Schritt 2: Erstellen eines virtuellen Computers (VM) für die Serverrollen Domä
 	**Clouddienst** | <p>Clouddienst: **Erstellen Sie einen neuen Clouddienst**</p><p>Clouddienstname: Übernehmen Sie den Standardwert</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Wählen Sie das virtuelle Netzwerk aus, das Sie erstellt haben</p><p>Virtual network subnet: Wählen Sie das Subnetz aus, das Sie erstellt haben. </p><p>Speicherkonto: **Verwenden Sie ein automatisch erzeugtes Speicherkonto**</p><p>Verfügbarkeitssatz: **Kein**</p><p>Endpunkte: Übernehmen Sie die Standardwerte</p>
 	**VM Agent** | Wählen Sie **Install the VM Agent** aus
 
-3.  Die dynamische IP-Adresse, die dem virtuellen Computer standardmäßig zugewiesen wird, ist für die Dauer des Clouddienstes gültig. Sie ändert sich jedoch, wenn der virtuelle Computer heruntergefahren wird. Sie können eine statische IP-Adresse zuweisen, indem Sie das [cmdlet "Set-AzureStaticVNetIP Azure PowerShell"](http://msdn.microsoft.com/en-us/library/windowsazure/dn630228.aspx) ausführen. Dann bleibt die IP-Adresse auch nach dem Herunterfahren des virtuellen Computers erhalten.
+3.  Die dynamische IP-Adresse, die dem virtuellen Computer standardmäßig zugewiesen wird, ist für die Dauer des Clouddienstes gültig. Sie ändert sich jedoch, wenn der virtuelle Computer heruntergefahren wird. Sie können eine statische IP-Adresse zuweisen, indem Sie das [cmdlet "Set-AzureStaticVNetIP Azure PowerShell"](http://msdn.microsoft.com/de-de/library/windowsazure/dn630228.aspx) ausführen. Dann bleibt die IP-Adresse auch nach dem Herunterfahren des virtuellen Computers erhalten.
 4.  Schließen Sie einen zusätzlichen Datenträger an den virtuellen Computer an, auf dem die Active Directory-Datenbank, Protokolle und SYSVOL gespeichert werden.
 	5.  Klicken Sie auf **VM** \> **Anfügen** \> **Leeren Datenträger anfügen**.
 	6.  Geben Sie eine Größe an (zum Beispiel 10 GB), und übernehmen Sie alle anderen Standardwerte.
@@ -120,21 +120,21 @@ Wenn Sie das Skript erneut ausführen, müssen Sei für \$service einen eindeuti
 Siehe auch
 ----------
 
--   [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/jj156090.aspx)
+-   [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx)
 
--   [Erstellen eines virtuellen Netzwerks in Windows Azure](http://www.windowsazure.com/en-us/manage/services/networking/create-a-virtual-network/)
+-   [Erstellen eines virtuellen Netzwerks in Windows Azure](http://www.windowsazure.com/de-de/manage/services/networking/create-a-virtual-network/)
 
--   [Erstellen eines virtuellen Netzwerk mit standortübergreifenden Verbindungen](http://www.windowsazure.com/en-us/documentation/articles/virtual-networks-create-site-to-site-cross-premises-connectivity/)
+-   [Erstellen eines virtuellen Netzwerk mit standortübergreifenden Verbindungen](http://www.windowsazure.com/de-de/documentation/articles/virtual-networks-create-site-to-site-cross-premises-connectivity/)
 
--   [Installieren eines Active Directory-Replikatdomänencontrollers in Windows Azure](http://www.windowsazure.com/en-us/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)
+-   [Installieren eines Active Directory-Replikatdomänencontrollers in Windows Azure](http://www.windowsazure.com/de-de/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)
 
--   [Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx)
+-   [Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx)
 
--   [Installieren und Konfigurieren von Windows Azure PowerShell](http://www.windowsazure.com/en-us/documentation/articles/install-configure-powershell/)
+-   [Installieren und Konfigurieren von Windows Azure PowerShell](http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell/)
 
--   [Windows Azure PowerShell](http://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx)
+-   [Windows Azure PowerShell](http://msdn.microsoft.com/de-de/library/windowsazure/jj156055.aspx)
 
--   [Windows Azure-Verwaltungs-Cmdlets](http://msdn.microsoft.com/en-us/library/windowsazure/jj152841)
+-   [Windows Azure-Verwaltungs-Cmdlets](http://msdn.microsoft.com/de-de/library/windowsazure/jj152841)
 
 -   [Einrichten einer statischen IP-Adresse für einen virtuellen Computer in Azure](http://windowsitpro.com/windows-azure/set-azure-vm-static-ip-address)
 

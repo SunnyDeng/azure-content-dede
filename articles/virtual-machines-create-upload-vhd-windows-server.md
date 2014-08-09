@@ -3,15 +3,15 @@
 Erstellen und Hochladen einer virtuellen Festplatte, die das Windows Server-Betriebssystem enthält
 ==================================================================================================
 
-In Azure läuft ein virtueller Computer mit dem Betriebssystem, das bei dessen Erstellung gewählt wurde. Azure speichert das Betriebssystem eines virtuellen Computers auf einer virtuellen Festplatte im VHD-Format (als .vhd-Datei). Eine VHD eines Betriebssystems, die zur Duplizierung angelegt wurde, wird Image genannt. In diesem Artikel wird beschrieben, wie Sie Ihr eigenes Image durch Hochladen einer .vhd-Datei mit einem von Ihnen installierten und generalisierten Betriebssystem erstellen. Weitere Informationen zu Datenträgern und Images in Azure finden Sie unter [Datenträger und Images verwalten](http://msdn.microsoft.com/en-us/library/windowsazure/jj672979.aspx).
+In Azure läuft ein virtueller Computer mit dem Betriebssystem, das bei dessen Erstellung gewählt wurde. Azure speichert das Betriebssystem eines virtuellen Computers auf einer virtuellen Festplatte im VHD-Format (als .vhd-Datei). Eine VHD eines Betriebssystems, die zur Duplizierung angelegt wurde, wird Image genannt. In diesem Artikel wird beschrieben, wie Sie Ihr eigenes Image durch Hochladen einer .vhd-Datei mit einem von Ihnen installierten und generalisierten Betriebssystem erstellen. Weitere Informationen zu Datenträgern und Images in Azure finden Sie unter [Datenträger und Images verwalten](http://msdn.microsoft.com/de-de/library/windowsazure/jj672979.aspx).
 
-**Hinweis**: Beim Erstellen eines virtuellen Computers haben Sie die Möglichkeit, Einstellungen des Betriebssystems Ihrer Anwendung anzupassen. Die von Ihnen gewählte Konfiguration wird für den entsprechenden virtuellen Computer auf der Festplatte gespeichert. Anweisungen dazu finden Sie unter [How to Create a Custom Virtual Machine](/en-us/manage/windows/how-to-guides/custom-create-a-vm/) (in englischer Sprache).
+**Hinweis**: Beim Erstellen eines virtuellen Computers haben Sie die Möglichkeit, Einstellungen des Betriebssystems Ihrer Anwendung anzupassen. Die von Ihnen gewählte Konfiguration wird für den entsprechenden virtuellen Computer auf der Festplatte gespeichert. Anweisungen dazu finden Sie unter [How to Create a Custom Virtual Machine](/de-de/manage/windows/how-to-guides/custom-create-a-vm/) (in englischer Sprache).
 
 Voraussetzungen
 ---------------
 In diesem Artikel wird vorausgesetzt, dass Sie über Folgendes verfügen:
 
-**Ein Verwaltungszertifikat** - Sie haben ein Verwaltungszertifikat für das Abonnement erstellt, für das Sie eine VHD hochladen möchten, und Sie haben das Zertifikat in eine .cer-Datei exportiert. Weitere Informationen zum Erstellen von Zertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg551722.aspx).
+**Ein Verwaltungszertifikat** - Sie haben ein Verwaltungszertifikat für das Abonnement erstellt, für das Sie eine VHD hochladen möchten, und Sie haben das Zertifikat in eine .cer-Datei exportiert. Weitere Informationen zum Erstellen von Zertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg551722.aspx).
 
 **Ein in einer .vhd-Datei gespeichertes unterstütztes Windows-Betriebssystem** - Sie haben ein unterstütztes Windows Server-Betriebssystem auf einer virtuellen Festplatte installiert. Zum Erstellen von .vhd-Dateien gibt es verschiedene Tools. Sie können eine Virtualisierungslösung wie Hyper-V verwenden, um die .vhd-Datei zu erstellen und das Betriebssystem zu installieren. Anweisungen dazu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/en-us/library/hh846766.aspx).
 
@@ -40,7 +40,7 @@ In diesem Artikel wird vorausgesetzt, dass Sie über Folgendes verfügen:
 	    </tr>
     </table>
 
--   Das Cmdlet [Add-AzureVHD](http://msdn.microsoft.com/en-us/library/windowsazure/dn205185.aspx), das Bestandteil des Azure PowerShell-Moduls ist. Informationen zum Herunterladen dieses Moduls finden Sie unter [Azure Downloads](/en-us/develop/downloads/).
+-   Das Cmdlet [Add-AzureVHD](http://msdn.microsoft.com/de-de/library/windowsazure/dn205185.aspx), das Bestandteil des Azure PowerShell-Moduls ist. Informationen zum Herunterladen dieses Moduls finden Sie unter [Azure Downloads](/de-de/develop/downloads/).
 
 Diese Aufgabe umfasst die folgenden Schritte:
 
@@ -122,7 +122,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
     Wobei `<PathToFile>` der vollständige Pfad zur .publishsettings-Datei ist.
 
-    Weitere Informationen finden Sie unter [Erste Schritte mit Azure-Cmdlets](http://msdn.microsoft.com/en-us/library/windowsazure/jj554332.aspx)
+    Weitere Informationen finden Sie unter [Erste Schritte mit Azure-Cmdlets](http://msdn.microsoft.com/de-de/library/windowsazure/jj554332.aspx)
 
 
 Schritt 4: Hochladen der .vhd-Datei
@@ -134,7 +134,7 @@ Beim Hochladen der .vhd-Datei können Sie diese an beliebiger Stelle im Blob-Spe
 
     `Add-AzureVhd -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>`
 
-    Weitere Informationen finden Sie unter [Add-AzureVhd](http://msdn.microsoft.com/en-us/library/windowsazure/dn205185.aspx) (in englischer Sprache).
+    Weitere Informationen finden Sie unter [Add-AzureVhd](http://msdn.microsoft.com/de-de/library/windowsazure/dn205185.aspx) (in englischer Sprache).
 
 Hinzufügen des Images zur Liste benutzerdefinierter Images
 ----------------------------------------------------------

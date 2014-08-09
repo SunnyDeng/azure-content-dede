@@ -8,7 +8,7 @@ Konfigurieren der Azure-Sicherung für schnelle und einfache Sicherung von Windo
 Sie benötigen ein Windows Azure-Konto, bei dem die Funktion Azure-Sicherung aktiviert ist, um dieses Lernprogramm abzuschließen.
 
 -   Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](/en-us/pricing/free-trial/).
--   Wenn Sie bereits über ein Konto verfügen und die Azure-Sicherungs-Vorschau aktivieren möchten, finden Sie Informationen dazu unter [Aktivieren von Azure-Vorschaufunktionen](/en-us/develop/net/tutorials/create-a-windows-azure-account/#enable).
+-   Wenn Sie bereits über ein Konto verfügen und die Azure-Sicherungs-Vorschau aktivieren möchten, finden Sie Informationen dazu unter [Aktivieren von Azure-Vorschaufunktionen](/de-de/develop/net/tutorials/create-a-windows-azure-account/#enable).
 
 Fordern Sie die Teilnahme am Sicherungs-Vorschauprogramm an, und warten Sie, bis Ihr Status zu „aktiv“ wechselt. Alle Kunden werden automatisch bestätigt. Dies dauert daher nicht lange.
 

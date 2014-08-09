@@ -5,7 +5,7 @@ Aufnehmen eines Image eines virtuellen Windows Server-Computers
 
 Sie können Images aus dem Image-Katalog verwenden, um auf einfache Weise virtuelle Computer zu erstellen. Alternativ können Sie eigene Images erfassen und verwenden, um benutzerdefinierte virtuelle Computer zu erstellen. Ein Image stellt die Datei einer virtuellen Festplatte (.vhd) dar, die als Vorlage zum Erstellen eines virtuellen Computers dient. Ein Image ist eine Vorlage, weil es nicht über die spezifischen Einstellungen eines konfigurierten virtueller Computers verfügt. Beispiele für diese Einstellungen sind Computername und Benutzerkontoeinstellungen. Wenn Sie mehrere virtuelle Computer erstellen möchten, die auf die gleiche Weise eingerichtet sind, können Sie das Image eines konfigurierten virtuellen Computers erfassen und dieses als Vorlage verwenden.
 
-1.  Stellen Sie eine Verbindung mit dem virtuellen Computer her. Eine Beschreibung der dafür erforderlichen Schritte finden Sie unter [Anmeldung auf einem virtuellen Windows Server-Computer](http://www.windowsazure.com/en-us/manage/windows/how-to-guides/log-on-a-windows-vm/).
+1.  Stellen Sie eine Verbindung mit dem virtuellen Computer her. Eine Beschreibung der dafür erforderlichen Schritte finden Sie unter [Anmeldung auf einem virtuellen Windows Server-Computer](http://www.windowsazure.com/de-de/manage/windows/how-to-guides/log-on-a-windows-vm/).
 
 2.  Öffnen Sie ein Eingabeaufforderungsfenster als Administrator.
 

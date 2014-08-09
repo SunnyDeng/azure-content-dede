@@ -32,7 +32,7 @@ Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure er
 -   Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf den Clouddienst zugegriffen wird. Für die Domäne cloudapp.net können Sie kein Zertifikat von einer Zertifizierungsstelle beziehen. Sie müssen einen benutzerdefinierten Domänennamen erwerben, den Sie für den Zugriff auf Ihren Dienst verwenden können. Wenn Sie ein Zertifikat von einer Zertifizierungsstelle anfordern, muss der Name des Antragstellers für das Zertifikat der Domäne entsprechen, über die auf Ihre Anwendung zugegriffen wird. Wenn beispielsweise der benutzerdefinierte Domänenname **contoso.com** lautet, fordern Sie von Ihrer Zertifizierungsstelle ein Zertifikat für **\*.contoso.com** oder **www.contoso.com** an.
 -   Das Zertifikat muss mindestens eine 2048-Bit-Verschlüsselung haben.
 
-Zu Testzwecken können Sie ein selbstsigniertes Zertifikat erstellen und verwenden. Ein selbstsigniertes Zertifikat wird nicht über eine Zertifizierungsstelle authentifiziert. Daher kann in diesem Fall die Domäne cloudapp.net als Website-URL verwendet werden. Zum Beispiel wird in der Aufgabe unten ein selbstsigniertes Zertifikat verwendet, in dem der allgemeine Name, der im Zertifikat verwendet wird, **sslexample.cloudapp.net** lautet. Details zur Erstellung eines selbstsignierten Zertifikats mit IIS Manager finden Sie unter [Erstellen eines Dienstzertifikats für Windows Azure](http://msdn.microsoft.com/en-us/library/windowsazure/gg432987.aspx).
+Zu Testzwecken können Sie ein selbstsigniertes Zertifikat erstellen und verwenden. Ein selbstsigniertes Zertifikat wird nicht über eine Zertifizierungsstelle authentifiziert. Daher kann in diesem Fall die Domäne cloudapp.net als Website-URL verwendet werden. Zum Beispiel wird in der Aufgabe unten ein selbstsigniertes Zertifikat verwendet, in dem der allgemeine Name, der im Zertifikat verwendet wird, **sslexample.cloudapp.net** lautet. Details zur Erstellung eines selbstsignierten Zertifikats mit IIS Manager finden Sie unter [Erstellen eines Dienstzertifikats für Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg432987.aspx).
 
 Daraufhin müssen Sie Informationen zum Zertifikat in Ihre Definitions- und Konfigurationsdateien für den Dienst einfügen.
 
@@ -53,7 +53,7 @@ Ihre Anwendung muss so konfiguriert sein, dass das Zertifikat verwendet wird. Au
         ...
         </WebRole>
 
-    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Hier wurde der Speicher der Zertifizierungsstelle als Speicherort des Zertifikats gewählt. Sie können jedoch auch andere Optionen auswählen. Weitere Informationen finden Sie unter [Verknüpfen eines Zertifikats](http://msdn.microsoft.com/en-us/library/windowsazure/gg465718.aspx) mit einem Dienst.
+    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Hier wurde der Speicher der Zertifizierungsstelle als Speicherort des Zertifikats gewählt. Sie können jedoch auch andere Optionen auswählen. Weitere Informationen finden Sie unter [Verknüpfen eines Zertifikats](http://msdn.microsoft.com/de-de/library/windowsazure/gg465718.aspx) mit einem Dienst.
 
 2.  Fügen Sie in der Dienstdefinitionsdatei im Bereich **Endpoints** ein **InputEndpoint**-Element hinzu, um HTTPS zu aktivieren:
 
@@ -141,8 +141,8 @@ Wenn Sie SSL für eine Staging- statt für eine Produktionsbereitstellung verwen
 Zusätzliche RessourcenZusätzliche Ressourcen
 --------------------------------------------
 
--   [Verknüpfen eines Zertifikats mit einem Dienst](http://msdn.microsoft.com/en-us/library/windowsazure/gg465718.aspx)
+-   [Verknüpfen eines Zertifikats mit einem Dienst](http://msdn.microsoft.com/de-de/library/windowsazure/gg465718.aspx)
 
--   [Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt](http://msdn.microsoft.com/en-us/library/windowsazure/ff795779.aspx)
+-   [Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt](http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx)
 
 

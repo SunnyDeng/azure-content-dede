@@ -65,4 +65,4 @@ Notieren Sie den Wert **SharedAccessKey** oder kopieren Sie ihn in die Zwischena
 
 
 [1]: http://manage.windowsazure.com
-[2]: http://http://msdn.microsoft.com/en-us/library/windowsazure/ff687127.aspx
+[2]: http://http://msdn.microsoft.com/de-de/library/windowsazure/ff687127.aspx

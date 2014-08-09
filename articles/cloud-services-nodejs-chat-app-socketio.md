@@ -146,7 +146,7 @@ Zur Vereinfachung beschränkt sich dieses Beispiel auf das Chatten zwischen Benu
 
 ## Nächste Schritte
 
-In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung erstellt wird, die in einem Azure-Cloud-Dienst gehostet wird. Informationen zum Hosten dieser Anwendung in einer Azure-Website finden Sie unter [Build a Node.js Chat Application with Socket.IO on an Azure Web Site](/en-us/develop/nodejs/tutorials/website-using-socketio/)
+In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung erstellt wird, die in einem Azure-Cloud-Dienst gehostet wird. Informationen zum Hosten dieser Anwendung in einer Azure-Website finden Sie unter [Build a Node.js Chat Application with Socket.IO on an Azure Web Site](/de-de/develop/nodejs/tutorials/website-using-socketio/)
 (Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem
 Azure-Cloud-Dienst, in englischer Sprache).
 
@@ -154,5 +154,5 @@ Azure-Cloud-Dienst, in englischer Sprache).
 
 [1]: http://socket.io/
 [2]: https://github.com/LearnBoost/socket.io/tree/0.9.14
-[3]: https://www.windowsazure.com/en-us/develop/nodejs/tutorials/getting-started/
+[3]: https://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/
 [4]: https://github.com/WindowsAzure/azure-sdk-for-node

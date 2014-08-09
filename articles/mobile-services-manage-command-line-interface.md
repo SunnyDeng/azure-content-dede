@@ -17,11 +17,11 @@ Bei der Zusammenführung in eine einzelne Skript- oder Batch-Datei automatisiere
 
 Um die Azure-Befehlszeilentools zur Verwaltung von Mobile Services verwenden zu können, benötigen Sie ein Azure-Konto, bei dem die Azure Mobile Services-Funktion aktiviert ist.
 
--   Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/en-us/pricing/free-trial/).
+-   Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/).
 
 -   Wenn Sie bereits über ein Konto verfügen und die Azure Mobile Services-Vorschau aktivieren möchten, finden Sie Informationen dazu unter [Aktivieren von Azure-Vorschaufunktionen](../create-a-windows-azure-account/#enable).
 
-In diesem Thema wird eine Auswahl von allgemeinen Verwaltungsaufgaben behandelt, die von den Azure-Befehlszeilentools unterstützt werden. Weitere Informationen finden Sie unter [Azure-Befehlszeilentools-Dokumentation](/en-us/manage/linux/other-resources/command-line-tools/#Commands_to_manage_mobile_services).
+In diesem Thema wird eine Auswahl von allgemeinen Verwaltungsaufgaben behandelt, die von den Azure-Befehlszeilentools unterstützt werden. Weitere Informationen finden Sie unter [Azure-Befehlszeilentools-Dokumentation](/de-de/manage/linux/other-resources/command-line-tools/#Commands_to_manage_mobile_services).
 
 Installieren der ToolsInstallieren der Azure-Befehlszeilentools
 ---------------------------------------------------------------
