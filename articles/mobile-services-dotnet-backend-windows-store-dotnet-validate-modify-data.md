@@ -3,9 +3,20 @@
 Prüfen und Ändern von Daten in Mobile Services mit .Net-Backend.
 ================================================================
 
-[Windows Store C\#](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/ "Windows Store C#") [Windows Store JavaScript](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-validate-modify-data/ "Windows Store JavaScript") [Windows Phone](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-validate-modify-data/ "Windows Phone") [iOS](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS") [Android](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-android "Android") [HTML](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML")[Xamarin.iOS](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS") [Xamarin.Android](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android")
+<div class="dev-center-tutorial-selector sublanding">
+<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/" title="Windows Store C#" class="current">Windows Store C#</a>
+<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-validate-modify-data/" title="Windows Store JavaScript">Windows Store JavaScript</a>
+<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-validate-modify-data/" title="Windows Phone">Windows Phone</a>
+<a href="/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-ios" title="iOS">iOS</a>
+<a href="/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-android" title="Android">Android</a>
+<a href="/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-html" title="HTML">HTML</a><a href="/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a>
+<a href="/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
+</div>
 
-[.NET backend](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/ ".NET backend") | [JavaScript backend](/de-de/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/ "JavaScript backend")
+<div class="dev-center-tutorial-subselector">
+	<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/" title=".NET backend" class="current">.NET backend</a> | 
+	<a href="/en-us/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/"  title="JavaScript backend">JavaScript backend</a>
+</div>
 
 In diesem Thema erfahren Sie, wie Sie Code in den .Net Backend Windows Azure Mobile Services verwenden, um Daten zu prüfen und zu ändern. Der .Net-Backend-Dienst stellt einen HTTP-Dienst dar, der mit dem Web-API-Framework und dem Entity Framework erstellt wird. Wenn Sie mit der `ApiController`-Klasse vertraut sind, die mit dem Web-API-Framework definiert wird, so ist die durch Mobile Services bereitgestellte `TableController`-Klasse überwiegend selbsterklärend. `TableController` wird von der `ApiController`-Klasse abgeleitet und bietet zusätzliche Funktionen für eine Verknüpfung über Schnittstellen mit einer Datenbanktabelle. Sie kann verwendet werden, um Vorgänge in Bezug auf einzufügende und zu aktualisierende Daten auszuführen, einschließlich Überprüfen und Ändern von Daten, was in diesem Lernprogramm demonstriert wird.
 
@@ -17,13 +28,15 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 4.  [Ein Zeitstempelfeld für CompleteDate hinzufügen](#add-timestamp)
 5.  [Client zum Anzeigen von CompleteDate aktualisieren](#update-client-timestamp)
 
-Dieses Lernprogramm basiert auf den Schritten und dem Beispiel-Code aus dem vorherigen Lernprogramm [Erste Schritte](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/) oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/) oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/) abschließen.
+Dieses Lernprogramm basiert auf den Schritten und dem Beispiel-Code aus dem vorherigen Lernprogramm [Erste Schritte](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/) oder [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/) oder [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/) abschließen.
 
+<a name="string-length-validation"></a>
 Überprüfung hinzufügen
 ----------------------
 
 [WACOM.INCLUDE [mobile-services-dotnet-backend-add-validation](../includes/mobile-services-dotnet-backend-add-validation.md)]
 
+<a name="update-client-validation"></a>
 Den Client aktualisieren
 ------------------------
 
@@ -63,6 +76,7 @@ Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die 
 
         Diese Version der Methode umfasst eine Fehlerbehebung für **MobileServiceInvalidOperationException**, bei der die deserialisierte Fehlermeldung aus dem Antworteninhalt in einem Meldungsdialog angezeigt wird.
 
+<a name="test-length-validation"></a>
 Testlängenüberprüfung
 ---------------------
 
@@ -76,11 +90,13 @@ Testlängenüberprüfung
 
     ![](./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-invalid-text-length-exception-dialog.png)
 
+<a name="add-timestamp"></a>
 Ein Zeitstempelfeld für CompleteDate hinzufügen
 -----------------------------------------------
 
 [WACOM.INCLUDE [mobile-services-dotnet-backend-add-completedate](../includes/mobile-services-dotnet-backend-add-completedate.md)]
 
+<a name="update-client-timestamp"></a>
 Client zum Anzeigen von CompleteDate aktualisieren
 --------------------------------------------------
 
@@ -147,20 +163,50 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
 
 9.  Aktualisieren Sie die Datei "App.xaml.cs" für das Clientprojekt, indem Sie die Verbindung zur Adresse des mobilen Diensts auskommentieren. Testen Sie die App bezüglich des .NET-Backend, das in Ihrem Azure-Konto gehostet wird.
 
+<a name="next-steps"> </a>
 Nächste Schritte
 ----------------
 
-Da Sie dieses Lernprogramm nun abgeschlossen haben, können Sie mit dem letzten Lernprogramm der Datenreihe fortfahren: [Optimieren von Abfragen mit Paging](/de-de/develop/mobile/tutorials/add-paging-to-data-dotnet).
+Da Sie dieses Lernprogramm nun abgeschlossen haben, können Sie mit dem letzten Lernprogramm der Datenreihe fortfahren: [Optimieren von Abfragen mit Paging](/en-us/develop/mobile/tutorials/add-paging-to-data-dotnet).
 
 Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Pushbenachrichtigungen verwendet. Weitere Informationen finden Sie in den folgenden Lernprogrammen:
 
--   [Dienstweite Autorisierung von Benutzern](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts/)
+-   [Dienstweite Autorisierung von Benutzern](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts/)
     Erfahren Sie, wie Sie Daten basierend auf der ID eines authentifizierten Benutzers filtern.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/)
+-   [Erste Schritte mit Pushbenachrichtigungen](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/)
     Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
--   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/de-de/develop/mobile/how-to-guides/work-with-net-client-library)
+-   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/en-us/develop/mobile/how-to-guides/work-with-net-client-library)
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 
+<!-- Anchors. -->
+[Add string length validation]: #string-length-validation
+[Update the client to support validation]: #update-client-validation
+[Test length validation]: #test-length-validation
+[Add a timestamp field for CompleteDate]: #add-timestamp
+[Update the client to display the CompleteDate]: #update-client-timestamp
+[Next Steps]: #next-steps
+
+<!-- Images. -->
+[1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-invalid-text-length.png
+[2]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-invalid-text-length-exception-dialog.png
+[3]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-rebuild-solution.png
+[4]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-final-local-app-run.png
+
+
+
+<!-- URLs. -->
+[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
+[Service-side authorization of users]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts/
+[Refine queries with paging]: /en-us/develop/mobile/tutorials/add-paging-to-data-dotnet
+[Getting Started]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
+[Get started with data]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
+[Get started with authentication]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/
+[Get started with push notifications]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
+[JavaScript and HTML]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-js
+
+[Management Portal]: https://manage.windowsazure.com/
+[Windows Azure Management Portal]: https://manage.windowsazure.com/
+[Mobile Services .NET How-to Conceptual Reference]: /en-us/develop/mobile/how-to-guides/work-with-net-client-library

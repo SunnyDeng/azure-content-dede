@@ -3,7 +3,10 @@
 Behandeln von Schreibkonflikten in Datenbanken
 ==============================================
 
-[Windows Store C\#](/de-de/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows Store C#") [Windows Store JavaScript](/de-de/develop/mobile/tutorials/handle-database-write-conflicts-javascript/ "Windows Store JavaScript") [Windows Phone](/de-de/develop/mobile/tutorials/handle-database-write-conflicts-wp8/ "Windows Phone")
+<div class="dev-center-tutorial-selector sublanding">
+<a href="/en-us/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/" title="Windows Store C#">Windows Store C#</a>
+<a href="/en-us/develop/mobile/tutorials/handle-database-write-conflicts-javascript/" title="Windows Store JavaScript" class="current">Windows Store JavaScript</a>
+<a href="/en-us/develop/mobile/tutorials/handle-database-write-conflicts-wp8/" title="Windows Phone">Windows Phone</a></div>	
 
 Dieses Lernprogramm beschreibt die Behandlung von Konflikten, die auftreten, wenn zwei oder mehr Clients in denselben Datenbankeintrag in einer Windows Store-App schreiben. In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Azure Mobile Services bietet Unterstützung für die Erkennung und Auflösung dieser Konflikte. Dieser Artikel beschreibt die Schritte, mit denen Sie Datenbank-Schreibkonflikte sowohl auf dem Server als auch in Ihrer Anwendung behandeln können.
 
@@ -17,7 +20,7 @@ In diesem Lernprogramm fügen Sie eine Funktion zur Schnellstart-App hinzu, die 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -   Microsoft Visual Studio 2013 Express für Windows oder eine höhere Version.
--   Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started) abschließen und die JavaScript-Sprachversion des Startprojekts herunterladen.
+-   Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started) abschließen und die JavaScript-Sprachversion des Startprojekts herunterladen.
 -   [Azure-Konto](http://www.windowsazure.com/de-de/pricing/free-trial/)
 -   Azure Mobile Services NuGet-Paket 1.1.5 oder neuer. Führen Sie die folgenden Schritte aus, um die neueste Version herunterzuladen:
     1.  Öffnen Sie das Projekt in Visual Studio, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie dann **Manage Nuget Packages** aus.
@@ -26,12 +29,13 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
         ![](./media/mobile-services-windows-store-javascript-handle-database-conflicts/mobile-manage-nuget-packages-dialog.png)
 
+<a name="uiupdate">
 Aktualisieren der AnwendungAktualisieren der Anwendung, um Änderungen zu ermöglichen
 ------------------------------------------------------------------------------------
 
 In diesem Abschnitt aktualisieren Sie die Benutzeroberfläche, um Änderungen an den Textelementen zu ermöglichen. Die Bindungsvorlage enthält ein Kontrollkästchen und ein Textklassen-Steuerelement für jeden Eintrag in der Datenbanktabelle. Sie können das Textfeld des TodoItems ändern. Die Anwendung bearbeitet das `keydown`-Ereignis, sodass das Element durch Drücken der **Eingabetaste** geändert wird.
 
-1.  Öffnen Sie in Visual Studio die JavaScript-Sprachversion des TodoList-Projekts, das Sie im Lernprogramm [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started) heruntergeladen haben.
+1.  Öffnen Sie in Visual Studio die JavaScript-Sprachversion des TodoList-Projekts, das Sie im Lernprogramm [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started) heruntergeladen haben.
 2.  Öffnen Sie die Datei "default.html" im Projektmappen-Explorer in Visual Studio, ersetzen Sie die `TemplateItem`-Div-Tag-Definition durch das folgende Div-Tag, und speichern Sie Ihre Änderungen. Daraufhin wird ein Textfeldsteuerelement hinzugefügt, sodass Sie den Text eines TodoItem bearbeiten können.
 
          <div id="TemplateItem" data-win-control="WinJS.Binding.Template">
@@ -62,6 +66,7 @@ In diesem Abschnitt aktualisieren Sie die Benutzeroberfläche, um Änderungen an
 
 Die Anwendung schreibt nun die Textänderungen der einzelnen Elemente in die Datenbank, wenn die **Eingabetaste** gedrückt wird.
 
+<a name="enableOC"></a><span class="short-header">
 Aktivieren der optimistischen ParallelitätAktivieren der Konflikterkennung in Ihrer Anwendung
 ---------------------------------------------------------------------------------------------
 
@@ -114,6 +119,7 @@ Azure Mobile Services unterstützen optimistische Parallelität, indem Änderung
            });
          }
 
+<a name="test-app"></a><span class="short-header">
 Testen der AppTesten auf Datenbank-Schreibkonflikte in Ihrer Anwendung
 ----------------------------------------------------------------------
 
@@ -171,6 +177,7 @@ In diesem Abschnitt erstellen Sie ein Windows Store-App-Paket, um die App auf ei
     App-Instanz 2 
 	![](./media/mobile-services-windows-store-javascript-handle-database-conflicts/Mobile-oc-store-app2-write2-conflict.png)
 
+<a name="scriptsexample"></a><span class="short-header">
 Konfliktbehandlung mit SkriptsAutomatische Konfliktauflösung in Serverskripts
 -----------------------------------------------------------------------------
 
@@ -251,23 +258,24 @@ Führen Sie die folgenden Schritte aus, um ein Serverskript zu erstellen und zu 
     App-Instanz 2 
 	![](./media/mobile-services-windows-store-javascript-handle-database-conflicts/Mobile-oc-store-already-complete.png)
 
+<a name="next-steps">
 Nächste Schritte
 ----------------
 
 In diesem Lernprogramm wurden die Grundlagen der Behandlung von Schreibkonflikten in Windows Store-Apps bei der Arbeit mit Daten in Mobile Services gezeigt. Anschließend könnten Sie eines der folgenden Lernprogramme in unserer Daten-Reihe ausführen:
 
--   [Prüfen und Ändern von Daten mit Skripten](/de-de/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/)
+-   [Prüfen und Ändern von Daten mit Skripten](/en-us/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/)
     Informationen zur Verwendung von Serverskripts in Mobile Services, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
--   [Optimieren von Abfragen mittels Paging](/de-de/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/)
+-   [Optimieren von Abfragen mittels Paging](/en-us/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/)
     Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
 Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem der folgenden Windows Store-Lernprogramme versuchen:
 
--   [Erste Schritte mit der Authentifizierung](/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users/)
+-   [Erste Schritte mit der Authentifizierung](/en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-users/)
     Informationen zur Authentifizierung von Benutzern Ihrer App.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push/)
+-   [Erste Schritte mit Pushbenachrichtigungen](/en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-push/)
     Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 
@@ -303,13 +311,13 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 
 <!-- URLs. -->
 [Optimistic Concurrency Control]: http://go.microsoft.com/fwlink/?LinkId=330935
-[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
+[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
 [Windows Azure Account]: http://www.windowsazure.com/de-de/pricing/free-trial/
-[Validate and modify data with scripts]: /de-de/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/
-[Refine queries with paging]: /de-de/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/
-[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started
-[Get started with authentication]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users/
-[Get started with push notifications]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push/
+[Validate and modify data with scripts]: /en-us/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/
+[Refine queries with paging]: /en-us/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/
+[Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started
+[Get started with authentication]: /en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-users/
+[Get started with push notifications]: /en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-push/
 
 [Windows Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
