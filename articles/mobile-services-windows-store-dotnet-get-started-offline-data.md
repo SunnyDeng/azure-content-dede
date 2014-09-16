@@ -29,7 +29,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -   Azure Mobile Services SQLite Store NuGet-Paket, Version 0.1.0-alpha
 -   SQLite für Windows 8.1
 
-> [WACOM.NOTE] Um dieses Lernprogramm abzuschließen, benötigen Sie ein Windows Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28).
+> [WACOM.NOTE] Um dieses Lernprogramm abzuschließen, benötigen Sie ein Windows Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=AE564AB28).
 
 <a name="enable-offline-app"></a>Aktualisieren der App für die Unterstützung von Offlinefunktionen
 -----------------------------------------------------------------

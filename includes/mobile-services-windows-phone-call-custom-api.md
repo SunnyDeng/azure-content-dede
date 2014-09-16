@@ -1,5 +1,3 @@
-<h2><a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API</h2>
-
 Aktualisieren der App zum Aufruf der benutzerdefinierten API
 ------------------------------------------------------------
 

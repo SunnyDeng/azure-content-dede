@@ -2,13 +2,22 @@
 
 Dienstweite Autorisierung von Mobile Services-Benutzern
 =======================================================
-
-[Windows Store C\#](/de-de/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts "Windows Store C#")[Windows Store JavaScript](/de-de/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts "Windows Store JavaScript")[Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts "Windows Phone")[iOS](/de-de/documentation/articles/mobile-services-ios-authorize-users-in-scripts "iOS")[Android](/de-de/documentation/articles/mobile-services-android-authorize-users-in-scripts "Android")[HTML](/de-de/documentation/articles/mobile-services-html-authorize-users-in-scripts "HTML")[Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-authorize-users-in-scripts "Xamarin.iOS")[Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-authorize-users-in-scripts "Xamarin.Android")
-[.NET-Backend](/de-de/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/ ".NET-Backend") | [JavaScript-Backend](/de-de/documentation/articles/mobile-services-ios-authorize-users-in-scripts/ "JavaScript-Backend")
-
+<div class="dev-center-tutorial-selector sublanding">
+	<a href="/en-us/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts" title="Windows Store C#">Windows Store C#</a>
+	<a href="/en-us/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts" title="Windows Store JavaScript">Windows Store JavaScript</a>
+	<a href="/en-us/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts" title="Windows Phone">Windows Phone</a>
+	<a href="/en-us/documentation/articles/mobile-services-ios-authorize-users-in-scripts" title="iOS">iOS</a>
+	<a href="/en-us/documentation/articles/mobile-services-android-authorize-users-in-scripts" title="Android">Android</a>
+	<a href="/en-us/documentation/articles/mobile-services-html-authorize-users-in-scripts" title="HTML">HTML</a>
+	<a href="/en-us/documentation/articles/partner-xamarin-mobile-services-ios-authorize-users-in-scripts" title="Xamarin.iOS">Xamarin.iOS</a>
+	<a href="/en-us/documentation/articles/partner-xamarin-mobile-services-android-authorize-users-in-scripts" title="Xamarin.Android">Xamarin.Android</a>
+</div>
+<div class="dev-center-tutorial-subselector">
+	<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/" title=".NET-Backend">.NET-Backend</a> | <a href="/en-us/documentation/articles/mobile-services-ios-authorize-users-in-scripts/" title="JavaScript-Backend">JavaScript-Backend</a>
+</div>
 In diesem Thema erfahren Sie, wie Sie Serverskripts verwenden, um authentifizierte Benutzer für den Zugriff auf Daten in Azure Mobile Services von einer iOS-App zu autorisieren. In diesem Lernprogramm registrieren Sie Skripts mit Mobile Services, um Abfragen basierend auf der Benutzer-ID eines authentifizierten Benutzers zu filtern, sodass jeder Benutzer nur seine eigenen Daten sehen kann.
 
-Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart, und baut auf dem vorherigen Lernprogramm [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-ios) auf. Sie müssen zuerst [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-ios) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart, und baut auf dem vorherigen Lernprogramm [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-ios) auf. Sie müssen zuerst [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-ios) abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
 Registrieren von Skripts
 ------------------------
@@ -36,9 +45,9 @@ Da die Schnellstart-App Daten liest und einfügt, müssen Sie Skripts für diese
 
     Dieses Skript fügt einen Benutzer-ID-Wert zum Element hinzu, bei dem es sich um die Benutzer-ID des authentifizierten Benutzers handelt, bevor es in die TodoItem-Tabelle eingefügt wird.
 
-    **Hinweis**
-
-    Wenn dieses insert-Skript zum ersten Mal ausgeführt wird, muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services bei der ersten Ausführung automatisch die Spalte **userId** zur Tabelle **TodoItem** hinzu. Das dynamische Schema ist standardmäßig für einen neuen Mobile Service aktiviert und sollte deaktiviert werden, bevor die App im Windows Store veröffentlicht wird.
+ 	<div class="dev-callout"><b>Hinweis</b>
+	<p>
+    Wenn dieses insert-Skript zum ersten Mal ausgeführt wird, muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services bei der ersten Ausführung automatisch die Spalte **userId** zur Tabelle **TodoItem** hinzu. Das dynamische Schema ist standardmäßig für einen neuen Mobile Service aktiviert und sollte deaktiviert werden, bevor die App im Windows Store veröffentlicht wird.</p></div>
 
 5.  Wiederholen Sie die Schritte 3 und 4, um den vorhandenen Vorgang **Read** durch die folgende Funktion zu ersetzen:
 
@@ -52,7 +61,7 @@ Da die Schnellstart-App Daten liest und einfügt, müssen Sie Skripts für diese
 Testen der App
 --------------
 
-1.  Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-ios) verändert haben.
+1.  Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-ios) verändert haben.
 
 2.  Klicken Sie auf die Schaltfläche **Run**, um das Projekt zu erstellen, starten Sie die App im iPhone-Emulator, und melden Sie sich dann mit dem ausgewählten Identitätsanbieter an.
 
@@ -73,10 +82,10 @@ Nächste Schritte
 
 Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mit Authentifizierung veranschaulichen. Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-ios)
+-   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-ios)
     <br/>Weitere Informationen zum Speichern und Abfragen von Daten mit mobilen Diensten.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/de-de/develop/mobile/tutorials/get-started-with-push-ios)
+-   [Erste Schritte mit Pushbenachrichtigungen](/en-us/develop/mobile/tutorials/get-started-with-push-ios)
     <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/p/?LinkId=262293)

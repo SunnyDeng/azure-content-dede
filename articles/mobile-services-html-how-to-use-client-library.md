@@ -2,10 +2,14 @@
 
 So verwenden Sie einen HTML-/JavaScript-Client für Azure Mobile Services
 ========================================================================
-
-[.NET Framework](/de-de/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework") [HTML/JavaScript](/de-de/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript")[iOS](/de-de/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS")[Android](/de-de/develop/mobile/how-to-guides/work-with-android-client-library/ "Android")[Xamarin](/de-de/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin")
-
-Dieser Artikel beschreibt gängige Szenarien für die Verwendung eines HTML/JavaScript-Clients für mobile Dienste in Azure. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie noch keine Erfahrungen mit mobilen Diensten haben, sollten Sie möglicherweise zunächst die Schnellstart-Lernprogramme [Windows Store JavaScript-Schnellstart](http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started) oder [HTML-Schnellstart](http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-html) lesen. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
+<div class="dev-center-tutorial-selector sublanding">
+	<a href="/en-us/develop/mobile/how-to-guides/work-with-net-client-library/" title=".NET Framework">.NET Framework</a>
+	<a href="/en-us/develop/mobile/how-to-guides/work-with-html-js-client/" title="HTML/JavaScript">HTML/JavaScript</a>
+	<a href="/en-us/develop/mobile/how-to-guides/work-with-ios-client-library/" title="iOS">iOS</a>
+	<a href="/en-us/develop/mobile/how-to-guides/work-with-android-client-library/" title="Android">Android</a>
+	<a href="/en-us/develop/mobile/how-to-guides/work-with-xamarin-client-library/" title="Xamarin">Xamarin</a>
+</div>
+Dieser Artikel beschreibt gängige Szenarien für die Verwendung eines HTML/JavaScript-Clients für mobile Dienste in Azure. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie noch keine Erfahrungen mit mobilen Diensten haben, sollten Sie möglicherweise zunächst die Schnellstart-Lernprogramme [Windows Store JavaScript-Schnellstart](http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started) oder [HTML-Schnellstart](http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-html) lesen. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
 
 Inhaltsverzeichnis
 ------------------
@@ -41,7 +45,7 @@ Der folgende Code instanziiert das Client-Objekt für den mobilen Dienst.
 
             <script src='http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.1.2.min.js'></script>
 
-Öffnen oder erstellen Sie eine JavaScript-Datei im Editor und fügen Sie den folgenden Code hinzu, um die `MobileServiceClient`-Variable zu definieren und übergeben Sie Anwendungs-URL und -Schlüssel in dieser Reihenfolge an den `MobileServiceClient`-Konstruktor. Ersetzen Sie den Platzhalter `AppUrl` durch die Anwendungs-URL Ihres mobilen Dienstes und `AppKey` durch den Anwendungsschlüssel. Im Lernprogramm [Erste Schritte mit Daten in Windows Store JavaScript](http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-js) oder [Erste Schritte mit Daten in HTML/JavaScript](http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-html/) erfahren Sie, wie Sie Anwendungs-URL und -Schlüssel Ihres mobilen Dienstes abfragen können.
+Öffnen oder erstellen Sie eine JavaScript-Datei im Editor und fügen Sie den folgenden Code hinzu, um die `MobileServiceClient`-Variable zu definieren und übergeben Sie Anwendungs-URL und -Schlüssel in dieser Reihenfolge an den `MobileServiceClient`-Konstruktor. Ersetzen Sie den Platzhalter `AppUrl` durch die Anwendungs-URL Ihres mobilen Dienstes und `AppKey` durch den Anwendungsschlüssel. Im Lernprogramm [Erste Schritte mit Daten in Windows Store JavaScript](http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-data-js) oder [Erste Schritte mit Daten in HTML/JavaScript](http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-data-html/) erfahren Sie, wie Sie Anwendungs-URL und -Schlüssel Ihres mobilen Dienstes abfragen können.
 
          var MobileServiceClient = WindowsAzure.MobileServiceClient;
          var client = new MobileServiceClient('AppUrl', 'AppKey');
@@ -162,10 +166,10 @@ Solange wir also die Regeln beachten, können wir komplexere Filter zu unseren D
 
 Der folgende Code zeigt, wie Sie Daten mithilfe einer `orderBy`- oder einer `orderByDescending`-Klausel in einer Abfrage sortieren können. Die Abfrage liefert Elemente aus der Tabelle `todoItemTable` aufsteigend sortiert nach dem `text`-Feld zurück. Standardmäßig gibt der Server nur die ersten 50 Elemente zurück.
 
-**Hinweis**
-
+<div class="dev-callout"><b>Hinweis</b>
+<p>
 Standardmäßig wird eine servergesteuerte Seitengröße verwendet, um zu verhindern, dass alle Elemente zurückgegeben werden. Damit wird verhindert, dass Standardabfragen für große Datensätze den Dienst negativ beeinflussen.
-
+</p></div>
 > Sie können `take` aufrufen, um die Anzahl der zurückgegebenen Elemente zu erhöhen, wie im nächsten Abschnitt beschrieben. `todoItemTable` ist ein Verweis auf die zuvor erstellte Tabelle in Ihrem mobilen Dienst.
 
             var ascendingSortedTable = todoItemTable.orderBy("text").read().done(function (results) {
@@ -303,7 +307,7 @@ Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätz
 -   Druckbare Zeichen: **"**(0x0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **\`** (0x0060)
 -   Die IDs "." und ".."
 
-Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables) (CLI für Tabellen in mobilen Diensten, in englischer Sprache).
+Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](http://www.windowsazure.com/en-us/manage/linux/other-resources/command-line-tools/#Mobile_Tables) (CLI für Tabellen in mobilen Diensten, in englischer Sprache).
 
 Ändern von DatenVorgehensweise: Ändern von Daten in einem mobilen Dienst
 ------------------------------------------------------------------------
@@ -372,18 +376,18 @@ Dieser Abschnitt beschreibt das Anzeigen von Datenobjekten in GUI-Elementen. Fü
                alert("Error: " + err);
             });
 
-In Windows Store-Apps können Sie mit dem Abfrageergebnis ein [WinJS.Binding.List]-Objekt erstellen, das als Datenquelle für ein [ListView](http://msdn.microsoft.com/de-de/library/windows/apps/br211837.aspx)-Objekt gebunden werden kann. Weitere Informationen finden Sie unter [Datenbindung (Windows Store-Apps mit JavaScript und HTML)](http://msdn.microsoft.com/de-de/library/windows/apps/hh758311.aspx).
+In Windows Store-Apps können Sie mit dem Abfrageergebnis ein [WinJS.Binding.List]-Objekt erstellen, das als Datenquelle für ein [ListView](http://msdn.microsoft.com/en-us/library/windows/apps/br211837.aspx)-Objekt gebunden werden kann. Weitere Informationen finden Sie unter [Datenbindung (Windows Store-Apps mit JavaScript und HTML)](http://msdn.microsoft.com/en-us/library/windows/apps/hh758311.aspx).
 
 AuthentifizierenVorgehensweise: Authentifizieren von Benutzern
 --------------------------------------------------------------
 
-Mobile Dienste unterstützen Authentifizierung und Autorisierung von Anwendungsbenutzern mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft Account und Twitter. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln in Serverskripts zu implementieren. Weitere Informationen finden Sie im Lernprogramm [Erste Schritte mit Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-html).
+Mobile Dienste unterstützen Authentifizierung und Autorisierung von Anwendungsbenutzern mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft Account und Twitter. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln in Serverskripts zu implementieren. Weitere Informationen finden Sie im Lernprogramm [Erste Schritte mit Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-html).
 
 Insgesamt werden zwei Authentifizierungsflüsse unterstützt: ein *Serverfluss* und ein *Clientfluss*. Der Serverfluss bietet die einfachste Authentifizierungsform, da in diesem Fall die Authentifizierungs-Webschnittstelle des Anbieters verwendet wird. Der Clientfluss ermöglicht eine tiefere Integration mit gerätespezifischen Fähigkeiten wie z. B. einmalige Anmeldung, da in diesem Fall anbieterspezifische und gerätespezifische SDKs verwendet werden.
 
 ### Serverfluss
 
-Sie müssen Ihre Anwendung bei Ihrem Identitätsanbieter registrieren, um den mobilen Diensten die Verwaltung des Authentifizierungsprozesses in Ihrer Windows Store- oder HTML5-App zu ermöglichen. Anschließend müssen Sie in Ihrem mobilen Dienst die Anwendungs-ID und den geheimen Schlüssel Ihres Anbieters konfigurieren. Weitere Informationen finden Sie im Lernprogramm "Erste Schritte mit Authentifizierung" ([Windows Store](/de-de/develop/mobile/tutorials/get-started-with-users-js)/[HTML](/de-de/develop/mobile/tutorials/get-started-with-users-html)).
+Sie müssen Ihre Anwendung bei Ihrem Identitätsanbieter registrieren, um den mobilen Diensten die Verwaltung des Authentifizierungsprozesses in Ihrer Windows Store- oder HTML5-App zu ermöglichen. Anschließend müssen Sie in Ihrem mobilen Dienst die Anwendungs-ID und den geheimen Schlüssel Ihres Anbieters konfigurieren. Weitere Informationen finden Sie im Lernprogramm "Erste Schritte mit Authentifizierung" ([Windows Store](/en-us/develop/mobile/tutorials/get-started-with-users-js)/[HTML](/en-us/develop/mobile/tutorials/get-started-with-users-html)).
 
 Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die [LoginAsync]-Methode mit dem [MobileServiceAuthenticationProvider]-Wert Ihres Anbieters aufrufen. Für die Facebook-Anmeldung verwenden Sie z. B. den folgenden Code.
 
@@ -395,11 +399,11 @@ Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die [LoginAsync
 
 Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die `login`-Methode übergebenen Wert auf einen der folgenden Werte: `microsoftaccount`, `facebook`, `twitter`, `google` oder `windowsazureactivedirectory`.
 
-In diesem Fall verwaltet der mobile Dienst den OAuth 2.0-Authentifizierungsfluss, indem die Anmeldungsseite des ausgewählten Anbieters angezeigt und nach der erfolgreichen Anmeldung beim Identitätsanbieter ein Authentifizierungstoken für den mobilen Dienst generiert wird. Die [login](http://msdn.microsoft.com/de-de/library/windowsazure/jj554236.aspx)-Funktion gibt ein JSON-Objekt (**user**) zurück, das sowohl Benutzer-ID als auch Authentifizierungstoken für den mobilen Dienst in den Feldern **userId** bzw. **authenticationToken** zur Verfügung stellt. Dieses Token kann zwischen gespeichert und wiederverwendet werden, bis es abläuft. Weitere Informationen finden Sie unter [Zwischenspeichern des Authentifizierungstokens].
+In diesem Fall verwaltet der mobile Dienst den OAuth 2.0-Authentifizierungsfluss, indem die Anmeldungsseite des ausgewählten Anbieters angezeigt und nach der erfolgreichen Anmeldung beim Identitätsanbieter ein Authentifizierungstoken für den mobilen Dienst generiert wird. Die [login](http://msdn.microsoft.com/en-us/library/windowsazure/jj554236.aspx)-Funktion gibt ein JSON-Objekt (**user**) zurück, das sowohl Benutzer-ID als auch Authentifizierungstoken für den mobilen Dienst in den Feldern **userId** bzw. **authenticationToken** zur Verfügung stellt. Dieses Token kann zwischen gespeichert und wiederverwendet werden, bis es abläuft. Weitere Informationen finden Sie unter [Zwischenspeichern des Authentifizierungstokens].
 
-**Windows Store-App**
-
-Wenn Sie den Anmeldeanbieter für Microsoft-Konten zum Authentifizieren von Benutzern Ihrer Windows Store-App verwenden, sollten Sie ebenfalls das App-Paket im mobilen Dienst registrieren. Wenn Sie Ihre Windows Store-App-Paketinformationen bei Mobile Services registrieren, kann der Client die Anmeldeinformationen für Microsoft Account für eine einmalige Anmeldung verwenden. Wenn Sie dies nicht tun, werden Ihre Benutzer mit Microsoft Account-Login jedes Mal zur Anmeldung aufgefordert, wenn diese Anmeldemethode aufgerufen wird. Informationen zur Registrierung Ihres Windows Store-App-Pakets finden Sie unter [Registrieren Ihres Windows Store-App-Pakets für Microsoft-Authentifizierung](/de-de/develop/mobile/how-to-guides/register-windows-store-app-package/). Nach der Registrierung Ihres Pakets im mobilen Dienst können Sie die [login](http://go.microsoft.com/fwlink/p/?LinkId=322050)-Methode aufrufen und den Wert **true** für den *useSingleSignOn*-Parameter übergeben, um die Anmeldeinformationen wiederzuverwenden.
+<div class="dev-callout"><b>Windows Store-App</b>
+<p>
+Wenn Sie den Anmeldeanbieter für Microsoft-Konten zum Authentifizieren von Benutzern Ihrer Windows Store-App verwenden, sollten Sie ebenfalls das App-Paket im mobilen Dienst registrieren. Wenn Sie Ihre Windows Store-App-Paketinformationen bei Mobile Services registrieren, kann der Client die Anmeldeinformationen für Microsoft Account für eine einmalige Anmeldung verwenden. Wenn Sie dies nicht tun, werden Ihre Benutzer mit Microsoft Account-Login jedes Mal zur Anmeldung aufgefordert, wenn diese Anmeldemethode aufgerufen wird. Informationen zur Registrierung Ihres Windows Store-App-Pakets finden Sie unter [Registrieren Ihres Windows Store-App-Pakets für Microsoft-Authentifizierung](/en-us/develop/mobile/how-to-guides/register-windows-store-app-package/). Nach der Registrierung Ihres Pakets im mobilen Dienst können Sie die [login](http://go.microsoft.com/fwlink/p/?LinkId=322050)-Methode aufrufen und den Wert **true** für den *useSingleSignOn*-Parameter übergeben, um die Anmeldeinformationen wiederzuverwenden.</p></div>
 
 ### Clientfluss
 
@@ -419,7 +423,7 @@ Das folgende Beispiel verwendet das Live SDK, das einmalige Anmeldung für Windo
               });
         });
 
-Dieses vereinfachte Beispiel ruft ein Token von Live Connect ab und übergibt das Token in einem Aufruf der [login](http://msdn.microsoft.com/de-de/library/windowsazure/jj554236.aspx)-Funktion an den mobilen Dienst. Ein weiteres Beispiel für die einmalige Anmeldung mit einem Microsoft-Konto finden Sie unter [Authentifizieren Ihrer Anwendung mit einmaliger Anmeldung](/de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/).
+Dieses vereinfachte Beispiel ruft ein Token von Live Connect ab und übergibt das Token in einem Aufruf der [login](http://msdn.microsoft.com/en-us/library/windowsazure/jj554236.aspx)-Funktion an den mobilen Dienst. Ein weiteres Beispiel für die einmalige Anmeldung mit einem Microsoft-Konto finden Sie unter [Authentifizieren Ihrer Anwendung mit einmaliger Anmeldung](/en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/).
 
 Wenn Sie die Facebook- oder Google-APIs für die Clientauthentifizierung verwenden, müssen Sie den Code abändern.
 
@@ -436,7 +440,7 @@ Dieses Beispiel geht davon aus, dass das vom jeweiligen Anbieter gelieferte Toke
 
 ### Zwischenspeichern des Authentifizierungstokens
 
-Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutzer authentifiziert hat. Sie können entweder [sessionStorage](http://msdn.microsoft.com/de-de/library/cc197062(v=vs.85).aspx) oder [localStorage](http://msdn.microsoft.com/de-de/library/cc197062(v=vs.85).aspx) verwenden, um die Identität des aktuellen Benutzers bei der ersten Anmeldung zwischenzuspeichern und später bei Bedarf prüfen, ob Sie die Benutzeridentität bereits im Speicher haben. Falls der Zwischenspeicher leer ist oder ein Aufruf fehlschlägt (d. h. die aktuelle Anmeldesitzung abgelaufen ist), müssen wir dennoch den Anmeldeprozess durchlaufen.
+Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutzer authentifiziert hat. Sie können entweder [sessionStorage](http://msdn.microsoft.com/en-us/library/cc197062(v=vs.85).aspx) oder [localStorage](http://msdn.microsoft.com/en-us/library/cc197062(v=vs.85).aspx) verwenden, um die Identität des aktuellen Benutzers bei der ersten Anmeldung zwischenzuspeichern und später bei Bedarf prüfen, ob Sie die Benutzeridentität bereits im Speicher haben. Falls der Zwischenspeicher leer ist oder ein Aufruf fehlschlägt (d. h. die aktuelle Anmeldesitzung abgelaufen ist), müssen wir dennoch den Anmeldeprozess durchlaufen.
 
         // Nach der Anmeldung
         sessionStorage.loggedInUser = JSON.stringify(client.currentUser);
@@ -496,7 +500,7 @@ PromisesVorgehensweise: Einsatz von Promises
 
 Promises bieten einen Mechanismus zur Planung von Operationen auf einen Wert, der noch nicht berechnet wurde. Es handelt sich um eine Abstraktion für Interaktionen mit asynchronen APIs.
 
-Die `done`-Promise wird ausgeführt, sobald die übergebene Funktion entweder erfolgreich abgeschlossen wurde oder ein Fehler aufgetreten ist. Im Gegensatz zur `then` ist in diesem Fall garantiert, dass alle nicht in der Funktion verarbeiteten Fehler geworfen werden, und nach Abschluss der Ausführung der Handler wirft diese Funktion alle Fehler, die von der then-Promise im Fehlerstatus geworfen worden wären. Weitere Informationen finden Sie unter [done](http://msdn.microsoft.com/de-de/library/windows/apps/hh701079.aspx).
+Die `done`-Promise wird ausgeführt, sobald die übergebene Funktion entweder erfolgreich abgeschlossen wurde oder ein Fehler aufgetreten ist. Im Gegensatz zur `then` ist in diesem Fall garantiert, dass alle nicht in der Funktion verarbeiteten Fehler geworfen werden, und nach Abschluss der Ausführung der Handler wirft diese Funktion alle Fehler, die von der then-Promise im Fehlerstatus geworfen worden wären. Weitere Informationen finden Sie unter [done](http://msdn.microsoft.com/en-us/library/windows/apps/hh701079.aspx).
 
          promise.done(onComplete, onError);
 
@@ -509,7 +513,7 @@ Wie folgt:
                alert("Error: " + err);
             });
 
-Die `then` hat dieselbe Funktion wie die `done`-Promise, aber im Gegensatz zu `then` ist bei `done` garantiert, dass alle nicht in der Funktion verarbeiteten Fehler geworfen werden. Falls Sie keinen Fehlerhandler an `then` übergeben und ein Fehler in der Anwendung auftritt, wird keine Ausnahme geworfen sondern eine Promise im Fehlerzustand zurückgegeben. Weitere Informationen finden Sie unter [then](http://msdn.microsoft.com/de-de/library/windows/apps/br229728.aspx).
+Die `then` hat dieselbe Funktion wie die `done`-Promise, aber im Gegensatz zu `then` ist bei `done` garantiert, dass alle nicht in der Funktion verarbeiteten Fehler geworfen werden. Falls Sie keinen Fehlerhandler an `then` übergeben und ein Fehler in der Anwendung auftritt, wird keine Ausnahme geworfen sondern eine Promise im Fehlerzustand zurückgegeben. Weitere Informationen finden Sie unter [then](http://msdn.microsoft.com/en-us/library/windows/apps/br229728.aspx).
 
          promise.then(onComplete, onError).done( /* Your success and error handlers */ );
 
@@ -522,7 +526,7 @@ Wie folgt:
                alert("Error: " + err);
             });
 
-Sie können Promises auf verschiedene Arten einsetzen. Sie können Promises verketten, indem Sie `then` oder `done` für die Promise aufrufen, die von der vorherigen `then`-Funktion zurückgegeben wurde. Verwenden Sie `then` für Zwischenschritte der Operation (z. B. `.then().then()`) und `done` für den letzten Schritt der Operation (z. B. `.then().then().done()`). Sie können mehrere `then`-Funktionen verketten, da `then` eine Promise zurückgibt. Sie können nicht mehr als eine `done`-Methode verketten, da die Rückgabe undefiniert ist. [Weitere Informationen zum Unterschied zwischen then und done](http://msdn.microsoft.com/de-de/library/windows/apps/hh700334.aspx).
+Sie können Promises auf verschiedene Arten einsetzen. Sie können Promises verketten, indem Sie `then` oder `done` für die Promise aufrufen, die von der vorherigen `then`-Funktion zurückgegeben wurde. Verwenden Sie `then` für Zwischenschritte der Operation (z. B. `.then().then()`) und `done` für den letzten Schritt der Operation (z. B. `.then().then().done()`). Sie können mehrere `then`-Funktionen verketten, da `then` eine Promise zurückgibt. Sie können nicht mehr als eine `done`-Methode verketten, da die Rückgabe undefiniert ist. [Weitere Informationen zum Unterschied zwischen then und done](http://msdn.microsoft.com/en-us/library/windows/apps/hh700334.aspx).
 
  			todoItemTable.insert({
  			   text: "foo"
@@ -556,27 +560,27 @@ Nächste Schritte
 
 Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wichtigen Aufgaben in mobilen Diensten im Detail widmen:
 
--   [Erste Schritte mit mobilen Diensten](/de-de/develop/mobile/tutorials/get-started-html)
+-   [Erste Schritte mit mobilen Diensten](/en-us/develop/mobile/tutorials/get-started-html)
     
     Lernen Sie die Grundlagen für den Einsatz von mobilen Diensten.
 
--   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-html)
+-   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-html)
     
     Weitere Informationen zum Speichern und Abfragen von Daten mit mobilen Diensten.
 
--   [Erste Schritte mit Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-html)
+-   [Erste Schritte mit Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-html)
     
     Authentifizieren Sie die Benutzer Ihrer Anwendung mit einem Identitätsanbieter.
 
--   [Prüfen und Ändern von Daten mit Skripten](/de-de/develop/mobile/tutorials/validate-modify-and-augment-data-html)
+-   [Prüfen und Ändern von Daten mit Skripten](/en-us/develop/mobile/tutorials/validate-modify-and-augment-data-html)
     
     Informationen zur Verwendung von Serverskripten in Mobile Services, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
--   [Optimieren von Abfragen mittels Paging](/de-de/develop/mobile/tutorials/add-paging-to-data-html)
+-   [Optimieren von Abfragen mittels Paging](/en-us/develop/mobile/tutorials/add-paging-to-data-html)
     
     Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
--   [Autorisieren von Benutzern mit Skripts](/de-de/develop/mobile/tutorials/authorize-users-in-scripts-html)
+-   [Autorisieren von Benutzern mit Skripts](/en-us/develop/mobile/tutorials/authorize-users-in-scripts-html)
     
     Verwenden Sie die vom mobilen Dienst für einen authentifizierten Benutzer gelieferte Benutzer-ID zum Filtern von zurückgegebenen Daten.
 

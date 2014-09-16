@@ -11,9 +11,9 @@ VorbereitungVorbereitung auf mögliche Notfälle
 Um die Wiederherstellung im Fall eines Verfügbarkeitsproblems zu vereinfachen, können Sie sich zuvor darauf vorbereiten:
 
 -   **Sichern Sie Ihre Daten in der SQL-Datenbank des mobilen Azure-Dienstes**
-    Ihre Mobildienst-Anwendungsdaten werden in einer Azure-SQL-Datenbank gespeichert. Wie empfehlen, diese Daten wie unter [SQL Database business continuity guidance](http://msdn.microsoft.com/de-de/library/windowsazure/hh852669.aspx) beschrieben zu sichern.
+    Ihre Mobildienst-Anwendungsdaten werden in einer Azure-SQL-Datenbank gespeichert. Wie empfehlen, diese Daten wie unter [SQL Database business continuity guidance](http://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx) beschrieben zu sichern.
 -   **Sichern Sie Ihre Skripts für mobile Dienste**
-    Wir empfehlen, Ihre Skripts für mobile Dienste in einem Quellcodeverwaltungssystem wie [Team Foundation Service](http://tfs.visualstudio.com/) oder [GitHub] zu speichern und sich nicht nur auf die Kopien im mobilen Dienst zu verlassen. Sie können die Skripts über das Azure-Portal mithilfe der [Quellcodeverwaltungsfunktion](http://www.windowsazure.com/de-de/develop/mobile/tutorials/store-scripts-in-source-control/) oder dem [Azure-Befehlszeilentool](http://www.windowsazure.com/de-de/develop/mobile/tutorials/command-line-administration/) von Mobile Services herunterladen. Achten Sie auf Funktionen, die im Portal als "Vorschau" bezeichnet werden, da die Wiederherstellung dieser Skripts nicht garantiert werden kann und Sie sie möglicherweise aus Ihrer eigenen, ursprünglichen Quellcodeverwaltung wiederherstellen müssen.
+    Wir empfehlen, Ihre Skripts für mobile Dienste in einem Quellcodeverwaltungssystem wie [Team Foundation Service](http://tfs.visualstudio.com/) oder [GitHub] zu speichern und sich nicht nur auf die Kopien im mobilen Dienst zu verlassen. Sie können die Skripts über das Azure-Portal mithilfe der [Quellcodeverwaltungsfunktion](http://www.windowsazure.com/en-us/develop/mobile/tutorials/store-scripts-in-source-control/) oder dem [Azure-Befehlszeilentool](http://www.windowsazure.com/en-us/develop/mobile/tutorials/command-line-administration/) von Mobile Services herunterladen. Achten Sie auf Funktionen, die im Portal als "Vorschau" bezeichnet werden, da die Wiederherstellung dieser Skripts nicht garantiert werden kann und Sie sie möglicherweise aus Ihrer eigenen, ursprünglichen Quellcodeverwaltung wiederherstellen müssen.
 -   **Reservieren Sie einen sekundären mobilen Dienst**
     Bei einem Verfügbarkeitsproblem mit Ihrem mobilen Dienst müssen Sie ihn möglicherweise in einer alternativen Azure-Region erneut bereitstellen. Um sicherzustellen, dass die Kapazität verfügbar ist (zum Beispiel in den seltenen Fällen des Ausfalls einer ganzen Region), sollten Sie einen sekundären mobilen Dienst in der alternativen Region erstellen und den Modus auf den gleichen oder einen höheren Modus wie beim primären Dienst festlegen. (Falls sich der primäre Dienst im Shared-Modus befindet, können Sie den sekundären Dienst auf den Shared- oder auf den Reserved-Modus festlegen. Falls sich der primäre Dienst aber im Reserved-Modus befindet, muss auch der sekundäre auf den Reserved-Modus festgelegt werden.)
 
@@ -25,7 +25,7 @@ Diese Umstände weisen auf ein Problem hin, das eine Wiederherstellung erfordern
 -   Apps, die mit dem mobilen Dienst verbunden sind, können über einen längeren Zeitraum nicht mit dem Dienst kommunizieren.
 -   Der Status des mobilen Dienstes wird als **Unhealthy** im [Azure-Portal](http://manage.windowsazure.com/) angezeigt.
 -   Ein **Unhealthy**-Banner wird oben auf jeder Registerkarte des mobilen Dienstes im Azure-Portal eingeblendet, und Verwaltungsvorgänge führen zu Fehlermeldungen.
--   Das [Azure-Dienstdashboard](http://www.windowsazure.com/de-de/support/service-dashboard/) weist auf ein Verfügbarkeitsproblem hin.
+-   Das [Azure-Dienstdashboard](http://www.windowsazure.com/en-us/support/service-dashboard/) weist auf ein Verfügbarkeitsproblem hin.
 
 WiederherstellenNotfallwiederherstellung
 ----------------------------------------
@@ -42,7 +42,7 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 
     Falls Sie noch keinen sekundären mobilen Dienst reserviert haben, erstellen Sie jetzt einen in einer anderen Azure-Region. Legen Sie seinen Modus auf den gleichen oder einen höheren Modus wie beim primären Dienst fest. (Falls sich der primäre Dienst im Shared-Modus befindet, können Sie den sekundären Dienst auf den Shared- oder auf den Reserved-Modus festlegen. Falls sich der primäre Dienst aber im Reserved-Modus befindet, muss auch der sekundäre auf den Reserved-Modus festgelegt werden.)
 
-3.  Konfigurieren Sie die Azure-Befehlszeilentools für die Verwendung mit Ihrem Abonnement, wie in [Automatisieren von mobilen Diensten mit Befehlszeilentools](http://www.windowsazure.com/de-de/develop/mobile/tutorials/command-line-administration/) beschrieben wird.
+3.  Konfigurieren Sie die Azure-Befehlszeilentools für die Verwendung mit Ihrem Abonnement, wie in [Automatisieren von mobilen Diensten mit Befehlszeilentools](http://www.windowsazure.com/en-us/develop/mobile/tutorials/command-line-administration/) beschrieben wird.
 
 4.  Jetzt können Sie den sekundären Dienst verwenden, um den primären wiederherzustellen.
 
@@ -69,7 +69,7 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 
 6.  Stellen Sie sicher, dass der wiederhergestellte Dienst mit der Azure-SQL-Datenbank kommuniziert. Der Wiederherstellungsbefehl stellt den mobilen Dienst wieder her, behält aber die Verbindung zur ursprünglichen Datenbank bei. Falls sich das Problem in der primären Azure-Region auch auf die Datenbank auswirkt, funktioniert der wiederhergestellte Dienst möglicherweise nicht ordnungsgemäß. Sie können das Azure-Dienstdashboard verwenden, um den Datenbankstatus für eine bestimmte Region zu untersuchen. Falls die ursprüngliche Datenbank nicht funktioniert, können Sie sie wiederherstellen:
 
-    -   Stellen Sie die Azure-SQL-Datenbank in der Azure-Region wieder her, in der Sie gerade den mobilen Dienst wiederhergestellt haben, wie in [SQL Database business continuity guidance](http://msdn.microsoft.com/de-de/library/windowsazure/hh852669.aspx) beschrieben wird.
+    -   Stellen Sie die Azure-SQL-Datenbank in der Azure-Region wieder her, in der Sie gerade den mobilen Dienst wiederhergestellt haben, wie in [SQL Database business continuity guidance](http://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx) beschrieben wird.
     -   Wählen Sie im Azure-Portal auf der Registerkarte **Konfigurieren** des mobilen Dienstes die Option "Change Database" und dann die neu wiederhergestellte Datenbank aus.
 
 Jetzt sollte der mobile Dienst in einer neuen Azure-Region wiederhergestellt worden sein und verarbeitet nun Datenverkehr von den Store-Apps mithilfe der ursprünglichen URL.

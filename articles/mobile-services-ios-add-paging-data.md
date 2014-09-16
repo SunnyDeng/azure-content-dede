@@ -18,13 +18,13 @@ Verfeinern von Mobile Services-Abfragen mit Paging
 
 In diesem Thema erfahren Sie, wie Sie die aus Azure Mobile Services an Ihre iOS-App zurückgegebene Datenmenge mithilfe von Paging steuern können. Dieses Lernprogramm verwendet die Abfrageeigenschaften **fetchLimit** und **fetchOffset** im Client, um bestimmte "Seiten" von Daten abzufragen.
 
-**Hinweis**
+<div class="dev-callout"><b>Hinweis</b>
+<p>
+Mobile Services verwendet standardmäßig eine Seitengröße von 50 Elementen pro Antwort, um mobile Clients nicht mit Daten zu überfluten. Durch Angabe der Seitengröße können Sie bis zu 1.000 Elemente in einer Antwort abfragen.</p></div>
 
-Mobile Services verwendet standardmäßig eine Seitengröße von 50 Elementen pro Antwort, um mobile Clients nicht mit Daten zu überfluten. Durch Angabe der Seitengröße können Sie bis zu 1.000 Elemente in einer Antwort abfragen.
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-ios). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zumindest das erste Lernprogramm aus der Daten-Reihe abschließen, [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-ios).
 
-Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-ios). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zumindest das erste Lernprogramm aus der Daten-Reihe abschließen, [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-ios).
-
-1.  Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-ios) verändert haben.
+1.  Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-ios) verändert haben.
 
 2.  Drücken Sie die **Run** Taste (Command + R), um das Projekt zu erstellen und die App zu starten. Geben Sie anschließend einen Text in das Textfeld ein und klicken Sie auf das (**+**) Symbol.
 
@@ -78,15 +78,15 @@ Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorhe
 
       Diese Abfrage überspringt die ersten drei Ergebnisse und liefert die folgenden drei zurück. Dies ist die zweite "Seite" der Daten für eine Seitengröße von drei Elementen.
 
-    **Hinweis**
-
-    Dieses Lernprogramm verwendet zur Vereinfachung fest codierte Werte für die **fetchOffset** und **fetchLimit** Eigenschaften. Tatsächliche Anwendungen können ähnliche Abfragen mit einem Pagersteuerelement oder einer ähnlichen Benutzersteuerung ausführen, um zur vorherigen bzw. nächsten Seite zu navigieren. Alternativ können Sie **query.includeTotalCount = YES** verwenden, um die Gesamtzahl aller Elemente auf dem Server zusammen mit den Paging-Daten abzurufen.
+    <div class="dev-callout"><b>Hinweis</b>
+	<p>
+    Dieses Lernprogramm verwendet zur Vereinfachung fest codierte Werte für die **fetchOffset** und **fetchLimit** Eigenschaften. Tatsächliche Anwendungen können ähnliche Abfragen mit einem Pagersteuerelement oder einer ähnlichen Benutzersteuerung ausführen, um zur vorherigen bzw. nächsten Seite zu navigieren. Alternativ können Sie **query.includeTotalCount = YES** verwenden, um die Gesamtzahl aller Elemente auf dem Server zusammen mit den Paging-Daten abzurufen.</p></div>
 
 Nächste Schritte
 ----------------
 
 Dies bildet den Abschluss der Lernprogramm-Reihe über Grundlagen mit Daten in Mobile Services. Weitere Informationen finden Sie im folgenden Mobile Services-Thema:
 
--   [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-ios)
+-   [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-ios)
     <br/>Lernen Sie, wie Benutzer Ihrer App mit einem Windows-Konto authentifiziert werden.
 

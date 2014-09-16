@@ -21,7 +21,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -   Microsoft Visual Studio 2013 Express für Windows oder eine höhere Version.
 -   Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started) abschließen und die JavaScript-Sprachversion des Startprojekts herunterladen.
--   [Azure-Konto](http://www.windowsazure.com/de-de/pricing/free-trial/)
+-   [Azure-Konto](http://www.windowsazure.com/en-us/pricing/free-trial/)
 -   Azure Mobile Services NuGet-Paket 1.1.5 oder neuer. Führen Sie die folgenden Schritte aus, um die neueste Version herunterzuladen:
     1.  Öffnen Sie das Projekt in Visual Studio, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie dann **Manage Nuget Packages** aus.
 
@@ -312,7 +312,7 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 <!-- URLs. -->
 [Optimistic Concurrency Control]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
-[Windows Azure Account]: http://www.windowsazure.com/de-de/pricing/free-trial/
+[Windows Azure Account]: http://www.windowsazure.com/en-us/pricing/free-trial/
 [Validate and modify data with scripts]: /en-us/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/
 [Refine queries with paging]: /en-us/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/
 [Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started

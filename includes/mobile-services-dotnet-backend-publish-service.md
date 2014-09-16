@@ -14,10 +14,10 @@ Nachdem Sie die Windows Store-App anhand des lokalen mobilen Diensts getestet ha
 
     Daraufhin werden die von Visual Studio benötigten Informationen zum Veröffentlichen Ihres mobilen Diensts in Azure geladen.
 
-    **Sicherheitshinweis**
-
+    <div class="dev-callout"><b>Sicherheitshinweis</b>
+	<p>
     Nach dem Importieren des Veröffentlichungsprofils sollten Sie die heruntergeladene Datei löschen, da sie Informationen enthält, die von anderen Personen für den Zugriff auf Ihre Dienste verwendet werden können.
-
+	</p></div>
 3.  Klicken Sie auf **Verbindung prüfen**, um sicherzustellen, dass die Veröffentlichung richtig konfiguriert ist, und klicken Sie dann auf **Veröffentlichen**.
 
     ![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-2.png)

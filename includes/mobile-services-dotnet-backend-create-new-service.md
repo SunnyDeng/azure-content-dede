@@ -28,10 +28,12 @@ Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstell
 
     ![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page2.png)
 
-    **Hinweis**
-
+    <div class="dev-callout"> 
+    <b>Hinweis</b> 
+    <p>
     Wenn das eingegebene Kennwort nicht den Mindestanforderungen entspricht oder es keine Übereinstimmung gibt, wird eine Warnung angezeigt.
     Es wird empfohlen, sich den Anmeldenamen und das Kennwort des Administrators zu notieren. Sie benötigen diese Informationen, um die SQL-Datenbankinstanz oder den Server in der Zukunft wiederzuverwenden.
+	</p></div>
 
 Sie haben nun einen neuen mobilen Dienst erstellt, der von Ihren mobilen Apps verwendet werden kann.
 

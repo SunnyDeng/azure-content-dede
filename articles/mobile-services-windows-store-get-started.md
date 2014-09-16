@@ -35,7 +35,7 @@ Unten finden Sie einen Screenshot aus der fertigen App:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Services-Lernprogramme für Windows Store-Apps.
 
-> [WACOM.NOTE] Zum Abschließen dieses Lernprogramms benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen dazu finden Sie unter [Kostenloses Windows Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F).
+> [WACOM.NOTE] Zum Abschließen dieses Lernprogramms benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen dazu finden Sie unter [Kostenloses Windows Azure-Testkonto](http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F).
 
 > Dieses Lernprogramm erfordert Visual Studio 2013. Um eine Windows Store-App mithilfe von Visual Studio 2012 zu verbinden, folgen Sie den Schritten im Thema [Erste Schritte mit Daten in Mobile Services mithilfe von Visual Studio 2012](/en-us/develop/mobile/tutorials/get-started-with-data-dotnet-vs2012/).
 

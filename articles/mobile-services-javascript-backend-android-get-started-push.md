@@ -1,13 +1,17 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-push-js-vs2013" urlDisplayName="Get Started with Push (JS)" pageTitle="Get started with push notifications (Android JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to use Windows Azure Mobile Services to send push notifications to your Android JavaScript app." metaCanonical="http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-push-dotnet/" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal" solutions="" writer="ricksal" manager="" editor="" />
+<properties linkid="develop-mobile-tutorials-get-started-with-push-js-vs2013" urlDisplayName="Get Started with Push (JS)" pageTitle="Get started with push notifications (Android JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to use Windows Azure Mobile Services to send push notifications to your Android JavaScript app." metaCanonical="http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-push-dotnet/" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal" solutions="" writer="ricksal" manager="" editor="" />
 
 Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 ============================================================
-
-[Windows Store C\#](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push "Windows Store C#") [Windows Store JavaScript](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push "Windows Store JavaScript") [Windows Phone](/de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push "Windows Phone") [iOS](/de-de/documentation/articles/mobile-services-ios-get-started-push "iOS") [Android](/de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push "Android")
-
+<div class="dev-center-tutorial-selector sublanding">
+	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
+	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows Store JavaScript</a>
+	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a>
+	<a href="/en-us/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a> 
+	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-android-get-started-push" title="Android">Android</a>
+</div>
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung an Ihre Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Google Cloud Messaging (GCM) zu dem Schnellstartprojekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
-[WACOM.NOTE]Dieses Lernprogramm zeigt die Mobile Services-Integration mit Notification Hubs, was sich momentan in der Vorschauphase befindet. Das Senden von Pushbenachrichtigungen mithilfe von Notification Hubs ist standardmäßig nicht über ein JavaScript-Backend aktiviert. Sobald der neue Benachrichtigungshub erstellt wurde, kann der Integrationsvorgang nicht rückgängig gemacht werden. Pushbenachrichtigungen für iOS stehen nur heute zur Verfügung, indem die standardmäßige Push-Unterstützung verwendet wird, die in [dieser Version des Themas](/de-de/documentation/articles/mobile-services-android-get-started-push/) beschrieben wird.
+[WACOM.NOTE]Dieses Lernprogramm zeigt die Mobile Services-Integration mit Notification Hubs, was sich momentan in der Vorschauphase befindet. Das Senden von Pushbenachrichtigungen mithilfe von Notification Hubs ist standardmäßig nicht über ein JavaScript-Backend aktiviert. Sobald der neue Benachrichtigungshub erstellt wurde, kann der Integrationsvorgang nicht rückgängig gemacht werden. Pushbenachrichtigungen für iOS stehen nur heute zur Verfügung, indem die standardmäßige Push-Unterstützung verwendet wird, die in [dieser Version des Themas](/en-us/documentation/articles/mobile-services-android-get-started-push/) beschrieben wird.
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
@@ -17,7 +21,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 4.  [Aktualisieren von Skripts zum Senden von Pushbenachrichtigungen](#update-scripts)
 5.  [Einfügen von Daten zum Empfangen von Benachrichtigungen](#test)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started/) oder [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-js/) abschließen, um Ihr Projekt mit Mobile Services zu verbinden.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder [Erste Schritte mit Mobile Services](/en-us/develop/mobile/tutorials/get-started/) oder [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-js/) abschließen, um Ihr Projekt mit Mobile Services zu verbinden.
 
 Aktivieren von Google Cloud Messaging
 -------------------------------------
@@ -41,17 +45,17 @@ Konfigurieren von Mobile Services zum Senden von Pushanforderungen
 
     Daraufhin wird die Konfiguration Ihres mobilen Diensts aktualisiert, sodass erweiterte Pushbenachrichtigungsfunktionen, die von Notification Hubs zur Verfügung gestellt werden, genutzt werden können. Die Nutzung einiger Notification Hubs ist bei Ihrem kostenpflichtigen mobilen Dienst kostenlos. Weitere Informationen finden Sie unter [Mobile Services – Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=311786).
 
-    **Wichtig**
-
-    Durch diesen Vorgang werden Ihre Pushanmeldeinformationen zurückgesetzt, und darüber hinaus wird das Verhalten der Pushmethoden in Ihren Skripts geändert. Diese Änderungen können nicht mehr rückgängig gemacht werden. Verwenden Sie diese Methode nicht, wenn Sie einer Produktionsumgebung im mobilen Dienst einen Benachrichtigungshub hinzufügen möchten. Anweisungen zum Aktivieren der erweiterten Pushbenachrichtigungen in einer Produktionsumgebung im mobilen Dienst finden Sie in [dieser Anleitung](http://go.microsoft.com/fwlink/p/?LinkId=391951).
+    <div class="dev-callout"><b>Wichtig</b>
+	<p>
+    Durch diesen Vorgang werden Ihre Pushanmeldeinformationen zurückgesetzt, und darüber hinaus wird das Verhalten der Pushmethoden in Ihren Skripts geändert. Diese Änderungen können nicht mehr rückgängig gemacht werden. Verwenden Sie diese Methode nicht, wenn Sie einer Produktionsumgebung im mobilen Dienst einen Benachrichtigungshub hinzufügen möchten. Anweisungen zum Aktivieren der erweiterten Pushbenachrichtigungen in einer Produktionsumgebung im mobilen Dienst finden Sie in [dieser Anleitung](http://go.microsoft.com/fwlink/p/?LinkId=391951).</p></div>
 
 3.  Geben Sie den Wert **API-Schlüssel** ein, den Sie zuvor von GCM erhalten haben, und klicken Sie auf **Speichern**.
 
 	![](./media/mobile-services-android-get-started-push/mobile-push-tab-android.png)
 
-    **Wichtig**
-
-    Wenn Sie Ihre GCM-Anmeldeinformationen für erweiterte Pushbenachrichtigungen auf der Registerkarte "Push" im Portal festlegen, werden diese für Notification Hubs freigegeben, sodass der Benachrichtigungshub mit Ihrer App konfiguriert wird.
+    <div class="dev-callout"><b>Wichtig</b>
+	<p>
+    Wenn Sie Ihre GCM-Anmeldeinformationen für erweiterte Pushbenachrichtigungen auf der Registerkarte "Push" im Portal festlegen, werden diese für Notification Hubs freigegeben, sodass der Benachrichtigungshub mit Ihrer App konfiguriert wird.</p></div>
 
 Sowohl Ihr Mobile Service als auch Ihre App sind nun konfiguriert und funktionieren mit GCM und Notification Hubs.
 
@@ -95,9 +99,9 @@ Wenn Sie den Testvorgang mit einem älteren Gerät durchführen, konsultieren Si
 
 4.  Laden Sie das [Mobile Services Android SDK] herunter, und entzippen Sie es. Öffnen Sie den Ordner **Benachrichtigungen**, kopieren Sie die Datei **notifications-1.0.1.jar** in den Ordner *libs* Ihres Eclipse-Projekts, und aktualisieren Sie den Ordner *libs*.
 
-    **Hinweis**
-
-    Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
+    <div class="dev-callout"><b>Hinweis</b>
+	<p>
+    Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.</p></div>
 
 5.  Öffnen Sie die Datei *ToDoItemActivity.java*, und fügen Sie den folgenden Import-Ausdruck ein:
 
@@ -264,30 +268,30 @@ Nächste Schritte
 
 In diesem Lernprogramm wurden die Grundlagen der von Mobile Services bereitgestellten Pushbenachrichtigungsfunktion gezeigt. Wenn Sie Ihrer App fortgeschrittenere Funktionen, wie z. B. Senden von plattformübergreifenden Benachrichtigungen, abonnementbasiertes Routing oder sehr große Mengen von Benachrichtigungen, hinzufügen möchten, sollten Sie Azure Notification Hubs mit Ihrem mobilen Dienst verwenden. Weitere Informationen finden Sie in einem der folgenden Themen zu Notification Hubs:
 
--   [Erste Schritte mit Notification Hubs](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet/)
+-   [Erste Schritte mit Notification Hubs](/en-us/manage/services/notification-hubs/getting-started-windows-dotnet/)
     Lernen Sie, wie Sie Notification Hubs in Ihrer Android-App einsetzen können.
 
--   [Senden von Benachrichtigungen an Abonnenten](/de-de/manage/services/notification-hubs/breaking-news-dotnet/)
+-   [Senden von Benachrichtigungen an Abonnenten](/en-us/manage/services/notification-hubs/breaking-news-dotnet/)
     Lernen Sie, wie Benutzer sich registrieren und Pushbenachrichtigungen für Kategorien erhalten können, an denen sie interessiert sind.
 
--   [Senden von Benachrichtigungen an Benutzer](/de-de/manage/services/notification-hubs/notify-users/)
+-   [Senden von Benachrichtigungen an Benutzer](/en-us/manage/services/notification-hubs/notify-users/)
     Lernen Sie, wie Sie Pushbenachrichtigungen von einem mobilen Dienst an bestimmte Benutzer auf beliebigen Geräten senden können.
 
--   [Senden plattformübergreifender Benachrichtigungen an Benutzer](/de-de/manage/services/notification-hubs/notify-users-xplat-mobile-services/)
+-   [Senden plattformübergreifender Benachrichtigungen an Benutzer](/en-us/manage/services/notification-hubs/notify-users-xplat-mobile-services/)
     Lernen Sie, wie Vorlagen zum Senden von Pushbenachrichtigungen mit einem mobilen Dienst gesendet werden, ohne dass Sie in Ihrem Backend auf plattformspezifische Nutzlasten zurückgreifen müssen.
 
 Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-js/)
+-   [Erste Schritte mit Daten](/en-us/develop/mobile/tutorials/get-started-with-data-js/)
     Weitere Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-js)
+-   [Erste Schritte mit der Authentifizierung](/en-us/develop/mobile/tutorials/get-started-with-users-js)
     Lernen Sie, wie Benutzer Ihrer App mit einem Windows-Konto authentifiziert werden.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/?LinkId=262293)
     Lernen Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
--   [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz](/de-de/develop/mobile/how-to-guides/work-with-html-js-client/)
+-   [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz](/en-us/develop/mobile/how-to-guides/work-with-html-js-client/)
     Lernen Sie mehr über die Verwendung von Mobile Services mit HTML und JavaScript.
 
 

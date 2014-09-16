@@ -5,9 +5,9 @@ Registrieren Ihrer Apps für die Verwendung einer Azure Active Directory-Anmeldu
 
 In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Directory als Authentifizierungsanbieter für Azure Mobile Services zu verwenden.
 
-**Hinweis**
-
-Wenn Sie auch eine clientgesteuerte Authentifizierung für einmaliges Anmelden (SSO, Single Sign-On) oder Pushbenachrichtigungen aus einer Windows Store-App bereitstellen möchten, sollten Sie die Registrierung Ihrer App beim Windows Store in Betracht ziehen. Weitere Informationen finden Sie unter [Registrieren Ihrer Windows Store-Apps für die Windows Live Connect-Authentifizierung](/de-de/develop/mobile/how-to-guides/register-for-single-sign-on).
+<div class="dev-callout"><b>Hinweis</b>
+<p>
+Wenn Sie auch eine clientgesteuerte Authentifizierung für einmaliges Anmelden (SSO, Single Sign-On) oder Pushbenachrichtigungen aus einer Windows Store-App bereitstellen möchten, sollten Sie die Registrierung Ihrer App beim Windows Store in Betracht ziehen. Weitere Informationen finden Sie unter [Registrieren Ihrer Windows Store-Apps für die Windows Live Connect-Authentifizierung](/en-us/develop/mobile/how-to-guides/register-for-single-sign-on).</p></div>
 
 1.  Melden Sie sich auf dem [Windows Azure-Verwaltungsportal](https://manage.windowsazure.com/) an.
 
