@@ -8,7 +8,7 @@ Wenn Sie Azure Mobile Services zum Bereitstellen einer App verwenden, verwenden 
 VorbereitungVorbereitung auf mögliche Notfälle
 ----------------------------------------------
 
-Um die Wiederherstellung im Fall eines Verfügbarkeitsproblems zu vereinfachen, können Sie sich zuvor darauf vorbereiten:
+Um die Wiederherstellung im Fall eines Verfügbarkeitsproblems zu vereinfachen, können Sie sich zuvor darauf vorbereiten: 
 
 -   **Sichern Sie Ihre Daten in der SQL-Datenbank des mobilen Azure-Dienstes**
     Ihre Mobildienst-Anwendungsdaten werden in einer Azure-SQL-Datenbank gespeichert. Wie empfehlen, diese Daten wie unter [SQL Database business continuity guidance](http://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx) beschrieben zu sichern.
@@ -46,9 +46,9 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 
 4.  Jetzt können Sie den sekundären Dienst verwenden, um den primären wiederherzustellen.
 
-    **Wichtig**
-
-    Wenn Sie den Befehl in diesem Schritt ausführen, wird der sekundäre Dienst gelöscht, sodass seine Kapazität verwendet werden kann, um den primären Dienst wiederherzustellen. Wir empfehlen, Ihre Skripts und Einstellungen vor dem Ausführen des Befehls zu sichern, wenn Sie sie behalten möchten.
+    <div class="dev-callout"><b>Wichtig</b>
+	<p>Wenn Sie den Befehl in diesem Schritt ausführen, wird der sekundäre Dienst gelöscht, sodass seine Kapazität verwendet werden kann, um den primären Dienst wiederherzustellen. Wir empfehlen, Ihre Skripts und Einstellungen vor dem Ausführen des Befehls zu sichern, wenn Sie sie behalten möchten.</p>
+    </div>
 
     Führen Sie diesen Befehl aus, wenn Sie bereit sind:
 
