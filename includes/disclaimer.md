@@ -1,5 +1,3 @@
-Melden Sie sich für die [kostenlose Vorschau][1] an, um diese und weitere Azure-Funktionen zu verwenden.
+Melden Sie sich für die [kostenlose Vorschau][] an, um diese und weitere Azure-Funktionen zu verwenden.
 
-
-
-[1]: https://account.windowsazure.com/PreviewFeatures
+  [kostenlose Vorschau]: https://account.windowsazure.com/PreviewFeatures

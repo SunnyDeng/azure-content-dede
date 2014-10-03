@@ -1,34 +1,36 @@
 <properties linkid="manage-linux-howto-linux-agent" urlDisplayName="Linux Agent guide" pageTitle="Linux Agent User Guide for Azure" metaKeywords="" description="Learn how to install and configure Linux Agent (waagent) to manage your virtual machine's interaction with Azure Fabric Controller." metaCanonical="" services="virtual-machines" documentationCenter="" title="Azure Linux Agent User Guide" authors="" solutions="" manager="" editor="" />
 
-Benutzerhandbuch für Azure Linux-Agent
-======================================
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
 
-Einführung
-----------
+# Benutzerhandbuch für Azure Linux-Agent
+
+## Einführung
 
 Der Azure Linux-Agent (waagent) verwaltet die Interaktion virtueller Computer mit dem Azure Fabric Controller. Er stellt die folgenden Funktionen für Linux-IaaS-Bereitstellungen zur Verfügung:
 
 -   **Imagebereitstellung**
-    -   Erstellen eines Benutzerkontos
-    -   Konfigurieren von SSH-Authentifizierungstypen
-    -   Bereitstellen von öffentlichen SSH-Schlüsseln und -Schlüsselpaaren
-    -   Festlegen des Hostnamens
-    -   Veröffentlichen des Hostnamens beim Plattform-DNS
-    -   Mitteilen des SSH-Hostschlüssel-Fingerabdrucks an die Plattform
-    -   Verwalten von Ressourcendatenträgern
-    -   Formatieren und Bereitstellen des Ressourcendatenträgers
-    -   Konfigurieren von Auslagerungsbereich
+-   Erstellen eines Benutzerkontos
+-   Konfigurieren von SSH-Authentifizierungstypen
+-   Bereitstellen von öffentlichen SSH-Schlüsseln und -Schlüsselpaaren
+-   Festlegen des Hostnamens
+-   Veröffentlichen des Hostnamens beim Plattform-DNS
+-   Mitteilen des SSH-Hostschlüssel-Fingerabdrucks an die Plattform
+-   Verwalten von Ressourcendatenträgern
+-   Formatieren und Bereitstellen des Ressourcendatenträgers
+-   Konfigurieren von Auslagerungsbereich
 -   **Netzwerk**
-    -   Verwalten von Routen zur Verbesserung der Kompatibilität mit Plattform-DHCP-Servern
-    -   Sicherstellen der Stabilität des Netzwerkschnittstellennamens
+-   Verwalten von Routen zur Verbesserung der Kompatibilität mit Plattform-DHCP-Servern
+-   Sicherstellen der Stabilität des Netzwerkschnittstellennamens
 -   **Kernel**
-    -   Konfigurieren von virtuellem NUMA
-    -   Verbrauchen von Hyper-V-Entropie für /dev/random
-    -   Konfigurieren von SCSI-Zeitüberschreitungen für das Stammgerät (das auch remote sein kann)
+-   Konfigurieren von virtuellem NUMA
+-   Verbrauchen von Hyper-V-Entropie für /dev/random
+-   Konfigurieren von SCSI-Zeitüberschreitungen für das Stammgerät (das auch remote sein kann)
 -   **Diagnose**
-    -   Konsolenumleitung an den seriellen Port
+-   Konsolenumleitung an den seriellen Port
 -   **SCVMM-Bereitstellungen**
-    -   Erkennen und Starten des VMM-Agenten für Linux bei Ausführung in einer Umgebung mit System Center Virtual Machine Manager 2012 R2
+
+    -   Erkennen und Starten des VMM-Agenten für Linux bei Ausführung in einer Umgebung mit System
+         Center Virtual Machine Manager 2012 R2
 
 Der Informationsfluss von der Plattform zum Agenten erfolgt über zwei Kanäle:
 
@@ -40,8 +42,8 @@ Der Informationsfluss von der Plattform zum Agenten erfolgt über zwei Kanäle:
 
 Sie können den neuesten Linux-Agent direkt von folgenden Quellen beziehen:
 
--   [Von den verschiedenen Distributionsanbietern, die Linux auf Azure unterstützen](http://support.microsoft.com/kb/2805216)
--   oder aus dem [Github Open Source Repository für den Azure Linux-Agent](https://github.com/WindowsAzure/WALinuxAgent)
+-   [Von den verschiedenen Distributionsanbietern, die Linux auf Azure unterstützen][]
+-   oder aus dem [Github Open Source Repository für den Azure Linux-Agent][]
 
 ### Unterstützte Linux-Distributionen
 
@@ -68,8 +70,7 @@ Waagent erfordert zur ordnungsgemäßen Funktion bestimmte Systempakete:
 -   Textverarbeitungstools: sed, grep
 -   Netzwerktools: ip-route
 
-Installation
-------------
+## Installation
 
 Für Installation und Upgrades des Azure Linux-Agent sollte nach Möglichkeit ein RPM- oder DEB-Paket aus dem Paket-Repository der jeweiligen Distribution installiert werden.
 
@@ -80,8 +81,7 @@ Bei einer manuellen Installation kopieren Sie waagent in das Verzeichnis "/usr/s
 
 Die Protokolldatei des Agenten wird in "/var/log/waagent.log" gespeichert.
 
-Befehlszeilenoptionen
----------------------
+## Befehlszeilenoptionen
 
 ### Kennzeichen
 
@@ -93,37 +93,37 @@ Befehlszeilenoptionen
 -   help: Listet die unterstützten Befehle und Kennzeichen auf
 
 -   install: Manuelle Installation des Agenten
-	-   Überprüft das System auf erforderliche abhängige Objekte
+-   Überprüft das System auf erforderliche abhängige Objekte
 
-	-   Erstellt das SysV-Initialisierungsskript (/etc/init.d/waagent), die logrotate-Konfigurationsdatei (/etc/logrotate.d/waagent) und konfiguriert das Image für die Ausführung des Initialisierungsskripts beim Start
+-   Erstellt das SysV-Initialisierungsskript (/etc/init.d/waagent), die logrotate-Konfigurationsdatei (/etc/logrotate.d/waagent) und konfiguriert das Image für die Ausführung des Initialisierungsskripts beim Start
 
-	-   Schreibt eine Beispielkonfigurationsdatei in "/etc/waagent.conf"
+-   Schreibt eine Beispielkonfigurationsdatei in "/etc/waagent.conf"
 
-	-   Vorhandene Konfigurationsdateien werden in "/etc/waagent.conf.old" verschoben
+-   Vorhandene Konfigurationsdateien werden in "/etc/waagent.conf.old" verschoben
 
-	-   Erkennt die Kernelversion und wendet bei Bedarf die VNUMA-Problemumgehung an
+-   Erkennt die Kernelversion und wendet bei Bedarf die VNUMA-Problemumgehung an
 
-	-   Verschiebt udev-Regeln, die einen Konflikt mit der Netzwerkfunktion (/lib/udev/rules.d/75-persistent-net-generator.rules, /etc/udev/rules.d/70-persistent-net.rules) verursachen könnten, in "/var/lib/waagent/"
+-   Verschiebt udev-Regeln, die einen Konflikt mit der Netzwerkfunktion (/lib/udev/rules.d/75-persistent-net-generator.rules, /etc/udev/rules.d/70-persistent-net.rules) verursachen könnten, in "/var/lib/waagent/"
 
 -   uninstall: Entfernt waagent und zugehörige Dateien
-	-   Hebt die Registrierung des Initialisierungsskripts im System auf und löscht das Skript
+-   Hebt die Registrierung des Initialisierungsskripts im System auf und löscht das Skript
 
-	-   Löscht die logrotate-Konfiguration und die waagent-Konfigurationsdatei in "/etc/waagent.conf"
+-   Löscht die logrotate-Konfiguration und die waagent-Konfigurationsdatei in "/etc/waagent.conf"
 
-	-   Stellt alle während der Installation verschobenen udev-Regeln wieder her
+-   Stellt alle während der Installation verschobenen udev-Regeln wieder her
 
-	-   Die automatische Wiederherstellung der VNUMA-Problemumgehung wird nicht unterstützt; bearbeiten Sie ggf. die GRUB-Konfigurationsdatei manuell, um NUMA erneut zu aktivieren.
+-   Die automatische Wiederherstellung der VNUMA-Problemumgehung wird nicht unterstützt; bearbeiten Sie ggf. die GRUB-Konfigurationsdatei manuell, um NUMA erneut zu aktivieren.
 
 -   deprovision: Versucht, das System zu bereinigen und für eine erneute Bereitstellung vorzubereiten. Bei diesem Vorgang wird Folgendes gelöscht:
-	-   Alle SSH-Hostschlüssel (sofern Provisioning.RegenerateSshHostKeyPair in der Konfigurationsdatei auf "y" festgelegt ist)
+-   Alle SSH-Hostschlüssel (sofern Provisioning.RegenerateSshHostKeyPair in der Konfigurationsdatei auf "y" festgelegt ist)
 
-	-   Namenserverkonfiguration in "/etc/resolv.conf"
+-   Namenserverkonfiguration in "/etc/resolv.conf"
 
-	-   Stammkennwort aus "/etc/shadow" (sofern Provisioning.DeleteRootPassword in der Konfigurationsdatei auf "y" festgelegt ist)
+-   Stammkennwort aus "/etc/shadow" (sofern Provisioning.DeleteRootPassword in der Konfigurationsdatei auf "y" festgelegt ist)
 
-	-   Zwischengespeicherte DHCP-Clientleases
+-   Zwischengespeicherte DHCP-Clientleases
 
-	-   Setzt den Hostnamen auf "localhost.localdomain" zurück
+-   Setzt den Hostnamen auf "localhost.localdomain" zurück
 
 **Warnung:** Die Ausführung von "deprovision" garantiert nicht, dass alle vertraulichen Informationen aus dem Image gelöscht werden und dieses für eine erneute Bereitstellung genutzt werden kann.
 
@@ -131,14 +131,17 @@ Befehlszeilenoptionen
 
 -   version: Zeigt die Version von waagent an
 
--   serialconsole: Konfiguriert GRUB so, dass ttyS0 (der erste serielle Port) als Startkonsole markiert wird. Hierdurch wird sichergestellt, dass Kernelstartprotokolle an den seriellen Port gesendet und für das Debuggen verfügbar gemacht werden.
+-   serialconsole: Konfiguriert GRUB so, dass ttyS0 (der erste serielle Port) als
+     Startkonsole markiert wird. Hierdurch wird sichergestellt, dass Kernelstartprotokolle an den
+     seriellen Port gesendet und für das Debuggen verfügbar gemacht werden.
 
--   daemon: Führt waagent als Daemon aus, um die Interaktion mit der Plattform zu verwalten. Dieses Argument wird waagent im waagent-Initialisierungsskript mitgeteilt.
+-   daemon: Führt waagent als Daemon aus, um die Interaktion mit der Plattform zu verwalten.
+     Dieses Argument wird waagent im waagent-Initialisierungsskript mitgeteilt.
 
-Konfiguration
--------------
+## Konfiguration
 
-Eine Konfigurationsdatei (/etc/waagent.conf) steuert die Aktionen von waagent. Nachfolgend sehen Sie ein Beispiel einer Konfigurationsdatei:
+Eine Konfigurationsdatei (/etc/waagent.conf) steuert die Aktionen von waagent.
+Im Folgenden sehen Sie ein Beispiel für eine Konfigurationsdatei:
 
     #
     # Azure Linux Agent Configuration   
@@ -161,46 +164,49 @@ Eine Konfigurationsdatei (/etc/waagent.conf) steuert die Aktionen von waagent. N
     OS.RootDeviceScsiTimeout=300
     OS.OpensslPath=None
 
-Die verschiedenen Konfigurationsoptionen werden nachfolgend ausführlich erläutert. Konfigurationsoptionen weisen einen von drei Datentypen auf: Boolean, String oder Integer. Die Konfigurationsoptionen vom Typ "Boolean" können als "y" oder "n" angegeben werden. Für einige Konfigurationseinträge des Typs "String" kann das spezielle Schlüsselwort "None" verwendet werden, wie nachfolgend beschrieben.
+Die verschiedenen Konfigurationsoptionen werden weiter unten detailliert beschrieben.
+Konfigurationsoptionen weisen einen von drei Datentypen auf: Boolean, String oder Integer.
+Die Konfigurationsoptionen vom Typ "Boolean" können als "y" oder "n" angegeben werden.
+Für einige Konfigurationseinträge des Typs "String" kann das spezielle Schlüsselwort "None" verwendet werden, wie nachfolgend beschrieben.
 
 **Role.StateConsumer:**
 
-Typ: String
+Geben Sie Folgendes ein: String
  Standardwert: None
 
 Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird diese aufgerufen, wenn waagent das Image bereitgestellt hat und in Kürze der Status "Ready" (Bereit) an das Fabric gemeldet wird. An das Programm wird das Argument "Ready" übergeben. Der Agent wartet nicht auf die Rückkehr des Programms, sondern fährt direkt fort.
 
 **Role.ConfigurationConsumer:**
 
-Typ: String
+Geben Sie Folgendes ein: String
  Standardwert: None
 
 Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass eine Konfigurationsdatei für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals aufgerufen werden, bei jeder Änderung der Konfigurationsdatei. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Pfad dieser Datei lautet "/var/lib/waagent/HostingEnvironmentConfig.xml".
 
 **Role.TopologyConsumer:**
 
-Typ: String
+Geben Sie Folgendes ein: String
  Standardwert: None
 
 Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass ein neues Netzwerktopologie-Layout für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals, bei jeder Änderung der Netzwerktopologie (z. B. aufgrund einer Dienstreparatur), aufgerufen werden. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Speicherort dieser Datei lautet "/var/lib/waagent/SharedConfig.xml".
 
 **Provisioning.Enabled:**
 
-Typ: Boolean
+Geben Sie Folgendes ein: Boolean
  Standardwert: y
 
 Hiermit kann der Benutzer die Bereitstellungsfunktion im Agenten aktivieren oder deaktivieren. Gültige Werte sind "y" und "n". Bei deaktivierter Bereitstellung werden die SSH-Host- und -Benutzerschlüssel im Image beibehalten, und alle in der Azure-Bereitstellungs-API angegebenen Konfigurationen werden ignoriert.
 
 **Provisioning.DeleteRootPassword:**
 
-Typ: Boolean
+Geben Sie Folgendes ein: Boolean
  Standardwert: n
 
 Bei aktivierter Option wird das Stammkennwort in der /etc/shadow-Datei bei der Bereitstellung gelöscht.
 
 **Provisioning.RegenerateSshHostKeyPair:**
 
-Typ: Boolean
+Geben Sie Folgendes ein: Boolean
  Standardwert: y
 
 Bei aktivierter Option werden alle SSH-Hostschlüsselpaare (ecdsa, dsa und rsa) bei der Bereitstellung aus "/etc/ssh/" gelöscht. Außerdem wird ein einzelnes neues Schlüsselpaar generiert.
@@ -209,89 +215,86 @@ Der Verschlüsselungstyp für das neue Schlüsselpaar kann mit dem Provisioning.
 
 **Provisioning.SshHostKeyPairType:**
 
-Typ: String
+Geben Sie Folgendes ein: String
  Standardwert: rsa
 
 Diese Option kann auf einen Verschlüsselungsalgorithmustyp festgelegt werden, der vom SSH-Daemon auf dem virtuellen Computer unterstützt wird. Typischerweise werden die Werte "rsa", "dsa" und "ecdsa" unterstützt. Beachten Sie, dass "putty.exe" unter Windows keine Unterstützung für "ecdsa" bietet. Wenn Sie also beabsichtigen, mithilfe von "putty.exe" unter Windows eine Verbindung zu einer Linux-Bereitstellung herzustellen, verwenden Sie "rsa" oder "dsa".
 
 **Provisioning.MonitorHostName:**
 
-Typ: Boolean
+Geben Sie Folgendes ein: Boolean
  Standardwert: y
 
 Bei aktivierter Option überwacht waagent den virtuellen Linux-Computer auf Änderungen des Hostnamens (wie vom Befehl "hostname" zurückgegeben) und aktualisiert die Netzwerkkonfiguration im Image automatisch entsprechend der Änderung. Um die Namensänderung per Push an die DNS-Server zu übertragen, wird die Netzwerkfunktion auf dem virtuellen Computer neu gestartet. Dadurch geht die Internetverbindung verloren.
 
 **ResourceDisk.Format:**
 
-Typ: Boolean
+Geben Sie Folgendes ein: Boolean
  Standardwert: y
 
 Bei aktivierter Option wird der von der Plattform bereitgestellte Ressourcendatenträger von waagent formatiert und bereitgestellt, falls der Benutzer in "ResourceDisk.Filesystem" einen anderen Dateisystemtyp als "ntfs" anfordert. Auf dem Datenträger wird eine einzelne Linux-Partition (83) verfügbar gemacht. Diese Partition wird nicht formatiert, falls sie erfolgreich bereitgestellt werden kann.
 
 **ResourceDisk.Filesystem:**
 
-Typ: String
+Geben Sie Folgendes ein: String
  Standardwert: ext4
 
 Diese Option gibt den Dateisystemtyp für den Ressourcendatenträger an. Die unterstützten Werte sind je nach Linux-Distribution verschieden. Bei der Zeichenfolge X sollte mkfs.X im Linux-Image vorhanden sein. Für SLES 11-Images sollte normalerweise "ext3" verwendet werden. Für FreeBSD-Images sollte hier "ufs2" verwendet werden.
 
 **ResourceDisk.MountPoint:**
 
-Typ: String
+Geben Sie Folgendes ein: String
  Standardwert: /mnt/resource
 
-Diese Option gibt den Pfad an, in dem der Ressourcendatenträger bereitgestellt wird.
+Diese Option gibt den Pfad an, in dem der Ressourcendatenträger bereitgestellt wird. Beachten Sie, dass der Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird.
 
 **ResourceDisk.EnableSwap:**
 
-Typ: Boolean
+Geben Sie Folgendes ein: Boolean
  Standardwert: n
 
 Bei aktivierter Option wird eine Auslagerungsdatei (/swapfile) auf dem Ressourcendatenträger erstellt und dem Systemauslagerungsbereich hinzugefügt.
 
 **ResourceDisk.SwapSizeMB:**
 
-Typ: Integer
+Geben Sie Folgendes ein: Integer
  Standardwert: 0
 
 Die Größe der Auslagerungsdatei in Megabyte.
 
 **LBProbeResponder:**
 
-Typ: Boolean
+Geben Sie Folgendes ein: Boolean
  Standardwert: y
 
 Bei aktivierter Option antwortet waagent auf Lastenausgleichstests der Plattform (sofern vorhanden).
 
 **Logs.Verbose:**
 
-Typ: Boolean
+Geben Sie Folgendes ein: Boolean
  Standardwert: n
 
 Bei aktivierter Option wird ein ausführlicheres Protokoll erstellt. Waagent schreibt das Protokoll in "/var/log/waagent.log" und nutzt die logrotate-Funktion des Systems zu Rotieren von Protokollen.
 
 **OS.RootDeviceScsiTimeout:**
 
-Typ: Integer
+Geben Sie Folgendes ein: Integer
  Standardwert: 300
 
 Hiermit wird die SCSI-Zeitüberschreitung auf dem Betriebssystemdatenträger und Datenlaufwerken in Sekunden konfiguriert. Wird kein Wert festgelegt, gelten die Systemstandardwerte.
 
 **OS.OpensslPath:**
 
-Typ: String
+Geben Sie Folgendes ein: String
  Standardwert: None
 
 Hiermit kann ein alternativer Pfad für die openssl-Binärdatei zur Verwendung für kryptografische Vorgänge angegeben werden.
 
-Anhang
-------
+## Anhang
 
 ### Beispiel einer Rollenkonfigurationsdatei
 
-    <
-      xml version="1.0" encoding="utf-8"
-      >
+    <?xml version="1.0" encoding="utf-8"?>
     <HostingEnvironmentConfig version="1.0.0.0" goalStateIncarnation="1">
       <StoredCertificates>
         <StoredCertificate name="Stored0Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" certificateId="sha1:C093FA5CD3AAE057CB7C4E04532B2E16E07C26CA" storeName="My" configurationLevel="System" />
@@ -307,33 +310,7 @@ Anhang
         <PrivilegeLevel mode="max" />
         <AdditionalProperties><CgiHandlers></CgiHandlers></AdditionalProperties></HostingEnvironmentSettings>
         <ApplicationSettings>
-          <Setting name="__ModelData" value="<m role="LinuxVM" xmlns="urn:azure:m:v1"><r name="LinuxVM"><e name="HTTP" /><e name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Rdp" /><e name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput" /><e name="SSH" /></r></m>" />
-          <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="..." />
-          <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2015-11-06T23:59:59.0000000-08:00" />
-          <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="rdos" />
-          <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
-          <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
-          <Setting name="startpage" value="Hello World!" />
-          <Setting name="Certificate|Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" value="sha1:C093FA5CD3AAE057CB7C4E04532B2E16E07C26CA" />
-        </ApplicationSettings>
-        <ResourceReferences>
-          <Resource name="DiagnosticStore" type="directory" request="Microsoft.Cis.Fabric.Controller.Descriptions.ServiceDescription.Data.Policy" sticky="true" size="1" path="a99549a92e38498f98cf2989330cd2f1.LinuxVM.DiagnosticStore<?xml version="1.0" encoding="utf-8"?>
-    <HostingEnvironmentConfig version="1.0.0.0" goalStateIncarnation="1">
-      <StoredCertificates>
-        <StoredCertificate name="Stored0Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" certificateId="sha1:C093FA5CD3AAE057CB7C4E04532B2E16E07C26CA" storeName="My" configurationLevel="System" />
-      </StoredCertificates>
-      <Deployment name="a99549a92e38498f98cf2989330cd2f1" guid="{374ef9a2-de81-4412-ac87-e586fc869923}" incarnation="14">
-        <Service name="LinuxDemo1" guid="{00000000-0000-0000-0000-000000000000}" />
-        <ServiceInstance name="a99549a92e38498f98cf2989330cd2f1.4" guid="{250ac9df-e14c-4c5b-9cbc-f8a826ced0e7}" />
-      </Deployment>
-      <Incarnation number="1" instance="LinuxVM_IN_2" guid="{5c87ab8b-2f6a-4758-9f74-37e68c3e957b}" />
-      <Role guid="{47a04da2-d0b7-26e2-f039-b1f1ab11337a}" name="LinuxVM" hostingEnvironmentVersion="1" software="" softwareType="ApplicationPackage" entryPoint="" parameters="" settleTimeSeconds="10" />
-      <HostingEnvironmentSettings name="full" Runtime="rd_fabric_stable.111026-1712.RuntimePackage_1.0.0.9.zip">
-        <CAS mode="full" />
-        <PrivilegeLevel mode="max" />
-        <AdditionalProperties><CgiHandlers></CgiHandlers></AdditionalProperties></HostingEnvironmentSettings>
-        <ApplicationSettings>
-          <Setting name="__ModelData" value="<m role="LinuxVM" xmlns="urn:azure:m:v1"><r name="LinuxVM"><e name="HTTP" /><e name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Rdp" /><e name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput" /><e name="SSH" /></r></m>" />
+          <Setting name="__ModelData" value="&lt;m role=&quot;LinuxVM&quot; xmlns=&quot;urn:azure:m:v1&quot;>&lt;r name=&quot;LinuxVM&quot;>&lt;e name=&quot;HTTP&quot; />&lt;e name=&quot;Microsoft.WindowsAzure.Plugins.RemoteAccess.Rdp&quot; />&lt;e name=&quot;Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput&quot; />&lt;e name=&quot;SSH&quot; />&lt;/r>&lt;/m>" />
           <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="..." />
           <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2015-11-06T23:59:59.0000000-08:00" />
           <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="rdos" />
@@ -344,9 +321,6 @@ Anhang
         </ApplicationSettings>
         <ResourceReferences>
           <Resource name="DiagnosticStore" type="directory" request="Microsoft.Cis.Fabric.Controller.Descriptions.ServiceDescription.Data.Policy" sticky="true" size="1" path="a99549a92e38498f98cf2989330cd2f1.LinuxVM.DiagnosticStore\" disableQuota="false" />
-        </ResourceReferences>
-      </HostingEnvironmentConfig>
-    quot; disableQuota="false" />
         </ResourceReferences>
       </HostingEnvironmentConfig>
 
@@ -426,3 +400,6 @@ Anhang
         </Instance>
       </Instances>
     </SharedConfig>
+
+  [Von den verschiedenen Distributionsanbietern, die Linux auf Azure unterstützen]: http://support.microsoft.com/kb/2805216
+  [Github Open Source Repository für den Azure Linux-Agent]: https://github.com/WindowsAzure/WALinuxAgent
