@@ -1,9 +1,10 @@
 <properties linkid="develop-media-services-how-to-guides-deliver-streaming-content" urlDisplayName="Deliver Streaming Content from Media Services" pageTitle="How to Deliver Streaming Content from Media Services – Azure" metaKeywords="" description="Learn how to deliver streaming content from Media Services using a direct URL. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="How to: Deliver streaming content" authors="" />
 
-Vorgehensweise: Bereitstellen von Streaming-Inhalten
-====================================================
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
 
-Dieser Beitrag gehört zur einer Reihe mehrerer Beiträge, in denen es um die Programmierung von Azure Media Services geht. Das vorherige Thema war [Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen](http://go.microsoft.com/fwlink/?LinkID=301734&clcid=0x409).
+# Gewusst wie: Bereitstellen von Streaming-Inhalten
+
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Vorgehensweise: Bereitstellen eines Medienobjekts durch Herunterladen][].
 
 Zusätzlich zum Herunterladen von Medieninhalten von Media Services können Sie Streaming mit adaptiver Bitrate verwenden, um Inhalte bereitzustellen. Sie können z. B. eine direkte URL, einen so genannten Locator, erstellen, um Inhalte auf einem Media Services-Ursprungsserver zu streamen. Anschließend können die Streaming-Inhalte auf Client-Anwendungen wie Microsoft Silverlight direkt über den Locator abgespielt werden.
 
@@ -16,65 +17,69 @@ So erstellen Sie einen Ursprungs-Locator zum Streamen von Inhalten:
 3.  Erstellen Sie den Ursprungs-Locator durch Aufrufen der Methode CreateLocator
 4.  Erstellen Sie eine URL zur Manifestdatei
 
-Der folgende Code zeigt, wie diese Schritte ausgeführt werden:
+Der folgende Code zeigt die Implementierung der Schritte:
 
-``` {}
+<pre><code>
 private static ILocator GetStreamingOriginLocator( string targetAssetID)
 {
-    // Verweis auf das Medienobjekt abrufen, das Sie streamen möchten.
+    // Get a reference to the asset you want to stream.
     IAsset assetToStream = GetAsset(targetAssetID);
 
-    // Verweis auf die Streaming-Manifestdatei aus der Sammlung  
-    // von Dateien in dem Medienobjekt abrufen. 
+    // Get a reference to the streaming manifest file from the  
+    // collection of files in the asset. 
     var theManifest =
                         from f in assetToStream.AssetFiles
                         where f.Name.EndsWith(".ism")
                         select f;
 
-    // Den Verweis in das Dateiformat IAssetFile umwandeln. 
+    // Cast the reference to a true IAssetFile type. 
     IAssetFile manifestFile = theManifest.First();
     IAccessPolicy policy = null;
     ILocator originLocator = null;
             
-    // Eine Zugriffsrichtlinie mit 30-tägigem Schreibschutz erstellen. 
+    // Create a 30-day readonly access policy. 
     policy = _context.AccessPolicies.Create("Streaming policy",
         TimeSpan.FromDays(30),
         AccessPermissions.Read);
 
-    // Einen OnDemandOrigin-Locator für das Medienobjekt erstellen. 
+    // Create an OnDemandOrigin locator to the asset. 
     originLocator = _context.Locators.CreateLocator(LocatorType.OnDemandOrigin, assetToStream,
         policy,
         DateTime.UtcNow.AddMinutes(-5));
             
-    // Einige nützliche auf dem Locator basierende Werte anzeigen.
+    // Display some useful values based on the locator.
     Console.WriteLine("Streaming asset base path on origin: ");
     Console.WriteLine(originLocator.Path);
     Console.WriteLine();
     
-    // Eine vollständige URL zur Manifestdatei erstellen. Diese URL zum Abspielen
-    // auf Streaming-Media-Clients verwenden. 
+    // Create a full URL to the manifest file. Use this for playback
+    // in streaming media clients. 
     string urlForClientStreaming = originLocator.Path + manifestFile.Name + "/manifest";
     Console.WriteLine("URL to manifest for client streaming: ");
     Console.WriteLine(urlForClientStreaming);
     Console.WriteLine();
     
-    // Die IDs des Ursprungs-Locators, der Zugriffsrichtlinie und des Medienobjekts anzeigen.
+    // Display the ID of the origin locator, the access policy, and the asset.
     Console.WriteLine("Origin locator Id: " + originLocator.Id);
     Console.WriteLine("Access policy Id: " + policy.Id);
     Console.WriteLine("Streaming asset Id: " + assetToStream.Id);
 
-    // Den Locator zurückgeben. 
+    // Return the locator. 
     return originLocator;
 }
-```
+</code></pre>
 
-Weitere Informationsquellen zum Bereitstellen von Medienobjekten finden Sie unter
+Weitere Informationen zur Auslieferung von Medienobjekten finden Sie unter:
 
--   [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET](http://msdn.microsoft.com/de-de/library/jj129575.aspx)
--   [Bereitstellen von Medienobjekten mit der Media Services REST-API](http://msdn.microsoft.com/de-de/library/jj129578.aspx)
+-   [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET][]
+-   [Bereitstellen von Medienobjekten mit der Media Services REST-API][]
 
-Nächste Schritte
-----------------
 
-Bisher haben wir die Bereitstellung von Medien durch Herunterladen von Azure-Speicher mithilfe von Smooth Streaming beschrieben. Im nächsten Thema [Bereitstellen von HLS-Inhalten](http://go.microsoft.com/fwlink/?LinkId=301817) wird die Bereitstellung von Streaming-Inhalten mit Apple HTTP Live Streaming (HLS) diskutiert.
+## Nächste Schritte
 
+Bisher haben wir die Bereitstellung von Medien durch Herunterladen von Azure-Speicher mithilfe von Smooth Streaming beschrieben. Im nächsten Thema [Bereitstellen von HLS-Inhalten][] wird die Bereitstellung von Streaming-Inhalten mit Apple HTTP Live Streaming (HLS) diskutiert.
+
+  [Vorgehensweise: Bereitstellen eines Medienobjekts durch Herunterladen]: http://go.microsoft.com/fwlink/?LinkID=301734&clcid=0x409
+  [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET]: http://msdn.microsoft.com/en-us/library/jj129575.aspx
+  [Bereitstellen von Medienobjekten mit der Media Services REST-API]: http://msdn.microsoft.com/en-us/library/jj129578.aspx
+  [Bereitstellen von HLS-Inhalten]: http://go.microsoft.com/fwlink/?LinkId=301817

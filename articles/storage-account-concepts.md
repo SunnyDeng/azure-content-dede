@@ -1,28 +1,48 @@
-<properties umbracoNaviHide="0" pageTitle="Storage Account Concepts | Azure" metaKeywords="Azure storage, storage service, service, storage account, account, create storage account, create account" description="Learn about storage account concepts." linkid="manage-windows-how-to-guide-storage-accounts" urlDisplayName="How to: storage accounts" headerExpose="" footerExpose="" disqusComments="1" title="Storage Account Concepts" authors="" />
+<properties umbracoNaviHide="0" pageTitle="Storage Account Concepts | Azure" metaKeywords="Azure storage, storage service, service, storage account, account, create storage account, create account" description="Learn about storage account concepts." linkid="manage-windows-how-to-guide-storage-accounts" urlDisplayName="How to: storage accounts" headerExpose="" footerExpose="" disqusComments="1" title="Storage Account Concepts" services="storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-Konzepte für Speicherkonten
-===========================
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
 
--   **georedundanter Speicher (GRS)** Georedundanter Speicher bietet die höchste Speicherstabilität, indem Ihre Daten nahtlos an einem sekundären Standort in der gleichen Region repliziert werden. Auf diese Weise wird Failover im Falle eines größeren Ausfalls am primären Standort ermöglicht. Der sekundäre Standort ist hunderte von Kilometern vom primären Standort entfernt. GRS wird über eine Funktion namens *Georeplikation* implementiert, die standardmäßig für ein Speicherkonto aktiviert wird, aber deaktiviert werden kann, wenn Sie dieses Feature nicht benötigen (wenn zum Beispiel Unternehmensrichtlinien die Verwendung verhindern). Weitere Informationen finden Sie unter [Einführung in die Georeplikation für Azure](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx).
+# Konzepte für Speicherkonten
 
--   **lokal redundanter Speicher (LRS)** Lokal redundanter Speicher bietet einen sehr stabilen Speicher mit hoher Verfügbarkeit an einem einzigen Standort. Für den lokal redundanten Speicher werden Kontodaten drei Mal innerhalb des gleichen Rechenzentrums repliziert. Der gesamte Speicher in Azure ist lokal redundant. Für zusätzliche Stabilität können Sie die Georeplikation aktivieren. Lokal redundanter Speicher wird zu günstigen Preisen angeboten. Preisinformationen finden Sie in der [Azure-Preisübersicht](http://www.windowsazure.com/de-de/pricing/details/).
+## Speicherkonto-Replikationsoptionen
 
--   **Affinitätsgruppe** Eine *Affinitätsgruppe* ist eine geografische Gruppierung von Clouddienstbereitstellungen und Speicherkonten innerhalb von Azure. Eine Affinitätsgruppe kann die Dienstleistung verbessern, indem Computerarbeitslasten im gleichen Rechenzentrum oder in der Nähe der Zielbenutzer platziert werden. Außerdem fallen keine Kosten für den Ausgangsverkehr an.
+[WACOM.INCLUDE [storage-replication-options][]]
 
--   **Speicherkontoendpunkte** Die *Endpunkte* für ein Speicherkonto stellen die höchste Ebene des Namespace für den Zugriff auf Blobs, Tabellen oder Warteschlangen dar. Die Standardendpunkte für ein Speicherkonto haben die folgenden Formate:
+## Speicherkontoendpunkte
 
-    -   Blob-Dienst: http://*meinspeicherkonto*.blob.core.windows.net
+Die *Endpunkte* für ein Speicherkonto stellen die höchste Stufe des Namespace für den Zugriff auf Blobs, Tabellen oder Warteschlangen dar. Die Standardendpunkte für ein Speicherkonto haben die folgenden Formate:
 
-    -   Tabellendienst: http://*meinspeicherkonto*.table.core.windows.net
+-   Blob-Dienst:  http://*mystorageaccount*.blob.core.windows.net
 
-    -   Warteschlangendienst: http://*meinspeicherkonto*.queue.core.windows.net
+-   Tabellendienst: http://*mystorageaccount*.table.core.windows.net
 
--   **Speicherkonto-URLs** Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Ein Blob-Adresse kann beispielsweise das folgende Format haben: http://*meinspeicherkonto*.blob.core.windows.net/*meincontainer*/*meinblob*.
+-   Warteschlangendienst: http://*mystorageaccount*.queue.core.windows.net
 
--   **Speicherzugriffsschlüssel** Wenn Sie ein Speicherkonto erstellen, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die beim Zugriff auf das Speicherkonto für die Authentifizierung verwendet werden. Durch Bereitstellen von zwei Speicherzugriffsschlüsseln ermöglicht Azure Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Speicherdiensts oder Zugriff auf diesen Dienst.
+-   Dateidienst: http://*mystorageaccount*.file.core.windows.net
 
--   **minimale vs. ausführliche Metriken** Sie können minimale oder ausführliche Metriken in den Überwachungseinstellungen für Ihr Speicherkonto konfigurieren. *Minimale Metriken* erfassen Kennzahlen zu Daten, zum Beispiel zu Eingang/Ausgang, Verfügbarkeit, Latenz sowie Erfolgsprozentwerte, die für die Blob-, Tabellen- und Warteschlangendienste aggregiert werden. *Ausführliche Metriken* erfassen zusätzlich zu Dienstebenenzusammenfassungen Details auf Betriebsebene für die gleichen Metriken. Ausführliche Metriken ermöglichen eine genauere Analyse von Problemen, die bei Anwendungsvorgängen auftreten. Eine vollständige Liste der verfügbaren Metriken finden Sie unter [Metriken zur Speicheranalyse – Tabellenschema](http://msdn.microsoft.com/de-de/library/windowsazure/hh343264.aspx). Weitere Informationen zur Speicherüberwachung finden Sie unter [Informationen zu Metriken der Speicheranalyse](http://msdn.microsoft.com/de-de/library/windowsazure/hh343258.aspx).
+Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*.
 
--   **Protokollierung** Protokollierung ist eine konfigurierbare Funktion von Speicherkonten, mit der Sie Anforderungen zum Lesen, Schreiben und Löschen von Blobs, Tabellen und Warteschlangen protokollieren können. Sie konfigurieren die Protokollierung im Azure-Verwaltungsportal, können die Protokolle aber nicht in Verwaltungsportal anzeigen. Die Protokolle werden im Speicherkonto im \$logs-Container gespeichert. Dort erfolgt auch der Zugriff. Weitere Informationen finden Sie unter [Übersicht über die Speicheranalyse](http://msdn.microsoft.com/de-de/library/windowsazure/hh343268.aspx).
+## Speicherkontosicherheit
 
+Wenn Sie ein Speicherkonto erstellen, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die für die Authentifizierung verwendet werden, wenn der Zugriff auf das Speicherkonto erfolgt. Durch Bereitstellen von zwei Speicherzugriffsschlüsseln ermöglicht Azure Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Speicherdiensts oder Zugriff auf diesen Dienst.
 
+Sie sollten das Weitergeben von Speicherkonto-Zugriffsschlüsseln an andere vermeiden. Wenn Sie den Eindruck haben, dass Ihr Konto nicht mehr sicher ist, können Sie den Zugriffsschlüssel im Portal neu generieren. Wählen Sie das Speicherkonto aus, und führen Sie **Zugriffsschlüssel verwalten** aus.
+
+Um den Zugriff auf Speicherressourcen zu gewähren, ohne den Zugriffsschlüssel weiterzugeben, verwenden Sie eine *Shared Access Signature*. Eine Shared Access Signature (SAS) bietet Zugriff auf eine Ressource in Ihrem Konto für ein von Ihnen definiertes Zeitintervall und mit den von Ihnen festgelegten Berechtigungen. Weitere Informationen finden Sie im [SAS-Lernprogramm][].
+
+## Speicherkontometriken und Protokollierung
+
+-   **minimale vs. ausführliche Kennzahlen** Sie können minimale oder ausführliche Kennzahlen in den Überwachungseinstellungen für Ihr Speicherkonto konfigurieren. *Minimale Kennzahlen* erfassen Kennzahlen zu Daten, zum Beispiel zu Eingang/Ausgang, Verfügbarkeit, Latenz sowie Erfolgsprozentwerte, die für die Blob-, Tabellen- und Warteschlangendienste aggregiert werden. *Ausführliche Kennzahlen* erfassen zusätzlich zu Dienstebenenzusammenfassungen Details auf Betriebsebene für die gleichen Kennzahlen. Ausführliche Metriken ermöglichen eine genauere Analyse von Problemen, die bei Anwendungsvorgängen auftreten. Eine vollständige Liste der verfügbaren Kennzahlen finden Sie im Thema zu den [Kennzahlen zur Speicheranalyse – Tabellenschema][]. Weitere Informationen zur Speicherüberwachung finden Sie in den [Informationen zu Speicheranalysekennzahlen][].
+
+-   **Protokollierung** Protokollierung ist eine konfigurierbare Funktion von Speicherkonten, die die Protokollierung von Anforderungen zum Lesen, Schreiben und Löschen von Blobs, Tabellen und Warteschlangen ermöglicht. Sie konfigurieren die Protokollierung im Azure-Verwaltungsportal, können die Protokolle aber nicht in Verwaltungsportal anzeigen. Die Protokolle werden im Speicherkonto im $logs-Container gespeichert. Dort erfolgt auch der Zugriff. Weitere Informationen finden Sie unter [Übersicht über die Speicheranalyse][].
+
+## Affinitätsgruppen für zusammengestellte Azure-Speicher und andere Dienste
+
+Eine *Affinitätsgruppe* ist eine geografische Gruppierung Ihrer Azure-Dienste und VMs mit Ihrem Azure-Konto. Eine Affinitätsgruppe kann die Dienstleistung verbessern, indem Computerarbeitslasten im gleichen Rechenzentrum oder in der Nähe der Zielbenutzer platziert werden. Außerdem fallen keine Gebühren für den Datenausgang an, wenn ein Dienst, der zur gleichen Affinitätsgruppe gehört, auf Daten im Speicherkonto zugreift.
+
+  [storage-replication-options]: ../includes/storage-replication-options.md
+  [http://\*meinSpeicherkonto]: http://*mystorageaccount
+  [SAS-Lernprogramm]: ../storage-dotnet-shared-access-signature-part-1/
+  [Kennzahlen zur Speicheranalyse – Tabellenschema]: http://msdn.microsoft.com/en-us/library/windowsazure/hh343264.aspx
+  [Informationen zu Speicheranalysekennzahlen]: http://msdn.microsoft.com/en-us/library/windowsazure/hh343258.aspx
+  [Übersicht über die Speicheranalyse]: http://msdn.microsoft.com/en-us/library/windowsazure/hh343268.aspx

@@ -1,279 +1,361 @@
-<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="How to use the queue service (Node.js) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Node.js" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Queue Service from Node.js" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="How to use the queue service (Node.js) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Node.js" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Queue Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
 
-Verwenden des Warteschlangendiensts aus Node.js
-===============================================
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Windows Azure-Warteschlangendienst demonstriert. Die Beispiele sind in C\# geschrieben und verwenden die Node.js-API. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte](#next-steps).
+# Verwenden des Warteschlangendiensts aus Node.js
 
-Inhaltsverzeichnis
-------------------
+In diesem Leitfaden wird die Ausführung häufiger Szenarien mit dem Windows
+Azure-Warteschlangendienst demonstriert. Die Beispiele wurde mithilfe der
+Node.js-API geschrieben. Zu den Szenarien gehören das **Einfügen**, **Einsehen**,
+**Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen
+und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
 
--   [Was ist der Warteschlangendienst?](#what-is)
--   [Konzepte](#concepts)
--   [Erstellen eines Azure-Speicherkontos](#create-account)
--   [Erstellen einer Node.js-Anwendung](#create-app)
--   [Konfigurieren der Anwendung für den Speicherzugriff](#configure-access)
--   [Einrichten einer Azure-Speicherverbindungszeichenfolge](#setup-connection-string)
--   [Vorgehensweise: Erstellen einer Warteschlange](#create-queue)
--   [Vorgehensweise: Einfügen einer Nachricht in eine Warteschlange](#insert-message)
--   [Vorgehensweise: Einsehen der nächsten Nachricht](#peek-message)
--   [Vorgehensweise: Entfernen der nächsten Nachricht aus der Warteschlange](#get-message)
--   [Vorgehensweise: Ändern des Inhalts von Nachrichten in der Warteschlange](#change-contents)
--   [Vorgehensweise: Weitere Optionen für das Entfernen von Nachrichten aus der Warteschlange](#advanced-get)
--   [Vorgehensweise: Abrufen der Warteschlangenlänge](#get-queue-length)
--   [Vorgehensweise: Löschen einer Warteschlange](#delete-queue)
--   [Nächste Schritte](#next-steps)
+## Inhaltsverzeichnis
 
-Was ist der Warteschlangendienst?
----------------------------------
+-   [Was ist der Warteschlangendienst?][]
+-   [Konzepte][]
+-   [Erstellen eines Azure-Speicherkontos][]
+-   [Erstellen einer Node.js-Anwendung][]
+-   [Konfigurieren der Anwendung für den Speicherzugriff][]
+-   [Einrichten einer Azure-Speicherverbindungszeichenfolge][]
+-   [Gewusst wie: Erstellen einer Warteschlange][]
+-   [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange][]
+-   [Gewusst wie: Einsehen der nächsten Nachricht][]
+-   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][]
+-   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][]
+-   [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][]
+-   [Gewusst wie: Abrufen der Warteschlangenlänge][]
+-   [Gewusst wie: Löschen einer Warteschlange][]
+-   [Gewusst wie: Arbeiten mit Shared Access Signature][]
+-   [Nächste Schritte][]
 
-Der Warteschlangendienst in Azure ist ein Dienst zur Speicherung großer Mengen von Nachrichten, auf die von überall auf der Welt mit authentifizierten Anrufen über HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Gesamtkapazität von 100 TB des Speicherkontos begrenzt. Der Warteschlangendienst wird hauptsächlich für folgende Zwecke verwendet:
+[WACOM.INCLUDE [howto-queue-storage][]]
 
--   Erstellung eines Arbeits-Backlogs zur asynchronen Verarbeitung
--   Weiterleitung von Nachrichten von einer Azure-Webrolle an eine Workerrolle
+## <a name="create-account"></a>Erstellen eines Azure-Speicherkontos
 
-Konzepte
---------
+[WACOM.INCLUDE [create-storage-account][]]
 
-Der Warteschlangendienst umfasst die folgenden Komponenten:
+## <a name="create-app"> </a>Erstellen einer Node.js-Anwendung
 
-![Queue1](./media/storage-nodejs-how-to-use-queues/queue1.png)
+Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website][], [Node.js-Clouddienst][] (mithilfe von Windows PowerShell) oder [Website mit WebMatrix][].
 
--   **URL-Format:** Warteschlangen sind über das folgende URL-Format adressierbar:
+## <a name="configure-access"> </a>Konfigurieren der Anwendung für den Speicherzugriff
 
-        http://storageaccount.queue.core.windows.net/queue  
+Um Azure-Speicher verwenden zu können, müssen Sie das Azure Storage SDK für Node.js herunterladen. Es enthält eine Reihe von Bibliotheken,
+die mit den REST-Speicherdiensten kommunizieren.
 
-    Mit der folgenden URL kann eine der Warteschlangen im Diagramm adressiert werden:
-
-        http://myaccount.queue.core.windows.net/imagesToDownload
-
--   **Speicherkonto:** Der Zugriff auf Azure-Speicher erfolgt immer über ein Speicherkonto. Ein Speicherkonto ist die höchste Ebene des Namespace für den Zugriff auf Warteschlangen. Ein Speicherkonto kann bis zu 100 TB Blob-, Warteschlangen- und Tabellendaten enthalten.
-
--   **Warteschlange:** Eine Warteschlange enthält einen Satz von Nachrichten. Alle Nachrichten müssen sich in Warteschlangen befinden.
-
--   **Nachricht:** Eine Nachricht in einem beliebigen Format und mit einer Größe von bis zu 64 KB.
-
-Erstellen eines Azure-Speicherkontos
-------------------------------------
-
-Für Speichervorgänge benötigen Sie ein Windows Azure-Speicherkonto. Mit den folgenden Schritten können Sie ein Speicherkonto erstellen. (Sie können ein Speicherkonto auch [mithilfe der REST-API](http://msdn.microsoft.com/de-de/library/windowsazure/hh264518.aspx) erstellen.)
-
-1.  Melden Sie sich auf dem [Windows Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
-
-2.  Klicken Sie unten im Navigationsbereich auf **+NEW**.
-
-    ![+Neu](./media/storage-nodejs-how-to-use-queues/plus-new.png)
-
-3.  Klicken Sie auf **Speicherkonto** und anschließend auf **Schnellerfassung**.
-
-    ![Dialogfeld "Schnellerfassung"](./media/storage-nodejs-how-to-use-queues/quick-storage.png)
-
-4.  Geben Sie im Feld "URL" einen Unterdomänennamen ein, der im URI für das Speicherkonto verwendet werden soll. Der Eintrag kann drei bis 24 Kleinbuchstaben und Zahlen enthalten. Dieser Wert wird der Hostname im URI, der zum Adressieren von Blob-, Warteschlangen- oder Tabellenspeicherressourcen für das Abonnement verwendet wird.
-
-5.  Wählen Sie eine Region/Affinitätsgruppe, in der sich der Speicher befinden soll. Wenn Sie Speicher aus Ihrer Windows Azure-Anwendung verwenden, wählen Sie die Region aus, in der Sie auch Ihre Anwendung bereitstellen.
-
-6.  Klicken Sie auf **Speicherkonto erstellen**.
-
-Erstellen einer Node.js-Anwendung
----------------------------------
-
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website](/de-de/develop/nodejs/tutorials/create-a-website-(mac)/), [Node.js Cloud Service]({localLink:2221} "Web App mit Express") (mit Windows PowerShell) oder [Website mit WebMatrix](/de-de/develop/nodejs/tutorials/web-site-with-webmatrix/).
-
-Konfigurieren der Anwendung für den Speicherzugriff
----------------------------------------------------
-
-Um Azure-Speicher verwenden zu können, müssen Sie das Node.js-Paket azure herunterladen und verwenden. Dieses Paket enthält eine Reihe von Bibliotheken, die mit den REST-Speicherdiensten kommunizieren.
-
-### Verwenden von Node Package Manager (NPM) zum Abrufen des Pakets
+### Verwenden von Node-Paket-Manager (NPM) zum Beziehen des Pakets
 
 1.  Verwenden Sie eine Befehlszeilenschnittstelle, z. B. **PowerShell** (Windows,) **Terminal** (Mac) oder **Bash** (Unix), und navigieren Sie zu dem Ordner, in dem Sie die Beispielanwendung erstellt haben.
 
-2.  Geben Sie **npm install azure** in das Befehlsfenster ein. Die Ausgabe dieses Befehls sollte wie folgt aussehen:
+2.  Geben Sie **npm install azure-storage** in das Befehlsfenster ein.
+    Die Ausgabe dieses Befehls sollte wie folgt aussehen:
 
-        azure@0.7.5 node_modules\azure
-        |-- dateformat@1.0.2-1.2.3
-        |-- xmlbuilder@0.4.2
-        |-- node-uuid@1.2.0
-        |-- mime@1.2.9
-        |-- underscore@1.4.4
-        |-- validator@1.1.1
-        |-- tunnel@0.0.2
-        |-- wns@0.5.3
-        |-- xml2js@0.2.7 (sax@0.5.2)
-        |-- request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
+        azure-storage@0.1.0 node_modules\azure-storage
+        +-- extend@1.2.1
+        +-- xmlbuilder@0.4.3
+        +-- mime@1.2.11
+        +-- underscore@1.4.4
+        +-- validator@3.1.0
+        +-- node-uuid@1.4.1
+        +-- xml2js@0.2.7 (sax@0.5.2)
+        +-- request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
 
-3.  Sie können den Befehl **ls** manuell ausführen, um zu überprüfen, ob der Ordner **node\_modules** erstellt wurde. Dieser Ordner enthält das **azure**-Paket mit den Bibliotheken, die Sie für den Speicherzugriff benötigen.
+3.  Sie können den Befehl **ls** manuell aufrufen, um sich davon zu überzeugen, dass der Ordner
+    **node\_modules** erstellt wurde. Dieser Ordner enthält
+    das **azure-storage**-Paket mit den Bibliotheken, die Sie für den
+    Speicherzugriff benötigen.
 
 ### Importieren des Pakets
 
-Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anfang der Datei **server.js** der Anwendung einzufügen, in der Sie den Speicher nutzen möchten:
+Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anfang der Datei
+**server.js** der Anwendung einzufügen, in der Sie den Speicher nutzen möchten:
 
-    var azure = require('azure');
+            var azure = require('azure-storage');
 
-Einrichten einer Azure-Speicherverbindung
------------------------------------------
+## <a name="setup-connection-string"> </a>Einrichten einer Azure-Speicherverbindung
 
-Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_STORAGE\_ACCESS\_KEY die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Falls diese Umgebungsvariablen nicht gesetzt sind, müssen Sie die Kontoinformationen beim Aufruf von **createQueueService** angeben.
+Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_STORAGE\_ACCESS\_KEY oder AZURE\_STORAGE\_CONNECTION\_STRING die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Falls diese Umgebungsvariablen nicht gesetzt sind, müssen Sie die Kontoinformationen beim Aufruf von **createQueueService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Clouddienst finden Sie unter [Node.js-Clouddienst mit Speicher](/de-de/develop/nodejs/tutorials/web-app-with-storage/).
+Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][].
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher](/de-de/develop/nodejs/tutorials/web-site-with-storage/).
+## <a name="create-queue"> </a>Gewusst wie: Erstellen einer Warteschlange
 
-Vorgehensweise: Erstellen einer Warteschlange
----------------------------------------------
+Durch folgenden Code wird ein **QueueService**-Objekt erstellt, das Ihnen
+das Arbeiten mit Warteschlangen ermöglicht.
 
-Durch folgenden Code wird ein **QueueService**-Objekt erstellt, das Ihnen das Arbeiten mit Warteschlangen ermöglicht.
+    var queueSvc = azure.createQueueService();
 
-    var queueService = azure.createQueueService();
+Verwenden Sie die **createQueueIfNotExists**-Methode, die die
+angegebene Warteschlange zurückgibt, wenn sie bereits vorhanden ist, oder eine
+neue Warteschlange mit dem angegebenen Namen erstellt, sollte sie noch nicht vorhanden sein.
 
-Verwenden Sie die **createQueueIfNotExists**-Methode, die die angegebene Warteschlange zurückgibt, wenn sie bereits vorhanden ist, oder eine neue Warteschlange mit dem angegebenen Namen erstellt, sollte sie noch nicht vorhanden sein.
-
-    queueService.createQueueIfNotExists(queueName, function(error){
-        if(!error){
-            // Warteschlange ist vorhanden
-        }
+    queueSvc.createQueueIfNotExists('myqueue', function(error, result, response){
+      if(!error){
+        // Queue created or exists
+      }
     });
+
+Wenn die Warteschlange erstellt wurde, ist `result` true. Wenn die Warteschlange bereits vorhanden ist, ist `result` false.
 
 ### Filter
 
 Mit **QueueService** können Sie optionale Filteroperationen auf Operationen ausführen. Filtervorgänge können Protokollierung, automatische Wiederholung usw. umfassen. Filter sind Objekte, die eine Methode mit einer Signatur implementieren:
 
-     function handle (requestOptions, next)
+           function handle (requestOptions, next)
 
-Nachdem die Vorverarbeitung der Anforderungsoptionen abgeschlossen ist, muss die Methode "next" aufrufen und hierbei eine Rückruffunktion mit der folgenden Signatur übergeben:
+Nachdem die Vorverarbeitung der Anforderungsoptionen angeschlossen ist, muss die Methode "next" aufrufen und hierbei eine Rückruffunktion mit der folgenden Signatur übergeben:
 
-     function (returnObject, finalCallback, next)
+        function (returnObject, finalCallback, next)
 
 Nachdem das returnObject-Objekt (die Antwort auf die an den Server gesendete Anforderung) verarbeitet wurde, muss in dieser Rückruffunktion entweder "next" aufgerufen werden, wenn die Tabelle vorhanden ist, um weitere Filter zu verarbeiten, oder andernfalls einfach "finallCallback" aufrufen, um den Dienstaufruf zu beenden.
 
 Zwei Filter, die eine Wiederholungslogik implementieren, sind im Azure SDK für Node.js enthalten: **ExponentialRetryPolicyFilter** und **LinearRetryPolicyFilter**. Mit folgendem Code wird ein **QueueService**-Objekt erstellt, das **ExponentialRetryPolicyFilter** verwendet:
 
     var retryOperations = new azure.ExponentialRetryPolicyFilter();
-    var queueService = azure.createQueueService().withFilter(retryOperations);
+    var queueSvc = azure.createQueueService().withFilter(retryOperations);
 
-Vorgehensweise: Einfügen einer Nachricht in eine Warteschlange
---------------------------------------------------------------
+## <a name="insert-message"> </a>Gewusst wie: Einfügen einer Nachricht in eine Warteschlange
 
-Zum Einfügen einer Nachricht in eine Warteschlange verwenden Sie die **createMessage**-Methode, um eine neue Nachricht zu erstellen. Fügen Sie sie dann der Warteschlange hinzu.
+Zum Einfügen einer Nachricht in eine Warteschlange verwenden Sie die **createMessage**-Methode,
+um eine neue Nachricht zu erstellen. Fügen Sie sie dann der Warteschlange hinzu.
 
-    queueService.createMessage(queueName, "Hello world!", function(error){
-        if(!error){
-            // Nachricht wurde eingefügt
-        }
+    queueSvc.createMessage('myqueue', "Hello world!", function(error, result, response){
+      if(!error){
+        // Message inserted
+      }
     });
 
-Vorgehensweise: Einsehen der nächsten Nachricht
------------------------------------------------
+## <a name="peek-message"> </a>Gewusst wie: Einsehen der nächsten Nachricht
 
-Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **peekMessages** aufrufen. Standardmäßig wird von **peekMessages** jeweils nur eine Nachricht angeschaut.
+Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange
+werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **peekMessages** aufrufen. Standardmäßig wird von
+**peekMessages** jeweils nur eine Nachricht angeschaut.
 
-    queueService.peekMessages(queueName, function(error, messages){
-        if(!error){
-            // Nachrichten eingesehen
-            // Nachrichtentext ist in messages[0].messagetext verfügbar
-        }
+    queueSvc.peekMessages('myqueue', function(error, result, response){
+      if(!error){
+        // Messages peeked
+      }
     });
 
-> [WACOM.NOTE] Wenn Sie **peekMessage** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, wird kein Fehler zurückgegeben, aber auch keine Nachrichten.
+Das `result` enthält die Nachricht.
 
-Vorgehensweise: Entfernen der nächsten Nachricht aus der Warteschlange
-----------------------------------------------------------------------
+> [WACOM.NOTE] Wenn Sie **peekMessages** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, wird kein Fehler zurückgegeben, aber auch keine Nachrichten.
 
-Durch diesen Code wird eine Nachricht in zwei Schritten aus der Warteschlange entfernt. Wenn Sie **getMessages** aufrufen, wird standardmäßig die nächste Nachricht aus der Warteschlange abgerufen. Die für **getMessages** zurückgegebene Nachricht ist für andere Codes nicht mehr sichtbar, die Nachrichten aus dieser Warteschlange lesen. Standardmäßig bleibt die Nachricht 30 Sekunden lang unsichtbar. Um die Nachricht endgültig aus der Warteschlange zu entfernen, müssen Sie außerdem **deleteMessage** aufrufen. Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der Code ruft **deleteMessage** direkt nach der Verarbeitung der Nachricht auf.
+## <a name="get-message"> </a>Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange
 
-    queueService.getMessages(queueName, function(error, messages){
-        if(!error){
-            // Nachricht in weniger als 30 Sekunden verarbeiten,
-            // Nachrichtentext ist in messages[0].messagetext verfügbar 
-            var message = messages[0]
-            queueService.deleteMessage(queueName
-                , message.messageid
-                , message.popreceipt
-                , function(error){
-                    if(!error){
-                        // Nachricht wurde gelöscht
-                    }
-                });
-        }
+Das Verarbeiten einer Nachricht besteht aus zwei Stufen:
+
+1.  Entfernen der Nachricht aus der Warteschlange.
+
+2.  Löschen der Nachricht.
+
+Verwenden Sie **getMessage**, um eine Nachricht aus der Warteschlange zu entfernen. Dadurch wird die Nachricht in der Warteschlange unsichtbar, sodass sie nicht durch andere Clients verarbeitet werden kann. Sobald Ihre Anwendung die Nachricht verarbeitet hat, rufen Sie **deleteMessage** auf, um sie aus der Warteschlange zu löschen. Im folgenden Beispiel wird eine Nachricht abgerufen und anschließend gelöscht:
+
+    queueSvc.getMessages('myqueue', function(error, result, response){
+      if(!error){
+        // message dequed
+        var message = result[0];
+        queueSvc.deleteMessage('myqueue', message.messageid, message.popreceipt, function(error, response){
+          if(!error){
+            //message deleted
+          }
+        });
+      }
     });
 
-> [WACOM.NOTE] Wenn Sie **getMessages** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, wird kein Fehler zurückgegeben, aber auch keine Nachrichten.
+> [WACOM.NOTE] Standardmäßig wird eine Nachricht nur für 30 Sekunden ausgeblendet, danach ist sie für andere Client sichtbar. Sie können einen anderen Wert angeben, indem Sie `options.visibilityTimeout` mit **getMessages** verwenden.
 
-Vorgehensweise: Ändern des Inhalts von Nachrichten in der Warteschlange
------------------------------------------------------------------------
+> [WACOM.NOTE]
+> Wenn Sie **getMessages** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, wird kein Fehler zurückgegeben, aber auch keine Nachrichten.
 
-Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern. Wenn die Nachricht eine Arbeitsaufgabe darstellt, können Sie diese Funktion verwenden, um den Status der Aufgabe zu aktualisieren. Im Code unten wird die **updateMessage**-Methode zum Aktualisieren einer Nachricht verwendet.
+## <a name="change-contents"> </a>Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange
 
-    queueService.getMessages(queueName, function(error, messages){
-        if(!error){
-            // Nachricht erhalten
-            var message = messages[0];
-            queueService.updateMessage(queueName
-                , message.messageid
-                , message.popreceipt
-                , 10
-                , { messagetext: 'in your message, doing stuff.' }
-                , function(error){
-                    if(!error){
-                        // Nachricht erfolgreich aktualisiert
-                    }
-                });
-        }
+Sie können die Inhalte einer Nachricht direkt in der Warteschlange mithilfe von **updateMessage** ändern. Im folgenden Beispiel wird der Text einer Nachricht aktualisiert:
+
+    queueSvc.getMessages('myqueue', function(error, result, response){
+      if(!error){
+        // Got the message
+        var message = result[0];
+        queueSvc.updateMessage('myqueue', message.messageid, message.popreceipt, 10, {messageText: 'new text'}, function(error, result, response){
+          if(!error){
+            // Message updated successfully
+          }
+        });
+      }
     });
 
-Vorgehensweise: Weitere Optionen für das Entfernen von Nachrichten aus der Warteschlange
-----------------------------------------------------------------------------------------
+## <a name="advanced-get"> </a>Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange
 
-Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können. Erstens können Sie einen Nachrichtenstapel abrufen (bis zu 32). Zweitens können Sie das Unsichtbarkeits-Zeitlimit verkürzen oder verlängern, sodass der Code mehr oder weniger Zeit zur vollständigen Verarbeitung jeder Nachricht benötigt. Im folgenden Codebeispiel wird **getMessages** verwendet, um 15 Nachrichten mit einem Aufruf abzurufen. Anschließend wird jede Nachricht mithilfe einer for-Schleife verarbeitet. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt.
+Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können:
 
-    queueService.getMessages(queueName
-        , {numofmessages: 15, visibilitytimeout: 5 * 60}
-        , function(error, messages){
-        if(!error){
-            // Nachrichten abgerufen
-            for(var index in messages){
-                // Text ist in messages[index].messagetext verfügbar
-                var message = messages[index];
-                queueService.deleteMessage(queueName
-                    , message.messageid
-                    , message.popreceipt
-                    , function(error){
-                        if(!error){
-                            // Nachricht wurde gelöscht
-                        }
-                    });
+-   `options.numOfMessages` – Abrufen eines Stapels an Nachrichten (bis zu 32).
+-   `options.visibilityTimeout` – Festlegen eines längeren oder kürzeren Unsichtbarkeits-Zeitlimits.
+
+Im folgenden Beispiel wird die Methode **getMessages** verwendet, um 15 Nachrichten mit einem Aufruf abzurufen. Anschließend wird jede
+Nachricht mithilfe einer for-Schleife verarbeitet. Zudem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten für alle Nachrichten festgelegt, die durch diese Methode zurückgegeben werden.
+
+    queueSvc.getMessages('myqueue', {numOfMessages: 15, visibilityTimeout: 5 * 60}, function(error, result, response){
+      if(!error){
+        // Messages retreived
+        for(var index in result){
+          // text is available in result[index].messageText
+          var message = result[index];
+          queueSvc.deleteMessage(queueName, message.messageid, message.popreceipt, function(error, response){
+            if(!error){
+              // Message deleted
             }
+          });
         }
+      }
     });
 
-Vorgehensweise: Abrufen der Warteschlangenlänge
------------------------------------------------
+## <a name="get-queue-length"> </a>Gewusst wie: Abrufen der Warteschlangenlänge
 
-Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die **getQueueMetadata**-Methode fordert den Warteschlangendienst auf, Metadaten zur Warteschlange zurückzugeben. Die **approximatemessagecount**-Eigenschaft der Antwort enthält die Anzahl der Nachrichten in einer Warteschlange. Die Anzahl ist nur ein ungefährer Wert, da seit der Antwort des Warteschlangendienstes möglicherweise bereits Nachrichten hinzugefügt oder gelöscht wurden.
+**getQueueMetadata** gibt Metadaten über die Warteschlange zurück, einschließlich der geschätzten Anzahl der in der Warteschlange wartenden Nachrichten.
 
-    queueService.getQueueMetadata(queueName, function(error, queueInfo){
+    queueSvc.getQueueMetadata('myqueue', function(error, result, response){
+      if(!error){
+        // Queue length is available in result.approximatemessagecount
+      }
+    });
+
+## <a name="list-queue"> </a>Gewusst wie: Auflisten von Warteschlangen
+
+Verwenden Sie zum Aufrufen einer Liste an Warteschlangen **listQueuesSegmented**. Verwenden Sie **listQueuesSegmentedWithPrefix**, um eine Liste abzurufen, die nach einem bestimmten Präfix gefiltert ist.
+
+    queueSvc.listQueuesSegmented(null, function(error, result, response){
+      if(!error){
+        // result.entries contains the list of queues
+      }
+    });
+
+Wenn nicht alle Warteschlangen zurückgegeben werden können, kann `result.continuationToken` als erster Parameter von **listQueuesSegmented** oder als zweiter Parameter von **listQueuesSegmentedWithPrefix** erwendet werden, um weitere Ergebnisse abzurufen.
+
+## <a name="delete-queue"> </a>Gewusst wie: Löschen einer Warteschlange
+
+Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die Methode
+**deleteQueue** für das Warteschlangenobjekt auf.
+
+    queueSvc.deleteQueue(queueName, function(error, response){
         if(!error){
-            // Warteschlangenlänge ist in queueInfo.approximatemessagecount verfügbar
+            // Queue has been deleted
         }
     });
 
-Vorgehensweise: Löschen einer Warteschlange
--------------------------------------------
+Verwenden Sie **clearMessages**, um alle Nachrichten aus einer Warteschlange zu entfernen, ohne sie zu löschen.
 
-Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die Methode **deleteQueue** für das Warteschlangenobjekt auf.
+## <a name="sas"></a>Gewusst wie: Arbeiten mit Shared Access Signatures
 
-    queueService.deleteQueue(queueName, function(error){
-        if(!error){
-            // Warteschlange wurde gelöscht
-        }
+Shared Access Signature (SAS) ist eine sichere Möglichkeit zum Bereitstellen einen granularen Zugriffs auf Warteschlangen, ohne dass dabei Ihr Speicherkontoname oder -schlüssel angegeben werden müssen. SAS wird oftmals zum Bereitstellen des beschränkten Zugriffs auf Ihre Warteschlangen verwendet, dazu zählt beispielsweise auch, einer mobilen App das Senden von Nachrichten zu erlauben.
+
+Eine vertrauenswürdige Anwendung wie ein cloudbasierter Dienst generiert mittels **generateSharedAccessSignature** von **QueueService** ein SAS und stellt sie einer nicht vertrauenswürdigen oder teilweise vertrauenswürdigen Anwendung bereit. Zum Beispiel für eine mobile App. Die SAS wird mithilfe einer Richtlinie generiert, die das Anfangs- und das Enddatum der Gültigkeit der SAS sowie die Zugriffsstufe definiert, die dem Inhaber der SAS gewährt wird.
+
+Im folgenden Beispiel wird eine neue Richtlinie für den geteilten Zugriff generiert, wodurch der SAS-Inhaber der Warteschlange Nachrichten hinzufügen kann, die 100 Minuten nach ihrer Erstellung abläuft.
+
+    var startDate = new Date();
+    var expiryDate = new Date(startDate);
+    expiryDate.setMinutes(startDate.getMinutes() + 100);
+    startDate.setMinutes(startDate.getMinutes() - 100);
+
+    var sharedAccessPolicy = {
+      AccessPolicy: {
+        Permissions: azure.QueueUtilities.SharedAccessPermissions.ADD,
+        Start: startDate,
+        Expiry: expiryDate
+      }
+    };
+
+    var queueSAS = queueSvc.generateSharedAccessSignature('myqueue', sharedAccessPolicy);
+    var host = queueSvc.host;
+
+Beachten Sie, dass auch die Hostinformationen angegeben werden müssen, da sie erforderlich sind, wenn der SAS-Inhaber versucht, auf die Warteschlange zuzugreifen.
+
+Die Clientanwendung verwendet dann die SAS mit **QueueServiceWithSAS**, um Vorgänge für die Warteschlange auszuführen. Im folgenden Beispiel wird eine Verbindung zur Warteschlange hergestellt, und es wird eine Nachricht erstellt.
+
+    var sharedQueueService = azure.createQueueServiceWithSas(host, queueSAS);
+    sharedQueueService.createMessage('myqueue', 'Hello world from SAS!', function(error, result, response){
+      if(!error){
+        //message added
+      }
     });
 
-Nächste Schritte
-----------------
+Da die SAS mit "add access" generiert wurde, würde beim Versuch, Nachrichten zu lesen, zu aktualisieren oder zu löschen, ein Fehler angezeigt werden.
 
-Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
+### Zugriffssteuerungslisten
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx).
--   Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
--   Besuchen Sie das [Azure SDK für Node](https://github.com/WindowsAzure/azure-sdk-for-node)-Repository auf GitHub.
+Sie können auch eine Zugriffssteuerungsliste (Access Control List, ACL) verwenden, um die Zugriffsrichtlinie für eine SAS festzulegen. Dies ist nützlich, wenn mehrere Clients auf die Warteschlange zugreifen sollen und für jeden Client unterschiedliche Zugriffsrichtlinien bereitgestellt werden.
 
+Eine ACL wird in einem Array von Zugriffsrichtlinien implementiert, wobei jeder Richtlinie eine ID zugeordnet wird. Im folgenden Beispiel werden zwei Richtlinien definiert, eine für 'user1' und eine für 'user2':
+
+    var sharedAccessPolicy = [
+      {
+        AccessPolicy: {
+          Permissions: azure.QueueUtilities.SharedAccessPermissions.PROCESS,
+          Start: startDate,
+          Expiry: expiryDate
+        },
+        Id: 'user1'
+      },
+      {
+        AccessPolicy: {
+          Permissions: azure.QueueUtilities.SharedAccessPermissions.ADD,
+          Start: startDate,
+          Expiry: expiryDate
+        },
+        Id: 'user2'
+      }
+    ];
+
+Im folgenden Beispiel wird die aktuelle Zugriffssteuerungsliste für **myqueue** abgerufen. Anschließend werden die neuen Richtlinien mithilfe von **setQueueAcl** hinzugefügt. Dieser Ansatz ermöglicht Folgendes:
+
+    queueSvc.getQueueAcl('myqueue', function(error, result, response) {
+      if(!error){
+        //push the new policy into signedIdentifiers
+        result.signedIdentifiers.push(sharedAccessPolicy);
+        queueSvc.setQueueAcl('myqueue', result, function(error, result, response){
+          if(!error){
+            // ACL set
+          }
+        });
+      }
+    });
+
+Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Richtlinie eine SAS erstellen. Im folgenden Beispiel wird eine neue SAS für 'user2' erstellt:
+
+    queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
+
+## <a name="next-steps"> </a>Nächste Schritte
+
+Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers
+vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
+
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
+-   Besuchen Sie den [Blog des Azure-Speicherteams][].
+-   Besuchen Sie das [Azure Storage SDK für Node][]-Repository auf GitHub.
+
+  [Nächste Schritte]: #next-steps
+  [Was ist der Warteschlangendienst?]: #what-is
+  [Konzepte]: #concepts
+  [Erstellen eines Azure-Speicherkontos]: #create-account
+  [Erstellen einer Node.js-Anwendung]: #create-app
+  [Konfigurieren der Anwendung für den Speicherzugriff]: #configure-access
+  [Einrichten einer Azure-Speicherverbindungszeichenfolge]: #setup-connection-string
+  [Gewusst wie: Erstellen einer Warteschlange]: #create-queue
+  [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange]: #insert-message
+  [Gewusst wie: Einsehen der nächsten Nachricht]: #peek-message
+  [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]: #get-message
+  [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]: #change-contents
+  [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]: #advanced-get
+  [Gewusst wie: Abrufen der Warteschlangenlänge]: #get-queue-length
+  [Gewusst wie: Löschen einer Warteschlange]: #delete-queue
+  [Gewusst wie: Arbeiten mit Shared Access Signature]: #sas
+  [howto-queue-storage]: ../includes/howto-queue-storage.md
+  [create-storage-account]: ../includes/create-storage-account.md
+  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [Node.js-Clouddienst]: /en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Website mit WebMatrix]: /en-us/documentation/articles/web-sites-nodejs-use-webmatrix/
+  [Node.js-Webanwendung mit Speicher]: /en-us/documentation/articles/storage-nodejs-use-table-storage-web-site/
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure Storage SDK für Node]: https://github.com/Azure/azure-storage-node

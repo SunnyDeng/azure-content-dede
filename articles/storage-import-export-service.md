@@ -1,9 +1,10 @@
-<properties linkid="manage-services-import-export" urlDisplayName="Azure Import/Export Service" pageTitle="Using import/export to transfer data to Blob Storage | Microsoft Azure" metaKeywords="" description="Learn how to create import and export jobs in the Azure Management Portal to transfer data to blob storage." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" />
+<properties linkid="manage-services-import-export" urlDisplayName="Azure Import/Export Service" pageTitle="Using import/export to transfer data to Blob Storage | Microsoft Azure" metaKeywords="" description="Learn how to create import and export jobs in the Azure Management Portal to transfer data to blob storage." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-Verwendung des Azure Import-/Export-Diensts für die Übertragung von Daten an Blob-Speicher
-==========================================================================================
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
 
-Mithilfe des Azure-Import-/Export-Diensts können Sie große Mengen an Dateidaten an Azure Blob-Speicher übertragen, beispielsweise wenn das Hochladen über das Netzwerk untragbar teuer oder nicht machbar ist. Außerdem können Sie mit dem Import-/Export-Dienst auch große Mengen an Daten auf Blob-Speicher schnell und kostengünstig auf Ihre lokalen Installationen übertragen.
+# Verwenden des Microsoft Azure Import/Export-Diensts zum Übertragen von Daten in den Blob-Speicher
+
+Sie können den Microsoft Azure Import-/Exportdienst verwenden, um große Mengen an Dateidaten in den Azure-Blobspeicher zu übertragen, wenn das Hochladen über das Netzwerk sehr teuer oder nicht praktikabel ist. Außerdem können Sie mit dem Import-/Export-Dienst auch große Mengen an Daten auf Blob-Speicher schnell und kostengünstig auf Ihre lokalen Installationen übertragen.
 
 Sie können eine oder mehrere Festplatten mit Daten an ein Azure-Datacenter schicken, um eine große Menge an Dateidaten auf Blob-Speicher zu übertragen. In diesem Rechenzentrum werden Ihre Daten in Ihr Speicherkonto hochgeladen. Ähnlich funktioniert das Exportieren von Daten auf Blob-Speicher: Sie können leere Festplatten an ein Azure-Datacenter schicken. Dort werden Blob-Daten von Ihrem Speicherkonto auf Ihre Festplatten kopiert und an Sie zurückgesendet. Bevor Sie ein Laufwerk einsenden, das Daten enthält, verschlüsseln Sie die Daten auf dem Laufwerk. Wenn der Import-/Export-Dienst Ihre Daten exportiert, um Ihnen diese zu senden, werden die Daten vor dem Versand ebenfalls verschlüsselt.
 
@@ -12,51 +13,50 @@ Es gibt zwei Möglichkeiten für die Erstellung und die Verwaltung von Import- u
 -   Über das Azure Verwaltungsportal
 -   Über eine REST-Schnittstelle zum Dienst
 
-Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des Verwaltungsportals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Import/Export Service REST API Reference](http://go.microsoft.com/fwlink/?LinkID=329099) (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
+Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des Verwaltungsportals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Azure Import/Export Service REST API Reference][] (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
 
-Übersicht über den Import-/Export-Dienst
-----------------------------------------
+## Übersicht über den Import/Export-Dienst
 
 Zunächst erstellen Sie einen *Auftrag*, um mit dem Importieren oder Exportieren von Blob-Speicher zu beginnen. Ein Auftrag kann ein *Importauftrag* oder ein *Exportauftrag* sein:
 
 -   Erstellen Sie einen Importauftrag, wenn Sie lokal gespeicherte Daten auf Blobs in Ihrem Azure-Speicherkonto übertragen möchten.
 -   Erstellen Sie einen Exportauftrag, wenn Sie Daten, die derzeit als Blobs in Ihrem Speicherkonto gespeichert sind, auf Festplatten übertragen möchten, die dann an Sie geschickt werden.
 
-Wenn Sie einen Auftrag erstellen, benachrichtigen Sie den Import-/Export-Dienst, dass Sie eine oder mehrere Festplatten an ein Azure-Datacenter schicken werden. Bei einem Importauftrag verschicken Sie Festplatten, die Dateidaten enthalten. Bei einem Exportauftrag verschicken Sie leere Festplatten.
+Wenn Sie einen Auftrag erstellen, benachrichtigen Sie den Import/Export-Dienst, dass Sie eine oder mehrere Festplatten an ein Azure-Datacenter schicken werden. Bei einem Importauftrag verschicken Sie Festplatten, die Dateidaten enthalten. Bei einem Exportauftrag verschicken Sie leere Festplatten.
 
-Führen Sie das Tool **WAImportExport** aus, um Ihr Laufwerk für den Versand für einen Importauftrag vorzubereiten. Dieses Tool vereinfacht das Kopieren von Daten auf das Laufwerk, das Verschlüsseln der Daten auf dem Laufwerk mit BitLocker und das Generieren von Laufwerkprotokolldateien, die untern erläutert werden.
+Um Ihr Laufwerk für den Versand für einen Importauftrag vorzubereiten, führen Sie das **Microsoft Azure Import/Exporttool** aus. Dabei werden Ihre Daten auf das Laufwerk kopiert, die Daten auf dem Laufwerk mit BitLocker verschlüsselt und die Journaldateien für das Laufwerk erstellt, die weiter unten besprochen werden.
 
-**Hinweis**
-
-Die Daten auf dem Laufwerk müssen mit BitLocker-Laufwerkverschlüsselung verschlüsselt sein. So sind Ihre Daten beim Transport geschützt. Bei einem Exportauftrag verschlüsselt der Import-/Export-Dienst Ihre Daten, bevor das Laufwerk an Sie zurückgesendet wird.
+<div class="dev-callout">
+<strong>Hinweis</strong>
+<p>Die Daten auf dem Laufwerk m&uuml;ssen mit BitLocker-Laufwerkverschl&uuml;sselung verschl&uuml;sselt sein. So sind Ihre Daten beim Transport gesch&uuml;tzt. Bei einem Exportauftrag verschl&uuml;sselt der Import-/Export-Dienst Ihre Daten, bevor das Laufwerk an Sie zur&uuml;ckgesendet wird.</p>
+</div>
 
 Für die Erstellung eines Import- oder Exportauftrags benötigen Sie außerdem die *Laufwerk-ID*. Dies ist die Seriennummer, die einer bestimmten Festplatte durch den Laufwerkhersteller zugewiesen wurde. Die Laufwerk-ID ist außen auf dem Laufwerk abgebildet.
 
 ### Anforderungen und Umfang
 
-1.  **Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import-/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](http://www.windowsazure.com/de-de/manage/services/storage/how-to-create-a-storage-account/).
-2.  **Festplatten:** Für den Import-/Export-Dienst werden lediglich 3,5-Zoll-SATA II-Festplatten unterstützt. Bei der Vorschauversion werden Festplatten mit mehr als 4 TB nicht unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. An die meisten Computer können Sie eine SATA II-Festplatte extern mithilfe eines SATA II-USB-Adapters anschließen.
+1.  **Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos][].
+2.  **Festplatten:** Der Import-/Exportdienst unterstützt nur SATA II/III-Laufwerke im 3,5-Zoll-Format. Festplatten größer als 4 TB werden nicht unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
 3.  **BitLocker-Verschlüsselung:** Alle auf den Festplatten gespeicherten Daten müssen mit BitLocker verschlüsselt sein. Dabei müssen die Verschlüsselungsschlüssel durch numerische Kennwörter geschützt sein.
 4.  **Blob-Speicherziele:** Daten können auf Blockblobs und Seitenblobs hochgeladen bzw. von dort heruntergeladen werden.
-5.  **Anzahl der Aufträge:** Ein Kunde kann pro Abonnement 20 aktive Aufträge haben.
+5.  **Anzahl der Aufträge:** Jeder Kunde kann bis zu 20 aktive Jobs pro Speicherkonto haben.
 6.  **Maximale Größe eines Auftrags:** Die Größe eines Auftrags wird durch die Kapazität der verwendeten Festplatten und der maximalen Menge an Daten, die in einem Speicherkonto gespeichert werden kann, bestimmt. Jeder Auftrag kann maximal zehn Festplatten umfassen.
 
-Erstellen eines Importauftrags im Verwaltungsportal
----------------------------------------------------
+## Erstellen eines Importauftrags im Verwaltungsportal
 
 Erstellen Sie einen Importauftrag, um den Import-/Export-Dienst darüber zu informieren, dass Sie ein oder mehrere Laufwerke mit Daten an das Datacenter schicken werden, um deren Inhalte in Ihr Speicherkonto zu importieren.
 
 ### Vorbereiten Ihrer Laufwerke
 
-Bevor Sie einen Importauftrag erstellen, bereiten Sie Ihre Laufwerke mit dem [WAImportExport-Tool](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) vor. Weitere Informationen zur Verwendung des WAImportExport-Tools finden Sie unter [WAImportExport Tool Reference](http://go.microsoft.com/fwlink/?LinkId=329032) (WAImportExport-Tool-Referenz, in englischer Sprache).
+Bevor Sie einen Importauftrag erstellen, müssen Sie Ihre Laufwerke mit dem Microsoft Azure Import-/Exporttool vorbereiten. Weitere Details zum Microsoft Azure Import-/Exporttool finden Sie in der [Referenz zum Microsoft Azure Import-/Exporttool][]. Sie können das [Microsoft Azure Import-/Exporttool][] als eigenständiges Paket herunterladen.
 
 Führen Sie die folgenden drei Schritte durch, um Ihre Laufwerke vorzubereiten:
 
 1.  Bestimmen Sie die zu importierenden Daten und die Anzahl der benötigten Laufwerke.
 2.  Geben Sie die Ziel-Blobs für Ihre Daten im Azure Blob-Dienst an.
-3.  Kopieren Sie Ihre Daten mithilfe des WAImportExport-Tools auf eine oder mehrere Festplatten.
+3.  Verwenden Sie das Microsoft Azure Import-/Exporttool, um Ihre Daten auf eine oder mehrere Festplatten zu kopieren.
 
-Das WAImportExport-Tool generiert bei der Vorbereitung eine *Laufwerkprotokoll*datei für jedes Laufwerk. Die Laufwerkprotokolldatei wird auf Ihrem lokalen Computer gespeichert, nicht auf dem Laufwerk selbst. Beim Erstellen des Importauftrags laden Sie die Protokolldatei hoch. Eine Laufwerkprotokolldatei enthält die Laufwerk-ID und die BitLocker-Schlüssel sowie weitere Informationen über das Laufwerk.
+Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vorbereitung eine *Journaldatei*. Die Laufwerkprotokolldatei wird auf Ihrem lokalen Computer gespeichert, nicht auf dem Laufwerk selbst. Beim Erstellen des Importauftrags laden Sie die Protokolldatei hoch. Eine Laufwerkprotokolldatei enthält die Laufwerk-ID und die BitLocker-Schlüssel sowie weitere Informationen über das Laufwerk.
 
 ### Importauftrag erstellen
 
@@ -68,18 +68,23 @@ Das WAImportExport-Tool generiert bei der Vorbereitung eine *Laufwerkprotokoll*d
 
 4.  Laden Sie im dritten Schritt die Protokolldateien hoch, die Sie während der Vorbereitung des Laufwerks erhalten haben. Sie müssen pro vorbereitetem Laufwerk eine Datei hochladen.
 
-    ![Importauftrag erstellen – Schritt 3](./media/storage-import-export-service/import-job-03.png)
+    ![Importauftrag erstellen – Schritt 3][]
 
 5.  Geben Sie im vierten Schritt einen beschreibenden Namen für den Importauftrag ein. Beachten Sie, dass der eingegebene Name nur Kleinbuchstaben, Ziffern, Trennstriche und Unterstriche enthalten darf, mit einem Buchstaben beginnen muss und keine Leerzeichen enthalten darf. Mithilfe des ausgewählten Namens können Sie Ihre Aufträge während und nach der Bearbeitung nachverfolgen.
 
-    Die Datacenter-Region gibt das Datacenter an, an das Sie Ihr Paket schicken müssen. Weitere Informationen finden Sie unten in den FAQ.
+    Wählen Sie anschließend Ihr Rechenzentrum aus der Liste aus. Unter Rechenzentrumsregion wird das Rechenzentrum und die Adresse angegeben, an die Sie Ihr Paket schicken müssen. Weitere Informationen finden Sie unten in den FAQ.
 
-    Wenn Sie bereits Ihre FedEx-Tracking-Nummer haben, wählen Sie **I have my tracking number and want to enter it now**, und fahren Sie mit dem nächsten Schritt fort. Wenn Sie noch keine Tracking-Nummer haben, wählen Sie **I will provide my shipping information for this import job once I have shipped my package**, und schließen Sie den Importprozess ab.
+6.  Wählen Sie in Schritt 5 Ihren Rücktransporteur aus und geben Sie Ihr Kundenkonto beim Transportunternehmen an. Microsoft verwendet diese Kontodaten, um Ihre Laufwerke nach Abschluss des Importauftrags an Sie zurückzuschicken.
 
-6.  Wenn Sie bereits eine Tracking-Nummer haben, geben Sie diese im fünften Schritt ein, und bestätigen Sie sie.
+    Falls Sie Ihre Nachverfolgungsnummer haben, wählen Sie Ihr Transportunternehmen in der Liste aus und geben Sie die Nummer ein.
 
-Erstellen eines Exportauftrags im Verwaltungsportal
----------------------------------------------------
+    Wenn Sie noch keine Tracking-Nummer haben, wählen Sie **I will provide my shipping information for this import job once I have shipped my package**, und schließen Sie den Importprozess ab.
+
+7.  Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im Verwaltungsportal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
+
+    Falls der Auftrag den Status "Erstellung", "Versand" oder "Übertragung" hat, können Sie außerdem Ihre Kontonummer beim Transportunternehmen in Schritt 2 des Assistenten eingeben. Falls der Auftrag den Status "Verpackung" hat, können Sie Ihre Kontonummer beim Transportunternehmen nicht mehr ändern.
+
+## Erstellen eines Exportauftrags im Verwaltungsportal
 
 Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu informieren, dass Sie ein oder mehrere leere Laufwerke an das Datacenter schicken. So können die Daten von Ihrem Speicherkonto auf die Laufwerke exportiert werden, und die Laufwerke werden Ihnen dann zugeschickt.
 
@@ -89,13 +94,13 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 3.  Legen Sie im dritten Schritt fest, welche Blob-Daten Sie von Ihrem Speicherkonto auf Ihr leeres Laufwerk oder Ihre Laufwerke exportieren möchten. Sie können alle Blob-Daten des Speicherkontos exportieren, oder Sie legen fest, welche Blobs oder Blob-Sätze exportiert werden sollen.
 
-    ![Exportauftrag erstellen – Schritt 3](./media/storage-import-export-service/export-job-03.png)
+    ![Exportauftrag erstellen – Schritt 3][]
 
     -   Verwenden Sie die Auswahl **Equal To**, und geben Sie den relativen Pfad zu dem Blob an, beginnend mit dem Containernamen, um den zu exportierenden Blob festzulegen. Verwenden Sie *$root*, um den Stammcontainer festzulegen.
     -   Verwenden Sie die Auswahl **Starts With**, und legen Sie das Präfix beginnend mit einem Schrägstrich "/" fest, um alle Blobs festzulegen, die mit einem Präfix beginnen. Bei dem Präfix kann es sich um das Präfix des Containernamens, den vollständigen Containernamen oder den vollständigen Containernamen gefolgt vom Präfix des Blob-Namens handeln.
 
     Die Tabelle zeigt Beispiele für gültige Blob-Pfade:
-
+    
 	<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
 		<tbody>
 			<tr>
@@ -116,48 +121,51 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 			<tr>
 				<td>Beginnt mit</td>
 				<td>/book</td>
-				<td>Exportiert alle Blobs in allen Containern mit dem Präfix <strong>book</strong></td>
+				<td>Exportiert alle Blobs in allen Containern mit dem Präfix<strong>book</strong></td>
 			</tr>
 			<tr>
 				<td>Beginnt mit</td>
-				<td>/music/</td>
+				<td>/music/love </td>
 				<td>Exportiert alle Blobs im Container <strong>music</strong></td>
 			</tr>
 			<tr>
 				<td>Beginnt mit</td>
 				<td>/music/love</td>
-				<td>Exportiert alle Blobs im Container <strong>music,</strong> die mit dem Präfix <strong>love</strong> beginnen</td>
+				<td>Exportiert alle Blobs im Container <strong>music</strong> , die mit dem Präfix <strong>love</strong>beginnen</td>
 			</tr>
 			<tr>
 				<td>Entspricht</td>
 				<td>$root/logo.bmp</td>
-				<td>Exportiert das Blob <strong>logo.bmp</strong> im Stammcontainer</td>
+				<td>Exportiert das Blob  <strong>logo.bmp</strong> im Stammcontainer      </td>
 			</tr>
 			<tr>
 				<td>Entspricht</td>
 				<td>videos/story.mp4</td>
-				<td>Exportiert das Blob <strong>story.mp4</strong> im Container <strong>videos</strong></td>
+				<td>Exportiert das Blob <strong>story.mp4</strong> im Container  <strong>videos</strong></td>
 			</tr>
 		</tbody>
 	</table>
 
-
-4.  Geben Sie im vierten Schritt einen beschreibenden Namen für den Exportauftrag ein. Der eingegebene Name darf nur Kleinbuchstaben, Ziffern, Trennstriche und Unterstriche enthalten, muss mit einem Buchstaben beginnen und darf keine Leerzeichen enthalten.  
+4.  Geben Sie im vierten Schritt einen beschreibenden Namen für den Exportauftrag ein. Der eingegebene Name darf nur Kleinbuchstaben, Ziffern, Trennstriche und Unterstriche enthalten, muss mit einem Buchstaben beginnen und darf keine Leerzeichen enthalten.
 
     Die Datacenter-Region gibt das Datacenter an, an das Sie Ihr Paket schicken müssen. Weitere Informationen finden Sie unten in den FAQ.
 
-    Wenn Sie bereits Ihre FedEx-Tracking-Nummer haben, wählen Sie **I have my tracking number and want to enter it now**, und fahren Sie mit dem nächsten Schritt fort. Wenn Sie noch keine Tracking-Nummer haben, wählen Sie **I will provide my shipping information for this export job once I have shipped my package**, und schließen Sie den Importprozess ab.
+5.  Wählen Sie in Schritt 5 Ihren Rücktransporteur aus und geben Sie Ihr Kundenkonto beim Transportunternehmen an. Microsoft verwendet diese Kontodaten, um Ihre Laufwerke nach Abschluss des Exportauftrags an Sie zurückzuschicken.
 
-5.  Geben Sie im fünften Schritt Ihre Tracking-Nummer ein, und bestätigen Sie sie.
+    Falls Sie Ihre Nachverfolgungsnummer haben, wählen Sie Ihr Transportunternehmen in der Liste aus und geben Sie die Nummer ein.
 
+    Falls Sie noch keine Nachverfolgungsnummer haben, wählen Sie die Option **Ich werde die Versanddaten für diesen Exportauftrag angeben, sobald ich mein Paket verschickt habe** aus und schließen Sie den Exportvorgang ab.
 
-Auftragsstatus im Verwaltungsportal verfolgen
----------------------------------------------
+6.  Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im Verwaltungsportal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
+
+    Falls der Auftrag den Status "Erstellung", "Versand" oder "Übertragung" hat, können Sie außerdem Ihre Kontonummer beim Transportunternehmen in Schritt 2 des Assistenten eingeben. Falls der Auftrag den Status "Verpackung" hat, können Sie Ihre Kontonummer beim Transportunternehmen nicht mehr ändern.
+
+## Auftragsstatus im Verwaltungsportal verfolgen
 
 Sie können den Status Ihrer Import- oder Exportaufträge im Verwaltungsportal nachverfolgen. Navigieren Sie im Verwaltungsportal zu Ihrem Speicherkonto, und klicken Sie auf die Registerkarte **Import/Export**. Eine Liste Ihrer Aufträge wird auf der Seite angezeigt. Sie können die Liste nach Auftragsstatus, Auftragsname, Auftragstyp oder Tracking-Nummer filtern.
 
 In der Tabelle sind die Bedeutungen der Auftragsstatus beschrieben:
-
+	
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
 	<tbody>
 		<tr>
@@ -165,11 +173,11 @@ In der Tabelle sind die Bedeutungen der Auftragsstatus beschrieben:
 			<td><strong>Beschreibung</strong></td>
 		</tr>
 		<tr>
-			<td>Wird erstellt</td>
+			<td>Wird erstellt </td>
 			<td>Ihr Auftrag wurde erstellt, aber Sie haben Ihre Versandinformationen noch nicht angegeben.</td>
 		</tr>
 		<tr>
-			<td>Wird versendet</td>
+			<td>Versand </td>
 			<td>Ihr Auftrag wurde erstellt, und Sie haben Ihre Versandinformationen angegeben.</td>
 		</tr>
 		<tr>
@@ -181,27 +189,25 @@ In der Tabelle sind die Bedeutungen der Auftragsstatus beschrieben:
 			<td>Die Übertragung Ihrer Daten ist abgeschlossen, und Ihre Festplatte wird für den Rückversand vorbereitet.</td>
 		</tr>
 		<tr>
-			<td>Abgeschlossen</td>
-			<td>Ihre Festplatte wurde an Sie zurückgeschickt.</td>
+			<td>Abgeschlossen </td>
+			<td>Ihre Festplatte wurde an Sie zurückgeschickt. </td>
 		</tr>
 	</tbody>
 </table>
 
-BitLocker-Schlüssel für einen Exportauftrag anzeigen
-----------------------------------------------------
+## BitLocker-Schlüssel für einen Exportauftrag anzeigen
 
 Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für Ihr Laufwerk erstellt wurden, anzeigen und kopieren, damit Sie Ihre exportierten Daten entschlüsseln können, sobald Sie die Laufwerke vom Azure-Datacenter erhalten. Navigieren Sie im Verwaltungsportal zu Ihrem Speicherkonto, und klicken Sie auf die Registerkarte **Import/Export**. Wählen Sie Ihren Exportauftrag in der Liste aus, und klicken Sie auf die Schaltfläche **View Keys**. Die BitLocker-Schlüssel werden wie abgebildet angezeigt:
 
-![BitLocker-Schlüssel für einen Exportauftrag anzeigen](./media/storage-import-export-service/export-job-bitlocker-keys.png)
+![BitLocker-Schlüssel für einen Exportauftrag anzeigen][]
 
-Häufig gestellte Fragen
------------------------
+## Häufig gestellte Fragen
 
 ### Allgemein
 
 **Was kostet der Import-/Export-Dienst?**
 
--   Weitere Informationen hierzu finden Sie unter [Import/Export Preisdetails](http://go.microsoft.com/fwlink/?LinkId=329033).
+-   Weitere Informationen hierzu finden Sie unter [Import/Export Preisdetails][].
 
 **Wie lange dauert der Import oder Export meiner Daten?**
 
@@ -209,14 +215,17 @@ Häufig gestellte Fragen
 
 **Welche Schnittstellentypen werden unterstützt?**
 
--   Der Import-/Export-Dienst unterstützt 3,5-Zoll-SATA II-Festplatten (HDDs). Sie können die folgenden Konverter verwenden, um Daten von USB-Geräten vor dem Versand auf SATA zu übertragen:
+-   Der Import-/Exportdienst unterstützt interne SATA II/III-Laufwerke (HDDs) im 3,5-Zoll-Format. Sie können die folgenden Konverter verwenden, um Daten von USB-Geräten vor dem Versand auf SATA zu übertragen:
+
     -   Anker 68UPSATAA-02BU
     -   Anker 68UPSHHDS-BU
     -   Startech SATADOCK22UE
 
+> [WACOM.NOTE] Falls Sie einen Konverter haben, der nicht in der Liste enthalten ist, können Sie versuchen, das Microsoft Azure Import-/Exporttool mit Ihrem Konverter zur Vorbereitung des Laufwerks auszuführen, bevor Sie einen unterstützten Konverter kaufen.
+
 **Was soll ich tun, wenn ich mehr als zehn Laufwerke importieren oder exportieren möchte?**
 
--   Bei der Vorschauversion des Import-/Export-Diensts können maximal zehn Laufwerke in einem Import- oder Exportauftrag verarbeitet werden. Wenn Sie mehr als zehn Laufwerke verschicken möchten, können Sie mehrere Aufträge erstellen.
+-   Jeder Import- oder Exportauftrag kann auf maximal 10 Laufwerke für den Import-/Exportdienst verweisen. Wenn Sie mehr als zehn Laufwerke verschicken möchten, können Sie mehrere Aufträge erstellen.
 
 **Was geschieht, wenn ich aus Versehen eine HDD verschicke, die den unterstützten Anforderungen nicht entspricht?**
 
@@ -234,52 +243,7 @@ Häufig gestellte Fragen
 
 **Wie lange kann ich den Status abgeschlossener Aufträge im Verwaltungsportal anzeigen?**
 
--   Den Status abgeschlossener Aufträge können Sie bis zu 90 Tage lang anzeigen. Nach 90 Tagen werden alle abgeschlossenen Aufträge archiviert. Wenn Sie den Status abgeschlossener Aufträge nach 90 Tagen abrufen müssen, können Sie sich an den Kundensupport wenden.
-
-### Versand
-
-**Welche Kurierdienste können verwendet werden?**
-
--   Bei dem Vorschauprodukt wird nur Federal Express (FedEx) unterstützt.
--   Pakete für einen Importauftrag können entweder mit FedEx Express oder FedEx Ground verschickt werden.
--   Alle Pakete werden über FedEx Ground zurückgeschickt.
-
-    **Wichtig**
-
-    Sie müssen Ihre Tracking-Nummer an den Azure Import-/Export-Dienst übertragen, ansonsten kann Ihr Auftrag nicht verarbeitet werden.
-
-**Entstehen Kosten für den Rückversand?**
-
--   Der Rückversand ist beim Vorschauprodukt kostenlos.
-
-**Von wo aus kann ich meine Daten verschicken bzw. wohin kann ich sie schicken lassen?**
-
--   Der Import-/Export-Dienst akzeptiert nur Lieferungen von **Standorten** in den USA, und Rücksendungen an Adressen in den USA. Der Dienst unterstützt das Importieren von Daten in und das Exportieren von Daten aus Speicherkonten in den folgenden Regionen:
-
-    -   Osten USA
-    -   Westen USA
-    -   USA Nord Mitte
-    -   USA Süd Mitte
-    -   Nordeuropa
-    -   Westeuropa
-    -   Asien (Osten)
-    -   Asien (Südosten)
--   Wenn sich Ihr Speicherkonto in einem Datacenter in den USA befindet, müssen Sie möglicherweise Ihre Laufwerke an ein Datacenter in einer anderen Region senden, da momentan nicht alle Datacenter den Import-/Export-Dienst unterstützen. Möglicherweise fallen Kosten für Ausgangsverkehr für Sie an, wenn Ihr Auftrag nicht in der Region verarbeitet wird, in der sich Ihr Speicherkonto befindet.
-
--   Wenn sich Ihr Speicherkonto in einem Datacenter in Europa oder Asien befindet, müssen Sie Ihr Laufwerk in eine der unterstützten Regionen in den USA schicken und der Versand muss aus den USA erfolgen. Der Import-/Export-Dienst kopiert dann die Daten von Ihrem oder auf Ihr Speicherkonto in Europa oder Asien.
-
-    -   Bei einem Importauftrag fallen für das Kopieren keine Gebühren für den Eingangsverkehr an.
-    -   Bei einem Exportauftrag entstehen Kosten für das Kopieren von Daten zwischen Azure-Datacentern. Wenn sich Ihr Speicherkonto beispielsweise in Westeuropa befindet und Sie Ihr Laufwerk zu einem Datacenter im Osten der USA schicken, fallen Kosten für den Ausgangsverkehr an, und zwar für das Verschieben der Daten von Westeuropa in den Osten der USA, wo sie exportiert werden.
-
-    **Wichtig**
-
-    Azure-Datacenter können keine Laufwerke annehmen, die von Standorten außerhalb der USA verschickt werden. Die Annahme solcher Lieferungen wird abgelehnt.
-
-**Kann ich bei Microsoft Laufwerke für Import-/Exportaufträge kaufen?**
-
--   Nein, Sie müssen sowohl für den Import als auch den Export Ihre eigenen Laufwerke einsenden.
-
-### Sicherheit
+-   Den Status abgeschlossener Aufträge können Sie bis zu 90 Tage lang anzeigen. Abgeschlossene Aufträge werden nach 90 Tagen gelöscht.
 
 **Ist BitLocker zwingend erforderlich?**
 
@@ -289,3 +253,62 @@ Häufig gestellte Fragen
 
 -   Nein, alle Laufwerke müssen mit BitLocker vorbereitet sein.
 
+### Versand
+
+**Welche Kurierdienste können verwendet werden?**
+
+-   Für US- und europäische Regionen wird nur [Federal Express][] (FedEx) unterstützt. Alle Pakete werden per FedEx Ground oder FedEx International Economy zurückgeschickt.
+
+-   Für asiatische Regionen wird nur [DHL][] unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
+
+    <div class="dev-callout">
+    <strong>Wichtig</strong>
+    <p>Sie m&uuml;ssen Ihre Tracking-Nummer an den Azure Import-/Export-Dienst &uuml;bertragen, ansonsten kann Ihr Auftrag nicht verarbeitet werden.</p>
+    </div>
+
+**Entstehen Kosten für den Rückversand?**
+
+-   Microsoft verwendet die Kontonummer für das Transportunternehmen, die Sie bei der Auftragserstellung angegeben haben, um die Laufwerke vom Rechenzentrum an Ihre Absenderadresse zu schicken. Geben Sie daher unbedingt eine Kontonummer für ein Transportunternehmen an, das in der Region des Rechenzentrums unterstützt wird. Sie können ein Konto bei [FedEx][Federal Express] (für USA und Europa) oder [DHL][] (Asien) erstellen, falls Sie kein solches Konto haben.
+
+-   Die Rücksendegebühren werden Ihrem Konto beim Transportunternehmen berechnet und hängen vom Transportunternehmen ab.
+
+**Von wo aus kann ich meine Daten verschicken bzw. wohin kann ich sie schicken lassen?**
+
+-   Der Import-/Exportdienst unterstützt Import und Export von Daten in Speicherkonten in den folgenden Regionen:
+
+    -   USA (Ost)
+    -   USA (West)
+    -   USA (Mitte/Norden)
+    -   USA (Mitte/Süden)
+    -   Nordeuropa
+    -   Westeuropa
+    -   Ostasien
+    -   Südostasien
+-   Sie erhalten eine Lieferadresse in der Region, in der sich Ihr Speicherkonto befindet. Wenn Sie z. B. in den USA leben und sich Ihr Speicherkonto im Rechenzentrum in Westeuropa befindet, erhalten Sie für den Versand der Laufwerke eine Lieferadresse in Europa.
+
+    <div class="dev-callout">
+<strong>Wichtig</strong>
+    <p>Beachten Sie, dass die physischen Medien beim Versand unter Umst&auml;nden L&auml;ndergrenzen &uuml;berqueren. Sie m&uuml;ssen sicherstellen, dass Ihre physischen Medien und Daten gem&auml;&szlig; geltender Gesetze importiert bzw. exportiert werden. Pr&uuml;fen Sie vor dem Versand der physischen Medien mit Ihren Rechtsberatern, ob Medien und Daten laut Gesetz an das entsprechende Rechenzentrum verschickt werden d&uuml;rfen. So stellen Sie sicher, dass Ihre Daten zeitnah bei Microsoft eintreffen.</p>
+</div>
+
+-   Beim Versand Ihrer Pakete müssen Sie die Nutzungsbedingungen unter [Microsoft Azure-Nutzungsbedingungen][] beachten.
+
+**Kann ich bei Microsoft Laufwerke für Import-/Exportaufträge kaufen?**
+
+-   Nein, Sie müssen sowohl für den Import als auch den Export Ihre eigenen Laufwerke einsenden.
+
+**Was muss mein Paket enthalten?**
+
+-   Bitte verschicken Sie nur Ihre Laufwerke. Legen Sie keine Gegenstände wie z. B. Strom- oder USB-Kabel bei.
+
+  [Azure Import/Export Service REST API Reference]: http://go.microsoft.com/fwlink/?LinkID=329099
+  [Erstellen eines Speicherkontos]: ../storage-create-storage-account/
+  [Referenz zum Microsoft Azure Import-/Exporttool]: http://go.microsoft.com/fwlink/?LinkId=329032
+  [Microsoft Azure Import-/Exporttool]: http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409
+  [Importauftrag erstellen – Schritt 3]: ./media/storage-import-export-service/import-job-03.png
+  [Exportauftrag erstellen – Schritt 3]: ./media/storage-import-export-service/export-job-03.png
+  [BitLocker-Schlüssel für einen Exportauftrag anzeigen]: ./media/storage-import-export-service/export-job-bitlocker-keys.png
+  [Import/Export Preisdetails]: http://go.microsoft.com/fwlink/?LinkId=329033
+  [Federal Express]: http://www.fedex.com/us/oadr/
+  [DHL]: http://www.dhl-welcome.com/Tutorial/
+  [Microsoft Azure-Nutzungsbedingungen]: http://azure.microsoft.com/en-us/support/legal/services-terms/

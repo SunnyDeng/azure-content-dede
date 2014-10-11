@@ -1,16 +1,17 @@
 <properties linkid="develop-media-services-how-to-guides-create-assets" urlDisplayName="Create Encrypted Asset and Upload to Storage" pageTitle="Create Encrypted Asset and Upload to Storage Azure" metaKeywords="" description="Learn how to get media content into Media Services by creating and uploading an encrypted asset." metaCanonical="" services="media-services" documentationCenter="" title="How to: Create an encrypted Asset and upload to storage" authors="migree" solutions="" manager="" editor="" />
 
-Gewusst wie: Erstellen eines verschlüsselten Medienobjekts und hochladen in den Speicher
-========================================================================================
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="migree"></tags>
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Einrichten Ihres Computers für Mediendienste](http://go.microsoft.com/fwlink/?LinkID=301751&clcid=0x409).
+# <a name="create-asset"> </a><span class="short header">Gewusst wie: Erstellen eines verschlüsselten Medienobjekts und Hochladen in den Speicher</span>
+
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Einrichten Ihres Computers für Mediendienste][].
 
 Um Medieninhalte in Mediendienste zu übertragen, müssen Sie zunächst ein Medienobjekt erstellen, dieses Objekt mit Dateien füllen und anschließend hochladen. Diesen Prozess nennt man auch die Erfassung von Inhalten.
 
 Bei der Erstellung von Medienobjekten können Sie drei verschiedene Optionen für die Verschlüsselung auswählen.
 
 -   **AssetCreationOptions.None**: keine Verschlüsselung. Wählen Sie diese Option aus, wenn Sie Ihr Medienobjekt nicht verschlüsseln möchten.
--   **AssetCreationOptions.CommonEncryptionProtected**: für Dateien mit Common Encryption (CENC). Ein Beispiel ist ein Satz von Dateien, die bereits PlayReady-verschlüsselt sind.
+-   **AssetCreationOptions.CommonEncryptionProtected**: für Dateien mit Common Encryption Protected (CENC)-Verschlüsselung. Ein Beispiel ist ein Satz von Dateien, die bereits PlayReady-verschlüsselt sind.
 -   **AssetCreationOptions.StorageEncrypted**: Speicherverschlüsselung. Verschlüsselt eine unverschlüsselte Eingabedatei vor dem Hochladen in den Azure-Speicher.
 
 **HINWEIS**: Beachten Sie, dass Mediendienste Speicherverschlüsselung auf der Festplatte bieten, und nicht für die Netzwerkkommunikation wie Digital Rights Manager (DRM.)
@@ -23,99 +24,96 @@ Der folgende Beispielcode führt die folgenden Aufgaben aus:
 -   Erstellt eine Locator-Instanz, die Zugriff auf das Medienobjekt bietet.
 -   Lädt eine einzelne Datei in einen Mediendienst hoch.
 
-<pre><code>
-static private IAsset CreateEmptyAsset(string assetName, AssetCreationOptions assetCreationOptions)
-{
-    var asset = _context.Assets.Create(assetName, assetCreationOptions);
+<!-- -->
 
-    Console.WriteLine("Asset name: " + asset.Name);
-    Console.WriteLine("Time created: " + asset.Created.Date.ToString());
+    static private IAsset CreateEmptyAsset(string assetName, AssetCreationOptions assetCreationOptions)
+    {
+        var asset = _context.Assets.Create(assetName, assetCreationOptions);
 
-    return asset;
-}
+        Console.WriteLine("Asset name: " + asset.Name);
+        Console.WriteLine("Time created: " + asset.Created.Date.ToString());
 
-static public IAsset CreateAssetAndUploadSingleFile(AssetCreationOptions assetCreationOptions, string singleFilePath)
-{
-    var assetName = "UploadSingleFile_" + DateTime.UtcNow.ToString();
-    var asset = CreateEmptyAsset(assetName, assetCreationOptions);
+        return asset;
+    }
 
-    var fileName = Path.GetFileName(singleFilePath);
+    static public IAsset CreateAssetAndUploadSingleFile(AssetCreationOptions assetCreationOptions, string singleFilePath)
+    {
+        var assetName = "UploadSingleFile_" + DateTime.UtcNow.ToString();
+        var asset = CreateEmptyAsset(assetName, assetCreationOptions);
 
-    var assetFile = asset.AssetFiles.Create(fileName);
+        var fileName = Path.GetFileName(singleFilePath);
 
-    Console.WriteLine("Created assetFile {0}", assetFile.Name);
-    Console.WriteLine("Upload {0}", assetFile.Name);
+        var assetFile = asset.AssetFiles.Create(fileName);
 
-    assetFile.Upload(singleFilePath);
-    Console.WriteLine("Done uploading of {0} using Upload()", assetFile.Name);
+        Console.WriteLine("Created assetFile {0}", assetFile.Name);
+        Console.WriteLine("Upload {0}", assetFile.Name);
 
-    return asset;
-}
-</code></pre>
+        assetFile.Upload(singleFilePath);
+        Console.WriteLine("Done uploading of {0} using Upload()", assetFile.Name);
+
+        return asset;
+    }
 
 Der folgende Code zeigt, wie Sie ein Medienobjekt erstellen und mehrere Dateien hochladen können.
 
-<pre><code>
-static public IAsset CreateAssetAndUploadMultipleFiles( AssetCreationOptions assetCreationOptions, string folderPath)
-{
-    var assetName = "UploadMultipleFiles_" + DateTime.UtcNow.ToString();
-
-    var asset = CreateEmptyAsset(assetName, assetCreationOptions);
-
-    var accessPolicy = _context.AccessPolicies.Create(assetName, TimeSpan.FromDays(30),
-                                                        AccessPermissions.Write | AccessPermissions.List);
-    var locator = _context.Locators.CreateLocator(LocatorType.Sas, asset, accessPolicy);
-
-    var blobTransferClient = new BlobTransferClient();
-    blobTransferClient.NumberOfConcurrentTransfers = 20;
-    blobTransferClient.ParallelTransferThreadCount = 20;
-
-    blobTransferClient.TransferProgressChanged += blobTransferClient_TransferProgressChanged;
-
-    var filePaths = Directory.EnumerateFiles(folderPath);
-
-    Console.WriteLine("There are {0} files in {1}", filePaths.Count(), folderPath);
-
-    if (!filePaths.Any())
+    static public IAsset CreateAssetAndUploadMultipleFiles( AssetCreationOptions assetCreationOptions, string folderPath)
     {
-        throw new FileNotFoundException(String.Format("No files in directory, check folderPath: {0}", folderPath));
+        var assetName = "UploadMultipleFiles_" + DateTime.UtcNow.ToString();
+
+        var asset = CreateEmptyAsset(assetName, assetCreationOptions);
+
+        var accessPolicy = _context.AccessPolicies.Create(assetName, TimeSpan.FromDays(30),
+                                                            AccessPermissions.Write | AccessPermissions.List);
+        var locator = _context.Locators.CreateLocator(LocatorType.Sas, asset, accessPolicy);
+
+        var blobTransferClient = new BlobTransferClient();
+        blobTransferClient.NumberOfConcurrentTransfers = 20;
+        blobTransferClient.ParallelTransferThreadCount = 20;
+
+        blobTransferClient.TransferProgressChanged += blobTransferClient_TransferProgressChanged;
+
+        var filePaths = Directory.EnumerateFiles(folderPath);
+
+        Console.WriteLine("There are {0} files in {1}", filePaths.Count(), folderPath);
+
+        if (!filePaths.Any())
+        {
+            throw new FileNotFoundException(String.Format("No files in directory, check folderPath: {0}", folderPath));
+        }
+
+        var uploadTasks = new List<Task>();
+        foreach (var filePath in filePaths)
+        {
+            var assetFile = asset.AssetFiles.Create(Path.GetFileName(filePath));
+            Console.WriteLine("Created assetFile {0}", assetFile.Name);
+                    
+            // It is recommended to validate AccestFiles before upload. 
+            Console.WriteLine("Start uploading of {0}", assetFile.Name);
+            uploadTasks.Add(assetFile.UploadAsync(filePath, blobTransferClient, locator, CancellationToken.None));
+        }
+
+        Task.WaitAll(uploadTasks.ToArray());
+        Console.WriteLine("Done uploading the files");
+
+        blobTransferClient.TransferProgressChanged -= blobTransferClient_TransferProgressChanged;
+
+        locator.Delete();
+        accessPolicy.Delete();
+
+        return asset;
     }
 
-    var uploadTasks = new List<Task>();
-    foreach (var filePath in filePaths)
+    static void  blobTransferClient_TransferProgressChanged(object sender, BlobTransferProgressChangedEventArgs e)
     {
-        var assetFile = asset.AssetFiles.Create(Path.GetFileName(filePath));
-        Console.WriteLine("Created assetFile {0}", assetFile.Name);
-                
-        // AssetFiles sollten vor dem Hochladen validiert werden. 
-        Console.WriteLine("Start uploading of {0}", assetFile.Name);
-        uploadTasks.Add(assetFile.UploadAsync(filePath, blobTransferClient, locator, CancellationToken.None));
+        if (e.ProgressPercentage > 4) // Avoid startup jitter, as the upload tasks are added.
+        {
+            Console.WriteLine("{0}% upload competed for {1}.", e.ProgressPercentage, e.LocalFile);
+        }
     }
 
-    Task.WaitAll(uploadTasks.ToArray());
-    Console.WriteLine("Done uploading the files");
+## Nächste Schritte
 
-    blobTransferClient.TransferProgressChanged -= blobTransferClient_TransferProgressChanged;
+Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit dem Artikel [Abrufren eines Medienprozessors][] fortfahren.
 
-    locator.Delete();
-    accessPolicy.Delete();
-
-    return asset;
-}
-
-static void  blobTransferClient_TransferProgressChanged(object sender, BlobTransferProgressChangedEventArgs e)
-{
-    if (e.ProgressPercentage > 4) // Jitter beim Start vermeiden, während die Uploadaufgaben hinzugefügt werden.
-    {
-        Console.WriteLine("{0}% upload competed for {1}.", e.ProgressPercentage, e.LocalFile);
-    }
-}
-
-</code></pre>
-
-Nächste Schritte
-----------------
-
-Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit dem Artikel [Abrufren eines Medienprozessors](http://go.microsoft.com/fwlink/?LinkID=301732&clcid=0x409) fortfahren.
-
-[How to Get a Media Processor]:http://go.microsoft.com/fwlink/?LinkID=301732&clcid=0x409
+  [Einrichten Ihres Computers für Mediendienste]: http://go.microsoft.com/fwlink/?LinkID=301751&clcid=0x409
+  [Abrufren eines Medienprozessors]: http://go.microsoft.com/fwlink/?LinkID=301732&clcid=0x409

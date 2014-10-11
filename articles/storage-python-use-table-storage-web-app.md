@@ -1,13 +1,14 @@
-<properties linkid="develop-python-web-app-with-blob-storage" urlDisplayName="Web App with Blob Storage" pageTitle="Python web app with table storage | Microsoft Azure" metaKeywords="Azure table storage Python, Azure Python application, Azure Python tutorial, Azure Python example" description="A tutorial that teaches you how to create a Python web application using the Azure Client Libraries. Django is used as the web framework." metaCanonical="" services="storage" documentationCenter="Python" title="Python Web Application using Table Storage" authors="" solutions="" videoId="" scriptId="" manager="" editor="mollybos" />
+<properties linkid="develop-python-web-app-with-blob-storage" urlDisplayName="Web App with Blob Storage" pageTitle="Python web app with table storage | Microsoft Azure" metaKeywords="Azure table storage Python, Azure Python application, Azure Python tutorial, Azure Python example" description="A tutorial that teaches you how to create a Python web application using the Azure Client Libraries. Django is used as the web framework." metaCanonical="" services="storage" documentationCenter="Python" title="Python Web Application using Table Storage" authors="huvalo" solutions="" videoId="" scriptId="" manager="" editor="mollybos" />
 
-Python-Webanwendung mit Tabellenspeicher
-========================================
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung erstellen können, die den Tabellenspeicher mit den Azure-Clientbibliotheken für Python verwendet. Falls dies Ihre erste Python-App ist, sollten Sie zuvor einen Blick in die [Django Hello World-Webanwendung](http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-django-web-app-windows-server) werfen.
+# Python-Webanwendung mit Tabellenspeicher
+
+In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung erstellen können, die den Tabellenspeicher mit den Azure-Clientbibliotheken für Python verwendet. Falls dies Ihre erste Python-App ist, sollten Sie zuvor einen Blick in die [Django Hello World-Webanwendung] werfen.
 
 In dieser Anleitung erstellen Sie eine webbasierte Anwendung mit Aufgabenlisten, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren. Wir werden Django als Web-Framework verwenden.
 
-Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Python oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx).
+Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Python oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure].
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -15,24 +16,21 @@ Sie erhalten Informationen zu folgenden Themen:
 
 Der folgende Screenshot zeigt eine Abbildung der fertigen Anwendung (die hinzugefügten Aufgabenelemente können abweichen):
 
-![](./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png)
+![4](./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png)
 
-[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[WACOM.INCLUDE [create-account-note](3)]
 
-Einrichten der Entwicklungsumgebung
------------------------------------
+## <span id="setup"></span> </a>Einrichten der Entwicklungsumgebung
 
-**Hinweis:** Informationen zur Installation von Python oder den Clientbibliotheken finden Sie im [Python-Installationshandbuch](http://windowsazure.com/de-de/documentation/articles/python-how-to-install).
+**Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch](5).
 
-*Hinweis für Windows*: Falls Sie den Windows WebPI-Installer verwendet haben, sollten Django und die Clientbibliotheken bereits auf Ihrem Computer installiert sein.
+*Hinweis zu Windows*: Falls Sie den Windows WebPI-Installer verwendet haben, sollten Django und die Clientbibliotheken bereits auf Ihrem Computer installiert sein.
 
-Erstellen eines Speicherkontos in Azure
----------------------------------------
+## Erstellen eines Speicherkontos in Azure
 
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[WACOM.INCLUDE [create-storage-account](6)]
 
-Erstellen eines Django-Projekts
--------------------------------
+## Erstellen eines Django-Projekts
 
 Führen Sie die folgenden Schritte aus, um die App zu erstellen:
 
@@ -55,64 +53,61 @@ Führen Sie die folgenden Schritte aus, um die App zu erstellen:
 
 -   Fügen Sie eine neue Django-Vorlagendatei **mytasks.html** zum **templates**-Ordner hinzu und fügen Sie den folgenden Code ein:
 
-```
-    <html>   
-	<head><title></title></head>
-    <body>
-    <h2>My Tasks</h2> <br>
-    <table border="1"> 
-    <tr>
-    <td>Name</td><td>Category</td><td>Date</td><td>Complete</td><td>Action</td></tr>
-    {% for entity in entities %}
-    <form action="update_task" method="GET">
-    <tr><td>{{entity.name}} <input type="hidden" name='name' value="{{entity.name}}"></td>
-    <td>{{entity.category}} <input type="hidden" name='category' value="{{entity.category}}"></td>
-    <td>{{entity.date}} <input type="hidden" name='date' value="{{entity.date}}"></td>
-    <td>{{entity.complete}} <input type="hidden" name='complete' value="{{entity.complete}}"></td>
-    <td><input type="submit" value="Complete"></td>
-    </tr>
-    </form>
-    {% endfor %}
-    </table>
-    <br>
-    <hr>
-    <table border="1">
-    <form action="add_task" method="GET">
-    <tr><td>Name:</td><td><input type="text" name="name"></input></td></tr>
-    <tr><td>Category:</td><td><input type="text" name="category"></input></td></tr>
-    <tr><td>Item Date:</td><td><input type="text" name="date"></input></td></tr>
-    <tr><td><input type="submit" value="add task"></input></td></tr>
-    </form>
-    </table>
-    </body>
-     </html>    
-```
+<!-- -->
 
-Importieren des windowsazure-Speichermoduls
--------------------------------------------
+        <html>
+        <head><title></title></head>
+        <body>
+        <h2>My Tasks</h2> <br>
+        <table border="1"> 
+        <tr>
+        <td>Name</td><td>Category</td><td>Date</td><td>Complete</td><td>Action</td></tr>
+        {% for entity in entities %}
+        <form action="update_task" method="GET">
+        <tr><td>{{entity.name}} <input type="hidden" name='name' value="{{entity.name}}"></td>
+        <td>{{entity.category}} <input type="hidden" name='category' value="{{entity.category}}"></td>
+        <td>{{entity.date}} <input type="hidden" name='date' value="{{entity.date}}"></td>
+        <td>{{entity.complete}} <input type="hidden" name='complete' value="{{entity.complete}}"></td>
+
+        <td><input type="submit" value="Complete"></td>
+        </tr>
+        </form>
+        {% endfor %}
+        </table>
+        <br>
+        <hr>
+        <table border="1">
+        <form action="add_task" method="GET">
+        <tr><td>Name:</td><td><input type="text" name="name"></input></td></tr>
+        <tr><td>Category:</td><td><input type="text" name="category"></input></td></tr>
+        <tr><td>Item Date:</td><td><input type="text" name="date"></input></td></tr>
+        <tr><td><input type="submit" value="add task"></input></td></tr>
+        </form>
+        </table>
+        </body>
+        </html>    
+
+## Importieren des windowsazure-Speichermoduls
 
 Fügen Sie den folgenden Code am Anfang von **views.py** direkt nach den Django-Importen hinzu
 
     from azure.storage import TableService
 
-Abrufen von Speicherkontoname und Speicherschlüssel
----------------------------------------------------
+## Abrufen von Speicherkontoname und Speicherschlüssel
 
 Fügen Sie den folgenden Code zu **views.py** direkt nach dem windowsazure-Import hinzu und ersetzen Sie 'youraccount' und 'yourkey' durch Ihren tatsächlichen Kontonamen und Schlüssel. Kontoname und Schlüssel können Sie im Azure-Verwaltungsportal abrufen.
 
     account_name = 'youraccount'
     account_key = 'yourkey'
 
-Erstellen des TableService
---------------------------
+## Erstellen des TableService
 
 Fügen Sie den folgenden Code nach **account\_name** hinzu:
 
     table_service = TableService(account_name=account_name, account_key=account_key)
     table_service.create_table('mytasks')
 
-Auflisten von Aufgaben
-----------------------
+## Auflisten von Aufgaben
 
 Fügen Sie die Funktion list\_tasks zu **views.py** hinzu:
 
@@ -121,8 +116,7 @@ Fügen Sie die Funktion list\_tasks zu **views.py** hinzu:
         html = render_to_string('mytasks.html', Context({'entities':entities}))
         return HttpResponse(html)
 
-Aufgabe hinzufügen
-------------------
+## Aufgabe hinzufügen
 
 Fügen Sie die Funktion add\_task zu **views.py** hinzu:
 
@@ -135,8 +129,7 @@ Fügen Sie die Funktion add\_task zu **views.py** hinzu:
         html = render_to_string('mytasks.html', Context({'entities':entities}))
         return HttpResponse(html)
 
-Aufgabenstatus aktualisieren
-----------------------------
+## Aufgabenstatus aktualisieren
 
 Fügen Sie die Funktion update\_task zu **views.py** hinzu:
 
@@ -151,8 +144,7 @@ Fügen Sie die Funktion update\_task zu **views.py** hinzu:
         html = render_to_string('mytasks.html', Context({'entities':entities}))
         return HttpResponse(html)
 
-Zuordnen von URLs
------------------
+## Zuordnen von URLs
 
 Nun müssen Sie die URLs in der Django-App zuordnen. Öffnen Sie **urls.py** und fügen Sie die folgenden Zuordnungen zu urlpatterns hinzu:
 
@@ -161,8 +153,7 @@ Nun müssen Sie die URLs in der Django-App zuordnen. Öffnen Sie **urls.py** und
     url(r'^add_task$', 'TableserviceSample.views.add_task'),
     url(r'^update_task$', 'TableserviceSample.views.update_task'),
 
-Ausführen der Anwendung
------------------------
+## Ausführen der Anwendung
 
 -   Wechseln Sie zum Verzeichnis **TableserviceSample**, falls Sie dies noch nicht getan haben, und führen Sie den folgenden Befehl aus:
 
@@ -172,16 +163,27 @@ Ausführen der Anwendung
 
 Sie können nun mit **Add Task** eine neue Aufgabe erstellen und anschließend auf **Complete** klicken, um die Aufgabe zu aktualisieren und deren Status auf "Yes" zu setzen.
 
-Ausführen der Anwendung im Serveremulator, Veröffentlichen und Anhalten/Löschen Ihrer Anwendung
------------------------------------------------------------------------------------------------
+## Ausführen der Anwendung im Serveremulator, Veröffentlichen und Anhalten/Löschen Ihrer Anwendung
 
-Sie haben ihre Anwendung im eingebauten Django-Server ausgeführt und können sie nun im Azure-Emulator (nur unter Windows) bereitstellen und anschließend auf Azure veröffentlichen. Weitere Informationen hierzu finden Sie im Artikel [Django Hello World-Webanwendung](http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-django-web-app-windows-server), der diese Schritte im Detail beschreibt.
+Sie haben ihre Anwendung im eingebauten Django-Server ausgeführt und können sie nun im Azure-Emulator (nur unter Windows) bereitstellen und anschließend auf Azure veröffentlichen. Weitere Informationen hierzu finden Sie im Artikel [Django Hello World-Webanwendung], der diese Schritte im Detail beschreibt.
 
-Nächste Schritte
-----------------
+## <span id="NextSteps"></span></a>Nächste Schritte
 
 Da Sie jetzt die Grundlagen des Azure-Tabellenspeicherdiensts erlernt haben, folgen Sie diesem Link, um zu erfahren, wie Sie komplexere Speicheraufgaben ausführen können.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx)
--   Besuchen Sie den Blog des Azure-Speicherteams: &lt;http://blogs.msdn.com/b/windowsazurestorage/&gt;
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
+-   Besuchen Sie den Blog des Azure-Speicherteams: <http://blogs.msdn.com/b/windowsazurestorage/>
 
+
+[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+
+[Django Hello World-Webanwendung]: http://windowsazure.com/en-us/documentation/articles/virtual-machines-python-django-web-app-windows-server
+
+<!-- This code are commented 
+  [1]: http://windowsazure.com/en-us/documentation/articles/virtual-machines-python-django-web-app-windows-server
+  [2]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [4]: ./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png
+  [3]: ../includes/create-account-note.md
+  [5]: http://windowsazure.com/en-us/documentation/articles/python-how-to-install
+  [6]: ../includes/create-storage-account.md
+-->
