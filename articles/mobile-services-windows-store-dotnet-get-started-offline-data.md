@@ -5,14 +5,14 @@ Erste Schritte mit Offlinedaten in Mobile Services
 ==================================================
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data" title="Windows Store C#" class="current">Windows Store C#</a>
+<a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data" title="Windows Store C#" class="current">Windows Store C#</a>
 </div>
 
 In diesem Thema erfahren Sie, wie Sie die Offlinefunktionen von Azure Mobile Services nutzen können. Offlinefunktionen von Azure Mobile Services ermöglichen Ihnen die Interaktion mit einer lokalen Datenbank, wenn Sie den mobilen Dienst offline verwenden. Mit den Offlinefunktionen können Sie Ihre lokalen Änderungen mit dem mobilen Dienst synchronisieren, wenn Sie erneut online sind.
 
-In diesem Lernprogramm aktualisieren Sie die App aus dem Lernprogramm [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-get-started/) oder [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/) so, dass diese die Offlinefunktionen von Azure Mobile Services unterstützt. Dann fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
+In diesem Lernprogramm aktualisieren Sie die App aus dem Lernprogramm [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-store-get-started/) oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/) so, dass diese die Offlinefunktionen von Azure Mobile Services unterstützt. Dann fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
 
-> [WACOM.NOTE] Anhand dieses Lernprogramms soll Ihnen ein besseres Verständnis davon vermittelt werden, wie Sie mit Mobile Services Azure verwenden können, um Daten in der Windows Store-App zu speichern und abzurufen. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-get-started/) abschließen.
+> [WACOM.NOTE] Anhand dieses Lernprogramms soll Ihnen ein besseres Verständnis davon vermittelt werden, wie Sie mit Mobile Services Azure verwenden können, um Daten in der Windows Store-App zu speichern und abzurufen. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-store-get-started/) abschließen.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
@@ -24,7 +24,7 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -   Visual Studio 2013 für Windows 8.1
--   Abschluss des Lernprogramms [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-get-started/) oder [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/).
+-   Abschluss des Lernprogramms [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-store-get-started/) oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/).
 -   Azure Mobile Services SDK, NuGet-Paket, Version 1.3.0-alpha
 -   Azure Mobile Services SQLite Store NuGet-Paket, Version 0.1.0-alpha
 -   SQLite für Windows 8.1
@@ -44,7 +44,7 @@ In diesem Abschnitt wird SQLite als lokaler Speicher für die Offlinefunktionen 
 
     > [WACOM.NOTE] Wenn Sie Internet Explorer verwenden und auf den Link für das Herunterladen von SQLite klicken, werden Sie möglicherweise aufgefordert, die VSIX-Datei als ZIP-Datei herunterzuladen. Speichern Sie die Datei mit der Endung .vsix statt.zip an einem Speicherort auf Ihrer Festplatte. Doppelklicken Sie im Windows-Explorer auf die VSIX-Datei, um die Installation auszuführen.
 
-2.  Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-get-started/) oder [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/) abgeschlossen haben. Fügen Sie einen **Windows Extension**-Verweis zu **SQLite für Windows-Laufzeit (Windows 8.1)** hinzu.
+2.  Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-store-get-started/) oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/) abgeschlossen haben. Fügen Sie einen **Windows Extension**-Verweis zu **SQLite für Windows-Laufzeit (Windows 8.1)** hinzu.
 
     ![](./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png)
 
@@ -247,7 +247,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 Nächste Schritte
 ----------------
 
--   [Behandeln von Konflikten mit Offlineunterstützung für Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/)
+-   [Behandeln von Konflikten mit Offlineunterstützung für Mobile Services](/de-de/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/)
 
 <!-- Anchors. -->
 [Update the app to support offline features]: #enable-offline-app
@@ -271,12 +271,12 @@ Nächste Schritte
 
 
 <!-- URLs. -->
-[Handling conflicts with offline support for Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/ 
+[Handling conflicts with offline support for Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/ 
 [Getting Started Offline Sample]: http://go.microsoft.com/fwlink/?LinkId=394777
 [Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
-[Getting Started]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
-[Get started with data]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
-[Get started with Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-get-started/
+[Getting Started]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
+[Get started with data]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
+[Get started with Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started/
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
 
 

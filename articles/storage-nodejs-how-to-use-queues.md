@@ -352,10 +352,10 @@ vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere 
   [Gewusst wie: Arbeiten mit Shared Access Signature]: #sas
   [howto-queue-storage]: ../includes/howto-queue-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
-  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-  [Node.js-Clouddienst]: /en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [Website mit WebMatrix]: /en-us/documentation/articles/web-sites-nodejs-use-webmatrix/
-  [Node.js-Webanwendung mit Speicher]: /en-us/documentation/articles/storage-nodejs-use-table-storage-web-site/
+  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [Node.js-Clouddienst]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
+  [Node.js-Webanwendung mit Speicher]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure Storage SDK für Node]: https://github.com/Azure/azure-storage-node

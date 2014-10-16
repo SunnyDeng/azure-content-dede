@@ -507,7 +507,7 @@ Den Quellcode für die vollständige Referenzanwendung können Sie [hier][] heru
   [Git]: http://git-scm.com/
   [Visual Studio 2013]: http://msdn.microsoft.com/en-us/vstudio/cc136611.aspx
   [Node.js-Tools für Visual Studio]: https://nodejstools.codeplex.com/
-  [Azure CLI]: http://azure.microsoft.com/en-us/documentation/articles/xplat-cli/
+  [Azure CLI]: http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/
   [Azure-Verwaltungsportal]: http://portal.azure.com
   [1]: ./media/documentdb-nodejs-application/image2.png
   [2]: ./media/documentdb-nodejs-application/image3.png

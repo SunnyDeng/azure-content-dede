@@ -227,7 +227,7 @@ Weitere Informationen zu Linux auf Azure erhalten Sie in den folgenden Artikeln:
   [Einführung in Azure]: http://go.microsoft.com/fwlink/p/?LinkId=311926
   [Verwaltungsportal]: http://manage.windowsazure.com
   [Verwalten von Erweiterungen]: http://go.microsoft.com/FWLink/p/?LinkID=390493
-  [Einrichten von Endpunkten für einen virtuellen Computer]: http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-set-up-endpoints/
+  [Einrichten von Endpunkten für einen virtuellen Computer]: http://azure.microsoft.com/de-de/documentation/articles/virtual-machines-set-up-endpoints/
   [PuTTY Download]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
   [OpenSSH]: http://www.openssh.org/
   [Rufen Sie die SSH-Details auf.]: ./media/CreateVirtualMachineLinuxTutorial/SSHdetails.png
@@ -242,5 +242,5 @@ Weitere Informationen zu Linux auf Azure erhalten Sie in den folgenden Artikeln:
   [Informationen zum Datenträger auflisten]: ./media/CreateVirtualMachineLinuxTutorial/diskinfo.png
   [Datenträgeränderungen schreiben]: ./media/CreateVirtualMachineLinuxTutorial/diskwrite.png
   [Dateisystem erstellen]: ./media/CreateVirtualMachineLinuxTutorial/diskfilesystem.png
-  [Einführung in Linux auf Azure]: http://www.windowsazure.com/en-us/documentation/articles/introduction-linux/
-  [Verwenden des Azure-Befehlszeilentools für Mac und Linux]: http://www.windowsazure.com/en-us/documentation/articles/xplat-cli/
+  [Einführung in Linux auf Azure]: http://www.windowsazure.com/de-de/documentation/articles/introduction-linux/
+  [Verwenden des Azure-Befehlszeilentools für Mac und Linux]: http://www.windowsazure.com/de-de/documentation/articles/xplat-cli/

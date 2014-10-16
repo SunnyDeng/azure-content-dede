@@ -63,7 +63,7 @@
 
 -   Verbindung mit mehreren Clustern sowohl in lokalen Installationen als auch in Remote-Anwendungen über den Azure HDInsight-Dienst.
 
--   Weitere Informationen zum HDInsight-Dienst finden Sie unter [http://azure.microsoft.com/en-us/documentation/services/hdinsight/](http://azure.microsoft.com/en-us/documentation/services/hdinsight/).
+-   Weitere Informationen zum HDInsight-Dienst finden Sie unter [http://azure.microsoft.com/de-de/documentation/services/hdinsight/](http://azure.microsoft.com/de-de/documentation/services/hdinsight/).
 
 -   Konfigurieren von WASB in einem lokalen Cluster
 

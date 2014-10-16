@@ -4,7 +4,7 @@
 
 # Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api" title="Windows Store C#">Windows Store C#</a><a href="/en-us/documentation/articles/mobile-services-windows-store-javascript-call-custom-api" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/en-us/documentation/articles/mobile-services-windows-phone-call-custom-api" title="Windows Phone">Windows Phone</a><a href="/en-us/documentation/articles/mobile-services-ios-call-custom-api" title="iOS" >iOS</a><a href="/en-us/documentation/articles/mobile-services-android-call-custom-api" title="Android">Android</a><a href="/en-us/documentation/articles/mobile-services-html-call-custom-api" title="HTML" class="current">HTML</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api" title="Windows Store C#">Windows Store C#</a><a href="/de-de/documentation/articles/mobile-services-windows-store-javascript-call-custom-api" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/de-de/documentation/articles/mobile-services-windows-phone-call-custom-api" title="Windows Phone">Windows Phone</a><a href="/de-de/documentation/articles/mobile-services-ios-call-custom-api" title="iOS" >iOS</a><a href="/de-de/documentation/articles/mobile-services-android-call-custom-api" title="Android">Android</a><a href="/de-de/documentation/articles/mobile-services-html-call-custom-api" title="HTML" class="current">HTML</a></div>
 
 In diesem Thema wird beschrieben, wie Sie eine benutzerdefinierte API aus einer HTML-Anwendung aufrufen können. Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats.
 
@@ -71,14 +71,14 @@ Sie haben eine benutzerdefinierte API erstellt und diese über Ihre HTML-App auf
 
 <!-- Anchors. --> <!-- URLs. -->
 
-  [Windows Store C\#]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api "Windows Store C#"
-  [Windows Store JavaScript]: /en-us/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "Windows Store JavaScript"
-  [Windows Phone]: /en-us/documentation/articles/mobile-services-windows-phone-call-custom-api "Windows Phone"
-  [iOS]: /en-us/documentation/articles/mobile-services-ios-call-custom-api "iOS"
-  [Android]: /en-us/documentation/articles/mobile-services-android-call-custom-api "Android"
-  [HTML]: /en-us/documentation/articles/mobile-services-html-call-custom-api "HTML"
-  [Erste Schritte mit Mobile Services]: /en-us/documentation/articles/mobile-services-html-get-started
-  [Erste Schritte mit Daten]: /en-us/documentation/articles/mobile-services-html-get-started-data
+  [Windows Store C\#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api "Windows Store C#"
+  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "Windows Store JavaScript"
+  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-call-custom-api "Windows Phone"
+  [iOS]: /de-de/documentation/articles/mobile-services-ios-call-custom-api "iOS"
+  [Android]: /de-de/documentation/articles/mobile-services-android-call-custom-api "Android"
+  [HTML]: /de-de/documentation/articles/mobile-services-html-call-custom-api "HTML"
+  [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-html-get-started
+  [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-html-get-started-data
   [Definieren der benutzerdefinierten API]: #define-custom-api
   [Aktualisieren der App zum Aufruf der benutzerdefinierten API]: #update-app
   [Testen der App]: #test-app

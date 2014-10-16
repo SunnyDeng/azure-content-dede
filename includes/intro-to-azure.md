@@ -121,7 +121,7 @@ Cloud Services eignen sich ideal für Skalierungen enormen Umfangs, wenn Sie meh
 
 #### Wählen eines Compute-Modells
 
-Die Seite "Azure Websites, Cloud Services and Virtual Machines comparison" (Vergleich von Azure Websites, Cloud Services und Virtual Machines, in englischer Sprache) (<http://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/>) enthält ausführlichere Informationen zur Auswahl eines Compute-Modells.
+Die Seite "Azure Websites, Cloud Services and Virtual Machines comparison" (Vergleich von Azure Websites, Cloud Services und Virtual Machines, in englischer Sprache) (<http://azure.microsoft.com/de-de/documentation/articles/choose-web-site-cloud-service-vm/>) enthält ausführlichere Informationen zur Auswahl eines Compute-Modells.
 
 ## <span id="data"></span></a>Datenverwaltung
 
@@ -563,7 +563,7 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
   [Medien]: #media
   [Commerce]: #commerce
   [Erste Schritte]: #start
-  [Was ist Windows Azure-Infografik]: http://azure.microsoft.com/en-us/documentation/infographics/azure/ "What Is Microsoft Azure Poster Infographic"
+  [Was ist Windows Azure-Infografik]: http://azure.microsoft.com/de-de/documentation/infographics/azure/ "What Is Microsoft Azure Poster Infographic"
   [Azure components]: ./media/intro-to-azure/AzureComponentsIntroNew800.png
   [Azure Virtual Machines]: ./media/intro-to-azure/VirtualMachinesIntroNew.png
   [Azure Websites]: ./media/intro-to-azure/AzureWebsitesIntroNew.png
@@ -592,7 +592,7 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
   [Azure CDN]: ./media/intro-to-azure/CDNIntroNew.png
   [HDInsight]: ./media/intro-to-azure/HDInsightIntroNew.png
   [Azure Media Services]: ./media/intro-to-azure/MediaServicesIntroNew.png
-  [Azure Media Services-Poster]: http://azure.microsoft.com/en-us/documentation/infographics/media-services/
+  [Azure Media Services-Poster]: http://azure.microsoft.com/de-de/documentation/infographics/media-services/
   [Azure Marketplace]: http://datamarket.azure.com/
   [Azure Store]: /en-us/store/overview/
   [Azure Commerce]: ./media/intro-to-azure/CommerceIntroNew.png

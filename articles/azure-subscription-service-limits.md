@@ -42,12 +42,12 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 <td align="left"><p>200</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="http://azure.microsoft.com/en-us/documentation/articles/storage-whatis-account/">Speicherkonten</a> pro Abonnement</p></td>
+<td align="left"><p><a href="http://azure.microsoft.com/de-de/documentation/articles/storage-whatis-account/">Speicherkonten</a> pro Abonnement</p></td>
 <td align="left"><p>20</p></td>
 <td align="left"><p>50</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-what-is/">Clouddienste</a> pro Abonnement</p></td>
+<td align="left"><p><a href="http://azure.microsoft.com/de-de/documentation/articles/cloud-services-what-is/">Clouddienste</a> pro Abonnement</p></td>
 <td align="left"><p>20</p></td>
 <td align="left"><p>200</p></td>
 </tr>
@@ -105,7 +105,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-what-is/">Web-/Workerrollen pro Bereitstellung<sup>1</sup></a></p></td>
+<td align="left"><p><a href="http://azure.microsoft.com/de-de/documentation/articles/cloud-services-what-is/">Web-/Workerrollen pro Bereitstellung<sup>1</sup></a></p></td>
 <td align="left"><p>25</p></td>
 <td align="left"><p>25</p></td>
 </tr>
@@ -146,7 +146,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="http://azure.microsoft.com/en-us/documentation/services/virtual-machines/">Virtuelle Computer</a> pro Clouddienst<sup>1</sup></p></td>
+<td align="left"><p><a href="http://azure.microsoft.com/de-de/documentation/services/virtual-machines/">Virtuelle Computer</a> pro Clouddienst<sup>1</sup></p></td>
 <td align="left"><p>50</p></td>
 <td align="left"><p>50</p></td>
 </tr>
@@ -289,15 +289,15 @@ Weitere Informationen zu Einschränkungen für SQL-Datenbanken finden Sie in den
   [Kundensupport]: http://azure.microsoft.com/en-us/support/faq/
   [Abonnement]: http://msdn.microsoft.com/en-us/library/azure/hh531793.aspx
   [Co-Administratoren]: http://msdn.microsoft.com/en-us/library/azure/gg456328.aspx
-  [Speicherkonten]: http://azure.microsoft.com/en-us/documentation/articles/storage-whatis-account/
-  [Clouddienste]: http://azure.microsoft.com/en-us/documentation/articles/cloud-services-what-is/
+  [Speicherkonten]: http://azure.microsoft.com/de-de/documentation/articles/storage-whatis-account/
+  [Clouddienste]: http://azure.microsoft.com/de-de/documentation/articles/cloud-services-what-is/
   [Virtuelle Netzwerke]: http://msdn.microsoft.com/library/azure/jj156007.aspx
   [Lokale Netzwerke]: http://msdn.microsoft.com/en-us/library/jj157100.aspx
   [Affinitätsgruppen]: http://msdn.microsoft.com/en-us/library/azure/jj156085.aspx
   [Instanz-Eingabeendpunkte]: http://msdn.microsoft.com/en-us/library/gg557552.aspx#InstanceInputEndpoint
   [Eingabeendpunkte]: http://msdn.microsoft.com/en-us/library/gg557552.aspx#InputEndpoint
   [Interne Endpunkte]: http://msdn.microsoft.com/en-us/library/gg557552.aspx#InternalEndpoint
-  [Virtuelle Computer]: http://azure.microsoft.com/en-us/documentation/services/virtual-machines/
+  [Virtuelle Computer]: http://azure.microsoft.com/de-de/documentation/services/virtual-machines/
   [virtuelles Netzwerkgateway]: http://msdn.microsoft.com/en-us/library/azure/jj156210.aspx
   [Skalierbarkeits- und Leistungsziele für Azure-Speicher]: http://msdn.microsoft.com/library/azure/dn249410.aspx
   [Dienstebenen für Azure SQL-Datenbanken (Editionen)]: http://msdn.microsoft.com/en-us/library/azure/dn741340.aspx

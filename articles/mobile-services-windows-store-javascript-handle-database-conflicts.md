@@ -264,18 +264,18 @@ Nächste Schritte
 
 In diesem Lernprogramm wurden die Grundlagen der Behandlung von Schreibkonflikten in Windows Store-Apps bei der Arbeit mit Daten in Mobile Services gezeigt. Anschließend könnten Sie eines der folgenden Lernprogramme in unserer Daten-Reihe ausführen:
 
--   [Prüfen und Ändern von Daten mit Skripten](/en-us/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/)
+-   [Prüfen und Ändern von Daten mit Skripten](/de-de/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/)
     Informationen zur Verwendung von Serverskripts in Mobile Services, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
--   [Optimieren von Abfragen mittels Paging](/en-us/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/)
+-   [Optimieren von Abfragen mittels Paging](/de-de/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/)
     Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
 Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem der folgenden Windows Store-Lernprogramme versuchen:
 
--   [Erste Schritte mit der Authentifizierung](/en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-users/)
+-   [Erste Schritte mit der Authentifizierung](/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users/)
     Informationen zur Authentifizierung von Benutzern Ihrer App.
 
--   [Erste Schritte mit Pushbenachrichtigungen](/en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-push/)
+-   [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push/)
     Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 
@@ -313,11 +313,11 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 [Optimistic Concurrency Control]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
 [Windows Azure Account]: http://www.windowsazure.com/en-us/pricing/free-trial/
-[Validate and modify data with scripts]: /en-us/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/
-[Refine queries with paging]: /en-us/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/
+[Validate and modify data with scripts]: /de-de/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/
+[Refine queries with paging]: /de-de/documentation/articles/mobile-services-windows-store-javascript-add-paging-data/
 [Get started with Mobile Services]: /en-us/develop/mobile/tutorials/get-started
-[Get started with authentication]: /en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-users/
-[Get started with push notifications]: /en-us/documentation/articles/mobile-services-windows-store-javascript-get-started-push/
+[Get started with authentication]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users/
+[Get started with push notifications]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push/
 
 [Windows Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/

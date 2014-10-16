@@ -73,4 +73,4 @@ Die SharePoint-Serverfarm verwendet den Azure Resource Manager und Skripte, um d
   
   [Konfigurieren von SharePoint 2013]: http://technet.microsoft.com/library/ee836142.aspx
   [Microsoft Azure-Vorschauportal]: https://portal.azure.com/
-  [Verwenden von Windows PowerShell mit Resource Manager]: http://azure.microsoft.com/en-us/documentation/articles/powershell-azure-resource-manager/
+  [Verwenden von Windows PowerShell mit Resource Manager]: http://azure.microsoft.com/de-de/documentation/articles/powershell-azure-resource-manager/

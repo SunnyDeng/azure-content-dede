@@ -5,11 +5,11 @@
 # Erste Schritte mit der Synchronisierung von Offlinedaten in Mobile Services
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data" title="Windows Store C#">Windows Store C#</a>
-<a href="/en-us/documentation/articles/mobile-services-windows-phone-get-started-offline-data" title="Windows Phone" class="current">Windows Phone</a>
-<a href="/en-us/documentation/articles/mobile-services-ios-get-started-offline-data" title="iOS">iOS</a>
-<a href="/en-us/documentation/articles/mobile-services-xamarin-ios-get-started-offline-data" title="Xamarin.iOS">Xamarin.iOS</a>
-<a href="/en-us/documentation/articles/mobile-services-xamarin-android-get-started-offline-data" title="Xamarin.Android">Xamarin.Android</a>
+<a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data" title="Windows Store C#">Windows Store C#</a>
+<a href="/de-de/documentation/articles/mobile-services-windows-phone-get-started-offline-data" title="Windows Phone" class="current">Windows Phone</a>
+<a href="/de-de/documentation/articles/mobile-services-ios-get-started-offline-data" title="iOS">iOS</a>
+<a href="/de-de/documentation/articles/mobile-services-xamarin-ios-get-started-offline-data" title="Xamarin.iOS">Xamarin.iOS</a>
+<a href="/de-de/documentation/articles/mobile-services-xamarin-android-get-started-offline-data" title="Xamarin.Android">Xamarin.Android</a>
 </div>
 
 In diesem Thema erfahren Sie, wie Sie die Offlinefunktionen von Azure Mobile Services nutzen können. Offlinefunktionen von Azure Mobile Services ermöglichen Ihnen die Interaktion mit einer lokalen Datenbank, wenn Sie den mobilen Dienst offline verwenden. Mit den Offlinefunktionen können Sie Ihre lokalen Änderungen mit dem mobilen Dienst synchronisieren, wenn Sie erneut online sind.
@@ -243,13 +243,13 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 <!-- Anchors. --> <!-- Images --> <!-- URLs. -->
 
-  [Windows Store C\#]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data "Windows Store C#"
-  [Windows Phone]: /en-us/documentation/articles/mobile-services-windows-phone-get-started-offline-data "Windows Phone"
-  [iOS]: /en-us/documentation/articles/mobile-services-ios-get-started-offline-data "iOS"
-  [Xamarin.iOS]: /en-us/documentation/articles/mobile-services-xamarin-ios-get-started-offline-data "Xamarin.iOS"
-  [Xamarin.Android]: /en-us/documentation/articles/mobile-services-xamarin-android-get-started-offline-data "Xamarin.Android"
-  [Erste Schritte mit Mobile Services]: /en-us/documentation/articles/mobile-services-windows-phone-get-started/
-  [Erste Schritte mit Daten]: /en-us/documentation/articles/mobile-services-windows-phone-get-started-data/
+  [Windows Store C\#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data "Windows Store C#"
+  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-offline-data "Windows Phone"
+  [iOS]: /de-de/documentation/articles/mobile-services-ios-get-started-offline-data "iOS"
+  [Xamarin.iOS]: /de-de/documentation/articles/mobile-services-xamarin-ios-get-started-offline-data "Xamarin.iOS"
+  [Xamarin.Android]: /de-de/documentation/articles/mobile-services-xamarin-android-get-started-offline-data "Xamarin.Android"
+  [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started/
+  [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-data/
   [Aktualisieren der App für die Unterstützung von Offlinefunktionen]: #enable-offline-app
   [Testen der App in einem Offlineszenario]: #test-offline-app
   [Aktualisieren der App zur Herstellung einer Verbindung mit dem mobilen Dienst]: #update-online-app
@@ -270,4 +270,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
   [7]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-online-app-run2.png
   [8]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-online-app-run3.png
   [9]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-data-browse3.png
-  [Behandeln von Konflikten mit Offlineunterstützung für Mobile Services]: /en-us/documentation/articles/mobile-services-windows-phone-handling-conflicts-offline-data/
+  [Behandeln von Konflikten mit Offlineunterstützung für Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-handling-conflicts-offline-data/

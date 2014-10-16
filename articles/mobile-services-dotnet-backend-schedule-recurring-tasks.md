@@ -4,7 +4,7 @@ Planen von periodischen Aufträgen in Mobile Services
 ====================================================
 
 <div class="dev-center-tutorial-subselector">
-	<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/" title=".NET backend" class="current">.NET backend</a> | <a href="/en-us/documentation/articles/mobile-services-schedule-recurring-tasks/"  title="JavaScript backend" >JavaScript backend</a>
+	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/" title=".NET backend" class="current">.NET backend</a> | <a href="/de-de/documentation/articles/mobile-services-schedule-recurring-tasks/"  title="JavaScript backend" >JavaScript backend</a>
 </div>
 
 In diesem Thema erfahren Sie, wie Sie die Auftragsplanerfunktion im Verwaltungsportal verwenden, um Serverskript-Code zu definieren, der auf der Grundlage eines von Ihnen festgelegten Plans ausgeführt wird. Im vorliegenden Fall führt das Skript einen periodischen Abgleich mit einem Remote-Dienst, hier Twitter, aus und speichert die Ergebnisse in einer neuen Tabelle. Im Folgenden sind einige weitere periodische Aufgaben aufgeführt, die geplant werden können:
@@ -86,7 +86,7 @@ Erstellen der neuen Aktualisierungstabelle
 
     Die Aktualisierungstabelle, die in der Datenbank beim ersten Zugriff auf das DbSet erstellt wird, wird vom Dienst verwendet, um Tweet-Daten zu speichern.
 
-    > [WACOM.NOTE] Bei der Verwendung des Standarddatenbank-Initialisierers verwirft das Entity Framework die Datenbank und erstellt diese neu, wenn es eine Datenmodelländerung in der Code First-Modelldefinition feststellt. Sie müssen "Code First Migrations" verwenden, um die Datenmodelländerung vornehmen und die vorhandenen Daten in der Datenbank verwalten zu können. Der Standard-Initialisierer kann nicht gegenüber einer SQL-Datenbank in Azure verwendet werden. Weitere Informationen finden Sie unter [Verwenden von "Code First Migrations" zum Aktualisieren des Datenmodells](/en-us/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations).
+    > [WACOM.NOTE] Bei der Verwendung des Standarddatenbank-Initialisierers verwirft das Entity Framework die Datenbank und erstellt diese neu, wenn es eine Datenmodelländerung in der Code First-Modelldefinition feststellt. Sie müssen "Code First Migrations" verwenden, um die Datenmodelländerung vornehmen und die vorhandenen Daten in der Datenbank verwalten zu können. Der Standard-Initialisierer kann nicht gegenüber einer SQL-Datenbank in Azure verwendet werden. Weitere Informationen finden Sie unter [Verwenden von "Code First Migrations" zum Aktualisieren des Datenmodells](/de-de/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations).
 
 Als Nächstes erstellen Sie den geplanten Auftrag, der auf Twitter zugreift und Tweet-Daten in der neuen Aktualisierungstabelle speichert.
 
@@ -292,7 +292,7 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 
 <!-- URLs. -->
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Register your apps for Twitter login with Mobile Services]: /en-us/documentation/articles/mobile-services-how-to-register-twitter-authentication
+[Register your apps for Twitter login with Mobile Services]: /de-de/documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App settings]: http://msdn.microsoft.com/en-us/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 [LINQ to Twitter CodePlex project]: http://linqtotwitter.codeplex.com/

@@ -6,12 +6,12 @@ Behandeln von Konflikten mit Offlinedaten in Mobile Services
 ============================================================
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/en-us/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data" title="Windows Store C#" class="current">Windows Store C#</a>
+<a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data" title="Windows Store C#" class="current">Windows Store C#</a>
 </div>
 
 <p>In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden. In diesem Lernprogramm laden Sie eine App herunter, die Offline- und Onlinedaten unterstützt, integrieren den mobilen Dienst mit der App und melden sich anschließend im Azure-Verwaltungsportal an, um die Datenbank beim Ausführen der App anzuzeigen und zu aktualisieren.</p>
 
-Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten](/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Offlinedaten](/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data) abschließen.
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Offlinedaten](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data) abschließen.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
@@ -28,7 +28,7 @@ In diesem Lernprogramm wird Visual Studio 2013 für Windows 8.1 verwendet.
 <a name="download-app"></a>Herunterladen des Beispielprojekts
 ----------------------------------
 
-Dieses Lernprogramm baut auf dem [Handling conflicts code sample](http://go.microsoft.com/fwlink/?LinkId=394787) (Codebeispiel zur Behandlung von Konflikten) auf. Dabei handelt es sich um ein Windows Store-App-Projekt in Visual Studio 2013. Die Benutzeroberfläche für diese App ähnelt der App im Lernprogramm [Erste Schritte mit Offlinedaten](/en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data). Der Unterschied besteht darin, dass für jedes TodoItem eine neue Datumsspalte vorhanden ist.
+Dieses Lernprogramm baut auf dem [Handling conflicts code sample](http://go.microsoft.com/fwlink/?LinkId=394787) (Codebeispiel zur Behandlung von Konflikten) auf. Dabei handelt es sich um ein Windows Store-App-Projekt in Visual Studio 2013. Die Benutzeroberfläche für diese App ähnelt der App im Lernprogramm [Erste Schritte mit Offlinedaten](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data). Der Unterschied besteht darin, dass für jedes TodoItem eine neue Datumsspalte vorhanden ist.
 
 1.  Laden Sie die C\#-Version des [Handling conflicts code sample](http://go.microsoft.com/fwlink/?LinkId=394787) (Codebeispiel zur Behandlung von Konflikten) herunter.
 
@@ -131,7 +131,7 @@ Testen Sie jetzt die App mit Mobile Services.
 
 In einem realen Szenario würde ein Synchronisierungskonflikt auftreten, wenn eine App Aktualisierungen per Push-Vorgang auf einen Datensatz in der Datenbank überträgt und dann eine andere App versucht, eine Änderung per Push-Vorgang auf denselben Datensatz zu übertragen, jedoch basierend auf einer veralteten Version dieses Datensatzes. Wenn eine Instanz der App versucht, denselben Datensatz zu aktualisieren, ohne den aktualisierten Datensatz per Pull-Vorgang abzurufen, tritt ein Konflikt auf, und dieser wird in der App als `MobileServicePreconditionFailedException` erfasst.
 
-Wenn Sie die App auf einem anderen Computer bereitstellen möchten, um zwei Instanzen der App auszuführen und einen Konflikt zu erzeugen, können Sie die Bereitstellungsanweisungen aus dem Lernprogramm [Behandeln von Konflikten in Datenbanken](/en-us/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app) verwenden.
+Wenn Sie die App auf einem anderen Computer bereitstellen möchten, um zwei Instanzen der App auszuführen und einen Konflikt zu erzeugen, können Sie die Bereitstellungsanweisungen aus dem Lernprogramm [Behandeln von Konflikten in Datenbanken](/de-de/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app) verwenden.
 
 Mit den folgenden Schritten können Sie die Datenbank in Visual Studio so aktualisieren, dass ein Konflikt auftritt.
 
@@ -210,8 +210,8 @@ Wenn ein Push-Vorgang abgebrochen wird, gibt `PushAsync` eine `MobileServicePush
 
 <!-- URLs -->
 [Handling conflicts code sample]: http://go.microsoft.com/fwlink/?LinkId=394787
-[Get started with Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-get-started/
-[Get started with offline data]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
+[Get started with Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started/
+[Get started with offline data]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Handling Database Conflicts]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app
+[Handling Database Conflicts]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app

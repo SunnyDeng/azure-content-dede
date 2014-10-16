@@ -554,7 +554,7 @@ In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsi
 -   [Programmgesteuerte Übermittlung von Hadoop-Jobs][]
 -   [Dokumentation zum Azure HDInsight SDK][]
 
-  [Bereitstellen eines HBase-Clusters in HDInsight]: http://azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-get-started/
+  [Bereitstellen eines HBase-Clusters in HDInsight]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-hbase-get-started/
   [Worin besteht der Unterschied zwischen Hadoop und HBase?]: http://go.microsoft.com/fwlink/?LinkId=510237
   [Apache Hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
   [Einführung in Hadoop in HDInsight]: ../hdinsight-introduction/

@@ -249,5 +249,5 @@ In einigen Szenarien empfiehlt es sich, die Anwendung in einem Azure-Clouddienst
   [Problembehandlung von Azure-Websites in Visual Studio]: /en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank für eine Azure-Website]: /en-us/develop/net/tutorials/web-site-with-sql-database/
   [Azure-Ausführungsmodelle]: /en-us/develop/net/fundamentals/compute/
-  [Vergleich von Websites, Clouddiensten und virtuellen Computern in Azure]: http://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/
+  [Vergleich von Websites, Clouddiensten und virtuellen Computern in Azure]: http://azure.microsoft.com/de-de/documentation/articles/choose-web-site-cloud-service-vm/
   [.NET-Anwendung mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs]: /en-us/develop/net/tutorials/multi-tier-web-site/1-overview/

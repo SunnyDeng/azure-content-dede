@@ -2,4 +2,4 @@ Nur für die Freigabe-, Basic- und Standardmodi für Azure-Websites kann ein ben
 
 Weitere Informationen zu Website-Modi, darunter auch Informationen zum Ändern des Website-Modus, finden Sie unter [Skalieren von Websites][].
 
-  [Skalieren von Websites]: /en-us/documentation/articles/web-sites-scale/
+  [Skalieren von Websites]: /de-de/documentation/articles/web-sites-scale/

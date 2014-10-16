@@ -346,7 +346,7 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef√
   [Referenz zur Speicherclientbibliothek f√ºr .NET]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
   [REST-API-Referenz]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179355
   [Speicher]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
-  [Erste Schritte mit dem Azure WebJobs SDK]: /en-us/documentation/articles/websites-dotnet-webjobs-sdk-get-started/
-  [Tabellenspeicher]: /en-us/documentation/articles/storage-dotnet-how-to-use-tables/
-  [Warteschlangenspeicher]: /en-us/documentation/articles/storage-dotnet-how-to-use-queues/
-  [SQL-Datenbank]: /en-us/documentation/articles/sql-database-dotnet-how-to-use/
+  [Erste Schritte mit dem Azure WebJobs SDK]: /de-de/documentation/articles/websites-dotnet-webjobs-sdk-get-started/
+  [Tabellenspeicher]: /de-de/documentation/articles/storage-dotnet-how-to-use-tables/
+  [Warteschlangenspeicher]: /de-de/documentation/articles/storage-dotnet-how-to-use-queues/
+  [SQL-Datenbank]: /de-de/documentation/articles/sql-database-dotnet-how-to-use/

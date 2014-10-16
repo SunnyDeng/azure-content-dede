@@ -4,14 +4,14 @@ Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 ============================================================
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
-	<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows Store JavaScript</a>
-	<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push" title="Windows Phone" class="current">Windows Phone</a>
+	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
+	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows Store JavaScript</a>
+	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push" title="Windows Phone" class="current">Windows Phone</a>
 </div>
 
 <div class="dev-center-tutorial-subselector">
-	<a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push" title=".NET backend" class="current">.NET backend</a> | 
-	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push/"  title="JavaScript backend">JavaScript backend</a>
+	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push" title=".NET backend" class="current">.NET backend</a> | 
+	<a href="/de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push/"  title="JavaScript backend">JavaScript backend</a>
 </div>
 
 In diesem Thema wird gezeigt, wie Sie mit Windows Azure .Net runtime Mobile Services Pushbenachrichtigungen an eine Windows Phone 8-App senden können. In diesem Lernprogramm aktivieren Sie Pushbenachrichtigungen mit Windows Azure Notification Hubs für das Schnellstartprojekt. Wenn dies abgeschlossen ist, sendet Ihr mobiler .Net-Laufzeitdienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung mit Notification Hubs. Der von Ihnen erstellte Benachrichtigungshub ist nicht mit Ihrem mobilen Dienst verknüpft, kann unabhängig vom mobilen Dienst verwaltet sowie von anderen Anwendungen und Diensten verwendet werden.
@@ -22,7 +22,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 2.  [Aktualisieren des Servers zum Senden von Pushbenachrichtigungen](#update-server)
 3.  [Einfügen von Daten zum Empfangen von Pushbenachrichtigungen](#test)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-store-get-started) oder [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data) abschließen, um Ihr Projekt mit Mobile Services zu verbinden.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-store-get-started) oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data) abschließen, um Ihr Projekt mit Mobile Services zu verbinden.
 
 <a id="update-app">
 Aktualisieren der App zum Registrieren für Benachrichtigungen
@@ -152,16 +152,16 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Store
 
 Weitere Informationen zu Mobile Services:
 
--   [Erste Schritte mit Daten](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data)
+-   [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data)
     <br/>Erfahren Sie mehr über das Speichern und Abfragen von Daten mit mobilen .Net-Laufzeitdaten.
 
--   [Erste Schritte mit der Authentifizierung](/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users)
+-   [Erste Schritte mit der Authentifizierung](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users)
     <br/>Erfahren Sie, wie Benutzer Ihrer App mit verschiedenen Kontotypen mithilfe von mobilen .Net-Laufzeitdiensten authentifiziert werden.
 
 -   [Mobile Services: Serverskriptreferenz](http://go.microsoft.com/fwlink/?LinkId=262293)
     <br/>Erfahren Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
--   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/en-us/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
+-   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](/de-de/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
     <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 <!-- Images. -->
@@ -176,10 +176,10 @@ Weitere Informationen zu Mobile Services:
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Get started with Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-get-started
-[Get started with data]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
-[Get started with authentication]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
-[Get started with push notifications]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-push
+[Get started with Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started
+[Get started with data]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
+[Get started with authentication]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
+[Get started with push notifications]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-push
 
 [Get started with Notification Hubs]: /en-us/manage/services/notification-hubs/getting-started-windows-dotnet/
 [What are Notification Hubs?]: /en-us/develop/net/how-to-guides/service-bus-notification-hubs/
@@ -187,4 +187,4 @@ Weitere Informationen zu Mobile Services:
 [Send notifications to users]: /en-us/manage/services/notification-hubs/notify-users/
 [Send cross-platform notifications to users]: /en-us/manage/services/notification-hubs/notify-users-xplat-mobile-services/
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Mobile Services .NET How-to Conceptual Reference]: /en-us/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Mobile Services .NET How-to Conceptual Reference]: /de-de/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

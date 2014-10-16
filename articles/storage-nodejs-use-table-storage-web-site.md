@@ -637,12 +637,12 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 ## Zusätzliche Ressourcen
 
 [Azure-Befehlszeilentool für Mac und Linux] 
-[Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[Veröffentlichen auf Azure-Websites mit Git]: /en-us/documentation/articles/web-sites-publish-source-control/
+[Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Veröffentlichen auf Azure-Websites mit Git]: /de-de/documentation/articles/web-sites-publish-source-control/
 [Azure Developer Center]: /en-us/develop/nodejs/
 
   [Node]: http://nodejs.org
-[Azure-Befehlszeilentool für Mac und Linux]: /en-us/documentation/articles/xplat-cli/
+[Azure-Befehlszeilentool für Mac und Linux]: /de-de/documentation/articles/xplat-cli/
 
   [Git]: http://git-scm.com
   [Webseite mit einer leeren Aufgabenliste]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png
@@ -657,14 +657,14 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
   [Twitter Bootstrap]: https://github.com/twbs/bootstrap
   [1]: http://getbootstrap.com/
   [Ein Bild des neuen Elements in der Aufgabenliste]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_list.png
-  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
   [antares-iaas-signup]: ../includes/antares-iaas-signup.md
-  [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle]: /en-us/documentation/articles/xplat-cli/
+  [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle]: /de-de/documentation/articles/xplat-cli/
   [Die Downloadseite]: ./media/storage-nodejs-use-table-storage-web-site/azure-account-download-cli.png
   [Git remote]: http://git-scm.com/docs/git-remote
   [Öffnen des Dashboards der Website]: ./media/storage-nodejs-use-table-storage-web-site/go_to_dashboard.png
   [Konfigurationslink]: ./media/storage-nodejs-use-table-storage-web-site/sql-task-configure.png
   [app settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
   [Speichern im Abschnitt "app settings"]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
-  [Node.js-Webanwendung mit MongoDB]: /en-us/documentation/articles/web-sites-nodejs-store-data-mongodb/
-  [Veröffentlichen auf Azure-Websites mit Git]: /en-us/documentation/articles/web-sites-publish-source-control/
+  [Node.js-Webanwendung mit MongoDB]: /de-de/documentation/articles/web-sites-nodejs-store-data-mongodb/
+  [Veröffentlichen auf Azure-Websites mit Git]: /de-de/documentation/articles/web-sites-publish-source-control/

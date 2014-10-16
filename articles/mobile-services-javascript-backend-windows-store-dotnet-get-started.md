@@ -75,7 +75,7 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
   [mobile-services-selector-get-started]: ../includes/mobile-services-selector-get-started.md
   [Erstellen universeller Windows-Apps, die Windows und Windows Phone als Ziel verwenden]: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn609832.aspx
   [Schnellstart: Hinzufügen von Mobile Services (JavaScript-Backend)]: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn263180.aspx
-  [Erste Schritte mit Daten für Windows Phone]: /en-us/documentation/articles/mobile-services-windows-phone-get-started-data
+  [Erste Schritte mit Daten für Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-data
   [mobile-services-windows-universal-get-started]: ../includes/mobile-services-windows-universal-get-started.md
   [Kostenlose Azure-Testversion]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F
   [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
@@ -87,7 +87,7 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 
 <!-- URLs. -->
   [mobile-services-javascript-backend-run-app]: ../includes/mobile-services-javascript-backend-run-app.md
-  [Erste Schritte mit Daten]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-data
-  [Erste Schritte mit der Authentifizierung]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-  [Erste Schritte mit Pushbenachrichtigungen]: /en-us/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
-  [Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus]: /en-us/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service#shared-vs
+  [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data
+  [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+  [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+  [Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus]: /de-de/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service#shared-vs

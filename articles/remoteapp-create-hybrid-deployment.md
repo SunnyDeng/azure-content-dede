@@ -192,7 +192,7 @@ Sie haben die RemoteApp-Hybridbereitstellung nun erfolgreich erstellt und bereit
 
   [erforderliche Updates]: http://support.microsoft.com/kb/2977219
   [Vorschau der RemoteApp]: http://azure.microsoft.com/en-us/services/remoteapp/
-  [Azure PowerShell]: http://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/
+  [Azure PowerShell]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Konfigurieren eines standortübergreifenden VPN im Verwaltungsportal]: http://msdn.microsoft.com/library/azure/dn133795.aspx
   [Fahrplan zur Verzeichnissynchronisierung]: http://msdn.microsoft.com//library/azure/hh967642.aspx

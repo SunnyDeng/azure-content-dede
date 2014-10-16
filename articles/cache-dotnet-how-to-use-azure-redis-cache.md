@@ -303,7 +303,7 @@ finden Sie unter den folgenden Links weitere Informationen zu komplexeren Cachin
   [Konfigurieren des Caches]: #enable-caching
   [Neuer Cache]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-new-cache-menu.png
   [Cache erstellen]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-cache-create.png
-  [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen]: http://azure.microsoft.com/en-us/documentation/articles/azure-preview-portal-using-resource-groups/
+  [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen]: http://azure.microsoft.com/de-de/documentation/articles/azure-preview-portal-using-resource-groups/
   [Cache erstellt]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-cache-created.png
   [Fenster Durchsuchen]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-browse-caches.png
   [Caches]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-caches.png

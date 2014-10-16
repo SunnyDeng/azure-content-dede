@@ -178,7 +178,7 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
   [kostenlosen Testkonto]: /en-us/pricing/free-trial/
   [Kaufoptionen]: /en-us/pricing/purchase-options/
   [MSDN-Abonnenten]: /en-us/pricing/member-offers/msdn-benefits-details/
-  [Azure-Import-/Export-Diensts]: http://azure.microsoft.com/en-us/documentation/articles/storage-import-export-service/
+  [Azure-Import-/Export-Diensts]: http://azure.microsoft.com/de-de/documentation/articles/storage-import-export-service/
   [Shared Access Signature]: ../storage-dotnet-shared-access-signature-part-1/
   [storage-replication-options]: ../includes/storage-replication-options.md
   [Speicherpreisdetails]: /en-us/pricing/details/storage/
@@ -193,7 +193,7 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
   [Ruby]: /en-us/develop/ruby/
   [Python]: /en-us/develop/python/
   [PowerShell]: http://msdn.microsoft.com/library/dn495240.aspx
-  [Azure Storage-Dokumentation]: /en-us/documentation/services/storage/
+  [Azure Storage-Dokumentation]: /de-de/documentation/services/storage/
   [Verwenden des Blob-Speichers mit .NET]: ../storage-dotnet-how-to-use-blobs/
   [Verwenden des Tabellenspeichers mit .NET]: ../storage-dotnet-how-to-use-tables/
   [Verwenden des Warteschlangenspeichers mit .NET]: ../storage-dotnet-how-to-use-queues/

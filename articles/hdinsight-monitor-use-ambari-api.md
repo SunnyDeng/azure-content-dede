@@ -230,4 +230,4 @@ Sie haben erfahren, wie Ambari-Überwachungs-API-Aufrufe verwendet werden. Weite
   [Verwalten von HDInsight-Clustern mit dem Verwaltungsportal]: ../hdinsight-administer-use-management-portal/
   [Verwalten von HDInsight-Clustern mit Azure PowerShell]: ../hdinsight-administer-use-powershell/
   [Verwalten von HDInsight-Clustern mit der Befehlszeilenschnittstelle]: ../hdinsight-administer-use-command-line/
-  [HDInsight-Dokumentation]: /en-us/documentation/services/hdinsight/
+  [HDInsight-Dokumentation]: /de-de/documentation/services/hdinsight/

@@ -3,15 +3,15 @@
 Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 ============================================================
 <div class="dev-center-tutorial-selector sublanding">
-	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
-	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows Store JavaScript</a>
-	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a>
-	<a href="/en-us/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a> 
-	<a href="/en-us/documentation/articles/mobile-services-javascript-backend-android-get-started-push" title="Android">Android</a>
+	<a href="/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
+	<a href="/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows Store JavaScript</a>
+	<a href="/de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a>
+	<a href="/de-de/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a> 
+	<a href="/de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push" title="Android">Android</a>
 </div>
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung an Ihre Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Google Cloud Messaging (GCM) zu dem Schnellstartprojekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
-[WACOM.NOTE]Dieses Lernprogramm zeigt die Mobile Services-Integration mit Notification Hubs, was sich momentan in der Vorschauphase befindet. Das Senden von Pushbenachrichtigungen mithilfe von Notification Hubs ist standardmäßig nicht über ein JavaScript-Backend aktiviert. Sobald der neue Benachrichtigungshub erstellt wurde, kann der Integrationsvorgang nicht rückgängig gemacht werden. Pushbenachrichtigungen für iOS stehen nur heute zur Verfügung, indem die standardmäßige Push-Unterstützung verwendet wird, die in [dieser Version des Themas](/en-us/documentation/articles/mobile-services-android-get-started-push/) beschrieben wird.
+[WACOM.NOTE]Dieses Lernprogramm zeigt die Mobile Services-Integration mit Notification Hubs, was sich momentan in der Vorschauphase befindet. Das Senden von Pushbenachrichtigungen mithilfe von Notification Hubs ist standardmäßig nicht über ein JavaScript-Backend aktiviert. Sobald der neue Benachrichtigungshub erstellt wurde, kann der Integrationsvorgang nicht rückgängig gemacht werden. Pushbenachrichtigungen für iOS stehen nur heute zur Verfügung, indem die standardmäßige Push-Unterstützung verwendet wird, die in [dieser Version des Themas](/de-de/documentation/articles/mobile-services-android-get-started-push/) beschrieben wird.
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 

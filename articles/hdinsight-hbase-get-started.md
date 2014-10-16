@@ -198,7 +198,7 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie ein HBase-Cluster bereitstell
   [Kaufoptionen]: http://azure.microsoft.com/en-us/pricing/purchase-options/
   [Spezielle Angebote]: http://azure.microsoft.com/en-us/pricing/member-offers/
   [Kostenlose Testversion]: http://azure.microsoft.com/en-us/pricing/free-trial/
-  [Erstellen eines Speicherkontos]: http://azure.microsoft.com/en-us/documentation/articles/storage-create-storage-account/
+  [Erstellen eines Speicherkontos]: http://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/
   [Bereitstellen eines HBase-Clusters im Azure-Portal]: #create-hbase-cluster
   [Erstellen einer HBase-Beispieltabelle in der HBase-Befehlszeile]: #create-sample-table
   [Abfragen einer HBase-Tabelle mit Hive]: #hive-query

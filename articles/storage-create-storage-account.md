@@ -56,6 +56,6 @@ Weitere Informationen zu Kapazität und Durchsatz von Speicherkonten finden Sie 
   [Operations on Affinity Groups]: http://msdn.microsoft.com/en-us/library/windowsazure/ee460798.aspx
   [storage-replication-options]: ../includes/storage-replication-options.md
   [StoragePage]: ./media/storage-create-storage-account/Storage_StoragePage.png
-  [azure.com]: http://azure.microsoft.com/en-us/documentation/services/storage/
+  [azure.com]: http://azure.microsoft.com/de-de/documentation/services/storage/
   [MSDN]: http://msdn.microsoft.com/en-us/library/gg433040.aspx
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/

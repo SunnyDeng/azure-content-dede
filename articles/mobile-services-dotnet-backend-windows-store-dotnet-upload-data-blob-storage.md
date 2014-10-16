@@ -4,9 +4,9 @@
 
 # Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage" title="Windows Store C#" class="current">Windows Store C#</a><a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage" title="Windows Phone">Windows Phone</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage" title="Windows Store C#" class="current">Windows Store C#</a><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage" title="Windows Phone">Windows Phone</a></div>
 
-<div class="dev-center-tutorial-subselector"><a href="/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage" title=".NET-Backend" class="current">.NET-Backend</a> | <a href="/en-us/documentation/articles/mobile-services-windows-store-dotnet-upload-data-blob-storage"  title="JavaScript-Backend">JavaScript-Backend</a></div>
+<div class="dev-center-tutorial-subselector"><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage" title=".NET-Backend" class="current">.NET-Backend</a> | <a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-upload-data-blob-storage"  title="JavaScript-Backend">JavaScript-Backend</a></div>
 
 In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden können, Ihre App für das Hochladen und Speichern von durch Benutzer erzeugten Bildern in Azure Storage zu aktivieren. Mobile Services verwendet zur Datenspeicherung eine SQL-Datenbank. BLOB (Binary Large Object)-Daten lassen sich allerdings effizienter im Azure-Blob-Speicherdienst speichern.
 
@@ -51,18 +51,18 @@ Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen
 <!-- Images. --> 
 <!-- URLs. -->
 
-  [Windows Store C\#]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage "Windows Store C#"
-  [Windows Phone]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage "Windows Phone"
-  [.NET-Backend]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage ".NET-Backend"
-  [JavaScript-Backend]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-upload-data-blob-storage "JavaScript-Backend"
+  [Windows Store C\#]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage "Windows Store C#"
+  [Windows Phone]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage "Windows Phone"
+  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage ".NET-Backend"
+  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-upload-data-blob-storage "JavaScript-Backend"
   [Installation der Speicherclientbibliothek]: #install-storage-client
   [Aktualisierung der Client-App zur Aufnahme von Bildern]: #add-select-images
   [Installieren des Speicherclients im Mobildienstprojekt]: #storage-client-server
   [Aktualisieren der TodoItem-Definition im Datenmodell]: #update-data-model
   [Aktualisierung des Tabellen-Controllers zur Erzeugung einer SAS]: #update-scripts
   [Hochladen von Bildern zum Testen der App]: #test
-  [Azure-Speicherkonto]: /en-us/documentation/articles/storage-create-storage-account/
-  [Erste Schritte mit Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-get-started
+  [Azure-Speicherkonto]: /de-de/documentation/articles/storage-create-storage-account/
+  [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started
   [mobile-services-dotnet-backend-configure-blob-storage]: ../includes/mobile-services-dotnet-backend-configure-blob-storage.md
   []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
   [mobile-services-windows-store-dotnet-upload-to-blob-storage]: ../includes/mobile-services-windows-store-dotnet-upload-to-blob-storage.md

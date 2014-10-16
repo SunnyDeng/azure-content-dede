@@ -83,9 +83,9 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 
 <!-- Anchors --> <!-- Images. --> <!-- URLs. -->
 
-  [Erste Schritte mit Pushbenachrichtigungen]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
-  [Verwenden von Notification Hubs von Java/PHP]: /en-us/documentation/articles/notification-hubs-java-backend-how-to/
+  [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
+  [Verwenden von Notification Hubs von Java/PHP]: /de-de/documentation/articles/notification-hubs-java-backend-how-to/
   [Notification Hubs-REST-Schnittstelle]: http://msdn.microsoft.com/en-us/library/windowsazure/dn223264.aspx
-  [Erste Schritte mit Notification Hubs]: /en-us/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+  [Erste Schritte mit Notification Hubs]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
   []: ./media/notification-hubs-back-end/notification-hub-create-console-app.png
   [WindowsAzure.ServiceBus NuGet-Pakets]: http://nuget.org/packages/WindowsAzure.ServiceBus/

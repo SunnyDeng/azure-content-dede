@@ -443,8 +443,8 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
   [Registrierte Benutzer in der lokalen Datenbank]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
   [Josh Twist introduces hybrid connections (Channel 9 video)]: http://channel9.msdn.com/Shows/Azure-Friday/Josh-Twist-introduces-hybrid-connections
   [Hybridverbindungen-Website]: http://azure.microsoft.com/en-us/services/biztalk-services/
-  [BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs]: http://azure.microsoft.com/en-us/documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs]: http://azure.microsoft.com/de-de/documentation/articles/biztalk-dashboard-monitor-scale-tabs/
   [Building a Real-World Hybrid Cloud with Seamless Application Portability (Channel 9 video)]: http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=
-  [Verbinden eines mobilen Azure-Diensts mit einem lokalen SQL Server über Hybridverbindungen]: http://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/
+  [Verbinden eines mobilen Azure-Diensts mit einem lokalen SQL Server über Hybridverbindungen]: http://azure.microsoft.com/de-de/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/
   [Connect to an on-premises SQL Server from Azure Mobile Services using Hybrid Connections (Channel 9 video)]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections
   [ASP.NET Identity - Übersicht]: http://www.asp.net/identity

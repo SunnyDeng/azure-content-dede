@@ -54,5 +54,5 @@ Sie können die IP-Adresse sowie den **awverify.www**-Namen und die **.azurewebs
   [IETF Domain Names - Implementation and Specification]: http://tools.ietf.org/html/rfc1035
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   []: ./media/custom-dns-web-site/dncmntask-cname-6.png
-  [Skalieren von Websites]: http://www.windowsazure.com/en-us/documentation/articles/web-sites-scale/
+  [Skalieren von Websites]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-scale/
   [1]: ./media/custom-dns-web-site/managecustomdomains.png

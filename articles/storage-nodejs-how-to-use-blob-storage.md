@@ -389,9 +389,9 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef√
   [howto-blob-storage]: ../includes/howto-blob-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /en-us/develop/nodejs/tutorials/create-a-website-(mac)/
-  [Node.js-Clouddienst]: /en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [Website mit WebMatrix]: /en-us/documentation/articles/web-sites-nodejs-use-webmatrix/
-  [Node.js-Webanwendung mit Speicher]: /en-us/documentation/articles/storage-nodejs-use-table-storage-web-site/
+  [Node.js-Clouddienst]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
+  [Node.js-Webanwendung mit Speicher]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
   [ETag]: http://en.wikipedia.org/wiki/HTTP_ETag
   [Grundlegendes zu Block-BLOBs und Seiten-BLOBs]: http://msdn.microsoft.com/en-us/library/azure/ee691964.aspx
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx

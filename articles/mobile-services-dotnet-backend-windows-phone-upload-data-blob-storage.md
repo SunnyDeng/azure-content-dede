@@ -27,7 +27,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -   NuGet Package Manager installiert für Microsoft Visual Studio.
 -   [Azure-Speicherkonto](/en-us/manage/services/storage/how-to-create-a-storage-account)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/en-us/documentation/articles/mobile-services-windows-phone-get-started) abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-windows-phone-get-started) abschließen.
 
 Installieren des Speicherclients für Windows Store-Apps
 -------------------------------------------------------
@@ -60,7 +60,7 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 
     Lernen Sie, wie Sie mithilfe des E-Mail-Dienstes SendGrid eine E-Mail-Funktion zu Ihrem mobilen Dienst hinzufügen können. In diesem Thema wird erläutert, wie serverseitige Skripts zum Senden von E-Mails mithilfe von SendGrid hinzugefügt werden
 
--   [Planen von Back-End-Aufträgen in Mobile Services](/en-us/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
+-   [Planen von Back-End-Aufträgen in Mobile Services](/de-de/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
 
     Lernen Sie, wie Sie die Auftragsplanerfunktion in Mobile Services zur Definition von Skriptcode verwenden können, der gemäß einem von Ihnen definierten Zeitplan ausgeführt wird.
 
@@ -81,8 +81,8 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 
 <!-- URLs. -->
 [Send email from Mobile Services with SendGrid]: /en-us/develop/mobile/tutorials/send-email-with-sendgrid/
-[Schedule backend jobs in Mobile Services]: /en-us/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks
-[Get started with Mobile Services]: /en-us/documentation/articles/mobile-services-windows-phone-get-started
+[Schedule backend jobs in Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks
+[Get started with Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [How To Create a Storage Account]: /en-us/manage/services/storage/how-to-create-a-storage-account

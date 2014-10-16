@@ -4,7 +4,7 @@
 
 # Erstellen eines virtuellen Windows Server-Computers
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/documentation/articles/virtual-machines-windows-tutorial/" title="Azure-Portal" class="current">Azure-Portal</a><a href="/en-us/documentation/articles/virtual-machines-windows-tutorial-azure-preview/" title="Azure-Vorschauportal">Azure-Vorschauportal</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/virtual-machines-windows-tutorial/" title="Azure-Portal" class="current">Azure-Portal</a><a href="/de-de/documentation/articles/virtual-machines-windows-tutorial-azure-preview/" title="Azure-Vorschauportal">Azure-Vorschauportal</a></div>
 
 In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der Image-Galerie im Azure-Verwaltungsportal ganz einfach einen virtuellen Azure-Computer mit Windows Server erstellen. Die Image-Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
 
@@ -102,8 +102,8 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
 
 [Verwalten der Verfügbarkeit virtueller Computer][]
 
-  [Azure-Portal]: /en-us/documentation/articles/virtual-machines-windows-tutorial/ "Azure-Portal"
-  [Azure-Vorschauportal]: /en-us/documentation/articles/virtual-machines-windows-tutorial-azure-preview/ "Azure-Vorschauportal"
+  [Azure-Portal]: /de-de/documentation/articles/virtual-machines-windows-tutorial/ "Azure-Portal"
+  [Azure-Vorschauportal]: /de-de/documentation/articles/virtual-machines-windows-tutorial-azure-preview/ "Azure-Vorschauportal"
   [Create a Windows Azure account (in englischer Sprache)]: http://www.windowsazure.com/en-us/develop/php/tutorials/create-a-windows-azure-account/
   [Erstellen eines virtuellen Computers]: #createvirtualmachine
   [Anmelden bei einem virtuellen Computer nach dessen Erstellung]: #logon
@@ -112,7 +112,7 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
   [1]: https://portal.azure.com
   [virtual-machines-create-WindowsVM]: ../includes/virtual-machines-create-WindowsVM.md
   [virtual-machines-log-on-win-server]: ../includes/virtual-machines-log-on-win-server.md
-  [Lernprogramm zum Anfügen eines Datenträgers]: http://www.windowsazure.com/en-us/documentation/articles/storage-windows-attach-disk/
+  [Lernprogramm zum Anfügen eines Datenträgers]: http://www.windowsazure.com/de-de/documentation/articles/storage-windows-attach-disk/
   [Verwaltungsportal]: http://manage.windowsazure.com
   [MyTestVM auswählen]: ./media/virtual-machines-windows-tutorial/selectvm.png
   [Dashboard auswählen]: ./media/virtual-machines-windows-tutorial/dashboard.png
@@ -125,6 +125,6 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
   [Initialisierung fortsetzen]: ./media/virtual-machines-windows-tutorial/yesinitialize.png
   [Erstellen Sie das Volume.]: ./media/virtual-machines-windows-tutorial/initializediskvolume.png
   [3]: ./media/virtual-machines-windows-tutorial/newvolumecreated.png
-  [Verbinden virtueller Computer in einem Clouddienst]: http://www.windowsazure.com/en-us/documentation/articles/cloud-services-connect-virtual-machine/
-  [Erstellen und Hochladen einer eigenen virtuellen Festplatte mit Windows Server-Betriebssystem]: http://www.windowsazure.com/en-us/documentation/articles/virtual-machines-create-upload-vhd-windows-server/
-  [Verwalten der Verfügbarkeit virtueller Computer]: http://www.windowsazure.com/en-us/documentation/articles/manage-availability-virtual-machines/
+  [Verbinden virtueller Computer in einem Clouddienst]: http://www.windowsazure.com/de-de/documentation/articles/cloud-services-connect-virtual-machine/
+  [Erstellen und Hochladen einer eigenen virtuellen Festplatte mit Windows Server-Betriebssystem]: http://www.windowsazure.com/de-de/documentation/articles/virtual-machines-create-upload-vhd-windows-server/
+  [Verwalten der Verfügbarkeit virtueller Computer]: http://www.windowsazure.com/de-de/documentation/articles/manage-availability-virtual-machines/

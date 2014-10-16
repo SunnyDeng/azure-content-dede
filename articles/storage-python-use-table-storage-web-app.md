@@ -177,13 +177,13 @@ Da Sie jetzt die Grundlagen des Azure-Tabellenspeicherdiensts erlernt haben, fol
 
 [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
 
-[Django Hello World-Webanwendung]: http://windowsazure.com/en-us/documentation/articles/virtual-machines-python-django-web-app-windows-server
+[Django Hello World-Webanwendung]: http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-django-web-app-windows-server
 
 <!-- This code are commented 
-  [1]: http://windowsazure.com/en-us/documentation/articles/virtual-machines-python-django-web-app-windows-server
+  [1]: http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-django-web-app-windows-server
   [2]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
   [4]: ./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png
   [3]: ../includes/create-account-note.md
-  [5]: http://windowsazure.com/en-us/documentation/articles/python-how-to-install
+  [5]: http://windowsazure.com/de-de/documentation/articles/python-how-to-install
   [6]: ../includes/create-storage-account.md
 -->

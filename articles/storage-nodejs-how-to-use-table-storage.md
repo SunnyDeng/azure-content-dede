@@ -437,10 +437,10 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef√
   [Gewusst wie: Arbeiten mit Shared Access Signatures]: #sas
   [howto-table-storage]: ../includes/howto-table-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
-  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-  [Node.js-Clouddienst]: /en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [Website mit WebMatrix]: /en-us/documentation/articles/web-sites-nodejs-use-webmatrix/
-  [Node.js-Webanwendung mit Speicher]: /en-us/documentation/articles/storage-nodejs-use-table-storage-web-site/
+  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [Node.js-Clouddienst]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
+  [Node.js-Webanwendung mit Speicher]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
   [Grundlegendes zum Tabellendienst-Datenmodell]: http://msdn.microsoft.com/library/azure/dd179338.aspx
   [ETag]: http://en.wikipedia.org/wiki/HTTP_ETag
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx

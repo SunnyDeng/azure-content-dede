@@ -779,5 +779,5 @@ Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
   [33]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-service1.png
   [34]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
   [Azure-Servicebus]: http://msdn.microsoft.com/en-us/library/windowsazure/ee732537.aspx
-  [Servicebus-Anleitungen]: /en-us/documentation/services/service-bus/
+  [Servicebus-Anleitungen]: /de-de/documentation/services/service-bus/
   [Einsatz von Servicebus-Warteschlangen]: /en-us/develop/net/how-to-guides/service-bus-queues/

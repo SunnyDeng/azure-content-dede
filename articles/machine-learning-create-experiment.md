@@ -195,4 +195,4 @@ Eine ausführlichere Anleitung zu Erstellung, Training, Bewertung und Veröffent
   [Modul Modell bewerten]: ./media/machine-learning-create-experiment/screen8a.png
   [Auswertung der Ergebnisse]: ./media/machine-learning-create-experiment/screen9.png
   [Abgeschlossenes Experiment]: ./media/machine-learning-create-experiment/screen10.png
-  [Anleitung: Entwickeln einer Vorhersagelösung mit Azure Machine Learning]: http://azure.microsoft.com/en-us/documentation/articles/machine-learning-walkthrough-develop-predictive-solution/
+  [Anleitung: Entwickeln einer Vorhersagelösung mit Azure Machine Learning]: http://azure.microsoft.com/de-de/documentation/articles/machine-learning-walkthrough-develop-predictive-solution/

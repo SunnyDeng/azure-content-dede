@@ -58,7 +58,7 @@ Anwendungen können auf HBase ausgeführt werden und HBase als Datenspeicher nut
 [Bigtable: A Distributed Storage System for Structured Data (Bigtable: Ein verteiltes Speichersystem für strukturierte Daten, in englischer Sprache)][]
 
   [Bereitstellen von HDInsight-Clustern im virtuellen Azure-Netzwerk]: ../hdinsight-hbase-provision-vnet/
-  [Erste Schritte mit HBase mit Hadoop in HDInsight]: http://azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-get-started/
+  [Erste Schritte mit HBase mit Hadoop in HDInsight]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-hbase-get-started/
   [Phoenix]: http://phoenix.apache.org/
   [Analysieren von Stimmungen in Twitter mit HBase in HDInsight]: ../hdinsight-hbase-analyze-twitter-sentiment/
   [Verwenden von Maven zur Entwicklung von Java-Anwendungen, die HBase mit HDInsight (Hadoop) nutzen]: ../hdinsight-hbase-build-java-maven/

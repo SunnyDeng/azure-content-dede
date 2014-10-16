@@ -138,7 +138,7 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 <!-- URLs. -->
 
   []: ./media/mobile-services-configure-blob-storage/mobile-add-storage-nuget-package-dotnet.png
-  [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells]: /en-us/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations
+  [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells]: /de-de/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations
   [So erstellen Sie ein Speicherkonto]: /en-us/manage/services/storage/how-to-create-a-storage-account
   [1]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account.png
   [2]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account-keys.png
