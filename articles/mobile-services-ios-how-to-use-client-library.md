@@ -8,40 +8,40 @@
   <a href="/en-us/develop/mobile/how-to-guides/work-with-net-client-library/" title=".NET Framework">.NET Framework</a><a href="/en-us/develop/mobile/how-to-guides/work-with-html-js-client/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/en-us/develop/mobile/how-to-guides/work-with-ios-client-library/" title="iOS" class="current">iOS</a><a href="/en-us/develop/mobile/how-to-guides/work-with-android-client-library/" title="Android">Android</a><a href="/en-us/develop/mobile/how-to-guides/work-with-xamarin-client-library/" title="Xamarin">Xamarin</a>
 </div>
 
-Dieser Artikel beschreibt gängige Szenarien für die Verwendung des iOS-Clients für Azure Mobile Services. Die Beispiele sind in objective-C geschrieben, und Sie benötigen das [Mobile Services-SDK][]. Für dieses Lernprogramm benötigen Sie außerdem das [iOS SDK][]. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst den [Schnellstart für mobile Dienste][] absolvieren. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
+Dieser Artikel beschreibt gängige Szenarien für die Verwendung des iOS-Clients für Azure Mobile Services. Die Beispiele sind in objective-C geschrieben, und Sie benötigen das [Mobile Services-SDK][Mobile Services-SDK]. Für dieses Lernprogramm benötigen Sie außerdem das [iOS SDK][iOS SDK]. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst den [Schnellstart für mobile Dienste][Schnellstart für mobile Dienste] absolvieren. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
 
 ## Inhaltsverzeichnis
 
--   [Windows Azure Mobile Services][]
--   [Konzepte][]
--   [Einrichtung und Voraussetzungen][]
--   [Gewusst wie: Erstellen des Mobile Services-Clients][]
--   [Gewusst wie: Erstellen eines Tabellenverweises][]
--   [Gewusst wie: Abfragen von Daten aus einem mobilen Dienst][]
+-   [Windows Azure Mobile Services][Windows Azure Mobile Services]
+-   [Konzepte][Konzepte]
+-   [Einrichtung und Voraussetzungen][Einrichtung und Voraussetzungen]
+-   [Gewusst wie: Erstellen des Mobile Services-Clients][Gewusst wie: Erstellen des Mobile Services-Clients]
+-   [Gewusst wie: Erstellen eines Tabellenverweises][Gewusst wie: Erstellen eines Tabellenverweises]
+-   [Gewusst wie: Abfragen von Daten aus einem mobilen Dienst][Gewusst wie: Abfragen von Daten aus einem mobilen Dienst]
 
-    -   [Zurückgegebene Daten filtern][]
-    -   [Verwenden des MSQuery-Objekts][]
-    -   [Bestimmte Spalten auswählen][]
--   [Gewusst wie: Einfügen von Daten in einen mobilen Dienst][]
--   [Gewusst wie: Ändern von Daten in einem mobilen Dienst][]
--   [Gewusst wie: Datenbindung in der Benutzeroberfläche][]
--   [Gewusst wie: Authentifizieren von Benutzern][]
--   [Gewusst wie: Fehlerbehandlung][]
+    -   [Zurückgegebene Daten filtern][Zurückgegebene Daten filtern]
+    -   [Verwenden des MSQuery-Objekts][Verwenden des MSQuery-Objekts]
+    -   [Bestimmte Spalten auswählen][Bestimmte Spalten auswählen]
+-   [Gewusst wie: Einfügen von Daten in einen mobilen Dienst][Gewusst wie: Einfügen von Daten in einen mobilen Dienst]
+-   [Gewusst wie: Ändern von Daten in einem mobilen Dienst][Gewusst wie: Ändern von Daten in einem mobilen Dienst]
+-   [Gewusst wie: Datenbindung in der Benutzeroberfläche][Gewusst wie: Datenbindung in der Benutzeroberfläche]
+-   [Gewusst wie: Authentifizieren von Benutzern][Gewusst wie: Authentifizieren von Benutzern]
+-   [Gewusst wie: Fehlerbehandlung][Gewusst wie: Fehlerbehandlung]
 
-<!--- [How to: Design unit tests] - [How to: Customize the client]     - [Customize request headers]     - [Customize data type serialization] - [Next steps][]-->
+<!--- [How to: Design unit tests] - [How to: Customize the client]     - [Customize request headers]     - [Customize data type serialization] - [Next steps][Next steps]-->
 
-[WACOM.INCLUDE [mobile-services-concepts][]]
+[WACOM.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 ## <a name="Setup"></a>Einrichtung und Voraussetzungen
 
-Dieses Lernprogramm setzt voraus, dass Sie einen mobilen Dienst und eine Tabelle erstellt haben. Weitere Informationen finden Sie unter [Erstellen einer Tabelle][]. Alternativ können Sie die `ToDoItem`-Tabelle verwenden, die Sie im Lernprogramm [Erste Schritte mit Mobile Services][Schnellstart für mobile Dienste] erstellt haben. Die Beispiele in diesem Lernprogramm verwenden eine Tabelle mit dem Namen `ToDoItem` und den folgenden Spalten:
+Dieses Lernprogramm setzt voraus, dass Sie einen mobilen Dienst und eine Tabelle erstellt haben. Weitere Informationen finden Sie unter [Erstellen einer Tabelle][Erstellen einer Tabelle]. Alternativ können Sie die `ToDoItem`-Tabelle verwenden, die Sie im Lernprogramm [Erste Schritte mit Mobile Services][Schnellstart für mobile Dienste] erstellt haben. Die Beispiele in diesem Lernprogramm verwenden eine Tabelle mit dem Namen `ToDoItem` und den folgenden Spalten:
 
 -   `id`
 -   `text`
 -   `complete`
 -   `duration`
 
-Bei der ersten Erstellung Ihrer iOS-Anwendung müssen Sie darauf achten, dass Sie `WindowsAzureMobileServices.framework` in der Einstellung [**Binärdatei mit Bibliotheken verknüpfen**][] für Ihre Anwendung hinzufügen. Klicken Sie bei diesem Schritt auf "Andere hinzufügen…", navigieren Sie zum Speicherort des Azure Mobile Services SDK und wählen Sie den Speicherort aus.
+Bei der ersten Erstellung Ihrer iOS-Anwendung müssen Sie darauf achten, dass Sie `WindowsAzureMobileServices.framework` in der Einstellung [**Binärdatei mit Bibliotheken verknüpfen**][**Binärdatei mit Bibliotheken verknüpfen**] für Ihre Anwendung hinzufügen. Klicken Sie bei diesem Schritt auf "Andere hinzufügen…", navigieren Sie zum Speicherort des Azure Mobile Services SDK und wählen Sie den Speicherort aus.
 
 Außerdem müssen Sie den folgenden Verweis in den entsprechenden Dateien oder in der .pch-Datei Ihrer Anwendung hinzufügen.
 
@@ -84,7 +84,7 @@ In diesem Beispiel schreiben wir den Text der Aufgabe lediglich in das Protokoll
 Der Rückruf enthält die folgenden Parameter:
 
 -   *items*: Ein **NSArray** der Einträge, die Ihre Abfrage zurückgegeben hat.
--   *totalCount*: Die Gesamtzahl der Elemente für alle Seiten der Abfrage, und nicht nur für die Elemente der aktuellen Seite. Dieser Wert ist -1, es sei denn, Sie haben die Gesamtzahl in Ihrer Abfrage ausdrücklich angefordert. Weitere Informationen finden Sie unter [Daten seitenweise zurückgeben][].
+-   *totalCount*: Die Gesamtzahl der Elemente für alle Seiten der Abfrage, und nicht nur für die Elemente der aktuellen Seite. Dieser Wert ist -1, es sei denn, Sie haben die Gesamtzahl in Ihrer Abfrage ausdrücklich angefordert. Weitere Informationen finden Sie unter [Daten seitenweise zurückgeben][Daten seitenweise zurückgeben].
 -   *error*: Alle aufgetretenen Fehler; andernfalls `nil`.
 
 ### <a name="filtering"></a>Gewusst wie: Zurückgegebene Daten filtern
@@ -197,11 +197,11 @@ Mit der Clientbibliothek können Sie zusätzliche Parameter für die Abfragezeic
     };
 
 Diese Parameter werden in der Form `myKey1=value1&myKey2=value2` an Abfrage-URIs angehängt.
-Weitere Informationen finden Sie unter [Gewusst wie: Zugreifen auf benutzerdefinierte Parameter][].
+Weitere Informationen finden Sie unter [Gewusst wie: Zugreifen auf benutzerdefinierte Parameter][Gewusst wie: Zugreifen auf benutzerdefinierte Parameter].
 
 ## <a name="inserting"></a><span class="short-header">Einfügen von Daten</span>Vorgehensweise: Einfügen von Daten in einen mobilen Dienst
 
-Um eine neue Tabelle in eine Zeile einzufügen, erstellen Sie ein neues [NSDictionary-Objekt][] und übergeben es an die insert-Funktion. Der folgende Code fügt einen neuen Eintrag in die Tabelle ein:
+Um eine neue Tabelle in eine Zeile einzufügen, erstellen Sie ein neues [NSDictionary-Objekt][NSDictionary-Objekt] und übergeben es an die insert-Funktion. Der folgende Code fügt einen neuen Eintrag in die Tabelle ein:
 
     NSDictionary *newItem = @{@"text": @"my new item", @"complete" : @NO};
     [table insert:newItem completion:^(NSDictionary *result, NSError *error) {
@@ -244,13 +244,13 @@ Wenn eine Anwendung einen Id-Wert übergibt, speichert der mobile Dienst diesen 
 
 Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätzen enthalten:
 
--   Steuerzeichen: [0x0000-0x001F] und [0x007F-0x009F]. Weitere Informationen finden Sie unter [ASCII-Steuerzeichen C0 und C1][].
+-   Steuerzeichen: [0x0000-0x001F] und [0x007F-0x009F]. Weitere Informationen finden Sie unter [ASCII-Steuerzeichen C0 und C1][ASCII-Steuerzeichen C0 und C1].
 -   Druckbare Zeichen: **"**(0x0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **\`** (0x0060)
 -   Die IDs "." und ".."
 
-Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables][] (CLI für Tabellen in mobilen Diensten, in englischer Sprache).
+Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables][CLI to manage Mobile Services tables] (CLI für Tabellen in mobilen Diensten, in englischer Sprache).
 
-Wenn das dynamische Schema aktiviert ist, generiert Mobile Services automatisch neue Spalten auf Grundlage der Felder des Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema][].
+Wenn das dynamische Schema aktiviert ist, generiert Mobile Services automatisch neue Spalten auf Grundlage der Felder des Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema][Dynamisches Schema].
 
 ## <a name="modifying"></a><span class="short-header">Ändern von Daten</span>Vorgehensweise: Ändern von Daten in einem mobilen Dienst
 
@@ -292,7 +292,7 @@ Mobile Services unterstützt die folgenden Identitätsanbieter für die Authenti
 -   Twitter
 -   Azure Active Directory
 
-Weitere Informationen zur Konfiguration von Identitätsanbietern finden Sie unter [Get started with authentication][] (Erste Schritte zur Authentifizierung, in englischer Sprache).
+Weitere Informationen zur Konfiguration von Identitätsanbietern finden Sie unter [Get started with authentication][Get started with authentication] (Erste Schritte zur Authentifizierung, in englischer Sprache).
 
 Mobile Services unterstützt die beiden folgenden Authentifizierungsabläufe:
 
@@ -300,9 +300,9 @@ Mobile Services unterstützt die beiden folgenden Authentifizierungsabläufe:
 
 -   Im Fall einer clientgesteuerten Anmeldung fordert die App ein Token vom Identitätsanbieter an und legt dieses Token anschließend Mobile Services zur Authentifizierung vor.
 
-Bei erfolgreicher Authentifizierung wird ein Benutzerobjekt zurückgegeben, das die zugewiesene Benutzer-ID und das Authentifizierungstoken enthält. Sie können diese Benutzer-ID in Serverskripts zur Validierung oder Änderung von Anfragen verwenden. Weitere Informationen finden Sie unter [Verwenden von Skripts zum Autorisieren von Benutzern][]. Das Token kann sicher gespeichert und für nachfolgende Anmeldungen wiederverwendet werden.
+Bei erfolgreicher Authentifizierung wird ein Benutzerobjekt zurückgegeben, das die zugewiesene Benutzer-ID und das Authentifizierungstoken enthält. Sie können diese Benutzer-ID in Serverskripts zur Validierung oder Änderung von Anfragen verwenden. Weitere Informationen finden Sie unter [Verwenden von Skripts zum Autorisieren von Benutzern][Verwenden von Skripts zum Autorisieren von Benutzern]. Das Token kann sicher gespeichert und für nachfolgende Anmeldungen wiederverwendet werden.
 
-Sie können auch Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Weitere Informationen finden Sie unter [Berechtigungen][].
+Sie können auch Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Weitere Informationen finden Sie unter [Berechtigungen][Berechtigungen].
 
 ### Servergesteuerte Anmeldung
 
@@ -335,7 +335,7 @@ Sie können mit dem folgenden Code auch einen Verweis auf MSLoginController abru
 
 In manchen Fällen erfolgt der Anmeldeprozess außerhalb des Mobile Services-Clients. Sie können diese Methode für die einmalige Anmeldung verwenden, oder wenn Ihre App den Identitätsanbieter direkt kontaktieren muss, um Benutzerinformationen abzurufen. In diesen Fällen können Sie sich bei Mobile Services anmelden, indem Sie ein Token übergeben, das Sie unabhängig von einem unterstützten Identitätsanbieter erhalten haben.
 
-Das folgende Beispiel verwendet das [Live Connect SDK][], um die einmalige Anmeldung für iOS-Apps zu implementieren.
+Das folgende Beispiel verwendet das [Live Connect SDK][Live Connect SDK], um die einmalige Anmeldung für iOS-Apps zu implementieren.
 
     [client loginWithProvider:@"microsoftaccount" 
         token:@{@"authenticationToken" : self.liveClient.session.authenticationToken}
@@ -416,7 +416,7 @@ Um zu verhindern, dass sich Benutzer bei jeder Ausführung Ihrer Anwendung authe
 <p>Token sind vertrauliche Daten und m&uuml;ssen verschl&uuml;sselt gespeichert werden, falls das Ger&auml;t verloren geht oder gestohlen wird.</p>
 </div>
 
-Mit einem zwischengespeicherten Token muss sich der Benutzer erst dann wieder anmelden, wenn das Token abläuft. Wenn sich ein Benutzer mit einem abgelaufenen Token anmeldet, wird die Antwort "401 unauthorized" zurückgegeben. Der Benutzer muss sich in diesem Fall neu anmelden und ein neues Token abrufen, das erneut zwischengespeichert werden kann. Sie können Filter verwenden, um Code zur Behandlung von abgelaufenen Token an jeder Stelle schreiben zu müssen, an denen Ihre App den mobilen Dienst aufruft. Mit Filtern können Sie Aufrufe an und Antworten von Ihrem mobilen Dienst abfangen. Der Filtercode prüft Antworten auf 401, löst den Anmeldeprozess aus, falls das Token abgelaufen ist, und setzt anschließend die Anfrage fort, die den 401-Fehler ausgelöst hatte. Details finden Sie unter [Umgang mit abgelaufenen Token][].
+Mit einem zwischengespeicherten Token muss sich der Benutzer erst dann wieder anmelden, wenn das Token abläuft. Wenn sich ein Benutzer mit einem abgelaufenen Token anmeldet, wird die Antwort "401 unauthorized" zurückgegeben. Der Benutzer muss sich in diesem Fall neu anmelden und ein neues Token abrufen, das erneut zwischengespeichert werden kann. Sie können Filter verwenden, um Code zur Behandlung von abgelaufenen Token an jeder Stelle schreiben zu müssen, an denen Ihre App den mobilen Dienst aufruft. Mit Filtern können Sie Aufrufe an und Antworten von Ihrem mobilen Dienst abfangen. Der Filtercode prüft Antworten auf 401, löst den Anmeldeprozess aus, falls das Token abgelaufen ist, und setzt anschließend die Anfrage fort, die den 401-Fehler ausgelöst hatte. Details finden Sie unter [Umgang mit abgelaufenen Token][Umgang mit abgelaufenen Token].
 
 ## <a name="errors"></a><span class="short-header">Fehlerbehandlung</span>Vorgehensweise: Fehlerbehandlung
 
@@ -433,7 +433,7 @@ Diese Datei definiert die folgenden Konstanten, mit denen Sie auf zusätzliche D
 
 Außerdem ist für jeden Fehlercode eine Konstante definiert. Sie finden eine Erklärung dieser Codes in der Datei MSError.h.
 
-Ein Beispiel für die Validierung und Behandlung von Fehlern finden Sie unter [Validate and modify data in Mobile Services by using server scripts][] (Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts, in englischer Sprache). In diesem Artikel erfolgt die serverseitige Validierung in Form von Serverskripts. Wenn ungültige Daten übermittelt werden, wird eine Fehlermeldung zurückgegeben und vom Client verarbeitet.
+Ein Beispiel für die Validierung und Behandlung von Fehlern finden Sie unter [Validate and modify data in Mobile Services by using server scripts][Validate and modify data in Mobile Services by using server scripts] (Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts, in englischer Sprache). In diesem Artikel erfolgt die serverseitige Validierung in Form von Serverskripts. Wenn ungültige Daten übermittelt werden, wird eine Fehlermeldung zurückgegeben und vom Client verarbeitet.
 
 <!-- <h2><a name="#unit-testing"></a><span class="short-header">Designing tests</span>How to: Design unit tests</h2>  _(Optional) This section shows how to write unit test when using the client library (info from Yavor)._  <h2><a name="#customizing"></a><span class="short-header">Customizing the client</span>How to: Customize the client</h2>  _(Optional) This section shows how to send customize client behaviors._  ###<a name="custom-headers"></a>How to: Customize request headers  _(Optional) This section shows how to send custom request headers._  For more information see, New topic about processing headers in the server-side.  ###<a name="custom-serialization"></a>How to: Customize serialization  _(Optional) This section shows how to use attributes to customize how data types are serialized._  For more information see, New topic about processing headers in the server-side.  ## <a name="next-steps"></a>Next steps --> 
 

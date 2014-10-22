@@ -27,34 +27,34 @@ Sie lernen Folgendes:
 
 Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 4 beruht und für den Datenbankzugriff ADO.NET Entity Framework verwendet. In der folgenden Abbildung wird die Anmeldeseite der fertiggestellten Anwendung dargestellt:
 
-![Anmeldeseite][]
+![Anmeldeseite][Anmeldeseite]
 
-[WACOM.INCLUDE [create-account-and-websites-note][]]
+[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 Dieses Lernprogramm umfasst folgende Punkte:
 
--   [Einrichten der Entwicklungsumgebung][]
--   [Einrichten der Azure-Umgebung][]
--   [Erstellen einer ASP.NET MVC 4-Anwendung][]
--   [Bereitstellen der Anwendung in Azure][]
--   [Hinzufügen einer Datenbank zur Anwendung][]
--   [Hinzufügen eines OAuth-Anbieters][]
--   [Hinzufügen von Rollen zur Mitgliedschaftsdatenbank][]
--   [Erstellen eines Datenbereitstellungsskripts][]
+-   [Einrichten der Entwicklungsumgebung][Einrichten der Entwicklungsumgebung]
+-   [Einrichten der Azure-Umgebung][Einrichten der Azure-Umgebung]
+-   [Erstellen einer ASP.NET MVC 4-Anwendung][Erstellen einer ASP.NET MVC 4-Anwendung]
+-   [Bereitstellen der Anwendung in Azure][Bereitstellen der Anwendung in Azure]
+-   [Hinzufügen einer Datenbank zur Anwendung][Hinzufügen einer Datenbank zur Anwendung]
+-   [Hinzufügen eines OAuth-Anbieters][Hinzufügen eines OAuth-Anbieters]
+-   [Hinzufügen von Rollen zur Mitgliedschaftsdatenbank][Hinzufügen von Rollen zur Mitgliedschaftsdatenbank]
+-   [Erstellen eines Datenbereitstellungsskripts][Erstellen eines Datenbereitstellungsskripts]
 -   [Bereitstellen der Anwendung in Azure][1]
--   [Aktualisieren der Mitgliedschaftsdatenbank][]
--   [Nächste Schritte][]
+-   [Aktualisieren der Mitgliedschaftsdatenbank][Aktualisieren der Mitgliedschaftsdatenbank]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <a name="bkmk_setupdevenv"></a>Einrichten der Entwicklungsumgebung
 
 Richten Sie zu Beginn Ihre Entwicklungsumgebung ein, indem Sie das Azure SDK für .NET Framework installieren.
 
 1.  Klicken Sie auf den folgenden Link, um das Azure SDK für .NET zu installieren. Wenn Sie Visual Studio 2012 noch nicht installiert haben, wird es über den Link installiert. Für dieses Lernprogramm ist Visual Studio 2012 erforderlich.
-    [Azure SDK für Visual Studio 2012][]
+    [Azure SDK für Visual Studio 2012][Azure SDK für Visual Studio 2012]
 2.  Wenn Sie aufgefordert werden, die ausführbare Installationsdatei auszuführen oder zu speichern, klicken Sie auf **Ausführen**.
 3.  Klicken Sie im Fenster "Webplattform-Installer" auf **Installieren**, und setzen Sie die Installation fort.
 
-![Webplattform-Installer - Azure SDK für .NET][]
+![Webplattform-Installer - Azure SDK für .NET][Webplattform-Installer - Azure SDK für .NET]
 
 Nach Abschluss der Installation haben Sie alles zur Hand, was Sie benötigen, um mit der Entwicklung zu beginnen.
 
@@ -68,11 +68,11 @@ Ihre Azure-Website wird in einer freigegebenen Hostingumgebung und damit auf vir
 
 Die Azure SQL-Datenbank ist ein cloudbasierter relationaler Datenbankdienst auf Grundlage von SQL Server-Technologien. Die Tools und Anwendungen, die mit SQL Server verwendet werden können, sind auch für die SQL-Datenbank geeignet.
 
-1.  Klicken Sie im [Azure-Verwaltungsportal][] auf der linken Registerkarte auf **Websites** und dann auf **Neu**.
-![Schaltfläche "Neu" im Verwaltungsportal][]
+1.  Klicken Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] auf der linken Registerkarte auf **Websites** und dann auf **Neu**.
+![Schaltfläche "Neu" im Verwaltungsportal][Schaltfläche "Neu" im Verwaltungsportal]
 
 2.  Klicken Sie auf **CUSTOM CREATE**.
-    ![Erstellung über Datenbanklink im Verwaltungsportal][]
+    ![Erstellung über Datenbanklink im Verwaltungsportal][Erstellung über Datenbanklink im Verwaltungsportal]
 Der Assistent **New Web Site - Custom Create** wird geöffnet.
 3.  Geben Sie im Schritt **Neue Website** des Assistenten eine Zeichenfolge in das Feld **URL** ein, die als eindeutige URL der Anwendung dienen soll. Die vollständige URL besteht aus der hier eingegebenen Zeichenfolge und dem Suffix, das neben dem Textfeld aufgeführt wird. In der Abbildung wird die URL "contactmgr2" dargestellt. Diese URL wird möglicherweise bereits verwendet, und Sie müssen eine andere URL wählen.
 
@@ -94,7 +94,7 @@ Der Assistent **New Web Site - Custom Create** wird geöffnet.
 
 8.  Klicken Sie auf das Häkchen unten im Feld, um anzugeben, dass Sie fertig sind.
 
-    ![Schritt "Datenbankeinstellungen" im Assistenten "New Web Site - Create with Database"][]
+    ![Schritt "Datenbankeinstellungen" im Assistenten "New Web Site - Create with Database"][Schritt "Datenbankeinstellungen" im Assistenten "New Web Site - Create with Database"]
 
     In der folgenden Abbildung wird die Verwendung einer vorhandenen SQL Server-Version und -Anmeldung gezeigt.
     ![Schritt "Datenbankeinstellungen" im Assistenten "New Web Site - Create with Database"][3]
@@ -111,17 +111,17 @@ Sie haben nun eine Azure-Website erstellt, diese enthält jedoch noch keinen Inh
 2.  Klicken Sie im Menü **Datei** auf **Neues Projekt**.
 3.  Erweitern Sie im Dialogfeld **Neues Projekt** den Eintrag **Visual C\#**, und wählen Sie die Option **Web** unter **Installierte Vorlagen** aus. Wählen Sie dann **ASP.NET MVC 4-Webanwendung aus**. Behalten Sie die Standardeinstellung **.NET Framework 4.5** bei. Nennen Sie die Anwendung **ContactManager**, und klicken Sie auf **OK**.
 
-    ![Dialogfeld "Neues Projekt"][]
+    ![Dialogfeld "Neues Projekt"][Dialogfeld "Neues Projekt"]
 
 4.  Wählen Sie im Dialogfeld **Neues ASP.NET MVC 4-Projekt** die Vorlage **Internetanwendung** aus. Behalten Sie das standardmäßige Razor-**Ansichtsmodul** bei, und klicken Sie dann auf **OK**.
 
-    ![Dialogfeld "ASP.NET MVC 4-Projekt"][]
+    ![Dialogfeld "ASP.NET MVC 4-Projekt"][Dialogfeld "ASP.NET MVC 4-Projekt"]
 
 ### Einrichten der Seitenkopf- und -fußzeile
 
 1.  Erweitern Sie im **Projektmappen-Explorer** den Ordnet Views\\Shared und öffnen Sie die Datei \*\_Layout.cshtml\*.
 
-    ![\_Layout.cshtml im Projektmappen-Explorer][]
+    ![\_Layout.cshtml im Projektmappen-Explorer][\_Layout.cshtml im Projektmappen-Explorer]
 
 2.  Ersetzen Sie die Vorkommnisse von "My ASP.NET MVC Application" durch "Contact Manager".
 3.  Ersetzen Sie "your logo here" durch "CM Demo".
@@ -129,7 +129,7 @@ Sie haben nun eine Azure-Website erstellt, diese enthält jedoch noch keinen Inh
 ### Lokales Ausführen der Anwendung
 
 1.  Drücken Sie STRG+F5, um die Anwendung auszuführen. Die Startseite der Anwendung wird im Standardbrowser angezeigt.
-    ![Homepage To-Do-Liste][]
+    ![Homepage To-Do-Liste][Homepage To-Do-Liste]
 
 Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung zu erstellen, die Sie für Azure bereitstellen. Zu einem späteren Zeitpunkt fügen Sie Datenbankfunktionalität hinzu.
 
@@ -139,29 +139,29 @@ Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung
 
 2.  Klicken Sie auf der Registerkarte **Websites** auf den Namen der zuvor erstellten Seite.
 
-    ![Die Anwendung "Contact Manager" in der Registerkarte "Websites" des Verwaltungsportals][]
+    ![Die Anwendung "Contact Manager" in der Registerkarte "Websites" des Verwaltungsportals][Die Anwendung "Contact Manager" in der Registerkarte "Websites" des Verwaltungsportals]
 
 3.  Klicken Sie auf der rechten Seite des Fensters auf **Veröffentlichungsprofil herunterladen**.
 
-    ![Schnellstartregisterkarte und Schaltfläche "Veröffentlichungsprofil herunterladen"][]
+    ![Schnellstartregisterkarte und Schaltfläche "Veröffentlichungsprofil herunterladen"][Schnellstartregisterkarte und Schaltfläche "Veröffentlichungsprofil herunterladen"]
 
     In diesem Schritt laden Sie eine Datei herunter, die alle Einstellungen enthält, die Sie zur Bereitstellung der Anwendung auf Ihrer Website benötigen. Sie importieren diese Datei in Visual Studio, um die Informationen nicht manuell eingeben zu müssen.
 
 4.  Speichern Sie die Datei *publishsettings* in einem Ordner, auf den Sie aus Visual Studio zugreifen können.
 
-    ![Speichern der .publishsettings-Datei][]
+    ![Speichern der .publishsettings-Datei][Speichern der .publishsettings-Datei]
 
-    [WACOM.INCLUDE [publishsettingsfilewarningchunk][]]
+    [WACOM.INCLUDE [publishsettingsfilewarningchunk](../includes/publishsettingsfilewarningchunk.md)]
 
 5.  Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Projekt, und wählen Sie im Kontextmenü **Veröffentlichen** aus.
 
-    !["Veröffentlichen" im Kontextmenü des Projekts][]
+    !["Veröffentlichen" im Kontextmenü des Projekts]["Veröffentlichen" im Kontextmenü des Projekts]
 
     Der Assistent **Web veröffentlichen** wird geöffnet.
 
 6.  Klicken Sie im Assistenten **Web veröffentlichen** auf der Registerkarte **Profil** auf **Importieren**.
 
-    ![Veröffentlichungseinstellungen importieren][]
+    ![Veröffentlichungseinstellungen importieren][Veröffentlichungseinstellungen importieren]
 
     Das Dialogfeld **Veröffentlichungsprofil importieren** wird geöffnet.
 
@@ -169,34 +169,34 @@ Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung
 
     a. Klicken Sie im Dialogfeld **Veröffentlichungsprofil importieren** auf **Add Azure subscription**.
 
-    ![Azure-Abo hinzufügen][]
+    ![Azure-Abo hinzufügen][Azure-Abo hinzufügen]
 
     b. Klicken Sie im Dialogfeld **Import Azure Subscriptions** auf **Download subscription file**.
 
-    ![Abonnement herunterladen][]
+    ![Abonnement herunterladen][Abonnement herunterladen]
 
     c. Speichern Sie im Browserfenster die Datei *.publishsettings*.
 
-    ![Veröffentlichungsdatei herunterladen][]
+    ![Veröffentlichungsdatei herunterladen][Veröffentlichungsdatei herunterladen]
 
     > [WACOM.NOTE]
     > Die Datei ".publishsettings" enthält Ihre Anmeldeinformationen (unverschlüsselt), die verwendet werden, um Ihre Azure-Abonnements und -Dienste zu verwalten. Die bewährte Sicherheitsmethode für diese Datei besteht im vorübergehenden Speichern außerhalb Ihrer Quellcodeverzeichnisse (beispielsweise im Ordner "Libraries\\Documents"). Löschen Sie sie nach Abschluss des Importvorgangs. Böswillige Benutzer, die Zugriff auf die .publishsettings-Datei erlangen, können Ihre Azure-Services bearbeiten, erstellen und löschen.
 
     d. Klicken Sie im Dialogfeld **Import Azure Subscriptions** auf **Durchsuchen** und navigieren Sie zur *.publishsettings*-Datei.
 
-    ![Abonnement herunterladen][]
+    ![Abonnement herunterladen][Abonnement herunterladen]
 
     e. Klicken Sie auf **Importieren**.
 
-    ![Importieren][]
+    ![Importieren][Importieren]
 
 8.  Wählen Sie im Dialogfeld **Veröffentlichungsprofil importieren** die Option **Aus einer Azure-Website importieren** und dann Ihre Website in der Dropdownliste aus, und klicken Sie auf **OK**.
 
-    ![Import Publish Profile][]
+    ![Import Publish Profile][Import Publish Profile]
 
     Die erstellte Anwendung wird nun in der Cloud ausgeführt. Bei der nächsten Bereitstellung der Anwendung werden nur die geänderten (oder neuen) Dateien bereitgestellt.
 
-    ![To-Do-List-Homepage in Azure][]
+    ![To-Do-List-Homepage in Azure][To-Do-List-Homepage in Azure]
 
 ## <a name="bkmk_addadatabase"></a>Hinzufügen einer Datenbank zur Anwendung
 
@@ -207,10 +207,10 @@ Als Nächstes aktualisieren Sie die MVC-Anwendung, um Funktionen zum Anzeigen un
 Sie beginnen mit der Erstellung eines einfachen Datenmodells in Code.
 
 1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Ordner **Models**, und klicken Sie dann auf **Hinzufügen** \> **Klasse**.
-![Klasse hinzufügen im Kontextmenü des Ordners "Models"][]
+![Klasse hinzufügen im Kontextmenü des Ordners "Models"][Klasse hinzufügen im Kontextmenü des Ordners "Models"]
 
 2.  Geben Sie der neuen Klassendatei im Dialogfeld **Neues Element hinzufügen** den Namen *Contact.cs*, und klicken Sie dann auf **Hinzufügen**.
-![Dialogfeld "Neues Element hinzufügen"][]
+![Dialogfeld "Neues Element hinzufügen"][Dialogfeld "Neues Element hinzufügen"]
 
 3.  Ersetzen Sie den Inhalt der Datei "Contacts.cs" durch den folgenden Code.
 
@@ -242,38 +242,38 @@ Mit dem ASP.NET MVC-Gerüstfeature kann automatisch Code generiert werden, der E
 1.  Erstellen Sie das Projekt **(STRG+UMSCHALT+B)**. (Sie müssen das Projekt vor der Verwendung des Gerüstmechanismus erstellen.)
 2.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner "Controllers", und klicken Sie dann auf **Hinzufügen** \> **Controller**.
 
-    ![Controller hinzufügen im Kontextmenü des Ordners "Controllers"][]
+    ![Controller hinzufügen im Kontextmenü des Ordners "Controllers"][Controller hinzufügen im Kontextmenü des Ordners "Controllers"]
 
 3.  Geben Sie im Dialogfeld **Controller hinzufügen** die Zeichenfolge "HomeController" als Controllernamen ein.
 4.  Stellen Sie für die Vorlage **Scaffolding options** **MVC Controller with read/write actions and views, using Entity Framework** ein.
 5.  Wählen Sie **Contact** als Modellklasse und **\<Neuer Datenkontext...\>** als Datenkontextklasse.
 
-    ![Dialogfeld "Controller" hinzufügen][]
+    ![Dialogfeld "Controller" hinzufügen][Dialogfeld "Controller" hinzufügen]
 
 6.  Übernehmen Sie im Dialogfeld **Neuer Datenkontext** den Standardwert *ContactManager.Models.ContactManagerContext*.
-    ![Dialogfeld "Controller hinzufügen"][]
+    ![Dialogfeld "Controller hinzufügen"][Dialogfeld "Controller hinzufügen"]
 
 7.  Klicken Sie auf **OK**, und klicken Sie dann im Dialogfeld **Controller hinzufügen** auf **Hinzufügen**.
 8.  Stellen Sie im Überschreibungsdialog **Controller hinzufügen** sicher, dass alle Optionen aktiviert sind, und klicken Sie auf **OK**.
 
-    ![Meldungsfeld "Controller hinzufügen"][]
+    ![Meldungsfeld "Controller hinzufügen"][Meldungsfeld "Controller hinzufügen"]
 
 In Visual Studio werden Controllermethoden und Ansichten für CRUD-Datenbankvorgänge für **Contact**-Objekte erstellt.
 
 ## Aktivieren von Migrationen, Erstellen der Datenbank, Hinzufügen von Beispieldaten und eines Dateninitialisierers
 
-Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen][] zu aktivieren, um die Datenbank basierend auf dem erstellten Datenmodell zu erstellen.
+Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen][Code First-Migrationen] zu aktivieren, um die Datenbank basierend auf dem erstellten Datenmodell zu erstellen.
 
 1.  Wählen Sie im Menü **Extras** den Eintrag **Library Package Manager** und danach **Paket-Manager-Konsole** aus.
 
-    !["Paket-Manager-Konsole" im Menü "Extras"][]
+    !["Paket-Manager-Konsole" im Menü "Extras"]["Paket-Manager-Konsole" im Menü "Extras"]
 
 2.  Geben Sie im Fenster **Paket-Manager-Konsole** den folgenden Befehl ein:
 
         enable-migrations -ContextTypeName ContactManagerContext
 
-    ![enable-migrations][]
-     Sie müssen den Kontexttypnamen angeben (**ContactManagerContext**), da das Projekt zwei aus [DbContext][] abgeleitete Klassen enthält: den gerade hinzugefügten **ContactManagerContext** und den **UsersContext**, der für die Mitgliedschaftsdatenbank verwendet wird. Die Klasse **ContactManagerContext** wurde vom Gerüstassistenten von Visual Studio hinzugefügt.
+    ![enable-migrations][enable-migrations]
+     Sie müssen den Kontexttypnamen angeben (**ContactManagerContext**), da das Projekt zwei aus [DbContext][DbContext] abgeleitete Klassen enthält: den gerade hinzugefügten **ContactManagerContext** und den **UsersContext**, der für die Mitgliedschaftsdatenbank verwendet wird. Die Klasse **ContactManagerContext** wurde vom Gerüstassistenten von Visual Studio hinzugefügt.
 
     Mit dem Befehl **enable-migrations** wird der Ordner *Migrations* erstellt und die Datei *Configuration.cs* darin abgelegt. Sie können diese Datei bearbeiten, um "Migrations" zu konfigurieren.
 
@@ -343,13 +343,13 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen][] zu ak
                 );
         }
 
-    Mit diesem Code wird die Datenbank mit den Kontaktinformationen initialisiert. Weitere Informationen zum Ausführen eines Seedings für die Datenbank finden Sie unter [Seeding and Debugging Entity Framework (EF) DBs][] (in englischer Sprache).
+    Mit diesem Code wird die Datenbank mit den Kontaktinformationen initialisiert. Weitere Informationen zum Ausführen eines Seedings für die Datenbank finden Sie unter [Seeding and Debugging Entity Framework (EF) DBs][Seeding and Debugging Entity Framework (EF) DBs] (in englischer Sprache).
 
 7.  Geben Sie im Fenster **Paket-Manager-Konsole** den folgenden Befehl ein:
 
         update-database
 
-    ![Befehle in der Paket-Manager-Konsole][]
+    ![Befehle in der Paket-Manager-Konsole][Befehle in der Paket-Manager-Konsole]
 
     Mit **update-database** wird die erste Migration ausgeführt, wodurch die Datenbank erstellt wird. Standardmäßig wird die Datenbank als SQL Server Express LocalDB-Datenbank erstellt. (Es sei denn, Sie haben SQL Server Express installiert. In diesem Fall wird die Datenbank mit der SQL Server Express-Instanz erstellt.)
 
@@ -357,11 +357,11 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen][] zu ak
 
 In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Löschen und zu Details bereitgestellt.
 
-![MVC-Datenansicht][]
+![MVC-Datenansicht][MVC-Datenansicht]
 
 ## <a name="addOauth"></a><span class="short-header">OAuth</span>Hinzufügen eines OAuth-Anbieters
 
-[OAuth][] ist ein offenes Protokoll, das die sichere Autorisierung in einer einfachen und Standardmethode von Web-, Mobil- und Desktopanwendungen ermöglicht. OAuth wird von der ASP.NET MVC-Internetvorlage verwendet, um Facebook, Twitter, Google, Yahoo und Microsoft als Authentifizierungsanbieter verfügbar zu machen. Auch wenn in diesem Lernprogramm nur Facebook, Google und Yahoo als Authentifizierungsanbieter eingesetzt werden, können Sie den Code problemlos für die Verwendung eines der anderen Anbieter anpassen. Die Schritte zur Implementierung anderer Anbieter unterscheiden sich kaum von den Schritten in diesem Lernprogramm.
+[OAuth][OAuth] ist ein offenes Protokoll, das die sichere Autorisierung in einer einfachen und Standardmethode von Web-, Mobil- und Desktopanwendungen ermöglicht. OAuth wird von der ASP.NET MVC-Internetvorlage verwendet, um Facebook, Twitter, Google, Yahoo und Microsoft als Authentifizierungsanbieter verfügbar zu machen. Auch wenn in diesem Lernprogramm nur Facebook, Google und Yahoo als Authentifizierungsanbieter eingesetzt werden, können Sie den Code problemlos für die Verwendung eines der anderen Anbieter anpassen. Die Schritte zur Implementierung anderer Anbieter unterscheiden sich kaum von den Schritten in diesem Lernprogramm.
 
 Abgesehen von der Authentifizierung werden in diesem Lernprogramm auch Rollen verwendet, um die Autorisierung zu implementieren. Nur Benutzer, die Sie der Rolle "canEdit" hinzufügen, können Kontakte erstellen, bearbeiten oder löschen.
 
@@ -371,24 +371,24 @@ Wenn Sie Benutzer mit Anmeldeinformationen von externen Anbietern authentifizier
 
 Dieses Lernprogramm enthält nicht alle Schritte, die zur Registrierung bei diesen Anbietern erforderlich sind. Diese Schritte sind meist einfach. Befolgen Sie die Anweisungen auf diesen Websites, um eine erfolgreiche Registrierung Ihrer Website durchzuführen. Sie können Ihre Website auf den Entwicklerwebsites der folgenden Anbieter registrieren:
 
--   [Facebook][]
--   [Microsoft][]
--   [Twitter][]
+-   [Facebook][Facebook]
+-   [Microsoft][Microsoft]
+-   [Twitter][Twitter]
 
 Navigieren Sie zu [][]<https://developers.facebook.com/apps></a>, und melden Sie sich gegebenenfalls an. Klicken Sie auf die Schaltfläche **Register as a Developer**, und schließen Sie den Registrierungsprozess ab. Wenn Sie die Registrierung abgeschlossen haben, klicken Sie auf **Create New App**. Geben Sie einen Namen für die Anwendung ein. Sie müssen keinen Namespace für die Anwendung eingeben.
 
-![Neue FB-Anwendung erstellen][]
+![Neue FB-Anwendung erstellen][Neue FB-Anwendung erstellen]
 
 Geben Sie localhost als **App Domain** und <http://localhost/> als **Site URL** ein. Klicken Sie bei **Sandbox Mode** auf **Enabled**, und klicken Sie dann auf **Save Changes**.
 
 Sie benötigen die **Anwendungs-ID** und den **geheimen Anwendungsschlüssel**, um OAuth in dieser Anwendung zu implementieren.
- ![Neue FB-Anwendung][]
+ ![Neue FB-Anwendung][Neue FB-Anwendung]
 
 ## Testbenutzer erstellen
 
 Klicken Sie im linken Bereich unter **Settings** auf **Developer Roles**. Klicken Sie auf den Link **Create** in der Spalte **Test Users** (nicht in der Spalte **Testers**).
 
-![FB-Tester][]
+![FB-Tester][FB-Tester]
 
 Klicken Sie auf den Link **Modify**, um eine E-Mail für Testbenutzer zu erhalten (mit der Sie sich bei der Anwendung anmelden). Klicken Sie auf den Link **See More**, und klicken Sie dann auf **Edit**, um das Kennwort für den Testbenutzer festzulegen.
 
@@ -426,28 +426,28 @@ In diesem Abschnitt fügen Sie der Mitgliedschaftsdatenbank die Rolle *canEdit* 
 
 3.  Klicken Sie mit der rechten Maustaste auf **Benutzerprofil**, und klicken Sie dann auf **Show Table Data**.
 
-    ![Show Table Data][]
+    ![Show Table Data][Show Table Data]
 
 4.  Zeichnen Sie die **Benutzer-ID** für den Benutzer auf, der die Rolle "canEdit" innehaben soll. In der folgenden Abbildung besitzt der Benutzer *ricka* mit der **Benutzer-ID** 2 die Rolle "canEdit" für die Website.
 
-    ![Benutzer-IDs][]
+    ![Benutzer-IDs][Benutzer-IDs]
 
 5.  Klicken Sie mit der rechten Maustaste auf **webpages\_Roles**, und klicken Sie dann auf **Show Table Data**.
 6.  Geben Sie in die Zelle **RoleName** **canEdit** ein. Die **RoleId** ist 1, wenn Sie jetzt zum ersten Mal eine Rolle hinzugefügt haben. Zeichnen Sie die RoleID auf. Stellen Sie sicher, dass der Name kein Leerzeichen am Ende enthält. "canEdit " in der Rollentabelle entspricht nicht "canEdit" im Controllercode.
 
-    ![roleID][]
+    ![roleID][roleID]
 
 7.  Klicken Sie mit der rechten Maustaste auf **webpages UsersInRoles**, und klicken Sie dann auf **Show Table Data**. Geben Sie die **Benutzer-ID** für den Benutzer ein, der *canEdit*-Zugriff und die **RoleId** erhalten soll.
 
-    ![Benutzerrolle ID Tabelle][]
+    ![Benutzerrolle ID Tabelle][Benutzerrolle ID Tabelle]
 
 Die Tabelle **webpages\_OAuthMembership** enthält den OAuth-Anbieter, dessen Benutzer-ID und die Benutzer-ID für jeden registrierten OAuth-Benutzer. <!-- Don't replace "-" with "_" or it won't validate -->Die Tabelle **webpages-Membership** enthält die ASP.NET-Mitgliedschaftstabelle. Sie können Benutzer über den Link "Registrieren" zu dieser Tabelle hinzufügen. Es wird empfohlen, einen Benutzer mit der *canEdit*-Rolle hinzuzufügen, der nicht mit Facebook oder einem anderen Drittanbieter für Autorisierung verbunden ist. So verfügen Sie immer über *canEdit*-Zugriff, selbst wenn der Authentifizierungsdrittanbieter nicht verfügbar ist Später in diesem Lernprogramm deaktivieren Sie die ASP.NET-Mitgliedschaftsregistrierung.
 
 ## Schützen der Anwendung durch das Attribut "Authorize"
 
-In diesem Abschnitt wenden Sie das [Authorize][]-Attribut an, um den Zugriff auf die Aktionsmethoden einzuschränken. Anonyme Benutzer können nur die Startseite ansehen. Registrierte Benutzer können Kontaktdetails sowie die Seiten "About" und "Contacts" ansehen. Nur Benutzer mit der Rolle *canEdit* können auf Aktionsmethoden zugreifen, mit denen Daten geändert werden.
+In diesem Abschnitt wenden Sie das [Authorize][Authorize]-Attribut an, um den Zugriff auf die Aktionsmethoden einzuschränken. Anonyme Benutzer können nur die Startseite ansehen. Registrierte Benutzer können Kontaktdetails sowie die Seiten "About" und "Contacts" ansehen. Nur Benutzer mit der Rolle *canEdit* können auf Aktionsmethoden zugreifen, mit denen Daten geändert werden.
 
-1.  Fügen Sie der Anwendung die Filter [Authorize][] und [RequireHttps][] hinzu. Alternativ können Sie das [Authorize][]-Attribut und das [RequireHttps][]-Attribut jedem Controller hinzufügen, es wird jedoch als Best Practice im Bereich Sicherheit betrachtet, die Attribute der gesamten Anwendung hinzuzufügen. Auf diese Weise wird jeder neu hinzugefügte Controller und jede neu hinzugefügte Aktionsmethode automatisch geschützt und Sie müssen nicht daran denken, die Attribute anzuwenden. Weitere Informationen finden Sie unter [Securing your ASP.NET MVC 4 App and the new AllowAnonymous Attribute][] (in englischer Sprache). Öffnen Sie die Datei *App\_Start\\FilterConfig.cs*, und ersetzen Sie die *RegisterGlobalFilters*-Methode durch den folgenden Code.
+1.  Fügen Sie der Anwendung die Filter [Authorize][Authorize] und [RequireHttps][RequireHttps] hinzu. Alternativ können Sie das [Authorize][Authorize]-Attribut und das [RequireHttps][RequireHttps]-Attribut jedem Controller hinzufügen, es wird jedoch als Best Practice im Bereich Sicherheit betrachtet, die Attribute der gesamten Anwendung hinzuzufügen. Auf diese Weise wird jeder neu hinzugefügte Controller und jede neu hinzugefügte Aktionsmethode automatisch geschützt und Sie müssen nicht daran denken, die Attribute anzuwenden. Weitere Informationen finden Sie unter [Securing your ASP.NET MVC 4 App and the new AllowAnonymous Attribute][Securing your ASP.NET MVC 4 App and the new AllowAnonymous Attribute] (in englischer Sprache). Öffnen Sie die Datei *App\_Start\\FilterConfig.cs*, und ersetzen Sie die *RegisterGlobalFilters*-Methode durch den folgenden Code.
 
         public static void
         RegisterGlobalFilters(GlobalFilterCollection filters)
@@ -488,11 +488,11 @@ In diesem Abschnitt wenden Sie das [Authorize][]-Attribut an, um den Zugriff auf
             // Methods moved and omitted for clarity.
         }
 
-5.  Entfernen Sie die ASP.NET-Mitgliedschaftsregistrierung. Die aktuelle ASP.NET-Mitgliedschaftsregistrierung im Projekt umfasst keine Unterstützung von Kennwortzurücksetzungen und es wird nicht überprüft, ob eine Person sich registriert (z. B. durch [CAPTCHA][]). Nachdem sich ein Benutzer über einen der Drittanbieter authentifiziert hat, kann er sich registrieren. Entfernen Sie im Kontocontroller das *[AllowAnonymous]*-Attribut aus den Get- und Post-*Register*-Methoden. Auf diese Weise können sich weder Robots noch anonyme Benutzer registrieren.
+5.  Entfernen Sie die ASP.NET-Mitgliedschaftsregistrierung. Die aktuelle ASP.NET-Mitgliedschaftsregistrierung im Projekt umfasst keine Unterstützung von Kennwortzurücksetzungen und es wird nicht überprüft, ob eine Person sich registriert (z. B. durch [CAPTCHA][CAPTCHA]). Nachdem sich ein Benutzer über einen der Drittanbieter authentifiziert hat, kann er sich registrieren. Entfernen Sie im Kontocontroller das *[AllowAnonymous]*-Attribut aus den Get- und Post-*Register*-Methoden. Auf diese Weise können sich weder Robots noch anonyme Benutzer registrieren.
 6.  Entfernen Sie in der Datei *Views\\Shared\_LoginPartial.cshtml* den Aktionslink für die Registrierung.
 7.  Aktivieren Sie SSL. Klicken Sie im Projektmappen-Explorer auf das Projekt **ContactManager**, und drücken Sie dann F4, um das Eigenschaftsdialogfeld aufzurufen. Ändern Sie **SSL-aktiviert** in true. Kopieren Sie die **SSL-URL**.
 
-    ![SSL aktivieren][]
+    ![SSL aktivieren][SSL aktivieren]
 
 8.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **Contact Manager** und dann auf **Eigenschaften**.
 9.  Klicken Sie auf der linken Registerkarte auf **Web**.
@@ -503,7 +503,7 @@ In diesem Abschnitt wenden Sie das [Authorize][]-Attribut an, um den Zugriff auf
 
 12. Drücken Sie STRG+F5, um die Anwendung auszuführen. Im Browser wird eine Zertifikatwarnung angezeigt. Bei dieser Anwendung können Sie sicher auf den Link **Laden dieser Website fortsetzen** klicken. Prüfen Sie, ob nur Benutzer mit der *canEdit*-Rolle Daten ändern können. Prüfen Sie, ob anonyme Benutzer nur die Startseite sehen können.
 
-    ![Zertifikatwarnung][]
+    ![Zertifikatwarnung][Zertifikatwarnung]
 
     ![Zertifikatwarnung][6]
 
@@ -512,14 +512,14 @@ Azure-Websites enthalten ein gültiges Sicherheitszertifikat, daher wird diese W
 ## <a name="ppd"></a><span class="short-header">Vorbereiten der Datenbank</span>Erstellen eines Datenbereitstellungsskripts
 
 </p>
-Die Mitgliedschaftsdatenbank wird nicht von Entity Framework Code First verwaltet, daher können Sie keine Migrationen verwenden, um sie bereitzustellen. Verwenden Sie den [dbDacFx][]-Anbieter, um das Datenbankschema bereitzustellen. Konfigurieren Sie außerdem das Veröffentlichungsprofil so, dass ein Skript ausgeführt wird, das erste Mitgliedschaftsdaten in Mitgliedschaftstabellen einträgt
+Die Mitgliedschaftsdatenbank wird nicht von Entity Framework Code First verwaltet, daher können Sie keine Migrationen verwenden, um sie bereitzustellen. Verwenden Sie den [dbDacFx][dbDacFx]-Anbieter, um das Datenbankschema bereitzustellen. Konfigurieren Sie außerdem das Veröffentlichungsprofil so, dass ein Skript ausgeführt wird, das erste Mitgliedschaftsdaten in Mitgliedschaftstabellen einträgt
 
 In diesem Lernprogramm wird SQL Server Management Studio (SSMS) zur Erstellung von Datenbereitstellungskripts verwendet.
 
-Installieren Sie SSMS aus dem [Microsoft SQL Server 2012 Express Download Center][]:
+Installieren Sie SSMS aus dem [Microsoft SQL Server 2012 Express Download Center][Microsoft SQL Server 2012 Express Download Center]:
 
--   [ENU\\x64\\SQLManagementStudio\_x64\_ENU.exe][] für 64-Bit-Systeme.
--   [ENU\\x86\\SQLManagementStudio\_x86\_ENU.exe][] für 32-Bit-Systeme.
+-   [ENU\x64\SQLManagementStudio\_x64\_ENU.exe][ENU\x64\SQLManagementStudio\_x64\_ENU.exe] für 64-Bit-Systeme.
+-   [ENU\x86\SQLManagementStudio\_x86\_ENU.exe][ENU\x86\SQLManagementStudio\_x86\_ENU.exe] für 32-Bit-Systeme.
 
 Wenn Sie die falsche Version für Ihr Betriebssystem ausgewählt haben, schlägt die Installation fehl, und Sie können es mit der anderen Version versuchen.
 
@@ -527,25 +527,25 @@ Wenn Sie die falsche Version für Ihr Betriebssystem ausgewählt haben, schlägt
 
 Klicken Sie auf der ersten Seite des SQL Server-Installationscenters auf **Neue eigenständige SQL Server-Installation oder Hinzufügen von Features zu einer vorhandenen Installation**, und befolgen Sie die Anweisungen. Übernehmen Sie hierbei die Standardeinstellungen. Die folgende Abbildung enthält den Schritt zur Installation von SSMS.
 
-![SQL-Installation][]
+![SQL-Installation][SQL-Installation]
 
 ### Erstellen des Skripts für die Entwicklungsdatenbank
 
 1.  Führen Sie SSMS aus.
 2.  Geben Sie im Dialogfeld **Verbindung mit Server herstellen** *(localdb)\\v11.0* als Servernamen ein, behalten Sie die Einstellung **Windows-Authentifizierung** für **Authentifizierung** bei, und klicken Sie dann auf **Verbinden**. Wenn Sie SQL Express installiert haben, geben Sie **.\\SQLEXPRESS** ein.
 
-    ![Verbindung zum Server-Dialog][]
+    ![Verbindung zum Server-Dialog][Verbindung zum Server-Dialog]
 
 3.  Erweitern Sie im Fenster **Object-Explorer** **Datenbanken**. Klicken Sie mit der rechten Maustaste auf **aspnet-ContactManager**. Klicken Sie auf **Tasks**, und klicken Sie dann auf **Skripts generieren**.
 
-    ![Skripts generieren][]
+    ![Skripts generieren][Skripts generieren]
 
 4.  Klicken Sie im Dialogfeld **Skripts generieren und veröffentlichen** auf **Skripterstellungsoptionen festlegen**.
     Sie können den Schritt **Objekte auswählen** überspringen, da die Standardeinstellung "Skripterstellung für gesamte Datenbank und alle Datenbankobjekte" lautet und das in diesem Fall die korrekte Einstellung ist.
 
 5.  Klicken Sie auf **Erweitert**.
 
-    ![Skripterstellungsoptionen festlegen][]
+    ![Skripterstellungsoptionen festlegen][Skripterstellungsoptionen festlegen]
 
 6.  Blättern Sie im Dialogfeld **Erweiterte Skripterstellungsoptionen** nach unten zu **Datentypen, für die ein Skript erstellt wird.** Klicken Sie in der Dropdownliste auf die Option **Data only**. (Siehe Abbildung unterhalb des nächsten Schrittes.)
 
@@ -557,14 +557,14 @@ Klicken Sie auf der ersten Seite des SQL Server-Installationscenters auf **Neue 
 9.  Im Dialogfeld **Skripts generieren und veröffentlichen** legt das Feld **Dateiname** fest, wo das Skript erstellt werden soll. Ändern Sie den Pfad so, dass er zum Projektordner führt (der Ordner, der die Datei *Contacts.sln* enthält), und ändern Sie den Dateinamen zu *aspnet-data-membership.sql*.
 10. Klicken Sie auf **Weiter**, um zur Registerkarte **Zusammenfassung** zu gehen, und klicken Sie dann erneut auf **Weiter**, um das Skript zu erstellen.
 
-    ![Speichern oder veröffentlichen][]
+    ![Speichern oder veröffentlichen][Speichern oder veröffentlichen]
 
 11. Klicken Sie auf **Fertig stellen**.
 
 ## <a name="bkmk_deploytowindowsazure11"></a>Bereitstellen der Anwendung in Azure
 
 1.  Öffnen Sie die Anwendungs-Stammdatei *Web.config*. Suchen Sie das Markup *DefaultConnection*, kopieren Sie es, und fügen Sie es unter der Markupzeile *DefaultConnection* ein. Benennen Sie das kopierte Element in *DefaultConnectionDeploy* um. Sie benötigen diese Verbindungszeichenfolge, um Benutzerdaten in der Mitgliedschaftsdatenbank bereitstellen zu können.
-    ![3 Zeichenfolgen][]
+    ![3 Zeichenfolgen][3 Zeichenfolgen]
 
 2.  Erstellen Sie die Anwendung.
 3.  Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Projekt, und wählen Sie im Kontextmenü **Veröffentlichen** aus.
@@ -575,7 +575,7 @@ Der Assistent **Web veröffentlichen** wird geöffnet.
 
 1.  Klicken Sie auf die Registerkarte **Einstellungen**. Klicken Sie auf das Symbol **v**, um für **ContactManagerContext** und **DefaultConnectionDeploy** die **Remoteverbindungszeichenfolge** auszuwählen. Die drei aufgeführten Datenbanken verwenden alle die gleiche Remoteverbindungszeichenfolge. In der Datenbank **ContactManagerContext** werden die Kontakte gespeichert. **DefaultConnectionDeploy** wird nur verwendet, um die Benutzerkontendaten für die Mitgliedschaftsdatenbank bereitzustellen. **UsersContext** ist die Mitgliedschaftsdatenbank.
 
-    ![Einstellungen][]
+    ![Einstellungen][Einstellungen]
 
 2.  Wählen Sie unter **ContactManagerContext** die Option **Execute Code First Migrations** aus.
 
@@ -584,7 +584,7 @@ Der Assistent **Web veröffentlichen** wird geöffnet.
 3.  Aktivieren Sie unter **DefaultConnectionDeploy** **Update database**, und klicken Sie dann auf den Link **Configure database updates**.
 4.  Klicken Sie auf den Link **Add SQL Script**, und navigieren Sie zur Datei *aspnet-data-membership.sql*. Dies ist nur einmalig erforderlich. Bei der nächsten Bereitstellung deaktivieren Sie **Update database**, da Sie die Benutzerdaten nicht zu den Mitgliedschaftstabellen hinzufügen müssen.
 
-    ![SQL hinzufügen][]
+    ![SQL hinzufügen][SQL hinzufügen]
 
 5.  Klicken Sie auf **Veröffentlichen**.
 6.  Navigieren Sie zur Seite [][]<https://developers.facebook.com/apps></a>, und ändern Sie die Einstellungen für **App Domains** und **Site URL** zur Azure-URL.
@@ -600,7 +600,7 @@ Wenn die Website in Azure bereitgestellt wurde, und Sie über mehr registrierte 
 ![Einstellungen][9]
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und anschließend auf **Veröffentlichen**.
-    ![Veröffentlichen][]
+    ![Veröffentlichen][Veröffentlichen]
 
 2.  Klicken Sie auf die Registerkarte **Einstellungen**.
 3.  Kopieren Sie die Verbindungszeichenfolge. Die Verbindungszeichenfolge aus diesem Beispiel lautet beispielsweise:
@@ -611,7 +611,7 @@ Wenn die Website in Azure bereitgestellt wurde, und Sie über mehr registrierte 
 
 6.  Klicken Sie auf das Symbol **Connect to Database**.
 
-    ![Publish][]
+    ![Publish][Publish]
 
 7.  Wenn Sie nach der Datenquelle gefragt werden, klicken Sie auf **Microsoft SQL Server**.
     ![Veröffentlichen][10]
@@ -621,23 +621,23 @@ Wenn die Website in Azure bereitgestellt wurde, und Sie über mehr registrierte 
 10. Geben Sie Ihren **Benutzernamen** und Ihr **Kennwort** ein, die in der kopierten Verbindungszeichenfolge enthalten sind.
 11. Geben Sie den Datenbanknamen ein (ContactDB oder die Zeichenfolge nach "Initial Catalog=" in der Datenbank, wenn Sie nicht den Namen ContactDB gewählt haben). Wenn eine Fehlermeldung angezeigt wird, siehe nächster Abschnitt.
 12. Klicken Sie auf **Test Connection**. Wenn eine Fehlermeldung angezeigt wird, siehe nächster Abschnitt.
-    ![Dialog Verbindung hinzufügen][]
+    ![Dialog Verbindung hinzufügen][Dialog Verbindung hinzufügen]
 
 ## Anmeldefehler "Cannot open server"
 
 Wenn eine Fehlermeldung angezeigt wird, die mit "Cannot open server" beginnt, müssen Sie Ihre IP-Adresse zu den zulässigen IP-Adressen hinzufügen.
 
-![Firewallfehler][]
+![Firewallfehler][Firewallfehler]
 
 1.  Wählen Sie im Azure-Portal auf der linken Registerkarte **SQL Databases** aus.
 
-    ![SQL auswählen][]
+    ![SQL auswählen][SQL auswählen]
 
 2.  Wählen Sie die Datenbank aus, die Sie öffnen möchten.
 
 3.  Klicken Sie auf den Link **Set up Azure firewall rules for this IP address**.
 
-    ![Firewallregeln][]
+    ![Firewallregeln][Firewallregeln]
 
 4.  Wenn die Frage "The current IP address xxx.xxx.xxx.xxx is not included in existing firewall rules. Do you want to update the firewall rules?" angezeigt wird, klicken Sie auf **Ja**. Das Hinzufügen dieser Adresse ist oft nicht ausreichend, Sie müssen einen IP-Adressbereich hinzufügen.
 
@@ -646,51 +646,51 @@ Wenn eine Fehlermeldung angezeigt wird, die mit "Cannot open server" beginnt, m�
 1.  Klicken Sie im Azure-Portal auf **SQL Databases**.
 2.  Klicken Sie auf den **Server**, auf dem die Datenbank gehostet wird.
 
-    ![DB-Server][]
+    ![DB-Server][DB-Server]
 
 3.  Klicken Sie oben auf der Seite auf **Konfigurieren**.
 4.  Fügen Sie einen Regelnamen sowie die Start- und End-IP-Adresse hinzu.
-    ![IP-Bereich][]
+    ![IP-Bereich][IP-Bereich]
 
 5.  Klicken Sie unten auf der Seite auf **Speichern**.
 6.  Sie können jetzt mit den zuvor gezeigten Schritten die Mitgliedschaftsdatenbank bearbeiten.
 
 ## <a name="nextsteps"></a><span class="short-header">Nächste Schritte</span>Nächste Schritte
 
-Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson][] (Twitter [@RickAndMSFT][]) sowie Tom Dykstra, Tom FitzMacken und Barry Dorrans (Twitter [@blowdart][]) geschrieben.
+Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson][Rick Anderson] (Twitter [@RickAndMSFT][@RickAndMSFT]) sowie Tom Dykstra, Tom FitzMacken und Barry Dorrans (Twitter [@blowdart][@blowdart]) geschrieben.
 
 Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert werden kann, und zwar nicht nur bezüglich des Lernprogramms, sondern auch bezüglich der Produkte, die darin vorgestellt werden. Ihr Feedback unterstützt uns dabei, eine entsprechende Priorität für Verbesserungen festzulegen. Wir interessieren uns vor allem dafür, wie groß das Interesse an weiteren Automatisierungen in Bezug auf die Konfiguration und Bereitstellung der Mitgliedsdatenbank ist.
 
-Wie Sie die farbigen Anmeldeschaltflächen für Facebook, Google und Yahoo erhalten, erfahren Sie im Blogeintrag [Customizing External Login Buttons in ASP.NET MVC 4][] (Anpassen von externen Anmeldeschaltflächen in ASP.NET MVC 4, in englischer Sprache). Informationen zur Verwendung der Windows-Authentifizierung finden Sie unter:
+Wie Sie die farbigen Anmeldeschaltflächen für Facebook, Google und Yahoo erhalten, erfahren Sie im Blogeintrag [Customizing External Login Buttons in ASP.NET MVC 4][Customizing External Login Buttons in ASP.NET MVC 4] (Anpassen von externen Anmeldeschaltflächen in ASP.NET MVC 4, in englischer Sprache). Informationen zur Verwendung der Windows-Authentifizierung finden Sie unter:
 
--   [Azure-Authentifizierung][]
--   [So erstellen Sie eine Intranetsite mit ASP.NET MVC][]
+-   [Azure-Authentifizierung][Azure-Authentifizierung]
+-   [So erstellen Sie eine Intranetsite mit ASP.NET MVC][So erstellen Sie eine Intranetsite mit ASP.NET MVC]
 
 Daten können außerdem über den Azure-Speicher in einer Azure-Anwendung gespeichert werden. Dieser Speicher bietet nichtrelationale Datenspeicherung in Form von Blobs und Tabellen. Die folgenden Links bieten weitere Informationen zu ASP.NET MVC und Azure.
 
--   [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs][]
--   [Einleitung zu ASP.NET MVC 4][]
--   [Erste Schritte in Entity Framework mit MVC][]
--   [OAuth 2.0 and Sign-In (OAuth 2.0 und Anmeldung, in englischer Sprache)][]
+-   [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs][.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs]
+-   [Einleitung zu ASP.NET MVC 4][Einleitung zu ASP.NET MVC 4]
+-   [Erste Schritte in Entity Framework mit MVC][Erste Schritte in Entity Framework mit MVC]
+-   [OAuth 2.0 and Sign-In (OAuth 2.0 und Anmeldung, in englischer Sprache)][OAuth 2.0 and Sign-In (OAuth 2.0 und Anmeldung, in englischer Sprache)]
 
-Sie haben erfahren, wie eine einfache Webanwendung auf einer Azure-Website bereitgestellt wird. Weitere Informationen zur Konfiguration, Verwaltung und Skalierung von Azure-Websites finden Sie auf der Seite [Common Tasks][] in den "Vorgehensweise"-Themen.
+Sie haben erfahren, wie eine einfache Webanwendung auf einer Azure-Website bereitgestellt wird. Weitere Informationen zur Konfiguration, Verwaltung und Skalierung von Azure-Websites finden Sie auf der Seite [Common Tasks][Common Tasks] in den "Vorgehensweise"-Themen.
 
-Informationen zum Debuggen von Azure-Websites finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio][].
+Informationen zum Debuggen von Azure-Websites finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio][Problembehandlung von Azure-Websites in Visual Studio].
 
-Informationen zum Bereitstellen einer Anwendung für einen Azure-Clouddienst finden Sie in [der Clouddienstversion dieses Lernprogramms][] sowie unter [Entwickeln von Webanwendungen mit Azure][]. Gründe, weshalb Sie die ASP.NET-Webanwendung in einem Azure-Clouddienst statt über eine Azure-Website ausführen sollten, sind unter anderem:
+Informationen zum Bereitstellen einer Anwendung für einen Azure-Clouddienst finden Sie in [der Clouddienstversion dieses Lernprogramms][der Clouddienstversion dieses Lernprogramms] sowie unter [Entwickeln von Webanwendungen mit Azure][Entwickeln von Webanwendungen mit Azure]. Gründe, weshalb Sie die ASP.NET-Webanwendung in einem Azure-Clouddienst statt über eine Azure-Website ausführen sollten, sind unter anderem:
 
 -   Sie benötigen Administratorberechtigungen auf dem Webserver, auf dem die Anwendung ausgeführt wird.
 -   Sie möchten auf den Webserver, auf dem die Anwendung ausgeführt wird, über eine Remotedesktopverbindung zugreifen.
 -   Ihre Anwendung ist mehrschichtig, und Sie möchten die Arbeitslast auf mehrere virtuelle Server (Web und Worker) verteilen.
 
-Weitere Informationen zu SQL-Datenbank und Azure-Speicher finden Sie unter [Data Storage Offerings on Azure][] (Datenspeicherangebote in Windows Azure, in englischer Sprache).
+Weitere Informationen zu SQL-Datenbank und Azure-Speicher finden Sie unter [Data Storage Offerings on Azure][Data Storage Offerings on Azure] (Datenspeicherangebote in Windows Azure, in englischer Sprache).
 
-Weitere Informationen zur Verwendung von SQL-Datenbank finden Sie unter [Arbeiten mit Windows Azure SQL-Datenbank][].
+Weitere Informationen zur Verwendung von SQL-Datenbank finden Sie unter [Arbeiten mit Windows Azure SQL-Datenbank][Arbeiten mit Windows Azure SQL-Datenbank].
 
 Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie in den folgenden Ressourcen:
 
--   [Erste Schritte in Entity Framework mit MVC][]
--   [Code First Migrations (Code First-Migrationen, in englischer Sprache)][]
+-   [Erste Schritte in Entity Framework mit MVC][Erste Schritte in Entity Framework mit MVC]
+-   [Code First Migrations (Code First-Migrationen, in englischer Sprache)][Code First Migrations (Code First-Migrationen, in englischer Sprache)]
 
 <!-- bookmarks -->
 

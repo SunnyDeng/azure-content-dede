@@ -14,22 +14,22 @@ Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blob-Speicherdi
 
 In diesem Lernprogramm fügen Sie dem Mobile Services-Schnellstart Funktionen zur Aufnahme von Bildern und zum Hochladen dieser Bilder unter Verwendung einer von Mobile Services erzeugten SAS in Azure hinzu. Dieses Lernprogramm führt Sie durch die folgenden grundlegenden Schritte zur Aktualisierung des Mobile Services-Schnellstarts für das Hochladen von Bildern in den Blob-Speicherdienst:
 
-1.  [Installation der Speicherclientbibliothek][]
-2.  [Aktualisierung der Client-App zur Aufnahme von Bildern][]
-3.  [Installieren des Speicherclients im Mobildienstprojekt][]
-4.  [Aktualisieren der TodoItem-Definition im Datenmodell][]
-5.  [Aktualisierung des Tabellen-Controllers zur Erzeugung einer SAS][]
-6.  [Hochladen von Bildern zum Testen der App][]
+1.  [Installation der Speicherclientbibliothek][Installation der Speicherclientbibliothek]
+2.  [Aktualisierung der Client-App zur Aufnahme von Bildern][Aktualisierung der Client-App zur Aufnahme von Bildern]
+3.  [Installieren des Speicherclients im Mobildienstprojekt][Installieren des Speicherclients im Mobildienstprojekt]
+4.  [Aktualisieren der TodoItem-Definition im Datenmodell][Aktualisieren der TodoItem-Definition im Datenmodell]
+5.  [Aktualisierung des Tabellen-Controllers zur Erzeugung einer SAS][Aktualisierung des Tabellen-Controllers zur Erzeugung einer SAS]
+6.  [Hochladen von Bildern zum Testen der App][Hochladen von Bildern zum Testen der App]
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -   Microsoft Visual Studio 2013 oder eine höhere Version.
 -   NuGet Package Manager installiert für Microsoft Visual Studio.
--   [Azure-Speicherkonto][]
+-   [Azure-Speicherkonto][Azure-Speicherkonto]
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services][] abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] abschließen.
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../includes/mobile-services-dotnet-backend-configure-blob-storage.md)]
 
 ## <a name="install-storage-client"></a>Installieren des Speicherclients für Windows Store-Apps
 
@@ -39,13 +39,13 @@ Um eine SAS für das Hochladen von Bildern aus Ihrer App in den Blob-Speicher ve
 
 2.  Wählen Sie im linken Bereich die Kategorie **Online** und **Include Prerelease** aus, suchen Sie nach **WindowsAzure.Storage-Preview**, klicken Sie auf **Installieren** im Paket **Azure Storage**, und stimmen Sie dem Lizenzvertrag zu.
 
-    ![][]
+    ![][2]
 
     Die Clientbibliothek für Azure-Speicherdienste wird zum Projekt hinzugefügt.
 
 Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen von Bildern.
 
-[WACOM.INCLUDE [mobile-services-windows-store-dotnet-upload-to-blob-storage][]]
+[WACOM.INCLUDE [mobile-services-windows-store-dotnet-upload-to-blob-storage](../includes/mobile-services-windows-store-dotnet-upload-to-blob-storage.md)]
 
 <!-- Anchors. --> 
 <!-- Images. --> 
@@ -64,5 +64,5 @@ Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen
   [Azure-Speicherkonto]: /de-de/documentation/articles/storage-create-storage-account/
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started
   [mobile-services-dotnet-backend-configure-blob-storage]: ../includes/mobile-services-dotnet-backend-configure-blob-storage.md
-  []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
+  [2]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
   [mobile-services-windows-store-dotnet-upload-to-blob-storage]: ../includes/mobile-services-windows-store-dotnet-upload-to-blob-storage.md

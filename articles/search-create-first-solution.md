@@ -15,17 +15,17 @@ Einige der Schritte können Sie bereits jetzt ausführen. Fangen Sie an, indem S
 
 Die Beispielanwendung wird in Visual Studio 2013 erstellt. Falls Sie bereits eine Version von Visual Studio 2013 haben, sollten Sie diese verwenden. Andernfalls können Sie die neueste Version von Microsoft herunterladen.
 
-Öffnen Sie das [Download Center][], um Visual Studio 2013 Express für das Web herunterzuladen.
+Öffnen Sie das [Download Center][Download Center], um Visual Studio 2013 Express für das Web herunterzuladen.
 
 ### Konfigurieren des kostenlosen Suchdienstes
 
 Wir empfehlen den kostenlosen Suchdienst für dieses Lernprogramm. Eine eingeschränkte Version von Search steht allen Abonnenten kostenlos zur Verfügung. Falls Sie kein Abonnement haben, können Sie ein kostenloses Testkonto erstellen
 
-Unter [Konfigurieren der Suche im Azure-Vorschauportal][] finden Sie Details zum Einrichten des Dienstes.
+Unter [Konfigurieren der Suche im Azure-Vorschauportal][Konfigurieren der Suche im Azure-Vorschauportal] finden Sie Details zum Einrichten des Dienstes.
 
 Sie müssen nicht alle Schritte in den Anweisungen ausführen. Sie können aufhören, sobald Sie den kostenlosen Dienst erstellt haben. Sie brauchen die Dienst-URL und einen API-Schlüssel, um dieses Lernprogramm abzuschließen.
 
-[WACOM.INCLUDE [Sie brauchen ein Azure-Konto, um dieses Lernprogramm abzuschließen:][]]
+[WACOM.INCLUDE [You need an Azure account to complete this tutorial:](../includes/free-trial-note.md)]
 
   [Download Center]: http://www.microsoft.com/en-us/download/details.aspx?id=40747
   [Konfigurieren der Suche im Azure-Vorschauportal]: ../search-configure/

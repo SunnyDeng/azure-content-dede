@@ -19,7 +19,7 @@ Sie erhalten Informationen zu folgenden Themen:
 -   Verwenden von Azure Service Bus Relay zum Freigeben von Daten zwischen
     einer Azure-Anwendung und einem an einem anderen Ort gehosteten Webdienst.
 
-[WACOM.INCLUDE [create-account-note][]]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ### UNTERSTÜTZUNG HYBRIDER LÖSUNGEN DURCH SERVICE BUS RELAY
 
@@ -51,7 +51,7 @@ Directory-Zugriffssteuerung außerdem vor unbefugtem Zugriff.
 In diesem Lernprogramm erstellen Sie eine ASP.NET MVC 4-Website, mit der Sie
 eine Produktliste auf der Produktbestandsseite anzeigen können.
 
-![][]
+![][0]
 
 Dieses Lernprogramm geht davon aus, dass Sie über Produktinformationen
 in einem vorhandenen lokalen System verfügen, auf das über Service Bus Relay
@@ -75,7 +75,7 @@ Sie die Tools und müssen Ihre Entwicklungsumgebung einrichten.
 
 1.  Klicken Sie auf die folgende Schaltfläche, um das Azure SDK für .NET zu installieren.
 
-    [Tools und SDK herunterladen][]
+    [Tools und SDK herunterladen][Tools und SDK herunterladen]
 
 2.  Klicken Sie auf **SDK installieren**.
 
@@ -104,11 +104,11 @@ Um mit der Verwendung von Servicebus-Features in Azure zu beginnen,
 müssen Sie zuerst einen Dienstnamespace erstellen. Ein Dienstnamespace ist ein Bereichscontainer
 zur Adressierung von Servicebus-Ressourcen innerhalb Ihrer Anwendung.
 
-Sie können Namespaces und Service Bus-Nachrichtenentitäten im [Azure-Verwaltungsportal][] oder im Server-Explorer von Visual Express verwalten, neue Namespaces lassen sich jedoch nur im Portal erstellen.
+Sie können Namespaces und Service Bus-Nachrichtenentitäten im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] oder im Server-Explorer von Visual Express verwalten, neue Namespaces lassen sich jedoch nur im Portal erstellen.
 
 ### So erstellen Sie einen Dienstnamespace im Portal:
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
 2.  Klicken Sie im linken Navigationsbereich des Verwaltungsportals auf
     **Servicebus**.
@@ -158,7 +158,7 @@ Namespace abrufen.
 
 ### Verwalten eines Servicenamespace mit dem Server-Explorer von Visual Studio:
 
-Führen Sie die [hier][] im Abschnitt **Verbinden mit Windows Azure in Visual Studio** beschriebenen Schritte aus, um Namespaces zu verwalten und Verbindungsinformationen über Visual Studio anstatt aus dem Verwaltungsportal abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
+Führen Sie die [hier][hier] im Abschnitt **Verbinden mit Windows Azure in Visual Studio** beschriebenen Schritte aus, um Namespaces zu verwalten und Verbindungsinformationen über Visual Studio anstatt aus dem Verwaltungsportal abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
 
 ![][10]
 
@@ -178,7 +178,7 @@ ermöglicht eine problemlose Installation und Aktualisierung von Bibliotheken un
 und Visual Studio Express. Das Servicebus NuGet-Paket ist die einfachste Möglichkeit
 zum Abrufen der Servicebus-API und Konfigurieren der Anwendung
 mit allen Servicebus-Abhängigkeiten. Weitere Informationen zum Verwenden von NuGet und
-dem Servicebus-Paket finden Sie unter[Verwenden des NuGet Servicebus-Pakets][].
+dem Servicebus-Paket finden Sie unter[Verwenden des NuGet Servicebus-Pakets][Verwenden des NuGet Servicebus-Pakets].
 
 ### ERSTELLEN DES PROJEKTS
 
@@ -207,7 +207,7 @@ dem Servicebus-Paket finden Sie unter[Verwenden des NuGet Servicebus-Pakets][].
 
     ![][13]
 
-7.  Wenn Sie den NuGet-Paket-Manager für Visual Studio bereits installiert haben, fahren Sie mit dem nächsten Schritt fort. Besuchen Sie andernfalls [NuGet][], und klicken Sie auf [Install NuGet][]. Befolgen Sie die Anweisungen, um den NuGet-Paket-Manager zu installieren, und starten Sie Visual Studio dann neu.
+7.  Wenn Sie den NuGet-Paket-Manager für Visual Studio bereits installiert haben, fahren Sie mit dem nächsten Schritt fort. Besuchen Sie andernfalls [NuGet][NuGet], und klicken Sie auf [Install NuGet][Install NuGet]. Befolgen Sie die Anweisungen, um den NuGet-Paket-Manager zu installieren, und starten Sie Visual Studio dann neu.
 
 8.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und klicken Sie dann auf
     **NuGet-Pakete verwalten**.
@@ -494,7 +494,7 @@ Führen Sie die Anwendung aus, um sicherzustellen, dass sie funktioniert.
 
     ## <span class="short-header"></span>FERTIGSTELLEN DER ANWENDUNG ZUR BEREITSTELLUNG FÜR AZURE
 
-    Sie können die Anwendung für einen Azure-Clouddienst oder eine Azure-Website bereitstellen. Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle][]. Informationen zum Bereitstellen der Anwendung für eine Azure-Website finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website][]. Dieser Abschnitt enthält ausführliche Schritte für die Bereitstellung der Anwendung für einen Azure-Clouddienst.
+    Sie können die Anwendung für einen Azure-Clouddienst oder eine Azure-Website bereitstellen. Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle][Azure-Ausführungsmodelle]. Informationen zum Bereitstellen der Anwendung für eine Azure-Website finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website][Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website]. Dieser Abschnitt enthält ausführliche Schritte für die Bereitstellung der Anwendung für einen Azure-Clouddienst.
 
     Zur Bereitstellung der Anwendung für einen Clouddienst fügen Sie der Projektmappe ein Bereitstellungsprojekt für das Clouddienstprojekt hinzu.
     Das Bereitstellungsprojekt enthält Konfigurationsinformationen,
@@ -700,7 +700,7 @@ Führen Sie die Anwendung aus, um sicherzustellen, dass sie funktioniert.
 
         ![][33]
 
-Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle][].
+Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle][Azure-Ausführungsmodelle].
 
 ## <span class="short-header"></span>BEENDEN UND LÖSCHEN DER ANWENDUNG
 
@@ -717,7 +717,7 @@ dedizierte Serverzeit für virtuelle Computer zum Hosten dieser Webrolleninstanz
 In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden
 und löschen.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an,
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an,
     klicken Sie auf Cloud Services und dann auf den Namen des Diensts.
 
 2.  Klicken Sie auf die Registerkarte **Dashboard** und dann auf **Beenden**, um die Anwendung vorübergehend anzuhalten. Sie können
@@ -730,12 +730,12 @@ und löschen.
 
 Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
 
--   [Azure-Servicebus][]
--   [Servicebus-Anleitungen][]
--   [Einsatz von Servicebus-Warteschlangen][]
+-   [Azure-Servicebus][Azure-Servicebus]
+-   [Servicebus-Anleitungen][Servicebus-Anleitungen]
+-   [Einsatz von Servicebus-Warteschlangen][Einsatz von Servicebus-Warteschlangen]
 
   [create-account-note]: ../includes/create-account-note.md
-  []: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
+  [0]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
   [1]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/App2.png
   [Tools und SDK herunterladen]: http://go.microsoft.com/fwlink/?LinkId=271920
   [2]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-41.png

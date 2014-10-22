@@ -2,27 +2,27 @@
 
 # Konfigurieren der Suche im Azure-Vorschauportal
 
-[WACOM.INCLUDE [Dieser Artikel verwendet das Azure-Vorschauportal][]]
+[WACOM.INCLUDE [This article uses the Azure Preview portal](../includes/preview-portal-note.md)]
 
 Microsoft Azure Search (öffentliche Vorschau) ist im neuen Vorschauportal verfügbar. Administratoren können den Suchdienst bei der Auswahl des gemeinsam genutzten Diensts kostenlos zu einem bestehenden Abonnement hinzufügen, oder bei der Auswahl fest zugeordneter Ressourcen zu einem reduzierten Preis. Dieser Artikel besteht aus den folgenden Abschnitten:
 
 <!--Table of contents -->
 
--   [Erste Schritte mit dem kostenlosen Dienst][]
--   [Upgrade auf die Standardsuche][]
--   [Testen der Dienstfunktionen][]
--   [Beschreibung der Konfigurationsseiten für den Suchdienst][]
--   [Ausprobieren][]
+-   [Erste Schritte mit dem kostenlosen Dienst][Erste Schritte mit dem kostenlosen Dienst]
+-   [Upgrade auf die Standardsuche][Upgrade auf die Standardsuche]
+-   [Testen der Dienstfunktionen][Testen der Dienstfunktionen]
+-   [Beschreibung der Konfigurationsseiten für den Suchdienst][Beschreibung der Konfigurationsseiten für den Suchdienst]
+-   [Ausprobieren][Ausprobieren]
 
 ## Erste Schritte mit dem kostenlosen Dienst
 
 Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstanzenfähigen Suchdienst, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können. Führen Sie die folgenden Schritte aus, um sich für die kostenlose Version anzumelden.
 
-1.  Melden Sie sich mit Ihrem bestehenden Azure-Konto am [Azure-Vorschauportal][] an. Beachten Sie, dass diese URL zum Vorschauportal führt.
+1.  Melden Sie sich mit Ihrem bestehenden Azure-Konto am [Azure-Vorschauportal][Azure-Vorschauportal] an. Beachten Sie, dass diese URL zum Vorschauportal führt.
 
 2.  Klicken Sie unten auf der Seite auf **New**.
 
-    ![][]
+    ![][0]
 
 3.  Klicken Sie oben auf der Seite auf **Alles**.
 
@@ -74,7 +74,7 @@ Der Dienst wird innerhalb weniger Minuten erstellt. Sie können zu den Konfigura
 
 **NUTZUNG** zeigt Dokumentanzahl, verfügbare Ressourcen und Speicherbegrenzungen an.
 
-Unter [Testen der Dienstfunktionen][] wird beschrieben, wie Sie sich mithilfe dieser Werte mit dem Dienst verbinden können.
+Unter [Testen der Dienstfunktionen][Testen der Dienstfunktionen] wird beschrieben, wie Sie sich mithilfe dieser Werte mit dem Dienst verbinden können.
 
 ## Upgrade auf die Standardsuche
 
@@ -88,7 +88,7 @@ Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen
 
 **Schritt 1 - Erstellen eines neuen Diensts mit der Preisebene Standard**
 
-1.  Melden Sie sich mit Ihrem bestehenden Azure-Konto am [Azure-Vorschauportal][] an.
+1.  Melden Sie sich mit Ihrem bestehenden Azure-Konto am [Azure-Vorschauportal][Azure-Vorschauportal] an.
 
 2.  Klicken Sie unten auf der Seite auf **New**.
 
@@ -116,13 +116,13 @@ Die Standardsuche beginnt mit je einem Replikat und einer Partition, kann jedoch
 
 2.  Mit den Schiebereglern können Sie Replikate, Partitionen oder beides hinzufügen.
 
-Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration wird auf der Seite angezeigt, während Sie Ressourcen hinzufügen. Unter [Preisdetails][] finden Sie Abrechnungsinformationen pro Einheit.
+Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration wird auf der Seite angezeigt, während Sie Ressourcen hinzufügen. Unter [Preisdetails][Preisdetails] finden Sie Abrechnungsinformationen pro Einheit.
 
 ![][10]
 
 ## Testen der Dienstfunktionen
 
-Als letzter Schritt bei der Konfiguration der Suche überprüfen Sie, ob Ihr Dienst einsatzbereit ist und über eine Clientanwendung angesprochen werden kann. Diese Prozedur verwendet Fiddler, einen [kostenlosen Download von Telerik][], um HTTP-Anforderungen zu senden und die Antworten anzuzeigen. Mit Fiddler können Sie die API sofort testen, ohne Code schreiben zu müssen.
+Als letzter Schritt bei der Konfiguration der Suche überprüfen Sie, ob Ihr Dienst einsatzbereit ist und über eine Clientanwendung angesprochen werden kann. Diese Prozedur verwendet Fiddler, einen [kostenlosen Download von Telerik][kostenlosen Download von Telerik], um HTTP-Anforderungen zu senden und die Antworten anzuzeigen. Mit Fiddler können Sie die API sofort testen, ohne Code schreiben zu müssen.
 
 Die folgende Prozedur funktioniert für die gemeinsam genutzte und für die Standardsuche. In den folgenden Schritten erstellen Sie einen Index, laden Dokumente hoch, fragen den Index ab und fragen zuletzt Dienstinformationen aus dem System ab.
 
@@ -286,7 +286,7 @@ Der Antwortcode sollte 200 sein, und die Antwortausgabe sollte in etwa der folge
 
 ![][14]
 
-Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azure Search-API)][] auf MSDN. Viele der Beispielabfragen in diesem Thema enthalten Leerzeichen, die von Fiddler nicht unterstützt werden. Ersetzen Sie alle Leerzeichen vor dem Einfügen durch ein +-Zeichen, bevor Sie die Abfrage in Fiddler ausführen:
+Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azure Search-API)][Suchindex-Operationen (Azure Search-API)] auf MSDN. Viele der Beispielabfragen in diesem Thema enthalten Leerzeichen, die von Fiddler nicht unterstützt werden. Ersetzen Sie alle Leerzeichen vor dem Einfügen durch ein +-Zeichen, bevor Sie die Abfrage in Fiddler ausführen:
 
 **Vor dem Ersetzen der Leerzeichen:**
 
@@ -327,7 +327,7 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 Falls Sie eine Auffrischung brauchen, um die Konfigurationsseiten zu finden, folgen Sie den folgenden Schritten, um zum Dienst-Dashboard zu gelangen.
 
-1.  Melden Sie sich mit Ihrem bestehenden Azure-Konto am [Azure-Vorschauportal][] an.
+1.  Melden Sie sich mit Ihrem bestehenden Azure-Konto am [Azure-Vorschauportal][Azure-Vorschauportal] an.
 2.  Klicken Sie auf **Durchsuchen** | **Alles**.
 
     ![][17]
@@ -346,13 +346,13 @@ Falls Sie eine Auffrischung brauchen, um die Konfigurationsseiten zu finden, fol
 
 Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzliches Lernmaterial für die Erstellung und Verwaltung von Suchanwendungen mit Azure Search.
 
-[Erstellen Sie Ihre erste Azure Search-Lösung][]
+[Erstellen Sie Ihre erste Azure Search-Lösung][Erstellen Sie Ihre erste Azure Search-Lösung]
 
-[Verwalten Ihrer Suchlösung in Microsoft Azure][]
+[Verwalten Ihrer Suchlösung in Microsoft Azure][Verwalten Ihrer Suchlösung in Microsoft Azure]
 
-[Azure Search: Technische Übersicht][]
+[Azure Search: Technische Übersicht][Azure Search: Technische Übersicht]
 
-[Azure Search REST-API][]
+[Azure Search REST-API][Azure Search REST-API]
 
 <!--Anchors--> <!--Image references--> <!--Link references-->
 
@@ -363,7 +363,7 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
   [Beschreibung der Konfigurationsseiten für den Suchdienst]: #sub-4
   [Ausprobieren]: #next-steps
   [Azure-Vorschauportal]: https://portal.azure.com
-  []: ./media/search-configure/AzureSearch_Configure1_1_New.PNG
+  [0]: ./media/search-configure/AzureSearch_Configure1_1_New.PNG
   [1]: ./media/search-configure/AzureSearch_Configure1_2_Everything.PNG
   [2]: ./media/search-configure/Azuresearch_Configure1_3_Gallery.PNG
   [3]: ./media/search-configure/AzureSearch_Configure1_4_GallerySeeAll.PNG

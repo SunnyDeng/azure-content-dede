@@ -2,25 +2,25 @@
 
 # Azure Search: Entwicklungs-Workflow
 
-[WACOM.INCLUDE [Dieser Artikel verwendet das Azure-Vorschauportal][]]
+[WACOM.INCLUDE [This article uses the Azure Preview portal](../includes/preview-portal-note.md)]
 
 Dieser Artikel enthält einen Überblick und einige bewährte Methoden für die Erstellung und Wartung des Suchdienstes und der Indizes.
 
-Wir setzen voraus, dass Sie den Dienst bereits eingerichtet haben. Falls Sie dies noch nicht getan haben, lesen Sie den Artikel [Konfigurieren der Suche im Azure-Vorschauportal][].
+Wir setzen voraus, dass Sie den Dienst bereits eingerichtet haben. Falls Sie dies noch nicht getan haben, lesen Sie den Artikel [Konfigurieren der Suche im Azure-Vorschauportal][Konfigurieren der Suche im Azure-Vorschauportal].
 
--   [Schritt 1: Erstellen des Index][]
--   [Schritt 2: Hinzufügen von Dokumenten][]
--   [Schritt 3: Indexabfragen][]
--   [Schritt 4: Ändern oder Löschen von Indizes und Dokumenten][]
--   [Betrachtungen zum Speicherentwurf][]
+-   [Schritt 1: Erstellen des Index][Schritt 1: Erstellen des Index]
+-   [Schritt 2: Hinzufügen von Dokumenten][Schritt 2: Hinzufügen von Dokumenten]
+-   [Schritt 3: Indexabfragen][Schritt 3: Indexabfragen]
+-   [Schritt 4: Ändern oder Löschen von Indizes und Dokumenten][Schritt 4: Ändern oder Löschen von Indizes und Dokumenten]
+-   [Betrachtungen zum Speicherentwurf][Betrachtungen zum Speicherentwurf]
 
-## Schritt 1: Erstellen des Index
+<h2 id="sub-1">Schritt 1: Erstellen des Index</h2>
 
 Abfragen (zumindest nicht-Systemabfragen) werden auf einem Suchindex durchgeführt, der Suchdaten und Attribute enthält. In diesem Schritt definieren Sie das Indexschema im JSON-Format und führen eine HTTPS PUT-Anforderung aus, um diesen Index im Dienst zu erstellen.
 
-Indizes werden üblicherweise in Ihrer lokalen Entwicklungsumgebung entworfen. Es existieren keine integrierten Tools oder Editoren für die Indexdefinition. Weitere Informationen zur Erstellung von Indizes finden Sie unter [Index erstellen (Azure Search-API)][] auf MSDN.
+Indizes werden üblicherweise in Ihrer lokalen Entwicklungsumgebung entworfen. Es existieren keine integrierten Tools oder Editoren für die Indexdefinition. Weitere Informationen zur Erstellung von Indizes finden Sie unter [Index erstellen (Azure Search-API)][Index erstellen (Azure Search-API)] auf MSDN.
 
-## Schritt 2: Hinzufügen von Dokumenten
+<h2 id="sub-2">Schritt 2: Hinzufügen von Dokumenten</h2>
 
 Nachdem Sie den Suchindex erstellt haben, können Sie Dokumente zum Index hinzufügen, indem Sie diese im JSON-Format POSTen. Jedes Dokument besitzt einen eindeutigen Schlüssel und eine Sammlung von Feldern mit durchsuchbaren und nicht durchsuchbaren Daten. Die Dokumentdaten werden als Satz von Schlüssel-Wert-Paaren dargestellt.
 
@@ -32,26 +32,26 @@ Unter hoher Last sind gelegentliche Fehler beim Upload nicht ungewöhnlich. In d
 
 > [WACOM.NOTE] Wenn der Dienst Dokumente empfängt, werden diese in die Warteschlange für die Indexierung platziert und sind möglicherweise nicht sofort in den Suchergebnissen sichtbar. Unter normaler Last werden Dokumente normalerweise innerhalb weniger Sekunden indexiert.
 
-## Schritt 3: Indexabfragen
+<h2 id="sub-3">Schritt 3: Indexabfragen</h2>
 
 Nach der Indexierung der Dokumente können Sie Suchabfragen ausführen. Sie können je einen Index auf einmal abfragen und dabei entweder OData oder eine einfache Abfragesyntax verwenden:
 
--   [OData-Ausdruckssyntax für Azure Search][]
--   [Syntax für einfache Abfragen in Azure Search][]
+-   [OData-Ausdruckssyntax für Azure Search][OData-Ausdruckssyntax für Azure Search]
+-   [Syntax für einfache Abfragen in Azure Search][Syntax für einfache Abfragen in Azure Search]
 
-## Schritt 4: Ändern oder Löschen von Indizes und Dokumenten
+<h2 id="sub-4">Schritt 4: Ändern oder Löschen von Indizes und Dokumenten</h2>
 
 Optional können Sie Schemaänderungen am Suchindex vornehmen, Dokumente im Index ändern oder löschen, und Indizes löschen.
 
 Beim Ändern eines Index können Sie mehrere Aktionen (einfügen, zusammenführen, löschen) in einer Stapelausführung kombinieren und so zahlreiche Roundtrips einsparen. Azure Search unterstützt momentan keine teilweisen Updates (HTTP PATCH). Wenn Sie einen Index ändern möchten, müssen Sie daher die Indexdefinition erneut senden.
 
-## Betrachtungen zum Speicherentwurf
+<h2 id="sub-5">Betrachtungen zum Speicherentwurf</h2>
 
 Viele Suchanwendungen verwenden unterschiedliche Speicherformate für unterschiedliche Anwendungsanforderungen. Der interne Speicher von Azure muss für die Speicherung von Indizes und Dokumenten verwendet werden. Die Textanalyse hängt davon ab, dass alle durchsuchbaren Felder und zugehörige Attribute frei verfügbar sind.
 
 Nicht alle Felder in einem Dokument sind durchsuchbar. Wenn Ihre Anwendung z. B. einen Onlinekatalog für Musik oder Videos enthält, sollten Sie die Binärdateien nach Möglichkeit in Blobs oder einer anderen Speicherform ablegen. Die Binärdateien selbst sind nicht durchsuchbar und müssen daher nicht im Azure Search-Speicher abgelegt werden. Sie sollten Bilder, Videos und Audiodateien in anderen Diensten oder an anderen Speicherorten ablegen und die URL zum Speicherort in ein Feld im Dokument schreiben.
 
-Weitere Informationen zur Erstellung von Indizes und Dokumenten finden Sie unter [Azure Search REST-API][].
+Weitere Informationen zur Erstellung von Indizes und Dokumenten finden Sie unter [Azure Search REST-API][Azure Search REST-API].
 
 <!--Anchors--> 
 <!--Image references--> 

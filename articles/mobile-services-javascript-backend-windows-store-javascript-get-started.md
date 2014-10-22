@@ -4,22 +4,22 @@
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
-[WACOM.INCLUDE [mobile-services-selector-get-started][]]
+[WACOM.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
 Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Backend-Dienst mithilfe von Azure Mobile Services zu einer universellen Windows-App hinzufügen.
 
 In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts, mit dem Sie serverseitige Geschäftslogik in den unterstützten .NET-Sprachen mithilfe von Visual Studio verfassen können, finden Sie in der .NET-Back-End-Version dieses Themas.
 
-[WACOM.INCLUDE [mobile-services-windows-universal-get-started][]]
+[WACOM.INCLUDE [mobile-services-windows-universal-get-started](../includes/mobile-services-windows-universal-get-started.md)]
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
--   Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][].
--   [Visual Studio 2013 Express für Windows][]
+-   Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][Kostenlose Azure-Testversion].
+-   [Visual Studio 2013 Express für Windows][Visual Studio 2013 Express für Windows]
 
 ## Erstellen eines neuen mobilen Dienstes
 
-[WACOM.INCLUDE [mobile-services-create-new-service][]]
+[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## Erstellen einer neuen universellen Windows-App
 
@@ -31,7 +31,7 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 
 2.  Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue Windows Store-App erstellen**.
 
-   	![][]
+   	![][0]
 
    	Auf diese Weise werden die drei einfachen Schritte zum Erstellen einer Windows Store-App, die mit dem mobilen Dienst verbunden ist, angezeigt.
 
@@ -47,7 +47,7 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 
 ## Ausführen der Windows-App
 
-[WACOM.INCLUDE [mobile-services-javascript-backend-run-app][]]
+[WACOM.INCLUDE [mobile-services-javascript-backend-run-app](../includes/mobile-services-javascript-backend-run-app.md)]
 
 > [WACOM.NOTE]Sie können den Code überprüfen, der auf Ihren mobilen Dienst zum Abfragen und Einfügen von Daten zugreift. Der Code befindet sich in der Datei "default.js".
 
@@ -55,16 +55,16 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
 
--   [Erste Schritte mit Daten][]
+-   [Erste Schritte mit Daten][Erste Schritte mit Daten]
     Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
--   [Erste Schritte mit der Authentifizierung][]
+-   [Erste Schritte mit der Authentifizierung][Erste Schritte mit der Authentifizierung]
     Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
 
--   [Erste Schritte mit Pushbenachrichtigungen][]
+-   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
     Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus][].
+Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus][Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus].
 
 <!-- Anchors. -->  
 
@@ -74,7 +74,7 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
   [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
   [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
 <!-- Images. -->
-  []: ./media/mobile-services-javascript-backend-windows-store-javascript-get-started/mobile-portal-quickstart.png
+  [0]: ./media/mobile-services-javascript-backend-windows-store-javascript-get-started/mobile-portal-quickstart.png
   [1]: ./media/mobile-services-javascript-backend-windows-store-javascript-get-started/mobile-quickstart-steps.png
 <!-- URLs. -->
   [mobile-services-javascript-backend-run-app]: ../includes/mobile-services-javascript-backend-run-app.md

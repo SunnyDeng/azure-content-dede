@@ -5,22 +5,22 @@
 # Verwenden des SendGrid-E-Mail-Dienstes aus PHP
 
 Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufgaben mit dem E-Mail-Dienst SendGrid in Azure. Die Beispiele sind in PHP geschrieben.
-Die behandelten Szenarien umfassen das **Erstellen einer E-Mail**, **Senden einer E-Mail** und **Hinzufügen von Anhängen**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte][].
+Die behandelten Szenarien umfassen das **Erstellen einer E-Mail**, **Senden einer E-Mail** und **Hinzufügen von Anhängen**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
 ## Inhaltsverzeichnis
 
--   [Was ist der SendGrid-E-Mail-Dienst?][]
--   [Erstellen eines SendGrid-Kontos][]
--   [Verwenden von SendGrid aus der PHP-Anwendung][]
--   [Gewusst wie: Senden einer E-Mail][]
--   [Gewusst wie: Hinzufügen eines Anhangs][]
--   [Gewusst wie: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen][]
--   [Nächste Schritte][]
+-   [Was ist der SendGrid-E-Mail-Dienst?][Was ist der SendGrid-E-Mail-Dienst?]
+-   [Erstellen eines SendGrid-Kontos][Erstellen eines SendGrid-Kontos]
+-   [Verwenden von SendGrid aus der PHP-Anwendung][Verwenden von SendGrid aus der PHP-Anwendung]
+-   [Gewusst wie: Senden einer E-Mail][Gewusst wie: Senden einer E-Mail]
+-   [Gewusst wie: Hinzufügen eines Anhangs][Gewusst wie: Hinzufügen eines Anhangs]
+-   [Gewusst wie: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen][Gewusst wie: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <a name="bkmk_WhatIsSendGrid"> </a>Was ist der SendGrid-E-Mail-Dienst?
 
-SendGrid ist ein [cloudbasierter E-Mail-Dienst][], der zuverlässige
-[transaktionale E-Mail-Übermittlung][], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs
+SendGrid ist ein [cloudbasierter E-Mail-Dienst][cloudbasierter E-Mail-Dienst], der zuverlässige
+[transaktionale E-Mail-Übermittlung][transaktionale E-Mail-Übermittlung], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs
  bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für
 SendGrid:
 
@@ -37,7 +37,7 @@ Weitere Informationen finden Sie unter [][]<http://sendgrid.com></a>.
 
 ## <a name="bkmk_CreateSendGrid"> </a>Erstellen eines SendGrid-Kontos
 
-[WACOM.INCLUDE [sendgrid-sign-up][]]
+[WACOM.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
 ## <a name="bkmk_UsingSendGridfromPHP"> </a>Verwenden von SendGrid aus der PHP-Anwendung
 
@@ -128,7 +128,7 @@ entsprechenden Eigenschaften und das Aufrufen der
 
 ### Web-API
 
-Um E-Mails über die SendGrid-Web-API zu versenden, verwenden Sie die [Curl -Funktion][] von PHP.
+Um E-Mails über die SendGrid-Web-API zu versenden, verwenden Sie die [Curl -Funktion][Curl -Funktion] von PHP.
 
     <?php
 

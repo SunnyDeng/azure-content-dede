@@ -10,17 +10,17 @@ In diesem Thema wird beschrieben, wie Sie eine benutzerdefinierte API aus einer 
 
 Über die im Rahmen dieses Themas erstellte benutzerdefinierte API erhalten Sie die Möglichkeit, eine einzelne POST-Anforderung zu senden, die das Erledigt-Kennzeichen für sämtliche todo-Einträge in der Tabelle auf `true` setzt. Ohne diese benutzerdefinierte API müsste der Client einzelne Anforderungen senden, um das Kennzeichen für jeden einzelnen todo-Eintrag in der Tabelle zu aktualisieren.
 
-Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services][] oder [Erste Schritte mit Daten][] erstellen. Dafür führen Sie die folgenden Schritte aus:
+Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten] erstellen. Dafür führen Sie die folgenden Schritte aus:
 
-1.  [Definieren der benutzerdefinierten API][]
-2.  [Aktualisieren der App zum Aufruf der benutzerdefinierten API][]
-3.  [Testen der App][]
+1.  [Definieren der benutzerdefinierten API][Definieren der benutzerdefinierten API]
+2.  [Aktualisieren der App zum Aufruf der benutzerdefinierten API][Aktualisieren der App zum Aufruf der benutzerdefinierten API]
+3.  [Testen der App][Testen der App]
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services][] oder [Erste Schritte mit Daten][] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
 ## <a name="define-custom-api"></a>Definieren der benutzerdefinierten API
 
-[WACOM.INCLUDE [mobile-services-create-custom-api][]]
+[WACOM.INCLUDE [mobile-services-create-custom-api](../includes/mobile-services-create-custom-api.md)]
 
 ## <a name="update-app"></a><span class="short-header">Aktualisieren der App </span>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
@@ -66,7 +66,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 Sie haben eine benutzerdefinierte API erstellt und diese über Ihre HTML-App aufgerufen und können nun weitere Einzelheiten über die folgenden Mobile Services-Themen erfahren:
 
--   [Mobile Services: Serverskriptreferenz][]
+-   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
 
 <!-- Anchors. --> <!-- URLs. -->

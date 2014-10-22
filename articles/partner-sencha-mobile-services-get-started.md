@@ -4,33 +4,31 @@
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services und Sencha Touch
 
-[WACOM.INCLUDE [mobile-services-selector-get-started][]]
+[WACOM.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 <p>In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services in Ihrer Sencha Touch-Anwendung nutzen k&ouml;nnen. Sie werden mit Sencha Touch eine einfache To-Do-Listen-Anwendung erstellen, die einen Mobile Service verwendet, den Sie &uuml;ber das Verwaltungsportal festlegen. Dieses Lernprogramm richtet sich an Entwickler mit guten bis sehr guten Webanwendungskenntnissen, die in JavaScript bewandert sind und sich mit dem Sencha Touch-Framework auskennen. </p>
 <p>Wenn Sie lieber ein Video zu diesem Thema ansehen m&ouml;chten, k&ouml;nnen Sie den Clip auf der rechten Seite ausw&auml;hlen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm. In dem Video erkl&auml;rt Arthur Kay, wie Sie eine Sencha Touch-Anwendung mithilfe eines Azure Mobile Services-Back-End erstellen.</p>
 </div>
-
 <div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=392574" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/partner-sencha-mobile-services-get-started/mobile-sencha-get-started-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=392574" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">14:37:00</span></div>
-
 </div>
 
 Unten finden Sie einen Screenshot aus der fertigen App:
 
-![][]
+![][0]
 
 ## Anforderungen
 
--   Laden Sie [Sencha Touch][] herunter, und installieren Sie es.
+-   Laden Sie [Sencha Touch][Sencha Touch] herunter, und installieren Sie es.
 
--   Laden Sie das [Sencha Cmd Tool][] herunter, und installieren Sie es.
+-   Laden Sie das [Sencha Cmd Tool][Sencha Cmd Tool] herunter, und installieren Sie es.
 
 -   Java Runtime Environment (JRE) oder Java Development Kit (wenn Sie Android-Apps erstellen)
 
 ## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Diensts
 
-[WACOM.INCLUDE [mobile-services-create-new-service][]]
+[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## Erstellen einer TodoItems-Tabelle
 
@@ -41,7 +39,7 @@ neue Datenbanktabelle für die Verwendung im Mobile Service zu erstellen.
 
 2.  Klicken Sie auf der Schnellstartregisterkarte auf **HTML** unter **Plattform auswählen**, und erweitern Sie die Option **Neue HTML-App erstellen**.
 
-    ![Mobile quickstart html][]
+    ![Mobile quickstart html][Mobile quickstart html]
 
     Hierdurch werden die drei einfachen Schritte zum Erstellen und Hosten einer mit dem mobilen Dienst verbundenen HTML-App angezeigt.
 
@@ -55,11 +53,11 @@ neue Datenbanktabelle für die Verwendung im Mobile Service zu erstellen.
 
 4.  Notieren Sie sich **appKey** und **appUrl** im Verwaltungsportal. Sie werden diese in anderen Abschnitten dieses Lernprogramms benötigen.
 
-    ![App-Schlüssel][]
+    ![App-Schlüssel][App-Schlüssel]
 
 5.  Vergewissern Sie sich auf der Registerkarte **Konfigurieren**, dass `localhost` bereits im Feld **Anforderungen von Hostnamen zulassen** unter **cross-origin resource sharing (CORS)** eingetragen ist. Falls nicht, geben Sie `localhost` im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
 
-    ![CORS für localhost einrichten][]
+    ![CORS für localhost einrichten][CORS für localhost einrichten]
 
 ## Generieren der Touch-Anwendung
 
@@ -81,7 +79,7 @@ Wenn Sie eine externe Klassenbibliothek hinzufügen möchten, laden Sie bei den 
 
 Sie können die Azure-Erweiterungen durch folgende Schritte manuell zur Anwendung hinzufügen:
 
-1.  Laden Sie das Azure-Erweiterungenpaket [hier][] herunter. (Sie können Ihre Sencha-Foren-ID verwenden, um Zugriff auf diesen Bereich zu erhalten.)
+1.  Laden Sie das Azure-Erweiterungenpaket [hier][hier] herunter. (Sie können Ihre Sencha-Foren-ID verwenden, um Zugriff auf diesen Bereich zu erhalten.)
 
 2.  Kopieren Sie das Azure-Erweiterungenpaket vom Downloadverzeichnis zum endgültigen Zielort, und entpacken Sie es:
 
@@ -99,7 +97,7 @@ Sie können die Azure-Erweiterungen durch folgende Schritte manuell zur Anwendun
 
 Alle Anwendungen, die von Sencha Cmd erstellt wurden, haben im Stamm einen Paketeordner. Der Speicherort dieses Ordners kann konfiguriert werden, aber unabhängig vom Speicherort dient der Paketeordner auch als Speicher aller Pakete, die von der Anwendung verwendet wurden (oder von Anwendungen, wenn Sie einen Sencha Workspace erstellt haben).
 
-Da Ext.Azure ein Sencha Cmd-Paket ist, kann der Quellcode mit Sencha Cmd einfach installiert und in die Anwendung eingefügt werden. (Unter [Sencha Cmd Packages][] (in englischer Sprache) erhalten Sie weitere Informationen).
+Da Ext.Azure ein Sencha Cmd-Paket ist, kann der Quellcode mit Sencha Cmd einfach installiert und in die Anwendung eingefügt werden. (Unter [Sencha Cmd Packages][Sencha Cmd Packages] (in englischer Sprache) erhalten Sie weitere Informationen).
 
 Um das Azure-Erweiterungspaket aus dem Sencha-Paketverzeichnis herunterzuladen, müssen Sie den Paketnamen zur Datei **app.json** hinzufügen und die Anwendung erstellen:
 
@@ -152,7 +150,7 @@ Nachdem die Azure-Erweiterung heruntergeladen und im Anwendungsverzeichnis insta
 
     Auch wenn Sie das Konfigurationsobjekt direkt zur init-Methode weitergeben können, empfehlen wir die Erstellung einer Konfigurationseigenschaft der Sencha-Anwendung namens **azure** sowie die Platzierung aller zugehörigen Informationen an diesem Ort. Sie können diesen Eigenschaftenwert zur Methode Ext.Azure.init weitergeben.
 
-    Wenn Sie einen Mobile Service in Azure erstellen (siehe [Erste Schritte mit Windows Azure][]), werden ein Anwendungsschlüssel und eine URL zu diesem Dienst zugewiesen. Diese Information muss in Ihrem Azure-Paket angegeben werden, damit es eine Verbindung zum Dienst herstellen kann.
+    Wenn Sie einen Mobile Service in Azure erstellen (siehe [Erste Schritte mit Windows Azure][Erste Schritte mit Windows Azure]), werden ein Anwendungsschlüssel und eine URL zu diesem Dienst zugewiesen. Diese Information muss in Ihrem Azure-Paket angegeben werden, damit es eine Verbindung zum Dienst herstellen kann.
 
     Dieses Beispiel zeigt eine ganz einfache Azure-Konfiguration und Initialisierung, welche nur den Anwendungsschlüssel und die URL zur Verfügung stellt:
 
@@ -649,53 +647,53 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 
     -   *sencha web start*: Dadurch wird ein lokaler Webserver gestartet, der die Anwendung testet.
 
-    ![sencha web start][]
+    ![sencha web start][sencha web start]
 
 3.  Öffnen Sie die in Ihrem Terminal aufgelistete URL in einem Webbrowser, um die App zu starten (z. B. <http://localhost:1841>).
 
 4.  Geben Sie in der App einen sinnvollen Text ein, beispielsweise "Lernprogramm beenden", und klicken Sie dann auf **Hinzufügen**.
 
-    ![Neues TodoItem][]
+    ![Neues TodoItem][Neues TodoItem]
 
     Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt.
 
 5.  Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle TodoItems.
 
-    ![Tabelle TodoItems][]
+    ![Tabelle TodoItems][Tabelle TodoItems]
 
     Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
-    ![Todo-Tabelle durchsuchen][]
+    ![Todo-Tabelle durchsuchen][Todo-Tabelle durchsuchen]
 
 ## Nächste Schritte
 
 Nachdem Sie den Leitfaden für die ersten Schritte jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services mit Sencha ausgeführt werden.
 
-[Laden][] Sie eine vollständige Beispielanwendung mit zusätzlichen Stilen und Funktionen herunter, um zu erfahren, was Sencha Touch noch bietet!
+[Laden][Laden] Sie eine vollständige Beispielanwendung mit zusätzlichen Stilen und Funktionen herunter, um zu erfahren, was Sencha Touch noch bietet!
 
 Anschließend erhalten Sie weitere Informationen zu Sencha Touch-Erweiterungen für Azure:
 
--   Beispielanwendung [walkthrough][]
--   Holen Sie sich Hilfe in den [Sencha-Foren][]
--   Durchsuchen Sie die [Sencha-Dokumentation][]
--   Verwenden von Sencha mit Azure Mobile Services: [(Video)][]
+-   Beispielanwendung [walkthrough][walkthrough]
+-   Holen Sie sich Hilfe in den [Sencha-Foren][Sencha-Foren]
+-   Durchsuchen Sie die [Sencha-Dokumentation][Sencha-Dokumentation]
+-   Verwenden von Sencha mit Azure Mobile Services: [(Video)][(Video)]
 
 ## Zusätzliche Ressourcen
 
--   [Sencha Touch herunterladen][]
+-   [Sencha Touch herunterladen][Sencha Touch herunterladen]
 -   [Sencha Touch-Erweiterungen für Azure][hier]
 
 ## Zusammenfassung
 
 Das hier gezeigte Beispiel wird im Paket Sencha Touch-Erweiterung für Azure bereitgestellt, und befindet sich im Beispielverzeichnis als Basisdatenbeispiel. Es werden weitere Beispiele angegeben, welche andere Funktionen dieser Erweiterung sowie detaillierte Kommentare und Erläuterungen bieten.
 
-Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie bitte die anderen [Leitfäden][]
+Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie bitte die anderen [Leitfäden][Leitfäden]
 
 <!-- images -->
 
   [mobile-services-selector-get-started]: ../includes/mobile-services-selector-get-started.md
   [Lernprogramm ansehen]: http://go.microsoft.com/fwlink/?LinkId=392574
-  []: ./media/partner-sencha-mobile-services-get-started/finished-app.png
+  [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
   [Sencha Touch]: http://wwww.sencha.com/products/touch/download
   [Sencha Cmd Tool]: http://www.sencha.com/products/sencha-cmd/download
   [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md

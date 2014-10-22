@@ -2,7 +2,7 @@
 
 # Verwalten Ihres Suchdiensts in Microsoft Azure
 
-[WACOM.INCLUDE [Dieser Artikel verwendet das Azure-Vorschauportal][]]
+[WACOM.INCLUDE [This article uses the Azure Preview portal](../includes/preview-portal-note.md)]
 
 Azure Search ist ein cloudbasierter Dienst und eine HTTP-basierte API, die Sie in eigenen Suchanwendungen verwenden können. Unser Suchdienst bietet ein Modul für Volltextsuche, Textanalyse, erweiterte Suchfunktionen, Speicher und eine Befehlssyntax für Abfragen.
 
@@ -12,17 +12,17 @@ Wie bereits angemerkt benötigen Sie das Vorschauportal für Verwaltungsaufgaben
 
 <!--TOC-->
 
--   [Fügen Sie den Suchdienst zu Ihrem Abonnement hinzu][]
--   [Verwaltungsaufgaben][]
--   [Dienst-URL][]
--   [Verwalten der API-Schlüssel][]
--   [Überwachen der Ressourcenauslastung][]
--   [Herauf- oder Herunterskalieren][]
--   [Starten bzw. Stoppen des Dienstes][]
+-   [Fügen Sie den Suchdienst zu Ihrem Abonnement hinzu][Fügen Sie den Suchdienst zu Ihrem Abonnement hinzu]
+-   [Verwaltungsaufgaben][Verwaltungsaufgaben]
+-   [Dienst-URL][Dienst-URL]
+-   [Verwalten der API-Schlüssel][Verwalten der API-Schlüssel]
+-   [Überwachen der Ressourcenauslastung][Überwachen der Ressourcenauslastung]
+-   [Herauf- oder Herunterskalieren][Herauf- oder Herunterskalieren]
+-   [Starten bzw. Stoppen des Dienstes][Starten bzw. Stoppen des Dienstes]
 
-## Fügen Sie den Suchdienst zu Ihrem Abonnement hinzu
+<h2 id="sub-1">Fügen Sie den Suchdienst zu Ihrem Abonnement hinzu</h2>
 
-Administratoren können den Suchdienst im [Azure-Vorschauportal][] zu ihrem bestehenden Azure-Abonnement hinzufügen. Nur Administratoren können Funktionen zu einem Abonnement hinzufügen. Beim Einrichten Ihres Dienstes haben Sie zwei Preisebenen zur Auswahl.
+Administratoren können den Suchdienst im [Azure-Vorschauportal][Azure-Vorschauportal] zu ihrem bestehenden Azure-Abonnement hinzufügen. Nur Administratoren können Funktionen zu einem Abonnement hinzufügen. Beim Einrichten Ihres Dienstes haben Sie zwei Preisebenen zur Auswahl.
 
 Bestehenden Abonnenten steht kostenlos ein gemeinsam genutzter Dienst zur Auswahl, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können. Der gemeinsam genutzte Dienst ist beschränkt auf 50 MB Speicherplatz, drei Indizes und maximal 10.000 Dokumente, selbst wenn dabei die erlaubten 50 MB noch nicht erreicht sind. Für den gemeinsam genutzten Dienst gelten keine Leistungsgarantien. Für Suchanwendungen in Produktionsumgebungen sollten Sie daher die Standardsuche verwenden.
 
@@ -30,12 +30,12 @@ Die Standardsuche ist kostenpflichtig, da Sie sich für fest zugeordnete Ressour
 
 Wir empfehlen die folgenden Links für die Kapazitätsplanung und zum Verständnis der entstehenden Kosten:
 
--   [Limits und Einschränkungen][]
--   [Preisdetails][]
+-   [Limits und Einschränkungen][Limits und Einschränkungen]
+-   [Preisdetails][Preisdetails]
 
-Lesen Sie den Artikel [Konfigurieren der Suche im Azure-Vorschauportal][], wenn Sie bereit für die Anmeldung sind.
+Lesen Sie den Artikel [Konfigurieren der Suche im Azure-Vorschauportal][Konfigurieren der Suche im Azure-Vorschauportal], wenn Sie bereit für die Anmeldung sind.
 
-## Verwaltungsaufgaben
+<h2 id="sub-2">Verwaltungsaufgaben</h2>
 
 Obwohl einige Dienst Co-Administratoren haben können, hat ein Azure-Suchdienst nur einen Administrator pro Abonnement. Sie müssen ein Administrator sein, um die hier beschriebenen Aufgaben auszuführen.
 Neben dem Hinzufügen der Suche zum Abonnement sind Administratoren für die folgenden Aufgaben verantwortlich:
@@ -46,7 +46,7 @@ Neben dem Hinzufügen der Suche zum Abonnement sind Administratoren für die fol
 -   Herauf- oder Herabskalieren (nur für die Standardsuche)
 -   Starten bzw. Stoppen des Dienstes
 
-## Dienst-URL
+<h2 id="sub-3">Dienst-URL</h2>
 
 Die Dienst-URL wird bei der Erstellung des Dienstes als konstante Eigenschaft definiert und kann später nicht mehr geändert werden.
 
@@ -54,20 +54,19 @@ Entwickler benötigen für die Erstellung von Suchanwendungen die Dienst-URL fü
 
 So finden Sie die Dienst-URL im Dienst-Dashboard:
 
-1.  Melden Sie sich beim [Azure-Vorschauportal][] an.
+1.  Melden Sie sich beim [Azure-Vorschauportal][Azure-Vorschauportal] an.
 2.  Klicken Sie auf **Durchsuchen** | **Alles** | **Dienste suchen**.
 3.  Klicken Sie auf den Namen des Dienstes, um das Dashboard zu öffnen.
 4.  Klicken Sie auf **EIGENSCHAFTEN**, um eine Eigenschaftenseite zu öffnen. Die Dienst-URL befindet sich oben auf der Seite. Sie können diese Seite für den späteren Zugriff anheften.
 
-    ![][]
+    ![][0]
 
 Möglicherweise werden Sie von Entwicklern nach der API-Version gefragt. Für die Azure Search-API müssen Sie in Ihren Anfragen immer die API-Version angeben. Damit wird sichergestellt, dass Entwickler weiterhin eine ältere Version verwenden können, und zu einem selbst gewählten Zeitpunkt auf eine neuere Version wechseln können.
 
-Die API-Version wird nicht in den Portalseiten angezeigt, daher können Sie diese Information nicht bereitstellen. Weitere Informationen zur aktuellen und zu vorherigen API-Versionen finden Sie unter [Azure Search REST-API][].
+Die API-Version wird nicht in den Portalseiten angezeigt, daher können Sie diese Information nicht bereitstellen. Weitere Informationen zur aktuellen und zu vorherigen API-Versionen finden Sie unter [Azure Search REST-API][Azure Search REST-API].
 
 <!---->
-
-## Verwalten der API-Schlüssel
+<h2 id="sub-4">Verwalten der API-Schlüssel</h2>
 
 Entwickler benötigen für die Erstellung von Suchanwendungen einen API-Schlüssel für den Zugriff auf die Suche. Jede HTTP-Anforderung an Ihren Suchdienst benötigt einen API-Schlüssel, der speziell für Ihren Dienst generiert wurde. Dieser API-Schlüssel ist der einzige Authentifizierungsmechanismus für die URL Ihres Suchdienstes.
 
@@ -85,23 +84,21 @@ Abfrage-Schlüssel werden für die Verwendung in Clientanwendungen generiert, di
 ![][1]
 
 <!---->
-
-## Überwachen der Ressourcenauslastung
+<h2 id="sub-5">Überwachen der Ressourcenauslastung</h2
 
 Die Ressourcenüberwachung in der öffentlichen Vorschau ist beschränkt auf die Informationen im Dienst-Dashboard und einige weitere Metriken, die Sie durch Abfragen an den Dienst erhalten.
 
 Im Bereich Nutzung im Dienst-Dashboard können Sie direkt ablesen, ob die Partitionsressourcen für Ihre Anwendung angemessen sind.
 
-Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf der Preisebene. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen][].
+Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf der Preisebene. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen][Limits und Einschränkungen].
 
--   [Abrufen der Index-Statistiken][]
--   [Dokumentenanzahl][]
+-   [Abrufen der Index-Statistiken][Abrufen der Index-Statistiken]
+-   [Dokumentenanzahl][Dokumentenanzahl]
 
 > [WACOM.NOTE] Durch Caching-Eigenheiten können die Obergrenzen vorübergehend überschritten werden. Wenn Sie z. B. den gemeinsam genutzten Dienst verwenden, kann es passieren, dass eine Dokumentenanzahl oberhalb der Grenze von 10.000 Dokumenten angezeigt wird. Dies ist vorübergehend und wird bei der nächsten Einhaltungsprüfung für die Obergrenze entdeckt.
 
 <!---->
-
-## Herauf- oder Herunterskalieren
+<h2 id="sub-6">Herauf- oder Herunterskalieren</h2>
 
 Jeder Suchdienst enthält zunächst ein Minimum von einem Replikat und einer Partition. Wenn Sie sich mit der Preisebene Standard für fest zugeordnete Ressourcen angemeldet haben, können Sie die Kachel **SKALIEREN** im Dienst-Dashboard anklicken, um die Anzahl der Replikate und Partitionen für Ihren Dienst anzupassen.
 
@@ -135,11 +132,10 @@ Im Gegensatz zum Entfernen von Replikaten, bei dem Sie keine weiteren Schritte a
 
 Es ist nicht möglich, herauszufinden, welche Index-Shards auf welcher Partition gespeichert sind. Jede Partition bietet ca. 25 GB an Speicherplatz an. Sie müssen Ihren Speicherverbrauch also auf einen Wert senken, der von Ihren konfigurierten Partitionen unterstützt werden kann. Wenn Sie auf eine Partition zurückschalten, müssen alle 12 Shards in diese Partition passen.
 
-Für die zukünftige Planung können Sie den Speicherverbrauch prüfen (siehe [Abrufen der Index-Statistiken][]), um herauszufinden, wie viel Speicher Sie tatsächlich nutzen.
+Für die zukünftige Planung können Sie den Speicherverbrauch prüfen (siehe [Abrufen der Index-Statistiken][Abrufen der Index-Statistiken]), um herauszufinden, wie viel Speicher Sie tatsächlich nutzen.
 
 <!---->
-
-## Starten bzw. Stoppen des Dienstes
+<h2 id="sub-7">Starten bzw. Stoppen des Dienstes</h2>
 
 Sie können Dienste mithilfe der Befehle im Dienst-Dashboard starten, anhalten oder sogar löschen.
 
@@ -163,7 +159,7 @@ Beim Starten oder Anhalten von Diensten wird die Abrechnung nicht deaktiviert. S
   [Preisdetails]: http://go.microsoft.com/fwlink/p/?LinkdID=509792
   [Konfigurieren der Suche im Azure-Vorschauportal]: ../search-configure/
 <!--Image references-->
-  []: ./media/search-manage/Azure-Search-Manage-1-URL.png
+  [0]: ./media/search-manage/Azure-Search-Manage-1-URL.png
   [Azure Search REST-API]: http://go.microsoft.com/fwlink/p/?LinkdID=509922
   [1]: ./media/search-manage/Azure-Search-Manage-2-Keys.png
   [Abrufen der Index-Statistiken]: http://msdn.microsoft.com/en-us/library/dn798942.aspx
