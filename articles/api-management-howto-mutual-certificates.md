@@ -23,29 +23,29 @@ Diese Anleitung beschreibt, wie Sie Ihre Instanz des API-Verwaltungsdiensts konf
 
 Klicken Sie zunächst in der **Verwaltungskonsole** im Azure-Portal auf Ihren API-Verwaltungsdienst. Daraufhin gelangen Sie zum Verwaltungsportal für die API-Verwaltung.
 
-![API-Verwaltungskonsole][API-Verwaltungskonsole]
+![API-Verwaltungskonsole][api-management-management-console]
 
 > Falls Sie noch keine API-Verwaltungs-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API-Verwaltungsinstanz][Erstellen einer API-Verwaltungsinstanz] im Lernprogramm [Erste Schritte mit der Azure API-Verwaltung][Erste Schritte mit der Azure API-Verwaltung].
 
 Klicken Sie auf **Sicherheit** im Menü **API-Verwaltung** auf der linken Seite und dann auf **Client-Zertifikate**.
 
-![Client-Zertifikate][Client-Zertifikate]
+![Client-Zertifikate][api-management-security-client-certificates]
 
 Um ein neues Zertifikat hochzuladen, klicken Sie auf **Hochladen des Zertifikats**.
 
-![Hochladen des Zertifikats][Hochladen des Zertifikats]
+![Hochladen des Zertifikats][api-management-upload-certificate]
 
 Navigieren Sie zu Ihrem Zertifikat, und geben Sie das Kennwort für das Zertifikat ein.
 
 > Das Zertifikat muss im **.pfx**-Format vorliegen. Selbstsignierte Zertifikate sind zulässig.
 
-![Hochladen des Zertifikats][1]
+![Hochladen des Zertifikats][api-management-upload-certificate-form]
 
 Klicken Sie auf **Hochladen**, um das Zertifikat hochzuladen.
 
 > Zu diesem Zeitpunkt wird das Kennwort des Zertifikats überprüft. Falls es fehlerhaft ist, wird eine Fehlermeldung angezeigt.
 
-![Zertifikat hochgeladen][Zertifikat hochgeladen]
+![Zertifikat hochgeladen][api-management-certificate-uploaded]
 
 Sobald das Zertifikat hochgeladen ist, wird es auf der Registerkarte **Client-Zertifikate** angezeigt. Falls Sie über mehrere Zertifikate verfügen, legen Sie einen Hinweis zum Thema an, oder verwenden Sie die letzten vier Zeichen des Fingerabdrucks, die zur Auswahl eines Zertifikats beim Konfigurieren einer API zum Verwenden von Zertifikaten dienen; siehe folgender Abschnitt [Konfigurieren einer API zum Verwenden eines gegenseitigen Zertifikats zur Proxy-Authentifizierung][Konfigurieren einer API zum Verwenden eines gegenseitigen Zertifikats zur Proxy-Authentifizierung].
 
@@ -53,57 +53,58 @@ Sobald das Zertifikat hochgeladen ist, wird es auf der Registerkarte **Client-Ze
 
 Um ein Zertifikat zu löschen, klicken Sie neben dem betreffenden Zertifikat auf **Löschen**.
 
-![Löschen eines Zertifikats][Löschen eines Zertifikats]
+![Löschen eines Zertifikats][api-management-certificate-delete]
 
 Klicken Sie zur Bestätigung auf **Ja, löschen**.
 
-![Bestätigen des Löschens][Bestätigen des Löschens]
+![Bestätigen des Löschens][api-management-confirm-delete]
 
 Falls das Zertifikat von einer API verwendet wird, wird ein Warnbildschirm angezeigt. Um das Zertifikat zu löschen, müssen Sie es zunächst aus allen APIs entfernen, die zu seiner Verwendung konfiguriert sind.
 
-![Bestätigen des Löschens][2]
+![Bestätigen des Löschens][api-management-confirm-delete-policy]
 
 ## <a name="step2"> </a>Konfigurieren einer API zum Verwenden eines gegenseitigen Zertifikats zur Proxy-Authentifizierung
 
 Klicken Sie auf **APIs** im Menü **API-Verwaltung** auf der linken Seite, klicken Sie auf die gewünschte API und dann auf die Registerkarte **Sicherheit**.
 
-![API-Sicherheit][API-Sicherheit]
+![API-Sicherheit][api-management-api-security]
 
 Wählen Sie **Gegenseitige Zertifikate** aus der Dropdownliste **Mit Anmeldeinformationen** aus.
 
-![Gegenseitige Zertifikate][Gegenseitige Zertifikate]
+![Gegenseitige Zertifikate][api-management-mutual-certificates]
 
 Wählen Sie in der Dropdownliste **Client-Zertifikate** das gewünschte Zertifikat aus. Falls mehrere Zertifikate vorhanden sind, können Sie sich bei der Bestimmung des richtigen Zertifikats am angegebenen Thema oder den letzten vier Zeichen des Fingerabdrucks orientieren, wie im vorherigen Abschnitt beschrieben.
 
-![Zertifikat auswählen][Zertifikat auswählen]
+![Zertifikat auswählen][api-management-select-certificate]
 
 Klicken Sie auf **Speichern**, um die Konfigurationsänderungen der API zu speichern.
 
 > Die Änderungen werden unmittelbar übernommen, und Funktionsaufrufe dieser API verwenden das Zertifikat für die Authentifizierung beim Back-End-Server.
 
-![API-Änderungen speichern][API-Änderungen speichern]
+![API-Änderungen speichern][api-management-save-api]
 
 > Wenn für den Back-End-Dienst einer API ein Zertifikat zur Proxy-Authentifizierung angegeben ist, wird es Teil der Richtlinie dieser API und kann im Richtlinieneditor angezeigt werden.
 
-![Zertifikatsrichtlinie][Zertifikatsrichtlinie]
+![Zertifikatsrichtlinie][api-management-certificate-policy]
 
   [Azure API Management REST API Certificate entity]: http://msdn.microsoft.com/library/azure/dn783483.aspx
   [Voraussetzungen]: #prerequisites
   [Hochladen eines Client-Zertifikats]: #step1
   [Löschen eines Client-Zertifikats]: #step1a
   [Konfigurieren einer API zum Verwenden eines gegenseitigen Zertifikats zur Proxy-Authentifizierung]: #step2
-  [API-Verwaltungskonsole]: ./media/api-management-howto-mutual-certificates/api-management-management-console.png
+  [api-management-management-console]: ./media/api-management-howto-mutual-certificates/api-management-management-console.png
   [Erstellen einer API-Verwaltungsinstanz]: ../api-management-get-started/#create-service-instance
   [Erste Schritte mit der Azure API-Verwaltung]: ../api-management-get-started
-  [Client-Zertifikate]: ./media/api-management-howto-mutual-certificates/api-management-security-client-certificates.png
-  [Hochladen des Zertifikats]: ./media/api-management-howto-mutual-certificates/api-management-upload-certificate.png
-  [1]: ./media/api-management-howto-mutual-certificates/api-management-upload-certificate-form.png
-  [Zertifikat hochgeladen]: ./media/api-management-howto-mutual-certificates/api-management-certificate-uploaded.png
-  [Löschen eines Zertifikats]: ./media/api-management-howto-mutual-certificates/api-management-certificate-delete.png
-  [Bestätigen des Löschens]: ./media/api-management-howto-mutual-certificates/api-management-confirm-delete.png
-  [2]: ./media/api-management-howto-mutual-certificates/api-management-confirm-delete-policy.png
-  [API-Sicherheit]: ./media/api-management-howto-mutual-certificates/api-management-api-security.png
-  [Gegenseitige Zertifikate]: ./media/api-management-howto-mutual-certificates/api-management-mutual-certificates.png
-  [Zertifikat auswählen]: ./media/api-management-howto-mutual-certificates/api-management-select-certificate.png
-  [API-Änderungen speichern]: ./media/api-management-howto-mutual-certificates/api-management-save-api.png
-  [Zertifikatsrichtlinie]: ./media/api-management-howto-mutual-certificates/api-management-certificate-policy.png
+  [api-management-security-client-certificates]: ./media/api-management-howto-mutual-certificates/api-management-security-client-certificates.png
+  [api-management-upload-certificate]: ./media/api-management-howto-mutual-certificates/api-management-upload-certificate.png
+  [api-management-upload-certificate-form]: ./media/api-management-howto-mutual-certificates/api-management-upload-certificate-form.png
+  [api-management-certificate-uploaded]: ./media/api-management-howto-mutual-certificates/api-management-certificate-uploaded.png
+  [api-management-certificate-delete]: ./media/api-management-howto-mutual-certificates/api-management-certificate-delete.png
+  [api-management-confirm-delete]: ./media/api-management-howto-mutual-certificates/api-management-confirm-delete.png
+  [api-management-confirm-delete-policy]: ./media/api-management-howto-mutual-certificates/api-management-confirm-delete-policy.png
+
+  [api-management-api-security]: ./media/api-management-howto-mutual-certificates/api-management-api-security.png
+  [api-management-mutual-certificates]: ./media/api-management-howto-mutual-certificates/api-management-mutual-certificates.png
+  [api-management-select-certificate]: ./media/api-management-howto-mutual-certificates/api-management-select-certificate.png
+  [api-management-save-api]: ./media/api-management-howto-mutual-certificates/api-management-save-api.png
+  [api-management-certificate-policy]: ./media/api-management-howto-mutual-certificates/api-management-certificate-policy.png

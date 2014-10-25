@@ -6,7 +6,7 @@
 
 API Management bietet Benutzern die Möglichkeit, mithilfe der OAuth 2.0-Autorisierung auf das Entwicklerportal zuzugreifen. Diese Anleitung beschreibt, wie Sie eine Instanz des API-Verwaltungsdiensts zur Verwendung der OAuth 2.0-Autorisierung konfigurieren.
 
-> Weitere Informationen zu OAuth 2.0 finden Sie in der Spezifikation unter [][]<http://oauth.net/2/></a>.
+> Weitere Informationen zu OAuth 2.0 finden Sie in der Spezifikation unter [http://oauth.net/2/][http://oauth.net/2/].
 
 ## In diesem Thema
 
@@ -25,17 +25,17 @@ Diese Anleitung beschreibt, wie Sie eine Instanz des API-Verwaltungsdiensts zur 
 
 Klicken Sie zunächst in der **Verwaltungskonsole** im Azure-Portal auf Ihren API-Verwaltungsdienst. Daraufhin gelangen Sie zum Verwaltungsportal für die API-Verwaltung.
 
-![API-Verwaltungskonsole][API-Verwaltungskonsole]
+![API-Verwaltungskonsole][api-management-management-console]
 
 > Falls Sie noch keine API-Verwaltungs-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API-Verwaltungsinstanz][Erstellen einer API-Verwaltungsinstanz] im Lernprogramm [Erste Schritte mit der Azure API-Verwaltung][Erste Schritte mit der Azure API-Verwaltung].
 
 Klicken Sie auf **Sicherheit** im Menü **API-Verwaltung** auf der linken Seite, klicken Sie auf **OAuth 2.0** und dann auf **Autorisierungsserver hinzufügen**.
 
-![OAuth 2.0][OAuth 2.0]
+![OAuth 2.0][api-management-oauth2]
 
 Nachdem Sie auf **Autorisierungsserver hinzufügen** geklickt haben, wird das Formular für neue Autorisierungsserver angezeigt.
 
-![Neuer Server][Neuer Server]
+![Neuer Server][api-management-oauth2-server-1]
 
 Geben Sie in die Felder **Name** und **Beschreibung** einen Namen bzw. eine optionale Beschreibung ein.
 
@@ -45,7 +45,7 @@ Geben Sie die **URL der Client-Registrierungsseite** ein. Auf dieser Seite könn
 
 Der nächste Abschnitt des Formulars enthält die Einstellungen **Autorisierungscode-Berechtigungstypen**, **Autorisierungsendpunkt-URL** und **Autorisierungsanforderungsmethode**.
 
-![Neuer Server][1]
+![Neuer Server][api-management-oauth2-server-2]
 
 Geben Sie die **Autorisierungscode-Berechtigungstypen** an, indem Sie die gewünschten Typen aktivieren. **Autorisierungscode** wird standardmäßig festgelegt.
 
@@ -57,7 +57,7 @@ Die **Autorisierungsanforderungsmethode** legt fest, wie die Autorisierungsanfor
 
 Im nächsten Abschnitt werden **Token-Endpunkt-URL**, **Client-Authentifizierungsmethoden**, **Sendemethode für Zugriffstoken** und **Standardmäßiger Geltungsbereich** angegeben.
 
-![Neuer Server][2]
+![Neuer Server][api-management-oauth2-server-3]
 
 Für einen Azure Active Directory OAuth 2.0-Server hat die **Token-Endpunkt-URL** das folgende Format, wobei `<APPID>` das Format `yourapp.onmicrosoft.com` hat.
 
@@ -67,11 +67,11 @@ Die Standardeinstellung für **Client-Authentifizierungsmethoden** lautet **Basi
 
 Der Abschnitt **Client-Berechtigungen** enthält **Client-ID** und **Geheimer Clientschlüssel**, die bei der Erstellung und Konfiguration Ihres OAuth 2.0-Servers festgelegt werden. Sobald **Client-ID** und **Geheimer Clientschlüssel** angegeben wurden, wird die **redirect\_uri** für den **Autorisierungscode** erzeugt. Die URI wird zum Konfigurieren der Antwort-URL in Ihrer OAuth 2.0-Serverkonfiguration verwendet.
 
-![Neuer Server][3]
+![Neuer Server][api-management-oauth2-server-4]
 
 Falls für **Autorisierungscode-Berechtigungstypen** die Einstellung **Ressourcenbesitzer-Kennwort** festgelegt ist, werden diese Berechtigungen im Abschnitt **Ressourcenbesitzer-Kennwortberechtigungen** festgelegt. Andernfalls lassen Sie den Abschnitt leer.
 
-![Neuer Server][4]
+![Neuer Server][api-management-oauth2-server-5]
 
 Nachdem Sie das Formular ausgefüllt haben, klicken Sie auf **Speichern**, um die OAuth 2.0-Autorisierungsserverkonfiguration für die API-Verwaltung zu speichern. Nach dem Speichern der Serverkonfiguration können Sie APIs wie im nächsten Abschnitt beschrieben zur Nutzung konfigurieren.
 
@@ -79,59 +79,59 @@ Nachdem Sie das Formular ausgefüllt haben, klicken Sie auf **Speichern**, um di
 
 Klicken Sie auf **APIs** im Menü **API-Verwaltung** auf der linken Seite, klicken Sie auf die gewünschte API und danach auf **Sicherheit**. Aktivieren Sie anschließend das Kontrollkästchen für **OAuth 2.0**.
 
-![Benutzerautorisierung][Benutzerautorisierung]
+![Benutzerautorisierung][api-management-user-authorization]
 
 Wählen Sie in der Dropdownliste den gewünschten **Autorisierungsserver**, und klicken Sie dann auf **Speichern**.
 
-![Benutzerautorisierung][5]
+![Benutzerautorisierung][api-management-user-authorization-save]
 
 ## <a name="step3"> </a>Testen der OAuth 2.0-Benutzerauthentifizierung im Entwicklerportal
 
 Nachdem Sie Ihren OAuth 2.0-Autorisierungsserver und Ihre API zu dessen Nutzung konfiguriert haben, können Sie ihn testen, indem Sie zum Entwicklerportal wechseln und eine API aufrufen. Klicken Sie im Menü oben rechts auf **Entwicklerportal**.
 
-![Entwicklerportal][Entwicklerportal]
+![Entwicklerportal][api-management-developer-portal-menu]
 
 Klicken Sie auf **APIs** im Hauptmenü und wählen Sie **Echo API** aus.
 
-![Echo API][Echo API]
+![Echo API][api-management-apis-echo-api]
 
 > Falls nur eine API konfiguriert oder für Ihr Konto sichtbar ist, können Sie auf APIs klicken, um direkt zu den Operationen für diese API zu gelangen.
 
 Wählen Sie die Operation **GET Resource** aus, klicken Sie auf **Konsole öffnen**, und wählen Sie dann aus der Dropdownliste **Autorisierungscode** aus.
 
-![Konsole öffnen][Konsole öffnen]
+![Konsole öffnen][api-management-open-console]
 
 Wenn der **Autorisierungscode** ausgewählt wurde, wird ein Popup-Fenster mit dem Anmeldeformular des OAuth 2.0-Anbieters angezeigt. In diesem Beispiel wird das Anmeldeformular von Azure Active Directory bereitgestellt.
 
 > Falls Sie Popup-Fenster deaktiviert haben, werden Sie dazu aufgefordert, sie im Browser zu aktivieren. Wählen Sie danach erneut **Autorisierungscode** aus. Daraufhin wird das Anmeldeformular angezeigt.
 
-![Anmelden][Anmelden]
+![Anmelden][api-management-oauth2-signin]
 
 Nachdem Sie sich angemeldet haben, werden die **Anforderungsheader** mit einem `Authorization : Bearer`-Header ausgefüllt, der die Anforderung autorisiert.
 
-![Token des Anforderungsheaders][Token des Anforderungsheaders]
+![Token des Anforderungsheaders][api-management-request-header-token]
 
 Nun können Sie die gewünschten Werte für die restlichen Parameter konfigurieren und die Anforderung absenden.
 
-  []: http://oauth.net/2/
+  [http://oauth.net/2/]: http://oauth.net/2/
   [Voraussetzungen]: #prerequisites
   [Konfigurieren eines OAuth 2.0-Autorisierungsservers in API Management]: #step1
   [Konfigurieren einer API zum Verwenden der OAuth 2.0-Benutzerauthentifizierung]: #step2
   [Testen der OAuth 2.0-Benutzerauthentifizierung im Entwicklerportal]: #step3
   [WebApp-GraphAPI-DotNet]: https://github.com/AzureADSamples/WebApp-GraphAPI-DotNet
-  [API-Verwaltungskonsole]: ./media/api-management-howto-oauth2/api-management-management-console.png
   [Erstellen einer API-Verwaltungsinstanz]: ../api-management-get-started/#create-service-instance
   [Erste Schritte mit der Azure API-Verwaltung]: ../api-management-get-started
-  [OAuth 2.0]: ./media/api-management-howto-oauth2/api-management-oauth2.png
-  [Neuer Server]: ./media/api-management-howto-oauth2/api-management-oauth2-server-1.png
-  [1]: ./media/api-management-howto-oauth2/api-management-oauth2-server-2.png
-  [2]: ./media/api-management-howto-oauth2/api-management-oauth2-server-3.png
-  [3]: ./media/api-management-howto-oauth2/api-management-oauth2-server-4.png
-  [4]: ./media/api-management-howto-oauth2/api-management-oauth2-server-5.png
-  [Benutzerautorisierung]: ./media/api-management-howto-oauth2/api-management-user-authorization.png
-  [5]: ./media/api-management-howto-oauth2/api-management-user-authorization-save.png
-  [Entwicklerportal]: ./media/api-management-howto-oauth2/api-management-developer-portal-menu.png
-  [Echo API]: ./media/api-management-howto-oauth2/api-management-apis-echo-api.png
-  [Konsole öffnen]: ./media/api-management-howto-oauth2/api-management-open-console.png
-  [Anmelden]: ./media/api-management-howto-oauth2/api-management-oauth2-signin.png
-  [Token des Anforderungsheaders]: ./media/api-management-howto-oauth2/api-management-request-header-token.png
+  [api-management-management-console]: ./media/api-management-howto-oauth2/api-management-management-console.png
+  [api-management-oauth2]: ./media/api-management-howto-oauth2/api-management-oauth2.png
+  [api-management-user-authorization]: ./media/api-management-howto-oauth2/api-management-user-authorization.png
+  [api-management-user-authorization-save]: ./media/api-management-howto-oauth2/api-management-user-authorization-save.png
+  [api-management-oauth2-signin]: ./media/api-management-howto-oauth2/api-management-oauth2-signin.png
+  [api-management-request-header-token]: ./media/api-management-howto-oauth2/api-management-request-header-token.png
+  [api-management-developer-portal-menu]: ./media/api-management-howto-oauth2/api-management-developer-portal-menu.png
+  [api-management-open-console]: ./media/api-management-howto-oauth2/api-management-open-console.png
+  [api-management-oauth2-server-1]: ./media/api-management-howto-oauth2/api-management-oauth2-server-1.png
+  [api-management-oauth2-server-2]: ./media/api-management-howto-oauth2/api-management-oauth2-server-2.png
+  [api-management-oauth2-server-3]: ./media/api-management-howto-oauth2/api-management-oauth2-server-3.png
+  [api-management-oauth2-server-4]: ./media/api-management-howto-oauth2/api-management-oauth2-server-4.png
+  [api-management-oauth2-server-5]: ./media/api-management-howto-oauth2/api-management-oauth2-server-5.png
+  [api-management-apis-echo-api]: ./media/api-management-howto-oauth2/api-management-apis-echo-api.png

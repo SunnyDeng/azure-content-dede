@@ -6,13 +6,13 @@
 
 ## <a name="webclient"></a>Einrichten der Webnutzungsanalysen
 
-Falls Sie es noch nicht getan haben, [fügen Sie Ihrem Webprojekt Application Insights hinzu][fügen Sie Ihrem Webprojekt Application Insights hinzu].
+Falls Sie es noch nicht getan haben, [fügen Sie Ihrem Webprojekt Application Insights hinzu][start].
 
 ## <a name="usage"></a>Nutzungsanalyse
 
 Im Anwendungsübersichtsfenster werden Ihnen folgende Nutzungs-Tiles angezeigt:
 
-![][0]
+![](./media/appinsights/appinsights-47usage.png)
 
 ### Sessions per browser
 
@@ -26,13 +26,13 @@ Zeigt die Gesamtzählerstände der letzten 24 Stunden an.
 
 Klicken Sie auf das Seitenaufrufe-Tile, um einen detaillierteren Verlauf anzuzeigen.
 
-![][1]
+![](./media/appinsights/appinsights-49usage.png)
 
 Klicken Sie auf den Zeitraum, um den bis zu sieben Tage zurückliegenden Verlauf anzuzeigen.
 
 Klicken Sie auf einen Graphen, um andere mögliche Metriken anzuzeigen.
 
-![][2]
+![](./media/appinsights/appinsights-63usermetrics.png)
 
 ## Custom page counts
 
@@ -50,13 +50,13 @@ Normalerweise wird die Seitenaufruf-Telemetrie von Application Insights analysie
 
 Legen Sie im Fenster "Diagnosesuche" als Filter die Einstellung "Seitenansicht" fest.
 
-![][3]
+![](./media/appinsights/appinsights-51searchpageviews.png)
 
 Wählen Sie ein Ereignis, um weitere Details anzuzeigen.
 
-> [WACOM.NOTE] Falls Sie [Suche][Suche] verwenden, beachten Sie, dass nur ganze Wörter verglichen werden: „Abou“ und „bout“ stimmen nicht mit „About“ überein, „Abou\*“ jedoch stimmt überein. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „\*bou“ nicht „About“.
+> [WACOM.NOTE] Falls Sie [Suche][diagnostic] verwenden, beachten Sie, dass nur ganze Wörter verglichen werden: „Abou“ und „bout“ stimmen nicht mit „About“ überein, „Abou\*“ jedoch stimmt überein. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „\*bou“ nicht „About“.
 
-> [Erfahren Sie mehr über Diagnosesuche][Suche]
+> [Erfahren Sie mehr über Diagnosesuche][diagnostic]
 
 ## Nachverfolgen der Nutzung
 
@@ -64,24 +64,24 @@ Wählen Sie ein Ereignis, um weitere Details anzuzeigen.
 
 ## Weitere Informationen
 
--   [Application Insights – Erste Schritte][fügen Sie Ihrem Webprojekt Application Insights hinzu]
--   [Live-Webserver jetzt überwachen][Live-Webserver jetzt überwachen]
--   [Leistung in Webanwendungen überwachen][Leistung in Webanwendungen überwachen]
--   [Diagnoseprotokolle durchsuchen][Suche]
--   [Nachverfolgung der Verfügbarkeit mit Webtests][Nachverfolgung der Verfügbarkeit mit Webtests]
--   [Nutzung nachverfolgen][Nutzung nachverfolgen]
--   [Fragen und Antworten, Problembehandlung][Fragen und Antworten, Problembehandlung]
+-   [Application Insights – Erste Schritte][start]
+-   [Live-Webserver jetzt überwachen][redfield]
+-   [Leistung in Webanwendungen überwachen][perf]
+-   [Diagnoseprotokolle durchsuchen][diagnostic]
+-   [Nachverfolgung der Verfügbarkeit mit Webtests][availability]
+-   [Nutzung nachverfolgen][usage]
+-   [Fragen und Antworten, Problembehandlung][qna]
 
 <!--Link references-->
 
-  [fügen Sie Ihrem Webprojekt Application Insights hinzu]: ../app-insights-start-monitoring-app-health-usage/
+  [start]: ../app-insights-start-monitoring-app-health-usage/
   [0]: ./media/appinsights/appinsights-47usage.png
   [1]: ./media/appinsights/appinsights-49usage.png
   [2]: ./media/appinsights/appinsights-63usermetrics.png
   [3]: ./media/appinsights/appinsights-51searchpageviews.png
-  [Suche]: ../app-insights-search-diagnostic-logs/
-  [Live-Webserver jetzt überwachen]: ../app-insights-monitor-performance-live-website-now/
-  [Leistung in Webanwendungen überwachen]: ../app-insights-web-monitor-performance/
-  [Nachverfolgung der Verfügbarkeit mit Webtests]: ../app-insights-monitor-web-app-availability/
-  [Nutzung nachverfolgen]: ../app-insights-web-track-usage/
-  [Fragen und Antworten, Problembehandlung]: ../app-insights-troubleshoot-faq/
+  [diagnostic]: ../app-insights-search-diagnostic-logs/
+  [redfield]: ../app-insights-monitor-performance-live-website-now/
+  [perf]: ../app-insights-web-monitor-performance/
+  [availability]: ../app-insights-monitor-web-app-availability/
+  [usage]: ../app-insights-web-track-usage/
+  [qna]: ../app-insights-troubleshoot-faq/

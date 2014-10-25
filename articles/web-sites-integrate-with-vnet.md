@@ -22,7 +22,7 @@ Sie haben die Möglichkeit, sich mit einem neuen oder bereits vorhandenen virtue
 
 Wenn Ihre Website nicht auf einer Standardebene ausgeführt wird, erhalten Sie einen Hinweis mit einem Link zu den entsprechenden Preisebenen.
 
-![][]
+![](./media/web-sites-integrate-with-vnet/upgrade-to-standard.png)
 
 ## Wie das System funktioniert
 
@@ -30,7 +30,7 @@ Unter der Oberfläche verwendet dieses Funktion Punkt-zu-Standort-VPN-Technologi
 
 Wenn Ihre Netzwerke nur für Websites gesichert sind, die Zugriff benötigen, können keine SMB-Verbindungen erstellt werden. Während Sie auf Remote-Ressourcen zugreifen können, wird der Einbau eines Remote-Laufwerks nicht unterstützt.
 
-![][1]
+![](./media/web-sites-integrate-with-vnet/how-it-works.png)
 
 Wenn Sie keinen DNS-Server mit Ihrem virtuellen Netzwerk konfiguriert haben, müssen Sie eine IP-Adresse verwenden. Achten Sie darauf, die Ports für Ihre gewünschten Endpunkte durch Ihre Firewall zu exponieren. Um Ihre Verbindung zu testen, müssen Sie eine Website oder einen Webjob verwenden, um die gewünschten Endpunkte aufzurufen. Tools wie Ping oder nslookup können derzeit nicht über die Kudu-Konsole ausgeführt werden. Diese Optionen sollen in naher Zukunft zur Verfügung stehen.
 
@@ -38,7 +38,7 @@ Wenn Sie keinen DNS-Server mit Ihrem virtuellen Netzwerk konfiguriert haben, mü
 
 Um einen Standort mit einem virtuellen Netzwerk zu verbinden, klicken Sie in Ihrem Websitefenster auf das virtuelle Netzwerk-Tile im Abschnitt "Netzwerk" und wählen eines Ihrer bereits vorhandenen Netzwerke aus.
 
-![][2]
+![](./media/web-sites-integrate-with-vnet/connect-to-existing-vnet.png)
 
 Das System erstellt dann ein Zertifikat, um mit Ihrem VNET zu authentifizieren, ob es sich um die erste Website in Ihrem Abonnement handelt, um eine Verbindung zu diesem Netzwerk herzustellen. Um die Übergabe des Zertifikats an das aktuelle Portal anzuzeigen, navigieren Sie zu "Virtuelle Netzwerke" und wählen das Netzwerk und die Registerkarte "Zertifikate" aus.
 
@@ -48,17 +48,17 @@ Die Abbildung oben zeigt ein Netzwerk mit dem Namen "cantConnectVnet", das ausge
 
 Neben der Verbindung mit einem bereits bestehenden VNET können Sie auch ein neues VNET von der Website-Benutzeroberfläche aus erstellen und sich automatisch mit ihm verbinden. Befolgen Sie hierzu die gleichen Schritte wie bei der Verbindung mit der Benutzeroberfläche des virtuellen Netzwerkes, und wählen Sie "Neues virtuelles Netzwerk erstellen". Mit der angezeigten Benutzeroberfläche können Sie das Netzwerk benennen, den Adressraum spezifizieren und die Adressen für die DNS-Server einrichten, die vom virtuellen Netzwerk verwendet werden sollen.
 
-![][3]
+![](./media/web-sites-integrate-with-vnet/create-new-vnet.png)
 
 Die Erstellung eines neuen virtuellen Netzwerks mit konfigurierten Gateways kann bis zu 30 Minuten in Anspruch nehmen. Während dieser Zeit wird die folgende Meldung angezeigt:
 
-![][4]
+![](./media/web-sites-integrate-with-vnet/new-vnet-progress.png)
 
 Sobald das Netzwerk mit der Website verbunden wurde, wird diese über Zugriff auf Ressourcen in diesem VNET über TCP oder UDP verfügen. Wenn Sie auf Ressourcen in Ihrem lokalen System zugreifen möchten, die über Standort-zu-Standort-VPN-Zugriff auf Ihrem VNET verfügbar sind, müssen Sie Routen in Ihrem eigenen Firmennetzwerk hinzufügen, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem VNET konfigurierten Punkt-zu-Standort-Adressen zu erlauben.
 
 Nach erfolgreicher Integration wird das Portal grundlegende Informationen über die Verbindung anzeigen. Sie können die Website vom Netz trennen und die Zertifikate für die Verbindungsauthentifizierung synchronisieren. Die Synchronisation kann erforderlich sein, wenn ein Zertifikat abgelaufen ist oder widerrufen wurde.
 
-![][5]
+![](./media/web-sites-integrate-with-vnet/vnet-status-portal.png)
 
 Verwaltung der virtuellen Netzwerkverbindung
 Im Webhostingplan-Fenster können Sie eine Liste mit allen virtuellen Netzwerken anzeigen, die aktuell Standorten in einem Webhostingplan zugeordnet sind. Sie können einem Standard-Webhostingplan maximal 5 Netzwerke zuordnen.
@@ -71,19 +71,19 @@ Zu diesem Zeitpunkt ist es in Azure nicht möglich, einen vorhandenen virtuellen
 
 Bei der Arbeit mit einem VNET, das mit Standort-zu-Standort-VPN konfiguriert wurde, ist ein zusätzlicher Schritt erforderlich, um Zugriff auf Ihre lokalen Ressourcen von Ihrer Azure-Website bereitzustellen. Routen müssen zu Ihrem lokalen Netzwerk hinzugefügt werden, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem VNET konfigurierten Punkt-zu-Standort-Adressen zu ermöglichen. Um Ihren IP-Bereich für Ihre Punkt-zu-Standort-Konnektivität anzuzeigen, gehen Sie wie hier dargestellt auf den Netzwerkbereich im aktuellen Portal.
 
-![][6]
+![](./media/web-sites-integrate-with-vnet/vpn-to-onpremise.png)
 
 ## Zertifikate
 
 Um eine sichere Verbindung mit Ihrem VNET zu etablieren, werden Zertifikate ausgetauscht. Sie können den Fingerabdruck für das öffentliche Zertifikat, das Azure Websites aus dem aktuellen Netzwerkportal erzeugt, wie unten dargestellt anzeigen.
 
-![][7]
+![](./media/web-sites-integrate-with-vnet/vpn-to-onpremise-certificate.png)
 
 Wenn die Zertifikate aus irgendeinem Grund, wie versehentlichem Löschen aus dem Netzwerkportal, nicht mehr synchron sind, wird die Konnektivität unterbrochen. Über die Aktion "Verbindung synchronisieren" auf der Benutzeroberfläche des virtuellen Netzwerks von Azure Websites können Sie dieses Problem beheben und die Konnektivität wiederherstellen.
 
 Diese Aktion müssen Sie auch verwenden, um Ihrem virtuellen Netzwerk ein DNS oder Ihrem Netzwerk Standort-zu-Standort-VPN hinzuzufügen.
 
-![][8]
+![](./media/web-sites-integrate-with-vnet/vnet-sync-connection.png)
 
 ## Mit Hybridverbindungen vergleichen und kontrastieren
 

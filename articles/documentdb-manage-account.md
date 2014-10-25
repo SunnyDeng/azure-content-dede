@@ -6,11 +6,11 @@
 
 ## Inhaltsverzeichnis
 
--   [Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von DocumentDB-Zugriffsschlüsseln][Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von DocumentDB-Zugriffsschlüsseln]
--   [Gewusst wie: Verwalten von DocumentDB-Konsistenzeinstellungen][Gewusst wie: Verwalten von DocumentDB-Konsistenzeinstellungen]
--   [Gewusst wie: Verwalten von DocumentDB-Kapazitätseinstellungen][Gewusst wie: Verwalten von DocumentDB-Kapazitätseinstellungen]
--   [Gewusst wie: Löschen eines DocumentDB-Kontos][Gewusst wie: Löschen eines DocumentDB-Kontos]
--   [Nächste Schritte][Nächste Schritte]
+-   [Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von DocumentDB-Zugriffsschlüsseln](#keys)
+-   [Gewusst wie: Verwalten von DocumentDB-Konsistenzeinstellungen](#consistency)
+-   [Gewusst wie: Verwalten von DocumentDB-Kapazitätseinstellungen](#capacity)
+-   [Gewusst wie: Löschen eines DocumentDB-Kontos](#delete)
+-   [Nächste Schritte](#next)
 
 ## <span id="keys"></span></a>Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Zugriffsschlüsseln
 
@@ -21,15 +21,12 @@ DocumentDB Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des
 Zugriffs auf das DocumentDB-Konto.
 
 Greifen Sie im [Azure-Verwaltungsvorschau-
-Portal][Azure-Verwaltungsvorschau-
-Portal][Azure-Verwaltungsvorschau-
-Portal][Azure-Verwaltungsvorschau-
-Portal]
+Portal](https://portal.azure.com/)[](http://manage.windowsazure.com)
 auf den Bereich **Schlüssel** des DocumentDB-Kontofensters zu,
 um die für den Zugriff auf Ihr DocumentDB-Konto verwendeten Schlüssel
 anzuzeigen, zu kopieren und neu zu generieren.
 
-![][]
+![](./media/documentdb-manage-account/image002.jpg)
 
 ### Anzeigen und Kopieren eines Zugriffsschlüssels
 
@@ -44,7 +41,7 @@ neben dem zu kopierenden Schlüssel.
 
 4.      Drücken Sie STRG+C, um den Schlüssel zu kopieren.
 
-  ![][1]
+  ![](./media/documentdb-manage-account/image004.jpg)
 
 ### Erneutes Generieren von Zugriffsschlüsseln
 
@@ -67,8 +64,7 @@ es sei denn, Sie führen einen Rollup für die Schlüssel aus. Sie können wie f
 damit er auf den sekundären Zugriffsschlüssel des DocumentDB-Kontos verweist.
 
 2.      Generieren Sie den primären Zugriffsschlüssel für Ihr DocumentDB-Konto.
-Greifen Sie im [Azure-Verwaltungsvorschau-Portal][Azure-Verwaltungsvorschau-
-Portal]
+Greifen Sie im [Azure-Verwaltungsvorschau-Portal](https://portal.azure.com/)
  auf Ihr DocumentDB-Konto zu.
 
 3.      Klicken Sie in der Zusammenfassung auf **Schlüssel**.
@@ -108,15 +104,12 @@ Subset von Schreibvorgängen ergeben und schließlich konvergieren.
 
 *Beachten Sie, dass DocumentDB-Konten standardmäßig über die Konsistenzebene "Session"
 verfügen.  Weitere Informationen zu DocumentDB-Konsistenzeinstellungen finden
-Sie im Abschnitt [Konsistenzebene.
-][Konsistenzebene.
-]*
+Sie im Abschnitt [Konsistenzebene](http://go.microsoft.com/fwlink/p/?LinkId=402365).*
 
 ### Festlegen der standardmäßigen Konsistenz für ein DocumentDB-Konto
 
 1.      Greifen Sie im [Azure-Verwaltungsvorschau-
-Portal][Azure-Verwaltungsvorschau-
-Portal] auf Ihr DocumentDB-Konto zu. 
+Portal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
 
 2.      Klicken Sie in der Konfiguration auf **Schlüssel**.
 
@@ -128,9 +121,9 @@ standardmäßig zu verwendende Konsistenzebene.
 5.      Sie können den Fortschritt des Vorgangs im Benachrichtigungs-Hub
 des Azure-Verwaltungsvorschau-Portals überwachen.
 
-![][2]
+ ![](./media/documentdb-manage-account/image005.png)
 
-![][3]
+ ![](./media/documentdb-manage-account/image006.png)
 
 *Beachten Sie, dass es einige Minuten in Anspruch nehmen kann, bis sich
 die Änderung der Standardkonsistenz auf Ihr DocumentDB-Konto auswirkt.*
@@ -150,8 +143,7 @@ indem Sie Kapazitätseinheiten über das Azure-Verwaltungsvorschau-Portal hinzuf
 ### Hinzufügen oder Entfernen von Kapazitätseinheiten
 
 1.      Greifen Sie im [Azure-Verwaltungsvorschau-
-Portal][Azure-Verwaltungsvorschau-
-Portal] auf Ihr DocumentDB-Konto zu. 
+Portal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
 
 2.      Klicken Sie im Bereich "Nutzung" auf **Skalieren**.
 
@@ -165,7 +157,7 @@ Azure-Verwaltungsvorschau-Portals überwachen.)
 *Beachten Sie, dass die DocumentDB-Vorschau maximal 5 Kapazitäts-
 einheiten je DocumentDB-Konto unterstützt.*
 
-![][4]
+![](./media/documentdb-manage-account/image007.png)
 
  
 
@@ -181,7 +173,7 @@ aus einem gelöschten DocumentDB-Konto.  Beim Löschen eines DocumentDB-Kontos
 werden alle Ressourcen des Kontos einschließlich Datenbanken, Sammlungen,
 Dokumenten und Anhängen gelöscht.*
 
-![][5]
+![](./media/documentdb-manage-account/image009.png)
 
 1.      Greifen Sie im [Azure-Verwaltungsvorschau-
 Portal][Azure-Verwaltungsvorschau-
@@ -198,11 +190,10 @@ DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
 ## <span id="next"></span></a>Nächste Schritte
 
 -   Erfahren Sie mehr über die [ersten Schritte mit Ihrem DocumentDB-
-    Konto][ersten Schritte mit Ihrem DocumentDB-
-    Konto].
+    Konto](http://go.microsoft.com/fwlink/p/?LinkId=402364).
 -   Weitere Informationen über DocumentDB finden Sie in der Azure DocumentDB-
     Dokumentation unter
-    [azure.com][azure.com]
+    [azure.com](http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409)
 
  
 
@@ -211,17 +202,14 @@ DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
   [Gewusst wie: Verwalten von DocumentDB-Kapazitätseinstellungen]: #capacity
   [Gewusst wie: Löschen eines DocumentDB-Kontos]: #delete
   [Nächste Schritte]: #next
-  [Azure-Verwaltungsvorschau-
-  Portal]: https://portal.azure.com/
+  [Azure-Verwaltungsvorschau-Portal]: https://portal.azure.com/
   []: http://manage.windowsazure.com
   []: ./media/documentdb-manage-account/image002.jpg
   [1]: ./media/documentdb-manage-account/image004.jpg
-  [Konsistenzebene.
-  ]: http://go.microsoft.com/fwlink/p/?LinkId=402365
+  [Konsistenzebene]: http://go.microsoft.com/fwlink/p/?LinkId=402365
   [2]: ./media/documentdb-manage-account/image005.png
   [3]: ./media/documentdb-manage-account/image006.png
   [4]: ./media/documentdb-manage-account/image007.png
   [5]: ./media/documentdb-manage-account/image009.png
-  [ersten Schritte mit Ihrem DocumentDB-
-  Konto]: http://go.microsoft.com/fwlink/p/?LinkId=402364
+  [ersten Schritte mit Ihrem DocumentDB-Konto]: http://go.microsoft.com/fwlink/p/?LinkId=402364
   [azure.com]: http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409

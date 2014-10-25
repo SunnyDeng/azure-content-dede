@@ -15,4 +15,4 @@ Der letzte optionale Schritt dieses Lernprogramms besteht darin, die mit dem mob
 
   [Anmelden zum Verwalten der SQL-Datenbank]: ./media/mobile-services-dotnet-backend-view-sql-data/manage-sql-azure-database.png
   [gespeicherte Elemente der SQL-Datenbank abfragen]: ./media/mobile-services-dotnet-backend-view-sql-data/sql-azure-query.png
-  [EntityData]: http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.mobile.service.entitydata.aspx
+  [EntityData]: http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.mobile.service.entitydata.aspx

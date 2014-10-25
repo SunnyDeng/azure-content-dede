@@ -6,7 +6,7 @@
 
 ## Einführung
 
-Die [rollenbasierte Zugriffssteuerung][rollenbasierte Zugriffssteuerung] ist eine leistungsstarke Funktion, mit der Sie Zugriffsberechtigungen für Azure-Ressourcen differenziert steuern können. Gewähren Sie einem bestimmten Benutzer einfach und sicher Zugriff auf genau die Ressourcen, die er benötigt. In einigen Fällen kann das Ressourcen-Modell für Azure-Ressourcen jedoch kompliziert sein, und es ist nicht immer leicht ersichtlich, wofür Sie Berechtigungen vergeben.
+Die [rollenbasierte Zugriffssteuerung](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-configure/) ist eine leistungsstarke Funktion, mit der Sie Zugriffsberechtigungen für Azure-Ressourcen differenziert steuern können. Gewähren Sie einem bestimmten Benutzer einfach und sicher Zugriff auf genau die Ressourcen, die er benötigt. In einigen Fällen kann das Ressourcen-Modell für Azure-Ressourcen jedoch kompliziert sein, und es ist nicht immer leicht ersichtlich, wofür Sie Berechtigungen vergeben.
 
 In diesem Dokument erhalten Sie ausführliche Informationen über die Nutzung einiger der neuen Rollen im Vorschauportal. Diese Version von Azure umfasst drei integrierte Rollen:
 
@@ -14,7 +14,7 @@ In diesem Dokument erhalten Sie ausführliche Informationen über die Nutzung ei
 -   Mitwirkender
 -   Leser
 
-Besitzer und Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, mit dem Unterschied, dass Mitwirkende anderen Benutzern oder Gruppen keinen Zugriff gewähren können. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. [In diesem Artikel][rollenbasierte Zugriffssteuerung] finden Sie genaue Informationen zum Gewähren von Zugriffen.
+Besitzer und Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, mit dem Unterschied, dass Mitwirkende anderen Benutzern oder Gruppen keinen Zugriff gewähren können. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. [In diesem Artikel](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-configure/) finden Sie genaue Informationen zum Gewähren von Zugriffen.
 
 ## Website-Arbeitsauslastung
 
@@ -39,7 +39,7 @@ Wenn Sie auf keine dieser Funktionen zugreifen können, benötigen Sie Zugriff a
 
 Websites können aufgrund verschiedener miteinander verknüpfter Ressourcen kompliziert sein. Im Folgenden ist eine typische Ressourcengruppe mit einigen Websites dargestellt:
 
-![Website-Ressourcengruppe][Website-Ressourcengruppe]
+![Website-Ressourcengruppe](./media/role-based-access-control-troubleshooting/Website-resource-model.png)
 
 Wenn Sie daher lediglich auf die Website Zugriff gewähren, sind viele Funktionen des Website-Fensters vollständig deaktiviert.
 
@@ -83,5 +83,3 @@ Virtuelle Computer verfügen über folgende zugehörige Ressourcen:
 
 Wenn Sie auf keines dieser Elemente zugreifen können, fragen Sie den Administrator nach Zugriff als Mitwirkender auf diese Ressourcengruppe.
 
-  [rollenbasierte Zugriffssteuerung]: http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-configure/
-  [Website-Ressourcengruppe]: ./media/role-based-access-control-troubleshooting/Website-resource-model.png

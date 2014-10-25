@@ -14,24 +14,24 @@ Mit Application Insights können Sie Ihre Live-Anwendung auf folgende Parameter 
 
 Die Konfiguration ist sehr einfach und liefert nach wenigen Minuten Resultate. Derzeit unterstützen wir ASP.NET-Webanwendungen (auf Ihrem eigenen Server oder auf Azure).
 
-Sie benötigen ein Konto für [Microsoft Azure][Microsoft Azure] (es gibt eine kostenlose Testperiode).
+Sie benötigen ein Konto für [Microsoft Azure](http://azure.com) (es gibt eine kostenlose Testperiode).
 
 Es gibt zwei Möglichkeiten, um Application Insights einzusetzen:
 
--   [Application Insights Ihrem App-Projekt in Visual Studio hinzufügen][Application Insights Ihrem App-Projekt in Visual Studio hinzufügen], um die Leistung und Nutzung der Anwendung zu überwachen (empfohlen).
--   [Agent ohne erneute Bereitstellung auf Ihrem Server installieren][Agent ohne erneute Bereitstellung auf Ihrem Server installieren] – Eine Live-Website überwachen, ohne Ihren Quellcode neu bereitzustellen oder zu verändern. Mit dieser Option können Sie Leistung und Ausnahmefehler überwachen. Eine Nutzungsüberwachung können Sie später hinzufügen.
+-   [Application Insights Ihrem App-Projekt in Visual Studio hinzufügen](#add), um die Leistung und Nutzung der Anwendung zu überwachen (empfohlen).
+-   [Agent ohne erneute Bereitstellung auf Ihrem Server installieren][redfield] – Eine Live-Website überwachen, ohne Ihren Quellcode neu bereitzustellen oder zu verändern. Mit dieser Option können Sie Leistung und Ausnahmefehler überwachen. Eine Nutzungsüberwachung können Sie später hinzufügen.
 
-> [WACOM.NOTE] Es gibt eine [ältere Version von Application Insights][ältere Version von Application Insights] in Visual Studio Online, die eine größere Palette von Anwendungen unterstützt. Wir entwickeln sie von Grund auf neu als Teil von Microsoft Azure, und über diese neue Version informieren Sie sich gerade.
+> [WACOM.NOTE] Es gibt eine [ältere Version von Application Insights](http://msdn.microsoft.com/en-us/library/dn481095.aspx)in Visual Studio Online, die eine größere Palette von Anwendungen unterstützt. Wir entwickeln sie von Grund auf neu als Teil von Microsoft Azure, und über diese neue Version informieren Sie sich gerade.
 
 ## <a name="add"></a>Application Insights Ihrem Projekt hinzufügen
 
-Sie benötigen [Visual Studio 2013 Update 3][Visual Studio 2013 Update 3] (oder höher).
+Sie benötigen [Visual Studio 2013 Update 3](http://go.microsoft.com/fwlink/?linkid=397827&clcid=0x409) (oder höher).
 
 ### Falls es sich um ein neues Projekt handelt …
 
 Wenn Sie in Visual Studio 2013 ein neues Projekt erstellen, achten Sie darauf, dass Application Insights ausgewählt ist.
 
-![Erstellen eines ASP.NET-Projekts][Erstellen eines ASP.NET-Projekts]
+![Erstellen eines ASP.NET-Projekts](./media/appinsights/appinsights-01-vsnewp1.png)
 
 Falls Sie erstmals ein Projekt erstellen, werden Sie nach einer Anmeldung bei Microsoft Azure Preview gefragt. (Dies ist nicht zu verwechseln mit Ihrem Visual Studio Online-Konto.)
 
@@ -43,7 +43,7 @@ Falls Sie der Azure-Ressource einen anderen Namen als ihrem Projekt zuweisen mö
 
 Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie "Application Insights hinzufügen".
 
-!["Application Insights hinzufügen" wählen]["Application Insights hinzufügen" wählen]
+!["Application Insights hinzufügen" wählen](./media/appinsights/appinsights-03-addExisting.png)
 
 *Zur Einrichtung von Webnutzungsanalysen ist es noch ein weiterer Schritt, aber lassen Sie uns zunächst einige Daten betrachten …*
 
@@ -53,19 +53,19 @@ Starten Sie Ihre Anwendung mit F5, und probieren Sie sie aus – öffnen Sie ve
 
 In Visual Studio sehen Sie eine Anzahl der empfangenen Ereignisse.
 
-![][]
+![](./media/appinsights/appinsights-09eventcount.png)
 
 ### <a name="monitor"></a>3. Anzeigen von Überwachungsdaten
 
 Öffnen Sie Application Insights von Ihrem Projekt aus.
 
-![Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und öffnen Sie das Azure-Portal][Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und öffnen Sie das Azure-Portal]
+![Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und öffnen Sie das Azure-Portal](./media/appinsights/appinsights-04-openPortal.png)
 
 Suchen Sie Daten in den **Application health**-Tiles. Zuerst sehen Sie lediglich einen oder zwei Punkte. Beispiel:
 
-![Zu mehr Daten durchklicken][Zu mehr Daten durchklicken]
+![Zu mehr Daten durchklicken](./media/appinsights/appinsights-41firstHealth.png)
 
-Klicken Sie auf ein Tile, um weitere Details anzuzeigen. Sie können die in den Berichten angezeigten Daten ändern. [Erfahren Sie mehr über das Konfigurieren von Application Health-Berichten.][Erfahren Sie mehr über das Konfigurieren von Application Health-Berichten.]
+Klicken Sie auf ein Tile, um weitere Details anzuzeigen. Sie können die in den Berichten angezeigten Daten ändern. [Erfahren Sie mehr über das Konfigurieren von Application Health-Berichten.][perf]
 
 ### <a name="webclient"></a>4. Einrichten der Webnutzungsanalysen
 
@@ -73,23 +73,23 @@ Falls Sie Application Insights einem *vorhandenen* Web-Projekt hinzugefügt habe
 
 Wählen Sie in Application Insights "Schnellstart", "Instrumentieren Ihrer Webseite".
 
-![In Ihrem Projekt in Application Insights auf "Schnellstart", "Instrumentieren Ihrer Webseite" klicken und den Code kopieren][In Ihrem Projekt in Application Insights auf "Schnellstart", "Instrumentieren Ihrer Webseite" klicken und den Code kopieren]
+![In Ihrem Projekt in Application Insights auf "Schnellstart", "Instrumentieren Ihrer Webseite" klicken und den Code kopieren](./media/appinsights/appinsights-06webcode.png)
 
 Fügen Sie den JavaScript-Code auf den zu überwachenden Webseiten direkt vor dem schließenden Tag \</head\> ein. In einem ASP.NET-Projekt besteht eine gute Methode zum Überwachen aller Webseiten darin, den Code in die Hauptseite zu kopieren – normalerweise mit `_SiteLayout` oder `Views\Shared\_Layout` benannt. Beachten Sie, dass der Code den Application Insights-Schlüssel Ihrer Anwendung enthält.
 
 Starten Sie Ihre Anwendung erneut. Daraufhin werden unter **Nutzungsanalyse** Daten angezeigt.
 
-![Zu mehr Daten durchklicken][1]
+![Zu mehr Daten durchklicken](./media/appinsights/appinsights-05-usageTiles.png)
 
-[Durch Diagramme klicken, um weitere Details anzuzeigen.][Erfahren Sie mehr über das Konfigurieren von Application Health-Berichten.]
+[Durch Diagramme klicken, um weitere Details anzuzeigen.][perf]
 
 ### <a name="deploy"></a>5. Bereitstellen Ihrer Anwendung
 
 Stellen Sie die Anwendung bereit, und lassen Sie die Daten ansammeln.
 
-Sobald Sie über eine Live-Anwendung verfügen, [richten Sie Webtests ein][richten Sie Webtests ein], um sicherzustellen, dass sie live bleibt.
+Sobald Sie über eine Live-Anwendung verfügen, [richten Sie Webtests ein][availability], um sicherzustellen, dass sie live bleibt.
 
-![Beispiel: Anwendungsüberwachung in Application Insights][Beispiel: Anwendungsüberwachung in Application Insights]
+![Beispiel: Anwendungsüberwachung in Application Insights](./media/appinsights/appinsights-00-appblade.png)
 
 ### Möchten Sie den Namen Ihrer Anwendung im Portal ändern?
 
@@ -113,42 +113,31 @@ Wechseln Sie danach zurück zum Portal, und löschen Sie die alte Ressource.
 
 ## <a name="next"></a>Nächste Schritte
 
-[Nutzung Ihrer Webanwendung nachverfolgen][Nutzung Ihrer Webanwendung nachverfolgen]
+[Nutzung Ihrer Webanwendung nachverfolgen][usage]
 
-[Leistung in Webanwendungen überwachen][Erfahren Sie mehr über das Konfigurieren von Application Health-Berichten.]
+[Leistung in Webanwendungen überwachen][perf]
 
-[Diagnoseprotokolle anlegen und durchsuchen][Diagnoseprotokolle anlegen und durchsuchen]
+[Diagnoseprotokolle anlegen und durchsuchen][diagnostic]
 
-[Problembehandlung][Problembehandlung]
+[Problembehandlung][qna]
 
 ## Weitere Informationen
 
--   [Application Insights – erste Schritte][Application Insights – erste Schritte]
--   [Live-Webserver jetzt überwachen][Agent ohne erneute Bereitstellung auf Ihrem Server installieren]
--   [Leistung in Webanwendungen überwachen][Erfahren Sie mehr über das Konfigurieren von Application Health-Berichten.]
--   [Diagnoseprotokolle durchsuchen][Diagnoseprotokolle anlegen und durchsuchen]
--   [Nachverfolgung der Verfügbarkeit mit Webtests][richten Sie Webtests ein]
--   [Nutzung nachverfolgen][Nutzung Ihrer Webanwendung nachverfolgen]
--   [Fragen und Antworten, Problembehandlung][Problembehandlung]
+-   [Application Insights – erste Schritte][start]
+-   [Live-Webserver jetzt überwachen][redfield]
+-   [Leistung in Webanwendungen überwachen][perf]
+-   [Diagnoseprotokolle durchsuchen][diagnostic]
+-   [Nachverfolgung der Verfügbarkeit mit Webtests][availability]
+-   [Nutzung nachverfolgen][usage]
+-   [Fragen und Antworten, Problembehandlung][qna]
 
 <!--Link references-->
 
-  [Microsoft Azure]: http://azure.com
-  [Application Insights Ihrem App-Projekt in Visual Studio hinzufügen]: #add
-  [Agent ohne erneute Bereitstellung auf Ihrem Server installieren]: ../app-insights-monitor-performance-live-website-now/
-  [ältere Version von Application Insights]: http://msdn.microsoft.com/en-us/library/dn481095.aspx
-  [Visual Studio 2013 Update 3]: http://go.microsoft.com/fwlink/?linkid=397827&clcid=0x409
-  [Erstellen eines ASP.NET-Projekts]: ./media/appinsights/appinsights-01-vsnewp1.png
-  ["Application Insights hinzufügen" wählen]: ./media/appinsights/appinsights-03-addExisting.png
-  []: ./media/appinsights/appinsights-09eventcount.png
-  [Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und öffnen Sie das Azure-Portal]: ./media/appinsights/appinsights-04-openPortal.png
-  [Zu mehr Daten durchklicken]: ./media/appinsights/appinsights-41firstHealth.png
-  [Erfahren Sie mehr über das Konfigurieren von Application Health-Berichten.]: ../app-insights-web-monitor-performance/
-  [In Ihrem Projekt in Application Insights auf "Schnellstart", "Instrumentieren Ihrer Webseite" klicken und den Code kopieren]: ./media/appinsights/appinsights-06webcode.png
-  [1]: ./media/appinsights/appinsights-05-usageTiles.png
-  [richten Sie Webtests ein]: ../app-insights-monitor-web-app-availability/
-  [Beispiel: Anwendungsüberwachung in Application Insights]: ./media/appinsights/appinsights-00-appblade.png
-  [Nutzung Ihrer Webanwendung nachverfolgen]: ../app-insights-web-track-usage/
-  [Diagnoseprotokolle anlegen und durchsuchen]: ../app-insights-search-diagnostic-logs/
-  [Problembehandlung]: ../app-insights-troubleshoot-faq/
-  [Application Insights – erste Schritte]: ../app-insights-start-monitoring-app-health-usage/
+[start]: ../app-insights-start-monitoring-app-health-usage/
+[redfield]: ../app-insights-monitor-performance-live-website-now/
+[perf]: ../app-insights-web-monitor-performance/
+[diagnostic]: ../app-insights-search-diagnostic-logs/ 
+[availability]: ../app-insights-monitor-web-app-availability/
+[usage]: ../app-insights-web-track-usage/
+[qna]: ../app-insights-troubleshoot-faq/
+
