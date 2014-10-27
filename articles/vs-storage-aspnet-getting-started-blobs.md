@@ -2,7 +2,7 @@
 
 <tags ms.service="storage" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/10/2014" ms.author="ghogen, kempb"></tags>
 
-[WACOM.INCLUDE [vs-storage-aspnet-getting-started-intro][vs-storage-aspnet-getting-started-intro]]
+[WACOM.INCLUDE [vs-storage-aspnet-getting-started-intro](../includes/vs-storage-aspnet-getting-started-intro.md)]
 
 ### Erste Schritte mit Azure Storage
 
@@ -27,11 +27,9 @@ Bevor Sie einen BLOB verwenden können, müssen Sie die Verbindungszeichenfolge 
 	CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
       ConfigurationManager.GetSetting("<storageAccountName>_AzureStorageConnectionString"));
 
-[WACOM.INCLUDE [vs-storage-getting-started-blobs-include][vs-storage-getting-started-blobs-include]]
+[WACOM.INCLUDE [vs-storage-getting-started-blobs-include](../includes/vs-storage-getting-started-blobs-include.md)]
 
-[vs-storage-aspnet-getting-started-intro]: ../includes/vs-storage-aspnet-getting-started-intro.md
 [BLOBs]: /de-de/documentation/articles/vs-storage-aspnet-getting-started-blobs "BLOBs"
 [Warteschlangen]: /de-de/documentation/articles/vs-storage-aspnet-getting-started-queues "Warteschlangen"
 [Tabellen]: /de-de/documentation/articles/vs-storage-aspnet-getting-started-tables "Tabellen"
 [Verwenden von BLOB-Speicher aus .NET]: http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/ "Verwenden von BLOB-Speicher aus .NET"
-[vs-storage-getting-started-blobs-include]: ../includes/vs-storage-getting-started-blobs-include.md
