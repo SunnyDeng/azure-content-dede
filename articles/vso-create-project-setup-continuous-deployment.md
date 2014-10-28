@@ -1,48 +1,45 @@
-<properties linkid="create-vso-project-setup-continuous-deployment" urlDisplayName="How to create a VSO project and setup Continuous Deployment" pageTitle="How to create a Visual Studio Online team project and setup Continuous Deployment - Windows Azure" metaKeywords="Visual Studio Online create team project, continuous deployment to Azure" description="Learn how to create a Visual Studio Online team project and configure it for continuous deployment to Windows Azure." metaCanonical="" services="cloud-services, visual-studio-online" documentationCenter="" title="How to Create and Deploy a Cloud Service" authors="jimlamb" solutions="" writer="jimlamb" manager="" editor="" />
+<properties linkid="create-vso-project-setup-continuous-deployment" urlDisplayName="How to create a VSO project and setup Continuous Deployment" pageTitle="How to create a Visual Studio Online team project and setup Continuous Deployment - Windows Azure" metaKeywords="Visual Studio Online create team project, continuous deployment to Azure" description="Learn how to create a Visual Studio Online team project and configure it for continuous deployment to Windows Azure." metaCanonical="" services="cloud-services, visual-studio-online" documentationCenter="" title="How to Create and Deploy a Cloud Service" authors="jimlamb" solutions="" writer="jimlamb" manager="" editor=""  />
 
-Erstellen eines Visual Studio Online-Projekts und Einrichten der kontinuierlichen Bereitstellung in Windows Azure
-=================================================================================================================
+<tags ms.service="visual-studio-online" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jimlamb"></tags>
 
-[WACOM.INCLUDE [disclaimer](../includes/disclaimer.md)]
+# Erstellen eines Visual Studio Online-Projekts und Einrichten der kontinuierlichen Bereitstellung in Windows Azure
+
+[WACOM.INCLUDE [Haftungsausschluss][Haftungsausschluss]]
 
 Im Windows Azure-Verwaltungsportal können Sie ein Teamprojekt in Visual Studio Online erstellen und die Webanwendung für die kontinuierliche Bereitstellung auf einer Website konfigurieren.
 
-Inhaltsverzeichnis
-------------------
+## Inhaltsverzeichnis
 
--   [Erstellen eines Teamprojekts](#create_team_project)
--   [Erstellen einer neuen Webanwendung und Hinzufügen zur Git-Versionskontrolle](#create_web_app)
--   [Einrichten der kontinuierlichen Bereitstellung](#continuous_deployment)
+-   [Erstellen eines Teamprojekts][Erstellen eines Teamprojekts]
+-   [Erstellen einer neuen Webanwendung und Hinzufügen zur Git-Versionskontrolle][Erstellen einer neuen Webanwendung und Hinzufügen zur Git-Versionskontrolle]
+-   [Einrichten der kontinuierlichen Bereitstellung][Einrichten der kontinuierlichen Bereitstellung]
 
-Erstellen eines Teamprojekts
-----------------------------
+## <a name="create_team_project"></a>Erstellen eines Teamprojekts
 
 1.  Melden Sie sich beim Verwaltungsportal an.
 2.  Klicken Sie unten links auf **Neu**.
 3.  Klicken Sie auf **Teamprojekt**.
 4.  Geben Sie dem Teamprojekt einen Namen. Sie können den Namen des Teamprojekts nicht mehr ändern, nachdem es erstellt wurde.
-5.  Wählen Sie den Typ der Versionskontrolle aus, den Sie für das Projekt verwenden möchten. Sie können entweder Git (ein verteiltes Versionskontrollsystem) oder Team Foundation Version Control (ein zentralisiertes Versionskontrollsystem) auswählen. Sie sind nicht sicher, welches System Sie verwenden sollten? [Hier](http://msdn.microsoft.com/de-de/library/ms181368.aspx) erhalten Sie weitere Informationen.
-6.  Wählen Sie die Prozessvorlage aus. Einen Vergleich der Prozessvorlagen finden Sie unter [Arbeiten mit Teamprojektartefakten](http://msdn.microsoft.com/de-de/library/ms400752.aspx).
+5.  Wählen Sie den Typ der Versionskontrolle aus, den Sie für das Projekt verwenden möchten. Sie können entweder Git (ein verteiltes Versionskontrollsystem) oder Team Foundation Version Control (ein zentralisiertes Versionskontrollsystem) auswählen. Sie sind nicht sicher, welches System Sie verwenden sollten? [Hier][Hier] erhalten Sie weitere Informationen.
+6.  Wählen Sie die Prozessvorlage aus. Einen Vergleich der Prozessvorlagen finden Sie unter [Arbeiten mit Teamprojektartefakten][Arbeiten mit Teamprojektartefakten].
 7.  Wählen Sie das Visual Studio Online-Konto aus, das verwendet wird, um dieses Teamprojekt zu erstellen, Benutzer hinzuzufügen und die Ressourcennutzung zu überwachen.
 8.  Lassen Sie das Kontrollkästchen **Add to Startboard** aktiviert, damit das neue Teamprojekt automatisch auf dem Startboard angezeigt wird.
 9.  Klicken Sie auf **Erstellen**.
 
-Erstellen einer neuen Webanwendung und Hinzufügen zur Git-Versionskontrolle
----------------------------------------------------------------------------
+## <a name="create_web_app"></a>Erstellen einer neuen Webanwendung und Hinzufügen zur Git-Versionskontrolle
 
 1.  Klicken Sie im Startboard auf das neue Teamprojekt.
 2.  Klicken Sie im Bereich **Code** unter **Repositorys** auf das Git-Repository, das denselben Namen wie Ihr Teamprojekt trägt.
 3.  Klicken Sie im Fensterbereich für Repository/Verzweigung auf den Fensterbefehl **Visual Studio**, um das neue Repository in Visual Studio zu öffnen. Sie werden möglicherweise von Ihrem Webbrowser aufgefordert, das Starten von Visual Studio zu erlauben.
 4.  Klicken Sie im Teamexplorer-Toolfenster von Visual Studio auf **Dieses Repository klonen**, um einen lokalen Klon des neuen Repositorys auf dem lokalen Datenträger einzurichten.
 5.  Klicken Sie im Abschnitt **Projektmappen** der Teamexplorer-Startseite auf **Neu...**, um ein neues Projekt im soeben geklonten Repository zu erstellen.
-6.  Erweitern Sie im Dialogfeld "Neues Projekt" den Knoten für Visual Basic oder Visual C\#, je nach bevorzugter Programmiersprache, und wählen Sie **Web** aus.
+6.  Erweitern Sie im Dialogfeld "Neues Projekt" den Knoten für Visual Basic oder Visual C#, je nach bevorzugter Programmiersprache, und wählen Sie **Web** aus.
 7.  Klicken Sie in der Liste der verfügbaren Projektvorlagen auf **ASP.NET-Webanwendung**, und geben Sie einen Namen für die Webanwendung ein.
 8.  Klicken Sie auf **OK**.
 9.  Wechseln Sie zum Teamexplorer-Toolfenster, navigieren Sie zur Seite "Änderungen", und geben Sie eine Commit-Nachricht ein.
 10. Klicken Sie auf den Dropdown-Pfeil der Schaltfläche **Commit**, und wählen Sie **Commit und Sync**, um Ihre Änderungen festzuschreiben und den Commit auf das zuvor geklonte Remoterepository zu übertragen.
 
-Einrichten der kontinuierlichen Bereitstellung
-----------------------------------------------
+## <a name="continuous_deployment"></a>Einrichten der kontinuierlichen Bereitstellung
 
 1.  Melden Sie sich beim Verwaltungsportal an.
 2.  Klicken Sie im Startboard auf das zuvor erstellte Teamprojekt.
@@ -60,3 +57,9 @@ Einrichten der kontinuierlichen Bereitstellung
 3.  Klicken Sie im Build-Fenster auf das erste Element im Bereich **Bereitstellungen**, um die zugehörige Website zu öffnen.
 4.  Klicken Sie im Website-Fenster auf den Fensterbefehl **Durchsuchen**, um die Website zu durchsuchen und die Bereitstellung der Webanwendung zu überprüfen.
 
+  [Haftungsausschluss]: ../includes/disclaimer.md
+  [Erstellen eines Teamprojekts]: #create_team_project
+  [Erstellen einer neuen Webanwendung und Hinzufügen zur Git-Versionskontrolle]: #create_web_app
+  [Einrichten der kontinuierlichen Bereitstellung]: #continuous_deployment
+  [Hier]: http://msdn.microsoft.com/de-de/library/ms181368.aspx
+  [Arbeiten mit Teamprojektartefakten]: http://msdn.microsoft.com/de-de/library/ms400752.aspx

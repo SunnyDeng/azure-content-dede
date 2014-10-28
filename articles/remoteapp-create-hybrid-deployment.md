@@ -23,11 +23,11 @@ Dieses Lernprogramm führt Sie durch den Prozess der Erstellung einer Hybridbere
 
 Bevor Sie mit der Erstellung des Dienstes beginnen, führen Sie Folgendes aus:
 
--   Installieren Sie [erforderliche Updates][], um die Leistung der Azure RemoteApp zu verbessern.
--   Registrieren Sie sich für die [Vorschau der RemoteApp][].
+-   Installieren Sie [erforderliche Updates][erforderliche Updates], um die Leistung der Azure RemoteApp zu verbessern.
+-   Registrieren Sie sich für die [Vorschau der RemoteApp][Vorschau der RemoteApp].
 -   Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den RemoteApp-Dienst dient. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann.
 -   Sammeln Sie folgende Informationen über das lokale Netzwerk: IP-Adresse und Informationen zum VPN-Gerät.
--   Installieren Sie das [Azure PowerShell][]-Modul.
+-   Installieren Sie das [Azure PowerShell][Azure PowerShell]-Modul.
 -   Sammeln Sie Informationen über die Benutzer und Gruppen, denen Sie Zugriff gewähren möchten. Dies können Informationen zu Microsoft-Konten oder Active Directory-Organisationskonten sein.
 
 ## **Schritt 1: Erstellen eines Vorlagenimage**
@@ -121,7 +121,7 @@ Dies sind die einzelnen Schritte zum Erstellen eines neuen Abbilds:
 
 ## **Schritt 2: Erstellen eines RemoteApp-Diensts**
 
-1.  Gehen Sie im [Azure-Verwaltungsportal][] zur Seite "RemoteApp".
+1.  Gehen Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] zur Seite "RemoteApp".
 2.  Klicken Sie auf **Neu \> Mit VPN erstellen**.
 3.  Geben Sie einen Namen für den Dienst ein und klicken Sie auf **RemoteApp-Dienst erstellen**.
 
@@ -141,7 +141,7 @@ Ein virtuelles Netzwerk ermöglicht es den Benutzern, auf Daten auf Ihrem lokale
     -   IP-Adresse des DNS-Servers
     -   IP-Adresse des VPN
 
-    Weitere Informationen erhalten Sie unter [Konfigurieren eines standortübergreifenden VPN im Verwaltungsportal][].
+    Weitere Informationen erhalten Sie unter [Konfigurieren eines standortübergreifenden VPN im Verwaltungsportal][Konfigurieren eines standortübergreifenden VPN im Verwaltungsportal].
 
 4.  Klicken Sie auf der Seite "Schnellstart" auf **Skript herunterladen**, um ein Skript zur Konfiguration des VPN-Geräts herunterzuladen, damit dieses eine Verbindung mit dem gerade erstellten virtuellen Netzwerk herstellt. Sie benötigen folgende Informationen über das VPN-Gerät:
 
@@ -165,7 +165,7 @@ Wenn Sie eine Verbindung zu einem vorhandenen Abbild herstellen, geben Sie einfa
 
 ## **Schritt 5: Konfigurieren der Active Directory-Verzeichnissynchronisierung**
 
-RemoteApp erfordert die Verzeichnissynchronisierung zwischen Azure Active Directory und dem lokalen Active Directory, um Benutzer, Gruppen, Kontakte und Kennwörter zum Azure Active Directory-Mandanten zu synchronisieren. Informationen zur Planung und eine detaillierte Anleitung finden Sie unter [Fahrplan zur Verzeichnissynchronisierung][].
+RemoteApp erfordert die Verzeichnissynchronisierung zwischen Azure Active Directory und dem lokalen Active Directory, um Benutzer, Gruppen, Kontakte und Kennwörter zum Azure Active Directory-Mandanten zu synchronisieren. Informationen zur Planung und eine detaillierte Anleitung finden Sie unter [Fahrplan zur Verzeichnissynchronisierung][Fahrplan zur Verzeichnissynchronisierung].
 
 ## **Schritt 6: Veröffentlichen von RemoteApp-Programmen**
 
@@ -191,7 +191,7 @@ Nach dem Erstellen des RemoteApp-Dienstes müssen Sie nun die Benutzer und Grupp
 Sie haben die RemoteApp-Hybridbereitstellung nun erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun bei Azure anmelden und auf die veröffentlichten RemoteApp-Programme zugreifen.
 
   [erforderliche Updates]: http://support.microsoft.com/kb/2977219
-  [Vorschau der RemoteApp]: http://azure.microsoft.com/en-us/services/remoteapp/
+  [Vorschau der RemoteApp]: http://azure.microsoft.com/de-de/services/remoteapp/
   [Azure PowerShell]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Konfigurieren eines standortübergreifenden VPN im Verwaltungsportal]: http://msdn.microsoft.com/library/azure/dn133795.aspx

@@ -1,7 +1,8 @@
-<properties linkid="manage-services-biztalk-state-chart" urlDisplayName="BizTalk Services: Service state chart" pageTitle="BizTalk Services: Service state chart | Azure" metaKeywords="" description="" metaCanonical="" services="biztalk-services" documentationCenter="" title="BizTalk Services: Service state chart" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-biztalk-state-chart" urlDisplayName="BizTalk Services: Service state chart" pageTitle="BizTalk Services: Service state chart | Azure" metaKeywords="" description="" metaCanonical="" services="biztalk-services" documentationCenter="" title="BizTalk Services: Service state chart" authors="mandia" solutions="integration" manager="dwrede" editor="cgronlun" />
 
-BizTalk Services: Dienststatusübersicht
-=======================================
+<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia"></tags>
+
+# BizTalk Services: Dienststatusübersicht
 
 Je nach aktuellem Status des BizTalk-Diensts stehen Vorgänge bereit, die Sie in eben diesem BizTalk-Dienst entweder ausführen können oder nicht ausführen können.
 
@@ -9,238 +10,598 @@ Sie stellen beispielsweise einen neuen BizTalk-Dienst im Azure-Verwaltungsportal
 
 **Vorgang nicht zulässig**
 
-Informationen zum Bereitstellen eines BizTalk-Diensts finden Sie unter [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280).
+Informationen zum Bereitstellen eines BizTalk Service finden Sie unter [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal][BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal].
 
 Die folgenden Tabellen listen jene Vorgänge auf, die ausgeführt werden können, wenn sich der BizTalk-Dienst in einem spezifischen Status befindet. Ein Kreuz bedeutet dabei, dass der Vorgang ausgeführt werden kann, wenn der betreffende Status zutrifft. Ein leerer Eintrag bedeutet dagegen, dass der Vorgang nicht ausgeführt werden kann, wenn der betreffende Status zutrifft.
 
 #### Start-, Stopp-, Neustart-, Unterbrechungs-, Wiederaufnahme- und Lösch-Vorgänge
 
-<table data-morhtml="true" border="1">
-<tr data-morhtml="true">
-        <th data-morhtml="true" colspan="15">Vorgang</th>
-</tr>
+<table border="1">
+<tr>
+<th colspan="15">
+Vorgang
 
-<tr data-morhtml="true">
-        <th data-morhtml="true" rowspan="18">BizTalk Service-Status</th>
+</th>
 </tr>
-<tr data-morhtml="true" bgcolor="FAF9F9">
-        <th data-morhtml="true"> </th>
-        <th data-morhtml="true">Starten</th>
-        <th data-morhtml="true">Beenden</th>
-        <th data-morhtml="true">Neu starten</th>
-        <th data-morhtml="true">Unterbrechen</th>
-        <th data-morhtml="true">Wiederaufnehmen</th>
-        <th data-morhtml="true">L&ouml;schen</th>
+<tr>
+<th rowspan="18">
+BizTalk Service-Status
+
+</th>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Aktiv</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr bgcolor="FAF9F9">
+<th>
+</th>
+<th>
+Starten
+
+</th>
+<th>
+Beenden
+
+</th>
+<th>
+Neu starten
+
+</th>
+<th>
+Unterbrechen
+
+</th>
+<th>
+Wiederaufnehmen
+
+</th>
+<th>
+Löschen
+
+</th>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Deaktiviert</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Aktiv</strong>
+
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Unterbrochen</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Deaktiviert</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Beendet</b></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Unterbrochen</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Dienst-Update fehlgeschlagen</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Beendet</strong>
+
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">DisableFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Dienst-Update fehlgeschlagen</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">EnableFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>DisableFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">StartFailed<br data-morhtml="true" /> StopFailed<br data-morhtml="true" /> RestartFailed</b></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>EnableFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">SuspendedFailed<br data-morhtml="true" /> ResumeFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>StartFailed
+ StopFailed
+ RestartFailed</strong>
+
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">CreatedFailed<br data-morhtml="true" /> RestoreFailed<br data-morhtml="true" /></b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>SuspendedFailed
+ ResumeFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">ConfigUpdateFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>CreatedFailed
+ RestoreFailed
+</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">ScaleFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>ConfigUpdateFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+</tr>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>ScaleFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
 </table>
 
 #### Skalierungs-, Konfigurations-Update- und Sicherungs-Vorgänge
 
-<table data-morhtml="true" border="1">
-<tr data-morhtml="true">
-        <th data-morhtml="true" colspan="15">Vorgang</th>
-</tr>
+<table border="1">
+<tr>
+<th colspan="15">
+Vorgang
 
-<tr data-morhtml="true">
-        <th data-morhtml="true" rowspan="18">BizTalk Service-Status</th>
+</th>
 </tr>
-<tr data-morhtml="true" bgcolor="FAF9F9">
-        <th data-morhtml="true"> </th>
-        <th data-morhtml="true">Skalieren</th>
-        <th data-morhtml="true">Konfiguration aktualisieren</th>
-        <th data-morhtml="true">Sicherung</th>
+<tr>
+<th rowspan="18">
+BizTalk Service-Status
+
+</th>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Aktiv</b></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr bgcolor="FAF9F9">
+<th>
+</th>
+<th>
+Skalieren
+
+</th>
+<th>
+Konfiguration aktualisieren
+
+</th>
+<th>
+Sicherung
+
+</th>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Deaktiviert</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Aktiv</strong>
+
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Unterbrochen</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Deaktiviert</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Beendet</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Unterbrochen</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">Dienst-Update fehlgeschlagen</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Beendet</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">DisableFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>Dienst-Update fehlgeschlagen</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">EnableFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>DisableFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">StartFailed<br data-morhtml="true" /> StopFailed<br data-morhtml="true" /> RestartFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>EnableFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">SuspendedFailed<br data-morhtml="true" /> ResumeFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>StartFailed<br></br>
+ StopFailed<br></br>
+ RestartFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">CreatedFailed<br data-morhtml="true" /> RestoreFailed<br data-morhtml="true" /></b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>SuspendedFailed<br></br>
+ ResumeFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">ConfigUpdateFailed</b></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>CreatedFailed<br></br>
+RestoreFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
-<tr data-morhtml="true">
-<td data-morhtml="true" bgcolor="FAF9F9"><b data-morhtml="true">ScaleFailed</b></td>
-<td data-morhtml="true"><center data-morhtml="true">x</center></td>
-<td data-morhtml="true"> </td>
-<td data-morhtml="true"> </td>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>ConfigUpdateFailed</strong>
+
+</td>
+<td>
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td bgcolor="FAF9F9">
+<strong>ScaleFailed</strong>
+
+</td>
+<td>
+<center>
+x
+
+</center>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
 </table>
+## Weitere Informationen
 
+-   [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal][BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal]
+-   [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"][BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"]
+-   [BizTalk Services: Übersicht über Developer, Basic, Standard und Premium Edition][BizTalk Services: Übersicht über Developer, Basic, Standard und Premium Edition]
+-   [BizTalk Services: Sichern und Wiederherstellen][BizTalk Services: Sichern und Wiederherstellen]
+-   [BizTalk Services: Drosselung][BizTalk Services: Drosselung]
+-   [BizTalk Services: Name und Schlüssel des Ausstellers][BizTalk Services: Name und Schlüssel des Ausstellers]
+-   [Wie verwende ich das Azure BizTalk Services SDK][Wie verwende ich das Azure BizTalk Services SDK]
 
-Weitere Informationen
----------------------
-
--   [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280)
--   [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](http://go.microsoft.com/fwlink/p/?LinkID=302281)
--   [BizTalk Services: Übersicht über Developer, Basic, Standard und Premium Edition](http://go.microsoft.com/fwlink/p/?LinkID=302279)
--   [BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873)
--   [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)
--   [BizTalk Services: Name und Schlüssel des Ausstellers](http://go.microsoft.com/fwlink/p/?LinkID=303941)
--   [Wie verwende ich das Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)
-
+  [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal]: http://go.microsoft.com/fwlink/p/?LinkID=302280
+  [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"]: http://go.microsoft.com/fwlink/p/?LinkID=302281
+  [BizTalk Services: Übersicht über Developer, Basic, Standard und Premium Edition]: http://go.microsoft.com/fwlink/p/?LinkID=302279
+  [BizTalk Services: Sichern und Wiederherstellen]: http://go.microsoft.com/fwlink/p/?LinkID=329873
+  [BizTalk Services: Drosselung]: http://go.microsoft.com/fwlink/p/?LinkID=302282
+  [BizTalk Services: Name und Schlüssel des Ausstellers]: http://go.microsoft.com/fwlink/p/?LinkID=303941
+  [Wie verwende ich das Azure BizTalk Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335

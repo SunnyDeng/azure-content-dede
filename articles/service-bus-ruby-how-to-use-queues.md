@@ -1,34 +1,35 @@
 <properties linkid="dev-ruby-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="How to use Service Bus queues (Ruby) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Ruby" description="Learn how to use Service Bus queues in Azure. Code samples written in Ruby." metaCanonical="" services="service-bus" documentationCenter="Ruby" title="How to Use Service Bus Queues" authors="guayan" solutions="" manager="" editor="" />
 
-Verwenden von Servicebus-Warteschlangen
-=======================================
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="01/01/1900" ms.author="guayan"></tags>
 
-In diesem Leitfaden erfahren Sie, wie Sie die Servicebus-Warteschlangen verwenden können. Die Beispiele sind in Ruby geschrieben und verwenden das Azure-Gem. Die Szenarien behandeln die Themen **Erstellen von Warteschlangen, Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte](#next-steps).
+# Einsatz von Servicebus-Warteschlangen
 
-Inhaltsverzeichnis
-------------------
+In diesem Leitfaden erfahren Sie, wie Sie die Servicebus-Warteschlangen verwenden können. Die Beispiele sind
+in Ruby geschrieben und verwenden das Azure-Gem. Die Szenarien
+behandeln die Themen **Erstellen von Warteschlangen, Senden und Empfangen von
+Nachrichten** und **Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
--   [Was sind Servicebus-Warteschlangen?](#what-are-service-bus-queues)
--   [Erstellen eines Dienstnamespaces](#create-a-service-namespace)
--   [Abrufen der Standard-Anmeldeinformationen für den Namespace](#obtain-default-credentials)
--   [Erstellen einer Ruby-Anwendung](#create-a-ruby-application)
--   [Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus](#configure-your-application-to-use-service-bus)
--   [Einrichten einer Azure-Servicebus-Verbindung](#setup-a-windows-azure-service-bus-connection)
--   [Erstellen einer Warteschlange](#how-to-create-a-queue)
--   [Senden von Nachrichten an eine Warteschlange](#how-to-send-messages-to-a-queue)
--   [Empfangen von Nachrichten aus einer Warteschlange](#how-to-receive-messages-from-a-queue)
--   [Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten](#how-to-handle-application-crashes-and-unreadable-messages)
--   [Nächste Schritte](#next-steps)
+## Inhaltsverzeichnis
 
-[WACOM.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
+-   [Was sind Servicebus-Warteschlangen?][Was sind Servicebus-Warteschlangen?]
+-   [Erstellen eines Dienstnamespace][Erstellen eines Dienstnamespace]
+-   [Abrufen der Standard-Anmeldeinformationen für den Namespace][Abrufen der Standard-Anmeldeinformationen für den Namespace]
+-   [Erstellen einer Ruby-Anwendung][Erstellen einer Ruby-Anwendung]
+-   [Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus][Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus]
+-   [Einrichten einer Azure-Servicebus-Verbindung][Einrichten einer Azure-Servicebus-Verbindung]
+-   [Erstellen einer Warteschlange][Erstellen einer Warteschlange]
+-   [Senden von Nachrichten an eine Warteschlange][Senden von Nachrichten an eine Warteschlange]
+-   [Empfangen von Nachrichten aus einer Warteschlange][Empfangen von Nachrichten aus einer Warteschlange]
+-   [Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten][Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]
+-   [Nächste Schritte][Nächste Schritte]
 
-Erstellen einer Ruby-Anwendung
-------------------------------
+[WACOM.INCLUDE [howto-service-bus-queues][howto-service-bus-queues]]
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Erstellen einer Ruby-Anwendung in Azure](/de-de/develop/ruby/tutorials/web-app-with-linux-vm/).
+## <span id="create-a-ruby-application"></span></a>Erstellen einer Ruby-Anwendung
 
-Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus
----------------------------------------------------------------
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie im Thema zum [Erstellen einer Ruby-Anwendung in Azure][Erstellen einer Ruby-Anwendung in Azure].
+
+## <span id="configure-your-application-to-use-service-bus"></span></a> Konfigurieren der Anwendung zur Verwendung eines Service Bus
 
 Um den Azure-Servicebus zu verwenden, müssen Sie das Ruby-Azure-Paket, das eine Reihe von Bibliotheken enthält, die mit den Speicher-REST-Diensten kommunizieren, herunterladen und verwenden.
 
@@ -44,16 +45,15 @@ Fügen Sie mit Ihrem bevorzugten Texteditor Folgendes oben in die Ruby-Datei an 
 
     require "azure"
 
-Einrichten einer Azure-Servicebus-Verbindung
---------------------------------------------
+## <span id="setup-a-windows-azure-service-bus-connection"></span></a>Einrichten einer Azure Service Bus-Verbindung
 
-Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** nach Informationen aus, die für eine Verbindung zum Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::TableService** mit dem folgenden Code angeben:
+Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY**
+ nach Informationen aus, die für eine Verbindung zum Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::TableService** mit dem folgenden Code angeben:
 
     Azure.config.sb_namespace = "<your azure service bus namespace>"
     Azure.config.sb_access_key = "<your azure service bus access key>"
 
-Erstellen einer Warteschlange
------------------------------
+## <span id="how-to-create-a-queue"></span></a>Erstellen einer Warteschlange
 
 Das **Azure::ServiceBusService**ermöglicht Ihnen das Arbeiten mit Warteschlangen. Verwenden Sie die **create\_queue()**-Methode, um eine Warteschlange zu erstellen. Im folgenden Beispiel wird eine Warteschlange erstellt oder ggf. ein Fehler ausgegeben.
 
@@ -72,8 +72,7 @@ Sie können außerdem ein **Azure::ServiceBus::Queue**-Objekt mit weiteren Optio
 
     queue = azure_service_bus_service.create_queue(queue)
 
-Senden von Nachrichten an eine Warteschlange
---------------------------------------------
+## <span id="how-to-send-messages-to-a-queue"></span></a>Senden von Nachrichten an eine Warteschlange
 
 Um eine Nachricht an eine Servicebus-Warteschlange zu senden, ruft Ihre Anwendung die **send\_queue\_message()**-Methode auf dem **Azure::ServiceBusService**-Objekt auf. Nachrichten, die an die Servicebus-Warteschlangen gesendet werden (und von diesen empfangen werden), sind **Azure::ServiceBus::BrokeredMessage**-Objekte und verfügen über einen Satz von Standardeigenschaften (z. B. **label** und **time\_to\_live**), ein Wörterbuch, in dem benutzerdefinierte anwendungsspezifische Eigenschaften enthalten sind, sowie einen Bestand beliebiger Anwendungsdaten. Eine Anwendung kann den Hauptteil einer Nachricht festlegen, indem sie einen Zeichenkettenwert als Nachricht weitergibt. Erforderliche Standardeigenschaften werden mit den Standardwerten gefüllt.
 
@@ -85,8 +84,7 @@ Das folgende Beispiel zeigt, wie eine Testnachricht an die Warteschlange "test\_
 
 Servicebus-Warteschlangen unterstützen eine maximale Nachrichtengröße von 256 KB (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 KB haben). Bei der Anzahl der Nachrichten, die in einer Warteschlange aufgenommen werden können, besteht keine Beschränkung. Allerdings gilt eine Deckelung bei der Gesamtgröße der in einer Warteschlange aufzunehmenden Nachrichten. Die Warteschlangengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB.
 
-Empfangen von Nachrichten aus einer Warteschlange
--------------------------------------------------
+## <span id="how-to-receive-messages-from-a-queue"></span></a>Empfangen von Nachrichten aus einer Warteschlange
 
 Nachrichten werden von einer Warteschlange über **receive\_queue\_message()**-Methode des **Azure::ServiceBusService**-Objekts empfangen. Standardmäßig werden Nachrichten gelesen und gesperrt, ohne aus der Warteschlange gelöscht zu werden. Sie können die Nachricht jedoch beim Lesen aus der Warteschlange löschen, indem Sie die Option **:peek\_lock** auf **false** setzen.
 
@@ -99,11 +97,9 @@ Das Beispiel unten zeigt, wie Nachrichten mithilfe von **receive\_queue\_message
     message = azure_service_bus_service.receive_queue_message("test-queue", 
       { :peek_lock => false })
     message = azure_service_bus_service.receive_queue_message("test-queue")
-    azure_service_bus_service.delete_queue_message("test-queue",
-      message.sequence_number, message.lock_token)
+    azure_service_bus_service.delete_queue_message(message)
 
-Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten
--------------------------------------------------------------
+## <span id="how-to-handle-application-crashes-and-unreadable-messages"></span></a> Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten
 
 Servicebus stellt Funktionen zur Verfügung, die Ihnen bei der ordnungsgemäßen Behebung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht helfen. Wenn eine Empfängeranwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann, so kann sie die **unlock\_queue\_message()**-Methode des **Azure::ServiceBusService**-Objekts aufrufen. Dies führt dazu, dass Servicebus die Nachricht innerhalb der Warteschlange entsperrt und verfügbar macht, damit sie erneut empfangen werden kann, und zwar entweder durch dieselbe verarbeitende Anwendung oder durch eine andere verarbeitende Anwendung.
 
@@ -111,13 +107,29 @@ Zudem wird einer in der Warteschlange gesperrten Anwendung ein Zeitlimit zugeord
 
 Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Abrufen der **delete\_queue\_message()**-Methode abstürzt, wird die Nachricht wieder an die Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig als **At Least Once Processing** (Verarbeitung mindestens einmal) bezeichnet und bedeutet, dass jede Nachricht mindestens einmal verarbeitet wird, wobei dieselbe Nachricht in bestimmten Situationen möglicherweise erneut zugestellt wird. Wenn eine doppelte Verarbeitung in dem Szenario nicht zulässig ist, sollten Anwendungsentwickler ihrer Anwendung zusätzliche Logik für den Umgang mit der Zustellung doppelter Nachrichten hinzufügen. Dies wird häufig durch die Verwendung der **message\_id**-Eigenschaft der Nachricht erzielt, die über mehrere Zustellungsversuche hinweg konstant bleibt.
 
-Nächste Schritte
-----------------
+## <span id="next-steps"></span></a>Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx)
--   Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements][Warteschlangen, Themen und Abonnements]
+-   Besuchen Sie das [Azure SDK for Ruby][Azure SDK for Ruby]-Repository auf GitHub
 
-Einen Vergleich zwischen den in diesem Artikel besprochenen Azure Servicebus-Warteschlangen und den unter [Verwenden des Azure-Warteschlangendiensts](/de-de/develop/ruby/how-to-guides/queue-service/) besprochenen Azure-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/de-de/library/windowsazure/hh767287.aspx)
+Einen Vergleich zwischen den in diesem Artikel besprochenen Azure Servicebus-Warteschlangen und den unter [Verwenden des Azure-Warteschlangendiensts][Verwenden des Azure-Warteschlangendiensts] besprochenen Azure-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung][Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung]
 
+  [Nächste Schritte]: #next-steps
+  [Was sind Servicebus-Warteschlangen?]: #what-are-service-bus-queues
+  [Erstellen eines Dienstnamespace]: #create-a-service-namespace
+  [Abrufen der Standard-Anmeldeinformationen für den Namespace]: #obtain-default-credentials
+  [Erstellen einer Ruby-Anwendung]: #create-a-ruby-application
+  [Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus]: #configure-your-application-to-use-service-bus
+  [Einrichten einer Azure-Servicebus-Verbindung]: #setup-a-windows-azure-service-bus-connection
+  [Erstellen einer Warteschlange]: #how-to-create-a-queue
+  [Senden von Nachrichten an eine Warteschlange]: #how-to-send-messages-to-a-queue
+  [Empfangen von Nachrichten aus einer Warteschlange]: #how-to-receive-messages-from-a-queue
+  [Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #how-to-handle-application-crashes-and-unreadable-messages
+  [howto-service-bus-queues]: ../includes/howto-service-bus-queues.md
+  [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
+  [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx
+  [Azure SDK for Ruby]: https://github.com/WindowsAzure/azure-sdk-for-ruby
+  [Verwenden des Azure-Warteschlangendiensts]: /de-de/develop/ruby/how-to-guides/queue-service/
+  [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung]: http://msdn.microsoft.com/de-de/library/windowsazure/hh767287.aspx

@@ -1,50 +1,53 @@
-<properties linkid="notification-hubs-how-to-guides-howto-register-user-with-mobile-service-ios" urlDisplayName="Notify iOS app users by using Mobile Services" pageTitle="Register the current user for push notifications by using a mobile service - Notification Hubs" metaKeywords="Azure registering application, Notification Hubs, Azure push notifications, push notification iOS app" description="Learn how to request push notification registration in an iOS app with Azure Notification Hubs when registeration is performed by Azure Mobile Services." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Register the current user for push notifications by using a mobile service" authors="" solutions="" manager="" editor="" />
+<properties linkid="notification-hubs-how-to-guides-howto-register-user-with-mobile-service-ios" urlDisplayName="Notify iOS app users by using Mobile Services" pageTitle="Register the current user for push notifications by using a mobile service - Notification Hubs" metaKeywords="Azure registering application, Notification Hubs, Azure push notifications, push notification iOS app" description="Learn how to request push notification registration in an iOS app with Azure Notification Hubs when registeration is performed by Azure Mobile Services." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Register the current user for push notifications by using a mobile service" authors="krisragh" solutions="" manager="" editor="" />
 
-Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Dienstes
-===============================================================================================
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
 
-[Windows Store C\#](/de-de/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications/ "Windows Store C#")[iOS](/de-de/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications/ "iOS")
+# Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Dienstes
 
-In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mit Azure Notification Hubs anfordern können, wenn die Registrierung von Azure Mobile Services durchgeführt wird. Dieses Lernprogramm baut auf dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users) auf. Sie müssen zuvor die Schritte in diesem Lernprogramm abgeschlossen haben, in denen der authentifizierte Mobile Service erstellt wird. Weitere Informationen zum Benachrichtigen von Benutzern finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users).
+<div class="dev-center-tutorial-selector sublanding">
+    <a href="/de-de/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications/" title="Windows Store C#">Windows Store C#</a><a href="/de-de/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications/" title="iOS" class="current">iOS</a>
+</div>
 
-1.  Öffnen Sie in Xcode die Datei "QSTodoService.h" in dem Projekt, das Sie erstellt haben, als Sie das als Voraussetzung erforderliche Lernprogramm [Erste Schritte mit der Authentifizierung](/de-de/develop/mobile/tutorials/get-started-with-users-ios/) absolviert haben, und fügen Sie die folgende **deviceToken**-Eigenschaft hinzu:
+In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mit Azure Notification Hubs anfordern können, wenn die Registrierung von Azure Mobile Services durchgeführt wird. Dieses Lernprogramm baut auf dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs][Benachrichtigen von Benutzern mit Notification Hubs] auf. Sie müssen zuvor die Schritte in diesem Lernprogramm abgeschlossen haben, in denen der authentifizierte Mobile Service erstellt wird. Weitere Informationen zum Benachrichtigen von Benutzern finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs][Benachrichtigen von Benutzern mit Notification Hubs].
 
-         @property (nonatomic) NSData* deviceToken;
+1.  Öffnen Sie in Xcode die Datei "QSTodoService.h" in dem Projekt, das Sie erstellt haben, als Sie das als Voraussetzung erforderliche Lernprogramm [Erste Schritte mit der Authentifizierung][Erste Schritte mit der Authentifizierung] absolviert haben, und fügen Sie die folgende **deviceToken**-Eigenschaft hinzu:
 
-	Diese Eigenschaft speichert das Gerätetoken.
+        @property (nonatomic) NSData* deviceToken;
 
-1.  Fügen Sie in der Datei "QSTodoService.m" die folgende **getDeviceTokenInHex**-Methode hinzu:
+    Diese Eigenschaft speichert das Gerätetoken.
 
-             - (NSString*)getDeviceTokenInHex {
-                 const unsigned *tokenBytes = [[self deviceToken] bytes];
-                 NSString *hexToken = [NSString stringWithFormat:@"%08X%08X%08X%08X%08X%08X%08X%08X",
-                                       ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
-                                       ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
-                                       ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
-                 return hexToken;
-             }
+2.  Fügen Sie in der Datei "QSTodoService.m" die folgende **getDeviceTokenInHex**-Methode hinzu:
+
+            - (NSString*)getDeviceTokenInHex {
+                const unsigned *tokenBytes = [[self deviceToken] bytes];
+                NSString *hexToken = [NSString stringWithFormat:@"%08X%08X%08X%08X%08X%08X%08X%08X",
+                                      ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
+                                      ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
+                                      ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
+                return hexToken;
+            }
 
     Diese Methode konvertiert das Gerätetoken in einen hexadezimalen Zeichenfolgenwert.
 
-2.  Fügen Sie in der Datei "QSAppDelegate.m" die folgenden Codezeilen zur **didFinishLaunchingWithOptions**-Methode hinzu:
+3.  Fügen Sie in der Datei "QSAppDelegate.m" die folgenden Codezeilen zur **didFinishLaunchingWithOptions**-Methode hinzu:
 
-          [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+            [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
 
     Dadurch werden in Ihrer App Pushbenachrichtigungen aktiviert.
 
-3.  Fügen Sie in der Datei "QSAppDelegate.m" die folgende Methode hinzu:
+4.  Fügen Sie in der Datei "QSAppDelegate.m" die folgende Methode hinzu:
 
-         - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken {
+            - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
                 [QSTodoService defaultService].deviceToken = deviceToken;
             }
 
     Dadurch wird die **deviceToken**-Eigenschaft aktualisiert.
 
-    **Hinweis**
+    <div class="dev-callout"><b>Hinweis</b>
+<p>Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der Methode **registerNativeWithDeviceToken** aus dem Lernprogramm <a href="/de-de/manage/services/notification-hubs/get-started-notification-hubs-ios/" target="_blank">Erste Schritte mit Notification Hubs</a> haben, m&uuml;ssen Sie diesen Aufruf auskommentieren oder entfernen.</p>
+</div>
 
-    Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der Methode **registerNativeWithDeviceToken** aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/de-de/manage/services/notification-hubs/get-started-notification-hubs-ios/) haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
-
-4.  (Optional) Fügen Sie in der Datei "QSAppDelegate.m" die folgende Handlermethode hinzu:
+5.  (Optional) Fügen Sie in der Datei "QSAppDelegate.m" die folgende Handlermethode hinzu:
 
             - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
                 NSLog(@"%@", userInfo);
@@ -54,47 +57,52 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
                 [alert show];
             }
 
-	Diese Methode zeigt eine Warnung in der GUI an, wenn Ihre App während der Ausführung eine Benachrichtigung empfängt.
+    Diese Methode zeigt eine Warnung in der GUI an, wenn Ihre App während der Ausführung eine Benachrichtigung empfängt.
 
-1.  Fügen Sie in der Datei "QSTodoListViewController.m" die **registerForNotificationsWithBackEnd**-Methode hinzu:
+6.  Fügen Sie in der Datei "QSTodoListViewController.m" die **registerForNotificationsWithBackEnd**-Methode hinzu:
 
-             - (void)registerForNotificationsWithBackEnd {    
-                 NSString* json = [NSString  stringWithFormat:@"{     - (void)registerForNotificationsWithBackEnd {    
-                 NSString* json = [NSString  stringWithFormat:@"{\"platform\":\"ios\", \"deviceToken\":\"%@\"}", [self.todoService getDeviceTokenInHex] ];
-                    
-                 [self.todoService.client invokeAPI:@"register_notifications" data:[json dataUsingEncoding:NSUTF8StringEncoding] HTTPMethod:@"POST" parameters:nil headers:nil completion:^(id result, NSHTTPURLResponse *response, NSError *error) {
-                     if (error != nil) {
-                         NSLog(@"Registration failed: %@", error);
-                     } else {
-                         // display UIAlert with successful login
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Back-end registration" message:@"Registration successful" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles:nil, nil];
-                         [alert show];
-                     }
-                 }];
-             }
+            - (void)registerForNotificationsWithBackEnd {    
+                NSString* json = [NSString  stringWithFormat:@"{\"platform\":\"ios\", \"deviceToken\":\"%@\"}", [self.todoService getDeviceTokenInHex] ];
 
+                [self.todoService.client invokeAPI:@"register_notifications" data:[json dataUsingEncoding:NSUTF8StringEncoding] HTTPMethod:@"POST" parameters:nil headers:nil completion:^(id result, NSHTTPURLResponse *response, NSError *error) {
+                    if (error != nil) {
+                        NSLog(@"Registration failed: %@", error);
+                    } else {
+                        // display UIAlert with successful login
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Back-end registration" message:@"Registration successful" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles:nil, nil];
+                        [alert show];
+                    }
+                }];
+            }
 
-    Diese Methode konstruiert eine json-Nutzlast, die das Gerätetoken enthält. Dann ruft sie die benutzerdefinierte API in Ihrem mobilen Dienst auf, um sich für die Benachrichtigung zu registrieren. Diese Methode erstellt ein Gerätetoken für Pushbenachrichtigungen und sendet es, zusammen mit dem Gerätetyp, an die benutzerdefinierte API-Methode, die eine Registrierung in Notification Hubs erstellt. Diese benutzerdefinierte API wurde in [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users) definiert.
+    Diese Methode konstruiert eine json-Nutzlast, die das Gerätetoken enthält. Dann ruft sie die benutzerdefinierte API in Ihrem mobilen Dienst auf, um sich für die Benachrichtigung zu registrieren. Diese Methode erstellt ein Gerätetoken für Pushbenachrichtigungen und sendet es, zusammen mit dem Gerätetyp, an die benutzerdefinierte API-Methode, die eine Registrierung in Notification Hubs erstellt. Diese benutzerdefinierte API wurde in [Benachrichtigen von Benutzern mit Notification Hubs][Benachrichtigen von Benutzern mit Notification Hubs] definiert.
 
-2.  Fügen Sie schließlich in der **viewDidAppear**-Methode einen Aufruf für die neue **registerForNotificationsWithBackEnd**-Methode hinzu, nachdem der Benutzer erfolgreich authentifiziert wurde, wie im folgenden Beispiel gezeigt:
+7.  Fügen Sie schließlich in der **viewDidAppear**-Methode einen Aufruf für die neue **registerForNotificationsWithBackEnd**-Methode hinzu, nachdem der Benutzer erfolgreich authentifiziert wurde, wie im folgenden Beispiel gezeigt:
 
             - (void)viewDidAppear:(BOOL)animated
             {
                 MSClient *client = self.todoService.client;
-                
+
                 if (client.currentUser != nil) {
                     return;
                 }
-                    
+
                 [client loginWithProvider:@"microsoftaccount" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
                     [self refresh];
                     [self registerForNotificationsWithBackEnd];
                 }];
             }
 
-    **Hinweis**
+    <div class="dev-callout"><b>Hinweis</b>
+<p>Dadurch wird sichergestellt, dass die Registrierung jedes Mal beim Laden der Seite angefordert wird. In Ihrer App m&ouml;chten Sie diese Registrierung ggf. nur in bestimmten Abst&auml;nden vornehmen, um sicherzustellen, dass die Registrierung noch aktuell ist.</p>
+</div>
 
-    Auf diese Weise wird sichergestellt, dass die Registrierung bei jedem Laden der Seite angefordert wird. In Ihrer App können Sie diese Registrierung auch nur von Zeit zu Zeit durchführen, um sicherzustellen, dass die Registrierung aktuell ist.
+Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen von Benutzern mit Notification Hubs][Benachrichtigen von Benutzern mit Notification Hubs] zurückkehren und den mobilen Dienst aktualisieren, um Benachrichtigungen mit Notification Hubs zu senden.
 
-Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen von Benutzern mit Notification Hubs](/de-de/manage/services/notification-hubs/notify-users) zurückkehren und den mobilen Dienst aktualisieren, um Benachrichtigungen mit Notification Hubs zu senden.
+<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
+  [Windows Store C#]: /de-de/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications/ "Windows Store C#"
+  [iOS]: /de-de/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications/ "iOS"
+  [Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users
+  [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-ios/
+  [Erste Schritte mit Notification Hubs]: /de-de/manage/services/notification-hubs/get-started-notification-hubs-ios/

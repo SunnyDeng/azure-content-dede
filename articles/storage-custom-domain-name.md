@@ -8,7 +8,7 @@ Sie können eine benutzerdefinierte Domäne für den Zugriff auf Blob-Daten in I
 
 <div class="dev-callout"> 
 <b>Hinweis</b> 
-    <p>Die Vorgehensweisen in dieser Aufgabe gelten f&uuml;r Azure-Speicherkonten. Informationen zu Cloud-Diensten finden Sie unter <a href = "/en-us/develop/net/common-tasks/custom-dns/">Konfigurieren eines benutzerdefinierten Dom&auml;nennamens f&uuml;r einen Azure-Cloud-Dienst</a>, und zu Webseiten unter <a href="/en-us/develop/net/common-tasks/custom-dns-web-site/">Konfigurieren eines benutzerdefinierten Dom&auml;nennamens f&uuml;r eine Azure-Website</a>.</p> 
+    <p>Die Vorgehensweisen in dieser Aufgabe gelten f&uuml;r Azure-Speicherkonten. Informationen zu Cloud-Diensten finden Sie unter <a href = "/de-de/develop/net/common-tasks/custom-dns/">Konfigurieren eines benutzerdefinierten Dom&auml;nennamens f&uuml;r einen Azure-Cloud-Dienst</a>, und zu Webseiten unter <a href="/de-de/develop/net/common-tasks/custom-dns-web-site/">Konfigurieren eines benutzerdefinierten Dom&auml;nennamens f&uuml;r eine Azure-Website</a>.</p> 
 </div>
 
 Es gibt zwei Methoden, um Ihre benutzerdefinierte Domäne auf den Blob-Endpunkt für Ihr Speicherkonto zu verweisen. Die einfachste Methode besteht darin, einen CNAME-Datensatz zu erstellen, der Ihre benutzerdefinierte Domäne und Unterdomäne dem Blob-Endpunkt zuordnet. Ein CNAME-Datensatz ist eine DNS-Funktion, die eine Quelldomäne einer Zieldomäne zuordnet. In diesem Fall ist die Quelldomäne Ihre benutzerdefinierte Domäne und Unterdomäne (beachten Sie, dass die Unterdomäne immer erforderlich ist). Die Zieldomäne ist der Blob-Dienstendpunkt.
@@ -50,15 +50,15 @@ Die folgende Tabelle enthält Beispiel-URLs für den Zugriff auf Blob-Daten in e
 </table>
 In dieser Aufgabe werden die folgenden Verfahren erläutert:
 
--   [Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto][]
--   [Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto unter Verwendung der Zwischenunterdomäne "asverify"][]
+-   [Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto][Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto]
+-   [Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto unter Verwendung der Zwischenunterdomäne "asverify"][Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto unter Verwendung der Zwischenunterdomäne "asverify"]
 -   <a name="#verify-subdomain">Überprüfen, ob die benutzerdefinierte Domäne auf den Blob-Dienstendpunkt verweist</a>
 
 ## <a name="register-domain"></a>Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto
 
 Gehen Sie nach diesem Verfahren vor, um Ihre benutzerdefinierte Domäne zu registrieren, wenn es unerheblich ist, ob die Domäne Benutzern kurzzeitig nicht zur Verfügung steht, oder wenn die benutzerdefinierte Domäne derzeit keine Anwendung hostet.
 
-Wenn Ihre benutzerdefinierte Domäne derzeit eine Anwendung unterstützt, die keine Downtime zulässt, gehen Sie nach dem unter [Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto unter Verwendung der Zwischenunterdomäne "asverify"][] beschriebenen Verfahren vor.
+Wenn Ihre benutzerdefinierte Domäne derzeit eine Anwendung unterstützt, die keine Downtime zulässt, gehen Sie nach dem unter [Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto unter Verwendung der Zwischenunterdomäne "asverify"][Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto unter Verwendung der Zwischenunterdomäne "asverify"] beschriebenen Verfahren vor.
 
 Zum Konfigurieren eines benutzerdefinierten Domänennamens müssen Sie einen neuen CNAME-Datensatz bei der Domänenregistrierung erstellen. Der CNAME-Datensatz gibt einen Alias für einen Domänennamen an; in diesem Fall ordnet er die Adresse der benutzerdefinierten Domäne dem Blob-Dienstendpunkt für Ihr Speicherkonto zu.
 
@@ -145,10 +145,10 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte
 
 ## Zusätzliche Ressourcen
 
--   [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne][]
+-   [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne][Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne]
 
-  [Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Cloud-Dienst]: /en-us/develop/net/common-tasks/custom-dns/
-  [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website]: /en-us/develop/net/common-tasks/custom-dns-web-site/
+  [Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Cloud-Dienst]: /de-de/develop/net/common-tasks/custom-dns/
+  [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website]: /de-de/develop/net/common-tasks/custom-dns-web-site/
   [Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto]: #register-domain
   [Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto unter Verwendung der Zwischenunterdomäne "asverify"]: #register-asverify
-  [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne]: http://msdn.microsoft.com/en-us/library/windowsazure/gg680307.aspx
+  [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne]: http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx

@@ -70,7 +70,7 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 
   [mobile-services-selector-get-started]: ../includes/mobile-services-selector-get-started.md
   [mobile-services-windows-universal-get-started]: ../includes/mobile-services-windows-universal-get-started.md
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F
+  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F
   [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
   [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
 <!-- Images. -->

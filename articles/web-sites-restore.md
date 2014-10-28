@@ -1,122 +1,135 @@
-<properties linkid="web-sites-restore" urlDisplayName="Restore a Microsoft Azure web site" pageTitle="Restore a Microsoft Azure web site" metaKeywords="Azure Web Sites, Restore, restoring" description="Learn how to restore your Azure web sites from backup." metaCanonical="" services="web-sites" documentationCenter="" title="Restore a Microsoft Azure web site" authors="timamm" solutions="" writer="timamm" manager="paulettm" editor="mollybos" />
+<properties linkid="web-sites-restore" urlDisplayName="Restore a Microsoft Azure website" pageTitle="Restore a Microsoft Azure website" metaKeywords="Azure Websites, Restore, restoring" description="Learn how to restore your Azure websites from backup." metaCanonical="" services="web-sites" documentationCenter="" title="Restore a Microsoft Azure website" authors="cephalin"  solutions="" writer="cephalin" manager="wpickett" editor="mollybos"  />
 
-Wiederherstellen einer Microsoft Azure-Website
-==============================================
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin"></tags>
 
-In diesem Artikel erfahren Sie, wie Sie eine Website wiederherstellen, die zuvor mit der Funktion zur Sicherung von Azure-Websites gesichert wurde. Weitere Informationen finden Sie unter [Sicherungen von Microsoft Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-backup/).
+# Wiederherstellen einer Microsoft Azure-Website
 
-Mit der Wiederherstellungsfunktion für Azure-Websites können Sie Ihre Website bei Bedarf in einem vorherigen Zustand wiederherstellen oder eine neue Website basierend auf der Website-Sicherung erstellen. Das Erstellen einer neuen Website, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
+In diesem Artikel erfahren Sie, wie Sie eine Website wiederherstellen, die zuvor mit der Funktion zur Sicherung von Azure-Websites gesichert wurde. Weitere Informationen finden Sie unter [Sicherungen von Microsoft Azure-Websites][Sicherungen von Microsoft Azure-Websites].
 
-Die Wiederherstellungsfunktion auf der Registerkarte "Backups" im Azure-Websites-Portal ist nur im Standardmodus verfügbar.
+Mit der Wiederherstellungsfunktion für Azure-Websites können Sie Ihre Website bei Bedarf in einem vorherigen Zustand wiederherstellen oder eine neue Website basierend auf der Sicherung der ursprünglichen Website erstellen. Das Erstellen einer neuen Website, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
 
-Themen in diesem Artikel
-------------------------
+Die Wiederherstellungsfunktion auf der Registerkarte "Sicherungen" im Azure-Websites-Portal ist nur im Modus "Standard" verfügbar.
 
--   [Wiederherstellen einer Azure-Website aus einer zuvor erstellten Sicherung](#PreviousBackup)
--   [Wiederherstellen einer Azure-Website direkt aus einem Speicherkonto](#StorageAccount)
--   [Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs](#RestoreSettings)
--   [Anzeigen der Vorgangsprotokolle](#OperationLogs)
+## Themen in diesem Artikel
+
+-   [Wiederherstellen einer Azure-Website aus einer zuvor erstellten Sicherung][Wiederherstellen einer Azure-Website aus einer zuvor erstellten Sicherung]
+-   [Wiederherstellen einer Azure-Website direkt aus einem Speicherkonto][Wiederherstellen einer Azure-Website direkt aus einem Speicherkonto]
+-   [Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs][Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs]
+-   [Anzeigen der Vorgangsprotokolle][Anzeigen der Vorgangsprotokolle]
+
+<a name="PreviousBackup"></a>
 
 ## Wiederherstellen einer Azure-Website aus einer zuvor erstellten Sicherung
 
-1.  Klicken Sie auf der Registerkarte **Backups** in der Befehlsleiste unten auf der Portalseite auf **Restore Now**. Das Dialogfeld **Restore Now** wird angezeigt.
+1.  Klicken Sie auf der Registerkarte **Sicherungen** in der Befehlsleiste unten auf der Portalseite auf **Jetzt wiederherstellen**. Das Dialogfeld **Jetzt wiederherstellen** wird angezeigt.
 
-    ![Sicherungsquelle auswählen](./media/web-sites-restore/01ChooseBackupSource.png)
+    ![Sicherungsquelle auswählen][Sicherungsquelle auswählen]
 
-2.  Wählen Sie unter **Choose backup source** die Option **Previous Backup for this Web Site** aus.
+2.  Wählen Sie unter **Sicherungsquelle wählen** die Option **Vorherige Sicherung für diese Website** aus.
 3.  Wählen Sie das Datum der Sicherung aus, die Sie wiederherstellen möchten, und klicken Sie dann auf den Pfeil nach rechts, um fortzufahren.
-4.  Befolgen Sie die Schritte im Abschnitt [Auswählen der Wiederherstellungseinstellungen der Website](#RestoreSettings) weiter unten in diesem Artikel.
+4.  Befolgen Sie die Schritte im Abschnitt [Auswählen der Wiederherstellungseinstellungen der Website][Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs] weiter unten in diesem Artikel.
 
-Wiederherstellen einer Azure-Website direkt aus einem Speicherkonto
-------------------------
-1.  Klicken Sie auf der Registerkarte **Backups** in der Befehlsleiste unten auf der Portalseite auf **Restore Now**. Das Dialogfeld **Restore Now** wird angezeigt.
+<a name="StorageAccount"></a>
 
-    ![Sicherungsquelle auswählen](./media/web-sites-restore/01ChooseBackupSource.png)
+## Wiederherstellen einer Azure-Website direkt aus einem Speicherkonto
 
-2.  Wählen Sie unter **Choose backup source** die Option **Storage Account File** aus. Hier können Sie direkt die URL für die Speicherkontodatei auswählen oder auf das Ordnersymbol klicken, um zum Blob-Speicher zu navigieren und die Sicherungsdatei anzugeben. In diesem Beispiel wird das Ordnersymbol verwendet.
+1.  Klicken Sie auf der Registerkarte **Sicherungen** in der Befehlsleiste unten auf der Portalseite auf **Jetzt wiederherstellen**. Das Dialogfeld **Jetzt wiederherstellen** wird angezeigt.
 
-    ![Speicherkontodatei](./media/web-sites-restore/02StorageAccountFile.png)
+    ![Sicherungsquelle auswählen][Sicherungsquelle auswählen]
 
-3.  Klicken Sie auf das Ordnersymbol, um das Dialogfeld **Browse Cloud Storage** zu öffnen.
+2.  Wählen Sie unter **Sicherungsquelle wählen** die Option **Speicherkontodatei** aus. Hier können Sie direkt die URL für die Speicherkontodatei auswählen oder auf das Ordnersymbol klicken, um zum Blob-Speicher zu navigieren und die Sicherungsdatei anzugeben. In diesem Beispiel wird das Ordnersymbol verwendet.
 
-    ![Cloud-Speicher durchsuchen](./media/web-sites-restore/03BrowseCloudStorage.png)
+    ![Speicherkontodatei][Speicherkontodatei]
+
+3.  Klicken Sie auf das Ordnersymbol, um das Dialogfeld **Im Cloud-Speicher navigieren** zu öffnen.
+
+    ![Cloud-Speicher durchsuchen][Cloud-Speicher durchsuchen]
 
 4.  Erweitern Sie den Namen des Speicherkontos, das Sie verwenden möchten, und wählen Sie dann **websitebackups** aus, das Ihre Sicherungen enthält.
 5.  Wählen Sie die ZIP-Datei aus, welche die wiederherzustellende Sicherung enthält, und klicken Sie dann auf **Öffnen**.
 6.  Die Speicherkontodatei wurde ausgewählt und wird jetzt im Speicherkontofeld angezeigt. Klicken Sie auf den Pfeil nach rechts, um fortzufahren.
 
-    ![Ausgewählte Speicherkontodatei](./media/web-sites-restore/04StorageAccountFileSelected.png)
+    ![Ausgewählte Speicherkontodatei][Ausgewählte Speicherkontodatei]
 
-7.  Fahren Sie mit dem folgenden Abschnitt fort, [Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs](#RestoreSettings).
+7.  Fahren Sie mit dem folgenden Abschnitt fort, [Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs][Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs].
 
-Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs 
-------------------------
-1. Wählen Sie unter **Choose your web site restore settings**, **Restore To** entweder **Current web site** oder **New web site instance** aus.
+<a name="RestoreSettings"></a>
 
-   ![Wiederherstellungseinstellungen der Website auswählen][ChooseRestoreSettings]
+## Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs
 
-   Wenn Sie **Current web site** auswählen, wird Ihre vorhandene Website durch die Sicherung überschrieben, die Sie ausgewählt haben (destruktive Wiederherstellung). Alle seit der Sicherung an der Website vorgenommenen Änderungen werden dauerhaft verworfen, und der Wiederherstellungsvorgang kann nicht rückgängig gemacht werden. Während des Wiederherstellungsvorgangs ist die aktuelle Website kurzzeitig nicht erreichbar, und es wird eine Warnmeldung dazu angezeigt.
+1.  Wählen Sie unter **Wiederherstellungseinstellungen für Website wählen**, **Wiederherstellen auf** entweder **Aktuelle Website** oder **Neue Websiteinstanz** aus.
 
-   Wenn Sie **New web site instance** auswählen, wird eine neue Website in derselben Region mit dem von Ihnen angegebenen Namen erstellt. (Standardmäßig lautet der neue Name **restored-***alterWebsiteName*.) 
+    ![Wiederherstellungseinstellungen der Website auswählen][Wiederherstellungseinstellungen der Website auswählen]
 
-   Die von Ihnen wiederhergestellte Website enthält denselben Inhalt und die Konfiguration, die im Portal für die ursprüngliche Website festgelegt wurde. Außerdem umfasst sie alle Datenbanken, die Sie im nächsten Schritt einschließen.
+    Wenn Sie **Aktuelle Website** auswählen, wird Ihre vorhandene Website durch die Sicherung überschrieben, die Sie ausgewählt haben (destruktive Wiederherstellung). Alle seit der Sicherung an der Website vorgenommenen Änderungen werden dauerhaft entfernt, und der Wiederherstellungsvorgang kann nicht rückgängig gemacht werden. Während des Wiederherstellungsvorgangs ist die aktuelle Website kurzzeitig nicht erreichbar, und es wird eine Warnmeldung dazu angezeigt.
 
-1. Wenn Sie zusammen mit der Website eine Datenbank wiederherstellen möchten, wählen Sie unter **Included Databases** mithilfe der Dropdown-Liste unter **Restore To** den Namen des Datenbankservers aus, in dem Sie die Datenbank wiederherstellen möchten. Sie können auch einen neuen Datenbankserver für die Wiederherstellung erstellen oder **Don't Restore** angeben, um die Datenbank nicht wiederherzustellen (dies ist die Standardauswahl).
+    Wenn Sie **Neue Websiteinstanz** auswählen, wird eine neue Website in derselben Region mit dem von Ihnen angegebenen Namen erstellt. (Standardmäßig lautet der neue Name **restored-***alterWebsitename*.)
 
-    Nachdem Sie den Servernamen ausgewählt haben, geben Sie den Namen der Zieldatenbank für die Wiederherstellung im Feld **Database Name** an.
+    Die von Ihnen wiederhergestellte Website enthält denselben Inhalt und die Konfiguration, die im Portal für die ursprüngliche Website festgelegt wurde. Außerdem umfasst sie alle Datenbanken, die Sie im nächsten Schritt einschließen.
 
-    Wenn die Wiederherstellung eine oder mehrere Datenbanken umfasst, können Sie **Automatically adjust connection strings** auswählen, um die in der Sicherung gespeicherten Verbindungszeichenfolgen zu aktualisieren, sodass sie auf die neue Datenbank bzw. den Datenbankserver verweisen. Vergewissern Sie sich, dass alle auf die Datenbank bezogenen Funktionen nach der Wiederherstellung wie erwartet funktionieren.
+2.  Wenn Sie zusammen mit der Website eine Datenbank wiederherstellen möchten, wählen Sie unter **Enthaltene Datenbanken** mithilfe der Dropdownliste unter **Wiederherstellen auf** den Namen des Datenbankservers aus, in dem Sie die Datenbank wiederherstellen möchten. Sie können auch einen neuen Datenbankserver für die Wiederherstellung erstellen oder **Nicht wiederherstellen** angeben, um die Datenbank nicht wiederherzustellen (dies ist die Standardauswahl).
 
-    ![Datenbankserverhost auswählen](./media/web-sites-restore/06ChooseDBServer.png)
+    Nachdem Sie den Servernamen ausgewählt haben, geben Sie den Namen der Zieldatenbank für die Wiederherstellung im Feld **Datenbankname** an.
+
+    Wenn die Wiederherstellung eine oder mehrere Datenbanken umfasst, können Sie **Verbindungszeichenfolgen automatisch anpassen** auswählen, um die in der Sicherung gespeicherten Verbindungszeichenfolgen zu aktualisieren, sodass sie auf die neue Datenbank bzw. den Datenbankserver verweisen. Vergewissern Sie sich, dass alle auf die Datenbank bezogenen Funktionen nach der Wiederherstellung wie erwartet funktionieren.
+
+    ![Datenbankserverhost auswählen][Datenbankserverhost auswählen]
 
     > [WACOM.NOTE] Sie können eine SQL-Datenbank mit demselben Namen nicht auf demselben SQL-Server wiederherstellen. Sie müssen entweder einen anderen Datenbanknamen oder einen anderen SQL-Serverhost auswählen, auf dem die Datenbank wiederhergestellt wird.
 
     > [WACOM.NOTE] Sie können eine MySQL-Datenbank mit demselben Namen auf demselben Server wiederherstellen, beachten Sie jedoch, dass dabei der vorhandene Inhalt aus der MySQL-Datenbank gelöscht wird.
 
-2.  Wenn Sie eine vorhandene Datenbank wiederherstellen möchten, müssen Sie den Benutzernamen und das Kennwort angeben. Wenn Sie in einer neuen Datenbank wiederherstellen möchten, müssen Sie einen neuen Datenbanknamen angeben:
+3.  Wenn Sie eine vorhandene Datenbank wiederherstellen möchten, müssen Sie den Benutzernamen und das Kennwort angeben. Wenn Sie in einer neuen Datenbank wiederherstellen möchten, müssen Sie einen neuen Datenbanknamen angeben:
 
-    ![In einer neuen SQL-Datenbank wiederherstellen](./media/web-sites-restore/07RestoreToNewSQLDB.png)
+    ![In einer neuen SQL-Datenbank wiederherstellen][In einer neuen SQL-Datenbank wiederherstellen]
 
     Klicken Sie auf den Pfeil nach rechts, um fortzufahren.
 
-3.  Falls Sie eine neue Datenbank erstellen, müssen Sie im nächsten Dialogfeld die Anmeldeinformationen und andere anfängliche Konfigurationsdaten für die Datenbank angeben. In diesem Beispiel wird eine neue SQL-Datenbank verwendet. (Die Optionen für eine neue MySQL-Datenbank sind etwas anders.)
+4.  Falls Sie eine neue Datenbank erstellen, müssen Sie im nächsten Dialogfeld die Anmeldeinformationen und andere anfängliche Konfigurationsdaten für die Datenbank angeben. In diesem Beispiel wird eine neue SQL-Datenbank verwendet. (Die Optionen für eine neue MySQL-Datenbank sind etwas anders.)
 
-    ![Einstellungen der neuen SQL-Datenbank](./media/web-sites-restore/08NewSQLDBConfig.png)
+    ![Einstellungen der neuen SQL-Datenbank][Einstellungen der neuen SQL-Datenbank]
 
-4.  Aktivieren Sie das Kontrollkästchen, um den Wiederherstellungsvorgang zu starten. Sobald er abgeschlossen ist, wird die neue Website-Instanz (falls dies die gewählte Wiederherstellungsoption ist) in der Liste der Websites im Portal angezeigt.
+5.  Aktivieren Sie das Kontrollkästchen, um den Wiederherstellungsvorgang zu starten. Sobald er abgeschlossen ist, wird die neue Websiteinstanz (falls dies die gewählte Wiederherstellungsoption ist) in der Liste der Websites im Portal angezeigt.
 
-    ![Wiederhergestellte Contoso-Website](./media/web-sites-restore/09RestoredContosoWebSite.png)
+    ![Wiederhergestellte Contoso-Website][Wiederhergestellte Contoso-Website]
 
-Anzeigen der Vorgangsprotokolle
-------------------------
-1.  Wenn Sie Details zum Erfolg oder Fehlschlagen der Website-Wiederherstellung anzeigen möchten, wechseln Sie zur Registerkarte "Dashboard" Ihrer Website. Klicken Sie im Abschnitt **Quick Glance** unter **Management Services** auf **Operation Logs**.
+<a name="OperationLogs"></a>
 
-    ![Dashboard - Link zu den Vorgangsprotokollen](./media/web-sites-restore/10DashboardOperationLogsLink.png)
+## Anzeigen der Vorgangsprotokolle
 
-2.  Sie gelangen zur Management Services-Portalseite **Operation Logs**, wo Sie das Protokoll für den Wiederherstellungsvorgang in der Liste der Vorgangsprotokolle anzeigen können:
+1.  Wenn Sie Details zur erfolgreichen oder fehlerhaften Ausführung der Websitewiederherstellung anzeigen möchten, wechseln Sie zur Registerkarte "Dashboard" Ihrer Website. Klicken Sie im Abschnitt **Auf einen Blick** unter **Verwaltungsdienste** auf **Vorgangsprotokolle**.
 
-    ![Management Services-Seite mit Vorgangsprotokollen](./media/web-sites-restore/11ManagementServicesOperationLogsList.png)
+    ![Dashboard - Link zu den Vorgangsprotokollen][Dashboard - Link zu den Vorgangsprotokollen]
+
+2.  Sie gelangen zur Seite **Vorgangsprotokolle** des Verwaltungsdienstportals, wo Sie das Protokoll für den Wiederherstellungsvorgang in der Liste der Vorgangsprotokolle anzeigen können:
+
+    ![Verwaltungsdienstseite mit Vorgangsprotokollen][Verwaltungsdienstseite mit Vorgangsprotokollen]
 
 3.  Um ausführliche Informationen zum Vorgang anzuzeigen, wählen Sie den Vorgang in der Liste aus und klicken in der Befehlsleiste auf die Schaltfläche **Details**.
 
-    ![Detailschaltfläche ](./media/web-sites-restore/12DetailsButton.png)
+    ![Detailschaltfläche ][Detailschaltfläche ]
 
-    Daraufhin wird das Fenster **Operations Details** geöffnet und der kopierbare Inhalt der Protokolldatei angezeigt:
+    Daraufhin wird das Fenster **Vorgangsdetails** geöffnet und der kopierbare Inhalt der Protokolldatei angezeigt:
 
-    ![Vorgangsdetails](./media/web-sites-restore/13OperationDetails.png)
+    ![Vorgangsdetails][Vorgangsdetails]
 
 <!-- IMAGES -->
-[ChooseBackupSource]: ./media/web-sites-restore/01ChooseBackupSource.png
-[StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png
-[BrowseCloudStorage]: ./media/web-sites-restore/03BrowseCloudStorage.png
-[StorageAccountFileSelected]: ./media/web-sites-restore/04StorageAccountFileSelected.png
-[ChooseRestoreSettings]: ./media/web-sites-restore/05ChooseRestoreSettings.png
-[ChooseDBServer]: ./media/web-sites-restore/06ChooseDBServer.png
-[RestoreToNewSQLDB]: ./media/web-sites-restore/07RestoreToNewSQLDB.png
-[NewSQLDBConfig]: ./media/web-sites-restore/08NewSQLDBConfig.png
-[RestoredContosoWebSite]: ./media/web-sites-restore/09RestoredContosoWebSite.png
-[DashboardOperationLogsLink]: ./media/web-sites-restore/10DashboardOperationLogsLink.png
-[ManagementServicesOperationLogsList]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
-[DetailsButton]: ./media/web-sites-restore/12DetailsButton.png
-[OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
 
+  [Sicherungen von Microsoft Azure-Websites]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-backup/
+  [Wiederherstellen einer Azure-Website aus einer zuvor erstellten Sicherung]: #PreviousBackup
+  [Wiederherstellen einer Azure-Website direkt aus einem Speicherkonto]: #StorageAccount
+  [Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs]: #RestoreSettings
+  [Anzeigen der Vorgangsprotokolle]: #OperationLogs
+  [Sicherungsquelle auswählen]: ./media/web-sites-restore/01ChooseBackupSource.png
+  [Speicherkontodatei]: ./media/web-sites-restore/02StorageAccountFile.png
+  [Cloud-Speicher durchsuchen]: ./media/web-sites-restore/03BrowseCloudStorage.png
+  [Ausgewählte Speicherkontodatei]: ./media/web-sites-restore/04StorageAccountFileSelected.png
+  [Wiederherstellungseinstellungen der Website auswählen]: ./media/web-sites-restore/05ChooseRestoreSettings.png
+  [Datenbankserverhost auswählen]: ./media/web-sites-restore/06ChooseDBServer.png
+  [In einer neuen SQL-Datenbank wiederherstellen]: ./media/web-sites-restore/07RestoreToNewSQLDB.png
+  [Einstellungen der neuen SQL-Datenbank]: ./media/web-sites-restore/08NewSQLDBConfig.png
+  [Wiederhergestellte Contoso-Website]: ./media/web-sites-restore/09RestoredContosoWebSite.png
+  [Dashboard - Link zu den Vorgangsprotokollen]: ./media/web-sites-restore/10DashboardOperationLogsLink.png
+  [Verwaltungsdienstseite mit Vorgangsprotokollen]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
+  [Detailschaltfläche ]: ./media/web-sites-restore/12DetailsButton.png
+  [Vorgangsdetails]: ./media/web-sites-restore/13OperationDetails.png

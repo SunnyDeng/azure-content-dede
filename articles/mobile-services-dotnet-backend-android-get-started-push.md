@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-dotnet-backend-get-started-with-push-android" urlDisplayName="Get Started with Push" pageTitle="Get started with push (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Android .Net app." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal" solutions="" manager="dwrede" editor="" />
+ <properties linkid="develop-mobile-tutorials-dotnet-backend-get-started-with-push-android" urlDisplayName="Get Started with Push" pageTitle="Get started with push (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Android .Net app." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal"></tags>
 
@@ -40,7 +40,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
     ![][1]
 
     <div class="dev-callout"><b>Wichtig</b>
-    <p>Wenn Sie Ihre GCM-Anmeldeinformationen f&uuml;r erweiterte Pushbenachrichtigungen auf der Registerkarte &quot;Push&quot; im Portal festlegen, werden diese f&uuml;r Notification Hubs freigegeben, sodass der Benachrichtigungshub mit Ihrer App konfiguriert wird.</p>
+    <p>Wenn Sie Ihre GCM-Anmeldeinformationen für erweiterte Pushbenachrichtigungen auf der Registerkarte "Push" im Portal festlegen, werden diese für Notification Hubs freigegeben, sodass der Benachrichtigungshub mit Ihrer App konfiguriert wird.</p>
     </div>
 
 Ihr mobiler Dienst ist jetzt für GCM und Benachrichtigungshubs konfiguriert.
@@ -181,7 +181,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
   [Testen der App mit dem veröffentlichten mobilen Dienst]: #test-app
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-data
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F
+  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F
   [Enable GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [0]: ./media/mobile-services-android-get-started-push/mobile-services-selection.png

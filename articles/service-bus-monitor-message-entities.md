@@ -1,16 +1,16 @@
-<properties linkid="service-bus-monitor-messaging-entitites" urlDisplayName="Traffic Manager" pageTitle="Monitor Service Bus Messaging Entities - Azure" metaKeywords="" description="Learn how to monitor your Service Bus entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Monitor Service Bus Messaging Entities" authors="" solutions="" />
+<properties linkid="service-bus-monitor-messaging-entitites" urlDisplayName="Traffic Manager" pageTitle="Monitor Service Bus Messaging Entities - Azure" metaKeywords="" description="Learn how to monitor your Service Bus entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Monitor Service Bus Messaging Entities" authors="sethm" solutions="" />
 
-Gewusst wie: Überwachen von Service Bus-Nachrichtenentitäten
-============================================================
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="sethm"></tags>
 
-Dieses Thema beschreibt die Verwaltung und Überwachung Ihrer Service Bus-Entitäten im [Azure-Verwaltungsportal](http://manage.windowsazure.com). Im Portal finden Sie eine umfassende Statusansicht für Ihre Warteschlangen und Themen. Außerdem können Sie deren Verwendung überwachen.
+# Gewusst wie: Überwachen von Service Bus-Nachrichtenentitäten
 
-Überwachen von Service Bus-Warteschlangen
------------------------------------------
+Dieses Thema beschreibt die Verwaltung und Überwachung Ihrer Service Bus-Entitäten im [Azure-Verwaltungsportal][Azure-Verwaltungsportal]. Im Portal finden Sie eine umfassende Statusansicht für Ihre Warteschlangen und Themen. Außerdem können Sie deren Verwendung überwachen.
+
+## Überwachen von Service Bus-Warteschlangen
 
 Führen Sie die folgenden Schritte aus, um eine Service Bus-Warteschlange zu überwachen:
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal (Vorschau)](http://manage.windowsazure.com) an.
+1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 2.  Klicken Sie in der linken Navigationsleiste auf **Service Bus**, um eine Liste der Dienstnamespaces abzurufen.
 3.  Klicken Sie den Namespace an, der die gewünschte Warteschlange enthält.
 4.  Klicken Sie in der Menüleiste am oberen Seitenrand auf **Queues**.
@@ -28,14 +28,13 @@ Zu jede Warteschlange finden Sie Grafiken für folgende Informationen:
 
 **Auf einen Blick** im Dashboard zeigt die aktuelle Länge der Warteschlange unter **Queue Length** an. Außerdem werden weitere Eigenschaften der Warteschlange bzw. des Themas angezeigt. Die Informationen werden alle 10 Sekunden aktualisiert.
 
-![](./media/service-bus-monitor-message-entities/QueueDashboard.png)
+![][]
 
-Überwachen der Aktivität in Service Bus-Themen
-----------------------------------------------
+## Überwachen der Aktivität in Service Bus-Themen
 
 Führen Sie die folgenden Schritte aus, um ein Service Bus-Thema zu überwachen:
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal (Vorschau)](http://manage.windowsazure.com) an.
+1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 2.  Klicken Sie in der linken Navigationsleiste auf **Service Bus**, um eine Liste der Dienstnamespaces abzurufen.
 3.  Klicken Sie den Namespace an, der das gewünschte Thema enthält.
 4.  Klicken Sie in der Menüleiste am oberen Seitenrand auf **Topics**.
@@ -43,5 +42,8 @@ Führen Sie die folgenden Schritte aus, um ein Service Bus-Thema zu überwachen:
 
 Themen-Dashboards ähneln den Warteschlangen-Dashboards, mit Ausnahme der Nutzungsmetriken. Ausgehende Nachrichten und Länge werden im Themen-Dashboard nicht angezeigt, da diese Informationen für jedes Abonnement eines Themas unterschiedlich sind. In der Registerkarte **Monitor** können Sie Nutzungsmetriken (Anzahl ausgehender Nachrichten und Länge) pro Themen-Abonnement hinzufügen. Klicken Sie auf die Registerkarte **Monitor**, um diese Metriken hinzuzufügen. Klicken Sie anschließend auf **Add Metrics** am unteren Seitenrand und wählen Sie die gewünschten Abonnements des Themas aus.
 
-![](./media/service-bus-monitor-message-entities/AddMetrics.png)
+![][1]
 
+  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
+  []: ./media/service-bus-monitor-message-entities/QueueDashboard.png
+  [1]: ./media/service-bus-monitor-message-entities/AddMetrics.png

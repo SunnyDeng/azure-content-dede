@@ -1,33 +1,32 @@
-<properties linkid="manage-services-how-to-deploy-a-sqldb" urlDisplayName="How to deploy" pageTitle="How to deploy a SQL Database - Azure" metaKeywords="" description="Learn how to deploy a SQL Server database to Azure. You will use the Deploy Database to SQL Database wizard to upload a sample database." metaCanonical="" services="sql-database" documentationCenter="" title="How to Deploy a Database to Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-services-how-to-deploy-a-sqldb" urlDisplayName="How to deploy" pageTitle="How to deploy a SQL Database - Azure" metaKeywords="" description="Learn how to deploy a SQL Server database to Azure. You will use the Deploy Database to SQL Database wizard to upload a sample database." metaCanonical="" services="sql-database" documentationCenter="" title="How to Deploy a Database to Azure" authors="Lori Clark" solutions="" manager="" editor="" />
 
-Bereitstellen einer Datenbank auf Azure
-=======================================
+<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="Lori Clark"></tags>
 
-Es gibt verschiedene Methoden, um eine lokale SQL Server-Datenbank nach Azure zu verschieben. In dieser Aufgabe verwenden Sie den Assistenten zum Bereitstellen einer Datenbank für SQL-Datenbank, um eine Beispieldatenbank hochzuladen.
+# <span id="howtodeploySQLdb"></span></a>Bereitstellen einer Datenbank auf Azure
 
-Die Schul-Beispieldatenbank ist dank ihrer Einfachheit gut geeignet; alle Objekte sind mit SQL-Datenbank kompatibel, sodass Sie keine Datenbank für die Migration ändern oder vorbereiten müssen. Stellen Sie als neuer Administrator zuerst eine einfache Datenbank bereit, um die einzelnen Schritte zu verstehen, bevor Sie Ihre eigenen Datenbanken verwenden.
+Es gibt verschiedene Methoden, um eine lokale SQL Server-Datenbank nach Azure zu verschieben. In dieser Aufgabe verwenden Sie den Assistenten zum Bereitstellen einer Datenbank für SQL Database, um eine Beispieldatenbank hochzuladen.
+
+Die Schul-Beispieldatenbank ist dank ihrer Einfachheit gut geeignet; alle Objekte sind mit SQL Database kompatibel, sodass Sie keine Datenbank für die Migration ändern oder vorbereiten müssen. Stellen Sie als neuer Administrator zuerst eine einfache Datenbank bereit, um die einzelnen Schritte zu verstehen, bevor Sie Ihre eigenen Datenbanken verwenden.
 
 **Hinweis:** Im Migrationshandbuch für SQL-Datenbank finden Sie detaillierte Anweisungen für die Vorbereitung einer lokalen Datenbank für die Migration auf Azure. Laden Sie gegebenenfalls auch das Azure-Trainingskit herunter. Es enthält eine Übung, in der Sie einen alternativen Ansatz für die Migration einer lokalen Datenbank kennenlernen.
 
-Inhaltsverzeichnis
-------------------
+## Inhaltsverzeichnis
 
--   [Vorgehensweise: Erstellen der Schuldatenbank auf einem lokalen Server](#schooldb)
--   [Vorgehensweise: Bereitstellen in SQL-Datenbank](#deploydb)
--   [Vorgehensweise: Überprüfen der Datenbankbereitstellung](#verify)
+-   [Gewusst wie: Erstellen der Schuldatenbank auf einem lokalen Server][Gewusst wie: Erstellen der Schuldatenbank auf einem lokalen Server]
+-   [Gewusst wie: Bereitstellen in SQL-Datenbank][Gewusst wie: Bereitstellen in SQL-Datenbank]
+-   [Gewusst wie: Überprüfen der Datenbankbereitstellung][Gewusst wie: Überprüfen der Datenbankbereitstellung]
 
-Vorgehensweise: Erstellen der Schuldatenbank auf einem lokalen Server
----------------------------------------------------------------------
+## <span id="schooldb"></span></a>Gewusst wie: Erstellen der Schuldatenbank auf einem lokalen Server
 
-Skripte für die Erstellung dieser Datenbank finden Sie unter [Erste Schritte mit der SQL-Datenbankverwaltung](/de-de/manage/services/sql-databases/getting-started-w-sql-databases/). In dieser Anleitung führen Sie diese Skripte in Management Studio aus, um eine lokale Version der Schuldatenbank zu erstellen.
+Skripte für die Erstellung dieser Datenbank finden Sie unter [Erste Schritte mit der Administration von SQL Database][Erste Schritte mit der Administration von SQL Database]. In dieser Anleitung führen Sie diese Skripte in Management Studio aus, um eine lokale Version der Schuldatenbank zu erstellen.
 
-1.  Stellen Sie in Management Studio eine Verbindung zu einem lokalen Server her. Klicken Sie mit der rechten Maustaste auf **Datenbanken**, und klicken Sie dann auf **Neue Datenbank**, und geben Sie *Schule* ein.
+1.  Stellen Sie in Management Studio eine Verbindung zu einem lokalen Server her. Klicken Sie mit der rechten Maustaste auf **Databases**, klicken Sie anschließend auf **New Database** und geben Sie *school* ein.
 
-2.  Klicken Sie mit der rechten Maustaste auf *Schule*, und klicken Sie dann auf **Neue Abfrage**.
+2.  Klicken Sie mit der rechten Maustaste auf *school* und klicken Sie auf **New Query**.
 
 3.  Kopieren Sie das Skript "Create Schema" aus dem Lernprogramm, und führen Sie es aus.
 
-``` {}
+<div style="width:auto; height:300px; overflow:auto"><pre>
     -- Create the Department table.
     IF NOT EXISTS (SELECT * FROM sys.objects 
         WHERE object_id = OBJECT_ID(N'[dbo].[Department]') 
@@ -263,11 +262,11 @@ Skripte für die Erstellung dieser Datenbank finden Sie unter [Erste Schritte mi
     ALTER TABLE [dbo].[OfficeAssignment] CHECK 
      CONSTRAINT [FK_OfficeAssignment_Person];
     GO
-```
+</pre></div>
 
 Kopieren Sie dann das Skript "Insert Data", und führen Sie es aus.
 
-``` {}
+<div style="width:auto; height:300px; overflow:auto"><pre>
     -- Insert data into the Person table.
     SET IDENTITY_INSERT dbo.Person ON;
     GO
@@ -517,54 +516,52 @@ Kopieren Sie dann das Skript "Insert Data", und führen Sie es aus.
     INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
     VALUES (1061, 30, 4);
     GO
-```
+</pre></div>
 
-Jetzt haben Sie eine lokale Datenbank, die Sie nach Azure exportieren können. Führen Sie als Nächstes einen Assistenten aus, mit dem eine BACPAC-Datei erstellt wird, die dann in Azure geladen und in SQL-Datenbank importiert wird.
+Jetzt haben Sie eine lokale Datenbank, die Sie nach Azure exportieren können. Führen Sie als Nächstes einen Assistenten aus, mit dem eine BACPAC-Datei erstellt wird, die dann in Azure geladen und in SQL Database importiert wird.
 
-Vorgehensweise: Bereitstellen in SQL-Datenbank
-----------------------------------------------
+## <span id="deploydb"></span></a>Gewusst wie: Bereitstellen in SQL Database
 
 1.  Stellen Sie in Management Studio eine Verbindung zu einer lokalen SQL Server-Instanz her, die über eine Datenbank verfügt, die Sie migrieren möchten.
 
 2.  Klicken Sie mit der rechten Maustaste auf die Schuldatenbank, die Sie gerade erstellt haben, zeigen Sie auf **Tasks**, und klicken Sie auf **Datenbank in SQL Azure bereitstellen**.
 
-3.  Geben Sie unter "Bereitstellungseinstellungen" einen Namen für die Datenbank ein, z. B. *Schule*.
+3.  Geben Sie unter Deployment Settings einen Namen für die Datenbank ein, z. B. *Schule*.
 
 4.  Klicken Sie auf **Verbinden**.
 
 5.  Geben Sie unter "Servername" einen Servernamen bestehend aus 10 Zeichen, gefolgt von ".database.windows.net" ein.
 
-6.  Wählen Sie unter "Authentifizierung" die Option **SQL Server-Authentifizierung** aus.
+6.  Wählen Sie unter Authentication die Option **SQL Server Authentication** aus.
 
-7.  Geben Sie den Anmeldenamen und das Kennwort des Administrators ein, die Sie beim Erstellen des logischen SQL-Datenbank-Servers angegeben haben.
+7.  Geben Sie den Anmeldenamen und das Kennwort des Administrators ein, die Sie beim Erstellen des logischen SQL Database-Servers angegeben haben.
 
-8.  Klicken Sie auf **Optionen**.
+8.  Klicken Sie auf **Options**.
 
-9.  Geben Sie in den "Verbindungseigenschaften" unter "Mit Datenbank verbinden" **master** ein.
+9.  Geben Sie in Connection Properties unter Connect to database den Wert **master** ein.
 
 10. Klicken Sie auf **Verbinden**. Mit diesem Schritt schließen Sie die Verbindungsspezifikation ab und kehren zurück zum Assistenten.
 
-11. Klicken Sie auf **Weiter** und dann auf **Fertigstellen**, um den Assistenten auszuführen.
+11. Klicken Sie auf **Next** und dann auf **Finish**, um den Assistenten auszuführen.
 
-Vorgehensweise: Überprüfen der Datenbankbereitstellung
-------------------------------------------------------
+## <span id="verify"></span></a>Gewusst wie: Überprüfen der Datenbankbereitstellung
 
 1.  Aktualisieren Sie in Management Studio im Objekt-Explorer die Datenbanken, um die gerade neu erstellte anzuzeigen.
 
 2.  Erweitern Sie den Ordner "Datenbanken". In der Liste sollte die Datenbank **Schule** aufgeführt werden.
 
-3.  Klicken Sie mit der rechten Maustaste auf die Schuldatenbank, und klicken Sie dann auf **Neue Abfrage**.
+3.  Klicken Sie mit der rechten Maustaste auf die Schuldatenbank, und klicken Sie dann auf **New Query**.
 
 4.  Führen Sie die folgende Abfrage aus, um den Zugriff auf die Daten zu überprüfen.
 
-``` {}
+<div style="width:auto; height:auto; overflow:auto"><pre>
     SELECT
-        Course.Title as "Course Title"
-        ,Department.Name as "Department"
-        ,Person.LastName as "Instructor"
-        ,OnsiteCourse.Location as "Location"
-        ,OnsiteCourse.Days as "Days"
-        ,OnsiteCourse.Time as "Time"
+        Course.Title as &quot;Course Title&quot;
+        ,Department.Name as &quot;Department&quot;
+        ,Person.LastName as &quot;Instructor&quot;
+        ,OnsiteCourse.Location as &quot;Location&quot;
+        ,OnsiteCourse.Days as &quot;Days&quot;
+        ,OnsiteCourse.Time as &quot;Time&quot;
     FROM
      Course
      INNER JOIN Department
@@ -575,4 +572,9 @@ Vorgehensweise: Überprüfen der Datenbankbereitstellung
        ON CourseInstructor.PersonID = Person.PersonID
      INNER JOIN OnsiteCourse
         ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
-```
+</pre></div>
+
+  [Gewusst wie: Erstellen der Schuldatenbank auf einem lokalen Server]: #schooldb
+  [Gewusst wie: Bereitstellen in SQL-Datenbank]: #deploydb
+  [Gewusst wie: Überprüfen der Datenbankbereitstellung]: #verify
+  [Erste Schritte mit der Administration von SQL Database]: /de-de/manage/services/sql-databases/getting-started-w-sql-databases/

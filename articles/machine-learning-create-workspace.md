@@ -11,7 +11,7 @@ Ein Azure Machine Learning-Arbeitsbereichs (ML-Arbeitsbereich) enthält die Werk
 1.  Melden Sie sich mit Ihrem Azure-Konto an.
 2.  Klicken Sie im Microsoft Azure-Dienstbereich auf **MASCHINELLES LERNEN**.
 
-![][]
+![][0]
 
 1.  Klicken Sie auf **ML-ARBEITSBEREICH ERSTELLEN**.
 2.  Auf der Seite **SCHNELLERFASSUNG**:
@@ -28,5 +28,5 @@ Ein Azure Machine Learning-Arbeitsbereichs (ML-Arbeitsbereich) enthält die Werk
 <!--Image references--> 
 <!--Link references-->
 
-  []: ./media/machine-learning-create-workspace/cw1.png
+  [0]: ./media/machine-learning-create-workspace/cw1.png
   [1]: ./media/machine-learning-create-workspace/cw2.png

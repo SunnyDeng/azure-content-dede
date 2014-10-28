@@ -1,110 +1,113 @@
-<properties linkid="manage-services-create-a-virtual-network" urlDisplayName="Create a virtual network" pageTitle="Create a virtual network - Azure service management" metaKeywords="" description="Learn how to create an Azure Virtual Network." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="Create a Virtual Network in Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-services-create-a-virtual-network" urlDisplayName="Tutorial: Create a cloud-only virtual network" pageTitle="Tutorial: Create a cloud-only virtual network" metaKeywords="" description="Learn how to create an example cloud-only Azure Virtual Network in this tutorial." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="Tutorial: Create a Clound-only Virtual Network in Azure" authors="cherylmc" solutions="" manager="adinah" editor="" />
 
-Erstellen eines virtuellen Netzwerks in Azure
-=============================================
+<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/29/2014" ms.author="cherylmc"></tags>
 
-Dieses Lernprogramm führt Sie durch die Schritte zum Erstellen eines allgemeinen virtuellen Azure-Netzwerks mit dem Azure-Verwaltungsportal. Weitere Informationen zu Azure Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx).
+# Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks in Azure
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Ziel ist es, Sie mit den Schritten zum Erstellen eines virtuellen Netzwerks vertraut zu machen. Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx).
+Dieses Lernprogramm führt Sie durch die Schritte im Azure-Verwaltungsportal zum Erstellen eines virtuellen Azure-Beispielnetzwerks, das ausschließlich für die Cloud gedacht ist und zwei Subnetze enthält. Das resultierende virtuelle Netzwerk sieht wie folgt aus:
 
-Nach Abschluss dieses Lernprogramms verfügen Sie über ein virtuelles Netzwerk, in dem Sie Ihre Azure-Dienste und virtuellen Computer bereitstellen können.
+![Virtuelles Netzwerk erstellen][Virtuelles Netzwerk erstellen]
 
-**Hinweis**
+Das FrontEndSubnetz könnte beispielsweise für Webserver und das BackEndSubnetz für SQL Server oder Domänencontroller verwendet werden.
 
-Dieses Lernprogramm zeigt Ihnen nicht den Erstellungsprozess bei einer standortübergreifenden Konfiguration. Ein Lernprogramm für das Erstellen einer virtuellen Netzwerks mit einer standortübergreifenden Verbindung zwischen Standorten (z. B. Verbindung mit Active Directory oder SharePoint in Ihrem Unternehmen) finden Sie unter [Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen](/de-de/manage/services/networking/cross-premises-connectivity/).
+Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Ziel ist es, Sie mit den Schritten zum Erstellen eines eigenen virtuellen Netzwerks vertraut zu machen, indem Sie durch eine Beispielkonfiguration geführt werden. Wenn Sie ein virtuelles Nur-Cloud-Netzwerk erstellen möchten, das für Ihre spezielle Konfiguration geeignet ist, konsultieren Sie den Artikel [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal][Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal]. Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network][Überblick über Azure Virtual Network].
 
-Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie unter [Azure Virtual Network-Konfigurationsaufgaben](http://go.microsoft.com/fwlink/?LinkId=296652).
+<div class="dev-callout"> 
+<b>Hinweis</b> 
+<p>Dieses Lernprogramm zeigt Ihnen nicht den Erstellungsprozess f&uuml;r eine standort&uuml;bergreifende Konfiguration, in der das virtuelle Netzwerk mit Ihrem Unternehmensnetzwerk verbunden ist. Ein Lernprogramm f&uuml;r das Erstellen eines virtuellen Netzwerks mit standort&uuml;bergreifender Konnektivit&auml;t und VPN-Verbindungen zwischen Standorten (z. B. Verbindung mit Active Directory oder SharePoint in Ihrem Unternehmen) finden Sie unter <a href="/de-de/manage/services/networking/cross-premises-connectivity/">Lernprogramm: Erstellen eines virtuellen Netzwerks mit standort&uuml;bergreifenden Verbindungen</a>.</p> 
+</div>
 
-Richtlinien zum Bereitstellen von AD DS auf Azure Virtual Machines finden Sie unter [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines](http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx).
+## Ziele
 
-Ziele
------
+In diesem Lernprogramm erfahren Sie, wie Sie ein grundlegendes virtuelles Nur-Cloud-Netzwerk mit zwei Subnetzen in Azure einrichten.
 
-In diesem Lernprogramm lernen Sie Folgendes:
+## Voraussetzungen
 
--   Einrichten eines allgemeinen virtuellen Azure-Netzwerks, dem Sie Azure Cloud Services und virtuelle Computer hinzufügen können
+-   Microsoft-Konto mit mindestens einem gültigen, aktiven Azure-Abonnement. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren][Azure ausprobieren] für eine kostenlose Testversion anmelden. Falls Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile][Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile].
 
-Voraussetzungen
----------------
+## Erstellen des virtuellen Netzwerks für dieses Lernprogramm
 
--   Windows Live-Konto mit mindestens einem gültigen, aktiven Abonnement
+Gehen Sie zum Erstellen dieses virtuellen Nur-Cloud-Beispielnetzwerks wie folgt vor:
 
-Erstellen eines virtuellen Netzwerks
-------------------------------------
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
-**So erstellen Sie ein virtuelles Netzwerk ausschließlich für die Cloud:**
+2.  Klicken Sie in der unteren linken Ecke des Bildschirms auf **Neu** \> **Netzwerkdienste** \> **Virtuelles Netzwerk** und dann auf **Benutzerdefiniert erstellen**, um den Konfigurationsassistenten zu starten.
 
-1.  Melden Sie sich beim [Windows Azure-Verwaltungsportal](http://manage.windowsazure.com/) an.
+    ![][]
 
-2.  Klicken Sie in der unteren linken Ecke des Bildschirms auf **Neu**. Klicken Sie im Navigationsbereich auf **Netzwerke** und dann auf **Virtuelles Netzwerk**. Klicken Sie auf **Custom Create**, um den Konfigurationsassistenten zu starten.
+3.  Geben Sie auf der Seite **Details des virtuellen Netzwerks** die folgenden Informationen ein:
 
-    ![](./media/create-virtual-network/createVNet_01_OpenVirtualNetworkWizard.png)
+-   **Name -** Geben Sie **EigenesVirtuellesNetzwerk** ein.
 
-3.  Geben Sie auf der Seite **Details des virtuellen Netzwerks** die folgenden Informationen ein, und klicken Sie in der unteren rechten Ecke auf den Weiter-Pfeil. Weitere Informationen zu den Einstellungen auf der Seite mit Details finden Sie im Abschnitt zur Seite **Details des virtuellen Netzwerks** unter [Konfigurieren eines virtuellen Netzwerks mit dem Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=248092).
+-   **Region -** Ihr virtuelles Netzwerk wird in einem Datencenter in der angegebenen Region erstellt. Um die beste Leistung zu erzielen, wählen Sie die Region, in der Sie sich befinden, aus der Dropdown-Liste aus.
 
--   **Name:** Name des virtuellen Netzwerks. Geben Sie *EigenesVirtuellesNetzwerk* ein.
+    ![][1]
 
--   **Affinitätsgruppe:** Wählen Sie aus der Dropdown-Liste **Neue Affinitätsgruppe erstellen** aus. Affinitätsgruppen stellen eine Methode dar, um Azure-Dienste physisch miteinander im gleichen Datencenter zu gruppieren, um die Leistung zu steigern. Einer Affinitätsgruppe kann nur ein virtuelles Netzwerk zugewiesen sein.
+1.  Klicken Sie auf den Pfeil für "Weiter" unten rechts. Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie im Abschnitt "Details des virtuellen Netzwerks" unter [Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal][Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal].
 
--   **Region:** Wählen Sie aus der Dropdown-Liste die gewünschte Region aus. Ihr virtuelles Netzwerk wird in einem Datencenter in der angegebenen Region erstellt.
+2.  Klicken Sie auf der Seite **DNS-Server und VPN-Konnektivität** auf den Pfeil für "Weiter" unten rechts. Azure weist neuen virtuellen Computern, die diesem virtuellen Netzwerk hinzugefügt werden, einen internetbasierten Azure-DNS-Server zu, sodass diese auf Internetressourcen zugreifen können. Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie im Abschnitt "DNS-Server und VPN-Konnektivität" unter [Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal][Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal].
 
--   **Affinitätsgruppenname:** Name der neuen Affinitätsgruppe. Geben Sie *EigeneAffinitätsgruppe* ein.
+3.  Genau wie ein echtes Netzwerk benötigt das virtuelle Netzwerk einen Bereich von IP-Adressen (Adressraum genannt) für die Zuweisung zu virtuellen Computern innerhalb dieses Netzwerks. Das virtuelle Netzwerk unterstützt auch Subnetze, die ihre eigenen Adressräume benötigen, abgeleitet aus dem Adressraum des virtuellen Netzwerks. In diesem Tutorial erstellen Sie das BackEndSubnetz und das FrontEndSubnetz. Konfigurieren Sie auf der Seite **Virtuelle Netzwerkadressräume** Folgendes:
 
-    ![](./media/create-virtual-network/createVNet_02_VirtualNetworkDetails.png)
+    -   Wählen Sie für "Adressraum" **/16 (65535)** in **CIDR (Anzahl Adressen)** aus.
 
-1.  Geben Sie auf der Seite **DNS Servers and VPN Connectivity** die folgenden Informationen ein, und klicken Sie dann in der unteren rechten Ecke auf den Weiter-Pfeil. Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie im Abschnitt zur Seite **DNS Servers and VPN Connectivity** unter [Konfigurieren eines virtuellen Netzwerks mit dem Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=248092).
+    -   Überschreiben Sie unter "Subnetze" in der ersten Zeile den vorhandenen Namen mit **BackEndSubnetz**, und geben Sie als Start-IP **10.0.1.0** ein. Wählen Sie dann **/24 (256)** in **CIDR (Anzahl Adressen)** aus. Klicken Sie auf **Subnetz hinzufügen**, und geben Sie dann **FrontEndSubnetz** als Namen und **10.0.2.0** für die Start-IP ein.
 
-    -   **DNS-Server (optional):** Geben Sie den DNS-Servernamen und die IP-Adresse ein, die Sie verwenden möchten. Mit dieser Einstellung wird kein DNS-Server erstellt, sie verweist vielmehr auf einen bereits existierenden DNS-Server.
+    ![][2]
 
-        **Hinweis**
+    Im Diagramm des virtuellen Netzwerks sehen Sie jetzt, dass folgende Adressräume konfiguriert wurden:
 
-        Wenn Sie einen öffentlichen DNS-Dienst verwenden möchten, können Sie diese Informationen in diesem Bildschirm eingeben. Anderenfalls wird die Namensauflösung auf den Standardwert des Azure-Dienstes gesetzt. Weitere Informationen finden Sie unter [Überblick über die Azure-Namensauflösung](http://go.microsoft.com/fwlink/?linkid=248097).
+    ![][Image7]
 
-    -   **Aktivieren Sie nicht das Kontrollkästchen für eine Verbindung zwischen Punkt und Standort oder zwischen Standorten**. Das virtuelle Netzwerk, das wir in diesem Lernprogramm erstellen, ist nicht auf eine standortübergreifende Verbindung ausgelegt.
+    Beachten Sie, dass der Adressraum für ein virtuelles Netzwerk aus den privaten Adressräumen 10.0.0.0/8, 172.16.0.0/12 oder 192.168.0.0/16 stammen muss und in der CIDR-Notation (Classless Inter-Domain Routing), die auch Netzwerkpräfix-Notation genannt wird, anzugeben ist. Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie im Abschnitt "Virtuelle Netzwerkadressräume" unter [Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal][Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal].
 
-    ![](./media/create-virtual-network/createVNet_03_DNSServersandVPNConnectivity.png)
+1.  Klicken Sie auf das Häkchen unten rechts auf der Seite. Das virtuelle Netzwerk wird daraufhin erstellt. Wenn die Erstellung des virtuellen Netzwerks abgeschlossen ist, wird auf der Seite mit Netzwerken im Azure-Verwaltungsportal unter **Status** der Eintrag **Erstellt** angezeigt.
 
-2.  Geben Sie auf der Seite **Virtual Network Address Spaces** die folgenden Informationen ein, und klicken Sie dann in der unteren rechten Ecke auf das Häkchen, um das Netzwerk zu konfigurieren. Der Adressraum muss ein privater Adressbereich sein, angegeben in der CIDR-Notation 10.0.0.0/8, 172.16.0.0/12 oder 192.168.0.0/16 (wie im RFC 1918 angegeben). Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie im Abschnitt zur Seite **Virtual Network Address Spaces** unter [Konfigurieren eines virtuellen Netzwerks mit dem Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=248092).
+    ![][3]
 
-    -   **Adressraum:** Klicken Sie in der oberen rechten Ecke auf „CIDR“, und geben Sie Folgendes ein:
+Weitere Informationen zu Azure-Infrastrukturdiensten finden Sie in folgenden Themen:
 
-        -   **Starting IP:** 10.4.0.0
+-   [Erstellen eines benutzerdefinierten virtuellen Computers][Erstellen eines benutzerdefinierten virtuellen Computers] Gehen Sie beim Erstellen eines virtuellen Computers in Ihrem virtuellen Netzwerk anhand dieses Themas vor. Weitere Informationen zu virtuellen Computern und Installationsoptionen finden Sie unter [Azure Virtual Machines][Azure Virtual Machines].
 
-        -   **CIDR:** /16
+-   [Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk][Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk] - Verwenden Sie dieses Thema, um eine neue Windows Server Active Directory-Gesamtstruktur ohne Verbindung zu einem anderen Netzwerk zu installieren. Das Lernprogramm erläutert die spezifischen Schritte, die zum Erstellen eines virtuellen Computers für eine neue Gesamtstrukturinstallation erforderlich sind. Wenn Sie dieses Lernprogramm verwenden möchten, erstellen Sie keine virtuellen Computer mit dem Verwaltungsportal. Weitere Informationen finden Sie unter [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines][Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines].
 
-    -   **Subnetz hinzufügen:** Geben Sie Folgendes ein:
+Um dieses virtuelle Netzwerk zu entfernen, wählen Sie es aus, klicken auf **Löschen** und dann auf **Ja**.
 
-        -   **Benennen Sie Subnetz-1** in *FrontEndSubnetz* mit der Start-IP-Adresse *10.4.2.0/24* um, und klicken Sie dann auf **Subnetz hinzufügen**.
+Wenn Sie bereit sind, ein virtuelles Nur-Cloud-Netzwerk zu erstellen, das für Ihre spezielle Konfiguration geeignet ist, konsultieren Sie den Artikel [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal][Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal].
 
-        -   **Erstellen Sie ein Subnetz** mit dem Namen *BackEndSubnetz* und der Start-IP-Adresse *10.4.3.0/24*.
+Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network][Überblick über Azure Virtual Network].
 
-        -   Stellen Sie sicher, dass zwei Subnetze erstellt wurden, und klicken Sie dann auf das Häkchen in der unteren rechten Ecke, um Ihr virtuelles Netzwerk zu erstellen.
+Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie unter [Azure Virtual Network-Konfigurationsaufgaben][Azure Virtual Network-Konfigurationsaufgaben].
 
-    ![](./media/create-virtual-network/createVNet_04_VirtualNetworkAddressSpaces.png)
+## Weitere Informationen
 
-3.  Nachdem Sie auf das Häkchen geklickt haben, wird das virtuelle Netzwerk erstellt. Wenn das virtuelle Netzwerk erstellt wurde, wird auf der Seite mit Netzwerken im Verwaltungsportal unter **Status** der Eintrag **Created** angezeigt.
+-   [Häufig gestellte Fragen über Azure Virtual Network][Häufig gestellte Fragen über Azure Virtual Network]
 
-    ![](./media/create-virtual-network/createVNet_05_VirtualNetworkCreatedStatus.png)
+-   [Azure Virtual Network-Konfigurationsaufgaben][4]
 
-4.  Nachdem das virtuelle Netzwerk erstellt wurde, können Sie mit den folgenden Lernprogrammen fortfahren:
+-   [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien][Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien]
 
-    -   [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](/de-de/manage/services/networking/add-a-vm-to-a-virtual-network/) – Verwenden Sie dieses grundlegende Lernprogramm, um in Ihrem virtuellen Netzwerk einen virtuellen Computer zu installieren.
+-   [Überblick über die Azure-Namensauflösung][Überblick über die Azure-Namensauflösung]
 
-    -   Weitere Informationen über virtuelle Computer und Installationsoptionen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](/de-de/manage/windows/how-to-guides/custom-create-a-vm/) und [Azure Virtual Machines](/de-de/manage/windows/).
-
-    -   [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](/de-de/manage/services/networking/active-directory-forest/) – Verwenden Sie dieses Lernprogramm, um eine neue Active Directory-Gesamtstruktur ohne Verbindung zu einem anderen Netzwerk zu installieren. Das Lernprogramm erläutert die spezifischen Schritte, die zum Erstellen eines virtuellen Computers für eine neue Gesamtstrukturinstallation erforderlich sind. Wenn Sie dieses Lernprogramm verwenden möchten, erstellen Sie keine virtuellen Computer mit dem Verwaltungsportal.
-
-Siehe auch
-----------
-
--   [Überblick über Azure Virtual Network](http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx)
-
--   [Häufig gestellte Fragen über Azure Virtual Network](http://go.microsoft.com/fwlink/?LinkId=296650)
-
--   [Azure Virtual Network-Konfigurationsaufgaben](http://go.microsoft.com/fwlink/?LinkId=296652)
-
--   [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/de-de/library/windowsazure/jj156097.aspx)
-
--   [Überblick über die Azure-Namensauflösung](http://go.microsoft.com/fwlink/?LinkId=248097)
-
-
+  [Virtuelles Netzwerk erstellen]: ./media/create-virtual-network/createVNet_06_VNetExample.png
+  [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal]: http://msdn.microsoft.com/library/azure/dn631643.aspx
+  [Überblick über Azure Virtual Network]: http://msdn.microsoft.com/library/windowsazure/jj156007.aspx
+  [Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen]: /de-de/manage/services/networking/cross-premises-connectivity/
+  [Azure ausprobieren]: http://www.windowsazure.com/pricing/free-trial/
+  [Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile]: http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/
+  [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
+  []: ./media/create-virtual-network/createVNet_01_OpenVirtualNetworkWizard.png
+  [1]: ./media/create-virtual-network/createVNet_02_VirtualNetworkDetails.png
+  [Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal]: http://go.microsoft.com/fwlink/?linkid=248092&clcid=0x409
+  [2]: ./media/create-virtual-network/createVNet_04_VirtualNetworkAddressSpaces.png
+  [3]: ./media/create-virtual-network/createVNet_05_VirtualNetworkCreatedStatus.png
+  [Image7]: ./media/create-virtual-network/createVNet_07_VNetExampleSpaces.png
+  [Erstellen eines benutzerdefinierten virtuellen Computers]: http://www.windowsazure.com/de-de/manage/windows/how-to-guides/custom-create-a-vm/
+  [Azure Virtual Machines]: http://www.windowsazure.com/de-de/manage/windows/
+  [Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk]: http://www.windowsazure.com/de-de/manage/services/networking/active-directory-forest/
+  [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx
+  [Azure Virtual Network-Konfigurationsaufgaben]: http://go.microsoft.com/fwlink/?linkid=296652&clcid=0x409
+  [Häufig gestellte Fragen über Azure Virtual Network]: http://go.microsoft.com/fwlink/?LinkId=296650
+  [4]: http://go.microsoft.com/fwlink/?LinkId=296652
+  [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156097.aspx
+  [Überblick über die Azure-Namensauflösung]: http://go.microsoft.com/fwlink/?LinkId=248097

@@ -1,16 +1,16 @@
-<properties linkid="develop-dotnet-performance" urlDisplayName="Performance" pageTitle="Performance best practices - Azure" metaKeywords="Azure optimization, Azure best practice performance" description="Learn about best practices for performance in Azure." metaCanonical="" services="cloud-services,sql-database,storage,service-bus,virtual-network" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-dotnet-performance" urlDisplayName="Performance" pageTitle="Performance best practices - Azure" metaKeywords="Azure optimization, Azure best practice performance" description="Learn about best practices for performance in Azure." metaCanonical="" services="cloud-services,sql-database,storage,service-bus,virtual-network" documentationCenter=".NET" title="" authors="robb" solutions="" manager="johndaw" editor="" />
 
-Bewährte Methoden für die Azure-Anwendungsleistung
-==================================================
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="robb"></tags>
+
+# Bewährte Methoden für die Azure-Anwendungsleistung
 
 Dieser Leitfaden enthält empfohlene Anleitungen zu bewährten Methoden und Techniken, die befolgt werden sollten, um die Azure-Anwendungsleistung zu optimieren.
 
 Beachten Sie, dass die Nutzung von Azure viele Vorteile hat: die Leistung ist einer dieser Vorteile. Die Empfehlungen in diesem Dokument konzentrieren sich primär auf die Leistung. Es gibt andere Szenarien, in denen die Leistung nicht so entscheidend ist: wenn Sie beispielsweise die Vorteile der Delegierung der physischen Hardwareverwaltung an Azure nutzen möchten oder wenn die nutzungsbezogene Bezahlung für Sie besonders attraktiv ist. In diesem Dokument wird nicht versucht, Szenarien zu bewerten, in denen die Leistung eine geringere Priorität hat.
 
-Übersicht
----------
+## Übersicht
 
-Leistung lässt sich definieren als ["die geleistete Menge sinnvoller Arbeit verglichen mit dem dafür benötigten Zeit- und Ressourcenaufwand".](http://go.microsoft.com/fwlink/?LinkId=252650)
+Leistung lässt sich definieren als ["die geleistete Menge sinnvoller Arbeit verglichen mit dem dafür benötigten Zeit- und Ressourcenaufwand".]["die geleistete Menge sinnvoller Arbeit verglichen mit dem dafür benötigten Zeit- und Ressourcenaufwand".]
 
 Diese Definition hat zwei Seiten: Metriken und Ressourcen. Leistungsmetriken sind Kennzahlen, die erreicht werden müssen, um Geschäftsanforderungen zu erfüllen. Hierzu gehören Dinge wie Antwortzeit, Durchsatz, Verfügbarkeit usw. Leistung umfasst auch den Grad der Ressourcennutzung, der zur Erreichung einer gegebenen Ebene von Leistungsmetriken erforderlich ist. Da Kosten fast immer eine Geschäftsanforderung sind und Ressourcen Geld kosten, impliziert Leistung eine möglichst effiziente Nutzung der Ressourcen.
 
@@ -31,7 +31,7 @@ Es ist wichtig, ein Modell der wichtigsten Kundenszenarien für Ihre Anwendung z
 
 Umfassende durchgängige Leistungstests sind ein wichtiger Schritt während Anwendungsentwurf und -bereitstellung. Azure-Anwendungen bestehen aus vielen Teilen, wozu benutzerdefinierte und von Microsoft bereitgestellte Komponenten gehören. Microsoft kann nicht jede mögliche Kombination dieser Komponenten testen. Daher sind umfassende und ordnungsgemäße Leistungstests Ihrer Anwendung ein wichtiger Schritt jeder Bereitstellung.
 
-Auf der Grundlage des von Ihnen erstellten Anwendungsmodells sollten Sie möglichst bald Machbarkeitsstudien und Auslastungstests für Ihre Anwendung durchführen, um die Anwendungsarchitektur zu validieren und sicherzustellen, dass die Anwendung die Leistungsanforderungen bezüglich Skalierbarkeit und Latenz erfüllt. Es ist äußerst wichtig, die anfängliche Architektur und Annahmen zu validieren. Sie möchten nicht herausfinden, dass die Anwendung der erwarteten Auslastung nicht gewachsen ist, wenn sie im Einsatz ist! Visual Studio stellt Funktionen zum Ausführen von Auslastungstests bereit, die im Artikel [Visual Studio-Auslastungstest in Azure - Übersicht](http://www.visualstudio.com/get-started/load-test-your-app-vs) beschrieben werden.
+Auf der Grundlage des von Ihnen erstellten Anwendungsmodells sollten Sie möglichst bald Machbarkeitsstudien und Auslastungstests für Ihre Anwendung durchführen, um die Anwendungsarchitektur zu validieren und sicherzustellen, dass die Anwendung die Leistungsanforderungen bezüglich Skalierbarkeit und Latenz erfüllt. Es ist äußerst wichtig, die anfängliche Architektur und Annahmen zu validieren. Sie möchten nicht herausfinden, dass die Anwendung der erwarteten Auslastung nicht gewachsen ist, wenn sie im Einsatz ist! Visual Studio stellt Funktionen zum Ausführen von Auslastungstests bereit, die im Artikel [Visual Studio-Auslastungstest in Azure - Übersicht][Visual Studio-Auslastungstest in Azure - Übersicht] beschrieben werden.
 
 ### Wodurch zeichnet sich Azure bezüglich der Leistung aus
 
@@ -45,8 +45,7 @@ Einige Leistungsfaktoren ändern sich in Abhängigkeit vom Anwendungsszenario. I
 
 Im Kapitel danach werden Leistungsfaktoren behandelt, die jede Azure-Anwendung betreffen: Netzwerklatenz, kurzlebige Verbindungen usw.
 
-Entwerfen für optimale Leistung in einer Cloud-Umgebung
--------------------------------------------------------
+## Entwerfen für optimale Leistung in einer Cloud-Umgebung
 
 Sie müssen die folgenden szenarioabhängigen Bereiche beim Entwurf einer Azure-Anwendung oder der Migration einer lokalen Anwendung zu Azure berücksichtigen:
 
@@ -79,9 +78,9 @@ Da die Einzelheiten unterschiedlich sind, werden diese Optionen anhand der folge
 
 Die meisten Grundregeln für einen guten Datenbankentwurf gelten auch für Azure SQL-Datenbank. Es ist eine Unmenge an Material verfügbar, in dem beschrieben wird, wie effektive SQL Server- oder Azure SQL-Datenbankschemata entworfen werden. Nachfolgend sind einige Referenzen zum Entwurf von SQL-Datenbankschemata aufgeführt:
 
--   [Database Design and Modeling Fundamentals](http://go.microsoft.com/fwlink/?LinkId=252675)
--   [Stairway to Database Design](http://go.microsoft.com/fwlink/?LinkId=252676)
--   [Database Design](http://go.microsoft.com/fwlink/?LinkId=252677)
+-   [Database Design and Modeling Fundamentals][Database Design and Modeling Fundamentals]
+-   [Stairway to Database Design][Stairway to Database Design]
+-   [Database Design][Database Design]
 
 Zwei wichtige Entwurfsaktivitäten sind bei Azure anders:
 
@@ -104,17 +103,17 @@ Ein häufiges Entwurfsmuster, für das Tabellenspeicher in Frage kommt, ist eine
 
 Nähere Informationen zum Tabellenspeicher finden Sie unter:
 
--   [Windows Azure-Tabellenspeicher und Windows Azure SQL-Datenbank – Vergleich und Gegenüberstellung](http://msdn.microsoft.com/de-de/library/jj553018.aspx)
--   [Azure Table Storage Performance Considerations](http://go.microsoft.com/fwlink/?LinkId=252663)
--   [SQL Azure and Microsoft Azure Table Storage](http://go.microsoft.com/fwlink/?LinkId=252664)
--   [Improving Performance by Batching Azure Table Storage Inserts](http://go.microsoft.com/fwlink/?LinkID=252665), wo einige Leistungsergebnisse diskutiert werden.
--   [SQL Database Performance and Elasticity Guide](http://go.microsoft.com/fwlink/?LinkId=221876)
+-   [Windows Azure-Tabellenspeicher und Windows Azure SQL-Datenbank – Vergleich und Gegenüberstellung][Windows Azure-Tabellenspeicher und Windows Azure SQL-Datenbank – Vergleich und Gegenüberstellung]
+-   [Azure Table Storage Performance Considerations][Azure Table Storage Performance Considerations]
+-   [SQL Azure and Microsoft Azure Table Storage][SQL Azure and Microsoft Azure Table Storage]
+-   [Improving Performance by Batching Azure Table Storage Inserts][Improving Performance by Batching Azure Table Storage Inserts], wo einige Leistungsergebnisse diskutiert werden.
+-   [SQL Database Performance and Elasticity Guide][SQL Database Performance and Elasticity Guide]
 
 #### Datenpartitionierung
 
 Daten gehören zu den Ressourcen, die mit am häufigsten partitioniert werden. Wenn Sie einen Azure-Cloud-Dienst erstellen, dann sollten Sie die Verwendung des in SQL-Datenbanken integrierten Shardings, das über Verbunde verfügbar ist, in Betracht ziehen.
 
-Eine Übersicht über SQL-Datenbankverbunde finden Sie unter [Verbunde in der Windows Azure SQL-Datenbank](http://go.microsoft.com/fwlink/?LinkId=252668).
+Eine Übersicht über SQL-Datenbankverbunde finden Sie unter [Verbunde in der Windows Azure SQL-Datenbank][Verbunde in der Windows Azure SQL-Datenbank].
 
 ##### Entwurfsaufgaben für SQL-Verbunde
 
@@ -130,18 +129,18 @@ In der wohlbekannten Beispieldatenbank "AdventureWorks" ist beispielsweise die M
 
 Jedes Aggregat eignet sich potenziell für die Bildung eines Verbunds. Sie müssen beurteilen, wo ein Größenwachstum zu erwarten ist, und die Arbeitsauslastung der Anwendung überprüfen: Abfragen, die gut zum Verbundschema passen, d. h. nicht Daten von mehreren Verbundmitgliedern abfragen, werden effizient ausgeführt. Abfragen, die nicht gut dazu passen, erfordern Logik auf der Anwendungsebene, weil in einer SQL-Datenbank derzeit keine datenbankübergreifenden Verknüpfungen unterstützt werden.
 
-Ein Beispiel für eine Entwurfsanalyse, in dem die Datenbank "AdventureWorks" überprüft wird, um einen Verbund zu bilden, und in dem die Entwurfsüberlegungen schrittweise erläutert werden, finden Sie unter [Scale-First Approach to Database Design with Federations: Part 1 - Picking Federations and Picking the Federation Key](http://go.microsoft.com/fwlink/?LinkId=252671).
+Ein Beispiel für eine Entwurfsanalyse, in dem die Datenbank "AdventureWorks" überprüft wird, um einen Verbund zu bilden, und in dem die Entwurfsüberlegungen schrittweise erläutert werden, finden Sie unter [Scale-First Approach to Database Design with Federations: Part 1 - Picking Federations and Picking the Federation Key][Scale-First Approach to Database Design with Federations: Part 1 - Picking Federations and Picking the Federation Key].
 
 Nachdem Sie entschieden haben, welche Tabellen einen Verbund bilden sollen, müssen Sie den Primärschlüssel der Aggregatstammtabelle den einzelnen verknüpften Tabellen jeweils als Spalte hinzufügen.
 
-Nach der Auswahl der Tabellen für den Verbund ist eine weitere Frage, wo die Referenztabellen sowie andere Datenbankobjekte gespeichert werden sollen. Eine eingehende Diskussion dieses Themas finden Sie unter [Scale-First Approach to Database Design with Federations: Part 2 - Annotating and Deploying Schema for Federations](http://go.microsoft.com/fwlink/?LinkId=252672). Die Ausführung erweiterter Abfragen wird in [Part 2](http://go.microsoft.com/fwlink/?LinkId=252673) beschrieben.
+Nach der Auswahl der Tabellen für den Verbund ist eine weitere Frage, wo die Referenztabellen sowie andere Datenbankobjekte gespeichert werden sollen. Eine eingehende Diskussion dieses Themas finden Sie unter [Scale-First Approach to Database Design with Federations: Part 2 - Annotating and Deploying Schema for Federations][Scale-First Approach to Database Design with Federations: Part 2 - Annotating and Deploying Schema for Federations]. Die Ausführung erweiterter Abfragen wird in [Part 2][Part 2] beschrieben.
 
 ##### Do-It-Yourself-Partitionierung
 
 Es sind einige Beispiele verfügbar, in denen verschiedene Möglichkeiten zum Partitionieren von Daten gezeigt werden. Wenn Sie beschließen, Ihre SQL-Datenbankinstanz nicht mit Verbunden zu partitionieren, müssen Sie eine Partitionierungsmethode wählen, die für Ihre Anwendung geeignet ist. Hier einige Beispiele:
 
--   Einen umfassenden Beitrag, der vor der Veröffentlichung von Verbunden geschrieben wurde, finden Sie unter [How to Shard with SQL Database](http://go.microsoft.com/fwlink/?LinkId=252678).
--   [SQL Server and SQL Database Shard Library](http://go.microsoft.com/fwlink/?LinkId=252679)
+-   Einen umfassenden Beitrag, der vor der Veröffentlichung von Verbunden geschrieben wurde, finden Sie unter [How to Shard with SQL Database][How to Shard with SQL Database].
+-   [SQL Server and SQL Database Shard Library][SQL Server and SQL Database Shard Library]
 
 ##### Partitionierung anderer Ressourcen
 
@@ -153,7 +152,7 @@ Abhängig von ihrer Anwendung, können Sie ähnliche Überlegungen für andere R
 
 Der Azure Cache Service stellt verteilten elastischen Arbeitsspeicher zum Zwischenspeichern von Dingen bereit, wie ASP.Net-Sitzungsstatus oder häufig referenzierte Werte aus SQL-Datenbankreferenztabellen. Weil sich die Objekte im verteilten Arbeitsspeicher befinden, sind beträchtliche Leistungsgewinne möglich. Weil Azure die Caching-Infrastruktur handhabt, ist die Implementierung mit geringen Entwicklungskosten verbunden.
 
-Planen Sie, ausreichend Cachingkapazitäten bereitzustellen, damit sie Objekte zwischenspeichern können, auf die häufig zugegriffen wird. In SQL-Datenbank werden häufig Referenztabellen verwendet, um numerische Codes in längere beschreibende Zeichenfolgen zu konvertieren. Diese Tabellen enthalten häufig Daten, wie Länder- und Städtenamen, gültige Postleitzahlen, Namen von Abteilungen in Ihrem Unternehmen usw. Bei kleineren Tabellen kann es sinnvoll sein, die gesamte Tabelle im Cache zu speichern, bei anderen empfiehlt es sich, nur die am häufigsten verwendeten Werte zu speichern. Der Leistungsgewinn resultiert aus Abfragen mit mehreren Verknüpfungen, die an diesen Daten ausgeführt werden: bei jedem Wert, der im Cache gefunden wird, werden einige Festplattenzugriffe gespeichert. Eine gute Einführung und Diskussion zum Thema Leistung und Caching in Azure finden Sie unter [Introducing the Azure Caching Service](http://go.microsoft.com/fwlink/?LinkId=252680). Einen neueren Blogbeitrag zu diesem Thema finden Sie unter [Windows \#Azure Caching Performance Considerations](http://go.microsoft.com/fwlink/?LinkId=252681).
+Planen Sie, ausreichend Cachingkapazitäten bereitzustellen, damit sie Objekte zwischenspeichern können, auf die häufig zugegriffen wird. In SQL-Datenbank werden häufig Referenztabellen verwendet, um numerische Codes in längere beschreibende Zeichenfolgen zu konvertieren. Diese Tabellen enthalten häufig Daten, wie Länder- und Städtenamen, gültige Postleitzahlen, Namen von Abteilungen in Ihrem Unternehmen usw. Bei kleineren Tabellen kann es sinnvoll sein, die gesamte Tabelle im Cache zu speichern, bei anderen empfiehlt es sich, nur die am häufigsten verwendeten Werte zu speichern. Der Leistungsgewinn resultiert aus Abfragen mit mehreren Verknüpfungen, die an diesen Daten ausgeführt werden: bei jedem Wert, der im Cache gefunden wird, werden einige Festplattenzugriffe gespeichert. Eine gute Einführung und Diskussion zum Thema Leistung und Caching in Azure finden Sie unter [Introducing the Azure Caching Service][Introducing the Azure Caching Service]. Einen neueren Blogbeitrag zu diesem Thema finden Sie unter [Windows \#Azure Caching Performance Considerations][Windows \#Azure Caching Performance Considerations].
 
 #### Szenario: Verwenden des Queuing in Azure-Anwendungen
 
@@ -165,9 +164,9 @@ Azure verfügt über zwei alternative Warteschlangentechnologien: Azure-Speicher
 
 Azure-Dienstwarteschlagen zeichnen sich durch Merkmale aus, wie große Warteschlangengröße, Verfolgen des Status und mehr. Servicebus bietet Features wie Veröffentlichen/Abonnieren, vollständige Integration in Windows Communication Foundation ("WCF"), automatische Erkennung von Duplikaten, garantierte FIFO-Zustellung (First-in first-out) und mehr.
 
-Einen ausführlicheren und detaillierten Vergleich der beiden Technologien finden Sie unter [Azure Queues and Azure Service Bus Queues - Compared and Contrasted](http://go.microsoft.com/fwlink/?LinkId=252682).
+Einen ausführlicheren und detaillierten Vergleich der beiden Technologien finden Sie unter [Azure Queues and Azure Service Bus Queues - Compared and Contrasted][Azure Queues and Azure Service Bus Queues - Compared and Contrasted].
 
-Eine Diskussion der Servicebus -Leistung finden Sie unter [Best Practices for Performance Improvements Using Service Bus Brokered Messaging](http://go.microsoft.com/fwlink/?LinkID=252683).
+Eine Diskussion der Servicebus -Leistung finden Sie unter [Best Practices for Performance Improvements Using Service Bus Brokered Messaging][Best Practices for Performance Improvements Using Service Bus Brokered Messaging].
 
 #### Szenario: Anwendungen für große Datenmengen
 
@@ -185,7 +184,7 @@ Große Datenmengen lassen sich anhand der folgenden Kriterien identifizieren:
 
 -   Größe (in der Regel hunderte von Terabyte oder größer)
 
--   Typ: nicht-relationales, variables Schema, Dateien in einem Dateisystem:
+-   Geben Sie Folgendes ein: nicht-relationales, variables Schema, Dateien in einem Dateisystem:
 
 Die Daten eignen sich in der Regel nicht zur Verarbeitung in einer relationalen Datenbank.
 
@@ -201,15 +200,15 @@ Es gibt vier Hauptarten von Nicht-SQL-Datenspeicher:
 
 Azure stellt direkte Unterstützung für Hadoop bereit und ermöglicht auch die Nutzung anderer Technologien. Weitere Informationen zum Azure HDInsight-Dienst finden Sie unter:
 
--   [Große Datenmengen](/en-us/solutions/big-data/)
--   [Azure HDInsight-Dienst](/de-de/documentation/services/hdinsight/)
--   [Erste Schritte mit dem Azure HDInsight-Dienst](/de-de/documentation/articles/hdinsight-get-started/)
+-   [Große Datenmengen][Große Datenmengen]
+-   [Azure HDInsight-Dienst][Azure HDInsight-Dienst]
+-   [Erste Schritte mit dem Azure HDInsight-Dienst][Erste Schritte mit dem Azure HDInsight-Dienst]
 
 Eine Diskussion von Fragen, die mit den verschiedenen Nicht-SQL-Speichermethoden verbunden sind, finden Sie unter:
 
--   [Getting Acquainted with NoSQL on Azure](http://go.microsoft.com/fwlink/?LinkId=252729)
--   [AggregateOrientedDatabase](http://go.microsoft.com/fwlink/?LinkID=252731)
--   [PolyglotPersistence](http://go.microsoft.com/fwlink/?LinkId=252732)
+-   [Getting Acquainted with NoSQL on Azure][Getting Acquainted with NoSQL on Azure]
+-   [AggregateOrientedDatabase][AggregateOrientedDatabase]
+-   [PolyglotPersistence][PolyglotPersistence]
 
 #### Andere Leistungsoptimierungen einzelner Azure-Dienste
 
@@ -225,23 +224,22 @@ Dieser Speicher ist zwar nicht über Computerausfälle hinweg persistent, kann a
 
 ##### Azure-Zugriffssteuerungsdienst (Access Control Service, ACS)
 
-Zwei Hauptfaktoren wirken sich auf die ACS-Ressourcennutzung und daher die Leistung aus: Tokengröße und Verschlüsselung. Nähere Informationen finden Sie unter [ACS Performance Guidelines](http://go.microsoft.com/fwlink/?LinkId=252747).
+Zwei Hauptfaktoren wirken sich auf die ACS-Ressourcennutzung und daher die Leistung aus: Tokengröße und Verschlüsselung. Nähere Informationen finden Sie unter [ACS Performance Guidelines][ACS Performance Guidelines].
 
 ##### Serialisierung
 
-Die Serialisierung ist kein selbstverständlicher Teil der Leistungsoptimierung, aber eine Verringerung des Netzwerkverkehrs kann in einigen Anwendungsszenarien signifikant sein. Ein Beispiel dazu, in welchem Umfang sich die Serialisierungsgrößen je nach Protokoll unterscheiden können, finden Sie in den Beispielen unter [Azure Web Applications and Serialization](http://go.microsoft.com/fwlink/?LinkId=252749).
+Die Serialisierung ist kein selbstverständlicher Teil der Leistungsoptimierung, aber eine Verringerung des Netzwerkverkehrs kann in einigen Anwendungsszenarien signifikant sein. Ein Beispiel dazu, in welchem Umfang sich die Serialisierungsgrößen je nach Protokoll unterscheiden können, finden Sie in den Beispielen unter [Azure Web Applications and Serialization][Azure Web Applications and Serialization].
 
 Wenn die Menge der Daten, die verschoben werden, Leistungsproblem darstellt, dann verwenden Sie die kleinste verfügbare Serialisierungsgröße. Falls die Serialisierungsleistung nicht ausreicht, sollten Sie die Verwendung benutzerdefinierter oder anderer nicht von Microsoft stammender Serialisierungsformate von Drittanbietern in Betracht ziehen. Wie immer, sind Machbarkeitsstudien entscheidend.
 
-### Azure-Websites mit mySQL
+### Azure-Websites mit MySQL
 
 Unter den folgenden Links finden Sie Ratschläge zur Leistung von MySQL:
 
--   Die Suche nach *performance* auf der Website [http://mysql.com](http://go.microsoft.com/fwlink/?LinkId=252775) liefert viele Ressourcen.
--   Die Foren unter[http://forums.mysql.com/list.php?24](http://go.microsoft.com/fwlink/?LinkId=252776) sind andere Ressourcen, die Sie konsultieren können.
+-   Die Suche nach *performance* auf der Website [][]<http://mysql.com></a> liefert viele Ressourcen.
+-   Die Foren unter[][1]<http://forums.mysql.com/list.php?24></a> sind andere Ressourcen, die Sie konsultieren können.
 
-Entwerfen für gemeinsam genutzte Systeme
-----------------------------------------
+## Entwerfen für gemeinsam genutzte Systeme
 
 Azure ist darauf ausgelegt, mehrere Anwendungen gleichzeitig auszuführen, die aus Gründen der Ausfallsicherheit auf mehreren Computern repliziert werden. Dies wirkt sich auf verschiedene Weise auf die Anwendungsleistung aus:
 
@@ -253,7 +251,7 @@ Azure ist darauf ausgelegt, mehrere Anwendungen gleichzeitig auszuführen, die a
 
 -   Physischer Standort der Dienste
 
-Diese Überlegungen gelten für alle Anwendungsarchitekturen, weil sie durch die physische Infrastruktur der Azure-Rechenzentren bestimmt werden. Eine ausführliche Diskussion finden Sie unter [SQL Database Performance and Elasticity Guide](http://go.microsoft.com/fwlink/?LinkID=252666).
+Diese Überlegungen gelten für alle Anwendungsarchitekturen, weil sie durch die physische Infrastruktur der Azure-Rechenzentren bestimmt werden. Eine ausführliche Diskussion finden Sie unter [SQL Database Performance and Elasticity Guide][2].
 
 ### Netzwerklatenz
 
@@ -269,7 +267,7 @@ Sie können beispielsweise die Webanwendung im gleichen Rechenzentrum wie die SQ
 
 ### Kurzlebige Verbindungen
 
-Ihre Anwendung MUSS in der Lage sein, mit getrennten Verbindungen umzugehen. Getrennte Verbindungen sind unvermeidlich und typisch für die Clould-Architektur (z. B. Vorgänge wie das Ersetzen inaktiver Knoten, das Aufteilen eines Verbundmitglieds in SQL-Datenbank usw.). Das beste Framework hierfür ist derzeit [The Transient Fault Handling Application Block](http://go.microsoft.com/fwlink/?LinkID=236901).
+Ihre Anwendung MUSS in der Lage sein, mit getrennten Verbindungen umzugehen. Getrennte Verbindungen sind unvermeidlich und typisch für die Clould-Architektur (z. B. Vorgänge wie das Ersetzen inaktiver Knoten, das Aufteilen eines Verbundmitglieds in SQL-Datenbank usw.). Das beste Framework hierfür ist derzeit [The Transient Fault Handling Application Block][The Transient Fault Handling Application Block].
 
 ### Drosselung
 
@@ -288,22 +286,21 @@ Azure verringert den Kapazitätsplanungsaufwand enorm, weil sich viele der früh
 
 Aufgrund der Skalierbarkeit von Azure, sind die anfänglichen Entscheidungen bezüglich der Kapazität nicht in Stein gemeißelt: es ist relativ einfach, Azure-Ressourcen noch oben (oder unten) zu skalieren. Trotzdem ist es wichtig, eine genaue Kapazitätsplanung zu erstellen, da damit sichergestellt wird, dass der Bereitstellung der Anwendung in der Produktionsumgebung keine Versuchsphase in Bezug auf die Kapazität folgt.
 
-Für Anwendungen, deren Ressourcenanforderungen im Laufe der Zeit stark schwanken, sollten Sie die Verwendung von [The Autoscaling Application Block](http://go.microsoft.com/fwlink/?LinkId=252873) in Betracht ziehen. Mit diesem Block können Sie Regeln für die Skalierung von Rolleninstanzen festlegen. Zwei Arten von Regeln werden definiert:
+Für Anwendungen, deren Ressourcenanforderungen im Laufe der Zeit stark schwanken, sollten Sie die Verwendung von [The Autoscaling Application Block][The Autoscaling Application Block] in Betracht ziehen. Mit diesem Block können Sie Regeln für die Skalierung von Rolleninstanzen festlegen. Zwei Arten von Regeln werden definiert:
 
 -   Einschränkungsregeln, mit denen eine maximale/minimale Anzahl von Instanzen pro Tageszeit definiert wird
 
 -   Reaktive Regeln, die wirksam werden, wenn eine Bedingung erfüllt wird, z. B. prozentuale CPU-Auslastung
 
-Sie können auch benutzerdefinierte Regeln definieren. Weitere Informationen finden Sie unter[The Autoscaling Application Block](http://go.microsoft.com/fwlink/?LinkId=252873).
+Sie können auch benutzerdefinierte Regeln definieren. Weitere Informationen finden Sie unter[The Autoscaling Application Block][The Autoscaling Application Block].
 
-Die Kapazitätsplanung ist ein eigenes Spezialgebiet, und in diesem Dokument wird davon ausgegangen, dass Sie sie bereits abgeschlossen haben. Eine ausführliche Diskussion der Kapazitätsplanung in Azure finden Sie unter [Kapazitätsplanung für Warteschlangen und Themen in Servicebus](http://go.microsoft.com/fwlink/?LinkId=252875).
+Die Kapazitätsplanung ist ein eigenes Spezialgebiet, und in diesem Dokument wird davon ausgegangen, dass Sie sie bereits abgeschlossen haben. Eine ausführliche Diskussion der Kapazitätsplanung in Azure finden Sie unter [Kapazitätsplanung für Warteschlangen und Themen in Servicebus][Kapazitätsplanung für Warteschlangen und Themen in Servicebus].
 
-Leistungsüberwachung und -optimierung zur Laufzeit
---------------------------------------------------
+## Leistungsüberwachung und -optimierung zur Laufzeit
 
 Selbst der sorgfältigste Entwurf ist keine Garantie dafür, dass zur Laufzeit keine Leistungsprobleme auftreten. Daher muss die Anwendungsleistung fortlaufend überwacht werden, damit überprüft wird, ob die erforderlichen Leistungsmetriken erreicht werden, und Situationen korrigiert werden können, in denen diese Metriken nicht erreicht werden. Auch bei gut entworfenen Anwendungen können unvorhergesehene Dinge eintreten, z. B. ein exponentielles Wachstum der Nutzung oder Änderungen der Laufzeitumgebung, die zu Leistungsproblemen führen und eine Optimierung erforderlich machen. Häufig ist das Erkennen und Beheben von Engpässen ein wesentlicher Bestandteil des Prozesses.
 
-Damit Lautzeitprobleme während der Laufzeit behandelt werden können, muss vorab Arbeit geleistet werden, um Protokollierungsfunktionen und eine ordnungsgemäße Ausnahmenbehandlung zu implementieren, sodass die Fehlerbehandlung genau dann durchgeführt werden kann, wenn Probleme auftreten. Dieser Bereich wird auf der Seite [Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen](http://go.microsoft.com/fwlink/?LinkID=252876) umfassend behandelt.
+Damit Lautzeitprobleme während der Laufzeit behandelt werden können, muss vorab Arbeit geleistet werden, um Protokollierungsfunktionen und eine ordnungsgemäße Ausnahmenbehandlung zu implementieren, sodass die Fehlerbehandlung genau dann durchgeführt werden kann, wenn Probleme auftreten. Dieser Bereich wird auf der Seite [Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen][Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen] umfassend behandelt.
 
 Es sind Tools zum Überwachen der fortlaufenden Leistung jedes Azure-Diensts verfügbar. Außerdem sollten Protokollierungsfunktionen in die Anwendungen eingebaut werden, die detaillierte Informationen bereitstellen, die zur Fehlerbehebung und Lösung von Leistungsproblemen erforderlich sind.
 
@@ -311,26 +308,72 @@ Es sind Tools zum Überwachen der fortlaufenden Leistung jedes Azure-Diensts ver
 
 Beachten Sie, dass SQL-Profiler derzeit nicht in Azure verfügbar ist. Es gibt verschiedene Problemumgehungen, um die erforderlichen Leistungsdaten zu erhalten. Eine Alternative während der Entwicklung besteht in der Durchführung von Eingangstests in einer lokalen Version der Datenbank, wobei SQL Profiler verfügbar ist.
 
-Sie können auch den Befehl SET STATISTICS verwenden und mit SQL Server Management Studio den von einer Abfrage generierten Ausführungsplan anzeigen, da das Programmieren effizienter Abfragen für die Leistung entscheidend ist. Eine ausführliche Diskussion und eine Schritt-für-Schritt-Erläuterung der Vorgehensweise finden Sie unter [Gaining Performance Insight into SQL Database](http://go.microsoft.com/fwlink/?LinkId=252877). Ein weiterer interessanter Ansatz besteht in der Analyse und dem Vergleich der Leistung von [SQL-Datenbank und dem lokalen SQL Server](http://go.microsoft.com/fwlink/?LinkId=252878).
+Sie können auch den Befehl SET STATISTICS verwenden und mit SQL Server Management Studio den von einer Abfrage generierten Ausführungsplan anzeigen, da das Programmieren effizienter Abfragen für die Leistung entscheidend ist. Eine ausführliche Diskussion und eine Schritt-für-Schritt-Erläuterung der Vorgehensweise finden Sie unter [Gaining Performance Insight into SQL Database][Gaining Performance Insight into SQL Database]. Ein weiterer interessanter Ansatz besteht in der Analyse und dem Vergleich der Leistung von [SQL-Datenbank und dem lokalen SQL Server][SQL-Datenbank und dem lokalen SQL Server].
 
 Zwei Themen zu dynamischen Verwaltungssichten:
 
--   [Überwachen der Windows Azure SQL-Datenbank mit dynamischen Verwaltungssichten](http://go.microsoft.com/fwlink/?LinkId=236195)
--   [Useful DMV's for SQL Database to analyze if you miss SQL Profiler](http://go.microsoft.com/fwlink/?LinkId=252879)
+-   [Überwachen der Windows Azure SQL-Datenbank mit dynamischen Verwaltungssichten][Überwachen der Windows Azure SQL-Datenbank mit dynamischen Verwaltungssichten]
+-   [Useful DMV's for SQL Database to analyze if you miss SQL Profiler][Useful DMV's for SQL Database to analyze if you miss SQL Profiler]
 
 ### Analyseressourcen und -tools
 
 Eine Reihe von Drittanbietertools sind zum Analysieren der Azure-Leistung verfügbar:
 
--   [Cerebrata](http://go.microsoft.com/fwlink/?LinkId=252880)
--   [SQL Server and SQL Database Performance Testing: Enzo SQL Baseline](http://enzosqlbaseline.codeplex.com/)
+-   [Cerebrata][Cerebrata]
+-   [SQL Server and SQL Database Performance Testing: Enzo SQL Baseline][SQL Server and SQL Database Performance Testing: Enzo SQL Baseline]
 
 Weitere Ressourcen
 
--   [SQL Database Performance and Elasticity Guide](http://go.microsoft.com/fwlink/?LinkID=252666)
--   [SQL-Datenbank](http://go.microsoft.com/fwlink/?LinkId=246930)
--   [Storage](http://go.microsoft.com/fwlink/?LinkId=246933)
--   [Netzwerk](http://go.microsoft.com/fwlink/?LinkId=252882)
--   [Servicebus](http://go.microsoft.com/fwlink/?LinkId=246934)
--   [Azure Planning - A Post-decision Guide to Integrate Azure in Your Environment](http://go.microsoft.com/fwlink/?LinkId=252884)
+-   [SQL Database Performance and Elasticity Guide][2]
+-   [SQL-Datenbank][SQL-Datenbank]
+-   [Storage][Storage]
+-   [Netzwerk][Netzwerk]
+-   [Service Bus][Service Bus]
+-   [Azure Planning - A Post-decision Guide to Integrate Azure in Your Environment][Azure Planning - A Post-decision Guide to Integrate Azure in Your Environment]
 
+  ["die geleistete Menge sinnvoller Arbeit verglichen mit dem dafür benötigten Zeit- und Ressourcenaufwand".]: http://go.microsoft.com/fwlink/?LinkId=252650
+  [Visual Studio-Auslastungstest in Azure - Übersicht]: http://www.visualstudio.com/get-started/load-test-your-app-vs
+  [Database Design and Modeling Fundamentals]: http://go.microsoft.com/fwlink/?LinkId=252675
+  [Stairway to Database Design]: http://go.microsoft.com/fwlink/?LinkId=252676
+  [Database Design]: http://go.microsoft.com/fwlink/?LinkId=252677
+  [Windows Azure-Tabellenspeicher und Windows Azure SQL-Datenbank – Vergleich und Gegenüberstellung]: http://msdn.microsoft.com/de-de/library/jj553018.aspx
+  [Azure Table Storage Performance Considerations]: http://go.microsoft.com/fwlink/?LinkId=252663
+  [SQL Azure and Microsoft Azure Table Storage]: http://go.microsoft.com/fwlink/?LinkId=252664
+  [Improving Performance by Batching Azure Table Storage Inserts]: http://go.microsoft.com/fwlink/?LinkID=252665
+  [SQL Database Performance and Elasticity Guide]: http://go.microsoft.com/fwlink/?LinkId=221876
+  [Verbunde in der Windows Azure SQL-Datenbank]: http://go.microsoft.com/fwlink/?LinkId=252668
+  [Scale-First Approach to Database Design with Federations: Part 1 - Picking Federations and Picking the Federation Key]: http://go.microsoft.com/fwlink/?LinkId=252671
+  [Scale-First Approach to Database Design with Federations: Part 2 - Annotating and Deploying Schema for Federations]: http://go.microsoft.com/fwlink/?LinkId=252672
+  [Part 2]: http://go.microsoft.com/fwlink/?LinkId=252673
+  [How to Shard with SQL Database]: http://go.microsoft.com/fwlink/?LinkId=252678
+  [SQL Server and SQL Database Shard Library]: http://go.microsoft.com/fwlink/?LinkId=252679
+  [Introducing the Azure Caching Service]: http://go.microsoft.com/fwlink/?LinkId=252680
+  [Windows \#Azure Caching Performance Considerations]: http://go.microsoft.com/fwlink/?LinkId=252681
+  [Azure Queues and Azure Service Bus Queues - Compared and Contrasted]: http://go.microsoft.com/fwlink/?LinkId=252682
+  [Best Practices for Performance Improvements Using Service Bus Brokered Messaging]: http://go.microsoft.com/fwlink/?LinkID=252683
+  [Große Datenmengen]: /de-de/solutions/big-data/
+  [Azure HDInsight-Dienst]: /de-de/documentation/services/hdinsight/
+  [Erste Schritte mit dem Azure HDInsight-Dienst]: /de-de/documentation/articles/hdinsight-get-started/
+  [Getting Acquainted with NoSQL on Azure]: http://go.microsoft.com/fwlink/?LinkId=252729
+  [AggregateOrientedDatabase]: http://go.microsoft.com/fwlink/?LinkID=252731
+  [PolyglotPersistence]: http://go.microsoft.com/fwlink/?LinkId=252732
+  [ACS Performance Guidelines]: http://go.microsoft.com/fwlink/?LinkId=252747
+  [Azure Web Applications and Serialization]: http://go.microsoft.com/fwlink/?LinkId=252749
+  []: http://go.microsoft.com/fwlink/?LinkId=252775
+  [1]: http://go.microsoft.com/fwlink/?LinkId=252776
+  [2]: http://go.microsoft.com/fwlink/?LinkID=252666
+  [The Transient Fault Handling Application Block]: http://go.microsoft.com/fwlink/?LinkID=236901
+  [The Autoscaling Application Block]: http://go.microsoft.com/fwlink/?LinkId=252873
+  [Kapazitätsplanung für Warteschlangen und Themen in Servicebus]: http://go.microsoft.com/fwlink/?LinkId=252875
+  [Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen]: http://go.microsoft.com/fwlink/?LinkID=252876
+  [Gaining Performance Insight into SQL Database]: http://go.microsoft.com/fwlink/?LinkId=252877
+  [SQL-Datenbank und dem lokalen SQL Server]: http://go.microsoft.com/fwlink/?LinkId=252878
+  [Überwachen der Windows Azure SQL-Datenbank mit dynamischen Verwaltungssichten]: http://go.microsoft.com/fwlink/?LinkId=236195
+  [Useful DMV's for SQL Database to analyze if you miss SQL Profiler]: http://go.microsoft.com/fwlink/?LinkId=252879
+  [Cerebrata]: http://go.microsoft.com/fwlink/?LinkId=252880
+  [SQL Server and SQL Database Performance Testing: Enzo SQL Baseline]: http://enzosqlbaseline.codeplex.com/
+  [SQL-Datenbank]: http://go.microsoft.com/fwlink/?LinkId=246930
+  [Storage]: http://go.microsoft.com/fwlink/?LinkId=246933
+  [Netzwerk]: http://go.microsoft.com/fwlink/?LinkId=252882
+  [Service Bus]: http://go.microsoft.com/fwlink/?LinkId=246934
+  [Azure Planning - A Post-decision Guide to Integrate Azure in Your Environment]: http://go.microsoft.com/fwlink/?LinkId=252884

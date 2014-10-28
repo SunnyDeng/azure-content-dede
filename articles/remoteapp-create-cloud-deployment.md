@@ -20,13 +20,13 @@ Dieses Lernprogramm beschreibt Schritte bei der Erstellung einer Cloud-Bereitste
 
 Sie benötigen Folgendes, bevor Sie den Dienst erstellen könne:
 
--   Registrieren Sie sich für die Vorschau von RemoteApp. Sie können sich unter [][]<http://azure.microsoft.com/en-us/services/remoteapp/></a> registrieren.
+-   Registrieren Sie sich für die Vorschau von RemoteApp. Sie können sich unter [][]<http://azure.microsoft.com/de-de/services/remoteapp/></a> registrieren.
 -   Sammeln Sie Informationen über die Benutzer und Gruppen, denen Sie Zugriff gewähren möchten. Dabei handelt es sich entweder um Microsoft-Konten oder Active Directory-Organisations-Konten für Benutzer oder Gruppen.
 -   Wir setzen voraus, dass Sie entweder die im Rahmen Ihres Abonnements bereitgestellte Abbildvorlage verwenden oder dass Sie Ihre gewünschte Abbildvorlage bereits hochgeladen haben. Falls Sie eine andere Abbildvorlage hochladen möchten, können Sie dies auf der Seite für Abbildvorlagen tun. Klicken Sie auf **Abbildvorlage hochladen** und folgen Sie den Schritten im Assistenten.
 
 ## **Schritt 1: Erstellen eines RemoteApp-Diensts**
 
-1.  Navigieren Sie im [Azure-Verwaltungsportal][] zur RemoteApp-Seite.
+1.  Navigieren Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] zur RemoteApp-Seite.
 2.  Klicken Sie auf **Neu \> Schnellerfassung**.
 
 3.  Geben Sie einen Namen für Ihren Dienst ein und wählen Sie eine Region aus.
@@ -43,7 +43,7 @@ Nachdem Ihr RemoteApp-Dienst erstellt wurde, öffnen Sie die **Schnellstart**-Se
 
 ## **Schritt 2: Konfigurieren der Active Directory-Verzeichnissynchronisierung (optional)**
 
-Falls Sie Active Directory verwenden möchten, benötigt RemoteApp Verzeichnissynchronisierung zwischen Azure Active Directory und Ihrem lokalen Active Directory, um Benutzer, Gruppen, Kontakte und Kennwörter mit Ihrem Active Directory-Mandanten in Azure zu synchronisieren. Unter [Roadmap für Verzeichnissynchronisierung][] finden Sie Informationen zur Planung und ausführliche Schritte.
+Falls Sie Active Directory verwenden möchten, benötigt RemoteApp Verzeichnissynchronisierung zwischen Azure Active Directory und Ihrem lokalen Active Directory, um Benutzer, Gruppen, Kontakte und Kennwörter mit Ihrem Active Directory-Mandanten in Azure zu synchronisieren. Unter [Roadmap für Verzeichnissynchronisierung][Roadmap für Verzeichnissynchronisierung] finden Sie Informationen zur Planung und ausführliche Schritte.
 
 ## **Schritt 3: Veröffentlichen von RemoteApp-Programmen**
 
@@ -68,6 +68,6 @@ Sie haben Ihren RemoteApp-Dienst erstellt und müssen nun Benutzer und Gruppen h
 
 Geschafft - Sie haben Ihre RemoteApp-Cloud-Bereitstellung erfolgreich erstellt und bereitgestellt. Ihre Benutzer können nun den Remotedesktop-Client herunterladen und installieren. Sie finden die URL für den Client in der RemoteApp-Schnellstartseite. Anschließend können sich die Benutzer in Azure anmelden und die von Ihnen veröffentlichten RemoteApp-Programme verwenden.
 
-  []: http://azure.microsoft.com/en-us/services/remoteapp/
+  []: http://azure.microsoft.com/de-de/services/remoteapp/
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [Roadmap für Verzeichnissynchronisierung]: http://msdn.microsoft.com/en-us/library/azure/hh967642.aspx
+  [Roadmap für Verzeichnissynchronisierung]: http://msdn.microsoft.com/de-de/library/azure/hh967642.aspx

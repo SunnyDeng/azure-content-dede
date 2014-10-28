@@ -73,11 +73,11 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 <!-- Anchors. -->  
 
   [mobile-services-selector-get-started]: ../includes/mobile-services-selector-get-started.md
-  [Erstellen universeller Windows-Apps, die Windows und Windows Phone als Ziel verwenden]: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn609832.aspx
-  [Schnellstart: Hinzufügen von Mobile Services (JavaScript-Backend)]: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn263180.aspx
+  [Erstellen universeller Windows-Apps, die Windows und Windows Phone als Ziel verwenden]: http://msdn.microsoft.com/de-de/library/windows/apps/xaml/dn609832.aspx
+  [Schnellstart: Hinzufügen von Mobile Services (JavaScript-Backend)]: http://msdn.microsoft.com/de-de/library/windows/apps/xaml/dn263180.aspx
   [Erste Schritte mit Daten für Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-data
   [mobile-services-windows-universal-get-started]: ../includes/mobile-services-windows-universal-get-started.md
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F
+  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F
   [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
   [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
 

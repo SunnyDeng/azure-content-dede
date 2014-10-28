@@ -14,11 +14,11 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 5.  Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
 
-    ![][]
+    ![][0]
 
     Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
     ![][1]
 
-  []: ./media/mobile-services-javascript-backend-run-app/mobile-data-tab.png
+  [0]: ./media/mobile-services-javascript-backend-run-app/mobile-data-tab.png
   [1]: ./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png

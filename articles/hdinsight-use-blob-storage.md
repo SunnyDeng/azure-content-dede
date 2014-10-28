@@ -13,22 +13,22 @@ Azure HDInsight unterstützt sowohl Hadoop Distributed Files System (HDFS) als a
 > [WACOM.NOTE]
 > Die meisten HDFS-Befehle wie z. B. **ls**, **copyFromLocal**, **mkdir** usw. funktionieren weiterhin wie erwartet. Nur die für die native HDFS-Implementierung (als DFS bezeichnet) spezifischen Befehle wie**fschk** und **dfsadmin** zeigen in Azure Blob-Speicher ein anderes Verhalten.
 
-Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erste Schritte mit HDInsight][] oder [Bereitstellen von HDInsight-Clustern][].
+Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erste Schritte mit HDInsight][Erste Schritte mit HDInsight] oder [Bereitstellen von HDInsight-Clustern][Bereitstellen von HDInsight-Clustern].
 
 ## Themen in diesem Artikel
 
--   [HDInsight-Speicherarchitektur][]
--   [Vorteile von Azure Blob-Speicher][]
--   [Vorbereiten eines Containers für Blob-Speicher][]
--   [Adressdateien in Blob-Speicher][]
--   [Blob-Zugang über PowerShell][]
--   [Nächste Schritte][]
+-   [HDInsight-Speicherarchitektur][HDInsight-Speicherarchitektur]
+-   [Vorteile von Azure Blob-Speicher][Vorteile von Azure Blob-Speicher]
+-   [Vorbereiten eines Containers für Blob-Speicher][Vorbereiten eines Containers für Blob-Speicher]
+-   [Adressdateien in Blob-Speicher][Adressdateien in Blob-Speicher]
+-   [Blob-Zugang über PowerShell][Blob-Zugang über PowerShell]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <span id="architecture"></span></a>HDInsight-Speicherarchitektur
 
 Das folgende Diagramm bietet einen zusammenfassenden Überblick über die HDInsight-Speicherarchitektur.
 
-![HDI.ASVArch][]
+![HDI.ASVArch][HDI.ASVArch]
 
 HDInsight bietet Zugang zum verteilten Dateisystem, das lokal an die Rechenknoten angefügt ist. Auf dieses Dateisystem kann über den vollqualifizierten URI zugegriffen werden. Beispiel:
 
@@ -40,19 +40,19 @@ Zusätzlich bietet HDInsight die Möglichkeit, auf die in Blob-Speicher gespeich
 
 Hadoop unterstützt eine Art Standard-Dateisystem. Zu diesem gehören ein Standard-Schema und eine Standard-Berechtigung; es kann auch zur Auflösung relativer Pfade verwendet werden. Während des Prozesses zur Bereitstellung von HDInsight werden ein Azure-Speicherkonto und ein bestimmter Blob-Speichercontainer aus diesem Konto als Standard-Dateisystem festgelegt.
 
-Zusätzlich zu diesem Speicherkonto können Sie während des Bereitstellungsprozesses weitere Speicherkonten aus demselben Azure-Abonnement oder anderen Azure-Abonnements hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern][].
+Zusätzlich zu diesem Speicherkonto können Sie während des Bereitstellungsprozesses weitere Speicherkonten aus demselben Azure-Abonnement oder anderen Azure-Abonnements hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern][Bereitstellen von HDInsight-Clustern].
 
 -   **Container in mit einem Cluster verbundenen Speicherkonten:** Da der Kontoname und der Kontoschlüssel in der *core-site.xml* gespeichert sind, haben Sie vollständigen Zugriff auf die Blobs in diesen Containern.
 -   **Öffentliche Container oder öffentliche Blobs in NICHT mit einem Cluster verbundenen Speicherkonten:** Sie haben nur Lesezugriff auf die Blobs in diesen Containern.
 
     > [WACOM.NOTE]
-    >  \> Öffentliche Container erlauben das Abrufen einer Liste aller im Container verfügbaren Blobs und der Container-Metadaten. Auf öffentliche Blobs haben Sie nur Zugriff, wenn Sie die exakte URL kennen. Weitere Informationen finden Sie unter [Beschränken des Zugriffs auf Container und Blobs][].
+    >  \> Öffentliche Container erlauben das Abrufen einer Liste aller im Container verfügbaren Blobs und der Container-Metadaten. Auf öffentliche Blobs haben Sie nur Zugriff, wenn Sie die exakte URL kennen. Weitere Informationen finden Sie unter [Beschränken des Zugriffs auf Container und Blobs][Beschränken des Zugriffs auf Container und Blobs].
 
 -   **Private Container in NICHT mit einem Cluster verbundenen Speicherkonten:** Sie können nur auf die Blobs im Container zugreifen, wenn Sie das Speicherkonto beim Übermitteln der WebHCat-Aufträge definieren. Dies wird weiter unten im Artikel erläutert.
 
 Das beim Einrichtungsprozess definierte Speicherkonto und die Schlüssel werden in %HADOOP\_HOME%/conf/core-site.xml gespeichert. Standardmäßig verwendet HDInsight die in der Datei core-site.xml definierten Speicherkonten. Die Datei core-site.xml sollte nicht manuell bearbeitet werden, da der Cluster-Stammknoten (Master) jederzeit neu aus einem Abbild erstellt oder migriert werden kann, und die Änderungen an den Dateien in diesem Fall verloren gehen.
 
-Verschiedene WebHCat-Aufträge, darunter Hive, MapReduce, Hadoop Streaming und Pig, können eine Beschreibung von Speicherkonten und Metadaten enthalten (funktioniert momentan nur für Pig und Speicherkonten, nicht für Metadaten.) Im Abschnitt [Blob-Zugriff über PowerShell][Blob-Zugang über PowerShell] dieses Artikels finden Sie ein Beispiel für dieses Feature. Weitere Informationen finden Sie unter [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores][].
+Verschiedene WebHCat-Aufträge, darunter Hive, MapReduce, Hadoop Streaming und Pig, können eine Beschreibung von Speicherkonten und Metadaten enthalten (funktioniert momentan nur für Pig und Speicherkonten, nicht für Metadaten.) Im Abschnitt [Blob-Zugriff über PowerShell][Blob-Zugang über PowerShell] dieses Artikels finden Sie ein Beispiel für dieses Feature. Weitere Informationen finden Sie unter [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores][Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores].
 
 In Blob-Speichercontainern werden Daten als Schlüssel/Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen das Zeichen '/' verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. Der Schlüssel eines Blobs kann z. B. *input/log1.txt* heißen. Es existiert zwar in Wirklichkeit kein Verzeichnis namens *input*, aber aufgrund des Zeichens "/" im Schlüsselnamen sieht dieser aus wie ein Dateipfad.
 
@@ -62,7 +62,7 @@ Der Leistungsaufwand, der damit verbunden ist, dass die Berechnung und die Speic
 
 Die Speicherung von Daten in Blob-Speicher statt in HDFS hat mehrere Vorteile:
 
--   **Datenfreigabe und -wiederverwendung:** Die Daten in HDFS befinden sich innerhalb des Rechenclusters. Nur die Anwendungen, die Zugriff auf den Rechencluster haben, können die Daten über die HDFS-API verwenden. Auf die Dateien in Blob-Speicher kann entweder über die HDFS-APIs oder über die [Blob-Speicher-REST-APIs][] zugegriffen werden. Somit kann eine größere Menge von Anwendungen (darunter andere HDInsight-Cluster) und Tools verwendet werden, um die Daten zu produzieren und abzurufen.
+-   **Datenfreigabe und -wiederverwendung:** Die Daten in HDFS befinden sich innerhalb des Rechenclusters. Nur die Anwendungen, die Zugriff auf den Rechencluster haben, können die Daten über die HDFS-API verwenden. Auf die Dateien in Blob-Speicher kann entweder über die HDFS-APIs oder über die [Blob-Speicher-REST-APIs][Blob-Speicher-REST-APIs] zugegriffen werden. Somit kann eine größere Menge von Anwendungen (darunter andere HDInsight-Cluster) und Tools verwendet werden, um die Daten zu produzieren und abzurufen.
 -   **Datenarchivierung:**Die Speicherung von Daten in Blob-Speicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren.
 -   **Datenspeicherkosten:** Die langfristige Datenspeicherung in DFS ist kostspieliger als die Datenspeicherung in Blob-Speicher, da die Kosten eines Rechenclusters höher liegen als diejenigen eines Blob-Speichercontainers. Da die Daten nicht für jede Erzeugung eines neues Rechenclusters neu geladen werden, sparen Sie auch Kosten für das Laden von Daten.
 -   **Flexible horizontale Skalierung:** Während HDFS Ihnen ein horizontal skaliertes Dateisystem bietet, wird die Skalierung durch die Anzahl der Knoten bestimmt, die Sie für Ihren Cluster bereitstellen. Eine Änderung der Skalierung kann weitaus schwieriger werden, als auf die flexiblen Speicherkapazitäten von Blob-Speicher zu vertrauen, über die Sie automatisch verfügen.
@@ -72,7 +72,7 @@ Bestimmte MapReduce-Jobs und -Pakete können zu Zwischenergebnissen führen, die
 
 ## <span id="preparingblobstorage"></span></a>Vorbereiten eines Containers für Blob-Speicher
 
-Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto][]. Dabei geben Sie ein Azure-Datencenter an, in dem die mithilfe dieses Kontos erstellten Objekte gespeichert werden. Der Cluster und das Speicherkonto müssen im selben Datencenter gehostet werden. (Hive-Metastore-SQL-Datenbanken und Oozie-Metastore-SQL-Datenbanken müssen sich ebenfalls im selben Datencenter befinden.) Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Container in Ihrem Speicherkonto. Dieser Container kann ein außerhalb von HDInsight erstellter Blob-Speichercontainer sein, oder es handelt sich um einen Container, der für einen HDInsight-Cluster erstellt wird.
+Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto][Azure-Speicherkonto]. Dabei geben Sie ein Azure-Datencenter an, in dem die mithilfe dieses Kontos erstellten Objekte gespeichert werden. Der Cluster und das Speicherkonto müssen im selben Datencenter gehostet werden. (Hive-Metastore-SQL-Datenbanken und Oozie-Metastore-SQL-Datenbanken müssen sich ebenfalls im selben Datencenter befinden.) Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Container in Ihrem Speicherkonto. Dieser Container kann ein außerhalb von HDInsight erstellter Blob-Speichercontainer sein, oder es handelt sich um einen Container, der für einen HDInsight-Cluster erstellt wird.
 
 ### Erstellen eines Blob-Containers für HDInsight mithilfe des Verwaltungsportals
 
@@ -80,7 +80,7 @@ Wenn Sie einen HDInsight-Cluster im Azure-Verwaltungsportal bereitstellen, haben
 
 Wenn Sie die Option "Schnellerstellung" verwenden, können Sie ein vorhandenes Speicherkonto auswählen. Während des Bereitstellungsprozesses wird ein neuer Container mit dem Namen des HDInsight-Clusters erstellt. Wenn ein Container mit demselben Namen bereits vorhanden ist, wird <clustername>-<x> verwendet. Zum Beispiel myHDIcluster-1. Dieser Container wird als Standard-Dateisystem verwendet.
 
-![HDI.Schnellerfassung][]
+![HDI.Schnellerfassung][HDI.Schnellerfassung]
 
 Mit der benutzerdefinierten Erstellung können Sie für das Standard-Speicherkonto eine der folgenden Optionen auswählen:
 
@@ -90,11 +90,11 @@ Mit der benutzerdefinierten Erstellung können Sie für das Standard-Speicherkon
 
 Sie haben außerdem die Auswahl, einen neuen Blob-Container zu erstellen oder einen vorhandenen zu verwenden.
 
-![HDI.CustomCreateStorageAccount][]
+![HDI.CustomCreateStorageAccount][HDI.CustomCreateStorageAccount]
 
 ### Erstellen eines Containers mit Azure PowerShell.
 
-[Azure PowerShell][] kann zur Erstellung von Blob-Containern verwendet werden. Nachfolgend ein PowerShell-Beispielskript:
+[Azure PowerShell][Azure PowerShell] kann zur Erstellung von Blob-Containern verwendet werden. Nachfolgend ein PowerShell-Beispielskript:
 
     $subscriptionName = "<SubscriptionName>"    # Azure subscription name
     $storageAccountName = "<AzureStorageAccountName>" # The storage account that you will create
@@ -117,7 +117,7 @@ Das URI-Schema für den Dateizugriff im Blob-Speicher ist:
 
     wasb[s]://<BlobStorageContainerName>@<StorageAccountName>.blob.core.windows.net/<path>
 
-> [WACOM.NOTE] Die Syntax zum Ansprechen der Dateien im Speicheremulator (ausgeführt im HDInsight-Emulator) lautet *wasb:[//<ContainerName\>@storageemulator][]*.
+> [WACOM.NOTE] Die Syntax zum Ansprechen der Dateien im Speicheremulator (ausgeführt im HDInsight-Emulator) lautet *wasb:[//<ContainerName\>@storageemulator][//<ContainerName\>@storageemulator]*.
 
 Das URI-Schema bietet sowohl unverschlüsselten Zugriff mit dem Präfix *wasb:* als auch SSL-verschlüsselten Zugriff mit *wasbs*. Wir empfehlen die Verwendung von *wasbs*, wann immer es möglich ist, selbst für den Zugriff auf Daten, die sich im selben Azure-Datencenter befinden.
 
@@ -144,11 +144,11 @@ Verwenden Sie den folgenden Befehl, um die Blob-bezogenen Cmdlets aufzulisten:
 
     Get-Command *blob*
 
-![Blob.PowerShell.cmdlets][]
+![Blob.PowerShell.cmdlets][Blob.PowerShell.cmdlets]
 
 **PowerShell-Beispiel für das Hochladen einer Datei**
 
-Siehe [Hochladen von Daten in HDInsight][].
+Siehe [Hochladen von Daten in HDInsight][Hochladen von Daten in HDInsight].
 
 **PowerShell-Beispiel für das Herunterladen einer Datei**
 
@@ -243,8 +243,8 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 
 -   [Erste Schritte mit Azure HDInsight][Erste Schritte mit HDInsight]
 -   [Hochladen von Daten zu HDInsight][Hochladen von Daten in HDInsight]
--   [Verwenden von Hive mit HDInsight][]
--   [Verwenden von Pig mit HDInsight][]
+-   [Verwenden von Hive mit HDInsight][Verwenden von Hive mit HDInsight]
+-   [Verwenden von Pig mit HDInsight][Verwenden von Pig mit HDInsight]
 
   [Erste Schritte mit HDInsight]: ../hdinsight-get-started/
   [Bereitstellen von HDInsight-Clustern]: ../hdinsight-provision-clusters/
@@ -255,9 +255,9 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
   [Blob-Zugang über PowerShell]: #powershell
   [Nächste Schritte]: #nextsteps
   [HDI.ASVArch]: ./media/hdinsight-use-blob-storage/HDI.ASVArch.png "HDInsight-Speicherarchitektur"
-  [Beschränken des Zugriffs auf Container und Blobs]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179354.aspx
+  [Beschränken des Zugriffs auf Container und Blobs]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179354.aspx
   [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores]: http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx
-  [Blob-Speicher-REST-APIs]: http://msdn.microsoft.com/en-us/library/windowsazure/dd135733.aspx
+  [Blob-Speicher-REST-APIs]: http://msdn.microsoft.com/de-de/library/windowsazure/dd135733.aspx
   [Azure-Speicherkonto]: ../storage-create-storage-account/
   [HDI.Schnellerfassung]: ./media/hdinsight-use-blob-storage/HDI.QuickCreateCluster.png
   [HDI.CustomCreateStorageAccount]: ./media/hdinsight-use-blob-storage/HDI.CustomCreateStorageAccount.png
