@@ -1,12 +1,12 @@
-<properties linkid="manage-linux-howto-service-management-api" urlDisplayName="Service Management API" pageTitle="How to use the service management API for VMs - Azure" metaKeywords="" description="Learn how to use the Azure Service Management API for a Linux virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Use the Service Management API" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-linux-howto-service-management-api" urlDisplayName="Service Management API" pageTitle="How to use the service management API for VMs - Azure" metaKeywords="" description="Learn how to use the Azure Service Management API for a Linux virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Use the Service Management API" authors="timlt" solutions="" manager="timlt" editor="" />
 
-Verwenden der Dienstverwaltungs-AP
-==================================
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="timlt"></tags>
 
-Initialisierung
----------------
+# Verwenden der Dienstverwaltungs-AP
 
-Zum Aufrufen der Azure IaaS Dienstverwaltungs-API von NodeJS wird das Modul `azure` verwendet.
+## Initialisierung
+
+Zum Aufrufen der Azure IaaS Dienstverwaltungs-API von NodeJS wird das `azure`-Modul verwendet.
 
     var azure = require('azure');
 
@@ -16,25 +16,26 @@ Erstellen Sie zuerst eine Instanz von ServiceManagementService. Alle Aufrufe an 
 
 -   subscriptionid ist eine erforderliche Zeichenfolge. Dabei sollte es sich um die Abonnement-ID des Kontos handeln, auf das zugegriffen wird.
 -   auth ist ein optionales Objekt, das den privaten Schlüssel und das öffentliche Zertifikat angibt, die mit diesem Konto verwendet werden.
+
     -   keyfile - Dateipfad der PEM-Datei, die einen privaten Schlüssel hat. Wird ignoriert, wenn "keyvalue" angegeben ist.
     -   keyvalue - tatsächlicher Wert des privaten Schlüssels, wie er in der PEM-Datei gespeichert ist.
     -   certfile - Dateipfad der PEM-Datei, die ein öffentliches Zertifikat hat. Wird ignoriert, wenn "certvalue" angegeben ist.
     -   certvalue - tatsächlicher Wert des öffentlichen Zertifikats, wie er in der PEM-Datei gespeichert ist.
-    -   Wenn die oben aufgelisteten Werte nicht angegeben sind, werden die Werte der Umgebungsvariablen `CLIENT_AUTH_KEYFILE` und `CLIENT_AUTH_CERTFILE` gelesen und verwendet. Falls auch diese nicht festgelegt sind, werden die Standardwerte für die Dateien probiert: priv.pem und pub.pem.
+    -   Wenn die oben aufgelisteten Werte nicht angegeben sind, werden die Werte der Prozessumgebungsvariablen `CLIENT_AUTH_KEYFILE` und `CLIENT_AUTH_CERTFILE` gelesen und verwendet. Falls auch diese nicht festgelegt sind, werden die Standardwerte für die Dateien probiert: priv.pem und pub.pem.
     -   Sollte es nicht möglich sein, den privaten Schlüssel und das öffentliche Zertifikat zu laden, wird ein Fehler ausgegeben.
 -   options ist ein optionales Objekt, das verwendet werden kann, um die vom Client verwendeten Eigenschaften zu kontrollieren.
+
     -   host - Hostname des Azure-Verwaltungsservers. Falls nicht angegeben, wird der Standardhost verwendet.
     -   apiversion - Versionszeichenfolge zur Verwendung im HTTP-Header. Falls nicht angegeben, wird die Standardversion verwendet.
     -   serializetype - XML oder JSON. Falls nicht angegeben, wird die Standardserialisierung verwendet.
 
 Optional kann ein Tunneling-Proxy verwendet werden, um die HTTPS-Anforderung über den Proxy zu ermöglichen. Wenn der IaasClient erstellt wird, verarbeitet er die Umgebungsvariable `HTTPS_PROXY`. Falls diese auf eine gültige URL eingestellt ist, werden der Hostname und der Port aus der URL übernommen und in nachfolgenden Anforderungen zur Identifizierung des Proxy verwendet.
 
-     iaasClient.SetProxyUrl(proxyurl)
+        iaasClient.SetProxyUrl(proxyurl)
 
-SetProxyUrl kann aufgerufen werden, um Proxyhost und Port explizit festzulegen. Dies hat denselben Effekt wie das Einrichten der Umgebungsvariable `HTTPS_PROXY` und überschreibt die Umgebungseinstellung.
+SetProxyUrl kann aufgerufen werden, um Proxyhost und Port explizit festzulegen. Dies hat denselben Effekt wie das Festlegen der Umgebungsvariablen `HTTPS_PROXY`, und die Umgebungseinstellung wird überschrieben.
 
-Rückruf
--------
+## Rückruf
 
 Alle APIs haben ein erforderliches Rückruf-Argument "callback". Die Fertigstellung der Anforderung wird durch das Aufrufen der in "callback" übergebenen Funktion signalisiert.
 
@@ -51,8 +52,7 @@ Alle APIs haben ein erforderliches Rückruf-Argument "callback". Die Fertigstell
 
 Beachten Sie, dass in manchen Fällen die Fertigstellung lediglich bedeutet, dass die Anforderung akzeptiert wurde. Verwenden Sie in diesem Fall **GetOperationStatus**, um den endgültigen Status zu erhalten.
 
-APIs
-----
+## APIs
 
 **iaasClient.GetOperationStatus(requested, callback)**
 
@@ -75,9 +75,10 @@ APIs
 -   imageName ist eine erforderliche Zeichenfolge für das Image.
 -   mediaLink ist eine erforderliche Zeichenfolge für den zu verwendenden mediaLink.
 -   imageOptions ist ein optionales Objekt. Es kann folgende Eigenschaften enthalten:
-    -   Category
+
+    -   Kategorie
     -   Label - Standardmäßig "imageName", falls nichts festgelegt ist.
-    -   Location
+    -   Verzeichnis
     -   RoleSize
 -   callback ist erforderlich. (Wenn imageOptions nicht festgelegt ist, kann dies der dritte Parameter sein.)
 -   Das Antwortobjekt enthält Eigenschaften des erstellten Image, falls erfolgreich.
@@ -97,9 +98,10 @@ APIs
 
 -   serviceName ist eine erforderliche Zeichenfolge für den gehosteten Dienst.
 -   serviceOptions ist ein optionales Objekt. Es kann folgende Eigenschaften enthalten:
+
     -   Description - Standardmäßig wird "Service host" verwendet.
     -   Label - Standardmäßig serviceName, falls nichts festgelegt ist.
-    -   Location - Standardmäßig "Azure Preview" -TODO-Änderung bei Veröffentlichung.
+    -   Location - Die Region, in der der Dienst erstellt werden soll.
 -   callback ist erforderlich.
 
 **iaasClient.GetStorageAccountKeys(serviceName, callback)**
@@ -128,6 +130,7 @@ APIs
 -   deploymentName ist eine erforderliche Zeichenfolge für die Bereitstellung.
 -   VMRole ist ein erforderliches Objekt, das die Eigenschaften der Rolle enthält, die für die Bereitstellung erstellt werden soll.
 -   deployOptions ist ein optionales Objekt. Es kann folgende Eigenschaften enthalten:
+
     -   DeploymentSlot - Standardmäßig "Production".
     -   Label - Standardmäßig deploymentName, falls nichts festgelegt ist.
     -   UpgradeDomainCount - Kein Standard.
@@ -208,6 +211,7 @@ APIs
 -   deploymentName ist eine erforderliche Zeichenfolge für die Bereitstellung.
 -   roleInstance ist eine erforderliche Zeichenfolge der Rolleninstanz.
 -   captOptions ist ein erforderliches Objekt, das die Erfassungsaktionen definiert.
+
     -   PostCaptureActions
     -   ProvisioningConfiguration
     -   SupportsStatelessDeployment
@@ -215,10 +219,11 @@ APIs
     -   TargetImageName
 -   callback ist erforderlich.
 
-Datenobjekte
-------------
+## Datenobjekte
 
-Die APIs übernehmen beim Erstellen oder Ändern von Bereitstellungen, Rollen oder Datenträgern Objekte als Eingaben. Andere APIs geben ähnliche Objekte an Get- oder List-Vorgänge zurück. In diesem Abschnitt werden die Objekteigenschaften beschrieben. Bereitstellung
+Die APIs übernehmen beim Erstellen oder Ändern von Bereitstellungen, Rollen oder Datenträgern Objekte als Eingaben. Andere APIs geben ähnliche Objekte an Get- oder List-Vorgänge zurück.
+In diesem Abschnitt werden die Objekteigenschaften beschrieben.
+Deployment
 
 -   Name - Zeichenfolge
 -   DeploymentSlot - "Staging" oder "Production"
@@ -293,30 +298,29 @@ Die APIs übernehmen beim Erstellen oder Ändern von Bereitstellungen, Rollen od
 -   LocalPort
 -   Name
 -   Port
--   Protocol
+-   Protokoll
 
-Beispielcode
-------------
+## Beispielcode
 
 Dies ist ein Beispiel für einen Javascript-Code, der einen gehosteten Dienst und eine Bereitstellung erstellt und dann den Fertigstellungsstatus der Bereitstellung abfragt.
 
     var azure = require('azure');
 
-    // Angabe, wo sich Zertifikatsdateien befinden
+    // specify where certificate files are located
     var auth = {
       keyfile : '../certs/priv.pem',
       certfile : '../certs/pub.pem'
     }
 
-    // Namen und IDs für Abonnement, Dienst, Bereitstellung
+    // names and IDs for subscription, service, deployment
     var subscriptionId = '167a0c69-cb6f-4522-ba3e-d3bdc9c504e1';
     var serviceName = 'sampleService2';
     var deploymentName = 'sampleDeployment';
 
-    // Fertigstellung alle 10 Sekunden abfragen
+    // poll for completion every 10 seconds
     var pollPeriod = 10000;
 
-    // Daten zur Definition von Bereitstellung und Rolle
+    // data used to define deployment and role
 
     var deploymentOptions = {
       DeploymentSlot: 'Staging',
@@ -336,7 +340,7 @@ Dies ist ein Beispiel für einen Javascript-Code, der einen gehosteten Dienst un
       ConfigurationSetType: 'ProvisioningConfiguration',
       AdminPassword: 'myAdminPwd1',
       MachineName: 'sampleMach1',
-      ResetPasswordOnFirstLogon: falsch
+      ResetPasswordOnFirstLogon: false
     };
 
     var externalEndpoint1 = {
@@ -360,15 +364,15 @@ Dies ist ein Beispiel für einen Javascript-Code, der einen gehosteten Dienst un
     }
 
 
-    // Funktion zur Anzeige von Fehlermeldungen bei Fehler
+    // function to show error messages if failed
     function showErrorResponse(rsp) {
-      console.log('Es ist ein Fehler im Dienst aufgetreten');
+      console.log('There was an error response from the service');
       console.log('status code=' + rsp.statusCode);
       console.log('Error Code=' + rsp.error.Code);
       console.log('Error Message=' + rsp.error.Message);
     }
 
-    // Fertigstellung abfragen
+    // polling for completion
     function PollComplete(reqid) {
       iaasCli.GetOperationStatus(reqid, function(rspobj) {
         if (rspobj.isSuccessful && rspobj.response) {
@@ -391,12 +395,12 @@ Dies ist ein Beispiel für einen Javascript-Code, der einen gehosteten Dienst un
     }
 
 
-    // Clientobjekt erstellen
+    // create the client object
     var iaasCli = azure.createServiceManagementService(subscriptionId, auth);
 
-    // Gehosteten Dienst erstellen
-    // Falls erfolgreich, Bereitstellung erstellen
-    // Falls akzeptiert, Fertigstellung abfragen
+    // create a hosted service.
+    // if successful, create deployment
+    // if accepted, poll for completion
     iaasCli.CreateHostedService(serviceName, function(rspobj) {
       if (rspobj.isSuccessful) {
         iaasCli.CreateDeployment(serviceName, 
@@ -404,7 +408,7 @@ Dies ist ein Beispiel für einen Javascript-Code, der einen gehosteten Dienst un
                                  VMRole, deploymentOptions,
                                   function(rspobj) {
           if (rspobj.isSuccessful) {
-          // Anfrage-ID abrufen und Fertigstellungsabfrage starten
+          // get request id, and start polling for completion
             var reqid = rspobj.headers['x-ms-request-id'];
             process.stdout.write('Polling');
             setTimeout(PollComplete(reqid), pollPeriod);

@@ -1,48 +1,59 @@
-<properties linkid="manage-linux-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="Capture an image of a virtual machine running Linux" metaKeywords="Azure Linux vm, Linux vm" description="Learn how to capture an image of an Azure virtual machine (VM) running Linux. " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Linux" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<properties linkid="manage-linux-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="Capture an image of a virtual machine running Linux" metaKeywords="Azure Linux vm, Linux vm" description="Learn how to capture an image of an Azure virtual machine (VM) running Linux. " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Linux" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
 
-Erfassen des Images eines virtuellen Linux-Computers
-====================================================
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav"></tags>
 
-Sie können Images aus der Image-Galerie verwenden, um auf einfache Weise virtuelle Computer zu erstellen. Alternativ können Sie eigene Images erfassen und verwenden, um benutzerdefinierte virtuelle Computer zu erstellen. Ein Image stellt die Datei einer virtuellen Festplatte (.vhd) dar, die als Vorlage zum Erstellen eines virtuellen Computers dient. Ein Image ist eine Vorlage, da es nicht über spezifische Einstellungen verfügt wie ein konfigurierter virtueller Computer. Beispiele für diese Einstellungen sind Hostname und Benutzerkontoeinstellungen. Wenn Sie mehrere virtuelle Computer erstellen möchten, die auf die gleiche Weise eingerichtet sind, können Sie das Image eines konfigurierten virtuellen Computers erfassen und dieses als Vorlage verwenden.
+# Erfassen eines virtuellen Linux-Computers, um ihn als Vorlage zu verwenden
 
-1.  Stellen Sie eine Verbindung mit dem virtuellen Computer her. Eine Beschreibung der dafür erforderlichen Schritte finden Sie unter [Anmeldung auf einem virtuellen Linux-Computer](../virtual-machines-linux-how-to-log-on).
+Dieser Artikel erläutert, wie Sie einen virtuellen Linux-Computer erfassen, um ihn als Vorlage zum Erstellen anderer virtueller Computer zu verwenden. Diese Vorlage für virtuelle Computer umfasst den Betriebssystemdatenträger und alle an den virtuellen Computer angefügten Datenträger. Da die Vorlage keine Netzwerkkonfiguration enthält, müssen Sie die Konfiguration später vornehmen, wenn Sie die anderen virtuellen Computer erstellen, die auf dieser Vorlage basieren.
 
-2.  Geben Sie im SSH-Fenster den folgenden Befehl ein, und geben Sie anschließend das Kennwort für das Konto ein, das Sie auf dem virtuellen Computer erstellt haben. Beachten Sie, dass das Ergebnis aus `waagent` je nach Version dieses Dienstprogramms geringfügig abweichen kann:
+Nachdem Sie den virtuellen Computer erfasst haben, ist er unter **Eigene Images** verfügbar, wenn Sie einen virtuellen Computer erstellen. Die Imagedatei wird als VHD unter Ihrem Speicherkonto gespeichert. Weitere Informationen zu Images finden Sie unter [Verwalten von Datenträgern und Images][Verwalten von Datenträgern und Images].
+
+## Voraussetzungen
+
+Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer erstellt, das Betriebssystem konfiguriert und beliebige Datenträger angefügt haben. Falls dies noch nicht geschehen ist, finden Sie hier Anweisungen:
+
+-   [Erstellen eines benutzerdefinierten virtuellen Computers][Erstellen eines benutzerdefinierten virtuellen Computers]
+-   [Anfügen eines Datenträgers an einen virtuellen Computer][Anfügen eines Datenträgers an einen virtuellen Computer]
+
+## Erfassen des virtuellen Computers
+
+1.  Stellen Sie eine Verbindung mit dem virtuellen Computer her, indem Sie auf der Befehlsleiste auf **Verbinden** klicken. Ausführliche Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird][Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird].
+
+2.  Geben Sie im SSH-Fenster den folgenden Befehl ein, und geben Sie anschließend das Kennwort für das Konto ein, das Sie auf dem virtuellen Computer erstellt haben. Beachten Sie, dass die Ausgabe von `waagent` je nach Version dieses Hilfsprogramms geringfügig abweichen kann:
 
     `sudo waagent -deprovision`
 
-    ![Virtuellen Computer zurücksetzen](./media/virtual-machines-linux-capture-image/LinuxDeprovision.png)
+    ![Virtuellen Computer zurücksetzen][Virtuellen Computer zurücksetzen]
 
 3.  Geben Sie **y** ein, um fortzufahren.
 
-    ![Zurücksetzen des virtuellen Computers erfolgreich](./media/virtual-machines-linux-capture-image/LinuxDeprovision2.png)
+    ![Zurücksetzen des virtuellen Computers erfolgreich][Zurücksetzen des virtuellen Computers erfolgreich]
 
 4.  Geben Sie **Exit** ein, um den SSH-Client zu schließen.
 
-5.  Wählen Sie im [Verwaltungsportal](http://manage.windowsazure.com) den virtuellen Computer, und klicken Sie anschließend auf **Shutdown**.
+5.  Wählen Sie im [Verwaltungsportal][Verwaltungsportal] den virtuellen Computer aus, und klicken Sie anschließend auf **Herunterfahren**.
 
-    ![Virtuellen Computer herunterfahren](./media/virtual-machines-linux-capture-image/ShutdownVM.png)
+6.  Wenn der virtuelle Computer beendet wird, klicken Sie in der Befehlsleiste auf **Erfassen**, um das Dialogfeld **Virtuellen Computer erfassen** zu öffnen.
 
-6.  Klicken Sie auf **Ja**, um zu bestätigen, dass Ihnen der virtuelle Computer weiterhin in Rechnung gestellt wird, auch wenn dieser nicht in Betrieb ist.
+7.  Geben Sie unter **Imagename** den Namen für das neue Image ein.
 
-7.  Wenn der virtuelle Computer abgeschaltet wird, klicken Sie in der Befehlsleiste auf **Erfassen**.
+8.  Die Bereitstellung aller Linux-Images muss *aufgehoben* werden, indem der Befehl `waagent` mit der Option `-deprovision` ausgeführt wird. Geben Sie an, dass Sie "waagent-deprovision" auf dem virtuellen Computer ausgeführt haben, indem Sie auf die entsprechende Option klicken. So geben Sie an, dass das Betriebssystem für die Verwendung als Image vorbereitet wurde.
 
-    ![Ein Image des virtuellen Computers erfassen](./media/virtual-machines-linux-capture-image/CaptureVM.png)
-
-    Das Dialogfeld **Erfassen des virtuellen Computers** wird angezeigt.
-
-    ![Details der Erfassung eingeben](./media/virtual-machines-linux-capture-image/CaptureLinux.png)
-
-8.  Geben Sie unter **Image-Name** den Namen für das neue Image ein.
-
-9.  Alle Linux-Images müssen *zurückgesetzt* werden, indem der Befehl `waagent` mit der Option `-deprovision` ausgeführt wird. Klicken Sie auf **Ich habe den De-provision-Befehl auf dem virtuellen Computer ausgeführt**, um anzuzeigen, dass das Betriebssystem darauf eingerichtet ist, als ein Image zu fungieren.
-
-10. Aktivieren Sie das Kontrollkästchen, um das Image zu erfassen.
+9.  Aktivieren Sie das Kontrollkästchen, um das Image zu erfassen.
 
     Das neue Image steht nun unter **Images** zur Verfügung. Der virtuelle Computer wird gelöscht, nachdem das Image erfasst wurde.
 
-    ![Image-Erfassung erfolgreich](./media/virtual-machines-linux-capture-image/CaptureSuccess.png)
+    ![Image-Erfassung erfolgreich][Image-Erfassung erfolgreich]
 
-    Wenn Sie einen virtuellen Computer erstellen, indem Sie die Methode **From Gallery** verwenden, können Sie das Image verwenden, das Sie erfasst haben, indem Sie auf **Meine Images** auf der Seite **Select the virtual machine operating system** klicken.
+## Nächste Schritte
 
+Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe der Methode **Aus Katalog** einen benutzerdefinierten virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][Erstellen eines benutzerdefinierten virtuellen Computers].
 
+  [Verwalten von Datenträgern und Images]: http://go.microsoft.com/fwlink/p/?LinkId=397536
+  [Erstellen eines benutzerdefinierten virtuellen Computers]: ../virtual-machines-create-custom/
+  [Anfügen eines Datenträgers an einen virtuellen Computer]: ../storage-windows-attach-disk/
+  [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird]: ../virtual-machines-linux-how-to-log-on
+  [Virtuellen Computer zurücksetzen]: ./media/virtual-machines-linux-capture-image/LinuxDeprovision.png
+  [Zurücksetzen des virtuellen Computers erfolgreich]: ./media/virtual-machines-linux-capture-image/LinuxDeprovision2.png
+  [Verwaltungsportal]: http://manage.windowsazure.com
+  [Image-Erfassung erfolgreich]: ./media/virtual-machines-linux-capture-image/VMCapturedImageAvailable.png

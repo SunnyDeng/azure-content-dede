@@ -1,18 +1,18 @@
-<properties linkid="services-linux-user-names" urlDisplayName="User Names in Linux" pageTitle="Selecting User Names for Linux on Azure" metaKeywords="" description="Learn how to select user names for a Linux virtual machine in Azure." metaCanonical="" services="virtual-machines" documentationCenter="" title="Selecting User Names for Linux on Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="services-linux-user-names" urlDisplayName="User Names in Linux" pageTitle="Selecting User Names for Linux on Azure" metaKeywords="" description="Learn how to select user names for a Linux virtual machine in Azure." metaCanonical="" services="virtual-machines" documentationCenter="" title="Selecting User Names for Linux on Azure" authors="szark" solutions="" manager="timlt" editor="" />
 
-Auswählen von Benutzernamen für Linux in Azure
-==============================================
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="szark"></tags>
 
-Wenn Sie eine virtuelle Computerinstanz für Linux-Images in Azure erstellen, können Sie den bereitzustellenden Benutzernamen auswählen.
+# Auswählen von Benutzernamen für Linux in Azure
 
-In Linux sind einige Benutzernamen definiert, die Sie nicht verwenden können. Es ist sehr wichtig, die **Verwendung dieser Namen zu vermeiden**. Wenn Sie einen dieser Benutzernamen verwenden, können Sie das Image nicht bereitstellen.
+Wenn Sie eine Instanz eines virtuellen Linux-Computers auf Azure erstellen, können Sie den bereitzustellenden Benutzernamen auswählen (der Standardname ist *azureuser*). In den meisten Fällen ist dieser neue Benutzer im Basisimage nicht vorhanden und wird während des Bereitstellungsprozesses erstellt. Wenn der Benutzer im VM-Basisimage bereits vorhanden ist, konfiguriert der Azure-Linux-Agent in einigen Fällen einfach das Kennwort (und/oder den SSH-Schlüssel) für diesen Benutzer auf der Grundlage der Informationen der bereitstellenden Konfiguration, die beim Erstellen der VM übergeben werden.
 
-Darüberhinaus gibt die Dienstverwaltungs-API folgenden Fehler zurück: Fehler beim Erstellen des Benutzers *xxxxxx*. Dies gilt auch, wenn Sie einen Benutzernamen verwenden, der aufgrund eines vorherigen Aufzeichnungsvorgangs, bei dem die Bereitstellung des im Image erstellten Benutzernamens nicht aufgehoben wurde, im Image bereits vorhanden ist.
+**Achtung:** Linux definiert einen Satz von Benutzernamen, die bei der Erstellung neuer Benutzer nicht verwendet werden sollten. Der Bereitstellungsprozess verursacht einen **Fehler**, wenn Sie versuchen, eine Linux-VM mithilfe eines vorhandenen Systembenutzers (Benutzer mit der UID 0-99) bereitzustellen. Ein typisches Beispiel ist der `root`-Benutzer mit der UID 0.
 
-Die folgenden Benutzernamen können Sie nicht verwenden.
+-   Weitere Informationen: [Linux-Standardbasisimage - Benutzer-ID-Bereiche][Linux-Standardbasisimage - Benutzer-ID-Bereiche]
 
-OpenSUSE
---------
+Die folgenden Listen enthalten Benutzernamen, die Sie bei der Bereitstellung eines virtuellen Linux-Computers vermeiden sollten. Zur Sicherheit sollten Sie **diese Benutzernamen nicht verwenden**, wenn Sie eine Linux-VM bereitstellen, da der Bereitstellungsprozess sonst fehlschlagen kann.
+
+## openSUSE
 
 -   abrt
 -   adm
@@ -69,8 +69,7 @@ OpenSUSE
 -   video
 -   wheel
 
-SLES
-----
+## SLES
 
 -   audio
 -   bin
@@ -116,8 +115,7 @@ SLES
 -   wwwrun
 -   xok
 
-CentOS
-------
+## CentOS
 
 -   abrt
 -   adm
@@ -174,8 +172,7 @@ CentOS
 -   video
 -   wheel
 
-UBUNTU
-------
+## Ubuntu
 
 -   adm
 -   admin
@@ -231,3 +228,4 @@ UBUNTU
 -   whoopsie
 -   www-data
 
+  [Linux-Standardbasisimage - Benutzer-ID-Bereiche]: http://refspecs.linuxfoundation.org/LSB_4.1.0/LSB-Core-generic/LSB-Core-generic/uidrange.html

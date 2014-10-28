@@ -1,23 +1,24 @@
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][1] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre Anwendung.
-    
-    ![](./media/mobile-services-create-new-push-table/mobile-services-selection.png)
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
+
+    ![][]
 
 2.  Klicken Sie auf die Registerkarte **Daten** und dann auf **Erstellen**.
-    
-    ![](./media/mobile-services-create-new-push-table/mobile-create-table.png)
-    
+
+    ![][1]
+
     Das Dialogfeld **Neue Tabelle erstellen** wird angezeigt.
 
 3.  Behalten Sie die Standardeinstellung **Anybody with the application key** für alle Berechtigungen bei, geben Sie *Registrations* in das Feld **Tabellenname** ein, und klicken Sie dann auf den Häkchenknopf.
-    
-    ![](./media/mobile-services-create-new-push-table/mobile-create-registrations-table.png)
 
-	Dadurch wird die Tabelle **Registrations** erstellt, in der die Channel-URIs gespeichert werden, über die Pushbenachrichtigungen gesendet werden.
+    ![][2]
+
+Dadurch wird die Tabelle **Registrations** erstellt, in der die Channel-URIs gespeichert werden, über die Pushbenachrichtigungen gesendet werden.
 
 Als Nächstes ändern Sie die App so, dass Pushbenachrichtigungen unterstützt werden.
 
 <!-- URLs -->
 
-
-
-[1]: https://manage.windowsazure.com/
+  [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+  []: ./media/mobile-services-create-new-push-table/mobile-services-selection.png
+  [1]: ./media/mobile-services-create-new-push-table/mobile-create-table.png
+  [2]: ./media/mobile-services-create-new-push-table/mobile-create-registrations-table.png

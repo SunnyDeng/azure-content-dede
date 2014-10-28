@@ -1,16 +1,16 @@
-<properties linkid="manage-linux-commontasks-install-software" urlDisplayName="Install software on VM" pageTitle="Install software on a Linux virtual machine - Azure" metaKeywords="" description="Learn how to install software on your Linux virtual machine in Azure by using CentOS/Red Hat or Ubuntu." metaCanonical="" services="virtual-machines" documentationCenter="" title="Install software on your Linux virtual machine in Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-linux-commontasks-install-software" urlDisplayName="Install software on VM" pageTitle="Install software on a Linux virtual machine - Azure" metaKeywords="" description="Learn how to install software on your Linux virtual machine in Azure by using CentOS/Red Hat or Ubuntu." metaCanonical="" services="virtual-machines" documentationCenter="" title="Install software on your Linux virtual machine in Azure" authors="timlt" solutions="" manager="timlt" editor="" />
 
-Installieren von Software auf dem virtuellen Linux-Computer in Azure
-====================================================================
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="timlt"></tags>
+
+# Installieren von Software auf dem virtuellen Linux-Computer in Azure
 
 Bei Linux-Distributionen wird Software in der Regel mithilfe von Softwarepaketen installiert. Diese Pakete werden normalerweise mit verschiedenen Befehlen wie `apt` oder `yum` verwaltet. Sie können Programme auch ohne Paket installieren, z. B. mit einem *tarball* des Quellcodes.
 
 Im Folgenden wird die Verwendung der Paketmanager für einige verbreitete Linux-Distributionen erläutert. Die jeweiligen Schritte hängen von der verwendeten Linux-Distribution ab.
 
-**Hinweis:** Je nach der Einrichtung Ihrer Umgebung werden zum Ausführen dieser Befehle eventuell Rootberechtigungen (über `sudo`) benötigt.
+**Hinweis:** Je nach der Einrichtung Ihrer Umgebung werden zum Ausführen dieser Befehle eventuell Stammberechtigungen (über `sudo`) benötigt.
 
-CentOS/Red Hat
---------------
+## CentOS/Red Hat
 
 CentOS verwendet `yum` für die Paketverwaltung. Mit diesem Tool können Sie Pakete installieren sowie installierte Pakete deinstallieren, aktualisieren, auflisten usw. Die Syntax dieser Befehle ist unten dargestellt.
 
@@ -18,19 +18,19 @@ CentOS verwendet `yum` für die Paketverwaltung. Mit diesem Tool können Sie Pak
 
 Mit dem folgenden Befehl werden ein Paket sowie alle Pakete, von denen es abhängig ist, installiert. Aufgrund von Abhängigkeiten wird u. U. mehr als ein Paket installiert.
 
-    yum install [Paketname]
+    yum install [package name]
 
 ### Deinstallation
 
 Mit dem folgenden Befehl wird ein Paket von Ihrem Computer deinstalliert. Denken Sie daran, dass keine Abhängigkeiten entfernt werden.
 
-    yum remove [Paketname]
+    yum remove [package name]
 
 ### Aktualisieren
 
 Mit dem folgenden Paket wird die neueste Version installiert. Das Paket muss installiert sein, bevor Sie es aktualisieren können.
 
-    yum update [Paketname]
+    yum update [package name]
 
 ### Auflisten installierter Pakete
 
@@ -38,22 +38,21 @@ Mit dem folgenden Befehl wird eine Liste aller installierten Pakete auf Ihrem Co
 
     yum list installed
 
-Ubuntu
-------
+## Ubuntu
 
-In Ubuntu gibt es das Tool `apt` (Advanced Packaging Tool) für die Paketverwaltung. Mit diesem Tool können Sie Pakete installieren sowie installierte Pakete deinstallieren, aktualisieren, auflisten usw. Die Syntax dieser Befehle ist unten dargestellt.
+Ubuntu bietet das Tool `apt` (Advanced Packaging Tool) für die Paketverwaltung. Mit diesem Tool können Sie Pakete installieren sowie installierte Pakete deinstallieren, aktualisieren, auflisten usw. Die Syntax dieser Befehle ist unten dargestellt.
 
 ### Installation
 
 Mit dem folgenden Befehl werden ein Paket sowie alle Pakete, von denen es abhängig ist, installiert. Aufgrund von Abhängigkeiten wird u. U. mehr als ein Paket installiert.
 
-    apt-get install [Paketname]
+    apt-get install [package name]
 
 ### Deinstallation
 
 Mit dem folgenden Befehl wird ein Paket von Ihrem Computer deinstalliert. Denken Sie daran, dass keine Abhängigkeiten entfernt werden.
 
-    apt-get remove [Paketname]
+    apt-get remove [package name]
 
 ### Aktualisieren/Upgrade
 

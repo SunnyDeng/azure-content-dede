@@ -1,5 +1,3 @@
-
-
 Mit dem heruntergeladenen mobilen Dienstprojekt können Sie den neuen mobilen Dienst direkt auf Ihrem lokalen Computer oder virtuellen Computer ausführen. Auf diese Weise ist das Debuggen Ihres Dienstcodes ziemlich einfach, bevor Sie diesen in Azure veröffentlichen.
 
 In diesem Abschnitt testen Sie Ihre neue App für den lokal ausgeführten mobilen Dienst.
@@ -8,7 +6,7 @@ In diesem Abschnitt testen Sie Ihre neue App für den lokal ausgeführten mobile
 
 2.  Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und den mobilen Dienst lokal zu starten.
 
-    ![](./media/mobile-services-dotnet-backend-test-local-service-dotnet/mobile-service-startup.png)
+    ![][]
 
     Nachdem der mobile Dienst erfolgreich gestartet wurde, wird eine Webseite angezeigt.
 
@@ -16,8 +14,8 @@ In diesem Abschnitt testen Sie Ihre neue App für den lokal ausgeführten mobile
 
     Auf diese Weise wird die App gestartet, die eine Verbindung mit der lokalen mobilen Dienstinstanz herstellt.
 
-4.  Geben Sie in der App einen beschreibenden Text ein, zum Beispiel *Lernprogramm abschließen*, unter **Insert a TodoItem**. Klicken Sie dann auf **Save**.
+4.  Geben Sie in der App einen beschreibenden Text ein, zum Beispiel *Lernprogramm abschließen*, unter **TodoItem einfügen**. Klicken Sie dann auf **Speichern**.
 
     Daraufhin wird eine POST-Anforderung an den lokalen mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Werte werden vom mobilen Dienst zurückgegeben, und die Daten werden in der zweiten Spalte der App angezeigt.
 
-
+  []: ./media/mobile-services-dotnet-backend-test-local-service-dotnet/mobile-service-startup.png

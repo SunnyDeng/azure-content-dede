@@ -1,33 +1,34 @@
-Zunächst verwenden Sie den Assistenten zum Hinzufügen von Pushbenachrichtigungen in Visual Studio 2013, um Ihre App im Windows Store zu registrieren, Ihren mobilen Dienst zur Unterstützung von Pushbenachrichtigungen zu konfigurieren und Ihrer App Code zum Registrieren eines Gerätekanals hinzuzufügen.
+Mit den folgenden Schritten werden Ihre App im Windows Store registriert und Ihr mobiler Dienst für die Unterstützung von Pushbenachrichtigungen konfiguriert. Außerdem wird Ihrer App Code hinzugefügt, um einen Gerätekanal bei Ihrem Notification Hub zu registrieren. Visual Studio 2013 verwendet die von Ihnen angegebenen Anmeldeinformationen, um eine Verbindung mit Azure und dem Windows Store herzustellen.
 
-1.  Falls noch nicht geschehen, befolgen Sie die Schritte unter [Importieren der publishsettings-Datei in Visual Studio 2013](/de-de/documentation/articles/mobile-services-windows-how-to-import-publishsettings/), um Ihre publisher.settings-Datei in Visual Studio zu importieren.
-    
-    Sie müssen diesen Schritt nicht durchführen, wenn Sie Visual Studio bereits verwendet haben, um mobile Dienste im Rahmen Ihres Azure-Abonnements zu erstellen oder zu verwalten.
+1.  Öffnen Sie in Visual Studio 2013 den Projektmappen-Explorer, klicken Sie mit der rechten Maustaste auf das Windows Store-App-Projekt, und klicken Sie auf **Hinzufügen** und dann auf **Pushbenachrichtigung...**.
 
-2.  Öffnen Sie in Visual Studio 2013 den Projektmappen-Explorer, klicken Sie mit der rechten Maustaste auf das Projekt, klicken Sie auf **Hinzufügen** und dann auf **Pushbenachrichtigung...**.
-    
-    ![mobile-add-push-notifications-vs2013](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013.png)
-    
+    ![Assistent zum Hinzufügen von Pushbenachrichtigungen in Visual Studio 2013][Assistent zum Hinzufügen von Pushbenachrichtigungen in Visual Studio 2013]
+
     Dadurch wird der Assistent zum Hinzufügen von Pushbenachrichtigungen gestartet.
 
-3.  Klicken Sie auf **Weiter**, melden Sie sich bei Ihrem Windows Store-Konto an, geben Sie einen Namen unter **Reserve a new name** ein, und klicken Sie dann auf **Reservieren**.
-    
-    ![mobile-add-push-notifications-vs2013-2](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-2.png)
-    
+2.  Klicken Sie auf **Weiter**, melden Sie sich bei Ihrem Windows Store-Konto an, geben Sie einen Namen unter **Reserve a new name** ein, und klicken Sie dann auf **Reservieren**.
+
+    ![App-Namen im Assistenten zum Hinzufügen von Pushbenachrichtigungen auswählen][App-Namen im Assistenten zum Hinzufügen von Pushbenachrichtigungen auswählen]
+
     Dadurch wird eine neue App-Registrierung erstellt.
 
-4.  Klicken Sie in der Liste **App-Name** auf die neue Registrierung, und klicken Sie dann auf **Weiter**.
-    
-    ![mobile-add-push-notifications-vs2013-3](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-3.png)
+3.  Klicken Sie in der Liste **App-Name** auf die neue Registrierung, und klicken Sie dann auf **Weiter**.
 
-5.  Klicken Sie im Dialogfeld **Dienst auswählen** auf den Namen des mobilen Diensts, den Sie erstellt haben, als Sie entweder [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started/) oder [Erste Schritte mit Daten](/de-de/develop/mobile/tutorials/get-started-with-data-dotnet/) abgeschlossen haben, und klicken Sie dann auf **Weiter** und **Fertigstellen**.
-    
-    Der mobile Dienst wird aktualisiert, um Ihre Anwendungspaket-SID und das Clientgeheimnis zu registrieren. Es wird eine neue Tabelle namens **channels** erstellt. Mobile Services ist nun so konfiguriert, dass es mit Windows Push Notification Services (WNS) funktioniert, um Benachrichtigungen an Ihre App senden zu können.
-<div class="dev-callout">
+    ![mobile-add-push-notifications-vs2013-3][mobile-add-push-notifications-vs2013-3]
 
-<b>Hinweis</b>
-<p>Wenn Ihre App noch nicht für die Verbindung mit dem mobilen Dienst konfiguriert ist, führt der Assistent die gleichen Konfigurationsaufgaben durch, die unter <b>Erste Schritte mit Daten</b> beschrieben sind.</p>
-</div>
+4.  Klicken Sie auf der Seite **Dienst auswählen** auf den Namen des mobilen Diensts, und klicken Sie dann auf **Weiter** und **Fertig stellen**.
 
+    Der von Ihrem mobilen Dienst verwendete Notification Hub wird mit der Registrierung des Windows-Benachrichtigungsdiensts (WNS) aktualisiert. Jetzt können Sie Azure Notification Hubs zum Senden von Benachrichtigungen von Mobile Services an Ihre App unter Verwendung von WNS nutzen.
+
+    > [WACOM.NOTE]Dieses Lernprogramm veranschaulicht das Senden von Benachrichtigung von einem mobilen Dienst-Back-End. Sie können dieselbe Notification Hub-Registrierung verwenden, um Benachrichtigungen von einem beliebigen Back-End-Dienst zu senden. Weitere Informationen finden Sie unter [Übersicht über Notification Hubs][Übersicht über Notification Hubs].
+
+5.  Nach Abschluss des Assistenten wird in Visual Studio die neue Seite **Einrichtung von Pushbenachrichtigungen fast abgeschlossen** geöffnet. Auf dieser Seite wird eine alternative Methode zum Konfigurieren des Projekts für Ihren mobilen Dienst für den Versand von Benachrichtigungen beschrieben, die von diesem Lernprogramm abweicht.
+
+    > [WACOM.NOTE]Der Code, der Ihrer universellen Windows-App-Lösung vom Assistenten zum Hinzufügen von Pushbenachrichtigungen hinzugefügt wird, ist plattformspezifisch. Weiter unten in diesem Abschnitt beseitigen Sie diese Redundanz, indem Sie den Clientcode von Mobile Services freigeben, wodurch die Verwaltung der universellen App vereinfacht wird.
 
 <!-- URLs. -->
+
+  [Assistent zum Hinzufügen von Pushbenachrichtigungen in Visual Studio 2013]: ../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013.png
+  [App-Namen im Assistenten zum Hinzufügen von Pushbenachrichtigungen auswählen]: ../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-2.png
+  [mobile-add-push-notifications-vs2013-3]: ../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-3.png
+  [Übersicht über Notification Hubs]: http://msdn.microsoft.com/de-de/library/azure/jj927170.aspx

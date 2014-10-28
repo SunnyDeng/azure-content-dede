@@ -1,115 +1,235 @@
-<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Considerations for supporting multiple clients from a single mobile service" authors="krisragh" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="How to use multiple clients with a single mobile service backend | Azure Mobile" metaKeywords="mobile services single backend" description="Learn how to use a single mobile service back-end from multiple client apps that target different mobile platforms, including Windows Store and Windows Phone." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Considerations for supporting multiple clients from a single mobile service" authors="glenga" solutions="" manager="" editor="mollybos" />
 
-Überlegungen zur Unterstützung mehrerer Clients in einem einzigen Mobile Service
-================================================================================
+# Unterstützen mehrerer Geräteplattformen durch einen einzelnen mobilen Dienst
 
-Einer der Hauptvorteile von Azure Mobile Services für die Entwicklung mobiler Apps ist die Möglichkeit, mit einem einzigen Back-End-Dienst eine App auf verschiedenen Client-Plattformen zu unterstützen. Mobile Services bietet native Clientbibliotheken für alle großen Geräteplattformen an. Weitere Informationen finden Sie unter [Lernprogramme und Ressourcen](/de-de/develop/mobile/resources/).
+Einer der Hauptvorteile von Azure Mobile Services bei der Entwicklung mobiler Apps ist die Möglichkeit, mit einem einzigen Back-End-Dienst eine App auf verschiedenen Clientplattformen zu unterstützen. Mobile Services bieten systemeigene Clientbibliotheken für alle großen Geräteplattformen. Dies ermöglicht die einfache App-Entwicklung mit nur einem Back-End-Dienst und plattformübergreifenden Entwicklertools. In diesem Thema wird erläutert, wie Sie mithilfe eines einzelnen mobilen Dienst-Back-Ends Apps entwickeln, die auf mehreren Clientplattformen lauffähig sind. Folgende Aspekte werden erörtert:
 
-Obwohl Mobile Services die Migration Ihrer nativen App auf verschiedene Clientplattformen mit einem einzigen Back-End-Dienst erleichtert, sollten Sie bei ihrer Planung einige Überlegungen anstellen. Dieser Artikel beschreibt die Implementierung von Pushbenachrichtigungen für all Ihre Clientplattformen. Er beschreibt außerdem, wie Sie ein Problem bei der vom Client angewiesenen einmaligen Anmeldung mit einem Microsoft-Konto in Windows Store- und Windows Phone-Apps umgehen können. Zuletzt finden Sie einige bewährte Methoden für die Wiederverwendung von Code in Visual Studio-Projekten.
+-   [Plattformübergreifende Pushbenachrichtigungen][Plattformübergreifende Pushbenachrichtigungen]
+-   [Plattformübergreifende App-Entwicklung][Plattformübergreifende App-Entwicklung]
+-   [Gemeinsame Nutzung von Code in Visual Studio-Projekten][Gemeinsame Nutzung von Code in Visual Studio-Projekten]
 
-Pushbenachrichtigungen
-----------------------
+Allgemeinere Informationen zu Mobile Services finden Sie im [Mobile Services-Entwicklungscenter][Mobile Services-Entwicklungscenter].
 
-Dieser Abschnitt beschreibt zwei Ansätze zum Senden von Pushbenachrichtigungen von Ihrem Mobile Service an Client-Apps auf verschiedenen Plattformen.
+## <span id="push"></span></a>Plattformübergreifende Pushbenachrichtigungen
 
-### Verwenden von Notification Hubs
+Mobile Services nutzen Azure Notification Hubs zum Senden von Pushbenachrichtigungen an Ihre Client-Apps auf allen großen Geräteplattformen. Notification Hubs bieten eine konsistente und einheitliche Infrastruktur zur Erstellung und Verwaltung von Geräteregistrierungen und für den Versand plattformübergreifender Pushbenachrichtigungen. Notification Hubs unterstützen das Senden von Pushbenachrichtigungen unter Verwendung der folgenden plattformspezifischen Benachrichtigungsdienste:
 
-Azure Notification Hubs ist ein Azure-Dienst und eine skalierbare Plattform für den Versand von Pushbenachrichtigungen von Ihrem Mobile Service (oder anderen Back-Ends) an Client-Apps auf allen großen Geräteplattformen. Weitere Informationen finden Sie unter [Azure Notification Hubs](/de-de/develop/net/how-to-guides/service-bus-notification-hubs/).
+-   Apple Push Notification Service (APNS) für iOS-Apps
+-   Google Cloud Messaging (GCM) für Android-Apps.
+-   Windows-Benachrichtigungsdienst (WNS) für Windows Store, Windows Phone 8.1 Store und universelle Windows-Apps
+-   Microsoft-Pushbenachrichtigungsdienst (MPNS) für Windows Phone Silverlight-Apps
 
-Notification Hubs bieten eine konsistente und einheitliche Infrastruktur zur Erstellung und Verwaltung von Geräteregistrierungen und für den Versand von Pushbenachrichtigungen an Geräte auf allen großen Geräteplattformen. Weitere Informationen finden Sie unter [Erste Schritte mit Notification Hubs](/de-de/manage/services/notification-hubs/getting-started-windows-dotnet/). Notification Hubs unterstützt plattformspezifische Vorlagenregistrierungen, über die Sie mit einem einzigen API-Aufruf eine Benachrichtigung an Ihre APP auf einer beliebigen registrierten Plattform senden können. Weitere Informationen finden Sie unter [Senden plattformübergreifender Benachrichtigungen an Benutzer](/de-de/manage/services/notification-hubs/notify-users-xplat-mobile-services/).
+> [WACOM.NOTE]Die Verwendung von WNS zum Senden von Pushbenachrichtigungen an Windows Phone Silverlight 8.1-Apps wird von Notification Hubs derzeit nicht unterstützt. Zum Senden von Benachrichtigungen an Silverlight- und Windows Phone 8.0- und 7.0-Apps muss MPNS verwendet werden.
 
-Notification Hubs ist die empfohlene Lösung für den Versand von Benachrichtigungen von Ihrem Mobile Service an verschiedene Clientplattformen.
+Weitere Informationen finden Sie unter [Azure Notification Hubs][Azure Notification Hubs].
 
-### Verwenden einer gemeinsamen Registrierungstabelle und eines Plattform-Bezeichners
+Clientregistrierungen werden mithilfe der Registrierungsfunktion in der plattformspezifischen Mobile Services-Clientbibliothek oder mit REST-APIs von Mobile Services erstellt. Notification Hubs unterstützen zwei Arten von Geräteregistrierungen:
 
-Falls Sie Notification Hubs nicht verwenden möchten, können Sie dennoch Pushbenachrichtigungen an verschiedene Clients von Ihrem Mobile Service unterstützen, indem Sie einen gemeinsamen Mechanismus für die Geräteregistrierung anbieten. Sie können eine einzige Tabelle verwenden, um die plattformspezifischen Informationen für den Pushbenachrichtigungs-Dienst für Ihre unterstützte Plattform zu speichern. Die Lernprogramme **Erste Schritte mit Pushbenachrichtigungen** ([Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012/)/[Windows Store JavaScript](/de-de/develop/mobile/tutorials/get-started-with-push-js-vs2012/)/[Windows Phone](/de-de/develop/mobile/tutorials/get-started-with-push-wp8/)/[iOS](/de-de/develop/mobile/tutorials/get-started-with-push-ios/)/[Android](/de-de/develop/mobile/tutorials/get-started-with-push-android/)) verwenden eine **Registrations**-Tabelle und speichern die Channel-URI (Windows), Geräte-Token (iOS) bzw. Handle (Android) in einer Spalte namens *handle*.
+-   **Systemregistrierung**
+    Systemregistrierungen sind speziell auf den plattformspezifischen Pushbenachrichtigungsdienst zugeschnitten. Beim Versand von Benachrichtigungen an Geräte, die mit einer Systemregistrierung registriert wurden, müssen Sie plattformspezifische APIs in Ihrem mobilen Dienst aufrufen. Zum Senden einer Benachrichtigung an Geräte auf verschiedenen Plattformen sind mehrere plattformspezifische Aufrufe erforderlich.
 
-**Hinweis**
+-   **Vorlagenregistrierung**
+    Notification Hubs unterstützen auch plattformspezifische Vorlagenregistrierungen. Bei Verwendung von Vorlagenregistrierungen können Sie mit einem einzigen API-Aufruf eine Benachrichtigung an Ihre App auf einer beliebigen registrierten Plattform senden. Weitere Informationen finden Sie unter [Senden plattformübergreifender Benachrichtigungen an Benutzer][Senden plattformübergreifender Benachrichtigungen an Benutzer].
 
-Wenn Sie den "Add Push Notification"-Assistenten in Visual Studio 2013 zum Hinzufügen von Pushbenachrichtigungen zu einer Windows Store-App verwenden, erstellt der Assistent automatisch eine Tabelle namens **Channel**, um die Channel-URIs zu speichern. Im Lernprogramm **Erste Schritte mit Pushbenachrichtigungen in Visual Studio 2012** ([Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012)/[Windows Store JavaScript](/de-de/develop/mobile/tutorials/get-started-with-push-js-vs2012)) erfahren Sie, wie Sie Pushbenachrichtigungen mithilfe der **Registrations**-Tabelle aktivieren können.
+> [WACOM.NOTE]Der Versuch, eine Nachricht an eine systemeigene Geräteplattform zu senden, für die keine Geräteregistrierung vorhanden ist, verursacht einen Fehler. Beim Versand von Vorlagenbenachrichtigungen tritt dieser Fehler nicht auf.
 
-Fügen Sie eine Spalte *platform* zur Tabelle hinzu, um mehrere Clients in einer einzigen Registrierungstabelle zu unterstützen, und fügen Sie bei der Registrierung die Plattform des Clients in diese Spalte ein. Die folgende **Registrations**-Klassendefinition für eine Windows Store C\#- oder Windows Phone-App ordnet das *ChannelUri*-Feld des Clients zur *handle*-Spalte in der Registrierungstabelle zu:
+Die Tabellen in den folgenden Abschnitten enthalten Links zu clientspezifischen Lernprogrammen, die die Implementierung von Pushbenachrichtigungen mithilfe mobiler .NET- und JavaScript-Back-End-Dienste veranschaulichen.
 
-     public class Registrations
-        {
-            [JsonProperty(PropertyName = "platform")]         
-            public string Platform { 
-                get
-                {
-                    return "windowsstore";
-                    // return "windowsphone";
-                }
-                set {}
-            }
-            
-            public string Id { get; set; }
-        
-            [JsonProperty(PropertyName = "handle")]
-            public string ChannelUri { get; set; }
-        }
+### .NET-Back-End
 
-Beachten Sie, dass das *Platform*-Feld auf diesem Windows-Gerät immer `windowsstore` (bzw. `windowsphone`) zurückgibt. Wenn das dynamische Schema (Standard) aktiviert ist, fügt Mobile Services eine platform-Spalte zur Registrierungstabelle hinzu, falls diese noch nicht existiert. Weitere Informationen finden Sie unter [Dynamisches Schema](http://msdn.microsoft.com/de-de/library/windowsazure/jj193175.aspx).
+In einem mobilen .NET-Back-End-Dienst senden Sie Pushbenachrichtigungen, indem Sie die [SendAsync][SendAsync]-Methode für das aus der [ApiServices.Push][ApiServices.Push]-Eigenschaft abgerufene [PushClient][PushClient]-Objekt aufrufen. Die gesendete Pushbenachrichtigung (system- oder vorlagenbasiert) richtet sich nach dem spezifischen, von [IPushMessage][IPushMessage] abgeleiteten Objekt, das an die [SendAsync][SendAsync]-Methode übergeben wird, wie aus der folgenden Tabelle ersichtlich:
 
-Verwenden Sie das platform-Feld in Ihrem Serverskript, das die Benachrichtigungen verschickt, um zu bestimmen, welche plattformspezifische Funktion Sie auf dem [push-Object](http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx) aufrufen müssen. Das folgende Skript ist eine abgewandelte Form des Serverskripts aus den **Erste Schritte mit Pushbenachrichtigungen**-Lernprogrammen ([Windows Store C\#](/de-de/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012/)/[Windows Store JavaScript](/de-de/develop/mobile/tutorials/get-started-with-push-js-vs2012/)/[Windows Phone](/de-de/develop/mobile/tutorials/get-started-with-push-wp8/)/[iOS](/de-de/develop/mobile/tutorials/get-started-with-push-ios/)/[Android](/de-de/develop/mobile/tutorials/get-started-with-push-android/)), um verschiedene Clientplattformen zu aktivieren:
+| Plattform   | [APNS][APNS]             | [GCM][GCM]               | [WNS][WNS]                | [MPNS][MPNS]            |
+|-------------|----------------------|-----------------------|------------------------|---------------------|
+| Systemeigen | [ApplePushMessage][ApplePushMessage] | [GooglePushMessage][GooglePushMessage] | [WindowsPushMessage][WindowsPushMessage] | [MpnsPushMessage][MpnsPushMessage] |
 
-     function insert(item, user, request) {
-            request.execute({
-                success: function() {
-                    request.respond();
-                    sendNotifications();
-                }
-            });
-        
-            function sendNotifications() {
-                var registrationsTable = tables.getTable('Registrations');
-                registrationsTable.read({
-                    success: function(registrations) {
-                        registrations.forEach(function(registration) {
-                            if (registration.platform === 'winstore') {
-                                push.wns.sendToastText04(registration.handle, {
-                                    text1: item.text
-                                }, {
-                                    success: pushCompleted
-                                });
-                            } else if (registration.platform === 'winphone') {
-                                push.mpns.sendFlipTile(registration.handle, {
-                                    title: item.text
-                                }, {
-                                    success: pushCompleted
-                                });
-                            } else if (registration.platform === 'ios') {
-                                push.apns.send(registration.handle, {
-                                    alert: "Toast: " + item.text,
-                                    payload: {
-                                        inAppMessage: item.text
-                                    }
-                                });
-                            } else if (registration.platform === 'android') {
-                                push.gcm.send(registration.handle, item.text, {
-                                    success: pushCompleted
-                                });
-                            } else {
-                                console.error("Unknown push notification platform");
-                            }
-                        });
+Mit dem folgenden Code wird eine Pushbenachrichtigung von einem .NET-Back-End-Dienst an alle iOS- und Windows Store-Geräteregistrierungen gesendet:
+
+    // Define a push notification for APNS.
+    ApplePushMessage apnsMessage = new ApplePushMessage(item.Text, TimeSpan.FromHours(1));    
+
+    // Define a push notification for WNS.
+    WindowsPushMessage wnsMessage = new WindowsPushMessage();
+    wnsMessage.XmlPayload = @"<?xml version=""1.0"" encoding=""utf-8""?>" +
+                         @"<toast><visual><binding template=""ToastText01"">" +
+                         @"<text id=""1"">" + item.Text + @"</text>" +
+                         @"</binding></visual></toast>";
+
+    // Send push notifications to all registered iOS and Windows Store devices. 
+    await Services.Push.SendAsync(apnsMessage);
+    await Services.Push.SendAsync(wnsMessage);
+
+Um Beispiele zum Senden von Pushbenachrichtigungen an die anderen systemeigenen Clientplattformen zu erhalten, klicken Sie in der Überschrift der oben aufgeführten Tabelle auf die Plattformlinks.
+
+Wenn Sie anstelle von Systemclientregistrierungen Vorlagenclientregistrierungen verwenden, können Sie mit einem einzigen Aufruf von [SendAsync][SendAsync] dieselbe Benachrichtigung senden, indem Sie ein [TemplatePushMessage][TemplatePushMessage]-Objekt angeben. Siehe folgendes Beispiel:
+
+    // Create a new template message and add the 'message' parameter.    
+    var templatePayload = new TemplatePushMessage();
+    templatePayload.Add("message", item.Text);
+
+    // Send a push notification to all template registrations.
+    await Services.Push.SendAsync(templatePayload); 
+
+### JavaScript-Back-End
+
+In einem mobilen JavaScript-Back-End-Dienst senden Sie Benachrichtigungen, indem Sie die **send**-Methode für das aus dem globalen [push-Objekt][push-Objekt] abgerufene plattformspezifische Objekt aufrufen, wie aus der folgenden Tabelle ersichtlich:
+
+| Plattform   | [APNS][1]       | [GCM][2]       | [WNS][3]       | [MPNS][4]       |
+|-------------|-----------------|----------------|----------------|-----------------|
+| Systemeigen | [apns-Objekt][apns-Objekt] | [gcm-Objekt][gcm-Objekt] | [wns-Objekt][wns-Objekt] | [mpns-Objekt][mpns-Objekt] |
+
+Mit dem folgenden Code wird eine Pushbenachrichtigung an alle Android- und Windows Phone-Registrierungen gesendet:
+
+    // Define a push notification for GCM.
+    var gcmPayload = 
+    '{"data":{"message" : item.text }}';
+
+    // Define the payload for a Windows Phone toast notification.
+    var mpnsPayload = '<?xml version="1.0" encoding="utf-8"?>' +
+    '<wp:Notification xmlns:wp="WPNotification"><wp:Toast>' +
+    '<wp:Text1>New Item</wp:Text1><wp:Text2>' + item.text + 
+    '</wp:Text2></wp:Toast></wp:Notification>';
+
+    // Send push notifications to all registered Android and Windows Phone 8.0 devices. 
+    push.mpns.send(null, mpnsPayload, 'toast', 22, {
+            success: function(pushResponse) {
+                // Push succeeds.
+                },              
+                error: function (pushResponse) {
+                    // Push fails.
                     }
                 });
-            }
-        
-            function pushCompleted(pushResponse) {
-                console.log("Sent push:", pushResponse);
-            }
-        }
+    push.gcm.send(null, gcmPayload, {
+            success: function(pushResponse) {
+                // Push succeeds.
+                },              
+                error: function (pushResponse) {
+                    // Push fails.
+                    }
+                });
 
-Windows App-Registrierung
--------------------------
+Um Beispiele zum Senden von Pushbenachrichtigungen an die anderen systemeigenen Clientplattformen zu erhalten, klicken Sie in der Überschrift der oben aufgeführten Tabelle auf die Plattformlinks.
 
-Um die Clientauthentifizierung für einmaliges Anmelden mit einem Microsoft-Konto in Windows Store- und Windows Phone-Apps zu verwenden, müssen Sie die Windows Store-App zunächst im Windows Store-Dashboard registrieren. Dies liegt daran, dass Sie nach der Erstellung einer Live Connect-Registrierung für Windows Phone keine weitere Registrierung für Windows Store erstellen können. Weitere Informationen hierzu finden Sie im Thema **Authentifizieren Ihrer Windows Store-App mit einmaliger Anmeldung von Live Connect** ([Windows Store](/de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/)/[Windows Phone](/de-de/develop/mobile/tutorials/single-sign-on-wp8/)).
+Wenn Sie anstelle von Systemclientregistrierungen Vorlagenclientregistrierungen verwenden, können Sie mit einem einzigen Aufruf der **send**-Funktion für das globale [push-Objekt][push-Objekt] dieselbe Benachrichtigung senden, indem Sie eine Vorlagennachricht-Nutzlast angeben, wie im Folgenden veranschaulicht:
 
-Bewährte Methoden für die Wiederverwendung von Code in Visual Studio-Projekten
-------------------------------------------------------------------------------
+    // Create a new template message with the 'message' parameter.    
+    var templatePayload = { "message": item.text };
 
-Mit portablen Klassenbibliotheken können Sie verwaltete Assemblys schreiben und erstellen, die auf mehreren Plattformen funktionieren, wie z. B. Windows Store und Windows Phone. Sie können Klassen mit Code erstellen, den Sie später in vielen verschiedenen Projekten verwenden, und aus verschiedenen Typen von Projekten auf diese Klassen verweisen.
+    // Send a push notification to all template registrations.
+    push.send(null, templatePayload, {
+            success: function(pushResponse) {
+                // Push succeeds.
+                },              
+                error: function (pushResponse) {
+                    // Push fails.
+                    }
+                }); 
 
-Sie können die portable .NET Framework-Klassenbibliothek verwenden, um das Model-View-View Model (MVVM)-Schema zu implementieren und Assemblys auf verschiedenen Plattformen zu nutzen. Sie können die Model- und View Model-Klassen in einem Portable Class Library-Projekt in Visual Studio 2012 implementieren und anschließend die für verschiedene Plattformen angepassten Ansichten erstellen. Der plattformübergreifende Model-Code kann z. B. Daten aus einer Quelle wie einem Azure Mobile Service auf plattformunabhängige Weise abrufen. In der MSDN-Bibliothek finden Sie eine [Übersicht und Beispiele](http://msdn.microsoft.com/de-de/library/gg597391(v=vs.110)), eine Besprechung von [API-Unterschieden](http://msdn.microsoft.com/de-de/library/gg597392(v=vs.110)), ein Beispiel für [die Verwendung von portablen Klassenbibliotheken zur Implementierung des MVVM-Schemas](http://msdn.microsoft.com/de-de/library/hh563947(v=vs.110)) (in englischer Sprache), zusätzliche [empfohlene Anleitungen](http://msdn.microsoft.com/de-de/library/windowsphone/develop/jj714086(v=vs.105).aspx) und Informationen zur [Ressourcenverwaltung](http://msdn.microsoft.com/de-de/library/hh871422(v=vs.110)) in portablen Klassenbibliothek-Projekten.
+## <span id="xplat-app-dev"></span></a>Plattformübergreifende App-Entwicklung
 
+Zur Entwicklung systemeigener mobiler Geräte-Apps für alle großen mobilen Geräteplattformen benötigen Sie (bzw. Ihr Unternehmen) mindestens Kenntnisse in den Programmiersprachen Objective-C, Java und C# oder JavaScript. Da die übergreifende Entwicklung für diese verschiedenartigen Plattformen aufwändig ist, wählen einige Entwickler einen vollständig webbrowserbasierten Ansatz für ihre Apps. Diese webbasierten Lösungen haben jedoch nur eingeschränkten Zugriff auf systemeigene Ressourcen und bieten nicht die Funktionsvielfalt, die Nutzer heute auf ihren mobilen Endgeräten erwarten.
+
+Einige plattformübergreifende Tools gewährleisten eine funktionsreichere systemeigene Benutzeroberfläche auf mobilen Geräten, nutzen jedoch noch eine gemeinsame Codebasis – typischerweise JavaScript. Mobile Services erleichtern die Erstellung und Verwaltung eines Back-End-Diensts für die plattformübergreifende App-Entwicklung durch Schnellstart-Lernprogramme für die folgenden Entwicklungsplattformen:
+
+-   [**Appcelerator**][**Appcelerator**]
+    Mit Appcelerator können Sie unter Verwendung von JavaScript eine einzelne App entwickeln, die für die Ausführung als systemeigene App auf allen mobilen Geräteplattformen kompiliert ist. Das Ergebnis sind eine attraktive Benutzeroberfläche, Zugriff auf alle systemeigenen Geräteressourcen und eine systemeigene App-Leistung. Weitere Informationen finden Sie im [Appcelerator-Lernprogramm][Appcelerator-Lernprogramm].
+
+-   [**PhoneGap**][**PhoneGap**]**/**[**Cordova**][**Cordova**]
+    PhoneGap (eine Distribution des Apache Cordova-Projekts) ist ein kostenloses Open Source-Framework, mit dem Sie unter Verwendung von standardisierten Web-APIs, HTML und JavaScript eine einzelne, auf Android-, iOS- und Windows-Geräten ausführbare App entwickeln können. PhoneGap bietet eine auf Webansichten basierende Benutzeroberfläche. Die Lösung optimiert die Nutzererfahrung durch den Zugriff auf systemeigene Geräteressourcen wie Pushbenachrichtigungen, Beschleunigungsmesser, Kamera, Speicher, Geolocation und In-App-Browser. Weitere Informationen finden Sie im [PhoneGap-Schnellstart-Lernprogramm][PhoneGap-Schnellstart-Lernprogramm].
+
+    Visual Studio unterstützt jetzt auch die Erstellung plattformübergreifender Cordova-Apps mithilfe der Erweiterung für hybride Multi-Device-Apps für Visual Studio. Diese Software steht als Vorabversion zur Verfügung. Weitere Informationen finden Sie unter [Erste Schritte mit hybriden Multi-Device-Apps unter Verwendung von HTML und JavaScript][Erste Schritte mit hybriden Multi-Device-Apps unter Verwendung von HTML und JavaScript].
+
+-   [**Sencha Touch**][**Sencha Touch**]
+    Sencha Touch umfasst mehrere für Touchscreens optimierte Steuerelemente, die eine mit systemeigenen Lösungen vergleichbare Nutzererfahrung bieten und zahlreiche mobile Geräte auf Grundlage einer einzelnen HTML- und JavaScript-Codebasis unterstützen. Sencha Touch kann zusammen mit PhoneGap- oder Cordova-Bibliotheken verwendet werden, um Benutzern den Zugriff auf systemeigene Geräteressourcen zu ermöglichen. Weitere Informationen finden Sie im [Sencha Touch-Schnellstart-Lernprogramm][Sencha Touch-Schnellstart-Lernprogramm].
+
+-   [**Xamarin**][**Xamarin**]
+    Mit Xamarin erstellen Sie sowohl für iOS- als auch für Android-Geräte vollständig systemeigene Apps mit systemeigener Benutzeroberfläche und Zugriff auf alle Geräteressourcen. Xamarin-Apps werden in C# anstatt in Objective-C und Java programmiert. So können .NET-Entwickler Apps für iOS und Android veröffentlichen und Code aus Windows-Projekten gemeinsam nutzen. Xamarin bietet mittels C#-Code eine vollständig systemeigene Benutzeroberfläche auf iOS- und Android-Geräten. Auf diese Weise lässt sich Mobile Services-Code aus Windows-Apps auf iOS- und Android-Geräten wiederverwenden. Weitere Informationen finden Sie unter [Xamarin-Entwicklung][Xamarin-Entwicklung] weiter unten.
+
+    Xamarin-Apps können mit Xamarin Studio oder Visual Studio 2013 erstellt werden. Weitere Informationen finden Sie unter [Plattformübergreifende Entwicklung in Visual Studio][Plattformübergreifende Entwicklung in Visual Studio].
+
+## <span id="shared-vs"></span></a>Gemeinsame Nutzung und Wiederverwendung von Code in Visual Studio-Projekten
+
+Mobile Services enthalten eine .NET-Clientbibliothek in Form einer portablen .NET Framework-Klassenbibliothek, die die Entwicklung auf allen Windows-Plattformen unterstützt. Weitere Informationen finden Sie unter [Verwenden eines .NET-Clients mit Mobile Services][Verwenden eines .NET-Clients mit Mobile Services]. Auf diese Weise kann derselbe Mobile Services-Code, z. B. für den Datenzugriff oder die Authentifizierung, in mehreren C#-Projekten einfach wiederverwendet werden.
+
+Eine allgemeine Herangehensweise für die gemeinsame Nutzung und Wiederverwendung von C#-Code zwischen Projekten besteht darin, das Model-View-ViewModel (MVVM)-Muster zu implementieren und Assemblys plattformübergreifend gemeinsam zu nutzen. Sie können die Model- und View Model-Klassen in einem Projekt für eine portable Klassenbibliothek in Visual Studio implementieren und anschließend die an verschiedene Plattformen angepassten Ansichten erstellen. Der plattformübergreifende Model-Code kann z. B. Daten aus einer Quelle wie Ihrem mobilen Dienst auf plattformunabhängige Weise abrufen. In der MSDN-Bibliothek finden Sie eine [Übersicht und Beispiele][Übersicht und Beispiele], eine Besprechung von [API-Unterschieden][API-Unterschieden], ein Beispiel für [die Verwendung von portablen Klassenbibliotheken zur Implementierung des MVVM-Schemas][die Verwendung von portablen Klassenbibliotheken zur Implementierung des MVVM-Schemas] (in englischer Sprache), zusätzliche [empfohlene Anleitungen][empfohlene Anleitungen] und Informationen zur [Ressourcenverwaltung][Ressourcenverwaltung] in portablen Klassenbibliothek-Projekten.
+
+Neben diesen allgemeinen Erläuterungen bietet Visual Studio auch spezifische Möglichkeiten, Code aus mobilen Diensten übergreifend über mehrere Client-App-Projekte wiederzuverwenden, wie in den folgenden Abschnitten beschrieben. Allgemeinere Informationen zur Verwendung von Visual Studio 2013 zum Erstellen plattformübergreifender Apps finden Sie unter [Plattformübergreifende Entwicklung in Visual Studio][Plattformübergreifende Entwicklung in Visual Studio].
+
+### Universelle Windows-Apps
+
+Visual Studio 2013 Update 2 bietet erstmalig Unterstützung für universelle Windows-App-Projekte. Universelle Apps sind Lösungen, die sowohl Windows Store 8.1- und Windows Phone Store 8.1-App-Projekte als auch ein Projekt mit freigegebenem Code enthalten. In diesen Projekten wird freigegebener Code behandelt, als wäre er Teil von Windows Store- und von Windows Phone-Projekten. Weitere Informationen finden Sie unter [Erstellen universeller Windows-Apps für alle Windows-Geräte][Erstellen universeller Windows-Apps für alle Windows-Geräte]. Universelle Windows-Apps können in C#/XAML und JavaScript/HTML geschrieben werden.
+
+Auf der Schnellstartregisterkarte "Mobiler Service" im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] wird die TodoList-Beispiel-App standardmäßig in der Version einer universellen Windows-App generiert, um Sie bei Ihren ersten Schritten zu unterstützen. Sie können entweder eine C#/XAML- oder eine JavaScript/HTML-Version des Projekts herunterladen. Weitere Informationen finden Sie unter [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services].
+
+> [WACOM.NOTE]Die C#-Version des Schnellstart-App-Projekts aus dem Portal nutzt zwar die CodeBehind-Seite "MainPage.xaml.cs", verwendet aber kein Anzeigemodell. Ein Beispiel der TodoList-App als Projekt für eine universelle Windows-App in C#, das MVVM verwendet, finden Sie unter [Projekt für eine universelle Windows-App für Azure Mobile Services unter Verwendung von MVVM][Projekt für eine universelle Windows-App für Azure Mobile Services unter Verwendung von MVVM].
+
+### <span id="xamarin"></span></a>Xamarin-Entwicklung
+
+Mit Xamarin können Sie Ihre Kenntnisse in der Visual Studio- und C#-Entwicklung nutzen und Apps für iOS und Android in Visual Studio oder Xamarin Studio entwickeln. Xamarin verwendet eine plattformübergreifende Implementierung von .NET Framework, die die Entwicklung von iOS- und Android-Apps mit C#-Code ermöglicht. Mithilfe von Xamarin können Sie vorhandenen Code aus Windows-Projekten nutzen, der die .NET-Clientbibliothek von Mobile Services für den Zugriff auf Ihren mobilen Dienst verwendet. Weitere Informationen finden Sie unter [Plattformübergreifende Entwicklung in Visual Studio][Plattformübergreifende Entwicklung in Visual Studio].
+
+In den Xamarin-Schnellstart-Lernprogrammen ([iOS][iOS]/[Android][Android]) erfahren Sie, wie Sie Ihre ersten Xamarin-Apps erstellen, die Mobile Services verwenden.
+
+### Windows Store- und Windows Phone Silverlight-Apps
+
+In Windows Phone 8.1 können Sie Apps mit der früheren Silverlight-basierten XAML entwickeln oder die Windows-Runtime-basierte XAML verwenden, die die Entwicklung universeller Windows-Apps unterstützt. Weitere Informationen zu Windows Phone 8.1 Silverlight-Apps und Windows Phone Store 8.1-Apps finden Sie unter [Nächste Schritte für Windows Phone 8-Entwickler][Nächste Schritte für Windows Phone 8-Entwickler].
+
+Die .NET-Clientbibliothek von Mobile Services unterstützt sowohl Windows Phone Store 8.1-Apps als auch Windows Phone Silverlight 8.1-Apps. Da Windows-Runtime- und Windows Phone Silverlight-Apps nicht im selben Projekt erstellt werden können, sollten Sie eine Wiederverwendungsstrategie für Code wie den oben beschriebenen PCL- und MVVM-Ansatz in Erwägung ziehen.
+
+> [WACOM.NOTE]Um die Clientauthentifizierung für einmaliges Anmelden mit einem Microsoft-Konto in Windows-Runtime- und Windows Phone Silverlight-Apps zu verwenden, müssen Sie die Windows-Runtime-App zunächst im Windows Store-Dashboard registrieren. Dies liegt daran, dass Sie nach der Erstellung einer Live Connect-Registrierung für Windows Phone keine weitere Registrierung für Windows Store erstellen können. Weitere Informationen hierzu finden Sie im Thema **Authentifizieren Ihrer Windows Store-App mit einmaliger Anmeldung von Live Connect** ([Windows Store][Windows Store]/[Windows Phone][Windows Phone]).
+
+<!-- URLs -->
+
+  [Plattformübergreifende Pushbenachrichtigungen]: #push
+  [Plattformübergreifende App-Entwicklung]: #xplat-app-dev
+  [Gemeinsame Nutzung von Code in Visual Studio-Projekten]: #shared-vs
+  [Mobile Services-Entwicklungscenter]: /de-de/documentation/services/mobile-services/
+  [Azure Notification Hubs]: /de-de/develop/net/how-to-guides/service-bus-notification-hubs/
+  [Senden plattformübergreifender Benachrichtigungen an Benutzer]: /de-de/manage/services/notification-hubs/notify-users-xplat-mobile-services/
+  [SendAsync]: http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
+  [ApiServices.Push]: http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx
+  [PushClient]: http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx
+  [IPushMessage]: http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx
+  [APNS]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+  [GCM]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+  [WNS]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
+  [MPNS]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push
+  [ApplePushMessage]: http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx
+  [GooglePushMessage]: http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx
+  [WindowsPushMessage]: http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx
+  [MpnsPushMessage]: http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx
+  [TemplatePushMessage]: http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
+  [push-Objekt]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx
+  [1]: /de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push
+  [2]: /de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push
+  [3]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+  [4]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push
+  [apns-Objekt]: http://msdn.microsoft.com/de-de/library/azure/jj839711.aspx
+  [gcm-Objekt]: http://msdn.microsoft.com/de-de/library/azure/dn126137.aspx
+  [wns-Objekt]: http://msdn.microsoft.com/de-de/library/azure/jj860484.aspx
+  [mpns-Objekt]: http://msdn.microsoft.com/de-de/library/azure/jj871025.aspx
+  [**Appcelerator**]: http://go.microsoft.com/fwlink/p/?LinkId=509987
+  [Appcelerator-Lernprogramm]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
+  [**PhoneGap**]: https://go.microsoft.com/fwLink/p/?LinkID=390707
+  [**Cordova**]: http://cordova.apache.org/
+  [PhoneGap-Schnellstart-Lernprogramm]: /de-de/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/
+  [Erste Schritte mit hybriden Multi-Device-Apps unter Verwendung von HTML und JavaScript]: http://msdn.microsoft.com/de-de/library/dn771545.aspx
+  [**Sencha Touch**]: http://go.microsoft.com/fwlink/p/?LinkId=509988
+  [Sencha Touch-Schnellstart-Lernprogramm]: /de-de/documentation/articles/partner-sencha-mobile-services-get-started/
+  [**Xamarin**]: https://go.microsoft.com/fwLink/p/?LinkID=330242
+  [Xamarin-Entwicklung]: #xamarin
+  [Plattformübergreifende Entwicklung in Visual Studio]: http://msdn.microsoft.com/de-de/library/dn771552.aspx
+  [Verwenden eines .NET-Clients mit Mobile Services]: de-de/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+  [Übersicht und Beispiele]: http://msdn.microsoft.com/de-de/library/gg597391(v=vs.110)
+  [API-Unterschieden]: http://msdn.microsoft.com/de-de/library/gg597392(v=vs.110)
+  [die Verwendung von portablen Klassenbibliotheken zur Implementierung des MVVM-Schemas]: http://msdn.microsoft.com/de-de/library/hh563947(v=vs.110)
+  [empfohlene Anleitungen]: http://msdn.microsoft.com/de-de/library/windowsphone/develop/jj714086(v=vs.105).aspx
+  [Ressourcenverwaltung]: http://msdn.microsoft.com/de-de/library/hh871422(v=vs.110)
+  [Erstellen universeller Windows-Apps für alle Windows-Geräte]: http://go.microsoft.com/fwlink/p/?LinkId=509905
+  [Azure-Verwaltungsportal]: https://manage.windowsazure.com
+  [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started/
+  [Projekt für eine universelle Windows-App für Azure Mobile Services unter Verwendung von MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
+  [iOS]: /de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started
+  [Android]: /de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started
+  [Nächste Schritte für Windows Phone 8-Entwickler]: http://msdn.microsoft.com/de-de/library/windows/apps/dn655121(v=vs.105).aspx
+  [Windows Store]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/
+  [Windows Phone]: /de-de/develop/mobile/tutorials/single-sign-on-wp8/

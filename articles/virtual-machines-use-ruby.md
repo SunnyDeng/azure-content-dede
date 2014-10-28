@@ -1,34 +1,32 @@
 <properties linkid="manage-services-identity-multi-factor-authentication" urlDisplayName="What is Azure Multi-Factor Authentication?" pageTitle="What is Azure Multi-Factor Authentication?" metaKeywords="" description="Learn more about Azure Multi-Factor Authentication, a method of authentication that requires the use of more than one verification method and adds a critical second layer of security to user sign-ins and transactions." metaCanonical="" services="active-directory,multi-factor-authentication" documentationCenter="" title="How to Manage Azure Virtual Machines using Ruby" authors="larryfr" solutions="" manager="" editor="" />
 
-Verwalten von virtuellen Azure-Computern mit Ruby
-=================================================
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr"></tags>
+
+# Verwalten von virtuellen Azure-Computern mit Ruby
 
 In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Verwaltungsaufgaben für virtuelle Azure-Computer erläutert, z. B. das Erstellen und Konfigurieren von virtuellen Computern sowie das Hinzufügen von Datenlaufwerken. Das Azure SDK for Ruby bietet Zugriff auf Dienstverwaltungsfunktionen für eine Vielzahl unterschiedlicher Azure-Dienste wie virtuelle Azure-Computer.
 
-Inhaltsverzeichnis
-------------------
+## Inhaltsverzeichnis
 
--   [Was ist Dienstverwaltung?](#what-is)
--   [Konzepte](#concepts)
--   [Erstellen eines Verwaltungszertifikats](#setup-certificate)
--   [Erstellen einer Ruby-Anwendung](#create-app)
--   [Konfigurieren der Anwendung für das SDK](#configure-access)
--   [Einrichten einer Azure-Verwaltungsverbindung](#setup-connection)
--   [Gewusst wie: Arbeiten mit virtuellen Computern](#virtual-machine)
--   [Gewusst wie: Arbeiten mit Images und Datenträgern](#vm-images)
--   [Gewusst wie: Arbeiten mit Cloud-Diensten](#cloud-services)
--   [Gewusst wie: Arbeiten mit Speicherdiensten](#storage-services)
--   [Nächste Schritte](#next-steps)
+-   [Was ist Dienstverwaltung?][Was ist Dienstverwaltung?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Verwaltungszertifikats][Erstellen eines Verwaltungszertifikats]
+-   [Erstellen einer Ruby-Anwendung][Erstellen einer Ruby-Anwendung]
+-   [Konfigurieren der Anwendung für das SDK][Konfigurieren der Anwendung für das SDK]
+-   [Einrichten einer Azure-Verwaltungsverbindung][Einrichten einer Azure-Verwaltungsverbindung]
+-   [Gewusst wie: Arbeiten mit virtuellen Computern][Gewusst wie: Arbeiten mit virtuellen Computern]
+-   [Gewusst wie: Arbeiten mit Images und Datenträgern][Gewusst wie: Arbeiten mit Images und Datenträgern]
+-   [Gewusst wie: Arbeiten mit Cloud-Diensten][Gewusst wie: Arbeiten mit Cloud-Diensten]
+-   [Gewusst wie: Arbeiten mit Speicherdiensten][Gewusst wie: Arbeiten mit Speicherdiensten]
+-   [Nächste Schritte][Nächste Schritte]
 
-Was ist Dienstverwaltung?
--------------------------
+## <a name="what-is"> </a>Was ist Dienstverwaltung?
 
-Azure bietet [REST-APIs für Dienstverwaltungsvorgänge](http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx), darunter die Verwaltung von virtuellen Azure-Computern. Das Azure SDK for Ruby zeigt Verwaltungsvorgänge für virtuelle Computer mittels der Klasse **Azure::VirtualMachineService** an. Der Großteil der Verwaltungsfunktionen eines virtuellen Computers, die im [Azure-Verwaltungsportal](https://manage.windowsazure.com) zur Verfügung stehen, kann über diese Klasse aufgerufen werden.
+Azure bietet [REST-APIs für Dienstverwaltungsvorgänge][REST-APIs für Dienstverwaltungsvorgänge], darunter die Verwaltung von virtuellen Azure-Computern. Das Azure SDK for Ruby zeigt Verwaltungsvorgänge für virtuelle Computer mittels der Klasse **Azure::VirtualMachineService** an. Der Großteil der Verwaltungsfunktionen eines virtuellen Computers, die im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] zur Verfügung stehen, kann über diese Klasse aufgerufen werden.
 
 Auch wenn die Dienstverwaltungs-API dazu verwendet werden kann, eine Vielzahl an auf Azure gehosteten Diensten zu verwalten, enthält dieses Dokument nur Informationen über die Verwaltung von virtuellen Azure-Computern.
 
-Konzepte
---------
+## <a name="concepts"> </a>Konzepte
 
 Virtuelle Azure-Computer werden als "Rollen" in einem Cloud-Dienst implementiert. Jeder Cloud-Dienst kann eine oder mehrere Rollen enthalten, die logisch in Bereitstellungen gruppiert werden. Die Rolle definiert die physischen Gesamtmerkmale des virtuellen Computers, z. B. wie viel Speicher zur Verfügung steht oder wie viele CPU-Cores es gibt usw.
 
@@ -36,34 +34,31 @@ Jeder virtuelle Computer verfügt auch über einen Betriebssystemdatenträger, d
 
 Die meisten Images werden von Microsoft oder Partnern bereitgestellt; Sie können jedoch auch Ihre eigenen Images erstellen oder ein Image aus einem in Azure gehosteten virtuellen Computer erstellen.
 
-Erstellen eines Azure-Verwaltungszertifikats
---------------------------------------------
+## <a name="setup-certificate"> </a>Erstellen eines Azure-Verwaltungszertifikats
 
 Wenn Sie Dienstverwaltungsvorgänge ausführen, z. B. solche, die durch die Klasse **Azure::VirtualMachineService** angezeigt werden, müssen Sie Ihre Azure-Abonnement-ID und eine Datei mit einem Verwaltungszertifikat für Ihr Abonnement angeben. Beides wird vom SDK für die Authentifizierung an der Azure-REST-API verwendet.
 
-Verwenden Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli), um die Abonnement-ID und ein Verwaltungszertifikat abzurufen. Weitere Informationen zum Installieren und Konfigurieren der xplat-cli finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://www.windowsazure.com/de-de/manage/install-and-configure-cli/).
+Verwenden Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli), um die Abonnement-ID und ein Verwaltungszertifikat abzurufen. Weitere Informationen zum Installieren und Konfigurieren der xplat-cli finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle][Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle].
 
 Nachdem die xplat-cli konfiguriert wurde, können Sie die folgenden Schritte ausführen, um Ihre Azure-Abonnement-ID abzurufen und ein Verwaltungszertifikat zu exportieren:
 
 1.  Verwenden Sie folgenden Befehl, um die Abonnement-ID abzurufen:
 
-         azure account list
+        azure account list
 
 2.  Verwenden Sie den folgenden Befehl, um das Verwaltungszertifikat zu exportieren:
 
-         azure account cert export
+        azure account cert export
 
-    Nach Ausführen des Befehls wird das Zertifikat in eine Datei namens "&lt;azure-abonnement-name\>.pem" exportiert. Wenn Ihr Abonnement beispielsweise **meinfantastischesabonnement** heißt, erhält die erstellte Datei den Namen **meinfantastischesabonnement.pem**.
+    Nach Ausführen des Befehls wird das Zertifikat in eine Datei namens "\<azure-abonnement-name\>.pem" exportiert. Wenn Ihr Abonnement beispielsweise **meinfantastischesabonnement** heißt, erhält die erstellte Datei den Namen **meinfantastischesabonnement.pem**.
 
 Schreiben Sie die Abonnement-ID und den Speicherort der PEM-Datei mit dem exportierten Zertifikat auf, da diese zu einem späteren Zeitpunkt in diesem Dokument benötigt werden.
 
-Erstellen einer Ruby-Anwendung
-------------------------------
+## <a name="create-app"></a>Erstellen einer Ruby-Anwendung
 
 Erstellen Sie eine neue Ruby-Anwendung. Die in diesem Dokument verwendeten Beispiele können in eine einzelne **.rb**-Datei implementiert werden.
 
-Konfigurieren der Anwendung
----------------------------
+## <a name="configure-access"></a>Konfigurieren der Anwendung
 
 Zum Verwalten von Azure-Diensten müssen Sie das Azure-Gem herunterladen und verwenden, das das Azure SDK for Ruby enthält.
 
@@ -73,29 +68,30 @@ Zum Verwalten von Azure-Diensten müssen Sie das Azure-Gem herunterladen und ver
 
 2.  Verwenden Sie den folgenden Befehl, um das Azure-Gem zu installieren:
 
-         gem install azure
+        gem install azure
 
     Eine Ausgabe ähnlich der folgenden sollte angezeigt werden:
 
-         Fetching: mini_portile-0.5.1.gem (100%)
-         Fetching: nokogiri-1.6.0-x86-mingw32.gem (100%)
-         Fetching: mime-types-1.25.gem (100%)
-         Fetching: systemu-2.5.2.gem (100%)
-         Fetching: macaddr-1.6.1.gem (100%)
-         Fetching: uuid-2.3.7.gem (100%)
-         Fetching: azure-0.5.0.gem (100%)
-         Successfully installed mini_portile-0.5.1
-         Successfully installed nokogiri-1.6.0-x86-mingw32
-         Successfully installed mime-types-1.25
-         Successfully installed systemu-2.5.2
-         Successfully installed macaddr-1.6.1
-         Successfully installed uuid-2.3.7
-         Successfully installed azure-0.5.0
-         7 gems installed
+        Fetching: mini_portile-0.5.1.gem (100%)
+        Fetching: nokogiri-1.6.0-x86-mingw32.gem (100%)
+        Fetching: mime-types-1.25.gem (100%)
+        Fetching: systemu-2.5.2.gem (100%)
+        Fetching: macaddr-1.6.1.gem (100%)
+        Fetching: uuid-2.3.7.gem (100%)
+        Fetching: azure-0.5.0.gem (100%)
+        Successfully installed mini_portile-0.5.1
+        Successfully installed nokogiri-1.6.0-x86-mingw32
+        Successfully installed mime-types-1.25
+        Successfully installed systemu-2.5.2
+        Successfully installed macaddr-1.6.1
+        Successfully installed uuid-2.3.7
+        Successfully installed azure-0.5.0
+        7 gems installed
 
-    **Hinweis**
-
-    Wenn Sie einen berechtigungsspezifischen Fehler erhalten, verwenden Sie stattdessen `sudo gem install azure`.
+    <div class="dev-callout">
+<b>Hinweis</b>
+<p>Wenn ein Fehler bez&uuml;glich fehlender Berechtigungen angezeigt wird, verwenden Sie stattdessen <code data-inline="1">sudo gem install azure</code>.</p>
+</div>
 
 ### Anfordern des Gem
 
@@ -103,10 +99,9 @@ Fügen Sie mit einem Texteditor Folgendes am Anfang Ihrer Ruby-Anwendungsdatei e
 
     require 'azure'
 
-Gewusst wie: Herstellen einer Verbindung zur Dienstverwaltung
--------------------------------------------------------------
+## <a name="setup-connection"> </a>Gewusst wie: Herstellen einer Verbindung zur Dienstverwaltung
 
-Für eine erfolgreiche Durchführung von Dienstverwaltungsvorgängen mit Azure müssen Sie die Abonnement-ID und das Zertifikat angeben, die Sie im Abschnitt [Erstellen eines Azure-Verwaltungszertifikats](#setup-certificate) abgerufen haben. Der einfachste Weg besteht darin, die ID und den Pfad zur Zertifikatsdatei mit den folgenden Umgebungsvariablen anzugeben:
+Für eine erfolgreiche Durchführung von Dienstverwaltungsvorgängen mit Azure müssen Sie die Abonnement-ID und das Zertifikat angeben, die Sie im Abschnitt [Erstellen eines Azure-Verwaltungszertifikats][Erstellen eines Verwaltungszertifikats] abgerufen haben. Der einfachste Weg besteht darin, die ID und den Pfad zur Zertifikatsdatei mit den folgenden Umgebungsvariablen anzugeben:
 
 -   AZURE\_MANAGEMENT\_CERTIFICATE - Der Pfad zur PEM-Datei mit dem Verwaltungszertifikat.
 
@@ -119,12 +114,11 @@ Sie können diese Werte auch mit dem folgenden Befehl programmgesteuert in Ihrer
       config.subscription_id = 'subscription ID'
     end
 
-Gewusst wie: Arbeiten mit virtuellen Computern
-----------------------------------------------
+## <a name="virtual-machine"> </a>Gewusst wie: Arbeiten mit virtuellen Computern
 
 Verwaltungsvorgänge für Azure Virtual Machines werden mit der Klasse **Azure::VirtualMachineService** durchgeführt.
 
-### Gewusst wie: Erstellen eines neuen virtuellen Computers
+### Gewusst wie: Neuen virtuellen Computer erstellen
 
 Verwenden Sie die **create\_virtual\_machine**-Methode, um einen neuen virtuellen Computer zu erstellen. Diese Methode lässt ein Hash zu, das die folgenden Parameter enthält, und gibt eine **Azure::VirtualMachineManagement::VirtualMachine**-Instanz zurück, die den erstellten virtuellen Computer beschreibt:
 
@@ -146,7 +140,7 @@ Es folgt ein Beispiel für die Erstellung eines neuen virtuellen Computers mithi
       :vm_name => 'mygreatvm',
       :vm_user => 'myuser',
       :password => 'mypassword',
-      :image => 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-13_04-amd64-server-20130824-en-us-30GB',
+      :image => 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-13_04-amd64-server-20130824-de-de-30GB',
       :location = 'East US'
     }
 
@@ -180,17 +174,17 @@ Im Folgenden finden Sie die für die **create\_virtual\_machine**-Methode verfü
 
 -   **:ssh\_port** - Der öffentliche Port, der für die SSH-Kommunikation verwendet wird. Wenn dieser Parameter nicht angegeben wird, wird standardmäßig der SSH-Port 22 verwendet.
 
--   **:vm\_size** - Die Größe des virtuellen Computers. Dadurch werden die Speichergröße, die Anzahl der Cores, die Bandbreite und andere physische Merkmale des virtuellen Computers bestimmt. Informationen zu verfügbaren Größen und physischen Merkmalen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/dn197896.aspx).
+-   **:vm\_size** - Die Größe des virtuellen Computers. Dadurch werden die Speichergröße, die Anzahl der Cores, die Bandbreite und andere physische Merkmale des virtuellen Computers bestimmt. Informationen zu verfügbaren Größen und physischen Merkmalen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Windows Azure][Größen virtueller Computer und Cloud-Dienste für Windows Azure].
 
 -   **:winrm\_transport** - Ein Array der verfügbaren Übertragungsmöglichkeiten für WinRM. Gültige Übertragungsprotokolle sind "http" und "https". Wenn "https" als Übertragungsprotokoll angegeben wurde, müssen Sie auch **:ssh\_private\_key\_file** und **:ssh\_certificate\_file** verwenden, um das zum Sichern der HTTPS-Kommunikation verwendete Zertifikat anzugeben.
 
-Im Folgenden finden Sie ein Beispiel für das Erstellen eines neuen virtuellen Computers, der eine kleine Recheninstanz verwendet, der Ports öffentlich für den HTTP- (lokaler Port 8080, öffentlicher Port 80) und den HTTPS-Verkehr (443) anzeigt und der die Zertifikatsauthentifizierung für SSH-Sitzungen mit den angegeben Zertifikatsdateien aktiviert:
+Im Folgenden finden Sie ein Beispiel für das Erstellen eines neuen virtuellen Computers, der eine kleine Serverinstanz verwendet, der Ports öffentlich für den HTTP- (lokaler Port 8080, öffentlicher Port 80) und den HTTPS-Datenverkehr (443) anzeigt und der die Zertifikatauthentifizierung für SSH-Sitzungen mit den angegeben Zertifikatdateien aktiviert:
 
     vm_params = {
       :vm_name => 'myvm',
       :vm_user => 'myuser',
       :password => 'mypassword',
-      :image => 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-13_04-amd64-server-20130824-en-us-30GB',
+      :image => 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-13_04-amd64-server-20130824-de-de-30GB',
       :location = 'East US'
     }
 
@@ -225,9 +219,10 @@ Verwenden Sie zum Löschen eines virtuellen Computers die **delete\_virtual\_mac
     vm_mgr = Azure::VirtualMachineService.new
     vm = vm_mgr.delete_virtual_machine('myvm', 'mycloudservice')
 
-**Warnung**
-
-Mit der **delete\_virtual\_machine**-Methode werden der Cloud-Dienst und alle mit dem virtuellen Computer verbundenen Datenträger gelöscht.
+<div class="dev-callout">
+<b>Warnung</b>
+<p>Mit der <b>delete_virtual_machine</b>-Methode werden der Cloud-Dienst und alle mit dem virtuellen Computer verbundenen Datentr&auml;ger gel&ouml;scht.</p>
+</div>
 
 ### Gewusst wie: Herunterfahren eines virtuellen Computers
 
@@ -243,8 +238,7 @@ Verwenden Sie zum Starten eines virtuellen Computers die **start\_virtual\_machi
     vm_mgr = Azure::VirtualMachineService.new
     vm = vm_mgr.start_virtual_machine('myvm', 'mycloudservice')
 
-Gewusst wie: Arbeiten mit Images und Datenträgern
--------------------------------------------------
+## <a name="vm-images"> </a>Gewusst wie: Arbeiten mit Images und Datenträgern
 
 Vorgänge für Images von virtuellen Computern werden mit der Klasse **Azure::VirtualMachineImageService** durchgeführt. Vorgänge für Datenträger werden mit der Klasse **Azure::VirtualMachineImageManagement::VirtualMachineDiskManagementService** durchgeführt.
 
@@ -269,12 +263,11 @@ Verwenden Sie zum Löschen eines Datenträgers die **delete\_virtual\_machine\_d
     disk_mgr = Azure::VirtualMachineImageManagement::VirtualMachineDiskManagementService.new
     disk_mgr.delete_virtual_machine_disk
 
-Gewusst wie: Arbeiten mit Cloud-Diensten
-----------------------------------------
+## <a name="cloud-services"> </a>Gewusst wie: Arbeiten mit Cloud-Diensten
 
 Verwaltungsvorgänge für Azure Cloud Services werden mit der Klasse **Azure::CloudService** durchgeführt.
 
-### Gewusst wie: Erstellen eines Cloud-Dienstes
+### Gewusst wie: Erstellen eines Clouddiensts
 
 Verwenden Sie zum Erstellen eines neuen Cloud-Dienstes die **create\_cloud\_service**-Methode und geben Sie einen Namen und mittels Hash-Methode verschiedene Optionen an. Gültige Optionen:
 
@@ -301,7 +294,7 @@ Verwenden Sie die **get\_cloud\_service**-Methode, um zu überprüfen, ob ein be
     cs_mgr = Azure::CloudService.new
     cs_exists = cs_mgr.get_cloud_service('mycloudservice')
 
-### Gewusst wie: Löschen eines Cloud-Dienstes
+### Gewusst wie: Löschen eines Clouddiensts
 
 Verwenden Sie zum Löschen eines Cloud-Dienstes die **delete\_cloud\_service**-Methode und geben Sie den Namen des Cloud-Dienstes an:
 
@@ -315,12 +308,11 @@ Verwenden Sie zum Löschen einer Bereitstellung für einen Cloud-Dienst die **de
     cs_mgr = Azure::CloudService.new
     cs_mgr.delete_cloud_service_deployment('mycloudservice')
 
-Gewusst wie: Arbeiten mit Speicherdiensten
-------------------------------------------
+## <a name="storage-services"> </a>Gewusst wie: Arbeiten mit Speicherdiensten
 
 Verwaltungsvorgänge für Azure Storage Services werden mit der Klasse **Azure::StorageService** durchgeführt.
 
-### Gewusst wie: Erstellen eines Speicherkontos
+### Gewusst wie: Speicherkonto erstellen
 
 Verwenden Sie zum Erstellen eines neuen Speicherdienstes die **create\_storage\_account**-Methode und geben Sie einen Namen und mittels Hash-Methode verschiedene Optionen an. Gültige Optionen:
 
@@ -354,12 +346,29 @@ Verwenden Sie zum Löschen eines Speicherkontos die **delete\_storage\_account**
     storage_mgr = Azure::StorageService.new
     storage_mgr.delete_storage_account('mystorage')
 
-Nächste Schritte
-----------------
+## <a name="next-steps"> </a>Nächste Schritte
 
 Da Sie jetzt die Grundlagen der programmgesteuerten Erstellung von virtuellen Azure-Computern erlernt haben, folgen Sie diesen Links, um mehr über die Arbeit mit virtuellen Computern zu erfahren.
 
--   Besuchen Sie die Seite zu [virtuellen Computern](http://www.windowsazure.com/de-de/documentation/services/virtual-machines/).
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Virtuelle Computer](http://msdn.microsoft.com/de-de/library/windowsazure/jj156003.aspx)
--   Lernen Sie, wie Sie eine [Ruby on Rails-Anwendung auf einem virtuellen Computer](http://www.windowsazure.com/de-de/develop/ruby/tutorials/web-app-with-linux-vm/) hosten können.
+-   Besuchen Sie die Seite zu [virtuellen Computern][virtuellen Computern].
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Virtuelle Computer][Virtuelle Computer]
+-   Lernen Sie, wie Sie eine [Ruby on Rails-Anwendung auf einem virtuellen Computer][Ruby on Rails-Anwendung auf einem virtuellen Computer] hosten können.
 
+  [Was ist Dienstverwaltung?]: #what-is
+  [Konzepte]: #concepts
+  [Erstellen eines Verwaltungszertifikats]: #setup-certificate
+  [Erstellen einer Ruby-Anwendung]: #create-app
+  [Konfigurieren der Anwendung für das SDK]: #configure-access
+  [Einrichten einer Azure-Verwaltungsverbindung]: #setup-connection
+  [Gewusst wie: Arbeiten mit virtuellen Computern]: #virtual-machine
+  [Gewusst wie: Arbeiten mit Images und Datenträgern]: #vm-images
+  [Gewusst wie: Arbeiten mit Cloud-Diensten]: #cloud-services
+  [Gewusst wie: Arbeiten mit Speicherdiensten]: #storage-services
+  [Nächste Schritte]: #next-steps
+  [REST-APIs für Dienstverwaltungsvorgänge]: http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx
+  [Azure-Verwaltungsportal]: https://manage.windowsazure.com
+  [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle]: http://www.windowsazure.com/de-de/manage/install-and-configure-cli/
+  [Größen virtueller Computer und Cloud-Dienste für Windows Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/dn197896.aspx
+  [virtuellen Computern]: http://www.windowsazure.com/de-de/documentation/services/virtual-machines/
+  [Virtuelle Computer]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156003.aspx
+  [Ruby on Rails-Anwendung auf einem virtuellen Computer]: http://www.windowsazure.com/de-de/develop/ruby/tutorials/web-app-with-linux-vm/

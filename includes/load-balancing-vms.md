@@ -1,83 +1,75 @@
-<properties  writer="josephd" editor="tysonn" manager="dongill" />
+<properties title="Load Balancing for Azure Infrastructure Services" pageTitle="Load Balancing for Azure Infrastructure Services" description="Describes the facilities to perform load balancing with Traffic Manager and load balancer." metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="josephd" videoId="" scriptId="" manager="timlt" />
 
-# Lastenausgleich virtueller Computer
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="josephd"></tags>
 
-Alle virtuellen Computer, die Sie in Azure erstellen, können automatisch über einen privaten Netzwerkkanal mit anderen virtuellen Computern im gleichen Clouddienst oder virtuellen Netzwerk kommunizieren. Sämtliche eingehende Kommunikation wie Datenverkehr von Internethosts oder virtuellen Computern in anderen Clouddiensten oder virtuellen Netzwerken benötigt einen Endpunkt.
+# Lastenausgleich für Azure-Infrastrukturdienste
 
-Endpunkte können auf unterschiedliche Weise genutzt werden. Die Endpunkte auf virtuellen Computern, die Sie mit dem Azure-Verwaltungsportal erstellen, werden hauptsächlich für das Remotedesktopprotokoll (RDP) und Windows PowerShell-Sitzungsverkehr verwendet. Über diese Endpunkte können Sie die virtuellen Computer über das Internet verwalten.
+Für Azure-Infrastrukturdienste kann Lastenausgleich auf zwei Ebenen genutzt werden:
 
-Endpunkte können auch für die Konfiguration des Azure-Lastenausgleichsmoduls verwendet werden, um eine bestimmte Art von Netzwerkverkehr zwischen mehreren virtuellen Computern oder Diensten zu verteilen. Sie können zum Beispiel die Netzwerklast von Webanfragen auf mehrere Webserver oder Webrollen verteilen.
+-   **DNS-Ebene**: Lastenausgleich für Datenverkehr in folgende Richtungen: zu unterschiedlichen Cloud-Diensten in unterschiedlichen Rechenzentren, zu unterschiedlichen Azure-Websites in unterschiedlichen Rechenzentren oder zu externen Endpunkten. Für diese Form des Lastenausgleichs werden der Traffic Manager und die Roundrobin-Methode verwendet.
+-   **Netzwerkebene**: Lastenausgleich für eingehenden Internetdatenverkehr zu unterschiedlichen virtuellen Computern eines Cloud-Diensts oder Lastenausgleich für den Datenverkehr zwischen virtuellen Computern in einem Cloud-Dienst oder virtuellen Netzwerk. Für diese Aufgaben wird das Azure-Lastenausgleichsmodul verwendet.
 
-Jedem auf einem virtuellen Computer definierten Endpunkt wird ein öffentlicher und ein privater Port zugewiesen, entweder TCP oder UDP. Internethosts schicken ihren eingehenden Datenverkehr an die öffentliche IP-Adresse des Clouddienstes und einen öffentlichen Port. Virtuelle Computer und Dienste innerhalb des Clouddienstes sind empfangsbereit auf ihren privaten IP-Adressen und privaten Ports. Das Lastenausgleichsmodul führt die Zuordnung zwischen öffentlicher IP-Adresse und Portnummer des eingehenden Datenverkehrs zu den privaten IP-Adressen und Portnummern der virtuellen Computer durch und umgekehrt für den Antwortverkehr vom virtuellen Computer.
+## Traffic Manager-Lastenausgleich für Cloud-Dienste und Websites
 
-Beo der Konfiguration von Lastverteilung für Datenverkehr zwischen mehreren virtuellen Computern oder Diensten verteilt Azure den eingehenden Datenverkehr nach Zufallsprinzip.
+Mit Azure Traffic Manager können Sie die Verteilung des Benutzerdatenverkehrs an Endpunkte steuern, z. B. an Cloud-Dienste, Websites externe Websites und andere Traffic Manager-Profile. Die Funktionsweise von Traffic Manager basiert darauf, dass Sie ein intelligentes Richtlinienmodul auf DNS-Abfragen (Domain Name System) von Domänennamen Ihrer Internetressourcen anwenden. Die Cloud-Dienste oder Websites können in verschiedenen Rechenzentren auf der ganzen Welt ausgeführt werden.
 
-Für einen Clouddienst, der Instanzen von Web- oder Workerrollen enthält, können Sie einen öffentlichen Endpunkt in der Dienstdefinition definieren. Für einen Clouddienst, der virtuelle Computer enthält, können Sie einen Endpunkt zu einem virtuellen Computer bei dessen Erstellung oder zu einem späteren Zeitpunkt hinzufügen.
+Sie müssen entweder REST oder Windows PowerShell zur Konfiguration externer Endpunkte oder Traffic Manager-Profile als Endpunkte verwenden.
 
-Die folgende Abbildung zeigt einen Endpunkt für Standard-Datenverkehr (unverschlüsselt) mit Lastenausgleich, der von drei virtuellen Computern für den öffentlichen und privaten TCP-Port 80 genutzt wird. Diese drei virtuellen Computer bilden einen Satz mit Lastenausgleich.
+Azure Traffic Manager verwendet drei Lastenausgleichsmethoden, um den Datenverkehr zu verteilen:
 
-![Lastenausgleich](./media/load-balancing-vms/LoadBalancing.png)
+-   **Failover**: Verwenden Sie diese Methode, wenn Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, aber Sicherungen bereitstellen möchten, falls der primäre Endpunkt nicht mehr verfügbar sein sollte.
+-   **Leistung**: Verwenden Sie diese Methode, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den "nächstgelegenen" Endpunkt (im Hinblick auf die geringste Latenzzeit) verwendet sollen.
+-   **Roundrobin:** Verwenden Sie diese Methode, wenn Sie die Last auf eine Reihe von Cloud-Diensten im gleichen Rechenzentrum oder auf Cloud-Dienste oder Websites in verschiedenen Rechenzentren verteilen möchten.
 
-Wenn Internetclients Webseitenanfragen an die öffentliche IP-Adresse und TCP-Port 80 des Clouddienstes schicken, verteilt das Lastenausgleichsmodul diese Anfragen nach dem Zufallsprinzip auf die drei virtuellen Computer im Satz mit Lastenausgleich.
+Weitere Informationen finden Sie unter [Traffic Manager-Lastenausgleichsmethoden][Traffic Manager-Lastenausgleichsmethoden].
 
-Führen Sie die folgenden Schritte aus, um einen Satz mit Lastenausgleich aus virtuellen Azure-Computern zu erstellen:
+Die folgende Abbildung zeigt ein Beispiel für die Roundrobin-Lastenausgleichsmethode, bei der der Datenverkehr zwischen unterschiedlichen Cloud-Diensten verteilt wird.
 
-* [Schritt 1: Den ersten virtuellen Computer erstellen](#firstmachine)
-* [Schritt 2: Weitere virtuelle Computer im gleichen Clouddienst
-  erstellen](#addmachines)
-* [Schritt 3: Einen Satz mit Lastenausgleich mit dem ersten virtuellen
-  Computer erstellen](#loadbalance)
-* [Schritt 4: Virtuelle Computer zum Satz mit Lastenausgleich
-  hinzufügen](#addtoset)
+![Lastenausgleich][Lastenausgleich]
 
-## <a id="firstmachine"> </a>Schritt 1: Den ersten virtuellen Computer erstellen
+Im Folgenden die grundlegende Vorgehensweise:
 
-Melden Sie sich am [Azure-Verwaltungsportal][1] an, falls noch nicht geschehen. Sie können den ersten virtuellen Computer mit der Methode Aus Galerie oder Schnellerfassung erstellen.
+1.  Ein Internetclient fragt einen Domänennamen ab, der einem Webdienst entspricht.
+2.  DNS leitet die Namensabfrage an den Traffic Manager weiter.
+3.  Der Traffic Manager gibt den DNS-Namen des Cloud-Diensts in der Roundrobinliste zurück. Der DNS-Server des Internetclients löst den Namen in eine IP-Adresse auf und sendet diese an den Internetclient.
+4.  Der Internetclient stellt eine Verbindung mit dem ausgewählten Cloud-Dienst her.
 
-* **Aus Galerie**: Mit der Methode **Aus Galerie** können Sie bei der Erstellung des virtuellen Computers Endpunkte erstellen. Sie können einen Namen für den Clouddienst angeben, der bei der Erstellung des virtuellen Computers erzeugt wird. Anweisungen finden Sie unter
-  [Erstellen eines virtuellen Linux-Computers](../virtual-machines-linux-tutorial) oder [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines-windows-tutorial).
+Weitere Informationen finden Sie unter [Traffic Manager][Traffic Manager].
 
-* **Schnellerfassung**: Erstellen Sie einen virtuellen Computer, indem Sie ein Bild aus der Bildergalerie auswählen und grundlegende Angaben machen. Wenn Sie diese Methode verwenden, müssen Sie den Endpunkt nach Erstellung des virtuellen Computers hinzufügen. Bei dieser Methode wird außerdem ein Clouddienst mit einem Standardnamen erstellt.
-  Weitere Informationen finden Sie unter [Schnelles Erstellen eines virtuellen Computers](../virtual-machines-quick-create).
+## Azure-Lastenausgleich für virtuelle Computer
 
-**Hinweis**: Nach der Erstellung des virtuellen Computers per Schnellerfassung wird auf der Seite Clouddienste auf dem Verwaltungsportal der Name des neuen Clouddiensts mit weiteren Informationen zum Dienst aufgeführt.
+Virtuelle Computer im selben Cloud-Dienst oder virtuellen Netzwerk können über ihre privaten IP-Adressen direkt miteinander kommunizieren. Computer und Dienste außerhalb des Cloud-Diensts oder virtuellen Netzwerks können nur mit virtuellen Computern in einem Cloud-Dienst oder virtuellen Netzwerk mit einem konfigurierten Endpunkt kommunizieren. Ein Endpunkt ist eine Zuordnung einer öffentlichen IP-Adresse und eines Ports zu der privaten IP-Adresse und dem Port eines virtuellen Computers oder einer Webrolle innerhalb eines Azure-Cloud-Diensts.
 
-## <a id="addmachines"> </a>Schritt 2: Weitere virtuelle Computer im gleichen Clouddienst erstellen
+Das Azure-Lastenausgleichsmodul verteilt bestimmte eingehende Datenverkehrsdaten nach dem Zufallsprinzip auf mehrere virtuelle Computer oder Dienste. Diese Konfiguration wird als Gruppe mit Lastenausgleich bezeichnet. Sie können zum Beispiel die Netzwerklast von Webanfragen auf mehrere Webserver oder Webrollen verteilen.
 
-Erstellen Sie weitere virtuelle Computer im Clouddienst des ersten virtuellen Computers, indem Sie die Methode Aus Galerie verwenden.
+Die folgende Abbildung zeigt einen Endpunkt mit Lastenausgleich für standardmäßigen (nicht verschlüsselten) Webdatenverkehr, der zwischen drei virtuellen Computern für den öffentlichen und privaten TCP-Port 80 aufgeteilt wird. Diese drei virtuellen Computer befinden sich in einer Gruppe mit Lastenausgleich.
 
-## <a id="loadbalance"> </a>Schritt 3: Einen Satz mit Lastenausgleich mit dem ersten virtuellen Computer erstellen
+![Lastenausgleich][1]
 
-1. Klicken Sie im Azure-Verwaltungsportal auf **Virtueller Computer** und anschließend auf den Namen Ihres neuen virtuellen Computers.
+Weitere Informationen finden Sie unter [Azure-Lastenausgleichsmodul][Azure-Lastenausgleichsmodul]. Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich][Konfigurieren einer Gruppe mit Lastenausgleich].
 
-2. Klicken Sie auf **Endpunkte** und anschließend auf **Hinzufügen**.
+Azure ist auch in der Lage, Lasten innerhalb eines Cloud-Diensts oder virtuellen Netzwerks auszugleichen. Diese Methode wird als interner Lastenausgleich bezeichnet und kann wie folgt verwendet werden:
 
-3. Klicken Sie auf der Seite Endpunkt zu virtuellem Computer hinzufügen auf den Pfeil nach rechts.
+-   Lastenausgleich zwischen Servern auf unterschiedlichen Ebenen einer Multi-Tier-Anwendung (beispielsweise zwischen der Web- und Datenbankebene).
+-   Lastenausgleich für Branchenanwendungen (LOB-Anwendungen), die in Azure gehostet werden, ohne dass zusätzliche Hardware oder Software für den Lastenausgleich erforderlich ist.
+-   Einschließen von lokalen Servern in die Gruppe der Computer, für deren Datenverkehr Lastenausgleich stattfindet.
 
-4. Auf der Seite Geben Sie die Details des Endpunktes ein:
+Vergleichbar mit dem Azure-Lastenausgleich ist auch ein interner Lastenausgleich möglich, indem eine interne Gruppe mit Lastenausgleich konfiguriert wird.
 
-    * Geben Sie unter **Name** einen Namen für den Endpunkt ein oder wählen Sie einen der vordefinierten Endpunkte für gängige Protokolle aus.
-    * Wählen Sie unter **Protokoll** das Protokoll aus, das für den Endpunkttyp erforderlich ist: TCP oder UDP.
-    * Geben Sie unter **Öffentlicher Port** und **Privater Port** die Portnummern ein, die der virtuelle Computer verwenden soll. Sie können die Regeln für privaten Port und Firewall auf dem virtuellen Computer verwenden, um Datenverkehr entsprechend Ihren Anforderungen umzuleiten. Der private Port kann mit dem öffentlichen Port identisch sein. Für einen Endpunkt für Webverkehr (HTTP) könnten Sie zum Beispiel Port 80 sowohl für den öffentlichen als auch für den privaten Port verwenden.
+Die folgende Abbildung zeigt ein Beispiel eines internen Endpunkts mit Lastenausgleich für eine Branchenanwendung (LOB-Anwendung), die in einem standortübergreifenden virtuellen Netzwerk von drei virtuellen Computern gemeinsam genutzt wird.
 
-5. Klicken Sie auf **Satz mit Lastenausgleich erstellen** und klicken Sie auf den Pfeil nach rechts.
+![Lastenausgleich][2]
 
-6. Geben Sie auf der Seite Satz mit Lastenausgleich konfigurieren einen Namen für den Satz mit Lastenausgleich ein, und weisen Sie dann die Werte für das Testverhalten des Azure-Lastenausgleichsmoduls zu. Das Lastenausgleichsmodul führt Tests durch, um zu ermitteln, ob die virtuellen Computer in einem Satz mit Lastenausgleich empfangsbereit für eingehenden Datenverkehr sind.
-
-7. Klicken Sie auf das Häkchen, um den Endpunkt mit Lastenausgleich zu erstellen. In der Spalte **Name des Satzes mit Lastenausgleich** auf der Seite **Endpunkt** für den virtuellen Computer wird der Eintrag **Ja** angezeigt.
-
-## <a id="addtoset"> </a>Schritt 4: Virtuelle Computer zum Satz mit Lastenausgleich hinzufügen
-
-Nachdem Sie den Satz mit Lastenausgleich erstellt haben, fügen Sie die anderen virtuellen Computer hinzu. Für weitere virtuelle Computer im gleichen Clouddienst:
-
-1.  Klicken Sie im Verwaltungsportal auf **Virtuelle Computer**, klicken Sie auf den Namen des virtuellen Computers, anschließend auf **Endpunkte** und auf **Hinzufügen**.
-
-2.  Klicken Sie auf der Seite Endpunkt zu virtuellem Computer hinzufügen auf **Endpunkt zu einem vorhandenen Satz mit Lastenausgleich hinzufügen**, wählen Sie den Namen des Satzes mit Lastenausgleich aus und klicken Sie auf den Pfeil nach rechts.
-
-3.  Füllen Sie auf der Seite Geben Sie die Details des Endpunktes ein Namen und Protokoll für den Endpunkt aus und klicken Sie auf das Häkchen.
+Weitere Informationen finden Sie unter [Interner Lastenausgleich][Interner Lastenausgleich]. Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer internen Gruppe mit Lastenausgleich][Konfigurieren einer internen Gruppe mit Lastenausgleich].
 
 <!-- LINKS -->
 
-
-
-[1]: http://manage.windowsazure.com
+  [Traffic Manager-Lastenausgleichsmethoden]: http://msdn.microsoft.com/de-de/library/azure/dn339010.aspx
+  [Lastenausgleich]: ./media/load-balancing-vms/TMSummary.png
+  [Traffic Manager]: http://msdn.microsoft.com/de-de/library/azure/hh745750.aspx
+  [1]: ./media/load-balancing-vms/LoadBalancing.png
+  [Azure-Lastenausgleichsmodul]: http://msdn.microsoft.com/de-de/library/azure/dn655058.aspx
+  [Konfigurieren einer Gruppe mit Lastenausgleich]: http://msdn.microsoft.com/de-de/library/azure/dn655055.aspx
+  [2]: ./media/load-balancing-vms/LOBServers.png
+  [Interner Lastenausgleich]: http://msdn.microsoft.com/de-de/library/azure/dn690121.aspx
+  [Konfigurieren einer internen Gruppe mit Lastenausgleich]: http://msdn.microsoft.com/de-de/library/azure/dn690125.aspx

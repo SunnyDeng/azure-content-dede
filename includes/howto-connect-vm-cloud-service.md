@@ -1,28 +1,27 @@
-<properties  authors="kathydav" editor="tysonn" manager="donaldg" />
+<properties authors="kathydav" editor="tysonn" manager="donaldg" />
 
 # Verbinden virtueller Computer in einem Clouddienst
 
 Wenn Sie einen virtuellen Computer erstellen, wird automatisch auch ein Clouddienst erzeugt, der diesen Computer enthält. Sie können mehrere virtuelle Computer im selben Clouddienst erstellen, um diese virtuellen Computer miteinander kommunizieren zu lassen und auf diese Weise die Last zwischen ihnen zu verteilen, sodass stets eine hohe Verfügbarkeit der Computer gegeben ist.
 
-Weitere Informationen zum Lastenausgleich zwischen virtuellen Computern finden Sie unter [Lastenausgleich zwischen virtuellen Computern](../load-balancing-vms/). Weitere Information zur Verwaltung der Verfügbarkeit Ihrer Anwendung finden Sie unter [Verwaltung der Verfügbarkeit virtueller Computer](../manage-vm-availability/).
+Weitere Informationen zum Lastenausgleich zwischen virtuellen Computern finden Sie unter [Lastenausgleich zwischen virtuellen Computern][Lastenausgleich zwischen virtuellen Computern]. Weitere Information zur Verwaltung der Verfügbarkeit Ihrer Anwendung finden Sie unter [Verwaltung der Verfügbarkeit virtueller Computer][Verwaltung der Verfügbarkeit virtueller Computer].
 
 Zuerst müssen Sie einen virtuellen Computer mit einem neuen Clouddienst erstellen. Anschließend können Sie unter diesem Clouddienst zusätzliche virtuelle Computer mit dem ersten virtuellen Computer verbinden.
 
-1.  Gehen Sie zum Erstellen eines virtuellen Computers so vor wie in [Erstellen eines benutzerdefinierten virtuellen Computers](../howto-custom-create-vm/) beschrieben.
+1.  Gehen Sie zum Erstellen eines virtuellen Computers so vor wie in [Erstellen eines benutzerdefinierten virtuellen Computers][Erstellen eines benutzerdefinierten virtuellen Computers] beschrieben.
 
-2.  Klicken Sie nach dem Erstellen des ersten benutzerdefinierten virtuellen Computers in der Befehlsleiste [Verwaltungsportal][1] auf **Neu**.
-    
-    ![Einen neuen virtuellen Computer
-    erstellen](./media/howto-connect-vm-cloud-service/Create.png)
+2.  Klicken Sie nach dem Erstellen des ersten benutzerdefinierten virtuellen Computers in der Befehlsleiste [Verwaltungsportal][Verwaltungsportal] auf **Neu**.
+
+    ![Neuen virtuellen Computer erstellen][Neuen virtuellen Computer erstellen]
 
 3.  Klicken Sie auf **Virtueller Computer** und dann auf **From Gallery**.
-    
-    ![Einen benutzerdefinierten virtuellen Computer erstellen](./media/howto-connect-vm-cloud-service/CreateNew.png)
-    
+
+    ![Einen benutzerdefinierten virtuellen Computer erstellen][Einen benutzerdefinierten virtuellen Computer erstellen]
+
     Das Dialogfeld **Select the virtual machine operating system** wird angezeigt.
 
 4.  Wählen Sie auf der Seite **Bild auswählen** ein Bild aus, und klicken Sie anschließend auf den Pfeil, um fortzufahren.
-    
+
     Die erste Seite des Menüs **Konfiguration des virtuellen Computers** wird angezeigt.
 
 5.  Geben Sie unter **Name des virtuellen Computers** den Namen ein, der für den virtuellen Computer verwendet werden soll.
@@ -45,6 +44,9 @@ Zuerst müssen Sie einen virtuellen Computer mit einem neuen Clouddienst erstell
 
 14. Aktivieren Sie das Kontrollkästchen, um den verbundene virtuellen Computer zu erstellen.
 
-
-
-[1]: http://manage.windowsazure.com
+  [Lastenausgleich zwischen virtuellen Computern]: ../../articles/load-balance-virtual-machines/
+  [Verwaltung der Verfügbarkeit virtueller Computer]: ../../articles/manage-availability-virtual-machines/
+  [Erstellen eines benutzerdefinierten virtuellen Computers]: ../../articles/virtual-machines-create-custom/
+  [Verwaltungsportal]: http://manage.windowsazure.com
+  [Neuen virtuellen Computer erstellen]: ./media/howto-connect-vm-cloud-service/Create.png
+  [Einen benutzerdefinierten virtuellen Computer erstellen]: ./media/howto-connect-vm-cloud-service/CreateNew.png

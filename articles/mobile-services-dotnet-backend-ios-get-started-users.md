@@ -1,77 +1,63 @@
-<properties pageTitle="Get started with authentication (Windows Store) | Mobile Dev Center" metaKeywords="authentication, Facebook, Google, Twitter, Microsoft Account, login" description="Learn how to use Mobile Services to authenticate users of your Windows Store app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="Glenn Gailey" solutions="" manager="" editor="" />
+<properties pageTitle="Get started with authentication (Windows Store) | Mobile Dev Center" metaKeywords="authentication, Facebook, Google, Twitter, Microsoft Account, login" description="Learn how to use Mobile Services to authenticate users of your Windows Store app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="krisragh" solutions="" manager="dwrede" editor="" />
 
-Erste Schritte bei der Authentifizierung in Mobile Services
-===========================================================
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="09/23/2014" ms.author="krisragh"></tags>
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users" title="Windows Store C#">Windows Store C#</a><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users" title="Windows Phone">Windows Phone</a><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users" title="iOS" class="current">iOS</a><!--<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-users" title="Android">Android</a>-->
-</div>
+# Erste Schritte bei der Authentifizierung in Mobile Services
 
-<div class="dev-center-tutorial-subselector"><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/" title=".NET backend" class="current">.NET backend</a> | <a href="/de-de/documentation/articles/mobile-services-ios-get-started-users/"  title="JavaScript backend">JavaScript backend</a></div>
+[WACOM.INCLUDE [mobile-services-selector-get-started-users][mobile-services-selector-get-started-users]]
 
 In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ihre App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
 Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von Authentifizierung in Ihrer App:
 
-1.  [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]
-2.  [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]
-3.  [Hinzufügen von Authentifizierung zur App]
+1.  [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services][Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]
+2.  [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer][Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]
+3.  [Hinzufügen von Authentifizierung zur App][Hinzufügen von Authentifizierung zur App]
+4.  [Speichern von Authentifizierungstoken in der App][Speichern von Authentifizierungstoken in der App]
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] abschließen.
 
-<a name="register"></a>
-Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
-----------------------------------------------------------------------------------
+## <a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 
-[WACOM.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
+[WACOM.INCLUDE [mobile-services-register-authentication][mobile-services-register-authentication]]
 
-<ol start="5">
-<li><p>Öffnen Sie in Visual Studio die Datei Web.config für das Mobildienstprojekt, und geben Sie im Abschnitt "appSettings" den App-Bezeichner und die freigegebenen geheimen Werte ein, die Sie von Ihrem Identitätsanbieter erhalten haben.</p>
+[WACOM.INCLUDE [mobile-services-dotnet-backend-aad-server-extension][mobile-services-dotnet-backend-aad-server-extension]]
 
-    <p>Diese Einstellungen werden bei der lokalen Entwicklung verwendet. Nach der Veröffentlichung Ihres mobilen Dienstes in Azure werden diese Einstellungen durch die im Portal eingegebenen Werte überschrieben.</p></li>
-</ol>
+## <a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
 
-<a name="permissions">
-Einschränken von Berechtigungen für authentifizierte Benutzer
--------------------------------------------------------------
+[WACOM.INCLUDE [mobile-services-restrict-permissions-dotnet-backend][mobile-services-restrict-permissions-dotnet-backend]]
 
-[WACOM.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+1.  <p>
+    Öffnen Sie in Xcode das Schnellstartprojekt der Client-App.
+2.  Klicken Sie auf **Ausführen**, das Projekt zu erstellen und die App im iPhone-Emulator zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) geworfen wird.
 
-<ol start="6">
-<li><p>Öffnen Sie in Xcode das Projekt, das Sie beim Abschluss des Lernprogramms [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-ios-get-started) erstellt haben.</p></li>
-
-<li><p>Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App im iPhone-Emulator zu starten. Überprüfen Sie, ob eine unverarbeitete Ausnahme mit dem Statuscode 401 (nicht autorisiert) nach dem Start der App ausgelöst wird.</p>
-
-    <p>Dies geschieht, da die App versucht, als nicht autorisierter Benutzer auf Mobile Services zuzugreifen, die *TodoItem*-Tabelle jetzt aber eine Authentifizierung erfordert.</p></li>
-</ol>
+    Dies liegt daran, dass die App als nicht authentifizierter Benutzer auf Mobile Services zugreift und die *TodoItem*-Tabelle nun eine Authentifizierung verlangt.
 
 Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
- 
-<a name="add-authentication">
-## Hinzufügen von Authentifizierung zur App 
 
-[WACOM.INCLUDE [mobile-services-ios-authenticate-app](../includes/mobile-services-ios-authenticate-app.md)] 
+## <a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
-<a name="next-steps">
-## Nächste Schritte
+[WACOM.INCLUDE [mobile-services-ios-authenticate-app][mobile-services-ios-authenticate-app]]
 
-Im nächsten Lernprogramm [Serviceseitige Autorisierung von Mobile Services-Benutzern] [Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. 
+## <a name="store-authentication"></a>Speichern von Authentifizierungstoken in der App
 
+[WACOM.INCLUDE [mobile-services-ios-authenticate-app-with-token][mobile-services-ios-authenticate-app-with-token]]
 
-<!-- Anchors. -->
-[Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register 
-[Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions 
-[Hinzufügen von Authentifizierung zur App]: #add-authentication 
-[Nächste Schritte]:#next-steps 
+## <a name="next-steps"></a>Nächste Schritte
 
-<!-- URLs. -->
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started/ 
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-data/ 
-[Erste Schritte mit Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/ 
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/ 
-[Autorisieren von Benutzern mit Skripts]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts 
+Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutzern][Dienstweite Autorisierung von Mobile Services-Benutzern] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern.
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/ 
-[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /en-us/develop/mobile/how-to-guides/work-with-net-client-library 
-[Registrieren Ihres Windows Store-App-Pakets für die Microsoft Authentifizierung]: /de-de/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
+<!-- Anchors. --> <!-- URLs. -->
 
-
+  [mobile-services-selector-get-started-users]: ../includes/mobile-services-selector-get-started-users.md
+  [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
+  [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
+  [Hinzufügen von Authentifizierung zur App]: #add-authentication
+  [Speichern von Authentifizierungstoken in der App]: #store-authentication
+  [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started/
+  [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
+  [mobile-services-dotnet-backend-aad-server-extension]: ../includes/mobile-services-dotnet-backend-aad-server-extension.md
+  [mobile-services-restrict-permissions-dotnet-backend]: ../includes/mobile-services-restrict-permissions-dotnet-backend.md
+  [mobile-services-ios-authenticate-app]: ../includes/mobile-services-ios-authenticate-app.md
+  [mobile-services-ios-authenticate-app-with-token]: ../includes/mobile-services-ios-authenticate-app-with-token.md
+  [Dienstweite Autorisierung von Mobile Services-Benutzern]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts

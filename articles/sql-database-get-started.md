@@ -1,19 +1,19 @@
-<properties linkid="manage-services-getting-started-with-sqldbs" urlDisplayName="How to create &amp; provision" pageTitle="Getting started with SQL Database - Azure" metaKeywords="" description="Get started creating and managing SQL Databases in Azure." metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Database" authors="" solutions="" writer="" manager="" editor="" />
+<properties linkid="manage-services-getting-started-with-sqldbs" urlDisplayName="How to create and provision" pageTitle="Getting started with SQL Database - Azure" metaKeywords="" description="Get started creating and managing SQL Databases in Azure." metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Database" authors="loclar"  solutions="" writer="" manager="jeffreyg" editor="tysonn"  />
 
-Erste Schritte mit der Azure SQL-Datenbank
-==========================================
+<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="loclar"></tags>
 
-In diesem Lernprogramm lernen Sie die Grundlagen der Azure SQL-Datenbankverwaltung über das Azure-Verwaltungsportal kennen. Wenn Sie sich erstmals mit Datenbankverwaltung beschäftigen, können Sie anhand dieser Lektionen die grundlegenden Fertigkeiten in etwa 30 Minuten erlernen.
+# Erste Schritte mit Microsoft Azure SQL-Datenbank
+
+In diesem Lernprogramm lernen Sie die Grundlagen der Microsoft Azure SQL-Datenbankverwaltung über das Azure-Verwaltungsportal kennen. Wenn Sie sich erstmals mit Datenbankverwaltung beschäftigen, können Sie anhand dieser Lektionen die grundlegenden Fertigkeiten in etwa 30 Minuten erlernen.
 
 Für dieses Lernprogramm werden keine Erfahrungen mit SQL Server oder der Azure SQL-Datenbank vorausgesetzt. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Beispieldatenbank für Azure und wissen, wie einfache Verwaltungsaufgaben im Verwaltungsportal ausgeführt werden.
 
-Sie erstellen eine Beispieldatenbank für Azure, stellen diese bereit und fragen System- sowie Benutzerdaten mithilfe von Excel und anderen Anwendungen ab.
+Sie erstellen eine Beispieldatenbank auf der Azure Platform, stellen diese bereit und fragen System- sowie Benutzerdaten mithilfe von Excel ab.
 
-Inhaltsverzeichnis
-------------------
+## Inhaltsverzeichnis
 
--   [Schritt 1: Erstellen eines Azure-Kontos](#Subscribe)
--   [Schritt 2: Herstellen einer Verbindung mit Azure und Erstellen einer Datenbank](#Connect)
+-   [Schritt 1: Erstellen eines Microsoft Azure-Kontos](#Subscribe)
+-   [Schritt 2: Herstellen einer Verbindung mit Azure und Erstellen einer Datenbank](#Subscribe)
 -   [Schritt 3: Konfigurieren der Firewall](#ConfigFirewall)
 -   [Schritt 4: Hinzufügen von Daten und einem Schema mit dem Transact-SQL-Skript](#AddData)
 -   [Schritt 5: Erstellen des Schemas](#createschema)
@@ -21,99 +21,91 @@ Inhaltsverzeichnis
 -   [Schritt 7: Abfragen von Beispiel- und Systemdaten im Verwaltungsportal für die SQL-Datenbank](#QueryDBSysData)
 -   [Schritt 8: Erstellen einer Datenbankanmeldung und Zuweisen von Berechtigungen](#DBLogin)
 -   [Schritt 9: Herstellen einer Verbindung von anderen Anwendungen](#ClientConnection)
--   [Schritt 10: Konfigurieren der SQL-Datensynchronisierung](#ConfigureDataSync)
 
-Schritt 1: Erstellen eines Azure-Kontos
----------------------------------------
+## Schritt 1: Erstellen eines Microsoft Azure-Kontos
 
-1.  Öffnen Sie einen Webbrowser, und navigieren Sie zu <http://www.windowsazure.com>. Um ein kostenloses Konto zu erstellen, klicken Sie auf die kostenlose Testversion oben rechts, und folgen Sie den Anweisungen.
+1.  Öffnen Sie einen Webbrowser, und navigieren Sie zu [http://azure.microsoft.com](http://azure.microsoft.com).
+    Um ein kostenloses Konto zu erstellen, klicken Sie auf die kostenlose Testversion oben rechts, und folgen Sie den Anweisungen.
 
 2.  Ihr Konto wurde erstellt. Sie können jetzt loslegen.
 
-Schritt 2: Herstellen einer Verbindung mit Azure und Erstellen einer Datenbank
-------------------------------------------------------------------------------
+## Schritt 2: Herstellen einer Verbindung mit Azure und Erstellen einer Datenbank
 
-1.  Melden Sie sich beim [Verwaltungsportal](http://manage.windowsazure.com) an. Sie sollten etwa folgenden Navigationsbereich sehen:
+1.  Melden Sie sich im [Verwaltungsportal](http://manage.windowsazure.com) an. Sie sollten etwa folgenden Navigationsbereich sehen:
 
-    ![Image1](./media/sql-database-get-started/1NavPaneDBSelected_SQLTut.png)
+    ![Navigationsbereich][Image1]
 
 2.  Klicken Sie unten auf der Seite auf **New**. Sobald Sie auf **New** klicken, wird eine Liste mit Objekten, die Sie erstellen können, auf dem Bildschirm angezeigt.
 
 3.  Klicken Sie auf **SQL Database** und dann auf **Custom Create**.
 
-    ![Image2](./media/sql-database-get-started/2MainPageCustomCreateDB_SQLTut.png)
+    ![Navigationsbereich][Image2]
 
-    Mit dieser Option können Sie gleichzeitig einen neuen Server mit Ihnen als Administrator erstellen. Als Systemadministrator können Sie mehr Aufgaben ausführen, wie das Herstellen einer Verbindung zum Verwaltungsportal für die SQL-Datenbank, was Sie später in diesem Lernprogramm durchführen werden.
+Mit dieser Option können Sie gleichzeitig einen neuen Server und eine SQL-Datenbank mit Ihnen als Administrator erstellen. Als Systemadministrator können Sie mehr Aufgaben ausführen, wie das Herstellen einer Verbindung zum Verwaltungsportal für die SQL-Datenbank, was Sie später in diesem Lernprogramm durchführen werden.
 
-4.  Die Seite mit den Datenbankeinstellungen wird angezeigt, wenn Sie auf **Custom Create** klicken. Auf dieser Seite geben Sie grundlegende Informationen an, mit denen eine leere Datenbank auf dem Server erstellt wird. Das Hinzufügen von Tabellen und Daten erfolgt in einem nachfolgenden Schritt.
+1.  Die Seite mit den Datenbankeinstellungen wird angezeigt, wenn Sie auf **Custom Create** klicken. Auf dieser Seite geben Sie grundlegende Informationen an, mit denen eine leere SQL-Datenbank auf dem Server erstellt wird. Das Hinzufügen von Tabellen und Daten erfolgt in einem nachfolgenden Schritt.
 
     Füllen Sie die Datenbankeinstellungen wie folgt aus:
 
-    ![Image3](./media/sql-database-get-started/3DatabaseSettings_SQLTut.PNG)
+    ![Navigationsbereich][Image3]
 
-    -   Geben Sie als Datenbanknamen **School** ein.
+-   Geben Sie als Datenbanknamen **School** ein.
 
-    -   Verwenden Sie die Standardeinstellungen für Edition, Maximalgröße und Sammlung.
+-   Verwenden Sie die Standardeinstellungen für Edition, Maximalgröße und Sammlung.
 
-    -   Klicken Sie auf **New SQL Database Server**. Durch Auswahl eines neuen Servers wird eine zweite Seite hinzugefügt, auf der wir das Administratorkonto und die Region einrichten werden.
+-   Klicken Sie auf **New SQL Database Server**. Durch Auswahl eines neuen Servers wird eine zweite Seite hinzugefügt, auf der wir das Administratorkonto und die Region einrichten werden.
 
-    -   Klicken Sie anschließend auf den Pfeil, um zur nächsten Seite zu gelangen.
+-   Klicken Sie anschließend auf den Pfeil, um zur nächsten Seite zu gelangen.
 
-5.  Füllen Sie die Servereinstellungen wie folgt aus:
+1.  Füllen Sie die Servereinstellungen wie folgt aus:
 
-    ![Image4](./media/sql-database-get-started/4ServerSettings_SQLTut.PNG)
+    ![Navigationsbereich][Image4]
 
-    -   Geben Sie einen Administratornamen (in einem Wort ohne Leerzeichen) ein. Die SQL-Datenbank verwendet SQL-Authentifizierung über eine verschlüsselte Verbindung, um die Benutzeridentität zu überprüfen. Mit dem von Ihnen angegebenen Namen wird eine neue SQL Server-Authentifizierungsanmeldung mit Administratorberechtigungen erstellt. Der Administratorname darf kein Windows-Benutzer sein und sollte auch keine Windows Live ID sein. Windows-Authentifizierung wird in SQL-Datenbanken nicht unterstützt.
+-   Geben Sie einen Administratornamen (in einem Wort ohne Leerzeichen) ein. Die SQL-Datenbank verwendet SQL-Authentifizierung über eine verschlüsselte Verbindung, um die Benutzeridentität zu überprüfen. Mit dem von Ihnen angegebenen Namen wird eine neue SQL Server-Authentifizierungsanmeldung mit Administratorberechtigungen erstellt. Der Administratorname darf kein Windows-Benutzer und kein Live ID-Benutzername sein. Windows-Authentifizierung wird in SQL-Datenbanken nicht unterstützt.
 
-    -   Geben Sie ein sicheres Kennwort mit mindestens acht Zeichen an, das eine Kombination aus Groß- und Kleinbuchstaben und Zahlen oder Symbolen enthält.
+-   Geben Sie ein sicheres Kennwort mit mindestens acht Zeichen an, das eine Kombination aus Groß- und Kleinbuchstaben und Zahlen oder Symbolen enthält. Über die Hilfe-Sprechblase erhalten Sie ausführliche Informationen zur Kennwortkomplexität.
 
-    -   Wählen Sie eine Region aus. Die Region bestimmt den geografischen Standort des Servers. Die Region kann nicht einfach geändert werden, wählen Sie also einen sinnvollen Standort für den Server aus. Verwenden Sie einen Standort, der sich nahe bei Ihnen oder Ihren Benutzern befindet. Wenn Sie Ihre Azure-Anwendung und -Datenbank in derselben Region platzieren, sparen Sie Zugangskosten für Bandbreite und Datenlatenz.
+-   Wählen Sie eine Region aus. Die Region bestimmt den geografischen Standort des Servers. Die Region kann nicht einfach geändert werden, wählen Sie also einen sinnvollen Standort für den Server aus. Wählen Sie den nächstgelegenen Standort aus. Wenn Sie Ihre Azure-Anwendung und -Datenbank in derselben Region platzieren, sparen Sie Zugangskosten für Bandbreite und Datenlatenz.
 
-    -   Lassen Sie das Kontrollkästchen **Allow Azure Services to access this server** aktiviert, damit Sie über das Verwaltungsportal für die SQL-Datenbank, Excel in Office 365 oder Azure SQL Reporting eine Verbindung zur Datenbank herstellen können.
+-   Lassen Sie das Kontrollkästchen **Allow Azure Services to access this server** aktiviert, damit Sie über das Verwaltungsportal für die SQL-Datenbank, Excel in Office 365 oder Azure SQL Reporting eine Verbindung zur Datenbank herstellen können.
 
-    -   Klicken Sie abschließend auf das Häkchen unten auf der Seite.
+-   Klicken Sie abschließend auf das Häkchen unten auf der Seite.
 
-    Beachten Sie, dass Sie keinen Servernamen angegeben haben. Da der SQL-Datenbankserver weltweit zugänglich sein muss, konfiguriert die SQL-Datenbank die entsprechenden DNS-Einträge, wenn der Server erstellt wird. Dieser generierte Name stellt sicher, dass es keine Namenskonflikte mit anderen DNS-Einträgen gibt. Sie können den Namen Ihres SQL-Datenbankservers nicht ändern.
+Beachten Sie, dass Sie keinen Servernamen angegeben haben. Da der SQL-Datenbankserver weltweit zugänglich sein muss, konfiguriert die SQL-Datenbank die entsprechenden DNS-Einträge, wenn der Server erstellt wird. Dieser generierte Name stellt sicher, dass es keine Namenskonflikte mit anderen DNS-Einträgen gibt. Sie können den Namen Ihres SQL Database-Servers nicht ändern.
 
-    Im nächsten Schritt konfigurieren Sie die Firewall, sodass Verbindungen von Anwendungen, die auf Ihrem Computer ausgeführt werden, Zugriff auf die Datenbanken auf dem SQL-Datenbankserver erhalten.
+Um den Namen des Servers anzuzeigen, der die gerade von Ihnen erstellte **School**-Datenbank hostet, klicken Sie im linken Navigationsbereich auf **SQL-Datenbanken**. Klicken Sie dann in der Listenansicht **SQL-Datenbanken** auf die **School**-Datenbank. Führen Sie auf der Seite **Schnellstart** einen Bildlauf nach unten durch, um den Servernamen anzuzeigen.
 
-Schritt 3: Konfigurieren der Firewall
--------------------------------------
+Im nächsten Schritt konfigurieren Sie die Firewall, sodass Verbindungen von Anwendungen, die auf Ihrem Computer ausgeführt werden, Zugriff auf die Datenbanken auf dem SQL-Datenbankserver erhalten.
+
+## Schritt 3: Konfigurieren der Firewall
 
 Zur Konfiguration der Firewall, damit Verbindungen zulässig sind, geben Sie die Informationen auf der Serverseite ein.
 
-**Hinweis:** Der SQL-Datenbankdienst ist nur mit dem vom TDS-Protokoll verwendeten TCP-Port 1433 verfügbar. Stellen Sie also sicher, dass die Firewall im Netzwerk und auf Ihrem lokalen Computer ausgehende TCP-Kommunikation auf Port 1433 zulässt. Weitere Informationen finden Sie unter [SQL-Datenbank-Firewall](http://social.technet.microsoft.com/wiki/contents/articles/2677.sql-azure-firewall-en-us.aspx).
+**Hinweis:** Der SQL-Datenbankdienst ist nur mit dem vom TDS-Protokoll verwendeten TCP-Port 1433 verfügbar. Stellen Sie also sicher, dass die Firewall im Netzwerk und auf Ihrem lokalen Computer ausgehende TCP-Kommunikation auf Port 1433 zulässt. Weitere Informationen finden Sie unter [SQL-Datenbank-Firewall](http://social.technet.microsoft.com/wiki/contents/articles/2677.sql-azure-firewall-de-de.aspx).
 
 1.  Klicken Sie im linken Navigationsbereich auf **SQL Databases**.
 
-2.  Klicken Sie oben auf der Seite auf **Servers**. Klicken Sie anschließend auf den gerade erstellten Server, sodass rechts davon ein weißer Pfeil angezeigt wird. Klicken Sie auf den Pfeil, um die Serverseite zu öffnen.
+2.  Klicken Sie oben auf der Seite auf **Servers**. Klicken Sie als Nächstes auf den gerade erstellten Server, um die Serverseite zu öffnen.
 
-    ![Image5](./media/sql-database-get-started/5DBPortalDatabasesServers_SQLTut.PNG)
+3.  Klicken Sie auf der Serverseite auf **Konfigurieren**, um die Einstellungen **Zulässige IP-Adressen** zu öffnen, und klicken Sie dann auf den Link **Zu den zulässigen IP-Adressen hinzufügen**. Dadurch wird eine neue Firewallregel erstellt, die Verbindungsanforderungen vom Router oder Proxyserver zulässt, auf den Ihr Gerät lauscht.
 
-3.  Klicken Sie auf der Serverseite auf **Configure**, um die Firewall-Konfigurationseinstellungen zu öffnen, und geben Sie folgende Regel an:
+4.  Sie können zusätzliche Firewallregeln erstellen, indem Sie einen Regelnamen und den Anfangs- und Endwert des IP-Adressbereichs angeben.
 
-    ![Image6](./media/sql-database-get-started/6DBConfigFirewall_SQLTut.png)
+5.  Um Interaktionen zwischen diesem Server und anderen Azure-Diensten zu ermöglichen, legen Sie für die Option **Microsoft Azure Services** den Wert **Ja** fest.
 
-    -   Kopieren Sie die aktuelle Client-IP-Adresse. Dies ist die IP-Adresse, die Ihr Router oder Proxyserver abhört. Die SQL-Datenbank erkennt die IP-Adresse, die von der aktuellen Verbindung verwendet wird, sodass Sie eine Firewall-Regel zur Genehmigung der Verbindungsanforderungen von diesem Gerät erstellen können.
+6.  Klicken Sie unten auf der Seite auf **Speichern**, um die Änderungen zu speichern.
 
-    -   Fügen Sie die IP-Adresse in Bereichsanfang und -ende ein. Wenn später Verbindungsfehler auftreten, die angeben, dass der Bereich zu eng ist, können Sie diese Regel bearbeiten und den Bereich erweitern.
+7.  Nachdem Sie die Regel gespeichert haben, sieht Ihre Seite etwa wie im folgenden Screenshot aus.
 
-    -   Geben Sie einen Namen für die Firewall-Regel ein, z. B. den Namen Ihres Computers oder der Firma.
+    ![Navigationsbereich][Image7]
 
-    -   Klicken Sie auf das Häkchen, um die Regel zu speichern.
+Sie haben jetzt einen SQL-Datenbankserver auf Azure, eine Firewall-Regel, die den Zugriff auf den Server erlaubt, sowie ein Datenbankobjekt und eine Administratoranmeldung. Sie haben jedoch noch keine lauffähige Datenbank, an die Sie Abfragen senden können. Zu diesem Zweck benötigt Ihre Datenbank ein Schema und aktuelle Daten.
 
-    Nachdem Sie die Regel gespeichert haben, sieht Ihre Seite etwa wie im folgenden Screenshot aus.
+Da in diesem Lernprogramm nur die direkt verfügbaren Tools eingesetzt werden, verwenden Sie das Abfragefenster im Verwaltungsportal für die SQL-Datenbank zum Ausführen eines Transact-SQL-Skripts, durch das eine vordefinierte Datenbank erstellt wird.
 
-    ![Image7](./media/sql-database-get-started/7DBConfigFirewallSAVE_SQLTut.png)
+Mit zunehmenden Fertigkeiten können Sie weitere Vorgehensweisen zum Erstellen einer Datenbank erkunden, z. B. programmgesteuert oder mit der Entwurfsoberfläche in SQL Server Data Tools. Falls Sie bereits über eine SQL-Serverdatenbank verfügen, die auf einem lokalen Server ausgeführt wird, können Sie die Datenbank ganz einfach auf den Azure-Server migrieren, den Sie gerade eingerichtet haben. Eine Anleitung finden Sie mithilfe der Links am Ende dieses Lernprogramms.
 
-4.  Klicken Sie unten auf der Seite auf **Save**, um den Schritt abzuschließen. Falls **Save** nicht angezeigt wird, aktualisieren Sie die Browserseite.
-
-Sie haben jetzt einen SQL-Datenbankserver auf Azure, eine Firewall-Regel, die den Zugriff auf den Server erlaubt, sowie ein Datenbankobjekt und eine Administratoranmeldung. Anschließend verwenden Sie das Abfragefenster im SQL-Datenbank-Verwaltungsportal, um mit einem Transact-SQL-Skript eine vordefinierte Datenbank zu erstellen.
-
-Mit zunehmenden Fertigkeiten können Sie weitere Vorgehensweisen zum Erstellen einer Datenbank erkunden, z. B. programmgesteuert oder mit dem Designer in SQL Server Data Tools. Falls Sie bereits über eine SQL-Serverdatenbank verfügen, die auf einem lokalen Server ausgeführt wird, können Sie die Datenbank ganz einfach auf den Azure-Server migrieren, den Sie gerade eingerichtet haben. Eine Anleitung finden Sie mithilfe der Links am Ende dieses Lernprogramms.
-
-Schritt 4: Hinzufügen von Daten und einem Schema mit dem Transact-SQL-Skript
-----------------------------------------------------------------------------
+## Schritt 4: Hinzufügen von Daten und einem Schema mit dem Transact-SQL-Skript
 
 In diesem Schritt führen Sie zwei Skripte aus. Das erste erstellt ein Schema zur Definition von Tabellen, Spalten und Beziehungen. Das zweite Skript fügt die Daten hinzu. Jeder Schritt wird unabhängig in einer separaten Verbindung durchgeführt. Wenn Sie schon einmal Datenbanken in SQL Server erstellt haben, werden Sie den Unterschied feststellen, dass in der SQL-Datenbank die Befehle CREATE und INSERT separat ausgeführt werden müssen. Die SQL-Datenbank macht dies erforderlich, um Angriffe auf Daten während der Übertragung zu minimieren.
 
@@ -121,32 +113,21 @@ In diesem Schritt führen Sie zwei Skripte aus. Das erste erstellt ein Schema zu
 
 1.  Wechseln Sie zur Startseite. Im [Verwaltungsportal](http://manage.windowsazure.com) wird nun die Datenbank **School** in der Objektliste auf der Startseite angezeigt.
 
-    ![Image8](./media/sql-database-get-started/8MainPageHome_SQLTut.png)
+    ![Navigationsbereich][Image8]
 
-2.  Klicken Sie auf **School**, sodass rechts davon ein weißer Pfeil angezeigt wird. Klicken Sie auf den Pfeil, um die Datenbankseite zu öffnen.
+2.  Klicken Sie auf **School**, um sie auszuwählen, und klicken Sie dann unten auf der Seite auf **Verwalten**. Daraufhin wird das SQL-Datenbank-Verwaltungsportal geöffnet. Dieses Portal ist separat vom Azure-Verwaltungsportal. Sie verwenden dieses Portal zum Ausführen von Transact-SQL-Befehlen und -Abfragen.
 
-    ![Image9](./media/sql-database-get-started/9DBListSchool_SQLTut.png)
+3.  Geben Sie den Anmeldenamen und das Kennwort des Administrators ein, um sich bei der **School**-Datenbank anzumelden. Dies ist die Adminstratoranmeldung, die Sie beim Erstellen des Servers angegeben haben.
 
-3.  Klicken Sie unten auf der Seite auf **Manage**. Falls dies nicht angezeigt wird, aktualisieren Sie die Browserseite. Daraufhin wird das SQL-Datenbank-Verwaltungsportal geöffnet. Dieses Portal ist separat vom Azure-Verwaltungsportal. Sie verwenden dieses Portal zum Ausführen von Transact-SQL-Befehlen und -Abfragen.
+4.  Klicken Sie im Verwaltungsportal für die SQL-Datenbank im Menüband auf **Neue Abfrage**. Daraufhin wird im Arbeitsbereich ein leeres Abfragefenster geöffnet. Im nächsten Schritt verwenden Sie dieses Fenster, um eine Reihe vordefinierter Skripte zu kopieren, welche die leere Datenbank mit einer Struktur und Daten versehen.
 
-    ![Image10](./media/sql-database-get-started/10DBPortalManageButton_SQLTut.png)
-
-4.  Geben Sie den Anmeldenamen und das Kennwort des Administrators ein. Dies ist die Administratoranmeldung, die Sie beim Erstellen des Servers angegeben haben.
-
-    ![Image11](./media/sql-database-get-started/11ManageDatabaseLogin_SQLTut.png)
-
-5.  Klicken Sie im Verwaltungsportal für die SQL-Datenbank auf **New Query**. Daraufhin wird im Arbeitsbereich ein neues Abfragefenster geöffnet. Im nächsten Schritt verwenden Sie dieses Fenster, um eine Reihe vordefinierter Skripte zu kopieren, welche die leere Datenbank mit einer Struktur und Daten versehen.
-
-    ![Image12](./media/sql-database-get-started/12DBPortalNewQuery_SQLTut.PNG)
-
-Schritt 5: Erstellen des Schemas
---------------------------------
+## Schritt 5: Erstellen des Schemas
 
 In diesem Schritt erstellen Sie das Schema mit dem folgenden Skript. Das Skript überprüft zuerst, ob eine Tabelle mit demselben Namen vorhanden ist, um sicherzustellen, dass es keine Namenskonflikte gibt, und erstellt dann die Tabelle mit der Anweisung [CREATE TABLE](http://msdn.microsoft.com/de-de/library/windowsazure/ee336258.aspx). Anschließend verwendet das Skript die Anweisung [ALTER TABLE](http://msdn.microsoft.com/de-de/library/windowsazure/ee336286.aspx), um den Primärschlüssel und die Tabellenbeziehungen anzugeben.
 
 Kopieren Sie das Skript, und fügen Sie es in das Abfragefenster ein. Klicken Sie oben im Fenster auf **Run**, um das Skript auszuführen.
 
-``` {data-morhtml="true"}
+<div style="width:auto; height:600px; overflow:auto"><pre>
     -- Create the Department table.
     IF NOT EXISTS (SELECT * FROM sys.objects 
         WHERE object_id = OBJECT_ID(N'[dbo].[Department]') 
@@ -382,14 +363,13 @@ Kopieren Sie das Skript, und fügen Sie es in das Abfragefenster ein. Klicken Si
     ALTER TABLE [dbo].[OfficeAssignment] CHECK 
      CONSTRAINT [FK_OfficeAssignment_Person];
     GO
-```
+</pre></div>
 
-Schritt 6: Einfügen von Daten
------------------------------
+## Schritt 6: Einfügen von Daten
 
 Öffnen Sie ein neues Abfragefenster, und fügen Sie das folgende Skript ein. Führen Sie das Skript zum Einfügen von Daten aus. Dieses Skript verwendet die Anweisung [INSERT](http://msdn.microsoft.com/de-de/library/windowsazure/ee336284.aspx), um Werte in jede Spalte einzufügen.
 
-``` {data-morhtml="true"}
+<div style="width:auto; height:600px; overflow:auto"><pre>
     -- Insert data into the Person table.
     SET IDENTITY_INSERT dbo.Person ON;
     GO
@@ -464,185 +444,10 @@ Schritt 6: Einfügen von Daten
     GO
     SET IDENTITY_INSERT dbo.Person OFF;
     GO
-    -- Insert data into the Department table.
-    INSERT INTO dbo.Department (DepartmentID, [Name], Budget, StartDate, Administrator)
-    VALUES (1, 'Engineering', 350000.00, '2007-09-01', 2);
-    INSERT INTO dbo.Department (DepartmentID, [Name], Budget, StartDate, Administrator)
-    VALUES (2, 'English', 120000.00, '2007-09-01', 6);
-    INSERT INTO dbo.Department (DepartmentID, [Name], Budget, StartDate, Administrator)
-    VALUES (4, 'Economics', 200000.00, '2007-09-01', 4);
-    INSERT INTO dbo.Department (DepartmentID, [Name], Budget, StartDate, Administrator)
-    VALUES (7, 'Mathematics', 250000.00, '2007-09-01', 3);
-    GO
-    -- Insert data into the Course table.
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (1050, 'Chemistry', 4, 1);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (1061, 'Physics', 4, 1);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (1045, 'Calculus', 4, 7);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (2030, 'Poetry', 2, 2);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (2021, 'Composition', 3, 2);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (2042, 'Literature', 4, 2);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (4022, 'Microeconomics', 3, 4);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (4041, 'Macroeconomics', 3, 4);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (4061, 'Quantitative', 2, 4);
-    INSERT INTO dbo.Course (CourseID, Title, Credits, DepartmentID)
-    VALUES (3141, 'Trigonometry', 4, 7);
-    GO
-    -- Insert data into the OnlineCourse table.
-    INSERT INTO dbo.OnlineCourse (CourseID, URL)
-    VALUES (2030, 'http://www.fineartschool.net/Poetry');
-    INSERT INTO dbo.OnlineCourse (CourseID, URL)
-    VALUES (2021, 'http://www.fineartschool.net/Composition');
-    INSERT INTO dbo.OnlineCourse (CourseID, URL)
-    VALUES (4041, 'http://www.fineartschool.net/Macroeconomics');
-    INSERT INTO dbo.OnlineCourse (CourseID, URL)
-    VALUES (3141, 'http://www.fineartschool.net/Trigonometry');
-    --Insert data into OnsiteCourse table.
-    INSERT INTO dbo.OnsiteCourse (CourseID, Location, Days, [Time])
-    VALUES (1050, '123 Smith', 'MTWH', '11:30');
-    INSERT INTO dbo.OnsiteCourse (CourseID, Location, Days, [Time])
-    VALUES (1061, '234 Smith', 'TWHF', '13:15');
-    INSERT INTO dbo.OnsiteCourse (CourseID, Location, Days, [Time])
-    VALUES (1045, '121 Smith','MWHF', '15:30');
-    INSERT INTO dbo.OnsiteCourse (CourseID, Location, Days, [Time])
-    VALUES (4061, '22 Williams', 'TH', '11:15');
-    INSERT INTO dbo.OnsiteCourse (CourseID, Location, Days, [Time])
-    VALUES (2042, '225 Adams', 'MTWH', '11:00');
-    INSERT INTO dbo.OnsiteCourse (CourseID, Location, Days, [Time])
-    VALUES (4022, '23 Williams', 'MWF', '9:00');
-    -- Insert data into the CourseInstructor table.
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (1050, 1);
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (1061, 31);
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (1045, 5);
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (2030, 4);
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (2021, 27);
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (2042, 25);
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (4022, 18);
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (4041, 32);
-    INSERT INTO dbo.CourseInstructor(CourseID, PersonID)
-    VALUES (4061, 34);
-    GO
-    --Insert data into the OfficeAssignment table.
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (1, '17 Smith');
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (4, '29 Adams');
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (5, '37 Williams');
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (18, '143 Smith');
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (25, '57 Adams');
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (27, '271 Williams');
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (31, '131 Smith');
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (32, '203 Williams');
-    INSERT INTO dbo.OfficeAssignment(InstructorID, Location)
-    VALUES (34, '213 Smith');
-    -- Insert data into the StudentGrade table.
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2021, 2, 4);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2030, 2, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2021, 3, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2030, 3, 4);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2021, 6, 2,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2042, 6, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2021, 7, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2042, 7, 4);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2021, 8, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (2042, 8, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4041, 9, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4041, 10, null);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4041, 11, 2,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4041, 12, null);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4061, 12, null);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4022, 14, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4022, 13, 4);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4061, 13, 4);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4041, 14, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4022, 15, 2,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4022, 16, 2);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4022, 17, null);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4022, 19, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4061, 20, 4);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4061, 21, 2);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4022, 22, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4041, 22, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4061, 22, 2,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (4022, 23, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1045, 23, 1,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1061, 24, 4);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1061, 25, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1050, 26, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1061, 26, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1061, 27, 3);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1045, 28, 2,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1050, 28, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1061, 29, 4);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1050, 30, 3,5);
-    INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-    VALUES (1061, 30, 4);
-    GO
-```
+    
+</pre></div>
 
-Schritt 7: Abfragen von Beispiel- und Systemdaten im Verwaltungsportal für die SQL-Datenbank
---------------------------------------------------------------------------------------------
+## Schritt 7: Abfragen von Beispiel- und Systemdaten im Verwaltungsportal für die SQL-Datenbank
 
 Um Ihre Arbeit zu überprüfen, führen Sie eine Abfrage aus, welche die soeben eingegebenen Daten zurückgibt. Sie können auch integrierte gespeicherte Prozeduren und Datenverwaltungsansichten ausführen, die Informationen zu den auf dem SQL-Datenbankserver vorhandenen Datenbanken liefern.
 
@@ -650,29 +455,11 @@ Um Ihre Arbeit zu überprüfen, führen Sie eine Abfrage aus, welche die soeben 
 
 Um einige der soeben hinzugefügten Daten abzurufen, kopieren Sie das folgende Transact-SQL-Skript in ein neues Abfragefenster und führen es aus.
 
-``` {data-morhtml="true"}
-    SELECT
-        Course.Title as "Course Title"
-        ,Department.Name as "Department"
-        ,Person.LastName as "Instructor"
-        ,OnsiteCourse.Location as "Location"
-        ,OnsiteCourse.Days as "Days"
-        ,OnsiteCourse.Time as "Time"
-    FROM
-     Course
-     INNER JOIN Department
-      ON Course.DepartmentID = Department.DepartmentID
-     INNER JOIN CourseInstructor
-       ON Course.CourseID = CourseInstructor.CourseID
-     INNER JOIN Person
-       ON CourseInstructor.PersonID = Person.PersonID
-     INNER JOIN OnsiteCourse
-        ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
-```
+<div style="width:auto; height:auto; overflow:auto"><pre>
+    SELECT * From Person
+</pre></div>
 
-Sie sollten etwa folgenden Ergebnissatz sehen:
-
-![Image13](./media/sql-database-get-started/13DBQueryResults_SQLTut.PNG)
+Sie sollten ein Resultset mit 34 Zeilen aus der Tabelle "person" sehen, einschließlich PersonID, LastName, FirstName, HireDate und EnrollmentDate.
 
 #### Abfragen von Systemdaten
 
@@ -692,38 +479,36 @@ Führen Sie diese gespeicherte Prozedur aus, um eine Liste aller Objekte in der 
 
 Schließen Sie noch nicht die Portalverbindung zur Datenbank **School**. Sie werden sie in einigen Minuten erneut brauchen.
 
-Schritt 8: Erstellen einer Datenbankanmeldung und Zuweisen von Berechtigungen
------------------------------------------------------------------------------
+## Schritt 8: Erstellen einer Datenbankanmeldung und Zuweisen von Berechtigungen
 
-In der SQL-Datenbank können Sie mit Transact-SQL Anmeldedaten erstellen und Berechtigungen zuweisen. In dieser Lektion führen Sie drei Vorgänge mit Transact-SQL aus: Erstellen einer SQL Server-Authentifizierungsanmeldung, Erstellen eines Datenbankbenutzers und Zuweisen von Berechtigungen per Rollenmitgliedschaft.
+In der SQL-Datenbank können Sie mit Transact-SQL Anmeldedaten erstellen und Berechtigungen zuweisen. In dieser Lektion führen Sie drei Vorgänge mit Transact-SQL aus:
+
+1.  Erstellen eines Anmeldenamens für die SQL Server-Authentifizierung
+2.  Erstellen eines Datenbankbenutzers
+3.  Erteilen von Berechtigungen über eine Rollenmitgliedschaft
 
 Für die Serververbindungen wird eine SQL Server-Authentifizierungsanmeldung verwendet. Alle Benutzer, die auf eine Datenbank auf dem SQL-Datenbankserver zugreifen, müssen dazu den SQL Server-Authentifizierungsanmeldenamen und das Kennwort angeben.
 
 Um eine Anmeldung zu erstellen, stellen Sie zuerst eine Verbindung zur **master**-Datenbank her.
 
-#### Erstellen einer SQL Server-Authentifizierungsanmeldung
+#### Erstellen eines Anmeldenamens für die SQL Server-Authentifizierung
 
-1.  Wählen Sie im [Verwaltungsportal](http://manage.windowsazure.com) **SQL Databases** aus, klicken Sie auf **Servers**, wählen Sie den gewünschten Server aus, und klicken Sie dann auf den weißen Pfeil, um die Serverseite zu öffnen.
-
-    ![Image5](./media/sql-database-get-started/5DBPortalDatabasesServers_SQLTut.PNG)
+1.  Wählen Sie im [Verwaltungsportal](http://manage.windowsazure.com) **SQL-Datenbanken** aus, klicken Sie auf **Server**, wählen Sie den Server aus, und klicken Sie dann auf den weißen Pfeil, um die
+    Serverseite zu öffnen.
 
 2.  Klicken Sie auf der Schnellstartseite auf **Manage Server**, um eine neue Verbindung zum Verwaltungsportal für die SQL-Datenbank zu öffnen.
 
-3.  Geben Sie den Anmeldenamen und das Kennwort des Administrators ein. Dies ist die Adminstratoranmeldung, die Sie beim Erstellen des Servers angegeben haben.
+3.  Geben Sie als Datenbank, mit der eine Verbindung hergestellt werden soll, **master** an, und melden Sie sich mit Ihrem Benutzernamen und Kennwort an. Dies ist die Adminstratoranmeldung, die Sie beim Erstellen des Servers angegeben haben.
 
-    ![Image20](./media/sql-database-get-started/11ManageDatabaseLogin_SQLTut.png)
-
-4.  Das SQL-Datenbank-Verwaltungsportal wird in einem neuen Browserfenster geöffnet. Klicken Sie oben auf **Select a Database** und dann auf **master**.
-
-    ![Image14](./media/sql-database-get-started/14DBPortalConnectMaster_SQLTut.PNG)
+4.  Das SQL-Datenbank-Verwaltungsportal wird in einem neuen Browserfenster geöffnet. Sie werden mit **master** verbunden.
 
 5.  Falls folgender Fehler auf der Seite angezeigt wird, ignorieren Sie ihn. Klicken Sie auf **New Query**, um ein Abfragefenster zu öffnen, in dem Sie Transact-SQL-Befehle für die **master**-Datenbank ausführen können.
 
-    ![Image15](./media/sql-database-get-started/15DBPortalConnectMasterErr_SQLTut.PNG)
+    ![Navigationsbereich][Image15]
 
 6.  Kopieren Sie den folgenden Befehl, und fügen Sie ihn in das Abfragefenster ein.
 
-         CREATE LOGIN SQLDBLogin WITH password='Password1';
+        CREATE LOGIN SQLDBLogin WITH password='Password1';
 
 7.  Führen Sie den Befehl aus, um den neuen SQL Server-Anmeldenamen "SQLDBLogin" zu erstellen.
 
@@ -735,74 +520,55 @@ Nachdem Sie eine SQL Server-Authentifizierungsanmeldung erstellt haben, weisen S
 
     Auf der SQL-Datenbank-Verwaltungsportalseite wird der Datenbankname **School** in der oberen linken Ecke angezeigt.
 
-    ![Image12](./media/sql-database-get-started/12DBPortalNewQuery_SQLTut.PNG)
+    ![Navigationsbereich][Image12]
 
 2.  Klicken Sie auf **New Query**, um ein neues Abfragefenster zu öffnen und die folgende Anweisung hineinzukopieren:
 
-         CREATE USER SQLDBUser FROM LOGIN SQLDBLogin;
+        CREATE USER SQLDBUser FROM LOGIN SQLDBLogin;
 
 3.  Führen Sie das Skript aus. Dieses Skript erstellt einen neuen Datenbankbenutzer basierend auf dem Anmeldenamen.
 
-    Anschließend weisen Sie Berechtigungen für die Rolle "db\_datareader" zu. Datenbankbenutzer, die dieser Rolle zugewiesen werden, können Daten aus allen Benutzertabellen in der Datenbank lesen.
+   Anschließend weisen Sie Berechtigungen für die Rolle "db\_datareader" zu. Datenbankbenutzer, die dieser Rolle zugewiesen werden, können Daten aus allen Benutzertabellen in der Datenbank lesen.
 
-4.  Öffnen Sie ein neues Abfragefenster, und führen Sie die nächste Anweisung aus. Diese Anweisung führt eine integrierte gespeicherte Prozedur aus, die dem soeben erstellten neuen Benutzer die Rolle "db\_datareader" zuweist.
+1.  Öffnen Sie ein neues Abfragefenster, und führen Sie die nächste Anweisung aus. Diese Anweisung führt eine integrierte gespeicherte Prozedur aus, die dem soeben erstellten neuen Benutzer die Rolle "db\_datareader" zuweist.
 
-         EXEC sp_addrolemember 'db_datareader', 'SQLDBUser';
+        EXEC sp_addrolemember 'db_datareader', 'SQLDBUser';
 
-    Sie haben nun eine neue SQL Server-Authentifizierungsanmeldung mit Leseberechtigung für die Datenbank **School**. Erstellen Sie anhand dieser Schritte weitere SQL Server-Authentifizierungsanmeldungen, um verschiedene Zugriffsmöglichkeiten auf die Daten zuzulassen.
+Sie haben nun eine neue SQL Server-Authentifizierungsanmeldung mit Leseberechtigung für die Datenbank **School**. Erstellen Sie anhand dieser Schritte weitere SQL Server-Authentifizierungsanmeldungen, um verschiedene Zugriffsmöglichkeiten auf die Daten zuzulassen.
 
-Schritt 9: Herstellen einer Verbindung von anderen Anwendungen
---------------------------------------------------------------
+## Schritt 9: Herstellen einer Verbindung von anderen Anwendungen
 
 Nachdem Sie nun eine funktionierende Datenbank haben, können Sie Verbindungen von einer Excel-Arbeitsmappe herstellen.
 
 #### Verbindungen von Excel
 
-Falls Excel 2010 auf Ihrem Computer installiert ist, können Sie die folgenden Schritte für eine Verbindung mit der Beispieldatenbank verwenden.
+Falls Microsoft Excel auf Ihrem Computer installiert ist, können Sie die folgenden Schritte für eine Verbindung mit der Beispieldatenbank verwenden.
 
 1.  Klicken Sie in Excel auf der Registerkarte "Daten" auf **Aus anderen Quellen** und anschließend auf **Von SQL Server**.
 
 2.  Geben Sie im Datenverbindungs-Assistent den vollqualifizierten Domänennamen des SQL-Datenbankservers an, gefolgt von einem SQL Server-Authentifizierungsanmeldenamen mit Zugriffsberechtigung für die Datenbank.
 
-Der Servername befindet sich auf der Seite **Database** unter **Quick Links**. Der Servername kann auch im Azure-Verwaltungsportal in der SQL-Datenbank auf der Serverseite im Dashboard unter **Manage URL** abgerufen werden.
+   Der Servername befindet sich im Azure-Verwaltungsportal in der SQL-Datenbank auf der Serverseite im Dashboard unter **URL verwalten**. Der Servername besteht aus mehreren Buchstaben und Zahlen, gefolgt von ".database.windows.net". Geben Sie diesen Namen im Datenverbindungs-Assistent an. Schließen Sie nicht das Präfix http:// oder https:// in den Namen ein.
 
-Der Servername besteht aus mehreren Buchstaben und Zahlen, gefolgt von ".database.windows.net". Geben Sie diesen Namen im Datenverbindungs-Assistent an. Schließen Sie nicht das Präfix "http://" oder "https://" in den Namen ein.
+   Geben Sie eine SQL Server-Authentifizierungsanmeldung ein. Zu Testzwecken können Sie die Adminstratoranmeldung verwenden, die Sie beim Einrichten des Servers erstellt haben. Verwenden Sie für den regulären Datenzugriff eine Datenbank-Benutzeranmeldung ähnlich wie die soeben erstellte.
 
-Geben Sie eine SQL Server-Authentifizierungsanmeldung ein. Zu Testzwecken können Sie die Adminstratoranmeldung verwenden, die Sie beim Einrichten des Servers erstellt haben. Verwenden Sie für den regulären Datenzugriff eine Datenbank-Benutzeranmeldung ähnlich wie die soeben erstellte.
+![Navigationsbereich][Image16]
 
-    ![Image16](./media/sql-database-get-started/16ExcelConnect_SQLTut.png)
-
-1.  Wählen Sie auf der nächsten Seite die Datenbank **School** und anschließend **Course** aus. Klicken Sie auf **Finish**.
-
-    ![Image17](./media/sql-database-get-started/17ExcelSelect_SQLTut.png)
+1.  Wählen Sie auf der nächsten Seite die **School**-Datenbank und anschließend **Person** aus. Klicken Sie auf **Fertig stellen**. Wenn Ihre Anmeldeinformationen angefordert werden, geben Sie sie ein, und klicken Sie auf **OK**.
 
 2.  Das Dialogfeld "Import Data" wird angezeigt, in dem Sie angeben, wo und wie Ihre Daten importiert werden sollen. Lassen Sie die Standardoptionen ausgewählt, und klicken Sie auf **OK**.
 
-    ![Image19](./media/sql-database-get-started/19ExcelImport_SQLTut.png)
+    ![Navigationsbereich][Image19]
 
-3.  Auf dem Arbeitsblatt sollte in etwa folgende Tabelle angezeigt werden:
+3.  Im Arbeitsblatt sollte eine Tabelle mit einem Resultset angezeigt werden, das 34 Zeilen aus der Tabelle "person" enthält, einschließlich PersonID, LastName, FirstName, HireDate und EnrollmentDate, wie die Abfrageergebnisse aus Schritt 7
 
-    ![Image18](./media/sql-database-get-started/18ExcelTable_SQLTut.PNG)
+Wenn Sie nur Excel verwenden, können Sie jeweils nur eine Tabelle importieren. Eine bessere Methode ist das PowerPivot für Excel-Add-In, mit dem Sie mehrere Tabellen als einen Datensatz importieren und bearbeiten können. Die Arbeit mit PowerPivot geht über dieses Lernprogramm hinaus. Weitere Informationen dazu erhalten Sie in diesem Thema zu [PowerPivot für Excel](http://go.microsoft.com/fwlink/?LinkId=396969).
 
-Wenn Sie nur Excel verwenden, können Sie jeweils nur eine Tabelle importieren. Eine bessere Methode ist das PowerPivot für Excel-Add-In, mit dem Sie mehrere Tabellen als einen Datensatz importieren und bearbeiten können. Die Arbeit mit PowerPivot geht über dieses Lernprogramm hinaus. Ausführliche Informationen dazu erhalten Sie auf der [Microsoft-Website](http://www.microsoft.com/en-us/bi/powerpivot.aspx).
-
-Schritt 10: Konfigurieren der SQL-Datensynchronisierung
--------------------------------------------------------
-
-#### SQL-Datensynchronisierung
-
-Nachdem Sie nun die SQL-Datenbankinstanzen erstellt haben, können Sie SQL-Datensynchronisierung verwenden, um Ihre wertvollen Daten an mehreren Standorten zu synchronisieren.
-
-SQL-Datensynchronisierung ist eine Funktion der SQL-Datenbank, mit der Sie ausgewählte Daten entweder nach Plan oder bei Bedarf synchronisieren können, ohne zusätzlichen Code oder Skripte schreiben zu müssen. Die SQL-Datensynchronisierung unterstützt die Synchronisierung zwischen SQL-Datenbankinstanzen oder hybriden Topologien, die sowohl SQL-Datenbanken als auch Instanzen von SQL Server unterstützen.
-
-Weitere Informationen zur SQL-Datensynchronisierung finden Sie unter [Vorschau zur SQL-Datensynchronisierung](http://go.microsoft.com/fwlink/?LinkId=274959).
-
-Nächste Schritte
-----------------
+## Nächste Schritte
 
 Nachdem Sie nun mit der SQL-Datenbank und den Verwaltungsportalen vertraut sind, können Sie andere Werkzeuge und Techniken ausprobieren, die von den SQL Server-Datenbankadministratoren verwendet werden.
 
-Zur aktiven Verwaltung der neuen Datenbank wird die Installation von SQL Server Management Studio empfohlen. Management Studio ist das primäre Datenbank-Administrationstool zur Verwaltung von SQL-Serverdatenbanken, einschließlich auf Azure. Mithilfe von Management Studio können Sie Abfragen zur künftigen Wiederverwendung speichern, neue Tabellen und gespeicherte Prozeduren hinzufügen und Ihre Transact-SQL-Fertigkeiten in einer funktionsreichen Skriptumgebung mit Syntaxprüfung, IntelliSense und Vorlagen ausbauen. Befolgen Sie dazu die Anweisungen unter [Verwalten von SQL-Datenbanken mit SQL Server Management Studio](http://www.windowsazure.com/de-de/develop/net/common-tasks/sql-azure-management/).
+Zur aktiven Verwaltung der neuen Datenbank wird die Installation von SQL Server Management Studio empfohlen. Management Studio ist das primäre Datenbank-Administrationstool zur Verwaltung von SQL-Serverdatenbanken, einschließlich auf Azure. Mithilfe von Management Studio können Sie Abfragen zur künftigen Wiederverwendung speichern, neue Tabellen und gespeicherte Prozeduren hinzufügen und Ihre Transact-SQL-Fertigkeiten in einer funktionsreichen Skriptumgebung mit Syntaxprüfung, IntelliSense und Vorlagen ausbauen. Befolgen Sie dazu die Anweisungen unter [Verwalten von SQL-Datenbanken mit SQL Server Management Studio](http://www.azure.microsoft.com/de-de/documentation/articles/sql-database-manage-azure-ssms/).
 
 Kenntnisse der Transact-SQL-Abfrage- und Datendefinitionssprache sind für Datenbankadministratoren unumgänglich. Wenn Sie noch nicht mit Transact-SQL gearbeitet haben, beginnen Sie mit dem [Lernprogramm: Schreiben von Transact-SQL-Anweisungen](http://msdn.microsoft.com/de-de/library/ms365303.aspx), um sich einige grundlegende Kenntnisse anzueignen.
 
@@ -810,4 +576,31 @@ Es gibt noch andere Methoden zum Verschieben einer lokalen Datenbank zur SQL-Dat
 
 -   [Migration von Datenbanken zur SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/ee730904.aspx)
 -   [Kopieren von Datenbanken in die SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/ff951624.aspx)
+-   [Bereitstellen einer SQL Server-Datenbank für einen virtuellen Azure-Computer](http://msdn.microsoft.com/de-de/library/dn195938(v=sql.120).aspx)
 
+
+
+
+
+
+
+[Image1]: ./media/sql-database-get-started/1NavPaneDBSelected_SQLTut.png
+[Image2]: ./media/sql-database-get-started/2MainPageCustomCreateDB_SQLTut.png
+[Image3]: ./media/sql-database-get-started/3DatabaseSettings_SQLTut.PNG
+[Image4]: ./media/sql-database-get-started/4ServerSettings_SQLTut.PNG
+[Image5]: ./media/sql-database-get-started/5DBPortalDatabasesServers_SQLTut.PNG
+[Image6]: ./media/sql-database-get-started/6DBConfigFirewall_SQLTut.PNG
+[Image7]: ./media/sql-database-get-started/7DBConfigFirewallSAVE_SQLTut.png
+[Image8]: ./media/sql-database-get-started/20MainPageHome_SQLTut.PNG
+[Image9]: ./media/sql-database-get-started/9dblistschool_SQLTut.PNG
+[Image10]: ./media/sql-database-get-started/10dbportalmanagebutton_SQLTut.PNG
+[Image11]: ./media/sql-database-get-started/11ManageDatabaseLogin_SQLTut.PNG
+[Image12]: ./media/sql-database-get-started/12DBPortalNewQuery_SQLTut.PNG
+[Image13]: ./media/sql-database-get-started/13DBQueryResults_SQLTut.PNG
+[Image14]: ./media/sql-database-get-started/14DBPortalConnectMaster_SQLTut.PNG
+[Image15]: ./media/sql-database-get-started/15DBPortalConnectMasterErr_SQLTut.PNG
+[Image16]: ./media/sql-database-get-started/16ExcelConnect_SQLTut.png
+[Image17]: ./media/sql-database-get-started/17ExcelSelect_SQLTut.PNG
+[Image18]: ./media/sql-database-get-started/18ExcelTable_SQLTut.PNG
+[Image19]: ./media/sql-database-get-started/19ExcelImport_SQLTut.png
+[Image20]: ./media/sql-database-get-started/11ManageDatabaseLogin_SQLTut.PNG

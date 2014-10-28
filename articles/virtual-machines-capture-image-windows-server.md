@@ -1,40 +1,68 @@
 <properties linkid="manage-windows-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="Capture an image of a virtual machine running Windows Server" metaKeywords="Azure capture image vm, capturing vm" description="Learn how to capture an image of an Azure virtual machine (VM) running Windows Server 2008 R2. " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Windows Server" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
 
-Aufnehmen eines Image eines virtuellen Windows Server-Computers
-===============================================================
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav"></tags>
 
-Sie können Images aus dem Image-Katalog verwenden, um auf einfache Weise virtuelle Computer zu erstellen. Alternativ können Sie eigene Images erfassen und verwenden, um benutzerdefinierte virtuelle Computer zu erstellen. Ein Image stellt die Datei einer virtuellen Festplatte (.vhd) dar, die als Vorlage zum Erstellen eines virtuellen Computers dient. Ein Image ist eine Vorlage, weil es nicht über die spezifischen Einstellungen eines konfigurierten virtueller Computers verfügt. Beispiele für diese Einstellungen sind Computername und Benutzerkontoeinstellungen. Wenn Sie mehrere virtuelle Computer erstellen möchten, die auf die gleiche Weise eingerichtet sind, können Sie das Image eines konfigurierten virtuellen Computers erfassen und dieses als Vorlage verwenden.
+# Erfassen eines virtuellen Windows-Computers, um ihn als Vorlage zu verwenden
 
-1.  Stellen Sie eine Verbindung mit dem virtuellen Computer her. Eine Beschreibung der dafür erforderlichen Schritte finden Sie unter [Anmeldung auf einem virtuellen Windows Server-Computer](http://www.windowsazure.com/de-de/manage/windows/how-to-guides/log-on-a-windows-vm/).
+Dieser Artikel erläutert, wie Sie einen virtuellen Windows-Computer erfassen, um ihn als Vorlage zum Erstellen anderer virtueller Computer zu verwenden. Diese Vorlage für virtuelle Computer umfasst den Betriebssystemdatenträger und alle an den virtuellen Computer angefügten Datenträger. Da die Vorlage keine Netzwerkkonfiguration enthält, müssen Sie die Konfiguration später vornehmen, wenn Sie die anderen virtuellen Computer erstellen, die auf dieser Vorlage basieren.
 
-2.  Öffnen Sie ein Eingabeaufforderungsfenster als Administrator.
+Nachdem Sie den virtuellen Computer erfasst haben, ist er unter **Eigene Images** verfügbar, wenn Sie einen virtuellen Computer erstellen. Die Imagedatei wird als VHD unter Ihrem Speicherkonto gespeichert. Weitere Informationen zu Images finden Sie unter [Verwalten von Datenträgern und Images][Verwalten von Datenträgern und Images].
 
-3.  Wechseln Sie zum Verzeichnis `%windir%\system32\sysprep`, und führen Sie dann „sysprep.exe“ aus.
+## Voraussetzungen
 
-4.  Das Dialogfeld **Systemvorbereitungstool** wird angezeigt.
+Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer erstellt, das Betriebssystem konfiguriert und beliebige Datenträger angefügt haben. Falls dies noch nicht geschehen ist, finden Sie hier Anweisungen:
 
-    Wählen Sie unter **Systembereinigungsaktion** die Option **Out-of-Box-Experience (OOBE) für System aktivieren**, und stellen Sie sicher, dass **Verallgemeinern** aktiviert ist. Weitere Informationen zur Verwendung von Sysprep finden Sie unter [How to Use Sysprep: An Introduction](http://technet.microsoft.com/en-us/library/bb457073.aspx).
+-   [Erstellen eines benutzerdefinierten virtuellen Computers][Erstellen eines benutzerdefinierten virtuellen Computers]
+-   [Anfügen eines Datenträgers an einen virtuellen Computer][Anfügen eines Datenträgers an einen virtuellen Computer]
 
-5.  Wählen Sie unter **Optionen für Herunterfahren** die Option **Herunterfahren**.
+## Erfassen des virtuellen Computers
 
-6.  Klicken Sie auf **OK**.
+1.  Stellen Sie eine Verbindung mit dem virtuellen Computer her, indem Sie auf der Befehlsleiste auf **Verbinden** klicken. Ausführliche Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird].
 
-7.  Sysprep fährt den virtuellen Computer herunter. Dadurch wird der Status des Computers im [Verwaltungsportal](http://manage.windowsazure.com) in **Angehalten** geändert.
+2.  Öffnen Sie ein Eingabeaufforderungsfenster als ein Administrator.
 
-8.  Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den virtuellen Computer aus, den Sie konfigurieren möchten.
+3.  Wechseln Sie in das Verzeichnis `%windir%\system32\sysprep`, und führen Sie dann "sysprep.exe" aus.
 
-9.  Klicken Sie in der Befehlsleiste auf **Aufnehmen**.
+4.  Das Dialogfeld **Systemvorbereitungstool** wird angezeigt. Gehen Sie wie folgt vor:
 
-    Das Dialogfeld **Ein Image eines virtuellen Computers erstellen** wird angezeigt.
+    -   Wählen Sie unter **Systembereinigungsaktion** die Option **Out-of-Box-Experience (OOBE) für System aktivieren** und stellen Sie sicher, dass **Verallgemeinern** aktiviert ist. Weitere Informationen zur Verwendung von Sysprep finden Sie unter [Verwenden von Sysprep: Einführung][Verwenden von Sysprep: Einführung].
 
-10. Geben Sie unter **Imagename** den Namen für das neue Image ein.
+    -   Wählen Sie unter **Optionen für Herunterfahren** die Option **Herunterfahren**.
 
-11. Bevor Sie ein Windows Server-Image zu Ihren benutzerdefinierten Images hinzufügen, muss es durch Ausführen von Sysprep, wie in den vorherigen Schritten beschrieben, verallgemeinert werden. Klicken Sie auf **Ich habe Sysprep auf dem virtuellen Computer ausgeführt**, um anzugeben, dass Sie dies durchgeführt haben.
+    -   Klicken Sie auf **OK**.
 
-12. Klicken Sie auf das Häkchen, um das Image zu aufzunehmen. Wenn Sie ein Image eines virtuellen Computers aufnehmen, wird der Computer gelöscht.
+    ![Sysprep ausführen][Sysprep ausführen]
+
+5.  Sysprep fährt den virtuellen Computer herunter. Dadurch wird der Status des virtuellen Computers im [Verwaltungsportal][Verwaltungsportal] in **Angehalten** geändert.
+
+6.  Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den virtuellen Computer aus, den Sie konfigurieren möchten.
+
+7.  Klicken Sie in der Befehlsleiste auf **Aufnehmen**.
+
+    ![Virtuellen Computer erfassen][Virtuellen Computer erfassen]
+
+    Das Dialogfeld **Virtuellen Computer erfassen** wird angezeigt.
+
+8.  Geben Sie unter **Imagename** den Namen für das neue Image ein.
+
+9.  Bevor Sie ein Windows Server-Image zu Ihren benutzerdefinierten Images hinzufügen, muss es durch Ausführen von Sysprep, wie in den vorherigen Schritten beschrieben, verallgemeinert werden. Klicken Sie auf **Ich habe Sysprep auf dem virtuellen Computer ausgeführt**, um anzugeben, dass Sie dies durchgeführt haben.
+
+10. Aktivieren Sie das Kontrollkästchen, um das Image zu erfassen. Wenn Sie ein Image eines generalisierten virtuellen Computers erfassen, wird der virtuelle Computer gelöscht.
 
     Das neue Image steht nun unter **Images** zur Verfügung.
 
-    Wenn Sie einen virtuellen Computer mit der Option **Aus Katalog** erstellen, können Sie das Image verwenden, das Sie aufgenommen haben, indem Sie auf der Seite **Image auswählen** auf **Eigene Images** klicken.
+    ![Image-Erfassung erfolgreich][Image-Erfassung erfolgreich]
 
+## Nächste Schritte
 
+Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe der Methode **Aus Katalog** einen benutzerdefinierten virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][Erstellen eines benutzerdefinierten virtuellen Computers].
+
+  [Verwalten von Datenträgern und Images]: http://go.microsoft.com/fwlink/p/?LinkId=397536
+  [Erstellen eines benutzerdefinierten virtuellen Computers]: ../virtual-machines-create-custom/
+  [Anfügen eines Datenträgers an einen virtuellen Computer]: ../storage-windows-attach-disk/
+  [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: http://www.windowsazure.com/de-de/manage/windows/how-to-guides/log-on-a-windows-vm/
+  [Verwenden von Sysprep: Einführung]: http://technet.microsoft.com/de-de/library/bb457073.aspx
+  [Sysprep ausführen]: ./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png
+  [Verwaltungsportal]: http://manage.windowsazure.com
+  [Virtuellen Computer erfassen]: ./media/virtual-machines-capture-image-windows-server/CaptureVM.png
+  [Image-Erfassung erfolgreich]: ./media/virtual-machines-capture-image-windows-server/VMCapturedImageAvailable.png

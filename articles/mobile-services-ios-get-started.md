@@ -1,106 +1,108 @@
-<properties pageTitle="Get Started with Azure Mobile Services for iOS apps" metaKeywords="Azure iOS application, mobile service iOS, getting started Azure iOS" description="Follow this tutorial to get started using Azure Mobile Services for iOS development. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<properties pageTitle="Get Started with Azure Mobile Services for iOS apps" metaKeywords="Azure iOS application, mobile service iOS, getting started Azure iOS" description="Follow this tutorial to get started using Azure Mobile Services for iOS development. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="krisragh" solutions="" manager="" editor="" />
 
-Erste Schritte mit Mobile Services
-==================================
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="hero-article" ms.date="01/01/1900" ms.author="krisragh"></tags>
 
-[Windows Store](/de-de/documentation/articles/mobile-services-windows-store-get-started "Windows Store") [Windows Phone](/de-de/documentation/articles/mobile-services-windows-phone-get-started "Windows Phone") [iOS](/de-de/documentation/articles/mobile-services-ios-get-started "iOS") [Android](/de-de/documentation/articles/mobile-services-android-get-started "Android") [HTML](/de-de/documentation/articles/mobile-services-html-get-started "HTML") [Xamarin.iOS](/de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started "Xamarin.iOS") [Xamarin.Android](/de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started "Xamarin.Android") [Sencha](/de-de/documentation/articles/partner-sencha-mobile-services-get-started/ "Sencha") [PhoneGap](/de-de/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/ "PhoneGap")
+# <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
-[.NET-Backend](/de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started/ ".NET-Backend") | [JavaScript-Backend](/de-de/documentation/articles/mobile-services-ios-get-started/ "JavaScript-Backend")
+[WACOM.INCLUDE [mobile-services-selector-get-started][mobile-services-selector-get-started]]
 
-In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Backend-Dienst zu einer iOS-App hinzufügen können.
+<div class="dev-onpage-video-clear clearfix">
+<div class="dev-onpage-left-content">
+<p>In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Backend-Dienst zu einer iOS-App hinzuf&uuml;gen k&ouml;nnen.</p>
+<p>Wenn Sie lieber ein Video zu diesem Thema ansehen m&ouml;chten, k&ouml;nnen Sie den Clip auf der rechten Seite ausw&auml;hlen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm.</p>
+</div>
 
-Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip auf der rechten Seite auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm.
+<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/iOS-Creating-your-first-app-using-the-Windows-Azure-Mobile-Services-Quickstart" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/devcenter/mobile/videos/get-started-ios-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/iOS-Creating-your-first-app-using-the-Windows-Azure-Mobile-Services-Quickstart" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">09:38:00</span></div>
 
-[Lernprogramm ansehen](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/iOS-Creating-your-first-app-using-the-Windows-Azure-Mobile-Services-Quickstart) [Abspielen des Videos](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/iOS-Creating-your-first-app-using-the-Windows-Azure-Mobile-Services-Quickstart) 9:38
+</div>
 
-In diesem Lernprogramm erstellen Sie sowohl einen neuen mobilen Dienst als auch eine einfache *To-do-List*-App, welche App-Daten in dem neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Zum Erstellen eines mobilen Dienstes, der es Ihnen erlaubt, Ihre serverseitige Geschäftslogik mit Visual Studio in den unterstützten .NET-Sprachen zu schreiben, können Sie sich die [.NET Backend-Version] zu diesem Thema ansehen.
+In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobile Diensts, dessen serverseitige Geschäftslogik Sie in den unterstützen .NET-Sprachen mit Visual Studio schreiben können, finden Sie in der [.NET-Back-End-Version][.NET-Back-End-Version] dieses Themas.
 
-Unten finden Sie einen Screenshot der erstellten App:
+Unten sehen Sie einen Screenshot aus der fertigen App:
 
-![][0]
+![][]
 
 Zum Abschließen dieses Lernprogramms sind XCode 4.5 und iOS 5.0 oder neuere Versionen erforderlich.
 
-**Hinweis**
+<div class="dev-callout"><strong>Hinweis</strong> <p>Sie ben&ouml;tigen ein Azure-Konto, um dieses Lernprogramm auszuf&uuml;hren. Falls Sie kein Konto besitzen, k&ouml;nnen Sie sich f&uuml;r eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen k&ouml;nnen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F" target="_blank">Kostenlose Azure-Testversion</a>.</p></div>
 
-Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie bislang über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F).
+## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Diensts
 
-Erstellen eines neuen mobilen Dienstes
---------------------------------------
+[WACOM.INCLUDE [mobile-services-create-new-service][mobile-services-create-new-service]]
 
-[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
+## <span class="short-header">Erstellen einer neuen App</span>Erstellen einer neuen iOS-App
 
-Erstellen einer neuen AppErstellen einer neuen iOS-App
-------------------------------------------------------
-
-Sobald Sie den mobilen Dienst erstellt haben, können Sie einen leicht nachvollziehbaren Quickstart im Verwaltungsportal durchführen, um entweder eine neue App zu erstellen oder um eine vorhandene App zu modifizieren, damit Sie eine Verbindung zum mobilen Dienst herstellen können.
+Sobald Sie den mobilen Dienst erstellt haben, können Sie einem einfachen Schnellstart im Verwaltungsportal folgen, um eine neue App zu erstellen oder eine vorhandene App für die Verbindung zum mobilen Dienst zu ändern.
 
 In diesem Abschnitt erstellen Sie eine neue iOS-App, die mit dem mobilen Dienst verbunden ist.
 
-1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
+1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 2.  Klicken Sie auf der Registerkarte "Quickstart" auf **iOS** unter der **Auswahlplattform**, und erweitern Sie die Option **Erstellen einer neuen iOS-App**.
 
-	![][6]
+    ![][1]
 
-	Dadurch werden drei einfache Schritte zum Erstellen einer iOS-App angezeigt, die mit dem mobilen Dienst verbunden wird.
+    Dadurch werden drei einfache Schritte zum Erstellen einer iOS-App angezeigt, die mit dem mobilen Dienst verbunden wird.
 
-	![][7]
+    ![][2]
 
-1.  Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Xcode] v4.4 oder eine neuere Version herunter, und installieren Sie diese.
+3.  Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Xcode][Xcode] v4.4 oder eine neuere Version herunter, und installieren Sie diese.
 
-2.  Klicken Sie auf **TodoItems-Tabelle erstellen**, um eine Tabelle zum Speichern der App-Daten zu erstellen.
+4.  Klicken Sie auf **TodoItems-Tabelle erstellen**, um eine Tabelle zum Speichern der App-Daten zu erstellen.
 
-3.  Klicken Sie unter **Ihre App herunterladen und ausführen** auf **Download**.
+5.  Klicken Sie unter **Ihre App herunterladen und ausführen** auf **Download**.
 
-	Dadurch wird das Projekt für die Beispielanwendung der *To-do-List* heruntergeladen, die zusammen mit dem Mobile Services iOS SDK mit dem mobilen Dienst verbunden ist. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
+    Dadurch wird das Projekt für die Beispielanwendung der *To-do-List* heruntergeladen, die zusammen mit dem Mobile Services iOS SDK mit dem mobilen Dienst verbunden ist. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
 
-Ausführen der neuen iOS-App
----------------------------
+## Ausführen der neuen iOS-App
 
-[WACOM.INCLUDE [mobile-services-ios-run-app](../includes/mobile-services-ios-run-app.md)]
+[WACOM.INCLUDE [mobile-services-ios-run-app][mobile-services-ios-run-app]]
 
-1.  Klicken Sie im Verwaltungsportal erneut auf die Registerkarte **Daten** und danach auf die Tabelle **TodoItems**.
+1.  
 
-    ![](./media/mobile-services-ios-get-started/mobile-data-tab.png)
+    Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
 
-    So können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
+    <p>
 
-    ![](./media/mobile-services-ios-get-started/mobile-data-browse.png)
+</p>
+![][3]
 
-## Nachdem Sie
-Quickstart abgeschlossen haben, können Sie nun in den nächsten Schritten erfahren, wie Sie zusätzliche wichtige Aufgaben unter Mobile Services durchführen: 
-* [Erste Schritte mit Daten]
+Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
-Informationen über das Speichern und Abfragen von Daten mit Mobile Services. 
-* [Erste Schritte mit Authentifizierung]
+</p>
+![][4]
 
-Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter. 
-* [Erste Schritte mit Pushbenachrichtigungen]
+## <a name="next-steps"> </a>Nächste Schritte
 
-Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App. 
+Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
 
-<!-- Anchors. -->
-[Erste Schritte mit Mobile Services]:\#getting-started 
-[Erstellen eines neuen mobilen Dienstes]:\#create-new-service 
-[Definieren der mobilen Dienstinstanz]:\#define-mobile-service-instance 
-[Nächste Schritte]:\#next-steps 
+-   [Erste Schritte mit Daten][Erste Schritte mit Daten]
+    Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
-<!-- URLs. -->
-[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-ios 
-[Erste Schritte mit Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-ios 
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-ios 
+-   [Erste Schritte mit der Synchronisierung von Offlinedaten][Erste Schritte mit der Synchronisierung von Offlinedaten]
+    Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-[Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533 
-[Verwaltungsportal]: https://manage.windowsazure.com/ 
-[XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532 
-[.NET-Backend-Version]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started
+-   [Erste Schritte mit der Authentifizierung][Erste Schritte mit der Authentifizierung]
+    Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
 
-<!-- Images. -->
-[0]: ./media/mobile-services-ios-get-started/mobile-quickstart-completed-ios.png
-[6]: ./media/mobile-services-ios-get-started/mobile-portal-quickstart-ios.png
-[7]: ./media/mobile-services-ios-get-started/mobile-quickstart-steps-ios.png
-[8]: ./media/mobile-services-ios-get-started/mobile-xcode-project.png
-[10]: ./media/mobile-services-ios-get-started/mobile-quickstart-startup-ios.png
-[11]: ./media/mobile-services-ios-get-started/mobile-data-tab.png
-[12]: ./media/mobile-services-ios-get-started/mobile-data-browse.png
+-   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
+    Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
+
+<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+
+  [mobile-services-selector-get-started]: ../includes/mobile-services-selector-get-started.md
+  [Lernprogramm ansehen]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/iOS-Creating-your-first-app-using-the-Windows-Azure-Mobile-Services-Quickstart
+  [.NET-Back-End-Version]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started
+  []: ./media/mobile-services-ios-get-started/mobile-quickstart-completed-ios.png
+  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F
+  [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
+  [1]: ./media/mobile-services-ios-get-started/mobile-portal-quickstart-ios.png
+  [2]: ./media/mobile-services-ios-get-started/mobile-quickstart-steps-ios.png
+  [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
+  [mobile-services-ios-run-app]: ../includes/mobile-services-ios-run-app.md
+  [3]: ./media/mobile-services-ios-get-started/mobile-data-tab.png
+  [4]: ./media/mobile-services-ios-get-started/mobile-data-browse.png
+  [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-ios-get-started-data/
+  [Erste Schritte mit der Synchronisierung von Offlinedaten]: /de-de/documentation/articles/mobile-services-ios-get-started-offline-data
+  [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-ios-get-started-users/
+  [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/
