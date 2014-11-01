@@ -1,92 +1,69 @@
-<properties title="Getting Started with Active Directory Authentication" pageTitle="" metaKeywords="Azure, Getting Started, Active Directory" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
+<properties title="Erste Schritte mit Active Directory-Authentifizierung" pageTitle="" metaKeywords="Azure, Getting Started, Active Directory" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
 
 <tags ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/8/2014" ms.author="ghogen, kempb"></tags>
 
-### Was ist passiert?
+> [AZURE.SELECTOR]
+>
+> -   [Erste Schritte][Erste Schritte]
+> -   [Was ist passiert?][Was ist passiert?]
 
-Ihrem Projekt wurden Verweise hinzugefügt.
+## Erste Schritte mit Azure Active Directory (.NET-Projekte)
 
-###### NuGet-Paketverweise
+##### Erfordern von Authentifizierung für den Zugriff auf Controller
 
-Microsoft.IdentityModel.Protocol.Extensions, Microsoft.Owin, Microsoft.Owin.Host.SystemWeb, Microsoft.Owin.Security, Microsoft.Owin.Security.Cookies, Microsoft.Owin.Security.OpenIdConnect, Owin, System.IdentityModel.Tokens.Jwt
+Alle Controller in Ihrem Projekt wurden mit dem Attribut **Authorize** versehen. Dieses Attribut erfordert, dass der Benutzer vor dem Zugriff auf diese Controller authentifiziert werden muss. Wenn Sie anonymen Zugriff auf diesen Controller erlauben möchten, entfernen Sie dieses Attribut vom Controller. Wenn Sie die Berechtigungen präziser festlegen möchten, wenden Sie das Attribut auf jede Methode an, die Autorisierung erfordert, anstatt es auf die Controllerklasse anzuwenden.
 
-###### .NET-Verweise
+##### Hinzufügen von SignIn-/SignOut-Steuerelementen
 
-Microsoft.IdentityModel.Protocol.Extensions, Microsoft.Owin, Microsoft.Owin.Host.SystemWeb, Microsoft.Owin.Security, Microsoft.Owin.Security.Cookies, Microsoft.Owin.Security.OpenIdConnect, Owin, System, System.Data, System.Drawing, System.IdentityModel, System.IdentityModel.Tokens.Jwt, System.Runtime.Serialization
+Wenn Sie Ihrer Ansicht SignIn-/SignOut-Steuerelemente hinzufügen möchten, können Sie die Teilansicht **\_LoginPartial.cshtml** zum Hinzufügen der Funktion zu einer Ihrer Ansichten verwenden. Das folgende Beispiel zeigt die Funktion, die der Standardansicht **\_Layout.cshtml** hinzugefügt wurde. (Beachten Sie das letzte Element in **div** mit der Klasse **navbar-collapse**):
 
-###### Ihrem Projekt wurden Codedateien hinzugefügt
+<pre class="prettyprint">
+    &lt;!DOCTYPE html&gt; 
+     &lt;html&gt; 
+     &lt;head&gt; 
+         &lt;meta charset=&quot;utf-8&quot; /&gt; 
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; 
+        &lt;title&gt;@ViewBag.Title - My ASP.NET Application&lt;/title&gt; 
+        @Styles.Render(&quot;~/Content/css&quot;) 
+        @Scripts.Render(&quot;~/bundles/modernizr&quot;) 
+    &lt;/head&gt; 
+    &lt;body&gt; 
+        &lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt; 
+            &lt;div class=&quot;container&quot;&gt; 
+                &lt;div class=&quot;navbar-header&quot;&gt; 
+                    &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt; 
+                        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
+                        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
+                        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
+                    &lt;/button&gt; 
+                    @Html.ActionLink(&quot;Application name&quot;, &quot;Index&quot;, &quot;Home&quot;, new { area = &quot;&quot; }, new { @class = &quot;navbar-brand&quot; }) 
+                &lt;/div&gt; 
+                &lt;div class=&quot;navbar-collapse collapse&quot;&gt; 
+                    &lt;ul class=&quot;nav navbar-nav&quot;&gt; 
+                        &lt;li&gt;@Html.ActionLink(&quot;Home&quot;, &quot;Index&quot;, &quot;Home&quot;)&lt;/li&gt; 
+                        &lt;li&gt;@Html.ActionLink(&quot;About&quot;, &quot;About&quot;, &quot;Home&quot;)&lt;/li&gt; 
+                        &lt;li&gt;@Html.ActionLink(&quot;Contact&quot;, &quot;Contact&quot;, &quot;Home&quot;)&lt;/li&gt; 
+                    &lt;/ul&gt; 
+                    @Html.Partial(&quot;_LoginPartial&quot;) 
+                &lt;/div&gt; 
+            &lt;/div&gt; 
+        &lt;/div&gt; 
+        &lt;div class=&quot;container body-content&quot;&gt; 
+            @RenderBody() 
+            &lt;hr /&gt; 
+            &lt;footer&gt; 
+                &lt;p&gt;© @DateTime.Now.Year - My ASP.NET Application&lt;/p&gt; 
+            &lt;/footer&gt; 
+        &lt;/div&gt; 
+        @Scripts.Render(&quot;~/bundles/jquery&quot;) 
+        @Scripts.Render(&quot;~/bundles/bootstrap&quot;) 
+        @RenderSection(&quot;scripts&quot;, required: false) 
+    &lt;/body&gt; 
+    &lt;/html&gt;
+</pre>
 
-Eine Authentifizierungsstartklasse (**App_Start/Startup.Auth.cs**) wurde Ihrem Projekt hinzugefügt. Sie enthält Startlogik für die Azure AD-Authentifizierung. Außerdem wurde eine Controllerklasse (**Controllers/AccountController.cs**) hinzugefügt, die **SignIn()**- und **SignOut()**-Methoden enthält. Schließlich wurde noch eine Teilansicht (**Views/Shared/_LoginPartial.cshtml**) hinzugefügt, die einen Aktionslink für **SignIn/SignOut** enthält.
+[Weitere Informationen zu Azure Active Directory][Weitere Informationen zu Azure Active Directory]
 
-###### Ihrem Projekt wurde Startcode hinzugefügt
-
-Wenn Sie bereits eine Startklasse in Ihrem Projekt verwendet haben, wurde die Methode **Configuration()** so aktualisiert, dass sie einen Aufruf von **ConfigureAuth(app)** enthält. Andernfalls wurde Ihrem Projekt eine Startklasse hinzugefügt.
-
-###### Ihre Datei **app.config** oder **web.config** weist neue Konfigurationswerte auf
-
-Die folgenden Konfigurationseinträge wurden hinzugefügt.
-	<pre>
-	`<appSettings>
-	    <add key="ida:ClientId" value="ClientId from the new Azure AD App" /> 
-	    <add key="ida:Tenant" value="Your selected Azure AD Tenant" /> 
-	    <add key="ida:AADInstance" value="https://login.windows.net/{0}" /> 
-	    <add key="Ida:PostLogoutRedirectURI" value="Your project start page" /> 
-	</appSettings>` </pre>
-
-###### Eine Azure Active Directory-App (AD) wurde erstellt
-Eine Azure AD-Anwendung wurde in dem Verzeichnis erstellt, das Sie im Assistenten ausgewählt haben.
-
-## Erste Schritte mit Azure Active Directory (AD)
-
-Mit dem hinzugefügten Code können Sie die folgenden Aufgaben ausführen.
-
-###### Erfordern von Authentifizierung für den Zugriff auf Controller
-
-Alle Controller in Ihrem Projekt wurden mit dem Attribut **[Authorize]** versehen. Dieses Attribut erfordert, dass der Benutzer vor dem Zugriff auf diese Controller authentifiziert werden muss. Wenn Sie anonymen Zugriff auf diesen Controller erlauben möchten, entfernen Sie dieses Attribut vom Controller.
-
-###### Hinzufügen von SignIn-/SignOut-Steuerelementen
-
-Wenn Sie Ihrer Ansicht **SignIn**-/**SignOut**-Steuerelemente hinzufügen möchten, können Sie die Teilansicht **\_LoginPartial.cshtml** zum Hinzufügen der Funktion zu einer Ihrer Ansichten verwenden. Das folgende Beispiel zeigt die Funktion, die der Standardansicht **\_Layout.cshtml** hinzugefügt wurde:
-	<pre> 
-	`<!DOCTYPE html> 
-	<html> 
-	<head> 
-	    <meta charset="utf-8" /> 
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	    <title>@ViewBag.Title - My ASP.NET Application</title> 
-	    @Styles.Render("~/Content/css") 
-	    @Scripts.Render("~/bundles/modernizr") 
-	</head> 
-	<body> 
-	    <div class="navbar navbar-inverse navbar-fixed-top"> 
-	        <div class="container"> 
-	            <div class="navbar-header"> 
-	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
-	                    <span class="icon-bar"></span> 
-	                    <span class="icon-bar"></span> 
-	                    <span class="icon-bar"></span> 
-	                </button> 
-	                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) 
-	            </div> 
-	            <div class="navbar-collapse collapse"> 
-	                <ul class="nav navbar-nav"> 
-	                    <li>@Html.ActionLink("Home", "Index", "Home")</li> 
-	                    <li>@Html.ActionLink("About", "About", "Home")</li> 
-	                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li> 
-	                </ul> 
-	                @Html.Partial("_LoginPartial") 
-	            </div> 
-	        </div> 
-	    </div> 
-	    <div class="container body-content"> 
-	        @RenderBody() 
-	        <hr /> 
-	        <footer> 
-	            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p> 
-	        </footer> 
-	    </div> 
-	    @Scripts.Render("~/bundles/jquery") 
-	    @Scripts.Render("~/bundles/bootstrap") 
-	    @RenderSection("scripts", required: false) 
-	</body> 
-	</html>` </pre>
+  [Erste Schritte]: /documentation/articles/vs-active-directory-dotnet-getting-started/
+  [Was ist passiert?]: /documentation/articles/vs-active-directory-dotnet-what-happened/
+  [Weitere Informationen zu Azure Active Directory]: http://azure.microsoft.com/services/active-directory/
