@@ -1,6 +1,6 @@
 <properties linkid="dev-net-common-tasks-continuous-delivery" urlDisplayName="Continuous Delivery" pageTitle="Continuous delivery for cloud services with TFS in Azure" metaKeywords="Azure continuous delivery, continuous delivery sample code, continuous delivery PowerShell" description="Learn how to set up continuous delivery for Azure cloud apps. Code samples for MSBuild command-line statements and PowerShell scripts." metaCanonical="" services="" documentationCenter="" title="Continuous Delivery for Cloud Services in Azure" authors="ghogen" solutions="" manager="" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="ghogen"></tags>
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="ghogen" />
 
 # Kontinuierliche Zustellung für Cloud Services in Azure
 
@@ -160,7 +160,7 @@ Schritte aus:
     Team Explorer-Fenster den Knoten **Builds**, klicken Sie mit der rechten Maustaste auf **Alle
     Builddefinitionen**, und klicken Sie dann auf **Neue Builddefinition**:
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Prozess**. Wählen Sie auf der Registerkarte "Prozess" die
     Standardvorlage unter "Zu erstellende Dokumente",
@@ -751,20 +751,16 @@ Informationen zum Aktivieren des Remotedebuggens bei Verwendung der kontinuierli
   [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso/
   [Schritt 1: Den Buildserver konfigurieren]: #step1
   [Schritt 2: Ein Paket mithilfe von MSBuild-Befehlen erstellen]: #step2
-  [Schritt 3: Ein Paket mithilfe von TFS Team Build erstellen (optional)]: #step3
   [Schritt 4: Ein Paket mit einem PowerShell-Skript veröffentlichen]: #step4
-  [Schritt 5: Ein Paket mithilfe von TFS Team Build veröffentlichen (optional)]: #step5
   [Einrichten des Team Foundation-Builddiensts]: http://go.microsoft.com/fwlink/p/?LinkId=239963
   [.NET Framework 4]: http://go.microsoft.com/fwlink/?LinkId=239538
   [.NET Framework 4.5]: http://go.microsoft.com/fwlink/?LinkId=245484
   [Azure-Entwicklertools]: http://go.microsoft.com/fwlink/?LinkId=239600
   [Windows Azure-Bibliotheken]: http://go.microsoft.com/fwlink/?LinkId=257862
   [MSBuild-Befehlszeilenreferenz]: http://msdn.microsoft.com/de-de/library/ms164311(v=VS.90).aspx
-  [MSBuild-
-  Befehlszeilenreferenz]: http://go.microsoft.com/fwlink/p/?LinkId=239966
   [Erläuterungen zum Team Foundation-Buildsystem]: http://go.microsoft.com/fwlink/?LinkId=238798
   [Konfigurieren eines Buildcomputers]: http://go.microsoft.com/fwlink/?LinkId=238799
-  []: ./media/cloud-services-dotnet-continuous-delivery/tfs-01.png
+  [0]: ./media/cloud-services-dotnet-continuous-delivery/tfs-01.png
   [1]: ./media/cloud-services-dotnet-continuous-delivery/tfs-02.png
   [Azure PowerShell-Cmdlets]: http://go.microsoft.com/fwlink/?LinkId=256262
   [Ende dieses Artikels]: #script

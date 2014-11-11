@@ -1,6 +1,6 @@
 <properties linkid="dev-ruby-web-app-with-linux-vm" urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails Web App on Azure using Linux VM" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="Host a Ruby on Rails-based website on Azure using a Linux virtual machine. " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails Web application on an Azure VM" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-linux" ms.devlang="ruby" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr"></tags>
+<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-linux" ms.devlang="ruby" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Ruby on Rails-Webanwendung auf Azure VM
 
@@ -291,13 +291,11 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
   [Standard-Rails-Seite]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailslocal.png
   [Seite mit Einträgen]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilslocal.png
   [hier]: /de-de/documentation/articles/virtual-machines-linux-tutorial
-  [PuTTY Download Page]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Liste der virtuellen Computer]: ./media/virtual-machines-ruby-rails-web-app-linux/vmlist.png
   [Seite "Endpunkte"]: ./media/virtual-machines-ruby-rails-web-app-linux/endpoints.png
   [Dialogfeld für neuen Endpunkt]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
   [2]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailscloud.png
-  [Unicorn+NginX+Capistrano mit einem virtuellen Azure-Computer]: /de-de/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/
   [Ruby on Rails Guides]: http://guides.rubyonrails.org/
   [Speichern von unstrukturierten Daten mit Blobs]: /de-de/documentation/articles/storage-ruby-how-to-use-blob-storage
   [Speichern von Schlüssel/Wert-Paaren mit Tabellen]: /de-de/develop/ruby/how-to-guides/table-service/

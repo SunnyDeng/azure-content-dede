@@ -1,6 +1,6 @@
 <properties pageTitle="How to delegate user registration and product subscription" metaKeywords="" description="Learn how to delegate user registration and product subscription to a third party in Azure API Management." metaCanonical="" services="" documentationCenter="API Management" title="How to delegate user registration and product subscription in Azure API Management" authors="antonba" solutions="" manager="" editor="" />
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="antonba"></tags>
+<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="antonba" />
 
 # Delegieren von Benutzerregistrierung und Produktabonnierung
 
@@ -113,8 +113,5 @@ Konfigurieren Sie anschließend die folgenden Aktionen für den Delegierungsendp
   [Delegieren von Anmeldung und Registrierung für Entwickler]: #delegate-signin-up
   [Delegieren der Produktabonnierung]: #delegate-product-subscription
   [Delegierungsseite]: ./media/api-management-howto-setup-delegation/api-management-delegation-signin-up.png
-  [http://www.IhreWebseite.com/apimdelegation?operation=SignIn&redirectUrl]: http://www.yourwebsite.com/apimdelegation?operation=SignIn&redirectUrl
   [Benutzer erstellen]: http://go.microsoft.com/fwlink/?LinkId=507655#CreateUser
-  [Anfordern eines Tokens für einmaliges Anmelden (SSO)]: http://go.microsoft.com/fwlink/?LinkId=507409
-  [http://www.IhreWebseite.com/apimdelegation?operation]: http://www.yourwebsite.com/apimdelegation?operation
   [REST-API für die Produktabonnierung]: http://go.microsoft.com/fwlink/?LinkId=507655#SSO

@@ -1,6 +1,6 @@
 <properties linkid="develop-nodejs-tutorials-web-site-with-sql-database" urlDisplayName="Website with SQL Database" pageTitle="Node.js website with SQL Database - Azure tutorial" metaKeywords="" description="Learn how to create a Node.js website that accesses a SQL Database and is deployed to Azure" metaCanonical="" services="web-sites,sql-database" documentationCenter="nodejs" title="Node.js Web Application using the Azure SQL Database" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
+<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
 
 # Node.js-Webanwendung mit Azure-SQL-Datenbank
 
@@ -472,7 +472,6 @@ Nachdem die Änderungen in Azure bereitgestellt wurden, sollte Ihre Webanwendung
   [Erstellen einer neuen Azure-Website]: ./media/sql-database-nodejs-use-web-site/new_website.jpg
   [Benutzerdefiniertes Erstellen einer neuen Website]: ./media/sql-database-nodejs-use-web-site/custom_create.png
   [Angeben der Website-Details]: ./media/sql-database-nodejs-use-web-site/website_details_sqlazure.jpg
-  [(WEB oder BUSINESS)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee621788.aspx
   [SQL-Datenbankeinstellungen eingeben]: ./media/sql-database-nodejs-use-web-site/database_settings.jpg
   [Einen neuen SQL-Datenbankserver erstellen]: ./media/sql-database-nodejs-use-web-site/create_server.jpg
   [Öffnen des Dashboards der Website]: ./media/sql-database-nodejs-use-web-site/go_to_dashboard.png

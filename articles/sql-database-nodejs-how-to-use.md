@@ -1,6 +1,6 @@
 <properties linkid="develop-node-how-to-sql-database" urlDisplayName="SQL Database" pageTitle="How to use SQL Database (Node.js) - Azure feature guide" metaKeywords="" description="Learn how to use Azure SQL Database from Node.js." metaCanonical="" services="sql-database" documentationCenter="nodejs" title="How to Access Azure SQL Database from Node.js" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
+<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
 
 # Zugriff auf Azure SQL Database von Node.js
 
@@ -181,4 +181,3 @@ Weitere Informationen zum Bereitstellen einer Node.js-Anwendung für Azure erhal
   [Download Center]: http://www.microsoft.com/de-de/download/details.aspx?id=29995
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
   [Node.js-Clouddienst]: /de-de/develop/nodejs/tutorials/getting-started/
-  [Introducing the Microsoft Driver for Node.JS for SQL Server (Einführung des Microsoft Driver for Node.JS for SQL Server, in englischer Sprache)]: http://blogs.msdn.com/b/sqlphp/archive/2012/06/08/introducing-the-microsoft-driver-for-node-js-for-sql-server.aspx

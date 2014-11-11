@@ -1,6 +1,6 @@
 <properties pageTitle="Add paging to data (JavaScript) - Azure Mobile Services" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Windows Store JavaScript app from Mobile Services." metaCanonical="http://www.windowsazure.com/de-de/develop/mobile/tutorials/add-paging-to-data-dotnet/" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Verfeinern von Mobile Services-Abfragen mit Paging
 
@@ -15,7 +15,7 @@ In diesem Thema erfahren Sie, wie Sie die aus Azure Mobile Services an Ihre Wind
 
 Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten][Erste Schritte mit Daten]. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zumindest das erste Lernprogramm aus der Daten-Reihe abschließen, [Erste Schritte mit Daten][Erste Schritte mit Daten].
 
-[WACOM.INCLUDE [mobile-services-javascript-paging][mobile-services-javascript-paging]]
+[WACOM.INCLUDE [mobile-services-javascript-paging](../includes/mobile-services-javascript-paging.md)]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
@@ -27,18 +27,8 @@ Dies bildet den Abschluss der Lernprogramm-Reihe über Grundlagen mit Daten in M
 -   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
     Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-add-paging-data "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-add-paging-data "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-add-paging-data "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-ios-add-paging-data "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-android-add-paging-data "Android"
-  [HTML]: /de-de/documentation/articles/mobile-services-html-add-paging-data "HTML"
-  [Xamarin.iOS]: /de-de/documentation/articles/partner-xamarin-mobile-services-ios-add-paging-data "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/documentation/articles/partner-xamarin-mobile-services-android-add-paging-data "Xamarin.Android"
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-add-paging-data ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-windows-store-javascript-add-paging-data "JavaScript-Backend"
+
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-data/
   [mobile-services-javascript-paging]: ../includes/mobile-services-javascript-paging.md
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users/

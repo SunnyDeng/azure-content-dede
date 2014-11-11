@@ -1,6 +1,6 @@
 <properties linkid="develop-php-website-with-sql-database-and-git" urlDisplayName="Web w/ SQL + Git" pageTitle="PHP website with SQL Database and Git - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to create a PHP website that stores data in SQL Database and use Git deployment to Azure." metaCanonical="" services="web-sites,sql-database" documentationCenter="PHP" title="Create a PHP website with a SQL Database and deploy using Git" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
 # Erstellen einer PHP-Website mit einer SQL-Datenbank und Bereitstellen mit Git
 
@@ -18,7 +18,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die 
 
 ![Azure-PHP-Website][Azure-PHP-Website]
 
-[WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
+[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## Erstellen einer Azure-Website und Einrichten der Git-Veröffentlichung
 
@@ -283,7 +283,6 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
   [Neue Azure-Website erstellen]: ./media/web-sites-php-sql-database-deploy-use-git/new_website.jpg
   [Neue Website benutzerdefiniert erstellen]: ./media/web-sites-php-sql-database-deploy-use-git/custom_create.png
   [Websitedetails eingeben]: ./media/web-sites-php-sql-database-deploy-use-git/website_details_sqlazure.jpg
-  [(WEB oder BUSINESS)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee621788.aspx
   [SQL-Datenbankeinstellungen eingeben]: ./media/web-sites-php-sql-database-deploy-use-git/database_settings.jpg
   [Einen neuen SQL-Datenbankserver erstellen]: ./media/web-sites-php-sql-database-deploy-use-git/create_server.jpg
   [Website-Dashboard öffnen]: ./media/web-sites-php-sql-database-deploy-use-git/go_to_dashboard.png

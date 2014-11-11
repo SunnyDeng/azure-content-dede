@@ -1,6 +1,6 @@
 <properties linkid="manage-linux-common-task-upload-vhd" urlDisplayName="Upload a VHD" pageTitle="Create and upload a Linux VHD in Azure" metaKeywords="Azure VHD, uploading Linux VHD" description="Learn to create and upload an Azure virtual hard disk (VHD) that has the Linux operating system." metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="06/05/2014" ms.author="kathydav, szarkos"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="06/05/2014" ms.author="kathydav, szarkos" />
 
 # Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält
 
@@ -697,7 +697,6 @@ Die unten aufgeführte Liste ersetzt den Schritt 1 des Prozesses zur Erstellung 
 
 12. Sie müssen den virtuellen Computer anschließend herunterfahren und mit dem Upload-Vorgang fortfahren.
 
-  [Create a Windows Azure account (in englischer Sprache)]: http://www.windowsazure.com/de-de/develop/php/tutorials/create-a-windows-azure-account/
   [Verwalten von Datenträgern und Images]: http://msdn.microsoft.com/de-de/library/windowsazure/jj672979.aspx
   [Erstellen eines benutzerdefinierten virtuellen Computers]: /de-de/manage/windows/how-to-guides/custom-create-a-vm/
   [diesem Artikel]: http://support.microsoft.com/kb/2805216

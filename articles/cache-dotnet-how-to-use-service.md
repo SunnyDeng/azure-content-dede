@@ -1,6 +1,6 @@
 <properties linkid="manage-services-cache-net-how-to-cache-service" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="cache" documentationCenter="" title="How to Use Azure Managed Cache Service" authors="sdanie" solutions="" manager="" editor="" />
 
-<tags ms.service="cache" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie"></tags>
+<tags ms.service="cache" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
 
 # So wird Azure Managed Cache Service verwendet
 
@@ -458,8 +458,6 @@ finden Sie unter den folgenden Links weitere Informationen zu komplexeren Cachin
 <!-- INTRA-TOPIC LINKS --> <!-- IMAGES --> <!-- LINKS -->
 
   [Nächste Schritte]: #next-steps
-  [Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/de-de/library/azure/dn766201.aspx
-  [Was ist Azure Managed Cache Service?]: #what-is
   [Erste Schritte mit Managed Cache Service]: #getting-started-cache-service
   [Erstellen des Caches]: #create-cache
   [Konfigurieren des Caches]: #enable-caching

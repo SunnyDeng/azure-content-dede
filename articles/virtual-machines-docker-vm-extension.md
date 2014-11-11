@@ -1,6 +1,6 @@
 <properties title="Using the Docker Virtual Machines Extension for Linux on Azure" pageTitle="Using the Docker VM Extension for Linux on Azure" description="Describes Docker and the Azure Virtual Machines extensions, and shows how to programmatically create Virtual Machines on Azure that are docker hosts from the command line using the azure-cli command interface." metaKeywords="linux, virtual machines, vm, azure, docker, linux containers,  lxc, virtualization" services="virtual-machines" solutions="dev-test" documentationCenter="virtual-machines" authors="rasquill" videoId="" scriptId="" />
 
-<tags ms.service="virtual-machines" ms.devlang="multiple" ms.topic="article" ms.tgt_pltfrm="vm-linux" ms.workload="infrastructure-services" ms.date="08/21/2014" ms.author="ralph.squillace@microsoft.com"></tags>
+<tags ms.service="virtual-machines" ms.devlang="multiple" ms.topic="article" ms.tgt_pltfrm="vm-linux" ms.workload="infrastructure-services" ms.date="08/21/2014" ms.author="ralph.squillace@microsoft.com" />
 
 # Verwenden der Docker-Erweiterung für virtuelle Linux-Computer in Azure
 
@@ -142,7 +142,6 @@ Eine vollständige Liste finden Sie unter [Azure VM-Erweiterungen][Azure VM-Erwe
   [Container und Container-Verwaltungsressourcen für Azure]: #Container-and-Container-Management-Resources-for-Azure
   [Hypervisoren]: http://en.wikipedia.org/wiki/Hypervisor
   [KVM]: http://www.linux-kvm.org/page/Main_Page
-  [Was ist Docker?]: https://www.docker.com/whatisdocker/
   [empfiehlt Docker]: https://docs.docker.com/articles/security/
   [rollenbasierte Sicherheit]: http://en.wikipedia.org/wiki/Role-based_access_control
   [SELinux]: http://selinuxproject.org/page/Main_Page
@@ -150,12 +149,10 @@ Eine vollständige Liste finden Sie unter [Azure VM-Erweiterungen][Azure VM-Erwe
   [azure-cli]: https://github.com/Azure/azure-sdk-tools-xplat
   [Boot2Docker]: https://docs.docker.com/installation/windows/
   [hier]: http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/#install
-  [Node Package Manager (npm)]: http://en.wikipedia.org/wiki/Npm_%28software%29
   [1]: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
   [Mac Installer]: http://go.microsoft.com/fwlink/?linkid=252249&clcid=0x409
   [Verbindung mit Ihrem Azure-Abonnement herstellen]: http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/#configure
   [Installationsanweisungen für Docker]: https://docs.docker.com/installation/#installation
-  [!@\#$%^&+=]: mailto:!@#$%^&+=
   [0]: ./media/virtual-machines-docker/dockercreateresults.png
   [2]: ./media/virtual-machines-docker/connectingtodockerhost.png
   [Docker-Benutzerhandbuchs]: https://docs.docker.com/userguide/

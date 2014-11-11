@@ -1,35 +1,35 @@
 <properties linkid="develop-php-table-service" urlDisplayName="Table Service" pageTitle="How to use table storage (PHP) | Microsoft Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="Learn how to use the Table service from PHP to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="PHP" title="How to use the Table service from PHP" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # Verwenden des Tabellendiensts von PHP
 
-Dieser Leitfaden erläutert Ihnen das Durchführen allgemeiner Szenarios mit dem Azure-Tabellendienst. Die Beispiele wurden in PHP geschrieben und verwenden das [Azure-SDK für PHP][]. Die besprochenen Szenarios umfassen **das Erstellen und Löschen einer Tabelle sowie das Einfügen, Löschen und Abfragen von Entitäten in einer Tabelle**. Weitere Informationen zum Azure-Tabellendienst finden Sie im Abschnitt [Nächste Schritte][].
+Dieser Leitfaden erläutert Ihnen das Durchführen allgemeiner Szenarios mit dem Azure-Tabellendienst. Die Beispiele wurden in PHP geschrieben und verwenden das [Azure-SDK für PHP][Azure-SDK für PHP]. Die besprochenen Szenarios umfassen **das Erstellen und Löschen einer Tabelle sowie das Einfügen, Löschen und Abfragen von Entitäten in einer Tabelle**. Weitere Informationen zum Azure-Tabellendienst finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
 ## Inhaltsverzeichnis
 
--   [Was ist der Tabellendienst?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen einer PHP-Anwendung][]
--   [Konfigurieren der Anwendung für den Zugriff auf den Tabellendienst][]
--   [Einrichten einer Azure-Speicherverbindung][]
--   [Gewusst wie: Erstellen einer Tabelle][]
--   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][]
--   [Gewusst wie: Abrufen einer einzelnen Entität][]
--   [Gewusst wie: Abrufen aller Entitäten in einer Partition][]
--   [Gewusst wie: Abrufen einer Teilmenge von Entitäten in einer Partition][]
--   [Gewusst wie: Abrufen einer Teilmenge von Entitätseigenschaften][]
--   [Gewusst wie: Aktualisieren einer Entität][]
--   [Gewusst wie: Batch-Tabellenvorgänge][]
--   [Gewusst wie: Löschen einer Tabelle][]
--   [Nächste Schritte][]
+-   [Was ist der Tabellendienst?][Was ist der Tabellendienst?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Erstellen einer PHP-Anwendung][Erstellen einer PHP-Anwendung]
+-   [Konfigurieren der Anwendung für den Zugriff auf den Tabellendienst][Konfigurieren der Anwendung für den Zugriff auf den Tabellendienst]
+-   [Einrichten einer Azure-Speicherverbindung][Einrichten einer Azure-Speicherverbindung]
+-   [Gewusst wie: Erstellen einer Tabelle][Gewusst wie: Erstellen einer Tabelle]
+-   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][Gewusst wie: Hinzufügen einer Entität zu einer Tabelle]
+-   [Gewusst wie: Abrufen einer einzelnen Entität][Gewusst wie: Abrufen einer einzelnen Entität]
+-   [Gewusst wie: Abrufen aller Entitäten in einer Partition][Gewusst wie: Abrufen aller Entitäten in einer Partition]
+-   [Gewusst wie: Abrufen einer Teilmenge von Entitäten in einer Partition][Gewusst wie: Abrufen einer Teilmenge von Entitäten in einer Partition]
+-   [Gewusst wie: Abrufen einer Teilmenge von Entitätseigenschaften][Gewusst wie: Abrufen einer Teilmenge von Entitätseigenschaften]
+-   [Gewusst wie: Aktualisieren einer Entität][Gewusst wie: Aktualisieren einer Entität]
+-   [Gewusst wie: Batch-Tabellenvorgänge][Gewusst wie: Batch-Tabellenvorgänge]
+-   [Gewusst wie: Löschen einer Tabelle][Gewusst wie: Löschen einer Tabelle]
+-   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [howto-table-storage][]]
+[WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
 
 ## <span id="CreateAccount"></span></a>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <span id="CreateApplication"></span></a>Erstellen einer PHP-Anwendung
 
@@ -39,13 +39,13 @@ In diesem Leitfaden verwenden Sie Tabellendienstfunktionen, die lokal aus einer 
 
 ## <span id="GetClientLibrary"></span></a>Abrufen der Azure-Clientbibliotheken
 
-[WACOM.INCLUDE [get-client-libraries][]]
+[WACOM.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 ## <span id="ConfigureStorage"></span></a>Konfigurieren der Anwendung für den Zugriff auf den Tabellendienst
 
 Um die APIs des Azure-Tabellendiensts zu verwenden, müssen Sie folgendermaßen vorgehen:
 
-1.  Verweisen Sie mithilfe der [require_once][]-Anweisung auf die Autoloaderdatei und
+1.  Verweisen Sie mithilfe der [require_once][require_once]-Anweisung auf die Autoloaderdatei und
 2.  Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
@@ -88,7 +88,7 @@ Für die hier erläuterten Beispiele wird die Verbindungszeichenfolge direkt wei
 
 ## <span id="CreateTable"></span></a>Gewusst wie: Erstellen einer Tabelle
 
-Mithilfe eines **TableRestProxy**-Objekts können Sie eine Tabelle mit der **createTable**-Methode erstellen. Wenn Sie eine Tabelle erstellen, können Sie das Tabellendiensttimeout festlegen. (Weitere Informationen zum Tabellendiensttimeout finden Sie unter [Festlegen von Timeouts für Tabellendienstvorgänge][].)
+Mithilfe eines **TableRestProxy**-Objekts können Sie eine Tabelle mit der **createTable**-Methode erstellen. Wenn Sie eine Tabelle erstellen, können Sie das Tabellendiensttimeout festlegen. (Weitere Informationen zum Tabellendiensttimeout finden Sie unter [Festlegen von Timeouts für Tabellendienstvorgänge][Festlegen von Timeouts für Tabellendienstvorgänge].)
 
     require_once 'vendor\autoload.php';
 
@@ -107,10 +107,10 @@ Mithilfe eines **TableRestProxy**-Objekts können Sie eine Tabelle mit der **cre
         $error_message = $e->getMessage();
         // Handle exception based on error codes and messages.
         // Error codes and messages can be found here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
     }
 
-Informationen zu Einschränkungen für Tabellennamen finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][].
+Informationen zu Einschränkungen für Tabellennamen finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][Grundlegendes zum Tabellendienst-Datenmodell].
 
 ## <span id="AddEntity"></span></a>Gewusst wie: Hinzufügen einer Entität zu einer Tabelle
 
@@ -141,12 +141,12 @@ Um einer Tabelle eine Entität hinzuzufügen, erstellen Sie ein neues **Entity**
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
     }
 
-Informationen zu Tabelleneigenschaften und -typen finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][].
+Informationen zu Tabelleneigenschaften und -typen finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][Grundlegendes zum Tabellendienst-Datenmodell].
 
 Die **TableRestProxy**-Klasse bietet zwei alternative Methoden zum Einfügen von Entitäten: **insertOrMergeEntity** und **insertOrReplaceEntity**. Um diese Methoden zu verwenden, erstellen Sie ein neues **Entity**-Objekt, und übergeben Sie es als Parameter an eine Methode. Jede Methode fügen die Entität ein, falls sie nicht vorhanden ist. Falls die Entität bereits vorhanden ist, aktualisiert **insertOrMergeEntity** die Eigenschaftswerte, falls die Eigenschaften bereits vorhanden sind, und fügt neue Werte hinzu, falls sie nicht vorhanden sind, während **insertOrReplaceEntity** eine vorhandene Entität vollständig ersetzt. Das folgende Beispiel zeigt die Verwendung von **insertOrMergeEntity**. Falls die Entität mit `PartitionKey` "tasksSeattle" und `RowKey` "1" nicht bereits vorhanden ist, wird sie eingefügt. Falls sie jedoch zuvor eingefügt wurde (wie in dem Beispiel oben gezeigt), wird die `DueDate`-Eigenschaft aktualisiert und die `Status`-Eigenschaft hinzugefügt. Die Eigenschaften `Description` und `Location` werden aktualisiert, allerdings mit Werten, mit denen sie effektiv unverändert bleiben. Falls die letzten zwei Eigenschaft nicht wie im Beispiel gezeigt hinzugefügt würden, sondern auf der Zielentität vorhanden wären, blieben ihre vorhandenen Werte unverändert.
 
@@ -182,7 +182,7 @@ Die **TableRestProxy**-Klasse bietet zwei alternative Methoden zum Einfügen von
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -207,7 +207,7 @@ Mit der **TableRestProxy-\>getEntity**-Methode können Sie eine einzelne Entitä
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -219,7 +219,7 @@ Mit der **TableRestProxy-\>getEntity**-Methode können Sie eine einzelne Entitä
 
 ## <span id="RetEntitiesInPartition"></span></a>Gewusst wie: Abrufen aller Entitäten in einer Partition
 
-Entitätsabfragen werden mithilfe von Filtern erstellt (weitere Informationen finden Sie unter [Abfragen von Tabellen und Entitäten][]). Um alle Entitäten in einer Partition abzurufen, verwenden Sie den Filter "PartitionKey eq *Partitionsname*". Das folgende Beispiel zeigt, wie alle Entitäten in der Partition `tasksSeattle` durch Übergeben eines Filters an die **queryEntities**-Methode abgerufen werden.
+Entitätsabfragen werden mithilfe von Filtern erstellt (weitere Informationen finden Sie unter [Abfragen von Tabellen und Entitäten][Abfragen von Tabellen und Entitäten]). Um alle Entitäten in einer Partition abzurufen, verwenden Sie den Filter "PartitionKey eq *Partitionsname*". Das folgende Beispiel zeigt, wie alle Entitäten in der Partition `tasksSeattle` durch Übergeben eines Filters an die **queryEntities**-Methode abgerufen werden.
 
     require_once 'vendor\autoload.php';
 
@@ -237,7 +237,7 @@ Entitätsabfragen werden mithilfe von Filtern erstellt (weitere Informationen fi
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -251,7 +251,7 @@ Entitätsabfragen werden mithilfe von Filtern erstellt (weitere Informationen fi
 
 ## <span id="RetrieveSubset"></span></a>Gewusst wie: Abrufen einer Teilmenge von Entitäten in einer Partition
 
-Das Muster, das im vorherigen Beispiel verwendet wird, kann auch verwendet werden, um eine Teilmenge der Entitäten in einer Partition abzurufen. Die Teilmenge der Entitäten, die Sie abrufen, wird durch den verwendeten Filter bestimmt (weitere Informationen finden Sie unter [Abfragen von Tabellen und Entitäten][]). Das folgende Beispiel zeigt, wie ein Filter zum Abrufen aller Entitäten mit einem bestimmten Wert für `Location` und einem `DueDate` vor einem angegebenen Datum verwendet wird.
+Das Muster, das im vorherigen Beispiel verwendet wird, kann auch verwendet werden, um eine Teilmenge der Entitäten in einer Partition abzurufen. Die Teilmenge der Entitäten, die Sie abrufen, wird durch den verwendeten Filter bestimmt (weitere Informationen finden Sie unter [Abfragen von Tabellen und Entitäten][Abfragen von Tabellen und Entitäten]). Das folgende Beispiel zeigt, wie ein Filter zum Abrufen aller Entitäten mit einem bestimmten Wert für `Location` und einem `DueDate` vor einem angegebenen Datum verwendet wird.
 
     require_once 'vendor\autoload.php';
 
@@ -269,7 +269,7 @@ Das Muster, das im vorherigen Beispiel verwendet wird, kann auch verwendet werde
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -303,7 +303,7 @@ Eine Abfrage kann eine Teilmenge der Entitätseigenschaften abrufen. Bei dieser 
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -349,7 +349,7 @@ Eine vorhandene Entität kann mithilfe der Methoden **Entity-\>setProperty** und
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -374,7 +374,7 @@ Um eine Entität zu löschen, übergeben Sie den Tabellennamen und die Werte fü
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -430,13 +430,13 @@ Das folgende Beispiel zeigt die Ausführung von **insertEntity**- und **deleteEn
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
     }
 
-Weitere Informationen zu Batch-Tabellenvorgängen finden Sie unter [Durchführen von Entitätsgruppentransaktionen][].
+Weitere Informationen zu Batch-Tabellenvorgängen finden Sie unter [Durchführen von Entitätsgruppentransaktionen][Durchführen von Entitätsgruppentransaktionen].
 
 ## <span id="DeleteTable"></span></a>Gewusst wie: Löschen einer Tabelle
 
@@ -457,7 +457,7 @@ Um eine Tabelle zu löschen, übergeben Sie den Tabellennamen an die **TableRest
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -467,12 +467,11 @@ Um eine Tabelle zu löschen, übergeben Sie den Tabellennamen an die **TableRest
 
 Da Sie jetzt die Grundlagen des Azure-Tabellendiensts erlernt haben, folgen Sie diesen Links, um Informationen zum Ausführen komplexerer Speicheraufgaben zu erhalten.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure]
 -   Besuchen Sie den Blog des Azure-Speicherteams: <http://blogs.msdn.com/b/windowsazurestorage/>
 
   [Azure-SDK für PHP]: http://go.microsoft.com/fwlink/?LinkID=252473
   [Nächste Schritte]: #NextSteps
-  [Was ist der Tabellendienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer PHP-Anwendung]: #CreateApplication
@@ -491,8 +490,8 @@ Da Sie jetzt die Grundlagen des Azure-Tabellendiensts erlernt haben, folgen Sie 
   [create-storage-account]: ../includes/create-storage-account.md
   [get-client-libraries]: ../includes/get-client-libraries.md
   [require_once]: http://php.net/require_once
-  [Festlegen von Timeouts für Tabellendienstvorgänge]: http://msdn.microsoft.com/en-us/library/windowsazure/dd894042.aspx
-  [Grundlegendes zum Tabellendienst-Datenmodell]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179338.aspx
-  [Abfragen von Tabellen und Entitäten]: http://msdn.microsoft.com/en-us/library/windowsazure/dd894031.aspx
-  [Durchführen von Entitätsgruppentransaktionen]: http://msdn.microsoft.com/en-us/library/windowsazure/dd894038.aspx
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Festlegen von Timeouts für Tabellendienstvorgänge]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894042.aspx
+  [Grundlegendes zum Tabellendienst-Datenmodell]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179338.aspx
+  [Abfragen von Tabellen und Entitäten]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx
+  [Durchführen von Entitätsgruppentransaktionen]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894038.aspx
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

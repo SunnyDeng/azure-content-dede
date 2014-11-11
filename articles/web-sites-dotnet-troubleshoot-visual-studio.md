@@ -1,6 +1,6 @@
 <properties title="Troubleshooting Azure Websites in Visual Studio" pageTitle="Troubleshooting Azure Websites in Visual Studio" metaKeywords="troubleshoot debug azure web site tracing logging" description="Learn how to troubleshoot an Azure Website by using remote debugging, tracing, and logging tools that are built in to Visual Studio 2013." metaCanonical="" services="web-sites" documentationCenter=".NET" authors="tdykstra" manager="wpickett" solutions="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="tdykstra"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="tdykstra" />
 
 # Problembehandlung von Azure-Websites in Visual Studio
 
@@ -746,7 +746,6 @@ Informationen darüber, wie Sie statt einer Website einen Azure-Cloud-Dienst deb
   [Heruntergeladene Datei]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadedfile.png
   [6]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png
   [Log Parser]: http://www.microsoft.com/de-de/download/details.aspx?displaylang=en&id=24659
-  [Data Storage Options (Building Real-World Cloud Apps with Azure)]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
   [Speicherkonto erstellen]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-createstorage.png
   [Geben Sie eine URL ein]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-storageurl.png
   [7]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png
@@ -780,14 +779,12 @@ Informationen darüber, wie Sie statt einer Website einen Azure-Cloud-Dienst deb
   [Einführung in das Remotedebuggen von Azure-Websites, Teil 2 - Einblick in das Remotedebuggen]: /blog/2014/05/07/introduction-to-remote-debugging-azure-web-sites-part-2-inside-remote-debugging/
   [Einführung in das Remotedebuggen von Azure-Websites, Teil 3 - Mehrinstanzenumgebung und GIT]: /blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/
   [Debuggen des .NET-Back-Ends in Visual Studio]: http://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx
-  [Überwachung und Telemetrie (Erstellen realer Cloud-Apps mit Azure)]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
   [ASP.NET Tracing]: http://msdn.microsoft.com/de-de/library/ms972204.aspx
   [Trace Listeners]: http://msdn.microsoft.com/de-de/library/4y5y10s7.aspx
   [WebPageTraceListener]: http://msdn.microsoft.com/de-de/library/system.web.webpagetracelistener.aspx
   [Exemplarische Vorgehensweise: Integrieren der ASP.NET-Ablaufverfolgung und der System.Diagnostics-Ablaufverfolgung]: http://msdn.microsoft.com/de-de/library/b0ectfxd.aspx
   [Tracing in ASP.NET MVC Razor Views]: http://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx
   [Vollständiges Beispiel für Fehlerhandler]: http://msdn.microsoft.com/de-de/library/bb397417.aspx
-  [Ablaufprotokollierung und Streamingdiagnose mit der Azure-Befehlszeile (plus Glimpse!)]: http://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx
   [Glimpse]: http://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx
   [Using Azure Web Site Logging and Diagnostics - with David Ebbo]: http://www.windowsazure.com/de-de/documentation/videos/azure-web-site-logging-and-diagnostics/
   [Streaming Logs from Azure Web Sites - with David Ebbo]: http://www.windowsazure.com/de-de/documentation/videos/log-streaming-with-azure-web-sites/

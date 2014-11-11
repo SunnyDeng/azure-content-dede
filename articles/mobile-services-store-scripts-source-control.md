@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-store-scripts-in-source-control" urlDisplayName="Store server scripts in source control" pageTitle="Store server scripts in source control - Azure Mobile Services" metaKeywords="" description="Learn how to store your server script files and modules in a local Git repo on your computer." metaCanonical="" services="" documentationCenter="Mobile" title="Store server scripts in source control" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Speichern von Serverskripts in der Quellcodeverwaltung
 
@@ -19,7 +19,7 @@ Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus eine
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Dashboard**, anschließend unter **Schnellübersicht** auf **Quellcodeverwaltung einrichten** und zuletzt als Bestätigung auf **Ja**.
 
@@ -163,7 +163,7 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 -   [Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt][Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt]
      Beschreibt die Verwendung benutzerdefinierter APIs zur Unterstützung regelmäßiger Benachrichtigungen, mit denen Live-Kacheln in einer Windows Store-App aktualisiert werden.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+
 
   [Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst]: #enable-source-control
   [Installieren von Git und Erstellen des lokalen Repositorys]: #clone-repo
@@ -172,7 +172,7 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-store-scripts-source-control/mobile-services-selection.png
+  [0]: ./media/mobile-services-store-scripts-source-control/mobile-services-selection.png
   [1]: ./media/mobile-services-store-scripts-source-control/mobile-setup-source-control.png
   [2]: ./media/mobile-services-store-scripts-source-control/mobile-source-control-credentials.png
   [3]: ./media/mobile-services-store-scripts-source-control/mobile-source-control-configure.png

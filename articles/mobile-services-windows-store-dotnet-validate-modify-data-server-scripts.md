@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-dotnet" urlDisplayName="Validate and Modify Data" pageTitle="User server scripts to validate and modify data (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to use server scripts to validate, modify, and augment data for your Windows Store app with Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Überprüfen und Ändern von Daten in Mobile Services mithilfe von Serverskripts
 
@@ -35,7 +35,7 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
 
@@ -214,26 +214,15 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 -   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows Store JavaScript"
-  [Windows Phone]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone"
-  [iOS]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS"
-  [Android]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-android "Android"
-  [HTML]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML"
-  [Xamarin.iOS]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android"
-  [.NET-Back-End]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/ ".NET-Back-End"
-  [JavaScript-Back-End]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/ "JavaScript-Back-End"
-  [Lernprogramm ansehen]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Windows-Store-app-Validate-and-Modify-Data-with-Server-Scripts-in-Windows-Azure-Mobile-Services
+
   [Überprüfung der Zeichenfolgenlänge hinzufügen]: #string-length-validation
   [Client zur Unterstützung der Überprüfung aktualisieren]: #update-client-validation
   [Zeitstempel beim Einfügen hinzufügen]: #add-timestamp
   [Client zum Anzeigen des Zeitstempels aktualisieren]: #update-client-timestamp
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/mobile-services-selection.png
+  [0]: ./media/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/mobile-services-selection.png
   [1]: ./media/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/mobile-portal-data-tables.png
   [2]: ./media/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/mobile-insert-script-users.png
   [Optimieren von Abfragen mit Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-dotnet

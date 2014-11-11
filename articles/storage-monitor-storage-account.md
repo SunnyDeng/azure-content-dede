@@ -1,6 +1,6 @@
 <properties linkid="manage-services-how-to-monitor-a-storage-account" urlDisplayName="How to monitor" pageTitle="How to monitor a storage account | Microsoft Azure" metaKeywords="Azure monitor storage accounts, storage account management portal, storage account dashboard, storage metrics table, storage metrics chart" description="Learn how to monitor a storage account in Azure by using the Management Portal." metaCanonical="" services="storage" documentationCenter="" title="How To Monitor a Storage Account" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # <span id="createstorageaccount"></span></a>Überwachen eines Speicherkontos
 
@@ -10,25 +10,25 @@ Bis Sie die Überwachung für ein Speicherkonto konfigurieren, werden keine Übe
 
 <div class="dev-callout"> 
 <b>Hinweis</b> 
-<p>F&uuml;r die Untersuchung von &Uuml;berwachungsdaten im Verwaltungsportal fallen zus&auml;tzliche Kosten an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/windowsazure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>.</p> 
+<p>F&uuml;r die Untersuchung von &Uuml;berwachungsdaten im Verwaltungsportal fallen zus&auml;tzliche Kosten an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>.</p> 
 </div>
 
 ## Inhaltsverzeichnis
 
--   [Gewusst wie: Konfigurieren der Überwachung für ein Speicherkonto][]
--   [Gewusst wie: Anpassen des Dashboards für die Überwachung][]
--   [Gewusst wie: Anpassen der Seite "Überwachen"][]
--   [Gewusst wie: Hinzufügen von Metriken zur Metrikentabelle][]
--   [Gewusst wie: Anpassen des Metrikendiagramms auf der Seite "Überwachen"][]
--   [Gewusst wie: Konfigurieren der Protokollierung][]
+-   [Gewusst wie: Konfigurieren der Überwachung für ein Speicherkonto][Gewusst wie: Konfigurieren der Überwachung für ein Speicherkonto]
+-   [Gewusst wie: Anpassen des Dashboards für die Überwachung][Gewusst wie: Anpassen des Dashboards für die Überwachung]
+-   [Gewusst wie: Anpassen der Seite "Überwachen"][Gewusst wie: Anpassen der Seite "Überwachen"]
+-   [Gewusst wie: Hinzufügen von Metriken zur Metrikentabelle][Gewusst wie: Hinzufügen von Metriken zur Metrikentabelle]
+-   [Gewusst wie: Anpassen des Metrikendiagramms auf der Seite "Überwachen"][Gewusst wie: Anpassen des Metrikendiagramms auf der Seite "Überwachen"]
+-   [Gewusst wie: Konfigurieren der Protokollierung][Gewusst wie: Konfigurieren der Protokollierung]
 
 ## <span id="configurestoragemonitoring"></span></a>Gewusst wie: Konfigurieren der Überwachung für ein Speicherkonto
 
-1.  Klicken Sie im [Verwaltungsportal][] auf **Speicher** und dann auf den Speicherkontonamen, um das Dashboard zu öffnen.
+1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Speicher** und dann auf den Speicherkontonamen, um das Dashboard zu öffnen.
 
 2.  Klicken Sie auf **Konfigurieren**, und blättern Sie nach unten zu den Einstellungen unter **monitoring** für die Blob-, Tabellen- und Warteschlangendienste, wie unten dargestellt.
 
-    ![Überwachungsoptionen][]
+    ![Überwachungsoptionen][Überwachungsoptionen]
 
 3.  Legen Sie unter **monitoring** die Überwachungsstufe und die Datenaufbewahrungsrichtlinie für jeden Dienst fest:
 
@@ -46,7 +46,7 @@ Bis Sie die Überwachung für ein Speicherkonto konfigurieren, werden keine Übe
 
 Nach ungefähr einer Stunde sollten die ersten Überwachungsdaten im Dashboard und auf der Seite **Überwachen** angezeigt werden.
 
-Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue und $MetricsCapacityBlob gespeichert. Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse][].
+Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue und $MetricsCapacityBlob gespeichert. Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse][Informationen zu Metriken der Speicheranalyse].
 
 Nachdem Sie die Überwachungsstufen und Aufbewahrungsrichtlinien festgelegt haben, können Sie wählen, welche der verfügbaren Metriken im Verwaltungsportal überwacht und welche in Metrikendiagrammen gezeichnet werden sollen. Auf jeder Überwachungsstufe wird ein Standardsatz Metriken angezeigt. Mit **Metriken hinzufügen** können Sie Metriken zur Metrikenliste hinzufügen oder daraus entfernen.
 
@@ -54,7 +54,7 @@ Nachdem Sie die Überwachungsstufen und Aufbewahrungsrichtlinien festgelegt habe
 
 Im Dashboard können Sie aus neun verfügbaren Metriken bis zu sechs Metriken zum Zeichnen im Metrikendiagramm auswählen. Für jeden Dienst (Blob, Tabelle und Wartschlange) sind die Metriken "Verfügbarkeit", "Prozentsatz erfolgreich" und "Anforderungen insgesamt" verfügbar. Für minimale und ausführliche Überwachung stehen im Dashboard die gleichen Metriken zur Verfügung.
 
-1.  Klicken Sie im [Verwaltungsportal][] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
+1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
 2.  Führen Sie eine der folgenden Aktionen aus, um die im Diagramm gezeichneten Metriken zu ändern:
 
@@ -80,7 +80,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 
 ## <span id="addmonitoringmetrics"></span></a>Gewusst wie: Hinzufügen von Metriken zur Metrikentabelle
 
-1.  Klicken Sie im [Verwaltungsportal][] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
+1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
 2.  Klicken Sie auf **Überwachen**.
 
@@ -90,7 +90,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 
     <div class="dev-callout"> 
 	<b>Hinweis</b> 
-	<p>Ber&uuml;cksichtigen Sie bei der Auswahl der Metriken die Kosten. F&uuml;r die Aktualisierung von &Uuml;berwachungsanzeigen fallen Transaktionsgeb&uuml;hren und Kosten f&uuml;r eingehenden Datenverkehr an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/windowsazure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>.</p> 
+	<p>Ber&uuml;cksichtigen Sie bei der Auswahl der Metriken die Kosten. F&uuml;r die Aktualisierung von &Uuml;berwachungsanzeigen fallen Transaktionsgeb&uuml;hren und Kosten f&uuml;r eingehenden Datenverkehr an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>.</p> 
 </div>
 
 3. Klicken Sie auf **Metriken hinzufügen**.
@@ -128,7 +128,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 
 Für jeden für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschlange und Tabelle) können Sie Diagnoseprotokolle für Lese-, Schreib- und/oder Löschanforderungen speichern, und Sie können die Datenaufbewahrungsrichtlinie für jeden der Dienste festlegen.
 
-1.  Klicken Sie im [Verwaltungsportal][] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
+1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
 2.  Klicken Sie auf **Konfigurieren**, und blättern Sie dann mit der Nach-unten-Taste zum Abschnitt **logging** (siehe Abbildung unten).
 
@@ -143,9 +143,8 @@ Für jeden für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschla
 
 4.  Klicken Sie auf **Speichern**.
 
-Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container $logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse][].
+Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container $logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse][Informationen zur Protokollierung durch die Speicheranalyse].
 
-  [Speicheranalyse und Speicheranalysekosten]: http://msdn.microsoft.com/en-us/library/windowsazure/hh360997.aspx
   [Gewusst wie: Konfigurieren der Überwachung für ein Speicherkonto]: #configurestoragemonitoring
   [Gewusst wie: Anpassen des Dashboards für die Überwachung]: #customizestoragemonitoring
   [Gewusst wie: Anpassen der Seite "Überwachen"]: #customizemonitorpage
@@ -154,12 +153,5 @@ Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Spei
   [Gewusst wie: Konfigurieren der Protokollierung]: #configurelogging
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [Überwachungsoptionen]: ./media/storage-monitor-storage-account/Storage_MonitoringOptions.png
-  [Informationen zu Metriken der Speicheranalyse]: http://msdn.microsoft.com/en-us/library/windowsazure/hh343258.aspx
-  [Überwachung\_n more]: ./media/storage-monitor-storage-account/storage_Monitoring_nmore.png
-  [Überwachung\_AusführlicheAnzeige]: ./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png
-  [Metriken hinzufügen\_Anfängliche Anzeige]: ./media/storage-monitor-storage-account/Storage_AddMetrics_InitialDisplay.png
-  [Metriken hinzufügen\_Bildlaufleiste]: ./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png
-  [Erweitern\_Reduzieren]: ./media/storage-monitor-storage-account/Storage_AddMetrics_ExpandCollapse.png
-  [Metrik löschen]: ./media/storage-monitor-storage-account/Storage_DeleteMetric.png
-  [Speicher\_logging]: ./media/storage-monitor-storage-account/Storage_LoggingOptions.png
-  [Informationen zur Protokollierung durch die Speicheranalyse]: http://msdn.microsoft.com/en-us/library/windowsazure/hh343262.aspx
+  [Informationen zu Metriken der Speicheranalyse]: http://msdn.microsoft.com/de-de/library/windowsazure/hh343258.aspx
+  [Informationen zur Protokollierung durch die Speicheranalyse]: http://msdn.microsoft.com/de-de/library/windowsazure/hh343262.aspx

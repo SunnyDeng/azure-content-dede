@@ -1,6 +1,6 @@
 <properties title="How To Change the Drive Letter of the Windows Temporary Disk" pageTitle="How To Change the Drive Letter of the Windows Temporary Disk" description="Describes how to remap the temporary disk on a Windows VM in Azure" metaKeywords="" services="virtual machines" solutions="" documentationCenter="" authors="kathydav" videoId="" scriptId="" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav" />
 
 # So ändern Sie den Laufwerksbuchstaben des temporären Windows-Laufwerks
 
@@ -44,4 +44,3 @@ Ehe Sie beginnen, sollten Sie für Folgendes sorgen:
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: ../virtual-machines-log-on-windows-server/
   [Trennen eines Datenträgers von einem virtuellen Computer]: ../storage-windows-detach-disk/
-  [Was ist ein Speicherkonto?]: ../storage-whatis-account/

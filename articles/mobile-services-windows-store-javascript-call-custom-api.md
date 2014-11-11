@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-call-custom-api-js" urlDisplayName="Call a custom API from the client" pageTitle="Call a custom API from a Windows Store JS client - Mobile Services" metaKeywords="" description="Learn how to define a custom API and then call it from a Windows Store app that use Azure Mobile Services." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Aufrufen einer benutzerdefinierten API aus dem Client
 
@@ -22,9 +22,9 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 ## <a name="define-custom-api"></a>Definieren der benutzerdefinierten API
 
-[WACOM.INCLUDE [mobile-services-create-custom-api][mobile-services-create-custom-api]]
+[WACOM.INCLUDE [mobile-services-create-custom-api](../includes/mobile-services-create-custom-api.md)]
 
-[WACOM.INCLUDE [mobile-services-windows-store-javascript-call-custom-api][mobile-services-windows-store-javascript-call-custom-api]]
+[WACOM.INCLUDE [mobile-services-windows-store-javascript-call-custom-api](../includes/mobile-services-windows-store-javascript-call-custom-api.md)]
 
 ## Nächste Schritte
 
@@ -41,14 +41,6 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Windows Sto
 
 <!-- Anchors. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-call-custom-api "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-ios-call-custom-api "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-android-call-custom-api "Android"
-  [HTML]: /de-de/documentation/articles/mobile-services-html-call-custom-api "HTML"
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-call-custom-api ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "JavaScript-Backend"
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-data/
   [Definieren der benutzerdefinierten API]: #define-custom-api

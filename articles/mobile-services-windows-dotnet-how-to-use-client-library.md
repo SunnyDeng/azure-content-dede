@@ -1,6 +1,6 @@
 <properties linkid="obile-services-how-to-dotnet-client" urlDisplayName=".NET Client Library" pageTitle="Working with the Mobile Services .NET Client Library" metaKeywords="Azure Mobile Services, Mobile Service .NET client, .NET client" description="Learn how to use an .NET client for Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="How to use a .NET client for Azure Mobile Services" authors="krisragh" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh" />
 
 # So verwenden Sie einen .NET-Client für mobile Dienste in Azure
 
@@ -40,7 +40,7 @@ Dieser Artikel beschreibt gängige Szenarien für die Verwendung eines .NET-Clie
     -   [Anpassen der Serialisierung][Anpassen der Serialisierung]
 -   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [mobile-services-concepts][mobile-services-concepts]]
+[WACOM.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 ## <a name="setup"></a><span class="short-header">Einrichtung</span>Einrichtung und Voraussetzungen
 
@@ -660,13 +660,8 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 -   [Autorisieren von Benutzern mit Skripts][Autorisieren von Benutzern mit Skripts]
     Verwenden Sie die vom mobilen Dienst für einen authentifizierten Benutzer gelieferte Benutzer-ID zum Filtern von zurückgegebenen Daten.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [.NET Framework]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework"
-  [HTML/JavaScript]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript"
-  [iOS]: /de-de/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS"
-  [Android]: /de-de/develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
-  [Xamarin]: /de-de/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
+
   [Windows Store Schnellstart-Lernprogramm]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started/
   [Windows Phone Schnellstart-Lernprogramm]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-wp8/
   [Windows Store Daten-Lernprogramm]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-dotnet/
@@ -719,8 +714,6 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
   [userId]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
   [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
   [Zwischenspeichern des Authentifizierungstokens]: #caching
-  [Registrieren Ihres Windows Store-App-Pakets für Microsoft-Authentifizierung]: /de-de/develop/mobile/how-to-guides/register-windows-store-app-package/
-  [1]: http://go.microsoft.com/fwlink/p/?LinkId=311594
   [2]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/
   [3]: /de-de/develop/mobile/tutorials/single-sign-on-wp8/
   [Kennworttresor]: http://msdn.microsoft.com/de-de/library/windows/apps/windows.security.credentials.passwordvault.aspx

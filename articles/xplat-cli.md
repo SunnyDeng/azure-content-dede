@@ -1,6 +1,6 @@
 <properties linkid="script-xplat-intro" urlDisplayName="Azure Cross-Platform Command-Line Interface" pageTitle="The Azure Cross-Platform Command-Line Interface" title="The Azure Cross-Platform Command-Line Interface" metaKeywords="Azure cross-platform command-line interface, Azure command-line, azure command-line, azure cli" description="Install and configure the Azure Cross-Platform Command-Line Interface to manage Azure Services" metaCanonical="http://www.windowsazure.com/de-de/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="carolz" services="" />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="carolz"></tags>
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="carolz" />
 
 # Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle
 
@@ -384,8 +384,6 @@ Wenn Sie ein Skript schreiben, das sich auf den Beendigungsstatus stützt, dann 
 
 -   Weitere Informationen zu Azure finden Sie unter [][2]<http://azure.microsoft.com/></a>.
 
-  [PowerShell]: /de-de/manage/install-and-configure-windows-powershell/ "PowerShell"
-  [Plattformübergreifende Befehlszeilenschnittstelle]: /de-de/manage/install-and-configure-cli/ "Plattformübergreifende Befehlszeilenschnittstelle"
   []: https://github.com/WindowsAzure/azure-sdk-tools-xplat
   [Installieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle]: #install
   [Verbinden mit Ihrem Azure-Abonnement]: #configure

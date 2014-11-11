@@ -1,6 +1,6 @@
 <properties linkid="develop-python-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="How to use Service Bus queues (Python) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Python" description="Learn how to use Service Bus queues in Azure. Code samples written in Python." metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Queues" authors="huvalo" solutions="" manager="" editor="" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Einsatz von Servicebus-Warteschlangen
 
@@ -20,7 +20,7 @@ Nachrichten** und **Löschen von Warteschlangen**. Weitere Informationen zu Wart
 -   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten][Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]
 -   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [howto-service-bus-queues][howto-service-bus-queues]]
+[WACOM.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
 **Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch][Python-Installationshandbuch].
 
@@ -146,7 +146,6 @@ vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements.][Warteschlangen, Themen und Abonnements.]
 
   [Nächste Schritte]: #next-steps
-  [Was sind Servicebus-Warteschlangen?]: #what-are-service-bus-queues
   [Erstellen eines Dienstnamespace]: #create-a-service-namespace
   [Abrufen der Standard-Anmeldeinformationen für den Namespace]: #obtain-default-credentials
   [Gewusst wie: Erstellen einer Warteschlange]: #create-queue

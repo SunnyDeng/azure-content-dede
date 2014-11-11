@@ -1,6 +1,6 @@
 <properties linkid="develop-nodejs-how-to-guides-service-bus-notification-hubs" urlDisplayName="Notification Hubs" pageTitle="Notification Hubs - Node.js Dev Center" metaKeywords="" description="Learn how to use Notification Hubs to send push notifications. Code samples are written for Node.js applications." metaCanonical="" services="service-bus" documentationCenter="nodejs" title="How to Use Notification Hubs" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Verwenden von Notification Hubs
 
@@ -188,7 +188,6 @@ vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 -   Besuchen Sie das [Azure SDK für Node][Azure SDK für Node]-Repository auf GitHub.
 
   [Nächste Schritte]: #next
-  [Was sind Notification Hubs?]: #hub
   [Erstellen einer Node.js-Anwendung]: #create
   [Konfigurieren einer Anwendung für Notification Hubs]: #config
   [Gewusst wie: Senden von Benachrichtigungen]: #send

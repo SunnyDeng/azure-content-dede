@@ -1,6 +1,6 @@
 <properties linkid="develop-python-web-site-with-django" urlDisplayName="Websites with Django" pageTitle="Python Websites with Django - Azure tutorial" metaKeywords="Azure django, django website" description="A tutorial that introduces you to running a Python website on Azure." metaCanonical="" services="web-sites" documentationCenter="Python" title="Creating Websites with Django" authors="huvalo" solutions="" manager="" editor="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Erstellen von Websites mit Django
 
@@ -8,7 +8,7 @@ In diesem Lernprogramm werden die ersten Schritte bei der Ausführung von Python
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung, die mit dem Django Web-Framework erstellt wurde, bereitstellen. Das Lernprogramm führt Sie schrittweise durch die Bereitstellung der Anwendung und der erforderlichen Bibliotheken, einschließlich Django. Das alles erfolgt in einem Git-Repository, das schnelle und einfache Push-Updates auf Ihre Website ermöglicht. Und schließlich konfigurieren Sie die neu erstellte Website über Azure, sodass sie in Ihrer Python-Anwendung ausgeführt werden kann.
 
-[WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
+[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 In diesem Lernprogramm wird Python 2.7 und Django 1.4 verwendet. Sie können diese entweder selbst abrufen oder schnell und einfach über den Windows-Installationslink unter [][]<http://www.windowsazure.com/de-de/develop/python/></a> installieren.
 
@@ -26,7 +26,7 @@ Nachdem Python, Django und Git installiert sind, haben Sie alles, um beginnen zu
 
 Der erste Schritt beim Erstellen einer App ist das Erstellen der Website im Azure-Verwaltungsportal. Melden Sie sich dazu beim Portal an, und klicken Sie unten links auf die Schaltfläche NEW. Daraufhin wird ein Fenster angezeigt. Klicken Sie auf **Schnellerfassung**, geben Sie eine URL ein, und wählen Sie **Website erstellen** aus.
 
-![][]
+![][0]
 
 Die Website wird umgehend eingerichtet. Nun fügen Sie Unterstützung für die Veröffentlichung mit Git hinzu. Dazu wählen Sie **Bereitstellung über Quellcodeverwaltung einrichten** aus.
 
@@ -133,9 +133,9 @@ Nachdem Sie die Dateien kopiert haben, führen Sie den Befehl **git status** aus
 Nun können Sie "manage.py" im Verzeichnis "DjangoApplication" wie gewohnt verwenden, um neue Anwendungen zum Django-Projekt hinzuzufügen.
 
   [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
-  []: http://www.windowsazure.com/de-de/develop/python/
+  [0]: http://www.windowsazure.com/de-de/develop/python/
   [msysgit]: http://code.google.com/p/msysgit/
-  []: ./media/web-sites-python-create-deploy-django-app/django-ws-003.png
+  [0]: ./media/web-sites-python-create-deploy-django-app/django-ws-003.png
   [1]: ./media/web-sites-python-create-deploy-django-app/django-ws-004.png
   [2]: ./media/web-sites-python-create-deploy-django-app/django-ws-005.png
   [3]: ./media/web-sites-python-create-deploy-django-app/django-ws-006.png

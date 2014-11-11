@@ -1,6 +1,6 @@
 <properties linkid="notification-hubs-windows-phone-send-breaking-news" pageTitle="Use Notification Hubs to send breaking news (Windows Phone)" metaKeywords="" description="Use  Azure Notification Hubs to use tag in registrations to send breaking news to a Windows Phone app." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Use Notification Hubs to send breaking news" authors="glenga" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten
 
@@ -189,7 +189,7 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 
 1.  Drücken Sie in Visual Studio die Taste F5, um die App zu starten.
 
-    ![][]
+    ![][0]
 
     Die Benutzeroberfläche der App bietet verschiedene Umschaltmöglichkeiten, mit denen Sie die Kategorien auswählen können, die Sie abonnieren möchten.
 
@@ -228,9 +228,6 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 <!-- URLs.-->
 
   [Windows Universal]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/ "Windows Universal"
-  [Windows Phone]: /de-de/documentation/articles/notification-hubs-windows-phone-send-breaking-news/ "Windows Phone"
-  [iOS]: /de-de/documentation/articles/notification-hubs-ios-send-breaking-news/ "iOS"
-  [Android]: /de-de/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/ "Android"
   [1]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
   [Hinzufügen der Kategorieauswahl zur App]: #adding-categories
@@ -239,6 +236,6 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
   [Ausführen der Anwendung und Erzeugen von Benachrichtigungen]: #test-app
   [Erste Schritte mit Notification Hubs]: /de-de/manage/services/notification-hubs/get-started-notification-hubs-wp8/
   [notification-hubs-back-end]: ../includes/notification-hubs-back-end.md
-  []: ./media/notification-hubs-windows-phone-send-breaking-news/notification-hub-breakingnews.png
+  [0]: ./media/notification-hubs-windows-phone-send-breaking-news/notification-hub-breakingnews.png
   [2]: ./media/notification-hubs-windows-phone-send-breaking-news/notification-hub-registration.png
   [3]: ./media/notification-hubs-windows-phone-send-breaking-news/notification-hub-toast.png

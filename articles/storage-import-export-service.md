@@ -1,6 +1,6 @@
 <properties linkid="manage-services-import-export" urlDisplayName="Azure Import/Export Service" pageTitle="Using import/export to transfer data to Blob Storage | Microsoft Azure" metaKeywords="" description="Learn how to create import and export jobs in the Azure Management Portal to transfer data to blob storage." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Verwenden des Microsoft Azure Import/Export-Diensts zum Übertragen von Daten in den Blob-Speicher
 
@@ -13,7 +13,7 @@ Es gibt zwei Möglichkeiten für die Erstellung und die Verwaltung von Import- u
 -   Über das Azure Verwaltungsportal
 -   Über eine REST-Schnittstelle zum Dienst
 
-Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des Verwaltungsportals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Azure Import/Export Service REST API Reference][] (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
+Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des Verwaltungsportals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Azure Import/Export Service REST API Reference][Azure Import/Export Service REST API Reference] (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
 
 ## Übersicht über den Import/Export-Dienst
 
@@ -35,7 +35,7 @@ Für die Erstellung eines Import- oder Exportauftrags benötigen Sie außerdem d
 
 ### Anforderungen und Umfang
 
-1.  **Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos][].
+1.  **Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos].
 2.  **Festplatten:** Der Import-/Exportdienst unterstützt nur SATA II/III-Laufwerke im 3,5-Zoll-Format. Festplatten größer als 4 TB werden nicht unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
 3.  **BitLocker-Verschlüsselung:** Alle auf den Festplatten gespeicherten Daten müssen mit BitLocker verschlüsselt sein. Dabei müssen die Verschlüsselungsschlüssel durch numerische Kennwörter geschützt sein.
 4.  **Blob-Speicherziele:** Daten können auf Blockblobs und Seitenblobs hochgeladen bzw. von dort heruntergeladen werden.
@@ -48,7 +48,7 @@ Erstellen Sie einen Importauftrag, um den Import-/Export-Dienst darüber zu info
 
 ### Vorbereiten Ihrer Laufwerke
 
-Bevor Sie einen Importauftrag erstellen, müssen Sie Ihre Laufwerke mit dem Microsoft Azure Import-/Exporttool vorbereiten. Weitere Details zum Microsoft Azure Import-/Exporttool finden Sie in der [Referenz zum Microsoft Azure Import-/Exporttool][]. Sie können das [Microsoft Azure Import-/Exporttool][] als eigenständiges Paket herunterladen.
+Bevor Sie einen Importauftrag erstellen, müssen Sie Ihre Laufwerke mit dem Microsoft Azure Import-/Exporttool vorbereiten. Weitere Details zum Microsoft Azure Import-/Exporttool finden Sie in der [Referenz zum Microsoft Azure Import-/Exporttool][Referenz zum Microsoft Azure Import-/Exporttool]. Sie können das [Microsoft Azure Import-/Exporttool][Microsoft Azure Import-/Exporttool] als eigenständiges Paket herunterladen.
 
 Führen Sie die folgenden drei Schritte durch, um Ihre Laufwerke vorzubereiten:
 
@@ -68,7 +68,7 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
 
 4.  Laden Sie im dritten Schritt die Protokolldateien hoch, die Sie während der Vorbereitung des Laufwerks erhalten haben. Sie müssen pro vorbereitetem Laufwerk eine Datei hochladen.
 
-    ![Importauftrag erstellen – Schritt 3][]
+    ![Importauftrag erstellen – Schritt 3][Importauftrag erstellen – Schritt 3]
 
 5.  Geben Sie im vierten Schritt einen beschreibenden Namen für den Importauftrag ein. Beachten Sie, dass der eingegebene Name nur Kleinbuchstaben, Ziffern, Trennstriche und Unterstriche enthalten darf, mit einem Buchstaben beginnen muss und keine Leerzeichen enthalten darf. Mithilfe des ausgewählten Namens können Sie Ihre Aufträge während und nach der Bearbeitung nachverfolgen.
 
@@ -94,7 +94,7 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 3.  Legen Sie im dritten Schritt fest, welche Blob-Daten Sie von Ihrem Speicherkonto auf Ihr leeres Laufwerk oder Ihre Laufwerke exportieren möchten. Sie können alle Blob-Daten des Speicherkontos exportieren, oder Sie legen fest, welche Blobs oder Blob-Sätze exportiert werden sollen.
 
-    ![Exportauftrag erstellen – Schritt 3][]
+    ![Exportauftrag erstellen – Schritt 3][Exportauftrag erstellen – Schritt 3]
 
     -   Verwenden Sie die Auswahl **Equal To**, und geben Sie den relativen Pfad zu dem Blob an, beginnend mit dem Containernamen, um den zu exportierenden Blob festzulegen. Verwenden Sie *$root*, um den Stammcontainer festzulegen.
     -   Verwenden Sie die Auswahl **Starts With**, und legen Sie das Präfix beginnend mit einem Schrägstrich "/" fest, um alle Blobs festzulegen, die mit einem Präfix beginnen. Bei dem Präfix kann es sich um das Präfix des Containernamens, den vollständigen Containernamen oder den vollständigen Containernamen gefolgt vom Präfix des Blob-Namens handeln.
@@ -199,7 +199,7 @@ In der Tabelle sind die Bedeutungen der Auftragsstatus beschrieben:
 
 Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für Ihr Laufwerk erstellt wurden, anzeigen und kopieren, damit Sie Ihre exportierten Daten entschlüsseln können, sobald Sie die Laufwerke vom Azure-Datacenter erhalten. Navigieren Sie im Verwaltungsportal zu Ihrem Speicherkonto, und klicken Sie auf die Registerkarte **Import/Export**. Wählen Sie Ihren Exportauftrag in der Liste aus, und klicken Sie auf die Schaltfläche **View Keys**. Die BitLocker-Schlüssel werden wie abgebildet angezeigt:
 
-![BitLocker-Schlüssel für einen Exportauftrag anzeigen][]
+![BitLocker-Schlüssel für einen Exportauftrag anzeigen][BitLocker-Schlüssel für einen Exportauftrag anzeigen]
 
 ## Häufig gestellte Fragen
 
@@ -207,7 +207,7 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 **Was kostet der Import-/Export-Dienst?**
 
--   Weitere Informationen hierzu finden Sie unter [Import/Export Preisdetails][].
+-   Weitere Informationen hierzu finden Sie unter [Import/Export Preisdetails][Import/Export Preisdetails].
 
 **Wie lange dauert der Import oder Export meiner Daten?**
 
@@ -257,9 +257,9 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 **Welche Kurierdienste können verwendet werden?**
 
--   Für US- und europäische Regionen wird nur [Federal Express][] (FedEx) unterstützt. Alle Pakete werden per FedEx Ground oder FedEx International Economy zurückgeschickt.
+-   Für US- und europäische Regionen wird nur [Federal Express][Federal Express] (FedEx) unterstützt. Alle Pakete werden per FedEx Ground oder FedEx International Economy zurückgeschickt.
 
--   Für asiatische Regionen wird nur [DHL][] unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
+-   Für asiatische Regionen wird nur [DHL][DHL] unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
 
     <div class="dev-callout">
     <strong>Wichtig</strong>
@@ -268,7 +268,7 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 **Entstehen Kosten für den Rückversand?**
 
--   Microsoft verwendet die Kontonummer für das Transportunternehmen, die Sie bei der Auftragserstellung angegeben haben, um die Laufwerke vom Rechenzentrum an Ihre Absenderadresse zu schicken. Geben Sie daher unbedingt eine Kontonummer für ein Transportunternehmen an, das in der Region des Rechenzentrums unterstützt wird. Sie können ein Konto bei [FedEx][Federal Express] (für USA und Europa) oder [DHL][] (Asien) erstellen, falls Sie kein solches Konto haben.
+-   Microsoft verwendet die Kontonummer für das Transportunternehmen, die Sie bei der Auftragserstellung angegeben haben, um die Laufwerke vom Rechenzentrum an Ihre Absenderadresse zu schicken. Geben Sie daher unbedingt eine Kontonummer für ein Transportunternehmen an, das in der Region des Rechenzentrums unterstützt wird. Sie können ein Konto bei [FedEx][Federal Express] (für USA und Europa) oder [DHL][DHL] (Asien) erstellen, falls Sie kein solches Konto haben.
 
 -   Die Rücksendegebühren werden Ihrem Konto beim Transportunternehmen berechnet und hängen vom Transportunternehmen ab.
 
@@ -291,7 +291,7 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
     <p>Beachten Sie, dass die physischen Medien beim Versand unter Umst&auml;nden L&auml;ndergrenzen &uuml;berqueren. Sie m&uuml;ssen sicherstellen, dass Ihre physischen Medien und Daten gem&auml;&szlig; geltender Gesetze importiert bzw. exportiert werden. Pr&uuml;fen Sie vor dem Versand der physischen Medien mit Ihren Rechtsberatern, ob Medien und Daten laut Gesetz an das entsprechende Rechenzentrum verschickt werden d&uuml;rfen. So stellen Sie sicher, dass Ihre Daten zeitnah bei Microsoft eintreffen.</p>
 </div>
 
--   Beim Versand Ihrer Pakete müssen Sie die Nutzungsbedingungen unter [Microsoft Azure-Nutzungsbedingungen][] beachten.
+-   Beim Versand Ihrer Pakete müssen Sie die Nutzungsbedingungen unter [Microsoft Azure-Nutzungsbedingungen][Microsoft Azure-Nutzungsbedingungen] beachten.
 
 **Kann ich bei Microsoft Laufwerke für Import-/Exportaufträge kaufen?**
 
@@ -311,4 +311,4 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
   [Import/Export Preisdetails]: http://go.microsoft.com/fwlink/?LinkId=329033
   [Federal Express]: http://www.fedex.com/us/oadr/
   [DHL]: http://www.dhl-welcome.com/Tutorial/
-  [Microsoft Azure-Nutzungsbedingungen]: http://azure.microsoft.com/en-us/support/legal/services-terms/
+  [Microsoft Azure-Nutzungsbedingungen]: http://azure.microsoft.com/de-de/support/legal/services-terms/

@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage  from .NET | Microsoft Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Learn how to use Microsoft Azure Table storage to create and delete tables and insert and query entities in a table." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Microsoft Azure Table storage" authors="tamram" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Verwenden des Tabellenspeichers mit .NET
 
@@ -8,45 +8,45 @@ Diese Anleitung beschreibt die Ausführung gängiger Szenarien mithilfe des
 Azure-Tabellenspeicherdiensts. Die Beispiele sind in C# geschrieben
 und verwenden die Azure Speicher-Clientbibliothek für .NET. Behandelt werden unter anderem die **Erstellung und
 Löschung von Tabellen** sowie die **Arbeit mit Tabellenentitäten**. Weitere
-Informationen zu Tabellen finden Sie im Abschnitt [nächste Schritte][].
+Informationen zu Tabellen finden Sie im Abschnitt [nächste Schritte][nächste Schritte].
 
-> [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet][] oder als Teil des [Azure SDK für .NET][] erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Tabellenspeicher][] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
+> [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet][NuGet] oder als Teil des [Azure SDK für .NET][Azure SDK für .NET] erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Tabellenspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Tabellenspeicher] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
 
 ## Inhaltsverzeichnis
 
--   [Was ist der Tabellendienst?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Einrichten einer Speicherverbindungszeichenfolge][]
--   [Gewusst wie: Programmgesteuerter Zugriff auf den Tabellenspeicher][]
--   [Gewusst wie: Erstellen einer Tabelle][]
--   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][]
--   [Gewusst wie: Einfügen eines Entitätsbatchs][]
--   [Gewusst wie: Abrufen aller Entitäten in einer Partition][]
--   [Gewusst wie: Abrufen eines Entitätsbereichs in einer Partition][]
--   [Gewusst wie: Abrufen einer einzelnen Entität][]
--   [Gewusst wie: Ersetzen einer Entität][]
--   [Gewusst wie: Einfügen oder Ersetzen einer Entität][]
--   [Gewusst wie: Abfragen einer Teilmenge von Entitätseigenschaften][]
--   [Gewusst wie: Löschen einer Entität][]
--   [Gewusst wie: Löschen einer Tabelle][]
+-   [Was ist der Tabellendienst?][Was ist der Tabellendienst?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Einrichten einer Speicherverbindungszeichenfolge][Einrichten einer Speicherverbindungszeichenfolge]
+-   [Gewusst wie: Programmgesteuerter Zugriff auf den Tabellenspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Tabellenspeicher]
+-   [Gewusst wie: Erstellen einer Tabelle][Gewusst wie: Erstellen einer Tabelle]
+-   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][Gewusst wie: Hinzufügen einer Entität zu einer Tabelle]
+-   [Gewusst wie: Einfügen eines Entitätsbatchs][Gewusst wie: Einfügen eines Entitätsbatchs]
+-   [Gewusst wie: Abrufen aller Entitäten in einer Partition][Gewusst wie: Abrufen aller Entitäten in einer Partition]
+-   [Gewusst wie: Abrufen eines Entitätsbereichs in einer Partition][Gewusst wie: Abrufen eines Entitätsbereichs in einer Partition]
+-   [Gewusst wie: Abrufen einer einzelnen Entität][Gewusst wie: Abrufen einer einzelnen Entität]
+-   [Gewusst wie: Ersetzen einer Entität][Gewusst wie: Ersetzen einer Entität]
+-   [Gewusst wie: Einfügen oder Ersetzen einer Entität][Gewusst wie: Einfügen oder Ersetzen einer Entität]
+-   [Gewusst wie: Abfragen einer Teilmenge von Entitätseigenschaften][Gewusst wie: Abfragen einer Teilmenge von Entitätseigenschaften]
+-   [Gewusst wie: Löschen einer Entität][Gewusst wie: Löschen einer Entität]
+-   [Gewusst wie: Löschen einer Tabelle][Gewusst wie: Löschen einer Tabelle]
 -   [Nächste Schritte][nächste Schritte]
 
-[WACOM.INCLUDE [howto-table-storage][]]
+[WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
 
 ## 
 
 ## <a name="create-account"></a><span class="short-header">Erstellen eines Kontos</span>Erstellen eines Azure-Speicherkontos
 
 </h2>
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## 
 
 ## <a name="setup-connection-string"></a><span class="short-header">Einrichten einer Verbindungszeichenfolge</span>Einrichten einer Speicherverbindungszeichenfolge
 
 </h2>
-[WACOM.INCLUDE [storage-configure-connection-string][]]
+[WACOM.INCLUDE [storage-configure-connection-string](../includes/storage-configure-connection-string.md)]
 
 ## 
 
@@ -57,7 +57,7 @@ Informationen zu Tabellen finden Sie im Abschnitt [nächste Schritte][].
 
 Sie können die Assembly `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
-`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
+`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
 
 ### Namespace-Deklarationen
 
@@ -92,7 +92,7 @@ Wenn Sie eine Anwendung ohne einen Verweis auf Microsoft.WindowsAzure.CloudConfi
 
 ### ODataLib-Abhängigkeiten
 
-ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst. Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen. Die spezifischen ODataLib-Pakete sind [OData][], [Edm][] und [Spatial][].
+ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst. Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen. Die spezifischen ODataLib-Pakete sind [OData][OData], [Edm][Edm] und [Spatial][Spatial].
 
 ## <a name="create-table"></a><span class="short-header">Erstellen einer Tabelle</span>Gewusst wie: Erstellen einer Tabelle
 
@@ -410,7 +410,7 @@ an der Entität zwischen dem Abrufen und der Update-Operation werden
 Mit einer Tabellenabfrage können nicht nur alle, sondern auch nur einige Eigenschaften aus einer Entität abgerufen werden. Bei dieser Methode, der sogenannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Die Abfrage im
 folgenden Code gibt nur die E-Mail-Adressen von Entitäten in der
 Tabelle zurück. Dazu wird eine Abfrage von **DynamicTableEntity** sowie
-ein **EntityResolver** verwendet. Weitere Informationen zur Projektion finden Sie in diesem [Blogbeitrag][]. Beachten Sie, dass die Projektion nicht auf dem lokalen Speicheremulator unterstützt wird und dieser Code deshalb nur bei der Verwendung eines Kontos für den Tabellendienst ausgeführt wird.
+ein **EntityResolver** verwendet. Weitere Informationen zur Projektion finden Sie in diesem [Blogbeitrag][Blogbeitrag]. Beachten Sie, dass die Projektion nicht auf dem lokalen Speicheremulator unterstützt wird und dieser Code deshalb nur bei der Verwendung eines Kontos für den Tabellendienst ausgeführt wird.
 
     // Retrieve storage account from connection string
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -497,20 +497,19 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
 folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 -   In der Referenzdokumentation für den Tabellenspeicherdienst finden Sie alle Details zu verfügbaren APIs:
-    -   [Referenz zur Speicherclientbibliothek für .NET][]
-    -   [REST-API-Referenz][]
--   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speicher][].
--   Informationen zum Arbeiten mit dem Azure-Speicher in Back-End-Prozessen für Azure-Webseiten finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK][].
+    -   [Referenz zur Speicherclientbibliothek für .NET][Referenz zur Speicherclientbibliothek für .NET]
+    -   [REST-API-Referenz][REST-API-Referenz]
+-   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speicher][Speicher].
+-   Informationen zum Arbeiten mit dem Azure-Speicher in Back-End-Prozessen für Azure-Webseiten finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK][Erste Schritte mit dem Azure WebJobs SDK].
 -   Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
-    -   Verwenden Sie [Blobspeicher][] zum Speichern unstrukturierter Daten.
-    -   Verwenden Sie den [Warteschlangenspeicher][] zum Speichern relationaler Daten.
-    -   Verwenden Sie eine [SQL-Datenbank][] zum Speichern relationaler Daten.
+    -   Verwenden Sie [Blobspeicher][Blobspeicher] zum Speichern unstrukturierter Daten.
+    -   Verwenden Sie den [Warteschlangenspeicher][Warteschlangenspeicher] zum Speichern relationaler Daten.
+    -   Verwenden Sie eine [SQL-Datenbank][SQL-Datenbank] zum Speichern relationaler Daten.
 
   [nächste Schritte]: #next-steps
   [NuGet]: https://www.nuget.org/packages/WindowsAzure.Storage/
-  [Azure SDK für .NET]: /en-us/downloads/
+  [Azure SDK für .NET]: /de-de/downloads/
   [Gewusst wie: Programmgesteuerter Zugriff auf den Tabellenspeicher]: #configure-access
-  [Was ist der Tabellendienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Einrichten einer Speicherverbindungszeichenfolge]: #setup-connection-string
@@ -528,14 +527,14 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [howto-table-storage]: ../includes/howto-table-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
   [storage-configure-connection-string]: ../includes/storage-configure-connection-string.md
-  [.NET Developer Center]: http://www.windowsazure.com/en-us/develop/net/#
+  [.NET Developer Center]: http://www.windowsazure.com/de-de/develop/net/#
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [Blogbeitrag]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
   [Referenz zur Speicherclientbibliothek für .NET]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-  [REST-API-Referenz]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179355
-  [Speicher]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [REST-API-Referenz]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179355
+  [Speicher]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Erste Schritte mit dem Azure WebJobs SDK]: /de-de/documentation/articles/websites-dotnet-webjobs-sdk-get-started/
   [Blobspeicher]: /de-de/documentation/articles/storage-dotnet-how-to-use-blobs/
   [Warteschlangenspeicher]: /de-de/documentation/articles/storage-dotnet-how-to-use-queues/

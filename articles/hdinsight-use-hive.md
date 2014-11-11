@@ -1,25 +1,25 @@
 <properties linkid="manage-services-hdinsight-howto-hive" urlDisplayName="Use Hadoop Hive in HDInsight" pageTitle="Use Hadoop Hive in HDInsight | Azure" metaKeywords="" description="Learn how to use Hive with HDInsight. You'll use a log file as input into an HDInsight table, and use HiveQL to query the data and report basic statistics." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Hadoop Hive in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
 # Verwenden von Hive mit Hadoop in HDInsight
 
-[Apache Hive][] ermöglicht das Ausführen von MapReduce-Jobs über eine SQL-ähnliche Skriptsprache namens *HiveQL*, mit der große Datenmengen zusammengefasst, abgefragt und analysiert werden können. In diesem Artikel verwenden Sie HiveQL zur Datenabfrage in einer Apache log4j-Protokolldatei und zur Erstellung von Berichten zu grundlegenden Statistiken.
+[Apache Hive][Apache Hive] ermöglicht das Ausführen von MapReduce-Jobs über eine SQL-ähnliche Skriptsprache namens *HiveQL*, mit der große Datenmengen zusammengefasst, abgefragt und analysiert werden können. In diesem Artikel verwenden Sie HiveQL zur Datenabfrage in einer Apache log4j-Protokolldatei und zur Erstellung von Berichten zu grundlegenden Statistiken.
 
 **Voraussetzungen:**
 
--   Sie benötigen einen bereitgestellten **HDInsight-Cluster**. Eine Anleitung zur entsprechenden Vorgehensweise mit dem Azure-Portal finden Sie unter [Erste Schritte mit HDInsight][]. Informationen zu den verschiedenen anderen Arten, auf die solche Cluster erstellt werden können, finden Sie unter [Bereitstellen von HDInsight-Clustern][].
+-   Sie benötigen einen bereitgestellten **HDInsight-Cluster**. Eine Anleitung zur entsprechenden Vorgehensweise mit dem Azure-Portal finden Sie unter [Erste Schritte mit HDInsight][Erste Schritte mit HDInsight]. Informationen zu den verschiedenen anderen Arten, auf die solche Cluster erstellt werden können, finden Sie unter [Bereitstellen von HDInsight-Clustern][Bereitstellen von HDInsight-Clustern].
 
--   Sie müssen **Azure PowerShell** auf Ihrer Arbeitsstation installiert haben. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+-   Sie müssen **Azure PowerShell** auf Ihrer Arbeitsstation installiert haben. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
 
 **Geschätzter Zeitaufwand:** 30 Minuten
 
 ## Themen in diesem Artikel
 
--   [Der Hive-Anwendungsbereich][]
--   [Upload von Daten in einen Azure-Blob-Speicher][]
--   [Ausführen von Hive-Abfragen mit PowerShell][]
--   [Nächste Schritte][]
+-   [Der Hive-Anwendungsbereich][Der Hive-Anwendungsbereich]
+-   [Upload von Daten in einen Azure-Blob-Speicher][Upload von Daten in einen Azure-Blob-Speicher]
+-   [Ausführen von Hive-Abfragen mit PowerShell][Ausführen von Hive-Abfragen mit PowerShell]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <span id="usage"></span></a>Der Hive-Anwendungsbereich
 
@@ -39,7 +39,7 @@ Deshalb sind Protokolldateien ein typisches Beispiel für große Datenmengen. HD
 
 ## <span id="uploaddata"></span></a>Hochladen von Datendateien in Azure Blob-Speicher
 
-HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][].
+HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][Verwenden von Azure Blob-Speicher mit HDInsight].
 
 In diesem Beitrag verwenden Sie eine über den HDInsight-Cluster verteilte log4j-Musterdatei, die unter *\\example\\data\\sample.log* gespeichert ist. Jedes Protokoll innerhalb der Datei besteht aus einer Reihe von Feldern, unter denen sich ein Feld namens `[LOG LEVEL]` befindet, das die Art und den Schweregrad des jeweiligen Fehlers anzeigt. Beispiel:
 
@@ -60,7 +60,7 @@ Da die Datei im Standarddateisystem gespeichert ist, können Sie auch auf folgen
     wasb:///example/data/sample.log
     /example/data/sample.log
 
-Wenn Sie Ihre eigenen log4j-Dateien erstellen möchten, verwenden Sie dafür das Protokollierungsprogramm [Apache Log4j][]. Informationen zum Hochladen von Daten in Azure Blob-Speicher erhalten Sie unter [Hochladen von Daten in HDInsight][].
+Wenn Sie Ihre eigenen log4j-Dateien erstellen möchten, verwenden Sie dafür das Protokollierungsprogramm [Apache Log4j][Apache Log4j]. Informationen zum Hochladen von Daten in Azure Blob-Speicher erhalten Sie unter [Hochladen von Daten in HDInsight][Hochladen von Daten in HDInsight].
 
 ## <span id="runhivequeries"></span></a> Ausführen von Hive-Abfragen mit PowerShell
 
@@ -72,7 +72,7 @@ Hive-Abfragen können in PowerShell entweder über das Cmdlet **Start-AzureHDIns
 
 **So führen Sie die Hive-Abfragen mit Start-AzureHDInsightJob aus**
 
-1.  Öffnen Sie ein Azure PowerShell-Konsolenfenster. Die Informationen dazu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+1.  Öffnen Sie ein Azure PowerShell-Konsolenfenster. Die Informationen dazu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
 2.  Führen Sie den folgenden Befehl aus, um sich mit Ihrem Azure-Abonnement zu verbinden:
 
         Add-AzureAccount
@@ -132,7 +132,7 @@ Hive-Abfragen können in PowerShell entweder über das Cmdlet **Start-AzureHDIns
 	    # Print the standard error and the standard output of the Hive job.
         Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardOutput
 
-    ![HDI.HIVE.PowerShell][]
+    ![HDI.HIVE.PowerShell][HDI.HIVE.PowerShell]
 
     Das Ergebnis lautet:
 
@@ -164,25 +164,25 @@ Hive-Abfragen können in PowerShell entweder über das Cmdlet **Start-AzureHDIns
 
     Die Ausgabe ist:
 
-    ![PowerShell Invoke-Hive-Ausgabe][]
+    ![PowerShell Invoke-Hive-Ausgabe][PowerShell Invoke-Hive-Ausgabe]
 
     Für längere HiveQL-Abfragen wird empfohlen, PowerShell Here-Strings oder die HiveQL-Skriptdatei zu verwenden. Die folgenden Beispiele zeigen, wie das Cmdlet Invoke-Hive zur Ausführung einer HiveQL-Skriptdatei verwendet wird. Die HiveQL-Skriptdatei muss auf WASB hochgeladen werden.
 
         Invoke-Hive -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"
 
-    Weitere Informationen zu Here-Strings erhalten Sie unter [Verwenden von Windows PowerShell-Here-Strings][].
+    Weitere Informationen zu Here-Strings erhalten Sie unter [Verwenden von Windows PowerShell-Here-Strings][Verwenden von Windows PowerShell-Here-Strings].
 
 ## <span id="nextsteps"></span></a>Nächste Schritte
 
 Während Hive die Datenabfrage mit einer SQL-ähnlichen Abfragesprache erleichtert, bieten andere in HDInsight verfügbare Komponenten ergänzende Funktionen wie Datenverschiebung und -transformation. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 -   [Erste Schritte mit Azure HDInsight][Erste Schritte mit HDInsight]
--   [Analysieren von Daten zu Flugverspätungen mit HDInsight][]
--   [Verwenden von Oozie mit HDInsight][]
--   [Programmgesteuerte Übermittlung von Hadoop-Jobs][]
+-   [Analysieren von Daten zu Flugverspätungen mit HDInsight][Analysieren von Daten zu Flugverspätungen mit HDInsight]
+-   [Verwenden von Oozie mit HDInsight][Verwenden von Oozie mit HDInsight]
+-   [Programmgesteuerte Übermittlung von Hadoop-Jobs][Programmgesteuerte Übermittlung von Hadoop-Jobs]
 -   [Hochladen von Daten zu HDInsight][Hochladen von Daten in HDInsight]
--   [Verwenden von Pig mit HDInsight][]
--   [Dokumentation zum Azure HDInsight SDK][]
+-   [Verwenden von Pig mit HDInsight][Verwenden von Pig mit HDInsight]
+-   [Dokumentation zum Azure HDInsight SDK][Dokumentation zum Azure HDInsight SDK]
 
   [Apache Hive]: http://hive.apache.org/
   [Erste Schritte mit HDInsight]: ../hdinsight-get-started/
@@ -197,9 +197,9 @@ Während Hive die Datenabfrage mit einer SQL-ähnlichen Abfragesprache erleichte
   [Hochladen von Daten in HDInsight]: ../hdinsight-upload-data/
   [HDI.HIVE.PowerShell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
   [PowerShell Invoke-Hive-Ausgabe]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
-  [Verwenden von Windows PowerShell-Here-Strings]: http://technet.microsoft.com/en-us/library/ee692792.aspx
+  [Verwenden von Windows PowerShell-Here-Strings]: http://technet.microsoft.com/de-de/library/ee692792.aspx
   [Analysieren von Daten zu Flugverspätungen mit HDInsight]: ../hdinsight-analyze-flight-delay-data/
   [Verwenden von Oozie mit HDInsight]: ../hdinsight-use-oozie/
   [Programmgesteuerte Übermittlung von Hadoop-Jobs]: ../hdinsight-submit-hadoop-jobs-programmatically/
   [Verwenden von Pig mit HDInsight]: ../hdinsight-use-pig/
-  [Dokumentation zum Azure HDInsight SDK]: http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx
+  [Dokumentation zum Azure HDInsight SDK]: http://msdnstage.redmond.corp.microsoft.com/de-de/library/dn479185.aspx

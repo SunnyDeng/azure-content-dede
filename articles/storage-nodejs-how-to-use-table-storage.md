@@ -1,6 +1,6 @@
 <properties linkid="dev-nodejs-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage (Node.js) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Node.js, table storage Node.js" description="Learn how to use the table storage service in Azure. Code samples are written using the Node.js API." metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Table Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
 
 # Verwenden des Tabellenspeicherdiensts aus Node.js
 
@@ -8,36 +8,36 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Window
 Azure-Tabellenspeicherdienst demonstriert. Die Beispiele wurden unter Verwendung der
 Node.js-API geschrieben. Die behandelten Szenarien umfassen das **Erstellen und Löschen
 einer Tabelle sowie das Einfügen und Abfragen von Tabellenentitäten**. Weitere
-Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte][].
+Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
 ## Inhaltsverzeichnis
 
--   [Was ist der Tabellenspeicherdienst?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen einer Node.js-Anwendung][]
--   [Konfigurieren der Anwendung für den Speicherzugriff][]
--   [Einrichten einer Azure-Speicherverbindung][]
--   [Gewusst wie: Erstellen einer Tabelle][]
--   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][]
--   [Gewusst wie: Aktualisieren einer Entität][]
--   [Gewusst wie: Arbeiten mit Gruppen von Entitäten][]
--   [Gewusst wie: Abrufen einer Entität][]
--   [Gewusst wie: Abfragen einer Gruppe von Entitäten][]
--   [Gewusst wie: Löschen einer Entität][]
--   [Gewusst wie: Löschen einer Tabelle][]
--   [Gewusst wie: Arbeiten mit Shared Access Signatures][]
--   [Nächste Schritte][]
+-   [Was ist der Tabellenspeicherdienst?][Was ist der Tabellenspeicherdienst?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Erstellen einer Node.js-Anwendung][Erstellen einer Node.js-Anwendung]
+-   [Konfigurieren der Anwendung für den Speicherzugriff][Konfigurieren der Anwendung für den Speicherzugriff]
+-   [Einrichten einer Azure-Speicherverbindung][Einrichten einer Azure-Speicherverbindung]
+-   [Gewusst wie: Erstellen einer Tabelle][Gewusst wie: Erstellen einer Tabelle]
+-   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][Gewusst wie: Hinzufügen einer Entität zu einer Tabelle]
+-   [Gewusst wie: Aktualisieren einer Entität][Gewusst wie: Aktualisieren einer Entität]
+-   [Gewusst wie: Arbeiten mit Gruppen von Entitäten][Gewusst wie: Arbeiten mit Gruppen von Entitäten]
+-   [Gewusst wie: Abrufen einer Entität][Gewusst wie: Abrufen einer Entität]
+-   [Gewusst wie: Abfragen einer Gruppe von Entitäten][Gewusst wie: Abfragen einer Gruppe von Entitäten]
+-   [Gewusst wie: Löschen einer Entität][Gewusst wie: Löschen einer Entität]
+-   [Gewusst wie: Löschen einer Tabelle][Gewusst wie: Löschen einer Tabelle]
+-   [Gewusst wie: Arbeiten mit Shared Access Signatures][Gewusst wie: Arbeiten mit Shared Access Signatures]
+-   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [howto-table-storage][]]
+[WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
 
 ## <a name="create-account"></a>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <a name="create-app"> </a>Erstellen einer Node.js-Anwendung
 
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website][], [Node.js-Clouddienst][] (mithilfe von Windows PowerShell) oder [Website mit WebMatrix][].
+Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website][Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Clouddienst][Node.js-Clouddienst] (mithilfe von Windows PowerShell) oder [Website mit WebMatrix][Website mit WebMatrix].
 
 ## <a name="configure-access"> </a>Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -76,7 +76,7 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_STORAGE\_ACCESS\_KEY oder AZURE\_STORAGE\_CONNECTION\_STRING die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **TableService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][].
+Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][Node.js-Webanwendung mit Speicher].
 
 ## <a name="create-table"> </a>Erstellen einer Tabelle
 
@@ -122,7 +122,7 @@ das die Entitätseigenschaften definiert. Alle Entitäten müssen **PartitionKey
 
 -   **RowKey**: Identifiziert die Entität innerhalb der Partition eindeutig.
 
-**PartitionKey** und **RowKey** müssen Zeichenfolgenwerte sein. Weitere Informationen finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][].
+**PartitionKey** und **RowKey** müssen Zeichenfolgenwerte sein. Weitere Informationen finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][Grundlegendes zum Tabellendienst-Datenmodell].
 
 Nachfolgend sehen Sie ein Beispiel für die Definition einer Entität. Beachten Sie, dass **dueDate** vom Typ **Edm.DateTime** definiert ist. Die Angabe des Typs ist optional. Nicht angegebene Typen werden abgeleitet.
 
@@ -154,7 +154,7 @@ das Entitätsobjekt an die **insertEntity**-Methode.
         }
     });
 
-Ist der Vorgang erfolgreich, enthält `result` das [ETag][] des eingefügten Datensatzes, und `response` enthält Informationen zu dem Vorgang.
+Ist der Vorgang erfolgreich, enthält `result` das [ETag][ETag] des eingefügten Datensatzes, und `response` enthält Informationen zu dem Vorgang.
 
 > [WACOM.NOTE] Standardmäßig gibt **insertEntity** die eingefügte Entität nicht im Rahmen der `response`-Informationen zurück. Wenn Sie weitere Vorgänge mit der Entität ausführen oder die Informationen zwischenspeichern möchten, können Sie sie als Teil von `result` zurückgeben. Hierzu aktivieren Sie **echoContent** wie folgt:
 >
@@ -313,7 +313,7 @@ an die **deleteEntity**-Methode übergeben.
       }
     });
 
-> [WACOM.NOTE] Es ist ratsam, beim Löschen von Elementen ETags zu verwenden, um sicherzustellen, dass das Element nicht von einem anderen Prozess geändert wurde. Weitere Informationen zum Verwenden von ETags finden Sie unter [Gewusst wie: Aktualisieren einer Entität][].
+> [WACOM.NOTE] Es ist ratsam, beim Löschen von Elementen ETags zu verwenden, um sicherzustellen, dass das Element nicht von einem anderen Prozess geändert wurde. Weitere Informationen zum Verwenden von ETags finden Sie unter [Gewusst wie: Aktualisieren einer Entität][Gewusst wie: Aktualisieren einer Entität].
 
 ## <a name="delete-table"> </a>Löschen einer Tabelle
 
@@ -415,12 +415,11 @@ Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Ric
 Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht haben,
 folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
--   [Besuchen Sie den Blog des Azure-Speicherteams][].
--   Besuchen Sie das [Azure Storage SDK für Node][]-Repository auf GitHub.
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure].
+-   [Besuchen Sie den Blog des Azure-Speicherteams][Besuchen Sie den Blog des Azure-Speicherteams].
+-   Besuchen Sie das [Azure Storage SDK für Node][Azure Storage SDK für Node]-Repository auf GitHub.
 
   [Nächste Schritte]: #next-steps
-  [Was ist der Tabellenspeicherdienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Erstellen einer Node.js-Anwendung]: #create-app
@@ -443,6 +442,6 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [Node.js-Webanwendung mit Speicher]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
   [Grundlegendes zum Tabellendienst-Datenmodell]: http://msdn.microsoft.com/library/azure/dd179338.aspx
   [ETag]: http://en.wikipedia.org/wiki/HTTP_ETag
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Besuchen Sie den Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure Storage SDK für Node]: https://github.com/Azure/azure-storage-node

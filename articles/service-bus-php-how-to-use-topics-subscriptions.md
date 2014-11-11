@@ -1,6 +1,6 @@
 <properties linkid="develop-php-how-to-guides-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="How to use Service Bus topics (PHP) - Azure" metaKeywords="" description="Learn how to use Service Bus topics with PHP in Azure." metaCanonical="" services="service-bus" documentationCenter="PHP" title="How to Use Service Bus Topics/Subscriptions" authors="sethm" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="sethm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="sethm" />
 
 # Verwenden von Servicebus-Themen und -Abonnements
 
@@ -321,7 +321,6 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen
 vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, Themen und Abonnements][Warteschlangen, Themen und Abonnements].
 
   [Azure-SDK für PHP]: http://go.microsoft.com/fwlink/?LinkId=252473
-  [Was sind Service Bus-Themen und -Abonnements?]: #what-are-service-bus-topics
   [Erstellen eines Dienstnamespace]: #create-a-service-namespace
   [Abrufen der Standard-Anmeldeinformationen für den Namespace]: #obtain-default-credentials
   [Erstellen einer PHP-Anwendung]: #CreateApplication
@@ -337,6 +336,5 @@ vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, T
   [howto-service-bus-topics]: ../includes/howto-service-bus-topics.md
   [OpenSSL-Erweiterung]: http://php.net/openssl
   [get-client-libraries]: ../includes/get-client-libraries.md
-  [require\_once]: http://php.net/require_once
   [Eigenschaft SqlFilter.SqlExpression]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx

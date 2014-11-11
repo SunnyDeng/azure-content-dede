@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-push-android" urlDisplayName="Get Started with Push (Android)" pageTitle="Get started with push notifications (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Android app." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
 
 # Erste Schritte mit Pushbenachrichtigungen in Mobile Services (Legacypushvorgang)
 
@@ -39,7 +39,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ## <span id="register"></span></a>Aktivieren von Google Cloud Messaging
 
-[WACOM.INCLUDE [Enable GCM][Enable GCM]]
+[WACOM.INCLUDE [Enable GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
 Als Nächstes verwenden Sie diesen API-Schlüsselwert, um Mobile Services für die Authentifizierung mit GCM zu aktivieren und Pushbenachrichtigungen im Auftrag Ihrer App zu senden.
 
@@ -47,7 +47,7 @@ Als Nächstes verwenden Sie diesen API-Schlüsselwert, um Mobile Services für d
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre Anwendung.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Push**, geben Sie den Wert **API Key** ein, den Sie zuvor von GCM erhalten haben, und klicken Sie auf **Speichern**.
 
@@ -59,7 +59,7 @@ Ihre Mobile Service ist jetzt konfiguriert, um mit GCM Pushbenachrichtigungen zu
 
 ### Hinzufügen von Google Play Services zum Projekt
 
-[WACOM.INCLUDE [Add Play Services][Add Play Services]]
+[WACOM.INCLUDE [Add Play Services](../includes/mobile-services-add-Google-play-services.md)]
 
 ### Hinzufügen des Codes
 
@@ -249,14 +249,6 @@ In diesem einfachen Beispiel empfängt ein Benutzer eine Benachrichtigung mit de
 
 <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/develop/mobile/tutorials/get-started-with-push-dotnet "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/develop/mobile/tutorials/get-started-with-push-js "Windows Store JavaScript"
-  [Windows Phone]: /de-de/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone"
-  [iOS]: /de-de/develop/mobile/tutorials/get-started-with-push-ios "iOS"
-  [Android]: /de-de/develop/mobile/tutorials/get-started-with-push-android "Android"
-  [Appcelerator]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push "Appcelerator"
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-push/ ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-android-get-started-push/ "JavaScript-Backend"
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push/
   [Aktivieren von Google Cloud Messaging]: #register
   [Konfigurieren von Mobile Services]: #configure
@@ -267,7 +259,7 @@ In diesem einfachen Beispiel empfängt ein Benutzer eine Benachrichtigung mit de
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-android
   [Enable GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
   [1]: ./media/mobile-services-android-get-started-push/mobile-push-tab-android.png
   [Add Play Services]: ../includes/mobile-services-add-Google-play-services.md
   [Set Up Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801

@@ -1,6 +1,6 @@
 <properties title="Azure Machine Learning Sample: Prediction of student performance" pageTitle="Machine Learning Sample: Predict student performance | Azure" description="A sample Azure Machine Learning experiment to develop a model that predicts student performance on tests." metaKeywords="" services="" solutions="" documentationCenter="" authors="garye" videoId="" scriptId="" />
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye"></tags>
+<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye" />
 
 # Azure Machine Learning-Beispiel: Vorhersage der Leistung der Schüler
 
@@ -26,7 +26,7 @@ Die Ergebnisdatei „algebra\_train\_small.txt\_ascii“ ist immer noch recht gr
 	$ctxt = New-AzureStorageContext -StorageAccountName $key.StorageAccountName -StorageAccountKey $key.Primary
 	Set-AzureStorageBlobContent –Container <container name in your storage account> -File "algebra_train_small.txt_ascii" –Context $ctxt
 
-![][]
+![][0]
 
 Die Parameter des **Lesemoduls** werden oben angezeigt. In diesem Beispiel lautet der Speicherkontoname „datascience“ und die Datasetdatei „algebra_train_small.txt_ascii“ wird im Container „sampleexperiments“ abgelegt. Der Kontoschlüssel ist ein Zugriffsschlüssel des Azure-Speicherkontos. Dieser Schlüssel kann über Ihr Konto im Azure-Verwaltungsportal ([][1]<https://manage.windowsazure.com></a>) abgerufen werden.
 
@@ -99,9 +99,9 @@ Wir schließen daraus, dass der vierte Funktionssatz die niedrigste Wurzel der m
 ## Referenzen
 H.-F. Yu et al. Feature Engineering and Classifier Ensemble for KDD Cup 2010. KDD Cup 2010 Workshop, 2010.
 
-[]: https://pslcdatashop.web.cmu.edu/KDDCup/downloads.jsp
+[0]: https://pslcdatashop.web.cmu.edu/KDDCup/downloads.jsp
 [Wurzel der mittleren quadratischen Abweichung]: http://en.wikipedia.org/wiki/Root-mean-square_deviation
-[]: ./media/machine-learning-sample-prediction-of-student-performance/student-performance-1.jpg
+[0]: ./media/machine-learning-sample-prediction-of-student-performance/student-performance-1.jpg
 [1]: https://manage.windowsazure.com
 [2]: ./media/machine-learning-sample-prediction-of-student-performance/student-performance-2.jpg
 [3]: ./media/machine-learning-sample-prediction-of-student-performance/student-performance-3.jpg

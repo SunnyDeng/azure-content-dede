@@ -1,6 +1,6 @@
 <properties linkid="provisioning-biztalk-service" urlDisplayName="Provision BizTalk Services in management portal" pageTitle="Create BizTalk Services in management portal | Azure" metaKeywords="Get started Azure biztalk services, provision, Azure unstructured data" description="Learn how to provision a BizTalk service in the Azure Management Portal, as well as create an optional SQL database server and Storage account." metaCanonical="http://www.windowsazure.com/de-de/manage/services/biztalk-services/provisioning-biztalk-service" services="biztalk-services" documentationCenter="" title="BizTalk Services: Provisioning Using Azure Management Portal" authors="mandia" solutions="" manager="dwrede" editor="cgronlun" />
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia"></tags>
+<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia" />
 
 # Erstellen eines BizTalk Service im Azure-Verwaltungsportal
 
@@ -309,7 +309,6 @@ Nachdem Sie jetzt einen BizTalk Service erstellt haben, machen Sie sich noch mit
   [Nach der Bereitstellung auszuführende Schritte]: #PostProv
   [Erläuterung der Anforderungen]: #Requirements
   [Hybridverbindungen - Neu!]: #HC
-  [Kostenlose Azure-Testversion]: http://go.microsoft.com/fwlink/p/?LinkID=239738
   [Azure-Verwaltungsportal]: http://go.microsoft.com/fwlink/p/?LinkID=213885
   [Schaltfläche 'Neu' auswählen]: ./media/biztalk-provision-services/WABS_New.png
   [BizTalk Service und 'Benutzerdefiniert erstellen' auswählen]: ./media/biztalk-provision-services/WABS_NewBizTalkService.png
@@ -324,10 +323,7 @@ Nachdem Sie jetzt einen BizTalk Service erstellt haben, machen Sie sich noch mit
   ['Verbindungsinformationen' auswählen]: ./media/biztalk-provision-services/WABS_ACSConnectInformation.png
   [ACS-Dienstidentitäten im Access Control-Verwaltungsportal]: ./media/biztalk-provision-services/WABS_ACSServiceIdentities.png
   [Verwalten Ihres ACS-Namespace]: http://go.microsoft.com/fwlink/p/?LinkID=285670
-  [Azure-Abonnements]: https://account.windowsazure.com/Subscriptions
-  [Verwalten von Abonnements und Speicherkonten im Azure-Verwaltungsportal]: http://go.microsoft.com/fwlink/p/?LinkID=267577
   [Konten und Abrechnung für Azure SQL-Datenbanken]: http://go.microsoft.com/fwlink/p/?LinkID=234930
-  [Speicher]: http://go.microsoft.com/fwlink/p/?LinkID=285671
   [Registerkarte "Hybridverbindungen"]: ./media/biztalk-provision-services/WABS_HybridConnectionTab.png
   [Hybridverbindungen]: http://go.microsoft.com/fwlink/p/?LinkID=397274
   [Azure BizTalk Services]: http://go.microsoft.com/fwlink/p/?LinkID=235197

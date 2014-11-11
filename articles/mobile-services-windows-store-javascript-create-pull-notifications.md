@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-create-pull-notifications-js" urlDisplayName="Define a custom API that supports pull notifications" pageTitle="Define a custom API that supports pull notifications - Azure Mobile Services" metaKeywords="" description="Learn how to Define a custom API that supports periodic notifications in Windows Store apps that use Azure Mobile Services." metaCanonical="" services="" documentationCenter="" title="Define a custom API that supports periodic notifications" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen
 
@@ -22,7 +22,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **API** und dann auf **Create a custom API**.
 
@@ -124,10 +124,8 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 -   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/develop/mobile/tutorials/create-pull-notifications-dotnet "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/develop/mobile/tutorials/create-pull-notifications-js "Windows Store JavaScript"
+
   [Periodische Benachrichtigungen]: http://msdn.microsoft.com/de-de/library/windows/apps/jj150587.aspx
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/started-with-data-js
@@ -135,13 +133,10 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
   [Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen]: #update-app
   [Testen der App]: #test-app
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-services-selection.png
+  [0]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-services-selection.png
   [1]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-create.png
   [2]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-create-dialog.png
   [3]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-select.png
-  [wns-Modul]: http://go.microsoft.com/fwlink/p/?LinkId=306750
-  [wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-  [push-Objekt]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx
   [4]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-live-tile.png
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-js
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293

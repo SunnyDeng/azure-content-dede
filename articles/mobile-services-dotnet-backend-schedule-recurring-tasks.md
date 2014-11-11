@@ -1,6 +1,6 @@
 <properties  pageTitle="Schedule Backend Tasks with Scheduler - Mobile Services" metaKeywords="" description="Use the Windows Azure Mobile Services Scheduler to schedule jobs for your mobile app." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Schedule recurring jobs in Mobile Services" authors="glenga"  solutions="mobile" writer="" manager="" editor=""  />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Planen von periodischen Aufträgen in Mobile Services
 
@@ -27,7 +27,7 @@ In diesem Lernprogramm werden die Schritte bezüglich der Verwendung des Auftrag
 
 ## <a name="get-oauth-credentials"></a>Registrieren für Zugang zu Twitter v1.1 APIs und Speichern von Anmeldeinformationen
 
-[WACOM.INCLUDE [mobile-services-register-twitter-access][mobile-services-register-twitter-access]]
+[WACOM.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
 1.  Öffnen Sie im Projektmappen-Explorer in Visual Studio die Datei "web.config" für das Projekt des mobilen Diensts. Suchen Sie die App-Einstellungen **MS\_TwitterConsumerKey** und **MS\_TwitterConsumerSecret**, und ersetzen Sie die Werte dieser Schlüssel durch den Twitter Consumer Key und die Consumer Secret-Werte, die Sie im Portal gesetzt haben.
 
@@ -44,7 +44,7 @@ In diesem Lernprogramm werden die Schritte bezüglich der Verwendung des Auftrag
 
 2.  Wählen Sie im linken Bereich die Kategorie **Online**, suchen Sie nach `linq2twitter`, klicken Sie für das Paket **linqtotwitter** auf **Installieren**, und lesen und akzeptieren Sie die Lizenzbedingungen.
 
-    ![][]
+    ![][0]
 
     Damit wird die LINQtoTwitter-Bibliothek zu Ihrem Projekt des mobilen Diensts hinzugefügt.
 
@@ -271,10 +271,8 @@ Der Auftrag muss auf der Registerkarte **Scheduler** registriert werden, sodass 
 
 Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobilen Dienst erstellt. Dieser Auftrag wird wie geplant ausgeführt, bis Sie ihn deaktivieren oder modifizieren.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/ ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-schedule-recurring-tasks/ "JavaScript-Backend"
+
   [Registrieren für Twitter-Zugang und Speichern der Anmeldeinformationen]: #get-oauth-credentials
   [Herunterladen und Installieren der LINQtoTwitter-Bibliothek]: #install-linq2twitter
   [Erstellen der neuen Aktualisierungstabelle]: #create-table
@@ -283,7 +281,7 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
   [Veröffentlichen des Diensts und Registrieren des Auftrags]: #register-job
   [LINQtoTwitter-CodePlex-Projekt]: http://linqtotwitter.codeplex.com/
   [mobile-services-register-twitter-access]: ../includes/mobile-services-register-twitter-access.md
-  []: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/add-linq2twitter-nuget-package.png
+  [0]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/add-linq2twitter-nuget-package.png
   [1]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/add-component-model-reference.png
   [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells]: /de-de/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations
   [2]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/mobile-service-start-page.png

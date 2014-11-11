@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-optimistic-concurrent-data-javascript" urlDisplayName="Optimistic concurrency" pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Mobile Dev Center" metaKeywords="" writer="wesmc" description="Learn how to handle database write conflicts on both the server and in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conflicts" authors="wesmc" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 
 # Behandeln von Schreibkonflikten in Datenbanken
 
@@ -30,7 +30,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
     2.  Erweitern Sie **Online**, und klicken Sie auf **Microsoft and .NET**. Geben Sie in das Textfeld für die Suche **WindowsAzure.MobileServices.WinJS** ein. Klicken Sie auf **Install** für das **Azure Mobile Services for WinJS** NuGet-Paket.
 
-        ![][]
+        ![][0]
 
 ## <a name="uiupdate"></a><span class="short-header">Aktualisieren der Anwendung</span>Aktualisieren der Anwendung, um Änderungen zu ermöglichen
 
@@ -270,7 +270,7 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 -   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
     Verschicken Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+
 
   [Windows Store C#]: /de-de/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows Store C#"
   [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-handle-database-conflicts/ "Windows Store JavaScript"
@@ -281,7 +281,7 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
   [Automatische Konfliktauflösung in Serverskripts]: #scriptsexample
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started
   [Azure-Konto]: http://www.windowsazure.com/de-de/pricing/free-trial/
-  []: ./media/mobile-services-windows-store-javascript-handle-database-conflicts/mobile-manage-nuget-packages-dialog.png
+  [0]: ./media/mobile-services-windows-store-javascript-handle-database-conflicts/mobile-manage-nuget-packages-dialog.png
   [Systemeigenschaften]: http://go.microsoft.com/fwlink/?LinkId=331143
   [1]: ./media/mobile-services-windows-store-javascript-handle-database-conflicts/Mobile-oc-store-create-app-package1.png
   [2]: ./media/mobile-services-windows-store-javascript-handle-database-conflicts/Mobile-oc-store-create-app-package2.png

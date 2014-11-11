@@ -1,6 +1,6 @@
 <properties title="Monitor a DocumentDB Account" pageTitle="Manage a DocumentDB account | Azure" description="Learn how to manage your DocumentDB account." metaKeywords="NoSQL, DocumentDB,  database, document-orientated database, JSON, accounts" services="documentdb" solutions="data-management" documentationCenter=""  authors="hawong" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/03/2014" ms.author="hawong"></tags>
+<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/03/2014" ms.author="hawong" />
 
 # Verwalten eines DocumentDB-Kontos
 
@@ -205,11 +205,5 @@ DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
   [Azure-Verwaltungsvorschau-Portal]: https://portal.azure.com/
   []: http://manage.windowsazure.com
   []: ./media/documentdb-manage-account/image002.jpg
-  [1]: ./media/documentdb-manage-account/image004.jpg
   [Konsistenzebene]: http://go.microsoft.com/fwlink/p/?LinkId=402365
-  [2]: ./media/documentdb-manage-account/image005.png
-  [3]: ./media/documentdb-manage-account/image006.png
-  [4]: ./media/documentdb-manage-account/image007.png
-  [5]: ./media/documentdb-manage-account/image009.png
-  [ersten Schritte mit Ihrem DocumentDB-Konto]: http://go.microsoft.com/fwlink/p/?LinkId=402364
   [azure.com]: http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409

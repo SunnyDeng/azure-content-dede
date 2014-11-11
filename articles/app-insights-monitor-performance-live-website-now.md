@@ -1,6 +1,6 @@
 <properties title="Diagnose performance issues on a running website" pageTitle="Diagnose performance issues on a running website" description="Monitor a website's performance without re-deploying it." metaKeywords="analytics monitoring application insights" authors="awills"  />
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="awills"></tags>
+<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="awills" />
 
 <!-- Required end of Sprint 69 - AUX48 -->
 
@@ -35,7 +35,7 @@ Wenn Sie Protokollierung oder Ablaufverfolgung konfigurieren möchten, sind Sie 
 2.  Stellen Sie sicher, dass Sie mindestens Version 5.0 des [Webplattform-Installers][Webplattform-Installers] installiert haben.
 3.  Installieren Sie den Application Insights-Agenten über den Webplattform-Installer.
 
-    ![][]
+    ![][0]
 
 4.  Melden Sie sich im Installations-Assistenten bei Microsoft Azure an.
 
@@ -104,7 +104,7 @@ Unter Anwendungszustand werden Daten angezeigt.
 
   [Microsoft Azure-Konto]: http://azure.com
   [Webplattform-Installers]: http://www.microsoft.com/web/downloads/platform.aspx
-  []: ./media/appinsights/appinsights-031-wpi.png
+  [0]: ./media/appinsights/appinsights-031-wpi.png
   [1]: ./media/appinsights/appinsights-035-signin.png
   [2]: ./media/appinsights/appinsights-036-configAIC.png
   [Web-Tests]: ../app-insights-monitor-web-app-availability/

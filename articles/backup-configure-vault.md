@@ -1,6 +1,6 @@
 <properties linkid="manage-services-recovery-configure-backup-vault" urlDisplayName="Configure a Backup Vault" pageTitle="Configure Azure Recovery Services to quickly and easily back-up Windows Server" metaKeywords="disaster recovery" description="Use this tutorial to learn how to use the Backup service in Microsoft's Azure cloud offering to back up Windows Server to the cloud." metaCanonical="" services="recovery-services" documentationCenter="" title="Configure Azure Backup to quickly and easily back-up Windows Server" authors="raynew" solutions="" manager="johndaw" editor="tysonn" />
 
-<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="raynew"></tags>
+<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="raynew" />
 
 # <span id="configure-a-backup-vault-tutorial"></span></a>Konfigurieren der Azure-Sicherung für schnelle und einfache Sicherung von Windows Server
 
@@ -88,12 +88,9 @@ Wenn Sie den Agent installiert haben, können Sie die passende lokale Verwaltung
 
 -   Besuchen Sie das [Azure Sicherungs-Forum][Azure Sicherungs-Forum].
 
-  [Kostenlose Azure-Testversion]: /de-de/pricing/free-trial/
   [Verwaltungsportal]: https://manage.windowsazure.com
   [Neuer Sicherungstresor]: http://i.imgur.com/506c7ch.png
   [Erstellung eines Sicherungstresors]: http://i.imgur.com/grtLcKM.png
-  [Install Azure Backup Agent for Windows Server 2012 and System Center 2012 SP1 - Data Protection Manager (Installieren des Windows Azure-Sicherungs-Agents für Windows Server 2012 und System Center 2012 SP1 – Data Protection Manager, in englischer Sprache)]: http://technet.microsoft.com/de-de/library/hh831761.aspx#BKMK_installagent
-  [Install Azure Backup Agent for Windows Server 2012 Essentials (Installieren des Sicherungs-Agents für Windows Server 2012 Essentials, in englischer Sprache)]: http://technet.microsoft.com/de-de/library/jj884318.aspx
   [Geschützte Elemente]: ./media/backup-configure-vault/RS_protecteditems.png
   [Server gelöscht]: ./media/backup-configure-vault/RS_deletedserver.png
   [Übersicht über die Windows Azure-Sicherung]: http://go.microsoft.com/fwlink/p/?LinkId=222425

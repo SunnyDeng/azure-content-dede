@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-optimistic-concurrent-data-wp8" urlDisplayName="Optimistic concurrency" pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to handle database write conflicts on both the server and in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conlicts" authors="wesmc" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 
 # Behandeln von Schreibkonflikten in Datenbanken
 
@@ -29,7 +29,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
     1.  Öffnen Sie das Projekt in Visual Studio, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie dann **Manage Nuget Packages** aus.
 
-        ![][]
+        ![][0]
 
     2.  Erweitern Sie **Online**, und klicken Sie auf **Microsoft and .NET**. Geben Sie im Suchfeld **Azure Mobile Services** ein. Klicken Sie auf **Install** für das **Azure Mobile Services** NuGet-Paket.
 
@@ -288,11 +288,8 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 -   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
     Verschicken Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-handle-database-conflicts/ "Windows Store JavaScript"
-  [Windows Phone]: /de-de/develop/mobile/tutorials/handle-database-write-conflicts-wp8/ "Windows Phone"
+
   [Aktualisieren der Anwendung, um Änderungen zu ermöglichen]: #uiupdate
   [Aktivieren der Konflikterkennung in Ihrer Anwendung]: #enableOC
   [Testen auf Datenbank-Schreibkonflikte in Ihrer Anwendung]: #test-app
@@ -300,7 +297,7 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
   [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
   [Azure-Konto]: http://www.windowsazure.com/de-de/pricing/free-trial/
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-wp8
-  []: ./media/mobile-services-windows-phone-handle-database-conflicts/mobile-manage-nuget-packages-VS.png
+  [0]: ./media/mobile-services-windows-phone-handle-database-conflicts/mobile-manage-nuget-packages-VS.png
   [1]: ./media/mobile-services-windows-phone-handle-database-conflicts/mobile-manage-nuget-packages-dialog.png
   [Die Steuerung für optimistische Nebenläufigkeit]: http://go.microsoft.com/fwlink/?LinkId=330935
   [Systemeigenschaften]: http://go.microsoft.com/fwlink/?LinkId=331143

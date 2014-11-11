@@ -1,6 +1,6 @@
 <properties linkid="manage-services-mediaservices-create-a-media-services-account" urlDisplayName="How to create" pageTitle="Create a Media Services Account - Azure" metaKeywords="" description="Describes how to create a new Media Services account in Azure." metaCanonical="" services="media-services" documentationCenter="" title="How to Create a Media Services Account" authors="migree" solutions="" manager="" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="migree"></tags>
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="migree" />
 
 # Erstellen eines Media Services-Kontos
 
@@ -10,8 +10,8 @@ In diesem Thema wird erläutert, wie Sie mithilfe der Schnellerfassung ein neues
 
 ## Inhaltsverzeichnis
 
--   [Konzepte][]
--   [Gewusst wie: Erstellen eines Media Services-Kontos mithilfe der Schnellerfassung][]
+-   [Konzepte][Konzepte]
+-   [Gewusst wie: Erstellen eines Media Services-Kontos mithilfe der Schnellerfassung][Gewusst wie: Erstellen eines Media Services-Kontos mithilfe der Schnellerfassung]
 
 ## <span id="concepts"></span></a>Konzepte
 
@@ -24,9 +24,9 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
 
 ## <span id="quick"></span></a>Gewusst wie: Erstellen eines Media Services-Kontos mithilfe der Schnellerfassung
 
-1.  Klicken Sie im [Verwaltungsportal][] auf **Neu**, klicken Sie auf **Mediendienst** und dann auf **Schnellerfassung**.
+1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Neu**, klicken Sie auf **Mediendienst** und dann auf **Schnellerfassung**.
 
-    ![Media Services-Schnellerfassung][]
+    ![Media Services-Schnellerfassung][Media Services-Schnellerfassung]
 
 2.  Geben Sie in das Feld **NAME** den Namen des neuen Kontos ein. Der Name eines Media Services-Kontos darf nur Kleinbuchstaben oder Ziffern ohne Leerzeichen enthalten und muss aus 3 bis 24 Zeichen bestehen.
 
@@ -42,7 +42,7 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
 
     Die Seite **Mediendienste** wird geöffnet, und das neue Konto wird angezeigt. Wenn sich der Status in "Aktiv" ändert, wurde das Konto erfolgreich erstellt.
 
-    ![Seite "Mediendienste"][]
+    ![Seite "Mediendienste"][Seite "Mediendienste"]
 
     Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite "Schnellstart" angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei auf dieser Seite oder auf der Seite INHALT hochladen.
 

@@ -1,34 +1,34 @@
 <properties title="How to use the queue service (PHP) - Azure feature guide" pageTitle="How to use the queue service (PHP) | Microsoft Azure" metaKeywords="Azure Queue Service messaging PHP" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in PHP." documentationCenter="PHP" services="storage" authors="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # Verwenden des Warteschlangendienstes aus PHP
 
-Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Warteschlangendienstes in Azure. Die Beispiele wurden unter Verwendung von Klassen des Windows SDK für PHP geschrieben. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
+Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Warteschlangendienstes in Azure. Die Beispiele wurden unter Verwendung von Klassen des Windows SDK für PHP geschrieben. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
 ## Inhaltsverzeichnis
 
--   [Was ist Warteschlangenspeicherung?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen einer PHP-Anwendung][]
--   [Konfigurieren Ihrer Anwendung für den Warteschlangendienst][]
--   [Einrichten einer Azure-Speicherverbindung][]
--   [Gewusst wie: Erstellen einer Warteschlange][]
--   [Gewusst wie: Hinzufügen von Nachrichten zu einer Warteschlange][]
--   [Gewusst wie: Einsehen der nächsten Nachricht][]
--   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][]
--   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][]
--   [Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][]
--   [Gewusst wie: Abrufen der Warteschlangenlänge][]
--   [Gewusst wie: Löschen einer Warteschlange][]
+-   [Was ist Warteschlangenspeicherung?][Was ist Warteschlangenspeicherung?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Erstellen einer PHP-Anwendung][Erstellen einer PHP-Anwendung]
+-   [Konfigurieren Ihrer Anwendung für den Warteschlangendienst][Konfigurieren Ihrer Anwendung für den Warteschlangendienst]
+-   [Einrichten einer Azure-Speicherverbindung][Einrichten einer Azure-Speicherverbindung]
+-   [Gewusst wie: Erstellen einer Warteschlange][Gewusst wie: Erstellen einer Warteschlange]
+-   [Gewusst wie: Hinzufügen von Nachrichten zu einer Warteschlange][Gewusst wie: Hinzufügen von Nachrichten zu einer Warteschlange]
+-   [Gewusst wie: Einsehen der nächsten Nachricht][Gewusst wie: Einsehen der nächsten Nachricht]
+-   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]
+-   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]
+-   [Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]
+-   [Gewusst wie: Abrufen der Warteschlangenlänge][Gewusst wie: Abrufen der Warteschlangenlänge]
+-   [Gewusst wie: Löschen einer Warteschlange][Gewusst wie: Löschen einer Warteschlange]
 -   [Nächste Schritte][1]
 
-[WACOM.INCLUDE [howto-queue-storage][]]
+[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
 
 ## <span id="create-account"></span></a>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <span id="create-app"></span></a>Erstellen einer PHP-Anwendung
 
@@ -38,13 +38,13 @@ In diesem Leitfaden verwenden Sie Funktionen des Warteschlangendiensts, die loka
 
 ## <span id="GetClientLibrary"></span></a>Abrufen der Azure-Clientbibliotheken
 
-[WACOM.INCLUDE [get-client-libraries][]]
+[WACOM.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 ## <span id="configure-app"></span></a>Konfigurieren der Anwendung für den Zugriff auf den Warteschlangendienst
 
 Zum Verwenden der Azure-Warteschlangendienst-APIs müssen Sie Folgendes durchführen:
 
-1.  Verweisen Sie mithilfe der [require_once][]-Anweisung auf die Autoloaderdatei und
+1.  Verweisen Sie mithilfe der [require_once][require_once]-Anweisung auf die Autoloaderdatei und
 2.  Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
@@ -110,7 +110,7 @@ Für die hier erläuterten Beispiele wird die Verbindungszeichenfolge direkt wei
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -140,7 +140,7 @@ Verwenden Sie **QueueRestProxy-\>createMessage**, um Nachrichten zu einer Wartes
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -169,7 +169,7 @@ Sie können einen Blick auf die Nachricht(en) am Anfang einer Warteschlange werf
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -223,7 +223,7 @@ Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Zun
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -265,7 +265,7 @@ Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern, ind
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -312,7 +312,7 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -338,7 +338,7 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -365,7 +365,7 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
         // Error codes and messages are here: 
-        // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
+        // http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
         echo $code.": ".$error_message."<br />";
@@ -375,11 +375,10 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 
 Da Sie jetzt die Grundlagen des Azure-Warteschlangendiensts erlernt haben, folgen Sie diesem Link, um zu erfahren, wie Sie komplexere Speicheraufgaben ausführen können.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure]
 -   Besuchen Sie den Blog des Azure-Speicherteams: <http://blogs.msdn.com/b/windowsazurestorage/>
 
   [Nächste Schritte]: #NextSteps
-  [Was ist Warteschlangenspeicherung?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Erstellen einer PHP-Anwendung]: #create-app
@@ -398,4 +397,4 @@ Da Sie jetzt die Grundlagen des Azure-Warteschlangendiensts erlernt haben, folge
   [create-storage-account]: ../includes/create-storage-account.md
   [get-client-libraries]: ../includes/get-client-libraries.md
   [require_once]: http://www.php.net/manual/en/function.require-once.php
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

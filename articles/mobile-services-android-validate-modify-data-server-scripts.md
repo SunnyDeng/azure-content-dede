@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-android" urlDisplayName="Validate Data - Android" pageTitle="Use server scripts to validate and modify data (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to validate and modify data sent using server scripts from your Android app." metaCanonical="" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="ricksal" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
 
 # Überprüfen und Ändern von Daten in Mobile Services mithilfe von Serverskripts
 
@@ -25,7 +25,7 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
 
@@ -211,23 +211,15 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 -   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Lernen Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows Store JavaScript"
-  [Windows Phone]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone"
-  [iOS]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS"
-  [Android]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-android "Android"
-  [HTML]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML"
-  [Xamarin.iOS]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android"
+
   [Überprüfung der Zeichenfolgenlänge hinzufügen]: #string-length-validation
   [Client zur Unterstützung der Überprüfung aktualisieren]: #update-client-validation
   [Zeitstempel beim Einfügen hinzufügen]: #add-timestamp
   [Client zum Anzeigen des Zeitstempels aktualisieren]: #update-client-timestamp
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-android
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-android-validate-modify-data-server-scripts/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-validate-modify-data-server-scripts/mobile-services-selection.png
   [1]: ./media/mobile-services-android-validate-modify-data-server-scripts/mobile-portal-data-tables.png
   [2]: ./media/mobile-services-android-validate-modify-data-server-scripts/mobile-insert-script-users.png
   [Optimieren von Abfragen mit Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-android

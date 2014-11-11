@@ -1,29 +1,29 @@
 <properties linkid="manage-services-hdinsight-administer-hdinsight-hadoop-clusters-using-powershell" urlDisplayName="HDInsight Administration" pageTitle="Manage Hadoop clusters in HDInsight with Azure PowerShell | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, Hadoop, administration, administer" description="Learn how to perform administrative tasks for the Hadoop clusters in HDInsight using Azure PowerShell." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Manage Hadoop clusters in HDInsight using Azure PowerShell" authors="jgao" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
 # Verwalten von Hadoop-Clustern in HDInsight mit Azure PowerShell
 
-Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. In diesem Artikel erfahren Sie, wie Sie Hadoop-Cluster in HDInsight mit einer lokalen Azure PowerShell-Konsole über Windows PowerShell verwalten. Eine Liste der HDInsight PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz][].
+Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. In diesem Artikel erfahren Sie, wie Sie Hadoop-Cluster in HDInsight mit einer lokalen Azure PowerShell-Konsole über Windows PowerShell verwalten. Eine Liste der HDInsight PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz][HDInsight-Cmdlet-Referenz].
 
 **Voraussetzungen:**
 
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
--   Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Die HDInsight PowerShell-Cmdlets führen Aufgaben für Ihr Abonnement aus. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][], [Spezielle Angebote][] oder [Kostenlose Testversion][].
+-   Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Die HDInsight PowerShell-Cmdlets führen Aufgaben für Ihr Abonnement aus. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][Kaufoptionen], [Spezielle Angebote][Spezielle Angebote] oder [Kostenlose Testversion][Kostenlose Testversion].
 
--   Eine Arbeitsstation mit Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+-   Eine Arbeitsstation mit Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
 
 ## Themen in diesem Artikel
 
--   [Bereitstellen eines Clusters][]
--   [Auflisten und Anzeigen von Clustern][]
--   [Löschen eines Clusters][]
--   [Gewähren/Widerrufen von Zugriff auf HTTP-Dienste][]
--   [Übermitteln von MapReduce-Jobs][]
--   [Übermitteln von Hive-Jobs][]
--   [Hochladen von Daten in den Blob-Speicher][]
--   [Herunterladen der MapReduce-Ausgabe aus dem Blob-Speicher][]
+-   [Bereitstellen eines Clusters][Bereitstellen eines Clusters]
+-   [Auflisten und Anzeigen von Clustern][Auflisten und Anzeigen von Clustern]
+-   [Löschen eines Clusters][Löschen eines Clusters]
+-   [Gewähren/Widerrufen von Zugriff auf HTTP-Dienste][Gewähren/Widerrufen von Zugriff auf HTTP-Dienste]
+-   [Übermitteln von MapReduce-Jobs][Übermitteln von MapReduce-Jobs]
+-   [Übermitteln von Hive-Jobs][Übermitteln von Hive-Jobs]
+-   [Hochladen von Daten in den Blob-Speicher][Hochladen von Daten in den Blob-Speicher]
+-   [Herunterladen der MapReduce-Ausgabe aus dem Blob-Speicher][Herunterladen der MapReduce-Ausgabe aus dem Blob-Speicher]
 
 ## <span id="provision"></span></a>Bereitstellen eines HDInsight-Clusters
 
@@ -47,7 +47,7 @@ Nachdem Sie die Datei mit Veröffentlichungseinstellungen importiert haben, kön
 > -   USA (Ost)
 > -   USA (West)
 
-Informationen zum Erstellen eines Azure-Speicherkontos mit dem Azure-Verwaltungsportal finden Sie unter [Erstellen eines Speicherkontos][].
+Informationen zum Erstellen eines Azure-Speicherkontos mit dem Azure-Verwaltungsportal finden Sie unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos].
 
 Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlüssel nicht kennen, können Sie diese Informationen mit den folgenden Befehlen abrufen:
 
@@ -56,7 +56,7 @@ Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlü
     # List the keys for a storage account
     Get-AzureStorageKey <StorageAccountName>
 
-Details zum Abrufen dieser Informationen im Verwaltungsportal finden Sie im Bereich *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [Verwalten von Speicherkonten][].
+Details zum Abrufen dieser Informationen im Verwaltungsportal finden Sie im Bereich *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [Verwalten von Speicherkonten][Verwalten von Speicherkonten].
 
 **So erstellen Sie einen Azure-Speichercontainer**
 
@@ -92,7 +92,7 @@ Sobald Sie Ihr Speicherkonto und Ihren Blob-Container vorbereitet haben, können
 
 Der folgende Screenshot zeigt die Skriptausführung:
 
-![HDI.PS.Bereitstellen][]
+![HDI.PS.Bereitstellen][HDI.PS.Bereitstellen]
 
 ## <span id="listshow"></span></a> Auflisten und Anzeigen von Clusterdetails
 
@@ -130,7 +130,7 @@ In diesem Beispiel ist *hdiv2* der Name eines HDInsight-Clusters.
 
 > [WACOM.NOTE] Durch Gewähren/Widerrufen des Zugriffs werden der Benutzername und das Kennwort des Clusterbenutzers zurückgesetzt.
 
-Diese Aufgabe kann auch im Azure-Verwaltungsportal ausgeführt werden. Weitere Informationen finden Sie unter [Verwalten von HDInsight mit dem Verwaltungsportal][].
+Diese Aufgabe kann auch im Azure-Verwaltungsportal ausgeführt werden. Weitere Informationen finden Sie unter [Verwalten von HDInsight mit dem Verwaltungsportal][Verwalten von HDInsight mit dem Verwaltungsportal].
 
 ## <span id="mapreduce"></span></a> Übermitteln von MapReduce-Jobs
 
@@ -170,7 +170,7 @@ Mit dem folgenden PowerShell-Skript wird die Ausgabe des MapReduce-Jobs aus dem 
     # Display the output
     cat ./example/data/WordCountOutput/part-r-00000 | findstr "there"
 
-Weitere Informationen zum Entwickeln und Ausführen von MapReduce-Jobs finden Sie unter [Verwenden von MapReduce mit HDInsight][].
+Weitere Informationen zum Entwickeln und Ausführen von MapReduce-Jobs finden Sie unter [Verwenden von MapReduce mit HDInsight][Verwenden von MapReduce mit HDInsight].
 
 ## <span id="hive"></span></a> Übermitteln von Hive-Jobs
 
@@ -195,30 +195,30 @@ Mit dem folgenden Skript wird ein Hive-Job zum Auflisten der Hive-Tabellen über
 
 Der Hive-Job zeigt zuerst die im Cluster erstellten Hive-Tabellen und dann die aus der hivesampletable zurückgegebenen Daten an.
 
-Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight][].
+Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight][Verwenden von Hive mit HDInsight].
 
 ## <span id="upload"></span></a>Hochladen von Daten in den Blob-Speicher
 
-Siehe [Hochladen von Daten in HDInsight][].
+Siehe [Hochladen von Daten in HDInsight][Hochladen von Daten in HDInsight].
 
 ## <span id="download"></span></a>Herunterladen der MapReduce-Ausgabe aus dem Blob-Speicher
 
-Informationen finden Sie im Abschnitt [Übermitteln von MapReduce-Jobs][] in diesem Artikel.
+Informationen finden Sie im Abschnitt [Übermitteln von MapReduce-Jobs][Übermitteln von MapReduce-Jobs] in diesem Artikel.
 
 ## Weitere Informationen
 
 -   [HDInsight-Cmdlet-Referenzdokumentation][HDInsight-Cmdlet-Referenz]
 -   [Verwalten von HDInsight-Clustern mit dem Verwaltungsportal][Verwalten von HDInsight mit dem Verwaltungsportal]
--   [Verwalten von HDInsight mit der plattformübergreifenden Befehlszeile][]
--   [Bereitstellen von HDInsight-Clustern][]
+-   [Verwalten von HDInsight mit der plattformübergreifenden Befehlszeile][Verwalten von HDInsight mit der plattformübergreifenden Befehlszeile]
+-   [Bereitstellen von HDInsight-Clustern][Bereitstellen von HDInsight-Clustern]
 -   [Hochladen von Daten zu HDInsight][Hochladen von Daten in HDInsight]
--   [Programmgesteuerte Übermittlung von Hadoop-Jobs][]
--   [Erste Schritte mit Azure HDInsight][]
+-   [Programmgesteuerte Übermittlung von Hadoop-Jobs][Programmgesteuerte Übermittlung von Hadoop-Jobs]
+-   [Erste Schritte mit Azure HDInsight][Erste Schritte mit Azure HDInsight]
 
-  [HDInsight-Cmdlet-Referenz]: http://msdn.microsoft.com/en-us/library/windowsazure/dn479228.aspx
-  [Kaufoptionen]: http://azure.microsoft.com/en-us/pricing/purchase-options/
-  [Spezielle Angebote]: http://azure.microsoft.com/en-us/pricing/member-offers/
-  [Kostenlose Testversion]: http://azure.microsoft.com/en-us/pricing/free-trial/
+  [HDInsight-Cmdlet-Referenz]: http://msdn.microsoft.com/de-de/library/windowsazure/dn479228.aspx
+  [Kaufoptionen]: http://azure.microsoft.com/de-de/pricing/purchase-options/
+  [Spezielle Angebote]: http://azure.microsoft.com/de-de/pricing/member-offers/
+  [Kostenlose Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/
   [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell/
   [Bereitstellen eines Clusters]: #provision
   [Auflisten und Anzeigen von Clustern]: #listshow

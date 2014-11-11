@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-how-to-guides-import-publish-settings" urlDisplayName="Import your subscription publish settings file in Visual Studio 2013" pageTitle="Import your publish settings file in Visual Studio 2013 | Mobile Services" metaKeywords="Azure import publishsettings, mobile services" description="Learn how to import a subscription publish settings file for your Azure Mobile Services application in Visual Studio 2013." title="Import your subscription publish settings file in Visual Studio 2013" documentationCenter="Mobile" services="" solutions="" manager="" editor="" videoId="" scriptId="" authors="glenga" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Importieren Ihrer Abonnementdatei mit Veröffentlichungseinstellungen in Visual Studio 2013
 
@@ -28,7 +28,7 @@ Bevor Sie den mobilen Dienst erstellen können, müssen Sie die .publishsettings
 
     <div class="dev-callout"><strong>Sicherheitshinweis</strong> <p>Nach dem Importieren der Ver&ouml;ffentlichungseinstellungen sollten Sie die heruntergeladene &quot;.publishsettings&quot;-Datei l&ouml;schen, da sie Informationen enth&auml;lt, die von anderen Personen f&uuml;r den Zugriff auf Ihr Konto verwendet werden k&ouml;nnen. Sichern Sie die Datei, wenn Sie sie in anderen Projekten mit verbundenen Anwendungen verwenden m&ouml;chten.</p></div>
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+
 
   [verbundenen Dienst hinzufügen]: ./media/mobile-services-create-new-service-vs2013/mobile-add-connected-service.png
   [neuen mobilen Dienst aus VS 2013 erstellen]: ./media/mobile-services-create-new-service-vs2013/mobile-create-service-from-vs2013.png

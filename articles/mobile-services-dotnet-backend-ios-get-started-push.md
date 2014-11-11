@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-push-ios" urlDisplayName="Get Started with Push (iOS)" pageTitle="Get started with push notifications (iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your iOS app." metaCanonical="http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-push-dotnet/" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" solutions="" manager="dwrede" editor="" authors="krisragh" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh" />
 
 
 # Erste Schritte mit Pushbenachrichtigungen in Mobile Services
@@ -165,7 +165,7 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
 1. Drücken Sie auf **Run**, um das Projekt zu erstellen, starten Sie die App auf einem iOS-fähigen Gerät, und klicken Sie dann auf **OK**, um Pushbenachrichtigungen zu akzeptieren
 
-    ![][]
+    ![][0]
 
     > [WACOM.NOTE] Pushbenachrichtigungen von Ihrer App müssen ausdrücklich akzeptiert werden. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
@@ -236,7 +236,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [mobile-services-dotnet-backend-test-local-service]: ../includes/mobile-services-dotnet-backend-test-local-service.md
 [mobile-services-dotnet-backend-publish-service]: ../includes/mobile-services-dotnet-backend-publish-service.md
 [mobile-services-dotnet-backend-configure-local-push]: ../includes/mobile-services-dotnet-backend-configure-local-push.md
-[]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push1-ios.png
+[0]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push1-ios.png
 [1]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push2-ios.png
 [2]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push3-ios.png
 [3]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push4-ios.png

@@ -1,6 +1,6 @@
 <properties linkid="develop-php-sql-database" urlDisplayName="SQL Database" pageTitle="How to use SQL Database (PHP) - Azure feature guides" metaKeywords="Azure SQL Database PHP, SQL Database PHP" description="Learn how to create and connect to an Azure SQL Database from PHP." metaCanonical="" services="sql-database" documentationCenter="PHP" title="How to Access Azure SQL Database from PHP" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 
-<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm"></tags>
+<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
 # Zugreifen auf Azure SQL-Datenbank aus PHP
 
@@ -118,7 +118,6 @@ Ein Beispiel, das die Verwendung der SQL-Datenbank mit PHP auf Azure zeigt, ist 
   [Gewusst wie: Erstellen einer SQL-Datenbank]: #CreateServer
   [Gewusst wie: Abrufen von SQL-Datenbank-Verbindungsinformationen]: #ConnectionInfo
   [Gewusst wie: Herstellen einer Verbindung zu einer SQL-Datenbankinstanz]: #Connect
-  [Richtlinien für und Einschränkungen (SQL-Datenbanken)]: http://msdn.microsoft.com/de-de/library/windowsazure/ff394102.aspx
   [Microsoft-Treiber für PHP für SQL Server]: http://www.microsoft.com/download/en/details.aspx?id=20098
   [Microsoft-Webplattform-Installer]: http://go.microsoft.com/fwlink/?LinkId=253447
   []: http://php.net/manual/en/install.windows.iis7.php

@@ -1,6 +1,6 @@
 <properties linkid="automation-create-runbook-from-samples" urlDisplayName="Get Started with Azure Automation" pageTitle="Get Started with Azure Automation" metaKeywords="" description="Learn how to import and run an automation job in Azure." metaCanonical="" services="automation" documentationCenter="" title="Get Started with Azure Automation" authors="bwren" solutions="" manager="stevenka" editor="" />
 
-<tags ms.service="automation" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bwren"></tags>
+<tags ms.service="automation" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bwren" />
 
 # Erste Schritte mit Azure Automation
 
@@ -26,7 +26,7 @@ Runbooks der Community und anderer Microsoft-Teams werden auch im [Script Center
 
 **Geben Sie uns Feedback!** Wenn Sie nach einer Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie eine Idee für ein neues Automation-Feature haben, senden Sie sie an die Seite [User Voice][User Voice].
 
-[WACOM.INCLUDE [create-account-note][create-account-note]]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## Allgemeine Schritte für dieses Lernprogramm
 
@@ -149,6 +149,4 @@ Das obige Beispiel zeigt ein einfaches Runbook, das keine Azure-Dienste verwalte
   [Runbook-Parameter]: ./media/automation/automation_11_RunbookParams.png
   [Runbook-Status]: ./media/automation/automation_12_RunbookStatus.png
   [Runbook-Zusammenfassung]: ./media/automation/automation_13_RunbookSummary_callouts.png
-  [Automation Overview (Übersicht über Automation, in englischer Sprache)]: http://go.microsoft.com/fwlink/p/?LinkId=392860
-  [Runbook Authoring Guide (Leitfaden zum Erstellen von Runbooks, in englischer Sprache)]: http://go.microsoft.com/fwlink/p/?LinkID=301740
   [Automation-Forum]: http://go.microsoft.com/fwlink/p/?LinkId=390561

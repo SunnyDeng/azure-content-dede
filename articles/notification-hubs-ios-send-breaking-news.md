@@ -1,6 +1,6 @@
 <properties linkid="notification-hubs-ios-send-breaking-news" pageTitle="Notification Hubs Breaking News Tutorial - iOS" metaKeywords="" description="Learn how to use Azure Service Bus Notification Hubs to send breaking news notifications to iOS devices." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="krisragh" solutions="" manager="" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh" />
 
 # Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten
 
@@ -11,16 +11,16 @@
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Benachrichtigungen zu aktuellen Nachrichten an eine iOS-Anwendung senden können. Sie werden anschließend in der Lage sein, sich für Kategorien aktueller Nachrichten zu registrieren, die Sie interessieren, und nur Pushbenachrichtigungen für diese Kategorien zu empfangen. Dieses Szenario ist ein häufiges Muster für viele Anwendungen, bei denen Benachrichtigungen an Benutzergruppen gesendet werden müssen, die zuvor Interesse daran bekundet haben, zum Beispiel RSS-Reader, Apps für Musikliebhaber, etc.
 
-Übertragungsszenarien werden durch das Einfügen von einem oder mehreren *Tags* möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Notification Hubs-Leitfaden][].
+Übertragungsszenarien werden durch das Einfügen von einem oder mehreren *Tags* möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Notification Hubs-Leitfaden][Notification Hubs-Leitfaden].
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung dieses Szenarios behandelt:
 
-1.  [Hinzufügen der Kategorieauswahl zur App][]
-2.  [Registrieren für Benachrichtigungen][]
-3.  [Senden von Benachrichtigungen von Ihrem Back-End aus][]
-4.  [Ausführen der Anwendung und Erzeugen von Benachrichtigungen][]
+1.  [Hinzufügen der Kategorieauswahl zur App][Hinzufügen der Kategorieauswahl zur App]
+2.  [Registrieren für Benachrichtigungen][Registrieren für Benachrichtigungen]
+3.  [Senden von Benachrichtigungen von Ihrem Back-End aus][Senden von Benachrichtigungen von Ihrem Back-End aus]
+4.  [Ausführen der Anwendung und Erzeugen von Benachrichtigungen][Ausführen der Anwendung und Erzeugen von Benachrichtigungen]
 
-Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification Hubs][] erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs][] abgeschlossen haben.
+Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification Hubs][Erste Schritte mit Notification Hubs] erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs][Erste Schritte mit Notification Hubs] abgeschlossen haben.
 
 ## <a name="adding-categories"></a>Hinzufügen der Kategorieauswahl zur App
 
@@ -35,7 +35,7 @@ Zunächst werden Sie Benutzeroberflächenelemente zum vorhandenen Storyboard hin
 
     Ihr Storyboard sollte nun folgendermaßen aussehen:
 
-    ![][]
+    ![][0]
 
 2.  Erstellen Sie im Assistant Editor Outlets für alle Switches und nennen Sie diese "WorldSwitch", "PoliticsSwitch", "BusinessSwitch", "TechnologySwitch", "ScienceSwitch", "SportsSwitch"
 
@@ -201,7 +201,7 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 
 ## <a name="send"></a><span class="short-header">Senden von Benachrichtigungen</span>Senden von Benachrichtigungen von Ihrem Back-End aus
 
-[WACOM.INCLUDE [notification-hubs-back-end][]]
+[WACOM.INCLUDE [notification-hubs-back-end](../includes/notification-hubs-back-end.md)]
 
 ## <a name="test-app"></a>Ausführen der Anwendung und Erzeugen von Benachrichtigungen
 
@@ -227,11 +227,11 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 
 In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategorie übermittelt werden. Sie können nun eines der folgenden Lernprogramme durchführen, die andere komplexe Notification Hubs-Szenarien zeigen:
 
--   **[Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten][]**
+-   **[Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten][Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten]**
 
     Hier erfahren Sie, wie Sie die App zu aktuellen Nachrichten für das Versenden von lokalisierten Benachrichtigungen erweitern.
 
--   **[Benachrichtigen von Benutzern mit Notification Hubs][]**
+-   **[Benachrichtigen von Benutzern mit Notification Hubs][Benachrichtigen von Benutzern mit Notification Hubs]**
 
     Hier erfahren Sie, wie Sie Pushbenachrichtigungen an bestimmte authentifizierte Benutzer versenden. Dies ist eine gute Möglichkeit, um Benachrichtigungen nur an bestimmte Benutzer zu versenden.
 
@@ -239,17 +239,13 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 <!-- Images. -->
 <!-- URLs. -->
 
-  [Windows Universal]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/ "Windows Universal"
-  [Windows Phone]: /de-de/documentation/articles/notification-hubs-windows-phone-send-breaking-news/ "Windows Phone"
-  [iOS]: /de-de/documentation/articles/notification-hubs-ios-send-breaking-news/ "iOS"
-  [Android]: /de-de/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/ "Android"
   [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
   [Hinzufügen der Kategorieauswahl zur App]: #adding-categories
   [Registrieren für Benachrichtigungen]: #register
   [Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
   [Ausführen der Anwendung und Erzeugen von Benachrichtigungen]: #test-app
   [Erste Schritte mit Notification Hubs]: /de-de/manage/services/notification-hubs/get-started-notification-hubs-ios/
-  []: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios2.png
+  [0]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios2.png
   [1]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios3.png
   [notification-hubs-back-end]: ../includes/notification-hubs-back-end.md
   [2]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios1.png

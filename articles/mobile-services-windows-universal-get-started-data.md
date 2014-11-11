@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-dotnet-vs2013" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Store app." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services (universal Windows apps)" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Erste Schritte mit Daten in Mobile Services (universelle Windows-App)
 
@@ -27,7 +27,7 @@ Dieses Lernprogramm basiert auf der [GetStartedWithMobileServices-App][GetStarte
 
 1.  Laden Sie die C#-Version der GetStartedWithMobileServices-Beispiel-App von der [Website mit den Codebeispielen für Entwickler][GetStartedWithMobileServices-App] herunter.
 
-    ![][]
+    ![][0]
 
 2.  Öffnen Sie in Visual Studio 2013 das heruntergeladene Projekt, und sehen Sie sich die Datei "MainPage.xaml.cs" an.
 
@@ -43,7 +43,7 @@ Dieses Lernprogramm basiert auf der [GetStartedWithMobileServices-App][GetStarte
 
 ## <a name="create-service"></a><span class="short-header">Erstellen des mobilen Diensts</span>Erstellen eines mobilen Diensts in Visual Studio
 
-[WACOM.INCLUDE [mobile-services-create-new-service-vs2013][mobile-services-create-new-service-vs2013]]
+[WACOM.INCLUDE [mobile-services-create-new-service-vs2013](../includes/mobile-services-create-new-service-vs2013.md)]
 
 1.  Öffnen Sie im Projektmappen-Explorer die Codedatei "App.xaml.cs". Der \*\*App\*\*-Klasse wurde ein neues statisches Feld hinzugefügt, das dem im folgenden Beispiel entspricht:
 
@@ -57,7 +57,7 @@ Dieses Lernprogramm basiert auf der [GetStartedWithMobileServices-App][GetStarte
 
 ## <a name="add-table"></a><span class="short-header">Hinzufügen einer neuen Tabelle</span>Hinzufügen einer neuen Tabelle zu dem mobilen Dienst und Aktualisieren der App
 
-[WACOM.INCLUDE [mobile-services-create-new-table-vs2013][mobile-services-create-new-table-vs2013]]
+[WACOM.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
 
 1.  Fügen Sie in der Datei "MainPage.xaml.cs" die folgenden "using"-Anweisungen hinzu, oder heben Sie deren Auskommentierung auf:
 
@@ -168,28 +168,19 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 -   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/ "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-data/ "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-data/ "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-ios-get-started-data/ "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-android-get-started-data/ "Android"
-  [HTML]: /de-de/documentation/articles/mobile-services-html-get-started-data/ "HTML"
-  [Xamarin.iOS]: /de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started-data/ "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started-data/ "Xamarin.Android"
+
   [Herunterladen des Windows Store-App-Projekts]: #download-app
   [Erstellen des mobilen Diensts in Visual Studio]: #create-service
   [Hinzufügen einer Datentabelle zum Speichern und Aktualisieren der App]: #add-table
   [Testen der App mit Mobile Services]: #test-app
   [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28
   [GetStartedWithMobileServices-App]: http://go.microsoft.com/fwlink/p/?LinkId=328660
-  []: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-data-sample-download-dotnet-vs12.png
+  [0]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-data-sample-download-dotnet-vs12.png
   [1]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-quickstart-startup.png
   [mobile-services-create-new-service-vs2013]: ../includes/mobile-services-create-new-service-vs2013.md
   [MobileServiceClient-Klasse]: http://go.microsoft.com/fwlink/p/?LinkId=302030
   [mobile-services-create-new-table-vs2013]: ../includes/mobile-services-create-new-table-vs2013.md
-  [Dynamisches Schema]: http://msdn.microsoft.com/de-de/library/windowsazure/jj193175.aspx
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [2]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-todoitem-data-browse.png
   [Prüfen und Ändern von Daten mit Skripten]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet

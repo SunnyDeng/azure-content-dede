@@ -1,6 +1,6 @@
 <properties title="Azure Machine Learning Sample: Network intrusion detection" pageTitle="Machine Learning Sample: Network intrusion detection | Azure" description="A sample Azure Machine Learning experiment that uses a classification model to determine which network activities are a part of network intrusion." metaKeywords="" services="" solutions="" documentationCenter="" authors="garye" videoId="" scriptId="" />
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye"></tags>
+<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye" />
 
 # Azure Machine Learning-Beispiel: Erkennen von Netzwerkangriffen
 
@@ -27,7 +27,7 @@ Diese Demo verwendet verschiedene Netzwerkmerkmale, um zu erkennen, welche Netzw
 
 1. Der nichtlineare Klassifikator (Boosted Decision Tree) ist etwas besser geeignet als der lineare Klassifikator (logistische Regression):
 
-![][]
+![][0]
 
 
 Nun werden wir einen Vergleich mit einem Boosted Decision Tree mit Auswahl der Merkmale vergleichen. Die Klassifizierungsleistung ist in diesem Fall ähnlich, aber der Boosted Decision Tree über alle Merkmale ist knapp besser und wird für den Bewertungsworkflow verwendet. Diese große Fläche unter der Kurve für diese Klassifizierung ist typisch für dieses Dataset.
@@ -48,5 +48,5 @@ We wanted to see our model in action, to do this we wanted a request-response se
 5. Again, using one click we can publish the service end points that is deployed right away and can be tested using a friendly user interface - all within studio
 
 
-[]: ./media/machine-learning-sample-network-intrusion-detection/network-intrusion-detection-1.png
+[0]: ./media/machine-learning-sample-network-intrusion-detection/network-intrusion-detection-1.png
 [1]: ./media/machine-learning-sample-network-intrusion-detection/network-intrusion-detection-2.png

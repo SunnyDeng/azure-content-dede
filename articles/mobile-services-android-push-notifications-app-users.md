@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-push-notifications-to-users-android" urlDisplayName="" pageTitle="Push notifications to users (Android ) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to push notifications to users of your Android app." metaCanonical="" services="" documentationCenter="Mobile" title="Push notifications to users by using Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
 
 # Pushbenachrichtigungen an Benutzer mithilfe von Mobile Services
 
@@ -25,7 +25,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf und führt das
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Daten** und dann auf **Erstellen**.
 
@@ -237,18 +237,15 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 -   [Verwenden der Android-Clientbibliothek für Mobile Services][Verwenden der Android-Clientbibliothek für Mobile Services]
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Phone]: /de-de/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone"
-  [iOS]: /de-de/develop/mobile/tutorials/push-notifications-to-users-ios "iOS"
-  [Android]: /de-de/develop/mobile/tutorials/push-notifications-to-users-android "Android"
+
   [vorherige Lernprogramm zu Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-android
   [Erstellen der Registrations-Tabelle]: #create-table
   [Aktualisieren Ihrer App]: #update-app
   [Aktualisieren von Serverskripts]: #update-scripts
   [Verifizieren des Pushbenachrichtigungs-Verhaltens]: #test-app
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-android-push-notifications-app-users/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-push-notifications-app-users/mobile-services-selection.png
   [1]: ./media/mobile-services-android-push-notifications-app-users/mobile-create-table.png
   [2]: ./media/mobile-services-android-push-notifications-app-users/mobile-create-registration-table.png
   [3]: ./media/mobile-services-android-push-notifications-app-users/mobile-create-registration-class.png

@@ -1,6 +1,6 @@
 <properties linkid="manage-services-how-to-monitor-websites" urlDisplayName="How to monitor" pageTitle="How to monitor websites - Azure service management" metaKeywords="Azure monitoring web sites, Azure Management Portal Monitor, Azure monitoring" description="Learn how to monitor Azure websites by using the Monitor page in the Management Portal." metaCanonical="" services="web-sites" documentationCenter="" title="How to Monitor Websites" authors="cephalin" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin" />
 
 # <a name="howtomonitor"></a>Überwachen von Websites
 
@@ -305,19 +305,13 @@ Weitere Informationen zur Überwachung von Website-Endpunkten erhalten Sie in de
   [Gewusst wie: Empfangen von Warnungen mittels Websitemetriken]: #howtoreceivealerts
   [Gewusst wie: Anzeigen der Nutzungskontingente für eine Website]: #howtoviewusage
   [Gewusst wie: Reduzieren der Ressourcennutzung]: #resourceusage
-  [Was geschieht, wenn ein Ressourcennutzungskontingent überschritten wird?]: #exceeded
   [Gewusst wie: Diagnosekonfiguration und Herunterladen von Protokollen für eine Website]: #howtoconfigdiagnostics
   [Gewusst wie: Überwachen des Web-Endpunktstatus]: #webendpointstatus
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
   [Gewusst wie: Empfangen von Warnungs-Benachrichtigungen und Verwaltung von Alarmregeln in Azure]: http://go.microsoft.com/fwlink/?LinkId=309356
   [Größen virtueller Computer und Cloud-Dienste für Azure]: http://go.microsoft.com/fwlink/?LinkID=309169
   [Verwalten von Speicherkonten]: https://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/
-  [Verwenden von Azure PowerShell]: http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/
-  [Aktivieren der Diagnoseprotokollierung für Azure-Websites]: /de-de/develop/net/common-tasks/diagnostics-logging-and-instrumentation/
-  [Debuggen einer Node.js-Anwendung auf Azure-Websites]: /de-de/develop/nodejs/how-to-guides/Debug-Website/
   [FileZilla]: http://go.microsoft.com/fwlink/?LinkId=247914
-  [Erste Schritte mit Azure PowerShell-Cmdlets]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554332.aspx
-  [Verwenden der Azure-Befehlszeilentools]: http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/
   [erweiterten W3C-Protokollformat]: http://go.microsoft.com/fwlink/?LinkID=90561
   []: http://contoso.cloudapp.net
   [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endpunktüberwachung]: http://www.windowsazure.com/de-de/documentation/videos/websites-and-endpoint-monitoring-scottgu/

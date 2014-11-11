@@ -1,6 +1,6 @@
 <properties linkid="manage-services-hdinsight-sample-wordcount" urlDisplayName="Hadoop Samples in HDInsight" pageTitle="The WordCount Hadoop sample in HDInsight | Azure" metaKeywords="hdinsight, hdinsight sample, hadoop, mapreduce" description="Learn how to run a simple MapReduce sample on HDInsight." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The WordCount Hadoop sample in HDInsight" authors="bradsev" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
 # Das Wortzählungsbeispiel mit Hadoop in HDInsight
 
@@ -15,26 +15,26 @@ Das Hadoop MapReduce-Programm liest die Textdatei ein und zählt, wie oft jedes 
 
 **Voraussetzungen**:
 
--   Sie benötigen ein Azure-Abonnement. Hinweise zur Erstellung eines Kontos finden Sie auf der Seite [Azure kostenlos ausprobieren][].
+-   Sie benötigen ein Azure-Abonnement. Hinweise zur Erstellung eines Kontos finden Sie auf der Seite [Azure kostenlos ausprobieren][Azure kostenlos ausprobieren].
 
--   Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Erste Schritte mit Azure HDInsight][] oder [Bereitstellen eines HDInsight-Clusters][]
+-   Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Erste Schritte mit Azure HDInsight][Erste Schritte mit Azure HDInsight] oder [Bereitstellen eines HDInsight-Clusters][Bereitstellen eines HDInsight-Clusters]
 
--   Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][]
+-   Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell]
 
 ## Themen in diesem Artikel
 
 In diesem Thema wird die Ausführung des Beispiels demonstriert und der Java-Code für das MapReduce-Programm vorgestellt. Außerdem erhalten Sie eine Zusammenfassung der vermittelten Lerninhalte und einen Ausblick auf nächste Schritte. Der Artikel enthält die folgenden Abschnitte:
 
-1.  [Ausführen des Beispiels mit Azure PowerShell][]
-2.  [Der Java-Code für das MapReduce-Programm zur Wortzählung][]
-3.  [Zusammenfassung][]
-4.  [Nächste Schritte][]
+1.  [Ausführen des Beispiels mit Azure PowerShell][Ausführen des Beispiels mit Azure PowerShell]
+2.  [Der Java-Code für das MapReduce-Programm zur Wortzählung][Der Java-Code für das MapReduce-Programm zur Wortzählung]
+3.  [Zusammenfassung][Zusammenfassung]
+4.  [Nächste Schritte][Nächste Schritte]
 
 ## <span id="run-sample"></span></a>Ausführen des Beispiels mit Azure PowerShell
 
 **So übermitteln Sie den MapReduce-Job**
 
-1.  Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+1.  Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
 
 2.  Legen Sie die zwei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
 
@@ -101,7 +101,7 @@ In diesem Thema wird die Ausführung des Beispiels demonstriert und der Java-Cod
 
 Die Ausgabe des WordCount-Skripts wird im Befehlsfenster angezeigt:
 
-![HDI.Sample.WordCount.Output][]
+![HDI.Sample.WordCount.Output][HDI.Sample.WordCount.Output]
 
 Beachten Sie, dass die Ausgabedateien eines MapReduce-Jobs nicht geändert werden können. Wenn Sie dieses Beispiel erneut ausführen, müssen Sie daher den Namen der Ausgabedatei ändern.
 
@@ -183,15 +183,15 @@ Dieses Beispiel beschreibt die Ausführung eines MapReduce-Programms, das die Au
 
 Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hive- und MapReduce-Jobs in Azure HDInsight mit Azure PowerShell finden Sie in den folgenden Themen:
 
--   [Erste Schritte mit Azure HDInsight][]
--   [Beispiel: 10-GB-Graysort][]
--   [Beispiel: Pi-Schätzung][]
--   [Beispiel: C# Streaming][]
--   [Verwenden von Pig mit HDInsight][]
--   [Verwenden von Hive mit HDInsight][]
--   [Dokumentation zum Azure HDInsight SDK][]
+-   [Erste Schritte mit Azure HDInsight][Erste Schritte mit Azure HDInsight]
+-   [Beispiel: 10-GB-Graysort][Beispiel: 10-GB-Graysort]
+-   [Beispiel: Pi-Schätzung][Beispiel: Pi-Schätzung]
+-   [Beispiel: C# Streaming][Beispiel: C# Streaming]
+-   [Verwenden von Pig mit HDInsight][Verwenden von Pig mit HDInsight]
+-   [Verwenden von Hive mit HDInsight][Verwenden von Hive mit HDInsight]
+-   [Dokumentation zum Azure HDInsight SDK][Dokumentation zum Azure HDInsight SDK]
 
-  [Azure kostenlos ausprobieren]: http://azure.microsoft.com/en-us/pricing/free-trial/
+  [Azure kostenlos ausprobieren]: http://azure.microsoft.com/de-de/pricing/free-trial/
   [Erste Schritte mit Azure HDInsight]: ../hdinsight-get-started/
   [Bereitstellen eines HDInsight-Clusters]: ../hdinsight-provision-clusters/
   [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell/
@@ -205,4 +205,4 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
   [Beispiel: C# Streaming]: ../hdinsight-sample-csharp-streaming/
   [Verwenden von Pig mit HDInsight]: ../hdinsight-use-pig/
   [Verwenden von Hive mit HDInsight]: ../hdinsight-use-hive/
-  [Dokumentation zum Azure HDInsight SDK]: http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx
+  [Dokumentation zum Azure HDInsight SDK]: http://msdnstage.redmond.corp.microsoft.com/de-de/library/dn479185.aspx

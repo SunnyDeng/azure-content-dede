@@ -6,35 +6,35 @@
 
 Dieser Leitfaden demonstriert die Durchführung häufiger Szenarien mit dem Windows
 Azure-Warteschlangenspeicherdienst. Die Beispiele wurden mit der Ruby Azure-API erstellt.
-Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
+Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
 ## Inhaltsverzeichnis
 
--   [Was ist der Warteschlangenspeicher?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen einer Ruby-Anwendung][]
--   [Konfigurieren der Anwendung für den Speicherzugriff][]
--   [Einrichten einer Azure-Speicherverbindung][]
--   [Gewusst wie: Erstellen einer Warteschlange][]
--   [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange][]
--   [Gewusst wie: Einsehen der nächsten Nachricht][]
--   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][]
--   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][]
--   [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][]
--   [Gewusst wie: Abrufen der Warteschlangenlänge][]
--   [Gewusst wie: Löschen einer Warteschlange][]
--   [Nächste Schritte][]
+-   [Was ist der Warteschlangenspeicher?][Was ist der Warteschlangenspeicher?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Erstellen einer Ruby-Anwendung][Erstellen einer Ruby-Anwendung]
+-   [Konfigurieren der Anwendung für den Speicherzugriff][Konfigurieren der Anwendung für den Speicherzugriff]
+-   [Einrichten einer Azure-Speicherverbindung][Einrichten einer Azure-Speicherverbindung]
+-   [Gewusst wie: Erstellen einer Warteschlange][Gewusst wie: Erstellen einer Warteschlange]
+-   [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange][Gewusst wie: Einfügen einer Nachricht in eine Warteschlange]
+-   [Gewusst wie: Einsehen der nächsten Nachricht][Gewusst wie: Einsehen der nächsten Nachricht]
+-   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]
+-   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]
+-   [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]
+-   [Gewusst wie: Abrufen der Warteschlangenlänge][Gewusst wie: Abrufen der Warteschlangenlänge]
+-   [Gewusst wie: Löschen einer Warteschlange][Gewusst wie: Löschen einer Warteschlange]
+-   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [howto-queue-storage][]]
+[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
 
 ## <span id="CreateAccount"></span></a>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <span id="create-a-ruby-application"></span></a>Erstellen einer Ruby-Anwendung
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie im Thema zum [Erstellen einer Ruby-Anwendung in Azure][].
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie im Thema zum [Erstellen einer Ruby-Anwendung in Azure][Erstellen einer Ruby-Anwendung in Azure].
 
 ## <span id="configure-your-application-to-access-storage"></span></a>Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -62,7 +62,7 @@ Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **A
 
 So rufen Sie diese Werte ab:
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 2.  Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
 3.  Klicken Sie unter im Navigationsbereich auf **MANAGE KEYS**.
 4.  Im eingeblendeten Dialog wird der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Wählen Sie den primären oder sekundären Zugriffsschlüssel aus.
@@ -150,14 +150,13 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 
 Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
--   Besuchen Sie den [Blog des Azure-Speicherteams][]
--   Besuchen Sie das [Azure SDK for Ruby][]-Repository auf GitHub
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure]
+-   Besuchen Sie den [Blog des Azure-Speicherteams][Blog des Azure-Speicherteams]
+-   Besuchen Sie das [Azure SDK for Ruby][Azure SDK for Ruby]-Repository auf GitHub
 
-Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Verwenden von Servicebus-Warteschlangen][] besprochenen Azure Servicebus-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung][]
+Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Verwenden von Servicebus-Warteschlangen][Verwenden von Servicebus-Warteschlangen] besprochenen Azure Servicebus-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung][Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung]
 
   [Nächste Schritte]: #next-steps
-  [Was ist der Warteschlangenspeicher?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer Ruby-Anwendung]: #create-a-ruby-application
@@ -173,10 +172,10 @@ Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangen
   [Gewusst wie: Löschen einer Warteschlange]: #how-to-delete-a-queue
   [howto-queue-storage]: ../includes/howto-queue-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
-  [Erstellen einer Ruby-Anwendung in Azure]: /en-us/develop/ruby/tutorials/web-app-with-linux-vm/
+  [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure SDK for Ruby]: https://github.com/WindowsAzure/azure-sdk-for-ruby
-  [Verwenden von Servicebus-Warteschlangen]: /en-us/develop/ruby/how-to-guides/service-bus-queues/
-  [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung]: http://msdn.microsoft.com/en-us/library/windowsazure/hh767287.aspx
+  [Verwenden von Servicebus-Warteschlangen]: /de-de/develop/ruby/how-to-guides/service-bus-queues/
+  [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung]: http://msdn.microsoft.com/de-de/library/windowsazure/hh767287.aspx

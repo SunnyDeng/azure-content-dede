@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-handle-conflcits-offline-data-dotnet" urlDisplayName="Handle Conflicts with Offline Data" pageTitle="Handle Conflicts with offline data in Mobile Services (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services handle conflicts when syncing offline data in your Windows Store application" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling conflicts with offline data in Mobile Services" authors="wesmc" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
 
@@ -38,7 +38,7 @@ In diesem Lernprogramm wird Visual Studio 2013 für Windows 8.1 verwendet.
 
 ## <a name="download-app"></a>Herunterladen des Beispielprojekts
 
-![][]
+![][0]
 
 Dieses Lernprogramm baut auf dem [Codebeispiel zur Behandlung von Konflikten][Codebeispiel zur Behandlung von Konflikten] auf, einem Windows Store-App-Projekt in Visual Studio 2013. Die Benutzeroberfläche dieser App ähnelt der App im Lernprogramm [Erste Schritte mit Offlinedaten][Erste Schritte mit Offlinedaten]. Der Unterschied besteht darin, dass für jedes TodoItem eine neue Datumsspalte vorhanden ist.
 
@@ -118,7 +118,7 @@ Testen Sie jetzt die App mit Mobile Services.
 
 4.  Geben Sie wie zuvor Text im Textfeld ein, und klicken Sie danach auf die Schaltfläche **Speichern**. So werden die Daten in der lokalen Synchronisierungstabelle, jedoch nicht auf dem Server gespeichert.
 
-    ![][]
+    ![][0]
 
 5.  Um den aktuellen Status der Datenbank anzuzeigen, melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**. Klicken Sie dann auf Ihren mobilen Dienst.
 
@@ -196,9 +196,6 @@ Wenn ein Push-Vorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePus
 
 <!-- Anchors. --> <!-- Images --> <!-- URLs -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data "Windows Store C#"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-handling-conflicts-offline-data "Windows Phone"
-  [Lernprogramm ansehen]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Build-offline-apps-Azure-Mobile-Services
   [Erste Schritte mit Offlinedaten]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
   [Herunterladen des Windows Store-App-Projekts]: #download-app
   [Hinzufügen einer Spalte mit Fälligkeitsdatum zur Datenbank]: #add-column
@@ -206,7 +203,7 @@ Wenn ein Push-Vorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePus
   [Aktualisieren der Datenbank für mobile Dienste mit JavaScript]: #javascript-backend
   [Testen der App mit einem mobilen Dienst]: #test-app
   [Manuelles Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts]: #handle-conflict
-  []: ./media/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
+  [0]: ./media/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
   [Codebeispiel zur Behandlung von Konflikten]: http://go.microsoft.com/fwlink/?LinkId=394787
   [SQLite für Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
   [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells]: /de-de/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations

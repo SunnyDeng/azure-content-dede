@@ -1,6 +1,6 @@
 <properties linkid="manage-services-create-a-virtual-network" urlDisplayName="Tutorial: Create a cloud-only virtual network" pageTitle="Tutorial: Create a cloud-only virtual network" metaKeywords="" description="Learn how to create an example cloud-only Azure Virtual Network in this tutorial." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="Tutorial: Create a Clound-only Virtual Network in Azure" authors="cherylmc" solutions="" manager="adinah" editor="" />
 
-<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/29/2014" ms.author="cherylmc"></tags>
+<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/29/2014" ms.author="cherylmc" />
 
 # Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks in Azure
 
@@ -33,7 +33,7 @@ Gehen Sie zum Erstellen dieses virtuellen Nur-Cloud-Beispielnetzwerks wie folgt 
 
 2.  Klicken Sie in der unteren linken Ecke des Bildschirms auf **Neu** \> **Netzwerkdienste** \> **Virtuelles Netzwerk** und dann auf **Benutzerdefiniert erstellen**, um den Konfigurationsassistenten zu starten.
 
-    ![][]
+    ![][0]
 
 3.  Geben Sie auf der Seite **Details des virtuellen Netzwerks** die folgenden Informationen ein:
 
@@ -92,11 +92,10 @@ Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie un
   [Virtuelles Netzwerk erstellen]: ./media/create-virtual-network/createVNet_06_VNetExample.png
   [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal]: http://msdn.microsoft.com/library/azure/dn631643.aspx
   [Überblick über Azure Virtual Network]: http://msdn.microsoft.com/library/windowsazure/jj156007.aspx
-  [Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen]: /de-de/manage/services/networking/cross-premises-connectivity/
   [Azure ausprobieren]: http://www.windowsazure.com/pricing/free-trial/
   [Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile]: http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
-  []: ./media/create-virtual-network/createVNet_01_OpenVirtualNetworkWizard.png
+  [0]: ./media/create-virtual-network/createVNet_01_OpenVirtualNetworkWizard.png
   [1]: ./media/create-virtual-network/createVNet_02_VirtualNetworkDetails.png
   [Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal]: http://go.microsoft.com/fwlink/?linkid=248092&clcid=0x409
   [2]: ./media/create-virtual-network/createVNet_04_VirtualNetworkAddressSpaces.png

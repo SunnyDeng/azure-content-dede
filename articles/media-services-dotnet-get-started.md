@@ -1,31 +1,31 @@
 <properties linkid="develop-media-services-tutorials-get-started" urlDisplayName="Get Started with Media Services" pageTitle="Get Started with Media Services - Azure" metaKeywords="Azure media services" description="An introduction to using Media Services with Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # <a name="getting-started"></a>Erste Schritte mit Media Services
 
 In diesem Lernprogramm erfahren Sie, wie Sie für Azure-Mediendienste entwickeln können. Sie lernen den Mediendienste-Arbeitsfluss und die gängigsten Programmierobjekte und Aufgaben für die Mediendienste-Entwicklung kennen. Nach Abschluss des Lernprogramms sind Sie in der Lage, eine einfache Mediendatei abzuspielen, die Sie hochgeladen, codiert und heruntergeladen haben. Alternativ können Sie zum codierten Objekt navigieren und dieses auf dem Server abspielen.
 
-Sie finden ein C# Visual Studio-Projekt mit dem Code für dieses Lernprogramm hier: [Download][].
+Sie finden ein C# Visual Studio-Projekt mit dem Code für dieses Lernprogramm hier: [Download][Download].
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
--   [Einrichten Ihres Projekts][]
--   [Abrufen des Mediendienstserver-Kontexts][]
--   [Erstellen eines Medienobjekts und Hochladen von zugehörigen Dateien in Mediendiensten][]
--   [Codierung eines Medienobjekts und Download des Ausgabe-Medienobjekts][]
+-   [Einrichten Ihres Projekts][Einrichten Ihres Projekts]
+-   [Abrufen des Mediendienstserver-Kontexts][Abrufen des Mediendienstserver-Kontexts]
+-   [Erstellen eines Medienobjekts und Hochladen von zugehörigen Dateien in Mediendiensten][Erstellen eines Medienobjekts und Hochladen von zugehörigen Dateien in Mediendiensten]
+-   [Codierung eines Medienobjekts und Download des Ausgabe-Medienobjekts][Codierung eines Medienobjekts und Download des Ausgabe-Medienobjekts]
 
 ## Voraussetzungen
 
 Für das Lernprogramm und die Entwicklung mit dem Azure Mediendienste-SDK benötigen Sie Folgendes.
 
--   Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Mediendienstekontos][].
+-   Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Mediendienstekontos][Vorgehensweise: Erstellen eines Mediendienstekontos].
 -   Betriebssysteme: Windows 7, Windows 2008 R2 oder Windows 8.
 -   .NET Framework 4.5 oder .NET Framework 4.
 -   Visual Studio 2012 oder Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express).
--   Installieren Sie **Azure SDK für .NET.**, **Azure Mediendienste-SDK für .NET** und **WCF Data Services 5.0 für OData V3-Bibliotheken** und fügen Sie Verweise auf Ihr Projekt mit dem [windowsazure.mediaservices Nuget][]-Paket hinzu. Der folgende Abschnitt behandelt Installation und Einrichtung dieser Schnittstellen.
+-   Installieren Sie **Azure SDK für .NET.**, **Azure Mediendienste-SDK für .NET** und **WCF Data Services 5.0 für OData V3-Bibliotheken** und fügen Sie Verweise auf Ihr Projekt mit dem [windowsazure.mediaservices Nuget][windowsazure.mediaservices Nuget]-Paket hinzu. Der folgende Abschnitt behandelt Installation und Einrichtung dieser Schnittstellen.
 
-<div class="dev-callout"><strong>Hinweis</strong> <p>Sie ben&ouml;tigen ein Azure-Konto, um dieses Lernprogramm auszuf&uuml;hren. Wenn Sie noch kein Konto haben, k&ouml;nnen Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.</p></div>
+<div class="dev-callout"><strong>Hinweis</strong> <p>Sie ben&ouml;tigen ein Azure-Konto, um dieses Lernprogramm auszuf&uuml;hren. Wenn Sie noch kein Konto haben, k&ouml;nnen Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.</p></div>
 
 ## <span id="Step1"></span></a>Einrichten Ihres Projekts
 
@@ -35,7 +35,7 @@ Für das Lernprogramm und die Entwicklung mit dem Azure Mediendienste-SDK benöt
 
     Um Verweise mithilfe des **Verweise verwalten**-Dialogfelds hinzuzufügen, gehen Sie wie folgt vor. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf den Knoten **Verweise** und klicken Sie auf **Verweis hinzufügen**. Wählen Sie im Dialogfeld **Verweise verwalten** die entsprechenden Assemblys aus (in diesem Fall System.Configuration.)
 
-3.  Falls Sie dies noch nicht getan haben, erstellen Sie Verweise auf die Bibliotheken **Azure SDK für .NET**.(Microsoft.WindowsAzure.StorageClient.dll), **Azure Mediendienste-SDK für .NET** (Microsoft.WindowsAzure.MediaServices.Client.dll) und **WCF Data Services 5.0 für OData V3** (Microsoft.Data.OData.dll) mithilfe des [windowsazure.mediaservices Nuget][]-Pakets.
+3.  Falls Sie dies noch nicht getan haben, erstellen Sie Verweise auf die Bibliotheken **Azure SDK für .NET**.(Microsoft.WindowsAzure.StorageClient.dll), **Azure Mediendienste-SDK für .NET** (Microsoft.WindowsAzure.MediaServices.Client.dll) und **WCF Data Services 5.0 für OData V3** (Microsoft.Data.OData.dll) mithilfe des [windowsazure.mediaservices Nuget][windowsazure.mediaservices Nuget]-Pakets.
 
     Um Verweise mit Nuget hinzuzufügen, gehen Sie wie folgt vor. Klicken Sie im Hauptmenü in Visual Studio auf "EXTRAS" -\> "Bibliothekspaket-Manager" -\> "Paket-Manager-Konsole". . Geben Sie im Konsolenfenster *Install-Package [Paketname]* ein und drücken Sie die Eingabetaste (verwenden Sie in diesem Fall den folgenden Befehl: *Install-Package windowsazure.mediaservices*.)
 
@@ -167,7 +167,7 @@ Fügen Sie einen Aufruf an die Methode nach der Zeile \*\*\_context = new CloudM
 
 ## <span id="Step4"></span></a>Codieren des Medienobjekts auf dem Server und Download des Ausgabe-Medienobjekts
 
-n Media Services können Sie Aufträge erstellen, die Medieninhalte auf verschiedene Arten verarbeiten: codieren, verschlüsseln, Formatumwandlungen usw. Ein Mediendienste-Auftrag enthält immer eine oder mehrere Aufgaben, in denen die Verarbeitungsdetails festgelegt sind. In diesem Abschnitt erstellen Sie eine einfache Codierungsaufgabe und führen diese anschließend in einem Auftrag mit dem Azure-Medienencoder aus. Die Aufgabe verwendet eine vorkonfigurierte Zeichenfolge, um die auszuführende Codierung anzugeben. Eine Liste der voreingestellten Codierungswerte finden Sie unter [Systemvoreinstellungen für den Azure Media Encoder][]. Mediendienste unterstützen dieselben Ein- und Ausgabeformate für Mediendatei wie der Microsoft Expression Encoder. Eine Liste unterstützter Formate finden Sie unter [Supported File Types for Media Services][] (Unterstützte Dateitypen für Mediendienste, in englischer Sprache).
+n Media Services können Sie Aufträge erstellen, die Medieninhalte auf verschiedene Arten verarbeiten: codieren, verschlüsseln, Formatumwandlungen usw. Ein Mediendienste-Auftrag enthält immer eine oder mehrere Aufgaben, in denen die Verarbeitungsdetails festgelegt sind. In diesem Abschnitt erstellen Sie eine einfache Codierungsaufgabe und führen diese anschließend in einem Auftrag mit dem Azure-Medienencoder aus. Die Aufgabe verwendet eine vorkonfigurierte Zeichenfolge, um die auszuführende Codierung anzugeben. Eine Liste der voreingestellten Codierungswerte finden Sie unter [Systemvoreinstellungen für den Azure Media Encoder][Systemvoreinstellungen für den Azure Media Encoder]. Mediendienste unterstützen dieselben Ein- und Ausgabeformate für Mediendatei wie der Microsoft Expression Encoder. Eine Liste unterstützter Formate finden Sie unter [Supported File Types for Media Services][Supported File Types for Media Services] (Unterstützte Dateitypen für Mediendienste, in englischer Sprache).
 
 1.  Fügen Sie die folgende **CreateEncodingJob**-Methode zu Ihrer Klasse hinzu. Diese Methode demonstriert die Ausführung verschiedener Aufgaben für einen Codierungsauftrag:
 
@@ -618,8 +618,8 @@ Führen Sie das Programm aus (drücken Sie F5). Die Konsolenausgabe sollte in et
 
 In diesem Lernprogramm wurden die verschiedenen Programmieraufgaben für die Erstellung einer einfachen Mediendienste-Anwendung beschrieben. Sie kennen nun die grundlegenden Mediendienste-Programmieraufgaben inklusive Abrufen des Serverkontexts, Erstellen und Codieren von Medienobjekten und Herunterladen von Medienobjekt auf dem Server. Weitere Schritte und komplexere Programmieraufgaben finden Sie unter:
 
--   [Verwenden von Media Services][]
--   [Erstellen von Anwendungen mit der Mediendienste-REST-API][]
+-   [Verwenden von Media Services][Verwenden von Media Services]
+-   [Erstellen von Anwendungen mit der Mediendienste-REST-API][Erstellen von Anwendungen mit der Mediendienste-REST-API]
 
 <!-- Anchors. -->
 
@@ -630,9 +630,8 @@ In diesem Lernprogramm wurden die verschiedenen Programmieraufgaben für die Ers
   [Codierung eines Medienobjekts und Download des Ausgabe-Medienobjekts]: #Step4
   [Vorgehensweise: Erstellen eines Mediendienstekontos]: http://go.microsoft.com/fwlink/?LinkId=256662
   [windowsazure.mediaservices Nuget]: http://nuget.org/packages/windowsazure.mediaservices
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A8A8397B5
-  [Systemvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/en-us/library/windowsazure/jj129582.aspx
-  [Supported File Types for Media Services]: http://msdn.microsoft.com/en-us/library/windowsazure/hh973634.aspx
+  [Systemvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/de-de/library/windowsazure/jj129582.aspx
+  [Supported File Types for Media Services]: http://msdn.microsoft.com/de-de/library/windowsazure/hh973634.aspx
   [1]: http://msdn.microsoft.com/library/windowsazure/jj129582.aspx
-  [Verwenden von Media Services]: http://www.windowsazure.com/en-us/develop/net/how-to-guides/media-services/
-  [Erstellen von Anwendungen mit der Mediendienste-REST-API]: http://msdn.microsoft.com/en-us/library/windowsazure/hh973618.aspx
+  [Verwenden von Media Services]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/media-services/
+  [Erstellen von Anwendungen mit der Mediendienste-REST-API]: http://msdn.microsoft.com/de-de/library/windowsazure/hh973618.aspx

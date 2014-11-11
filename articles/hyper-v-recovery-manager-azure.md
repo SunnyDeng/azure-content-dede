@@ -1,6 +1,6 @@
 <properties linkid="configure-hyper-v-recovery-vault" urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Configure Azure Site Recovery to protect virtual machines on Hyper-V server located in VMM clouds" metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery" description="Azure Site Recovery coordinates the replication, failover and recovery of Hyper-V virtual machines located in VMM clouds from one on-premises site to another. Azure Site Recovery can also replicate, failover, and recover Hyper-V virtual machine data between VMM clouds and Microsoft Azure." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery: On-Premises to Azure Protection" editor="jimbe" manager="cfreeman" authors="" />
 
-<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # Erste Schritte mit Azure Site Recovery: Schutz „von lokal an Azure“
 
@@ -365,29 +365,9 @@ Weitere Informationen über Interaktionen mit Aufträgen und dem Dashboard finde
 -   Informationen zum Planen und Bereitstellen von Azure Site Recovery in einer vollständigen Produktionsumgebung finden Sie im [Planungshandbuch für Azure Site Recovery][Planen der Azure Site Recovery-Bereitstellung] und im [Bereitstellungshandbuch für Azure Site Recovery][Bereitstellungshandbuch für Azure Site Recovery].
 -   Wenn Sie Fragen haben, besuchen Sie das [Azure Recovery Services-Forum][Azure Recovery Services-Forum]
 
-  [Erste Schritte mit Azure Site Recovery: Schutz „von lokal an lokal“]: http://go.microsoft.com/fwlink/?LinkId=398765
   [Planen der Azure Site Recovery-Bereitstellung]: http://go.microsoft.com/fwlink/?LinkId=321294
-  [Bereitstellen von Azure Site Recovery: Schutz „von lokal an Azure“]: http://go.microsoft.com/fwlink/?LinkId=402679
-  [Verwalten und Überwachen von Azure Site Recovery]: http://go.microsoft.com/fwlink/?LinkId=378272
-  [Azure Site Recovery: Common Error Scenarios and Resolutions]: http://go.microsoft.com/fwlink/?LinkId=389879
   [Azure Recovery Services-Forum]: http://go.microsoft.com/fwlink/?LinkId=313628
-  [Kostenloses Azure-Testkonto]: http://aka.ms/try-azure
-  [Azure Site Recovery-Manager – Preisdetails]: http://go.microsoft.com/fwlink/?LinkId=378268
-  [Einführung in Microsoft Azure Storage]: http://go.microsoft.com/fwlink/?LinkId=398704
   [Voraussetzungen und Support]: http://go.microsoft.com/fwlink/?LinkId=402602
-  [Schritt 1: Abrufen und Konfigurieren von Zertifikaten]: #createcert
-  [Schritt 2: Erstellen eines Tresors]: #vault
-  [Schritt 3: Konfigurieren des Tresors]: #upload
-  [Schritt 4: Installieren der Anbieteranwendung]: #download
-  [Schritt 5: Installieren der Agent-Anwendung]: #agent
-  [Schritt 6: Konfigurieren des Cloud-Schutzes]: #clouds
-  [Schritt 7: Konfigurieren der Netzwerkzuordnung]: #NetworkMapping
-  [Schritt 8: Aktivieren von Schutz für virtuelle Computer]: #virtualmachines
-  [Schritt 9: Konfigurieren und Ausführen von Wiederherstellungsplänen]: #recovery%20plans
-  [Abrufen eines selbstsignierten Zertifikats für die Anleitung]: #obtaincert
-  [Exportieren des Zertifikats im PFX-Format]: #exportcert
-  [Importieren des PFX-Zertifikats auf dem VMM-Server]: #importcert
-  [Windows SDK]: http://go.microsoft.com/fwlink/?LinkId=378269
   [Verwaltungsportal]: https://manage.windowsazure.com
   [Neuer Tresor]: ./media/hyper-v-recovery-manager-configure-vault/SR_HvVault.png
   [Schnellstart-Symbol]: ./media/hyper-v-recovery-manager-configure-vault/SR_QuickStartIcon.png

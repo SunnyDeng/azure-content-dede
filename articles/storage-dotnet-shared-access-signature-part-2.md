@@ -1,10 +1,10 @@
 <properties linkid="manage-services-storage-net-shared-access-signature-part-2" urlDisplayName="" pageTitle="Create and use a SAS with the Blob Service | Microsoft Azure" metaKeywords="Azure blob, shared access signatures, stored access policy" description="Explore generating and using shared access signatures with the Blob service" metaCanonical="" services="storage" documentationCenter="" title="Part 2: Create and Use a SAS with the Blob Service" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Blob-Dienst
 
-In [Teil 1][] dieses Lernprogramms haben Sie das Konzept der Shared Access Signatures (SAS) sowie bewährte Methoden für deren Einsatz kennengelernt. In Teil 2 erfahren Sie, wie Sie Shared Access Signatures mit dem Azure Blob-Dienst erstellen und dann verwenden können. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die gezeigten Szenarios umfassen die folgenden Aspekte der Arbeit mit Shared Access Signatures:
+In [Teil 1][Teil 1] dieses Lernprogramms haben Sie das Konzept der Shared Access Signatures (SAS) sowie bewährte Methoden für deren Einsatz kennengelernt. In Teil 2 erfahren Sie, wie Sie Shared Access Signatures mit dem Azure Blob-Dienst erstellen und dann verwenden können. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die gezeigten Szenarios umfassen die folgenden Aspekte der Arbeit mit Shared Access Signatures:
 
 -   Generieren einer Shared Access Signature für einen Container
 -   Generieren einer Shared Access Signature für ein Blob
@@ -17,11 +17,11 @@ In diesem Lernprogramm liegt das Hauptaugenmerk auf der Erstellung von Shared Ac
 
 # Teil 1: Erstellen einer Konsolenanwendung zum Generieren von Shared Access Signatures
 
-Stellen Sie zunächst sicher, dass Sie die Azure-Speicher-Clientbibliothek für .NET installiert haben. Sie können das [NuGet-Paket][] mit den aktuellen Assemblys für die Clientbibliothek installieren; dabei handelt es sich um die empfohlene Methode, um sicherzustellen, dass Sie über die aktuellen Fehlerbehebungen verfügen. Sie können die Clientbibliothek auch als Teil der aktuellen Version des [Azure SDK für .NET][] herunterladen.
+Stellen Sie zunächst sicher, dass Sie die Azure-Speicher-Clientbibliothek für .NET installiert haben. Sie können das [NuGet-Paket][NuGet-Paket] mit den aktuellen Assemblys für die Clientbibliothek installieren; dabei handelt es sich um die empfohlene Methode, um sicherzustellen, dass Sie über die aktuellen Fehlerbehebungen verfügen. Sie können die Clientbibliothek auch als Teil der aktuellen Version des [Azure SDK für .NET][Azure SDK für .NET] herunterladen.
 
 Erstellen Sie in Visual Studio eine neue Windows-Konsolenanwendung, und geben Sie Ihr den Namen **GenerateSharedAccessSignatures**. Fügen Sie auf eine der folgenden Weisen Verweise auf **Microsoft.WindowsAzure.Configuration.dll** und **Microsoft.WindowsAzure.Storage.dll** hinzu:
 
--   Wenn Sie das NuGet-Paket installieren möchten, installieren Sie zuerst die [NuGet-Paket-Manager-Erweiterung für Visual Studio][]. Wählen Sie in Visual Studio **Project | Manage NuGet Packages**, suchen Sie online nach **Azure-Speicher**, und befolgen Sie die Installationsanweisungen.
+-   Wenn Sie das NuGet-Paket installieren möchten, installieren Sie zuerst die [NuGet-Paket-Manager-Erweiterung für Visual Studio][NuGet-Paket-Manager-Erweiterung für Visual Studio]. Wählen Sie in Visual Studio **Project | Manage NuGet Packages**, suchen Sie online nach **Azure-Speicher**, und befolgen Sie die Installationsanweisungen.
 -   Suchen Sie alternativ nach den Assemblys in Ihrer Installation des Azure SDK, und fügen Sie Verweise darauf hinzu.
 
 Fügen Sie zu Beginn der Datei "Program.cs" die folgenden **using**-Anweisungen hinzu:
@@ -273,7 +273,7 @@ Die **Main()**-Methode sollte jetzt insgesamt folgendermaßen aussehen. Führen 
 
 Wenn Sie die Konsolenanwendung "GenerateSharedAccessSignatures" ausführen, erhalten Sie eine Ausgabe ähnlich der folgenden im Konsolenfenster. Dies sind die Shared Access Signatures, die Sie in Teil 2 dieses Lernprogramms verwenden werden.
 
-![sas-console-output-1][]
+![sas-console-output-1][sas-console-output-1]
 
 # Teil 2: Erstellen einer Konsolenanwendung zum Testen von Shared Access Signatures
 
@@ -508,24 +508,22 @@ Aktualisieren Sie die **Main()**-Methode, um **UseBlobSAS()** mit den beiden im 
 
 Führen Sie die Konsolenanwendung aus, und beobachten Sie die Ausgabe, um herauszufinden, welche Vorgänge für welche Signaturen zulässig sind. Die Ausgabe im Konsolenfenster sieht etwa wie folgt aus:
 
-![sas-console-output-2][]
+![sas-console-output-2][sas-console-output-2]
 
 # Nächste Schritte
 
 [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell][Teil 1]
 
-[Verwalten des Zugriffs auf Azure-Speicherressourcen][]
+[Verwalten des Zugriffs auf Azure-Speicherressourcen][Verwalten des Zugriffs auf Azure-Speicherressourcen]
 
-[Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)][]
+[Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)][Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)]
 
-[Introducing Table and Queue SAS (Einführung in Tabellen- und Warteschlangen-SAS; in englischer Sprache)][]
+[Introducing Table and Queue SAS (Einführung in Tabellen- und Warteschlangen-SAS; in englischer Sprache)][Introducing Table and Queue SAS (Einführung in Tabellen- und Warteschlangen-SAS; in englischer Sprache)]
 
   [Teil 1]: ../storage-dotnet-shared-access-signature-part-1/
   [NuGet-Paket]: http://nuget.org/packages/WindowsAzure.Storage/ "NuGet-Paket"
-  [Azure SDK für .NET]: http://www.windowsazure.com/en-us/downloads/
+  [Azure SDK für .NET]: http://www.windowsazure.com/de-de/downloads/
   [NuGet-Paket-Manager-Erweiterung für Visual Studio]: http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c
   [sas-console-output-1]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-1.PNG
   [sas-console-output-2]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-2.PNG
-  [Verwalten des Zugriffs auf Azure-Speicherressourcen]: http://msdn.microsoft.com/en-us/library/windowsazure/ee393343.aspx
-  [Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)]: http://msdn.microsoft.com/en-us/library/windowsazure/ee395415.aspx
-  [Introducing Table and Queue SAS (Einführung in Tabellen- und Warteschlangen-SAS; in englischer Sprache)]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx
+  [Verwalten des Zugriffs auf Azure-Speicherressourcen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee393343.aspx

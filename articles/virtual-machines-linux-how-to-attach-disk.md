@@ -1,6 +1,6 @@
 <properties linkid="manage-linux-howto-attach-a-disk" urlDisplayName="Attach a disk" pageTitle="Attach a disk to a virtual machine running Linux in Azure" metaKeywords="disk VM Azure, initialize new disk Azure, initialize disk Azure Linux, attaching empty disk Azure" description="Learn how to attach a data disk to an Azure virtual machine and initialize it so it's ready for use." metaCanonical="http://www.windowsazure.com/de-de/manage/windows/how-to-guides/attach-a-disk/" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="7/29/2014" ms.author="kathydav"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="7/29/2014" ms.author="kathydav" />
 
 # Anfügen eines Datenträgers an einen virtuellen Linux-Computer
 
@@ -13,7 +13,7 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 -   [Gewusst wie: Anfügen eines vorhandenen Datenträgers][Gewusst wie: Anfügen eines vorhandenen Datenträgers]
 -   [Gewusst wie: Initialisieren eines neues Datenträgers unter Linux][Gewusst wie: Initialisieren eines neues Datenträgers unter Linux]
 
-[WACOM.INCLUDE [howto-attach-disk-windows-linux][howto-attach-disk-windows-linux]]
+[WACOM.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
 ## <span id="initializeinlinux"></span></a>Gewusst wie: Initialisieren eines neues Datenträgers unter Linux
 

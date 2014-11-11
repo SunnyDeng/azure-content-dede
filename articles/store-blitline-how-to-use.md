@@ -1,6 +1,6 @@
 <properties linkid="develop-net-how-to-guides-blitline-image-processing-service" urlDisplayName="Blitline Image Processing Service" pageTitle="How to use Blitline for image processing - Azure feature guide " metaKeywords="" description="Learn how to use the Blitline service to process images within an Azure application." metaCanonical="" services="" documentationCenter=".NET" title="How to use Blitline with Azure and Azure Storage" authors="pennij" solutions="" manager="" editor="" />
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="pennij"></tags>
+<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="pennij" />
 
 # Verwenden von Blitline mit Azure und Azure Storage
 
@@ -37,7 +37,7 @@ Um zu erläutern, wozu Blitline nützlich ist, ist es zunächst häufig einfache
 
 ## <span id="createaccount"></span></a>Erstellen eines Blitline-Kontos
 
-[WACOM.INCLUDE [blitline-signup][blitline-signup]]
+[WACOM.INCLUDE [blitline-signup](../includes/blitline-signup.md)]
 
 ## <span id="createjob"></span></a>Erstellen eines Blitline-Jobs
 
@@ -125,7 +125,6 @@ Besuchen Sie "blitline.com", um Informationen zu allen anderen Funktionen zu erh
 -   Blitline-API-Beispiele <http://www.blitline.com/docs/examples>
 -   Drittanbieter-NuGet-Bibliothek <http://nuget.org/packages/Blitline.Net>
 
-  [Was ist Blitline?]: #whatis
   [Was Blitline NICHT ist]: #whatisnot
   [Erstellen eines Blitline-Kontos]: #createaccount
   [Erstellen eines Blitline-Jobs]: #createjob
@@ -133,5 +132,4 @@ Besuchen Sie "blitline.com", um Informationen zu allen anderen Funktionen zu erh
   [Nächste Schritte]: #nextsteps
   []: http://www.blitline.com
   [blitline-signup]: ../includes/blitline-signup.md
-  [https://s3.amazonaws.com/dev.blitline/2011110722/YOUR\\\_APP\\\_ID/CK3f0xBF\_2bV6wf7gEZE8w.jpg]: https://s3.amazonaws.com/dev.blitline/2011110722/YOUR\_APP\_ID/CK3f0xBF_2bV6wf7gEZE8w.jpg
   [hier]: http://www.blitline.com/docs/azure_storage

@@ -1,10 +1,10 @@
 <properties linkid="manage-services-how-to-configure-a-cloud-service" urlDisplayName="How to configure" pageTitle="How to configure a cloud service - Azure" metaKeywords="Configuring cloud services" description="Learn how to configure cloud services in Azure. Learn to update the cloud service configuration and configure remote access to role instances." metaCanonical="" services="cloud-services" documentationCenter="" title="How to Configure Cloud Services" authors="davidmu" solutions="" manager="" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="davidmu"></tags>
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="davidmu" />
 
 # <span id="configurecloudservice"></span></a>Konfigurieren von Cloud-Diensten
 
-[WACOM.INCLUDE [Haftungsausschluss][Haftungsausschluss]]
+[WACOM.INCLUDE [Haftungsausschluss](../includes/disclaimer.md)]
 
 Im Azure-Verwaltungsportal können Sie die am häufigsten für einen Cloud-Dienst verwendeten Einstellungen konfigurieren. Wenn Sie die Konfigurationsdateien jedoch direkt aktualisieren möchten, laden Sie eine zu aktualisierende Konfigurationsdatei herunter, laden Sie anschließend die aktualisierte Datei hoch, und aktualisieren Sie den Cloud-Dienst mit den Konfigurationsänderungen. In beiden Fällen wird die aktualisierte Konfiguration an alle Rolleninstanzen übermittelt.
 
@@ -147,4 +147,3 @@ Fügen Sie der Dienstdefinitionsdatei (.csdef) **Import**-Elemente hinzu, um die
   [1]: http://www.windowsazure.com/de-de/support/legal/sla/
   [Einrichten einer Remotedesktopverbindung für eine Rolle in Windows Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/hh124107.aspx
   [Cloud-Dienste remote]: ./media/cloud-services-how-to-configure/CloudServices_Remote.png
-  [CloudServices\_CreateNewCertDropDown]: ./media/cloud-services-how-to-configure/CloudServices_CreateNewCertDropDown.png

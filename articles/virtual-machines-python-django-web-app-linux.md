@@ -1,6 +1,6 @@
 <properties linkid="develop-python-web-app-with-django-mac" urlDisplayName="Web with Django" pageTitle="Python web app with Django on Mac - Azure tutorial" metaKeywords="" description="A tutorial that shows how to host a Django-based website on Azure using a Linux virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application (mac-linux)" authors="huvalo" solutions="" manager="" editor="" />
 
-<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-linux" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo"></tags>
+<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-linux" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Django-Webanwendung "Hello World" (Mac, Linux)
 
@@ -21,7 +21,7 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ![Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.][Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.]
 
-[WACOM.INCLUDE [create-account-and-vms-note][create-account-and-vms-note]]
+[WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## Erstellen und Konfigurieren eines virtuellen Azure-Computers als Host von Django
 
@@ -114,8 +114,6 @@ Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder D
 
 Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virtuellen Azure-Computer herunter, und/oder entfernen Sie diesen, sodass die Ressourcen für andere Lernprogramme zur Verfügung stehen und anfallende Kosten für die Verwendung von Azure vermieden werden.
 
-  [Windows]: /de-de/develop/python/tutorials/web-app-with-django/ "Windows"
-  [Mac/Linux]: /de-de/develop/python/tutorials/django-hello-world-(maclinux)/ "Mac/Linux"
   [Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.]: ./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png
   [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
   [hier]: /de-de/manage/linux/tutorials/virtual-machine-from-gallery/

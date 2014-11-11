@@ -1,6 +1,6 @@
 <properties urlDisplayName="" pageTitle="Using Resource groups to manage your Azure resources" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Using Resource groups to manage your Azure resources" authors="Nafisa Bhojawala"  solutions="" writer="" manager="" editor=""  />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="Nafisa Bhojawala"></tags>
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="Nafisa="" Bhojawala" />
 
 
 # Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen
@@ -19,7 +19,7 @@ Es folgt ein kurzer Überblick über die Verwendung von Ressourcengruppen im Mic
 
 Wenn im Vorschauportal eine Ressource erstellt wird, wird sie stets innerhalb einer Ressourcengruppe erstellt. Während der Erstellung können Sie wählen, ob eine neue Ressourcengruppe erstellt oder eine vorhandene Ressourcengruppe verwendet werden soll.<br></br>
 
-![][]
+![][0]
 <br></br>
 Wenn Sie eine Anwendung erstellen, die mehrere zusammenwirkende Ressourcen umfasst (z. B. Website und Datenbank), wird sie stets in ihrer eigenen Ressourcengruppe erstellt, sodass Sie den Lebenszyklus aller zugehörigen Ressourcen mit der Ressourcengruppe verwalten können. Während der Entwicklung Ihrer Anwendung können Sie der Ressourcengruppe weitere Ressourcen hinzufügen oder Ressourcen daraus entfernen.
 
@@ -55,7 +55,7 @@ Da Sie mit Ressourcengruppen den Lebenszyklus aller darin enthaltenen Ressourcen
 
 ![][6]
 
-  []: http://i.imgur.com/USKkQdW.png
+  [0]: http://i.imgur.com/USKkQdW.png
   [1]: http://i.imgur.com/Me0jbio.png
   [2]: http://i.imgur.com/PhJeLZQ.png
   [3]: http://i.imgur.com/5Wqv2XR.png

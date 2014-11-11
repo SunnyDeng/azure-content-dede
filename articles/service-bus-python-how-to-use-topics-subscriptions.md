@@ -1,6 +1,6 @@
 <properties linkid="develop-python-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="How to use Service Bus topics (Python) - Azure" metaKeywords="Get started Azure Service Bus topics publising subscribe messaging Python" description="Learn how to use Service Bus topics and subscriptions in Azure. Code samples are written for Python applications." metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Topics/Subscriptions" authors="huvalo" solutions="" manager="" editor="" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Verwenden von Servicebus-Themen und -Abonnements
 
@@ -24,7 +24,7 @@ Themen und Abonnements finden Sie im Abschnitt [Nächste Schritte][Nächste Schr
 -   [Gewusst wie: Löschen von Themen und Abonnements][Gewusst wie: Löschen von Themen und Abonnements]
 -   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [howto-service-bus-topics][howto-service-bus-topics]]
+[WACOM.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
 **Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch][Python-Installationshandbuch].
 
@@ -244,7 +244,6 @@ sind, finden Sie unter den folgenden Links weitere Informationen.
 -   API-Referenz für [SqlFilter][SqlFilter].
 
   [Nächste Schritte]: #Next_Steps
-  [Was sind Service Bus-Themen und -Abonnements?]: #what-are-service-bus-topics
   [Erstellen eines Dienstnamespace]: #create-a-service-namespace
   [Abrufen der Standard-Anmeldeinformationen für den Namespace]: #obtain-default-credentials
   [Gewusst wie: Erstellen eines Themas]: #How_to_Create_a_Topic

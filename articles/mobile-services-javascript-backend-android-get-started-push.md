@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-push-js-vs2013" urlDisplayName="Get Started with Push (JS)" pageTitle="Get started with push notifications (Android JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Android JavaScript app." metaCanonical="http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-push-dotnet/" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal"  solutions="" writer="ricksal" manager="" editor=""   />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
 
 # <a name="getting-started-with-push"> </a>Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 
@@ -28,7 +28,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 > [WACOM.NOTE]Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um diesen Vorgang abzuschließen. Besuchen Sie die Seite [accounts.google.com][accounts.google.com], um ein neues Google-Konto zu erstellen.
 
-[WACOM.INCLUDE [Enable GCM][Enable GCM]]
+[WACOM.INCLUDE [Enable GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
 Als Nächstes verwenden Sie diesen API-Schlüsselwert, um Mobile Services für die Authentifizierung mit GCM zu aktivieren und Pushbenachrichtigungen im Auftrag Ihrer App zu senden.
 
@@ -36,7 +36,7 @@ Als Nächstes verwenden Sie diesen API-Schlüsselwert, um Mobile Services für d
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre Anwendung.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Push**, geben Sie den Wert für **API-Schlüssel** ein, den Sie zuvor von GCM erhalten haben, und klicken Sie auf **Speichern**.
 
@@ -54,7 +54,7 @@ Sowohl Ihr Mobile Service als auch Ihre App sind nun konfiguriert und funktionie
 
 ### Prüfen der Version des Android-SDK
 
-[WACOM.INCLUDE [Verify SDK][Verify SDK]]
+[WACOM.INCLUDE [Verify SDK](../includes/mobile-services-verify-android-sdk-version.md)]
 
 Als Nächstes installieren Sie Google Play Services. Google Cloud Messaging verfügt über einige Mindestanforderungen an den API-Level für Entwicklung und Tests, denen die Eigenschaft **minSdkVersion** im Manifest entsprechen muss.
 
@@ -62,11 +62,11 @@ Wenn Sie den Testvorgang mit einem älteren Gerät durchführen, konsultieren Si
 
 ### Hinzufügen von Google Play Services zum Projekt
 
-[WACOM.INCLUDE [Add Play Services][Add Play Services]]
+[WACOM.INCLUDE [Add Play Services](../includes/mobile-services-add-Google-play-services.md)]
 
 ### Hinzufügen des Codes
 
-[WACOM.INCLUDE [mobile-services-android-getting-started-with-push][mobile-services-android-getting-started-with-push]]
+[WACOM.INCLUDE [mobile-services-android-getting-started-with-push](../includes/mobile-services-android-getting-started-with-push.md)]
 
 ## <span id="update-scripts"></span></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
@@ -167,16 +167,8 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 -   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Erfahren Sie mehr über das Implementieren von Geschäftslogik in Ihren mobilen Dienst.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push "Android"
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-push/ ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push/ "JavaScript-Backend"
-  [Erste Schritte mit Pushbenachrichtigungen (Legacypushvorgang)]: /de-de/documentation/articles/mobile-services-android-get-started-push/
+
   [Aktivieren von Google Cloud Messaging]: #register
   [Konfigurieren von Mobile Services]: #configure
   [Hinzufügen von Pushbenachrichtigungen zur App]: #add-push
@@ -187,7 +179,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
   [accounts.google.com]: http://go.microsoft.com/fwlink/p/?LinkId=268302
   [Enable GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
   [dieser Anleitung]: http://go.microsoft.com/fwlink/p/?LinkId=391951
   [1]: ./media/mobile-services-android-get-started-push/mobile-push-tab-android.png
   [Verify SDK]: ../includes/mobile-services-verify-android-sdk-version.md
@@ -202,6 +194,5 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
   [6]: ./media/mobile-services-android-get-started-push/mobile-services-android-virtual-device-manager-edit.png
   [7]: ./media/mobile-services-android-get-started-push/mobile-quickstart-push1-android.png
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-android-get-started-users
-  [Was sind Notification Hubs?]: /de-de/documentation/articles/notification-hubs-overview/
   [Verwenden der Android-Clientbibliothek für Mobile Services]: /de-de/documentation/articles/mobile-services-android-how-to-use-client-library
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293

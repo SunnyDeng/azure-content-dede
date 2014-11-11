@@ -1,6 +1,6 @@
 <properties linkid="manage-services-sql-databases-datasync" urlDisplayName="How to sync data" pageTitle="Getting started with SQL Databases Data Sync" metaKeywords="" description="" metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Data Sync" authors="spelleru" solutions="" manager="" editor="" />
 
-<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="spelleru"></tags>
+<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="spelleru" />
 
 # Erste Schritte mit Azure SQL Data Sync
 
@@ -182,7 +182,6 @@ Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 -   [SQL Server Database Lifecycle][SQL Server Database Lifecycle]
 
   [Schritt 1: Verbindung mit der Azure SQL-Datenbank]: #Connect
-  [Schritt 2: Hinzufügen eines Client-Agents ()]: #AddAgent
   [Schritt 3: Registrieren einer SQL Server-Datenbank mit dem Client-Agent]: #RegisterSSDB
   [Schritt 4: Erstellen einer Synchronisierungsgruppe]: #CreateSG
   [Schritt 5: Festlegen der zu synchronisierenden Daten]: #SyncRules
@@ -191,7 +190,6 @@ Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
   [Image1]: ./media/sql-database-get-started-data-sync/SQLDatabaseScreen-Figure1.PNG
   [hier]: http://go.microsoft.com/fwlink/?linkid=205836
   [1]: http://www.microsoft.com/download/en/details.aspx?id=26728
-  [Installieren eines Client-Agents (SQL Data Sync)]: http://msdn.microsoft.com/de-de/library/jj823137.aspx
   [Registrieren einer SQL Server-Datenbank bei einem Client-Agent]: http://msdn.microsoft.com/de-de/library/jj823138.aspx
   [Image2]: ./media/sql-database-get-started-data-sync/NewSyncGroup-Figure2.png
   [Image3]: ./media/sql-database-get-started-data-sync/NewSyncGroupName-Figure3.PNG
@@ -199,6 +197,5 @@ Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
   [Bild5]: ./media/sql-database-get-started-data-sync/NewSyncGroupReference-Figure5.PNG
   [Image6]: ./media/sql-database-get-started-data-sync/NewSyncGroupSyncRules-Figure6.PNG
   [Image7]: ./media/sql-database-get-started-data-sync/NewSyncGroupConfigure-Figure7.PNG
-  [SQL Data Sync (WA-Portal)]: http://msdn.microsoft.com/de-de/library/windowsazure/jj856263.aspx
   [Erste Schritte mit Azure SQL Database]: ../getting-started-w-sql-databases/
   [SQL Server Database Lifecycle]: http://go.microsoft.com/fwlink/?LinkId=275193

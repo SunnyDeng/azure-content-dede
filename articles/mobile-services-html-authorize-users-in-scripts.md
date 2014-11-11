@@ -1,6 +1,6 @@
 <properties pageTitle="Service-side authorization (HTML) | Mobile Dev Center" metaKeywords="" description="Learn how to authorize users in the JavaScript backend of Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="Service-side authorization of Mobile Services users" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Dienstweite Autorisierung von Mobile Services-Benutzern
 
@@ -18,7 +18,7 @@ Da die Schnellstart-App Daten liest und einfügt, müssen Sie Skripts für diese
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre Anwendung.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
 
@@ -79,20 +79,11 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 -   [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz][Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit HTML/JavaScript.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-ios-authorize-users-in-scripts "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-android-authorize-users-in-scripts "Android"
-  [HTML]: /de-de/documentation/articles/mobile-services-html-authorize-users-in-scripts "HTML"
-  [Xamarin.iOS]: /de-de/documentation/articles/partner-xamarin-mobile-services-ios-authorize-users-in-scripts "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/documentation/articles/partner-xamarin-mobile-services-android-authorize-users-in-scripts "Xamarin.Android"
-  [JavaScript-Back-End]: /de-de/documentation/articles/mobile-services-html-authorize-users-in-scripts/ "JavaScript-Back-End"
+
   [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-html
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-html-authorize-users-in-scripts/mobile-services-selection.png
+  [0]: ./media/mobile-services-html-authorize-users-in-scripts/mobile-services-selection.png
   [1]: ./media/mobile-services-html-authorize-users-in-scripts/mobile-portal-data-tables.png
   [2]: ./media/mobile-services-html-authorize-users-in-scripts/mobile-insert-script-users.png
   [3]: ./media/mobile-services-html-authorize-users-in-scripts/mobile-quickstart-startup-html.png

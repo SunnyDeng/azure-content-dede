@@ -1,6 +1,6 @@
 <properties linkid="manage-services-networking-replica-domain-controller" urlDisplayName="Replica domain controller" pageTitle="Install a replica domain controller in Azure" metaKeywords="" description="A tutorial that teaches you how to install a domain controller from your Corp Active Directory forest on your Azure virtual machine." metaCanonical="" services="virtual-network" documentationCenter="" title="Install a Replica Active Directory Domain Controller in Azure Virtual Networks" authors="Justinha" solutions="" writer="Justinha" manager="TerryLan" editor="LisaToft" />
 
-<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="Justinha"></tags>
+<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="Justinha" />
 
 # Installieren eines Active Directory-Replikatdomänencontrollers in Azure Virtual Networks
 
@@ -298,8 +298,6 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
   [Konfigurieren eines Standort-zu-Standort-VPNs im Verwaltungsportal]: http://msdn.microsoft.com/de-de/library/dn133795.aspx
   [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk]: http://azure.microsoft.com/de-de/documentation/articles/virtual-networks-add-virtual-machine/
   [Erstellen einer Zonendelegierung]: http://technet.microsoft.com/library/cc753500.aspx
-  [Installieren einer neuen Active Directory-Gesamtstruktur in Azure]: /de-de/manage/services/networking/active-directory-forest/
-  [Entfernen eines Domänencontrollers aus einer Domäne]: http://technet.microsoft.com/de-de/library/cc771844(v=WS.10).aspx
   [VerifystaticIPaddressyourPrimaryDC1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/VerifystaticIP.png
   [InstallCorpForest1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest1.png
   [InstallCorpForest2]: ./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest2.png
@@ -337,5 +335,3 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
   [Erste Schritte mit Azure PowerShell]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156055.aspx
   [Azure-Cmdlets für die Verwaltung]: http://msdn.microsoft.com/de-de/library/windowsazure/jj152841
   [BackupDC]: ./media/virtual-networks-install-replica-active-directory-domain-controller/BackupDC.png
-  [Windows Azure IT Pro IaaS: (01) Grundlagen zu virtuellen Computern]: http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01
-  [Windows Azure IT Pro IaaS: (05) Erstellen virtueller Netzwerke und Herstellen standortübergreifender Verbindungen]: http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05

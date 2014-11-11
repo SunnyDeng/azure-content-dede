@@ -1,43 +1,43 @@
 <properties linkid="dev-net-how-to-use-queue-storage-service-java" urlDisplayName="Queue Service" pageTitle="How to use the queue service (Java) | Microsoft Azure" metaKeywords="Azure Queue Service, Azure Queue storage service, queues peeking, queues insert messages, queues get messages, queues delete messages, create queues, delete queues, Queue service Java" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Java." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Queue storage service from Java" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # Verwenden des Warteschlangenspeichers in Java
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen** und **Löschen** von Warteschlangen. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][Azure Storage-SDK für Java]. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen** und **Löschen** von Warteschlangen. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
-Hinweis: Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][].
+Hinweis: Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][Azure Storage-SDK für Android].
 
 ## <a name="Contents"> </a>Inhaltsverzeichnis
 
--   [Was ist Warteschlangenspeicherung?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen einer Java-Anwendung][]
--   [Konfigurieren Ihrer Anwendung für den Zugriff auf den Warteschlangenspeicher][]
--   [Einrichten einer Azure-Speicherverbindungszeichenfolge][]
--   [Gewusst wie: Erstellen einer Warteschlange][]
--   [Gewusst wie: Hinzufügen von Nachrichten zu einer Warteschlange][]
--   [Gewusst wie: Einsehen der nächsten Nachricht][]
--   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][]
--   [Gewusst wie: Abrufen der Warteschlangenlänge][]
--   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][]
--   [Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][]
--   [Gewusst wie: Auflisten der Warteschlangen][]
--   [Gewusst wie: Löschen einer Warteschlange][]
--   [Nächste Schritte][]
+-   [Was ist Warteschlangenspeicherung?][Was ist Warteschlangenspeicherung?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Erstellen einer Java-Anwendung][Erstellen einer Java-Anwendung]
+-   [Konfigurieren Ihrer Anwendung für den Zugriff auf den Warteschlangenspeicher][Konfigurieren Ihrer Anwendung für den Zugriff auf den Warteschlangenspeicher]
+-   [Einrichten einer Azure-Speicherverbindungszeichenfolge][Einrichten einer Azure-Speicherverbindungszeichenfolge]
+-   [Gewusst wie: Erstellen einer Warteschlange][Gewusst wie: Erstellen einer Warteschlange]
+-   [Gewusst wie: Hinzufügen von Nachrichten zu einer Warteschlange][Gewusst wie: Hinzufügen von Nachrichten zu einer Warteschlange]
+-   [Gewusst wie: Einsehen der nächsten Nachricht][Gewusst wie: Einsehen der nächsten Nachricht]
+-   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]
+-   [Gewusst wie: Abrufen der Warteschlangenlänge][Gewusst wie: Abrufen der Warteschlangenlänge]
+-   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]
+-   [Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]
+-   [Gewusst wie: Auflisten der Warteschlangen][Gewusst wie: Auflisten der Warteschlangen]
+-   [Gewusst wie: Löschen einer Warteschlange][Gewusst wie: Löschen einer Warteschlange]
+-   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [howto-queue-storage][]]
+[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
 
 ## <span id="CreateAccount"></span></a>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <a name="CreateApplication"> </a>Erstellen einer Java-Anwendung
 
 In diesem Leitfaden werden Sie Speicherfunktionen verwenden, die lokal in einer Java-Anwendung oder in Code ausgeführt werden können, der in einer Webrolle oder in einer Workerrolle in Azure ausgeführt wird.
 
-Dafür müssen Sie das Java Development Kit (JDK) installieren und ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellen. Sobald Sie dies erledigt haben, müssen Sie sicherstellen, dass Ihre Entwicklungssystem die minimalen Anforderungen und Abhängigkeiten erfüllt, die im Repository [Azure Storage-SDK für Java][] auf GitHub aufgelistet sind. Wenn Ihr System diese Anforderungen erfüllt, können Sie die Anweisungen für das Herunterladen und Installieren der Azure Storage-Bibliotheken für Java auf Ihr System von diesem Repository befolgen. Sobald Sie diese Aufgaben abgeschlossen haben, können Sie eine Java-Anwendung erstellen, die die Beispiele in diesem Artikel verwendet.
+Dafür müssen Sie das Java Development Kit (JDK) installieren und ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellen. Sobald Sie dies erledigt haben, müssen Sie sicherstellen, dass Ihre Entwicklungssystem die minimalen Anforderungen und Abhängigkeiten erfüllt, die im Repository [Azure Storage-SDK für Java][Azure Storage-SDK für Java] auf GitHub aufgelistet sind. Wenn Ihr System diese Anforderungen erfüllt, können Sie die Anweisungen für das Herunterladen und Installieren der Azure Storage-Bibliotheken für Java auf Ihr System von diesem Repository befolgen. Sobald Sie diese Aufgaben abgeschlossen haben, können Sie eine Java-Anwendung erstellen, die die Beispiele in diesem Artikel verwendet.
 
 ## <a name="ConfigureStorage"> </a>Konfigurieren Ihrer Anwendung für den Zugriff auf den Warteschlangenspeicher
 
@@ -67,7 +67,7 @@ In den folgenden Beispielen wird davon ausgegangen, dass Sie eine dieser zwei Me
 
 ## <a name="create-queue"> </a>Gewusst wie: Erstellen einer Warteschlange
 
-Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Mit dem folgenden Code wird ein **CloudQueueClient**-Objekt erstellt. (Hinweis: Es gibt zusätzliche Möglichkeiten zum Erstellen von **CloudStorageAccount**-Objekten. Weitere Informationen finden Sie unter **CloudStorageAccount** im Thema zur [Azure Storage-Client-SDK-Referenz][].)
+Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Mit dem folgenden Code wird ein **CloudQueueClient**-Objekt erstellt. (Hinweis: Es gibt zusätzliche Möglichkeiten zum Erstellen von **CloudStorageAccount**-Objekten. Weitere Informationen finden Sie unter **CloudStorageAccount** im Thema zur [Azure Storage-Client-SDK-Referenz][Azure Storage-Client-SDK-Referenz].)
 
 Mithilfe des **CloudQueueClient**-Objekts können Sie einen Verweis auf die Warteschlange abrufen, die Sie verwenden möchten. Sie können die Warteschlange erstellen, wenn sie nicht vorhanden ist.
 
@@ -381,15 +381,14 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 
 Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   [Azure Storage-SDK für Java][]
--   [Azure Storage-Client-SDK-Referenz][]
--   [Azure Storage-REST-API][]
--   [Azure Storage-Teamblog][]
+-   [Azure Storage-SDK für Java][Azure Storage-SDK für Java]
+-   [Azure Storage-Client-SDK-Referenz][Azure Storage-Client-SDK-Referenz]
+-   [Azure Storage-REST-API][Azure Storage-REST-API]
+-   [Azure Storage-Teamblog][Azure Storage-Teamblog]
 
   [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
   [Nächste Schritte]: #NextSteps
   [Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
-  [Was ist Warteschlangenspeicherung?]: #what-is
   [Konzepte]: #Concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer Java-Anwendung]: #CreateApplication
@@ -407,5 +406,5 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [howto-queue-storage]: ../includes/howto-queue-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
   [Azure Storage-Client-SDK-Referenz]: http://dl.windowsazure.com/storage/javadoc/
-  [Azure Storage-REST-API]: http://msdn.microsoft.com/en-us/library/azure/gg433040.aspx
+  [Azure Storage-REST-API]: http://msdn.microsoft.com/de-de/library/azure/gg433040.aspx
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/

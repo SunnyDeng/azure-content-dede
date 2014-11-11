@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-queue-service" urlDisplayName="Queue Service" pageTitle="How to use queue storage from .NET | Microsoft Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="Learn how to use Microsoft Azure Queue storage to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure Queue Storage" authors="tamram" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Verwenden des Warteschlangenspeichers mit .NET
 
@@ -9,42 +9,42 @@ Azure-Warteschlangenspeicherdiensts. Die Beispiele sind in C# geschrieben
 und verwenden den Azure-Speicherclient für .NET. Zu den Szenarien gehören das **Einfügen**,
 **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das
 **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlange finden
-Sie im Abschnitt [nächste Schritte][].
+Sie im Abschnitt [nächste Schritte][nächste Schritte].
 
-> [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet][] oder als Teil des [Azure SDK für .NET][] erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher][] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
+> [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet][NuGet] oder als Teil des [Azure SDK für .NET][Azure SDK für .NET] erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
 
 ## Inhaltsverzeichnis
 
--   [Was ist Warteschlangenspeicherung?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Einrichten einer Azure-Speicherverbindungszeichenfolge][]
--   [Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher][]
--   [Gewusst wie: Erstellen einer Warteschlange][]
--   [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange][]
--   [Gewusst wie: Einsehen der nächsten Nachricht][]
--   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][]
--   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][]
--   [Gewusst wie: Nutzen zusätzlicher Optionen für das Entfernen von Nachrichten aus der Warteschlange][]
--   [Gewusst wie: Abrufen der Warteschlangenlänge][]
--   [Gewusst wie: Löschen einer Warteschlange][]
+-   [Was ist Warteschlangenspeicherung?][Was ist Warteschlangenspeicherung?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Einrichten einer Azure-Speicherverbindungszeichenfolge][Einrichten einer Azure-Speicherverbindungszeichenfolge]
+-   [Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher]
+-   [Gewusst wie: Erstellen einer Warteschlange][Gewusst wie: Erstellen einer Warteschlange]
+-   [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange][Gewusst wie: Einfügen einer Nachricht in eine Warteschlange]
+-   [Gewusst wie: Einsehen der nächsten Nachricht][Gewusst wie: Einsehen der nächsten Nachricht]
+-   [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]
+-   [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]
+-   [Gewusst wie: Nutzen zusätzlicher Optionen für das Entfernen von Nachrichten aus der Warteschlange][Gewusst wie: Nutzen zusätzlicher Optionen für das Entfernen von Nachrichten aus der Warteschlange]
+-   [Gewusst wie: Abrufen der Warteschlangenlänge][Gewusst wie: Abrufen der Warteschlangenlänge]
+-   [Gewusst wie: Löschen einer Warteschlange][Gewusst wie: Löschen einer Warteschlange]
 -   [Nächste Schritte][nächste Schritte]
 
-[WACOM.INCLUDE [howto-queue-storage][]]
+[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
 
 ## 
 
 ## <a name="create-account"></a><span class="short-header">Erstellen eines Kontos</span>Erstellen eines Azure-Speicherkontos
 
 </h2>
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## 
 
 ## <a name="setup-connection-string"></a><span class="short-header">Einrichten einer Verbindungszeichenfolge</span>Einrichten einer Azure-Speicherverbindungszeichenfolge
 
 </h2>
-[WACOM.INCLUDE [storage-configure-connection-string][]]
+[WACOM.INCLUDE [storage-configure-connection-string](../includes/storage-configure-connection-string.md)]
 
 ## <a name="configure-access"> </a><span class="short-header">Programmgesteuerter Zugriff</span>Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher
 
@@ -52,7 +52,7 @@ Sie im Abschnitt [nächste Schritte][].
 
 Sie können die Assembly `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
-`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\`installiert.
+`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\`installiert.
 
 ### Namespace-Deklarationen
 
@@ -87,7 +87,7 @@ Wenn Sie eine Anwendung ohne einen Verweis auf Microsoft.WindowsAzure.CloudConfi
 
 ### ODataLib-Abhängigkeiten
 
-ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst. Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen. Die spezifischen ODataLib-Pakete sind [OData][], [Edm][] und [Spatial][].
+ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst. Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen. Die spezifischen ODataLib-Pakete sind [OData][OData], [Edm][Edm] und [Spatial][Spatial].
 
 ## <a name="create-queue"></a><span class="short-header">Erstellen einer Warteschlange</span>Gewusst wie: Erstellen einer Warteschlange
 
@@ -95,7 +95,7 @@ Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschl
 Der folgende Code erstellt ein **CloudQueueClient**-Objekt. Der Code in dieser Anleitung setzt voraus,
 dass die Speicher-Verbindungszeichenfolge in der Dienstkonfiguration
 der Azure-Anwendung gespeichert ist. Es gibt noch andere Möglichkeiten,
-ein **CloudStorageAccount**-Objekt zu erstellen. Ausführliche Informationen dazu finden Sie in der [CloudStorageAccount][]
+ein **CloudStorageAccount**-Objekt zu erstellen. Ausführliche Informationen dazu finden Sie in der [CloudStorageAccount][CloudStorageAccount]
 -Dokumentation.
 
     // Retrieve storage account from connection string
@@ -301,20 +301,19 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 -   Vollständige Informationen zu verfügbaren APIs finden Sie in der Warteschlangendienst-Referenzdokumentation:
-    -   [Referenz zur Speicherclientbibliothek für .NET][]
-    -   [REST-API-Referenz][]
--   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speicher][].
--   Informationen zum Arbeiten mit dem Azure-Speicher in Back-End-Prozessen für Azure-Webseiten finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK][].
+    -   [Referenz zur Speicherclientbibliothek für .NET][Referenz zur Speicherclientbibliothek für .NET]
+    -   [REST-API-Referenz][REST-API-Referenz]
+-   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speicher][Speicher].
+-   Informationen zum Arbeiten mit dem Azure-Speicher in Back-End-Prozessen für Azure-Webseiten finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK][Erste Schritte mit dem Azure WebJobs SDK].
 -   Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
-    -   Verwenden Sie [Tabellenspeicher][] zum Speichern strukturierter Daten.
-    -   Verwenden Sie [Blobspeicher][] zum Speichern unstrukturierter Daten.
-    -   Verwenden Sie eine [SQL-Datenbank][] zum Speichern relationaler Daten.
+    -   Verwenden Sie [Tabellenspeicher][Tabellenspeicher] zum Speichern strukturierter Daten.
+    -   Verwenden Sie [Blobspeicher][Blobspeicher] zum Speichern unstrukturierter Daten.
+    -   Verwenden Sie eine [SQL-Datenbank][SQL-Datenbank] zum Speichern relationaler Daten.
 
   [nächste Schritte]: #next-steps
   [NuGet]: https://www.nuget.org/packages/WindowsAzure.Storage/
-  [Azure SDK für .NET]: /en-us/downloads/
+  [Azure SDK für .NET]: /de-de/downloads/
   [Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher]: #configure-access
-  [Was ist Warteschlangenspeicherung?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Einrichten einer Azure-Speicherverbindungszeichenfolge]: #setup-connection-string
@@ -329,14 +328,14 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [howto-queue-storage]: ../includes/howto-queue-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
   [storage-configure-connection-string]: ../includes/storage-configure-connection-string.md
-  [.NET Developer Center]: http://www.windowsazure.com/en-us/develop/net/#
+  [.NET Developer Center]: http://www.windowsazure.com/de-de/develop/net/#
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
-  [CloudStorageAccount]: http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx
+  [CloudStorageAccount]: http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx
   [Referenz zur Speicherclientbibliothek für .NET]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-  [REST-API-Referenz]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179355
-  [Speicher]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [REST-API-Referenz]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179355
+  [Speicher]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Erste Schritte mit dem Azure WebJobs SDK]: /de-de/documentation/articles/websites-dotnet-webjobs-sdk-get-started/
   [Tabellenspeicher]: /de-de/documentation/articles/storage-dotnet-how-to-use-tables/
   [Blobspeicher]: /de-de/documentation/articles/storage-dotnet-how-to-use-blobs/

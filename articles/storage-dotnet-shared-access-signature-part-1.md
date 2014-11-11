@@ -1,10 +1,10 @@
 <properties linkid="manage-services-storage-net-shared-access-signature-part-1" urlDisplayName="" pageTitle="Shared access signatures: Understanding the SAS Model | Microsoft Azure" metaKeywords="Azure blob, Azure table, Azure queue, shared access signatures" description="Learn about delegating access to blob, queue, and table resources with shared access signatures" metaCanonical="" services="storage" documentationCenter="" title="Part 1: Understanding the SAS Model" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell
 
-Shared Access Signatures (SAS) sind eine leistungsstarke Methode, um anderen Clients eingeschränkten Zugriff auf Blobs, Tabellen und Warteschlangen in Ihrem Speicherkonto zu bieten, ohne Ihren Kontoschlüssel weitergeben zu müssen. Teil 1 dieses Lernprogramms zu Shared Access Signatures bietet eine Übersicht über das SAS-Modell und bewährte Methoden für SAS. [Teil 2][] des Lernprogramms beschreibt die Erstellung von Shared Access Signatures mit dem Blob-Dienst.
+Shared Access Signatures (SAS) sind eine leistungsstarke Methode, um anderen Clients eingeschränkten Zugriff auf Blobs, Tabellen und Warteschlangen in Ihrem Speicherkonto zu bieten, ohne Ihren Kontoschlüssel weitergeben zu müssen. Teil 1 dieses Lernprogramms zu Shared Access Signatures bietet eine Übersicht über das SAS-Modell und bewährte Methoden für SAS. [Teil 2][Teil 2] des Lernprogramms beschreibt die Erstellung von Shared Access Signatures mit dem Blob-Dienst.
 
 ## Was ist eine Shared Access Signature?
 
@@ -118,7 +118,7 @@ Mit den folgenden Empfehlungen für die Verwendung von Shared Access Signatures 
 7.  **Beachten Sie, dass Ihnen jegliche Nutzung Ihres Kontos berechnet wird, inklusive der Nutzung über SAS.** Wenn Sie Schreibzugriff für einen Blob vergeben, können Benutzer Blobs mit bis zu 200GB hochladen. Falls Sie außerdem noch Lesezugriff vergeben, können die Benutzer die Daten bis zu 10 mal herunterladen und Gebühren für den Datenausgang von bis zu 2TB verursachen. Vergeben Sie also eingeschränkte Berechtigungen, um das Schadenspotenzial böswilliger Benutzer einzugrenzen. Verwenden Sie kurzlebige SAS, um diese Bedrohung zu mindern (beachten Sie jedoch mögliche Zeitunterschiede bei der Ablaufzeit).
 8.  **Validierung von Daten, die per SAS geschrieben wurden.** Wenn Clientanwendungen Daten in Ihr Speicherkonto schreiben, müssen Sie stets beachten, dass diese Daten problembehaftet sein können. Wenn Ihre Anwendung diese Daten vor der Verwendung validieren oder autorisieren muss, sollten Sie diese Validierung durchführen, nachdem die Daten geschrieben und bevor sie von Ihrer Anwendung verwendet werden. Auf diese Weise schützen Sie Ihr Konto auch vor beschädigten oder bösartigen Daten, sowohl von tatsächlich berechtigten SAS-Benutzern als auch von Angreifern, die eine abgefangene SAS verwenden.
 9.  **Verwenden Sie nicht immer SAS.** Manchmal überwiegen die Risiken für eine bestimmte Operation auf Ihrem Speicherkonto den Nutzen von SAS. Für solche Operation sollten Sie einen Dienst auf der mittleren Ebene erstellen, der zunächst Geschäftsregeln validiert sowie Authentifizierung und Überwachung durchführt und die Daten anschließend in Ihr Speicherkonto schreibt. Manchmal gibt es auch einfachere Möglichkeiten der Zugriffsverwaltung. Wenn Sie z. B. alle Blobs in einem Container öffentlich lesbar machen möchten, können Sie auch den Container öffentlich machen, anstatt jedem Client für den Zugriff eine SAS zu geben.
-10. **Überwachen Ihrer Anwendung mithilfe der Speicheranalyse.** Sie können Protokolle und Metriken verwenden, um Häufungen von Authentifizierungsfehlern zu erkennen, wenn z. B. Ihr SAS-Anbieterdienst ausfällt oder eine gespeicherte Zugriffsrichtlinie versehentlich entfernt wird. Weitere Informationen finden Sie im [Blog des Azure-Speicherteams][].
+10. **Überwachen Ihrer Anwendung mithilfe der Speicheranalyse.** Sie können Protokolle und Metriken verwenden, um Häufungen von Authentifizierungsfehlern zu erkennen, wenn z. B. Ihr SAS-Anbieterdienst ausfällt oder eine gespeicherte Zugriffsrichtlinie versehentlich entfernt wird. Weitere Informationen finden Sie im [Blog des Azure-Speicherteams][Blog des Azure-Speicherteams].
 
 ## Zusammenfassung
 
@@ -128,16 +128,15 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 
 [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Blob-Dienst][Teil 2]
 
-[Verwalten des Zugriffs auf Azure-Speicherressourcen][]
+[Verwalten des Zugriffs auf Azure-Speicherressourcen][Verwalten des Zugriffs auf Azure-Speicherressourcen]
 
-[Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)][]
+[Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)][Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)]
 
-[Einführung in Tabellen und Warteschlangen mit SAS][]
+[Einführung in Tabellen und Warteschlangen mit SAS][Einführung in Tabellen und Warteschlangen mit SAS]
  [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png
 [sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
 
   [Teil 2]: ../storage-dotnet-shared-access-signature-part-2/
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/08/03/windows-azure-storage-logging-using-logs-to-track-storage-requests.aspx
-  [Verwalten des Zugriffs auf Azure-Speicherressourcen]: http://msdn.microsoft.com/en-us/library/windowsazure/ee393343.aspx
-  [Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)]: http://msdn.microsoft.com/en-us/library/windowsazure/ee395415.aspx
+  [Verwalten des Zugriffs auf Azure-Speicherressourcen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee393343.aspx
   [Einführung in Tabellen und Warteschlangen mit SAS]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx

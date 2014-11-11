@@ -1,6 +1,6 @@
 <properties title="How to use Giraph with HDInsight" pageTitle="How to use Apache Giraph with Azure HDInsight" description="Learn how to use Apache Giraph to perform graph processing with Azure HDInsight" metaKeywords="Azure HDInsight Apache Giraph, hdinsight giraph, hdinsight graph, hadoop giraph, azure hadoop, hadoop graph" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/14/2014" ms.author="larryfr"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/14/2014" ms.author="larryfr" />
 
 ## So setzen Sie Apache Giraph mit Azure HDInsight (Hadoop) ein
 
@@ -211,7 +211,6 @@ Nachdem Sie nun wissen, wie Sie Giraph mit HDInsight verwenden, versuchen Sie [P
   [Pregel]: http://people.apache.org/~edwardyoon/documents/pregel.pdf
   [release-1.1 branch]: https://github.com/apache/giraph/tree/release-1.1
   [gerichteten Diagramm]: http://en.wikipedia.org/wiki/Directed_graph
-  [tiny\_graph.txt als Kreise dargestellt mit Linien unterschiedlicher Länge dazwischen]: .\media\hdinsight-giraph\giraph-graph.png
   [Zeichnen von Objekten als Kreise mit dem kürzesten Pfad dazwischen]: .\media\hdinsight-giraph\giraph-graph-out.png
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Neuheiten in den von HDInsight bereitgestellten Clusterversionen]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-component-versioning/

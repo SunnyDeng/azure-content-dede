@@ -1,22 +1,22 @@
 <properties linkid="manage-services-how-to-manage-a-storage-account" urlDisplayName="How to manage" pageTitle="How to manage storage accounts | Microsoft Azure" metaKeywords="Azure manage storage accounts, storage account management portal, storage account geo-replication, Azure geo-replication, Azure access keys" description="Learn how to manage storage accounts in Azure by using the Management Portal." metaCanonical="" services="storage" documentationCenter="" title="How To Manage Storage Accounts" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # <span id="managestorageaccounts"></span></a>Verwalten von Speicherkonten
 
 ## Inhaltsverzeichnis
 
--   [Gewusst wie: Verwalten der Speicherkontoreplikation][]
--   [Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln][]
--   [Gewusst wie: Löschen eines Speicherkontos][]
+-   [Gewusst wie: Verwalten der Speicherkontoreplikation][Gewusst wie: Verwalten der Speicherkontoreplikation]
+-   [Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln][Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln]
+-   [Gewusst wie: Löschen eines Speicherkontos][Gewusst wie: Löschen eines Speicherkontos]
 
 ## <span id="georeplication"></span></a>Gewusst wie: Replizieren Ihrer Speicherkontodaten für Stabilität und hohe Verfügbarkeit
 
-[WACOM.INCLUDE [storage-replication-options][]]
+[WACOM.INCLUDE [storage-replication-options](../includes/storage-replication-options.md)]
 
 ### So geben Sie Replikationseinstellungen für ein Speicherkonto an
 
-1.  Klicken Sie im [Azure-Verwaltungsportal][] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard anzuzeigen.
+1.  Klicken Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard anzuzeigen.
 
 2.  Klicken Sie auf **Konfigurieren**.
 
@@ -28,19 +28,19 @@
 
 Wenn Sie ein Speicherkonto erstellen, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die für die Authentifizierung verwendet werden, wenn der Zugriff auf das Speicherkonto erfolgt. Durch Bereitstellen von zwei Speicherzugriffsschlüsseln ermöglicht Azure Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Speicherdiensts oder Zugriff auf diesen Dienst.
 
-Verwenden Sie im [Verwaltungsportal][] die Option **Schlüssel verwalten** auf dem Dashboard oder die Seite **Speicher**, um die Speicherzugriffsschlüssel, dir für den Zugriff auf Blob-, Tabellen- und Warteschlangendienste verwendet werden, anzuzeigen, zu kopieren und erneut zu generieren.
+Verwenden Sie im [Verwaltungsportal][Verwaltungsportal] die Option **Schlüssel verwalten** auf dem Dashboard oder die Seite **Speicher**, um die Speicherzugriffsschlüssel, dir für den Zugriff auf Blob-, Tabellen- und Warteschlangendienste verwendet werden, anzuzeigen, zu kopieren und erneut zu generieren.
 
 ### Kopieren eines Speicherzugriffsschlüssels
 
-Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüssel für die Verwendung in einer Verbindungszeichenfolge zu kopieren. Die Verbindungszeichenfolge benötigt für die Authentifizierung den Namen des Speicherkontos und einen Schlüssel. Informationen zum Konfigurieren von Verbindungszeichenfolgen für den Zugriff auf Azure-Speicherdienste finden Sie unter [Konfigurieren von Verbindungszeichenfolgen][].
+Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüssel für die Verwendung in einer Verbindungszeichenfolge zu kopieren. Die Verbindungszeichenfolge benötigt für die Authentifizierung den Namen des Speicherkontos und einen Schlüssel. Informationen zum Konfigurieren von Verbindungszeichenfolgen für den Zugriff auf Azure-Speicherdienste finden Sie unter [Konfigurieren von Verbindungszeichenfolgen][Konfigurieren von Verbindungszeichenfolgen].
 
-1.  Klicken Sie im [Verwaltungsportal][] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
+1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
 2.  Klicken Sie auf **Schüssel verwalten**.
 
     **Zugriffsschlüssel verwalten** wird geöffnet.
 
-    ![Managekeys][]
+    ![Managekeys][Managekeys]
 
 3.  Markieren Sie den Schlüsseltext, um einen Speicherzugriffsschlüssel zu kopieren. Klicken Sie dann mit der rechten Maustaste und klicken Sie auf **Kopieren**.
 
@@ -64,7 +64,7 @@ Sie sollten regelmäßig die Zugriffsschlüssel für Ihr Speicherkonto ändern, 
 
 1.  Aktualisieren Sie die Verbindungszeichenfolgen im Anwendungscode, damit sie auf den sekundären Zugriffsschlüssel des Speicherkontos verweisen.
 
-2.  Generieren Sie den primären Zugriffsschlüssel für das Speicherkonto neu. Klicken Sie im [Verwaltungsportal][] im Dashboard oder auf der Seite **Konfigurieren** auf **Schlüssel verwalten**. Klicken Sie unter dem primären Zugriffsschlüssel auf **Neu generieren** und dann auf **Ja**, um das Generieren eines neuen Schlüssels zu bestätigen.
+2.  Generieren Sie den primären Zugriffsschlüssel für das Speicherkonto neu. Klicken Sie im [Verwaltungsportal][Verwaltungsportal] im Dashboard oder auf der Seite **Konfigurieren** auf **Schlüssel verwalten**. Klicken Sie unter dem primären Zugriffsschlüssel auf **Neu generieren** und dann auf **Ja**, um das Generieren eines neuen Schlüssels zu bestätigen.
 
 3.  Aktualisieren Sie die Verbindungszeichenfolgen in Ihrem Code, um auf den neuen primären Zugriffsschlüssel zu verweisen.
 
@@ -86,7 +86,7 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
     </p>
 </div>
 
-1.  Klicken Sie im [Verwaltungsportal][] auf **Speicher**.
+1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Speicher**.
 
 2.  Klicken Sie im Speicherkonto auf eine beliebige Stelle (nicht auf den Namen). Klicken Sie dann auf **Löschen**.
 
@@ -102,5 +102,5 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
   [storage-replication-options]: ../includes/storage-replication-options.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Verwaltungsportal]: http://manage.windowsazure.com
-  [Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/en-us/library/ee758697.aspx
+  [Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/de-de/library/ee758697.aspx
   [Managekeys]: ./media/storage-manage-storage-account/Storage_ManageKeys.png

@@ -1,10 +1,10 @@
 <properties linkid="dev-nodejs-tutorials-web-site-with-storage" urlDisplayName="Website with Storage" pageTitle="Node.js website with table storage | Microsoft Azure" metaKeywords="Azure table storage Node.js, Azure Node.js application, Azure Node.js tutorial, Azure Node.js example" description="A tutorial that teaches you how to use the Azure Table service to store data from a Node application hosted on an Azure website." metaCanonical="" services="web-sites,storage" documentationCenter="Node.js" title="Node.js Web Application using the Azure Table Service" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
 
 # Node.js-Webanwendung mit Azure-Tabellendienst
 
-In diesem Lernprogramm erfahren Sie, wie Sie den von der Azure-Datenverwaltung bereitgestellten Tabellendienst einsetzen können, um Daten von einer auf Azure gehosteten [Node][]-Anwendung zu speichern und abzurufen. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie bereits eine gewisse Erfahrung mit der Verwendung von Node und [Git][] haben.
+In diesem Lernprogramm erfahren Sie, wie Sie den von der Azure-Datenverwaltung bereitgestellten Tabellendienst einsetzen können, um Daten von einer auf Azure gehosteten [Node][Node]-Anwendung zu speichern und abzurufen. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie bereits eine gewisse Erfahrung mit der Verwendung von Node und [Git][Git] haben.
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -18,7 +18,7 @@ In diesem Lernprogramm erstellen Sie eine einfache webbasierte Anwendung zur Auf
 
 Die Projektdateien für dieses Lernprogramm werden in einem Verzeichnis namens **tasklist** gespeichert, und die fertige Anwendung sieht etwa wie folgt aus:
 
-![Webseite mit einer leeren Aufgabenliste][]
+![Webseite mit einer leeren Aufgabenliste][Webseite mit einer leeren Aufgabenliste]
 
 > [WACOM.NOTE] In diesem Lernprogramm wird auf den Ordner **tasklist** verwiesen. Der vollständige Ordnerpfad wird nicht angegeben, da die Pfadsemantik je nach Betriebssystem unterschiedlich ist. Sie sollten diesen Ordner in einem Verzeichnis erstellen, auf das Sie im lokalen Dateisystem einfach zugreifen können, z. B. **~/node/tasklist** oder **c:\\node\\tasklist**.
 
@@ -30,39 +30,39 @@ Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgende
 
 -   [node][Node], Version 0.10.24 oder höher
 
--   [Git][]
+-   [Git][Git]
 
 -   Ein Texteditor
 
 -   Ein Webbrowser
 
-[WACOM.INCLUDE [create-account-and-websites-note][]]
+[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## Speicherkonto erstellen
 
 Führen Sie die folgenden Schritte aus, um ein Speicherkonto zu erstellen. Dieses Konto wird in den weiteren Anweisungen dieses Lernprogramms verwendet.
 
-1.  Öffnen Sie den Webbrowser, und navigieren Sie zum [Azure-Portal][]. Melden Sie sich bei Aufforderung mit Ihren Azure-Abonnementinformationen an.
+1.  Öffnen Sie den Webbrowser, und navigieren Sie zum [Azure-Portal][Azure-Portal]. Melden Sie sich bei Aufforderung mit Ihren Azure-Abonnementinformationen an.
 
 2.  Klicken Sie unten im Portal auf **+ NEU**, und wählen Sie **Speicherkonto** aus.
 
-    ![+Neu][]
+    ![+Neu][+Neu]
 
-    ![Speicherkonto][]
+    ![Speicherkonto][Speicherkonto]
 
 3.  Wählen Sie **Schnellerfassung**, und geben Sie die URL und die Region/Affinität für dieses Speicherkonto ein. Da es sich hierbei um ein Lernprogamm handelt, das keine globale Replikation erfordert, deaktivieren Sie die Option **Geografische Replikation aktivieren**. Klicken Sie abschließend auf "Speicherkonto erstellen".
 
-    ![Schnellerfassung][]
+    ![Schnellerfassung][Schnellerfassung]
 
     Notieren Sie sich die eingegebene URL, da sie in späteren Schritten als Kontoname verwendet wird.
 
 4.  Nach der Erstellung des Speicherkontos klicken Sie unten auf der Seite auf **Schlüssel verwalten**. Daraufhin werden der primäre und sekundäre Zugriffsschlüssel für dieses Speicherkonto angezeigt. Kopieren und speichern Sie den primären Zugriffsschlüssel, und klicken Sie dann auf das Häkchen.
 
-    ![Zugriffsschlüssel][]
+    ![Zugriffsschlüssel][Zugriffsschlüssel]
 
 ## Installieren der Module und Generieren des Gerüsts
 
-In diesem Abschnitt erstellen Sie eine neue Node-Anwendung und fügen Modulpakete mithilfe von npm hinzu. Für die tasklist-Anwendung verwenden Sie die Module [Express][] und [Azure][]. Das Express-Modul stellt ein Modellansichts-Controller-Framework für Node bereit, das Azure-Modul Konnektivität zum Tabellendienst.
+In diesem Abschnitt erstellen Sie eine neue Node-Anwendung und fügen Modulpakete mithilfe von npm hinzu. Für die tasklist-Anwendung verwenden Sie die Module [Express][Express] und [Azure][Azure]. Das Express-Modul stellt ein Modellansichts-Controller-Framework für Node bereit, das Azure-Modul Konnektivität zum Tabellendienst.
 
 ### Installieren von Express und Generieren des Gerüsts
 
@@ -421,7 +421,7 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 
 ### Modifizieren des globalen Layouts
 
-Die Datei **layout.jade** im Verzeichnis **views** dient als globale Vorlage für andere **.jade**-Dateien. In diesem Schritt werden Sie sie modifizieren, um [Twitter Bootstrap][] zu verwenden, ein Toolkit zum mühelosen Gestalten ansprechender Websites.
+Die Datei **layout.jade** im Verzeichnis **views** dient als globale Vorlage für andere **.jade**-Dateien. In diesem Schritt werden Sie sie modifizieren, um [Twitter Bootstrap][Twitter Bootstrap] zu verwenden, ein Toolkit zum mühelosen Gestalten ansprechender Websites.
 
 1.  Laden Sie die Dateien für [Twitter Bootstrap][1] herunter, und extrahieren Sie sie. Kopieren Sie die Datei **bootstrap.min.css** aus dem Ordner **bootstrap\\dist\\css** in das Verzeichnis **public\\stylesheets** Ihrer tasklist-Anwendung.
 
@@ -478,7 +478,7 @@ Um die Anwendung lokal zu testen, führen Sie die folgenden Schritte durch:
 
 5.  Die Seite sollte nun das Element in der Aufgabenlistentabelle anzeigen.
 
-    ![Ein Bild des neuen Elements in der Aufgabenliste][]
+    ![Ein Bild des neuen Elements in der Aufgabenliste][Ein Bild des neuen Elements in der Aufgabenliste]
 
 6.  Zum Abschließen einer Aufgabe aktivieren Sie einfach das Kontrollkästchen in der entsprechenden Spalte, und klicken Sie dann auf **Aufgaben aktualisieren**.
 
@@ -488,7 +488,7 @@ Um die Anwendung lokal zu testen, führen Sie die folgenden Schritte durch:
 
 Die Schritte in diesem Abschnitt verwenden die Azure-Befehlszeilentools zum Erstellen einer neuen Azure-Website und stellen die Anwendung dann mit Git bereit. Zur Durchführung dieser Schritte benötigen Sie ein Azure-Abonnement.
 
-> [WACOM.NOTE] Diese Schritte können auch über das Azure-Portal ausgeführt werden. Informationen zur Verwendung des Azure-Portals zum Bereitstellen einer Node.js-Anwendung finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website][].
+> [WACOM.NOTE] Diese Schritte können auch über das Azure-Portal ausgeführt werden. Informationen zur Verwendung des Azure-Portals zum Bereitstellen einer Node.js-Anwendung finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website][Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website].
 
 > [WACOM.NOTE] Falls dies die erste von Ihnen erstellte Azure-Website ist, müssen Sie das Azure-Portal verwenden, um die Anwendung bereitzustellen.
 
@@ -496,7 +496,7 @@ Die Schritte in diesem Abschnitt verwenden die Azure-Befehlszeilentools zum Erst
 
 Falls Sie noch nicht über ein Azure-Abonnement verfügen, können Sie sich [kostenlos][Azure-Portal] anmelden. Führen Sie nach der Anmeldung die folgenden Schritte aus, um das Lernprogramm fortzusetzen.
 
-[WACOM.INCLUDE [antares-iaas-signup][]]
+[WACOM.INCLUDE [antares-iaas-signup](../includes/antares-iaas-signup.md)]
 
 ### Installieren des Azure-Befehlszeilentools für Mac und Linux
 
@@ -504,7 +504,7 @@ Verwenden Sie den folgenden Befehl, um die Befehlszeilentools zu installieren:
 
     npm install azure-cli -g
 
-> [WACOM.NOTE] Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle][];
+> [WACOM.NOTE] Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle][Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle];
 
 > [WACOM.NOTE] Obwohl die Befehlszeilentools vor allem für Mac-und Linux-Benutzer erstellt wurden, basieren sie auf "Node.js" und sollten auf allen Systemen funktionieren, die Node ausführen können.
 
@@ -518,7 +518,7 @@ Bevor Sie die Befehlszeilentools mit Azure verwenden können, müssen Sie zunäc
 
         azure account download
 
-    ![Die Downloadseite][]
+    ![Die Downloadseite][Die Downloadseite]
 
     Der Dateidownload sollte automatisch beginnen. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen.
 
@@ -550,7 +550,7 @@ Bevor Sie die Befehlszeilentools mit Azure verwenden können, müssen Sie zunäc
 
     Sie werden aufgefordert, den Websitenamen und das Datencenter einzugeben, in dem sich die Website befinden wird. Geben Sie einen eindeutigen Namen an, und wählen Sie ein Datencenter aus, das sich nahe an Ihrem Standort befindet.
 
-    Der `--git`-Parameter erstellt ein Git-Repository auf Azure für diese Website. Er initialisiert darüber hinaus ein Git-Repository im aktuellen Verzeichnis, sofern keines vorhanden ist. Außerdem erstellen Sie ein [Git remote][] namens "azure", das zum Veröffentlichen der Anwendung in Azure verwendet wird. Schließlich erstellt er eine Datei **web.config** mit Einstellungen, die von Azure zum Hosten von Node-Anwendungen verwendet werden.
+    Der `--git`-Parameter erstellt ein Git-Repository auf Azure für diese Website. Er initialisiert darüber hinaus ein Git-Repository im aktuellen Verzeichnis, sofern keines vorhanden ist. Außerdem erstellen Sie ein [Git remote][Git remote] namens "azure", das zum Veröffentlichen der Anwendung in Azure verwendet wird. Schließlich erstellt er eine Datei **web.config** mit Einstellungen, die von Azure zum Hosten von Node-Anwendungen verwendet werden.
 
     > [WACOM.NOTE] Wenn dieser Befehl von einem Verzeichnis ausgeführt wird, das bereits ein Git-Repository enthält, wird das Verzeichnis nicht erneut initialisiert.
 
@@ -599,11 +599,11 @@ Zuvor haben wir Code implementiert, der nach einer Umgebungsvariablen sucht oder
 
 1.  Klicken Sie im Verwaltungsportal auf **Websites**, und wählen Sie dann Ihre Website aus.
 
-    ![Öffnen des Dashboards der Website][]
+    ![Öffnen des Dashboards der Website][Öffnen des Dashboards der Website]
 
 2.  Klicken Sie auf **KONFIGURIEREN**, und suchen Sie den Abschnitt **app settings** der Seite.
 
-    ![Konfigurationslink][]
+    ![Konfigurationslink][Konfigurationslink]
 
 3.  Im Abschnitt **app settings** geben Sie **STORAGE\_NAME** in das Feld **SCHLÜSSEL** und den Namen Ihres Speicherkontos in das Feld **WERT** ein. Klicken Sie auf das Häkchen, um zum nächsten Feld zu wechseln. Wiederholen Sie diesen Vorgang für die folgenden Schlüssel und Werte:
 
@@ -613,11 +613,11 @@ Zuvor haben wir Code implementiert, der nach einer Umgebungsvariablen sucht oder
 
     -   **TABLE\_NAME** – 'tasks'
 
-    ![app settings][]
+    ![app settings][app settings]
 
 4.  Zum Abschluss klicken Sie auf das Symbol **SPEICHERN** unten auf der Seite, um diese Änderung in die Laufzeitumgebung zu übernehmen.
 
-    ![Speichern im Abschnitt "app settings"][]
+    ![Speichern im Abschnitt "app settings"][Speichern im Abschnitt "app settings"]
 
 5.  Wechseln Sie über die Befehlszeile in das Verzeichnis **tasklist**, und entfernen Sie die Datei **config.json** mit dem folgenden Befehl:
 
@@ -632,14 +632,14 @@ Nachdem die Änderungen in Azure bereitgestellt wurden, sollte Ihre Webanwendung
 
 ## Nächste Schritte
 
-Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendienstes zum Speichern von Informationen, Sie können jedoch auch MongoDB verwenden. Weitere Informationen finden Sie unter [Node.js-Webanwendung mit MongoDB][].
+Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendienstes zum Speichern von Informationen, Sie können jedoch auch MongoDB verwenden. Weitere Informationen finden Sie unter [Node.js-Webanwendung mit MongoDB][Node.js-Webanwendung mit MongoDB].
 
 ## Zusätzliche Ressourcen
 
 [Azure-Befehlszeilentool für Mac und Linux] 
 [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 [Veröffentlichen auf Azure-Websites mit Git]: /de-de/documentation/articles/web-sites-publish-source-control/
-[Azure Developer Center]: /en-us/develop/nodejs/
+[Azure Developer Center]: /de-de/develop/nodejs/
 
   [Node]: http://nodejs.org
 [Azure-Befehlszeilentool für Mac und Linux]: /de-de/documentation/articles/xplat-cli/
@@ -648,7 +648,6 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
   [Webseite mit einer leeren Aufgabenliste]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png
   [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Azure-Portal]: http://windowsazure.com
-  [+Neu]: ./media/storage-nodejs-use-table-storage-web-site/plus-new.png
   [Speicherkonto]: ./media/storage-nodejs-use-table-storage-web-site/new-storage.png
   [Schnellerfassung]: ./media/storage-nodejs-use-table-storage-web-site/quick-storage.png
   [Zugriffsschlüssel]: ./media/storage-nodejs-use-table-storage-web-site/manage-access-keys.png
@@ -667,4 +666,3 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
   [app settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
   [Speichern im Abschnitt "app settings"]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
   [Node.js-Webanwendung mit MongoDB]: /de-de/documentation/articles/web-sites-nodejs-store-data-mongodb/
-  [Veröffentlichen auf Azure-Websites mit Git]: /de-de/documentation/articles/web-sites-publish-source-control/

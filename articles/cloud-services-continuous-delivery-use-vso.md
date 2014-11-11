@@ -1,6 +1,6 @@
 <properties linkid="dev-net-common-tasks-publishing-with-vso" urlDisplayName="Publishing with Visual Studio Online" pageTitle="Continuous delivery with Visual Studio Online in Azure" metaKeywords="" description="Learn how to configure your Visual Studio Online team projects to automatically build and deploy to Azure websites or cloud services." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online" authors="ghogen" solutions="" manager="douge" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="ghogen"></tags>
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="ghogen" />
 
 # Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online
 
@@ -43,7 +43,7 @@ Befolgen Sie die Anweisungen [hier][1], um ein Teamprojekt zu erstellen und mit 
     Wenn Sie eine Website erstellen möchten, wählen Sie die Projektvorlage ASP.NET Web Application und anschließend MVC aus. Siehe [Erste Schritte mit Azure und ASP.NET][Erste Schritte mit Azure und ASP.NET].
 
 2.  Öffnen Sie das Kontextmenü für die Anwendung, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen**.
-    ![][]
+    ![][0]
 
 3.  Übernehmen oder ändern Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **OK**. Wenn der Prozess abgeschlossen ist, werden im Projektmappen-Explorer die Symbole für die Quellcodeverwaltung angezeigt.
     ![][2]
@@ -287,18 +287,14 @@ Weitere Informationen finden Sie unter [Visual Studio Online][Visual Studio Onli
   [Fortlaufende Bereitstellung für Cloud Services in Azure]: ../cloud-services-dotnet-continuous-delivery
   [www.visualstudio.com]: http://www.visualstudio.com
   [hier]: http://go.microsoft.com/fwlink/?LinkId=239540
-  [kostenlos ein Visual Studio Online-Konto erstellen]: http://go.microsoft.com/fwlink/p/?LinkId=512979
   [Schritt 1: Erstellen eines Teamprojekts]: #step1
   [Schritt 2: Einchecken eines Projekts in der Quellcodeverwaltung]: #step2
   [Schritt 3: Verbinden des Projekts mit Azure]: #step3
   [Schritt 4: Durchführen von Änderungen und Auslösen einer erneuten Erstellung und Bereitstellung]: #step4
-  [Schritt 5: Erneute Bereitstellung eines früheren Builds (optional)]: #step5
-  [Schritt 6: Ändern der Produktionsbereitstellung (nur Cloud-Dienste)]: #step6
-  [Schritt 7: Ausführen von Komponententests (optional)]: #step7
   [1]: http://go.microsoft.com/fwlink/?LinkId=512980
   [Git-Version dieser Anleitung]: http://go.microsoft.com/fwlink/p/?LinkId=397358
   [Erste Schritte mit Azure und ASP.NET]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-dotnet-get-started/
-  []: ./media/cloud-services-continuous-delivery-use-vso/tfs5.png
+  [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs5.png
   [2]: ./media/cloud-services-continuous-delivery-use-vso/tfs6.png
   [3]: ./media/cloud-services-continuous-delivery-use-vso/tfs7.png
   [4]: ./media/cloud-services-continuous-delivery-use-vso/tfs8.png
@@ -346,4 +342,3 @@ Weitere Informationen finden Sie unter [Visual Studio Online][Visual Studio Onli
   [Ausführen von Testläufen im Buildprozess]: http://go.microsoft.com/fwlink/p/?LinkId=510474
   [Visual Studio Online]: http://go.microsoft.com/fwlink/?LinkId=253861
   [Freigeben von Code in Git]: http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx
-  [Publishing from Source Control to Azure Web Sites (Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites, in englischer Sprache)]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-publish-source-control

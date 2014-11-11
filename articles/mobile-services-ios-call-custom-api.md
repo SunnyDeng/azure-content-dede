@@ -1,6 +1,6 @@
 <properties pageTitle="Call a custom API from an iOS app | Mobile Services" metaKeywords="" description="Learn how to define a custom API and then call it from an iOS app that uses Azure Mobile Services." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="krisragh"  solutions="" writer="krisragh" manager="" editor=""  />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh" />
 
 # Aufrufen einer benutzerdefinierten API aus dem Client
 
@@ -22,9 +22,9 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ## <a name="define-custom-api"></a>Definieren der benutzerdefinierten API
 
-[WACOM.INCLUDE [mobile-services-create-custom-api][mobile-services-create-custom-api]]
+[WACOM.INCLUDE [mobile-services-create-custom-api](../includes/mobile-services-create-custom-api.md)]
 
-[WACOM.INCLUDE [mobile-services-ios-call-custom-api][mobile-services-ios-call-custom-api]]
+[WACOM.INCLUDE [mobile-services-ios-call-custom-api](../includes/mobile-services-ios-call-custom-api.md)]
 
 ## Nächste Schritte
 
@@ -38,14 +38,6 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre iOS-App auf
 
 <!-- Anchors. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-call-custom-api "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-ios-call-custom-api "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-android-call-custom-api "Android"
-  [HTML]: /de-de/documentation/articles/mobile-services-html-call-custom-api "HTML"
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-ios-call-custom-api "JavaScript-Backend"
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-ios-get-started/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-ios-get-started-data/
   [Definieren der benutzerdefinierten API]: #define-custom-api

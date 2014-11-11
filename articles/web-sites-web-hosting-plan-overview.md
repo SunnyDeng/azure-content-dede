@@ -1,6 +1,6 @@
 <properties pageTitle="What is a web hosting plan?" description="Web hosting plan overview" title="What is a web hosting plan?" services="web-sites" authors="adamab" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="adamab"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="adamab" />
 
 # Was ist ein Webhostingplan?
 
@@ -34,7 +34,7 @@ Beim Erstellen einer neuen Website werden Sie im Portal gefragt, welcher Webhost
 
 Klicken Sie auf die Schaltfläche **Durchsuchen** in der linken Menüleiste und dann auf **Alles** in der oberen rechten Ecke des Aktivitätenfensters, das auf dem Bildschirm angezeigt wird, um alle Webhostingpläne für alle Ihre Abonnements anzuzeigen.
 
-![][]
+![][0]
 ![][1]
 
 Sie können auch sehen, welchem Webhostingplan jede Website zugeordnet ist, indem Sie die grafische Darstellung Ihrer Ressourcengruppe aufrufen, die am oberen Rand des Websitefensters angezeigt wird.
@@ -53,7 +53,7 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 
   [Hier]: http://go.microsoft.com/fwlink/?LinkID=394421
   [Erfahren Sie mehr über das Verwalten von Webhostingplänen]: http://go.microsoft.com/fwlink/?LinkID=394411
-  []: ./media/web-sites-web-hosting-plan-overview/browse-everything.png
+  [0]: ./media/web-sites-web-hosting-plan-overview/browse-everything.png
   [1]: ./media/web-sites-web-hosting-plan-overview/browse-web-hosting-plans.png
   [2]: ./media/web-sites-web-hosting-plan-overview/web-hosting-plan-resource-map.png
   [3]: ./media/web-sites-web-hosting-plan-overview/web-hosting-plan-blade.png

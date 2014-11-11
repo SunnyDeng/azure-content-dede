@@ -1,6 +1,6 @@
 <properties linkid="develop-node-create-a-website-mac" urlDisplayName="Website" pageTitle="Create a Node.js website on Mac - Azure tutorials" metaKeywords="Azure create website Node, Azure deploy website Node, website Node.js, Node website" description="Learn how to build and deploy a Node.js website in Azure. Sample code is written in Java." metaCanonical="" services="web-sites" documentationCenter="nodejs" title="Build and deploy a Node.js website to Azure" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Erstellen und Bereitstellen einer Node.js-Website für Azure
 
@@ -157,9 +157,7 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
   [Node]: http://nodejs.org
   [Git]: http://git-scm.com
   [Ein Browser, in dem die Nachricht „Hello World“ angezeigt wird.]: ./media/web-sites-nodejs-develop-deploy-mac/helloazure.png
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [Das Azure-Portal mit markiertem Link „+NEU“.]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
   [Das Dialogfeld „Schnellerfassung“]: ./media/web-sites-nodejs-develop-deploy-mac/create-quick-website.png
   [Website-Dashboard öffnen]: ./media/web-sites-nodejs-develop-deploy-mac/go_to_dashboard.png
   [Git-Veröffentlichung einrichten]: ./media/web-sites-nodejs-develop-deploy-mac/setup_git_publishing.png
@@ -167,8 +165,6 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
   [Das Dialogfeld mit der Eingabeaufforderung für Benutzername und Kennwort.]: ./media/web-sites-nodejs-develop-deploy-mac/git-deployment-credentials.png
   [Zurückgegebene Git-Bereitstellungsanweisungen nach dem Erstellen eines Repositorys für die Website.]: ./media/web-sites-nodejs-develop-deploy-mac/git-instructions.png
   [1]: ./media/web-sites-nodejs-develop-deploy-mac/helloworldlocal.png
-  [2]: http://git-scm.com/
-  [Download-Seite für Git]: http://git-scm.com/download
   [Git-Bereitstellungsstatus im Portal]: ./media/web-sites-nodejs-develop-deploy-mac/git_deployments_first.png
   [Aktualisierter Git-Bereitstellungsstatus im Portal]: ./media/web-sites-nodejs-develop-deploy-mac/git_deployments_second.png
   [Azure-Befehlszeilen-Tools für Mac und Linux]: /de-de/documentation/articles/xplat-cli/

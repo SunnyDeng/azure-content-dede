@@ -1,6 +1,6 @@
 <properties linkid="develop-notificationhubs-tutorials-send-breaking-news-ios" urlDisplayName="Breaking News" pageTitle="Notification Hubs Breaking News Tutorial - iOS" metaKeywords="" description="Learn how to use Azure Service Bus Notification Hubs to send breaking news notifications to iOS devices." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="elioda" solutions="" manager="" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="01/01/1900" ms.author="elioda"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="01/01/1900" ms.author="elioda" />
 
 # Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten
 
@@ -88,7 +88,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 
     Das Layout von „main\_activity.xml“ sollte jetzt wie folgt aussehen:
 
-    ![][]
+    ![][0]
 
 3.  Erstellen Sie nun eine Klasse **Notifications** im selben Paket wie die Klasse **MainActivity**.
 
@@ -260,7 +260,7 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 
 ## <a name="send"></a><span class="short-header">Senden von Benachrichtigungen</span>Senden von Benachrichtigungen von Ihrem Back-End aus
 
-[WACOM.INCLUDE [notification-hubs-back-end][notification-hubs-back-end]]
+[WACOM.INCLUDE [notification-hubs-back-end](../includes/notification-hubs-back-end.md)]
 
 ## <a name="test-app"></a>Ausführen der Anwendung und Erzeugen von Benachrichtigungen
 
@@ -294,17 +294,13 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 
 <!-- Anchors. --> <!-- Images. --> <!-- URLs.-->
 
-  [Windows Universal]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/ "Windows Universal"
-  [Windows Phone]: /de-de/documentation/articles/notification-hubs-windows-phone-send-breaking-news/ "Windows Phone"
-  [iOS]: /de-de/documentation/articles/notification-hubs-ios-send-breaking-news/ "iOS"
-  [Android]: /de-de/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/ "Android"
   [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
   [Hinzufügen der Kategorieauswahl zur App]: #adding-categories
   [Registrieren für Benachrichtigungen]: #register
   [Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
   [Ausführen der Anwendung und Erzeugen von Benachrichtigungen]: #test-app
   [Erste Schritte mit Notification Hubs]: /de-de/documentation/articles/notification-hubs-android-get-started/
-  []: ./media/notification-hubs-aspnet-backend-android-breaking-news/android-breaking-news1.PNG
+  [0]: ./media/notification-hubs-aspnet-backend-android-breaking-news/android-breaking-news1.PNG
   [notification-hubs-back-end]: ../includes/notification-hubs-back-end.md
   [Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/
   [Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users

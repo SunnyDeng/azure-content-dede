@@ -1,6 +1,6 @@
 <properties linkid="websites-global-web-presence" urlDisplayName="Create a Global Web Presence on Azure Websites" pageTitle="Create a Global Web Presence on Azure Websites" metaKeywords="" description="This guide provides a technical overview of how to host your organization's (.COM) site on Azure Websites. This includes deployment, custom domains, SSL, and monitoring." metaCanonical="http://www.windowsazure.com/de-de/documentation/articles/web-sites-global-web-presence-solution-overview/" services="" documentationCenter="" title="Create a Global Web Presence on Azure Websites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jroth"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jroth" />
 
 # Erstellen einer globalen Webpräsenz auf Azure-Websites
 
@@ -209,8 +209,6 @@ Beim Erstellen der .COM-Website Ihrer Organisation bestehen die Standardaufgaben
   [Azure Cloud Services]: /de-de/documentation/services/cloud-services/
   [Azure Virtual Machines]: /de-de/documentation/services/virtual-machines/
   [Azure-Websites, Cloud-Dienste und virtuelle Computer: Vergleich]: /de-de/manage/services/web-sites/choose-web-app-service
-  [digitalen Marketingkampagnen]: http://www.windowsazure.com/de-de/manage/services/web-sites/digital-marketing-campaign-solution-overview
-  [Geschäftsanwendungen]: http://www.windowsazure.com/de-de/manage/services/web-sites/business-application-solution-overview
   [Globale Website erstellen]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Create.png
   [Erste Schritte mit Azure-Websites und ASP.NET]: /de-de/documentation/articles/web-sites-dotnet-get-started
   [WebMatrix]: http://www.microsoft.com/web/webmatrix/

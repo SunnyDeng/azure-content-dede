@@ -1,6 +1,6 @@
 <properties linkid="hdinsight-dotnet-avro-serialization" urlDisplayName="HDInsight Microsoft .NET Library for Serialization with Avro" pageTitle="Serialize data with the Microsoft .NET Library for Avro | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Avro to serialize big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Serialize data with the Microsoft .NET Library for Avro " authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
 # Serialisieren von Daten mit der Microsoft .NET-Bibliothek für Avro
 
@@ -10,7 +10,7 @@ In diesem Thema erfahren Sie, wie Sie mit der Microsoft .NET-Bibliothek für Avr
 
 ### Apache Avro
 
-Die Microsoft .NET-Bibliothek für Avro implementiert das Apache Avro-Datenserialisierungssystem für die Microsoft .NET-Umgebung. Apache Avro stellt ein kompaktes binäres Datenaustauschformat für die Serialisierung bereit. Unter Verwendung von [JSON][] definiert es ein sprachunabhängiges Schema, das die Interoperabilität von Sprachen sicherstellt. Die in einer Sprache serialisierten Daten können in einer anderen Sprache gelesen werden. Derzeit werden C, C++, C#, Java, PHP, Python und Ruby unterstützt. Detaillierte Informationen über das Format finden Sie in der [Apache Avro-Spezifikation][]. Beachten Sie, dass die aktuelle Version der Microsoft .NET-Bibliothek für Avro den Teil zu Remoteprozeduraufrufen (Remote Procedure Calls, RPC) dieser Spezifikation nicht unterstützt.
+Die Microsoft .NET-Bibliothek für Avro implementiert das Apache Avro-Datenserialisierungssystem für die Microsoft .NET-Umgebung. Apache Avro stellt ein kompaktes binäres Datenaustauschformat für die Serialisierung bereit. Unter Verwendung von [JSON][JSON] definiert es ein sprachunabhängiges Schema, das die Interoperabilität von Sprachen sicherstellt. Die in einer Sprache serialisierten Daten können in einer anderen Sprache gelesen werden. Derzeit werden C, C++, C#, Java, PHP, Python und Ruby unterstützt. Detaillierte Informationen über das Format finden Sie in der [Apache Avro-Spezifikation][Apache Avro-Spezifikation]. Beachten Sie, dass die aktuelle Version der Microsoft .NET-Bibliothek für Avro den Teil zu Remoteprozeduraufrufen (Remote Procedure Calls, RPC) dieser Spezifikation nicht unterstützt.
 
 Die serialisierte Darstellung eines Objekts im Avro-System besteht aus zwei Teilen: Schema und tatsächlichem Wert. Das Avro-Schema beschreibt das sprachunabhängige Datenmodell der serialisierten Daten mit JSON. Daneben liegt eine Binärdarstellung der Daten vor. Dank der Trennung von Schema und Binärdarstellung kann jedes Objekt ohne Mehraufwand für die einzelnen Werte geschrieben werden, wodurch eine schnelle Serialisierung und eine kleine Darstellung sichergestellt werden.
 
@@ -23,14 +23,14 @@ Das Apache Avro-Serialisierungsformat wird verbreitet in Azure HDInsight und and
 Die .NET-Bibliothek für Avro unterstützt zwei Methoden der Objektserialisierung:
 
 -   **Reflexion**: Das JSON-Schema für die Typen wird automatisch aus den Datenvertragsattributen der zu serialisierenden .NET-Typen erstellt.
--   **Generischer Datensatz**: Das JSON-Schema wird explizit in einem durch die [**AvroRecord**][]-Klasse dargestellten Datensatz angegeben, wenn keine .NET-Typen zum Beschreiben des Schemas für die zu serialisierenden Daten vorhanden sind.
+-   **Generischer Datensatz**: Das JSON-Schema wird explizit in einem durch die [**AvroRecord**][**AvroRecord**]-Klasse dargestellten Datensatz angegeben, wenn keine .NET-Typen zum Beschreiben des Schemas für die zu serialisierenden Daten vorhanden sind.
 
 Wenn das Datenschema sowohl dem Writer als auch dem Reader des Datenstroms bekannt ist, können die Daten ohne das zugehörige Schema gesendet werden. Anderenfalls muss das Schema unter Verwendung einer Avro-Containerdatei zur gemeinsamen Nutzung freigegeben werden. Andere Parameter wie z. B. der Codec für die Datenkomprimierung können angegeben werden. Diese Szenarios werden in den nachfolgenden Codebeispielen ausführlicher erläutert und veranschaulicht.
 
 ### Microsoft .NET-Bibliothek für Avro – Voraussetzungen
 
--   [Microsoft .NET Framework 4.0][]
--   [Newtonsoft Json.NET][] (Version 5.0.5 oder höher)
+-   [Microsoft .NET Framework 4.0][Microsoft .NET Framework 4.0]
+-   [Newtonsoft Json.NET][Newtonsoft Json.NET] (Version 5.0.5 oder höher)
 
 Beachten Sie, dass die Newtonsoft.Json.dll-Abhängigkeit bei der Installation der Microsoft .NET-Bibliothek für Avro automatisch heruntergeladen wird; das Installationsverfahren wird im folgenden Abschnitt erläutert.
 
@@ -52,21 +52,21 @@ In den ersten zwei Beispielen wird gezeigt, wie Daten mithilfe von Reflexion und
 
 Im dritten und vierten Beispiel wird gezeigt, wie Daten mithilfe von Reflexion und generischem Datensatz unter Verwendung von Avro-Objektcontainerdateien in Speicherdatenstrom-Puffer serialisiert und aus diesen deserialisiert werden. Wenn Daten in einer Avro-Containerdatei gespeichert werden, wird das zugehörige Schema stets mit den Daten gespeichert, da das Schema für die Deserialisierung freigegeben werden muss.
 
-Das Beispiel mit den ersten vier Beispielen kann von der Website mit [Azure-Codebeispielen][] heruntergeladen werden.
+Das Beispiel mit den ersten vier Beispielen kann von der Website mit [Azure-Codebeispielen][Azure-Codebeispielen] heruntergeladen werden.
 
 Das fünfte und letzte Beispiel zeigt die Verwendung eines benutzerdefinierten Komprimierungscodecs für Objektcontainerdateien. Ein Beispiel mit dem Code für dieses Beispiel kann von der Website mit [Azure-Codebeispielen][1] heruntergeladen werden.
 
 Die Microsoft .NET-Bibliothek für Avro unterstützt alle Datenströme. In diesen Beispielen werden Daten aus Gründen der Einfachheit und Konsistenz nicht mit Dateidatenströmen oder Datenbanken, sondern mit Speicherdatenströmen bearbeitet. Welches Verfahren in einer Produktionsumgebung angewendet wird, hängt von den spezifischen Anforderungen des jeweiligen Szenarios, der Datenquelle und dem Datenvolumen, den Leistungsbeschränkungen und anderen Faktoren ab.
 
--   [**Serialisierung mit Reflexion**][]: Das JSON-Schema für die zu serialisierenden Typen wird automatisch aus den Datenvertragsattributen erstellt.
--   [**Serialisierung mit generischem Datensatz**][]: Das JSON-Schema wird explizit in einem Datensatz angegeben, wenn kein .NET-Typ für die Reflexion verfügbar ist.
--   [**Serialisierung unter Verwendung von Objektcontainerdateien mit Reflexion**][]: Das JSON-Schema wird implizit mit den Daten serialisiert und unter Verwendung einer Avro-Containerdatei freigegeben.
--   [**Serialisierung unter Verwendung von Objektcontainerdateien mit generischem Datensatz**][]: Das JSON-Schema wird explizit mit den Daten serialisiert und unter Verwendung einer Avro-Containerdatei freigegeben.
--   [**Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec**][]: Das JSON-Schema wird mit den Daten serialisiert und unter Verwendung einer Avro-Containerdatei mit einer benutzerdefinierten .NET-Implementierung des Deflate-Datenkomprimierungscodecs freigegeben.
+-   [**Serialisierung mit Reflexion**][**Serialisierung mit Reflexion**]: Das JSON-Schema für die zu serialisierenden Typen wird automatisch aus den Datenvertragsattributen erstellt.
+-   [**Serialisierung mit generischem Datensatz**][**Serialisierung mit generischem Datensatz**]: Das JSON-Schema wird explizit in einem Datensatz angegeben, wenn kein .NET-Typ für die Reflexion verfügbar ist.
+-   [**Serialisierung unter Verwendung von Objektcontainerdateien mit Reflexion**][**Serialisierung unter Verwendung von Objektcontainerdateien mit Reflexion**]: Das JSON-Schema wird implizit mit den Daten serialisiert und unter Verwendung einer Avro-Containerdatei freigegeben.
+-   [**Serialisierung unter Verwendung von Objektcontainerdateien mit generischem Datensatz**][**Serialisierung unter Verwendung von Objektcontainerdateien mit generischem Datensatz**]: Das JSON-Schema wird explizit mit den Daten serialisiert und unter Verwendung einer Avro-Containerdatei freigegeben.
+-   [**Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec**][**Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec**]: Das JSON-Schema wird mit den Daten serialisiert und unter Verwendung einer Avro-Containerdatei mit einer benutzerdefinierten .NET-Implementierung des Deflate-Datenkomprimierungscodecs freigegeben.
 
 ## <a name="Scenario1"></a>Serialisierung mit Reflexion
 
-Das JSON-Schema für die Typen kann von der Microsoft .NET-Bibliothek für Avro automatisch mithilfe von Reflexion aus den Datenvertragsattributen der zu serialisierenden .C#-Objekte erstellt werden. Die Microsoft .NET-Bibliothek für Avro erstellt einen [**IAvroSeralizer<t>**][], um die zu serialisierenden Felder zu identifizieren.
+Das JSON-Schema für die Typen kann von der Microsoft .NET-Bibliothek für Avro automatisch mithilfe von Reflexion aus den Datenvertragsattributen der zu serialisierenden .C#-Objekte erstellt werden. Die Microsoft .NET-Bibliothek für Avro erstellt einen [**IAvroSeralizer<t>**][**IAvroSeralizer<t>**], um die zu serialisierenden Felder zu identifizieren.
 
 In diesem Beispiel werden Objekte (eine **SensorData**-Klasse mit einer **Location**-Mitgliedsstruktur) in einen Speicherdatenstrom serialisiert; dieser Datenstrom wird wiederum deserialisiert. Anschließend wird das Ergebnis mit der ursprünglichen Instanz verglichen, um zu bestätigen, dass das wiederhergestellte **SensorData**-Objekt mit dem Original identisch ist.
 
@@ -192,7 +192,7 @@ In diesem Beispiel wird davon ausgegangen, dass das Schema von Readern und Write
 
 Ein JSON-Schema kann explizit in einem generischen Datensatz angegeben werden, wenn die Verwendung von Reflexion nicht möglich ist, weil die Daten nicht mithilfe von .NET-Klassen mit einem Datenvertrag dargestellt werden können. Diese Methode ist im Allgemeinen langsamer als die Verwendung von Reflexion und Serialisierern für eine bestimmte C#-Klasse. In diesen Fällen kann das Schema für die Daten auch dynamisch sein, da es erst zum Zeitpunkt der Kompilierung bekannt sein muss. Ein Beispiel für ein solches dynamisches Szenario sind Daten, die als CSV-Dateien (Comma Separated Values, mit Trennzeichen getrennte Werte) dargestellt werden und deren Schema erst bekannt wird, wenn sie zur Laufzeit in das Avro-Format transformiert werden.
 
-In diesem Beispiel wird gezeigt, wie ein [**AvroRecord**][] erstellt und verwendet wird, um ein JSON-Schema explizit anzugeben, wie dieses mit den Daten gefüllt und anschließend serialisiert und deserialisiert wird. Anschließend wird das Ergebnis mit der ursprünglichen Instanz verglichen, um zu bestätigen, dass der wiederhergestellte Datensatz mit dem Original identisch ist.
+In diesem Beispiel wird gezeigt, wie ein [**AvroRecord**][**AvroRecord**] erstellt und verwendet wird, um ein JSON-Schema explizit anzugeben, wie dieses mit den Daten gefüllt und anschließend serialisiert und deserialisiert wird. Anschließend wird das Ergebnis mit der ursprünglichen Instanz verglichen, um zu bestätigen, dass der wiederhergestellte Datensatz mit dem Original identisch ist.
 
 In diesem Beispiel wird davon ausgegangen, dass das Schema von Readern und Writern gemeinsam verwendet wird, sodass das Avro-Objektcontainerformat nicht erforderlich ist. Ein Beispiel für das Serialisieren und Deserialisieren von Daten in Speicherpuffer unter Verwendung eines generischen Datensatzes mit dem Objektcontainerformat, wenn das Schema in die serialisierten Daten eingeschlossen werden muss, finden Sie im Beispiel [Serialisierung unter Verwendung von Objektcontainerdateien mit generischem Datensatz][**Serialisierung unter Verwendung von Objektcontainerdateien mit generischem Datensatz**].
 
@@ -312,11 +312,11 @@ In diesem Beispiel wird davon ausgegangen, dass das Schema von Readern und Write
 
 ## <a name="Scenario3"></a>Serialisierung unter Verwendung von Objektcontainerdateien und Serialisierung mit Reflexion
 
-Dieses Beispiel ähnelt dem Szenario im [ersten Beispiel][**Serialisierung mit Reflexion**], in dem das Schema implizit mit Reflexion angegeben wird; der Unterschied besteht darin, dass bei diesem Beispiel nicht davon ausgegangen wird, dass das Schema dem Reader bekannt ist, der die Deserialisierung durchführt. Die zu serialisierenden **SensorData**-Objekte und das zugehörige implizit angegebene Schema werden in einer Objektcontainerdatei gespeichert, die durch die [**AvroContainer**][]-Klasse dargestellt wird.
+Dieses Beispiel ähnelt dem Szenario im [ersten Beispiel][**Serialisierung mit Reflexion**], in dem das Schema implizit mit Reflexion angegeben wird; der Unterschied besteht darin, dass bei diesem Beispiel nicht davon ausgegangen wird, dass das Schema dem Reader bekannt ist, der die Deserialisierung durchführt. Die zu serialisierenden **SensorData**-Objekte und das zugehörige implizit angegebene Schema werden in einer Objektcontainerdatei gespeichert, die durch die [**AvroContainer**][**AvroContainer**]-Klasse dargestellt wird.
 
-Die Daten werden in diesem Beispiel mit [**SequentialWriter<sensordata>**][] serialisiert und mit [**SequentialReader<sensordata>**][**SequentialWriter<sensordata>**] deserialisiert. Anschließend wird das Ergebnis mit den ursprünglichen Instanzen verglichen, um die Identität sicherzustellen.
+Die Daten werden in diesem Beispiel mit [**SequentialWriter<sensordata>**][**SequentialWriter<sensordata>**] serialisiert und mit [**SequentialReader<sensordata>**][**SequentialWriter<sensordata>**] deserialisiert. Anschließend wird das Ergebnis mit den ursprünglichen Instanzen verglichen, um die Identität sicherzustellen.
 
-Die Datei in der Objektcontainerdatei werden mit dem [**Deflate**][]-Standardkomprimierungscodec von .NET Framework 4.0 komprimiert. Im [letzten Beispiel][**Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec**] dieses Themas erfahren Sie, wie sie eine neuere und erweiterte Version des in .NET Framework 4.5 verfügbaren [**Deflate**][2]-Komprimierungscodecs verwenden.
+Die Datei in der Objektcontainerdatei werden mit dem [**Deflate**][**Deflate**]-Standardkomprimierungscodec von .NET Framework 4.0 komprimiert. Im [letzten Beispiel][**Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec**] dieses Themas erfahren Sie, wie sie eine neuere und erweiterte Version des in .NET Framework 4.5 verfügbaren [**Deflate**][2]-Komprimierungscodecs verwenden.
 
     namespace Microsoft.Hadoop.Avro.Sample
     {
@@ -553,7 +553,7 @@ Die Datei in der Objektcontainerdatei werden mit dem [**Deflate**][]-Standardkom
 
 Dieses Beispiel ähnelt dem Szenario im [zweiten Beispiel][**Serialisierung mit generischem Datensatz**], in dem das Schema explizit mit JSON angegeben wird; der Unterschied besteht darin, dass bei diesem Beispiel nicht davon ausgegangen wird, dass das Schema dem Reader bekannt ist, der die Deserialisierung durchführt.
 
-Der Testdatensatz wird unter Verwendung eines explizit definierten JSON-Schemas in einer Liste von [**AvroRecord**][]-Objekten gesammelt und anschließend in einer Objektcontainerdatei gespeichert, die durch die [**AvroContainer**][]-Klasse dargestellt wird. Diese Containerdatei erstellt einen Writer, mit dem die Daten in unkomprimierter Form in einen Speicherdatenstrom serialisiert werden, der anschließend in einer Datei gespeichert wird. Beim Erstellen des Readers wird mit dem [**Codex.Null**][]-Parameter angegeben, dass diese Daten nicht komprimiert werden.
+Der Testdatensatz wird unter Verwendung eines explizit definierten JSON-Schemas in einer Liste von [**AvroRecord**][**AvroRecord**]-Objekten gesammelt und anschließend in einer Objektcontainerdatei gespeichert, die durch die [**AvroContainer**][**AvroContainer**]-Klasse dargestellt wird. Diese Containerdatei erstellt einen Writer, mit dem die Daten in unkomprimierter Form in einen Speicherdatenstrom serialisiert werden, der anschließend in einer Datei gespeichert wird. Beim Erstellen des Readers wird mit dem [**Codex.Null**][**Codex.Null**]-Parameter angegeben, dass diese Daten nicht komprimiert werden.
 
 Anschließend werden die Daten aus der Datei gelesen und in eine Objektsammlung deserialisiert. Diese Sammlung wird mit der ursprünglichen Liste von Avro-Datensätzen verglichen, um zu bestätigen, dass sie identisch sind.
 
@@ -810,7 +810,7 @@ Anschließend werden die Daten aus der Datei gelesen und in eine Objektsammlung 
 
 ## <a name="Scenario5"></a>Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec
 
-Im folgenden Beispiel wird gezeigt, wie ein benutzerdefinierter Komprimierungscodec für Avro-Objektcontainerdateien verwendet wird. Die [Avro-Spezifikation][] ermöglicht die Verwendung eines optionalen Komprimierungscodecs (zusätzlich zu den Standardcodecs **Null** und **Deflate**). In diesem Beispiel sind neue Codecs wie Snappy (der in der [Avro-Spezifikation][3] als unterstützter optionaler Codec aufgeführt wird) nicht vollständig implementiert. Das Beispiel zeigt die Verwendung der .NET Framework 4.5-Implementierung des [**Deflate**][2]-Codecs, die einen besseren Komprimierungsalgorithmus auf Basis der [zlib][]-Komprimierungsbibliothek als die Standardversion aus .NET Framework 4.0 bereitstellt.
+Im folgenden Beispiel wird gezeigt, wie ein benutzerdefinierter Komprimierungscodec für Avro-Objektcontainerdateien verwendet wird. Die [Avro-Spezifikation][Avro-Spezifikation] ermöglicht die Verwendung eines optionalen Komprimierungscodecs (zusätzlich zu den Standardcodecs **Null** und **Deflate**). In diesem Beispiel sind neue Codecs wie Snappy (der in der [Avro-Spezifikation][3] als unterstützter optionaler Codec aufgeführt wird) nicht vollständig implementiert. Das Beispiel zeigt die Verwendung der .NET Framework 4.5-Implementierung des [**Deflate**][2]-Codecs, die einen besseren Komprimierungsalgorithmus auf Basis der [zlib][zlib]-Komprimierungsbibliothek als die Standardversion aus .NET Framework 4.0 bereitstellt.
 
     // 
     // This code needs to be compiled with the parameter Target Framework set as ".NET Framework 4.5"
@@ -1304,22 +1304,13 @@ Im folgenden Beispiel wird gezeigt, wie ein benutzerdefinierter Komprimierungsco
 
   [JSON]: http://www.json.org
   [Apache Avro-Spezifikation]: http://avro.apache.org/docs/current/spec.html
-  [**AvroRecord**]: http://msdn.microsoft.com/en-us/library/microsoft.hadoop.avro.avrorecord.aspx
-  [Microsoft .NET Framework 4.0]: http://www.microsoft.com/en-us/download/details.aspx?id=17851
+  [Microsoft .NET Framework 4.0]: http://www.microsoft.com/de-de/download/details.aspx?id=17851
   [Newtonsoft Json.NET]: http://james.newtonking.com/json
   [Azure-Codebeispielen]: http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-86055923
   [1]: http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111
-  [**Serialisierung mit Reflexion**]: #Scenario1
-  [**Serialisierung mit generischem Datensatz**]: #Scenario2
   [**Serialisierung unter Verwendung von Objektcontainerdateien mit Reflexion**]: #Scenario3
   [**Serialisierung unter Verwendung von Objektcontainerdateien mit generischem Datensatz**]: #Scenario4
-  [**Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec**]: #Scenario5
-  [**IAvroSeralizer<t>**]: http://msdn.microsoft.com/en-us/library/dn627341.aspx
-  [**AvroContainer**]: http://msdn.microsoft.com/en-us/library/microsoft.hadoop.avro.container.avrocontainer.aspx
-  [**SequentialWriter<sensordata>**]: http://msdn.microsoft.com/en-us/library/dn627340.aspx
-  [**Deflate**]: http://msdn.microsoft.com/en-us/library/system.io.compression.deflatestream(v=vs.100).aspx
-  [2]: http://msdn.microsoft.com/en-us/library/system.io.compression.deflatestream(v=vs.110).aspx
-  [**Codex.Null**]: http://msdn.microsoft.com/en-us/library/microsoft.hadoop.avro.container.codec.null.aspx
+  [2]: http://msdn.microsoft.com/de-de/library/system.io.compression.deflatestream(v=vs.110).aspx
   [Avro-Spezifikation]: http://avro.apache.org/docs/current/spec.html#Required+Codecs
   [3]: http://avro.apache.org/docs/current/spec.html#snappy
   [zlib]: http://zlib.net/

@@ -1,6 +1,6 @@
 <properties linkid="hdinsight-emulator-release-notes" urlDisplayName="HDInsight Emulator release notes" pageTitle="Release notes: Microsoft HDInsight Emulator for Azure | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Get late-breaking information about the most recent releases of the HDInsight Hadoop Emulator." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Release notes: Microsoft HDInsight Emulator for Azure" authors="cgronlun" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="cgronlun"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="cgronlun" />
 
 # Versionshinweise: Microsoft HDInsight Emulator für Azure
 
@@ -133,7 +133,7 @@ Portnummern
 
             %HADOOP_NODE%\stop-onebox.cmd && %HADOOP_NODE%\start-onebox.cmd
 
-    3.  Greifen Sie auf jede Datei in diesem Konto mit dem vollständigen URI zu: asv:[//{container}@{account}/{path][]} (oder asvs://, wenn Sie HTTPS für den Zugriff auf die Daten verwenden möchten). Beispiel:
+    3.  Greifen Sie auf jede Datei in diesem Konto mit dem vollständigen URI zu: asv:[//{container}@{account}/{path][//{container}@{account}/{path]} (oder asvs://, wenn Sie HTTPS für den Zugriff auf die Daten verwenden möchten). Beispiel:
 
             hadoop fs -lsr 
             asvs://MyHadoopOnAzureContainerName@MyHadoopOnAzureAccountName/example/data/
@@ -243,7 +243,7 @@ Portnummern
 
 ## <a name="nextsteps"></a>Nächste Schritte
 
--   [Erste Schritte mit dem HDInsight-Emulator][]
+-   [Erste Schritte mit dem HDInsight-Emulator][Erste Schritte mit dem HDInsight-Emulator]
 
  
   [//{container}@{account}/{path]: mailto://{container}@{account}/{path

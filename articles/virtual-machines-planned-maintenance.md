@@ -1,6 +1,6 @@
 <properties title="Planned maintenance for Azure virtual machines" pageTitle="Planned maintenance for Azure virtual machines" description="Understand what Azure planned maintenance is and how it affects your virtual machines running in Azure." metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="kenazk" videoId="" scriptId="" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kenazk"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kenazk" />
 
 # Geplante Wartung für virtuelle Azure-Computer
 
@@ -33,7 +33,7 @@ Nachdem ein virtueller Computer wiederhergestellt wurde, kann ein Windows Event 
 
 <!--Image reference-->
 
-![][]
+![][0]
 
 ## Aktualisierung einzelner Instanzen
 
@@ -57,5 +57,5 @@ Für die als nur eine Instanz konfigurierten virtuellen Computer sendet Azure mi
   [Verfügbarkeit virtueller Computer verwalten]: http://azure.microsoft.com/de-de/documentation/articles/virtual-machines-manage-availability/
   [Vereinbarungen zum Servicelevel]: ../../support/legal/sla/
   [Redundanz durch Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe]: http://azure.microsoft.com/de-de/documentation/articles/virtual-machines-manage-availability/#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy
-  []: ./media/virtual-machines-planned-maintenance/EventViewerPostReboot.png
+  [0]: ./media/virtual-machines-planned-maintenance/EventViewerPostReboot.png
   [1]: ./media/virtual-machines-planned-maintenance/vmplanned1.png

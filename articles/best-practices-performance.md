@@ -1,6 +1,6 @@
 <properties linkid="develop-dotnet-performance" urlDisplayName="Performance" pageTitle="Performance best practices - Azure" metaKeywords="Azure optimization, Azure best practice performance" description="Learn about best practices for performance in Azure." metaCanonical="" services="cloud-services,sql-database,storage,service-bus,virtual-network" documentationCenter=".NET" title="" authors="robb" solutions="" manager="johndaw" editor="" />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="robb"></tags>
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="robb" />
 
 # Bewährte Methoden für die Azure-Anwendungsleistung
 
@@ -348,7 +348,6 @@ Weitere Ressourcen
   [How to Shard with SQL Database]: http://go.microsoft.com/fwlink/?LinkId=252678
   [SQL Server and SQL Database Shard Library]: http://go.microsoft.com/fwlink/?LinkId=252679
   [Introducing the Azure Caching Service]: http://go.microsoft.com/fwlink/?LinkId=252680
-  [Windows \#Azure Caching Performance Considerations]: http://go.microsoft.com/fwlink/?LinkId=252681
   [Azure Queues and Azure Service Bus Queues - Compared and Contrasted]: http://go.microsoft.com/fwlink/?LinkId=252682
   [Best Practices for Performance Improvements Using Service Bus Brokered Messaging]: http://go.microsoft.com/fwlink/?LinkID=252683
   [Große Datenmengen]: /de-de/solutions/big-data/

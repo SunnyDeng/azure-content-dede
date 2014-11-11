@@ -1,6 +1,6 @@
 <properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 5 mobile website" pageTitle=".NET ASP.NET MVC 5 mobile website - Azure tutorials" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 5,,ASP.NET MVC" description="A tutorial that teaches you how to deploy a web application to an Azure website using mobile features in ASP.NET MVC 5 web application." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Deploy an ASP.NET MVC Mobile Web Application on Azure Websites" authors="cephalin,riande" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="08/19/2014" ms.author="cephalin,riande"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="08/19/2014" ms.author="cephalin,riande" />
 
 # Bereitstellen einer mobilen ASP.NET MVC 5-Webanwendung auf Azure-Websites
 
@@ -10,7 +10,7 @@ In diesem Lernprogramm lernen Sie die grundlegenden Schritte kennen, mit denen S
  oder Visual Studio Professional, falls bereits vorhanden
 .
 
-[WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
+[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ### Sie lernen Folgendes
 
@@ -19,7 +19,7 @@ Konferenzdaten mobile Funktionen hinzu. Die Anwendung wird dann über das [Start
 Anwendung, so wie sie im Browseremulator in den Internet Explorer 11 F12-
 Entwicklertools angezeigt werden.
 
-![][]
+![][0]
 
 Sie können die Internet Explorer 11 F12-Entwicklertools und das [Fiddler
 -Tool][Fiddler
@@ -611,7 +611,7 @@ Der Code erfüllt drei Aufgaben:
 Sie können auch auf einen Titellink tippen, um zur entsprechenden Sitzung zu wechseln. Das Bild
 unten zeigt die Codeänderungen.
 
-![][]
+![][0]
 
 Das automatisch angewendete Bootstrap-Rastersystem ordnet die
 Sitzungen vertikal im mobilen Browser an. Beachten Sie, dass die Tags
@@ -634,7 +634,7 @@ das Suchfeld ein.
 
 Tippen Sie auf den Link **ASP.NET**. Die Sitzungen für das ASP.NET-Tag werden angezeigt.
 
-![][]
+![][0]
 
 Aktivieren Sie den Link **Building a Single Page Application with ASP.NET and
 AngularJS**.
@@ -721,9 +721,7 @@ Webanwendungen für die mobile Nutzung entwickeln. Das umfasst:
   [Visual Studio Express 2013 für Web]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web
   [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Starterprojekt]: http://go.microsoft.com/fwlink/?LinkID=398780&clcid=0x409
-  []: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionsByTag-ASP.NET-Fixed.png
-  [Fiddler
-  -Tool]: http://www.fiddler2.com/fiddler2/
+  [0]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionsByTag-ASP.NET-Fixed.png
   [Azure SDK für Visual Studio 2013]: http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409
   [Webplattform-Installer - Azure SDK für .NET]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/WebPIAzureSdk23NetVS13.png
   [Internet Explorer 11 F12-Entwicklertools]: http://msdn.microsoft.com/de-de/library/ie/dn255001.aspx

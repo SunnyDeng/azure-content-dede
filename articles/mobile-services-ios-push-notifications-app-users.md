@@ -1,6 +1,6 @@
 <properties linkid="develop-net-tutorials-push-notifications-to-users-ios" urlDisplayName="Push Notifications to Users (iOS)" pageTitle="Push notifications to users (iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to push notifications to users of your iOS app." metaCanonical="" services="" documentationCenter="Mobile" title="Push notifications to users by using Mobile Services" authors="krisragh" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh" />
 
 # Pushbenachrichtigungen an Benutzer mithilfe von Mobile Services
 
@@ -26,7 +26,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf und führt das
 </h2>
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Daten** und dann auf **Erstellen**.
 
@@ -215,18 +215,15 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 -   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Lernen Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Phone]: /de-de/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone"
-  [iOS]: /de-de/develop/mobile/tutorials/push-notifications-to-users-ios "iOS"
-  [Android]: /de-de/develop/mobile/tutorials/push-notifications-to-users-android "Android"
+
   [vorherige Pushbenachrichtigungs-Lernprogramm]: /de-de/develop/mobile/tutorials/get-started-with-push-ios
   [Erstellen der Gerätetabelle]: #create-table
   [Aktualisieren der App]: #update-app
   [Aktualisieren von Serverskripts]: #update-scripts
   [Verifizieren des Pushbenachrichtigungs-Verhaltens]: #test-app
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-ios-push-notifications-app-users/mobile-services-selection.png
+  [0]: ./media/mobile-services-ios-push-notifications-app-users/mobile-services-selection.png
   [1]: ./media/mobile-services-ios-push-notifications-app-users/mobile-create-table.png
   [2]: ./media/mobile-services-ios-push-notifications-app-users/mobile-create-devices-table.png
   [3]: ./media/mobile-services-ios-push-notifications-app-users/mobile-portal-data-tables-devices.png

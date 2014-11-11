@@ -1,6 +1,6 @@
 <properties urlDisplayName=".NET Client Library" pageTitle="Creating a Leaderboard App with Azure Mobile Services .NET Backend" metaKeywords="Azure Mobile Services, Mobile Service .NET client, .NET client" description="Learn how to build a Windows Store app using Azure Mobile Services with a .NET backend." documentationCenter="Mobile" title="Creating a Leaderboard App with Azure Mobile Services .NET Backend" authors="mwasson" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="mwasson"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="mwasson" />
 
 # Erstellen einer Bestenlisten-App mit Azure Mobile Services .NET-Backend
 
@@ -44,7 +44,7 @@ Für dieses Lernprogramm ist [Visual Studio 2013 Update 2][Visual Studio 2013 Up
 
 Eine *Bestenliste* zeigt eine Liste mit Spielern eines Spiels mit dem jeweiligen Ergebnis und dem Rang des Spielers an. Die Bestenliste kann Teil eines größeren Spiels sein oder als separate App vorliegen. Dies ist eine praxisnahe Anwendung, aber trotzdem einfach genug für ein Lernprogramm. Hier sehen Sie einen Screenshot der App:
 
-![][]
+![][0]
 
 Um die App einfach zu halten, gibt es kein eigentliches Spiel. Stattdessen können Sie Spieler hinzufügen und ein Ergebnis für jeden Spieler angeben. Sobald Sie ein Ergebnis übermitteln, berechnet der mobile Dienst die neue Rangfolge. Auf dem Backend erstellt der mobile Dienst eine Datenbank mit zwei Tabellen:
 
@@ -736,13 +736,13 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 [Veröffentlichen des mobilen Diensts]: #publish-your-mobile-service
 [Nächste Schritte]: #next-steps
 [Visual Studio 2013 Update 2]: http://go.microsoft.com/fwlink/p/?LinkID=390465
-[]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/01leaderboard.png
+[0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/01leaderboard.png
 [1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/02leaderboard.png
 [abgeschlossene Beispielprojekt]: http://code.msdn.microsoft.com/Leaderboard-App-with-Azure-9acf63af
 [2]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/03leaderboard.png
 [3]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/04leaderboard.png
 [4]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/05leaderboard.png
-[EF Code First]: http://msdn.microsoft.com/en-US/data/ee712907#codefirst
+[EF Code First]: http://msdn.microsoft.com/de-de/data/ee712907#codefirst
 [Behandeln von Datenbank-Schreibkonflikten]: http://azure.microsoft.com/de-de/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/
 [Navigationseigenschaft]: http://msdn.microsoft.com/de-de/data/jj713564.aspx
 [5]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/06leaderboard.png

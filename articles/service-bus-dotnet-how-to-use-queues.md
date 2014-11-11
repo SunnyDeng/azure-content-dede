@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="How to use Service Bus queues (.NET) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues C#, Azure queues .NET" description="Learn how to use Service Bus queues in Azure. Code samples written in C# using the .NET API." metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Queues" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
 # Einsatz von Servicebus-Warteschlangen
 
@@ -9,9 +9,9 @@ Beispiele sind in C# geschrieben und verwenden die .NET-API. Die Szenarien
 behandeln die Themen **Erstellen von Warteschlangen, Senden und Empfangen von
 Nachrichten** und **Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte]. </span>
 
-[WACOM.INCLUDE [create-account-note][create-account-note]]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
-[WACOM.INCLUDE [howto-service-bus-queues][howto-service-bus-queues]]
+[WACOM.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
 ## <span class="short-header">Konfigurieren der Anwendung</span>Konfigurieren der Anwendung für die Verwendung von Service Bus
 
@@ -35,7 +35,7 @@ Gehen sie folgendermaßen vor, um das NuGet-Paket in der Anwendung zu installier
     Service Bus** aus. Klicken Sie auf **Installieren**, um die Installation abzuschließen,
     und schließen Sie das Dialogfeld.
 
-    ![][]
+    ![][0]
 
 Sie können nun Code für Service Bus erstellen.
 
@@ -295,7 +295,5 @@ vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
   [Nächste Schritte]: #next-steps
   [create-account-note]: ../includes/create-account-note.md
   [howto-service-bus-queues]: ../includes/howto-service-bus-queues.md
-  []: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
+  [0]: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
   [Warteschlangen, Themen und Abonnements.]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx
-  [.NET-Lernprogramm zu Service
-  Bus-Brokermessaging]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367512.aspx

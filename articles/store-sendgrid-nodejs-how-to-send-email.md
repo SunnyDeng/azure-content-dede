@@ -1,6 +1,6 @@
 <properties linkid="dev-nodejs-how-to-sendgrid-email-service" urlDisplayName="SendGrid Email Service" pageTitle="How to use the SendGrid email service (Node.js) - Azure" metaKeywords="Azure SendGrid, Azure email service, Azure SendGrid Node.js, Azure email Node.js" description="Learn how send email with the SendGrid email service on Azure. Code samples written using the Node.js API." metaCanonical="" services="" documentationCenter="nodejs" title="How to Send Email Using SendGrid from Node.js" authors="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork"></tags>
+<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork" />
 
 # Senden von E-Mails mit SendGrid aus Node.js
 
@@ -46,7 +46,7 @@ Weitere Informationen finden Sie unter [][]<http://sendgrid.com></a>.
 
 ## <a name="createaccount"> </a>Erstellen eines SendGrid-Kontos
 
-[WACOM.INCLUDE [sendgrid-sign-up][sendgrid-sign-up]]
+[WACOM.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
 ## <a name="reference"> </a>Erstellen eines Verweises auf das SendGrid-Modul für Node.js
 
@@ -262,7 +262,6 @@ diesen Links weitere Informationen.
     [][2]<http://sendgrid.com/azure.html></a>
 
   [Nächste Schritte]: http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/blob-storage/#next-steps
-  [Was ist der SendGrid-E-Mail-Dienst?]: #whatis
   [Erstellen eines SendGrid-Kontos]: #createaccount
   [Erstellen eines Verweises auf das SendGrid Node.js-Modul]: #reference
   [Gewusst wie: Erstellen einer E-Mail]: #createemail
@@ -278,7 +277,6 @@ diesen Links weitere Informationen.
   [sendgrid-sign-up]: ../includes/sendgrid-sign-up.md
   [sendgrid-nodejs]: https://github.com/sendgrid/sendgrid-nodejs
   [SMTP vs. Web API]: http://docs.sendgrid.com/documentation/get-started/integrate/examples/smtp-vs-rest/
-  [fs.readFile]: http://nodejs.org/docs/v0.6.7/api/fs.html#fs.readFile
   [Filtereinstellungen]: http://docs.sendgrid.com/documentation/api/smtp-api/filter-settings/
   [SendGrid-API-Dokumentation]: http://docs.sendgrid.com/documentation/api/
   [2]: http://sendgrid.com/azure.html

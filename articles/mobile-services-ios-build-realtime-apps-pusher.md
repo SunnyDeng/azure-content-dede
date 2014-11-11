@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-build-realtime-apps-with-pusher-ios" urlDisplayName="Build Realtime Apps with Pusher" pageTitle="Build Realtime Apps with Pusher (iOS) - Mobile Services" metaKeywords="" description="Learn how to use Pusher to send notifications to your Azure Media Services app on iOS." metaCanonical="" services="" documentationCenter="Mobile" title="Build Real-time Apps with Mobile Services and Pusher" authors="krisragh" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh" />
 
 # Erstellen von Echtzeit-Apps mit Mobile Services und Pusher
 
@@ -25,7 +25,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ## <a name="sign-up"></a>Erstellen eines neuen Pusher-Kontos
 
-[WACOM.INCLUDE [pusher-sign-up][pusher-sign-up]]
+[WACOM.INCLUDE [pusher-sign-up](../includes/pusher-sign-up.md)]
 
 ## <a name="update-app"></a>Aktualisieren Ihrer App
 
@@ -43,7 +43,7 @@ Mit der [libPusher][libPusher]-Bibliothek erhalten Sie Zugriff auf den Pusher vo
 
 4.  Markieren Sie die Option **Copy items into destination group's folder**, und klicken Sie anschließend auf **Finish**.
 
-    ![][]
+    ![][0]
 
 Dadurch werden die libPusher-Dateien in das Projekt kopiert.
 
@@ -377,11 +377,10 @@ Nachdem Sie nun gelernt haben, wie einfach die Verwendung des Pusher-Dienstes mi
 
 Weitere Informationen zu Registrierung und Verwendung von Serverskripts finden Sie unter [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz].
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [iOS]:  "iOS"
+
   [Pushbenachrichtigungen an Benutzer]: /de-de/develop/mobile/tutorials/push-notifications-to-users-ios
-  []: http://pusher.com
+  [0]: http://pusher.com
   [Erstellen eines neuen Pusher-Kontos]: #sign-up
   [Aktualisieren Ihrer App]: #update-app
   [Installieren von Serverskripts]: #install-scripts
@@ -390,10 +389,9 @@ Weitere Informationen zu Registrierung und Verwendung von Serverskripts finden S
   [pusher-sign-up]: ../includes/pusher-sign-up.md
   [libPusher]: http://go.microsoft.com/fwlink/p?LinkId=276999
   [von hier]: http://go.microsoft.com/fwlink/p/?LinkId=276998
-  []: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-files-to-group.png
+  [0]: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-files-to-group.png
   [1]: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-build-phase.png
   [2]: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-linker-flag.png
-  [\*\*@synthesise\*\*]: mailto:**@synthesise*
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [3]: ./media/mobile-services-ios-build-realtime-apps-pusher/mobile-portal-data-tables.png
   [4]: ./media/mobile-services-ios-build-realtime-apps-pusher/mobile-insert-script-push2.png

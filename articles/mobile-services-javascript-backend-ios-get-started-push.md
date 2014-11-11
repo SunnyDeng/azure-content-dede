@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-push-ios" urlDisplayName="Get Started with Push (iOS)" pageTitle="Get started with push notifications (iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your iOS app." metaCanonical="http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-push-dotnet/" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" solutions="" manager="dwrede" editor="" authors="krisragh" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh" />
 
 # Erste Schritte mit Pushbenachrichtigungen in Mobile Services
 
@@ -33,11 +33,11 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] abschließen.
 
-[WACOM.INCLUDE [Aktivieren von Apple Pushbenachrichtigungen][Aktivieren von Apple Pushbenachrichtigungen]]
+[WACOM.INCLUDE [Aktivieren von Apple Pushbenachrichtigungen](../includes/enable-apple-push-notifications.md)]
 
 ## Konfigurieren von Mobile Services zum Senden von Pushanforderungen
 
-[WACOM.INCLUDE [mobile-services-apns-configure-push][mobile-services-apns-configure-push]]
+[WACOM.INCLUDE [mobile-services-apns-configure-push](../includes/mobile-services-apns-configure-push.md)]
 
 ## Hinzufügen von Pushbenachrichtigungen zur App
 
@@ -110,7 +110,7 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
 1.  Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie unter **todoitem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
 
@@ -189,14 +189,6 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer iOS-App für 
 
 <!-- Anchors. --> <!-- Images. --> <!-- URLs.   -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push "Android"
-  [.NET-Back-End]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/ ".NET-Back-End"
-  [JavaScript-Back-End]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/ "JavaScript-Back-End"
-  [Erste Schritte mit Pushbenachrichtigungen (Legacy)]: /de-de/documentation/articles/mobile-services-ios-get-started-push/
   [Erstellen der Zertifikatsignieranforderungsdatei]: #certificates
   [Registrieren der App und Aktivieren von Pushbenachrichtigungen]: #register
   [Erstellen eines Bereitstellungsprofils für die App]: #profile
@@ -209,7 +201,7 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer iOS-App für 
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-ios-get-started
   [Aktivieren von Apple Pushbenachrichtigungen]: ../includes/enable-apple-push-notifications.md
   [mobile-services-apns-configure-push]: ../includes/mobile-services-apns-configure-push.md
-  []: ./media/mobile-services-ios-get-started-push/mobile-portal-data-tables.png
+  [0]: ./media/mobile-services-ios-get-started-push/mobile-portal-data-tables.png
   [1]: ./media/mobile-services-ios-get-started-push/mobile-insert-script-push2.png
   [apns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=272333
   [2]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push1-ios.png
@@ -220,6 +212,5 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer iOS-App für 
   [Senden von Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-ios-send-breaking-news/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-ios-get-started-data
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-ios-get-started-users
-  [Was sind Notification Hubs?]: /de-de/documentation/articles/notification-hubs-overview/
   [Mobile Services Objective-C-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293

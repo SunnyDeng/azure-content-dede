@@ -1,6 +1,6 @@
 <properties linkid="Contact - Support" urlDisplayName="Caching" pageTitle="How to use In-Role Cache (.NET) - Azure feature guide" metaKeywords="Azure cache, Azure caching, Azure cache, Azure caching, Azure store session state, Azure cache .NET, Azure cache C#" description="Learn how to use Azure In-Role Cache. The samples are written in C# code and use the .NET API." metaCanonical="" services="cache" documentationCenter=".NET" title="How to Use In-Role Cache for Azure Cache" authors="sdanie" solutions="" manager="" editor="" />
 
-<tags ms.service="cache" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie"></tags>
+<tags ms.service="cache" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
 
 # Verwenden des In-Role Caches (Azure Cache)
 
@@ -400,8 +400,6 @@ vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere 
 <!-- INTRA-TOPIC LINKS --> <!-- IMAGES --> <!-- LINKS -->
 
   [Nächste Schritte]: #next-steps
-  [Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/de-de/library/azure/dn766201.aspx
-  [Was ist ein In-Role Cache?]: #what-is
   [Erste Schritte mit dem In-Role Cache]: #getting-started-cache-role-instance
   [Konfigurieren eines Cacheclusters]: #enable-caching
   [Konfigurieren der Cacheclients]: #NuGet

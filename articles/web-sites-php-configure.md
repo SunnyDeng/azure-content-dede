@@ -1,6 +1,6 @@
 <properties title="How to Configure PHP in Azure Websites" pageTitle="How to Configure PHP in Azure Websites" metaKeywords="Azure, Azure Web Sites, configuration, PHP" description="Learn how to configure the default PHP installation or add a custom PHP installation in Azure Websites." services="Web Sites" documentationCenter="PHP" authors="cephalin" manager="wpickett" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin" />
 
 # Konfigurieren von PHP in Azure-Websites
 
@@ -100,21 +100,17 @@ Nachdem Sie jetzt wissen, wie Sie PHP auf Azure-Websites konfigurieren, können 
   [kostenlose Testversion]: https://www.windowsazure.com/de-de/pricing/free-trial/
   [Lernprogramme im PHP Developer Center]: https://www.windowsazure.com/de-de/develop/php/tutorials/
   [Konfigurieren von Websites]: https://www.windowsazure.com/de-de/manage/services/web-sites/how-to-configure-websites/
-  [Was ist Azure-Websites?]: #WhatIs
   [Gewusst wie: Ändern der Standard-PHP-Konfiguration]: #ChangeBuiltInPHP
   [Gewusst wie: Aktivieren von Erweiterungen in der integrierten PHP-Laufzeit]: #EnableExtDefaultPHP
   [Gewusst wie: Verwenden einer benutzerdefinierten PHP-Laufzeit]: #UseCustomPHP
   [Nächste Schritte]: #NextSteps
-  [phpinfo()]: http://php.net/manual/en/function.phpinfo.php
   [Konfigurationsregisterkarte auf dem Websites-Dashboard]: ./media/web-sites-php-configure/configure.png
   [Wählen Sie die PHP-Version aus]: ./media/web-sites-php-configure/select-php-version.png
   [Speichern Sie die Konfigurationseinstellungen]: ./media/web-sites-php-configure/save-button.png
   [Liste der php.ini-Direktiven]: http://www.php.net/manual/en/ini.list.php
   [.user.ini]: http://www.php.net/manual/en/configuration.file.per-user.php
-  [ini\_set()]: http://www.php.net/manual/en/function.ini-set.php
   [Aktivieren Sie die Erweiterung in den App-Einstellungen]: ./media/web-sites-php-configure/app-settings.png
   []: http://windows.php.net/download/
   [1]: http://windows.php.net/downloads/releases/archives/
   [Handler in Handlerzuordnungen angeben]: ./media/web-sites-php-configure/handler-mappings.png
-  [Configure, monitor, and scale your web sites in Azure (Konfigurieren, Überwachen und Skalieren von Websites in Azure, in englischer Sprache)]: http://www.windowsazure.com/de-de/manage/services/web-sites/
   [Herunterladen des Azure SDK für PHP]: http://www.windowsazure.com/de-de/develop/php/common-tasks/download-php-sdk/

@@ -1,6 +1,6 @@
 <properties pageTitle="Using Windows PowerShell with Resource Manager" metaKeywords="ResourceManager, PowerShell, Azure PowerShell" description="Use Windows PowerShell to create a resource group" metaCanonical="" services="" documentationCenter="" title="Using Windows PowerShell with Resource Manager" authors="stevenka; juneb" solutions="" manager="stevenka" editor="mollybos" />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="powershell" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="stevenka; juneb"></tags>
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="powershell" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="stevenka; juneb" />
 
 # Verwenden von Windows PowerShell mit dem Ressourcen-Manager
 
@@ -472,8 +472,6 @@ So erhalten Sie weitere Informationen zum Verwenden von Windows PowerShell mit d
 -   [Windows PowerShell-Blog][Windows PowerShell-Blog]: Informationen zu neuen Funktionen in Windows PowerShell
 -   ["Hey, Scripting Guy!"- Blog]["Hey, Scripting Guy!"- Blog]: Praktische Tipps und Tricks aus der Windows PowerShell-Community
 
-  [Windows PowerShell]: /de-de/documentation/articles/powershell-azure-resource-manager.md "Windows PowerShell"
-  [Plattformübergreifende Befehlszeilenschnittstelle]: /de-de/documentation/articles/xplat-cli-azure-resource-manager.md "Plattformübergreifende Befehlszeilenschnittstelle"
   [Windows Management Framework 3.0]: http://www.microsoft.com/de-de/download/details.aspx?id=34595
   [Windows Management Framework 4.0]: http://www.microsoft.com/de-de/download/details.aspx?id=40855
   [Installieren und Konfigurieren von Windows Azure PowerShell]: http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell/
@@ -487,7 +485,6 @@ So erhalten Sie weitere Informationen zum Verwenden von Windows PowerShell mit d
   [Azure Resource Manager Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=394765
   [Azure Profile Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=394766
   [Switch-AzureMode]: http://go.microsoft.com/fwlink/?LinkID=394398
-  [1]: http://go.microsoft.com/fwlink/?LinkID=394765&clcid=0x409
   [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen]: http://azure.microsoft.com/de-de/documentation/articles/azure-preview-portal-using-resource-groups
   [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager]: http://www.windowsazure.com/de-de/documentation/articles/xplat-cli-azure-resource-manager/
   [Azure-Blog]: http://blogs.msdn.com/windowsazure

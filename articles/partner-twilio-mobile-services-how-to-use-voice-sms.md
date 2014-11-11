@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-twilio-for-voice-and-sms" pageTitle="Use Twilio for Voice and SMS Capabilities | Mobile Dev Center" metaKeywords="" description="Learn how to perform common tasks using the Twilio API with Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="How to use Twilio for voice and SMS capabilities from Mobile Services" authors="MicrosoftHelp@twilio.com" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="MicrosoftHelp@twilio.com"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="MicrosoftHelp@twilio.com" />
 
 # Verwenden von Twilio für Telefonie- und SMS-Funktionen aus Mobile Services
 
@@ -14,32 +14,32 @@ Twilio ist ein leistungsstarkes und zukunftsorientiertes Tool für die Unternehm
 
 ## <span id="Pricing"></span></a>Twilio-Preise und -Sonderangebote
 
-Azure-Kunden erhalten ein [Sonderangebot][]: eine Twilio-Gutschrift in Höhe von 10 US-Dollar bei einem Upgrade Ihres Twilio-Kontos. Diese Twilio-Gutschrift kann für jede beliebige Twilio-Nutzung ausgegeben werden (eine Gutschrift von 10 US-Dollar reicht für den Versand von 1.000 SMS-Nachrichten oder für bis zu 1.000 eingehende Telefonminuten, abhängig vom Standort der Telefonnummer und dem Nachrichten- oder Anrufziel). Lösen Sie diese Twilio-Gutschrift ein, und legen Sie los auf [ahoy.twilio.com/azure][Sonderangebot].
+Azure-Kunden erhalten ein [Sonderangebot][Sonderangebot]: eine Twilio-Gutschrift in Höhe von 10 US-Dollar bei einem Upgrade Ihres Twilio-Kontos. Diese Twilio-Gutschrift kann für jede beliebige Twilio-Nutzung ausgegeben werden (eine Gutschrift von 10 US-Dollar reicht für den Versand von 1.000 SMS-Nachrichten oder für bis zu 1.000 eingehende Telefonminuten, abhängig vom Standort der Telefonnummer und dem Nachrichten- oder Anrufziel). Lösen Sie diese Twilio-Gutschrift ein, und legen Sie los auf [ahoy.twilio.com/azure][Sonderangebot].
 
-Twilio ist ein Pay-as-you-go-Dienst, also vertragsungebunden. Es fallen keine Einrichtungsgebühren an, und Sie können Ihr Konto jederzeit schließen. Weitere Informationen finden Sie unter [Twilio-Preise][].
+Twilio ist ein Pay-as-you-go-Dienst, also vertragsungebunden. Es fallen keine Einrichtungsgebühren an, und Sie können Ihr Konto jederzeit schließen. Weitere Informationen finden Sie unter [Twilio-Preise][Twilio-Preise].
 
 ## <span id="Concepts"></span></a>Konzepte
 
-Die Twilio-API ist eine RESTful-API, die Telefonie- und SMS-Funktionen für Anwendungen bereitstellt. Clientbibliotheken stehen in mehreren Sprachen zur Verfügung; eine Liste finden Sie auf der Seite der [Twilio-API-Bibliotheken][]. Zusätzliche Lernprogramme für die Verwendung von Twilio in Azure-Anwendungen sind verfügbar für [.NET][], [node.js][], [Java][], [PHP][], [Python][] und [Ruby][].
+Die Twilio-API ist eine RESTful-API, die Telefonie- und SMS-Funktionen für Anwendungen bereitstellt. Clientbibliotheken stehen in mehreren Sprachen zur Verfügung; eine Liste finden Sie auf der Seite der [Twilio-API-Bibliotheken][Twilio-API-Bibliotheken]. Zusätzliche Lernprogramme für die Verwendung von Twilio in Azure-Anwendungen sind verfügbar für [.NET][.NET], [node.js][node.js], [Java][Java], [PHP][PHP], [Python][Python] und [Ruby][Ruby].
 
 Schlüsselaspekte der Twilio API sind Twilio-Verben und die Twilio Markup Language (TwiML).
 
 ### <span id="Verbs"></span></a>Twilio-Verben
 
-Die API verwendet Twilio-Verben; so weist beispielsweise das Verb **\<Say\>** Twilio an, ein Nachricht in einem Anruf akustisch zu übermitteln.
+Die API verwendet Twilio-Verben; so weist beispielsweise das Verb **&lt;Say&gt;** Twilio an, ein Nachricht in einem Anruf akustisch zu übermitteln.
 
-Nachfolgend finden Sie eine Liste mit Twilio-Verben. Andere Verben und Funktionen werden in der [Dokumentation zur Twilio Markup Language][] erläutert.
+Nachfolgend finden Sie eine Liste mit Twilio-Verben. Andere Verben und Funktionen werden in der [Dokumentation zur Twilio Markup Language][Dokumentation zur Twilio Markup Language] erläutert.
 
--   **\<Dial\>**: Verbindet den Anrufer mit einem anderen Telefon.
--   **\<Gather\>**: Erfasst Ziffern, die über die Telefontasten eingegeben werden.
--   **\<Hangup\>**: Beendet einen Anruf.
--   **\<Play\>**: Gibt eine Audiodatei wieder.
--   **\<Pause\>**: Wartet ohne Ton für eine angegebene Anzahl von Sekunden.
--   **\<Record\>**: Zeichnet die Stimme des Anrufers auf und gibt eine URL einer Datei mit der Aufzeichnung zurück.
--   **\<Redirect\>**: Überträgt die Steuerung eines Anrufs oder einer SMS an die TwiML an einer anderen URL.
--   **\<Reject\>**: Lehnt einen bei Ihrer Twilio-Nummer eingehenden Anruf ab, ohne dass Ihnen Kosten entstehen.
--   **\<Say\>**: Konvertiert Text in Sprache für einen Anruf.
--   **\<Sms\>**: Sendet eine SMS-Nachricht.
+-   **&lt;Dial&gt;**: Verbindet den Anrufer mit einem anderen Telefon.
+-   **&lt;Gather&gt;**: Erfasst Ziffern, die über die Telefontasten eingegeben werden.
+-   **&lt;Hangup&gt;**: Beendet einen Anruf.
+-   **&lt;Play&gt;**: Gibt eine Audiodatei wieder.
+-   **&lt;Pause&gt;**: Wartet ohne Ton für eine angegebene Anzahl von Sekunden.
+-   **&lt;Record&gt;**: Zeichnet die Stimme des Anrufers auf und gibt eine URL einer Datei mit der Aufzeichnung zurück.
+-   **&lt;Redirect&gt;**: Überträgt die Steuerung eines Anrufs oder einer SMS an die TwiML an einer anderen URL.
+-   **&lt;Reject&gt;**: Lehnt einen bei Ihrer Twilio-Nummer eingehenden Anruf ab, ohne dass Ihnen Kosten entstehen.
+-   **&lt;Say&gt;**: Konvertiert Text in Sprache für einen Anruf.
+-   **&lt;Sms&gt;**: Sendet eine SMS-Nachricht.
 
 ### <span id="TwiML"></span></a>TwiML
 
@@ -54,29 +54,29 @@ Die TwiML im folgenden Beispiel konvertiert den Text **Hello World** in Sprache.
 
 Wenn eine Anwendung die Twilio-API aufruft, ist einer der API-Parameter die URL, die die TwiML-Antwort zurückgibt. Zu Entwicklungszwecken können Sie die von Twilio zur Verfügung gestellten URLs verwenden, um die von Ihren Anwendungen verwendeten TwiML-Antworten bereitzustellen. Sie können auch Ihre eigenen URLs hosten, um TwiML-Antworten zu generieren; eine weitere Option ist die Verwendung des **TwiMLResponse**-Objekts.
 
-Nähere Informationen zu Twilio-Verben, ihren Attributen sowie TwiML finden Sie unter [TwiML][Dokumentation zur Twilio Markup Language]. Weitere Informationen zur Twilio-API finden Sie unter [Twilio-API][].
+Nähere Informationen zu Twilio-Verben, ihren Attributen sowie TwiML finden Sie unter [TwiML][Dokumentation zur Twilio Markup Language]. Weitere Informationen zur Twilio-API finden Sie unter [Twilio-API][Twilio-API].
 
 ## <span id="CreateAccount"></span></a>Erstellen eines Twilio-Kontos
 
-Wenn Sie ein Twilio-Konto erstellen möchten, melden Sie sich bei [Try Twilio][] an. Sie können mit einem kostenlosen Konto beginnen und später ein Upgrade vornehmen.
+Wenn Sie ein Twilio-Konto erstellen möchten, melden Sie sich bei [Try Twilio][Try Twilio] an. Sie können mit einem kostenlosen Konto beginnen und später ein Upgrade vornehmen.
 
-Wenn Sie sich für ein Twilio-Konto anmelden, erhalten Sie eine Konto-ID und ein Authentifizierungstoken. Beide Angaben benötigen Sie zum Tätigen von Twilio-API-Anrufen. Um den unbefugten Zugriff auf Ihr Konto zu verhindern, bewahren Sie Ihr Authentifizierungstoken sicher auf. Ihre Konto-ID und das Authentifizierungstoken können Sie auf der [Twilio-Kontoseite][] in den Feldern **ACCOUNT SID** bzw. **AUTH TOKEN** einsehen.
+Wenn Sie sich für ein Twilio-Konto anmelden, erhalten Sie eine Konto-ID und ein Authentifizierungstoken. Beide Angaben benötigen Sie zum Tätigen von Twilio-API-Anrufen. Um den unbefugten Zugriff auf Ihr Konto zu verhindern, bewahren Sie Ihr Authentifizierungstoken sicher auf. Ihre Konto-ID und das Authentifizierungstoken können Sie auf der [Twilio-Kontoseite][Twilio-Kontoseite] in den Feldern **ACCOUNT SID** bzw. **AUTH TOKEN** einsehen.
 
 ## <span id="VerifyPhoneNumbers"></span></a>Überprüfen von Telefonnummern
 
-Verschiedene Telefonnummern müssen bei Twilio für Ihr Konto verifiziert werden. Wenn Sie beispielsweise ausgehende Telefonate tätigen möchten, muss die Telefonnummer als ausgehende Anrufer-ID bei Twilio verifiziert werden. Wenn Sie SMS-Nachrichten an eine Telefonnummer senden möchten, muss entsprechend die Telefonnummer des Empfängers bei Twilio verifiziert werden. Informationen zum Überprüfen von Telefonnummern finden Sie unter [Manage Numbers][]. In einigen der folgenden Codebeispiele werden Telefonnummern verwendet, die Sie bei Twilio verifizieren müssen.
+Verschiedene Telefonnummern müssen bei Twilio für Ihr Konto verifiziert werden. Wenn Sie beispielsweise ausgehende Telefonate tätigen möchten, muss die Telefonnummer als ausgehende Anrufer-ID bei Twilio verifiziert werden. Wenn Sie SMS-Nachrichten an eine Telefonnummer senden möchten, muss entsprechend die Telefonnummer des Empfängers bei Twilio verifiziert werden. Informationen zum Überprüfen von Telefonnummern finden Sie unter [Manage Numbers][Manage Numbers]. In einigen der folgenden Codebeispiele werden Telefonnummern verwendet, die Sie bei Twilio verifizieren müssen.
 
-Alternativ zur Verwendung einer vorhandenen Telefonnummer für Ihre Anwendungen besteht die Möglichkeit, eine Twilio-Telefonnummer zu kaufen. Informationen zum Kaufen einer Twilio-Telefonnummer finden Sie in der [Twilio-Hilfe zu Telefonnummern][] (in englischer Sprache).
+Alternativ zur Verwendung einer vorhandenen Telefonnummer für Ihre Anwendungen besteht die Möglichkeit, eine Twilio-Telefonnummer zu kaufen. Informationen zum Kaufen einer Twilio-Telefonnummer finden Sie in der [Twilio-Hilfe zu Telefonnummern][Twilio-Hilfe zu Telefonnummern] (in englischer Sprache).
 
 ## <span id="create_app"></span></a>Erstellen eines Mobile Service
 
-Ein Mobile Service, der eine Twilio-fähige Anwendung hostet, unterscheidet sich nicht von anderen Mobile Services. Sie fügen einfach die Twilio Node.js-Bibliothek hinzu, um aus Ihren benutzerdefinierten Mobile Services API-Skripts auf diese Bibliothek verweisen zu können. Weitere Informationen zur Erstellung Ihres ersten Mobile Service finden Sie unter [Erste Schritte mit Mobile Services][].
+Ein Mobile Service, der eine Twilio-fähige Anwendung hostet, unterscheidet sich nicht von anderen Mobile Services. Sie fügen einfach die Twilio Node.js-Bibliothek hinzu, um aus Ihren benutzerdefinierten Mobile Services API-Skripts auf diese Bibliothek verweisen zu können. Weitere Informationen zur Erstellung Ihres ersten Mobile Service finden Sie unter [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services].
 
 ## <span id="VerifyPhoneNumbers"></span></a>Konfigurieren des Mobile Service für die Verwendung der Twilio Node.js-Bibliothek
 
 Twilio stellt eine Node.js-Bibliothek zur Verfügung, die verschiedene Aspekte von Twilio abdeckt, um eine einfache und problemlose Interaktion mit der Twilio-REST-API und dem Twilio-Client zum Generieren von TwiML-Antworten zu bieten.
 
-Sie müssen das npm-Modul von Mobile Services verwenden, um die Twilio Node.js-Bibliothek in Ihrem Mobile Service nutzen zu können. Legen Sie Ihre Skripts dazu in einer Quellcodeverwaltung ab. Das Lernprogramm [Speichern von Skripts in der Quellcodeverwaltung][] beschreibt die Einrichtung der Quellcodeverwaltung für Ihren Mobile Service und die Speicherung Ihrer Serverskripts in einem Git-Repository.
+Sie müssen das npm-Modul von Mobile Services verwenden, um die Twilio Node.js-Bibliothek in Ihrem Mobile Service nutzen zu können. Legen Sie Ihre Skripts dazu in einer Quellcodeverwaltung ab. Das Lernprogramm [Speichern von Skripts in der Quellcodeverwaltung][Speichern von Skripts in der Quellcodeverwaltung] beschreibt die Einrichtung der Quellcodeverwaltung für Ihren Mobile Service und die Speicherung Ihrer Serverskripts in einem Git-Repository.
 
 Nachdem Sie die Quellcodeverwaltung für Ihren Mobile Service eingerichtet haben, öffnen Sie die Registerkarte Configure im Dashboard Ihres Mobile Service und kopieren Sie die Git-URL
 
@@ -92,7 +92,7 @@ to:
 
 Geben Sie bei Aufforderung die Anmeldeinformationen ein, die Sie bei der Einrichtung der Quellcodeverwaltung angegeben haben. Nach der Anmeldung wird die Azure Mobile Services-Konsole angezeigt.
 
-![Mobile Services-Konsole][]
+![Mobile Services-Konsole][Mobile Services-Konsole]
 
 Wechseln Sie in der Konsole anschließend in den scripts-Ordner:
 
@@ -125,9 +125,9 @@ Das folgende Skript zeigt, wie Sie mit der **makeCall**-Funktion einen ausgehend
         });
     };
 
-Weitere Informationen zu den an die **client.makeCall**-Funktion übergebenen Parametern finden Sie unter [][]<http://www.twilio.com/docs/api/rest/making-calls></a>.
+Weitere Informationen zu den an die **client.makeCall**-Funktion übergebenen Parametern finden Sie unter [http://www.twilio.com/docs/api/rest/making-calls][http://www.twilio.com/docs/api/rest/making-calls].
 
-Wie bereits erwähnt, verwendet dieser Code eine von Twilio bereitgestellte Website für die Rückgabe der TwiML-Antwort. Stattdessen können Sie die TwiML-Antwort auch von Ihrer eigenen Website bereitstellen lassen. Weitere Informationen finden Sie unter [Gewusst wie: Bereitstellen von TwiML-Antworten von der eigenen Website][].
+Wie bereits erwähnt, verwendet dieser Code eine von Twilio bereitgestellte Website für die Rückgabe der TwiML-Antwort. Stattdessen können Sie die TwiML-Antwort auch von Ihrer eigenen Website bereitstellen lassen. Weitere Informationen finden Sie unter [Gewusst wie: Bereitstellen von TwiML-Antworten von der eigenen Website][Gewusst wie: Bereitstellen von TwiML-Antworten von der eigenen Website].
 
 ## <span id="howto_send_sms"></span></a>Gewusst wie: Senden einer SMS-Nachricht
 
@@ -180,7 +180,7 @@ Das folgende Skript erstellt eine TwiML-Antwort, die beim Anruf Hello World sagt
         response.send(200, resp.toString());
     };
 
-Weitere Informationen zu TwiML finden Sie auf [][1]<https://www.twilio.com/docs/api/twiml></a>.
+Weitere Informationen zu TwiML finden Sie auf [https://www.twilio.com/docs/api/twiml][1].
 
 Nachdem Sie die URL zur Bereitstellung von TwiML-Antworten eingerichtet haben, können Sie diese URL wie hier gezeigt an die **client.makeCall**-Methode übergeben:
 
@@ -202,7 +202,7 @@ Nachdem Sie die URL zur Bereitstellung von TwiML-Antworten eingerichtet haben, k
         });
     };
 
-[WACOM.INCLUDE [twilio\_additional\_services\_and\_next\_steps][]]
+[WACOM.INCLUDE [twilio_additional_services_and_next_steps](../includes/twilio_additional_services_and_next_steps.md)]
 
   [Sonderangebot]: http://ahoy.twilio.com/azure
   [Twilio-Preise]: http://www.twilio.com/pricing
@@ -222,9 +222,7 @@ Nachdem Sie die URL zur Bereitstellung von TwiML-Antworten eingerichtet haben, k
   [Erste Schritte mit Mobile Services]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started/
   [Speichern von Skripts in der Quellcodeverwaltung]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/store-scripts-in-source-control/
   [Mobile Services-Konsole]: ./media/partner-twilio-mobile-services-how-to-use-voice-sms/twilio-kuduconsole.png
-  []: http://www.twilio.com/docs/api/rest/making-calls
+  [http://www.twilio.com/docs/api/rest/making-calls]: http://www.twilio.com/docs/api/rest/making-calls
   [Gewusst wie: Bereitstellen von TwiML-Antworten von der eigenen Website]: #howto_provide_twiml_responses
-  [twimlet\_message\_url]: http://twimlets.com/message
-  [twimlet\_message\_url\_hello\_world]: http://twimlets.com/message?Message%5B0%5D=Hello%20World
   [1]: https://www.twilio.com/docs/api/twiml
-  [twilio\_additional\_services\_and\_next\_steps]: ../includes/twilio_additional_services_and_next_steps.md
+  [twilio_additional_services_and_next_steps]: ../includes/twilio_additional_services_and_next_steps.md

@@ -7,36 +7,36 @@
 In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Window
 Azure-Tabellenspeicherdienst demonstriert. Die Beispiele wurden mit der Ruby-API erstellt. Die behandelten Szenarien umfassen das **Erstellen und Löschen
 einer Tabelle sowie das Einfügen und Abfragen von Tabellenentitäten**. Weitere
-Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte][].
+Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
 ## Inhaltsverzeichnis
 
--   [Was ist der Tabellenspeicherdienst?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen einer Ruby-Anwendung][]
--   [Konfigurieren der Anwendung für den Speicherzugriff][]
--   [Einrichten einer Azure-Speicherverbindung][]
--   [Gewusst wie: Erstellen einer Tabelle][]
--   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][]
--   [Gewusst wie: Aktualisieren einer Entität][]
--   [Gewusst wie: Arbeiten mit Gruppen von Entitäten][]
--   [Gewusst wie: Abfragen einer Entität][]
--   [Gewusst wie: Abfragen einer Gruppe von Entitäten][]
--   [Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften][]
--   [Gewusst wie: Löschen einer Entität][]
--   [Gewusst wie: Löschen einer Tabelle][]
--   [Nächste Schritte][]
+-   [Was ist der Tabellenspeicherdienst?][Was ist der Tabellenspeicherdienst?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Erstellen einer Ruby-Anwendung][Erstellen einer Ruby-Anwendung]
+-   [Konfigurieren der Anwendung für den Speicherzugriff][Konfigurieren der Anwendung für den Speicherzugriff]
+-   [Einrichten einer Azure-Speicherverbindung][Einrichten einer Azure-Speicherverbindung]
+-   [Gewusst wie: Erstellen einer Tabelle][Gewusst wie: Erstellen einer Tabelle]
+-   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][Gewusst wie: Hinzufügen einer Entität zu einer Tabelle]
+-   [Gewusst wie: Aktualisieren einer Entität][Gewusst wie: Aktualisieren einer Entität]
+-   [Gewusst wie: Arbeiten mit Gruppen von Entitäten][Gewusst wie: Arbeiten mit Gruppen von Entitäten]
+-   [Gewusst wie: Abfragen einer Entität][Gewusst wie: Abfragen einer Entität]
+-   [Gewusst wie: Abfragen einer Gruppe von Entitäten][Gewusst wie: Abfragen einer Gruppe von Entitäten]
+-   [Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften][Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften]
+-   [Gewusst wie: Löschen einer Entität][Gewusst wie: Löschen einer Entität]
+-   [Gewusst wie: Löschen einer Tabelle][Gewusst wie: Löschen einer Tabelle]
+-   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [howto-table-storage][]]
+[WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
 
 ## <span id="create-a-windows-azure-storage-account"></span></a>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <span id="create-a-ruby-application"></span></a>Erstellen einer Ruby-Anwendung
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie im Thema zum [Erstellen einer Ruby-Anwendung in Azure][].
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie im Thema zum [Erstellen einer Ruby-Anwendung in Azure][Erstellen einer Ruby-Anwendung in Azure].
 
 ## <span id="configure-your-application-to-access-storage"></span></a>Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -64,7 +64,7 @@ Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **A
 
 So rufen Sie diese Werte ab:
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
 2.  Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
 
@@ -160,12 +160,11 @@ Um eine Tabelle zu löschen, verwenden Sie die **delete\_table()**-Methode, und 
 
 Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
--   Besuchen Sie den [Blog des Azure-Speicherteams][]
--   Besuchen Sie das [Azure SDK for Ruby][]-Repository auf GitHub
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure]
+-   Besuchen Sie den [Blog des Azure-Speicherteams][Blog des Azure-Speicherteams]
+-   Besuchen Sie das [Azure SDK for Ruby][Azure SDK for Ruby]-Repository auf GitHub
 
   [Nächste Schritte]: #next-steps
-  [Was ist der Tabellenspeicherdienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-a-windows-azure-storage-account
   [Erstellen einer Ruby-Anwendung]: #create-a-ruby-application
@@ -182,8 +181,8 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
   [Gewusst wie: Löschen einer Tabelle]: #how-to-delete-a-table
   [howto-table-storage]: ../includes/howto-table-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
-  [Erstellen einer Ruby-Anwendung in Azure]: /en-us/develop/ruby/tutorials/web-app-with-linux-vm/
+  [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure SDK for Ruby]: http://github.com/WindowsAzure/azure-sdk-for-ruby

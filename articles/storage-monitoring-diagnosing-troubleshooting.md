@@ -1,6 +1,6 @@
 <properties title="Monitor, diagnose, and troubleshoot Microsoft Azure Storage" pageTitle="Monitor, diagnose, and troubleshoot Storage | Azure" description="Use features such as storage analytics, client-side logging, and other third-party tools to identify, diagnose, and troubleshoot Azure Storage-related issues." metaKeywords="Azure storage  monitoring  diagnosing  logging  troubleshooting  performance  storage client library  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage  Azure file storage  Azure file  Azure file share  Azure" services="storage" solutions="" documentationCenter="" authors="v-dobett" videoId="" scriptId="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/03/2014" ms.author="v-dobett"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/03/2014" ms.author="v-dobett" />
 
 # Microsoft Azure-Speicher: Überwachung, Diagnose und Problembehandlung
 
@@ -79,7 +79,7 @@ Die "[Anhänge]" enthalten Informationen zur Verwendung anderer Tools wie Wiresh
 
 ## <a name="monitoring-your-storage-service"></a>Überwachung Ihres Speicherdiensts
 
-Wenn Sie mit der Windows-Leistungsüberwachung vertraut sind, können Sie von Speichermetriken als einem Azure-Speicher-Pendant zu Windows-Leistungsüberwachungsindikatoren ausgehen. In Speichermetriken finden Sie einen umfassenden Metriksatz (Indikatoren in der Windows Performance Monitor-Terminologie) wie Dienstverfügbarkeit, Gesamtzahl der Dienstanfragen, oder Prozentsatz der erfolgreichen Dienstanfragen (für eine vollständige Liste der verfügbaren Metriken siehe <a href="http://msdn.microsoft.com/en-us/library/azure/hh343264.aspx" target="_blank">Tabellenschema der Speicher-Analytikmetriken</a> in MSDN). Sie können spezifizieren, ob der Speicherdienst die Metriken jede Stunde oder jede Minute sammeln und aggregieren soll. Weitere Informationen zur Metrik-Aktivierung und Überwachung Ihrer Speicherkonten finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=510865" target="_blank">Aktivierung von Speichermetriken</a> in MSDN.
+Wenn Sie mit der Windows-Leistungsüberwachung vertraut sind, können Sie von Speichermetriken als einem Azure-Speicher-Pendant zu Windows-Leistungsüberwachungsindikatoren ausgehen. In Speichermetriken finden Sie einen umfassenden Metriksatz (Indikatoren in der Windows Performance Monitor-Terminologie) wie Dienstverfügbarkeit, Gesamtzahl der Dienstanfragen, oder Prozentsatz der erfolgreichen Dienstanfragen (für eine vollständige Liste der verfügbaren Metriken siehe <a href="http://msdn.microsoft.com/de-de/library/azure/hh343264.aspx" target="_blank">Tabellenschema der Speicher-Analytikmetriken</a> in MSDN). Sie können spezifizieren, ob der Speicherdienst die Metriken jede Stunde oder jede Minute sammeln und aggregieren soll. Weitere Informationen zur Metrik-Aktivierung und Überwachung Ihrer Speicherkonten finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=510865" target="_blank">Aktivierung von Speichermetriken</a> in MSDN.
 
 Sie können wählen, welche Stundenmetriken Sie im Azure-Portal anzeigen möchten, und Regeln konfigurieren, die den Administrator per E-Mail benachrichtigen, wenn eine Stundenmetrik einen bestimmten Schwellenwert überschreitet (weitere Informationen finden Sie auf der Seite <a href="http://msdn.microsoft.com/library/azure/dn306638.aspx" target="_blank">Gewusst wie: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure</a>. Der Speicherdienst sammelt Metriken nach dem Best-Effort-Prinzip, kann aber nicht jeden Speichervorgang aufzeichnen.
 
@@ -113,7 +113,7 @@ Während das Portal Zustandsinformationen innerhalb der Azure-Rechenzentren (Ins
 
 ### <a name="monitoring-capacity"></a>Kapazitätsüberwachung
 
-Speichermetriken speichern nur Kapazitätsmetriken für den Blob-Dienst, weil Blobs in der Regel den größten Teil der gespeicherten Daten ausmachen. (Es ist zum Redaktionszeitpunkt nicht möglich, Speichermetriken zu verwenden, um die Kapazität Ihrer Tabellen und Warteschlangen zu überwachen.) Sie finden diese Daten in der Tabelle **$MetricsCapacityBlob**, wenn Sie die Überwachung für den Blob-Dienst aktiviert haben. Speichermetriken zeichnen diese Daten einmal täglich auf, und Sie können den Wert des **RowKey** verwenden, um zu bestimmen, ob die Zeile eine Entität enthält, die sich auf Benutzerdaten (Wert **data**) oder Analysedaten (Wert **analytics**) bezieht. Jede gespeicherte Entität enthält Informationen zum verwendeten Speicheranteil (**Capacity**, gemessen in Byte) und die im Speicherkonto verwendete aktuelle Containerzahl (**ContainerCount**) sowie Blobs (**ObjectCount**). Weitere Informationen über die in der Tabelle **$MetricsCapacityBlob** gespeicherten Kapazitätsmetriken finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/azure/hh343264.aspx" target="_blank">Tabellenschema der Speicher-Analytikmetriken</a> in MSDN.
+Speichermetriken speichern nur Kapazitätsmetriken für den Blob-Dienst, weil Blobs in der Regel den größten Teil der gespeicherten Daten ausmachen. (Es ist zum Redaktionszeitpunkt nicht möglich, Speichermetriken zu verwenden, um die Kapazität Ihrer Tabellen und Warteschlangen zu überwachen.) Sie finden diese Daten in der Tabelle **$MetricsCapacityBlob**, wenn Sie die Überwachung für den Blob-Dienst aktiviert haben. Speichermetriken zeichnen diese Daten einmal täglich auf, und Sie können den Wert des **RowKey** verwenden, um zu bestimmen, ob die Zeile eine Entität enthält, die sich auf Benutzerdaten (Wert **data**) oder Analysedaten (Wert **analytics**) bezieht. Jede gespeicherte Entität enthält Informationen zum verwendeten Speicheranteil (**Capacity**, gemessen in Byte) und die im Speicherkonto verwendete aktuelle Containerzahl (**ContainerCount**) sowie Blobs (**ObjectCount**). Weitere Informationen über die in der Tabelle **$MetricsCapacityBlob** gespeicherten Kapazitätsmetriken finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/azure/hh343264.aspx" target="_blank">Tabellenschema der Speicher-Analytikmetriken</a> in MSDN.
 
 > [WACOM.NOTE] Sie sollten diese Werte überwachen, um früh zu erkennen, dass Sie sich den Kapazitätsgrenzen Ihres Speicherkontos nähern. Auf der Seite **Überwachung** für Ihr Speicherkonto im Azure-Portal können Sie Warnregeln hinzufügen, um benachrichtigt zu werden, wenn die Gesamtspeichernutzung die von Ihnen festgelegten Grenzwerte über- oder unterschreitet.
 
@@ -123,7 +123,7 @@ Hilfe für die Schätzung der Größe der verschiedenen Speicherobjekte wie Blob
 
 Sie sollten die Verfügbarkeit des Speicherdiensts in Ihrem Speicherkonto überwachen, indem Sie den Wert in der Spalte **Availability** in den Stunden- oder Minutenmetriken-Tabellen überwachen – **$MetricsHourPrimaryTransactionsBlob**, **$MetricsHourPrimaryTransactionsTable**, **$MetricsHourPrimaryTransactionsQueue**, **$MetricsMinutePrimaryTransactionsBlob**, **$MetricsMinutePrimaryTransactionsTable**, **$MetricsMinutePrimaryTransactionsQueue**, **$MetricsCapacityBlob**. Die Spalte **Availability** enthält einen Prozentwert, der die Verfügbarkeit des Diensts oder der API-Operation in der jeweiligen Zeile darstellt. (Der **RowKey** zeigt an, ob die Zeile Metriken für den Dienst insgesamt oder für eine bestimmte API-Operation enthält.)
 
-Jeder unter 100 % liegende Wert zeigt an, dass einige Speicheranfragen fehlschlagen. Sie können sehen, warum sie fehlschlagen, indem Sie die anderen Spalten in den Metrikdaten untersuchen, in denen die Anzahl der Anfragen nach verschiedenen Fehlerarten angezeigt wird, wie **ServerTimeoutError**. Sie müssen mit dem vorübergehenden Absinken der **Verfügbarkeit** unter 100 % aufgrund vorübergehender Server-Timeouts rechnen, wenn der Server Partitionen bewegt, um eine bessere Lastverteilung der Anfragen durchzuführen. Die Wiederholungslogik in Ihrer Clientanwendung sollte solche intermittierenden Bedingungen handhaben. Die Seite <a href="http://msdn.microsoft.com/en-us/library/azure/hh343260.aspx" target="_blank"></a> führt die Transaktionsarten auf, die die Speichermetriken in ihrer **Verfügbarkeits**-Berechnung beinhalten.
+Jeder unter 100 % liegende Wert zeigt an, dass einige Speicheranfragen fehlschlagen. Sie können sehen, warum sie fehlschlagen, indem Sie die anderen Spalten in den Metrikdaten untersuchen, in denen die Anzahl der Anfragen nach verschiedenen Fehlerarten angezeigt wird, wie **ServerTimeoutError**. Sie müssen mit dem vorübergehenden Absinken der **Verfügbarkeit** unter 100 % aufgrund vorübergehender Server-Timeouts rechnen, wenn der Server Partitionen bewegt, um eine bessere Lastverteilung der Anfragen durchzuführen. Die Wiederholungslogik in Ihrer Clientanwendung sollte solche intermittierenden Bedingungen handhaben. Die Seite <a href="http://msdn.microsoft.com/de-de/library/azure/hh343260.aspx" target="_blank"></a> führt die Transaktionsarten auf, die die Speichermetriken in ihrer **Verfügbarkeits**-Berechnung beinhalten.
 
 Auf der Seite **Überwachung** für Ihr Speicherkonto im Azure-Portal können Sie Warnregeln hinzufügen, um benachrichtigt zu werden, wenn die **Verfügbarkeit** den von Ihnen festgelegten Grenzwert unterschreitet.
 
@@ -181,10 +181,10 @@ Benutzer Ihrer Anwendung können Sie über Fehler informieren, die von der Clien
 
 Die folgenden Ressourcen in MSDN sind nützlich für das Verständnis von speicherbezogenem Status und Fehlercodes:
 
-- <a href="http://msdn.microsoft.com/en-us/library/azure/dd179357.aspx" target="_blank">Bekannte REST API-Fehlercodes</a>
-- <a href="http://msdn.microsoft.com/en-us/library/azure/dd179439.aspx" target="_blank">Blob-Dienst-Fehlercodes</a>
-- <a href="http://msdn.microsoft.com/en-us/library/azure/dd179446.aspx" target="_blank">Warteschlangendienst-Fehlercodes</a>
-- <a href="http://msdn.microsoft.com/en-us/library/azure/dd179438.aspx" target="_blank">Tabellendienst-Fehlercodes</a>
+- <a href="http://msdn.microsoft.com/de-de/library/azure/dd179357.aspx" target="_blank">Bekannte REST API-Fehlercodes</a>
+- <a href="http://msdn.microsoft.com/de-de/library/azure/dd179439.aspx" target="_blank">Blob-Dienst-Fehlercodes</a>
+- <a href="http://msdn.microsoft.com/de-de/library/azure/dd179446.aspx" target="_blank">Warteschlangendienst-Fehlercodes</a>
+- <a href="http://msdn.microsoft.com/de-de/library/azure/dd179438.aspx" target="_blank">Tabellendienst-Fehlercodes</a>
 
 ### <a name="storage-emulator-issues"></a>Probleme mit dem Speicheremulator
 
@@ -205,7 +205,7 @@ Mit der Speicher-Clientbibliothek für .NET können Sie clientseitige Protokolli
 Sie können den Verkehr zwischen Client und Server erfassen, um detaillierte Informationen über die Daten, die Client und Server austauschen, und die zugrunde liegenden Netzwerkbedingungen bereitzustellen. Nützliche Netzwerkprotokollierungstools sind:
 
 -   Fiddler (<a href="http://www.telerik.com/fiddler" target="_blank">http://www.telerik.com/fiddler</a>) ist ein kostenloser Web Debugging Proxy, mit dem Sie die Header und Nutzlastdaten von HTTP- und HTTPS-Anfrage- und Antwortnachrichten untersuchen können. Weitere Informationen finden Sie unter "[Anhang 1: Verwendung von Fiddler zur Erfassung von HTTP- und HTTPS-Verkehr]".
--   Microsoft Network Monitor (Netmon) (<a href="http://www.microsoft.com/en-us/download/details.aspx?id=4865" target="_blank">http://www.microsoft.com/en-us/download/details.aspx?id=4865</a>) und Wireshark (<a href="http://www.wireshark.org/" target="_blank">http://www.wireshark.org/</a>) sind kostenlose Netzwerkprotokollanalysatoren, mit denen Sie detaillierte Paketinformationen für eine Vielzahl von Netzwerkprotokollen anzeigen können. Weitere Informationen zu Wireshark finden Sie unter "[Anhang 2: Verwendung von Wireshark zur Erfassung von Netzwerkverkehr]".
+-   Microsoft Network Monitor (Netmon) (<a href="http://www.microsoft.com/de-de/download/details.aspx?id=4865" target="_blank">http://www.microsoft.com/de-de/download/details.aspx?id=4865</a>) und Wireshark (<a href="http://www.wireshark.org/" target="_blank">http://www.wireshark.org/</a>) sind kostenlose Netzwerkprotokollanalysatoren, mit denen Sie detaillierte Paketinformationen für eine Vielzahl von Netzwerkprotokollen anzeigen können. Weitere Informationen zu Wireshark finden Sie unter "[Anhang 2: Verwendung von Wireshark zur Erfassung von Netzwerkverkehr]".
 -   Microsoft Message Analyzer ist ein Tool von Microsoft, das Netmon ersetzt und Sie zusätzlich zur Erfassung von Netzwerkpaketdaten bei der Anzeige und Analyse von Protokollierungsdaten unterstützt, die von anderen Tools erfasst werden. Weitere Informationen finden Sie unter "[Anhang 3: Verwendung von Microsoft Message Analyzer zur Erfassung von Netzwerkverkehr]".
 -   Wenn Sie einen Basis-Konnektivitätstest durchführen möchten, um zu überprüfen, ob sich der Client-Computer über das Netzwerk mit dem Azure-Speicherdienst verbinden kann, können Sie dazu nicht das standardmäßige **Ping**-Tool auf dem Client verwenden. Dennoch können Sie das Tool **TCPing** zur Überprüfung der Konnektivität verwenden. **TCPing** steht zum Download unter <a href="http://www.elifulkerson.com/projects/tcping.php" target="_blank">http://www.elifulkerson.com/projects/tcping.php</a> zur Verfügung.
 
@@ -355,7 +355,7 @@ Für den Tabellen- und Warteschlangendienst kann der Nagle-Algorithmus auch höh
     ServicePoint queueServicePoint = ServicePointManager.FindServicePoint(storageAccount.QueueEndpoint);
     queueServicePoint.UseNagleAlgorithm = false;
 
-Sie sollten die clientseitigen Protokollierungen überprüfen, um zu sehen, wie viele Anfragen Ihre Clientanwendung übermittelt, und allgemeine .NET- bezogene Leistungsengpässe in Ihrem Client wie CPU, .NET Garbage Collection, Netzwerkauslastung oder Speicher überprüfen (als Ausgangspunkt für die Fehlerbehandlung bei .NET-Clientanwendungen siehe <a href="http://msdn.microsoft.com/en-us/library/7fe0dd2y(v=vs.110).aspx" target="_blank">Debuggen, Verfolgung und Profiling</a> in MSDN).
+Sie sollten die clientseitigen Protokollierungen überprüfen, um zu sehen, wie viele Anfragen Ihre Clientanwendung übermittelt, und allgemeine .NET- bezogene Leistungsengpässe in Ihrem Client wie CPU, .NET Garbage Collection, Netzwerkauslastung oder Speicher überprüfen (als Ausgangspunkt für die Fehlerbehandlung bei .NET-Clientanwendungen siehe <a href="http://msdn.microsoft.com/de-de/library/7fe0dd2y(v=vs.110).aspx" target="_blank">Debuggen, Verfolgung und Profiling</a> in MSDN).
 
 #### Untersuchung von Netzwerklatenzproblemen
 
@@ -410,7 +410,7 @@ Ein Anstieg bei **PercentThrottlingError** erfolgt oft gleichzeitig mit einem An
 
 #### <a name="transient-increase-in-PercentThrottlingError"></a>Vorübergehender Anstieg bei PercentThrottlingError
 
-Im Fall der Übereinstimmung der Wertespitzen von **PercentThrottlingError** mit Zeiträumen hoher Aktivität für die Anwendung sollten Sie eine exponentielle (nicht lineare) Backoff-Strategie für Wiederholungen in Ihrem Client implementieren: Dies wird die sofortige Auslastung auf der Partition reduzieren und Ihre Anwendung beim Ausgleich von Verkehrsspitzen unterstützen. Weitere Informationen zur Implementierung von Wiederholungsrichtlinien unter Verwendung der Speicher-Clientbibliothek finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.retrypolicies.aspx" target="_blank">Microsoft.WindowsAzure.Storage.RetryPolicies Namespace</a> in MSDN.
+Im Fall der Übereinstimmung der Wertespitzen von **PercentThrottlingError** mit Zeiträumen hoher Aktivität für die Anwendung sollten Sie eine exponentielle (nicht lineare) Backoff-Strategie für Wiederholungen in Ihrem Client implementieren: Dies wird die sofortige Auslastung auf der Partition reduzieren und Ihre Anwendung beim Ausgleich von Verkehrsspitzen unterstützen. Weitere Informationen zur Implementierung von Wiederholungsrichtlinien unter Verwendung der Speicher-Clientbibliothek finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.storage.retrypolicies.aspx" target="_blank">Microsoft.WindowsAzure.Storage.RetryPolicies Namespace</a> in MSDN.
 
 > [WACOM.NOTE] Es können auch Spitzen in den Werten von **PercentThrottlingError** auftreten, die nicht mit Zeiträumen hoher Aktivität für die Anwendung übereinstimmen. Die wahrscheinlichste Ursache ist hier die Verschiebung von Partitionen durch den Speicherdienst zur Verbesserung des Lastausgleichs.
 
@@ -446,22 +446,31 @@ Die häufigste Ursache für diesen Fehler ist eine Trennung der Client-Verbindun
 
 Wenn Ihre Clientanwendung einen HTTP 403 (Verboten)-Fehler ausgibt, ist eine wahrscheinliche Ursache, dass der Client eine abgelaufene Shared Access Signature (SAS) verwendet, wenn er eine Speicheranfrage versendet. (Weitere mögliche Ursachen sind Zeitverzögerung, ungültige Schlüssel und leere Header). Wenn ein abgelaufener Schlüssel die Ursache ist, werden Sie keine Einträge in den serverseitigen Speicherprotokollierungsdaten finden. Die folgende Tabelle zeigt ein Beispiel für eine von der Speicher-Clientbibliothek generierte Clientprotokollierung, die folgende Problemstellung veranschaulicht:
 
-|--------------------------------|---------------------|---------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Quelle**                     | **Ausführlichkeit** | **Ausführlichkeit** | **Clientanfrage-ID** | **Vorgangstext**                                                                                                                                                          |
-| Microsoft.WindowsAzure.Storage | Information         | 3                   | 85d077ab-…           | Vorgang mit Primärspeicherort pro Speicherortmodus PrimaryOnly starten.                                                                                                   |
-| Microsoft.WindowsAzure.Storage | Information         | 3                   | 85d077ab-…           | Synchronanfrage starten an https://domemaildist.blob.core.windows.netazure                                                                                                
+<table><tr><td><b>Quelle</b></td><td>Ausführlichkeit</b></td><td><b>Ausführlichkeit</b></td><td><b>Clientanfrage-ID</b></td><td><b>Vorgangstext</b></td></tr>
+<tr><td> Microsoft.WindowsAzure.Storage </td><td> Information </td><td> 3                   </td><td> 85d077ab-… </td><td>Vorgang mit Primärspeicherort pro Speicherortmodus PrimaryOnly starten. </td></tr>
+
+<tr><td>Microsoft.WindowsAzure.Storage </td><td> Information </td><td> 3                   </td><td> 85d077ab-… </td><td> Synchronanfrage starten an https://domemaildist.blob.core.windows.netazure                                                                                                
                                                                                                      imblobcontainer/blobCreatedViaSAS.txt?                                                                                                                                     
                                                                                                      sv=2014-02-14&sr=c&si=mypolicy                                                                                                                                             
                                                                                                      &sig=OFnd4Rd7z01fIvh%                                                                                                                                                      
                                                                                                      2BmcR6zbudIH2F5Ikm%                                                                                                                                                        
-                                                                                                     2FyhNYZEmJNQ%3D&api-version=2014-02-14.                                                                                                                                    |
-| Microsoft.WindowsAzure.Storage | Information         | 3                   | 85d077ab-…           | Warten auf Antwort.                                                                                                                                                       |
-| Microsoft.WindowsAzure.Storage | Warnung             | 2                   | 85d077ab-…           | Beim Warten auf Antwort ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (403) Verboten.                                                           |
-| Microsoft.WindowsAzure.Storage | Information         | 3                   | 85d077ab-…           | Antwort erhalten. Statuscode = 403, Anfrage-ID = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d, Content-MD5 = , ETag = .                                                           |
-| Microsoft.WindowsAzure.Storage | Warnung             | 2                   | 85d077ab-…           | Während des Vorgangs ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (403) Verboten.                                                              |
-| Microsoft.WindowsAzure.Storage | Information         | 3                   | 85d077ab-…           | Prüfung, ob Vorgang wiederholt werden sollte. Wiederholungsanzahl = 0, HTTP-Statuscode = 403, Ausnahme = Der Remoteserver hat einen Fehler zurückgegeben: (403) Verboten. |
-| Microsoft.WindowsAzure.Storage | Information         | 3                   | 85d077ab-…           | Der nächste Speicherort wurde auf Primär gesetzt, basierend auf dem Speicherortmodus.                                                                                     |
-| Microsoft.WindowsAzure.Storage | Fehler              | 1                   | 85d077ab-…           | Wiederholungsrichtlinie hat keinen erneuten Versuch erlaubt. Scheitern mit: Der Remoteserver hat einen Fehler zurückgeliefert: (403) Verboten.                            |
+                                                                                                     2FyhNYZEmJNQ%3D&api-version=2014-02-14.                                                                                                                                    </td></tr>
+
+<tr><td> Microsoft.WindowsAzure.Storage </td><td> Information</td><td> 3 </td><td> 85d077ab-…      </td><td> Warten auf Antwort.                                                                                                                                                       </td></tr>
+
+<tr><td> Microsoft.WindowsAzure.Storage </td><td> Warnung  </td><td>2   </td><td>85d077ab-…         </td><td> Beim Warten auf Antwort ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (403) Verboten.                                                           </td></tr>
+
+<tr><td> Microsoft.WindowsAzure.Storage </td><td> Information </td><td> 3                   </td><td>85d077ab-…  </td><td> Antwort erhalten. Statuscode = 403, Anfrage-ID = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d, Content-MD5 = , ETag = .                                                           </td></tr>
+
+<tr><td> Microsoft.WindowsAzure.Storage </td><td> Warnung   </td><td> 2                   </td><td>85d077ab-…         </td><td> Während des Vorgangs ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (403) Verboten.                                                              </td></tr>
+
+<tr><td> Microsoft.WindowsAzure.Storage </td><td> Information     </td><td> 3                   </td><td>85d077ab-…    </td><td> Prüfung, ob Vorgang wiederholt werden sollte. Wiederholungsanzahl = 0, HTTP-Statuscode = 403, Ausnahme = Der Remoteserver hat einen Fehler zurückgegeben: (403) Verboten. 
+</td></tr>
+
+<tr><td> Microsoft.WindowsAzure.Storage </td><td> Information  </td><td> 3 </td><td> 85d077ab-…        </td><td> Der nächste Speicherort wurde auf Primär gesetzt, basierend auf dem Speicherortmodus.                                                                                     </td></tr>
+
+<tr><td> Microsoft.WindowsAzure.Storage </td><td> Fehler </td><td> 1  </td><td>85d077ab-…           </td><td> Wiederholungsrichtlinie hat keinen erneuten Versuch erlaubt. Scheitern mit: Der Remoteserver hat einen Fehler zurückgeliefert: (403) Verboten.                            </td></tr>
+</table>
 
 In diesem Szenario sollten Sie untersuchen, warum der SAS-Token abläuft, bevor der Client den Token an den Server sendet:
 
@@ -470,7 +479,7 @@ In diesem Szenario sollten Sie untersuchen, warum der SAS-Token abläuft, bevor 
 -   Stimmt der Versionsparameter im SAS-Schlüssel (zum Beispiel **sv=2012-02-12**) mit der von Ihnen verwendeten Version der Speicher-Clientbibliothek überein? Sie sollten immer die neueste Version der Speicher-Clientbibliothek verwenden. Weitere Informationen zu SAS-Token-Versionierung und Abhängigkeiten von der Clientbibliotheksversion finden Sie unter <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx" target="_blank"></a>.
 -   Wenn Sie Ihren Speicherzugriffsschlüssel neu erstellen (klicken Sie auf einer beliebigen Seite in Ihrem Speicherkonto im Azure-Portal auf **Zugriffsschlüssel verwalten**), kann dies jedes vorhandene SAS-Token unwirksam machen. Dies kann problematisch sein, wenn Sie SAS-Token mit einer langen Ablaufzeit zum Cachen von Clientanwendungen generieren.
 
-Wenn Sie die Speicher-Clientbibliothek verwenden, um SAS-Token zu erstellen, ist es einfach, einen gültigen Token anzulegen. Wenn Sie allerdings die Speicher-REST-API verwenden und den SAS-Token manuell anlegen, sollten Sie sorgfältig das Thema <a href="http://msdn.microsoft.com/en-us/library/azure/ee395415.aspx" target="_blank">Zugriffsdelegierung mit einer Shared Access Signature</a> in MSDN lesen.
+Wenn Sie die Speicher-Clientbibliothek verwenden, um SAS-Token zu erstellen, ist es einfach, einen gültigen Token anzulegen. Wenn Sie allerdings die Speicher-REST-API verwenden und den SAS-Token manuell anlegen, sollten Sie sorgfältig das Thema <a href="http://msdn.microsoft.com/de-de/library/azure/ee395415.aspx" target="_blank">Zugriffsdelegierung mit einer Shared Access Signature</a> in MSDN lesen.
 
 ### <a name="the-client-is-receiving-404-messages"></a>Der Client empfängt HTTP 404 (Nicht Gefunden)-Meldungen
 
@@ -491,54 +500,99 @@ Sie können die clientseitige Protokollierung aus der Speicher-Clientbibliothek 
 
 Die folgende von der Speicher-Clientbibliothek erzeugte Clientprotokollierung verdeutlicht das Problem, wenn der Client den Container für den Blob, den er erstellt, nicht findet. Die Protokollierung enthält Details zu den folgenden Speicheroperationen:
 
-|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Anfrage-ID** | **Vorgang**                                                                                                                                                                                                                                                     |
-| 07b26a5d-...   | **DeleteIfExists**: Methode, um den Blob-Container zu löschen. Beachten Sie, dass dieser Vorgang eine **HEAD**-Anforderung zur Prüfung der Existenz des Containers beinhaltet.                                                                                  |
-| e2d06d78…      | **CreateIfNotExists**: Methode zur Erstellung des Blob-Containers. Beachten Sie, dass dieser Vorgang eine **HEAD**-Anforderung enthält, die die Existenz des Containers überprüft. Die **HEAD**-Anforderung liefert eine 404-Nachricht zurück, fährt aber fort. |
-| de8b1c3c-...   | **UploadFromStream**: Methode, um das Blob zu erstellen. Die **PUT**-Anforderung scheitert mit einer 404-Nachricht                                                                                                                                              |
+<table><tr><td><b>Anfrage-ID</b></td><td><b>Vorgang</b></td></tr>                                                                                                                                                                                                                                                     
+
+<tr><td>
+07b26a5d-...  </td><td><b>DeleteIfExists</b><: Methode, um den Blob-Container zu löschen. Beachten Sie, dass dieser Vorgang eine **HEAD</b><-Anforderung zur Prüfung der Existenz des Containers beinhaltet.                                                                                  </td></tr>                                                                                                                                                                                                                                                     
+
+<tr><td> e2d06d78… </td><td><b>CreateIfNotExists</b><: Methode zur Erstellung des Blob-Containers. Beachten Sie, dass dieser Vorgang eine <b>HEAD</b>-Anforderung enthält, die die Existenz des Containers überprüft. Die <b>HEAD</b>-Anforderung liefert eine 404-Nachricht zurück, fährt aber fort. </td></tr>                                                                                                                                                                                                                                                     
+
+<tr><td> de8b1c3c-... </td><td><b>UploadFromStream</b><: Methode, um das Blob zu erstellen. Die <b>PUT</b>-Anforderung scheitert mit einer 404-Nachricht                                                                                                                                              </td></tr>                                                                                                                                                                                                                                                     
+</table>
 
 Protokollierungseinträge:
 
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Anfrage-ID** | **Vorgangstext**                                                                                                                                                                                                                          |
-| 07b26a5d-...   |  Synchronanfrage starten an https://domemaildist.blob.core.windows.net/azuremmblobcontainer.                                                                                                                                              |
-| 07b26a5d-...   |  StringToSign = HEAD............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:11 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container.                                                 |
-| 07b26a5d-...   |  Warten auf Antwort.                                                                                                                                                                                                                      |
-| 07b26a5d-...   |  Antwort erhalten. Statuscode = 200, Anfrage-ID = eeead849-...Content-MD5 = , ETag = "0x8D14D2DC63D059B".                                                                                                                                 |
-| 07b26a5d-...   |  Antwortheader wurden erfolgreich verarbeitet, fortfahren mit dem Rest der Operation.                                                                                                                                                     |
-| 07b26a5d-...   |  Antworttext downloaden.                                                                                                                                                                                                                  |
-| 07b26a5d-...   |  Operation erfolgreich abgeschlossen.                                                                                                                                                                                                     |
-| 07b26a5d-...   |  Synchronanfrage starten an https://domemaildist.blob.core.windows.net/azuremmblobcontainer.                                                                                                                                              |
-| 07b26a5d-...   |  StringToSign = DELETE............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container.                                               |
-| 07b26a5d-...   |  Warten auf Antwort.                                                                                                                                                                                                                      |
-| 07b26a5d-...   |  Antwort erhalten. Statuscode = 202, Anfrage-ID = 6ab2a4cf-..., Content-MD5 = , ETag = .                                                                                                                                                  |
-| 07b26a5d-...   |  Antwortheader wurden erfolgreich verarbeitet, fortfahren mit dem Rest der Operation.                                                                                                                                                     |
-| 07b26a5d-...   |  Antworttext downloaden.                                                                                                                                                                                                                  |
-| 07b26a5d-...   |  Operation erfolgreich abgeschlossen.                                                                                                                                                                                                     |
-| e2d06d78-...   |  Asynchrone Anfrage an https://domemaildist.blob.core.windows.net/azuremmblobcontainer starten.                                                                                                                                           |
-| e2d06d78-...   |  StringToSign = HEAD............x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container.                                                 |
-| e2d06d78-...   |  Warten auf Antwort.                                                                                                                                                                                                                      |
-| de8b1c3c-...   |  Synchronanfrage starten an https://domemaildist.blob.core.windows.net/azuremmblobcontainer/blobCreated.txt.                                                                                                                              |
-| de8b1c3c-...   |  StringToSign = PUT...64.qCmF+TQLPhq/YYK50mP9ZQ==........x-ms-blob-type:BlockBlob.x-ms-client-request-id:de8b1c3c-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer/blobCreated.txt. |
-| de8b1c3c-...   |  Vorbereitung, um Anfragedaten zu schreiben.                                                                                                                                                                                              |
-| e2d06d78-...   |  Beim Warten auf Antwort ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (404) Nicht gefunden.                                                                                                                    |
-| e2d06d78-...   |  Antwort erhalten. Statuscode = 404, Anfrage-ID = 353ae3bc-..., Content-MD5 = , ETag = .                                                                                                                                                  |
-| e2d06d78-...   |  Antwortheader wurden erfolgreich verarbeitet, fortfahren mit dem Rest der Operation.                                                                                                                                                     |
-| e2d06d78-...   |  Antworttext downloaden.                                                                                                                                                                                                                  |
-| e2d06d78-...   |  Operation erfolgreich abgeschlossen.                                                                                                                                                                                                     |
-| e2d06d78-...   |  Asynchrone Anfrage an https://domemaildist.blob.core.windows.net/azuremmblobcontainer starten.                                                                                                                                           |
-| e2d06d78-...   |  StringToSign = PUT...0.........x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container.                                                 |
-| e2d06d78-...   |  Warten auf Antwort.                                                                                                                                                                                                                      |
-| de8b1c3c-...   |  Anfragedaten schreiben.                                                                                                                                                                                                                  |
-| de8b1c3c-...   |  Warten auf Antwort.                                                                                                                                                                                                                      |
-| e2d06d78-...   |  Beim Warten auf Antwort ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (409) Konflikt.                                                                                                                          |
-| e2d06d78-...   |  Antwort erhalten. Statuscode = 409, Anfrage-ID = c27da20e-..., Content-MD5 = , ETag = .                                                                                                                                                  |
-| e2d06d78-...   |  Fehlerantworttext downloaden.                                                                                                                                                                                                            |
-| de8b1c3c-...   |  Beim Warten auf Antwort ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (404) Nicht gefunden.                                                                                                                    |
-| de8b1c3c-...   |  Antwort erhalten. Statuscode = 404, Anfrage-ID = 0eaeab3e-..., Content-MD5 = , ETag = .                                                                                                                                                  |
-| de8b1c3c-...   |  Während des Vorgangs ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (404) Nicht gefunden.                                                                                                                       |
-| de8b1c3c-...   |  Wiederholungsrichtlinie hat keinen erneuten Versuch erlaubt. Scheitern mit: Der Remoteserver hat einen Fehler zurückgeliefert: (404) Nicht gefunden.                                                                                     |
-| e2d06d78-...   |  Wiederholungsrichtlinie hat keinen erneuten Versuch erlaubt. Scheitern mit: Der Remoteserver hat einen Fehler zurückgeliefert: (409) Konflikt.                                                                                           |
+<table>
+<tr><td><b>Anfrage-ID</b></td><td><b>Vorgangstext</td></tr>                                                                                                                                                                                                                          
+
+<tr><td>07b26a5d-...   </td><td>  Synchronanfrage starten an https://domemaildist.blob.core.windows.net/azuremmblobcontainer.                                                                                                                                              </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>07b26a5d-...  </td><td>  StringToSign = HEAD............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:11 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container.                                                 </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...   </td><td>  Warten auf Antwort.                                                                                                                                                                                                                      </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...   </td><td>  Antwort erhalten. Statuscode = 200, Anfrage-ID = eeead849-...Content-MD5 = , ETag = "0x8D14D2DC63D059B".                                                                                                                                 </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>07b26a5d-...   </td><td>  Antwortheader wurden erfolgreich verarbeitet, fortfahren mit dem Rest der Operation.                                                                                                                                                     </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...   </td><td>  Antworttext downloaden.                                                                                                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...   </td><td>  Operation erfolgreich abgeschlossen.                                                                                                                                                                                                     </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...   </td><td>  Synchronanfrage starten an https://domemaildist.blob.core.windows.net/azuremmblobcontainer.                                                                                                                                              </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...   </td><td>  StringToSign = DELETE............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container.                                               </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...   </td><td>  Warten auf Antwort.                                                                                                                                                                                                                      </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...   </td><td>  Antwort erhalten. Statuscode = 202, Anfrage-ID = 6ab2a4cf-..., Content-MD5 = , ETag = .                                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>07b26a5d-...   </td><td> Antwortheader wurden erfolgreich verarbeitet, fortfahren mit dem Rest der Operation.                                                                                                                                                     </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>07b26a5d-...   </td><td>  Antworttext downloaden.                                                                                                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> 07b26a5d-...  </td><td>  Operation erfolgreich abgeschlossen.                                                                                                                                                                                                     </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  Asynchrone Anfrage an https://domemaildist.blob.core.windows.net/azuremmblobcontainer starten.                                                                                                                                           </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  StringToSign = HEAD............x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container.                                                 </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>e2d06d78-...   </td><td>  Warten auf Antwort.                                                                                                                                                                                                                      </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> de8b1c3c-...   </td><td>  Synchronanfrage starten an https://domemaildist.blob.core.windows.net/azuremmblobcontainer/blobCreated.txt.                                                                                                                              </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> de8b1c3c-...   </td><td> StringToSign = PUT...64.qCmF+TQLPhq/YYK50mP9ZQ==........x-ms-blob-type:BlockBlob.x-ms-client-request-
+
+id:de8b1c3c-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer/blobCreated.txt. </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>de8b1c3c-...  </td><td>  Vorbereitung, um Anfragedaten zu schreiben.                                                                                                                                                                                              </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...  </td><td>  Beim Warten auf Antwort ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (404) Nicht gefunden.                                                                                                                    </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...  </td><td> Antwort erhalten. Statuscode = 404, Anfrage-ID = 353ae3bc-..., Content-MD5 = , ETag = .                                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  Antwortheader wurden erfolgreich verarbeitet, fortfahren mit dem Rest der Operation.                                                                                                                                                     </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  Antworttext downloaden.                                                                                                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...  </td><td>  Operation erfolgreich abgeschlossen.                                                                                                                                                                                                     </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  Asynchrone Anfrage an https://domemaildist.blob.core.windows.net/azuremmblobcontainer starten.                                                                                                                                           </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  StringToSign = PUT...0.........x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container.                                                 </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  Warten auf Antwort.                                                                                                                                                                                                                      </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>de8b1c3c-...   </td><td>  Anfragedaten schreiben.                                                                                                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>de8b1c3c-...   </td><td>  Warten auf Antwort.                                                                                                                                                                                                                      </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>e2d06d78-...   </td><td>  Beim Warten auf Antwort ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (409) Konflikt.                                                                                                                          </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  Antwort erhalten. Statuscode = 409, Anfrage-ID = c27da20e-..., Content-MD5 = , ETag = .                                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  Fehlerantworttext downloaden.                                                                                                                                                                                                            </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> de8b1c3c-...   </td><td>  Beim Warten auf Antwort ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (404) Nicht gefunden.                                                                                                                    </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> de8b1c3c-...   </td><td>  Antwort erhalten. Statuscode = 404, Anfrage-ID = 0eaeab3e-..., Content-MD5 = , ETag = .                                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> de8b1c3c-...   </td><td>  Während des Vorgangs ausgelöste Ausnahme: Der Remoteserver hat einen Fehler zurückgeliefert: (404) Nicht gefunden.                                                                                                                       </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> de8b1c3c-...   </td><td>  Wiederholungsrichtlinie hat keinen erneuten Versuch erlaubt. Scheitern mit: Der Remoteserver hat einen Fehler zurückgeliefert: (404) Nicht gefunden.                                                                                     </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> e2d06d78-...   </td><td>  Wiederholungsrichtlinie hat keinen erneuten Versuch erlaubt. Scheitern mit: Der Remoteserver hat einen Fehler zurückgeliefert: (409) Konflikt.                                                                                           </td></tr>                                                                                                                                                                                                                                                     
+</table>
 
 In diesem Beispiel zeigt die Protokollierung, dass der Client Anfragen der Methode **CreateIfNotExists** (Anfrage-ID e2d06d78…) mit den Anfragen aus der Methode **UploadFromStream** (de8b1c3c-...) überlappt: Dies ist möglich, weil die Clientanwendung diese Methoden asynchron aktiviert. Sie sollten den asynchronen Code im Client ändern, um sicherzustellen, dass er die Container erstellt, bevor er versucht, Daten an ein Blob in diesem Container hochzuladen. Idealerweise sollten Sie alle Ihre Container im Voraus erstellen.
 
@@ -548,16 +602,24 @@ Wenn die Clientanwendung versucht, einen SAS-Schlüssel ohne die notwendigen Gen
 
 Die folgende Tabelle zeigt eine Muster-Serverprotokollierungsnachricht aus der Speicherprotokollierungsdatei:
 
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Anfragestartzeit      | 2014-05-30T06:17:48.4473697Z                                                                                                                           |
-| Vorgangsart           | GetBlobProperties                                                                                                                                      |
-| Anfragestatus         | SASAuthorizationError                                                                                                                                  |
-| HTTP-Statuscode       | 404                                                                                                                                                    |
-| Authentifizierungsart | SAS                                                                                                                                                    |
-| Dienstart             | Blob                                                                                                                                                   |
-| Anfrage-URL           | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=XXXXX&api-version=2014-02-14& |
-| Anfrage-ID-Header     | a1f348d5-8032-4912-93ef-b393e5252a3b                                                                                                                   |
-| Clientanfrage-ID      | 2d064953-8436-4ee0-aa0c-65cb874f7929                                                                                                                   |
+<table><tr><td>Anfragestartzeit</td><td>2014-05-30T06:17:48.4473697Z                                                                                                                           </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> Vorgangsart   </td><td> GetBlobProperties                                                                                                                                      </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> Anfragestatus       </td><td> SASAuthorizationError                                                                                                                                  </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>HTTP-Statuscode</td><td> 404                                                                                                                                                    </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>Authentifizierungsart </td><td> SAS                                                                                                                                                    </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> Dienstart   </td><td>Blob                                                                                                                                                   </td></tr>                                                                                                                                                                                                                          
+
+<tr><td>Anfrage-URL      </td><td> https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=XXXXX&api-version=2014-02-14& </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> Anfrage-ID-Header </td><td> a1f348d5-8032-4912-93ef-b393e5252a3b                                                                                                                   </td></tr>                                                                                                                                                                                                                          
+
+<tr><td> Clientanfrage-ID </td><td> 2d064953-8436-4ee0-aa0c-65cb874f7929                                                                                                                   </td></tr>                                                                                                                                                                                                                          
+</table>
 
 Sie sollten untersuchen, warum Ihre Clientanwendung versucht, einen Vorgang auszuführen, für die ihr keine Berechtigungen zugeteilt wurden.
 
@@ -572,7 +634,7 @@ Wenn Sie einen JavaScript-Client verwenden und der Speicherdienst HTTP 404-Meld
 
 Diese Fehler treten auf, weil im Webbrowser die <a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">Same Origin Policy</a> als Sicherheitsbeschränkung implementiert ist, die die Webseite daran hindert, eine API aus einer anderen Domäne aufzurufen.
 
-Um eine Übergangslösung für das JavaScript-Problem zu finden, können Sie Cross-Origin Resource Sharing (CORS) für den Speicherdienst konfigurieren, auf den der Client zugreift. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dn535601.aspx" target="_blank">Cross-Origin Resource Sharing (CORS)-Support für den Windows Azure-Speicherdienst</a> in MSDN.
+Um eine Übergangslösung für das JavaScript-Problem zu finden, können Sie Cross-Origin Resource Sharing (CORS) für den Speicherdienst konfigurieren, auf den der Client zugreift. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dn535601.aspx" target="_blank">Cross-Origin Resource Sharing (CORS)-Support für den Windows Azure-Speicherdienst</a> in MSDN.
 
 Das folgende Codebeispiel zeigt, wie Sie Ihren Blob-Dienst so konfigurieren, dass JavaScript in der Contoso-Domäne ausgeführt wird, um auf ein Blob in Ihrem Blob-Speicherdienst zuzugreifen:
 
@@ -606,12 +668,16 @@ Wenn dieses Problem häufig auftritt, sollten Sie untersuchen, warum der Client 
 
 Die folgende Tabelle zeigt einen Auszug aus der serverseitigen Protokollierung für zwei Clientvorgänge: **DeleteIfExists**, unmittelbar gefolgt von **CreateIfNotExists**, unter Verwendung des gleichen Blob-Containernamens. Beachten Sie, dass jeder Clientvorgang zu zwei an den Server gesendeten Anfragen führt, zuerst **GetContainerProperties**, um zu prüfen, ob der Container existiert, gefolgt von **DeleteContainer** bzw. **CreateContainer**.
 
-|------------------|------------------------|--------------|-------------------|----------------------|
-| **Timestamp**    | **Vorgang**            | **Ergebnis** | **Containername** | **Clientanfrage-ID** |
-| 05:10:13.7167225 | GetContainerProperties | 200          | mmcont            | c9f52c89-…           |
-| 05:10:13.8167325 | DeleteContainer        | 202          | mmcont            | c9f52c89-…           |
-| 05:10:13.8987407 | GetContainerProperties | 404          | mmcont            | bc881924-…           |
-| 05:10:14.2147723 | CreateContainer        | 409          | mmcont            | bc881924-…           |
+<table><tr><td><b>Timestamp</b></td><td><b>Vorgang</b></td><td><b>Ergebnis</b></td><td><b>Containername</b></td><td><b>Clientanfrage-ID</b></td></tr>
+
+<tr><td>05:10:13.7167225 </td><td> GetContainerProperties</td><td>200 </td><td> mmcont           </td><td> c9f52c89-…          </td></tr>
+
+<tr><td> 05:10:13.8167325 </td><td> DeleteContainer </td><td> 202</td><td> mmcont            </td><td> c9f52c89-…           </td></tr>
+
+<tr><td>05:10:13.8987407 </td><td> GetContainerProperties </td><td> 404</td><td>mmcont            </td><td> bc881924-…          </td></tr>
+
+<tr><td>05:10:14.2147723 </td><td>CreateContainer  </td><td> 409</td><td>mmcont            </td><td> bc881924-…        </td></tr>
+</table>
 
 Der Code in der Clientanwendung löscht und erstellt dann umgehend einen Blob-Container unter Verwendung des gleichen Namens neu: Die Methode **CreateIfNotExists** (Clientanfrage-ID bc881924-…) scheitert schließlich mit dem HTTP 409 (Konflikt)-Fehler. Wenn ein Client Blob-Container, -Tabellen oder -Warteschlangen löscht, gibt es eine kurze Verzögerung, bevor der Name wieder verfügbar ist.
 
@@ -627,7 +693,7 @@ Es ist wichtig zu beachten, dass diese Vorgänge erfolgreich abgeschlossen wurde
 -   **ResouceAlreadyExists** (Konflikt, 409), beispielsweise von einer **CreateIfNotExist**-Operation, wenn die Ressource bereits vorhanden ist.
 -   **ConditionNotMet** (Nicht Verändert, 304), zum Beispiel von einem bedingten Vorgang, bei der ein Client einen **ETag**-Wert und einen HTTP **If-None-Match**-Header sendet, um ein Bild nur dann anzufordern, wenn es seit dem letzten Vorgang aktualisiert wurde.
 
-Eine Liste bekannter REST API-Fehlercodes, die von den Speicherdiensten zurückgegeben werden, finden Sie auf der Seite <a href="http://msdn.microsoft.com/en-us/library/azure/dd179357.aspx" target="_blank">Bekannte REST API-Fehlercodes</a>.
+Eine Liste bekannter REST API-Fehlercodes, die von den Speicherdiensten zurückgegeben werden, finden Sie auf der Seite <a href="http://msdn.microsoft.com/de-de/library/azure/dd179357.aspx" target="_blank">Bekannte REST API-Fehlercodes</a>.
 
 ### <a name="capacity-metrics-show-an-unexpected-increase"></a>Kapazitätsmetriken zeigen einen unerwarteten Anstieg der Speicherkapazitätsauslastung an
 
@@ -637,7 +703,7 @@ Wenn Sie plötzliche, unerwartete Änderungen in der Kapazitätsauslastung Ihres
 
 Wenn eine virtuelle Maschine (VM) über eine große Anzahl von angeschlossenen VHDs verfügt, die sich im gleichen Speicherkonto befinden, sollten Sie die Skalierbarkeitsziele für ein das Scheitern der VM verursachendes Einzelspeicherkonto überschreiten. Sie sollten die Minutenmetriken für das Speicherkonto (**TotalRequests**/**TotalIngress**/**TotalEgress**) für Spitzen überprüfen, die die Skalierbarkeitsziele für ein Speicherkonto überschreiten. Siehe "[Metriken zeigen Anstieg bei PercentThrottlingError an]" für Unterstützung bei der Feststellung, ob Drosselung in Ihrem Speicherkonto stattgefunden hat.
 
-In der Regel wird jede einzelne Input- oder Output-Operation auf einer VHD von einem virtuellen Computer in **Get Page**- oder **Put Page**-Operationen des zugrunde liegenden Seiten-Blobs übersetzt. Daher können Sie die geschätzten IOPS für Ihre Umgebung verwenden, um zu bestimmen, über wie viele virtuelle Festplatten Sie in einem einzigen Speicherkonto auf Grundlage des spezifischen Anwendungsverhaltens verfügen können. Wir empfehlen, nicht über mehr als 40 Festplatten in einem einzigen Speicherkonto zu verwenden. Unter <a href="http://msdn.microsoft.com/en-us/library/azure/dn249410.aspx" target="_blank">Ziele für Skalierbarkeit und Leistung des Azure-Speichers</a> finden Sie weitere Informationen zu den aktuellen Skalierbarkeitszielen des Speicherkontos, insbesondere die Gesamtanfragerate und Gesamtbandbreite für die von Ihnen verwendete Speicherkontenart.
+In der Regel wird jede einzelne Input- oder Output-Operation auf einer VHD von einem virtuellen Computer in **Get Page**- oder **Put Page**-Operationen des zugrunde liegenden Seiten-Blobs übersetzt. Daher können Sie die geschätzten IOPS für Ihre Umgebung verwenden, um zu bestimmen, über wie viele virtuelle Festplatten Sie in einem einzigen Speicherkonto auf Grundlage des spezifischen Anwendungsverhaltens verfügen können. Wir empfehlen, nicht über mehr als 40 Festplatten in einem einzigen Speicherkonto zu verwenden. Unter <a href="http://msdn.microsoft.com/de-de/library/azure/dn249410.aspx" target="_blank">Ziele für Skalierbarkeit und Leistung des Azure-Speichers</a> finden Sie weitere Informationen zu den aktuellen Skalierbarkeitszielen des Speicherkontos, insbesondere die Gesamtanfragerate und Gesamtbandbreite für die von Ihnen verwendete Speicherkontenart.
 Wenn Sie die Skalierbarkeitsziele für Ihr Speicherkonto überschreiten, sollten Sie Ihre VHDs in mehrere verschiedene Speicherkonten einstellen, um die Aktivität in jedem Einzelkonto zu verringern.
 
 ### <a name="your-issue-arises-from-using-the-storage-emulator"></a>Probleme entstehen aus der Verwendung des Speicheremulators für Entwicklung oder Test
@@ -650,7 +716,7 @@ Sie verwenden den Speicheremulator in der Regel während der Entwicklungs- und T
 
 #### <a name="feature-X-is-not-working"></a>Funktion "X" funktioniert im Speicheremulator nicht
 
-Der Speicheremulator unterstützt nicht alle Funktionen des Azure-Speicherdiensts wie beispielsweise den Dateidienst. Weitere Informationen dazu finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/gg433135.aspx" target="_blank">Unterschiede zwischen dem Serveremulator und den Azure-Speicherdiensten</a> in MSDN.
+Der Speicheremulator unterstützt nicht alle Funktionen des Azure-Speicherdiensts wie beispielsweise den Dateidienst. Weitere Informationen dazu finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/gg433135.aspx" target="_blank">Unterschiede zwischen dem Serveremulator und den Azure-Speicherdiensten</a> in MSDN.
 
 Für die nicht vom Speicheremulator unterstützten Funktionen verwenden Sie den Azure-Speicherdienst in der Cloud.
 
@@ -666,7 +732,7 @@ Dieses Szenario tritt in der Regel ein, wenn Sie die neueste Version der Speiche
 
 Sie benötigen Administratorrechte, wenn Sie den Speicheremulator ausführen. Dies ist nur erforderlich, wenn Sie den Speicheremulator zum ersten Mal initialisieren. Nachdem Sie den Speicheremulator initialisiert haben, benötigen Sie keine Administratorrechte, um ihn wieder auszuführen.
 
-Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/gg433132.aspx" target="_blank">Initialisierung des Speicheremulators mithilfe des Befehlszeilen-Tools</a> in MSDN. (Sie können den Speicheremulator auch in Visual Studio initialisieren, wofür ebenfalls Administratorrechte erforderlich sind.)
+Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/gg433132.aspx" target="_blank">Initialisierung des Speicheremulators mithilfe des Befehlszeilen-Tools</a> in MSDN. (Sie können den Speicheremulator auch in Visual Studio initialisieren, wofür ebenfalls Administratorrechte erforderlich sind.)
 
 ### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>Sie stoßen bei der Installation von Windows Azure SDK für .NET auf Probleme
 
@@ -760,7 +826,7 @@ Um eine Rückverfolgungssession für HTTP- und HTTPS-Verkehr mit Microsoft Messa
 
 Wenn Sie bereit sind, mit dem Sammeln von Rückverfolgungsdaten zu beginnen, klicken Sie auf die Schaltfläche **Starten mit**.
 
-Weitere Informationen zur **Web-Proxy**-Rückverfolgung mit Microsoft Message Analyzer finden Sie unter <a href="http://technet.microsoft.com/en-us/library/jj674814.aspx" target="_blank">PEF-WebProxy Provider</a> im TechNet.
+Weitere Informationen zur **Web-Proxy**-Rückverfolgung mit Microsoft Message Analyzer finden Sie unter <a href="http://technet.microsoft.com/de-de/library/jj674814.aspx" target="_blank">PEF-WebProxy Provider</a> im TechNet.
 
 Die integrierte **Web-Proxy**-Rückverfolgung in Microsoft Message Analyzer basiert auf Fiddler; sie kann clientseitigen HTTPS-Verkehr erfassen und unverschlüsselte HTTPS-Nachrichten anzeigen. Die **Web-Proxy**-Rückverfolgung funktioniert durch Konfiguration eines lokalen Proxy für den gesamten HTTP- und HTTPS-Verkehr, der Zugriff auf unverschlüsselte Nachrichten verschafft.
 
@@ -776,11 +842,11 @@ Wenn Sie die Rückverfolgungssession in Microsoft Message Analyzer erstellen, k�
 
 ![][11]
 
-Weitere Informationen zur Local-Link-Layer-Rückverfolgung von Microsoft Message Analyzer finden Sie unter <a href="http://technet.microsoft.com/en-us/library/jj659264.aspx" target="_blank">PEF-NDIS-PacketCapture Provider</a> im TechNet.
+Weitere Informationen zur Local-Link-Layer-Rückverfolgung von Microsoft Message Analyzer finden Sie unter <a href="http://technet.microsoft.com/de-de/library/jj659264.aspx" target="_blank">PEF-NDIS-PacketCapture Provider</a> im TechNet.
 
 ### <a name="appendix-4"></a>Anhang 4: Verwendung von Excel zur Anzeige von Metrik- und Protokollierungsdaten
 
-Viele Tools ermöglichen das Herunterladen von Speichermetrikdaten aus dem Azure-Tabellenspeicher in einem abgegrenzten Format, wodurch die Daten einfach in Excel für die Anzeige und Analyse geladen werden können. Speicherprotokollierungsdaten vom Azure-Blob-Speicher verfügen bereits über eine abgetrenntes Format, das Sie in Excel laden können. Allerdings müssen Sie basierend auf den Informationen in <a href="http://msdn.microsoft.com/en-us/library/hh343259.aspx" target="_blank">Protokollformat der Speicheranalyse</a> und <a href="http://msdn.microsoft.com/en-us/library/hh343264.aspx" target="_blank">Schema der Tabellen für Speicheranalysemetriken</a> entsprechende Spaltenüberschriften hinzufügen.
+Viele Tools ermöglichen das Herunterladen von Speichermetrikdaten aus dem Azure-Tabellenspeicher in einem abgegrenzten Format, wodurch die Daten einfach in Excel für die Anzeige und Analyse geladen werden können. Speicherprotokollierungsdaten vom Azure-Blob-Speicher verfügen bereits über eine abgetrenntes Format, das Sie in Excel laden können. Allerdings müssen Sie basierend auf den Informationen in <a href="http://msdn.microsoft.com/de-de/library/hh343259.aspx" target="_blank">Protokollformat der Speicheranalyse</a> und <a href="http://msdn.microsoft.com/de-de/library/hh343264.aspx" target="_blank">Schema der Tabellen für Speicheranalysemetriken</a> entsprechende Spaltenüberschriften hinzufügen.
 
 Um Speicherprotokollierungsdaten in Excel zu importieren, nachdem Sie diese aus dem BLOB-Speicher heruntergeladen haben, gehen Sie folgendermaßen vor:
 
@@ -797,7 +863,7 @@ Sie können die Application Insights-Funktion für Visual Studio Online als Best
 -   Sicherstellen, dass Ihr Webdienst verfügbar und reaktionsschnell ist. Ob Ihre Anwendung eine Website ist, die einen Webdienst verwendet, oder eine Geräteanwendung: Sie kann Ihre URL alle paar Minuten von Standorten auf der ganzen Welt testen, und Ihnen mitteilen, ob es ein Problem gibt.
 -   Leistungsprobleme oder Ausnahmen in Ihrem Webdienst schnell diagnostizieren. Finden Sie heraus, ob CPU oder andere Ressourcen gestretched werden, gewinnen Sie Stack-Traces aus Ausnahmen, und durchsuchen Sie Protokolltraces leicht. Wenn die Leistung der Anwendung unter akzeptable Grenzen fällt, können wir Ihnen eine E-Mail senden. Sie können sowohl .NET- als auch Java-Webdienste überwachen.
 
-Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/dn481095.aspx" target="_blank">Application Insights für Visual Studio Online in MSDN</a>.
+Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/dn481095.aspx" target="_blank">Application Insights für Visual Studio Online in MSDN</a>.
 
 <!--Anchors--> 
 <!--Image references-->
@@ -829,9 +895,6 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
   [Metriken zeigen Anstieg bei PercentThrottlingError an]: #metrics-show-an-increase-in-PercentThrottlingError
   [Metriken zeigen Anstieg bei PercentTimeoutError an]: #metrics-show-an-increase-in-PercentTimeoutError
   [Metriken zeigen Anstieg bei PercentNetworkError an]: #metrics-show-an-increase-in-PercentNetworkError
-  [Der Client empfängt HTTP 403 (Verboten)-Meldungen]: #the-client-is-receiving-403-messages
-  [Der Client empfängt HTTP 404 (Nicht Gefunden)-Meldungen]: #the-client-is-receiving-404-messages
-  [Der Client empfängt HTTP 409 (Konflikt)-Meldungen]: #the-client-is-receiving-409-messages
   [Metriken zeigen niedrigen PercentSuccess an, oder Vorgänge in Analyse-Protokolleinträgen haben den Transaktionsstatus "ClientOtherErrors"]: #metrics-show-low-percent-success
   [Kapazitätsmetriken zeigen einen unerwarteten Anstieg der Speicherkapazitätsauslastung an]: #capacity-metrics-show-an-unexpected-increase
   [Sie stoßen auf unerwartete Neustarts von virtuellen Computern, die über eine große Anzahl angeschlossener virtueller VHDs verfügen]: #you-are-experiencing-unexpected-reboots
@@ -849,13 +912,9 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
   [3]: ./media/storage-monitoring-diagnosing-troubleshooting/high-e2e-latency.png
   [Vorübergehender Anstieg bei PercentThrottlingError]: #transient-increase-in-PercentThrottlingError
   [Permanenter Anstieg bei PercentThrottlingError]: #permanent-increase-in-PercentThrottlingError
-  [Microsoft.WindowsAzure.Storage.RetryPolicies-Namespace]: http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.retrypolicies.aspx
-  [4]: http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx
   [Der Client oder ein anderer Prozess haben das Objekt vorher gelöscht]: #client-previously-deleted-the-object
-  [Ein Problem mit der Shared Access Signature (SAS)-Authentifizierung]: #SAS-authorization-issue
   [Clientseitiger JavaScript-Code verfügt nicht über die Zugriffsberechtigung für das Objekt]: #JavaScript-code-does-not-have-permission
   [Netzwerkausfall]: #network-failure
-  [5]: http://msdn.microsoft.com/en-us/library/azure/dn249410.aspx
   [Funktion "X" funktioniert im Speicheremulator nicht]: #feature-X-is-not-working
   [Fehler „Der Wert einer der HTTP-Header verfügt nicht über das korrekte Format" bei der Verwendung des Speicheremulators]: #error-HTTP-header-not-correct-format
   [Das Ausführen des Speicheremulators erfordert Administratorrechte]: #storage-emulator-requires-administrative-privileges
@@ -873,3 +932,7 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
   [Anhang 3: Verwendung von Microsoft Message Analyzer zur Erfassung von Netzwerkverkehr]: #appendix-3
   [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokollierungseinträge enthalten Operationen mit Transaktionsstatus "ClientOtherErrors"]: #metrics-show-low-percent-success
   [Anhängen]: #appendices
+  [Der Client empfängt HTTP 403 (Verboten)-Meldungen]: #the-client-is-receiving-403-messages
+  [Der Client empfängt HTTP 404 (Nicht Gefunden)-Meldungen]: #the-client-is-receiving-404-messages
+  [Der Client empfängt HTTP 409 (Konflikt)-Meldungen]: #the-client-is-receiving-409-messages
+

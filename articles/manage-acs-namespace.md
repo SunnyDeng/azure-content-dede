@@ -1,6 +1,6 @@
 <properties linkid="manage-services-manage-acs" urlDisplayName="Manage ACS" pageTitle="Access Control Service - Azure service management" metaKeywords="" description="Learn how to manage your Azure Access Control Service (ACS) using certificates and keys." metaCanonical="" services="active-directory" documentationCenter="" title="Managing Your ACS Namespace" authors="mbaldwin" solutions="" manager="mbaldwin" editor="" />
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="mbaldwin"></tags>
+<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="mbaldwin" />
 
 # Verwalten Ihres ACS-Namespace
 
@@ -74,7 +74,7 @@ Sie können Token-Signaturzertifikate mithilfe des Abschnitts "Zertifikate und S
 
 3.  Nach der Anmeldung mit Ihrer Windows Live-ID werden Sie auf die Seite "Verwaltungsportal" weitergeleitet. Klicken Sie links unten auf dieser Seite auf **Dienstbus und Zugriffssteuerung**.
 
-    ![][]
+    ![][0]
 
 4.  Starten Sie das ACS-Verwaltungsportal, indem Sie in der Struktur auf der linken Seite auf **Zugangssteuerung** klicken, wählen Sie den ACS-Dienst-Namespace, den Sie konfigurieren möchten, und klicken Sie anschließend in der Symbolleiste oben auf der Seite auf die Schaltfläche **Zugriffssteuerungsdienst**.
 
@@ -133,7 +133,7 @@ Sie können Token-Signaturschlüssel mithilfe des Abschnitts "Zertifikate und Sc
 
 3.  Nach der Anmeldung mit Ihrer Windows Live-ID werden Sie auf die Seite "Verwaltungsportal" weitergeleitet. Klicken Sie links unten auf dieser Seite auf **Dienstbus und Zugriffssteuerung**.
 
-    ![][]
+    ![][0]
 
 4.  Starten Sie das ACS-Verwaltungsportal, indem Sie in der Struktur auf der linken Seite auf **Zugangssteuerung** klicken, wählen Sie den ACS-Dienst-Namespace, den Sie konfigurieren möchten, und klicken Sie anschließend in der Symbolleiste oben auf der Seite auf die Schaltfläche **Zugriffssteuerungsdienst**.
 
@@ -189,7 +189,7 @@ Sie können Token-Verschlüsselungszertifikate mithilfe des Abschnitts "Zertifik
 
 3.  Nach der Anmeldung mit Ihrer Windows Live-ID werden Sie auf die Seite "Verwaltungsportal" weitergeleitet. Klicken Sie links unten auf dieser Seite auf **Dienstbus und Zugriffssteuerung**.
 
-    ![][]
+    ![][0]
 
 4.  Starten Sie das ACS-Verwaltungsportal, indem Sie in der Struktur auf der linken Seite auf **Zugangssteuerung** klicken, wählen Sie den ACS-Dienst-Namespace, den Sie konfigurieren möchten, und klicken Sie anschließend in der Symbolleiste oben auf der Seite auf die Schaltfläche **Zugriffssteuerungsdienst**.
 
@@ -237,7 +237,7 @@ Sie können Token-Entschlüsselungszertifikate mithilfe des Abschnitts "Zertifik
 
 3.  Nach der Anmeldung mit Ihrer Windows Live-ID werden Sie auf die Seite "Verwaltungsportal" weitergeleitet. Klicken Sie links unten auf dieser Seite auf **Dienstbus und Zugriffssteuerung**.
 
-    ![][]
+    ![][0]
 
 4.  Starten Sie das ACS-Verwaltungsportal, indem Sie in der Struktur auf der linken Seite auf **Zugangssteuerung** klicken, wählen Sie den ACS-Dienst-Namespace, den Sie konfigurieren möchten, und klicken Sie anschließend in der Symbolleiste oben auf der Seite auf die Schaltfläche **Zugriffssteuerungsdienst**.
 
@@ -294,7 +294,7 @@ Sie können Anmeldeinformationen für Dienstidentitäten direkt über die Seite 
 
 3.  Nach der Anmeldung mit Ihrer Windows Live-ID werden Sie auf die Seite "Verwaltungsportal" weitergeleitet. Klicken Sie links unten auf dieser Seite auf **Dienstbus und Zugriffssteuerung**.
 
-    ![][]
+    ![][0]
 
 4.  Starten Sie das ACS-Verwaltungsportal, indem Sie in der Struktur auf der linken Seite auf **Zugangssteuerung** klicken, wählen Sie den ACS-Dienst-Namespace, den Sie konfigurieren möchten, und klicken Sie anschließend in der Symbolleiste oben auf der Seite auf die Schaltfläche **Zugriffssteuerungsdienst**.
 
@@ -367,7 +367,7 @@ Sie können die Anmeldeinformationen für den Verwaltungsdienst auf der Seite "V
 
 3.  Nach der Anmeldung mit Ihrer Windows Live-ID werden Sie auf die Seite "Verwaltungsportal" weitergeleitet. Klicken Sie links unten auf dieser Seite auf **Dienstbus und Zugriffssteuerung**.
 
-    ![][]
+    ![][0]
 
 4.  Starten Sie das ACS-Verwaltungsportal, indem Sie in der Struktur auf der linken Seite auf **Zugangssteuerung** klicken, wählen Sie den ACS-Dienst-Namespace, den Sie konfigurieren möchten, und klicken Sie anschließend in der Symbolleiste oben auf der Seite auf die Schaltfläche **Zugriffssteuerungsdienst**.
 
@@ -454,8 +454,8 @@ Im Folgenden finden Sie die Ausnahmefehler, die ACS auslöst, wenn das Zertifika
   [IdentityProviderKey]: http://msdn.microsoft.com/de-de/library/hh124084.aspx
   [ACS-Fehlercodes]: http://msdn.microsoft.com/de-de/library/gg185949.aspx
   [Codebeispiel: Verwaltungsdienst]: http://msdn.microsoft.com/de-de/library/gg185970.aspx
-  []: http://go.microsoft.com/fwlink/?LinkID=129428
-  []: ./media/manage-acs-namespace/ACS1.png
+  [0]: http://go.microsoft.com/fwlink/?LinkID=129428
+  [0]: ./media/manage-acs-namespace/ACS1.png
   [1]: ./media/manage-acs-namespace/ACS2.png
   [2]: ./media/manage-acs-namespace/ACS3.png
   [3]: ./media/manage-acs-namespace/ACS4.png

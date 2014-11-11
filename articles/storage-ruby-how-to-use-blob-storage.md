@@ -7,32 +7,32 @@
 Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des
 Blob-Diensts in Azure. Die Beispiele wurden mit der Ruby Azure-API erstellt.
 Zu den behandelten Szenarien gehören das **Hochladen, Auflisten, Herunterladen** und **Löschen** von Blobs.
-Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte][].
+Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
 ## Inhaltsverzeichnis
 
--   [Was ist der Blob-Dienst?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen einer Ruby-Anwendung][]
--   [Konfigurieren der Anwendung für den Speicherzugriff][]
--   [Einrichten einer Azure-Speicherverbindung][]
--   [Gewusst wie: Erstellen eines Containers][]
--   [Gewusst wie: Hochladen eines Blobs in einen Container][]
--   [Gewusst wie: Auflisten der Blobs in einem Container][]
--   [Gewusst wie: Herunterladen von Blobs][]
--   [Gewusst wie: Löschen eines Blobs][]
+-   [Was ist der Blob-Dienst?][Was ist der Blob-Dienst?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Erstellen einer Ruby-Anwendung][Erstellen einer Ruby-Anwendung]
+-   [Konfigurieren der Anwendung für den Speicherzugriff][Konfigurieren der Anwendung für den Speicherzugriff]
+-   [Einrichten einer Azure-Speicherverbindung][Einrichten einer Azure-Speicherverbindung]
+-   [Gewusst wie: Erstellen eines Containers][Gewusst wie: Erstellen eines Containers]
+-   [Gewusst wie: Hochladen eines Blobs in einen Container][Gewusst wie: Hochladen eines Blobs in einen Container]
+-   [Gewusst wie: Auflisten der Blobs in einem Container][Gewusst wie: Auflisten der Blobs in einem Container]
+-   [Gewusst wie: Herunterladen von Blobs][Gewusst wie: Herunterladen von Blobs]
+-   [Gewusst wie: Löschen eines Blobs][Gewusst wie: Löschen eines Blobs]
 -   [Nächste Schritte][1]
 
-[WACOM.INCLUDE [howto-blob-storage][]]
+[WACOM.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
 
 ## <span id="CreateAccount"></span></a>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <span id="CreateRubyApp"></span></a>Erstellen einer Ruby-Anwendung
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie im Thema zum [Erstellen einer Ruby-Anwendung in Azure][].
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie im Thema zum [Erstellen einer Ruby-Anwendung in Azure][Erstellen einer Ruby-Anwendung in Azure].
 
 ## <span id="ConfigAccessStorage"></span></a>Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -60,7 +60,7 @@ Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **A
 
 So rufen Sie diese Werte ab:
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 2.  Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
 3.  Klicken Sie unter im Navigationsbereich auf **MANAGE KEYS**.
 4.  Im eingeblendeten Dialog wird der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Als Zugriffsschlüssel können Sie den primären oder sekundären auswählen.
@@ -142,12 +142,11 @@ Verwenden Sie schließlich die **delete\_blob()**-Methode, um einen Blob zu lös
 
 Nachdem Sie jetzt die Grundlagen des Blob-Speichers erlernt haben, folgen Sie diesen Links, um Informationen zum Ausführen komplexerer Speicheraufgaben zu erhalten.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
--   Besuchen Sie den [Blog des Azure-Speicherteams][]
--   Besuchen Sie das [Azure SDK for Ruby][]-Repository auf GitHub
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure]
+-   Besuchen Sie den [Blog des Azure-Speicherteams][Blog des Azure-Speicherteams]
+-   Besuchen Sie das [Azure SDK for Ruby][Azure SDK for Ruby]-Repository auf GitHub
 
   [Nächste Schritte]: #next-steps
-  [Was ist der Blob-Dienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer Ruby-Anwendung]: #CreateRubyApp
@@ -161,8 +160,8 @@ Nachdem Sie jetzt die Grundlagen des Blob-Speichers erlernt haben, folgen Sie di
   [1]: #NextSteps
   [howto-blob-storage]: ../includes/howto-blob-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
-  [Erstellen einer Ruby-Anwendung in Azure]: /en-us/develop/ruby/tutorials/web-app-with-linux-vm/
+  [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure SDK for Ruby]: https://github.com/WindowsAzure/azure-sdk-for-ruby

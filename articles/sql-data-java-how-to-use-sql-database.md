@@ -1,6 +1,6 @@
 <properties linkid="develop-java-sql-azure" urlDisplayName="SQL Database" pageTitle="How to use SQL Azure (Java) - Azure feature guide" metaKeywords="" description="Learn how to use the Azure SQL Database from Java code. " metaCanonical="" services="sql-database" documentationCenter="Java" title="How to Use Azure SQL Database in Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 
-<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm"></tags>
+<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
 # Verwenden der Azure SQL-Datenbank in Java
 
@@ -724,16 +724,12 @@ Weitere Informationen zum Microsoft JDBC-Treiber für SQL Server finden Sie unte
   [Löschen einer Tabelle]: #to_drop_table
   [Verwenden einer SQL-Datenbank in einer Azure-Bereitstellung]: #using_in_azure
   [Nächste Schritte]: #nextsteps
-  [Richtlinien für und Einschränkungen (SQL-Datenbanken)]: http://msdn.microsoft.com/de-de/library/windowsazure/ff394102.aspx
-  [Installieren des Azure-Plug-Ins für Eclipse mit Java (von Microsoft Open Technologies)]: http://msdn.microsoft.com/de-de/library/windowsazure/hh690946.aspx
   [1]: https://manage.windowsazure.com
   [Neue SQL-Datenbank erstellen]: ./media/sql-data-java-how-to-use-sql-database/WA_New.png
   [Benutzerdefinierte SQL-Datenbank erstellen]: ./media/sql-data-java-how-to-use-sql-database/WA_SQL_DB_Create.png
   [Einstellungen der SQL-Datenbank]: ./media/sql-data-java-how-to-use-sql-database/WA_CustomCreate_1.png
   [Einstellungen des SQL Servers]: ./media/sql-data-java-how-to-use-sql-database/WA_CustomCreate_2.png
   [Ermitteln der JDBS-Verbindungszeichenfolge]: ./media/sql-data-java-how-to-use-sql-database/WA_SQL_JDBC_ConnectionString.png
-  ["user=MySQLAdmin@\*your\_server\*]: mailto:"user=MySQLAdmin@*your_server*
   [Dialogfeld "Allowed IP Addresses"]: ./media/sql-data-java-how-to-use-sql-database/WA_Allowed_IPs.png
-  [Erstellen einer Hello World-Anwendung mithilfe des Azure-Plug-Ins für Eclipse with Java (von Microsoft Open Technologies)]: http://msdn.microsoft.com/de-de/library/windowsazure/hh690944.aspx
   [Übersicht über den JDBC-Treiber]: http://msdn.microsoft.com/de-de/library/ms378749.aspx
   [Übersicht über die SQL-Datenbank]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336241.aspx

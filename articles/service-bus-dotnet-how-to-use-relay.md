@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-service-bus-relay" urlDisplayName="Service Bus Relay" pageTitle="How to use Service Bus relay (.NET) - Azure" metaKeywords="get started azure Service Bus Relay C# " description="Learn how to use the Azure Service Bus relay service to connect two applications hosted in different locations." metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use the Service Bus Relay Service" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
 # Verwenden des Service Bus Relay-Diensts
 
@@ -11,7 +11,7 @@ in der Service Bus-Assembly enthalten sind. Diese ist Bestandteil der .NET-Bibli
 Informationen zum Service Bus Relay finden Sie im
 Abschnitt [Nächste Schritte][Nächste Schritte].
 
-[WACOM.INCLUDE [create-account-note][create-account-note]]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## <span class="short-header">Was ist Service Bus Relay</span>Was ist Service Bus Relay
 
@@ -55,7 +55,7 @@ So erstellen Sie einen Dienstnamespace
 
 3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**.
 
-    ![][]
+    ![][0]
 
 4.  Geben Sie im Dialogfeld **Neuen Namespace hinzufügen** einen Namespacenamen ein.
     Das System prüft sofort, ob dieser Name verfügbar ist.
@@ -81,7 +81,7 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer R
 
 1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Servicebus**,
     um die Liste verfügbarer Namespaces anzuzeigen:
-    ![][]
+    ![][0]
 
 2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben:
     ![][3]
@@ -338,7 +338,7 @@ vertraut sind, finden Sie unter diesen Links weitere Informationen.
   [create-account-note]: ../includes/create-account-note.md
   [Relaykonzepte]: ./media/service-bus-dotnet-how-to-use-relay/sb-relay-01.png
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  []: ./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png
+  [0]: ./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png
   [1]: ./media/service-bus-dotnet-how-to-use-relay/sb-queues-04.png
   [2]: ./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png
   [3]: ./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png

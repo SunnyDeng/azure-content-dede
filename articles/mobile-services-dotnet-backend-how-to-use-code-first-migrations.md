@@ -1,6 +1,6 @@
 <properties pageTitle="How to use Code First Migrations .NET backend (Mobile Services)" metaKeywords="" description="" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Considerations for supporting multiple clients from a single mobile service" authors="glenga" solutions="mobile" writer="glenga" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Ändern des Datenmodells eines mobilen .NET-Backend-Dienstes
 
@@ -80,7 +80,7 @@ Gehen Sie folgendermaßen vor, um Migrations zu aktivieren und Änderungen des D
 
 11. (Optional) Wählen Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] Ihren mobilen Dienst aus, klicken Sie auf die Registerkarte **Konfigurieren**, und klicken Sie dann auf den Link **SQL-Datenbank**.
 
-    ![][]
+    ![][0]
 
     Die SQL-Datenbankseite für die Datenbank Ihres mobilen Dienstes wird aufgerufen.
 
@@ -127,7 +127,7 @@ Dieser Code ruft die Hilfserweiterungsmethode [AddOrUpdate][AddOrUpdate] auf, um
   [DbContext]: http://msdn.microsoft.com/de-de/library/system.data.entity.dbcontext(v=vs.113).aspx
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Seeding von Daten bei Migrationen]: #seeding
-  []: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/navagate-to-sql-database.png
+  [0]: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/navagate-to-sql-database.png
   [1]: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/manage-sql-database.png
   [Seed]: http://msdn.microsoft.com/de-de/library/hh829453(v=vs.113).aspx
   [AddOrUpdate]: http://msdn.microsoft.com/de-de/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx

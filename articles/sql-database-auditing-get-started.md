@@ -1,6 +1,6 @@
 <properties title="Get started with SQL database auditing" pageTitle="Get started with SQL database auditing | Azure" description="Get started with SQL database auditing" metaKeywords="" services="sql-database" solutions="data-management" documentationCenter="" authors="jeffreyg" videoId="" scriptId=""  />
 
-<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jeffreyg"></tags>
+<tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jeffreyg" />
 
 # Erste Schritte mit der SQL-Datenbanküberwachung
 
@@ -49,7 +49,7 @@ Sicherheitsaktivierte Verbindungszeichenfolge: \<*Servername*\>.database.**secur
 3.  Starten Sie das [Azure-Vorschauportal][Azure-Vorschauportal] unter <https://portal.azure.com>.
 4.  Klicken Sie auf die zu überwachende Datenbank, und klicken Sie dann auf **Überwachungsvorschau**, um die Überwachungsvorschau zu aktivieren und das Konfigurationsfenster für die Überwachung zu starten.
 
-    ![][]
+    ![][0]
 
 5.  Im Konfigurationsfenster für die Überwachung wählen Sie das Azure-Speicherkonto aus, in dem die Protokolle gespeichert werden. **Tipp:** Verwenden Sie dasselbe Speicherkonto für alle überwachten Datenbanken, um die vorkonfigurierten Berichtsvorlagen optimal zu nutzen.
 
@@ -88,10 +88,9 @@ Ausführlichere Anweisungen zur Arbeit mit der Berichtsvorlage finden Sie unter 
   [Grundlagen zur Azure SQL-Datenbanküberwachung]: #subheading-1
   [Einrichten der Überwachung für Ihre Datenbank]: #subheading-2
   [Analysieren von Überwachungsprotokollen und -berichten]: #subheading-3
-  [Referenz zu Überwachungsprotokollformaten (Dokumentdateidownload)]: http://go.microsoft.com/fwlink/?LinkId=506733
   [Registrieren Sie sich auch für die Vorschau auf neue Serviceebenen]: https://account.windowsazure.com/PreviewFeatures?fid=premiumdb
   [Azure-Vorschauportal]: https://portal.azure.com
-  []: ./media/sql-database-auditing-get-started/sql-database-get-started-auditingpreview.png
+  [0]: ./media/sql-database-auditing-get-started/sql-database-get-started-auditingpreview.png
   [1]: ./media/sql-database-auditing-get-started/sql-database-get-started-storageaccount.png
   [2]: ./media/sql-database-auditing-get-started/sql-database-auditing-eventtype.png
   [3]: ./media/sql-database-auditing-get-started/sql-database-get-started-saveconfigasdefault.png
@@ -99,5 +98,4 @@ Ausführlichere Anweisungen zur Arbeit mit der Berichtsvorlage finden Sie unter 
   [Azure-Speicher-Explorer]: http://azurestorageexplorer.codeplex.com/
   [herunterladbare Excel-Arbeitsmappe]: http://go.microsoft.com/fwlink/?LinkId=403540
   [hier]: http://www.microsoft.com/de-de/download/details.aspx?id=39379
-  [Vorgehensweise (Dokumentdownload)]: http://go.microsoft.com/fwlink/?LinkId=506731
   [5]: ./media/sql-database-auditing-get-started/sql-database-auditing-dashboard.png

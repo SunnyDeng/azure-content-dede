@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage from .NET | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Learn how to use Microsoft Azure Blob storage to upload,  download, list, and delete blob content. Samples are written in C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure Blob storage in .NET" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Verwenden des Blob-Speichers mit .NET
 
@@ -8,33 +8,33 @@ Diese Anleitung beschreibt die Ausführung gängiger Szenarien mithilfe des
 Azure-Blobspeicherdiensts. Die Beispiele sind in C# geschrieben
 und verwenden die Azure Speicher-Clientbibliothek für .NET. Die hier beschriebenen Szenarien umfassen das
 **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere
-Informationen zu Blobs finden Sie im Abschnitt [nächste Schritte][].
+Informationen zu Blobs finden Sie im Abschnitt [nächste Schritte][nächste Schritte].
 
-> [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet][] oder als Teil des [Azure SDK für .NET][] erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
+> [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet][NuGet] oder als Teil des [Azure SDK für .NET][Azure SDK für .NET] erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
 
 ## Inhaltsverzeichnis
 
--   [Was ist Blob-Speicher?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Einrichten einer Speicherverbindungszeichenfolge][]
--   [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][]
--   [Gewusst wie: Erstellen eines Containers][]
--   [Gewusst wie: Hochladen eines Blobs in einen Container][]
--   [Gewusst wie: Auflisten der Blobs in einem Container][]
--   [Gewusst wie: Herunterladen von Blobs][]
--   [Gewusst wie: Löschen von Blobs][]
+-   [Was ist Blob-Speicher?][Was ist Blob-Speicher?]
+-   [Konzepte][Konzepte]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Einrichten einer Speicherverbindungszeichenfolge][Einrichten einer Speicherverbindungszeichenfolge]
+-   [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher]
+-   [Gewusst wie: Erstellen eines Containers][Gewusst wie: Erstellen eines Containers]
+-   [Gewusst wie: Hochladen eines Blobs in einen Container][Gewusst wie: Hochladen eines Blobs in einen Container]
+-   [Gewusst wie: Auflisten der Blobs in einem Container][Gewusst wie: Auflisten der Blobs in einem Container]
+-   [Gewusst wie: Herunterladen von Blobs][Gewusst wie: Herunterladen von Blobs]
+-   [Gewusst wie: Löschen von Blobs][Gewusst wie: Löschen von Blobs]
 -   [Nächste Schritte][nächste Schritte]
 
-[WACOM.INCLUDE [howto-blob-storage][]]
+[WACOM.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
 
 ## <a name="create-account"></a><span class="short-header">Erstellen eines Kontos</span>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account][]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <a name="setup-connection-string"></a><span class="short-header">Einrichten einer Verbindungszeichenfolge</span>Einrichten einer Speicherverbindungszeichenfolge
 
-[WACOM.INCLUDE [storage-configure-connection-string][]]
+[WACOM.INCLUDE [storage-configure-connection-string](../includes/storage-configure-connection-string.md)]
 
 ## <a name="configure-access"> </a><span class="short-header">Programmgesteuerter Zugriff</span>Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher
 
@@ -42,7 +42,7 @@ Informationen zu Blobs finden Sie im Abschnitt [nächste Schritte][].
 
 Sie können die Assembly `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
-`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
+`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
 
 ### Namespace-Deklarationen
 
@@ -84,7 +84,7 @@ Speicherkonto-Objekts:
 
 ### ODataLib-Abhängigkeiten
 
-ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst. Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen. Die spezifischen ODataLib-Pakete sind [OData][], [Edm][] und [Spatial][].
+ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst. Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen. Die spezifischen ODataLib-Pakete sind [OData][OData], [Edm][Edm] und [Spatial][Spatial].
 
 ## <a name="create-container"> </a><span class="short-header">Erstellen eines Containers</span>Gewusst wie: Erstellen eines Containers
 
@@ -235,7 +235,7 @@ Das Ergebnis sähe folgendermaßen aus:
     Block blob of length 399751: https://<accountname>.blob.core.windows.net/photos/2011/photo7.jpg
     Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/photo1.jpg
 
-Weitere Informationen finden Sie unter [CloudBlobContainer.ListBlobs][].
+Weitere Informationen finden Sie unter [CloudBlobContainer.ListBlobs][CloudBlobContainer.ListBlobs].
 
 ## <a name="download-blobs"> </a><span class="short-header">Herunterladen von Blobs</span>Gewusst wie: Herunterladen von Blobs
 
@@ -311,23 +311,22 @@ Nachdem Sie sich nun mit den Grundlagen des Blobspeichers vertraut gemacht haben
 folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 -   In der Referenzdokumentation für den Blobspeicherdienst finden Sie alle Details zu verfügbaren APIs:
-    -   [Referenz zur Speicherclientbibliothek für .NET][]
-    -   [REST-API-Referenz][]
+    -   [Referenz zur Speicherclientbibliothek für .NET][Referenz zur Speicherclientbibliothek für .NET]
+    -   [REST-API-Referenz][REST-API-Referenz]
 
--   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speicher][].
--   Informationen zum Arbeiten mit dem Azure-Speicher in Back-End-Prozessen für Azure-Webseiten finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK][].
+-   Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speicher][Speicher].
+-   Informationen zum Arbeiten mit dem Azure-Speicher in Back-End-Prozessen für Azure-Webseiten finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK][Erste Schritte mit dem Azure WebJobs SDK].
 -   Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
-    -   Verwenden Sie [Tabellenspeicher][] zum Speichern strukturierter Daten.
-    -   Verwenden Sie den [Warteschlangenspeicher][] zum Speichern unstrukturierter Daten.
-    -   Verwenden Sie eine [SQL-Datenbank][] zum Speichern relationaler Daten.
+    -   Verwenden Sie [Tabellenspeicher][Tabellenspeicher] zum Speichern strukturierter Daten.
+    -   Verwenden Sie den [Warteschlangenspeicher][Warteschlangenspeicher] zum Speichern unstrukturierter Daten.
+    -   Verwenden Sie eine [SQL-Datenbank][SQL-Datenbank] zum Speichern relationaler Daten.
 
 </p>
 
   [nächste Schritte]: #next-steps
   [NuGet]: https://www.nuget.org/packages/WindowsAzure.Storage/
-  [Azure SDK für .NET]: /en-us/downloads/
+  [Azure SDK für .NET]: /de-de/downloads/
   [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher]: #configure-access
-  [Was ist Blob-Speicher?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Einrichten einer Speicherverbindungszeichenfolge]: #setup-connection-string
@@ -339,13 +338,13 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [howto-blob-storage]: ../includes/howto-blob-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
   [storage-configure-connection-string]: ../includes/storage-configure-connection-string.md
-  [.NET Developer Center]: http://www.windowsazure.com/en-us/develop/net/#
+  [.NET Developer Center]: http://www.windowsazure.com/de-de/develop/net/#
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [Referenz zur Speicherclientbibliothek für .NET]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-  [REST-API-Referenz]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179355
-  [Speicher]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
+  [REST-API-Referenz]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179355
+  [Speicher]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Erste Schritte mit dem Azure WebJobs SDK]: /de-de/documentation/articles/websites-dotnet-webjobs-sdk-get-started/
   [Tabellenspeicher]: /de-de/documentation/articles/storage-dotnet-how-to-use-tables/
   [Warteschlangenspeicher]: /de-de/documentation/articles/storage-dotnet-how-to-use-queues/

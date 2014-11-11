@@ -1,6 +1,6 @@
 <properties linkid="dev-nodejs-enablessl" urlDisplayName="Enable SSL" pageTitle="Configure SSL for a cloud service (Node.js) - Azure" metaKeywords="Node.js Azure SSL, Node.js Azure HTTPS" description="Learn how to specify an HTTPS endpoint for a Node.js web role and how to upload an SSL certificate to secure your application." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Configuring SSL for a Node.js Application in an Azure Web Role" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr"></tags>
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Webrolle
 
@@ -15,11 +15,11 @@ gehostet ist, und wie Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochl
 
 Diese Aufgabe umfasst die folgenden Schritte:
 
--   [Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud][]
--   [Schritt 2: Beziehen eines SSL-Zertifikats][]
--   [Schritt 3: Importieren des SSL-Zertifikats][]
--   [Schritt 4: Ändern der Definitions- und Konfigurationsdateien für den Dienst][]
--   [Schritt 5: Verbinden mit der Rolleninstanz über HTTPS][]
+-   [Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud][Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud]
+-   [Schritt 2: Beziehen eines SSL-Zertifikats][Schritt 2: Beziehen eines SSL-Zertifikats]
+-   [Schritt 3: Importieren des SSL-Zertifikats][Schritt 3: Importieren des SSL-Zertifikats]
+-   [Schritt 4: Ändern der Definitions- und Konfigurationsdateien für den Dienst][Schritt 4: Ändern der Definitions- und Konfigurationsdateien für den Dienst]
+-   [Schritt 5: Verbinden mit der Rolleninstanz über HTTPS][Schritt 5: Verbinden mit der Rolleninstanz über HTTPS]
 
 ## <a name="step1"> </a>Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud
 
@@ -31,13 +31,13 @@ einen einfachen "Hello World"-Dienst in Node.js mit der Azure PowerShell erstell
 
 1.  Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**. Klicken Sie dann mit der rechten Maustaste auf **Azure PowerShell**, und wählen Sie **Als Administrator ausführen**.
 
-    ![Azure PowerShell-Symbol][]
+    ![Azure PowerShell-Symbol][Azure PowerShell-Symbol]
 
-[WACOM.INCLUDE [install-dev-tools][]]
+[WACOM.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
 
 1.  Erstellen Sie ein neues Dienstprojekt mit dem **New-AzureServiceProject**-Cmdlet.
 
-    ![][]
+    ![][0]
 
 2.  Fügen Sie mit dem **Add-AzureNodeWebRole**-Cmdlet eine Webrolle zu Ihrem Dienst hinzu:
 
@@ -86,13 +86,13 @@ Zum Importieren des SSL-Zertifikats führen Sie die folgenden Schritte durch:
 
 1.  Navigieren Sie mithilfe des Windows Explorers zu dem Verzeichnis, in dem sich die **.pfx**-Datei befindet, welche das Zertifikat enthält. Doppelklicken Sie anschließend auf das Zertifikat. Dadurch wird der Zertifikatimport-Assistent angezeigt.
 
-    ![Zertifikat-Assistent][]
+    ![Zertifikat-Assistent][Zertifikat-Assistent]
 
 2.  Wählen Sie im Bereich **Store Location** die Option **Current User**, und klicken Sie dann auf **Weiter**. Das Zertifikat wird nun für Ihr Benutzerkonto in den Zertifikatspeicher installiert.
 
 3.  Fahren Sie im Assistenten fort, und akzeptieren Sie dabei sämtliche Voreinstellungen, bis Sie zum Bildschirm **Private key protection** gelangen. Hier müssen Sie das Kennwort (sofern vorhanden) für das Zertifikat eingeben. Außerdem müssen Sie **Mark this key as exportable** auswählen. Klicken Sie anschließend auf **Next**.
 
-    ![Schutz durch privaten Schlüssel][]
+    ![Schutz durch privaten Schlüssel][Schutz durch privaten Schlüssel]
 
 4.  Fahren Sie im Assistenten weiter fort. Akzeptieren Sie die Voreinstellungen, bis das Zertifikat erfolgreich installiert ist.
 
@@ -120,7 +120,7 @@ für den Dienst zu aktualisieren.
 
     Der Abschnitt **Certificates** definiert den Namen des Zertifikats,
     dessen Speicherort sowie den Namen des Speichers. Da das Zertifikat im Benutzerzertifikatspeicher installiert ist, wird der Wert "My" verwendet. Andere Zertifikatspeicherorte können ebenfalls verwendet werden. Weitere Informationen
-    finden Sie unter [Verknüpfen eines Zertifikats mit einem Dienst][].
+    finden Sie unter [Verknüpfen eines Zertifikats mit einem Dienst][Verknüpfen eines Zertifikats mit einem Dienst].
 
 2.  Aktualisieren Sie in der Dienstdefinitionsdatei im Abschnitt **Endpoints** das **InputEndpoint**-HTTP-Element, um HTTPS zu aktivieren:
 
@@ -169,7 +169,7 @@ eine HTTPS-Verbindung herstellen.
 
 2.  Blättern Sie nach unten und klicken Sie auf den Link, der als **Site URL** angezeigt wird:
 
-    ![Website-URL][]
+    ![Website-URL][Website-URL]
 
     <div class="dev-callout">
 <strong>Hinweis</strong>
@@ -186,13 +186,12 @@ eine HTTPS-Verbindung herstellen.
 
 ## Zusätzliche Ressourcen
 
-[Verknüpfen eines Zertifikats mit einem Dienst][]
+[Verknüpfen eines Zertifikats mit einem Dienst][Verknüpfen eines Zertifikats mit einem Dienst]
 
-[Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle][]
+[Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle][Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle]
 
-[Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt][]
+[Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt][Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt]
 
-  [Configuring an SSL certificate for an Azure website]: ../web-sites-configure-ssl-certificate/
   [Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud]: #step1
   [Schritt 2: Beziehen eines SSL-Zertifikats]: #step2
   [Schritt 3: Importieren des SSL-Zertifikats]: #step3
@@ -200,10 +199,9 @@ eine HTTPS-Verbindung herstellen.
   [Schritt 5: Verbinden mit der Rolleninstanz über HTTPS]: #step5
   [Azure PowerShell-Symbol]: ./media/cloud-services-nodejs-configure-ssl-certificate/azure-powershell-start.png
   [install-dev-tools]: ../includes/install-dev-tools.md
-  []: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-01.png
+  [0]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-01.png
   [1]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-02.png
   [2]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-03.png
-  [Verwenden von Azure PowerShell für Node.js]: https://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings
   [Zertifikat-Assistent]: ./media/cloud-services-nodejs-configure-ssl-certificate/certificateimport.png
   [Schutz durch privaten Schlüssel]: ./media/cloud-services-nodejs-configure-ssl-certificate/exportable.png
   [Verknüpfen eines Zertifikats mit einem Dienst]: http://msdn.microsoft.com/de-de/library/windowsazure/gg465718.aspx

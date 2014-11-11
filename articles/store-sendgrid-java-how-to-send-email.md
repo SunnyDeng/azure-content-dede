@@ -1,6 +1,6 @@
 <properties linkid="dev-java-how-to-access-control" urlDisplayName="SendGrid Email Service" pageTitle="How to use the SendGrid email service (Java) - Azure" metaKeywords="Azure SendGrid, Azure email service, Azure SendGrid Java, Azure email Java" description="Learn how send email with the SendGrid email service on Azure. Code samples written in Java." metaCanonical="" services="" documentationCenter="Java" title="How to Send Email Using SendGrid from Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm"></tags>
+<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
 # Senden von E-Mails mit SendGrid aus Java
 
@@ -44,7 +44,7 @@ Weitere Informationen finden Sie unter <http://sendgrid.com>.
 
 ## <a name="bkmk_CreateSendGridAcct"> </a>Erstellen eines SendGrid-Kontos
 
-[WACOM.INCLUDE [sendgrid-sign-up][sendgrid-sign-up]]
+[WACOM.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
 ## <a name="bkmk_HowToUseJavax"> </a>Gewusst wie: Verwenden der javax.mail-Bibliotheken
 
@@ -221,7 +221,6 @@ diesen Links weitere Informationen.
 -   Spezielles SendGrid-Angebot für Azure-Kunden: <http://sendgrid.com/azure.html>
 
   [Nächste Schritte]: #bkmk_NextSteps
-  [Was ist der SendGrid-E-Mail-Dienst?]: #bkmk_WhatIsSendGrid
   [SendGrid-Konto erstellen]: #bkmk_CreateSendGridAcct
   [Gewusst wie: Verwenden der javax.mail-Bibliotheken]: #bkmk_HowToUseJavax
   [Gewusst wie: Erstellen einer E-Mail]: #bkmk_HowToCreateEmail

@@ -1,6 +1,6 @@
 <properties linkid="develop-python-web-app-with-django" urlDisplayName="Web with Django (Windows)" pageTitle="Python web app with Django - Azure tutorial" metaKeywords="Azure Django web app, Azure Django virtual machine" description="A tutorial that teaches you how to host a Django-based website on Azure using a Windows Server 2008 R2 virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application" authors="huvalo" solutions="" manager="" editor="" />
 
-<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-windows" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo"></tags>
+<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-windows" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Django-Webanwendung "Hello World"
 
@@ -21,7 +21,7 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ![Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.][Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.]
 
-[WACOM.INCLUDE [create-account-and-vms-note][create-account-and-vms-note]]
+[WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## Erstellen und Konfigurieren eines virtuellen Azure-Computers als Host von Django
 
@@ -34,7 +34,7 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
     ![Endpunkt hinzufügen][Endpunkt hinzufügen]
 
 -   Öffnen Sie *ÖFFENTLICHER PORT 80* des *TCP*-Protokolls als *PRIVATER PORT 80*.
-    ![][].
+    ![][0].
 
 1.  Verwenden Sie Windows *Remotedesktop*, um sich von einem Remotestandort aus am neu erstellten virtuellen Azure-Computer anzumelden.
 
@@ -121,13 +121,11 @@ Mit dem Skript **django-admin.py** wird eine Grundstruktur für Django-basierte 
 
 Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virtuellen Azure-Computer herunter, und/oder entfernen Sie diesen, sodass die Ressourcen für andere Lernprogramme zur Verfügung stehen und anfallende Kosten für die Verwendung von Azure vermieden werden.
 
-  [Windows]: /de-de/develop/python/tutorials/web-app-with-django/ "Windows"
-  [Mac/Linux]: /de-de/develop/python/tutorials/django-hello-world-(maclinux)/ "Mac/Linux"
   [Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-browser-azure.png
   [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
   [hier]: /de-de/manage/windows/tutorials/virtual-machine-from-gallery/
   [Endpunkt hinzufügen]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png
-  []: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-port80.png
+  [0]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-port80.png
   [Installationshandbuch]: ../python-how-to-install/
   [IIS config1]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis1.png
   [codeplex]: http://go.microsoft.com/fwlink/?LinkID=316392&clcid=0x409

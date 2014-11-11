@@ -1,6 +1,6 @@
 <properties pageTitle="Use Mobile Services to upload images to blob storage (Windows Phone) | Mobile Services" metaKeywords="" description="Learn how to use Mobile Services to upload images to Azure Blob Storage." metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Upload images to Azure Storage by using Mobile Services" authors="wesmc" writer="wesmc" services="mobile-services,storage"  />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 
 # Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage
 
@@ -36,7 +36,7 @@ Um eine SAS für das Hochladen von Bildern in den BLOB-Speicher verwenden zu kö
 
 2.  Wählen Sie im linken Bereich die Kategorie **Online** und **Include Prerelease** aus, suchen Sie nach **WindowsAzure.Storage-Preview**, klicken Sie auf **Installieren** im Paket **Azure Storage**, und stimmen Sie dem Lizenzvertrag zu.
 
-    ![][]
+    ![][0]
 
     Die Clientbibliothek für Azure-Speicherdienste wird zum Projekt hinzugefügt.
 
@@ -44,11 +44,11 @@ Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen
 
 ## <a name="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
-[WACOM.INCLUDE [mobile-services-configure-blob-storage][mobile-services-configure-blob-storage]]
+[WACOM.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
 > [WACOM.NOTE]Um neue Eigenschaften zum TodoItem-Objekt hinzuzufügen, muss das dynamische Schema im mobilen Service aktiviert sein. Wenn das dynamische Schema aktiviert ist, werden automatisch neue Spalten in die TodoItem-Tabelle eingefügt, die auf diese neuen Eigenschaften verweisen.
 
-[WACOM.INCLUDE [mobile-services-windows-phone-upload-to-blob-storage][mobile-services-windows-phone-upload-to-blob-storage]]
+[WACOM.INCLUDE [mobile-services-windows-phone-upload-to-blob-storage](../includes/mobile-services-windows-phone-upload-to-blob-storage.md)]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
@@ -70,12 +70,8 @@ Referenzthemen zur Verwendung von Serverskripts zur Ausführung serverseitiger T
 
 Lernen Sie mehr über die Verwendung von Mobile Services mit .NET
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-upload-data-blob-storage "Windows Store C#"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-upload-data-blob-storage "Windows Phone"
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-windows-phone-upload-data-blob-storage "JavaScript-Backend"
+
   [Installation der Speicherclientbibliothek]: #install-storage-client
   [Aktualisierung des Einfügeskripts zur Erzeugung einer SAS]: #update-scripts
   [Aktualisierung der Client-App zur Aufnahme von Bildern]: #add-select-images
@@ -83,7 +79,7 @@ Lernen Sie mehr über die Verwendung von Mobile Services mit .NET
   [Windows Phone SDK 8.0]: http://www.microsoft.com/de-de/download/details.aspx?id=35471
   [Azure-Speicherkonto]: /de-de/manage/services/storage/how-to-create-a-storage-account
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started
-  []: ./media/mobile-services-windows-phone-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
+  [0]: ./media/mobile-services-windows-phone-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
   [mobile-services-configure-blob-storage]: ../includes/mobile-services-configure-blob-storage.md
   [mobile-services-windows-phone-upload-to-blob-storage]: ../includes/mobile-services-windows-phone-upload-to-blob-storage.md
   [Senden von E-Mails in Mobile Services mit SendGrid]: /de-de/develop/mobile/tutorials/send-email-with-sendgrid/

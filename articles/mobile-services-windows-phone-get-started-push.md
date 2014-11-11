@@ -1,6 +1,6 @@
 <properties pageTitle="Get started with push notifications (legacy push) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Windows Phone app (legacy push)." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services (legacy push)" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Erste Schritte mit Pushbenachrichtigungen in Mobile Services (Legacypushvorgang)
 
@@ -39,7 +39,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ## <a name="create-table"></a>Erstellen einer neuen Tabelle
 
-[WACOM.INCLUDE [mobile-services-create-new-push-table][mobile-services-create-new-push-table]]
+[WACOM.INCLUDE [mobile-services-create-new-push-table](../includes/mobile-services-create-new-push-table.md)]
 
 ## <a name="add-push"></a><span class="short-header">Hinzufügen von Pushbenachrichtigungen</span>Hinzufügen von Pushbenachrichtigungen zu Ihrer App
 
@@ -93,13 +93,13 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 5.  Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion \*\*ID\_**CAP**\_PUSH\_NOTIFICATION\*\*.
 
-    ![][]
+    ![][0]
 
     Damit stellen Sie sicher, dass Ihre App Pushbenachrichtigungen empfangen kann.
 
 ## <a name="update-scripts"></a><span class="short-header">Aktualisieren des Einfügeskripts</span>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
-[WACOM.INCLUDE [mobile-services-update-registrations-script][mobile-services-update-registrations-script]]
+[WACOM.INCLUDE [mobile-services-update-registrations-script](../includes/mobile-services-update-registrations-script.md)]
 
 1.  Klicken Sie auf **TodoItem**, dann auf **Script**, und wählen Sie **Insert** aus.
 
@@ -192,16 +192,8 @@ Weitere Informationen zu Mobile Services:
 -   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-push "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-push "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-ios-get-started-push "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-android-get-started-push "Android"
-  [Appcelerator]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push "Appcelerator"
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push/ ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-push/ "JavaScript-Backend"
+
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push/
   [Erstellen der Registrations-Tabelle]: #create-table
   [Hinzufügen von Pushbenachrichtigungen zur App]: #add-push
@@ -211,7 +203,7 @@ Weitere Informationen zu Mobile Services:
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-wp8
   [Erste Schritte mit Notification Hubs]: /de-de/manage/services/notification-hubs/getting-started-windows-dotnet/
   [mobile-services-create-new-push-table]: ../includes/mobile-services-create-new-push-table.md
-  []: ./media/mobile-services-windows-phone-get-started-push/mobile-app-enable-push-wp8.png
+  [0]: ./media/mobile-services-windows-phone-get-started-push/mobile-app-enable-push-wp8.png
   [mobile-services-update-registrations-script]: ../includes/mobile-services-update-registrations-script.md
   [1]: ./media/mobile-services-windows-phone-get-started-push/mobile-insert-script-push2.png
   [2]: ./media/mobile-services-windows-phone-get-started-push/mobile-quickstart-push1-wp8.png
@@ -219,7 +211,6 @@ Weitere Informationen zu Mobile Services:
   [4]: ./media/mobile-services-windows-phone-get-started-push/mobile-quickstart-push3-wp8.png
   [5]: ./media/mobile-services-windows-phone-get-started-push/mobile-quickstart-push4-wp8.png
   [Erste Schritte mit Benachrichtigungshubs]: /de-de/manage/services/notification-hubs/get-started-notification-hubs-wp8/
-  [Was sind Notification Hubs?]: /de-de/develop/net/how-to-guides/service-bus-notification-hubs/
   [Senden von Benachrichtigungen an Abonnenten]: /de-de/manage/services/notification-hubs/breaking-news-wp8/
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-wp8
   [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-wp8

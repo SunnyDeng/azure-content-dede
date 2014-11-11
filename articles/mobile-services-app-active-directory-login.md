@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-how-to-guides-register-for-microsoft-waad-authentication" urlDisplayName="Register for Azure Active Directory Authentication" pageTitle="Register for Azure Active Directory authentication - Mobile Services" metaKeywords="Azure registering application, Azure Active Directory authentication, application authenticate, authenticate mobile services" description="Learn how to register for Azure Active Directory authentication in your Azure Mobile Services application." metaCanonical="" disqusComments="0" umbracoNaviHide="1" title="Register your apps to use an Azure Active Directory Account login" authors="dwrede" manager="dwrede" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="dwrede"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="dwrede" />
 
 # Registrieren Ihrer Apps für die Verwendung einer Azure Active Directory-Anmeldung
 
@@ -14,7 +14,7 @@ In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Di
 
 2.  Navigieren Sie zu **Active Directory** im Verwaltungsportal und klicken Sie auf Ihr Directory.
 
-![][]
+![][0]
 
 1.  Klicken Sie auf die Registerkarte **Applications** und anschließend auf **Add an App**.
 
@@ -26,9 +26,8 @@ In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Di
 
 Sie können nun eine Azure Active Directory-Anmeldung für die Authentifizierung in Ihrer App verwenden, indem Sie die Client-ID und den geheimen Clientschlüssel für Mobile Services bereitstellen.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Registrieren Ihrer Windows Store-Apps für die Windows Live Connect-Authentifizierung]: /de-de/develop/mobile/how-to-guides/register-for-single-sign-on
+
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-app-active-directory-login/mobile-services-live-connect-add-app.png
+  [0]: ./media/mobile-services-app-active-directory-login/mobile-services-live-connect-add-app.png
   [1]: ./media/mobile-services-app-active-directory-login/mobile-live-connect-app-api-settings.png

@@ -1,6 +1,6 @@
 <properties linkid="dev-java-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="How to use Service Bus queues (Java) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Java" description="Learn how to use Service Bus queues in Azure. Code samples written in Java." metaCanonical="" services="service-bus" documentationCenter="Java" title="How to Use Service Bus Queues" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
 # Einsatz von Servicebus-Warteschlangen
 
@@ -249,7 +249,6 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen
 vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, Themen und Abonnements][Warteschlangen, Themen und Abonnements].
 
   [Azure-SDK für Java]: http://azure.microsoft.com/de-de/develop/java/
-  [Was sind Servicebus-Warteschlangen?]: #what-are-service-bus-queues
   [Erstellen eines Dienstnamespace]: #create-a-service-namespace
   [Abrufen der Standard-Anmeldeinformationen für den Namespace]: #obtain-default-credentials
   [Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus]: #bkmk_ConfigApp

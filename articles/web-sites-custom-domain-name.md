@@ -1,6 +1,6 @@
 <properties title="Learn how to configure an Azure website to use a custom domain name" pageTitle="Configure a custom domain name for an Azure website" metaKeywords="Azure, Azure Web Sites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr, jroth, mwasson"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr, jroth, mwasson" />
 
 # Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website
 
@@ -8,7 +8,7 @@
 
 <div class="dev-center-tutorial-subselector"><a href="/de-de/documentation/articles/web-sites-custom-domain-name/" title="Websites" class="current">Website</a> | <a href="/de-de/documentation/articles/web-sites-traffic-manager-custom-domain-name/" title="Website mit Traffic Manager">Website mit Traffic Manager</a></div>
 
-[WACOM.INCLUDE [websites-cloud-services-css-guided-walkthrough][websites-cloud-services-css-guided-walkthrough]]
+[WACOM.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 Wenn Sie eine Website erstellen, weist Azure diese einer Unterdomäne von "azurewebsites.net" zu. Bei einer Website mit dem Namen **contoso** lautet die URL beispielsweise **contoso.azurewebsites.net**. Darüber hinaus weist Azure eine virtuelle IP-Adresse zu.
 
@@ -16,7 +16,7 @@ Wenn Sie eine Website erstellen, weist Azure diese einer Unterdomäne von "azure
 
 Bei einer produktiven Website bezwecken Sie wahrscheinlich, dass Benutzer einen benutzerdefinierten Domänennamen sehen. In diesem Artikel wird erläutert, wie Sie eine benutzerdefinierte Domäne mit Azure-Websites erstellen. (Der Artikel enthält allgemeine Anleitungen für beliebige Domänenregistrierungsstellen. Die Registerkarten im oberen Bereich führen zu einigen Artikeln für spezifische Registrierungsstellen.)
 
-[WACOM.INCLUDE [introfooter][introfooter]]
+[WACOM.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
 Themen in diesem Artikel:
 
@@ -41,7 +41,7 @@ In diesem grundlegenden Entwurf sind eine Sonderfälle zu berücksichtigen:
 -   Zuordnen einer Unterdomäne. Beispiel: **blogs.contoso.com**. Sie können verschiedenen Websites unterschiedliche Unterdomänen zuordnen.
 -   Zuordnen eines Platzhalters. Beispiel: \***.contoso.com**. Ein Platzhaltereintrag gilt für alle Unterdomänen der Domäne.
 
-[WACOM.INCLUDE [modes][modes]]
+[WACOM.INCLUDE [modes](../includes/custom-dns-web-site-modes.md)]
 
 ## DNS-Eintragstypen
 
@@ -62,7 +62,7 @@ Wenn sich die IP-Adresse ändert, bleibt der CNAME-Entrag gültig, während ein 
 2.  Klicken Sie auf der Registerkarte **Websites** auf den Namen Ihrer Website, und wählen Sie **Dashboard** aus.
 3.  Klicken Sie unten auf der Seite auf **Domänen verwalten**. (Wenn diese Option deaktiviert ist, müssen Sie den Modus **Freigegeben**, **Basic** oder **Standard** verwenden. Weitere Informationen finden Sie unter [Skalieren von Websites][Skalieren von Websites].)
 
-    ![][]
+    ![][0]
 
 4.  Die IP-Adresse ist im unteren Bereich des Dialogfelds aufgeführt.
 
@@ -106,17 +106,6 @@ Besucher Ihrer Website sehen die awverify-Unterdomäne nicht; sie dient nur zum 
 
 <!-- Anchors. --> <!-- Images -->
 
-  [Benutzerdefinierte Domäne]: /de-de/documentation/articles/web-sites-custom-domain-name "Benutzerdefinierte Domäne"
-  [GoDaddy]: /de-de/documentation/articles/web-sites-godaddy-custom-domain-name "GoDaddy"
-  [Netzwerklösungen]: /de-de/documentation/articles/web-sites-network-solutions-custom-domain-name "Netzwerklösungen"
-  [Register.com]: /de-de/documentation/articles/web-sites-registerdotcom-custom-domain-name "Register.com"
-  [Enom]: /de-de/documentation/articles/web-sites-enom-custom-domain-name "Enom"
-  [Moniker]: /de-de/documentation/articles/web-sites-moniker-custom-domain-name "Moniker"
-  [Dotster]: /de-de/documentation/articles/web-sites-dotster-custom-domain-name "Dotster"
-  [DomainDiscover]: /de-de/documentation/articles/web-sites-domaindiscover-custom-domain-name "DomainDiscover"
-  [Directnic]: /de-de/documentation/articles/web-sites-directnic-custom-domain-name "Directnic"
-  [Website]: /de-de/documentation/articles/web-sites-custom-domain-name/ "Websites"
-  [Website mit Traffic Manager]: /de-de/documentation/articles/web-sites-traffic-manager-custom-domain-name/ "Website mit Traffic Manager"
   [websites-cloud-services-css-guided-walkthrough]: ../includes/websites-cloud-services-css-guided-walkthrough.md
   [Unterdomäne "contoso.azurewebsites.net"]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
   [introfooter]: ../includes/custom-dns-web-site-intro-notes.md
@@ -124,11 +113,10 @@ Besucher Ihrer Website sehen die awverify-Unterdomäne nicht; sie dient nur zum 
   [DNS-Eintragstypen]: #dns-record-types
   [Suchen der virtuellen IP-Adresse]: #find-the-virtual-ip-address
   [Erstellen von DNS-Einträgen]: #create-the-dns-records
-  [Erstellen eines "awverify"-Eintrags (nur A-Einträge)]: #awverify
   [Aktivieren des Domänennamens auf Ihrer Website]: #enable-the-domain-name-on-your-website
   [modes]: ../includes/custom-dns-web-site-modes.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Skalieren von Websites]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-scale/
-  []: media/web-sites-custom-domain-name/dncmntask-cname-6.png
+  [0]: media/web-sites-custom-domain-name/dncmntask-cname-6.png
   [1]: media/web-sites-custom-domain-name/ipaddress.png
   [2]: ../includes/custom-dns-web-site-enable-on-web-site.md

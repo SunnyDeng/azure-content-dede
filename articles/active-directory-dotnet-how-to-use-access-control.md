@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-access-control" urlDisplayName="Access Control" pageTitle="How to use Access Control (.NET) - Azure feature guide" metaKeywords="Azure Access Control Service authentication C#" description="Learn how to use Access Control Service (ACS) in your Azure application to authenticate users when they try to gain access to a web app." metaCanonical="" services="active-directory" documentationCenter=".NET" title="How to Authenticate Web Users with Azure Active Directory Access Control" authors="mbaldwin, juneb" solutions="" manager="mbaldwin" editor="" />
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="mbaldwin, juneb"></tags>
+<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="mbaldwin, juneb" />
 
 # Authentifizieren von Webbenutzern mit der Azure Active Directory-Zugriffssteuerung
 
@@ -58,7 +58,7 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben durchführen können, müs
 
 Die folgende Abbildung zeigt, wie die ACS-Authentifizierung bei einer Webanwendung abläuft:
 
-![][]
+![][0]
 
 1.  Der Client (in diesem Fall ein Browser) fordert von der RP eine Seite an.
 2.  Da die Anforderung noch nicht authentifiziert ist, verweist die
@@ -358,7 +358,6 @@ Außerdem können Sie mit zusätzlichen Regeln in Ihrem Namespace festlegen, wel
 
 Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien experimentieren möchten, finden Sie weitere Informationen unter [Access Control Service 2.0][Access Control Service 2.0].
 
-  [Was ist der ACS?]: #what-is
   [Konzepte]: #concepts
   [Voraussetzungen]: #pre
   [Erstellen eines Access Control-Namespace]: #create-namespace
@@ -370,7 +369,7 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien ex
   [Hinzufügen eines Identitätsanbieters]: #add-IP
   [Nächste Schritte]: #whats-next
   [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-  []: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
+  [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
   [Identitäts- und Zugriffstool]: http://go.microsoft.com/fwlink/?LinkID=245849
   [Azure-Verwaltungsportal]: http://manage.WindowsAzure.com
   [1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png

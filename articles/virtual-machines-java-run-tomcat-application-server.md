@@ -1,6 +1,6 @@
 <properties linkid="dev-java-vm-application-server" urlDisplayName="Tomcat on Virtual Machine" pageTitle="Tomcat on a virtual machine - Azure tutorial" metaKeywords="Azure vm, creating vm Tomcat, configuring vm Tomcat" description="Learn how to create a Windows Virtual machine and configure the machine to run a Apache Tomcat application server." metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a Java application server on a virtual machine" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-windows" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm"></tags>
+<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-windows" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
 # Ausführen eines Java-Anwendungsservers auf einem virtuellen Computer
 
@@ -18,7 +18,7 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
 
 ![Virtueller Computer mit Apache Tomcat][Virtueller Computer mit Apache Tomcat]
 
-[WACOM.INCLUDE [create-account-and-vms-note][create-account-and-vms-note]]
+[WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## So erstellen Sie einen virtuellen Computer
 
@@ -146,5 +146,4 @@ An dieser Stelle sollte es nun möglich sein, die Tomcat-Website über einen ext
   [Neue eingehende Regel – Aktion]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleAction.png
   [Neue eingehende Regel – Profil]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
   [Neue eingehende Regel – Name]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
-  [http://\*your\\\_DNS\\\_name]: http://*your\_DNS\_name
   [Festlegen, dass ein Dienst automatisch gestartet wird]: ./media/virtual-machines-java-run-tomcat-application-server/WA_TomcatServiceAutomaticStart.png

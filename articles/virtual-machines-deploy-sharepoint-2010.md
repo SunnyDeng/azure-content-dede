@@ -1,6 +1,6 @@
 <properties linkid="manage-windows-other-resource-sharepoint-wp" urlDisplayName="SharePoint on Azure" pageTitle="SharePoint 2010 Deployment on Azure Virtual Machines" metaKeywords="" description="Understand the supported scenarios for using SharePoint 2010 on Azure virtual machines." metaCanonical="" services="virtual-machines" documentationCenter="" title="SharePoint Deployment on Azure Virtual Machines" authors="josephd" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="josephd"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="josephd" />
 
 # SharePoint-Bereitstellung auf Azure Virtual Machines
 
@@ -417,7 +417,6 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf Az
   [Installieren von SQL Server 2012 mit SysPrep]: http://msdn.microsoft.com/de-de/library/ee210664.aspx
   [Installieren von SQL Server 2012 von der Eingabeaufforderung aus]: http://msdn.microsoft.com/de-de/library/ms144259.aspx#SysPrep
   [Erstellen einer Microsoft SharePoint-Serverfarm]: http://technet.microsoft.com/de-de/library/ee805948.aspx#CreateConfigure
-  [Hinzufügen von Web- oder Anwendungsservern zu Farmen (SharePoint Server 2010)]: http://technet.microsoft.com/de-de/library/cc261752.aspx
   [Hinzufügen eines Datenbankservers zu einer vorhandenen Farm]: http://technet.microsoft.com/de-de/library/cc262781
   [Service Pack 1 für SharePoint Server 2010]: http://www.microsoft.com/de-de/download/details.aspx?id=26623
   [Installieren von SQL Server 2012 Business Intelligence-Funktionen]: http://technet.microsoft.com/de-de/library/hh231681(v=sql.110).aspx
@@ -427,7 +426,6 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf Az
   [Erstellen virtueller Festplatten]: http://technet.microsoft.com/de-de/library/cc742509
   [Verwenden von SysPrep: Einführung]: http://technet.microsoft.com/de-de/library/bb457073.aspx
   [azure-sharepoint-wp-11]: ./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-11.png
-  [Virtuelle Netzwerke im Überblick (Entwurfsüberlegungen, Sichere Verbindungsszenarien)]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx
   [SharePoint 2010 Easy Setup Script]: http://www.microsoft.com/de-de/download/details.aspx?id=23415
   [Installieren von Visual Studio]: http://msdn.microsoft.com/de-de/library/e2h7fzkw.aspx
   [Konfigurieren von SQL Server 2012 für SharePoint in Azure]: https://github.com/WindowsAzure-TrainingKit/HOL-DeployingSQLServerForSharePoint
@@ -436,7 +434,6 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf Az
   [azure-sharepoint-wp-12]: ./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-12.png
   [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Windows Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156090
   [Konfigurieren von virtuellen Netzwerken]: https://github.com/WindowsAzure-TrainingKit/HOL-DeployingActiveDirectory/blob/master/HOL.md
-  [Bereitstellen von Active Directory in Azure (Windows PowerShell)]: https://github.com/WindowsAzure-TrainingKit/HOL-DeployingActiveDirectoryPS
   [Installieren einer neuen Active Directory-Gesamtstruktur in Azure]: /de-de/manage/services/networking/active-directory-forest/
   [Azure Trust Center]: /de-de/support/trust-center/compliance/
   [azure-sharepoint-wp-13]: ./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-13.png

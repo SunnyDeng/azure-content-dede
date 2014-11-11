@@ -1,6 +1,6 @@
 <properties linkid="develop-php-website-with-storage" urlDisplayName="Web w/ Storage" pageTitle="PHP website with table storage - Azure tutorial" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="This tutorial shows you how to create a PHP website and use the Azure Tables storage service in the back-end." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Website using Azure Storage" authors="cephalin" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin" />
 
 # Erstellen einer PHP-Website mit Azure-Speicher
 
@@ -17,7 +17,7 @@ Sie erstellen eine einfache Tasklist-Webanwendung in PHP. Unten finden Sie einen
 
 ![Azure-PHP-Website][Azure-PHP-Website]
 
-[WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
+[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## Installieren der Azure-Clientbibliotheken
 
@@ -420,7 +420,6 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
   [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
   [composer.phar]: http://getcomposer.org/composer.phar
-  []: http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
   [hier]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Neue Azure-Website erstellen]: ./media/web-sites-php-storage/new_website.jpg

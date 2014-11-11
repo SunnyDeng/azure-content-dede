@@ -1,6 +1,6 @@
 <properties linkid="biztalk-backup-restore" urlDisplayName="BizTalk Services: Backup and Restore" pageTitle="BizTalk Services: Backup and Restore | Azure" metaKeywords="" description="BizTalk Services includes Backup and Restore capabilities. When creating a Backup, a snapshot of the BizTalk Services configuration is taken." metaCanonical="" services="" documentationCenter="" title="BizTalk Services: Backup and Restore" authors="mandia"  solutions="" writer="mandia" manager="dwrede" editor="cgronlun"  />
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia"></tags>
+<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia" />
 
 # BizTalk Services: Sichern und Wiederherstellen
 
@@ -58,7 +58,7 @@ Sobald die Sicherung abgeschlossen ist, wird im Speicherkonto ein Container mit 
 2.  Stellen Sie den **Sicherungsstatus** auf **Automatisch** ein.
 3.  Wählen Sie das **Speicherkonto** zum Speichern der Sicherung aus, geben Sie unter **Häufigkeit** an, wie oft Sicherungen erstellt werden sollen, und unter **Aufbewahrung in Tagen** deren Aufbewahrungszeit:
 
-    ![][]
+    ![][0]
 
     **Hinweise**
 
@@ -242,12 +242,11 @@ Um Azure BizTalk Services im Azure-Verwaltungsportal zu erstellen, wechseln Sie 
   [Voraussetzungen]: #beforebackup
   [Erstellen einer Sicherungskopie]: #createbu
   [Wiederherstellen einer Sicherung]: #restore
-  [Was wird gesichert?]: #budata
   [BizTalk Services-REST-API]: http://go.microsoft.com/fwlink/p/?LinkID=325584
   [BizTalk Services: Editionen-Diagramm]: http://azure.microsoft.com/de-de/documentation/articles/biztalk-editions-feature-chart/
   [Bedarfsgesteuerte Sicherung]: #backupnow
   [Planen einer Sicherung]: #backupschedule
-  []: ./media/biztalk-backup-restore/AutomaticBU.png
+  [0]: ./media/biztalk-backup-restore/AutomaticBU.png
   [Status der letzten geplanten Sicherung]: ./media/biztalk-backup-restore/status-last-backup.png
   [BizTalk Services: Fehlerbehebung mit Operationsprotokollen]: http://go.microsoft.com/fwlink/?LinkId=391211
   [REST-API zum Wiederherstellen von BizTalk Services]: http://go.microsoft.com/fwlink/p/?LinkID=325582

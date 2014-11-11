@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-sendgrid-email-service" urlDisplayName="SendGrid Email Service" pageTitle="How to use the SendGrid email service (.NET) - Azure" metaKeywords="Azure SendGrid, Azure email service, Azure SendGrid .NET, Azure email .NET, Azure SendGrid C#, Azure email C#" description="Learn how send email with the SendGrid email service on Azure. Code samples written in C# and use the .NET API." metaCanonical="" services="" documentationCenter=".NET" title="How to Send Email Using SendGrid with Azure" authors="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork" solutions="" manager="carolz" editor="" />
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork"></tags>
+<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork" />
 
 # Senden von E-Mails in Azure mit SendGrid
 
@@ -44,7 +44,7 @@ Weitere Informationen finden Sie unter [][]<http://sendgrid.com></a>.
 
 ## <a name="createaccount"></a><span class="short-header">SendGrid-Konto erstellen</span>
 
-[WACOM.INCLUDE [sendgrid-sign-up][sendgrid-sign-up]]
+[WACOM.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
 ## <a name="reference"></a><span class="short-header">Anlegen eines Verweises auf die SendGrid .NET-Klassenbibliothek </span>Anlegen eines Verweises auf die SendGrid .NET-Klassenbibliothek
 
@@ -257,7 +257,6 @@ diesen Links weitere Informationen.
 -   Spezielles SendGrid-Angebot für Azure-Kunden: [][]<http://sendgrid.com></a>
 
   [Nächste Schritte]: #nextsteps
-  [Was ist der SendGrid-E-Mail-Dienst?]: #whatis
   [Erstellen eines SendGrid-Kontos]: #createaccount
   [Anlegen eines Verweises auf die SendGrid .NET-Klassenbibliothek]: #reference
   [Vorgehensweise: Erstellen einer E-Mail]: #createemail

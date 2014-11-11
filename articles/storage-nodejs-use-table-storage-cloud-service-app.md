@@ -1,11 +1,11 @@
 <properties linkid="dev-nodejs-basic-web-app-with-storage" urlDisplayName="Web App with Storage" pageTitle="Web app with table storage (Node.js) | Microsoft Azure" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="A tutorial that builds on the Web App with Express tutorial by adding Azure Storage services and the Azure module." metaCanonical="" services="cloud-services,storage" documentationCenter="Node.js" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
 
 # Node.js-Webanwendung mit Speicher
 
 In diesem Lernprogramm erweitern Sie die Anwendung aus dem Lernprogramm
-[Node.js-Webanwendung mit Express][], indem Sie die Windows
+[Node.js-Webanwendung mit Express][Node.js-Webanwendung mit Express], indem Sie die Windows
 Azure-Clientbibliotheken für Node.js für die Arbeit mit Datenverwaltungsdiensten verwenden. Sie
 werden Ihre Anwendung erweitern und eine webbasierte Anwendung mit Aufgabenliste erstellen,
 die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer
@@ -16,10 +16,10 @@ Storage bietet einen unstrukturierten Datenspeicher,
 der gleichzeitig fehlertolerant und hochverfügbar ist. Azure Storage enthält verschiedene Datenstrukturen
 für die Speicherung und den Zugriff von Daten,
 und Sie können die Speicherdienste aus den APIs im Azure-SDK für Node.js oder
-aus den REST-APIs verwenden. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure][].
+aus den REST-APIs verwenden. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure].
 
 Dieses Lernprogramm setzt voraus, dass Sie die Lernprogramme
-[Node.js-Webanwendung][] und [Node.js mit Express][Node.js-Webanwendung mit Express] abgeschlossen haben.
+[Node.js-Webanwendung][Node.js-Webanwendung] und [Node.js mit Express][Node.js-Webanwendung mit Express] abgeschlossen haben.
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -28,7 +28,7 @@ Sie erhalten Informationen zu folgenden Themen:
 
 Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
-![Die abgeschlossene Webseite in Internet Explorer][]
+![Die abgeschlossene Webseite in Internet Explorer][Die abgeschlossene Webseite in Internet Explorer]
 
 ## Einstellen der Speicher-Anmeldeinformationen in Web.Config
 
@@ -71,7 +71,7 @@ des Speicherkontos abzurufen und zu den "web.config"-Einstellungen hinzuzufügen
         <Variable name="AZURE_STORAGE_ACCOUNT" value="{STORAGE ACCOUNT}" />
         <Variable name="AZURE_STORAGE_ACCESS_KEY" value="{STORAGE ACCESS KEY}" />
 
-    ![Inhalt der Datei web.cloud.config][]
+    ![Inhalt der Datei web.cloud.config][Inhalt der Datei web.cloud.config]
 
 6.  Speichern Sie die Datei und schließen Sie Notepad.
 
@@ -321,7 +321,7 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 
 ### Modifizieren des globalen Layouts
 
-Die Datei **layout.jade** im Verzeichnis **views** dient als globale Vorlage für andere **.jade**-Dateien. In diesem Schritt werden Sie sie modifizieren, um [Twitter Bootstrap][] zu verwenden, ein Toolkit zum mühelosen Gestalten ansprechender Websites.
+Die Datei **layout.jade** im Verzeichnis **views** dient als globale Vorlage für andere **.jade**-Dateien. In diesem Schritt werden Sie sie modifizieren, um [Twitter Bootstrap][Twitter Bootstrap] zu verwenden, ein Toolkit zum mühelosen Gestalten ansprechender Websites.
 
 1.  Laden Sie die Dateien für [Twitter Bootstrap][1] herunter, und extrahieren Sie sie. Kopieren Sie die Datei **bootstrap.min.css** aus dem Ordner **bootstrap\\dist\\css** in das Verzeichnis **public\\stylesheets** Ihrer tasklist-Anwendung.
 
@@ -349,7 +349,7 @@ Verwenden Sie den folgenden Befehl, um die Anwendung im Emulator zu starten.
 
 Der Browser wird geöffnet und zeigt die folgende Seite an:
 
-![Eine Webseite mit dem Titel My Task List, einer Tabelle mit Aufgaben und Feldern zum Hinzufügen neuer Aufgaben.][]
+![Eine Webseite mit dem Titel My Task List, einer Tabelle mit Aufgaben und Feldern zum Hinzufügen neuer Aufgaben.][Eine Webseite mit dem Titel My Task List, einer Tabelle mit Aufgaben und Feldern zum Hinzufügen neuer Aufgaben.]
 
 Verwenden Sie das Formular zum Hinzufügen von Elementen, oder entfernen Sie vorhandene Elemente, indem Sie sie als abgeschlossen markieren.
 
@@ -407,9 +407,9 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
 
     Das Löschen des Diensts kann einige Minuten dauern. Nachdem der Dienst gelöscht wurde, erhalten Sie eine entsprechende Nachricht.
 
-  [Node.js-Webanwendung mit Express]: http://www.windowsazure.com/en-us/develop/nodejs/tutorials/web-app-with-express/
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433040.aspx
-  [Node.js-Webanwendung]: http://www.windowsazure.com/en-us/develop/nodejs/tutorials/getting-started/
+  [Node.js-Webanwendung mit Express]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/web-app-with-express/
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+  [Node.js-Webanwendung]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/
   [Die abgeschlossene Webseite in Internet Explorer]: ./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png
   [Inhalt der Datei web.cloud.config]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node37.png
   [Twitter Bootstrap]: https://github.com/twbs/bootstrap

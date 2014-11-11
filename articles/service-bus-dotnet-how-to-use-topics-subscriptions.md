@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="How to use Service Bus topics (.NET) - Azure" metaKeywords="Get started Azure Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions C# " description="Learn how to use Service Bus topics and subscriptions in Azure. Code samples are written for .NET applications. " metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Topics/Subscriptions" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
 # Verwenden von Servicebus-Themen und -Abonnements
 
@@ -12,9 +12,9 @@ Nachrichten** an ein Thema, das **Empfangen von Nachrichten von einem Abonnement
 und Abonnements**. Weitere Informationen zu Themen und Abonnements
 finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte]. </span>
 
-[WACOM.INCLUDE [create-account-note][create-account-note]]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
-[WACOM.INCLUDE [howto-service-bus-topics][howto-service-bus-topics]]
+[WACOM.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
 ## <span class="short-header">Konfigurieren der Anwendung</span>Konfigurieren der Anwendung für die Verwendung von Service Bus
 
@@ -40,7 +40,7 @@ Gehen sie folgendermaßen vor, um das NuGet-Paket in der Anwendung zu installier
     Service Bus** aus. Klicken Sie auf **Installieren**, um die Installation abzuschließen,
     und schließen Sie das Dialogfeld.
 
-    ![][]
+    ![][0]
 
 Sie können nun Code für Service Bus erstellen.
 
@@ -396,8 +396,6 @@ sind, finden Sie unter diesen Links weitere Informationen:
   [Nächste Schritte]: #nextsteps
   [create-account-note]: ../includes/create-account-note.md
   [howto-service-bus-topics]: ../includes/howto-service-bus-topics.md
-  []: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
+  [0]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
   [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/de-de/library/hh367516.aspx
   [SqlFilter]: http://msdn.microsoft.com/de-de/library/microsoft.servicebus.messaging.sqlfilter.aspx
-  [.NET-Lernprogramm zu Service
-  Bus-Brokermessaging]: http://msdn.microsoft.com/de-de/library/hh367512.aspx

@@ -1,10 +1,10 @@
 <properties linkid="develop-java-tutorials-jenkins-continuous-integration" urlDisplayName="Jenkins Continuous Integration" pageTitle="Using Azure Storage with a Jenkins Continuous Integration Solution | Microsoft Azure" metaKeywords="" description="This tutorial show how to use the Azure blob service as a repository for build artifacts created by a Jenkins continuous integration solution." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Jenkins Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
 # Verwenden von Azure-Speicher mit einer Jenkins-Lösung für die fortlaufende Integration
 
-*Von [Microsoft Open Technologies Inc.][]*
+*Von [Microsoft Open Technologies Inc.][Microsoft Open Technologies Inc.]*
 
 Die folgenden Informationen zeigen die Verwendung des Azure-Blobdienst als Repository von Buildartefakten, die durch eine Jenkins Continuous Integration-Lösung (CI) erstellt wurden, oder als eine Quelle von herunterladbaren Dateien, die in einem Buildvorgang verwendet werden. Dies ist zum Beispiel dann hilfreich, wenn Sie in einer agilen Entwicklungsumgebung (in Java oder anderen Sprachen) programmieren, Builds auf Basis der fortlaufenden Integration ausgeführt werden, und Sie ein Repository für Ihre Buildartefakte benötigen, sodass Sie sie beispielsweise mit anderen Mitgliedern der Organisation oder Ihren Kunden gemeinsam nutzen oder ein Archiv pflegen können. Ein anderes Szenario liegt vor, wenn für Ihren Buildauftrag an sich andere Dateien erforderlich sind, beispielsweise als Teil der Buildeingabe herunterzuladende Abhängigkeiten.
 
@@ -12,21 +12,21 @@ In diesem Lernprogramm verwenden Sie das Azure-Speicher-Plug-In für Jenkins CI,
 
 ## Inhaltsverzeichnis
 
--   [Überblick über Jenkins][]
--   [Vorteile der Verwendung des Blob-Dienstes][]
--   [Voraussetzungen][]
--   [Verwenden des Blob-Dienstes mit Jenkins CI][]
--   [Installieren des Azure-Speicher-Plug-Ins][]
--   [Konfigurieren des Azure-Speicher-Plug-Ins für die Verwendung Ihres Speicherkontos][]
--   [Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt][]
--   [Erstellen eines Buildschritts für das Herunterladen des Azure-Blobspeichers][]
--   [Vom Blob-Dienst verwendete Komponenten][]
+-   [Überblick über Jenkins][Überblick über Jenkins]
+-   [Vorteile der Verwendung des Blob-Dienstes][Vorteile der Verwendung des Blob-Dienstes]
+-   [Voraussetzungen][Voraussetzungen]
+-   [Verwenden des Blob-Dienstes mit Jenkins CI][Verwenden des Blob-Dienstes mit Jenkins CI]
+-   [Installieren des Azure-Speicher-Plug-Ins][Installieren des Azure-Speicher-Plug-Ins]
+-   [Konfigurieren des Azure-Speicher-Plug-Ins für die Verwendung Ihres Speicherkontos][Konfigurieren des Azure-Speicher-Plug-Ins für die Verwendung Ihres Speicherkontos]
+-   [Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt][Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt]
+-   [Erstellen eines Buildschritts für das Herunterladen des Azure-Blobspeichers][Erstellen eines Buildschritts für das Herunterladen des Azure-Blobspeichers]
+-   [Vom Blob-Dienst verwendete Komponenten][Vom Blob-Dienst verwendete Komponenten]
 
 ## <a name="overview"></a><span class="short header">Überblick</span>Überblick über Jenkins
 
 Jenkins ermöglicht die fortlaufende Integration (Continuous Integration, CI) eines Softwareprojekts, da Entwickler ihre Codeänderungen auf einfache Weise einbinden und Builds automatisch und häufig erstellen lassen können. Dadurch wird die Produktivität der Entwickler gesteigert. Builds werden mit Versionsangaben versehen, und Buildartefakte können in verschiedene Repositorys hochgeladen werden. In diesem Thema wird gezeigt, wie Sie Azure-Blob-Speicher als Repository für die Buildartefakte verwenden. Es zeigt hoch, wie Abhängigkeiten aus dem Azure-Blobspeicher heruntergeladen werden.
 
-Weitere Informationen zu Jenkins finden Sie unter [Meet Jenkins][].
+Weitere Informationen zu Jenkins finden Sie unter [Meet Jenkins][Meet Jenkins].
 
 ## <a name="benefits"></a><span class="short header">Vorteile</span>Vorteile der Verwendung des Blob-Dienstes
 
@@ -56,7 +56,7 @@ Sie müssen folgende Voraussetzungen erfüllen, um den Blob-Dienst mit Ihrer Jen
 
 -   Ein Azure-Konto. Unter <http://www.windowsazure.com> können Sie ein Azure-Konto registrieren.
 
--   Ein Azure-Speicherkonto. Wenn Sie noch kein Speicherkonto haben, können Sie eines erstellen, indem Sie die Schritte unter [Erstellen eines Speicherkontos][] befolgen.
+-   Ein Azure-Speicherkonto. Wenn Sie noch kein Speicherkonto haben, können Sie eines erstellen, indem Sie die Schritte unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos] befolgen.
 
 -   Vorkenntnisse der Jenkins CI-Lösung werden empfohlen, sind aber nicht zwingend erforderlich, da in den folgenden Abschnitten ein einfaches Beispiel verwendet wird, um zu zeigen, welche Schritte erforderlich sind, wenn Sie den Blob-Dienst als Repository für Jenking CI-Buildartefakte nutzen möchten.
 
@@ -109,7 +109,7 @@ Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere
 
     Unter dem Bereich **Command**, in dem Sie ein Skript für **Execute Windows batch command** eingegeben haben, befindet sich ein Link zu den von Jenkins erkannten Umgebungsvariablen. Klicken Sie auf diesen Link, um die Namen und Beschreibungen der Umgebungsvariablen anzuzeigen. Beachten Sie, dass Umgebungsvariablen, die Sonderzeichen enthalten, z. B. die Umgebungsvariable **BUILD\_URL**, nicht als Containername oder gemeinsamer virtueller Pfad zulässig sind.
 
-8.  Klicken Sie für dieses Beispiel auf **Make new container public by default**. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Thema hinaus. Sie finden weitere Informationen zu Shared Access Signatures unter [Erstellen und Verwenden einer SAS (Shared Access Signature)][].
+8.  Klicken Sie für dieses Beispiel auf **Make new container public by default**. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Thema hinaus. Sie finden weitere Informationen zu Shared Access Signatures unter [Erstellen und Verwenden einer SAS (Shared Access Signature)][Erstellen und Verwenden einer SAS (Shared Access Signature)].
 9.  [Optional] Klicken Sie auf **Clean container before uploading**, wenn die Inhalte aus dem Container gelöscht werden sollen, bevor die Buildartefakte hochgeladen (lassen Sie die Option deaktiviert, wenn die Inhalte nicht aus dem Container gelöscht werden sollen) werden.
 10. Geben Sie \*text/.txt unter **List of Artifacts to upload** ein.
 11. Geben Sie **${BUILD\_ID}/${BUILD\_NUMBER}** für die Zwecke dieses Lernprogramms unter **Common virtual path for uploaded artifacts** ein.
@@ -145,7 +145,7 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
 
 -   **Speicherkonto**: Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Dies ist die höchste Ebene des Namespaces für den Zugriff auf Blobs. Ein Konto kann eine beliebige Anzahl von Containern enthalten, solange deren Gesamtgröße 100TB nicht überschreitet.
 -   **Container**: Ein Container dient zur Gruppierung eines Satzes von Blobs. Alle BLOBs müssen sich in Containern befinden. Ein Konto kann eine beliebige Anzahl von Containern enthalten. In einem Container kann eine beliebige Anzahl von BLOBs gespeichert sein.
--   **Blob**: Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von BLOBs, die im Azure-Speicher gespeichert werden können: Block- und Seiten-BLOBs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-BLOB kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Die andere Art von BLOBs, Seiten-BLOBs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen über BLOBs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs][].
+-   **Blob**: Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von BLOBs, die im Azure-Speicher gespeichert werden können: Block- und Seiten-BLOBs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-BLOB kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Die andere Art von BLOBs, Seiten-BLOBs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen über BLOBs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs][Grundlegendes zu Block-BLOBs und Seiten-BLOBs].
 -   **URL-Format**: Blobs sind über das folgende URL-Format adressierbar:
 
     `http://storageaccount.blob.core.windows.net/container_name/blob_name`
@@ -168,5 +168,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [Vom Blob-Dienst verwendete Komponenten]: #components
   [Meet Jenkins]: https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
   [Erstellen eines Speicherkontos]: http://go.microsoft.com/fwlink/?LinkId=279823
-  [Erstellen und Verwenden einer SAS (Shared Access Signature)]: http://go.microsoft.com/fwlink/?LinkId=279889
-  [Grundlegendes zu Block-BLOBs und Seiten-BLOBs]: http://msdn.microsoft.com/en-us/library/windowsazure/ee691964.aspx
+  [Grundlegendes zu Block-BLOBs und Seiten-BLOBs]: http://msdn.microsoft.com/de-de/library/windowsazure/ee691964.aspx

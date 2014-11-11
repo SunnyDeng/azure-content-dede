@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-monitor-new-relic" urlDisplayName="Use New Relic to monitor Mobile Services" pageTitle="Store server scripts in source control - Azure Mobile Services" metaKeywords="" description="Learn how to use the New Relic add-on to monitor your mobile service." metaCanonical="" disqusComments="1" umbracoNaviHide="0" documentationCenter="Mobile" title="Use New Relic to monitor Mobile Services" authors="new relic" manager="dwrede" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="new relic"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="new="" relic" />
 
 # Verwenden von New Relic zum Überwachen von Mobile Services
 
@@ -68,7 +68,7 @@ Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwa
 
 1.  Wählen Sie im [Verwaltungsportal][Verwaltungsportal] Ihren mobilen Dienst aus. Klicken Sie dann auf die Registerkarte **Konfigurieren**.
 
-    ![][]
+    ![][0]
 
 2.  Blättern Sie nach unten zu **Developer Analytics**, und führen Sie eine der folgenden Aktionen aus, je nachdem, wie Sie Ihr New Relic-Abonnement erworben haben:
 
@@ -111,7 +111,7 @@ Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwa
 -   Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store][New Relic-Seite im Azure Store].
 -   Weitere Informationen zum Verwenden von New Relic erhalten Sie unter [Applications Overview][Applications Overview] in der New Relic-Dokumentation.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+
 
   [Anmelden bei New Relic über den Azure Store]: #sign-up
   [Installieren des New Relic-Moduls]: #install-module
@@ -121,10 +121,9 @@ Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwa
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Speichern von Serverskripts in der Quellcodeverwaltung]: /de-de/develop/mobile/tutorials/store-scripts-in-source-control/
-  [Node Package Manager (NPM)]: http://nodejs.org/
   [New Relic-Modul]: https://npmjs.org/package/newrelic
   [Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/store-new-relic-mobile-services-monitor/mobile-configure-tab.png
+  [0]: ./media/store-new-relic-mobile-services-monitor/mobile-configure-tab.png
   [1]: ./media/store-new-relic-mobile-services-monitor/mobile-configure-new-relic-monitoring.png
   [2]: ./media/store-new-relic-mobile-services-monitor/mobile-configure-new-relic-monitoring-custom.png
   [3]: ./media/store-new-relic-mobile-services-monitor/mobile-configure-new-relic-monitoring-complete.png

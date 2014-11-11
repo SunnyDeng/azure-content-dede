@@ -1,6 +1,6 @@
 <properties linkid="develop-net-tutorials-multi-tier-web-site-1-overview" pageTitle="Azure Cloud Service Tutorial: ASP.NET MVC Web Role, Worker Role, Azure Storage Tables, Queues, and Blobs" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="Learn how to create a multi-tier app using ASP.NET MVC and Azure. The app runs in a cloud service, with web role and worker roles, and uses Azure storage tables, queues, and blobs." metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure Cloud Service Tutorial: ASP.NET MVC Web Role, Worker Role, Azure Storage Tables, Queues, and Blobs" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="cloud-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tdykstra,riande"></tags>
+<tags ms.service="cloud-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tdykstra,riande" />
 
 # Lernprogramm zu Azure-Cloud-Diensten: ASP.NET MVC-Webrolle, Workerrolle und Azure-Speichertabellen, Warteschlangen und Blobs – 1 von 5
 
@@ -1045,8 +1045,6 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
   [Erste Schritte mit dem Azure WebJobs SDK]: /de-de/documentation/articles/websites-dotnet-webjobs-sdk-get-started/
   [Konfigurieren und Bereitstellen der Azure-E-Mail-Dienstanwendung]: /de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
   [Erstellen der Webrolle für die Azure-E-Mail-Dienstanwendung]: /de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/
-  [Erstellen der Workerrolle A (E-Mail-Planer) für die Azure-E-Mail-Dienstanwendung]: /de-de/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
-  [Erstellen der Workerrolle B (E-Mail-Versand) für die Azure-E-Mail-Dienstanwendung]: /de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
   [Voraussetzungen]: #prerequisites
   [Übersicht Front-End]: #frontend
   [Übersicht Back-End]: #backend
@@ -1071,13 +1069,11 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
   [Vermeidung doppelt verschickter E-Mails]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-message-processing.png
   [Verarbeitung der Abonnement-Warteschlange]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-subscribe-diagram.png
   [Azure SQL-Datenbank]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336279.aspx
-  [Real World: Designing a Scalable Partitioning Strategy for Azure Table Storage (Design einer skalierbaren Partitionierungsstrategie für Azure-Tabellenspeicher, in englischer Sprache)]: http://msdn.microsoft.com/de-de/library/windowsazure/hh508997.aspx
   [Datendiagramm für die Azure-E-Mail-Dienstanwendung]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-datadiagram.png
   [Übersicht der Anwendungsarchitektur]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-architecture-overview.png
   [Alternative Anwendungsarchitektur]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-alternative-architecture.png
   [Azure-Preisrechner]: http://www.windowsazure.com/de-de/pricing/calculator/
   [SendGrid Azure]: http://sendgrid.com/windowsazure.html
-  [99,95%-Servicelevel-Vereinbarung (SLA) des Azure-Cloud-Dienstes]: https://www.windowsazure.com/de-de/support/legal/sla/ "SLA"
   [Role Instance Restarts Due to OS Upgrades]: http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx
   [CloudFx]: http://nuget.org/packages/Microsoft.Experience.CloudFx "CloudFX"
   [WorkerRole.cs-Beispiel]: http://code.msdn.microsoft.com/windowsazure/CloudFx-Samples-60c3a852/sourcecode?fileId=57087&pathId=528472169

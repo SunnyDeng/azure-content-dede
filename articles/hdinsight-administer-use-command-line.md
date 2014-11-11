@@ -1,6 +1,6 @@
 <properties linkid="manage-services-hdinsight-administer-hdinsight-hadoop-clusters-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="Manage Hadoop clusters using Cross-Platform Command-Line | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, hadoop, administration" description="Learn how to use the Cross-Platform Command-Line Interface to manage Hadoop clusters in HDIsight on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer Hadoop clusters using the Cross-platform Command-line Interface" authors="jgao" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
 # Verwalten von Hadoop-Clustern in HDInsight mit der plattformübergreifenden Befehlszeilenschnittstelle
 
@@ -8,23 +8,23 @@ In diesem Artikel erfahren Sie, wie Sie Hadoop-Cluster in HDInsight mit der plat
 
 Das Befehlszeilentool ist Open Source. Der Quellcode liegt auf GitHub unter <https://github.com/WindowsAzure/azure-sdk-tools-xplat>.
 
-Dieser Artikel behandelt nur die Befehlszeilenschnittstelle unter Windows. Eine allgemeine Anleitung für die Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilentools für Mac und Linux][]. Umfassendes Referenzmaterial finden Sie unter [Azure-Befehlszeilentool für Mac und Linux][].
+Dieser Artikel behandelt nur die Befehlszeilenschnittstelle unter Windows. Eine allgemeine Anleitung für die Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilentools für Mac und Linux][Verwenden der Azure-Befehlszeilentools für Mac und Linux]. Umfassendes Referenzmaterial finden Sie unter [Azure-Befehlszeilentool für Mac und Linux][Azure-Befehlszeilentool für Mac und Linux].
 
 **Voraussetzungen:**
 
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
--   **Azure-Abonnement**. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][], [Spezielle Angebote][] oder [Kostenlose Testversion][].
+-   **Azure-Abonnement**. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][Kaufoptionen], [Spezielle Angebote][Spezielle Angebote] oder [Kostenlose Testversion][Kostenlose Testversion].
 
 ## Themen in diesem Artikel
 
--   [Installation][]
--   [Download und Import der Veröffentlichungseinstellungen für das Azure-Konto][]
--   [Bereitstellen eines Clusters][]
--   [Bereitstellen eines Clusters mit einer Konfigurationsdatei][]
--   [Auflisten und Anzeigen von Clustern][]
--   [Löschen eines Clusters][]
--   [Nächste Schritte][]
+-   [Installation][Installation]
+-   [Download und Import der Veröffentlichungseinstellungen für das Azure-Konto][Download und Import der Veröffentlichungseinstellungen für das Azure-Konto]
+-   [Bereitstellen eines Clusters][Bereitstellen eines Clusters]
+-   [Bereitstellen eines Clusters mit einer Konfigurationsdatei][Bereitstellen eines Clusters mit einer Konfigurationsdatei]
+-   [Auflisten und Anzeigen von Clustern][Auflisten und Anzeigen von Clustern]
+-   [Löschen eines Clusters][Löschen eines Clusters]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <span id="installation"></span></a> Installation
 
@@ -54,7 +54,7 @@ Sie können die Befehlszeilenschnittstelle entweder über den *Node.js-Paketmana
 
 **So installieren Sie die Befehlszeilenschnittstelle mit dem Windows Installer**
 
-1.  Navigieren Sie zur Webseite **<http://azure.microsoft.com/en-us/downloads/>**.
+1.  Navigieren Sie zur Webseite **<http://azure.microsoft.com/de-de/downloads/>**.
 2.  Blättern Sie nach unten zum Bereich **Befehlszeilentools**, klicken Sie auf **Plattformübergreifende Befehlszeilenschnittstelle** und führen Sie den Webplattform-Installer aus.
 
 ## <span id="importsettings"></span></a> Herunterladen und Importieren der Veröffentlichungseinstellungen für das Azure-Konto
@@ -70,7 +70,7 @@ Bevor Sie die Befehlszeilenschnittstelle verwenden können, müssen Sie die Konn
 
         azure account download
 
-    ![HDI.CLIAccountDownloadImport][]
+    ![HDI.CLIAccountDownloadImport][HDI.CLIAccountDownloadImport]
 
     Der Befehl zeigt die Anweisungen für den Download der Datei an, inklusive einer URL.
 
@@ -98,7 +98,7 @@ Nachdem Sie die Datei mit Veröffentlichungseinstellungen importiert haben, kön
 > -   USA (Ost)
 > -   USA (West)
 
-Weitere Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Verwaltungsportal finden Sie unter [Erstellen eines Speicherkontos][].
+Weitere Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Verwaltungsportal finden Sie unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos].
 
 Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlüssel nicht kennen, können Sie diese Informationen mit den folgenden Befehlen abrufen:
 
@@ -109,7 +109,7 @@ Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlü
     -- Lists the keys for a storage account
     azure account storage keys list <StorageAccountName>
 
-Details zum Abrufen dieser Informationen im Verwaltungsportal finden Sie im Bereich *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [Verwalten von Speicherkonten][].
+Details zum Abrufen dieser Informationen im Verwaltungsportal finden Sie im Bereich *Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* des Artikels [Verwalten von Speicherkonten][Verwalten von Speicherkonten].
 
 Der Befehl *azure hdinsight cluster create* erstellt den Container, falls dieser nicht existiert. Falls Sie den Container zuvor erstellen möchten, können Sie den folgenden Befehl verwenden:
 
@@ -120,7 +120,7 @@ Sobald Sie Ihr Speicherkonto und Ihren Blob-Container vorbereitet haben, können
 
     azure hdinsight cluster create --clusterName <ClusterName> --storageAccountName <StorageAccountName> --storageAccountKey <storageAccountKey> --storageContainer <StorageContainer> --nodes <NumberOfNodes> --location <DataCenterLocation> --username <HDInsightClusterUsername> --clusterPassword <HDInsightClusterPassword>
 
-![HDI.CLIClusterCreation][]
+![HDI.CLIClusterCreation][HDI.CLIClusterCreation]
 
 ## <span id="provisionconfigfile"></span></a> Bereitstellen eines HDInsight-Clusters mit einer Konfigurationsdatei
 
@@ -142,7 +142,7 @@ Normalerweise stellen Sie einen HDInsight-Cluster bereit, führen die entspreche
     azure hdinsight cluster create --config <file>
          
 
-![HDI.CLIClusterCreationConfig][]
+![HDI.CLIClusterCreationConfig][HDI.CLIClusterCreationConfig]
 
 ## <span id="listshow"></span></a> Auflisten und Anzeigen von Clusterdetails
 
@@ -151,7 +151,7 @@ Mit den folgenden Befehlen können Sie Clusterdetails auflisten und anzeigen:
     azure hdinsight cluster list
     azure hdinsight cluster show <ClusterName>
 
-![HDI.CLIListCluster][]
+![HDI.CLIListCluster][HDI.CLIListCluster]
 
 ## <span id="delete"></span></a> Löschen eines Clusters
 
@@ -163,17 +163,17 @@ Mit dem folgenden Befehl können Sie einen Cluster löschen:
 
 Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluster auszuführen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
--   [Verwalten von HDInsight-Clustern mit dem Verwaltungsportal][]
--   [Verwalten von HDInsight mit PowerShell][]
--   [Erste Schritte mit Azure HDInsight][]
+-   [Verwalten von HDInsight-Clustern mit dem Verwaltungsportal][Verwalten von HDInsight-Clustern mit dem Verwaltungsportal]
+-   [Verwalten von HDInsight mit PowerShell][Verwalten von HDInsight mit PowerShell]
+-   [Erste Schritte mit Azure HDInsight][Erste Schritte mit Azure HDInsight]
 -   [Verwenden des Azure-Befehlszeilentools für Mac und Linux][Verwenden der Azure-Befehlszeilentools für Mac und Linux]
--   [Azure-Befehlszeilentool für Mac und Linux][]
+-   [Azure-Befehlszeilentool für Mac und Linux][Azure-Befehlszeilentool für Mac und Linux]
 
   [Verwenden der Azure-Befehlszeilentools für Mac und Linux]: ../xplat-cli/
   [Azure-Befehlszeilentool für Mac und Linux]: ../command-line-tools/
-  [Kaufoptionen]: http://azure.microsoft.com/en-us/pricing/purchase-options/
-  [Spezielle Angebote]: http://azure.microsoft.com/en-us/pricing/member-offers/
-  [Kostenlose Testversion]: http://azure.microsoft.com/en-us/pricing/free-trial/
+  [Kaufoptionen]: http://azure.microsoft.com/de-de/pricing/purchase-options/
+  [Spezielle Angebote]: http://azure.microsoft.com/de-de/pricing/member-offers/
+  [Kostenlose Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/
   [Installation]: #installation
   [Download und Import der Veröffentlichungseinstellungen für das Azure-Konto]: #importsettings
   [Bereitstellen eines Clusters]: #provision

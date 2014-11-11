@@ -1,6 +1,6 @@
 <properties pageTitle="Get started with push notifications (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Windows Store app (legacy push)." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services (legacy push)" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/11/2014" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/11/2014" ms.author="glenga" />
 
 # Erste Schritte mit Pushbenachrichtigungen in Mobile Services (Legacypushvorgang)
 
@@ -32,7 +32,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ## <a name="register"></a><span class="short-header">Registrierung Ihrer App</span>Hinzufügen und Konfigurieren von Pushbenachrichtigungen in Ihrer App
 
-[WACOM.INCLUDE [mobile-services-create-new-push-vs2013][mobile-services-create-new-push-vs2013]]
+[WACOM.INCLUDE [mobile-services-create-new-push-vs2013](../includes/mobile-services-create-new-push-vs2013.md)]
 
 1.  Erweitern Sie **services**, **mobile services** und Ihren Dienstnamen, öffnen Sie die erzeugte Codedatei, und überprüfen Sie anschließend die Methode **UploadChannel**, in der die Installations-ID und der Kanal für das Gerät abgerufen und diese Daten in die Tabelle neuer Kanäle eingefügt werden.
 
@@ -54,7 +54,7 @@ Während der erzeugte Code das Anzeigen einer Benachrichtigung erleichtert, wenn
 
 ## <a name="update-scripts"></a><span class="short-header">Aktualisieren des Codes</span>Aktualisieren des erzeugten Pushbenachrichtigungscodes
 
-[WACOM.INCLUDE [mobile-services-create-new-push-vs2013-2][mobile-services-create-new-push-vs2013-2]]
+[WACOM.INCLUDE [mobile-services-create-new-push-vs2013-2](../includes/mobile-services-create-new-push-vs2013-2.md)]
 
 ## <a name="test"></a><span class="short-header">Testen der App</span>Testen von Pushbenachrichtigungen in Ihrer App
 
@@ -62,7 +62,7 @@ Während der erzeugte Code das Anzeigen einer Benachrichtigung erleichtert, wenn
 
 2.  Geben Sie in der App einen Text in **Insert a TodoItem** ein, und klicken Sie dann auf **Save**.
 
-    ![][]
+    ![][0]
 
     Bitte beachten Sie, dass die App nach dem Einfügen eine Pushbenachrichtigung von WNS erhält.
 
@@ -98,16 +98,8 @@ Weitere Informationen zu Mobile Services:
 -   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-push "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-push "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-ios-get-started-push "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-android-get-started-push "Android"
-  [Appcelerator]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push "Appcelerator"
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/ ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-push/ "JavaScript-Backend"
+
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
   [Registrieren Ihrer App für Pushbenachrichtigungen und Konfigurieren von Mobile Services]: #register
   [Aktualisieren des erzeugten Pushbenachrichtigungscodes]: #update-scripts
@@ -115,9 +107,8 @@ Weitere Informationen zu Mobile Services:
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet/
   [mobile-services-create-new-push-vs2013]: ../includes/mobile-services-create-new-push-vs2013.md
-  [Verwenden von Serverskripts in Mobile Services.]: http://go.microsoft.com/fwlink/p/?LinkID=287178
   [mobile-services-create-new-push-vs2013-2]: ../includes/mobile-services-create-new-push-vs2013-2.md
-  []: ./media/mobile-services-windows-store-dotnet-get-started-push/mobile-quickstart-push1.png
+  [0]: ./media/mobile-services-windows-store-dotnet-get-started-push/mobile-quickstart-push1.png
   [1]: ./media/mobile-services-windows-store-dotnet-get-started-push/mobile-quickstart-push2.png
   [Erste Schritte mit Benachrichtigungshubs]: /de-de/manage/services/notification-hubs/getting-started-windows-dotnet/
   [Senden von Benachrichtigungen an Abonnenten]: /de-de/manage/services/notification-hubs/breaking-news-dotnet/

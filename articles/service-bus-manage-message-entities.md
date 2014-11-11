@@ -1,6 +1,6 @@
 <properties linkid="service-bus-manage-messaging-entitites" urlDisplayName="Traffic Manager" pageTitle="Manage Service Bus Messaging Entities - Azure" metaKeywords="" description="Learn how to create and manage your Service Bus entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Manage Service Bus Messaging Entities" authors="sethm" solutions="" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="sethm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="sethm" />
 
 # Gewusst wie: Verwalten von Service Bus-Nachrichtenentitäten
 
@@ -34,7 +34,7 @@ Mit Quick Create können Sie Service Bus-Warteschlangen, Themen oder Relaydienst
 
     a. Falls Sie keinen Namespace in der jeweiligen Region bzw. in Ihrem Azure-Abonnement haben, wird ein neuer Namespace automatisch für Sie erstellt. In diesem Fall erhalten Sie zwei Erfolgsmeldungen: eine für die Namespace- und eine für die Entitätserstellung.
 
-    ![][]
+    ![][0]
 
 Klicken Sie in der linken Navigationsleiste auf **Service Bus**, um eine Liste der Namespaces abzurufen. Dort finden Sie den Namespace, den Sie soeben erstellt haben. Klicken Sie in der Liste auf den Namespace. Sie sehen die soeben erstellte Entität unter dem entsprechenden Namespace.
 
@@ -107,7 +107,7 @@ Sie können das Portal verwenden, um den Status einer Service Bus-Entität zu ä
   [Gewusst wie: Löschen einer Service Bus-Entität]: #delete
   [Gewusst wie: Deaktivieren oder Aktivieren einer Service Bus-Entität]: #disableenable
   [Zusätzliche Ressourcen]: #seealso
-  []: ./media/service-bus-manage-message-entities/QueueQuickCreate.png
+  [0]: ./media/service-bus-manage-message-entities/QueueQuickCreate.png
   [Service Bus-Dokumentation]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/service-bus-relay/
   [1]: ./media/service-bus-manage-message-entities/AddQueue1.png
   [2]: ./media/service-bus-manage-message-entities/ConfigureQueue.png

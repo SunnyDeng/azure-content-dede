@@ -1,6 +1,6 @@
 <properties linkid="manage-services-cross-premises-connectivity" urlDisplayName="Tutorial: Create a Cross-Premises Virtual Network for Site-to-Site Connectivity" pageTitle="Tutorial: Create a Cross-Premises Virtual Network for Site-to-Site Connectivity" metaKeywords="" description="Learn how to create an Azure Virtual Network with cross-premises connectivity in this tutorial." metaCanonical="" services="virtual-network" documentationCenter="" title="Create a Virtual Network for Site-to-Site Cross-Premises Connectivity" authors="cherylmc" solutions="" manager="adinah" editor="" />
 
-<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/23/2014" ms.author="cherylmc"></tags>
+<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/23/2014" ms.author="cherylmc" />
 
 # Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen
 
@@ -65,7 +65,7 @@ So erstellen Sie ein virtuelles Netzwerk, das mit einem Unternehmensnetzwerk ver
 
 2.  Klicken Sie in der unteren linken Ecke des Bildschirms auf **Neu**. Klicken Sie im Navigationsbereich auf **Netzwerke** und dann auf **Virtuelles Netzwerk**. Klicken Sie auf **Benutzerdefiniert erstellen**, um den Konfigurations-Assistenten zu starten.
 
-    ![][]
+    ![][0]
 
 3.  Geben Sie auf der Seite **Details des virtuellen Netzwerks** die folgenden Informationen ein, und klicken Sie in der unteren rechten Ecke auf den Weiter-Pfeil. Weitere Informationen zu den Einstellungen auf der Detailseite finden Sie im Abschnitt **Seite "Details des virtuellen Netzwerks"** unter [Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal][Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal].
 
@@ -232,12 +232,11 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
   [Azure ausprobieren]: http://www.windowsazure.com/pricing/free-trial/
   [Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile]: http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/
   [Informationen zu VPN-Geräten für virtuelle Netzwerke]: http://go.microsoft.com/fwlink/?LinkID=248098
-  [Vorlagen für den Routing- und RAS-Dienst (RRAS)]: http://msdn.microsoft.com/library/windowsazure/dn133801.aspx
   [Erstellen eines virtuellen Netzwerks]: #CreateVN
   [Starten des Gateways und Sammeln von Informationen für den Netzwerkadministrator]: #StartGateway
   [Konfigurieren des VPN-Geräts]: #ConfigVPN
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
-  []: ./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVnet_01_OpenVirtualNetworkWizard.png
+  [0]: ./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVnet_01_OpenVirtualNetworkWizard.png
   [Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal]: http://go.microsoft.com/fwlink/?LinkID=248092
   [1]: ./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVNet_03_DNSServersandVPNConnectivity.png
   [2]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156075.aspx

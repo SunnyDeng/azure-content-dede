@@ -1,6 +1,6 @@
 <properties linkid="dev-net-commons-tasks-diagnostics" urlDisplayName="Diagnostics" pageTitle="How to use diagnostics (.NET) - Azure feature guide" metaKeywords="Azure diagnostics monitoring,logs crash dumps C#" description="Learn how to use diagnostic data in Azure for debugging, measuring performance, monitoring, traffic analysis, and more." metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Enabling Diagnostics in Azure" authors="ryanwi" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="ryanwi"></tags>
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="ryanwi" />
 
 # Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines
 
@@ -31,17 +31,51 @@ Einen ausführlicheren Vergleich finden Sie am Ende dieses Artikels unter [Vergl
 
 Mit der Azure-Diagnose können die folgenden Arten von Telemetriedaten erfasst werden:
 
-|--------------------------------------------|--------------------------------------------------------------------------------------|
-| **Datenquelle**                            | **Beschreibung**                                                                     |
-| IIS-Protokolle                             | Informationen zu IIS-Websites                                                        |
-| Infrastrukturprotokolle der Azure-Diagnose | Informationen zur Diagnose selbst                                                    |
-| Protokolle zu IIS-Anforderungsfehlern      | Informationen zu fehlgeschlagenen IIS-Website- oder IIS-Anwendungsanforderungen      |
-| Windows-Ereignisprotokolle                 | An das Windows-System für die Ereignisprotokollierung gesendete Informationen        |
-| Leistungsindikatoren                       | Leistungsindikatoren des Betriebssystems und benutzerdefinierte Leistungsindikatoren |
-| Absturzabbilder                            | Informationen zum Status des Prozesses im Fall eines Anwendungsabsturzes             |
-| Benutzerdefinierte Fehlerprotokolle        | Von Ihrer Anwendung oder Ihrem Dienst erstellte Protokolle                           |
-| .NET-EventSource                           | Von Ihrem Code mit der .NET-[EventSource-Klasse][EventSource-Klasse] generierte Ereignisse.            |
-| Manifestbasiertes ETW                      | Von einem beliebigen Prozess generierte ETW-Ereignisse                               |
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+<tbody>
+	<tr>
+			<td style="width: 100px;"><strong>Datenquelle</strong></td>
+			<td><strong>Datenquelle</strong></td>
+	</tr>
+	<tr>
+		<td>IIS-Protokolle</td>
+		<td>Informationen zu IIS-Websites.</td>            
+	</tr>
+	<tr>
+		<td>Infrastrukturprotokolle der Azure-Diagnose</td>
+		<td>Informationen zur Diagnose selbst.</td>            
+	</tr>
+	<tr>
+		<td>Protokolle zu IIS-Anforderungsfehlern</td>
+		<td>Informationen zu fehlgeschlagenen IIS-Website- oder IIS-Anwendungsanforderungen</td>            
+	</tr>
+	<tr>
+		<td>Windows-Ereignisprotokolle</td>
+		<td>An das Windows-System für die Ereignisprotokollierung gesendete Informationen</td>            
+	</tr>
+	<tr>
+		<td>Leistungsindikatoren</td>
+		<td> Leistungsindikatoren des Betriebssystems und benutzerdefinierte Leistungsindikatoren</td>            
+	</tr>
+	<tr>
+		<td>Absturzabbilder</td>
+		<td>Informationen zum Status des Prozesses im Fall eines Anwendungsabsturzes</td>            
+	</tr>
+	<tr>
+		<td>Benutzerdefinierte Fehlerprotokolle</td>
+		<td>Von Ihrer Anwendung oder Ihrem Dienst erstellte Protokolle</td>            
+	</tr>
+	<tr>
+		<td>.NET-EventSource</td>
+		<td>Von Ihrem Code mit der .NET-<a href="http://msdn.microsoft.com/de-de/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx">EventSource-Klasse</a> generierte Ereignisse.</td>            
+	</tr>
+	<tr>
+		<td>Manifestbasiertes ETW</td>
+		<td>Von einem beliebigen Prozess generierte ETW-Ereignisse</td>            
+	</tr>
+		
+</tbody>
+</table>              
 
 ## <a name="worker-role"></a><span class="short-header">Aktivieren der Diagnose in einer Workerrolle</span>Aktivieren der Diagnose in einer Workerrolle
 
@@ -146,7 +180,7 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
 
 3.  Fügen Sie Ihrem Projekt **WorkerRole1** eine XML-Datei hinzu. Klicken Sie dazu mit der rechten Maustaste auf das Projekt **WorkerRole1**, und wählen Sie **Hinzufügen** -\> **Neues Element…** -\> **Visual C#-Elemente** -\> **Daten** -\> **XML-Datei** aus. Nennen Sie die Datei "WadExample.xml".
 
-    ![CloudServices\_diag\_add\_xml][CloudServices\_diag\_add\_xml]
+	![CloudServices_diag_add_xml](./media/cloud-services-dotnet-diagnostics/AddXmlFile.png)
 
 4.  Ordnen Sie die Datei "WadConfig.xsd" der Konfigurationsdatei zu. Stellen Sie sicher, dass das Editorfenster mit "WadExample.xml" das aktive Fenster ist. Drücken Sie die Taste **F4**, um das Fenster **Eigenschaften** zu öffnen. Klicken Sie im Fenster **Eigenschaften** auf die Eigenschaft **Schemas**. Klicken Sie in der Eigenschaft **Schemas** auf **…**. Klicken Sie auf die Schaltfläche **Hinzufügen…**, navigieren Sie zum Speicherort der XSD-Datei, und wählen Sie die Datei "WadConfig.xsd" aus. Klicken Sie auf **OK**.
 5.  Ersetzen Sie den Inhalt der Konfigurationsdatei "WadExample.xml" durch den folgenden XML-Code, und speichern Sie die Datei. Diese Konfigurationsdatei definiert Leistungsindikatoren, die erfasst werden sollen: einen für die CPU-Auslastung und einen für die Speicherauslastung. Außerdem werden in der Konfiguration vier Ereignisse definiert, die den Methoden in der SampleEventSourceWriter-Klasse entsprechen.
@@ -189,7 +223,7 @@ Für die Verwaltung der Diagnose in einer Web- oder Workerrolle werden folgende 
 ### Schritt 6: Betrachten der Telemetriedaten
 
 Navigieren Sie in Visual Studio im Server-Explorer zum Speicherkonto "wadexample". Wenn der Cloud-Dienst etwa fünf Minuten lang ausgeführt worden ist, sollten die Tabellen **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** und **WADSetOtherTable** angezeigt werden. Doppelklicken Sie auf eine der Tabellen, um die erfassten Telemetriedaten anzuzeigen.
- ![CloudServices\_diag\_tables][CloudServices\_diag\_tables]
+	![CloudServices_diag_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
 
 ## <a name="virtual-machine"></a><span class="short-header">Aktivieren der Diagnose auf einem virtuellen Computer</span>Aktivieren der Diagnose auf einem virtuellen Computer
 
@@ -213,7 +247,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
 
 1.  Starten Sie auf dem Entwicklungscomputer Visual Studio 2013.
 2.  Erstellen Sie eine neue Visual C#-Konsolenanwendung für .NET Framework 4.5. Nennen Sie das Projekt "WadExampleVM".
-    ![CloudServices\_diag\_new\_project][CloudServices\_diag\_new\_project]
+	![CloudServices_diag_new_project](./media/cloud-services-dotnet-diagnostics/NewProject.png)
 3.  Ersetzen Sie den Inhalt von "Program.cs" durch den folgenden Code. Die **SampleEventSourceWriter**-Klasse implementiert vier Protokollierungsmethoden: **SendEnums**, **MessageMethod**, **SetOther** und **HighFreq**. Der erste Parameter für die WriteEvent-Methode definiert die ID für das betreffende Ereignis. Die Run-Methode implementiert eine Endlosschleife, die jede der in der **SampleEventSourceWriter**-Klasse implementierten Protokollierungsmethoden alle 10 Sekunden aufruft.
 
         using System;
@@ -511,14 +545,8 @@ Damit werden vier Tabellen generiert:
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
 <tbody>
 <tr>
-<td style="width: 100px;">
-**Ereignis**
-
-</td>
-<td>
-**Tabellenname**
-
-</td>
+<td style="width: 100px;"><strong>Ereignis</strong></td>
+<td><strong>Tabellenname</strong></td>
 </tr>
 <tr>
 <td>
@@ -566,29 +594,146 @@ WADdest2
 
 In der folgenden Tabelle werden die Features gegenübergestellt, die von den Versionen 1.0 und 1.1/1.2 der Azure-Diagnose jeweils unterstützt werden:
 
-|------------------------------|------------------|----------------------|
-| **Unterstützte Rollentypen** | **Diagnose 1.0** | **Diagnose 1.1/1.2** |
-| Webrolle                     | Ja               | Ja                   |
-| Workerrolle                  | Ja               | Ja                   |
-| IaaS                         | Nein             | Ja                   |
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+<tbody>
+	<tr>
+			<td style="width: 100px;"><strong>Unterstützte Rollentypen</strong></td>
+			<td><strong>Diagnose 1.0</strong></td>
+			<td><strong>Diagnose 1.1/1.2</strong></td>
+	</tr>
 
-|----------------------------------------------------------------------------------------------------------|------------------|----------------------|
-| **Konfiguration und Bereitstellung**                                                                     | **Diagnose 1.0** | **Diagnose 1.1/1.2** |
-| Integration mit Visual Studio – integriert in die Entwicklung von Azure-Web-/-Workerrolle.               | Ja               | Nein                 |
-| PowerShell-Skripts – Skripts zum Verwalten der Installation und Konfiguration der Diagnose in der Rolle. | Ja               | Ja                   |
+	<tr>
+			<td>Webrolle</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>Workerrolle</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>IaaS</td>
+			<td>Nein</td>
+			<td>Ja</td>
+	</tr>
 
-|--------------------------------------------|----------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|------------------------------|
-| **Datenquelle**                            | **Standardsammlung** | **Format** | **Beschreibung**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | **Diagnose 1.0** | **Diagnose 1.1/1.2**         |
-| Protokolle von System.Diagnostics.Trace    | Ja                   | Tabelle    | Protokollieren Ablaufverfolgungsmeldungen, die vom Code an den Ablaufverfolgungslistener gesendet werden (ein Ablaufverfolgungslistener muss der Datei "web.config" oder "app.config" hinzugefügt werden). Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in die WADLogsTable-Speichertabelle übertragen.                                                                                                                                                  | Ja               | Nein (EventSource verwenden) |
-| IIS-Protokolle                             | Ja                   | Blob       | Protokollieren Informationen zu IIS-Websites. Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in den von Ihnen angegebenen Container übertragen.                                                                                                                                                                                                                                                                                                            | Ja               | Ja                           |
-| Infrastrukturprotokolle der Azure-Diagnose | Ja                   | Tabelle    | Protokolliert Informationen zur Diagnoseinfrastruktur und zu den Modulen RemoteAccess und RemoteForwarder. Protokolldaten werden in dem mit "scheduledTransferPeriodtransfer" angegebenen Intervall in die WADDiagnosticInfrastructureLogsTable-Speichertabelle übertragen.                                                                                                                                                                                                                              | Ja               | Ja                           |
-| Protokolle zu IIS-Anforderungsfehlern      | Nein                 | Blob       | Protokollieren Informationen zu fehlgeschlagenen IIS-Website- oder IIS-Anwendungsanforderungen. Sie müssen diese auch aktivieren, indem Sie Ablaufverfolgungsoptionen unter "system.WebServer" in der Datei "Web.config" festlegen. Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in den von Ihnen angegebenen Container übertragen.                                                                                                                      | Ja               | Ja                           |
-| Windows-Ereignisprotokolle                 | Nein                 | Tabelle    | Protokollieren Informationen, die Aufschluss über die Leistung von Betriebssystem, Anwendung oder Treiber geben. Leistungsindikatoren müssen explizit festgelegt werden. Falls sie hinzugefügt werden, werden Leistungsindikatordaten in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in die WADPerformanceCountersTable-Speichertabelle übertragen.                                                                                                                              | Ja               | Ja                           |
-| Leistungsindikatoren                       | Nein                 | Tabelle    | Protokollieren Informationen, die Aufschluss über die Leistung von Betriebssystem, Anwendung oder Treiber geben. Leistungsindikatoren müssen explizit festgelegt werden. Falls sie hinzugefügt werden, werden Leistungsindikatordaten in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in die WADPerformanceCountersTable-Speichertabelle übertragen.                                                                                                                              | Ja               | Ja                           |
-| Absturzabbilder                            | Nein                 | Blob       | Protokollieren Informationen zum Betriebssystemstatus im Fall eines Systemabsturzes. Miniabsturzabbilder werden lokal gesammelt. Vollständige Absturzabbilder können aktiviert werden. Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in den von Ihnen angegebenen Container übertragen. Da die meisten Ausnahmen durch ASP.NET behandelt werden, sind diese Protokolle im Allgemeinen nur für eine Workerrolle oder einen virtuellen Computer von Nutzen. | Ja               | Ja                           |
-| Benutzerdefinierte Fehlerprotokolle        | Nein                 | Blob       | Durch die Verwendung lokaler Speicherressourcen können benutzerdefinierte Daten protokolliert und sofort in den angegebenen Container übertragen werden.                                                                                                                                                                                                                                                                                                                                                 | Ja               | Ja                           |
-| EventSource                                | Nein                 | Tabelle    | Protokolliert von Ihrem Code mit der .NET-EventSource-Klasse generierte Ereignisse.                                                                                                                                                                                                                                                                                                                                                                                                                      | Nein             | Ja                           |
-| Manifestbasiertes ETW                      | Nein                 | Tabelle    | Von einem beliebigen Prozess generierte ETW-Ereignisse                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Nein             | Ja                           |
+</tbody>
+</table>
+
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+<tbody>
+	<tr>
+			<td style="width: 100px;"><strong>Konfiguration und Bereitstellung</strong></td>
+			<td><strong>Diagnose 1.0</strong></td>
+			<td><strong>Diagnose 1.1/1.2</strong></td>
+	</tr>
+
+	<tr>
+			<td>Integration mit Visual Studio – integriert in die Entwicklung von Azure-Web-/-Workerrolle.</td>
+			<td>Ja</td>
+			<td>Nein</td>
+	</tr>
+	<tr>
+			<td>PowerShell-Skripts – Skripts zum Verwalten der Installation und Konfiguration der Diagnose in der Rolle.</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+</tbody>
+</table>
+
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+<tbody>
+	<tr>
+			<td style="width: 100px;"><strong>Datenquelle</strong></td>
+			<td><strong>*Standardsammlung</strong></td>
+			<td><strong>Format</strong></td>
+			<td><strong>Beschreibung</strong></td>
+			<td><strong>Diagnose 1.0</strong></td>
+			<td><strong>Diagnose 1.1/1.2</strong></td>
+	</tr>
+	<tr>
+			<td>Protokolle von System.Diagnostics.Trace</td>
+			<td>Ja</td>
+			<td>Tabelle</td>
+			<td>Protokollieren Ablaufverfolgungsmeldungen, die vom Code an den Ablaufverfolgungslistener gesendet werden (ein Ablaufverfolgungslistener muss der Datei "web.config" oder "app.config" hinzugefügt werden). Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in die WADLogsTable-Speichertabelle übertragen.</td>
+			<td>Ja</td>
+			<td>Nein (EventSource verwenden)</td>
+	</tr>
+	<tr>
+			<td>IIS-Protokolle</td>
+			<td>Ja</td>
+			<td>Blob</td>
+			<td>Protokollieren Informationen zu IIS-Websites. Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in den von Ihnen angegebenen Container übertragen.</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>Infrastrukturprotokolle der Azure-Diagnose</td>
+			<td>Ja</td>
+			<td>Tabelle</td>
+			<td>Protokolliert Informationen zur Diagnoseinfrastruktur und zu den Modulen RemoteAccess und RemoteForwarder. Protokolldaten werden in dem mit "scheduledTransferPeriodtransfer" angegebenen Intervall in die WADDiagnosticInfrastructureLogsTable-Speichertabelle übertragen.</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>Protokolle zu IIS-Anforderungsfehlern</td>
+			<td>Nein</td>
+			<td>Blob</td>
+			<td>Protokollieren Informationen zu fehlgeschlagenen IIS-Website- oder IIS-Anwendungsanforderungen. Sie müssen diese auch aktivieren, indem Sie Ablaufverfolgungsoptionen unter "system.WebServer" in der Datei "Web.config" festlegen. Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in den von Ihnen angegebenen Container übertragen.</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>Windows-Ereignisprotokolle</td>
+			<td>Nein</td>
+			<td>Tabelle</td>
+			<td>Protokollieren Informationen, die Aufschluss über die Leistung von Betriebssystem, Anwendung oder Treiber geben. Leistungsindikatoren müssen explizit festgelegt werden. Falls sie hinzugefügt werden, werden Leistungsindikatordaten in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in die WADPerformanceCountersTable-Speichertabelle übertragen.       </td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>Leistungsindikatoren</td>
+			<td>Nein</td>
+			<td>Tabelle</td>
+			<td>Protokollieren Informationen, die Aufschluss über die Leistung von Betriebssystem, Anwendung oder Treiber geben. Leistungsindikatoren müssen explizit festgelegt werden. Falls sie hinzugefügt werden, werden Leistungsindikatordaten in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in die WADPerformanceCountersTable-Speichertabelle übertragen.</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>Absturzabbilder</td>
+			<td>Nein</td>
+			<td>Blob</td>
+			<td>Protokollieren Informationen zum Betriebssystemstatus im Fall eines Systemabsturzes. Miniabsturzabbilder werden lokal gesammelt. Vollständige Absturzabbilder können aktiviert werden. Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in den von Ihnen angegebenen Container übertragen. Da die meisten Ausnahmen durch ASP.NET behandelt werden, sind diese Protokolle im Allgemeinen nur für eine Workerrolle oder einen virtuellen Computer von Nutzen.</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>Benutzerdefinierte Fehlerprotokolle</td>
+			<td>Nein</td>
+			<td>Blob</td>
+			<td>Durch die Verwendung lokaler Speicherressourcen können benutzerdefinierte Daten protokolliert und sofort in den angegebenen Container übertragen werden.</td>
+			<td>Ja</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>EventSource</td>
+			<td>Nein</td>
+			<td>Tabelle</td>
+			<td>Protokolliert von Ihrem Code mit der .NET-EventSource-Klasse generierte Ereignisse.</td>
+			<td>Nein</td>
+			<td>Ja</td>
+	</tr>
+	<tr>
+			<td>Manifestbasiertes ETW</td>
+			<td>Nein</td>
+			<td>Tabelle</td>
+			<td>Von einem beliebigen Prozess generierte ETW-Ereignisse</td>
+			<td>Nein</td>
+			<td>Ja</td>
+	</tr>
+</tbody>
+</table>
 
 ## <a name="additional"></a><span class="short-header">Zusätzliche Ressourcen</span>Zusätzliche Ressourcen
 
@@ -609,12 +754,7 @@ In der folgenden Tabelle werden die Features gegenübergestellt, die von den Ver
   [EventSource-Klasse]: http://msdn.microsoft.com/de-de/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx
   [kostenlose Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/
   [Installieren und konfigurieren Sie Azure PowerShell Version 0.8.7 oder höher]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
-  [CloudServices\_diag\_add\_xml]: ./media/cloud-services-dotnet-diagnostics/AddXmlFile.png
-  [CloudServices\_diag\_tables]: ./media/cloud-services-dotnet-diagnostics/WadExampleTables.png
-  [CloudServices\_diag\_new\_project]: ./media/cloud-services-dotnet-diagnostics/NewProject.png
-  [CloudServices\_diag\_wadexamplevm\_tables]: ./media/cloud-services-dotnet-diagnostics/WadExampleVMTables.png
   [Azure Diagnostics 1.2 Configuration Schema]: http://msdn.microsoft.com/de-de/library/azure/dn782207.aspx
-  [decodieren]: http://www.bing.com/search?q=base64+decoder
   [Sammeln von Protokollierungsdaten mit der Azure-Diagnose]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433048.aspx
   [Debuggen von Cloud-Diensten]: http://msdn.microsoft.com/de-de/library/windowsazure/ee405479.aspx
   [Konfigurieren der Azure-Diagnose]: http://msdn.microsoft.com/de-de/library/windowsazure/dn186185.aspx

@@ -1,6 +1,6 @@
 <properties linkid="manage-services-notification-hubs-notify-users-xplat-mobile-services" urlDisplayName="notify users xplat mobile services" pageTitle="Send cross-platform notifications to users with Notification Hubs (Mobile Services)" metaKeywords="" description="Learn how to use Notification Hubs templates to send, in a single request, a platform-agnostic notification that targets all platforms." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Send cross-platform notifications to users with Notification Hubs" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs
 
@@ -19,7 +19,7 @@ Führen Sie die folgenden Schritte aus, um plattformunabhängige Benachrichtigun
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **API** und anschließend auf den Eintrag **register\_notifications** in der API-Tabelle.
 
@@ -114,12 +114,10 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 <!-- Images. -->
 <!-- URLs. -->
 
-  [Mobile Services]: /de-de/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ "Mobile Services"
-  [ASP.NET]: /de-de/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/ "ASP.NET"
   [Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users
   [Benachrichtigungshubs im Überblick]: http://go.microsoft.com/fwlink/p/?LinkId=317339
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-services-selection.png
+  [0]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-services-selection.png
   [1]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-custom-api-select.png
   [2]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-portal-data-tables.png
   [3]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-insert-script-push2.png

@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-how-to-html-client" urlDisplayName="HTML Client" pageTitle="How to use an HTML client - Azure Mobile Services" metaKeywords="Azure Mobile Services, Mobile Service HTML client, HTML client" description="Learn how to use an HTML client for Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="How to use an HTML/JavaScript client for Azure Mobile Services" authors="krisragh" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="krisragh" />
 
 # So verwenden Sie einen HTML-/JavaScript-Client für Azure Mobile Services
 
@@ -34,7 +34,7 @@ Dieser Artikel beschreibt gängige Szenarien für die Verwendung eines HTML/Java
 -   [Gewusst wie: Verwenden von Cross-Origin Resource Sharing (CORS)][Gewusst wie: Verwenden von Cross-Origin Resource Sharing (CORS)]
 -   [Nächste Schritte][Nächste Schritte]
 
-[WACOM.INCLUDE [mobile-services-concepts][mobile-services-concepts]]
+[WACOM.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 ## <a name="create-client"></a>Gewusst wie: Erstellen des mobile Dienste-Clients
 
@@ -584,11 +584,6 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 
 <!-- Anchors. --> <!-- URLs. -->
 
-  [.NET Framework]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework"
-  [HTML/JavaScript]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript"
-  [iOS]: /de-de/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS"
-  [Android]: /de-de/develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
-  [Xamarin]: /de-de/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
   [Windows Store JavaScript-Schnellstart]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started
   [HTML-Schnellstart]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-html
   [Windows Azure Mobile Services]: #what-is
@@ -609,7 +604,6 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
   [Gewusst wie: Fehlerbehandlung]: #errors
   [Gewusst wie: Einsatz von Zusagen]: #promises
   [Gewusst wie: Anpassen der Anforderungsheader]: #customizing
-  [Gewusst wie: Verwenden von Cross-Origin Resource Sharing (CORS)]: #hostnames
   [Nächste Schritte]: #nextsteps
   [mobile-services-concepts]: ../includes/mobile-services-concepts.md
   [Erste Schritte mit Daten in Windows Store JavaScript]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-js
@@ -618,12 +612,9 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
   [ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
   [CLI to manage Mobile Services tables]: http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables
   [ListView]: http://msdn.microsoft.com/de-de/library/windows/apps/br211837.aspx
-  [Datenbindung (Windows Store-Apps mit JavaScript und HTML)]: http://msdn.microsoft.com/de-de/library/windows/apps/hh758311.aspx
   [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-html
   [Windows Store]: /de-de/develop/mobile/tutorials/get-started-with-users-js
   [login]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554236.aspx
-  [Registrieren Ihres Windows Store-App-Pakets für Microsoft-Authentifizierung]: /de-de/develop/mobile/how-to-guides/register-windows-store-app-package/
-  [1]: http://go.microsoft.com/fwlink/p/?LinkId=322050
   [Authentifizieren Ihrer Anwendung mit einmaliger Anmeldung]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/
   [sessionStorage]: http://msdn.microsoft.com/de-de/library/cc197062(v=vs.85).aspx
   [done]: http://msdn.microsoft.com/de-de/library/windows/apps/hh701079.aspx

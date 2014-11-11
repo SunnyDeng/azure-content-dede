@@ -1,6 +1,6 @@
 <properties pageTitle="Work with a JavaScript backend mobile service" metaKeywords="server scripts, mobile devices, Azure, scheduler" description="Provides examples on how to define, register, and use server scripts in Azure Mobile Services." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Work with server scripts in Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
 
 # Arbeiten mit einem mobilen JavaScript-Back-End-Dienst
 
@@ -874,8 +874,6 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 
 <!-- Anchors. --> <!-- URLs. -->
 
-  [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-how-to-use/ ".NET-Backend"
-  [JavaScript-Backend]: /de-de/documentation/articles/mobile-services-how-to-use-server-scripts/ "JavaScript-Backend"
   [Einführung]: #intro
   [Tabellenvorgänge]: #table-scripts
   [Gewusst wie: Registrierung für Tabellenvorgänge]: #register-table-scripts
@@ -953,6 +951,5 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
   [Gewusst wie: Ausführen statischer Abfragen]: #static-query
   [Gewusst wie: Ausführen dynamischer Abfragen]: #dynamic-query
   [Gewusst wie: Verknüpfen relationaler Tabellen]: #joins
-  [Gewusst wie: Ausführen einer Abfrage, die Ergebnisse im *raw*-Format zurückgibt]: #raw
   [Gewusst wie: Zugreifen auf eine Datenbankverbindung]: #connection
   [Konsolenobjekt]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554209.aspx
