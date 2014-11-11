@@ -1,6 +1,6 @@
 <properties linkid="hdinsight-use-hadoop-oozie-in-hdinsight" urlDisplayName="Use Hadoop Oozie in HDInsight" pageTitle="Use Hadoop Oozie in HDInsight | Azure" metaKeywords="" description="Use Hadoop Oozie in HDInsight, a big data solution. Learn how to define an Oozie workflow, and submit an Oozie job." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Hadop Oozie in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
 # Verwenden von Oozie mit Hadoop in HDInsight
 
@@ -10,7 +10,7 @@ Hier lernen Sie, wie Sie einen Workflow definieren und diesen in HDInsight ausf�
 
 ## Themen in diesem Artikel
 
-1.  [Was ist Oozie?][Was ist Oozie?]
+1.  [Was ist Oozie?](Was ist Oozie?)
 2.  [Voraussetzungen][Voraussetzungen]
 3.  [Definieren der Oozie-Workflowdatei][Definieren der Oozie-Workflowdatei]
 4.  [Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms][Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms]
@@ -572,7 +572,7 @@ das Invoke-RestMethod PowerShell-Cmdlet verwenden, um Oozie-Webdienste aufzurufe
 
         Write-Host "$(Get-Date -format 'G'): $oozieJobId is in $JobStatus state!" -ForegroundColor Green
 
-7.  Ersetzen Sie für HDInsight-Cluster der Version 2.1 den Wert "<https://$clusterName.azurehdinsight.net:443/oozie/v2/>" durch "<https://$clusterName.azurehdinsight.net:443/oozie/v1/>". HDInsight-Cluster der Version 2.1 unterstützen nicht Version 2 der Webdienste.
+7.  Ersetzen Sie für HDInsight-Cluster der Version 2.1 den Wert "https://$clusterName.azurehdinsight.net:443/oozie/v2/" durch "https://$clusterName.azurehdinsight.net:443/oozie/v1/". HDInsight-Cluster der Version 2.1 unterstützen nicht Version 2 der Webdienste.
 
 8.  Klicken Sie auf **Skript ausführen**, oder drücken Sie **F5**, um das Skript auszuführen. Die Ausgabe ähnelt der folgenden:
 
@@ -637,7 +637,6 @@ In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und wie e
 -   [Entwickeln von Java MapReduce-Programmen für HDInsight][Entwickeln von Java MapReduce-Programmen für HDInsight]
 
   [Verwenden von zeitbasierten Oozie-Koordinatoren mit HDInsight]: ../hdinsight-use-oozie-coordinator-time/
-  [Was ist Oozie?]: #whatisoozie
   [Voraussetzungen]: #prerequisites
   [Definieren der Oozie-Workflowdatei]: #defineworkflow
   [Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms]: #deploy

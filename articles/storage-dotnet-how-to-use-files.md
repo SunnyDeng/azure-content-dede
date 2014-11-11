@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-file-storage" urlDisplayName="File Service" pageTitle="How to use Azure File storage | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Learn how to use Microsoft Azure File storage to create file shares and manage file content. Samples are written in PowerShell and C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure File storage in .NET" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Verwenden des Azure-Dateispeichers
 
@@ -55,7 +55,7 @@ Der Dateispeicher enthält die folgenden Komponenten:
 
 -   **URL-Format:** Dateien sind mithilfe des folgenden
     URL-Formats adressierbar:
-    <https://>`<storage account>`.file.core.windows.net/`<share>`/`<directory/directories>`/`<file>`
+    `<https://<storage account>.file.core.windows.net/<share>/<directory/directories>/<file>`
 
     Die folgende Beispiel-URL könnte dazu verwendet werden, eine der Dateien im
     obigen Diagramm zu adressieren:
@@ -69,7 +69,7 @@ Der Azure-Dateispeicher befindet sich derzeit in der Vorschauphase. Navigieren S
 
 > [WACOM.NOTE] Der Dateispeicher ist derzeit nur für neue Speicherkonten verfügbar. Nachdem Ihrem Abonnement der Zugriff auf den Dateispeicher gewährt wurde, erstellen Sie ein neues Speicherkonto, das für diese Anleitung verwendet wird.
 
-[WACOM.INCLUDE [create-storage-account][create-storage-account]]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <a name="use-cmdlets"></a><span class="short-header">Verwenden von PowerShell zum Erstellen einer Dateifreigabe</span>Verwenden von PowerShell zum Erstellen einer Dateifreigabe
 
@@ -251,7 +251,6 @@ um ausführlichere Informationen zu erhalten.
 </p>
 
   [NuGet]: https://www.nuget.org/packages/WindowsAzure.Storage/
-  [Was ist der Dateispeicher?]: #what-is-file-storage
   [Dateispeicherkonzepte]: #file-storage-concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Verwenden von PowerShell zum Erstellen einer Dateifreigabe]: #use-cmdlets

@@ -92,7 +92,7 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
     Wenn im **Microsoft Azure-Aktivitätsprotokoll** als Veröffentlichungsstatus **Abgeschlossen** angezeigt wird, erstellen Sie einen CDN-Endpunkt, der in diesen Cloud-Dienst integriert ist.
 
 10. Zum Erstellen eines CDN-Endpunkts melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
-11. Klicken Sie auf **Neu** \> **App-Dienste** \> **CDN** \> **Schnellerfassung**. Wählen Sie **<http://>*\<Dienstname\>*.cloudapp.net/cdn/** aus, und klicken Sie auf **Erstellen**.
+11. Klicken Sie auf **Neu** \> **App-Dienste** \> **CDN** \> **Schnellerfassung**. Wählen Sie **http://\<*Dienstname*\>.cloudapp.net/cdn/** aus, und klicken Sie auf **Erstellen**.
 
     ![][8]
 
@@ -135,7 +135,7 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
     ![][3]
 
-17. Wenn der Veröffentlichungsstatus **Abgeschlossen** lautet, öffnen Sie ein Browserfenster, und navigieren Sie zu **<http://>*\<cdnName\>*.vo.msecnd.net/Content/bootstrap.css**. In meinem Setup lautet diese URL:
+17. Wenn der Veröffentlichungsstatus **Abgeschlossen** lautet, öffnen Sie ein Browserfenster, und navigieren Sie zu **http://\<*cdnName*\>.vo.msecnd.net/Content/bootstrap.css**. In meinem Setup lautet diese URL:
 
         http://az632148.vo.msecnd.net/Content/bootstrap.css
 
@@ -147,25 +147,25 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
         http://cephalinservice.cloudapp.net/Content/bootstrap.css
 
-    Wenn Sie zu **<http://>*\<cdnName\>*.vo.msecnd.net/Content/bootstrap.css** navigieren, werden Sie zum Herunterladen der Datei bootstrap.css aufgefordert, die von der veröffentlichten Web-App bereitgestellt wurde.
+    Wenn Sie zu **http://\<*cdnName*\>.vo.msecnd.net/Content/bootstrap.css** navigieren, werden Sie zum Herunterladen der Datei bootstrap.css aufgefordert, die von der veröffentlichten Web-App bereitgestellt wurde.
 
     ![][12]
 
-Auf die gleiche Weise können Sie direkt von Ihrem CDN-Endpunkt aus auf jede öffentlich zugreifbare URL unter **<http://>*\<Dienstname\>*.cloudapp.net/** zugreifen. Beispiel:
+Auf die gleiche Weise können Sie direkt von Ihrem CDN-Endpunkt aus auf jede öffentlich zugreifbare URL unter **http://\<*Dienstname*\>.cloudapp.net/** zugreifen. Beispiel:
 
 -	Eine JS-Datei im Pfad „/Script“
 -	Jede Inhaltsdatei im Pfad „/Content“
 -	Jede Controlleraktion
 -	Sofern die Abfragezeichenfolge für den CDN-Endpunkt aktiviert ist, jede URL mit Abfragezeichenfolgen
 
-Tatsächlich können Sie mit der vorstehenden Konfiguration den gesamten Cloud-Dienst von **<http://>*\<cdnName\>*.vo.msecnd.net/** aus hosten. Wenn ich zu **<http://az632148.vo.msecnd.net/>** navigieren, erhalte ich das Aktionsergebnis von Startseite/Index.
+Tatsächlich können Sie mit der vorstehenden Konfiguration den gesamten Cloud-Dienst von **http://\<*cdnName*\>.vo.msecnd.net/** aus hosten. Wenn ich zu **http://az632148.vo.msecnd.net/** navigieren, erhalte ich das Aktionsergebnis von Startseite/Index.
 
 ![][13]
 
 Dies bedeutet jedoch nicht, dass es immer (oder generell) einen gute Idee ist, einen gesamten Cloud-Dienst über Azure CDN zu verarbeiten. Es gibt auch einige Nachteile:
 
 -	Für diesen Ansatz muss die gesamte Website öffentlich sein, da Azure CDN keine privaten Inhalte verarbeiten kann.
--   Falls der CDN-Endpunkt aus irgendeinem Grund – sei es wegen einer geplanten Wartung oder aufgrund eines Benutzerfehlers – offline geht, wird der gesamte Cloud-Dienst offline geschaltet, es sei denn, die Kunden können an die Ursprungs-URL **<http://>*\<Dienstname\>*.cloudapp.net/** umgeleitet werden.
+-   Falls der CDN-Endpunkt aus irgendeinem Grund – sei es wegen einer geplanten Wartung oder aufgrund eines Benutzerfehlers – offline geht, wird der gesamte Cloud-Dienst offline geschaltet, es sei denn, die Kunden können an die Ursprungs-URL **http://\<*Dienstname*\>.cloudapp.net/** umgeleitet werden.
 -	Selbst bei Verwendung der benutzerdefinierten Cachesteuerungseinstellungen (siehe [Konfigurieren von Cacheoptionen für statische Dateien im Cloud-Dienst][Konfigurieren von Cacheeinstellungen für statischen Inhalt im Cloud-Dienst]) wird durch einen CDN-Endpunkt die Leistung von besonders dynamischem Inhalt nicht verbessert. Wenn Sie wie oben gezeigt versucht haben, die Startseite vom CDN-Endpunkt aus zu laden, beachten Sie, dass das Laden der Standardstartseite (einer ziemlich einfachen Seite) beim ersten Mal mindestens fünf Sekunden gedauert hat. Stellen Sie sich vor, diese Seite enthält dynamischen Inhalt, der im Minutentakt aktualisiert werden muss – das Ergebnis wäre nicht besonders benutzerfreundlich. Das Verarbeiten von dynamischem Inhalt von einem CDN-Endpunkt aus erfordert einen kurzen Cacheablauf, was zu häufigen Cachefehlern am CDN-Endpunkt führt. Dies beeinträchtigt die Leistung des Cloud-Diensts und macht den Sinn und Zweck eines CDN zunichte.
 
 Alternativ kann der von Azure CDN zu verarbeitende Inhalt von Fall zu Fall im Cloud-Dienst bestimmt werden. Zu diesem Zweck haben Sie bereits gelernt, wie Sie vom CDN-Endpunkt aus auf einzelne Inhaltsdateien zugreifen. Im Abschnitt [Verarbeiten von Inhalten von Controlleraktionen über Azure CDN][Verarbeiten von Inhalten von Controlleraktionen über Azure CDN] zeige ich Ihnen, wie Sie eine bestimmte Controlleraktion vom CDN-Endpunkt aus verarbeiten.
@@ -229,105 +229,103 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
 
 1.  Erstellen Sie im Ordner *\\Controllers* eine neue CS-Datei namens *MemeGeneratorController.cs*, und ersetzen Sie den Inhalt durch den folgenden Code. Achten Sie darauf, den hervorgehobenen Teil durch den Namen Ihres CDN zu ersetzen.
 
-	<pre class="prettyprint">
-	using System;
-	using System.Collections.Generic;
-	using System.Diagnostics;
-	using System.Drawing;
-	using System.IO;
-	using System.Net;
-	using System.Web.Hosting;
-	using System.Web.Mvc;
-	using System.Web.UI;
-	
-	namespace WebRole1.Controllers
-	{
-	    public class MemeGeneratorController : Controller
-	    {
-	        static readonly Dictionary<string, Tuple<string ,string>> Memes = new Dictionary<string, Tuple<string, string>>();
+    ``` prettyprint
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Drawing;
+    using System.IO;
+    using System.Net;
+    using System.Web.Hosting;
+    using System.Web.Mvc;
+    using System.Web.UI;
 
-	        public ActionResult Index()
-	        {
-	            return View();
-	        }
-	
-	        [HttpPost, ActionName(&quot;Index&quot;)]
-        	public ActionResult Index_Post(string top, string bottom)
-	        {
-	            var identifier = Guid.NewGuid().ToString();
-	            if (!Memes.ContainsKey(identifier))
-	            {
-	                Memes.Add(identifier, new Tuple&lt;string, string&gt;(top, bottom));
-	            }
-	
-	            return Content(&quot;&lt;a href=\&quot;&quot; + Url.Action(&quot;Show&quot;, new {id = identifier}) + &quot;\&quot;&gt;here&#39;s your meme&lt;/a&gt;&quot;);
-	        }
+    namespace WebRole1.Controllers
+    {
+        public class MemeGeneratorController : Controller
+    {
+      static readonly Dictionary> Memes = new Dictionary>();
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost, ActionName(&quot;Index&quot;)]
+        public ActionResult Index_Post(string top, string bottom)
+        {
+            var identifier = Guid.NewGuid().ToString();
+            if (!Memes.ContainsKey(identifier))
+            {
+                Memes.Add(identifier, new Tuple&lt;string, string&gt;(top, bottom));
+            }
+
+            return Content(&quot;&lt;a href=\&quot;&quot; + Url.Action(&quot;Show&quot;, new {id = identifier}) + &quot;\&quot;&gt;here&#39;s your meme&lt;/a&gt;&quot;);
+        }
 
 
-	        [OutputCache(VaryByParam = &quot;*&quot;, Duration = 1, Location = OutputCacheLocation.Downstream)]
-	        public ActionResult Show(string id)
-	        {
-	            Tuple<string, string> data = null;
-	            if (!Memes.TryGetValue(id, out data))
-	            {
-	                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
-	            }
-	
-	            if (Debugger.IsAttached) // Preserve the debug experience
-	            {
-	                return Redirect(string.Format(&quot;/MemeGenerator/Generate?top={0}&bottom={1}&quot;, data.Item1, data.Item2));
-	            }
-	            else // Get content from Azure CDN
-	            {
-	                return Redirect(string.Format(&quot;http://<mark>&lt;cdnName&gt;</mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&amp;bottom={1}&quot;, data.Item1, data.Item2));
-	            }
-	        }
+        [OutputCache(VaryByParam = &quot;*&quot;, Duration = 1, Location = OutputCacheLocation.Downstream)]
+        public ActionResult Show(string id)
+        {
+            Tuple<string, string> data = null;
+            if (!Memes.TryGetValue(id, out data))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+            }
 
-	        [OutputCache(VaryByParam = "*", Duration = 3600, Location = OutputCacheLocation.Downstream)]
-	        public ActionResult Generate(string top, string bottom)
-	        {
-	            string imageFilePath = HostingEnvironment.MapPath(&quot;~/Content/chuck.bmp&quot;);
-	            Bitmap bitmap = (Bitmap)Image.FromFile(imageFilePath);
-	
-	            using (Graphics graphics = Graphics.FromImage(bitmap))
-	            {
-	                SizeF size = new SizeF();
-	                using (Font arialFont = FindBestFitFont(bitmap, graphics, top.ToUpperInvariant(), new Font("Arial Narrow", 100), out size))
-	                {
-	                    graphics.DrawString(top.ToUpperInvariant(), arialFont, Brushes.White, new PointF(((bitmap.Width - size.Width) / 2), 10f));
-	                }
-	                using (Font arialFont = FindBestFitFont(bitmap, graphics, bottom.ToUpperInvariant(), new Font("Arial Narrow", 100), out size))
-	                {
-	                    graphics.DrawString(bottom.ToUpperInvariant(), arialFont, Brushes.White, new PointF(((bitmap.Width - size.Width) / 2), bitmap.Height - 10f - arialFont.Height));
-	                }
-	            }
-	
-	            MemoryStream ms = new MemoryStream();
-	            bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-	            return File(ms.ToArray(), &quot;image/png&quot;);
-	        }
-	
-	        private Font FindBestFitFont(Image i, Graphics g, String text, Font font, out SizeF size)
-	        {
-	            // Compute actual size, shrink if needed
-	            while (true)
-	            {
-	                size = g.MeasureString(text, font);
-	
-	                // It fits, back out
-	                if (size.Height < i.Height &&
-	                     size.Width < i.Width) { return font; }
-	
-	                // Try a smaller font (90% of old size)
-	                Font oldFont = font;
-	                font = new Font(font.Name, (float)(font.Size * .9), font.Style);
-	                oldFont.Dispose();
-	            }
-	        }
-		}
-	}
-	</pre>
+            if (Debugger.IsAttached) // Preserve the debug experience
+            {
+                return Redirect(string.Format(&quot;/MemeGenerator/Generate?top={0}&bottom={1}&quot;, data.Item1, data.Item2));
+            }
+            else // Get content from Azure CDN
+            {
+                return Redirect(string.Format(&quot;http://<mark>&lt;cdnName&gt;</mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&amp;bottom={1}&quot;, data.Item1, data.Item2));
+            }
+        }
 
+        [OutputCache(VaryByParam = "*", Duration = 3600, Location = OutputCacheLocation.Downstream)]
+        public ActionResult Generate(string top, string bottom)
+        {
+            string imageFilePath = HostingEnvironment.MapPath(&quot;~/Content/chuck.bmp&quot;);
+            Bitmap bitmap = (Bitmap)Image.FromFile(imageFilePath);
+
+            using (Graphics graphics = Graphics.FromImage(bitmap))
+            {
+                SizeF size = new SizeF();
+                using (Font arialFont = FindBestFitFont(bitmap, graphics, top.ToUpperInvariant(), new Font("Arial Narrow", 100), out size))
+                {
+                    graphics.DrawString(top.ToUpperInvariant(), arialFont, Brushes.White, new PointF(((bitmap.Width - size.Width) / 2), 10f));
+                }
+                using (Font arialFont = FindBestFitFont(bitmap, graphics, bottom.ToUpperInvariant(), new Font("Arial Narrow", 100), out size))
+                {
+                    graphics.DrawString(bottom.ToUpperInvariant(), arialFont, Brushes.White, new PointF(((bitmap.Width - size.Width) / 2), bitmap.Height - 10f - arialFont.Height));
+                }
+            }
+
+            MemoryStream ms = new MemoryStream();
+            bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return File(ms.ToArray(), &quot;image/png&quot;);
+        }
+
+        private Font FindBestFitFont(Image i, Graphics g, String text, Font font, out SizeF size)
+        {
+            // Compute actual size, shrink if needed
+            while (true)
+            {
+                size = g.MeasureString(text, font);
+
+                // It fits, back out
+                if (size.Height < i.Height &&
+                     size.Width < i.Width) { return font; }
+
+                // Try a smaller font (90% of old size)
+                Font oldFont = font;
+                font = new Font(font.Name, (float)(font.Size * .9), font.Style);
+                oldFont.Dispose();
+             }
+           }
+         }
+       }
+    ```
 2.  Klicken Sie mit der rechten Maustaste auf die `Index()`-Standardaktion, und wählen Sie **Ansicht hinzufügen**.
 
     ![][15]
@@ -348,7 +346,7 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
             <input class="btn" type="submit" value="Generate meme" />
         </form>
 
-5.  Veröffentlichen Sie den Cloud-Dienst erneut, und navigieren Sie in Ihrem Browser zu **<http://>*\<Dienstname\>*.cloudapp.net/MemeGenerator/Index**.
+5.  Veröffentlichen Sie den Cloud-Dienst erneut, und navigieren Sie in Ihrem Browser zu **http://<*Dienstname*>.cloudapp.net/MemeGenerator/Index**.
 
 Wenn Sie die Formularwerte an `/MemeGenerator/Index` übermitteln, gibt die `Index_Post`-Aktionsmethode eine Link zur `Show`-Aktionsmethode mit der betreffenden Eingabe-ID zurück. Wenn Sie auf den Link klicken, erhalten Sie den folgenden Code:
 
@@ -652,8 +650,6 @@ Die [Bundle][Bundle]-Klasse enthält eine Eigenschaft namens [CdnFallbackExpress
   [Konfigurieren des Fallbacks für Skripts und CSS, wenn das Azure CDN offline ist]: #fallback
   [Microsoft Azure-Konto]: http://azure.microsoft.com/de-de/account/
   [Azure SDK]: http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409
-  [ein Azure-Konto kostenlos erstellen]: http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A261C142F
-  [Vorteile für MSDN-Abonnenten aktivieren]: http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F
   [0]: media/cdn-cloud-service-with-cdn/cdn-cs-1-new-project.PNG
   [1]: media/cdn-cloud-service-with-cdn/cdn-cs-2-select-role.PNG
   [2]: media/cdn-cloud-service-with-cdn/cdn-cs-3-mvc-template.PNG
@@ -670,7 +666,6 @@ Die [Bundle][Bundle]-Klasse enthält eine Eigenschaft namens [CdnFallbackExpress
   [11]: media/cdn-cloud-service-with-cdn/cdn-cs-13-testcdn.png
   [12]: media/cdn-cloud-service-with-cdn/cdn-1-browser-access.PNG
   [13]: media/cdn-cloud-service-with-cdn/cdn-2-home-page.PNG
-  [Client Cache \<clientCache\>]: http://www.iis.net/configreference/system.webserver/staticcontent/clientcache
   [Maarten Balliauw]: https://twitter.com/maartenballiauw
   [Verringern von Latenz im Web mit Microsoft Azure CDN]: http://channel9.msdn.com/events/TechDays/Techdays-2014-the-Netherlands/Reducing-latency-on-the-web-with-the-Windows-Azure-CDN
   [Alan Light]: http://www.flickr.com/photos/alan-light/218493788/
@@ -685,7 +680,6 @@ Die [Bundle][Bundle]-Klasse enthält eine Eigenschaft namens [CdnFallbackExpress
   [Style Bundle Fallback]: https://github.com/EmberConsultingGroup/StyleBundleFallback
   [Ember Consulting Group]: https://github.com/EmberConsultingGroup
   [Code von GitHub]: https://github.com/EmberConsultingGroup/StyleBundleFallback/blob/master/Website/App_Start/StyleBundleExtensions.cs
-  [Übersicht über das Azure Content Delivery Network (CDN)]: http://msdn.microsoft.com/library/azure/ff919703.aspx
   [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung]: http://azure.microsoft.com/de-de/Documentation/Articles/cdn-serve-content-from-cdn-in-your-web-application/
   [ASP.NET-Bündelung und -Minimierung]: http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification
   [Verwenden von CDN für Azure]: http://azure.microsoft.com/de-de/documentation/articles/cdn-how-to-use/

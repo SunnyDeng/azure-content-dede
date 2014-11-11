@@ -36,7 +36,7 @@ Die Anweisungen im Lernprogramm funktionieren mit den folgenden beiden Produkten
 
 Falls Sie keines dieser Produkte haben, wird Visual Studio 2013 Express für das Web zusammen mit dem Azure SDK installiert.
 
-[WACOM.INCLUDE [free-trial-note][free-trial-note]]
+[WACOM.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## <span id="learn"></span></a>Sie lernen Folgendes
 
@@ -137,7 +137,7 @@ Wenn der Datenverkehr je nach Tageszeit oder Wochentag schwankt und Ihre Back-En
 
 Dieses Lernprogramm beschreibt, wie Sie das Front-End in einer Website und das Back-End als WebJob in derselben Website ausführen können. Informationen zur Auswahl der optimalen Umgebung für Ihr Szenario finden Sie unter [Vergleich von Websites, Clouddiensten und virtuellen Computern in Azure][Vergleich von Websites, Clouddiensten und virtuellen Computern in Azure].
 
-[WACOM.INCLUDE [install-sdk-2013-only][install-sdk-2013-only]]
+[WACOM.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
 
 ## <span id="storage"></span></a>Erstellen eines Azure-Speicherkontos
 
@@ -212,11 +212,17 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
     Die Datei enthält zwei Verbindungszeichenfolgen: eine für die Anwendungsdaten und eine für die Protokollierung. In diesem Lernprogramm verwenden Sie dasselbe Konto für beide Funktionen. Die Verbindungszeichenfolgen enthalten dieselben Platzhalter, die Sie bereits kennengelernt haben.
 
-    ``` prettyprint
-    <configuration><connectionStrings> <add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=[Kontoname];AccountKey=[Zugriffsschlüssel]"/> <add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=[Kontoname];AccountKey=[Zugriffsschlüssel]"/> <add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;"/></connectionStrings> <startup> <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /></startup></configuration>
-    ```
+  	<pre class="prettyprint">&lt;configuration&gt;
+    &lt;connectionStrings&gt;
+        &lt;add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
+        &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
+        &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;"/&gt;
+    &lt;/connectionStrings&gt;
+        &lt;startup&gt; 
+            &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /&gt;
+    &lt;/startup&gt;
+    &lt;/configuration&gt;</pre>
 
-    </p>
     Standardmäßig sucht das WebJobs SDK nach Verbindungszeichenfolgen mit den Namen AzureWebJobsStorage und AzureWebJobsDashboard. Alternativ können Sie beliebige Namen für die Verbindungszeichenfolgen vergeben und die Namen explizit an das `JobHost`-Objekt übergeben.
 
 6.  Ersetzen Sie alle Vorkommnisse von *[Kontoname]* und *[Zugriffsschlüssel]* mit den Werten für Ihr Speicherkonto, wie Sie dies bereits für das Webprojekt getan haben. (Alternativ können Sie die komplette Verbindungszeichenfolge aus der Datei *Web.config* in die beiden Verbindungszeichenfolgen in der Datei *App.config* kopieren.)
@@ -657,7 +663,7 @@ Ein ähnlicher Codeabschnitt ruft einen Verweis auf die *blobnamerequest*-Wartes
 
 ### ContosoAdsWeb - \_Layout.cshtml
 
-Die \*\_Layout.cshtml\*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
+Die *\_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
 
 ### ContosoAdsWeb - Views\\Home\\Index.cshtml
 
@@ -923,7 +929,6 @@ Weitere Informationen finden Sie unter [Azure WebJobs - Empfohlene Ressourcen][A
   [HttpPostedFileBase]: http://msdn.microsoft.com/de-de/library/system.web.httppostedfilebase.aspx
   [WebJobs SDK 0.3.0 Beta-Ankündigung]: http://azure.microsoft.com/blog/2014/06/18/announcing-the-0-3-0-beta-preview-of-microsoft-azure-webjobs-sdk/http://azure.microsoft.com/blog/2014/06/18/announcing-the-0-3-0-beta-preview-of-microsoft-azure-webjobs-sdk/
   [Clouddienst-Version der Anwendung]: /de-de/documentation/articles/cloud-services-dotnet-get-started/
-  [https://{Websitename}.scm.azurewebsites.net/azurejobs/\#/functions]: https://{websitename}.scm.azurewebsites.net/azurejobs/#/functions
   [Einrichten eines Dashboards für die lokale Entwicklung mit dem WebJobs SDK]: http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx
   [Abhängigkeitsinjektion]: http://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection
   [Repository und Arbeitseinheit]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo

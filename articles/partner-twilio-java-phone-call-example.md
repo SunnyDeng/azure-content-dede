@@ -1,6 +1,6 @@
 <properties linkid="develop-java-how-to-twilio-phone-call" urlDisplayName="How to Make a Phone Call from Twilio in Java" pageTitle="How to Make a phone call from Twilio (Java) - Azure" metaKeywords="Azure Twilio call, Twilio call website, Azure Twilio Java" description="Learn how to make a phone call from a web page using Twilio in a Java application on Azure." metaCanonical="" services="" documentationCenter="Java" title="How to Make a Phone Call Using Twilio in a Java Application on Azure" authors="MicrosoftHelp@twilio.com; robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="MicrosoftHelp@twilio.com; robmcm"></tags>
+<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="MicrosoftHelp@twilio.com; robmcm" />
 
 # Tätigen eines Telefonanrufs mithilfe von Twilio in einer Java-Anwendung auf Azure
 
@@ -160,10 +160,10 @@ Es folgen nun die allgemeinen Schritte zum Ausführen Ihrer Anwendung. Details z
 2.  Ändern Sie **startup.cmd**, um Ihr TwilioCloud-WAR zu entzippen.
 3.  Kompilieren Sie Ihre Anwendung für den Serveremulator.
 4.  Starten Sie Ihre Bereitstellung im Serveremulator.
-5.  Starten Sie Ihren Browser und öffnen Sie die Adresse **<http://localhost:8080/TwilioCloud/callform.jsp>**.
+5.  Starten Sie Ihren Browser und öffnen Sie die Adresse **http://localhost:8080/TwilioCloud/callform.jsp**.
 6.  Geben Sie Werte in das Formular ein, klicken Sie auf **Make this call** und sehen Sie sich die Ergebnisse in makecall.jsp an.
 
-Wenn Sie die Anwendung in Azure bereitstellen möchten, kompilieren Sie sie für die Cloudbereitstellung neu, laden sie in Azure hoch und öffnen <http://*your_hosted_name>*.cloudapp.net/TwilioCloud/callform.jsp* im Browser (ersetzen Sie "your\_hosted\_name" durch den entsprechenden Wert).
+Wenn Sie die Anwendung in Azure bereitstellen möchten, kompilieren Sie sie für die Cloudbereitstellung neu, laden sie in Azure hoch und öffnen http://*your_hosted_name*.cloudapp.net/TwilioCloud/callform.jsp im Browser (ersetzen Sie *your\_hosted\_name* durch den entsprechenden Wert).
 
 ## Nächste Schritte
 

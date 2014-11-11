@@ -171,7 +171,6 @@ Nach der Ausf&uuml;hrung dieser Schritte k&ouml;nnen Sie das CER-Zertifikat ausw
 
 ## Schritt 3: Konfigurieren des Tresors
 
-</p>
 1.  Klicken Sie auf der Seite **Recovery Services** auf den Tresor, um die Seite „Schnellstart“ zu öffnen. Schnellstart kann auch jederzeit über das Symbol geöffnet werden.
 
     ![Schnellstart-Symbol][Schnellstart-Symbol]
@@ -193,7 +192,6 @@ Nach der Ausf&uuml;hrung dieser Schritte k&ouml;nnen Sie das CER-Zertifikat ausw
 
 ## Schritt 4: Installieren des Azure Site Recovery-Anbieters
 
-</p>
 1.  Klicken Sie auf der Seite **Schnellstart** auf **Anbieter herunterladen**, um die neueste Version der Anbieterinstallationsdatei abzurufen.
 
     ![Anbieter-Datei herunterladen][Anbieter-Datei herunterladen]
@@ -212,7 +210,6 @@ Nach der Ausf&uuml;hrung dieser Schritte k&ouml;nnen Sie das CER-Zertifikat ausw
     -   Wählen Sie den Tresor aus, in dem Sie den Server registrieren möchten.
     -   Geben Sie den Tresorschlüssel an. Dies ist der Tresorschlüssel, den Sie zuvor generiert haben. Schneiden Sie den Schlüsselwert auf der Seite „Schnellstart“ aus, und fügen Sie ihn ein.
 
-    </p>
     ![Zertifikatregistrierung][Zertifikatregistrierung]
 
 6.  Auf der Seite „Datenverschlüsselung“ können Sie angeben, ob Sie die Option zur Datenverschlüsselung während der Replikation für eine bestimmte Cloud zulassen möchten. Wenn Sie diese Option auswählen, wird automatisch ein SSL-Zertifikat generiert. Wenn Sie ein Failover ausführen, müssen Sie dieses Zertifikat auswählen. Nachdem Sie diese Einstellung aktiviert haben, können Sie die Datenverschlüsselung für eine Cloud im Azure Site Recovery-Portal aktivieren oder deaktivieren. Belassen Sie für dieses Lernprogramm die Standardeinstellung, und klicken Sie auf **Weiter**.

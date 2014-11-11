@@ -41,7 +41,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
     | Clusterbenutzer-Name     | Der Name des Hadoop-Benutzerkontos. Der Standard-Benutzername für Hadoop ist **admin**.         |
     | Clusterbenutzer-Kennwort | Das Benutzerkennwort für den Hadoop-Cluster.                                                    |
 
--   **Eine Workstation** mit installiertem Visual Studio 2013. [Installieren von Visual Studio](http://msdn.microsoft.com/en-us/library/e2h7fzkw.aspx)
+-   **Eine Workstation** mit installiertem Visual Studio 2013. [Installieren von Visual Studio](http://msdn.microsoft.com/de-de/library/e2h7fzkw.aspx)
 
 ## <span id="twitter"></span></a>Erstellen einer Twitter-Anwendungs-ID und von Geheimschlüsseln
 
@@ -83,7 +83,7 @@ Erstellen Sie eine Konsolenanwendung, um Tweets zu erhalten, einen Tweet-Stimmun
     -   Vorlagen: **Visual C#**
     -   Vorlage: **Konsolenanwendung**
     -   Name: **TweetSentimentStreaming**
-    -   Location: **C:\\Tutorials**
+    -   Location: **C:\Tutorials**
     -   Projektmappenname: **TweetSentimentStreaming**
 
 4.  Klicken Sie auf **OK**, um fortzufahren.
@@ -577,7 +577,7 @@ In diesem Abschnitt erstellen Sie eine ASP.NET MVC-Webanwendung, die die Stimmun
 
 5.  Ändern Sie innerhalb der Klasse **HBaseReader** die Konstantenwerte:
 
-    -   **CLUSTERNAME**: Der HBase-Clustername. Beispiel: *<https://><hbaseclustername>.azurehdinsight.net/*.
+    -   **CLUSTERNAME**: Der HBase-Clustername. Beispiel: *https://<hbaseclustername>.azurehdinsight.net/*.
     -   **HADOOPUSERNAME**: Der Hadoop-Benutzername des HBase-Clusters. Der Standardname lautet *admin*.
     -   **HADOOPUSERPASSWORD**: Das Hadoop-Benutzerkennwort des HBase-Clusters.
     -   **HBASETABLENAME** = "tweets\_by\_words";
@@ -1219,7 +1219,7 @@ In diesem Artikel haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von T
   [Nächste Schritte]: #nextsteps
   [hBase-get-started]: ../hdinsight-hbase-get-started/
   [hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started/
-  [Installieren von Visual Studio]: http://msdn.microsoft.com/en-us/library/e2h7fzkw.aspx
+  [Installieren von Visual Studio]: http://msdn.microsoft.com/de-de/library/e2h7fzkw.aspx
   [OAuth]: http://oauth.net/
   [1]: https://apps.twitter.com/
   [img-twitter-app]: ./media/hdinsight-hbase-analyze-twitter-sentiment/TwitterApp.png

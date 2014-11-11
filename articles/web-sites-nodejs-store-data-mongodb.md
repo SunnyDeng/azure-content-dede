@@ -1,6 +1,7 @@
 <properties linkid="develop-node-website-with-mongodb-mac" urlDisplayName="Website with MongoDB" pageTitle="Node.js website with MongoDB on a VM - Azure tutorial" metaKeywords="Azure tutorial MongoDB, MongoDB store data, access data MongoDB Node, Azure Node app" description="A tutorial that teaches you how to use MongoDB to store and access data from a Node application hosted on Azure." metaCanonical="http://www.windowsazure.com/de-de/develop/nodejs/tutorials/website-with-mongodb-mongolab/" services="web-sites,virtual-machines" documentationCenter="nodejs" title="Node.js Web Application with Storage on MongoDB (Virtual Machine)" authors="larryfr"  solutions="" writer="" manager="" editor=""  />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+
 
 # Erstellen einer Node.js-Anwendung auf Azure mit MongoDB auf einem virtuellen Computer
 
@@ -28,7 +29,7 @@ Für die Schritte in diesem Lernprogramm, die Node.js verwenden, benötigen Sie 
 
 Zusätzlich muss [Git][Git] über die Befehlszeile in Ihrer Entwicklungsumgebung verfügbar sein, da dies zur Bereitstellung der Anwendung auf einer Azure-Website verwendet wird.
 
-[WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
+[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## Erstellen eines virtuellen Computers
 
@@ -94,7 +95,7 @@ Sie können zwar einen neuen virtuellen Computer erstellen und dann anhand der [
 
     ![Screenshot der Endpunktkonfiguration][Screenshot der Endpunktkonfiguration]
 
-9.  Sobald der Status des virtuellen Computers zu **Wird ausgeführt** wechselt, sollten Sie in der Lage sein, [http://\<IhrVMDNSName\>.cloudapp.net:28017/\_\_][http://\<IhrVMDNSName\>.cloudapp.net:28017/\_\_] in einem Webbrowser zu öffnen, um zu bestätigen, dass MongoDB ausgeführt wird. Unten auf der Seite sollte ein Protokoll mit Informationen über den Dienst angezeigt werden, in etwa wie folgt:
+9.  Sobald der Status des virtuellen Computers zu **Wird ausgeführt** wechselt, sollten Sie in der Lage sein, **http://&lt;IhrVMDNSName&gt;cloudapp.net:28017/** in einem Webbrowser zu öffnen, um zu bestätigen, dass MongoDB ausgeführt wird. Unten auf der Seite sollte ein Protokoll mit Informationen über den Dienst angezeigt werden, in etwa wie folgt:
 
         Fri Mar  7 18:57:16 [initandlisten] MongoDB starting : pid=1019 port=27017 dbpath=/var/lib/mongodb 64-bit host=localhost.localdomain
            18:57:16 [initandlisten] db version v2.2.3, pdfile version 4.5
@@ -515,7 +516,6 @@ Informationen zur Sicherheit von MongoDB finden Sie unter [MongoDB-Sicherheit][M
   [Verwenden von SSH mit Linux auf Azure]: http://www.windowsazure.com/de-de/documentation/articles/linux-use-ssh-key/
   [Screenshot der VM-Konfiguration]: ./media/web-sites-nodejs-store-data-mongodb/vmconfig.png
   [Screenshot der Endpunktkonfiguration]: ./media/web-sites-nodejs-store-data-mongodb/endpoints.png
-  [http://\<IhrVMDNSName\>.cloudapp.net:28017/\_\_]: http://<YourVMDNSName>.cloudapp.net:28017/__
   [MongoDB-Dokumentation]: http://docs.mongodb.org/manual/
   [Express]: http://expressjs.com
   [Mongoose]: http://mongoosejs.com

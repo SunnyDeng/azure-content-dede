@@ -4,7 +4,7 @@
 
 # Erste Schritte mit Daten in Mobile Services
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-data-legacy][mobile-services-selector-get-started-data-legacy]]
+[WACOM.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
 
 <div class="dev-center-tutorial-subselector">
     <a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/" title=".NET-Back-End" class="current">.NET-Back-End</a> | 
@@ -48,13 +48,13 @@ Dieses Lernprogramm basiert auf der [GetStartedWithMobileServices-App][GetStarte
 
 5.  Geben Sie in der App in **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
 
-    ![][]
+    ![][0]
 
     Der gespeicherte Text wird in der zweiten Spalte unter **Query and update data** angezeigt.
 
 ## <a name="create-service"></a>Erstellen eines neuen mobilen Diensts
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service][mobile-services-dotnet-backend-create-new-service]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
 ## <a name="download-the-service-locally"></a>Herunterladen des mobilen Dienstprojekts und Hinzufügen zur Projektmappe
 
@@ -176,11 +176,11 @@ In diesem Abschnitt aktualisieren Sie die Windows Store-App, um den mobilen Dien
 
 ## <a name="test-locally-hosted"></a>Testen der Windows Store-App mit dem lokal gehosteten Dienst
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service-data][mobile-services-dotnet-backend-test-local-service-data]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service-data](../includes/mobile-services-dotnet-backend-test-local-service-data.md)]
 
 ## <a name="publish-mobile-service"></a>Veröffentlichen des mobilen Diensts in Azure
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service][mobile-services-dotnet-backend-publish-service]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 ## <a name="test-azure-hosted"></a>Testen des mobilen in Azure veröffentlichten Diensts
 
@@ -208,7 +208,7 @@ In diesem Abschnitt aktualisieren Sie die Windows Store-App, um den mobilen Dien
 
 ## <a name="view-stored-data"></a>Anzeigen der in der SQL-Datenbank gespeicherten Daten
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-view-sql-data][mobile-services-dotnet-backend-view-sql-data]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-view-sql-data](../includes/mobile-services-dotnet-backend-view-sql-data.md)]
 
 Damit ist das Lernprogramm **Erste Schritte mit Daten** beendet.
 
@@ -233,9 +233,10 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 -   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+<!-- Anchors. -->
+<!-- Images. -->
+<!-- URLs. -->
 
-  [mobile-services-selector-get-started-data-legacy]: ../includes/mobile-services-selector-get-started-data-legacy.md
   [.NET-Back-End]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/ ".NET-Back-End"
   [JavaScript-Back-End]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/ "JavaScript-Back-End"
   [universellen Windows-Apps]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data
@@ -249,8 +250,7 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   [Kostenlose Azure-Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F
   [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
   [GetStartedWithMobileServices-App]: http://go.microsoft.com/fwlink/p/?LinkId=328660
-  []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/app-view.png
-  [mobile-services-dotnet-backend-create-new-service]: ../includes/mobile-services-dotnet-backend-create-new-service.md
+  [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/app-view.png
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/mobile-service-overview-page.png
   [2]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/download-service-project.png
@@ -266,10 +266,7 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   [12]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-nuget-packages.png
   [13]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/copy-mobileserviceclient-snippet.png
   [14]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/vs-pasted-mobileserviceclient.png
-  [mobile-services-dotnet-backend-test-local-service-data]: ../includes/mobile-services-dotnet-backend-test-local-service-data.md
-  [mobile-services-dotnet-backend-publish-service]: ../includes/mobile-services-dotnet-backend-publish-service.md
   [15]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/azure-items.png
-  [mobile-services-dotnet-backend-view-sql-data]: ../includes/mobile-services-dotnet-backend-view-sql-data.md
   [Prüfen und Ändern von Daten mit Skripten]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
   [Optimieren von Abfragen mittels Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-dotnet
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/

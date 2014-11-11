@@ -185,7 +185,7 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
         </body>
         </html>
 
-Nun können Sie **<http://localhost/registration/index.php>** aufrufen, um die Anwendung zu testen.
+Nun können Sie **http://localhost/registration/index.php** aufrufen, um die Anwendung zu testen.
 
 ## Veröffentlichen der Anwendung
 
@@ -210,7 +210,7 @@ Nachdem Sie Ihre Anwendung lokal getestet haben, können Sie sie über Git auf i
 
     ![Anfängliche Push-Übertragung über Git zu Azure][Anfängliche Push-Übertragung über Git zu Azure]
 
-3.  Rufen Sie **[http://[site][http://[site] name].azurewebsites.net/index.php** auf, um die Anwendung zu verwenden (diese Informationen werden in Ihrem Konto-Dashboard gespeichert):
+3.  Rufen Sie **http://[Name der Website].azurewebsites.net/index.php** auf, um die Anwendung zu verwenden (diese Informationen werden in Ihrem Konto-Dashboard gespeichert):
 
     ![Azure-PHP-Website][Azure-PHP-Website]
 
@@ -231,7 +231,7 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
     ![Push-Übertragung von Websiteänderungen über Git zu Azure][Push-Übertragung von Websiteänderungen über Git zu Azure]
 
-3.  Rufen Sie **[http://[site][http://[site] name].azurewebsites.net/index.php** auf, um Ihre Anwendung und etwaige Änderungen anzuzeigen:
+3.  Rufen Sie **http://[Name der Website].azurewebsites.net/index.php** auf, um Ihre Anwendung und etwaige Änderungen anzuzeigen:
 
     ![Azure-PHP-Website][Azure-PHP-Website]
 
@@ -256,6 +256,5 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
   [Datenbankverbindungsinformationen abrufen]: ./media/web-sites-php-mysql-deploy-use-git/connection_string_info.png
   [PDO-Erweiterung für MySQL]: http://www.php.net/manual/en/ref.pdo-mysql.php
   [Anfängliche Push-Übertragung über Git zu Azure]: ./media/web-sites-php-mysql-deploy-use-git/php-git-initial-push.png
-  [http://[site]: http://[site
   [Push-Übertragung von Websiteänderungen über Git zu Azure]: ./media/web-sites-php-mysql-deploy-use-git/php-git-change-push.png
   [Liste der Websitebereitstellungen]: ./media/web-sites-php-mysql-deploy-use-git/php-deployments-list.png

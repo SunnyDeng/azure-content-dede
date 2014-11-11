@@ -1,6 +1,6 @@
 <properties linkid="hdinsight-use-time-based-oozie-coordinator-with-hdinsight" urlDisplayName="Use time-based Hadoop Oozie Coordinator in HDInsight" pageTitle="Use time-based Hadoop Oozie Coordinator in HDInsight | Azure" metaKeywords="" description="Use time-based Hadoop Oozie Coordinator in HDInsight, a big data solution. Learn how to define Oozie workflows and coordinators, and submit coordinator jobs." metaCanonical="" services="hdinsight" documentationCenter="" title="Use time-based Hadoop Oozie Coordinator in HDInsight" authors="jgao" solutions="big-data" manager="paulettm" editor="cgronlun" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
 # Verwenden des zeitbasierten Oozie-Koordinators mit Hadoop in HDInsight
 
@@ -10,7 +10,7 @@ Sie erfahren, wie Workflows und Koordinatoren definiert werden und wie die Koord
 
 ## Themen in diesem Artikel
 
-1.  [Was ist Oozie?][Was ist Oozie?]
+1.  [Was ist Oozie?](Was ist Oozie?)
 2.  [Voraussetzungen][Voraussetzungen]
 3.  [Definieren der Oozie-Workflowdatei][Definieren der Oozie-Workflowdatei]
 4.  [Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms][Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms]
@@ -757,7 +757,6 @@ In diesem Lernprogramm haben Sie einen Oozie-Workflow und einen Oozie-Koordinato
 -   [Entwickeln von Java MapReduce-Programmen für HDInsight][Entwickeln von Java MapReduce-Programmen für HDInsight]
 
   [Verwenden von Oozie mit Hadoop in HDInsight]: ../hdinsight-use-oozie/
-  [Was ist Oozie?]: #whatisoozie
   [Voraussetzungen]: #prerequisites
   [Definieren der Oozie-Workflowdatei]: #defineworkflow
   [Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms]: #deploy

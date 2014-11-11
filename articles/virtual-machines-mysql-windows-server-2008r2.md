@@ -14,11 +14,11 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 ## Erstellen eines virtuellen Computers mit Windows Server 2008 R2
 
-[WACOM.INCLUDE [create-and-configure-windows-server-2008-vm-in-portal][create-and-configure-windows-server-2008-vm-in-portal]]
+[WACOM.INCLUDE [create-and-configure-windows-server-2008-vm-in-portal](../includes/create-and-configure-windows-server-2008-vm-in-portal.md)]
 
 ## Datenträger anfügen
 
-[WACOM.INCLUDE [attach-data-disk-windows-server-2008-vm-in-portal][attach-data-disk-windows-server-2008-vm-in-portal]]
+[WACOM.INCLUDE [attach-data-disk-windows-server-2008-vm-in-portal](../includes/attach-data-disk-windows-server-2008-vm-in-portal.md)]
 
 ## Installieren und Ausführen von MySQL Community Server auf dem virtuellen Computer
 
@@ -26,7 +26,7 @@ Gehen Sie wie folgt vor, um MySQL Community Server zu installieren, konfiguriere
 
 1.  Wenn Sie über Remotedesktop eine Verbindung zum virtuellen Computer hergestellt haben, öffnen Sie im Menü **Start** den **Internet Explorer**.
 
-2.  Klicken Sie in der oberen rechten Ecke auf **Extras**. Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites *<http://>\*.mysql.com* hinzu.
+2.  Klicken Sie in der oberen rechten Ecke auf **Extras**. Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites *http://\*.mysql.com* hinzu.
 
 3.  Wechseln Sie zu [Download MySQL Community Server][Download MySQL Community Server] (MySQL Community Server herunterladen, in englischer Sprache).
 
@@ -155,8 +155,6 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen virtuellen Computer mit
 
   [MySQL]: http://www.mysql.com
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [create-and-configure-windows-server-2008-vm-in-portal]: ../includes/create-and-configure-windows-server-2008-vm-in-portal.md
-  [attach-data-disk-windows-server-2008-vm-in-portal]: ../includes/attach-data-disk-windows-server-2008-vm-in-portal.md
   [Download MySQL Community Server]: http://www.mysql.com/downloads/mysql/
   [MySQL-Setup]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall1.png
   [1]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall2.png
