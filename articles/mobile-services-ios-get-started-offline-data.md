@@ -23,17 +23,19 @@ Die Offlinesynchronisierung hat eine Reihe potenzieller Nutzen:
 
 Dieses Lernprogramm zeigt, wie die App mithilfe des Lernprogramms [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten] geändert werden kann, sodass die Offlinefunktionen von Azure Mobile Services unterstützt werden. Anschließend fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
 
->[WACOM.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][Kostenlose Azure-Testversion].
+>[WACOM.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][Kostenlose Azure-Testversion].
 
 
 ## Abrufen der Beispiel-App
 
 **Ein vollständiges Lernprogramm wird in Kürze zur Verfügung stehen. Bis dahin können Sie sich die Beispiele unter [iOS Offline ToDo List][iOS Offline ToDo List] und im [Companion Blog Post][Companion Blog Post] ansehen.**
 
-## Next steps  
-* [How to use the Mobile Services client library for iOS]
+<!-- ## Next steps
 
- <!-- URLs. -->
+* [How to use the Mobile Services client library for iOS]
+   -->
+
+<!-- URLs. -->
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data "Windows Store C#"
 [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-offline-data "Windows Phone"

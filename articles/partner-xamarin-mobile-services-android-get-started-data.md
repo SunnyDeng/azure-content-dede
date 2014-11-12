@@ -5,26 +5,26 @@
 # Erste Schritte mit Daten in Mobile Services
 
 <div class="dev-center-tutorial-selector sublanding">    
-    <a href="/en-us/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows Store C#</a><a href="/en-us/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/en-us/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/en-us/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/en-us/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/en-us/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/en-us/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/en-us/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a>
+    <a href="/de-de/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows Store C#</a><a href="/de-de/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/de-de/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/de-de/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/de-de/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/de-de/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/de-de/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a>
 </div>
 
 Dieses Thema beschreibt den Einsatz von Azure Mobile Services für die Nutzung von Daten in Xamarin.Android-Apps. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.
 
 <div class="dev-callout"><b>Hinweis</b>
-<p>Dieses Lernprogramm vermittelt ein besseres Verst&auml;ndnis davon, wie Sie mit Mobile Services in Azure Daten aus einer Xamarin.Android-App speichern und abrufen k&ouml;nnen. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart f&uuml;r mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm <a href="/en-us/develop/mobile/tutorials/get-started-xamarin-android">Erste Schritte mit Mobile Services</a> abschlie&szlig;en.</p>
+<p>Dieses Lernprogramm vermittelt ein besseres Verst&auml;ndnis davon, wie Sie mit Mobile Services in Azure Daten aus einer Xamarin.Android-App speichern und abrufen k&ouml;nnen. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart f&uuml;r mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm <a href="/de-de/develop/mobile/tutorials/get-started-xamarin-android">Erste Schritte mit Mobile Services</a> abschlie&szlig;en.</p>
 </div>
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
-1.  [Herunterladen des Xamarin.Android-App-Projekts][]
-2.  [Erstellen des mobilen Dienstes][]
-3.  [Erstellen einer Datentabelle als Datenspeicher][]
-4.  [Aktualisieren der App zur Verwendung von Mobile Services][]
-5.  [Testen der App mit Mobile Services][]
+1.  [Herunterladen des Xamarin.Android-App-Projekts][Herunterladen des Xamarin.Android-App-Projekts]
+2.  [Erstellen des mobilen Dienstes][Erstellen des mobilen Dienstes]
+3.  [Erstellen einer Datentabelle als Datenspeicher][Erstellen einer Datentabelle als Datenspeicher]
+4.  [Aktualisieren der App zur Verwendung von Mobile Services][Aktualisieren der App zur Verwendung von Mobile Services]
+5.  [Testen der App mit Mobile Services][Testen der App mit Mobile Services]
 
-<div class="dev-callout"><strong>Hinweis</strong> <p>Sie ben&ouml;tigen ein Azure-Konto, um dieses Lernprogramm auszuf&uuml;hren. Wenn Sie noch kein Konto haben, k&ouml;nnen Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A9C9624B5" target="_blank">Kostenlose Azure-Testversion</a>.</p></div>
+<div class="dev-callout"><strong>Hinweis</strong> <p>Sie ben&ouml;tigen ein Azure-Konto, um dieses Lernprogramm auszuf&uuml;hren. Wenn Sie noch kein Konto haben, k&ouml;nnen Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A9C9624B5" target="_blank">Kostenlose Azure-Testversion</a>.</p></div>
 
-Dieses Lernprogramm benötigt [Azure Mobile Services Component][], [Xamarin.Android] und das Android SDK 4.2 oder eine neuere Version.
+Dieses Lernprogramm benötigt [Azure Mobile Services Component][Azure Mobile Services Component], [Xamarin.Android] und das Android SDK 4.2 oder eine neuere Version.
 
 <div class="dev-callout"><b>Hinweis</b>
 <p>Das heruntergeladene GetStartedWithData-Projekt ben&ouml;tigt Android 4.2 oder eine neuere Version als Ziel. Das SDK f&uuml;r mobile Dienste ben&ouml;tigt dagegen nur Android 2.2 oder eine neuere Version.</p>
@@ -48,13 +48,13 @@ Dieses Lernprogramm verwendet die Xamarin.Android-App [GetStartedWithData][Herun
 
 5.  Geben Sie in der App einen sinnvollen Text ein, beispielsweise *Lernprogramm beenden*, und klicken Sie dann auf **Hinzufügen**.
 
-    ![][]
+    ![][0]
 
     Der gespeicherte Test wird in einer speicherinternen Sammlung gespeichert und in der folgenden Liste angezeigt.
 
 ## <a name="create-service"></a><span class="short-header">Erstellen eines mobilen Dienstes</span>Erstellen eines neuen mobilen Dienstes im Verwaltungsportal
 
-[WACOM.INCLUDE [mobile-services-create-new-service-data][]]
+[WACOM.INCLUDE [mobile-services-create-new-service-data][mobile-services-create-new-service-data]]
 
 ## <a name="add-table"></a><span class="short-header">Erstellen einer neuen Tabelle</span>Hinzufügen einer neuen Tabelle zum mobilen Dienst
 
@@ -209,7 +209,7 @@ Nachdem nun die App für die Verwendung von Mobile Services als Back-End-Speiche
 
     Auf diese Weise wird ein neuer Eintrag an den mobilen Service gesendet.
 
-3.  Klicken Sie im [Verwaltungsportal][] auf **Mobile Dienste** und dann auf Ihren mobilen Dienst.
+3.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Mobile Dienste** und dann auf Ihren mobilen Dienst.
 
 4.  Klicken Sie auf die Registerkarte **Daten** und dann auf **Durchsuchen**.
 
@@ -229,46 +229,46 @@ In diesem Lernprogramm wurden die Grundlagen für die Integration von Daten in X
 
 Als Nächstes können Sie eines der folgenden Lernprogramme ausführen, das auf der GetStartedWithData-App aufbaut, die Sie in diesem Lernprogramm erstellt haben:
 
--   [Prüfen und Ändern von Daten mit Skripten][]
+-   [Prüfen und Ändern von Daten mit Skripten][Prüfen und Ändern von Daten mit Skripten]
     Informationen zur Verwendung von Serverskripten in Mobile Services, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
--   [Optimieren von Abfragen mittels Paging][]
+-   [Optimieren von Abfragen mittels Paging][Optimieren von Abfragen mittels Paging]
     Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
 Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren Xamarin.Android-Lernprogramme ausprobieren:
 
--   [Erste Schritte mit der Authentifizierung][]
+-   [Erste Schritte mit der Authentifizierung][Erste Schritte mit der Authentifizierung]
     Informationen zur Authentifizierung von Benutzern Ihrer App.
 
--   [Erste Schritte mit Pushbenachrichtigungen][]
+-   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
     Verschicken Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. TODO:: update 'Download the Android app project' download link, 'GitHub', completed project, etc. -->
 
-  [Windows Store C\#]: /en-us/develop/mobile/tutorials/get-started-with-data-dotnet "Windows Store C#"
-  [Windows Store JavaScript]: /en-us/develop/mobile/tutorials/get-started-with-data-js "Windows Store JavaScript"
-  [Windows Phone]: /en-us/develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
-  [iOS]: /en-us/develop/mobile/tutorials/get-started-with-data-ios "iOS"
-  [Android]: /en-us/develop/mobile/tutorials/get-started-with-data-android "Android"
-  [HTML]: /en-us/develop/mobile/tutorials/get-started-with-data-html "HTML"
-  [Xamarin.iOS]: /en-us/develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /en-us/develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
-  [Erste Schritte mit Mobile Services]: /en-us/develop/mobile/tutorials/get-started-xamarin-android
+
+  [Windows Store C\#]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet "Windows Store C#"
+  [Windows Store JavaScript]: /de-de/develop/mobile/tutorials/get-started-with-data-js "Windows Store JavaScript"
+  [Windows Phone]: /de-de/develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
+  [iOS]: /de-de/develop/mobile/tutorials/get-started-with-data-ios "iOS"
+  [Android]: /de-de/develop/mobile/tutorials/get-started-with-data-android "Android"
+  [HTML]: /de-de/develop/mobile/tutorials/get-started-with-data-html "HTML"
+  [Xamarin.iOS]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
+  [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-android
   [Herunterladen des Xamarin.Android-App-Projekts]: http://go.microsoft.com/fwlink/p/?LinkId=331302
   [Erstellen des mobilen Dienstes]: #create-service
   [Erstellen einer Datentabelle als Datenspeicher]: #add-table
   [Aktualisieren der App zur Verwendung von Mobile Services]: #update-app
   [Testen der App mit Mobile Services]: #test-app
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A9C9624B5
+  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A9C9624B5
   [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
-  []: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-quickstart-startup-android.png
+  [0]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-quickstart-startup-android.png
   [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
   [1]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-data-tab-empty.png
   [2]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-create-todoitem-table.png
   [3]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-dashboard-tab.png
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [4]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-todoitem-data-browse.png
-  [Prüfen und Ändern von Daten mit Skripten]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android
-  [Optimieren von Abfragen mittels Paging]: /en-us/develop/mobile/tutorials/add-paging-to-data-xamarin-android
-  [Erste Schritte mit der Authentifizierung]: /en-us/develop/mobile/tutorials/get-started-with-users-xamarin-android
-  [Erste Schritte mit Pushbenachrichtigungen]: /en-us/develop/mobile/tutorials/get-started-with-push-xamarin-android
+  [Prüfen und Ändern von Daten mit Skripten]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android
+  [Optimieren von Abfragen mittels Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-xamarin-android
+  [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android
+  [Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android

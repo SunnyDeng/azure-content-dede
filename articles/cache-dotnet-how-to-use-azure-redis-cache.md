@@ -286,7 +286,7 @@ finden Sie unter den folgenden Links weitere Informationen zu komplexeren Cachin
 -   Lesen Sie außerdem die [Redis][Redis]-Dokumentation und die Artikel zu [Redis-Datentypen][Redis-Datentypen] und die [15-minütige Einführung in Redis-Datentypen][15-minütige Einführung in Redis-Datentypen].
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [Azure Redis Cache][Azure Redis Cache]
 
-<!-- INTRA-TOPIC LINKS --> <!-- IMAGES --> <!-- LINKS -->
+
 
   [Nächste Schritte]: #next-steps
   [Was ist Azure Redis Cache?]: #what-is
@@ -298,7 +298,7 @@ finden Sie unter den folgenden Links weitere Informationen zu komplexeren Cachin
   [Hinzufügen zu und Abrufen von Objekten aus dem Cache]: #add-object
   [Angeben der Ablaufzeit eines Objekts im Cache]: #specify-expiration
   [Speichern des ASP.NET-Sitzungsstatus im Cache]: #store-session
-  [Cache – Preisdetails]: http://www.windowsazure.com/en-us/pricing/details/cache/
+  [Cache – Preisdetails]: http://www.windowsazure.com/de-de/pricing/details/cache/
   [Azure Redis Cache: Übersicht]: http://go.microsoft.com/fwlink/?LinkId=320830
   [Konfigurieren des Caches]: #enable-caching
   [Neuer Cache]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-new-cache-menu.png
@@ -315,7 +315,7 @@ finden Sie unter den folgenden Links weitere Informationen zu komplexeren Cachin
   [StackExchange.Redis-Konfigurationsmodell]: http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
   [Cacheeigenschaften]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-properties.png
   [Schlüssel verwalten]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-manage-keys.png
-  [Arbeiten .NET-Objekten im Cache]: http://msdn.microsoft.com/en-us/library/dn690521.aspx#Objects
+  [Arbeiten .NET-Objekten im Cache]: http://msdn.microsoft.com/de-de/library/dn690521.aspx#Objects
   [Redis Cache Sitzungszustands-NuGet-Paket]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-session-state-provider.png
   [Azure Redis Sitzungszustandsanbieter]: http://go.microsoft.com/fwlink/?LinkId=398249
   [Redis]: http://redis.io/documentation

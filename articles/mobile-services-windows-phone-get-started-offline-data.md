@@ -14,27 +14,27 @@
 
 In diesem Thema erfahren Sie, wie Sie die Offlinefunktionen von Azure Mobile Services nutzen können. Offlinefunktionen von Azure Mobile Services ermöglichen Ihnen die Interaktion mit einer lokalen Datenbank, wenn Sie den mobilen Dienst offline verwenden. Mit den Offlinefunktionen können Sie Ihre lokalen Änderungen mit dem mobilen Dienst synchronisieren, wenn Sie erneut online sind.
 
-In diesem Lernprogramm aktualisieren Sie die App aus dem Lernprogramm [Erste Schritte mit Mobile Services][] oder [Erste Schritte mit Daten][] so, dass diese die Offlinefunktionen von Azure Mobile Services unterstützt. Anschließend fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
+In diesem Lernprogramm aktualisieren Sie die App aus dem Lernprogramm [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten] so, dass diese die Offlinefunktionen von Azure Mobile Services unterstützt. Anschließend fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
 
-> [WACOM.NOTE] In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services verwenden können, um Daten in einer Windows Phone-App zu speichern und abzurufen. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit Mobile Services][] abschließen.
+> [WACOM.NOTE] In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services verwenden können, um Daten in einer Windows Phone-App zu speichern und abzurufen. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] abschließen.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
-1.  [Aktualisieren der App für die Unterstützung von Offlinefunktionen][]
-2.  [Testen der App in einem Offlineszenario][]
-3.  [Aktualisieren der App zur Herstellung einer Verbindung mit dem mobilen Dienst][]
-4.  [Testen der App mit Verbindung zum mobilen Dienst][]
+1.  [Aktualisieren der App für die Unterstützung von Offlinefunktionen][Aktualisieren der App für die Unterstützung von Offlinefunktionen]
+2.  [Testen der App in einem Offlineszenario][Testen der App in einem Offlineszenario]
+3.  [Aktualisieren der App zur Herstellung einer Verbindung mit dem mobilen Dienst][Aktualisieren der App zur Herstellung einer Verbindung mit dem mobilen Dienst]
+4.  [Testen der App mit Verbindung zum mobilen Dienst][Testen der App mit Verbindung zum mobilen Dienst]
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -   Visual Studio 2012
--   [Windows Phone 8 SDK][]
--   Abschluss des Lernprogramms [Erste Schritte mit Mobile Services][] oder [Erste Schritte mit Daten][].
--   [Azure Mobile Services SDK Version 1.3.0-alpha4 (oder neuer)][]
--   [Azure Mobile Services SQLite Store Version 1.0.0-alpha4 (oder neuer)][]
--   [SQLite für Windows Phone 8][]
+-   [Windows Phone 8 SDK][Windows Phone 8 SDK]
+-   Abschluss des Lernprogramms [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten].
+-   [Azure Mobile Services SDK Version 1.3.0-alpha4 (oder neuer)][Azure Mobile Services SDK Version 1.3.0-alpha4 (oder neuer)]
+-   [Azure Mobile Services SQLite Store Version 1.0.0-alpha4 (oder neuer)][Azure Mobile Services SQLite Store Version 1.0.0-alpha4 (oder neuer)]
+-   [SQLite für Windows Phone 8][SQLite für Windows Phone 8]
 
-> [WACOM.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][].
+> [WACOM.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][Kostenlose Azure-Testversion].
 
 ## <a name="enable-offline-app"></a>Aktualisieren der App für die Unterstützung von Offlinefunktionen
 
@@ -42,15 +42,15 @@ Offlinefunktionen von Azure Mobile Services ermöglichen Ihnen die Interaktion m
 
 In diesem Abschnitt wird SQLite als lokaler Speicher für die Offlinefunktionen verwendet.
 
-> [WACOM.NOTE] Sie können diesen Abschnitt überspringen und einfach eine Version des "Erste Schritte"-Projekt herunterladen, das bereits über Offlineunterstützung verfügt. Ein Projekt mit aktivierter Offlineunterstützung können Sie unter [Erste Schritte: Offlinebeispiel für Windows Phone][] herunterladen.
+> [WACOM.NOTE] Sie können diesen Abschnitt überspringen und einfach eine Version des "Erste Schritte"-Projekt herunterladen, das bereits über Offlineunterstützung verfügt. Ein Projekt mit aktivierter Offlineunterstützung können Sie unter [Erste Schritte: Offlinebeispiel für Windows Phone][Erste Schritte: Offlinebeispiel für Windows Phone] herunterladen.
 
 1.  Installieren Sie SQLite für Windows Phone 8-Projekte. Sie können es über den folgenden Link installieren: [SQLite für Windows Phone 8][SQLite für Windows Phone 8].
 
     > [WACOM.NOTE] Wenn Sie Internet Explorer verwenden und auf den Link für das Herunterladen von SQLite klicken, werden Sie möglicherweise aufgefordert, die VSIX-Datei als ZIP-Datei herunterzuladen. Speichern Sie die Datei mit der Endung .vsix statt.zip an einem Speicherort auf Ihrer Festplatte. Doppelklicken Sie im Windows-Explorer auf die VSIX-Datei, um die Installation auszuführen.
 
-2.  Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services][] oder [Erste Schritte mit Daten][] abgeschlossen haben. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Verweise** unterhalb des Projekts und fügen Sie einen Verweis auf **SQLite für Windows Phone** unter **Windows Phone**\>**Erweiterungen** hinzu.
+2.  Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten] abgeschlossen haben. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Verweise** unterhalb des Projekts und fügen Sie einen Verweis auf **SQLite für Windows Phone** unter **Windows Phone**\>**Erweiterungen** hinzu.
 
-    ![][]
+    ![][0]
 
 3.  Für die SQLite-Laufzeitumgebung muss die Prozessorarchitektur des Projekts, das erstellt wird, zu **x86**, **x64**, oder **ARM** geändert werden. **Beliebige CPU** wird nicht unterstützt. Ändern Sie die Prozessorarchitektur zu einer der unterstützten Einstellungen, die Sie testen möchten.
 
@@ -235,13 +235,13 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
     Es gibt außerdem Überladungen von **PullAsync()**, mit denen eine Abfrage spezifiziert werden kann. Beachten Sie, dass in der Vorabversion von Offlineunterstützung für Mobile Services **PullAsync** alle Zeilen in der entsprechenden Tabelle (oder Abfrage) liest. Es wird nicht etwa versucht, nur die Zeilen zu lesen, die neuer als die letzte Synchronisierung sind. Wenn die Zeilen bereits in der lokalen Synchronisierungstabelle vorhanden sind, bleiben sie unverändert.
 
--   Ein Projekt mit aktivierter Offlineunterstützung können Sie unter [Erste Schritte: Offlinebeispiel für Windows Phone][] herunterladen.
+-   Ein Projekt mit aktivierter Offlineunterstützung können Sie unter [Erste Schritte: Offlinebeispiel für Windows Phone][Erste Schritte: Offlinebeispiel für Windows Phone] herunterladen.
 
 ## Nächste Schritte
 
--   [Behandeln von Konflikten mit Offlineunterstützung für Mobile Services][]
+-   [Behandeln von Konflikten mit Offlineunterstützung für Mobile Services][Behandeln von Konflikten mit Offlineunterstützung für Mobile Services]
 
-<!-- Anchors. --> <!-- Images --> <!-- URLs. -->
+
 
   [Windows Store C\#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data "Windows Store C#"
   [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-offline-data "Windows Phone"
@@ -258,9 +258,9 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
   [Azure Mobile Services SDK Version 1.3.0-alpha4 (oder neuer)]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0-alpha4
   [Azure Mobile Services SQLite Store Version 1.0.0-alpha4 (oder neuer)]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0-alpha4
   [SQLite für Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=AE564AB28
+  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28
   [Erste Schritte: Offlinebeispiel für Windows Phone]: http://go.microsoft.com/fwlink/?LinkId=397952
-  []: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
+  [0]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
   [1]: ./media/mobile-services-windows-phone-get-started-offline-data/vs-select-processor-architecture.png
   [2]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-sqlitestore-nuget.png
   [3]: ./media/mobile-services-windows-phone-get-started-offline-data/ui-screenshot.png
