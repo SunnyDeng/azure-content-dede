@@ -4,7 +4,7 @@
 
 # Als Unternehmen für Azure registrieren
 
-[WACOM.INCLUDE [Haftungsausschluss][Haftungsausschluss]]
+[WACOM.INCLUDE [disclaimer][]]
 
 Bis vor Kurzem war es nur mit einem Microsoft-Konto (Windows Live-ID) möglich, sich für ein neues Azure-Abonnement anzumelden. Nun unterstützt Azure auch eine der beiden folgenden Kontomethoden zur Registrierung:
 

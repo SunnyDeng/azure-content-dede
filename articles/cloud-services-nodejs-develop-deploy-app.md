@@ -15,7 +15,7 @@ In diesem Lernprogramm werden Sie eine einfache Webanwendung erstellen, die in e
 
 Unten finden Sie einen Screenshot der fertig gestellten Anwendung:
 
-![Ein Browserfenster, das die Seite Hallo Welt anzeigt. Die URL zeigt an, dass die Seite auf Azure gehostet wird.](https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png)
+![Ein Browserfenster, das die Seite Hallo Welt anzeigt. Die URL zeigt an, dass die Seite auf Azure gehostet wird.](https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png)
 
 Erstellen einer neuen Knotenanwendung
 -------------------------------------
