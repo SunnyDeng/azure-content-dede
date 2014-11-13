@@ -1,6 +1,6 @@
-<properties linkid="dev-nodejs-enablesslworker" urlDisplayName="Enable SSL worker role" pageTitle="Configure SSL for a cloud service (Node.js) worker role" metaKeywords="Node.js Azure SSL, Node.js Azure, SSL worker role" description="" metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Configuring SSL for a Node.js Application in an Azure Worker Role" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="Enable SSL worker role" pageTitle="Konfigurieren von SSL f&uuml;r eine Cloud-Dienst-Workerrolle (Node.js)" metaKeywords="Node.js Azure SSL, Node.js Azure, SSL worker role" description="" metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Konfigurieren von SSL f&uuml;r eine Node.js-Anwendung in einer Azure-Workerrolle" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="wpickett" />
 
 # Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle
 
@@ -8,9 +8,11 @@ Secure Socket Layer (SSL)-Verschlüsselung ist die am häufigsten verwendete
 Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie
 einen HTTPS-Endpunkt für eine Node.js-Anwendung angeben, die als Azure-Cloud-Dienst in einer Workerrolle gehostet ist.
 
-<div class="dev-callout"><br></br>
-	<b>Hinweis</b>
-	<p>Die Schritte in diesem Beitrag gelten nur f&uuml;r Node-Anwendungen, die als Azure-Cloud-Dienst in einer Workerrolle gehostet werden.</p>
+<div class="dev-callout">
+
+**Hinweis**
+Die Schritte in diesem Beitrag gelten nur für Node-Anwendungen, die als Azure-Cloud-Dienst in einer Workerrolle gehostet werden.
+
 </div>
 
 Diese Aufgabe umfasst die folgenden Schritte:
@@ -32,20 +34,22 @@ einen einfachen "Hello World"-Dienst in Node.js mit der Azure PowerShell erstell
 
 2.  Erstellen Sie einen neuen Dienst mit dem **New-AzureServiceProject**-Cmdlet.
 
-    ![][1]
+    ![][0]
 
 3.  Fügen Sie mit dem **Add-AzureNodeWorkerRole**-Cmdlet eine Workerrolle zu Ihrem Dienst hinzu:
 
-    ![][2]
+    ![][1]
 
 4.  Veröffentlichen Sie Ihren Dienst mit dem **Publish-AzureServiceProject**-Cmdlet in der Cloud:
 
-    ![][3]
+    ![][2]
 
-	<div class="dev-callout">
-		<strong>Hinweis</strong>
-		<p>Falls Sie noch nie Ver&ouml;ffentlichungseinstellungen f&uuml;r Ihr Azure-Abonnement importiert haben, erhalten Sie beim Ver&ouml;ffentlichen eine Fehlermeldung. Informationen zum Download und Import der Ver&ouml;ffentlichungseinstellungen f&uuml;r Ihr Abonnement finden Sie unter <a href="https://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings">Verwenden von Azure PowerShell f&uuml;r Node.js</a></p>
-	</div>
+    <div class="dev-callout">
+
+    **Hinweis**
+    Falls Sie noch nie Veröffentlichungseinstellungen für Ihr Azure-Abonnement importiert haben, erhalten Sie beim Veröffentlichen eine Fehlermeldung. Informationen zum Download und Import der Veröffentlichungseinstellungen für Ihr Abonnement finden Sie unter [Verwenden von Azure PowerShell für Node.js][Verwenden von Azure PowerShell für Node.js]
+
+    </div>
 
 Der vom **Publish-AzureServiceProject**-Cmdlet zurückgegebene Wert für **Created Website URL** enthält den vollqualifizierten Domänennamen für Ihre gehostete Anwendung. Sie müssen ein SSL-Zertifikat für diesen vollqualifizierten Domänennamen beziehen und in Azure bereitstellen.
 
@@ -92,9 +96,11 @@ Wenn eine Node.js-Anwendung in einer Workerrolle bereitgestellt wird, verwaltet 
         }).listen(port);
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Sie m&uuml;ssen &quot;certificate.pfx&quot; durch den Namen der Zertifikatsdatei und &quot;password&quot; durch das Kennwort (falls vorhanden) der Zertifikatsdatei ersetzen.</p>
-</div>
+
+    **Hinweis**
+    Sie müssen "certificate.pfx" durch den Namen der Zertifikatsdatei und "password" durch das Kennwort (falls vorhanden) der Zertifikatsdatei ersetzen.
+
+    </div>
 
 3.  Speichern Sie die **server.js**-Datei.
 
@@ -134,9 +140,11 @@ eine HTTPS-Verbindung herstellen.
     ![Website-URL][Website-URL]
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Falls die im Portal angezeigte URL kein HTTPS verwendet, m&uuml;ssen Sie die URL im Browser manuell von HTTP zu HTTPS &auml;ndern.</p>
-</div>
+
+    **Hinweis**
+    Falls die im Portal angezeigte URL kein HTTPS verwendet, müssen Sie die URL im Browser manuell von HTTP zu HTTPS ändern.
+
+    </div>
 
 3.  Ein neues Browserfenster wird geöffnet und zeigt Ihre Website an.
 
@@ -160,9 +168,10 @@ eine HTTPS-Verbindung herstellen.
   [Schritt 4: Ändern der Dienstdefinitionsdatei]: #step4
   [Schritt 5: Verbinden mit der Rolleninstanz über HTTPS]: #step5
   [Azure PowerShell-Symbol]: ./media/cloud-services-nodejs-configure-ssl-certficate-worker-role/azure-powershell-start.png
-  []: ./media/cloud-services-nodejs-configure-ssl-certficate-worker-role/enable-ssl-01.png
+  [0]: ./media/cloud-services-nodejs-configure-ssl-certficate-worker-role/enable-ssl-01.png
   [1]: ./media/cloud-services-nodejs-configure-ssl-certficate-worker-role/enable-ssl-02-worker.png
   [2]: ./media/cloud-services-nodejs-configure-ssl-certficate-worker-role/enable-ssl-03-worker.png
+  [Verwenden von Azure PowerShell für Node.js]: https://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings
   [Website-URL]: ./media/cloud-services-nodejs-configure-ssl-certficate-worker-role/site-url.png
   [3]: ./media/cloud-services-nodejs-configure-ssl-certficate-worker-role/enable-ssl-08.png
   [Verknüpfen eines Zertifikats mit einem Dienst]: http://msdn.microsoft.com/de-de/library/windowsazure/gg465718.aspx

@@ -1,6 +1,6 @@
-<properties linkid="develop-media-services-tutorials-smooth-streaming-plugin-for-open-source-media-framework" urlDisplayName="Smooth Streaming Plugin" pageTitle="Smooth Streaming Plugin for the Open Source Media Framework" metaKeywords="" description="Learn how to use the Azure Media Services Smooth Streaming plugin for the Adobe Open Source Media Framework." metaCanonical="" services="media-services" documentationCenter="" title="How to Use the Microsoft Smooth Streaming Plugin for the Adobe Open Source Media Framework" authors="" solutions="" manager="" editor="" />
+<properties urlDisplayName="Smooth Streaming Plugin" pageTitle="Smooth Streaming-Plug-In f&uuml;r das Open Source Media-Framework" metaKeywords="" description="Erfahren Sie, wie Sie das Smooth Streaming-Plug-In von Azure Media Services f&uuml;r das Adobe Open Source Media-Framework verwenden." metaCanonical="" services="media-services" documentationCenter="" title="Verwenden des Microsoft Smooth Streaming-Plug-Ins f&uuml;r das Adobe Open Source Media-Framework" authors="juliako" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
 # Verwenden des Microsoft Smooth Streaming-Plug-Ins für das Adobe Open Source Media-Framework
 
@@ -387,5 +387,6 @@ Weitere allgemeine Informationen zu OSMF-Entwicklung finden Sie auf der offiziel
   [Verwenden von Flash Player]: http://forums.adobe.com/message/4483498#4483498
   [Adobe Flash Player 11.3 - Bug 3210964]: https://bugbase.adobe.com/index.cfm?event=bug&id=3210964
   [OSMF-Plug-In-Website]: http://osmf.org/dev/osmf/OtherPDFs/osmf_plugin_dev_guide.pdf
+  [Strobe Media Playback (SMP)]: http://osmf.org/strobe_mediaplayback.html
   [Strobe Media Playback-Einrichtungsseite]: http://osmf.org/dev/2.0gm/setup.html
   [OSMF-Entwicklungswebsite]: http://osmf.org/resources.html

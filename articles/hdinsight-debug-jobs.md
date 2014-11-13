@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-debug-error-messages" urlDisplayName="Debug HDInsight Hadoop Errors" pageTitle="Debug Hadoop in HDInsight: Error messages | Azure" metaKeywords="hdinsight, hdinsight service, hdinsight azure, debug, error messages, errors" description="Learn about the error messages you might receive when administering HDInsight using PowerShell, and steps you can take to recover." services="hdinsight" title="Debug Hadoop in HDInsight: Error messages" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="bradsev" />
+<properties urlDisplayName="Debug HDInsight Hadoop Errors" pageTitle="Debuggen von Hadoop in HDInsight: Fehlermeldungen | Azure" metaKeywords="hdinsight, hdinsight service, hdinsight azure, debug, error messages, errors" description="Lernen Sie die Fehlermeldungen kennen, die Sie bei der Administration von HDInsight mit PowerShell erhalten k&ouml;nnen und Schritte zu deren Behebung." services="hdinsight" title="Debuggen von Hadoop in HDInsight: Fehlermeldungen" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="bradsev" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -265,12 +265,12 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 ### <span id="UnableToResolveDNS"></span></a>UnableToResolveDNS
 
 -   **Beschreibung**: DNS *IhreDnsURL* konnte nicht aufgelöst werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blob-Endpunkt bereitgestellt wird.
--   **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt, sie muss mit *http://* beginnen und mit *.com* enden. Die vollqualifizierte URL befindet sich in der Regel auf der Speicher-Registerkarte des Portals unter manage.windowsazure.com.
+-   **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt, sie muss mit *<http://>* beginnen und mit *.com* enden. Die vollqualifizierte URL befindet sich in der Regel auf der Speicher-Registerkarte des Portals unter manage.windowsazure.com.
 
 ### <span id="UnableToVerifyLocationOfResource"></span></a>UnableToVerifyLocationOfResource
 
 -   **Beschreibung**: Der Speicherort für die Ressource *IhreDnsURL* konnte nicht überprüft werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blob-Endpunkt bereitgestellt wird.
--   **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt, sie muss mit *http://* beginnen und mit *.com* enden. Die vollqualifizierte URL befindet sich in der Regel auf der Speicher-Registerkarte des Portals unter manage.windowsazure.com.
+-   **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt, sie muss mit *<http://>* beginnen und mit *.com* enden. Die vollqualifizierte URL befindet sich in der Regel auf der Speicher-Registerkarte des Portals unter manage.windowsazure.com.
 
 ### <span id="VersionCapabilityNotAvailable"></span></a>VersionCapabilityNotAvailable
 

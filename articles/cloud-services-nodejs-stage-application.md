@@ -1,6 +1,6 @@
-<properties linkid="dev-nodejs-enablestaging" urlDisplayName="Staging Deployment" pageTitle="Stage a cloud service deployment (Node.js) - Azure" metaKeywords="Azure staging, Azure application staging, Azure test environment, Azure staging environment, Azure Virtual IP swap, Azure VIP swap" description="Learn how to deploy your Azure application to a staging environment, then deploy to a production environment using Virtual IP (VIP) swap." metaCanonical=" " services="cloud-services" documentationCenter="nodejs" title="Staging an Application in Azure" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="Staging Deployment" pageTitle="Staging einer Cloud-Dienst-Bereitstellung (Node.js) &ndash; Azure" metaKeywords="Azure staging, Azure application staging, Azure test environment, Azure staging environment, Azure Virtual IP swap, Azure VIP swap" description="Hier erfahren Sie, wie Sie eine Azure-Anwendung durch einen Austausch der virtuellen IP (VIP) zu einer Stagingumgebung und anschlie&szlig;end zu einer Produktionsumgebung bereitstellen." metaCanonical=" " services="cloud-services" documentationCenter="nodejs" title="Staging von Anwendungen in Azure" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="wpickett" />
 
 # Staging von Anwendungen in Azure
 
@@ -16,7 +16,7 @@ einen Austausch der virtuellen IP (VIP) in der Produktionsumgebung bereitstellen
 <div class="dev-callout">
     <b>Hinweis</b>
     <p>Die Schritte in diesem Beitrag gelten nur f&uuml;r Node-Anwendungen, die als Azure-Clouddienst gehostet werden.</p>
-</div>
+    </div>
 
 Diese Aufgabe umfasst die folgenden Schritte:
 

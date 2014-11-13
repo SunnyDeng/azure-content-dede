@@ -1,6 +1,6 @@
-<properties linkid="cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging" urlDisplayName="Enable remote debugging with continuous delivery" pageTitle="Enable remote debugging with continuous delivery" metaKeywords="" description="Learn how to enable remote debugging when using continuous delivery to deploy to Azure." metaCanonical="" services="cloud-services,virtual machines" documentationCenter=".NET" title="Enable remote debugging when using continuous delivery to publish to Azure" authors="ghogen" solutions="" manager="" editor="" />
+<properties urlDisplayName="Enable remote debugging with continuous delivery" pageTitle="Aktivieren von Remotedebugging mit kontinuierlicher Zustellung" metaKeywords="" description="Hier erfahren Sie, wie Sie Remotedebugging aktivieren, wenn kontinuierliche Zustellung f&uuml;r die Bereitstellung in Azure verwendet wird." metaCanonical="" services="cloud-services,virtual machines" documentationCenter=".NET" title="Aktivieren von Remotedebuggen, wenn kontinuierliche Zustellung f&uuml;r die Ver&ouml;ffentlichung in Azure verwendet wird" authors="kempb" solutions="" manager="douge" editor="" />
 
-<tags ms.service="multiple" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="ghogen"></tags>
+<tags ms.service="multiple" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="kempb" />
 
 # Aktivieren von Remotedebuggen, wenn kontinuierliche Zustellung für die Veröffentlichung in Azure verwendet wird
 

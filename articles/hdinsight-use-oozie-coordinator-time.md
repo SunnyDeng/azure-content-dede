@@ -1,4 +1,4 @@
-<properties linkid="hdinsight-use-time-based-oozie-coordinator-with-hdinsight" urlDisplayName="Use time-based Hadoop Oozie Coordinator in HDInsight" pageTitle="Use time-based Hadoop Oozie Coordinator in HDInsight | Azure" metaKeywords="" description="Use time-based Hadoop Oozie Coordinator in HDInsight, a big data solution. Learn how to define Oozie workflows and coordinators, and submit coordinator jobs." metaCanonical="" services="hdinsight" documentationCenter="" title="Use time-based Hadoop Oozie Coordinator in HDInsight" authors="jgao" solutions="big-data" manager="paulettm" editor="cgronlun" />
+<properties urlDisplayName="Use time-based Hadoop Oozie Coordinator in HDInsight" pageTitle="Verwenden eines zeitbasierten Hadoop Oozie-Koordinators in HDInsight | Azure" metaKeywords="" description="Verwenden eines zeitbasierten Hadoop Oozie-Koordinators in HDInsight, einer Big Data-L&ouml;sung. Erfahren Sie, wie Sie Oozie-Workflows und -Koordinatoren definieren und Koordinator-Auftr&auml;ge &uuml;bermitteln k&ouml;nnen." metaCanonical="" services="hdinsight" documentationCenter="" title="Verwenden eines zeitbasierten Hadoop Oozie-Koordinators in HDInsight" authors="jgao" solutions="big-data" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
@@ -10,7 +10,7 @@ Sie erfahren, wie Workflows und Koordinatoren definiert werden und wie die Koord
 
 ## Themen in diesem Artikel
 
-1.  [Was ist Oozie?](Was ist Oozie?)
+1.  [Was ist Oozie?][Was ist Oozie?]
 2.  [Voraussetzungen][Voraussetzungen]
 3.  [Definieren der Oozie-Workflowdatei][Definieren der Oozie-Workflowdatei]
 4.  [Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms][Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms]
@@ -248,26 +248,24 @@ Es ist bekannt, dass es ein Problem mit dem Hive-Pfad gibt. Dieses Problem tritt
 
     Das RunHiveScript enthält mehrere Variablen. Die Werte werden übergeben, wenn Sie den Oozie-Job mit Azure PowerShell über Ihre Arbeitsstation senden.
 
-    <table border = "1">
-	 <tr><th>Workflow-Variablen </th><th> Beschreibung                                                                                                                                                                         </th></tr>
-    <tr><td> ${jobTracker}</td><td> Geben Sie die URL des Hadoop-JobTrackers an. Verwenden Sie <strong>jobtrackerhost:9010</strong> bei Clustern der HDInsight-Versionen 2.0 und 3.0. </td></tr>
-    <tr><td> ${nameNode} </td><td> Geben Sie die URL des Hadoop-NameNode an. Verwenden Sie die WASB-Adresse des Standarddateisystems. Beispiel: <i>wasb://&lt;containerName&gt;@&lt;storageAccountName&gt;.blob.core.windows.net</i>. </td></tr>
-    <tr><td> ${queueName} </td><td>Gibt den Namen der Warteschlange an, an die der Job gesendet wird. Verwenden Sie <strong>default</strong>. </td></tr>
-	</table>
-	
-	<table border = "1">
-    <tr><th> Hive-Aktionsvariable</th><th> Beschreibung                                                        </th></tr>
-    <tr><td> ${hiveDataFolder} </td><td> Das Quellverzeichnis für den Befehl zum Erstellen der Hive-Tabelle. </td></tr>
-    <tr><td> ${hiveOutputFolder}  </td><td> Der Ausgabeordner für die Anweisung INSERT OVERWRITE.               </td></tr>
-    <tr><td> ${hiveTableName} </td><td> Der Name der Hive-Tabelle, die auf die log4j-Datendateien verweist. </td></tr>
-	</table>
+    | Workflow-Variablen | Beschreibung                                                                                                                                                                         |
+    |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | ${jobTracker}      | Geben Sie die URL des Hadoop-JobTrackers an. Verwenden Sie **jobtrackerhost:9010** bei Clustern der HDInsight-Versionen 2.0 und 3.0.                                                 |
+    | ${nameNode}        | Geben Sie die URL des Hadoop-NameNode an. Verwenden Sie die WASB-Adresse des Standarddateisystems. Beispiel: *wasb://\<ContainerName\>@\<SpeicherkontoName\>.blob.core.windows.net*. |
+    | ${queueName}       | Gibt den Namen der Warteschlange an, an die der Job gesendet wird. Verwenden Sie **default**.                                                                                        |
 
-    <table border = "1">
-	<tr><th>Sqoop-Aktionsvariable  </th><th> Beschreibung </th></tr>
-   	<tr><td>${sqlDatabaseConnectionString} </td><td> Verbindungszeichenfolge für die SQL-Datenbank.</td></tr>
-    <tr><td> ${sqlDatabaseTableName}        </td><td> Die SQL-Datenbanktabelle, in die die Daten exportiert werden.</td></tr>
-    <tr><td> ${hiveOutputFolder}            </td><td> Der Ausgabeordner für die Hive-Anweisung INSERT OVERWRITE. Dieser entspricht dem mit export-dir angegebenen Ordner für den Sqoop-Export.</td></tr>
-	</table>
+    | Hive-Aktionsvariable | Beschreibung                                                        |
+    |----------------------|---------------------------------------------------------------------|
+    | ${hiveDataFolder}    | Das Quellverzeichnis für den Befehl zum Erstellen der Hive-Tabelle. |
+    | ${hiveOutputFolder}  | Der Ausgabeordner für die Anweisung INSERT OVERWRITE.               |
+    | ${hiveTableName}     | Der Name der Hive-Tabelle, die auf die log4j-Datendateien verweist. |
+
+    | Sqoop-Aktionsvariable          | Beschreibung                                                                                                                             |
+    |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+    | ${sqlDatabaseConnectionString} | Verbindungszeichenfolge für die SQL-Datenbank.                                                                                           |
+    | ${sqlDatabaseTableName}        | Die SQL-Datenbanktabelle, in die die Daten exportiert werden.                                                                            |
+    | ${hiveOutputFolder}            | Der Ausgabeordner für die Hive-Anweisung INSERT OVERWRITE. Dieser entspricht dem mit export-dir angegebenen Ordner für den Sqoop-Export. |
+
     Weitere Informationen über den Oozie-Workflow und die Verwendung von Workflow-Aktionen finden Sie in der [Apache Oozie 4.0-Dokumentation][Apache Oozie 4.0-Dokumentation] (für HDInsight-Cluster der Version 3.0) oder in der [Apache Oozie 3.3.2-Dokumentation][Apache Oozie 3.3.2-Dokumentation] (für HDInsight-Cluster der Version 2.1).
 
 2.  Speichern Sie die Datei unter **C:\\Tutorials\\UseOozie\\workflow.xml**, und verwenden Sie dabei die ANSI (ASCII)-Codierung (Verwenden Sie Editor, falls Ihr Texteditor diese Möglichkeit nicht bietet).
@@ -285,15 +283,15 @@ Es ist bekannt, dass es ein Problem mit dem Hive-Pfad gibt. Dieses Problem tritt
         </coordinator-app>
 
     In der Definitionsdatei werden fünf Variablen verwendet:
-	<table border = "1">
-    <tr><th> Variable </th><th> Beschreibung                                                        </th></tr>
-    <tr><td>  ${coordFrequency}</td><td> Pausenzeit des Auftrags. Die Frequenz wird stets in Minuten ausgedrückt. </td></tr>
-    <tr><td> ${coordStart}   </td><td> Startzeit des Auftrags.  </td></tr>
-    <tr><td> ${coordEnd}   </td><td> Endzeit des Auftrags.    </td></tr>
-	<tr><td> ${coordTimezone} </td><td> Oozie verarbeitet Koordinatoraufträge in einer festen Zeitzone ohne Sommerzeit (normalerweise UTC). Diese Zeitzone wird auch als "Oozie-Verarbeitungs-Zeitzone" bezeichnet.   </td></tr>
-	<tr><td>${wfPath}   </td><td> Der Pfad zur Datei workflow.xml. Wenn die Workflow-Datei nicht den Standardnamen hat (workflow.xml), müssen Sie deren Namen angeben.    </td></tr>
-	</table>
-  
+
+    | Variable          | Beschreibung                                                                                                                                                                |
+    |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | ${coordFrequency} | Pausenzeit des Auftrags. Die Frequenz wird stets in Minuten ausgedrückt.                                                                                                    |
+    | ${coordStart}     | Startzeit des Auftrags.                                                                                                                                                     |
+    | ${coordEnd}       | Endzeit des Auftrags.                                                                                                                                                       |
+    | ${coordTimezone}  | Oozie verarbeitet Koordinatoraufträge in einer festen Zeitzone ohne Sommerzeit (normalerweise UTC). Diese Zeitzone wird auch als "Oozie-Verarbeitungs-Zeitzone" bezeichnet. |
+    | ${wfPath}         | Der Pfad zur Datei workflow.xml. Wenn die Workflow-Datei nicht den Standardnamen hat (workflow.xml), müssen Sie deren Namen angeben.                                        |
+
 2.  Speichern Sie die Datei unter **C:\\Tutorials\\UseOozie\\coordinator.xml**, und verwenden Sie dabei die ANSI (ASCII)-Codierung (Verwenden Sie Editor, falls Ihr Texteditor diese Möglichkeit nicht bietet).
 
 ## <span id="deploy"></span></a>Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms
@@ -757,6 +755,7 @@ In diesem Lernprogramm haben Sie einen Oozie-Workflow und einen Oozie-Koordinato
 -   [Entwickeln von Java MapReduce-Programmen für HDInsight][Entwickeln von Java MapReduce-Programmen für HDInsight]
 
   [Verwenden von Oozie mit Hadoop in HDInsight]: ../hdinsight-use-oozie/
+  [Was ist Oozie?]: #whatisoozie
   [Voraussetzungen]: #prerequisites
   [Definieren der Oozie-Workflowdatei]: #defineworkflow
   [Bereitstellen des Oozie-Projekts und Vorbereiten des Lernprogramms]: #deploy

@@ -6,9 +6,9 @@ Diese schrittweise Anleitung erläutert Installation und Ausführung von MongoDB
 </div>
 
 1.  Wenn Sie über Remote Desktop eine Verbindung zum virtuellen Computer aufgebaut haben, öffnen Sie im Menü **Start** den Internet Explorer.
-2.  Klicken Sie in der oberen rechten Ecke auf **Extras**. Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie *http://&#42;.mongodb.org* zur Liste vertrauenswürdiger Sites hinzu.
-3.  Gehen Sie zu [Downloads - MongoDB][].
-4.  Suchen Sie die neueste Version im Abschnitt **Production Release (Recommended)**, und klicken Sie in der Spalte "Windows 64-bit" auf den Link **2008+**. Klicken Sie auf **Speichern unter**, und speichern Sie die Zip-Datei auf dem Desktop.
+2.  Klicken Sie in der oberen rechten Ecke auf **Extras**. Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie *<http://>\*.mongodb.org* zur Liste vertrauenswürdiger Sites hinzu.
+3.  Gehen Sie zu [Downloads - MongoDB][Downloads - MongoDB].
+4.  Suchen Sie die neueste Version im Abschnitt **Production Release (Recommended)**, und klicken Sie in der Spalte "Windows 64-bit" auf den Link \***2008+**. Klicken Sie auf **Speichern unter**, und speichern Sie die Zip-Datei auf dem Desktop.
 5.  Klicken Sie mit der rechten Maustaste auf die Zip-Datei und anschließend auf **Alle extrahieren...** Geben Sie als Ziel "C:" an, und klicken Sie auf **Extrahieren**. Wenn die Dateien extrahiert wurden, können Sie den Installationsordner umbenennen und ihm einen einfacheren Namen geben, z. B. "MongoDB".
 6.  Erstellen Sie die Daten- und Protokollverzeichnisse für MongoDB auf dem Datenträger (z. B. Laufwerk **F:**), den Sie in den vorherigen Schritten erstellt haben. Wählen Sie unter **Start** die Option **Eingabeaufforderung**, um ein Eingabeaufforderungsfenster zu öffnen. Geben Sie Folgendes ein:
 
@@ -45,13 +45,13 @@ Diese schrittweise Anleitung erläutert Installation und Ausführung von MongoDB
 
         C:\mongodb\bin>mongod --logpath "c:\mongodb\logs\logfile.log" --logappend --dbpath "c:\data" --install 
 
-    Dadurch wird ein Dienst namens "Mongo DB" mit der Beschreibung "Mongo DB" erstellt. Zur Festlegung einer Protokolldatei muss die Option **--logpath** verwendet werden, da der laufende Dienst kein Befehlsfenster zur Anzeige der Ausgabe hat. Die Option **--logpath** legt fest, dass ein Neustart des Dienstes eine Ausgabe erzeugt, die an die vorhandene Protokolldatei angehängt wird. Die Option **--dbpath** gibt den Ort des Datenverzeichnisses an. Weitere dienstbezogene Befehlszeilenoptionen finden Sie unter [Service-related command line options][] (Dienstbezogene Befehlszeilenoptionen, in englischer Sprache).
+    Dadurch wird ein Dienst namens "Mongo DB" mit der Beschreibung "Mongo DB" erstellt. Zur Festlegung einer Protokolldatei muss die Option **--logpath** verwendet werden, da der laufende Dienst kein Befehlsfenster zur Anzeige der Ausgabe hat. Die Option **--logpath** legt fest, dass ein Neustart des Dienstes eine Ausgabe erzeugt, die an die vorhandene Protokolldatei angehängt wird. Die Option **--dbpath** gibt den Ort des Datenverzeichnisses an. Weitere dienstbezogene Befehlszeilenoptionen finden Sie unter [Service-related command line options][Service-related command line options] (Dienstbezogene Befehlszeilenoptionen, in englischer Sprache).
 
 10. Nach der Installation und Ausführung von MongoDB müssen Sie einen Port in Windows Firewall öffnen, um eine Remote-Verbindung mit MongoDB herzustellen. Wählen Sie im Menü **Start** die Option **Administratortools** und anschließend **Windows-Firewall mit erweiterter Sicherheit**.
 
 11. Klicken Sie im linken Bereich auf **Eingehende Regeln**. Wählen Sie rechts im Bereich **Aktionen** die Option **Neue Regel...**.
 
-    ![Windows-Firewall][]
+    ![Windows-Firewall][Windows-Firewall]
 
     Klicken Sie unter **Assistent für neue eingehende Regel** auf **Port** und anschließend auf **Weiter**.
 
@@ -75,7 +75,7 @@ Diese schrittweise Anleitung erläutert Installation und Ausführung von MongoDB
 
 12. Wenn Sie beim Erstellen des virtuellen Computers keinen Endpunkt für MongoDB konfiguriert haben, können Sie dies jetzt tun. Sie benötigen sowohl die Firewall-Regel als auch den Endpunkt, um eine Remote-Verbindung zu MongoDB herstellen zu können. Klicken Sie im Verwaltungsportal auf **Virtuelle Computer**, klicken Sie auf den Namen des neuen virtuellen Computers und danach auf **Endpunkte**.
 
-    ![Endpunkte][]
+    ![Endpunkte][Endpunkte]
 
 13. Klicken Sie am unteren Seitenrand auf **Endpunkt hinzufügen**. Wählen Sie **Endpunkt hinzufügen**, und klicken Sie auf **Weiter**.
 
@@ -85,7 +85,6 @@ Diese schrittweise Anleitung erläutert Installation und Ausführung von MongoDB
 
     ![Endpunkte][7]
 
-  [Sicherheit und Authentifizierung]: http://www.mongodb.org/display/DOCS/Security+and+Authentication
   [Downloads - MongoDB]: http://www.mongodb.org/downloads
   [Service-related command line options]: http://www.mongodb.org/display/DOCS/Windows+Service
   [Windows-Firewall]: ./media/install-and-run-mongo-on-win2k8-vm/WinFirewall1.png

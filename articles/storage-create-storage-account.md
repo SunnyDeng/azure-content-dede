@@ -1,6 +1,6 @@
-<properties linkid="manage-services-how-to-create-a-storage-account" urlDisplayName="How to create" pageTitle="How to create a storage account | Azure" metaKeywords="" description="Learn how to create a storage account in the Azure management portal." metaCanonical="" services="storage" documentationCenter="" title="How To Create a Storage Account" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties urlDisplayName="How to create" pageTitle="Erstellen eines Speicherkontos | Azure" metaKeywords="" description="Dieses Thema beschreibt die Erstellung eines Speicherkontos im Azure-Verwaltungsportal." metaCanonical="" services="storage" documentationCenter="" title="Erstellen eines Speicherkontos" solutions="" authors="tamram" manager="adinah" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # <span id="createstorageaccount"></span></a>Erstellen eines Speicherkontos
 
@@ -23,7 +23,7 @@ Weitere Informationen zu Kapazität und Durchsatz von Speicherkonten finden Sie 
 
     ![NewStorageAccount][NewStorageAccount]
 
-3.  Geben Sie unter **URL** einen Unterdomänennamen zur Verwendung in der Speicherkonto-URL ein. Sie werden den Speicherort des Objekts an den Endpunkt anhängen, um auf ein Objekt im Speicher zuzugreifen. Die URL für den Zugriff auf einen Blob kann z. B. http://*myaccount*.blob.core.windows.net/*mycontainer*/*myblob*.
+3.  Geben Sie unter **URL** einen Unterdomänennamen zur Verwendung in der Speicherkonto-URL ein. Sie werden den Speicherort des Objekts an den Endpunkt anhängen, um auf ein Objekt im Speicher zuzugreifen. Die URL für den Zugriff auf einen Blob kann z. B. [http://\*meinKonto][http://\*meinKonto]*.blob.core.windows.net/*meinContainer*/*meinBlob\* lauten.
 
 4.  Wählen Sie unter **Region/Affinitätsgruppe** eine Region oder Affinitätsgruppe für den Speicher aus. Wählen Sie eine Affinitätsgruppe statt einer Region, wenn Ihre Speicherdienste im selben Datacenter vorhanden sein sollen, wie die anderen Azure-Dienste, die Sie verwenden. Dadurch wird möglicherweise die Leistung verbessert, und es fallen keine Kosten für Ausgangsverkehr an.
 
@@ -33,7 +33,7 @@ Weitere Informationen zu Kapazität und Durchsatz von Speicherkonten finden Sie 
 
 6.  Wählen Sie unter **Replikation** die gewünschte Replikationsebene für Ihr Speicherkonto aus.
 
-	[WACOM.INCLUDE [storage-replication-options](../includes/storage-replication-options.md)]
+    [WACOM.INCLUDE [storage-replication-options](../includes/storage-replication-options.md)]
 
 7.  Klicken Sie auf **Speicherkonto erstellen**.
 
@@ -54,7 +54,6 @@ Weitere Informationen zu Kapazität und Durchsatz von Speicherkonten finden Sie 
   [NewStorageAccount]: ./media/storage-create-storage-account/storage_NewStorageAccount.png
   [http://\*meinKonto]: http://*myaccount
   [Operations on Affinity Groups]: http://msdn.microsoft.com/de-de/library/windowsazure/ee460798.aspx
-  [storage-replication-options]: ../includes/storage-replication-options.md
   [StoragePage]: ./media/storage-create-storage-account/Storage_StoragePage.png
   [azure.com]: http://azure.microsoft.com/de-de/documentation/services/storage/
   [MSDN]: http://msdn.microsoft.com/de-de/library/gg433040.aspx

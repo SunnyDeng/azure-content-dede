@@ -1,4 +1,4 @@
-<properties linkid="manage-services-what-is-a-storage-account" urlDisplayName="What is a Storage Account" pageTitle="What is a storage account? | Microsoft Azure" metaKeywords="" description="Learn about the different types of storage accounts available in Azure, and get definitions for key storage terms." metaCanonical="" services="storage" documentationCenter="" title="What is a Storage Account?" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
+<properties urlDisplayName="What is a Storage Account" pageTitle="Was ist ein Speicherkonto? | Microsoft Azure" metaKeywords="" description="Erhalten Sie Informationen &uuml;ber die unterschiedlichen Speicherkontotypen, die in Azure verf&uuml;gbar sind, und erhalten Sie Definitionen f&uuml;r wichtige Speicherbegriffe." metaCanonical="" services="storage" documentationCenter="" title="Was ist ein Speicherkonto?" authors="tamram" solutions="" manager="adinah" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -24,15 +24,15 @@ Die Seite mit den [Speicherpreisdetails][Speicherpreisdetails] bietet detaillier
 
 Die *Endpunkte* für ein Speicherkonto stellen die höchste Stufe des Namespace für den Zugriff auf Blobs, Tabellen oder Warteschlangen dar. Die Standardendpunkte für ein Speicherkonto haben die folgenden Formate:
 
--   Blob-Dienst: http://*meinSpeicherkonto*.blob.core.windows.net
+-   Blob-Dienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.blob.core.windows.net
 
--   Tabellendienst: http://*meinSpeicherkonto*.table.core.windows.net
+-   Tabellendienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.table.core.windows.net
 
--   Warteschlangendienst: http://*meinSpeicherkonto*.queue.core.windows.net
+-   Warteschlangendienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.queue.core.windows.net
 
--   Dateidienst: http://*meinSpeicherkonto*.file.core.windows.net
+-   Dateidienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.file.core.windows.net
 
-Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: http://*meinSpeicherkonto*.blob.core.windows.net/mycontainer/myblob\.
+Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]*.blob.core.windows.net/*mycontainer*/*myblob\*.
 
 ### Speicherkontosicherheit
 
@@ -55,7 +55,6 @@ Eine *Affinitätsgruppe* ist eine geografische Gruppierung Ihrer Azure-Dienste u
   [Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher]: http://msdn.microsoft.com/de-de/library/dn249410.aspx
   [Speicherpreisdetails]: http://www.windowsazure.com/de-de/pricing/details/#storage
   [Datenübertragungs-Preisdetails]: http://www.windowsazure.com/de-de/pricing/details/data-transfers/
-  [storage-replication-options]: ../includes/storage-replication-options.md
   [http://\*meinSpeicherkonto]: http://*mystorageaccount
   [SAS-Lernprogramm]: ../storage-dotnet-shared-access-signature-part-1/
   [Kennzahlen zur Speicheranalyse – Tabellenschema]: http://msdn.microsoft.com/de-de/library/windowsazure/hh343264.aspx

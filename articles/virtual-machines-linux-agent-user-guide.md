@@ -1,6 +1,6 @@
-<properties linkid="manage-linux-howto-linux-agent" urlDisplayName="Linux Agent guide" pageTitle="Linux Agent User Guide for Azure" metaKeywords="" description="Learn how to install and configure Linux Agent (waagent) to manage your virtual machine's interaction with Azure Fabric Controller." metaCanonical="" services="virtual-machines" documentationCenter="" title="Azure Linux Agent User Guide" authors="" solutions="" manager="" editor="" />
+<properties urlDisplayName="Linux Agent guide" pageTitle="Benutzerhandbuch f&uuml;r Linux-Agent f&uuml;r Azure" metaKeywords="" description="Erfahren Sie, wie Sie den Linux-Agent (waagent) zum Verwalten der Interaktion Ihres virtuellen Computers mit Azure Fabric Controller installieren und konfigurieren." metaCanonical="" services="virtual-machines" documentationCenter="" title="Benutzerhandbuch f&uuml;r Azure Linux-Agent" authors="timlt" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="timlt" />
 
 # Benutzerhandbuch für Azure Linux-Agent
 
@@ -42,11 +42,12 @@ Der Informationsfluss von der Plattform zum Agenten erfolgt über zwei Kanäle:
 
 Sie können den neuesten Linux-Agent direkt von folgenden Quellen beziehen:
 
--   [Von den verschiedenen Distributionsanbietern, die Linux auf Azure unterstützen][]
--   oder aus dem [Github Open Source Repository für den Azure Linux-Agent][]
+-   [Von den verschiedenen Distributionsanbietern, die Linux auf Azure unterstützen][Von den verschiedenen Distributionsanbietern, die Linux auf Azure unterstützen]
+-   oder aus dem [Github Open Source Repository für den Azure Linux-Agent][Github Open Source Repository für den Azure Linux-Agent]
 
 ### Unterstützte Linux-Distributionen
 
+-   CoreOS
 -   CentOS 6.2+
 -   Debian 7.0+
 -   Ubuntu 12.04+

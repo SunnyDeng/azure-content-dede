@@ -1,14 +1,14 @@
-<properties title="Generate movie recommendations using Mahout" pageTitle="Generate movie recommendations using Mahout with Microsoft Azure HDInsight (Hadoop)" description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with HDInsight (Hadoop)" metaKeywords="Azure hdinsight mahout, Azure hdinsight machine learning, azure hadoop mahout, azure hadoop machine learning" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
+<properties title="Erstellen von Filmempfehlungen mit Mahout und Hadoop" pageTitle="Erstellen von Filmempfehlungen mit Mahout und Microsoft Azure HDInsight (Hadoop)" description="Erfahren Sie, wie Sie Filmempfehlungen mit der Apache Mahout-Bibliothek f&uuml;r maschinelles Lernen und HDInsight (Hadoop) erstellen k&ouml;nnen" metaKeywords="Azure hdinsight mahout, Azure hdinsight machine learning, azure hadoop mahout, azure hadoop machine learning" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" manager="paulettm" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Erstellen von Filmempfehlungen mithilfe von Apache Mahout mit HDInsight (Hadoop)
 
 Erfahren Sie, wie Sie die [Apache Mahout][Apache Mahout] Bibliothek für maschinelles Lernen einsetzen, um Filmempfehlungen mit Microsoft Azure HDInsight (Hadoop) zu erstellen.
 
 > [WACOM.NOTE] Sie benötigen zur Umsetzung der Informationen in diesem Artikel einen HDInsight-Cluster. Wie Sie eines erstellen, erfahren Sie unter [Erste Schritte mit Hadoop in HDInsight][Erste Schritte mit Hadoop in HDInsight].
-
-> [WACOM.NOTE] Mahout wird mit HDInsight 3.1-Clustern bereitgestellt. Wenn Sie eine frühere Version von HDInsight verwenden, sehen Sie sich [Mahout installieren][Mahout installieren] an, ehe Sie fortfahren.
+>
+> Mahout wird mit HDInsight 3.1-Clustern bereitgestellt. Wenn Sie eine frühere Version von HDInsight verwenden, sehen Sie sich [Mahout installieren][Mahout installieren] an, ehe Sie fortfahren.
 
 ## <a name="learn"></a>Sie lernen Folgendes
 
@@ -70,7 +70,7 @@ Verwenden Sie das folgende PowerShell-Skript zum Ausführen eines Auftrags mithi
     $clusterName = "the cluster name"
 
     # The location of the Mahout jar file.
-    $jarFile = "C:\apps\dist\mahout-0.9.0.2.1.3.0-1887\examples\target\mahout-examples-0.9.0.2.1.3.0-1887-job.jar"
+    $jarFile = "file:///c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar"
     # NOTE: The version number portion of the file path
     # may change in future versions of HDInsight.
     # Use the following to find the location and name

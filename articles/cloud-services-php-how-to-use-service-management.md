@@ -1,4 +1,4 @@
-<properties linkid="develop-php-how-to-guides-service-management" urlDisplayName="Service Management" pageTitle="How to use Azure service management APIs (PHP)" metaKeywords="" description="Learn how to use the Azure PHP Service Management APIs to manage cloud services and other Azure applications." metaCanonical="" services="" documentationCenter="PHP" title="How to use Service Management from PHP" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+<properties urlDisplayName="Service Management" pageTitle="Verwenden der Azure-Dienstverwaltungs-APIs (PHP)" metaKeywords="" description="Hier erfahren Sie, wie Sie die Azure-PHP-Dienstverwaltungs-APIs f&uuml;r die Verwaltung von Cloud-Diensten und weiteren Azure-Anwendungen nutzen." metaCanonical="" services="" documentationCenter="PHP" title="Verwenden der Dienstverwaltung aus PHP" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 
 <tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
@@ -534,6 +534,7 @@ Sie können eine Affinitätsgruppe löschen, indem Sie den Gruppennamen an die M
   [ServiceManagementRestProxy]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/ServiceManagementRestProxy.php
   [Azure-SDK für PHP]: ../php-download-sdk/
   [Verwaltungsportal]: https://manage.windowsazure.com/
+  [Was ist Dienstverwaltung?]: #WhatIs
   [Konzepte]: #Concepts
   [Erstellen einer PHP-Anwendung]: #CreateApplication
   [Abrufen der Azure-Clientbibliotheken]: #GetClientLibraries
@@ -551,7 +552,6 @@ Sie können eine Affinitätsgruppe löschen, indem Sie den Gruppennamen an die M
   [Gewusst wie: Löschen einer Affinitätsgruppe]: #DeleteAffinityGroup
   [ein Azure-Konto erstellen]: /de-de/pricing/free-trial/
   [Azure-Dienstverwaltungs-API]: http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx
-  [get-client-libraries]: ../includes/get-client-libraries.md
   [OpenSSL]: http://www.openssl.org/
   [für Windows herunterladen]: http://www.openssl.org/related/binaries.html
   [Übersicht über Zertifikate in Windows Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg981935.aspx
@@ -563,6 +563,7 @@ Sie können eine Affinitätsgruppe löschen, indem Sie den Gruppennamen an die M
   [Dienstpaket]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433093
   [Azure-PowerShell-Cmdlets]: ../install-configure-powershell/
   [CSPack-Befehlszeilentool]: http://msdn.microsoft.com/de-de/library/windowsazure/gg432988.aspx
+  [Azure-Dienstkonfigurationsschema (.cscfg-Datei)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx
   [Übersicht über das Verwalten von Bereitstellungen in Windows Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/hh386336.aspx
   [Speicherdienst]: ../storage-whatis-account/
   [Blobs]: ../storage-php-how-to-use-blobs/

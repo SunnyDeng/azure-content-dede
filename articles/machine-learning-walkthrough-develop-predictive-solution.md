@@ -1,6 +1,6 @@
-<properties title="Develop a predictive solution with Azure Machine Learning" pageTitle="Develop a predictive solution with Machine Learning | Azure" description="Walkthrough of how to create a predictive analytics experiment in Azure Machine Learning Studio" metaKeywords="" services="" solutions="" documentationCenter="" authors="garye" videoId="" scriptId="" />
+<properties title="Entwickeln einer Vorhersagel&ouml;sung mit Azure Machine Learning" pageTitle="Entwickeln einer Vorhersagel&ouml;sung mit Azure Machine Learning | Azure" description="Exemplarische Vorgehensweise zur Erstellung eines Vorhersageanalytik-Experiments in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye"></tags>
+<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="garye" />
 
 # Entwickeln einer Vorhersagelösung mit Azure Machine Learning
 
@@ -12,15 +12,15 @@ In dieser Anleitung erstellen Sie ein Vorhersageanalytik-Modell in ML Studio und
 
 Dazu gehören die folgenden Schritte:
 
-1.  [Erstellen eines ML-Arbeitsbereichs][]
-2.  [Hochladen vorhandener Daten][]
-3.  [Erstellen eines neuen Experiments][]
-4.  [Trainieren und Bewerten der Modelle][]
-5.  [Veröffentlichen des Webdiensts][]
-6.  [Zugreifen auf den Webdienst][]
+1.  [Erstellen eines ML-Arbeitsbereichs][Erstellen eines ML-Arbeitsbereichs]
+2.  [Hochladen vorhandener Daten][Hochladen vorhandener Daten]
+3.  [Erstellen eines neuen Experiments][Erstellen eines neuen Experiments]
+4.  [Trainieren und Bewerten der Modelle][Trainieren und Bewerten der Modelle]
+5.  [Veröffentlichen des Webdiensts][Veröffentlichen des Webdiensts]
+6.  [Zugreifen auf den Webdienst][Zugreifen auf den Webdienst]
 
 Diese Anleitung basiert auf einer vereinfachten Version des in ML Studio enthaltenen Artikels
-[Experiment zur Kreditrisiko-Vorhersage][].
+[Experiment zur Kreditrisiko-Vorhersage][Experiment zur Kreditrisiko-Vorhersage].
 
   [Erstellen eines ML-Arbeitsbereichs]: ../machine-learning-walkthrough-1-create-ml-workspace/
   [Hochladen vorhandener Daten]: ../machine-learning-walkthrough-2-upload-data/

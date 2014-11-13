@@ -1,32 +1,32 @@
-<properties title="About Puppet and Azure Virtual Machines" pageTitle="About Puppet and Azure Virtual Machines" description="Describes installing and configuring Puppet on a VM in Azure" metaKeywords="" services="virtual machines" solutions="" documentationCenter="" authors="kathydav" videoId="" scriptId="" />
+<properties title="&Uuml;ber Puppet und Azure Virtual Machines" pageTitle="&Uuml;ber Puppet und Azure Virtual Machines" description="Beschreibt die Installation und Konfiguration von Puppet auf einem virtuellen Computer in Azure." metaKeywords="" services="virtual machines" solutions="" documentationCenter="" authors="kathydav" manager="timlt" videoId="" scriptId="" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="07/29/2014" ms.author="kathydav" />
 
-# Über Puppet und Virtuelle Azure-Computer
+# Über Puppet und Azure Virtual Machines
 
-Puppet Enterprise ist eine Automatisierungssoftware für das Entwickeln, Bereitstellen und Verwalten Ihrer Infrastruktur. Sie können es zur Verwaltung Ihres IT-Lebenszyklus einsetzen, einschließlich: Ermittlung, Bereitstellung, Verwalten von OS- und Anwendungskonfiguration, Orchestrierung und Berichte.
+Puppet Enterprise ist eine Automatisierungssoftware für das Erstellen, Bereitstellen und Verwalten Ihrer Infrastruktur. Sie können sie zum Verwalten Ihres IT-Infrastrukturlebenszyklus verwenden, einschließlich: Ermittlung, Provisioning, Betriebssystem- und Anwendungskonfigurationsverwaltung, Orchestrierung und Berichterstellung.
 
-Puppet ist ein Client-Server-System. Puppet Master und der Puppet Enterprise Agent sind über Azure installierbar:
+Puppet ist ein Clientserversystem. Puppet Master und der Puppet-Agent für Unternehmen stehen für die Installation über Azure zur Verfügung:
 
--   Puppet Master ist als auf einem Ubuntu-Server installiertes, vorkonfiguriertes Abbild erhältlich. Sie können Puppet Enterprise auch auf einem vorhandenen Server installieren. Mit dem Abbild allerdings ist der Start am leichtesten. Sie benötigen Informationen über den Server, um den Agent einrichten zu können.
--   Puppet Enterprise Agent ist als Erweiterung für virtuelle Computer erhältlich, die Sie beim Erstellen eines virtuellen Computers oder auf einem schon existierenden installieren können.
+-   Puppet Master ist als ein vorkonfiguriertes Image verfügbar, das auf einem Ubuntu-Server installiert ist. Sie können Puppet Enterprise auch auf einem vorhandenen Server installieren. Das Image ist jedoch die einfachste Möglichkeit für den Anfang. Sie benötigen Informationen über den Server, um den Agent einzurichten.
+-   Der Puppet-Agent für Unternehmen steht als eine Erweiterung für einen virtuellen Computer zur Verfügung, den Sie installieren können, wenn Sie einen virtuellen Computer erstellen oder eine Installation auf einem vorhandenen virtuellen Computer vornehmen.
 
-Wenn Sie eine Anleitung benötigen, laden Sie „Erste Schritte“ herunter, zu finden auf der Seite [Microsoft Windows und Azure][Microsoft Windows und Azure].
+Laden Sie den „Getting Started Guide“ (Leitfaden für die ersten Schritte) auf der Seite [Microsoft Windows and Azure][Microsoft Windows and Azure] (Microsoft Windows und Azure) herunter (in englischer Sprache).
 
 ## Zusätzliche Ressourcen
 
-[Neue Integration von Microsoft Azure und Visual Studio][Neue Integration von Microsoft Azure und Visual Studio]
+[New Integrations with Microsoft Azure and Visual Studio (Neue Integrationen in Microsoft Azure und Visual Studio) (in englischer Sprache)][New Integrations with Microsoft Azure and Visual Studio (Neue Integrationen in Microsoft Azure und Visual Studio) (in englischer Sprache)]
 
 [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]
 
 [Anmelden bei einem mit Linux betriebenen virtuellen Computer][Anmelden bei einem mit Linux betriebenen virtuellen Computer]
 
-[Erweiterungen verwalten][Erweiterungen verwalten]
+[Verwalten von Erweiterungen][Verwalten von Erweiterungen]
 
 <!--Link references-->
 
-  [Microsoft Windows und Azure]: http://puppetlabs.com/solutions/microsoft
-  [Neue Integration von Microsoft Azure und Visual Studio]: http://puppetlabs.com/blog/new-integrations-windows-azure-and-visual-studio
+  [Microsoft Windows and Azure]: http://puppetlabs.com/solutions/microsoft
+  [New Integrations with Microsoft Azure and Visual Studio (Neue Integrationen in Microsoft Azure und Visual Studio) (in englischer Sprache)]: http://puppetlabs.com/blog/new-integrations-windows-azure-and-visual-studio
   [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: ../virtual-machines-log-on-windows-server/
   [Anmelden bei einem mit Linux betriebenen virtuellen Computer]: ../virtual-machines-linux-how-to-log-on
-  [Erweiterungen verwalten]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
+  [Verwalten von Erweiterungen]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409

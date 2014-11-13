@@ -1,4 +1,4 @@
-<properties linkid="develop-net-tutorials-compute-intensive-task-on-a-virtual-machine" urlDisplayName="Compute Intensive .NET Task" pageTitle="Compute intensive .NET task on a virtual machine - Azure" metaKeywords="deploying compute .NET application, vm .NET application, Service Bus queue monitoring, remote monitoring" description="Learn how to deploy and run a compute-intensive .NET app on an Azure virtual machine and use Service Bus queues to monitor progress remotely." metaCanonical="" services="virtual-machines" documentationCenter=".NET" title="How to run a compute-intensive task in .NET on an Azure virtual machine" authors="wpickett" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties urlDisplayName="Compute Intensive .NET Task" pageTitle="Rechenintensive .NET-Aufgabe auf einem virtuellen Computer &ndash; Azure" metaKeywords="deploying compute .NET application, vm .NET application, Service Bus queue monitoring, remote monitoring" description="Erfahren Sie, wie Sie eine rechenintensive .NET-App auf einem virtuellen Azure-Computer bereitstellen und ausf&uuml;hren und Servicebus-Warteschlangen f&uuml;r die Remote&uuml;berwachung des Status verwenden." metaCanonical="" services="virtual-machines" documentationCenter=".NET" title="Ausf&uuml;hren einer rechenintensiven Aufgabe in .NET auf einem virtuellen Azure-Computer" authors="wpickett" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="wpickett" />
 
@@ -68,7 +68,12 @@ So erstellen Sie einen Dienstnamespace
     ![Dialogfeld "Namespace erstellen"][Dialogfeld "Namespace erstellen"]
 
 5.  Nachdem Sie sichergestellt haben, dass der Namespacename verfügbar ist, wählen Sie die Region aus, in der der Namespace gehostet werden soll (verwenden Sie dieselbe Region, in der auch der virtuelle Computer gehostet wird).
-    <div class="dev-callout"><br /><strong>Wichtig</strong><br /><p>W&auml;hlen Sie <strong>dieselbe Region</strong> aus, die Sie f&uuml;r den virtuellen Computer verwenden oder verwenden m&ouml;chten. Dies sorgt f&uuml;r die beste Leistung.</p><br /></div>
+    <div class="dev-callout">
+
+    **Wichtig**
+    Wählen Sie **dieselbe Region** aus, die Sie für den virtuellen Computer verwenden oder verwenden möchten. Dies sorgt für die beste Leistung.
+
+    </div>
 
 6.  Wenn Sie mehr als ein Azure-Abonnement für das Konto besitzen, mit dem Sie angemeldet sind, wählen Sie das Abonnement aus, das Sie für den Namespace verwenden möchten. (Wenn Sie nur ein Abonnement für das Konto haben, mit dem Sie angemeldet sind, wird keine Dropdownliste Ihrer Abonnements angezeigt.)
 7.  Aktivieren Sie das Kontrollkästchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Eventuell müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto bereitgestellt werden.
@@ -545,7 +550,6 @@ Anstatt TSPSolver zum Erstellen oder Löschen der Warteschlange zu verwenden, k�
 
   ["Traveling Salesman"-Problemlösung]: ./media/virtual-machines-dotnet-run-compute-intensive-task/WA_dotNetTSPSolver.png
   ["Traveling Salesman"-Problemclient]: ./media/virtual-machines-dotnet-run-compute-intensive-task/WA_dotNetTSPClient.png
-  [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Neuen Service Bus erstellen]: ./media/virtual-machines-dotnet-run-compute-intensive-task/ServiceBusCreateNew.png
   [Dialogfeld "Namespace erstellen"]: ./media/virtual-machines-dotnet-run-compute-intensive-task/CreateNameSpaceDialog.png

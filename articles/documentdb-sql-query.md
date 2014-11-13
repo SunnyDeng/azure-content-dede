@@ -1,6 +1,6 @@
-<properties title="Query with DocumentDB SQL" pageTitle="Query with DocumentDB SQL | Azure" description="DocumentDB supports querying of documents using SQL-like grammar over hierarchical JSON documents without requiring explicit schema or creation of secondary indexes." metaKeywords="" services="documentdb"  documentationCenter="" solutions="data-management" authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
+<properties title="Abfragen mit DocumentDB-SQL" pageTitle="Abfragen mit DocumentDB-SQL | Azure" description="DocumentDB unterst&uuml;tzt die Abfrage von Dokumenten mit SQL-&auml;hnlicher Grammatik &uuml;ber hierarchische JSON-Dokumente, ohne dass ein explizites Schema oder die Erstellung sekund&auml;ren Indizes erforderlich ist." metaKeywords="" services="documentdb"  documentationCenter="" solutions="data-management" authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="bradsev"></tags>
+<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
 
 # Abfragen von DocumentDB
 
@@ -1321,7 +1321,7 @@ Hier sehen Sie ein Beispiel für die Registrierung einer UDF in der DocumentDB-D
 
        UserDefinedFunction sqrtUdf = new UserDefinedFunction
        {
-           Name = "SQRT",
+           Id = "SQRT",
            Body = @"function(number) { 
                        return Math.sqrt(number);
                    };",
@@ -1374,7 +1374,7 @@ Wir erweitern den Funktionsumfang von UDFs im folgenden Beispiel um konditionale
 
        UserDefinedFunction seaLevelUdf = new UserDefinedFunction()
        {
-           Name = "SEALEVEL",
+           Id = "SEALEVEL",
            Body = @"function(city) {
                 switch (city) {
                     case 'seattle':
@@ -1432,13 +1432,13 @@ LINQ ist ein .NET-Programmiermodell, das Berechnungen als Abfragen auf Streams v
 
 Die folgende Abbildung zeigt die Architektur für die Unterstützung von LINQ-Abfragen in DocumentDB. Mit dem DocumentDB-Client können Entwickler ein **IQueryable**-Objekt erstellen, das die Abfrage an den DocumentDB-Abfrageanbieter weiterleitet, der die LINQ-Abfrage wiederum in eine DocumentDB-Abfrage übersetzt. Anschließend wird die Abfrage an den DocumentDB-Server übergeben, um einen Ergebnissatz im JSON-Format abzurufen. Die zurückgegebenen Ergebnisse werden clientseitig in einen Stream von .NET-Objekten deserialisiert.
 
-![][]
+![][0]
 
 ## .NET- und JSON-Zuordnung
 
 Die Zuordnung zwischen .NET- und JSON-Objekten erfolgt auf natürliche Weise. Jedes Datenelementfeld wird einem JSON-Objekt zugeordnet. Dabei wird der Feldname in den "key"-Teil des Objekts übernommen, und der "value"-Teil wird rekursiv zur Wertkomponente des Objekts zugeordnet. Betrachten Sie das folgende Beispiel. Das erstellte Family-Objekt wird wie hier gezeigt zum JSON-Dokument zugeordnet. Umgekehrt wird das JSON-Dokument zurück zu einem .NET-Objekt zugeordnet.
 
-**C\#-Klasse**
+**C#-Klasse**
 
     public class Family
     {
@@ -1844,7 +1844,7 @@ Das zweite Beispiel zeigt eine komplexere Abfrage, die mehrere Ergebnisse der Ve
 
 Wenn die Abfrageergebnisse nicht in eine einzelne Ergebnisseite passen, gibt die REST-API ein Fortsetzungstoken im `x-ms-continuation-token`-Antwortheader zurück. Clients können einzelne Ergebnisseiten abfragen, indem sie den Header in nachfolgenden Abfragen angeben. Die Anzahl der Ergebnisse pro Seite kann über den `x-ms-max-item-count`-number-Header gesteuert werden.
 
-Für die Verwaltung der Datenkonsistenzrichtlinien für Abfragen verwenden Sie den `x-ms-consistency-level`-Header, wie in allen REST-API-Anfragen. Für die Sitzungskonsistenz muss außerdem der letzte `x-ms-session-token`-Cookie-Header in jeder Anfrage wiederholt werden. Die Indexierungsrichtlinie der abgefragten Sammlung kann die Konsistenz der Abfrageergebnisse ebenfalls beeinflussen. Mit den Standardeinstellungen für Indexierungsrichtlinien stimmt der Index einer Sammlung immer mit dem aktuellen Dokumentinhalt überein, und Abfragen liefern die Daten in der gewünschten Konsistenz zurück. Wenn eine verzögerte Indexierungsrichtlinie verwendet wird, kann es passieren, dass veraltete Ergebnisse zurückgegeben werden. Weitere Informationen finden Sie unter [DocumentDB-Konsistenzebenen][].
+Für die Verwaltung der Datenkonsistenzrichtlinien für Abfragen verwenden Sie den `x-ms-consistency-level`-Header, wie in allen REST-API-Anfragen. Für die Sitzungskonsistenz muss außerdem der letzte `x-ms-session-token`-Cookie-Header in jeder Anfrage wiederholt werden. Die Indexierungsrichtlinie der abgefragten Sammlung kann die Konsistenz der Abfrageergebnisse ebenfalls beeinflussen. Mit den Standardeinstellungen für Indexierungsrichtlinien stimmt der Index einer Sammlung immer mit dem aktuellen Dokumentinhalt überein, und Abfragen liefern die Daten in der gewünschten Konsistenz zurück. Wenn eine verzögerte Indexierungsrichtlinie verwendet wird, kann es passieren, dass veraltete Ergebnisse zurückgegeben werden. Weitere Informationen finden Sie unter [DocumentDB-Konsistenzebenen][DocumentDB-Konsistenzebenen].
 
 Wenn die konfigurierte Indexierungsrichtlinie der Sammlung die angegebene Abfrage nicht unterstützen kann, gibt der DocumentDB-Server "400 Bad Request" zurück. Dies wird z. B. für Bereichsabfragen auf Pfade zurückgegeben, die für Hash (Gleichheits)-Suchvorgänge konfiguriert sind, oder für Pfade, die ausdrücklich von der Indexierung ausgeschlossen wurden. Mit dem `x-ms-documentdb-query-enable-scan`-Header kann angegeben werden, dass eine Abfrage eine Suche durchführen darf, wenn kein Index verfügbar ist.
 
@@ -1965,25 +1965,25 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von queryDocuments in der serverse
 
 # Referenzen
 
-1.  [Einführung in Azure DocumentDB][]
+1.  [Einführung in Azure DocumentDB][Einführung in Azure DocumentDB]
 2.  [DocumentDB-SQL-Sprachspezifikation] (<http://go.microsoft.com/fwlink/p/?LinkID=510612>)
 3.  [DocumentDB .NET-Beispiele] (<http://code.msdn.microsoft.com/Azure-DocumentDB-NET-Code-6b3da8af#content>)
-4.  [DocumentDB-Konsistenzebenen][]
+4.  [DocumentDB-Konsistenzebenen][DocumentDB-Konsistenzebenen]
 5.  ANSI SQL 2011 - [][]<http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681></a>
 6.  JSON [][1]<http://json.org/></a>
 7.  Javascript-Spezifikation [][2]<http://www.ecma-international.org/publications/standards/Ecma-262.htm></a>
-8.  LINQ [][3]<http://msdn.microsoft.com/en-us/library/bb308959.aspx></a>
+8.  LINQ [][3]<http://msdn.microsoft.com/de-de/library/bb308959.aspx></a>
 9.  Abfragetechniken für große Datenbanken [][4]<http://dl.acm.org/citation.cfm?id=152611></a>
 10. Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
 11. Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
 12. Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
 13. G. Graefe. The Cascades framework for query optimization. IEEE Data Eng. Bull., 18(3): 1995.
 
-  []: ./media/documentdb-sql-query/sql-query1.png
+  [0]: ./media/documentdb-sql-query/sql-query1.png
   [DocumentDB-Konsistenzebenen]: ../documentdb-consistency-levels
   [Einführung in Azure DocumentDB]: ../documentdb-introduction
-  []: http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681
+  [0]: http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681
   [1]: http://json.org/
   [2]: http://www.ecma-international.org/publications/standards/Ecma-262.htm
-  [3]: http://msdn.microsoft.com/en-us/library/bb308959.aspx
+  [3]: http://msdn.microsoft.com/de-de/library/bb308959.aspx
   [4]: http://dl.acm.org/citation.cfm?id=152611

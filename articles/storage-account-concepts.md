@@ -1,6 +1,6 @@
-<properties umbracoNaviHide="0" pageTitle="Storage Account Concepts | Azure" metaKeywords="Azure storage, storage service, service, storage account, account, create storage account, create account" description="Learn about storage account concepts." linkid="manage-windows-how-to-guide-storage-accounts" urlDisplayName="How to: storage accounts" headerExpose="" footerExpose="" disqusComments="1" title="Storage Account Concepts" services="storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties umbracoNaviHide="0" pageTitle="Konzepte f&uuml;r Speicherkonten | Azure" metaKeywords="Azure storage, storage service, service, storage account, account, create storage account, create account" description="Erfahren Sie mehr &uuml;ber Konzepte f&uuml;r Speicherkonten." urlDisplayName="How to: storage accounts" headerExpose="" footerExpose="" disqusComments="1" title="Konzepte f&uuml;r Speicherkonten" services="storage" authors="tamram" manager="adinah" editor="cgronlun" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="tamram"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Konzepte für Speicherkonten
 
@@ -12,15 +12,15 @@
 
 Die *Endpunkte* für ein Speicherkonto stellen die höchste Stufe des Namespace für den Zugriff auf Blobs, Tabellen oder Warteschlangen dar. Die Standardendpunkte für ein Speicherkonto haben die folgenden Formate:
 
--   Blob-Dienst:  http://*mystorageaccount*.blob.core.windows.net
+-   Blob-Dienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.blob.core.windows.net
 
--   Tabellendienst: http://*mystorageaccount*.table.core.windows.net
+-   Tabellendienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.table.core.windows.net
 
--   Warteschlangendienst: http://*mystorageaccount*.queue.core.windows.net
+-   Warteschlangendienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.queue.core.windows.net
 
--   Dateidienst: http://*mystorageaccount*.file.core.windows.net
+-   Dateidienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.file.core.windows.net
 
-Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*.
+Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]*.blob.core.windows.net/*mycontainer*/*myblob\*.
 
 ## Speicherkontosicherheit
 
@@ -39,7 +39,6 @@ Um den Zugriff auf Speicherressourcen zu gewähren, ohne den Zugriffsschlüssel 
 ## Affinitätsgruppen für zusammengestellte Azure-Speicher und andere Dienste
 
 Eine *Affinitätsgruppe* ist eine geografische Gruppierung Ihrer Azure-Dienste und VMs mit Ihrem Azure-Konto. Eine Affinitätsgruppe kann die Dienstleistung verbessern, indem Computerarbeitslasten im gleichen Rechenzentrum oder in der Nähe der Zielbenutzer platziert werden. Außerdem fallen keine Gebühren für den Datenausgang an, wenn ein Dienst, der zur gleichen Affinitätsgruppe gehört, auf Daten im Speicherkonto zugreift.
-
 
   [http://\*meinSpeicherkonto]: http://*mystorageaccount
   [SAS-Lernprogramm]: ../storage-dotnet-shared-access-signature-part-1/

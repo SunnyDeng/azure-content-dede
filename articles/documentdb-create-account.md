@@ -1,6 +1,6 @@
-<properties title="How to Create a DocumentDB Account" pageTitle="How to create a DocumentDB account | Azure" description="Find out how to create a DocumentDB account and choose account settings in the Azure Preview portal."  metaKeywords="NoSQL, DocumentDB,  database, document-orientated database, JSON, account" services="documentdb"  solutions="data-management" documentationCenter=""  authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
+<properties title="Erstellen eines DocumentDB-Kontos" pageTitle="Erstellen eines DocumentDB-Kontos | Azure" description="Dieses Thema beschreibt die Erstellung eines DocumentDB-Kontos und die Auswahl von Kontoeinstellungen im Azure-Vorschauportal."  metaKeywords="NoSQL, DocumentDB,  database, document-orientated database, JSON, account" services="documentdb"  solutions="data-management" documentationCenter=""  authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="bradsev" />
+<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
 
 # Erstellen eines DocumentDB-Kontos
 
@@ -66,7 +66,7 @@ Zur Verwendung von DocumentDB müssen Sie ein DocumentDB-Konto in einer verfügb
 
 ## <span id="NextSteps"></span></a>Nächste Schritte
 
--   Weitere Informationen zu DocumentDB finden Sie in der Azure DocumentDB-Dokumentation unter [azure.com][azure.com]
+-   Mehr über DocumentDB erfahren Sie in der Azure DocumentDB-Dokumentation auf [azure.com][azure.com]
 
 <!--Image references-->
 

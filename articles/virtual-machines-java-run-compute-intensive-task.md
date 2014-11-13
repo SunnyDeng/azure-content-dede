@@ -1,4 +1,4 @@
-<properties linkid="dev-java-compute-load" urlDisplayName="TSP on Virtual Machine" pageTitle="Compute-intensive Java application on a VM - Azure" metaKeywords="Azure virtual machine Java, Azure Java app, Azure Java application" description="Learn how to create an Azure virtual machine that runs a compute-intensive Java application that can be monitored by another Java application." metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a compute-intensive task in Java on a virtual machine" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
+<properties urlDisplayName="TSP on Virtual Machine" pageTitle="Rechenintensive Java-Anwendung auf einem virtuellen Computer &ndash; Azure" metaKeywords="Azure virtual machine Java, Azure Java app, Azure Java application" description="Erfahren Sie, wie Sie einen virtuellen Azure-Computer erstellen k&ouml;nnen, der eine rechenintensive Java-Anwendung ausf&uuml;hrt, die durch eine andere Java-Anwendung &uuml;berwacht werden kann." metaCanonical="" services="virtual-machines" documentationCenter="Java" title="Ausf&uuml;hren einer rechenintensiven Aufgabe in Java auf einem virtuellen Computer" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
@@ -517,7 +517,6 @@ Für Solver- und Clientanwendungen können Sie **Strg+C** drücken, um die Anwen
 
   ["Traveling Salesman"-Problemlösung]: ./media/virtual-machines-java-run-compute-intensive-task/WA_JavaTSPSolver.png
   ["Traveling Salesman"-Problemclient]: ./media/virtual-machines-java-run-compute-intensive-task/WA_JavaTSPClient.png
-  [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Hinzufügen eines Zertifikats zum Java CA-Zertifikatspeicher]: ../java-add-certificate-ca-store
   [Screenshot des Service Bus-Knotens]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_02_SvcBusNode.jpg

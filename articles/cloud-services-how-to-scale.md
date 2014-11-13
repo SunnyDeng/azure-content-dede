@@ -1,10 +1,8 @@
-<properties linkid="manage-services-how-to-scale-a-cloud-service" urlDisplayName="How to scale" pageTitle="How to scale a cloud service - Azure" metaKeywords="Azure link resource, scaling cloud service" description="Learn how to scale a cloud service and linked resources in Azure." metaCanonical="" services="cloud-services" documentationCenter="" title="How to Scale an Application" authors="davidmu" solutions="" manager="jeffreyg" editor="mattshel" />
+<properties urlDisplayName="How to scale" pageTitle="Skalieren eines Cloud-Diensts &ndash; Azure" metaKeywords="Azure link resource, scaling cloud service" description="Hier erfahren Sie, wie Sie einen Cloud-Dienst und verkn&uuml;pfte Ressourcen in Azure skalieren." metaCanonical="" services="cloud-services" documentationCenter="" title="Skalieren einer Anwendung" authors="davidmu" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="davidmu" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/21/2014" ms.author="davidmu" />
 
 # Skalieren einer Anwendung
-
-[WACOM.INCLUDE [Haftungsausschluss](../includes/disclaimer.md)]
 
 Auf der Seite "Skalieren" des Azure Verwaltungsportals können Sie Ihre Anwendung manuell skalieren oder Parameter für die automatische Skalierung festlegen. Skaliert werden können Anwendungen, die Webrollen, Workerrollen oder virtuelle Computer ausführen. Sie skalieren eine Anwendung, die Instanzen von Webrollen und Workerrollen ausführt, indem Sie Rolleninstanzen hinzufügen oder entfernen, um die Arbeitslast zu bewältigen.
 
@@ -192,7 +190,6 @@ Sie können die automatische Skalierung Ihrer Anwendung planen, indem Sie Zeitpl
 
 7.  Nachdem Sie die Zeitpläne gespeichert haben, werden diese in der Liste angezeigt. Sie können einen Zeitplan auswählen, den Sie verwenden möchten, und dann die Skalierungseinstellungen ändern. Die Skalierungseinstellungen kommen nur während des ausgewählten Zeitplans zur Anwendung. Zum Bearbeiten von Zeitplänen klicken Sie auf **set up schedule times**.
 
-  [Haftungsausschluss]: ../includes/disclaimer.md
   [Verwaltung der Verfügbarkeit virtueller Computer]: http://www.windowsazure.com/de-de/manage/windows/common-tasks/manage-vm-availability/
   [Größen virtueller Computer und Cloud-Dienste für Windows Azure]: http://msdn.microsoft.com/de-de/library/dn197896.aspx
   [Verwenden des Warteschlangenspeicherdiensts]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/queue-service
@@ -204,12 +201,20 @@ Sie können die automatische Skalierung Ihrer Anwendung planen, indem Sie Zeitpl
   [Planen der Anwendungsskalierung]: #schedule
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [Skalierungsseite]: ./media/cloud-services-how-to-scale/CloudServices_ManualScaleRoles.png
+  [Skalierung (Rolle)]: ./media/cloud-services-how-to-scale/CloudServices_SliderRole.png
   [Durchschnittliche CPU-Nutzung]: #averagecpu
   [Warteschlangennachrichten]: #queuemessages
   [AutoSkalieren aktiviert]: ./media/cloud-services-how-to-scale/CloudServices_AutoscaleOn.png
   [Instanzenbereich]: ./media/cloud-services-how-to-scale/CloudServices_InstanceRange.png
   [Ziel-CPU]: ./media/cloud-services-how-to-scale/CloudServices_TargetCPURange.png
+  [Hochskalieren (CPU)]: ./media/cloud-services-how-to-scale/CloudServices_ScaleUpBy.png
+  [Wartezeit (Hochskalieren)]: ./media/cloud-services-how-to-scale/CloudServices_ScaleUpWaitTime.png
+  [Herunterskalieren (CPU)]: ./media/cloud-services-how-to-scale/CloudServices_ScaleDownBy.png
+  [Wartezeit (Herunterskalieren)]: ./media/cloud-services-how-to-scale/CloudServices_ScaleDownWaitTime.png
+  [Skalieren (Warteschlange)]: ./media/cloud-services-how-to-scale/CloudServices_QueueScale.png
+  [Warteschlangen (Bereich)]: ./media/cloud-services-how-to-scale/CloudServices_QueueRange.png
   [Speicherkontoname]: ./media/cloud-services-how-to-scale/CloudServices_StorageAccountName.png
   [Warteschlangenname]: ./media/cloud-services-how-to-scale/CloudServices_QueueName.png
   [Nachrichtenanzahl]: ./media/cloud-services-how-to-scale/CloudServices_TargetMessageNumber.png
   [Verknüpfte Ressourcen]: ./media/cloud-services-how-to-scale/CloudServices_ScaleLinkedResources.png
+  [Zeitplan (Skalierung)]: ./media/cloud-services-how-to-scale/CloudServices_SetUpSchedule.png

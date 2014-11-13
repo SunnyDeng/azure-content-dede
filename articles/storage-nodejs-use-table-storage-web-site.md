@@ -1,6 +1,6 @@
-<properties linkid="dev-nodejs-tutorials-web-site-with-storage" urlDisplayName="Website with Storage" pageTitle="Node.js website with table storage | Microsoft Azure" metaKeywords="Azure table storage Node.js, Azure Node.js application, Azure Node.js tutorial, Azure Node.js example" description="A tutorial that teaches you how to use the Azure Table service to store data from a Node application hosted on an Azure website." metaCanonical="" services="web-sites,storage" documentationCenter="Node.js" title="Node.js Web Application using the Azure Table Service" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="Website with Storage" pageTitle="Node.js-Website mit Tabellenspeicher | Microsoft Azure" metaKeywords="Azure table storage Node.js, Azure Node.js application, Azure Node.js tutorial, Azure Node.js example" description="In diesem Lernprogramm erfahren Sie, wie Sie den Tabellendienst zum Speichern von Daten aus einer Node-Anwendung, die auf einer Azure-Website gehostet wird, verwenden k&ouml;nnen." metaCanonical="" services="web-sites,storage" documentationCenter="nodejs" title="Node.js-Webanwendung mit Azure-Tabellendienst" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Node.js-Webanwendung mit Azure-Tabellendienst
 
@@ -72,7 +72,7 @@ In diesem Abschnitt erstellen Sie eine neue Node-Anwendung und fügen Modulpaket
 
         npm install express-generator@4.2.0 -g
 
-    > [WACOM.NOTE] Bei Verwendung des Parameters "-g" wird in einigen Betriebssystemen etwa folgender Fehler angezeigt: **Error: EPERM, chmod '/usr/local/bin/express'**, verbunden mit der Aufforderung, das Konto als Administrator auszuführen. Verwenden Sie in diesem Fall den Befehl **sudo**, um npm mit einer höheren Berechtigungsebene auszuführen.
+    > [WACOM.NOTE] Bei Verwendung des Parameters "-g" wird in einigen Betriebssystemen etwa folgender Fehler angezeigt: **Error: EPERM, chmod '/usr/local/bin/express'**, verbunden mit der Aufforderung, das Konto als Administrator auszuführen. Verwenden Sie in diesem Fall den Befehl **sudo**, um npm mit einer höheren Berechtigungsstufe auszuführen.
 
     Die Ausgabe dieses Befehls sollte ungefähr wie folgt aussehen:
 
@@ -601,7 +601,7 @@ Zuvor haben wir Code implementiert, der nach einer Umgebungsvariablen sucht oder
 
     ![Öffnen des Dashboards der Website][Öffnen des Dashboards der Website]
 
-2.  Klicken Sie auf **KONFIGURIEREN**, und suchen Sie den Abschnitt **app settings** der Seite.
+2.  Klicken Sie auf **KONFIGURIEREN**, und suchen Sie den Abschnitt **App-Einstellungen** der Seite.
 
     ![Konfigurationslink][Konfigurationslink]
 
@@ -613,11 +613,11 @@ Zuvor haben wir Code implementiert, der nach einer Umgebungsvariablen sucht oder
 
     -   **TABLE\_NAME** – 'tasks'
 
-    ![app settings][app settings]
+    ![App-Einstellungen][App-Einstellungen]
 
 4.  Zum Abschluss klicken Sie auf das Symbol **SPEICHERN** unten auf der Seite, um diese Änderung in die Laufzeitumgebung zu übernehmen.
 
-    ![Speichern im Abschnitt "app settings"][Speichern im Abschnitt "app settings"]
+    ![Speichern im Abschnitt 'App-Einstellungen'][Speichern im Abschnitt 'App-Einstellungen']
 
 5.  Wechseln Sie über die Befehlszeile in das Verzeichnis **tasklist**, und entfernen Sie die Datei **config.json** mit dem folgenden Befehl:
 
@@ -628,7 +628,7 @@ Zuvor haben wir Code implementiert, der nach einer Umgebungsvariablen sucht oder
 
         git push azure master
 
-Nachdem die Änderungen in Azure bereitgestellt wurden, sollte Ihre Webanwendung weiterhin funktionieren, da sie nun die Verbindungszeichenfolge aus dem Eintrag in **app settings** liest. Um dies zu überprüfen, ändern Sie den Wert für den Eintrag **STORAGE\_KEY** unter **app settings** in einen ungültigen Wert. Nachdem Sie diesen Wert gespeichert haben, sollte die Website aufgrund der ungültigen Einstellung für den Speicherzugriffsschlüssel nicht mehr funktionieren.
+Nachdem die Änderungen in Azure bereitgestellt wurden, sollte Ihre Webanwendung weiterhin funktionieren, da sie nun die Verbindungszeichenfolge aus dem Eintrag in **App-Einstellungen** liest. Um dies zu überprüfen, ändern Sie den Wert für den Eintrag **STORAGE\_KEY** unter **app settings** in einen ungültigen Wert. Nachdem Sie diesen Wert gespeichert haben, sollte die Website aufgrund der ungültigen Einstellung für den Speicherzugriffsschlüssel nicht mehr funktionieren.
 
 ## Nächste Schritte
 
@@ -636,18 +636,15 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 
 ## Zusätzliche Ressourcen
 
-[Azure-Befehlszeilentool für Mac und Linux] 
-[Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[Veröffentlichen auf Azure-Websites mit Git]: /de-de/documentation/articles/web-sites-publish-source-control/
+[Azure-Befehlszeilentool für Mac und Linux] [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Veröffentlichen auf Azure-Websites mit Git][Veröffentlichen auf Azure-Websites mit Git]: /de-de/documentation/articles/web-sites-publish-source-control/
 [Azure Developer Center]: /de-de/develop/nodejs/
 
   [Node]: http://nodejs.org
-[Azure-Befehlszeilentool für Mac und Linux]: /de-de/documentation/articles/xplat-cli/
-
   [Git]: http://git-scm.com
   [Webseite mit einer leeren Aufgabenliste]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Azure-Portal]: http://windowsazure.com
+  [+Neu]: ./media/storage-nodejs-use-table-storage-web-site/plus-new.png
   [Speicherkonto]: ./media/storage-nodejs-use-table-storage-web-site/new-storage.png
   [Schnellerfassung]: ./media/storage-nodejs-use-table-storage-web-site/quick-storage.png
   [Zugriffsschlüssel]: ./media/storage-nodejs-use-table-storage-web-site/manage-access-keys.png
@@ -657,12 +654,12 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
   [1]: http://getbootstrap.com/
   [Ein Bild des neuen Elements in der Aufgabenliste]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_list.png
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-  [antares-iaas-signup]: ../includes/antares-iaas-signup.md
   [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle]: /de-de/documentation/articles/xplat-cli/
   [Die Downloadseite]: ./media/storage-nodejs-use-table-storage-web-site/azure-account-download-cli.png
   [Git remote]: http://git-scm.com/docs/git-remote
   [Öffnen des Dashboards der Website]: ./media/storage-nodejs-use-table-storage-web-site/go_to_dashboard.png
   [Konfigurationslink]: ./media/storage-nodejs-use-table-storage-web-site/sql-task-configure.png
-  [app settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
-  [Speichern im Abschnitt "app settings"]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
+  [App-Einstellungen]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
+  [Speichern im Abschnitt 'App-Einstellungen']: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
   [Node.js-Webanwendung mit MongoDB]: /de-de/documentation/articles/web-sites-nodejs-store-data-mongodb/
+  [Veröffentlichen auf Azure-Websites mit Git]: /de-de/documentation/articles/web-sites-publish-source-control/

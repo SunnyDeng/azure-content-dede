@@ -1,6 +1,6 @@
-<properties linkid="manage-windows-howto-logon" urlDisplayName="Log on to a VM" pageTitle="Log on to a virtual machine running Windows Server" metaKeywords="Azure logging on vm, vm portal" description="Learn how to log on to a virtual machine running Windows Server 2008 R2 by using the Azure Management Portal." metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Log on to a Virtual Machine Running Windows Server" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
+<properties linkid="manage-windows-howto-logon" urlDisplayName="Log on to a VM" pageTitle="Anmelden an einem virtuellen Computer unter Windows Server" metaKeywords="Azure logging on vm, vm portal" description="Erfahren Sie, wie Sie sich mithilfe des Azure-Verwaltungsportals auf einem virtuellen Computer unter Windows Server 2008 R2 anmelden." metaCanonical="" services="virtual-machines" documentationCenter="" title="Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgef&uuml;hrt wird" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
 
-> [WACOM.NOTE] Tipps zu Anforderungen und Fehlerbehebung finden Sie unter [Verbindung zu einem virtuellen Azure-Computer mit RDP oder SSH][Verbindung zu einem virtuellen Azure-Computer mit RDP oder SSH].
+> [WACOM.NOTE] Anforderungen und Tipps zur Problembehandlung finden Sie unter [Verbindung mit einem virtuellen Azure-Computer mit RDP oder SSH][Verbindung mit einem virtuellen Azure-Computer mit RDP oder SSH].
 
 1.  Melden Sie sich am [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an, falls noch nicht geschehen.
 
@@ -10,7 +10,7 @@
 
     ![Melden Sie sich beim virtuellen Computer an.][Melden Sie sich beim virtuellen Computer an.]
 
-4.  Klicken Sie auf **Öffnen**, um die Remotedesktopprotokoll-Datei zu verwenden, die automatisch für den virtuellen Computer erstellt wurde.
+4.  Klicken Sie auf **Öffnen**, um die Remotedesktop-Protokolldatei zu verwenden, die automatisch für den virtuellen Computer erstellt wurde.
 
 5.  Klicken Sie auf **Verbinden**, um die Verbindung herzustellen.
 
@@ -24,7 +24,7 @@
 
     Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbeiten.
 
-  [Verbindung zu einem virtuellen Azure-Computer mit RDP oder SSH]: http://go.microsoft.com/fwlink/p/?LinkId=398294
+  [Verbindung mit einem virtuellen Azure-Computer mit RDP oder SSH]: http://go.microsoft.com/fwlink/p/?LinkId=398294
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Melden Sie sich beim virtuellen Computer an.]: ./media/virtual-machines-log-on-win-server/connectwindows.png
   [Stellen Sie eine Verbindung her.]: ./media/virtual-machines-log-on-win-server/connectpublisher.png

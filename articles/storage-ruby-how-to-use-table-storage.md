@@ -1,4 +1,4 @@
-<properties linkid="dev-ruby-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage (Ruby) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Ruby, table storage Ruby" description="Learn how to use the table storage service in Azure. Code samples are written using the Ruby API." metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Table Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Ruby) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Ruby, table storage Ruby" description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele verwenden die Ruby-API." metaCanonical="" services="storage" documentationCenter="Ruby" title="Verwenden des Tabellenspeicherdiensts von Ruby" authors="guayan" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="01/01/1900" ms.author="guayan" />
 
@@ -165,6 +165,7 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
 -   Besuchen Sie das [Azure SDK for Ruby][Azure SDK for Ruby]-Repository auf GitHub
 
   [Nächste Schritte]: #next-steps
+  [Was ist der Tabellenspeicherdienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-a-windows-azure-storage-account
   [Erstellen einer Ruby-Anwendung]: #create-a-ruby-application
@@ -179,8 +180,6 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
   [Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften]: #how-to-query-a-subset-of-entity-properties
   [Gewusst wie: Löschen einer Entität]: #how-to-delete-an-entity
   [Gewusst wie: Löschen einer Tabelle]: #how-to-delete-a-table
-  [howto-table-storage]: ../includes/howto-table-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
   [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-upload-data-for-hadoop-jobs-in-hdinsight" urlDisplayName="Upload Data" pageTitle="Upload data for Hadoop jobs in HDInsight | Azure" metaKeywords="" description="Learn how to upload and access data in HDInsight using Azure Storage Explorer, Azure PowerShell, the Hadoop command line, or Sqoop." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Upload data for Hadoop jobs in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties urlDisplayName="Upload Data" pageTitle="Hochladen von Daten f&uuml;r Hadoop-Auftr&auml;ge in HDInsight | Azure" metaKeywords="" description="Erfahren Sie, wie Sie Daten in HDInsight mithilfe von Azure-Speicher-Explorer, Azure PowerShell, der Hadoop-Befehlszeile oder Sqoop hochladen und abrufen k&ouml;nnen." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Hochladen von Daten f&uuml;r Hadoop-Auftr&auml;ge in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
@@ -77,7 +77,7 @@ In den Azure Explorer-Tools sehen Sie möglicherweise einige Dateien mit 0 Byte.
 
 ## <span id="storageexplorer"></span></a>Hochladen von Daten zum Blob-Speicher mit Azure-Speicher-Explorer
 
-*Azure-Speicher-Explorer* ist ein hilfreiches Tool zum Prüfen und Ändern der Daten in Ihrem Azure-Speicher. Dieses kostenlose Tool kann von <http://azurestorageexplorer.codeplex.com/></a> heruntergeladen werden.
+*Azure-Speicher-Explorer* ist ein hilfreiches Tool zum Prüfen und Ändern der Daten in Ihrem Azure-Speicher. Dieses kostenlose Tool kann von [][]<http://azurestorageexplorer.codeplex.com/></a> heruntergeladen werden.
 
 Bevor Sie das Tool verwenden können, müssen Sie den Namen Ihres Azure-Speicherkontos und den Kontoschlüssel kennen. Anweisungen zum Abrufen dieser Informationen finden Sie im Abschnitt 'How to: View, copy and regenerate storage access keys' (Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln) unter [Verwalten von Speicherkonten][Verwalten von Speicherkonten].
 
@@ -198,6 +198,7 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lernen Sie anhand der 
   [Importieren von Daten aus der Azure-SQL-Datenbank in den Blob-Speicher mit Sqoop]: #sqoop
   [AzCopy herunterladen]: http://aka.ms/WaCopy
   [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell/
+  []: http://azurestorageexplorer.codeplex.com/ "Azure Storage Explorer"
   [Verwalten von Speicherkonten]: ../storage-manage-storage-account/
   [HDI.AzureStorageExplorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
   [HDI.ASEAddAccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png

@@ -1,10 +1,10 @@
-<properties linkid="develop-media-services-how-to-guides-check-job-progress" urlDisplayName="Check Job Progress" pageTitle="How to Check Job Progress in Media Services - Azure" metaKeywords="" description="Learn how to use event handler code to track job progress and send status updates. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Check Job Progress" authors="migree" solutions="" manager="" editor="" />
+<properties urlDisplayName="Check Job Progress" pageTitle="Pr&uuml;fen des Auftragsfortschritts in Media Services &ndash; Azure" metaKeywords="" description="Erfahren Sie, wie Sie den Fortschritt von Auftr&auml;gen mit Ereignishandlern abrufen und Statusupdates senden k&ouml;nnen. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK f&uuml;r .NET." metaCanonical="" services="media-services" documentationCenter="" title="Gewusst wie: Pr&uuml;fen des Auftragsfortschritts" authors="juliako" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="migree"></tags>
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
 # Gewusst wie: Prüfen des Auftragsfortschritts
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Vorgehensweise: Codieren von Medienobjekten][].
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Vorgehensweise: Codieren von Medienobjekten][Vorgehensweise: Codieren von Medienobjekten].
 
 Beim Ausführen von Aufträgen ist es nützlich, deren Fortschritt verfolgen zu können. Das folgende Codebeispiel definiert den StateChanged-Ereignishandler. Dieser Ereignishandler verfolgt den Auftragsfortschritt und liefert Statusupdates je nach Auftragsstatus. Der Code definiert außerdem die LogJobStop-Methode. Diese Helfermethode protokolliert Fehlerdetails.
 
@@ -83,9 +83,9 @@ Beim Ausführen von Aufträgen ist es nützlich, deren Fortschritt verfolgen zu 
         return jobID.Replace(":", "_");
     }
 
-# Nächste Schritte
+## Nächste Schritte
 
-Sie haben gelernt, wie Sie Aufgaben erstellen und deren Fortschritt überwachen und können nun mit dem Schutz von Medienobjekten fortfahren. Weitere Informationen finden Sie unter [Gewusst wie: Schützen von Medienobjekten in Azure Media Services][].
+Sie haben gelernt, wie Sie Aufgaben erstellen und deren Fortschritt überwachen und können nun mit dem Schutz von Medienobjekten fortfahren. Weitere Informationen finden Sie unter [Gewusst wie: Schützen von Medienobjekten in Azure Media Services][Gewusst wie: Schützen von Medienobjekten in Azure Media Services].
 
   [Vorgehensweise: Codieren von Medienobjekten]: http://go.microsoft.com/fwlink/?LinkID=301753&clcid=0x409
   [Gewusst wie: Schützen von Medienobjekten in Azure Media Services]: http://go.microsoft.com/fwlink/?LinkID=301813&clcid=0x409

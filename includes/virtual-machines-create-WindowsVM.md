@@ -1,55 +1,55 @@
-1.  Melden Sie sich beim Azure [Verwaltungsportal][Verwaltungsportal] an. Testen Sie das [kostenlose Testkonto][kostenlose Testkonto], wenn Sie noch kein Abonnement haben.
+1.  Melden Sie sich beim Azure [Verwaltungsportal][Verwaltungsportal] an. Testen Sie die [kostenlose Testversion][kostenlose Testversion], wenn Sie noch nicht über ein Abonnement verfügen.
 
-2.  Klicken Sie in der Befehlsleiste am unteren Ende des Fensters auf **Neu**.
+2.  Klicken Sie unten im Fenster auf der Befehlsleiste auf **Neu**.
 
-3.  Unter **Compute** klicken Sie auf **Virtueller Computer** und anschließend auf **From Gallery**.
+3.  Klicken Sie unter **Berechnen** auf **Virtueller Computer** und anschließend auf **Aus Katalog**.
 
-    ![Navigieren Sie zu From Gallery in der Befehlsleiste][Navigieren Sie zu From Gallery in der Befehlsleiste]
+    ![Navigieren Sie auf der Befehlsleiste zu „Aus Katalog“.][Navigieren Sie auf der Befehlsleiste zu „Aus Katalog“.]
 
-4.  Im ersten Bildschirm können Sie für Ihren virtuellen Computer ein **Image** aus einer Liste in der Image-Galerie auswählen. (Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.) Klicken Sie auf den Pfeil, um fortzufahren.
+4.  Auf dem ersten Bildschirm können Sie die Option **Image auswählen** für Ihren virtuellen Computer aus einer der Listen in der Image-Galerie auswählen. (Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.) Klicken Sie auf den Pfeil, um fortzufahren.
 
-    ![Wählen Sie ein Image aus][Wählen Sie ein Image aus]
+    ![Wählen Sie ein Image aus.][Wählen Sie ein Image aus.]
 
-5.  Im zweiten Bildschirm wählen Sie einen Computernamen, Größe sowie Benutzername und Passwort des Administrators aus. Wenn Sie den virtuellen Azure-Computer nur ausprobieren möchten, füllen Sie die Felder wie im Bild unten angegeben aus. Andernfalls wählen Sie die benötigte Schicht und die Größe, um Ihre Anwendung oder Ihren Leistungsumfang auszuführen. Nachfolgend finden Sie detaillierte Informationen, die Ihnen beim Ausfüllen helfen:
+5.  Auf dem zweiten Bildschirm können Sie einen Computernamen, die Größe sowie den Administratorbenutzernamen und das -kennwort auswählen. Wenn Sie Azure Virtual Machines einfach testen möchten, füllen Sie die Felder aus, wie dies im folgenden Bild gezeigt wird. Wählen Sie ansonsten eine Stufe und die Größe aus, die erforderlich sind, damit Ihre App oder Ihre Arbeitsauslastung ausgeführt werden kann. Im Folgenden finden Sie einige Details, die Ihnen beim Ausfüllen helfen:
 
-    -   **Neuer Benutzername** bezieht sich auf das Administratorkonto, dass Sie zur Verwaltung des Servers verwenden. Geben Sie für dieses Konto ein individuelles Passwort an und stellen Sie sicher, dass Sie es nicht vergessen. **Sie brauchen den Benutzernamen und das Passwort, um sich am virtuellen Computer anzumelden**.
+    -   **Neuer Benutzername** bezieht sich auf das Administratorkonto, das Sie zum Verwalten des Servers verwenden. Erstellen Sie ein eindeutiges Kennwort für dieses Konto, und merken Sie sich das Kennwort. **Sie benötigen Benutzername und Kennwort, um sich am virtuellen Computer anzumelden**.
 
-    -   Die Größe eines virtuellen Computers wirkt sich auf seine Betriebskosten sowie auf die Konfigurationsoptionen, wie die Anzahl der Datenträger, die Sie anschließen können, aus. Detaillierte Informationen finden Sie unter [Größen virtueller Computer und Clouddienste für Azure][Größen virtueller Computer und Clouddienste für Azure].
+    -   Die Größe eines virtuellen Computers wirkt sich auf die Kosten für dessen Verwendung sowie auf die Konfigurationsoptionen wie die Anzahl der von Ihnen anfügbaren Datenträger aus. Detaillierte Informationen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Azure][Größen virtueller Computer und Cloud-Dienste für Azure].
 
-    ![Konfigurieren der Eigenschaften des virtuellen Computers][Konfigurieren der Eigenschaften des virtuellen Computers]
+    ![Konfigurieren Sie die Eigenschaften des virtuellen Computers.][Konfigurieren Sie die Eigenschaften des virtuellen Computers.]
 
-6.  Im dritten Bildschirm können Sie Ressourcen für Netzwerkerstellung, Speicherung und Verfügbarkeit konfigurieren. Nachfolgend finden Sie detaillierte Informationen, die Ihnen beim Ausfüllen helfen:
+6.  Auf dem dritten Bildschirm können Sie die Ressourcen für Netzwerk, Speicher und Verfügbarkeit konfigurieren. Im Folgenden finden Sie einige Details, die Ihnen beim Ausfüllen helfen:
 
-    -   Der **DNS-Name des Clouddienstes** ist der allgemeine DNS-Name, der Teil des URIs wird, das verwendet wird, um den virtuellen Computer zu kontaktieren. Sie müssen einen eigenen Namen für den Clouddienst angeben, weil er in Azure einzigartig sein muss. Clouddienste sind wichtig für Szenarios, die [mehrere virtuelle Computer][mehrere virtuelle Computer] verwenden.
+    -   Das **DNS-Name des Cloud-Diensts** ist der globale DNS-Name, der Teil des URIs wird, der zum Kontaktieren des virtuellen Computers verwendet wird. Sie müssen einen eigenen Namen für den Cloud-Dienst eingeben, da dieser in Azure eindeutig sein muss. Cloud-Dienste sind wichtig für Szenarien mit [mehreren virtuellen Computern][mehreren virtuellen Computern].
 
-    -   Bei **Region/Affinitätsgruppe/Virtuelles Netzwerk** geben Sie eine Region an, die zu Ihrem Ort passt. Sie können stattdessen auch ein virtuelles Netzwerk angeben.
+    -   Verwenden Sie für **Region/Affinitätsgruppe/Virtuelles Netzwerk** eine Region, die für Ihren Standort angemessen ist. Sie können stattdessen ein virtuelles Netzwerk angeben.
 
-    > [WACOM.NOTE] Wenn der virtuelle Computer ein virtuelles Netzwerk verwenden soll, **müssen** Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers angeben. Sie können den virtuellen Computer nicht zu einem virtuellen Netzwerk hinzufügen, nachdem Sie ihn erstellt haben. Weitere Informationen finden Sie unter [Überblick über virtuelle Azure-Netzwerke][Überblick über virtuelle Azure-Netzwerke].
+    > [WACOM.NOTE] Wenn der virtuelle Computer ein virtuelles Netzwerk verwenden soll, **müssen** Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers angeben. Sie können den virtuellen Computer nicht mit einem virtuellen Netzwerk verknüpfen, nachdem Sie den virtuellen Computer erstellt haben. Weitere Informationen finden Sie unter [Überblick über Azure Virtual Network][Überblick über Azure Virtual Network].
 
-    -   Detaillierte Informationen über die Konfiguration von Endpunkten finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer][Einrichten von Endpunkten für einen virtuellen Computer].
+    -   Unter [Gewusst wie: Einrichten von Endpunkten für einen virtuellen Computer][Gewusst wie: Einrichten von Endpunkten für einen virtuellen Computer] finden Sie Einzelheiten über das Konfigurieren von Endpunkten.
 
-    ![Konfigurieren der verbundenen Ressourcen des virtuellen Computers][Konfigurieren der verbundenen Ressourcen des virtuellen Computers]
+    ![Konfigurieren Sie die verbundenen Ressourcen des virtuellen Computers.][Konfigurieren Sie die verbundenen Ressourcen des virtuellen Computers.]
 
-7.  Im vierten Konfigurationsbildschirm können Sie den VM-Agent und einige der verfügbaren Erweiterungen konfigurieren. Aktivieren Sie das Kontrollkästchen, um den virtuellen Computer zu erstellen.
+7.  Auf dem vierten Konfigurationsbildschirm können Sie den VM-Agent und einige der verfügbaren Erweiterungen konfigurieren. Aktivieren Sie das Kontrollkästchen, um den virtuellen Computer zu erstellen.
 
-    ![Konfiguration des VM-Agents und der Erweiterungen für den virtuellen Computer][Konfiguration des VM-Agents und der Erweiterungen für den virtuellen Computer]
+    ![Konfigurieren Sie den VM-Agent und die Erweiterungen für den virtuellen Computer.][Konfigurieren Sie den VM-Agent und die Erweiterungen für den virtuellen Computer.]
 
-    > [WACOM.NOTE] Dieser VM-Agent stellt die Umgebung bereit, in der Sie Erweiterungen installieren können, die Ihnen bei der Interaktion mit dem virtuellen Computer und seiner Verwaltung helfen können. Weitere Informationen erhalten Sie unter [Verwenden von Erweiterungen][Verwenden von Erweiterungen].
+    > [WACOM.NOTE] Der VM-Agent stellt Ihnen die Umgebung für das Installieren von Erweiterungen bereit, die Ihnen bei der Interaktion mit dem virtuellen Computer oder bei dessen Verwaltung helfen können. Weitere Informationen erhalten Sie unter [Verwenden von Erweiterungen][Verwenden von Erweiterungen].
 
-8.  Nach der Erstellung des virtuellen Computers wird der neue virtuelle Computer im Verwaltungsportal unter **Virtuelle Computer** aufgelistet. In diesen Abschnitten werden auch der entsprechende Clouddienst und das Speicherkonto erstellt und aufgelistet. Der virtuelle Computer und der Clouddienst werden automatisch gestartet. Das Verwaltungsportal zeigt ihren Status als **Laufend** an.
+8.  Nach der Erstellung des virtuellen Computers führt das Verwaltungsportal den neuen virtuellen Computer unter **Virtuelle Computer** auf. Der entsprechende Cloud-Dienst bzw. das Speicherkonto werden ebenfalls in diesen Abschnitten erstellt und aufgeführt. Der virtuelle Computer und der Cloud-Dienst werden automatisch gestartet, und das Verwaltungsportal zeigt ihren Status als **Wird ausgeführt** an.
 
-    ![Konfiguration des VM-Agents und der Endpunkte des virtuellen Computers][Konfiguration des VM-Agents und der Endpunkte des virtuellen Computers]
+    ![Konfigurieren Sie den VM-Agent und die Endpunkte des virtuellen Computers.][Konfigurieren Sie den VM-Agent und die Endpunkte des virtuellen Computers.]
 
   [Verwaltungsportal]: http://manage.windowsazure.com
-  [kostenlose Testkonto]: http://www.windowsazure.com/de-de/pricing/free-trial/
-  [Navigieren Sie zu From Gallery in der Befehlsleiste]: ./media/virtual-machines-create-WindowsVM/fromgallery.png
-  [Wählen Sie ein Image aus]: ./media/virtual-machines-create-WindowsVM/chooseimage.png
-  [Größen virtueller Computer und Clouddienste für Azure]: http://go.microsoft.com/fwlink/p/?LinkId=466520
-  [Konfigurieren der Eigenschaften des virtuellen Computers]: ./media/virtual-machines-create-WindowsVM/vmconfiguration.png
-  [mehrere virtuelle Computer]: http://www.windowsazure.com/de-de/documentation/articles/cloud-services-connect-virtual-machine/
-  [Überblick über virtuelle Azure-Netzwerke]: http://go.microsoft.com/fwlink/p/?LinkID=294063
-  [Einrichten von Endpunkten für einen virtuellen Computer]: http://www.windowsazure.com/de-de/documentation/articles/virtual-machines-set-up-endpoints/
-  [Konfigurieren der verbundenen Ressourcen des virtuellen Computers]: ./media/virtual-machines-create-WindowsVM/resourceconfiguration.png
-  [Konfiguration des VM-Agents und der Erweiterungen für den virtuellen Computer]: ./media/virtual-machines-create-WindowsVM/agent-and-extensions.png
+  [kostenlose Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/
+  [Navigieren Sie auf der Befehlsleiste zu „Aus Katalog“.]: ./media/virtual-machines-create-WindowsVM/fromgallery.png
+  [Wählen Sie ein Image aus.]: ./media/virtual-machines-create-WindowsVM/chooseimage.png
+  [Größen virtueller Computer und Cloud-Dienste für Azure]: http://go.microsoft.com/fwlink/p/?LinkId=466520
+  [Konfigurieren Sie die Eigenschaften des virtuellen Computers.]: ./media/virtual-machines-create-WindowsVM/vmconfiguration.png
+  [mehreren virtuellen Computern]: http://www.windowsazure.com/de-de/documentation/articles/cloud-services-connect-virtual-machine/
+  [Überblick über Azure Virtual Network]: http://go.microsoft.com/fwlink/p/?LinkID=294063
+  [Gewusst wie: Einrichten von Endpunkten für einen virtuellen Computer]: http://www.windowsazure.com/de-de/documentation/articles/virtual-machines-set-up-endpoints/
+  [Konfigurieren Sie die verbundenen Ressourcen des virtuellen Computers.]: ./media/virtual-machines-create-WindowsVM/resourceconfiguration.png
+  [Konfigurieren Sie den VM-Agent und die Erweiterungen für den virtuellen Computer.]: ./media/virtual-machines-create-WindowsVM/agent-and-extensions.png
   [Verwenden von Erweiterungen]: http://go.microsoft.com/FWLink/p/?LinkID=390493
-  [Konfiguration des VM-Agents und der Endpunkte des virtuellen Computers]: ./media/virtual-machines-create-WindowsVM/vmcreated.png
+  [Konfigurieren Sie den VM-Agent und die Endpunkte des virtuellen Computers.]: ./media/virtual-machines-create-WindowsVM/vmcreated.png

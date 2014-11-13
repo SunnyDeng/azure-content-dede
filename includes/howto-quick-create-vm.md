@@ -4,17 +4,17 @@
 
 Verwenden Sie die Methode **Schnellerfassung**, um schnell einen virtuellen Computer im Verwaltungsportal zu erstellen. Wenn Sie diesen Computer erstellen, benötigen Sie nur ein einziges Dialogfeld, um die Konfigurationsdetails festzulegen.
 
-**Hinweis**: In diesem Artikel wird die Erstellung eines virtuellen Computers beschrieben, der nicht mit einem virtuellen Netzwerk verbunden ist. Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, wählen Sie stattdessen die Methode **Aus dem Katalog**, und geben Sie das virtuelle Netzwerk zu dem Zeitpunkt an, zu dem Sie den virtuellen Computer erstellen. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke][].
+**Hinweis**: In diesem Artikel wird die Erstellung eines virtuellen Computers beschrieben, der nicht mit einem virtuellen Netzwerk verbunden ist. Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, wählen Sie stattdessen die Methode **Aus dem Katalog**, und geben Sie das virtuelle Netzwerk zu dem Zeitpunkt an, zu dem Sie den virtuellen Computer erstellen. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke][Überblick über virtuelle Azure-Netzwerke].
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
 2.  Klicken Sie in der Befehlsleiste auf **Neu**.
 
-    ![Einen neuen virtuellen Computer erstellen][]
+    ![Neuen virtuellen Computer erstellen][Neuen virtuellen Computer erstellen]
 
 3.  Klicken Sie auf **Virtuelle Computer** und anschließend auf **Schnellerfassung**.
 
-    ![Schnell einen neuen virtuellen Computer erstellen][]
+    ![Schnell einen neuen virtuellen Computer erstellen][Schnell einen neuen virtuellen Computer erstellen]
 
     Das Dialogfeld **Neuen virtuellen Computer erstellen** wird angezeigt.
 
@@ -32,10 +32,10 @@ Verwenden Sie die Methode **Schnellerfassung**, um schnell einen virtuellen Comp
 
     Der neue Computer wird nun auf der Seite **Virtuelle Computer** aufgelistet.
 
-    ![Virtueller Computer erfolgreich erstellt][]
+    ![Virtueller Computer erfolgreich erstellt][Virtueller Computer erfolgreich erstellt]
 
   [Überblick über virtuelle Azure-Netzwerke]: http://go.microsoft.com/fwlink/p/?LinkID=294063
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [Einen neuen virtuellen Computer erstellen]: ./media/howto-quick-create-vm/create.png
+  [Neuen virtuellen Computer erstellen]: ./media/howto-quick-create-vm/create.png
   [Schnell einen neuen virtuellen Computer erstellen]: ./media/howto-quick-create-vm/createquick.png
   [Virtueller Computer erfolgreich erstellt]: ./media/howto-quick-create-vm/vmsuccesswindows.png

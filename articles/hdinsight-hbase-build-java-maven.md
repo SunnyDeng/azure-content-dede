@@ -1,4 +1,4 @@
-<properties title="Build an HBase application using Maven" pageTitle="Build an HBase application using Maven" description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to Azure HDInsight" metaKeywords="Maven hbase hadoop, hbase hadoop, maven java hbase, maven java hbase hadoop, maven java hadoop, hbase hdinsight, hbase java hdinsight, maven hdinsight, maven java hdinsight, hadoop database, hdinsight database" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
+<properties title="Erstellen einer HBase-Anwendung mit Maven" pageTitle="Erstellen einer HBase-Anwendung mit Maven" description="Erfahren Sie, wie Sie mit Apache Maven eine Java-basierte Apache HBase-Anwendung erstellen und anschlie&szlig;end in Azure HDInsight bereitstellen k&ouml;nnen" metaKeywords="Maven hbase hadoop, hbase hadoop, maven java hbase, maven java hbase hadoop, maven java hadoop, hbase hdinsight, hbase java hdinsight, maven hdinsight, maven java hdinsight, hadoop database, hdinsight database" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" manager="paulettm" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2014" ms.author="larryfr" />
 
@@ -116,14 +116,18 @@ Erfahren Sie, wie Sie eine [Apache HBase][Apache HBase]-Anwendung in Java mithil
          */
         -->
         <configuration>
+          <property>
             <name>hbase.cluster.distributed</name>
             <value>true</value>
           </property>
           <property>
             <name>hbase.zookeeper.quorum</name>
-            <value>zookeepernode0:2181 zookeepernode1:2181 zookeepernode2:2181</value>
+            <value>zookeeper0,zookeeper1,zookeeper2</value>
           </property>
-
+          <property>
+            <name>hbase.zookeeper.property.clientPort</name>
+            <value>2181</value>
+          </property>
         </configuration>
 
     Diese Datei wird zum Laden der HBase-Konfiguration für einen HDInsight-Cluster verwendet.

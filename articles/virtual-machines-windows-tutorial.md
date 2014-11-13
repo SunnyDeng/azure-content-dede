@@ -1,14 +1,14 @@
-<properties linkid="manage-windows-tutorial-virtual-machine-gallery" urlDisplayName="Create a virtual machine" pageTitle="Create a virtual machine running Windows Server in Azure" metaKeywords="Azure capture image vm, capturing vm" description="Learn how to capture an image of an Azure virtual machine (VM) running Windows Server. " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
+<properties urlDisplayName="Create a virtual machine" pageTitle="Erstellen eines virtuellen Computers unter Windows in Azure" metaKeywords="Azure capture image vm, capturing vm" description="Erfahren Sie, wie Sie einen virtuellen Computer unter Windows in Azure erstellen, sich anschlie&szlig;end anmelden und einen Datentr&auml;ger anf&uuml;gen k&ouml;nnen." metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kathydav, rasquill" solutions="" manager="timlt" editor="tysonn" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="09/12/2014" ms.author="kathydav" />
 
-# Erstellen eines virtuellen Windows Server-Computers
+# Erstellen eines virtuellen Computers unter Windows
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/virtual-machines-windows-tutorial/" title="Azure-Portal" class="current">Azure-Portal</a><a href="/de-de/documentation/articles/virtual-machines-windows-tutorial-azure-preview/" title="Azure-Vorschauportal">Azure-Vorschauportal</a></div>
 
-In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der Image-Galerie im Azure-Verwaltungsportal ganz einfach einen virtuellen Azure-Computer mit Windows Server erstellen. Die Image-Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
+In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer unter Windows mithilfe eines Windows Server-Imagebeispiels aus der Image-Galerie im Azure-Verwaltungsportal zu erstellen. Die Image-Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
 
-> [WACOM.NOTE] Sie benötigen keine Erfahrung mit Azure-VMs, um dieses Lernprogramm zu verwenden. Sie benötigen jedoch ein Azure-Konto. Sie können ein kostenloses Testkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)][Create a Windows Azure account (in englischer Sprache)].
+> [WACOM.NOTE] Sie benötigen keine Erfahrungen mit Azure-VMs, um dieses Lernprogramm auszuführen. Allerdings benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)][Create a Windows Azure account (in englischer Sprache)].
 
 In diesem Lernprogramm wird Folgendes erläutert:
 
@@ -22,7 +22,9 @@ Wenn Sie ausführlichere Informationen wünschen, rufen Sie [Virtuelle Computer]
 
 In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** im Verwaltungsportal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
 
-> [WACOM.NOTE] Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal][1] verwenden, um einen virtuellen Computer zu erstellen, die Bereitstellung von Anwendungsvorlagen für mehrere Computer zu automatisieren, erweiterte VM-Überwachungs- und Diagnosefeatures zu verwenden usw. Die verfügbaren VM-Konfigurationsoptionen in den beiden Portalen sind ähnlich, aber nicht identisch.
+> [WACOM.NOTE] Wie viele und welche Imagearten in der Galerie verfügbar sind, hängt von Ihrem Abonnementtyp ab. In diesem Lernprogramm wird ein Windows Server-Image verwendet. Ein MSDN-Abonnement weist jedoch möglicherweise zusätzliche für Sie verfügbare Images auf, einschließlich Desktop-Images.
+
+> Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal][1] verwenden, um einen virtuellen Computer zu erstellen, die Bereitstellung von Anwendungsvorlagen für mehrere Computer zu automatisieren, erweiterte VM-Überwachungs- und Diagnosefeatures zu verwenden usw. Die verfügbaren VM-Konfigurationsoptionen in den beiden Portalen sind ähnlich, aber nicht identisch.
 
 [WACOM.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-WindowsVM.md)]
 
@@ -34,7 +36,7 @@ In diesem Abschnitt lernen Sie, wie Sie sich bei dem von Ihnen erstellten virtue
 
 ## <span id="attachdisk"></span> </a>Anschließen eines Datenträgers an den neuen virtuellen Computer
 
-In diesem Abs[MyTestVM auswählen]chnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtuellen Computer anfügen. Weitere Informationen zum Anfügen eines leeren Datenträgers und zum Anfügen eines vorhandenen Datenträgers finden Sie im [Lernprogramm zum Anfügen eines Datenträgers][Lernprogramm zum Anfügen eines Datenträgers].
+In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtuellen Computer anfügen. Weitere Informationen zum Anfügen eines leeren Datenträgers und zum Anfügen eines vorhandenen Datenträgers finden Sie im [Lernprogramm zum Anfügen eines Datenträgers][Lernprogramm zum Anfügen eines Datenträgers].
 
 1.  Melden Sie sich beim Azure [Verwaltungsportal][Verwaltungsportal] an.
 
@@ -51,6 +53,8 @@ In diesem Abs[MyTestVM auswählen]chnitt erfahren Sie, wie Sie einen leeren Date
     ![Anschließen in der Befehlsleiste auswählen][Anschließen in der Befehlsleiste auswählen]
 
 5.  Der **Name des virtuellen Computers**, der **Speicherort**, der **Dateiname** und die **Host-Cache-Voreinstellungen** sind bereits ausgefüllt. Sie müssen lediglich die für den Datenträger gewünschte Größe eingeben. Geben Sie **5** in das Feld **Größe** ein. Klicken Sie auf das Häkchen, um den leeren Datenträger an den virtuellen Computer anzufügen.
+
+    > [WACOM.NOTE] Beachten Sie, dass die Datenträgerimages in Azure als Seitenblobs im Azure-Speicher gespeichert werden. Außerhalb von Azure können virtuelle Festplatten entweder das VHD- oder ein VHDX-Format verwenden. Sie können auch fest, dynamisch erweiterbar oder differenzierend sein. Azure unterstützt das VHD-Format; feste Datenträger. Das feste Format legt den logischen Datenträger in der Datei linear aus, daher wird Datenträger-Offset X bei Blob-Offset X gespeichert. Eine kleinere Fußzeile am Ende des Blobs beschreibt die Eigenschaften der VHD. Oftmals verschwendet das feste Format Speicherplatz, da die meisten Datenträger über große ungenutzte Bereiche davon verfügen. Azure speichert VHD-Dateien jedoch in einem platzsparenden Format. Daher profitieren Sie gleichzeitig von den Vorteilen fester und dynamischer Datenträger. Weitere Informationen finden Sie im Thema [Über VHDs in Azure][Über VHDs in Azure]
 
     ![Größe des leeren Datenträgers festlegen][Größe des leeren Datenträgers festlegen]
 
@@ -98,25 +102,35 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
 
 [Erstellen und Hochladen einer eigenen virtuellen Festplatte mit Windows Server-Betriebssystem][Erstellen und Hochladen einer eigenen virtuellen Festplatte mit Windows Server-Betriebssystem]
 
-[Anfügen eines Datenträgers an einen virtuellen Computer][Lernprogramm zum Anfügen eines Datenträgers]
-
 [Verwalten der Verfügbarkeit virtueller Computer][Verwalten der Verfügbarkeit virtueller Computer]
 
-  [Azure-Portal]: /de-de/documentation/articles/virtual-machines-windows-tutorial/ "Azure-Portal"
+[Starten, Beenden und Löschen virtueller Computer][Starten, Beenden und Löschen virtueller Computer]
+
+[VIDEO: Getting Started with VHDs - What's Really Happening][VIDEO: Getting Started with VHDs - What's Really Happening] (Erste Schritte mit VHDs – was wirklich geschieht) (in englischer Sprache)
+
+[VIDEO: FAQ with Mark Russinovich - Does Windows Azure run Windows?][VIDEO: FAQ with Mark Russinovich - Does Windows Azure run Windows?] (FAQ mit Mark Russinovich – führt Microsoft Azure Windows aus?) (in englischer Sprache)
+
+[VIDEO: Adding a new virtual machine to a Web Farm by making reusable images][VIDEO: Adding a new virtual machine to a Web Farm by making reusable images] (Hinzufügen eines neuen virtuellen Computers zu einer Webfarm durch das Erstellen wiederverwendbarer Images) (in englischer Sprache)
+
+[VIDEO: Adding Virtual Hard Drives, Storage Accounts, and Scaling Virtual Machines][VIDEO: Adding Virtual Hard Drives, Storage Accounts, and Scaling Virtual Machines] (Hinzufügen von VHDs, Speicherkonten und skalierbaren virtuellen Computern) (in englischer Sprache)
+
+[VIDEO: Scott Guthrie starts with Virtual Machines][VIDEO: Scott Guthrie starts with Virtual Machines] (Scott Guthrie beginnt mit der Verwendung von virtuellen Computern) (in englischer Sprache)
+
+[VIDEO: Storage and Disk Basics with Azure Virtual Machines][VIDEO: Storage and Disk Basics with Azure Virtual Machines] (Speicher- und Datenträgergrundlagen bei virtuellen Azure-Computern) (in englischer Sprache)
+
   [Azure-Vorschauportal]: /de-de/documentation/articles/virtual-machines-windows-tutorial-azure-preview/ "Azure-Vorschauportal"
-  [Create a Windows Azure account (in englischer Sprache)]: http://www.windowsazure.com/en-us/develop/php/tutorials/create-a-windows-azure-account/
+  [Create a Windows Azure account (in englischer Sprache)]: http://www.windowsazure.com/de-de/develop/php/tutorials/create-a-windows-azure-account/
   [Erstellen eines virtuellen Computers]: #createvirtualmachine
   [Anmelden bei einem virtuellen Computer nach dessen Erstellung]: #logon
   [Anschließen eines Datenträgers an den neuen virtuellen Computer]: #attachdisk
   [Virtuelle Computer]: http://go.microsoft.com/fwlink/p/?LinkID=271224
   [1]: https://portal.azure.com
-  [virtual-machines-create-WindowsVM]: ../includes/virtual-machines-create-WindowsVM.md
-  [virtual-machines-log-on-win-server]: ../includes/virtual-machines-log-on-win-server.md
   [Lernprogramm zum Anfügen eines Datenträgers]: http://www.windowsazure.com/de-de/documentation/articles/storage-windows-attach-disk/
   [Verwaltungsportal]: http://manage.windowsazure.com
   [MyTestVM auswählen]: ./media/virtual-machines-windows-tutorial/selectvm.png
   [Dashboard auswählen]: ./media/virtual-machines-windows-tutorial/dashboard.png
   [Anschließen in der Befehlsleiste auswählen]: ./media/virtual-machines-windows-tutorial/commandbarattach.png
+  [Über VHDs in Azure]: http://msdn.microsoft.com/de-de/library/azure/dn790344.aspx
   [Größe des leeren Datenträgers festlegen]: ./media/virtual-machines-windows-tutorial/emptydisksize.png
   [Schließen Sie einen leeren Datenträger an.]: ./media/virtual-machines-windows-tutorial/disklistwithdatadisk.png
   [Datei- und Speicherdienste im Server-Manager erweitern]: ./media/virtual-machines-windows-tutorial/fileandstorageservices.png
@@ -128,3 +142,10 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
   [Verbinden virtueller Computer in einem Clouddienst]: http://www.windowsazure.com/de-de/documentation/articles/cloud-services-connect-virtual-machine/
   [Erstellen und Hochladen einer eigenen virtuellen Festplatte mit Windows Server-Betriebssystem]: http://www.windowsazure.com/de-de/documentation/articles/virtual-machines-create-upload-vhd-windows-server/
   [Verwalten der Verfügbarkeit virtueller Computer]: http://www.windowsazure.com/de-de/documentation/articles/manage-availability-virtual-machines/
+  [Starten, Beenden und Löschen virtueller Computer]: http://msdn.microsoft.com/library/azure/dn763935.aspx
+  [VIDEO: Getting Started with VHDs - What's Really Happening]: http://azure.microsoft.com/de-de/documentation/videos/getting-started-with-azure-virtual-machines
+  [VIDEO: FAQ with Mark Russinovich - Does Windows Azure run Windows?]: http://azure.microsoft.com/de-de/documentation/videos/mark-russinovich-windows-on-azure
+  [VIDEO: Adding a new virtual machine to a Web Farm by making reusable images]: http://azure.microsoft.com/de-de/documentation/videos/adding-virtual-machines-web-farm
+  [VIDEO: Adding Virtual Hard Drives, Storage Accounts, and Scaling Virtual Machines]: http://azure.microsoft.com/de-de/documentation/videos/adding-drives-scaling-virtual-machines
+  [VIDEO: Scott Guthrie starts with Virtual Machines]: http://azure.microsoft.com/de-de/documentation/videos/virtual-machines-scottgu
+  [VIDEO: Storage and Disk Basics with Azure Virtual Machines]: http://azure.microsoft.com/de-de/documentation/videos/storage-and-disks-virtual-machines

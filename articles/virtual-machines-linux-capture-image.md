@@ -1,6 +1,6 @@
-<properties linkid="manage-linux-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="Capture an image of a virtual machine running Linux" metaKeywords="Azure Linux vm, Linux vm" description="Learn how to capture an image of an Azure virtual machine (VM) running Linux. " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Linux" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
+<properties urlDisplayName="Capture an image" pageTitle="Erfassen eines Images des virtuellen Computers unter Linux" metaKeywords="Azure Linux vm, Linux vm" description="Erfahren Sie, wie Sie ein Image eines virtuellen Azure-Computers unter Linux erfassen k&ouml;nnen. " metaCanonical="" services="virtual-machines" documentationCenter="" title="Erfassen des Images eines virtuellen Linux-Computers" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav" />
 
 # Erfassen eines virtuellen Linux-Computers, um ihn als Vorlage zu verwenden
 

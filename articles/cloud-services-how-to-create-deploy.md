@@ -1,25 +1,23 @@
-<properties linkid="manage-services-how-to-create-and-deploy-a-cloud-service" urlDisplayName="How to create and deploy" pageTitle="How to create and deploy a cloud service - Azure" metaKeywords="Azure creating cloud service, deleting cloud service" description="Learn how to create and deploy a cloud service using the Quick Create method in Azure." metaCanonical="" services="cloud-services" documentationCenter="" title="How to Create and Deploy a Cloud Service" authors="ryanwi" solutions="" manager="timlt" editor="" />
+<properties urlDisplayName="How to create and deploy" pageTitle="Erstellen und Bereitstellen eines Cloud-Diensts &ndash; Azure" metaKeywords="Azure creating cloud service, deleting cloud service" description="Hier erfahren Sie, wie Sie einen Cloud-Dienst mithilfe der Schnellerfassung in Azure erstellen und bereitstellen." metaCanonical="" services="cloud-services" documentationCenter="" title="Erstellen und Bereitstellen eines Cloud-Diensts" authors="ryanwi" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="ryanwi" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/23/2014" ms.author="ryanwi" />
 
 # Erstellen und Bereitstellen eines Cloud-Diensts
-
-[WACOM.INCLUDE [Haftungsausschluss](../includes/disclaimer.md)]
 
 Das Azure-Verwaltungsportal stellt zwei Methoden zum Erstellen und Bereitstellen eines Cloud-Diensts bereit: **Schnellerstellung** und **Benutzerdefinierte Erstellung**.
 
 In diesem Thema wird erläutert, wie Sie die Schnellerstellungsmethode zum Erstellen eines neuen Cloud-Diensts und dann **Hochladen** verwenden, um ein Cloud-Dienstpaket in Azure hochzuladen und bereitzustellen. Wenn Sie diese Methode verwenden, stellt das Azure-Verwaltungsportal praktische Links zum Erfüllen aller Anforderungen zur Verfügung. Wenn Sie Ihren Cloud-Dienst bei der Erstellung auch bereitstellen möchten, können Sie beides mithilfe von **Benutzerdefinierte Erstellung** durchführen.
 
-**Hinweis** Wenn Sie Ihren Cloud-Dienst von Windows Team Foundation Services (TFS) aus veröffentlichen möchten, verwenden Sie Schnellerstellung. Richten Sie die TFS-Veröffentlichung dann über **Schnellstart** oder das Dashboard ein. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online][TFSTutorialForCloudService] oder in der Hilfe zur **Schnellstart**-Seite.
+**Hinweis** Wenn Sie Ihren Cloud-Dienst von Windows Team Foundation Services (TFS) aus veröffentlichen möchten, verwenden Sie Schnellerstellung. Richten Sie die TFS-Veröffentlichung dann über **Schnellstart** oder das Dashboard ein. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online][Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online] oder in der Hilfe zur **Schnellstart**-Seite.
 
 ## Inhaltsverzeichnis
 
--   [Konzepte](#concepts)
--   [Vorbereiten Ihrer App](#prepare)
--   [Vorbemerkungen][Vorbemerkungen]
--   [Gewusst wie: Erstellen eines Cloud-Diensts mithilfe der Schnellerstellung](#quick)
--   [Gewusst wie: Hochladen eines Zertifikats für einen Cloud-Dienst](#uploadcertificate)
--   [Gewusst wie: Bereitstellen eines Cloud-Diensts](#deploy)
+-   [Konzepte][Konzepte]
+-   [Vorbereiten Ihrer App][Vorbereiten Ihrer App]
+-   [Voraussetzungen][Voraussetzungen]
+-   [Gewusst wie: Erstellen eines Cloud-Diensts mithilfe der Schnellerstellung][Gewusst wie: Erstellen eines Cloud-Diensts mithilfe der Schnellerstellung]
+-   [Gewusst wie: Hochladen eines Zertifikats für einen Cloud-Dienst][Gewusst wie: Hochladen eines Zertifikats für einen Cloud-Dienst]
+-   [Gewusst wie: Bereitstellen eines Cloud-Diensts][Gewusst wie: Bereitstellen eines Cloud-Diensts]
 
 ## <span id="concepts"></span></a>Konzepte
 
@@ -35,138 +33,129 @@ Für die Bereitstellung einer Anwendung als Cloud-Dienst in Azure sind drei Komp
 
 Bevor Sie einen Cloud-Dienst bereitstellen können, müssen Sie das Cloud-Dienstpaket (CSPKG) aus dem Anwendungscode und eine Cloud-Dienstkonfigurationsdatei (CSCFG) erstellen. Jedes Cloud-Dienstpaket enthält Anwendungsdateien und -konfigurationen. Die Dienstkonfigurationsdatei stellt die Konfigurationseinstellungen bereit.
 
-Das Azure-SDK stellt Tools zum Vorbereiten dieser erforderlichen Bereitstellungsdateien bereit. Sie können das SDK auf der Seite [Azure-Downloads](http://www.windowsazure.com/de-de/develop/downloads/) in der Sprache herunterladen, in der Sie den Anwendungscode entwickeln möchten.
-
-Wenn Sie Cloud-Dienste zum ersten Mal verwenden, können Sie ein beispielhaftes Cloud-Dienstpaket (CSPKG) und eine Cloud-Dienstkonfigurationsdatei (CSCFG) aus den [Azure-Codebeispielen](http://code.msdn.microsoft.com/windowsazure/).  herunterladen.
+Das Azure-SDK stellt Tools zum Vorbereiten dieser erforderlichen Bereitstellungsdateien bereit. Sie können das SDK auf der Seite [Azure-Downloads][Azure-Downloads] in der Sprache herunterladen, in der Sie den Anwendungscode entwickeln möchten.
 
 Drei Cloud-Dienstfunktionen benötigen vor dem Export eines Dienstpakets spezielle Konfigurationen:
 
--   Wenn Sie einen Cloud-Dienst bereitstellen möchten, der Secure Sockets Layer (SSL) für die Datenverschlüsselung verwendet, konfigurieren Sie die Anwendung für SSL. Weitere Informationen finden Sie unter [Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt](http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx).
+-   Wenn Sie einen Cloud-Dienst bereitstellen möchten, der Secure Sockets Layer (SSL) für die Datenverschlüsselung verwendet, konfigurieren Sie die Anwendung für SSL. Weitere Informationen finden Sie unter [Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt][Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt].
 
--   Wenn Sie Remotedesktopverbindungen zu Rolleninstanzen konfigurieren möchten, konfigurieren Sie die Rollen für Remotedesktop. Weitere Informationen zum Vorbereiten der Dienstdefinitionsdateien für den Remotezugriff finden Sie im [Überblick über das Einrichten einer Remotedesktopverbindung für eine Rolle](http://msdn.microsoft.com/de-de/library/windowsazure/gg433010.aspx).
+-   Wenn Sie Remotedesktopverbindungen zu Rolleninstanzen konfigurieren möchten, konfigurieren Sie die Rollen für Remotedesktop. Weitere Informationen zum Vorbereiten der Dienstdefinitionsdateien für den Remotezugriff finden Sie im [Einrichten einer Remotedesktopverbindung für eine Rolle in Azure][Einrichten einer Remotedesktopverbindung für eine Rolle in Azure].
 
--   Wenn Sie die ausführliche Überwachung für den Cloud-Dienst konfigurieren möchten, aktivieren Sie für den Cloud-Dienst die Azure-Diagnose. *Minimale Überwachung* (die Standardüberwachungsstufe) verwendet Leistungsindikatoren, die aus den Hostbetriebssystemen für Rolleninstanzen (virtuelle Computer) erfasst wurden. Bei der "ausführlichen Überwachung" werden zusätzliche Kennzahlen basierend auf Leistungsdaten innerhalb der Rolleninstanzen erfasst, um eine genauere Analyse von Problemen zu ermöglichen, die während der Anwendungsverarbeitung auftreten. Informationen zum Aktivieren der Azure-Diagnose finden Sie unter [Aktivieren der Diagnose in Azure](http://www.windowsazure.com/de-de/develop/net/common-tasks/diagnostics/).
+-   Wenn Sie die ausführliche Überwachung für den Cloud-Dienst konfigurieren möchten, aktivieren Sie für den Cloud-Dienst die Azure-Diagnose. *Minimale Überwachung* (die Standardüberwachungsstufe) verwendet Leistungsindikatoren, die aus den Hostbetriebssystemen für Rolleninstanzen (virtuelle Computer) erfasst wurden. Bei der "ausführlichen Überwachung" werden zusätzliche Kennzahlen basierend auf Leistungsdaten innerhalb der Rolleninstanzen erfasst, um eine genauere Analyse von Problemen zu ermöglichen, die während der Anwendungsverarbeitung auftreten. Informationen zum Aktivieren der Azure-Diagnose finden Sie unter [Aktivieren der Diagnose in Azure][Aktivieren der Diagnose in Azure].
 
-## <span id="begin"></span></a>Vorbemerkungen
+-   Sie müssen das Dienstpaket erstellen, um einen Cloud-Dienst mit Bereitstellungen von Webrollen oder Workerrollen zu erstellen. Informationen zu den Dateien dieses Pakets erhalten Sie unter [Einrichten eines Cloud-Diensts für Azure][Einrichten eines Cloud-Diensts für Azure]. Informationen zur Erstellung des Pakets finden Sie unter [Packen einer Azure-Anwendung][Packen einer Azure-Anwendung]. Wenn Sie Visual Studio zur Entwicklung Ihrer Anwendung verwenden, finden Sie weitere Informationen unter [Veröffentlichen eines Cloud-Diensts mit Azure Tools][Veröffentlichen eines Cloud-Diensts mit Azure Tools].
 
--   Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite](http://www.windowsazure.com/de-de/develop/downloads/) zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten. (Dazu haben Sie auch später noch die Möglichkeit.)
+## <span id="begin"></span></a>Voraussetzungen
 
--   Falls Rolleninstanzen ein Zertifikat erfordern, erstellen Sie die Zertifikate. Cloud-Dienste erfordern eine PFX-Datei mit einem privaten Schlüssel. Sie können die Zertifikate zu Azure hochladen, wenn Sie den Cloud-Dienst erstellen und bereitstellen. Informationen zum Erstellen von Zertifikaten finden Sie unter [Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt](http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx).
+-   Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite][Azure-Downloads] zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten. (Dazu haben Sie auch später noch die Möglichkeit.)
 
--   Wenn Sie den Cloud-Dienst für eine Affinitätsgruppe bereitstellen möchten, erstellen Sie die Affinitätsgruppe. Sie können eine Affinitätsgruppe verwenden, um den Cloud-Dienst und andere Azure-Dienste für den gleichen Standort in einer Region bereitzustellen. Sie können die Affinitätsgruppe im Bereich **Netzwerke** des Verwaltungsportals auf der Seite **Affinitätsgruppen** erstellen. Weitere Informationen finden Sie in der Hilfe zur Seite **Affinitätsgruppen**.
+-   Falls Rolleninstanzen ein Zertifikat erfordern, erstellen Sie die Zertifikate. Cloud-Dienste erfordern eine PFX-Datei mit einem privaten Schlüssel. Sie können die Zertifikate zu Azure hochladen, wenn Sie den Cloud-Dienst erstellen und bereitstellen. Weitere Informationen zu Zertifikaten finden Sie unter [Verwalten von Zertifikaten][Verwalten von Zertifikaten].
+
+-   Wenn Sie den Cloud-Dienst für eine Affinitätsgruppe bereitstellen möchten, erstellen Sie die Affinitätsgruppe. Sie können eine Affinitätsgruppe verwenden, um den Cloud-Dienst und andere Azure-Dienste für den gleichen Standort in einer Region bereitzustellen. Sie können die Affinitätsgruppe im Bereich **Netzwerke** des Verwaltungsportals auf der Seite **Affinitätsgruppen** erstellen. Weitere Informationen finden Sie unter [Erstellen einer Affinitätsgruppe im Verwaltungsportal][Erstellen einer Affinitätsgruppe im Verwaltungsportal].
 
 ## <span id="quick"></span></a>Gewusst wie: Erstellen eines Cloud-Diensts mithilfe der Schnellerstellung
 
-1.  Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **Neu**, **Server** und **Cloud-Dienst** und dann auf **Schnellerstellung**.
+1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Neu**\>**Server**\>**Cloud-Dienst**\>**Schnellerstellung**.
 
-    ![CloudServices\_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_QuickCreate.png)
+    ![CloudServices\_QuickCreate][CloudServices\_QuickCreate]
 
-2.  Geben Sie unter **URL** einen Unterdomänennamen ein, der in der öffentlichen URL für den Zugriff auf Ihren Cloud-Dienst in Produktionsbereitstellungen verwendet werden soll. Das URL-Format für Produktionsbereitstellungen lautet: http://*myURL*.cloudapp.net.
+2.  Geben Sie unter **URL** einen Unterdomänennamen ein, der in der öffentlichen URL für den Zugriff auf Ihren Cloud-Dienst in Produktionsbereitstellungen verwendet werden soll. Das URL-Format für Produktionsbereitstellungen lautet: [http://\*meineURL][http://\*meineURL]\*.cloudapp.net.
 
 3.  Wählen Sie unter **Region oder Affinitätsgruppe** die geografische Region oder die Affinitätsgruppe aus, für die der Cloud-Dienst bereitgestellt werden soll. Wählen Sie eine Affinitätsgruppe aus, wenn Sie den Cloud-Dienst für den gleichen Standort wie andere Azure-Dienste innerhalb einer Region bereitstellen möchten.
 
-    > [WACOM.NOTE] 
-    > Öffnen Sie den Bereich **Netzwerke** des Verwaltungsportals, klicken Sie auf **Affinitätsgruppen** und dann entweder auf **Neue Affinitätsgruppe erstellen** oder auf **Erstellen**, um eine Affinitätsgruppe zu erstellen. Sie können Affinitätsgruppen verwenden, die Sie im früheren Azure-Verwaltungsportal erstellt haben. Sie können Affinitätsgruppen außerdem mithilfe der Azure-Dienstverwaltungs-API erstellen und verwalten. Weitere Informationen finden Sie unter [Vorgänge für Affinitätsgruppen](http://msdn.microsoft.com/de-de/library/windowsazure/ee460798.aspx).
-
 4.  Klicken Sie auf **Cloud-Dienst erstellen**.
+
+    ![CloudServices\_Region][CloudServices\_Region]
 
     Sie können den Status des Prozesses im Meldungsbereich unten im Fenster überwachen.
 
     Der Bereich **Cloud-Dienste** wird geöffnet und der neue Cloud-Dienst wird angezeigt. Wenn der Status auf "Erstellt" geändert wird, wurde die Erstellung des Cloud-Diensts erfolgreich abgeschlossen.
 
-    ![CloudServices\_CloudServicesPage](./media/cloud-services-how-to-create-deploy/CloudServices_CloudServicesPage.png)
-
-    Falls Rollen im Cloud-Dienst ein Zertifikat für die Datenverschlüsselung mit Secure Sockets Layer (SSL) erfordern und das Zertifikat nicht zu Azure hochgeladen wurde, müssen Sie das Zertifikat hochladen, bevor Sie den Cloud-Dienst bereitstellen. Nachdem Sie ein Zertifikat hochgeladen haben, können alle Windows-Anwendungen, die in den Rolleninstanzen ausgeführt werden, auf das Zertifikat zugreifen.
+    ![CloudServices\_CloudServicesPage][CloudServices\_CloudServicesPage]
 
 ## <span id="uploadcertificate"></span></a>Gewusst wie: Hochladen eines Zertifikats für einen Cloud-Dienst
 
-1.  Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **Cloud-Dienste**. Klicken Sie anschließend auf den Namen des Cloud-Diensts, um das Dashboard zu öffnen.
+1.  Klicken Sie im [Azure-Verwaltungsportal][Verwaltungsportal] auf **Cloud-Dienste** und dann auf den Namen des Cloud-Diensts, und klicken Sie dann auf **Zertifikate**.
 
-    ![CloudServices\_EmptyDashboard](./media/cloud-services-how-to-create-deploy/CloudServices_EmptyDashboard.png)
+    ![CloudServices\_QuickCreate][1]
 
+2.  Klicken Sie auf **Zertifikat hochladen** oder auf **Hochladen**.
 
-2.  Klicken Sie auf **Zertifikate**, um die unten angezeigte Seite **Zertifikate** zu öffnen.
+3.  Verwenden Sie in **Datei** die Option **Durchsuchen**, um das zu verwendende Zertifikat (PFX-Datei) auszuwählen.
 
-    ![CloudServices\_CertificatesPage](./media/cloud-services-how-to-create-deploy/CloudServices_CertificatesPage.png)
+4.  Geben Sie in **Kennwort** den privaten Schlüssel für das Zertifikat ein.
 
-3.  Klicken Sie auf **Zertifikat hochladen**.
-     **Zertifikat hochladen** wird geöffnet.
+5.  Klicken Sie auf **OK** (Häkchen).
 
-    ![CloudServices\_AddaCertificate](./media/cloud-services-how-to-create-deploy/CloudServices_AddaCertificate.png)
+    ![CloudServices\_AddaCertificate][CloudServices\_AddaCertificate]
 
-4.  Verwenden Sie in **Zertifikatsdatei** die Option **Durchsuchen**, um das zu verwendende Zertifikat (PFX- oder CER-Datei) auszuwählen.
+    Sie können des Fortschritt des Hochladens im unten angezeigten Nachrichtenbereich überwachen. Wenn das Hochladen abgeschlossen ist, wird das Zertifikat zur Tabelle hinzugefügt. Klicken Sie im Nachrichtenbereich auf "OK", um die Nachricht zu schließen.
 
-5.  Geben Sie in **Kennwort** den privaten Schlüssel für das Zertifikat ein.
-
-6.  Klicken Sie auf "OK" (Häkchen).
-
-    Sie können des Fortschritt des Hochladens im unten angezeigten Nachrichtenbereich überwachen. Wenn das Hochladen abgeschlossen ist, wird das Zertifikat zur Tabelle hinzugefügt. Klicken Sie im Nachrichtenbereich auf den Pfeil nach unten, um die Nachricht zu schließen, oder auf das X, um die Nachricht zu entfernen.
-
-    ![CloudServices\_CertificateProgress](./media/cloud-services-how-to-create-deploy/CloudServices_CertificateProgress.png)
-
-    Sie können den Cloud-Dienst aus dem Dashboard oder aus dem **Schnellstart** bereitstellen.
+    ![CloudServices\_CertificateProgress][CloudServices\_CertificateProgress]
 
 ## <span id="deploy"></span></a>Gewusst wie: Bereitstellen eines Cloud-Diensts
 
-1.  Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite](http://www.windowsazure.com/de-de/develop/downloads/) zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten.
+1.  Klicken Sie im [Azure-Verwaltungsportal][Verwaltungsportal] auf **Cloud-Dienste** und dann auf den Namen des Cloud-Diensts, und klicken Sie dann auf **Dashboard**.
 
-    Auf der Downloadseite können Sie außerdem Clientbibliotheken und Quellcode für die Entwicklung von Web-Apps in Node.js, Java, PHP und anderen Sprachen installieren, die Sie als skalierbare Azure-Cloud-Dienste bereitstellen können.
+    Das Dashboard wird in der Produktionsumgebung geöffnet. Sie könnten an dieser Stelle "Staging" auswählen, um die Anwendung in der Stagingumgebung bereitzustellen. Weitere Informationen finden Sie unter [Verwalten von Bereitstellungen in Azure][Verwalten von Bereitstellungen in Azure].
 
-    > [WACOM.NOTE]
-    > Für zuvor erstellte Cloud-Dienste (die zuvor als *gehostete Dienste* bezeichnet wurden) müssen Sie sicherstellen, dass die Gastbetriebssysteme auf den virtuellen Computern (Rolleninstanzen) mit der von Ihnen installierten Azure-SDK-Version kompatibel sind. Weitere Informationen finden Sie in den [Versionshinweisen zum Azure-SDK](http://msdn.microsoft.com/de-de/library/windowsazure/hh552718.aspx).
+2.  Klicken Sie auf **Laden Sie eine neue Produktionsbereitstellung hoch** oder auf **Hochladen**.
 
-2.  Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **Cloud-Dienste**. Klicken Sie anschließend auf den Namen des Cloud-Diensts, um das Dashboard zu öffnen, und klicken Sie auf **Dashboard**.
+3.  Geben Sie unter **Bereitstellungsbezeichnung** einen Namen für die neue Bereitstellung ein, zum Beispiel "MeinClouddienstv4".
 
-3.  Klicken Sie auf **Produktion** oder **Staging** aus.
+4.  Verwenden Sie unter **Paket** die Optionen **Durchsuchen**, um die zu verwendende Dienstpaketdatei (CSPKG) auszuwählen.
 
-    Wenn Sie den Cloud-Dienst in Azure vor der Bereitstellung für die Produktion testen möchten, können Sie eine Stagingbereitstellung vornehmen. In der Stagingumgebung identifiziert die GUID (Globally Unique Identifier) des Cloud-Diensts den Cloud-Dienst in URLs (*GUID*.cloudapp.net). In der Produktionsumgebung wird das von Ihnen zugewiesene benutzerfreundlichere DNS-Präfix verwendet (zum Beispiel *meinDienst*.cloudapp.net). Wenn Sie den Cloud-Dienst in der Stagingumgebung für die Produktion heraufstufen möchten, verwenden Sie **Tauschen**, um Clientanforderungen an diese Bereitstellung umzuleiten.
+5.  Verwenden Sie unter **Konfiguration** die Option **Durchsuchen**, um die zu verwendende Dienstkonfigurationsdatei (CSCFG) auszuwählen.
 
-    ![CloudServices\_QuickStartPage](./media/cloud-services-how-to-create-deploy/CloudServices_QuickStartPage.png)
+6.  Falls der Cloud-Dienst Rollen mit nur einer Instanz umfasst, aktivieren Sie das Kontrollkästchen mit der Bezeichnung wie **Auch bereitstellen, wenn eine oder mehrere Rollen eine einzelne Instanz enthalten**, um das Fortsetzen der Bereitstellung zu ermöglichen.
 
-4.  Klicken Sie im Dashboard auf **Hochladen**, um Ihren Cloud-Dienst bereitzustellen.
+Azure kann nur dann 99,95 % Zugriff auf den Cloud-Dienst während Wartungen und Dienstaktualisierungen garantieren, wenn jede Rolle über mindestens zwei Instanzen verfügt. Bei Bedarf können Sie zusätzliche Rolleninstanzen auf der Seite **Skalieren** nach der Bereitstellung des Cloud-Diensts hinzufügen. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel][Vereinbarungen zum Servicelevel].
 
-    ![CloudServices\_UploadaPackage](./media/cloud-services-how-to-create-deploy/CloudServices_UploadaPackage.png)
+1.  Klicken Sie auf **OK** (Häkchen), um die Cloud-Dienstbereitstellung zu starten.
 
-5.  Geben Sie unter **Bereitstellungsbezeichnung** einen Namen für die neue Bereitstellung ein, zum Beispiel "MeinClouddienstv1".
+    ![CloudServices\_UploadaPackage][CloudServices\_UploadaPackage]
 
-6.  Verwenden Sie unter **Paket** die Optionen **Durchsuchen**, um die zu verwendende Dienstpaketdatei (CSPKG) auszuwählen.
+    Sie können den Status der Bereitstellung im Nachrichtenbereich überwachen. Klicken Sie auf "OK", um die Nachricht zu schließen.
 
-7.  Verwenden Sie unter **Konfiguration** die Option **Durchsuchen**, um die zu verwendende Dienstkonfigurationsdatei (CSCFG) auszuwählen.
-
-8.  Falls der Cloud-Dienst Rollen mit nur einer Instanz umfasst, aktivieren Sie das Kontrollkästchen mit der Bezeichnung wie **Auch bereitstellen, wenn eine oder mehrere Rollen eine einzelne Instanz enthalten**, um das Fortsetzen der Bereitstellung zu ermöglichen.
-
-Azure kann nur dann 99,95 % Zugriff auf den Cloud-Dienst während Wartungen und Dienstaktualisierungen garantieren, wenn jede Rolle über mindestens zwei Instanzen verfügt. Bei Bedarf können Sie zusätzliche Rolleninstanzen auf der Seite **Skalieren** nach der Bereitstellung des Cloud-Diensts hinzufügen. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://www.windowsazure.com/de-de/support/legal/sla/).
-
-1.  Klicken Sie auf "OK" (Häkchen), um die Cloud-Dienstbereitstellung zu starten.
-
-    Sie können den Status der Bereitstellung im Nachrichtenbereich überwachen. Klicken Sie auf den Pfeil nach unten, um die Nachricht auszublenden.
-
-    ![CloudServices\_UploadProgress](./media/cloud-services-how-to-create-deploy/CloudServices_UploadProgress.png)
+    ![CloudServices\_UploadProgress][CloudServices\_UploadProgress]
 
 ### So überprüfen Sie, ob Ihre Bereitstellung erfolgreich abgeschlossen wurde
 
 1.  Klicken Sie auf **Dashboard**.
 
+    Der Status sollte anzeigen, dass der Dienst **Ausgeführt** wird.
+
 2.  Klicken Sie unter **Schnellansicht** auf die Website-URL, um den Cloud-Dienst in einem Webbrowser zu öffnen.
 
-[TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796&clcid=0x409
+<!-- -->
 
     ![CloudServices_QuickGlance](./media/cloud-services-how-to-create-deploy/CloudServices_QuickGlance.png)
 
-  [Haftungsausschluss]: ../includes/disclaimer.md
   [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online]: http://go.microsoft.com/fwlink/?LinkID=251796&clcid=0x409
   [Konzepte]: #concepts
   [Vorbereiten Ihrer App]: #prepare
-  [Vorbemerkungen]: #begin
+  [Voraussetzungen]: #begin
   [Gewusst wie: Erstellen eines Cloud-Diensts mithilfe der Schnellerstellung]: #quick
   [Gewusst wie: Hochladen eines Zertifikats für einen Cloud-Dienst]: #uploadcertificate
   [Gewusst wie: Bereitstellen eines Cloud-Diensts]: #deploy
   [Azure-Downloads]: http://www.windowsazure.com/de-de/develop/downloads/
-  [Azure-Codebeispielen]: http://code.msdn.microsoft.com/windowsazure/
   [Konfigurieren eines SSL-Zertifikats auf einem HTTPS-Endpunkt]: http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx
-  [Überblick über das Einrichten einer Remotedesktopverbindung für eine Rolle]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433010.aspx
+  [Einrichten einer Remotedesktopverbindung für eine Rolle in Azure]: http://msdn.microsoft.com/de-de/library/hh124107.aspx
   [Aktivieren der Diagnose in Azure]: http://www.windowsazure.com/de-de/develop/net/common-tasks/diagnostics/
+  [Einrichten eines Cloud-Diensts für Azure]: http://msdn.microsoft.com/de-de/library/hh124108.aspx
+  [Packen einer Azure-Anwendung]: http://msdn.microsoft.com/de-de/library/hh403979.aspx
+  [Veröffentlichen eines Cloud-Diensts mit Azure Tools]: http://msdn.microsoft.com/de-de/library/ff683672.aspx
+  [Verwalten von Zertifikaten]: http://msdn.microsoft.com/de-de/library/gg981929.aspx
+  [Erstellen einer Affinitätsgruppe im Verwaltungsportal]: http://msdn.microsoft.com/de-de/library/jj156209.aspx
   [Verwaltungsportal]: http://manage.windowsazure.com/
-  [Vorgänge für Affinitätsgruppen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee460798.aspx
-  [Versionshinweisen zum Azure-SDK]: http://msdn.microsoft.com/de-de/library/windowsazure/hh552718.aspx
+  [CloudServices\_QuickCreate]: ./media/cloud-services-how-to-create-deploy/CloudServices_QuickCreate.png
+  [http://\*meineURL]: http://*myURL
+  [CloudServices\_Region]: ./media/cloud-services-how-to-create-deploy/CloudServices_Regionlist.png
+  [CloudServices\_CloudServicesPage]: ./media/cloud-services-how-to-create-deploy/CloudServices_CloudServicesPage.png
+  [1]: ./media/cloud-services-how-to-create-deploy/CloudServices_EmptyDashboard.png
+  [CloudServices\_AddaCertificate]: ./media/cloud-services-how-to-create-deploy/CloudServices_AddaCertificate.png
+  [CloudServices\_CertificateProgress]: ./media/cloud-services-how-to-create-deploy/CloudServices_CertificateProgress.png
+  [Verwalten von Bereitstellungen in Azure]: http://msdn.microsoft.com/de-de/library/gg433027.aspx
   [Vereinbarungen zum Servicelevel]: http://www.windowsazure.com/de-de/support/legal/sla/
+  [CloudServices\_UploadaPackage]: ./media/cloud-services-how-to-create-deploy/CloudServices_UploadaPackage.png
+  [CloudServices\_UploadProgress]: ./media/cloud-services-how-to-create-deploy/CloudServices_UploadProgress.png

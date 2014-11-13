@@ -1,14 +1,14 @@
-<properties linkid="develop-python-web-app-with-blob-storage" urlDisplayName="Web App with Blob Storage" pageTitle="Python web app with table storage | Microsoft Azure" metaKeywords="Azure table storage Python, Azure Python application, Azure Python tutorial, Azure Python example" description="A tutorial that teaches you how to create a Python web application using the Azure Client Libraries. Django is used as the web framework." metaCanonical="" services="storage" documentationCenter="Python" title="Python Web Application using Table Storage" authors="huvalo" solutions="" videoId="" scriptId="" manager="" editor="mollybos" />
+<properties urlDisplayName="Web App with Blob Storage" pageTitle="Python-Webanwendung mit Tabellenspeicher | Microsoft Azure" metaKeywords="Azure table storage Python, Azure Python application, Azure Python tutorial, Azure Python example" description="In diesem Lernprogramm erfahren Sie, wie Sie eine Python-Webanwendung mithilfe der Azure-Clientbibliotheken erstellen. Als Web-Framework wird Django verwendet." metaCanonical="" services="storage" documentationCenter="Python" title="Python-Webanwendung mit Tabellenspeicher" authors="huvalo" solutions="" videoId="" scriptId="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Python-Webanwendung mit Tabellenspeicher
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung erstellen können, die den Tabellenspeicher mit den Azure-Clientbibliotheken für Python verwendet. Falls dies Ihre erste Python-App ist, sollten Sie zuvor einen Blick in die [Django Hello World-Webanwendung] werfen.
+In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung erstellen können, die den Tabellenspeicher mit den Azure-Clientbibliotheken für Python verwendet. Falls dies Ihre erste Python-App ist, sollten Sie zuvor einen Blick in die [Django Hello World-Webanwendung][Django Hello World-Webanwendung] werfen.
 
 In dieser Anleitung erstellen Sie eine webbasierte Anwendung mit Aufgabenlisten, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren. Wir werden Django als Web-Framework verwenden.
 
-Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Python oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure].
+Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Python oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure].
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -16,19 +16,19 @@ Sie erhalten Informationen zu folgenden Themen:
 
 Der folgende Screenshot zeigt eine Abbildung der fertigen Anwendung (die hinzugefügten Aufgabenelemente können abweichen):
 
-![4](./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png)
+![][0]
 
-[WACOM.INCLUDE [create-account-note](3)]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## <span id="setup"></span> </a>Einrichten der Entwicklungsumgebung
 
-**Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch](5).
+**Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch][Python-Installationshandbuch].
 
 *Hinweis zu Windows*: Falls Sie den Windows WebPI-Installer verwendet haben, sollten Django und die Clientbibliotheken bereits auf Ihrem Computer installiert sein.
 
 ## Erstellen eines Speicherkontos in Azure
 
-[WACOM.INCLUDE [create-storage-account](6)]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## Erstellen eines Django-Projekts
 
@@ -165,7 +165,7 @@ Sie können nun mit **Add Task** eine neue Aufgabe erstellen und anschließend a
 
 ## Ausführen der Anwendung im Serveremulator, Veröffentlichen und Anhalten/Löschen Ihrer Anwendung
 
-Sie haben ihre Anwendung im eingebauten Django-Server ausgeführt und können sie nun im Azure-Emulator (nur unter Windows) bereitstellen und anschließend auf Azure veröffentlichen. Weitere Informationen hierzu finden Sie im Artikel [Django Hello World-Webanwendung], der diese Schritte im Detail beschreibt.
+Sie haben ihre Anwendung im eingebauten Django-Server ausgeführt und können sie nun im Azure-Emulator (nur unter Windows) bereitstellen und anschließend auf Azure veröffentlichen. Weitere Informationen hierzu finden Sie im Artikel [Django Hello World-Webanwendung][Django Hello World-Webanwendung], der diese Schritte im Detail beschreibt.
 
 ## <span id="NextSteps"></span></a>Nächste Schritte
 
@@ -174,11 +174,7 @@ Da Sie jetzt die Grundlagen des Azure-Tabellenspeicherdiensts erlernt haben, fol
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure]
 -   Besuchen Sie den Blog des Azure-Speicherteams: <http://blogs.msdn.com/b/windowsazurestorage/>
 
-
-[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-
-[Django Hello World-Webanwendung]: http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-django-web-app-windows-server
-
-<!-- This code are commented 
-  [4]: ./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png
--->
+  [Django Hello World-Webanwendung]: http://windowsazure.com/de-de/documentation/articles/virtual-machines-python-django-web-app-windows-server
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+  [0]: ./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png
+  [Python-Installationshandbuch]: http://windowsazure.com/de-de/documentation/articles/python-how-to-install

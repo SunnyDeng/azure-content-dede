@@ -1,6 +1,6 @@
-<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="How to use the queue service (Node.js) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Node.js" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Queue Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangendiensts (Node.js) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Node.js" description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und L&ouml;schen von Warteschlangen sowie zum Einf&uuml;gen, Abrufen und L&ouml;schen von Nachrichten verwenden. Die Beispiele sind in Node.js geschrieben." metaCanonical="" services="storage" documentationCenter="nodejs" title="Verwenden des Warteschlangendiensts aus Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Verwenden des Warteschlangendiensts aus Node.js
 
@@ -52,14 +52,14 @@ die mit den REST-Speicherdiensten kommunizieren.
     Die Ausgabe dieses Befehls sollte wie folgt aussehen:
 
         azure-storage@0.1.0 node_modules\azure-storage
-        +-- extend@1.2.1
-        +-- xmlbuilder@0.4.3
-        +-- mime@1.2.11
-        +-- underscore@1.4.4
-        +-- validator@3.1.0
-        +-- node-uuid@1.4.1
-        +-- xml2js@0.2.7 (sax@0.5.2)
-        +-- request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+        ├── extend@1.2.1
+        ├── xmlbuilder@0.4.3
+        ├── mime@1.2.11
+        ├── underscore@1.4.4
+        ├── validator@3.1.0
+        ├── node-uuid@1.4.1
+        ├── xml2js@0.2.7 (sax@0.5.2)
+        └── request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
 
 3.  Sie können den Befehl **ls** manuell aufrufen, um sich davon zu überzeugen, dass der Ordner
     **node\_modules** erstellt wurde. Dieser Ordner enthält
@@ -71,7 +71,7 @@ die mit den REST-Speicherdiensten kommunizieren.
 Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anfang der Datei
 **server.js** der Anwendung einzufügen, in der Sie den Speicher nutzen möchten:
 
-            var azure = require('azure-storage');
+    var azure = require('azure-storage');
 
 ## <a name="setup-connection-string"> </a>Einrichten einer Azure-Speicherverbindung
 
@@ -102,7 +102,7 @@ Wenn die Warteschlange erstellt wurde, ist `result` true. Wenn die Warteschlange
 
 Mit **QueueService** können Sie optionale Filteroperationen auf Operationen ausführen. Filtervorgänge können Protokollierung, automatische Wiederholung usw. umfassen. Filter sind Objekte, die eine Methode mit einer Signatur implementieren:
 
-           function handle (requestOptions, next)
+        function handle (requestOptions, next)
 
 Nachdem die Vorverarbeitung der Anforderungsoptionen angeschlossen ist, muss die Methode "next" aufrufen und hierbei eine Rückruffunktion mit der folgenden Signatur übergeben:
 
@@ -335,6 +335,7 @@ vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere 
 -   Besuchen Sie das [Azure Storage SDK für Node][Azure Storage SDK für Node]-Repository auf GitHub.
 
   [Nächste Schritte]: #next-steps
+  [Was ist der Warteschlangendienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Erstellen einer Node.js-Anwendung]: #create-app
@@ -349,8 +350,6 @@ vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere 
   [Gewusst wie: Abrufen der Warteschlangenlänge]: #get-queue-length
   [Gewusst wie: Löschen einer Warteschlange]: #delete-queue
   [Gewusst wie: Arbeiten mit Shared Access Signature]: #sas
-  [howto-queue-storage]: ../includes/howto-queue-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
   [Node.js-Clouddienst]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/

@@ -1,6 +1,6 @@
-<properties linkid="dev-nodejs-cloud9" urlDisplayName="Deploying with Cloud9" pageTitle="Node.js deploying with Cloud9 - Azure tutorial" metaKeywords="Cloud9 IDE Azure, Azure node.js, Azure node apps" description="Learn how to use Cloud9 IDE to develop, build, and deploy a Node.js application to Azure." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Deploying an Azure App from Cloud9" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="Deploying with Cloud9" pageTitle="Node.js-Bereitstellung mit Cloud9 &ndash; Azure-Lernprogramm" metaKeywords="Cloud9 IDE Azure, Azure node.js, Azure node apps" description="Hier erfahren Sie, wie Sie Cloud9-IDE zur Entwicklung, Erstellung und Bereitstellung einer Node.js-Anwendung in Azure verwenden." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Bereitstellen einer Azure-Anwendung von Cloud9" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="wpickett" />
 
 # Bereitstellen einer Azure-Anwendung von Cloud9
 
@@ -46,14 +46,18 @@ Bezahlangebot, das mehr Funktionen bietet. Weitere Informationen finden Sie unte
     ![Cloud9-Dialogfeld "neues Projekt erstellen"][Cloud9-Dialogfeld "neues Projekt erstellen"]
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Einige Optionen erfordern ein kostenpflichtiges Cloud9-Paket.</p>
-</div>
+
+    **Hinweis**
+    Einige Optionen erfordern ein kostenpflichtiges Cloud9-Paket.
+
+    </div>
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Der Projektname des Cloud9-Projekts wird nicht f&uuml;r die Bereitstellung zu Azure verwendet.</p>
-</div>
+
+    **Hinweis**
+    Der Projektname des Cloud9-Projekts wird nicht für die Bereitstellung zu Azure verwendet.
+
+    </div>
 
 3.  Klicken Sie nach der Erstellung des Projekts auf **Start Editing**. Wenn Sie Cloud9-IDE erstmalig verwendet haben, werden Sie zu einem Rundgang durch den Dienst eingeladen. Wenn Sie den Rundgang überspringen und ihn später ansehen möchten, wählen Sie **Just the editor,please**.
 
@@ -76,26 +80,32 @@ Bezahlangebot, das mehr Funktionen bietet. Weitere Informationen finden Sie unte
         }).listen(port);
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Durch die Verwendung von &quot;process.env.PORT&quot; wird sichergestellt, dass die Anwendung den korrekten Port ausw&auml;hlt, wenn sie im Cloud9-Debugger ausgef&uuml;hrt wird oder zu Azure bereitgestellt wird.</p>
-</div>
+
+    **Hinweis**
+    Durch die Verwendung von "process.env.PORT" wird sichergestellt, dass die Anwendung den korrekten Port auswählt, wenn sie im Cloud9-Debugger ausgeführt wird oder zu Azure bereitgestellt wird.
+
+    </div>
 
 6.  Wählen Sie **File** und dann **Save as**, um den Code zu speichern. Geben
     Sie im Dialogfeld **Save As** als Dateiname **server.js** ein,
     und klicken Sie dann auf **Save**.
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Sie werden m&ouml;glicherweise ein Warnsymbol bemerken, welches anzeigt, dass die req-Variable nicht verwendet wird. Sie k&ouml;nnen diese Warnung ignorieren.</p>
-</div>
+
+    **Hinweis**
+    Sie werden möglicherweise ein Warnsymbol bemerken, welches anzeigt, dass die req-Variable nicht verwendet wird. Sie können diese Warnung ignorieren.
+
+    </div>
 
     ![server.js-Datei speichern][server.js-Datei speichern]
 
 ## Ausführen der Anwendung
 
 <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Die in diesem Abschnitt gezeigten Schritte sind f&uuml;r eine Hello World-Anwendung ausreichend. F&uuml;r Anwendungen mit externen Modulen m&uuml;ssen Sie m&ouml;glicherweise eine spezielle Version von Node.js f&uuml;r die Debug-Umgebung ausw&auml;hlen. W&auml;hlen Sie dazu im Debug-Dropdownmen&uuml; <strong>Configure...</strong>, und w&auml;hlen Sie dann die spezielle Node.js-Version aus. Sie werden zum Beispiel m&ouml;glicherweise Authentifizierungsfehler erhalten, wenn Sie das &quot;azure&quot;-Modul verwenden, falls Sie &quot;Node.js 0.6.x&quot; nicht ausgew&auml;hlt haben.</p>
+
+**Hinweis**
+Die in diesem Abschnitt gezeigten Schritte sind für eine Hello World-Anwendung ausreichend. Für Anwendungen mit externen Modulen müssen Sie möglicherweise eine spezielle Version von Node.js für die Debug-Umgebung auswählen. Wählen Sie dazu im Debug-Dropdownmenü **Configure...**, und wählen Sie dann die spezielle Node.js-Version aus. Sie werden zum Beispiel möglicherweise Authentifizierungsfehler erhalten, wenn Sie das "azure"-Modul verwenden, falls Sie "Node.js 0.6.x" nicht ausgewählt haben.
+
 </div>
 
 1.  Klicken Sie auf **Debug**, um die Anwendung im Cloud9-Debugger auszuführen.
@@ -153,14 +163,18 @@ kostenlose Testversion anmelden:
     ![neuen gehosteten Dienst erstellen][neuen gehosteten Dienst erstellen]
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Im Dialogfeld <strong>Add a deploy target</strong> werden vorhandene gehostete Azure-Dienste unter dem Abschnitt <strong>Choose existing deployment</strong> aufgelistet; wenn Sie einen vorhandenen gehosteten Dienst ausw&auml;hlen, f&uuml;hrt dies dazu, dass dieses Projekt zu diesem Dienst bereitgestellt wird.</p>
-</div>
+
+    **Hinweis**
+    Im Dialogfeld **Add a deploy target** werden vorhandene gehostete Azure-Dienste unter dem Abschnitt **Choose existing deployment** aufgelistet; wenn Sie einen vorhandenen gehosteten Dienst auswählen, führt dies dazu, dass dieses Projekt zu diesem Dienst bereitgestellt wird.
+
+    </div>
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Wenn Sie <strong>Enable RDP</strong> ausw&auml;hlen und einen Benutzernamen und ein Kennwort bereitstellen, wird Remotedesktop f&uuml;r Ihre Umgebung erm&ouml;glicht.</p>
-</div>
+
+    **Hinweis**
+    Wenn Sie **Enable RDP** auswählen und einen Benutzernamen und ein Kennwort bereitstellen, wird Remotedesktop für Ihre Umgebung ermöglicht.
+
+    </div>
 
 ## Bereitstellen zur Azure-Produktionsumgebung
 
@@ -190,9 +204,11 @@ kostenlose Testversion anmelden:
     ![Bereitstellungsstatus][Bereitstellungsstatus]
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Projekte, die &uuml;ber Cloud 9-IDE bereitgestellt werden, werden der GUID als Bereitstellungsname in Azure zugewiesen.</p>
-</div>
+
+    **Hinweis**
+    Projekte, die über Cloud 9-IDE bereitgestellt werden, werden der GUID als Bereitstellungsname in Azure zugewiesen.
+
+    </div>
 
 8.  Das Bereitstellungsdialogfeld enthält einen Link zur Produktions-URL. Klicken Sie nach Abschluss der Bereitstellung auf die URL, um zur in Azure ausgeführten Anwendung zu gelangen.
 
@@ -246,9 +262,9 @@ Informationen finden Sie unter [Übersicht über das Verwalten von Bereitstellun
 3.  Wählen Sie links auf der Webseite **Gehostete Dienste,
     Speicherkonten CDN** aus, und klicken Sie dann auf **Gehostete Dienste**.
 
-    ![Azure-Verwaltungsportal][Azure-Verwaltungsportal]
+    [Azure-Verwaltungsportal][Azure-Verwaltungsportal]
 
-    Das Ergebnisfenster zeigt den gehosteten Dienst mit dem Namen, den Sie in Cloud9 angegeben haben, sowie zwei Bereitstellungen: eine mit dem **Umgebungs-** wert **Staging**, die zweite mit **Produktion**.
+    Das Ergebnisfenster zeigt den gehosteten Dienst mit dem Namen, den Sie in Cloud9 angegeben haben, sowie zwei Bereitstellungen: eine mit dem **Umgebungs-**Wert **Staging**, die zweite mit **Produktion**.
 
 4.  Für den VIP-Austausch wählen Sie den gehosteten Dienst aus, und klicken Sie dann auf **VIP austauschen** im Menüband.
 
@@ -258,7 +274,7 @@ Informationen finden Sie unter [Übersicht über das Verwalten von Bereitstellun
 
 6.  Navigieren Sie zu Ihrer Produktionsanwendung. Sie werden bemerken, dass die Version der zuvor in der Stagingumgebung bereitgestellten Anwendung jetzt in der Produktion ist.
 
-	![Produktionsanwendung, die auf Azure ausgeführt wird][Produktionsanwendung, die auf Azure ausgeführt wird]
+    ![Produktionsanwendung, die auf Azure ausgeführt wird][Produktionsanwendung, die auf Azure ausgeführt wird]
 
 ## Verwenden von Remotedesktop
 
@@ -271,9 +287,10 @@ Wenn Sie auf "Verbinden" klicken, werden Sie aufgefordert, eine .RDP-Datei zu ö
 Sie werden dann mit dem Desktop der ausgewählten Instanz verbunden.
 
 <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Die RDP-Datei, welche f&uuml;r die Verbindung mit der gehosteten Instanz der Anwendung erforderlich ist, funktioniert nur mit der Remotedesktopanwendung in Windows.
-</p>
+
+**Hinweis**
+Die .RDP-Datei, welche für die Verbindung der gehosteten Instanz der Anwendung erforderlich ist, funktioniert nur mit der Remotedesktop-Anwendung in Windows.
+
 </div>
 
 ## Beenden und Löschen der Anwendung
@@ -310,7 +327,6 @@ Cloud9 fokussiert sich auf die Bereitstellung einer IDE-Schnittstelle und bietet
   [im Debugger ausführen]: ./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_debug.png
   [Ausgabefenster]: ./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_output.png
   [in Browser ausgeführte Anwendung]: ./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_debug_browser.png
-  [create-azure-account]: ../includes/create-azure-account.md
   [Veröffentlichungseinstellungen herunterladen]: ./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_choosetypeandcert.png
   [Cloud-Dienste]: http://msdn.microsoft.com/de-de/library/windowsazure/jj155995.aspx
   [neue Bereitstellung erstellen]: ./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_createdeployment.png

@@ -1,4 +1,4 @@
-<properties title="How to use blob storage (PHP) - Azure feature guide" pageTitle="How to use blob storage (PHP) | Microsoft Azure" metaKeywords="Azure blob service PHP, Azure blobs PHP" description="Learn how to use the Azure Blob service to upload, list, download, and delete blobs. Code samples are written in PHP." documentationCenter="PHP" services="storage" videoId="" scriptId="" solutions="" authors="robmcm" manager="wpickett" editor="mollybos" />
+<properties title="Verwenden des Blob-Speichers (PHP) &ndash; Azure-Funktionsleitfaden" pageTitle="Verwenden des Blob-Speichers (PHP) | Microsoft Azure" metaKeywords="Azure blob service PHP, Azure blobs PHP" description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und L&ouml;schen von Blobs verwenden. Die Codebeispiele sind in PHP geschrieben." documentationCenter="PHP" services="storage" videoId="" scriptId="" solutions="" authors="robmcm" manager="adinah" editor="mollybos" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
@@ -168,7 +168,7 @@ Um eine Datei als Blob hochzuladen, verwenden Sie die **BlobRestProxy-\>createBl
         echo $code.": ".$error_message."<br />";
     }
 
-Beachten Sie, dass in dem Beispiel oben ein Blob als Stream hochgeladen wird. Ein Blob kann allerdings auch als Zeichenfolge hochgeladen werden, zum Beispiel mit der [file_get_contents][file_get_contents]-Funktion. Ändern Sie dazu `$content = fopen("c:\myfile.txt", "r");` im obigen Beispiel in `$content = file_get_contents("c:\myfile.txt");`.
+Beachten Sie, dass in dem Beispiel oben ein Blob als Stream hochgeladen wird. Ein Blob kann allerdings auch als Zeichenfolge hochgeladen werden, zum Beispiel mit der [file\_get\_contents][file\_get\_contents]-Funktion. Ändern Sie dazu `$content = fopen("c:\myfile.txt", "r");` im obigen Beispiel in `$content = file_get_contents("c:\myfile.txt");`.
 
 ## <span id="ListBlobs"></span></a>Gewusst wie: Auflisten der Blobs in einem Container
 
@@ -229,7 +229,7 @@ Um einen Blob herunterzuladen, rufen Sie die **BlobRestProxy-\>getBlob**-Methode
         echo $code.": ".$error_message."<br />";
     }
 
-Beachten Sie, dass in dem Beispiel oben ein Blob als Streamressource abgerufen wird (das Standardverhalten). Sie können allerdings die [stream_get_contents][stream_get_contents]-Funktion verwenden, um den zurückgegebenen Stream in eine Zeichenfolge zu konvertieren.
+Beachten Sie, dass in dem Beispiel oben ein Blob als Streamressource abgerufen wird (das Standardverhalten). Sie können allerdings die [stream\_get\_contents][stream\_get\_contents]-Funktion verwenden, um den zurückgegebenen Stream in eine Zeichenfolge zu konvertieren.
 
 ## <span id="DeleteBlob"></span></a>Gewusst wie: Löschen eines Blobs
 
@@ -294,6 +294,7 @@ Da Sie jetzt die Grundlagen des Azure-Blob-Diensts erlernt haben, folgen Sie die
 
   [Azure-SDK für PHP]: http://go.microsoft.com/fwlink/?LinkID=252473
   [Nächste Schritte]: #NextSteps
+  [Was ist Blob-Speicher?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer PHP-Anwendung]: #CreateApplication
@@ -305,11 +306,10 @@ Da Sie jetzt die Grundlagen des Azure-Blob-Diensts erlernt haben, folgen Sie die
   [Gewusst wie: Herunterladen eines Blobs]: #DownloadBlob
   [Gewusst wie: Löschen eines Blobs]: #DeleteBlob
   [Gewusst wie: Löschen eines Blob-Containers]: #DeleteContainer
-  [howto-blob-storage]: ../includes/howto-blob-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
-  [get-client-libraries]: ../includes/get-client-libraries.md
+  [require\_once]: http://php.net/require_once
+  [Festlegen der Container-ACL (REST-API)]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179391.aspx
   [Fehlercodes des Blob-Diensts]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179439.aspx
   [fopen]: http://www.php.net/fopen
-  [file_get_contents]: http://php.net/file_get_contents
-  [stream_get_contents]: http://www.php.net/stream_get_contents
+  [file\_get\_contents]: http://php.net/file_get_contents
+  [stream\_get\_contents]: http://www.php.net/stream_get_contents
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

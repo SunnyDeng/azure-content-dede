@@ -1,10 +1,10 @@
-<properties pageTitle="Customizing the developer portal in Azure API Management" metaKeywords="" description="Customizing the developer portal in Azure API Management." metaCanonical="" services="" documentationCenter="API Management" title="Customizing the developer portal in Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
+<properties pageTitle="Anpassen des Entwicklerportals in der Azure API-Verwaltung" metaKeywords="" description="Anpassen des Entwicklerportals in der Azure API-Verwaltung." metaCanonical="" services="api-management" documentationCenter="API Management" title="Anpassen des Entwicklerportals in der Azure API-Verwaltung" authors="sdanie" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie"></tags>
+<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
 
 # Anpassen des Entwicklerportals in der Azure API-Verwaltung
 
-Diese Anleitung beschreibt, wie Sie das Erscheinungsbild des Entwicklerportals in der API-Verwaltung (Vorschau) an Ihre Marke anpassen können.
+Diese Anleitung beschreibt, wie Sie das Erscheinungsbild des Entwicklerportals in der API-Verwaltung an Ihre Marke anpassen können.
 
 ## In diesem Thema
 
@@ -67,7 +67,7 @@ Klicken Sie auf **Inhalte** im Menü **Entwicklerportal** in der Verwaltungskons
 
 Klicken Sie auf die Willkommensseite, um den Inhalt zu bearbeiten, der auf der Startseite des Entwicklerportals angezeigt wird. Nehmen Sie die gewünschten Änderungen vor, zeigen Sie die Änderungen in einer Vorschau an und klicken Sie anschließend auf **Jetzt veröffentlichen**, um sie für alle Benutzer sichtbar zu machen.
 
-> Die Startseite verwendet ein spezielles Layout, mit dem ein Banner am oberen Rand angezeigt werden kann. Dieses Banner kann nicht im Inhaltsbereich bearbeitet werden. Um dieses Banner zu bearbeiten, klicken Sie auf **Widgets** im Menü **Entwicklerportal**, wählen Sie **Startseite** in der Dropdownliste **Aktuelle Ebene** aus und öffnen Sie das Element **Banner** im Bereich "Ausgewählte". Sie können den Inhalt dieses Widgets ebenso wie alle anderen Seiten bearbeiten.
+> Die Startseite verwendet ein spezielles Layout, mit dem ein Banner am oberen Rand angezeigt werden kann. Dieses Banner kann nicht im Inhaltsbereich bearbeitet werden. Um dieses Banner zu bearbeiten, klicken Sie auf **Widgets** im Menü **Entwicklerportal**, wählen Sie **Startseite** in der Dropdownliste **Aktuelle Ebene** aus und öffnen Sie das Element **Banner** im Bereich „Ausgewählte“. Sie können den Inhalt dieses Widgets ebenso wie alle anderen Seiten bearbeiten.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 

@@ -1,10 +1,8 @@
-<properties linkid="develop-net-tutorials-get-started-vs2013" pageTitle="Get started with Azure Websites for ASP.NET" metaKeywords="" description="This tutorial shows you how to create an ASP.NET web project in Visual Studio 2013 and deploy it to an Azure Website. In less than 15 minutes you'll have an app up and running in the cloud." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Get started with Azure Websites and ASP.NET" authors="tdykstra"  solutions="" manager="wpickett" editor="mollybos"  />
+<properties pageTitle="Erste Schritte mit Azure-Websites f&uuml;r ASP.NET" metaKeywords="" description="Dieses Lernprogramm zeigt Ihnen das Erstellen eines ASP-NET-Webprojekts in Visual Studio 2013 und die Bereitstellung f&uuml;r eine Azure-Website. In weniger als 15 Minuten ist eine App betriebsbereit und wird in der Cloud ausgef&uuml;hrt." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Erste Schritte mit Azure-Websites und ASP.NET" authors="tdykstra"  solutions="" manager="wpickett" editor="mollybos"  />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="hero-article" ms.date="01/01/1900" ms.author="tdykstra" />
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="hero-article" ms.date="09/24/2014" ms.author="tdykstra" />
 
 # Erste Schritte mit Azure-Websites und ASP.NET
-
-<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/develop/net/tutorials/get-started/" title="Visual Studio 2013" class="current">Visual Studio 2013</a><a href="/de-de/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012">Visual Studio 2012</a></div>
 
 In diesem Lernprogramm wird die Erstellung einer ASP.NET-Webanwendung und Bereitstellung für eine Windows Azure-Website mit Visual Studio 2013 oder Visual Studio 2013 for Web Express gezeigt. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie keine Erfahrung mit der Verwendung von Azure oder ASP.NET haben. Nach Abschluss des Lernprogramms verfügen Sie über eine einfache Webanwendung, die in der Cloud ausgeführt wird.
 
@@ -51,7 +49,7 @@ Zunächst erstellen Sie ein Webanwendungsprojekt. Die Azure-Website, auf der Sie
 
 2.  Klicken Sie im Menü **Datei** auf **Neues Projekt**.
 
-3.  Klicken Sie im Dialogfeld **Neues Projekt** auf **C\#** \> **Web** \> **ASP.NET-Webanwendung**. Bei Bedarf können Sie auch **Visual Basic** verwenden.
+3.  Klicken Sie im Dialogfeld **Neues Projekt** auf **C#** \> **Web** \> **ASP.NET-Webanwendung**. Bei Bedarf können Sie auch **Visual Basic** verwenden.
 
 4.  Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist.
 
@@ -224,7 +222,7 @@ In diesem Abschnitt des Lernprogramms ändern Sie die Überschrift **h1** der St
 
 Das [Azure-Verwaltungsportal][Azure-Verwaltungsportal] ist eine Weboberfläche, die das Verwalten und Überwachen Ihrer Azure-Dienste ermöglicht, z. B. die soeben erstellte Website. In diesem Abschnitt des Lernprogramms erfahren Sie, was Sie im Portal durchführen können.
 
-1.  Rufen Sie in Ihrem Browser [http://manage.windowsazure.com]() auf, und melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
+1.  Rufen Sie in Ihrem Browser [][]<http://manage.windowsazure.com></a> auf, und melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 
     Im Portal wird eine Liste Ihrer Azure-Dienste angezeigt.
 
@@ -240,7 +238,7 @@ Das [Azure-Verwaltungsportal][Azure-Verwaltungsportal] ist eine Weboberfläche, 
 
     Bisher gab es auf Ihrer Website kaum Datenverkehr, daher wird in der Übersicht möglicherweise nichts angezeigt. Wenn Sie Ihre Anwendung aufrufen, aktualisieren Sie die Seite mehrmals, und aktualisieren Sie anschließend die Seite **Dashboard** im Portal. Nun sollte eine Statistik angezeigt werden. Sie können weitere Details auf der Registerkarte **Überwachen** anzeigen.
 
-4.  Klicken Sie auf die Registerkarte **Configure**.
+4.  Klicken Sie auf die Registerkarte **Konfigurieren**.
 
     Auf der Registerkarte [Configure][Configure] können Sie die für die Website verwendete .NET-Version kontrollieren, Funktionen wie [WebSockets][WebSockets] und [Diagnoseprotokollierung][Diagnoseprotokollierung] aktivieren, [Verbindungszeichenfolgen][Verbindungszeichenfolgen] festlegen usw.
 
@@ -296,7 +294,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 -   Treffen einer Auswahl zwischen Azure-Websites, Cloud Services und VMs für Webanwendungen
 
-    In Azure können Sie Webanwendungen in Websites ausführen, die denen in diesem Lernprogramm ähneln, oder in Clouddiensten oder virtuellen Computern. Weitere Informationen finden Sie unter [Azure-Ausführungsmodelle][Azure-Ausführungsmodelle] und [Azure-Websites, Cloud Services und VMs: Comparison][Azure-Websites, Cloud Services und VMs: Comparison] (Vergleich zwischen Azure-Websites, -Clouddienste und Azure Virtual Machines, in englischer Sprache).
+    In Azure können Sie Webanwendungen in Websites ausführen, die denen in diesem Lernprogramm ähneln, oder in Clouddiensten oder virtuellen Computern. Weitere Informationen finden Sie unter [Azure-Ausführungsmodelle][Azure-Ausführungsmodelle] und [Azure-Websites, Cloud Services und VMs: Vergleich][Azure-Websites, Cloud Services und VMs: Vergleich]
 
   [Website-Startseite]: ./media/web-sites-dotnet-get-started-vs2013/deployedandazure.png
   [Einrichten der Entwicklungsumgebung]: #set-up-the-development-environment
@@ -305,7 +303,6 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
   [Vornehmen von Änderungen und erneutes Bereitstellen]: #make-a-change-and-redeploy
   [Überwachen und Verwalten der Website im Azure-Verwaltungsportal]: #monitor-and-manage-the-site-in-the-management-portal
   [Nächste Schritte]: #next-steps
-  [install-sdk-2013-only]: ../includes/install-sdk-2013-only.md
   [Abbildung zur Projekterstellung und Bereitstellung]: ./media/web-sites-dotnet-get-started-vs2013/createdeploydiagram.png
   [Dialogfeld "Neues Projekt"]: ./media/web-sites-dotnet-get-started-vs2013/GS13newprojdb.png
   [MVC und Webformulare]: http://www.asp.net/get-started/websites
@@ -333,6 +330,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
   [Auf "Veröffentlichen" klicken]: ./media/web-sites-dotnet-get-started-vs2013/clickpublish.png
   [Symbolleiste "Webveröffentlichung mit einem Klick"]: ./media/web-sites-dotnet-get-started-vs2013/weboneclickpublish.png
   [Azure-Verwaltungsportal]: /de-de/services/management-portal/
+  []: 
   [Portal-Startseite mit Auflistung der neuen Website]: ./media/web-sites-dotnet-get-started-vs2013/portalhome.png
   [Registerkarte "Dashboard" der Portal-Website]: ./media/web-sites-dotnet-get-started-vs2013/portaldashboard.png
   [Configure]: /de-de/documentation/articles/web-sites-configure//
@@ -346,6 +344,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
   [Automatisierung der Bereitstellung]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
   [Quellcode-Verwaltungssystem]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
   [Bereitstellen einer Azure-Website]: /de-de/documentation/articles/web-sites-deploy/"
+  [Automate Everything (Building Real-World Cloud Apps with Azure)]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
   [Problembehandlung von Azure-Websites in Visual Studio]: /de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank für eine Azure-Website]: /de-de/develop/net/tutorials/web-site-with-sql-database/
   [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website]: /de-de/documentation/articles/web-sites-custom-domain-name/
@@ -354,4 +353,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
   [ASP.NET SignalR]: http://www.asp.net/signalr
   [Verwenden von SignalR mit Windows Azure-Websites]: http://www.asp.net/signalr/overview/signalr-20/getting-started-with-signalr-20/using-signalr-with-windows-azure-web-sites
   [Azure-Ausführungsmodelle]: /de-de/develop/net/fundamentals/compute/
-  [Azure-Websites, Cloud Services und VMs: Comparison]: /de-de/manage/services/web-sites/choose-web-app-service/
+  [Azure-Websites, Cloud Services und VMs: Vergleich]: /de-de/manage/services/web-sites/choose-web-app-service/

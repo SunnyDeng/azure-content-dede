@@ -1,4 +1,4 @@
-<properties linkid="dev-net-how-to-queue-service" urlDisplayName="Queue Service" pageTitle="How to use queue storage from .NET | Microsoft Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="Learn how to use Microsoft Azure Queue storage to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure Queue Storage" authors="tamram" />
+<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangenspeichers mit .NET | Microsoft Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="Erfahren Sie, wie Sie den Microsoft Azure-Warteschlangenspeicher zum Erstellen und L&ouml;schen von Warteschlangen sowie zum Einf&uuml;gen, Einsehen, Abrufen und L&ouml;schen von Warteschlangennachrichten verwenden." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="Verwenden des Microsoft Azure-Warteschlangenspeichers" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -7,7 +7,9 @@
 Diese Anleitung beschreibt die Ausführung gängiger Szenarien mithilfe des
 Azure-Warteschlangenspeicherdiensts. Die Beispiele sind in C# geschrieben
 und verwenden den Azure-Speicherclient für .NET. Zu den Szenarien gehören das **Einfügen**,
-**Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das
+**Einsehen**,
+**Abrufen** und
+**Löschen** von Warteschlangennachrichten sowie das
 **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlange finden
 Sie im Abschnitt [nächste Schritte][nächste Schritte].
 
@@ -50,9 +52,9 @@ Sie im Abschnitt [nächste Schritte][nächste Schritte].
 
 ### Abrufen der Assembly
 
-Sie können die Assembly `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
+Sie können die Assembly`Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
-`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\`installiert.
+`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\`lt;sdk-version\>\\ref\\</code> installiert.
 
 ### Namespace-Deklarationen
 
@@ -314,6 +316,7 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [NuGet]: https://www.nuget.org/packages/WindowsAzure.Storage/
   [Azure SDK für .NET]: /de-de/downloads/
   [Gewusst wie: Programmgesteuerter Zugriff auf den Warteschlangenspeicher]: #configure-access
+  [Was ist Warteschlangenspeicherung?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Einrichten einer Azure-Speicherverbindungszeichenfolge]: #setup-connection-string
@@ -325,9 +328,6 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [Gewusst wie: Nutzen zusätzlicher Optionen für das Entfernen von Nachrichten aus der Warteschlange]: #advanced-get
   [Gewusst wie: Abrufen der Warteschlangenlänge]: #get-queue-length
   [Gewusst wie: Löschen einer Warteschlange]: #delete-queue
-  [howto-queue-storage]: ../includes/howto-queue-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
-  [storage-configure-connection-string]: ../includes/storage-configure-connection-string.md
   [.NET Developer Center]: http://www.windowsazure.com/de-de/develop/net/#
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2

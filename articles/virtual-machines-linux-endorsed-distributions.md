@@ -1,10 +1,10 @@
-<properties linkid="manage-linux-other-resources-endorsed-distributions" urlDisplayName="Endorsed distributions" pageTitle="Endorsed distributions of Linux in Azure" metaKeywords="" description="Learn about Linux on Azure-endorsed distributions, including guidelines for Ubuntu, OpenLogic, and SUSE." metaCanonical="" services="virtual-machines" documentationCenter="" title="Linux on Azure-Endorsed Distributions" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<properties urlDisplayName="Endorsed distributions" pageTitle="Best&auml;tigte Distributionen von Linux in Azure" metaKeywords="" description="Erfahren Sie mehr &uuml;ber best&auml;tigte Linux-Distributionen auf Azure, einschlie&szlig;lich Leitf&auml;den f&uuml;r Ubuntu, OpenLogic und SUSE." metaCanonical="" services="virtual-machines" documentationCenter="" title="Linux auf Azure-unterst&uuml;tzten Distributionen" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav" />
 
-# Linux auf von Azure unterstützten Distributionen
+# Linux auf Azure-unterstützten Distributionen
 
-Die Distributionsimages im Azure-Katalog werden von den folgenden Partnern zur Verfügung gestellt. Außerdem arbeiten wir mit den verschiedenen Linux-Communitys daran, weitere unterstützte Distributionen bereitzustellen. In der Zwischenzeit können Sie bei Distributionen, die nicht in der Galerie verfügbar sind, stets Ihre eigene Linux-Distribution bereitstellen ("Bring Your Own"), indem Sie die Richtlinien auf [dieser Seite][dieser Seite] befolgen.
+Die Distributionsimages im Azure-Katalog werden von den folgenden Partnern zur Verfügung gestellt. Außerdem arbeiten wir mit verschiedenen Linux-Communitys daran, noch mehr bestätigte Distributionen bereitzustellen. In der Zwischenzeit können Sie für Distributionen, die im Katalog nicht verfügbar sind, stets Ihre eigene Linux-Distribution bereitstellen („Bring Your Own“), indem Sie die Richtlinien auf [dieser Seite][dieser Seite] befolgen.
 
 ## Canonical
 
@@ -18,13 +18,13 @@ Mit Entwicklern und Engineering Centers überall auf der Welt ist Canonical herv
 
 [][1]<http://www.openlogic.com/azure></a>
 
-OpenLogic ist ein führender Anbieter von Open Source-Lösungen für Unternehmen für die Cloud und das Rechenzentrum. OpenLogic hilft Hunderten führenden Unternehmen in zahlreichen Industriezweigen beim sicheren Erwerb, der Unterstützung sowie Steuerung von Open Source-Software. OpenLogic bietet handelsüblichen technischen Support und Schadenersatzleistungen für 600 von der OpenLogic Expert Community unterstützte Open Source-Pakete, einschließlich professionellem Support für CentOS, und ist zugleich der Launch-Partner für die Bereitstellung von CentOS-Images unter Azure.
+OpenLogic ist ein führender Anbieter von Open Source-Lösungen für Unternehmen für die Cloud und das Rechenzentrum. OpenLogic hilft Hunderten führenden Unternehmen in zahlreichen Industriezweigen beim sicheren Erwerb, der Unterstützung sowie Steuerung von Open Source-Software. OpenLogic bietet handelsüblichen technischen Support und Schadenersatzleistungen für 600 von der OpenLogic Expert Community unterstützte Open Source-Pakete, einschließlich des professionellen Supports für CentOS, und ist zugleich der Launch-Partner für die Bereitstellung von CentOS-basierten Images unter Azure.
 
 ## Oracle
 
 [][2]<http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html></a>
 
-Die Strategie von Oracle besteht darin, ein weitgefasstes Portfolio von Lösungen für öffentliche und private Clouds anzubieten und den Kunden zugleich Wahlmöglichkeiten und Flexibilität bei der Art und Weise zu geben, wie sie Oracle-Software in Oracle-Clouds und anderen Clouds bereitstellen. Aufgrund der Partnerschaft zwischen Oracle und Microsoft haben Kunden die Möglichkeit, Oracle-Software in öffentlichen und privaten Clouds von Microsoft bereitzustellen und können dabei auf die Zertifizierung und den Support von Oracle vertrauen. Oracles Engagement und die Investition in öffentliche und private Cloudlösungen von Oracle bleibt unverändert.
+Die Strategie von Oracle besteht darin, ein weitgefasstes Portfolio von Lösungen für öffentliche und private Clouds anzubieten und den Kunden zugleich Wahlmöglichkeiten und Flexibilität bei der Art und Weise zu geben, wie sie Oracle-Software in Oracle-Clouds und anderen Clouds bereitstellen. Aufgrund der Partnerschaft zwischen Oracle und Microsoft haben Kunden die Möglichkeit, Oracle-Software in öffentlichen und privaten Clouds von Microsoft bereitzustellen und können dabei auf die Zertifizierung und den Support von Oracle vertrauen. Das Engagement und die Investition von Oracle in öffentliche und private Cloud-Lösungen von Oracle bleiben unverändert.
 
 ## SUSE
 
@@ -34,9 +34,9 @@ SUSE Linux Enterprise Server unter Azure ist eine bewährte Plattform, die hervo
 
 ## Unterstützte Versionen
 
-Die folgende Tabelle enthält die verschiedenen Distributionsversionen, LIS-Treiber (Linux Integration Services) sowie Azure Linux Agent-Versionen, die für den Einsatz unter Azure getestet wurden. LIS-Treiber sind entweder standardmäßig in den Kernel der Distribution integriert oder stehen [hier][hier] zur Verfügung. Linux-Agent-Versionen stehen im Repository des Pakets der Distribution oder auf [Github][Github] zur Verfügung.
+Die folgende Tabelle enthält die verschiedenen Distributionsversionen, LIS-Treiber (Linux Integration Services) sowie Azure Linux Agent-Versionen, die für den Einsatz unter Azure getestet wurden. LIS-Treiber sind entweder standardmäßig im Kernel der Distribution integriert oder [hier][hier] verfügbar. Linux-Agent-Versionen sind im Paketrepository der Distribution oder auf [Github][Github] verfügbar.
 
-Die Tabelle enthält zudem einen Link zum [Kernel-Kompatibilitätspatch][Kernel-Kompatibilitätspatch], das von einigen Distributions-/Kernelversionen für eine optimale Funktion in Azure benötigt wird.
+Die Tabelle enthält zudem einen Link zum [Kernel-Kompatibilitätspatch][Kernel-Kompatibilitätspatch], das von einigen Distributions-/Kernelversionen für die optimale Funktion in Azure benötigt wird.
 
 <table border="1" width="600">
 <tr bgcolor="#E9E7E7">
@@ -63,11 +63,11 @@ Agent
 </tr>
 <tr>
 <th>
-Canonical Ubuntu
+Ubuntu von Canonical
 
 </th>
 <td>
-Ubuntu 12.04.1+, 13.10 und 14.04
+Ubuntu 12.04.1+, 14.04 & 14.10
 
 </td>
 <td>
@@ -80,13 +80,13 @@ Im Kernel
 </td>
 <td>
 Paket: Im Paketrepository unter walinuxagent
-: Quelle: [GitHub][GitHub]
+ Source: [GitHub][GitHub]
 
 </td>
 </tr>
 <tr>
 <th>
-CentOS by OpenLogic
+CentOS von OpenLogic
 
 </th>
 <td>
@@ -103,7 +103,29 @@ CentOS 6.3: [LIS-Treiber][hier], CentOS 6.4+-Treiber: Im Kernel
 </td>
 <td>
 Paket: Im [Open Logic-Paketrepository][Open Logic-Paketrepository] unter walinuxagent
- Quelle: [GitHub][GitHub]
+ Source: [GitHub][GitHub]
+
+</td>
+</tr>
+<tr>
+<th>
+CoreOS
+
+</th>
+<td>
+475.1.0 *Alpha*<sup>1</sup>
+
+</td>
+<td>
+Im Kernel
+
+</td>
+<td>
+N/V
+
+</td>
+<td>
+Source: [GitHub][4]
 
 </td>
 </tr>
@@ -126,7 +148,7 @@ N/V
 </td>
 <td>
 Paket: Im Repository, Name: WALinuxAgent
- Quelle: [GitHub][GitHub]
+ Source: [GitHub][GitHub]
 
 </td>
 </tr>
@@ -177,6 +199,7 @@ Paket: Im [Cloud:Tools][Cloud:Tools]-Repository, Name: WALinuxAgent
 </td>
 </tr>
 </table>
+<sup>1</sup> **Hinweis:** CoreOS auf Azure befindet sich zurzeit in der Entwicklervorschau (*alpha*).
 
   [dieser Seite]: ../virtual-machines-linux-create-upload-vhd/
   []: http://www.ubuntu.com/cloud/azure
@@ -190,4 +213,5 @@ Paket: Im [Cloud:Tools][Cloud:Tools]-Repository, Name: WALinuxAgent
   [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=250998
   [Erforderlich nur für 6.3]: http://go.microsoft.com/fwlink/?LinkID=275153&clcid=0x409
   [Open Logic-Paketrepository]: http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/
+  [4]: https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent
   [Cloud:Tools]: https://build.opensuse.org/project/show/Cloud:Tools

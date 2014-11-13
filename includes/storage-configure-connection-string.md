@@ -14,16 +14,16 @@ So konfigurieren Sie die Verbindungszeichenfolge in der Azure-Dienstkonfiguratio
 1.  Klicken Sie im Projektmappen-Explorer von Visual Studio im Ordner **Rollen**
     des Azure-Bereitstellungsprojekts mit der rechten Maustaste auf Ihre
     Webrolle oder Workerrolle, und klicken Sie dann auf **Eigenschaften**.
-    ![Eigenschaften für eine Clouddienstrolle in Visual Studio auswählen][]
+    ![Eigenschaften für eine Clouddienstrolle in Visual Studio auswählen][Eigenschaften für eine Clouddienstrolle in Visual Studio auswählen]
 
 2.  Klicken Sie auf die Registerkarte **Einstellungen**, und wählen Sie die Schaltfläche **Einstellung hinzufügen** aus.
-    ![Clouddiensteinstellung in Visual Studio hinzufügen][]
+    ![Clouddiensteinstellung in Visual Studio hinzufügen][Clouddiensteinstellung in Visual Studio hinzufügen]
 
     In der Einstellungstabelle wird daraufhin der neue Eintrag **Setting1** angezeigt.
 
 3.  Wählen Sie in der Dropdownliste **Typ** des neuen Eintrags **Setting1** die Option
     **Verbindungszeichenfolge** aus.
-    ![Verbindungszeichenfolgentyp festlegen][]
+    ![Verbindungszeichenfolgentyp festlegen][Verbindungszeichenfolgentyp festlegen]
 
 4.  Klicken Sie auf die Schaltfläche **...** rechts neben dem Eintrag **Setting1**.
     Das Dialogfeld **Verbindungszeichenfolge für das Speicherkonto** wird geöffnet.
@@ -37,12 +37,12 @@ So konfigurieren Sie die Verbindungszeichenfolge in der Azure-Dienstkonfiguratio
 
     > [WACOM.NOTE] Sie können auf den Speichermulator zielen, um jegliche Kosten im Zusammenhang mit Windows Azure Storage zu vermeiden. Wenn jedoch ein Azure-Speicherkonto in der Cloud das Ziel sein soll, sind die Kosten für das Ausführen dieses Lernprogramms vernachlässigbar.
 
-    ![Zielumgebung auswählen][]
+    ![Zielumgebung auswählen][Zielumgebung auswählen]
 
 6.  Ändern Sie den Eintrag **Name** von **Setting1** in einen benutzerfreundlicheren
      Namen wie **StorageConnectionString**. Sie werden später in diesem Leitfaden auf diese
     Verbindungszeichenfolge verweisen.
-    ![Namen der Verbindungszeichenfolge ändern][]
+    ![Namen der Verbindungszeichenfolge ändern][Namen der Verbindungszeichenfolge ändern]
 
 ### Konfigurieren der Verbindungszeichenfolge in der .NET-Konfiguration
 
@@ -62,7 +62,7 @@ Die Konfigurationseinstellung in Ihrer Konfigurationsdatei könnte beispielsweis
         </appSettings>
     </configuration>
 
-Weitere Informationen zu Speicherverbindungszeichenfolgen finden Sie unter [Konfigurieren von Verbindungszeichenfolgen][].
+Weitere Informationen zu Speicherverbindungszeichenfolgen finden Sie unter [Konfigurieren von Verbindungszeichenfolgen][Konfigurieren von Verbindungszeichenfolgen].
 
 Sie sind nun bereit für die Gewusst-wie-Aufgaben in diesem Leitfaden.
 
@@ -71,4 +71,4 @@ Sie sind nun bereit für die Gewusst-wie-Aufgaben in diesem Leitfaden.
   [Verbindungszeichenfolgentyp festlegen]: ./media/storage-configure-connection-string/connection-string3.png
   [Zielumgebung auswählen]: ./media/storage-configure-connection-string/connection-string4.png
   [Namen der Verbindungszeichenfolge ändern]: ./media/storage-configure-connection-string/connection-string5.png
-  [Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/en-us/library/windowsazure/ee758697.aspx
+  [Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx

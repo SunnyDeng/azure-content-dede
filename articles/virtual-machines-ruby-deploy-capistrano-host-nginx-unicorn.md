@@ -1,10 +1,10 @@
-<properties linkid="dev-ruby-web-app-with-linux-vm-capistrano" urlDisplayName="Ruby on Rails Azure VM Capistrano" pageTitle="Deploying a Ruby on Rails Web application to an Azure Virtual Machine using Capistrano - tutorial" metaKeywords="ruby on rails, ruby on rails azure, rails azure, rails vm, capistrano azure vm, capistrano azure rails, unicorn azure vm, unicorn azure rails, unicorn nginx capistrano, unicorn nginx capistrano azure, nginx azure" description="Learn how to deploy a Ruby on Rails application to an Azure Virtual Machine using Capistrano, Unicorn and Nginx." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Deploy a Ruby on Rails Web application to an Azure VM using Capistrano" authors="larryfr" />
+<properties urlDisplayName="Ruby on Rails Azure VM Capistrano" pageTitle="Bereitstellen einer Ruby on Rails-Webanwendung auf einem virtuellen Azure-Computer mithilfe von Capistrano &ndash; Lernprogramm" metaKeywords="ruby on rails, ruby on rails azure, rails azure, rails vm, capistrano azure vm, capistrano azure rails, unicorn azure vm, unicorn azure rails, unicorn nginx capistrano, unicorn nginx capistrano azure, nginx azure" description="Erfahren Sie, wie Sie mithilfe von Capistrano, Unicorn und Nginx eine Ruby on Rails-Anwendung f&uuml;r einen virtuellen Azure-Computer bereitstellen." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Bereitstellen einer Ruby on Rails-Webanwendung auf einer Azure-VM mit Capistrano" authors="larryfr" manager="wpickett" />
 
-<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-linux" ms.devlang="ruby" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
+<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-linux" ms.devlang="ruby" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Bereitstellen einer Ruby on Rails-Webanwendung auf einer Azure-VM mit Capistrano
 
-In diesem Lernprogramm wird beschrieben, wie Sie eine Ruby on Rails-Website mit [Capistrano 3][] auf einem virtuellen Azure-Computer bereitstellen. Ist die Website bereitgestellt, verwenden Sie [Nginx][] und [Unicorn][], um sie zu hosten. [PostgreSQL][] speichert die Daten für die bereitgestellte Anwendung.
+In diesem Lernprogramm wird beschrieben, wie Sie eine Ruby on Rails-Website mit [Capistrano 3][Capistrano 3] auf einem virtuellen Azure-Computer bereitstellen. Ist die Website bereitgestellt, verwenden Sie [Nginx][Nginx] und [Unicorn][Unicorn], um sie zu hosten. [PostgreSQL][PostgreSQL] speichert die Daten für die bereitgestellte Anwendung.
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch nicht über Erfahrungen mit Azure verfügen, aber mit Ruby, Rails, Git und Linux vertraut sind. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Ruby on Rails-basierte Anwendung, die in der Cloud ausgeführt wird.
 
@@ -22,7 +22,7 @@ Sie erhalten Informationen zu folgenden Themen:
 
 Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
-![Browser mit Listenpositionen][]
+![Browser mit Listenpositionen][Browser mit Listenpositionen]
 
 > [WACOM.NOTE] Die im Rahmen dieses Lernprogramms eingesetzte Anwendung beinhaltet systemeigene Binärkomponenten. Sollte Ihre Entwicklungsumgebung nicht Linux-basiert sein, können bei der Bereitstellung auf den virtuellen Computer Fehler auftreten. Die während der Bereitstellung verwendete Datei Gemfile.lock enthält plattformspezifische Gems, die möglicherweise keine Einträge für die systemeigenen Linux-Versionen der auf dem virtuellen Computer benötigten Gems enthalten.
 >
@@ -30,33 +30,33 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 ## Themen in diesem Artikel
 
--   [Einrichten der Entwicklungsumgebung][]
+-   [Einrichten der Entwicklungsumgebung][Einrichten der Entwicklungsumgebung]
 
--   [Erstellen einer Rails-Anwendung][]
+-   [Erstellen einer Rails-Anwendung][Erstellen einer Rails-Anwendung]
 
--   [Testen der Anwendung][]
+-   [Testen der Anwendung][Testen der Anwendung]
 
--   [Erstellen eines Quell-Repositorys][]
+-   [Erstellen eines Quell-Repositorys][Erstellen eines Quell-Repositorys]
 
--   [Erstellen eines virtuellen Azure-Computers][]
+-   [Erstellen eines virtuellen Azure-Computers][Erstellen eines virtuellen Azure-Computers]
 
--   [Testen von Nginx][]
+-   [Testen von Nginx][Testen von Nginx]
 
--   [Vorbereiten der Bereitstellung][]
+-   [Vorbereiten der Bereitstellung][Vorbereiten der Bereitstellung]
 
--   [Bereitstellen][]
+-   [Bereitstellen][Bereitstellen]
 
--   [Nächste Schritte][]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <span id="setup"></span></a>Einrichten der Entwicklungsumgebung
 
 1.  Installieren Sie Ruby in Ihrer Entwicklungsumgebung. Je nach Betriebssystem können die Schritte unterschiedlich sein.
 
-    -   **Apple OS X** - Es gibt verschiedene Ruby-Distributionen für OS X. Dieses Lernprogramm wurde auf OS X unter Verwendung von [Homebrew][] getestet, um **rbenv**, **ruby-build** und **Ruby 2.0.0-p451** zu installieren. Installationsinformationen finden Sie unter [][]<https://github.com/sstephenson/rbenv/></a>.
+    -   **Apple OS X** - Es gibt verschiedene Ruby-Distributionen für OS X. Dieses Lernprogramm wurde auf OS X unter Verwendung von [Homebrew][Homebrew] getestet, um **rbenv**, **ruby-build** und **Ruby 2.0.0-p451** zu installieren. Installationsinformationen finden Sie unter [][]<https://github.com/sstephenson/rbenv/></a>.
 
     -   **Linux** - Verwenden Sie Ihr Distributions-Paketverwaltungssystem. Dieses Lernprogramm wurde auf Ubuntu 12.10 mit **rbenv**, **ruby-build** und **Ruby 2.0.0-p451** getestet.
 
-    -   **Windows** - Es gibt verschiedene Ruby-Distributionen für Windows. Dieses Lernprogramm wurde unter Verwendung von [RubyInstaller][] getestet, um **Ruby 2.0.0-p451** zu installieren. Befehle wurden mit der **GitBash**-Befehlszeile ausgegeben, die unter [Git für Windows][] verfügbar ist.
+    -   **Windows** - Es gibt verschiedene Ruby-Distributionen für Windows. Dieses Lernprogramm wurde unter Verwendung von [RubyInstaller][RubyInstaller] getestet, um **Ruby 2.0.0-p451** zu installieren. Befehle wurden mit der **GitBash**-Befehlszeile ausgegeben, die unter [Git für Windows][Git für Windows] verfügbar ist.
 
 2.  Öffnen Sie eine neue Befehlszeile oder Terminalsitzung, und geben Sie folgenden Befehl ein, um Ruby on Rails zu installieren:
 
@@ -92,7 +92,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
         rake db:migrate
 
-    Dadurch wird das Datenbankschema für die Speicherung von Einträgen mithilfe von [SQLite3 Database][], dem standardmäßigen Datenbankanbieter für Rails, erstellt.
+    Dadurch wird das Datenbankschema für die Speicherung von Einträgen mithilfe von [SQLite3 Database][SQLite3 Database], dem standardmäßigen Datenbankanbieter für Rails, erstellt.
 
 4.  Um einen Index der Einträge als Homepage anzuzeigen, fügen Sie in der Datei **config/routes.rb** nach der Zeile `resources :posts` Folgendes ein.
 
@@ -106,7 +106,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
         rails s
 
-    Eine Ausgabe ähnlich der folgenden wird angezeigt. Beachten Sie, welchen Port der Webserver abhört. In dem Beispiel unten wird Port 3000 abgehört.
+    Eine Ausgabe ähnlich der folgenden sollte angezeigt werden. Beachten Sie, welchen Port der Webserver abhört. In dem Beispiel unten wird Port 3000 abgehört.
 
         => Booting WEBrick
         => Rails 4.0.4 application starting in development on http://0.0.0.0:3000
@@ -118,17 +118,17 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 2.  Öffnen Sie Ihren Browser und navigieren Sie zu <http://localhost:3000/>. Eine Seite ähnlich der folgenden wird angezeigt.
 
-    ![Seite mit Einträgen][]
+    ![Seite mit Einträgen][Seite mit Einträgen]
 
     Um den Serverprozess zu stoppen, geben Sie STRG+C an der Befehlszeile ein.
 
 ## <span id="repository"></span></a>Erstellen eines Quell-Repositorys
 
-Bei der Bereitstellung einer Anwendung mit Capistrano werden die Dateien aus einem Repository geladen. Für dieses Lernprogramm verwenden wir [Git][] für die Versionskontrolle und [GitHub][] für das Repository.
+Bei der Bereitstellung einer Anwendung mit Capistrano werden die Dateien aus einem Repository geladen. Für dieses Lernprogramm verwenden wir [Git][Git] für die Versionskontrolle und [GitHub][GitHub] für das Repository.
 
-1.  Erstellen Sie auf [GitHub][] ein neues Repository. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Konto anmelden. Bei den folgenden Schritten wird davon ausgegangen, dass der Name des Repositorys **blog\_app** lautet.
+1.  Erstellen Sie auf [GitHub][GitHub] ein neues Repository. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Konto anmelden. Bei den folgenden Schritten wird davon ausgegangen, dass der Name des Repositorys **blog\_app** lautet.
 
-    > [WACOM.NOTE] Um für Ihre Anwendung die automatische Bereitstellung zu unterstützen, sollten Sie für die Authentifizierung bei GitHub SSH-Schlüssel verwenden. Weitere Informationen finden Sie in der GitHub-Dokumentation unter [Generating SSH Keys][].
+    > [WACOM.NOTE] Um für Ihre Anwendung die automatische Bereitstellung zu unterstützen, sollten Sie für die Authentifizierung bei GitHub SSH-Schlüssel verwenden. Weitere Informationen finden Sie in der GitHub-Dokumentation unter [Generating SSH Keys][Generating SSH Keys].
 
 2.  Wechseln Sie über die Eingabeaufforderung zum Verzeichnis **blog\_app** und führen Sie die folgenden Befehle aus, um die Anwendung in das GitHub-Repository hochzuladen. Ersetzen Sie **YourGitHubName** durch den Namen Ihres GitHub-Kontos.
 
@@ -142,9 +142,9 @@ Im nächsten Abschnitt erstellen Sie den virtuellen Computer, auf dem die Anwend
 
 ## <span id="createvm"></span></a>Erstellen eines virtuellen Azure-Computers
 
-Folgen Sie den [hier][] angegebenen Anweisungen zum Erstellen eines virtuellen Azure-Computers, der Linux hostet.
+Folgen Sie den [hier][hier] angegebenen Anweisungen zum Erstellen eines virtuellen Azure-Computers, der Linux hostet.
 
-1.  Melden Sie sich beim Azure [Verwaltungsportal][] an. Wählen Sie in der Befehlsleiste **Neu**.
+1.  Melden Sie sich beim Azure [Verwaltungsportal][Verwaltungsportal] an. Wählen Sie in der Befehlsleiste **Neu**.
 
 2.  Wählen Sie **Virtueller Computer** und dann **From Gallery**.
 
@@ -156,11 +156,11 @@ Folgen Sie den [hier][] angegebenen Anweisungen zum Erstellen eines virtuellen A
 
 5.  Geben Sie unter **Neuer Benutzername** den Namen des Administratorkontos für diesen Computer ein.
 
-    > [WACOM.NOTE] In diesem Lernprogramm wird das Administratorkonto auch zum Bereitstellen der Anwendung verwendet. Informationen zum Erstellen eines separaten Kontos für die Bereitstellung finden Sie in der [Capistrano][]-Dokumentation.
+    > [WACOM.NOTE] In diesem Lernprogramm wird das Administratorkonto auch zum Bereitstellen der Anwendung verwendet. Informationen zum Erstellen eines separaten Kontos für die Bereitstellung finden Sie in der [Capistrano][Capistrano]-Dokumentation.
 
 6.  Wählen Sie unter **Authentifizierung** **Kompatiblen SSH-Schlüssel für Authentifizierung hochladen** und suchen Sie nach der **.pem**-Datei mit dem Zertifikat. Wählen Sie den Pfeil, um fortzufahren.
 
-    > [WACOM.NOTE] Sollten Sie mit dem Erstellen oder Verwenden von SSH-Schlüsseln nicht vertraut sein, erhalten Sie unter [Verwenden von SSH mit Linux auf Azure][] eine Anleitung zum Erstellen von SSH-Schlüsseln.
+    > [WACOM.NOTE] Sollten Sie mit dem Erstellen oder Verwenden von SSH-Schlüsseln nicht vertraut sein, erhalten Sie unter [Verwenden von SSH mit Linux auf Azure][Verwenden von SSH mit Linux auf Azure] eine Anleitung zum Erstellen von SSH-Schlüsseln.
     >
     > Sie können auch die Kennwortauthentifizierung aktivieren, der SSH-Schlüssel muss jedoch trotzdem angegeben werden, da er für die Automatisierung der Bereitstellung verwendet wird.
 
@@ -246,7 +246,7 @@ Der bei Erstellung des virtuellen Computers hinzugefügte HTTP-Endpunkt ermögli
 
 2.  Testen Sie nun Ihre Anwendung, indem Sie zum DNS-Namen des virtuellen Computers navigieren. Die Website sollte in etwa wie folgt aussehen:
 
-    ![Nginx-Willkommensseite][]
+    ![Nginx-Willkommensseite][Nginx-Willkommensseite]
 
     > [WACOM.NOTE] Durch die weiter unten in diesem Lernprogramm verwendeten Bereitstellungsskripte wird "blog\_app" zur Standardwebsite von Nginx.
 
@@ -433,20 +433,20 @@ An diesem Punkt sollte Ihre Ruby on Rails-Anwendung auf Ihrem virtuellen Azure-C
 In diesem Artikel haben Sie erfahren, wie Sie eine grundlegende Rails-Anwendung erstellen und auf einem virtuellen Azure-Computer mit Capistrano veröffentlichen. Die Arbeit mit einer grundlegenden Anwendung wie der hier beschriebenen bildet jedoch nur einen Bruchteil der Möglichkeiten, die Ihnen mit Capistrano für die Bereitstellung zur Verfügung stehen. Weitere Informationen zu Capistrano finden Sie unter:
 
 -   [Capistranorb.com][Capistrano]: Die Website von Capistrano.
--   [Azure, Ruby on Rails, Capistrano 3, & PostgreSQL][]: Ein alternativer Ansatz zur Bereitstellung auf Azure mit benutzerdefinierten Bereitstellungsskripten.
--   [Capistrano 3 tutorial][]: Ein Lernprogramm zum Arbeiten mit Capistrano 3.
+-   [Azure, Ruby on Rails, Capistrano 3, & PostgreSQL][Azure, Ruby on Rails, Capistrano 3, & PostgreSQL]: Ein alternativer Ansatz zur Bereitstellung auf Azure mit benutzerdefinierten Bereitstellungsskripten.
+-   [Capistrano 3 tutorial][Capistrano 3 tutorial]: Ein Lernprogramm zum Arbeiten mit Capistrano 3.
 
-Ein einfaches Beispiel zum Erstellen und Bereitstellen einer Rails-Anwendung auf einer Azure-VM, bei dem nur SSH verwendet wird, finden Sie unter [Hosten einer Ruby on Rails-Webanwendung mit einem virtuellen Linux-Computer][].
+Ein einfaches Beispiel zum Erstellen und Bereitstellen einer Rails-Anwendung auf einer Azure-VM, bei dem nur SSH verwendet wird, finden Sie unter [Hosten einer Ruby on Rails-Webanwendung mit einem virtuellen Linux-Computer][Hosten einer Ruby on Rails-Webanwendung mit einem virtuellen Linux-Computer].
 
-Wenn Sie mehr über Ruby on Rails erfahren möchten, rufen Sie die Seite [Ruby on Rails Guides][] auf.
+Wenn Sie mehr über Ruby on Rails erfahren möchten, rufen Sie die Seite [Ruby on Rails Guides][Ruby on Rails Guides] auf.
 
 Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Dienste von der Ruby-Anwendung aus finden Sie unter:
 
--   [Speichern von unstrukturierten Daten mit Blobs][]
+-   [Speichern von unstrukturierten Daten mit Blobs][Speichern von unstrukturierten Daten mit Blobs]
 
--   [Speichern von Schlüssel/Wert-Paaren mit Tabellen][]
+-   [Speichern von Schlüssel/Wert-Paaren mit Tabellen][Speichern von Schlüssel/Wert-Paaren mit Tabellen]
 
--   [Bereitstellen von breitbandigen Inhalten über das Content Delivery Network][]
+-   [Bereitstellen von breitbandigen Inhalten über das Content Delivery Network][Bereitstellen von breitbandigen Inhalten über das Content Delivery Network]
 
   [Capistrano 3]: https://github.com/capistrano/capistrano/
   [Nginx]: http://nginx.org/
@@ -472,15 +472,15 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
   [Git]: http://git-scm.com/
   [GitHub]: https://github.com/
   [Generating SSH Keys]: https://help.github.com/articles/generating-ssh-keys
-  [hier]: /en-us/manage/linux/tutorials/virtual-machine-from-gallery/
+  [hier]: /de-de/manage/linux/tutorials/virtual-machine-from-gallery/
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [Capistrano]: http://capistranorb.com
   [Verwenden von SSH mit Linux auf Azure]: http://azure.microsoft.com/de-de/documentation/articles/linux-use-ssh-key/
   [Nginx-Willkommensseite]: ./media/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/welcomenginx.png
   [Azure, Ruby on Rails, Capistrano 3, & PostgreSQL]: http://wootstudio.ca/articles/tutorial-windows-azure-ruby-on-rails-capistrano-3-postgresql
   [Capistrano 3 tutorial]: http://www.talkingquickly.co.uk/2014/01/deploying-rails-apps-to-a-vps-with-capistrano-v3/
-  [Hosten einer Ruby on Rails-Webanwendung mit einem virtuellen Linux-Computer]: /en-us/develop/ruby/tutorials/web-app-with-linux-vm/
+  [Hosten einer Ruby on Rails-Webanwendung mit einem virtuellen Linux-Computer]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [Ruby on Rails Guides]: http://guides.rubyonrails.org/
-  [Speichern von unstrukturierten Daten mit Blobs]: /en-us/develop/ruby/how-to-guides/blob-storage/
-  [Speichern von Schlüssel/Wert-Paaren mit Tabellen]: /en-us/develop/ruby/how-to-guides/table-service/
-  [Bereitstellen von breitbandigen Inhalten über das Content Delivery Network]: /en-us/develop/ruby/app-services/
+  [Speichern von unstrukturierten Daten mit Blobs]: /de-de/develop/ruby/how-to-guides/blob-storage/
+  [Speichern von Schlüssel/Wert-Paaren mit Tabellen]: /de-de/develop/ruby/how-to-guides/table-service/
+  [Bereitstellen von breitbandigen Inhalten über das Content Delivery Network]: /de-de/develop/ruby/app-services/

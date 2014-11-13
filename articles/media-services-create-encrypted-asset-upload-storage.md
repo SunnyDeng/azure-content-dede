@@ -1,10 +1,10 @@
-<properties linkid="develop-media-services-how-to-guides-create-assets" urlDisplayName="Create Encrypted Asset and Upload to Storage" pageTitle="Create Encrypted Asset and Upload to Storage Azure" metaKeywords="" description="Learn how to get media content into Media Services by creating and uploading an encrypted asset." metaCanonical="" services="media-services" documentationCenter="" title="How to: Create an encrypted Asset and upload to storage" authors="migree" solutions="" manager="" editor="" />
+<properties urlDisplayName="Create Encrypted Asset and Upload to Storage" pageTitle="Erstellen eines verschl&uuml;sselten Medienobjekts und Hochladen in den Speicher | Azure" metaKeywords="" description="Erfahren Sie, wie Sie Medieninhalte in Media Services erstellen k&ouml;nnen, indem Sie ein verschl&uuml;sseltes Medienobjekt erstellen und hochladen." metaCanonical="" services="media-services" documentationCenter="" title="Gewusst wie: Erstellen eines verschl&uuml;sselten Medienobjekts und hochladen in den Speicher" authors="juliako" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="migree"></tags>
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
 # <a name="create-asset"> </a><span class="short header">Gewusst wie: Erstellen eines verschlüsselten Medienobjekts und Hochladen in den Speicher</span>
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Einrichten Ihres Computers für Mediendienste][].
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Einrichten Ihres Computers für Mediendienste][Einrichten Ihres Computers für Mediendienste].
 
 Um Medieninhalte in Mediendienste zu übertragen, müssen Sie zunächst ein Medienobjekt erstellen, dieses Objekt mit Dateien füllen und anschließend hochladen. Diesen Prozess nennt man auch die Erfassung von Inhalten.
 
@@ -14,7 +14,8 @@ Bei der Erstellung von Medienobjekten können Sie drei verschiedene Optionen fü
 -   **AssetCreationOptions.CommonEncryptionProtected**: für Dateien mit Common Encryption Protected (CENC)-Verschlüsselung. Ein Beispiel ist ein Satz von Dateien, die bereits PlayReady-verschlüsselt sind.
 -   **AssetCreationOptions.StorageEncrypted**: Speicherverschlüsselung. Verschlüsselt eine unverschlüsselte Eingabedatei vor dem Hochladen in den Azure-Speicher.
 
-**HINWEIS**: Beachten Sie, dass Mediendienste Speicherverschlüsselung auf der Festplatte bieten, und nicht für die Netzwerkkommunikation wie Digital Rights Manager (DRM.)
+> WACOM.NOTE
+> Media Services bieten Speicherverschlüsselung auf der Festplatte, und nicht für die Netzwerkkommunikation wie Digital Rights Manager (DRM).
 
 Der folgende Beispielcode führt die folgenden Aufgaben aus:
 
@@ -113,7 +114,7 @@ Der folgende Code zeigt, wie Sie ein Medienobjekt erstellen und mehrere Dateien 
 
 ## Nächste Schritte
 
-Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit dem Artikel [Abrufren eines Medienprozessors][] fortfahren.
+Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit dem Artikel [Abrufren eines Medienprozessors][Abrufren eines Medienprozessors] fortfahren.
 
   [Einrichten Ihres Computers für Mediendienste]: http://go.microsoft.com/fwlink/?LinkID=301751&clcid=0x409
-  [Abrufren eines Medienprozessors]: http://go.microsoft.com/fwlink/?LinkID=301732&clcid=0x409
+  [Abrufren eines Medienprozessors]: ../media-services-get-media-processor/

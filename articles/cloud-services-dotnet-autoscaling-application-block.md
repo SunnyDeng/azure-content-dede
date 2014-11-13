@@ -1,4 +1,4 @@
-<properties linkid="dev-net-how-to-autoscaling" urlDisplayName="Autoscaling" pageTitle="Use the autoscaling application block (.NET) - Azure" metaKeywords="Azure autoscaling, Azure autoscaling C#, Azure autoscaling .NET" description="Learn how to use the Autoscaling Application for Azure. Code samples are written in C# and use the .NET API." metaCanonical="" services="cloud-services" documentationCenter=".NET" title="How to Use the Autoscaling Application Block" authors="timlt" solutions="" manager="timlt" editor="" />
+<properties urlDisplayName="Autoscaling" pageTitle="Verwenden des Anwendungsblocks (.NET) f&uuml;r die automatische Skalierung &ndash; Azure" metaKeywords="Azure autoscaling, Azure autoscaling C#, Azure autoscaling .NET" description="Hier erfahren Sie, wie Sie die Anwendung f&uuml;r die automatische Skalierung verwenden. Die Codebeispiele sind in C# geschrieben und verwenden die .NET API." metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Verwenden des Anwendungsblocks f&uuml;r die automatische Skalierung" authors="timlt" solutions="" manager="timlt" editor="" />
 
 <tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="timlt" />
 
@@ -201,31 +201,23 @@ in den Ausgabeordner kopiert wird. Gehen Sie dazu folgendermaßen vor:
 
     Das folgende Codebeispiel enthält ein Beispiel für ein Dienstmodell in der Datei **services.xml**:
 
-    <?xml version="1.0" encoding="utf-8" ?>
-    <serviceModel xmlns="http://schemas.microsoft.com/practices/2011/entlib/autoscaling/serviceModel">
-      <subscriptions>
-        <subscription name="[subscriptionname]"
-                      certificateThumbprint="[managementcertificatethumbprint]"
-                      subscriptionId="[subscriptionid]"
-                      certificateStoreLocation="CurrentUser"
-                      certificateStoreName="My">
-          <services>
-            <service dnsPrefix="[hostedservicednsprefix]" slot="Staging">
-              <roles>
-                <role alias="AutoscalingApplicationRole"
-                      roleName="[targetrolename]"
-                      wadStorageAccountName="targetstorage"/>
-              </roles>
-            </service>
-          </services>
-          <storageAccounts>
-            <storageAccount alias="targetstorage"
-              connectionString="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]">
-            </storageAccount>
-          </storageAccounts>
-        </subscription>
-      </subscriptions>
-    </serviceModel>
+    <servicemodel xmlns="http://schemas.microsoft.com/practices/2011/entlib/autoscaling/serviceModel">
+     <subscriptions>
+     <subscription name="[subscriptionname]" certificatethumbprint="[managementcertificatethumbprint]" subscriptionid="[subscriptionid]" certificatestorelocation="CurrentUser" certificatestorename="My">
+     <services>
+     <service dnsprefix="[hostedservicednsprefix]" slot="Staging">
+     <roles>
+     <role alias="AutoscalingApplicationRole" rolename="[targetrolename]" wadstorageaccountname="targetstorage"></role>
+     </roles>
+     </service>
+     </services>
+     <storageaccounts>
+     <storageaccount alias="targetstorage" connectionstring="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]">
+     </storageaccount>
+     </storageaccounts>
+     </subscription>
+     </subscriptions>
+    </servicemodel>
 
 Ersetzen Sie die Werte in eckigen Klammern durch spezifische Werte
 für Ihre Umgebung und Zielanwendung. Viele dieser Werte finden Sie,
@@ -525,8 +517,8 @@ Links, um zu erfahren, wie Sie komplexere Szenarien mit automatischer Skalierung
 -   [Wie Sage die Azure-Hostingkosten mithilfe der automatischen Skalierung reduziert][Wie Sage die Azure-Hostingkosten mithilfe der automatischen Skalierung reduziert]
 -   [Verringern der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure][Verringern der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure]
 
-  [Microsoft Enterprise Library 5.0 Integration Pack for Azure]: http://go.microsoft.com/fwlink/?LinkID=235134
   [Nächste Schritte]: #NextSteps
+  [Was ist der Anwendungsblock für die automatische Skalierung?]: #WhatIs
   [Konzepte]: #Concepts
   [Sammeln von Leistungsindikatordaten in der Azure-Zielanwendung]: #PerfCounter
   [Einrichten einer Hostanwendung für den Anwendungsblock für die automatische Skalierung]: #CreateHost

@@ -1,6 +1,6 @@
-<properties linkid="manage-services-hdinsight-howto-blob-store" urlDisplayName="Blob Storage with  Hadoop in HDInsight" pageTitle="Use Blob storage with Hadoop in HDInsight | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
+<properties urlDisplayName="Blob Storage with  Hadoop in HDInsight" pageTitle="Verwenden des Blobspeichers mit Hadoop in HDInsight | Azure" metaKeywords="" description="Erfahren Sie, wie HDInsight den Blobspeicher als zugrunde liegenden Datenspeicher f&uuml;r HDFS verwendet und wie Sie Daten aus dem Speicher abrufen k&ouml;nnen." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Verwenden des Azure-Blobspeichers mit Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
 # Verwenden des Azure-Blobspeichers mit Hadoop in HDInsight
 
@@ -117,14 +117,14 @@ Das URI-Schema für den Dateizugriff im Blob-Speicher ist:
 
     wasb[s]://<BlobStorageContainerName>@<StorageAccountName>.blob.core.windows.net/<path>
 
-> [WACOM.NOTE] Die Syntax zum Ansprechen der Dateien im Speicheremulator (ausgeführt im HDInsight-Emulator) lautet *wasb:[//<ContainerName\>@storageemulator][//<ContainerName\>@storageemulator]*.
+> [WACOM.NOTE] Die Syntax zum Ansprechen der Dateien im Speicheremulator (ausgeführt im HDInsight-Emulator) lautet *wasb:[//\<ContainerName\>@storageemulator][//\<ContainerName\>@storageemulator]*.
 
 Das URI-Schema bietet sowohl unverschlüsselten Zugriff mit dem Präfix *wasb:* als auch SSL-verschlüsselten Zugriff mit *wasbs*. Wir empfehlen die Verwendung von *wasbs*, wann immer es möglich ist, selbst für den Zugriff auf Daten, die sich im selben Azure-Datencenter befinden.
 
-<BlobStorageContainerName\> ist der Name des Blob-Speichercontainers.
-<StorageAccountName\> ist der Name des Azure-Speicherkontos. Ein vollqualifizierter Domänenname (FQDN) ist erforderlich.
+\<BlobStorageContainerName\> ist der Name des Blob-Speichercontainers.
+\<StorageAccountName\> ist der Name des Azure-Speicherkontos. Ein vollqualifizierter Domänenname (FQDN) ist erforderlich.
 
-Wenn weder <BlobStorageContainerName\> noch <StorageAccountName\> angegeben ist, wird das Standard-Dateisystem verwendet. Für die Dateien im Standard-Dateisystem können Sie entweder relative oder absolute Pfade verwenden. Auf die Datei hadoop-mapreduce-examples.jar, die sich in HDInsight-Clustern befindet, kann z. B. mit einem der folgenden Befehle verwiesen werden:
+Wenn weder \<BlobStorageContainerName\> noch \<StorageAccountName\> angegeben ist, wird das Standard-Dateisystem verwendet. Für die Dateien im Standard-Dateisystem können Sie entweder relative oder absolute Pfade verwenden. Auf die Datei hadoop-mapreduce-examples.jar, die sich in HDInsight-Clustern befindet, kann z. B. mit einem der folgenden Befehle verwiesen werden:
 
     wasb://mycontainer@myaccount.blob.core.windows.net/example/jars/hadoop-mapreduce-examples.jar
     wasb:///example/jars/hadoop-mapreduce-examples.jar
@@ -132,7 +132,7 @@ Wenn weder <BlobStorageContainerName\> noch <StorageAccountName\> angegeben ist,
 
 > [WACOM.NOTE] In HDInsight-Clustern der Version 1.6 und 2.1 lautet der Dateiname *hadoop-examples.jar*.
 
-<path\> ist der HDFS-Pfadname der Datei oder des Verzeichnisses. Da Blob-Speichercontainer nur ein Schlüssel/Wert-Paar sind, gibt es kein wirkliches hierarchisches Dateisystem. Ein "/" in einem Blob-Schlüssel wird als Verzeichnis-Trennzeichen interpretiert. Der Blob-Name für *hadoop-mapreduce-examples.jar* ist z. B.:
+\<path\> ist der HDFS-Pfadname der Datei oder des Verzeichnisses. Da Blob-Speichercontainer nur ein Schlüssel/Wert-Paar sind, gibt es kein wirkliches hierarchisches Dateisystem. Ein "/" in einem Blob-Schlüssel wird als Verzeichnis-Trennzeichen interpretiert. Der Blob-Name für *hadoop-mapreduce-examples.jar* ist z. B.:
 
     example/jars/hadoop-mapreduce-examples.jar
 

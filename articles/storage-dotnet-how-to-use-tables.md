@@ -1,4 +1,4 @@
-<properties linkid="dev-net-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage  from .NET | Microsoft Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Learn how to use Microsoft Azure Table storage to create and delete tables and insert and query entities in a table." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Microsoft Azure Table storage" authors="tamram" />
+<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers mit .NET | Microsoft Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Erfahren Sie, wie Sie den Microsoft Azure-Tabellenspeicher zum Erstellen und L&ouml;schen von Tabellen sowie zum Einf&uuml;gen und Abfragen von Entit&auml;ten in Tabellen verwenden." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Verwenden des Microsoft Azure-Tabellenspeichers" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -55,13 +55,13 @@ Informationen zu Tabellen finden Sie im Abschnitt [nächste Schritte][nächste S
 </h2>
 ### Abrufen der Assembly
 
-Sie können die Assembly `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
+Sie können die Assembly`Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
-`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
+`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\`lt;sdk-version\>\\ref\\</code> installiert.
 
 ### Namespace-Deklarationen
 
-Fügen Sie die folgenden Namespace-Deklarationen am Anfang aller C# Dateien hinzu,
+Fügen Sie die folgenden Namespace-Deklarationen am Anfang aller C#-Dateien hinzu,
 in denen Sie auf den Azure-Speicher zugreifen möchten:
 
     using Microsoft.WindowsAzure.Storage;
@@ -510,6 +510,7 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [NuGet]: https://www.nuget.org/packages/WindowsAzure.Storage/
   [Azure SDK für .NET]: /de-de/downloads/
   [Gewusst wie: Programmgesteuerter Zugriff auf den Tabellenspeicher]: #configure-access
+  [Was ist der Tabellendienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Einrichten einer Speicherverbindungszeichenfolge]: #setup-connection-string
@@ -524,9 +525,6 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [Gewusst wie: Abfragen einer Teilmenge von Entitätseigenschaften]: #query-entity-properties
   [Gewusst wie: Löschen einer Entität]: #delete-entity
   [Gewusst wie: Löschen einer Tabelle]: #delete-table
-  [howto-table-storage]: ../includes/howto-table-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
-  [storage-configure-connection-string]: ../includes/storage-configure-connection-string.md
   [.NET Developer Center]: http://www.windowsazure.com/de-de/develop/net/#
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2

@@ -1,12 +1,12 @@
-<properties linkid="virtual-machines-windows-tutorial-azure-preview" urlDisplayName="Create a virtual machine in the Preview Portal" pageTitle="Create a virtual machine running Windows Server in the Azure Preview Portal" metaKeywords="Azure image gallery vm" description="Learn how to create an Azure virtual machine (VM) running Windows Server, using the VM Gallery in the Azure Preview Portal" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="danlep,kathydav" solutions="" manager="dongill" editor="tysonn" />
+<properties urlDisplayName="Create a virtual machine in the Preview Portal" pageTitle="Erstellen Sie einen virtuellen Computer unter Windows im Azure-Vorschauportal" metaKeywords="Azure image gallery vm" description="Erfahren Sie, wie Sie mithilfe der VM-Galerie im Azure-Vorschauportal einen virtuellen Azure-Computer unter Windows erstellen." metaCanonical="" services="virtual-machines" documentationCenter="" title="Erstellen Sie einen virtuellen Computer unter Windows im Azure-Vorschauportal" authors="danlep,kathydav,rasquill" solutions="" manager="timlt" editor="tysonn" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="danlep,kathydav"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="09/16/2014" ms.author="danlep,kathydav,rasquill" />
 
-# Erstellen eines virtuellen Computers mit Windows Server im Azure-Vorschauportal
+# Erstellen Sie einen virtuellen Computer unter Windows im Azure-Vorschauportal
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/virtual-machines-windows-tutorial/" title="Azure-Portal">Azure-Portal</a><a href="/de-de/documentation/articles/virtual-machines-windows-tutorial-azure-preview/" title="Azure-Vorschauportal" class="current">Azure-Vorschauportal</a></div>
 
-In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der VM-Galerie im Azure-Vorschauportal ganz einfach einen virtuellen Azure-Computer mit Windows Server erstellen. Die Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
+In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer unter Windows mithilfe eines Windows Server-Imagebeispiels aus der Image-Galerie im Azure-Vorschauportal zu erstellen. Die Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungsimages.
 
 > [WACOM.NOTE] Sie benötigen keine Erfahrungen mit Azure-VMs, um dieses Lernprogramm auszuführen. Allerdings benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)][Create a Windows Azure account (in englischer Sprache)].
 
@@ -19,51 +19,53 @@ Wenn Sie ausführlichere Informationen wünschen, rufen Sie [Virtuelle Computer]
 
 ## <span id="createvirtualmachine"></span> </a>Erstellen eines virtuellen Computers
 
-In diesem Abschnitt erfahren Sie, wie Sie das Vorschauportal zur Erstellung eines VMs mit Windows Server verwenden. Sie können die Standardeinstellungen von Azure für den größten Teil der Konfiguration verwenden und den virtuellen Computer in nur wenigen Minuten erstellen.
+Dieser Abschnitt zeigt Ihnen die Verwendung des Vorschauportals zum Erstellen eines virtuellen Computers, wobei Windows Server als ein Beispiel dient. Sie können die Azure-Standardeinstellungen für den Hauptteil der Konfiguration verwenden und den virtuellen Computer in nur ein paar Minuten erstellen.
 
-1.  Melden Sie sich beim [Azure-Vorschauportal][1] an. Testen Sie das [kostenlose Testkonto][kostenlose Testkonto], wenn Sie noch kein Abonnement haben.
+> [WACOM.NOTE] Wie viele und welche Imagearten in der Galerie verfügbar sind, hängt von Ihrem Abonnementtyp ab. In diesem Lernprogramm wird ein Windows Server-Image verwendet. Ein MSDN-Abonnement weist jedoch möglicherweise zusätzliche für Sie verfügbare Images auf, einschließlich Desktop-Images.
 
-2.  Klicken Sie im Hub-Menü auf **Neu**.
+1.  Melden Sie sich beim [Azure-Vorschauportal][1] an. Testen Sie die [kostenlose Testversion][kostenlose Testversion], wenn Sie noch nicht über ein Abonnement verfügen.
 
-    ![Wählen Sie Neu in der Befehlsleiste aus][Wählen Sie Neu in der Befehlsleiste aus]
+2.  Klicken Sie im Menü „Hub“ auf **Neu**.
 
-3.  Klicken Sie unter **Neu** auf **Alles** und klicken Sie anschließend unter **Galerie** auf **Virtuelle Computer**. Klicken Sie auf **Windows Server 2012 R2 Datencenter**. Klicken Sie dort auf **Erstellen**.
+    ![Wählen Sie „Neu“ auf der Befehlsleiste aus.][Wählen Sie „Neu“ auf der Befehlsleiste aus.]
 
-    ![Wählen Sie ein VM-Image aus der Galerie][Wählen Sie ein VM-Image aus der Galerie]
+3.  Klicken Sie unter **Neu** auf **Alles**, und klicken Sie dann unter **Galerie**, auf **Virtuelle Computer**. Klicken Sie auf **Windows Server 2012 R2 Datacenter**. Klicken Sie dort auf **Erstellen**.
 
-4.  Geben Sie im Fenster **VM Erstellen** den **Hostnamen** ein, den Sie für den VM verwenden möchten, sowie den **Benutzernamen** des Administrators und ein starkes **Passwort**.
+    ![Wählen Sie ein VM-Image aus der Galerie aus.][Wählen Sie ein VM-Image aus der Galerie aus.]
 
-    ![Konfiguration des Hostnamens und der Anmeldeberechtigungsnachweise][Konfiguration des Hostnamens und der Anmeldeberechtigungsnachweise]
+4.  Geben Sie im Blatt **VM erstellen** den **Hostnamen**, den Sie für den virtuellen Computer wünschen, sowie den administrativen **Benutzernamen** und ein sicheres **Kennwort** ein.
 
-    > [WACOM.NOTE] Der **Benutzername** bezieht sich auf das Administratorkonto, dass Sie zur Verwaltung des Servers verwenden. Geben Sie für dieses Konto ein individuelles Passwort an und stellen Sie sicher, dass Sie es nicht vergessen. **Sie brauchen den Benutzernamen und das Passwort, um sich am virtuellen Computer anzumelden**.
+    ![Konfigurieren Sie den Hostnamen und die Anmeldeinformationen.][Konfigurieren Sie den Hostnamen und die Anmeldeinformationen.]
 
-5.  Klicken Sie auf **Erstellen**, um die Standardeinstellungen für die übrigen VM-Optionen zu verwenden, und um die Erstellung des VMs zu beginnen. Wenn Sie möchten, können Sie sich die Einstellungen für die **Optionale Konfiguration** ansehen, bevor Sie auf **Erstellen** klicken. Sie können beispielsweise eine optionale Fehlerdiagnose konfigurieren, um später viele Metriken auf Ihrem VM zu verfolgen. Klicken Sie auf **Optionale Konfiguration**, klicken Sie anschließend auf **Fehlerdiagnose** und schalten Sie den **Status** auf **Ein**.
+    > [WACOM.NOTE] **Benutzername** bezieht sich auf das Administratorkonto, das Sie zum Verwalten des Servers verwenden. Erstellen Sie ein eindeutiges Kennwort für dieses Konto, und merken Sie sich das Kennwort. **Sie benötigen Benutzername und Kennwort, um sich am virtuellen Computer anzumelden**.
 
-    ![Schalten Sie VM-Fehlerdiagnose ein][Schalten Sie VM-Fehlerdiagnose ein]
+5.  Klicken Sie zum Verwenden der Standardeinstellungen für die verbleibenden VM-Optionen und zum Starten der VM-Erstellung auf **Erstellen**. Vor dem Klicken auf **Erstellen** können Sie jedoch auch die Einstellungen für die optionale Konfiguration durchsuchen. Beispielsweise können Sie optionale Diagnosen auf dem virtuellen Computer konfigurieren, um später jede Menge Metriken auf Ihrem virtuellen Computer nachverfolgen zu können. Klicken Sie auf die Option für die optionale Konfiguration, auf **Diagnose**, und wechseln Sie den **Status** zu **Ein**.
 
-    > [WACOM.NOTE] Wenn Sie die Azure-Fehlerdiagnose einschalten, speichert Azure die Diagnosedaten in einem Azure-Speicherkonto, wodurch zusätzliche Speicherkosten entstehen.
+    ![Aktivieren Sie die VM-Diagnose.][Aktivieren Sie die VM-Diagnose.]
 
-6.  Während Azure den VM erstellt, können Sie den Fortschritt in **Benachrichtigungen** im Hub-Menü verfolgen. Nachdem Azure den VM erstellt hat, wird er Ihnen auf Ihrem Anmeldebildschirm angezeigt.
+    > [WACOM.NOTE] Wenn Sie die Azure-Diagnose aktivieren, speichert Azure die Diagnosedaten in einem Azure-Speicherkonto, wodurch zusätzliche Speicherkosten anfallen.
 
-    ![VM erscheint im Startboard][VM erscheint im Startboard]
+6.  Während Azure den virtuellen Computer erstellt, können Sie den Status unter **Benachrichtigungen** im Menü „Hub“ nachverfolgen. Nachdem Azure den virtuellen Computer erstellt hat, sehen Sie ihn in Ihrem Startmenü.
+
+    ![Der virtuelle Computer wird im Startmenü angezeigt.][Der virtuelle Computer wird im Startmenü angezeigt.]
 
 ## <span id="logon"></span> </a>Anmelden bei einem virtuellen Computer nach dessen Erstellung
 
-In diesem Abschnitt lernen Sie, wie Sie sich bei dem von Ihnen erstellten virtuellen Computer anmelden, um sowohl dessen Einstellungen als auch die darauf ausgeführten Anwendungen zu verwalten.
+In diesem Abschnitt erfahren Sie, wie Sie sich beim von Ihnen erstellten virtuellen Computer anmelden, um sowohl dessen Einstellungen als auch die darauf ausgeführten Anwendungen zu verwalten.
 
-> [WACOM.NOTE] Tipps zu Anforderungen und Fehlerbehebung finden Sie unter [Verbindung zu einem virtuellen Azure-Computer mit RDP oder SSH][Verbindung zu einem virtuellen Azure-Computer mit RDP oder SSH].
+> [WACOM.NOTE] Anforderungen und Tipps zur Problembehandlung finden Sie unter [Verbindung mit einem virtuellen Azure-Computer mit RDP oder SSH][Verbindung mit einem virtuellen Azure-Computer mit RDP oder SSH].
 
-1.  Melden Sie sich beim [Azure-Vorschauportal][1] an, falls noch nicht geschehen.
+1.  Melden Sie sich am [Azure-Vorschauportal][1] an, falls noch nicht geschehen.
 
-2.  Klicken Sie auf Ihren VM im Startboard Wenn Sie den VM suchen müssen, klicken Sie auf **Durchsuchen** und anschließend auf **Virtuelle Computer**.
+2.  Klicken Sie im Startmenü auf Ihren virtuellen Computer. Wenn Sie ihn finden müssen, klicken Sie auf **Durchsuchen** und dann auf **Virtuelle Computer**.
 
-    ![Durchsuchen, um den VM zu finden][Durchsuchen, um den VM zu finden]
+    ![Suchen Sie den virtuellen Computer.][Suchen Sie den virtuellen Computer.]
 
-3.  Klicken Sie im VM-Fenster oben auf **Verbinden**.
+3.  Klicken Sie oben auf dem VM-Blatt auf **Verbinden**.
 
     ![Melden Sie sich beim virtuellen Computer an.][Melden Sie sich beim virtuellen Computer an.]
 
-4.  Klicken Sie auf **Öffnen**, um die Remotedesktopprotokoll-Datei zu verwenden, die automatisch für den virtuellen Computer erstellt wurde.
+4.  Klicken Sie auf **Öffnen**, um die Remotedesktop-Protokolldatei zu verwenden, die automatisch für den virtuellen Computer erstellt wurde.
 
 5.  Klicken Sie auf **Verbinden**, um die Verbindung herzustellen.
 
@@ -89,21 +91,22 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
 
 [Verwalten der Verfügbarkeit virtueller Computer][Verwalten der Verfügbarkeit virtueller Computer]
 
-  [Azure-Portal]: /de-de/documentation/articles/virtual-machines-windows-tutorial/ "Azure-Portal"
+[Starten, Beenden und Löschen virtueller Computer][Starten, Beenden und Löschen virtueller Computer]
+
   [Azure-Vorschauportal]: /de-de/documentation/articles/virtual-machines-windows-tutorial-azure-preview/ "Azure-Vorschauportal"
   [Create a Windows Azure account (in englischer Sprache)]: http://www.windowsazure.com/de-de/develop/php/tutorials/create-a-windows-azure-account/
   [Erstellen eines virtuellen Computers]: #createvirtualmachine
   [Anmelden bei einem virtuellen Computer nach dessen Erstellung]: #logon
   [Virtuelle Computer]: http://go.microsoft.com/fwlink/p/?LinkID=271224
   [1]: https://portal.azure.com
-  [kostenlose Testkonto]: http://www.windowsazure.com/de-de/pricing/free-trial/
-  [Wählen Sie Neu in der Befehlsleiste aus]: ./media/virtual-machines-windows-tutorial-azure-preview/new_button_preview_portal.png
-  [Wählen Sie ein VM-Image aus der Galerie]: ./media/virtual-machines-windows-tutorial-azure-preview/image_gallery_preview_portal.png
-  [Konfiguration des Hostnamens und der Anmeldeberechtigungsnachweise]: ./media/virtual-machines-windows-tutorial-azure-preview/create_vm_preview_portal.png
-  [Schalten Sie VM-Fehlerdiagnose ein]: ./media/virtual-machines-windows-tutorial-azure-preview/vm_diagnostics_status_preview_portal.png
-  [VM erscheint im Startboard]: ./media/virtual-machines-windows-tutorial-azure-preview/vm_startboard_preview_portal.png
-  [Verbindung zu einem virtuellen Azure-Computer mit RDP oder SSH]: http://go.microsoft.com/fwlink/p/?LinkId=398294
-  [Durchsuchen, um den VM zu finden]: ./media/virtual-machines-windows-tutorial-azure-preview/browse_vm_preview_portal.png
+  [kostenlose Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/
+  [Wählen Sie „Neu“ auf der Befehlsleiste aus.]: ./media/virtual-machines-windows-tutorial-azure-preview/new_button_preview_portal.png
+  [Wählen Sie ein VM-Image aus der Galerie aus.]: ./media/virtual-machines-windows-tutorial-azure-preview/image_gallery_preview_portal.png
+  [Konfigurieren Sie den Hostnamen und die Anmeldeinformationen.]: ./media/virtual-machines-windows-tutorial-azure-preview/create_vm_preview_portal.png
+  [Aktivieren Sie die VM-Diagnose.]: ./media/virtual-machines-windows-tutorial-azure-preview/vm_diagnostics_status_preview_portal.png
+  [Der virtuelle Computer wird im Startmenü angezeigt.]: ./media/virtual-machines-windows-tutorial-azure-preview/vm_startboard_preview_portal.png
+  [Verbindung mit einem virtuellen Azure-Computer mit RDP oder SSH]: http://go.microsoft.com/fwlink/p/?LinkId=398294
+  [Suchen Sie den virtuellen Computer.]: ./media/virtual-machines-windows-tutorial-azure-preview/browse_vm_preview_portal.png
   [Melden Sie sich beim virtuellen Computer an.]: ./media/virtual-machines-windows-tutorial-azure-preview/connect_vm_preview_portal.png
   [Stellen Sie eine Verbindung her.]: ./media/virtual-machines-log-on-windows-server/connectpublisher.png
   [Bestätigen Sie die Identität des Computers.]: ./media/virtual-machines-log-on-windows-server/connectverify.png
@@ -111,3 +114,4 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
   [Erstellen und Hochladen einer eigenen virtuellen Festplatte mit Windows Server-Betriebssystem]: http://www.windowsazure.com/de-de/documentation/articles/virtual-machines-create-upload-vhd-windows-server/
   [Anfügen eines Datenträgers an einen virtuellen Computer]: http://www.windowsazure.com/de-de/documentation/articles/storage-windows-attach-disk/
   [Verwalten der Verfügbarkeit virtueller Computer]: http://www.windowsazure.com/de-de/documentation/articles/manage-availability-virtual-machines/
+  [Starten, Beenden und Löschen virtueller Computer]: http://msdn.microsoft.com/library/azure/dn763935.aspx

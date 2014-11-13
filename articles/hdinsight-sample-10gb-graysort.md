@@ -1,12 +1,12 @@
-<properties linkid="manage-services-hdinsight-sample-10gb-graysort" urlDisplayName="Hadoop Samples in HDInsight" pageTitle="The 10GB GraySort sample | Azure" metaKeywords="hdinsight, hadoop, hdinsight administration, hdinsight administration azure" description="Learn how to run a general purpose GraySort on Hadoop with HDInsight using Azure PowerShell." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The 10GB GraySort sample" authors="bradsev" />
+<properties urlDisplayName="Hadoop Samples in HDInsight" pageTitle="Das 10-GB GraySort-Beispiel | Azure" metaKeywords="hdinsight, hadoop, hdinsight administration, hdinsight administration azure" description="Erfahren Sie, wie Sie einen allgemeinen GraySort mit HDInsight und Azure PowerShell ausf&uuml;hren k&ouml;nnen." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Das 10-GB GraySort-Beispiel" authors="bradsev" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
 # Das 10 GB GraySort-Beispiel mit Hadoop in HDInsight
 
 In diesem Thema führen Sie ein allgemeines GraySort Hadoop MapReduce-Programm mithilfe von Azure PowerShell in Azure HDInsight aus. GraySort ist ein Sortierungs-Benchmark, der die Sortiergeschwindigkeit (TB/Minute) als Metrik verwendet, die beim Sortieren sehr großer Datenmengen erreicht wird (normalerweise mindestens 100 TB).
 
-Dieses Beispiel verwendet bescheidene 10 GB an Daten, um eine zügige Ausführung zu ermöglichen. Die Anwendung verwendet die MapReduce-Anwendungen von Owen O'Malley und Arun Murthy, die den jährlichen Allzweck ("daytona") Terabyte-Sortier-Benchmark 2009 mit einem Durchsatz von 0,578 TB/Min gewonnen haben (100 TB in 173 Minuten). Weitere Informationen zu diesem und anderen Sortier-Benchmarks finden Sie unter [Sortbenchmark][].
+Dieses Beispiel verwendet bescheidene 10 GB an Daten, um eine zügige Ausführung zu ermöglichen. Die Anwendung verwendet die MapReduce-Anwendungen von Owen O'Malley und Arun Murthy, die den jährlichen Allzweck ("daytona") Terabyte-Sortier-Benchmark 2009 mit einem Durchsatz von 0,578 TB/Min gewonnen haben (100 TB in 173 Minuten). Weitere Informationen zu diesem und anderen Sortier-Benchmarks finden Sie unter [Sortbenchmark][Sortbenchmark].
 
 Dieses Beispiel verwendet drei Sätze von MapReduce-Programmen:
 
@@ -23,20 +23,20 @@ Ein- und Ausgabeformate der drei Anwendungen lesen und schreiben die Textdateien
 
 **Voraussetzungen**:
 
--   Sie benötigen ein Azure-Abonnement. Hinweise zur Erstellung eines Kontos finden Sie auf der Seite [Azure kostenlos ausprobieren][].
+-   Sie benötigen ein Azure-Abonnement. Hinweise zur Erstellung eines Kontos finden Sie auf der Seite [Azure kostenlos ausprobieren][Azure kostenlos ausprobieren].
 
--   Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters][]
+-   Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters][Bereitstellen eines HDInsight-Clusters]
 
--   Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+-   Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
 
 ## Themen in diesem Artikel
 
 In diesem Thema wird die Ausführung der verschiedenen MapReduce-Programme beschrieben, aus denen das Beispiel besteht, und der Java-Code für das MapReduce-Programm vorgestellt. Außerdem erhalten Sie eine Zusammenfassung der vermittelten Lerninhalte und einen Ausblick auf nächste Schritte. Der Artikel enthält die folgenden Abschnitte:
 
-1.  [Ausführen des Beispiels mit Azure PowerShell][]
-2.  [Der Java-Code für das TeraSort MapReduce-Programm][]
-3.  [Zusammenfassung][]
-4.  [Nächste Schritte][]
+1.  [Ausführen des Beispiels mit Azure PowerShell][Ausführen des Beispiels mit Azure PowerShell]
+2.  [Der Java-Code für das TeraSort MapReduce-Programm][Der Java-Code für das TeraSort MapReduce-Programm]
+3.  [Zusammenfassung][Zusammenfassung]
+4.  [Nächste Schritte][Nächste Schritte]
 
 ## <span id="run-sample"></span></a>Ausführen des Beispiels mit Azure PowerShell
 
@@ -48,7 +48,7 @@ Für das Beispiel müssen drei Aufgaben ausgeführt werden, die den einzelnen Ma
 
 **So führen Sie das TeraGen-Programm aus**
 
-1.  Öffnen Sie Azure PowerShell. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+1.  Öffnen Sie Azure PowerShell. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
 2.  Legen Sie die zwei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
 
         # Provide the Azure subscription name and the HDInsight cluster name.
@@ -397,16 +397,16 @@ An diesem Beispiel haben Sie gesehen, wie Sie eine Reihe von MapReduce-Jobs mit 
 
 Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hive- und MapReduce-Jobs in Azure HDInsight mit Azure PowerShell finden Sie in den folgenden Themen:
 
--   [Erste Schritte mit Azure HDInsight][]
--   [Beispiel: Pi-Schätzung][]
--   [Beispiel: Wortzählung][]
--   [Beispiel: C# Streaming][]
--   [Verwenden von Pig mit HDInsight][]
--   [Verwenden von Hive mit HDInsight][]
--   [Dokumentation zum Azure HDInsight SDK][]
+-   [Erste Schritte mit Azure HDInsight][Erste Schritte mit Azure HDInsight]
+-   [Beispiel: Pi-Schätzung][Beispiel: Pi-Schätzung]
+-   [Beispiel: Wortzählung][Beispiel: Wortzählung]
+-   [Beispiel: C# Streaming][Beispiel: C# Streaming]
+-   [Verwenden von Pig mit HDInsight][Verwenden von Pig mit HDInsight]
+-   [Verwenden von Hive mit HDInsight][Verwenden von Hive mit HDInsight]
+-   [Dokumentation zum Azure HDInsight SDK][Dokumentation zum Azure HDInsight SDK]
 
   [Sortbenchmark]: http://sortbenchmark.org/
-  [Azure kostenlos ausprobieren]: http://azure.microsoft.com/en-us/pricing/free-trial/
+  [Azure kostenlos ausprobieren]: http://azure.microsoft.com/de-de/pricing/free-trial/
   [Bereitstellen eines HDInsight-Clusters]: ../hdinsight-provision-clusters/
   [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell/
   [Ausführen des Beispiels mit Azure PowerShell]: #run-sample
@@ -419,4 +419,4 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
   [Beispiel: C# Streaming]: ../hdinsight-sample-csharp-streaming/
   [Verwenden von Pig mit HDInsight]: ../hdinsight-use-pig/
   [Verwenden von Hive mit HDInsight]: ../hdinsight-use-hive/
-  [Dokumentation zum Azure HDInsight SDK]: http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx
+  [Dokumentation zum Azure HDInsight SDK]: http://msdnstage.redmond.corp.microsoft.com/de-de/library/dn479185.aspx

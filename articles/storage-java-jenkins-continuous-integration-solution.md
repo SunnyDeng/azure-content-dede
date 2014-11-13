@@ -1,4 +1,4 @@
-<properties linkid="develop-java-tutorials-jenkins-continuous-integration" urlDisplayName="Jenkins Continuous Integration" pageTitle="Using Azure Storage with a Jenkins Continuous Integration Solution | Microsoft Azure" metaKeywords="" description="This tutorial show how to use the Azure blob service as a repository for build artifacts created by a Jenkins continuous integration solution." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Jenkins Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties urlDisplayName="Jenkins Continuous Integration" pageTitle="Verwenden von Azure-Speicher mit einer Jenkins-L&ouml;sung f&uuml;r die fortlaufende Integration | Microsoft Azure" metaKeywords="" description="Dieses Lernprogramm zeigt, wie Sie den Azure-Blobdienst als Repository f&uuml;r Buildartefakte verwenden, die von einer Jenkins-L&ouml;sung f&uuml;r die fortlaufende Integration erstellt wurden." metaCanonical="" services="storage" documentationCenter="Java" title="Verwenden von Azure-Speicher mit einer Jenkins-L&ouml;sung f&uuml;r die fortlaufende Integration" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
@@ -111,7 +111,7 @@ Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere
 
 8.  Klicken Sie für dieses Beispiel auf **Make new container public by default**. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Thema hinaus. Sie finden weitere Informationen zu Shared Access Signatures unter [Erstellen und Verwenden einer SAS (Shared Access Signature)][Erstellen und Verwenden einer SAS (Shared Access Signature)].
 9.  [Optional] Klicken Sie auf **Clean container before uploading**, wenn die Inhalte aus dem Container gelöscht werden sollen, bevor die Buildartefakte hochgeladen (lassen Sie die Option deaktiviert, wenn die Inhalte nicht aus dem Container gelöscht werden sollen) werden.
-10. Geben Sie \*text/.txt unter **List of Artifacts to upload** ein.
+10. Geben Sie "\*\*text/\*.txt\*\*" unter **List of Artifacts to upload** ein.
 11. Geben Sie **${BUILD\_ID}/${BUILD\_NUMBER}** für die Zwecke dieses Lernprogramms unter **Common virtual path for uploaded artifacts** ein.
 12. Klicken Sie auf **Save**, um Ihre Einstellungen zu speichern.
 13. Klicken Sie im Jenkins-Dashboard auf **Build Now**, um **MyJob** auszuführen. Prüfen Sie den Status in der Ausgabe der Konsole. Statusmeldungen für Azure-Speicher werden in die Ausgabe der Konsole aufgenommen, wenn die Postbuildaktion mit dem Hochladen von Buildartefakten beginnt.
@@ -168,4 +168,5 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [Vom Blob-Dienst verwendete Komponenten]: #components
   [Meet Jenkins]: https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
   [Erstellen eines Speicherkontos]: http://go.microsoft.com/fwlink/?LinkId=279823
+  [Erstellen und Verwenden einer SAS (Shared Access Signature)]: http://go.microsoft.com/fwlink/?LinkId=279889
   [Grundlegendes zu Block-BLOBs und Seiten-BLOBs]: http://msdn.microsoft.com/de-de/library/windowsazure/ee691964.aspx

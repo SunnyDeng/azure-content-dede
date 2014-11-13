@@ -1,33 +1,33 @@
-<properties title="Using load-balanced sets to clusterize MySQL on Linux" pageTitle="Using load-balanced sets to clusterize MySQL on Linux" description="An article that illustrates patterns to setup a load-balanced, high availability Linux cluster on Azure using MySQL as an example" metaKeywords="mysql, linux, cluster, azure, ha, high availability, corosync, pacemaker, drbd, heartbeat" services="virtual-machines" solutions="" documentationCenter="" authors="jparrel" videoId="" scriptId="" />
+<properties title="Verwenden von Gruppen mit Lastenausgleich zum Gruppieren von MySQL auf Linux" pageTitle="Verwenden von Gruppen mit Lastenausgleich zum Gruppieren von MySQL auf Linux" description="Ein Artikel, der Muster zum Einrichten eines hoch verf&uuml;gbaren Linux-Clusters mit Lastenausgleich auf Azure mit MySQL als ein Beispiel veranschaulicht." metaKeywords="mysql, linux, cluster, azure, ha, high availability, corosync, pacemaker, drbd, heartbeat" services="virtual-machines" solutions="" documentationCenter="" authors="jparrel" videoId="" scriptId="" manager="timlt" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jparrel"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jparrel" />
 
-# Verwenden von Gruppen mit Lastenausgleich zum Erstellen von MySQL-Clustern unter Linux
+# Verwenden von Gruppen mit Lastenausgleich zum Gruppieren von MySQL auf Linux
 
 -   [Vorbereitung][Vorbereitung]
 -   [Einrichten des Clusters][Einrichten des Clusters]
 -   [Einrichten von MySQL][Einrichten von MySQL]
 -   [Einrichten von Corosync][Einrichten von Corosync]
 -   [Einrichten von Pacemaker][Einrichten von Pacemaker]
--   [Tests][Tests]
+-   [Testen][Testen]
 -   [STONITH][STONITH]
 -   [Einschränkungen][Einschränkungen]
 
 ## Einführung
 
-Zweck dieses Artikels ist die Untersuchung und Veranschaulichung der verschiedenen möglichen Ansätze zum Bereitstellen hoch verfügbarer Linux-basierter Dienste in Microsoft Azure, wobei insbesondere die Hochverfügbarkeit von MySQL Server im Vordergrund steht. Ein Video zur Veranschaulichung dieses Ansatzes finden Sie auf [Channel 9][Channel 9].
+Der Zweck dieses Artikels besteht darin, die unterschiedlichen verfügbaren Ansätze für die Bereitstellung hoch verfügbarer Linux-basierter Dienste auf Microsoft Azure zu untersuchen und zu veranschaulichen, wobei primär die hohe Verfügbarkeit von MySQL Server untersucht wird. Ein Video, das diesen Ansatz veranschaulicht, steht unter [Channel 9][Channel 9] zur Verfügung.
 
-Wir stellen eine MySQL-Hochverfügbarkeitslösung mit Einzelmaster und zwei Knoten ohne gemeinsame Nutzung basierend auf DRBD, Corosync und Pacemaker vor. MySQL wird stets immer nur auf einem Knoten ausgeführt. Lese- und Schreibvorgänge der DRBD-Ressource sind ebenfalls auf einen Knoten gleichzeitig beschränkt.
+Wir beschreiben eine auf DRBD, Corosync und Pacemaker basierende hoch verfügbare Einzelmaster-MYSQL-Lösung mit zwei Knoten, die nichts gemeinsam nutzen. Nur auf einem Knoten wird jeweils MySQL ausgeführt. Das Lesen und Schreiben von der DRBD-Ressource wird auch nur jeweils auf einen Knoten begrenzt.
 
-Eine Lösung mit virtueller IP-Adresse (VIP) wie LVS (Linux Virtual Server) ist nicht erforderlich, da wir die Gruppe mit Lastenausgleich von Microsoft Azure verwenden, um sowohl die Round-Robin-Funktionalität und Endpunkterkennung, das Entfernen und ordnungsgemäße Wiederherstellen der VIP zu ermöglichen. Die VIP ist eine global routingfähige IPv4-Adresse, die von Microsoft Azure zugewiesen wurde, als wir den Clouddienst zuerst erstellt haben.
+Es besteht keine Notwendigkeit für eine VIP-Lösung wie LVS, da wir die Gruppen mit Lastenausgleich von Microsoft Azure verwenden, um eine Roundrobin-Funktionalität und die Endpunktermittlung sowie die Entfernung und die normale Wiederherstellung der VIP bereitzustellen. Die VIP ist eine globale routfähige IPv4-Adresse, die beim ersten Erstellen des Cloud-Diensts durch Microsoft Azure zugewiesen wird.
 
-Es gibt andere mögliche Architekturen für MySQL einschließlich NBD Cluster, Percona und Galera sowie mehrere Middlewarelösungen, von denen mindestens eine als virtueller Computer im [VM Depot][VM Depot] zur Verfügung steht. Solange diese Lösungen im Unicast- anstatt im Multicast- oder Broadcastmodus replizieren können und keinen gemeinsam genutzten Speicher oder mehrere Netzwerkschnittstellen benötigen, sollten diese Szenarien einfach in Microsoft Azure bereitzustellen sein.
+Es gibt weitere mögliche Architekturen für MySQL, einschließlich NBD Cluster, Percona und Galera, sowie verschiedene Middleware-Lösungen, worunter mindestens eine als ein virtueller Computer auf [VM Depot][VM Depot] verfügbar ist. Solange diese Lösungen auf Unicast gegenüber Multicast repliziert werden können oder Übertragungen vornehmen und nicht auf dem gemeinsamen Speicher oder mehreren Netzwerkschnittstellen aufbauen, sollten die Szenarien auf Microsoft Azure einfach bereitzustellen sein.
 
-Diese Clusterarchitekturen können auch auf ähnliche Weise auf andere Produkte wie PostgreSQL und OpenLDAP ausgedehnt werden. Dieses Lastenausgleichsverfahren ohne jegliche gemeinsame Nutzung wurde beispielsweise erfolgreich mit Multi-Master OpenLDAP getestet, was Sie sich in unserem Channel 9-Blog ansehen können.
+Diese Clusteringarchitekturen können natürlich auf andere Produkte wie PostgreSQL und OpenLDAP sowie ähnliche erweitert werden. Diese Lastenausgleichsprozedur ohne gemeinsam genutzte Inhalte wurde beispielsweise erfolgreich mit dem Multimaster-OpenLDAP getestet. Und Sie können sie in unserem Channel 9-Blog ansehen.
 
 ## Vorbereitung
 
-Sie benötigen ein Microsoft Azure-Konto mit gültigem Abonnement mit der Möglichkeit zum Erstellen von mindestens zwei virtuellen Computern (XS wurde bei diesem Beispiel verwendet), ein Netzwerk und ein Subnetz, eine Affinitätsgruppe und eine Verfügbarkeitsgruppe sowie die Möglichkeit, neue VHDs (Virtual Hard Disks, virtuelle Festplatten) in der Region des Clouddiensts zu erstellen und diese an virtuelle Linux-Computer anzufügen.
+Sie benötigen ein Microsoft Azure-Konto mit einem gültigen Abonnement, das in der Lage ist, mindestens zwei (2) virtuelle Computer (in diesem Beispiel wurde XS verwendet), ein Netzwerk, ein Subnetz, eine Affinitätsgruppe und eine Verfügbarkeitsgruppe zu erstellen. Zudem muss es das Erstellen neuer VHDs in derselben Region wie der Cloud-Dienst ermöglichen und sie an die virtuellen Linux-Computer anfügen können.
 
 ### Getestete Umgebung
 
@@ -38,39 +38,39 @@ Sie benötigen ein Microsoft Azure-Konto mit gültigem Abonnement mit der Mögli
 
 ### Affinitätsgruppe
 
-Sie erstellen eine Affinitätsgruppe für die Lösung, indem Sie sich beim Azure-Portal anmelden, zu **Einstellungen** wechseln und eine neue Affinitätsgruppe erstellen. Später zugewiesene Ressourcen werden dieser Affinitätsgruppe zugeordnet.
+Eine Affinitätsgruppe wird für die Lösung erstellt, indem Sie sich beim Azure-Portal anmelden, einen Bildlauf zu „Einstellungen“ ausführen und eine neue Affinitätsgruppe erstellen. Später zugeordnete Ressourcen werden zu dieser Affinitätsgruppe zugewiesen.
 
 ### Netzwerke
 
-Ein neues Netzwerk wird erstellt, in dem ein Subnetz eingerichtet wird. Wir haben ein 10.10.10.0/24-Netzwerk mit nur einem enthaltenen /24-Subnetz gewählt.
+Ein neues Netzwerk wird erstellt, und ein Subnetz wird im Netzwerk erstellt. Wir entscheiden uns für ein „10.10.10.0/24“-Netzwerk mit nur einem immanenten „/24“-Subnetz.
 
 ### Virtuelle Computer
 
-Der erste virtuelle Ubuntu 13.10-Computer wird mithilfe eines Endorsed Ubuntu Gallery-Images erstellt und `hadb01` genannt. Ein neuer Clouddienst mit dem Namen **hadb** wird erstellt. Wir nennen ihn so, um die gemeinsame Nutzung und den Lastenausgleich zu veranschaulichen, durch die/den sich der Dienst auszeichnet, wenn wir weitere Ressourcen hinzufügen. Der Erstellung von `hadb01` erfolgt ohne Zwischenfälle und wird im Portal abgeschlossen. Ein Endpunkt für SSH wird automatisch erstellt, und unser erstelltes Netzwerk wird ausgewählt. Wir haben uns auch für die Erstellung einer neuen Verfügbarkeitsgruppe für die virtuellen Computer entschieden.
+Der erste virtuelle Computer unter Ubuntu 13.10 wird mithilfe eines bestätigten Ubuntu Gallery-Images erstellt und heißt `hadb01`. Während des Vorgangs wird der neue Cloud-Dienst „hadb“ erstellt. Wir haben ihn so benannt, um seine freigegebene Art mit Lastenausgleich zu veranschaulichen, die der Dienst aufweist, wenn wir weitere Ressourcen hinzufügen. Das Erstellen von `hadb01` ist ereignisarm und wird mithilfe des Portals fertig gestellt. Für SSH wird automatisch ein Endpunkt erstellt, und unser erstelltes Netzwerk wird ausgewählt. Wir entscheiden uns zudem für das Erstellen einer neuen Verfügbarkeitsgruppe für die virtuellen Computer.
 
-Nachdem der erste virtuelle Computer erstellt wurden (technisch gesehen bei Erstellung des Clouddiensts), fahren wir mit der Erstellung des zweiten virtuellen Computers, `hadb02`, fort. Für den zweiten virtuellen Computer verwenden wir auch einen virtuellen Ubuntu 13.10-Computer aus der Galerie mithilfe des Portals, entscheiden uns aber für den vorhandenen Clouddienst`hadb.cloudapp.net`, anstatt einen neuen zu erstellen. Netzwerk und Verfügbarkeitsgruppe werden automatisch für uns ausgewählt. Auch ein SSH-Endpunkt wird erstellt.
+Nachdem der erste virtuelle Computer erstellt wurde (im Prinzip während der Erstellung des Cloud-Diensts), fahren wir mit dem Erstellen des zweiten virtuellen Computers `hadb02` fort. Beim zweiten virtuellen Computer verwenden wir ebenfalls den virtuellen Computer unter Ubuntu 13.10 aus dem Katalog mithilfe des Portals, wir wählen jedoch den vorhandenen Cloud-Dienst `hadb.cloudapp.net` aus, anstelle einen neuen zu erstellen. Das Netzwerk und die Verfügbarkeitsgruppe sollten automatisch ausgewählt sein. Es wird auch ein SSH-Endpunkt erstellt.
 
-Nachdem beide virtuellen Computer erstellt wurden, notieren wir den SSH-Port für `hadb01` (TCP 22) und `hadb02` (von Azure automatisch zugewiesen).
+Nachdem beide virtuellen Computer erstellt wurden, nehmen wir den SSH-Port für `hadb01` (TCP 22) und `hadb02` (automatisch durch Azure zugewiesen) zur Kenntnis.
 
-### Angefügter Speicher
+### Attached Storage
 
-Wir fügen an beide virtuellen Computer einen neuen Datenträger an und erstellen dabei neue 5-GB-Datenträger. Die Datenträger werden im VHD-Container gehostet, der für die Systemdatenträger unseres Betriebssystems verwendet wird. Nachdem Datenträger erstellt und angefügt wurden, ist es nicht erforderlich, Linux neu zu starten, da der Kernel das neue Gerät erkennt (im Allgemeinen `/dev/sdc`. Sie können `dmesg` auf die Ausgabe überprüfen).
+Wir fügen an beide virtuellen Computer einen neuen Datenträger an, und wir erstellen neue 5-GB-Datenträger in diesem Prozess. Die Datenträger werden im VHD-Container gehostet, der für unsere Datenträger für das Hauptbetriebssystem verwendet wird. Nach dem Erstellen und Anfügen der Datenträger besteht keine Notwendigkeit, Linux neu zu starten, da der Kernel das neue Gerät (für gewöhnlich `/dev/sdc`, Sie können `dmesg` für die Ausgabe prüfen) erkennt.
 
-Auf jedem virtuellen Computer fahren wir mit dem Erstellen einer neuen Partition mithilfe von `cfdisk` (primäre Linux-Partition) fort und erstellen die neue Partitionstabelle. **Legen Sie auf dieser Partition kein Dateisystem an**.
+Auf jedem virtuellen Computer fahren wir mit der Erstellung einer neuen Partition mithilfe von `cfdisk` (primär, Linux-Partition) fort und schreiben die neue Partitionstabelle. **Erstellen Sie kein Dateisystem auf dieser Partition**.
 
 ## Einrichten des Clusters
 
-Auf beiden virtuellen Ubuntu-Computern müssen wir APT zum Installieren von Corosync, Pacemaker und DRBD verwenden. Dazu verwenden wir `apt-get`:
+In beiden virtuellen Ubuntu-Computern müssen wir APT zum Installieren von Corosync, Pacemaker und DRBD verwenden. Verwenden von `apt-get`:
 
     sudo apt-get install corosync pacemaker drbd8utils.
 
-**Installieren Sie zu diesem Zeitpunkt nicht MySQL**. Debian- und Ubuntu-Installationsskripts initialisieren ein MySQL-Datenverzeichnis für `/var/lib/mysql`. Doch da das Verzeichnis durch ein DRBD-Dateisystem ersetzt wird, müssen wir dies später tun.
+**Installieren Sie MySQL nicht zu diesem Zeitpunkt**. Debian- und Ubuntu-Installationsskripts initialisieren ein MySQL-Datenverzeichnis auf `/var/lib/mysql`. Da das Verzeichnis jedoch durch ein DRBD-Dateisystem abgelöst wird, müssen wir dies später vornehmen.
 
-An dieser Stelle müssen wir auch (mithilfe von `/sbin/ifconfig`) überprüfen, ob beide virtuellen Computer Adressen im Subnetz 10.10.10.0/24 verwenden und sich gegenseitig nach Name pingen können. Nach Wunsch können Sie auch `ssh-keygen` und `ssh-copy-id` nutzen, um sicherzustellen, dass beide virtuellen Computer über SSH kommunizieren können, ohne dass ein Kennwort erforderlich ist.
+An dieser Stelle sollten wir zudem (mit `/sbin/ifconfig`) sicherstellen, dass beide virtuellen Computer Adressen im Subnetz „10.10.10.0/24“ verwenden und dass sie sich durch den Namen untereinander pingen können. Bei Bedarf können Sie auch `ssh-keygen` und `ssh-copy-id` verwenden, um sicherzustellen, dass beide virtuellen Computer per SSH kommunizieren können, ohne dass dafür ein Kennwort nötig ist.
 
 ### Einrichten von DRBD
 
-Wir erstellen eine DRBD-Ressource, die die zugrunde liegende `/dev/sdc1`-Partition zum Erstellen einer `/dev/drbd1`-Ressource verwendet, die mithilfe von ext3 formatiert und auf sowohl primären als auch sekundären Knoten verwendet werden kann. Öffnen Sie hierzu `/etc/drbd.d/r0.res`, und kopieren Sie die folgende Ressourcendefinition. Tun Sie dies auf beiden virtuellen Computern:
+Wir erstellen eine DRBD-Ressource, die die zugrunde liegende `/dev/sdc1`-Partition zum Generieren einer `/dev/drbd1`-Ressource verwendet, die mithilfe von ext3 formatiert werden kann und sowohl in primären als auch sekundären Knoten verwendet werden kann. Öffnen Sie dafür `/etc/drbd.d/r0.res`, und kopieren Sie die folgende Ressourcendefinition. Nehmen Sie die folgenden Punkte in beiden virtuellen Computern vor:
 
     resource r0 {
       on `hadb01` {
@@ -87,41 +87,41 @@ Wir erstellen eine DRBD-Ressource, die die zugrunde liegende `/dev/sdc1`-Partiti
       }
     }
 
-Initialisieren Sie anschließend die Ressource mithilfe von `drbdadm` auf beiden virtuellen Computern:
+Initialisieren Sie anschließend die Ressource mit `drbdadm` in beiden virtuellen Computern:
 
     sudo drbdadm -c /etc/drbd.conf role r0
     sudo drbdadm up r0
 
-Und erzwingen Sie schließlich auf dem primären Knoten (`hadb01`) den (primären) Besitz der DRBD-Ressource:
+Erzwingen Sie abschließend auf dem primären (`hadb01`) den Besitz (primär) der DRBD-Ressource:
 
     sudo drbdadm primary --force r0
 
-Wenn Sie den Inhalt von "/proc/drbd" (`sudo cat /proc/drbd`) auf beiden virtuellen Computern untersuchen, sollten Sie `Primary/Secondary` auf `hadb01` und `Secondary/Primary` auf `hadb02` erkennen, was an dieser Stelle mit der Lösung übereinstimmt. Der 5-GB-Datenträger wird für Kunden kostenlos über das 10.10.10.0/24-Netzwerk synchronisiert.
+Wenn Sie die Inhalte von „/proc/drbd“ (`sudo cat /proc/drbd`) auf beiden virtuellen Computern prüfen, sollten Sie `Primary/Secondary` auf `hadb01` und `Secondary/Primary` auf `hadb02` sehen, wobei die Konsistenz mit der Lösung zu diesem Zeitpunkt gegeben ist. Der 5-GB-Datenträger wird über das „10.10.10.0/24“-Netzwerk synchronisiert, was für die Kunden kostenlos ist.
 
-Nachdem der Datenträger synchronisiert wurde, können Sie auf `hadb01` das Dateisystem erstellen. Zu Testzwecken haben wir ext2 verwendet, doch bei Befolgen der folgenden Anweisung wird ein ext3-Dateisystem erstellt:
+Nach der Synchronisierung des Datenträgers können Sie das Dateisystem auf `hadb01` erstellen. Für Testzwecke haben wir ext2 verwendet. Mit der folgenden Anweisung wird jedoch ein ext3-Dateisystem erstellt:
 
     mkfs.ext3 /dev/drbd1
 
 ### Bereitstellen der DRBD-Ressource
 
-Auf `hadb01` können wir nun die DRBD-Ressourcen bereitstellen. Debian und Derivative nutzen `/var/lib/mysql` als MySQL-Datenverzeichnis. Da wir MySQL nicht installiert haben, erstellen wir das Verzeichnis und stellen die DRBD-Ressource bereit. Auf `hadb01`:
+Auf `hadb01` können wir nun die DRBD-Ressourcen bereitstellen. Debian und Ableitungen verwenden `/var/lib/mysql` als das MySQL-Datenverzeichnis. Da wir MySQL nicht installiert haben, erstellen wir das Verzeichnis und stellen die DRBD-Ressource bereit. Auf `hadb01`:
 
     sudo mkdir /var/lib/mysql
     sudo mount /dev/drbd1 /var/lib/mysql
 
 ## Einrichten von MySQL
 
-Nun können Sie MySQL auf `hadb01` installieren:
+Nun sind Sie bereit, MySQL auf `hadb01` zu installieren:
 
     sudo apt-get install mysql-server
 
-Für `hadb02` gibt es zwei Optionen. Sie können "mysql-server" jetzt installieren, wodurch "/var/lib/mysql" erstellt wird, es mit einem neuen Datenverzeichnis füllen und dann mit dem Entfernen des Inhalts fortfahren. Auf `hadb02`:
+Für `hadb02` haben Sie zwei Möglichkeiten. Sie können nun „mysql-server“ installieren, wodurch „/var/lib/mysql“ erstellt und mit einem neuen Datenverzeichnis aufgefüllt wird, und anschließend mit dem Entfernen der Inhalte fortfahren. Auf `hadb02`:
 
     sudo apt-get install mysql-server
     sudo service mysql stop
     sudo rm –rf /var/lib/mysql/*
 
-Die zweite Option ist ein Failover auf `hadb02` und das anschließende Installieren von "mysql-server" dort (Installationsskripts erkennen die vorhandene Installation und lassen sie unverändert).
+Die zweite Option besteht darin, ein Failover zu `hadb02` auszuführen und dann dort „mysql-Server“ (Installationsskripts berücksichtigen die vorhandene Installation und lassen sie unverändert) zu installieren.
 
 Auf `hadb01`:
 
@@ -132,7 +132,7 @@ Auf `hadb02`:
     sudo drbdadm primary –force r0
     sudo apt-get install mysql-server
 
-Wenn derzeit für DRBD keine Failover geplant ist, ist die erste Option einfacher, aber weniger elegant. Nach diesen Einrichtungsschritten können Sie die Arbeit mit Ihrer MySQL-Datenbank aufnehmen. Auf `hadb02` (bzw. auf dem gemäß DRBD aktiven Server):
+Wenn Sie zu diesem Zeitpunkt kein Failover von DRBD planen, ist die erste Option einfacher, aber wohl weniger elegant. Nachdem Sie dies eingerichtet haben, können Sie mit der Arbeit in Ihrer MySQL-Datenbank beginnen. Auf `hadb02` (oder auf dem gemäß DRBD gerade aktiven Server):
 
     mysql –u root –p
     CREATE DATABASE azureha;
@@ -140,29 +140,29 @@ Wenn derzeit für DRBD keine Failover geplant ist, ist die erste Option einfache
     INSERT INTO things VALUES (1, "Yet another entity");
     GRANT ALL ON things.\* TO root;
 
-**Warnung**: Durch diese letzte Anweisung wird die Authentifizierung für den Benutzer "root" in dieser Tabelle erfolgreich deaktiviert. Dies muss durch die GRANT-Anweisungen für Ihre Produktionsumgebung ersetzt werden und dient hier nur zur Veranschaulichung.
+**Warnung**: Diese letzte Anweisung deaktiviert die Authentifizierung effektiv für den Stammbenutzer in dieser Tabelle. Diese sollte durch Ihre produktionsfähigen GRANT-Anweisungen ersetzt werden und dient nur zur Veranschaulichung.
 
-Sie müssen auch den Netzwerkbetrieb für MySQL aktivieren, wenn Sie Abfragen außerhalb der virtuellen Computer ausführen möchten, was der Zweck dieser Anleitung ist. Öffnen Sie auf beiden virtuellen Computern `/etc/mysql/my.cnf`, und navigieren Sie zu `bind-address`, wobei 127.0.0.1 in 0.0.0.0 geändert wird. Führen Sie nach Speichern der Datei den Befehl `sudo service mysql restart` auf Ihrem derzeitigen primären Knoten aus.
+Sie müssen den Netzwerkbetrieb für MySQL aktivieren, wenn Sie Abfragen von außerhalb der virtuellen Computer vornehmen möchten, worin der Zweck dieses Leitfadens besteht. Öffnen Sie auf beiden virtuellen Computern `/etc/mysql/my.cnf`, und wechseln Sie zu `bind-address`. Ändern Sie sie von „127.0.0.1“ zu „0.0.0.0“. Stellen Sie nach dem Speichern der Datei einen `sudo service mysql restart` auf Ihrem aktuellen primären Computer aus.
 
 ### Erstellen der MySQL-Gruppe mit Lastenausgleich
 
-Wir begeben uns zurück zum Azure-Portal, und navigieren zum virtuellen Computer `hadb01` und dann zu "Endpunkte". Wir erstellen einen neuen Endpunkt, wählen in der Dropdownliste "MySQL (TCP 3306)" aus, und setzen ein Häkchen in das Feld *Neue Gruppe mit Lastenausgleich erstellen*. Wir nennen unseren Lastenausgleichsendpunkt `lb-mysql`. Wir lassen die meisten Optionen außer "Zeit" unverändert. Diesen Wert verringern wir in 5 (Sekunden, Mindestwert).
+Wir wechseln zurück zum Azure-Portal und navigieren zum virtuellen Computer `hadb01` und dann zu „Endpunkte“. Wir erstellen einen neuen Endpunkt, wählen „MySQL (TCP 3306)“ aus dem Dropdownmenü aus und aktivieren das Kontrollkästchen *Neue Gruppe mit Lastenausgleich erstellen*. Wir nennen unseren Endpunkt mit Lastenausgleich `lb-mysql`. Wir ändern die meisten Optionen nicht, und zwar mit Ausnahme der Zeit, die wir auf „5“ (Sekunden, Minimum) reduzieren.
 
-Nach dem Erstellen des Endpunkts wechseln wir zu `hadb02`, dann zu "Endpunkte" und erstellen einen neuen Endpunkt. Aber wir wählen `lb-mysql` und dann "MySQL" in der Dropdownliste. Für diesen Schritt können Sie auch die Befehlszeilen-Schnittstelle von Azure nutzen.
+Nach der Erstellung des Endpunkts wechseln wir zu `hadb02` und zu „Endpunkte“ und erstellen einen neuen Endpunkt, wir wählen jedoch `lb-mysql` und dann „MySQL“ aus dem Dropdownmenü aus. Sie können auch die Azure-Befehlszeilenschnittstelle für diesen Schritt verwenden.
 
-Zu diesem Zeitpunkt verfügen wir über alles, was wir für einen manuellen Betrieb des Clusters benötigen.
+Nun haben wir alles, was für eine manuelle Verarbeitung des Clusters benötigen.
 
 ### Testen der Gruppe mit Lastenausgleich
 
-Tests können mithilfe eines externen Computers, eines beliebigen MySQL-Clients und von Anwendungen (z. B. phpMyAdmin ausgeführt als Azure-Website) erfolgen. In diesem Fall haben wir das MySQL-Befehlszeilentool auf einem anderen Linux-Computer verwendet:
+Tests können über einen Computer ausgeführt werden, der sich außerhalb befindet, indem ein beliebiger MySQL-Client und Anwendungen verwendet werden (beispielsweise wenn phpMyAdmin als eine Azure-Website ausgeführt wird). In diesem Fall haben wir das MySQL-Befehlszeilentool auf einem anderen Linux-Feld verwendet:
 
     mysql azureha –u root –h hadb.cloudapp.net –e "select * from things;"
 
 ### Manuelles Failover
 
-Sie können Failover simulieren, indem Sie MySQL herunterfahren, den DRBD-Primärknoten wechseln und MySQL neu starten.
+Sie können nun Failover simulieren, indem Sie MySQL herunterfahren, den primären Computer von DRBD wechseln und MySQL erneut starten.
 
-Zunächst auf hadb01:
+Auf hadb01:
 
     service mysql stop && umount /var/lib/mysql ; drbdadm secondary r0
 
@@ -170,17 +170,17 @@ Dann auf hadb02:
 
     drbdadm primary r0 ; mount /dev/drbd1 /var/lib/mysql && service mysql start
 
-Nach dem manuellen Failover können Sie Ihre Remoteabfrage wiederholen, die ordnungsgemäß funktionieren sollte.
+Nachdem Sie das manuelle Failover vorgenommen haben, können Sie Ihre Remoteabfrage wiederholen, und es sollte perfekt funktionieren.
 
 ## Einrichten von Corosync
 
-Corosync ist die zugrunde liegende Clusterinfrastruktur, die erforderlich ist, damit Pacemaker funktioniert. Für Benutzer von Heartbeat, Version 1 und 2, (und anderen Methoden wie Ultramonkey) bietet Corosync eine Aufteilung der CRM-Funktionen, während die Funktionalität von Pacemaker mehr der von Heartbeat ähnelt.
+Corosync ist die zugrunde liegende Clusterinfrastruktur, die erforderlich ist, damit Pacemaker funktioniert. Für Heartbeat v1- und -v2-Benutzer (und andere Methoden wie Ultramonkey) bietet Corosync einen Teil der CRM-Funktionalitäten, während Pacemaker in puncto Funktionalität Heartbeart ähnlicher ist.
 
-Die Haupteinschränkung für Corosync in Azure ist, dass Corosync Multicast- gegenüber Broadcast- oder Unicast-Kommunikationen bevorzugt, das Microsoft Azure-Netzwerk jedoch nur Unicast unterstützt.
+Die Haupteinschränkung für Corosync auf Azure besteht darin, dass Corosync Multicast- über Übertragungs- über Unicast-Kommunikationen bevorzugt. Das Microsoft Azure-Netzwerk unterstützt jedoch nur Unicast.
 
-Glücklicherweise bietet Corosync einen funktionierenden Unicast-Modus. Die einzige Einschränkung ist, da alle Knoten nicht *automatisch* miteinander kommunizieren, dass Sie die Knoten in Ihren Konfigurationsdateien einschließlich ihrer IP-Adressen definieren müssen. Wir können die Corosync-Beispieldateien für Unicast verwenden, wobei wir lediglich die Bindungsadresse, Knotenlisten und das Protokollierungsverzeichnis ändern (Ubuntu verwendet `/var/log/corosync`, während in den Beispieldateien `/var/log/cluster` verwendet wird) und Quorumtools aktivieren.
+Zum Glück verfügt Corosync über einen funktionierenden Unicast-Modus, und die einzige wirkliche Einschränkung besteht darin, da nicht alle Knoten miteinander *automatisch* kommunizieren, dass Sie die Knoten in Ihren Konfigurationsdateien, einschließlich ihrer IP-Adressen, definieren müssen. Wir können die Corosync-Beispieldateien für Unicast verwenden und einfach die BIND-Adresse, Knotenlisten und das Protokollierungsverzeichnis (Ubuntu verwendet `/var/log/corosync`, während in der Beispieldatei `/var/log/cluster` verwendet wird) ändern sowie Quorum-Tools aktivieren.
 
-**Beachten Sie die nachstehende `transport: udpu`-Anweisung und die manuell definierten IP-Adressen für die Knoten**.
+**Beachten Sie die `transport: udpu`-Anweisung unten sowie die manuell definierten IP-Adressen für die Knoten**.
 
 Auf `/etc/corosync/corosync.conf` für beide Knoten:
 
@@ -230,28 +230,28 @@ Wir kopieren diese Konfigurationsdatei auf beide virtuellen Computer und starten
 
     sudo service start corosync
 
-Kurz nach Start des Diensts sollte das Cluster im aktuellen Ring eingerichtet und das Quorum gebildet worden sein. Wir können diese Funktionalität durch Überprüfen von Protokollen oder mit diesem Befehl prüfen:
+Kurz nach dem Start des Diensts sollte der Cluster im aktuellen Ring hergestellt sein, und das Quorum sollte errichtet sein. Wir können diese Funktionalität prüfen, indem wir die entsprechende Protokolle anzeigen, oder durch:
 
     sudo corosync-quorumtool –l
 
-Eine der nachstehenden Abbildung ähnliche Ausgabe sollte folgen:
+Eine Ausgabe, die dem Bild unten ähnelt, sollte diesem Prinzip folgen:
 
 ![corosync-quorumtool -l sample output][corosync-quorumtool -l sample output]
 
 ## Einrichten von Pacemaker
 
-Pacemaker verwendet den Cluster zum Überwachen von Ressourcen, Bestimmen des Zeitpunkts des Herunterfahrens von Primärknoten und Umschalten dieser Ressourcen auf Sekundärknoten. Ressourcen können u. a. mithilfe einer Gruppe verfügbarer Skripts oder von LSB-Skripts (init-like) definiert werden.
+Pacemaker verwendet den Cluster zum Überwachen für Ressourcen, zum Definieren, wann primäre Computer heruntergefahren werden, und zum Wechseln dieser Ressourcen zu sekundären Computern. Ressourcen können unter anderem über eine Reihe verfügbarer Skripts oder über (init-ähnliche) LSB-Skripts definiert werden.
 
-Wir wollen, dass Pacemaker die Zuständigkeit für die DRBD-Ressource, den Bereitstellungspunkt und den MySQL-Dienst übernimmt. Wenn Pacemaker DRBD ein- und ausschalten, dessen Bereitstellung vornehmen und aufheben und MySQL in der richtigen Reihenfolge starten/beenden kann, sollte der Primärknoten einmal ausfallen, ist unsere Einrichtung fertig.
+Wir möchten, dass Pacemaker die DRBD-Ressource, den Bereitstellungspunkt und den MySQL-Dienst „besitzt“. Wenn Pacemaker DRBD aktivieren und deaktivieren, bereitstellen und die Bereitstellung von DRBD aufheben sowie MySQL in der richtigen Reihenfolge starten/anhalten kann, wenn ein Fehler beim primären Computer vorliegt, ist unsere Einrichtung abgeschlossen.
 
-Wenn Sie Pacemaker erstmals installieren, sollte Ihre Konfiguration so einfach wie im folgenden Beispiel sein:
+Beim ersten Installieren von Pacemaker sollte Ihre Konfiguration einfach genug sein, und zwar in etwa so:
 
     node $id="1" hadb01
       attributes standby="off"
     node $id="2" hadb02
       attributes standby="off"
 
-Überprüfen Sie sie durch Ausführen von `sudo crm configure show`. Erstellen Sie nun eine Datei (z. B. `/tmp/cluster.conf`) mit den folgenden Ressourcen:
+Nehmen Sie eine Überprüfung durch Ausführen von `sudo crm configure show` vor. Erstellen Sie nun eine Datei (wie `/tmp/cluster.conf`) mit den folgenden Ressourcen:
 
     primitive drbd_mysql ocf:linbit:drbd \
           params drbd_resource="r0" \
@@ -281,38 +281,38 @@ Wenn Sie Pacemaker erstmals installieren, sollte Ihre Konfiguration so einfach w
 
     property no-quorum-policy=ignore
 
-Laden Sie sie in die Konfiguration (was nur auf einem Knoten erfolgen muss):
+Laden Sie sie nun in die Konfiguration (dies ist nur in einem Knoten erforderlich):
 
     sudo crm configure
       load update /tmp/cluster.conf
       commit
       exit
 
-Vergewissern Sie sich auch, dass Pacemaker beim Startvorgang auf beiden Knoten gestartet wird:
+Stellen Sie ferner sicher, dass Pacemaker beim Booten in beiden Knoten startet:
 
     sudo update-rc.d pacemaker defaults
 
-Überprüfen Sie nach ein paar Sekunden und mithilfe von `sudo crm_mon –L`, ob einer Ihrer Knoten zum Master des Clusters geworden ist, auf dem alle Ressourcen ausgeführt werden. Mit den Befehlen "mount" und "ps" können Sie prüfen, ob die Ressourcen ausgeführt werden.
+Stellen Sie nach einigen Sekunden und bei Verwendung von `sudo crm_mon –L` sicher, dass einer Ihrer Knoten zum Master für den Cluster avanciert ist und alle Ressourcen ausführt. Sie können „mount“ und „ps“ verwenden, um zu überprüfen, ob die Ressourcen ausgeführt werden.
 
-Das folgende Bildschirmfoto zeigt `crm_mon` mit einem angehaltenen Knoten (Anhalten über STRG+C).
+Der folgende Screenshot zeigt `crm_mon` mit einem angehaltenen Knoten (Beenden mittels BEFEHLSTASTE-C).
 
-![Angehaltener Knoten "crm\_mon"][Angehaltener Knoten "crm\_mon"]
+![crm\_mon node stopped][crm\_mon node stopped]
 
-Und dieses Bildschirmfoto zeigt beide Knoten mit einem Master und einem Slave:
+Und dieser Screenshot zeigt beide Knoten mit einem Master und einem Slave:
 
-![crm\_mon – Master/Slave in Betrieb][crm\_mon – Master/Slave in Betrieb]
+![crm\_mon operational master/slave][crm\_mon operational master/slave]
 
-## Tests
+## Testen
 
-Wir sind nun für eine automatische Failoversimulation bereit. Hierfür gibt es zwei Möglichkeiten: weich und hart. Der "weiche" Weg ist das Nutzen der Herunterfahrfunktion des Clusters: `` crm_standby -U `uname -n` -v on ``. Wird diese auf den Master angewendet, übernimmt der Slave. Denken Sie daran, diese wieder auf "off" zurückzusetzen (crm\_mon informiert Sie ansonsten, dass ein Knoten im Standbybetrieb ist).
+Nun sind wir bereit für eine automatische Failoversimulation. Dies kann auf zwei Arten erreicht werden: schwach und hart. Die schwache Variante verwendet die Funktion zum Herunterfahren des Clusters: `` crm_standby -U `uname -n` -v on ``. Wenn diese auf dem Master verwendet wird, übernimmt dies der Slave. Denken Sie daran, dies wieder auf „off“ zurückzusetzen (ansonsten informiert Sie „crm\_mon“, dass sich ein Knoten im Standbymodus befindet).
 
-Der "harte" Weg ist das Herunterfahren des primären virtuellen Computers (hadb01) über das Portal oder Ändern der Ausführungsebene auf dem virtuellen Computer (z. B. Anhalten, Herunterfahren). Wir unterstützen Corosync und Pacemaker, indem wir signalisieren, dass der Master ausgeschaltet wird. Wir können dies testen (was für Wartungszeiten nützlich ist), dieses Szenario aber auch erzwingen, indem wir lediglich den virtuellen Computer sperren.
+Bei der harten Variante wird der primäre virtuelle Computer (hadb01) über das Portal heruntergefahren, oder es wird die Ausführungsebene des virtuellen Computers geändert (d. h. anhalten, herunterfahren), dann helfen wir Corosync und Pacemaker, indem wir signalisieren, dass der Master herunterfährt. Sie können dies testen (nützlich für Wartungsfenster). Wir können das Szenario jedoch auch erzwingen, indem wir einfach den virtuellen Computer einfrieren.
 
 ## STONITH
 
-Es sollte möglich sein, das Herunterfahren eines virtuellen Computers mithilfe der Azure-Befehlszeilentools für Linux anstatt mit einem STONITH-Skript zu bewirken, das ein physisches Gerät steuert. Sie können `/usr/lib/stonith/plugins/external/ssh` als Basis verwenden und STONITH in der Konfiguration des Clusters aktivieren. Die Azure-Befehlszeilen-Schnittstelle muss global installiert sein, und die Veröffentlichungseinstellungen/das Profil müssen bzw. muss für den Benutzer des Clusters geladen sein.
+Es sollte möglich sein, das Herunterfahren eines virtuellen Computers über die Azure-Befehlszeilentools für Linux auszustellen anstelle eines STONITH-Skripts, das ein physisches Gerät steuert. Sie können `/usr/lib/stonith/plugins/external/ssh` als Basis verwenden und STONITH in der Konfiguration des Clusters aktivieren. Die Azure-Befehlszeilenschnittstelle sollte global installiert sein, und die Veröffentlichungseinstellungen/-profile sollten für den Benutzer des Clusters geladen sein.
 
-Beispielcode für die Ressource steht auf [GitHub][GitHub] zur Verfügung. Sie müssen die Konfiguration des Clusters ändern, indem Sie `sudo crm configure` Folgendes hinzufügen:
+Beispielcode für die Ressourcen finden Sie auf [GitHub][GitHub]. Sie müssen die Konfiguration des Clusters ändern, indem Sie `sudo crm configure` Folgendes hinzufügen:
 
     primitive st-azure stonith:external/azure \
       params hostlist="hadb01 hadb02" \
@@ -320,30 +320,30 @@ Beispielcode für die Ressource steht auf [GitHub][GitHub] zur Verfügung. Sie m
       property stonith-enabled=true \
       commit
 
-**Hinweis:** Das Skript führt keine Überprüfung auf Betriebs-/Ausfallzeiten durch. Die ursprüngliche SSH-Ressource wurde 15 Ping-Prüfungen unterzogen, doch die Wiederherstellungszeit für einen virtuellen Azure-Computer ist ggf. variabler.
+**Hinweis:** Das Skript führt keine Überprüfungen nach oben/unten aus. Die ursprüngliche SSH-Ressource wies 15 Pingüberprüfungen auf, die Wiederherstellungszeit für einen virtuellen Azure-Computer wird möglicherweise flexibler.
 
 ## Einschränkungen
 
 Es gelten die folgenden Einschränkungen:
 
--   Das DRBD-Ressourcenskript von Linbit, das DRBD als Ressource in Pacemaker verwaltet, verwendet `drbdadm down` beim Herunterfahren eines Knotens, auch wenn der Knoten bloß auf Standby umschaltet. Dies ist nicht ideal, da der Slave die DRBD-Ressource nicht synchronisiert, während der Master Schreibvorgänge empfängt. Wenn für den Master kein ordnungsgemäßes Failover erfolgt, kann der Slave einen älteren Dateisystemstatus übernehmen. Es gibt zwei potenzielle Lösungsmöglichkeiten:
--   Erzwingen von `drbdadm up r0` auf allen Clusterknoten mithilfe einer lokalen (nicht im Cluster eingebundenen) Überwachungsfunktion oder
--   Bearbeiten des DRBD-Skripts von Linbit in `/usr/lib/ocf/resource.d/linbit/drbd` dergestalt, dass `down` nicht aufgerufen wird.
--   Der Lastenausgleich benötigt mindestens 5 Sekunden für eine Reaktion, weshalb Anwendungen clusterfähig und toleranter für Timeouts sein müssen. Andere Architektur sind ggf. ebenfalls hilfreich, z. B. anwendungsinterne Warteschlangen, Middleware für Abfragen usw.
--   Eine MySQL-Optimierung ist notwendig, um sicherzustellen, dass Schreibvorgänge in einem geeigneten Tempo erfolgen und Caches so oft wie möglich auf Datenträger geschrieben werden, um Arbeitsspeicherverluste zu minimieren.
--   Die Schreibleistung hängt von den Verbindungen der virtuellen Computer untereinander im virtuellen Switch ab, da dieser Mechanismus von DRBD zum Replizieren des Geräts genutzt wird.
+-   Das linbit DRBD-Ressourcenskript, das DRBD als eine Ressource in Pacemaker verwaltet, verwendet `drbdadm down` beim Herunterfahren eines Knotens, selbst wenn der Knoten gerade in den Standbymodus wechselt. Dies ist nicht optimal, da der Slave die DRBD-Ressource nicht synchronisiert, während der Master Schreibvorgänge abruft. Wenn der Master keinen normalen Fehler aufweist, kann der Slave einen älteren Dateisystemstatus übernehmen. Zur Behebung dieses Problems stehen zwei potenzielle Möglichkeiten zur Verfügung:
+-   Das Erzwingen eines `drbdadm up r0` in allen Clusterknoten über einen lokalen (nicht gruppierten) Watchdog oder
+-   Bearbeiten des linbit DRBD-Skripts, wodurch sichergestellt wird, dass `down` nicht in `/usr/lib/ocf/resource.d/linbit/drbd` aufgerufen wird.
+-   Der Lastenausgleich benötigt mindestens 5 Sekunden, um zu antworten. Anwendungen sollten daher clusterfähig sein und in Bezug auf eine Zeitüberschreitung toleranter sein. Andere Architekturen können auch hilfreich sein, beispielsweise In-App-Warteschlangen, Middleware-Abfragen usw.
+-   Die MySQL-Feinabstimmung ist erforderlich, um sicherzustellen, dass der Schreibvorgang in einer vernünftigen Geschwindigkeit erfolgt und Zwischenspeicherungen möglichst häufig auf den Datenträger übertragen werden, um Speicherverluste zu vermeiden.
+-   Die Schreibleistung hängt vom Interconnect des virtuellen Computers im virtuellen Switch ab, da es sich hierbei um den Mechanismus handelt, der durch DRBD zum Replizieren des Geräts verwendet wird.
 
   [Vorbereitung]: #getting-ready
   [Einrichten des Clusters]: #setting-up-the-cluster
   [Einrichten von MySQL]: #setting-up-mysql
   [Einrichten von Corosync]: #setting-up-corosync
   [Einrichten von Pacemaker]: #setting-up-pacemaker
-  [Tests]: #testing
+  [Testen]: #testing
   [STONITH]: #stonith
   [Einschränkungen]: #limitations
   [Channel 9]: http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL
   [VM Depot]: http://vmdepot.msopentech.com
   [corosync-quorumtool -l sample output]: media/virtual-machines-linux-mysql-cluster/image001.png
-  [Angehaltener Knoten "crm\_mon"]: media/virtual-machines-linux-mysql-cluster/image002.png
-  [crm\_mon – Master/Slave in Betrieb]: media/virtual-machines-linux-mysql-cluster/image003.png
+  [crm\_mon node stopped]: media/virtual-machines-linux-mysql-cluster/image002.png
+  [crm\_mon operational master/slave]: media/virtual-machines-linux-mysql-cluster/image003.png
   [GitHub]: https://github.com/bureado/aztonith

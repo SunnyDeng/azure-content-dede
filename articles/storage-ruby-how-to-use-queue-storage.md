@@ -1,6 +1,6 @@
-<properties linkid="dev-ruby-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="How to use the queue service (Ruby) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Ruby" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Ruby." metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Queue Storage Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangendiensts (Ruby) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Ruby" description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und L&ouml;schen von Warteschlangen sowie zum Einf&uuml;gen, Abrufen und L&ouml;schen von Nachrichten verwenden. Die Beispiele wurden in Ruby geschrieben." metaCanonical="" services="storage" documentationCenter="Ruby" title="Verwenden des Warteschlangenspeicherdiensts aus Ruby" authors="guayan" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="01/01/1900" ms.author="guayan /">
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="01/01/1900" ms.author="guayan" />
 
 # Verwenden des Warteschlangenspeicherdiensts aus Ruby
 
@@ -157,6 +157,7 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Verwenden von Servicebus-Warteschlangen][Verwenden von Servicebus-Warteschlangen] besprochenen Azure Servicebus-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung][Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung]
 
   [Nächste Schritte]: #next-steps
+  [Was ist der Warteschlangenspeicher?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer Ruby-Anwendung]: #create-a-ruby-application
@@ -170,8 +171,6 @@ Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangen
   [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]: #how-to-additional-options-for-dequeuing-messages
   [Gewusst wie: Abrufen der Warteschlangenlänge]: #how-to-get-the-queue-length
   [Gewusst wie: Löschen einer Warteschlange]: #how-to-delete-a-queue
-  [howto-queue-storage]: ../includes/howto-queue-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
   [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

@@ -1,31 +1,31 @@
-<properties pageTitle="Ingest Telemetry and Application Events at Scale" metaKeywords="Service Bus, telemetry, events" description="Learn how to ingest telemetry and application events at scale across your business solutions." services="service-bus" documentationCenter=".NET" title="Ingest Telemetry and Application Events at Scale" authors="sethm" solutions="" manager="dwrede" editor="dwrede" />
+<properties pageTitle="Erfassen von Telemetrie- und Anwendungsereignissen in gro&szlig;em Ma&szlig;stab" metaKeywords="Service Bus, telemetry, events" description="Erfahren Sie, wie Sie Telemetrie- und Anwendungsereignisse in Ihren Gesch&auml;ftsl&ouml;sungen in gro&szlig;em Ma&szlig;stab erfassen." services="service-bus" documentationCenter=".NET" title="Erfassen von Telemetrie- und Anwendungsereignissen in gro&szlig;em Ma&szlig;stab" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="sethm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
-# Telemetrieerfassung und Skalierung von Anwendungsereignissen
+# Erfassen von Telemetrie- und Anwendungsereignisse in großem Maßstab
 
-Moderne Anwendungen erzeugen eine beeindruckende Menge an Daten während sie laufen. Seien es die Handlungen eines Benutzers in einer mobilen App oder die Clickstreams einer Website – diese Telemetriedaten sind sowohl für die langfristige Analyse als auch die Echtzeit-Integritätsüberwachung oder den Decision Support wertvoll. Service Bus stellt Tools bereit, mit denen Sie diese Informationen erfassen und nutzen können.
+Moderne Anwendungen erzeugen während ihres Betriebs eine enorme Menge an Informationen. Seien es Benutzeraktionen in einer mobilen App oder Clickstreams einer Website, diese Telemetriedaten sind sowohl für die langfristige Analyse als auch für die Echtzeit-Statusüberwachung oder Entscheidungsunterstützung sehr wertvoll. Service Bus stellt die Tools bereit, die Sie zum Erfassen und Nutzen dieser Informationen benötigen.
 
-## Erkennen
+## Erkunden
 
 -   [Event Hubs][Event Hubs]
 -   [Event Hubs – Preisdetails][Event Hubs – Preisdetails]
--   [Event-Beschaffungsmuster][Event-Beschaffungsmuster]
+-   [Muster für Ereignisherkunftsermittlung][Muster für Ereignisherkunftsermittlung]
 
-## Entwickeln
+## Erstellen
 
--   [Event Hub REST-API-Referenz][Event Hub REST-API-Referenz]
--   [Event Hub Codebeispiele][Event Hub Codebeispiele]
+-   [Event Hubs-REST-APIs][Event Hubs-REST-APIs]
+-   [Event Hub-Codebeispiele][Event Hub-Codebeispiele]
 
-## Verknüpfte Dienste
+## Verwandte Dienste
 
 -   [Storage][Storage]
 -   [HDInsight][HDInsight]
 
   [Event Hubs]: http://msdn.microsoft.com/de-de/library/dn789973.aspx
   [Event Hubs – Preisdetails]: http://azure.microsoft.com/de-de/pricing/details/event-hubs/
-  [Event-Beschaffungsmuster]: http://msdn.microsoft.com/de-de/library/dn589792.aspx
-  [Event Hub REST-API-Referenz]: http://go.microsoft.com/fwlink/?LinkId=403977
-  [Event Hub Codebeispiele]: http://go.microsoft.com/fwlink/?LinkID=402449
+  [Muster für Ereignisherkunftsermittlung]: http://msdn.microsoft.com/de-de/library/dn589792.aspx
+  [Event Hubs-REST-APIs]: http://go.microsoft.com/fwlink/?LinkId=403977
+  [Event Hub-Codebeispiele]: http://go.microsoft.com/fwlink/?LinkID=402449
   [Storage]: http://azure.microsoft.com/de-de/documentation/services/storage/
   [HDInsight]: http://azure.microsoft.com/de-de/documentation/services/hdinsight/

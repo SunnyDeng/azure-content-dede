@@ -4,8 +4,8 @@ Die einfachste Möglichkeit, eine Verbindung zu Azure-Anwendungen und -Daten her
 
 ## Inhaltsverzeichnis
 
--   [Azure Virtual Network][]
--   [Azure Traffic Manager][]
+-   [Azure Virtual Network][Azure Virtual Network]
+-   [Azure Traffic Manager][Azure Traffic Manager]
 
 <a name="Vnet"></a>
 
@@ -17,14 +17,14 @@ Für diese Art von Problem gibt es eine Standardlösung: Erstellen Sie ein virtu
 
 <a name="Fig1"></a>
 
-![01\_Networking][]
+![01\_Networking][01\_Networking]
 
 **Abbildung 1: Azure Virtual Network ermöglicht die Erstellung eines virtuellen Netzwerks in der Cloud, das mit dem lokalen Datencenter verbunden ist.**
 
 Wie die Abbildung zeigt, können Sie mit Azure Virtual Network eine logische Grenze um eine Gruppe von virtuellen Computern in einem Azure-Datencenter ziehen und ein sogenanntes *virtuelles Netzwerk oder kurz VNET* erstellen. Anschließend können Sie eine IPsec-Verbindung zwischen diesem VNET und dem lokalen Netzwerk einrichten. Die virtuellen Computer in einem VNET können mit virtuellen Azure-Computern und/oder Azure-Clouddiensten erstellt werden. In anderen Worten: Sie können mit der IaaS-Technologie (Infrastructure as a Service) oder der PaaS-Technologie (Platform as a Service) von Azure erstellt werden.
 Unabhängig davon, wofür Sie sich entscheiden, benötigen Sie zum Herstellen der IPsec-Verbindung ein VPN-Gatewaygerät, spezielle, mit dem lokalen Netzwerk verbundene Hardware sowie die Dienste Ihres Netzwerkadministrators. Ist die Verbindung einmal hergestellt, gleichen die im VNET ausgeführten virtuellen Azure-Computer jeder anderen Komponente Ihres Unternehmensnetzwerks.
 
-Wie [Abbildung 1][] nahelegt, weisen Sie den virtuellen Azure-Computern IP-Adressen aus dem gleichen IP-Adressraum zu, der auch in Ihrem eigenen Netzwerk verwendet wird. In dem hier gezeigten Szenario, in dem private IP-Adressen genutzt werden, sind die virtuellen Computer in der Cloud einfach eine IP-Teilmenge. In Ihrem lokalen Netzwerk ausgeführte Software erkennt diese virtuellen Computer als lokale Komponenten, genauso wie bei herkömmlichen VPNs. Zu beachten ist hierbei, dass die virtuellen und physischen Computer auf beiden Seiten ein beliebiges Betriebssystem ausführen können, da die Verbindung auf IP-Ebene hergestellt wird. Virtuelle Azure-Computer, auf denen Windows Server oder Linux ausgeführt wird, können mit lokalen Computern interagieren, auf denen Windows, Linux oder andere Systeme ausgeführt werden. Es ist außerdem möglich, gängige Verwaltungstools wie System Center und andere zum Verwalten der virtuellen Computer in der Cloud und der enthaltenen Anwendungen zu verwenden.
+Wie [Abbildung 1][Abbildung 1] nahelegt, weisen Sie den virtuellen Azure-Computern IP-Adressen aus dem gleichen IP-Adressraum zu, der auch in Ihrem eigenen Netzwerk verwendet wird. In dem hier gezeigten Szenario, in dem private IP-Adressen genutzt werden, sind die virtuellen Computer in der Cloud einfach eine IP-Teilmenge. In Ihrem lokalen Netzwerk ausgeführte Software erkennt diese virtuellen Computer als lokale Komponenten, genauso wie bei herkömmlichen VPNs. Zu beachten ist hierbei, dass die virtuellen und physischen Computer auf beiden Seiten ein beliebiges Betriebssystem ausführen können, da die Verbindung auf IP-Ebene hergestellt wird. Virtuelle Azure-Computer, auf denen Windows Server oder Linux ausgeführt wird, können mit lokalen Computern interagieren, auf denen Windows, Linux oder andere Systeme ausgeführt werden. Es ist außerdem möglich, gängige Verwaltungstools wie System Center und andere zum Verwalten der virtuellen Computer in der Cloud und der enthaltenen Anwendungen zu verwenden.
 
 Die Nutzung von Azure Virtual Network ist in vielen Situationen sinnvoll. Wie bereits erwähnt, können Benutzer im Unternehmen so einfacher auf Cloudanwendungen zugreifen. Ein wichtiger Aspekt, der zu dieser Benutzerfreundlichkeit beträgt, ist die Fähigkeit, die virtuellen Azure-Computer in eine bestehende Active Directory-Domäne vor Ort einzubinden, um den Benutzern eine einmalige Anmeldung an den ausgeführten Anwendungen zu ermöglichen. Sie können auch eine Active Directory-Domäne in der Cloud erstellen, wenn Sie dies bevorzugen, und diese Domäne dann mit dem lokalen Netzwerk verbinden.
 
@@ -42,7 +42,7 @@ Azure Traffic Manager wurde entwickelt, um dieses Problem zu lösen. Abbildung 
 
 <a name="Fig3"></a>
 
-![03\_TrafficManager][]
+![03\_TrafficManager][03\_TrafficManager]
 
 **Abbildung 2: Azure Traffic Manager leitet Anforderungen von Benutzern über verschiedene Anwendungsinstanzen in unterschiedlichen Azure-Datencentern intelligent weiter.**
 

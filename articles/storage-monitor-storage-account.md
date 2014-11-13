@@ -1,4 +1,4 @@
-<properties linkid="manage-services-how-to-monitor-a-storage-account" urlDisplayName="How to monitor" pageTitle="How to monitor a storage account | Microsoft Azure" metaKeywords="Azure monitor storage accounts, storage account management portal, storage account dashboard, storage metrics table, storage metrics chart" description="Learn how to monitor a storage account in Azure by using the Management Portal." metaCanonical="" services="storage" documentationCenter="" title="How To Monitor a Storage Account" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
+<properties urlDisplayName="How to monitor" pageTitle="&Uuml;berwachen eines Speicherkontos | Microsoft Azure" metaKeywords="Azure monitor storage accounts, storage account management portal, storage account dashboard, storage metrics table, storage metrics chart" description="Dieses Thema beschreibt die &Uuml;berwachung von Speicherkonten in Azure im Verwaltungsportal." metaCanonical="" services="storage" documentationCenter="" title="&Uuml;berwachen eines Speicherkontos" authors="tamram" solutions="" manager="adinah" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -8,9 +8,11 @@ Sie können Ihre Speicherkonten im Azure-Vorschau-Verwaltungsportal überwachen.
 
 Bis Sie die Überwachung für ein Speicherkonto konfigurieren, werden keine Überwachungsdaten gesammelt, und die Metrikendiagramme im Dashboard und auf der Seite **Überwachen** sind leer.
 
-<div class="dev-callout"> 
-<b>Hinweis</b> 
-<p>F&uuml;r die Untersuchung von &Uuml;berwachungsdaten im Verwaltungsportal fallen zus&auml;tzliche Kosten an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>.</p> 
+<div class="dev-callout">
+
+**Hinweis**
+Für die Untersuchung von Überwachungsdaten im Verwaltungsportal fallen zusätzliche Kosten an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten][Speicheranalyse und Speicheranalysekosten].
+
 </div>
 
 ## Inhaltsverzeichnis
@@ -62,7 +64,7 @@ Im Dashboard können Sie aus neun verfügbaren Metriken bis zu sechs Metriken zu
 
 -   Um eine im Diagramm gezeichnete Metrik auszublenden, deaktivieren Sie das Kontrollkästchen neben der Metriküberschrift.
 
-	![Monitoring_nmore](./media/storage-monitor-storage-account/storage_Monitoring_nmore.png)
+    ![Überwachung\_n more][Überwachung\_n more]
 
 1.  Standardmäßig zeigt das Diagramm Trends an, da nur der aktuelle Wert der einzelnen Metriken angezeigt wird (Option **Relativ** oben im Diagramm). Um eine Y-Achse einzublenden, sodass absolute Werte angezeigt werden, wählen Sie **Absolut** aus.
 
@@ -86,35 +88,36 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 
     Die Seite **Überwachen** wird geöffnet. Standardmäßig zeigt die Metrikentabelle eine Teilmenge der für die Überwachung verfügbaren Metriken an. Die Abbildung zeigt die Standardanzeige der Seite "Überwachen" für ein Speicherkonto, für das für alle drei Dienste die ausführliche Überwachung konfiguriert ist. Verwenden Sie **Metriken hinzufügen**, um unter sämtlichen verfügbaren Metriken die zu überwachenden Metriken auszuwählen.
 
-    ![Monitoring_VerboseDisplay](./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png)
+    ![Überwachung\_AusführlicheAnzeige][Überwachung\_AusführlicheAnzeige]
 
-    <div class="dev-callout"> 
-	<b>Hinweis</b> 
-	<p>Ber&uuml;cksichtigen Sie bei der Auswahl der Metriken die Kosten. F&uuml;r die Aktualisierung von &Uuml;berwachungsanzeigen fallen Transaktionsgeb&uuml;hren und Kosten f&uuml;r eingehenden Datenverkehr an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>.</p> 
-</div>
+    <div class="dev-callout">
 
-3. Klicken Sie auf **Metriken hinzufügen**.
+    **Hinweis**
+    Berücksichtigen Sie bei der Auswahl der Metriken die Kosten. Für die Aktualisierung von Überwachungsanzeigen fallen Transaktionsgebühren und Kosten für eingehenden Datenverkehr an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten][Speicheranalyse und Speicheranalysekosten].
+
+    </div>
+
+3.  Klicken Sie auf **Metriken hinzufügen**.
 
     Die aggregierten Metriken für eine minimale Überwachung werden am Anfang der Liste angezeigt. Wenn das Kontrollkästchen aktiviert ist, wird die Metrik in der Metrikenliste angezeigt.
 
-	 ![AddMetricsInitialDisplay](./media/storage-monitor-storage-account/Storage_AddMetrics_InitialDisplay.png)
+    ![Metriken hinzufügen\_Anfängliche Anzeige][Metriken hinzufügen\_Anfängliche Anzeige]
 
 4.  Zeigen Sie mit der Maus auf die rechte Seite des Dialogfelds, um eine Bildlaufleiste einzublenden, die Sie ziehen können, um weitere Metriken anzuzeigen.
 
-    ![AddMetricsScrollbar](./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png)
+    ![Metriken hinzufügen\_Bildlaufleiste][Metriken hinzufügen\_Bildlaufleiste]
 
 5.  Klicken Sie auf den Nach-unten-Pfeil neben einer Metrik, um eine Liste vor Vorgängen zu erweitern, die im Funktionsumfang der Metrik enthalten sind. Wählen Sie jeden Vorgang aus, der in der Metrikentabelle im Verwaltungsportal angezeigt werden soll.
 
     In der folgenden Abbildung wurde die Metrik PROZENTSATZ DER AUTORISIERUNGSFEHLER erweitert.
 
-    ![ExpandCollapse](./media/storage-monitor-storage-account/Storage_AddMetrics_ExpandCollapse.png)
-
+    ![Erweitern\_Reduzieren][Erweitern\_Reduzieren]
 
 6.  Nachdem Sie Metriken für alle Dienste ausgewählt haben, klicken Sie auf "OK" (Häkchen), um die Überwachungskonfiguration zu aktualisieren. Die ausgewählten Metriken werden der Metrikentabelle hinzugefügt.
 
 7.  Um eine Metrik aus der Tabelle zu löschen, klicken Sie auf die Metrik, um sie auszuwählen, und klicken Sie anschließend auf **Metrik löschen**, wie unten dargestellt.
 
-    ![DeleteMetric](./media/storage-monitor-storage-account/Storage_DeleteMetric.png)
+    ![Metrik löschen][Metrik löschen]
 
 ## <span id="customizemetricschart"></span></a>Gewusst wie: Anpassen des Metrikendiagramms auf der Seite "Überwachen"
 
@@ -132,8 +135,7 @@ Für jeden für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschla
 
 2.  Klicken Sie auf **Konfigurieren**, und blättern Sie dann mit der Nach-unten-Taste zum Abschnitt **logging** (siehe Abbildung unten).
 
-    ![Storagelogging](./media/storage-monitor-storage-account/Storage_LoggingOptions.png)
-
+    ![Speicher\_logging][Speicher\_logging]
 
 3.  Konfigurieren Sie für jeden Dienst (Blob, Tabelle und Warteschlange) die folgenden Einstellungen:
 
@@ -145,6 +147,7 @@ Für jeden für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschla
 
 Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container $logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse][Informationen zur Protokollierung durch die Speicheranalyse].
 
+  [Speicheranalyse und Speicheranalysekosten]: http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx
   [Gewusst wie: Konfigurieren der Überwachung für ein Speicherkonto]: #configurestoragemonitoring
   [Gewusst wie: Anpassen des Dashboards für die Überwachung]: #customizestoragemonitoring
   [Gewusst wie: Anpassen der Seite "Überwachen"]: #customizemonitorpage
@@ -154,4 +157,11 @@ Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Spei
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [Überwachungsoptionen]: ./media/storage-monitor-storage-account/Storage_MonitoringOptions.png
   [Informationen zu Metriken der Speicheranalyse]: http://msdn.microsoft.com/de-de/library/windowsazure/hh343258.aspx
+  [Überwachung\_n more]: ./media/storage-monitor-storage-account/storage_Monitoring_nmore.png
+  [Überwachung\_AusführlicheAnzeige]: ./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png
+  [Metriken hinzufügen\_Anfängliche Anzeige]: ./media/storage-monitor-storage-account/Storage_AddMetrics_InitialDisplay.png
+  [Metriken hinzufügen\_Bildlaufleiste]: ./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png
+  [Erweitern\_Reduzieren]: ./media/storage-monitor-storage-account/Storage_AddMetrics_ExpandCollapse.png
+  [Metrik löschen]: ./media/storage-monitor-storage-account/Storage_DeleteMetric.png
+  [Speicher\_logging]: ./media/storage-monitor-storage-account/Storage_LoggingOptions.png
   [Informationen zur Protokollierung durch die Speicheranalyse]: http://msdn.microsoft.com/de-de/library/windowsazure/hh343262.aspx

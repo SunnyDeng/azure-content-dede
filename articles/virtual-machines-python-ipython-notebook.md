@@ -1,6 +1,6 @@
-<properties linkid="develop-python-ipython-notebook" urlDisplayName="IPython Notebook" pageTitle="IPython Notebook - Azure tutorial" metaKeywords="" description="A tutorial that shows how to deploy the IPython Notebook on Azure, using Linux or Windows virtual machines (VMs)." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="IPython Notebook on Azure" authors="huvalo" solutions="" manager="" editor="" />
+<properties urlDisplayName="IPython Notebook" pageTitle="IPython Notebook &ndash; Azure-Lernprogramm" metaKeywords="" description="Dieses Lernprogramm beschreibt die Bereitstellung von IPython Notebook in Azure mithilfe von virtuellen Linux- oder Windows-Computern (VMs)." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="IPython Notebook in Azure" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="python" ms.topic="article" ms.date="09/25/2014" ms.author="huvalo" />
 
 # IPython Notebook in Azure
 
@@ -22,7 +22,7 @@ analysieren:
 
 ![Screenshot][Screenshot]
 
-Dieses Dokument beschreibt die Bereitstellung von IPython Notebook in Windows
+Dieses Dokument beschreibt die Bereitstellung von IPython Notebook in Microsoft
 Azure mithilfe von virtuellen Linux- oder Windows-Computern (VMs). Mit IPython
 Notebook in Azure können Sie schnell und einfach webbasierte Schnittstellen für
 skalierbare Serverressourcen mit dem gesamten Funktionsumfang von Python und den
@@ -30,7 +30,7 @@ zahlreichen Bibliotheken erstellen. Da die gesamte Installation in der Cloud erf
 Ressourcen nutzen, ohne über einen gängigen
 Webbrowser hinaus lokale Konfigurationsschritte durchführen zu müssen.
 
-[WACOM.INCLUDE [create-account-and-vms-note][create-account-and-vms-note]]
+[WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## Erstellen und Konfigurieren einer VM in Azure
 
@@ -41,11 +41,11 @@ Windows-Computer. Deshalb werden wir die Einrichtung von IPython für beide virt
 
 ### Linux-VM
 
-Führen Sie [diese Anweisungen][diese Anweisungen] aus, um einen virtuellen Computer mit einer *OpenSUSE*- oder *Ubuntu*-Distribution zu erstellen. Dieses Lernprogramm verwendet OpenSUSE 12.3 und Ubuntu Server 13.04. Wir gehen vom Standard-Benutzernamen *azureuser* aus.
+Führen Sie [diese Anweisungen][diese Anweisungen] aus, um einen virtuellen Computer mit einer *OpenSUSE*- oder *Ubuntu*-Distribution zu erstellen. Dieses Lernprogramm verwendet OpenSUSE 13.1 und Ubuntu Server 14.04 LTS. Wir gehen vom Standard-Benutzernamen *azureuser* aus.
 
 ### Windows-VM
 
-Führen Sie [diese Anweisungen][1] aus, um einen virtuellen Computer mit einer *Windows Server 2012 Datacenter*-Distribution zu erstellen. In diesem Lernprogramm gehen wir vom Standard-Benutzernamen *azureuser* aus.
+Führen Sie [diese Anweisungen][1] aus, um einen virtuellen Computer mit einer *Windows Server 2012 R2 Datacenter*-Distribution zu erstellen. In diesem Lernprogramm gehen wir vom Standard-Benutzernamen *azureuser* aus.
 
 ## Erstellen eines Endpunkts für IPython Notebook
 
@@ -79,6 +79,7 @@ Installieren Sie [NumPy][NumPy], [Matplotlib][Matplotlib], [Tornado][Tornado] un
 
     sudo zypper install python-matplotlib
     sudo zypper install python-tornado
+    sudo zypper install python-jinja2
     sudo zypper install ipython
 
 ### Linux (Ubuntu)
@@ -100,28 +101,32 @@ indem Sie alle Befehlszeilenaktionen in der Windows PowerShell ausführen.
 
 **Hinweis**: Sie müssen einige Sicherheitseinstellungen ändern, um Downloads mit dem Internet Explorer ausführen zu können. Klicken Sie im **Server-Manager** auf **Lokaler Server**, anschließend auf **Verstärkte Sicherheitskonfiguration für IE** und deaktivieren Sie die Option für Administratoren. Sie können diese Option nach der IPython-Installation wieder aktivieren.
 
-1.  Installieren Sie Python 2.7.5 (32-Bit) von [python.org][python.org].
-    Sie müssen Ihrer `PATH`
-    -Umgebungsvariable außerdem auch `C:\Python27` und `C:\Python27\Scripts` hinzufügen.
+1.  Installieren Sie Python 2.7.8 (32 Bit) von [python.org][python.org].
+    Sie müssen Ihrer `PATH`-Umgebungsvariable
+    außerdem auch `C:\Python27` und `C:\Python27\Scripts` hinzufügen.
 
-2.  Installieren Sie "distribute", indem Sie die Datei **distribute\_setup.py**
-     von [python-distribute.org][python-distribute.org] herunterladen und anschließend den folgenden
+2.  Installieren Sie pip und Setuptools, indem Sie die Datei **get-pip.py**
+    von [][]<https://pip.pypa.io/en/latest/installing.html></a> herunterladen und dann den folgenden
     Befehl ausführen:
 
-        python distribute_setup.py
+        python get-pip.py
 
-3.  Installieren Sie [Tornado][Tornado] und [PyZMQ][PyZMQ] mit den folgenden Befehlen:
+3.  Installieren Sie [Tornado][Tornado] und [PyZMQ][PyZMQ] sowie andere IPython-Abhängigkeiten durch:
 
         easy_install tornado
         easy_install pyzmq
+        easy_install jinja2
+        easy_install six
+        easy_install python-dateutil
+        easy_install pyparsing
 
 4.  Laden Sie [NumPy][NumPy] herunter, und installieren Sie das Paket mit dem
-    `.exe`-Installationsprogramm für Binärdateien von der Website. Zum Zeitpunkt der Erstellung dieses Dokuments ist die neueste Version **numpy-1.7.1-win32-superpack-python2.7.exe**.
+    `.exe`-Installationsprogramm für Binärdateien von der Website. Zum Zeitpunkt der Erstellung dieses Dokuments ist die neueste Version **numpy-1,90,0-win32-superpack-python2.7.exe**.
 
 5.  Laden Sie [Matplotlib][Matplotlib] herunter, und installieren Sie es mit dem
-    `.exe`-Installationsprogramm für Binärdateien von der Website. Zum Zeitpunkt der Erstellung dieses Dokuments ist die neueste Version **matplotlib-1.2.1.win32-py2.7.exe**.
+    `.exe`-Installationsprogramm für Binärdateien von der Website. Zum Zeitpunkt der Erstellung dieses Dokuments ist die neueste Version **matplotlib-1,40,0.win32-py2.7.exe**.
 
-6.  Herunterladen und Installieren von OpenSSL. Sie finden Windows-Versionen von OpenSSL unter [][]<http://slproweb.com/products/Win32OpenSSL.html></a>.
+6.  Herunterladen und Installieren von OpenSSL. Sie finden Windows-Versionen von OpenSSL unter [][4]<http://slproweb.com/products/Win32OpenSSL.html></a>.
 
     -   Falls Sie eine **Light**-Version installieren, müssen Sie auch **Visual C++ 2008 Redistributable** installieren (ebenfalls auf dieser Seite erhältlich).
 
@@ -193,9 +198,9 @@ Kennwort wird anschließend wie folgt ausgegeben:
     Verify password: 
     sha1:b86e933199ad:a02e9592e59723da722.. (elided the rest for security)
 
-Nun werden wir die Profilkonfigurationsdatei
-`ipython_notebook_config.py` im aktuellen Verzeichnis bearbeiten. Diese Datei enthält eine
-Reihe von Feldern, die standardmäßig alle auskommentiert sind. Öffnen Sie diese
+Als Nächstes bearbeiten wir die Konfigurationsdatei des Profils. Hierbei handelt es sich um die
+`ipython_notebook_config.py`-Datei im Profilverzeichnis, in dem Sie sich befinden. Beachten Sie, dass diese Datei möglicherweise nicht vorhanden ist. Erstellen Sie sie dann einfach. Diese
+Datei verfügt über einige Felder, und standardmäßig sind alle auskommentiert. Öffnen Sie diese
 Datei in einem Text-Editor Ihrer Wahl, und stellen Sie sicher, dass
 mindestens der folgende Text enthalten ist:
 
@@ -238,18 +243,18 @@ Jetzt sollten Sie in der Lage sein, unter der Adresse
 
 Beim ersten Zugriff auf IPython Notebook müssen Sie auf der Anmeldungsseite Ihr Kennwort eingeben:
 
-![Screenshot][4]
+![Screenshot][5]
 
 Nach der Anmeldung sehen Sie das "IPython-Notebook-Dashboard", die
 Steuerzentrale für sämtliche Notebook-Vorgänge. Auf dieser Seite können Sie neue
 Notebooks erstellen, bestehende öffnen usw.:
 
-![Screenshot][5]
+![Screenshot][6]
 
 Wenn Sie auf die Schaltfläche "New Notebook" klicken, öffnet sich die
 folgende Seite:
 
-![Screenshot][6]
+![Screenshot][7]
 
 In dem mit der `In []:`-Eingabeaufforderung gekennzeichneten Bereich können Sie
 gültigen Python-Code eingeben und diesen ausführen, indem Sie `Shift-Enter` drücken oder
@@ -258,7 +263,7 @@ auf das "Wiedergabe"-Symbol klicken (ein nach rechts zeigendes Dreieck auf der S
 Da wir IPython Notebook für den automatischen Start mit NumPy- und matplotlib-Unterstützung
 konfiguriert haben, können Sie sogar Diagramme erstellen, z. B.:
 
-![Screenshot][7]
+![Screenshot][8]
 
 ## Ein leistungsstarkes Beispiel: Dokumente mit Liveberechnung und Rich-Media-Inhalte
 
@@ -268,25 +273,25 @@ Python-Codeblöcke ausführen und zum anderen Notizen und sonstiger Text speiche
 Stil einer Zelle über das Dropdownmenü der Symbolleiste von "Code" in "Markdown"
 geändert wird:
 
-![Screenshot][8]
+![Screenshot][9]
 
 Es handelt sich jedoch um mehr als reine Textverarbeitung, da Sie mit
 IPython Notebook Berechnungen und Rich-Media-Inhalte (Text, Grafiken, Video und
 praktisch alle in einem modernen Browser darstellbaren Elemente) kombinieren können. Für den schulischen Bereich können Sie zum Beispiel
 Demonstrationsvideos mit Berechnungen kombinieren:
 
-![Screenshot][9]
+![Screenshot][10]
 
 oder externe Websites, die weiterhin live nutzbar bleiben, in eine Notebook-
 Datei einbetten:
 
-![Screenshot][10]
+![Screenshot][11]
 
 Mit den vielen hervorragenden Python-Bibliotheken für wissenschaftliche und
 technische Berechnungen können Sie einfache Berechnungen ebenso leicht in einer
 einzigen Umgebung umsetzen wie komplexe Netzwerkanalysen:
 
-![Screenshot][11]
+![Screenshot][12]
 
 Dieses Beispiel für die Kombination aus modernem Web und Liveberechnungen
 bietet zahlreiche Vorzüge und eignet sich hervorragend für die Cloud. IPython Notebook kann
@@ -333,10 +338,7 @@ Microsoft und verwandelt Visual Studio in eine funktionsreiche Python-
 Entwicklungsumgebung, die einen innovativen Editor mit IntelliSense, Debugging,
 Profilerstellung und Integration paralleler Berechnungen umfasst.
 
-  [IPython-Projekt]: http://ipython.org
-  [Lernprogramm ansehen]: http://go.microsoft.com/fwlink/?LinkID=254535&clcid=0x409
   [Screenshot]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-spectral.png
-  [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
   [diese Anweisungen]: /de-de/manage/linux/tutorials/virtual-machine-from-gallery/
   [1]: /de-de/manage/windows/tutorials/virtual-machine-from-gallery/
   [2]: ./media/virtual-machines-python-ipython-notebook/ipy-azure-linux-005.png
@@ -345,17 +347,15 @@ Profilerstellung und Integration paralleler Berechnungen umfasst.
   [Matplotlib]: http://matplotlib.sourceforge.net/ "Matplotlib"
   [Tornado]: http://www.tornadoweb.org/ "Tornado"
   [python.org]: http://www.python.org/download
-  [python-distribute.org]: http://python-distribute.org/
+  []: https://pip.pypa.io/en/latest/installing.html
   [PyZMQ]: https://github.com/zeromq/pyzmq "PyZMQ"
-  []: http://slproweb.com/products/Win32OpenSSL.html
-  [4]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-001.png
-  [5]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-002.png
-  [6]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-003.png
-  [7]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-004.png
-  [8]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-005.png
-  [9]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-006.png
-  [10]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-007.png
-  [11]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-008.png
-  [Notebook-
-  Beispielen]: https://github.com/ipython/ipython/tree/master/examples/notebooks
+  [4]: http://slproweb.com/products/Win32OpenSSL.html
+  [5]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-001.png
+  [6]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-002.png
+  [7]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-003.png
+  [8]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-004.png
+  [9]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-005.png
+  [10]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-006.png
+  [11]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-007.png
+  [12]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-008.png
   [Python Tools for Visual Studio]: http://pytools.codeplex.com

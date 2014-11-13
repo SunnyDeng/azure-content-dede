@@ -1,6 +1,6 @@
-<properties linkid="dev-java-how-to-on-premise-application-with-blob-storage" urlDisplayName="Image Gallery w/ Storage" pageTitle="On-premises application with blob storage (Java) | Microsoft Azure" metaKeywords="Azure blob storage, Azure blob Java, Azure blob example, Azure blob tutorial" description="Learn how to create a console application that uploads an image to Azure, and then displays the image in your browser. Code samples in Java." metaCanonical="" services="storage" documentationCenter="Java" title="On-Premises Application with Blob Storage" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties urlDisplayName="Image Gallery w/ Storage" pageTitle="Lokale Anwendungen mit Blob-Speicher (Java) | Microsoft Azure" metaKeywords="Azure blob storage, Azure blob Java, Azure blob example, Azure blob tutorial" description="Lernen Sie, wie Sie eine Konsolenanwendung erstellen, die ein Bild in Azure hochl&auml;dt und anschlie&szlig;end das Bild in Ihrem Browser anzeigt. Die Codebeispiele wurden in Java geschrieben." metaCanonical="" services="storage" documentationCenter="Java" title="Lokale Anwendungen mit Blob-Speicher" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm"></tags>
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
 # Lokale Anwendungen mit Blob-Speicher
 
@@ -11,9 +11,9 @@ und anschließend eine HTML-Datei erstellt, die das Bild in Ihrem Browser anzeig
 
 ## Inhaltsverzeichnis
 
--   [Voraussetzungen][]
--   [Verwenden von Azure Blob-Speicher für Dateiuploads][]
--   [So löschen Sie einen Container][]
+-   [Voraussetzungen][Voraussetzungen]
+-   [Verwenden von Azure Blob-Speicher für Dateiuploads][Verwenden von Azure Blob-Speicher für Dateiuploads]
+-   [So löschen Sie einen Container][So löschen Sie einen Container]
 
 ## <a name="bkmk_prerequisites"> </a>Voraussetzungen
 
@@ -22,18 +22,18 @@ und anschließend eine HTML-Datei erstellt, die das Bild in Ihrem Browser anzeig
 3.  Die JAR-Datei der Azure-Bibliotheken für Java und alle sonstigen
     JAR-Abhängigkeiten sind installiert
     und im Buildpfad Ihres Java-Compilers eingebunden. Weitere Informationen zur Installation der Azure-Bibliotheken für Java finden Sie unter
-    [Downloadseite des Azure-SDK für Java][].
+    [Downloadseite des Azure-SDK für Java][Downloadseite des Azure-SDK für Java].
 4.  Ein Azure-Speicherkonto wurde eingerichtet. Der folgende Code
     verwendet Kontonamen und Kontoschlüssel
-    des Speicherkontos. Unter [Erstellen eines Speicherkontos][] finden Sie Informationen zum Einrichten von Speicherkonten,
-    und unter [Verwalten von Speicherkonten][] erfahren Sie,
+    des Speicherkontos. Unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos] finden Sie Informationen zum Einrichten von Speicherkonten,
+    und unter [Verwalten von Speicherkonten][Verwalten von Speicherkonten] erfahren Sie,
     wie Sie Ihren Kontoschlüssel ermitteln können.
 5.  Sie haben eine lokale Bilddatei unter dem Pfad
     "c:\\myimages\\image1.jpg" erstellt. Alternativ können Sie den
     **FileInputStream**-Konstruktor im Beispiel verändern, um einen
     anderen Pfad bzw. Dateinamen zu verwenden.
 
-[WACOM.INCLUDE [create-account-note][]]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## <a name="bkmk_uploadfile"> </a>Verwenden von Azure Blob-Speicher für Dateiuploads
 
@@ -158,7 +158,7 @@ Schließen Sie den **try**-Block mit einer geschweiften Klammer: **}**
 Behandeln Sie die folgenden Ausnahmen:
 
 -   **FileNotFoundException**: Kann vom **FileInputStream**
- oder vom **FileOutputStream**-Konstruktor geworfen werden.
+    - oder vom **FileOutputStream**-Konstruktor geworfen werden.
 -   **StorageException**: Kann von der Clientbibliothek für
     den Azure-Speicher ausgegeben werden.
 -   **URISyntaxException**: Kann von der **ListBlobItem.getUri**
@@ -210,15 +210,15 @@ Erstellen Sie eine lokale Datei mit dem Namen **index.html**.
     PrintStream stream;
     stream = new PrintStream(new FileOutputStream("index.html"));
 
-Schreiben Sie die Elemente **<html\>**, **<header\>** und
-**<body\>** in die Datei.
+Schreiben Sie die Elemente **\<html\>**, **\<header\>** und
+**\<body\>** in die Datei.
 
     stream.println("<html>");
     stream.println("<header/>");
     stream.println("<body>");
 
 Durchlaufen Sie die Liste der hochgeladenen Blobs. Erstellen Sie für jedes Blob auf der HTML-Seite
-ein **<img\>**-Element, das sein **src**-Attribut an den
+ein **\<img\>**-Element, das sein **src**-Attribut an den
 URI des Blobs gesendet hat, während es in Ihrem Azure-Speicherkonto vorhanden ist.
 Auch wenn Sie in diesem Beispiel nur ein Bild hinzugefügt haben, würde dieser Code
 alle iterieren, wenn Sie mehr hinzugefügt hätten.
@@ -233,7 +233,7 @@ oder Seitenblobs anstelle von Blockblobs, müssen Sie Ihren Code entsprechend an
     stream.println("<img src='" + blobItem.getUri() + "'/><br/>");
     }
 
-Schließen Sie das **<body\>**- und das **<html\>**-Element.
+Schließen Sie das **\<body\>**- und das **\<html\>**-Element.
 
     stream.println("</body>");
     stream.println("</html>");
@@ -418,13 +418,12 @@ mit dem Namen **gettingstarted**.
     }
 
 Eine Übersicht über andere Blobspeicherklassen und -methoden finden Sie unter
-[Verwenden des Blobspeicherdiensts in Python][].
+[Verwenden des Blobspeicherdiensts in Python][Verwenden des Blobspeicherdiensts in Python].
 
   [Voraussetzungen]: #bkmk_prerequisites
   [Verwenden von Azure Blob-Speicher für Dateiuploads]: #bkmk_uploadfile
   [So löschen Sie einen Container]: #bkmk_deletecontainer
-  [Downloadseite des Azure-SDK für Java]: http://www.windowsazure.com/en-us/develop/java/
-  [Erstellen eines Speicherkontos]: http://www.windowsazure.com/en-us/manage/services/storage/how-to-create-a-storage-account/
-  [Verwalten von Speicherkonten]: http://www.windowsazure.com/en-us/manage/services/storage/how-to-manage-a-storage-account/
-  [create-account-note]: ../includes/create-account-note.md
-  [Verwenden des Blobspeicherdiensts in Python]: http://www.windowsazure.com/en-us/develop/java/how-to-guides/blob-storage/
+  [Downloadseite des Azure-SDK für Java]: http://www.windowsazure.com/de-de/develop/java/
+  [Erstellen eines Speicherkontos]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-create-a-storage-account/
+  [Verwalten von Speicherkonten]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/
+  [Verwenden des Blobspeicherdiensts in Python]: http://www.windowsazure.com/de-de/develop/java/how-to-guides/blob-storage/

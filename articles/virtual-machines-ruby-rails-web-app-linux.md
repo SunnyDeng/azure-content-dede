@@ -1,4 +1,4 @@
-<properties linkid="dev-ruby-web-app-with-linux-vm" urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails Web App on Azure using Linux VM" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="Host a Ruby on Rails-based website on Azure using a Linux virtual machine. " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails Web application on an Azure VM" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails-Web-App auf Azure mithilfe eines virtuellen Linux-Computers" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="Hosten Sie mithilfe eines virtuellen Linux-Computers eine Ruby on Rails-basierte Website auf Azure. " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails-Webanwendung auf Azure VM" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-linux" ms.devlang="ruby" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
@@ -51,16 +51,22 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
         gem install rails --no-rdoc --no-ri
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Dieser Befehl erfordert m&ouml;glicherweise Administrator- oder Root-Berechtigungen auf einigen Betriebssystemen. Falls beim Ausf&uuml;hren dieses Befehls ein Fehler auftritt, verwenden Sie 'sudo' wie folgt:</p>
-<pre class="prettyprint">sudo gem install rails</pre>
-</div>
+
+    **Hinweis**
+    Dieser Befehl erfordert möglicherweise Administrator- oder Root-Berechtigungen auf einigen Betriebssystemen. Falls beim Ausführen dieses Befehls ein Fehler auftritt, verwenden Sie 'sudo' wie folgt:
+
+    ``` prettyprint
+    sudo gem install rails
+    ```
+
+    </div>
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>F&uuml;r dieses Lernprogramm wurde Version 3.2.12 des Rails-Gem verwendet.</p>
 
-</div>
+    **Hinweis**
+    Für dieses Lernprogramm wurde Version 3.2.12 des Rails-Gem verwendet.
+
+    </div>
 
 3.  Sie müssen außerdem einen JavaScript-Übersetzer installieren, der von Rails zum Kompilieren der CoffeeScript-Assets für die Rails-Anwendung verwendet wird. Eine Liste der unterstützten Übersetzer finden Sie unter [][1]<https://github.com/sstephenson/execjs#readme></a>.
 
@@ -75,9 +81,11 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
     Dieser Befehl erstellt ein neues Verzeichnis namens **blog\_app** und füllt es mit den Dateien und Unterverzeichnissen aus, die von einer Rails-Anwendung benötigt werden.
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Das Abschlie&szlig;en dieses Befehls kann eine Minute oder l&auml;nger dauern. Er f&uuml;hrt eine Hintergrundinstallation der Gems aus, die f&uuml;r eine Standardanwendung erforderlich sind, und reagiert w&auml;hrend dieser Zeit scheinbar nicht.</p>
-</div>
+
+    **Hinweis**
+    Das Abschließen dieses Befehls kann eine Minute oder länger dauern. Er führt eine Hintergrundinstallation der Gems aus, die für eine Standardanwendung erforderlich sind, und reagiert während dieser Zeit scheinbar nicht.
+
+    </div>
 
 2.  Wechseln Sie zum Verzeichnis **blog\_app**, und verwenden Sie dann folgenden Befehl, um ein grundlegendes Blog-Gerüst zu erstellen.
 
@@ -124,13 +132,17 @@ Führen Sie die folgenden Schritte aus, um den Rails-Server in Ihrer Entwicklung
 Folgen Sie den [hier][hier] angegebenen Anweisungen zum Erstellen eines virtuellen Azure-Computers, der Linux hostet.
 
 <div class="dev-callout">
-<strong>Hinweis</strong>
 
-<p>Die Schritte dieses Lernprogramms wurden auf einem virtuellen Azure-Computer mit Ubuntu 12.10 ausgef&uuml;hrt. Falls Sie eine andere Linux-Distribution verwenden, k&ouml;nnen f&uuml;r diese Aufgaben andere Schritte erforderlich sein.</p></div>
+**Hinweis**
+Die Schritte dieses Lernprogramms wurden auf einem virtuellen Azure-Computer mit Ubuntu 12.10 ausgeführt. Falls Sie eine andere Linux-Distribution verwenden, können für diese Aufgaben andere Schritte erforderlich sein.
+
+</div>
 
 <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Sie m&uuml;ssen <strong>nur</strong> den virtuellen Computer erstellen. Stoppen Sie, nachdem Sie gelernt haben, wie den virtuellen Computer &uuml;ber SSH verbinden.</p>
+
+**Hinweis**
+Sie müssen **nur** den virtuellen Computer erstellen. Stoppen Sie, nachdem Sie gelernt haben, wie den virtuellen Computer über SSH verbinden.
+
 </div>
 
 Nachdem Sie den virtuellen Azure-Computer erstellt haben, führen Sie folgende Schritte aus, um Ruby on Rails auf dem virtuellen Computer zu installieren:
@@ -144,9 +156,11 @@ Nachdem Sie den virtuellen Azure-Computer erstellt haben, führen Sie folgende S
         ssh railsdev@railsvm.cloudapp.net -p 61830
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Falls Sie Windows als Entwicklungsumgebung verwenden, k&ouml;nnen Sie ein Dienstprogramm wie <b>PuTTY</b> f&uuml;r die SSH-Funktionen verwenden. PuTTY kann von der <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY Download Page</a> heruntergeladen werden.</p>
-</div>
+
+    **Hinweis**
+    Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **PuTTY** für die SSH-Funktionen verwenden. PuTTY kann von der [PuTTY Download Page][PuTTY Download Page] heruntergeladen werden.
+
+    </div>
 
 2.  Verwenden Sie in der SSH-Sitzung die folgenden Befehle zur Installation von Ruby auf dem virtuellen Computer:
 
@@ -177,8 +191,10 @@ Beispiel:
     scp -r -P 54822 -C ~/blog_app railsdev@railsvm.cloudapp.net:
 
 <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Falls Sie Windows als Entwicklungsumgebung verwenden, k&ouml;nnen Sie ein Dienstprogramm wie <b>pscp</b> f&uuml;r die SCP-Funktionen verwenden. pscp kann von der <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY Download Page</a> heruntergeladen werden.</p>
+
+**Hinweis**
+Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **pscp** für die SCP-Funktionen verwenden. pscp kann von der [PuTTY Download Page][PuTTY Download Page] heruntergeladen werden.
+
 </div>
 
 Die für diesen Befehl verwendeten Parameter bewirken Folgendes:
@@ -291,11 +307,13 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
   [Standard-Rails-Seite]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailslocal.png
   [Seite mit Einträgen]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilslocal.png
   [hier]: /de-de/documentation/articles/virtual-machines-linux-tutorial
+  [PuTTY Download Page]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Liste der virtuellen Computer]: ./media/virtual-machines-ruby-rails-web-app-linux/vmlist.png
   [Seite "Endpunkte"]: ./media/virtual-machines-ruby-rails-web-app-linux/endpoints.png
   [Dialogfeld für neuen Endpunkt]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
   [2]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailscloud.png
+  [Unicorn+NginX+Capistrano mit einem virtuellen Azure-Computer]: /de-de/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/
   [Ruby on Rails Guides]: http://guides.rubyonrails.org/
   [Speichern von unstrukturierten Daten mit Blobs]: /de-de/documentation/articles/storage-ruby-how-to-use-blob-storage
   [Speichern von Schlüssel/Wert-Paaren mit Tabellen]: /de-de/develop/ruby/how-to-guides/table-service/

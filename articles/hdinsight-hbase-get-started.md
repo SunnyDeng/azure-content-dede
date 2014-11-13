@@ -1,10 +1,10 @@
-<properties linkid="manage-services-hdinsight-hbase-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="Get started using HBase with Hadoop in HDInsight | Azure" metaKeywords="" description="Get started using HBase with Hadoop in HDInsight. learn how to created HBase tables and query them with Hive." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using HBase with Hadoop in HDInsight" authors="bradsev" solutions="big-data" manager="paulettm" editor="cgronlun" />
+<properties urlDisplayName="Get Started" pageTitle="Erste Schritte mit HBase mit Hadoop in HDInsight | Azure" metaKeywords="" description="Erste Schritte mit HBase mit Hadoop in HDInsight. Erfahren Sie, wie Sie HBase-Tabellen erstellen und mit Hive abfragen k&ouml;nnen." metaCanonical="" services="hdinsight" documentationCenter="" title="Erste Schritte mit HBase mit Hadoop in HDInsight" authors="bradsev" solutions="big-data" manager="paulettm" editor="cgronlun" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2014" ms.author="bradsev"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2014" ms.author="bradsev" />
 
 # Erste Schritte mit HBase mit Hadoop in HDInsight
 
-HBase ist eine NoSQL-Datenbank mit niedriger Latenz und ermöglicht die Onlinetransaktionsverarbeitung großer Datenmengen. HBase ist als verwaltetes Cluster integriert in die Azure-Umgebung verfügbar. Die Cluster sind so konfiguriert, dass Daten direkt im Azure-Blobspeicher abgelegt werden. Dies verringert die Latenz und verbessert die Flexibilität bei Kosten-/Leistungsabwägungen. Auf diese Weise können Kunden interaktive Websites erstellen, die mit großen Datenmengen arbeiten, z. B. für Dienste, die Sensor- und Telemetriedaten von Millionen von Endpunkten speichern. Anschließend können die Daten mit Hadoop-Jobs analysiert werden.
+HBase ist eine NoSQL-Datenbank mit niedriger Latenz und ermöglicht die Onlinetransaktionsverarbeitung großer Datenmengen. HBase ist als verwalteter Cluster integriert in die Azure-Umgebung verfügbar. Die Cluster sind so konfiguriert, dass sie Daten direkt in den Azure-Blob-Speicher speichern. Dies sorgt für geringe Latenz und mehr Flexibilität bei Entscheidungen bezüglich Leistung und Kosten. So können Kunden interaktive Websites erstellen, die mit großen Datensätzen arbeiten, und Dienste entwickeln, die Sensor- und Telemetriedaten aus Millionen von Endpunkten speichern. Diese Daten können dann mit Hadoop-Jobs analysiert werden.
 
 In diesem Lernprogramm erfahren Sie, wie Sie HBase-Tabellen mit HDInsight erstellen und abfragen können. Die folgenden Vorgehensweisen werden beschrieben:
 
@@ -13,39 +13,40 @@ In diesem Lernprogramm erfahren Sie, wie Sie HBase-Tabellen mit HDInsight erstel
 -   Erstellen einer Hive-Tabelle, die zu einer existierenden HBase-Tabelle zugeordnet ist und Ausführen von Datenabfragen in der HBase-Tabelle per HiveQL.
 -   Erstellen einer neuen HBase-Tabelle, Auflisten der HBase-Tabellen in Ihrem Konto und Hinzufügen und Abrufen von Zeilen in Ihren Tabellen mit dem .NET SDK.
 
-> [WACOM.NOTE] HBase wird momentan nur als Vorschauversion für den Einsatz mit HDInsight 3.0-Clusters in HDInsight (basierend auf Hadoop 2.2.0) unterstützt. Versionshinweise finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen?][]
-
-Während der Vorschauphase sollten Sie immer eine Sicherungskopie der Originalversion aller Daten, die Sie im HBase-Cluster verwenden, außerhalb des Clusters speichern. Dies liegt daran, dass sich das Format der Datenbankdateien in zukünftigen Versionen ändern kann, und die aktuellen Dateiformate in der Vorschauversion unter Umständen in zukünftigen Versionen nicht unterstützt werden oder nicht importiert werden können.
+> [WACOM.NOTE] HBase (Version 0.98.0) ist nur für HDInsight-Cluster der Version 3.1 in HDInsight verfügbar (basiert auf Apache Hadoop und YARN 2.4.0). Versionshinweise finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen?][Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen?]
 
 **Voraussetzungen:**
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
--   Ein Azure-Abonnement. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][], [Spezielle Angebote][] oder [Kostenlose Testversion][].
--   Ein Azure-Speicherkonto. Informationen dazu finden Sie unter [Erstellen eines Speicherkontos][].
+-   Ein Azure-Abonnement. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][Kaufoptionen], [Spezielle Angebote][Spezielle Angebote] oder [Kostenlose Testversion][Kostenlose Testversion].
+-   Ein Azure-Speicherkonto. Informationen dazu finden Sie unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos].
 -   Eine Kopie von Visual Studio.
 
 **Geschätzter Zeitaufwand:** 30 Minuten
 
 ## Dieses Lernprogramm umfasst folgende Punkte
 
--   [Bereitstellen eines HBase-Clusters im Azure-Portal][]
--   [Erstellen einer HBase-Beispieltabelle in der HBase-Befehlszeile][]
--   [Abfragen einer HBase-Tabelle mit Hive][]
--   [Erstellen einer HBase-Tabelle und Abrufen von Daten aus der Tabelle mit den HBase C\#-APIs][]
--   [Zusammenfassung][]
+-   [Bereitstellen eines HBase-Clusters im Azure-Portal][Bereitstellen eines HBase-Clusters im Azure-Portal]
+-   [Erstellen einer HBase-Beispieltabelle in der HBase-Befehlszeile][Erstellen einer HBase-Beispieltabelle in der HBase-Befehlszeile]
+-   [Abfragen einer HBase-Tabelle mit Hive][Abfragen einer HBase-Tabelle mit Hive]
+-   [Erstellen einer HBase-Tabelle und Abrufen von Daten aus der Tabelle mit den HBase C#-APIs][Erstellen einer HBase-Tabelle und Abrufen von Daten aus der Tabelle mit den HBase C#-APIs]
+-   [Zusammenfassung][Zusammenfassung]
+-   [Was kommt als Nächstes?][Was kommt als Nächstes?]
 
 ## <a name="create-hbase-cluster"></a>Bereitstellen eines HBase-Clusters im Azure-Portal
 
 Dieser Abschnitt beschreibt die Bereitstellung eines HBase-Clusters im Azure-Portal.
 
+[WACOM.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
+
 **Bereitstellen eines HDInsight-Clusters im Azure-Portal**
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
 2.  Klicken Sie links auf **HDInsight**, um den Status der Cluster in Ihrem Konto anzuzeigen, und klicken Sie dann links unten auf das Symbol **+NEU**.
 
-    ![][]
+    ![][0]
 
 3.  Klicken Sie auf das HDInsight-Symbol in der zweiten Spalte von links und anschließend auf die HBase-Optionen in der nächsten Spalte. Geben Sie die Werte für CLUSTERNAME und CLUSTERGRÖSSE den Namen des Speicherkontos und ein Kennwort für das neue HBase-Cluster ein.
 
@@ -97,7 +98,7 @@ Sie haben nun ein HBase-Cluster eingerichtet und eine Tabelle erstellt und könn
 
 **Öffnen des Cluster-Dashboards**
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 2.  Klicken Sie im linken Bereich auf **HDINSIGHT**. Sie sehen eine Liste der erstellten Cluster, inklusive des Clusters, das Sie im vorigen Abschnitt erstellt haben.
 3.  Klicken Sie auf den Namen des Clusters, in dem Sie den Hive-Job ausführen möchten.
 4.  Klicken Sie unten in der Seite auf **CLUSTER VERWALTEN**, um das Cluster-Dashboard zu öffnen. Daraufhin wird eine Webseite in einer neuen Browser-Registerkarte geöffnet.
@@ -105,11 +106,10 @@ Sie haben nun ein HBase-Cluster eingerichtet und eine Tabelle erstellt und könn
 
     ![][2]
 
-**Ausführen einer Hive-Abfrage**
+**So führen Sie eine Hive-Abfrage aus**
 
 1.  Um eine Hive-Tabelle mit einer Zuordnung zur HBase-Tabelle zu erstellen, geben Sie das folgende HiveQL-Skript in das Hive-Konsolenfenster ein und klicken Sie auf **ABSCHICKEN**. Stellen Sie sicher, dass Sie die hier beschriebene Beispieltabelle in HBase mit der HBase-Befehlszeile erstellt haben, bevor Sie diese Anweisung ausführen.
 
-        SET hbase.zookeeper.quorum=zookeepernode0,zookeepernode1,zookeepernode2;  
         CREATE EXTERNAL TABLE hbasesampletable(rowkey STRING, col1 STRING, col2 STRING)
         STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
         WITH SERDEPROPERTIES ('hbase.columns.mapping' = ':key,cf1:col1,cf1:col2')
@@ -117,26 +117,24 @@ Sie haben nun ein HBase-Cluster eingerichtet und eine Tabelle erstellt und könn
 
 2.  Um eine Hive-Abfrage über die Daten in HBase auszuführen, geben Sie das folgende HiveQL-Skript in das Hive-Konsolenfenster ein und klicken Sie auf **ABSCHICKEN**.
 
-        SET hbase.zookeeper.quorum=zookeepernode0,zookeepernode1,zookeepernode2;
-        SET hive.aux.jars.path=file:///C:/Apps/dist/hive-0.12.0.2.0.9.0-1677/lib/hive-hbase-handler-0.12.0.2.0.9.0-1677.jar,file:///C:/Apps/dist/hive-0.12.0.2.0.9.0-1677/lib/hbase-server-0.96.0.2.0.9.0-1677-hadoop2.jar,file:///C:/Apps/dist/hive-0.12.0.2.0.9.0-1677/lib/hbase-protocol-0.96.0.2.0.9.0-1677-hadoop2.jar,file:///C:/Apps/dist/hive-0.12.0.2.0.9.0-1677/lib/htrace-core-2.01.jar,file:///C:/Apps/dist/hive-0.12.0.2.0.9.0-1677/lib/hbase-client-0.96.0.2.0.9.0-1677-hadoop2.jar,file:///C:/Apps/dist/hive-0.12.0.2.0.9.0-1677/lib/guava-12.0.1.jar;
         SELECT count(*) FROM hbasesampletable;
 
 3.  Um die Ergebnisse der Hive-Abfrage anzuzeigen, klicken Sie auf den Link **Details anzeigen** im Fenster **Job-Sitzung**, nachdem der Job abgeschlossen wurde.
 
 Hinweis: Mit dem Link zur HBase-Befehlszeile können Sie zur **HBase-Befehlszeile** wechseln.
 
-**Anzeigen der Ausgabedatei**
+**So durchsuchen Sie die Ausgabedatei**
 
 1.  Klicken Sie oben im Cluster-Dashboard auf **Dateien**.
 2.  Klicken Sie auf **Templeton-Job-Status**.
-3.  Klicken Sie auf die GUID-Nummer, deren letzte Änderung kurz nach der Startzeit des Jobs liegt, die Sie zuvor notiert haben. Notieren Sie sich die GUID. Sie werden diese im nächsten Abschnitt erneut brauchen.
+3.  Klicken Sie auf die GUID-Nummer, deren letzte Änderung kurz nach der Startzeit des Jobs liegt, die Sie zuvor notiert haben. Notieren Sie sich die GUID. Sie benötigen sie im nächsten Abschnitt.
 4.  Die **stdout**-Datei enthält die Daten, die Sie für den nächsten Abschnitt benötigen. Sie können **stdout** anklicken, falls Sie eine Kopie der Daten herunterladen möchten.
 
-## <a name="hbase-powershell"></a>Erstellen einer HBase-Tabelle und Abrufen von Daten aus der Tabelle mit den HBase C\#-APIs
+## <a name="hbase-powershell"></a>Erstellen einer HBase-Tabelle und Abrufen von Daten aus der Tabelle mit den HBase C#-APIs
 
-Marlin ist eine dünne Ebene oberhalb der REST API zur Verwaltung der Interaktion mit HBase mithilfe von ProtoBuf in C\#. Sie müssen das Marlin-Projekt von github herunterladen und unter Verwendung der HBase .NET SDK erstellen.
+Marlin ist eine dünne Ebene oberhalb der REST API zur Verwaltung der Interaktion mit HBase mithilfe von ProtoBuf in C#. Sie müssen das Marlin-Projekt von github herunterladen und unter Verwendung der HBase .NET SDK erstellen.
 
-1.  Führen Sie dazu die Schritte aus, die auf der Downloadseite des Marlin-Projekts auf der [Marlin-Projektseite][] beschrieben werden. Entzippen Sie das Archiv in ein lokales Verzeichnis.
+1.  Führen Sie dazu die Schritte aus, die auf der Downloadseite des Marlin-Projekts auf der [Marlin-Projektseite][Marlin-Projektseite] beschrieben werden. Entzippen Sie das Archiv in ein lokales Verzeichnis.
 
 2.  Öffnen Sie das Projekt in Visual Studio. Öffnen Sie den Assistenten zum Verwalten von NuGet-Paketen über das Menü **EXTRAS** -\> **Bibliothekspaket-Manager** und den Eintrag **NuGet-Pakete für Lösung verwalten ...**
 
@@ -144,7 +142,7 @@ Marlin ist eine dünne Ebene oberhalb der REST API zur Verwaltung der Interaktio
 
 3.  Suchen Sie oben rechts im Online-Suchfeld nach protobuf-net und installieren Sie die Version v2.0.0.68. Erstellen Sie das Marlin-Projekt, indem Sie mit der rechten Maustaste auf das **Marlin**-Projekt im **Projektmappen-Explorer** klicken und **Erstellen** auswählen.
 
-4.  Suchen Sie die resultierende Datei marlin.dll und fügen Sie sie zu Ihrem C\#-Projekt hinzu.
+4.  Suchen Sie die resultierende Datei marlin.dll und fügen Sie sie zu Ihrem C#-Projekt hinzu.
 
 5.  Erstellen Sie eine neue Instanz von Marlin und mit den Cluster-Anmeldeinformationen und rufen Sie die Clusterversion ab:
 
@@ -192,21 +190,32 @@ Marlin ist eine dünne Ebene oberhalb der REST API zur Verwaltung der Interaktio
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Lernprogramm haben Sie erfahren, wie Sie ein HBase-Cluster bereitstellen, Tabellen erstellen und die Daten in diesen Tabellen in der HBase-Befehlszeile anzeigen können. Außerdem haben Sie gelernt, wie Sie die Daten in HBase-Tabellen mit Hive abfragen und mit den HBase C\#-APIs HBase-Tabellen erstellen und Daten aus der Tabelle abrufen können.
+In diesem Lernprogramm haben Sie erfahren, wie Sie ein HBase-Cluster bereitstellen, Tabellen erstellen und die Daten in diesen Tabellen in der HBase-Befehlszeile anzeigen können. Außerdem haben Sie gelernt, wie Sie die Daten in HBase-Tabellen mit Hive abfragen und mit den HBase C#-APIs HBase-Tabellen erstellen und Daten aus der Tabelle abrufen können.
+
+## <a name="next"></a> Wie geht es weiter?
+
+[HBase mit HDInsight: Übersicht][HBase mit HDInsight: Übersicht]:
+HBase ist eine Open-Source-NoSQL-Datenbank von Apache, die auf Hadoop aufbaut und wahlfreien Zugriff sowie starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
+
+[Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk]:
+Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
 
   [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen?]: ../hdinsight-component-versioning/
-  [Kaufoptionen]: http://azure.microsoft.com/en-us/pricing/purchase-options/
-  [Spezielle Angebote]: http://azure.microsoft.com/en-us/pricing/member-offers/
-  [Kostenlose Testversion]: http://azure.microsoft.com/en-us/pricing/free-trial/
+  [Kaufoptionen]: http://azure.microsoft.com/de-de/pricing/purchase-options/
+  [Spezielle Angebote]: http://azure.microsoft.com/de-de/pricing/member-offers/
+  [Kostenlose Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/
   [Erstellen eines Speicherkontos]: http://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/
   [Bereitstellen eines HBase-Clusters im Azure-Portal]: #create-hbase-cluster
   [Erstellen einer HBase-Beispieltabelle in der HBase-Befehlszeile]: #create-sample-table
   [Abfragen einer HBase-Tabelle mit Hive]: #hive-query
-  [Erstellen einer HBase-Tabelle und Abrufen von Daten aus der Tabelle mit den HBase C\#-APIs]: #hbase-powershell
+  [Erstellen einer HBase-Tabelle und Abrufen von Daten aus der Tabelle mit den HBase C#-APIs]: #hbase-powershell
   [Zusammenfassung]: #summary
+  [Was kommt als Nächstes?]: #next
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: http://i.imgur.com/PmGynKZ.jpg
+  [0]: http://i.imgur.com/PmGynKZ.jpg
   [1]: http://i.imgur.com/ecxbB9K.jpg
   [2]: http://i.imgur.com/tMwXlj9.jpg
   [Marlin-Projektseite]: https://github.com/thomasjungblut/marlin
   [3]: http://i.imgur.com/hUNoJDJ.jpg
+  [HBase mit HDInsight: Übersicht]: ../hdinsight-hbase-overview/
+  [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk]: ../hdinsight-hbase-provision-vnet

@@ -1,6 +1,6 @@
-<properties linkid="develop-python-django-with-visual-studio" urlDisplayName="Django with Visual Studio" pageTitle="Django with Visual Studio (Python) - Azure tutorial" metaKeywords="Azure Django web app, Azure Django virtual machine" description="A tutorial that teaches you how to build a Django web application hosted in an Azure virtual machine." metaCanonical="" services="cloud-services" documentationCenter="Python" title="Creating Django applications with Python Tools for Visual Studio 1.5" authors="huvalo" solutions="" manager="" editor="" />
+<properties urlDisplayName="Django with Visual Studio" pageTitle="Django mit Visual Studio (Python) - Azure-Lernprogramm" metaKeywords="Azure Django web app, Azure Django virtual machine" description="In diesem Lernprogramm erfahren Sie, wie Sie eine Django-Webanwendung erstellen, die auf einem virtuellen Azure-Computer gehostet ist." metaCanonical="" services="cloud-services" documentationCenter="Python" title="Erstellen von Django-Anwendungen mit Python Tools f&uuml;r Visual Studio 1.5" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo"></tags>
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Erstellen von Django-Anwendungen mit Python Tools für Visual Studio 1.5
 
@@ -26,7 +26,7 @@ gehostet wird, wenn sie in Azure läuft.
 
 Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
-![][]
+![][0]
 
 [WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
@@ -158,8 +158,7 @@ Wenn alles eingerichtet ist, können Sie auf den Link unter "DNS-Name" klicken, 
 
   [Youtube-Video]: http://www.youtube.com/watch?v=UsLti4KlgAY
   [neues und umfassenderes Lernprogramm]: ../web-sites-python-create-deploy-django-app/
-  []: ./media/python-django-app-tools-visual-studio/ptvs-dj-FirstAppInCloud.png
-  [create-account-note]: ../includes/create-account-note.md
+  [0]: ./media/python-django-app-tools-visual-studio/ptvs-dj-FirstAppInCloud.png
   [Installieren von Python]: ../python-how-to-install/
   [Neue Python-Projektvorlagen]: ./media/python-django-app-tools-visual-studio/ptvs-dj-NewProject.png
   [Visual Studio im ersten Django-Projekt geöffnet]: ./media/python-django-app-tools-visual-studio/ptvs-dj-FirstProject.png
@@ -182,4 +181,3 @@ Wenn alles eingerichtet ist, können Sie auf den Link unter "DNS-Name" klicken, 
   [Paketabonnement]: ./media/python-django-app-tools-visual-studio/ptvs-dj-publish2.png
   [Paketeinstellungen]: ./media/python-django-app-tools-visual-studio/ptvs-dj-publish3.png
   [Paketbereitstellung]: ./media/python-django-app-tools-visual-studio/ptvs-dj-publish4.png
-  [Ihre Django-App in der Cloud]: ./media/python-django-app-tools-visual-studio/ptvs-dj-FirstAppInCloud.png

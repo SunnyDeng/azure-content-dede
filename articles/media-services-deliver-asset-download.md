@@ -1,10 +1,10 @@
-<properties linkid="develop-media-services-how-to-guides-deliver-media-assets" urlDisplayName="Delivering Media Assets" pageTitle="How to Deliver Media Assets - Azure" metaKeywords="" description="Learn about options for delivering media assets that have been uploaded to Media Services in Azure. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Deliver an Asset by Download" authors="migree" solutions="" manager="" editor="" />
+<properties urlDisplayName="Delivering Media Assets" pageTitle="Bereitstellen von Medieninhalten - Azure" metaKeywords="" description="Entdecken Sie Optionen zum Bereitstellen von Medienobjekten, die in Media Services in Azure hochgeladen wurden. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK f&uuml;r .NET." metaCanonical="" services="media-services" documentationCenter="" title="Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen" authors="juliako" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="migree"></tags>
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
 # Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Vorgehensweise: Verwalten von Medienobjekten][].
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Vorgehensweise: Verwalten von Medienobjekten][Vorgehensweise: Verwalten von Medienobjekten].
 
 Dieser Artikel beschreibt Optionen zur Bereitstellung von Medienobjekten, die in Media Services hochgeladen wurden. Sie können Media Services-Inhalte in verschiedenen Anwendungsszenarien bereitstellen. Sie können Medienobjekte herunterladen oder über einen Locator abrufen. Siekönnen Medieninhalte an andere Anwendungen oder andere Inhaltsanbieter senden. Für verbesserte Leistung und Skalierbarkeit können Sie Inhalte auch über ein Content Delivery Network (CDN) wie z. B. das Azure CDN anbieten.
 
@@ -62,15 +62,15 @@ Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services herunterladen k�
 
 Weitere Informationen zur Auslieferung von Medienobjekten finden Sie unter:
 
--   [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET][]
--   [Bereitstellen von Medienobjekten mit der Media Services REST-API][]
+-   [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET][Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET]
+-   [Bereitstellen von Medienobjekten mit der Media Services REST-API][Bereitstellen von Medienobjekten mit der Media Services REST-API]
 
 </p>
 ## Nächste Schritte
 
-Sie haben nun gelernt, wie Sie ein Medienobjekt aus dem Azure-Speicher herunterladen können. Weitere Informationen zu anderen Möglichkeiten für die Bereitstellung von Medienobjekten finden Sie im Thema [Bereitstellen von Streaming-Inhalten][].
+Sie haben nun gelernt, wie Sie ein Medienobjekt aus dem Azure-Speicher herunterladen können. Weitere Informationen zu anderen Möglichkeiten für die Bereitstellung von Medienobjekten finden Sie im Thema [Bereitstellen von Streaming-Inhalten][Bereitstellen von Streaming-Inhalten].
 
-  [Vorgehensweise: Verwalten von Medienobjekten]: http://go.microsoft.com/fwlink/?LinkID=301815&clcid=0x409
-  [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET]: http://msdn.microsoft.com/en-us/library/jj129575.aspx
-  [Bereitstellen von Medienobjekten mit der Media Services REST-API]: http://msdn.microsoft.com/en-us/library/jj129578.aspx
-  [Bereitstellen von Streaming-Inhalten]: http://go.microsoft.com/fwlink/?LinkID=301942
+  [Vorgehensweise: Verwalten von Medienobjekten]: ../media-services-manage-assets/
+  [Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET]: http://msdn.microsoft.com/de-de/library/jj129575.aspx
+  [Bereitstellen von Medienobjekten mit der Media Services REST-API]: http://msdn.microsoft.com/de-de/library/jj129578.aspx
+  [Bereitstellen von Streaming-Inhalten]: ../media-services-deliver-streaming-content/

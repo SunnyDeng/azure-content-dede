@@ -59,9 +59,9 @@
 
         quit
 
-11. Nachdem MySQL installiert wurde, müssen Sie einen Endpunkt konfigurieren, damit ein Remotezugriff auf MySQL möglich ist. Melden Sie sich beim [Azure-Verwaltungsportal][] an. Klicken Sie im Azure-Portal auf **Virtuelle Computer** und dann auf den Namen des neuen virtuellen Computers. Klicken Sie anschließend auf **Endpunkte**.
+11. Nachdem MySQL installiert wurde, müssen Sie einen Endpunkt konfigurieren, damit ein Remotezugriff auf MySQL möglich ist. Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie im Azure-Portal auf **Virtuelle Computer** und dann auf den Namen des neuen virtuellen Computers. Klicken Sie anschließend auf **Endpunkte**.
 
-    ![Endpunkte][]
+    ![Endpunkte][Endpunkte]
 
 12. Klicken Sie am unteren Seitenrand auf **Endpunkt hinzufügen.**
     ![Endpunkte][1]
@@ -77,7 +77,7 @@
 
         mysql -u mysqluser -p -h testlinuxvm.cloudapp.net
 
-15. Sie haben MySQL erfolgreich konfiguriert und dazu eine Datenbank sowie einen neuen Benutzer erstellt. Weitere Informationen zu MySQL finden Sie in der [MySQL-Dokumentation][].
+15. Sie haben MySQL erfolgreich konfiguriert und dazu eine Datenbank sowie einen neuen Benutzer erstellt. Weitere Informationen zu MySQL finden Sie in der [MySQL-Dokumentation][MySQL-Dokumentation].
 
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Endpunkte]: ./media/install-and-run-mysql-on-opensuse-vm/LinuxVmAddEndpoint.png

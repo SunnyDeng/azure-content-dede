@@ -18,18 +18,24 @@ Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstell
 
     Dadurch wird die Seite **Specify database settings** angezeigt.
 
-    <div class="dev-callout"> 
-<b>Hinweis</b> 
-<p>Im Rahmen dieses Lernprogramms erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie k&ouml;nnen diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits &uuml;ber eine Datenbank in derselben Region wie der neue mobile Dienst verf&uuml;gen, k&ouml;nnen Sie stattdessen <strong>Vorhandene Datenbank verwenden</strong> und dann diese Datenbank ausw&auml;hlen. Die Verwendung einer Datenbank in einer anderen Region wird nicht empfohlen, da zus&auml;tzliche Kosten f&uuml;r Bandbreite anfallen k&ouml;nnen und es zu h&ouml;herer Latenz kommen kann.</p></div>
+    <div class="dev-callout">
+
+    **Hinweis**
+    Im Rahmen dieses Lernprogramms erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank in derselben Region wie der neue mobile Dienst verfügen, können Sie stattdessen **Vorhandene Datenbank verwenden** und dann diese Datenbank auswählen. Die Verwendung einer Datenbank in einer anderen Region wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann.
+
+    </div>
 
 5.  Geben Sie unter **Name** den Namen der neuen Datenbank ein. Geben Sie dann den **Anmeldenamen** ein. Dies ist der Administratoranmeldename für den neuen SQL-Datenbankserver. Geben Sie das Kennwort ein, und bestätigen Sie es, und klicken Sie dann auf den Häkchenknopf, um den Vorgang abzuschließen.
 
     ![][3]
 
-    <div class="dev-callout"> 
-<b>Hinweis</b> 
-<p>Wenn das eingegebene Kennwort nicht den Mindestanforderungen entspricht oder es keine &Uuml;bereinstimmung gibt, wird eine Warnung angezeigt. <br/>Es wird empfohlen, sich den Anmeldenamen und das Kennwort des Administrators zu notieren. Sie ben&ouml;tigen diese Informationen, um die SQL-Datenbankinstanz oder den Server in der Zukunft wiederzuverwenden.</p> 
-</div>
+    <div class="dev-callout">
+
+    **Hinweis**
+    Wenn das eingegebene Kennwort nicht den Mindestanforderungen entspricht oder es keine Übereinstimmung gibt, wird eine Warnung angezeigt.
+    Es wird empfohlen, sich den Anmeldenamen und das Kennwort des Administrators zu notieren. Sie benötigen diese Informationen, um die SQL-Datenbankinstanz oder den Server in der Zukunft wiederzuverwenden.
+
+    </div>
 
 Sie haben nun einen neuen mobilen Dienst erstellt, der von Ihren mobilen Apps verwendet werden kann.
 

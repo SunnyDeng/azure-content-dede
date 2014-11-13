@@ -1,6 +1,6 @@
-<properties linkid="manage-windows-common-tasks-vm-availability" urlDisplayName="Manage Availability of VMs" pageTitle="Manage the availability of virtual machines - Azure" metaKeywords="" description="Learn how to use multiple virtual machines to ensure high availability for your Azure application. " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="dongill" editor="tysonn" />
+<properties urlDisplayName="Manage Availability of VMs" pageTitle="Verwalten der Verf&uuml;gbarkeit virtueller Computer &ndash; Azure" metaKeywords="" description="Erfahren Sie, wie Sie mehrere virtuelle Computer verwenden, um hohe Verf&uuml;gbarkeit f&uuml;r Ihre Azure-Anwendung sicherzustellen. " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="timlt" editor="tysonn" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kenazk"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kenazk" />
 
 # Verwalten der Verfügbarkeit virtueller Computer
 
@@ -33,6 +33,8 @@ Durch Fehlerdomänen wird die Gruppe der virtuellen Computer definiert, die eine
 
 ![Konfigurieren von Aktualisierungs-/Fehlerdomänen][Konfigurieren von Aktualisierungs-/Fehlerdomänen]
 
+> [WACOM.NOTE] Anweisungen finden Sie unter [Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer][Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer].
+
 ### Konfigurieren einzelner Anwendungsebenen in separaten Verfügbarkeitsgruppen
 
 Wenn die virtuellen Computer in der Verfügbarkeitsgruppe alle fast identisch sind und die Anwendung auf die gleiche Weise unterstützen, wird empfohlen, für jede einzelne Anwendungsebene eine Verfügbarkeitsgruppe zu konfigurieren. Wenn Sie eine Verfügbarkeitsgruppe mit zwei verschiedenen Ebenen anlegen, können alle virtuellen Computer derselben Anwendungsebene zur gleichen Zeit neu gestartet werden. Indem Sie mindestens zwei virtuelle Computer in einer Verfügbarkeitsgruppe für jede Ebene konfigurieren, gewährleisten Sie, dass mindestens ein virtueller Computer pro Ebene verfügbar ist.
@@ -53,11 +55,14 @@ Wenn der Lastenausgleich nicht für die gleichmäßige Verteilung des Datenverke
 
 Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine einer Verfügbarkeitsgruppe zuzuordnen. Virtuelle Computer in dieser Konfiguration erfüllen nicht die zugesicherte SLA und verursachen während geplanter Azure-Wartungsereignisse eine Downtime. Wenn Sie eine VM-Einzelinstanz in einer Verfügbarkeitsgruppe bereitstellen, empfangen Sie von der Plattformwartungsfunktion darüber hinaus keine gesonderte Warnung oder Benachrichtigung. In dieser Konfiguration wird der aus einer Einzelinstanz bestehende virtuelle Computer ohne spezifische Warnung neu gestartet, wenn eine Plattformwartung durchgeführt wird.
 
+<!-- Link references -->
+
   [Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy
   [Konfigurieren einzelner Anwendungsebenen in separaten Verfügbarkeitsgruppen]: #configure-each-application-tier-into-separate-availability-sets
   [Kombinieren des Lastenausgleichs mit Verfügbarkeitsgruppen]: #combine-the-load-balancer-with-availability-sets
   [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]: #avoid-single-instance-virtual-machines-in-availability-sets
   [Vereinbarungen zum Servicelevel (SLAs)]: ../../../support/legal/sla/
   [Konfigurieren von Aktualisierungs-/Fehlerdomänen]: ./media/virtual-machines-manage-availability/ud-fd-configuration.png
+  [Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer]: ../virtual-machines-how-to-configure-availability
   [Anwendungsebenen]: ./media/virtual-machines-manage-availability/application-tiers.png
   [Lastenausgleich zwischen virtuellen Computern]: ../load-balance-virtual-machines/

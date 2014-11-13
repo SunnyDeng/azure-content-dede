@@ -1,6 +1,6 @@
-<properties linkid="manage-services-hdinsight-sample-pi-estimator" urlDisplayName="Hadoop Samples in HDInsight" pageTitle="The Pi estimator Hadoop sample in HDInsight | Azure" metaKeywords="hdinsight, hdinsight sample,  hadoop, mapreduce" description="Learn how to run an Hadoop MapReduce sample on HDInsight." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The Pi estimator Hadoop sample in HDInsight" authors="bradsev" />
+<properties urlDisplayName="Hadoop Samples in HDInsight" pageTitle="Das Pi-Sch&auml;tzungsbeispiel mit Hadoop in HDInsight | Azure" metaKeywords="hdinsight, hdinsight sample,  hadoop, mapreduce" description="Erfahren Sie, wie Sie ein einfaches Pi-Sch&auml;tzungsbeispiel in HDInsight ausf&uuml;hren k&ouml;nnen." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Das Pi-Sch&auml;tzungsbeispiel mit Hadoop in HDInsight" authors="bradsev" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev"></tags>
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
 # Das Pi-Schätzungsbeispiel mit Hadoop in HDInsight
 
@@ -14,7 +14,7 @@ Das Skript in diesem Beispiel übermittelt einen Hadoop JAR-Job und wird mit 16 
 
 Die .jar-Datei mit den Dateien, die Hadoop in Azure für die Bereitstellung der Anwendung benötigt, ist eine .zip-Datei und steht zum Download bereit. Sie können diese Datei mit verschiedenen Komprimierungshilfsprogrammen entzippen und den Inhalt anschließend anzeigen.
 
-Sie finden weitere Beispiele für die Verwendung von HDInsight für MapReduce-Jobs unter [Ausführen der HDInsight-Beispiele][], zusammen mit Links zu Anweisungen für deren Ausführung.
+Sie finden weitere Beispiele für die Verwendung von HDInsight für MapReduce-Jobs unter [Ausführen der HDInsight-Beispiele][Ausführen der HDInsight-Beispiele], zusammen mit Links zu Anweisungen für deren Ausführung.
 
 **Sie erhalten Informationen zu folgenden Themen:**
 
@@ -23,26 +23,26 @@ Sie finden weitere Beispiele für die Verwendung von HDInsight für MapReduce-Jo
 
 **Voraussetzungen**:
 
--   Sie benötigen ein Azure-Abonnement. Hinweise zur Erstellung eines Kontos finden Sie auf der Seite [Azure kostenlos ausprobieren][].
+-   Sie benötigen ein Azure-Abonnement. Hinweise zur Erstellung eines Kontos finden Sie auf der Seite [Azure kostenlos ausprobieren][Azure kostenlos ausprobieren].
 
--   Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters][]
+-   Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters][Bereitstellen eines HDInsight-Clusters]
 
--   Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+-   Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
 
 ## Themen in diesem Artikel
 
 In diesem Thema wird die Ausführung des Beispiels demonstriert und der Java-Code für das Pi Estimator MapReduce-Programm vorgestellt. Außerdem erhalten Sie eine Zusammenfassung der vermittelten Lerninhalte und einen Ausblick auf nächste Schritte. Der Artikel enthält die folgenden Abschnitte:
 
-1.  [Ausführen des Beispiels mit Azure PowerShell][]
-2.  [Der Java-Code für das Pi Estimator MapReduce-Programm][]
-3.  [Zusammenfassung][]
-4.  [Nächste Schritte][]
+1.  [Ausführen des Beispiels mit Azure PowerShell][Ausführen des Beispiels mit Azure PowerShell]
+2.  [Der Java-Code für das Pi Estimator MapReduce-Programm][Der Java-Code für das Pi Estimator MapReduce-Programm]
+3.  [Zusammenfassung][Zusammenfassung]
+4.  [Nächste Schritte][Nächste Schritte]
 
 ## <span id="run-sample"></span></a>Ausführen des Beispiels mit Azure PowerShell
 
 **So übermitteln Sie den MapReduce-Job**
 
-1.  Öffnen Sie Azure PowerShell. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+1.  Öffnen Sie Azure PowerShell. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
 2.  Legen Sie die zwei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
 
         $subscriptionName = "<SubscriptionName>"   # Azure subscription name
@@ -50,11 +50,9 @@ In diesem Thema wird die Ausführung des Beispiels demonstriert und der Java-Cod
 
 3.  Führen Sie den folgenden Befehl aus, um eine MapReduce-Definition zu erstellen:
 
-        $piEstimatorJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-examples.jar" -ClassName "pi" -Arguments "16", "10000000" 
+        $piEstimatorJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" -ClassName "pi" -Arguments "16", "10000000" 
 
-    > [WACOM.NOTE] *hadoop-examples.jar* ist in HDInsight-Clustern der Version 2.1 enthalten. Für HDInsight-Cluster der Version 3.0 wurde die Datei in *hadoop-mapreduce.jar* umbenannt.
-
-    Das erste Argument gibt die Anzahl der zu erstellenden Maps an (standardmäßig 16). Das zweite Argument gibt an, wie viele Proben pro Map erstellt werden sollen (standardmäßig 10 Millionen). Dieses Programm verwendet also 16\*10 Millionen = 160 Millionen zufälliger Punkte, um Pi zu schätzen.
+    Das erste Argument gibt die Anzahl der zu erstellenden Maps an (standardmäßig 16). Das zweite Argument gibt an, wie viele Proben pro Map erstellt werden sollen (standardmäßig 10 Millionen). Dieses Programm verwendet also 16\*10 Millionen = 160 Millionen zufälliger Punkte, um Pi zu schätzen. Das dritte Argument gibt Speicherort und Name der JAR-Datei an, mit der das Beispiel auf HDInsight-Clustern mit den Versionen 3.0 und 3.1 ausgeführt wird. (Siehe unten für den Inhalt dieser Datei.)
 
 4.  Führen Sie die folgenden Befehle aus, um den MapReduce-Job zu übermitteln und auf den Abschluss des Jobs zu warten:
 
@@ -163,8 +161,8 @@ In diesem Thema wird die Ausführung des Beispiels demonstriert und der Java-Cod
     HaltonSequence(long startindex) {   
     index = startindex; 
     x = new double[K.length];   
-    q = new double[K.length][]; 
-    d = new int[K.length][];    
+    q = new double[K.length][K.length]; 
+    d = new int[K.length][K.length];    
     for(int i = 0; i < K.length; i++) { 
     q[i] = new double[K[i]];    
     d[i] = new int[K[i]];   
@@ -415,7 +413,7 @@ In diesem Thema wird die Ausführung des Beispiels demonstriert und der Java-Cod
 
 Sie haben gelernt, wie Sie einen MapReduce-Auftrag in HDInsight ausführen und die Monte Carlo-Methoden ausführen können, die große Datensätze entgegennehmen und generieren, die wiederum von diesem Dienst verwaltet werden können.
 
-Hier sehen Sie das komplette Skript für die Ausführung dieses Beispiels in einem HDInsight 2.1-Standardcluster. (Sie müssen nur den Namen der .jar-Datei ändern, um das Beispiel in einem HDInsight 3.0-Cluster auszuführen: hadoop-examples.jar becomes hadoop-mapreduce-examples.jar.)
+Hier sehen Sie das komplette Skript für die Ausführung dieses Beispiels in einem HDInsight 3.1- oder 3.0-Standardcluster.
 
     ### Provide the Windows Azure subscription name and the HDInsight cluster name. 
     $subscriptionName = "<SubscriptionName>" 
@@ -425,7 +423,7 @@ Hier sehen Sie das komplette Skript für die Ausführung dieses Beispiels in ein
     Select-AzureSubscription $subscriptionName 
 
     ### Create a MapReduce job definition. 
-    $piEstimatorJobDefinition = New-AzureHDInsightMapReduceJobDefinition -ClassName "pi" –Arguments “32”, “1000000000” -JarFile "wasb:///example/jars/hadoop-examples.jar"
+    $piEstimatorJobDefinition = New-AzureHDInsightMapReduceJobDefinition -ClassName "pi" –Arguments “32”, “1000000000” -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar"
 
     ### Run the MapReduce job. 
     $piJob = $piEstimatorJobDefinition | Start-AzureHDInsightJob -Cluster $clusterName
@@ -440,16 +438,16 @@ Hier sehen Sie das komplette Skript für die Ausführung dieses Beispiels in ein
 
 Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hive- und MapReduce-Jobs in Azure HDInsight mit Azure PowerShell finden Sie in den folgenden Themen:
 
--   [Erste Schritte mit Azure HDInsight][]
--   [Beispiel: 10-GB-Graysort][]
--   [Beispiel: Wortzählung][]
--   [Beispiel: C# Streaming][]
--   [Verwenden von Pig mit HDInsight][]
--   [Verwenden von Hive mit HDInsight][]
--   [Dokumentation zum Azure HDInsight SDK][]
+-   [Erste Schritte mit Azure HDInsight][Erste Schritte mit Azure HDInsight]
+-   [Beispiel: 10-GB-Graysort][Beispiel: 10-GB-Graysort]
+-   [Beispiel: Wortzählung][Beispiel: Wortzählung]
+-   [Beispiel: C# Streaming][Beispiel: C# Streaming]
+-   [Verwenden von Pig mit HDInsight][Verwenden von Pig mit HDInsight]
+-   [Verwenden von Hive mit HDInsight][Verwenden von Hive mit HDInsight]
+-   [Dokumentation zum Azure HDInsight SDK][Dokumentation zum Azure HDInsight SDK]
 
   [Ausführen der HDInsight-Beispiele]: ../hdinsight-run-samples/
-  [Azure kostenlos ausprobieren]: http://azure.microsoft.com/en-us/pricing/free-trial/
+  [Azure kostenlos ausprobieren]: http://azure.microsoft.com/de-de/pricing/free-trial/
   [Bereitstellen eines HDInsight-Clusters]: ../hdinsight-provision-clusters/
   [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell/
   [Ausführen des Beispiels mit Azure PowerShell]: #run-sample
@@ -462,4 +460,4 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
   [Beispiel: C# Streaming]: ../hdinsight-sample-csharp-streaming/
   [Verwenden von Pig mit HDInsight]: ../hdinsight-use-pig/
   [Verwenden von Hive mit HDInsight]: ../hdinsight-use-hive/
-  [Dokumentation zum Azure HDInsight SDK]: http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx
+  [Dokumentation zum Azure HDInsight SDK]: http://msdnstage.redmond.corp.microsoft.com/de-de/library/dn479185.aspx

@@ -1,6 +1,6 @@
-<properties linkid="develop-media-services-tutorials-get-started" urlDisplayName="Get Started with Media Services" pageTitle="Get Started with Media Services - Azure" metaKeywords="Azure media services" description="An introduction to using Media Services with Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="" solutions="" manager="" editor="" />
+<properties urlDisplayName="Get Started with Media Services" pageTitle="Erste Schritte mit Media Services | Azure" metaKeywords="Azure media services" description="Eine Einf&uuml;hrung in Media Services mit Azure." metaCanonical="" services="media-services" documentationCenter="" title="Erste Schritte mit Mediendiensten" authors="juliako" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
 # <a name="getting-started"></a>Erste Schritte mit Media Services
 
@@ -20,12 +20,13 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 Für das Lernprogramm und die Entwicklung mit dem Azure Mediendienste-SDK benötigen Sie Folgendes.
 
 -   Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Mediendienstekontos][Vorgehensweise: Erstellen eines Mediendienstekontos].
--   Betriebssysteme: Windows 7, Windows 2008 R2 oder Windows 8.
+-   Betriebssysteme: Windows 7, Windows 2008 R2, Windows 8 oder neuere Versionen.
 -   .NET Framework 4.5 oder .NET Framework 4.
--   Visual Studio 2012 oder Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express).
+-   Visual Studio 2012, Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express) oder neuere Versionen.
 -   Installieren Sie **Azure SDK für .NET.**, **Azure Mediendienste-SDK für .NET** und **WCF Data Services 5.0 für OData V3-Bibliotheken** und fügen Sie Verweise auf Ihr Projekt mit dem [windowsazure.mediaservices Nuget][windowsazure.mediaservices Nuget]-Paket hinzu. Der folgende Abschnitt behandelt Installation und Einrichtung dieser Schnittstellen.
 
-<div class="dev-callout"><strong>Hinweis</strong> <p>Sie ben&ouml;tigen ein Azure-Konto, um dieses Lernprogramm auszuf&uuml;hren. Wenn Sie noch kein Konto haben, k&ouml;nnen Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.</p></div>
+> [WACOM.NOTE]
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][Kostenlose Azure-Testversion].
 
 ## <span id="Step1"></span></a>Einrichten Ihres Projekts
 
@@ -112,10 +113,12 @@ Der Code in diesem Abschnitt erfüllt die folgenden Aufgaben:
     -   **AssetCreationOptions.CommonEncryptionProtected**: für Dateien mit Common Encryption Protected (CENC)-Verschlüsselung. Ein Beispiel ist ein Satz von Dateien, die bereits PlayReady-verschlüsselt sind.
     -   **AssetCreationOptions.StorageEncrypted**: Speicherverschlüsselung. Verschlüsselt eine unverschlüsselte Eingabedatei vor dem Hochladen in den Azure-Speicher.
 
-        <div class="dev-callout"> 
-    <strong>Hinweis</strong> 
-    <p>Mediendienste bieten Speicherverschl&uuml;sselung auf der Festplatte, und nicht f&uuml;r die Netzwerkkommunikation wie Digital Rights Manager (DRM.)</p> 
-    </div>
+        <div class="dev-callout">
+
+        **Hinweis**
+        Mediendienste bieten Speicherverschlüsselung auf der Festplatte, und nicht für die Netzwerkkommunikation wie Digital Rights Manager (DRM.)
+
+        </div>
 
 2.  Erstellt eine AssetFile-Instanz, der wir das Medienobjekt zuweisen werden.
 3.  Erstellt eine AccessPolicy-Instanz mit den Berechtigungen und der Zugriffsdauer auf das Medienobjekt.
@@ -295,8 +298,8 @@ n Media Services können Sie Aufträge erstellen, die Medieninhalte auf verschie
                 // The possible strings that can be passed into the 
                 // method for the mediaProcessor parameter:
                 //   Azure Media Encoder
-                //   Azure Media Packager
-                //   Azure Media Encryptor
+                //   Windows Azure Media Packager
+                //   Windows Azure Media Encryptor
                 //   Storage Decryption
 
                 var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
@@ -609,10 +612,8 @@ Führen Sie das Programm aus (drücken Sie F5). Die Konsolenausgabe sollte in et
 
 5.  Die .mp4-Mediendatei und die \_metadata.xml-Datei werden in den Ordner outputFiles heruntergeladen.
 
-<div class="dev-callout"> 
-<strong>Hinweis</strong> 
-<p>Im Mediendienste-Objektmodell ist ein Medienobjekt eine Sammlung von Mediendienste-Inhalten, die eine oder mehrere Dateien enth&auml;lt. Der Locatorpfad liefert eine Azure-Blob-URL, die als Basispfad zu diesem Medienobjekt im Azure-Speicher dient. F&uuml;gen Sie einen Dateinamen zum Locator-Basispfad hinzu, um eine einzelne Datei im Medienobjekt abzurufen.</p> 
-</div>
+> [WACOM.NOTE]
+> Im Media Services-Objektmodell bezeichnet ein Medienobjekt eine Sammlung von Media Services-Inhalten, die eine oder mehrere Dateien enthält. Der Locatorpfad liefert eine Azure-Blob-URL, die als Basispfad zu diesem Medienobjekt im Azure-Speicher dient. Fügen Sie einen Dateinamen zum Locator-Basispfad hinzu, um eine einzelne Datei im Medienobjekt abzurufen.
 
 ## Nächste Schritte
 
@@ -630,8 +631,9 @@ In diesem Lernprogramm wurden die verschiedenen Programmieraufgaben für die Ers
   [Codierung eines Medienobjekts und Download des Ausgabe-Medienobjekts]: #Step4
   [Vorgehensweise: Erstellen eines Mediendienstekontos]: http://go.microsoft.com/fwlink/?LinkId=256662
   [windowsazure.mediaservices Nuget]: http://nuget.org/packages/windowsazure.mediaservices
+  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A8A8397B5
   [Systemvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/de-de/library/windowsazure/jj129582.aspx
   [Supported File Types for Media Services]: http://msdn.microsoft.com/de-de/library/windowsazure/hh973634.aspx
   [1]: http://msdn.microsoft.com/library/windowsazure/jj129582.aspx
-  [Verwenden von Media Services]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/media-services/
+  [Verwenden von Media Services]: http://azure.microsoft.com/de-de/develop/media-services/resources/
   [Erstellen von Anwendungen mit der Mediendienste-REST-API]: http://msdn.microsoft.com/de-de/library/windowsazure/hh973618.aspx

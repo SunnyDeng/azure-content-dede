@@ -37,9 +37,10 @@ Um ein Speicherkonto zu erstellen, müssen Sie entweder der
 Dienstadministrator oder ein Co-Administrator für das zugehörige Abonnement sein.
 
 <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Informationen zum Ausf&uuml;hren dieses Vorgangs mit der
-Azure-Service-Verwaltungs-API finden Sie im Thema <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh264518.aspx">Speicherkonto erstellen</a>.</p>
+
+**Hinweis**
+Informationen zum Ausführen dieses Vorgangs mit der Azure-Service-Verwaltungs-API finden Sie im Thema [Speicherkonto erstellen][Speicherkonto erstellen].
+
 </div>
 
 **So erstellen Sie ein Speicherkonto für ein Azure-Abonnement**
@@ -103,13 +104,11 @@ das CDN seine Inhalte aktualisiert, nachdem die Lebensdauer der zwischengespeich
     Inhalte zwischenspeichert. Bei der ursprünglichen Domäne kann es sich um ein Speicherkonto oder einen Cloud-Dienst handeln. In diesem Beispiel wird ein Speicherkonto verwendet. Speicherinhalte werden entsprechend einer von Ihnen festgelegten Cache-Steuereinstellung oder entsprechend der Standardheuristik des Zwischenspeicherungsnetzwerks auf Edgeservern zwischengespeichert. Weitere Informationen finden Sie unter [Verwalten der Ablaufdauer von BLOB-Inhalten][Verwalten der Ablaufdauer von BLOB-Inhalten].
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Die f&uuml;r den Endpunkt erstellte Konfiguration steht nicht
-sofort zur Verf&uuml;gung. Es kann bis zu 60 Minuten dauern, bis
-die Registrierung &uuml;ber das CDN-Netzwerk verteilt wurde. Benutzer, die versuchen,
-den CDN-Dom&auml;nennamen sofort zu verwenden, erhalten u. U. den Statuscode 400
-(ung&uuml;ltige Anforderung), bis die Inhalte &uuml;ber das CDN verf&uuml;gbar sind.</p>
-</div>
+
+    **Hinweis**
+    Die für den Endpunkt erstellte Konfiguration steht nicht sofort zur Verfügung. Es kann bis zu 60 Minuten dauern, bis die Registrierung über das CDN-Netzwerk verteilt wurde. Benutzer, die versuchen, den CDN-Domänennamen sofort zu verwenden, erhalten u. U. den Statuscode 400 (ungültige Anforderung), bis die Inhalte über das CDN verfügbar sind.
+
+    </div>
 
 <span id="Step3"></span> </a>
 

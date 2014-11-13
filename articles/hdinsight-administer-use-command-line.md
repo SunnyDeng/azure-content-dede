@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-administer-hdinsight-hadoop-clusters-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="Manage Hadoop clusters using Cross-Platform Command-Line | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, hadoop, administration" description="Learn how to use the Cross-Platform Command-Line Interface to manage Hadoop clusters in HDIsight on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer Hadoop clusters using the Cross-platform Command-line Interface" authors="jgao" />
+<properties urlDisplayName="HDInsight Administration" pageTitle="Verwalten von Hadoop-Clustern mit plattform&uuml;bergreifender Befehlszeile | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, hadoop, administration" description="Hier erfahren Sie, wie Sie die plattform&uuml;bergreifende Befehlszeilenschnittstelle f&uuml;r die Verwaltung von Hadoop-Clustern in HDIsight auf einer Plattform verwenden, die Node.js unterst&uuml;tzt, einschlie&szlig;lich Windows, Mac und Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Verwalten von Hadoop-Clustern mit der plattform&uuml;bergreifenden Befehlszeile" authors="jgao" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
@@ -83,6 +83,8 @@ Bevor Sie die Befehlszeilenschnittstelle verwenden können, müssen Sie die Konn
     Für den vorigen Screenshot wurde die Einstellungsveröffentlichungsdatei im Ordner C:\\HDInsight auf der Arbeitsstation gespeichert.
 
 ## <span id="provision"></span></a>Bereitstellen eines HDInsight-Clusters
+
+[WACOM.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
 HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Sie benötigen ein Azure-Speicherkonto, um einen HDInsight-Cluster erstellen zu können.
 

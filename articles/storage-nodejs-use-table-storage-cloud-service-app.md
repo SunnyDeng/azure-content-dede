@@ -1,6 +1,6 @@
-<properties linkid="dev-nodejs-basic-web-app-with-storage" urlDisplayName="Web App with Storage" pageTitle="Web app with table storage (Node.js) | Microsoft Azure" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="A tutorial that builds on the Web App with Express tutorial by adding Azure Storage services and the Azure module." metaCanonical="" services="cloud-services,storage" documentationCenter="Node.js" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="Web App with Storage" pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="Ein Lernprogramm, das auf dem Lernprogramm Web App mit Express basiert und Azure-Speicherdienste sowie das Azure-Modul hinzuf&uuml;gt." metaCanonical="" services="cloud-services,storage" documentationCenter="nodejs" title="Node.js-Webanwendung mit Speicher" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Node.js-Webanwendung mit Speicher
 
@@ -38,10 +38,10 @@ Diese Einstellungen werden Node als Umgebungsvariablen übergeben,
 die anschließend durch das Azure-SDK gelesen werden.
 
 <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Speicheranmeldeinformationen werden nur verwendet, wenn die Anwendung
-f&uuml;r Azure bereitgestellt ist. Bei der Ausf&uuml;hrung im Emulator verwendet die Anwendung
-den Speicheremulator.</p>
+
+**Hinweis**
+Speicheranmeldeinformationen werden nur verwendet, wenn die Anwendung für Azure bereitgestellt ist. Bei der Ausführung im Emulator verwendet die Anwendung den Speicheremulator.
+
 </div>
 
 Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen
@@ -58,8 +58,10 @@ des Speicherkontos abzurufen und zu den "web.config"-Einstellungen hinzuzufügen
     Dieser Befehl ruft eine Liste der Speicherkonten und Kontoschlüssel Ihres gehosteten Dienstes ab.
 
     <div class="dev-callout">
-    <strong>Hinweis</strong>
-    <p>Da das Azure SDK beim Bereitstellen eines Dienstes ein Speicherkonto erstellt, sollten Sie bereits von den Bereitstellungen Ihrer Anwendung aus den vorherigen Lernprogrammen ein Speicherkonto besitzen.</p>
+
+    **Hinweis**
+    Da das Azure SDK beim Bereitstellen eines Dienstes ein Speicherkonto erstellt, sollten Sie bereits von den Bereitstellungen Ihrer Anwendung aus den vorherigen Lernprogrammen ein Speicherkonto besitzen.
+
     </div>
 
 4.  Öffnen Sie die Datei **ServiceDefinition.csdef** mit den Umgebungseinstellungen, die bei der Bereitstellung der Anwendung in Azure verwendet werden:
@@ -191,14 +193,14 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 
 2.  Fügen Sie **tasklist.js** den folgenden Code hinzu. Hierdurch werden die Module "azure" und "async" geladen, die von **tasklist.js** verwendet werden. Weiterhin wird hierdurch die Funktion **TaskList** definiert, an die eine Instanz des zuvor definierten **Task**-Objekts übergeben wird:
 
-            var azure = require('azure-storage');
-            var async = require('async');
+        var azure = require('azure-storage');
+        var async = require('async');
 
-            module.exports = TaskList;
+        module.exports = TaskList;
 
-            function TaskList(task) {
-             this.task = task;
-           }
+        function TaskList(task) {
+          this.task = task;
+        }
 
 3.  Fügen Sie außerdem zur Datei **tasklist.js** die Methoden **showTasks**, **addTask** und **completeTasks** hinzu:
 
@@ -252,9 +254,9 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 
 2.  Fügen Sie am Anfang der Datei Folgendes zum Laden des Azure-Moduls hinzu, und legen Sie den Tabellennamen und Partitionsschlüssel fest:
 
-            var azure = require('azure-storage');
-            var tableName = 'tasks';
-            var partitionKey = 'hometasks';
+        var azure = require('azure-storage');
+        var tableName = 'tasks';
+        var partitionKey = 'hometasks';
 
 3.  Blättern Sie in der Datei "app.js" nach unten, bis Sie die folgende Zeile sehen:
 

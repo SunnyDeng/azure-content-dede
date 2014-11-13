@@ -1,6 +1,6 @@
-<properties linkid="develop-php-table-service" urlDisplayName="Table Service" pageTitle="How to use table storage (PHP) | Microsoft Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="Learn how to use the Table service from PHP to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="PHP" title="How to use the Table service from PHP" authors="" solutions="" manager="" editor="" />
+<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (PHP) | Microsoft Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="Erfahren Sie, wie Sie den Tabellendienst aus PHP zum Erstellen und L&ouml;schen von Tabellen sowie zum Einf&uuml;gen und Abfragen in der Tabelle verwenden." metaCanonical="" services="storage" documentationCenter="PHP" title="Verwenden des Tabellendiensts von PHP" authors="tamram" solutions="" manager="adinah" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Verwenden des Tabellendiensts von PHP
 
@@ -45,7 +45,7 @@ In diesem Leitfaden verwenden Sie Tabellendienstfunktionen, die lokal aus einer 
 
 Um die APIs des Azure-Tabellendiensts zu verwenden, müssen Sie folgendermaßen vorgehen:
 
-1.  Verweisen Sie mithilfe der [require_once][require_once]-Anweisung auf die Autoloaderdatei und
+1.  Verweisen Sie mithilfe der [require\_once][require\_once]-Anweisung auf die Autoloaderdatei und
 2.  Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
@@ -472,6 +472,7 @@ Da Sie jetzt die Grundlagen des Azure-Tabellendiensts erlernt haben, folgen Sie 
 
   [Azure-SDK für PHP]: http://go.microsoft.com/fwlink/?LinkID=252473
   [Nächste Schritte]: #NextSteps
+  [Was ist der Tabellendienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer PHP-Anwendung]: #CreateApplication
@@ -486,10 +487,7 @@ Da Sie jetzt die Grundlagen des Azure-Tabellendiensts erlernt haben, folgen Sie 
   [Gewusst wie: Aktualisieren einer Entität]: #UpdateEntity
   [Gewusst wie: Batch-Tabellenvorgänge]: #BatchOperations
   [Gewusst wie: Löschen einer Tabelle]: #DeleteTable
-  [howto-table-storage]: ../includes/howto-table-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
-  [get-client-libraries]: ../includes/get-client-libraries.md
-  [require_once]: http://php.net/require_once
+  [require\_once]: http://php.net/require_once
   [Festlegen von Timeouts für Tabellendienstvorgänge]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894042.aspx
   [Grundlegendes zum Tabellendienst-Datenmodell]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179338.aspx
   [Abfragen von Tabellen und Entitäten]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx

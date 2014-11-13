@@ -1,4 +1,4 @@
-<properties linkid="manage-windows-common-tasks-install-mysql" urlDisplayName="Install MySQL" pageTitle="Create a virtual machine running MySQL in Azure " metaKeywords="Azure virtual machines, Azure Windows Server, Azure installing MySQL, Azure configuring MySQL, Azure databases" description="Create an Azure virtual machine running Windows Server 2008 R2, and then install and configure a MySQL database on the virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="" title="Install MySQL on a virtual machine running Windows Server 2008 R2 in Azure" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
+<properties urlDisplayName="Install MySQL" pageTitle="Erstellen eines virtuellen Computers unter MySQL in Azure " metaKeywords="Azure virtual machines, Azure Windows Server, Azure installing MySQL, Azure configuring MySQL, Azure databases" description="Erstellen Sie einen virtuellen Azure-Computer unter Windows Server 2008 R2, und installieren und konfigurieren Sie dann eine MySQL-Datenbank auf dem virtuellen Computer." metaCanonical="" services="virtual-machines" documentationCenter="" title="Installieren von MySQL auf einem virtuellen Computer mit Windows Server 2008 R2 in Azure" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="12/15/2013" ms.author="kathydav" />
 
@@ -26,7 +26,7 @@ Gehen Sie wie folgt vor, um MySQL Community Server zu installieren, konfiguriere
 
 1.  Wenn Sie über Remotedesktop eine Verbindung zum virtuellen Computer hergestellt haben, öffnen Sie im Menü **Start** den **Internet Explorer**.
 
-2.  Klicken Sie in der oberen rechten Ecke auf **Extras**. Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites *http://\*.mysql.com* hinzu.
+2.  Klicken Sie in der oberen rechten Ecke auf **Extras**. Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites *<http://>\*.mysql.com* hinzu.
 
 3.  Wechseln Sie zu [Download MySQL Community Server][Download MySQL Community Server] (MySQL Community Server herunterladen, in englischer Sprache).
 

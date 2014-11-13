@@ -22,17 +22,17 @@ Ihre Tabellen werden mit dem steigenden Bedarf wachsen.
 
 Der Tabellenspeicherdienst umfasst die folgenden Komponenten:
 
-![Table1][]
+![Table1][Table1]
 
 -   **URL-Format:** Der Code adressiert Tabellen in einem Konto mithilfe dieses
     Adressformats:
     <http://>`<storage account>`.table.core.windows.net/`<table>`
 
     Über diese Adresse können Azure-Tabellen direkt mit dem OData-
-    Protokoll adressiert werden. Weitere Informationen finden Sie unter [OData.org][]
+    Protokoll adressiert werden. Weitere Informationen finden Sie unter [OData.org][OData.org]
 
 -   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen
-    über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets][] (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
+    über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets][Azure Storage Scalability and Performance Targets] (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
 
 -   **Tabelle**: Eine Tabelle ist eine Sammlung von Entitäten. Tabellen erzwingen kein
     Schema für Entitäten. Das bedeutet, dass eine einzelne Tabelle
@@ -52,4 +52,4 @@ Der Tabellenspeicherdienst umfasst die folgenden Komponenten:
 
   [Table1]: ./media/storage-java-how-to-use-table-storage/table1.png
   [OData.org]: http://www.odata.org/
-  [Azure Storage Scalability and Performance Targets]: http://msdn.microsoft.com/en-us/library/dn249410.aspx
+  [Azure Storage Scalability and Performance Targets]: http://msdn.microsoft.com/de-de/library/dn249410.aspx

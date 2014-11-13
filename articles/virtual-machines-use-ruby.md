@@ -1,6 +1,6 @@
-<properties linkid="manage-services-identity-multi-factor-authentication" urlDisplayName="What is Azure Multi-Factor Authentication?" pageTitle="What is Azure Multi-Factor Authentication?" metaKeywords="" description="Learn more about Azure Multi-Factor Authentication, a method of authentication that requires the use of more than one verification method and adds a critical second layer of security to user sign-ins and transactions." metaCanonical="" services="active-directory,multi-factor-authentication" documentationCenter="" title="How to Manage Azure Virtual Machines using Ruby" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="What is Azure Multi-Factor Authentication?" pageTitle="Was ist Azure Multi-Factor Authentication?" metaKeywords="" description="Erfahren Sie mehr &uuml;ber die Azure Multi-Factor Authentication. Hierbei handelt es sich um eine Authentifizierungsmethode, welche die Verwendung von mehr als einer Verifizierungsmethode erfordert und eine wichtige zweite Sicherheitsebene f&uuml;r Benutzeranmeldungen und Transaktionen darstellt." metaCanonical="" services="active-directory,multi-factor-authentication" documentationCenter="" title="Verwalten von virtuellen Azure-Computern mit Ruby" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr"></tags>
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Verwalten von virtuellen Azure-Computern mit Ruby
 
@@ -89,9 +89,11 @@ Zum Verwalten von Azure-Diensten müssen Sie das Azure-Gem herunterladen und ver
         7 gems installed
 
     <div class="dev-callout">
-<b>Hinweis</b>
-<p>Wenn ein Fehler bez&uuml;glich fehlender Berechtigungen angezeigt wird, verwenden Sie stattdessen <code data-inline="1">sudo gem install azure</code>.</p>
-</div>
+
+    **Hinweis**
+    Wenn ein Fehler bezüglich fehlender Berechtigungen angezeigt wird, verwenden Sie stattdessen `sudo gem install azure`.
+
+    </div>
 
 ### Anfordern des Gem
 
@@ -220,8 +222,10 @@ Verwenden Sie zum Löschen eines virtuellen Computers die **delete\_virtual\_mac
     vm = vm_mgr.delete_virtual_machine('myvm', 'mycloudservice')
 
 <div class="dev-callout">
-<b>Warnung</b>
-<p>Mit der <b>delete_virtual_machine</b>-Methode werden der Cloud-Dienst und alle mit dem virtuellen Computer verbundenen Datentr&auml;ger gel&ouml;scht.</p>
+
+**Warnung**
+Mit der **delete\_virtual\_machine**-Methode werden der Cloud-Dienst und alle mit dem virtuellen Computer verbundenen Datenträger gelöscht.
+
 </div>
 
 ### Gewusst wie: Herunterfahren eines virtuellen Computers

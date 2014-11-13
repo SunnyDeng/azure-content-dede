@@ -1,6 +1,6 @@
-<properties linkid="dev-ruby-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Ruby) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Ruby" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Ruby." metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Blob Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Ruby) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Ruby" description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und L&ouml;schen von Blob-Inhalten verwenden. Die Beispiele wurden in Ruby geschrieben." metaCanonical="" services="storage" documentationCenter="Ruby" title="Verwenden des Blob-Diensts von Ruby" authors="guayan" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="01/01/1900" ms.author="guayan /">
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="01/01/1900" ms.author="guayan" />
 
 # Verwenden des Blob-Diensts von Ruby
 
@@ -147,6 +147,7 @@ Nachdem Sie jetzt die Grundlagen des Blob-Speichers erlernt haben, folgen Sie di
 -   Besuchen Sie das [Azure SDK for Ruby][Azure SDK for Ruby]-Repository auf GitHub
 
   [Nächste Schritte]: #next-steps
+  [Was ist der Blob-Dienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer Ruby-Anwendung]: #CreateRubyApp
@@ -158,8 +159,6 @@ Nachdem Sie jetzt die Grundlagen des Blob-Speichers erlernt haben, folgen Sie di
   [Gewusst wie: Herunterladen von Blobs]: #DownloadBlobs
   [Gewusst wie: Löschen eines Blobs]: #DeleteBlob
   [1]: #NextSteps
-  [howto-blob-storage]: ../includes/howto-blob-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
   [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

@@ -1,6 +1,6 @@
-<properties linkid="develop-media-services-how-to-guides-ios-media-player-framework" urlDisplayName="iOS Media Player Framework" pageTitle="Use the iOS Media Player Framework with Azure Media Services" metaKeywords="" description="Learn how to use the Media Services iOS Media Player Framework library to create rich, dynamic apps.," metaCanonical="" services="media-services" documentationCenter="" title="How to use the Azure Media Services iOS Media Player Framework" authors="migree" solutions="" manager="" editor="" />
+<properties urlDisplayName="iOS Media Player Framework" pageTitle="Verwenden des iOS Media Player Framework mit Azure Media Services" metaKeywords="" description="Erfahren Sie, wie Sie die iOS Media Player Framework-Bibliothek von Media Services zum Erstellen umfangreicher, dynamischer Apps verwenden." metaCanonical="" services="media-services" documentationCenter="" title="Verwenden des Azure Media Services iOS Media Player Framework" authors="juliako" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="mobile-ios" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="migree"></tags>
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="mobile-ios" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
 # Verwenden des Azure Media Services iOS Media Player Framework
 
@@ -31,7 +31,7 @@ Im Folgenden wird beschrieben, wie Sie die Anwendung erhalten, und es werden die
 
 3.  Hier sehen Sie die Struktur von SamplePlayer:
 
-![Struktur des HLS-Beispielcodes][]
+![Struktur des HLS-Beispielcodes][Struktur des HLS-Beispielcodes]
 
 1.  Der iPad-Ordner enthält zwei XIB-Dateien: **SeekbarViewController** und **SamplePlayerViewController**. Damit wird das Layout der Benutzeroberfläche der iPad-Anwendung erzeugt. Dementsprechend enthält der iPhone-Ordner zwei XIB-Dateien, mit denen die Suchleiste und die Steuerung definiert werden.
 
@@ -43,7 +43,7 @@ Die Benutzeroberfläche des Players wird mit zwei XIB-Dateien definiert. (In den
 
 ### SamplePlayerViewController\_iPad.xib
 
-![Adressleiste des Beispiel-Players][]
+![Adressleiste des Beispiel-Players][Adressleiste des Beispiel-Players]
 
 -   Die **Medien-URL** ist die URL, die zum Laden eines Mediendatenstroms verwendet wird. Die Anwendung enthält eine vordefinierte Liste mit Medien-URLs, die Sie mithilfe der URL-Auswahlschaltflächen verwenden können. Sie haben aber auch die Möglichkeit, Ihre eigene URL für HTTP Live Streaming (HLS)-Inhalte einzugeben. Dieser Medieninhalt wird als erster Hauptinhalt verwendet.
     **Hinweis: Lassen Sie diesen URL-Eintrag nicht leer.**
@@ -52,8 +52,9 @@ Die Benutzeroberfläche des Players wird mit zwei XIB-Dateien definiert. (In den
 
 ### SeekbarViewController\_iPad.xib
 
-![Controller für die Suchleiste][]
-*   Mit der **Play-Schaltfläche** können Sie die Medienwiedergabe starten und anhalten.
+![Controller für die Suchleiste][Controller für die Suchleiste]
+
+-   Mit der **Play-Schaltfläche** können Sie die Medienwiedergabe starten und anhalten.
 
 -   Die **Suchleiste** zeigt die gesamte Wiedergabezeitleiste. Halten Sie beim Suchen die Maustaste gedrückt, ziehen Sie die Suchtaste auf die gewünschte Position, lassen Sie dann die Maustaste los.
 
@@ -214,7 +215,7 @@ Hier sind einige Dinge zu beachten:
 
 Wie das vorherige Codebeispiel zeigt, wird dieser Werbespot nur einmal wiedergegeben, wenn Sie **deleteAfterPlay** auf **YES** festlegen. Wenn Sie **deleteAfterPlay** hingegen auf **NO** festlegen, wird dieser Werbespot immer weiter wiedergegeben. Ein solcher Werbespot wird als "Sticky Ad" bezeichnet.
 
-### Weitere Informationen finden Sie im [Azure Media Player Framework Wiki][].
+### Weitere Informationen finden Sie im [Azure Media Player Framework Wiki][Azure Media Player Framework Wiki].
 
   [Struktur des HLS-Beispielcodes]: http://mingfeiy.com/wp-content/uploads/2013/01/HLS-Structure.png
   [Adressleiste des Beispiel-Players]: http://mingfeiy.com/wp-content/uploads/2013/01/addressbar.png

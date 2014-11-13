@@ -1,4 +1,4 @@
-<properties linkid="dev-net-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage from .NET | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Learn how to use Microsoft Azure Blob storage to upload,  download, list, and delete blob content. Samples are written in C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure Blob storage in .NET" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers mit .NET | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Erfahren Sie, wie Sie Microsoft Azure Blob-Speicher zum Hochladen, Herunterladen, Auflisten und L&ouml;schen von Blob-Inhalten verwenden. Die Beispiele sind in C# geschrieben." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="Verwenden des Microsoft Azure Blob-Speicherdiensts in .NET" authors="tamram" manager="adinah" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -7,7 +7,9 @@
 Diese Anleitung beschreibt die Ausführung gängiger Szenarien mithilfe des
 Azure-Blobspeicherdiensts. Die Beispiele sind in C# geschrieben
 und verwenden die Azure Speicher-Clientbibliothek für .NET. Die hier beschriebenen Szenarien umfassen das
-**Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere
+**Hochladen**,
+**Auflisten**, **Herunterladen** und
+**Löschen** von Blobs. Weitere
 Informationen zu Blobs finden Sie im Abschnitt [nächste Schritte][nächste Schritte].
 
 > [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet][NuGet] oder als Teil des [Azure SDK für .NET][Azure SDK für .NET] erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
@@ -24,25 +26,26 @@ Informationen zu Blobs finden Sie im Abschnitt [nächste Schritte][nächste Schr
 -   [Gewusst wie: Auflisten der Blobs in einem Container][Gewusst wie: Auflisten der Blobs in einem Container]
 -   [Gewusst wie: Herunterladen von Blobs][Gewusst wie: Herunterladen von Blobs]
 -   [Gewusst wie: Löschen von Blobs][Gewusst wie: Löschen von Blobs]
+-   [Gewusst wie: Asynchrones Auflisten der Blobs auf Seiten][Gewusst wie: Asynchrones Auflisten der Blobs auf Seiten]
 -   [Nächste Schritte][nächste Schritte]
 
 [WACOM.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
 
-## <a name="create-account"></a><span class="short-header">Erstellen eines Kontos</span>Erstellen eines Azure-Speicherkontos
+## <a name="create-account"></a><span class="short-header">Erstellen eines Azure-Speicherkontos</span>
 
 [WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
-## <a name="setup-connection-string"></a><span class="short-header">Einrichten einer Verbindungszeichenfolge</span>Einrichten einer Speicherverbindungszeichenfolge
+## <a name="setup-connection-string"></a><span class="short-header">Einrichten einer Speicherverbindungszeichenfolge</span>
 
 [WACOM.INCLUDE [storage-configure-connection-string](../includes/storage-configure-connection-string.md)]
 
-## <a name="configure-access"> </a><span class="short-header">Programmgesteuerter Zugriff</span>Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher
+## <a name="configure-access"> </a><span class="short-header">Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher</span>
 
 ### Abrufen der Assembly
 
-Sie können die Assembly `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
+Es wird empfohlen, die Assembly `Microsoft.WindowsAzure.Storage.dll` mit NuGet abzurufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
-`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
+`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im [.NET Developer Center][.NET Developer Center] herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\`lt;sdk-version\>\\ref\\</code> installiert.
 
 ### Namespace-Deklarationen
 
@@ -68,7 +71,7 @@ Speicherkontodaten aus der Azure-Dienstkonfiguration abzurufen:
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-Wenn Sie eine Anwendung ohne einen Verweis auf Microsoft.WindowsAzure.CloudConfigurationManager"stellen und die Verbindungszeichenfolge sich in `web.config` oder `app.config` befindet, wie oben gezeigt, können Sie die Verbindungszeichenfolge mit **ConfigurationManager** abrufen. Sie müssen einen Verweis auf "System.Configuration.dll" zu Ihrem Projekt und eine andere Namespace-Deklaration dafür hinzufügen:
+Wenn Sie eine Anwendung ohne einen Verweis auf "Microsoft.WindowsAzure.CloudConfigurationManager" stellen und die Verbindungszeichenfolge sich in `web.config` oder `app.config` befindet, wie oben gezeigt, können Sie die Verbindungszeichenfolge mit **ConfigurationManager** abrufen. Sie müssen einen Verweis auf "System.Configuration.dll" zu Ihrem Projekt und eine andere Namespace-Deklaration dafür hinzufügen:
 
     using System.Configuration;
     ...
@@ -86,11 +89,9 @@ Speicherkonto-Objekts:
 
 ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst. Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen. Die spezifischen ODataLib-Pakete sind [OData][OData], [Edm][Edm] und [Spatial][Spatial].
 
-## <a name="create-container"> </a><span class="short-header">Erstellen eines Containers</span>Gewusst wie: Erstellen eines Containers
+## <a name="create-container"> </a><span class="short-header">Gewusst wie: Erstellen eines Containers</span>
 
-Alle Speicher-Blobs befinden sich in einem Container. Verwenden Sie das
-**CloudBlobClient**-Objekt, um einen Verweis auf den gewünschten
-Container abzurufen. Sie können den Container erstellen, wenn er nicht vorhanden ist:
+Jeder Blob im Azure-Speicher muss sich in einem Container befinden. Dieses Beispiel zeigt, wie Sie einen Container erstellen, falls er nicht bereits vorhanden ist.
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -118,7 +119,7 @@ machen:
 Blobs in öffentlichen Containern sind für alle Internetbenutzer sichtbar,
 können jedoch nur mit dem entsprechenden Zugriffsschlüssel verändert oder gelöscht werden.
 
-## <a name="upload-blob"> </a><span class="short-header">Hochladen in einen Container</span>Gewusst wie: Hochladen eines Blobs in einen Container
+## <a name="upload-blob"> </a><span class="short-header">Gewusst wie: Hochladen eines Blobs in einen Container</span>
 
 Azure Blob-Speicher unterstützt Blockblobs und Seitenblobs. In den meisten Fällen wird die Verwendung von Blockblobs empfohlen.
 
@@ -146,7 +147,7 @@ Andernfalls wird er überschrieben. Im folgenden Beispiel wird gezeigt, wie ein 
         blockBlob.UploadFromStream(fileStream);
     } 
 
-## <a name="list-blob"> </a><span class="short-header">Aufführen der Blobs in einem Container</span>Gewusst wie: Auflisten der Blobs in einem Container
+## <a name="list-blob"> </a><span class="short-header">Gewusst wie: Auflisten der Blobs in einem Container</span>
 
 Um die Blobs in einem Container aufzuführen, müssen Sie zuerst einen Containerverweis abrufen. Anschließend
 können Sie die enthaltenen Blobs und/oder Verzeichnisse über die Methode **ListBlobs**
@@ -237,7 +238,7 @@ Das Ergebnis sähe folgendermaßen aus:
 
 Weitere Informationen finden Sie unter [CloudBlobContainer.ListBlobs][CloudBlobContainer.ListBlobs].
 
-## <a name="download-blobs"> </a><span class="short-header">Herunterladen von Blobs</span>Gewusst wie: Herunterladen von Blobs
+## <a name="download-blobs"> </a><span class="short-header">Gewusst wie: Herunterladen von Blobs</span>
 
 Um Blobs herunterzuladen, rufen Sie zuerst einen Blobverweis ab, und rufen Sie dann die **DownloadToStream**-Methode auf. Das folgende
 Beispiel verwendet die **DownloadToStream**-Methode, um die Blobinhalte
@@ -284,7 +285,7 @@ Sie können auch die **DownloadToStream**-Methode verwenden, um den Inhalt eines
         text = System.Text.Encoding.UTF8.GetString(memoryStream.ToArray());
     }
 
-## <a name="delete-blobs"> </a><span class="short-header">Löschen von Blobs</span>Gewusst wie: Löschen von Blobs
+## <a name="delete-blobs"> </a><span class="short-header">Gewusst wie: Löschen von Blobs</span>
 
 Um ein Blob zu löschen, rufen Sie zuerst einen Blobverweis ab, und rufen Sie dann die
 **Delete**-Methode dafür auf.
@@ -305,7 +306,67 @@ Um ein Blob zu löschen, rufen Sie zuerst einen Blobverweis ab, und rufen Sie da
     // Delete the blob.
     blockBlob.Delete(); 
 
-## <a name="next-steps"></a><span class="short-header">Nächste Schritte</span>Nächste Schritte
+## <a name="list-blobs-async"> </a><span class="short-header">Gewusst wie: Asynchrones Auflisten der Blobs auf Seiten</span>
+
+Wenn Sie eine große Anzahl von Blobs auflisten oder die Anzahl der Ergebnisse steuern möchten, die in einem Auflistungsvorgang zurückgegeben werden, können Sie Blobs auf Ergebnisseiten auflisten. In diesem Beispiel wird gezeigt, wie Sie Ergebnisse auf Seiten asynchron zurückgeben, sodass die Ausführung nicht durch einen großen Ergebnissatz blockiert wird.
+
+Dieses Beispiel verwendet eine einfache Blob-Auflistung, aber Sie können auch eine hierarchische Auflistung verwenden, indem Sie den Parameter `useFlatBlobListing` der Methode **ListBlobsSegmentedAsync** auf `false` einstellen.
+
+Da die Beispielmethode eine asynchrone Methode aufruft, muss sie mit dem Schlüsselwort `async` eingeleitet werden und ein **Task**-Objekt zurückgeben. Das Schlüsselwort "await" für die Methode **ListBlobsSegmentedAsync** hält die Ausführung der Beispielmethode an, bis die Auflistung abgeschlossen ist.
+
+    async public static Task ListBlobsSegmentedInFlatListing()
+    {
+        // Retrieve storage account from connection string.
+        CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+            CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+        // Create the blob client.
+        CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+
+        // Retrieve reference to a previously created container.
+        CloudBlobContainer container = blobClient.GetContainerReference("myblobs");
+
+        //List blobs in pages.
+        Console.WriteLine("List blobs in pages:");
+
+        //List blobs with a paging size of 10, for the purposes of the example. 
+        //The first call does not include the continuation token.
+        BlobResultSegment resultSegment = await container.ListBlobsSegmentedAsync(
+                "", true, BlobListingDetails.All, 10, null, null, null);
+
+        //Enumerate the result segment returned.
+        int i = 0;
+        if (resultSegment.Results.Count<IListBlobItem>() > 0) { Console.WriteLine("Page {0}:", ++i); }
+        foreach (var blobItem in resultSegment.Results)
+        {
+            Console.WriteLine("\t{0}", blobItem.StorageUri.PrimaryUri);
+        }
+        Console.WriteLine();
+
+        //Get the continuation token, if there are additional pages of results.
+        BlobContinuationToken continuationToken = resultSegment.ContinuationToken;
+
+        //Check whether there are more results and list them in pages of 10 while a continuation token is returned.
+        while (continuationToken != null)
+        {
+            //This overload allows control of the page size. 
+            //You can return all remaining results by passing null for the maxResults parameter, 
+            //or by calling a different overload.
+            resultSegment = await container.ListBlobsSegmentedAsync(
+                    "", true, BlobListingDetails.All, 10, continuationToken, null, null);
+            if (resultSegment.Results.Count<IListBlobItem>() > 0) { Console.WriteLine("Page {0}:", ++i); }
+            foreach (var blobItem in resultSegment.Results)
+            {
+                Console.WriteLine("\t{0}", blobItem.StorageUri.PrimaryUri);
+            }
+            Console.WriteLine();
+
+            //Get the next continuation token.
+            continuationToken = resultSegment.ContinuationToken;
+        }
+    }
+
+## <a name="next-steps"></a><span class="short-header">Nächste Schritte</span>
 
 Nachdem Sie sich nun mit den Grundlagen des Blobspeichers vertraut gemacht haben,
 folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
@@ -327,6 +388,7 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [NuGet]: https://www.nuget.org/packages/WindowsAzure.Storage/
   [Azure SDK für .NET]: /de-de/downloads/
   [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher]: #configure-access
+  [Was ist Blob-Speicher?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Einrichten einer Speicherverbindungszeichenfolge]: #setup-connection-string
@@ -335,9 +397,7 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
   [Gewusst wie: Auflisten der Blobs in einem Container]: #list-blob
   [Gewusst wie: Herunterladen von Blobs]: #download-blobs
   [Gewusst wie: Löschen von Blobs]: #delete-blobs
-  [howto-blob-storage]: ../includes/howto-blob-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
-  [storage-configure-connection-string]: ../includes/storage-configure-connection-string.md
+  [Gewusst wie: Asynchrones Auflisten der Blobs auf Seiten]: #list-blobs-async
   [.NET Developer Center]: http://www.windowsazure.com/de-de/develop/net/#
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2

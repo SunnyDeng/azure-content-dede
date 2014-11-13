@@ -1,6 +1,6 @@
-<properties linkid="develop-media-services-tutorials-smooth-streaming-windows-store-app" urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store App - Azure .NET tutorials" metaKeywords="" description="Learn how to use Azure Media Services to create a C# Windows Store application with a XML MediaElement control to playback Smooth Stream content." metaCanonical="" services="media-services" documentationCenter="" title="How to Build a Smooth Streaming Windows Store Application" authors="Michael Greenn" solutions="" manager="" editor="" />
+<properties urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store-App - Azure .NET-Lernprogramme" metaKeywords="" description="Erfahren Sie, wie Sie eine Windows Store-Anwendung mit einem MediaElement-XML-Steuerelement f&uuml;r die Wiedergabe von Smooth Streaming-Medieninhalten erstellen k&ouml;nnen." metaCanonical="" services="media-services" documentationCenter="" title="Erstellen einer Smooth Streaming Windows Store-Anwendung" authors="juliako" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="Michael="" Greenn" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
 # Erstellen einer Smooth Streaming Windows Store-Anwendung
 
@@ -39,40 +39,18 @@ Dieses Thema behandelt die folgenden Verfahren:
 
 **So erstellen Sie ein Windows Store-Projekt**
 
-1.  Führen Sie Visual Studio 2012 aus.
+1.  Starten Sie Visual Studio 2012 oder eine neuere Version.
 2.  Klicken Sie im Menü **Datei** auf **Neu** und dann auf **Projekt**.
 3.  Geben Sie im Dialogfeld "Neues Projekt" die folgenden Werte ein, oder wählen Sie sie aus:
-    
-	<table border="1">
-	<tr>
-		<th>Name</th>
-		<th>Wert</th>
-	</tr>
-	<tr>
-		<td>Vorlagengruppe   </td>
-		<td>Installed/Templates/Visual C#/Windows Store</td>
-	</tr>
-	<tr>
-		<td>Vorlage</td>
-		<td>Leere App (XAML)</td>
-	</tr>
-	<tr>
-		<td>Name</td>
-		<td>SSPlayer</td>
-	</tr>
-	<tr>
-		<td>Verzeichnis</td>
-		<td>C:\SSTutorials</td>
-	</tr>
-	<tr>
-		<td>Projektmappenname</td>
-		<td>SSPlayer</td>
-	</tr>
-	<tr>
-		<td>Projektmappenverzeichnis erstellen</td>
-		<td>(aktiviert) </td>
-	</tr>
-	</table>
+
+    | Name                               | Wert                                         |
+    |------------------------------------|----------------------------------------------|
+    | Vorlagengruppe                     | Installed/Templates/Visual C#/Windows Store |
+    | Vorlage                            | Leere App (XAML)                             |
+    | Name                               | SSPlayer                                     |
+    | Verzeichnis                        | C:\\SSTutorials                              |
+    | Projektmappenname                  | SSPlayer                                     |
+    | Projektmappenverzeichnis erstellen | (aktiviert)                                  |
 
 4.  Klicken Sie auf **OK**.
 
@@ -81,21 +59,11 @@ Dieses Thema behandelt die folgenden Verfahren:
 1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **SSPlayer** und anschließend auf **Verweis hinzufügen**.
 2.  Geben Sie folgende Werte ein bzw. wählen diese aus:
 
-   
-	<table border="1">
-	<tr>
-		<th>Name</th>
-		<th>Wert</th>
-	</tr>
-	<tr>
-		<td>Verweisgruppe</td>
-		<td>Windows/Extensions  </td>
-	</tr>
-	<tr>
-		<td>Verweis</td>
-		<td>Wählen Sie Microsoft Smooth Streaming Client SDK for Windows 8 und Microsoft Visual C++ Runtime Package.		</td>
-	</tr>
-	</table>
+    | Name          | Wert                                                                                                     |
+    |---------------|----------------------------------------------------------------------------------------------------------|
+    | Verweisgruppe | Windows/Extensions                                                                                       |
+    | Verweis       | Wählen Sie Microsoft Smooth Streaming Client SDK for Windows 8 und Microsoft Visual C++ Runtime Package. |
+
 3.  Klicken Sie auf **OK**.
 
 Nachdem Sie die Verweise hinzugefügt haben, müssen Sie die Zielplattform (x64 oder x86) auswählen. Das Hinzufügen von Verweisen funktioniert nicht bei der Plattformkonfiguration für eine beliebige CPU. Im Projektmappen-Explorer wird bei diesen hinzugefügten Verweisen eine gelbe Markierung angezeigt.
@@ -103,7 +71,7 @@ Nachdem Sie die Verweise hinzugefügt haben, müssen Sie die Zielplattform (x64 
 **So entwerfen Sie die Player-Benutzeroberfläche**
 
 1.  Doppelklicken Sie im Projektmappen-Explorer auf **MainPage.xaml**, um die Datei in der Entwurfsansicht zu öffnen.
-2.  Suchen Sie die Tags **&lt;Grid&gt;** und **&lt;/Grid&gt;** in der XAML-Datei, und fügen Sie zwischen diesen Tags folgenden Code ein:
+2.  Suchen Sie die Tags **\<Grid\>** und **\</Grid\>** in der XAML-Datei, und fügen Sie zwischen diesen Tags folgenden Code ein:
 
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>    <!-- spacer -->
@@ -1001,3 +969,5 @@ Sie haben Lektion 4 abgeschlossen. In dieser Lektion haben Sie die Funktion zur 
   [Beispiel für Smooth Streaming Windows Store-Anwendung]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-1.png
   [Entwickeln Sie leistungsstarke Apps für Windows 8]: http://msdn.microsoft.com/de-de/windows/apps/br229512.aspx
   [Codeansicht der Smooth Streaming Windows Store-Anwendung in Visual Studio]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
+  [How to build a Smooth Streaming Windows 8 JavaScript application with advanced features (Erstellen einer Smooth Streaming Windows 8 JavaScript-Anwendung mit erweiterten Funktionen, in englischer Sprache)]: http://blogs.iis.net/cenkd/archive/2012/08/10/how-to-build-a-smooth-streaming-windows-8-javascript-application-with-advanced-features.aspx
+  [Smooth Streaming Technical Overview (Smooth Streaming – Technische Übersicht, in englischer Sprache)]: http://www.iis.net/learn/media/on-demand-smooth-streaming/smooth-streaming-technical-overview

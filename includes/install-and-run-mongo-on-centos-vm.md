@@ -62,7 +62,6 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 
     ![Endpunkte][2]
 
-  [Sicherheit und Authentifizierung]: http://www.mongodb.org/display/DOCS/Security+and+Authentication
   [Quickstart Unix]: http://www.mongodb.org/display/DOCS/Quickstart+Unix
   [Endpunkte]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint.png
   [1]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint2.png

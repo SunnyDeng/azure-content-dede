@@ -1,12 +1,12 @@
 <properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
 
-**Wichtig**: Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, geben Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers an. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke][].
+**Wichtig**: Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, geben Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers an. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke][Überblick über virtuelle Azure-Netzwerke].
 
-1.  Melden Sie sich mit Ihrem Azure-Konto beim [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich mit Ihrem Azure-Konto beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
 2.  Klicken Sie im Verwaltungsportal unten links auf der Webseite auf **+Neu**, klicken Sie auf **Virtueller Computer** und dann auf **Aus Katalog**.
 
-    ![Neuen virtuellen Computer erstellen][]
+    ![Neuen virtuellen Computer erstellen][Neuen virtuellen Computer erstellen]
 
 3.  Wählen Sie in **Platform Images** ein Image eines virtuellen OpenSUSE-Computers aus, und klicken Sie anschließend unten rechts auf der Seite auf den Pfeil für die nächste Seite.
 
@@ -14,18 +14,19 @@
 
     -   Geben Sie den **Namen des virtuellen Computers** ein, z. B. "testlinuxvm".
     -   Geben Sie den **Namen des neuen Benutzers** ein, z. B. "newuser", der der Sudoer-Listendatei hinzugefügt wird.
-    -   Geben Sie in das Feld **Neues Kennwort** ein [sicheres Kennwort][] ein.
+    -   Geben Sie in das Feld **Neues Kennwort** ein [sicheres Kennwort][sicheres Kennwort] ein.
     -   Geben Sie das Kennwort in das Feld **Kennwort bestätigen** nochmals ein.
     -   Wählen Sie in der Dropdownliste die geeignete **Größe** aus.
 
     Klicken Sie auf den Pfeil zum Aufrufen der nächsten Seite, um fortzufahren.
 
 5.  Geben Sie auf der Seite **Virtual machine mode** die folgenden Informationen ein:
+
     -   Wählen Sie **Standalone Virtual Machine**.
     -   Geben Sie in das Feld **DNS-Name** eine gültigen DNS-Adresse ein, z. B. "testlinuxvm".
     -   Wählen Sie im Feld **Region/Affinity Group/Virtual Network** eine Region aus, in der dieses virtuelle Image gehostet wird.
 
-	Klicken Sie auf den Pfeil zum Aufrufen der nächsten Seite, um fortzufahren.
+Klicken Sie auf den Pfeil zum Aufrufen der nächsten Seite, um fortzufahren.
 
 1.  Wählen Sie auf der Seite **Virtual machine options** im Feld **Availability Set** den Eintrag **(none)** aus. Klicken Sie auf das Häkchen, um fortzufahren.
 
@@ -53,12 +54,12 @@ Geben Sie das Kennwort des Benutzers ein.
 
 ### Herstellen einer Verbindung über PuTTY
 
-Wenn Sie einen Windows-Computer verwenden, stellen Sie über PuTTY eine Verbindung mit dem virtuellen Computer her. PuTTY kann von [PuTTY Download Page][] heruntergeladen werden.
+Wenn Sie einen Windows-Computer verwenden, stellen Sie über PuTTY eine Verbindung mit dem virtuellen Computer her. PuTTY kann von [PuTTY Download Page][PuTTY Download Page] heruntergeladen werden.
 
 1.  Laden Sie **putty.exe** herunter, und speichern Sie die Daten in einem Verzeichnis auf dem Computer. Öffnen Sie eine Eingabeaufforderung, navigieren Sie zu dem betreffenden Verzeichnis, und führen Sie **putty.exe** aus.
 
 2.  Geben Sie "testlinuxvm.cloudapp.net" als **Hostnamen** und "22" für den **Port** ein.
-    ![PuTTY Screen][]
+    ![PuTTY Screen][PuTTY Screen]
 
 ## Aktualisieren des virtuellen Computers (optional)
 
@@ -73,6 +74,6 @@ Wenn Sie einen Windows-Computer verwenden, stellen Sie über PuTTY eine Verbindu
   [Überblick über virtuelle Azure-Netzwerke]: http://go.microsoft.com/fwlink/p/?LinkID=294063
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Neuen virtuellen Computer erstellen]: ./media/create-and-configure-opensuse-vm-in-portal/CreateVM.png
-  [sicheres Kennwort]: http://msdn.microsoft.com/en-us/library/ms161962.aspx
+  [sicheres Kennwort]: http://msdn.microsoft.com/de-de/library/ms161962.aspx
   [PuTTY Download Page]: http://www.puttyssh.org/download.html
   [PuTTY Screen]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png

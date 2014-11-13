@@ -1,6 +1,6 @@
-<properties linkid="manage-services-mediaservices-monitor-a-media-services-account" urlDisplayName="How to monitor" pageTitle="Monitor a Media Services Account - Azure" metaKeywords="" description="Describes how to configure monitoring for your Media Services account in Azure." metaCanonical="" services="media-services" documentationCenter="" title="How to Monitor a Media Services Account" authors="migree" solutions="" manager="" editor="" />
+<properties urlDisplayName="How to monitor" pageTitle="&Uuml;berwachen eines Media Services-Kontos - Azure" metaKeywords="" description="Beschreibt die Konfiguration der &Uuml;berwachung f&uuml;r Ihr Media Services-Konto in Azure." metaCanonical="" services="media-services" documentationCenter="" title="&Uuml;berwachen eines Media Services-Kontos" authors="juliako" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="migree" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
 # <span id="monitormediaservicesaccount"></span></a>Überwachen eines Media Services-Kontos
 
@@ -8,14 +8,14 @@ Das Azure Media Services-Dashboard stellt Nutzungsmetriken und Kontoinformatione
 
 Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene Codierungsaufgaben, aktive Codierungsjobs, die durch die Eingabe- und Ausgabedaten des Encoders dargestellt werden, sowie die Blob-Speichernutzung Ihres Media Services-Kontos überwachen. Wenn Sie Inhalte per Streaming an Kunden übertragen, können Sie außerdem verschiedene Streaming-Metriken abrufen. Sie können Ihre Daten der letzten 6 Stunden, 24 Stunden oder 7 Tage überwachen.
 
-**Hinweis** Zusätzliche Kosten entstehen beim Überwachen der Speicherdaten im Windows Azure-Verwaltungsportal. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten][Speicheranalyse und Speicheranalysekosten].
+> [WACOM.NOTE] Beim Überwachen der Speicherdaten im Windows Azure-Verwaltungsportal entstehen zusätzliche Kosten. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten][Speicheranalyse und Speicheranalysekosten].
 
 ## <span id="configuremonitoring"></span></a>Gewusst wie: Überwachen eines Media Services-Kontos
 
 1.  Klicken Sie im [Verwaltungsportal][Verwaltungsportal] auf **Media Services** und dann auf den Media Services-Kontonamen, um das Dashboard zu öffnen.
 
-    ![MediaServices_Dashboard][MediaServices_Dashboard]
-	
+    ![MediaServices\_Dashboard][MediaServices\_Dashboard]
+
 2.  Um die Codierungsjobs oder -daten zu überwachen, beginnen Sie einfach mit dem Senden von Codierungsjobs an Media Services oder mit dem Streaming von Inhalten an Kunden mithilfe von Azure Media On-Demand Streaming. Nach ca. einer Stunde sollten auf dem Dashboard Überwachungsdaten angezeigt werden.
 
 ## <span id="configuringstorage"></span></a>Gewusst wie: Überwachen der Blob-Speichernutzung (optional)
@@ -23,7 +23,7 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 1.  Klicken Sie im Abschnitt **Auf einen Blick** auf den Namen des **Speicherkontos**.
 2.  Klicken Sie auf der Speicherkontoseite auf den Link **configure page**, und blättern Sie bis zu den Einstellungen **monitoring** für die Blob-, Tabellen- und Warteschlangendienste nach unten.
 
-    **Hinweis** Blobs sind der einzige unterstützte Speichertyp in Media Services.
+    > [WACOM.NOTE] Blobs sind der einzige unterstützte Speichertyp in Media Services.
 
     ![Speicheroptionen][Speicheroptionen]
 
@@ -47,6 +47,6 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 
   [Speicheranalyse und Speicheranalysekosten]: http://go.microsoft.com/fwlink/?LinkId=256667
   [Verwaltungsportal]: http://go.microsoft.com/fwlink/?LinkID=256666
-  [MediaServices_Dashboard]: ./media/media-services-monitor-services-account/media-services-dashboard.png
+  [MediaServices\_Dashboard]: ./media/media-services-monitor-services-account/media-services-dashboard.png
   [Speicheroptionen]: ./media/media-services-monitor-services-account/storagemonitoringoptions_scoped.png
   [Kennzahlen zur Speicheranalyse]: http://go.microsoft.com/fwlink/?LinkId=256668

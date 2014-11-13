@@ -4,26 +4,26 @@ Daten in der Cloud zu verwalten und zu analysieren, ist ebenso wichtig wie das V
 
 ## Inhaltsverzeichnis
 
--   [Blob-Speicher][]
--   [Ausführen eines DBMS auf einem virtuellen Computer][]
--   [SQL-Datenbank][]
+-   [Blob-Speicher][Blob-Speicher]
+-   [Ausführen eines DBMS auf einem virtuellen Computer][Ausführen eines DBMS auf einem virtuellen Computer]
+-   [SQL-Datenbank][SQL-Datenbank]
 
-    -   [SQL-Datensynchronisierung][]
-    -   [SQL-Datenberichte mithilfe virtueller Computer][]
--   [Table Storage][]
--   [Hadoop][]
+    -   [SQL-Datensynchronisierung][SQL-Datensynchronisierung]
+    -   [SQL-Datenberichte mithilfe virtueller Computer][SQL-Datenberichte mithilfe virtueller Computer]
+-   [Table Storage][Table Storage]
+-   [Hadoop][Hadoop]
 
 ## <a name="blob"></a>Blob-Speicher
 
-Das Wort "Blob" ist eine Kurzform für "Binary Large OBject" (binäres großes Objekt) und bezeichnet genau, was ein Blob ist: eine Sammlung binärer Informationen. Blobs sind zwar einfach konstruiert, jedoch sehr nützlich. [Abbildung 1][] zeigt die Grundlagen des Blob-Speichers von Azure.
+Das Wort "Blob" ist eine Kurzform für "Binary Large OBject" (binäres großes Objekt) und bezeichnet genau, was ein Blob ist: eine Sammlung binärer Informationen. Blobs sind zwar einfach konstruiert, jedoch sehr nützlich. [Abbildung 1][Abbildung 1] zeigt die Grundlagen des Blob-Speichers von Azure.
 
-<a name="Fig1"></a>![Diagramm von Blobs][]
+<a name="Fig1"></a>![Diagramm von Blobs][Diagramm von Blobs]
 
 **Abbildung 1: Blob-Speicher von Azure speichert binäre Daten - Blobs - in Containern.**
 
 Um Blobs zu verwenden, erstellen Sie zuerst ein Azure-*Speicherkonto*. Dabei geben Sie das Azure-Datencenter an, in dem die mit diesem Konto erstellten Objekte gespeichert werden. Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Container in Ihrem Speicherkonto. Für den Zugriff auf ein Blob stellt eine Anwendung einen URL mit dem folgenden Format bereit:
 
-http://&lt;*StorageAccount*&gt;.blob.core.windows.net/&lt;*Container*&gt;/&lt;*BlobName*&gt;
+[http://\<\*StorageAccount][http://\<\*StorageAccount]*\>.blob.core.windows.net/\<*Container*\>/\<*BlobName\*\>
 
 \<*Speicherkonto*\> ist eine eindeutige ID, die beim Erstellen eines neuen Speicherkontos zugewiesen wird, während \<*Container*\> und \<*BlobName*\> die Namen eines bestimmten Containers und eines Blobs in diesem Container sind.
 
@@ -47,23 +47,23 @@ Dank ihrer Unkompliziertheit sind Blobs in vielen Situationen die richtige Optio
 
 ## <a name="dbinvm"></a>Ausführen eines DBMS auf einem virtuellen Computer
 
-Viele moderne Anwendungen sind auf ein bestimmtes Datenbank-Managementsystem (DBMS) angewiesen. Relationale Systeme wie SQL Server werden am häufigsten verwendet, doch werden nichtrelationale Ansätze, die allgemein als *Nicht-SQL*-Technologien bezeichnet werden, immer populärer. Damit Cloud-Anwendungen diese Datenmanagementoptionen nutzen können, ermöglicht Azure Virtual Machines die Ausführung eines (relationalen oder Nicht-SQL-) DBMS auf einem virtuellen Computer. [Abbildung 2][] zeigt, wie dies bei SQL Server aussieht.
+Viele moderne Anwendungen sind auf ein bestimmtes Datenbank-Managementsystem (DBMS) angewiesen. Relationale Systeme wie SQL Server werden am häufigsten verwendet, doch werden nichtrelationale Ansätze, die allgemein als *Nicht-SQL*-Technologien bezeichnet werden, immer populärer. Damit Cloud-Anwendungen diese Datenmanagementoptionen nutzen können, ermöglicht Azure Virtual Machines die Ausführung eines (relationalen oder Nicht-SQL-) DBMS auf einem virtuellen Computer. [Abbildung 2][Abbildung 2] zeigt, wie dies bei SQL Server aussieht.
 
-<a name="Fig2"></a>![Diagramm von SQL Server auf einem virtuellen Computer][]
+<a name="Fig2"></a>![Diagramm von SQL Server auf einem virtuellen Computer][Diagramm von SQL Server auf einem virtuellen Computer]
 
 **Abbildung 2: Azure Virtual Machines ermöglicht die Ausführung eines DBMS auf einem virtuellen Computer, wobei Blobs für Persistenz sorgen.**
 
 Für Entwickler und Datenbankadministratoren entspricht dieses Szenario im Wesentlichen der Ausführung der gleichen Software in ihrem eigenen Datencenter. Im hier gezeigten Beispiel können nahezu alle Fähigkeiten von SQL Server verwendet werden, und Sie haben vollen administrativen Zugriff auf das System. Natürlich sind Sie auch für die Verwaltung des Datenbankservers verantwortlich. In dieser Hinsicht gibt es keine Unterschiede zu einem lokalen Server.
 
-Wie [Abbildung 2][] zeigt, sind die Datenbanken scheinbar auf dem lokalen Datenträger des virtuellen Computers gespeichert, auf dem der Server ausgeführt wird. Tatsächlich jedoch wird jeder Datenträger in ein Azure-Blob geschrieben. (Dies entspricht in etwa dem Einsatz eines SAN im Datencenter, wobei sich ein Blob ganz ähnlich wie ein LUN verhält.) Wie bei jedem Azure-Blob werden die darin enthaltenen Daten in einem Datencenter dreimal repliziert. Falls Sie es wünschen, werden sie außerdem in einem anderen Datencenter in derselben Region georepliziert. Zur Verbesserung der Zuverlässigkeit können auch Optionen wie die SQL Server-Datenbankspiegelung verwendet werden.
+Wie [Abbildung 2][Abbildung 2] zeigt, sind die Datenbanken scheinbar auf dem lokalen Datenträger des virtuellen Computers gespeichert, auf dem der Server ausgeführt wird. Tatsächlich jedoch wird jeder Datenträger in ein Azure-Blob geschrieben. (Dies entspricht in etwa dem Einsatz eines SAN im Datencenter, wobei sich ein Blob ganz ähnlich wie ein LUN verhält.) Wie bei jedem Azure-Blob werden die darin enthaltenen Daten in einem Datencenter dreimal repliziert. Falls Sie es wünschen, werden sie außerdem in einem anderen Datencenter in derselben Region georepliziert. Zur Verbesserung der Zuverlässigkeit können auch Optionen wie die SQL Server-Datenbankspiegelung verwendet werden.
 
 Eine weitere Einsatzmöglichkeit für SQL Server auf einem virtuellen Computer ist die Erstellung einer Hybridanwendung. Dabei werden die Daten in Azure verwaltet, während die Anwendungslogik lokal ausgeführt wird. Dies kann z. B. sinnvoll sein, wenn Anwendungen, die an mehreren Standorten oder auf verschiedenen mobilen Geräte ausgeführt werden, dieselben Daten gemeinsam nutzen müssen. Um die Kommunikation zwischen der Cloud-Datenbank und der lokalen Logik zu vereinfachen, kann eine Organisation mit Windows Azure Virtual Network eine VPN-Verbindung (virtuelles privates Netzwerk) zwischen einem Azure-Datencenter und ihrem eigenen lokalen Datencenter einrichten.
 
 ## <a name="sqldb"></a>SQL-Datenbank
 
-Wenn strukturierte Daten in der Cloud verwaltet werden sollen, wird in der Regel zuerst ein DBMS auf einem virtuellen Computer in Betracht gezogen. Dies ist jedoch nicht die einzige Möglichkeit, und sie ist auch nicht immer die beste. In bestimmten Fällen ist zur Verwaltung von Daten der Ansatz "Platform as a Service (PaaS)" sinnvoller. Azure enthält eine PaaS-Technologie namens SQL-Datenbank, mit der Sie relationale Daten verwalten können. Diese Option ist in [Abbildung 3][] dargestellt.
+Wenn strukturierte Daten in der Cloud verwaltet werden sollen, wird in der Regel zuerst ein DBMS auf einem virtuellen Computer in Betracht gezogen. Dies ist jedoch nicht die einzige Möglichkeit, und sie ist auch nicht immer die beste. In bestimmten Fällen ist zur Verwaltung von Daten der Ansatz "Platform as a Service (PaaS)" sinnvoller. Azure enthält eine PaaS-Technologie namens SQL-Datenbank, mit der Sie relationale Daten verwalten können. Diese Option ist in [Abbildung 3][Abbildung 3] dargestellt.
 
-<a name="Fig3"></a>![Diagramm der SQL-Datenbank][]
+<a name="Fig3"></a>![Diagramm der SQL-Datenbank][Diagramm der SQL-Datenbank]
 
 **Abbildung 3: SQL-Datenbank stellt einen gemeinsam genutzten relationalen PaaS-Speicherdienst bereit.**
 
@@ -87,9 +87,9 @@ Zudem sollte auch darauf hingewiesen werden, dass SQL-Datenbank nicht der einzig
 
 ### <a name="datasync"></a>SQL-Datensynchronisierung
 
-Zwar verwaltet SQL-Datenbank drei Kopien jeder Datenbank in einem einzelnen Azure-Datencenter, doch werden die Daten zwischen den Azure-Datencentern nicht automatisch repliziert. Für diesen Zweck steht stattdessen der Dienst SQL-Datensynchronisierung zur Verfügung. [Abbildung 4][] zeigt, wie dies aussieht.
+Zwar verwaltet SQL-Datenbank drei Kopien jeder Datenbank in einem einzelnen Azure-Datencenter, doch werden die Daten zwischen den Azure-Datencentern nicht automatisch repliziert. Für diesen Zweck steht stattdessen der Dienst SQL-Datensynchronisierung zur Verfügung. [Abbildung 4][Abbildung 4] zeigt, wie dies aussieht.
 
-<a name="Fig4"></a>![Diagramm der SQL-Datensynchronisierung][]
+<a name="Fig4"></a>![Diagramm der SQL-Datensynchronisierung][Diagramm der SQL-Datensynchronisierung]
 
 **Abbildung 4: SQL-Datensynchronisierung synchronisiert Daten in SQL-Datenbank mit Daten in anderen Azure- und lokalen Datencentern.**
 
@@ -99,9 +99,9 @@ Die Synchronisierung kann bidirektional sein, und Sie legen genau fest, welche D
 
 ### <a name="datarpt"></a>SQL-Datenberichte mithilfe virtueller Computer
 
-Sobald eine Datenbank Daten enthält, gibt es wahrscheinlich das Bestreben, Berichte zu erstellen, in denen diese Daten verwendet werden. Azure kann SQL Server Reporting Services (SSRS) auf Azure Virtual Machines ausführen. Dies entspricht funktional der lokalen Ausführung von SQL Server Reporting Services. Anschließend können Sie mit SSRS Berichte auf der Grundlage von Daten erstellen, die in einer Azure-SQL-Datenbank gespeichert sind. [Abbildung 5][] zeigt, wie der Prozess funktioniert.
+Sobald eine Datenbank Daten enthält, gibt es wahrscheinlich das Bestreben, Berichte zu erstellen, in denen diese Daten verwendet werden. Azure kann SQL Server Reporting Services (SSRS) auf Azure Virtual Machines ausführen. Dies entspricht funktional der lokalen Ausführung von SQL Server Reporting Services. Anschließend können Sie mit SSRS Berichte auf der Grundlage von Daten erstellen, die in einer Azure-SQL-Datenbank gespeichert sind. [Abbildung 5][Abbildung 5] zeigt, wie der Prozess funktioniert.
 
-<a name="Fig5"></a>![Diagramm der SQL-Berichterstattung][]
+<a name="Fig5"></a>![Diagramm der SQL-Berichterstattung][Diagramm der SQL-Berichterstattung]
 
 **Abbildung 5: SQL Server Reporting Services in Azure Virtual Machines stellen Berichtsdienste für Daten in SQL-Datenbank bereit. .**
 
@@ -117,21 +117,21 @@ Mit SSRS auf einem virtuellen Azure-Computer verfügen Sie in der Cloud über ei
 
 Relationale Daten sind in vielen Situationen sinnvoll, jedoch nicht immer die richtige Wahl. Wenn eine Anwendung z. B. schnellen, einfachen Zugriff auf sehr große Mengen schwach strukturierter Daten benötigt, ist eine relationale Datenbank eventuell nicht gut geeignet. Eine Nicht-SQL-Technologie ist in diesem Fall wahrscheinlich die bessere Option.
 
-Azure Table Storage ist ein Beispiel für einen solchen Nicht-SQL-Ansatz. Trotz seines Namens unterstützt Table Storage keine normalen relationalen Tabellen. Stattdessen stellt es einen *Schlüssel-/Wertspeicher* bereit. Dabei wird ein Datensatz mit einem bestimmten Schlüssel verknüpft, und anschließend erhält eine Anwendung über diesen Schlüssel Zugriff auf die Daten. Die Grundzüge dieses Vorgangs sind in [Abbildung 6][] dargestellt.
+Azure Table Storage ist ein Beispiel für einen solchen Nicht-SQL-Ansatz. Trotz seines Namens unterstützt Table Storage keine normalen relationalen Tabellen. Stattdessen stellt es einen *Schlüssel-/Wertspeicher* bereit. Dabei wird ein Datensatz mit einem bestimmten Schlüssel verknüpft, und anschließend erhält eine Anwendung über diesen Schlüssel Zugriff auf die Daten. Die Grundzüge dieses Vorgangs sind in [Abbildung 6][Abbildung 6] dargestellt.
 
-<a name="Fig6"></a>![Diagramm von Table Storage][]
+<a name="Fig6"></a>![Diagramm von Table Storage][Diagramm von Table Storage]
 
 **Abbildung 6: Azure Table Storage ist ein Schlüssel-/Wertspeicher, der einen schnellen, einfachen Zugriff auf große Datenmengen ermöglicht.**
 
 Wie Blobs werden alle Tabellen mit einem Azure-Speicherkonto verknüpft. Tabellen werden auch ähnlich wie Blobs mit einem URL folgenden Formats benannt:
 
-http://&lt;*StorageAccount*&gt;.table.core.windows.net/&lt;*TableName*&gt;
+[http://\<\*StorageAccount][http://\<\*StorageAccount]*\>.table.core.windows.net/\<*TableName\*\>
 
 Wie die Abbildung zeigt, ist jede Tabelle in mehrere Partitionen aufgeteilt, die jeweils auf einem separaten Computer gespeichert werden können. (Dies ist wie bei einem SQL-Verbund eine Art von Sharding.) Sowohl Azure-Anwendungen als auch Anwendungen, die an anderen Orten ausgeführt werden, können entweder über das RESTful OData-Protokoll oder über die Azure Storage Client-Bibliothek auf eine Tabelle zugreifen.
 
 Jede Partition in einer Tabelle enthält mehrere *Entitäten*, die jeweils bis zu 255 *Eigenschaften* enthalten. Jede Eigenschaft hat einen Namen, einen Typ (z. B. Binär, Boolesch, DatumZeit, Int oder Zeichenfolge) und einen Wert. Im Unterschied zum relationalen Speicher haben diese Tabellen kein festes Schema, sodass verschiedene Entitäten in derselben Tabelle Eigenschaften unterschiedlichen Typs enthalten können. Eine Entität hat z. B. nur eine Zeichenfolge-Eigenschaft, die einen Namen enthält, während eine andere Entität in derselben Tabelle zwei Int-Eigenschaften hat, die eine Kunden-ID und eine Bonitätseinstufung.
 
-Um eine bestimmte Entität in einer Tabelle zu identifizieren, stellt eine Anwendung den Schlüssel der betreffenden Entität bereit. Der Schlüssel besteht aus zwei Teilen: einem *Partitionsschlüssel*, der eine bestimmte Partition kennzeichnet, und einem *Zeilenschlüssel*, der eine Entität innerhalb dieser Partition kennzeichnet. In [Abbildung 6][] fordert der Client z. B. die Entität mit dem Partitionsschlüssel A und Zeilenschlüssel 3 an, und Table Storage gibt diese Entität zusammen mit allen darin enthaltenen Eigenschaften zurück.
+Um eine bestimmte Entität in einer Tabelle zu identifizieren, stellt eine Anwendung den Schlüssel der betreffenden Entität bereit. Der Schlüssel besteht aus zwei Teilen: einem *Partitionsschlüssel*, der eine bestimmte Partition kennzeichnet, und einem *Zeilenschlüssel*, der eine Entität innerhalb dieser Partition kennzeichnet. In [Abbildung 6][Abbildung 6] fordert der Client z. B. die Entität mit dem Partitionsschlüssel A und Zeilenschlüssel 3 an, und Table Storage gibt diese Entität zusammen mit allen darin enthaltenen Eigenschaften zurück.
 
 Diese Struktur ermöglicht große Tabellen – eine einzelne Tabelle kann bis zu 100 TB Daten enthalten –, und sie ermöglicht einen schnellen Zugriff auf die darin enthaltenen Daten. Sie geht jedoch auch mit Einschränkungen einher. Transaktionale Aktualisierungen, die sich über verschiedene Tabellen oder auch Partitionen in einer einzelnen Tabelle erstrecken, werden z. B. nicht unterstützt. Mehrere Aktualisierungen einer Tabelle können nur dann in einer atomischen Transaktion gruppiert werden, wenn alle beteiligten Entitäten in derselben Partition enthalten sind. Außerdem gibt es keine Möglichkeit, eine Tabelle auf Basis des Werts ihrer Eigenschaften abzufragen, und Verknüpfungen mehrerer Tabellen werden nicht unterstützt. Und im Gegensatz zu relationalen Datenbanken unterstützen Tabellen gespeicherte Prozeduren nicht.
 
@@ -145,9 +145,9 @@ Nehmen wir jedoch an, Sie möchten nichtrelationale Daten analysieren. Die Daten
 
 Um umfangreiche Daten dieses Typs zu analysieren, hat sich unsere Branche weitgehend auf eine einzige Lösung geeinigt: die Open Source-Technologie Hadoop. Hadoop wird auf einem Cluster physischer oder virtueller Computer ausgeführt, verteilt die zu bearbeitenden Daten auf diese Computer und verarbeitet sie parallel. Je mehr Computer Hadoop verwendet, desto schneller können die jeweiligen Arbeiten ausgeführt werden.
 
-Für Probleme dieser Art ist die öffentliche Cloud wie geschaffen. Statt unzählige lokale Server zu unterhalten, die möglicherweise weitgehend im Leerlauf arbeiten, bietet Hadoop in der Cloud die Möglichkeit, virtuelle Computer nur dann zu erstellen (und zu bezahlen), wenn Sie sie benötigen. Hinzu kommt jedoch noch, dass immer mehr umfangreiche Daten, die Sie mit Hadoop analysieren möchten, in der Cloud erstellt werden, was Ihnen die Mühe erspart, diese Daten zu verschieben. Um diese Synergien zu nutzen, bietet Microsoft in Azure einen Hadoop-Dienst an. [Abbildung 7][] zeigt die wichtigsten Komponenten dieses Diensts.
+Für Probleme dieser Art ist die öffentliche Cloud wie geschaffen. Statt unzählige lokale Server zu unterhalten, die möglicherweise weitgehend im Leerlauf arbeiten, bietet Hadoop in der Cloud die Möglichkeit, virtuelle Computer nur dann zu erstellen (und zu bezahlen), wenn Sie sie benötigen. Hinzu kommt jedoch noch, dass immer mehr umfangreiche Daten, die Sie mit Hadoop analysieren möchten, in der Cloud erstellt werden, was Ihnen die Mühe erspart, diese Daten zu verschieben. Um diese Synergien zu nutzen, bietet Microsoft in Azure einen Hadoop-Dienst an. [Abbildung 7][Abbildung 7] zeigt die wichtigsten Komponenten dieses Diensts.
 
-<a name="Fig7"></a>![Diagramm von Hadoop][]
+<a name="Fig7"></a>![Diagramm von Hadoop][Diagramm von Hadoop]
 
 **Abbildung 7: Hadoop in Azure führt MapReduce-Jobs aus, die Daten mit mehreren virtuellen Computern parallel verarbeiten.**
 
@@ -157,7 +157,7 @@ Eine Hadoop-Anwendung, die üblicherweise als *Job* bezeichnet wird, verwendet e
 
 In Azure werden die mit einem MapReduce-Job bearbeiteten Daten in einem Blob-Speicher abgelegt. MapReduce-Jobs in Hadoop setzen jedoch voraus, dass die Daten im *Hadoop Distributed File System (HDFS)* gespeichert sind. HDFS hat gewisse Ähnlichkeit mit dem Blob-Speicher, denn Daten werden z. B. auf mehreren physischen Servern repliziert. Doch anstatt diese Funktionen lediglich zu kopieren, stellt Hadoop unter Azure den Blob-Speicher über die HDFS-API zur Verfügung, wie die Abbildung zeigt. Während es für die Logik eines MapReduce-Jobs so aussieht, als erfolge ein Zugriff auf gewöhnliche HDFS-Dateien, werden in Wirklichkeit aus Blobs gestreamte Daten bearbeitet. Und um die Bearbeitung derselben Daten durch mehrere Jobs zu unterstützen, ist es in Hadoop unter Azure auch möglich, Daten aus Blobs in ein vollwertiges HDFS auf den virtuellen Computern zu kopieren.
 
-MapReduce-Jobs werden heute für gewöhnlich in Java geschrieben, ein Ansatz, den Hadoop unter Azure unterstützt. Microsoft hat zusätzlich dafür gesorgt, dass MapReduce-Jobs auch in anderen Sprachen wie C\#, F\# und JavaScript erstellt werden können. Ziel ist es, diese Technologie für umfangreiche Daten einer größeren Zahl von Entwicklern zugänglicher zu machen.
+MapReduce-Jobs werden heute für gewöhnlich in Java geschrieben, ein Ansatz, den Hadoop unter Azure unterstützt. Microsoft hat zusätzlich dafür gesorgt, dass MapReduce-Jobs auch in anderen Sprachen wie C#, F\# und JavaScript erstellt werden können. Ziel ist es, diese Technologie für umfangreiche Daten einer größeren Zahl von Entwicklern zugänglicher zu machen.
 
 Neben HDFS und MapReduce enthält Hadoop weitere Technologien zur Analyse von Daten, ohne dass ein MapReduce-Job geschrieben werden muss. Pig z. B. ist eine höhere Programmiersprache, die auf die Analyse umfangreicher Daten zugeschnitten ist, während Hive über eine SQL-ähnliche Sprache namens HiveQL verfügt. Sowohl Pig als auch Hive generieren MapReduce-Aufträge, die HDFS-Daten verarbeiten, doch wird diese Komplexität vor den Benutzern verborgen.
 Beide werden mit Hadoop in Azure zur Verfügung gestellt.

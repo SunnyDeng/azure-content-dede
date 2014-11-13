@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-administer-hdinsight" urlDisplayName="Administration" pageTitle="Manage Hadoop clusters in HDInsight using Azure Portal | Azure" metaKeywords="" description="Learn how to administer HDInsight Service. Create an HDInsight cluster, open the interactive JavaScript console, and open the Hadoop command console." metaCanonical="" services="hdinsight" documentationCenter="" title="Manage Hadoop clusters in HDInsight using the Azure Management Portal" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties urlDisplayName="Administration" pageTitle="Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal | Azure" metaKeywords="" description="Hier erfahren Sie, wie Sie den HDInsight-Dienst verwalten. Erstellen Sie ein HDInsight-Cluster, &ouml;ffnen Sie die interaktive JavaScript-Konsole, und &ouml;ffnen Sie die Hadoop-Befehlszeile." metaCanonical="" services="hdinsight" documentationCenter="" title="Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
@@ -22,6 +22,7 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 -   [Anpassen von HDInsight-Clustern][Anpassen von HDInsight-Clustern]
 -   [Ändern von Benutzername und Kennwort für einen HDInsight-Cluster][Ändern von Benutzername und Kennwort für einen HDInsight-Cluster]
 -   [Herstellen einer Verbindung zu HDInsight-Clustern mit RDP][Herstellen einer Verbindung zu HDInsight-Clustern mit RDP]
+-   [Erstellen eines selbstsignierten Zertifikats][Erstellen eines selbstsignierten Zertifikats]
 -   [Gewähren/Widerrufen von Zugriff auf HTTP-Dienste][Gewähren/Widerrufen von Zugriff auf HTTP-Dienste]
 -   [Öffnen der Hadoop-Befehlszeile][Öffnen der Hadoop-Befehlszeile]
 -   [Nächste Schritte][Nächste Schritte]
@@ -117,6 +118,20 @@ Mit den Anmeldeinformationen, die Sie bei der Erstellung des Clusters für diese
 4.  Klicken Sie oben auf der Seite auf **KONFIGURATION**.
 5.  Klicken Sie auf **VERBINDEN**, und befolgen Sie die Anweisungen.
 
+## <span id="cert"></span></a>Erstellen eines selbstsignierten Zertifikats
+
+Wenn Sie Vorgänge auf dem Cluster mithilfe des .NET-SDK ausführen möchten, müssen Sie ein selbstsigniertes Zertifikat auf der Arbeitsstation erstellen und das Zertifikat zu Ihrem Azure-Abonnement hochladen. Dies ist eine einmalige Aufgabe. Sie können dasselbe Zertifikat auf anderen Computern installieren, solange es gültig ist.
+
+**So erstellen Sie ein selbstsigniertes Zertifikat**
+
+1.  Erstellen Sie ein selbstsigniertes Zertifikat für die Authentifizierung der Anfragen. Sie können das Zertifikat mithilfe von IIS oder [makecert][makecert] erstellen.
+
+2.  Navigieren Sie zum Speicherort des Zertifikats, klicken Sie mit der rechten Maustaste auf das Zertifikat, klicken Sie auf **Zertifikat installieren** und installieren Sie das Zertifikat im Zertifikatspeicher Ihres Computers. Bearbeiten Sie die Zertifikateigenschaften und geben Sie dem Zertifikat einen Anzeigenamen.
+
+3.  Importieren Sie das Zertifikat in das Azure-Verwaltungsportal. Klicken Sie unten links im Portal auf **Einstellungen** und anschließend auf **Verwaltungszertifikate**. Klicken Sie unten in der Seite auf **Hochladen** und folgen Sie den Anweisungen, um die .cer-Datei hochzuladen, die Sie im vorigen Schritt erstellt haben.
+
+    ![HDI.ClusterCreate.UploadCert][HDI.ClusterCreate.UploadCert]
+
 ## <span id="httpservice"></span></a> Gewähren/Widerrufen von Zugriff auf HTTP-Dienste
 
 In HDInsight-Clustern stehen die folgenden HTTP-Webdienste zur Verfügung (alle mit RESTful-Endpunkten):
@@ -196,6 +211,7 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Verwaltu
   [Anpassen von HDInsight-Clustern]: #customize
   [Ändern von Benutzername und Kennwort für einen HDInsight-Cluster]: #password
   [Herstellen einer Verbindung zu HDInsight-Clustern mit RDP]: #rdp
+  [Erstellen eines selbstsignierten Zertifikats]: #cert
   [Gewähren/Widerrufen von Zugriff auf HTTP-Dienste]: #httpservice
   [Öffnen der Hadoop-Befehlszeile]: #hadoopcmd
   [Nächste Schritte]: #nextsteps
@@ -210,6 +226,8 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Verwaltu
   [Microsoft-Support]: http://azure.microsoft.com/de-de/support/options/
   [So aktivieren Sie den Remotedesktopzugriff]: #enablerdp
   [HDI.RDPBenutzerErstellen]: ./media/hdinsight-administer-use-management-portal/HDI.CreateRDPUser.png
+  [makecert]: http://msdn.microsoft.com/de-de/library/bfsktky3(v=vs.110).aspx
+  [HDI.ClusterCreate.UploadCert]: ./media/hdinsight-administer-use-management-portal/HDI.ClusterCreate.UploadCert.png
   [HDI.HadoopCommandLine]: ./media/hdinsight-administer-use-management-portal/HDI.HadoopCommandLine.PNG "Hadoop-Befehlszeile"
   [Hadoop-Befehlsreferenz]: http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CommandsManual.html
   [Erste Schritte mit Azure HDInsight]: ../hdinsight-get-started/

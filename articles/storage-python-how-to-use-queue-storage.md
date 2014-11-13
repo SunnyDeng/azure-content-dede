@@ -1,6 +1,6 @@
-<properties linkid="develop-python-queue-service" urlDisplayName="Queue Service" pageTitle="How to use the queue service (Python) | Microsoft Azure" metaKeywords="Azure Queue Service messaging Python" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Python." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Queue Storage Service from Python" authors="huvalo" solutions="" manager="" editor="" />
+<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangendiensts (Python) | Microsoft Azure" metaKeywords="Azure Queue Service messaging Python" description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und L&ouml;schen von Warteschlangen sowie zum Einf&uuml;gen, Abrufen und L&ouml;schen von Nachrichten verwenden. Die Beispiele wurden in Python geschrieben." metaCanonical="" services="storage" documentationCenter="Python" title="Verwenden des Warteschlangenspeicherdiensts aus Python" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/19/2014" ms.author="huvalo" />
 
 # Verwenden des Warteschlangenspeicherdiensts aus Python
 
@@ -12,17 +12,17 @@ und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finde
 
 ## Inhaltsverzeichnis
 
-[Was ist der Warteschlangenspeicher?][Was ist der Warteschlangenspeicher?]  
- [Konzepte][Konzepte]  
- [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]  
- [Gewusst wie: Erstellen einer Warteschlange][Gewusst wie: Erstellen einer Warteschlange]  
- [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange][Gewusst wie: Einfügen einer Nachricht in eine Warteschlange]  
- [Gewusst wie: Einsehen der nächsten Nachricht][Gewusst wie: Einsehen der nächsten Nachricht]  
- [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]  
- [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]  
- [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]  
- [Gewusst wie: Abrufen der Warteschlangenlänge][Gewusst wie: Abrufen der Warteschlangenlänge]  
- [Gewusst wie: Löschen einer Warteschlange][Gewusst wie: Löschen einer Warteschlange]  
+[Was ist der Warteschlangenspeicher?][Was ist der Warteschlangenspeicher?]
+ [Konzepte][Konzepte]
+ [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+ [Gewusst wie: Erstellen einer Warteschlange][Gewusst wie: Erstellen einer Warteschlange]
+ [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange][Gewusst wie: Einfügen einer Nachricht in eine Warteschlange]
+ [Gewusst wie: Einsehen der nächsten Nachricht][Gewusst wie: Einsehen der nächsten Nachricht]
+ [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange][Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]
+ [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]
+ [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange][Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]
+ [Gewusst wie: Abrufen der Warteschlangenlänge][Gewusst wie: Abrufen der Warteschlangenlänge]
+ [Gewusst wie: Löschen einer Warteschlange][Gewusst wie: Löschen einer Warteschlange]
  [Nächste Schritte][Nächste Schritte]
 
 [WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
@@ -37,7 +37,7 @@ und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finde
 
 Das Objekt **QueueService** ermöglicht es Ihnen, mit Warteschlangen zu arbeiten. Der folgende Code erstellt ein **QueueService**-Objekt. Fügen Sie am Anfang jeder Python-Datei, in der Sie programmgesteuert auf Azure-Speicher zugreifen möchten, den folgenden Code hinzu:
 
-    from azure.storage import *
+    from azure.storage import QueueService
 
 Der folgende Code erstellt ein **QueueService**-Objekt unter Verwendung des Speicherkontonamens und Kontoschlüssels. Ersetzen Sie 'myaccount' und 'mykey' durch das tatsächliche Konto und den tatsächlichen Schlüssel.
 
@@ -124,6 +124,7 @@ Nachdem Sie sich nun mit den Grundlagen der Warteschlangenspeicherung vertraut g
 -   Besuchen Sie den [Blog des Azure-Speicherteams][Blog des Azure-Speicherteams]
 
   [Nächste Schritte]: #next-steps
+  [Was ist der Warteschlangenspeicher?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Gewusst wie: Erstellen einer Warteschlange]: #create-queue
@@ -134,8 +135,6 @@ Nachdem Sie sich nun mit den Grundlagen der Warteschlangenspeicherung vertraut g
   [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]: #advanced-get
   [Gewusst wie: Abrufen der Warteschlangenlänge]: #get-queue-length
   [Gewusst wie: Löschen einer Warteschlange]: #delete-queue
-  [howto-queue-storage]: ../includes/howto-queue-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
   [Python-Installationshandbuch]: ../python-how-to-install/
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/

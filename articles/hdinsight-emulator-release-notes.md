@@ -1,11 +1,21 @@
-<properties linkid="hdinsight-emulator-release-notes" urlDisplayName="HDInsight Emulator release notes" pageTitle="Release notes: Microsoft HDInsight Emulator for Azure | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Get late-breaking information about the most recent releases of the HDInsight Hadoop Emulator." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Release notes: Microsoft HDInsight Emulator for Azure" authors="cgronlun" />
+<properties urlDisplayName="HDInsight Emulator release notes" pageTitle="Versionshinweise: Microsoft HDInsight-Emulator f&uuml;r Azure | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Erhalten Sie aktuellste Informationen &uuml;ber die neuesten Versionen des HDInsight Hadoop-Emulators." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Versionshinweise: Microsoft HDInsight Emulator f&uuml;r Azure" authors="jgao" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="cgronlun" />
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/03/2014" ms.author="jgao" />
 
 # Versionshinweise: Microsoft HDInsight Emulator für Azure
 
 > [WACOM.NOTE]
 > Die einfachste Art, die Versionsnummer zu prüfen, ist, unter "Programme hinzufügen/entfernen" nach dem Eintrag für "Microsoft HDInsight Emulator für Azure" (bei Version 1.0.0.0 oder höher) oder "Microsoft HDInsight Developer Preview" (bei niedrigeren Versionen als 1.0.0.0) zu suchen.
+
+## v2.0.0.0, veröffentlicht am 29.8.2014
+
+-   Mit dieser Version kann der HDInsight-Emulator dieselben Hadoop-Projekte als Ziel verwenden, die momentan im Dienst in der Version 3.1 live sind.
+
+-   Wie schon die Vorabveröffentlichungen wurde dieses Produkt für Entwicklungsszenarien erstellt und unterstützt dementsprechend nur Umgebungen mit einem Knoten.
+
+### Neuerungen
+
+-   [Aktualisierte Versionen der Hadoop-Komponenten][Aktualisierte Versionen der Hadoop-Komponenten] für Version 3.1 des Dienstes. Dazu gehören auch Hive 0.13 und die Tez-Unterstützung.
 
 ## V1.0.0.0, veröffentlicht am 28.10.2013
 
@@ -63,7 +73,7 @@
 
 -   Verbindung mit mehreren Clustern sowohl in lokalen Installationen als auch in Remote-Anwendungen über den Azure HDInsight-Dienst.
 
--   Weitere Informationen zum HDInsight-Dienst finden Sie unter [http://azure.microsoft.com/de-de/documentation/services/hdinsight/](http://azure.microsoft.com/de-de/documentation/services/hdinsight/).
+-   Weitere Informationen zum HDInsight-Dienst finden Sie unter [][]<http://azure.microsoft.com/de-de/documentation/services/hdinsight/></a>.
 
 -   Konfigurieren von WASB in einem lokalen Cluster
 
@@ -245,6 +255,7 @@ Portnummern
 
 -   [Erste Schritte mit dem HDInsight-Emulator][Erste Schritte mit dem HDInsight-Emulator]
 
- 
+  [Aktualisierte Versionen der Hadoop-Komponenten]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-component-versioning/
+  []: http://azure.microsoft.com/de-de/documentation/services/hdinsight/
   [//{container}@{account}/{path]: mailto://{container}@{account}/{path
   [Erste Schritte mit dem HDInsight-Emulator]: ../hdinsight-get-started-emulator/

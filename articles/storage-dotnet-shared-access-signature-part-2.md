@@ -1,4 +1,4 @@
-<properties linkid="manage-services-storage-net-shared-access-signature-part-2" urlDisplayName="" pageTitle="Create and use a SAS with the Blob Service | Microsoft Azure" metaKeywords="Azure blob, shared access signatures, stored access policy" description="Explore generating and using shared access signatures with the Blob service" metaCanonical="" services="storage" documentationCenter="" title="Part 2: Create and Use a SAS with the Blob Service" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties urlDisplayName="" pageTitle="Erstellen und Verwenden einer SAS mit dem Blob-Dienst | Microsoft Azure" metaKeywords="Azure blob, shared access signatures, stored access policy" description="Erfahren Sie, wie Sie Shared Access Signatures erstellen und dann mit dem Blob-Dienst verwenden." metaCanonical="" services="storage" documentationCenter="" title="Teil&nbsp;2: Erstellen und Verwenden einer SAS mit dem Blob-Dienst" solutions="" authors="tamram" manager="adinah" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -527,3 +527,5 @@ Führen Sie die Konsolenanwendung aus, und beobachten Sie die Ausgabe, um heraus
   [sas-console-output-1]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-1.PNG
   [sas-console-output-2]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-2.PNG
   [Verwalten des Zugriffs auf Azure-Speicherressourcen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee393343.aspx
+  [Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee395415.aspx
+  [Introducing Table and Queue SAS (Einführung in Tabellen- und Warteschlangen-SAS; in englischer Sprache)]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx

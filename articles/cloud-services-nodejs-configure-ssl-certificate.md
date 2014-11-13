@@ -1,6 +1,6 @@
-<properties linkid="dev-nodejs-enablessl" urlDisplayName="Enable SSL" pageTitle="Configure SSL for a cloud service (Node.js) - Azure" metaKeywords="Node.js Azure SSL, Node.js Azure HTTPS" description="Learn how to specify an HTTPS endpoint for a Node.js web role and how to upload an SSL certificate to secure your application." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Configuring SSL for a Node.js Application in an Azure Web Role" authors="larryfr" solutions="" manager="" editor="" />
+<properties urlDisplayName="Enable SSL" pageTitle="Konfigurieren von SSL f&uuml;r einen Cloud-Dienst (Node.js) &ndash; Azure" metaKeywords="Node.js Azure SSL, Node.js Azure HTTPS" description="Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt f&uuml;r eine Node.js-Webrolle angeben und ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen k&ouml;nnen." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Konfigurieren von SSL f&uuml;r eine Node.js-Anwendung in einer Azure-Webrolle" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="wpickett" />
 
 # Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Webrolle
 
@@ -9,8 +9,11 @@ Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie
 einen HTTPS-Endpunkt für eine Node.js-Anwendung angeben, die als Azure-Cloud-Dienst in einer Webrolle
 gehostet ist, und wie Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen.
 
-<div class="dev-callout">Hinweis
-<p>Die Schritte in diesem Beitrag gelten nur f&uuml;r Node-Anwendungen, die als Azure-Cloud-Dienst in einer Webrolle gehostet werden. Weitere Informationen zu Websites finden Sie unter <a href="../web-sites-configure-ssl-certificate/">Configuring an SSL certificate for an Azure website</a> (Konfigurieren eines SSL-Zertifikats f&uuml;r eine Azure-Website, in englischer Sprache).</p>
+<div class="dev-callout">
+
+Hinweis
+Die Schritte in diesem Beitrag gelten nur für Node-Anwendungen, die als Azure-Cloud-Dienst in einer Webrolle gehostet werden. Weitere Informationen zu Websites finden Sie unter [Configuring an SSL certificate for an Azure website][Configuring an SSL certificate for an Azure website] (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
+
 </div>
 
 Diese Aufgabe umfasst die folgenden Schritte:
@@ -48,9 +51,11 @@ einen einfachen "Hello World"-Dienst in Node.js mit der Azure PowerShell erstell
     ![][2]
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Falls Sie noch nie Ver&ouml;ffentlichungseinstellungen f&uuml;r Ihr Azure-Abonnement importiert haben, erhalten Sie beim Ver&ouml;ffentlichen eine Fehlermeldung. Informationen zum Download und Import der Ver&ouml;ffentlichungseinstellungen f&uuml;r Ihr Abonnement finden Sie unter <a href="https://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings">Verwenden von Azure PowerShell f&uuml;r Node.js</a></p>
-</div>
+
+    **Hinweis**
+    Falls Sie noch nie Veröffentlichungseinstellungen für Ihr Azure-Abonnement importiert haben, erhalten Sie beim Veröffentlichen eine Fehlermeldung. Informationen zum Download und Import der Veröffentlichungseinstellungen für Ihr Abonnement finden Sie unter [Verwenden von Azure PowerShell für Node.js][Verwenden von Azure PowerShell für Node.js]
+
+    </div>
 
 Der vom **Publish-AzureServiceProject**-Cmdlet zurückgegebene Wert für **Created Website URL** enthält den vollqualifizierten Domänennamen für Ihre gehostete Anwendung. Sie müssen ein SSL-Zertifikat für diesen vollqualifizierten Domänennamen beziehen und in Azure bereitstellen.
 
@@ -78,8 +83,10 @@ SSL-Zertifikate in Azure erfüllen:
 Sobald Sie über ein Zertifikat verfügen, installieren Sie es in den Zertifikatspeicher auf Ihrem Entwicklungscomputer. Dieses Zertifikat wird abgerufen und im Rahmen Ihres Anwendungsbereitstellungspakets nach Azure hochgeladen. Das Paket basiert auf den von Ihnen in einem nachfolgenden Schritt vorgenommenen Konfigurationsänderungen.
 
 <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Die in diesem Abschnitt angewendeten Schritte basieren auf der Windows 8-Version des Zertifikatimport-Assistenten. Wenn Sie eine fr&uuml;here Version von Windows verwenden, stimmen die hier aufgelisteten Schritte unter Umst&auml;nden nicht mit der im Assistenten angezeigten Reihenfolge &uuml;berein. Sollte dies der Fall sein, lesen Sie diesen Abschnitt vor dem Verwenden des Zertifikatimport-Assistenten vollst&auml;ndig durch, sodass Sie sich dar&uuml;ber im Klaren sind, welche globalen Aktionen durchgef&uuml;hrt werden m&uuml;ssen.</p>
+
+**Hinweis**
+Die in diesem Abschnitt angewendeten Schritte basieren auf der Windows 8-Version des Zertifikatimport-Assistenten. Wenn Sie eine frühere Version von Windows verwenden, stimmen die hier aufgelisteten Schritte unter Umständen nicht mit der im Assistenten angezeigten Reihenfolge überein. Sollte dies der Fall sein, lesen Sie diesen Abschnitt vor dem Verwenden des Zertifikatimport-Assistenten vollständig durch, sodass Sie sich darüber im Klaren sind, welche globalen Aktionen durchgeführt werden müssen.
+
 </div>
 
 Zum Importieren des SSL-Zertifikats führen Sie die folgenden Schritte durch:
@@ -172,9 +179,11 @@ eine HTTPS-Verbindung herstellen.
     ![Website-URL][Website-URL]
 
     <div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Falls die im Portal angezeigte URL kein HTTPS verwendet, m&uuml;ssen Sie die URL im Browser manuell von HTTP zu HTTPS &auml;ndern.</p>
-</div>
+
+    **Hinweis**
+    Falls die im Portal angezeigte URL kein HTTPS verwendet, müssen Sie die URL im Browser manuell von HTTP zu HTTPS ändern.
+
+    </div>
 
 3.  Ein neues Browserfenster wird geöffnet und zeigt Ihre Website an.
 
@@ -192,16 +201,17 @@ eine HTTPS-Verbindung herstellen.
 
 [Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt][Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt]
 
+  [Configuring an SSL certificate for an Azure website]: ../web-sites-configure-ssl-certificate/
   [Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud]: #step1
   [Schritt 2: Beziehen eines SSL-Zertifikats]: #step2
   [Schritt 3: Importieren des SSL-Zertifikats]: #step3
   [Schritt 4: Ändern der Definitions- und Konfigurationsdateien für den Dienst]: #step4
   [Schritt 5: Verbinden mit der Rolleninstanz über HTTPS]: #step5
   [Azure PowerShell-Symbol]: ./media/cloud-services-nodejs-configure-ssl-certificate/azure-powershell-start.png
-  [install-dev-tools]: ../includes/install-dev-tools.md
   [0]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-01.png
   [1]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-02.png
   [2]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-03.png
+  [Verwenden von Azure PowerShell für Node.js]: https://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings
   [Zertifikat-Assistent]: ./media/cloud-services-nodejs-configure-ssl-certificate/certificateimport.png
   [Schutz durch privaten Schlüssel]: ./media/cloud-services-nodejs-configure-ssl-certificate/exportable.png
   [Verknüpfen eines Zertifikats mit einem Dienst]: http://msdn.microsoft.com/de-de/library/windowsazure/gg465718.aspx

@@ -1,15 +1,18 @@
 # Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst
 
-Wenn Sie eine Anwendung in Azure erstellen, bietet Azure eine Unterdomäne in der cloudapp.net-Domäne, damit Benutzer über eine URL wie http://\<[myapp][]\>.cloudapp.net auf Ihre Anwendung zugreifen können. Sie können Ihre Anwendung jedoch auch unter Ihrem eigenen Domänennamen zur Verfügung stellen, beispielsweise contoso.com.
+> [WACOM.NOTE]
+> Schneller ans Ziel kommen – mit der neuen [Komplettanleitung][Komplettanleitung] für Azure. Mit dieser Anleitung wird das Zuordnen eines benutzerdefinierten Domänennamens zu Azure-Clouddiensten und Azure-Websites sowie das Absichern der Kommunikation mittels SSL zum Kinderspiel.
+
+Wenn Sie eine Anwendung in Azure erstellen, bietet Azure eine Unterdomäne in der cloudapp.net-Domäne, damit Benutzer über eine URL wie http://\<[myapp][myapp]\>.cloudapp.net auf Ihre Anwendung zugreifen können. Sie können Ihre Anwendung jedoch auch unter Ihrem eigenen Domänennamen zur Verfügung stellen, beispielsweise contoso.com.
 
 > [WACOM.NOTE]
-> Die Vorgehensweisen in dieser Aufgabe gelten für Azure-Clouddienste. Informationen zu Speicherkonten finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für ein Azure-Speicherkonto][]. Informationen zu Websites finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][].
+> Die Vorgehensweisen in dieser Aufgabe gelten für Azure-Clouddienste. Informationen zu Speicherkonten finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für ein Azure-Speicherkonto][Konfigurieren eines benutzerdefinierten Domänennamens für ein Azure-Speicherkonto]. Informationen zu Websites finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website].
 
 Themen in diesem Artikel:
 
--   [Informationen zu CNAME- und A-Datensätzen][]
--   [Hinzufügen eines CNAME-Datensatzes zu Ihrer benutzerdefinierten Domäne][]
--   [Hinzufügen eines A-Datensatzes zu Ihrer benutzerdefinierten Domäne][]
+-   [Informationen zu CNAME- und A-Datensätzen][Informationen zu CNAME- und A-Datensätzen]
+-   [Hinzufügen eines CNAME-Datensatzes zu Ihrer benutzerdefinierten Domäne][Hinzufügen eines CNAME-Datensatzes zu Ihrer benutzerdefinierten Domäne]
+-   [Hinzufügen eines A-Datensatzes für Ihre benutzerdefinierte Domäne][Hinzufügen eines A-Datensatzes für Ihre benutzerdefinierte Domäne]
 
 ## <a name="access-app"></a>Informationen zu CNAME- und A-Datensätzen
 
@@ -20,7 +23,7 @@ Mit CNAME- (oder Aliasdatensätze) und A-Datensätzen können Sie einen Domänen
 Ein CNAME-Datensatz weist eine *spezifische* Domäne, beispielsweise **contoso.com** oder **www.contoso.com**, zu einem kanonischen Domänennamen zu. In diesem Fall ist der kanonische Domänenname der Domänenname **\<myapp\>.cloudapp.net** Ihrer gehosteten Azure-Anwendung. Sobald der CNAME erstellt ist, erstellt er einen Alias für die **\<myapp\>.cloudapp.net**. Der CNAME-Datensatz wird automatisch an die IP-Adresse Ihres Service **\<myapp\>.cloudapp.net** übertragen. Wenn sich die IP-Adresse Ihres Clouddienstes ändert, müssen Sie nichts weiter tun.
 
 > [WACOM.NOTE]
-> Bei einigen Domänenregistrierungen können Sie Unterdomänen nur mit einem CNAME-Datensatz wie www.contoso.com zuweisen und nicht mit einem Stammnamen wie contoso.com. Weitere Informationen zu CNAME-Einträgen finden Sie in der von Ihrer Domänenregistrierungsstelle zur Verfügung gestellten Dokumentation, [im Wikipedia-Artikel "CNAME Resource Record"][] oder im Dokument [IETF Domain Names - Implementation and Specification][im Wikipedia-Artikel "CNAME Resource Record"] (Domänennamen – Implementierung und Spezifizierung, in englischer Sprache).
+> Bei einigen Domänenregistrierungen können Sie Unterdomänen nur mit einem CNAME-Datensatz wie www.contoso.com zuweisen und nicht mit einem Stammnamen wie contoso.com. Weitere Informationen zu CNAME-Einträgen finden Sie in der von Ihrer Domänenregistrierungsstelle zur Verfügung gestellten Dokumentation, [im Wikipedia-Artikel "CNAME Resource Record"][im Wikipedia-Artikel "CNAME Resource Record"] oder im Dokument [IETF Domain Names - Implementation and Specification][im Wikipedia-Artikel "CNAME Resource Record"] (Domänennamen – Implementierung und Spezifizierung, in englischer Sprache).
 
 ### A-Eintrag
 
@@ -29,7 +32,7 @@ Ein A-Eintrag weist eine Domäne wie **contoso.com**, **www.contoso.com** *oder 
 > [WACOM.NOTE]
 > Da ein A-Datensatz einer statischen IP-Adresse zugewiesen ist, kann er nicht automatisch Änderungen an die IP-Adresse Ihres Clouddiensts übertragen. Die von Ihrem Clouddienst verwendete IP-Adresse wird zum ersten Mal zugewiesen, wenn Sie sie an einem leeren Steckplatz bereitstellen (entweder Produktion oder Staging). Wenn Sie die Bereitstellung für den Steckplatz löschen, wird die IP-Adresse von Azure freigegeben und zukünftigen Bereitstellungen an dem Steckplatz wird eine neue IP-Adresse zugewiesen.
 >
-> Die IP-Adresse eines bestimmten Bereitstellungs-Steckplatzes (Produktion oder Staging) wird beim Austausch von Staging- und Produktionsbereitstellung oder beim Durchführen eines direkten Upgrades einer vorhandenen Bereitstellung beibehalten. Weitere Informationen zum Durchführen dieser Aktionen finden Sie unter [Verwalten von Clouddiensten][].
+> Die IP-Adresse eines bestimmten Bereitstellungs-Steckplatzes (Produktion oder Staging) wird beim Austausch von Staging- und Produktionsbereitstellung oder beim Durchführen eines direkten Upgrades einer vorhandenen Bereitstellung beibehalten. Weitere Informationen zum Durchführen dieser Aktionen finden Sie unter [Verwalten von Clouddiensten][Verwalten von Clouddiensten].
 
 ## <a name="add-cname"></a>Hinzufügen eines CNAME-Datensatzes zu Ihrer benutzerdefinierten Domäne
 
@@ -37,11 +40,11 @@ Sie müssen einen neuen Eintrag zu der DNS-Tabelle Ihrer benutzerdefinierten Dom
 
 1.  Verwenden Sie eine dieser Methoden, um den **.cloudapp.net**-Domänennamen zu ermitteln, der Ihrem Clouddienst zugewiesen ist.
 
--   Melden Sie sich beim [Azure Verwaltungsportal][] an, wählen Sie Ihren Clouddienst aus, wählen Sie **Dashboard** aus, und navigieren Sie dann zum Eintrag **Site URL** in der **Schnelleinsicht**.
+-   Melden Sie sich beim [Azure Verwaltungsportal][Azure Verwaltungsportal] an, wählen Sie Ihren Clouddienst aus, wählen Sie **Dashboard** aus, und navigieren Sie dann zum Eintrag **Site URL** in der **Schnelleinsicht**.
 
           ![quick glance section showing the site URL][csurl]
 
--   Installieren und konfigurieren Sie [Azure PowerShell][], und verwenden Sie dann den folgenden Befehl:
+-   Installieren und konfigurieren Sie [Azure PowerShell][Azure PowerShell], und verwenden Sie dann den folgenden Befehl:
 
     Get-AzureDeployment -ServiceName yourservicename | Select Url
 
@@ -51,7 +54,7 @@ Speichern Sie die im Domänennamen verwendete URL, die von der jeweiligen Method
 
 2.  Navigieren Sie nun zu dem Bereich, in dem Sie CNAMEs auswählen oder eingeben können. Möglicherweise müssen Sie den Datensatztyp in einem Dropdownmenü auswählen oder die Seite für erweiterte Einstellungen aufrufen. Suchen Sie nach den Wörtern **CNAME**, **Alias** oder **Unterdomänen**.
 
-3.  Sie müssen außerdem den Domänen- oder Unterdomänenalias für den CNAME angeben, beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Alias für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "[\*\*@\*\*][]"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
+3.  Sie müssen außerdem den Domänen- oder Unterdomänenalias für den CNAME angeben, beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Alias für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "[\*\*@\*\*][\*\*@\*\*]"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
 
 4.  Dann müssen Sie einen kanonischen Hostnamen angeben. In diesem Fall ist das die Domäne **cloudapp.net** Ihrer Anwendung.
 
@@ -74,11 +77,11 @@ Sie müssen zunächst die virtuelle IP-Adresse Ihres Clouddiensts ermitteln, um 
 
 1.  Verwenden Sie eine der folgenden Methoden, um die IP-Adresse Ihres Clouddiensts zu ermitteln.
 
--   Melden Sie sich beim [Azure Verwaltungsportal][] an, wählen Sie Ihren Clouddienst aus, wählen Sie **Dashboard** aus, und navigieren Sie dann zur **öffentlichen virtuellen IP (VIP)** in der **Schnelleinsicht**.
+-   Melden Sie sich beim [Azure Verwaltungsportal][Azure Verwaltungsportal] an, wählen Sie Ihren Clouddienst aus, wählen Sie **Dashboard** aus, und navigieren Sie dann zur **öffentlichen virtuellen IP (VIP)** in der **Schnelleinsicht**.
 
          ![quick glance section showing the VIP][vip]
 
--   Installieren und konfigurieren Sie [Azure PowerShell][], und verwenden Sie dann den folgenden Befehl:
+-   Installieren und konfigurieren Sie [Azure PowerShell][Azure PowerShell], und verwenden Sie dann den folgenden Befehl:
 
     get-azurevm -servicename yourservicename | get-azureendpoint -VM {$\_.VM} | select Vip
 
@@ -92,7 +95,7 @@ Speichern Sie die IP-Adresse, da Sie sie zum Erstellen eines A-Datensatzes benö
 
 3.  Wählen Sie die Domäne oder Unterdomäne aus, die diesen A-Datensatz verwenden wird, oder geben Sie diese ein. Wählen Sie beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Platzhaltereintrag für alle Unterdomänen erstellen möchten, geben Sie "\_\_\*\_\_" ein. Dieser Eintrag deckt alle Unterdomänen ab wie **mail.customdomain.com**, **login.customdomain.com** und **www.customdomain.com**.
 
-Wenn Sie einen A-Datensatz für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "[\*\*@\*\*][]"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
+Wenn Sie einen A-Datensatz für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "[\*\*@\*\*][\*\*@\*\*]"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
 
 1.  Geben Sie die IP-Adresse Ihres Clouddiensts in das angegebene Feld ein. So wird der im A-Datensatz verwendete Domäneneintrag der IP-Adresse Ihrer Clouddienstbereitstellung zugewiesen.
 
@@ -106,18 +109,19 @@ Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. W
 
 ## Nächste Schritte
 
--   [Verwalten von Clouddiensten][]
--   [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne][]
+-   [Verwalten von Cloud-Diensten][Verwalten von Clouddiensten]
+-   [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne][Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne]
 
+  [Komplettanleitung]: http://support.microsoft.com/kb/2990804
   [myapp]: http://<*myapp
   [Konfigurieren eines benutzerdefinierten Domänennamens für ein Azure-Speicherkonto]: ../storage-custom-domain-name/
   [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website]: ../web-sites-custom-domain-name/
   [Informationen zu CNAME- und A-Datensätzen]: #access-app
   [Hinzufügen eines CNAME-Datensatzes zu Ihrer benutzerdefinierten Domäne]: #add-cname
-  [Hinzufügen eines A-Datensatzes zu Ihrer benutzerdefinierten Domäne]: #add-aname
+  [Hinzufügen eines A-Datensatzes für Ihre benutzerdefinierte Domäne]: #add-aname
   [im Wikipedia-Artikel "CNAME Resource Record"]: http://tools.ietf.org/html/rfc1035
   [Verwalten von Clouddiensten]: ../cloud-services-how-to-manage/
   [Azure Verwaltungsportal]: https://manage.windowsazure.com
   [Azure PowerShell]: ../install-configure-powershell/
   [\*\*@\*\*]: mailto:'**@**
-  [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne]: http://msdn.microsoft.com/en-us/library/windowsazure/gg680307.aspx
+  [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne]: http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx

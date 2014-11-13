@@ -1,6 +1,6 @@
-<properties linkid="dev-net-how-to-use-blog-storage-service-java" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Java) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Java" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Java." metaCanonical="" services="storage" documentationCenter="Java" title="How to use Blob Storage from Java" authors="" solutions="" manager="" editor="" />
+<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Java) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Java" description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und L&ouml;schen von Blob-Inhalten verwenden. Die Beispiele wurden in Java geschrieben." metaCanonical="" services="storage" documentationCenter="Java" title="Verwenden von Blob-Speicher aus Java" authors="tamram" solutions="" manager="adinah" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
 # Verwenden von Blob-Speicher aus Java
 
@@ -262,6 +262,7 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben,
   [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
   [Nächste Schritte]: #NextSteps
   [Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
+  [Was ist Blob-Speicher?]: #what-is
   [Konzepte]: #Concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer Java-Anwendung]: #CreateApplication
@@ -273,8 +274,6 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben,
   [Gewusst wie: Herunterladen eines Blobs]: #DownloadBlob
   [Gewusst wie: Löschen eines Blobs]: #DeleteBlob
   [Gewusst wie: Löschen eines Blob-Containers]: #DeleteContainer
-  [howto-blob-storage]: ../includes/howto-blob-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
   [Azure Storage-Client-SDK-Referenz]: http://dl.windowsazure.com/storage/javadoc/
   [Azure Storage-REST-API]: http://msdn.microsoft.com/de-de/library/azure/gg433040.aspx
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
