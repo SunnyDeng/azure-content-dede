@@ -1,6 +1,6 @@
 <properties linkid="websites-business-application" urlDisplayName="Create a Line-of-Business Application on Azure Websites" pageTitle="Create a Line-of-Business Application on Azure Websites" metaKeywords="Web Sites" description="This guide provides a technical overview of how to use Azure Websites to create intranet, line-of-business applications. This includes authentication strategies, service bus relay, and monitoring." umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" title="Create a Line-of-Business Application on Azure Websites" authors="jroth" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jroth"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jroth" />
 
 # Erstellen einer Branchenanwendung auf Azure-Websites
 
@@ -132,22 +132,33 @@ Sie können die nicht aufbereiteten Protokolle über FTP oder Speicherdienstprog
 
 Mit Azure können Sie sichere Intranetanwendungen in der Cloud hosten. Azure Active Directory bietet Ihnen die Möglichkeit, Benutzer zu authentifizieren, damit nur Mitglieder Ihres Unternehmens auf die Anwendungen zugreifen können. Der Service Bus-Relay-Dienst ermöglicht Webanwendungen die Kommunikation mit lokalen Diensten und Daten. Dank dieses hybriden Anwendungsansatzes lässt sich eine Geschäftsanwendung einfacher in der Cloud veröffentlichen, die zugehörigen Daten und Dienste müssen nicht ebenfalls migriert werden. Nach ihrer Bereitstellung profitieren die Geschäftsanwendungen von den Standardfunktionen für Skalierung und Überwachung von Azure-Websites. Weitere Informationen finden Sie in den folgenden Fachartikeln:
 
-| Bereich                         | Ressourcen                                                                                                                                |
-|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| **Planen**                      | - [Azure-Websites, Cloud-Dienste und virtuelle Computer: Vergleich][3]                                                                    |
-| **Erstellen und Bereitstellen** | - [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website][Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website]                                                                     
-                                   - [Bereitstellen einer sicheren ASP.NET MVC für Azure][Bereitstellen einer sicheren ASP.NET MVC für Azure]                                                                                   |
-| **Authentifizierung**           | - [Übersicht über die Azure-Identitätsoptionen][Übersicht über die Azure-Identitätsoptionen]                                                                                         
-                                   - [Azure Active Directory-Dienst][4]                                                                                                       
-                                   - [Was ist ein Azure AD-Mandant?][Was ist ein Windows Azure AD-Mandant?]                                                                   
-                                   - [Hinzufügen von einmaligem Anmelden zu einer Webanwendung mithilfe von Azure AD][Adding Sign-On to Your Web Application Using Azure AD]  
-                                   - [Lernprogramm zur Azure-Authentifizierung][Windows Azure-Authentifizierung]                                                              |
-| **Service Bus Relay**           | - [Verwenden des Service Bus Relay-Diensts][Verwenden des Service Bus Relay-Diensts]                                                                                             
-                                   - [Lernprogramm zu Service Bus Relay-Messaging][Lernprogramm zu Service Bus-Relaymessaging]                                                |
-| **Überwachen**                  | - [Überwachen von Websites][Überwachen von Websites]                                                                                                             
-                                   - [Gewusst wie: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure][Gewusst wie: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure]                                          
-                                   - [Vorgehensweise: Diagnosekonfiguration und Herunterladen von Protokollen für eine Website][5]                                            
-                                   - [Problembehandlung von Azure-Websites in Visual Studio][6]                                                                               |
+<table cellspacing="0" border="1">
+<tr>
+   <th align="left" valign="top">Bereich</th>
+   <th align="left" valign="top">Ressourcen</th>
+</tr>
+<tr>
+   <td valign="middle"><strong>Planen</strong></td>
+   <td valign="top">- <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/choose-web-app-service">Azure-Websites, Cloud-Dienste und virtuelle Computer: Vergleich</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>Erstellen und Bereitstellen</strong></td>
+   <td valign="top">- <a href ="http://www.windowsazure.com/de-de/develop/net/tutorials/get-started/">Bereitstellen einer ASP.NET-Webanwendung f&uuml;r eine Azure-Website</a><br/>- <a href="http://www.windowsazure.com/de-de/develop/net/tutorials/web-site-with-sql-database/">Bereitstellen einer sicheren ASP.NET MVC f&uuml;r Azure</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>Authentifizierung</strong></td>
+   <td valign="top">- <a href ="http://www.windowsazure.com/de-de/manage/windows/fundamentals/identity/">&Uuml;bersicht &uuml;ber die Azure-Identit&auml;tsoptionen</a><br/>- <a href="http://www.windowsazure.com/de-de/documentation/services/active-directory/">Azure Active Directory-Dienst</a><br/>- <a href="http://technet.microsoft.com/de-de/library/jj573650.aspx">Was ist ein Azure AD-Mandant?</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn151790.aspx">Hinzuf&uuml;gen von einmaligem Anmelden zu einer Webanwendung mithilfe von Azure AD</a><br/>- <a href="http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication">Lernprogramm zur Azure-Authentifizierung</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>Service Bus Relay</strong></td>
+   <td valign="top">- <a href="http://www.windowsazure.com/de-de/develop/net/how-to-guides/service-bus-relay/">Verwenden des Service Bus Relay-Diensts</a><br/>- <a href="http://msdn.microsoft.com/de-de/library/windowsazure/ee706736.aspx">Lernprogramm zu Service Bus Relay-Messaging</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>&Uuml;berwachen</strong></td>
+   <td valign="top">- <a href ="http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/">&Uuml;berwachen von Websites</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">Gewusst wie: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure</a><br/>- <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics">Vorgehensweise: Diagnosekonfiguration und Herunterladen von Protokollen f&uuml;r eine Website</a><br/>- <a href="http://www.windowsazure.com/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/">Problembehandlung von Azure-Websites in Visual Studio</a></td>
+</tr>
+</table>
+
 
   [Azure-Websites]: /de-de/documentation/services/web-sites/
   [Azure-Clouddienste]: /de-de/documentation/services/cloud-services/
@@ -166,7 +177,6 @@ Mit Azure können Sie sichere Intranetanwendungen in der Cloud hosten. Azure Act
   [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx
   [Azure-Zugriffssteuerungsdienst]: http://msdn.microsoft.com/library/windowsazure/hh147631.aspx
   [Verwenden von Azure Active Directory Access Control]: /de-de/manage/windows/fundamentals/identity/#ac
-  [Was ist ein Windows Azure AD-Mandant?]: http://technet.microsoft.com/de-de/library/jj573650.aspx
   [BusinessApplicationsAzureAD]: ./media/web-sites-business-application-solution-overview/BusinessApplications_AzureAD.png
   [BusinessApplicationsADUsers]: ./media/web-sites-business-application-solution-overview/BusinessApplications_AD_Users.png
   [Adding Sign-On to Your Web Application Using Azure AD]: http://msdn.microsoft.com/library/windowsazure/dn151790.aspx
@@ -197,13 +207,3 @@ Mit Azure können Sie sichere Intranetanwendungen in der Cloud hosten. Azure Act
   [BusinessApplicationsDiagRetention]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Diag_Retention.png
   [Vorgehensweise: Diagnosekonfiguration und Herunterladen von Protokollen für eine Website]: /de-de/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
   [Problembehandlung von Azure-Websites in Visual Studio]: /de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
-  [3]: http://www.windowsazure.com/de-de/manage/services/web-sites/choose-web-app-service
-  [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website]: http://www.windowsazure.com/de-de/develop/net/tutorials/get-started/
-  [Bereitstellen einer sicheren ASP.NET MVC für Azure]: http://www.windowsazure.com/de-de/develop/net/tutorials/web-site-with-sql-database/
-  [Übersicht über die Azure-Identitätsoptionen]: http://www.windowsazure.com/de-de/manage/windows/fundamentals/identity/
-  [4]: http://www.windowsazure.com/de-de/documentation/services/active-directory/
-  [Verwenden des Service Bus Relay-Diensts]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/service-bus-relay/
-  [Überwachen von Websites]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/
-  [Gewusst wie: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
-  [5]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
-  [6]: http://www.windowsazure.com/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/

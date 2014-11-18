@@ -1,6 +1,6 @@
 <properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="How to manage websites - Microsoft Azure service management" metaKeywords="Azure portal website management" description="A reference for the Portal website management pages in Microsoft Azure. Details are provided for each website management page." metaCanonical="" services="web-sites" documentationCenter="" title="How to Manage Websites" authors="cephalin"  solutions="" writer="mwasson" manager="wpickett" editor=""  />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/18/2014" ms.author="mwasson"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/18/2014" ms.author="mwasson" />
 
 # <a name="howtomanage"></a>Verwalten von Websites über das Azure-Verwaltungsportal
 
@@ -189,7 +189,9 @@ Suchen Sie das Profil mit `publishMethod="FTP"`. Der Benutzername wird unter `us
 
 Um das Kennwort zurückzusetzen, klicken Sie auf **Anmeldeinformationen des Veröffentlichungsprofils zurücksetzen**. Um die neuen Anmeldeinformationen abzurufen, laden Sie das Veröffentlichungsprofil erneut herunter. Die Anmeldeinformationen des Veröffentlichungsprofils gehören zur Website. Jede Website verfügt über ein eigenes Veröffentlichungsprofil.
 
-<!-- LINKS --> <!-- Anchors. -->
+<!-- LINKS --> 
+
+<!-- Anchors. -->
 
   [Installation von WebMatrix]: http://go.microsoft.com/fwlink/?LinkID=226244
   [Microsoft Azure SDK]: http://go.microsoft.com/fwlink/?LinkId=246928
@@ -198,5 +200,5 @@ Um das Kennwort zurückzusetzen, klicken Sie auf **Anmeldeinformationen des Ver�
   [Skalieren von Websites]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-scale-websites
   [Verwenden der WebJobs-Funktion auf Microsoft Azure-Websites]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-create-web-jobs/
   [Konfigurieren von Websites]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-configure-websites
-  [Sicherungen von Microsoft Azure-Websites]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-backup/
+  [Sicherungen von Microsoft Azure-Websites]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-backup/####
   [Wiederherstellen einer Microsoft Azure-Website]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-restore/

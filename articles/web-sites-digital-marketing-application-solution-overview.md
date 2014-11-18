@@ -1,6 +1,6 @@
 <properties linkid="websites-digital-marketing" urlDisplayName="Resources" pageTitle="Create a Digital Marketing Campaign on Azure Websites" metaKeywords="" description="This guide provides a technical overview of how to use Azure Websites to create digital marketing campaigns. This includes deployment, social media integration, scaling strategies, and monitoring." metaCanonical="" services="" documentationCenter="" title="Create a Digital Marketing Campaign on Azure Websites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jroth"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jroth" />
 
 # Erstellen einer digitalen Marketingkampagne mithilfe von Azure-Websites
 
@@ -116,19 +116,41 @@ Schließlich können für Websites im Modus "Standard" die Endpunktüberwachung 
 
 Azure-Websites eignen sich gut für wiederverwendbare Webinhalte, die für einzelne Marketingkampagnen angepasst werden. Sie unterstützen zahlreiche gängige Sprachen, Frameworks und Quellcodeverwaltungssysteme, sodass das Migrieren zu diesen Ressourcen und Workflows in der Cloud einfacher ist. Mithilfe der ASP.NET Facebook-Anwendungsvorlage können Facebook-Anwendungen einfacher erstellt werden. Sie können allerdings auch eine beliebige Integration der sozialen Medien von Drittanbietern verwenden, wenn diese Webschnittstellen unterstützt. Über Azure Media Services und andere dazugehörige Dienste in Azure sind zusätzliche Tools verfügbar, sodass eine sorgfältig konzipierte Kampagnen-Website erstellt werden kann. Die zahlreichen Optionen für die manuelle und automatische Skalierung sind bei der Bewältigung der schwer einzuschätzenden Benutzeranforderungen hilfreich. Weitere Informationen finden Sie in den folgenden Fachartikeln:
 
-| Bereich                | Ressourcen                                                                                                                                                                                          |
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Planen**             | - [Azure-Websites, Cloud-Dienste und virtuelle Computer: Vergleich][1]                                                                                                                              |
-| **Erstellen**          | - [Erstellen und Bereitstellen einer Website][Erstellen und Bereitstellen einer Website]                                                                                                                                                     |
-| **Bereitstellen**      | - [Bereitstellen einer Azure-Website][Bereitstellen einer Azure-Website]                                                                                                                                                             
-                          - [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites][2]                                                                                                                                |
-| **Soziale Medien**     | - [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank][Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank]                                                                                          
-                          - [Erstellen einer Facebook-Anwendung mithilfe von ASP.NET MVC Facebook-Vorlagen][Creating a Facebook app using ASP.NET MVC Facebook Templates and hosting them for free on Azure Websites]          
-                          - [Facebook-Anwendungsvorlage und -Bibliothek für ASP.NET MVC][Die neue Facebook-Anwendungsvorlage und -Bibliothek für ASP.NET MVC]                                                                  |
-| **Skalieren**          | - [Skalieren von Websites][3]                                                                                                                                                                       |
-| **Rich-Media-Inhalte** | - [Azure Media Services – Konzepte][Azure Media Services – Konzepte]                                                                                                                                                               |
-| **Überwachen**         | - [Überwachen von Websites][4]                                                                                                                                                                      
-                          - [Gewusst wie: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure][Vorgehensweise: Empfangen von Warnungs-Benachrichtigungen und Verwaltung von Alarmregeln in Azure].  |
+<table cellspacing="0" border="1">
+<tr>
+   <th align="left" valign="top">Bereich</th>
+   <th align="left" valign="top">Ressourcen</th>
+</tr>
+<tr>
+   <td valign="middle"><strong>Planen</strong></td>
+   <td valign="top">- <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/choose-web-app-service">Azure-Websites, Cloud-Dienste und virtuelle Computer: Vergleich</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>Erstellen</strong></td>
+   <td valign="top">- <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-create-websites/">Erstellen und Bereitstellen einer Website</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>Bereitstellen</strong></td>
+   <td valign="top">- <a href="http://azure.microsoft.com/de-de/documentation/articles/web-sites-deploy/">Bereitstellen einer Azure-Website</a><br/>- <a href="http://www.windowsazure.com/de-de/develop/net/common-tasks/publishing-with-git/">Ver&ouml;ffentlichen aus der Quellcodeverwaltung auf Azure-Websites</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>Soziale Medien</strong></td>
+   <td valign="top">- <a href="http://www.windowsazure.com/de-de/develop/net/tutorials/web-site-with-sql-database/">Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank</a><br/>- <a href="http://blogs.msdn.com/b/africaapps/archive/2013/02/20/creating-a-facebook-app-using-asp-net-mvc-facebook-templates-and-hosting-them-for-free-on-windows-azure-websites.aspx">Erstellen einer Facebook-Anwendung mithilfe von ASP.NET MVC Facebook-Vorlagen</a><br/>- <a href="http://blogs.msdn.com/b/webdev/archive/2012/12/13/the-new-facebook-application-template-and-library-for-asp.net-mvc.aspx">Facebook-Anwendungsvorlage und -Bibliothek f&uuml;r ASP.NET MVC</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>Skalieren</strong></td>
+   <td valign="top">- <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-scale-websites/">Skalieren von Websites</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>Rich-Media-Inhalte</strong></td>
+   <td valign="top">- <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dn223282.aspx">Azure Media Services &ndash; Konzepte</a></td>
+</tr>
+<tr>
+   <td valign="middle"><strong>&Uuml;berwachen</strong></td>
+   <td valign="top">- <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/">&Uuml;berwachen von Websites</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">Gewusst wie: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure</a>.</td>
+</tr>
+</table>
+
 
   [Azure-Websites]: /de-de/documentation/services/web-sites/
   [Azure Cloud Services]: /de-de/documentation/services/cloud-services/
@@ -140,7 +162,6 @@ Azure-Websites eignen sich gut für wiederverwendbare Webinhalte, die für einze
   [Integrieren mit anderen Diensten]: #integrate
   [Überwachen der Kampagne]: #monitor
   [Globale Webpräsenz]: http://www.windowsazure.com/de-de/manage/services/web-sites/global-web-presence-solution-overview/
-  [Geschäftsanwendungen]: http://www.windowsazure.com/de-de/manage/services/web-sites/business-application-solution-overview
   [diese Informationen anzusehen]: /de-de/manage/services/web-sites/global-web-presence-solution-overview/
   [DigitalMarketingDeploy1]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Deploy1.png
   [DigitalMarketingDeploy2]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Deploy2.png
@@ -160,18 +181,10 @@ Azure-Websites eignen sich gut für wiederverwendbare Webinhalte, die für einze
   [Web Sites – Preisdetails]: https://www.windowsazure.com/de-de/pricing/details/web-sites/
   [DigitalMarketingAutoScale]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_AutoScale.png
   [Skalieren von Websites]: /de-de/manage/services/web-sites/how-to-scale-websites/
-  [Skalieren eines Clouddiensts]: http://www.windowsazure.com/de-de/manage/services/cloud-services/how-to-scale-a-cloud-service/
   [Azure Media Services – Konzepte]: http://msdn.microsoft.com/de-de/library/windowsazure/dn223282.aspx
-  [Azure Cache Service (Vorschau)]: http://msdn.microsoft.com/de-de/library/windowsazure/dn386094.aspx
   [DigitalMarketingMonitor]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Monitor.png
   [Überwachen von Websites]: /de-de/manage/services/web-sites/how-to-monitor-websites/
   [DigitalMarketingUsageOverview]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_UsageOverview.png
   [Verwaltung der Anwendungsleistung mit New Relic auf Azure]: /de-de/develop/net/how-to-guides/new-relic/
   [Vorgehensweise: Empfangen von Warnungs-Benachrichtigungen und Verwaltung von Alarmregeln in Azure]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
-  [1]: http://www.windowsazure.com/de-de/manage/services/web-sites/choose-web-app-service
-  [Erstellen und Bereitstellen einer Website]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-create-websites/
-  [Bereitstellen einer Azure-Website]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-deploy/
-  [2]: http://www.windowsazure.com/de-de/develop/net/common-tasks/publishing-with-git/
-  [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank]: http://www.windowsazure.com/de-de/develop/net/tutorials/web-site-with-sql-database/
-  [3]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-scale-websites/
-  [4]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/
+  [Azure Cache Service (Vorschau)]: http://msdn.microsoft.com/de-de/library/windowsazure/dn386094.aspx
