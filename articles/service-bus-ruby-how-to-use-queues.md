@@ -126,7 +126,6 @@ Einen Vergleich zwischen den in diesem Artikel besprochenen Azure Servicebus-War
   [Senden von Nachrichten an eine Warteschlange]: #how-to-send-messages-to-a-queue
   [Empfangen von Nachrichten aus einer Warteschlange]: #how-to-receive-messages-from-a-queue
   [Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #how-to-handle-application-crashes-and-unreadable-messages
-  [howto-service-bus-queues]: ../includes/howto-service-bus-queues.md
   [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx
   [Azure SDK for Ruby]: https://github.com/WindowsAzure/azure-sdk-for-ruby

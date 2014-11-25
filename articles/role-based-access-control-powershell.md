@@ -1,6 +1,6 @@
 <properties pageTitle="Managing Role-Based Access Control with Windows PowerShell" metaKeywords="ResourceManager, PowerShell, Azure PowerShell, RBAC" description="Managing role-based access control with Windows PowerShell" metaCanonical="" services="" documentationCenter="" title="Managing Role-Based Access Control with Windows PowerShell" authors="guayan" solutions="" manager="terrylan" editor="mollybos" />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="powershell" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="guayan"></tags>
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="powershell" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="guayan" />
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell
 
@@ -144,12 +144,10 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 -   [Konfigurieren der rollenbasierten Zugriffssteuerung mit xplat-cli][Konfigurieren der rollenbasierten Zugriffssteuerung mit xplat-cli]
 -   [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung][Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung]
 
-  [Windows PowerShell]: /de-de/documentation/articles/powershell-rbac.md "Windows PowerShell"
-  [Plattformübergreifende Befehlszeilenschnittstelle]: /de-de/documentation/articles/xplat-cli-rbac.md "Plattformübergreifende Befehlszeilenschnittstelle"
-  [Windows Management Framework 3.0]: http://www.microsoft.com/en-us/download/details.aspx?id=34595
-  [Windows Management Framework 4.0]: http://www.microsoft.com/en-us/download/details.aspx?id=40855
+  [Windows Management Framework 3.0]: http://www.microsoft.com/de-de/download/details.aspx?id=34595
+  [Windows Management Framework 4.0]: http://www.microsoft.com/de-de/download/details.aspx?id=40855
   [Installieren und Konfigurieren von Windows Azure PowerShell]: http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell/
-  [Erste Schritte mit Windows PowerShell]: http://technet.microsoft.com/en-us/library/hh857337.aspx
+  [Erste Schritte mit Windows PowerShell]: http://technet.microsoft.com/de-de/library/hh857337.aspx
   [Installieren und Konfigurieren von Azure PowerShell]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
   [Verwenden von Windows PowerShell mit dem Ressourcen-Manager]: http://azure.microsoft.com/de-de/documentation/articles/powershell-azure-resource-manager/
   [Verbindungsherstellung mit Ihren Abonnements]: #connect

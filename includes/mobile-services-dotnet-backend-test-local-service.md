@@ -4,8 +4,8 @@ Mit dem heruntergeladenen mobilen Dienstprojekt können Sie den neuen mobilen Di
 
 2.  Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und den mobilen Dienst lokal zu starten.
 
-    ![][]
+    ![][0]
 
     Nachdem der mobile Dienst erfolgreich gestartet wurde, wird eine Webseite angezeigt.
 
-  []: ./media/mobile-services-dotnet-backend-test-local-service/mobile-service-startup.png
+  [0]: ./media/mobile-services-dotnet-backend-test-local-service/mobile-service-startup.png

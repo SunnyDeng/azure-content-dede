@@ -100,7 +100,7 @@ Damit weisen Sie Storm an, die **wordcount**-Topologie über die **storm.starter
 
 > [WACOM.NOTE] Die Version der JAR-Datei mit den Beispielen kann sich regelmäßig ändern. Geben Sie beim Ausführen dieses Befehls die Version der Datei in Ihrem Cluster an.
 
-Beachten Sie, dass beim Ausführen dieses Befehls nichts zurückgegeben wird. **Storm-Topologien werden nach dem Start solange ausgeführt, bis sie beendet werden.**Die The WordCountTopology generiert zufällige Sequenzen und zählt mit, wie oft jedes Wort vorkommt, bis Sie die Topologie beenden.
+Beachten Sie, dass beim Ausführen dieses Befehls nichts zurückgegeben wird. **Storm-Topologien werden nach dem Start solange ausgeführt, bis sie beendet werden.** Die WordCountTopology generiert zufällige Sätze und berechnet, wie oft ein bestimmtes Wort vorkommt, bis Sie die Zählung beenden.
 
 ### <span id="monitor"></span></a>Überwachen des Status einer Storm-Topologie
 
@@ -167,7 +167,7 @@ Wenn Sie die Storm UI-Webseite direkt nach dem Ausführen dieses Befehls anzeige
 
 -   [Analysieren von Sensordaten mit Storm und HDInsight][Analysieren von Sensordaten mit Storm und HDInsight]
 
--   [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm in HDInsight][Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm in HDInsight]
+-   [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C\# mit Storm in HDInsight][Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C\# mit Storm in HDInsight]
 
   [Bereitstellen eines HDInsight Storm-Clusters]: #provision
   [Verbinden mit dem Cluster]: #connect
@@ -189,4 +189,4 @@ Wenn Sie die Storm UI-Webseite direkt nach dem Ausführen dieses Befehls anzeige
   [Spouts und Bolts]: ./media/hdinsight-storm-getting-started/stormuiboltsnspouts.png
   [Auswählen der Ausführer]: ./media/hdinsight-storm-getting-started/executors.png
   [Analysieren von Sensordaten mit Storm und HDInsight]: /de-de/documentation/articles/hdinsight-storm-sensor-data-analysis
-  [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm in HDInsight]: /de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application
+  [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C\# mit Storm in HDInsight]: /de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application

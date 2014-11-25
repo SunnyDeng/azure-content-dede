@@ -169,7 +169,6 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
   [Registrieren für Twitter-Zugang und Speichern der Anmeldeinformationen]: #get-oauth-credentials
   [Erstellen der neuen Aktualisierungstabelle]: #create-table
   [Erstellen eines neuen geplanten Auftrags]: #add-job
-  [mobile-services-register-twitter-access]: ../includes/mobile-services-register-twitter-access.md
   [0]: ./media/mobile-services-schedule-recurring-tasks/mobile-data-tab-empty-cli.png
   [1]: ./media/mobile-services-schedule-recurring-tasks/mobile-create-updates-table.png
   [2]: ./media/mobile-services-schedule-recurring-tasks/mobile-schedule-new-job-cli.png

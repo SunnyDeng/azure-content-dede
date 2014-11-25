@@ -4,11 +4,11 @@ Nachdem die Einträge für Ihren Domänennamen propagiert wurden, müssen Sie si
 >
 > Mithilfe eines Services wie <http://www.digwebinterface.com/> (in englischer Sprache) können Sie überprüfen, ob der CNAME verfügbar ist.
 
-1.  Öffnen Sie das [Azure-Verwaltungsportal][] in Ihrem Browser.
+1.  Öffnen Sie das [Azure-Verwaltungsportal][Azure-Verwaltungsportal] in Ihrem Browser.
 
 2.  Klicken Sie auf der Registerkarte **Websites** auf den Namen Ihrer Site, wählen Sie dann **Dashboard** und am unteren Seitenrand **Domänen verwalten** aus.
 
-    ![][]
+    ![][0]
 
 3.  Verwenden Sie die Textfelder **DOMÄNENNAMEN**, um die Domänennamen einzugeben, die dieser Website zugewiesen werden sollen.
 
@@ -21,5 +21,5 @@ Nachdem die Einträge für Ihren Domänennamen propagiert wurden, müssen Sie si
 Zu diesem Zeitpunkt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und sehen, dass er Sie erfolgreich zu Ihrer Azure-Website bringt.
 
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
-  []: ./media/custom-dns-web-site/dncmntask-cname-6.png
+  [0]: ./media/custom-dns-web-site/dncmntask-cname-6.png
   [1]: ./media/custom-dns-web-site/dncmntask-cname-7.png

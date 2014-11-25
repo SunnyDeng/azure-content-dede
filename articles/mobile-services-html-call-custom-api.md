@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-html-call-custom-api" urlDisplayName="Call a custom API from the client" pageTitle="Call a custom API from an HTML client - Mobile Services" metaKeywords="" description="Learn how to define a custom API and then call it from an HTML app that uses Windows Azure Mobile Services." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga"  solutions="" writer="jparrel" manager="" editor=""  />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung
 
@@ -69,18 +69,11 @@ Sie haben eine benutzerdefinierte API erstellt und diese über Ihre HTML-App auf
 -   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
-  [Windows Store C\#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "Windows Store JavaScript"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-call-custom-api "Windows Phone"
-  [iOS]: /de-de/documentation/articles/mobile-services-ios-call-custom-api "iOS"
-  [Android]: /de-de/documentation/articles/mobile-services-android-call-custom-api "Android"
-  [HTML]: /de-de/documentation/articles/mobile-services-html-call-custom-api "HTML"
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-html-get-started
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-html-get-started-data
   [Definieren der benutzerdefinierten API]: #define-custom-api
   [Aktualisieren der App zum Aufruf der benutzerdefinierten API]: #update-app
   [Testen der App]: #test-app
-  [mobile-services-create-custom-api]: ../includes/mobile-services-create-custom-api.md
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293

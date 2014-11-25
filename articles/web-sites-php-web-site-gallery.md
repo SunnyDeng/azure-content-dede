@@ -13,6 +13,5 @@ Sie haben gesehen, wie Sie eine Website über die Galerie erstellen und bereitst
 -   [Erstellen einer PHP-MySQL Azure-Website und Bereitstellen mit Git][Erstellen einer PHP-MySQL Azure-Website und Bereitstellen mit Git] - Erstellen Sie eine PHP-Website von Grund auf neu, und stellen Sie sie mit Git als Azure-Website bereit.
 -   [Weitere PHP-Lernprogramme][Weitere PHP-Lernprogramme] - Erstellen Sie weitere Anwendungstypen mit PHP und Azure.
 
-  [website-from-gallery]: ../includes/website-from-gallery.md
   [Erstellen einer PHP-MySQL Azure-Website und Bereitstellen mit Git]: /de-de/develop/php/tutorials/website-w-mysql-and-git/
   [Weitere PHP-Lernprogramme]: /de-de/develop/php/tutorials/

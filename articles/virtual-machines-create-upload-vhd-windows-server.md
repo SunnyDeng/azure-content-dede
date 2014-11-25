@@ -1,4 +1,4 @@
-<properties urlDisplayName="Upload a VHD" pageTitle="Erstellen und Hochladen einer Windows Server-VHD nach Azure" metaKeywords="Azure VHD, uploading VHD" description="Erfahren Sie, wie Sie eine virtuelle Festplatte (Virtual Hard Disk, VHD) mit dem Betriebssystem Windows Server in Azure erstellen und hochladen." metaCanonical="" services="virtual-machines" documentationCenter="" title="Erstellen und Hochladen einer Windows Server-VHD nach Azure" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
+<properties linkid="manage-windows-common-task-upload-vhd" urlDisplayName="Upload a VHD" pageTitle="Create and upload a Windows Server VHD to Azure" metaKeywords="Azure VHD, uploading VHD" description="Learn to create and upload a virtual hard disk (VHD) in Azure that has the Windows Server operating system." metaCanonical="" services="virtual-machines" documentationCenter="" title="Create and upload a Windows Server VHD to Azure" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-windows" ms.devlang="na" ms.topic="article" ms.date="09/23/2014" ms.author="kathydav" />
 
@@ -296,7 +296,6 @@ Nachdem Sie einen virtuellen Computer erstellt haben, sollten Sie versuchen, ein
 
   [Informationen zu Datenträgern und Images in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/jj672979.aspx
   [Erstellen eines benutzerdefinierten virtuellen Computers]: http://www.windowsazure.com/de-de/documentation/articles/virtual-machines-windows-tutorial/
-  [Create a Windows Azure account (in englischer Sprache)]: http://www.windowsazure.com/de-de/develop/php/tutorials/create-a-windows-azure-account/
   [Microsoft Azure-Downloads]: http://www.windowsazure.com/de-de/downloads/
   [hier]: http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell/
   [Add-AzureVHD]: http://msdn.microsoft.com/de-de/library/windowsazure/dn205185.aspx

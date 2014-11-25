@@ -4,4 +4,3 @@
 
 [WACOM.INCLUDE [Hybride Lösungen](../includes/hybrid-solutions.md)]
 
-  [Hybride Lösungen]: ../includes/hybrid-solutions.md

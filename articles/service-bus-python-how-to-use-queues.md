@@ -152,6 +152,5 @@ vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
   [Gewusst wie: Senden von Nachrichten an eine Warteschlange]: #send-messages
   [Gewusst wie: Empfangen von Nachrichten aus einer Warteschlange]: #receive-messages
   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #handle-crashes
-  [howto-service-bus-queues]: ../includes/howto-service-bus-queues.md
   [Python-Installationshandbuch]: ../python-how-to-install/
   [Warteschlangen, Themen und Abonnements.]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx

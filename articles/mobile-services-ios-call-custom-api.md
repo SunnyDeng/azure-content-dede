@@ -36,7 +36,7 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre iOS-App auf
 -   [Speichern von Serverskripts in der Quellcodeverwaltung][Speichern von Serverskripts in der Quellcodeverwaltung]
      Erfahren Sie, wie Sie die Quellcodeverwaltungsfunktion nutzen können, um benutzerdefinierten API-Skript-Code einfacher und sicherer zu entwickeln und zu veröffentlichen.
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-ios-get-started/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-ios-get-started-data/
@@ -45,7 +45,5 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre iOS-App auf
   [Testen der App]: #test-app
   [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
   [XCode 4.5]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-  [mobile-services-create-custom-api]: ../includes/mobile-services-create-custom-api.md
-  [mobile-services-ios-call-custom-api]: ../includes/mobile-services-ios-call-custom-api.md
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
   [Speichern von Serverskripts in der Quellcodeverwaltung]: /de-de/documentation/articles/mobile-services-store-scripts-source-control

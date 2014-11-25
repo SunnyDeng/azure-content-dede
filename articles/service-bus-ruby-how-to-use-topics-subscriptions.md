@@ -195,7 +195,6 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Themen vertraut sind, finden S
   [Empfangen von Nachrichten aus einem Abonnement]: #how-to-receive-messages-from-a-subscription
   [Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #how-to-handle-application-crashes-and-unreadable-messages
   [Löschen von Themen und Abonnements]: #how-to-delete-topics-and-subscriptions
-  [howto-service-bus-topics]: ../includes/howto-service-bus-topics.md
   [Erstellen einer Ruby-Anwendung in Azure]: /de-de/develop/ruby/tutorials/web-app-with-linux-vm/
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com

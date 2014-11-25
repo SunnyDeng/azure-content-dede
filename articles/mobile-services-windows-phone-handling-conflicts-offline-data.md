@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-handle-conflcits-offline-data-dotnet" urlDisplayName="Handle Conflicts with Offline Data" pageTitle="Handle Conflicts with offline data in Mobile Services (Windows Phone) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services handle conflicts when syncing offline data in your Windows phone application" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling conflicts with offline data in Mobile Services" authors="wesmc" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="wesmc" />
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
 
@@ -11,31 +11,31 @@
 
 In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden. In diesem Lernprogramm laden Sie eine App herunter, die Offline- und Onlinedaten unterstützt, integrieren den mobilen Dienst mit der App und melden sich anschließend im Azure-Verwaltungsportal an, um die Datenbank beim Ausführen der App anzuzeigen und zu aktualisieren.
 
-Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten][]. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Offlinedaten][] abschließen.
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten][Erste Schritte mit Offlinedaten]. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Offlinedaten][Erste Schritte mit Offlinedaten] abschließen.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
-1.  [Herunterladen des Windows Phone-Projekts][]
-2.  [Hinzufügen einer Spalte mit Fälligkeitsdatum zur Datenbank][]
+1.  [Herunterladen des Windows Phone-Projekts][Herunterladen des Windows Phone-Projekts]
+2.  [Hinzufügen einer Spalte mit Fälligkeitsdatum zur Datenbank][Hinzufügen einer Spalte mit Fälligkeitsdatum zur Datenbank]
 
-	-   [Aktualisieren der Datenbank für mobile Dienste mit .NET-Backend][]
-	-   [Aktualisieren der Datenbank für mobile Dienste mit JavaScript][]
+	-   [Aktualisieren der Datenbank für mobile Dienste mit .NET-Backend][Aktualisieren der Datenbank für mobile Dienste mit .NET-Backend]
+	-   [Aktualisieren der Datenbank für mobile Dienste mit JavaScript][Aktualisieren der Datenbank für mobile Dienste mit JavaScript]
 
-1.  [Testen der App mit einem mobilen Dienst][]
-2.  [Manuelles Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts][]
+1.  [Testen der App mit einem mobilen Dienst][Testen der App mit einem mobilen Dienst]
+2.  [Manuelles Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts][Manuelles Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts]
 
-Dieses Lernprogramm erfordert Visual Studio 2012 und das [Windows Phone 8 SDK][].
+Dieses Lernprogramm erfordert Visual Studio 2012 und das [Windows Phone 8 SDK][Windows Phone 8 SDK].
 
 ## <a name="download-app"></a>Herunterladen des Beispielprojekts
 
-Dieses Lernprogramm baut auf dem Handling [Codebeispiel zur Behandlung von Konflikten][] auf, einem Windows Store-App-Projekt in Visual Studio 2013.
-Die Benutzeroberfläche dieser App ähnelt der App im Lernprogramm [Erste Schritte mit Offlinedaten][]. Der Unterschied besteht darin, dass für jedes TodoItem eine neue Datumsspalte existiert.
+Dieses Lernprogramm baut auf dem Handling [Codebeispiel zur Behandlung von Konflikten][Codebeispiel zur Behandlung von Konflikten] auf, einem Windows Store-App-Projekt in Visual Studio 2013.
+Die Benutzeroberfläche dieser App ähnelt der App im Lernprogramm [Erste Schritte mit Offlinedaten][Erste Schritte mit Offlinedaten]. Der Unterschied besteht darin, dass für jedes TodoItem eine neue Datumsspalte existiert.
 
-![][]
+![][0]
 
 1.  Laden Sie die Windows Phone-Version des [Codebeispiels zur Behandlung von Konflikten][Codebeispiel zur Behandlung von Konflikten] herunter.
 
-2.  Installieren Sie [SQLite für Windows Phone 8][], falls Sie dies noch nicht getan haben.
+2.  Installieren Sie [SQLite für Windows Phone 8][SQLite für Windows Phone 8], falls Sie dies noch nicht getan haben.
 
 3.  Öffnen Sie in Visual Studio 2012 das heruntergeladene Projekt. Fügen Sie einen Verweis auf **SQLite für Windows** unter **Windows Phone** \> **Erweiterungen** hinzu.
 
@@ -73,7 +73,7 @@ Wenn Sie für Ihren mobilen Dienst das .NET-Backend verwenden, führen Sie diese
 
     Beachten Sie in der WebApiConfig.cs-Datei, dass die Standard-Datenbankinitialisiererklasse von der `DropCreateDatabaseIfModelChanges`-Klasse abgeleitet wird. Dies bedeutet, dass jede Änderung am Modell dazu führt, dass die Tabelle gelöscht und dem neuen Modell entsprechend erneut erstellt wird. Die Daten in der Tabelle gehen also verloren, und es wird ein erneutes Seeding für die Tabelle ausgeführt. Modifizieren Sie die Seed-Methode des Dateninitialisierers so, dass die Initialisierungsfunktion `Seed()` wie folgt aussieht, um die neue DueDate-Spalte zu initialisieren. Speichern Sie die Datei "WebApiConfig.cs".
 
-    > [WACOM.NOTE] Bei Verwendung des Standard-Datenbankinitialisierers löscht Entity Framework die Datenbank und erstellt sie erneut, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells][].
+    > [WACOM.NOTE] Bei Verwendung des Standard-Datenbankinitialisierers löscht Entity Framework die Datenbank und erstellt sie erneut, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells][Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells].
 
         new TodoItem { Id = "1", Text = "First item", Complete = false, DueDate = DateTime.Today },
         new TodoItem { Id = "2", Text = "Second item", Complete = false, DueDate = DateTime.Today },
@@ -88,7 +88,7 @@ Wenn Sie für Ihren mobilen Dienst das .NET-Backend verwenden, führen Sie diese
 
 Für mobile Dienste mit JavaScript-Backend fügen Sie eine neue Tabelle mit dem Namen **TodoWithDate** hinzu. Führen Sie die folgenden Schritte aus, um die Tabelle **TodoWithDate** für mobile Dienste mit JavaScript-Backend hinzuzufügen.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
 2.  Navigieren Sie zur Registerkarte **Daten** des mobilen Dienstes.
 
@@ -111,9 +111,9 @@ Testen Sie jetzt die App mit Mobile Services.
 
 4.  Geben Sie wie zuvor Text im Textfeld ein, und klicken Sie danach auf die Schaltfläche **Speichern**, um die neuen Elemente zu speichern. So werden die Daten in der lokalen Synchronisierungstabelle, jedoch nicht auf dem Server gespeichert.
 
-    ![][]
+    ![][0]
 
-5.  Um den aktuellen Status der Datenbank anzuzeigen, melden Sie sich beim [Azure-Verwaltungsportal][] an, klicken Sie auf **Mobile Services**. Klicken Sie dann auf Ihren mobilen Dienst.
+5.  Um den aktuellen Status der Datenbank anzuzeigen, melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**. Klicken Sie dann auf Ihren mobilen Dienst.
 
 	-   Wenn Sie für Ihren mobilen Dienst das JavaScript-Backend verwenden, klicken Sie auf die Registerkarte **Daten**, und klicken Sie dann auf die Tabelle **TodoWithDate**. Klicken Sie auf **Durchsuchen**, um anzuzeigen, dass die Tabelle immer noch leer ist, da die Änderungen noch nicht per Push-Vorgang von der App auf den Server übertragen wurden.
 
@@ -192,10 +192,8 @@ Dadurch wird der aktuelle Push-Vorgang beendet. Es werden jedoch alle ausstehend
 
 Wenn ein Push-Vorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePushFailedException` aus, und die Ausnahmeeigenschaft `PushResult.Status` hat den Wert `MobileServicePushStatus.CancelledByOperation`.
 
-<!-- Anchors. --> 
+ 
 
-  [Windows Store C\#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data "Windows Store C#"
-  [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-handling-conflicts-offline-data "Windows Phone"
   [Erste Schritte mit Offlinedaten]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-offline-data
   [Herunterladen des Windows Phone-Projekts]: #download-app
   [Hinzufügen einer Spalte mit Fälligkeitsdatum zur Datenbank]: #add-column
@@ -214,7 +212,7 @@ Wenn ein Push-Vorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePus
 
 <!-- Images --> 
 
-  []: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
+  [0]: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
 
   [1]: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/mobile-services-todowithdate-push1.png
   [2]: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/vs-emulator-wvga.png

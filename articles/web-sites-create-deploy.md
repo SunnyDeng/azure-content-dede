@@ -75,4 +75,3 @@ Weitere Informationen finden Sie unter [Azure-Websites][Azure-Websites].
   [Gewusst wie: Löschen einer Website]: #deleteawebsite
   [Nächste Schritte]: #nextsteps
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
-  [website-from-gallery]: ../includes/website-from-gallery.md

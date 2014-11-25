@@ -1,10 +1,10 @@
 Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstellen.
 
-1.  Melden Sie sich beim [Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Verwaltungsportal][Verwaltungsportal] an.
 
 2.  Klicken Sie unten im Navigationsbereich auf **+NEW**.
 
-    ![][]
+    ![][0]
 
 3.  Erweitern Sie **Compute** und **Mobile Service**, und klicken Sie dann auf **Erstellen**.
 
@@ -33,10 +33,10 @@ Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstell
 
 Sie haben nun einen neuen mobilen Dienst erstellt, der von Ihren mobilen Apps verwendet werden kann.
 
-<!-- URLs. -->
+
 
   [Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-dotnet-backend-create-new-service/plus-new.png
+  [0]: ./media/mobile-services-dotnet-backend-create-new-service/plus-new.png
   [1]: ./media/mobile-services-dotnet-backend-create-new-service/mobile-create.png
   [2]: ./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page1.png
   [3]: ./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page2.png

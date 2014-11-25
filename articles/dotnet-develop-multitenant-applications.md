@@ -1,6 +1,6 @@
 <properties linkid="develop-net-architecture-multi-tenant-web-application" urlDisplayName="Multi-Tenant Web Application Pattern" pageTitle="Multi-Tenant Web Application Pattern - Azure Architecture" metaKeywords="" description="Find architectural overviews and design patterns that describe how to implement a multi-tenant web application on Azure." metaCanonical="" services="" documentationCenter=".NET" title="Multitenant Applications in Azure" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 <div>
 <div class="left-nav">
@@ -108,16 +108,4 @@ Azure bietet viele verschiedene Möglichkeiten zur Bereitstellung neuer Mandante
 
 <!--links-->
 
-  [Compute]: /de-de/develop/net/compute/
-  [Datendienste]: /de-de/develop/net/data/
-  [App-Dienste]: /de-de/develop/net/app-services/
-  [Verweis]: /de-de/develop/net/reference/
-  [Anleitungen]: /de-de/develop/net/guidance/
-  [Architektur]: /de-de/develop/net/architecture/
-  [Beispiele]: /de-de/develop/net/samples/
-  [Szenario-basierte Lernprogramme]: /de-de/develop/net/end-to-end-Apps/
-  [Foren]: /de-de/support/forums/
-  [Übersichten der Anwendungsarchitektur]: /de-de/develop/net/architecture/#overviews
-  [Anwendungsmuster: Auslastungstests]: /de-de/develop/net/architecture/load-testing-pattern/
-  [Entwurfsmuster]: /de-de/develop/net/architecture/#designpatterns
   [Hosting a Multi-Tenant Application on Azure]: http://msdn.microsoft.com/de-de/library/hh534480.aspx

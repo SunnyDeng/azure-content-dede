@@ -280,7 +280,6 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
   [Lokales Testen des geplanten Auftrags]: #run-job-locally
   [Veröffentlichen des Diensts und Registrieren des Auftrags]: #register-job
   [LINQtoTwitter-CodePlex-Projekt]: http://linqtotwitter.codeplex.com/
-  [mobile-services-register-twitter-access]: ../includes/mobile-services-register-twitter-access.md
   [0]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/add-linq2twitter-nuget-package.png
   [1]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/add-component-model-reference.png
   [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells]: /de-de/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations

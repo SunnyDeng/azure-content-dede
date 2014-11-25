@@ -4,7 +4,7 @@ In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Sc
 
 1.  Erweitern Sie im Projektmappen-Explorer für Visual Studio unter dem Projekt **Eigenschaften**. Öffnen Sie dann die Datei WMAppManifest.xml, und aktivieren Sie auf der Registerkarte **Funktionen** die Kamera, indem Sie auf **ID\_CAP\_ISV\_CAMERA** klicken. Schließen Sie die Datei, um die Änderung zu speichern.
 
-    ![][]
+    ![][0]
 
     Damit stellen Sie sicher, dass Ihre App eine am Computer angeschlossene Kamera nutzen kann. Bei der erstmaligen Ausführung der App wird der Benutzer dazu aufgefordert, Kamerazugang zu gestatten.
 
@@ -177,7 +177,7 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started
   [CameraCaptureTask]: http://msdn.microsoft.com/de-de/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
   [PhotoCamera]: http://msdn.microsoft.com/de-de/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx
-  []: ./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-WMAppmanifest-wp8.png
+  [0]: ./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-WMAppmanifest-wp8.png
   [1]: ./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-wp8.png
   [2]: ./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-camera-wp8.png
   [3]: ./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-camera-accept-wp8.png

@@ -2,21 +2,21 @@ Die folgenden Schritte erstellen einen neuen mobilen Dienst in Azure und fügen 
 
 1.  Öffnen Sie den Projektmappen-Explorer in Visual Studio 2013, klicken Sie mit der rechten Maustaste auf das Projekt, klicken Sie auf **Hinzufügen** und dann auf **Verbundener Dienst**.
 
-    ![verbundenen Dienst hinzufügen][]
+    ![verbundenen Dienst hinzufügen][verbundenen Dienst hinzufügen]
 
 2.  Klicken Sie im Dienste-Manager-Dialogfeld auf **Dienst erstellen** und wählen Sie **Importieren** aus **Abonnement** im Dialogfeld "Mobilen Dienst erstellen" aus.
 
-    ![neuen mobilen Dienst aus VS 2013 erstellen][]
+    ![neuen mobilen Dienst aus VS 2013 erstellen][neuen mobilen Dienst aus VS 2013 erstellen]
 
 3.  Klicken Sie unter "Azure-Abonnements abonnieren" auf **Abonnementdatei herunterladen**, melden Sie sich ggf. mit Ihrem Azure-Konto an, klicken Sie auf **Speichern**, wenn der Browser Sie zum Speichern der Datei auffordert.
 
-    ![Abonnementdatei in VS herunterladen][]
+    ![Abonnementdatei in VS herunterladen][Abonnementdatei in VS herunterladen]
 
     <div class="dev-callout"><strong>Hinweis</strong> <p>Das Anmeldefenster wird im Browser angezeigt, der sich hinter dem Visual Studio-Fenster befinden kann. Denken Sie daran, sich zu notieren, wo Sie die heruntergeladene &quot;.publishsettings&quot;-Datei gespeichert haben. Wenn das Projekt bereits mit Ihrem Azure-Abonnement verbunden ist, k&ouml;nnen Sie diesen Schritt &uuml;berspringen.</p></div>
 
 4.  Klicken Sie auf **Durchsuchen**, navigieren Sie zum Speicherort der ".publishsettings"-Datei, wählen Sie die Datei aus, klicken Sie auf **Öffnen** und dann auf **Importieren**.
 
-    ![Abonnementdatei in VS importieren][]
+    ![Abonnementdatei in VS importieren][Abonnementdatei in VS importieren]
 
     Visual Studio importiert die Daten, die für die Verbindung mit Ihrem Azure-Abonnement erforderlich sind. Wenn Ihr Abonnement bereits über mindestens einen mobilen Dienst verfügt, werden die Dienstnamen angezeigt.
 
@@ -28,7 +28,7 @@ Die folgenden Schritte erstellen einen neuen mobilen Dienst in Azure und fügen 
 
 6.  Wählen Sie unter **Datenbank** die Option **Freie SQL-Datenbank erstellen** aus, geben Sie den **Serverbenutzernamen**, das **Serverkennwort** und die **Serverkennwortbestätigung** ein. Klicken Sie dann auf **Erstellen**.
 
-    ![Dienst aus VS 2013 erstellen, Teil 2][]
+    ![Dienst aus VS 2013 erstellen, Teil 2][Dienst aus VS 2013 erstellen, Teil 2]
 
     > [WACOM.NOTE]
     > Als Teil dieses Lernprogramms erstellen Sie eine neue kostenlose SQL-Datenbankinstanz und einen entsprechenden Server. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Sie können jeweils nur eine freie Datenbankinstanz haben. Wenn Sie bereits eine Datenbank in der Region des neuen mobilen Dienstes haben, können Sie stattdessen die vorhandene Datenbank auswählen. Wenn Sie eine vorhandene Datenbank auswählen, stellen Sie sicher, dass Sie die richtigen Anmeldeinformationen angeben. Falls Sie falsche Anmeldeinformationen angeben, wird der mobile Dienst in einem fehlerhaften Zustand erstellt.

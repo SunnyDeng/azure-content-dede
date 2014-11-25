@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user" urlDisplayName="Access SharePoint on behalf of the user" pageTitle="Access SharePoint on behalf of the user | Mobile Dev Center" metaKeywords="" description="Learn how to make calls to SharePoint on behalf of the user" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Access SharePoint on behalf of the user" authors="mahender" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="mahender"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="mahender" />
 
 # Zugreifen auf SharePoint im Namen eines Benutzers
 
@@ -33,7 +33,7 @@ Standardmäßig hat der Token, den Sie von AAD erhalten, eingeschränkte Berecht
 
 1. Wählen Sie im Abschnitt **Active Directory** des [Azure-Verwaltungsportals][Azure-Verwaltungsportals] Ihr Mandat. Navigieren Sie zur Webanwendung, die Sie für den mobilen Dienst erstellt haben.
 
-    ![][]
+    ![][0]
 
 2. Scrollen Sie auf der Registerkarte **Konfigurieren** nach unten zum Abschnitt „Berechtigungen für andere Anwendungen“. Wählen Sie **Office 365 SharePoint Online**, und gewähren Sie die Berechtigung **Dateien des Benutzer bearbeiten oder löschen**. Klicken Sie anschließend auf **Speichern**.
 
@@ -182,9 +182,9 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 
     ![][4]
 
-<!-- Images. --> 
-<!-- Anchors. --> 
-<!-- URLs. -->
+ 
+ 
+
 
 [Lernprogramm ansehen]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Azure-Mobile-Services-AAD-O365-Authentication-identity-across-services
 [Registrieren Ihrer Anwendung für den delegierten Zugriff auf SharePoint]: #configure-permissionss
@@ -195,7 +195,7 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 [SharePoint Online]: http://office.microsoft.com/de-de/sharepoint/
 [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: http://azure.microsoft.com/de-de/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
 [Azure-Verwaltungsportals]: https://manage.windowsazure.com/
-[]: ./media/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/aad-web-application.png
+[0]: ./media/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/aad-web-application.png
 [1]: ./media/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/aad-sharepoint-permissions.png
 [2]: ./media/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/aad-manage-secret-key.png
 [3]: ./media/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/mobile-services-app-settings-sharepoint.png

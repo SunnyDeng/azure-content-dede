@@ -1,18 +1,18 @@
 Nach der Bereitstellung einer MongoLab-Datenbank können Sie jederzeit auf die MongoLab-Webbenutzeroberfläche zugreifen, um diese Datenbank zu verwalten. Wir bieten einen komfortablen Zugang mit einmaliger Anmeldung über das Azure-Verwaltungsportal an.
 
-Sie können die MongoLab-Benutzeroberfläche für die meisten Datenbank-Tasks wie das Einfügen und Abfragen von Dokumenten, das Abrufen von Datenbankstatistiken und die Ausführung nützlicher Datenbankbefehle verwenden. Weitere Informationen zur MongoLab-Benutzeroberfläche erhalten Sie auf unserer [Support-Seite][] und in unserem [Blog][].
+Sie können die MongoLab-Benutzeroberfläche für die meisten Datenbank-Tasks wie das Einfügen und Abfragen von Dokumenten, das Abrufen von Datenbankstatistiken und die Ausführung nützlicher Datenbankbefehle verwenden. Weitere Informationen zur MongoLab-Benutzeroberfläche erhalten Sie auf unserer [Support-Seite][Support-Seite] und in unserem [Blog][Blog].
 
 Gehen Sie folgendermaßen vor, um auf die MongoLab-Benutzeroberfläche zuzugreifen:
 
 1.  Wählen Sie **Add-Ons**.  
-    ![AddonsButton][]
+    ![AddonsButton][AddonsButton]
 2.  Suchen Sie in Ihrer Add-On-Liste nach Ihrem MongoLab-Dienst.  
-    ![MongolabEntry][]
+    ![MongolabEntry][MongolabEntry]
 3.  Klicken Sie auf den Namen Ihres Add-Ons, um auf die Add-On-Seite zu gelangen.
 4.  Klicken Sie auf **Verwalten**.  
-    ![ManageButton][]  
+    ![ManageButton][ManageButton]  
     Im Browser wird eine neue Registerkarte geöffnet. Auf dieser wird die Startseite der MongoLab-Datenbank   angezeigt:  
-    ![DbHome][]
+    ![DbHome][DbHome]
 
 Hier können Sie eine bestimmte Sammlung auswählen und einzelne Dokumente anzeigen. Melden Sie sich ab, wenn Sie fertig sind.
 

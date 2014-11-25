@@ -1,10 +1,10 @@
 <properties linkid="create-vso-project-setup-continuous-deployment" urlDisplayName="How to create a VSO project and setup Continuous Deployment" pageTitle="How to create a Visual Studio Online team project and setup Continuous Deployment - Windows Azure" metaKeywords="Visual Studio Online create team project, continuous deployment to Azure" description="Learn how to create a Visual Studio Online team project and configure it for continuous deployment to Windows Azure." metaCanonical="" services="cloud-services, visual-studio-online" documentationCenter="" title="How to Create and Deploy a Cloud Service" authors="jimlamb" solutions="" writer="jimlamb" manager="" editor=""  />
 
-<tags ms.service="visual-studio-online" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jimlamb"></tags>
+<tags ms.service="visual-studio-online" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jimlamb" />
 
 # Erstellen eines Visual Studio Online-Projekts und Einrichten der kontinuierlichen Bereitstellung in Windows Azure
 
-[WACOM.INCLUDE [Haftungsausschluss][Haftungsausschluss]]
+[WACOM.INCLUDE [Haftungsausschluss](../includes/disclaimer.md)]
 
 Im Windows Azure-Verwaltungsportal können Sie ein Teamprojekt in Visual Studio Online erstellen und die Webanwendung für die kontinuierliche Bereitstellung auf einer Website konfigurieren.
 
@@ -57,7 +57,6 @@ Im Windows Azure-Verwaltungsportal können Sie ein Teamprojekt in Visual Studio 
 3.  Klicken Sie im Build-Fenster auf das erste Element im Bereich **Bereitstellungen**, um die zugehörige Website zu öffnen.
 4.  Klicken Sie im Website-Fenster auf den Fensterbefehl **Durchsuchen**, um die Website zu durchsuchen und die Bereitstellung der Webanwendung zu überprüfen.
 
-  [Haftungsausschluss]: ../includes/disclaimer.md
   [Erstellen eines Teamprojekts]: #create_team_project
   [Erstellen einer neuen Webanwendung und Hinzufügen zur Git-Versionskontrolle]: #create_web_app
   [Einrichten der kontinuierlichen Bereitstellung]: #continuous_deployment

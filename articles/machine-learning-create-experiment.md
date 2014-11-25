@@ -1,6 +1,6 @@
 <properties title="Create a simple experiment in Azure Machine Learning Studio" pageTitle="Create a simple experiment in Machine Learning Studio | Azure" description="How to create an experiment to train and test a simple model in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" videoId="" scriptId="" />
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye"></tags>
+<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye" />
 
 # Erstellen eines einfachen Experiments im Azure Machine Learning-Studio
 
@@ -14,15 +14,15 @@ Mit den fünf grundlegenden Schritten zur Experimenterstellung in ML Studio kön
 
 -   Modellerstellung
 
-    -   [Schritt 1: Datensammlung][]
-    -   [Schritt 2: Datenvorverarbeitung][]
-    -   [Schritt 3: Definition von Funktionen][]
+    -   [Schritt 1: Datensammlung][Schritt 1: Datensammlung]
+    -   [Schritt 2: Datenvorverarbeitung][Schritt 2: Datenvorverarbeitung]
+    -   [Schritt 3: Definition von Funktionen][Schritt 3: Definition von Funktionen]
 -   Modelltraining
 
-    -   [Schritt 4: Auswählen und Anwenden eines Lernalgorithmus][]
+    -   [Schritt 4: Auswählen und Anwenden eines Lernalgorithmus][Schritt 4: Auswählen und Anwenden eines Lernalgorithmus]
 -   Modellbewertung und -Tests
 
-    -   [Schritt 5: Vorhersagen über neue Daten][]
+    -   [Schritt 5: Vorhersagen über neue Daten][Schritt 5: Vorhersagen über neue Daten]
 
 In diesem Beispiel besprechen wir die Erstellung eines Regressionsmodells mit Beispieldaten aus dem Automobilbereich. Das Modell soll den Preis von Autos anhand verschiedener Variablen wie z. B. Marke und technischen Daten vorhersagen.
 
@@ -34,15 +34,15 @@ ML Studio enthält bereits zahlreiche Beispiel-Datensätze, und Sie können Date
 
 2.  Links vom Experimentbereich finden Sie eine Palette mit Datensätzen und Modulen. Geben Sie "automobile" in das Suchfeld im oberen Bereich der Palette ein, um den Datensatz mit dem Namen **Automobile price data (Raw)** zu finden.
 
-    ![Palettensuche][]
+    ![Palettensuche][Palettensuche]
 
 3.  Ziehen Sie den Datensatz in den Experimentbereich.
 
-    ![Datensatz][]
+    ![Datensatz][Datensatz]
 
 Sie können auf den Ausgabeport im unteren Bereich des Automobil-Datensatzes klicken und **Visualisieren** auswählen, um die enthaltenen Daten anzuzeigen. Die Variablen im Datensatz werden als Spalten angezeigt, und jede Instanz eines Automobils füllt eine Zeile. Die letzte Spalte "price" (Spalte 26) ist die Zielvariable, die wir vorhersagen möchten.
 
-![Datensatzvisualisierung][]
+![Datensatzvisualisierung][Datensatzvisualisierung]
 
 Schließen Sie das Visualisierungsfenster, indem Sie auf das "**X**" in der oberen rechten Ecke klicken.
 
@@ -62,23 +62,23 @@ Wir entfernen zunächst die Spalte "normalized-losses" und anschließend alle Ze
     -   Wählen Sie in der nächsten Zeile **Ausschließend** und **Spaltennamen** aus und klicken Sie in das Textfeld. Eine Liste der Spalten wird angezeigt - wählen Sie "normalized-losses" aus, um den Eintrag zum Textfeld hinzuzufügen.
     -   Aktivieren Sie das Kontrollkästchen **OK**, um die Spaltenauswahl zu schließen.
 
-    ![Spalten auswählen][]
+    ![Spalten auswählen][Spalten auswählen]
 
     Das Eigenschaftenpanel für **Projektspalten** zeigt an, dass alle Spalten des Datensatzes mit Ausnahme von "normalized-losses" durchlaufen werden.
 
-    ![Projektspalteneigenschaften][]
+    ![Projektspalteneigenschaften][Projektspalteneigenschaften]
 
     > **Hinweis** - Sie können einen Kommentar zu einem Modul eingeben, indem Sie auf das Modul doppelklicken und Text eingeben. Auf diese Weise können Sie mit einem Blick sehen, welche Funktion das Modul in Ihrem Experiment erfüllt. Doppelklicken Sie auf das Modul **Projektspalten** und geben Sie den Kommentar "normalized-losses ausschließen" ein.
 
 3.  Ziehen Sie das Modul **Bereinigung fehlender Werte** in den Experimentbereich und verbinden Sie es mit dem Modul **Projektspalten**. Wählen Sie im Eigenschaftenpanel den Wert **Gesamte Zeile entfernen** unter **Für fehlende Werte** aus, um alle Zeilen zu entfernen, in denen Werte fehlen. Doppelklicken Sie auf das Modul und geben Sie den Kommentar "Unvollständige Zeilen entfernen" ein.
 
-    ![Eigenschaften für "Bereinigung fehlender Werte"][]
+    ![Eigenschaften für "Bereinigung fehlender Werte"][Eigenschaften für "Bereinigung fehlender Werte"]
 
 4.  Führen Sie das Experiment aus, indem Sie unterhalb des Experimentbereichs auf **AUSFÜHREN** klicken.
 
 Nach Abschluss des Experiments sind alle Module mit einem grünen Häkchen markiert, um anzuzeigen, dass diese erfolgreich abgeschlossen wurden. Beachten Sie auch den Status "Ausführung abgeschlossen" in der oberen rechten Ecke.
 
-![Erste Experimentausführung][]
+![Erste Experimentausführung][Erste Experimentausführung]
 
 Das Experiment hat bislang nur Daten bereinigt. Um den bereinigten Datensatz anzuzeigen, klicken Sie auf den Ausgabeport des Moduls **Bereinigung fehlender Werte** und wählen Sie **Visualisieren** aus. Beachten Sie, dass die Spalte "normalized-losses" nicht mehr enthalten ist und dass keine leeren Felder mehr existieren.
 
@@ -127,7 +127,7 @@ Wir möchten den Preis eines Autos vorhersagen, der beliebige Werte annehmen kan
 
 4.  Ziehen Sie das Modul **Modell trainieren** ebenfalls in den Experimentbereich. Klicken Sie auf **Spaltenauswahl starten** und wählen Sie die Spalte *price* aus. Dies ist der Wert, den unser Modell vorhersagen wird.
 
-    ![Spaltenauswahl "price"][]
+    ![Spaltenauswahl "price"][Spaltenauswahl "price"]
 
 5.  Verbinden Sie den linken Eingabeport mit der Ausgabe des Moduls **Lineare Regression**, und den rechten Eingabeport mit der Ausgabe der Trainingsdaten (linker Port) des Moduls **Aufteilen**.
 
@@ -135,7 +135,7 @@ Wir möchten den Preis eines Autos vorhersagen, der beliebige Werte annehmen kan
 
 Als Ergebnis erhalten Sie ein trainiertes Regressionsmodul, mit dem Sie neue Proben bewerten können, um Vorhersagen zu machen.
 
-![Anwenden des Lernalgorithmus][]
+![Anwenden des Lernalgorithmus][Anwenden des Lernalgorithmus]
 
 ### Schritt 5: Vorhersagen über neue Daten
 
@@ -143,7 +143,7 @@ Wir haben das Modell nun trainiert und können es verwenden, um die restlichen 2
 
 1.  Ziehen Sie das Modul **Modell bewerten** in den Experimentbereich und verbinden Sie den linken Eingabeport mit der Ausgabe des Moduls **Modell trainieren**, und den rechten Eingabeport mit der Ausgabe der Testdaten (rechter Port) des Moduls **Aufteilen**.
 
-    ![Modul Modell bewerten][]
+    ![Modul Modell bewerten][Modul Modell bewerten]
 
 2.  Führen Sie das Experiment aus und sehen Sie sich die Ausgabe des Moduls **Modell bewerten** an (doppelklicken Sie auf den Ausgabeport und wählen Sie **Visualisieren** aus). Die Ausgabe zeigt die vorhergesagten Preiswerte zusammen mit den bekannten Werten aus den Testdaten.
 
@@ -159,11 +159,11 @@ Wir haben das Modell nun trainiert und können es verwenden, um die restlichen 2
 
     Für all diese Fehlerstatistiken sind kleinere Werte jeweils besser - ein kleinerer Wert bedeutet, dass die Vorhersage näher an den tatsächlichen Werten liegt. Für den **Bestimmungskoeffizienten** gilt: Je näher der Bestimmungskoeffizient am Wert eins (1,0) liegt, desto besser die Vorhersage.
 
-    ![Auswertung der Ergebnisse][]
+    ![Auswertung der Ergebnisse][Auswertung der Ergebnisse]
 
 Das fertige Experiment sollte folgendermaßen aussehen:
 
-![Abgeschlossenes Experiment][]
+![Abgeschlossenes Experiment][Abgeschlossenes Experiment]
 
 ### Wie geht es weiter?
 
@@ -173,7 +173,7 @@ Sie haben Ihr Experiment nun eingerichtet und können versuchen, es anhand von I
 
 Wenn Sie mit Ihrem Modell zufrieden sind, können Sie es als Webdienst veröffentlichen, der Automobilpreise anhand neuer Daten vorhersagt. Weitere Details finden Sie im ML Studio-Hilfethema **Veröffentlichen von Experimenten**.
 
-Eine ausführlichere Anleitung zu Erstellung, Training, Bewertung und Veröffentlichung von Vorhersagemodellen finden Sie unter [Anleitung: Entwickeln einer Vorhersagelösung mit Azure Machine Learning][].
+Eine ausführlichere Anleitung zu Erstellung, Training, Bewertung und Veröffentlichung von Vorhersagemodellen finden Sie unter [Anleitung: Entwickeln einer Vorhersagelösung mit Azure Machine Learning][Anleitung: Entwickeln einer Vorhersagelösung mit Azure Machine Learning].
 
 <!-- Images -->
 

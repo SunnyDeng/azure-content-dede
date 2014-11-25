@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-sql-scale-guidance" urlDisplayName="Scale mobile services backed by Azure SQL Database" pageTitle="Scale mobile services backed by Azure SQL Database - Azure Mobile Services" metaKeywords="" description="Learn how to diagnose and fix scalability issues in your mobile services backed by SQL Database" metaCanonical="" services="" documentationCenter="Mobile" title="Scale mobile services backed by Azure SQL Database" authors="yavorg" solutions="" manager="" editor="mollybos" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="yavorg"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="yavorg" />
 
 # Skalieren von durch Azure SQL-Datenbank gesicherten mobillen Diensten
 
@@ -469,11 +469,11 @@ Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwend
   [Dienstarchitektur]: #Architecture
   [Erweiterte Fehlerbehebung]: #Advanced
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition]: http://msdn.microsoft.com/en-US/library/azure/dn741330.aspx
+  [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition]: http://msdn.microsoft.com/de-de/library/azure/dn741330.aspx
   [Vorschaufeatures]: https://account.windowsazure.com/previewfeatures
-  [Gründe für die Verwendung neuer Dienstebenen]: http://msdn.microsoft.com/en-US/library/azure/dn369873.aspx#Reasons
+  [Gründe für die Verwendung neuer Dienstebenen]: http://msdn.microsoft.com/de-de/library/azure/dn369873.aspx#Reasons
   [Azure-Verwaltungsportal – SQL-Datenbankmetriken]: ./media/mobile-services-sql-scale-guidance/3.png
-  [Grundlegendes zur Ressourcenverwendung]: http://msdn.microsoft.com/en-US/library/azure/dn369873.aspx#Resource
+  [Grundlegendes zur Ressourcenverwendung]: http://msdn.microsoft.com/de-de/library/azure/dn369873.aspx#Resource
   [Azure-Verwaltungsportal – SQL-Datenbankskalierung]: ./media/mobile-services-sql-scale-guidance/4.png
   [Azure-Verwaltungsportal – SQL-Warnung]: ./media/mobile-services-sql-scale-guidance/5.png
   [Azure-Verwaltungsportal – Name und Beschreibung der SQL-Warnung]: ./media/mobile-services-sql-scale-guidance/6.png

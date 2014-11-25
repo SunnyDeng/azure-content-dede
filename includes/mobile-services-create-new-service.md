@@ -39,7 +39,7 @@ Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstell
 
 Sie haben nun einen neuen mobilen Dienst erstellt, der von Ihren mobilen Apps verwendet werden kann.
 
-<!-- URLs. -->
+
 
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [0]: ./media/mobile-services-create-new-service/plus-new.png

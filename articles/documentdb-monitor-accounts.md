@@ -1,6 +1,6 @@
 <properties title="Monitor a DocumentDB Account" pageTitle="Monitor a DocumentDB account | Azure" description="Learn how to monitor your DocumentDB account for performance metrics (such as requests and server errors) and usage metrics (such as storage consumption)." metaKeywords="NoSQL, DocumentDB,  database, document-orientated database, JSON, monitor, accounts" services="documentdb" solutions="data-management" documentationCenter=""  authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="brradsev"></tags>
+<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="brradsev" />
 
 # Überwachen eines DocumentDB-Kontos
 
@@ -23,7 +23,7 @@ Sie können Ihre DocumentDB-Konten im [Azure-Vorschauportal][Azure-Vorschauporta
     -   Gesamtanforderungen des aktuellen Tags.
     -   Durchschnittliche Anfragen pro Sekunde des aktuellen Tags.
 
-    ![][]
+    ![][0]
 
 3.  Wenn Sie auf den Bereich **Gesamtanforderungen oder durchschnittliche Anforderungen pro Sekunde** klicken, wird ein detaillierte Fenster **Metrik** geöffnet.
 4.  Das Fenster „Metrik“ enthält Details zu den ausgewählten Metriken. Im oberen Teil des Fensters befindet sich ein Diagramm und darunter eine Tabelle mit einer Aggregation der Werte der ausgewählten Metriken, also beispielsweise Durchschnitt, Minimum und Maximum. Das Fenster „Metrik“ zeigt auch eine Liste von Warnung, die definiert wurden. Sie ist gefiltert nach den im aktuellen Fenster „Metrik“ anzeigten Metriken (wenn Sie eine Reihe von Warnungen haben, dann werden auf diese Weise hier nur die relevanten gezeigt).
@@ -106,7 +106,7 @@ Im Azure-Vorschauportal können Sie nebeneinander stehende Metrikdiagramme erste
   [Gewusst wie: Anzeigen von Nutzungsmetriken für ein DocumentDB-Konto]: #view
   [Gewusst wie: Einrichten von Warnungen bei Leistungsmetriken für ein DocumentDB-Konto]: #setup
   [Nächste Schritte]: #next
-  []: http://i.imgur.com/y7pigTT.png
+  [0]: http://i.imgur.com/y7pigTT.png
   [1]: http://i.imgur.com/6rBNPBL.png
   [2]: http://i.imgur.com/tRZEHk1.png
   [3]: http://i.imgur.com/G4UTi5U.png

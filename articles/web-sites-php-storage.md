@@ -417,7 +417,6 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
   [PHP]: http://www.php.net/manual/en/install.php
   [Azure-PHP-Website]: ./media/web-sites-php-storage/ws-storage-app.png
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
   [composer.phar]: http://getcomposer.org/composer.phar
   [hier]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx

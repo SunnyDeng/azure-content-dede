@@ -1,7 +1,7 @@
 ## WebAPI-Projekt
 
 1.  Öffnen Sie in Visual Studio das Projekt **AppBackend**, das Sie im Lernprogramm **Benachrichtigen von Benutzern** erstellt haben.
-2.  Ersetzen Sie in der Datei "Notifications.cs" die gesamte **Notifications**-Klasse durch den folgenden Code. Stellen Sie sicher, dass Sie die Platzhalter durch Ihre Verbindungszeichenfolge (mit vollständigem Zugriff) für Ihr Notification Hub und den Hub-Namen ersetzen. Diese Information erhalten Sie im [Azure-Verwaltungsportal][]. Dieses Modul stellt nun die unterschiedlichen sicheren Benachrichtigungen dar, die gesendet werden. In einer vollständigen Implementierung werden die Benachrichtigungen in einer Datenbank gespeichert; der Einfachheit halber speichern wir Sie in diesem Fall im Speicher.
+2.  Ersetzen Sie in der Datei "Notifications.cs" die gesamte **Notifications**-Klasse durch den folgenden Code. Stellen Sie sicher, dass Sie die Platzhalter durch Ihre Verbindungszeichenfolge (mit vollständigem Zugriff) für Ihr Notification Hub und den Hub-Namen ersetzen. Diese Information erhalten Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal]. Dieses Modul stellt nun die unterschiedlichen sicheren Benachrichtigungen dar, die gesendet werden. In einer vollständigen Implementierung werden die Benachrichtigungen in einer Datenbank gespeichert; der Einfachheit halber speichern wir Sie in diesem Fall im Speicher.
 
         public class Notification
         {

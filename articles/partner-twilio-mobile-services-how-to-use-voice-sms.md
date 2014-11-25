@@ -225,4 +225,3 @@ Nachdem Sie die URL zur Bereitstellung von TwiML-Antworten eingerichtet haben, k
   [http://www.twilio.com/docs/api/rest/making-calls]: http://www.twilio.com/docs/api/rest/making-calls
   [Gewusst wie: Bereitstellen von TwiML-Antworten von der eigenen Website]: #howto_provide_twiml_responses
   [1]: https://www.twilio.com/docs/api/twiml
-  [twilio_additional_services_and_next_steps]: ../includes/twilio_additional_services_and_next_steps.md

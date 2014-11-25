@@ -178,9 +178,7 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   [GetStartedWithMobileServices-App]: http://go.microsoft.com/fwlink/p/?LinkId=328660
   [0]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-data-sample-download-dotnet-vs12.png
   [1]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-quickstart-startup.png
-  [mobile-services-create-new-service-vs2013]: ../includes/mobile-services-create-new-service-vs2013.md
   [MobileServiceClient-Klasse]: http://go.microsoft.com/fwlink/p/?LinkId=302030
-  [mobile-services-create-new-table-vs2013]: ../includes/mobile-services-create-new-table-vs2013.md
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [2]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-todoitem-data-browse.png
   [Prüfen und Ändern von Daten mit Skripten]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet

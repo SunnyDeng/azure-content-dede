@@ -1,19 +1,19 @@
 Als Nächstes erstellen Sie einen mobilen Dienst, um die In-Memory-Liste für die Datenspeicherung zu ersetzen. Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstellen.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 2.  Klicken Sie unten im Navigationsbereich auf **+NEW**.
 
-    ![plus-new][]
+    ![plus-new][plus-new]
 
 3.  Erweitern Sie **Compute** und **Mobile Service**, und klicken Sie dann auf **Erstellen**.
 
-    ![mobile-create][]
+    ![mobile-create][mobile-create]
 
     Das Dialogfeld **New Mobile Service** wird angezeigt.
 
 4.  Wählen Sie auf der Seite **Create a mobile service** die Option **Create a free 20 MB SQL Database** aus. Geben Sie dann einen Unterdomänennamen für den neuen mobilen Dienst im Textfeld **URL** ein, und warten Sie, bis der Name überprüft wurde. Nachdem der Name fertig überprüft wurde, klicken Sie auf den Pfeil nach rechts, um die nächste Seite aufzurufen.
 
-    ![mobile-create-page1][]
+    ![mobile-create-page1][mobile-create-page1]
 
     Dadurch wird die Seite **Specify database settings** angezeigt.
 
@@ -23,7 +23,7 @@ Als Nächstes erstellen Sie einen mobilen Dienst, um die In-Memory-Liste für di
 
 5.  Geben Sie unter **Name** den Namen der neuen Datenbank ein. Geben Sie dann den **Anmeldenamen** ein. Dies ist der Administratoranmeldename für den neuen SQL-Datenbankserver. Geben Sie das Kennwort ein, und bestätigen Sie es, und klicken Sie dann auf den Häkchenknopf, um den Vorgang abzuschließen.
 
-    ![mobile-create-page2][]
+    ![mobile-create-page2][mobile-create-page2]
 
     <div class="dev-callout"> 
 <b>Hinweis</b> 

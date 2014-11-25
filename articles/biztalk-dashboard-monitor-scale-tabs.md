@@ -1,6 +1,6 @@
 <properties linkid="manage-services-biztalk-services-dashboard-monitor-scale-tabs" urlDisplayName="Dashboard, Monitor, Scale, Configure and Hybrid Connections tabs" pageTitle="Dashboard, Monitor, and Scale in BizTalk Services | Azure" metaKeywords="BizTalk Services, Azure, dashboard, monitor, scale, wabs, mabs" description="Learn about the controls on the Management Portal tabs for BizTalk Services: Dashboard, Monitor, and Scale." metaCanonical="" services="biztalk-services" documentationCenter="" title=" Monitor and Scale tabs" authors="mandia" solutions="" manager="dwrede" editor="cgronlun" />
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia"></tags>
+<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia" />
 
 # BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Konfigurieren" und "Hybridverbindungen"
 
@@ -23,42 +23,32 @@ Dadurch wird ein neues Fenster mit den folgenden Registerkarten geöffnet. In di
 ## <a name="QuickStart"></a>Schnellstart (![Schnellstart][Quick Start])
 
 Eventuell stehen nicht alle aufgeführten Optionen für alle BizTalk Services Editionen zur Verfügung.
-
 <table border="1">
+    <tr>
+        <td><strong>Tools herunterladen</strong></td>
 
-<tr>
-
-<td>
-<strong>Tools herunterladen</strong>
-
-</td>
-</p>
-        <td>Download the BizTalk Services SDK to install the Visual Studio project templates on your on-premises development computer. These templates create the <strong>BizTalk Services</strong> (bridge) and the <strong>BizTalk Service Artifacts</strong> (Transform) Visual Studio projects that are deployed to your BizTalk Service.
+        <td>Laden Sie das BizTalk Services SDK herunter, um die Visual Studio-Projektvorlagen auf Ihrem lokalen Entwicklungscomputer zu speichern. Mithilfe dieser Vorlagen werden die Visual Studio-Projekte <strong>BizTalk Services</strong> (Brücke) und strong>BizTalk Service Artifacts</strong> (Transformation) erstellt, die in Ihrem BizTalk Service bereitgestellt werden. 
         <br/><br/>
-        <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302335"> How do I Start Using the Azure BizTalk Services SDK </a> and <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=241589">Installing the Azure BizTalk Services SDK</a> lists the steps to get started.
+        Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302335"> How do I Start Using the Azure BizTalk Services SDK (Wie verwende ich das Azure BizTalk Servies SDK?, in englischer Sprache)</a> und <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=241589">Installing the Azure BizTalk Services SDK (Installieren des Azure BizTalk Services SDK, in englischer Sprache)</a> werden die ersten Schritte aufgelistet.
         </td>
     </tr>
 
     <tr>
-        <td><strong>Create partner agreements</strong></td>
+        <td><strong>Partnervereinbarungen erstellen</strong></td>
 
-        <td>Opens the Azure BizTalk Services Portal hosted on Azure where you add partners and create X12, AS2, and EDIFACT EDI agreements.
+        <td>Öffnet das auf Azure gehostete Azure BizTalk Services-Portal, auf dem Sie Partner hinzufügen und X12- sowie AS2 EDI-Verträge erstellen können.
         <br/><br/>
-        <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=303653">Configuring Components for EDI Messaging on BizTalk Services Portal</a> lists the steps to get started.
+        Unter  <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=303653">Configuring Components for EDI Messaging on BizTalk Services Portal (Konfigurieren der Komponenten für EDI-Messaging im BizTalk Services-Portal)</a> werden die ersten Schritte aufgelistet.
         </td>
     </tr>
 
 <tr>
-<td>
-<strong>Erfahren Sie mehr über BizTalk Services</strong>
-
-</td>
-<td>
-Im <a HREF="http://azure.microsoft.com/de-de/documentation/services/biztalk-services/">learning center</a> erfahren Sie mehr über Azure BizTalk Services.
-
-</td>
+        <td><strong>Erfahren Sie mehr über BizTalk Services</strong></td>
+        <td>Im <a HREF="http://azure.microsoft.com/de-de/documentation/services/biztalk-services/">learning center</a> erfahren Sie mehr über Azure BizTalk Services.</td>
 </tr>
 </table>
+
+
 In der Taskleiste am unteren Rand stehen folgende Optionen zur Verfügung:
 
 <table>
@@ -353,12 +343,7 @@ Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr
   [EnabledMetric]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_EnabledMetric.png
 
 
-  [Learning Center]: http://azure.microsoft.com/de-de/documentation/services/biztalk-services/
-  [Configuring Components for EDI Messaging on BizTalk Services Portal (Konfigurieren von Komponenten für EDI-Nachrichten im BizTalk Services-Portal, in englischer Sprache]: http://go.microsoft.com/fwlink/p/?LinkID=303653
-  [Verwalten Ihres ACS-Namespace]: http://go.microsoft.com/fwlink/p/?LinkID=285670
   [Verfügbare Metriken]: #Metrics
-  [den BizTalk Service erstellen]: http://go.microsoft.com/fwlink/p/?LinkID=302280
-  [BizTalk Services: Dienststatusübersicht]: http://go.microsoft.com/fwlink/p/?LinkID=329870
   ['Metriken hinzufügen' auswählen]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_AddMetrics.png
   [Ausgegraute Metrik für CPU-Auslastung]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_GrayedMetric.png
   [Aktivierte Metrik für die CPU-Auslastung]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_EnabledMetric.png
@@ -366,7 +351,6 @@ Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr
   [BizTalk Services: Sichern und Wiederherstellen]: http://go.microsoft.com/fwlink/p/?LinkID=329873
   [Hybrid Connection: Connect an Azure Web Site to an On-Premises Resource]: http://go.microsoft.com/fwlink/p/?LinkId=397538
   [Azure Mobile Services and Hybrid Connections]: http://azure.microsoft.com/de-de/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started
-  [1]: http://go.microsoft.com/fwlink/p/?LinkID=397274
   [BizTalk Services: Drosselung]: http://go.microsoft.com/fwlink/p/?LinkID=302282
   [BizTalk Services: Name und Schlüssel des Ausstellers]: http://go.microsoft.com/fwlink/p/?LinkID=303941
   [Wie verwende ich das Azure BizTalk Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335

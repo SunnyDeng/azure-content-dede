@@ -120,9 +120,9 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 * [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
   <br/>Verschicken Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
+
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/ "Windows Store C#"
 [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/ "Windows Store JavaScript"

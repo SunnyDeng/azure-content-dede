@@ -1,6 +1,6 @@
 <properties title="Erste Schritte mit Azure Storage" pageTitle="Erste Schritte mit Azure Storage" metaKeywords="Azure, Getting Started, Storage" description="" services="storage" documentationCenter="" authors="ghogen, kempb" />
 
-<tags ms.service="storage" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/10/2014" ms.author="ghogen, kempb"></tags>
+<tags ms.service="storage" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/10/2014" ms.author="ghogen, kempb" />
 
 > [AZURE.SELECTOR]
 >
@@ -46,5 +46,4 @@ Weitere Informationen finden Sie unter [ASP.NET vNext][ASP.NET vNext].
   [Warteschlangen]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-queues/
   [Tabellen]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-tables/
   [Verwenden von BLOB-Speicher aus .NET]: http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/ "Verwenden von BLOB-Speicher aus .NET"
-  [vs-storage-getting-started-blobs-include]: ../includes/vs-storage-getting-started-blobs-include.md
   [ASP.NET vNext]: http://www.asp.net/vnext

@@ -206,8 +206,8 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
     Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
 
 <!-- Anchors.  --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/ "Windows Store C#"
 [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push/ "Windows Store JavaScript"

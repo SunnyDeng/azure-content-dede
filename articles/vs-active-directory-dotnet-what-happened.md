@@ -1,6 +1,6 @@
 <properties title="Erste Schritte mit Active Directory-Authentifizierung &ndash; Was ist passiert?" pageTitle="Erste Schritte mit Active Directory-Authentifizierung &ndash; Was ist passiert?" metaKeywords="Azure, Getting Started, Active Directory" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
 
-<tags ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/8/2014" ms.author="ghogen, kempb"></tags>
+<tags ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/8/2014" ms.author="ghogen, kempb" />
 
 > [AZURE.SELECTOR]
 >

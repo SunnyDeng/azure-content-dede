@@ -1,6 +1,6 @@
 1.  Falls Sie Ihre Anwendung noch nicht registriert haben, navigieren Sie im Entwicklungscenter für Windows Store-Anwendungen zu [Anwendungsseite senden][Anwendungsseite senden], melden Sie sich mit Ihrem Microsoft-Konto an und klicken Sie dann auf **Anwendungsname**.
 
-    ![][]
+    ![][0]
 
 2.  Geben Sie einen Namen für Ihre Anwendung unter **Anwendungsname** ein, klicken Sie auf **Anwendungsname reservieren** und dann auf **Speichern**.
 
@@ -58,10 +58,10 @@
 
 Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verwenden.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+  
 
   [Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-  []: ./media/mobile-services-register-windows-store-app/mobile-services-submit-win8-app.png
+  [0]: ./media/mobile-services-register-windows-store-app/mobile-services-submit-win8-app.png
   [1]: ./media/mobile-services-register-windows-store-app/mobile-services-win8-app-name.png
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
   [2]: ./media/mobile-services-register-windows-store-app/mobile-services-store-association.png

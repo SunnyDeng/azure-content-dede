@@ -118,4 +118,4 @@ Weitere Informationen über die Elastic Scale-Funktion finden Sie unter:
   [Shard-Elastizität im Script Center]: http://go.microsoft.com/?linkid=9862617
   [Elastic Scale-Ankündigung]: http://go.microsoft.com/?linkid=9862608
   [1]: http://go.microsoft.com/?linkid=9862609
-  [Azure SQL-Datenbank-Forum]: http://social.msdn.microsoft.com/forums/azure/en-US/home?forum=ssdsgetstarted
+  [Azure SQL-Datenbank-Forum]: http://social.msdn.microsoft.com/forums/azure/de-de/home?forum=ssdsgetstarted

@@ -57,14 +57,13 @@ Weitere Informationen zur Erstellung von Indizes und Dokumenten finden Sie unter
 <!--Image references--> 
 <!--Link references-->
 
-  [Dieser Artikel verwendet das Azure-Vorschauportal]: ../includes/preview-portal-note.md
   [Konfigurieren der Suche im Azure-Vorschauportal]: ../search-configure/
   [Schritt 1: Erstellen des Index]: #sub-1
   [Schritt 2: Hinzufügen von Dokumenten]: #sub-2
   [Schritt 3: Indexabfragen]: #sub-3
   [Schritt 4: Ändern oder Löschen von Indizes und Dokumenten]: #sub-4
   [Betrachtungen zum Speicherentwurf]: #sub-5
-  [Index erstellen (Azure Search-API)]: http://msdn.microsoft.com/en-us/library/dn798941.aspx
-  [OData-Ausdruckssyntax für Azure Search]: http://msdn.microsoft.com/en-us/library/dn798921.aspx
-  [Syntax für einfache Abfragen in Azure Search]: http://msdn.microsoft.com/en-us/library/dn798920.aspx
-  [Azure Search REST-API]: http://msdn.microsoft.com/en-us/library/dn798935.aspx
+  [Index erstellen (Azure Search-API)]: http://msdn.microsoft.com/de-de/library/dn798941.aspx
+  [OData-Ausdruckssyntax für Azure Search]: http://msdn.microsoft.com/de-de/library/dn798921.aspx
+  [Syntax für einfache Abfragen in Azure Search]: http://msdn.microsoft.com/de-de/library/dn798920.aspx
+  [Azure Search REST-API]: http://msdn.microsoft.com/de-de/library/dn798935.aspx

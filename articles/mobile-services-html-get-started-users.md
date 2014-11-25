@@ -113,12 +113,9 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts][Autorisieren 
 
 
 
-  [mobile-services-selector-get-started-users]: ../includes/mobile-services-selector-get-started-users.md
   [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
   [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
   [Hinzufügen von Authentifizierung zur App]: #add-authentication
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-html-get-started
-  [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
-  [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md
   [Autorisieren von Benutzern mit Skripts]: /de-de/documentation/articles/mobile-services-html-authorize-users-in-scripts
   [Mobile Services HTML/JavaScript How-to Conceptual Reference]: /de-de/documentation/articles/mobile-services-html-how-to-use-client-library

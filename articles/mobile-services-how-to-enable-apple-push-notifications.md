@@ -10,9 +10,9 @@ Dieses Thema zeigt, wie Sie die iOS-App bereit machen für Pushbenachrichtigung 
 
 Jetzt können Sie diesen .p12-Zertifikat verwenden, um Dienste für die Authentifizierung mit APNS zu aktivieren und Pushbenachrichtigungen im Auftrag Ihrer App zu senden.
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
+
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/

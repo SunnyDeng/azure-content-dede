@@ -1,6 +1,6 @@
 <properties linkid="service-bus-monitor-messaging-entitites" urlDisplayName="Traffic Manager" pageTitle="Monitor Service Bus Messaging Entities - Azure" metaKeywords="" description="Learn how to monitor your Service Bus entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Monitor Service Bus Messaging Entities" authors="sethm" solutions="" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="sethm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="sethm" />
 
 # Gewusst wie: Überwachen von Service Bus-Nachrichtenentitäten
 
@@ -28,7 +28,7 @@ Zu jede Warteschlange finden Sie Grafiken für folgende Informationen:
 
 **Auf einen Blick** im Dashboard zeigt die aktuelle Länge der Warteschlange unter **Queue Length** an. Außerdem werden weitere Eigenschaften der Warteschlange bzw. des Themas angezeigt. Die Informationen werden alle 10 Sekunden aktualisiert.
 
-![][]
+![][0]
 
 ## Überwachen der Aktivität in Service Bus-Themen
 
@@ -45,5 +45,5 @@ Themen-Dashboards ähneln den Warteschlangen-Dashboards, mit Ausnahme der Nutzun
 ![][1]
 
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  []: ./media/service-bus-monitor-message-entities/QueueDashboard.png
+  [0]: ./media/service-bus-monitor-message-entities/QueueDashboard.png
   [1]: ./media/service-bus-monitor-message-entities/AddMetrics.png

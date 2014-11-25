@@ -48,7 +48,7 @@ Außerdem müssen Sie die in diesem Lernprogramm verwendete Datei Actors.txt her
 
 1.  Erstellen Sie einen Ordner C:\\Tutorials auf Ihrem lokalen Computer.
 
-2.  Laden Sie [Actors.txt](http://www.microsoft.com/en-us/download/details.aspx?id=37003) herunter und speichern Sie die Datei unter C:\\Tutorials.
+2.  Laden Sie [Actors.txt](http://www.microsoft.com/de-de/download/details.aspx?id=37003) herunter und speichern Sie die Datei unter C:\\Tutorials.
 
 Erstellen der Anwendung
 -----------------------

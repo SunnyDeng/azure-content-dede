@@ -1,6 +1,6 @@
-<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Python) | Microsoft Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Erfahren Sie, wie Sie den Tabellendienst aus Python zum Erstellen und L&ouml;schen von Tabellen sowie zum Einf&uuml;gen und Abfragen in der Tabelle verwenden." metaCanonical="" services="storage" documentationCenter="Python" title="Verwenden des Tabellenspeicherdiensts aus Python" authors="huvalo" solutions="" manager="wpickett" editor="" />
+<properties linkid="develop-python-table-service" urlDisplayName="Table Service" pageTitle="How to use table storage (Python) | Microsoft Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Learn how to use the Table service from Python to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="huvalo" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/19/2014" ms.author="huvalo" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Verwenden des Tabellenspeicherdiensts aus Python
 
@@ -10,19 +10,19 @@ Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte][Nächste S
 
 ## Inhaltsverzeichnis
 
-[Was ist der Tabellenspeicherdienst?][Was ist der Tabellenspeicherdienst?]
- [Konzepte][Konzepte]
- [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
- [Gewusst wie: Erstellen einer Tabelle][Gewusst wie: Erstellen einer Tabelle]
- [Gewusst wie: Hinzufügen einer Entität zur Tabelle][Gewusst wie: Hinzufügen einer Entität zur Tabelle]
- [Gewusst wie: Aktualisieren einer Entität][Gewusst wie: Aktualisieren einer Entität]
- [Gewusst wie: Ändern einer Gruppe von Entitäten][Gewusst wie: Ändern einer Gruppe von Entitäten]
- [Gewusst wie: Abfragen einer Entität][Gewusst wie: Abfragen einer Entität]
- [Gewusst wie: Abfragen einer Reihe von Entitäten][Gewusst wie: Abfragen einer Reihe von Entitäten]
- [Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften][Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften]
- [Gewusst wie: Löschen einer Entität][Gewusst wie: Löschen einer Entität]
- [Gewusst wie: Löschen einer Tabelle][Gewusst wie: Löschen einer Tabelle]
- [Nächste Schritte][Nächste Schritte]
+ [Was ist der Tabellenspeicherdienst?](Was ist der Tabellenspeicherdienst?)  
+ [Konzepte][Konzepte]  
+ [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]  
+ [Gewusst wie: Erstellen einer Tabelle][Gewusst wie: Erstellen einer Tabelle]  
+ [Gewusst wie: Hinzufügen einer Entität zur Tabelle][Gewusst wie: Hinzufügen einer Entität zur Tabelle]  
+ [Gewusst wie: Aktualisieren einer Entität][Gewusst wie: Aktualisieren einer Entität]  
+ [Gewusst wie: Ändern einer Gruppe von Entitäten][Gewusst wie: Ändern einer Gruppe von Entitäten]  
+ [Gewusst wie: Abfragen einer Entität][Gewusst wie: Abfragen einer Entität]  
+ [Gewusst wie: Abfragen einer Reihe von Entitäten][Gewusst wie: Abfragen einer Reihe von Entitäten]  
+ [Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften][Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften]  
+ [Gewusst wie: Löschen einer Entität][Gewusst wie: Löschen einer Entität]  
+ [Gewusst wie: Löschen einer Tabelle][Gewusst wie: Löschen einer Tabelle]  
+ [Nächste Schritte][Nächste Schritte]  
 
 [WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
 
@@ -37,7 +37,7 @@ Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte][Nächste S
 Das **TableService**-Objekt ermöglicht Ihnen das Arbeiten mit Tabellenspeicherdiensten. Der folgende Code erstellt ein **TableService**-Objekt. Fügen Sie am Anfang jeder
 Python-Datei, in der Sie programmgesteuert auf Azure-Speicher zugreifen möchten, den folgenden Code hinzu:
 
-    from azure.storage import TableService, Entity
+    from azure.storage import *
 
 Der folgende Code erstellt ein **TableService**-Objekt unter Verwendung des Speicherkontonamens und Kontoschlüssels. Ersetzen Sie 'myaccount' und 'mykey' durch das tatsächliche Konto und den tatsächlichen Schlüssel.
 
@@ -143,7 +143,6 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
 -   [Besuchen Sie den Blog des Azure-Speicherteams][Besuchen Sie den Blog des Azure-Speicherteams]
 
   [Nächste Schritte]: #next-steps
-  [Was ist der Tabellenspeicherdienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Gewusst wie: Erstellen einer Tabelle]: #create-table

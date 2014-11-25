@@ -2,7 +2,7 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 
 1.  Klicken Sie auf **TodoItem**, dann auf **Script**, und wählen Sie **Insert** aus.
 
-    ![][]
+    ![][0]
 
 2.  Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf **Speichern**:
 
@@ -31,4 +31,4 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 
     Dieses Einfügeskript sendet eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags) an alle Windows Store-App-Registrierungen, wenn der Einfügevorgang erfolgreich war.
 
-  []: ./media/mobile-services-javascript-update-script-notification-hubs/mobile-insert-script-push2.png
+  [0]: ./media/mobile-services-javascript-update-script-notification-hubs/mobile-insert-script-push2.png

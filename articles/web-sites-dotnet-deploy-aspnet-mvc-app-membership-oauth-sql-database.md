@@ -706,7 +706,6 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
   [Verwenden der Mitgliedschafts-API]: #mbrDB
   [1]: #bkmk_deploytowindowsazure11
   [Nächste Schritte]: #nextsteps
-  [install-sdk-2013-only]: ../includes/install-sdk-2013-only.md
   [Visual Studio 2013 Update 2 RC]: http://go.microsoft.com/fwlink/?LinkId=390521
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
 

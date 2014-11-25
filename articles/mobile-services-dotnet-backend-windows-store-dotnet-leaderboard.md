@@ -717,9 +717,9 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 * [Hinzufügen von Pushbenachrichtigungen][Hinzufügen von Pushbenachrichtigungen]; wenn jemand beispielsweise einen neuen Spieler hinzufügt oder sein Ergebnis aktualisiert
 * [Erste Schritte mit der Authentifizierung][Erste Schritte mit der Authentifizierung]
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
+
 
 [ASP.NET Web API]: http://asp.net/web-api
 [Übersicht]: #overview

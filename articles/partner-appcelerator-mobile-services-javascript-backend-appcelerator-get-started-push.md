@@ -442,7 +442,7 @@ Ihre App unterstützt nun Pushbenachrichtigungen sowohl für die Plattform iOS a
 
 Auf diese Weise wird ein neues Einfügeskript registriert, das über das [Mobile Services Push-Objekt][Mobile Services Push-Objekt] eine Pushbenachrichtigung (den eingefügten Text) zum in der Einfügeanforderung angegebenen Gerät sendet.
 
-<!-- Images. --> <!-- Anchors. --> <!-- URLs. -->
+  
 
   [Erstellen der Zertifikatsignieranforderungsdatei]: #certificates
   [Registrieren der App und Aktivieren von Pushbenachrichtigungen]: #register
@@ -454,9 +454,7 @@ Auf diese Weise wird ein neues Einfügeskript registriert, das über das [Mobile
   [Aktualisieren von Skripts zum Senden von Pushbenachrichtigungen]: #update-scripts
   [Einfügen von Daten zum Empfangen von Benachrichtigungen]: #test
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
-  [Apple-Pushbenachrichtigungen aktivieren]: ../includes/enable-apple-push-notifications.md
   [accounts.google.com]: http://go.microsoft.com/fwlink/p/?LinkId=268302
-  [Enable GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
   [Installieren der Java-Entwicklungstools]: http://docs.appcelerator.com/titanium/latest/#!/guide/Installing_the_Java_Development_Tools
   [0]: http://developer.android.com/sdk/ndk/index.html
   [0]: ./media/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push/image0011.png
@@ -464,7 +462,6 @@ Auf diese Weise wird ein neues Einfügeskript registriert, das über das [Mobile
   [2]: ./media/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push/image0041.png
   [3]: ./media/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push/image0061.png
   [Titanium-Module verwenden]: http://docs.appcelerator.com/titanium/latest/#!/guide/Using_Titanium_Modules
-  [mobile-services-apns-configure-push]: ../includes/mobile-services-apns-configure-push.md
   [4]: ./media/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push/image062.png
   [5]: ./media/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push/image064.png
   [6]: ./media/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push/image066.png

@@ -113,8 +113,8 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 ## <a name="next-steps"></a>Next steps  
 In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services.
 
-<!-- Anchors. --> 
-<!-- URLs. -->
+ 
+
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users "Windows Store C#"
 [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users "Windows Store JavaScript"

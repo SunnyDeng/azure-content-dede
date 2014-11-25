@@ -1,6 +1,6 @@
 <properties linkid="dev-net-tutorials-hybrid-solution" urlDisplayName="Hybrid Application" pageTitle="Hybrid On-Premises/ Cloud Application (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="Learn how to create a .NET On-Premises/Cloud Hybrid Application Using the Azure Service Bus Relay." metaCanonical="" services="service-bus" documentationCenter=".NET" title=".NET On-Premises/Cloud Hybrid Application Using Service Bus Relay" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="sethm"></tags>
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="sethm" />
 
 # Hybride lokale/Cloud-.NET-Anwendung mit Service Bus Relay
 
@@ -734,7 +734,6 @@ Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
 -   [Servicebus-Anleitungen][Servicebus-Anleitungen]
 -   [Einsatz von Servicebus-Warteschlangen][Einsatz von Servicebus-Warteschlangen]
 
-  [create-account-note]: ../includes/create-account-note.md
   [0]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
   [1]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/App2.png
   [Tools und SDK herunterladen]: http://go.microsoft.com/fwlink/?LinkId=271920
@@ -747,7 +746,7 @@ Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
   [7]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-multi-tier-27.png
   [8]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/sb-queues-09.png
   [9]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/sb-queues-06.png
-  [hier]: http://http://msdn.microsoft.com/en-us/library/windowsazure/ff687127.aspx
+  [hier]: http://http://msdn.microsoft.com/de-de/library/windowsazure/ff687127.aspx
   [10]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/VSProperties.png
   [Verwenden des NuGet Servicebus-Pakets]: http://go.microsoft.com/fwlink/?LinkId=234589
   [11]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-web-1.png
@@ -764,8 +763,8 @@ Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
   [20]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-multi-tier-40.png
   [21]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-web-11.png
   [22]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/App1.png
-  [Azure-Ausführungsmodelle]: http://www.windowsazure.com/en-us/develop/net/fundamentals/compute/
-  [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website]: http://www.windowsazure.com/en-us/develop/net/tutorials/get-started/
+  [Azure-Ausführungsmodelle]: http://www.windowsazure.com/de-de/develop/net/fundamentals/compute/
+  [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website]: http://www.windowsazure.com/de-de/develop/net/tutorials/get-started/
   [23]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-21.png
   [24]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-22.png
   [25]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-web-12.png
@@ -778,6 +777,6 @@ Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
   [32]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-41.png
   [33]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-service1.png
   [34]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
-  [Azure-Servicebus]: http://msdn.microsoft.com/en-us/library/windowsazure/ee732537.aspx
+  [Azure-Servicebus]: http://msdn.microsoft.com/de-de/library/windowsazure/ee732537.aspx
   [Servicebus-Anleitungen]: /de-de/documentation/services/service-bus/
-  [Einsatz von Servicebus-Warteschlangen]: /en-us/develop/net/how-to-guides/service-bus-queues/
+  [Einsatz von Servicebus-Warteschlangen]: /de-de/develop/net/how-to-guides/service-bus-queues/

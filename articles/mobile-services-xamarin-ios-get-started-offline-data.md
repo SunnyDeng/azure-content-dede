@@ -198,7 +198,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 -   [So verwenden Sie den Client der Xamarin-Komponente für Azure Mobile Services][So verwenden Sie den Client der Xamarin-Komponente für Azure Mobile Services]
 
-<!-- Anchors. --> <!-- Images --> <!-- URLs. -->
+ <!-- Images --> 
 
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started-data/

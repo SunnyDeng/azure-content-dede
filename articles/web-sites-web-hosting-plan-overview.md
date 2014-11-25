@@ -49,7 +49,7 @@ Wenn Sie auf den Plan klicken, wird ein Blade geöffnet, mit dem Sie den Webhost
 
 Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion][Kostenlose Microsoft Azure-Testversion].
 
-<!-- Images. -->
+
 
   [Hier]: http://go.microsoft.com/fwlink/?LinkID=394421
   [Erfahren Sie mehr über das Verwalten von Webhostingplänen]: http://go.microsoft.com/fwlink/?LinkID=394411

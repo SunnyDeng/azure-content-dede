@@ -1,6 +1,6 @@
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **API** und dann auf **Create a custom API**.
 
@@ -34,26 +34,26 @@
             })
         };
 
-    Dieser Code verwendet das [mssql-Objekt][], um direkt auf die Tabelle **todoitem** zuzugreifen und für alle Elemente das Erledigt-Kennzeichen zu setzen. Da die Funktion **exports.post** verwendet wird, senden die Clients eine POST-Anforderung zur Durchführung des Vorgangs. Die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
+    Dieser Code verwendet das [mssql-Objekt][mssql-Objekt], um direkt auf die Tabelle **todoitem** zuzugreifen und für alle Elemente das Erledigt-Kennzeichen zu setzen. Da die Funktion **exports.post** verwendet wird, senden die Clients eine POST-Anforderung zur Durchführung des Vorgangs. Die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
 
 > [WACOM.NOTE]
-> Das [request][]-Objekt und das [response][]-Objekt, die für die Funktionen der benutzerdefinierten API bereitgestellt werden, werden durch die [Express.js-Bibliothek][] implementiert. Weitere Informationen finden Sie unter [Benutzerdefinierte API][].
+> Das [request][request]-Objekt und das [response][response]-Objekt, die für die Funktionen der benutzerdefinierten API bereitgestellt werden, werden durch die [Express.js-Bibliothek][Express.js-Bibliothek] implementiert. Weitere Informationen finden Sie unter [Benutzerdefinierte API][Benutzerdefinierte API].
 
 Als Nächstes ändern Sie die Quickstart-App so, dass eine neue Schaltfläche und neuer Code hinzugefügt wird, der die neue benutzerdefinierte API asynchron aufruft.
 
-<!-- Anchors. --> 
+ 
 
-<!-- Images. --> 
+ 
 
-<!-- URLs. -->
+
 
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-create-custom-api/mobile-services-selection.png
+  [0]: ./media/mobile-services-create-custom-api/mobile-services-selection.png
   [1]: ./media/mobile-services-create-custom-api/mobile-custom-api-create.png
   [2]: ./media/mobile-services-create-custom-api/mobile-custom-api-create-dialog2.png
   [3]: ./media/mobile-services-create-custom-api/mobile-custom-api-select2.png
-  [mssql-Objekt]: http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx
-  [request]: http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx
-  [response]: http://msdn.microsoft.com/en-us/library/windowsazure/dn303373.aspx
+  [mssql-Objekt]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554212.aspx
+  [request]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx
+  [response]: http://msdn.microsoft.com/de-de/library/windowsazure/dn303373.aspx
   [Express.js-Bibliothek]: http://go.microsoft.com/fwlink/p/?LinkId=309046
-  [Benutzerdefinierte API]: http://msdn.microsoft.com/en-us/library/windowsazure/dn280974.aspx
+  [Benutzerdefinierte API]: http://msdn.microsoft.com/de-de/library/windowsazure/dn280974.aspx

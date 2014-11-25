@@ -31,6 +31,5 @@ Dies bildet den Abschluss der Lernprogramm-Reihe über Grundlagen mit Daten in M
 
 
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/
-  [mobile-services-javascript-paging]: ../includes/mobile-services-javascript-paging.md
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users/
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push/

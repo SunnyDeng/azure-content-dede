@@ -110,9 +110,9 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 -   **[Notification Hub-Informationen für Windows Store][Notification Hub-Informationen für Windows Store]**
     Enthält eine Referenz für die Vorlagen-Ausdruckssprache.
 
-<!-- Anchors. -->
-<!-- Images. -->
-<!-- URLs. -->
+
+
+
 
   [Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users
   [Benachrichtigungshubs im Überblick]: http://go.microsoft.com/fwlink/p/?LinkId=317339

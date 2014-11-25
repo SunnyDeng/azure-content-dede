@@ -1,6 +1,6 @@
 <properties title="DocumentDB programming: Stored procedures, triggers, and UDFs" pageTitle="DocumentDB programming: Stored procedures, triggers, and UDFs | Azure" description="Find out how for Document DB you can write stored procedures, triggers, and user defined functions (UDFs) natively in JavaScript." metaKeywords="NoSQL, DocumentDB,  database, document-orientated database, JSON, getting started"  services="documentdb" solutions="data-management" documentationCenter=""  authors="bradsev" manager="jhubbard" editor="cgronlun" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="hawong"></tags>
+<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="hawong" />
 
 # DocumentDB-Programmierung: Gespeicherte Prozeduren, Auslöser und UDFs
 
@@ -115,7 +115,7 @@ Das beschriebene Beispiel hat die Verwendung gespeicherter Prozeduren veranschau
 
 ## Laufzeitunterstützung
 
-Das serverseitige DocumentDB JavaScript SDK unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß des [ECMA-262][]-Standards.
+Das serverseitige DocumentDB JavaScript SDK unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß des [ECMA-262][ECMA-262]-Standards.
 
 ## Transaktionen
 

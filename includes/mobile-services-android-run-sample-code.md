@@ -1,6 +1,6 @@
 1.  Erweitern Sie im Paket-Explorer die Einträge **GetStartedWithData**, **src** und **.com.example.GetStartedWithData** und sehen Sie sich die Datei ToDoActivity.java an.
 
-    ![][]
+    ![][0]
 
     Beachten Sie die `//TODO` -Kommentare. Diese geben die von Ihnen durchzuführenden Schritte an, damit diese App mit dem mobilen Dienst funktionieren kann.
 
@@ -14,5 +14,5 @@
 
     Der gespeicherte Test wird in einer speicherinternen Sammlung gespeichert und in der folgenden Liste angezeigt.
 
-  []: ./media/download-android-sample-code/mobile-eclipse-project.png
+  [0]: ./media/download-android-sample-code/mobile-eclipse-project.png
   [1]: ./media/download-android-sample-code/mobile-quickstart-startup-android.png

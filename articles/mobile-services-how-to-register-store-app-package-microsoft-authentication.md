@@ -20,5 +20,4 @@ Falls Sie Ihr App-Paket bereits registriert haben, müssen Sie den Wert **true**
 
   [Schnellstart: Hinzufügen von Pushbenachrichtigungen für einen mobilen Dienst]: http://go.microsoft.com/fwlink/p/?LinkId=309101
   [Authentifizieren einer Windows Store-App mit "Einmaliges Anmelden über Live Connect"]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet
-  [mobile-services-register-windows-store-app]: ../includes/mobile-services-register-windows-store-app.md
   [LoginAsync]: http://go.microsoft.com/fwlink/p/?LinkId=311594

@@ -1,10 +1,10 @@
 <properties linkid="manage-services-identity-organization-account" urlDisplayName="Organization accounts" pageTitle="Sign up for Azure as an organization" metaKeywords="" description="Learn how you can use an organizational account to leverage the existing user accounts, policies, settings, or on-premise server deployments you already have improve efficiencies between your organization's on-premises identity infrastructure and Azure AD." metaCanonical="" services="active-directory" documentationCenter="" title="Sign up for Azure as an organization" authors="terrylan" solutions="" manager="terrylan" editor="" />
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="terrylan"></tags>
+<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="terrylan" />
 
 # Als Unternehmen für Azure registrieren
 
-[WACOM.INCLUDE [disclaimer][]]
+[WACOM.INCLUDE [disclaimer](../includes/disclaimer.md)]
 
 Bis vor Kurzem war es nur mit einem Microsoft-Konto (Windows Live-ID) möglich, sich für ein neues Azure-Abonnement anzumelden. Nun unterstützt Azure auch eine der beiden folgenden Kontomethoden zur Registrierung:
 
@@ -14,18 +14,17 @@ Bis vor Kurzem war es nur mit einem Microsoft-Konto (Windows Live-ID) möglich, 
 
     Nach der Erstellung dieses Mandanten kann ein Administrator Organisationskonten an alle seine Mitarbeiter/Studenten ausgeben und diesen Konten Lizenzen für die Clouddienst-Abonnements zuweisen, auf die sie zugreifen müssen, z. B. Azure.
 
-Möchten Sie sich als Organisation bei Azure anmelden? [**Jetzt anmelden**][**Jetzt anmelden**]
+Möchten Sie sich als Organisation bei Azure anmelden? [**Jetzt anmelden**][Jetzt anmelden]
 
 **Zusätzliche Ressourcen**
 
--   [Was ist Azure AD?][Was ist Azure AD?]
+-   [Was ist Azure AD?][Was ist Azure AD]
 -   [TechNet-Bibliothek zu Azure AD][TechNet-Bibliothek zu Azure AD]
 -   [Informationen in MSDN zu Azure AD][Informationen in MSDN zu Azure AD]
 
-  [Haftungsausschluss]: ../includes/disclaimer.md
-  [Weitere Informationen]: http://windows.microsoft.com/en-US/windows-live/sign-in-what-is-microsoft-account
+  [Weitere Informationen]: http://windows.microsoft.com/de-de/windows-live/sign-in-what-is-microsoft-account
   [1]: http://technet.microsoft.com/de-de/library/jj573650
-  [**Jetzt anmelden**]: http://go.microsoft.com/fwlink/?LinkId=269967
-  [Was ist Azure AD?]: /de-de/manage/services/identity/what-is-windows-azure-active-directory/
+  [Jetzt anmelden]: http://go.microsoft.com/fwlink/?LinkId=269967
+  [Was ist Azure AD]: /de-de/manage/services/identity/what-is-windows-azure-active-directory/
   [TechNet-Bibliothek zu Azure AD]: http://technet.microsoft.com/de-de/library/hh967619.aspx
   [Informationen in MSDN zu Azure AD]: http://msdn.microsoft.com/library/windowsazure/jj673460.aspx

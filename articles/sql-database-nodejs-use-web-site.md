@@ -418,7 +418,7 @@ In diesem Abschnitt führen Sie die Bereitstellungsschritte durch, die Sie nach 
         To https://username@tabletasklist.azurewebsites.net/TableTasklist.git
          * [new branch]      master -> master
 
-3.  Nachdem der Pushvorgang abgeschlossen ist, browsen Sie zu **[http://[Websitename].azurewebsites.net/][]**, um Ihre Anwendung anzuzeigen.
+3.  Nachdem der Pushvorgang abgeschlossen ist, browsen Sie zu **http://[Websitename].azurewebsites.net/**, um Ihre Anwendung anzuzeigen.
 
 ### Wechseln zu einer Umgebungsvariablen
 
@@ -492,7 +492,6 @@ Nachdem die Änderungen in Azure bereitgestellt wurden, sollte Ihre Webanwendung
   [1]: http://getbootstrap.com/
   [Eine Webseite mit einer leeren Aufgabenliste]: ./media/sql-database-nodejs-use-web-site/sql_todo_empty.png
   [Ein Bild des neuen Elements in der Aufgabenliste]: ./media/sql-database-nodejs-use-web-site/sql_todo_list.png
-  [http://[Websitename].azurewebsites.net/]: http://[site
   [Konfigurationslink]: ./media/sql-database-nodejs-use-web-site/sql-task-configure.png
   [App-Einstellungen]: ./media/sql-database-nodejs-use-web-site/appsettings.png
   [Speichern im Abschnitt 'App-Einstellungen']: ./media/sql-database-nodejs-use-web-site/savebutton.png

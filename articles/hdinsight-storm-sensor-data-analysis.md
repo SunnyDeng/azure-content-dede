@@ -6,7 +6,7 @@
 
 Erstellen Sie eine Lösung, die Sensordaten aus einem Azure Ereignis-Hub mithilfe eines HDInsight Storm-Clusters verarbeitet. Während der Verarbeitung speichert die Storm-Topologie eingehende Daten in einem HBase-Cluster. Die Topologie verwendet außerdem SignalR, um Informationen über ein webbasiertes, in Azure Websites gehostetes Dashboard nahezu in Echtzeit anzuzeigen.
 
-> [AZURE.NOTE] Eine komplette Version dieses Projekts finden Sie unter [][]<https://github.com/Blackmist/hdinsight-eventhub-example></a>.
+> [AZURE.NOTE] Eine komplette Version dieses Projekts finden Sie unter <https://github.com/Blackmist/hdinsight-eventhub-example>.
 
 ## Voraussetzungen
 
@@ -28,11 +28,11 @@ Das Dashboard zeigt Sensorinformationen nahezu in Echtzeit an. In diesem Fall is
 
 Die Website enthält eine statische index.html-Datei, die sich ebenfalls mit SignalR verbindet, und verwendet D3.js zur grafischen Darstellung der Daten aus der Storm-Topologie.
 
-> [WACOM.NOTE] Alternativ könnten Sie reine WebSockets anstelle von SignalR verwenden. WebSockets bietet jedoch keinen eingebauten Skalierungsmechanismus, falls Sie die Website horizontal skalieren müssen. SignalR kann über den Azure Servicebus skaliert werden ([][1]<http://www.asp.net/signalr/overview/performance/scaleout-with-windows-azure-service-bus></a>).
+> [WACOM.NOTE] Alternativ könnten Sie reine WebSockets anstelle von SignalR verwenden. WebSockets bietet jedoch keinen eingebauten Skalierungsmechanismus, falls Sie die Website horizontal skalieren müssen. SignalR kann über den Azure Servicebus skaliert werden (<http://www.asp.net/signalr/overview/performance/scaleout-with-windows-azure-service-bus>).
 >
 > Ein Beispiel für die Kommunikation zwischen einer Storm-Topologie und einer Python-Website über reine WebSockets finden Sie im Projekt [Storm Tweet Sentiment D3 Visualization][Storm Tweet Sentiment D3 Visualization].
 
-1.  Erstellen Sie eine neue C#-Anwendung in Visual Studio mithilfe der Vorlage **ASP.NET-Webanwendung**. Geben Sie der Anwendung den Namen **Dashboard**.
+1.  Erstellen Sie eine neue C\#-Anwendung in Visual Studio mithilfe der Vorlage **ASP.NET-Webanwendung**. Geben Sie der Anwendung den Namen **Dashboard**.
 
 2.  Wählen Sie im Fenster **Neues ASP.NET-Projekt** die Anwendungsvorlage **Leer** aus. Wählen Sie im Bereich **Microsoft Azure** die Optionen **In der Cloud hosten** und **Website** aus. Klicken Sie anschließend auf **Ok**.
 
@@ -357,7 +357,7 @@ Die Website enthält eine statische index.html-Datei, die sich ebenfalls mit Sig
 
 ### Testen des Dashboards
 
-1.  Öffnen Sie die Seite **test.html** in dieser Website in einem neuen Browserfenster, um zu prüfen, ob SignalR funktionstüchtig ist und ob das Dashboard eine Grafik für die an SignalR gesendeten Daten enthält. Zum Beispiel: **<http://mydashboard.azurewebsites.net/test.html>**.
+1.  Öffnen Sie die Seite **test.html** in dieser Website in einem neuen Browserfenster, um zu prüfen, ob SignalR funktionstüchtig ist und ob das Dashboard eine Grafik für die an SignalR gesendeten Daten enthält. Zum Beispiel: **http://mydashboard.azurewebsites.net/test.html**.
 
 2.  Das Dashboard erwartet Daten im JSON-Format mit Werten für **device id** und **temperature**. Zum Beispiel **{"device":0, "temperature":80}**. Geben Sie einige Testwerte auf der Seite **test.html** ein und verwenden Sie die Geräte-IDs 0 bis 9, während Sie das Dashboard in einer anderen Seite geöffnet haben. Beachten Sie, dass die Linien für die einzelnen Geräte-IDs in unterschiedlichen Farben gezeichnet werden.
 
@@ -533,7 +533,7 @@ Sie müssen beide Server in einem virtuellen Netzwerk in Azure bereitstellen, da
     -   **Adressraum**: Wählen Sie einen Adressraum für das virtuelle Netzwerk, der groß genug ist, um Adressen für alle Knoten im Cluster zur Verfügung zu stellen. Andernfalls schlägt die Bereitstellung fehl.
     -   **Maximale Anzahl virtueller Computer**: Wählen Sie eine maximale Anzahl an virtuellen Computern aus.
     -   **Speicherort**: Der Speicherort muss derselbe sein wie der des HBase-Clusters, den Sie erstellen.
-    -   **DNS-Server**: In diesem Artikel werden interne DNS-Server verwendet, die von Azure bereitgestellt werden. Daher können Sie **None** auswählen. Erweiterte Netzwerkkonfiguration mit benutzerdefinierten DNS-Servern wird ebenfalls unterstützt. Eine genaue Anleitung finden Sie unter [][2]<http://msdn.microsoft.com/library/azure/jj156088.aspx></a>.
+    -   **DNS-Server**: In diesem Artikel werden interne DNS-Server verwendet, die von Azure bereitgestellt werden. Daher können Sie **None** auswählen. Erweiterte Netzwerkkonfiguration mit benutzerdefinierten DNS-Servern wird ebenfalls unterstützt. Eine genaue Anleitung finden Sie unter <http://msdn.microsoft.com/library/azure/jj156088.aspx>.
 
 4.  Klicken Sie auf **Virtuelles Netzwerk erstellen**. Der Name des neuen virtuellen Netzwerks wird in der Liste angezeigt. Warten Sie, bis in der Statusspalte **Created** angezeigt wird.
 
@@ -643,7 +643,7 @@ Verwenden Sie das [SignalR-Client-SDK für Java][SignalR-Client-SDK für Java], 
 
 3.  Führen Sie den folgenden Befehl aus, um das Projekt von GitHub herunterzuladen.
 
-    git clone <https://github.com/SignalR/java-client>
+    git clone https://github.com/SignalR/java-client
 
 4.  Wechseln Sie in das Verzeichnis **java-client\\signalr-client-sdk** und führen Sie die folgenden Befehle aus, um das Projekt in eine JAR-Datei zu kompilieren.
 
@@ -1079,7 +1079,7 @@ Bolts sind in einer Topologie für die Verarbeitung zuständig. Diese Topologie 
           }
         }
 
-    Ersetzen Sie `http://yourwebsiteaddress` durch die Adresse Ihrer Azure Website, in der Sie das Dashboard zuvor veröffentlicht haben. Zum Beispiel: <http://mydashboard.azurewebsites.net>.
+    Ersetzen Sie `http://yourwebsiteaddress` durch die Adresse Ihrer Azure Website, in der Sie das Dashboard zuvor veröffentlicht haben. Beispiel: http://mydashboard.azurewebsites.net.
 
 5.  Speichern und schließen Sie die Dateien.
 
@@ -1318,7 +1318,7 @@ Führen Sie die folgenden Schritte in Ihrer Entwicklungsumgebung aus, um die Tem
 
 Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Ereignis-Hub lesen, Daten in HBase speichern und Daten aus Storm mit SignalR und D3.js in einem externen Dashboard anzeigen können.
 
--   Weitere Informationen zu Apache Storm finden Sie unter [][3]<https://storm.incubator.apache.org/></a>
+-   Weitere Informationen zu Apache Storm finden Sie unter <https://storm.incubator.apache.org/>
 
 -   Weitere Informationen zu HBase mit HDInsight finden Sie unter [HBase mit HDInsight: Übersicht][HBase mit HDInsight: Übersicht]
 
@@ -1326,23 +1326,19 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Ereignis-Hub lesen
 
 -   Weitere Informationen zu D3.js finden Sie unter [D3.js - Data Driven Documents][D3.js - Data Driven Documents]
 
--   Weitere Informationen zur Erstellung von Topologien in .NET finden Sie unter [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm in HDInsight][Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm in HDInsight]
+-   Weitere Informationen zur Erstellung von Topologien in .NET finden Sie unter [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C\# mit Storm in HDInsight][Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C\# mit Storm in HDInsight]
 
-  []: https://github.com/Blackmist/hdinsight-eventhub-example
   [Microsoft Azure SDK für .NET]: http://azure.microsoft.com/de-de/downloads/archive-net-downloads/
   [Java und JDK]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
   [Maven]: http://maven.apache.org/what-is-maven.html
   [Git]: http://git-scm.com/
   [Chocolatey NuGet]: http://chocolatey.org/
   [SignalR]: http://www.asp.net/signalr/overview/getting-started/introduction-to-signalr
-  [1]: http://www.asp.net/signalr/overview/performance/scaleout-with-windows-azure-service-bus
   [Storm Tweet Sentiment D3 Visualization]: https://github.com/P7h/StormTweetsSentimentD3Viz
   [Azure-Portal]: https://manage.windowsazure.com
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  [2]: http://msdn.microsoft.com/library/azure/jj156088.aspx
   [SignalR-Client-SDK für Java]: https://github.com/SignalR/java-client
-  [3]: https://storm.incubator.apache.org/
   [HBase mit HDInsight: Übersicht]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-hbase-overview/
   [ASP.NET SignalR]: http://signalr.net/
   [D3.js - Data Driven Documents]: http://d3js.org/
-  [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm in HDInsight]: /de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/
+  [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C\# mit Storm in HDInsight]: /de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/

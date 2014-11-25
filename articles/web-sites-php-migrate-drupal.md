@@ -1,6 +1,6 @@
 <properties linkid="migrating-drupal-to-azure-websites" urlDisplayName="Migrating Drupal to Azure Websites" pageTitle="Migrating Drupal to Azure Websites" metaKeywords="Drupal, PHP, Web Sites" description="Migrate a Drupal PHP site to Azure Websites." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Migrating Drupal to Azure Websites" authors="cephalin; jroth" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin; jroth"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin; jroth" />
 
 # Migrieren von Drupal zu Azure-Websites
 
@@ -25,7 +25,7 @@ Nach dem Einrichten einer neuen Website mit einer MySQL-Datenbank verfügen Sie 
 
 ## <a name="copy-database"></a><span class="short-header">Kopieren der Datenbank zu MySQL in Azure-Websites</span>2. Kopieren der Datenbank zu MySQL in Azure-Websites
 
-Es gibt viele Möglichkeiten, eine Datenbank zu Azure zu migrieren. Ein Verfahren, das sich sehr gut für MySQL-Datenbanken eignet ist das Tool [MySqlDump][]. Der folgende Befehl ist ein Beispiel für das Kopieren von einem lokalen Computer zu Azure-Websites:
+Es gibt viele Möglichkeiten, eine Datenbank zu Azure zu migrieren. Ein Verfahren, das sich sehr gut für MySQL-Datenbanken eignet ist das Tool [MySqlDump][MySqlDump]. Der folgende Befehl ist ein Beispiel für das Kopieren von einem lokalen Computer zu Azure-Websites:
 
     mysqldump -u local_username --password=local_password  drupal | mysql -h remote_host -u remote_username --password=remote_password remote_db_name
 

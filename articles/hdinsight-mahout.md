@@ -260,13 +260,13 @@ Eine der in Mahout verfügbaren Klassifizierungsmethoden besteht darin, einen [R
 
 Die aktuelle Mahout-Implementierung ist mit dem Repository-Format der University of California, Irvine (UCI). [warum ist das wichtig, was ist das für ein Format?]
 
-1.  Laden Sie folgende Dateien von [][]<http://nsl.cs.unb.ca/NSL-KDD/></a> herunter.
+1.  Laden Sie folgende Dateien von <http://nsl.cs.unb.ca/NSL-KDD/> herunter.
 
 -   [KDDTrain+.ARFF][KDDTrain+.ARFF] – die Trainingsdatei
 
 -   [KDDTest+.ARFF][KDDTest+.ARFF] – die Testdaten
 
-1.  Öffnen Sie jede Datei und entfernen Sie die Zeilen oben, die mit <'@'> beginnen. Speichern Sie dann die Dateien. Werden sie nicht entfernt, erhalten Sie Fehler, wenn Sie die Daten mit Mahout verwenden.
+1.  Öffnen Sie jede Datei und entfernen Sie die Zeilen oben, die mit '@' beginnen. Speichern Sie dann die Dateien. Werden sie nicht entfernt, erhalten Sie Fehler, wenn Sie die Daten mit Mahout verwenden.
 
 2.  Laden Sie auf **example/data** hoch. Sie können das mithilfe der Funktion `Add-HDInsightFile` im [HDInsight-Tools][HDInsight-Tools] PowerShell-Modul tun.
 
@@ -405,7 +405,6 @@ Wenn Sie Aufträge mit diesen Klassen ausführen möchten, bauen Sie eine eine V
   [HDInsight-Tools]: https://github.com/Blackmist/hdinsight-tools
   [Hochladen von Daten für Hadoop-Aufträge in HDInsight]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-upload-data/
   [Random Forest]: http://en.wikipedia.org/wiki/Random_forest
-  []: http://nsl.cs.unb.ca/NSL-KDD/
   [KDDTrain+.ARFF]: http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff
   [KDDTest+.ARFF]: http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/

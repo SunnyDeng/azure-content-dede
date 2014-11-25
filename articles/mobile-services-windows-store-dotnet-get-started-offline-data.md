@@ -258,7 +258,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 -   [Behandeln von Konflikten mit Offlineunterstützung für Mobile Services][Behandeln von Konflikten mit Offlineunterstützung für Mobile Services]
 
-<!-- Anchors. --> <!-- Images --> <!-- URLs. -->
+ <!-- Images --> 
 
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/

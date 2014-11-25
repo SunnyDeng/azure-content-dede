@@ -201,9 +201,8 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 -   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
     Verschicken Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. TODO:: update download link, github link, and completed example project with new Xamarin.iOs projects -->
+  <!-- URLs. TODO:: update download link, github link, and completed example project with new Xamarin.iOs projects -->
 
-  [mobile-services-selector-get-started-data]: ../includes/mobile-services-selector-get-started-data.md
   [Herunterladen des Xamarin.iOS-App-Projekts]: http://go.microsoft.com/fwlink/p/?LinkId=331302
   [Erstellen des mobilen Dienstes]: #create-service
   [Erstellen einer Datentabelle als Datenspeicher]: #add-table
@@ -212,7 +211,6 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
   [Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
   [XCode 5.0]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [0]: ./media/partner-xamarin-mobile-services-ios-get-started-data/mobile-quickstart-startup-ios.png
-  [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
   [1]: ./media/partner-xamarin-mobile-services-ios-get-started-data/mobile-data-tab-empty.png
   [2]: ./media/partner-xamarin-mobile-services-ios-get-started-data/mobile-create-todoitem-table.png
   [3]: ./media/partner-xamarin-mobile-services-ios-get-started-data/mobile-dashboard-tab.png

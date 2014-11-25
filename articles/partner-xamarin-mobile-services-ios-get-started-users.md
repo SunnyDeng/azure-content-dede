@@ -110,14 +110,11 @@ Laden Sie das [abgeschlossene Beispielprojekt][abgeschlossene Beispielprojekt] h
 
 Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts][Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. TODO:: update completed example project link with project download -->
+  <!-- URLs. TODO:: update completed example project link with project download -->
 
-  [mobile-services-selector-get-started-users]: ../includes/mobile-services-selector-get-started-users.md
   [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
   [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
   [Hinzufügen von Authentifizierung zur App]: #add-authentication
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-ios
-  [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
-  [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md
   [abgeschlossene Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
   [Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios

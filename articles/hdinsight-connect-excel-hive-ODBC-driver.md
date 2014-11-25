@@ -1,4 +1,4 @@
-<properties urlDisplayName="Connect Excel to HDInsight" pageTitle="Verbinden von Excel &uuml;ber den Hive ODBC-Treiber mit Hadoop | Azure" metaKeywords="" description="Erfahren Sie, wie Sie den Microsoft Hive ODBC-Treiber f&uuml;r Excel einrichten und zum Abfragen von Daten in einem HDInsight-Cluster verwenden k&ouml;nnen." metaCanonical="" services="hdinsight" documentationCenter="" title="Verbinden von Excel &uuml;ber den Microsoft Hive ODBC Driver mit Hadoop " authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-connect-excel-with-hive-ODBC" urlDisplayName="Connect Excel to HDInsight" pageTitle="Connect Excel to Hadoop with the Hive ODBC Driver | Azure" metaKeywords="" description="Learn how to set up and use the Microsoft Hive ODBC driver for Excel to query data in an HDInsight cluster." metaCanonical="" services="hdinsight" documentationCenter="" title="Connect Excel to Hadoop with the Microsoft Hive ODBC Driver" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -43,26 +43,27 @@ Die folgenden Schritte zeigen Ihnen, wie Sie eine Hive ODBC-Datenquelle erstelle
 
 5.  Geben Sie folgende Werte ein bzw. wählen diese aus:
 
-    |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | **Eigenschaft**      | **Beschreibung**                                                                                                                                                                                                                                                             |
-    | Name der Datenquelle | Geben Sie einen Namen für die Datenquelle an.                                                                                                                                                                                                                                |
-    | Host                 | Geben Sie <hdinsightclustername>.azurehdinsight.net ein. Beispiel: myHDICluster.azurehdinsight.net                                                                                                                                                                           |
-    | Port                 | Verwenden Sie **443**. (Dieser Port wurde von 563 zu 443 geändert.)                                                                                                                                                                                                          |
-    | Datenbank            | Verwenden Sie **Standard**.                                                                                                                                                                                                                                                  |
-    | Hive-Servertyp       | Wählen Sie **Hive Server 2** aus.                                                                                                                                                                                                                                            |
-    | Mechanismus          | Wählen Sie **Azure HDInsight Service** aus.                                                                                                                                                                                                                                  |
-    | HTTP-Pfad            | Lassen Sie dieses Feld leer.                                                                                                                                                                                                                                                 |
-    | Benutzername         | Geben Sie Ihren Benutzernamen für den HDInsight-Cluster an. Es handelt sich hierbei um den Benutzernamen, der beim Bereitstellungsprozess des Clusters erstellt wurde. Wenn Sie die Schnellerfassungsoption gewählt haben, lautet der standardmäßige Benutzername **Admin**. |
-    | Kennwort             | Geben Sie Ihr Benutzerkennwort für den HDInsight-Cluster an.                                                                                                                                                                                                                 |
+    <table border="1">
+    <tr><td><strong>Eigenschaft</strong></td><td><strong>Beschreibung</strong></td></tr>                                                                                                                                                                                                                                                             <tr><td>Name der Datenquelle </td><td> Geben Sie einen Namen für die Datenquelle an.                                                                                                                                                                                                                                </td></tr>
+    <tr><td> Host</td><td> Geben Sie <hdinsightclustername>.azurehdinsight.net ein. Beispiel: myHDICluster.azurehdinsight.net</td></tr>
+    <tr><td> Port </td><td> Verwenden Sie <strong>443</strong>. (Dieser Port wurde von 563 zu 443 geändert.)</td></tr>
+    <tr><td> Datenbank</td><td>Verwenden Sie <strong>Standard</strong>.                                                                                                                                                                                                                                                  </td></tr>
+    <tr><td> Hive-Servertyp</td><td>Wählen Sie <strong>Hive Server 2</strong> aus. </td></tr>
+    <tr><td> Mechanismus</td><td> Wählen Sie <strong>Azure HDInsight Service</strong> aus.</td></tr>
+    <tr><td> HTTP-Pfad </td><td> Lassen Sie dieses Feld leer.  </td></tr>
+    <tr><td> Benutzername </td><td> Geben Sie Ihren Benutzernamen für den HDInsight-Cluster an. Es handelt sich hierbei um den Benutzernamen, der beim Bereitstellungsprozess des Clusters erstellt wurde. Wenn Sie die Schnellerfassungsoption gewählt haben, lautet der standardmäßige Benutzername <strong>Admin</strong>.</td></tr>
+    <tr><td> Kennwort </td><td> Geben Sie Ihr Benutzerkennwort für den HDInsight-Cluster an.</td></tr>
+	</table>
 
-    Sie müssen einige wichtige Parameter berücksichtigen, wenn Sie auf **Erweiterte Optionen** klicken:
+    Sie müssen einige wichtige Parameter berücksichtigen, wenn Sie auf <strong>Erweiterte Optionen</strong> klicken:
 
-    |-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Use Native Query              | Wenn diese Option ausgewählt ist, versucht der ODBC-Treiber NICHT, TSQL in HiveQL zu konvertieren. Verwenden Sie diese Option nur, wenn Sie sich absolut sicher sind, dass Sie reine HiveQL-Anweisungen absenden. Wenn Sie eine Verbindung zu SQL Server oder Azure SQL Database herstellen, sollten Sie die Option nicht aktivieren. |
-    | Rows fetched per block        | Wenn Sie viele Datensätze abrufen, ist es möglicherweise erforderlich, diesen Parameter zu optimieren, um optimale Leistung zu garantieren.                                                                                                                                                                                           |
-    | Default string column length, 
+    <table border="1">
+    <tr><td> Use Native Query </td><td> Wenn diese Option ausgewählt ist, versucht der ODBC-Treiber NICHT, TSQL in HiveQL zu konvertieren. Verwenden Sie diese Option nur, wenn Sie sich absolut sicher sind, dass Sie reine HiveQL-Anweisungen absenden. Wenn Sie eine Verbindung zu SQL Server oder Azure SQL Database herstellen, sollten Sie die Option nicht aktivieren. </td></tr>
+    <tr><td> Rows fetched per block</td><td>Wenn Sie viele Datensätze abrufen, ist es möglicherweise erforderlich, diesen Parameter zu optimieren, um optimale Leistung zu garantieren. </td></tr>
+    <tr><td>Default string column length, 
       Binary column length,         
-      Decimal column scale          | Längen und Genauigkeiten der Datentypen können beeinflussen, wie die Daten zurückgegeben werden. Bei zu geringer Genauigkeit und/oder Abschneiden werden falsche Informationen zurückgegeben.                                                                                                                                         |
+      Decimal column scale</td><td> Längen und Genauigkeiten der Datentypen können beeinflussen, wie die Daten zurückgegeben werden. Bei zu geringer Genauigkeit und/oder Abschneiden werden falsche Informationen zurückgegeben.</td></tr>
+	</table>
 
     ![Erweiterte Optionen][Erweiterte Optionen]
 

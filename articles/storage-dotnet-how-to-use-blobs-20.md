@@ -312,7 +312,7 @@ jeder Blob unabhängig vom jeweiligen Verzeichnis als **CloudBlockBlob** zurück
     Block blob of length 505623: https://<a ccountname>.blob.core.windows.net/photos/photo1.jpg
 
  Weitere Informationen finden Sie unter
-[CloudBlobContainer.ListBlobs][].
+[CloudBlobContainer.ListBlobs][CloudBlobContainer.ListBlobs].
 
 ## <a name="download-blobs"> </a><span  class="short-header">Herunterladen von Blobs</span>Gewusst wie: Herunterladen von Blobs
 

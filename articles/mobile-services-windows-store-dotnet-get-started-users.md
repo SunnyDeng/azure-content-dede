@@ -63,9 +63,8 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutzern][Dienstweite Autorisierung von Mobile Services-Benutzern] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET unter [Mobile Services .NET – Erstellen einer konzeptionellen Referenz][Mobile Services .NET – Erstellen einer konzeptionellen Referenz].
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
-  [mobile-services-selector-get-started-users]: ../includes/mobile-services-selector-get-started-users.md
   [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
   [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
   [Hinzufügen von Authentifizierung zur App]: #add-authentication
@@ -73,11 +72,7 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started/
   [Einmalige Anmeldung für Windows Store-Apps mithilfe von Live Connect]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
   [diesem Beitrag]: http://go.microsoft.com/fwlink/p/?LinkId=506605
-  [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
   [Registrieren Ihres Windows Store-App-Pakets für die Microsoft Authentifizierung]: /de-de/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication/
-  [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md
   [1]: /de-de/documentation/articles/mobile-services-windows-store-get-started
-  [mobile-services-windows-dotnet-authenticate-app]: ../includes/mobile-services-windows-dotnet-authenticate-app.md
-  [mobile-services-windows-store-dotnet-authenticate-app-with-token]: ../includes/mobile-services-windows-store-dotnet-authenticate-app-with-token.md
   [Dienstweite Autorisierung von Mobile Services-Benutzern]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts
   [Mobile Services .NET – Erstellen einer konzeptionellen Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library

@@ -1,6 +1,6 @@
 <properties pageTitle="API Management key concepts" metaKeywords="" description="Learn about APIs, products, roles, groups, and other API Management key concepts." metaCanonical="" services="" documentationCenter="API Management" title="API Management key concepts" authors="sdanie" solutions="" manager="" editor="" />
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie"></tags>
+<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
 
 # Schlüsselkonzepte für die API-Verwaltung
 
@@ -12,18 +12,18 @@ Dieses Thema behandelt einige Schlüsselkonzepte der API-Verwaltung.
 
 ## In diesem Thema
 
--   [APIs und Operationen][]
--   [Produkte][]
--   [Gruppen][]
--   [Entwickler][]
--   [Richtlinien][]
--   [Entwicklerportal][]
+-   [APIs und Operationen][APIs und Operationen]
+-   [Produkte][Produkte]
+-   [Gruppen][Gruppen]
+-   [Entwickler][Entwickler]
+-   [Richtlinien][Richtlinien]
+-   [Entwicklerportal][Entwicklerportal]
 
 ## <a name="apis"> </a>APIs und Operationen
 
 APIs sind das Fundament einer API-Verwaltungs-Dienstinstanz. Jede API stellt Entwicklern einen Satz von Operationen zur Verfügung. Jede API enthält einen Verweis auf den Back-End-Dienst, der die API implementiert, und die Operationen der API sind den Operationen des Back-End-Diensts zugeordnet. Operationen in der API-Verwaltung sind hochkonfigurierbar. Sie haben Kontrolle über die URL-Zuordnung, Abfrage- und Pfadparameter, Inhalt von Anfragen und Antworten sowie Caching von Operationsantworten. Richtlinien für Aufrufbeschränkungen, Kontingente und IP-Einschränkungen können ebenfalls auf API-Ebene oder für einzelne Operationen konfiguriert werden.
 
-Weitere Informationen finden Sie unter [Erstellen von APIs][] und [Hinzufügen von Operationen zu einer API][].
+Weitere Informationen finden Sie unter [Erstellen von APIs][Erstellen von APIs] und [Hinzufügen von Operationen zu einer API][Hinzufügen von Operationen zu einer API].
 
 ## <a name="products"> </a>Produkte
 
@@ -31,33 +31,33 @@ APIs werden in Form von Produkten an Entwickler bereitgestellt. Produkte in der 
 
 Gruppen dienen zur Verwaltung der Sichtbarkeit von Produkten für Entwickler. Produkte gewähren Sichtbarkeit für Gruppen, und Entwickler können alle Produkte anzeigen und abonnieren, die für die Gruppen sichtbar sind, in denen sie Mitglied sind.
 
-Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen und Veröffentlichen eines Produkts][].
+Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen und Veröffentlichen eines Produkts][Vorgehensweise: Erstellen und Veröffentlichen eines Produkts].
 
 ## <a name="groups"> </a> Gruppen
 
 Gruppen dienen zur Verwaltung der Sichtbarkeit von Produkten für Entwickler. Die API-Verwaltung enthält die folgenden integrierten Gruppen.
 
 -   **Administratoren** - Administratoren verwalten API-Verwaltungs-Dienstinstanzen und erstellen die APIs, Operationen und Produkte, die von den Entwicklern verwendet werden.
--   **Entwickler** - Entwickler sind die Kunden, die Anwendungen unter Verwendung Ihrer APIs erstellen. Entwickler erhalten Zugriff zum [Entwicklerportal][] und erstellen Anwendungen, die die Operationen einer API aufrufen.
+-   **Entwickler** - Entwickler sind die Kunden, die Anwendungen unter Verwendung Ihrer APIs erstellen. Entwickler erhalten Zugriff zum [Entwicklerportal][Entwicklerportal] und erstellen Anwendungen, die die Operationen einer API aufrufen.
 -   **Gäste** - Nicht authentifizierte Benutzer wie z. B. potenzielle Kunden, die das Entwicklerportal einer API-Verwaltungsinstanz besuchen, fallen in diese Gruppe. Sie können diesen Benutzern schreibgeschützten Zugriff gewähren, z. B. um die APIs anzuzeigen, jedoch nicht aufrufen zu können.
 
 Neben diesen integrierten Gruppen können Administratoren auch eigene Gruppen erstellen. Benutzerdefinierte Gruppen haben dieselben Berechtigungen wie die integrierte Gruppe der Entwickler und dienen zur Verwaltung unterschiedlicher Gruppen von Entwicklern. Sie können z. B. eine Gruppe für Entwickler erstellen, die die APIs eines bestimmten Produkts verwenden, und eine andere Gruppe für Entwickler, die die APIs eines anderen Produkts verwenden.
 
-Weitere Informationen finden Sie unter [Erstellen und Verwenden von Gruppen][].
+Weitere Informationen finden Sie unter [Erstellen und Verwenden von Gruppen][Erstellen und Verwenden von Gruppen].
 
 ## <a name="developers"> </a>Entwickler
 
-Entwickler stellen die Benutzerkonten in einer API-Verwaltungs-Dienstinstanz dar. Entwickler können von Administratoren erstellt oder eingeladen werden, oder sie können sich im [Entwicklerportal][] anmelden. Jeder Entwickler ist Mitglied in einer oder mehreren Gruppen und kann die Produkte abonnieren, die für die entsprechenden Gruppen sichtbar sind.
+Entwickler stellen die Benutzerkonten in einer API-Verwaltungs-Dienstinstanz dar. Entwickler können von Administratoren erstellt oder eingeladen werden, oder sie können sich im [Entwicklerportal][Entwicklerportal] anmelden. Jeder Entwickler ist Mitglied in einer oder mehreren Gruppen und kann die Produkte abonnieren, die für die entsprechenden Gruppen sichtbar sind.
 
 Wenn Entwickler ein Produkt abonnieren, erhalten Sie den primären und den sekundären Schlüssel für das Produkt. Diese Schlüssel kommen bei den Aufrufen an die APIs des Produkts zum Einsatz.
 
-Weitere Informationen finden Sie unter [Erstellen und Einladen von Entwicklern][] und [Zuordnen von Entwicklern zu Gruppen][].
+Weitere Informationen finden Sie unter [Erstellen und Einladen von Entwicklern][Erstellen und Einladen von Entwicklern] und [Zuordnen von Entwicklern zu Gruppen][Zuordnen von Entwicklern zu Gruppen].
 
 ## <a name="policies"> </a>Richtlinien
 
 Richtlinien sind ein umfassendes Werkzeug in der API-Verwaltung, mit dem Anbieter das Verhalten der API in Form von Konfigurationen verändern können. Richtlinien sind eine Sammlung von Anweisungen, die sequenziell bei Anfragen oder Antworten einer API ausgeführt werden. Häufig verwendete Anweisungen sind z. B. Formatumwandlungen von XML nach JSON und Aufrufbeschränkungen, um die Anzahl eingehender Aufrufe von einem Entwickler zu beschränken. Viele weitere Richtlinien sind verfügbar.
 
-Eine vollständige Liste der Richtlinien für die API-Verwaltung finden Sie unter [Gruppenrichtlinienreferenz][]. Weitere Informationen zur Verwendung und Konfiguration von Richtlinien finden Sie unter [Richtlinien für die API-Verwaltung][]. Ein Lernprogramm zum Erstellen eines Produkts mit Richtlinien für Aufrufbeschränkungen und Kontingente finden Sie unter [Erstellen und Konfigurieren erweiterter Produkteinstellungen][].
+Eine vollständige Liste der Richtlinien für die API-Verwaltung finden Sie unter [Gruppenrichtlinienreferenz][Gruppenrichtlinienreferenz]. Weitere Informationen zur Verwendung und Konfiguration von Richtlinien finden Sie unter [Richtlinien für die API-Verwaltung][Richtlinien für die API-Verwaltung]. Ein Lernprogramm zum Erstellen eines Produkts mit Richtlinien für Aufrufbeschränkungen und Kontingente finden Sie unter [Erstellen und Konfigurieren erweiterter Produkteinstellungen][Erstellen und Konfigurieren erweiterter Produkteinstellungen].
 
 ## <a name="developer-portal"> </a>Entwicklerportal
 

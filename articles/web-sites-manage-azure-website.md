@@ -1,6 +1,6 @@
 <properties title="Manage an Azure website" pageTitle="Manage an Azure website" description="Links to resources for managing a Microsoft Azure website." services="web-sites" solutions="web" documentationCenter="" authors="mwasson" videoId="" scriptId="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/16/2014" ms.author="mwasson"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/16/2014" ms.author="mwasson" />
 
 # Verwalten einer Azure-Website
 
@@ -78,13 +78,13 @@ Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellun
 -   [Verwendung von Team Foundation Version Control (TFVC)][Verwendung von Team Foundation Version Control (TFVC)]
 -   [Verwendung von Git][Verwendung von Git]
 
-<!-- Anchors. -->
+
 
   [Bevor Sie Ihre Website für die Produktion bereitstellen]: #before-you-deploy-your-site-to-production
   [Während Ihre Website ausgeführt wird]: #while-your-website-is-running
   [Wenn Sie Ihre Website aktualisieren]: #when-you-update-your-website
   [Websites verwalten über das Azure-Verwaltungsportal]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-manage/
-  [Preisdetails]: http://azure.microsoft.com/en-us/pricing/details/websites/
+  [Preisdetails]: http://azure.microsoft.com/de-de/pricing/details/websites/
   [Webhostingplänen]: http://azure.microsoft.com/de-de/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview
   [zwischen Ebenen wechseln]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-scale/
   [Azure-Verwaltungsportal,]: https://manage.windowsazure.com/
@@ -99,7 +99,7 @@ Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellun
   [Verwaltung der Anwendungsleistung mit New Relic in Azure Websites]: http://azure.microsoft.com/de-de/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/
   [automatischen Backups]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/
   [diesem Video]: http://azure.microsoft.com/de-de/documentation/videos/azure-websites-automatic-and-easy-backup/
-  [Datenbankwiederherstellung]: http://msdn.microsoft.com/en-us/library/azure/hh852669.aspx
+  [Datenbankwiederherstellung]: http://msdn.microsoft.com/de-de/library/azure/hh852669.aspx
   [Probleme in Visual Studio behandeln]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug
   [Aktivieren der Diagnoseprotokollierung für Azure Websites]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-enable-diagnostic-log/
   [Debuggen einer Node.js-Anwendung in Azure Websites]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-nodejs-debug/

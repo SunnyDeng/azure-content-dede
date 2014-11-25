@@ -147,8 +147,6 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts][Autorisieren 
   [Hinzufügen von Authentifizierung zur App]: #add-authentication
   [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started
-  [mobile-services-register-windows-store-app]: ../includes/mobile-services-register-windows-store-app.md
-  [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md
   [1]: /de-de/documentation/articles/mobile-services-windows-store-get-started
   [0]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-add-reference-live-js.png
   [2]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users/#tokens

@@ -298,13 +298,13 @@ Der folgende Screenshot zeigt `crm_mon` mit einem angehaltenen Knoten (Beenden m
 
 ![crm\_mon node stopped][crm\_mon node stopped]
 
-Und dieser Screenshot zeigt beide Knoten mit einem Master und einem Slave:
+Und dieser Screenshot zeigt beide Knoten, einen Master- und einen Detailknoten:
 
 ![crm\_mon operational master/slave][crm\_mon operational master/slave]
 
 ## Testen
 
-Nun sind wir bereit für eine automatische Failoversimulation. Dies kann auf zwei Arten erreicht werden: schwach und hart. Die schwache Variante verwendet die Funktion zum Herunterfahren des Clusters: `` crm_standby -U `uname -n` -v on ``. Wenn diese auf dem Master verwendet wird, übernimmt dies der Slave. Denken Sie daran, dies wieder auf „off“ zurückzusetzen (ansonsten informiert Sie „crm\_mon“, dass sich ein Knoten im Standbymodus befindet).
+Nun sind wir bereit für eine automatische Failoversimulation. Dies kann auf zwei Arten erreicht werden: schwach und hart. Die schwache Variante verwendet die Funktion zum Herunterfahren des Clusters: `` crm_standby -U `uname -n` -v on ``. Wenn diese auf dem Master verwendet wird, übernimmt der Detailknoten. Denken Sie daran, dies wieder auf „off“ zurückzusetzen (ansonsten informiert Sie „crm\_mon“, dass sich ein Knoten im Standbymodus befindet).
 
 Bei der harten Variante wird der primäre virtuelle Computer (hadb01) über das Portal heruntergefahren, oder es wird die Ausführungsebene des virtuellen Computers geändert (d. h. anhalten, herunterfahren), dann helfen wir Corosync und Pacemaker, indem wir signalisieren, dass der Master herunterfährt. Sie können dies testen (nützlich für Wartungsfenster). Wir können das Szenario jedoch auch erzwingen, indem wir einfach den virtuellen Computer einfrieren.
 
@@ -326,7 +326,7 @@ Beispielcode für die Ressourcen finden Sie auf [GitHub][GitHub]. Sie müssen di
 
 Es gelten die folgenden Einschränkungen:
 
--   Das linbit DRBD-Ressourcenskript, das DRBD als eine Ressource in Pacemaker verwaltet, verwendet `drbdadm down` beim Herunterfahren eines Knotens, selbst wenn der Knoten gerade in den Standbymodus wechselt. Dies ist nicht optimal, da der Slave die DRBD-Ressource nicht synchronisiert, während der Master Schreibvorgänge abruft. Wenn der Master keinen normalen Fehler aufweist, kann der Slave einen älteren Dateisystemstatus übernehmen. Zur Behebung dieses Problems stehen zwei potenzielle Möglichkeiten zur Verfügung:
+-   Das linbit DRBD-Ressourcenskript, das DRBD als eine Ressource in Pacemaker verwaltet, verwendet `drbdadm down` beim Herunterfahren eines Knotens, selbst wenn der Knoten gerade in den Standbymodus wechselt. Dies ist nicht optimal, da der Detailknoten die DRBD-Ressource nicht synchronisiert, während der Master Schreibvorgänge abruft. Wenn der Master keinen normalen Fehler aufweist, kann der Detailknoten einen älteren Dateisystemstatus übernehmen. Zur Behebung dieses Problems stehen zwei potenzielle Möglichkeiten zur Verfügung:
 -   Das Erzwingen eines `drbdadm up r0` in allen Clusterknoten über einen lokalen (nicht gruppierten) Watchdog oder
 -   Bearbeiten des linbit DRBD-Skripts, wodurch sichergestellt wird, dass `down` nicht in `/usr/lib/ocf/resource.d/linbit/drbd` aufgerufen wird.
 -   Der Lastenausgleich benötigt mindestens 5 Sekunden, um zu antworten. Anwendungen sollten daher clusterfähig sein und in Bezug auf eine Zeitüberschreitung toleranter sein. Andere Architekturen können auch hilfreich sein, beispielsweise In-App-Warteschlangen, Middleware-Abfragen usw.

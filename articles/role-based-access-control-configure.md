@@ -1,6 +1,6 @@
 <properties title="Role Based Access Control in Azure Preview Portal" pageTitle="Role Based Access Control in Azure Preview Portal" description="Describes how role based access control works and how to set it up" metaKeywords="" services="multiple" solutions="" documentationCenter="" authors="justinha" videoId="" scriptId="" />
 
-<tags ms.service="multiple" ms.devlang="dotnet" ms.topic="article" ms.tgt_pltfrm="Ibiza" ms.workload="infrastructure-services" ms.date="09/12/2014" ms.author="justinha;Justinha@microsoft.com"></tags>
+<tags ms.service="multiple" ms.devlang="dotnet" ms.topic="article" ms.tgt_pltfrm="Ibiza" ms.workload="infrastructure-services" ms.date="09/12/2014" ms.author="justinha;Justinha@microsoft.com" />
 
 <!--This is a basic template that shows you how to use mark down to create a topic that includes a TOC, sections with subheadings, links to other azure.microsoft.com topics, links to other sites, bold text, italic text, numbered and bulleted lists, code snippets, and images. For fancier markdown, find a published topic and copy the markdown or HTML you want. For more details about using markdown, see http://sharepoint/sites/azurecontentguidance/wiki/Pages/Content%20Guidance%20Wiki%20Home.aspx.--> 
 <!--Properties section (above): this is required in all topics. Please fill it out!--> 
@@ -240,8 +240,8 @@ Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der r
 -   [Verwalten der rollenbasierten Zugriffssteuerung mit xplat-cli](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-xplat-cli/)
 -   [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-troubleshooting/)
 -   [Azure Active Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx)
--   [Azure Active Directory Premium und Basic](http://msdn.microsoft.com/en-us/library/azure/dn532272.aspx)
--   [Verknüpfung von Azure-Abonnements mit Azure AD](http://msdn.microsoft.com/en-us/library/azure/dn629581.aspx)
+-   [Azure Active Directory Premium und Basic](http://msdn.microsoft.com/de-de/library/azure/dn532272.aspx)
+-   [Verknüpfung von Azure-Abonnements mit Azure AD](http://msdn.microsoft.com/de-de/library/azure/dn629581.aspx)
 -   Eine Einführung zur Self-Service-Gruppenverwaltung von Sicherheitsgruppen finden Sie im [Active Directory Team-Blog](http://blogs.technet.com/b/ad/archive/2014/02/24/more-preview-enhancements-for-windows-azure-ad-premium.aspx).
 
 <!--Image references-->

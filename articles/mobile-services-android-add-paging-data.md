@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-add-paging-to-data-android" urlDisplayName="Add paging to data" pageTitle="Add paging to data (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Android app from Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="ricksal" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
 
 # Verfeinern von Mobile Services-Abfragen mit Paging
 
@@ -97,16 +97,8 @@ Dies bildet den Abschluss der Lernprogramm-Reihe über Grundlagen mit Daten in M
 -   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
     Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+  
 
-  [Windows Store C#]: /de-de/develop/mobile/tutorials/add-paging-to-data-dotnet "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/develop/mobile/tutorials/add-paging-to-data-js "Windows Store JavaScript"
-  [Windows Phone]: /de-de/develop/mobile/tutorials/add-paging-to-data-wp8 "Windows Phone"
-  [iOS]: /de-de/develop/mobile/tutorials/add-paging-to-data-ios "iOS"
-  [Android]: /de-de/develop/mobile/tutorials/add-paging-to-data-android "Android"
-  [HTML]: /de-de/develop/mobile/tutorials/add-paging-to-data-html "HTML"
-  [Xamarin.iOS]: /de-de/develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android"
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-android
   [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-android
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-android

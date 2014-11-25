@@ -1,6 +1,6 @@
 1.  Halten Sie den mobilen Dienst an, wenn dieser aktuell in IIS Express ausgeführt wird. Klicken Sie mit der rechten Maustaste auf das IIS Express-Taskleistensymbol, und klicken Sie auf **stop**, um den mobilen Dienst anzuhalten.
 
-    ![][]
+    ![][0]
 
 2.  Führen Sie im Eingabeaufforderungsfenster den Befehl **ipconfig** aus, um eine gültige lokale IP-Adresse für Ihre Arbeitsstation abzurufen.
 
@@ -32,8 +32,8 @@
 
     > [WACOM.NOTE] Wenn Sie mit dem lokalen Testen des Diensts fertig sind, sollten Sie die von Ihnen erstellte Windows-Firewallregel löschen.
 
-<!-- URLs. -->
 
-  []: ./media/mobile-services-how-to-configure-iis-express/iis-express-tray-stop-site.png
+
+  [0]: ./media/mobile-services-how-to-configure-iis-express/iis-express-tray-stop-site.png
   [1]: ./media/mobile-services-how-to-configure-iis-express/ipconfig.png
   [Hinzufügen einer neuen Windows-Firewall-Portregel]: http://go.microsoft.com/fwlink/?LinkId=392240

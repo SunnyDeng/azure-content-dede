@@ -16,7 +16,7 @@ Ein CNAME-Eintrag weist einen *spezifischen* DNS-Namen, wie zum Beispiel **mail.
 
 Beim Traffic Manager eintreffender Verkehr wird nach der Lastenausgleichsmethode, für die er konfiguriert ist, zu Ihrer Website weitergeleitet. Für die Besucher Ihrer Website ist dies völlig transparent. Sie sehen nur den benutzerdefinierten Domänennamen in ihrem Browser.
 
-> [WACOM.NOTE] Manche Domänenregistrierungsstellen gestatten die Zuweisung von Unterdomänen nur bei Verwendung eines CNAME-Eintrags, wie zum Beispiel **www.contoso.com**, und nicht mit Stammnamen wie **contoso.com**. Weitere Informationen zu CNAME-Einträgen finden Sie in der von Ihrer Domänenregistrierungsstelle zur Verfügung gestellten Dokumentation, [im Wikipedia-Artikel "CNAME Resource Record"][] oder im Dokument [IETF Domain Names - Implementation and Specification][] (Domänennamen – Implementierung und Spezifizierung, in englischer Sprache).
+> [WACOM.NOTE] Manche Domänenregistrierungsstellen gestatten die Zuweisung von Unterdomänen nur bei Verwendung eines CNAME-Eintrags, wie zum Beispiel **www.contoso.com**, und nicht mit Stammnamen wie **contoso.com**. Weitere Informationen zu CNAME-Einträgen finden Sie in der von Ihrer Domänenregistrierungsstelle zur Verfügung gestellten Dokumentation, [im Wikipedia-Artikel "CNAME Resource Record"][im Wikipedia-Artikel "CNAME Resource Record"] oder im Dokument [IETF Domain Names - Implementation and Specification][IETF Domain Names - Implementation and Specification] (Domänennamen – Implementierung und Spezifizierung, in englischer Sprache).
 
   [im Wikipedia-Artikel "CNAME Resource Record"]: http://en.wikipedia.org/wiki/CNAME_record
   [IETF Domain Names - Implementation and Specification]: http://tools.ietf.org/html/rfc1035

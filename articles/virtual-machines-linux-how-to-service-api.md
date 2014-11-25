@@ -1,4 +1,4 @@
-<properties urlDisplayName="Service Management API" pageTitle="Gewusst wie: Verwenden der Dienstverwaltungs-API f&uuml;r virtuelle Computer &ndash; Azure" metaKeywords="" description="Erfahren Sie, wie Sie die Azure-Dienstverwaltungs-API f&uuml;r einen virtuellen Linux-Computer verwenden." metaCanonical="" services="virtual-machines" documentationCenter="" title="Verwenden der Dienstverwaltungs-AP" authors="timlt" solutions="" manager="timlt" editor="" />
+<properties linkid="manage-linux-howto-service-management-api" urlDisplayName="Service Management API" pageTitle="How to use the service management API for VMs - Azure" metaKeywords="" description="Learn how to use the Azure Service Management API for a Linux virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Use the Service Management API" authors="timlt" solutions="" manager="timlt" editor="" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="timlt" />
 

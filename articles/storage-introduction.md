@@ -1,4 +1,4 @@
-<properties urlDisplayName="Introduction to Azure Storage" pageTitle="Einf&uuml;hrung in Storage | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage  Azure file storage  Azure file  Azure file share  Azure " description="Ein &Uuml;berblick &uuml;ber Microsoft Azure Storage." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Einf&uuml;hrung in Microsoft Azure Storage" authors="tamram" manager="adinah" editor="cgronlun" />
+<properties linkid="storage-introduction" urlDisplayName="Introduction to Azure Storage" pageTitle="Introduction to Storage | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage  Azure file storage  Azure file  Azure file share  Azure " description="An overview of Microsoft Azure Storage." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Microsoft Azure Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -43,7 +43,7 @@ Die folgende Abbildung zeigt die Beziehungen zwischen Azure-Speicherressourcen:
 
 ![Azure-Speicherressourcen][Azure-Speicherressourcen]
 
-Um ein Speicherkonto erstellen zu können, müssen Sie über ein Azure-Abonnement verfügen. Dies ist ein Plan, der Ihnen Zugriff auf eine Vielzahl von Azure-Diensten verschafft. Sie können bis zu 100 eindeutig benannte Speicherkonten unter einem einzigen Abonnement erstellen. Informationen zu Volumenpreisen finden Sie unter [Speicherpreisdetails][Speicherpreisdetails].
+Um ein Speicherkonto erstellen zu können, müssen Sie über ein Azure-Abonnement verfügen. Dies ist ein Plan, der Ihnen Zugriff auf eine Vielzahl von Azure-Diensten verschafft. Sie können bis zu 20 eindeutig benannte Speicherkonten unter einem einzigen Abonnement erstellen.
 
 Sie können die Verwendung von Azure mit einem [kostenlosen Testkonto][kostenlosen Testkonto] starten. Wenn Sie sich entscheiden, einen Plan zu kaufen, können Sie aus einer Vielzahl von [Kaufoptionen][Kaufoptionen] auswählen. [MSDN-Abonnenten][MSDN-Abonnenten] erhalten ein monatliches Gratis-Guthaben für Azure-Dienste, inklusive Azure-Speicher.
 
@@ -70,7 +70,7 @@ Moderne Anwendungen erfordern oft Datenspeicher mit höherer Skalierbarkeit und 
 
 Der Tabellenspeicher verwendet ein Schlüssel-/Attributformat, d. h. jeder Wert in einer Tabelle wird mit einem typisierten Eigenschaftennamen gespeichert. Der Eigenschaftenname kann für Filter und Auswahlkriterien verwendet werden. Eine Auflistung von Eigenschaften und deren Werten bilden eine Entität. Da der Tabellenspeicher schemalos ist, können zwei Entitäten in derselben Tabelle unterschiedliche Sammlungen von Eigenschaften enthalten, und diese Eigenschaften können unterschiedliche Typen haben.
 
-Sie können den Tabellenspeicher zur Speicherung von flexiblen Datensätzen wie Benutzerdaten für Webanwendungen, Adressbüchern, Geräteinformationen und jeder Art von Metadaten verwenden, die Ihr Dienst erfordert. Sie können eine beliebige Anzahl von Entitäten in einer Tabelle speichern, und ein Speicherkonto kann eine beliebige Anzahl von Tabellen enthalten, bis zur Speicherkapazitätsgrenze eines Speicherkontos.
+Sie können den Tabellenspeicher zur Speicherung von flexiblen Datensätzen wie Benutzerdaten für Webanwendungen, Adressbüchern, Geräteinformationen und jeder Art von Metadaten verwenden, die Ihr Dienst erfordert. Sie können eine beliebige Anzahl von Entitäten in einer Tabelle speichern, und ein Speicherkonto kann eine beliebige Anzahl von Tabellen enthalten. Die Speicherkapazität eines Speicherkontos beträgt 200 TB.
 
 Wie bei Blobs und Warteschlangen können Entwickler den Tabellenspeicher mit Standard-REST-Protokollen aufrufen und verwalten. Der Tabellenspeicher unterstützt allerdings auch eine Untergruppe des OData-Protokolls. Dies vereinfacht erweiterte Abfragefunktionen und ermöglicht die Arbeit mit den Formaten JSON und AtomPub (XML-basiert).
 
@@ -80,7 +80,7 @@ NoSQL-Datenbanken wie der Tabellenspeicher bieten für heutige internetbasierte 
 
 Bei der Entwicklung von Anwendungen für Skalierungszwecke werden einzelne Anwendungskomponenten oft entkoppelt, damit sie unabhängig skaliert werden können. Der Warteschlangenspeicher bietet eine zuverlässige Messaginglösung für die asynchrone Kommunikation zwischen Anwendungskomponenten, egal ob diese in der Cloud, auf dem Desktop, auf einem lokalen Server oder einem mobilen Gerät ausgeführt werden. Der Warteschlangenspeicher unterstützt auch die Verwaltung asynchroner Aufgaben und den Aufbau von Prozessworkflows.
 
-Ein Speicherkonto kann eine beliebige Anzahl von Warteschlangen enthalten. Eine Warteschlange kann eine beliebige Anzahl von Nachrichten enthalten, bis zur Kapazitätsgrenze des Speicherkontos. Einzelne Nachrichten können bis zu 64 KB groß sein.
+Ein Speicherkonto kann eine beliebige Anzahl von Warteschlangen enthalten. Eine Warteschlange kann eine beliebige Anzahl von Nachrichten enthalten, und das entsprechende Speicherkonto hat eine Kapazität von 200 TB. Einzelne Nachrichten können bis zu 64 KB groß sein.
 
 ## Dateispeicher
 
@@ -114,7 +114,7 @@ Die Verwendung von Azure Storage wird dem Kunden auf Grundlage von vier Faktoren
 
 Speicherkapazität bezieht sich darauf, wie viel von Ihrer Speicherkontozuweisung zum Speichern von Daten verwendet wird. Die Kosten des einfachen Speicherns von Daten wird dadurch bestimmt, wie viele Daten Sie speichern und wie diese Daten repliziert werden. Für jede Lese- und Schreiboperation auf dem Azure-Speicher wird außerdem eine Anfrage an den Dienst ausgeführt. Datenausgang bezieht sich auf die Daten, die aus einer Windows Azure-Region heraus übertragen werden. Wenn eine Anwendung, die nicht in der gleichen Region ausgeführt wird und entweder ein Clouddienst oder ein anderer Anwendungstyp ist, auf die Daten in Ihrem Speicherkonto zugreift, fallen Gebühren für den Datenausgang an. (Für Azure-Dienste können Sie Maßnahmen ergreifen, um Ihre Daten und Dienste in den gleichen Rechenzentren zu gruppieren und auf diese Weise Prozess- und Datenausgangsgebühren zu senken oder komplett einzusparen.)
 
-Die Seite mit den [Speicherpreisdetails][1] bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. In den [Datenübertragungs-Preisdetails][Datenübertragungs-Preisdetails] finden Sie detaillierte Preisinformationen für den Datenausgang. Sie können den [Azure Storage-Preisrechner][Azure Storage-Preisrechner] verwenden, um Ihre Kosten zu bestimmen.
+Die Seite mit den [Speicherpreisdetails][Speicherpreisdetails] bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. In den [Datenübertragungs-Preisdetails][Datenübertragungs-Preisdetails] finden Sie detaillierte Preisinformationen für den Datenausgang. Sie können den [Azure Storage-Preisrechner][Azure Storage-Preisrechner] verwenden, um Ihre Kosten zu bestimmen.
 
 ## Entwicklung bei der Speicherung
 
@@ -175,17 +175,16 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
   [Azure-Vorschauseite]: /de-de/services/preview/
   [Skalierbarkeits- und Leistungszielen für Azure-Speicher]: http://msdn.microsoft.com/library/windowsazure/dn249410.aspx
   [Azure-Speicherressourcen]: ./media/storage-introduction/storage-concepts.png
-  [Speicherpreisdetails]: http://www.windowsazure.com/de-de/pricing/details/storage/
   [kostenlosen Testkonto]: /de-de/pricing/free-trial/
   [Kaufoptionen]: /de-de/pricing/purchase-options/
   [MSDN-Abonnenten]: /de-de/pricing/member-offers/msdn-benefits-details/
   [Azure-Import-/Export-Diensts]: http://azure.microsoft.com/de-de/documentation/articles/storage-import-export-service/
   [Shared Access Signature]: ../storage-dotnet-shared-access-signature-part-1/
-  [1]: /de-de/pricing/details/storage/
+  [Speicherpreisdetails]: /de-de/pricing/details/storage/
   [Datenübertragungs-Preisdetails]: /de-de/pricing/details/data-transfers/
   [Azure Storage-Preisrechner]: /de-de/pricing/calculator/?scenario=data-management
   [REST-API]: http://msdn.microsoft.com/library/windowsazure/dd179355.aspx
-  [.NET]: http://go.microsoft.com/fwlink/?LinkID=390731
+  [.NET]: http://msdn.microsoft.com/library/dn495001.aspx
   [Nativer Code]: http://msdn.microsoft.com/library/dn495438.aspx
   [Java/Android]: /de-de/develop/java/
   [Node.js]: /de-de/develop/nodejs/

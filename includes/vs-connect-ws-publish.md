@@ -10,6 +10,6 @@
 
 
 
-Weitere Informationen finden Sie unter [Verbinden mit Azure in Visual Studio][].
+Weitere Informationen finden Sie unter [Verbinden mit Azure in Visual Studio][Verbinden mit Azure in Visual Studio].
 
   [Verbinden mit Azure in Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=324796

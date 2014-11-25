@@ -1,6 +1,6 @@
-<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangendiensts (Java) | Microsoft Azure" metaKeywords="Azure Queue Service, Azure Queue storage service, queues peeking, queues insert messages, queues get messages, queues delete messages, create queues, delete queues, Queue service Java" description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und L&ouml;schen von Warteschlangen sowie zum Einf&uuml;gen, Abrufen und L&ouml;schen von Nachrichten verwenden. Die Beispiele wurden in Java geschrieben." metaCanonical="" services="storage" documentationCenter="Java" title="Verwenden des Tabellenspeicherdiensts in Java" authors="tamram" solutions="" manager="adinah" editor="" />
+<properties linkid="dev-net-how-to-use-queue-storage-service-java" urlDisplayName="Queue Service" pageTitle="How to use the queue service (Java) | Microsoft Azure" metaKeywords="Azure Queue Service, Azure Queue storage service, queues peeking, queues insert messages, queues get messages, queues delete messages, create queues, delete queues, Queue service Java" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Java." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Queue storage service from Java" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # Verwenden des Warteschlangenspeichers in Java
 
@@ -389,7 +389,6 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
   [Nächste Schritte]: #NextSteps
   [Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
-  [Was ist Warteschlangenspeicherung?]: #what-is
   [Konzepte]: #Concepts
   [Erstellen eines Azure-Speicherkontos]: #CreateAccount
   [Erstellen einer Java-Anwendung]: #CreateApplication

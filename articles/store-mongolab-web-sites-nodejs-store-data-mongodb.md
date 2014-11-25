@@ -446,13 +446,11 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
   [Verwalten der Datenbank]: #manage
   [Node.js]: http://nodejs.org
   [Git]: http://git-scm.com
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Store]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/button-store.png
   [1]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/entry-mongolab.png
   [ConnectionInfoButton]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/button-connectioninfo.png
   [ConnectionInfoScreen]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/dialog-mongolab_connectioninfo.png
   [WebSiteConnectionStrings]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/focus-mongolab-websiteconnectionstring.png
-  [howto-provision-mongolab]: ../includes/howto-provision-mongolab.md
   [Express]: http://expressjs.com
   [Mongoose]: http://mongoosejs.com
   [Azure-Entwicklercenter]: /de-de/develop/nodejs/
@@ -463,7 +461,4 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
   [WebSiteDashboard]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/screen-mongolab-websitedashboard.png
   [Git-Remoterepository]: http://git-scm.com/docs/git-remote
   [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-  [howto-get-connectioninfo-mongolab]: ../includes/howto-get-connectioninfo-mongolab.md
-  [howto-save-connectioninfo-mongolab]: ../includes/howto-save-connectioninfo-mongolab.md
   [Eine Webseite mit einer leeren Aufgabenliste]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/todo_list_noframe.png
-  [howto-access-mongolab-ui]: ../includes/howto-access-mongolab-ui.md

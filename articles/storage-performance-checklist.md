@@ -340,7 +340,7 @@ Wenn sich Ihre Anwendung den Skalierbarkeitszielen für ein Speicherkonto näher
 Die folgenden Links enthalten zusätzliche Details zu den Skalierbarkeitszielen:
 
 -   Sie können die aktuellen Skalierbarkeitsziele auf der Seite [Ziele für Skalierbarkeit und Leistung des Azure-Speichers][Skalierbarkeitsziele] auf MSDN anzeigen.
--   Mehr über Speicherredundanzoptionen erfahren Sie im Blogbeitrag [Windows Azure-Speicher: Redundanzoptionen und Lesezugriff georedundanter Speicher][Windows Azure-Speicher: Redundanzoptionen und Lesezugriff georedundanter Speicher] – weitere Details im nächsten Abschnitt.
+-   Weitere Informationen zu Speicherredundanzoptionen erhalten Sie im Blogeintrag [Windows Azure-Speicher: Redundanzoptionen und Lesezugriff georedundanter Speicher][Windows Azure-Speicher: Redundanzoptionen und Lesezugriff georedundanter Speicher]. Weitere Details hierzu finden Sie auch im nächsten Abschnitt.
 -   Aktuelle Informationen zu den Preisdetails für Azure-Dienste finden Sie auf der Seite [Azure-Preise auf einen Blick][Azure-Preise auf einen Blick].
 
 ### Netzwerk
@@ -679,7 +679,16 @@ Sie können **UpdateMessage** verwenden, um das Unsichtbarkeits-Zeitlimit zu erh
 
 Weitere Informationen finden Sie im Artikel [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange][Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange].
 
-### \<a name=subheading45"\>\</a\>Anwendungsarchitektur\</h3\> \<p\>Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen. Nachfolgend sind einige Möglichkeiten aufgelistet, wie Sie Warteschlangen verwenden können, um Ihre Anwendung besser skalierbar zu gestalten:\</p\> \<ul\> \<li\>Sie können Warteschlangen verwenden, um Arbeits-Backlogs zur Verarbeitung zu erstellen und die Arbeitsauslastung in der Anwendung gleichmäßig zu verteilen. Beispielsweise können Sie Benutzeranfragen in die Warteschlange stellen, um prozessorintensive Arbeiten wie die Größenänderung von hochgeladenen Bildern durchzuführen.\</li\> \<li\>Sie können Warteschlangen verwenden, um Teile Ihrer Anwendung zu entkoppeln, sodass diese unabhängig skaliert werden können. Beispielsweise kann ein Web-Front-End Umfrageergebnisse von Benutzern zur späteren Analyse und Speicherung in eine Warteschlange stellen. Sie können mehr Workerrolleninstanzen hinzufügen, um die Warteschlangendaten nach Bedarf zu verarbeiten.\</li\> \</ul\> \<h2 id="conclusion"\>Zusammenfassung\</h2\> \<p\>In diesem Artikel wurden einige der häufigsten bewährten Vorgehensweisen zur Leistungsoptimierung bei der Verwendung des Azure-Speichers erläutert. Wir empfehlen jedem Anwendungsentwickler, seine Anwendung anhand dieser Vorgehensweisen zu überprüfen und ggf. die Empfehlungen umzusetzen, um bessere Leistung für ihre Anwendungen zu erzielen, die Azure-Speicher verwenden.\</p\>
+<h3> <a name=subheading45"></a>Anwendungsarchitektur</h3> 
+<p>Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen. Nachfolgend sind einige Möglichkeiten aufgelistet, wie Sie Warteschlangen verwenden können, um Ihre Anwendung besser skalierbar zu gestalten:</p> 
+<ul>
+<li>Sie können Warteschlangen verwenden, um Arbeits-Backlogs zur Verarbeitung zu erstellen und die Arbeitsauslastung in der Anwendung gleichmäßig zu verteilen. Beispielsweise können Sie Benutzeranfragen in die Warteschlange stellen, um prozessorintensive Arbeiten wie die Größenänderung von hochgeladenen Bildern durchzuführen.</li> 
+
+<li>Sie können Warteschlangen verwenden, um Teile Ihrer Anwendung zu entkoppeln, sodass diese unabhängig skaliert werden können. Beispielsweise kann ein Web-Front-End Umfrageergebnisse von Benutzern zur späteren Analyse und Speicherung in eine Warteschlange stellen. Sie können mehr Workerrolleninstanzen hinzufügen, um die Warteschlangendaten nach Bedarf zu verarbeiten.</li>
+</ul>
+
+<h2 id="conclusion">Zusammenfassung</h2>
+<p>In diesem Artikel wurden einige der häufigsten bewährten Vorgehensweisen zur Leistungsoptimierung bei der Verwendung des Azure-Speichers erläutert. Wir empfehlen jedem Anwendungsentwickler, seine Anwendung anhand dieser Vorgehensweisen zu überprüfen und ggf. die Empfehlungen umzusetzen, um bessere Leistung für ihre Anwendungen zu erzielen, die Azure-Speicher verwenden.</p>
 
   [Verwenden Sie exponentiell ansteigende Wartezeiten für Wiederholungsversuche, um Fehler und Zeitüberschreitungen zu vermeiden?]: #subheading14
   [Bleibt Ihre Anwendung innerhalb der Bandbreiten- oder Vorgangs-Skalierbarkeitsziele für einzelne Blobs?]: #subheading16

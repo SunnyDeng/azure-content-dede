@@ -1,6 +1,6 @@
 <properties linkid="biztalk-troubleshoot-using-ops-logs" urlDisplayName="BizTalk Services: Troubleshoot using operation logs" pageTitle="BizTalk Services: Troubleshoot using ops logs | Azure" metaKeywords="" description="BizTalk Services: Troubleshoot using ops logs" metaCanonical="" services="" documentationCenter="" title="BizTalk Services: Troubleshoot using ops logs" authors="mandia"  solutions="" writer="nitinme" manager="dwrede" editor="cgronlun"  />
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia"></tags>
+<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia" />
 
 # BizTalk Services: Fehlerbehebung mit Operationsprotokollen
 
@@ -52,9 +52,6 @@ In der folgenden Tabelle finden Sie Operationen, die mit Azure Management Servic
 -   [BizTalk Services: Name und Schlüssel des Ausstellers][BizTalk Services: Name und Schlüssel des Ausstellers]
 -   [Wie verwende ich das Azure BizTalk Services SDK][Wie verwende ich das Azure BizTalk Services SDK]
 
-  [REST-APIs für BizTalk Services]: http://msdn.microsoft.com/de-de/library/windowsazure/dn232347.aspx
-  [Operationen, die mit Azure Management Services nachverfolgt werden]: #bizops
-  [Tracking Messages]: http://msdn.microsoft.com/library/windowsazure/hh949805.aspx
   [Anzeigen von Operationsprotokollen]: ./media/biztalk-troubleshoot-using-ops-logs/Operation-Logs.png
   [Backup BizTalk Service (Sichern von BizTalk Services, in englischer Sprache)]: http://go.microsoft.com/fwlink/p/?LinkID=325584
   [Restore BizTalk Service from Backup (Wiederherstellen von BizTalk Services aus Sicherungskopien, in englischer Sprache)]: http://go.microsoft.com/fwlink/p/?LinkID=325582

@@ -607,7 +607,6 @@ Um die Anwendung aus diesem Lernprogramm als Standard-Webprojekt anstelle einer 
 
 Informationen zum Bereitstellen des Front-Ends für eine Azure-Website finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website][Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website]. Informationen zur Bereitstellung des Back-Ends für einen Azure-Cloud-Dienst finden Sie unter [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs][.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs].
 
-  [create-account-note]: ../includes/create-account-note.md
   [Nächste Schritte]: #nextsteps
   [0]: ./media/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
   [Windows Azure-Warteschlangen und Windows Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung]: http://msdn.microsoft.com/de-de/library/windowsazure/hh767287.aspx

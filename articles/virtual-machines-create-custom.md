@@ -1,10 +1,10 @@
-<properties urlDisplayName="Create a custom VM" pageTitle=" Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure" metaKeywords="Azure custom vm, creating custom vm" description="Erfahren Sie, wie Sie einen benutzerdefinierten virtuellen Computer in Azure erstellen k&ouml;nnen." metaCanonical="http://www.windowsazure.com/de-de/manage/windows/how-to-guides/custom-create-a-vm/" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
+<properties linkid="manage-linux-howto-custom-create-vm" urlDisplayName="Create a custom VM" pageTitle=" Create a custom virtual machine running Linux in Azure" metaKeywords="Azure custom vm, creating custom vm" description="Learn how to create a custom virtual machine in Azure." metaCanonical="http://www.windowsazure.com/de-de/manage/windows/how-to-guides/custom-create-a-vm/" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav" />
 
 # Erstellen eines benutzerdefinierten virtuellen Computers
 
-Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den Sie mit der Option **Aus Katalog** erstellen, da Sie durch diese Option mehr Konfigurationsmöglichkeiten erhalten als durch die Option **Schnellerfassung**. Das umfasst:
+Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den Sie mit der Option **Aus Katalog** erstellen, da Sie durch diese Option mehr Konfigurationsmöglichkeiten erhalten als durch die Option **Schnellerfassung**. Dazu gehören:
 
 -   Mehr Imageoptionen zum Erstellen des virtuellen Computers (VM)
 -   Verbinden des virtuellen Computers mit einem virtuellen Netzwerk

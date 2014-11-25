@@ -26,7 +26,7 @@ Mit den folgenden Schritten werden Ihre App im Windows Store registriert und Ihr
 
     > [WACOM.NOTE]Der Code, der Ihrer universellen Windows-App-Lösung vom Assistenten zum Hinzufügen von Pushbenachrichtigungen hinzugefügt wird, ist plattformspezifisch. Weiter unten in diesem Abschnitt beseitigen Sie diese Redundanz, indem Sie den Clientcode von Mobile Services freigeben, wodurch die Verwaltung der universellen App vereinfacht wird.
 
-<!-- URLs. -->
+
 
   [Assistent zum Hinzufügen von Pushbenachrichtigungen in Visual Studio 2013]: ../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013.png
   [App-Namen im Assistenten zum Hinzufügen von Pushbenachrichtigungen auswählen]: ../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-2.png

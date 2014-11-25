@@ -1,4 +1,4 @@
-<properties urlDisplayName="Configure a Backup Vault" pageTitle="Konfigurieren der Azure Recovery Services f&uuml;r schnelle und einfache Sicherung von Windows Server" metaKeywords="disaster recovery" description="Mithilfe dieses Lernprogramms erfahren Sie, wie der Sicherungsdienst in der Microsoft Azure Cloud verwendet wird, um den Windows Server in der Cloud zu sichern." metaCanonical="" services="recovery-services" documentationCenter="" title="Konfigurieren der Azure-Sicherung f&uuml;r schnelle und einfache Sicherung von Windows Server" authors="raynew" solutions="" manager="johndaw" editor="tysonn" />
+<properties linkid="manage-services-recovery-configure-backup-vault" urlDisplayName="Configure a Backup Vault" pageTitle="Configure Azure Recovery Services to quickly and easily back-up Windows Server" metaKeywords="disaster recovery" description="Use this tutorial to learn how to use the Backup service in Microsoft's Azure cloud offering to back up Windows Server to the cloud." metaCanonical="" services="recovery-services" documentationCenter="" title="Configure Azure Backup to quickly and easily back-up Windows Server" authors="raynew" solutions="" manager="johndaw" editor="tysonn" />
 
 <tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="raynew" />
 
@@ -11,10 +11,8 @@
 <ul> 
 <li>Wenn Sie noch kein Konto haben, k&ouml;nnen Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="/de-de/pricing/free-trial/">Kostenlose Azure-Testversion</a>.</li> 
  
-
 </ul>
  
-
 </div>
 
 Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in dem die Daten gespeichert werden sollen, um Dateien und Daten von Windows Server in Azure zu sichern. In diesem Lernprogramm wird Folgendes erläutert: das Erstellen des Tresors, in dem Sie Sicherungen speichern, das Herunterladen von Tresoranmeldeinformationen, das Installieren eines Sicherungs-Agents sowie eine Übersicht der Sicherungsverwaltungsaufgaben, die über das Verwaltungsportal verfügbar sind.
@@ -93,8 +91,6 @@ Wenn Sie den Agent installiert haben, können Sie die passende lokale Verwaltung
   [Verwaltungsportal]: https://manage.windowsazure.com
   [Neuer Sicherungstresor]: http://i.imgur.com/506c7ch.png
   [Erstellung eines Sicherungstresors]: http://i.imgur.com/grtLcKM.png
-  [Install Azure Backup Agent for Windows Server 2012 and System Center 2012 SP1 - Data Protection Manager (Installieren des Windows Azure-Sicherungs-Agents für Windows Server 2012 und System Center 2012 SP1 – Data Protection Manager, in englischer Sprache)]: http://technet.microsoft.com/de-de/library/hh831761.aspx#BKMK_installagent
-  [Install Azure Backup Agent for Windows Server 2012 Essentials (Installieren des Sicherungs-Agents für Windows Server 2012 Essentials, in englischer Sprache)]: http://technet.microsoft.com/de-de/library/jj884318.aspx
   [Geschützte Elemente]: ./media/backup-configure-vault/RS_protecteditems.png
   [Server gelöscht]: ./media/backup-configure-vault/RS_deletedserver.png
   [Übersicht über die Windows Azure-Sicherung]: http://go.microsoft.com/fwlink/p/?LinkId=222425

@@ -1,4 +1,4 @@
-1.  Klicken Sie auf die Registerkarte **Anwendungen** auf Ihrer Verzeichnisseite im [Azure-Verwaltungsportal][].
+1.  Klicken Sie auf die Registerkarte **Anwendungen** auf Ihrer Verzeichnisseite im [Azure-Verwaltungsportal][Azure-Verwaltungsportal].
 
 2.  Klicken Sie auf die integrierte Anwendungsregistrierung.
 
@@ -12,7 +12,7 @@
 
     ![](./media/mobile-services-generate-aad-app-registration-access-key/app-perms.png)
 
-7.  Navigieren Sie im [Azure-Verwaltungsportal][] zurück zu Ihrem mobilen Dienst, und klicken Sie auf die Registerkarte **Konfigurieren**. Blättern Sie nach unten zum Abschnitt **app settings**, fügen Sie die folgenden Anwendungseinstellungen hinzu, und klicken Sie auf **Speichern**.
+7.  Navigieren Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] zurück zu Ihrem mobilen Dienst, und klicken Sie auf die Registerkarte **Konfigurieren**. Blättern Sie nach unten zum Abschnitt **app settings**, fügen Sie die folgenden Anwendungseinstellungen hinzu, und klicken Sie auf **Speichern**.
 
     <table border="1">
     <tr>

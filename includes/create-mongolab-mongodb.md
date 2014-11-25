@@ -2,9 +2,9 @@
 
 In diesem Artikel wird dargestellt, wie Sie mit [MongoLab] eine MongoDB-Datenbank über den [Azure Store] erstellen. [MongoLab] ist ein MongoDB-Dienstanbieter, mit dem Sie MongoDB-Datenbanken in Azure-Datencentern ausführen und verwalten und aus jeder Anwendung Verbindungen zu diesen herstellen können.
 
-Gehen Sie folgendermaßen vor, um eine MongoDB-Datenbank über den [Azure Store][] zu erstellen:
+Gehen Sie folgendermaßen vor, um eine MongoDB-Datenbank über den [Azure Store][Azure Store] zu erstellen:
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 2.  Klicken Sie unten auf der Seite auf **+NEU**, und wählen Sie anschließend **STORE** aus.
 
 	![Add-On im Store auswählen](./media/create-mongolab-mongodb/select-store.png)
@@ -30,5 +30,5 @@ Gehen Sie folgendermaßen vor, um eine MongoDB-Datenbank über den [Azure Store]
 	![MongoLab-Verbindungsinformationen](./media/create-mongolab-mongodb/mongolab-conn-info.png) 
 
   [MongoLab]: https://mongolab.com/home
-  [Azure Store]: /en-us/store/overview/
+  [Azure Store]: /de-de/store/overview/
   [Azure-Verwaltungsportal]: http://windows.azure.com/

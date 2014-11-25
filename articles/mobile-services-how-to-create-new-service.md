@@ -10,9 +10,9 @@ In diesem Thema erfahren Sie, wie Sie mit dem [Azure-Verwaltungsportal][Azure-Ve
 
 [WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
+
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/

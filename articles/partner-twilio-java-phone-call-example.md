@@ -160,10 +160,10 @@ Es folgen nun die allgemeinen Schritte zum Ausführen Ihrer Anwendung. Details z
 2.  Ändern Sie **startup.cmd**, um Ihr TwilioCloud-WAR zu entzippen.
 3.  Kompilieren Sie Ihre Anwendung für den Serveremulator.
 4.  Starten Sie Ihre Bereitstellung im Serveremulator.
-5.  Starten Sie Ihren Browser und öffnen Sie die Adresse **<http://localhost:8080/TwilioCloud/callform.jsp>**.
+5.  Starten Sie Ihren Browser und öffnen Sie die Adresse **http://localhost:8080/TwilioCloud/callform.jsp**.
 6.  Geben Sie Werte in das Formular ein, klicken Sie auf **Make this call** und sehen Sie sich die Ergebnisse in makecall.jsp an.
 
-Wenn Sie die Anwendung in Azure bereitstellen möchten, kompilieren Sie sie für die Cloudbereitstellung neu, laden sie in Azure hoch und öffnen <http://*your_hosted_name>*.cloudapp.net/TwilioCloud/callform.jsp* im Browser (ersetzen Sie "your\_hosted\_name" durch den entsprechenden Wert).
+Wenn Sie die Anwendung in Azure bereitstellen möchten, kompilieren Sie sie für die Cloudbereitstellung neu, laden sie in Azure hoch und öffnen http://*your_hosted_name*.cloudapp.net/TwilioCloud/callform.jsp im Browser (ersetzen Sie *your\_hosted\_name* durch den entsprechenden Wert).
 
 ## Nächste Schritte
 
@@ -189,6 +189,7 @@ Weitere Informationen zu Twilio finden Sie unter [][11]<https://www.twilio.com/d
   [4]: http://github.com/twilio/twilio-java
   [5]: http://api.twilio.com
   [Hinzufügen eines Zertifikats zum Java ZS-Zertifikatspeicher]: ../java-add-certificate-ca-store
+  [Erstellen einer Hello World-Anwendung mithilfe des Azure-Plug-Ins für Eclipse with Java (von Microsoft Open Technologies)]: http://msdn.microsoft.com/de-de/library/windowsazure/hh690944.aspx
   [Azure-Anrufantwort mit Twilio und Java]: ./media/partner-twilio-java-phone-call-example/WA_TwilioJavaMakeCall.jpg
   [Verwenden des Blob-Speicherdiensts in Java]: http://www.windowsazure.com/de-de/develop/java/how-to-guides/blob-storage/
   [Verwenden von SQL Database in Java]: http://msdn.microsoft.com/de-de/library/windowsazure/hh749029.aspx

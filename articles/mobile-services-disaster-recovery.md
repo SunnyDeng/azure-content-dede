@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-recovery-disaster" urlDisplayName="Recover your mobile service in the event of a disaster" pageTitle="Recover your mobile service in the event of a disaster - Azure Mobile Services" metaKeywords="" description="Learn how to recover your mobile service in the event of a disaster." metaCanonical="" services="" documentationCenter="Mobile" title="Recover your mobile service in the event of a disaster" authors="yavorg" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="yavorg"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="yavorg" />
 
 # Notfallwiederherstellung mobiler Dienste
 
@@ -75,7 +75,7 @@ Führen Sie diesen Befehl aus, wenn Sie bereit sind:
 
 Jetzt sollte der mobile Dienst in einer neuen Azure-Region wiederhergestellt worden sein und verarbeitet nun Datenverkehr von den Store-Apps mithilfe der ursprünglichen URL.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+  
 
   [SQL Database business continuity guidance]: http://msdn.microsoft.com/de-de/library/windowsazure/hh852669.aspx
   [Team Foundation Service]: http://tfs.visualstudio.com/

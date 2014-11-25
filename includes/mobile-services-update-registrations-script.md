@@ -1,6 +1,6 @@
 1.  Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **Registrations**.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie unter **Registrations** auf die Registerkarte **Skript** und wählen Sie **Einfügen** aus.
 
@@ -26,5 +26,5 @@
 
 Auf diese Weise wird ein neues Einfügeskript registriert, das die Registrierungsinformationen in der neuen Tabelle speichert.
 
-  []: ./media/mobile-services-update-registrations-script/mobile-portal-data-tables-registrations.png
+  [0]: ./media/mobile-services-update-registrations-script/mobile-portal-data-tables-registrations.png
   [1]: ./media/mobile-services-update-registrations-script/mobile-insert-script-registrations.png

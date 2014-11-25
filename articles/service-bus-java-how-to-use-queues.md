@@ -257,5 +257,4 @@ vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, T
   [Gewusst wie: Empfangen von Nachrichten aus einer Warteschlange]: #bkmk_HowToReceiveMsgs
   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #bkmk_HowToHandleAppCrashes
   [Nächste Schritte]: #bkmk_NextSteps
-  [howto-service-bus-queues]: ../includes/howto-service-bus-queues.md
   [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx

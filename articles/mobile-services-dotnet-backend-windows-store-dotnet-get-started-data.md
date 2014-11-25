@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-dotnet-backend-windows-store-dotnet-get-started-data" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Store app." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="wesmc" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 
 # Erste Schritte mit Daten in Mobile Services
 
@@ -233,12 +233,10 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 -   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-<!-- Anchors. -->
-<!-- Images. -->
-<!-- URLs. -->
 
-  [.NET-Back-End]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/ ".NET-Back-End"
-  [JavaScript-Back-End]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/ "JavaScript-Back-End"
+
+
+
   [universellen Windows-Apps]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data
   [Herunterladen des Windows Store-App-Projekts]: #download-app
   [Erstellen eines neuen mobilen Dienstes]: #create-service

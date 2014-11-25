@@ -112,7 +112,6 @@ folgen Sie diesen Links, um mehr über SendGrid zu erfahren:
   [Hinzufügen eines Skripts zum Senden von E-Mails]: #add-script
   [Einfügen von Daten zum Empfangen von E-Mails]: #insert-data
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started
-  [sendgrid-sign-up]: ../includes/sendgrid-sign-up.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [0]: ./media/store-sendgird-mobile-services-send-email-scripts/mobile-portal-data-tables.png
   [1]: ./media/store-sendgird-mobile-services-send-email-scripts/mobile-insert-script-push2.png

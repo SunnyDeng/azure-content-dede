@@ -31,5 +31,5 @@ Mobile Services umfasst folgende wichtige Funktionen und basiert auf den folgend
 -   **Serverskript:** Benutzerdefinierter Code mit Geschäftslogik in einem mobilen Dienst mit JavaScript-Backend. Dieser Code wird für einen Tabellenvorgang (Lesen, Einfügen, Aktualisieren, Löschen) oder einen geplanten Auftrag registriert.
 -   **Tabelle:** Benutzerdaten werden in Tabellen in einer SQL-Datenbank gespeichert. Sie können diese Tabellen im Verwaltungsportal erstellen.
 
-<!-- Images. -->
+
 

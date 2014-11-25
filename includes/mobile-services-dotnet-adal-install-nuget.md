@@ -2,6 +2,6 @@
 
 2.  Klicken Sie im NuGet Package Manager auf **Online** und **Include Prerelease**. Geben Sie **Microsoft.IdentityModel.Clients.ActiveDirectory** als Suchbegriff ein. Klicken Sie dann auf **Installieren**, um das Paket "Active Directory Authentication Library Nuget" zu installieren.
 
-![][]
+![][0]
 
-  []: ./media/mobile-services-dotnet-adal-install-nuget/mobile-services-adal-nuget-package.png
+  [0]: ./media/mobile-services-dotnet-adal-install-nuget/mobile-services-adal-nuget-package.png

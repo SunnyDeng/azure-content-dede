@@ -45,7 +45,7 @@ Das Hinzufügen von AMQP 1.0 bedeutet, dass Sie nun die gebrokerten Messagingfun
 
 Das folgende Diagramm zeigt das Beispiel einer Bereitstellung, bei der auf Linux ausgeführte Java-Clients, die mit der Standard-Programmierschnittstelle Java Message Service (JMS) geschrieben wurden, und auf Windows ausgeführte .NET-Clients unter Verwendung von AMQP 1.0 Nachrichten über Servicebus austauschen.
 
-![][]
+![][0]
 
 **Abbildung 1: Beispielszenario für eine Bereitstellung mit plattformübergreifender Nachrichtenübermittlung mittels Servicebus und AMQP 1.0**
 
@@ -75,7 +75,7 @@ Weitere Informationen zur Beschaffung dieser Bibliotheken und ihrer Verwendung m
 -   [Entwicklerhandbuch für Service Bus mit AMQP 1.0][Entwicklerhandbuch für Service Bus mit AMQP 1.0]
 -   [Spezifikation für OASIS Advanced Message Queuing Protocol (AMQP) Version 1.0 (in englischer Sprache)][Spezifikation für OASIS Advanced Message Queuing Protocol (AMQP) Version 1.0 (in englischer Sprache)]
 
-  []: ./media/service-bus-amqp-overview/Example1.png
+  [0]: ./media/service-bus-amqp-overview/Example1.png
   [Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus]: http://aka.ms/lym3vk
   [Verwenden der JMS-Programmierschnittstelle (Java Message Service) mit Service Bus & AMQP 1.0]: http://aka.ms/ll1fm3
   [Entwicklerhandbuch für Service Bus mit AMQP 1.0]: http://msdn.microsoft.com/de-de/library/windowsazure/jj841071.aspx

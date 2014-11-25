@@ -124,5 +124,5 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
 -   [Lernprogramm: Verwenden von Pig](/de-de/manage/services/hdinsight/using-pig-with-hdinsight/)
 -   [Lernprogramm: Verwenden von Hive](/de-de/manage/services/hdinsight/using-hive-with-hdinsight/)
 -   [Lernprogramm: Verwenden von MapReduce](/de-de/manage/services/hdinsight/using-mapreduce-with-hdinsight/)
--   [Dokumentation des Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/en-us/library/dn479185.aspx)
+-   [Dokumentation des Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/de-de/library/dn479185.aspx)
 

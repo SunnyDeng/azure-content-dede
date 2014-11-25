@@ -4,7 +4,7 @@ Ein neues Einfügeskript wird registriert, das beim Einfügen eines neuen Aktivi
 
 2.  Klicken Sie im Verwaltungsportal auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
 
-    ![][]
+    ![][0]
 
 3.  Notieren Sie sich **Speicherkontoname** und **Zugriffsschlüssel**.
 
@@ -90,10 +90,10 @@ Ein neues Einfügeskript wird registriert, das beim Einfügen eines neuen Aktivi
 
 Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim Einfügevorgang generierten SAS Funktionalität zum Hochladen von Images hinzuzufügen.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+  
 
   [So erstellen Sie ein Speicherkonto]: /de-de/manage/services/storage/how-to-create-a-storage-account
-  []: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account.png
+  [0]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account.png
   [1]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account-keys.png
   [2]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-app-settings.png
   [App-Einstellungen]: http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

@@ -1,6 +1,6 @@
 <properties title="How to create a custom template image for RemoteApp" pageTitle="How to create a custom template nimage for RemoteApp" description="Learn how to create a custom template image for RemoteApp. You can use this template with either a hybrid or cloud deployment." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="kathyw" />
 
-<tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/12/2014" ms.author="elizapo" ms.manager="kathyw"></tags>
+<tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/12/2014" ms.author="elizapo" ms.manager="kathyw" />
 
 # Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp
 
@@ -20,7 +20,7 @@ Azure RemoteApp verwendet ein Windows Server 2012 R2-Vorlagenimage, um alle Prog
 
 Bevor Sie mit der Erstellung des Dienstes beginnen, führen Sie Folgendes aus:
 
--   Registrieren Sie sich für die Vorschau von RemoteApp. Sie können sich unter [][]<http://azure.microsoft.com/en-us/services/remoteapp/></a> registrieren.
+-   Registrieren Sie sich für die Vorschau von RemoteApp. Sie können sich unter [][]<http://azure.microsoft.com/de-de/services/remoteapp/></a> registrieren.
 -   Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den RemoteApp-Dienst dient. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann.
 -   Sammeln Sie folgende Informationen über das lokale Netzwerk: IP-Adresse und Informationen zum VPN-Gerät.
 -   Installieren Sie das [Azure PowerShell][Azure PowerShell]-Modul.
@@ -113,7 +113,7 @@ Nach dem Erstellen des benutzerdefinierten Vorlagenimage müssen Sie dieses Abbi
 -   [Erstellen einer Hybridbereitstellung von RemoteApp][Erstellen einer Hybridbereitstellung von RemoteApp]
 -   [Erstellen einer Cloud-Bereitstellung einer RemoteApp][Erstellen einer Cloud-Bereitstellung einer RemoteApp]
 
-  []: http://azure.microsoft.com/en-us/services/remoteapp/
+  []: http://azure.microsoft.com/de-de/services/remoteapp/
   [Azure PowerShell]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
   [Erstellen einer Hybridbereitstellung von RemoteApp]: http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-hybrid-deployment/
   [Erstellen einer Cloud-Bereitstellung einer RemoteApp]: http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-cloud-deployment/

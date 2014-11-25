@@ -1,4 +1,4 @@
-<properties urlDisplayName="Tomcat on Virtual Machine" pageTitle="Tomcat auf einem virtuellen Computer &ndash; Azure-Lernprogramm" metaKeywords="Azure vm, creating vm Tomcat, configuring vm Tomcat" description="Erfahren Sie, wie Sie einen virtuellen Computer unter Windows erstellen und den Computer konfigurieren k&ouml;nnen, damit darauf ein Apache Tomcat-Anwendungsserver ausgef&uuml;hrt wird." metaCanonical="" services="virtual-machines" documentationCenter="Java" title="Ausf&uuml;hren eines Java-Anwendungsservers auf einem virtuellen Computer" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="dev-java-vm-application-server" urlDisplayName="Tomcat on Virtual Machine" pageTitle="Tomcat on a virtual machine - Azure tutorial" metaKeywords="Azure vm, creating vm Tomcat, configuring vm Tomcat" description="Learn how to create a Windows Virtual machine and configure the machine to run a Apache Tomcat application server." metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a Java application server on a virtual machine" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 <tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-windows" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
 
@@ -54,9 +54,8 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
 1.  Melden Sie sich am [Verwaltungsportal][Azure-Verwaltungsportal] an.
 2.  Klicken Sie auf **Virtuelle Computer**.
 3.  Klicken Sie auf den Namen des virtuellen Computers, an dem Sie sich anmelden möchten.
-4.  Nachdem der virtuelle Computer gestartet wurde werden unten auf der Seite über ein Popupmenü Verbindungen zugelassen.
-5.  Klicken Sie auf **Verbinden**.
-6.  Befolgen Sie die Anweisungen, um eine Verbindung mit dem virtuellen Computer herzustellen. Diese sollte das Speichern oder Öffnen der RDP-Datei beinhalten, die die Verbindungsdetails enthält. Sie müssen möglicherweise den url:port als letzten Teil der ersten Zeile der RDP-Datei kopieren und ihn in eine Anwendung für die Remoteanmeldung einfügen.
+4.  Klicken Sie auf **Verbinden**.
+5.  Befolgen Sie die Anweisungen, um eine Verbindung mit dem virtuellen Computer herzustellen. Wenn Sie zur Eingabe des Administratornamens und des Kennworts aufgefordert werden, verwenden Sie die Werte, die Sie beim Erstellen des virtuellen Computers bereitgestellt haben.
 
 ## So installieren Sie einen Java-Anwendungsserver auf dem virtuellen Computer
 
@@ -123,7 +122,7 @@ Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen
 
 ![Neue eingehende Regel – Name][Neue eingehende Regel – Name]
 
-An dieser Stelle sollte es nun möglich sein, die Tomcat-Website über einen externen Browser anzuzeigen. Dabei wird eine URL in der Form **[http://\*your\\_DNS\\_name][http://\*your\\_DNS\\_name]*.cloudapp.net **verwendet, wobei*** your\_DNS\_name**\* der DNS-Name ist, den Sie beim Erstellen des virtuellen Computers angegeben haben.
+An dieser Stelle sollte es nun möglich sein, die Tomcat-Website über einen externen Browser anzuzeigen. Dabei wird eine URL in der Form **http://*your\_DNS\_name*.cloudapp.net** verwendet, wobei ***your\_DNS\_name*** der DNS-Name ist, den Sie beim Erstellen des virtuellen Computers angegeben haben.
 
 ## Überlegungen zum Lebenszyklus von Anwendungen
 

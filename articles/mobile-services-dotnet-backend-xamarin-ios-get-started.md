@@ -87,9 +87,9 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 * [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
+
 
 [mobile-services-selector-get-started]: ../includes/mobile-services-selector-get-started.md
 [JavaScript-Backend-Version]: /de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started

@@ -1,6 +1,6 @@
 <properties linkid="develop-notificationhubs-tutorials-get-started-nokia-x" urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="piyushjo" solutions="" manager="kirillg" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-nokia-x" ms.devlang="java" ms.topic="article" ms.date="01/01/1900" ms.author="piyushjo"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-nokia-x" ms.devlang="java" ms.topic="article" ms.date="01/01/1900" ms.author="piyushjo" />
 
 # Erste Schritte mit Notification Hubs
 
@@ -31,7 +31,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 2.  Gehen Sie zur Registerkarte **Create services**, und erstellen Sie einen neuen Dienstanbieter, indem Sie eine **Sender ID** und eine **Service description** angeben.
 
-    ![][]
+    ![][0]
 
 3.  Notieren Sie die **Sender ID** und den **Authorization Key**, nachdem der Dienst erfolgreich erstellt wurde.
 
@@ -343,28 +343,19 @@ Wenn sich die Android-App erfolgreich beim Notification Hub registrieren kann, s
 
 4.  Um bei Verwendung der .NET-Konsolenanwendung eine Testbenachrichtigung zu senden, drücken Sie in Visual Studio die Taste F5, um die Anwendung auszuführen. Hierdurch wird eine Benachrichtigung gesendet, die oben im Benachrichtigungsbereich Ihres Geräts oder Emulators angezeigt wird.
 
-<!-- Images. --> <!-- URLs. -->
+ 
 
-  [Windows Universal]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/ "Windows Universal"
-  [Windows Phone]: /de-de/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone"
-  [iOS]: /de-de/documentation/articles/notification-hubs-ios-get-started/ "iOS"
-  [Android]: /de-de/documentation/articles/notification-hubs-android-get-started/ "Android"
-  [Kindle]: /de-de/documentation/articles/notification-hubs-kindle-get-started/ "Kindle"
-  [Nokia X]: /de-de/documentation/articles/notification-hubs-nokia-x-get-started/ "Nokia X"
-  [Xamarin.iOS]: /de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android"
   [Konfigurieren des Nokia Mitteilungsdiensts]: #register
   [Konfigurieren Ihres Notification Hub]: #configure-hub
   [Verbinden Ihrer App mit dem Notification Hub]: #connect-hub
   [Versenden von Benachrichtigungen an die App]: #send
   [Testen der App]: #test-app
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F
   [hier]: http://developer.nokia.com/resources/library/nokia-x/getting-started/environment-setup.html
   [1]: http://developer.nokia.com/resources/library/nokia-x/getting-started/device-setup.html
   [2]: http://go.microsoft.com/fwlink/?linkid=389797&clcid=0x409
   [3]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
   [Nokia Notifications API Developer Console]: https://console.push.nokia.com/ncm/Web/index.jsp
-  []: ./media/notification-hubs-nokia-x-get-started/NokiaConsole.png
+  [0]: ./media/notification-hubs-nokia-x-get-started/NokiaConsole.png
   [4]: ./media/notification-hubs-nokia-x-get-started/NokiaConsoleService.png
   [Link]: http://developer.nokia.com/resources/library/nokia-x/nokia-notifications/nokia-notifications-developer-guide.html
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/

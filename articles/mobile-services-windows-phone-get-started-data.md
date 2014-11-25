@@ -177,7 +177,6 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 
 
 
-  [mobile-services-selector-get-started-data-legacy]: ../includes/mobile-services-selector-get-started-data-legacy.md
   [Herunterladen des Windows Phone 8-App-Projekts]: #download-app
   [Erstellen des mobilen Dienstes]: #create-service
   [Erstellen einer Datentabelle als Datenspeicher]: #add-table
@@ -188,8 +187,6 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
   [GetStartedWithData-App]: http://go.microsoft.com/fwlink/p/?LinkId=271146
   [Windows Phone Store-App-Version]: http://go.microsoft.com/fwlink/p/?LinkId=397372
   [0]: ./media/mobile-services-windows-phone-get-started-data/mobile-quickstart-startup-wp8.png
-  [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
-  [mobile-services-create-new-service-data-2]: ../includes/mobile-services-create-new-service-data-2.md
   [1]: ./media/mobile-services-windows-phone-get-started-data/mobile-add-nuget-package-wp.png
   [2]: ./media/mobile-services-windows-phone-get-started-data/mobile-dashboard-tab.png
   [Verwaltungsportal]: https://manage.windowsazure.com/

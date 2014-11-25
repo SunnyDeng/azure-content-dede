@@ -6,7 +6,7 @@ Die neuen Twitter v1.1 APIs erfordern eine Authentifizierung Ihrer App, um auf R
 
 2.  Navigieren Sie zur Website für [Twitter-Entwickler][Twitter-Entwickler]-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, navigieren Sie zu **My Applications**, und wählen Sie Ihre Twitter-App aus.
 
-    ![][]
+    ![][0]
 
 3.  Auf der Registerkarte **Details** für die App notieren Sie sich die folgenden Werte:
 
@@ -32,11 +32,11 @@ Die neuen Twitter v1.1 APIs erfordern eine Authentifizierung Ihrer App, um auf R
 
     Dadurch wird das Twitter-Zugriffstoken in den App-Einstellungen gespeichert. Wie die Benutzeranmeldeinformationen auf der Registerkarte **Identität** werden auch die Zugangsberechtigungsdaten verschlüsselt in den App-Einstellungen gespeichert, sodass Sie auf diese in Ihren Serverskripts zugreifen können, ohne die Daten hart in der Skriptdatei codieren zu müssen. Weitere Informationen finden Sie unter [App-Einstellungen][App-Einstellungen].
 
-<!-- URLs. -->
+
 
   [Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services]: /de-de/documentation/articles/mobile-services-how-to-register-twitter-authentication/
   [Twitter-Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-  []: ./media/mobile-services-register-twitter-access/mobile-twitter-my-apps.png
+  [0]: ./media/mobile-services-register-twitter-access/mobile-twitter-my-apps.png
   [1]: ./media/mobile-services-register-twitter-access/mobile-twitter-app-secrets.png
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [2]: ./media/mobile-services-register-twitter-access/mobile-identity-tab-twitter-only.png

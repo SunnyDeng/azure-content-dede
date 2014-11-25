@@ -73,7 +73,6 @@ Azure startet den Erstellungs- und Bereitstellungsvorgang. Während die Website 
   [Orchard]: http://www.orchardproject.net/
   [weitere Module und Themen herunterladen]: http://gallery.orchardproject.net/
   [Orchard-Blog]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-08.png
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Neu erstellen]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-01.png
   [Über Galerie erstellen]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-02.png
   [Orchard aus der Liste]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-03.png

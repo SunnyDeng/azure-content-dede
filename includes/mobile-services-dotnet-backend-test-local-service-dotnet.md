@@ -6,7 +6,7 @@ In diesem Abschnitt testen Sie Ihre neue App für den lokal ausgeführten mobile
 
 2.  Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und den mobilen Dienst lokal zu starten.
 
-    ![][]
+    ![][0]
 
     Nachdem der mobile Dienst erfolgreich gestartet wurde, wird eine Webseite angezeigt.
 
@@ -18,4 +18,4 @@ In diesem Abschnitt testen Sie Ihre neue App für den lokal ausgeführten mobile
 
     Daraufhin wird eine POST-Anforderung an den lokalen mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Werte werden vom mobilen Dienst zurückgegeben, und die Daten werden in der zweiten Spalte der App angezeigt.
 
-  []: ./media/mobile-services-dotnet-backend-test-local-service-dotnet/mobile-service-startup.png
+  [0]: ./media/mobile-services-dotnet-backend-test-local-service-dotnet/mobile-service-startup.png

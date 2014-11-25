@@ -1,4 +1,4 @@
-<properties urlDisplayName="Cassandra with Linux" pageTitle="Ausf&uuml;hren von Cassandra mit Linux auf Azure" metaKeywords="" description="Erl&auml;utert das Ausf&uuml;hren eines Cassandra-Clusters auf Linux in Azure Virtual Machines." metaCanonical="" services="virtual-machines" documentationCenter="nodejs" title="Ausf&uuml;hren von Cassandra mit Linux auf Azure und Zugreifen darauf mit Node.js" authors="hanuk" solutions="" manager="timlt" editor="" />
+<properties linkid="services-linux-cassandra-with-linux" urlDisplayName="Cassandra with Linux" pageTitle="Run Cassandra with Linux on Azure" metaKeywords="" description="Explains how to run a Cassandra cluster on Linux in Azure Virtual Machines." metaCanonical="" services="virtual-machines" documentationCenter="nodejs" title="Running Cassandra with Linux on Azure and Accessing it from Node.js" authors="hanuk" solutions="" manager="timlt" editor="" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="hanuk" />
 
@@ -589,4 +589,3 @@ Azure Virtual Machines erlaubt die Erstellung virtueller Linux- (von Microsoft-P
   [1]: http://wiki.apache.org/cassandra/GettingStarted
   [cassandra-client]: https://github.com/racker/node-cassandra-client
   [Zeilen und Spalten]: ./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux3.png
-  [Cassandra Query Language (CQL)]: http://cassandra.apache.org/doc/cql/CQL.html

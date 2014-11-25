@@ -1,11 +1,11 @@
 <properties linkid="mobile-services-how-to-ios-client" urlDisplayName="iOS Client Library" pageTitle="How to use the iOS client library - Azure Mobile Services" metaKeywords="Azure Mobile Services, Mobile Service iOS client library, iOS client library" description="Learn how to use the iOS client library for Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="How to use the iOS client library for Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Verwenden der iOS-Clientbibliothek für Mobile Services
 
 <div class="dev-center-tutorial-selector sublanding"> 
-  <a href="/en-us/develop/mobile/how-to-guides/work-with-net-client-library/" title=".NET Framework">.NET Framework</a><a href="/en-us/develop/mobile/how-to-guides/work-with-html-js-client/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/en-us/develop/mobile/how-to-guides/work-with-ios-client-library/" title="iOS" class="current">iOS</a><a href="/en-us/develop/mobile/how-to-guides/work-with-android-client-library/" title="Android">Android</a><a href="/en-us/develop/mobile/how-to-guides/work-with-xamarin-client-library/" title="Xamarin">Xamarin</a>
+  <a href="/de-de/develop/mobile/how-to-guides/work-with-net-client-library/" title=".NET Framework">.NET Framework</a><a href="/de-de/develop/mobile/how-to-guides/work-with-html-js-client/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/de-de/develop/mobile/how-to-guides/work-with-ios-client-library/" title="iOS" class="current">iOS</a><a href="/de-de/develop/mobile/how-to-guides/work-with-android-client-library/" title="Android">Android</a><a href="/de-de/develop/mobile/how-to-guides/work-with-xamarin-client-library/" title="Xamarin">Xamarin</a>
 </div>
 
 Dieser Artikel beschreibt gängige Szenarien für die Verwendung des iOS-Clients für Azure Mobile Services. Die Beispiele sind in objective-C geschrieben, und Sie benötigen das [Mobile Services-SDK][Mobile Services-SDK]. Für dieses Lernprogramm benötigen Sie außerdem das [iOS SDK][iOS SDK]. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst den [Schnellstart für mobile Dienste][Schnellstart für mobile Dienste] absolvieren. Im Schnellstart-Lernprogramm lernen Sie, Ihr Konto zu konfigurieren und Ihren ersten mobilen Dienst zu erstellen.
@@ -437,20 +437,15 @@ Ein Beispiel für die Validierung und Behandlung von Fehlern finden Sie unter [V
 
 <!-- <h2><a name="#unit-testing"></a><span class="short-header">Designing tests</span>How to: Design unit tests</h2>  _(Optional) This section shows how to write unit test when using the client library (info from Yavor)._  <h2><a name="#customizing"></a><span class="short-header">Customizing the client</span>How to: Customize the client</h2>  _(Optional) This section shows how to send customize client behaviors._  ###<a name="custom-headers"></a>How to: Customize request headers  _(Optional) This section shows how to send custom request headers._  For more information see, New topic about processing headers in the server-side.  ###<a name="custom-serialization"></a>How to: Customize serialization  _(Optional) This section shows how to use attributes to customize how data types are serialized._  For more information see, New topic about processing headers in the server-side.  ## <a name="next-steps"></a>Next steps --> 
 
-<!-- Anchors. --> 
+ 
 
-<!-- Images. --> 
+ 
 
-<!-- URLs. -->
 
-  [.NET Framework]: /en-us/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework"
-  [HTML/JavaScript]: /en-us/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript"
-  [iOS]: /en-us/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS"
-  [Android]: /en-us/develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
-  [Xamarin]: /en-us/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
+
   [Mobile Services-SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
   [iOS SDK]: https://developer.apple.com/xcode
-  [Schnellstart für mobile Dienste]: /en-us/develop/mobile/tutorials/get-started-ios
+  [Schnellstart für mobile Dienste]: /de-de/develop/mobile/tutorials/get-started-ios
   [Windows Azure Mobile Services]: #what-is
   [Konzepte]: #concepts
   [Einrichtung und Voraussetzungen]: #Setup
@@ -465,18 +460,17 @@ Ein Beispiel für die Validierung und Behandlung von Fehlern finden Sie unter [V
   [Gewusst wie: Datenbindung in der Benutzeroberfläche]: #binding
   [Gewusst wie: Authentifizieren von Benutzern]: #authentication
   [Gewusst wie: Fehlerbehandlung]: #errors
-  [mobile-services-concepts]: ../includes/mobile-services-concepts.md
-  [Erstellen einer Tabelle]: http://msdn.microsoft.com/en-us/library/windowsazure/jj193162.aspx
+  [Erstellen einer Tabelle]: http://msdn.microsoft.com/de-de/library/windowsazure/jj193162.aspx
   [**Binärdatei mit Bibliotheken verknüpfen**]: https://developer.apple.com/library/ios/recipes/xcode_help-project_editor/Articles/AddingaLibrarytoaTarget.html
   [Daten seitenweise zurückgeben]: #paging
-  [Gewusst wie: Zugreifen auf benutzerdefinierte Parameter]: /en-us/develop/mobile/how-to-guides/work-with-server-scripts#access-headers
+  [Gewusst wie: Zugreifen auf benutzerdefinierte Parameter]: /de-de/develop/mobile/how-to-guides/work-with-server-scripts#access-headers
   [NSDictionary-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=301965
   [ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-  [CLI to manage Mobile Services tables]: http://www.windowsazure.com/en-us/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+  [CLI to manage Mobile Services tables]: http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables
   [Dynamisches Schema]: http://go.microsoft.com/fwlink/p/?LinkId=296271
-  [Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-ios
-  [Verwenden von Skripts zum Autorisieren von Benutzern]: /en-us/develop/mobile/tutorials/authorize-users-in-scripts-ios
-  [Berechtigungen]: http://msdn.microsoft.com/en-us/library/windowsazure/jj193161.aspx
+  [Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-ios
+  [Verwenden von Skripts zum Autorisieren von Benutzern]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios
+  [Berechtigungen]: http://msdn.microsoft.com/de-de/library/windowsazure/jj193161.aspx
   [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
   [Umgang mit abgelaufenen Token]: http://go.microsoft.com/fwlink/p/?LinkId=301955
-  [Validate and modify data in Mobile Services by using server scripts]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-ios
+  [Validate and modify data in Mobile Services by using server scripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-ios

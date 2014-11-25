@@ -71,16 +71,12 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 
-  [mobile-services-selector-get-started-push]: ../includes/mobile-services-selector-get-started-push.md
   [dieser Version]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push
   [Registrieren der App für Pushbenachrichtigungen]: #register
   [Aktualisieren des Diensts zum Senden von Pushbenachrichtigungen]: #update-service
   [Testen von Pushbenachrichtigungen in der App]: #test
   [Microsoft Store-Konto]: http://go.microsoft.com/fwlink/p/?LinkId=280045
   [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
-  [mobile-services-create-new-push-vs2013]: ../includes/mobile-services-create-new-push-vs2013.md
-  [mobile-services-javascript-update-script-notification-hubs]: ../includes/mobile-services-javascript-update-script-notification-hubs.md
-  [mobile-services-javascript-backend-windows-universal-test-push]: ../includes/mobile-services-javascript-backend-windows-universal-test-push.md
   [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-push-notifications-app-users/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-universal-javascript-get-started-data
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-universal-javascript-get-started-users

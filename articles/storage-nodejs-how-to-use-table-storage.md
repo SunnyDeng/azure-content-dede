@@ -1,6 +1,6 @@
-<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Node.js) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Node.js, table storage Node.js" description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele verwenden die Node.js-API." metaCanonical="" services="storage" documentationCenter="nodejs" title="Verwenden des Tabellenspeicherdiensts aus Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties linkid="dev-nodejs-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage (Node.js) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Node.js, table storage Node.js" description="Learn how to use the table storage service in Azure. Code samples are written using the Node.js API." metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Table Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
 
 # Verwenden des Tabellenspeicherdiensts aus Node.js
 
@@ -70,7 +70,7 @@ die mit den REST-Speicherdiensten kommunizieren.
 Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anfang der Datei
 **server.js** der Anwendung einzufügen, in der Sie den Speicher nutzen möchten:
 
-    var azure = require('azure-storage');
+           var azure = require('azure-storage');
 
 ## <a name="setup-connection-string"> </a>Einrichten einer Azure-Speicherverbindung
 
@@ -83,7 +83,7 @@ Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine
 Mit dem folgenden Code wird ein **TableService**-Objekt erstellt und zum
 Erstellen einer neuen Tabelle verwendet. Fügen Sie Folgenden am Anfang der Datei **server.js** ein.
 
-    var tableSvc = azure.createTableService();
+        var tableSvc = azure.createTableService();
 
 Durch den Aufruf von **createTableIfNotExists** wird eine neue Tabelle mit dem angegebenen
 Namen erstellt, sofern sie nicht vorhanden ist. Im folgenden Beispiel wird eine neue Tabelle namens 'mytable' erstellt, wenn diese noch nicht vorhanden ist:
@@ -100,7 +100,7 @@ Das `result` ist `true`, wenn eine neue Tabelle erstellt wird, und `false`, wenn
 
 Auf die Vorgänge, die mit **TableService** ausgeführt werden, können optionale Filtervorgänge angewendet werden. Filtervorgänge können Protokollierung, automatische Wiederholung usw. umfassen. Filter sind Objekte, die eine Methode mit einer Signatur implementieren:
 
-        function handle (requestOptions, next)
+          function handle (requestOptions, next)
 
 Nachdem die Vorverarbeitung der Anforderungsoptionen angeschlossen ist, muss die Methode "next" aufrufen und hierbei eine Rückruffunktion mit der folgenden Signatur übergeben:
 
@@ -420,7 +420,6 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
 -   Besuchen Sie das [Azure Storage SDK für Node][Azure Storage SDK für Node]-Repository auf GitHub.
 
   [Nächste Schritte]: #next-steps
-  [Was ist der Tabellenspeicherdienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Erstellen einer Node.js-Anwendung]: #create-app

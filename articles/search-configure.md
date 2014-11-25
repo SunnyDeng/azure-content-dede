@@ -356,7 +356,6 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 
 <!--Anchors--> <!--Image references--> <!--Link references-->
 
-  [Dieser Artikel verwendet das Azure-Vorschauportal]: ../includes/preview-portal-note.md
   [Erste Schritte mit dem kostenlosen Dienst]: #sub-1
   [Upgrade auf die Standardsuche]: #sub-2
   [Testen der Dienstfunktionen]: #sub-3
@@ -380,11 +379,11 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
   [12]: ./media/search-configure/AzureSearch_Configure1_12_POSTDocs.PNG
   [13]: ./media/search-configure/AzureSearch_Configure1_13_GETQuery.PNG
   [14]: ./media/search-configure/AzureSearch_Configure1_14_GETQueryResponse.PNG
-  [Suchindex-Operationen (Azure Search-API)]: http://msdn.microsoft.com/en-us/library/dn798927.aspx
+  [Suchindex-Operationen (Azure Search-API)]: http://msdn.microsoft.com/de-de/library/dn798927.aspx
   [15]: ./media/search-configure/AzureSearch_Configure1_15_Stats.PNG
   [16]: ./media/search-configure/AzureSearch_Configure1_16_StatsResponse.PNG
   [17]: ./media/search-configure/AzureSearch_Configure1_17_BrowseEverything.PNG
   [Erstellen Sie Ihre erste Azure Search-Lösung]: ../search-create-first-solution/
   [Verwalten Ihrer Suchlösung in Microsoft Azure]: ../search-manage/
-  [Azure Search: Technische Übersicht]: http://msdn.microsoft.com/en-us/library/dn798933.aspx
-  [Azure Search REST-API]: http://msdn.microsoft.com/en-us/library/dn798935.aspx
+  [Azure Search: Technische Übersicht]: http://msdn.microsoft.com/de-de/library/dn798933.aspx
+  [Azure Search REST-API]: http://msdn.microsoft.com/de-de/library/dn798935.aspx

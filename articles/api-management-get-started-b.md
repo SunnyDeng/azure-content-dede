@@ -1,6 +1,4 @@
-<properties pageTitle="Erste Schritte mit der Azure API-Verwaltung" metaKeywords="" description="Erfahren Sie mehr &uuml;ber das Erstellen von APIs und Vorg&auml;ngen sowie &uuml;ber die ersten Schritte mit der API-Verwaltung." metaCanonical="" services="api-management" documentationCenter="API Management" title="Erste Schritte mit der Azure API-Verwaltung" authors="sdanie" solutions="" manager="dwrede" editor="" />
-
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
+<properties pageTitle="Get started with Azure API Management" metaKeywords="" description="Learn how to create APIs, operations, and get started with API Management." metaCanonical="" services="" documentationCenter="API Management" title="Get started with Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
 
 # Erste Schritte mit der Azure API-Verwaltung
 

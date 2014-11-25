@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-dotnet-backend-use-non-relational-data-store" urlDisplayName="Build a Service Using a Non-Relational Data Store" pageTitle="Build a Service Using a Non-Relational Data Store - Azure Mobile Services" metaKeywords="" description="Learn how to use a non-relational data store such as MongoDB or Azure Table Storage with your .NET based mobile service" metaCanonical="" services="" documentationCenter="Mobile" title="Build a Service Using a Non-Relational Data Store" authors="yavorg, mahender" solutions="" manager="" editor="mollybos" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="yavorg, mahender"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="yavorg, mahender" />
 
 # Erstellen eines Diensts mit MongoDB als Datenspeicher mit .NET-Backend
 
@@ -20,7 +20,7 @@ Voraussetzung für dieses Lernprogramm ist der Abschluss des Lernprogramms [Erst
 
 2. Wählen Sie das Add-On **MongoLab** aus, und navigieren Sie durch den Assistenten, um sich für ein Konto zu registrieren. Weitere Informationen zu MongoLab finden Sie auf der [MongoLab Add-On-Seite][MongoLab Add-On-Seite].
 
-    ![][]
+    ![][0]
 
 3. Nachdem das Konto eingerichtet wurde, wählen Sie **Verbindungsinformationen** aus und kopieren die Verbindungszeichenfolge.
 
@@ -88,9 +88,9 @@ Voraussetzung für dieses Lernprogramm ist der Abschluss des Lernprogramms [Erst
 
 3. Erstellen Sie ein neues Objekt. Die App sollte sich wie zuvor verhalten, außer dass die Daten sich jetzt in Ihrem nicht relationalen Speicher befinden.
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
+
 
 [Erstellen eines nicht relationalen Speichers]: #create-store
 [Ändern von Daten und Controllern]: #modify-service
@@ -99,5 +99,5 @@ Voraussetzung für dieses Lernprogramm ist der Abschluss des Lernprogramms [Erst
 [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [MongoLab Add-On-Seite]: /de-de/gallery/store/mongolab/mongolab
-[]: ./media/mobile-services-dotnet-backend-use-non-relational-data-store/create-mongo-lab.png
+[0]: ./media/mobile-services-dotnet-backend-use-non-relational-data-store/create-mongo-lab.png
 [1]: ./media/mobile-services-dotnet-backend-use-non-relational-data-store/mongo-connection-string.png

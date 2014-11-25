@@ -1,4 +1,4 @@
-<properties urlDisplayName="Continuous Delivery" pageTitle="Kontinuierliche Zustellung f&uuml;r Cloud-Dienste mit TFS in Azure" metaKeywords="Azure continuous delivery, continuous delivery sample code, continuous delivery PowerShell" description="Hier erfahren Sie, wie Sie die kontinuierliche Zustellung f&uuml;r Azure-Cloudanwendungen einrichten. Codebeispiele f&uuml;r MSBuild-Befehlszeilenanweisungen und PowerShell-Skripts." metaCanonical="" services="" documentationCenter="" title="Kontinuierliche Zustellung f&uuml;r Cloud Services in Azure" authors="ghogen" solutions="" manager="douge" editor="" />
+<properties linkid="dev-net-common-tasks-continuous-delivery" urlDisplayName="Continuous Delivery" pageTitle="Continuous delivery for cloud services with TFS in Azure" metaKeywords="Azure continuous delivery, continuous delivery sample code, continuous delivery PowerShell" description="Learn how to set up continuous delivery for Azure cloud apps. Code samples for MSBuild command-line statements and PowerShell scripts." metaCanonical="" services="" documentationCenter="" title="Continuous Delivery for Cloud Services in Azure" authors="ghogen" solutions="" manager="" editor="" />
 
 <tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="ghogen" />
 
@@ -405,7 +405,6 @@ wird in die Standard-Buildausgabe geleitet.
             <x:Property Name="PublishScriptLocation" Type="InArgument(x:String)" />
             <x:Property Name="ServiceName" Type="InArgument(x:String)" />
           </x:Members>
-
           <this:Process.MSBuildArguments>
 
 6.  Fügen Sie am Ende von "Ausführung mit Agent" eine neue Sequenz hinzu:
@@ -587,7 +586,6 @@ wird in die Standard-Buildausgabe geleitet.
             $subscriptionDataFile = ""
          )
           
-
     function Publish()
     {
         $deployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot -ErrorVariable a -ErrorAction silentlycontinue 
@@ -628,28 +626,23 @@ wird in die Standard-Buildausgabe geleitet.
                 CreateNewDeployment
         }
     }
-
     function CreateNewDeployment()
     {
         write-progress -id 3 -activity "Neue Bereitstellung wird erstellt" -Status "In Bearbeitung"
         Write-Output "$(Get-Date -f $timeStampFormat) - Neue Bereitstellung wird erstellt: In Bearbeitung"
-
         $opstat = New-AzureDeployment -Slot $slot -Package $packageLocation -Configuration $cloudConfigLocation -label $deploymentLabel -ServiceName $serviceName
             
         $completeDeployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot
         $completeDeploymentID = $completeDeployment.deploymentid
-
         write-progress -id 3 -activity "Neue Bereitstellung wird erstellt" -completed -Status "Abgeschlossen"
         Write-Output "$(Get-Date -f $timeStampFormat) - Neue Bereitstellung wird erstellt: Abgeschlossen, Bereitstellungs-ID: $completeDeploymentID"
         
         StartInstances
     }
-
     function UpgradeDeployment()
     {
         write-progress -id 3 -activity "Bereitstellung wird aktualisiert" -Status "In Bearbeitung"
         Write-Output "$(Get-Date -f $timeStampFormat) - Bereitstellung wird aktualisiert: In Bearbeitung"
-
         # perform Update-Deployment
         $setdeployment = Set-AzureDeployment -Upgrade -Slot $slot -Package $packageLocation -Configuration $cloudConfigLocation -label $deploymentLabel -ServiceName $serviceName -Force
         
@@ -659,29 +652,22 @@ wird in die Standard-Buildausgabe geleitet.
         write-progress -id 3 -activity "Bereitstellung wird aktualisiert" -completed -Status "Abgeschlossen"
         Write-Output "$(Get-Date -f $timeStampFormat) - Bereitstellung wird aktualisiert: Abgeschlossen, Bereitstellungs-ID: $completeDeploymentID"
     }
-
     function DeleteDeployment()
     {
-
         write-progress -id 2 -activity "Bereitstellung wird gelöscht" -Status "In Bearbeitung"
         Write-Output "$(Get-Date -f $timeStampFormat) - Bereitstellung wird gelöscht: In Bearbeitung"
-
         #WARNUNG - erzwingt stets die Löschung
         $removeDeployment = Remove-AzureDeployment -Slot $slot -ServiceName $serviceName -Force
-
         write-progress -id 2 -activity "Bereitstellung wird gelöscht: Abgeschlossen" -completed -Status $removeDeployment
         Write-Output "$(Get-Date -f $timeStampFormat) - Bereitstellung wird gelöscht: Abgeschlossen"
         
     }
-
     function StartInstances()
     {
         write-progress -id 4 -activity "Instanzen werden gestartet" -Status "In Bearbeitung"
         Write-Output "$(Get-Date -f $timeStampFormat) - Instanzen werden gestartet: In Bearbeitung"
-
         $deployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot
         $runstatus = $deployment.Status
-
         if ($runstatus -ne 'Running') 
         {
             $run = Set-AzureDeployment -Slot $slot -ServiceName $serviceName -Status Running
@@ -696,34 +682,27 @@ wird in die Standard-Buildausgabe geleitet.
             {
                 $instanceName = $roleInstance.InstanceName
                 $instanceStatus = $roleInstance.InstanceStatus
-
                 if ($oldStatusStr[$i - 1] -ne $roleInstance.InstanceStatus)
                 {
                     $oldStatusStr[$i - 1] = $roleInstance.InstanceStatus
                     Write-Output "$(Get-Date -f $timeStampFormat) - Instanz '$instanceName' wird gestartet: $instanceStatus"
                 }
-
                 write-progress -id (4 + $i) -activity "Instanz '$instanceName' wird gestartet" -status "$instanceStatus"
                 $i = $i + 1
             }
-
             sleep -Seconds 1
-
             $deployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot
         }
-
         $i = 1
         foreach ($roleInstance in $deployment.RoleInstanceList)
         {
             $instanceName = $roleInstance.InstanceName
             $instanceStatus = $roleInstance.InstanceStatus
-
             if ($oldStatusStr[$i - 1] -ne $roleInstance.InstanceStatus)
             {
                 $oldStatusStr[$i - 1] = $roleInstance.InstanceStatus
                 Write-Output "$(Get-Date -f $timeStampFormat) - Instanz '$instanceName' wird gestartet: $instanceStatus"
             }
-
             $i = $i + 1
         }
         
@@ -733,7 +712,6 @@ wird in die Standard-Buildausgabe geleitet.
         write-progress -id 4 -activity "Instanzen werden gestartet" -completed -status $optstat
         Write-Output "$(Get-Date -f $timeStampFormat) - Instanzen werden gestartet: $opstat"
     }
-
     function AllInstancesRunning($roleInstanceList)
     {
         foreach ($roleInstance in $roleInstanceList)
@@ -746,30 +724,23 @@ wird in die Standard-Buildausgabe geleitet.
         
         return $true
     }
-
     #PowerShell mit Azure 1.7-Modulen konfigurieren
     Import-Module Azure
-
     #PowerShell mit publishsettings für Ihr Abonnement konfigurieren
     $pubsettings = $subscriptionDataFile
     Import-AzurePublishSettingsFile $pubsettings
     Set-AzureSubscription -CurrentStorageAccount $storageAccountName -SubscriptionName $selectedsubscription
-
     #restliche Umgebungsvariablen für Azure-Cmdlets festlegen
     $subscription = Get-AzureSubscription $selectedsubscription
     $subscriptionname = $subscription.subscriptionname
     $subscriptionid = $subscription.subscriptionid
     $slot = $environment
-
     #Haupttreiber - Fortschritt veröffentlichen und in Aktivitätsprotokoll schreiben
     Write-Output "$(Get-Date -f $timeStampFormat) - Azure-Cloud-Dienst-Bereitstellungsskript gestartet."
     Write-Output "$(Get-Date -f $timeStampFormat) - Bereitstellung von $deploymentLabel für $subscriptionname mit Abonnement-ID $subscriptionid wird vorbereitet."
-
     Publish
-
     $deployment = Get-AzureDeployment -slot $slot -serviceName $servicename
     $deploymentUrl = $deployment.Url
-
     Write-Output "$(Get-Date -f $timeStampFormat) - Cloud-Dienst mit URL $deploymentURL erstellt."
     Write-Output "$(Get-Date -f $timeStampFormat) - Azure-Cloud-Dienst-Bereitstellungsskript beendet."
 
@@ -780,9 +751,7 @@ Informationen zum Aktivieren des Remotedebuggens bei Verwendung der kontinuierli
   [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso/
   [Schritt 1: Den Buildserver konfigurieren]: #step1
   [Schritt 2: Ein Paket mithilfe von MSBuild-Befehlen erstellen]: #step2
-  [Schritt 3: Ein Paket mithilfe von TFS Team Build erstellen (optional)]: #step3
   [Schritt 4: Ein Paket mit einem PowerShell-Skript veröffentlichen]: #step4
-  [Schritt 5: Ein Paket mithilfe von TFS Team Build veröffentlichen (optional)]: #step5
   [Einrichten des Team Foundation-Builddiensts]: http://go.microsoft.com/fwlink/p/?LinkId=239963
   [.NET Framework 4]: http://go.microsoft.com/fwlink/?LinkId=239538
   [.NET Framework 4.5]: http://go.microsoft.com/fwlink/?LinkId=245484

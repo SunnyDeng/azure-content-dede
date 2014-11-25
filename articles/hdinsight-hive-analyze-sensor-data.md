@@ -39,5 +39,5 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
   [Ein Diagramm der Lösungsarchitektur]: ./media/hdinsight-use-hive-sensor-data-analysis/hvac-architecture.png
   [Bereitstellen von Hadoop-Clustern in HDInsight]: /de-de/documentation/articles/hdinsight-provision-clusters/
-  [Power View]: https://support.office.com/en-US/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=en-US&rs=en-US&ad=US
+  [Power View]: https://support.office.com/de-de/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=de-de&rs=de-de&ad=US
   [Microsoft Hive ODBC-Treiber]: http://www.microsoft.com/de-de/download/details.aspx?id=40886

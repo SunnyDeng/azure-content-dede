@@ -1,6 +1,6 @@
 <properties title="Erste Schritte mit Azure Storage" pageTitle="Erste Schritte mit Azure Storage" metaKeywords="Azure, Getting Started, Storage" description="" services="storage" documentationCenter="" authors="ghogen, kempb" />
 
-<tags ms.service="storage" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/10/2014" ms.author="ghogen, kempb"></tags>
+<tags ms.service="storage" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/10/2014" ms.author="ghogen, kempb" />
 
 > [AZURE.SELECTOR]
 >
@@ -37,4 +37,3 @@ Bevor Sie eine Warteschlange verwenden können, müssen Sie die Verbindungszeich
   [Blobs]: /documentation/articles/vs-storage-cloud-services-getting-started-blobs
   [Tabellen]: /documentation/articles/vs-storage-cloud-services-getting-started-tables/
   [Verwenden des Warteschlangenspeichers aus .NET]: http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-queues/ "Verwenden des Warteschlangenspeichers aus .NET"
-  [vs-storage-getting-started-queues-include]: ../includes/vs-storage-getting-started-queues-include.md

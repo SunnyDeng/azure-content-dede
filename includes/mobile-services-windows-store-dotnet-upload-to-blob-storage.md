@@ -2,7 +2,7 @@
 
 1.  Öffnen Sie die Datei Package.appxmanifest in Visual Studio 2012, und aktivieren Sie auf der Registerkarte **Funktionen** die Funktionen **Webcam** und **Mikrofon**.
 
-    ![][]
+    ![][0]
 
     Damit stellen Sie sicher, dass Ihre App eine am Computer angeschlossene Kamera nutzen kann. Bei der erstmaligen Ausführung der App wird der Benutzer dazu aufgefordert, Kamerazugang zu gestatten.
 
@@ -142,7 +142,7 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 
     > [WACOM.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die `imageUri`-Eigenschaft des neuen Elements an die **Image**-Steuerung gebunden ist.
 
-  []: ./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-app-manifest-camera.png
+  [0]: ./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-app-manifest-camera.png
   [1]: ./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-appbar.png
   [2]: ./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-camera.png
   [3]: ./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-appbar2.png

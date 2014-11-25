@@ -1,6 +1,6 @@
 <properties pageTitle="Managing Role-Based Access Control with Azure Cross-Platform Command-Line Interface" metaKeywords="ResourceManager, Azure cross-platform command-line interface, Azure command-line, azure command-line, azure cli, RBAC" description="Managing role-based access control with cross-platform command-line interface" metaCanonical="" services="" documentationCenter="" title="Managing Role-Based Access Control with Cross-Platform Command-Line Interface" authors="guayan" solutions="" manager="terrylan" editor="mollybos" />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="guayan"></tags>
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="guayan" />
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Befehlszeilenschnittstelle
 
@@ -127,8 +127,6 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 -   [Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell][Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell]
 -   [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung][Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung]
 
-  [Windows PowerShell]: /de-de/documentation/articles/powershell-rbac.md "Windows PowerShell"
-  [Plattformübergreifende Befehlszeilenschnittstelle]: /de-de/documentation/articles/xplat-cli-rbac.md "Plattformübergreifende Befehlszeilenschnittstelle"
   [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/
   [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager]: http://azure.microsoft.com/de-de/documentation/articles/xplat-cli-azure-resource-manager/
   [Verbindungsherstellung mit Ihren Abonnements]: #connect

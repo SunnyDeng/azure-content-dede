@@ -129,7 +129,7 @@ Dies ist ein beispielhafter geplanter Job für das Löschen von Datensätzen, di
 
 Weitere Informationen zu geplanten Jobs mit Mobile Services mit JavaScript-Backend finden Sie unter [Planen von periodischen Aufträgen in Mobile Services][Planen von periodischen Aufträgen in Mobile Services].
 
-<!-- Anchors. --> <!-- Images --> <!-- URLs. -->
+ <!-- Images --> 
 
   [SQL-Bit-Typ]: http://msdn.microsoft.com/de-de/library/ms177603.aspx
   [REST-Abfragevorgang]: http://msdn.microsoft.com/de-de/library/azure/jj677199.aspx

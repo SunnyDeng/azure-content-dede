@@ -1,6 +1,6 @@
 <properties pageTitle="Work with a .NET backend mobile service" metaKeywords="Web API, mobile service, Azure, controllers" description="Provides examples on how to define, register, and use server-side components in Azure Mobile Services." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Work with server scripts in Mobile Services" authors="glenga" solutions="mobile" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 
 # Arbeiten mit einem mobilen .NET-Back-End-Dienst
@@ -49,7 +49,7 @@ Die Signatur der main-Funktion im Serverskript hängt davon ab, in welchem Konte
 
 Beschreibungen zu einzelnen Serverskript-Objekten und -Funktionen finden Sie unter [Skriptreferenz für Mobile Services-Server].
 
-<!-- Anchors. -->
+
 
 [Einführung]: #intro
 [Tabellenvorgänge]: #table-scripts

@@ -1,6 +1,6 @@
 # Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website
 
-Wenn Sie eine Website erstellen, bietet Azure eine benutzerfreundliche Unterdomäne auf der azurewebsites.net-Domäne an, sodass Ihre Benutzer über eine URL wie [http://\<mysite\>.azurewebsites.net][http://\<mysite\>.azurewebsites.net] auf Ihre Website zugreifen können. Wenn Sie Ihre Website jedoch für den Modus "Freigegeben" oder "Standard" konfigurieren, können Sie sie Ihrem eigenen Domänennamen zuordnen.
+Wenn Sie eine Website erstellen, bietet Azure eine benutzerfreundliche Unterdomäne auf der azurewebsites.net-Domäne an, sodass Ihre Benutzer über eine URL wie http://\<mysite\>.azurewebsites.net auf Ihre Website zugreifen können. Wenn Sie Ihre Website jedoch für den Modus "Freigegeben" oder "Standard" konfigurieren, können Sie sie Ihrem eigenen Domänennamen zuordnen.
 
 Optional können Sie mit Azure Traffic Manager einen Lastenausgleich für den auf Ihrer Website eingehenden Datenverkehr durchführen. Weitere Informationen zur Verwendung von Traffic Manager mit Websites finden Sie unter [Steuern des Azure-Websites-Verkehrs mit Azure Traffic Manager][Steuern des Azure-Websites-Verkehrs mit Azure Traffic Manager].
 
@@ -44,7 +44,7 @@ Ein benutzerdefinierter Domänenname für eine Website kann nur in den Azure-Web
 1.  Öffnen Sie das [Verwaltungsportal][Verwaltungsportal] in Ihrem Browser.
 2.  Klicken Sie auf der Registerkarte **Websites** auf den Namen Ihrer Website.
 
-    ![][]
+    ![][0]
 
 3.  Klicken Sie auf die Registerkarte **SKALIEREN**.
 
@@ -87,9 +87,17 @@ Gehen Sie folgendermaßen vor, um Ihre Website mit Traffic Manager zu verwenden.
 
 Der folgende CNAME-Datensatz leitet zum Beispiel den gesamten Datenverkehr von **www.contoso.com** an **contoso.trafficmgr.com** weiter, dem Domänennamen einer Website:
 
-|--------------------------------|------------------------|
-| **Alias/Hostname/Unterdomäne** | **Kanonische Domäne**  |
-| www                            | contoso.trafficmgr.com |
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+<tr>
+<td><strong>Alias/Hostname/Unterdomäne</strong></td>
+<td><strong>Kanonische Domäne</strong></td>
+</tr>
+<tr>
+<td>www</td>
+<td>contoso.trafficmgr.com</td>
+</tr>
+</table>
+
 
 Einem Besucher von **www.contoso.com** wird niemals der
 wirkliche Host (contoso.azurewebsite.net) angezeigt. Die Weiterleitung ist also für den Endbenutzer nicht sichtbar.
@@ -121,15 +129,22 @@ Sie müssen einen neuen Eintrag zu der DNS-Tabelle Ihrer benutzerdefinierten Dom
 
 3.  Navigieren Sie nun zu dem Bereich, in dem Sie CNAME-Datensätze auswählen oder eingeben können. Möglicherweise müssen Sie den Datensatztyp in einem Dropdownmenü auswählen oder die Seite für erweiterte Einstellungen aufrufen. Suchen Sie nach den Wörtern **CNAME**, **Alias** oder **Unterdomänen**.
 
-4.  Sie müssen auch den Domänen- oder Unterdomänenalias für den CNAME angeben. Beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Alias für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "[\*\*@\*\*][\*\*@\*\*]"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
+4.  Sie müssen auch den Domänen- oder Unterdomänenalias für den CNAME angeben. Beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Alias für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "**@**"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
 
 5.  Sie müssen auch einen Hostnamen angeben, der der kanonische Domänenname dieses CNAME-Alias ist. Dies ist der **.azurewebsite.net**-Name für Ihre Website.
 
 Der folgende CNAME-Datensatz leitet zum Beispiel den gesamten Datenverkehr von **www.contoso.com** an **contoso.azurewebsite.net** weiter, dem Domänennamen einer Website:
 
-|--------------------------------|--------------------------|
-| **Alias/Hostname/Unterdomäne** | **Kanonische Domäne**    |
-| www                            | contoso.azurewebsite.net |
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+<tr>
+<td><strong>Alias/Hostname/Unterdomän</strong></td>
+<td><strong>Kanonische Domäne</strong></td>
+</tr>
+<tr>
+<td>www</td>
+<td>contoso.azurewebsite.net</td>
+</tr>
+</table>
 
 Einem Besucher von **www.contoso.com** wird niemals der
 wirkliche Host (contoso.azurewebsite.net) angezeigt. Die Weiterleitung
@@ -200,15 +215,22 @@ Sie müssen zunächst die IP-Adresse Ihrer Website ermitteln, um einen A-Datensa
 
     1.  Wählen Sie die Domäne oder Unterdomäne aus, die den A-Datensatz verwenden wird, oder geben Sie diese ein. Wählen Sie beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Platzhaltereintrag für alle Unterdomänen erstellen möchten, geben Sie "\_\_\*\_\_" ein. Dieser Eintrag deckt alle Unterdomänen ab wie **mail.customdomain.com**, **login.customdomain.com** und **www.customdomain.com**.
 
-        Wenn Sie einen A-Datensatz für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "[\*\*@\*\*][\*\*@\*\*]"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
+        Wenn Sie einen A-Datensatz für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "**@**"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
 
     2.  Geben Sie die IP-Adresse Ihres Clouddiensts in das angegebene Feld ein. So wird der im A-Datensatz verwendete Domäneneintrag der IP-Adresse Ihrer Clouddienstbereitstellung zugewiesen.
 
         Der folgende A-Datensatz leitet zum Beispiel den gesamten Verkehr von **www.contoso.com** an **137.135.70.239** weiter. Das ist die IP-Adresse unserer bereitgestellten Anwendung:
 
-        |--------------------------|----------------|
-        | **Hostname/Unterdomäne** | **IP-Adresse** |
-        | @                        | 137.135.70.239 |
+		<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+		<tr>
+		<td><strong>*Hostname/Unterdomäne</strong></td>
+		<td><strong>IP-Adresse</strong></td>
+		</tr>
+		<tr>
+		<td>@</td>
+		<td>137.135.70.239</td>
+		</tr>
+		</table>
 
         Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. Wenn Sie einen Platzhaltereintrag erstellen möchten, der alle Unterdomänen abdeckt, würden Sie "\_\_\*\_\_" als Unterdomäne eingeben.
 
@@ -218,9 +240,16 @@ Sie müssen zunächst die IP-Adresse Ihrer Website ermitteln, um einen A-Datensa
 
     Das folgende Beispiel erstellt einen CNAME-Datensatz, den Azure zur Überprüfung einer A-Datensatzkonfiguration verwenden kann.
 
-    |--------------------------------|------------------------------------|
-    | **Alias/Hostname/Unterdomäne** | **Kanonische Domäne**              |
-    | awverify                       | awverify.contoso.azurewebsites.net |
+	<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+	<tr>
+	<td><strong>Alias/Hostname/Unterdomän</strong></td>
+	<td><strong>Kanonische Domäne</strong></td>
+	</tr>
+	<tr>
+	<td>awverify</td>
+	<td>awverify.contoso.azurewebsites.net</td>
+	</tr>
+	</table>
 
 > [WACOM.NOTE] Es kann einige Zeit dauern, bis der awverify-CNAME über das DNS-System verteilt wurde. Sie können den durch den A-Datensatz für die Website festgelegten benutzerdefinierten Domänennamen erst einstellen, wenn die Verteilung des awverify-CNAME abgeschlossen ist. Mithilfe eines Services wie <http://www.digwebinterface.com/> (in englischer Sprache) können Sie überprüfen, ob der CNAME verfügbar ist.
 
@@ -268,9 +297,10 @@ Nach Abschluss der Konfiguration wird der benutzerdefinierte Domänenname im Abs
 
 -   [Configure an SSL certificate for Web Sites (Konfigurieren eines SSL-Zertifikats für Web Sites, in englischer Sprache)][Configure an SSL certificate for Web Sites (Konfigurieren eines SSL-Zertifikats für Web Sites, in englischer Sprache)]
 
-<!-- Bookmarks --> <!-- Links --> <!-- images --> <!-- images -->
+<!-- Bookmarks -->
+<!-- Links -->
+<!-- images -->
 
-  [http://\<mysite\>.azurewebsites.net]: http://<mysite
   [Steuern des Azure-Websites-Verkehrs mit Azure Traffic Manager]: /de-de/documentation/articles/web-sites-traffic-manager/
   [Configuring a Custom Domain Name in Azure]: /de-de/develop/net/common-tasks/custom-dns/
   [Preisdetails zu Websites]: /de-de/pricing/details/web-sites/
@@ -283,14 +313,13 @@ Nach Abschluss der Konfiguration wird der benutzerdefinierte Domänenname im Abs
   [IETF Domain Names - Implementation and Specification]: http://tools.ietf.org/html/rfc1035
   [Preisübersicht]: /de-de/pricing/details/
   [Verwaltungsportal]: http://manage.windowsazure.com
-  []: ./media/custom-dns-web-site/dncmntask-cname-1.png
+  [0]: ./media/custom-dns-web-site/dncmntask-cname-1.png
   [1]: ./media/custom-dns-web-site/dncmntask-cname-2.png
   [2]: ./media/custom-dns-web-site/dncmntask-cname-3.png
   [Erstellen eines Traffic Manager-Profils mithilfe von "Schnellerfassung"]: http://msdn.microsoft.com/de-de/library/windowsazure/dn339012.aspx
   [Hinzufügen und Löschen von Endpunkten]: http://msdn.microsoft.com/de-de/library/windowsazure/hh744839.aspx
   [Azure PowerShell]: /de-de/manage/install-and-configure-windows-powershell/
   [Azure plattformübergreifende Befehlszeilenschnittstelle]: /de-de/manage/install-and-configure-cli/
-  [\*\*@\*\*]: mailto:'**@**
   [3]: ./media/custom-dns-web-site/dncmntask-cname-6.png
   [4]: ./media/custom-dns-web-site/dncmntask-cname-7.png
   [How to manage web sites (Verwalten von Websites, in englischer Sprache)]: /de-de/manage/services/web-sites/how-to-manage-websites/

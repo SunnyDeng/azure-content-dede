@@ -235,9 +235,9 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 
     Hier erfahren Sie, wie Sie Pushbenachrichtigungen an bestimmte authentifizierte Benutzer versenden. Dies ist eine gute Möglichkeit, um Benachrichtigungen nur an bestimmte Benutzer zu versenden.
 
-<!-- Anchors. -->
-<!-- Images. -->
-<!-- URLs. -->
+
+
+
 
   [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
   [Hinzufügen der Kategorieauswahl zur App]: #adding-categories
@@ -247,7 +247,6 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
   [Erste Schritte mit Notification Hubs]: /de-de/manage/services/notification-hubs/get-started-notification-hubs-ios/
   [0]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios2.png
   [1]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios3.png
-  [notification-hubs-back-end]: ../includes/notification-hubs-back-end.md
   [2]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios1.png
   [Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/
   [Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users/

@@ -258,7 +258,6 @@ vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
   [Gewusst wie: Senden von Nachrichten an eine Warteschlange]: #send-messages
   [Gewusst wie: Empfangen von Nachrichten aus einer Warteschlange]: #receive-messages
   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #handle-crashes
-  [howto-service-bus-queues]: ../includes/howto-service-bus-queues.md
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
   [Node.js-Clouddienst]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Website mit WebMatrix]: /de-de/develop/nodejs/tutorials/web-site-with-webmatrix/

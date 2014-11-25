@@ -87,6 +87,6 @@
 
 4.  Tippen Sie auf die Schaltfläche **Alle**. Ein Warnfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, wodurch alle Elemente aus der Liste gelöscht werden.
 
-    ![][]
+    ![][0]
 
-  []: ./media/mobile-services-ios-call-custom-api/mobile-custom-api-ios-completed.png
+  [0]: ./media/mobile-services-ios-call-custom-api/mobile-custom-api-ios-completed.png

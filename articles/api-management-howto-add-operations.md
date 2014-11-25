@@ -1,6 +1,6 @@
 <properties pageTitle="How to add operations to an API in Azure API Management" metaKeywords="" description="Learn how to add operations to an API in Azure API Management." metaCanonical="" services="" documentationCenter="API Management" title="How to add operations to an API in Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie"></tags>
+<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
 
 # Hinzufügen von Operationen zu einer API in der Azure API-Verwaltung
 

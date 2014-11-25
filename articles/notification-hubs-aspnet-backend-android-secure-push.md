@@ -118,4 +118,3 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 
 4.  Klicken Sie in der Android-App-UI auf **Log in**. Klicken Sie anschließend auf **Send push**.
 
-  [notification-hubs-aspnet-backend-securepush]: ../includes/notification-hubs-aspnet-backend-securepush.md

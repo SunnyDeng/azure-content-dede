@@ -1,4 +1,4 @@
-Der Apple Push Notification Service (APNS) verwendet Zertifikate zur Authentifizierung Ihres mobilen Dienstes. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service][].
+Der Apple Push Notification Service (APNS) verwendet Zertifikate zur Authentifizierung Ihres mobilen Dienstes. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service][Apple Push Notification Service].
 
 ## Erstellen der Zertifikatsignieranforderungsdatei
 
@@ -8,7 +8,7 @@ Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstell
 
 2.  Klicken Sie auf **Schlüsselbundverwaltung**, erweitern Sie **Zertifikatsassistent**, und klicken Sie dann auf **Zertifikat einer Zertifizierungsinstanz anfordern …**.
 
-    ![][]
+    ![][0]
 
 3.  Machen Sie entsprechende Angaben für die Felder **E-Mail des Benutzers** sowie **Allgemeiner Name**, vergewissern Sie sich, dass **Auf der Festplatte sichern** gewählt ist, und klicken Sie dann auf **Fortfahren**. Lassen Sie das Feld **E-Mail der Zert.-Instanz** leer, da hier keine Eingabe benötigt wird.
 
@@ -26,7 +26,7 @@ Anschließend werden Sie Ihre App bei Apple registrieren, Pushbenachrichtigungen
 
 Um von Mobile Services Pushbenachrichtigungen an eine iOS-App senden zu können, muss diese selbst bei Apple registriert und auch für Pushbenachrichtigungen angemeldet werden.
 
-1.  Falls Sie Ihre App noch nicht registriert haben, gehen Sie im Apple Developer Center zum [iOS Provisioning Portal][], melden Sie sich mit Ihrer Apple-ID an, klicken Sie auf **Identifiers**, dann auf **App IDs** und schließlich auf das Zeichen **+**, um eine neue App zu registrieren.
+1.  Falls Sie Ihre App noch nicht registriert haben, gehen Sie im Apple Developer Center zum [iOS Provisioning Portal][iOS Provisioning Portal], melden Sie sich mit Ihrer Apple-ID an, klicken Sie auf **Identifiers**, dann auf **App IDs** und schließlich auf das Zeichen **+**, um eine neue App zu registrieren.
 
     ![][3]
 
@@ -86,7 +86,7 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei erstellen und zu Mobil
 
 ## Erstellen eines Bereitstellungsprofils für die App
 
-1.  Zurück im [iOS Provisioning Portal][] wählen Sie **Provisioning Profiles**, dann **All**, und klicken Sie schließlich auf die Schaltfläche **+**, um ein neues Profil zu erstellen. Hierdurch wird der Assistent **Add iOS Provisiong Profile** gestartet
+1.  Zurück im [iOS Provisioning Portal][iOS Provisioning Portal] wählen Sie **Provisioning Profiles**, dann **All**, und klicken Sie schließlich auf die Schaltfläche **+**, um ein neues Profil zu erstellen. Hierdurch wird der Assistent **Add iOS Provisiong Profile** gestartet
 
     ![][14]
 
@@ -123,7 +123,7 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei erstellen und zu Mobil
 Hierdurch wird sichergestellt, dass das Xcode-Projekt das neue Profil für Codesignierung verwendet. Als Nächstes laden Sie das Zertifikat in Azure hoch.
 
   [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-  []: ./media/enable-apple-push-notifications/mobile-services-ios-push-step5.png
+  [0]: ./media/enable-apple-push-notifications/mobile-services-ios-push-step5.png
   [1]: ./media/enable-apple-push-notifications/mobile-services-ios-push-step6.png
   [2]: ./media/enable-apple-push-notifications/mobile-services-ios-push-step7.png
   [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456

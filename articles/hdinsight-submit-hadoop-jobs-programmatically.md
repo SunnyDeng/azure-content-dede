@@ -1,4 +1,4 @@
-<properties urlDisplayName="HDInsight Administration" pageTitle="&Uuml;bermitteln von Hadoop-Auftr&auml;gen in HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, hive, mapreduce, HDInsight .NET SDK, powershell, submit mapreduce jobs, submit hive jobs, development, hadoop, apache" description="Erfahren Sie, wie Sie Hadoop-Auftr&auml;ge an Azure HDInsight Hadoop &uuml;bermitteln k&ouml;nnen." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="&Uuml;bermitteln von Hadoop-Auftr&auml;gen in HDInsight" authors="jgao" />
+<properties linkid="manage-services-hdinsight-submit-hadoop-jobs" urlDisplayName="HDInsight Administration" pageTitle="Submit Hadoop jobs in HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, hive, mapreduce, HDInsight .NET SDK, powershell, submit mapreduce jobs, submit hive jobs, development, hadoop, apache" description="Learn how to submit Hadoop jobs to Azure HDInsight Hadoop." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Submit  Hadoop jobs in HDInsight" authors="jgao" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
@@ -43,7 +43,7 @@ Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die r
 3.  Führen Sie die folgenden Befehle aus, um eine MapReduce-Jobdefinition zu erstellen:
 
         # Define the word count MapReduce job
-        $wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" -ClassName "wordcount" -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput"
+        $wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-examples.jar" -ClassName "wordcount" -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput"
 
     Es gibt zwei Argumente. Das erste ist der Name der Quelldatei, das zweite ist der Pfad der Ausgabedatei. Weitere Informationen über das Präfix wasb finden Sie unter [Verwenden von Azure-Blob-Speicher mit HDInsight][Verwenden von Azure-Blob-Speicher mit HDInsight].
 
@@ -162,11 +162,17 @@ Die folgenden Verfahren werden benötigt, um einen HDInsight-Cluster mit dem SDK
 
 3.  Unter Neues Projekt können Sie die folgenden Werte eingeben bzw. auswählen:
 
-    | Eigenschaft | Wert                        |
-    |-------------|-----------------------------|
-    | Kategorie   | Vorlagen/Visual C#/Windows |
-    | Vorlage     | Konsolenanwendung           |
-    | Name        | SubmitMapReduceJob          |
+    <table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
+	<tr><th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;"> Eigenschaft </th>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;"> Wert    </th></tr>
+    <tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Kategorie  </td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;"> Vorlagen/Visual C#/Windows </td></tr>
+    <tr><td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> Vorlage </td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> Konsolenanwendung</td></tr>
+    <tr><td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> Name    </td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> SubmitMapReduceJob          </td></tr>
+	</table>
 
 4.  Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
@@ -400,11 +406,19 @@ Die folgenden Verfahren werden benötigt, um einen HDInsight-Cluster mit dem SDK
 
 3.  Unter Neues Projekt können Sie die folgenden Werte eingeben bzw. auswählen:
 
-    | Eigenschaft | Wert                        |
-    |-------------|-----------------------------|
-    | Kategorie   | Vorlagen/Visual C#/Windows |
-    | Vorlage     | Konsolenanwendung           |
-    | Name        | SubmitHiveJob               |
+    <table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
+	<tr>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;"> Eigenschaft</th>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;"> Wert </th></tr>
+    <tr>
+    <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> Kategorie  </td> <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Vorlagen/Visual C#/Windows </td></tr>
+    <tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> Vorlage    </td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> Konsolenanwendung           </td></tr>
+    <tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> Name  </td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;"> SubmitHiveJob </td></tr>
+	</table>
 
 4.  Klicken Sie auf **OK**, um das Projekt zu erstellen.
 

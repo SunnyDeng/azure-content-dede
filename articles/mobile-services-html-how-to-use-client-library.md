@@ -582,7 +582,7 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 -   [Autorisieren von Benutzern mit Skripts][Autorisieren von Benutzern mit Skripts]
     Verwenden Sie die vom mobilen Dienst für einen authentifizierten Benutzer gelieferte Benutzer-ID zum Filtern von zurückgegebenen Daten.
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
   [Windows Store JavaScript-Schnellstart]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started
   [HTML-Schnellstart]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-html
@@ -605,7 +605,6 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
   [Gewusst wie: Einsatz von Zusagen]: #promises
   [Gewusst wie: Anpassen der Anforderungsheader]: #customizing
   [Nächste Schritte]: #nextsteps
-  [mobile-services-concepts]: ../includes/mobile-services-concepts.md
   [Erste Schritte mit Daten in Windows Store JavaScript]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-js
   [Erste Schritte mit Daten in HTML/JavaScript]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-html/
   [Referenz zu OData-Systemabfrageoptionen]: http://go.microsoft.com/fwlink/p/?LinkId=444502

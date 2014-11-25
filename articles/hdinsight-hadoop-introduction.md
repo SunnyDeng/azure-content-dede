@@ -20,10 +20,10 @@ Um neue Erkenntnisse und Einblicke aus großen Datenmengen zu gewinnen, müssen 
 
 Dieser Artikel enthält eine Übersicht über Hadoop in HDInsight, inklusive:
 
--   **[Übersicht über das Hadoop-Ökosystem in HDInsight:][Übersicht über das Hadoop-Ökosystem in HDInsight:]**HDInsight ist die Hadoop-Lösung in Azure und enthält Implementierungen von Storm, HBase, Pig, Hive, Sqoop, Oozie, Ambari usw. HDInsight kann außerdem mit Business Intelligence (BI)-Tools wie z. B. Excel, SQL Server Analysis Services und SQL Server Reporting Services integriert werden.
--   **[Vorzüge von Hadoop in der Cloud:][Vorzüge von Hadoop in der Cloud:]**Die folgenden Gründe sprechen für die Cloud-Implementierung von Hadoop in HDInsight.
--   **[HDInsight-Lösungen für die Analyse großer Datenmengen:][HDInsight-Lösungen für die Analyse großer Datenmengen:]**Nutzen Sie die Vorzüge von HDInsight, um Fragen für Ihr Unternehmen zu beantworten, von der Analyse von Twitter-Feedback bis hin zur Effizienzanalyse des Klimaanlagensystems.
--   **[Weitere Lernressourcen für Hadoop, HDInsight und die Analyse großer Datenmengen:][Weitere Lernressourcen für Hadoop, HDInsight und die Analyse großer Datenmengen:]**Links zu weiteren Informationen.
+-   **[Übersicht über das Hadoop-Ökosystem in HDInsight:][Übersicht über das Hadoop-Ökosystem in HDInsight:]** HDInsight ist eine Hadoop-Lösung in Azure und stellt Implementierungen von Storm, HBase, Pig, Hive, Sqoop, Oozie, Ambari usw. bereit. HDInsight kann außerdem mit Business Intelligence (BI)-Tools wie z. B. Excel, SQL Server Analysis Services und SQL Server Reporting Services integriert werden.
+-   **[Vorzüge von Hadoop in der Cloud:][Vorzüge von Hadoop in der Cloud:]** Es gibt gute Gründe, aus denen Sie die HDInsight Cloud-Implementierung von Hadoop in Erwägung ziehen sollten.
+-   **[HDInsight-Lösungen für die Analyse großer Datenmengen:][HDInsight-Lösungen für die Analyse großer Datenmengen:]** Ihnen stehen einige brauchbare Möglichkeiten zur Verfügung, mit deren Hilfe Sie HDInsight zur Beantwortung von Fragen für Ihr Unternehmen einsetzen können – von der Analyse von Twitter-Stimmungsdaten bis zur Bewertung der HVAC-Systemleistungsfähigkeit.
+-   **[Weitere Lernressourcen für Hadoop, HDInsight und die Analyse großer Datenmengen:][Weitere Lernressourcen für Hadoop, HDInsight und die Analyse großer Datenmengen:]** Links für zusätzliche Informationen.
 
 ## <a name="overview"></a>Übersicht über das Hadoop-Ökosystem in HDInsight
 

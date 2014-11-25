@@ -6,7 +6,7 @@ In diesem Abschnitt verwenden Sie Visual Studio, um den mobilen Dienst lokal auf
 
 3.  Geben Sie einen neuen Text für "todoitem" ein. Klicken Sie anschließend auf **Save**. Daraufhin wird ein neues todoItem in die Datenbank eingefügt, die vom mobilen Dienst, der lokal in IIS Express gehostet wird, erstellt wurde.
 
-    ![][]
+    ![][0]
 
 4.  Klicken Sie auf das Kontrollkästchen für eines der Elemente, um es als abgeschlossen zu markieren.
 
@@ -16,6 +16,6 @@ In diesem Abschnitt verwenden Sie Visual Studio, um den mobilen Dienst lokal auf
 
     ![][2]
 
-  []: ./media/mobile-services-dotnet-backend-test-local-service-data/new-local-todoitem.png
+  [0]: ./media/mobile-services-dotnet-backend-test-local-service-data/new-local-todoitem.png
   [1]: ./media/mobile-services-dotnet-backend-test-local-service-data/local-item-checked.png
   [2]: ./media/mobile-services-dotnet-backend-test-local-service-data/vs-show-local-table-data.png

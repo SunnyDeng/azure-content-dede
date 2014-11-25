@@ -1,6 +1,6 @@
-<properties urlDisplayName="App Using Socket.IO" pageTitle="Node.js-Anwendung mit Socket.io &ndash; Azure-Lernprogramm" metaKeywords="Azure Node.js socket.io tutorial, Azure Node.js socket.io, Azure Node.js tutorial" description="Ein Lernprogramm, das die Verwendung von socket.io in einer node.js-Anwendung zeigt, die auf Azure gehostet wird." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties linkid="dev-nodejs-worker-app-with-socketio" urlDisplayName="App Using Socket.IO" pageTitle="Node.js application using Socket.io - Azure tutorial" metaKeywords="Azure Node.js socket.io tutorial, Azure Node.js socket.io, Azure Node.js tutorial" description="A tutorial that demonstrates using socket.io in a node.js application hosted on Azure." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="wpickett" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
 # Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst
 
@@ -36,7 +36,7 @@ Mit den folgenden Schritten wird das Cloud-Dienst-Projekt erstellt, in dem die S
 
 Für dieses Projekt wird das Chat-Beispiel aus dem
 [Socket.IO GitHub-Repository][Socket.IO GitHub-Repository] verwendet. Führen Sie die folgenden Schritte aus, um das Beispiel
-herunterzuladen und dem zuvor erstellten Projekt hinzuzufügen.
+herunterzuladen und es dem zuvor erstellten Projekt hinzuzufügen.
 
 1.  Erstellen Sie eine lokale Kopie des Repositorys mit der Schaltfläche **Klonen**. Sie können auch die Schaltfläche **ZIP** verwenden, um das Projekt herunterzuladen.
 
@@ -123,31 +123,24 @@ installieren. Testen Sie die Anwendung anschließend im Azure-Emulator:
         PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
 
     <div class="dev-callout">
-
-    **Hinweis**
-    Verwenden Sie einen eindeutigen Namen, da der Veröffentlichungsprozess ansonsten fehlschlägt. Sobald die Bereitstellung erfolgt ist, wird der Browser geöffnet und navigiert zum bereitgestellten Dienst.
-
-    Wenn Sie eine Fehlermeldung erhalten, die besagt, dass der angegebene Abonnementname im importierten Veröffentlichungsprofil nicht vorhanden ist, müssen Sie das Veröffentlichungsprofil für Ihr Abonnement vor der Bereitstellung in Azure herunterladen und installieren. Weitere Informationen hierzu finden Sie im Abschnitt **Deploying the Application to Azure** (Bereitstellen der Anwendung in Azure) auf der Seite [Build and deploy a Node.js application to an Azure Cloud Service][Build and deploy a Node.js application to an Azure Cloud Service] (Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst, in englischer Sprache).
-
-    </div>
+<strong>Hinweis</strong>
+<p>Verwenden Sie einen eindeutigen Namen, da der Ver&ouml;ffentlichungsprozess ansonsten fehlschl&auml;gt. Sobald die Bereitstellung erfolgt ist, wird der Browser ge&ouml;ffnet und navigiert zum bereitgestellten Dienst.</p>
+<p>Wenn Sie eine Fehlermeldung erhalten, die besagt, dass der angegebene Abonnementname im importierten Ver&ouml;ffentlichungsprofil nicht vorhanden ist, m&uuml;ssen Sie das Ver&ouml;ffentlichungsprofil f&uuml;r Ihr Abonnement vor der Bereitstellung in Azure herunterladen und installieren. Weitere Informationen hierzu finden Sie im Abschnitt <b>Deploying the Application to Azure</b> (Bereitstellen der Anwendung in Azure) auf der Seite <a href="https://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/">Build and deploy a Node.js application to an Azure Cloud Service</a> (Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst, in englischer Sprache).</p>
+</div>
 
     ![Browserfenster, in dem der in Azure gehostete Dienst angezeigt wird][Browserfenster, in dem der in Azure gehostete Dienst angezeigt wird]
 
     <div class="dev-callout">
-
-    **Hinweis**
-    Wenn Sie eine Fehlermeldung erhalten, die besagt, dass der angegebene Abonnementname im importierten Veröffentlichungsprofil nicht vorhanden ist, müssen Sie das Veröffentlichungsprofil für Ihr Abonnement vor der Bereitstellung in Azure herunterladen und installieren. Weitere Informationen hierzu finden Sie im Abschnitt **Deploying the Application to Azure** (Bereitstellen der Anwendung in Azure) auf der Seite [Build and deploy a Node.js application to an Azure Cloud Service][Build and deploy a Node.js application to an Azure Cloud Service] (Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst, in englischer Sprache).
-
-    </div>
+<strong>Hinweis</strong>
+<p>Wenn Sie eine Fehlermeldung erhalten, die besagt, dass der angegebene Abonnementname im importierten Ver&ouml;ffentlichungsprofil nicht vorhanden ist, m&uuml;ssen Sie das Ver&ouml;ffentlichungsprofil f&uuml;r Ihr Abonnement vor der Bereitstellung in Azure herunterladen und installieren. Weitere Informationen hierzu finden Sie im Abschnitt <b>Deploying the Application to Azure</b> (Bereitstellen der Anwendung in Azure) auf der Seite <a href="https://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/">Build and deploy a Node.js application to an Azure Cloud Service</a> (Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst, in englischer Sprache).</p>
+</div>
 
 Ihre Anwendung wird jetzt in Azure ausgeführt und kann
-Chatnachrichten zwischen verschiedenen Clients mithilfe von Socket.IO vermitteln.
+Chat-Nachrichten zwischen verschiedenen Clients mithilfe von Socket.IO vermitteln.
 
 <div class="dev-callout">
-
-**Hinweis**
-Zur Vereinfachung beschränkt sich dieses Beispiel auf das Chatten zwischen Benutzern, die mit derselben Instanz verbunden sind. Wenn der Cloud-Dienst also zwei Workerrolleninstanzen erstellt, können die Benutzer nur mit Benutzern chatten, die mit derselben Workerrolleninstanz verbunden sind. Wenn Sie die Anwendung für mehrere Rolleninstanzen skalieren möchten, können Sie eine Technologie wie Service Bus verwenden, um den Socket.IO-Speicherzustand für mehrere Instanzen freizugeben. Beispiele hierzu finden Sie in den Syntaxbeispielen für Service Bus Queues und Service Bus Topics im [Azure SDK für Node.js GitHub-Repository][Azure SDK für Node.js GitHub-Repository].
-
+<strong>Hinweis</strong>
+<p>Zur Vereinfachung beschr&auml;nkt sich dieses Beispiel auf das Chatten zwischen Benutzern, die mit derselben Instanz verbunden sind. Wenn der Cloud-Dienst also zwei Workerrolleninstanzen erstellt, k&ouml;nnen die Benutzer nur mit Benutzern chatten, die mit derselben Workerrolleninstanz verbunden sind. Wenn Sie die Anwendung f&uuml;r mehrere Rolleninstanzen skalieren m&ouml;chten, k&ouml;nnen Sie eine Technologie wie Service Bus verwenden, um den Socket.IO-Speicherzustand f&uuml;r mehrere Instanzen freizugeben. Beispiele hierzu finden Sie in den Syntaxbeispielen f&uuml;r Service Bus Queues und Service Bus Topics im <a href="https://github.com/WindowsAzure/azure-sdk-for-node">Azure SDK f&uuml;r Node.js GitHub-Repository</a>.</p>
 </div>
 
 ## Nächste Schritte
@@ -161,6 +154,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung 
   [In einem Browserfenster wird https://github.com/LearnBoost/socket.io/tree/master/examples/chat angezeigt, wobei das ZIP-Downloadsymbol hervorgehoben ist.]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-22.png
   [Ausgabe des Befehls npm install]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-7.png
   [Zwei Browserfenster, in denen Chat-Nachrichten von Benutzer1 und Benutzer2 angezeigt werden]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-8.png
-  [Build and deploy a Node.js application to an Azure Cloud Service]: https://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/
-  [Azure SDK für Node.js GitHub-Repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einer Azure-Website]: /de-de/develop/nodejs/tutorials/website-using-socketio/

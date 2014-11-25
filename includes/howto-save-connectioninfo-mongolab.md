@@ -2,20 +2,20 @@ Es ist zwar möglich, einen MongoLab-URI in Ihren Code einzufügen, aber wir emp
 
 1.  Wählen Sie im Azure-Portal die Option **Websites**.
 2.  Klicken Sie in der Liste der Websites auf den Namen der Website.
-    ![WebSiteEntry][]
+    ![WebSiteEntry][WebSiteEntry]
     Das Website-Dashboard wird angezeigt.
 
 3.  Klicken Sie in der Menüleiste auf **Konfigurieren.**
-    ![WebSiteDashboardConfig][]
+    ![WebSiteDashboardConfig][WebSiteDashboardConfig]
 
 4.  Scrollen Sie nach unten zum Abschnitt "Verbindungszeichenfolgen".
-    ![WebSiteConnectionStrings][]
+    ![WebSiteConnectionStrings][WebSiteConnectionStrings]
 
 5.  Geben Sie unter **Name** MONGOLAB\_URI ein.
 6.  Fügen Sie unter **Wert** die Verbindungszeichenfolge ein, die wir im vorhergehenden Abschnitt erzeugt haben.
 7.  Wählen Sie in der Dropdown-Liste **Typ** die Option **Benutzerdefiniert** (statt der Standardeinstellung **SQLAzure**).
 8.  Klicken Sie in der Symbolleiste auf **Speichern**.  
-    ![SaveWebSite][]
+    ![SaveWebSite][SaveWebSite]
 
 **Hinweis:** Azure fügt zu dieser Variable das Präfix **CUSTOMCONNSTR\_** hinzu. Aus diesem Grund verweist der Code oben auf **CUSTOMCONNSTR\_MONGOLAB\_URI.**
 

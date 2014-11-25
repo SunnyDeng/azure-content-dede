@@ -1,14 +1,14 @@
 <properties linkid="dev-net-tutorials-web-app-with-sql-azure" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="riande"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="riande" />
 
 # Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website
 
 ***Aktualisiert am 15. Oktober 2013.***
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/develop/net/tutorials/web-site-with-sql-database/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/en-us/develop/net/tutorials/web-site-with-sql-database-vs2012/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/develop/net/tutorials/web-site-with-sql-database/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/de-de/develop/net/tutorials/web-site-with-sql-database-vs2012/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
 
-<div class="dev-callout"><strong>Hinweis</strong><p>Es ist eine <a href="/en-us/develop/net/tutorials/web-site-with-sql-database/">neuere Version dieses Lernprogramms</a> verf&uuml;gbar. Sie k&ouml;nnen diese Version weiterhin nutzen, wenn Sie Visual Studio 2012 verwenden, die neue Version ist jedoch viel benutzerfreundlicher.</p></div>
+<div class="dev-callout"><strong>Hinweis</strong><p>Es ist eine <a href="/de-de/develop/net/tutorials/web-site-with-sql-database/">neuere Version dieses Lernprogramms</a> verf&uuml;gbar. Sie k&ouml;nnen diese Version weiterhin nutzen, wenn Sie Visual Studio 2012 verwenden, die neue Version ist jedoch viel benutzerfreundlicher.</p></div>
 
 In diesem Lernprogramm wird die Erstellung einer sicheren ASP.NET MVC 4-Webanwendung erläutert, mit der Benutzer sich mithilfe der Anmeldeinformationen von Facebook, Yahoo oder Google anmelden können. Darüber hinaus wird die Anwendung für Azure bereitgestellt.
 
@@ -696,13 +696,9 @@ Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie 
 
 <!-- links from Tom's hopefully no collisions -->
 
-  [Visual Studio 2013]: /en-us/develop/net/tutorials/web-site-with-sql-database/ "Visual Studio 2013"
-  [Visual Studio 2012]: /en-us/develop/net/tutorials/web-site-with-sql-database-vs2012/ "Visual Studio 2012"
-  [neuere Version dieses Lernprogramms]: /en-us/develop/net/tutorials/web-site-with-sql-database/
 
 <!-- images-->
   [Anmeldeseite]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxb.png
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Einrichten der Entwicklungsumgebung]: #bkmk_setupdevenv
   [Einrichten der Azure-Umgebung]: #bkmk_setupwindowsazure
   [Erstellen einer ASP.NET MVC 4-Anwendung]: #bkmk_createmvc4app
@@ -731,7 +727,6 @@ Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie 
   [Die Anwendung "Contact Manager" in der Registerkarte "Websites" des Verwaltungsportals]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/dntutmobile-setup-azure-site-006.png
   [Schnellstartregisterkarte und Schaltfläche "Veröffentlichungsprofil herunterladen"]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/dntutmobile-deploy1-download-profile.png
   [Speichern der .publishsettings-Datei]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/dntutmobile-deploy1-save-profile.png
-  [publishsettingsfilewarningchunk]: ../includes/publishsettingsfilewarningchunk.md
   ["Veröffentlichen" im Kontextmenü des Projekts]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/PublishVSSolution.png
   [Veröffentlichungseinstellungen importieren]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/ImportPublishSettings.png
   [Azure-Abo hinzufügen]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rzAddWAsub.png
@@ -749,7 +744,7 @@ Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie 
   [Code First-Migrationen]: http://msdn.microsoft.com/library/hh770484.aspx
   ["Paket-Manager-Konsole" im Menü "Extras"]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/dntutmobile-migrations-package-manager-menu.png
   [enable-migrations]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxE.png
-  [DbContext]: http://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx
+  [DbContext]: http://msdn.microsoft.com/de-de/library/system.data.entity.dbcontext(v=VS.103).aspx
   [Seeding and Debugging Entity Framework (EF) DBs]: http://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx
   [Befehle in der Paket-Manager-Konsole]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/dntutmobile-migrations-package-manager-console.png
   [MVC-Datenansicht]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rx2.png
@@ -765,18 +760,16 @@ Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie 
   [Benutzer-IDs]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxUid.png
   [roleID]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxRoleID.png
   [Benutzerrolle ID Tabelle]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxUR.png
-  [Authorize]: http://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.100).aspx
-  [RequireHttps]: http://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx
+  [Authorize]: http://msdn.microsoft.com/de-de/library/system.web.mvc.authorizeattribute(v=vs.100).aspx
+  [RequireHttps]: http://msdn.microsoft.com/de-de/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx
   [Securing your ASP.NET MVC 4 App and the new AllowAnonymous Attribute]: http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx
   [CAPTCHA]: http://www.asp.net/web-pages/tutorials/security/16-adding-security-and-membership
   [SSL aktivieren]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxSSL.png
   [5]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxS2.png
   [Zertifikatwarnung]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxNOT.png
   [6]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxNOT2.png
-  [dbDacFx]: http://msdn.microsoft.com/en-us/library/dd394698.aspx
-  [Microsoft SQL Server 2012 Express Download Center]: http://www.microsoft.com/en-us/download/details.aspx?id=29062
-  [ENU\\x64\\SQLManagementStudio\_x64\_ENU.exe]: http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe
-  [ENU\\x86\\SQLManagementStudio\_x86\_ENU.exe]: http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe
+  [dbDacFx]: http://msdn.microsoft.com/de-de/library/dd394698.aspx
+  [Microsoft SQL Server 2012 Express Download Center]: http://www.microsoft.com/de-de/download/details.aspx?id=29062
   [SQL-Installation]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxSS.png
   [Verbindung zum Server-Dialog]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxC2S.png
   [Skripts generieren]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxGenScripts.png
@@ -802,24 +795,24 @@ Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie 
   [@blowdart]: https://twitter.com/blowdart
   [Customizing External Login Buttons in ASP.NET MVC 4]: http://www.beabigrockstar.com/customizing-external-login-buttons-in-asp-net-mvc-4/
   [Azure-Authentifizierung]: http://www.asp.net/vnext/overview/fall-2012-update/windows-azure-authentication
-  [So erstellen Sie eine Intranetsite mit ASP.NET MVC]: http://msdn.microsoft.com/en-us/library/gg703322(v=vs.98).aspx
-  [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs]: http://www.windowsazure.com/en-us/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [So erstellen Sie eine Intranetsite mit ASP.NET MVC]: http://msdn.microsoft.com/de-de/library/gg703322(v=vs.98).aspx
+  [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs]: http://www.windowsazure.com/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/
   [Einleitung zu ASP.NET MVC 4]: http://www.asp.net/mvc/tutorials/mvc-4/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
   
 [Erste Schritte in Entity Framework mit MVC]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 
   [OAuth 2.0 and Sign-In (OAuth 2.0 und Anmeldung, in englischer Sprache)]: http://blogs.msdn.com/b/vbertocci/archive/2013/01/02/oauth-2-0-and-sign-in.aspx
-  [Problembehandlung von Azure-Websites in Visual Studio]: /en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
-  [der Clouddienstversion dieses Lernprogramms]: http://www.windowsazure.com/en-us/develop/net/tutorials/cloud-service-with-sql-database/
-  [Entwickeln von Webanwendungen mit Azure]: http://msdn.microsoft.com/en-us/library/Hh674484
+  [Problembehandlung von Azure-Websites in Visual Studio]: /de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
+  [der Clouddienstversion dieses Lernprogramms]: http://www.windowsazure.com/de-de/develop/net/tutorials/cloud-service-with-sql-database/
+  [Entwickeln von Webanwendungen mit Azure]: http://msdn.microsoft.com/de-de/library/Hh674484
   [Arbeiten mit Windows Azure SQL-Datenbank]: http://go.microsoft.com/fwlink/p/?LinkId=282414#ssdb
 
 <!-- links -->
 
 [Erste Schritte in Entity Framework mit MVC]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
   
-[Code First Migrations (Code First-Migrationen, in englischer Sprache)]: http://msdn.microsoft.com/en-us/library/hh770484
+[Code First Migrations (Code First-Migrationen, in englischer Sprache)]: http://msdn.microsoft.com/de-de/library/hh770484
 
 [Data Storage Offerings on Azure]: http://social.technet.microsoft.com/wiki/contents/articles/data-storage-offerings-on-the-windows-azure-platform.aspx
 
-[Common Tasks]: http://www.windowsazure.com/en-us/develop/net/common-tasks/
+[Common Tasks]: http://www.windowsazure.com/de-de/develop/net/common-tasks/

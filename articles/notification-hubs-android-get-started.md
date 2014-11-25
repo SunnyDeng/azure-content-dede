@@ -287,8 +287,8 @@ Gehen Sie wie folgt vor, um die App auf einem Gerät oder dem Emulator auszufüh
 
 In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Geräte versendet. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs][Benachrichtigen von Benutzern mit Notification Hubs]. Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, können Sie [Verwenden von Notification Hubs zum Übermitteln von Nachrichten][Verwenden von Notification Hubs zum Übermitteln von Nachrichten] lesen. Weitere Informationen zur Verwendung von Benachrichtigungshubs finden Sie in der [Benachrichtigungshubs-Anleitung][Benachrichtigungshubs-Anleitung].
 
-<!-- Images. -->
-<!-- URLs. -->
+
+
 
   [Aktivieren von Google Cloud Messaging]: #register
   [Konfigurieren Ihres Notification Hub]: #configure-hub
@@ -297,7 +297,6 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
   [Testen der App]: #run-app
   [hier]: http://go.microsoft.com/fwlink/?LinkId=389797
   [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
-  [Enable GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [0]: ./media/notification-hubs-android-get-started/notification-hub-create-from-portal.png
   [1]: ./media/notification-hubs-android-get-started/notification-hub-create-from-portal2.png
@@ -306,7 +305,6 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
   [4]: ./media/notification-hubs-android-get-started/notification-hub-configure-android.png
   [5]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app.png
   [6]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app2.png
-  [Add Play Services]: ../includes/mobile-services-add-Google-play-services.md
   [7]: ./media/notification-hubs-android-get-started/notification-hub-android-new-class.png
   [REST-Schnittstelle]: http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx
   [.NET-Back-End]: /de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push/

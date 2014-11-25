@@ -10,4 +10,3 @@ Um einen mobilen Dienst lokal mit Clients zu testen, die auf einem Emulator, ein
 
 [WACOM.INCLUDE [mobile-services-how-to-configure-iis-express](../includes/mobile-services-how-to-configure-iis-express.md)]
 
-  [mobile-services-how-to-configure-iis-express]: ../includes/mobile-services-how-to-configure-iis-express.md

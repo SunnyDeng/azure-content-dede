@@ -2,7 +2,7 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 1.  Klicken Sie auf der Registerkarte **Push** des mobilen Dienstes auf den Link **Benachrichtigungs-Hub**.
 
-    ![][]
+    ![][0]
 
     Damit gelangen Sie zum Benachrichtigungs-Hub, der von Ihrem mobilen Dienst verwendet wird.
 
@@ -20,6 +20,6 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 Ihr mobiles Dienstprojekt ist so konfiguriert, dass eine Verbindung mit dem Benachrichtigungs-Hub in Azure hergestellt wird, wenn es lokal ausgeführt wird. Beachten Sie, dass Sie den gleichen Benachrichtigungs-Hubnamen und die gleiche Verbindungszeichenfolge wie im Portal verwenden müssen, weil diese Web.config-Projekteinstellungen bei der Ausführung in Azure überschrieben werden.
 
-  []: ./media/mobile-services-dotnet-backend-configure-local-push/link-to-notification-hub.png
+  [0]: ./media/mobile-services-dotnet-backend-configure-local-push/link-to-notification-hub.png
   [1]: ./media/mobile-services-dotnet-backend-configure-local-push/notification-hub-page.png
   [2]: ./media/mobile-services-dotnet-backend-configure-local-push/notification-hub-connection-string.png

@@ -8,4 +8,3 @@
 
 > [WACOM.NOTE]Wir haben einige Änderungen an den Pushbenachrichtigungen mit Mobile Services vorgenommen. Demnächst folgt ein aktualisiertes Lernprogramm für Xamarin iOS!
 
-  [mobile-services-selector-get-started-push-xamarin]: ../includes/mobile-services-selector-get-started-push-xamarin.md

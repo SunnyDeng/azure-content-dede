@@ -231,7 +231,6 @@ diesen Links weitere Informationen.
   [Gewusst wie: Verwenden zusätzlicher SendGrid-Dienste]: #bkmk_HowToUseAdditionalSvcs
   [cloudbasierter E-Mail-Dienst]: http://sendgrid.com/solutions
   [transaktionale E-Mail-Übermittlung]: http://sendgrid.com/transactional-email
-  [sendgrid-sign-up]: ../includes/sendgrid-sign-up.md
   [Filtereinstellungen]: http://sendgrid.com/docs/API_Reference/Web_API/filter_settings.html
   [SendGrid-API-Dokumentation]: http://sendgrid.com/docs/API_Reference/index.html
   [Senden von E-Mails mit SendGrid aus Java in einer Azure-Bereitstellung]: ../store-sendgrid-java-how-to-send-email-example/

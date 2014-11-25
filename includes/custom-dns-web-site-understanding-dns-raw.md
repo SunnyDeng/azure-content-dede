@@ -24,7 +24,7 @@ Die Hauptvorteile eines A-Eintrags gegenüber einem CNAME-Eintrag sind:
 
 Ein CNAME-Eintrag weist einen *spezifischen* DNS-Namen, wie zum Beispiel **mail.contoso.com** oder **www.contoso.com**, einem anderen (kanonischen) Domänennamen zu. Bei Azure-Websites ist der kanonische Domänenname der **\<IhrSitename\>.azurewebsites.net**-Domänenname Ihrer Website. Sobald der CNAME erstellt worden worden ist, bildet er einen Alias für den Domänennamen **\<IhrSitename\>.azurewebsites.net**. Der CNAME-Eintrag wird in die IP-Adresse Ihres Domänennamens **\<IhrSitename\>.azurewebsites.net** aufgelöst, sodass Sie nichts unternehmen müssen, wenn sich die IP-Adresse Ihrer Website ändert.
 
-> [WACOM.NOTE] Manche Domänenregistrierungsstellen gestatten die Zuweisung von Unterdomänen nur bei Verwendung eines CNAME-Eintrags, wie zum Beispiel **www.contoso.com**, und nicht mit Stammnamen wie **contoso.com**. Weitere Informationen zu CNAME-Einträgen finden Sie in der von Ihrer Domänenregistrierungsstelle zur Verfügung gestellten Dokumentation, [im Wikipedia-Artikel "CNAME Resource Record"][] oder im Dokument [IETF Domain Names - Implementation and Specification][] (Domänennamen – Implementierung und Spezifizierung, in englischer Sprache).
+> [WACOM.NOTE] Manche Domänenregistrierungsstellen gestatten die Zuweisung von Unterdomänen nur bei Verwendung eines CNAME-Eintrags, wie zum Beispiel **www.contoso.com**, und nicht mit Stammnamen wie **contoso.com**. Weitere Informationen zu CNAME-Einträgen finden Sie in der von Ihrer Domänenregistrierungsstelle zur Verfügung gestellten Dokumentation, [im Wikipedia-Artikel "CNAME Resource Record"][im Wikipedia-Artikel "CNAME Resource Record"] oder im Dokument [IETF Domain Names - Implementation and Specification][IETF Domain Names - Implementation and Specification] (Domänennamen – Implementierung und Spezifizierung, in englischer Sprache).
 
 ### DNS-spezifische Merkmale von Azure-Websites
 
@@ -38,13 +38,13 @@ Dieser CNAME-Eintrag dient zur Bestätigung, dass Sie die Domäne, die Sie zu ve
 
 Sie können die IP-Adresse sowie den **awverify.www**-Namen und die **.azurewebsites.net**-Namen für Ihre Website wie folgt ermitteln:
 
-1.  Öffnen Sie das [Azure-Verwaltungsportal][] in Ihrem Browser.
+1.  Öffnen Sie das [Azure-Verwaltungsportal][Azure-Verwaltungsportal] in Ihrem Browser.
 
 2.  Klicken Sie auf der Registerkarte **Websites** auf den Namen Ihrer Site, wählen Sie dann **Dashboard** und am unteren Seitenrand **Domänen verwalten** aus.
 
-    ![][]
+    ![][0]
 
-    > [WACOM.NOTE] Wenn **Domänen verwalten** nicht aktiviert ist, verwenden Sie eine kostenlose Website. Sie können bei einer kostenlosen Website keine benutzerdefinierten Domänennamen verwenden und müssen ein Upgrade zum Freigabe-, Basic- oder Standardmodus durchführen. Weitere Informationen zu den Website-Modi, darunter auch Informationen zum Ändern des Website-Modus, finden Sie unter [Skalieren von Websites][].
+    > [WACOM.NOTE] Wenn **Domänen verwalten** nicht aktiviert ist, verwenden Sie eine kostenlose Website. Sie können bei einer kostenlosen Website keine benutzerdefinierten Domänennamen verwenden und müssen ein Upgrade zum Freigabe-, Basic- oder Standardmodus durchführen. Weitere Informationen zu den Website-Modi, darunter auch Informationen zum Ändern des Website-Modus, finden Sie unter [Skalieren von Websites][Skalieren von Websites].
 
 3.  Im Dialogfeld **BENUTZERDEFINIERTE DOMÄNEN VERWALTEN** werden dann die **awverify**-Information, der momentan zugewiesene **.azurewebsites.net**-Domänenname und die virtuelle IP-Adresse angezeigt. Speichern Sie diese Informationen, das sie beim Erstellen der DNS-Einträge benötigt werden.
 
@@ -53,6 +53,6 @@ Sie können die IP-Adresse sowie den **awverify.www**-Namen und die **.azurewebs
   [im Wikipedia-Artikel "CNAME Resource Record"]: http://en.wikipedia.org/wiki/CNAME_record
   [IETF Domain Names - Implementation and Specification]: http://tools.ietf.org/html/rfc1035
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
-  []: ./media/custom-dns-web-site/dncmntask-cname-6.png
+  [0]: ./media/custom-dns-web-site/dncmntask-cname-6.png
   [Skalieren von Websites]: http://www.windowsazure.com/de-de/documentation/articles/web-sites-scale/
   [1]: ./media/custom-dns-web-site/managecustomdomains.png

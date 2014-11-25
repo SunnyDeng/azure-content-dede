@@ -193,7 +193,7 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 -   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Lernen Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
-<!-- anchors --> <!-- Images. --> <!-- URLs. -->
+<!-- anchors -->  
 
   [vorherige Lernprogramm zu Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-wp8
   [Erstellen der Channel-Tabelle]: #create-table

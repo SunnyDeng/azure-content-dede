@@ -56,15 +56,10 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 
 
 
-  [mobile-services-selector-get-started-users]: ../includes/mobile-services-selector-get-started-users.md
   [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
   [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
   [Hinzufügen von Authentifizierung zur App]: #add-authentication
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started
   [Einmalige Anmeldung für Windows Phone-Apps mithilfe von Live Connect]: /de-de/documentation/articles/mobile-services-windows-phone-single-sign-on
   [diesem Beitrag]: http://go.microsoft.com/fwlink/p/?LinkId=506605
-  [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
-  [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md
-  [mobile-services-windows-phone-authenticate-app]: ../includes/mobile-services-windows-phone-authenticate-app.md
-  [mobile-services-windows-phone-authenticate-app-with-token]: ../includes/mobile-services-windows-phone-authenticate-app-with-token.md
   [Dienstweite Autorisierung von Mobile Services-Benutzern]: /de-de/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts

@@ -882,13 +882,11 @@ Weitere Informationen finden Sie unter [Azure WebJobs - Empfohlene Ressourcen][A
   [Nächste Schritte]: #next-steps
   [ASP.NET MVC]: http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started
   [Web Forms]: http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview
-  [free-trial-note]: ../includes/free-trial-note.md
   [WebJobs]: /de-de/documentation/articles/web-sites-create-web-jobs/
   [AlwaysOn]: http://weblogs.asp.net/scottgu/archive/2014/01/16/windows-azure-staging-publishing-support-for-web-sites-monitoring-improvements-hyper-v-recovery-manager-ga-and-pci-compliance.aspx
   [Ad-Tabelle]: ./media/websites-dotnet-webjobs-sdk-get-started/adtable.png
   [Contoso Ads-Architektur]: ./media/websites-dotnet-webjobs-sdk-get-started/apparchitecture.png
   [Vergleich von Websites, Clouddiensten und virtuellen Computern in Azure]: /de-de/documentation/articles/choose-web-site-cloud-service-vm/
-  [install-sdk-2013-only]: ../includes/install-sdk-2013-only.md
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [How to Manage Storage Accounts]: /de-de/documentation/articles/storage-manage-storage-account/
   [Neues Speicherkonto]: ./media/websites-dotnet-webjobs-sdk-get-started/newstorage.png

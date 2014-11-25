@@ -52,7 +52,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 1.  Installieren Sie Ruby in Ihrer Entwicklungsumgebung. Je nach Betriebssystem können die Schritte unterschiedlich sein.
 
-    -   **Apple OS X** - Es gibt verschiedene Ruby-Distributionen für OS X. Dieses Lernprogramm wurde auf OS X unter Verwendung von [Homebrew][Homebrew] getestet, um **rbenv**, **ruby-build** und **Ruby 2.0.0-p451** zu installieren. Installationsinformationen finden Sie unter [][]<https://github.com/sstephenson/rbenv/></a>.
+    -   **Apple OS X** - Es gibt verschiedene Ruby-Distributionen für OS X. Dieses Lernprogramm wurde auf OS X unter Verwendung von [Homebrew][Homebrew] getestet, um **rbenv**, **ruby-build** und **Ruby 2.0.0-p451** zu installieren. Installationsinformationen finden Sie unter <https://github.com/sstephenson/rbenv/>.
 
     -   **Linux** - Verwenden Sie Ihr Distributions-Paketverwaltungssystem. Dieses Lernprogramm wurde auf Ubuntu 12.10 mit **rbenv**, **ruby-build** und **Ruby 2.0.0-p451** getestet.
 
@@ -68,9 +68,9 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
     > [WACOM.NOTE] Für dieses Lernprogramm wurde Version 4.0.4 des Rails-Gems verwendet.
 
-3.  Sie müssen außerdem einen JavaScript-Übersetzer installieren, der von Rails zum Kompilieren der CoffeeScript-Assets für die Rails-Anwendung verwendet wird. Eine Liste der unterstützten Übersetzer finden Sie unter [][1]<https://github.com/sstephenson/execjs#readme></a>.
+3.  Sie müssen außerdem einen JavaScript-Übersetzer installieren, der von Rails zum Kompilieren der CoffeeScript-Assets für die Rails-Anwendung verwendet wird. Eine Liste der unterstützten Übersetzer finden Sie unter <https://github.com/sstephenson/execjs#readme>.
 
-    > [WACOM.NOTE] Für dieses Lernprogramm wurde [Node.js](<http://nodejs.org/>) verwendet, da es für die Betriebssysteme OS X, Linux und Windows verfügbar ist.
+    > [WACOM.NOTE] Für dieses Lernprogramm wurde [Node.js](http://nodejs.org/) verwendet, da es für die Betriebssysteme OS X, Linux und Windows verfügbar ist.
 
 ## <span id="create"></span></a>Erstellen einer Rails-Anwendung
 
@@ -116,7 +116,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
         [2013-03-12 19:11:31] INFO  ruby 2.0.0 (2014-02-24) [x86_64-linux]
         [2013-03-12 19:11:31] INFO  WEBrick::HTTPServer#start: pid=9789 port=3000
 
-2.  Öffnen Sie Ihren Browser und navigieren Sie zu <http://localhost:3000/>. Eine Seite ähnlich der folgenden wird angezeigt.
+2.  Öffnen Sie Ihren Browser, und navigieren Sie zu http://localhost:3000/. Eine Seite ähnlich der folgenden wird angezeigt.
 
     ![Seite mit Einträgen][Seite mit Einträgen]
 
@@ -323,7 +323,7 @@ An dieser Stelle verfügen Sie über einen virtuellen Azure-Computer mit Ruby, N
 
     Nachdem Sie die Änderungen vorgenommen haben, speichern Sie die Datei.
 
-5.  Bearbeiten Sie die Datei **config/deploy.rb** und ersetzen Sie den Inhalt durch Folgendes: Ersetzen Sie **YourApplicationName** mit dem Namen der Anwendung und **<https://github.com/YourGitHubName/YourRepoName.git>** mit der URL des GitHub-Repository für dieses Projekt.
+5.  Bearbeiten Sie die Datei **config/deploy.rb** und ersetzen Sie den Inhalt durch Folgendes: Ersetzen Sie **YourApplicationName** mit dem Namen der Anwendung und **https://github.com/YourGitHubName/YourRepoName.git** mit der URL des GitHub-Repository für dieses Projekt.
 
         lock '3.1.0'
         # application name and the github repository
@@ -422,11 +422,11 @@ Die Anwendung sollte nun fertig zur Bereitstellung sein.
 
     > [WACOM.NOTE] Auf einigen Systemen kann es vorkommen, dass der SSH-Agent bei der Authentifizierung beim GitHub nicht in der Lage ist, die Anmeldeinformationen an den virtuellen Remotecomputer weiterzuleiten In diesem Fall können Sie den Fehler durch Ändern der Datei **config/deploy.rb** umgehen und die Zeile `set :repo_url` ändern, sodass beim Zugriff auf GitHub HTTPS verwendet wird. Wenn Sie HTTPS verwenden, müssen Sie Ihren Benutzernamen und das Kennwort (oder das Authentifizierungstoken) für GitHub als Teil der URL angeben. Beispiel:
     >
-    > \`set :repo\_url, '<https://you:yourpassword@github.com/You/yourrepository.git>'
+    > \`set :repo\_url, 'https://you:yourpassword@github.com/You/yourrepository.git'
     >
     > Dadurch sollte es möglich sein, den Fehler zu umgehen und dieses Lernprogramm abzuschließen. Für die Produktionsbereitstellung wird diese Lösung jedoch nicht empfohlen, da sie Ihre Authentifizierungsdaten als Nur-Text als Teil der Anwendung speichert. Um mehr über das Weiterleiten mit dem SSH-Agent zu erfahren, lesen Sie die Dokumentation für Ihr Betriebssystem.
 
-An diesem Punkt sollte Ihre Ruby on Rails-Anwendung auf Ihrem virtuellen Azure-Computer ausgeführt werden. Um dies zu überprüfen, geben Sie den DNS-Namen des virtuellen Computers in den Webbrowser ein. Beispiel: <http://railsvm.cloudapp.net>. Es sollte der Postindex angezeigt werden und Sie sollten in der Lage sein, Post zu erstellen, zu bearbeiten und zu löschen.
+An diesem Punkt sollte Ihre Ruby on Rails-Anwendung auf Ihrem virtuellen Azure-Computer ausgeführt werden. Um dies zu überprüfen, geben Sie den DNS-Namen des virtuellen Computers in den Webbrowser ein. Beispiel: http://railsvm.cloudapp.net. Es sollte der Postindex angezeigt werden und Sie sollten in der Lage sein, Post zu erstellen, zu bearbeiten und zu löschen.
 
 ## <span id="next"></span></a>Nächste Schritte
 
@@ -463,10 +463,8 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
   [Bereitstellen]: #deploy
   [Nächste Schritte]: #next
   [Homebrew]: http://brew.sh/
-  []: https://github.com/sstephenson/rbenv/
   [RubyInstaller]: http://RubyInstaller.org/
   [Git für Windows]: http://git-scm.com/download/win
-  [1]: https://github.com/sstephenson/execjs#readme
   [SQLite3 Database]: http://www.sqlite.org/
   [Seite mit Einträgen]: ./media/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/blograilslocal.png
   [Git]: http://git-scm.com/

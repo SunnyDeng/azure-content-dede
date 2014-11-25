@@ -1,6 +1,6 @@
 <properties pageTitle="Get started with Azure API Management" metaKeywords="" description="Learn how to create APIs, operations, and get started with API Management." metaCanonical="" services="" documentationCenter="API Management" title="Get started with Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie"></tags>
+<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
 
 # Erste Schritte mit der Azure API-Verwaltung
 
@@ -8,32 +8,32 @@ Diese Anleitung beschreibt die ersten Schritte mit der API-Verwaltung und Ihren 
 
 ## In diesem Thema
 
--   [Erstellen einer API-Verwaltungsinstanz][]
--   [Erstellen einer API][]
--   [Hinzufügen einer Operation][]
--   [Hinzufügen der API zu einem Produkt][]
--   [Abonnieren des Produkts, das die API enthält][]
--   [Aufrufen einer Operation aus dem Entwicklerportal][]
--   [Anzeigen von Analysen][]
--   [Nächste Schritte][]
+-   [Erstellen einer API-Verwaltungsinstanz][Erstellen einer API-Verwaltungsinstanz]
+-   [Erstellen einer API][Erstellen einer API]
+-   [Hinzufügen einer Operation][Hinzufügen einer Operation]
+-   [Hinzufügen der API zu einem Produkt][Hinzufügen der API zu einem Produkt]
+-   [Abonnieren des Produkts, das die API enthält][Abonnieren des Produkts, das die API enthält]
+-   [Aufrufen einer Operation aus dem Entwicklerportal][Aufrufen einer Operation aus dem Entwicklerportal]
+-   [Anzeigen von Analysen][Anzeigen von Analysen]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <a name="create-service-instance"> </a>Erstellen einer API-Verwaltungsinstanz
 
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][].
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][Kostenlose Azure-Testversion].
 
-Der erste Schritt bei der Arbeit mit der API-Verwaltung ist die Erstellung einer Dienstinstanz. Melden Sie sich beim [Azure-Verwaltungsportal][] an und klicken Sie auf **Neu**, **App-Dienste**, **API-Verwaltung**, **Erstellen**.
+Der erste Schritt bei der Arbeit mit der API-Verwaltung ist die Erstellung einer Dienstinstanz. Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an und klicken Sie auf **Neu**, **App-Dienste**, **API-Verwaltung**, **Erstellen**.
 
-![Neue Instanz der API-Verwaltung][]
+![Neue Instanz der API-Verwaltung][Neue Instanz der API-Verwaltung]
 
 Geben Sie unter **URL** einen eindeutigen Unterdomänennamen für die Dienst-URL ein.
 
 Wählen Sie die gewünschten Werte für **Preisebene**, **Abonnement** und **Region** für Ihre Dienstinstanz aus. Für dieses Lernprogramm können Sie eine beliebige Preisebene verwenden. Treffen Sie Ihre Auswahl und klicken Sie auf Weiter.
 
-![Neuer API-Verwaltungs-Dienst][]
+![Neuer API-Verwaltungs-Dienst][Neuer API-Verwaltungs-Dienst]
 
 Geben Sie **Contoso Ltd.** unter **Organisationsname** ein und geben Sie Ihre E-Mail-Adresse in das Feld Administrator-E-Mail ein.
 
-> Diese E-Mail-Adresse wird für Benachrichtigungen vom API-Verwaltungssystem verwendet. Weitere Informationen finden Sie unter [Benachrichtigungen konfigurieren][].
+> Diese E-Mail-Adresse wird für Benachrichtigungen vom API-Verwaltungssystem verwendet. Weitere Informationen finden Sie unter [Benachrichtigungen konfigurieren][Benachrichtigungen konfigurieren].
 
 Aktivieren Sie das Kontrollkästchen, um Ihre Dienstinstanz zu erstellen.
 
@@ -53,13 +53,13 @@ Dieses Lernprogramm verwendet den <http://echoapi.cloudapp.net/api>-Webdienst, u
 
 APIs werden in der API-Verwaltungskonsole erstellt und konfiguriert, die über die Azure-Verwaltungskonsole erreichbar ist. Um die API-Verwaltungskonsole zu erreichen, klicken Sie im Azure-Portal auf **Verwaltungskonsole** für Ihren API-Verwaltungsdienst.
 
-![Neue API-Verwaltungskonsole][]
+![Neue API-Verwaltungskonsole][Neue API-Verwaltungskonsole]
 
 Um die **My Echo API** zu erstellen, klicken Sie auf **APIs** im Menü **API-Verwaltung** auf der linken Seite und anschließend auf **API hinzufügen**.
 
-![API erstellen][]
+![API erstellen][API erstellen]
 
-![Neue API hinzufügen][]
+![Neue API hinzufügen][Neue API hinzufügen]
 
 Die folgenden drei Felder werden zum Konfigurieren der neuen API verwendet.
 
@@ -69,11 +69,11 @@ Die folgenden drei Felder werden zum Konfigurieren der neuen API verwendet.
 
 Klicken Sie auf **Speichern**, um die API zu erstellen. Sobald die neue API erstellt wurde, wird die Zusammenfassungsseite für die API im Verwaltungsportal angezeigt.
 
-![API-Zusammenfassung][]
+![API-Zusammenfassung][API-Zusammenfassung]
 
 Der API-Bereich enthält vier Registerkarten. Die Registerkarte **Zusammenfassung** enthält verschiedene Metriken und Informationen über die API. In der Registerkarte **Einstellungen** können Sie die Konfiguration der API anzeigen und bearbeiten, inklusive der Authentifizierungs-Anmeldeinformationen für den Back-End-Dienst. In der Registerkarte **Operationen** können Sie die Operationen der API verwalten, wie im folgenden Schritt in diesem Lernprogramm beschrieben. In der Registerkarte **Probleme** werden Probleme angezeigt, die Entwickler für Ihre APIs gemeldet haben.
 
-> Die Echo-API verwendet keine Authentifizierung. Weitere Informationen zum Konfigurieren der Authentifizierung finden Sie unter [Konfigurieren der API-Einstellungen][].
+> Die Echo-API verwendet keine Authentifizierung. Weitere Informationen zum Konfigurieren der Authentifizierung finden Sie unter [Konfigurieren der API-Einstellungen][Konfigurieren der API-Einstellungen].
 
 Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können Sie Operationen zur API hinzufügen. Die Operationsdefinitionen dienen zur Validierung eingehender Anfragen und zur automatischen Generierung der Dokumentation.
 
@@ -81,11 +81,11 @@ Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können S
 
 Klicken Sie auf **Operationen**, um den Operationsbereich für die API anzuzeigen. Da Sie noch keine Operationen erstellt haben, ist dieser Bereich leer.
 
-![Operationen][]
+![Operationen][Operationen]
 
 Klicken Sie auf **Operation hinzufügen**, um eine neue Operation zu erstellen. Das Fenster **Neue Operation** wird angezeigt, und die Registerkarte **Signatur** ist standardmäßig ausgewählt.
 
-![Signatur der Operation][]
+![Signatur der Operation][Signatur der Operation]
 
 In diesem Beispiel definieren wir eine GET-Operation für den Echo-Dienst. Geben Sie die folgenden Werte in die Felder auf der Registerkarte **Signatur** ein.
 
@@ -114,13 +114,13 @@ Sie sollten nach Möglichkeit Beispielantworten für alle Statuscodes angeben, d
 
 Klicken Sie auf **Hinzufügen** im Bereich Antworten, geben Sie **200** in das Textfeld ein und wählen Sie **200 OK** in der Dropdownliste aus.
 
-![Antwort hinzufügen][]
+![Antwort hinzufügen][Antwort hinzufügen]
 
 Wenn Sie **200 OK** auswählen, wird ein neuer Antwortcode zur Operation hinzugefügt, und das Antwortfenster wird angezeigt. Geben Sie **Antwort in jedem Fall.** in das Textfeld **Beschreibung** ein.
 
 ![Antwort hinzufügen][3]
 
-> **Darstellung hinzufügen** wird verwendet, um Antworten in unterschiedlichen Darstellungen hinzuzufügen. Weitere Informationen hierzu finden Sie unter [Antworten][].
+> **Darstellung hinzufügen** wird verwendet, um Antworten in unterschiedlichen Darstellungen hinzuzufügen. Weitere Informationen hierzu finden Sie unter [Antworten][Antworten].
 
 Klicken Sie auf **Speichern**, um die neu konfigurierte Operation zur API hinzuzufügen.
 
@@ -130,7 +130,7 @@ Entwickler müssen ein Produkt zunächst abonnieren, um API-Aufrufe ausführen z
 
 Klicken Sie auf **Produkte** im Menü **API-Verwaltung** auf der linken Seite, um die verfügbaren Produkte in dieser API-Instanz anzuzeigen und zu konfigurieren.
 
-![Produkte][]
+![Produkte][Produkte]
 
 Standardmäßig enthält jede API-Verwaltungsinstanz zwei Beispielprodukte:
 
@@ -139,7 +139,7 @@ Standardmäßig enthält jede API-Verwaltungsinstanz zwei Beispielprodukte:
 
 In diesem Lernprogramm verwenden wir das Produkt **Starter**. Klicken Sie auf **Starter**, um die Einstellungen anzuzeigen, inklusive der APIs, die diesem Produkt zugeordnet sind.
 
-![API hinzufügen][]
+![API hinzufügen][API hinzufügen]
 
 Klicken Sie auf **API zu Produkt hinzufügen**.
 
@@ -147,11 +147,11 @@ Klicken Sie auf **API zu Produkt hinzufügen**.
 
 Markieren Sie das Kontrollkästchen für **My Echo API** und klicken Sie auf **Speichern**.
 
-![Hinzugefügte API][]
+![Hinzugefügte API][Hinzugefügte API]
 
 Die **My Echo API** ist nun zu einem Produkt zugeordnet, und Entwickler können das Produkt abonnieren und die API verwenden.
 
-> Dieses Lernprogramm verwendet das Starter-Produkt, das vorkonfiguriert und einsatzbereit ist. Eine schrittweise Anleitung zur Erstellung und Veröffentlichung neuer Produkte finden Sie unter [Erstellen und Veröffentlichen von Produkten][].
+> Dieses Lernprogramm verwendet das Starter-Produkt, das vorkonfiguriert und einsatzbereit ist. Eine schrittweise Anleitung zur Erstellung und Veröffentlichung neuer Produkte finden Sie unter [Erstellen und Veröffentlichen von Produkten][Erstellen und Veröffentlichen von Produkten].
 
 ## <a name="subscribe"> </a>Abonnieren des Produkts, das die API enthält
 
@@ -159,13 +159,13 @@ Um API-Aufrufe ausführen zu können, müssen Entwickler zunächst das Produkt a
 
 Klicken Sie auf **Entwickler** im Menü **API-Verwaltung** auf der linken Seite und konfigurieren Sie die Entwickler für diese Dienstinstanz.
 
-![Entwickler][]
+![Entwickler][Entwickler]
 
 Klicken Sie auf den Namen des Entwicklers, um die Einstellungen für den jeweiligen Benutzer zu konfigurieren, inklusive Abonnements.
 
-> In diesem Beispiel abonnieren wir einen Entwickler mit dem Namen Clayton Gragg. Falls Sie kein Entwicklerkonto erstellt haben, können Sie das Administratorkonto abonnieren. Weitere Informationen zum Erstellen von Entwicklerkonten finden Sie unter [Verwalten von Entwicklerkonten in der Azure API-Verwaltung][].
+> In diesem Beispiel abonnieren wir einen Entwickler mit dem Namen Clayton Gragg. Falls Sie kein Entwicklerkonto erstellt haben, können Sie das Administratorkonto abonnieren. Weitere Informationen zum Erstellen von Entwicklerkonten finden Sie unter [Verwalten von Entwicklerkonten in der Azure API-Verwaltung][Verwalten von Entwicklerkonten in der Azure API-Verwaltung].
 
-![Abonnement hinzufügen][]
+![Abonnement hinzufügen][Abonnement hinzufügen]
 
 Klicken Sie auf **Abonnement hinzufügen**.
 
@@ -173,7 +173,7 @@ Klicken Sie auf **Abonnement hinzufügen**.
 
 Markieren Sie das Kontrollkästchen für **Starter** und klicken Sie auf **Abonnieren**.
 
-![Abonnement hinzugefügt][]
+![Abonnement hinzugefügt][Abonnement hinzugefügt]
 
 Wenn Sie Ihr Entwicklerkonto abonniert haben, können Sie die APIs des Produkts aufrufen.
 
@@ -181,7 +181,7 @@ Wenn Sie Ihr Entwicklerkonto abonniert haben, können Sie die APIs des Produkts 
 
 Operationen können direkt aus dem Entwicklerportal aufgerufen werden. Dies ist ein einfacher Weg, um die Operationen einer API anzuzeigen und zu testen. In diesem Schritt des Lernprogramms werden Sie die Get-Methode aufrufen, die Sie zur **My Echo API** hinzugefügt haben. Klicken Sie auf **Entwicklerportal** im Menü oben rechts im Verwaltungsportal.
 
-![Entwicklerportal][]
+![Entwicklerportal][Entwicklerportal]
 
 Klicken Sie im obersten Menü auf **APIs** und anschließend auf **My Echo API**, um die verfügbaren Operationen anzuzeigen.
 
@@ -191,39 +191,39 @@ Die Beschreibung und Parameter, die Sie bei der Erstellung der Operation eingege
 
 Klicken Sie auf **GET Resource** und anschließend auf **Konsole öffnen**.
 
-![Operationskonsole][]
+![Operationskonsole][Operationskonsole]
 
 Geben Sie beliebige Werte für die Parameter sowie Ihren Entwicklerschlüssel ein und klicken Sie auf **HTTP Get**.
 
-![HTTP Get][]
+![HTTP Get][HTTP Get]
 
 Nach dem Aufruf der Operation zeigt das Entwicklerportal die **Angeforderte URL** vom Back-End-Dienst, den **Antwortstatus**, die **Antwortheader** sowie den **Antwortinhalt** an.
 
-![Antwort][]
+![Antwort][Antwort]
 
 ## <a name="view-analytics"> </a>Anzeigen von Analysen
 
 Um Analysen für die **My Echo API** anzuzeigen, wechseln Sie zurück zum Verwaltungsportal, indem Sie im Benutzermenü oben rechts im Entwicklerportal auf **Verwalten** klicken.
 
-![Verwalten][]
+![Verwalten][Verwalten]
 
 Die Standardansicht für das Verwaltungsportal ist das Dashboard, das eine Übersicht für Ihre API-Verwaltungsinstanz enthält.
 
-![Dashboard][]
+![Dashboard][Dashboard]
 
 Bewegen Sie den Mauszeige über die Grafik für die My Echo API, um spezielle Metriken für die Nutzung der API über einen bestimmten Zeitraum anzuzeigen.
 
 > Falls Ihr Diagramm keine Linien enthält, wechseln Sie zurück zum Entwicklerportal und führen Sie einige Aufrufe an die API aus, warten Sie einen Moment und kehren Sie zum Dashboard zurück.
 
-![Analyse][]
+![Analyse][Analyse]
 
 Klicken Sie auf **Details anzeigen**, um die Zusammenfassungsseite für die API anzuzeigen, inklusive einer größeren Version der angezeigten Metriken.
 
-![Zusammenfassung][]
+![Zusammenfassung][Zusammenfassung]
 
 Um detaillierte Metriken und Berichte anzuzeigen, klicken Sie auf **Analyse** im Menü **API-Verwaltung** auf der linken Seite.
 
-![Übersicht][]
+![Übersicht][Übersicht]
 
 Der **Analyse**-Bereich enthält die folgenden vier Registerkarten.
 
@@ -234,7 +234,7 @@ Der **Analyse**-Bereich enthält die folgenden vier Registerkarten.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
--   Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][].
+-   Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][Erste Schritte bei der erweiterten API-Konfiguration].
 
   [Erstellen einer API-Verwaltungsinstanz]: #create-service-instance
   [Erstellen einer API]: #create-api
@@ -244,7 +244,7 @@ Der **Analyse**-Bereich enthält die folgenden vier Registerkarten.
   [Aufrufen einer Operation aus dem Entwicklerportal]: #call-operation
   [Anzeigen von Analysen]: #view-analytics
   [Nächste Schritte]: #next-steps
-  [Kostenlose Azure-Testversion]: http://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=api_management_hero_a
+  [Kostenlose Azure-Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=api_management_hero_a
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Neue Instanz der API-Verwaltung]: ./media/api-management-get-started/api-management-create-instance-menu.png
   [Neuer API-Verwaltungs-Dienst]: ./media/api-management-get-started/api-management-create-instance-step1.png

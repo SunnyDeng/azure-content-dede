@@ -1,4 +1,4 @@
-<properties urlDisplayName="HDInsight High Availability" pageTitle="Verf&uuml;gbarkeit von Hadoop-Clustern in HDInsight | Azure" metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure" description="HDInsight stellt hochverf&uuml;gbare und zuverl&auml;ssige Cluster bereit." services="HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Verf&uuml;gbarkeit von Hadoop-Clustern in HDInsight" authors="bradsev" />
+<properties linkid="manage-services-hdinsight-high-availability" urlDisplayName="HDInsight High Availability" pageTitle="Availability of Hadoop clusters in HDInsight | Azure" metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure" description="HDInsight deploys highly available and reliable clusters." services="HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Availability of Hadoop clusters in HDInsight" authors="bradsev" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -8,7 +8,7 @@
 
 Ein zweiter Stammknoten wurde zu den Hadoop-Clustern in HDInsight hinzugefügt, um die Verfügbarkeit und Zuverlässigkeit des Diensts für die Verarbeitung von Arbeitslasten zu verbessern. Standardimplementierungen von Hadoop-Clustern verfügen in der Regel nur über einen Hauptknoten. Diese Cluster dienen zur reibungslosen Verwaltung ausgefallener Arbeiterknoten. Bei einem Ausfall eines Master-Diensts auf dem Stammknoten würde jedoch das komplette Cluster ausfallen.
 
-![][0]
+![](http://i.imgur.com/jrUmrH4.png)
 
 HDInsight eliminiert diesen kritischen Ausfallpunkt durch die Einführung eines zweiten Stammknotens (Head Node1). [ZooKeeper][ZooKeeper]-Knoten (ZKs) wurden hinzugefügt, führen eine sogenannte Leader Election der Stammknoten durch und teilen Arbeiterknoten und Gateways (GWs) mit, wann diese auf den sekundären Stammknoten (Head Node1) umschalten müssen, wenn der aktive Stammknoten (HeadNode0) inaktiv wird.
 
@@ -60,7 +60,7 @@ Das Verfahren für das SDK ist ähnlich. Die Erstellung und Bereitstellung eines
 -   [Herstellen einer Verbindung zu HDInsight-Clustern mit RDP][Verbinden mit HDInsight-Clusters über RDP]
 -   [Verwenden des HDInsight .NET SDK][Verwenden des HDInsight .NET SDK]
 
-  [0]: http://i.imgur.com/jrUmrH4.png
+  
   [ZooKeeper]: http://zookeeper.apache.org/
   [Verbinden mit HDInsight-Clusters über RDP]: ../hdinsight-administer-use-management-portal/#rdp
   [1]: http://i.imgur.com/MYTkCHW.png

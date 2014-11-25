@@ -35,7 +35,7 @@ Azure SQL-Datenbank bietet ein Verwaltungssystem für relationale Datenbanken f�
 
 ## <span id="concepts"></span></a>Konzepte
 
-Da Azure SQL-Datenbank auf SQL Server-Technologien basiert, erfolgt der Zugriff auf SQL-Datenbank aus Java ganz ähnlich wie der Zugriff auf SQL Server aus Java. Sie können eine Anwendung lokal (mit SQL Server) entwickeln und dann eine Verbindung zu SQL-Datenbank herstellen, indem Sie lediglich die Verbindungszeichenfolge ändern. Sie können einen SQL Server JDBC-Treiber für Ihre Anwendung verwenden. Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen (SQL-Datenbanken)][Richtlinien für und Einschränkungen (SQL-Datenbanken)].
+Da Azure SQL-Datenbank auf SQL Server-Technologien basiert, erfolgt der Zugriff auf SQL-Datenbank aus Java ganz ähnlich wie der Zugriff auf SQL Server aus Java. Sie können eine Anwendung lokal (mit SQL Server) entwickeln und dann eine Verbindung zu SQL-Datenbank herstellen, indem Sie lediglich die Verbindungszeichenfolge ändern. Sie können einen SQL Server JDBC-Treiber für Ihre Anwendung verwenden. Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen (SQL-Datenbanken)](http://msdn.microsoft.com/de-de/library/windowsazure/ff394102.aspx).
 
 Weitere Informationen zu SQL-Datenbank finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
 
@@ -45,7 +45,7 @@ In den folgenden Schritten werden die Voraussetzungen für die Verwendung von SQ
 
 -   Ein Java Developer Kit (JDK), Version 1.6 oder höher.
 -   Ein Azure-Abonnement, das von <http://www.microsoft.com/windowsazure/offers/> abgerufen werden kann.
--   Falls Sie Eclipse verwenden, brauchen Sie die Eclipse IDE für Java EE-Entwickler, Indigo oder höher. Dies kann unter <http://www.eclipse.org/downloads/> heruntergeladen werden. Außerdem brauchen Sie das Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies). Stellen Sie bei der Installation des Plug-Ins sicher, dass der Microsoft JDBC-Treiber 4.0 für SQL Server enthalten ist. Weitere Informationen finden Sie unter [Installieren des Azure-Plug-Ins für Eclipse mit Java (von Microsoft Open Technologies)][Installieren des Azure-Plug-Ins für Eclipse mit Java (von Microsoft Open Technologies)].
+-   Falls Sie Eclipse verwenden, brauchen Sie die Eclipse IDE für Java EE-Entwickler, Indigo oder höher. Dies kann unter <http://www.eclipse.org/downloads/> heruntergeladen werden. Außerdem brauchen Sie das Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies). Stellen Sie bei der Installation des Plug-Ins sicher, dass der Microsoft JDBC-Treiber 4.0 für SQL Server enthalten ist. Weitere Informationen finden Sie unter [Installieren des Azure-Plug-Ins für Eclipse mit Java (von Microsoft Open Technologies)](http://msdn.microsoft.com/de-de/library/windowsazure/hh690946.aspx).
 -   Falls Sie Eclipse nicht verwenden, brauchen Sie den Microsoft JDBC-Treiber 4.0 für SQL Server, den Sie unter <http://www.microsoft.com/de-de/download/details.aspx?id=11774> herunterladen können.
 
 ## <span id="create_db"></span></a>Erstellen einer Azure SQL-Datenbank
@@ -87,13 +87,13 @@ Bevor Sie Azure SQL-Datenbank in Ihrem Java-Code verwenden können, müssen Sie 
 7.  Sie können diesen Wert nun in Ihrem Code einfügen, um eine Verbindungszeichenfolge mit dem folgenden Format zu erstellen. Ersetzen Sie *your\_server* (an zwei Stellen) durch den im vorherigen Schritt kopierten Text, und ersetzen Sie *your\_password* durch das Kennwort, das Sie bei der Erstellung Ihres SQL-Datenbank-Kontos festgelegt haben. (Ersetzen Sie außerdem die Werte **database=** und **user=**, falls Sie nicht **gettingstarted** und **MySQLAdmin** verwenden.)
 
     String connectionString =
-     "jdbc:sqlserver://*your\_server*.database.windows.net:1433" + ";" +
-     "database=gettingstarted" + ";" +
-    ["user=MySQLAdmin@\*your\_server\*]["user=MySQLAdmin@\*your\_server\*]" + ";" +
-     "password=*your\_password*" + ";" +
-     "encrypt=true" + ";" +
-    "hostNameInCertificate=\*.int.mscds.com" + ";" +
-    "loginTimeout=30";
+		"jdbc:sqlserver://*your_server*.database.windows.net:1433" + ";" +  
+    	"database=gettingstarted" + ";" + 
+    	"user=MySQLAdmin@*your_server*" + ";" +  
+    	"password=*your_password*" + ";" +  
+        "encrypt=true" + ";" +
+        "hostNameInCertificate=*.int.mscds.com" + ";" +  
+        "loginTimeout=30";
 
 Wir werden diese Zeichenfolge später in dieser Anleitung verwenden. Momentan ist es nur wichtig, dass Sie mit der Bestimmung der Verbindungszeichenfolge vertraut sind. Je nach Anforderungen Ihrer Anwendung brauchen Sie die Einstellungen **encrypt** und **hostNameInCertificate** möglicherweise nicht. Außerdem können Sie die Einstellung **loginTimeout** ändern.
 
@@ -111,13 +111,13 @@ Wir werden diese Zeichenfolge später in dieser Anleitung verwenden. Momentan is
 
 8.  Klicken Sie auf die Schaltfläche "Completion". Die angegebenen IP-Adressen können nun auf Ihren Datenbankserver zugreifen.
 
-## <span id="use_sql_azure_in_java"></span></a>Verwenden der Azure SQL-Datenbank in Java
+<h2><a id="use_sql_azure_in_java"></a>Verwenden der Azure SQL-Datenbank in Java</h2>
 
 1.  Erstellen Sie ein Java-Projekt. Nennen Sie das Projekt für dieses Lernprogramm **HelloSQLAzure**.
 2.  Fügen Sie eine Java-Klassendatei namens **HelloSQLAzure.java** zum Projekt hinzu.
 3.  Fügen Sie den **Microsoft JDBC-Treiber für SQL Server** zu Ihrem Buildpfad hinzu.
 
-Falls Sie Eclipse verwenden:
+   Falls Sie Eclipse verwenden:
 
     1. Within Eclipse's Project Explorer, right-click the **HelloSQLAzure** project and click **Properties**.
     2. In the left-hand pane of the **Properties** dialog, click **Java Build Path**.
@@ -693,7 +693,7 @@ Um SQL-Datenbanken in Java mit einer Azure-Bereitstellung zu verwenden, müssen 
 3.  Klicken Sie im Dialogfeld **New Assembly Directive** auf **Java Build Path Entries** und anschließend auf **Next**.
 4.  Wählen Sie **Microsoft JDBC Driver 4.0 for SQL Server** aus und klicken Sie auf **Finish**.
 5.  Klicken Sie auf **OK**, um das Dialogfeld **Properties** zu schließen.
-6.  Exportieren Sie die WAR-Datei Ihres Projekts in Ihren approot-Ordner und erstellen Sie Ihr Azure-Projekt neu. Siehe dazu die Schritte unter [Erstellen einer Hello World-Anwendung mithilfe des Azure-Plug-Ins für Eclipse with Java (von Microsoft Open Technologies)][Erstellen einer Hello World-Anwendung mithilfe des Azure-Plug-Ins für Eclipse with Java (von Microsoft Open Technologies)]. Dieser Artikel beschreibt außerdem, wie Sie Ihre Anwendung im Serveremulator und in Azure ausführen können.
+6.  Exportieren Sie die WAR-Datei Ihres Projekts in Ihren approot-Ordner und erstellen Sie Ihr Azure-Projekt neu. Siehe dazu die Schritte unter [Erstellen einer Hello World-Anwendung mithilfe des Azure-Plug-Ins für Eclipse with Java (von Microsoft Open Technologies)](http://msdn.microsoft.com/de-de/library/windowsazure/hh690944.aspx). Dieser Artikel beschreibt außerdem, wie Sie Ihre Anwendung im Serveremulator und in Azure ausführen können.
 
 **Verpacken des Microsoft JDBC-Treibers 4.0 für SQL Server, falls Sie Eclipse nicht verwenden**
 

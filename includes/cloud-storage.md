@@ -23,7 +23,7 @@ Das Wort "Blob" ist eine Kurzform für "Binary Large OBject" (binäres großes O
 
 Um Blobs zu verwenden, erstellen Sie zuerst ein Azure-*Speicherkonto*. Dabei geben Sie das Azure-Datencenter an, in dem die mit diesem Konto erstellten Objekte gespeichert werden. Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Container in Ihrem Speicherkonto. Für den Zugriff auf ein Blob stellt eine Anwendung einen URL mit dem folgenden Format bereit:
 
-[http://\<\*StorageAccount][http://\<\*StorageAccount]*\>.blob.core.windows.net/\<*Container*\>/\<*BlobName\*\>
+http://\<\*StorageAccount*\>.blob.core.windows.net/\<*Container*\>/\<*BlobName\*\>
 
 \<*Speicherkonto*\> ist eine eindeutige ID, die beim Erstellen eines neuen Speicherkontos zugewiesen wird, während \<*Container*\> und \<*BlobName*\> die Namen eines bestimmten Containers und eines Blobs in diesem Container sind.
 
@@ -125,7 +125,7 @@ Azure Table Storage ist ein Beispiel für einen solchen Nicht-SQL-Ansatz. Trotz 
 
 Wie Blobs werden alle Tabellen mit einem Azure-Speicherkonto verknüpft. Tabellen werden auch ähnlich wie Blobs mit einem URL folgenden Formats benannt:
 
-[http://\<\*StorageAccount][http://\<\*StorageAccount]*\>.table.core.windows.net/\<*TableName\*\>
+http://\<\*StorageAccount*\>.table.core.windows.net/\<*TableName\*\>
 
 Wie die Abbildung zeigt, ist jede Tabelle in mehrere Partitionen aufgeteilt, die jeweils auf einem separaten Computer gespeichert werden können. (Dies ist wie bei einem SQL-Verbund eine Art von Sharding.) Sowohl Azure-Anwendungen als auch Anwendungen, die an anderen Orten ausgeführt werden, können entweder über das RESTful OData-Protokoll oder über die Azure Storage Client-Bibliothek auf eine Tabelle zugreifen.
 
@@ -177,7 +177,6 @@ Da generell gesehen alle Arten von Daten wichtig sind, enthält Azure verschiede
   [Hadoop]: #hadoop
   [Abbildung 1]: #Fig1
   [Diagramm von Blobs]: ./media/cloud-storage/Data_01_Blobs.png
-  [http://\<\*StorageAccount]: http://<*StorageAccount
   [Abbildung 2]: #Fig2
   [Diagramm von SQL Server auf einem virtuellen Computer]: ./media/cloud-storage/Data_02_SQLSvrVM.png
   [Abbildung 3]: #Fig3

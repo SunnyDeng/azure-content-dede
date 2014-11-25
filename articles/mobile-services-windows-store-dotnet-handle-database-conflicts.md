@@ -327,9 +327,9 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 -   [Erste Schritte mit Pushbenachrichtigungen]
     <br/>Verschicken Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App.
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
+
 
   [Aktualisieren der Anwendung, um Änderungen zu ermöglichen]: #uiupdate
   [Aktivieren der Konflikterkennung in Ihrer Anwendung]: #enableOC
@@ -344,7 +344,7 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
   [Optimieren von Abfragen mittels Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-dotnet
   [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-dotnet
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-dotnet
-<!-- Images. -->
+
 [0]: ./media/mobile-services-windows-store-dotnet-handle-database-conflicts/Mobile-oc-store-create-app-package1.png
 [1]: ./media/mobile-services-windows-store-dotnet-handle-database-conflicts/Mobile-oc-store-create-app-package2.png
 [2]: ./media/mobile-services-windows-store-dotnet-handle-database-conflicts/Mobile-oc-store-app1.png 

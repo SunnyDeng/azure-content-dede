@@ -434,7 +434,7 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 -   Autorisieren von Benutzern mit Skripts ([Xamarin.iOS][16]/[Xamarin.Android][17])
     Erfahren Sie, wie Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern.
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
   [Xamarin]: /de-de/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
   [Xamarin.iOS]: /de-de/develop/mobile/tutorials/get-started-xamarin-ios/
@@ -461,7 +461,6 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
   [Gewusst wie: Arbeiten mit nicht typisierten Daten]: #untyped
   [Gewusst wie: Design von Komponententests]: #unit-testing
   [Nächste Schritte]: #nextsteps
-  [mobile-services-concepts]: ../includes/mobile-services-concepts.md
   [Erstellen einer Tabelle]: http://go.microsoft.com/fwlink/?LinkId=298592
   [Dynamisches Schema]: http://go.microsoft.com/fwlink/?LinkId=296271
   [GetTable]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554275.aspx

@@ -120,9 +120,9 @@ Ersetzen Sie dies durch den folgenden Code:
             @"deviceToken" : delegate.deviceToken
         };
 
-    This adds a reference to the **QSAppDelegate** to obtain the device token and then modifies the request payload to include that device token.
+   Auf diese Weise wird ein Verweis auf **QSAppDelegate** hinzugefügt, um das Gerätetoken abzurufen und dann die Anforderungsnutzlast so zu ändern, dass dieses Gerätetoken enthalten ist.
 
-    > [WACOM.NOTE] You must add this code before to the call to the <strong>addItem</strong> method.
+   > [WACOM.NOTE] Dieser Code muss vor dem Aufruf der <strong>addItem</strong>-Methode hinzugefügt werden.
 
 Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
@@ -197,8 +197,6 @@ In diesem einfachen Beispiel empfängt ein Benutzer eine Benachrichtigung mit de
   [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
   [Xcode 4.5]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-ios
-  [Enable Apple Push Notifications]: ../includes/enable-apple-push-notifications.md
-  [mobile-services-apns-configure-push]: ../includes/mobile-services-apns-configure-push.md
   [0]: ./media/mobile-services-ios-get-started-push/mobile-portal-data-tables.png
   [1]: ./media/mobile-services-ios-get-started-push/mobile-insert-script-push2.png
   [apns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=272333

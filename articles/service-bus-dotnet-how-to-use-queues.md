@@ -293,7 +293,5 @@ vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
     Bus-Brokermessaging].
 
   [Nächste Schritte]: #next-steps
-  [create-account-note]: ../includes/create-account-note.md
-  [howto-service-bus-queues]: ../includes/howto-service-bus-queues.md
   [0]: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
   [Warteschlangen, Themen und Abonnements.]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx

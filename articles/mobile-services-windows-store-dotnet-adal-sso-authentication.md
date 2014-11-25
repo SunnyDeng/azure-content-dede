@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-sso-with-adal" urlDisplayName="Active Directory SSO Authentication with ADAL" pageTitle="Authenticate your app with Active Directory Authentication Library Single Sign-On (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to authentication users for single sign-on with ADAL in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Authenticate your app with Active Directory Authentication Library Single Sign-On" authors="wesmc" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="wesmc" />
 
 # Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden
 
@@ -177,11 +177,8 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 
     ![][13]
 
-<!-- Anchors. --> <!-- Images --> <!-- URLs. -->
+ <!-- Images --> 
 
-  [Windows Store C\#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication "Windows Store C#"
-  [iOS]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication "iOS"
-  [Xamarin.iOS]: /de-de/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-adal-sso-authentication "Xamarin.iOS"
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
   [Registrieren Ihres mobilen Diensts beim Azure Active Directory]: #register-mobile-service-aad
   [Registrieren Ihre App beim Azure Active Directory]: #register-app-aad
@@ -189,7 +186,6 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
   [Hinzufügen des Authentifizierungscodes zur Client-App]: #add-authentication-code
   [Testen des Clients mit Authentifizierung]: #test-client
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
-  [mobile-services-dotnet-adal-register-service]: ../includes/mobile-services-dotnet-adal-register-service.md
   [0]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-vs-associate-app.png
   [1]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-vs-reserve-store-appname.png
   [Windows Dev Center-Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734
@@ -204,8 +200,6 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
   [9]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-sid-redirect-uri.png
   [10]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-client-id.png
   [11]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-add-permissions.png
-  [mobile-services-restrict-permissions-dotnet-backend]: ../includes/mobile-services-restrict-permissions-dotnet-backend.md
-  [mobile-services-dotnet-adal-install-nuget]: ../includes/mobile-services-dotnet-adal-install-nuget.md
   [Registrieren in Azure Active Directory]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
   [12]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-package-appxmanifest.png
   [13]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-app-run.png

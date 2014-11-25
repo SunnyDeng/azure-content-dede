@@ -131,5 +131,4 @@ Besuchen Sie "blitline.com", um Informationen zu allen anderen Funktionen zu erh
   [Speichern eines Bilds in Azure Storage]: #saveazure
   [Nächste Schritte]: #nextsteps
   []: http://www.blitline.com
-  [blitline-signup]: ../includes/blitline-signup.md
   [hier]: http://www.blitline.com/docs/azure_storage

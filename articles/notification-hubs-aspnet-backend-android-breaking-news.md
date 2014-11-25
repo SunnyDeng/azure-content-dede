@@ -292,7 +292,7 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 
     Hier erfahren Sie, wie Sie Pushbenachrichtigungen an bestimmte authentifizierte Benutzer versenden. Dies ist eine gute Möglichkeit, um Benachrichtigungen nur an bestimmte Benutzer zu versenden.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs.-->
+  <!-- URLs.-->
 
   [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
   [Hinzufügen der Kategorieauswahl zur App]: #adding-categories
@@ -301,6 +301,5 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
   [Ausführen der Anwendung und Erzeugen von Benachrichtigungen]: #test-app
   [Erste Schritte mit Notification Hubs]: /de-de/documentation/articles/notification-hubs-android-get-started/
   [0]: ./media/notification-hubs-aspnet-backend-android-breaking-news/android-breaking-news1.PNG
-  [notification-hubs-back-end]: ../includes/notification-hubs-back-end.md
   [Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/
   [Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users

@@ -46,8 +46,8 @@ Nachdem Sie beide Lernprogramm abgeschlossen haben, können Sie verhindern, dass
 
 [WACOM.INCLUDE [mobile-services-ios-push-notifications-app-users-test-app](../includes/mobile-services-ios-push-notifications-app-users-test-app.md)]
 
-<!-- Anchors. --> 
-<!-- URLs. -->
+ 
+
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users "Windows Store C#"
 [Windows Store JavaScript]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-push-notifications-app-users "Windows Store JavaScript"

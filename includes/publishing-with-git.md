@@ -91,7 +91,7 @@ Führen Sie die folgenden Schritte durch, um ein Git-Repository für Ihre Websit
 
 7.  Wenn Sie zum ersten Mal ein Repository in Azure einrichten, müssen Sie dafür Anmeldeinformationen erstellen. Sie verwenden diese, um eine Anmeldung beim Azure-Repository vorzunehmen und Änderungen aus Ihrem lokalen Git-Repository mithilfe von Push zu übertragen.
 
-    ![][]
+    ![][0]
 
 8.  Nach einer kurzen Verzögerung wird die Meldung angezeigt, dass Ihr Repository bereit ist.
 
@@ -324,7 +324,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
   [Azure-Portal]: http://manage.windowsazure.com
   [Ein Bild, das eine ausgewählte Website anzeigt]: ./media/publishing-with-git/git-select-website.png
   [Git-WhereIsYourSourceCode]: ./media/publishing-with-git/git-WhereIsYourSourceCode.png
-  []: ./media/publishing-with-git/git_credentials.png
+  [0]: ./media/publishing-with-git/git_credentials.png
   [Git-Anweisungen]: ./media/publishing-with-git/git-instructions.png
   [Eine Webseite mit "Hallo Git!"]: ./media/publishing-with-git/git-hello-git.png
   [Eine Webseite mit "Juhu"]: ./media/publishing-with-git/git-yay.png

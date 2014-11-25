@@ -26,7 +26,7 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-dotnet-get-started-data%2F).
+* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-dotnet-get-started-data%2F).
 * <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio Professional 2013</a> (Update 3 oder eine höhere Version).<br/>Dazu ist eine kostenlose Testversion verfügbar.
 
 ## <a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts
@@ -99,9 +99,8 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 * [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
 <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-  [mobile-services-selector-get-started-data]: ../includes/mobile-services-selector-get-started-data.md
-  [Erste Schritte mit Daten für Windows Phone]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
-  [dieser Version]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
+  [Erste Schritte mit Daten für Windows Phone]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
+  [dieser Version]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
   [Herunterladen des Windows Store-App-Projekts]: #download-app
   [Erstellen eines mobilen Diensts in Visual Studio]: #create-service
   [Lokales Testen des mobilen Dienstprojekts]: #test-the-service-locally
@@ -109,18 +108,9 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   [Veröffentlichen des mobilen Diensts in Azure]: #publish-mobile-service
   [Testen der App mit dem in Azure gehosteten Dienst]: #test-azure-hosted
   [Anzeigen der in der SQL-Datenbank gespeicherten Daten]: #view-stored-data
-  [Kostenlose Azure-Testversion]: http://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-dotnet-get-started-data%2F
-  [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=391934
-  [mobile-services-windows-universal-dotnet-download-project]: ../includes/mobile-services-windows-universal-dotnet-download-project.md
-  [mobile-services-dotnet-backend-create-new-service-vs2013]: ../includes/mobile-services-dotnet-backend-create-new-service-vs2013.md
-  [MobileServiceClient-Klasse]: http://go.microsoft.com/fwlink/p/?LinkId=302030
-  [mobile-services-dotnet-backend-test-local-service-api-documentation]: ../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md
-  [mobile-services-windows-dotnet-update-data-app]: ../includes/mobile-services-windows-dotnet-update-data-app.md
-  [mobile-services-dotnet-backend-publish-service]: ../includes/mobile-services-dotnet-backend-publish-service.md
-  [mobile-services-windows-universal-test-app]: ../includes/mobile-services-windows-universal-test-app.md
-  [mobile-services-dotnet-backend-view-sql-data]: ../includes/mobile-services-dotnet-backend-view-sql-data.md
-  [Prüfen und Ändern von Daten mit Skripten]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
-  [Optimieren von Abfragen mittels Paging]: /en-us/develop/mobile/tutorials/add-paging-to-data-dotnet
-  [Erste Schritte mit der Authentifizierung]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/
-  [Erste Schritte mit Pushbenachrichtigungen]: /en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
-  [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /en-us/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+  [Kostenlose Azure-Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-dotnet-get-started-data%2F
+  [Prüfen und Ändern von Daten mit Skripten]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
+  [Optimieren von Abfragen mittels Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-dotnet
+  [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/
+  [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
+  [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/

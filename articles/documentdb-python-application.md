@@ -1,6 +1,6 @@
 <properties title="Build a web application with Python and Flask (MVC) using DocumentDB" pageTitle="Build a web app with Python and Flask using DocumentDB | Azure" description="Learn how to use DocumentDB to store and access data from an Python and Flask (MVC) web application hosted on Azure."  metaKeywords="NoSQL, DocumentDB,  database, document-orientated database, JSON, account" services="documentdb"  solutions="data-management" documentationCenter=""  authors="hawong" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="hawong"></tags>
+<tags ms.service="documentdb" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="hawong" />
 
 # <a name="_Toc395888515"></a><a name="_Toc395809324">Erstellen einer Webanwendung mit Python und Flask (MVC) mithilfe von DocumentDB</a>
 
@@ -33,23 +33,24 @@ Sie erhalten Informationen zu folgenden Themen:
 Im Verlauf dieser Anleitung erstellen Sie eine einfache
 Wahlanwendung, über die Sie für eine Wahl abstimmen können.
 
-![Alt text][]
+![Alt text][Alt text]
 
 <a name="_Toc395888520"></a><a name="_Toc395809329">Voraussetzungen</a>
 
 Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen,
 dass Folgendes installiert ist:
 
-Visual Studio 2013 (oder [Visual Studio Express][], die kostenlose
+Visual Studio 2013 (oder [Visual Studio Express][Visual Studio Express], die kostenlose
 Version)
 
-Python Tools für Visual Studio ([hier][] erhältlich)
+Python Tools für Visual Studio ([hier][hier] erhältlich)
 
 Azure SDK für Visual Studio 2013, Version 2.4 oder höher
 ([hier][1] erhältlich)
 
 Plattformübergreifende Azure-Befehlszeilentools, verfügbar über den [Microsoft
-Webplattform-Installer][]
+Webplattform-Installer][Microsoft
+Webplattform-Installer]
 
 # <a name="_Toc395888519"></a><a name="_Toc395809328">Erstellen eines DocumentDB-Datenbankkontos</a>
 
@@ -110,7 +111,7 @@ Installieren in einer virtuellen Umgebung, und klicken Sie dann auf "Erstellen".
 Python-Umgebung für das Projekt eingerichtet.
 
 Bei Flask handelt es sich um ein Webframework, das uns beim schnelleren
-Erstellen von Webanwendungen in Python unterstützt. [Klicken Sie hier, um Flask-Lernprogramme zu öffnen][].
+Erstellen von Webanwendungen in Python unterstützt. [Klicken Sie hier, um Flask-Lernprogramme zu öffnen][Klicken Sie hier, um Flask-Lernprogramme zu öffnen].
 
 ![Alt text][10]
 
@@ -443,10 +444,9 @@ Python-Tools und -Pakete installieren)
 </h1>
 
   [Alt text]: ./media/documentdb-python-application/image1.png
-  [Visual Studio Express]: http://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx
+  [Visual Studio Express]: http://www.visualstudio.com/de-de/products/visual-studio-express-vs.aspx
   [hier]: https://pytools.codeplex.com/releases/view/123624
   [1]: http://go.microsoft.com/fwlink/?linkid=254281&clcid=0x409
-  [Microsoft Webplattform-Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [2]: ./media/documentdb-python-application/image2.png
   [3]: ./media/documentdb-python-application/image3.png
   [4]: ./media/documentdb-python-application/image4.png

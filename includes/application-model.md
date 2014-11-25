@@ -419,8 +419,6 @@ Konfigurieren Ihrer Rollen finden Sie im Artikel [Bereitstellen und Aktualisiere
   [3]: ./media/application-model/application-model-6.jpg
   [4]: ./media/application-model/application-model-7.jpg
   [Azure-Preisübersicht]: http://www.windowsazure.com/de-de/pricing/calculator/
-  [Verwalten
-  von Zertifikaten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg981929.aspx
   []: http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx
   [5]: http://msdn.microsoft.com/de-de/library/hh560567.aspx
   [Managing Upgrades to the Azure Guests OS]: http://msdn.microsoft.com/de-de/library/ee924680.aspx

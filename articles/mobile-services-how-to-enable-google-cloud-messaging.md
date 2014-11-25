@@ -10,9 +10,9 @@ Dieses Thema zeigt, wie Sie die Android-App bereit machen für Pushbenachrichtig
 
 Jetzt können Sie diesen API-Schlüsselwert verwenden, um Dienste für die Authentifizierung mit GCM zu aktivieren und Pushbenachrichtigungen im Auftrag Ihrer App zu senden.
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
+
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push/

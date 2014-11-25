@@ -49,8 +49,6 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Windows Sto
   [Definieren der benutzerdefinierten API]: #define-custom-api
   [Aktualisieren der App zum Aufruf der benutzerdefinierten API]: #update-app
   [Testen der App]: #test-app
-  [mobile-services-dotnet-backend-create-custom-api]: ../includes/mobile-services-dotnet-backend-create-custom-api.md
-  [mobile-services-windows-store-javascript-call-custom-api]: ../includes/mobile-services-windows-store-javascript-call-custom-api.md
   [Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen]: /de-de/documentation/articles/mobile-services-windows-store-javascript-create-pull-notifications
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
   [Speichern von Serverskripts in der Quellcodeverwaltung]: /de-de/documentation/articles/mobile-services-store-scripts-source-control

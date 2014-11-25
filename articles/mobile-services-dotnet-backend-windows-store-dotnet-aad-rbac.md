@@ -285,9 +285,9 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 
 [WACOM.INCLUDE [mobile-services-aad-rbac-test-app](../includes/mobile-services-aad-rbac-test-app.md)]
 
-<!-- Anchors. --> 
+ 
 <!-- Images --> 
-<!-- URLs. -->
+
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-aad-rbac/ "Windows Store C#"
 [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-aad-rbac/ ".NET-Backend"

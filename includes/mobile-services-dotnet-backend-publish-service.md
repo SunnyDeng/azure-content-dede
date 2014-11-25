@@ -2,7 +2,7 @@ Nachdem Sie die Client-App anhand des lokalen mobilen Diensts getestet haben, be
 
 1.  Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Projekt für den mobilen Dienst, klicken Sie auf **Veröffentlichen**, und klicken Sie dann im Dialogfeld **Web veröffentlichen** auf **Azure Mobile Services**.
 
-    ![][]
+    ![][0]
 
 2.  Melden Sie sich mit IHren Anmeldeinformationen bei Ihrem Azure-Konto an, wählen Sie Ihren Dienst in **Vorhandene Mobile Services** aus, und klicken Sie auf **OK**.
 
@@ -18,6 +18,6 @@ Nachdem Sie die Client-App anhand des lokalen mobilen Diensts getestet haben, be
 
     Nachdem die Veröffentlichung erfolgreich durchgeführt wurde, wird erneut die Seite zur Bestätigung angezeigt, dass der Dienst ausgeführt wird, diesmal in Azure.
 
-  []: ./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish.png
+  [0]: ./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish.png
   [1]: ./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-select-service.png
   [2]: ./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-2.png

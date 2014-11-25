@@ -1,6 +1,6 @@
-<properties urlDisplayName="How to monitor" pageTitle="&Uuml;berwachen eines Cloud-Diensts &ndash; Azure" metaKeywords="Azure monitoring cloud services, Azure Management Portal cloud services" description="Hier erfahren Sie mehr &uuml;ber die &Uuml;berwachung von Cloud-Diensten im Azure-Verwaltungsportal." metaCanonical="" services="cloud-services" documentationCenter="" title="&Uuml;berwachung von Cloud-Diensten" authors="ryanwi" solutions="" manager="timlt" editor="" />
+<properties linkid="manage-services-how-to-monitor-a-cloud-service" urlDisplayName="How to monitor" pageTitle="How to monitor a cloud service - Azure" metaKeywords="Azure monitoring cloud services, Azure Management Portal cloud services" description="Learn how to monitor cloud services by using the Azure Management Portal." metaCanonical="" services="cloud-services" documentationCenter="" title="How to Monitor Cloud Services" authors="ryanwi" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/23/2014" ms.author="ryanwi" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="ryanwi" />
 
 # Überwachung von Cloud-Diensten
 
@@ -24,7 +24,7 @@ Die Überwachungsanzeigen im Verwaltungsportal können ausführlich konfiguriert
 Standardmäßig werden neue Cloud-Dienste mit minimaler Überwachung eingerichtet. Dabei werden Leistungsindikatoren des Hostbetriebssystems für die Rolleninstanzen (virtuelle Computer) gesammelt. Die minimalen Metriken beschränken sich auf CPU-Auslastung, Dateneingang, Datenausgang, Lese- und Schreibdurchsatz von Laufwerken. Mit der ausführlichen Überwachung erhalten Sie zusätzliche Metriken auf Basis von Leistungsdaten der einzelnen virtuellen Computer (Rolleninstanzen). Die ausführliche Überwachung ermöglicht eine genauere Analyse von Problemen beim Betrieb von Anwendungen.
 
 > [WACOM.NOTE]
-> Wenn Sie ausführliche Überwachung verwenden, können Sie weitere Leistungsindikatoren beim Start der Rolleninstanz in Form einer Diagnose-Konfigurationsdatei hinzufügen. Um diese Metriken im Verwaltungsportal überwachen zu können, müssen Sie die Leistungsindikatoren hinzufügen, bevor Sie die ausführliche Überwachung aktivieren. Weitere Informationen erhalten Sie unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines][Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines].
+> Wenn Sie ausführliche Überwachung verwenden, können Sie weitere Leistungsindikatoren beim Start der Rolleninstanz entweder in Form einer Diagnose-Konfigurationsdatei oder per Fernsteuerung über die Azure Diagnostics API hinzufügen. Um diese Metriken im Verwaltungsportal überwachen zu können, müssen Sie die Leistungsindikatoren hinzufügen, bevor Sie die ausführliche Überwachung aktivieren. Weitere Informationen finden Sie unter [Sammeln von Protokollierungsdaten mit der Azure-Diagnose][Sammeln von Protokollierungsdaten mit der Azure-Diagnose] und [Erstellen und Verwenden von Leistungsindikatoren in einer Azure-Anwendung][Erstellen und Verwenden von Leistungsindikatoren in einer Azure-Anwendung].
 
 Die Daten der Leistungsindikatoren aus Rolleninstanzen werden standardmäßig alle 3 Minuten von der Rolleninstanz gemessen und übertragen. Bei der ausführlichen Überwachung werden die Leistungsindikatorendaten für die einzelnen Rolleninstanzen und rolleninstanzübergreifend für die einzelnen Rollen in Intervallen von 5 Minuten, 1 Stunde und 12 Stunden aggregiert. Die aggregierten Daten werden nach 10 Tagen gelöscht.
 
@@ -36,12 +36,12 @@ Beachten Sie, dass bei der ausführlichen Überwachung Ihre Speicherkosten für 
 
 Führen Sie die folgenden Schritte aus, um im Verwaltungsportal ausführliche oder minimale Überwachung zu konfigurieren. Bevor Sie die ausführliche Überwachung aktivieren können, müssen Sie die Azure-Diagnose aktivieren und die Diagnose-Verbindungszeichenfolgen konfigurieren, sodass die Azure-Diagnose Zugriff auf die Speicherkonten hat, um die Daten dort speichern zu können.
 
-### Voraussetzungen
+### Vorbemerkungen
 
 -   Erstellen Sie ein Speicherkonto zum Speichern der Überwachungsdaten. Sie können unterschiedliche Speicherkonten für unterschiedliche Rollen verwenden. Weitere Informationen finden Sie in der Hilfe zu **Speicherkonten** oder unter [How To Create a Storage Account][How To Create a Storage Account] (Erstellen eines Speicherkontos, in englischer Sprache).
 
 -   Aktivieren Sie die Azure-Diagnose für Ihre Cloud-Dienstrollen.
-    Weitere Informationen erhalten Sie unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines][1].
+    Sie müssen die Cloud-Dienst-Definitionsdatei (CSDEF) und die Cloud-Dienst-Konfigurationsdatei (CSCFG) ändern. Weitere Informationen finden Sie unter [Configuring Azure Diagnostics][Configuring Azure Diagnostics] (Konfigurieren von Azure-Diagnose, in englischer Sprache).
 
 Im Verwaltungsportal können Sie die Diagnose-Verbindungszeichenfolgen hinzufügen oder bearbeiten, die von der Azure-Diagnose für den Zugriff auf die Speicherkonten für ausführliche Überwachungsdaten verwendet werden. Außerdem können Sie die Überwachungsstufe auf ausführlich oder minimal stellen. Da die Daten bei der ausführlichen Überwachung in einem Speicherkonto gespeichert werden, müssen Sie die Diagnose-Verbindungszeichenfolgen konfigurieren, bevor Sie die Überwachungsstufe auf ausführlich stellen.
 
@@ -107,12 +107,10 @@ Sie können Warnungen auf Basis der Überwachungsmetriken Ihrer Cloud-Dienste em
 
     Sie können bis zu 50 Metriken in der Metrikentabelle anzeigen.
 
-    <div class="dev-callout">
-
-    **Hinweis**
-    Bei der ausführlichen Überwachung kann die Metrikenliste Dutzende von Metriken enthalten. Zeigen Sie mit der Maus auf den rechten Rand des Dialogfelds, um eine Bildlaufleiste anzuzeigen. Um die Liste zu filtern, klicken Sie auf das Suchsymbol und geben Sie Text in das Suchfeld ein, wie unten gezeigt.
-
-    </div>
+    <div class="dev-callout"> 
+<b>Hinweis</b> 
+<p>Bei der ausf&uuml;hrlichen &Uuml;berwachung kann die Metrikenliste Dutzende von Metriken enthalten. Zeigen Sie mit der Maus auf den rechten Rand des Dialogfelds, um eine Bildlaufleiste anzuzeigen. Um die Liste zu filtern, klicken Sie auf das Suchsymbol und geben Sie Text in das Suchfeld ein, wie unten gezeigt.</p> 
+</div>
 
     ![Suche zum Hinzufügen von Metriken][Suche zum Hinzufügen von Metriken]
 
@@ -175,7 +173,6 @@ Hinweis:
 Die folgenden Tabellen speichern z. B. ausführliche Überwachungsdaten aggregiert in 1-stündige Intervalle:
 
     WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRTable (hourly aggregations for the role)
-
     WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRITable (hourly aggregations for role instances)
 
   [Konzepte]: #concepts
@@ -184,11 +181,12 @@ Die folgenden Tabellen speichern z. B. ausführliche Überwachungsdaten aggregie
   [Gewusst wie: Hinzufügen von Metriken zur Metrikentabelle]: #addmetrics
   [Gewusst wie: Anpassen des Metrikendiagramms]: #customizechart
   [Gewusst wie: Zugreifen auf ausführliche Überwachungsdaten außerhalb des Verwaltungsportals]: #accessverbose
-  [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines]: http://azure.microsoft.com/de-de/documentation/articles/cloud-services-dotnet-diagnostics/
+  [Sammeln von Protokollierungsdaten mit der Azure-Diagnose]: http://msdn.microsoft.com/de-de/library/gg433048.aspx
+  [Erstellen und Verwenden von Leistungsindikatoren in einer Azure-Anwendung]: http://msdn.microsoft.com/de-de/library/hh411542.aspx
   [How To Create a Storage Account]: /de-de/manage/services/storage/how-to-create-a-storage-account/
-  [1]: /de-de/documentation/articles/cloud-services-dotnet-diagnostics/
+  [Configuring Azure Diagnostics]: http://msdn.microsoft.com/de-de/library/windowsazure/dn186185.aspx
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  [How to Manage Cloud Services]: /de-de/documentation/articles/cloud-services-how-to-manage/
+  [How to Manage Cloud Services]: http://www.windowsazure.com/de-de/manage/services/cloud-services/how-to-manage-a-cloud-service/
   [Überwachungsoptionen]: ./media/cloud-services-how-to-monitor/CloudServices_MonitoringOptions.png
   [Gewusst wie: Empfangen von Warnungs-Benachrichtigungen und Verwaltung von Alarmregeln in Azure]: http://go.microsoft.com/fwlink/?LinkId=309356
   [Verwaltungsportal]: http://manage.windowsazure.com/

@@ -21,6 +21,6 @@
 
 
 
-<!-- URLs. -->
+
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 

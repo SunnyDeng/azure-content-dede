@@ -1,10 +1,10 @@
 <properties linkid="develop-net-tutorials-multi-tier-web-site-2-download-and-run" pageTitle="Azure Cloud Service Tutorial: ASP.NET MVC Web Role, Worker Role, Azure Storage Tables, Queues, and Blobs" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="Learn how to create a multi-tier app using ASP.NET MVC and Azure. The app runs in a cloud service, with web role and worker roles, and uses Azure storage tables, queues, and blobs." metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure Cloud Service Tutorial: ASP.NET MVC Web Role, Worker Role, Azure Storage Tables, Queues, and Blobs" authors="riande,tdykstra" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="cloud-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="riande,tdykstra"></tags>
+<tags ms.service="cloud-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="riande,tdykstra" />
 
 # Konfigurieren und Bereitstellen der Azure-E-Mail-Dienstanwendung - 2 von 5
 
-Dies ist das zweite von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Dienstanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie][].
+Dies ist das zweite von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Dienstanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie][ersten Lernprogramm der Serie].
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -17,23 +17,23 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 ### Teile des Lernprogramms
 
--   [Einrichten der Entwicklungsumgebung][]
--   [Herunterladen und Ausführen der abgeschlossenen Lösung][]
--   [Anzeigen des Entwicklungsspeichers in Visual Studio][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen von Cloud-Diensten][]
--   [Konfigurieren der Anwendung für den Azure-Speicher][]
--   [Konfigurieren der Anwendung für SendGrid][]
--   [Bereitstellen der Anwendung in Azure][]
--   [Überführen der Anwendung von Staging zu Produktion][]
--   [Konfigurieren von Ablaufverfolgung und Anzeigen der Ablaufverfolgungsdaten][]
--   [Hinzufügen einer weiteren Workerrolle für zusätzliche Lastanforderungen][]
+-   [Einrichten der Entwicklungsumgebung][Einrichten der Entwicklungsumgebung]
+-   [Herunterladen und Ausführen der abgeschlossenen Lösung][Herunterladen und Ausführen der abgeschlossenen Lösung]
+-   [Anzeigen des Entwicklungsspeichers in Visual Studio][Anzeigen des Entwicklungsspeichers in Visual Studio]
+-   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
+-   [Erstellen von Cloud-Diensten][Erstellen von Cloud-Diensten]
+-   [Konfigurieren der Anwendung für den Azure-Speicher][Konfigurieren der Anwendung für den Azure-Speicher]
+-   [Konfigurieren der Anwendung für SendGrid][Konfigurieren der Anwendung für SendGrid]
+-   [Bereitstellen der Anwendung in Azure][Bereitstellen der Anwendung in Azure]
+-   [Überführen der Anwendung von Staging zu Produktion][Überführen der Anwendung von Staging zu Produktion]
+-   [Konfigurieren von Ablaufverfolgung und Anzeigen der Ablaufverfolgungsdaten][Konfigurieren von Ablaufverfolgung und Anzeigen der Ablaufverfolgungsdaten]
+-   [Hinzufügen einer weiteren Workerrolle für zusätzliche Lastanforderungen][Hinzufügen einer weiteren Workerrolle für zusätzliche Lastanforderungen]
 
-[WACOM.INCLUDE [install-sdk-2013-only][]]
+[WACOM.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
 
 ## <a name="downloadcnfg"></a><span class="short-header">Herunterladen und Ausführen</span>Herunterladen und Ausführen der abgeschlossenen Lösung
 
-1.  Laden Sie die [abgeschlossene Lösung][] herunter und entzippen Sie das Archiv.
+1.  Laden Sie die [abgeschlossene Lösung][abgeschlossene Lösung] herunter und entzippen Sie das Archiv.
 
 2.  Starten Sie Visual Studio.
 
@@ -53,7 +53,7 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
     (Die Screenshots zeigen den Webseitenstil aus Visual Studio 2012-Projektvorlagen. Der Inhalt ist jedoch in Visual Studio 2013 derselbe.)
 
-    ![Ausführen der Anwendung.][]
+    ![Ausführen der Anwendung.][Ausführen der Anwendung.]
 
 8.  Klicken Sie auf **Neu erstellen**.
 
@@ -63,19 +63,19 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 10. Erstellen Sie einige Mailinglisten-Einträge.
 
-    ![Indexseite Adressenliste][]
+    ![Indexseite Adressenliste][Indexseite Adressenliste]
 
 11. Klicken Sie auf **Subscribers** und fügen Sie einige Abonnenten hinzu. Setzen Sie den Wert von **Verified** auf `true`.
 
-    ![Indexseite Empfänger][]
+    ![Indexseite Empfänger][Indexseite Empfänger]
 
 12. Bereiten Sie den Nachrichtenversand vor, indem Sie eine *.txt*-Datei mit dem Text einer zu verschickenden E-Mail erstellen. Erstellen Sie anschließend eine *.htm* mit demselben Text und zusätzlichem HTML-Code (Markieren Sie z. B. einige Worte als fett oder kursiv). Sie werden diese Dateien im nächsten Schritt verwenden.
 
 13. Klicken Sie auf **Messages** und fügen Sie Nachrichten hinzu. Wählen Sie die im vorherigen Schritt erstellten Dateien aus. Der Standardwert für das Versanddatum ist eine Woche in der Zukunft. Ändern Sie dieses Datum nicht. Die Anwendung kann erst dann Nachrichten verschicken, wenn Sie SendGrid konfiguriert haben.
 
-    ![Seite Nachricht erstellen][]
+    ![Seite Nachricht erstellen][Seite Nachricht erstellen]
 
-    ![Indexseite Nachrichten][]
+    ![Indexseite Nachrichten][Indexseite Nachrichten]
 
     Die Daten, die Sie eingegeben und angezeigt haben, werden vom Azure-Speicheremulator verwaltet. Der Speicheremulator verwendet eine lokale SQL Server Express LocalDB-Datenbank, um die Funktionsweise des Azure-Speichers in der Cloud zu emulieren. Die Anwendung verwendet den Speicheremulator, da das Projekt beim Herunterladen so vorkonfiguriert war. Diese Einstellung befindet sich in den *.cscfg*-Dateien im **AzureEmailService**-Projekt. Die *ServiceConfiguration.Local.cscfg*-Datei enthält Einstellungen für die lokale Ausführung in Visual Studio, und die *ServiceConfiguration.Cloud.cscfg*-Datei enthält Einstellungen für die Bereitstellung der Anwendung in der Cloud. Später werden Sie lernen, wie Sie die Anwendung für ein Azure-Speicherkonto konfigurieren können.
 
@@ -93,29 +93,29 @@ Der **Azure-Speicher**-Browser im **Server-Explorer** bietet eine praktische Mö
 
 3.  Erweitern Sie **Tabellen**, um die in den vorherigen Schritten erstellten Tabellen anzuzeigen.
 
-    ![Server-Explorer][]
+    ![Server-Explorer][Server-Explorer]
 
 4.  Doppelklicken Sie auf die Tabelle **MailingList**.
 
-    ![VS-Speicher-Explorer][]
+    ![VS-Speicher-Explorer][VS-Speicher-Explorer]
 
     Beachten Sie, dass das Fenster die verschiedenen Schemata der Tabelle anzeigt. `MailingList`-Entitäten haben `Description`- und `FromEmailAddress`-Eigenschaften, und `Subscriber`-Entitäten haben die `Verified`-Eigenschaft (plus `SubscriberGUID`, die nicht angezeigt wird, da das Bild nicht breit genug ist). Die Tabelle enthält Spalten für all diese Eigenschaften, und wenn die Entität in einer gegebenen Tabellenzeile keine solche Eigenschaft hat, dann ist das entsprechende Feld leer.
 
-Alternativ können Sie für die Arbeit mit Azure-Speicherressourcen auch den [Azure-Speicher-Explorer][] verwenden.
+Alternativ können Sie für die Arbeit mit Azure-Speicherressourcen auch den [Azure-Speicher-Explorer][Azure-Speicher-Explorer] verwenden.
 
 ## <a name="createWASA"></a>Erstellen eines Azure-Speicherkontos
 
 Bei der Ausführung der Beispielanwendung in Visual Studio haben Sie Zugriff auf Tabellen, Warteschlangen und Blobs im Azure-Speicheremulator oder in einem Azure-Speicherkonto in der Cloud. In diesem Abschnitt des Lernprogramms erstellen Sie das Azure-Speicherkonto, das Sie später im Lernprogramm in Visual Studio konfigurieren.
 
-1.  Öffnen Sie das [Azure-Verwaltungsportal][] in Ihrem Browser.
+1.  Öffnen Sie das [Azure-Verwaltungsportal][Azure-Verwaltungsportal] in Ihrem Browser.
 
-2.  Klicken Sie im [Azure-Verwaltungsportal][] auf **Speicher** und dann auf **Neu**.
+2.  Klicken Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] auf **Speicher** und dann auf **Neu**.
 
-![Neuer Speicher][]
+![Neuer Speicher][Neuer Speicher]
 
 1.  Klicken Sie auf **Schnellerfassung**.
 
-![Schnellerfassung][]
+![Schnellerfassung][Schnellerfassung]
 
 1.  Geben Sie ein URL-Präfix in das URL-Eingabefeld ein.
 
@@ -125,21 +125,21 @@ Bei der Ausführung der Beispielanwendung in Visual Studio haben Sie Zugriff auf
 
 3.  Wählen Sie in der Dropdownliste **Replikation** den Wert **Lokal redundant** aus.
 
-    Wenn Georeplikation für ein Speicherkonto aktiviert ist, werden dessen Inhalte an einen zweiten Ort repliziert, um im Katastrophenfall eine Failover-Instanz an diesem zweiten Standort zur Verfügung zu haben. Für die Georeplikation können zusätzliche Kosten anfallen. Für Test- und Entwicklungskonten macht es wenig Sinn, für Georeplikation zu bezahlen. Weitere Informationen finden Sie unter [How to Manage Storage Accounts][] (Verwalten von Speicherkonten, in englischer Sprache).
+    Wenn Georeplikation für ein Speicherkonto aktiviert ist, werden dessen Inhalte an einen zweiten Ort repliziert, um im Katastrophenfall eine Failover-Instanz an diesem zweiten Standort zur Verfügung zu haben. Für die Georeplikation können zusätzliche Kosten anfallen. Für Test- und Entwicklungskonten macht es wenig Sinn, für Georeplikation zu bezahlen. Weitere Informationen finden Sie unter [How to Manage Storage Accounts][How to Manage Storage Accounts] (Verwalten von Speicherkonten, in englischer Sprache).
 
 4.  Klicken Sie auf **Speicherkonto erstellen**.
 
     In der folgenden Abbildung wird ein Speicherkonto mit der URL `aestest3.core.windows.net` erstellt.
 
-    ![Erstellen des Speichers mit URL-Präfix][]
+    ![Erstellen des Speichers mit URL-Präfix][Erstellen des Speichers mit URL-Präfix]
 
     Dieser Schritt kann mehrere Minuten in Anspruch nehmen. In der Wartezeit können Sie diese Schritte wiederholen und ein Produktions-Speicherkonto erstellen. Es macht Sinn, ein Test-Speicherkonto für die lokale Entwicklung, ein weiteres Testkonto für Tests in Azure und ein Produktions-Speicherkonto zu verwenden.
 
 5.  Klicken Sie auf das zuvor erstellte Testkonto, und klicken Sie auf das Symbol **Zugriffsschlüssel verwalten**.
 
-    ![Schlüssel verwalten][]
+    ![Schlüssel verwalten][Schlüssel verwalten]
 
-    ![Schlüssel-GUID][]
+    ![Schlüssel-GUID][Schlüssel-GUID]
 
     Visual Studio konfiguriert die Verbindungszeichenfolgen automatisch mit einem dieser Schlüssel, wenn Sie das Speicherkonto auswählen. Sie können die Verbindungszeichenfolgen auch manuell bearbeiten.
 
@@ -147,9 +147,9 @@ Bei der Ausführung der Beispielanwendung in Visual Studio haben Sie Zugriff auf
 
 ## <a name="createcloudsvc"></a><span class="short-header">Erstellen eines Cloud-Dienstes</span>Erstellen eines Cloud-Dienstes
 
-1.  Klicken Sie im [Azure-Verwaltungsportal][] auf **Clouddienste** und dann auf das Symbol **Neu**.
+1.  Klicken Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] auf **Clouddienste** und dann auf das Symbol **Neu**.
 
-    ![Schnellerstellung Cloud][]
+    ![Schnellerstellung Cloud][Schnellerstellung Cloud]
 
 2.  Klicken Sie auf **Schnellerfassung**.
 
@@ -161,7 +161,7 @@ Bei der Ausführung der Beispielanwendung in Visual Studio haben Sie Zugriff auf
 
     Sie sollten den Cloud-Dienst in derselben Region erstellen wie Ihr Speicherkonto. Wenn sich Cloud-Dienst und Speicherkonto in unterschiedlichen Datencentern (d. h. unterschiedlichen Regionen) befinden, steigt die Latenz an und Sie müssen für die Bandbreite außerhalb des Datencenters bezahlen. Die Bandbreite innerhalb eines Datencenters ist kostenlos.
 
-    Mit Azure-Affinitätsgruppen können Sie die Distanz zwischen Ressourcen in einem Datencenter und somit die Latenz minimieren. Dieses Lernprogramm verwendet keine Affinitätsgruppen. Anweisungen finden Sie unter [Erstellen einer Affinitätsgruppe in Azure][].
+    Mit Azure-Affinitätsgruppen können Sie die Distanz zwischen Ressourcen in einem Datencenter und somit die Latenz minimieren. Dieses Lernprogramm verwendet keine Affinitätsgruppen. Anweisungen finden Sie unter [Erstellen einer Affinitätsgruppe in Azure][Erstellen einer Affinitätsgruppe in Azure].
 
 5.  Klicken Sie auf **Clouddienst erstellen**.
 
@@ -175,7 +175,7 @@ Sie werden nun die Anwendung konfigurieren, sodass diese bei der Ausführung in 
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **MvcWebRole** unter **Rollen** im Projekt **AzureEmailService**, und klicken Sie auf **Eigenschaften**.
 
-    ![Rechtsklick Eigenschaften][]
+    ![Rechtsklick Eigenschaften][Rechtsklick Eigenschaften]
 
 2.  Klicken Sie im Fenster **MvcWebRole [Role]** auf die Registerkarte **Einstellungen**.
 
@@ -207,7 +207,7 @@ Sie werden nun die Anwendung konfigurieren, sodass diese bei der Ausführung in 
 
     Die `Role`-Elemente für die beiden Workerrollen enthalten jeweils dieselbe Verbindungszeichenfolge.
 
-    Sie können diese Dateien auch direkt bearbeiten, anstatt das Visual Studio-Fenster **[Rolle]** zu verwenden. Weitere Informationen zu den Konfigurationsdateien finden Sie unter [Konfigurieren eines Azure-Projekts][].
+    Sie können diese Dateien auch direkt bearbeiten, anstatt das Visual Studio-Fenster **[Rolle]** zu verwenden. Weitere Informationen zu den Konfigurationsdateien finden Sie unter [Konfigurieren eines Azure-Projekts][Konfigurieren eines Azure-Projekts].
 
 ### Testen Sie die nun zur Verwendung Ihres Speicherkontos konfigurierte Anwendung
 
@@ -225,13 +225,13 @@ Falls Sie den Azure-Speicheremulator nicht verwenden, können Sie den Projektsta
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Cloud-Projekt **AzureEmailService** und wählen Sie **Eigenschaften** aus.
 
-    ![Auswählen der Cloud-Projekt-Eigenschaften][]
+    ![Auswählen der Cloud-Projekt-Eigenschaften][Auswählen der Cloud-Projekt-Eigenschaften]
 
 2.  Öffnen Sie die Registerkarte **Entwicklung**.
 
 3.  Setzen Sie den Wert für **Azure-Speicheremulator starten** auf **Falsch**.
 
-    ![Deaktivieren des automatischen Starts des Azure-Speicheremulators][]
+    ![Deaktivieren des automatischen Starts des Azure-Speicheremulators][Deaktivieren des automatischen Starts des Azure-Speicheremulators]
 
     **Hinweis**: Deaktivieren Sie diese Option nur, wenn Sie den Speicheremulator nicht verwenden.
 
@@ -239,7 +239,7 @@ Falls Sie den Azure-Speicheremulator nicht verwenden, können Sie den Projektsta
 
 4.  Klicken Sie in der Windows-Taskleiste mit der rechten Maustaste auf das Speicheremulatorsymbol und klicken Sie auf **Speicheremulator herunterfahren**.
 
-    ![ASE][]
+    ![ASE][ASE]
 
 ## <a name="sendGrid"></a><span class="short-header">SendGrid</span>Konfigurieren der Anwendung für SendGrid
 
@@ -249,7 +249,7 @@ Diese Beispielanwendung verwendet SendGrid für den E-Mail-Versand. Um E-Mails m
 
 ### SendGrid-Konto erstellen
 
-1.  Folgen Sie den Anweisungen unter [How to Send Email Using SendGrid with Azure][] (E-Mail-Versand mit SendGrid in Azure, in englischer Sprache), um ein kostenloses Konto zu erstellen.
+1.  Folgen Sie den Anweisungen unter [How to Send Email Using SendGrid with Azure][How to Send Email Using SendGrid with Azure] (E-Mail-Versand mit SendGrid in Azure, in englischer Sprache), um ein kostenloses Konto zu erstellen.
 
 ### Aktualisieren der SendGrid-Anmeldeinformationen in den Workerrollen-Eigenschaften
 
@@ -259,7 +259,7 @@ Die folgenden Schritte beschreiben, wie Sie die Eigenschaften ändern können, i
 
 1.  Bearbeiten Sie die Datei *ServiceConfiguration.Cloud.cscfg* im Projekt `AzureEmailService` und geben Sie die Werte für SendGrid-Benutzername und -Kennwort ein, die Sie im vorherigen Schritt aus dem `WorkerRoleB`-Element erhalten haben, das diese Einstellungen enthält. Der folgende Code zeigt das Workerrolle B-Element.
 
-    ![SendGridSettings][]
+    ![SendGridSettings][SendGridSettings]
 
 2.  Diese Datei enthält außerdem eine AzureMailServiceURL-Einstellung. Geben Sie hier den Wert ein, den Sie bei der Erstellung Ihres Azure-Cloud-Dienstes ausgewählt haben, z. B: "<http://aescloud.cloudapp.net>".
 
@@ -277,7 +277,7 @@ In der Stagingumgebung ist Ihre Anwendung öffentlich zugänglich für jeden, de
 
 1.  Öffnen Sie die Datei *Web.Release.config*, die sich im Stammordner des Projekts `MvcWebRole` befindet, und ersetzen Sie den Attributwert **ipAddress** 127.0.0.1 durch Ihre IP-Adresse. (Sie müssen die Datei *Web.config* im **Projektmappen-Explorer** erweitern, um die Datei **Web.Release.config** sehen zu können.)
 
-    Sie können Ihre IP-Adresse herausfinden, indem Sie "Find my IP" in[Bing][] oder einer anderen Suchmaschine eingeben.
+    Sie können Ihre IP-Adresse herausfinden, indem Sie "Find my IP" in[Bing][Bing] oder einer anderen Suchmaschine eingeben.
 
     Nach der Veröffentlichung der Anwendung werden die in der Datei *Web.release.config* angegebenen Transformationen angewendet, und die Elemente zur IP-Einschränkung werden in der *web.config*-Datei aktualisiert, die in der Cloud bereitgestellt wird. Sie können die transformierte *web.config*-Datei im Ordner *AzureEmailService\\MvcWebRole\\obj\\Release\\TransformWebConfig\\transformed* sehen, nachdem das Paket erstellt wurde.
 
@@ -301,23 +301,23 @@ Sie können die Verbindungszeichenfolgen in derselben GUI konfigurieren (achten 
 
 2.  Klicken Sie mit der rechten Maustaste auf das Cloud-Projekt **AzureEmailService** und wählen Sie **Veröffentlichen** aus.
 
-    ![Paket][]
+    ![Paket][Paket]
 
     Das Dialogfeld **Azure-Anwendung veröffentlichen** wird geöffnet.
 
-    ![Cloud-Paket][]
+    ![Cloud-Paket][Cloud-Paket]
 
-3.  Falls Sie Ihre Speicherkonto-Anmeldeinformationen zuvor mit der automatischen Methode importiert haben, befindet sich Ihr Azure-Abonnement in der Dropdownliste. Wählen Sie den Eintrag aus und klicken Sie auf **Weiter**. Klicken Sie andernfalls auf **Anmelden, um Anmeldeinformationen herunterzuladen**und folgen Sie den Anweisungen unter [Konfigurieren der Anwendung für den Azure-Speicher][], um Ihre Veröffentlichungseinstellungen herunterzuladen und zu importieren.
+3.  Falls Sie Ihre Speicherkonto-Anmeldeinformationen zuvor mit der automatischen Methode importiert haben, befindet sich Ihr Azure-Abonnement in der Dropdownliste. Wählen Sie den Eintrag aus und klicken Sie auf **Weiter**. Klicken Sie andernfalls auf **Anmelden, um Anmeldeinformationen herunterzuladen**und folgen Sie den Anweisungen unter [Konfigurieren der Anwendung für den Azure-Speicher][Konfigurieren der Anwendung für den Azure-Speicher], um Ihre Veröffentlichungseinstellungen herunterzuladen und zu importieren.
 
 4.  Vergewissern Sie sich in der Registerkarte **Allgemeine Einstellungen**, dass Ihr Clouddienst in der Dropdownliste **Clouddienst** ausgewählt ist.
 
 5.  Ändern Sie den Wert der Dropdownliste **Umgebung** von **Produktion** in **Staging**.
 
-    ![Dashboard][]
+    ![Dashboard][Dashboard]
 
 6.  Behalten Sie die Standardeinstellung **Release** **Buildkonfiguration** und **Cloud** für **Dienstkonfiguration** bei.
 
-    Die Standardeinstellungen in der Registerkarte **Erweitert** brauchen für dieses Lernprogramm nicht geändert werden. Die Registerkarte **Erweitert** enthält einige hilfreiche Einstellungen für Entwicklung und Tests. Weitere Informationen zur Registerkarte "Erweitert" finden Sie unter [Assistent zum Veröffentlichen einer Azure-Anwendung][].
+    Die Standardeinstellungen in der Registerkarte **Erweitert** brauchen für dieses Lernprogramm nicht geändert werden. Die Registerkarte **Erweitert** enthält einige hilfreiche Einstellungen für Entwicklung und Tests. Weitere Informationen zur Registerkarte "Erweitert" finden Sie unter [Assistent zum Veröffentlichen einer Azure-Anwendung][Assistent zum Veröffentlichen einer Azure-Anwendung].
 
 7.  Klicken Sie auf **Weiter**.
 
@@ -327,7 +327,7 @@ Sie können die Verbindungszeichenfolgen in derselben GUI konfigurieren (achten 
 
 9.  Prüfen Sie Ihre Einstellungen und klicken Sie auf **Veröffentlichen**.
 
-    ![pub][]
+    ![pub][pub]
 
 Das **Azure-Aktivitätsprotokoll** wird in Visual Studio geöffnet.
 
@@ -344,7 +344,7 @@ Das **Azure-Aktivitätsprotokoll** wird in Visual Studio geöffnet.
 
 3.  Geben Sie einige Daten auf den Webseiten **Mailing Lists**, **Subscriber** und **Message** ein, um die Anwendung zu testen.
 
-    **Hinweis**: Löschen Sie die Anwendung nach Abschluss Ihrer Tests, um Kosten für nicht genutzte Ressourcen zu vermeiden. Falls Sie ein [kostenloses Azure-Testkonto][] verwenden, werden die drei bereitgestellten Rollen Ihr monatliches Limit in etwa zwei Wochen verbrauchen. Um eine Bereitstellung im Azure-Verwaltungsportal zu löschen, klicken Sie am unteren Seitenrand auf **LÖSCHEN** und wählen Sie die entsprechende Staging- oder Produktionsumgebung aus.
+    **Hinweis**: Löschen Sie die Anwendung nach Abschluss Ihrer Tests, um Kosten für nicht genutzte Ressourcen zu vermeiden. Falls Sie ein [kostenloses Azure-Testkonto][kostenloses Azure-Testkonto] verwenden, werden die drei bereitgestellten Rollen Ihr monatliches Limit in etwa zwei Wochen verbrauchen. Um eine Bereitstellung im Azure-Verwaltungsportal zu löschen, klicken Sie am unteren Seitenrand auf **LÖSCHEN** und wählen Sie die entsprechende Staging- oder Produktionsumgebung aus.
 
     ![pub][8]
 
@@ -356,7 +356,7 @@ Das **Azure-Aktivitätsprotokoll** wird in Visual Studio geöffnet.
 
 ## <a name="swap"></a>Heraufstufen der Anwendung von Staging zu Produktion
 
-1.  Klicken Sie im [Azure-Verwaltungsportal][] im linken Bereich auf das Symbol **Clouddienste**, wählen Sie Ihren Cloud-Dienst aus und klicken Sie auf die Registerkarte **Dashboard**.
+1.  Klicken Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] im linken Bereich auf das Symbol **Clouddienste**, wählen Sie Ihren Cloud-Dienst aus und klicken Sie auf die Registerkarte **Dashboard**.
 
 2.  Klicken Sie auf **Austauschen**.
 
@@ -399,31 +399,31 @@ Die Ablaufverfolgung ist ein unschätzbares Werkzeug zum Debuggen von Cloud-Anwe
 
     Dieser Code legt fest, dass der `DiagnosticMonitor` bis zu 500 MB an Ablaufverfolgungsdaten speichert (beim Überschreiten von 500 MB werden die ältesten Daten überschrieben) und dass alle Ablaufverfolgungsnachrichten gespeichert werden sollen (LogLevel.Verbose). Die `ScheduledTransferPeriod` überträgt die Ablaufverfolgungsdaten jede Minute in den Speicher. Sie müssen die `ScheduledTransferPeriod` einstellen, um die Ablaufverfolgungsdaten zu speichern.
 
-    Die Methode `ConfigureDiagnostics` in den einzelnen Worker- und Webrollen konfiguriert den Ablaufverfolgungs-Listener, sodass dieser Daten aufzeichnet, wenn Sie die Ablaufverfolgungs-API aufrufen. Weitere Informationen finden Sie unter [Using Trace in Azure Cloud Applications (Ablaufverfolgung in Azure-Cloudanwendungen, in englischer Sprache)][].
+    Die Methode `ConfigureDiagnostics` in den einzelnen Worker- und Webrollen konfiguriert den Ablaufverfolgungs-Listener, sodass dieser Daten aufzeichnet, wenn Sie die Ablaufverfolgungs-API aufrufen. Weitere Informationen finden Sie unter [Using Trace in Azure Cloud Applications (Ablaufverfolgung in Azure-Cloudanwendungen, in englischer Sprache)][Using Trace in Azure Cloud Applications (Ablaufverfolgung in Azure-Cloudanwendungen, in englischer Sprache)].
 
-2.  Doppelklicken Sie im **Server-Explorer** auf **WADLogsTable** (erweitern Sie **Azure** / **Speicher** / **NameIhresSpeicherkontos** / **Tabellen**) für das zuvor hinzugefügte Speicherkonto. Sie können einen [WCF Data Services-Filter][] eingeben, um die angezeigten Entitäten einzuschränken. In der folgenden Abbildung werden nur Warnungs- und Fehlernachrichten angezeigt.
+2.  Doppelklicken Sie im **Server-Explorer** auf **WADLogsTable** (erweitern Sie **Azure** / **Speicher** / **NameIhresSpeicherkontos** / **Tabellen**) für das zuvor hinzugefügte Speicherkonto. Sie können einen [WCF Data Services-Filter][WCF Data Services-Filter] eingeben, um die angezeigten Entitäten einzuschränken. In der folgenden Abbildung werden nur Warnungs- und Fehlernachrichten angezeigt.
 
     ![Dashboard][12]
 
 ## <a name="addRole"></a>Hinzufügen einer weiteren Workerrolle für zusätzliche Lastanforderungen
 
-Für die Skalierung der Ressourcen in Azure-Rollen existieren zwei Ansätze: Sie können entweder die [Größe der virtuellen Computer][] und/oder die Anzahl der laufenden virtuellen Computer anpassen.
+Für die Skalierung der Ressourcen in Azure-Rollen existieren zwei Ansätze: Sie können entweder die [Größe der virtuellen Computer][Größe der virtuellen Computer] und/oder die Anzahl der laufenden virtuellen Computer anpassen.
 
-Die Größe des virtuellen Computers wird im `vmsize`-Attribut des `WebRole` oder `WorkerRole`-Elements in der Datei *ServiceDefinition.csdef* angegeben. Mit der Standardeinstellung `Small` erhalten Sie einen Prozessorkern und 1,75 GB Arbeitsspeicher. Für Multithreading-Anwendungen, die viel Arbeitsspeicher, Speicherplatz und Bandbreite verbrauchen, können Sie diese Größe anheben, um deren Leistung zu steigern. Mit der Größe `ExtraLarge` erhalten Sie z. B. 8 Prozessorkerne und 14 GB Arbeitsspeicher. Die Erhöhung von Arbeitsspeicher, Prozessorkernen, Festplatte und Bandbreite in einem einzigen Computer bezeichnet man auch als *vertikale Skalierung*. Gute Kandidaten für vertikale Skalierung sind z. B. ASP.NET-Webanwendungen, die [asynchrone Methoden][] verwenden. Unter [Größen virtueller Computer und Cloud-Dienste für Azure][Größe der virtuellen Computer] finden Sie eine Liste der Ressourcen für die einzelnen VM-Größen.
+Die Größe des virtuellen Computers wird im `vmsize`-Attribut des `WebRole` oder `WorkerRole`-Elements in der Datei *ServiceDefinition.csdef* angegeben. Mit der Standardeinstellung `Small` erhalten Sie einen Prozessorkern und 1,75 GB Arbeitsspeicher. Für Multithreading-Anwendungen, die viel Arbeitsspeicher, Speicherplatz und Bandbreite verbrauchen, können Sie diese Größe anheben, um deren Leistung zu steigern. Mit der Größe `ExtraLarge` erhalten Sie z. B. 8 Prozessorkerne und 14 GB Arbeitsspeicher. Die Erhöhung von Arbeitsspeicher, Prozessorkernen, Festplatte und Bandbreite in einem einzigen Computer bezeichnet man auch als *vertikale Skalierung*. Gute Kandidaten für vertikale Skalierung sind z. B. ASP.NET-Webanwendungen, die [asynchrone Methoden][asynchrone Methoden] verwenden. Unter [Größen virtueller Computer und Cloud-Dienste für Azure][Größe der virtuellen Computer] finden Sie eine Liste der Ressourcen für die einzelnen VM-Größen.
 
 Workerrolle B ist in dieser Anwendung die einschränkende Komponente unter hoher Last, da diese Rolle für den Versand der E-Mails zuständig ist. (Workerrolle A erstellt lediglich Warteschlangen-Nachrichten und verbraucht daher weniger Ressourcen.) Da Workerrolle B nicht Multithreaded ist und relativ wenig Speicher verbraucht, macht vertikale Skalierung in diesem Fall wenig Sinn. Workerrolle B kann linear skalieren (d. h. die Leistung beinahe verdoppeln, indem Sie die Instanzen verdoppeln), indem Sie die Anzahl der Instanzen erhöhen. Die Erhöhung der Anzahl an Verarbeitungsinstanzen bezeichnet man als *horizontale Skalierung*. Jede Instanz ist mit Kosten verbunden. Sie sollten daher nur dann horizontal skalieren, wenn dies für Ihre Anwendung Sinn macht.
 
-Sie können eine Web- oder Workerrolle horizontal skalieren, indem Sie die Einstellung in der Visual Studio-GUI ändern oder indem Sie die *ServiceConfiguration.\*.cscfg*-Dateien direkt bearbeiten. Die Anzahl der Instanzen ist in der Registerkarte **Konfiguration** im **Eigenschaften**-Fenster der Rolle und im `Instances`-Element in den *.cscfg*-Dateien festgelegt. Änderungen an diesen Einstellungen treten erst nach einer erneuten Bereitstellung der aktualisierten Konfigurationsdatei in Kraft. Alternativ können Sie für vorübergehende Lastspitzen die Anzahl der Rolleninstanzen im Azure-Verwaltungsportal ändern oder Azure so konfigurieren, dass die Anzahl der Instanzen nach frei definierbaren Kriterien automatisch geändert wird. Weitere Informationen zur automatischen Skalierung finden Sie im [letzten Lernprogramm in dieser Serie][].
+Sie können eine Web- oder Workerrolle horizontal skalieren, indem Sie die Einstellung in der Visual Studio-GUI ändern oder indem Sie die *ServiceConfiguration.\*.cscfg*-Dateien direkt bearbeiten. Die Anzahl der Instanzen ist in der Registerkarte **Konfiguration** im **Eigenschaften**-Fenster der Rolle und im `Instances`-Element in den *.cscfg*-Dateien festgelegt. Änderungen an diesen Einstellungen treten erst nach einer erneuten Bereitstellung der aktualisierten Konfigurationsdatei in Kraft. Alternativ können Sie für vorübergehende Lastspitzen die Anzahl der Rolleninstanzen im Azure-Verwaltungsportal ändern oder Azure so konfigurieren, dass die Anzahl der Instanzen nach frei definierbaren Kriterien automatisch geändert wird. Weitere Informationen zur automatischen Skalierung finden Sie im [letzten Lernprogramm in dieser Serie][letzten Lernprogramm in dieser Serie].
 
 In diesem Abschnitt des Lernprogramms werden Sie Workerrolle B mithilfe des Verwaltungsportals horizontal skalieren. Zunächst lernen Sie allerdings, wie Sie dies in Visual Studio erledigen können.
 
 In Visual Studio klicken Sie dazu mit der rechten Maustaste unter **Rollen** im Cloud-Projekt und wählen **Eigenschaften** aus.
 
-![Rechtsklick Eigenschaften][]
+![Rechtsklick Eigenschaften][Rechtsklick Eigenschaften]
 
 Anschließend wählen Sie die Registerkarte **Konfiguration** auf der linken Seite aus und wählen **Cloud** in der Dropdownliste **Dienstkonfiguration** aus.
 
-![Anzahl der Instanzen][]
+![Anzahl der Instanzen][Anzahl der Instanzen]
 
 Beachten Sie, dass Sie in dieser Registerkarte auch die Größe der virtuellen Computer anpassen können.
 
@@ -433,23 +433,23 @@ Die folgenden Schritte beschreiben, wie Sie Ihre Anwendung mithilfe des Azure-Ve
 
 2.  Erhöhen Sie die Anzahl der Instanzen für Workerrolle B und klicken Sie auf **Speichern**.
 
-    ![Zusätzliche Instanzen][]
+    ![Zusätzliche Instanzen][Zusätzliche Instanzen]
 
     Die Bereitstellung der neuen virtuellen Computer kann einige Minuten in Anspruch nehmen.
 
 3.  Öffnen Sie die Registerkarte **Instanzen**, um die einzelnen Rolleninstanzen Ihrer Anwendung anzuzeigen.
 
-    ![Instanzen anzeigen][]
+    ![Instanzen anzeigen][Instanzen anzeigen]
 
 ## <a name="nextsteps"></a>Nächste Schritte
 
-Sie haben gelernt, wie Sie die fertige Anwendung konfigurieren, bereitstellen und skalieren können. In den weiteren Lernprogrammen lernen Sie, die Anwendung von Grund auf zu erstellen. Im [nächsten Lernprogramm][] werden Sie die Webrolle erstellen.
+Sie haben gelernt, wie Sie die fertige Anwendung konfigurieren, bereitstellen und skalieren können. In den weiteren Lernprogrammen lernen Sie, die Anwendung von Grund auf zu erstellen. Im [nächsten Lernprogramm][nächsten Lernprogramm] werden Sie die Webrolle erstellen.
 
-Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie im [letzten Lernprogramms in dieser Serie][].
+Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie im [letzten Lernprogramms in dieser Serie][letzten Lernprogramms in dieser Serie].
 
-<div><a href="/en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/" class="site-arrowboxcta download-cta">Lernprogramm 3</a></div>
+<div><a href="/de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/" class="site-arrowboxcta download-cta">Lernprogramm 3</a></div>
 
-  [ersten Lernprogramm der Serie]: /en-us/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [ersten Lernprogramm der Serie]: /de-de/develop/net/tutorials/multi-tier-web-site/1-overview/
   [Einrichten der Entwicklungsumgebung]: #setupdevenv
   [Herunterladen und Ausführen der abgeschlossenen Lösung]: #downloadcnfg
   [Erstellen eines Azure-Speicherkontos]: #createWASA
@@ -460,7 +460,6 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
   [Überführen der Anwendung von Staging zu Produktion]: #swap
   [Konfigurieren von Ablaufverfolgung und Anzeigen der Ablaufverfolgungsdaten]: #trace
   [Hinzufügen einer weiteren Workerrolle für zusätzliche Lastanforderungen]: #addRole
-  [install-sdk-2013-only]: ../includes/install-sdk-2013-only.md
   [abgeschlossene Lösung]: http://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   [Ausführen der Anwendung.]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-mailinglist1.png
   [1]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create1.png
@@ -474,21 +473,21 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Neuer Speicher]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png
   [Schnellerfassung]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-storage-quick.png
-  [How to Manage Storage Accounts]: /en-us/manage/services/storage/how-to-manage-a-storage-account/
+  [How to Manage Storage Accounts]: /de-de/manage/services/storage/how-to-manage-a-storage-account/
   [Erstellen des Speichers mit URL-Präfix]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-storage-url-test.png
   [Schlüssel verwalten]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-manage-keys.png
   [Schlüssel-GUID]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-guid-keys.PNG
   [Schnellerstellung Cloud]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-new-cloud.png
-  [Erstellen einer Affinitätsgruppe in Azure]: http://msdn.microsoft.com/en-us/library/jj156209.aspx
+  [Erstellen einer Affinitätsgruppe in Azure]: http://msdn.microsoft.com/de-de/library/jj156209.aspx
   [2]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-cloud.png
   [Rechtsklick Eigenschaften]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-rt-prop.png
   [3]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-elip.png
   [4]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-enter.png
-  [Konfigurieren eines Azure-Projekts]: http://msdn.microsoft.com/en-us/library/windowsazure/ee405486.aspx
+  [Konfigurieren eines Azure-Projekts]: http://msdn.microsoft.com/de-de/library/windowsazure/ee405486.aspx
   [Auswählen der Cloud-Projekt-Eigenschaften]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-aesp.png
   [Deaktivieren des automatischen Starts des Azure-Speicheremulators]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-1.png
   [ASE]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-se4.png
-  [How to Send Email Using SendGrid with Azure]: http://www.windowsazure.com/en-us/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
+  [How to Send Email Using SendGrid with Azure]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
   [SendGridSettings]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-sg.png
   [Bing]: http://www.bing.com/search?q=find+my+IP&qs=n&form=QBLH&pq=find+my+ip&sc=8-10&sp=-1&sk= "find my IP"
   [Paket]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-6.png
@@ -499,19 +498,19 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
   [5]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-11.png
   [6]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-9.png
   [7]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c55.png
-  [kostenloses Azure-Testkonto]: http://www.windowsazure.com/en-us/pricing/free-trial/ "kostenloses Testkonto"
+  [kostenloses Azure-Testkonto]: http://www.windowsazure.com/de-de/pricing/free-trial/ "kostenloses Testkonto"
   [8]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-19.png
   [9]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-12.png
   [10]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c6.png
   [11]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c7.png
   [Using Trace in Azure Cloud Applications (Ablaufverfolgung in Azure-Cloudanwendungen, in englischer Sprache)]: http://blogs.msdn.com/b/windowsazure/archive/2012/10/24/using-trace-in-windows-azure-cloud-applications-1.aspx "Using Trace in Azure"
-  [WCF Data Services-Filter]: http://msdn.microsoft.com/en-us/library/windowsazure/ff683669.aspx "WCF-Filter"
+  [WCF Data Services-Filter]: http://msdn.microsoft.com/de-de/library/windowsazure/ff683669.aspx "WCF-Filter"
   [12]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-trc.png
-  [Größe der virtuellen Computer]: http://msdn.microsoft.com/en-us/library/windowsazure/ee814754.aspx "VM-Größen"
+  [Größe der virtuellen Computer]: http://msdn.microsoft.com/de-de/library/windowsazure/ee814754.aspx "VM-Größen"
   [asynchrone Methoden]: http://www.asp.net/mvc/tutorials/mvc-4/using-asynchronous-methods-in-aspnet-mvc-4 "Async MVC"
-  [letzten Lernprogramm in dieser Serie]: /en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
+  [letzten Lernprogramm in dieser Serie]: /de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
   [Anzahl der Instanzen]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-instanceCnt.png
   [Zusätzliche Instanzen]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-in3.png
   [Instanzen anzeigen]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-in2.png
-  [nächsten Lernprogramm]: /en-us/develop/net/tutorials/multi-tier-web-site/3-web-role/
-  [letzten Lernprogramms in dieser Serie]: /en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/#nextsteps
+  [nächsten Lernprogramm]: /de-de/develop/net/tutorials/multi-tier-web-site/3-web-role/
+  [letzten Lernprogramms in dieser Serie]: /de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/#nextsteps

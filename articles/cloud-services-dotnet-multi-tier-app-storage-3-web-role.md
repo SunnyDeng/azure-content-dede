@@ -1,10 +1,10 @@
 <properties linkid="develop-net-tutorials-multi-tier-web-site-3-web-role" pageTitle="Azure Cloud Service Tutorial: ASP.NET Web Role with Azure Storage Tables, Queues, and Blobs" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, ASP.NET MVC tutorial, Azure web role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="Learn how to create a multi-tier app using ASP.NET MVC and Azure. The app runs in a cloud service, with web role and worker roles, and uses Azure storage tables, queues, and blobs." metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure Cloud Service Tutorial: ASP.NET MVC Web Role, Worker Role, Azure Storage Tables, Queues, and Blobs" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="cloud-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tdykstra,riande"></tags>
+<tags ms.service="cloud-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tdykstra,riande" />
 
 # Erstellen der Webrolle für die Azure-E-Mail-Dienstanwendung - 3 von 5.
 
-Dies ist das dritte von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Dienstanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie][].
+Dies ist das dritte von fünf Lernprogrammen, in denen die Erstellung und Bereitstellung der Azure-E-Mail-Dienstanwendung beschrieben wird. Weitere Informationen zur Anwendung und den Lernprogrammen finden Sie im [ersten Lernprogramm der Serie][ersten Lernprogramm der Serie].
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -14,16 +14,16 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 ## Abschnitte dieses Lernprogramms
 
--   [Erstellen der Visual Studio-Lösung][]
--   [Aktualisieren des NuGet-Pakets für die Speicherclientbibliothek][]
--   [Konfigurieren des Projekts zur Verwendung des Speicheremulators][]
--   [Konfigurieren der Ablaufverfolgung und Behandlung von Neustarts][]
--   [Hinzufügen von Code zum Erstellen von Tabellen, Warteschlange und Blob-Container zur Methode Application\_Start][]
--   [Erstellen und Testen der Mailingliste][]
--   [Erstellen und Testen der Abonnenten-Controller und -Ansichten][]
--   [Erstellen und Testen der Nachrichten-Controller und -Ansichten][]
--   [Erstellen und Testen der Abbestellen-Controller und -Ansichten][]
--   [Nächste Schritte][]
+-   [Erstellen der Visual Studio-Lösung][Erstellen der Visual Studio-Lösung]
+-   [Aktualisieren des NuGet-Pakets für die Speicherclientbibliothek][Aktualisieren des NuGet-Pakets für die Speicherclientbibliothek]
+-   [Konfigurieren des Projekts zur Verwendung des Speicheremulators][Konfigurieren des Projekts zur Verwendung des Speicheremulators]
+-   [Konfigurieren der Ablaufverfolgung und Behandlung von Neustarts][Konfigurieren der Ablaufverfolgung und Behandlung von Neustarts]
+-   [Hinzufügen von Code zum Erstellen von Tabellen, Warteschlange und Blob-Container zur Methode Application\_Start][Hinzufügen von Code zum Erstellen von Tabellen, Warteschlange und Blob-Container zur Methode Application\_Start]
+-   [Erstellen und Testen der Mailingliste][Erstellen und Testen der Mailingliste]
+-   [Erstellen und Testen der Abonnenten-Controller und -Ansichten][Erstellen und Testen der Abonnenten-Controller und -Ansichten]
+-   [Erstellen und Testen der Nachrichten-Controller und -Ansichten][Erstellen und Testen der Nachrichten-Controller und -Ansichten]
+-   [Erstellen und Testen der Abbestellen-Controller und -Ansichten][Erstellen und Testen der Abbestellen-Controller und -Ansichten]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <a name="cloudproject"></a>Erstellen der Visual Studio-Lösung
 
@@ -35,27 +35,27 @@ Zunächst erstellen Sie eine Visual Studio-Lösung mit einem Projekt für das We
 
 2.  Klicken Sie im Menü **Datei** auf **Neues Projekt**.
 
-    ![Menü Neues Projekt][]
+    ![Menü Neues Projekt][Menü Neues Projekt]
 
 3.  Erweitern Sie den Knoten **C\#**, wählen Sie **Cloud** unter **Installierte Vorlagen** aus und klicken Sie auf **Azure-Cloud-Dienst**.
 
 4.  Benennen Sie die Anwendung **AzureEmailService** und klicken Sie auf **OK**.
 
-    ![Dialogfeld "Neues Projekt"][]
+    ![Dialogfeld "Neues Projekt"][Dialogfeld "Neues Projekt"]
 
 5.  Wählen Sie im Dialogfeld **Neuer Azure-Cloud-Dienst** die Option **ASP.NET-Webrolle** aus und klicken Sie auf den Pfeil nach rechts.
 
-    ![Dialogfeld Neues Azure-Cloud-Projekt][]
+    ![Dialogfeld Neues Azure-Cloud-Projekt][Dialogfeld Neues Azure-Cloud-Projekt]
 
 6.  Zeigen Sie in der rechten Spalte mit der Maus auf **WebRole1** und klicken Sie auf das Stiftsymbol, um den Namen der Webrolle zu ändern.
 
 7.  Geben Sie MvcWebRole als neuen Namen ein und drücken Sie die Eingabetaste.
 
-    ![Dialogfeld Neues Azure-Cloud-Projekt - Umbenennen der Webrolle][]
+    ![Dialogfeld Neues Azure-Cloud-Projekt - Umbenennen der Webrolle][Dialogfeld Neues Azure-Cloud-Projekt - Umbenennen der Webrolle]
 
 8.  Wiederholen Sie die Prozedur, um eine **Workerrolle** mit dem Namen WorkerRoleA hinzuzufügen und klicken Sie auf **OK**.
 
-    ![Dialogfeld Neues Azure-Cloud-Projekt - Hinzufügen einer Workerrolle][]
+    ![Dialogfeld Neues Azure-Cloud-Projekt - Hinzufügen einer Workerrolle][Dialogfeld Neues Azure-Cloud-Projekt - Hinzufügen einer Workerrolle]
 
 9.  Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Vorlage **MVC** aus, markieren Sie das Kontrollkästchen **Web API** und klicken Sie auf **Authentifizierung ändern**.
 
@@ -63,7 +63,7 @@ Zunächst erstellen Sie eine Visual Studio-Lösung mit einem Projekt für das We
 
 10. Klicken Sie im Dialogfeld **Authentifizierung ändern** auf **Keine Authentifizierung** und dann auf **OK**.
 
-    ![Keine Authentifizierung][]
+    ![Keine Authentifizierung][Keine Authentifizierung]
 
 11. Klicken Sie im Dialogfeld **Neues ASP.Net-Projekt** auf **OK**.
 
@@ -71,7 +71,7 @@ Zunächst erstellen Sie eine Visual Studio-Lösung mit einem Projekt für das We
 
 In diesem Abschnitt werden Sie den Seitenkopf, die Fußzeile und die Menüelemente aktualisieren, die auf allen Seiten der Administrator-Web-GUI angezeigt werden. Die Anwendung enthält drei Sätze von Administrator-Webseiten: eine für Mailinglisten, eine für Abonnenten von Mailinglisten und eine für Nachrichten.
 
-1.  Falls Sie die [komplette Lösung][] noch nicht heruntergeladen haben, tun Sie dies jetzt, bevor Sie mit dem nächsten Schritt fortfahren.
+1.  Falls Sie die [komplette Lösung][komplette Lösung] noch nicht heruntergeladen haben, tun Sie dies jetzt, bevor Sie mit dem nächsten Schritt fortfahren.
 
     Im Rest des Lernprogramms können Sie die Dateien aus dem heruntergeladenen Projekt in das neue Projekt kopieren, anstatt Codeausschnitte zu kopieren und einzufügen. Dieses Lernprogramm beschreibt die wichtigsten Teile des Codes, den Sie kopieren.
 
@@ -93,11 +93,11 @@ In diesem Abschnitt werden Sie den Seitenkopf, die Fußzeile und die Menüelemen
 
     Falls Sie normalerweise Webprojekte ohne Azure-Clouddienste erstellen, werden Sie feststellen, dass der Aufruf der Startseite in Ihrem Browser etwas länger dauert als gewöhnlich.
 
-    ![Startseite][]
+    ![Startseite][Startseite]
 
     Dies liegt daran, dass Visual Studio den Azure-Serveremulator und den Azure-Speicheremulator startet. In der Windows-Systemleiste wird das Serveremulatorsymbol angezeigt:
 
-    ![Serveremulator in der Systemleiste][]
+    ![Serveremulator in der Systemleiste][Serveremulator in der Systemleiste]
 
 2.  Schließen Sie den Browser.
 
@@ -107,15 +107,15 @@ Das API-Framework für die Arbeit mit Azure-Speichertabellen, Warteschlangen und
 
 1.  Zeigen Sie im Menü **Tools** in Visual Studio mit der Maus auf **Library Package Manager** und klicken Sie auf **Manage NuGet Packages for Solution**.
 
-    ![Manage NuGet Packages for Solution im Menü][]
+    ![Manage NuGet Packages for Solution im Menü][Manage NuGet Packages for Solution im Menü]
 
 2.  Wählen Sie im linken Bereich des Dialogfelds **Manage NuGet Packages** die Option **Updates** aus, blättern Sie nach unten bis zum Paket **Azure Storage** und klicken Sie auf **Update**.
 
-    ![Azure Storage-Paket im Dialogfeld Manage NuGet Packages][]
+    ![Azure Storage-Paket im Dialogfeld Manage NuGet Packages][Azure Storage-Paket im Dialogfeld Manage NuGet Packages]
 
 3.  Stellen Sie sicher, dass im Dialogfeld **Select Projects** beide Projekte ausgewählt sind und klicken Sie auf **OK**.
 
-    ![Auswählen beider Projekte im Dialogfeld Select Projects][]
+    ![Auswählen beider Projekte im Dialogfeld Select Projects][Auswählen beider Projekte im Dialogfeld Select Projects]
 
 4.  Stimmen Sie den Lizenzbedingungen zu, um die Installation des Pakets abzuschließen, und schließen Sie anschließend das Dialogfeld **Manage NuGet Packages**.
 
@@ -125,7 +125,7 @@ Der Code für Web- und Workerrolle, den Sie später hinzufügen werden, verwende
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **MvcWebRole** unter **Roles** im **AzureEmailService**-Cloudprojekt und wählen Sie **Eigenschaften** aus.
 
-    ![Webrollen-Eigenschaften][]
+    ![Webrollen-Eigenschaften][Webrollen-Eigenschaften]
 
 2.  Stellen Sie sicher, dass in der Dropdownliste **Dienstkonfiguration** der Eintrag **Alle Konfigurationen** ausgewählt ist.
 
@@ -137,7 +137,7 @@ Der Code für Web- und Workerrolle, den Sie später hinzufügen werden, verwende
 
 6.  Klicken Sie auf die Auslassungsschaltfläche (**...**) rechts in der Zeile, um das Dialogfeld **Verbindungszeichenfolge für das Speicherkonto** zu öffnen.
 
-    ![Rechtsklick Eigenschaften][]
+    ![Rechtsklick Eigenschaften][Rechtsklick Eigenschaften]
 
 7.  Klicken Sie im Dialogfeld **Verbindungszeichenfolge für Speicherkonto erstellen** auf das Optionsfeld **Azure-Speicheremulator** und klicken Sie dann auf **OK**.
 
@@ -161,7 +161,7 @@ Sie können Einstellungen manuell zur Datei *ServiceDefinition.csdf* und den bei
 -   Sie müssen die neue Einstellung nur an einem Ort anlegen, und das korrekte XML wird zu allen drei Dateien hinzugefügt.
 -   Das korrekte XML wird für alle drei Einstellungsdateien generiert. Die Datei *ServiceDefinition.csdf* definiert Einstellungen, die in beiden *.cscfg*-Konfigurationsdateien vorhanden sein müssen. Falls die Datei *ServiceDefinition.csdf* und die beiden *.cscfg*-Konfigurationsdateien inkonsistent sind, kann es passieren, dass Sie die folgende Fehlermeldung in Visual Studio erhalten: *The current service model is out of sync. Make sure both the service configuration and definition files are valid.*
 
-    ![Fehler: ungültige Dienstkonfiguration und Definitionsdateien][]
+    ![Fehler: ungültige Dienstkonfiguration und Definitionsdateien][Fehler: ungültige Dienstkonfiguration und Definitionsdateien]
 
 Wenn dieser Fehler angezeigt wird, können Sie den Eigenschaften-Editor erst nach Behebung der Inkonsistenz durch manuelles Editieren der Dateien wieder verwenden.
 
@@ -169,9 +169,9 @@ Wenn dieser Fehler angezeigt wird, können Sie den Eigenschaften-Editor erst nac
 
 1.  Fügen Sie im Projekt MvcWebRole die Datei *WebRole.cs* aus dem heruntergeladenen Projekt hinzu.
 
-Dabei wird eine Methode zum Konfigurieren der Protokollierung hinzugefügt und aus der `OnStart`-Methode heraus aufgerufen, wenn die Webrolle gestartet wird. Der Code in der neuen `ConfigureDiagnostics`-Methode wird im [zweiten Lernprogramm][] erläutert.
+Dabei wird eine Methode zum Konfigurieren der Protokollierung hinzugefügt und aus der `OnStart`-Methode heraus aufgerufen, wenn die Webrolle gestartet wird. Der Code in der neuen `ConfigureDiagnostics`-Methode wird im [zweiten Lernprogramm][zweiten Lernprogramm] erläutert.
 
-Außerdem wird Code hinzugefügt, der ausgeführt wird, wenn die Webrolle darüber benachrichtigt wird, dass sie gleich heruntergefahren wird. Azure-Cloud-Dienstanwendungen werden ca. zwei mal pro Monat für Betriebssystemupdates neu gestartet. (Weitere Informationen zu OS-Updates finden Sie unter [Role Instance Restarts Due to OS Upgrades][] (Neustarts von Rolleninstanzen für OS-Upgrades, in englischer Sprache).) Vor dem Herunterfahren einer Webanwendung wird ein `OnStop`-Ereignis ausgelöst. Die von Visual Studio erstellte Webrollen-Codevorlage überschreibt die `OnStop`-Methode nicht. Daher hat die Anwendung nur wenige Sekunden, um die Verarbeitung von HTTP-Anforderungen abzuschließen, bevor sie heruntergefahren wird. Sie können die `OnStop`-Methode überschreiben, um sicherzustellen, dass die Anwendung beim Herunterfahren ordnungsgemäß beendet wird.
+Außerdem wird Code hinzugefügt, der ausgeführt wird, wenn die Webrolle darüber benachrichtigt wird, dass sie gleich heruntergefahren wird. Azure-Cloud-Dienstanwendungen werden ca. zwei mal pro Monat für Betriebssystemupdates neu gestartet. (Weitere Informationen zu OS-Updates finden Sie unter [Role Instance Restarts Due to OS Upgrades][Role Instance Restarts Due to OS Upgrades] (Neustarts von Rolleninstanzen für OS-Upgrades, in englischer Sprache).) Vor dem Herunterfahren einer Webanwendung wird ein `OnStop`-Ereignis ausgelöst. Die von Visual Studio erstellte Webrollen-Codevorlage überschreibt die `OnStop`-Methode nicht. Daher hat die Anwendung nur wenige Sekunden, um die Verarbeitung von HTTP-Anforderungen abzuschließen, bevor sie heruntergefahren wird. Sie können die `OnStop`-Methode überschreiben, um sicherzustellen, dass die Anwendung beim Herunterfahren ordnungsgemäß beendet wird.
 
 Die neu hinzugefügte Datei enthält die folgende Überschreibung der `OnStop`-Methode.
 
@@ -192,7 +192,7 @@ Sobald Azure eine Rolle vom Netz nimmt, hört das Lastenausgleichsmodul auf, Anf
 
 Der gezeigte Code für die `OnStop`-Methode erstellt einen ASP.NET-Leistungsindikator für `Requests Current`. Der Wert des `Requests Current`-Zählers enthält die aktuelle Anzahl der Anforderungen, inklusive solcher, die sich momentan in der Warteschlange befinden, ausgeführt werden oder darauf warten, zum Client geschrieben zu werden. Der Wert `Requests Current` wird einmal pro Sekunde geprüft, und sobald der Wert null erreicht, wird die `OnStop`-Methode verlassen. Nach Verlassen der `OnStop`-Methode wird die Rolle heruntergefahren.
 
-Ablaufverfolgungsdaten aus der `OnStop`-Methode werden nur gespeichert, wenn eine [bedarfsgesteuerte Übertragung][] durchgeführt wird. Sie können die `OnStop`-Ablaufverfolgungsinformationen in Echtzeit mithilfe des [dbgview][]-Hilfsprogramms über eine Remotedesktopverbindung anzeigen.
+Ablaufverfolgungsdaten aus der `OnStop`-Methode werden nur gespeichert, wenn eine [bedarfsgesteuerte Übertragung][bedarfsgesteuerte Übertragung] durchgeführt wird. Sie können die `OnStop`-Ablaufverfolgungsinformationen in Echtzeit mithilfe des [dbgview][dbgview]-Hilfsprogramms über eine Remotedesktopverbindung anzeigen.
 
 ## <a name="createifnotexists"></a>Hinzufügen von Code zum Erstellen von Tabellen, Warteschlange und Blob-Container zur Methode Application\_Start
 
@@ -268,15 +268,15 @@ Die `MailingList`-Entitätsklasse bildet die Zeilen in der Tabelle `MailingList`
             public string Description { get; set; }
         }
 
-    Die Azure-Speicher-API verlangt, dass die Entitätsklassen für Ihre Tabellenoperationen von [TableEntity][] abgeleitet werden. `TableEntity` definiert die Felder `PartitionKey`, `RowKey`, `TimeStamp` und `ETag`. Die `TimeStamp`- und `ETag`-Eigenschaften werden vom System verwendet. Später in diesem Lernprogramm werden Sie sehen, wie die `ETag`-Eigenschaft für die Parallelitätsbehandlung verwendet wird.
+    Die Azure-Speicher-API verlangt, dass die Entitätsklassen für Ihre Tabellenoperationen von [TableEntity][TableEntity] abgeleitet werden. `TableEntity` definiert die Felder `PartitionKey`, `RowKey`, `TimeStamp` und `ETag`. Die `TimeStamp`- und `ETag`-Eigenschaften werden vom System verwendet. Später in diesem Lernprogramm werden Sie sehen, wie die `ETag`-Eigenschaft für die Parallelitätsbehandlung verwendet wird.
 
-    (Mit der Klasse [DynamicTableEntity][] können Sie mit Tabellenzeilen als Wörterbuchauflistungen von Schlüssel-Wert-Paaren arbeiten, anstatt vordefinierte Modellklassen zu verwenden. Weitere Informationen finden Sie unter [Azure Storage Client Library 2.0 Tables Deep Dive][] (Arbeiten mit Tabellen der Azure-Speicherclientbibliothek 2.0, in englischer Sprache).
+    (Mit der Klasse [DynamicTableEntity][DynamicTableEntity] können Sie mit Tabellenzeilen als Wörterbuchauflistungen von Schlüssel-Wert-Paaren arbeiten, anstatt vordefinierte Modellklassen zu verwenden. Weitere Informationen finden Sie unter [Azure Storage Client Library 2.0 Tables Deep Dive][Azure Storage Client Library 2.0 Tables Deep Dive] (Arbeiten mit Tabellen der Azure-Speicherclientbibliothek 2.0, in englischer Sprache).
 
     Der Partitionsschlüssel der Tabelle `mailinglist` ist der Listenname. Der Zugriff auf den Partitionsschlüssel in dieser Entitätsklasse erfolgt entweder über die `PartitionKey`-Eigenschaft (definiert in der Klasse `TableEntity`) oder über die `ListName`-Eigenschaft (definiert in der Klasse `MailingList`). Die `ListName`-Eigenschaft verwendet `PartitionKey` als Unterstützungsvariable. Dank der `ListName`-Eigenschaft können Sie einen anschaulicheren Variablennamen im Code verwenden und erleichtern sich die Programmierung der Web-GUI, da die DataAnnotations-Attribute für Formatierung und Prüfung zur `ListName`-Eigenschaft hinzugefügt werden können, jedoch nicht direkt zur `PartitionKey`-Eigenschaft.
 
     Das `RegularExpression`-Attribut in der `ListName`-Eigenschaft weist MVC an, die Benutzereingaben zu prüfen, um sicherzustellen, dass der eingegebene Listenname nur alphanumerische Zeichen oder Unterstriche enthält. Mit dieser Einschränkung werden einfache Listennamen erzwungen, die problemlos in Abfragezeichenfolgen in URLs verwendet werden können.
 
-    > [WACOM.NOTE] Falls Sie ein weniger restriktives Format für die Listennamen verwenden möchten, können Sie weitere Zeichen zulassen und die Listennamen vor der Verwendung in Abfragezeichenfolgen per URL-Codierung umwandeln. Bestimmte Zeichen sind jedoch in Partitions- und Zeilenschlüsseln von Azure-Tabellen nicht erlaubt, und Sie müssen zumindest diese Zeichen ausschließen. Weitere Informationen zu problematischen Zeichen in Partitions- und Zeilenschlüsseln finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][] und [% Character in PartitionKey or RowKey][] (%-Zeichen in Partitions- und Zeilenschlüsseln, in englischer Sprache).
+    > [WACOM.NOTE] Falls Sie ein weniger restriktives Format für die Listennamen verwenden möchten, können Sie weitere Zeichen zulassen und die Listennamen vor der Verwendung in Abfragezeichenfolgen per URL-Codierung umwandeln. Bestimmte Zeichen sind jedoch in Partitions- und Zeilenschlüsseln von Azure-Tabellen nicht erlaubt, und Sie müssen zumindest diese Zeichen ausschließen. Weitere Informationen zu problematischen Zeichen in Partitions- und Zeilenschlüsseln finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][Grundlegendes zum Tabellendienst-Datenmodell] und [% Character in PartitionKey or RowKey][% Character in PartitionKey or RowKey] (%-Zeichen in Partitions- und Zeilenschlüsseln, in englischer Sprache).
 
     Die `MailingList` definiert einen Standardkonstruktor, der für `RowKey` den fest einprogrammierten Wert "mailinglist" setzt, da alle Mailinglisten-Zeilen in der Tabelle diesen Wert als Zeilenschlüssel verwenden. (Eine Erklärung der Tabellenstruktur finden Sie im [ersten Lernprogramm in dieser Serie][ersten Lernprogramm der Serie].) An dieser Stelle könnte jeder beliebige konstante Wert stehen, vorausgesetzt dieser Wert wird nie als E-Mail-Adresse verwendet (der Zeilenschlüssel für Abonnentenzeilen in dieser Tabelle).
 
@@ -305,7 +305,7 @@ Die `MailingList`-Entitätsklasse bildet die Zeilen in der Tabelle `MailingList`
 
     Anschließend folgt die Methode `FindRowAsync`. Diese Methode wird immer dann aufgerufen, wenn der Controller einen bestimmten Mailinglisteneintrag in der Tabelle `MailingList` nachschlagen muss, z. B. beim Bearbeiten eines Mailinglisteneintrags. Der Code ruft eine einzige `MailingList`-Entität ab, indem er die übergebenen Werte für Partitions- und Zeilenschlüssel verwendet. Dieser Controller bearbeitet nur Zeilen, die "MailingList" als Zeilenschlüssel haben. Sie könnten daher "MailingList" als Zeilenschlüssel fest einprogrammieren, aber die Übergabe von Partitions- und Zeilenschlüssel ist ein Muster für die `FindRow`-Methoden in allen Controllern.
 
-    > [WACOM.NOTE] Diese Anwendung verwendet asynchronen ASP.NET 4.5-Code für E/A-Operationen in der Webrolle, um die Serverressourcen effizient zu nutzen. Weitere Informationen zu asynchronem Code in Webanwendungen finden Sie unter [Verwenden der asynchronen Funktionen in .NET 4.5 zum Vermeiden von blockierenden Aufrufen][].
+    > [WACOM.NOTE] Diese Anwendung verwendet asynchronen ASP.NET 4.5-Code für E/A-Operationen in der Webrolle, um die Serverressourcen effizient zu nutzen. Weitere Informationen zu asynchronem Code in Webanwendungen finden Sie unter [Verwenden der asynchronen Funktionen in .NET 4.5 zum Vermeiden von blockierenden Aufrufen][Verwenden der asynchronen Funktionen in .NET 4.5 zum Vermeiden von blockierenden Aufrufen].
 
         private async Task<MailingList> FindRowAsync(string partitionKey, string rowKey)
         {
@@ -319,7 +319,7 @@ Die `MailingList`-Entitätsklasse bildet die Zeilen in der Tabelle `MailingList`
             return mailingList;
         }
 
-    Der Code in dieser `FindRow`-Methode gibt eine Mailinglistenzeile zurück. Der Code in der entsprechenden `FindRow`-Methode im `Subscriber`-Controller gibt eine Abonnentenzeile aus derselben `mailinglist`-Tabelle zurück. Der Code der beiden Methoden ist identisch mit Ausnahme des Modelltyps, der für die [TableOperation.Retrieve][]-Methode verwendet wird.
+    Der Code in dieser `FindRow`-Methode gibt eine Mailinglistenzeile zurück. Der Code in der entsprechenden `FindRow`-Methode im `Subscriber`-Controller gibt eine Abonnentenzeile aus derselben `mailinglist`-Tabelle zurück. Der Code der beiden Methoden ist identisch mit Ausnahme des Modelltyps, der für die [TableOperation.Retrieve][TableOperation.Retrieve]-Methode verwendet wird.
 
         private async Task<Subscriber> FindRowAsync(string partitionKey, string rowKey)
         {
@@ -351,11 +351,11 @@ Die `MailingList`-Entitätsklasse bildet die Zeilen in der Tabelle `MailingList`
             token = currentSegment.ContinuationToken;
         }
 
-    Die `ExecuteQuerySegmentedAsync`-Methode teilt große Ergebnissätze in Segmente auf. Sie gibt bis zu 1.000 Zeilen zurück. Wenn Sie eine Abfrage ausführen, die mehr als 1.000 Zeilen zurückliefern würde, erhalten Sie stattdessen 1.000 Zeilen und ein Fortsetzungstoken. Mit dem Fortsetzungstoken können Sie eine weitere Abfrage ab dem Ende der vorherigen Abfrage ausführen. Der gezeigte Code wurde für die Beispielanwendung vereinfacht: er aggregiert alle Segmente in eine Liste. In einer Produktionsanwendung würden Sie stattdessen eine Seitenverwaltung implementieren. Weitere Informationen zu großen Resultsets und Fortsetzungstoken finden Sie unter [How to get most out of Azure Tables][] (Optimale Nutzung von Azure-Tabellen, in englischer Sprache) und [Azure Tables: Expect Continuation Tokens, Seriously][] (Azure-Tabellen, erwarten Sie Fortsetzungstoken, im Ernst, in englischer Sprache).
+    Die `ExecuteQuerySegmentedAsync`-Methode teilt große Ergebnissätze in Segmente auf. Sie gibt bis zu 1.000 Zeilen zurück. Wenn Sie eine Abfrage ausführen, die mehr als 1.000 Zeilen zurückliefern würde, erhalten Sie stattdessen 1.000 Zeilen und ein Fortsetzungstoken. Mit dem Fortsetzungstoken können Sie eine weitere Abfrage ab dem Ende der vorherigen Abfrage ausführen. Der gezeigte Code wurde für die Beispielanwendung vereinfacht: er aggregiert alle Segmente in eine Liste. In einer Produktionsanwendung würden Sie stattdessen eine Seitenverwaltung implementieren. Weitere Informationen zu großen Resultsets und Fortsetzungstoken finden Sie unter [How to get most out of Azure Tables][How to get most out of Azure Tables] (Optimale Nutzung von Azure-Tabellen, in englischer Sprache) und [Azure Tables: Expect Continuation Tokens, Seriously][Azure Tables: Expect Continuation Tokens, Seriously] (Azure-Tabellen, erwarten Sie Fortsetzungstoken, im Ernst, in englischer Sprache).
 
-    Bei der Erstellung des `OperationContext`-Objekts können Sie den `ClientID`-Eigenschaftswert setzen, um einen eindeutigen Bezeichner anzugeben, der in die vom Azure-Speicher geschriebenen Protokolle integriert wird. Mit diesem Bezeichner können Sie Protokolle von Speicheroperationen auf den Code zurückverfolgen, der die Speicheraktivität ausgelöst hat. Weitere Informationen zu r Protokollierung in Azure finden Sie unter [Azure-Speicher-Protokollierung: Verfolgen von Speicheranfragen mithilfe von Protokollen][].
+    Bei der Erstellung des `OperationContext`-Objekts können Sie den `ClientID`-Eigenschaftswert setzen, um einen eindeutigen Bezeichner anzugeben, der in die vom Azure-Speicher geschriebenen Protokolle integriert wird. Mit diesem Bezeichner können Sie Protokolle von Speicheroperationen auf den Code zurückverfolgen, der die Speicheraktivität ausgelöst hat. Weitere Informationen zu r Protokollierung in Azure finden Sie unter [Azure-Speicher-Protokollierung: Verfolgen von Speicheranfragen mithilfe von Protokollen][Azure-Speicher-Protokollierung: Verfolgen von Speicheranfragen mithilfe von Protokollen].
 
-    Mit der SCL API 2.1 und neueren Versionen können Sie auch LINQ für Ihre Tabellenabfragen verwenden. Ein Codebeispiel für die Verwendung von LINQ finden Sie unter [PhluffyFotos][].
+    Mit der SCL API 2.1 und neueren Versionen können Sie auch LINQ für Ihre Tabellenabfragen verwenden. Ein Codebeispiel für die Verwendung von LINQ finden Sie unter [PhluffyFotos][PhluffyFotos].
 
     Wenn Sie keine Wiederholungsrichtlinie angeben, wiederholt die API den Vorgang drei mal mit exponentiell ansteigendem Zeitlimit. Für Weboberflächen, in denen ein Benutzer auf die Anzeige der nächsten Seite warten, kann dies zu inakzeptablen Wartezeiten führen. Dieser Code verwendet daher lineare Wiederholungsversuche (mit jeweils dem gleichen Zeitlimit) und einen Wert für die Zeitüberschreitung, der für Benutzer akzeptabel ist. Die Wiederholungsrichtlinie wird im `webUIRetryPolicy`-Objekt angegeben, das an die `ExecuteQuerySegmentedAsync`-Methode übergeben wird. Das `webUIRetryPolicy`-Objekt ist im Konstruktor des Controllers definiert:
 
@@ -559,11 +559,11 @@ Die *Edit*- und **Delete**-Links in der Datei **Index.cshtml** geben die Paramet
 
 1.  Drücken Sie STRG+F5, um das Projekt auszuführen.
 
-    ![Leere Indexseite der Mailingliste][]
+    ![Leere Indexseite der Mailingliste][Leere Indexseite der Mailingliste]
 
 2.  Erstellen Sie einige Mailinglisten mit der **Create**-Funktion und testen Sie, ob die **Edit**- und **Delete**-Funktionen wie gewünscht funktionieren.
 
-    ![Indexseite der Mailingliste mit Einträgen][]
+    ![Indexseite der Mailingliste mit Einträgen][Indexseite der Mailingliste mit Einträgen]
 
 ## <a name="subscriber"></a><span class="short-header">Abonnenten</span>Erstellen und Testen der Abonnenten-Controller und -Ansichten
 
@@ -768,11 +768,11 @@ Die Datei *Edit.cshtml* enthält ein verborgenes Feld zum Speichern des `Subscri
 
 1.  Drücken Sie STRG+F5, um das Projekt auszuführen, und klicken Sie auf **Subscribers**.
 
-    ![Leere Indexseite für Abonnenten][]
+    ![Leere Indexseite für Abonnenten][Leere Indexseite für Abonnenten]
 
 2.  Erstellen Sie einige Mailinglisten mit der **Create**-Funktion und testen Sie, ob die **Edit**- und **Delete**-Funktionen wie gewünscht funktionieren.
 
-    ![Indexseite für Abonnenten mit Einträgen][]
+    ![Indexseite für Abonnenten mit Einträgen][Indexseite für Abonnenten mit Einträgen]
 
 ## <a name="message"></a>Erstellen und Testen der Nachrichten-Controller und -Ansichten
 
@@ -1007,7 +1007,7 @@ Damit wird verhindert, dass Benutzer Änderungen an Nachrichten vornehmen, die b
 
 1.  Drücken Sie STRG+F5, um das Projekt auszuführen, und klicken Sie auf **Messages**.
 
-    ![Leere Indexseite für Nachrichten][]
+    ![Leere Indexseite für Nachrichten][Leere Indexseite für Nachrichten]
 
 2.  Erstellen Sie einige Mailinglisten mit der **Create**-Funktion und testen Sie, ob die **Edit**- und **Delete**-Funktionen wie gewünscht funktionieren.
 
@@ -1188,7 +1188,7 @@ Die `Confirmed`-Eigenschaft im Text der Seite bestimmt, was auf der Seite angeze
 
 6.  Wählen Sie im Dialogfeld **Entität bearbeiten** den `SubscriberGUID`-Wert aus, und kopieren Sie den Wert.
 
-    ![Azure-Speicher-Explorer][]
+    ![Azure-Speicher-Explorer][Azure-Speicher-Explorer]
 
 7.  Wechseln Sie zurück zu Ihrem Browserfenster. Ändern Sie in der Adressleiste des Browser "Subscriber" in der URL zu "unsubscribe?ID=[GUID]&listName=[Listenname]", wobei [GUID] die aus dem Azure-Speicher-Explorer kopierte GUID ist und [Listenname] der Name der Mailingliste ist. Beispiel:
 
@@ -1196,11 +1196,11 @@ Die `Confirmed`-Eigenschaft im Text der Seite bestimmt, was auf der Seite angeze
 
     Daraufhin wird die Version der **Unsubscribe** angezeigt, die zur Bestätigung auffordert:
 
-    ![Abbestellen-Seite][]
+    ![Abbestellen-Seite][Abbestellen-Seite]
 
 8.  Wenn Sie auf **Confirm** klicken, wird eine Bestätigung für die Abbestellung der E-Mail-Adresse angezeigt.
 
-    ![Abbestellung bestätigt-Seite][]
+    ![Abbestellung bestätigt-Seite][Abbestellung bestätigt-Seite]
 
 9.  Wechseln Sie zurück zur **Indexseite** für **Abonnenten** und vergewissern Sie sich, dass die Abonnentenzeile nicht mehr vorhanden ist.
 
@@ -1218,9 +1218,9 @@ Für die Webseite, die Abonnenten angezeigt wird, nachdem Sie auf den **Bestäti
 -   Controllers\\SubscribeController.cs
 -   Views\\Subscribe\\Index.cshtml
 
-Im [nächsten Lernprogramm][] werden Sie die Workerrolle A konfigurieren und programmieren, die für die Planung von E-Mails verantwortlich ist.
+Im [nächsten Lernprogramm][nächsten Lernprogramm] werden Sie die Workerrolle A konfigurieren und programmieren, die für die Planung von E-Mails verantwortlich ist.
 
-Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie im [letzten Lernprogramms in dieser Serie][].
+Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie im [letzten Lernprogramms in dieser Serie][letzten Lernprogramms in dieser Serie].
 
 <div>
 
@@ -1228,7 +1228,7 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
 
 </div>
 
-  [ersten Lernprogramm der Serie]: /en-us/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [ersten Lernprogramm der Serie]: /de-de/develop/net/tutorials/multi-tier-web-site/1-overview/
   [Erstellen der Visual Studio-Lösung]: #cloudproject
   [Aktualisieren des NuGet-Pakets für die Speicherclientbibliothek]: #updatescl
   [Konfigurieren des Projekts zur Verwendung des Speicheremulators]: #configurestorage
@@ -1255,17 +1255,17 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
   [Webrollen-Eigenschaften]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-mvcwebrole-properties-menu.png
   [Rechtsklick Eigenschaften]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-elip.png
   [Fehler: ungültige Dienstkonfiguration und Definitionsdateien]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-er1.png
-  [zweiten Lernprogramm]: /en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
+  [zweiten Lernprogramm]: /de-de/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
   [Role Instance Restarts Due to OS Upgrades]: http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx
-  [bedarfsgesteuerte Übertragung]: http://msdn.microsoft.com/en-us/library/windowsazure/gg433075.aspx
-  [dbgview]: http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx
-  [TableEntity]: http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storage.table.tableentity.aspx
-  [DynamicTableEntity]: http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storage.table.dynamictableentity.aspx
+  [bedarfsgesteuerte Übertragung]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433075.aspx
+  [dbgview]: http://technet.microsoft.com/de-de/sysinternals/bb896647.aspx
+  [TableEntity]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.storage.table.tableentity.aspx
+  [DynamicTableEntity]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.storage.table.dynamictableentity.aspx
   [Azure Storage Client Library 2.0 Tables Deep Dive]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx
-  [Grundlegendes zum Tabellendienst-Datenmodell]: http://msdn.microsoft.com/en-us/library/windowsazure/dd179338.aspx
+  [Grundlegendes zum Tabellendienst-Datenmodell]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179338.aspx
   [% Character in PartitionKey or RowKey]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/05/28/partitionkey-or-rowkey-containing-the-percent-character-causes-some-windows-azure-tables-apis-to-fail.aspx
   [Verwenden der asynchronen Funktionen in .NET 4.5 zum Vermeiden von blockierenden Aufrufen]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async
-  [TableOperation.Retrieve]: http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storage.table.tableoperation.retrieve.aspx
+  [TableOperation.Retrieve]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.storage.table.tableoperation.retrieve.aspx
   [How to get most out of Azure Tables]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx
   [Azure Tables: Expect Continuation Tokens, Seriously]: http://blog.smarx.com/posts/windows-azure-tables-expect-continuation-tokens-seriously
   [Azure-Speicher-Protokollierung: Verfolgen von Speicheranfragen mithilfe von Protokollen]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/08/03/windows-azure-storage-logging-using-logs-to-track-storage-requests.aspx
@@ -1279,5 +1279,5 @@ Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Wartesc
   [Azure-Speicher-Explorer]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-ase-edit-entity-unsubscribe.png
   [Abbestellen-Seite]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-unsubscribe-query-page.png
   [Abbestellung bestätigt-Seite]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-unsubscribe-confirmation-page.png
-  [nächsten Lernprogramm]: /en-us/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
-  [letzten Lernprogramms in dieser Serie]: /en-us/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/#nextsteps
+  [nächsten Lernprogramm]: /de-de/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
+  [letzten Lernprogramms in dieser Serie]: /de-de/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/#nextsteps

@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-get-started-sencha" urlDisplayName="Get Started" pageTitle="Get Started with Azure Mobile Services and Sencha" metaKeywords="" description="Follow this tutorial to get started developing with Mobile Services and the Sencha HTML5 mobile app framework. " metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="" documentationCenter="Mobile" title="Get started with Mobile Services and Sencha Touch" authors="sencha" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-sencha" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="sencha"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-sencha" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="sencha" />
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services und Sencha Touch
 
@@ -691,12 +691,9 @@ Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie
 
 <!-- images -->
 
-  [mobile-services-selector-get-started]: ../includes/mobile-services-selector-get-started.md
-  [Lernprogramm ansehen]: http://go.microsoft.com/fwlink/?LinkId=392574
   [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
   [Sencha Touch]: http://wwww.sencha.com/products/touch/download
   [Sencha Cmd Tool]: http://www.sencha.com/products/sencha-cmd/download
-  [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
   [Mobile quickstart html]: ./media/partner-sencha-mobile-services-get-started/mobile-portal-quickstart-html.png
   [1]: ./media/partner-sencha-mobile-services-get-started/mobile-quickstart-steps-html.png
   [App-Schlüssel]: ./media/partner-sencha-mobile-services-get-started/mobile-app-key-portal.png

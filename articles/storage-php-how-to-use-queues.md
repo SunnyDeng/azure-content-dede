@@ -1,6 +1,6 @@
-<properties title="Verwenden des Warteschlangendiensts (PHP) &ndash; Azure-Funktionsleitfaden" pageTitle="Verwenden des Warteschlangendiensts (PHP) | Microsoft Azure" metaKeywords="Azure Queue Service messaging PHP" description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und L&ouml;schen von Warteschlangen sowie zum Einf&uuml;gen, Abrufen und L&ouml;schen von Nachrichten verwenden. Die Beispiele wurden in PHP geschrieben." documentationCenter="PHP" services="storage" authors="tamram" manager="adinah" />
+<properties title="How to use the queue service (PHP) - Azure feature guide" pageTitle="How to use the queue service (PHP) | Microsoft Azure" metaKeywords="Azure Queue Service messaging PHP" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in PHP." documentationCenter="PHP" services="storage" authors="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # Verwenden des Warteschlangendienstes aus PHP
 
@@ -44,7 +44,7 @@ In diesem Leitfaden verwenden Sie Funktionen des Warteschlangendiensts, die loka
 
 Zum Verwenden der Azure-Warteschlangendienst-APIs müssen Sie Folgendes durchführen:
 
-1.  Verweisen Sie mithilfe der [require\_once][require\_once]-Anweisung auf die Autoloaderdatei und
+1.  Verweisen Sie mithilfe der [require_once][require_once]-Anweisung auf die Autoloaderdatei und
 2.  Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
@@ -379,7 +379,6 @@ Da Sie jetzt die Grundlagen des Azure-Warteschlangendiensts erlernt haben, folge
 -   Besuchen Sie den Blog des Azure-Speicherteams: <http://blogs.msdn.com/b/windowsazurestorage/>
 
   [Nächste Schritte]: #NextSteps
-  [Was ist Warteschlangenspeicherung?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Erstellen einer PHP-Anwendung]: #create-app
@@ -394,5 +393,5 @@ Da Sie jetzt die Grundlagen des Azure-Warteschlangendiensts erlernt haben, folge
   [Gewusst wie: Abrufen der Warteschlangenlänge]: #get-queue-length
   [Gewusst wie: Löschen einer Warteschlange]: #delete-queue
   [1]: #next-steps
-  [require\_once]: http://www.php.net/manual/en/function.require-once.php
+  [require_once]: http://www.php.net/manual/en/function.require-once.php
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx

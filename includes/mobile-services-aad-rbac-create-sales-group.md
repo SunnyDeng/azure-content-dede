@@ -8,7 +8,7 @@ In diesem Abschnitt fügen Sie Ihrem Verzeichnis zwei neue Benutzer und die neue
 4.  Erstellen Sie einen weiteren Benutzer namens **Dave**. Notieren Sie sich das temporäre Kennwort für den Benutzer.
 5.  Die neuen Benutzer sollten dem Beispiel unten ähneln.
 
-    ![][]
+    ![][0]
 
 ### Die Gruppe "Sales" erstellen
 
@@ -28,7 +28,7 @@ In diesem Abschnitt fügen Sie Ihrem Verzeichnis zwei neue Benutzer und die neue
 
     ![][3]
 
-  []: ./media/mobile-services-aad-rbac-create-sales-group/users.png
+  [0]: ./media/mobile-services-aad-rbac-create-sales-group/users.png
   [1]: ./media/mobile-services-aad-rbac-create-sales-group/sales-group.png
   [2]: ./media/mobile-services-aad-rbac-create-sales-group/group-membership.png
   [3]: ./media/mobile-services-aad-rbac-create-sales-group/sales-group-id.png

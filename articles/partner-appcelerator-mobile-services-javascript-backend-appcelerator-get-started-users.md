@@ -102,5 +102,3 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
   [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
   [Hinzufügen von Authentifizierung zur App]: #add-authentication
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
-  [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
-  [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md

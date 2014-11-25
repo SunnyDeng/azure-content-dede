@@ -1,12 +1,12 @@
 <properties urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Get started with Azure Websites and ASP.NET" authors="tdykstra" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tdykstra"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tdykstra" />
 
 # Erste Schritte mit Azure-Websites und ASP.NET
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/develop/net/tutorials/get-started/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/en-us/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/develop/net/tutorials/get-started/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/de-de/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
 
-<div class="dev-callout"><strong>Hinweis</strong><p>Es ist eine <a href="/en-us/develop/net/tutorials/get-started/">neuere Version dieses Lernprogramms</a> verf&uuml;gbar. Sie k&ouml;nnen trotzdem diese Version ausf&uuml;hren, wenn Sie Visual Studio 2012 verwenden m&ouml;chten, sie enth&auml;lt jedoch nicht alle neuen Azure SDK-Funktionen.</p></div>
+<div class="dev-callout"><strong>Hinweis</strong><p>Es ist eine <a href="/de-de/develop/net/tutorials/get-started/">neuere Version dieses Lernprogramms</a> verf&uuml;gbar. Sie k&ouml;nnen trotzdem diese Version ausf&uuml;hren, wenn Sie Visual Studio 2012 verwenden m&ouml;chten, sie enth&auml;lt jedoch nicht alle neuen Azure SDK-Funktionen.</p></div>
 
 In diesem Lernprogramm wird die Bereitstellung einer ASP.NET-Webanwendung für eine Azure-Website mit dem Assistenten "Web veröffentlichen" in Visual Studio 2012 oder Visual Studio 2012 for Web Express gezeigt. Wenn Sie möchten, können Sie den Schritten des Lernprogramms mit Visual Studio 2010 oder Visual Web Developer Express 2010 folgen.
 
@@ -23,7 +23,7 @@ In der folgenden Abbildung wird die fertige Anwendung dargestellt:
 
 ![Beispiel-Website][Beispiel-Website]
 
-<div class="dev-callout"><p><strong>Hinweis:</strong> Sie ben&ouml;tigen ein Azure-Konto, um dieses Lernprogramm abzuschlie&szlig;en. Wenn Sie kein Konto haben, k&ouml;nnen Sie <a href="/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre MSDN-Abonnentenvorteile aktivieren</a> oder <a href="/en-us/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich f&uuml;r eine kostenlose Testversion registrieren</a>.</p></div>
+<div class="dev-callout"><p><strong>Hinweis:</strong> Sie ben&ouml;tigen ein Azure-Konto, um dieses Lernprogramm abzuschlie&szlig;en. Wenn Sie kein Konto haben, k&ouml;nnen Sie <a href="/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre MSDN-Abonnentenvorteile aktivieren</a> oder <a href="/de-de/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich f&uuml;r eine kostenlose Testversion registrieren</a>.</p></div>
 
 ### Teile des Lernprogramms
 
@@ -204,18 +204,12 @@ Die meisten Produktionswebsites verwenden eine Datenbank und schränken einige W
 
 In einigen Szenarien empfiehlt es sich, die Anwendung in einem Azure-Clouddienst auszuführen statt auf einer Azure-Website. Weitere Informationen finden Sie unter [Azure-Ausführungsmodelle][Azure-Ausführungsmodelle] und [Vergleich von Websites, Clouddiensten und virtuellen Computern in Azure][Vergleich von Websites, Clouddiensten und virtuellen Computern in Azure]. Unter [.NET-Anwendung mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs][.NET-Anwendung mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs] finden Sie eine Lernprogrammreihe, in der die Erstellung einer ASP.NET-Webanwendung mit mehreren Ebenen und die Bereitstellung dieser Anwendung für einen Clouddienst gezeigt wird.
 
-  [Visual Studio 2013]: /en-us/develop/net/tutorials/get-started/ "Visual Studio 2013"
-  [Visual Studio 2012]: /en-us/develop/net/tutorials/get-started-vs2012/ "Visual Studio 2012"
-  [neuere Version dieses Lernprogramms]: /en-us/develop/net/tutorials/get-started/
   [Beispiel-Website]: ./media/web-sites-dotnet-get-started-vs2012/DeployedWebSite.png
-  [Ihre MSDN-Abonnentenvorteile aktivieren]: /en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F
-  [sich für eine kostenlose Testversion registrieren]: /en-us/pricing/free-trial/?WT.mc_id=A261C142F
   [Einrichten der Entwicklungsumgebung]: #setupdevenv
   [Erstellen einer Website in Azure]: #setupwindowsazure
   [Erstellen einer ASP.NET MVC 4-Anwendung]: #createmvc4app
   [Bereitstellen der Anwendung in Azure]: #deploytowindowsazure
   [Nächste Schritte]: #nextsteps
-  [install-sdk-2012-only]: ../includes/install-sdk-2012-only.md
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Neue Website]: ./media/web-sites-dotnet-get-started-vs2012/WebSiteNew.png
   [Schnellerfassung]: ./media/web-sites-dotnet-get-started-vs2012/ClickQuickCreate.png
@@ -242,12 +236,12 @@ In einigen Szenarien empfiehlt es sich, die Anwendung in einem Azure-Clouddienst
   [Azure-Websites im Server-Explorer]: ./media/web-sites-dotnet-get-started-vs2012/ServerExplorerWSSettings.png
   [Website-Konfiguration in Visual Studio]: ./media/web-sites-dotnet-get-started-vs2012/WSConfigurationInVS.png
   [Registerkarte "Dashboard" im Verwaltungsportal]: ./media/web-sites-dotnet-get-started-vs2012/MPStopStartDelete.png
-  [Verwalten von Websites]: /en-us/manage/services/web-sites/how-to-manage-websites/
+  [Verwalten von Websites]: /de-de/manage/services/web-sites/how-to-manage-websites/
   [Registerkarte "Skalierung" im Verwaltungsportal]: ./media/web-sites-dotnet-get-started-vs2012/MPScale.png
-  [Skalieren von Websites]: /en-us/manage/services/web-sites/how-to-scale-websites/
+  [Skalieren von Websites]: /de-de/manage/services/web-sites/how-to-scale-websites/
   [Protokolle in Visual Studio]: ./media/web-sites-dotnet-get-started-vs2012/LogsInVS.png
-  [Problembehandlung von Azure-Websites in Visual Studio]: /en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
-  [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank für eine Azure-Website]: /en-us/develop/net/tutorials/web-site-with-sql-database/
-  [Azure-Ausführungsmodelle]: /en-us/develop/net/fundamentals/compute/
+  [Problembehandlung von Azure-Websites in Visual Studio]: /de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
+  [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank für eine Azure-Website]: /de-de/develop/net/tutorials/web-site-with-sql-database/
+  [Azure-Ausführungsmodelle]: /de-de/develop/net/fundamentals/compute/
   [Vergleich von Websites, Clouddiensten und virtuellen Computern in Azure]: http://azure.microsoft.com/de-de/documentation/articles/choose-web-site-cloud-service-vm/
-  [.NET-Anwendung mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs]: /en-us/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [.NET-Anwendung mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs]: /de-de/develop/net/tutorials/multi-tier-web-site/1-overview/

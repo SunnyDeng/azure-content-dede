@@ -1,6 +1,6 @@
 <properties linkid="Install-Config-Windows-Azure-PowerShell" urlDisplayName="Azure PowerShell" pageTitle="How to install and configure Azure PowerShell" description="Learn how to install and configure Azure PowerShell." umbracoNaviHide="0" disqusComments="1" editor="tysonn" manager="stevenka" documentationCenter="" services="" solutions="" authors="stevenka" title="How to install and configure Azure PowerShell" />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="powershell" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="stevenka;juneb"></tags>
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="powershell" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="stevenka;juneb" />
 
 # Installieren und Konfigurieren von Azure PowerShell
 
@@ -264,8 +264,6 @@ Im Folgenden werden einige der verfügbaren Ressourcen genannt, in denen Sie erf
 
 -   Informationen zu Cmdlets für Azure AD finden Sie unter [Verwalten von Azure AD mithilfe von Windows PowerShell][Verwalten von Azure AD mithilfe von Windows PowerShell].
 
-  [PowerShell]: /de-de/manage/install-and-configure-windows-powershell/ "PowerShell"
-  [Plattformübergreifende Befehlszeilenschnittstelle]: /de-de/manage/install-and-configure-cli/ "Plattformübergreifende Befehlszeilenschnittstelle"
   [Azure PowerShell-Coderepository]: https://github.com/WindowsAzure/azure-sdk-tools
   [Erforderliche Komponenten für die Verwendung von Azure PowerShell]: #Prereq
   [Gewusst wie: Installieren von Azure PowerShell]: #Install
@@ -279,9 +277,6 @@ Im Folgenden werden einige der verfügbaren Ressourcen genannt, in denen Sie erf
   [Verwalten von Konten, Abonnements und Administratorrollen]: http://go.microsoft.com/fwlink/?LinkId=324796
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Anmelden bei Microsoft Azure als Organisation]: http://azure.microsoft.com/de-de/documentation/articles/sign-up-organization/
-  [Azure Resource Manager Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=394765
-  [1]: http://manage.windowsazure.com/
-  [Microsoft Online Services-Kundenportal]: http://go.microsoft.com/fwlink/p/?LinkId=324875
   [2]: http://manage.windowsazure.com
   [Hinzufügen und Entfernen von Co-Administratoren für Azure-Abonnements]: http://msdn.microsoft.com/de-de/library/windowsazure/gg456328.aspx
   [Azure-Cmdlet-Referenz]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554330.aspx

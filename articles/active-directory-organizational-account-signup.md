@@ -26,7 +26,6 @@ Da es sich um das Cloud-Verzeichnis Ihres Unternehmens handelt, entscheiden Sie,
 
 Wenn in Ihrem Unternehmen bereits das lokale Active Directory verwendet wird, können Sie die Integrationsfunktionen von Azure AD nutzen, wie etwa Verzeichnissynchronisierung und einmaliges Anmelden, um die Reichweite Ihrer vorhandenen lokalen Identitäten für eine optimierte Benutzerfreundlichkeit für Administratoren und Benutzer weiter auf die Cloud auszudehnen. [Weitere Informationen][3]
 
-  [Haftungsausschluss]: ../includes/disclaimer.md
   [Weitere Informationen]: http://windows.microsoft.com/de-de/windows-live/sign-in-what-is-microsoft-account
   [1]: http://technet.microsoft.com/de-de/library/jj573650
   [2]: http://technet.microsoft.com/de-de/library/hh967619

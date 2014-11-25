@@ -1,6 +1,6 @@
 <properties linkid="develop-dotnet-rest-service-using-web-api" urlDisplayName="REST service using Web API" pageTitle=".NET REST service using Web API - Azure tutorial" metaKeywords="Azure tutorial web site, ASP.NET API web site, Azure VS" description="A tutorial that teaches you how to deploy an app that uses the ASP.NET Web API to an Azure website by using Visual Studio." metaCanonical="" services="web-sites" documentationCenter=".NET" title="REST service using ASP.NET Web API and SQL Database" authors="riande" solutions="" manager="" editor="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="riande"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="riande" />
 
 # REST-Dienst verwendet ASP.NET Web-API und SQL-Datenbank
 
@@ -37,7 +37,7 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 b
 
 <a name="bkmk_setupdevenv"></a>
 <!-- the next line produces the "Set up the development environment" section as see at http://www.windowsazure.com/de-de/documentation/articles/web-sites-dotnet-get-started/ -->
- [WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
+ [WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## <a name="bkmk_setupwindowsazure"></a>Einrichten der Azure-Umgebung
 
@@ -824,7 +824,6 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
   [Hinzufügen einer Restful-Web-API-Oberfläche]: #bkmk_addwebapi
   [Hinzufügen von XSRF-Schutz]: #xsrf
   [Veröffentlichen von Anwendungsaktualisierungen von Azure und SQL-Datenbank]: #bkmk_deploydatabaseupdate
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [Erstellung über Datenbanklink im Verwaltungsportal]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr6.PNG
   [Schritt "Neue Website erstellen" des Assistenten "New Website - Create with Database"]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrCWS.png

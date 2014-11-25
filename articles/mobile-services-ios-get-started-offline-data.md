@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-get-started-offline-data-ios" urlDisplayName="Getting Started with Offline Data" pageTitle="Get started with offline data in Mobile Services (iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to cache and sync offline data in your iOS application" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with offline data sync in Mobile Services" authors="wesmc" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="01/01/1900" ms.author="wesmc" />
 
 # Erste Schritte mit der Synchronisierung von Offlinedaten in Mobile Services
 
@@ -35,7 +35,7 @@ Dieses Lernprogramm zeigt, wie die App mithilfe des Lernprogramms [Erste Schritt
 * [How to use the Mobile Services client library for iOS]
    -->
 
-<!-- URLs. -->
+
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data "Windows Store C#"
 [Windows Phone]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-offline-data "Windows Phone"

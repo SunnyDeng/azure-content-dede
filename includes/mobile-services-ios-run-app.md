@@ -2,7 +2,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 1.  Navigieren Sie zu dem Verzeichnis, in dem Sie die komprimierten Projektdateien gespeichert haben, erweitern Sie die Dateien auf Ihrem Computer, und öffnen Sie die Projektdatei mithilfe von Xcode.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App im iPhone-Emulator zu starten, was die Voreinstellung bei diesem Projekt darstellt.
 
@@ -17,5 +17,5 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
     > </div>
     > </p>
 
-  []: ./media/mobile-services-ios-run-app/mobile-xcode-project.png
+  [0]: ./media/mobile-services-ios-run-app/mobile-xcode-project.png
   [1]: ./media/mobile-services-ios-run-app/mobile-quickstart-startup-ios.png

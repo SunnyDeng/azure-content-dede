@@ -114,7 +114,6 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
   [0]: ./media/mobile-services-windows-store-get-started/mobile-quickstart-completed.png
   [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F
   [Erste Schritte mit Daten in Mobile Services mithilfe von Visual Studio 2012]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet-vs2012/
-  [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
   [1]: ./media/mobile-services-windows-store-get-started/mobile-portal-quickstart.png
   [2]: ./media/mobile-services-windows-store-get-started/mobile-quickstart-steps.png
   [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546

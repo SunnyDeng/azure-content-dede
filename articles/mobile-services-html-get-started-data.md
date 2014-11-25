@@ -225,7 +225,6 @@ Nach Abschluss der Daten-Lernprogramme können Sie herausfinden, wie Sie Benutze
 
 
 
-  [mobile-services-selector-get-started-data]: ../includes/mobile-services-selector-get-started-data.md
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-html
   [Herunterladen des HTML-App-Projekts]: #download-app
   [Erstellen des mobilen Dienstes]: #create-service
@@ -234,7 +233,6 @@ Nach Abschluss der Daten-Lernprogramme können Sie herausfinden, wie Sie Benutze
   [Testen der App mit Mobile Services]: #test-app
   [GetStartedWithData]: http://go.microsoft.com/fwlink/?LinkID=286345
   [0]: ./media/mobile-services-html-get-started-data/mobile-quickstart-startup-html.png
-  [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
   [1]: ./media/mobile-services-html-get-started-data/mobile-data-tab-empty.png
   [2]: ./media/mobile-services-html-get-started-data/mobile-create-todoitem-table.png
   [3]: ./media/mobile-services-html-get-started-data/mobile-services-set-cors-localhost.png

@@ -1,6 +1,6 @@
 <properties pageTitle="Streaming logs and console" description="Streaming logs and console overview" title="Streaming logs and console" authors="adamab" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="adamab"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="adamab" />
 
 ## Streamingprotokolle und die Konsole
 
@@ -40,7 +40,7 @@ In einer node.js-App können Sie folgenden Code schreiben, um das gleiche Ergebn
 
 Diagnostics werden pro Website aktiviert. Klicken Sie im [Portal][Portal] links auf **Durchsuchen** und klicken Sie dann auf **Websites**, um die Liste aller Websites anzuzeigen.
 
-![][]
+![][0]
 
 Klicken Sie auf den Namen der Website, die Sie konfigurieren möchten. Klicken Sie anschließend auf den Bereich **DIAGNOSTIC LOGS** und setzen Sie den Switch **Application Logging (Filesystem)** auf **ON**. Es wird die Option **Schweregrad** angezeigt. Hier können Sie den Schweregrad der festgelegten Ablaufverfolgungen festlegen. Sie sollten hier **Ausführlich** festlegen, wenn es nur darum geht, sich mit der Funktion vertraut zu machen, da so sichergestellt werden kann, dass alle Ablaufverfolgungen protokolliert werden.
 
@@ -72,9 +72,9 @@ cd
 
 
 
-<!-- Images. -->
+
 
   [Portal]: https://portal.azure.com
-  []: ./media/web-sites-streaming-logs-and-console/browse-sites.png
+  [0]: ./media/web-sites-streaming-logs-and-console/browse-sites.png
   [1]: ./media/web-sites-streaming-logs-and-console/streaming-logs.png
   [2]: ./media/web-sites-streaming-logs-and-console/console.png

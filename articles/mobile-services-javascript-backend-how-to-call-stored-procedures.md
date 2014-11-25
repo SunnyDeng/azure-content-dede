@@ -1,6 +1,6 @@
 <properties pageTitle="Calling SQL stored procedures with a JavaScript back end" metaKeywords="stored procedures, SQL, mobile devices, Azure" description="explains how to use SQL stored procedures in a mobile services JavaScript backed." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Calling SQL stored procedures with a JavaScript back end" authors="ricksal" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
 
 # Aufrufen von gespeicherten SQL-Prozeduren mit einem JavaScript-Back-End
 
@@ -144,7 +144,7 @@ Dies sind weitere mögliche Szenarien:
 
 Sie können auch das Azure-Portal zum Verwalten und Erstellen von neuen gespeicherten Prozeduren verwenden.
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
   [Aufrufen einer einfachen gespeicherten Prozedur]: #simple
   [Aufrufen einer gespeicherten Prozedur mit Parametern]: #parameters
@@ -159,5 +159,5 @@ Sie können auch das Azure-Portal zum Verwalten und Erstellen von neuen gespeich
   [Android]: http://azure.microsoft.com/de-de/documentation/articles/mobile-services-android-call-custom-api/
   [HTML]: http://azure.microsoft.com/de-de/documentation/articles/mobile-services-html-call-custom-api/
   [\*\*@Status\*\*]: mailto:**@Status*
-  [Wie führe ich mehr als 1 Lesevorgang durch Skripting aus]: http://social.msdn.microsoft.com/Forums/windowsazure/en-US/fccf4ae7-f43c-4c2d-8518-32e2df84a824/how-do-i-do-more-than-1-read-operation-by-scripting?forum=azuremobile
+  [Wie führe ich mehr als 1 Lesevorgang durch Skripting aus]: http://social.msdn.microsoft.com/Forums/windowsazure/de-de/fccf4ae7-f43c-4c2d-8518-32e2df84a824/how-do-i-do-more-than-1-read-operation-by-scripting?forum=azuremobile
   [Zugriff auf eine gespeicherte Prozedur von einem anderen Schema]: http://blogs.msdn.com/b/jpsanders/archive/2013/05/02/windows-azure-mobile-services-accessing-a-stored-procedure-from-a-different-schema.aspx

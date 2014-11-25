@@ -145,7 +145,6 @@ Beim Starten oder Anhalten von Diensten wird die Abrechnung nicht deaktiviert. S
 
 <!--Anchors-->  
 
-  [Dieser Artikel verwendet das Azure-Vorschauportal]: ../includes/preview-portal-note.md
   [Fügen Sie den Suchdienst zu Ihrem Abonnement hinzu]: #sub-1
   [Verwaltungsaufgaben]: #sub-2
   [Dienst-URL]: #sub-3
@@ -155,14 +154,14 @@ Beim Starten oder Anhalten von Diensten wird die Abrechnung nicht deaktiviert. S
   [Starten bzw. Stoppen des Dienstes]: #sub-7
   [Azure-Vorschauportal]: https://portal.azure.com
 <!--Link references-->
-  [Limits und Einschränkungen]: http://msdn.microsoft.com/en-us/library/dn798934.aspx
+  [Limits und Einschränkungen]: http://msdn.microsoft.com/de-de/library/dn798934.aspx
   [Preisdetails]: http://go.microsoft.com/fwlink/p/?LinkdID=509792
   [Konfigurieren der Suche im Azure-Vorschauportal]: ../search-configure/
 <!--Image references-->
   [0]: ./media/search-manage/Azure-Search-Manage-1-URL.png
   [Azure Search REST-API]: http://go.microsoft.com/fwlink/p/?LinkdID=509922
   [1]: ./media/search-manage/Azure-Search-Manage-2-Keys.png
-  [Abrufen der Index-Statistiken]: http://msdn.microsoft.com/en-us/library/dn798942.aspx
-  [Dokumentenanzahl]: http://msdn.microsoft.com/en-us/library/dn798924.aspx
+  [Abrufen der Index-Statistiken]: http://msdn.microsoft.com/de-de/library/dn798942.aspx
+  [Dokumentenanzahl]: http://msdn.microsoft.com/de-de/library/dn798924.aspx
   [2]: ./media/search-manage/Azure-Search-Manage-3-ScaleUp.png
   [3]: ./media/search-manage/Azure-Search-Manage-4-StartStop.png

@@ -84,7 +84,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 
-  [mobile-services-selector-get-started-push-legacy]: ../includes/mobile-services-selector-get-started-push-legacy.md
   [universellen Windows-Apps]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
   [Registrieren Ihrer App bei WNS und Konfigurieren von Mobile Services]: #register
   [Aktualisieren Ihrer App zur Registrierung für Benachrichtigungen]: #update-app
@@ -92,10 +91,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
   [Einfügen von Daten zum Empfangen von Pushbenachrichtigungen]: #test
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-data
-  [mobile-services-notification-hubs-register-windows-store-app]: ../includes/mobile-services-notification-hubs-register-windows-store-app.md
   [0]: ./media/mobile-services-windows-store-javascript-get-started-push-vs2012/mobile-app-enable-toast-win8.png
-  [mobile-services-javascript-update-script-notification-hubs]: ../includes/mobile-services-javascript-update-script-notification-hubs.md
-  [mobile-services-windows-store-test-push]: ../includes/mobile-services-windows-store-test-push.md
   [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-push-notifications-app-users/
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users
   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

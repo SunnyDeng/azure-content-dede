@@ -1,10 +1,10 @@
 <properties linkid="develop-mobile-tutorials-dotnet-backend-get-started-with-data-javascript-vs2013" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Store app." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="wesmc" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 
 # Erste Schritte mit Daten in Mobile Services
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-data][mobile-services-selector-get-started-data]]
+[WACOM.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 In diesem Thema wird gezeigt, wie Sie Azure Mobile Services als Backend-Datenquelle für eine Windows Store-App nutzen können. In diesem Lernprogramm laden Sie ein Visual Studio 2013-Projekt für eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und zeigen dann die Datenänderungen beim Ausführen der App an.
 
@@ -29,11 +29,11 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 ## <a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts
 
-[WACOM.INCLUDE [mobile-services-windows-universal-javascript-download-project][mobile-services-windows-universal-javascript-download-project]]
+[WACOM.INCLUDE [mobile-services-windows-universal-javascript-download-project](../includes/mobile-services-windows-universal-javascript-download-project.md)]
 
 ## <a name="create-service"></a>Erstellen eines mobilen Diensts in Visual Studio
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service-vs2013][mobile-services-dotnet-backend-create-new-service-vs2013]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service-vs2013](../includes/mobile-services-dotnet-backend-create-new-service-vs2013.md)]
 
 1.  Navigieren Sie im Projektmappen-Explorer zum Unterordner **services\\mobileService\\scripts**, öffnen Sie die Skriptdatei "service.js", und beachten Sie die neue globale Variable, die wie folgt aussieht:
 
@@ -57,27 +57,27 @@ Jetzt sind sowohl die Windows Store- als auch die Windows Phone Store-App mit de
 
 ## <a name="test-the-service-locally"></a>Lokales Testen des mobilen Dienstprojekts
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation][mobile-services-dotnet-backend-test-local-service-api-documentation]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation](../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md)]
 
 ## <a name="update-app"></a>Aktualisieren der App für die Verwendung des mobilen Diensts
 
 In diesem Abschnitt aktualisieren Sie die universelle Windows-App, um den mobilen Dienst als Backend-Dienst für die Anwendung zu verwenden. Dazu müssen Sie lediglich die Projektdatei "default.js" im Projektordner "GetStartedWithData.Shared" anpassen.
 
-[WACOM.INCLUDE [mobile-services-windows-javascript-update-data-app][mobile-services-windows-javascript-update-data-app]]
+[WACOM.INCLUDE [mobile-services-windows-javascript-update-data-app](../includes/mobile-services-windows-javascript-update-data-app.md)]
 
 ## <a name="publish-mobile-service"></a>Veröffentlichen des mobilen Diensts in Azure
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service][mobile-services-dotnet-backend-publish-service]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 ## <a name="test-azure-hosted"></a>Testen des in Azure gehosteten mobilen Diensts
 
 Nun können wir beide Versionen der universellen Windows-App mit dem in Azure gehosteten mobilen Dienst testen.
 
-[WACOM.INCLUDE [mobile-services-windows-universal-test-app][mobile-services-windows-universal-test-app]]
+[WACOM.INCLUDE [mobile-services-windows-universal-test-app](../includes/mobile-services-windows-universal-test-app.md)]
 
 ## <a name="view-stored-data"></a>Anzeigen der in der SQL-Datenbank gespeicherten Daten
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-view-sql-data][mobile-services-dotnet-backend-view-sql-data]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-view-sql-data](../includes/mobile-services-dotnet-backend-view-sql-data.md)]
 
 Damit ist das Lernprogramm **Erste Schritte mit Daten** beendet.
 
@@ -102,9 +102,8 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 -   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit HTML und JavaScript.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+  
 
-  [mobile-services-selector-get-started-data]: ../includes/mobile-services-selector-get-started-data.md
   [dieser Version]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data
   [Herunterladen des Windows Store-App-Projekts]: #download-app
   [Erstellen eines mobilen Diensts in Visual Studio]: #create-service
@@ -113,17 +112,10 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   [Veröffentlichen des mobilen Diensts in Azure]: #publish-mobile-service
   [Testen der App mit dem in Azure gehosteten Dienst]: #test-azure-hosted
   [Anzeigen der in der SQL-Datenbank gespeicherten Daten]: #view-stored-data
-  [Kostenlose Azure-Testversion]: http://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-javascript-get-started-data%2F
+  [Kostenlose Azure-Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-javascript-get-started-data%2F
   [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
-  [mobile-services-windows-universal-javascript-download-project]: ../includes/mobile-services-windows-universal-javascript-download-project.md
-  [mobile-services-dotnet-backend-create-new-service-vs2013]: ../includes/mobile-services-dotnet-backend-create-new-service-vs2013.md
-  [mobile-services-dotnet-backend-test-local-service-api-documentation]: ../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md
-  [mobile-services-windows-javascript-update-data-app]: ../includes/mobile-services-windows-javascript-update-data-app.md
-  [mobile-services-dotnet-backend-publish-service]: ../includes/mobile-services-dotnet-backend-publish-service.md
-  [mobile-services-windows-universal-test-app]: ../includes/mobile-services-windows-universal-test-app.md
-  [mobile-services-dotnet-backend-view-sql-data]: ../includes/mobile-services-dotnet-backend-view-sql-data.md
-  [Prüfen und Ändern von Daten mit Skripten]: /en-us/develop/mobile/tutorials/validate-modify-and-augment-data-js
-  [Optimieren von Abfragen mittels Paging]: /en-us/develop/mobile/tutorials/add-paging-to-data-js
+  [Prüfen und Ändern von Daten mit Skripten]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-js
+  [Optimieren von Abfragen mittels Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-js
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users/
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push/
   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-html-how-to-use-client-library/

@@ -173,9 +173,9 @@ Im nächsten Lernprogramm, [Rollenbasierte Zugriffssteuerung mit AAD in Mobile S
 
 
 
-<!-- Anchors. --> 
+ 
 <!-- Images --> 
-<!-- URLs. -->
+
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-aad-graph-info/ "Windows Store C#"
 [.NET-Backend]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-aad-graph-info/ ".NET-Backend"

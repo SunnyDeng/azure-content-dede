@@ -94,7 +94,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 
-  [mobile-services-selector-get-started-push]: ../includes/mobile-services-selector-get-started-push.md
   [dieser Version]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push
   [Registrieren der App für Pushbenachrichtigungen]: #register
   [Aktualisieren des Diensts zum Senden von Pushbenachrichtigungen]: #update-service
@@ -102,11 +101,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
   [Testen von Pushbenachrichtigungen in der App]: #test
   [Microsoft Store-Konto]: http://go.microsoft.com/fwlink/p/?LinkId=280045
   [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=391934
-  [mobile-services-create-new-push-vs2013]: ../includes/mobile-services-create-new-push-vs2013.md
-  [mobile-services-dotnet-backend-update-server-push]: ../includes/mobile-services-dotnet-backend-update-server-push.md
-  [mobile-services-dotnet-backend-configure-local-push-vs2013]: ../includes/mobile-services-dotnet-backend-configure-local-push-vs2013.md
   [MobileServiceClient-Objekt]: http://msdn.microsoft.com/de-de/library/azure/jj554219.aspx
-  [mobile-services-dotnet-backend-windows-universal-test-push]: ../includes/mobile-services-dotnet-backend-windows-universal-test-push.md
   [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-push-notifications-app-users/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-universal-javascript-get-started-data
   [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-universal-javascript-get-started-users

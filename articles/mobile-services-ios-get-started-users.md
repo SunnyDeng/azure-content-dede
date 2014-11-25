@@ -49,15 +49,10 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 
 
 
-  [mobile-services-selector-get-started-users]: ../includes/mobile-services-selector-get-started-users.md
   [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
   [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
   [Hinzufügen von Authentifizierung zur App]: #add-authentication
   [Speichern von Authentifizierungstoken in der App]: #store-authentication
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-ios
-  [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
-  [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md
   [1]: /de-de/documentation/articles/mobile-services-ios-get-started
-  [mobile-services-ios-authenticate-app]: ../includes/mobile-services-ios-authenticate-app.md
-  [mobile-services-ios-authenticate-app-with-token]: ../includes/mobile-services-ios-authenticate-app-with-token.md
   [Dienstweite Autorisierung von Mobile Services-Benutzern]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios

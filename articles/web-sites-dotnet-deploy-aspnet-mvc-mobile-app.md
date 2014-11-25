@@ -719,7 +719,6 @@ Webanwendungen für die mobile Nutzung entwickeln. Das umfasst:
 <!-- Internal Links --> <!-- External Links --> <!-- Images -->
 
   [Visual Studio Express 2013 für Web]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Starterprojekt]: http://go.microsoft.com/fwlink/?LinkID=398780&clcid=0x409
   [0]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionsByTag-ASP.NET-Fixed.png
   [Azure SDK für Visual Studio 2013]: http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409

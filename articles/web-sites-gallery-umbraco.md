@@ -1,6 +1,6 @@
 <properties title="Create an Umbraco website from the gallery in Microsoft Azure" pageTitle="Create an Umbraco website from the gallery in Microsoft Azure" description="required" metaKeywords="Azure, gallery, Umbraco, web site, website" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="timamm"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="timamm" />
 
 # Erstellen einer Umbraco-Website aus der Galerie in Microsoft Azure
 
@@ -43,7 +43,7 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 Nachdem die Bereitstellung abgeschlossen ist, wird Ihnen im Startboard des Portals angezeigt, dass Ihre Ressourcengruppe für Umbraco CMS, in diesem Fall **UmbracoCMSgroup**, erstellt wurde. Klicken Sie im Abschnitt **Zusammenfassung** auf den Namen der Website (hier **umbracocmsgroup**), um die Eigenschaften Ihrer Website zu sehen. Im Abschnitt **Zusammenfassung** können Sie auch die Ressourcen der Datenbank auswählen, um die Eigenschaften der entsprechenden Datenbank zu sehen.
 
-![][]
+![][0]
 
 ## Starten und Konfigurieren Ihrer Umbraco CMS-Website
 
@@ -104,7 +104,7 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Website mit Umbra
   [Konfigurieren der Ressourcen]: ./media/web-sites-gallery-umbraco/04AppSettings.PNG
   [Erstellen eines SQL Servers in Azure]: ./media/web-sites-gallery-umbraco/05NewServer.PNG
   [1]: ./media/web-sites-gallery-umbraco/06UmbracoCMSGroup.PNG
-  []: ./media/web-sites-gallery-umbraco/07UmbracoCMSGroupBlade.PNG
+  [0]: ./media/web-sites-gallery-umbraco/07UmbracoCMSGroupBlade.PNG
   [Ihre Website durchsuchen]: ./media/web-sites-gallery-umbraco/08UmbracoCMSGroupRunning.PNG
   [Installieren des Umbraco-Assistenten]: ./media/web-sites-gallery-umbraco/09InstallUmbraco7.png
   [Konfigurieren der Datenbank]: ./media/web-sites-gallery-umbraco/10ConfigureYourDatabase.png

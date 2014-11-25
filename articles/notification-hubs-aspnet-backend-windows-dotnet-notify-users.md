@@ -239,7 +239,6 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
   [Registrieren von App-Back-End aus]: http://msdn.microsoft.com/de-de/library/dn743807.aspx
   [Registrieren Ihrer App für den Windows Store]: http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#register
   [Konfigurieren Ihres Notification Hub]: http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub
-  [notification-hubs-aspnet-backend-notifyusers]: ../includes/notification-hubs-aspnet-backend-notifyusers.md
   [0]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push9.png
   [1]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push10.png
   [2]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push11.png

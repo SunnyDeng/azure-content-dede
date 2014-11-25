@@ -1,6 +1,6 @@
 <properties linkid="dev-net-service-bus-amqp-overview" urlDisplayName="Azure Notification Hubs" pageTitle="Azure Notification Hubs" metaKeywords="Azure push notifications, Azure notification hubs, Azure messaging" description="Learn how to use push notifications in Azure. Code samples written in C# using the .NET API." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Azure Notification Hubs" authors="sethm" manager="dwrede" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/24/2014" ms.author="sethm"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
 # Azure-Benachrichtigungshubs
 
@@ -29,7 +29,7 @@ Von einer höheren Ebene betrachtet folgen alle Plattform-Benachrichtigungssyste
 3.  Um eine Pushbenachrichtigung zu senden, nimmt das Back-End der App über den Handle Kontakt mit dem PNS auf, um eine bestimmte Instanz der Client-App anzuzielen.
 4.  Das PNS leitet die Benachrichtigung an das vom Handle angegebene Gerät weiter.
 
-![][]
+![][0]
 
 ## <span class="short-header">Die Herausforderungen bei Pushbenachrichtigungen</span>Die Herausforderungen bei Pushbenachrichtigungen
 
@@ -73,7 +73,7 @@ Die relevanten .NET-API-Referenzen für Pushbenachrichtigungen befinden sich hie
 -   [Microsoft.WindowsAzure.Messaging.NotificationHub][Microsoft.WindowsAzure.Messaging.NotificationHub]
 -   [Microsoft.ServiceBus.Notifications][Microsoft.ServiceBus.Notifications]
 
-  []: ./media/notification-hubs-overview/SBPushNotifications1.gif
+  [0]: ./media/notification-hubs-overview/SBPushNotifications1.gif
   [1]: ./media/notification-hubs-overview/SBPushNotifications2.gif
   [Wie Kunden Notification Hubs verwenden]: http://azure.microsoft.com/de-de/services/notification-hubs
   [Lernprogramme und Anleitungen zu Notification Hubs]: http://azure.microsoft.com/de-de/documentation/services/notification-hubs

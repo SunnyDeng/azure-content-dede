@@ -99,7 +99,6 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 
 
 
-  [mobile-services-selector-get-started-data]: ../includes/mobile-services-selector-get-started-data.md
   [Herunterladen des iOS-App-Projekts]: #download-app
   [Erstellen des mobilen Dienstes]: #create-service
   [Erstellen einer Datentabelle als Datenspeicher]: #add-table
@@ -110,9 +109,6 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
   [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-ios%2F
   [GetStartedWithData-App]: http://go.microsoft.com/fwlink/p/?LinkId=268622
   [0]: ./media/mobile-services-ios-get-started-data/mobile-quickstart-startup-ios.png
-  [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
-  [mobile-services-create-new-service-data-2]: ../includes/mobile-services-create-new-service-data-2.md
-  [mobile-services-ios-enable-mobile-service-access]: ../includes/mobile-services-ios-enable-mobile-service-access.md
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [1]: ./media/mobile-services-ios-get-started-data/mobile-todoitem-data-browse.png
   [Prüfen und Ändern von Daten mit Skripten]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet

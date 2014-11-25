@@ -167,6 +167,5 @@ Weitere Informationen finden Sie unter [Benachrichtigen von Benutzern mit Notifi
   [Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
   [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
   [Notification Hub-Informationen für Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx
-  [notification-hubs-localized-back-end]: ../includes/notification-hubs-localized-back-end.md
   [Benachrichtigen von Benutzern mit Notification Hubs: ASP.NET]: /de-de/manage/services/notification-hubs/notify-users-aspnet
   [Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services]: /de-de/manage/services/notification-hubs/notify-users

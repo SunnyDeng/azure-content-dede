@@ -62,9 +62,9 @@
 
 4.  Klicken Sie auf die Schaltfläche **Complete All**.
 
-    ![][]
+    ![][0]
 
     Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
   [InvokeApiAsync]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
-  []: ./media/mobile-services-windows-store-dotnet-call-custom-api/mobile-custom-api-windows-store-completed.png
+  [0]: ./media/mobile-services-windows-store-dotnet-call-custom-api/mobile-custom-api-windows-store-completed.png

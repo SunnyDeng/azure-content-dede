@@ -2,7 +2,7 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich den Wert der **URL des mobilen Service**.
 
@@ -30,10 +30,10 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 
     Sowohl Ihr mobiler Dienst als auch Ihre App sind nun konfiguriert und funktionieren mit dem ausgewählten Authentifizierungsanbieter.
 
-<!-- URLs. -->
+
 
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-register-authentication/mobile-services-selection.png
+  [0]: ./media/mobile-services-register-authentication/mobile-services-selection.png
   [1]: ./media/mobile-services-register-authentication/mobile-service-uri.png
   [Microsoft Account]: /de-de/documentation/articles/mobile-services-how-to-register-microsoft-authentication/
   [Facebook-Login]: /de-de/documentation/articles/mobile-services-how-to-register-facebook-authentication/

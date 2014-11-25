@@ -4,7 +4,7 @@
 
 Servicebus-Warteschlangen unterstützen ein Modell für **verwaltete Messaging-Kommunikation**. Bei der Verwendung von Warteschlangen kommunizieren die Komponenten einer verteilten Anwendung nicht direkt miteinander, sondern tauschen Nachrichten über eine Warteschlange aus, die als Zwischenstufe fungiert. Ein Nachrichtenproducer (Absender) übergibt eine Nachricht an die Warteschlange und setzt seine Funktion fort. Ein Nachrichtenconsumer (Empfänger) ruft die Nachricht asynchron aus der Warteschlange ab und verarbeitet sie. Der Producer muss nicht auf eine Antwort vom Consumer warten, um seine Funktion fortzusetzen und weitere Nachrichten zu schicken. Warteschlangen liefern die Nachrichten im **First In, First Out (FIFO)**-Verfahren an einen oder mehrere Consumer. Die Nachrichten werden also normalerweise in der gleichen Reihenfolge von den Consumern empfangen und verarbeitet, wie sie in die Warteschlange übergeben wurden, und jede Nachricht wird nur von einem Consumer verarbeitet.
 
-![Konzepte für Warteschlangen][]
+![Konzepte für Warteschlangen][Konzepte für Warteschlangen]
 
 Servicebus-Warteschlangen sind eine Allzwecktechnologie für viele unterschiedliche Szenarien:
 
@@ -23,12 +23,12 @@ Um mit der Verwendung von Servicebus-Warteschlangen in Azure beginnen zu können
 
 So erstellen Sie einen Dienstnamespace
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
 2.  Klicken Sie im linken Navigationsbereich des Verwaltungsportals auf **Servicebus**.
 
 3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**.
-    ![][]
+    ![][0]
 
 4.  Geben Sie im Dialogfeld **Neuen Namespace hinzufügen** einen Namespacenamen ein. Das System prüft sofort, ob dieser Name verfügbar ist.
     ![][1]
@@ -67,7 +67,7 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer W
 
 ### So rufen Sie die Anmeldeinformationen im Server-Explorer ab
 
-Führen Sie die [hier][] im Abschnitt **Verbinden mit Windows Azure in Visual Studio** beschriebenen Schritte aus, um Verbindungsinformationen über Visual Studio anstatt aus dem Verwaltungsportal abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
+Führen Sie die [hier][hier] im Abschnitt **Verbinden mit Windows Azure in Visual Studio** beschriebenen Schritte aus, um Verbindungsinformationen über Visual Studio anstatt aus dem Verwaltungsportal abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
 
 Notieren Sie den Wert **SharedAccessKey** oder kopieren Sie ihn in die Zwischenablage:
 
@@ -75,11 +75,11 @@ Notieren Sie den Wert **SharedAccessKey** oder kopieren Sie ihn in die Zwischena
 
   [Konzepte für Warteschlangen]: ./media/howto-service-bus-queues/sb-queues-08.png
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  []: ./media/howto-service-bus-queues/sb-queues-03.png
+  [0]: ./media/howto-service-bus-queues/sb-queues-03.png
   [1]: ./media/howto-service-bus-queues/sb-queues-04.png
   [2]: ./media/howto-service-bus-queues/getting-started-multi-tier-27.png
   [3]: ./media/howto-service-bus-queues/sb-queues-13.png
   [4]: ./media/howto-service-bus-queues/sb-queues-09.png
   [5]: ./media/howto-service-bus-queues/sb-queues-06.png
-  [hier]: http://http://msdn.microsoft.com/en-us/library/windowsazure/ff687127.aspx
+  [hier]: http://http://msdn.microsoft.com/de-de/library/windowsazure/ff687127.aspx
   [6]: ./media/howto-service-bus-queues/VSProperties.png

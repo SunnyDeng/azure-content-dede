@@ -124,8 +124,8 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 ![][0]
 
-<!-- Anchors. --> 
-<!-- URLs. -->
+ 
+
 
 [Windows Store C#]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication "Windows Store C#"
 [iOS]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication "iOS"

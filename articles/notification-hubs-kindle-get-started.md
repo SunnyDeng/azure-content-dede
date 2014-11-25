@@ -1,6 +1,6 @@
 <properties linkid="develop-notificationhubs-tutorials-get-started-kindle" urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to send push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="sethm" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-kindle" ms.devlang="Java" ms.topic="article" ms.date="09/24/2014" ms.author="sethm"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-kindle" ms.devlang="Java" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
 # Erste Schritte mit Notification Hubs
 
@@ -11,14 +11,14 @@ Sie erstellen in diesem Lernprogramm eine leere Kindle-App, die Pushbenachrichti
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
--   Das Android-SDK (es wird davon ausgegangen, dass Sie Eclipse verwenden), das Sie [hier][] herunterladen können.
--   Befolgen Sie [diese][] Schritte zum Einrichten Ihrer Entwicklungsumgebung für Kindle.
+-   Das Android-SDK (es wird davon ausgegangen, dass Sie Eclipse verwenden), das Sie [hier][hier] herunterladen können.
+-   Befolgen Sie [diese][diese] Schritte zum Einrichten Ihrer Entwicklungsumgebung für Kindle.
 
 ## Hinzufügen einer neuen App zum Entwicklerportal
 
-1.  Erstellen Sie zuerst eine App im [Entwicklerportal][].
+1.  Erstellen Sie zuerst eine App im [Entwicklerportal][Entwicklerportal].
 
-    ![][]
+    ![][0]
 
 2.  Kopieren Sie den **Anwendungsschlüssel**.
 
@@ -63,7 +63,7 @@ Geben Sie im Portal den geheimen Clientschlüssel und die Client-ID in die Regis
 
 Fügen Sie die ADM-Bibliotheken zum Eclipse-Projekt hinzu.
 
-1.  Um die ADM-Bibliothek zu erhalten, [laden Sie das SDK herunter][]. Extrahieren Sie die SDK-ZIP-Datei.
+1.  Um die ADM-Bibliothek zu erhalten, [laden Sie das SDK herunter][laden Sie das SDK herunter]. Extrahieren Sie die SDK-ZIP-Datei.
 2.  Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Properties**. Wählen Sie auf der linken Seite **Java Build Path** aus, und klicken Sie oben auf die Registerkarte **Libraries**. Klicken Sie auf **Add External Jar**, und wählen Sie die Datei `\SDK\Android\DeviceMessaging\lib\amazon-device-messaging-*.jar` aus dem Verzeichnis aus, in das Sie das Amazon-SDK extrahiert haben.
 3.  Laden Sie das NotificationHubs Android-SDK (Link) herunter.
 4.  Entpacken Sie das Paket, und ziehen Sie die Datei `notification-hubs-sdk.jar` in den Ordner `libs` in Eclipse.
@@ -254,19 +254,12 @@ So senden Sie eine Nachricht mit .NET:
 
 ![][7]
 
-<!-- URLs. -->
 
-  [Windows Universal]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/ "Windows Universal"
-  [Windows Phone]: /de-de/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone"
-  [iOS]: /de-de/documentation/articles/notification-hubs-ios-get-started/ "iOS"
-  [Android]: /de-de/documentation/articles/notification-hubs-android-get-started/ "Android"
-  [Kindle]: /de-de/documentation/articles/notification-hubs-kindle-get-started/ "Kindle"
-  [Xamarin.iOS]: /de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android"
+
   [hier]: http://go.microsoft.com/fwlink/?LinkId=389797
   [diese]: https://developer.amazon.com/appsandservices/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment
   [Entwicklerportal]: https://developer.amazon.com/home.html
-  []: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal1.png
+  [0]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal1.png
   [1]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal2.png
   [2]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal3.png
   [3]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal4.png

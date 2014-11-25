@@ -1,6 +1,6 @@
 <properties linkid="develop-php-website-with-mysql-and-webmatrix" urlDisplayName="Web w/ WebMatrix" pageTitle="PHP website with MySQL and WebMatrix - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP website that stores data in MySQL." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create and deploy a PHP-MySQL Azure Website using WebMatrix" authors="" solutions="" manager="" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # Erstellen und Bereitstellen einer PHP-MySQL-Azure-Website über WebMatrix
 
@@ -175,7 +175,6 @@ Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure be
 
   [MySQL]: http://dev.mysql.com/doc/refman/5.6/en/installing.html
   [Azure-PHP-Website]: ./media/web-sites-php-mysql-use-webmatrix/tasklist_app_windows.png
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Herunterladen]: http://go.microsoft.com/fwlink/?LinkId=252506
   [Verwaltungsportal]: https://manage.windowsazure.com
   [Neue Azure-Website erstellen]: ./media/web-sites-php-mysql-use-webmatrix/NewWebSite1.jpg

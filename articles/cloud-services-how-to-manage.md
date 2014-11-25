@@ -1,8 +1,10 @@
-<properties urlDisplayName="How to manage" pageTitle="Verwalten eines Cloud-Diensts &ndash; Azure" metaKeywords="Azure manage cloud services, Azure Management Portal cloud services" description="Hier erfahren Sie mehr &uuml;ber die Verwaltung von Cloud-Diensten im Azure-Verwaltungsportal." metaCanonical="" services="cloud-services" documentationCenter="" title="Verwalten von Cloud-Diensten" authors="ryanwi" solutions="" manager="timlt" editor="" />
+<properties linkid="manage-services-how-to-manage-a-cloud-service" urlDisplayName="How to manage" pageTitle="How to manage a cloud service - Azure" metaKeywords="Azure manage cloud services, Azure Management Portal cloud services" description="Learn how to manage cloud services in the Azure Management Portal." metaCanonical="" services="cloud-services" documentationCenter="" title="How to Manage Cloud Services" authors="ryanwi" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/23/2014" ms.author="ryanwi" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="ryanwi" />
 
 # Verwalten von Cloud-Diensten
+
+[WACOM.INCLUDE [Haftungsausschluss](../includes/disclaimer.md)]
 
 Im Bereich **Cloud-Dienste** des Azure-Verwaltungsportals können Sie eine Dienstrolle oder eine Bereitstellung aktualisieren, eine Bereitstellung zur Produktion heraufstufen, Ressourcen mit Ihrem Cloud-Dienst verknüpfen, sodass Sie die Ressourcenabhängigkeiten sehen und die Ressourcen zusammen skalieren können, und einen Cloud-Dienst oder eine Bereitstellung löschen.
 
@@ -19,15 +21,17 @@ Wenn Sie den Anwendungscode für Ihren Cloud-Dienst aktualisieren müssen, verwe
 
 1.  Klicken Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] auf dem Dashboard auf der Seite **Cloud-Dienste** oder auf der Seite **Instanzen** auf **Aktualisieren**.
 
+    **Update Deployment** wird geöffnet.
+
     ![Bereitstellung aktualisieren][Bereitstellung aktualisieren]
 
-2.  Geben Sie in **Bereitstellungsbezeichnung** einen Namen ein, um die Bereitstellung zu kennzeichnen (z. B. meinclouddienstv4). Sie finden den Bereitstellungsnamen unter **Schnellstart** im Dashboard.
+2.  Geben Sie in **Bereitstellungsbezeichnung** einen Namen ein, um die Bereitstellung zu kennzeichnen (z. B. meinclouddienstv2). Sie finden den Bereitstellungsnamen unter **Schnellstart** im Dashboard.
 
-3.  Klicken Sie unter **Paket** auf **Durchsuchen**, um die Dienstpaketdatei (.cspkg) hochzuladen.
+3.  Klicken Sie unter **Paketdatei** auf **Durchsuchen**, um die Dienstpaketdatei (.cspkg) hochzuladen.
 
-4.  Klicken Sie unter **Konfiguration** auf **Durchsuchen**, um die Dienstkonfigurationsdatei (.cscfg) hochzuladen.
+4.  Klicken Sie unter **Konfigurationsdatei** auf **Durchsuchen**, um die Dienstkonfigurationsdatei (.cscfg) hochzuladen.
 
-5.  Wählen Sie unter **Rolle** die Option **Alle**, wenn Sie alle Rollen im Cloud-Dienst aktualisieren möchten. Wählen Sie zum Ausführen einer einzelnen Rollenaktualisierung die zu aktualisierende Rolle aus. Auch wenn Sie eine bestimmte Rolle zum Aktualisieren auswählen, werden die Updates in der Dienstkonfigurationsdatei auf alle Rollen angewendet.
+5.  Wählen Sie unter **Rolle** die Option **Alle**, wenn Sie alle Rollen im Cloud-Dienst aktualisieren möchten. Wählen Sie zum Ausführen einer Rollenaktualisierung die zu aktualisierende Rolle aus. Auch wenn Sie eine bestimmte Rolle zum Aktualisieren auswählen, werden die Updates in der Dienstkonfigurationsdatei auf alle Rollen angewendet.
 
 6.  Wenn durch das Update die Anzahl der Rollen oder die Größe einer Rolle geändert wird, aktivieren Sie das Kontrollkästchen **Allow update if role sizes or number of roles changes**, um die Fortsetzung des Updates zu ermöglichen.
 
@@ -37,7 +41,7 @@ Wenn Sie den Anwendungscode für Ihren Cloud-Dienst aktualisieren müssen, verwe
 
     Azure kann während des Updates eines Cloud-Diensts nur dann eine Dienstverfügbarkeit von 99,95 Prozent garantieren, wenn jede Rolle mindestens zwei Rolleninstanzen (virtuelle Computer) hat. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird.
 
-8.  Klicken Sie auf **OK** (Häkchen), um mit dem Update des Diensts zu beginnen.
+8.  Klicken Sie auf OK (Häkchen), um mit dem Update des Diensts zu beginnen.
 
 ## <span id="swap"></span></a>Gewusst wie: Austauschen von Bereitstellungen, um eine Bereitstellung zur Produktion heraufzustufen
 

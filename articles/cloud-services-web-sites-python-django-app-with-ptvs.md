@@ -1,6 +1,6 @@
 <properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="Creating Django applications with Python Tools for Visual Studio 2.0" metaKeywords="" description="Learn how to use the Python Tools for Visual Studio to create a Django application that stores data in a SQL Database or MySQL database instance and can be deployed to a website or cloud service." metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="Creating Django applications with Python Tools 2.0 for Visual Studio" authors="huvalo" solutions="" manager="" editor="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
 # Erstellen von Django-Anwendungen mit Python Tools 2.0 für Visual Studio
 
@@ -306,7 +306,7 @@ Unsere Webanwendung ist nahezu einsatzbereit, zuerst müssen wir jedoch eine Dat
 
 8.  Navigieren Sie zu **<http://localhost>:{Port}/**. Sie sehen einen Index der hinzugefügten Umfragen.
 
-    ![][]
+    ![][0]
 
 9.  Klicken Sie auf eine der Umfragen, um zur Abstimmungsseite zu gelangen.
 
@@ -566,9 +566,7 @@ Das Hosten von Django auf einem virtuellen Computer überschreitet den Rahmen di
 
 In diesem Lernprogramm haben wir eine Django-Anwendung mithilfe von [Python-Tools für Visual Studio][Python Tools 2.0 für Visual Studio] entwickelt. Wir haben drei verschiedene Datenbanken verwendet: sqlite3-, SQL Server- und MySQL-Datenbank. Zum Schluss haben wir die Anwendung auf Azure-Websites und in Azure-Cloud-Diensten veröffentlicht.
 
-  [Lernprogramm ansehen]: http://www.youtube.com/watch?v=wkqjafvvU5w
-  []: https://www.djangoproject.com/
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
+  [0]: https://www.djangoproject.com/
   [Python Tools 2.0 für Visual Studio]: http://pytools.codeplex.com
   [Python 2.7 (32 Bit)]: http://www.python.org/download/
   [den Quellcode für dieses Projekt herunterladen]: http://download-codeplex.sec.s-msft.com/Download?ProjectName=pytools&DownloadId=783376
@@ -585,7 +583,7 @@ In diesem Lernprogramm haben wir eine Django-Anwendung mithilfe von [Python-Tool
   [Webbrowser]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-008-dev-server.png
   [Umfrage hinzufügen]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-009-admin-login.png
   [Umfrageindex]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-009-admin-add-poll.png
-  []: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-010-index.png
+  [0]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-010-index.png
   [Umfragedetail]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-011-detail.png
   [Umfrageergebnisse]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-012-results.png
   [1]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-013-solution-explorer.png

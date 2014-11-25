@@ -1,15 +1,15 @@
 # Verwenden des Azure-Befehlszeilentools für Mac und Linux
 
-Dieser Leitfaden beschreibt, wie Sie mithilfe der Azure-Befehlszeilentools für Mac und Linux Dienste in Azure erstellen und verwalten. Die aufgeführten Szenarien umfassen die **Installation der Tools**, **den Import Ihrer Veröffentlichungseinstellungen**, **das Erstellen und Verwalten von Azure-Websites** und das **Erstellen und Verwalten von virtuellen Azure-Computern**. Umfassendes Referenzmaterial finden Sie in der [Dokumentation zum Azure-Befehlszeilentool für Mac und Linux][].
+Dieser Leitfaden beschreibt, wie Sie mithilfe der Azure-Befehlszeilentools für Mac und Linux Dienste in Azure erstellen und verwalten. Die aufgeführten Szenarien umfassen die **Installation der Tools**, **den Import Ihrer Veröffentlichungseinstellungen**, **das Erstellen und Verwalten von Azure-Websites** und das **Erstellen und Verwalten von virtuellen Azure-Computern**. Umfassendes Referenzmaterial finden Sie in der [Dokumentation zum Azure-Befehlszeilentool für Mac und Linux][Dokumentation zum Azure-Befehlszeilentool für Mac und Linux].
 
 ## Inhaltsverzeichnis
 
--   [Beschreibung der Azure-Befehlszeilentools für Mac und Linux][]
--   [Installation der Azure-Befehlszeilentools für Mac und Linux][]
--   [Erstellen eines Azure-Kontos][]
--   [Herunterladen und Importieren der Veröffentlichungseinstellungen][]
--   [Erstellen und Verwalten einer Azure-Website][]
--   [Erstellen und Verwalten eines virtuellen Azure-Computers][]
+-   [Beschreibung der Azure-Befehlszeilentools für Mac und Linux][Beschreibung der Azure-Befehlszeilentools für Mac und Linux]
+-   [Installation der Azure-Befehlszeilentools für Mac und Linux][Installation der Azure-Befehlszeilentools für Mac und Linux]
+-   [Erstellen eines Azure-Kontos][Erstellen eines Azure-Kontos]
+-   [Herunterladen und Importieren der Veröffentlichungseinstellungen][Herunterladen und Importieren der Veröffentlichungseinstellungen]
+-   [Erstellen und Verwalten einer Azure-Website][Erstellen und Verwalten einer Azure-Website]
+-   [Erstellen und Verwalten eines virtuellen Azure-Computers][Erstellen und Verwalten eines virtuellen Azure-Computers]
 
 ## <span id="Overview"></span></a>Beschreibung der Azure-Befehlszeilentools für Mac und Linux
 
@@ -27,9 +27,9 @@ Sie können eine vollständige Liste der unterstützten Befehle anzeigen, indem 
 
 Die folgende Liste enthält Informationen zur Installation der Befehlszeilentools, abhängig von Ihrem Betriebssystem:
 
--   **Mac**: Laden Sie den [Azure SDK Installer][] herunter. Öffnen Sie die heruntergeladene PKG-Datei, und führen Sie die Installationsschritte durch, zu denen Sie aufgefordert werden.
+-   **Mac**: Laden Sie den [Azure SDK Installer][Azure SDK Installer] herunter. Öffnen Sie die heruntergeladene PKG-Datei, und führen Sie die Installationsschritte durch, zu denen Sie aufgefordert werden.
 
--   **Linux**: Installieren Sie die neueste Version von [Node.js][] (siehe [Install Node.js via Package Manager][] (Installieren von Node.js mithilfe des Paket-Managers, in englischer Sprache), und führen Sie dann den folgenden Befehl aus:
+-   **Linux**: Installieren Sie die neueste Version von [Node.js][Node.js] (siehe [Install Node.js via Package Manager][Install Node.js via Package Manager] (Installieren von Node.js mithilfe des Paket-Managers, in englischer Sprache), und führen Sie dann den folgenden Befehl aus:
 
         npm install azure-cli -g
 
@@ -37,7 +37,7 @@ Die folgende Liste enthält Informationen zur Installation der Befehlszeilentool
 
         sudo npm install azure-cli -g
 
--   **Windows**: Führen Sie den Windows-Installer (MSI-Datei) aus. Sie finden diesen unter [Azure-Befehlszeilentools][].
+-   **Windows**: Führen Sie den Windows-Installer (MSI-Datei) aus. Sie finden diesen unter [Azure-Befehlszeilentools][Azure-Befehlszeilentools].
 
 Geben Sie `azure` an der Eingabeaufforderung ein, um die Installation zu überprüfen. Wenn die Installation erfolgreich war, wird eine Liste aller verfügbaren `azure`-Befehle angezeigt.
 
@@ -47,7 +47,7 @@ Sie benötigen ein Azure-Konto, um die Azure-Befehlszeilentools für Mac und Lin
 
 Öffnen Sie einen Webbrowser, und rufen Sie die Seite [][]<http://www.windowsazure.com></a> auf. Klicken Sie in der oberen rechten Ecke auf **Kostenlose Testversion**.
 
-![Azure-Website][]
+![Azure-Website][Azure-Website]
 
 Befolgen Sie die Anweisungen zum Erstellen eines Kontos.
 
@@ -176,7 +176,7 @@ Ein virtueller Azure-Computer wird aus einem Abbild eines virtuellen Computers (
 
 Sie können einen virtuellen Computer mit dem Befehl `vm create` aus einem der verfügbaren Abbilder bereitstellen oder starten. Das folgende Beispiel zeigt, wie Sie einen virtuellen Linux-Computer (genannt `myVM`) aus einem Abbild in der Bildergalerie (CentOS 6.2) starten. Der Root-Benutzername und das -Kennwort für den virtuellen Computer lauten `myusername` bzw. `Mypassw0rd`. (Beachten Sie, dass der Parameter `--location` das Rechenzentrum angibt, in dem der virtuelle Computer erstellt wird. Wenn Sie den Parameter `--location` auslassen, werden Sie aufgefordert, einen Standort auszuwählen.)
 
-    azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "West US"
+    azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-de-de-30GB.vhd myusername --location "West US"
 
 Möglicherweise möchten Sie die `--ssh`-Kennzeichnung (Linux) oder die `--rdp`-Kennzeichnung (Windows) an `vm create` übergeben, um Remoteverbindungen zum neu erstellten virtuellen Computer zu ermöglichen.
 

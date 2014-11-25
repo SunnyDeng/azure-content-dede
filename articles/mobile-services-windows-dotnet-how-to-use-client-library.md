@@ -691,7 +691,6 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
   [Anpassen der Anforderungsheader]: #headers
   [Anpassen der Serialisierung]: #serialization
   [Nächste Schritte]: #nextsteps
-  [mobile-services-concepts]: ../includes/mobile-services-concepts.md
   [Erstellen einer Tabelle]: http://go.microsoft.com/fwlink/?LinkId=298592
   [Dynamisches Schema]: http://go.microsoft.com/fwlink/?LinkId=296271
   [GetTable]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554275.aspx

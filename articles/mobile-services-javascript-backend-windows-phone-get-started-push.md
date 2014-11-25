@@ -164,7 +164,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 
-  [mobile-services-selector-get-started-push-legacy]: ../includes/mobile-services-selector-get-started-push-legacy.md
   [Aktualisieren Ihrer App zur Registrierung für Benachrichtigungen]: #update-app
   [Aktualisieren von Serverskripts zum Senden von Pushbenachrichtigungen]: #update-scripts
   [Einfügen von Daten zum Empfangen von Pushbenachrichtigungen]: #test

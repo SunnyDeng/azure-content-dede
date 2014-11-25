@@ -1,24 +1,22 @@
-<properties urlDisplayName="index" pageTitle="Gewusst wie: Verwalten von Urspr&uuml;ngen in einem Mediendienstekonto" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Verwalten von Streaming-Endpunkten in einem Media Services-Konto" authors="juliako"  solutions="" writer="juliako" manager="dwrede" editor=""  />
+<properties linkid="scripting-center-index" urlDisplayName="index" pageTitle="How to Manage Origins in a Media Services Account" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Manage Origins in a Media Services Account" authors="juliako"  solutions="" writer="juliako" manager="" editor=""  />
 
 <tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="juliako" />
 
-# <span id="managemediaservicesorigins"></span></a>Verwalten von Streaming-Endpunkten in einem Media Services-Konto
+# <span id="managemediaservicesorigins"></span></a>Verwalten von Ursprüngen in einem Media Services-Konto
 
-Mit Media Services können Sie mehrere Streaming-Endpunkte zu Ihrem Konto hinzufügen und die Streaming-Endpunkte konfigurieren. Jedes Media Services-Konto enthält mindestens einen Streaming-Endpunkt mit dem Namen **default**.
+Mithilfe von Mediendiensten können Sie Ihrem Konto mehrere Ursprünge für Streaminginhalte hinzufügen und konfigurieren. Jedes Media Service-Konto enthält mindestens einen Streaming-Ursprung mit dem Namen **default**.
 
-> [WACOM.NOTE] Streaming-Endpunkte wurden früher auch als Ursprung bezeichnet.
-
-## Hinzufügen und Löschen von Streaming-Endpunkten
+## Hinzufügen oder Löschen von Ursprüngen
 
 1.  Klicken Sie im [Management Portal][Management Portal] auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
-2.  Wählen Sie die Seite STREAMING-ENDPUNKTE aus.
-3.  Klicken Sie unten auf der Seite auf ADD oder DELETE. Der Standard-Streaming-Endpunkt kann nicht gelöscht werden.
-4.  Klicken Sie auf die Schaltfläche START, um den Streaming-Endpunkt zu starten.
-5.  Klicken Sie auf den Namen des Streaming-Endpunkts, um diesen zu konfigurieren.
+2.  Wählen Sie die Seite ORIGINS aus.
+3.  Klicken Sie unten auf der Seite auf ADD oder DELETE. Der Standard-Ursprung kann nicht gelöscht werden.
+4.  Klicken Sie auf START, um den Ursprung zu starten.
+5.  Klicken Sie auf den Namen des Ursprungs, um den Ursprung zu konfigurieren.
 
     ![Ursprungsseite][Ursprungsseite]
 
-## Konfigurieren des Streaming-Endpunkts
+## Konfigurieren des Ursprungs
 
 In der Registerkarte CONFIGURE können Sie die folgenden Konfigurationen vornehmen:
 
@@ -30,9 +28,9 @@ In der Registerkarte CONFIGURE können Sie die folgenden Konfigurationen vornehm
 
     ![Ursprung konfigurieren][Ursprung konfigurieren]
 
-    Die Konfiguration auf dieser Seite gilt nur für Streaming-Endpunkte mit mindestens einer reservierten Einheit. Wechseln Sie zur Reservieren SCALE, um die reservierten Einheiten für bedarfsgesteuertes Streaming zu reservieren. Detaillierte Informationen zu reservierten Einheiten finden Sie unter [Skalieren von Mediendiensten][Skalieren von Mediendiensten].
+    Die Konfiguration auf dieser Seite gilt nur für Ursprünge, die mindestens eine reservierte Einheit haben. Wechseln Sie zur Reservieren SCALE, um die reservierten Einheiten für bedarfsgesteuertes Streaming zu reservieren. Detaillierte Informationen zu reservierten Einheiten finden Sie unter [Skalieren von Mediendiensten][Skalieren von Mediendiensten].
 
   [Management Portal]: https://manage.windowsazure.com/
   [Ursprungsseite]: ./media/media-services-manage-origins/media-services-origins-page.png
   [Ursprung konfigurieren]: ./media/media-services-manage-origins/media-services-origins-configure.png
-  [Skalieren von Mediendiensten]: ../media-services-how-to-scale/
+  [Skalieren von Mediendiensten]: http://go.microsoft.com/fwlink/?LinkID=275847&clcid=0x409/

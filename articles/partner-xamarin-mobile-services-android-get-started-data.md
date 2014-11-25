@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-xamarin-android" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Xamarin.Android) - Azure Mobile Services" metaKeywords="Azure Xamarin.Android data, Azure mobile services data" description="Learn how to store and access data from your Azure Mobile Services Xamarin.Android app." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Get started with data in Mobile Services" documentationCenter="Mobile" authors="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-android" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-android" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="" />
 
 # Erste Schritte mit Daten in Mobile Services
 
@@ -54,7 +54,7 @@ Dieses Lernprogramm verwendet die Xamarin.Android-App [GetStartedWithData][Herun
 
 ## <a name="create-service"></a><span class="short-header">Erstellen eines mobilen Dienstes</span>Erstellen eines neuen mobilen Dienstes im Verwaltungsportal
 
-[WACOM.INCLUDE [mobile-services-create-new-service-data][mobile-services-create-new-service-data]]
+[WACOM.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
 ## <a name="add-table"></a><span class="short-header">Erstellen einer neuen Tabelle</span>Hinzufügen einer neuen Tabelle zum mobilen Dienst
 
@@ -245,24 +245,14 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 
 
 
-  [Windows Store C\#]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet "Windows Store C#"
-  [Windows Store JavaScript]: /de-de/develop/mobile/tutorials/get-started-with-data-js "Windows Store JavaScript"
-  [Windows Phone]: /de-de/develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
-  [iOS]: /de-de/develop/mobile/tutorials/get-started-with-data-ios "iOS"
-  [Android]: /de-de/develop/mobile/tutorials/get-started-with-data-android "Android"
-  [HTML]: /de-de/develop/mobile/tutorials/get-started-with-data-html "HTML"
-  [Xamarin.iOS]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
   [Xamarin.Android]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
-  [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-android
   [Herunterladen des Xamarin.Android-App-Projekts]: http://go.microsoft.com/fwlink/p/?LinkId=331302
   [Erstellen des mobilen Dienstes]: #create-service
   [Erstellen einer Datentabelle als Datenspeicher]: #add-table
   [Aktualisieren der App zur Verwendung von Mobile Services]: #update-app
   [Testen der App mit Mobile Services]: #test-app
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A9C9624B5
   [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
   [0]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-quickstart-startup-android.png
-  [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
   [1]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-data-tab-empty.png
   [2]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-create-todoitem-table.png
   [3]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-dashboard-tab.png

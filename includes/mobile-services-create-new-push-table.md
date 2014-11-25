@@ -1,6 +1,6 @@
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Daten** und dann auf **Erstellen**.
 
@@ -19,6 +19,6 @@ Als Nächstes ändern Sie die App so, dass Pushbenachrichtigungen unterstützt w
 <!-- URLs -->
 
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-create-new-push-table/mobile-services-selection.png
+  [0]: ./media/mobile-services-create-new-push-table/mobile-services-selection.png
   [1]: ./media/mobile-services-create-new-push-table/mobile-create-table.png
   [2]: ./media/mobile-services-create-new-push-table/mobile-create-registrations-table.png

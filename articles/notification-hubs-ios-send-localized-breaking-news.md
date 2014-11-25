@@ -168,9 +168,9 @@ Weitere Informationen zum Verwenden von Vorlagen finden Sie unter:
 
 Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification Hub-Informationen für iOS][Vorgehensweise: Service Bus Notification Hubs (iOS-Apps)].
 
-<!-- Anchors. -->
-<!-- Images. -->
-<!-- URLs. -->
+
+
+
 
   [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-ios
   [Konzepte von Vorlagen]: #concepts
@@ -180,6 +180,5 @@ Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification 
   [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
   [0]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized1.png
   [1]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
-  [notification-hubs-localized-back-end]: ../includes/notification-hubs-localized-back-end.md
   [Benachrichtigen von Benutzern mit Notification Hubs: ASP.NET]: /de-de/manage/services/notification-hubs/notify-users-aspnet
   [Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services]: /de-de/manage/services/notification-hubs/notify-users

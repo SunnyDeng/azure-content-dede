@@ -439,7 +439,7 @@ Als nächstes haben Sie festgestellt, was im Falle eines Konflikts geschieht. Si
 
 Nebenbei haben Sie eine Hilfsklasse **QSUIAlertViewWithBlock** hinzugefügt, damit Benutzern eine Warnung angezeigt wird, und zum Schluss Code zu **QSTodoListViewController** hinzugefügt, um den Benutzer zur Lösung des Konflikts auf eine von drei Arten aufzufordern.
 
-<!-- URLs. -->
+
 
   [Erste Schritte mit Offlinedaten]: /de-de/documentation/articles/mobile-services-ios-get-started-offline-data/
   [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28

@@ -4,7 +4,7 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 
 2.  Erweitern Sie im Fenster des Projektmappen-Explorers das Aufgabenlisten-Serviceprojekt, und erweitern Sie **Controller**. Öffnen Sie die Datei TodoItemController.cs, die Bestandteil des Projekts für den mobilen Service ist.
 
-    ![][]
+    ![][0]
 
 3.  Ersetzen Sie die `PostTodoItem`-Methode durch die folgende Methode, die überprüft, ob die Textzeichenfolge nicht länger als zehn Zeichen ist. Für Elemente mit einer Textlänge von über zehn Zeichen gibt die Methode den HTTP-Statuscode 400 Bad Request inklusive einer Beschreibung zurück.
 
@@ -31,10 +31,10 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 
     ![][2]
 
-<!-- URLs. -->
+
 
   [Erste Schritte]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
-  []: ./media/mobile-services-dotnet-backend-add-validation/mobile-services-open-todoitemcontroller.png
+  [0]: ./media/mobile-services-dotnet-backend-add-validation/mobile-services-open-todoitemcontroller.png
   [1]: ./media/mobile-services-dotnet-backend-add-validation/mobile-services-build-dotnet-service.png
   [2]: ./media/mobile-services-dotnet-backend-add-validation/mobile-services-publish-dotnet-service.png

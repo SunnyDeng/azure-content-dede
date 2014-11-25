@@ -10,7 +10,7 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][GetStartedWi
 
 4.  Geben Sie in der App in **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
 
-    ![][]
+    ![][0]
 
     Beachten Sie, dass der gespeicherte Text angezeigt wird.
 
@@ -21,5 +21,5 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][GetStartedWi
 6.  Wiederholen Sie die Schritte 3 und 4, um sicherzustellen, dass sich die Beispiel-App gleichermaßen verhält.
 
   [GetStartedWithMobileServices-App]: http://go.microsoft.com/fwlink/p/?LinkID=510826
-  []: ./media/mobile-services-windows-universal-dotnet-download-project/mobile-quickstart-startup.png
+  [0]: ./media/mobile-services-windows-universal-dotnet-download-project/mobile-quickstart-startup.png
   [1]: ./media/mobile-services-windows-universal-dotnet-download-project/mobile-quickstart-startup-wp8.png

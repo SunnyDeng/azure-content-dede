@@ -60,8 +60,8 @@
 
 4.  Tippen Sie auf die Schaltfläche **Complete All**.
 
-    ![][]
+    ![][0]
 
     Ein Meldungsfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, wodurch alle Elemente aus der Liste gelöscht werden.
 
-  []: ./media/mobile-services-windows-phone-call-custom-api/mobile-custom-api-windows-phone-completed.png
+  [0]: ./media/mobile-services-windows-phone-call-custom-api/mobile-custom-api-windows-phone-completed.png

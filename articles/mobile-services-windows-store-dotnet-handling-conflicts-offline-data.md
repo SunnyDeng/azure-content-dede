@@ -194,7 +194,7 @@ Dadurch wird der aktuelle Push-Vorgang beendet. Es werden jedoch alle ausstehend
 
 Wenn ein Push-Vorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePushFailedException` aus, und die Ausnahmeeigenschaft `PushResult.Status` hat den Wert `MobileServicePushStatus.CancelledByOperation`.
 
-<!-- Anchors. --> <!-- Images --> <!-- URLs -->
+ <!-- Images --> <!-- URLs -->
 
   [Erste Schritte mit Offlinedaten]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
   [Herunterladen des Windows Store-App-Projekts]: #download-app

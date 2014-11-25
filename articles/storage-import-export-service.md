@@ -1,8 +1,8 @@
-<properties urlDisplayName="Azure Import/Export Service" pageTitle="Verwenden von Import/Export zum &Uuml;bertragen von Daten in den Blob-Speicher | Microsoft Azure" metaKeywords="" description="Erfahren Sie, wie Sie Import- und Exportauftr&auml;ge im Azure-Verwaltungsportal erstellen, um Daten in den Blob-Speicher zu &uuml;bertragen." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Verwenden des Azure Import-/Export-Diensts f&uuml;r die &Uuml;bertragung von Daten an Blob-Speicher" authors="tamram" manager="adinah" editor="cgronlun" />
+<properties linkid="manage-services-import-export" urlDisplayName="Azure Import/Export Service" pageTitle="Using import/export to transfer data to Blob Storage | Microsoft Azure" metaKeywords="" description="Learn how to create import and export jobs in the Azure Management Portal to transfer data to blob storage." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
-# Verwenden des Microsoft Azure Import-/Export-Diensts zum Übertragen von Daten in den Blob-Speicher
+# Verwenden des Microsoft Azure Import/Export-Diensts zum Übertragen von Daten in den Blob-Speicher
 
 Sie können den Microsoft Azure Import-/Exportdienst verwenden, um große Mengen an Dateidaten in den Azure-Blobspeicher zu übertragen, wenn das Hochladen über das Netzwerk sehr teuer oder nicht praktikabel ist. Außerdem können Sie mit dem Import-/Export-Dienst auch große Mengen an Daten auf Blob-Speicher schnell und kostengünstig auf Ihre lokalen Installationen übertragen.
 
@@ -15,29 +15,27 @@ Es gibt zwei Möglichkeiten für die Erstellung und die Verwaltung von Import- u
 
 Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des Verwaltungsportals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Azure Import/Export Service REST API Reference][Azure Import/Export Service REST API Reference] (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
 
-## Übersicht über den Import-/Export-Dienst
+## Übersicht über den Import/Export-Dienst
 
 Zunächst erstellen Sie einen *Auftrag*, um mit dem Importieren oder Exportieren von Blob-Speicher zu beginnen. Ein Auftrag kann ein *Importauftrag* oder ein *Exportauftrag* sein:
 
 -   Erstellen Sie einen Importauftrag, wenn Sie lokal gespeicherte Daten auf Blobs in Ihrem Azure-Speicherkonto übertragen möchten.
 -   Erstellen Sie einen Exportauftrag, wenn Sie Daten, die derzeit als Blobs in Ihrem Speicherkonto gespeichert sind, auf Festplatten übertragen möchten, die dann an Sie geschickt werden.
 
-Wenn Sie einen Auftrag erstellen, benachrichtigen Sie den Import-/Export-Dienst, dass Sie eine oder mehrere Festplatten an ein Azure-Datacenter schicken werden. Bei einem Importauftrag verschicken Sie Festplatten, die Dateidaten enthalten. Bei einem Exportauftrag verschicken Sie leere Festplatten.
+Wenn Sie einen Auftrag erstellen, benachrichtigen Sie den Import/Export-Dienst, dass Sie eine oder mehrere Festplatten an ein Azure-Datacenter schicken werden. Bei einem Importauftrag verschicken Sie Festplatten, die Dateidaten enthalten. Bei einem Exportauftrag verschicken Sie leere Festplatten.
 
-Um Ihr Laufwerk für den Versand für einen Importauftrag vorzubereiten, führen Sie das **Microsoft Azure Import-/Exporttool** aus. Dabei werden Ihre Daten auf das Laufwerk kopiert, die Daten auf dem Laufwerk mit BitLocker verschlüsselt und die Journaldateien für das Laufwerk erstellt, die weiter unten besprochen werden.
+Um Ihr Laufwerk für den Versand für einen Importauftrag vorzubereiten, führen Sie das **Microsoft Azure Import/Exporttool** aus. Dabei werden Ihre Daten auf das Laufwerk kopiert, die Daten auf dem Laufwerk mit BitLocker verschlüsselt und die Journaldateien für das Laufwerk erstellt, die weiter unten besprochen werden.
 
 <div class="dev-callout">
-
-**Hinweis**
-Die Daten auf dem Laufwerk müssen mit BitLocker-Laufwerkverschlüsselung verschlüsselt sein. So sind Ihre Daten beim Transport geschützt. Bei einem Exportauftrag verschlüsselt der Import-/Export-Dienst Ihre Daten, bevor das Laufwerk an Sie zurückgesendet wird.
-
+<strong>Hinweis</strong>
+<p>Die Daten auf dem Laufwerk m&uuml;ssen mit BitLocker-Laufwerkverschl&uuml;sselung verschl&uuml;sselt sein. So sind Ihre Daten beim Transport gesch&uuml;tzt. Bei einem Exportauftrag verschl&uuml;sselt der Import-/Export-Dienst Ihre Daten, bevor das Laufwerk an Sie zur&uuml;ckgesendet wird.</p>
 </div>
 
 Für die Erstellung eines Import- oder Exportauftrags benötigen Sie außerdem die *Laufwerk-ID*. Dies ist die Seriennummer, die einer bestimmten Festplatte durch den Laufwerkhersteller zugewiesen wurde. Die Laufwerk-ID ist außen auf dem Laufwerk abgebildet.
 
 ### Anforderungen und Umfang
 
-1.  **Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import-/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos].
+1.  **Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos].
 2.  **Festplatten:** Der Import-/Exportdienst unterstützt nur SATA II/III-Laufwerke im 3,5-Zoll-Format. Festplatten größer als 4 TB werden nicht unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
 3.  **BitLocker-Verschlüsselung:** Alle auf den Festplatten gespeicherten Daten müssen mit BitLocker verschlüsselt sein. Dabei müssen die Verschlüsselungsschlüssel durch numerische Kennwörter geschützt sein.
 4.  **Blob-Speicherziele:** Daten können auf Blockblobs und Seitenblobs hochgeladen bzw. von dort heruntergeladen werden.
@@ -102,16 +100,51 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
     -   Verwenden Sie die Auswahl **Starts With**, und legen Sie das Präfix beginnend mit einem Schrägstrich "/" fest, um alle Blobs festzulegen, die mit einem Präfix beginnen. Bei dem Präfix kann es sich um das Präfix des Containernamens, den vollständigen Containernamen oder den vollständigen Containernamen gefolgt vom Präfix des Blob-Namens handeln.
 
     Die Tabelle zeigt Beispiele für gültige Blob-Pfade:
-
-    |-------------|------------------|------------------------------------------------------------------------------------|
-    | **Auswahl** | **Blob-Pfad**    | **Beschreibung**                                                                   |
-    | Beginnt mit | /                | Exportiert alle Blobs im Speicherkonto                                             |
-    | Beginnt mit | /$root/          | Exportiert alle Blobs im Stammcontainer                                            |
-    | Beginnt mit | /book            | Exportiert alle Blobs in allen Containern mit dem Präfix **book**                  |
-    | Beginnt mit | /music/          | Exportiert alle Blobs im Container **music**                                       |
-    | Beginnt mit | /music/love      | Exportiert alle Blobs im Container **music**, die mit dem Präfix **love** beginnen |
-    | Entspricht  | $root/logo.bmp   | Exportiert das Blob **logo.bmp** im Stammcontainer                                 |
-    | Entspricht  | videos/story.mp4 | Exportiert das Blob **story.mp4** im Container **videos**                          |
+    
+	<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+		<tbody>
+			<tr>
+				<td><strong>Auswahl</strong></td>
+				<td><strong>Blob-Pfad</strong></td>
+				<td><strong>Beschreibung</strong></td>
+			</tr>
+			<tr>
+				<td>Beginnt mit</td>
+				<td>/</td>
+				<td>Exportiert alle Blobs im Speicherkonto</td>
+			</tr>
+			<tr>
+				<td>Beginnt mit</td>
+				<td>/$root/</td>
+				<td>Exportiert alle Blobs im Stammcontainer</td>
+			</tr>
+			<tr>
+				<td>Beginnt mit</td>
+				<td>/book</td>
+				<td>Exportiert alle Blobs in allen Containern mit dem Präfix<strong>book</strong></td>
+			</tr>
+			<tr>
+				<td>Beginnt mit</td>
+				<td>/music/love </td>
+				<td>Exportiert alle Blobs im Container <strong>music</strong></td>
+			</tr>
+			<tr>
+				<td>Beginnt mit</td>
+				<td>/music/love</td>
+				<td>Exportiert alle Blobs im Container <strong>music</strong> , die mit dem Präfix <strong>love</strong>beginnen</td>
+			</tr>
+			<tr>
+				<td>Entspricht</td>
+				<td>$root/logo.bmp</td>
+				<td>Exportiert das Blob  <strong>logo.bmp</strong> im Stammcontainer      </td>
+			</tr>
+			<tr>
+				<td>Entspricht</td>
+				<td>videos/story.mp4</td>
+				<td>Exportiert das Blob <strong>story.mp4</strong> im Container  <strong>videos</strong></td>
+			</tr>
+		</tbody>
+	</table>
 
 4.  Geben Sie im vierten Schritt einen beschreibenden Namen für den Exportauftrag ein. Der eingegebene Name darf nur Kleinbuchstaben, Ziffern, Trennstriche und Unterstriche enthalten, muss mit einem Buchstaben beginnen und darf keine Leerzeichen enthalten.
 
@@ -132,14 +165,35 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 Sie können den Status Ihrer Import- oder Exportaufträge im Verwaltungsportal nachverfolgen. Navigieren Sie im Verwaltungsportal zu Ihrem Speicherkonto, und klicken Sie auf die Registerkarte **Import/Export**. Eine Liste Ihrer Aufträge wird auf der Seite angezeigt. Sie können die Liste nach Auftragsstatus, Auftragsname, Auftragstyp oder Tracking-Nummer filtern.
 
 In der Tabelle sind die Bedeutungen der Auftragsstatus beschrieben:
-
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **Auftragsstatus** | **Beschreibung**                                                                                                           |
-| Wird erstellt      | Ihr Auftrag wurde erstellt, aber Sie haben Ihre Versandinformationen noch nicht angegeben.                                 |
-| Versand            | Ihr Auftrag wurde erstellt, und Sie haben Ihre Versandinformationen angegeben.                                             |
-| Wird übertragen    | Ihre Daten werden von Ihrem Laufwerk (bei einem Importauftrag) oder auf Ihr Laufwerk (bei einem Exportauftrag) übertragen. |
-| Wird verpackt      | Die Übertragung Ihrer Daten ist abgeschlossen, und Ihre Festplatte wird für den Rückversand vorbereitet.                   |
-| Abgeschlossen      | Ihre Festplatte wurde an Sie zurückgeschickt.                                                                              |
+	
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+	<tbody>
+		<tr>
+			<td><strong>Auftragsstatus</strong></td>
+			<td><strong>Beschreibung</strong></td>
+		</tr>
+		<tr>
+			<td>Wird erstellt </td>
+			<td>Ihr Auftrag wurde erstellt, aber Sie haben Ihre Versandinformationen noch nicht angegeben.</td>
+		</tr>
+		<tr>
+			<td>Versand </td>
+			<td>Ihr Auftrag wurde erstellt, und Sie haben Ihre Versandinformationen angegeben.</td>
+		</tr>
+		<tr>
+			<td>Wird übertragen</td>
+			<td>Ihre Daten werden von Ihrem Laufwerk (bei einem Importauftrag) oder auf Ihr Laufwerk (bei einem Exportauftrag) übertragen.</td>
+		</tr>
+		<tr>
+			<td>Wird verpackt</td>
+			<td>Die Übertragung Ihrer Daten ist abgeschlossen, und Ihre Festplatte wird für den Rückversand vorbereitet.</td>
+		</tr>
+		<tr>
+			<td>Abgeschlossen </td>
+			<td>Ihre Festplatte wurde an Sie zurückgeschickt. </td>
+		</tr>
+	</tbody>
+</table>
 
 ## BitLocker-Schlüssel für einen Exportauftrag anzeigen
 
@@ -208,10 +262,8 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 -   Für asiatische Regionen wird nur [DHL][DHL] unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
 
     <div class="dev-callout">
-
-    **Wichtig**
-    Sie müssen Ihre Tracking-Nummer an den Azure Import-/Export-Dienst übertragen, ansonsten kann Ihr Auftrag nicht verarbeitet werden.
-
+    <strong>Wichtig</strong>
+    <p>Sie m&uuml;ssen Ihre Tracking-Nummer an den Azure Import-/Export-Dienst &uuml;bertragen, ansonsten kann Ihr Auftrag nicht verarbeitet werden.</p>
     </div>
 
 **Entstehen Kosten für den Rückversand?**
@@ -235,11 +287,9 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 -   Sie erhalten eine Lieferadresse in der Region, in der sich Ihr Speicherkonto befindet. Wenn Sie z. B. in den USA leben und sich Ihr Speicherkonto im Rechenzentrum in Westeuropa befindet, erhalten Sie für den Versand der Laufwerke eine Lieferadresse in Europa.
 
     <div class="dev-callout">
-
-    **Wichtig**
-    Beachten Sie, dass die physischen Medien beim Versand unter Umständen Ländergrenzen überqueren. Sie müssen sicherstellen, dass Ihre physischen Medien und Daten gemäß geltender Gesetze importiert bzw. exportiert werden. Prüfen Sie vor dem Versand der physischen Medien mit Ihren Rechtsberatern, ob Medien und Daten laut Gesetz an das entsprechende Rechenzentrum verschickt werden dürfen. So stellen Sie sicher, dass Ihre Daten zeitnah bei Microsoft eintreffen.
-
-    </div>
+<strong>Wichtig</strong>
+    <p>Beachten Sie, dass die physischen Medien beim Versand unter Umst&auml;nden L&auml;ndergrenzen &uuml;berqueren. Sie m&uuml;ssen sicherstellen, dass Ihre physischen Medien und Daten gem&auml;&szlig; geltender Gesetze importiert bzw. exportiert werden. Pr&uuml;fen Sie vor dem Versand der physischen Medien mit Ihren Rechtsberatern, ob Medien und Daten laut Gesetz an das entsprechende Rechenzentrum verschickt werden d&uuml;rfen. So stellen Sie sicher, dass Ihre Daten zeitnah bei Microsoft eintreffen.</p>
+</div>
 
 -   Beim Versand Ihrer Pakete müssen Sie die Nutzungsbedingungen unter [Microsoft Azure-Nutzungsbedingungen][Microsoft Azure-Nutzungsbedingungen] beachten.
 

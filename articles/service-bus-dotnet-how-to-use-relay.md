@@ -335,7 +335,6 @@ vertraut sind, finden Sie unter diesen Links weitere Informationen.
 -   Service Bus-Beispiele: Download von [Azure-Beispielen][Azure-Beispielen].
 
   [Nächste Schritte]: #next_steps
-  [create-account-note]: ../includes/create-account-note.md
   [Relaykonzepte]: ./media/service-bus-dotnet-how-to-use-relay/sb-relay-01.png
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [0]: ./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png

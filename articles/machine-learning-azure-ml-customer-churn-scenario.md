@@ -1,6 +1,6 @@
 <properties title="Analyzing Customer Churn using Microsoft Azure Machine Learning" pageTitle="Analyzing Customer Churn using Microsoft Machine Learning | Azure" description="Case study of developing an integrated model for analyzing and scoring customer churn" metaKeywords="" services="" solutions="" documentationCenter="" authors="barga" videoId="" scriptId="" />
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="barga"></tags>
+<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="barga" />
 
 
 # Analysieren der Kundenabwanderung mithilfe von Microsoft Azure Machine Learning
@@ -22,7 +22,7 @@ Ein allgemeiner Problemlösungsprozess für die Kundenabwanderung ist in den Dia
 2.	Mit einem Interventionsmodell können Sie berücksichtigen, wie sich das Interventionsniveau auf die Abwanderungswahrscheinlichkeit und den Langzeitwert von Kundenbeziehungen (Customer Lifetime Value, CLV) auswirken kann.
 3.	Diese Analyse führt zu einer qualitativen Analyse, die in eine auf Kundensegmente ausgerichtete proaktive Marketingkampagne ausgeweitet wird, um das optimale Angebot bereitzustellen.
 
-![][]
+![][0]
 
 Dieser zukunftsorientierte Ansatz stellt die beste Möglichkeit für den Umgang mit der Abwanderung dar, aber dafür ist er sehr komplex: Wir müssen einen Prototyp mit mehreren Modellen entwickeln und Abhängigkeiten zwischen den Modellen nachverfolgen. Die Interaktion zwischen den Modellen kann gekapselt werden, wie im folgenden Diagramm veranschaulicht:
 
@@ -200,7 +200,7 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 
 *Abbildung 12: Momentaufnahme einer Darstellung zum Abwanderungsprototyp*
 
-[]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-1.png
+[0]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-1.png
 [1]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-2.png
 [2]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-3.png
 [3]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-4.png

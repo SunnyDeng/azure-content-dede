@@ -177,7 +177,6 @@ Weitere Informationen zu Mobile Services und Notification Hubs:
 
 
 
-  [mobile-services-selector-get-started-push-legacy]: ../includes/mobile-services-selector-get-started-push-legacy.md
   [Aktualisieren Ihrer App zur Registrierung für Benachrichtigungen]: #update-app
   [Aktualisieren des Servers zum Senden von Pushbenachrichtigungen]: #update-server
   [Aktivieren von Pushbenachrichtigungen für lokale Tests]: #local-testing
@@ -190,7 +189,6 @@ Weitere Informationen zu Mobile Services und Notification Hubs:
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [1]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-push/mobile-push-tab.png
   [Einrichten eines authentifizierten Webdienstes zum Senden von Pushbenachrichtigungen für Windows Phone]: http://msdn.microsoft.com/de-de/library/windowsphone/develop/ff941099(v=vs.105).aspx
-  [mobile-services-dotnet-backend-configure-local-push]: ../includes/mobile-services-dotnet-backend-configure-local-push.md
   [2]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-push/mobile-quickstart-push3-wp8.png
   [3]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-push/mobile-quickstart-push5-wp8.png
   [ShellToastNotificationReceived]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived.aspx

@@ -18,7 +18,7 @@ Wenn Sie ausführlichere Informationen wünschen, rufen Sie [Virtuelle Computer]
 
 In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** im Verwaltungsportal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
 
-[WACOM.INCLUDE [virtual-machines-create-WindowsVM][virtual-machines-create-WindowsVM]]
+[WACOM.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-WindowsVM.md)]
 
 ## <span id="logon"></span> </a>Anmelden bei einem virtuellen Computer nach dessen Erstellung
 
@@ -125,7 +125,6 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
   [Anmelden bei einem virtuellen Computer nach dessen Erstellung]: #logon
   [Anschließen eines Datenträgers an den neuen virtuellen Computer]: #attachdisk
   [Virtuelle Computer]: http://go.microsoft.com/fwlink/p/?LinkID=271224
-  [virtual-machines-create-WindowsVM]: ../includes/virtual-machines-create-WindowsVM.md
   [Verwaltungsportal]: http://manage.windowsazure.com
   [MyTestVM auswählen]: ./media/CreateVirtualMachineWindowsTutorial/selectvm.png
   [Mit MyTestVM verbinden]: ./media/CreateVirtualMachineWindowsTutorial/commandbarconnect.png

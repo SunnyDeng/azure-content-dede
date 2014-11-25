@@ -484,7 +484,6 @@ Sie haben Ihre ASP.NET-Anwendung erfolgreich auf einer Azure-Website bereitgeste
 <!-- HYPERLINKS --> <!-- IMAGES --> <!-- TOC BOOKMARKS -->
 
   [MongoDB]: http://www.mongodb.org
-  [create-account-and-websites-and-vms-note]: ../includes/create-account-and-websites-and-vms-note.md
   [Erstellen eines virtuellen Computers und Installieren von MongoDB]: #virtualmachine
   [Erstellen und Ausführen der ASP.NET-Anwendung "My Task List" auf dem Entwicklungscomputer]: #createapp
   [Erstellen einer Azure-Website]: #createwebsite

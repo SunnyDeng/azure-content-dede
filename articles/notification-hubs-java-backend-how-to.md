@@ -1,6 +1,6 @@
 <properties linkid="notification-hubs-java-back-end-how-to" urlDisplayName="How to use Notification Hubs with Java" pageTitle="How to use Notification Hubs with Java" metaKeywords="" description="Learn how to use Azure Notification Hubs from a Java back-end." metaCanonical="" services="mobile-services,notification-hubs,push,java" documentationCenter="" title="How to use Notification Hubs with Java" authors="elioda" solutions="" manager="" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="java" ms.topic="article" ms.date="01/01/1900" ms.author="elioda"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="java" ms.topic="article" ms.date="01/01/1900" ms.author="elioda" />
 
 # Verwenden von Notification Hubs von Java/PHP aus
 
@@ -356,8 +356,6 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Java REST-Client für
 -   Erfahren Sie mehr über das Tagging-Feature von Notification Hubs im [Breaking News tutorial]
 -   Lernen Sie im [Benachrichtigen von Benutzern-Lernprogramm], wie Sie Pushbenachrichtigungen an einzelne Benutzer senden.
 
-  [Java]: /de-de/documentation/articles/notification-hubs-java-backend-how-to/ "Java"
-  [PHP]: /de-de/documentation/articles/notification-hubs-php-backend-how-to/ "PHP"
   [REST-APIs für Benachrichtigungshubs]: http://msdn.microsoft.com/de-de/library/dn223264.aspx
   [Erste-Schritte-Lernprogramm]: http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-ios-get-started/
   [.NET Notification Hubs SDK]: http://msdn.microsoft.com/de-de/library/jj933431.aspx

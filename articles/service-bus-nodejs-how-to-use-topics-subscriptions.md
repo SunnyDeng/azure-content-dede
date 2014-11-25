@@ -430,7 +430,6 @@ sind, finden Sie unter den folgenden Links weitere Informationen.
   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #handle-crashes
   [Gewusst wie: Löschen von Themen und Abonnements]: #delete
   [1]: #next-steps
-  [howto-service-bus-topics]: ../includes/howto-service-bus-topics.md
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
   [Node.js-Clouddienst]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Website mit WebMatrix]: /de-de/develop/nodejs/tutorials/web-site-with-webmatrix/

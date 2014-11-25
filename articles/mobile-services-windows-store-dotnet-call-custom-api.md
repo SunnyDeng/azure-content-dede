@@ -39,15 +39,13 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Windows Sto
 -   [Speichern von Serverskripts in der Quellcodeverwaltung][Speichern von Serverskripts in der Quellcodeverwaltung]
      Erfahren Sie, wie Sie die Quellcodeverwaltungsfunktion nutzen können, um benutzerdefinierten API-Skript-Code einfacher und sicherer zu entwickeln und zu veröffentlichen.
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started/
   [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
   [Definieren der benutzerdefinierten API]: #define-custom-api
   [Aktualisieren der App zum Aufruf der benutzerdefinierten API]: #update-app
   [Testen der App]: #test-app
-  [mobile-services-create-custom-api]: ../includes/mobile-services-create-custom-api.md
-  [mobile-services-windows-store-dotnet-call-custom-api]: ../includes/mobile-services-windows-store-dotnet-call-custom-api.md
   [Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
   [Speichern von Serverskripts in der Quellcodeverwaltung]: /de-de/documentation/articles/mobile-services-store-scripts-source-control

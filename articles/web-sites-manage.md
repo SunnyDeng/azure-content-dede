@@ -191,7 +191,7 @@ Um das Kennwort zur√ºckzusetzen, klicken Sie auf **Anmeldeinformationen des Ver√
 
 <!-- LINKS --> 
 
-<!-- Anchors. -->
+
 
   [Installation von WebMatrix]: http://go.microsoft.com/fwlink/?LinkID=226244
   [Microsoft Azure SDK]: http://go.microsoft.com/fwlink/?LinkId=246928

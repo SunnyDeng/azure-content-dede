@@ -132,7 +132,6 @@ Nachdem Sie die Dateien kopiert haben, führen Sie den Befehl **git status** aus
 
 Nun können Sie "manage.py" im Verzeichnis "DjangoApplication" wie gewohnt verwenden, um neue Anwendungen zum Django-Projekt hinzuzufügen.
 
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [0]: http://www.windowsazure.com/de-de/develop/python/
   [msysgit]: http://code.google.com/p/msysgit/
   [0]: ./media/web-sites-python-create-deploy-django-app/django-ws-003.png

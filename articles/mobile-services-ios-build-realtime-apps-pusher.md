@@ -386,7 +386,6 @@ Weitere Informationen zu Registrierung und Verwendung von Serverskripts finden S
   [Installieren von Serverskripts]: #install-scripts
   [Testen Ihrer App]: #test-app
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started
-  [pusher-sign-up]: ../includes/pusher-sign-up.md
   [libPusher]: http://go.microsoft.com/fwlink/p?LinkId=276999
   [von hier]: http://go.microsoft.com/fwlink/p/?LinkId=276998
   [0]: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-files-to-group.png

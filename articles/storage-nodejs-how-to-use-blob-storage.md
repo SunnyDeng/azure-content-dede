@@ -1,6 +1,6 @@
-<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Node.js) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Node.js" description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und L&ouml;schen von Blob-Inhalten verwenden. Die Beispiele sind in Node.js geschrieben." metaCanonical="" services="storage" documentationCenter="nodejs" title="Verwenden des Blob-Dienstes aus Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties linkid="dev-nodejs-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Node.js) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Node.js" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Blob Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr" />
 
 # Verwenden des Blob-Dienstes aus Node.js
 
@@ -83,7 +83,7 @@ Mit dem **BlobService**-Objekt können Sie auf Container und Blobs zugreifen. De
 folgende Code erstellt ein **BlobService**-Objekt. Fügen Sie Folgendes
  am Anfang von **server.js** hinzu:
 
-    var blobSvc = azure.createBlobService();
+     var blobSvc = azure.createBlobService();
 
 > [WACOM.NOTE] Sie können anonym auf einen Blob zugreifen, indem Sie **createBlobServiceAnonymous** verwenden und die Hostadresse angeben. Beispiel: `var blobSvc = azure.createBlobService('https://myblob.blob.core.windows.net/');`.
 
@@ -174,7 +174,7 @@ Verwenden Sie zum Hochladen von Daten zu einem Seitenblob Folgendes:
 
 -   **createPageBlob** – erstellt einen neuen Seitenblob mit einer bestimmten Länge.
 
--   **createPageBlobFromLocalFile** – erstellt einen neuen Seitenblob und lädt die Inhalte einer Datei hoch.
+-   **createPageBlobFromFile** – erstellt einen neuen Seitenblob und lädt die Inhalte einer Datei hoch.
 
 -   **createPageBlobFromStream** – erstellt einen neuen Seitenblob und lädt die Inhalte eines Datenstroms hoch.
 
@@ -184,7 +184,7 @@ Verwenden Sie zum Hochladen von Daten zu einem Seitenblob Folgendes:
 
 Das folgende Beispiel lädt den Inhalt der Datei **test.txt** in **mypageblob** hoch.
 
-    blobSvc.createPageBlobFromLocalFile('mycontainer', 'mypageblob', 'test.txt', function(error, result, response){
+    blobSvc.createPageBlobFromFile('mycontainer', 'mypageblob', 'test.txt', function(error, result, response){
       if(!error){
         // file uploaded
       }
@@ -373,7 +373,6 @@ folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgef�
 -   Besuchen Sie das [Azure Storage SDK für Node][Azure Storage SDK für Node]-Repository auf GitHub.
 
   [Nächste Schritte]: #next-steps
-  [Was ist der Blob-Dienst?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
   [Erstellen einer Node.js-Anwendung]: #create-app

@@ -1,6 +1,6 @@
 <properties linkid="develop-php-website-with-sql-database-and-webmatrix" urlDisplayName="Web w/ SQL + WebMatrix" pageTitle="PHP website with SQL Database and WebMatrix - Azure" metaKeywords="" description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP website that stores data in SQL Database." metaCanonical="" services="" documentationCenter="" title="Create and Deploy a PHP Website and SQL Database using WebMatrix" authors="cephalin" solutions="" manager="wpickett" editor="mollybos" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin" />
 
 # Erstellen und Bereitstellen einer PHP-Website und SQL-Datenbank mit WebMatrix
 
@@ -20,7 +20,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Tasklist-Webanwendung 
 
 ![Azure-PHP-Website][Azure-PHP-Website]
 
-[WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
+[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## Voraussetzungen
 
@@ -172,7 +172,6 @@ Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure be
 
   [SQL Server Express]: http://www.microsoft.com/de-de/download/details.aspx?id=29062
   [Azure-PHP-Website]: ./media/web-sites-php-sql-database-use-webmatrix/tasklist_app_windows.png
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Herunterladen]: http://go.microsoft.com/fwlink/?LinkId=252504
   [Verwaltungsportal]: https://manage.windowsazure.com
   [Neue Azure-Website erstellen]: ./media/web-sites-php-sql-database-use-webmatrix/NewWebSite1.jpg

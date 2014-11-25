@@ -10,7 +10,7 @@
 
 In diesem Lernprogramm fügen Sie Ihrer App unter Verwendung von [Capptain][Capptain] Mobile Analytics-Funktionen hinzu. Mit Mobile Analytics können Sie festlegen, wie Benutzer mit Ihrer App interagieren und welche Abschnitte am meisten Aktivität fördern. Um diese Daten erfassen zu können, instrumentieren Sie Ihre App mit dem Capptain-SDK.
 
-> [AZURE.NOTE] Capptain.com von Microsoft bietet kostenlose Analysen für mobile Apps bei monatlich bis zu 100.000 aktiven Benutzern für Kunden von Azure Mobile Services der Stufe „Standard“. Wenn Sie dieses Angebot nutzen möchten, schreiben Sie uns an <mobileservices@microsoft.com>, um weitere Anweisungen zu erhalten. Im unten stehenden Lernprogramm werden die Features und Funktionen von Capptain.com zusammengefasst und Informationen zur Verwendung gegeben.
+> [AZURE.NOTE] Capptain.com von Microsoft bietet kostenlose Analysen für mobile Apps bei monatlich bis zu 100.000 aktiven Benutzern für Kunden von Azure Mobile Services der Stufe „Standard“. Um dieses Angebot nutzen zu können, wenden Sie sich für weitere Anweisungen bitte an uns unter mobileservices@microsoft.com. Im unten stehenden Lernprogramm werden die Features und Funktionen von Capptain.com zusammengefasst und Informationen zur Verwendung gegeben.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
@@ -74,9 +74,9 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 ## Nächste Schritte
 
-Unter [][Capptain]<http://www.capptain.com></a> erfahren Sie mehr zu den Vorteilen von Capptain für Ihre App.
+Unter <http://www.capptain.com> erfahren Sie mehr zu den Vorteilen von Capptain für Ihre App.
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
   [Capptain]: http://www.capptain.com
   [Initialisieren des Capptain-SDK]: #initialize

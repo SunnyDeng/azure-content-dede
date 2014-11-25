@@ -1,28 +1,28 @@
 <properties linkid="develop-mobile-tutorials-create-pull-notifications-dotnet" urlDisplayName="Define a custom API that supports pull notifications" pageTitle="Define a custom API that supports pull notifications - Azure Mobile Services" metaKeywords="" description="Learn how to Define a custom API that supports periodic notifications in Windows Store apps that use Azure Mobile Services." metaCanonical="" services="" documentationCenter="" title="Define a custom API that supports periodic notifications" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga"></tags>
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
 
 # Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen
 
 <div class="dev-center-tutorial-selector"> 
-    <a href="/en-us/develop/mobile/tutorials/create-pull-notifications-dotnet" title="Windows Store C#" class="current">Windows Store C#</a><a href="/en-us/develop/mobile/tutorials/create-pull-notifications-js" title="Windows Store JavaScript">Windows Store JavaScript</a>
+    <a href="/de-de/develop/mobile/tutorials/create-pull-notifications-dotnet" title="Windows Store C#" class="current">Windows Store C#</a><a href="/de-de/develop/mobile/tutorials/create-pull-notifications-js" title="Windows Store JavaScript">Windows Store JavaScript</a>
 </div>
 
-In diesem Thema lernen Sie, wie Sie eine benutzerdefinierte API für periodische Benachrichtigungen aus einer Windows Store-App aufrufen. Durch die Aktivierung von periodischen Benachrichtigungen greift Windows periodisch auf Ihren benutzerdefinierten API-Endpunkt zu und verwendet die zurückgegebene XML, in einem kachelspezifischen Format, um die App-Kachel im Startmenü zu aktualisieren. Weitere Informationen finden Sie unter [Periodische Benachrichtigungen][].
+In diesem Thema lernen Sie, wie Sie eine benutzerdefinierte API für periodische Benachrichtigungen aus einer Windows Store-App aufrufen. Durch die Aktivierung von periodischen Benachrichtigungen greift Windows periodisch auf Ihren benutzerdefinierten API-Endpunkt zu und verwendet die zurückgegebene XML, in einem kachelspezifischen Format, um die App-Kachel im Startmenü zu aktualisieren. Weitere Informationen finden Sie unter [Periodische Benachrichtigungen][Periodische Benachrichtigungen].
 
-Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services][] oder [Erste Schritte mit Daten][] erstellen. Dafür führen Sie die folgenden Schritte aus:
+Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten] erstellen. Dafür führen Sie die folgenden Schritte aus:
 
-1.  [Definieren der benutzerdefinierten API][]
-2.  [Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen][]
-3.  [Testen der App][]
+1.  [Definieren der benutzerdefinierten API][Definieren der benutzerdefinierten API]
+2.  [Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen][Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen]
+3.  [Testen der App][Testen der App]
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services][] oder [Erste Schritte mit Daten][] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
 
 ## <a name="define-custom-api"></a>Definieren der benutzerdefinierten API
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **API** und dann auf **Create a custom API**.
 
@@ -83,7 +83,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
     Die Funktion **exports.get** wird verwendet, da der Client eine GET-Anfrage für den Zugriff auf die tile-Vorlage sendet.
 
     <div class="dev-callout"><b>Hinweis</b>
-    <p>Dieses benutzerdefinierte API-Skript verwendet das <a href="http://go.microsoft.com/fwlink/p/?LinkId=306750">wns-Modul</a> f&uuml;r Node.js, auf das durch die Verwendung der <strong>require</strong>-Funktion verwiesen wird. Dieses Modul unterscheidet sich von dem <a href="http://go.microsoft.com/fwlink/p/?LinkId=260591">wns-Objekt</a>, das vom <a href="http://msdn.microsoft.com/en-us/library/windowsazure/jj554217.aspx">push-Objekt</a> zur&uuml;ckgegeben wird, das wiederum f&uuml;r den Versand von Pushbenachrichtigungen in Serverskripts verwendet wird.</p>
+    <p>Dieses benutzerdefinierte API-Skript verwendet das <a href="http://go.microsoft.com/fwlink/p/?LinkId=306750">wns-Modul</a> f&uuml;r Node.js, auf das durch die Verwendung der <strong>require</strong>-Funktion verwiesen wird. Dieses Modul unterscheidet sich von dem <a href="http://go.microsoft.com/fwlink/p/?LinkId=260591">wns-Objekt</a>, das vom <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx">push-Objekt</a> zur&uuml;ckgegeben wird, das wiederum f&uuml;r den Versand von Pushbenachrichtigungen in Serverskripts verwendet wird.</p>
 </div>
 
 Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen zu verschicken, die das Live Tile durch Anfragen an die neue benutzerdefinierte API aktualisiert.
@@ -121,37 +121,32 @@ Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen 
 
 Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere Einzelheiten über die folgenden Mobile Services-Themen erfahren:
 
--   [Erste Schritte mit Pushbenachrichtigungen][]
+-   [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]
     Periodische Benachrichtigungen werden von Windows verwaltet und erfolgen nach einem vordefinierten Zeitplan. Pushbenachrichtigungen können bedarfsgesteuert vom mobilen Dienst gesendet werden und vom Typ Popup, Tile oder reine Benachrichtigungen sein.
 
--   [Mobile Services: Serverskriptreferenz][]
+-   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
 
--   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][]
+-   [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz][Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
     Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
-<!-- Anchors. --> 
-  [Windows Store C\#]: /en-us/develop/mobile/tutorials/create-pull-notifications-dotnet "Windows Store C#"
-  [Windows Store JavaScript]: /en-us/develop/mobile/tutorials/create-pull-notifications-js "Windows Store JavaScript"
-  [Periodische Benachrichtigungen]: http://msdn.microsoft.com/en-us/library/windows/apps/jj150587.aspx
-  [Erste Schritte mit Mobile Services]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
-  [Erste Schritte mit Daten]: /en-us/develop/mobile/tutorials/get-started-with-data-dotnet
+ 
+  [Periodische Benachrichtigungen]: http://msdn.microsoft.com/de-de/library/windows/apps/jj150587.aspx
+  [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
+  [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet
   [Definieren der benutzerdefinierten API]: #define-custom-api
   [Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen]: #update-app
   [Testen der App]: #test-app
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!-- Images. --> 
-  []: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-services-selection.png
+ 
+  [0]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-services-selection.png
   [1]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-create.png
   [2]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-create-dialog.png
   [3]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-select.png
 
-<!-- URLs. -->
-  [wns-Modul]: http://go.microsoft.com/fwlink/p/?LinkId=306750
-  [wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-  [push-Objekt]: http://msdn.microsoft.com/en-us/library/windowsazure/jj554217.aspx
+
   [4]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-live-tile.png
-  [Erste Schritte mit Pushbenachrichtigungen]: /en-us/develop/mobile/tutorials/get-started-with-push-dotnet
+  [Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-dotnet
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
-  [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /en-us/develop/mobile/how-to-guides/work-with-net-client-library
+  [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library

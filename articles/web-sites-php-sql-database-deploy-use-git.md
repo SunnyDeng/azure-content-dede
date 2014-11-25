@@ -278,7 +278,6 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
   [Git]: http://git-scm.com/
   [Microsoft-Webplattform-Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [Azure-PHP-Website]: ./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Neue Azure-Website erstellen]: ./media/web-sites-php-sql-database-deploy-use-git/new_website.jpg
   [Neue Website benutzerdefiniert erstellen]: ./media/web-sites-php-sql-database-deploy-use-git/custom_create.png

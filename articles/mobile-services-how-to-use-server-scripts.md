@@ -872,7 +872,7 @@ Beachten Sie, dass die Zeichenfolge `%j` als Platzhalter für ein JSON-Objekt ve
 
 Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entfernen oder auskommentieren, die Sie im Produktionsalltag nicht benötigen.
 
-<!-- Anchors. --> <!-- URLs. -->
+ 
 
   [Einführung]: #intro
   [Tabellenvorgänge]: #table-scripts

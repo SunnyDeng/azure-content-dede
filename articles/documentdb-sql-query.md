@@ -70,7 +70,7 @@ Hier ist ein zweites Dokument mit einem kleinen Unterschied – `givenName` und 
 
 Wir werden nun einige Abfragen an die Daten ausführen, um einige der Schlüsselaspekte von DocumentDB-SQL besser zu verstehen. Die folgende Abfrage gibt z. B. die Dokumente zurück, in denen das ID-Feld `AndersenFamily` enthält. Da es sich um `SELECT *` handelt, ist die Rückgabe der Abfrage das komplette JSON-Dokument:
 
-**Abfrage**
+**Query**
 
     SELECT * 
     FROM Families f 
@@ -97,7 +97,7 @@ Wir werden nun einige Abfragen an die Daten ausführen, um einige der Schlüssel
 
 Betrachten wir nun einen Fall, in dem wir die JSON-Ausgabe nach unseren Wünschen formatieren möchten. Diese Abfrage projiziert ein neues JSON-Objekt mit 2 ausgewählten Feldern (Name und Stadt), wenn die Stadt in der Adresse denselben Namen wie der Staat hat. In diesem Fall stimmt "NY, NY" überein.
 
-**Abfrage**
+**Query**
 
     SELECT {"Name":f.id, "City":f.address.city} AS Family 
     FROM Families f 
@@ -114,7 +114,7 @@ Betrachten wir nun einen Fall, in dem wir die JSON-Ausgabe nach unseren Wünsche
 
 Die nächste Abfrage gibt alle Vornamen von Kindern der Familie zurück, deren ID `WakefieldFamily` entspricht.
 
-**Abfrage**
+**Query**
 
     SELECT c.givenName 
     FROM Families f 
@@ -132,7 +132,7 @@ Beachten Sie einige der bemerkenswerten Aspekte der DocumentDB-Abfragesprache, d
 
 -   Da DocumentDB-SQL mit JSON-Werten arbeitet, werden baumförmige Entitäten anstelle von Spalten und Zeilen verarbeitet. Daher können Sie auf Knoten in der Baumstruktur in beliebiger Tiefe verweisen, z. B. `Node1.Node2.Node3…..Nodem`, ähnlich wie relationales SQL mit einem zweiteiligen Verweis auf `<table>.<column>`.
 -   Die Sprache arbeitet mit schemalosen Daten. Daher muss das Typsystem dynamisch gebunden werden. Derselbe Ausdruck kann unterschiedliche Typen in unterschiedlichen Dokumenten ergeben. Das Ergebnis einer Abfrage ist ein gültiger JSON-Wert, aber nicht garantiert innerhalb eines festen Schemas.
--   DocumentDB unterstützt nur strikte JSON-Dokumente. Typsystem und Ausdrücke sind also auf JSON-Typen beschränkt. In der [JSON-Spezifikation] (<http://www.json.org/>) finden Sie weitere Informationen.
+-   DocumentDB unterstützt nur strikte JSON-Dokumente. Typsystem und Ausdrücke sind also auf JSON-Typen beschränkt. In der [JSON-Spezifikation] (http://www.json.org/) finden Sie weitere Informationen.
 -   Eine DocumentDB-Sammlung ist ein schemaloser Container mit JSON-Dokumenten. Die Beziehungen in Datenentitäten innerhalb und zwischen Dokumenten in einer Sammlung werden implizit durch Einschluss erfasst, und nicht durch PS-FS-Beziehungen. Dieser Aspekt ist wichtig angesichts der später in diesem Dokument besprochenen dokumentinternen Verknüpfungen.
 
 # DocumentDB-Indexierung
@@ -153,7 +153,7 @@ Daher haben wir uns für die Entwicklung des Indexierungs-Untersystems von Docum
 
 -   Speichereffizienz: Aus Kostengründen ist der zusätzlich benötigte Speicherplatz für den Index beschränkt und vorhersagbar. Dies ist entscheidend, da Entwickler mit DocumentDB kostenbasierte Kompromisse zwischen Index-Mehraufwand und Abfrageleistung treffen können.
 
-Weitere Informationen zum Konfigurieren der Indexierungsrichtlinie für Sammlungen finden Sie in den [DocumentDB-Beispielen] (<http://code.msdn.microsoft.com/Azure-DocumentDB-NET-Code-6b3da8af#content>) auf MSDN. Wenden wir uns nun den Details der DocumentDB-SQL-Sprache zu.
+Weitere Informationen zum Konfigurieren der Indexierungsrichtlinie für Sammlungen finden Sie in den [DocumentDB-Beispielen] (http://code.msdn.microsoft.com/Azure-DocumentDB-NET-Code-6b3da8af\#content) auf MSDN. Wenden wir uns nun den Details der DocumentDB-SQL-Sprache zu.
 
 # Grundlagen von DocumentDB-Abfragen
 
@@ -180,7 +180,7 @@ Pro Abfrage gelten die folgenden Bindungsregeln:
 
 Die Quelle kann auch auf eine kleinere Teilmenge reduziert werden. Wenn Sie z. B. nur eine Teilstruktur in jedem Dokument auflisten möchten, kann der Stammknoten der Teilstruktur zur Quelle werden, wie im folgenden Beispiel gezeigt.
 
-**Abfrage**
+**Query**
 
     SELECT * 
     FROM Families.children
@@ -218,7 +218,7 @@ Die Quelle kann auch auf eine kleinere Teilmenge reduziert werden. Wenn Sie z. B
 
 Das obige Beispiel verwendet ein Array als Quelle. Sie können jedoch auch ein Objekt als Quelle verwenden, wie im folgenden Beispiel gezeigt. Jeder gültige JSON-Wert (mit Ausnahme von Undefined), der in der Quelle gefunden werden kann, wird für die Integration in das Abfrageergebnis herangezogen. Wenn manche Familien keinen `address.state`-Wert haben, werden sie aus dem Abfrageergebnis ausgeschlossen.
 
-**Abfrage**
+**Query**
 
     SELECT * 
     FROM Families.address.state
@@ -236,7 +236,7 @@ Die WHERE-Klausel (**`WHERE <filter_condition>`**) ist optional. Sie gibt die Be
 
 Die folgende Abfrage fordert Dokumente an, die eine name-Eigenschaft haben, deren Eigenschaftswert gleich `AndersenFamily` ist. Alle anderen Dokumente, die keine name-Eigenschaft haben oder deren Wert nicht gleich `AndersenFamily` ist, werden ausgeschlossen.
 
-**Abfrage**
+**Query**
 
     SELECT f.address
     FROM Families f 
@@ -832,7 +832,7 @@ Die SELECT-Klausel (**`SELECT <select_list>`**) ist obligatorisch und gibt an, w
 
 Das folgende Beispiel zeigt eine typische SELECT-Abfrage:
 
-**Abfrage**
+**Query**
 
     SELECT f.address
     FROM Families f 
@@ -852,7 +852,7 @@ Das folgende Beispiel zeigt eine typische SELECT-Abfrage:
 
 Im folgenden Beispiel werden zwei verschachtelte Eigenschaften projiziert, `f.address.state` und `f.address.city`:
 
-**Abfrage**
+**Query**
 
     SELECT f.address.state, f.address.city
     FROM Families f 
@@ -867,7 +867,7 @@ Im folgenden Beispiel werden zwei verschachtelte Eigenschaften projiziert, `f.ad
 
 Die Projektion unterstützt auch JSON-Ausdrücke, wie im folgenden Beispiel gezeigt.
 
-**Abfrage**
+**Query**
 
     SELECT { "state": f.address.state, "city": f.address.city, "name": f.id }
     FROM Families f 
@@ -885,7 +885,7 @@ Die Projektion unterstützt auch JSON-Ausdrücke, wie im folgenden Beispiel geze
 
 Beachten Sie die Rolle von `$1`. Die `SELECT`-Klausel muss ein JSON-Objekt erstellen. Da kein Schlüssel angegeben ist, verwenden wir implizite Argument-Variablennamen beginnend mit `$1`. Diese Abfrage gibt z. B. zwei implizite Argumentvariablen mit den Bezeichnungen `$1` und `$2` zurück.
 
-**Abfrage**
+**Query**
 
     SELECT { "state": f.address.state, "city": f.address.city }, 
            { "name": f.id }
@@ -910,7 +910,7 @@ Wir werden das obige Beispiel nun erweitern und explizite Aliase für Werte verw
 
 Wenn eine Abfrage zwei Eigenschaften mit demselben Namen hat, müssen Aliase verwendet werden, um mindestens eine der Eigenschaften umzubenennen, sodass diese im projizierten Ergebnis eindeutig sind.
 
-**Abfrage**
+**Query**
 
     SELECT 
            { "state": f.address.state, "city": f.address.city } AS AddressInfo, 
@@ -934,7 +934,7 @@ Wenn eine Abfrage zwei Eigenschaften mit demselben Namen hat, müssen Aliase ver
 
 Neben Eigenschaftsverweisen unterstützt die **SELECT**-Klausel auch skalare Ausdrücke wie z. B. Konstanten, arithmetische Ausdrücke, logische Ausdrücke usw. Hier sehen Sie z. B. eine einfache "Hallo Welt"-Abfrage.
 
-**Abfrage**
+**Query**
 
     SELECT "Hello World"
 
@@ -946,7 +946,7 @@ Neben Eigenschaftsverweisen unterstützt die **SELECT**-Klausel auch skalare Aus
 
 Hier ist ein komplexeres Beispiel mit einem skalaren Ausdruck:
 
-**Abfrage**
+**Query**
 
     SELECT ((2 + 11 % 7)-2)/3   
 
@@ -958,7 +958,7 @@ Hier ist ein komplexeres Beispiel mit einem skalaren Ausdruck:
 
 Das Ergebnis des skalaren Ausdrucks im folgenden Beispiel ist ein Boolean-Wert.
 
-**Abfrage**
+**Query**
 
     SELECT f.address.city = f.address.state AS AreFromSameCityState
     FROM Families f 
@@ -978,7 +978,7 @@ Das Ergebnis des skalaren Ausdrucks im folgenden Beispiel ist ein Boolean-Wert.
 
 Eine weitere Schlüsselfunktion von DocumentDB-SQL ist die Objekt- und Arrayerstellung. Im vorherigen Beispiel haben wir ein neues JSON-Objekt erstellt. Auf dieselbe Weise können Sie Arrays erstellen, wie hier gezeigt.
 
-**Abfrage**
+**Query**
 
     SELECT [f.address.city, f.address.state] AS CityState 
     FROM Families f 
@@ -1004,7 +1004,7 @@ Eine weitere Schlüsselfunktion von DocumentDB-SQL ist die Objekt- und Arrayerst
 
 Mit dem **VALUE**-Schlüsselwort können Sie JSON-Werte zurückgeben. Die folgende Abfrage gibt z. B. den skalaren Wert `"Hello World"` anstelle von `{$1: "Hello World"}` zurück.
 
-**Abfrage**
+**Query**
 
     SELECT VALUE "Hello World"
 
@@ -1016,7 +1016,7 @@ Mit dem **VALUE**-Schlüsselwort können Sie JSON-Werte zurückgeben. Die folgen
 
 Die folgende Abfrage gibt den JSON-Wert ohne die `"address"`-Bezeichnung in den Ergebnissen zurück.
 
-**Abfrage**
+**Query**
 
     SELECT VALUE f.address
     FROM Families f 
@@ -1038,7 +1038,7 @@ Die folgende Abfrage gibt den JSON-Wert ohne die `"address"`-Bezeichnung in den 
 
 Das folgende Beispiel zeigt, wie Sie primitive JSON-Werte zurückgeben können, d. h. auf der Blattebene der JSON-Baumstruktur.
 
-**Abfrage**
+**Query**
 
     SELECT VALUE f.address.state
     FROM Families f 
@@ -1054,7 +1054,7 @@ Das folgende Beispiel zeigt, wie Sie primitive JSON-Werte zurückgeben können, 
 
 Wir unterstützen den Sonderoperator (\*), um das Dokument unverändert zu projizieren. Wenn dieser Operator verwendet wird, dürfen keine weiteren projizierten Felder existieren. Abfragen wie z. B. `SELECT * FROM Families f` sind gültig, `SELECT VALUE * FROM Families f` und `SELECT *, f.id FROM Families f` hingegen nicht.
 
-**Abfrage**
+**Query**
 
     SELECT * 
     FROM Families f 
@@ -1085,7 +1085,7 @@ Wir unterstützen den Sonderoperator (\*), um das Dokument unverändert zu proji
 
 Wir haben ein neues Konstrukt mit dem **IN**-Schlüsselwort in DocumentDB-SQL eingeführt, mit dem Sie JSON-Arrays durchlaufen können. Die FROM-Quelle bietet Unterstützung für Iterationen. Beginnen wir mit dem folgenden Beispiel:
 
-**Abfrage**
+**Query**
 
     SELECT * 
     FROM Families.children
@@ -1119,7 +1119,7 @@ Wir haben ein neues Konstrukt mit dem **IN**-Schlüsselwort in DocumentDB-SQL ei
 
 Betrachten wir nun eine andere Abfrage, die untergeordnete Elemente in der Sammlung durchläuft. Beachten Sie den Unterschied im Ausgabe-Array. Dieses Beispiel teilt `children` und fügt das Ergebnis in ein einziges Array ein.
 
-**Abfrage**
+**Query**
 
     SELECT * 
     FROM c IN Families.children
@@ -1149,7 +1149,7 @@ Betrachten wir nun eine andere Abfrage, die untergeordnete Elemente in der Samml
 
 Mit dieser Funktion können Sie über einzelne Einträge im Array filtern, wie im folgenden Beispiel gezeigt.
 
-**Abfrage**
+**Query**
 
     SELECT c.givenName
     FROM c IN Families.children
@@ -1169,7 +1169,7 @@ Die Sprache unterstützt die Syntax <from_source1> JOIN <from_source2> JOIN ... 
 
 Die folgenden Beispiele veranschaulichen die Funktionsweise von JOINs. Das Ergebnis im folgenden Beispiel ist leer, da das Kreuzprodukt der einzelnen Quelldokumente und einem leeren Satz leer ist.
 
-**Abfrage**
+**Query**
 
     SELECT f.id
     FROM Families f
@@ -1182,7 +1182,7 @@ Die folgenden Beispiele veranschaulichen die Funktionsweise von JOINs. Das Ergeb
 
 Im folgenden Beispiel findet die Verknüpfung zwischen dem Dokumentstamm und dem `children`-Unterstamm statt. Es handelt sich um ein Kreuzprodukt zweier JSON-Objekte. Die Tatsache, dass die untergeordnete Struktur ein Array ist, macht für die Verknüpfung keinen Unterschied, da wir auf einem einzigen Stammknoten arbeiten, der das untergeordnete Array darstellt. Das Ergebnis enthält also nur zwei Ergebnisse, da das Kreuzprodukt der einzelnen Dokumente mit dem Array jeweils genau ein Dokument ergibt.
 
-**Abfrage**
+**Query**
 
     SELECT f.id
     FROM Families f
@@ -1201,7 +1201,7 @@ Im folgenden Beispiel findet die Verknüpfung zwischen dem Dokumentstamm und dem
 
 Das folgende Beispiel zeigt eine gewöhnlichere Verknüpfung:
 
-**Abfrage**
+**Query**
 
     SELECT f.id
     FROM Families f
@@ -1231,7 +1231,7 @@ Das erste Dokument (`AndersenFamily`) enthält nur ein untergeordnetes Element. 
 
 Der wahre Nutzen von JOIN ist die Bildung von Tupeln aus dem Kreuzprodukt auf eine Weise, die auf anderen Wegen schwer zu projizieren ist. Außerdem könnten Sie Filter auf die Kombination von Tupeln anwenden, mit denen Benutzer eine Bedingung auswählen können, die von der Gesamtheit der Tupel erfüllt sein muss, wie im folgenden Beispiel gezeigt.
 
-**Abfrage**
+**Query**
 
     SELECT 
         f.id AS familyName,
@@ -1282,7 +1282,7 @@ Dieses Beispiel ist eine natürliche Erweiterung des vorherigen Beispiels und ze
 
 Das nächste Beispiel verwendet einen zusätzlichen Filter auf `pet` an. Damit werden alle Tupel ausgeschlossen, bei denen der Haustiername nicht "Shadow" ist. Wir können also Tupel aus Arrays bilden, beliebige Elemente der Tupel filtern und beliebige Kombinationen aus Elementen projizieren.
 
-**Abfrage**
+**Query**
 
     SELECT 
         f.id AS familyName,
@@ -1335,7 +1335,7 @@ Das obige Beispiel erstellt eine UDF mit dem Namen `SQRT`. Sie akzeptiert einen 
 
 Wir können diese UDF nun in einer Abfrage in einer Projektion verwenden.
 
-**Abfrage**
+**Query**
 
     SELECT SQRT(c.grade)
     FROM c IN Families.children
@@ -1356,7 +1356,7 @@ Wir können diese UDF nun in einer Abfrage in einer Projektion verwenden.
 
 Die UDF kann auch in einem Filter verwendet werden, wie im folgenden Beispiel gezeigt:
 
-**Abfrage**
+**Query**
 
     SELECT c.grade
     FROM c IN Familes.children
@@ -1392,7 +1392,7 @@ Wir erweitern den Funktionsumfang von UDFs im folgenden Beispiel um konditionale
 
 Hier sehen Sie ein Verwendungsbeispiel für die UDF.
 
-**Abfrage**
+**Query**
 
     SELECT f.address.city, SEALEVEL(f.address.city) AS seaLevel
     FROM Families f 
@@ -1438,7 +1438,7 @@ Die folgende Abbildung zeigt die Architektur für die Unterstützung von LINQ-Ab
 
 Die Zuordnung zwischen .NET- und JSON-Objekten erfolgt auf natürliche Weise. Jedes Datenelementfeld wird einem JSON-Objekt zugeordnet. Dabei wird der Feldname in den "key"-Teil des Objekts übernommen, und der "value"-Teil wird rekursiv zur Wertkomponente des Objekts zugeordnet. Betrachten Sie das folgende Beispiel. Das erstellte Family-Objekt wird wie hier gezeigt zum JSON-Dokument zugeordnet. Umgekehrt wird das JSON-Dokument zurück zu einem .NET-Objekt zugeordnet.
 
-**C#-Klasse**
+**C\#-Klasse**
 
     public class Family
     {
@@ -1848,7 +1848,7 @@ Für die Verwaltung der Datenkonsistenzrichtlinien für Abfragen verwenden Sie d
 
 Wenn die konfigurierte Indexierungsrichtlinie der Sammlung die angegebene Abfrage nicht unterstützen kann, gibt der DocumentDB-Server "400 Bad Request" zurück. Dies wird z. B. für Bereichsabfragen auf Pfade zurückgegeben, die für Hash (Gleichheits)-Suchvorgänge konfiguriert sind, oder für Pfade, die ausdrücklich von der Indexierung ausgeschlossen wurden. Mit dem `x-ms-documentdb-query-enable-scan`-Header kann angegeben werden, dass eine Abfrage eine Suche durchführen darf, wenn kein Index verfügbar ist.
 
-## C# (.NET) SDK
+## C\# (.NET) SDK
 
 Das .NET SDK unterstützt Abfragen per LINQ und SQL. Das folgende Beispiel zeigt, wie Sie die weiter oben in diesem Dokument gezeigte einfache Filterabfrage ausführen können.
 
@@ -1925,7 +1925,7 @@ Der .NET-Client durchläuft automatisch alle Seiten der Abfrageergebnisse in den
 
 Entwickler können die Seitenaufteilung steuern, indem sie ein `IDocumentQueryable` mit dem `IQueryable`-Objekt erstellen und anschließend die `ResponseContinuationToken`-Werte auslesen und als `RequestContinuationToken` in `FeedOptions` zurückgeben. `EnableScanInQuery` kann festgelegt werden, um Suchen zu aktivieren, wenn die Abfrage nicht von der konfigurierten Indexierungsrichtlinie unterstützt werden kann.
 
-Weitere Abfragebeispiele finden Sie unter [DocumentDB .NET-Beispiele] (<http://code.msdn.microsoft.com/Azure-DocumentDB-NET-Code-6b3da8af#content>).
+Weitere Abfragebeispiele finden Sie unter [DocumentDB .NET-Beispiele] (http://code.msdn.microsoft.com/Azure-DocumentDB-NET-Code-6b3da8af\#content).
 
 ## Serverseitige JavaScript-API
 
@@ -1966,14 +1966,14 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von queryDocuments in der serverse
 # Referenzen
 
 1.  [Einführung in Azure DocumentDB][Einführung in Azure DocumentDB]
-2.  [DocumentDB-SQL-Sprachspezifikation] (<http://go.microsoft.com/fwlink/p/?LinkID=510612>)
-3.  [DocumentDB .NET-Beispiele] (<http://code.msdn.microsoft.com/Azure-DocumentDB-NET-Code-6b3da8af#content>)
+2.  [DocumentDB-SQL-Sprachspezifikation] (http://go.microsoft.com/fwlink/p/?LinkID=510612)
+3.  [DocumentDB .NET-Beispiele] (http://code.msdn.microsoft.com/Azure-DocumentDB-NET-Code-6b3da8af\#content)
 4.  [DocumentDB-Konsistenzebenen][DocumentDB-Konsistenzebenen]
-5.  ANSI SQL 2011 - [][]<http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681></a>
-6.  JSON [][1]<http://json.org/></a>
-7.  Javascript-Spezifikation [][2]<http://www.ecma-international.org/publications/standards/Ecma-262.htm></a>
-8.  LINQ [][3]<http://msdn.microsoft.com/de-de/library/bb308959.aspx></a>
-9.  Abfragetechniken für große Datenbanken [][4]<http://dl.acm.org/citation.cfm?id=152611></a>
+5.  ANSI SQL 2011 - <http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681>
+6.  JSON <http://json.org/>
+7.  Javascript-Spezifikation <http://www.ecma-international.org/publications/standards/Ecma-262.htm>
+8.  LINQ <http://msdn.microsoft.com/de-de/library/bb308959.aspx>
+9.  Abfragetechniken für große Datenbanken <http://dl.acm.org/citation.cfm?id=152611>
 10. Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
 11. Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
 12. Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
@@ -1982,8 +1982,3 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von queryDocuments in der serverse
   [0]: ./media/documentdb-sql-query/sql-query1.png
   [DocumentDB-Konsistenzebenen]: ../documentdb-consistency-levels
   [Einführung in Azure DocumentDB]: ../documentdb-introduction
-  [0]: http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681
-  [1]: http://json.org/
-  [2]: http://www.ecma-international.org/publications/standards/Ecma-262.htm
-  [3]: http://msdn.microsoft.com/de-de/library/bb308959.aspx
-  [4]: http://dl.acm.org/citation.cfm?id=152611

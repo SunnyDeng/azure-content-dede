@@ -24,15 +24,15 @@ Die Seite mit den [Speicherpreisdetails][Speicherpreisdetails] bietet detaillier
 
 Die *Endpunkte* für ein Speicherkonto stellen die höchste Stufe des Namespace für den Zugriff auf Blobs, Tabellen oder Warteschlangen dar. Die Standardendpunkte für ein Speicherkonto haben die folgenden Formate:
 
--   Blob-Dienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.blob.core.windows.net
+-   Blob-Dienst: http://\*meinSpeicherkonto\*.blob.core.windows.net
 
--   Tabellendienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.table.core.windows.net
+-   Tabellendienst: http://\*meinSpeicherkonto\*.table.core.windows.net
 
--   Warteschlangendienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.queue.core.windows.net
+-   Warteschlangendienst: http://\*meinSpeicherkonto\*.queue.core.windows.net
 
--   Dateidienst: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]\*.file.core.windows.net
+-   Dateidienst: http://\*meinSpeicherkonto\*.file.core.windows.net
 
-Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: [http://\*meinSpeicherkonto][http://\*meinSpeicherkonto]*.blob.core.windows.net/*mycontainer*/*myblob\*.
+Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: http://\*meinSpeicherkonto*.blob.core.windows.net/*mycontainer*/*myblob\*.
 
 ### Speicherkontosicherheit
 
@@ -55,7 +55,6 @@ Eine *Affinitätsgruppe* ist eine geografische Gruppierung Ihrer Azure-Dienste u
   [Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher]: http://msdn.microsoft.com/de-de/library/dn249410.aspx
   [Speicherpreisdetails]: http://www.windowsazure.com/de-de/pricing/details/#storage
   [Datenübertragungs-Preisdetails]: http://www.windowsazure.com/de-de/pricing/details/data-transfers/
-  [http://\*meinSpeicherkonto]: http://*mystorageaccount
   [SAS-Lernprogramm]: ../storage-dotnet-shared-access-signature-part-1/
   [Kennzahlen zur Speicheranalyse – Tabellenschema]: http://msdn.microsoft.com/de-de/library/windowsazure/hh343264.aspx
   [Informationen zu Speicheranalysekennzahlen]: http://msdn.microsoft.com/de-de/library/windowsazure/hh343258.aspx

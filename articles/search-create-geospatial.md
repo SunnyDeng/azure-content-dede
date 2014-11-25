@@ -1,6 +1,6 @@
 <properties title="Create a geospatial search solution using Azure Search" pageTitle="Create a geospatial search app using Azure Search" description="Create a geospatial search app using Bing and Azure Search" metaKeywords="" services="" solutions="" documentationCenter="" authors="Heidist" manager="mblythe" videoId="" scriptId="" />
 
-<tags ms.service="azure-search" ms.devlang ms.workload="search" ms.topic="article" ms.tgt_pltfrm ms.date="09/23/2014" ms.author="heidist"></tags>
+<tags ms.service="azure-search" ms.devlang="" ms.workload="search" ms.topic="article" ms.tgt_pltfrm="" ms.date="09/23/2014" ms.author="heidist" />
 
 # Erstellen einer geografischen Suchanwendung mit Azure Search
 
@@ -25,7 +25,7 @@ Dieses Lernprogramm baut auf der [Azure Search – Adventure Works Demo](http:/
 
 ## Voraussetzungen
 
--   Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Visual Studio 2013 Express kann über das [Download Center](http://www.microsoft.com/en-us/download/details.aspx?id=40747) aus dem Internet heruntergeladen werden.
+-   Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Visual Studio 2013 Express kann über das [Download Center](http://www.microsoft.com/de-de/download/details.aspx?id=40747) aus dem Internet heruntergeladen werden.
 -   Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Weitere Informationen finden Sie unter [Konfigurieren der Suche im Azure-Vorschauportal](../search-configure/).
 -   Einen Bing-Kartendienst sowie einen zugehörigen Zugriffsschlüssel. Anweisungen dazu finden Sie im nächsten Abschnitt.
 -   [Azure Search GeoSearch-Beispiel auf CodePlex](https://azuresearchgeospatial.codeplex.com/). Klicken Sie auf der Registerkarte "Source" (Quelle) auf **Download**, um eine ZIP-Datei der Lösung herunterzuladen.

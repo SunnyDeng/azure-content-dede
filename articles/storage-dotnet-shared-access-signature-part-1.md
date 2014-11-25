@@ -1,4 +1,4 @@
-<properties urlDisplayName="" pageTitle="Shared Access Signatures (SAS): Grundlagen zum SAS-Modell | Microsoft Azure" metaKeywords="Azure blob, Azure table, Azure queue, shared access signatures" description="Erfahren Sie mehr &uuml;ber das Delegieren des Zugriffs auf Blob-, Warteschlangen- und Tabellenressourcen mit Shared Access Signatures" metaCanonical="" services="storage" documentationCenter="" title="Teil&nbsp;1: Grundlagen zum SAS-Modell" solutions="" authors="tamram" manager="adinah" editor="cgronlun" />
+<properties linkid="manage-services-storage-net-shared-access-signature-part-1" urlDisplayName="" pageTitle="Shared access signatures: Understanding the SAS Model | Microsoft Azure" metaKeywords="Azure blob, Azure table, Azure queue, shared access signatures" description="Learn about delegating access to blob, queue, and table resources with shared access signatures" metaCanonical="" services="storage" documentationCenter="" title="Part 1: Understanding the SAS Model" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -16,13 +16,13 @@ Sie können eine SAS verwenden, um einem Client Zugriff auf Ressourcen in Ihrem 
 
 SAS sind zum Beispiel dann hilfreich, wenn Benutzer ihre eigenen Daten in Ihrem Speicherkonto ablegen und von dort abrufen. Für den Fall, dass ein Speicherkonto Benutzerdaten enthält, existieren zwei typische Designmuster:
 
-1. Clients laden Daten über einen Front-End-Proxydienst hoch und herunter, der die Authentifizierung übernimmt. Dieser Front-End-Proxydienst hat den Vorteil, dass auch Geschäftsregeln validiert werden können. Allerdings kann die Erstellung eines skalierbaren Dienstes für große Datenmengen oder Transaktionen mit großem Volumen teuer und aufwändig sein.
+1\. Clients laden Daten über einen Front-End-Proxydienst hoch und herunter, der die Authentifizierung übernimmt. Dieser Front-End-Proxydienst hat den Vorteil, dass auch Geschäftsregeln validiert werden können. Allerdings kann die Erstellung eines skalierbaren Dienstes für große Datenmengen oder Transaktionen mit großem Volumen teuer und aufwändig sein.
 
-[sas-storage-fe-proxy-service][sas-storage-fe-proxy-service]
+![sas-storage-fe-proxy-service][sas-storage-fe-proxy-service]
 
-2. Ein vereinfachter Dienst authentifiziert den Client bei Bedarf und generiert anschließend die SAS. Sobald der Client die SAS erhält, kann er direkt gemäß der in der SAS definierten Berechtigungen für den definierten Zeitraum auf die Speicherkonto-Ressourcen zugreifen. Dank der SAS müssen nicht mehr alle Daten durch einen Front-End-Proxydienst geleitet werden.
+2\. Ein vereinfachter Dienst authentifiziert den Client bei Bedarf und generiert anschließend die SAS. Sobald der Client die SAS erhält, kann er direkt gemäß der in der SAS definierten Berechtigungen für den definierten Zeitraum auf die Speicherkonto-Ressourcen zugreifen. Dank der SAS müssen nicht mehr alle Daten durch einen Front-End-Proxydienst geleitet werden.
 
-[sas-storage-provider-service][sas-storage-provider-service]
+![sas-storage-provider-service][sas-storage-provider-service]
 
 Viele tatsächliche Dienste verwenden je nach Szenario eine Mischung aus beiden Ansätzen, verarbeiten und validieren einige Daten im Front-End-Proxy und speichern und/oder lesen andere Daten direkt per SAS.
 
@@ -139,5 +139,4 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
   [Teil 2]: ../storage-dotnet-shared-access-signature-part-2/
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/08/03/windows-azure-storage-logging-using-logs-to-track-storage-requests.aspx
   [Verwalten des Zugriffs auf Azure-Speicherressourcen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee393343.aspx
-  [Delegieren des Zugriffs mit einer SAS (Shared Access Signature) (REST API)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee395415.aspx
   [Einführung in Tabellen und Warteschlangen mit SAS]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx

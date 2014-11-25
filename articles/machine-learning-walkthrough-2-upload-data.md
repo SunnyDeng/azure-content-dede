@@ -1,15 +1,15 @@
 <properties title="Step 2: Upload existing data into an Azure Machine Learning experiment" pageTitle="Step 2: Upload data into a Machine Learning experiment | Azure" description="Step 2: Upload existing public data into Azure Machine Learning Studio" metaKeywords="" services="" solutions="" documentationCenter="" authors="garye" videoId="" scriptId="" />
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye"></tags>
+<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye" />
 
-Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit Azure ML][]:
+Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit Azure ML][Entwickeln einer Vorhersagelösung mit Azure ML]:
 
-1.  [Erstellen eines ML-Arbeitsbereichs][]
+1.  [Erstellen eines ML-Arbeitsbereichs][Erstellen eines ML-Arbeitsbereichs]
 2.  **Hochladen vorhandener Daten**
-3.  [Erstellen eines neuen Experiments][]
-4.  [Trainieren und Bewerten der Modelle][]
-5.  [Veröffentlichen des Webdiensts][]
-6.  [Zugreifen auf den Webdienst][]
+3.  [Erstellen eines neuen Experiments][Erstellen eines neuen Experiments]
+4.  [Trainieren und Bewerten der Modelle][Trainieren und Bewerten der Modelle]
+5.  [Veröffentlichen des Webdiensts][Veröffentlichen des Webdiensts]
+6.  [Zugreifen auf den Webdienst][Zugreifen auf den Webdienst]
 
 ------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ Nach der Konvertierung der Daten in das CSV-Format müssen Sie die Daten in ML S
 6.  Wählen Sie unter Datentyp "Generische CSV-Datei ohne Kopfzeile (.nh.csv)" aus
 7.  Fügen Sie bei Bedarf eine Beschreibung hinzu
 8.  Klicken Sie auf **OK**
-    ![Hochladen des Datensatzes][]
+    ![Hochladen des Datensatzes][Hochladen des Datensatzes]
 
 Daraufhin werden die Daten in ein Datensatzmodul hochgeladen, das wir in einem Experiment verwenden können.
 

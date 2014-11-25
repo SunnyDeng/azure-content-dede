@@ -347,14 +347,6 @@ Befolgen Sie nach dem Erstellen oder Migrieren der WordPress-Website die folgend
   [Azure Shop]: http://azure.microsoft.com/de-de/gallery/store/
   [eine in mehreren Regionen gehostete Azure-Website mit CDBR-Hochverfügbarkeitsrouter für MySQL, Managed Cache, BLOB-Speicher und CDN]: ./media/web-sites-enterprise-wordpress/performance-diagram.png
   [Content Distribution Network (CDN)]: http://azure.microsoft.com/de-de/documentation/articles/cdn-how-to-use/
-  [WordPress-Plug-In für die Verwendung von BLOB-Speicher]: https://wordpress.org/plugins/windows-azure-storage/
-  [SendGrid]: http://azure.microsoft.com/de-de/gallery/store/sendgrid/sendgrid-azure/
-  [WordPress-Plug-In für die Verwendung von SendGrid]: http://wordpress.org/plugins/sendgrid-email-delivery-simplified/
-  [Benutzerdefinierte Domänennamen mit Azure-Websites]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-custom-domain-name/
-  [HTTPS-Unterstützung für Azure-Websites]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-configure-ssl-certificate/
-  [Unterstützung der gestaffelten Veröffentlichung für Azure-Websites]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-staged-publishing/
-  [Diagnoseprotokollierung mit Azure-Websites]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-enable-diagnostic-log/
-  [Überwachen von Azure-Websites]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-monitor/
   [Bereitstellen einer Azure-Website]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-deploy/
   [Sichern von Azure-Websites]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/
   [Wiederherstellen einer Azure-Website]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-restore/
@@ -371,12 +363,6 @@ Befolgen Sie nach dem Erstellen oder Migrieren der WordPress-Website die folgend
   [Plug-In "Velvet Blues Update URLs"]: https://wordpress.org/plugins/velvet-blues-update-urls/
   [MySQL Workbench]: http://www.mysql.com/products/workbench/
   [Search and Replace for WordPress Databases]: http://interconnectit.com/124/search-and-replace-for-wordpress-databases/
-  [Einführung in Webaufträge]: http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx
-  [Deaktivieren des ARR-Cookies]: http://blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx
-  [Redis Object Cache]: https://wordpress.org/plugins/redis-object-cache/
-  [Beschleunigen von WordPress mit Wincache]: http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/
-  [Erstellen eines Azure-Speicherkontos]: http://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/
-  [Benutzerhandbuch]: http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx
   []: resources
   [WordPress-Optimierung]: http://codex.wordpress.org/WordPress_Optimization
   [Konvertieren einer WordPress-Website in eine Multisite]: http://azure.microsoft.com/de-de/documentation/articles/web-sites-php-convert-wordpress-multisite/

@@ -106,8 +106,6 @@ Weitere Informationen zu Mobile Services:
   [Einfügen von Daten zum Empfangen von Benachrichtigungen]: #test
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/
   [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-js/
-  [mobile-services-create-new-push-vs2013]: ../includes/mobile-services-create-new-push-vs2013.md
-  [mobile-services-create-new-push-vs2013-2]: ../includes/mobile-services-create-new-push-vs2013-2.md
   [0]: ./media/mobile-services-windows-store-javascript-get-started-push/mobile-quickstart-push1.png
   [1]: ./media/mobile-services-windows-store-javascript-get-started-push/mobile-quickstart-push2.png
   [Erste Schritte mit Benachrichtigungshubs]: /de-de/manage/services/notification-hubs/getting-started-windows-dotnet/

@@ -60,20 +60,13 @@ Um Ihre benutzerdefinierte Domäne mit einer Azure-Website zu verknüpfen, müss
 
 ## <a name="enabledomain"></a>Aktivieren einer Traffic Manager-Website
 
-[WACOM.INCLUDE [modes][1]]
+[WACOM.INCLUDE [modes](../includes/custom-dns-web-site-modes-traffic-manager.md)]
 
-  [websites-cloud-services-css-guided-walkthrough]: ../includes/websites-cloud-services-css-guided-walkthrough.md
-  [intro]: ../includes/custom-dns-web-site-intro-traffic-manager.md
   [Directnic.com]: https://directnic.com
-  [tmwebsitefooter]: ../includes/custom-dns-web-site-traffic-manager-notes.md
-  [introfooter]: ../includes/custom-dns-web-site-intro-notes.md
   [Interpretation von DNS-Datensätzen]: #understanding-records
   [Konfigurieren Ihrer Websites für den Modus "Standard"]: #bkmk_configsharedmode
   [Hinzufügen eines DNS-Datensatzes zu Ihrer benutzerdefinierten Domäne]: #bkmk_configurecname
   [Aktivieren des Traffic Manager für Ihre Website]: #enabledomain
-  [understandingdns]: ../includes/custom-dns-web-site-understanding-dns-traffic-manager.md
-  [modes]: ../includes/custom-dns-web-site-modes-traffic-manager.md
   [Directnic Services-Menü]: .\media\web-sites-directnic-custom-domain-name\Directnic_DomainMenu.png
   [Services-Fensterbereich]: .\media\web-sites-directnic-custom-domain-name\Directnic_DomainManagement.png
   [0]: .\media\web-sites-directnic-custom-domain-name\Directnic_DNS_TM.png
-  [1]: ../includes/custom-dns-web-site-enable-on-traffic-manager.md

@@ -333,8 +333,6 @@ vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Warteschlangen, T
   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #HandleCrashes
   [Gewusst wie: Löschen von Themen und Abonnements]: #DeleteTopicsAndSubscriptions
   [Nächste Schritte]: #NextSteps
-  [howto-service-bus-topics]: ../includes/howto-service-bus-topics.md
   [OpenSSL-Erweiterung]: http://php.net/openssl
-  [get-client-libraries]: ../includes/get-client-libraries.md
   [Eigenschaft SqlFilter.SqlExpression]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx

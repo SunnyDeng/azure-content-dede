@@ -396,9 +396,9 @@ Die folgende Funktion war neu in der November-Version des SDK.
 
     Für alle Methoden wurde asynchrone Unterstützung hinzugefügt.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
+  
 
-  [MSDN-Forum für Azure Media Services]: http://social.msdn.microsoft.com/forums/azure/en-US/home?forum=MediaServices
+  [MSDN-Forum für Azure Media Services]: http://social.msdn.microsoft.com/forums/azure/de-de/home?forum=MediaServices
   [Aktuell bekannte Probleme]: #issues
   [REST-API-Versionsverlauf]: #rest_version_history
   [Version Oktober 2014]: #october_changes_14

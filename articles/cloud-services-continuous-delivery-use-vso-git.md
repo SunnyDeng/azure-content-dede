@@ -1,6 +1,6 @@
-<properties urlDisplayName="Publishing with Visual Studio Online" pageTitle="Kontinuierliche Bereitstellung in Azure mit Visual Studio Online" metaKeywords="" description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Cloud-Diensten erstellt und bereitgestellt werden." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Fortlaufende Bereitstellung f&uuml;r Azure mithilfe von Visual Studio Online und Git" authors="ghogen" solutions="" manager="douge" editor="" />
+<properties linkid="dev-net-common-tasks-publishing-with-vso" urlDisplayName="Publishing with TFS" pageTitle="Continuous delivery with Visual Studio Online in Azure" metaKeywords="" description="Learn how to configure your Visual Studio Online team projects to automatically build and deploy to Azure websites or cloud services." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online and Git" authors="ghogen" solutions="" manager="" editor="" />
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="ghogen" />
+<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="ghogen" />
 
 # Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online und Git
 
@@ -8,15 +8,9 @@ Sie können Visual Studio Online-Teamprojekte verwenden, um ein Git-Repository f
 
 Sie müssen Visual Studio 2013 und das Azure-SDK installiert haben. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite [www.visualstudio.com][www.visualstudio.com] auf den Link **Starten Sie kostenlos** klicken. Installieren Sie das Azure-SDK von [hier][hier] aus.
 
-<div class="wa-note">
-  <span class="wa-icon-bulb"></span>
-  <h5><a name="note"></a>Sie ben&ouml;tigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchf&uuml;hren zu k&ouml;nnen.</h5>
-<p>Sie k&ouml;nnen <a href="http://go.microsoft.com/fwlink/p/?LinkId=512979">kostenlos ein Visual Studio Online-Konto er&ouml;ffnen</a>.</p>
-</div>
-
 Gehen Sie folgendermaßen vor, um einen Cloud-Dienst für eine automatische Erstellung und Bereitstellung mithilfe von Visual Studio Online zu konfigurieren:
 
--   [Schritt 1: Erstellen eines Git-Repositorys.][Schritt 1: Erstellen eines Git-Repositorys.]
+-   [Schritt 1: Anmelden bei Visual Studio Online und Erstellen eines Git-Repository.][Schritt 1: Anmelden bei Visual Studio Online und Erstellen eines Git-Repository.]
 
 -   [Schritt 2: Erstellen eines Projekts und Übertragen mithilfe von Push an das Git-Repository.][Schritt 2: Erstellen eines Projekts und Übertragen mithilfe von Push an das Git-Repository.]
 
@@ -30,7 +24,7 @@ Gehen Sie folgendermaßen vor, um einen Cloud-Dienst für eine automatische Erst
 
 -   [Schritt 7: Bereitstellen von einer Arbeitsverzweigung][Schritt 7: Bereitstellen von einer Arbeitsverzweigung]
 
-## <a name="step1"></a><span class="short-header">Schritt 1: Erstellen eines Git-Repositorys.</span>Schritt 1: Erstellen eines Git-Repositorys
+## <a name="step1"></a><span class="short-header">Schritt 1: Anmelden bei Visual Studio Online und Erstellen eines Git-Repository.</span>Schritt 1: Anmelden bei Visual Studio Online und Erstellen eines Git-Repository
 
 1.  Wenn Sie noch kein Visual Studio Online-Konto haben, folgen Sie den Anweisungen [hier][1]. Wenn Sie Ihr Teamprojekt erstellen, wählen Sie Git als Quellcodeverwaltungssystem aus. Befolgen Sie die Anweisungen, um Visual Studio mit dem Teamprojekt zu verbinden.
 
@@ -254,11 +248,10 @@ Weitere Informationen finden Sie unter [Visual Studio Online][Visual Studio Onli
 
   [www.visualstudio.com]: http://www.visualstudio.com
   [hier]: http://go.microsoft.com/fwlink/?LinkId=239540
-  [Schritt 1: Erstellen eines Git-Repositorys.]: #step1
+  [Schritt 1: Anmelden bei Visual Studio Online und Erstellen eines Git-Repository.]: #step1
   [Schritt 2: Erstellen eines Projekts und Übertragen mithilfe von Push an das Git-Repository.]: #step2
   [Schritt 3: Verbinden des Projekts mit Azure]: #step3
   [Schritt 4: Durchführen von Änderungen und Auslösen einer erneuten Erstellung und Bereitstellung]: #step4
-  [Schritt 5: Erneute Bereitstellung eines früheren Builds (optional)]: #step5
   [Schritt 6: Ändern der Produktionsbereitstellung]: #step6
   [Schritt 7: Bereitstellen von einer Arbeitsverzweigung]: #step7
   [1]: http://go.microsoft.com/fwlink/?LinkId=397665

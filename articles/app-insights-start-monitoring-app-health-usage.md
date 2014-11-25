@@ -1,6 +1,6 @@
 <properties title="Application Insights" pageTitle="Application Insights - start monitoring your app's health and usage" description="Analyze usage, availability and performance of your on-premises or Microsoft Azure web application with Application Insights." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-09-24" ms.author="awills"></tags>
+<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-09-24" ms.author="awills" />
 
 # Application Insights – Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen
 
@@ -21,7 +21,7 @@ Es gibt zwei Möglichkeiten, um Application Insights einzusetzen:
 -   [Application Insights Ihrem App-Projekt in Visual Studio hinzufügen](#add), um die Leistung und Nutzung der Anwendung zu überwachen (empfohlen).
 -   [Agent ohne erneute Bereitstellung auf Ihrem Server installieren][redfield] – Eine Live-Website überwachen, ohne Ihren Quellcode neu bereitzustellen oder zu verändern. Mit dieser Option können Sie Leistung und Ausnahmefehler überwachen. Eine Nutzungsüberwachung können Sie später hinzufügen.
 
-> [WACOM.NOTE] Es gibt eine [ältere Version von Application Insights](http://msdn.microsoft.com/en-us/library/dn481095.aspx)in Visual Studio Online, die eine größere Palette von Anwendungen unterstützt. Wir entwickeln sie von Grund auf neu als Teil von Microsoft Azure, und über diese neue Version informieren Sie sich gerade.
+> [WACOM.NOTE] Es gibt eine [ältere Version von Application Insights](http://msdn.microsoft.com/de-de/library/dn481095.aspx)in Visual Studio Online, die eine größere Palette von Anwendungen unterstützt. Wir entwickeln sie von Grund auf neu als Teil von Microsoft Azure, und über diese neue Version informieren Sie sich gerade.
 
 ## <a name="add"></a>Application Insights Ihrem Projekt hinzufügen
 

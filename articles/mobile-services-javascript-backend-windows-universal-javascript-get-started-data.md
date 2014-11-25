@@ -101,7 +101,6 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 
 
 
-  [mobile-services-selector-get-started-data]: ../includes/mobile-services-selector-get-started-data.md
   [Erstellen universeller Windows-Apps, die Windows und Windows Phone als Ziel verwenden]: http://msdn.microsoft.com/de-de/library/windows/apps/xaml/dn609832.aspx
   [Erste Schritte mit Daten für Windows Phone]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
   [Herunterladen des Windows Store-App-Projekts]: #download-app
@@ -111,12 +110,7 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   [Testen der App mit Mobile Services]: #test-app
   [Kostenlose Azure-Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-javascript-get-started-data%2F
   [Visual Studio Express 2013 für Windows]: https://go.microsoft.com/fwLink/p/?LinkID=257546
-  [mobile-services-windows-universal-javascript-download-project]: ../includes/mobile-services-windows-universal-dotnet-download-project.md
-  [mobile-services-create-new-service-vs2013]: ../includes/mobile-services-create-new-service-vs2013.md
-  [mobile-services-create-new-table-vs2013]: ../includes/mobile-services-create-new-table-vs2013.md
   [Dynamisches Schema]: http://msdn.microsoft.com/de-de/library/windowsazure/jj193175.aspx
-  [mobile-services-windows-javascript-update-data-app]: ../includes/mobile-services-windows-javascript-update-data-app.md
-  [mobile-services-windows-universal-test-app]: ../includes/mobile-services-windows-universal-test-app.md
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [0]: ./media/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data/mobile-todoitem-data-browse.png
   [Prüfen und Ändern von Daten mit Skripten]: /de-de/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/

@@ -1,19 +1,19 @@
 Dieser Abschnitt zeigt, wie Benachrichtigungen von einer .NET-Konsolenanwendung und anderen beliebigen Anwendungen gesendet werden.
-Wenn Sie mobile Dienste verwenden, finden Sie weitere Informationen in den Lernprogrammen [Erste Schritte mit Pushbenachrichtigungen][]. Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP][]. Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle][] senden.
+Wenn Sie mobile Dienste verwenden, finden Sie weitere Informationen in den Lernprogrammen [Erste Schritte mit Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen]. Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP][Verwenden von Notification Hubs von Java/PHP]. Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle][Notification Hubs-REST-Schnittstelle] senden.
 
 Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, iOS- und Android-Geräte.
 
-Überspringen Sie die Schritte 1 bis 3, wenn Sie eine Konsolenanwendung erstellt haben, als Sie [Erste Schritte mit Notification Hubs][] abgeschlossen haben.
+Überspringen Sie die Schritte 1 bis 3, wenn Sie eine Konsolenanwendung erstellt haben, als Sie [Erste Schritte mit Notification Hubs][Erste Schritte mit Notification Hubs] abgeschlossen haben.
 
 1.  Erstellen Sie in Visual Studio eine neue Visual C\#-Konsolenanwendung
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie im Visual Studio-Hauptmenü auf **Extras**, **Bibliothekspaket-Manager** und **Paket-Managerkonsole**. Geben Sie dann in das Konsolenfenster Folgendes ein und drücken Sie die **Eingabetaste**:
 
         Install-Package WindowsAzure.ServiceBus
 
-    Dadurch wird dem Azure Service Bus-SDK mithilfe des [WindowsAzure.ServiceBus NuGet-Pakets][] ein Verweis hinzugefügt.
+    Dadurch wird dem Azure Service Bus-SDK mithilfe des [WindowsAzure.ServiceBus NuGet-Pakets][WindowsAzure.ServiceBus NuGet-Pakets] ein Verweis hinzugefügt.
 
 3.  Öffnen Sie die Datei "Program.cs", und fügen Sie die folgende `using`-Anweisung hinzu:
 
@@ -81,11 +81,11 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
          SendNotificationAsync();
          Console.ReadLine();
 
-<!-- Anchors --> <!-- Images. --> <!-- URLs. -->
+<!-- Anchors -->  
 
   [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
   [Verwenden von Notification Hubs von Java/PHP]: /de-de/documentation/articles/notification-hubs-java-backend-how-to/
-  [Notification Hubs-REST-Schnittstelle]: http://msdn.microsoft.com/en-us/library/windowsazure/dn223264.aspx
+  [Notification Hubs-REST-Schnittstelle]: http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx
   [Erste Schritte mit Notification Hubs]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
-  []: ./media/notification-hubs-back-end/notification-hub-create-console-app.png
+  [0]: ./media/notification-hubs-back-end/notification-hub-create-console-app.png
   [WindowsAzure.ServiceBus NuGet-Pakets]: http://nuget.org/packages/WindowsAzure.ServiceBus/

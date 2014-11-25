@@ -1,6 +1,6 @@
 <properties linkid="develop-notificationhubs-tutorials-get-started-xamarin-ios" urlDisplayName="Get Started" pageTitle="Get Started with Notification Hubs for Xamarin iOS apps" metaKeywords="" description="Learn how to use Azure Notification Hubs to send push notifications to a Xamarin iOS application." metaCanonical="" disqusComments="0" umbracoNaviHide="1" services="mobile-services,notification-hubs" documentationCenter="" title="Get started with Notification Hubs" authors="donnam" manager="dwrede" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-ios" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="donnam"></tags>
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-ios" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="donnam" />
 
 # Erste Schritte mit Notification Hubs
 
@@ -44,7 +44,7 @@ Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstell
 
 2.  Klicken Sie auf **Schlüsselbundverwaltung**, erweitern Sie **Zertifikatsassistent**, und klicken Sie dann auf **Zertifikat einer Zertifizierungsinstanz anfordern …**.
 
-    ![][]
+    ![][0]
 
 3.  Machen Sie entsprechende Angaben für die Felder **E-Mail des Benutzers** sowie **Allgemeiner Name** und **E-Mail der Zert.-Instanz**, vergewissern Sie sich, dass **Auf der Festplatte sichern ausgewählt ist**, und klicken Sie dann auf **Fortfahren**.
 
@@ -401,17 +401,11 @@ Zum Senden einer Benachrichtigung mit Mobile Service folgen Sie den Anweisungen 
 
 In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Geräte übertragen. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs][Benachrichtigen von Benutzern mit Notification Hubs]. Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, können Sie [Verwenden von Notification Hubs zum Übermitteln von Nachrichten][Verwenden von Notification Hubs zum Übermitteln von Nachrichten] lesen. Weitere Informationen über die Verwendung von Notification Hubs finden Sie unter [Notification Hubs-Leitfaden][Notification Hubs-Leitfaden] und [Notification Hubs-Informationen für iOS][Notification Hubs-Informationen für iOS].
 
-<!-- Anchors. --> 
-<!-- Images. --> 
-<!-- URLs. -->
+ 
+ 
 
-  [Windows Universal]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/ "Windows Universal"
-  [Windows Phone]: /de-de/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone"
-  [iOS]: /de-de/documentation/articles/notification-hubs-ios-get-started/ "iOS"
-  [Android]: /de-de/documentation/articles/notification-hubs-android-get-started/ "Android"
-  [Kindle]: /de-de/documentation/articles/notification-hubs-kindle-get-started/ "Kindle"
+
   [Xamarin.iOS]: /de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS"
-  [Xamarin.Android]: /de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android"
   [NotificationHubs-Beispielapp]: http://go.microsoft.com/fwlink/p/?LinkId=331329
   [Erstellen der Zertifikatsignieranforderungsdatei]: #certificates
   [Registrieren der App und Aktivieren von Pushbenachrichtigungen]: #register
@@ -422,9 +416,8 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Gerä
   [XCode 5,0]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [1]: http://xamarin.com/download
   [Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A643EE910&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fmanage%2Fservices%2Fnotification-hubs%2Fgetting-started-xamarin-ios%2F
   [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-  []: ./media/partner-xamarin-notification-hubs-ios-get-started/mobile-services-ios-push-step5.png
+  [0]: ./media/partner-xamarin-notification-hubs-ios-get-started/mobile-services-ios-push-step5.png
   [2]: ./media/partner-xamarin-notification-hubs-ios-get-started/mobile-services-ios-push-step6.png
   [3]: ./media/partner-xamarin-notification-hubs-ios-get-started/mobile-services-ios-push-step7.png
   [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456

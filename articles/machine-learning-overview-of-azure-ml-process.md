@@ -1,6 +1,6 @@
 <properties title="Azure Machine Learning API service operations" pageTitle="Machine Learning API service operations | Azure" description="Creating and managing Azure Machine Learning web services" metaKeywords="" services="" solutions="" documentationCenter="" authors="derrickv" videoId="" scriptId="" />
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="derrickv"></tags>
+<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="derrickv" />
 
 # Dienstoperationen der Azure Machine Learning-API
 Ein typisches Microsoft Azure Machine Learning (Azure ML)-Projekt umfasst die folgenden übergeordneten Schritte:
@@ -26,7 +26,7 @@ Mit Azure ML können Sie Webdienste aus ML-Experimenten erstellen, die Sie im Az
 
 Das folgende Diagramm zeigt einen Überblick über die Schritte in zwei Teilen: Zunächst die Modellerstellung und anschließend die Veröffentlichung als Webdienst. Dieses Dokument konzentriert sich auf die rechte Seite in Abbildung 1 – Veröffentlichung eines Bewertungs-Webdiensts - und beschreibt die zugehörigen Konzepte.
 
-![][]
+![][0]
 
 Abbildung 1: Einrichtung, Erstellung und Veröffentlichung eines Bewertungs-Webdiensts
 
@@ -197,7 +197,7 @@ Nachdem Sie das Experiment geändert und das neue trainierte Modell erstellt und
 <!--Image references-->
 <!--Link references-->
 
-[]: ./media/machine-learning-overview-of-azure-ml-process/oamlp1.png
+[0]: ./media/machine-learning-overview-of-azure-ml-process/oamlp1.png
 [1]: ./media/machine-learning-overview-of-azure-ml-process/oamlp2.png
 [2]: ./media/machine-learning-overview-of-azure-ml-process/oamlp3.png
 [3]: ./media/machine-learning-overview-of-azure-ml-process/oamlp4.png

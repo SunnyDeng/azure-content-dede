@@ -1,6 +1,6 @@
 <properties title="Integrate your Azure Website with an Azure Virtual Network" pageTitle="Integrate Azure Website with Azure VNet" description="Shows you how to connect an Azure Website to a new or existing Azure virtual network" metaKeywords="" services="web-sites,virtual-network" solutions="web,integration,infrastructure" documentationCenter="" authors="cephalin" videoId="" scriptId="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/24/2014" ms.author="cephalin"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/24/2014" ms.author="cephalin" />
 
 # Integrieren Sie Ihre Azure-Website in ein virtuelles Azure-Netzwerk
 
@@ -94,11 +94,3 @@ Ein weiterer Unterschied besteht darin, dass Sie einen Relay-Agenten für die Hy
 Es gibt zurzeit auch bei den Preisebenen noch Unterschiede zwischen den beiden Funktionen: Auf der günstigeren Ebene ist die Hybridverbindungs-Funktion äußerst nützlich für Entwicklungs- und Testszenarien. Hier wird nur Zugang zu einer kleinen Anzahl an Endpunkten gewährt. Mit der virtuellen Netzwerkfunktion hingegen haben Sie Zugriff auf alles, was im VNET enthalten oder mit ihm verbunden ist.
 
   []: ./media/web-sites-integrate-with-vnet/upgrade-to-standard.png
-  [1]: ./media/web-sites-integrate-with-vnet/how-it-works.png
-  [2]: ./media/web-sites-integrate-with-vnet/connect-to-existing-vnet.png
-  [3]: ./media/web-sites-integrate-with-vnet/create-new-vnet.png
-  [4]: ./media/web-sites-integrate-with-vnet/new-vnet-progress.png
-  [5]: ./media/web-sites-integrate-with-vnet/vnet-status-portal.png
-  [6]: ./media/web-sites-integrate-with-vnet/vpn-to-onpremise.png
-  [7]: ./media/web-sites-integrate-with-vnet/vpn-to-onpremise-certificate.png
-  [8]: ./media/web-sites-integrate-with-vnet/vnet-sync-connection.png

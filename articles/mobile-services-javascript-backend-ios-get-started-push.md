@@ -187,7 +187,7 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer iOS-App für 
 -   [Mobile Services: Serverskriptreferenz][Mobile Services: Serverskriptreferenz]
     Erfahren Sie mehr über die Implementierung von Geschäftslogik in Ihren mobilen Dienst.
 
-<!-- Anchors. --> <!-- Images. --> <!-- URLs.   -->
+  <!-- URLs.   -->
 
   [Erstellen der Zertifikatsignieranforderungsdatei]: #certificates
   [Registrieren der App und Aktivieren von Pushbenachrichtigungen]: #register
@@ -199,8 +199,6 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer iOS-App für 
   [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
   [XCode 4.5]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-ios-get-started
-  [Aktivieren von Apple Pushbenachrichtigungen]: ../includes/enable-apple-push-notifications.md
-  [mobile-services-apns-configure-push]: ../includes/mobile-services-apns-configure-push.md
   [0]: ./media/mobile-services-ios-get-started-push/mobile-portal-data-tables.png
   [1]: ./media/mobile-services-ios-get-started-push/mobile-insert-script-push2.png
   [apns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=272333

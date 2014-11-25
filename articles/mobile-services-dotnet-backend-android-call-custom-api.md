@@ -44,7 +44,5 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Android-App
   [Definieren der benutzerdefinierten API]: #define-custom-api
   [Aktualisieren der App zum Aufruf der benutzerdefinierten API]: #update-app
   [Testen der App]: #test-app
-  [mobile-services-dotnet-backend-create-custom-api]: ../includes/mobile-services-dotnet-backend-create-custom-api.md
-  [mobile-services-android-call-custom-api]: ../includes/mobile-services-android-call-custom-api.md
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
   [Speichern von Serverskripts in der Quellcodeverwaltung]: /de-de/documentation/articles/mobile-services-store-scripts-source-control

@@ -131,7 +131,6 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 
 
 
-  [mobile-services-selector-get-started-data-legacy]: ../includes/mobile-services-selector-get-started-data-legacy.md
   [universellen Windows-Apps]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data
   [Herunterladen des Windows Store-App-Projekts]: #download-app
   [Erstellen des mobilen Diensts in Visual Studio]: #create-service
@@ -141,11 +140,8 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   [Kostenlose Azure-Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-windows-store-dotnet-get-started-data%2F
   [GetStartedWithMobileServices-App]: http://go.microsoft.com/fwlink/p/?LinkId=328660
   [0]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-quickstart-startup.png
-  [mobile-services-create-new-service-vs2013]: ../includes/mobile-services-create-new-service-vs2013.md
   [MobileServiceClient-Klasse]: http://go.microsoft.com/fwlink/p/?LinkId=302030
-  [mobile-services-create-new-table-vs2013]: ../includes/mobile-services-create-new-table-vs2013.md
   [Dynamisches Schema]: http://msdn.microsoft.com/de-de/library/windowsazure/jj193175.aspx
-  [mobile-services-windows-dotnet-update-data-app]: ../includes/mobile-services-windows-dotnet-update-data-app.md
   [Verwaltungsportal]: https://manage.windowsazure.com/
   [1]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-todoitem-data-browse.png
   [Prüfen und Ändern von Daten mit Skripten]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/

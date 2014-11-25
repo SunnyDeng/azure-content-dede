@@ -2,16 +2,16 @@
 
 Das Erstellen eines virtuellen Linux-Computers ist einfach, wenn Sie die Bildergalerie im Azure Verwaltungsportal verwenden. In diesem Leitfaden wird davon ausgegangen, dass Sie bisher keine Erfahrung mit der Verwendung von Azure haben. Sie können einen virtuellen Linux-Computer in der Cloud erstellen, darauf zugreifen und ihn anpassen.
 
-> [WACOM.NOTE] Sie benötigen keine Erfahrungen mit Azure-VMs, um dieses Lernprogramm auszuführen. Allerdings benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)][].
+> [WACOM.NOTE] Sie benötigen keine Erfahrungen mit Azure-VMs, um dieses Lernprogramm auszuführen. Allerdings benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)][Create a Windows Azure account (in englischer Sprache)].
 
 Sie erhalten Informationen zu folgenden Themen:
 
--   [Informationen zu virtuellen Computern in Azure][]
--   [Erstellen eines virtuellen Computers][]
--   [Anmelden bei einem virtuellen Computer nach dessen Erstellung][]
--   [Anschließen eines Datenträgers an den neuen virtuellen Computer][]
+-   [Informationen zu virtuellen Computern in Azure][Informationen zu virtuellen Computern in Azure]
+-   [Erstellen eines virtuellen Computers][Erstellen eines virtuellen Computers]
+-   [Anmelden bei einem virtuellen Computer nach dessen Erstellung][Anmelden bei einem virtuellen Computer nach dessen Erstellung]
+-   [Anschließen eines Datenträgers an den neuen virtuellen Computer][Anschließen eines Datenträgers an den neuen virtuellen Computer]
 
-**Hinweis**: In diesem Tutorial wird ein virtueller Computer erstellt, der nicht mit einem virtuellen Netzwerk verbunden ist. Wenn der virtuelle Computer ein virtuelles Netzwerk verwenden soll, müssen Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers angeben. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke][].
+**Hinweis**: In diesem Tutorial wird ein virtueller Computer erstellt, der nicht mit einem virtuellen Netzwerk verbunden ist. Wenn der virtuelle Computer ein virtuelles Netzwerk verwenden soll, müssen Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers angeben. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke][Überblick über virtuelle Azure-Netzwerke].
 
 ## <span id="virtualmachine"></span> </a>Informationen zu virtuellen Computern in Azure
 
@@ -23,15 +23,15 @@ Ein virtueller Computer in Azure ist ein Server in der Cloud, den Sie steuern un
 Folgende Optionen sind verfügbar, um virtuelle Computer mithilfe von Abbildern zu erstellen:
 
 -   Erstellen Sie einen virtuellen Computer unter Verwendung eines Abbilds, das in der Bildergalerie des Azure Verwaltungsportals bereitgestellt wurde.
--   Erstellen Sie eine VHD-Datei, die ein Abbild zu Azure enthält, und laden Sie diese hoch. Erstellen Sie dann einen virtuellen Computer mithilfe des Abbilds. Weitere Informationen zum Erstellen und Hochladen eines benutzerdefinierten Abbilds finden Sie unter [Erstellen und Hochladen einer virtuellen Festplatte mit Linux-Betriebssystem][].
+-   Erstellen Sie eine VHD-Datei, die ein Abbild zu Azure enthält, und laden Sie diese hoch. Erstellen Sie dann einen virtuellen Computer mithilfe des Abbilds. Weitere Informationen zum Erstellen und Hochladen eines benutzerdefinierten Abbilds finden Sie unter [Erstellen und Hochladen einer virtuellen Festplatte mit Linux-Betriebssystem][Erstellen und Hochladen einer virtuellen Festplatte mit Linux-Betriebssystem].
 
-Jeder virtuelle Computer befindet sich in einem Clouddienst, entweder alleine oder zusammen mit anderen virtuellen Computern. Sie können virtuelle Computer im selben Clouddienst platzieren, damit die virtuellen Computer miteinander kommunizieren können, und um einen Lastenausgleich zwischen den virtuellen Computern zu ermöglichen sowie hohe Verfügbarkeit der Computer sicherzustellen. Weitere Informationen zu Clouddiensten und virtuellen Computern finden Sie im Abschnitt über Ausführungsmodelle unter [Einführung in Azure][].
+Jeder virtuelle Computer befindet sich in einem Clouddienst, entweder alleine oder zusammen mit anderen virtuellen Computern. Sie können virtuelle Computer im selben Clouddienst platzieren, damit die virtuellen Computer miteinander kommunizieren können, und um einen Lastenausgleich zwischen den virtuellen Computern zu ermöglichen sowie hohe Verfügbarkeit der Computer sicherzustellen. Weitere Informationen zu Clouddiensten und virtuellen Computern finden Sie im Abschnitt über Ausführungsmodelle unter [Einführung in Azure][Einführung in Azure].
 
 ## <span id="custommachine"></span> </a>Erstellen eines virtuellen Computers
 
 Sie verwenden die Methode **Aus Galerie**, um einen benutzerdefinierten virtuellen Computer im Verwaltungsportal zu erstellen. Diese Methode bietet Ihnen bei der Erstellung mehr Optionen für die Konfiguration des virtuellen Computers, zum Beispiel verbundene Ressourcen, DNS-Name und Netzwerkkonnektivität bei Bedarf.
 
-1.  Melden Sie sich im Azure [Verwaltungsportal][] an.
+1.  Melden Sie sich im Azure [Verwaltungsportal][Verwaltungsportal] an.
     Klicken Sie in der Befehlsleiste auf **Neu**.
 
 2.  Klicken Sie auf **Virtueller Computer** und dann auf **From Gallery**.
@@ -58,9 +58,9 @@ Sie verwenden die Methode **Aus Galerie**, um einen benutzerdefinierten virtuell
 
 13. Wählen Sie außerdem unter **Verfügbarkeitsgruppe** für dieses Tutorial die Standardeinstellung **Keine**. Klicken Sie auf das Kontrollkästchen, um den virtuellen Computer zu erstellen, und klicken Sie dann auf den Pfeil, um fortzufahren.
 
-14. Entscheiden sie unter **VM Agent**, ob der VM Agent installiert werden soll. Dieser Agent stellt die Umgebung bereit, in der Sie Erweiterungen installieren können, die Ihnen bei der Interaktion mit dem virtuellen Computer helfen können. Nähere Informationen finden Sie unter [Verwalten von Erweiterungen][].
+14. Entscheiden sie unter **VM Agent**, ob der VM Agent installiert werden soll. Dieser Agent stellt die Umgebung bereit, in der Sie Erweiterungen installieren können, die Ihnen bei der Interaktion mit dem virtuellen Computer helfen können. Nähere Informationen finden Sie unter [Verwalten von Erweiterungen][Verwalten von Erweiterungen].
 
-15. Prüfen Sie unter **Endpunkte** den automatisch erstellten Endpunkt, um Secure Shell-Verbindungen (SSH) zu dem virtuellen Computer zuzulassen. (Endpunkte ermöglichen Ressourcen im Internet oder anderen virtuellen Netzwerken die Kommunikation mit einem virtuellen Computer.) Sie können jetzt weitere Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer][].
+15. Prüfen Sie unter **Endpunkte** den automatisch erstellten Endpunkt, um Secure Shell-Verbindungen (SSH) zu dem virtuellen Computer zuzulassen. (Endpunkte ermöglichen Ressourcen im Internet oder anderen virtuellen Netzwerken die Kommunikation mit einem virtuellen Computer.) Sie können jetzt weitere Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer][Einrichten von Endpunkten für einen virtuellen Computer].
 
 Nachdem der virtuelle Computer und der Clouddienst erstellt wurden, wird der neue virtuelle Computer im Verwaltungsportal unter **Virtuelle Computer** und der Clouddienst unter **Cloud Services** aufgeführt. Sowohl der virtuelle Computer als auch der Clouddienst werden automatisch gestartet.
 
@@ -68,24 +68,24 @@ Nachdem der virtuelle Computer und der Clouddienst erstellt wurden, wird der neu
 
 Sie können den SSH-Client verwenden, um die Einstellungen des virtuellen Computers und der Anwendungen zu verwalten, die auf dem Computer ausgeführt werden. Hierzu müssen Sie einen SSH-Client auf dem Computer installieren, über den Sie auf den virtuellen Computer zugreifen möchten. Es gibt eine Vielzahl an SSH-Client-Programmen, die Sie verwenden können. Hier einige mögliche Programme:
 
--   Wenn Sie einen Computer mit einem Windows-Betriebssystem verwenden, können Sie beispielsweise einen SSH-Client wie PuTTY verwenden. Weitere Informationen erhalten Sie unter [PuTTY Download][] (in englischer Sprache).
--   Wenn Sie einen Computer mit einem Linux-Betriebssystem verwenden, können Sie beispielsweise einen SSH-Client wie OpenSSH verwenden. Weitere Informationen finden Sie unter [OpenSSH][].
+-   Wenn Sie einen Computer mit einem Windows-Betriebssystem verwenden, können Sie beispielsweise einen SSH-Client wie PuTTY verwenden. Weitere Informationen erhalten Sie unter [PuTTY Download][PuTTY Download] (in englischer Sprache).
+-   Wenn Sie einen Computer mit einem Linux-Betriebssystem verwenden, können Sie beispielsweise einen SSH-Client wie OpenSSH verwenden. Weitere Informationen finden Sie unter [OpenSSH][OpenSSH].
 
 Dieses Tutorial zeigt Ihnen, wie Sie mithilfe des PuTTY-Programms auf den virtuellen Computer zugreifen.
 
 1.  Navigieren Sie im Verwaltungsportal zum **Hostnamen** und den **Portinformationen**. Sie finden die erforderlichen Informationen im Dashboard des virtuellen Computers. Klicken Sie in der **Schnelleinsicht** des Dashboards auf den Namen des virtuellen Computers, und navigieren Sie zu den **SSH-Details**.
 
-    ![Rufen Sie die SSH-Details auf.][]
+    ![Rufen Sie die SSH-Details auf.][Rufen Sie die SSH-Details auf.]
 
 2.  Öffnen Sie das PuTTY-Programm.
 
 3.  Geben Sie den **Hostnamen** und die **Portinformationen** aus dem Dashboard ein, und klicken Sie dann auf **Öffnen**.
 
-    ![Geben Sie den Hostnamen und die Portinformationen ein.][]
+    ![Geben Sie den Hostnamen und die Portinformationen ein.][Geben Sie den Hostnamen und die Portinformationen ein.]
 
 4.  Melden Sie sich mit dem Konto "NeuerBenutzer1" an, das Sie beim Erstellen des virtuellen Computers angegeben haben.
 
-    ![Melden Sie sich bei dem neuen virtuellen Computer an.][]
+    ![Melden Sie sich bei dem neuen virtuellen Computer an.][Melden Sie sich bei dem neuen virtuellen Computer an.]
 
     Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbeiten.
 
@@ -98,7 +98,7 @@ Möglicherweise muss Ihre Anwendung Daten speichern. Schließen Sie hierzu einen
 
 An jeden erstellen virtuellen Computer ist auch ein temporärer lokaler *Ressourcendatenträger* angeschlossen. Da die Daten auf einem Ressourcendatenträger bei Neustarts verloren gehen können, werden Ressourcendatenträger oft von Anwendungen und Prozessen zur vorübergehenden (temporären) Datenspeicherung auf dem virtuellen Computer verwendet. Außerdem dienen sie zur Speicherung von Auslagerungsdateien für das Betriebssystem.
 
-Auf Linux wird der Ressourcendatenträger in der Regel vom Azure Linux Agent verwaltet und automatisch in **/mnt/resource** (oder **/mnt** auf Ubuntu-Abbildern) eingebunden. Beachten Sie, dass der Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Andererseits kann der Datenträger unter Linux vom Kernel den Namen `/dev/sdc` erhalten, und die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Weitere Informationen erhalten Sie im [Azure Linux Agent User Guide][] (Benutzerhandbuch für Azure Linux, in englischer Sprache).
+Auf Linux wird der Ressourcendatenträger in der Regel vom Azure Linux Agent verwaltet und automatisch in **/mnt/resource** (oder **/mnt** auf Ubuntu-Abbildern) eingebunden. Beachten Sie, dass der Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Andererseits kann der Datenträger unter Linux vom Kernel den Namen `/dev/sdc` erhalten, und die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Weitere Informationen erhalten Sie im [Azure Linux Agent User Guide][Azure Linux Agent User Guide] (Benutzerhandbuch für Azure Linux, in englischer Sprache).
 
 1.  Melden Sie sich beim Azure-Verwaltungsportal an, falls noch nicht geschehen.
 
@@ -108,7 +108,7 @@ Auf Linux wird der Ressourcendatenträger in der Regel vom Azure Linux Agent ver
 
     Das Dialogfeld **Leeren Datenträger anfügen** wird angezeigt.
 
-    ![Definieren Sie die Datenträgerdetails.][]
+    ![Definieren Sie die Datenträgerdetails.][Definieren Sie die Datenträgerdetails.]
 
 4.  Der **Name des virtuellen Computers**, der **Speicherort** und der **Dateiname** sind bereits ausgefüllt. Sie müssen lediglich die für den Datenträger gewünschte Größe eingeben. Geben Sie **5** in das Feld **Größe** ein.
 
@@ -120,7 +120,7 @@ Auf Linux wird der Ressourcendatenträger in der Regel vom Azure Linux Agent ver
 
     Die Anzahl der Datenträger für den virtuellen Computer beträgt jetzt 2, und der Datenträger, den Sie angeschlossen haben, wird in der Tabelle **Disks** aufgeführt.
 
-    ![Datenträger erfolgreich angeschlossen][]
+    ![Datenträger erfolgreich angeschlossen][Datenträger erfolgreich angeschlossen]
 
 Der gerade von Ihnen an den virtuellen Computer angeschlossene Datenträger ist nach dem Hinzufügen offline und nicht initialisiert. Sie müssen sich beim Computer anmelden und den Datenträger initialisieren, damit Sie diesen zum Speichern von Daten verwenden können.
 
@@ -132,7 +132,7 @@ Der gerade von Ihnen an den virtuellen Computer angeschlossene Datenträger ist 
 
     In den angezeigten Meldungen können Sie den Bezeichner des letzten hinzugefügten Datenträgers finden.
 
-    ![Bezeichnen Sie den Datenträger.][]
+    ![Bezeichnen Sie den Datenträger.][Bezeichnen Sie den Datenträger.]
 
 3.  Geben Sie im SSH-Fenster den folgen Befehl ein, um ein neues Gerät zu erstellen, und geben Sie anschließend das Kennwort für das Konto ein:
 
@@ -142,25 +142,25 @@ Der gerade von Ihnen an den virtuellen Computer angeschlossene Datenträger ist 
 
 4.  Geben Sie **n** ein, um eine neue Partition zu erstellen.
 
-    ![Neues Gerät erstellen][]
+    ![Neues Gerät erstellen][Neues Gerät erstellen]
 
 5.  Geben Sie **p** ein, um die Partition zur primären zu machen, geben Sie **1** ein, um sie zur ersten Partition zu machen, und drücken Sie die Eingabetaste, um den Standardwert für den Zylinder zu übernehmen.
 
-    ![Partition erstellen][]
+    ![Partition erstellen][Partition erstellen]
 
 6.  Geben Sie **p** ein, um die Details zum Datenträger anzuzeigen, der gerade partitioniert wird.
 
-    ![Informationen zum Datenträger auflisten][]
+    ![Informationen zum Datenträger auflisten][Informationen zum Datenträger auflisten]
 
 7.  Geben Sie **w** ein, um die Einstellungen für den Datenträger zu schreiben.
 
-    ![Datenträgeränderungen schreiben][]
+    ![Datenträgeränderungen schreiben][Datenträgeränderungen schreiben]
 
 8.  Sie müssen das Dateisystem auf der neuen Partition erstellen. Geben Sie z. B. den folgenden Befehl ein, um das Dateisystem zu erstellen, und geben Sie anschließend das Kontokennwort ein:
 
     `sudo mkfs -t ext4 /dev/sdc1`
 
-    ![Dateisystem erstellen][]
+    ![Dateisystem erstellen][Dateisystem erstellen]
 
     > [WACOM.NOTE] Bitte beachten Sie, dass auf SUSE Linux Enterprise 11-Systemen nur schreibgeschützter Zugriff für ext4-Dateisysteme möglich ist. Für diese Systeme wird empfohlen, das neue Dateisystem als ext3 statt als ext4 zu formatieren.
 
@@ -213,17 +213,17 @@ Der gerade von Ihnen an den virtuellen Computer angeschlossene Datenträger ist 
 
 Weitere Informationen zu Linux auf Azure erhalten Sie in den folgenden Artikeln:
 
--   [Einführung in Linux auf Azure][]
+-   [Einführung in Linux auf Azure][Einführung in Linux auf Azure]
 
--   [Verwenden des Azure-Befehlszeilentools für Mac und Linux][]
+-   [Verwenden des Azure-Befehlszeilentools für Mac und Linux][Verwenden des Azure-Befehlszeilentools für Mac und Linux]
 
-  [Create a Windows Azure account (in englischer Sprache)]: http://www.windowsazure.com/en-us/develop/php/tutorials/create-a-windows-azure-account/
+  [Create a Windows Azure account (in englischer Sprache)]: http://www.windowsazure.com/de-de/develop/php/tutorials/create-a-windows-azure-account/
   [Informationen zu virtuellen Computern in Azure]: #virtualmachine
   [Erstellen eines virtuellen Computers]: #custommachine
   [Anmelden bei einem virtuellen Computer nach dessen Erstellung]: #logon
   [Anschließen eines Datenträgers an den neuen virtuellen Computer]: #attachdisk
   [Überblick über virtuelle Azure-Netzwerke]: http://go.microsoft.com/fwlink/p/?LinkID=294063
-  [Erstellen und Hochladen einer virtuellen Festplatte mit Linux-Betriebssystem]: /en-us/manage/linux/common-tasks/upload-a-vhd/
+  [Erstellen und Hochladen einer virtuellen Festplatte mit Linux-Betriebssystem]: /de-de/manage/linux/common-tasks/upload-a-vhd/
   [Einführung in Azure]: http://go.microsoft.com/fwlink/p/?LinkId=311926
   [Verwaltungsportal]: http://manage.windowsazure.com
   [Verwalten von Erweiterungen]: http://go.microsoft.com/FWLink/p/?LinkID=390493
@@ -233,7 +233,7 @@ Weitere Informationen zu Linux auf Azure erhalten Sie in den folgenden Artikeln:
   [Rufen Sie die SSH-Details auf.]: ./media/CreateVirtualMachineLinuxTutorial/SSHdetails.png
   [Geben Sie den Hostnamen und die Portinformationen ein.]: ./media/CreateVirtualMachineLinuxTutorial/putty.png
   [Melden Sie sich bei dem neuen virtuellen Computer an.]: ./media/CreateVirtualMachineLinuxTutorial/sshlogin.png
-  [Azure Linux Agent User Guide]: http://www.windowsazure.com/en-us/manage/linux/how-to-guides/linux-agent-guide/
+  [Azure Linux Agent User Guide]: http://www.windowsazure.com/de-de/manage/linux/how-to-guides/linux-agent-guide/
   [Definieren Sie die Datenträgerdetails.]: ./media/CreateVirtualMachineLinuxTutorial/attachnewdisklinux.png
   [Datenträger erfolgreich angeschlossen]: ./media/CreateVirtualMachineLinuxTutorial/attachemptysuccess.png
   [Bezeichnen Sie den Datenträger.]: ./media/CreateVirtualMachineLinuxTutorial/diskmessages.png

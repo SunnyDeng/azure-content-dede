@@ -306,26 +306,7 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 
 
 [Next Steps]: #next-steps
-  [What is Queue Storage]: #what-is
-  [Concepts]: #concepts
-  [Create an Azure Storage Account]: #create-account
-  [Setup an Azure Storage Connection String]: #setup-connection-string
-  [How to: Programmatically access queues using .NET]: #access
-  [How To: Create a Queue]: #create-queue
-  [How To: Insert a Message into a Queue]: #insert-message
-  [How To: Peek at the Next Message]: #peek-message
-  [How To: Change the Contents of a Queued Message]: #change-contents
-  [How To: Dequeue the Next Message]: #get-message
-  [How To: Leverage Additional Options for Dequeuing Messages]: #advanced-get
-  [How To: Get the Queue Length]: #get-queue-length
-  [How To: Delete a Queue]: #delete-queue
-  [Download and install the Azure SDK for .NET]: /de-de/develop/net/
-  [.NET client library reference]: http://msdn.microsoft.com/de-de/library/windowsazure/dn495001(v=azure.10).aspx
-  [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/de-de/library/windowsazure/ee405487.aspx 
   [CloudStorageAccount]: http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Configuring Connection Strings]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2

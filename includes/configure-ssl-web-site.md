@@ -2,12 +2,12 @@
 
 Wenn ein Benutzer Ihre Website über HTTPS besucht, wird die Kommunikation zwischen der Website und dem Browser mit der Secure Socket Layer (SSL)-Verschlüsselung geschützt. Dies ist die gängigste Methode zum Schützen von Daten, die über das Internet gesendet werden, und bietet Besuchern die Sicherheit, dass ihre Transaktionen mit Ihrer Website sicher sind. In diesem Artikel wird erläutert, wie HTTPS für eine Azure-Website aktiviert wird.
 
-> [WACOM.NOTE] Um HTTPS für benutzerdefinierte Domänennamen zu aktivieren, müssen Sie Ihre Websites für den Standardmodus konfigurieren. Dadurch entstehen eventuell zusätzliche Kosten, wenn Sie derzeit den kostenlosen oder Freigabemodus verwenden. Weitere Informationen über Preise für den Freigabe- oder Standardmodus finden Sie unter [Preisübersicht][]. Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion][].
+> [WACOM.NOTE] Um HTTPS für benutzerdefinierte Domänennamen zu aktivieren, müssen Sie Ihre Websites für den Standardmodus konfigurieren. Dadurch entstehen eventuell zusätzliche Kosten, wenn Sie derzeit den kostenlosen oder Freigabemodus verwenden. Weitere Informationen über Preise für den Freigabe- oder Standardmodus finden Sie unter [Preisübersicht][Preisübersicht]. Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion][Kostenlose Microsoft Azure-Testversion].
 
 [][]
 
 ## Die Domäne \*.azurewebsites.net
-Wenn Sie keinen benutzerdefinierten Domänennamen verwenden möchten, sondern stattdessen die Domäne \*.azurewebsites.net verwenden möchten, die Ihrer Website von Azure zugewiesen wird (z. B. contoso.azurewebsites.net), wird Ihre Website bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt. Sie können **[https://meinewebsite.azurewebsites.net][]** für den geschützten Zugriff auf Ihre Website verwenden. \*.azurewebsites.net ist jedoch eine freigegebene Domäne, und wie alle freigegebenen Domänen ist sie nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat.
+Wenn Sie keinen benutzerdefinierten Domänennamen verwenden möchten, sondern stattdessen die Domäne \*.azurewebsites.net verwenden möchten, die Ihrer Website von Azure zugewiesen wird (z. B. contoso.azurewebsites.net), wird Ihre Website bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt. Sie können **[https://meinewebsite.azurewebsites.net][https://meinewebsite.azurewebsites.net]** für den geschützten Zugriff auf Ihre Website verwenden. \*.azurewebsites.net ist jedoch eine freigegebene Domäne, und wie alle freigegebenen Domänen ist sie nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat.
 
 In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänennamen wie **contoso.com**, **www.contoso.com** oder **\*.contoso.com** aktiviert wird.
 
@@ -16,7 +16,7 @@ In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie H
 ## Benutzerdefinierte Domänennamen
 
 </p>
-Wenn Sie HTTPS für einen benutzerdefinierten Domänennamen wie **contoso.com** aktivieren möchten, müssen Sie einen benutzerdefinierten Domänennamen bei einer Domänennamen-Registrierungsstelle registrieren. Weitere Informationen zum Konfigurieren des Domänennamens einer Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][]. Nachdem Sie einen benutzerdefinierten Domänennamen registriert und Ihre Website zur Reaktion auf den benutzerdefinierten Namen konfiguriert haben, müssen Sie ein SSL-Zertifikat für die Domäne anfordern.
+Wenn Sie HTTPS für einen benutzerdefinierten Domänennamen wie **contoso.com** aktivieren möchten, müssen Sie einen benutzerdefinierten Domänennamen bei einer Domänennamen-Registrierungsstelle registrieren. Weitere Informationen zum Konfigurieren des Domänennamens einer Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website]. Nachdem Sie einen benutzerdefinierten Domänennamen registriert und Ihre Website zur Reaktion auf den benutzerdefinierten Namen konfiguriert haben, müssen Sie ein SSL-Zertifikat für die Domäne anfordern.
 
 Wenn Sie einen Domänennamen registrieren, können Sie auch Unterdomänen wie **www.contoso.com** oder **mail.contoso.com** erstellen. Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht wahrscheinlich ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen wie **contoso.com**, **www.contoso.com** und **mail.contoso.com** schützen müssen, wird ein Platzhalterzertifikat oder ein Zertifikat mit einem alternativen Antragstellernamen (subjectAltName, SAN) benötigt.
 
@@ -37,7 +37,7 @@ Ein Zertifikat kann sowohl Platzhalter als auch subjectAltName unterstützen.
 ## Erhalten eines Zertifikats
 
 </p>
-Für Azure-Websites verwendete SSL-Zertifikate müssen von einer Zertifizierungsstelle signiert sein, einem vertrauenswürdigen Dritten, der Zertifikate für diesen Zweck ausgibt. Wenn Sie noch kein Zertifikat haben, müssen Sie eines von einem Unternehmen erwerben, das SSL-Zertifikate verkauft. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
+Für Azure-Websites verwendete SSL-Zertifikate müssen von einer Zertifizierungsstelle signiert sein, einem vertrauenswürdigen Dritten, der Zertifikate für diesen Zweck ausgibt. Wenn Sie noch kein Zertifikat haben, müssen Sie eines von einem Unternehmen erwerben, das SSL-Zertifikate verkauft. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
 Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure erfüllen:
 
@@ -47,7 +47,7 @@ Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure er
 
 -   Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf die Website zugegriffen wird. Wenn dieses Zertifikat für mehrere Domänen gelten soll, müssen Sie, wie oben erläutert, einen Platzhalterwert verwenden oder Werte für alternative Antragstellernamen angeben.
 
-    -   Informationen zum Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][].
+    -   Informationen zum Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website].
 
     > [WACOM.NOTE] Versuchen Sie nicht, für die Domäne azurewebsites.net ein Zertifikat zu erhalten oder zu generieren.
 
@@ -55,7 +55,7 @@ Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure er
 
 > [WACOM.NOTE] Von Servern privater Zertifizierungsstellen ausgegebene Zertifikate werden von Azure-Websites nicht unterstützt.
 
-Um von einer Zertifizierungsstelle ein SSL-Zertifikat zu erhalten, müssen Sie eine Zertifikatsignieranforderung (Certificate Signing Request, CSR) generieren, die an die Zertifizierungsstelle gesendet wird. Die Zertifizierungsstelle sendet ein Zertifikat zurück, mit dem die CSR vervollständigt wird. Zwei gängige Möglichkeiten zum Generieren einer CSR sind die Verwendung von certmgr.exe oder von [OpenSSL][]-Anwendungen. Certmgr.exe steht nur unter Windows zur Verfügung, während OpenSSL für die meisten Plattformen verfügbar ist. Eine Anleitung zu diesen beiden Dienstprogrammen finden Sie weiter unten.
+Um von einer Zertifizierungsstelle ein SSL-Zertifikat zu erhalten, müssen Sie eine Zertifikatsignieranforderung (Certificate Signing Request, CSR) generieren, die an die Zertifizierungsstelle gesendet wird. Die Zertifizierungsstelle sendet ein Zertifikat zurück, mit dem die CSR vervollständigt wird. Zwei gängige Möglichkeiten zum Generieren einer CSR sind die Verwendung von certmgr.exe oder von [OpenSSL][OpenSSL]-Anwendungen. Certmgr.exe steht nur unter Windows zur Verfügung, während OpenSSL für die meisten Plattformen verfügbar ist. Eine Anleitung zu diesen beiden Dienstprogrammen finden Sie weiter unten.
 
 > [WACOM.NOTE] Zertifikate für die Kryptografie für elliptische Kurven (ECC) werden für Azure-Websites unterstützt; sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen. Sobald Sie das ECC-Zertifikat erhalten haben, können Sie es anhand der unten beschriebenen Schritte auf Ihre Website hochladen.
 
@@ -63,17 +63,17 @@ Eventuell müssen Sie auch **Zwischenzertifikate** (auch Kettenzertifikate genan
 
 > [WACOM.NOTE] Bei jeder dieser Vorgehensweisen werden Sie aufgefordert, einen **allgemeinen Namen** einzugeben. Wenn Sie ein Platzhalterzertifikat für mehrere Domänen (www.contoso.com, sales.contoso.com) erhalten, muss dieser Wert \*.domänenname (z. B. \*.contoso.com) lauten. Wenn Sie ein Zertifikat für einen einzelnen Domänenname erhalten, muss dieser Wert genau mit dem Wert übereinstimmen, den die Benutzer im Browser eingeben, um Ihre Website zu besuchen, zum Beispiel www.contoso.com.
 >
-> Wenn Sie einen Platzhalternamen wie \*.contoso.com und einen Stammdomänennamen wie contoso.com unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen verwenden. Ein Beispiel zum Erstellen einer Zertifikatanforderung, welche die SubjectAltName-Erweiterungen verwendet, finden Sie unter [SubjectAltName-Zertifikat][].
+> Wenn Sie einen Platzhalternamen wie \*.contoso.com und einen Stammdomänennamen wie contoso.com unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen verwenden. Ein Beispiel zum Erstellen einer Zertifikatanforderung, welche die SubjectAltName-Erweiterungen verwendet, finden Sie unter [SubjectAltName-Zertifikat][SubjectAltName-Zertifikat].
 >
-> Weitere Informationen zum Konfigurieren des Domänennamens einer Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][].
+> Weitere Informationen zum Konfigurieren des Domänennamens einer Azure-Website finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website].
 
 ### Beziehen eines Zertifikats mit Certreq.exe (nur Windows)
 
 Certreq.exe ist ein Windows-Dienstprogramm zum Erstellen von Zertifikatanforderungen. Es gehört seit Windows XP/Windows Server 2000 zur Windows-Basisinstallation und dürfte daher auf Windows-Systemen jüngeren Datums verfügbar sein. Gehen Sie folgendermaßen vor, um mit certreq.exe ein SSL-Zertifikat zu erhalten.
 
-Informationen zum Erstellen eines selbstsignierten Zertifikats für Testzwecke finden Sie im Abschnitt [Selbstsignierte Zertifikate][] dieses Dokuments.
+Informationen zum Erstellen eines selbstsignierten Zertifikats für Testzwecke finden Sie im Abschnitt [Selbstsignierte Zertifikate][Selbstsignierte Zertifikate] dieses Dokuments.
 
-Informationen zum Erstellen einer Zertifikatanforderung mit dem IIS-Manager finden Sie unter [Erhalten eines Zertifikats mit dem IIS-Manager][].
+Informationen zum Erstellen einer Zertifikatanforderung mit dem IIS-Manager finden Sie unter [Erhalten eines Zertifikats mit dem IIS-Manager][Erhalten eines Zertifikats mit dem IIS-Manager].
 
 1.  Öffnen Sie den **Editor**, und erstellen Sie ein neues Dokument mit folgendem Inhalt. Ersetzen Sie **mysite.com** in der Zeile "Subject" durch den benutzerdefinierten Domänennamen Ihrer Website. Zum Beispiel: Subject = "CN=www.contoso.com".
 
@@ -91,7 +91,7 @@ Informationen zum Erstellen einer Zertifikatanforderung mit dem IIS-Manager find
         [EnhancedKeyUsageExtension]
         OID=1.3.6.1.5.5.7.3.1
 
-    Weitere Informationen über die oben angegebenen Optionen sowie über weitere verfügbare Optionen finden Sie in der [Certreq-Referenzdokumentation][] (in englischer Sprache).
+    Weitere Informationen über die oben angegebenen Optionen sowie über weitere verfügbare Optionen finden Sie in der [Certreq-Referenzdokumentation][Certreq-Referenzdokumentation] (in englischer Sprache).
 
 2.  Speichern Sie die Textdatei unter **myrequest.txt**.
 
@@ -105,7 +105,7 @@ Informationen zum Erstellen einer Zertifikatanforderung mit dem IIS-Manager find
 
 5.  Senden Sie die Datei **myrequest.csr** an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Dazu müssen Sie die Datei eventuell hochladen oder im Editor öffnen und den Inhalt direkt in ein Webformular eingeben.
 
-    Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
+    Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
 6.  Wenn die Zertifizierungsstelle Ihnen eine Zertifikatdatei (.CER) zur Verfügung gestellt hat, speichern Sie diese Datei auf dem Computer, mit dem die Anforderung generiert wurde. Verwenden Sie anschließend den folgenden Befehl, um die Anforderung zu akzeptieren und den Prozess der Zertifikatgenerierung abzuschließen.
 
@@ -119,23 +119,23 @@ Informationen zum Erstellen einer Zertifikatanforderung mit dem IIS-Manager find
 
 8.  Um das Zertifikat aus dem Zertifikatspeicher zu exportieren, führen Sie **certmgr.msc** auf der **Startseite** oder im **Startmenü** aus. Wenn **Zertifikat-Manager** angezeigt wird, erweitern Sie den Ordner **Persönlich**, und wählen Sie dann **Zertifikate** aus. Suchen Sie im Feld **Ausgestellt für** nach einem Eintrag mit dem benutzerdefinierten Domänennamen, für den Sie ein Zertifikat angefordert haben. Im Feld **Ausgestellt von** muss die Zertifizierungsstelle aufgeführt werden, die Sie für dieses Zertifikat verwendet haben.
 
-    ![hier Bild von Zertifikat-Manager einfügen][]
+    ![hier Bild von Zertifikat-Manager einfügen][hier Bild von Zertifikat-Manager einfügen]
 
 9.  Klicken Sie mit der rechten Maustaste auf das Zertifikat, und wählen Sie **Alle Aufgaben** und anschließend **Exportieren**. Klicken Sie im **Zertifikat-Exportassistenten** auf **Weiter**, und wählen Sie dann **Ja, privaten Schlüssel exportieren**. Klicken Sie auf **Weiter**.
 
-    ![Privaten Schlüssel exportieren][]
+    ![Privaten Schlüssel exportieren][Privaten Schlüssel exportieren]
 
 10. Wählen Sie **Persönlicher Informationsaustausch - PKCS \#12**, **Alle Zertifikate in der Zertifikatkette berücksichtigen** und **Alle erweiterten Eigenschaften exportieren**. Klicken Sie auf **Weiter**.
 
-    ![Alle Zertifikate und erweiterten Eigenschaften berücksichtigen][]
+    ![Alle Zertifikate und erweiterten Eigenschaften berücksichtigen][Alle Zertifikate und erweiterten Eigenschaften berücksichtigen]
 
 11. Wählen Sie **Kennwort** aus. Geben Sie das Kennwort ein, und bestätigen Sie es. Klicken Sie auf **Weiter**.
 
-    ![Kennwort angeben][]
+    ![Kennwort angeben][Kennwort angeben]
 
 12. Geben Sie einen Pfad und Dateinamen an, in dem das exportierte Zertifikat enthalten ist. Der Dateiname muss die Erweiterung **.pfx** haben. Klicken Sie auf **Weiter**, um den Prozess abzuschließen.
 
-    ![Dateipfad angeben][]
+    ![Dateipfad angeben][Dateipfad angeben]
 
 Jetzt können Sie die exportierte PFX-Datei zu Ihrer Azure-Website hochladen.
 
@@ -161,7 +161,7 @@ Jetzt können Sie die exportierte PFX-Datei zu Ihrer Azure-Website hochladen.
 
     Nach Abschluss dieses Prozesses haben Sie zwei Dateien: **myserver.key** und **server.csr**. Die Datei **server.csr** enthält die Zertifikatsignieranforderung.
 
-3.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
+3.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
 4.  Sobald Sie ein Zertifikat von einer Zertifizierungsstelle erhalten haben, speichern Sie es in einer Datei mit dem Namen **myserver.crt**. Wenn die Zertifizierungsstelle das Zertifikat im Textformat bereitgestellt hat, fügen Sie den Zertifikattext einfach in die Datei **myserver.crt** ein. In einem Texteditor sieht der Dateiinhalt etwa folgendermaßen aus:
 
@@ -211,54 +211,54 @@ Jetzt können Sie die exportierte PFX-Datei zu Ihrer Azure-Website hochladen.
 </p>
 Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für den Standardmodus von Azure-Websites zur Verfügung. Gehen Sie folgendermaßen vor, um zum Standardmodus zu wechseln.
 
-> [WACOM.NOTE] Bevor Sie eine Website vom kostenlosen Websitemodus zum Standard-Websitemodus umschalten, müssen Sie die für Ihr Website-Abonnement geltende Ausgabekapazität entfernen. Andernfalls besteht das Risiko, dass Ihre Website nicht mehr verfügbar ist, wenn Sie Ihre Ausgabekapazität vor dem Ende der Abrechnungsperiode erreichen. Weitere Informationen über Preise für den Freigabe- oder Standardmodus finden Sie unter [Preisübersicht][].
+> [WACOM.NOTE] Bevor Sie eine Website vom kostenlosen Websitemodus zum Standard-Websitemodus umschalten, müssen Sie die für Ihr Website-Abonnement geltende Ausgabekapazität entfernen. Andernfalls besteht das Risiko, dass Ihre Website nicht mehr verfügbar ist, wenn Sie Ihre Ausgabekapazität vor dem Ende der Abrechnungsperiode erreichen. Weitere Informationen über Preise für den Freigabe- oder Standardmodus finden Sie unter [Preisübersicht][Preisübersicht].
 
-1.  Öffnen Sie das [Verwaltungsportal][] in Ihrem Browser.
+1.  Öffnen Sie das [Verwaltungsportal][Verwaltungsportal] in Ihrem Browser.
 
 2.  Klicken Sie auf der Registerkarte **Web Sites** auf den Namen Ihrer Site.
 
-    ![Website auswählen][]
+    ![Website auswählen][Website auswählen]
 
 3.  Klicken Sie auf die Registerkarte **SCALE**.
 
-    ![Die Registerkarte "Skalierung"][]
+    ![Die Registerkarte "Skalierung"][Die Registerkarte "Skalierung"]
 
 4.  Legen Sie im Abschnitt **Allgemein** den Websitemodus durch Klicken auf **Standard** fest.
 
-    ![Standardmodus ausgewählt][]
+    ![Standardmodus ausgewählt][Standardmodus ausgewählt]
 
 5.  Klicken Sie auf **Speichern**. Klicken Sie bei der entsprechenden Aufforderung auf **Ja**.
 
-    > [WACOM.NOTE] Wenn die Fehlermeldung "Configuring scale for web site '\<site name\>' failed" angezeigt wird, können Sie mit der Schaltfläche "Details" weitere Informationen abrufen. Eventuell wird die Fehlermeldung "Not enough available standard instance servers to satisfy this request." angezeigt. Wenn diese Fehlermeldung angezeigt wird, rufen Sie [Supportoptionen für Azure][] auf.
+    > [WACOM.NOTE] Wenn die Fehlermeldung "Configuring scale for web site '\<site name\>' failed" angezeigt wird, können Sie mit der Schaltfläche "Details" weitere Informationen abrufen. Eventuell wird die Fehlermeldung "Not enough available standard instance servers to satisfy this request." angezeigt. Wenn diese Fehlermeldung angezeigt wird, rufen Sie [Supportoptionen für Azure][Supportoptionen für Azure] auf.
 
 [][4]
 
 ## Konfigurieren von SSL
 
 </p>
-Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie mit Ihrer Azure-Website einen benutzerdefinierten Domänennamen verknüpft haben. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][].
+Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie mit Ihrer Azure-Website einen benutzerdefinierten Domänennamen verknüpft haben. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website].
 
 1.  Öffnen Sie das [Azure-Verwaltungsportal][Verwaltungsportal] in Ihrem Browser.
 
 2.  Klicken Sie auf der Registerkarte **Websites** auf den Namen Ihrer Website, und wählen Sie die Registerkarte **Konfigurieren** aus.
 
-    ![Die Registerkarte "Konfigurieren"][]
+    ![Die Registerkarte "Konfigurieren"][Die Registerkarte "Konfigurieren"]
 
 3.  Klicken Sie im Abschnitt **Zertifikate** auf **Upload a Certificate**.
 
-    ![Zertifikat hochladen][]
+    ![Zertifikat hochladen][Zertifikat hochladen]
 
 4.  Wählen Sie mit dem Dialogfeld **Upload a Certificate** die zuvor mit dem IIS-Manager oder mit OpenSSL erstellte PFX-Zertifikatdatei aus. Geben Sie ggf. das Kennwort ein, mit dem die PFX-Datei geschützt wurde. Klicken Sie zum Schluss auf das Häkchen, um das Zertifikat hochzuladen.
 
-    ![Dialogfeld zum Hochladen des Zertifikats][]
+    ![Dialogfeld zum Hochladen des Zertifikats][Dialogfeld zum Hochladen des Zertifikats]
 
-5.  Wählen Sie auf der Registerkarte **Konfigurieren** im Abschnitt **SSL-Bindungen** mit den Dropdownlisten den Domänennamen, der mit SSL geschützt werden soll, sowie das zu verwendende Zertifikat aus. Sie können auch auswählen, ob die SSL auf Basis der [Servernamensanzeige][] (Server Name Indication, SNI) oder eine IP-basierte SSL verwendet werden soll.
+5.  Wählen Sie auf der Registerkarte **Konfigurieren** im Abschnitt **SSL-Bindungen** mit den Dropdownlisten den Domänennamen, der mit SSL geschützt werden soll, sowie das zu verwendende Zertifikat aus. Sie können auch auswählen, ob die SSL auf Basis der [Servernamensanzeige][Servernamensanzeige] (Server Name Indication, SNI) oder eine IP-basierte SSL verwendet werden soll.
 
-    ![SSL-Bindungen][]
+    ![SSL-Bindungen][SSL-Bindungen]
 
     -   Bei IP-basiertem SSL wird ein Zertifikat mit einem Domänennamen verknüpft, indem die dedizierte öffentliche IP-Adresse des Servers dem Domänennamen zugeordnet wird. Voraussetzung dafür ist, dass jeder mit Ihrem Dienst verknüpfte Domänenname (contoso.com, fabricam.com usw.) eine dedizierte IP-Adresse hat. Dies ist die herkömmliche Methode der Verknüpfung von SSL-Zertifikaten mit einem Webserver.
 
-    -   SNI-basiertes SSL ist eine Erweiterung für SSL und [Transport Layer Security][] (TLS). Dabei können mehrere Domänen die gleiche IP-Adresse gemeinsam nutzen, während jede Domäne über eigene Sicherheitszertifikate verfügt. Die meisten modernen Browser (einschließlich Internet Explorer, Chrome, Firefox und Opera) unterstützen SNI, ältere Browser hingegen möglicherweise nicht. Weitere Informationen über SNI finden Sie im Wikipedia-Artikel [Server Name Indication][Servernamensanzeige] (in englischer Sprache).
+    -   SNI-basiertes SSL ist eine Erweiterung für SSL und [Transport Layer Security][Transport Layer Security] (TLS). Dabei können mehrere Domänen die gleiche IP-Adresse gemeinsam nutzen, während jede Domäne über eigene Sicherheitszertifikate verfügt. Die meisten modernen Browser (einschließlich Internet Explorer, Chrome, Firefox und Opera) unterstützen SNI, ältere Browser hingegen möglicherweise nicht. Weitere Informationen über SNI finden Sie im Wikipedia-Artikel [Server Name Indication][Servernamensanzeige] (in englischer Sprache).
 
 6.  Klicken Sie auf **Speichern**, um die Änderungen zu speichern und SSL zu aktivieren.
 
@@ -266,7 +266,7 @@ Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie mit Ihrer Azu
 >
 > 1.  Nach der Konfiguration einer IP-basierten SSL-Bindung wird Ihrer Website eine dedizierte IP-Adresse zugewiesen. Sie finden diese IP-Adresse auf der Seite **Dashboard** Ihrer Website im Abschnitt **quick glance**. Sie wird als **Virtuelle IP-Adresse** aufgeführt:
 >
->     ![Virtuelle IP-Adresse][]
+>     ![Virtuelle IP-Adresse][Virtuelle IP-Adresse]
 >
 >     Diese IP-Adresse unterscheidet sich von der virtuellen IP-Adresse, die zuvor zum Konfigurieren des A-Datensatzes für Ihre Domäne verwendet wurde. Wenn SNI-basiertes SSL konfiguriert bzw. wenn die Verwendung von SSL nicht konfiguriert ist, wird für diesen Eintrag keine Adresse aufgeführt.
 >
@@ -331,7 +331,7 @@ Mit OpenSSL kann eine Zertifikatanforderung erstellt werden, welche die SubjectA
 
     Nach Abschluss dieses Prozesses haben Sie zwei Dateien: **myserver.key** und **server.csr**. Die Datei **server.csr** enthält die Zertifikatsignieranforderung.
 
-5.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
+5.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
 6.  Sobald Sie ein Zertifikat von einer Zertifizierungsstelle erhalten haben, speichern Sie es in einer Datei mit dem Namen **myserver.crt**. Wenn die Zertifizierungsstelle das Zertifikat im Textformat bereitgestellt hat, fügen Sie den Zertifikattext einfach in die Datei **myserver.crt** ein. In einem Texteditor sieht der Dateiinhalt etwa folgendermaßen aus:
 
@@ -378,17 +378,17 @@ Mit OpenSSL kann eine Zertifikatanforderung erstellt werden, welche die SubjectA
 
 Wenn Sie mit IIS-Manager vertraut sind, können Sie damit ein Zertifikat generieren, das für Azure-Websites verwendet werden kann.
 
-1.  Generieren Sie mit IIS-Manager eine Zertifikatsignieranforderung (CSR), die an die Zertifizierungsstelle gesendet wird. Weitere Informationen zum Generieren einer CSR finden Sie unter [Anfordern eines Internetserverzertifikats (IIS 7)][].
+1.  Generieren Sie mit IIS-Manager eine Zertifikatsignieranforderung (CSR), die an die Zertifizierungsstelle gesendet wird. Weitere Informationen zum Generieren einer CSR finden Sie unter [Anfordern eines Internetserverzertifikats (IIS 7)][Anfordern eines Internetserverzertifikats (IIS 7)].
 
-2.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
+2.  Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
-3.  Tragen Sie in die CSR das von der Zertifizierungsstelle bereitgestellte Zertifikat ein. Weitere Informationen zum Ausfüllen der CSR finden Sie unter [Installieren eines Internetserverzertifikats (IIS 7)][].
+3.  Tragen Sie in die CSR das von der Zertifizierungsstelle bereitgestellte Zertifikat ein. Weitere Informationen zum Ausfüllen der CSR finden Sie unter [Installieren eines Internetserverzertifikats (IIS 7)][Installieren eines Internetserverzertifikats (IIS 7)].
 
 4.  Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die für Microsoft IIS bereitgestellte Version.
 
     Klicken Sie nach dem Herunterladen des Zertifikats im Explorer mit der rechten Maustaste darauf, und wählen Sie **Zertifikat installieren**. Verwenden Sie die Standardwerte im **Zertifikat-Importassistenten**, und wählen Sie **Weiter** aus, bis der Import abgeschlossen ist.
 
-5.  Exportieren Sie das Zertifikat aus IIS Manager. Weitere Informationen zum Exportieren des Zertifikats finden Sie unter [Exportieren eines Serverzertifikats (IIS 7)][]. Die exportierte Datei wird später nach Azure hochgeladen, um für Ihre Azure-Website verwendet zu werden.
+5.  Exportieren Sie das Zertifikat aus IIS Manager. Weitere Informationen zum Exportieren des Zertifikats finden Sie unter [Exportieren eines Serverzertifikats (IIS 7)][Exportieren eines Serverzertifikats (IIS 7)]. Die exportierte Datei wird später nach Azure hochgeladen, um für Ihre Azure-Website verwendet zu werden.
 
     <div class="dev-callout"> 
 	<b>Hinweis</b>
@@ -484,12 +484,12 @@ Mit den folgenden Schritten können Sie ein Testzertifikat mit einem Windows-Sys
 
     Die mit diesem Befehl erzeugte Datei **myserver.pfx** kann für Testzwecke zum Schützen der Azure-Website verwendet werden.
 
-  [Preisübersicht]: https://www.windowsazure.com/en-us/pricing/details/
-  [Kostenlose Microsoft Azure-Testversion]: http://azure.microsoft.com/en-us/pricing/free-trial/
+  [Preisübersicht]: https://www.windowsazure.com/de-de/pricing/details/
+  [Kostenlose Microsoft Azure-Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/
   []: bkmk_azurewebsites
   [https://meinewebsite.azurewebsites.net]: https://mywebsite.azurewebsites.net
   [1]: bkmk_domainname
-  [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website]: /en-us/develop/net/common-tasks/custom-dns-web-site/
+  [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website]: /de-de/develop/net/common-tasks/custom-dns-web-site/
   [2]: bkmk_getcert
   [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)]: http://go.microsoft.com/fwlink/?LinkID=269988
   [OpenSSL]: http://www.openssl.org/
@@ -507,7 +507,7 @@ Mit den folgenden Schritten können Sie ein Testzertifikat mit einem Windows-Sys
   [Website auswählen]: ./media/configure-ssl-web-site/sslwebsite.png
   [Die Registerkarte "Skalierung"]: ./media/configure-ssl-web-site/sslscale.png
   [Standardmodus ausgewählt]: ./media/configure-ssl-web-site/sslreserved.png
-  [Supportoptionen für Azure]: http://www.windowsazure.com/en-us/support/options/
+  [Supportoptionen für Azure]: http://www.windowsazure.com/de-de/support/options/
   [4]: bkmk_configuressl
   [Die Registerkarte "Konfigurieren"]: ./media/configure-ssl-web-site/sslconfig.png
   [Zertifikat hochladen]: ./media/configure-ssl-web-site/ssluploadcert.png
@@ -517,7 +517,7 @@ Mit den folgenden Schritten können Sie ein Testzertifikat mit einem Windows-Sys
   [Transport Layer Security]: http://en.wikipedia.org/wiki/Transport_Layer_Security
   [Virtuelle IP-Adresse]: ./media/configure-ssl-web-site/staticip.png
   [5]: bkmk_subjectaltname
-  [Anfordern eines Internetserverzertifikats (IIS 7)]: http://technet.microsoft.com/en-us/library/cc732906(WS.10).aspx
-  [Installieren eines Internetserverzertifikats (IIS 7)]: http://technet.microsoft.com/en-us/library/cc771816(WS.10).aspx
-  [Exportieren eines Serverzertifikats (IIS 7)]: http://technet.microsoft.com/en-us/library/cc731386(WS.10).aspx
+  [Anfordern eines Internetserverzertifikats (IIS 7)]: http://technet.microsoft.com/de-de/library/cc732906(WS.10).aspx
+  [Installieren eines Internetserverzertifikats (IIS 7)]: http://technet.microsoft.com/de-de/library/cc771816(WS.10).aspx
+  [Exportieren eines Serverzertifikats (IIS 7)]: http://technet.microsoft.com/de-de/library/cc731386(WS.10).aspx
   [6]: bkmk_selfsigned

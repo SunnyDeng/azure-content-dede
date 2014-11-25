@@ -1,6 +1,6 @@
 <properties title="Interact with DocumentDB resources" pageTitle="Interact with DocumentDB resources | Azure" description="DocumentDB manages resources--uniquely identified by logical URIs--that developers can interact with using HTTP verbs, request/response headers, and status codes." metaKeywords="" services="documentdb" solutions="data-management" documentationCenter="" authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="bradsev"></tags>
+<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="bradsev" />
 
 # Ressourcenmodell und Konzepte von DocumentDB
 
@@ -8,7 +8,7 @@ DocumentDB bietet ein einfaches und offenes RESTful-Programmiermodell über HTTP
 
 > [AZURE.NOTE] Zusätzlich bietet es auch ein sehr effizientes TCP-Protokoll, dessen Kommunikationsmodell ebenfalls RESTful-basiert ist und über das .NET-Client-SDK zur Verfügung steht.
 
-![][]
+![][0]
 **Hierarchisches Ressourcenmodell unter einem Datenbankkonto**
 
 Als Kunde von DocumentDB beginnen Sie mit der Bereitstellung eines DocumentDB-**Datenbankkontos**, für das Sie Ihr Azure-Abonnement verwenden. Ein Datenbankkonto kann aus einer Reihe von **Datenbanken** bestehen, die jeweils mehrere **Sammlungen** enthalten, die jeweils wiederum **gespeicherte Prozeduren, Auslöser, benutzerdefinierte Funktionen, Dokumente** und zugehörige **Anhänge** enthalten. Einer Datenbank sind zudem **Benutzer** zugeordnet, die jeweils über eine Reihe von **Berechtigungen** verfügen, um auf Sammlungen, gespeicherte Prozeduren, Auslöser, benutzerdefinierte Funktionen, Dokumente oder Anhänge zuzugreifen. Während Datenbanken, Benutzer, Berechtigungen und Sammlungen vom System definierte Ressourcen mit bekannten Schemas sind, enthalten Dokumente und Anhänge beliebige, benutzerdefinierte JSON-Inhalte.
@@ -109,7 +109,7 @@ Sie können unter [][]<http://portal.azure.com/></a> über das Azure-Portal Docu
 </tbody>
 </table>
 
-Beachten Sie, dass Sie zusätzlich zur Bereitstellung, Konfiguration und Verwaltung Ihres Datenbankkontos über das Azure-Portal auch über [Azure DocumentDB-REST-APIs][] und Client-SDKs die DocumentDB-Datenbankkonten programmgesteuert erstellen und verwalten können.
+Beachten Sie, dass Sie zusätzlich zur Bereitstellung, Konfiguration und Verwaltung Ihres Datenbankkontos über das Azure-Portal auch über [Azure DocumentDB-REST-APIs][Azure DocumentDB-REST-APIs] und Client-SDKs die DocumentDB-Datenbankkonten programmgesteuert erstellen und verwalten können.
 
  
 
@@ -125,7 +125,7 @@ Eine Datenbank kann praktisch unbegrenzten Dokumentspeicher enthalten, der in Sa
 
 Eine DocumentDB-Datenbank ist ebenfalls ein Container für Benutzer. Ein Benutzer ist wiederum ein logischer Namespace für eine Reihe von Berechtigungen, die eine differenzierte Autorisierung bzw. einen differenzierten Zugriff auf Sammlungen, Dokumente und Anhänge bieten.
 
-Datenbanken können wie andere Ressourcen im DocumentDB-Ressourcenmodell einfach erstellt, ersetzt, gelöscht, gelesen oder aufgezählt werden, wozu entweder [Azure DocumentDB-REST-APIs][] oder eines der Client-SDKs verwendet werden. DocumentDB garantiert für das Lesen oder Abfragen der Metadaten einer Datenbankressource eine hohe Konsistenz. Das Löschen einer Datenbank stellt automatisch sicher, dass Sie nicht auf die darin enthaltenen Sammlungen oder Benutzer zugreifen können. Obwohl DocumentDB den im Rahmen der gelöschten Datenbank bereitgestellten Speicher und Durchsatz im Hintergrund freigibt, stehen der bereitgestellte Speicher und Durchsatz für die gelöschte Datenbank sofort wieder zur Verfügung.
+Datenbanken können wie andere Ressourcen im DocumentDB-Ressourcenmodell einfach erstellt, ersetzt, gelöscht, gelesen oder aufgezählt werden, wozu entweder [Azure DocumentDB-REST-APIs][Azure DocumentDB-REST-APIs] oder eines der Client-SDKs verwendet werden. DocumentDB garantiert für das Lesen oder Abfragen der Metadaten einer Datenbankressource eine hohe Konsistenz. Das Löschen einer Datenbank stellt automatisch sicher, dass Sie nicht auf die darin enthaltenen Sammlungen oder Benutzer zugreifen können. Obwohl DocumentDB den im Rahmen der gelöschten Datenbank bereitgestellten Speicher und Durchsatz im Hintergrund freigibt, stehen der bereitgestellte Speicher und Durchsatz für die gelöschte Datenbank sofort wieder zur Verfügung.
 
 # Sammlungen
 
@@ -157,7 +157,7 @@ Die Dokumente in einer Sammlung können beliebige Schemas aufweisen, und Sie kö
 2.  Eine Teilmenge von relationalen Vorgängen, einschließlich der Kompositionen, Filter, Projektionen, Aggregaten und Selbstverknüpfungen.
 3.  Rein auf JavaScript basierende benutzerdefinierte Funktionen (UDFs), die mit (1) und (2) zusammengesetzt werden.
 
-Das Abfragemodell von DocumentDB versucht die Balance zwischen Funktionalität, Effizienz und Einfachheit zu finden. Das Datenbankmodul von DocumentDB kompiliert die SQL-Abfrageanweisungen systemintern und führt sie auch systemintern aus. Sie können eine Sammlung mithilfe der [Azure DocumentDB-REST-APIs][] oder einem der Client-SDKs abfragen. Das .NET-SDK verfügt über einen LINQ-Anbieter. In einer zukünftigen Version werden systemeigene Unterstrichzuordnungen bereitgestellt, die sowohl von clientseitigen JavaScript-SDKs als auch von serverseitigen gespeicherten Prozeduren und Auslösern verwendet werden können.
+Das Abfragemodell von DocumentDB versucht die Balance zwischen Funktionalität, Effizienz und Einfachheit zu finden. Das Datenbankmodul von DocumentDB kompiliert die SQL-Abfrageanweisungen systemintern und führt sie auch systemintern aus. Sie können eine Sammlung mithilfe der [Azure DocumentDB-REST-APIs][Azure DocumentDB-REST-APIs] oder einem der Client-SDKs abfragen. Das .NET-SDK verfügt über einen LINQ-Anbieter. In einer zukünftigen Version werden systemeigene Unterstrichzuordnungen bereitgestellt, die sowohl von clientseitigen JavaScript-SDKs als auch von serverseitigen gespeicherten Prozeduren und Auslösern verwendet werden können.
 
 ## Mehrdokumenttransaktionen
 
@@ -219,7 +219,7 @@ Beachten Sie, dass kein Typsystemkonflikt vorliegt und keine "OR-Zuordnung" oder
 
 Gespeicherte Prozeduren und Auslöser interagieren über ein wohldefiniertes Objektmodell, das den aktuellen Sammlungskontext offenlegt, mit einer Sammlung und den Dokumenten in einer Sammlung.
 
-Sammlungen können in DocumentDB mithilfe der [Azure DocumentDB-REST-APIs][] oder einem der Client-SDKs problemlos erstellt, gelöscht, gelesen oder aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Sammlung immer eine hohe Konsistenz. Das Löschen einer Sammlung stellt automatisch sicher, dass Sie nicht auf die darin enthaltenen Dokumente, Anhänge, gespeicherten Prozeduren, Auslöser und benutzerdefinierten Funktionen zugreifen können. Obwohl DocumentDB den im Rahmen der gelöschten Sammlung bereitgestellten Speicher und Durchsatz im Hintergrund freigibt, stehen der bereitgestellte Speicher und Durchsatz für die gelöschte Sammlung sofort wieder zur Verfügung.
+Sammlungen können in DocumentDB mithilfe der [Azure DocumentDB-REST-APIs][Azure DocumentDB-REST-APIs] oder einem der Client-SDKs problemlos erstellt, gelöscht, gelesen oder aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Sammlung immer eine hohe Konsistenz. Das Löschen einer Sammlung stellt automatisch sicher, dass Sie nicht auf die darin enthaltenen Dokumente, Anhänge, gespeicherten Prozeduren, Auslöser und benutzerdefinierten Funktionen zugreifen können. Obwohl DocumentDB den im Rahmen der gelöschten Sammlung bereitgestellten Speicher und Durchsatz im Hintergrund freigibt, stehen der bereitgestellte Speicher und Durchsatz für die gelöschte Sammlung sofort wieder zur Verfügung.
 
  
 
@@ -420,9 +420,9 @@ Die einzige Möglichkeit zum Abrufen eines Ressourcenschlüssels besteht darin, 
 
 Wie alle anderen Ressourcen können Berechtigungen in DocumentDB mithilfe der REST-APIs oder eines Client-SDKs einfach erstellt, ersetzt, gelöscht, gelesen und aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Berechtigung immer eine hohe Konsistenz.
 
-  []: ./media/documentdb-resources/resources1.png
+  [0]: ./media/documentdb-resources/resources1.png
   [1]: ./media/documentdb-resources/resources2.png
-  []: http://portal.azure.com/
+  [0]: http://portal.azure.com/
   [Azure DocumentDB-REST-APIs]: http://go.microsoft.com/fwlink/p/?LinkID=402413
   [2]: ./media/documentdb-resources/resources3.png
   [3]: ./media/documentdb-resources/resources4.png

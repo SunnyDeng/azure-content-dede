@@ -503,7 +503,6 @@ Informationen zur Sicherheit von MongoDB finden Sie unter [MongoDB-Sicherheit][M
   [Erstellen einer Node.js-Anwendung auf Azure mit MongoDB mithilfe des MongoLab-Add-Ons]: /de-de/develop/nodejs/tutorials/website-with-mongodb-mongolab/
   [Webseite mit einer leeren Aufgabenliste]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_list_empty.png
   [Git]: http://git-scm.com
-  [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [MongoDB-Installationshandbücher]: http://docs.mongodb.org/manual/installation/
   [Install MongoDB on Linux on Azure]: http://docs.mongodb.org/ecosystem/tutorial/install-mongodb-on-linux-in-azure/
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/

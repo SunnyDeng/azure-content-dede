@@ -1,6 +1,6 @@
 Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass dieser Elemente im mobilen Dienst anstatt in einer lokalen Sammlung speichert.
 
-1.  Falls Sie das [Android-SDK für mobile Dienste][] noch nicht haben, laden Sie es jetzt herunter und entpacken Sie die komprimierten Dateien.
+1.  Falls Sie das [Android-SDK für mobile Dienste][Android-SDK für mobile Dienste] noch nicht haben, laden Sie es jetzt herunter und entpacken Sie die komprimierten Dateien.
 
 2.  Kopieren Sie die `.jar`-Dateien aus dem `mobileservices`-Ordner des SDK in den `libs`-Ordner des GetStartedWithData-Projekts.
 
@@ -43,7 +43,7 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 
 11. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site URL**. Klicken Sie anschließend auf **Schlüssel verwalten**, und notieren Sie sich den **Anwendungsschlüssel**.
 
-    ![][]
+    ![][0]
 
     Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
 
@@ -124,7 +124,7 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 
     Dieser Code fragt den mobilen Dienst ab und gibt alle Elemente zurück, die nicht als abgeschlossen markiert sind. Die Elemente werden für die Bindung zum Adapter hinzugefügt.
 
-<!-- URLs. -->
+
 
   [Android-SDK für mobile Dienste]: http://go.microsoft.com/fwlink/p/?LinkID=280126
-  []: ./media/download-android-sample-code/mobile-dashboard-tab.png
+  [0]: ./media/download-android-sample-code/mobile-dashboard-tab.png

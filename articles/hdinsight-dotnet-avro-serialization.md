@@ -1,4 +1,4 @@
-<properties urlDisplayName="HDInsight Microsoft .NET Library for Serialization with Avro" pageTitle="Serialisieren von Daten mit der Microsoft .NET-Bibliothek f&uuml;r Avro | Azure" metaKeywords="" description="Erfahren Sie, wie Azure HDInsight Avro zum Serialisieren gro&szlig;er Datenmengen verwendet." metaCanonical="" services="hdinsight" documentationCenter="" title="Serialisieren von Daten mit der Microsoft .NET-Bibliothek f&uuml;r Avro " authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="hdinsight-dotnet-avro-serialization" urlDisplayName="HDInsight Microsoft .NET Library for Serialization with Avro" pageTitle="Serialize data with the Microsoft .NET Library for Avro | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Avro to serialize big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Serialize data with the Microsoft .NET Library for Avro " authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -1304,22 +1304,13 @@ Im folgenden Beispiel wird gezeigt, wie ein benutzerdefinierter Komprimierungsco
 
   [JSON]: http://www.json.org
   [Apache Avro-Spezifikation]: http://avro.apache.org/docs/current/spec.html
-  [**AvroRecord**]: http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.avrorecord.aspx
   [Microsoft .NET Framework 4.0]: http://www.microsoft.com/de-de/download/details.aspx?id=17851
   [Newtonsoft Json.NET]: http://james.newtonking.com/json
   [Azure-Codebeispielen]: http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-86055923
   [1]: http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111
-  [**Serialisierung mit Reflexion**]: #Scenario1
-  [**Serialisierung mit generischem Datensatz**]: #Scenario2
   [**Serialisierung unter Verwendung von Objektcontainerdateien mit Reflexion**]: #Scenario3
   [**Serialisierung unter Verwendung von Objektcontainerdateien mit generischem Datensatz**]: #Scenario4
-  [**Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec**]: #Scenario5
-  [**IAvroSeralizer<t>**]: http://msdn.microsoft.com/de-de/library/dn627341.aspx
-  [**AvroContainer**]: http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.container.avrocontainer.aspx
-  [**SequentialWriter<sensordata>**]: http://msdn.microsoft.com/de-de/library/dn627340.aspx
-  [**Deflate**]: http://msdn.microsoft.com/de-de/library/system.io.compression.deflatestream(v=vs.100).aspx
   [2]: http://msdn.microsoft.com/de-de/library/system.io.compression.deflatestream(v=vs.110).aspx
-  [**Codex.Null**]: http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.container.codec.null.aspx
   [Avro-Spezifikation]: http://avro.apache.org/docs/current/spec.html#Required+Codecs
   [3]: http://avro.apache.org/docs/current/spec.html#snappy
   [zlib]: http://zlib.net/

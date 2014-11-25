@@ -1,6 +1,6 @@
 <properties title="Manage DocumentDB capacity and performance" pageTitle="Manage DocumentDB capacity and performance | Azure" description="Learn how you can elastically scale DocumentDB to meet the performance and storage needs of your application." metaKeywords="" services="documentdb" solutions="data-management"  authors="bradsev" manager="jhubbard" editor="cgronlun"  videoId="" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="bradsev"></tags>
+<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="bradsev" />
 
 # Verwalten der Kapazität und Leistung von DocumentDB
 
@@ -58,7 +58,7 @@ Sie können der Tabelle entnehmen, dass die von Einfüge-/Ersetzungs-/Löschvorg
 
 Um eine korrekte Anzahl von Anforderungseinheiten für Ihre Anwendung zu erhalten, können Sie den Rechner für Anforderungseinheiten verwenden, um die für verschiedene Vorgänge verbrauchten Anforderungseinheiten zu berechnen. Sie können auch den Antwortheader "x-ms-request-charge" überprüfen, der die Anzahl von Anforderungseinheiten enthält, die für eine bestimmte Anforderung verbraucht werden.
 
-[Rechner für Anforderungseinheiten][]
+[Rechner für Anforderungseinheiten][Rechner für Anforderungseinheiten]
 
 # Auflistungen und bereitgestellter Durchsatz
 
@@ -71,7 +71,7 @@ Die Auswahl der standardmäßigen Konsistenzebene hat Auswirkungen auf den Durch
 -   Die Konsistenzebenen "Session" und "Eventual" liefern ca. 2000 Leseanforderungen für Dokumente und 500 Einfüge-/Ersetzungs-/Löschanforderungen.
 -   Die Konsistenzebenen "Strong" und "Bounded staleness" liefern ca. 1200 Leseanforderungen für Dokumente und etwa 500 Einfüge-/Ersetzungs-/Löschanforderungen. Die Einfüge-/Ersetzungs-/Löschanforderungen bei "Bounded Staleness" weisen eine wesentlich niedrigere Latenz als bei "Strong" auf.
 
-[Rechner für Anforderungseinheiten][]
+[Rechner für Anforderungseinheiten][Rechner für Anforderungseinheiten]
 
 # Bereitgestellter Dokumentspeicher und Index-Overhead
 
@@ -79,6 +79,6 @@ Mit jeder gekauften CU werden Ihrem Konto 10 GB SSD-gestützter Dokumentspeicher
 
 Standardmäßig werden alle Dokumente von DocumentDB automatisch indiziert. Wenn Sie den Index-Overhead jedoch optimieren möchten, können Sie beim Einfügen oder Ersetzen eines Dokuments bestimmte Dokumente aus der Indizierung ausschließen. Sie können eine DocumentDB-Auflistung so konfigurieren, dass alle Dokumente innerhalb der Auflistung von der Indizierung ausgeschlossen werden. Sie können eine DocumentDB-Auflistung auch so konfigurieren, dass nur bestimmte Eigenschaften oder Pfade mit Platzhaltern in Ihren JSON-Dokumenten selektiv indiziert werden. Durch das Ausschließen von Eigenschaften oder Dokumenten wird auch der Schreibdurchsatz verbessert, was bedeutet, dass Sie weniger Anforderungseinheiten verbrauchen.
 
-[Rechner für Anforderungseinheiten][]
+[Rechner für Anforderungseinheiten][Rechner für Anforderungseinheiten]
 
   [Rechner für Anforderungseinheiten]: http://go.microsoft.com/fwlink/?LinkID=510088

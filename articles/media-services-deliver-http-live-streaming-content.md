@@ -82,6 +82,6 @@ Dies ist das letzte Thema der Reihe zur Verwendung von Azure Media Services. Sie
   [Schnelleinstieg: Verwenden des Media Services .NET SDKs]: http://go.microsoft.com/fwlink/?linkid=252966
   [Erstellen von Anwendungen mit dem Media Services SDK für .NET]: http://go.microsoft.com/fwlink/?linkid=247821
   [Erstellen von Anwendungen mit der Azure Media Services REST-API]: http://go.microsoft.com/fwlink/?linkid=252967
-  [Media Services-Forum]: http://social.msdn.microsoft.com/Forums/en-US/MediaServices/threads
+  [Media Services-Forum]: http://social.msdn.microsoft.com/Forums/de-de/MediaServices/threads
   [Überwachen eines Media Services-Kontos]: ../media-services-monitor-services-account/
   [Verwalten von Inhalten in Media Services]: ../media-services-manage-content/

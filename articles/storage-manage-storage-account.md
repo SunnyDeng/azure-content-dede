@@ -1,4 +1,4 @@
-<properties urlDisplayName="How to manage" pageTitle="Verwalten von Speicherkonten | Microsoft Azure" metaKeywords="Azure manage storage accounts, storage account management portal, storage account geo-replication, Azure geo-replication, Azure access keys" description="Dieses Thema beschreibt die Verwaltung von Speicherkonten in Azure im Verwaltungsportal." metaCanonical="" services="storage" documentationCenter="" title="Verwalten von Speicherkonten" authors="tamram" solutions="" manager="adinah" editor="cgronlun" />
+<properties linkid="manage-services-how-to-manage-a-storage-account" urlDisplayName="How to manage" pageTitle="How to manage storage accounts | Microsoft Azure" metaKeywords="Azure manage storage accounts, storage account management portal, storage account geo-replication, Azure geo-replication, Azure access keys" description="Learn how to manage storage accounts in Azure by using the Management Portal." metaCanonical="" services="storage" documentationCenter="" title="How To Manage Storage Accounts" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
 
@@ -48,11 +48,13 @@ Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüs
 
 Sie sollten regelmäßig die Zugriffsschlüssel für Ihr Speicherkonto ändern, um dafür zu sorgen, dass Ihre Speicherverbindungen möglichst sicher sind. Zwei Zugriffsschlüssel werden zugewiesen, um es Ihnen zu ermöglichen, Verbindungen zum Speicherkonto mit einem Zugriffsschlüssel aufrecht zu erhalten, während Sie den anderen Zugriffsschlüssel neu generieren.
 
+
 <div class="dev-callout"> 
     <b>Warnung</b> 
     <p>Das erneute Generieren der Zugriffsschl&uuml;ssel wirkt sich auf virtuelle Computer, Mediendienste und alle Anwendungen aus, die vom Speicherkonto abh&auml;ngen. Alle Clients, die den Zugriffsschl&uuml;ssel verwenden, um auf das Speicherkonto zuzugreifen, m&uuml;ssen aktualisiert werden, um den neuen Schl&uuml;ssel zu verwenden.
     </p> 
-    </div>
+</div>
+
 
 **Virtuelle Computer**: Falls Ihr Speicherkonto virtuelle Computer enthält, die ausgeführt werden, müssen Sie alle virtuellen Computer nach dem erneuten Generieren der Zugriffsschlüssel neu bereitstellen. Um die erneute Bereitstellung zu vermeiden, beenden Sie die virtuellen Computer, bevor Sie die Zugriffsschlüssel neu generieren.
 

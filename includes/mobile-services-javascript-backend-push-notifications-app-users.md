@@ -1,6 +1,6 @@
 1.  Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Registerkarte **Push**, wählen Sie **Nur authentifizierte Benutzer** für **Berechtigungen** aus, und klicken Sie auf **Skript bearbeiten**.
 
@@ -45,5 +45,5 @@
 
 4.  Klicken Sie nacheinander auf den Pfeil für "Zurück", auf die Registerkarte **Daten**, auf **TodoItem** und auf **Skript**. Wählen Sie anschließend **Einfügen** aus.
 
-  []: ./media/mobile-services-javascript-backend-push-notifications-app-users/mobile-services-selection.png
+  [0]: ./media/mobile-services-javascript-backend-push-notifications-app-users/mobile-services-selection.png
   [1]: ./media/mobile-services-javascript-backend-push-notifications-app-users/mobile-services-push-registration-endpoint.png

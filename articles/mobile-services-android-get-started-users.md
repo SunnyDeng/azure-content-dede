@@ -62,16 +62,10 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts][Autorisieren 
 
 
 
-  [mobile-services-selector-get-started-users]: ../includes/mobile-services-selector-get-started-users.md
   [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
   [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
   [Hinzufügen von Authentifizierung zur App]: #add-authentication
   [Speichern von Authentifizierungstoken auf dem Client]: #cache-tokens
   [Aktualisieren abgelaufener Token]: #refresh-tokens
   [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-android
-  [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
-  [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md
-  [mobile-services-android-authenticate-app]: ../includes/mobile-services-android-authenticate-app.md
-  [mobile-services-android-authenticate-app-with-token]: ../includes/mobile-services-android-authenticate-app-with-token.md
-  [mobile-services-android-authenticate-app-refresh-token]: ../includes/mobile-services-android-authenticate-app-refresh-token.md
   [Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-android

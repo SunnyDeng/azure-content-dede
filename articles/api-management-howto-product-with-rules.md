@@ -1,6 +1,6 @@
 <properties pageTitle="How to create and configure advanced product settings in Azure API Management" metaKeywords="" description="Learn how to configure a product with quota and rate limit policies." metaCanonical="" services="" documentationCenter="API Management" title="How to create and configure advanced product settings in Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie"></tags>
+<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
 
 # Erstellen und Konfigurieren erweiterter Produkteinstellungen in der Azure API-Verwaltung
 
@@ -10,13 +10,13 @@ In diesem Lernprogramm erstellen Sie ein kostenloses Testprodukt, das bis zu 10 
 
 ## In diesem Thema
 
--   [Erstellen eines Produkts][]
--   [Hinzufügen einer API zum Produkt][]
--   [Konfigurieren von Durchsatzgrenzen und Kontingenten][]
--   [Veröffentlichen des Produkts][]
--   [Abonnieren eines Entwicklerkontos für das Produkt][]
--   [Aufrufen einer Operation und Testen der Durchsatzgrenze][]
--   [Nächste Schritte][]
+-   [Erstellen eines Produkts][Erstellen eines Produkts]
+-   [Hinzufügen einer API zum Produkt][Hinzufügen einer API zum Produkt]
+-   [Konfigurieren von Durchsatzgrenzen und Kontingenten][Konfigurieren von Durchsatzgrenzen und Kontingenten]
+-   [Veröffentlichen des Produkts][Veröffentlichen des Produkts]
+-   [Abonnieren eines Entwicklerkontos für das Produkt][Abonnieren eines Entwicklerkontos für das Produkt]
+-   [Aufrufen einer Operation und Testen der Durchsatzgrenze][Aufrufen einer Operation und Testen der Durchsatzgrenze]
+-   [Nächste Schritte][Nächste Schritte]
 
 ## <a name="create-product"> </a>Erstellen eines Produkts
 
@@ -24,17 +24,17 @@ In diesem Schritt erstellen Sie ein kostenloses Testprodukt, für das keine Abon
 
 Klicken Sie zunächst in der **Verwaltungskonsole** im Azure-Portal auf Ihren API-Verwaltungsdienst. Daraufhin gelangen Sie zum Verwaltungsportal für die API-Verwaltung.
 
->Falls Sie noch keine API-Verwaltungs-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API-Verwaltungsinstanz][] im Lernprogramm [Erste Schritte mit der Azure API-Verwaltung][].
+>Falls Sie noch keine API-Verwaltungs-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API-Verwaltungsinstanz][Erstellen einer API-Verwaltungsinstanz] im Lernprogramm [Erste Schritte mit der Azure API-Verwaltung][Erste Schritte mit der Azure API-Verwaltung].
 
-![API-Verwaltungskonsole][]
+![API-Verwaltungskonsole][API-Verwaltungskonsole]
 
 Klicken Sie auf **Produkte** im Menü **API-Verwaltung** auf der linken Seite, um Seite **Produkte** anzuzeigen.
 
-![Produkt hinzufügen][]
+![Produkt hinzufügen][Produkt hinzufügen]
 
 Klicken Sie auf **Produkt hinzufügen**, um das Popupfenster **Neues Produkt hinzufügen** anzuzeigen.
 
-![Neues Produkt hinzufügen][]
+![Neues Produkt hinzufügen][Neues Produkt hinzufügen]
 
 Geben Sie **Kostenloser Test** in das Textfeld **Titel** ein.
 
@@ -44,13 +44,13 @@ Wenn Sie möchten, dass ein Administrator Abonnements für dieses Produkt prüfe
 
 Geben Sie alle Werte ein und klicken Sie auf **Speichern**, um das Produkt zu erstellen.
 
-![Hinzugefügtes Produkt][]
+![Hinzugefügtes Produkt][Hinzugefügtes Produkt]
 
 Standardmäßig sind neue Produkte für Benutzer in der Gruppe **Administratoren** sichtbar. Wir werden die Gruppe **Entwickler** hinzufügen. Klicken Sie auf **Kostenloser Test** und wählen Sie die Registerkarte **Sichtbarkeit** aus.
 
-> Die API-Verwaltung verwendet Gruppen, um die Sichtbarkeit von Produkten für Entwickler zu verwalten. Produkte gewähren Sichtbarkeit für Gruppen, und Entwickler können alle Produkte anzeigen und abonnieren, die für die Gruppen sichtbar sind, in denen sie Mitglied sind. Weitere Informationen finden Sie unter [Erstellen und Verwenden von Gruppen in der Azure API-Verwaltung][].
+> Die API-Verwaltung verwendet Gruppen, um die Sichtbarkeit von Produkten für Entwickler zu verwalten. Produkte gewähren Sichtbarkeit für Gruppen, und Entwickler können alle Produkte anzeigen und abonnieren, die für die Gruppen sichtbar sind, in denen sie Mitglied sind. Weitere Informationen finden Sie unter [Erstellen und Verwenden von Gruppen in der Azure API-Verwaltung][Erstellen und Verwenden von Gruppen in der Azure API-Verwaltung].
 
-![Hinzufügen der Gruppe "Entwickler"][]
+![Hinzufügen der Gruppe "Entwickler"][Hinzufügen der Gruppe "Entwickler"]
 
 Markieren Sie die Gruppe **Entwickler** und klicken Sie auf **Speichern**.
 
@@ -58,37 +58,37 @@ Markieren Sie die Gruppe **Entwickler** und klicken Sie auf **Speichern**.
 
 In diesem Schritt des Lernprogramms werden Sie die Echo API zu dem neu erstellten Produkt "Kostenloser Test" hinzufügen.
 
-> Jede API-Verwaltungs-Dienstinstanz enthält eine vorkonfigurierte Echo-API, die Sie für Tests und erste Schritte mit der API-Verwaltung nutzen können. Weitere Informationen finden Sie unter [Erste Schritte mit der Azure API-Verwaltung][].
+> Jede API-Verwaltungs-Dienstinstanz enthält eine vorkonfigurierte Echo-API, die Sie für Tests und erste Schritte mit der API-Verwaltung nutzen können. Weitere Informationen finden Sie unter [Erste Schritte mit der Azure API-Verwaltung][Erste Schritte mit der Azure API-Verwaltung].
 
 Klicken Sie auf **Produkte** im Menü **API-Verwaltung** auf der linken Seite und klicken Sie auf **Kostenloser Test**, um das Produkt zu konfigurieren.
 
-![Produkt konfigurieren][]
+![Produkt konfigurieren][Produkt konfigurieren]
 
 Klicken Sie auf **API zu Produkt hinzufügen**.
 
-![API zum Produkt hinzufügen][]
+![API zum Produkt hinzufügen][API zum Produkt hinzufügen]
 
 Markieren Sie das Kontrollkästchen neben **Echo API** und klicken Sie auf **Speichern**.
 
-![Echo API hinzufügen][]
+![Echo API hinzufügen][Echo API hinzufügen]
 
 ## <a name="policies"> </a>Konfigurieren von Durchsatzgrenzen und Kontingenten
 
 Durchsatzgrenzen und Kontingente werden im Richtlinien-Editor konfiguriert. Klicken Sie auf **Richtlinien** im Menü **API-Verwaltung** auf der linken Seite und klicken Sie auf **Kostenloser Test** in der Dropdownliste **Richtlinien-Produktbereich**.
 
-![Produktrichtlinie][]
+![Produktrichtlinie][Produktrichtlinie]
 
 Klicken Sie auf **Richtlinie hinzufügen**, um die Richtlinienvorlage zu importieren und die Richtlinie für Durchsatzgrenzen und Kontingente zu erstellen.
 
-![Richtlinie hinzufügen][]
+![Richtlinie hinzufügen][Richtlinie hinzufügen]
 
 Um Richtlinien hinzuzufügen, platzieren Sie den Cursor entweder im **Eingehend**- oder **Ausgehend**-Bereich der Richtlinienvorlage. Richtlinien für Durchsatzgrenzen und Kontingente sind eingehende Richtlinien. Platzieren Sie den Cursor also im Element für eingehende Richtlinien.
 
-![Richtlinieneditor][]
+![Richtlinieneditor][Richtlinieneditor]
 
 In diesem Lernprogramm werden wir die Richtlinien **Aufrufbeschränkung** und **Nutzungskontingent** erstellen.
 
-![Richtlinienanweisungen][]
+![Richtlinienanweisungen][Richtlinienanweisungen]
 
 Platzieren Sie den Cursor in das **Eingehend**-Richtlinienelement und klicken Sie auf den Pfeil neben **Aufrufbeschränkung**, um die Richtlinienvorlage einzufügen.
 
@@ -153,13 +153,13 @@ Konfigurieren Sie die Richtlinie, sodass diese dem folgenden Beispiel entspricht
 
 Wenn Sie die gewünschten Richtlinien konfiguriert haben, klicken Sie auf **Speichern**.
 
-![Richtlinie speichern][]
+![Richtlinie speichern][Richtlinie speichern]
 
 ## <a name="publish-product"> </a>Veröffentlichen des Produkts
 
 Sie haben die APIs hinzugefügt und die Richtlinien konfiguriert, und das Produkt kann jetzt von Entwicklern aufgerufen werden. Bevor die Entwickler das Produkt nutzen können, müssen Sie es veröffentlichen. Klicken Sie auf **Produkte** im Menü **API-Verwaltung** auf der linken Seite und klicken Sie auf **Kostenloser Test**, um das Produkt zu konfigurieren.
 
-![Produkt konfigurieren][]
+![Produkt konfigurieren][Produkt konfigurieren]
 
 Klicken Sie auf **Veröffentlichen** und anschließend zur Bestätigung auf **Ja, veröffentlichen**.
 
@@ -173,11 +173,11 @@ Ihr Produkt ist nun veröffentlicht und kann von Entwicklern abonniert und verwe
 
 Klicken Sie auf **Entwickler** im Menü **API-Verwaltung** auf der linken Seite und klicken Sie den Namen Ihres Entwicklerkontos. In diesem Beispiel verwenden wir das Entwicklerkonto **Clayton Gragg**.
 
-![Entwickler konfigurieren][]
+![Entwickler konfigurieren][Entwickler konfigurieren]
 
 Klicken Sie auf **Abonnement hinzufügen**.
 
-![Abonnement hinzufügen][]
+![Abonnement hinzufügen][Abonnement hinzufügen]
 
 Markieren Sie das Kontrollkästchen neben **Kostenloser Test** und klicken Sie auf **Abonnieren**.
 
@@ -187,7 +187,7 @@ Markieren Sie das Kontrollkästchen neben **Kostenloser Test** und klicken Sie a
 
 Sie haben das Produkt "Kostenloser Test" nun konfiguriert und veröffentlicht und können Operationen aufrufen, um die Richtlinie für die Durchsatzgrenze zu testen. Klicken Sie im Menü oben rechts auf **Entwicklerportal**, um zum Entwicklerportal zu gelangen.
 
-![Entwicklerportal][]
+![Entwicklerportal][Entwicklerportal]
 
 Klicken Sie auf **APIs** im Hauptmenü und wählen Sie **Echo API** aus.
 
@@ -197,17 +197,17 @@ Klicken Sie auf **APIs** im Hauptmenü und wählen Sie **Echo API** aus.
 
 Wählen Sie die Operation **GET Resource** aus und klicken Sie auf **Konsole öffnen**.
 
-![Konsole öffnen][]
+![Konsole öffnen][Konsole öffnen]
 
 Behalten Sie die Standard-Parameterwerte bei und wählen Sie Ihren Abonnementschlüssel für das Produkt **Kostenloser Test** aus.
 
-![Abonnementschlüssel][]
+![Abonnementschlüssel][Abonnementschlüssel]
 
 > Falls Sie mehrere Abonnements haben, stellen Sie sicher, dass Sie den Schlüssel für **Kostenloser Test** auswählen. Andernfalls treten die in den vorherigen Schritten konfigurierten Richtlinien nicht in Kraft.
 
 Klicken Sie auf **HTTP Get** und sehen Sie sich die Antwort an. Beachten Sie den **Antwortstatus** von **200 OK**.
 
-![Operationsergebnis][]
+![Operationsergebnis][Operationsergebnis]
 
 Klicken Sie häufiger als das konfigurierte Limit von 10 mal pro Minute auf **HTTP Get**. Sobald die Durchsatzgrenze überschritten ist, wird der Antwortstatus **429 Too many Requests** zurückgegeben.
 
@@ -219,7 +219,7 @@ Wenn die Durchsatzgrenze von 10 Aufrufen pro Minute aktiv ist, werden nachfolgen
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
--   Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][].
+-   Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][Erste Schritte bei der erweiterten API-Konfiguration].
 
   [Erstellen eines Produkts]: #create-product
   [Hinzufügen einer API zum Produkt]: #add-api

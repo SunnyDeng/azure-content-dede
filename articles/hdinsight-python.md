@@ -112,7 +112,7 @@ Das ist die **jython.py**-Datei, die im Pig-Beispiel verwendet wird:
 
 Sie erinnern sich daran, dass wir vorhin die **LINE**-Eingabe einfach als Chararray definiert haben, denn es gab kein gleichbleibendes Schema für die Eingabe. Was **jython.py** macht, ist die Daten in ein gleichbleibendes Schema für die Ausgabe zu transformieren. Das funktioniert folgendermaßen:
 
-1.  Die Anweisung <**@outputSchema*>\* definiert das Format der Daten, die an Pig zurückgegeben werden. In diesem Fall ist das ein **Datenbehälter**, also ein Pig-Datentyp. Der Behälter enthält folgende Felder, die alle Chararray (Zeichenfolgen) sind:
+1.  Die Anweisung **@outputSchema** definiert das Format der Daten, die an Pig zurückgegeben werden. In diesem Fall ist das ein **Datenbehälter**, also ein Pig-Datentyp. Der Behälter enthält folgende Felder, die alle Chararray (Zeichenfolgen) sind:
 
     -   date – das Datum, an dem der Protokolleintrag erstellt wurde
     -   time – die Zeit, zu der der Protokolleintrag erstellt wurde
@@ -128,7 +128,7 @@ Sie erinnern sich daran, dass wir vorhin die **LINE**-Eingabe einfach als Charar
 
 5.  Zuletzt werden die Werte an Pig zurückgegeben.
 
-Wenn die Daten an Pig zurückgegeben werden, hat es ein gleichbleibendes Schema wie in der Anweisung <**@outputSchema*>\* definiert.
+Wenn die Daten an Pig zurückgegeben werden, hat es ein gleichbleibendes Schema wie in der Anweisung **@outputSchema** definiert.
 
 Wie Sie dieses Beispiel auf Ihrem HDInsight-Cluster ausführen, erfahren Sie unter [Ausführen der Beispiele][Ausführen der Beispiele].
 
@@ -159,7 +159,7 @@ Diese Schritte verwenden Microsoft Azure PowerShell. Wen es nicht bereits auf Ih
 
 ### Verwenden des Hive-Dashboards (nur Hive-Beispiel)
 
-1.  Öffnen Sie nach dem Hochladen der Datei einen Webbrowser und navigieren Sie zu <https://YourClusterName.azurehdinsight.net/>. Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie den Admin-Benutzernamen und das -Kennwort für Ihren Cluster ein.
+1.  Öffnen Sie nach dem Hochladen der Datei einen Webbrowser und navigieren Sie zu https://YourClusterName.azurehdinsight.net/. Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie den Admin-Benutzernamen und das -Kennwort für Ihren Cluster ein.
 
     > [WACOM.NOTE] Sie können auch den Link **Cluster verwalten** am unteren Rand des HDInsight-**Dashboards** im Azure-Verwaltungsportal verwenden, um das Hive-Dashboard zu starten.
 

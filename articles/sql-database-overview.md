@@ -312,5 +312,5 @@ Nächste Schritte
 Nachdem Sie sich nun mit den Grundlagen der Administration von SQL Database vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie Sie komplexere Administrationsaufgaben ausführen können.
 
 -   Siehe [SQL Database](http://msdn.microsoft.com/de-de/library/windowsazure/gg619386) auf MSDN
--   Besuchen Sie das [SQL Database TechNet WIKI](http://social.technet.microsoft.com/wiki/contents/articles/2267.sql-azure-technet-wiki-articles-index-en-us.aspx)
+-   Besuchen Sie das [SQL Database TechNet WIKI](http://social.technet.microsoft.com/wiki/contents/articles/2267.sql-azure-technet-wiki-articles-index-de-de.aspx)
 

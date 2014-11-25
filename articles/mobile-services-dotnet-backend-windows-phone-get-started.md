@@ -99,17 +99,13 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 
 
-  [mobile-services-selector-get-started]: ../includes/mobile-services-selector-get-started.md
   [JavaScript-Backend-Version]: /de-de/documentation/articles/mobile-services-windows-phone-get-started
   [0]: ./media/mobile-services-windows-phone-get-started/mobile-quickstart-completed-wp8.png
   [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A30A4DDE2&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-phone-get-started%2F
   [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
-  [mobile-services-dotnet-backend-create-new-service]: ../includes/mobile-services-dotnet-backend-create-new-service.md
   [1]: ./media/mobile-services-dotnet-backend-windows-phone-get-started/mobile-portal-quickstart-wp8.png
   [2]: ./media/mobile-services-dotnet-backend-windows-phone-get-started/mobile-quickstart-steps-wp8.png
-  [mobile-services-dotnet-backend-test-local-service]: ../includes/mobile-services-dotnet-backend-test-local-service.md
   [How to connect to a local web service from the Windows Phone 8 emulator]: http://go.microsoft.com/fwlink/p/?LinkId=391930
-  [mobile-services-dotnet-backend-publish-service]: ../includes/mobile-services-dotnet-backend-publish-service.md
   [MobileServiceClient]: http://msdn.microsoft.com/de-de/library/Windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
   [3]: ./media/mobile-services-dotnet-backend-windows-phone-get-started/mobile-quickstart-startup-wp8.png
   [Configure the local web server to allow connections to a local mobile service]: /de-de/documentation/articles/mobile-services-dotnet-backend-how-to-configure-iis-express

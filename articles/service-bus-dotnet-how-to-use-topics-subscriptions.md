@@ -394,8 +394,6 @@ sind, finden Sie unter diesen Links weitere Informationen:
     Bus-Brokermessaging].
 
   [Nächste Schritte]: #nextsteps
-  [create-account-note]: ../includes/create-account-note.md
-  [howto-service-bus-topics]: ../includes/howto-service-bus-topics.md
   [0]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
   [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/de-de/library/hh367516.aspx
   [SqlFilter]: http://msdn.microsoft.com/de-de/library/microsoft.servicebus.messaging.sqlfilter.aspx

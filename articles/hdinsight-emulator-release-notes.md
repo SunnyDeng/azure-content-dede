@@ -246,5 +246,4 @@ Portnummern
 -   [Erste Schritte mit dem HDInsight-Emulator][Erste Schritte mit dem HDInsight-Emulator]
 
  
-  [//{container}@{account}/{path]: mailto://{container}@{account}/{path
   [Erste Schritte mit dem HDInsight-Emulator]: ../hdinsight-get-started-emulator/

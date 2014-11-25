@@ -1,6 +1,6 @@
 <properties title="Azure Websites Web Hosting Plans In-Depth Overview" pageTitle="Azure Websites Web Hosting Plans In-Depth Overview - Windows Azure feature guide" description="Learn how Web Hosting Plans for Azure Websites work, and how they benefit your management experience." metaKeywords="Azure Web Sites, Azure Websites, WHP, Web Hosting Plan, Web Hosting Plans, Resource Groups" services="web-sites" solutions="web" documentationCenter="Infrastructure" authors="Byron Tardif and Yochay Kiryaty" videoId="" scriptId="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="Byron Tardif and Yochay Kiryaty"></tags>
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="Byron="" Tardif="" and="" Yochay="" Kiryaty" />
 
 
 # Webhosting-Pläne für Azure-Websites: ausführliche Übersicht
@@ -19,7 +19,7 @@ Jede Website kann nur einem Webhostingplan gleichzeitig zugeordnet werden. Ein W
 Sie können mehrere Webhostingpläne in einer Ressourcengruppe haben, und jeder Webhostingplan hat einen separaten Satz von Funktionen, die von den zugeordneten Websites verwendet werden. Die folgende Abbildung veranschaulicht diese Beziehung:
 
 
-![Ressourcengruppen und Webhostingpläne][]
+![Ressourcengruppen und Webhostingpläne][Ressourcengruppen und Webhostingpläne]
 
 
 Mit mehreren Webhostingplänen in einer einzigen Ressourcengruppe können Sie unterschiedliche Websites zu unterschiedlichen Ressourcen zuordnen, hauptsächlich den virtuellen Computern, auf denen Ihre Websites ausgeführt werden. Mit dieser Funktion können Sie die Ressourcen von Entwicklungs-, Test- und Produktionswebsites trennen, indem Sie z. B. einen Webhostingplan mit eigenen Ressourcen für Ihre Produktionswebsites zuordnen, und einen zweiten Webhostingplan für Ihre Entwicklungs- und Testwebsites.
@@ -33,7 +33,7 @@ Mit mehreren Webhostingplänen in einer einzigen Ressourcengruppe können Sie au
 Bei der Erstellung einer neuen Website sollten Sie die Erstellung einer neuen Ressourcengruppe erwägen, wenn die neue Website eine neuen Webanwendung darstellt. In diesem Fall sollten Sie eine neue Ressourcengruppe, einen zugeordneten Webhostingplan und eine Website erstellen. Beim Erstellen einer solchen neuen Website im neuen Azure-Vorschauportal mithilfe des Katalogs oder der neuen Option "Website + SQL" erstellt das Portal standardmäßig eine neue Ressourcengruppe und einen Webhostingplan für Ihre Website. Bei Bedarf können Sie diese Standardwerte überschreiben.
 
 
-![Erstellen eines neuen Webhostingplans][]
+![Erstellen eines neuen Webhostingplans][Erstellen eines neuen Webhostingplans]
 
 
 Sie können jederzeit neue Websites oder andere Ressourcen zu einer vorhandenen Ressourcengruppe hinzufügen. Beim Erstellen einer neuen Website aus dem Kontext einer vorhandenen Ressourcengruppe verwendet der Assistent für neue Websites automatisch die vorhandene Ressource und den vorhandenen Webhostingplan. Diese Standardwerte können Sie bei Bedarf ebenfalls überschreiben. Beim Hinzufügen einer neuen Website zu einer vorhandenen Ressourcengruppe können Sie die Website entweder zu einem vorhandenen Webhostingplan hinzufügen (die Standardoption im neuen Azure-Vorschauportal), oder Sie können einen neuen Webhostingplan erstellen, dem die Website hinzugefügt werden soll.
@@ -51,13 +51,13 @@ Beachten Sie, dass Sie keine Webhostingpläne oder Websites zwischen Ressourceng
 Wenn Sie bereits vorhandene Azure-Websites haben, werden Sie feststellen, dass all Ihre Websites im Azure-Vorschauportal angezeigt werden. Sie können all Ihre Websites als flache Liste anzeigen, indem Sie im linken Navigationsbereich auf **Durchsuchen** klicken und **Websites** auswählen:
 
 
-![Anzeige aller Websites als flache Liste][]
+![Anzeige aller Websites als flache Liste][Anzeige aller Websites als flache Liste]
 
 
 Außerdem können Sie die für Sie erstellten Ressourcengruppen anzeigen, indem Sie im linken Navigationsbereich auf **Durchsuchen** klicken und **Ressourcengruppen** auswählen:
 
 
-![Anzeige aller erstellten Ressourcengruppen][]
+![Anzeige aller erstellten Ressourcengruppen][Anzeige aller erstellten Ressourcengruppen]
 
 
 Beachten Sie, dass in allen Regionen, in denen Sie bereits Websites haben, eine Standard-Ressourcengruppe automatisch für Sie erstellt wurde. Der automatisch generierte Ressourcengruppenname für Websites ist *Default-Web-<location name>*, wobei der Standortname der Name einer Azure-Region ist (z. B. *Default-Web-WestUS*). In jeder Ressourcengruppe finden Sie all Ihre vorhandenen Websites für die Region der Gruppe. Alle Websites, die Sie in der Vergangenheit erstellt haben und in Zukunft entweder im normalen Azure-Portal oder im Azure-Vorschauportal erstellen werden, ist in beiden Portalen verfügbar.
@@ -84,18 +84,18 @@ Da jede Website einem Webhostingplan zugeordnet sein muss, haben wir Standard-We
     Klicken Sie dazu im **Azure-Vorschauportal** auf **NEU** und wählen Sie **Website** aus, um das Fenster für die Website-Erstellung zu öffnen. In der ersten Abbildung unten sehen Sie das Symbol **NEU** unten links, und im zweiten Bild sehen Sie das Fenster für die **Website**-Erstellung, das **Webhostingplan**-Fenster und das **Preisebene**-Fenster:
     
     
-    ![Neue Website erstellen][]
+    ![Neue Website erstellen][Neue Website erstellen]
     
     
-    ![Fenster für Website, Webhostingplan und Preisebene][]
+    ![Fenster für Website, Webhostingplan und Preisebene][Fenster für Website, Webhostingplan und Preisebene]
     
     
-    Für dieses Beispiel erstellen wir eine neue Website mit dem Namen **contosomarketing** und platzieren Sie in einem neuen Webhostingplan mit dem Namen **contoso**. Wählen Sie für diesen Webhostingplan die Preisebene **Klein Standard** aus. Weitere Informationen zu den Preisebenen für Webhostingpläne sowie zu Features, Preis- und Skalierungsoptionen der einzelnen Ebenen finden Sie unter [Webhostingpläne für Azure-Websites][].
+    Für dieses Beispiel erstellen wir eine neue Website mit dem Namen **contosomarketing** und platzieren Sie in einem neuen Webhostingplan mit dem Namen **contoso**. Wählen Sie für diesen Webhostingplan die Preisebene **Klein Standard** aus. Weitere Informationen zu den Preisebenen für Webhostingpläne sowie zu Features, Preis- und Skalierungsoptionen der einzelnen Ebenen finden Sie unter [Webhostingpläne für Azure-Websites][Webhostingpläne für Azure-Websites].
     
     Beachten Sie, dass Sie Webhostingpläne auch im existierenden Azure-Portal erstellen können. Wählen Sie dazu im Assistenten für die **Schnellerfassung** den Eintrag **Neuen Webhostingplan erstellen** in der Dropdownloste **WEBHOSTINGPLAN** aus:
     
     
-    ![Neuen Webhostingplan im existierenden Portal erstellen][]
+    ![Neuen Webhostingplan im existierenden Portal erstellen][Neuen Webhostingplan im existierenden Portal erstellen]
     
     
     Für dieses Beispiel erstellen wir eine neue Website mit dem Namen **northwind** und erstellen zudem einen neuen Webhostingplan. Daraufhin wird ein neuer Webhostingplan mit dem Namen **default0** erstellt, der die **northwind**-Website enthält. Alle auf diese Weise erstellten Webhostingpläne verwenden diese Namenskonvention, und Webhostingpläne können nach der Erstellung nicht mehr umbenannt werden. Die auf diese Weise erstellten Webhostingpläne werden außerdem in der Preisebene **Kostenlose** erstellt.
@@ -111,13 +111,13 @@ Da jede Website einem Webhostingplan zugeordnet sein muss, haben wir Standard-We
     Wählen Sie anschließend im Fenster für die Website-Erstellung den Hostingplan aus:
     
     
-    ![Hostingplan auswählen][]
+    ![Hostingplan auswählen][Hostingplan auswählen]
     
     
     Websites können auch im existierenden Azure-Portal in einem bestimmten Webhostingplan erstellt werden. Diese Erstellung erfolgt als Teil des **Schnellerfassungs**-Assistenten. Geben Sie die URL der Website ein und wählen Sie in der Dropdownloste **WEBHOSTINGPLAN** einen Plan aus, dem Sie die Website zuordnen möchten:
     
     
-    ![Hostingplan im existierenden Portal auswählen][]
+    ![Hostingplan im existierenden Portal auswählen][Hostingplan im existierenden Portal auswählen]
     
     
     **Frage**: Wie kann ich eine Website in einen anderen Webhostingplan verschieben?
@@ -127,7 +127,7 @@ Da jede Website einem Webhostingplan zugeordnet sein muss, haben wir Standard-We
     Um eine Website in einen anderen Plan zu verschieben, navigieren Sie zum Fenster für die Website, die Sie verschieben möchten. Klicken Sie anschließend auf **Webhostingplan**:
     
     
-    ![Wählen Sie einen neuen oder existierenden Webhostingplan aus][]
+    ![Wählen Sie einen neuen oder existierenden Webhostingplan aus][Wählen Sie einen neuen oder existierenden Webhostingplan aus]
     
     
     Daraufhin öffnet sich das Webhostingplan-Fenster. An diesem Punkt können Sie entweder einen existierenden Webhostingplan auswählen oder einen neuen erstellen. Pläne in anderen geografischen Regionen oder anderen Ressourcengruppen sind ausgegraut und können nicht ausgewählt werden.
@@ -142,13 +142,13 @@ Da jede Website einem Webhostingplan zugeordnet sein muss, haben wir Standard-We
     In der folgenden Abbildung sehen Sie das Fenster **Webhostingplan** und das Fenster **Preisebene**. Klicken Sie auf den Teil **Preisebene** im Fenster **Webhostingplan**, um das Fenster **Preisebene** zu erweitern, in dem Sie die Preisebene für den Webhostingplan ändern können:
     
     
-    ![Fenster Webhostingplan und Preisebene][]
+    ![Fenster Webhostingplan und Preisebene][Fenster Webhostingplan und Preisebene]
     
     
     Alternativ können Sie Ihren Plan hochskalieren, indem Sie die Anzahl der Instanzen in Ihrem Webhostingplan erhöhen. In der folgenden Abbildung sehen Sie die Fenster **Webhostingplan** und **Skalierung**. Klicken Sie auf den Bereich Skalierung im Fenster **Webhostingplan**, um den Bereich zu erweitern und die Anzahl der Instanzen für den Plan zu ändern:
     
     
-    ![Ändern der Anzahl der Instanzen eines Webhostingplans][]
+    ![Ändern der Anzahl der Instanzen eines Webhostingplans][Ändern der Anzahl der Instanzen eines Webhostingplans]
     
     
     Da der Webhostingplan in der obigen Abbildung für die **Standard**-Preisebene konfiguriert ist, ist die Option **AutoScale** aktiviert.
@@ -156,7 +156,7 @@ Da jede Website einem Webhostingplan zugeordnet sein muss, haben wir Standard-We
     Sie können diesen Vorgang im normalen Azure-Portal in der Registerkarte **Skalierung** ausführen, wie unten gezeigt:
     
     
-    ![Ändern der Anzahl der Instanzen für einen Hostingplan im existierenden Portal][]
+    ![Ändern der Anzahl der Instanzen für einen Hostingplan im existierenden Portal][Ändern der Anzahl der Instanzen für einen Hostingplan im existierenden Portal]
     
     
     **Frage**: Wie kann ich einen Webhostingplan löschen?
@@ -164,7 +164,7 @@ Da jede Website einem Webhostingplan zugeordnet sein muss, haben wir Standard-We
     **Antwort**: Um einen Webhostingplan löschen zu können, müssen Sie zunächst alle zugeordneten Websites löschen. Wenn Sie alle Websites in einem Webhostingplan gelöscht haben, können Sie den Webhostingplan im entsprechenden Fenster löschen:
     
     
-    ![Löschen eines Webhostingplans][]
+    ![Löschen eines Webhostingplans][Löschen eines Webhostingplans]
     
     
     Im aktuellen Azure-Portal wird der Webhostingplan automatisch gelöscht, wenn Sie die letzte zugeordnete Website löschen.
@@ -174,13 +174,13 @@ Da jede Website einem Webhostingplan zugeordnet sein muss, haben wir Standard-We
     **Antwort**: Sie können Webhostingpläne in den entsprechenden Bereichen im Webhostingplan-Fenster überwachen:
     
     
-    ![Überwachen eines Webhostingplans][]
+    ![Überwachen eines Webhostingplans][Überwachen eines Webhostingplans]
     
     
     Sie können die Überwachungskontrolle anpassen, indem Sie mit der rechten Maustaste auf die Kontrolle klicken und **Abfrage bearbeiten** auswählen:
     
     
-    ![Bearbeiten der Überwachungskontrollen][]
+    ![Bearbeiten der Überwachungskontrollen][Bearbeiten der Überwachungskontrollen]
     
     
     Die folgenden Metriken stehen zur Verfügung:

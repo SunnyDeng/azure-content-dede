@@ -12,7 +12,7 @@ Die App verwendet nun mobile Dienste als Back-End-Speicher, und Sie können sie 
 
 3.  Klicken Sie im Azure-Verwaltungsportal auf die Option zum Verwalten der Datenbank, die mit Ihrem mobilen Dienst verknüpft ist.
 
-    ![][]
+    ![][0]
 
 4.  Führen Sie im Verwaltungsportal eine Abfrage aus, um die von der Windows Store-App vorgenommenen Änderungen anzuzeigen. Ihre Abfrage sieht wie folgt aus, nur dass Sie Ihren Datenbanknamen anstelle von `todolist` verwenden.
 
@@ -22,5 +22,5 @@ Die App verwendet nun mobile Dienste als Back-End-Speicher, und Sie können sie 
 
 Damit ist das Android-Lernprogramm **Erste Schritte mit Daten** abgeschlossen.
 
-  []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png
+  [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png
   [1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/sql-azure-query.png

@@ -76,8 +76,6 @@ Lernen Sie mehr über die Verwendung von Mobile Services mit .NET
   [Azure-Speicherkonto]: /de-de/manage/services/storage/how-to-create-a-storage-account
   [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started
   [0]: ./media/mobile-services-windows-store-dotnet-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
-  [mobile-services-configure-blob-storage]: ../includes/mobile-services-configure-blob-storage.md
-  [mobile-services-windows-store-dotnet-upload-to-blob-storage]: ../includes/mobile-services-windows-store-dotnet-upload-to-blob-storage.md
   [Senden von E-Mails in Mobile Services mit SendGrid]: /de-de/develop/mobile/tutorials/send-email-with-sendgrid/
   [Planen von Back-End-Aufträgen in Mobile Services]: /de-de/documentation/articles/mobile-services-schedule-recurring-tasks
   [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/p/?LinkId=262293

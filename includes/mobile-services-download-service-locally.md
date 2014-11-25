@@ -1,12 +1,12 @@
-1.  Klicken Sie im [Azure-Verwaltungsportal][] auf den neuen mobilen Dienst oder auf die Registerkarte mit dem Cloudsymbol, um zur Übersichtsseite zu gelangen.
+1.  Klicken Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] auf den neuen mobilen Dienst oder auf die Registerkarte mit dem Cloudsymbol, um zur Übersichtsseite zu gelangen.
 
-    ![][]
+    ![][0]
 
 2.  Klicken Sie auf die Plattform **Android**. Erweitern Sie unter **Erste Schritte** die Option **Neue Android-App erstellen**.
 
     ![][1]
 
-3.  Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Visual Studio Professional 2013][] oder eine neuere Version herunter, und installieren Sie diese.
+3.  Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Visual Studio Professional 2013][Visual Studio Professional 2013] oder eine neuere Version herunter, und installieren Sie diese.
 
 4.  Klicken Sie auf **Download** unter **Download and publish your service to the cloud**.
 
@@ -18,10 +18,10 @@
 
     ![][2]
 
-<!-- URLs. -->
+
 
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  []: ./media/mobile-services-dotnet-backend-android-get-started-data/mobile-portal-quickstart-android.png
+  [0]: ./media/mobile-services-dotnet-backend-android-get-started-data/mobile-portal-quickstart-android.png
   [1]: ./media/mobile-services-dotnet-backend-android-get-started-data/download-service-project.png
   [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=391934
   [2]: ./media/mobile-services-dotnet-backend-android-get-started-data/download-publish-profile.png
