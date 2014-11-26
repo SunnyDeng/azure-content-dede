@@ -455,7 +455,9 @@ finden Sie unter den folgenden Links weitere Informationen zu komplexeren Cachin
 -   Informationen zum Migrieren zu Managed Cache Service: [Migration in Managed Cache Service][Migration in Managed Cache Service]
 -   Sehen Sie sich die Beispiele an: [Beispiele für Azure Managed Cache Service][Beispiele für Azure Managed Cache Service]
 
-<!-- INTRA-TOPIC LINKS --> <!-- IMAGES --> <!-- LINKS -->
+<!-- INTRA-TOPIC LINKS -->
+<!-- IMAGES -->
+<!-- LINKS -->
 
   [Nächste Schritte]: #next-steps
   [Erste Schritte mit Managed Cache Service]: #getting-started-cache-service

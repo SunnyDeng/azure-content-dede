@@ -46,15 +46,15 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 * [Mobile Services Android-Anleitungen: Konzeptionelle Referenz]
   <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit Android.
 
-
+<!-- Anchors. -->
 [Register server scripts]: #register-scripts
 [Next Steps]:#next-steps
 
-
+<!-- Images. -->
 
 [3]: ./media/mobile-services-dotnet-backend-android-authorize-users-in-scripts/mobile-quickstart-startup-android.png
 
-
+<!-- URLs. -->
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started
 [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-data
 [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-users

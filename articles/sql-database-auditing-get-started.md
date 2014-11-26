@@ -81,7 +81,9 @@ Ausführlichere Anweisungen zur Arbeit mit der Berichtsvorlage finden Sie unter 
 
 ![][5]
 
-<!--Anchors--> <!--Image references--> <!--Link references-->
+<!--Anchors-->
+<!--Image references-->
+<!--Link references-->
 
   [Melden Sie sich für die Vorschau an]: http://go.microsoft.com/fwlink/?LinkId=404163
   [Microsoft Azure-Vertrauenscenter]: http://azure.microsoft.com/de-de/support/trust-center/compliance/

@@ -119,13 +119,14 @@ Wir werden diese Zeichenfolge später in dieser Anleitung verwenden. Momentan is
 
    Falls Sie Eclipse verwenden:
 
-    1. Within Eclipse's Project Explorer, right-click the **HelloSQLAzure** project and click **Properties**.
-    2. In the left-hand pane of the **Properties** dialog, click **Java Build Path**.
-    3. Click the **Libraries** tab, and then click **Add Library**.
-    4. In the **Add Library** dialog, select **Microsoft JDBC Driver 4.0 for SQL Server**, click **Next**, and then click **Finish**.
-    5. Click **OK** to close the **Properties** dialog.
+    1. Klicken Sie im Projekt-Explorer in Eclipse mit der rechten Maustaste auf das Projekt **HelloSQLAzure** und klicken Sie anschließend auf **Properties**.
+    2. Klicken Sie im linken Bereich des **Properties**-Dialogfelds auf **Java Build Path**.
+    3. Klicken Sie auf die Registerkarte **Libraries** und anschließend auf **Add Library**.
+    4. Wählen Sie im Dialogfeld **Add Library** den Wert **Microsoft JDBC Driver 4.0 for SQL Server** aus, klicken Sie auf **Next** und anschließend auf **Finish**.
+    5. Klicken Sie auf ** OK**, um das Dialogfeld **Properties** zu schließen.
 
-    If you are not using Eclipse, add the Microsoft JDBC Driver 4.0 for SQL Server JAR to your class path. For related information, see [Using the JDBC Driver](http://msdn.microsoft.com/de-de/library/ms378526.aspx).
+    Falls Sie Eclipse nicht verwenden, müssen Sie die JAR-Datei des Microsoft JDBC-Treibers 4.0 für SQL Server zu Ihrem Classpath hinzufügen. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/en-us/library/ms378526.aspx">Verwenden des JDBC-Treibers</a>.
+
 
 1.  Fügen Sie in Ihrer Codedatei **HelloSQLAzure.java** die folgenden `import`-Anweisungen hinzu:
 

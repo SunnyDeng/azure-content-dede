@@ -122,13 +122,13 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 * **[Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]**
   <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit HTML/JavaScript. 
 
-
+<!-- Anchors. -->
 [Erste Schritte mit Mobile Services]:#getting-started
 [Erstellen eines neuen mobilen Diensts]:#create-new-service
 [Definieren der mobilen Dienstinstanz]:#define-mobile-service-instance
 [Next Steps]:#next-steps
 
-
+<!-- Images. -->
 [0]: ./media/mobile-services-html-get-started/mobile-quickstart-completed-html.png
 
 
@@ -144,7 +144,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [12]: ./media/mobile-services-html-get-started/mobile-data-browse.png
 
 
-
+<!-- URLs. -->
 [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-html
 [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-html
 [Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung]: /de-de/documentation/articles/mobile-services-html-call-custom-api 

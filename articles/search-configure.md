@@ -354,7 +354,9 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 
 [Azure Search REST-API][Azure Search REST-API]
 
-<!--Anchors--> <!--Image references--> <!--Link references-->
+<!--Anchors-->
+<!--Image references-->
+<!--Link references-->
 
   [Erste Schritte mit dem kostenlosen Dienst]: #sub-1
   [Upgrade auf die Standardsuche]: #sub-2

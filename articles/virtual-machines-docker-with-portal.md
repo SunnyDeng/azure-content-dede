@@ -113,7 +113,9 @@ Das Ergebnis sollte in etwa so aussehen:
 
 Sie sind nun bereit, das [Docker-Benutzerhandbuch][Docker-Benutzerhandbuch] und Ihren virtuellen Docker-Computer zu verwenden. Wenn Sie mit dem schnellen und wiederholten Erstellen von virtuellen Docker-Computern auf Azure beginnen möchten, finden Sie unter [Gewusst wie: Verwenden der Docker-VM-Erweiterung über die plattformübergreifende Azure-Oberfläche (xplat-cli)][Gewusst wie: Verwenden der Docker-VM-Erweiterung über die plattformübergreifende Azure-Oberfläche (xplat-cli)] entsprechende Informationen.
 
-<!--Anchors--> <!--Image references--> <!--Link references-->
+<!--Anchors-->
+<!--Image references-->
+<!--Link references-->
 
   [Docker]: https://www.docker.com/
   [Linux-Container]: http://en.wikipedia.org/wiki/LXC

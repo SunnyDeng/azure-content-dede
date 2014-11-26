@@ -8,24 +8,24 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem
 Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C\# geschrieben und
 greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die aufgeführten Szenarien umfassen das
 **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere
-Informationen zu Blobs finden Sie im Abschnitt [nächste Schritte][nächste Schritte].
+Informationen zu Blobs finden Sie im Abschnitt [nächste Schritte][].
 
-> [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) oder als Teil des [Azure SDK für .NET](/de-de/downloads/) erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
+> [WACOM.NOTE] Diese Anleitung gilt für die Azure Speicher-Clientbibliothek 2.x und neuere Versionen. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) oder als Teil des [Azure SDK für .NET](/de-de/downloads/) erhältlich. Siehe [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][] weiter unten für weitere Informationen zum Download der Speicher-Clientbibliothek.
 
 ##Inhaltsverzeichnis
 
--   [Was ist Blob-Speicher?][Was ist Blob-Speicher?]
--   [Konzepte][Konzepte]
--   [Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]
--   [Einrichten einer Speicherverbindungszeichenfolge][Einrichten einer Speicherverbindungszeichenfolge]
--   [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher]
--   [Gewusst wie: Erstellen eines Containers][Gewusst wie: Erstellen eines Containers]
--   [Gewusst wie: Hochladen eines Blobs in einen Container][Gewusst wie: Hochladen eines Blobs in einen Container]
--   [Gewusst wie: Auflisten der Blobs in einem Container][Gewusst wie: Auflisten der Blobs in einem Container]
--   [Gewusst wie: Herunterladen von Blobs][Gewusst wie: Herunterladen von Blobs]
--   [Gewusst wie: Löschen von Blobs][Gewusst wie: Löschen von Blobs]
--   [Gewusst wie: Asynchrones Auflisten der Blobs auf Seiten][Gewusst wie: Asynchrones Auflisten der Blobs auf Seiten]
--   [Nächste Schritte][Nächste Schritte]
+-   [Was ist Blob-Speicher?][]
+-   [Konzepte][]
+-   [Erstellen eines Azure-Speicherkontos][]
+-   [Einrichten einer Speicherverbindungszeichenfolge][]
+-   [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher][]
+-   [Gewusst wie: Erstellen eines Containers][]
+-   [Gewusst wie: Hochladen eines Blobs in einen Container][]
+-   [Gewusst wie: Auflisten der Blobs in einem Container][]
+-   [Gewusst wie: Herunterladen von Blobs][]
+-   [Gewusst wie: Löschen von Blobs][]
+-   [Gewusst wie: Asynchrones Auflisten der Blobs auf Seiten][]
+-   [Nächste Schritte][]
 
 [WACOM.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
 
@@ -230,7 +230,7 @@ Das Ergebnis sähe folgendermaßen aus:
 	Block blob of length 399751: https://<accountname>.blob.core.windows.net/photos/2011/photo7.jpg
 	Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/photo1.jpg
 
-Weitere Informationen finden Sie unter [CloudBlobContainer.ListBlobs][CloudBlobContainer.ListBlobs].
+Weitere Informationen finden Sie unter [CloudBlobContainer.ListBlobs][].
 
 ## <a name="download-blobs"> </a><span  class="short-header">Gewusst wie: Herunterladen von Blobs</span>
 
@@ -385,8 +385,10 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben,
 </ul>
 
   [Nächste Schritte]: #next-steps
+  [Was ist BLOB-Speicherung?]: #what-is
   [Konzepte]: #concepts
   [Erstellen eines Azure-Speicherkontos]: #create-account
+  [Einrichten einer Verbindungszeichenfolge]: #setup-connection-string
   [Gewusst wie: Programmgesteuerter Zugriff auf den Blobspeicher]: #configure-access
   [Gewusst wie: Erstellen eines Containers]: #create-container
   [Gewusst wie: Hochladen eines Blobs in einen Container]: #upload-blob
@@ -394,7 +396,17 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben,
   [Gewusst wie: Herunterladen von Blobs]: #download-blobs
   [Gewusst wie: Löschen von Blobs]: #delete-blobs
   [Gewusst wie: Asynchrones Auflisten der Blobs auf Seiten]: #list-blobs-async
+  [Blob5]: ./media/storage-dotnet-how-to-use-blobs/blob5.png
+  [Blob6]: ./media/storage-dotnet-how-to-use-blobs/blob6.png
+  [Blob7]: ./media/storage-dotnet-how-to-use-blobs/blob7.png
+  [Blob8]: ./media/storage-dotnet-how-to-use-blobs/blob8.png
+  [Blob9]: ./media/storage-dotnet-how-to-use-blobs/blob9.png
   
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+  [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Configuring Connection Strings]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx
+  [Referenz zur .NET-Clientbibliothek]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
+  [REST-API-Referenz]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179355
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2

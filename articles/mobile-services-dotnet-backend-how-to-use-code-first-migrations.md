@@ -122,7 +122,9 @@ Der folgende Code fügt durch Seeding nur die Spalte UserId ein:
 
 Dieser Code ruft die Hilfserweiterungsmethode [AddOrUpdate][AddOrUpdate] auf, um Seed-Daten in die neue UserId-Spalte einzufügen. [AddOrUpdate][AddOrUpdate] verhindert die Erstellung doppelter Zeilen.
 
-<!-- Anchors --> <!-- Images --> <!-- URLs -->
+<!-- Anchors -->
+<!-- Images -->
+<!-- URLs -->
 
   [DbContext]: http://msdn.microsoft.com/de-de/library/system.data.entity.dbcontext(v=vs.113).aspx
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/

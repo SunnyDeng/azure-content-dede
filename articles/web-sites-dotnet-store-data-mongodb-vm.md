@@ -481,7 +481,9 @@ In diesem Abschnitt stellen Sie die Anwendung "My Task List" mit Git bereit.
 
 Sie haben Ihre ASP.NET-Anwendung erfolgreich auf einer Azure-Website bereitgestellt. Um die Website anzuzeigen, klicken Sie auf den Link im Feld **Site URL** auf der Seite **Dashboard**. Weitere Informationen zum Entwickeln von C#-Anwendungen für MongoDB finden Sie im [CSharp Language Center][CSharp Language Center].
 
-<!-- HYPERLINKS --> <!-- IMAGES --> <!-- TOC BOOKMARKS -->
+<!-- HYPERLINKS -->
+<!-- IMAGES -->
+<!-- TOC BOOKMARKS -->
 
   [MongoDB]: http://www.mongodb.org
   [Erstellen eines virtuellen Computers und Installieren von MongoDB]: #virtualmachine

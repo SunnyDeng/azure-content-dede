@@ -48,3 +48,4 @@ Weitere Informationen zu Kapazität und Durchsatz von Speicherkonten finden Sie 
 
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 
+

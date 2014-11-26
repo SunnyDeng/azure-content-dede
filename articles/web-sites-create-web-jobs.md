@@ -225,7 +225,7 @@ Für die Bereitstellung von WebJobs können Sie auch FTP, Git oder Web Deploy ve
 
 Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion][Kostenlose Microsoft Azure-Testversion].
 
-<!-- LINKS --> <!-- IMAGES -->
+
 
   [Akzeptable Dateitypen für Skripte]: #acceptablefiles
   [Erstellen einer bedarfsgesteuerten Aufgabe]: #CreateOnDemand

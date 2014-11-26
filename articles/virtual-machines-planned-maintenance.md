@@ -47,7 +47,8 @@ Für die als nur eine Instanz konfigurierten virtuellen Computer sendet Azure mi
 
 ![][1]
 
-<!--Anchors--> <!--Link references-->
+<!--Anchors-->
+<!--Link references-->
 
   [Unterschied zwischen geplanter und ungeplanter Wartung]: ../virtual-machines-manage-availability/#Understand-planned-versus-unplanned-maintenance/
   [Konfiguration virtueller Computer]: #virtual-machine-configurations

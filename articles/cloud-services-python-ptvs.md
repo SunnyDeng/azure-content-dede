@@ -102,7 +102,8 @@ Weitere Details zur Verwendung von Azure-Diensten Ihrer Web- und Workerrollen, e
 -   [Servicebus-Warteschlangen][Servicebus-Warteschlangen]
 -   [Servicebus-Themen][Servicebus-Themen]
 
-<!--Link references--> <!--External Link references-->
+<!--Link references-->
+<!--External Link references-->
 
   [Python-Tools für Visual Studio]: http://pytools.codeplex.com
   [Voraussetzungen]: #prerequisites

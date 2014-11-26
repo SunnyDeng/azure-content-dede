@@ -175,7 +175,8 @@ Um Ihr Selbststudium zu vertiefen, können Sie eine Seite "Details" hinzufügen,
 
 Informationen finden Sie auch unter [Azure Search REST-API][Dokumentation zur REST API von Azure Search] auf MSDN.
 
-<!--Anchors--> <!--Image references-->
+<!--Anchors-->
+<!--Image references-->
 
   [Voraussetzungen]: #sub-1
   [Erstellen eines Azure Search-Index]: #sub-2

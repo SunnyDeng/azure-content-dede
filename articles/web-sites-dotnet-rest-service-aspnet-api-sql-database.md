@@ -810,7 +810,9 @@ Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson][5] (Twi
 
 Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert werden kann, und zwar nicht nur bezüglich des Lernprogramms, sondern auch bezüglich der Produkte, die darin vorgestellt werden. Ihr Feedback unterstützt uns dabei, eine entsprechende Priorität für Verbesserungen festzulegen. Wir interessieren uns vor allem dafür, wie groß das Interesse an weiteren Automatisierungen in Bezug auf die Konfiguration und Bereitstellung der Mitgliedsdatenbank ist.
 
-<!-- bookmarks --> <!-- links --> <!-- images-->
+<!-- bookmarks -->
+<!-- links -->
+<!-- images-->
 
   [Rick Anderson]: https://twitter.com/RickAndMSFT
   [vorherigen Version dieses Lernprogramms]: /de-de/develop/net/tutorials/get-started-vs2012/

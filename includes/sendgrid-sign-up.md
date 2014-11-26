@@ -56,7 +56,8 @@ Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit d
 
     Weitere Informationen über die ersten Schritte mit SendGrid finden Sie unter [SendGrid Getting Started][SendGrid Getting Started] (in englischer Sprache).
 
-<!--images--> <!--Links-->
+<!--images-->
+<!--Links-->
 
   [SendGrid Features]: http://sendgrid.com/features
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com

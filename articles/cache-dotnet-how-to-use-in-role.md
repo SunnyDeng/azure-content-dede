@@ -397,7 +397,9 @@ vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere 
 -   Sehen Sie sich die Beispiele an: [In-Role Cache Beispiele][In-Role Cache Beispiele]
 -   Sehen Sie sich [Maximale Leistung: Beschleunigen der Cloud-Dienste mit Azure-Caching][Maximale Leistung: Beschleunigen der Cloud-Dienste mit Azure-Caching] von TechEd 2013 zum In-Role Caching an.
 
-<!-- INTRA-TOPIC LINKS --> <!-- IMAGES --> <!-- LINKS -->
+<!-- INTRA-TOPIC LINKS -->
+<!-- IMAGES -->
+<!-- LINKS -->
 
   [Nächste Schritte]: #next-steps
   [Erste Schritte mit dem In-Role Cache]: #getting-started-cache-role-instance

@@ -94,7 +94,8 @@ Weitere Informationen über die Elastic Scale-Funktion finden Sie unter:
 -   Channel 9: [Übersicht über Elastic Scale][1]
 -   Diskussionsforum: [Azure SQL-Datenbank-Forum][Azure SQL-Datenbank-Forum]
 
-<!--Anchors--> <!--Image references-->
+<!--Anchors-->
+<!--Image references-->
 
   [Übersicht über Elastic Scale]: http://go.microsoft.com/?linkid=9862592
   [Dokumentationsübersicht zu Elastic Scale]: ./sql-database-elastic-scale-documentation-map.md

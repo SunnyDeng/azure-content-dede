@@ -52,7 +52,8 @@ Wenn Sie Pusher verwenden, müssen Sie Ihre Pusher-Anwendungsverbindungseinstell
 
 Weitere Informationen zu den ersten Schritten mit Pusher finden Sie im Thema zu den [Grundlagen von Pusher][Grundlagen von Pusher].
 
-<!--images--> <!--Links-->
+<!--images-->
+<!--Links-->
 
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
   [command-bar-new]: ./media/pusher-sign-up/1-command-bar-new.png

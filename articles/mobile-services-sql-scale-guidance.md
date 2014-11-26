@@ -460,7 +460,11 @@ Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwend
 -   [Leistungsüberlegungen zu Entity Framework 5][Leistungsüberlegungen zu Entity Framework 5]
 -   [Code First Data Annotations][Code First Data Annotations]
 
-<!-- IMAGES --> <!-- LINKS --> <!-- MSDN --> <!-- EF --> <!-- BLOG LINKS -->
+<!-- IMAGES -->
+<!-- LINKS -->
+<!-- MSDN -->
+<!-- EF -->
+<!-- BLOG LINKS -->
 
   [Diagnostizieren von Problemen]: #Diagnosing
   [Indizieren]: #Indexing

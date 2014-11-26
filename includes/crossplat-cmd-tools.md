@@ -214,7 +214,8 @@ Eine vollständige Liste der Befehle zum Erstellen und Verwalten von virtuellen 
 
     azure vm -h
 
-<!-- IMAGES --> <!-- LINKS -->
+<!-- IMAGES -->
+<!-- LINKS -->
 
   [Dokumentation zum Azure-Befehlszeilentool für Mac und Linux]: http://go.microsoft.com/fwlink/?LinkId=252246
   [Beschreibung der Azure-Befehlszeilentools für Mac und Linux]: #Overview

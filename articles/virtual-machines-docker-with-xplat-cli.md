@@ -100,7 +100,9 @@ Der Docker-Daemon auf dem Host ist so konfiguriert, dass er Clientverbindungen a
 
 Sie sind nun bereit, das [Docker-Benutzerhandbuch][Docker-Benutzerhandbuch] und Ihren virtuellen Docker-Computer zu verwenden. Informationen zum Erstellen eines Docker-fähigen virtuellen Computers im neuen Portal finden Sie unter [Gewusst wie: Verwenden der Docker-VM-Erweiterung mit dem Portal][Gewusst wie: Verwenden der Docker-VM-Erweiterung mit dem Portal].
 
-<!--Anchors--> <!--Image references--> <!--Link references-->
+<!--Anchors-->
+<!--Image references-->
+<!--Link references-->
 
   [Docker]: https://www.docker.com/
   [Linux-Container]: http://en.wikipedia.org/wiki/LXC

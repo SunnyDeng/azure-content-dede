@@ -272,7 +272,9 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
 
 -   [Bereitstellen von breitbandigen Inhalten über das Content Delivery Network][Bereitstellen von breitbandigen Inhalten über das Content Delivery Network]
 
-<!-- WA.com links --> <!-- External Links --> <!-- Images -->
+<!-- WA.com links -->
+<!-- External Links -->
+<!-- Images -->
 
   [Browser mit Listenpositionen]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilscloud.png
   [Einrichten der Entwicklungsumgebung]: #setup

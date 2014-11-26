@@ -716,7 +716,9 @@ Webanwendungen für die mobile Nutzung entwickeln. Das umfasst:
 -   [Von W3C empfohlene bewährte Methoden für mobile Webanwendungen][Von W3C empfohlene bewährte Methoden für mobile Webanwendungen]
 -   [W3C-Empfehlungskandidaten für Medienabfragen][W3C-Empfehlungskandidaten für Medienabfragen]
 
-<!-- Internal Links --> <!-- External Links --> <!-- Images -->
+<!-- Internal Links -->
+<!-- External Links -->
+<!-- Images -->
 
   [Visual Studio Express 2013 für Web]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web
   [Starterprojekt]: http://go.microsoft.com/fwlink/?LinkID=398780&clcid=0x409
