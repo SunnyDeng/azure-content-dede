@@ -1,64 +1,56 @@
-<properties title="Azure Machine Learning Sample: Color quantization using K-Means clustering" pageTitle="Machine Learning Sample: Color quantization using K-Means clustering | Azure" description="A sample Azure Machine Learning experiment that evaluates using different K-Means clustering values for quantizing a color image." metaKeywords="" services="" solutions="" documentationCenter="" authors="garye" videoId="" scriptId="" />
+﻿<properties title="Azure Machine Learning Sample: Color quantization using K-Means clustering" pageTitle="Machine Learning-Beispiel: Farbquantifizierung mit K-Means-Clustering | Azure" description="A sample Azure Machine Learning experiment that evaluates using different K-Means clustering values for quantizing a color image." metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun"  videoId="" scriptId="" />
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="garye" />
+<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/23/2014" ms.author="garye" />
+
 
 # Azure Machine Learning-Beispiel: Farbquantifizierung mit K-Means-Clustering
 
-*Sie finden das Beispielexperiment für dieses Modell in ML Studio im Bereich **EXPERIMENTE** unter der Registerkarte **BEISPIELE**. Der Name des Experiments lautet:*
+>[AZURE.HINWEIS]
+>Das [Beispielexperiment] und das [Beispieldataset] im Zusammenhang mit diesem Modell sind in ML Studio verfügbar. Weitere Details erhalten Sie unten.
+[Beispielexperiment]: #sample-experiment
+[Beispieldataset]: #sample-dataset
 
-	Sample Experiment - Color Based Image Compression using K-Means Clustering - Development
 
-## Problembeschreibung
+##Problembeschreibung
 
-[Farbquantifizierung][Farbquantifizierung] bezeichnet die Reduzierung der Anzahl unterschiedlicher Farben in einem Bild und somit eine Komprimierung. Normalerweise wird versucht, die Farbzusammensetzung des Bilds so gut wie möglich zu erhalten und gleichzeitig die Anzahl der Farben zu reduzieren, entweder um Speicher zu sparen oder um das Bild zu komprimieren.
+[Farbquantifizierung](http://en.wikipedia.org/wiki/Color_quantization "Color quantization") bezeichnet die Reduzierung der Anzahl unterschiedlicher Farben in einem Bild und somit eine Komprimierung. Normalerweise wird versucht, die Farbzusammensetzung des Bilds so gut wie möglich zu erhalten und gleichzeitig die Anzahl der Farben zu reduzieren, entweder um Speicher zu sparen oder um das Bild zu komprimieren. 
 
-## Daten
+##Daten
 
-In diesem Beispielexperiment nehmen wir an, dass jedes beliebige 24 Bit RGB-Bild 256 x 256 x 256 mögliche Farben hat. Wir können problemlos Standard-Farbhistogramme basierend auf diesen Intensitätswerten erstellen. Wir können das Bild jedoch auch quantifizieren und die Anzahl der Farben *reduzieren*, z. B. auf 16 oder 64. Auf diese Weise entsteht ein deutlich kleinerer Farbraum und (idealerweise) weniger Rauschen und Abweichungen. Dazu übergeben wir die Pixeldaten (jedes einzelne Pixel als Zeile im Dataset) an unser K-Means-Clusteringmodul.
+In diesem Beispielexperiment nehmen wir an, dass jedes beliebige 24 Bit RGB-Bild 256 x 256 x 256 mögliche Farben hat. Wir können problemlos Standard-Farbhistogramme basierend auf diesen Intensitätswerten erstellen. Wir können das Bild jedoch auch quantifizieren und die Anzahl der Farben *reduzieren*, z. B. auf 16 oder 64. Auf diese Weise entsteht ein deutlich kleinerer Farbraum und (idealerweise) weniger Rauschen und Abweichungen. Dazu übergeben wir die Pixeldaten (jedes einzelne Pixel als Zeile im Dataset) an unser K-Means-Clusteringmodul. 
 
-## Modell
+##Modell
 
 Das Modell wird wie in der folgenden Abbildung gezeigt erstellt:
 
-![Modell][Modell]
+![Model][image1]
 
-Wir führen K-Means-Clustering mit K=10 bis 500 in 5 unterschiedlichen Verzweigungen aus. Zunächst berechnen wir die Cluster und aggregieren das Clustering auf den Mittelwert der Pixelfarben (mithilfe eines R-Skripts).
-Zuletzt ordnen wir jedes Pixel zur aggregierten Clusterfarbe zu und geben das neue Bild im CSV-Format aus. Außerdem berechnen wir die Abweichung des quadratischen Mittelwerts der neuen Pixelfarben zum Originalbild und zeigen diese Abweichung in einem R-Diagramm (wieder mit einem R-Skript).
+Wir führen K-Means-Clustering mit K=10 bis 500 in 5 unterschiedlichen Verzweigungen aus. Zunächst haben wir Cluster berechnet und dann aggregiert das clustering dem Mittelwert von deren Pixel Farben (mit einem Skript R). 
+Schließlich haben wir die aggregierten Cluster-Farben jedes Pixels zugeordnet und das neue Abbild im CSV-Format gesendet. Außerdem berechnen wir die Abweichung des quadratischen Mittelwerts der neuen Pixelfarben zum Originalbild und zeigen diese Abweichung in einem R-Diagramm (wieder mit einem R-Skript). 
 
-## Ergebnisse
+##Ergebnisse
 
-Wir haben die Ergebnisse mit unterschiedlichen Clusteranzahlen (Farben) getestet, wie Sie im folgenden Experimentmodell sehen. Mehr Cluster führen zu Bildern mit höherer Qualität und niedrigerer Komprimierung:
+Wir haben die Ergebnisse mit unterschiedlichen Clusteranzahlen (Farben) getestet, wie Sie im folgenden Experimentmodell sehen. Wie im Folgenden sehen ist, sorgt mehr Clustering für bessere Qualität der Bilder mit weniger Komprimierung:
 
-<table>
-<tr><th>Original</th>
-<td><img alt="Original" src="./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2a.jpg"></td>
-</tr>
-<tr><th>K=10</th>
-<td><img alt="K=10" src="./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2b.png"></td>
-</tr>
-<tr><th>K=20</th>
-<td><img alt="K=20" src="./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2c.png"></td>
-</tr>
-<tr><th>K=50</th>
-<td><img alt="K=50" src="./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2d.png"></td>
-</tr>
-<tr><th>K=100</th>
-<td><img alt="K=100" src="./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2e.png"></td>
-</tr>
-<tr><th>K=500</th>
-<td><img alt="K=500" src="./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2f.png"></td>
-</tr>
-</table>
+||
+------------ | ---------
+**Original** | ![Original][image2a]
+**K=10**     | ![K=10][image2b]
+**K=20**     | ![K=20][image2c]
+**K=50**     | ![K=50][image2d]
+**K=100**    | ![K=100][image2e]
+**K=500**    | ![K=500][image2f]
+
 
 Außerdem haben wir die Genauigkeit über die Abweichung des quadratischen Mittelwerts zu den Farben des Originalbilds berechnet, wie Sie im zweiten Ausgabeport des Moduls "R-Skript ausführen" sehen können:
 
-![Ausgabe des Moduls "R-Skript ausführen"][Ausgabe des Moduls "R-Skript ausführen"]
+![Output of Execute R Script module][image3]
 
-Das Ergebnis: Je mehr Farbcluster, desto besser stimmen die Farben mit dem Originalbild überein (bessere Qualität).
+Das Ergebnis: Je mehr Farbcluster, desto besser stimmen die Farben mit dem Originalbild überein (bessere Qualität). 
 
-## Code zum Konvertieren von Bildern nach CSV und umgekehrt
+##Code zum Konvertieren von Bildern nach CSV und umgekehrt
 
-Um die Bilder in ML Studio verwenden zu können, haben wir einen einfachen Konvertierungscode geschrieben, der Bilddateien in ein für ML Studio lesbares CSV-Format konvertiert und umgekehrt. Sie können den folgenden Code gerne verwenden. Für zukünftige Versionen ist ein Modul zum Einlesen von Bildern geplant.
+Um die Bilder in ML Studio verwenden zu können, haben wir einen einfachen Konvertierungscode geschrieben, der Bilddateien in ein für ML Studio lesbares CSV-Format konvertiert und umgekehrt. Sie können den folgenden Code gerne verwenden. Für zukünftige Versionen ist ein Modul zum Einlesen von Bildern geplant. 
 
 	using System;
 	using System.Collections.Generic;
@@ -147,13 +139,28 @@ Um die Bilder in ML Studio verwenden zu können, haben wir einen einfachen Konve
 	}
 
 
+## Beispielexperiment
 
-[Farbquantifizierung]: http://en.wikipedia.org/wiki/Color_quantization "Farbquantifizierung"
-[Modell]: ./media/machine-learning-sample-color-quantization-using-k-means-clustering/image1.png
-[Original]: ./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2a.jpg
-[K=10]: ./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2b.png
-[K=20]: ./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2c.png
-[K=50]: ./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2d.png
-[K=100]: ./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2e.png
-[K=500]: ./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2f.png
-[Ausgabe des Moduls "R-Skript ausführen"]: ./media/machine-learning-sample-color-quantization-using-k-means-clustering/image3.png
+Das nachfolgende Beispielexperiment im Zusammenhang mit diesem Modellist in ML Studio im Abschnitt **EXPERIMENTE** auf der Registerkarte **BEISPIELE** verfügbar.
+
+> **Beispielexperiment -  Auf Farbe basierte Bildkomprimierung mithilfe von K-Means-Clustering - Entwicklung**
+
+
+## Beispieldataset
+
+Das folgende Beispieldataset, das von diesem Experiment verwendet wird, finden Sie in der Modulpalette in ML Studio unter **Gespeicherte Datasets**.
+
+###Bil Gates RGB-Bild
+[AZURE.INCLUDE [machine-learning-sample-dataset-bill-gates-rgb-image](../includes/machine-learning-sample-dataset-bill-gates-rgb-image.md)]
+
+
+
+[image1]:./media/machine-learning-sample-color-quantization-using-k-means-clustering/image1.png
+[image2a]:./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2a.jpg
+[image2b]:./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2b.png
+[image2c]:./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2c.png
+[image2d]:./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2d.png
+[image2e]:./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2e.png
+[image2f]:./media/machine-learning-sample-color-quantization-using-k-means-clustering/image2f.png
+[image3]:./media/machine-learning-sample-color-quantization-using-k-means-clustering/image3.png
+

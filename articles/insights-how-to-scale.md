@@ -1,6 +1,6 @@
-<properties title="How to scale a website" pageTitle="How to scale a website" description="Learn how to scale your hosting plan in Azure." authors="stepsic"  />
+﻿<properties title="How to scale a website" pageTitle="Skalieren von Websites" description="Learn how to scale your hosting plan in Azure." authors="stepsic" manager="kamrani" />
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="stepsic" />
+<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-11-04" ms.author="stepsic" />
 
 # Skalieren von Websites
 
@@ -10,26 +10,23 @@ Die Skalierung hat Auswirkungen auf den gesamten Webhosting-Plan. Wenn Sie eine 
 
 ## Skalieren eines Webhosting-Plans
 
-1.  Klicken Sie im [Azure-Vorschauportal][Azure-Vorschauportal] auf **Browse**, dann auf **Web Sites** und anschließend auf den Namen der Website, um das Fenster zu öffnen.
-2.  Im Teilbereich **Scale** des **Operations**-Bereichs im Fenster "Web Site" wird der Status des Webhosting-Plans angezeigt: **Off** bei manueller Skalierung, **Performance** bei einer Skalierung nach ein oder mehr Leistungsmetriken und **Schedule**, wenn Sie mehrere Profile für die automatische Skalierung aktiviert haben.  
-    ![Teilbereich 'Scale'][Teilbereich 'Scale']
-3.  Wenn Sie in diesem Teilbereich klicken, gelangen Sie zu dem Fenster **Scale**. Oben in diesem Skalierungsfenster wird der Verlauf verschiedener automatischer Skalierungsvorgänge für Ihren Webhosting-Plan angezeigt.
+1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Durchsuchen** und dann auf **Websites**, und klicken Sie dann auf den Namen der Website, um die Seite zu öffnen.
+2. Im Bereich **Skalieren** unter **Vorgänge** wird im Fenster "Website" der Status des Webhosting-Plans angezeigt: **Aus**, wenn Sie manuell skalieren, **Performance**, wenn Sie mit einer oder mehrerer Performance-Metriken skalieren, und **Zeitplan**, wenn Sie mehrere automatische Skalierprofile aktiviert haben.  
+    ![Scale part](./media/insights-how-to-scale/Insights_ScalePartOff.png)
+3. Wenn Sie in diesem Teilbereich klicken, gelangen Sie zu dem Fenster **Skalieren**.   Oben in diesem Skalierungsfenster wird der Verlauf verschiedener automatischer Skalierungsvorgänge für Ihren Webhosting-Plan angezeigt.
 
-    ![Skalierungsfenster][Skalierungsfenster]
+    ![Scale blade](./media/insights-how-to-scale/Insights_ScaleBladeDayZero.png)
+4. Die Anzahl der virtuellen Maschinen, auf denen Ihr Webhosting-Plan ausgeführt wird, können Sie über den Schieberegler **Instanzen** manuell einstellen.
+5. Wenn Sie die Anzahl der Instanzen je nach Last automatisch anpassen möchten, wählen Sie im Modus **Automatische Skalierung** **Performance** aus. In diesem Fall können Sie **Zeitplan** im Azure -Vorschauportal nicht auswählen.  
+    ![Scale blade with CPU Percentage](./media/insights-how-to-scale/Insights_ScaleBladeCPU.png) 
+6. Durch Auswahl von "Performance" veranlassen Sie zwei Änderungen:
+Neben     - **Instance Range** können Sie nun eine Mindestanzahl und eine maximale Anzahl Instanzen auswählen. Die automatische Skalierung sorgt dafür, dass Sie, unabhängig von der Last, immer in diesem Bereich bleiben.
+    - Im Abschnitt **Ziel-Metrik** können Sie die Leistungsmetriken festlegen.
+7. Im Abschnitt **CPU-Prozente** können Sie einen Zielwert für den durchschnittlichen CPU-Prozentsatz aller Instanzen in Ihrem Webhosting-Plan festlegen. Wenn der durchschnittliche CPU-Prozentsatz den von Ihnen festgelegten Höchstwert überschreitet, wird hochskaliert.
 
-4.  Die Anzahl der virtuellen Computer, auf denen Ihr Webhosting-Plan ausgeführt wird, können Sie über den Schieberegler **Instance** manuell einstellen.
-5.  Wenn die Anzahl der Instanzen je nach Last automatisch angepasst werden soll, wählen Sie **Performance** neben **Autoscale Mode** aus. In diesem Fall können Sie **Schedule** im Azure-Vorschauportal nicht auswählen.  
-    ![Fenster 'Scale' mit CPU-Prozentsatz][Fenster 'Scale' mit CPU-Prozentsatz]
-6.  Durch Auswahl von "Performance" veranlassen Sie zwei Änderungen:
+Wenn die automatische Skalierung aktiviert ist, erscheint **Performance** im Skalierungsteilbereich des Fensters "Website", und der Skalierungsablauf wird im Diagramm dargestellt:
 
-    -   Neben **Instance Range** können Sie nun eine Mindestanzahl und eine maximale Anzahl Instanzen auswählen. Die automatische Skalierung sorgt dafür, dass Sie, unabhängig von der Last, immer in diesem Bereich bleiben.
-    -   Im Abschnitt **Target Metrics** können Sie Leistungsmetriken festlegen.
-
-7.  Im Abschnitt **CPU Percentage** können Sie einen Zielwert für den durchschnittlichen CPU-Prozentsatz aller Instanzen in Ihrem Webhosting-Plan festlegen. Wenn der durchschnittliche CPU-Prozentsatz den von Ihnen festgelegten Höchstwert überschreitet, wird hochskaliert.
-
-Wenn die automatische Skalierung aktiviert ist, erscheint **Performance** im Skalierungsteilbereich des Fensters "Web site", und der Skalierungsablauf wird im Diagramm dargestellt:
-
-![Skalierungsfenster mit CPU-Prozentsatz][Skalierungsfenster mit CPU-Prozentsatz]
+![Scale blade with CPU Percentage](./media/insights-how-to-scale/Insights_ScalePartBladeOn.png) 
 
 Hinweis: Im Azure-Vorschauportal können Sie die Anzahl der Instanzen eines Webhosting-Plans im Modus Shared nicht ändern.
 
@@ -38,21 +35,20 @@ Hinweis: Im Azure-Vorschauportal können Sie die Anzahl der Instanzen eines Webh
 Neu im Azure-Vorschauportal ist die Möglichkeit, basierend auf anderen Metriken als dem CPU-Prozentsatz zu skalieren und außerdem mit mehreren, komplexeren Regeln das Hoch- und Herunterskalieren zu optimieren.
 
 ### Skalieren anhand anderer Leistungsmetriken
-
 Die Skalierung kann zusätzlich zum CPU-Prozentsatz auf folgenden Kriterien basieren:
 
--   "Average Memory" - Wenn der durchschnittlich auf den Instanzen belegte Speicherplatz den spezifizierten Wert über- oder unterschreitet, werden Instanzen hinzugefügt oder entfernt.
--   "HTTP Queue Depth" oder "Disk Queue Depth" - Wenn die Anzahl der Nachrichten in der Warteschlange der HTTP-Anfragen bzw. die Länge der Warteschlange zur Festplatte den spezifizierten Wert über- oder unterschreitet, werden Instanzen hinzugefügt oder entfernt.
+- "Average Memory" - Wenn der durchschnittlich auf den Instanzen belegte Speicherplatz den spezifizierten Wert über- oder unterschreitet, werden Instanzen hinzugefügt oder entfernt.
+- "HTTP Queue Depth" oder "Disk Queue Depth" - Wenn die Anzahl der Nachrichten in der Warteschlange der HTTP-Anfragen bzw. die Länge der Warteschlange zur Festplatte den spezifizierten Wert über- oder unterschreitet, werden Instanzen hinzugefügt oder entfernt.
 
-Es gibt zwei Möglichkeiten der Skalierung auf Basis einer anderen Metrik. Soll nur auf Basis einer einzelnen Metrik skaliert werden, wählen Sie die spitze Klammer neben dem Schieberegler **CPU Percentage** aus. Das Fenster "Metric Details" wird geöffnet:
+Es gibt zwei Möglichkeiten der Skalierung auf Basis einer anderen Metrik. Soll nur auf Basis einer einzelnen Metrik skaliert werden, wählen Sie die spitze Klammer neben dem Schieberegler **CPU Percentage** aus. Das Fenster "Metrik-Details" wird geöffnet:
 
-![Einstiegspunkt zu Skalierungsmetriken][Einstiegspunkt zu Skalierungsmetriken]
+![Entry point to scale metrics](./media/insights-how-to-scale/Insights_ScaleMetricChevron.png)
 
-Zur Skalierung anhand von mehr als einer Metrik klicken Sie in der Befehlsleiste auf **Add Metric**:
+Zur Skalierung anhand mehrerer Metriken klicken Sie in der Befehlsleiste auf **Metrik hinzufügen**:
 
-![Metriken hinzufügen][Metriken hinzufügen]
+![Add metrics](./media/insights-how-to-scale/Insights_AddMetric.png)
 
-Das Fenster "Metric Detail" enthält alle Steuerelemente, die Sie für die Einrichtung eines optimalen Skalierungsprofils brauchen. Wählen Sie oben in diesem Fenster die neue Metrik für die Skalierung aus.
+Das Fenster "Metrik-Detail" enthält alle Steuerelemente, die Sie für die Einrichtung eines optimalen Skalierungsprofils brauchen. Wählen Sie oben in diesem Fenster die neue Metrik für die Skalierung aus.
 
 ### Skalieren in mehreren Schritten
 
@@ -60,26 +56,17 @@ Unterhalb des Metrik-Diagramms werden zwei Abschnitte angezeigt: **Scale up rule
 
 Für jede Regel wählen Sie:
 
--   "Condition" – entweder "Greater" oder "Less"
--   "Threshold" – die Zahl, die diese Metrik überschreiten muss, damit die Aktion ausgelöst wird
--   "Over Past" – die Anzahl der Minuten, die diese Metrik durchschnittlich überschritten wird
--   "Scale up by" oder "Scale down by" – der Umfang der Skalierungsaktion
--   "Cool down" – wie lange diese Regel nach der vorherigen Skalierungsaktion bis zur nächsten Skalierung warten soll
+- "Condition" - entweder "Greater" oder "Less"
+- "Threshold" - die Zahl, die diese Metrik überschreiten muss, damit die Aktion ausgelöst wird
+- "Over Past" - die Anzahl der Minuten, die diese Metrik durchschnittlich überschritten wird
+- "Scale up by" oder "Scale down by" - der Umfang der Skalierungsaktion
+- "Cool down" - wie lange diese Regel nach der vorherigen Skalierungsaktion bis zur nächsten Skalierung warten soll
 
-![Mehrere Skalierungsregeln][Mehrere Skalierungsregeln]
+![Multiple scale rules](./media/insights-how-to-scale/Insights_MultipleScaleRules.png)
 
-Wenn Sie mehrere Skalierungsregeln definieren, können Sie bei Leistungsschwankungen aggressiver nach oben oder unten skalieren. Wenn Sie beispielsweise diese zwei Regeln definieren:
+Wenn Sie mehrere Skalierungsregeln definieren, können Sie bei Leistungsschwankungen aggressiver nach oben oder unten skalieren. Sie können beispielsweise zwei Skalierungsregeln definieren:
 
-1.  Um 1 Instanz hochskalieren, wenn der CPU-Prozentsatz über 60 % liegt.
-2.  Um 3 Instanzen hochskalieren, wenn der CPU-Prozentsatz über 85 % liegt.
+1. Um 1 Instanz hochskalieren, wenn der CPU-Prozentsatz über 60 % liegt.
+2. Um 3 Instanzen hochskalieren, wenn der CPU-Prozentsatz über 85 % liegt.
 
-Mit dieser Regel veranlassen Sie die Bereitstellung von zwei zusätzlichen Instanzen, wenn die Last vor einer Skalierung 85 % überschreitet.
-
-  [Azure-Vorschauportal]: https://portal.azure.com/
-  [Teilbereich 'Scale']: ./media/insights-how-to-scale/Insights_ScalePartOff.png
-  [Skalierungsfenster]: ./media/insights-how-to-scale/Insights_ScaleBladeDayZero.png
-  [Fenster 'Scale' mit CPU-Prozentsatz]: ./media/insights-how-to-scale/Insights_ScaleBladeCPU.png
-  [Skalierungsfenster mit CPU-Prozentsatz]: ./media/insights-how-to-scale/Insights_ScalePartBladeOn.png
-  [Einstiegspunkt zu Skalierungsmetriken]: ./media/insights-how-to-scale/Insights_ScaleMetricChevron.png
-  [Metriken hinzufügen]: ./media/insights-how-to-scale/Insights_AddMetric.png
-  [Mehrere Skalierungsregeln]: ./media/insights-how-to-scale/Insights_MultipleScaleRules.png
+Mit dieser Regel veranlassen Sie die Bereitstellung von zwei zusätzlichen Instanzen, wenn die Last vor einer Skalierung 85 % überschreitet. 
