@@ -474,7 +474,7 @@ In diesem Abschnitt wenden Sie das [Authorize][Authorize]-Attribut an, um den Zu
 
 	![Browserauswahl][Browserauswahl]
 
-    You can select multiple browsers and have Visual Studio update each browser when you make changes. For more information see [Using Browser Link in Visual Studio 2013](http://www.asp.net/visual-studio/overview/2013/using-browser-link).
+    Sie können mehrere Browser auswählen und die Browser von Visual Studio aktualisieren lassen, wenn Sie Änderungen vornehmen. Weitere Informationen finden Sie unter [Using Browser Link in Visual Studio 2013](http://www.asp.net/visual-studio/overview/2013/using-browser-link).
 
 1.  Drücken Sie STRG+F5, um die Anwendung auszuführen. Befolgen Sie die Anweisungen, um das von IIS Express generierte selbstsignierte Zertifikat als vertrauenswürdig einzustufen.
 
@@ -706,6 +706,7 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
   [Verwenden der Mitgliedschafts-API]: #mbrDB
   [1]: #bkmk_deploytowindowsazure11
   [Nächste Schritte]: #nextsteps
+  [install-sdk-2013-only]: ../includes/install-sdk-2013-only.md
   [Visual Studio 2013 Update 2 RC]: http://go.microsoft.com/fwlink/?LinkId=390521
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com
 
@@ -718,6 +719,7 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
   ["Neues Projekt" im Menü "Datei"]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/gs13newproj.png
   [Dialogfeld "Neues Projekt"]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/GS13newprojdb.png
   [Dialogfeld "Neues ASP.NET-Projekt"]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ss1.PNG
+  [\_Layout.cshtml im Projektmappen-Explorer]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/dntutmobile-createapp-004.png
   [Codeänderungen]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/rs3.png
   [Lokal ausgeführte Website]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/rr2.png
   ["Veröffentlichen" im Kontextmenü des Projekts]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/GS13publish.png
@@ -733,7 +735,9 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
   [Kontextdialogfeld "Neue Daten"]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ss5.PNG
   [Code First-Migrationen]: http://msdn.microsoft.com/library/hh770484.aspx
   ["Paket-Manager-Konsole" im Menü "Extras"]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/SS6.png
+  [Seeding and Debugging Entity Framework (EF) DBs]: http://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx
   [Befehle in der Paket-Manager-Konsole]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/dntutmobile-migrations-package-manager-console.png
+  [http://localhost:(port\#)/Cm]: http://localhost
   [MVC-Datenansicht]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/rx2.png
   [Create an ASP.NET MVC 5 App with Facebook and Google OAuth2 and OpenID Sign-on]: http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
   [Google-Anmeldung]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ss23.PNG

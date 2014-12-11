@@ -170,9 +170,9 @@ Weitere Informationen zu Hadoop in HDInsight finden Sie in den "Erste Schritte"-
 
 -   [Apache Hadoop][Apache Hadoop]: Erfahren Sie mehr über die Apache Hadoop-Softwarebibliothek, ein Framework, das die verteilte Verarbeitung großer Datensätze auf Clustern verfügbarer Computer ermöglicht.
 
--   [HDFS][1]: Erfahren Sie mehr über die Architektur und das Design von Hadoop Distributed File System (HDFS), dem primären Speichersystem, das von Hadoop-Anwendungen verwendet wird.
+-   <a target="_blank" href="http://hadoop.apache.org/docs/r0.18.1/hdfs_design.html">HDFS</a>: Erfahren Sie mehr über die Architektur und das Design von Hadoop Distributed File System (HDFS), dem primären Speichersystem, das von Hadoop-Anwendungen verwendet wird.
 
--   [MapReduce][2]: Erfahren Sie mehr über das Programmierframework für das Schreiben von Hadoop-Anwendungen, die parallel große Datenmengen auf großen Cluster-Serverknoten verarbeiten.
+-   <a target="_blank" href="http://mapreduce.org/">MapReduce</a>: Erfahren Sie mehr über das Programmierframework für das Schreiben von Hadoop-Anwendungen, die parallel große Datenmengen auf großen Cluster-Serverknoten verarbeiten.
 
   [Übersicht über das Hadoop-Ökosystem in HDInsight:]: #overview
   [Vorzüge von Hadoop in der Cloud:]: #advantage
