@@ -1222,10 +1222,7 @@ Im [nächsten Lernprogramm][nächsten Lernprogramm] werden Sie die Workerrolle A
 
 Links zu weiteren Ressourcen für die Arbeit mit Azure-Speichertabellen, Warteschlangen und Blobs finden Sie im [letzten Lernprogramms in dieser Serie][letzten Lernprogramms in dieser Serie].
 
-<div>
-
-[Lernprogramm 4][nächsten Lernprogramm]
-
+<div><a href="/de-de/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/" class="site-arrowboxcta download-cta">Lernprogramm 4</a></div>
 </div>
 
   [ersten Lernprogramm der Serie]: /de-de/develop/net/tutorials/multi-tier-web-site/1-overview/

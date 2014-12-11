@@ -379,7 +379,7 @@ Navigieren Sie zu [][]<https://developers.facebook.com/apps></a>, und melden Sie
 
 ![Neue FB-Anwendung erstellen][Neue FB-Anwendung erstellen]
 
-Geben Sie localhost als **App Domain** und <http://localhost/> als **Site URL** ein. Klicken Sie bei **Sandbox Mode** auf **Enabled**, und klicken Sie dann auf **Save Changes**.
+Geben Sie localhost als **App Domain** und http://localhost/ als **Site URL** ein. Klicken Sie bei **Sandbox Mode** auf **Enabled**, und klicken Sie dann auf **Save Changes**.
 
 Sie benötigen die **Anwendungs-ID** und den **geheimen Anwendungsschlüssel**, um OAuth in dieser Anwendung zu implementieren.
  ![Neue FB-Anwendung][Neue FB-Anwendung]
@@ -518,8 +518,8 @@ In diesem Lernprogramm wird SQL Server Management Studio (SSMS) zur Erstellung v
 
 Installieren Sie SSMS aus dem [Microsoft SQL Server 2012 Express Download Center][Microsoft SQL Server 2012 Express Download Center]:
 
--   [ENU\x64\SQLManagementStudio\_x64\_ENU.exe][ENU\x64\SQLManagementStudio\_x64\_ENU.exe] für 64-Bit-Systeme.
--   [ENU\x86\SQLManagementStudio\_x86\_ENU.exe][ENU\x86\SQLManagementStudio\_x86\_ENU.exe] für 32-Bit-Systeme.
+-   [ENU\x64\SQLManagementStudio\_x64\_ENU.exe](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe) für 64-Bit-Systeme.
+-   [ENU\x86\SQLManagementStudio\_x86\_ENU.exe](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe) für 32-Bit-Systeme.
 
 Wenn Sie die falsche Version für Ihr Betriebssystem ausgewählt haben, schlägt die Installation fehl, und Sie können es mit der anderen Version versuchen.
 
@@ -692,12 +692,7 @@ Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie 
 -   [Erste Schritte in Entity Framework mit MVC][Erste Schritte in Entity Framework mit MVC]
 -   [Code First Migrations (Code First-Migrationen, in englischer Sprache)][Code First Migrations (Code First-Migrationen, in englischer Sprache)]
 
-<!-- bookmarks -->
 
-<!-- links from Tom's hopefully no collisions -->
-
-
-<!-- images-->
   [Anmeldeseite]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxb.png
   [Einrichten der Entwicklungsumgebung]: #bkmk_setupdevenv
   [Einrichten der Azure-Umgebung]: #bkmk_setupwindowsazure
@@ -799,7 +794,7 @@ Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie 
   [.NET-Anwendungen mit mehreren Ebenen mithilfe von Speichertabellen, Warteschlangen und Blobs]: http://www.windowsazure.com/de-de/develop/net/tutorials/multi-tier-web-site/1-overview/
   [Einleitung zu ASP.NET MVC 4]: http://www.asp.net/mvc/tutorials/mvc-4/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
   
-[Erste Schritte in Entity Framework mit MVC]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+  [Erste Schritte in Entity Framework mit MVC]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 
   [OAuth 2.0 and Sign-In (OAuth 2.0 und Anmeldung, in englischer Sprache)]: http://blogs.msdn.com/b/vbertocci/archive/2013/01/02/oauth-2-0-and-sign-in.aspx
   [Problembehandlung von Azure-Websites in Visual Studio]: /de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
@@ -807,12 +802,13 @@ Weitere Informationen zu Entity Framework und Code First-Migrationen finden Sie 
   [Entwickeln von Webanwendungen mit Azure]: http://msdn.microsoft.com/de-de/library/Hh674484
   [Arbeiten mit Windows Azure SQL-Datenbank]: http://go.microsoft.com/fwlink/p/?LinkId=282414#ssdb
 
-<!-- links -->
 
-[Erste Schritte in Entity Framework mit MVC]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+
+
+  [Erste Schritte in Entity Framework mit MVC]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
   
-[Code First Migrations (Code First-Migrationen, in englischer Sprache)]: http://msdn.microsoft.com/de-de/library/hh770484
+  [Code First Migrations (Code First-Migrationen, in englischer Sprache)]: http://msdn.microsoft.com/de-de/library/hh770484
 
-[Data Storage Offerings on Azure]: http://social.technet.microsoft.com/wiki/contents/articles/data-storage-offerings-on-the-windows-azure-platform.aspx
+  [Data Storage Offerings on Azure]: http://social.technet.microsoft.com/wiki/contents/articles/data-storage-offerings-on-the-windows-azure-platform.aspx
 
-[Common Tasks]: http://www.windowsazure.com/de-de/develop/net/common-tasks/
+  [Common Tasks]: http://www.windowsazure.com/de-de/develop/net/common-tasks/
