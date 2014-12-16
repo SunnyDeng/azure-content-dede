@@ -1,16 +1,19 @@
-Bevor Sie Daten in Ihrem neuen mobilen Dienst speichern können, müssen Sie im Dienst eine neue Speichertabelle erstellen. Diese Schritte zeigen, wie Visual Studio 2013 zum Erstellen einer neuen Tabelle im mobilen Dienst verwendet wird. Danach aktualisieren Sie die Anwendung, damit sie mobile Dienste zum Speichern von Objekten in Azure anstelle der lokalen Sammlung verwendet.
+﻿
 
-1.  Erweitern Sie im Server-Explorer **Azure Mobile Services**, klicken Sie mit der rechten Maustaste auf den mobilen Dienst, klicken Sie auf **Tabelle erstellen**, und geben Sie `TodoItem` unter **Tabellenname** ein.
+Bevor Sie Daten in Ihrem neuen mobilen Dienst speichern können, müssen Sie im Dienst eine neue Speichertabelle erstellen. Diese Schritte zeigen, wie Visual Studio 2013 zum Erstellen einer neuen Tabelle im mobilen Dienst verwendet wird. Danach aktualisieren Sie die Anwendung, damit sie Mobile Services zum Speichern von Objekten in Azure statt der lokalen Sammlung verwendet.
 
-    ![Tabelle in VS 2013 erstellen][Tabelle in VS 2013 erstellen]
 
-2.  Erweitern Sie **Erweitert**, überprüfen Sie, ob die Tabellen-Aktionsberechtigungen standardmäßig auf **Jeder mit Anwendungsschlüssel** festgelegt sind, und klicken Sie dann auf **Erstellen**.
+1. Erweitern Sie im Server-Explorer **Azure Mobile Services**, klicken Sie mit der rechten Maustaste auf den mobilen Dienst, klicken Sie auf **Tabelle erstellen**, und geben Sie `TodoItem` in**Tabellenname** ein.
 
-    ![Tabelle in VS 2013 erstellen, Teil 2][Tabelle in VS 2013 erstellen, Teil 2]
+	![create table in VS 2013](./media/mobile-services-create-new-table-vs2013/mobile-create-table-vs2013.png)
 
-    Auf diese Weise wird die TodoItem-Tabelle auf dem Server erstellt, auf dem jeder, der über den Anwendungsschlüssel verfügt, auf Daten in der Tabelle zugreifen und diese ändern kann, ohne sich zuerst authentifizieren zu müssen.
+2. Erweitern Sie **Erweitert**, überprüfen Sie, ob die Tabellen-Aktionsberechtigungen standardmäßig auf **Jeder mit Anwendungsschlüssel** festgelegt sind, und klicken Sie dann auf **Erstellen**. 
 
-    <div class="dev-callout"><strong>Hinweis</strong><p>Der Anwendungsschl&uuml;ssel wird mit der Anwendung bereitgestellt. Da dieser Schl&uuml;ssel nicht sicher bereitgestellt wird, kann er nicht als Sicherheitstoken angesehen werden. F&uuml;r den sicheren Zugriff auf die Daten in Ihrem mobilen Dienst m&uuml;ssen Sie stattdessen Benutzer vor dem Zugriff authentifizieren. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj193161.aspx">Berechtigungen</a>.</p></div>
+	![create table in VS 2013 part 2](./media/mobile-services-create-new-table-vs2013/mobile-create-table-vs2013-2.png)
 
-  [Tabelle in VS 2013 erstellen]: ./media/mobile-services-create-new-table-vs2013/mobile-create-table-vs2013.png
-  [Tabelle in VS 2013 erstellen, Teil 2]: ./media/mobile-services-create-new-table-vs2013/mobile-create-table-vs2013-2.png
+	Auf diese Weise wird die TodoItem-Tabelle auf dem Server erstellt, auf dem jeder, der über den Anwendungsschlüssel verfügt, auf Daten in der Tabelle zugreifen und diese ändern kann, ohne sich zuerst authentifizieren zu müssen. 
+
+	>[WACOM.NOTE]Der Anwendungsschlüssel wird mit der Anwendung bereitgestellt. Da dieser Schlüssel nicht sicher bereitgestellt wird, kann er nicht als Sicherheitstoken angesehen werden. Für den sicheren Zugriff auf die Daten in Ihrem mobilen Dienst müssen Sie stattdessen Benutzer vor dem Zugriff authentifizieren. Weitere Informationen finden Sie unter [Berechtigungen](http://msdn.microsoft.com/de-de/library/windowsazure/jj193161.aspx).
+
+
+

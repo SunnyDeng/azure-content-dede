@@ -1,16 +1,19 @@
-1.  Halten Sie den mobilen Dienst an, wenn dieser aktuell in IIS Express ausgeführt wird. Klicken Sie mit der rechten Maustaste auf das IIS Express-Taskleistensymbol, und klicken Sie auf **stop**, um den mobilen Dienst anzuhalten.
+﻿
+1. Halten Sie den mobilen Dienst an, wenn dieser derzeit in IIS Express ausgeführt wird. Klicken Sie mit der rechten Maustaste auf das IIS Express-Taskleistensymbol, und klicken Sie auf **Anhalten**, um den mobilen Dienst anzuhalten.
 
-    ![][0]
+    ![](./media/mobile-services-how-to-configure-iis-express/iis-express-tray-stop-site.png)
 
-2.  Führen Sie im Eingabeaufforderungsfenster den Befehl **ipconfig** aus, um eine gültige lokale IP-Adresse für Ihre Arbeitsstation abzurufen.
 
-    ![][1]
+2. Führen Sie in einem Eingabeaufforderungsfenster den Befehl  **ipconfig** aus, um eine gültige lokale IP-Adresse für Ihre Arbeitsstation nachzuschlagen.
 
-3.  Öffnen Sie in Visual Studio die Datei "applicationhost.config" für IIS Express. Diese Datei befindet sich im folgenden Unterverzeichnis Ihres Benutzerprofilverzeichnisses.
+    ![](./media/mobile-services-how-to-configure-iis-express/ipconfig.png)
 
-        C:\UsersC:\Users\<your profile name>\Documents\IISExpress\config\applicationhost.configlt;your profile name>\Documents\IISExpress\config\applicationhost.config
 
-4.  Konfigurieren Sie IIS Express so, dass Remoteverbindungsanforderungen für den Dienst möglich sind. Suchen Sie dazu in der Datei "applicationhost.config" das Websiteelement für Ihren mobilen Dienst, und fügen Sie ein neues `binding`-Element für den Port unter Verwendung der weiter oben notierten IP-Adresse hinzu. Speichern Sie anschließend die Datei "applicationhost.config".
+3. 	Öffnen Sie in Visual Studio die Datei "applicationhost.config" für IIS Express. Diese Datei befindet sich im folgenden Unterverzeichnis Ihres Benutzerprofilverzeichnisses.
+
+        C:\Users\<your profile name>\Documents\IISExpress\config\applicationhost.config
+
+4. Konfigurieren Sie IIS Express so, dass Remoteverbindungsanforderungen für den Dienst zugelassen sind. Suchen Sie dazu in der Datei "applicationhost.config" das Websiteelement für Ihren mobilen Dienst, und fügen Sie ein neues `binding`-Element für den Port unter Verwendung der oben notierten IP-Adresse hinzu. Speichern Sie anschließend die Datei "applicationhost.config". 
 
     Das aktualisierte Websiteelement sollte etwa wie folgt aussehen:
 
@@ -24,16 +27,14 @@
             </bindings>
         </site>
 
-5.  Öffnen Sie die Windows-Firewall-Konsole, und erstellen Sie eine neue Portregel, sodass Verbindungen mit dem Port hergestellt werden können. Weitere Informationen zum Erstellen einer neuen Windows-Firewall-Portregel finden Sie unter [Hinzufügen einer neuen Windows-Firewall-Portregel][Hinzufügen einer neuen Windows-Firewall-Portregel].
+5. Öffnen Sie die Windows-Firewall-Konsole, und erstellen Sie eine neue Portregel, sodass Verbindungen mit dem Port hergestellt werden können. Weitere Informationen zum Erstellen einer neuen Windows-Firewall-Portregel finden Sie unter [Hinzufügen einer neuen Windows-Firewall-Portregel].
 
-    > [WACOM.NOTE] Wenn Ihr Testcomputer in eine Domäne eingebunden ist, können die Firewallausnahmen durch eine Domänenrichtlinie gesteuert werden. In diesem Fall müssen Sie sich an Ihren Domänenadministrator wenden, um eine Ausnahme für den Port auf Ihrem Computer zu erhalten.
+    >[WACOM.NOTE] Wenn der Testcomputer in eine Domäne eingebunden ist, werden die Firewallausnahmen u. U. durch eine Domänenrichtlinie gesteuert. In diesem Fall müssen Sie sich an den Domänenadministrator wenden, um auf Ihrem Computer eine Ausnahme für den Port zu erhalten.
 
-    Die Konfiguration sollte nun so eingerichtet sein, dass Sie mithilfe von IIS Express das Hosten Ihres mobilen Diensts testen können.
+    Die Konfiguration sollte nun so eingerichtet sein, dass Sie mobilen Dienst mit IIS Express als Host testen können. 
 
-    > [WACOM.NOTE] Wenn Sie mit dem lokalen Testen des Diensts fertig sind, sollten Sie die von Ihnen erstellte Windows-Firewallregel löschen.
+    >[WACOM.NOTE] Wenn Sie die lokalen Tests des Diensts abgeschlossen haben, sollten Sie die von Ihnen erstellte Windows-Firewallregel löschen. 
 
 
-
-  [0]: ./media/mobile-services-how-to-configure-iis-express/iis-express-tray-stop-site.png
-  [1]: ./media/mobile-services-how-to-configure-iis-express/ipconfig.png
-  [Hinzufügen einer neuen Windows-Firewall-Portregel]: http://go.microsoft.com/fwlink/?LinkId=392240
+<!-- URLs. -->
+[Gewusst wie: Hinzufügen einer neuen Windows-Firewall-Portregel]:  http://go.microsoft.com/fwlink/?LinkId=392240

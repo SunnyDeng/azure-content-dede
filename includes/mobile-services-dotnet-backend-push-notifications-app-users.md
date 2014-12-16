@@ -1,30 +1,31 @@
-1.  Erweitern Sie in Visual Studio im Projektmappen-Explorer den Ordner "App\_Start", und öffnen Sie die Datei "WebApiConfig.cs".
+﻿
+1. Erweitern Sie in Visual Studio im Projektmappen-Explorer den Ordner "App_Start", und öffnen Sie die Datei "WebApiConfig.cs".
 
-2.  Fügen Sie der Methode "Register" die folgende Codezeile nach der Definition von **ConfigOptions** hinzu:
+2. Fügen Sie der  Register-Methode die folgende Codezeile nach der Definition von **ConfigOptions** hinzu:
 
         options.PushAuthorization = 
             Microsoft.WindowsAzure.Mobile.Service.Security.AuthorizationLevel.User;
+ 
+	Damit wird die Benutzerauthentifizierung erzwungen, bevor die Registrierung für Pushbenachrichtigungen erfolgt. 
 
-    Damit wird die Benutzerauthentifizierung erzwungen, bevor die Registrierung für Pushbenachrichtigungen erfolgt.
+2. Klicken Sie mit der rechten Maustaste auf das Projekt, klicken Sie auf **Hinzufügen** und anschließend auf **Klasse...**.
 
-3.  Klicken Sie mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Hinzufügen** und **Klasse...**.
+3. Geben Sie der neuen leeren Klasse den Namen `PushRegistrationHandler`, und klicken Sie anschließend auf **Hinzufügen**.
 
-4.  Geben Sie der neuen leeren Klasse den Namen `PushRegistrationHandler`, und klicken Sie anschließend auf **Hinzufügen**.
+4. Fügen Sie am Anfang der Codeseite die folgenden **using**-Anweisungen hinzu:
 
-5.  Fügen Sie am Anfang der Codepage die folgenden **using**-Anweisungen hinzu:
+		using System.Threading.Tasks; 
+		using System.Web.Http; 
+		using System.Web.Http.Controllers; 
+		using Microsoft.WindowsAzure.Mobile.Service; 
+		using Microsoft.WindowsAzure.Mobile.Service.Notifications; 
+		using Microsoft.WindowsAzure.Mobile.Service.Security; 
 
-        using System.Threading.Tasks; 
-        using System.Web.Http; 
-        using System.Web.Http.Controllers; 
-        using Microsoft.WindowsAzure.Mobile.Service; 
-        using Microsoft.WindowsAzure.Mobile.Service.Notifications; 
-        using Microsoft.WindowsAzure.Mobile.Service.Security; 
-
-6.  Ersetzen Sie die vorhandene Klasse **PushRegistrationHandler** durch den folgenden Code:
-
-        public class PushRegistrationHandler : INotificationHandler
-        {
-            public Task Register(ApiServices services, HttpRequestContext context,
+5. Ersetzen Sie die vorhandene **PushRegistrationHandler**-Klasse durch den folgenden Code:
+ 
+	    public class PushRegistrationHandler : INotificationHandler
+	    {
+	        public Task Register(ApiServices services, HttpRequestContext context,
             NotificationRegistration registration)
         {
             try
@@ -67,27 +68,26 @@
             }
             return true;
         }
-
+	
         public Task Unregister(ApiServices services, HttpRequestContext context, 
             string deviceId)
         {
             // This is where you can hook into registration deletion.
             return Task.FromResult(true);
         }
-
     }
 
-    Die Methode **Register** wird während der Registrierung aufgerufen. Damit können Sie der Registrierung eine Markierung hinzufügen, die die ID des angemeldeten Benutzers ist. Die bereitgestellten Markierungen werden überprüft, damit keine Registrierung mit der ID eines anderen Benutzers von einem Benutzer ausgeführt werden kann. Eine an diesen Benutzer gesendete Benachrichtigung wird auf diesem und jedem anderen Gerät empfangen, das vom Benutzer registriert wurde.
+	Die **Register**-Methode wird während der Registrierung aufgerufen. Damit können Sie der Registrierung eine Markierung hinzufügen, die die ID des angemeldeten Benutzers ist. Die bereitgestellten Markierungen werden überprüft, damit keine Registrierung mit der ID eines anderen Benutzers von einem Benutzer ausgeführt werden kann. Eine an diesen Benutzer gesendete Benachrichtigung wird auf diesem und jedem anderen Gerät empfangen, das vom Benutzer registriert wurde. 
 
-7.  Erweitern Sie den Ordner "Controllers", öffnen Sie die Projektdatei "TodoItemController.cs", suchen Sie die Methode **PostTodoItem**, und ersetzen Sie die Codezeile, die **SendAsync** aufruft, durch folgenden Code:
+6. 	Erweitern Sie den Ordner "Controllers", öffnen Sie die Projektdatei "TodoItemController.cs", suchen Sie die **PostTodoItem**-Methode, und ersetzen Sie die Codezeile mit dem Aufruf von **SendAsync** durch folgenden Code:
 
         // Get the logged-in user.
-        var currentUser = this.User as ServiceUser;
-
-        // Use a tag to only send the notification to the logged-in user.
+		var currentUser = this.User as ServiceUser;
+		
+		// Use a tag to only send the notification to the logged-in user.
         var result = await Services.Push.SendAsync(message, currentUser.Id);
 
-8.  Veröffentlichen Sie das Projekt mit dem mobilen Dienst erneut.
+7. Veröffentlichen Sie das Projekt mit dem mobilen Dienst erneut.
 
 Nun verwendet der Dienst die Benutzer-ID-Markierung, um eine Pushbenachrichtigung (mit dem Text des eingefügten Elements) an alle Registrierungen zu senden, die vom angemeldeten Benutzer erstellt wurden.
 

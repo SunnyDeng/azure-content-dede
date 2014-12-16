@@ -1,20 +1,21 @@
-1.  Führen Sie die Clientanwendung in Visual Studio aus, und versuchen Sie, sich mit dem Benutzerkonto namens Dave zu authentifizieren.
+﻿
+Die nachfolgenden Anweisungen und Screenshots gelten für das Testen eines Windows Store-Clients, aber Sie können dies auch mit beliebigen anderen Plattformen testen, die von Azure Mobile Services unterstützt werden. 
 
-    ![][0]
+1. Führen Sie die Client-App in Visual Studio aus, und versuchen Sie, sich mit dem Benutzerkonto namens "Dave" zu authentifizieren. 
 
-2.  Dave ist nicht Mitglied der Gruppe "Sales". Die rollenbasierte Zugriffsprüfung verweigert daher den Zugriff auf Tabellenvorgänge. Schlie´ßen Sie die Clientanwendung.
+    ![](./media/mobile-services-aad-rbac-test-app/dave-login.png)
 
-    ![][1]
+2. Dave ist nicht Mitglied der Gruppe "Sales". Die rollenbasierte Zugriffsprüfung verweigert daher den Zugriff auf Tabellenvorgänge. Schließen Sie die Client-App.
 
-3.  Führen Sie die Clientanwendung in Visual Studio erneut aus. Dieses Mal authentifizieren Sie sich mit dem Benutzerkonto namens Bob, das wir zuvor erstellt haben.
+    ![](./media/mobile-services-aad-rbac-test-app/unauthorized.png)
 
-    ![][2]
+3. Führen Sie die Client-App in Visual Studio erneut aus. Dieses Mal authentifizieren Sie sich mit dem Benutzerkonto namens "Bob", das wir zuvor erstellt haben.
 
-4.  Bob ist Mitglied der Gruppe "Sales". Die rollenbasierte Zugriffsprüfung lässt daher den Zugriff auf Tabellenvorgänge zu.
+    ![](./media/mobile-services-aad-rbac-test-app/bob-login.png)
 
-    ![][3]
+4. Bob ist Mitglied der Gruppe "Sales". Die rollenbasierte Zugriffsprüfung lässt daher den Zugriff auf Tabellenvorgänge zu.
 
-  [0]: ./media/mobile-services-aad-rbac-test-app/dave-login.png
-  [1]: ./media/mobile-services-aad-rbac-test-app/unauthorized.png
-  [2]: ./media/mobile-services-aad-rbac-test-app/bob-login.png
-  [3]: ./media/mobile-services-aad-rbac-test-app/success.png
+    ![](./media/mobile-services-aad-rbac-test-app/success.png)
+
+
+

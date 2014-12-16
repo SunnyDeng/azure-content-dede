@@ -1,35 +1,32 @@
-<properties linkid="develop-mobile-tutorials-sso-with-adal" urlDisplayName="Active Directory SSO Authentication with ADAL" pageTitle="Authenticate your app with Active Directory Authentication Library Single Sign-On (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to authentication users for single sign-on with ADAL in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Authenticate your app with Active Directory Authentication Library Single Sign-On" authors="wesmc" />
+﻿<properties urlDisplayName="Active Directory SSO Authentication with ADAL" pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (Windows Store) | Mobile Developer Center" metaKeywords="" description="Learn how to authentication users for single sign-on with ADAL in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Authenticate your app with Active Directory Authentication Library Single Sign-On" authors="wesmc" manager="dwrede" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="wesmc" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="10/14/2014" ms.author="wesmc" />
 
 # Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication" title="Windows Store C#" class="current">Windows Store C#</a>
-<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication" title="iOS" >iOS</a>
-<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-adal-sso-authentication" title="Xamarin.iOS">Xamarin.iOS</a>
-</div>
+[WACOM.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
-In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe der Active Directory-Authentifizierungsbibliothek zum Schnellstartprojekt hinzu.
+In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe der Active Directory-Authentifizierungsbibliothek zum Schnellstartprojekt zur Unterstützung von [Client-angewiesenen Anmeldevorgängen](http://msdn.microsoft.com/de-de/library/azure/jj710106.aspx) mit Azure Active Directory hinzu. Zur Unterstützung von [dienstangewiesenen Anmeldevorgängen](http://msdn.microsoft.com/de-de/library/azure/dn283952.aspx) mit Azure Active Directory, beginnen Sie mit dem Lernprogramm [Authentifizierung zu Ihrer Mobile Services-App hinzufügen](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/).
 
 Um Benutzer authentifizieren zu können, müssen Sie Ihre Anwendung in Azure Active Directory (AAD) registrieren. Dazu sind zwei Schritte erforderlich. Zunächst müssen Sie Ihren mobilen Dienst registrieren und entsprechende Berechtigungen vergeben. Anschließend müssen Sie Ihre Windows Store-App registrieren und der App Zugriff auf diese Berechtigungen gewähren
 
-> [WACOM.NOTE] In diesem Lernprogramm erfahren Sie, wie Sie die Authentifizierung per einmaliger Anmeldung in Azure Active Directory für Windows Store-Apps umsetzen können. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] abschließen.
+
+>[AZURE.NOTE] In diesem Lernprogramm erfahren Sie, wie Sie die Authentifizierung per einmaliger Anmeldung in Azure Active Directory für Windows Store-Apps mithilfe eines [Client-angewiesenen Anmeldevorgangs](http://msdn.microsoft.com/de-de/library/azure/jj710106.aspx) umsetzen können. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
-1.  [Registrieren Ihres mobilen Diensts beim Azure Active Directory][Registrieren Ihres mobilen Diensts beim Azure Active Directory]
-2.  [Registrieren Ihre App beim Azure Active Directory][Registrieren Ihre App beim Azure Active Directory]
-3.  [Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung][Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]
-4.  [Hinzufügen des Authentifizierungscodes zur Client-App][Hinzufügen des Authentifizierungscodes zur Client-App]
-5.  [Testen des Clients mit Authentifizierung][Testen des Clients mit Authentifizierung]
+1. [Registrieren Ihres mobilen Diensts beim Azure Active Directory]
+2. [Registrieren Sie Ihre App beim Azure Active Directory] 
+3. [Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]
+4. [Hinzufügen des Authentifizierungscodes zur Client-App]
+5. [Testen des Clients mit Authentifizierung]
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
--   Visual Studio 2013 für Windows 8.1
--   Abschluss des Lernprogramms [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten][Erste Schritte mit Daten].
--   NuGet-Paket: Azure Mobile Services SDK
--   NuGet-Paket: Active Directory-Bibliothek für Authentifizierung
+* Visual Studio 2013 für Windows 8.1
+* Abschluss des Lernprogramms [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten].
+* NuGet-Paket: Azure Mobile Services SDK
+* NuGet-Paket: Active Directory-Bibliothek für Authentifizierung 
 
 [WACOM.INCLUDE [mobile-services-dotnet-adal-register-service](../includes/mobile-services-dotnet-adal-register-service.md)]
 
@@ -37,71 +34,75 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Um Ihre App bei Azure Active Directory zu registrieren, müssen Sie die App im Windows Store zuweisen und benötigen eine Paket-Sicherheits-ID (SID) für die App. Die Paket-SID wird mit den systemeigenen Anwendungseinstellungen in Azure Active Directory registriert.
 
+
 ### Zuordnen der App mit einem neuen Store-App-Namen
 
-1.  Klicken Sie in Visual Studio mit der rechten Maustaste auf das Client-App-Projekt und klicken Sie auf **Store** und **App dem Store zuordnen**
-
-    ![][0]
-
-2.  Melden Sie sich mit Ihrem Dev Center-Konto an.
-
-3.  Geben Sie den Namen ein, den sie für die App reservieren möchten, und klicken Sie auf **Reservieren**.
+1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Client-App-Projekt und klicken Sie auf **Store** und **App dem Store zuordnen**
 
     ![][1]
 
-4.  Wählen Sie den neuen App-Namen aus und klicken Sie auf **Weiter**.
+2. Melden Sie sich mit Ihrem Dev Center-Konto an.
 
-5.  Klicken Sie auf **Zuordnen**, um die App zum Store-Namen zuzuordnen.
+3. Geben Sie den Namen ein, den sie für die App reservieren möchten, und klicken Sie auf **Reservieren**.
+
+    ![][2]
+
+4. Wählen Sie den neuen App-Namen aus und klicken Sie auf **Weiter**.
+
+5. Klicken Sie auf **Zuordnen**, um die App zum Store-Namen zuzuordnen.
+
 
 ### Rufen Sie die Paket-SID für Ihre App ab.
 
 Nun müssen Sie die Paket-SID abrufen, die in den systemeigenen App-Einstellungen konfiguriert ist.
 
-1.  Melden Sie sich bei Ihrem [Windows Dev Center-Dashboard][Windows Dev Center-Dashboard] an und klicken Sie auf **Bearbeiten** für die App.
-
-    ![][2]
-
-2.  Klicken Sie anschließend auf **Dienste**
+1. Melden Sie sich bei Ihrem [Windows Dev Center-Dashboard] an und klicken Sie auf **Bearbeiten** für die App.
 
     ![][3]
 
-3.  Klicken Sie auf **Live-Dienste-Website**.
+2. Klicken Sie anschließend auf **Dienste**
 
     ![][4]
 
-4.  Kopieren Sie Ihre Paket-SID im oberen Bereich der Seite.
+3. Klicken Sie daraufhin auf **Live-Dienste-Website**. 
 
     ![][5]
 
-### Erstellen der systemeigenen App-Registrierung
-
-1.  Navigieren Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] zu **Active Directory**, und klicken Sie dann auf Ihr Verzeichnis.
+4. Kopieren Sie Ihre Paket-SID im oberen Bereich der Seite.
 
     ![][6]
 
-2.  Klicken Sie oben auf die Registerkarte **Applications** und anschließend auf **ADD**, um eine App hinzuzufügen.
+### Erstellen der systemeigenen App-Registrierung
 
-    ![][7]
+1. Navigieren Sie im [Azure-Verwaltungsportal] zu **Active Directory**, und klicken Sie dann auf Ihr Verzeichnis.
 
-3.  Klicken Sie auf **Add an application my organization is developing**.
+    ![][7] 
 
-4.  Geben Sie im Assistenten zum Hinzufügen von Anwendungen einen **Namen** für Ihre Anwendung ein, und klicken Sie auf den Typ **Systemeigene Clientanwendung**. Klicken Sie dann auf Continue.
+2. Klicken Sie oben auf die Registerkarte **Applications** und anschließend auf **ADD**, um eine App hinzuzufügen. 
 
     ![][8]
 
-5.  Fügen Sie die zuvor kopierte Paket-SID der App in das Feld **Weiterleitungs-URI** ein und schließen Sie die systemeigene App-Registrierung ab.
+3. Klicken Sie auf **Eine von meinem Unternehmen entwickelte Anwendung hinzufügen**.
+
+4. Geben Sie im Assistenten zum Hinzufügen von Anwendungen einen **Namen** für Ihre Anwendung ein, und klicken Sie auf den Typ **Systemeigene Clientanwendung**. Klicken Sie dann, um fortzufahren.
 
     ![][9]
 
-6.  Klicken Sie auf die Registerkarte **Konfigurieren** für die systemeigene Anwendung, und kopieren Sie die **Client-ID**. Sie benötigen sie später.
+5. Fügen Sie die zuvor kopierte Paket-SID der App in das Feld **Weiterleitungs-URI** ein und schließen Sie die systemeigene App-Registrierung ab.
 
     ![][10]
 
-7.  Blättern Sie nach unten zum Abschnitt **Berechtigungen für andere Anwendungen**, und gewähren Sie Vollzugriff auf die zuvor registrierte Mobile Services-Anwendung. Klicken Sie dann auf **Speichern**
+6. Klicken Sie auf die Registerkarte **Konfigurieren** für die systemeigene Anwendung, und kopieren Sie die **Client-ID**. Sie benötigen sie später.
 
     ![][11]
 
+7. Blättern Sie nach unten zum Abschnitt **Berechtigungen für andere Anwendungen**, und gewähren Sie Vollzugriff auf die zuvor registrierte Mobile Services-Anwendung. Klicken Sie dann auf **Speichern**
+
+    ![][12]
+
 Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von Ihrer Anwendung empfangen kann.
+
+
 
 ## <a name="require-authentication"></a>Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung
 
@@ -109,17 +110,18 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 
 ## <a name="add-authentication-code"></a>Hinzufügen des Authentifizierungscodes zur Client-App
 
-1.  Öffnen Sie Ihr Windows Store-Client-App-Projekt in Visual Studio.
+1. Öffnen Sie Ihr Windows Store-Client-App-Projekt in Visual Studio.
 
 [WACOM.INCLUDE [mobile-services-dotnet-adal-install-nuget](../includes/mobile-services-dotnet-adal-install-nuget.md)]
 
-1.  Öffnen Sie im Projektmappen-Explorer in Visual Studio die Datei MainPage.xaml.cs und fügen Sie die folgenden using-Anweisungen hinzu.
+4. Öffnen Sie im Projektmappen-Explorer in Visual Studio die Datei MainPage.xaml.cs und fügen Sie die folgenden using-Anweisungen hinzu.
 
         using Windows.UI.Popups;
         using Microsoft.IdentityModel.Clients.ActiveDirectory;
         using Newtonsoft.Json.Linq;
 
-2.  Fügen Sie den folgenden Code zur MainPage-Klasse hinzu, um die `AuthenticateAsync`-Methode zu deklarieren.
+
+5. Fügen Sie den folgenden Code zur MainPage-Klasse hinzu, um die `AuthenticateAsync`-Methode zu deklarieren.
 
         private MobileServiceUser user; 
         private async Task AuthenticateAsync()
@@ -133,7 +135,7 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
                 try
                 {
                   AuthenticationContext ac = new AuthenticationContext(authority);
-                  AuthenticationResult ar = await ac.AcquireTokenAsync(resourceURI, clientID);
+                  AuthenticationResult ar = await ac.AcquireTokenAsync(resourceURI, clientID, (Uri) null);
                   JObject payload = new JObject();
                   payload["access_token"] = ar.AccessToken;
                   user = await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory, payload);
@@ -149,57 +151,64 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
             } 
         }
 
-3.  Ersetzen Sie im Code für die oben angegebene `AuthenticateAsync`-Methode **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie Ihre Anwendung bereitgestellt haben. Verwenden Sie dabei das Format <https://login.windows.net/tenant-name.onmicrosoft.com>. Sie können diesen Wert in der Registerkarte Domäne in Ihrem Azure Active Directory im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] kopieren.
+6. Ersetzen Sie im Code der obigen obigen Methode`AuthenticateAsync`-Methode den Text **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie die Anwendung bereitstellen. Der Name sollte folgendes Format haben: https://login.windows.net/tenant-name.onmicrosoft.com. Sie können diesen Wert von der Registerkarte "Domäne" in Azure Active Directory im[Azure-Verwaltungsportal] kopieren.
 
-4.  Ersetzen Sie im Code für die oben angegebene `AuthenticateAsync`-Methode **INSERT-RESOURCE-URI-HERE** durch die **URI der APP-ID** für Ihren mobilen Dienst. Wenn Sie das Thema [Registrieren in Azure Active Directory][Registrieren in Azure Active Directory] verfolgt haben, sollte Ihre URI der App-ID in etwa so aussehen: <https://todolist.azure-mobile.net/login/aad>.
+7. Ersetzen Sie im Code für die oben angegebene `AuthenticateAsync`-Methode den Text **INSERT-RESOURCE-URI-HERE** durch die **App-ID-URI** des mobilen Diensts. Wenn Sie das Thema [Registrieren in Azure Active Directory] verfolgt haben, sollte Ihre URI der App-ID in etwa so aussehen: <a href="https://todolist.azure-mobile.net/login/aad" class="uri">https://todolist.azure-mobile.net/login/aad.
 
-5.  Ersetzen Sie im Code für die oben angegebene `AuthenticateAsync`-Methode **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der systemeigenen Clientanwendung kopiert haben.
+8. Ersetzen Sie im Code für die oben angegebene `AuthenticateAsync`-Methode den Text **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der systemeigenen Clientanwendung kopiert haben.
 
-6.  Öffnen Sie im Projektmappen-Explorer von Visual Studio die Datei Package.appxmanifest im Clientprojekt. Klicken Sie auf die Registerkarte **Funktionen** und aktivieren Sie **Enterprise-Anwendung** und **Private Netzwerke (Client & Server)**. Speichern Sie die Datei.
+9. Öffnen Sie im Projektmappen-Explorer von Visual Studio die Datei Package.appxmanifest im Clientprojekt. Klicken Sie auf die Registerkarte **Funktionen** und aktivieren Sie **Enterprise-Anwendung** und **Private Netzwerke (Client & Server)**. Speichern Sie die Datei.
 
-    ![][12]
+    ![][14]
 
-7.  Bearbeiten Sie in der Datei MainPage.cs den `OnNavigatedTo`-Ereignishandler so, dass die `AuthenticateAsync`-Methode wie folgt aufgerufen wird.
+10. Bearbeiten Sie in der Datei "MainPage.cs" den `OnNavigatedTo`-Ereignishandler so, dass die `AuthenticateAsync`-Methode wie folgt aufgerufen wird.
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (user == null)
-                await AuthenticateAsync();
-
-            RefreshTodoItems();
+            await AuthenticateAsync();
+            await RefreshTodoItems();
         }
+
 
 ## <a name="test-client"></a>Testen des Clients mit Authentifizierung
 
-1.  Führen Sie die Client-App in Visual Studio aus.
-2.  Sie werden aufgefordert, sich bei Ihrem Azure Active Directory anzumelden.
-3.  Die App authentifiziert sich und gibt die TodoItems zurück.
+1. Führen Sie die Client-App in Visual Studio aus.
+2. Sie werden aufgefordert, sich bei Ihrem Azure Active Directory anzumelden.  
+3. Die App authentifiziert sich und gibt die TodoItems zurück.
 
-    ![][13]
+    ![][15]
 
- <!-- Images --> 
 
-  [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
-  [Registrieren Ihres mobilen Diensts beim Azure Active Directory]: #register-mobile-service-aad
-  [Registrieren Ihre App beim Azure Active Directory]: #register-app-aad
-  [Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]: #require-authentication
-  [Hinzufügen des Authentifizierungscodes zur Client-App]: #add-authentication-code
-  [Testen des Clients mit Authentifizierung]: #test-client
-  [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
-  [0]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-vs-associate-app.png
-  [1]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-vs-reserve-store-appname.png
-  [Windows Dev Center-Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734
-  [2]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-store-app-edit.png
-  [3]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-store-app-services.png
-  [4]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-live-services-site.png
-  [5]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-store-app-package-sid.png
-  [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-  [6]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-select-aad.png
-  [7]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-aad-applications-tab.png
-  [8]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-selection.png
-  [9]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-sid-redirect-uri.png
-  [10]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-client-id.png
-  [11]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-add-permissions.png
-  [Registrieren in Azure Active Directory]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
-  [12]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-package-appxmanifest.png
-  [13]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-app-run.png
+
+<!-- Anchors. -->
+[Registrieren Ihres mobilen Diensts beim Azure Active Directory]: #register-mobile-service-aad
+[Registrieren Ihre App beim Azure Active Directory]: #register-app-aad
+[Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]: #require-authentication
+[Mobiler JavaScript-Back-End-Dienst]: #javascript-authentication
+[Mobiler .NET-Back-End-Dienst]: #dotnet-authentication
+[Hinzufügen des Authentifizierungscodes zur Client-App]: #add-authentication-code
+[Testen des Clients mit Authentifizierung]: #test-client
+
+<!-- Images -->
+[0]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-aad-app-manage-manifest.png
+[1]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-vs-associate-app.png
+[2]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-vs-reserve-store-appname.png
+[3]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-store-app-edit.png
+[4]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-store-app-services.png
+[5]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-live-services-site.png
+[6]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-store-app-package-sid.png
+[7]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-select-aad.png
+[8]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-aad-applications-tab.png
+[9]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-selection.png
+[10]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-sid-redirect-uri.png
+[11]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-client-id.png
+[12]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-native-add-permissions.png
+[14]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-package-appxmanifest.png
+[15]: ./media/mobile-services-windows-store-dotnet-adal-sso-authenticate/mobile-services-app-run.png
+
+<!-- URLs. -->
+[So registrieren Sie sich beim Azure Active Directory]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
+[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
+[Windows Dev Center-Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734

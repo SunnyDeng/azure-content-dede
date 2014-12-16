@@ -109,7 +109,7 @@ Führen Sie die folgenden Schritte aus, um den Rails-Server in Ihrer Entwicklung
         [2013-03-12 19:11:31] INFO  ruby 1.9.3 (2012-04-20) [x86_64-linux]
         [2013-03-12 19:11:31] INFO  WEBrick::HTTPServer#start: pid=9789 port=3000
 
-2.  Öffnen Sie Ihren Browser und navigieren Sie zu <http://localhost:3000/>. Eine Seite ähnlich der folgenden wird angezeigt:
+2.  Öffnen Sie Ihren Browser und navigieren Sie zu http://localhost:3000/. Eine Seite ähnlich der folgenden wird angezeigt:
 
     ![Standard-Rails-Seite][Standard-Rails-Seite]
 
@@ -302,3 +302,4 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
   [Speichern von unstrukturierten Daten mit Blobs]: /de-de/documentation/articles/storage-ruby-how-to-use-blob-storage
   [Speichern von Schlüssel/Wert-Paaren mit Tabellen]: /de-de/develop/ruby/how-to-guides/table-service/
   [Bereitstellen von breitbandigen Inhalten über das Content Delivery Network]: /de-de/develop/ruby/app-services/
+  [Unicorn+NginX+Capistrano mit einem virtuellen Azure-Computer]: /de-de/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/

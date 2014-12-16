@@ -8,7 +8,7 @@ In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Dienstve
 
 ## Inhaltsverzeichnis
 
--   [Was ist Dienstverwaltung?][Was ist Dienstverwaltung?]
+-   [Was ist Dienstverwaltung?](#WhatIs)
 -   [Konzepte][Konzepte]
 -   [Erstellen einer PHP-Anwendung][Erstellen einer PHP-Anwendung]
 -   [Abrufen der Azure-Clientbibliotheken][Abrufen der Azure-Clientbibliotheken]

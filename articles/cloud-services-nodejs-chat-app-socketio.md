@@ -46,7 +46,7 @@ herunterzuladen und es dem zuvor erstellten Projekt hinzuzufügen.
      gelangen. Kopieren Sie den Inhalt dieses Verzeichnisses in das zuvor erstellte Verzeichnis
     **C:\\node\\chatapp\\WorkerRole1**.
 
-    ![Explorer zeigt den Inhalt des aus dem Archiv extrahierten Verzeichnisses "examples\chat" an.][Explorer zeigt den Inhalt des aus dem Archiv extrahierten Verzeichnisses "examples\chat" an.]
+    ![Explorer zeigt den Inhalt des aus dem Archiv extrahierten Verzeichnisses "examples\chat" an.][chat-contents]
 
     Die hervorgehobenen Elemente im Screenshot oben sind die aus dem Verzeichnis **examples\\chat** kopierten Dateien.
 
@@ -155,3 +155,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung 
   [Ausgabe des Befehls npm install]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-7.png
   [Zwei Browserfenster, in denen Chat-Nachrichten von Benutzer1 und Benutzer2 angezeigt werden]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-8.png
   [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einer Azure-Website]: /de-de/develop/nodejs/tutorials/website-using-socketio/
+  [chat-contents]:  ./media/cloud-services-nodejs-chat-app-socketio/socketio-5.png

@@ -1,156 +1,165 @@
-<properties linkid="develop-python-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="How to use Service Bus queues (Python) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Python" description="Learn how to use Service Bus queues in Azure. Code samples written in Python." metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Queues" authors="huvalo" solutions="" manager="" editor="" />
+﻿<properties urlDisplayName="Service Bus Queues" pageTitle="Verwenden von Service Bus-Warteschlangen (Python) - Azure"," MetaKeywords "=" Azure Service Bus-Warteschlangen, Azure-Warteschlangen, Azure Messaging, Azure-Warteschlangen Python" description="Learn how to use Service Bus queues in Azure. Code samples written in Python." metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Queues" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
+<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/19/2014" ms.author="huvalo" />
+
+
+
 
 # Einsatz von Servicebus-Warteschlangen
-
 In diesem Leitfaden erfahren Sie, wie Sie die Servicebus-Warteschlangen verwenden können. Die Beispiele sind
 in Python geschrieben und verwenden das Python Azure-Modul. Die Szenarien
-behandeln die Themen **Erstellen von Warteschlangen, Senden und Empfangen von
-Nachrichten** und **Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][Nächste Schritte].
+behandeln die Themen **Erstellen von Warteschlangen, Senden und Empfangen von Nachrichten** und
+**Löschen der Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
 
 ## Inhaltsverzeichnis
 
--   [Was sind Servicebus-Warteschlangen?][Was sind Servicebus-Warteschlangen?]
--   [Erstellen eines Dienstnamespace][Erstellen eines Dienstnamespace]
--   [Abrufen der Standard-Anmeldeinformationen für den Namespace][Abrufen der Standard-Anmeldeinformationen für den Namespace]
--   [Gewusst wie: Erstellen einer Warteschlange][Gewusst wie: Erstellen einer Warteschlange]
--   [Gewusst wie: Senden von Nachrichten an eine Warteschlange][Gewusst wie: Senden von Nachrichten an eine Warteschlange]
--   [Gewusst wie: Empfangen von Nachrichten aus einer Warteschlange][Gewusst wie: Empfangen von Nachrichten aus einer Warteschlange]
--   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten][Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]
--   [Nächste Schritte][Nächste Schritte]
+-   [Was sind Servicebus-Warteschlangen?][]
+-   [Erstellen eines Dienstnamespace][]
+-   [Abrufen der Standard-Anmeldeinformationen für den Namespace][]
+-   [Gewusst wie: Erstellen einer Warteschlange][]
+-   [Gewusst wie: Senden von Nachrichten an eine Warteschlange][]
+-   [Gewusst wie: Empfangen von Nachrichten aus einer Warteschlange][]
+-   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten][]
+-   [Nächste Schritte][]
 
 [WACOM.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
-**Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch][Python-Installationshandbuch].
+**Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch](../python-how-to-install/).
+
 
 ## <a name="create-queue"> </a>Erstellen einer Warteschlange
 
 Das Objekt **ServiceBusService** ermöglicht es Ihnen, mit Warteschlangen zu arbeiten. Fügen Sie am Anfang jeder Python-Datei, in der Sie programmgesteuert auf Azure Service Bus zugreifen möchten, den folgenden Code hinzu:
 
-    from azure.servicebus import *
+	from azure.servicebus import ServiceBusService, Message, Queue
 
 Der folgende Code erstellt ein **ServiceBusService**-Objekt. Ersetzen Sie "mynamespace", "sharedaccesskeyname" und "sharedaccesskey" durch den echten Namespace, den Namen des SAS-Schlüssels (Shared Access Signature) und den Wert dieses Schlüssels.
 
-    bus_service = ServiceBusService(
-        service_namespace='mynamespace',
-        shared_access_key_name='sharedaccesskeyname',
-        shared_access_key_value='sharedaccesskey')
+	bus_service = ServiceBusService(
+		service_namespace='mynamespace',
+		shared_access_key_name='sharedaccesskeyname',
+		shared_access_key_value='sharedaccesskey')
 
 Den Namen und Wert des SAS-Schlüssels finden Sie in den Verbindungsinformationen des Azure-Portals oder im Eigenschaftsfenster von Visual Studio, wenn Sie den Service Bus-Namespace im Server-Explorer auswählen (wie im vorherigen Abschnitt gezeigt).
 
-    bus_service.create_queue('taskqueue')
+	bus_service.create_queue('taskqueue')
 
-**create\_queue** unterstützt zudem weitere Optionen, mit
-denen Sie Standardeinstellungen für die Warteschlange überschreiben
-können, wie zum Beispiel die Gültigkeitsdauer von Nachrichten oder die maximale Warteschlangengröße. Das folgende Beispiel zeigt, wie Sie die
-maximale Warteschlangengröße auf 5 GB bei einer Gültigkeitsdauer von 1 Minute festlegen:
+**create_queue** unterstützt zudem weitere Optionen,
+mit denen Sie die Standardeinstellungen wie z. B. Nachrichtenlebensdauer
+oder maximale Warteschlangengröße überschreiben können. Das folgende Beispiel zeigt, wie Sie die
+maximale Warteschlangengröße auf 5 GB bei einer Gültigkeitsdauer von 1 Minute festlegen:
 
-    queue_options = Queue()
-    queue_options.max_size_in_megabytes = '5120'
-    queue_options.default_message_time_to_live = 'PT1M'
+	queue_options = Queue()
+	queue_options.max_size_in_megabytes = '5120'
+	queue_options.default_message_time_to_live = 'PT1M'
 
-    bus_service.create_queue('taskqueue', queue_options)
+	bus_service.create_queue('taskqueue', queue_options)
 
 ## <a name="send-messages"> </a>Senden von Nachrichten an eine Warteschlange
 
 Um eine Nachricht an eine Service Bus-Warteschlange zu senden, ruft Ihre Anwendung die
-**send\_queue\_message**-Methode auf dem
-**ServiceBusService**-Objekt auf.
+**send\_queue\_message**-Methode für das **ServiceBusService**-Objekt auf.
 
 Das folgende Beispiel zeigt, wie eine Testnachricht an die Warteschlange
-*taskqueue* mithilfe von **send\_queue\_message** gesendet wird:
+mit dem Namen *taskqueue using* **send\_queue\_message** gesendet wird:
 
-    msg = Message('Test Message')
-    bus_service.send_queue_message('taskqueue', msg)
+	msg = Message(b'Test Message')
+	bus_service.send_queue_message('taskqueue', msg)
 
-Service Bus-Warteschlangen unterstützen eine maximale Nachrichtengröße von
-256 KB (der Header, der die standardmäßigen und die
-benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 KB haben). Bei der Anzahl der Nachrichten, die in einer
-Warteschlange aufgenommen werden können, besteht keine Beschränkung.
-Allerdings gilt eine Deckelung bei der Gesamtgröße der in einer Warteschlange aufzunehmenden Nachrichten. Die Warteschlangengröße wird bei der Erstellung
-definiert. Die Obergrenze beträgt 5 GB.
+Service Bus-Warteschlangen unterstützen eine maximale Nachrichtengröße von 256 KB (der Header,
+der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine
+maximale Größe von 64 KB haben). Es gibt keine Beschränkung für die Anzahl der Nachrichten
+in einer Warteschlange aufgenommen, aber es gibt eine Obergrenze für die Gesamtgröße der Nachrichten,
+die in eine Warteschlange aufgenommen werden können. Die Warteschlangengröße wird bei der Erstellung definiert.
+Die Obergrenze beträgt 5 GB.
 
 ## <a name="receive-messages"> </a>Empfangen von Nachrichten aus einer Warteschlange
 
-Nachrichten werden von einer Warteschlange über **receive\_queue\_message**
--Methode des **ServiceBusService**
--Objekts empfangen:
+Nachrichten werden aus einer Warteschlange unter Verwendung von **receive\_queue\_message**
+-Methode für das **ServiceBusService**-Objekt empfangen:
 
-    msg = bus_service.receive_queue_message('taskqueue', peek_lock=False)
-    print(msg.body)
+	msg = bus_service.receive_queue_message('taskqueue', peek_lock=False)
+	print(msg.body)
 
-Wenn der Parameter **peek\_lock** auf **False** festgelegt ist,
-werden Nachrichten nach dem Lesen aus der Warteschlange gelöscht. Sie können die Nachricht lesen
-(einen Blick darauf werfen) und sperren, ohne sie aus der Warteschlange zu löschen, indem Sie den Parameter
+Nachrichten werden sofort nach dem Lesen aus der Warteschlange gelöscht, wenn der Parameter
+**peek\_lock** auf **False** festgelegt ist. Sie können die
+Nachricht lesen (peek) und sperren, ohne sie aus der Warteschlange zu löschen, indem Sie den Parameter
 **peek\_lock** auf **True** festlegen.
 
-Das Verhalten für das Lesen und Löschen der Nachricht
-als Teil des Empfangsvorgangs ist das einfachste Modell. Es wird am
-besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren
-kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich
-ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und
-dann abstürzt, bevor diese verarbeitet wird. Da die Nachricht von Service Bus als verarbeitet markiert wurde,
-wird die vor dem Absturz verarbeitete Nachricht nicht berücksichtigt, wenn die
-Anwendung neu gestartet und die Verarbeitung von Nachrichten wieder aufgenommen wird.
+Das Verhalten von Lesen und Löschen der Nachricht als Teil
+des Empfangsvorgangs ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen
+es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten
+eines Fehlers nicht verarbeitet wird. Um dies zu verstehen, betrachten Sie ein Szenario, in dem der
+Verbraucher die Empfangsanforderung ausstellt und dann vor der Verarbeitung
+abstürzt. Da Service Bus die Nachricht als verarbeitet markiert hat,
+fehlt die Nachricht, die vor dem Absturz verarbeitet wurde, wenn die Anwendung
+neu gestartet wird und wieder Nachrichten verarbeitet.
 
-Wenn der Parameter **peek\_lock** auf **True** festgelegt ist, wird der
-Empfangsvorgang zu einem zweistufigen Vorgang. Dadurch können Anwendungen
-unterstützt werden, die das Auslassen bzw. Fehlen von Nachrichten nicht zulassen können. Wenn Service Bus eine
-Anforderung erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht,
-sperrt diese, um zu verhindern, dass andere Consumer sie erhalten,
-und sendet sie dann an die Anwendung zurück. Nachdem die
-Anwendung die Verarbeitung der Nachricht abgeschlossen hat
-(oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt sie die zweite
-Phase des Empfangsprozesses durch, indem sie die Methode **delete** für das Objekt **Message** aufruft. Die Methode **delete** markiert die Nachricht als verarbeitet und
-entfernt sie aus der Warteschlange.
 
-    msg = bus_service.receive_queue_message('taskqueue', peek_lock=True)
-    print(msg.body)
+Wenn der **peek\_lock**-Parameter auf **True** festgelegt ist, wird der Empfang
+zu einem zweistufigen Vorgang, der es ermöglicht, Anwendungen zu unterstützen,
+in denen fehlende Nachrichten nicht toleriert werden. Wenn Service Bus eine
+Anforderung erhält, wird die nächste zu verarbeitende Nachricht gesucht, gesperrt, um zu verhindern,
+dass sie von anderen Empfängern erhalten wird, und dann an die Anwendung zurückgegeben.
+Nachdem die Anwendung die Verarbeitung der Nachricht beendet (oder sie
+zuverlässig für die zukünftige Verarbeitung gespeichert) hat, wird die zweite Phase des
+Empfangsvorgangs durchgeführt, indem die **delete**-Methode für das **Message**
+-Objekt aufgerufen wird. Die **delete**-Methode markiert die Nachricht als verarbeitet
+und entfernt sie aus der Warteschlange.
 
-    msg.delete()
+	msg = bus_service.receive_queue_message('taskqueue', peek_lock=True)
+	print(msg.body)
 
-## <a name="handle-crashes"> </a> Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten
+	msg.delete()
 
-Service Bus stellt Funktionen zur Verfügung, die Ihnen bei der
-ordnungsgemäßen Behebung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht helfen. Wenn
-eine Empfängeranwendung die Nachricht aus einem bestimmten Grund
-nicht verarbeiten kann, so kann sie die Methode **unlock**
-für das Objekt **Message** aufrufen. Dies führt dazu, dass Service Bus die
-Nachricht innerhalb der Warteschlange entsperrt und verfügbar macht,
-damit sie erneut empfangen werden kann, und zwar entweder durch
-dieselbe verarbeitende Anwendung oder eine andere.
+## <a name="handle-crashes"> </a>Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten
 
-Zudem wird einer in der Warteschlange gesperrten Nachricht ein
-Zeitlimit zugeordnet. Wenn die Anwendung die Nachricht vor Ablauf des
-Sperrzeitlimits nicht verarbeiten kann (zum Beispiel wenn die
-Anwendung abstürzt), entsperrt Service Bus die Nachricht automatisch und
-macht sie verfügbar, um erneut empfangen zu werden.
+Service Bus stellt Funktionen zur Verfügung, die Ihnen bei der ordnungsgemäßen Behebung von
+Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht helfen. Wenn eine
+Empfängeranwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann,
+kann sie die **unlock**-Methode für das 
+**Message**-Objekt aufrufen. Dies bewirkt, dass Service Bus die Nachricht
+in der Warteschlange entsperrt und für den erneuten Empfang zur Verfügung stellt,
+entweder durch dieselbe verarbeitende Anwendung oder durch eine andere verarbeitende
+der Anwendung in der Stagingumgebung befindet.
 
-Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor
-Aufrufen der Methode **delete** abstürzt, wird die Nachricht erneut an
-die Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig
- als **At Least Once Processing** (Verarbeitung mindestens einmal)
-bezeichnet und bedeutet, dass jede Nachricht mindestens
-einmal verarbeitet wird, wobei dieselbe Nachricht in bestimmten Situationen möglicherweise erneut zugestellt wird. Wenn eine doppelte Verarbeitung in dem Szenario
-nicht zulässig ist, sollten Anwendungsentwickler ihrer Anwendung
-zusätzliche Logik für den Umgang mit der Zustellung doppelter Nachrichten hinzufügen. Dies wird häufig durch
-Verwendung der Eigenschaft **MessageId** der Nachricht erzielt, die über
-mehrere Zustellungsversuche hinweg konstant bleibt.
+Zudem wird einer im Abonnement gesperrten Anwendung ein Zeitlimit zugeordnet.
+Wenn die Anwendung die Nachricht vor
+Ablauf des Sperrzeitlimits nicht verarbeiten kann (zum Beispiel wenn die Anwendung abstürzt), entsperrt Service
+Bus die Nachricht automatisch und macht sie verfügbar, um erneut
+empfangen zu werden.
+
+Falls die Anwendung nach der Verarbeitung der Nachricht
+, aber vor Aufruf der **delete**-Methode abstürzt, wird die Nachricht,
+der Anwendung erneut zugestellt, wenn diese neu gestartet wird. Dies wird häufig als
+**mindestens einmalige Verarbeitung** bezeichnet. d.h., jede Nachricht wird
+mindestens einmal verarbeitet, sie kann in bestimmten Situationen jedoch möglicherweise
+erneut zugestellt werden. Wenn das Szenario doppelte Verarbeitung nicht zulässt, müssen
+die Anwendungsentwickler ihrer Anwendung zusätzliche Logik hinzufügen,
+um doppelte Nachrichtenzustellung verarbeiten zu können. Dies erfolgt häufig mit der
+**MessageId**-Eigenschaft der Nachricht, die bei allen
+Zustellungsversuchen gleich bleibt.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen
-vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
+Da Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, folgen Sie diesen
+Links zu weiteren Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements.][Warteschlangen, Themen und Abonnements.]
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements.][]
 
   [Nächste Schritte]: #next-steps
+  [Was sind Servicebus-Warteschlangen?]: #what-are-service-bus-queues
   [Erstellen eines Dienstnamespace]: #create-a-service-namespace
   [Abrufen der Standard-Anmeldeinformationen für den Namespace]: #obtain-default-credentials
   [Gewusst wie: Erstellen einer Warteschlange]: #create-queue
   [Gewusst wie: Senden von Nachrichten an eine Warteschlange]: #send-messages
   [Gewusst wie: Empfangen von Nachrichten aus einer Warteschlange]: #receive-messages
   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten]: #handle-crashes
-  [Python-Installationshandbuch]: ../python-how-to-install/
+  [Warteschlangenkonzepte]: ../../../DevCenter/dotNet/Media/sb-queues-08.png
+  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
+  
+  
+  
+  
+  
   [Warteschlangen, Themen und Abonnements.]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx

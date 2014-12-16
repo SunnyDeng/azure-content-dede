@@ -88,12 +88,10 @@ Zum Verwalten von Azure-Diensten müssen Sie das Azure-Gem herunterladen und ver
         Successfully installed azure-0.5.0
         7 gems installed
 
-    <div class="dev-callout">
-
-    **Hinweis**
-    Wenn ein Fehler bezüglich fehlender Berechtigungen angezeigt wird, verwenden Sie stattdessen `sudo gem install azure`.
-
-    </div>
+	<div class="dev-callout">
+	<b>Hinweis</b>
+	<p>Wenn ein Fehler bezüglich fehlender Berechtigungen angezeigt wird, verwenden Sie stattdessen `sudo gem install azure`.</p>
+	</div>
 
 ### Anfordern des Gem
 

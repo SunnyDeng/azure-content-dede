@@ -1,8 +1,9 @@
-Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Client bei jedem Starten der App sowohl den Identitätsanbieter als auch den mobilen Dienst kontaktieren muss. Diese Methode ist nicht nur ineffizient, sie kann auch zu nutzungsbezogenen Problemen führen, wenn eine große Anzahl von Kunden die App gleichzeitig starten sollte. Ein besserer Ansatz ist es daher, den von Mobile Services zurückgegebenen Authentifizierungstoken zwischenzuspeichern und vor einer anbieterbasierten Anmeldung zu verwenden.
+﻿
+Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, dass der Client bei jedem Start der App sowohl den Identitätsanbieter als auch den mobilen Dienst kontaktiert. Diese Methode ist nicht nur ineffizient, sie kann auch zu nutzungsbezogenen Problemen führen, wenn eine große Anzahl von Kunden die App gleichzeitig starten sollte. Ein besserer Ansatz ist es daher, den von Mobile Services zurückgegebenen Authentifizierungstoken zwischenzuspeichern und zu verwenden, bevor eine anbieterbasierte Anmeldung durchgeführt wird. 
 
-> [WACOM.NOTE]Unabhängig davon, ob Sie clientverwaltete oder dienstverwaltete Authentifizierung verwenden, können Sie den von Mobile Services ausgestellten Authentifizierungstoken zwischenspeichern. In diesem Lernprogramm wird die dienstverwaltete Authentifizierung verwendet.
+>[WACOM.NOTE]Unabhängig davon, ob Sie clientverwaltete oder dienstverwaltete Authentifizierung verwenden, können Sie den von Mobile Services ausgestellten Authentifizierungstoken zwischenspeichern. In diesem Lernprogramm wird die dienstverwaltete Authentifizierung verwendet.
 
-1.  Ersetzen Sie in der Projektdatei "default.js" die vorhandene Funktion **Login** durch den folgenden Code:
+1. Ersetzen Sie in der Projektdatei "default.js" die vorhandene **Login**-Funktion durch den folgenden Code:
 
         var credential = null;
         var vault = new Windows.Security.Credentials.PasswordVault();
@@ -30,7 +31,7 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Cli
             });
         }
 
-2.  Ersetzen Sie die vorhandene Funktion **authenticate** durch den folgenden Code:
+2. Ersetzen Sie die vorhandene **authenticate**-Funktion durch den folgenden Code:
 
         var authenticate = function () {
             // Try to get a stored credential from the PasswordVault.                
@@ -40,7 +41,7 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Cli
             catch (error) {
                 // This is expected when there's no stored credential.
             }
-
+            
             if (credential) {
                 // Set the user from the returned credential.   
                 credential.retrievePassword();
@@ -75,10 +76,8 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Cli
             }
         }
 
-    In dieser Version von **authenticate** versucht die App, auf den mobilen Dienst über Anmeldeinformationen zuzugreifen, die in **PasswordVault** gespeichert sind. Über eine einfache Abfrage wird sichergestellt, dass das gespeicherte Token nicht abgelaufen ist. Bei Rückgabe eines 401-Fehlers wird ein normaler anbieterbasierter Anmeldungsversuch unternommen. Dies erfolgt auch dann, wenn keine gespeicherten Anmeldeinformationen vorhanden sind.
+	In dieser Version von **authenticate** versucht die App, über Anmeldeinformationen, die in **PasswordVault** gespeichert sind, auf den mobilen Dienst zuzugreifen. Über eine einfache Abfrage wird sichergestellt, dass das gespeicherte Token nicht abgelaufen ist. Bei Rückgabe eines 401-Fehlers wird ein normaler anbieterbasierter Anmeldungsversuch unternommen. Dies erfolgt auch dann, wenn keine gespeicherten Anmeldeinformationen vorhanden sind.
 
-3.  Starten Sie die App zweimal neu.
+3. Starten Sie die App zweimal neu.
 
-    Beachten Sie, dass beim ersten Start die Anmeldung beim Anbieter wieder erforderlich ist. Beim zweiten Neustart jedoch werden die zwischengespeicherten Anmeldeinformationen verwendet, und die Anmeldung wird umgangen.
-
-
+	Beachten Sie, dass beim ersten Start die Anmeldung beim Anbieter wieder erforderlich ist. Beim zweiten Neustart jedoch werden die zwischengespeicherten Anmeldeinformationen verwendet, und die Anmeldung wird umgangen. 

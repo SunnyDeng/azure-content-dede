@@ -1,4 +1,4 @@
-<properties linkid="mobile-services-dotnet-backend-get-started-custom-authentication" urlDisplayName="Get started with custom authentication" pageTitle="Get started with custom authentication | Mobile Dev Center" metaKeywords="" description="Learn how to authenticate users with a username and password." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with custom authentication" authors="mahender" />
+﻿<properties urlDisplayName="Get started with custom authentication" pageTitle="Erste Schritte mit der benutzerdefinierten Authentifizierung | Mobile Dev Center" metaKeywords="" description="Learn how to authenticate users with a username and password." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with custom authentication" authors="mahender" manager="dwrede" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="mahender" />
 
@@ -6,27 +6,27 @@
 
 Dieses Thema zeigt, wie Benutzer im Azure Mobile Services .NET-Back-End mithilfe eines von Ihnen herausgegebenen Mobile Services Authentifizierungstokens authentifiziert werden. In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe eines benutzerdefinierten Benutzernamens und Kennworts zum Schnellstartprojekt hinzu.
 
->[WACOM.NOTE] Dieses Lernprogramm erläutert eine erweiterte Methode zur Authentifizierung Ihres mobilen Diensts mit benutzerdefinierten Anmeldeinformationen. Viele Apps eignen sich stattdessen am besten für die Verwendung des integrierten Social-Identitätsanbieters, sodass sich Benutzer über Facebook, Twitter, Google, ein Microsoft-Konto und Azure Active Directory anmelden können. Falls Sie noch keine Erfahrung mit Authentifizierung in Mobile Services haben, sollten Sie das Lernprogramm [Erste Schritte mit Benutzern][Erste Schritte mit Benutzern] abschließen.
+>[WACOM.NOTE] Dieses Lernprogramm erläutert eine erweiterte Methode zur Authentifizierung Ihres mobilen Diensts mit benutzerdefinierten Anmeldeinformationen. Viele Apps eignen sich stattdessen am besten für die Verwendung des integrierten Social-Identitätsanbieters, sodass sich Benutzer über Facebook, Twitter, Google, ein Microsoft-Konto und Azure Active Directory anmelden können. Falls Sie noch keine Erfahrung mit Authentifizierung in Mobile Services haben, sollten Sie das Lernprogramm [Erste Schritte mit Benutzern] abschließen.
 
 Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von Authentifizierung in Ihrer App:
 
-1. [Einrichten der Kontentabelle][Einrichten der Kontentabelle]
-2. [Erstellen des Registrierungssendpunkts][Erstellen des Registrierungssendpunkts]
-3. [Erstellen des LoginProvider][Erstellen des LoginProvider]
-4. [Erstellen des Anmeldungsendpunkts][Erstellen des Anmeldungsendpunkts]
-5. [Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung][Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]
-6. [Testen des Anmeldeablaufs mit dem Testclient][Testen des Anmeldeablaufs mit dem Testclient]
+1. [Einrichten der Kontentabelle]
+2. [Erstellen des Registrierungssendpunkts]
+3. [Erstellen des LoginProvider]
+4. [Erstellen des Anmeldungsendpunkts]
+5. [Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]
+6. [Testen des Anmeldeablaufs mit dem Testclient]
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services][Erste Schritte mit Mobile Services] abschließen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen. 
 
 >[WACOM.NOTE] Mit diesem Lernprogramm wird gezeigt, wie man einen Authentifizierungstoken für Mobile Services herausgibt. Dies ist nicht als Sicherheitsanleitung zu verstehen. Bei der Entwicklung einer App müssen Sie sich der Sicherheitsauswirkungen einer Kennwortspeicherung bewusst sein und eine Strategie für den Umgang mit Brute-Force-Angriffen haben.
 
 
 ## <a name="table-setup"></a>Einrichten der Kontentabelle
 
-Weil Sie eine benutzerdefinierte Authentifizierung verwenden und sich nicht auf einen anderen Identitätsanbieter stützen, müssen Sie die Anmeldeinformationen von Benutzern speichern. In diesem Abschnitt werden Sie eine Tabelle für Ihre Konten erstellen und die grundlegenden Sicherheitsmechanismen einrichten. Die Kontentabelle enthält die Benutzernamen und Kennwörter, die salted und gehasht sind, und Sie können bei Bedarf auch weitere Benutzerinformationen einschließen.
+	Weil Sie eine benutzerdefinierte Authentifizierung verwenden und sich nicht auf einen anderen Identitätsanbieter stützen, müssen Sie die Anmeldeinformationen von Benutzern speichern. In diesem Abschnitt werden Sie eine Tabelle für Ihre Konten erstellen und die grundlegenden Sicherheitsmechanismen einrichten. Die Kontentabelle enthält die Benutzernamen und Kennwörter, die salted und gehasht sind, und Sie können bei Bedarf auch weitere Benutzerinformationen einschließen.
 
-1. Erstellen Sie im `DataObjects`-Ordner Ihres Back-End-Projekts eine neue Entität namens `Account`:
+1. Erstellen Sie im Ordner `DataObjects` Ihres Back-End-Projekts eine neue Entität namens `Konto`:
 
             public class Account : EntityData
             {
@@ -37,11 +37,11 @@ Weil Sie eine benutzerdefinierte Authentifizierung verwenden und sich nicht auf 
     
     Das stellt eine Zeile in unserer neuen Tabelle dar, und es enthält den Benutzernamen, das Salt des Benutzers und das sicher gespeicherte Kennwort.
 
-2. Im Ordner `Models` finden Sie eine `DbContext`-Klasse, die nach Ihrem mobilen Dienst benannt ist. Der Rest dieses Lernprogramms verwendet `todoContext` als Beispiel und Sie müssen die Codeausschnitte entsprechend ändern. Öffnen Sie Ihren Kontext und fügen Sie die Kontentabelle Ihrem Datenmodell hinzu, indem Sie Folgendes aufnehmen:
+2. Im Ordner `Modelle` finden Sie eine `DbContext`-Klasse, die nach Ihrem mobilen Dienst benannt ist. Der Rest dieses Lernprogramms verwendet `todoContext` als Beispiel, und Sie müssen die Codeausschnitte entsprechend ändern. Öffnen Sie Ihren Kontext und fügen Sie die Kontentabelle Ihrem Datenmodell hinzu, indem Sie Folgendes aufnehmen:
 
         public DbSet<Account> Accounts { get; set; }
 
-3. Als Nächstes richten Sie die Sicherheitsfunktionen für die Arbeit mit diesen Daten ein. Sie benötigen Mittel, um ein neues, langes Salt zu generieren, die Möglichkeit, ein salted Kennwort zu hashen, und eine sichere Möglichkeit, zwei Hashs zu vergleichen. Erstellen Sie eine Klasse mit dem Namen `CustomLoginProviderUtils` und fügen Sie ihr die folgenden Methoden hinzu:
+3. Als Nächstes richten Sie die Sicherheitsfunktionen für die Arbeit mit diesen Daten ein. Sie benötigen Mittel, um ein neues, langes Salt zu generieren, die Möglichkeit, ein salted Kennwort zu hashen, und eine sichere Möglichkeit, zwei Hashs zu vergleichen. Erstellen Sie eine Klasse mit dem Namen `CustomLoginProviderUtils`, und fügen Sie ihr die folgenden Methoden hinzu:
 
 
         public static byte[] hash(string plaintext, byte[] salt)
@@ -87,7 +87,7 @@ Sie haben an diesem Punkt alles Nötige, um Benutzerkonten anlegen zu können. I
 
     Wenn Sie bei der Registrierung andere Informationen erfassen wollen, können Sie diese hier einschließen.
 
-2. Fügen Sie Ihrem Mobile Services Back-End-Projekt einen neuen benutzerdefinierten Controller namens CustomRegistrationController hinzu und fügen Sie Folgendes ein:
+1. Fügen Sie Ihrem Mobile Services Back-End-Projekt einen neuen benutzerdefinierten Controller namens CustomRegistrationController hinzu und fügen Sie Folgendes ein:
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
         public class CustomRegistrationController : ApiController
@@ -129,7 +129,7 @@ Sie haben an diesem Punkt alles Nötige, um Benutzerkonten anlegen zu können. I
             }
         }   
 
-    Be sure that you allow all traffic to this endpoint by decorating the controller with:
+    Achten Sie darauf, dass Sie allen Traffic zu diesem Endpunkt erlauben, indem Sie den Controller wie folgt dekorieren:
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
 
@@ -137,7 +137,7 @@ Sie haben an diesem Punkt alles Nötige, um Benutzerkonten anlegen zu können. I
 
 Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipeline ist der `LoginProvider`. In diesem Abschnitt erstellen Sie Ihren eigenen `CustomLoginProvider`. Er wird nicht in die Pipeline eingebaut wie die integrierten Anbieter, sondern ermöglicht Ihnen ein paar praktische Funktionen.
 
-1. Erstellen Sie eine neue Klasse namens `CustomLoginProvider`, die sich von `LoginProvider` ableitet:
+1. Erstellen Sie eine neue Klasse, `CustomLoginProvider`, die von `LoginProvider` abgeleitet wird:
 
         public class CustomLoginProvider : LoginProvider
         {
@@ -168,7 +168,7 @@ Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipe
             }
         }
 
-3. Fügen Sie die folgende Implementierung der abstrakten Methode `ConfigureMiddleware` zu `CustomLoginProvider` hinzu. Diese Methode ist hier eine leere Methode (No-op-Methode) , da `CustomLoginProvider` sich nicht in die Authentifizierungspipeline integriert.
+3. Fügen Sie die folgende Implementierung der abstrakten Methode `ConfigureMiddleware` zu `CustomLoginProvider` hinzu. Diese Methode ist hier eine leere Methode (No-op-Methode), da  `CustomLoginProvider` sich nicht in die Authentifizierungspipeline integriert.
 
         public override void ConfigureMiddleware(IAppBuilder appBuilder, ServiceSettingsDictionary settings)
         {
@@ -209,7 +209,7 @@ Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipe
 
 ## <a name="login-endpoint"></a>Erstellen des Anmeldungsendpunkts
 
-Als Nächstes erstellen Sie einen Endpunkt für Ihren Benutzer, an dem er sich anmelden kann. Der Benutzername und das Kennwort, das Sie erhalten, wird anhand der Datenbank geprüft. Dabei wird zuerst das Salt des Benutzers angewandt, das Kennwort gehasht und sichergestellt, dass der eingehende Wert dem der Datenbank entspricht. Ist das der Fall, dann können Sie eine `ClaimsIdentity` erstellen und diese an den `CustomLoginProvider` weitergeben. Die Client-App erhält dann eine Benutzer-ID und einen Authentifizierungstoken für den weiteren Zugriff auf Ihren mobilen Dienst.
+Als Nächstes erstellen Sie einen Endpunkt für Ihren Benutzer, an dem er sich anmelden kann. Der Benutzername und das Kennwort, das Sie erhalten, wird anhand der Datenbank geprüft. Dabei wird zuerst das Salt des Benutzers angewandt, das Kennwort gehasht und sichergestellt, dass der eingehende Wert dem der Datenbank entspricht. Ist das der Fall, dann können Sie eine `ClaimsIdentity` erstellen und diese an den  `CustomLoginProvider` weitergeben. Die Client-App erhält dann eine Benutzer-ID und einen Authentifizierungstoken für den weiteren Zugriff auf Ihren mobilen Dienst.
 
 1. Erstellen Sie in Ihrem Mobile Services Back-End-Projekt ein Projekt, das einen eingehenden Anmeldeversuch repräsentiert:
 
@@ -219,7 +219,7 @@ Als Nächstes erstellen Sie einen Endpunkt für Ihren Benutzer, an dem er sich a
             public String password { get; set; }
         }
 
-2. Fügen Sie einen neuen benutzerdefinierten Controller namens `CustomLoginController` hinzu und fügen Sie Folgendes ein:
+1. 	Fügen Sie einen neuen benutzerdefinierten Controller namens `CustomLoginController` hinzu, und fügen Sie Folgendes ein:
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
         public class CustomLoginController : ApiController
@@ -248,7 +248,7 @@ Als Nächstes erstellen Sie einen Endpunkt für Ihren Benutzer, an dem er sich a
             }
         }
 
-    Be sure that you allow all traffic to this endpoint by decorating the controller with:
+    Achten Sie darauf, dass Sie allen Traffic zu diesem Endpunkt erlauben, indem Sie den Controller wie folgt dekorieren:
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
 
@@ -261,19 +261,19 @@ Als Nächstes erstellen Sie einen Endpunkt für Ihren Benutzer, an dem er sich a
 
 ## <a name="test-login"></a>Testen des Anmeldeablaufs mit dem Testclient
 
-Sie müssen in Ihrer Client-Anwendung einen angepassten Anmeldebildschirm definieren, der Benutzernamen und Kennwörter als JSON-Nutzlast an Ihre Registrierung und die Anmeldungsendpunkte schickt. Für das Abschließen dieses Lernprogramms verwenden Sie aber stattdessen den integrierten Testclient für Mobile Services .NET-Back-End.
+	Sie müssen in Ihrer Client-Anwendung einen angepassten Anmeldebildschirm definieren, der Benutzernamen und Kennwörter als JSON-Nutzlast an Ihre Registrierung und die Anmeldungsendpunkte schickt. Für das Abschließen dieses Lernprogramms verwenden Sie aber stattdessen den integrierten Testclient für Mobile Services .NET-Back-End.
 
->[WACOM.NOTE] Die Mobile Services-SDKs kommunizieren mit dem Dienst über HTTPS. Wenn Sie planen, an dieser Stelle über einen direkten REST-Aufruf auf diesen Endpunkt zuzugreifen, müssen Sie sicherstellen, dass HTTPS für das Ansprechen des mobilen Diensts verwendet wird, da Kennwörter im Klartext gesandt werden.
+>[WACOM.NOTE]  Die Mobile Services-SDKs kommunizieren mit dem Dienst über HTTPS. Wenn Sie planen, an dieser Stelle über einen direkten REST-Aufruf auf diesen Endpunkt zuzugreifen, müssen Sie sicherstellen, dass HTTPS für das Ansprechen des mobilen Diensts verwendet wird, da Kennwörter im Klartext gesandt werden.
 
-1. Starten Sie in Visual Studio eine Debugging-Instanz Ihres Mobile Services-Projekts, indem Sie mit der rechten Maustaste auf das Projekt klicken und **Debuggen->Neue Instanz starten auswählen**
+1. Starten Sie in Visual Studio eine Debugging-Instanz Ihres Mobile Services-Projekts, indem Sie mit der rechten Maustaste auf das Projekt klicken und **Debuggen->Neue Instanz starten** auswählen.
 
     ![][0]
 
-2. Klicken Sie **Ausprobieren**.
+2. Klicken Sie auf **Ausprobieren.**
 
     ![][1]
 
-3. Wählen Sie den Registrierungsendpunkt. Sie sehen eine grundlegende Dokumentation für Ihre API. Klicken Sie **Ausprobieren**.
+3. 	Wählen Sie den Registrierungsendpunkt. Sie sehen eine grundlegende Dokumentation für Ihre API. Klicken Sie auf **Ausprobieren**.
 
     ![][2]
 
@@ -286,20 +286,23 @@ Sie müssen in Ihrer Client-Anwendung einen angepassten Anmeldebildschirm defini
     ![][4]
 
 
-
-
-
-[Erste Schritte mit Benutzern]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
+<!-- Anchors. -->
 [Einrichten der Kontentabelle]: #table-setup
 [Erstellen des Registrierungssendpunkts]: #register-endpoint
 [Erstellen des LoginProvider]: #login-provider
 [Erstellen des Anmeldungsendpunkts]: #login-endpoint
 [Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]: #require-authentication
 [Testen des Anmeldeablaufs mit dem Testclient]: #test-login
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[mobile-services-restrict-permissions-dotnet-backend]: ../includes/mobile-services-restrict-permissions-dotnet-backend.md
+
+
+<!-- Images. -->
 [0]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-debug-start.png
 [1]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-try-out.png
 [2]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-test-client.png
 [3]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-send-register.png
 [4]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-login-result.png
+
+
+<!-- URLs. -->
+[Erste Schritte mit Benutzern]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
+[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started

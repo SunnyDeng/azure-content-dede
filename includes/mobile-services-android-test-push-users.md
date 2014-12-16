@@ -1,11 +1,10 @@
-1.  Drücken Sie in Eclipse die Taste F11, um die Änderungen auf Ihrem Android-Gerät bereitzustellen und die App auszuführen.
+﻿
+1. Drücken Sie in Eclipse die Taste F11, um die Änderungen auf Ihrem Android-Gerät bereitzustellen und die App auszuführen.
 
-2.  Melden Sie sich mithilfe Ihres Identitätsanbieters an, und überprüfen Sie, ob die Authentifizierung erfolgreich verläuft.
+2. Melden Sie sich mithilfe Ihres Identitätsanbieters an, und überprüfen Sie, ob die Authentifizierung erfolgreich verläuft. 
 
-3.  Geben Sie in der App einen Text in **Insert a TodoItem** ein, und klicken Sie dann auf **Save**.
+3. Geben Sie in die App Text in **Insert a TodoItem** ein, und klicken Sie dann auf **Save**.
 
-    Beachten Sie, dass die App nach dem Einfügen eine Pushbenachrichtigung von GCM erhält.
+   	Beachten Sie, dass die App nach dem Einfügen eine Pushbenachrichtigung von GCM erhält.
 
-4.  (Optional) Wiederholen Sie die Schritte 1 bis 3 auf einem anderen Clientgerät, und verwenden Sie beim Anmelden ein anderes Konto. Vergewissern Sie sich, dass die Benachrichtigung nur auf Geräten empfangen wird, die sich mit demselben Benutzerkonto authentifizieren.
-
-
+4. (Optional) Wiederholen Sie die Schritte 1 bis 3 auf einem anderen Clientgerät, und verwenden Sie beim Anmelden ein anderes Konto. Vergewissern Sie sich, dass die Benachrichtigung nur auf Geräten empfangen wird, die sich mit demselben Benutzerkonto authentifizieren. 

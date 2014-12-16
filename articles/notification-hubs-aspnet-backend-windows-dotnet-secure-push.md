@@ -1,48 +1,45 @@
-<properties title="Azure Notification Hubs Secure Push" pageTitle="Azure Notification Hubs Secure Push" metaKeywords="Azure push notifications, Azure notification hubs, Azure messaging, secure push" description="Learn how to send secure push notifications in Azure. Code samples written in C# using the .NET API." documentationCenter="Mobile" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="sethm" />
+﻿<properties title="Azure Notification Hubs Secure Push" pageTitle="Azure Notification Hubs - Sichere Pushbenachrichtigungen" metaKeywords="Azure-Pushbenachrichtigungen, Azure Notification Hubs, Azure-Messaging, sichere Pushbenachrichtigungen" description="Learn how to send secure push notifications in Azure. Code samples written in C# using the .NET API." documentationCenter="Mobile" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="sethm" manager="dwrede" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="sethm" />
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
-# Azure Notification Hubs – Sichere Pushbenachrichtigungen
+#Azure Notification Hubs - Sichere Pushbenachrichtigungen
 
 <div class="dev-center-tutorial-selector sublanding"> 
-        <a href="/de-de/documentation/articles/notification-hubs-windows-dotnet-secure-push/" title="Windows Universal" class="current">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/" title="iOS">iOS</a>
-        <a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-android-secure-push/" title="Android">Android</a>
+    	<a href="/de-de/documentation/articles/notification-hubs-windows-dotnet-secure-push/" title="Windows Universal" class="current">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/" title="iOS">iOS</a>
+		<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-android-secure-push/" title="Android">Android</a>
 </div>
 
-Durch die Unterstützung von Pushbenachrichtigungen in Microsoft Azure haben Sie Zugriff auf eine benutzerfreundliche, plattformübergreifende und horizontal skalierte Pushinfrastruktur, die die Implementierung von Pushbenachrichtigungen sowohl für Endbenutzer- als auch für Unternehmensanwendungen für mobile Plattformen erheblich vereinfacht.
+Durch die Unterstützung von Pushbenachrichtigungen in Microsoft Azure haben Sie Zugriff auf eine benutzerfreundliche, plattformübergreifende und horizontal skalierte Pushinfrastruktur, die die Implementierung von Pushbenachrichtigungen sowohl für Endbenutzer- als auch für Unternehmensanwendungen für mobile Plattformen erheblich vereinfacht. 
 
-Es kann vorkommen, dass eine Anwendung etwas in die Benachrichtigung einschließen möchte, dass aufgrund gesetzlicher oder sicherheitsbedingter Einschränkungen nicht über die Standardinfrastruktur von Pushbenachrichtigungen übertragen werden kann. In diesem Lernprogramm wird beschrieben, wie Sie die gleiche Funktionalität erzielen, indem Sie vertrauliche Informationen über eine sichere authentifizierte Verbindung zwischen dem Clientgerät und dem App-Back-End senden..
+Es kann vorkommen, dass eine Anwendung etwas in die Benachrichtigung einschließen möchte, dass aufgrund gesetzlicher oder sicherheitsbedingter Einschränkungen nicht über die Standardinfrastruktur von Pushbenachrichtigungen übertragen werden kann. In diesem Lernprogramm wird beschrieben, wie Sie die gleiche Funktionalität erzielen, indem Sie vertrauliche Informationen über eine sichere authentifizierte Verbindung zwischen dem Clientgerät und dem App-Back-End senden.
 
 Der generelle Ablauf sieht folgendermaßen aus:
 
-1.  Das App-Back-End:
-
-    -   Speichert die sichere Nutzlast in einer Back-End-Datenbank.
-    -   Sendet die ID dieser Benachrichtigung an das Gerät (es werden keine sicheren Informationen gesendet).
-
-2.  Bei Erhalt der Benachrichtigung reagiert die App auf dem Gerät folgendermaßen:
-
-    -   Das Gerät kontaktiert das Back-End und fordert die sichere Nutzlast an.
-    -   Die App kann die Nutzlast als Benachrichtigung auf dem Gerät anzeigen.
+1. Das App-Back-End:
+	- Speichert die sichere Nutzlast in einer Back-End-Datenbank.
+	- Sendet die ID dieser Benachrichtigung an das Gerät (es werden keine sicheren Informationen gesendet).
+2. Bei Erhalt der Benachrichtigung reagiert die App auf dem Gerät folgendermaßen:
+	- Das Gerät kontaktiert das Back-End und fordert die sichere Nutzlast an.
+	- Die App kann die Nutzlast als Benachrichtigung auf dem Gerät anzeigen.
 
 Es ist wichtig zu beachten, dass wir im vorstehenden Ablauf (und diesem Lernprogramm) davon ausgehen, dass das Gerät ein Authentifizierungstoken im lokalen Speicher ablegt, nachdem sich der Benutzer angemeldet hat. Dies gewährleistet einen völlig reibungslosen Ablauf, da das Gerät die sichere Nutzlast der Benachrichtigung mithilfe dieses Tokens abrufen kann. Wenn Ihre Anwendung keine Authentifizierungstoken auf dem Gerät speichert oder diese Token ablaufen können, sollte die Geräte-App nach Erhalt der Benachrichtigung eine generische Benachrichtigung anzeigen, in der der Benutzer zum Starten der App aufgefordert wird. Anschließend authentifiziert die App den Benutzer und zeigt die Nutzlast der Benachrichtigung an.
 
 Dieses Lernprogramm zu sicheren Pushbenachrichtigungen veranschaulicht das sichere Senden einer Pushbenachrichtigung. Es baut auf dem Lernprogramm **Benachrichtigen von Benutzern** auf, daher sollten Sie die Schritte in diesem Lernprogramm zuerst durchführen.
 
-> [AZURE.NOTE] Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (Windows Store)][Erste Schritte mit Notification Hubs (Windows Store)] beschrieben erstellt und konfiguriert haben.
-> Beachten Sie außerdem, dass Windows Phone 8.1 die Anmeldeinformationen von Windows (nicht Windows Phone) erfordert und dass Hintergrundaufgaben unter Windows Phone 8.0 oder Silverlight 8.1 nicht funktionieren. Bei Windows Store-Anwendungen können nur dann Benachrichtigungen über eine Hintergrundaufgabe empfangen werden, wenn für die App der Sperbildschirmaktiviert ist (klicken Sie auf das Kontrollkästchen im AppManifest).
+> [AZURE.NOTE] Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (Windows Store)](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/) beschrieben erstellt und konfiguriert haben.
+Beachten Sie außerdem, dass für Windows Phone 8.1 Anmeldedaten für Windows (nicht Windows Phone) erforderlich sind und dass Hintergrundaufgaben in Windows Phone 8.0 oder Silverlight 8.1 nicht funktionieren. Bei Windows Store-Anwendungen können nur dann Benachrichtigungen über eine Hintergrundaufgabe empfangen werden, wenn für die App der Sperrbildschirm aktiviert ist (klicken Sie auf das Kontrollkästchen im AppManifest).
 
 [WACOM.INCLUDE [notification-hubs-aspnet-backend-securepush](../includes/notification-hubs-aspnet-backend-securepush.md)]
 
 ## Ändern des Windows Phone-Projekts
 
-1.  Fügen Sie im Projekt **NotifyUserWindowsPhone** den folgenden Code zur Datei App.xaml.cs hinzu, um die Push-Hintergrundaufgabe zu registrieren. Fügen Sie den folgenden Code am Ende der `OnLaunched()`-Methode hinzu:
+1. Fügen Sie im Projekt **NotifyUserWindowsPhone** den folgenden Code zur Datei "App.xaml.cs" hinzu, um die Push-Hintergrundaufgabe zu registrieren. Fügen Sie die folgende Codezeile am Ende der `OnLaunched()`-Methode hinzu:
 
-        RegisterBackgroundTask();
+		RegisterBackgroundTask();
 
-2.  Fügen Sie in App.xaml.cs den folgenden Code direkt nach der `OnLaunched()`-Methode ein:
+2. Fügen Sie in App.xaml.cs den folgenden Code direkt nach der `OnLaunched()`-Methode hinzu:
 
-        private async void RegisterBackgroundTask()
+		private async void RegisterBackgroundTask()
         {
             if (!Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks.Any(i => i.Value.Name == "PushBackgroundTask"))
             {
@@ -56,119 +53,119 @@ Dieses Lernprogramm zu sicheren Pushbenachrichtigungen veranschaulicht das siche
             }
         }
 
-3.  Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei App.xaml.cs hinzu:
+3. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei "App.xaml.cs" hinzu:
 
-        using Windows.Networking.PushNotifications;
-        using Windows.ApplicationModel.Background;
+		using Windows.Networking.PushNotifications;
+		using Windows.ApplicationModel.Background;
 
-4.  Klicken Sie im Menü **Datei** in Visual Studio auf **Save All**.
-
+4. Klicken Sie im Menü **Datei** in Visual Studio auf **Alle speichern**.
+		
 ## Erstellen der Push-Hintergrundkomponente
 
 Im nächsten Schritt erstellen Sie die Push-Hintergrundkomponente.
 
-1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Knoten der obersten Ebene der Projektmappe (in diesem Fall **Solution SecurePush**). Klicken Sie dann auf **Hinzufügen** und auf **Neues Projekt**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Knoten der obersten Ebene der Projektmappe (in diesem Fall **Solution SecurePush**). Klicken Sie dann auf **Hinzufügen** und auf **Neues Projekt**.
 
-2.  Erweitern Sie **Store-Apps**, und klicken Sie anschließend auf **Windows Phone-Apps**, dann auf **Windows Runtime Component (Windows Phone)**. Benennen Sie das Projekt **PushBackgroundComponent**, und klicken Sie dann auf **OK**, um das Projekt zu erstellen.
+2. Erweitern Sie **Store-Apps**, und klicken Sie anschließend auf **Windows Phone-Apps**, dann auf **Windows Runtime Component (Windows Phone)**. Benennen Sie das Projekt **PushBackgroundComponent**, und klicken Sie dann auf **OK**, um das Projekt zu erstellen.
 
-    ![][0]
+	![][12]
 
-3.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **PushBackgroundComponent (Windows Phone 8.1)**, und klicken Sie dann auf **Hinzufügen** und auf **Klasse**. Benennen Sie die neue Klasse **PushBackgroundTask.cs**. Klicken Sie auf **Hinzufügen**, um die Klasse zu erstellen.
+3. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **PushBackgroundComponent (Windows Phone 8.1)**, und klicken Sie dann auf **Hinzufügen** und auf **Klasse**. Benennen Sie die neue Klasse **PushBackgroundTask.cs**. Klicken Sie auf **Hinzufügen**, um die Klasse zu generieren.
 
-4.  Ersetzen Sie den gesamten Inhalt der Namespace-Definition **PushBackgroundComponent** durch den folgenden Code, und ersetzen Sie dabei den Platzhalter `{back-end endpoint}` durch den Back-End-Endpunkt, den Sie bei der Bereitstellung des Back-Ends erhalten haben:
+4. Ersetzen Sie den gesamten Inhalt der Namespace-Definition **PushBackgroundComponent** durch den folgenden Code, und ersetzen Sie dabei den Platzhalter `{back-end endpoint}` durch den Back-End-Endpunkt, den Sie bei der Bereitstellung des Back-Ends erhalten haben:
 
-        public sealed class Notification
-            {
-                public int Id { get; set; }
-                public string Payload { get; set; }
-                public bool Read { get; set; }
-            }
+		public sealed class Notification
+    		{
+        		public int Id { get; set; }
+        		public string Payload { get; set; }
+        		public bool Read { get; set; }
+    		}
+    
+		    public sealed class PushBackgroundTask : IBackgroundTask
+    		{
+        		private string GET_URL = "{back-end endpoint}/api/notifications/";
+		
+        		async void IBackgroundTask.Run(IBackgroundTaskInstance taskInstance)
+		        {
+        		    // Store the content received from the notification so it can be retrieved from the UI.
+		            RawNotification raw = (RawNotification)taskInstance.TriggerDetails;
+            		var notificationId = raw.Content;
 
-            public sealed class PushBackgroundTask : IBackgroundTask
-            {
-                private string GET_URL = "{back-end endpoint}/api/notifications/";
+            		// retrieve content
+		            BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
+            		var httpClient = new HttpClient();
+		            var settings = ApplicationData.Current.LocalSettings.Values;
+		            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", (string)settings["AuthenticationToken"]);
 
-                async void IBackgroundTask.Run(IBackgroundTaskInstance taskInstance)
-                {
-                    // Store the content received from the notification so it can be retrieved from the UI.
-                    RawNotification raw = (RawNotification)taskInstance.TriggerDetails;
-                    var notificationId = raw.Content;
+		            var notificationString = await httpClient.GetStringAsync(GET_URL + notificationId);
 
-                    // retrieve content
-                    BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
-                    var httpClient = new HttpClient();
-                    var settings = ApplicationData.Current.LocalSettings.Values;
-                    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", (string)settings["AuthenticationToken"]);
+            		var notification = JsonConvert.DeserializeObject<Notification>(notificationString);
 
-                    var notificationString = await httpClient.GetStringAsync(GET_URL + notificationId);
+		            ShowToast(notification);
 
-                    var notification = JsonConvert.DeserializeObject<Notification>(notificationString);
+		            deferral.Complete();
+		        }
 
-                    ShowToast(notification);
+		        private void ShowToast(Notification notification)
+		        {
+		            ToastTemplateType toastTemplate = ToastTemplateType.ToastText01;
+		            XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
+            		XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
+		            toastTextElements[0].AppendChild(toastXml.CreateTextNode(notification.Payload));
+    	        	ToastNotification toast = new ToastNotification(toastXml);
+		            ToastNotificationManager.CreateToastNotifier().Show(toast);
+    		    }
+    		}
 
-                    deferral.Complete();
-                }
+5. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **PushBackgroundComponent (Windows Phone 8.1)**, und klicken Sie dann auf **NuGet-Pakete verwalten**.
 
-                private void ShowToast(Notification notification)
-                {
-                    ToastTemplateType toastTemplate = ToastTemplateType.ToastText01;
-                    XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
-                    XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
-                    toastTextElements[0].AppendChild(toastXml.CreateTextNode(notification.Payload));
-                    ToastNotification toast = new ToastNotification(toastXml);
-                    ToastNotificationManager.CreateToastNotifier().Show(toast);
-                }
-            }
+6. Klicken Sie auf der linken Seite auf **Online**.
 
-5.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **PushBackgroundComponent (Windows Phone 8.1)**, und klicken Sie dann auf **NuGet-Pakete verwalten**.
+7. Geben Sie in das **Suchfeld** den Begriff **Http Client** ein.
 
-6.  Klicken Sie auf der linken Seite auf **Online**.
+8. Klicken Sie in der Ergebnisliste auf **Microsoft HTTP-Clientbibliotheken** und dann auf **Installieren**. Schließen Sie die Installation ab.
 
-7.  Geben Sie in das **Suchfeld** den Begriff **Http Client** ein.
-
-8.  Klicken Sie in der Ergebnisliste auf **Microsoft HTTP-Clientbibliotheken** und dann auf **Installieren**. Schließen Sie die Installation ab.
-
-9.  Geben Sie in das **Suchfeld** die Zeichenfolge **Json.net** ein. Installieren Sie das **Json.NET**-Paket, und schließen Sie dann das Fenster des NuGet-Paket-Managers.
+9. Geben Sie in das NuGet-**Search** die Zeichenfolge **Json.net** ein. Installieren Sie das **Json.NET**-Paket, und schließen Sie dann das Fenster des NuGet-Paket-Managers.
 
 10. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei **PushBackgroundTask.cs** hinzu:
 
-        using Windows.ApplicationModel.Background;
-        using Windows.Networking.PushNotifications;
-        using System.Net.Http;
-        using Windows.Storage;
-        using System.Net.Http.Headers;
-        using Newtonsoft.Json;
-        using Windows.UI.Notifications;
-        using Windows.Data.Xml.Dom;
+		using Windows.ApplicationModel.Background;
+		using Windows.Networking.PushNotifications;
+		using System.Net.Http;
+		using Windows.Storage;
+		using System.Net.Http.Headers;
+		using Newtonsoft.Json;
+		using Windows.UI.Notifications;
+		using Windows.Data.Xml.Dom;
 
-11. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **NotifyUserWindowsPhone (Windows Phone 8.1)**, klicken Sie mit der rechten Maustaste auf **Verweise**, und klicken Sie dann auf **Verweis hinzufügen**. Aktivieren Sie im Dialogfeld „Verweis-Manager“ das Kontrollkästchen neben **PushBackgroundComponent**, und klicken Sie dann auf **OK**.
+11. Klicken Sie im Projektmappen-Explorer im Projekt **NotifyUserWindowsPhone (Windows Phone 8.1)** mit der rechten Maustaste auf **Verweise**, und klicken Sie dann auf **Verweis hinzufügen**. Aktivieren Sie im Dialogfeld "Verweis-Manager" das Kontrollkästchen neben **PushBackgroundComponent**, und klicken Sie dann auf **OK**.
 
 12. Doppelklicken Sie im Projektmappen-Explorer auf **Package.appxmanifest** im Projekt **NotifyUserWindowsPhone (Windows Phone 8.1)**. Legen Sie unter **Benachrichtigungen** die Einstellung **Toastfähig** auf **Ja** fest.
 
-    ![][1]
+	![][3]
 
-13. Klicken Sie in **Package.appxmanifest** auf das Menü **Deklarationen** im oberen Bereich. Klicken Sie im Dropdownmenü **Verfügbare Deklarationen** auf **Hintergrundaufgaben**, und klicken Sie dann auch **Hinzufügen**.
-
+13. Klicken Sie in **Package.appxmanifest** auf das Menü **Deklarationen** im oberen Bereich. Klicken Sie im Dropdownmenü **Verfügbare Deklarationen** auf **Hintergrundaufgaben**, und klicken Sie dann auf **Hinzufügen**.
+ 
 14. Aktivieren Sie in **Package.appxmanifest** unter **Eigenschaften** die Option **Pushbenachrichtigung**.
 
 15. Geben Sie in **Package.appxmanifest** unter **App-Einstellungen** **PushBackgroundComponent.PushBackgroundTask** in das Feld **Einstiegspunkt** ein.
 
-    ![][2]
+	![][13]
 
-16. Klicken Sie im Menü **Datei** auf **Alle speichern**.
+16. Klicken Sie im Menü **Datei** auf **Alle Speichern**.
 
 ## Ausführen der Anwendung
 
 Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 
-1.  Führen Sie in Visual Studio die Web-API-Anwendung **AppBackend** aus. Daraufhin wird eine ASP.NET-Webseite angezeigt.
+1. Führen Sie in Visual Studio die Web-API-Anwendung **AppBackend** aus. Daraufhin wird eine ASP.NET-Webseite angezeigt.
 
-2.  Führen Sie in Visual Studio die Windows Phone-App **NotifyUserWindowsPhone (Windows Phone 8.1)** aus. Der Windows Phone-Emulator wird ausgeführt und lädt die App automatisch.
+2. Führen Sie in Visual Studio die Windows Phone-App **NotifyUserWindowsPhone (Windows Phone 8.1)** aus. Der Windows Phone-Emulator wird ausgeführt und lädt die App automatisch.
 
-3.  Geben Sie in der UI der **NotifyUserWindowsPhone**-App einen Benutzernamen und das Kennwort ein. Dies kann eine beliebige Zeichenfolge sein, beide müssen jedoch denselben Wert haben.
+3. Geben Sie in der **NotifyUserWindowsPhone**-App-UI einen Benutzernamen und das Kennwort ein. Dies kann eine beliebige Zeichenfolge sein, beide müssen jedoch denselben Wert haben.
 
-4.  Klicken Sie in der UI **NotifyUserWindowsPhone**-App auf **Log in and register**. Klicken Sie anschließend auf **Send push**.
+4. Klicken Sie in der **NotifyUserWindowsPhone**-App-UI auf **Log in and register**. Klicken Sie anschließend auf **Send push**.
 
-  [0]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push12.png
-  [1]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push3.png
-  [2]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push13.png
+[3]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push3.png
+[12]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push12.png
+[13]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push13.png

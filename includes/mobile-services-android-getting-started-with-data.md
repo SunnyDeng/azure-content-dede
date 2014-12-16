@@ -1,130 +1,158 @@
-Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass dieser Elemente im mobilen Dienst anstatt in einer lokalen Sammlung speichert.
+﻿Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass Elemente in Mobile Services anstatt in einer lokalen Sammlung gespeichert werden. 
 
-1.  Falls Sie das [Android-SDK für mobile Dienste][Android-SDK für mobile Dienste] noch nicht haben, laden Sie es jetzt herunter und entpacken Sie die komprimierten Dateien.
+1. Falls Sie das [Mobile Services Android SDK] noch nicht haben, laden Sie es jetzt herunter und entpacken Sie die komprimierten Dateien.
 
-2.  Kopieren Sie die `.jar`-Dateien aus dem `mobileservices`-Ordner des SDK in den `libs`-Ordner des GetStartedWithData-Projekts.
+2. Kopieren Sie die "jar"-Dateien aus dem "Mobileservices"-Ordner des SDK in den "libs"-Ordner des GetStartedWithData-Projekts.
 
-3.  Klicken Sie im Paket-Explorer in Eclipse mit der rechten Maustaste auf den `libs`-Ordner, und klicken Sie auf **Aktualisieren**, um die kopierten jar-Dateien anzuzeigen.
+3. Klicken Sie im Paket-Explorer in Eclipse mit der rechten Maustaste auf den "libs"-Ordner, und klicken Sie auf **Aktualisieren**, um die kopierten jar-Dateien anzuzeigen.
 
-    Damit wird das SDK für mobile Dienste zum Arbeitsbereich hinzugefügt.
+  	Damit wird das SDK für mobile Dienste zum Arbeitsbereich hinzugefügt.
 
-4.  Öffnen Sie die AndroidManifest.xml-Datei und fügen Sie die folgende Zeile hinzu, um der App den Zugriff auf mobile Dienste in Azure zu ermöglichen.
+4. Öffnen Sie die AndroidManifest.xml-Datei und fügen Sie die folgende Zeile hinzu, um der App den Zugriff auf mobile Dienste in Azure zu ermöglichen.
 
-        <uses-permission android:name="android.permission.INTERNET" />
+		<uses-permission android:name="android.permission.INTERNET" />
 
-5.  Öffnen Sie im Paket-Explorer die Datei TodoActivity.java im Paket com.example.getstartedwithdata und entfernen Sie die Kommentare in den folgenden Codezeilen:
+5. Öffnen Sie im Paket-Explorer die Datei "TodoActivity.java" im Paket "com.example.getstartedwithdata" und entfernen Sie die Kommentare in den folgenden Codezeilen: 
 
-        import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
-        import com.microsoft.windowsazure.mobileservices.MobileServiceTable;
-        import com.microsoft.windowsazure.mobileservices.NextServiceFilterCallback;
-        import com.microsoft.windowsazure.mobileservices.ServiceFilter;
-        import com.microsoft.windowsazure.mobileservices.ServiceFilterRequest;
-        import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
-        import com.microsoft.windowsazure.mobileservices.ServiceFilterResponseCallback;
-        import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
-        import com.microsoft.windowsazure.mobileservices.TableQueryCallback;
+		import java.net.MalformedURLException;
+		import android.os.AsyncTask;
+		import com.google.common.util.concurrent.FutureCallback;
+		import com.google.common.util.concurrent.Futures;
+		import com.google.common.util.concurrent.ListenableFuture;
+		import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
+		import com.microsoft.windowsazure.mobileservices.MobileServiceList;
+		import com.microsoft.windowsazure.mobileservices.http.NextServiceFilterCallback;
+		import com.microsoft.windowsazure.mobileservices.http.ServiceFilter;
+		import com.microsoft.windowsazure.mobileservices.http.ServiceFilterRequest;
+		import com.microsoft.windowsazure.mobileservices.http.ServiceFilterResponse;
+		import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
 
-        import java.net.MalformedURLException;
+ 
+6. Kommentieren Sie die folgenden Zeilen:
 
-6.  Wir werden die aktuell verwendete speicherinterne Liste entfernen und durch einen mobilen Dienst ersetzen. Kommentieren Sie in der Klasse **ToDoActivity** die folgenden Codezeilen, in denen die **toDoItemList**-Liste definiert wird.
+		import java.util.ArrayList;
+		import java.util.List;
 
-        public List<ToDoItem> toDoItemList = new ArrayList<ToDoItem>();
+7. Wir werden die aktuell verwendete speicherinterne Liste entfernen und durch einen mobilen Dienst ersetzen. Kommentieren Sie in der **ToDoActivity**-Klasse die folgenden Codezeilen, in denen die vorhandene **toDoItemList**-Liste definiert wird.
 
-7.  Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Orten, an denen die Variable `toDoItemList` verwendet wird, und kommentieren Sie die entsprechenden Abschnitte aus. Entfernen Sie zudem `import java.util.ArrayList`. Nun haben Sie die speicherinterne Liste vollständig entfernt.
+		public List<ToDoItem> toDoItemList = new ArrayList<ToDoItem>();
 
-8.  Wir werden nun den mobilen Dienst hinzufügen. Entfernen Sie die Kommentare in den folgenden Codezeilen:
+8. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Orten, an denen die Variable "toDoItemList" verwendet wird, und kommentieren Sie die entsprechenden Abschnitte aus. Nun haben Sie die speicherinterne Liste vollständig entfernt. 
 
-        private MobileServiceClient mClient;
-        private private MobileServiceTable<ToDoItem> mToDoTable;
+9. Wir werden nun den mobilen Dienst hinzufügen. Entfernen Sie die Kommentare in den folgenden Codezeilen:
 
-9.  Suchen Sie die ProgressFilter-Klasse am Ende der Datei und entfernen Sie deren Kommentare ebenfalls. Diese Klasse zeigt einen Hinweis an, wenn der MobileServiceClient Netzwerkoperationen ausführt.
+		private MobileServiceClient mClient;
+		private private MobileServiceTable<ToDoItem> mToDoTable;
 
-10. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
+10. Suchen Sie die *ProgressFilter*-Klasse am Ende der Datei und entfernen Sie deren Kommentare. Diese Klasse zeigt einen Hinweis an, wenn "MobileServiceClient* Netzwerkoperationen ausführt.
 
-11. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site URL**. Klicken Sie anschließend auf **Schlüssel verwalten**, und notieren Sie sich den **Anwendungsschlüssel**.
 
-    ![][0]
+11. Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
-    Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
+12. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie die **Site-URL**. Klicken Sie anschließend auf **Schlüssel verwalten,**, und notieren Sie sich den **Anwendungsschlüssel**.
 
-12. Entfernen Sie in der Methode **onCreate** die Kommentare in den folgenden Codezeilen, in denen die **MobileServiceClient**-Variable definiert wird:
+   	![](./media/download-android-sample-code/mobile-dashboard-tab.png)
 
-        try {
-        // Create the Mobile Service Client instance, using the provided
-        // Mobile Service URL and key
-            mClient = new MobileServiceClient(
-                    "MobileServiceUrl",
-                    "AppKey", 
-                    this).withFilter(new ProgressFilter());
+  	Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
 
-            // Get the Mobile Service Table instance to use
-            mToDoTable = mClient.getTable(ToDoItem.class);
-        } catch (MalformedURLException e) {
-            createAndShowDialog(new Exception("There was an error creating the Mobile Service. Verify the URL"), "Error");
-        }
+13. Entfernen Sie in der **onCreate**-Methode die Kommentare in den folgenden Codezeilen, in denen die **MobileServiceClient**-Variable definiert wird:
 
-    Dieser Code erstellt eine neue MobileServiceClient-Instanz, die für den Zugriff auf Ihren mobilen Dienst verwendet wird. Außerdem wird die MobileServiceTable-Instanz für die Proxy-Datenspeicherung im mobilen Dienst erstellt.
+		try {
+		// Create the Mobile Service Client instance, using the provided
+		// Mobile Service URL and key
+			mClient = new MobileServiceClient(
+					"MobileServiceUrl",
+					"AppKey", 
+					this).withFilter(new ProgressFilter());
 
-13. Ersetzen Sie im obigen Code `MobileServiceUrl` und `AppKey` durch die URL und den Anwendungsschlüssel Ihres mobilen Dienstes, in dieser Reihenfolge.
+			// Get the Mobile Service Table instance to use
+			mToDoTable = mClient.getTable(ToDoItem.class);
+		} catch (MalformedURLException e) {
+			createAndShowDialog(new Exception("There was an error creating the Mobile Service. Verify the URL"), "Error");
+		}
 
-14. Entfernen Sie die Kommentare in diesen Zeilen in der **checkItem**-Methode:
+  	Dieser Code erstellt eine neue *MobileServiceClient*-Instanz, die für den Zugriff auf Ihren mobilen Dienst verwendet wird. Außerdem wird die *MobileServiceTable*-Instanz für die Proxy-Datenspeicherung im mobilen Dienst erstellt.
 
-        mToDoTable.update(item, new TableOperationCallback<ToDoItem>() {    
-            public void onCompleted(ToDoItem entity, Exception exception,
-                    ServiceFilterResponse response) {
-                if(exception == null){
-                    if (entity.isComplete()) {
-                        mAdapter.remove(entity);
-                    }
-                } else {
-                    createAndShowDialog(exception, "Error");    
-                }
-            }
-        });
-
-    Dieser Code schickt eine Elementaktualisierung an den mobilen Dienst und entfernt markierte Elemente aus dem Adapter.
-
-15. Entfernen Sie die Kommentare in diesen Zeilen in der **addItem**-Methode:
-
-        mToDoTable.insert(item, new TableOperationCallback<ToDoItem>() {
-
-            public void onCompleted(ToDoItem entity, Exception exception,
-                    ServiceFilterResponse response) {
-                if(exception == null){
-                    if (!entity.isComplete()) {
-                        mAdapter.add(entity);
-                    }
-                } else {
-                    createAndShowDialog(exception, "Error");
-                }               
-            }
-        });
-
-    Dieser Code erstellt ein neues Element und fügt es in die Tabelle im mobilen Dienst ein.
-
-16. Entfernen Sie die Kommentare in diesen Zeilen in der **refreshItemsFromTable**-Methode:
-
-        mToDoTable.where().field("complete").eq(false)
-        .execute(new TableQueryCallback<ToDoItem>() {
-             public void onCompleted(List<ToDoItem> result, 
-                     int count, Exception exception, 
-                     ServiceFilterResponse response) {
-
-                        if(exception == null){
-                            mAdapter.clear();
-
-                            for (ToDoItem item : result) {
-                                mAdapter.add(item);
-                            }
-                        } else {
-                            createAndShowDialog(exception, "Error");
-                        }
-                    }
-                }); 
-
-    Dieser Code fragt den mobilen Dienst ab und gibt alle Elemente zurück, die nicht als abgeschlossen markiert sind. Die Elemente werden für die Bindung zum Adapter hinzugefügt.
+14. Ersetzen Sie im obigen Code "MobileServiceUrl" und "AppKey" durch die URL und den Anwendungsschlüssel Ihres mobilen Dienstes, in dieser Reihenfolge.
 
 
 
-  [Android-SDK für mobile Dienste]: http://go.microsoft.com/fwlink/p/?LinkID=280126
-  [0]: ./media/download-android-sample-code/mobile-dashboard-tab.png
+15. Entfernen Sie die Kommentare in diesen Zeilen in der **checkItem**-Methode:
+
+	    new AsyncTask<Void, Void, Void>() {
+	        @Override
+	        protected Void doInBackground(Void... params) {
+	            try {
+	                mToDoTable.update(item).get();
+	                runOnUiThread(new Runnable() {
+	                    public void run() {
+	                        if (item.isComplete()) {
+	                            mAdapter.remove(item);
+	                        }
+	                        refreshItemsFromTable();
+	                    }
+	                });
+	            } catch (Exception exception) {
+	                createAndShowDialog(exception, "Error");
+	            }
+	            return null;
+	        }
+	    }.execute();
+
+   	Dieser Code schickt eine Elementaktualisierung an den mobilen Dienst und entfernt markierte Elemente aus dem Adapter.
+    
+16. Entfernen Sie die Kommentare in diesen Zeilen in der **addItem**-Methode:
+	
+		// Insert the new item
+		new AsyncTask<Void, Void, Void>() {
+	        @Override
+	        protected Void doInBackground(Void... params) {
+	            try {
+	                mToDoTable.insert(item).get();
+	                if (!item.isComplete()) {
+	                    runOnUiThread(new Runnable() {
+	                        public void run() {
+	                            mAdapter.add(item);
+	                        }
+	                    });
+	                }
+	            } catch (Exception exception) {
+	                createAndShowDialog(exception, "Error");
+	            }
+	            return null;
+	        }
+	    }.execute();
+		
+
+  	Dieser Code erstellt ein neues Element und fügt es in die Tabelle im mobilen Dienst ein.
+
+18. Entfernen Sie die Kommentare in diesen Zeilen in der **refreshItemsFromTable**-Methode:
+
+		// Get the items that weren't marked as completed and add them in the adapter
+	    new AsyncTask<Void, Void, Void>() {
+	        @Override
+	        protected Void doInBackground(Void... params) {
+	            try {
+	                final MobileServiceList<ToDoItem> result = mToDoTable.where().field("complete").eq(false).execute().get();
+	                runOnUiThread(new Runnable() {
+	                    @Override
+	                    public void run() {
+	                        mAdapter.clear();
+
+	                        for (ToDoItem item : result) {
+	                            mAdapter.add(item);
+	                        }
+	                    }
+	                });
+	            } catch (Exception exception) {
+	                createAndShowDialog(exception, "Error");
+	            }
+	            return null;
+	        }
+	    }.execute();
+
+Dieser Code fragt den mobilen Dienst ab und gibt alle Elemente zurück, die nicht als abgeschlossen markiert sind. Die Elemente werden für die Bindung zum Adapter hinzugefügt.
+		
+
+<!-- URLs. -->
+[Mobile Services Android SDK]: http://aka.ms/Iajk6q
