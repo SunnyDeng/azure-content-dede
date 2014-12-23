@@ -30,7 +30,7 @@ Microsoft Azure Redis Cache basiert auf dem beliebten Open Source Redis Cache. S
 Microsoft Azure Redis Cache ist in zwei Ebenen verfügbar:
 
 -	**Einfach** - Einzelner Knoten. Mehrere Größen bis zu 53 GB.
--	**Standard** - Zwei Knoten Master/Slave. Mehrere Größen bis zu 53 GB. 99,9 % SLA
+-	**Standard** - Zwei Knoten übergeordnet/untergeordnet. Mehrere Größen bis zu 53 GB. 99,9 % SLA
 
 Diese Ausführungen unterscheiden sich hinsichtlich der Features und des Preises. Die Features werden weiter unten in diesem Leitfaden behandelt, weitere Informationen zu den Preisen finden Sie unter [Cache - Preisdetails][].
 
@@ -61,7 +61,7 @@ Geben Sie unter **DNS-Name** einen Unterdomänennamen für den Cacheendpunkt ein
 Wählen Sie unter **Preisebene** die gewünschte Größe und Merkmale für den Cache aus. Redis Cache ist in den folgenden beiden Ebenen verfügbar.
 
 -	**Einfach** - Einzelner Knoten, mehrere Größen bis zu 53 GB.
--	**Standard** - Zwei Knoten Master/Slave, 99,9% SLA, mehrere Größen bis zu 53 GB.
+-	**Standard** - Zwei Knoten übergeordnet/untergeordnet, 99,9% SLA, mehrere Größen bis zu 53 GB.
 
 Wählen Sie unter **Abonnement** das Azure-Abonnement für den Cache aus.
 
