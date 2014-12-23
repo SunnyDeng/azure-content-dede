@@ -1,9 +1,39 @@
-<properties title="DocumentDB limits for the preview release" pageTitle="DocumentDB limits for the preview release | Azure" description="Learn about the limits and quota enforcements of DocumentDB for the preview release." metaKeywords="" services="documentdb" solutions="data-management"  authors="bradsev" " manager="jhubbard" editor="cgronlun"  videoId="" scriptId="" />
+﻿<properties title="DocumentDB limits for the preview release" pageTitle="DocumentDB-Einschränkungen für die Vorschauversion | Azure" description="Learn about the limits and quota enforcements of DocumentDB for the preview release." metaKeywords="" services="documentdb" solutions="data-management"  authors="bradsev" manager="jhubbard" editor="cgronlun"  videoId="" scriptId="" />
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="bradsev" >
+<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
 
-<h1 id="documentdb-limits-for-the-preview-release">DocumentDB-Einschränkungen für die Vorschauversion</h1> 
 
-In der folgenden Tabelle werden die Einschränkungen und Kontingenterzwingungen von DocumentDB bei der Vorschauversion beschrieben. In den meisten Fällen werden die Einschränkungen mit der Absicht erzwungen, Ihr Feedback einzuholen, oder basierend auf den aktuellen Kapazitätseinschränkungen. Wenn Sie in Ihrem Unternehmen die Einschränkungen lockern möchten, rufen Sie uns an. Wir werden uns bemühen, Ihre Wünsche im Rahmen der Einschränkungen des öffentlichen Angebots zu erfüllen.
+#DocumentDB-Einschränkungen für die Vorschauversion
+	In der folgenden Tabelle werden die Einschränkungen und Kontingenterzwingungen von DocumentDB bei der Vorschauversion beschrieben. In den meisten Fällen werden die Einschränkungen mit der Absicht erzwungen, Ihr Feedback einzuholen, oder basierend auf den aktuellen Kapazitätseinschränkungen. Wenn Sie in Ihrem Unternehmen die Einschränkungen lockern möchten, rufen Sie uns an. Wir werden uns bemühen, Ihre Wünsche im Rahmen der Einschränkungen des öffentlichen Angebots zu erfüllen.    
 
-<table> <thead> <tr class="header"> <th align="left">Entität</th> <th align="left">Kontingent (Standardangebot für die Vorschauversion)</th> </tr> </thead> <tbody> <tr class="odd"> <td align="left">Datenbankkonten</td>  <td align="left">5</td> </tr> <tr class="even"> <td align="left">Anzahl von Datenbanken pro Datenbankkonto</td> <td align="left">100</td> </tr> <tr class="odd"> <td align="left">Anzahl von Benutzern pro Datenbankkonto – über alle Datenbanken hinweg</td> <td align="left">500.000 </td >  </tr >  <tr class="even" >  <td align="left" >Anzahl von Berechtigungen pro Datenbankkonto – über alle Datenbanken hinweg </td >  <td align="left" >2.000.000 </td >  </tr >  <tr class="odd" >  <td align="left" >Anhangspeicher pro Datenbankkonto </td >  <td align="left" >2 GB </td >  </tr >  <tr class="even" >  <td align="left" >Maximale Anzahl von Kapazitätseinheiten pro Datenbankkonto </td >  <td align="left" >5 </td >  </tr >  <tr class="odd" >  <td align="left" >Anzahl von Auflistungen pro Kapazitätseinheit </td >  <td align="left" >3 </td >  </tr >  <tr class="even" >  <td align="left" >Mindestens zugewiesener Speicher pro Auflistung mit mindestens 1 Dokument </td >  <td align="left" >3,3 GB </td >  </tr >  <tr class="odd" >  <td align="left" >Mindestens zugewiesener Durchsatz pro Auflistung mit mindestens 1 Dokument </td >  <td align="left" >667 RUs </td >  </tr >  <tr class="even" >  <td align="left" >Elastizität einer Auflistung </td >  <td align="left" >0-10 GB </td >  </tr >  <tr class="odd" >  <td align="left" >Maximale Anforderungseinheiten/Sek. pro Auflistung </td >  <td align="left" >2000 </td >  </tr >  <tr class="even" >  <td align="left" >Anzahl gespeicherter Prozeduren, Auslöser und UDFs pro Auflistung </td >  <td align="left" >Jeweils 5 </td >  </tr >  <tr class="odd" >  <td align="left" >Maximale Ausführungszeit für gespeicherte Prozedur und Auslöser </td >  <td align="left" >5 Sekunden </td >  </tr >  <tr class="even" >  <td align="left" >Bereitgestellter Dokumentspeicher/Kapazitätseinheit </td >  <td align="left" >10 GB </td >  </tr >  <tr class="odd" >  <td align="left" >Bereitgestellte Anforderungseinheiten/Sek. pro Auflistung </td >  <td align="left" >2000 </td >  </tr >  <tr class="even" >  <td align="left" >Maximaler Dokumentspeicher pro Datenbank (5 Kapazitätseinheiten) </td >  <td align="left" >50 GB </td >  </tr >  <tr class="odd" >  <td align="left" >Maximale Lenge der ID-Eigenschaft </td >  <td align="left" >255 Zeichen </td >  </tr >  <tr class="even" >  <td align="left" >Standardanzahl von Elementen pro Seite </td >  <td align="left" >100 </td >  </tr >  <tr class="odd" >  <td align="left" >Maximale Elemente pro Seite </td >  <td align="left" >1000 </td >  </tr >  <tr class="even" >  <td align="left" >Maximale Anforderungsgröße von Dokument, Anhang, gespeicherter Prozedur, Auslöser und UDF </td >  <td align="left" >16 KB </td >  </tr >  <tr class="odd" >  <td align="left" >Maximale Antwortgröße </td >  <td align="left" >1 MB </td >  </tr >  <tr class="even" >  <td align="left" >Maximale Anzahl von eindeutigen Pfaden pro Auflistung </td >  <td align="left" >100 </td >  </tr >  <tr class="odd" >  <td align="left" >Zeichenfolge </td >  <td align="left" >Alle Zeichenfolgen müssen der UTF-8-Codierung entsprechen. Da es sich bei UTF-8 um eine Codierung mit variabler Breite handelt, werden die Zeichenfolgengrößen mithilfe der UTF-8-Bytes ermittelt. </td >  </tr >  <tr class="even" >  <td align="left" >Maximale Lenge der Eigenschaft oder des Werts </td >  <td align="left" >Keine Einschränkung </td >  </tr >  <tr class="odd" >  <td align="left" >Maximale Anzahl von UDFs pro Abfrage </td >  <td align="left" >1 </td >  </tr >  <tr class="even" >  <td align="left" >Maximale Anzahl von JOINs pro Abfrage </td >  <td align="left" >2 </td >  </tr >  <tr class="odd" >  <td align="left" >Maximale Anzahl von UND-Klauseln pro Abfrage </td >  <td align="left" >3 </td >  </tr >  <tr class="even" >  <td align="left" >Maximale Anzahl von ODER-Klauseln pro Abfrage </td >  <td align="left" >3 </td >  </tr >  </tbody >  </table >
+|Entität |Kontingent (Standardangebot für die Vorschauversion)|
+|-------|--------|
+|Datenbankkonten     |5
+|Anzahl von Datenbanken pro Datenbankkonto     |100
+|Anzahl von Benutzern pro Datenbankkonto - über alle Datenbanken hinweg |500.000
+|Anzahl von Berechtigungen pro Datenbankkonto - über alle Datenbanken hinweg   |2.000.000
+|Anhangspeicher pro Datenbankkonto      |2 GB
+|Maximale Anzahl von Kapazitätseinheiten pro Datenbankkonto       |5
+|Anzahl von Auflistungen pro Kapazitätseinheit      |3
+|Mindestens zugewiesener Speicher pro Auflistung mit mindestens 1 Dokument    |3,3 GB
+|Mindestens zugewiesener Durchsatz pro Auflistung mit mindestens 1 Dokument |667 RUs
+|Flexibilität einer Auflistung    |0-10 GB
+|Maximale Anforderungseinheiten/Sek. pro Auflistung   |2000
+|Anzahl gespeicherter Prozeduren, Trigger und UDFs pro Auflistung       |jeweils 25
+|Maximale Ausführungszeit für gespeicherte Prozedur und Auslöser     |5 Sekunden
+|Bereitgestellter Dokumentspeicher/Kapazitätseinheit |10 GB
+|Bereitgestellte Anforderungseinheiten/Sek. pro Auflistung     |2000
+|Maximaler Dokumentspeicher pro Datenbank (5 Kapazitätseinheiten)    |50 GB
+|Maximale Länge der ID-Eigenschaft    |255 Zeichen
+|Standardanzahl von Elementen pro Seite     |100
+|Maximale Elemente pro Seite        |1000
+|Maximale Anforderungsgröße von Dokumenten und Anlagen       |256 KB
+|Maximale Anforderungsgröße von gespeicherter Prozedur, Trigger und UDF        |256 KB
+|Maximale Antwortgröße |1 MB
+|Maximale Anzahl von eindeutigen Pfaden pro Auflistung       |100
+|Zeichenfolge |Alle Zeichenfolgen müssen der UTF-8-Codierung entsprechen. Da es sich bei UTF-8 um eine Codierung mit variabler Breite handelt, werden die Zeichenfolgengrößen mithilfe der UTF-8-Bytes ermittelt.
+|Maximale Länge der Eigenschaft oder des Werts  |Keine praktische Einschränkung
+|Maximale Anzahl von UDFs pro Abfrage     |1
+|Maximale Anzahl von JOINs pro Abfrage    |2
+|Maximale Anzahl von UND-Klauseln pro Abfrage      |5
+|Maximale Anzahl von ODER-Klauseln pro Abfrage       |5

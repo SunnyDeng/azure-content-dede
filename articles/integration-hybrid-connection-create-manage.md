@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Create and Manage Hybrid Connections - BizTalk Services" pageTitle="Erstellen und Verwalten von Hybridverbindungen | Azure" metaKeywords="BizTalk Services, BizTalk, web sites, website, hybrid connections, Azure" description="Learn how to create a hybrid connection, manage the connection, and install the Hybrid Connection Manager." metaCanonical="" services="integration-services" documentationCenter="" title="Create and Manage Hybrid Connections" authors="mandia" solutions="" manager="dwrede" editor="cgronlun" />
+<properties urlDisplayName="Create and Manage Hybrid Connections - BizTalk Services" pageTitle="Erstellen und Verwalten von Hybridverbindungen | Azure" metaKeywords="BizTalk Services, BizTalk, web sites, website, hybrid connections, Azure" description="Learn how to create a hybrid connection, manage the connection, and install the Hybrid Connection Manager." metaCanonical="" services="integration-services" documentationCenter="" title="Create and Manage Hybrid Connections" authors="mandia" solutions="" manager="dwrede" editor="cgronlun" />
 
 <tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia" />
 
@@ -20,7 +20,7 @@ Folgende Schritte sind für Verbindungen zu einer lokalen Ressource erforderlich
 
 ##<a name="CreateHybridConnection"></a>Erstellen einer Hybridverbindung
 
-Eine Hybridverbindung kann im Azure-Verwaltungsportal anhand von Websites** oder ** BizTalk Services erstellt werden. 
+Eine Hybridverbindung kann im Azure-Verwaltungsportal anhand von Websites **oder** BizTalk Services erstellt werden. 
 
 **Informationen zum Erstellen von Hybridverbindungen mit Websites** finden Sie unter [Verbinden einer Azure-Website mit einer lokalen Ressource](http://go.microsoft.com/fwlink/p/?LinkId=397538).
 
@@ -103,7 +103,7 @@ You can also download the Hybrid Connection Manager MSI file and copy the file t
 2. Download the Hybrid Connection Manager MSI file. 
 3. On the on-premises resource, install the Hybrid Connection Manager from the MSI file. 
 4. Using Windows PowerShell, type: 
-> Hinzufügen einer Hybrid-Verbindung - Verbindungszeichenfolge Â €œ * Ihre lokale Verbindungszeichenfolge, die Sie kopiert haben* Â € 
+> Add-HybridConnection -ConnectionString “*Your On-Premises Connection String that you copied*” 
 --> 
 
 #### Zusätzlich

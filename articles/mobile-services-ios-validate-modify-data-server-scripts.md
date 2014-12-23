@@ -1,4 +1,4 @@
-<properties urlDisplayName="Validate Data" pageTitle="Verwenden von Serverskripts zum Überprüfen und Ändern von Daten (iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to validate and modify data sent using server scripts from your iOS app." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="krisragh" solutions="" manager="dwrede" editor="" />
+﻿<properties urlDisplayName="Validate Data" pageTitle="Verwenden von Serverskripts zum Überprüfen und Ändern von Daten (iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to validate and modify data sent using server scripts from your iOS app." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="krisragh" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
 
@@ -16,23 +16,23 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten] auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Daten] abschließen.  
 
-## <a name="string-length-validation"></a>Überprüfung hinzufügen
+## <a name="string-length-validation"></a>Add validation
 
-Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, zu überprüfen. Zunächst registrieren Sie ein Skript, das die Länge von Zeichenfolgendendaten überprüft, die an den mobilen Dienst gesendet werden, und das Zeichenfolgen ablehnt, die zu lang sind, in diesem Fall länger als zehn Zeichen.
+It is always a good practice to validate the length of data that is submitted by users. First, you register a script that validates the length of string data sent to the mobile service and rejects strings that are too long, in this case longer than 10 characters.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
+1. Log into the [Azure Management Portal], click **Mobile Services**, and then click your app.
 
    	![][0]
 
-2. Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
+2. Click the **Data** tab, then click the **TodoItem** table.
 
    	![][1]
 
-3. Klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen**.
+3. Click **Script**, then select the **Insert** operation.
 
    	![][2]
 
-4. Ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Save**.
+4. Replace the existing script with the following function, and then click **Save**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -42,27 +42,27 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
             }
         }
 
-    Das Skript überprüft die Länge der Eigenschaft **text** und sendet eine Fehlerantwort, wenn die Länge zehn Zeichen überschreitet. Andernfalls wird die Methode **execute** aufgerufen, um das Einfügen abzuschließen.
+    This script checks the length of the **text** property and sends an error response when the length exceeds 10 characters. Otherwise, the **execute** method is called to complete the insert.
 
     <div class="dev-callout">
-	<b>Hinweis</b>
-	<p>Sie k&ouml;nnen ein registriertes Skript auf der Registerkarte <strong>Script</strong> entfernen, indem Sie auf <strong>Clear</strong> und dann auf <strong>Save</strong> klicken.</p></div>
+	<b>Note</b>
+	<p>You can remove a registered script on the <strong>Script</strong> tab by clicking <strong>Clear</strong> and then <strong>Save</strong>.</p></div>
 
-## <a name="update-client-validation"></a>Den Client aktualisieren
+## <a name="update-client-validation"></a>Update the client
 
-Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen Sie Ihre App aktualisieren, damit sie Fehlerantworten der Überprüfung verarbeiten kann.
+Now that the mobile service is validating data and sending error responses, you need to update your app to be able to handle error responses from validation.
 
-1. Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit Daten][Erste Schritte mit Daten] verändert haben..
+1. In Xcode, open the project that you modified when you completed the tutorial [Get started with data].
 
-2. Drücken Sie die **Run**-Taste (Command + R), um das Projekt zu erstellen und die App zu starten. Geben Sie anschließend einen Text mit mehr als 10 Zeichen in das Textfeld ein und klicken Sie auf das (**+**)-Symbol.
+2. Press the **Run** button (Command + R) to build the project and start the app, then type text longer than 10 characters in the textbox and click the  plus (**+**) icon.
 
-   	Beachten Sie, dass die App einen unbehandelten Fehler als Ergebnis der vom mobilen Dienst zurückgegebenen 400-Antwort (Bad Request) ausgibt.
+   	Notice that the app raises an unhandled error as a result of the 400 response (Bad Request) returned by the mobile service.
 
-3. Suchen Sie die folgende Codezeile in der **addItem**-Methode in QSTodoService.m:
+3. In the QSTodoService.m file, locate the following line of code in the **addItem** method:
 
         [self logErrorIfNotNil:error];
 
-   	Ersetzen Sie im Anschluss an diese Codezeile den verbleibenden completion-Block durch den folgenden Code:
+   	After this line of code, replace the remainder of the completion block with the following code:
 
         BOOL goodRequest = !((error) && (error.code == MSErrorMessageErrorCode));
 
@@ -93,13 +93,13 @@ Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen 
             }
         }
 
-   	Dadurch wird der Fehler im Ausgabefenster protokolliert und dem Benutzer angezeigt.
+   	This logs the error to the output window and displays it to the user.
 
-4. Erstellen und starten Sie die App.
+4. Rebuild and start the app.
 
    	![][4]
 
-  	Beachten Sie, dass der Fehler behandelt und die Fehlermeldung für den Benutzer angezeigt wird.
+  	Notice that error is handled and the error messaged is displayed to the user.
 
 <!--## <a name="add-timestamp"></a>Add a timestamp
 
