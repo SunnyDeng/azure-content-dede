@@ -4,7 +4,7 @@
 
 # Verfeinern von Mobile Services-Abfragen mit Paging
 
-€
+[WACOM.INCLUDE [mobile-services-selector-add-paging-data](../includes/mobile-services-selector-add-paging-data.md)]
 
 In diesem Thema erfahren Sie, wie Sie die aus Azure Mobile Services an Ihre Android-App zurückgegebene Datenmenge mithilfe von Paging steuern können. Dieses Lernprogramm verwendet die Abfragemethoden **Top** und **Skip** im Client, um bestimmte "Seiten" von Daten abzufragen.
 

@@ -175,7 +175,7 @@ Entfernen Sie in jedem "Html.ActionLink"-Aufruf für die Navigationsleiste "Brow
         <li>@Html.ActionLink("Tag", "AllTags", "Home")</li>
     </ul>
 
-Kopieren Sie die Datei *Views\\Home\\AllTags.cshtml* nach *Views\\Home\\AllTags.Mobile.cshtml*. Öffnen Sie die neue Datei, und ändern Sie das "<h2>"-Element von "Tags" zu "Tags (M)":
+Kopieren Sie die Datei *Views\\Home\\AllTags.cshtml* nach *Views\\Home\\AllTags.Mobile.cshtml*. Öffnen Sie die neue Datei, und ändern Sie das `<h2>`-Element von "Tags" zu "Tags (M)":
 
     <h2>Tags (M)</h2>
 
