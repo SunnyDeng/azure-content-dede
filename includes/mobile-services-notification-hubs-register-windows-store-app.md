@@ -16,7 +16,7 @@
 
   	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-store-association.png)
 
-   	   	Daraufhin wird der Assistent zum **Zuordnen Ihrer Anwendung zum Windows Store** angezeigt.
+   	Daraufhin wird der Assistent zum **Zuordnen Ihrer Anwendung zum Windows Store** angezeigt.
 
 5. Klicken Sie im Assistenten auf **Anmelden**. Melden Sie sich dann mit Ihrem Microsoft-Konto ein.
 
