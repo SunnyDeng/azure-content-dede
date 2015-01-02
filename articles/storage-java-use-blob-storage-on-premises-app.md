@@ -1,90 +1,75 @@
-<properties urlDisplayName="Image Gallery w/ Storage" pageTitle="Lokale Anwendungen mit Blob-Speicher (Java) | Microsoft Azure" metaKeywords="Azure blob storage, Azure blob Java, Azure blob example, Azure blob tutorial" description="Lernen Sie, wie Sie eine Konsolenanwendung erstellen, die ein Bild in Azure hochl&auml;dt und anschlie&szlig;end das Bild in Ihrem Browser anzeigt. Die Codebeispiele wurden in Java geschrieben." metaCanonical="" services="storage" documentationCenter="Java" title="Lokale Anwendungen mit Blob-Speicher" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties urlDisplayName="Image Gallery w/ Storage" pageTitle="Lokale Anwendungen mit Blob-Speicher (Java) | Microsoft Azure" metaKeywords="Azure blob storage, Azure blob Java, Azure blob example, Azure blob tutorial" description="Learn how to create a console application that uploads an image to Azure, and then displays the image in your browser. Code samples in Java." metaCanonical="" services="storage" documentationCenter="Java" title="On-Premises Application with Blob Storage" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
 # Lokale Anwendungen mit Blob-Speicher
 
-Das folgende Beispiel zeigt, wie Sie den Azure-Speicher zur Speicherung
-von Bildern in Azure verwenden können. Der folgende Code implementiert
+Das folgende Beispiel zeigt, wie Sie den Azure-Speicher zur Speicherung von
+Bildern in Azure verwenden können. Der folgende Code implementiert
 eine Konsolenanwendung, die ein Bild in Azure hochlädt
 und anschließend eine HTML-Datei erstellt, die das Bild in Ihrem Browser anzeigt.
 
 ## Inhaltsverzeichnis
 
--   [Voraussetzungen][Voraussetzungen]
--   [Verwenden von Azure Blob-Speicher für Dateiuploads][Verwenden von Azure Blob-Speicher für Dateiuploads]
--   [So löschen Sie einen Container][So löschen Sie einen Container]
+-   [Voraussetzungen][]
+-   [Verwenden von Azure Blob-Speicher für Dateiuploads][]
+-   [So löschen Sie einen Container][]
 
 ## <a name="bkmk_prerequisites"> </a>Voraussetzungen
 
 1.  Java Developer Kit (JDK), Version 1.6 oder höher.
 2.  Das Azure SDK ist installiert.
-3.  Die JAR-Datei der Azure-Bibliotheken für Java und alle sonstigen
-    JAR-Abhängigkeiten sind installiert
-    und im Buildpfad Ihres Java-Compilers eingebunden. Weitere Informationen zur Installation der Azure-Bibliotheken für Java finden Sie unter
-    [Downloadseite des Azure-SDK für Java][Downloadseite des Azure-SDK für Java].
-4.  Ein Azure-Speicherkonto wurde eingerichtet. Der folgende Code
-    verwendet Kontonamen und Kontoschlüssel
-    des Speicherkontos. Unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos] finden Sie Informationen zum Einrichten von Speicherkonten,
-    und unter [Verwalten von Speicherkonten][Verwalten von Speicherkonten] erfahren Sie,
-    wie Sie Ihren Kontoschlüssel ermitteln können.
-5.  Sie haben eine lokale Bilddatei unter dem Pfad
-    "c:\\myimages\\image1.jpg" erstellt. Alternativ können Sie den
-    **FileInputStream**-Konstruktor im Beispiel verändern, um einen
-    anderen Pfad bzw. Dateinamen zu verwenden.
+3.  Die JAR-Datei der Azure-Bibliotheken für Java und alle sonstigen JAR-Abhängigkeiten sind installiert und im Buildpfad Ihres Java-Compilers eingebunden. Weitere Informationen zur Installation der Azure-Bibliotheken für Java finden Sie unter [Downloadseite des Azure-SDK für Java].
+4.  Ein Azure-Speicherkonto wurde eingerichtet. Der folgende Code verwendet Kontonamen und Kontoschlüssel des Speicherkontos. Unter[Erstellen eines Speicherkontos] finden Sie Informationen zum Einrichten von Speicherkonten, und unter [Verwalten von Speicherkonten] erfahren Sie, wie Sie Ihren Kontoschlüssel ermitteln können.
+5.  Sie haben eine lokale Bilddatei unter dem Pfad c:\\myimages\\image1.jpg erstellt. Alternativ können Sie den **FileInputStream**-Konstruktor im Beispiel verändern, um einen anderen Pfad bzw. Dateinamen zu verwenden.
 
 [WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## <a name="bkmk_uploadfile"> </a>Verwenden von Azure Blob-Speicher für Dateiuploads
 
-Hier finden Sie eine Schritt-für-Schritt-Anleitung. Falls Sie diese überspringen möchten,
-finden Sie den vollständigen Code weiter unten in diesem Artikel.
+Hier finden Sie eine Schritt-für-Schritt-Anleitung. Falls Sie diese überspringen möchten, finden Sie den vollständigen Code weiter unten in diesem Artikel.
 
 Importieren Sie zunächst die Core-Klassen für den Azure-Speicher,
-die Azure Blobclientklassen, die Java IO-Klassen
-und die **URISyntaxException**-Klasse:
+die Azure Blobclientklassen, die Java IO-Klassen und
+die **URISyntaxException**-Klasse:
 
     import com.microsoft.windowsazure.services.core.storage.*;
     import com.microsoft.windowsazure.services.blob.client.*;
     import java.io.*;
     import java.net.URISyntaxException;
 
-Deklarieren Sie eine Klasse mit dem Namen **StorageSample** und fügen Sie eine offene geschweifte Klammer an,
+Deklarieren Sie eine Klasse mit dem Namen **StorageSample**, und fügen Sie eine offene geschweifte Klammer an,
 **{**.
 
     public class StorageSample {
 
 Deklarieren Sie in der Klasse **StorageSample** eine Zeichenfolgenvariable
-für das Standard-Endpunktprotokoll, den Namen Ihres Speicherkontos
-und Ihren Speicherzugriffsschlüssel gemäß Ihrem
+für das Standard-Endpunktprotokoll, den Namen Ihres Speicherkontos und
+Ihren Speicherzugriffsschlüssel gemäß Ihrem
 Azure-Speicherkonto. Ersetzen Sie die Platzhalterwerte **your\_account\_name** und
-**your\_account\_key** durch Ihren Kontonamen
-und Ihren Kontoschlüssel.
+**your\_account\_key** durch Ihren Kontonamen und Ihren Kontoschlüssel
+.
 
     public static final String storageConnectionString = 
            "DefaultEndpointsProtocol=http;" + 
                "AccountName=your_account_name;" + 
                "AccountKey=your_account_name"; 
 
-Fügen Sie die **main**-Deklaration hinzu, öffnen Sie einen **try**-Block,
-und fügen Sie die notwendigen geschweiften Klammern an, **{**.
+Fügen Sie die **main**-Deklaration hinzu, öffnen Sie einen **try**-Block und
+fügen Sie die notwendigen geschweiften Klammern an, **{**.
 
     public static void main(String[] args) 
     {
         try
         {
 
-Deklarieren Sie die folgenden Variablen (die Beschreibung gibt deren
-Verwendungszweck an):
+Deklarieren die folgenden Variablen (die Beschreibung
+gibt deren Verwendungszweck an):
 
--   **CloudStorageAccount**: Wird zur Initialisierung des Kontoobjekts
-    mit Ihrem Azure-Speicherkontonamen und -Schlüssel und zur Erstellung des
-    Blobclientobjekts verwendet.
+-   **CloudStorageAccount**: Wird zur Initialisierung des Konto-Objekts mit Ihrem Azure-Speicherkontonamen und -Schlüssel und zur Erstellung des Blob-Clientobjekts verwendet.
 -   **CloudBlobClient**: Dient zum Zugriff auf den Blob-Dienst.
--   **CloudBlobContainer**: Dient zur Erstellung eines Blobcontainers,
-    zum Auflisten der Blobs im Container und zum Löschen des Containers.
--   **CloudBlockBlob**: Ermöglicht den Upload einer lokalen
-    Bilddatei in den Container.
+-   **CloudBlobContainer**: Dient zur Erstellung eines Blob-Containers, zum Auflisten der Blobs im Container und zum Löschen des Containers.
+-   **CloudBlockBlob**: Ermöglicht den Upload einer lokalen Datei in den Container.
 
 <!-- -->
 
@@ -101,16 +86,13 @@ Weisen Sie der **serviceClient**-Variable einen Wert zu.
 
     serviceClient = account.createCloudBlobClient();
 
-Weisen Sie der **container**-Variable einen Wert zu. Wir rufen einen Verweis
-auf einen Container mit dem Namen **gettingstarted** ab.
+Weisen Sie der **container**-Variable einen Wert zu. Wir erhalten eine Referenz zu einem
+Container namens **gettingstarted**.
 
     // Container name must be lower case.
     container = serviceClient.getContainerReference("gettingstarted");
 
-Erstellen Sie den Container. Diese Methode erstellt den Container, falls dieser nicht
-vorhanden ist (und gibt **true** zurück). Falls der Container existiert, wird
-**false** zurückgegeben. Eine Alternative zu **createIfNotExist** ist die **create**
--Methode (gibt einen Fehler zurück, falls der Container bereits existiert).
+Erstellen Sie den Container. Diese Methode erstellt den Container, falls dieser nicht existiert (und gibt **true** zurück). Falls der Container existiert, wird **false** zurückgegeben. Eine Alternative zu **createIfNotExist** ist die **create**-Methode (gibt einen Fehler zurück, falls der Container bereits existiert).
 
     container.createIfNotExist();
 
@@ -122,29 +104,20 @@ Anonymen Zugiff für den Container festlegen.
     containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
     container.uploadPermissions(containerPermissions);
 
-Abrufen eines Verweises auf den Blockblob, der das Blob im
-Azure-Speicher repräsentiert.
+Abrufen eines Verweises auf den Blockblob, der den Blob im Azure-Speicher repräsentiert
+.
 
     blob = container.getBlockBlobReference("image1.jpg");
 
-Verwenden Sie den **File**-Konstruktor, um einen Verweis auf die
-lokale Datei abzurufen, die Sie hochladen möchten. (Stellen Sie sicher, dass die Datei vorhanden ist,
-bevor Sie den Code ausführen.)
+Verwenden Sie den **File**-Konstruktor, um einen Verweis auf die lokale Datei abzurufen, die Sie hochladen möchten. (Stellen Sie sicher, dass die Datei existiert, bevor Sie den Code ausführen.)
 
-    File fileReference = new File ("c:\myimages\image1.jpg");
+    File fileReference = new File ("c:\\myimages\\image1.jpg");
 
-Laden Sie die lokale Datei hoch, indem Sie die **CloudBlockBlob.upload**
--Methode aufrufen. Der erste Parameter der **CloudBlockBlob.upload**-Methode ist ein
-**FileInputStream**-Objekt, das die lokale
-Datei repräsentiert, die in den Azure-Speicher hochgeladen wird. Der zweite Parameter ist die
-Dateigröße in Byte.
+Laden Sie die lokale Datei hoch, indem Sie die **CloudBlockBlob.upload**-Methode aufrufen. Der erste Parameter der **CloudBlockBlob.upload**-Methode ist ein **FileInputStream**-Objekt, das die lokale Datei repräsentiert, die in den Azure-Speicher hochgeladen wird. Der zweite Parameter ist die Dateigröße in Byte.
 
     blob.upload(new FileInputStream(fileReference), fileReference.length());
 
-Rufen Sie eine Hilfsfunktion namens **MakeHTMLPage** auf, um eine einfache HTML-Seite zu erstellen,
-die ein **\<image\>**-Element enthält,
-das auf den nun in Ihrem Azure-Speicherkonto vorhandenen Blob zeigt. (Der Code für
-**MakeHTMLPage** wird später in diesem Artikel ebenfalls besprochen.)
+Rufen Sie eine Hilfsfunktion namens **MakeHTMLPage**auf, um eine einfache HTML-Seite zu erstellen, die ein **&lt;image&gt;**-Element enthält, das auf den nun in Ihrem Azure-Speicherkonto vorhandenen Blob zeigt. (Der Code für **MakeHTMLPage** wird später in diesem Artikel ebenfalls besprochen.)
 
     MakeHTMLPage(container);
 
@@ -157,12 +130,9 @@ Schließen Sie den **try**-Block mit einer geschweiften Klammer: **}**
 
 Behandeln Sie die folgenden Ausnahmen:
 
--   **FileNotFoundException**: Kann vom **FileInputStream**
-    - oder vom **FileOutputStream**-Konstruktor geworfen werden.
--   **StorageException**: Kann von der Clientbibliothek für
-    den Azure-Speicher ausgegeben werden.
--   **URISyntaxException**: Kann von der **ListBlobItem.getUri**
-    -Methode geworfen werden.
+-   **FileNotFoundException**: Kann vom **FileInputStream** oder vom **FileOutputStream**-Konstruktor geworfen werden.
+-   **StorageException**: Kann von der Clientbibliothek für den Azure-Speicher geworfen werden.
+-   **URISyntaxException**: Kann von der **ListBlobItem.getUri** -Methode geworfen werden.
 -   **Exception**: Allgemeine Fehlerbehandlung.
 
 <!-- -->
@@ -194,13 +164,7 @@ Behandeln Sie die folgenden Ausnahmen:
 
 Schließen Sie **main** mit einer geschweiften Klammer: **}**
 
-Erstellen Sie eine Methode mit dem Namen **MakeHTMLPage**, um eine einfache HTML-Seite zu generieren. Diese
-Methode hat einen Parameter vom Typ **CloudBlobContainer**,
-der zum Iterieren über die Liste der hochgeladenen Blobs verwendet wird. Diese Methode löst
-Ausnahmen vom Typ **FileNotFoundException** aus, die durch den Konstruktor
-**FileOutputStream** und **URISyntaxException** ausgelöst werden können,
-die durch die Methode **ListBlobItem.getUri** ausgelöst werden können. Fügen Sie
-eine offene geschweifte Klammer an, **{**.
+Erstellen Sie eine Methode mit dem Namen **MakeHTMLPage**, um eine einfache HTML-Seite zu generieren. Diese Methode hat einen Parameter vom Typ **CloudBlobContainer**, der zum Iterieren über die Liste der hochgeladenen Blobs verwendet wird. Diese Methode wirft Ausnahmen vom Typ **FileNotFoundException**, die aus dem **FileOutputStream**-Konstruktor stammen, und **URISyntaxException**, die von der **ListBlobItem.getUri**-Methode geworfen werden kann. Fügen Sie eine offene geschweifte Klammer an, **{**.
 
     public static void MakeHTMLPage(CloudBlobContainer container) throws FileNotFoundException, URISyntaxException
     {
@@ -210,22 +174,15 @@ Erstellen Sie eine lokale Datei mit dem Namen **index.html**.
     PrintStream stream;
     stream = new PrintStream(new FileOutputStream("index.html"));
 
-Schreiben Sie die Elemente **\<html\>**, **\<header\>** und
-**\<body\>** in die Datei.
+Schreiben Sie die Elemente **&lt;html&gt;**, **&lt;header&gt;**, and **&lt;body&gt;** in die Datei.
 
     stream.println("<html>");
     stream.println("<header/>");
     stream.println("<body>");
 
-Durchlaufen Sie die Liste der hochgeladenen Blobs. Erstellen Sie für jedes Blob auf der HTML-Seite
-ein **\<img\>**-Element, das sein **src**-Attribut an den
-URI des Blobs gesendet hat, während es in Ihrem Azure-Speicherkonto vorhanden ist.
-Auch wenn Sie in diesem Beispiel nur ein Bild hinzugefügt haben, würde dieser Code
-alle iterieren, wenn Sie mehr hinzugefügt hätten.
+Durchlaufen Sie die Liste der hochgeladenen Blobs. Erstellen Sie für jeden Blob ein **&lt;img&gt;**-Element in der Seite, dessen **src**-Attribut auf die URI des Blobs zeigt, der in Ihrem Azure-Speicherkonto liegt. In diesem Beispiel haben Sie zwar nur ein Bild hinzugefügt, aber dieser Code würde alle weiteren hochgeladenen Bilder ebenfalls durchlaufen.
 
-Zur Vereinfachung geht dieses Beispiel davon aus, dass es sich bei allen hochgeladenen Blobs um Bilder handelt. Falls
-Sie Blobs hochgeladen haben, die keine Bilder sind,
-oder Seitenblobs anstelle von Blockblobs, müssen Sie Ihren Code entsprechend anpassen.
+Zur Vereinfachung geht dieses Beispiel davon aus, dass es sich bei allen hochgeladenen Blobs um Bilder handelt. Falls Sie Blobs hochgeladen haben, die keine Bilder sind, oder Seitenblobs anstelle von Blockblobs, müssen Sie Ihren Code entsprechend anpassen.
 
     // Enumerate the uploaded blobs.
     for (ListBlobItem blobItem : container.listBlobs()) {
@@ -233,7 +190,7 @@ oder Seitenblobs anstelle von Blockblobs, müssen Sie Ihren Code entsprechend an
     stream.println("<img src='" + blobItem.getUri() + "'/><br/>");
     }
 
-Schließen Sie das **\<body\>**- und das **\<html\>**-Element.
+Schließen Sie das **&lt;body&gt;**- und das **&lt;html&gt;**-Element.
 
     stream.println("</body>");
     stream.println("</html>");
@@ -244,12 +201,9 @@ Schließen Sie die lokale Datei.
 
 Schließen Sie **MakeHTMLPage** mit einer geschweiften Klammer: **}**
 
-Schließen Sie **StorageSample** mit einer geschweiften Klammer: **}**
+Schließen Sie **MakeHTMLPage** mit einer geschweiften Klammer: **}**
 
-Es folgt der vollständige Code für dieses Beispiel. Vergessen Sie nicht,
-die Platzhalterwerte **your\_account\_name** und
-**your\_account\_key** durch Ihren Kontonamen
-und Ihren Kontoschlüssel zu ersetzen.
+Es folgt der vollständige Code für dieses Beispiel. Vergessen Sie nicht, die Platzhalterwerte **your\_account\_name** und **your\_account\_key** entsprechend auf Ihren Kontonamen und -schlüssel zu ändern.
 
     import com.microsoft.windowsazure.services.core.storage.*;
     import com.microsoft.windowsazure.services.blob.client.*;
@@ -352,28 +306,18 @@ und Ihren Kontoschlüssel zu ersetzen.
         }
     }
 
-Der Beispielcode lädt nicht nur eine lokale Datei in Ihren Azure-Speicher hoch,
-sondern erstellt auch eine lokale Datei
-mit dem Namen "namedindex.html", die Sie in Ihrem Browser öffnen können, um Ihr hochgeladenes Bild anzuzeigen.
+Der Beispielcode lädt nicht nur eine lokale Datei in Ihren Azure-Speicher hoch, sondern erstellt auch eine lokale Datei mit dem Namen namedindex.html, die Sie in Ihrem Browser öffnen können, um Ihr hochgeladenes Bild anzuzeigen.
 
-Der Code enthält Ihren Kontonamen und Kontoschlüssel.
-Stellen Sie daher sicher, dass der Code an einem sicheren Ort liegt.
+Der Code enthält Ihren Kontonamen und Kontoschlüssel. Stellen Sie daher sicher, dass der Code an einem sicheren Ort liegt.
 
 ## <a name="bkmk_deletecontainer"> </a>So löschen Sie einen Container
 
-Da der Speicher kostenpflichtig ist, sollten Sie den
-**gettingstarted**-Container löschen,
-nachdem Sie dieses Beispiel abgeschlossen haben. Verwenden Sie zum Löschen eines Containers die Methode **CloudBlobContainer.delete**
-:
+Da der Speicher kostenpflichtig ist, sollten Sie den **gettingstarted**-Container löschen,nachdem Sie dieses Beispiel abgeschlossen haben. Verwenden Sie zum Löschen eines Containers die Methode **CloudBlobContainer.delete**:
 
     container = serviceClient.getContainerReference("gettingstarted");
     container.delete();
 
-Um die **CloudBlobContainer.delete**-Methode aufzurufen,
-müssen Sie die **CloudStorageAccount**-, **ClodBlobClient**- und
-**CloudBlobContainer**-Objekte auf dieselbe Weise initialisieren wie für die
-**createIfNotExist**-Methode gezeigt wurde. Das folgende Beispiel löscht den Container
-mit dem Namen **gettingstarted**.
+Beim Methodenaufruf von **CloudBlobContainer.delete** ist der Initialisierungsprozess für die Objekte **CloudStorageAccount**, **ClodBlobClient**, **CloudBlobContainer** derselbe wie bei der Methode **createIfNotExist**. Das folgende Beispiel löscht den Container mit dem Namen **gettingstarted**.
 
     import com.microsoft.windowsazure.services.core.storage.*;
     import com.microsoft.windowsazure.services.blob.client.*;
@@ -417,13 +361,14 @@ mit dem Namen **gettingstarted**.
         }
     }
 
-Eine Übersicht über andere Blobspeicherklassen und -methoden finden Sie unter
-[Verwenden des Blobspeicherdiensts in Python][Verwenden des Blobspeicherdiensts in Python].
+Eine Übersicht über andere Blobspeicher-Klassen und Methoden finden Sie unter [Verwenden des Blob-Speicherdiensts von Java aus].
 
   [Voraussetzungen]: #bkmk_prerequisites
   [Verwenden von Azure Blob-Speicher für Dateiuploads]: #bkmk_uploadfile
   [So löschen Sie einen Container]: #bkmk_deletecontainer
-  [Downloadseite des Azure-SDK für Java]: http://www.windowsazure.com/de-de/develop/java/
+  [Herunterladen des Azure SDK für Java]: http://www.windowsazure.com/de-de/develop/java/
   [Erstellen eines Speicherkontos]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-create-a-storage-account/
   [Verwalten von Speicherkonten]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/
-  [Verwenden des Blobspeicherdiensts in Python]: http://www.windowsazure.com/de-de/develop/java/how-to-guides/blob-storage/
+  [Verwenden des Blob-Speicherdiensts aus Python]: http://www.windowsazure.com/de-de/develop/java/how-to-guides/blob-storage/
+
+<!--HONumber=35_1-->

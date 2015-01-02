@@ -1,6 +1,6 @@
 ﻿<properties pageTitle="Erste Schritte mit der Authentifizierung (Appcelerator) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to authenticate users of your iOS app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="Appcelerator team;mahender" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-appcelerator" ms.devlang="multiple" ms.topic="article" ms.date="09/23/2014" ms.author="Appcelerator team;mahender" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-appcelerator" ms.devlang="multiple" ms.topic="article" ms.date="11/24/2014" ms.author="Appcelerator team;mahender" />
 
 # Erste Schritte bei der Authentifizierung in Mobile Services
 
@@ -16,7 +16,7 @@ Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von A
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 
-Um dieses Lernprogramm durchführen zu können, benötigen Sie Appcelerator Titanium Studio 3.2.1 oder neuer und iOS 7.0 und/oder neuer sowie Android 4.3 oder neuer.
+Um dieses Lernprogramm durchführen zu können, benötigen Sie Appcelerator Titanium Studio 3.2.1 oder höher und iOS 7.0 und/oder höher sowie Android 4.3 oder höher.
 
 ##<a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 
@@ -26,9 +26,9 @@ Um dieses Lernprogramm durchführen zu können, benötigen Sie Appcelerator Tita
 
 [WACOM.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
-3.	Öffnen Sie in Appcelerator Titanium Studio das Projekt, das Sie bei Ausführung des Lernprogramms [Erste Schritte mit Mobile Services] erstellt haben.
+3.	Öffnen Sie in Appcelerator Titanium Studio das Projekt, das Sie beim Abschließen des Lernprogramms [Erste Schritte mit Mobile Services] erstellt haben.
 
-4.	Klicken Sie auf die Schaltfläche "Ausführen", um das Projekt zu erstellen und die App im iPhone-Simulator zu starten. Stellen Sie sicher, dass ein unbehandelter Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
+4.	Klicken Sie auf die Schaltfläche "Ausführen", um das Projekt zu erstellen und die App im iPhone-Simulator zu starten. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
     
     Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die TodoItem-Tabelle jetzt jedoch Authentifizierung erfordert.
 
@@ -36,7 +36,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 ##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
-1.	Öffnen Sie die Projektdatei "index.js" und suchen Sie in der Tabelle "event Lister method" nach `case 2:`
+1.	Öffnen Sie die index.js-Datei und suchen Sie in der Tabelle "event Lister method" nach "Case 2":
 
     Sie können in Ihrer App entweder den Benutzer mit verfügbaren Identitätsanbietern auffordern oder automatisch einen bestimmten Identitätsanbieter vorschlagen.
 
@@ -80,7 +80,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
             }
         });
 
->[WACOM.NOTE]  Falls Sie einen anderen Identitätsanbieter als Google verwenden, ändern Sie den an **authorizeClient** übergebenen Wert auf einen der folgenden Werte: *microsoftaccount*, *facebook*, *twitter* oder *windowsazureactivedirectory*.
+>[WACOM.NOTE] Falls Sie einen anderen Identitätsanbieter als Google verwenden, ändern Sie den an **authorizeClient** übergebenen Wert in einen der folgenden Werte: microsoftaccount, facebook, twitter oder windowsazureactivedirectory.
 
 4.	Klicken Sie auf die Schaltfläche "Ausführen", um das Projekt zu erstellen, starten Sie die App im iPhone- oder Android-Simulator, und klicken Sie dann auf die Option "Mit Anmeldung", sodass die Anmeldung mit dem Identitätsanbieter erfolgt.
 
@@ -97,3 +97,5 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
+
+<!--HONumber=35_1-->

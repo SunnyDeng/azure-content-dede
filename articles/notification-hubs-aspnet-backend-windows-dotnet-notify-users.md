@@ -1,6 +1,6 @@
-﻿<properties title="Azure Notification Hubs Notify Users" pageTitle="Azure Notification Hubs Benachrichtigen von Benutzern" metaKeywords="Azure-Pushbenachrichtigungen, Azure Notification Hubs" description="Learn how to send secure push notifications in Azure. Code samples written in C# using the .NET API." documentationCenter="Mobile" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="sethm" manager="dwrede" />
+﻿<properties title="Azure Notification Hubs Notify Users" pageTitle="Azure Notification Hubs - Benachrichtigen von Benutzern" metaKeywords="Azure push notifications, Azure notification hubs" description="Learn how to send secure push notifications in Azure. Code samples written in C# using the .NET API." documentationCenter="" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="glenga" manager="dwrede" services="notification-hubs" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows" ms.devlang="dotnet" ms.topic="article" ms.date="11/22/2014" ms.author="glenga" />
 
 #Azure Notification Hubs - Benachrichtigen von Benutzern
 
@@ -9,16 +9,17 @@
 		<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-android-notify-users/" title="Android">Android</a>
 </div>
 
-Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff auf eine einfache, plattformübergreifende und skalierbare Infrastruktur, die die Verarbeitung von Pushbenachrichtigungen sowohl auf Privat- als auch auf Unternehmensanwendungen für mobile Plattformen erheblich erleichtert. In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Zum Authentifizieren von Clients und zum Generieren von Benachrichtigungen wird ein ASP.NET WebAPI-Back-End verwendet, wie im Thema  [Registrieren von App-Back-End aus](http://msdn.microsoft.com/de-de/library/dn743807.aspx) gezeigt. Dieses Lernprogramm basiert auf dem Notification Hub, den Sie im Lernprogramm **Erste Schritte mit Notification Hubs** erstellt haben.
+Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff auf eine einfache, plattformübergreifende und skalierbare Infrastruktur, die die Verarbeitung von Pushbenachrichtigungen sowohl auf Privat- als auch auf Unternehmensanwendungen für mobile Plattformen erheblich erleichtert, In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Zum Authentifizieren von Clients und zum Generieren von Benachrichtigungen wird ein ASP.NET-WebAPI-Back-End verwendet, wie im Leitfadenthema [Registrieren von Ihrem App-Back-End](http://msdn.microsoft.com/de-de/library/dn743807.aspx)dargestellt. Dieses Lernprogramm basiert auf dem Notification Hub, den Sie im Lernprogramm **Erste Schritte mit Notification Hubs** erstellt haben.
 
-Dieses Lernprogramm ist außerdem die Voraussetzung für das Lernprogramm **Sichere Pushbenachrichtigungen**. Nachdem Sie die Schritte im Lernprogramm **Benachrichtigen von Benutzern** abgeschlossen haben, können Sie mit dem Lernprogramm **Sichere Pushbenachrichtigungen** fortfahren, in dem Sie erfahren, wie Sie den Code aus dem Lernprogramm **Benachrichtigen von Benutzern** ändern, um eine Pushbenachrichtigung auf sichere Weise zu senden. 
+Dieses Lernprogramm ist außerdem die Voraussetzung für das Lernprogramm **Sichere Pushbenachrichtigungen**. Nachdem Sie die Schritte im Lernprogramm "Benachrichtigen von Benutzern" abgeschlossen haben, können Sie mit dem Lernprogramm **Sichere Pushbenachrichtigungen** fortfahren, in dem Sie erfahren, wie Sie den Code aus dem Lernprogramm **Benachrichtigen von Benutzern** ändern, um eine Pushbenachrichtigung auf sichere Weise zu senden. 
 
-> [AZURE.NOTE] Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (Windows Store)](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/) beschrieben erstellt und konfiguriert haben.
-Beachten Sie außerdem, dass Sie in diesem Lernprogramm eine Windows Phone 8.1-App erstellen werden. Der gleiche Code kann für Windows Store- und Windows Universal-Apps verwendet werden. Für alle diese Apps müssen die Anmeldeinformationen von Windows (nicht Windows Phone) verwendet werden.
+> [AZURE.NOTE] Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (Windows Store)](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)beschrieben erstellt haben.
+> Wenn Sie Mobile Services als Ihren Back-End-Dienst verwenden, finden Sie weitere Informationen unter [Mobile Services-Version](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/) in diesem Lernprogramm.
+>Beachten Sie außerdem, dass Sie in diesem Lernprogramm eine Windows Phone Store 8.1-App erstellen. Der gleiche Code kann für Windows Store- und Windows Universal-Apps verwendet werden. Für alle diese Apps müssen die Anmeldeinformationen von Windows (nicht Windows Phone) verwendet werden.
 
 ## Erstellen und Konfigurieren des Notification Hubs
 
-Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie einen Anwendungsnamen reservieren und anschließend einen Azure Notification Hub erstellen und diesen mit der Anwendung verbinden. Führen Sie die Schritte im Thema [Erste Schritte mit Notification Hubs (Windows Store)](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/) durch, insbesondere die Abschnitte[Registrieren Ihrer App für den Windows Store](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#register) und [Konfigurieren Ihres Notification Hub](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub). Vergewissern Sie sich insbesondere, dass Sie die Werte für **Paket-SID** und **Geheimer Clientschlüssel** im Portal auf der Registerkarte **Konfigurieren** für den Notification Hub eingegeben haben. Dieses Konfigurationsverfahren wird im Abschnitt [Konfigurieren Ihres Notification Hub](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub) beschrieben. Dies ist ein wichtiger Schritt: Wenn die Anmeldeinformationen im Portal nicht mit denen für den gewählten App-Namen übereinstimmen, kann die Pushbenachrichtigung nicht gesendet werden.
+Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie einen Anwendungsnamen reservieren und anschließend einen Azure Notification Hub erstellen und diesen mit der Anwendung verbinden. Befolgen Sie die Schritte in [Erste Schritte mit Notification Hubs (Windows Store)],(http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)insbesondere die Abschnitte [Registrieren Ihrer App für den Windows Store](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#register) und [Konfigurieren Ihres Notification Hub](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub). Vergewissern Sie sich insbesondere, dass Sie die Werte für **Paket-SID** und **Geheimer Clientschlüssel** im Portal auf der Registerkarte **Konfigurieren** für den Notification Hub eingegeben haben. Dieses Konfigurationsverfahren wird im Abschnitt [Konfigurieren Ihres Notification Hub](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub)beschrieben. Dies ist ein wichtiger Schritt: Wenn die Anmeldeinformationen im Portal nicht mit denen für den gewählten App-Namen übereinstimmen, kann die Pushbenachrichtigung nicht gesendet werden.
 
 [WACOM.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
@@ -26,16 +27,16 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie einen Anwendungsnamen re
 
 Im nächsten Schritt erstellen Sie die Windows Phone-Anwendung. Gehen Sie folgendermaßen vor, um dieses Projekt der aktuellen Lösung hinzuzufügen:
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Knoten der obersten Ebene der Projektmappe (in diesem Fall **Solution NotifyUsers**). Klicken Sie dann auf **Hinzufügen** und auf **Neues Projekt**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Knoten der obersten Ebene der Projektmappe (in diesem Fall **Solution NotifyUsers**. Klicken Sie dann auf **Hinzufügen** und auf **Neues Projekt**.
 
-2. Erweitern Sie **Store-Apps**, und klicken Sie anschließend auf **Windows Phone-Apps**, dann auf **Leere App (Windows Phone)**.
+2. Erweitern Sie **Store-Apps**, und klicken Sie anschließend auf **Windows Phone-Apps** und auf **Leere App (Windows Phone)**.
 
 	![][9]
 
 3. Geben Sie in das Feld **Name** den Text **NotifyUserWindowsPhone** ein, und klicken Sie dann auf **OK**, um das Projekt zu generieren.
 
  
-4. Ordnen Sie diese Anwendung dem Windows Phone Store zu: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **NotifyUserWindowsPhone (Windows Phone 8.1)**, und klicken Sie dann auf **Store** und auf **App mit Store verknüpfen**.
+4. Verknüpfen Sie diese Anwendung mit dem Windows Phone Store: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **NotifyUserWindowsPhone (Windows Phone 8.1)**, und klicken Sie dann auf **Store** und auf **App mit Store verknüpfen...**.
 
 	![][10]
  
@@ -43,7 +44,7 @@ Im nächsten Schritt erstellen Sie die Windows Phone-Anwendung. Gehen Sie folgen
 
 	![][11]
 	
-	> [AZURE.NOTE] Notieren Sie sich den Namen der Anwendung, den Sie während des Verfahrens wählen. Sie müssen den Notification Hub im Portal mit den Anmeldeinformationen konfigurieren, die Sie vom [Windows Dev Center](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409) für diesen spezifischen reservierten App-Namen erhalten. Dieses Konfigurationsverfahren wird unter [Konfigurieren Ihres Notification Hub](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub) beschrieben. Dies ist ein wichtiger Schritt: Wenn die Anmeldeinformationen im Portal nicht mit denen für den gewählten App-Namen übereinstimmen, kann die Pushbenachrichtigung nicht gesendet werden.
+	> [AZURE.NOTE] Notieren Sie sich den Namen der Anwendung, den Sie während des Verfahrens auswählen. Sie müssen den Notification Hub im Portal mithilfe der Anmeldeinformationen konfigurieren, die Sie vom [Windows Dev Center](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409) für diesen bestimmten reservierten App-Namen erhalten. Dieses Konfigurationsverfahren wird unter [Konfigurieren Ihres Notification Hub](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub)beschrieben. Dies ist ein wichtiger Schritt: Wenn die Anmeldeinformationen im Portal nicht mit denen für den gewählten App-Namen übereinstimmen, kann die Pushbenachrichtigung nicht gesendet werden.
 
 6. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **NotifyUserWindowsPhone (Windows Phone 8.1)**, und klicken Sie dann auf **NuGet-Pakete verwalten**.
 
@@ -51,13 +52,13 @@ Im nächsten Schritt erstellen Sie die Windows Phone-Anwendung. Gehen Sie folgen
 
 8. Geben Sie in das **Suchfeld** den Begriff **Http Client** ein.
 
-9. Klicken Sie in der Ergebnisliste auf **Microsoft HTTP-Clientbibliotheken** und dann auf **Installieren**. Schließen Sie die Installation ab.
+9. Klicken Sie in der Ergebnisliste auf **Microsoft HTTP-Clientbibliothken** und dann auf **Installieren**. Schließen Sie die Installation ab.
 
-10. Geben Sie in das NuGet-**Search** die Zeichenfolge **Json.net** ein. Installieren Sie das **Json.NET**-Paket, und schließen Sie dann das Fenster des NuGet-Paket-Managers.
+10. Geben Sie zurück im NuGet-**Suchfeld** die Zeichenfolge **Json.net** ein. Installieren Sie das **Json.NET**-Paket, und schließen Sie dann das Fenster des NuGet-Paket-Managers.
 
 11. Doppelklicken Sie im Projektmappen-Explorer im Projekt **NotifyUserWindowsPhone (Windows Phone 8.1)** auf **MainPage.xaml**, um die Datei im Visual Studio-Editor zu öffnen.
 
-12. Ersetzen Sie im XML-Code **MainPage.xaml** den Abschnitt `<Grid>` durch den folgenden Code:
+12. Ersetzen Sie im XML-Code von **MainPage.xaml** den Abschnitt <Grid> durch den folgenden Code:
 
 		<Grid>
 	        <Grid.RowDefinitions>
@@ -90,9 +91,9 @@ Im nächsten Schritt erstellen Sie die Windows Phone-Anwendung. Gehen Sie folgen
     	</Grid>
 
 
-13. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **NotifyUserWindowsPhone (Windows Phone 8.1)**, und klicken Sie dann auf **Hinzufügen** und auf **Klasse**. Nennen Sie die Klasse **RegisterClient.cs**, und klicken Sie dann auf **OK**, um die Klasse zu generieren. Diese Komponente implementiert die REST-Aufrufe, die für das Kontaktieren des App-Back-Ends erforderlich sind, um sich für Pushbenachrichtigungen zu registrieren. Außerdem werden die vom Notification Hub erstellten "registrationIds" lokal gespeichert, wie unter [Registrierung vom App-Back-End aus](http://msdn.microsoft.com/de-de/library/dn743807.aspx) beschrieben. Beachten Sie, dass ein Authentifizierungstoken aus dem lokalen Speicher verwendet wird, wenn Sie auf die Schaltfläche **Log in and register** klicken.
+13. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **NotifyUserWindowsPhone (Windows Phone 8.1)**, und klicken Sie dann auf **Hinzufügen** und auf **Klasse**. Nennen Sie die Klasse **RegisterClient.cs**, und klicken Sie dann auf **OK**, um die Klasse zu generieren. Diese Komponente implementiert die REST-Aufrufe, die für das Kontaktieren des App-Back-Ends erforderlich sind, um sich für Pushbenachrichtigungen zu registrieren. Außerdem werden die vom Notification Hub erstellten registrationIds lokal gespeichert, wie unter [Registrieren von Ihrem App-Back-End](http://msdn.microsoft.com/de-de/library/dn743807.aspx)beschrieben. Beachten Sie, dass ein Authentifizierungstoken aus dem lokalen Speicher verwendet wird, wenn Sie auf die Schaltfläche zum **Anmelden und Registrieren** klicken.
 
-14. Fügen Sie innerhalb der `RegisterClient`-Klassendefinition den folgenden Code hinzu. Ersetzen Sie `{backend endpoint}` durch den Back-End-Endpunkt, den Sie im vorherigen Abschnitt erhalten haben:
+14. Fügen Sie innerhalb der RegisterClient-Klassendefinition den folgenden Code hinzu: Ersetzen Sie {backend endpoint} durch den Back-End-Endpunkt, den Sie im vorherigen Abschnitt erhalten haben:
 
 		private string POST_URL = "{backend endpoint}/api/register";
 
@@ -173,7 +174,7 @@ Im nächsten Schritt erstellen Sie die Windows Phone-Anwendung. Gehen Sie folgen
         }
 
 
-15. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei "RegisterClient.cs" hinzu:
+15. Fügen Sie die folgenden using-Anweisungen am Anfang der RegisterClient.cs-Datei hinzu:
 
 		using Windows.Storage;
 		using System.Net;
@@ -181,9 +182,9 @@ Im nächsten Schritt erstellen Sie die Windows Phone-Anwendung. Gehen Sie folgen
 		using System.Net.Http.Headers;
 		using Newtonsoft.Json;
 		
-16. Fügen Sie Code für Schaltflächen in MainPage.xaml.cs hinzu. Der Rückruf für **Log in and register** (Anmelden und registrieren) speichert das Standardauthentifizierungstoken im lokalen Speicher (dies kann ein beliebiges von Ihrem Authentifizierungsschema verwendetes Token sein) und verwendet dann `RegisterClient`, um das Back-End aufzurufen. Der Rückruf für **AppBackend** ruft das Back-End auf, um eine sichere Benachrichtigung an alle Geräte dieses Benutzers auszulösen. 
+16. Fügen Sie einen Code für Schaltflächen in MainPage.xaml.cs hinzu. Der Rückruf für **Log in und register** speichert das Basisauthentifizierungstoken im lokalen Speicher (dies kann ein beliebiges von Ihrem Authentifizierungsschema verwendetes Token sein) und verwendet dann "RegisterClient", um das Back-End aufzurufen. Der Rückruf für **AppBackend** ruft das Back-End auf, um eine sichere Benachrichtigung an alle Geräte dieses Benutzers auszulösen. 
 
-	Fügen Sie der Datei MainPage.xaml.cs nach der `OnNavigatedTo()`-Methode den folgenden Code hinzu. Ersetzen Sie `{backend endpoint}` durch den Back-End-Endpunkt, den Sie im vorherigen Abschnitt erhalten haben:
+	Fügen Sie der MainPage.xaml.cs-Datei nach der OnNavigatedTo()-Methode den folgenden Code hinzu. Ersetzen Sie {backend endpoint} durch den Back-End-Endpunkt, den Sie im vorherigen Abschnitt erhalten haben:
 
 		private async void PushClick(object sender, RoutedEventArgs e)
         {
@@ -220,7 +221,7 @@ Im nächsten Schritt erstellen Sie die Windows Phone-Anwendung. Gehen Sie folgen
         }
 
 
-17. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei MainPage.xaml.cs hinzu:
+17. Fügen Sie die folgenden using-Anweisungen am Anfang der MainPage.xaml.cs-Datei hinzu:
 
 		using System.Net.Http;
 		using Windows.Storage;
@@ -234,9 +235,9 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 
 1. Führen Sie in Visual Studio die Windows Phone-App **NotifyUserWindowsPhone (Windows Phone 8.1)** aus. Der Windows Phone-Emulator wird ausgeführt und lädt die App automatisch.
 
-2. Geben Sie in der **NotifyUserWindowsPhone**-App-UI einen Benutzernamen und das Kennwort ein. Dies kann eine beliebige Zeichenfolge sein, beide müssen jedoch denselben Wert haben.
+2. Geben Sie in der Benutzeroberfläche der **NotifyUserWindowsPhone**-App einen Benutzernamen und ein Kennwort ein. Dies kann eine beliebige Zeichenfolge sein, beide müssen jedoch denselben Wert haben.
 
-3. Klicken Sie in der **NotifyUserWindowsPhone**-App-UI auf **Log in and register**. Klicken Sie anschließend auf **Send push**.
+3. Klicken Sie in der Benutzeroberfläche der **NotifyUserWindowsPhone**-App auf **Log in and register**. Klicken Sie dann auf **Send push**.
 
 
 [9]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push9.png
@@ -244,3 +245,5 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 [11]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push11.png
 [12]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push12.png
 [13]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push13.png
+
+<!--HONumber=35_1-->

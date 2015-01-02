@@ -1,6 +1,6 @@
 ﻿<properties pageTitle="Erste Schritte mit Azure Mobile Services für Appcelerator Titanium" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Appcelerator development. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="Appcelerator team;mahender" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-appcelerator" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="Appcelerator team;mahender" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-appcelerator" ms.devlang="multiple" ms.topic="article" ms.date="11/24/2014" ms.author="Appcelerator team;mahender" />
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
@@ -10,7 +10,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services in Ihren mit 
 
 In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache To-Do-Listen-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik.
 
-Um dieses Lernprogramm absolvieren zu können, benötigen Sie [Appcelerator Titanium].
+Zum Absolvieren dieses Lernprogramms benötigen Sie [Appcelerator Titanium].
 
 Wenn Sie für iOS entwickeln, brauchen Sie außerdem Xcode 5.1 und iOS 7.1 SDK oder neuer. 
 
@@ -22,27 +22,27 @@ Wenn Sie für Android entwickeln, benötigen Sie außerdem Android 4.3 SDK oder 
 
 ## Erstellen einer neuen Appcelerator-App
 
-1. Wählen Sie im Mobile Services-Portal die Registerkarte **Daten** für Ihren mobilen Dienst.
+1. Wählen Sie im Mobile Services-Portal die Registerkarte **Daten** für Ihren mobilen Dienst aus.
 
 2. Klicken Sie auf **Tabelle hinzufügen**, und erstellen Sie eine neue Tabelle namens **TodoItem**.
 
-3. Laden Sie eine neue Appcelerator [Todolist application] herunter und entpacken Sie das Projekt.
+3. Laden Sie eine neue Appcelerator [Todolist-Anwendung] herunter, und entpacken Sie das Projekt.
 
-4. Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Appcelerator Titanium Studio][Appcelerator Titanium] und SDK V. 3.2.1 oder neuer herunter, und installieren Sie diese. Außerdem benötigen Sie Xcode (V. 5.0 +) und/oder Android SDK (V. 4.3+), um das Projekt ausführen zu können.
+4. Falls noch nicht geschehen, laden Sie [Appcelerator Titanium Studio][Appcelerator Titanium] und das SDK v3.2.1 oder höher herunter, und installieren Sie beides. Außerdem benötigen Sie Xcode (V. 5.0 +) und/oder Android SDK (V. 4.3+), um das Projekt ausführen zu können.
 
-5. Kehren Sie zum Mobile Services-Portal zurück und wählen Sie unter **Dashboard** den Punkt **Schlüssel verwalten**, und kopieren Sie den **Anwendungsschlüssel** heraus.
+5. Wählen Sie zurück im Mobile Services-Portal unter **Dashboard** die Option **Schlüssel verwalten** aus, und kopieren Sie den **Anwendungsschlüssel**.
 
-5. Ersetzen Sie in der Datei "index.js" der App `<---App-Name---->` und `<------------APP-SCHLÜSSEL------------>` durch die Werte aus dem mobilen Dienst.
+5. Ersetzen Sie in der index.js-Datei der App <---App Name----> und <------------APP KEY------------> durch die Werte aus Ihrem mobilen Dienst.
 
 ## Ausführen der neuen Appcelerator-App ##
 
 Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der neuen App.
 
-1. Öffnen Sie Titanium Studio, gehen Sie zu **File -> Import**, und importieren Sie das Projekt, das Sie zuvor heruntergeladen haben.
+1. Öffnen Sie Titanium Studio, und gehen Sie zu **File -> Import**, um das zuvor heruntergeladene Projekt zu importieren.
 
     ![][0]
 
-2.	Wählen Sie im nächsten Bildschirm **Existing Projects into Workspace**, und klicken Sie dann auf **Next**.
+2.	Wählen Sie im nächsten Bildschirm **Existing Projects into Workspace** aus, und klicken Sie auf **Next**.
 
     ![][1]
 
@@ -50,7 +50,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
     ![][2]
 
-4.	Nun wird schließlich das Projekt angezeigt, das sie im Abschnitt "Projects" ausgewählt haben. Optional können Sie die Option &quot;Copy projects into workspace&quot; aktivieren, wodurch das heruntergeladene Projekt in den Arbeitsbereich kopiert wird. Klicken Sie schließlich auf "Finish", um das Projekt in Titanium Studio zu öffnen.
+4.	Nun wird schließlich das Projekt angezeigt, das sie im Abschnitt "Projects" ausgewählt haben. Optional können Sie die Option "Copy projects into workspace" aktivieren, mit der das heruntergeladene Projekt in Ihren Workspace kopiert wird. Klicken Sie schließlich auf "Finish", um das Projekt in Titanium Studio zu öffnen.
 
     ![][3]
 
@@ -64,7 +64,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
     ![][5]
 
-8.	Klicken Sie im nächsten Bildschirm auf das (+)-Symbol, geben Sie einen aussagekräftigen Text ein, wie etwa ;Lernprogramm beenden&quot;, und klicken Sie auf die Schaltfläche "Speichern".<br />
+8.	Klicken Sie im nächsten Bildschirm auf das Plussmybol (+), und geben Sie einen beschreibenden Text ein, z. B. "Dieses Lernprogramm abschließen". Klicken Sie dann auf die Schaltfläche zum Speichern.
 
     ![][6]
 
@@ -75,9 +75,9 @@ Dadurch wird eine POST-Anforderung an den neuen, in Windows Azure gehosteten mob
 ![][8]
 
 
->[WACOM.NOTE] Sie können den Code, der zur Abfrage und zum Einfügen von Daten auf Ihren mobilen Dienst zugreift, in der Datei "TodoService.m" finden und prüfen.
+>[WACOM.NOTE] Sie können den Code überprüfen, der auf Ihren mobilen Dienst zugreift, um Daten abzufragen und einzufügen. Der Code befindet sich in der Datei "TodoService.m".
 
-4. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+4. Klicken Sie zurück im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
    	![][9]
 
@@ -115,3 +115,5 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Appcelerator Titanium]: http://go.microsoft.com/fwlink/p/?LinkID=509987
 [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-users
 [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push
+
+<!--HONumber=35_1-->

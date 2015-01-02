@@ -1,83 +1,75 @@
-<properties title="How to install and configure Trend on an Azure VM" pageTitle="How to install and configure Trend Micro Deep Security as a Service on an Azure VM" description="Describes installing and configuring Trend Micro security on a VM in Azure" metaKeywords="" services="virtual machines" solutions="" documentationCenter="" authors="kathydav" videoId="" scriptId="" />
+﻿<properties title="How to install and configure Trend on an Azure VM" pageTitle="Gewusst wie: Installieren und konfigurieren von Trend Micro Deep Security as a Service auf einer Azure-VM" description="Beschreibt Installation und Konfiguration von Trend Micro Security auf einem virtuellen Computer in Azure" metaKeywords="" services="virtuelle Computer" solutions="" documentationCenter="" authors="kathydav" manager="timlt" videoId="" scriptId="" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="na" ms.topic="article" ms.date="09/24/2014" ms.author="kathydav" />
 
-# Installieren und Konfigurieren von Trend Micro Deep Security als Dienst auf einem virtuellen Azure-Computer
+#Gewusst wie: Installieren und Konfigurieren von Trend Micro Deep Security-as-a-Service auf einem virtuellen Azure-Computer
 
-In diesem Artikel wird beschrieben, wie der Trend Micro Deep Security als Dienst auf einem neuen oder vorhandenen virtuellen Windows Server-Computer installiert und konfiguriert wird. Der von Deep Security als Dienst bereitgestellte Schutz umfasst den Schadsoftwareschutz, eine Firewall, ein Eindringschutzsystem und die Integritätsüberwachung.
+<p> Dieser Artikel zeigt Ihnen das Installieren und Konfigurieren von Trend Micro Deep Security als einen Dienst auf einem neuen oder vorhandenen virtuellen Computer unter Windows Server. Der durch Deep Security-als-ein-Dienst bereitgestellte Schutz umfasst den Antischadsoftwareschutz, die Firewall, das Eindringschutzsystem und die Integritätsüberwachung. 
 
-Der Client wird als Sicherheitserweiterung mithilfe des VM Agent installiert. Auf einen neuen virtuellen Computer installieren Sie den VM Agent zusammen mit dem Deep Security Agent. Auf einem vorhandenen virtuellen Computer ohne VM Agent müssen Sie den Agent zunächst herunterladen und installieren. In diesem Artikel werden beide Situationen behandelt.
+<p>Der Client wird als eine Sicherheitserweiterung über den VM-Agent installiert. Auf einem neuen virtuellen Computer installieren Sie den VM-Agent zusammen mit Deep Security Agent. Auf einem vorhandenen virtuellen Computer, der nicht über den VM-Agent verfügt, müssen Sie diesen zunächst herunterladen und installieren. Dieser Artikel deckt beide Situationen ab.
 
-Wenn Sie über ein vorhandenes Abonnement von Trend für eine lokale Lösung verfügen, können Sie damit Ihre virtuellen Azure-Computer schützen. Wenn Sie noch kein Kunde sind, können Sie sich für ein Probeabonnement registrieren. Weitere Informationen zu dieser Lösung finden Sie in dem Blogbeitrag zur [Microsoft Azure VM Agent-Erweiterung für Deep Security][Microsoft Azure VM Agent-Erweiterung für Deep Security].
+<p> Wenn Sie über ein vorhandenes Abonnement von Trend für eine lokale Lösung verfügen, können Sie es zum Schützen Ihrer virtuellen Azure-Computer verwenden. Wenn Sie noch kein Kunde sind, können Sie sich für ein Testabonnement registrieren. Weitere Informationen über diese Lösung finden Sie im Blogbeitrag [Microsoft Azure VM Agent Extension For Deep Security] (Microsoft Azure-VM-Agent-Erweiterung für Deep Security) (in englischer Sprache)(http://go.microsoft.com/fwlink/p/?LinkId=403945).
 
-## Installieren des Deep Security Agent auf einem neuen virtuellen Computer
+## Installieren von Deep Security Agent auf einem neuen virtuellen Computer
 
-Über das [Azure-Verwaltungsportal][Azure-Verwaltungsportal] können Sie den VM Agent und die Sicherheitserweiterung von Trend installieren, wenn Sie die Option **Aus Katalog** verwenden, um den virtuellen Computer zu erstellen. Auf diese Weise können Sie den Schutz von Trend einfach hinzufügen, wenn Sie einen einzelnen virtuellen Computer erstellen.
+Mit dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) können Sie den VM-Agent und die Trend-Sicherheitserweiterung installieren, wenn Sie die Option **Aus Katalog** zum Erstellen des virtuellen Computers verwenden. Die Verwendung dieses Ansatzes ist eine einfache Möglichkeit, einen Schutz von Trend hinzuzufügen, wenn Sie einen einzelnen virtuellen Computer erstellen.
 
-Die Option **Aus Katalog** öffnet ein Assistenten, der Sie beim Einrichten des virtuellen Computers unterstützt. Sie verwenden die letzte Seite des Assistenten, um den VM Agent und die Sicherheitserweiterung von Trend zu installieren. Allgemeine Anweisungen finden Sie unter [Erstellen eines virtuellen Windows Server-Computers][Erstellen eines virtuellen Windows Server-Computers]. Gehen Sie wie folgt vor, wenn Sie zur letzten Seite des Assistenten gelangen:
+Die Option **Aus Katalog** öffnet einen Assistenten, der Ihnen beim Einrichten des virtuellen Computers hilft. Sie verwenden die letzte Seite des Assistenten zum Installieren des VM-Agents und der Trend-Sicherheitserweiterung. Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](http://go.microsoft.com/fwlink/p/?LinkId=403943). Führen Sie auf der letzten Seite des Assistenten Folgendes aus:
 
-1.  Aktivieren Sie unter VM Agent die Option **VM Agent installieren**.
+1.	Aktivieren Sie **VM-Agent installieren** unter "VM-Agent".
 
-2.  Aktivieren Sie unter den Sicherheitserweiterungen die Option **Trend Micro Deep Security Agent**.
+2.	Aktivieren Sie **Trend Micro Deep Security Agent** unter "Sicherheitserweiterungen".
 
-3.  Aktivieren Sie das Kontrollkästchen, um den virtuellen Computer zu erstellen.
+3.	Aktivieren Sie das Kontrollkästchen, um den virtuellen Computer zu erstellen.
 
-    ![Installieren von VM Agent und Deep Security Agent][Installieren von VM Agent und Deep Security Agent]
+	![Install the VM Agent and the Deep Security Agent](./media/virtual-machines-install-trend/InstallVMAgentandTrend.png)
 
-## Installieren des Deep Security Agent auf einem vorhandenen virtuellen Computer
+## Installieren von Deep Security Agent auf einem vorhandenen virtuellen Computer
 
-Dazu benötigen Sie Folgendes:
+Dafür benötigen Sie Folgendes:
 
--   Das Azure PowerShell-Modul, Version 0.8.2 oder höher. Anweisungen und einen Link zur neuesten Version finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][Installieren und Konfigurieren von Azure PowerShell].
+- Das Azure PowerShell-Modul Version 0.8.2 oder neuer. Anweisungen und einen Link zur neuesten Version finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](http://go.microsoft.com/fwlink/p/?LinkId=320552).  
 
--   Den VM Agent. Anweisungen und einen Link zum Download finden Sie im Blogbeitrag zum [VM Agent und Erweiterungen – Teil 2][VM Agent und Erweiterungen – Teil 2].
+- Der VM-Agent. Anweisungen und einen Downloadlink finden Sie im Blogbeitrag [VM Agent and Extensions - Part 2] (VM-Agent und Erweiterungen - Teil 2) (in englischer Sprache)(http://go.microsoft.com/fwlink/p/?LinkId=403947).
 
-Öffnen Sie eine Azure PowerShell-Sitzung, und führen Sie die folgenden Befehle aus. Achten Sie darauf, dass Sie Ihre eigenen Werte für die Platzhalter wie „MyServiceName“ einsetzen.
+Öffnen Sie eine Azure PowerShell-Sitzung, und führen Sie die folgenden Befehle aus. Ersetzen Sie die Platzhalter wie MyServiceName durch Ihre eigenen Werte.
 
-1.  Rufen Sie den Clouddienstnamen, den Namen des virtuellen Computers ab, und speichern Sie jeden dieser Werte in Variablen, damit diese in den nächsten Befehlen verwendet werden können:
+1.	Rufen Sie den Namen des Cloud-Diensts, den Namen des virtuellen Computers und den virtuellen Computer ab, und speichern Sie die eben genannten in Variablen, sodass sie durch die nächsten Befehle verwendet werden können:
+	<p>`$servicename = MyServiceName`
+	<p>`$name = MyVmName`
+	<p>`$vm = Get-AzureVM -ServiceName $servicename -Name $name`
 
-    `$servicename = MyServiceName`
+	> [WACOM.NOTE] Wenn Sie den Namen des Cloud-Diensts und des virtuellen Computers nicht kennen, führen Sie "Get-AzureVM" aus, um diese Informationen für alle virtuellen Computer im aktuellen Abonnement anzuzeigen.
 
-    `$name = MyVmName`
+2.	Fügen Sie dem virtuellen Computer den Deep Security Agent hinzu:
+<p> `Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity -ExtensionName TrendMicroDSA -VM $vm.VM`
 
-    `$vm = Get-AzureVM -ServiceName $servicename -Name $name`
+	> [WACOM.NOTE] Wenn Sie eine bestimmte Version installieren möchten, führen Sie den folgenden Befehl aus, um eine Liste der verfügbaren Versionen abzurufen: `Get-AzureVMAvailableExtension TrendMicro.DeepSecurity -ExtensionName TrendMicroDSA`. Nehmen Sie anschließend den Parameter "Version" beim Ausführen von "Set-AzureVMExtension" auf.
 
-    > [WACOM.NOTE] Wenn Ihnen die Namen für den Clouddienst und den virtuellen Computer nicht bekannt sind, führen Sie „Get-AzureVM“ aus, um diese Informationen für alle virtuellen Computer des aktuellen Abonnements anzuzeigen.
+3.	Aktualisieren Sie den virtuellen Computer, wodurch Deep Security Agent installiert wird:
+<p> `Update-AzureVM -ServiceName $servicename -Name $name -VM $vm.VM`
 
-2.  Fügen Sie den Deep Security Agent zum virtuellen Computer hinzu:
-
-    `Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity -ExtensionName TrendMicroDSA -VM $vm.VM`
-
-    > [WACOM.NOTE] Wenn Sie eine bestimmte Version installieren möchten, führen Sie den folgenden Befehl aus, um eine Liste der verfügbaren Versionen abzurufen: `Get-AzureVMAvailableExtension TrendMicro.DeepSecurity -ExtensionName TrendMicroDSA`. Dann beziehen Sie den Versionsparameter mit ein, wenn Sie „Set-AzureVMExtension“ ausführen.
-
-3.  Aktualisieren Sie den virtuellen Computer, der den Deep Security Agent installiert:
-
-    `Update-AzureVM -ServiceName $servicename -Name $name -VM $vm.VM`
 
 ## Nächste Schritte
+Nach der Installation des Agents nimmt der Start der Ausführung ein paar Minuten in Anspruch. Danach müssen Sie Deep Security auf dem virtuellen Computer aktivieren, sodass es durch einen Deep Security Manager verwaltet werden kann. Siehe Folgendes:
 
-Nachdem der Agent installiert wurde, dauert es einige Minuten, bis dieser gestartet ist. Anschließend müssen Sie Deep Security auf dem virtuellen Computer aktivieren, damit es vom Deep Security Manager verwaltet werden kann. Weitere Informationen finden Sie unter:
+- Der Artikel von Trend in Bezug auf diese Lösung [Instant-On Cloud Security for Microsoft Azure] (Instant-On Cloud Security für Microsoft Azure) (in englischer Sprache)(http://go.microsoft.com/fwlink/?LinkId=404101).
+- Ein [Beispiel eines Windows PowerShell-Skripts](http://go.microsoft.com/fwlink/?LinkId=404100) zum Konfigurieren des virtuellen Computers.
+- [Anleitung](http://go.microsoft.com/fwlink/?LinkId=404099)  für das Beispiel.
 
--   Artikel von Trend zu dieser Lösung, [Sofort aktive Cloudsicherheit für Microsoft Azure][Sofort aktive Cloudsicherheit für Microsoft Azure].
--   Ein [Windows PowerShell-Beispielskript][Windows PowerShell-Beispielskript] zum Konfigurieren des virtuellen Computers.
--   [Anweisungen][Anweisungen] zum Beispiel.
 
-## Zusätzliche Ressourcen
 
-[Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]
 
-[Verwalten von Erweiterungen][Verwalten von Erweiterungen]
+##Zusätzliche Ressourcen
+[Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]
+
+[Verwalten von Erweiterungen]
+
 
 <!--Link references-->
+[Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: ../virtual-machines-log-on-windows-server/
+[Verwalten von Erweiterungen]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
 
-  [Microsoft Azure VM Agent-Erweiterung für Deep Security]: http://go.microsoft.com/fwlink/p/?LinkId=403945
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [Erstellen eines virtuellen Windows Server-Computers]: http://go.microsoft.com/fwlink/p/?LinkId=403943
-  [Installieren von VM Agent und Deep Security Agent]: ./media/virtual-machines-install-trend/InstallVMAgentandTrend.png
-  [Installieren und Konfigurieren von Azure PowerShell]: http://go.microsoft.com/fwlink/p/?LinkId=320552
-  [VM Agent und Erweiterungen – Teil 2]: http://go.microsoft.com/fwlink/p/?LinkId=403947
-  [Sofort aktive Cloudsicherheit für Microsoft Azure]: http://go.microsoft.com/fwlink/?LinkId=404101
-  [Windows PowerShell-Beispielskript]: http://go.microsoft.com/fwlink/?LinkId=404100
-  [Anweisungen]: http://go.microsoft.com/fwlink/?LinkId=404099
-  [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: ../virtual-machines-log-on-windows-server/
-  [Verwalten von Erweiterungen]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
+
+
+<!--HONumber=35_1-->

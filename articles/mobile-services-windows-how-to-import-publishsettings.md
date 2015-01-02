@@ -1,36 +1,50 @@
-<properties linkid="develop-mobile-how-to-guides-import-publish-settings" urlDisplayName="Import your subscription publish settings file in Visual Studio 2013" pageTitle="Import your publish settings file in Visual Studio 2013 | Mobile Services" metaKeywords="Azure import publishsettings, mobile services" description="Learn how to import a subscription publish settings file for your Azure Mobile Services application in Visual Studio 2013." title="Import your subscription publish settings file in Visual Studio 2013" documentationCenter="Mobile" services="" solutions="" manager="" editor="" videoId="" scriptId="" authors="glenga" />
+﻿<properties urlDisplayName="Import your subscription publish settings file in Visual Studio 2013" pageTitle="Importieren der Datei mit Veröffentlichungseinstellungen in Visual Studio 2013 | Mobile Services" metaKeywords="Azure import publishsettings, mobile services" description="Learn how to import a subscription publish settings file for your Azure Mobile Services application in Visual Studio 2013." title="Import your subscription publish settings file in Visual Studio 2013" documentationCenter="Mobile" services="mobile-services" solutions="" manager="dwrede" editor="" videoId="" scriptId="" authors="glenga" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga" />
 
 # Importieren Ihrer Abonnementdatei mit Veröffentlichungseinstellungen in Visual Studio 2013
 
-Bevor Sie den mobilen Dienst erstellen können, müssen Sie die .publishsettings-Datei aus Ihrem Azure-Abonnement in Visual Studio importieren. Auf diese Weise kann Visual Studio in Ihrem Auftrag eine Verbindung mit Azure herstellen.
+Bevor Sie den mobilen Dienst erstellen können, müssen Sie die .publishsettings-Datei aus Ihrem Azure-Abonnement in Visual Studio importieren. Auf diese Weise kann Visual Studio in Ihrem Auftrag eine Verbindung mit Azure herstellen.  
 
-1.  Öffnen Sie den Projektmappen-Explorer in Visual Studio 2013, klicken Sie mit der rechten Maustaste auf das Projekt, klicken Sie auf **Hinzufügen** und dann auf **Verbundener Dienst**.
+>[WACOM.NOTE]Ab Visual Studio 2013 Update 2 müssen Sie keine Datei mit Veröffentlichungseinstellungen mehr verwenden. Visual Studio kann über die von Ihnen bereitgestellten Anmeldeinformationen eine direkte Verbindung mit Azure herstellen.
 
-    ![verbundenen Dienst hinzufügen][verbundenen Dienst hinzufügen]
+1. Öffnen Sie in Visual Studio 2013 den Projektmappen-Explorer, klicken Sie mit der rechten Maustaste auf **Hinzufügen**, und klicken Sie dann auf **Verbundener Dienst...**. 
 
-2.  Klicken Sie im Dienste-Manager-Dialogfeld auf **Dienst erstellen** und wählen Sie **Importieren** aus **Abonnement** im Dialogfeld "Mobilen Dienst erstellen" aus.
+	![add connected service](./media/mobile-services-create-new-service-vs2013/mobile-add-connected-service.png)
 
-    ![neuen mobilen Dienst aus VS 2013 erstellen][neuen mobilen Dienst aus VS 2013 erstellen]
+2. Klicken Sie im Dialogfeld "Dienst-Manager" auf **Dienst erstellen...**, und wählen Sie dann im Dialogfeld für das Erstellen mobiler Dienste **Importieren...** aus **Abonnement** aus.  
 
-3.  Klicken Sie unter "Azure-Abonnements abonnieren" auf **Abonnementdatei herunterladen**, melden Sie sich ggf. mit Ihrem Azure-Konto an, klicken Sie auf **Speichern**, wenn der Browser Sie zum Speichern der Datei auffordert.
+	![create a new mobile service from VS 2013](./media/mobile-services-create-new-service-vs2013/mobile-create-service-from-vs2013.png)
 
-    ![Abonnementdatei in VS herunterladen][Abonnementdatei in VS herunterladen]
+3. Klicken Sie unter "Azure-Abonnements importieren" auf **Abonnementdatei herunterladen**, melden Sie sich ggf. bei Ihrem Azure-Konto an, und klicken Sie auf **Speichern**, wenn Ihr Browser Sie zum Speichern der Datei auffordert.
 
-    <div class="dev-callout"><strong>Hinweis</strong> <p>Das Anmeldefenster wird im Browser angezeigt, der sich hinter dem Visual Studio-Fenster befinden kann. Denken Sie daran, sich zu notieren, wo Sie die heruntergeladene &quot;.publishsettings&quot;-Datei gespeichert haben. Wenn das Projekt bereits mit Ihrem Azure-Abonnement verbunden ist, k&ouml;nnen Sie diesen Schritt &uuml;berspringen.</p></div>
+	![download subscription file in VS](./media/mobile-services-create-new-service-vs2013/mobile-import-azure-subscription.png)
 
-4.  Klicken Sie auf **Durchsuchen**, navigieren Sie zum Speicherort der ".publishsettings"-Datei, wählen Sie die Datei aus, klicken Sie auf **Öffnen** und dann auf **Importieren**.
+	<div class="dev-callout"><strong>Hinweis</strong> <p>Das Anmeldefenster wird im Browser angezeigt, der sich hinter dem Visual Studio-Fenster befinden kann. Denken Sie daran, sich zu notieren, wo Sie die heruntergeladene ".publishsettings"-Datei gespeichert haben. Wenn das Projekt bereits mit Ihrem Azure-Abonnement verbunden ist, können Sie diesen Schritt überspringen.</p></div> 
 
-    ![Abonnementdatei in VS importieren][Abonnementdatei in VS importieren]
+4. Klicken Sie auf **Durchsuchen**, navigieren Sie zum Speicherort, an dem Sie die .publishsettings-Datei gespeichert haben, wählen Sie die Datei aus, und klicken Sie auf **Öffnen** und dann auf **Importieren**. 
 
-    Visual Studio importiert die Daten, die für die Verbindung mit Ihrem Azure-Abonnement erforderlich sind. Wenn Ihr Abonnement bereits über mindestens einen mobilen Dienst verfügt, werden die Dienstnamen angezeigt.
+	![import subscription in VS](./media/mobile-services-create-new-service-vs2013/mobile-import-azure-subscription-2.png)
 
-    <div class="dev-callout"><strong>Sicherheitshinweis</strong> <p>Nach dem Importieren der Ver&ouml;ffentlichungseinstellungen sollten Sie die heruntergeladene &quot;.publishsettings&quot;-Datei l&ouml;schen, da sie Informationen enth&auml;lt, die von anderen Personen f&uuml;r den Zugriff auf Ihr Konto verwendet werden k&ouml;nnen. Sichern Sie die Datei, wenn Sie sie in anderen Projekten mit verbundenen Anwendungen verwenden m&ouml;chten.</p></div>
+	Visual Studio importiert die Daten, die für die Verbindung mit Ihrem Azure-Abonnement erforderlich sind. Wenn Ihr Abonnement bereits über mindestens einen mobilen Dienst verfügt, werden die Dienstnamen angezeigt. 
 
+	<div class="dev-callout"><strong>Sicherheitshinweis</strong> <p>Nach dem Importieren der Veröffentlichungseinstellungen sollten Sie die heruntergeladene ".publishsettings"-Datei löschen, da sie Informationen enthält, die von anderen Personen für den Zugriff auf Ihr Konto verwendet werden können. Sichern Sie die Datei, wenn Sie sie in anderen Projekten mit verbundenen Anwendungen verwenden möchten.</p></div>
 
+<!-- Anchors. -->
 
-  [verbundenen Dienst hinzufügen]: ./media/mobile-services-create-new-service-vs2013/mobile-add-connected-service.png
-  [neuen mobilen Dienst aus VS 2013 erstellen]: ./media/mobile-services-create-new-service-vs2013/mobile-create-service-from-vs2013.png
-  [Abonnementdatei in VS herunterladen]: ./media/mobile-services-create-new-service-vs2013/mobile-import-azure-subscription.png
-  [Abonnementdatei in VS importieren]: ./media/mobile-services-create-new-service-vs2013/mobile-import-azure-subscription-2.png
+<!-- Images. -->
+[1]: ./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-live-connect-add-app.png
+[2]: ./media/mobile-services-how-to-register-microsoft-authentication/mobile-live-connect-app-api-settings.png
+<!-- URLs. -->
+[Einmalige Anmeldung für Windows Store-Apps mithilfe von Live Connect]: /de-de/develop/mobile/how-to-guides/register-for-single-sign-on/
+[Übermitteln einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/
+[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-dotnet/
+[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-dotnet/
+[Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-dotnet/
+[JavaScript und HTML]: /de-de/develop/mobile/tutorials/get-started-with-users-js/
+
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+
+<!--HONumber=35_1-->

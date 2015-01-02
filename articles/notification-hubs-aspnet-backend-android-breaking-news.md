@@ -1,6 +1,7 @@
-﻿<properties urlDisplayName="Breaking News" pageTitle="Lernprogramm zu den Neuigkeiten in Notification Hubs - iOS" metaKeywords="" description="Learn how to use Azure Service Bus Notification Hubs to send breaking news notifications to iOS devices." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="elioda" solutions="" manager="dwrede" editor="" />
+﻿<properties urlDisplayName="Breaking News" pageTitle="Lernprogramm zu aktuellen Nachrichten mit Notification Hubs - Android" metaKeywords="" description="Learn how to use Azure Service Bus Notification Hubs to send breaking news notifications to Android devices." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="ricksal" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="01/01/1900" ms.author="elioda" />
+<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="11/22/2014" ms.author="ricksal" />
+
 
 # Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten
 <div class="dev-center-tutorial-selector sublanding">     	
@@ -8,18 +9,18 @@
 	<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/" title="Android" class="current">Android</a>
 </div>
 
-In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Benachrichtigungen zu aktuellen Nachrichten an eine Android-Anwendung senden können. Sie werden anschließend in der Lage sein, sich für Kategorien aktueller Nachrichten zu registrieren, die Sie interessieren, und nur Pushbenachrichtigungen für diese Kategorien zu empfangen. Dieses Szenario ist ein häufiges Muster für viele Anwendungen, bei denen Benachrichtigungen an Benutzergruppen gesendet werden müssen, die zuvor Interesse daran bekundet haben, zum Beispiel RSS-Reader, Apps für Musikliebhaber usw.
+In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Benachrichtigungen zu aktuellen Nachrichten an eine Android-Anwendung senden können. Sie werden anschließend in der Lage sein, sich für Kategorien aktueller Nachrichten zu registrieren, die Sie interessieren, und nur Pushbenachrichtigungen für diese Kategorien zu empfangen. Dieses Szenario ist ein häufiges Muster für viele Anwendungen, bei denen Benachrichtigungen an Benutzergruppen gesendet werden müssen, die zuvor Interesse daran bekundet haben, zum Beispiel RSS-Reader, Apps für Musikliebhaber, etc. 
 
-Übertragungsszenarien werden durch das Einfügen von einem oder mehreren Tags möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Notification Hubs-Leitfaden]. 
+Übertragungsszenarien werden durch das Einfügen von einem oder mehreren Tags möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie im [Notification Hubs-Leitfaden]. 
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung dieses Szenarios behandelt:
 
 1. [Hinzufügen der Kategorieauswahl zur App]
 2. [Registrieren für Benachrichtigungen]
-3. [Senden von Benachrichtigungen von Ihrem Back-End aus]
-4. [Ausführen der Anwendung und Erzeugen von Benachrichtigungen]
+3. [Senden von Benachrichtigungen von Ihrem Back-End]
+4. [Ausführen der App und Erzeugen von Benachrichtigungen]
 
-Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification Hubs][get-started] erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs][get-started] abgeschlossen haben.
+Dieses Thema baut auf der App auf, die Sie in [Erste Schritte mit Notification Hubs][get-started] erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs][get-started] abgeschlossen haben.
 
 ##<a name="adding-categories"></a>Hinzufügen der Kategorieauswahl zur App
 
@@ -89,7 +90,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 
 	![][A1]
 
-3. Erstellen Sie nun eine Klasse **Notifications** im selben Paket wie die Klasse **MainActivity**.
+3. Erstellen Sie jetzt eine Klasse **Notifications** im selben Paket wie die Klasse **MainActivity**.
 
 		import java.util.HashSet;
 		import java.util.Set;
@@ -152,19 +153,19 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 
 	Diese Klasse verwendet den lokalen Speicher, um Nachrichtenkategorien zu speichern, die das Gerät empfangen soll. Sie enthält zudem Methoden zum Registrieren dieser Kategorien.
 
-4. Ersetzen Sie im Code oben die Platzhalter `<hub name>` und `<connection string with listen access>` durch den Namen Ihres Notification Hubs und die Verbindungszeichenfolge für "DefaultListenSharedAccessSignature", die Sie zuvor erhalten haben.
+4. Ersetzen Sie im Code oben die Platzhalter <hub name> und <connection string with listen access> durch den Namen Ihres Notification Hub und die Verbindungszeichenfolge für "DefaultListenSharedAccessSignature", die Sie zuvor erhalten haben.
 
 	<div class="dev-callout"><strong>Hinweis</strong> 
-		<p>Da Anmeldeinformationen, die mit einer Client-App verteilt werden, nicht sehr sicher sind, sollten Sie nur den Schlüssel für den Überwachungszugriff mit Ihrer Client-App verteilen. Der Abhörzugriff ermöglicht der App, sich für Benachrichtigungen zu registrieren, aber es können keine vorhandenen Registrierungen geändert und keine Benachrichtigungen versendet werden. Der Vollzugriffsschlüssel wird in einem gesicherten Back-End-Dienst für das Versenden von Benachrichtigungen und das Ändern vorhandener Benachrichtigungen verwendet.</p>
+		<p>Da Anmeldenamen, die mit einer Client-App verteilt werden, nicht sehr sicher sind, sollten Sie nur den Schlüssel für den Abhörzugriff mit Ihrer Client-App verteilen. Der Abhörzugriff ermöglicht der App, sich für Benachrichtigungen zu registrieren, aber es können keine vorhandenen Registrierungen geändert und keine Benachrichtigungen versendet werden. Der Vollzugriffsschlüssel wird in einem gesicherten Back-End-Dienst für das Versenden von Benachrichtigungen und das Ändern vorhandener Benachrichtigungen verwendet.</p>
 	</div> 
 
-4. Entfernen Sie in der Klasse **MainActivity** die privaten Felder für **NotificationHub** und **GoogleCloudMessaging**, und fügen Sie ein Feld für **Notifications** hinzu:
+4. Entfernen Sie in der Klasse **MainActivity** Ihre privaten Felder für **NotificationHub** und **GoogleCloudMessaging**, und fügen Sie ein Feld für **Notifications** hinzu:
 
 		// private GoogleCloudMessaging gcm;
 		// private NotificationHub hub;
 		private Notifications notifications;
  
-5. Entfernen Sie dann in der **onCreate**-Methode die Initialisierung des **hub**-Felds und der **registerWithNotificationHubs**-Methode. Fügen Sie dann die folgenden Zeilen hinzu, die eine Instanz der Klasse **Notifications** initialisieren. Die Methode sollte die folgenden Zeilen enthalten:
+5. Entfernen Sie dann in der Methode **onCreate** die Initialisierung des Felds **hub** und der Methode **registerWithNotificationHubs**. Fügen Sie dann die folgenden Zeilen hinzu, die eine Instanz der Klasse **Notifications** initialisieren. Die Methode sollte die folgenden Zeilen enthalten:
 
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
@@ -204,7 +205,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 			notifications.storeCategoriesAndSubscribe(categories);
 	    }
 	
-	Diese Methode erstellt eine Liste von Kategorien und verwendet die **Notifications**-Klasse zum Speichern der Liste im lokalen Speicher sowie zum Registrieren der entsprechenden Tags bei Ihrem Notification Hub. Wenn Kategorien geändert werden, wird die Registrierung mit neuen Kategorien neu erstellt.
+	Diese Methode erstellt eine Liste von Kategorien und verwendet die Klasse **Notifications** zum Speichern der Liste im lokalen Speicher sowie zum Registrieren der entsprechenden Tags bei Ihrem Notification Hub. Wenn Kategorien geändert werden, wird die Registrierung mit neuen Kategorien neu erstellt.
 
 Die App kann jetzt verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. 
 
@@ -213,10 +214,10 @@ Die App kann jetzt verschiedene Kategorien in einem lokalen Speicher auf dem Ger
 Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hub statt, wobei die im lokalen Speicher gespeicherten Kategorien verwendet werden. 
 
 <div class="dev-callout"><strong>Hinweis</strong> 
-	<p>Da sich die durch Google Cloud Messaging (GCM) zugeteilte Registrierungs-ID jederzeit ändern kann, sollten Sie sich regelmäßig für Benachrichtigungen registrieren, um Benachrichtigungsfehler zu vermeiden. Dieses Beispiel registriert sich jedes Mal für Benachrichtigungen, wenn die App gestartet wird. Für häufig ausgeführte Anwendungen (öfter als einmal täglich) können Sie die Registrierung wahrscheinlich überspringen, wenn weniger als ein Tag seit der letzten Registrierung vergangen ist, um Bandbreite einzusparen.</p>
+	<p>Da sich die durch Google Cloud Messaging (GCM) zugeteilte Registrierungs-ID jederzeit ändern kann, sollten Sie sich regelmäßig für Benachrichtigungen registrieren, um Benachrichtigungsfehler zu vermeiden. Dieses Beispiel registriert sich jedes Mal für Benachrichtigungen, wenn die App gestartet wird. Für häufig ausgeführte Anwendungen (öfters als einmal täglich) können Sie die Registrierung wahrscheinlich überspringen, wenn weniger als ein Tag seit der letzten Registrierung vergangen ist, um Bandbreite einzusparen.</p>
 </div> 
 
-1. Fügen Sie der **Notifications**-Klasse den folgenden Code hinzu:
+1. Fügen Sie der Klasse **Notifications** den folgenden Code hinzu:
 
 		public Set<String> retrieveCategories() {
 			SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
@@ -225,13 +226,13 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hu
 
 	Dadurch werden die in der Klasse definierten Kategorien zurückgegeben.
 
-2. Fügen Sie nun diesen Code am Ende der Methode **onCreate** in der Klasse **MainActivity** ein:
+2. Fügen Sie jetzt den folgenden Code am Ende der Methode **onCreate** in der Klasse **MainActivity** hinzu:
 
 		notifications.subscribeToCategories(notifications.retrieveCategories());
 
-	Dadurch wird sichergestellt, dass bei jedem Start der App die Kategorien aus dem lokalen Speicher abgerufen werden und eine Registrierung für diese Kategorien abgefragt wird. Die Methode **InitNotificationsAsync** wurde als Teil des Lernprogramms [Erste Schritt mit Notification Hubs] erstellt, wird in diesem Thema jedoch nicht benötigt.
+	Dadurch wird sichergestellt, dass bei jedem Start der App die Kategorien vom lokalen Speicher abgerufen werden und eine Registrierung für diese Kategorien abgefragt wird. Die Methode **InitNotificationsAsync** wurde als Teil des Lernprogramms [Erste Schritte mit Notification Hubs] erstellt, wird in diesem Thema jedoch nicht benötigt.
 
-3. Fügen Sie anschließend die folgende Methode zu **MainActivity** hinzu:
+3. Fügen Sie dann die folgende Methode zu **MainActivity** hinzu:
 
 		@Override
 		protected void onStart() {
@@ -255,7 +256,7 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hu
 
 	Dadurch wird die Hauptaktivität basierend auf dem Status der zuvor gespeicherten Kategorien aktualisiert. 
 
-Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. Danach wird ein Back-End definiert, das Kategoriebenachrichtigungen an diese App senden kann.
+Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. Als nächstes wird ein Back-End definiert, das Kategoriebenachrichtigungen an diese App senden kann.
 
 <h2><a name="send"></a>Senden von Benachrichtigungen von Ihrem Back-End aus</h2>
 
@@ -267,51 +268,53 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 	
 	Die Benutzeroberfläche der App bietet verschiedene Umschaltmöglichkeiten, mit denen Sie die Kategorien auswählen können, die Sie abonnieren möchten. 
 
-2. Aktivieren Sie eine oder mehrere Kategorien, und klicken Sie dann auf **Subscribe**.
+2. Aktivieren Sie eine oder mehrere Umschaltfunktionen für Kategorien, und klicken Sie dann auf **Abonnieren**.
 
-	Die App konvertiert die ausgewählten Kategorien in Tags und fordert eine neue Geräteregistrierung für die ausgewählten Tags vom Notification Hub an. Die registrierten Kategorien werden zurückgegeben und in einem Dialogfeld angezeigt.
+	Die App konvertiert die ausgewählten Kategorien in Tags, und fordert eine neue Geräteregistrierung für die ausgewählten Tags vom Notification Hub an. Die registrierten Kategorien werden zurückgegeben und in einem Dialogfeld angezeigt.
 
 4. Verwenden Sie eine dieser Möglichkeiten, um eine neue Benachrichtigung vom Back-End zu versenden:
 
 	+ **.NET-Konsolenanwendung:** Starten Sie die Konsolenanwendung.
 
-	+ **Java/PHP:** Führen Sie die App/das Skript aus.
+	+ **Java/PHP:** Führen Sie Ihre App/Ihr Skript aus.
 
 	Die Benachrichtigungen für die ausgewählten Kategorien werden als Popupbenachrichtigungen angezeigt.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategorie übermittelt werden. Sie können nun eines der folgenden Lernprogramme durchführen, die andere komplexe Notification Hubs-Szenarien demonstrieren:
+In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategorie übermittelt werden. Sie können nun eines der folgenden Lernprogramme durchführen, die andere komplexe Notification Hubs-Szenarien zeigen:
 
-+ [Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten]
++ [Verwenden von Notification Hubs zum Übertragen lokalisierter aktueller Nachrichten]
 
 	Hier erfahren Sie, wie Sie die App zu aktuellen Nachrichten für das Versenden von lokalisierten Benachrichtigungen erweitern. 
 
 + [Benachrichtigen von Benutzern mit Notification Hubs]
 
-	Hier erfahren Sie, wie Sie Pushbenachrichtigungen an bestimmte authentifizierte Benutzer versenden. Dies ist eine gute Möglichkeit, um Benachrichtigungen nur an bestimmte Benutzer zu senden.
+	Hier erfahren Sie, wie Sie Pushbenachrichtigungen an bestimmte authentifizierte Benutzer versenden. Dies ist eine gute Möglichkeit, um Benachrichtigungen nur an bestimmte Benutzer zu versenden.
 
 
 <!-- Anchors. -->
 [Hinzufügen der Kategorieauswahl zur App]: #adding-categories
 [Registrieren für Benachrichtigungen]: #register
-[Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
-[Ausführen der Anwendung und Erzeugen von Benachrichtigungen]: #test-app
+[Senden von Benachrichtigungen von Ihrem Back-End]: #send
+[Ausführen der App und Erzeugen von Benachrichtigungen]: #test-app
 [Nächste Schritte]: #next-steps
 
 <!-- Images. -->
 [A1]: ./media/notification-hubs-aspnet-backend-android-breaking-news/android-breaking-news1.PNG
 
 <!-- URLs.-->
-[erste Schritte]: /de-de/documentation/articles/notification-hubs-android-get-started/
-[Verwenden von Notification Hubs zum Übertragen lokalisierter Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/ 
+[get-started]: /de-de/documentation/articles/notification-hubs-android-get-started/
+[Verwenden von Notification Hubs zum Übertragen lokalisierter aktueller Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/ 
 [Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users
-[Mobile Service]: /de-de/develop/mobile/tutorials/get-started/
+[Mobile Services]: /de-de/develop/mobile/tutorials/get-started/
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
-[Notification Hubs - Anleitungen für Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx
+[Notification Hubs-Anleitung für Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx
 [Übermitteln einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+
+<!--HONumber=35_1-->

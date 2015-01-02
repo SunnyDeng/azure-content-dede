@@ -20,19 +20,19 @@ Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherig
 
 Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, zu überprüfen. Zunächst registrieren Sie ein Skript, das die Länge von Zeichenfolgendendaten überprüft, die an den mobilen Dienst gesendet werden, und das Zeichenfolgen ablehnt, die zu lang sind, in diesem Fall länger als zehn Zeichen.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und dann auf Ihre App.
 
    	![][0]
 
-2. Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
+2. Klicken Sie auf die Registerkarte **Daten**, und klicken Sie dann auf die Tabelle **TodoItem**.
 
    	![][1]
 
-3. Klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen**.
+3. Klicken Sie auf **Skript**, und dann auf den Vorgang **Insert**.
 
    	![][2]
 
-4. Ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Save**.
+4. Ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -46,15 +46,15 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 
     <div class="dev-callout">
 	<b>Hinweis</b>
-	<p>Sie k&ouml;nnen ein registriertes Skript auf der Registerkarte <strong>Script</strong> entfernen, indem Sie auf <strong>Clear</strong> und dann auf <strong>Save</strong> klicken.</p></div>
+	<p>Sie können ein registriertes Skript auf der Registerkarte <strong>Script</strong> entfernen, indem Sie auf <strong>Löschen</strong> und dann auf <strong>Speichern</strong> klicken.</p></div>
 
 ## <a name="update-client-validation"></a>Den Client aktualisieren
 
 Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen Sie Ihre App aktualisieren, damit sie Fehlerantworten der Überprüfung verarbeiten kann.
 
-1. Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit Daten][Erste Schritte mit Daten] verändert haben..
+1. Öffnen Sie in Xcode das Projekt, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte mit Daten] abgeschlossen haben.
 
-2. Drücken Sie die **Run**-Taste (Command + R), um das Projekt zu erstellen und die App zu starten. Geben Sie anschließend einen Text mit mehr als 10 Zeichen in das Textfeld ein und klicken Sie auf das (**+**)-Symbol.
+2. Klicken Sie auf die Schaltfläche **Ausführen** (Command + R), um das Projekt zu erstellen und die App zu starten. Geben Sie anschließend einen Text mit mehr als 10 Zeichen in das Textfeld ein, und klicken Sie auf das Plus-Symbol (**+**).
 
    	Beachten Sie, dass die App einen unbehandelten Fehler als Ergebnis der vom mobilen Dienst zurückgegebenen 400-Antwort (Bad Request) ausgibt.
 
@@ -64,7 +64,7 @@ Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen 
 
    	Ersetzen Sie im Anschluss an diese Codezeile den verbleibenden completion-Block durch den folgenden Code:
 
-        BOOL goodRequest = !((error) && (error.code == MSErrorMessageErrorCode));
+         BOOL goodRequest = !((error) && (error.code == MSErrorMessageErrorCode));
 
         // detect text validation error from service.
         if (goodRequest) // The service responded appropriately
@@ -101,11 +101,11 @@ Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen 
 
   	Beachten Sie, dass der Fehler behandelt und die Fehlermeldung für den Benutzer angezeigt wird.
 
-<!--## <a name="add-timestamp"></a>Add a timestamp
+## <a name="add-timestamp"></a>Hinzufügen eines Zeitstempels
 
-The previous tasks validated an insert and either accepted or rejected it. Now, you will update inserted data by using a server script that adds a timestamp property to the object before it gets inserted.
+In der vorherigen Aufgabe wurde eine Einfügung überprüft und entweder akzeptiert oder abgelehnt. Nun aktualisieren Sie die eingefügten Daten mithilfe eines Serverskripts, das eine Zeitstempeleigenschaft zu dem Objekt hinzufügt, bevor es eingefügt wird.
 
-1. In the **Scripts** tab in the [Management Portal], replace the current **Insert** script with the following function, and then click **Save**.
+1. Ersetzen Sie im [Verwaltungsportal] auf der Registerkarte **Scripts** das aktuelle Skript **Insert** durch die folgende Funktion, und klicken Sie dann auf **Save**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -116,27 +116,27 @@ The previous tasks validated an insert and either accepted or rejected it. Now, 
             }
         }
 
-    This function augments the previous insert script by adding a new **createdAt** timestamp property to the object before it gets inserted by the call to **request**.**execute**.
+    Diese Funktion erweitert das vorherige insert-Skript, indem es eine neue Zeitstempeleigenschaft **createdAt** zum Objekt hinzufügt, bevor es durch den **request**.**execute**-Aufruf eingefügt wird.
 
-    <div class="dev-callout"><b>Note</b>
-	<p>Dynamic schema must be enabled the first time that this insert script runs. With dynamic schema enabled, Mobile Services automatically adds the <strong>createdAt</strong> column to the <strong>TodoItem</strong> table on the first execution. Dynamic schema is enabled by default for a new mobile service, and it should be disabled before the app is published.</p>
+    <div class="dev-callout"><b>Hinweis</b>
+	<p>Bei der ersten Ausführung dieses Skripts muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services automatisch die Spalte <strong>createdAt</strong> in die Tabelle <strong>TodoItem</strong> bei der ersten Ausführung ein. Das dynamische Schema ist standardmäßig für einen neuen Mobile Service aktiviert und sollte deaktiviert werden, bevor die App veröffentlicht wird.</p>
     </div>
 
-2. In Visual Studio, press the **F5** key to run the app, then type text (shorter than 10 characters) in **Insert a TodoItem** and click **Save**.
+2. Drücken Sie in Visual Studio die Taste **F5**, um die App auszuführen, geben Sie dann einen Text mit weniger als zehn Zeichen in **Insert a TodoItem** ein, und klicken Sie auf **Save**.
 
-   	Notice that the new timestamp does not appear in the app UI.
+   	Beachten Sie, dass der neue Zeitstempel nicht in der UI der App angezeigt wird.
 
-3. Back in the Management Portal, click the **Browse** tab in the **todoitem** table.
+3. Klicken Sie im Verwaltungsportal auf die Registerkarte **Browse** in der Tabelle **todoitem**.
 
-   	Notice that there is now a **createdAt** column, and the new inserted item has a timestamp value.
+   	Beachten Sie, dass es hier nun ein Spalte **createdAt** gibt und das neu eingefügte Element über einen Zeitstempelwert verfügt.
 
-Next, you need to update the iOS app to display this new column.
+Nun müssen Sie die iOS-App aktualisieren, um diese neue Spalte anzuzeigen.
 
-## <a name="update-client-timestamp"></a>Update the client again
+## <a name="update-client-timestamp"></a>Den Client erneut aktualisieren
 
-The Mobile Service client will ignore any data in a response that it cannot serialize into properties on the defined type. The final step is to update the client to display this new data.
+Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in Eigenschaften gemäß dem definierten Typ serialisieren kann. Abschließend muss dann der Client aktualisiert werden, um diese neuen Daten anzuzeigen.
 
-1. In Visual Studio, open the file MainPage.xaml.cs, then replace the existing **TodoItem** class with the following definition:
+1. Öffnen Sie in Visual Studio die Datei "MainPage.xaml.cs", und ersetzen Sie dann die vorhandene Klasse **TodoItem** mit der folgenden Definition:
 
 	    public class TodoItem
 	    {
@@ -152,23 +152,23 @@ The Mobile Service client will ignore any data in a response that it cannot seri
 	        public DateTime? CreatedAt { get; set; }
 	    }
 
-    This new class definition includes the new timestamp property, as a nullable DateTime type.
+    Diese neue Klassendefinition umfasst die neue Zeitstempeleigenschaft als nullbarer DateTime-Typ.
 
-    <div class="dev-callout"><b>Note</b>
-	<p>The <strong>DataMemberAttribute</strong> tells the client to map the new <strong>CreatedAt</strong> property in the app to the <strong>createdAt</strong> column defined in the TodoItem table, which has a different casing. By using this attribute, your app can have property names on objects that differ from column names in the SQL Database. Without this attribute, an error would occur because of the casing differences.</p>
+    <div class="dev-callout"><b>Hinweis</b>
+	<p>Das <strong>DataMemberAttribute</strong> weist den Client an, die neue Eigenschaft <strong>CreatedAt</strong> in der App zu der in der TodoItem-Tabelle definierten Spalte <strong>createdAt</strong> zuzuordnen, die über eine andere Schreibweise verfügt. Durch die Verwendung dieses Attributs kann Ihre App Eigenschaftennamen zu Objekten haben, die von den Spaltennamen in der SQL-Datenbank abweichen. Ohne dieses Attribut würde aufgrund der unterschiedlichen Schreibweisen ein Fehler auftreten.</p>
     </div>
 
-5. Add the following XAML element just below the **CheckBoxComplete** element in the MainPage.xaml file:
+2. Fügen Sie das folgende XAML-Element direkt unter dem Element **CheckBoxComplete** in der Datei "MainPage.xaml" ein:
 
         <TextBlock Name="WhenCreated" Text="{Binding CreatedAt}" VerticalAlignment="Center"/>
 
-   	Dadurch wird die neue **CreatedAt**-Eigenschaft in einem Textfeld angezeigt.
+   	This displays the new **CreatedAt** property in a text box.
 
-6. Drücken Sie die Taste **F5**, um die App auszuführen.
+3. Drücken Sie die Taste **F5**, um die App auszuführen.
 
    Beachten Sie, dass der Zeitstempel für eingefügte Elemente nur angezeigt wird, nachdem Sie das insert-Skript aktualisiert haben.
 
-7. Ersetzen Sie die vorhandene **RefreshTodoItems**-Methode durch den folgenden Code:
+4. Ersetzen Sie die vorhandene **RefreshTodoItems**-Methode durch den folgenden Code:
 
         private void RefreshTodoItems()
         {
@@ -184,11 +184,11 @@ The Mobile Service client will ignore any data in a response that it cannot seri
 
    	Diese Methode aktualisiert die Abfrage, damit auch Elemente herausgefiltert werden, die nicht über einen Zeitstempelwert verfügen.
 
-8. Drücken Sie die Taste **F5**, um die App auszuführen.
+5. Drücken Sie die Taste **F5**, um die App auszuführen.
 
    	Beachten Sie, dass alle Elemente, die ohne Zeitstempelwert erstellt wurden, nicht mehr in der UI angezeigt werden.
 
-Sie haben dieses Lernprogramm zum Arbeiten mit Daten abgeschlossen.-->
+Sie haben dieses Lernprogramm zum Arbeiten mit Daten abgeschlossen.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 

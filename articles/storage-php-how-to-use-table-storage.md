@@ -1,35 +1,35 @@
 ﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (PHP) | Microsoft Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="Learn how to use the Table service from PHP to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="PHP" title="How to use the Table service from PHP" authors="tamram" solutions="" manager="adinah" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/24/2014" ms.author="tomfitz" />
 
 # Verwenden des Tabellendiensts von PHP
 
-Dieser Leitfaden erläutert Ihnen das Durchführen allgemeiner Szenarios mit dem Azure-Tabellendienst. Die Beispiele wurden in PHP geschrieben und verwenden das [Azure-SDK für PHP][Download]. Die besprochenen Szenarios umfassen **das Erstellen und Löschen einer Tabelle sowie das Einfügen, Löschen und Abfragen von Entitäten in einer Tabelle**. Weitere Informationen zum Azure-Tabellendienst finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
+Dieser Leitfaden erläutert Ihnen das Durchführen allgemeiner Szenarios mit dem Azure-Tabellendienst. Die Beispiele wurden in PHP geschrieben und verwenden das [Azure SDK für PHP][download]. Die besprochenen Szenarios umfassen **das Erstellen und Löschen einer Tabelle sowie das Einfügen, Löschen und Abfragen von Entitäten in einer Tabelle**. Weitere Informationen zum Azure-Tabellendienst finden Sie im Abschnitt [Nächste Schritte](#NextSteps) .
 
 ##Inhaltsverzeichnis
 
-* [Was ist der Tabellendienst?](#what-is)
+* [Was ist der Tabellenspeicherdienst?](#what-is)
 * [Konzepte](#concepts)
 * [Erstellen eines Azure-Speicherkontos](#CreateAccount)
 * [Erstellen einer PHP-Anwendung](#CreateApplication)
 * [Konfigurieren der Anwendung für den Zugriff auf den Tabellendienst](#ConfigureStorage)
 * [Einrichten einer Azure-Speicherverbindung](#ConnectionString)
-* [Gewusst wie: Erstellen einer Tabelle](#CreateTable)
-* [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle](#AddEntity)
-* [Gewusst wie: Abrufen einer einzelnen Entität](#RetrieveEntity)
-* [Gewusst wie: Abrufen aller Entitäten in einer Partition](#RetEntitiesInPartition)
-* [Gewusst wie: Abrufen einer Teilmenge von Entitäten in einer Partition](#RetrieveSubset)
-* [Gewusst wie: Abrufen einer Teilmenge von Entitätseigenschaften](#RetPropertiesSubset)
-* [Gewusst wie: Aktualisieren einer Entität](#UpdateEntity)
-* [Gewusst wie: Batch-Tabellenvorgänge](#BatchOperations)
-* [Gewusst wie: Löschen einer Tabelle](#DeleteTable)
+* [Vorgehensweise: Erstellen einer Tabelle](#CreateTable)
+* [Vorgehensweise: Hinzufügen einer Entität zu einer Tabelle](#AddEntity)
+* [Vorgehensweise: Abrufen einer einzelnen Entität](#RetrieveEntity)
+* [Vorgehensweise: Abrufen aller Entitäten in einer Partition](#RetEntitiesInPartition)
+* [Vorgehensweise: Abrufen einer Teilmenge von Entitäten in einer Partition](#RetrieveSubset)
+* [Vorgehensweise: Abrufen einer Teilmenge von Entitätseigenschaften](#RetPropertiesSubset)
+* [Vorgehensweise: Aktualisieren einer Entität](#UpdateEntity)
+* [Vorgehensweise: Batch-Tabellenvorgänge](#BatchOperations)
+* [Vorgehensweise: Löschen einer Tabelle](#DeleteTable)
 * [Nächste Schritte](#NextSteps)
 
-[WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
+[WACOM.INCLUDE [vorgehensweise-tabellenspeicher](../includes/howto-table-storage.md)]
 
 ##<a id="CreateAccount"></a>Erstellen eines Azure-Speicherkontos
 
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[WACOM.INCLUDE [Speicherkonto-erstellen](../includes/create-storage-account.md)]
 
 ##<a id="CreateApplication"></a>Erstellen einer PHP-Anwendung
 
@@ -39,7 +39,7 @@ In diesem Leitfaden verwenden Sie Tabellendienstfunktionen, die lokal aus einer 
 
 ##<a id="GetClientLibrary"></a>Abrufen der Azure-Clientbibliotheken
 
-[WACOM.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
+[WACOM.INCLUDE [clientbibliotheken-abrufen](../includes/get-client-libraries.md)]
 
 ##<a id="ConfigureStorage"></a>Konfigurieren der Anwendung für den Zugriff auf den Tabellendienst
 
@@ -100,21 +100,21 @@ Für die hier erläuterten Beispiele wird die Verbindungszeichenfolge direkt wei
 	// Create table REST proxy.
 	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 
-	  try	{
+	try	{
 		// Create table.
 		$tableRestProxy->createTable("mytable");
 	}
 	catch(ServiceException $e){
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages can be found here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 	}
 
 Informationen zu Einschränkungen für Tabellennamen finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][table-data-model].
 
-##<a id="AddEntity"></a>Gewusst wie: Hinzufügen einer Entität zu einer Tabelle
+##<a id="AddEntity"></a>Vorgehensweise: Hinzufügen einer Entität zu einer Tabelle
 
 Um einer Tabelle eine Entität hinzuzufügen, erstellen Sie ein neues **Entity**-Objekt und übergeben es an **TableRestProxy->insertEntity**. Beachten Sie, dass Sie beim Erstellen einer Entität einen `PartitionKey` und einen `RowKey` angeben müssen. Dabei handelt es sich um eindeutige Kennzeichner für eine Entität und um Werte, die viel schneller als andere Entitätseigenschaften abgefragt werden können. Das System verwendet `PartitionKey`, um die Entitäten der Tabelle automatisch über viele Speicherknoten zu verteilen. Entitäten mit dem gleichen `PartitionKey` werden auf dem gleichen Knoten gespeichert. (Vorgänge für mehrere Entitäten, die auf dem gleichen Knoten gespeichert sind, haben eine höhere Leistung als Vorgänge für Entitäten, die auf verschiedenen Knoten gespeichert sind.) Der `RowKey` ist die eindeutige ID einer Entität innerhalb einer Partition.
 
@@ -141,14 +141,14 @@ Um einer Tabelle eine Entität hinzuzufügen, erstellen Sie ein neues **Entity**
 		$tableRestProxy->insertEntity("mytable", $entity);
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 	}
 
-Informationen zu Tabelleneigenschaften und -typen finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][table-data-model].
+Informationen zu Tabelleneigenschaften und -typen finden Sie unter [Understanding the Table Service Data Model][table-data-model].
 
 Die **TableRestProxy**-Klasse bietet zwei alternative Methoden zum Einfügen von Entitäten: **insertOrMergeEntity** und **insertOrReplaceEntity**. Um diese Methoden zu verwenden, erstellen Sie ein neues **Entity**-Objekt, und übergeben Sie es als Parameter an eine Methode. Jede Methode fügen die Entität ein, falls sie nicht vorhanden ist. Falls die Entität bereits vorhanden ist, aktualisiert **insertOrMergeEntity** die Eigenschaftswerte, falls die Eigenschaften bereits vorhanden sind, und fügt neue Werte hinzu, falls sie nicht vorhanden sind, während **insertOrReplaceEntity** eine vorhandene Entität vollständig ersetzt. Das folgende Beispiel zeigt die Verwendung von **insertOrMergeEntity**. Falls die Entität mit `PartitionKey` "tasksSeattle" und `RowKey` "1" nicht bereits vorhanden ist, wird sie eingefügt. Falls sie jedoch zuvor eingefügt wurde (wie in dem Beispiel oben gezeigt), wird die `DueDate`-Eigenschaft aktualisiert und die `Status`-Eigenschaft hinzugefügt. Auch die Eigenschaften `Description` und `Location` werden aktualisiert, allerdings mit den Werten, mit denen sie effektiv unverändert bleiben. Falls die letzten zwei Eigenschaft nicht wie im Beispiel gezeigt hinzugefügt würden, sondern auf der Zielentität vorhanden wären, blieben ihre vorhandenen Werte unverändert.
 
@@ -176,14 +176,14 @@ Die **TableRestProxy**-Klasse bietet zwei alternative Methoden zum Einfügen von
 	$entity->addProperty("Location", EdmType::STRING, "Home");
 	$entity->addProperty("Status", EdmType::STRING, "Complete"); // Added Status field.
 	
-	  try	{
+	try	{
 		// Calling insertOrReplaceEntity, instead of insertOrMergeEntity as shown,
 		// would simply replace the entity with PartitionKey "tasksSeattle" and RowKey "1".
 		$tableRestProxy->insertOrMergeEntity("mytable", $entity);
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -191,9 +191,9 @@ Die **TableRestProxy**-Klasse bietet zwei alternative Methoden zum Einfügen von
 	}
 	   
 
-##<a id="RetrieveEntity"></a>Gewusst wie: Abrufen einer einzelnen Entität
+##<a id="RetrieveEntity"></a>Vorgehensweise: Abrufen einer einzelnen Entität
 
-Mit der **TableRestProxy->getEntity**-Methode können Sie eine einzelne Entität durch Abfragen der Werte für `PartitionKey` und `RowKey` abrufen. Im Beispiel unten werden der Partitionsschlüssel `tasksSeattle` und der Zeilenschlüssel `1` an die **getEntity**-Methode übergeben.
+Mit der **TableRestProxy->getEntity**-Methode können Sie eine einzelne Entität durch Abfragen der Werte für `PartitionKey` und `RowKey`. Im Beispiel unten werden der Partitionsschlüssel `tasksSeattle` und der Zeilenschlüssel `1` an die **getEntity**-Methode übergeben.
 
 	require_once 'vendor\autoload.php';
 
@@ -203,12 +203,12 @@ Mit der **TableRestProxy->getEntity**-Methode können Sie eine einzelne Entität
 	// Create table REST proxy.
 	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 	
-	  try	{
+	try	{
 		$result = $tableRestProxy->getEntity("mytable", "tasksSeattle", 1);
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -219,7 +219,7 @@ Mit der **TableRestProxy->getEntity**-Methode können Sie eine einzelne Entität
 
 	echo $entity->getPartitionKey().":".$entity->getRowKey();
 
-##<a id="RetEntitiesInPartition"></a>Gewusst wie: Abrufen aller Entitäten in einer Partition
+##<a id="RetEntitiesInPartition"></a>Vorgehensweise: Abrufen aller Entitäten in einer Partition
 
 Entitätsabfragen werden mithilfe von Filtern erstellt (weitere Informationen finden Sie unter [Abfragen von Tabellen und Entitäten][filters]). Um alle Entitäten in einer Partition abzurufen, verwenden Sie den Filter "PartitionKey eq *Partitionsname*". Das folgende Beispiel zeigt, wie alle Entitäten in der Partition `tasksSeattle` durch Übergeben eines Filters an die **queryEntities**-Methode abgerufen werden.
 
@@ -233,12 +233,12 @@ Entitätsabfragen werden mithilfe von Filtern erstellt (weitere Informationen fi
 	
 	$filter = "PartitionKey eq 'tasksSeattle'";
 	
-	  try	{
+	try	{
 		$result = $tableRestProxy->queryEntities("mytable", $filter);
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -251,9 +251,9 @@ Entitätsabfragen werden mithilfe von Filtern erstellt (weitere Informationen fi
 		echo $entity->getPartitionKey().":".$entity->getRowKey()."<br />";
 	}
 
-##<a id="RetrieveSubset"></a>Gewusst wie: Abrufen einer Teilmenge von Entitäten in einer Partition
+##<a id="RetrieveSubset"></a>Vorgehensweise: Abrufen einer Teilmenge von Entitäten in einer Partition
 
-Das Muster, das im vorherigen Beispiel verwendet wird, kann auch verwendet werden, um eine Teilmenge der Entitäten in einer Partition abzurufen. Die Teilmenge der Entitäten, die Sie abrufen, wird durch den verwendeten Filter bestimmt (weitere Informationen finden Sie unter [Abfragen von Tabellen und Entitäten][Filter]). Das folgende Beispiel zeigt, wie ein Filter zum Abrufen aller Entitäten mit einem bestimmten Wert für `Location` und einem `DueDate` vor einem angegebenen Datum verwendet wird.
+Das Muster, das im vorherigen Beispiel verwendet wird, kann auch verwendet werden, um eine Teilmenge der Entitäten in einer Partition abzurufen. Die Teilmenge der Entitäten, die Sie abrufen, wird durch den verwendeten Filter bestimmt (weitere Informationen finden Sie unter [Abfragen von Tabellen und Entitäten][filters]). Das folgende Beispiel zeigt, wie ein Filter zum Abrufen aller Entitäten mit einem bestimmten Wert für `Location` und einem `DueDate` vor einem angegebenen Datum verwendet wird.
 
 	require_once 'vendor\autoload.php';
 
@@ -265,12 +265,12 @@ Das Muster, das im vorherigen Beispiel verwendet wird, kann auch verwendet werde
 	
 	$filter = "Location eq 'Office' and DueDate lt '2012-11-5'";
 	
-	  try	{
+	try	{
 		$result = $tableRestProxy->queryEntities("mytable", $filter);
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -283,7 +283,7 @@ Das Muster, das im vorherigen Beispiel verwendet wird, kann auch verwendet werde
 		echo $entity->getPartitionKey().":".$entity->getRowKey()."<br />";
 	}
 
-##<a id="RetPropertiesSubset"></a>Gewusst wie: Abrufen einer Teilmenge von Entitätseigenschaften
+##<a id="RetPropertiesSubset"></a>Vorgehensweise: Abrufen einer Teilmenge von Entitätseigenschaften
 
 Eine Abfrage kann eine Teilmenge der Entitätseigenschaften abrufen. Bei dieser Methode, der sogenannten *Projektion*, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Um eine abzurufende Eigenschaft anzugeben, übergeben Sie den Namen der Eigenschaft an die **Query->addSelectField**-Methode. Sie können diese Methode mehrfach aufrufen, um weitere Eigenschaften hinzuzufügen. Nach dem Ausführen von **TableRestProxy->queryEntities** haben die zurückgegebenen Entitäten nur die ausgewählten Eigenschaften. (Wenn Sie eine Teilmenge der Tabellenentitäten zurückgeben möchten, verwenden Sie einen Filter, wie in den Abfragen oben gezeigt wird.)
 
@@ -299,12 +299,12 @@ Eine Abfrage kann eine Teilmenge der Entitätseigenschaften abrufen. Bei dieser 
 	$options = new QueryEntitiesOptions();
 	$options->addSelectField("Description");
 	
-	  try	{
+	try	{
 		$result = $tableRestProxy->queryEntities("mytable", $options);
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -321,7 +321,7 @@ Eine Abfrage kann eine Teilmenge der Entitätseigenschaften abrufen. Bei dieser 
 		echo $description."<br />";
 	}
 
-##<a id="UpdateEntity"></a>Gewusst wie: Aktualisieren einer Entität
+##<a id="UpdateEntity"></a>Vorgehensweise: Aktualisieren einer Entität
 
 Eine vorhandene Entität kann mithilfe der Methoden **Entity->setProperty** und **Entity->addProperty** auf der Entität und dem darauf folgenden Aufruf von **TableRestProxy->updateEntity** aktualisiert werden. Das folgende Beispiel ruft eine Entität ab, ändert eine Eigenschaft, entfernt eine andere Eigenschaft und fügt eine neue Eigenschaft hinzu. Beachten Sie, dass das Entfernen einer Eigenschaft durch Festlegen ihres Werts auf **null** erfolgt. 
 
@@ -345,19 +345,19 @@ Eine vorhandene Entität kann mithilfe der Methoden **Entity->setProperty** und 
 	
 	$entity->addProperty("Status", EdmType::STRING, "In progress"); //Added Status.
 
-	  try	{
+	try	{
 		$tableRestProxy->updateEntity("mytable", $entity);
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
 	}
 
-##<a id="DeleteEntity"></a>Gewusst wie: Löschen einer Entität
+##<a id="DeleteEntity"></a>Vorgehensweise: Löschen einer Entität
 
 Um eine Entität zu löschen, übergeben Sie den Tabellennamen und die Werte für `PartitionKey` und `RowKey` der Entität an die **TableRestProxy->deleteEntity**-Methode.
 
@@ -369,22 +369,22 @@ Um eine Entität zu löschen, übergeben Sie den Tabellennamen und die Werte fü
 	// Create table REST proxy.
 	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 	
-	  try	{
+	try	{
 		// Delete entity.
 		$tableRestProxy->deleteEntity("mytable", "tasksSeattle", "2");
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
 	}
 
-Beachten Sie Folgendes für Parallelitätsüberprüfungen: Sie können den ETag für eine zu löschende Entität mithilfe der **DeleteEntityOptions->setEtag**-Methode und durch Übergeben des **DeleteEntityOptions**-Objekts an **deleteEntity** als vierten Parameter festlegen.
+Beachten Sie Folgendes für Parallelitätsüberprüfungen: Sie können den ETag für eine zu löschende Entität mithilfe der **DeleteEntityOptions->setEtag**-Methode und durch Übergeben des **DeleteEntityOptions**Objekts an **deleteEntity** als vierten Parameter festlegen.
 
-##<a id="BatchOperations"></a>Gewusst wie: Batch-Tabellenvorgänge
+##<a id="BatchOperations"></a>Vorgehensweise: Batch-Tabellenvorgänge
 
 Mithilfe der **TableRestProxy->batch**-Methode können Sie mehrere Vorgänge in einer einzelnen Anforderung ausführen. Das Muster umfasst hier das Hinzufügen von Vorgängen zum **BatchRequest**-Objekt und die darauf folgende Übergabe des **BatchRequest**-Objekts an die **TableRestProxy->batch**-Methode. Um einem **BatchRequest**-Objekt einen Vorgang hinzuzufügen, können Sie eine der folgenden Methoden mehrfach aufrufen:
 
@@ -426,12 +426,12 @@ Das folgende Beispiel zeigt die Ausführung von **insertEntity** und **deleteEnt
 	// Add operation to list of batch operations.
 	$operations->addDeleteEntity("mytable", "tasksSeattle", "1");
 	
-	  try	{
+	try	{
 		$tableRestProxy->batch($operations);
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -440,7 +440,7 @@ Das folgende Beispiel zeigt die Ausführung von **insertEntity** und **deleteEnt
 
 Weitere Informationen zu Batch-Tabellenvorgängen finden Sie unter [Durchführen von Entitätsgruppentransaktionen][entity-group-transactions].
 
-##<a id="DeleteTable"></a>Gewusst wie: Löschen einer Tabelle
+##<a id="DeleteTable"></a>Vorgehensweise: Löschen einer Tabelle
 
 Um eine Tabelle zu löschen, übergeben Sie den Tabellennamen an die **TableRestProxy->deleteTable**-Methode.
 
@@ -452,13 +452,13 @@ Um eine Tabelle zu löschen, übergeben Sie den Tabellennamen an die **TableRest
 	// Create table REST proxy.
 	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 	
-	  try	{
+	try	{
 		// Delete table.
 		$tableRestProxy->deleteTable("mytable");
 	}
 	catch(ServiceException $e){
-		// Ausnahme basierend auf Fehlercodes und -meldungen behandeln.
-		// Fehlercodes und -meldungen sind hier verfügbar: 
+		// Handle exception based on error codes and messages.
+		// Error codes and messages are here: 
 		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -475,8 +475,10 @@ Da Sie jetzt die Grundlagen des Azure-Tabellendiensts erlernt haben, folgen Sie 
 [Download]: http://go.microsoft.com/fwlink/?LinkID=252473
 [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
 [require_once]: http://php.net/require_once
-[table-service-timeouts]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894042.aspx
+[tabellendienst-timeouts]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894042.aspx
 
 [table-data-model]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179338.aspx
-[Filter]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx
+[filters]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx
 [entity-group-transactions]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894038.aspx
+
+<!--HONumber=35_1-->
