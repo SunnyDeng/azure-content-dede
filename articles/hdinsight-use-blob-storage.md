@@ -1,23 +1,19 @@
-﻿<properties urlDisplayName="Blob Storage with  Hadoop in HDInsight" pageTitle="Verwenden des Blobspeichers mit Hadoop in HDInsight | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
+﻿<properties urlDisplayName="Blob Storage with  Hadoop in HDInsight" pageTitle="Abfragen großer Datenmengen aus Hadoop-kompatiblen Blob-Speicher | Azure" metaKeywords="" description="HDInsight uses Hadoop-compatible Blob storage as the big data store for HDFS. Learn how to query from Blob storage, and store results of your analysis." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Query big data from Hadoop-compatible Blob storage for analysis in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
-
-
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/12/2014" ms.author="jgao" />
 
 
-#Verwenden des Azure-Blobspeichers mit Hadoop in HDInsight
+#Abfragen großer Datenmengen aus Hadoop-kompatiblen Blob-Speicher zur Analyse in HDInsight
 
+Kostengünstiger Blob-Speicher stellt eine robuste, universelle Hadoop-kompatible Azure-Speicherlösung dar, die problemlos mit HDInsight integriert werden kann. Über eine HDFS-Schnittstelle (Hadoop Distributed File System) können sämtliche Komponenten in HDInsight direkt mit den Daten im Blob-Speicher arbeiten. In diesem Lernprogramm erfahren Sie, wie Sie einen Container für Blob-Speicher einrichten und dann die darin enthaltenen Daten adressieren.
 
-
-
-Azure HDInsight unterstützt sowohl Hadoop Distributed Files System (HDFS) als auch Azure Blob-Speicher zum Speichern von Daten. Blob-Speicher ist eine robuste Azure-Speicherlösung für allgemeine Zwecke. Blob-Speicher bietet eine umfangreiche HDFS-Dateisystemoberfläche mit reibungsloser Leistung, die dafür sorgt, dass alle Komponenten im Hadoop-System (standardmäßig) direkt mit den Daten arbeiten, die sie verwalten. Blob-Speicher ist nicht nur eine kostengünstige Lösung, sondern sorgt auch dafür, dass HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren. 
+Die Speicherung von Daten in Blob-Speicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren. 
 
 > [WACOM.NOTE]	Die *asv://*-Syntax wird in HDInsight-Clustern der Version 3.0 und auch in späteren Versionen nicht unterstützt. Dies bedeutet, dass alle an einen HDInsight-Cluster der Version 3.0 übermittelten Aufträge, die die "asv://"-Syntax verwenden, fehlschlagen werden. Stattdessen sollte die *wasb://*-Syntax verwendet werden. An HDInsight-Cluster der Version 3.0 gesendete Jobs, die mithilfe eines vorhandenen Metastores erzeugt wurden, der explizite Verweise auf Ressourcen mit der asv://-Syntax enthält, schlagen ebenfalls fehl. Diese Metastores müssen mit der wasb://-Syntax neu erstellt werden, um die Ressourcen zu adressieren.
 
-> [WACOM.NOTE] HDInsight unterstützt aktuell nur Blockblobs.
+> HDInsight unterstützt aktuell nur Blockblobs.
 
-> [WACOM.NOTE]
-> Die meisten HDFS-Befehle wie z. B. <b>ls</b>, <b>copyFromLocal</b>, <b>mkdir</b> usw. funktionieren weiterhin wie erwartet. Nur die für die native HDFS-Implementierung (als DFS bezeichnet) spezifischen Befehle wie <b>fschk</b> und <b>dfsadmin</b> zeigen in Azure Blob-Speicher ein anderes Verhalten.
+> Die meisten HDFS-Befehle wie <b>ls</b>, <b>copyFromLocal</b>, <b>mkdir</b>usw. funktionieren weiterhin wie erwartet. Nur die Befehle, die für die systemeigene HDFS-Implementierung spezifisch sind (die als DFS bezeichnet wird), z. B. <b>fschk</b> und <b>dfsadmin</b> zeigen beim Azure Blob-Speicher ein anderes Verhalten.
 
 Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erste Schritte mit HDInsight][hdinsight-get-started] oder [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
@@ -33,7 +29,7 @@ Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erst
 ##<a id="architecture"></a>HDInsight-Speicherarchitektur
 Das folgende Diagramm bietet einen zusammenfassenden Überblick über die HDInsight-Speicherarchitektur.
 
-![HDI.ASVArch](./media/hdinsight-use-blob-storage/HDI.ASVArch.png "HDInsight Storage Architecture")
+![Hadoop clusters in HDInsight access and store big data in cost-effective, scalable Hadoop-compatible Azure Blob storage in the cloud.](./media/hdinsight-use-blob-storage/HDI.ASVArch.png "HDInsight Storage Architecture")
   
 HDInsight bietet Zugang zum verteilten Dateisystem, das lokal an die Rechenknoten angefügt ist. Auf dieses Dateisystem kann über den vollqualifizierten URI zugegriffen werden. Beispiel: 
 
@@ -46,22 +42,22 @@ Zusätzlich bietet HDInsight die Möglichkeit, auf die in Blob-Speicher gespeich
 
 Hadoop unterstützt eine Art Standard-Dateisystem. Zu diesem gehören ein Standard-Schema und eine Standard-Berechtigung; es kann auch zur Auflösung relativer Pfade verwendet werden. Während des Prozesses zur Bereitstellung von HDInsight werden ein Azure-Speicherkonto und ein bestimmter Blob-Speichercontainer aus diesem Konto als Standard-Dateisystem festgelegt.
 
-Zusätzlich zu diesem Speicherkonto können Sie während des Bereitstellungsprozesses weitere Speicherkonten aus demselben Azure-Abonnement oder anderen Azure-Abonnements hinzufügen. 	Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision]. 
+Zusätzlich zu diesem Speicherkonto können Sie während des Bereitstellungsprozesses weitere Speicherkonten aus demselben Azure-Abonnement oder anderen Azure-Abonnements hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision]. 
 
-- **Container in mit einem   Cluster verbundenen Speicherkonten:** Da der Kontoname und der Kontoschlüssel in der *core-site.xml* gespeichert sind, haben Sie vollständigen Zugriff auf die Blobs in diesen Containern.
-- **Öffentliche Container oder öffentliche Blobs in NICHT mit einem Cluster verbundenen Speicherkonten:**  Sie haben nur Lesezugriff auf die Blobs in diesen Containern.
+- **Container in mit einem Cluster verbundenen Speicherkonten:** Da der Kontoname und der Kontoschlüssel in der *core-site.xml* gespeichert sind, haben Sie vollständigen Zugriff auf die Blobs in diesen Containern.
+- **Öffentliche Container oder öffentliche Blobs in NICHT mit einem Cluster verbundenen Speicherkonten:** Sie haben nur Lesezugriff auf die Blobs in diesen Containern.
 
 	> [WACOM.NOTE]
-        > Öffentliche Container erlauben das Abrufen einer Liste aller im Container verfügbaren Blobs und der Container-Metadaten. Auf öffentliche Blobs  haben Sie nur Zugriff, wenn Sie die exakte URL kennen. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dd179354.aspx">Beschränken des Zugriffs auf Container und Blobs</a>.
+        Öffentliche Container erlauben das Abrufen einer Liste aller im Container verfügbaren Blobs und der Container-Metadaten. Auf öffentliche Blobs haben Sie nur Zugriff, wenn Sie die exakte URL kennen. Weitere Informationen finden Sie unter: <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dd179354.aspx">Einschränken des Zugriffs auf Container und Blobs</a>.
 
 - **Private Container in NICHT mit einem Cluster verbundenen Speicherkonten:** Sie können nur auf die Blobs im Container zugreifen, wenn Sie das Speicherkonto beim Übermitteln der WebHCat-Aufträge definieren. Dies wird weiter unten im Artikel erläutert.
 
 
 Das beim Einrichtungsprozess definierte Speicherkonto und die Schlüssel werden in %HADOOP_HOME%/conf/core-site.xml gespeichert.  Standardmäßig verwendet HDInsight die in der Datei core-site.xml definierten Speicherkonten. Die Datei core-site.xml sollte nicht manuell bearbeitet werden, da der Cluster-Stammknoten (Master) jederzeit neu aus einem Abbild erstellt oder migriert werden kann, und die Änderungen an den Dateien in diesem Fall verloren gehen.
 
-Verschiedene WebHCat-Aufträge, darunter Hive, MapReduce, Hadoop Streaming und Pig, können eine Beschreibung von Speicherkonten und Metadaten enthalten (funktioniert momentan nur für Pig und Speicherkonten, nicht für Metadaten.) Im Abschnitt [Blob-Zugriff über PowerShell](#powershell) dieses Artikels finden Sie ein Beispiel für dieses Feature. Weitere Informationen finden Sie unter [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores](http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx).
+Verschiedene WebHCat-Aufträge, darunter Hive, MapReduce, Hadoop Streaming und Pig, können eine Beschreibung von Speicherkonten und Metadaten enthalten (funktioniert momentan nur für Pig und Speicherkonten, nicht für Metadaten.) Im Abschnitt [Blob-Zugang über PowerShell](#powershell) dieses Artikels befindet sich ein Beispiel zu dieser Funktion. Weitere Informationen finden Sie unter [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores](http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx).
 
-In Blob-Speichercontainern werden Daten als Schlüssel/Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen das Zeichen '/' verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. Der Schlüssel eines Blobs kann z. B. *input/log1.txt* heißen. Es existiert zwar in Wirklichkeit kein Verzeichnis namens *input*, aber aufgrund des Zeichens "/" im Schlüsselnamen sieht dieser aus wie ein Dateipfad.
+In Blob-Speichercontainern werden Daten als Schlüssel/Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen das Zeichen '/' verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. Der Schlüssel eines Blobs kann z. B. *input/log1.txt* heißen. Das Verzeichnis *input* existiert zwar nicht, wegen des Zeichens "/" im Schlüsselnamen sieht es jedoch so aus, als gäbe es einen Dateipfad.
 
 
 
@@ -77,7 +73,7 @@ Der Leistungsaufwand, der damit verbunden ist, dass die Berechnung und die Speic
 
 Die Speicherung von Daten in Blob-Speicher statt in HDFS hat mehrere Vorteile:
 
-* **Datenfreigabe und -wiederverwendung:** Die Daten in HDFS befinden sich innerhalb des Rechenclusters. Nur die Anwendungen, die Zugriff auf den Rechencluster haben, können die Daten über die HDFS-API verwenden. Auf die Dateien in Blob-Speicher kann entweder über die HDFS-APIs oder über die [Blob-Speicher-REST-APIs][blob-storage-restAPI] zugegriffen werden. Somit kann eine größere Menge von Anwendungen (darunter andere HDInsight-Cluster) und Tools verwendet werden, um die Daten zu produzieren und abzurufen.
+* **Datenfreigabe und -wiederverwendung:** Die Daten in HDFS befinden sich innerhalb des Rechenclusters. Nur die Anwendungen, die Zugriff auf den Rechencluster haben, können die Daten über die HDFS-API verwenden. Auf die Dateien in Blob-Speicher kann entweder über die HDFS-APIs oder über die [Blob-Speicher-REST-APIs][blob-storage-restAPI]. Somit kann eine größere Menge von Anwendungen (darunter andere HDInsight-Cluster) und Tools verwendet werden, um die Daten zu produzieren und abzurufen.
 * **Datenarchivierung:** Die Speicherung von Daten in Blob-Speicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren. 
 * **Datenspeicherkosten:** Die langfristige Datenspeicherung in DFS ist kostspieliger als die Datenspeicherung in Blob-Speicher, da die Kosten eines Rechenclusters höher liegen als diejenigen eines Blob-Speichercontainers. Da die Daten nicht für jede Erzeugung eines neues Rechenclusters neu geladen werden, sparen Sie auch Kosten für das Laden von Daten.
 * **Flexible horizontale Skalierung:** Während HDFS Ihnen ein horizontal skaliertes Dateisystem bietet, wird die Skalierung durch die Anzahl der Knoten bestimmt, die Sie für Ihren Cluster bereitstellen. Eine Änderung der Skalierung kann weitaus schwieriger werden, als auf die flexiblen Speicherkapazitäten von Blob-Speicher zu vertrauen, über die Sie automatisch verfügen.
@@ -96,11 +92,11 @@ Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto][azure-stor
 
 ###Erstellen eines Blob-Containers für HDInsight mithilfe des Verwaltungsportals
 
-Wenn Sie einen HDInsight-Cluster im Azure-Verwaltungsportal bereitstellen, haben Sie zwei Optionen: *Schnellerstellung* und *Benutzerdefinierte Erstellung*. Für die Schnellerstellung muss das Azure-Speicherkonto bereits vorher erstellt worden sein.  Anweisungen finden Sie unter [So erstellen Sie ein Speicherkonto][azure-storage-create]. 
+Wenn Sie einen HDInsight-Cluster im Azure-Verwaltungsportal bereitstellen, haben Sie zwei Optionen: *Schnellerstellung* und *Benutzerdefinierte Erstellung*. Für die Schnellerstellung muss das Azure-Speicherkonto bereits vorher erstellt worden sein.  Informationen dazu finden Sie unter [Erstellen eines Speicherkontos][azure-storage-create]. 
 
-Wenn Sie die Option "Schnellerstellung" verwenden, können Sie ein vorhandenes Speicherkonto auswählen. Während des Bereitstellungsprozesses wird ein neuer Container mit dem Namen des HDInsight-Clusters erstellt. Wenn ein Container mit demselben Namen bereits vorhanden ist, wird <clusterName>-<x> verwendet. Zum Beispiel myHDIcluster-1. Dieser Container wird als Standard-Dateisystem verwendet.
+Wenn Sie die Option "Schnellerstellung" verwenden, können Sie ein vorhandenes Speicherkonto auswählen. Während des Bereitstellungsprozesses wird ein neuer Container mit dem Namen des HDInsight-Clusters erstellt. Wenn ein Container mit demselben Namen bereits vorhanden ist, wird <clusterName>-<x> verwendet. Beispiel: myHDIcluster-1. Dieser Container wird als Standard-Dateisystem verwendet.
 
-![HDI.QuickCreate][img-hdi-quick-create]
+![Using Quick Create for a new Hadoop cluster in HDInsight in the Azure portal.][img-hdi-quick-create]
  
 Mit der benutzerdefinierten Erstellung können Sie für das Standard-Speicherkonto eine der folgenden Optionen auswählen:
 
@@ -110,7 +106,7 @@ Mit der benutzerdefinierten Erstellung können Sie für das Standard-Speicherkon
 
 Sie haben außerdem die Auswahl, einen neuen Blob-Container zu erstellen oder einen vorhandenen zu verwenden.
  
-![HDI.CustomCreateStorageAccount][img-hdi-custom-create-storage-account]
+![Option to use an existing storage account for your HDInsight cluster.][img-hdi-custom-create-storage-account]
   
 
 
@@ -119,19 +115,19 @@ Sie haben außerdem die Auswahl, einen neuen Blob-Container zu erstellen oder ei
 ### Erstellen eines Containers mit Azure PowerShell.
 [Azure PowerShell][powershell-install] kann zur Erstellung von Blob-Containern verwendet werden. Nachfolgend ein PowerShell-Beispielskript:
 
-	$subscriptionName = "<SubscriptionName>"	# Name des Azure-Abonnements
+	$subscriptionName = "<SubscriptionName>"	# Azure subscription name
 	$storageAccountName = "<AzureStorageAccountName>" # The storage account that you will create
 	$containerName="<BlobContainerToBeCreated>" # The Blob container name that you will create
 
 	# Connect to your Azure account and selec the current subscription
-	Add-AzureAccount # Die Verbindung ist 12 Stunden lang glütig.
-	Select-AzureSubscription $subscriptionName #nur erforderlich, wenn Sie mehrere Abonnements haben
+	Add-AzureAccount # The connection will expire in a few hours.
+	Select-AzureSubscription $subscriptionName #only required if you have multiple subscriptions
 	
-	# Ein Speicherkontextobjekt erstellen
+	# Create a storage context object
 	$storageAccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
 	$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 	
-	# Einen Blob-Speichercontainer erstellen
+	# Create a Blob storage container
 	New-AzureStorageContainer -Name $containerName -Context $destContext 
 
 
@@ -139,14 +135,14 @@ Sie haben außerdem die Auswahl, einen neuen Blob-Container zu erstellen oder ei
 
 Das URI-Schema für den Dateizugriff im Blob-Speicher ist: 
 
-	wasb[s]://<containername>@<accountname>.blob.core.windows.net/<path>
+	wasb[s]://<BlobStorageContainerName>@<StorageAccountName>.blob.core.windows.net/<path>
 
 
-> [WACOM.NOTE] Die Syntax zur Adressierung der Dateien auf dem Speicheremulator (der auf dem HDInsight-Emulator läuft) lautet <i>wasb://&lt;ContainerName&gt;@storageemulator</i>.
+> [WACOM.NOTE] Die Syntax zum Ansprechen der Dateien im Speicheremulator (ausgeführt im HDInsight-Emulator) lautet <i>wasb://&lt;ContainerName&gt;@storageemulator</i>.
 
 
 
-Das URI-Schema bietet sowohl unverschlüsselten Zugriff mit dem Präfix *wasb:* als auch SSL-verschlüsselten Zugriff mit *wasbs*. Wir empfehlen die Verwendung von *wasbs*, wann immer es möglich ist, selbst für den Zugriff auf Daten, die sich im selben Azure-Datencenter befinden.
+Das URI-Schema bietet sowohl unverschlüsselten Zugriff mit dem Präfix *wasb:* als auch verschlüsselten Zugriff mit *wasbs*. Wir empfehlen die Verwendung von *wasbs*, selbst für den Zugriff auf Daten, die sich im selben Azure-Rechenzentrum befinden.
 	
 &lt;BlobStorageContainerName&gt; ist der Name des Blob-Speichercontainers.
 &lt;StorageAccountName&gt; ist der Name des Azure-Speicherkontos. Ein vollqualifizierter Domänenname (FQDN) ist erforderlich.
@@ -157,7 +153,7 @@ Wenn weder &lt;BlobStorageContainerName&gt; noch &lt;StorageAccountName&gt; ange
 	wasb:///example/jars/hadoop-mapreduce-examples.jar
 	/example/jars/hadoop-mapreduce-examples.jar
 	
-> [WACOM.NOTE] In HDInsight-Clustern der Version 1.6 und 2.1 lautet der Dateiname <i>hadoop-examples.jar</i>.
+> [WACOM.NOTE] Der Dateiname lautet <i>hadoop-examples.jar</i> (auf HDInsight-Clustern der Version 1.6 und 2.1).
 
 
 &lt;path&gt; ist der HDFS-Pfadname der Datei oder des Verzeichnisses. Da Blob-Speichercontainer nur ein Schlüssel/Wert-Paar sind, gibt es kein wirkliches hierarchisches Dateisystem. Ein "/" in einem Blob-Schlüssel wird als Verzeichnis-Trennzeichen interpretiert. Der Blob-Name für *hadoop-mapreduce-examples.jar* ist z. B.:
@@ -173,26 +169,26 @@ Verwenden Sie den folgenden Befehl, um die Blob-bezogenen Cmdlets aufzulisten:
 
 	Get-Command *blob*
 
-![Blob.PowerShell.cmdlets][img-hdi-powershell-blobcommands]
+![List of Blob-related PowerShell cmdlets.][img-hdi-powershell-blobcommands]
 
 
 **PowerShell-Beispiel für das Hochladen einer Datei**
 
-Anweisungen hierzu finden Sie unter [Hochladen von Daten in HDInsight][hdinsight-upload-data].
+Siehe [Hochladen von Daten in HDInsight][hdinsight-upload-data].
 
 **PowerShell-Beispiel für das Herunterladen einer Datei**
 
 Mit dem folgenden Skript wird ein Blockblob in das aktuelle Verzeichnis heruntergeladen. Wechseln Sie vor der Ausführung des Skripts in ein Verzeichnis, für das Sie Schreibberechtigungen haben. 
 
 
-	$storageAccountName = "<AzureStorageAccountName>"   # Das Speicherkonto für das bei der Einrichtung angegebene Standard-Dateisystem.
-	$containerName = "<BlobStorageContainerName>"  # Der Container für das Standard-Dateisystem hat denselben Namen wie der Cluster.
-	$blob = "example/data/sample.log" # Der Name des Blobs, das heruntergeladen werden soll.
+	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
+	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
+	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
 	
-	# Add-AzureAccount verwenden, wenn Sie keine Verbindung zu Ihrem Azure-Abonnement hergestellt haben
-	#Add-AzureAccount # Die Verbindung ist 12 Stunden lang gültig.
+	# Use Add-AzureAccount if you haven't connected to your Azure subscription
+	#Add-AzureAccount # The connection is good for 12 hours
 	
-	# Diese zwei Befehle verwenden, wenn Sie mehrere Abonnements haben
+	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"       
 	#Select-AzureSubscription $subscriptionName
 	
@@ -209,14 +205,14 @@ Mit dem folgenden Skript wird ein Blockblob in das aktuelle Verzeichnis herunter
 **PowerShell-Beispiel für das Löschen einer Datei**
 
 Das folgende Skript löscht eine Datei.
-	$storageAccountName = "<AzureStorageAccountName>"   # Das Speicherkonto für das bei der Einrichtung angegebene Standard-Dateisystem.
-	$containerName = "<BlobStorageContainerName>"  # Der Container für das Standard-Dateisystem hat denselben Namen wie der Cluster.
-	$blob = "example/data/sample.log" # Der Name des Blobs, das heruntergeladen werden soll.
+	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
+	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
+	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
 	
-	# Add-AzureAccount verwenden, wenn Sie keine Verbindung zu Ihrem Azure-Abonnement hergestellt haben
-	#Add-AzureAccount # Die Verbindung ist 12 Stunden lang gültig.
+	# Use Add-AzureAccount if you haven't connected to your Azure subscription
+	#Add-AzureAccount # The connection is good for 12 hours
 	
-	# Diese zwei Befehle verwenden, wenn Sie mehrere Abonnements haben
+	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"       
 	#Select-AzureSubscription $subscriptionName
 	
@@ -232,14 +228,14 @@ Das folgende Skript löscht eine Datei.
 
 Das folgende Skript listet die Dateien in einem "Ordner" auf. Das nächste Beispiel ruft das Invoke-Hive-Cmdlet auf, um den Befehl "dfs ls" zum Auflisten eines Ordners auszuführen.
 
-	$storageAccountName = "<AzureStorageAccountName>"   # Das Speicherkonto für das bei der Einrichtung angegebene Standard-Dateisystem.
-	$containerName = "<BlobStorageContainerName>"  # Der Container für das Standard-Dateisystem hat denselben Namen wie der Cluster.
+	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
+	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blobPrefix = "example/data/"
 	
-	# Add-AzureAccount verwenden, wenn Sie keine Verbindung zu Ihrem Azure-Abonnement hergestellt haben
-	#Add-AzureAccount # Die Verbindung ist 12 Stunden lang gültig.
+	# Use Add-AzureAccount if you haven't connected to your Azure subscription
+	#Add-AzureAccount # The connection is good for 12 hours
 	
-	# Diese zwei Befehle verwenden, wenn Sie mehrere Abonnements haben
+	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"       
 	#Select-AzureSubscription $subscriptionName
 	
@@ -274,9 +270,9 @@ In diesem Artikel haben Sie gelernt, wie Sie Blob-Speicher in HDInsight verwende
 Weitere Informationen finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
-* [Hochladen von Daten in HDInsight][hdinsight-upload-data]
+* [Hochladen von Daten zu HDInsight][hdinsight-upload-data]
 * [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
-* [Verwenden von Hive mit HDInsight][hdinsight-use-pig]
+* [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 
 [Powershell-install]: ../install-configure-powershell/
 [hdinsight-provision]: ../hdinsight-provision-clusters/
@@ -292,3 +288,5 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-use-blob-storage/HDI.PowerShell.BlobCommands.png 
 [img-hdi-quick-create]: ./media/hdinsight-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-use-blob-storage/HDI.CustomCreateStorageAccount.png  
+
+<!--HONumber=35.1-->

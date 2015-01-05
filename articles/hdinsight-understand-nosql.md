@@ -1,34 +1,31 @@
-<properties urlDisplayName="Understand NoSQL technologies" pageTitle="NoSQL-Technologien in Azure | Azure" metaKeywords="" description="Erfahren Sie, wie Sie mit NoSQL-Technologien in HDInsight Daten verwalten k&ouml;nnen, die nicht f&uuml;r relationale Datenbanken geeignet sind, z. B. gro&szlig;e Datens&auml;tze und JSON-Dokumente oder Graphen." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="storage,hdinsight" documentationCenter="" title="Datenverwaltung: NoSQL-Technologien auf Azure" authors="dchappell" />
+﻿<properties urlDisplayName="Understand NoSQL technologies" pageTitle="NoSQL-Technologien in Azure | Azure" metaKeywords="" description="Learn how NoSQL technologies on HDInsight can help you manage data not suited to relational databases, such as big data sets and JSON documents or graphs." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="storage,hdinsight" documentationCenter="" title="Data management: Understanding NoSQL technologies on Azure" authors="dchappell" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="dchappell" />
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/01/2014" ms.author="dchappell" />
 
 # Datenverwaltung: NoSQL-Technologien auf Azure
 
-**Zusammenfassung:** Azure bietet zwar eine ganze Reihe an Optionen für Ihre NoSQL-Arbeitsauslastungen, es kann allerdings schwierig sein herauszufinden, welche für Sie die richtige ist. In diesem Dokument werden die NoSQL-Technologien auf Azure erläutert. Sie erfahren, wie Sie den richtigen Dienst für die Verwaltung Ihrer nicht relationalen Daten auswählen, wozu auch unstrukturierte oder besonders große Datensätze gehören, die oft als "Big Data" bezeichnet werden.
+**Zusammenfassung:** Azure bietet zwar eine ganze Reihe an Optionen für Ihre NoSQL-Arbeitsauslastungen, es kann allerdings schwierig sein, die Unterschiede zwischen den verfügbaren Optionen herauszufinden. In diesem Dokument werden NoSQL-Technologien unter Azure erläutert. Zudem werden die Unterschiede bei ihrer Verwaltung über relationale Modelle zum Verwalten Ihrer Daten beschrieben.
 
-Lange Zeit waren für das Arbeiten mit Daten relationale Technologien vorherrschend. Wenn Sie es jedoch mit einer großen Menge unterschiedlicher Arten von Daten zu tun haben, stellt die Skalierung über mehrere Server eine große Herausforderung dar. Zudem ist die relationale Technologie für die Verwaltung bestimmter Arten von Daten, z. B. JSON-Dokumente oder Diagramme, nicht unbedingt am besten geeignet. In diesem Leitfaden werden die Optionen mit deren jeweiligen Möglichkeiten vorgestellt. Und es wird erörtert, warum sich die eine oder andere Option für Sie anbietet.
+Lange Zeit waren für das Arbeiten mit Daten relationale Technologien vorherrschend. Wenn Sie jedoch mit großen Mengen unterschiedlicher Datentypen arbeiten, ist es heutzutage zunehmend der Fall, dass sich Ihnen bei der Verwaltung dieser Daten neue Herausforderungen stellen. Relationale Technologien können gelegentlich die optimale Lösung zum Verwalten dieser Daten darstellen, während dies in anderen Situationen möglicherweise nicht der Fall ist. In diesem Leitfaden werden die Optionen mit deren jeweiligen Möglichkeiten vorgestellt. Und es wird erörtert, warum sich die eine oder andere Option für Sie anbietet.
+
 
 **Inhalt:**
 
--   Daten auf Azure: Übersicht
--   Relationale Azure-Technologien: Kurzübersicht
--   NoSQL-Technologien auf Azure: Operative Daten
+* Daten auf Azure: Übersicht	
+* Relationale Azure-Technologien: Kurzübersicht	
+* NoSQL-Technologien auf Azure
+	* Dokumentspeicher DocumentDB
+	* Schlüssel-Wert-Speicher Tabellen
+	* Spaltenfamilienspeicher HBase
+	* Analysen großer Datenmengen HDInsight 
 
-    -   Schlüssel-Wert-Speicher
-    -   Spaltenfamilienspeicher
-    -   Dokumentspeicher
-    -   Diagramm-Datenbanken
--   NoSQL-Technologien auf Azure: Analysedaten
-
-    -   Hadoop MapReduce
-    -   HDInsight
 
 **Autor:** David Chappell, Leiter von Chappell & Associates
 
-**Veröffentlicht:** November 2013
+**Veröffentlicht:** November 2014
 
-**Revision:** 1.0
+**Revision:** 2.0
 
-**Download:** [NoSQL-Technologien auf Azure (PDF)][NoSQL-Technologien auf Azure (PDF)]
+**Download:** <a href="http://go.microsoft.com/fwlink/p/?LinkId=330292" target="_blank">NoSQL auf Microsoft Azure (PDF)</a>
 
-  [NoSQL-Technologien auf Azure (PDF)]: http://go.microsoft.com/fwlink/p/?LinkId=330292
+<!--HONumber=35.1-->
