@@ -98,4 +98,4 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
 
 3. Klicken Sie auf**Ja**, um zu bestätigen, dass Sie das Speicherkonto löschen möchten.
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

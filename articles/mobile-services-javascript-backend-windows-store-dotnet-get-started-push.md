@@ -134,4 +134,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Senden von Übertragungsbenachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
 [Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

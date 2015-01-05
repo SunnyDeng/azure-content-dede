@@ -235,4 +235,4 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

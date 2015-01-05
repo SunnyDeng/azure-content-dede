@@ -397,4 +397,4 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
   [Node.js-Webanwendung]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/
  
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

@@ -61,4 +61,4 @@ Wenn es sich bei Ihrem virtuellen Azure-Computer um ein Ubuntu-Image handelt, k√
 [Microsoft Azure Cross-Platform Command-line Interface](Plattform√ºbergreifende Microsoft Azure-Befehlszeilenschnittstelle) (in englischer Sprache)(https://github.com/Azure/azure-sdk-tools-xplat)
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

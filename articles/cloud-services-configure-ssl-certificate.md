@@ -160,4 +160,4 @@ Wenn Sie SSL für eine Staging- statt für eine Produktionsbereitstellung verwen
   [4]: ./media/cloud-services-dotnet-configure-ssl-certificate/AddCertificateComplete.png  
   [How to configure an SSL certificate on an HTTPS endpoint]: http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

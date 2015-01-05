@@ -430,4 +430,4 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
 
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

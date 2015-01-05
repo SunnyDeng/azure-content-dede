@@ -303,4 +303,4 @@ Da Sie jetzt die Grundlagen des Azure-Blob-Diensts erlernt haben, folgen Sie die
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

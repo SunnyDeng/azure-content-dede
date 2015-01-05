@@ -56,4 +56,4 @@ Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet wer
 [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer]: ../storage-windows-attach-disk/
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

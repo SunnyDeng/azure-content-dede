@@ -206,4 +206,4 @@ Sie sollten über einen betriebsbereiten CoreOS-Cluster mit drei Knoten auf Azur
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

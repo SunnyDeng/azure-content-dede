@@ -218,4 +218,4 @@ Nachdem Sie eine Möglichkeit für die Bereitstellung von TwiML-Antworten einger
 [azure_twilio_howto_python]: /de-de/develop/python/how-to-guides/twilio-voice-and-sms-service/
 [azure_twilio_howto_php]: /de-de/develop/php/how-to-guides/twilio-voice-and-sms-service/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

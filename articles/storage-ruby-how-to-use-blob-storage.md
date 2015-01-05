@@ -149,4 +149,4 @@ Nachdem Sie jetzt die Grundlagen des Blob-Speichers erlernt haben, folgen Sie di
 -   Besuchen Sie den Blog [Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/)
 -   Besuchen Sie das [Azure SDK für Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) -Repository auf GitHub
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

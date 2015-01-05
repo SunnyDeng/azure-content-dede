@@ -195,4 +195,4 @@ Next steps here....
 [Installieren der Azure-Befehlszeilentools für Mac und Linux]: http://go.microsoft.com/fwlink/p/?LinkId=275795
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

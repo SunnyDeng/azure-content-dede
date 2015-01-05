@@ -173,4 +173,4 @@ Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], verwenden S
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

@@ -39,4 +39,4 @@ Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbei
 <!-- LINKS -->
 [Zurücksetzen von Kennwort oder SSH für virtuelle Linux-Computer]: http://go.microsoft.com/fwlink/p/?LinkId=512138
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

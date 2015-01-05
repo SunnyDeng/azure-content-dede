@@ -157,4 +157,4 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

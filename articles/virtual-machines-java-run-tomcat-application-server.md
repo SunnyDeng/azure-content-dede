@@ -146,4 +146,4 @@ An dieser Stelle sollte es nun möglich sein, die Tomcat-Website über einen ext
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

@@ -159,4 +159,4 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 	Informationen zum Bearbeiten der Kernel-Parameter erhalten Sie in der Dokumentation der Distribution. Beispielsweise können diese Parameter in vielen Distributionen (CentOS, Oracle Linux, SLES 11) manuell zur Datei `/boot/grub/menu.lst` hinzugefügt werden.  Auf Ubuntu kann dieser Parameter zur Variable `GRUB_CMDLINE_LINUX_DEFAULT` unter "/etc/default/grub" hinzugefügt werden.
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

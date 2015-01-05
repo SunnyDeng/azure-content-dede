@@ -212,4 +212,4 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

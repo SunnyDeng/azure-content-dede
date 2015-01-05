@@ -469,4 +469,4 @@ Auf diese Weise wird ein neues Einfügeskript registriert, das über das [Mobile
 [Mobile Services-Pushobjekt]: http://go.microsoft.com/fwlink/p/?linkid=272333&clcid=0x409
 [Installieren der Java-Entwicklungtools]: http://docs.appcelerator.com/titanium/latest/#!/guide/Installing_the_Java_Development_Tools
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

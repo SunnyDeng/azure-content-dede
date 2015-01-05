@@ -104,4 +104,4 @@ In der Tabelle ist auch ein Lin zum [Linux-Kernel-Kompatibilitätspatch](http://
 </table>
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

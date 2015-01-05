@@ -139,4 +139,4 @@ Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwa
 [New Relic Mobile]: http://newrelic.com/mobile-monitoring
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

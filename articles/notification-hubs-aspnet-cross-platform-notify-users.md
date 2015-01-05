@@ -99,4 +99,4 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 [Vorlagen]: http://go.microsoft.com/fwlink/p/?LinkId=317339
 [Notification Hub-Anleitung für Windows Store]: http://msdn.microsoft.com/de-de/library/windowsazure/jj927172.aspx
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

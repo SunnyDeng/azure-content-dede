@@ -678,4 +678,4 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 
 [Erstellen und Bereitstellen einer Node.js-Anwendung zu einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

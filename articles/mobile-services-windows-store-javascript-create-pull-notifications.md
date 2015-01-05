@@ -148,4 +148,4 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 [Periodische Benachrichtigungen]: http://msdn.microsoft.com/de-de/library/windows/apps/jj150587.aspx
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

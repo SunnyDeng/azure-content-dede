@@ -127,4 +127,4 @@ Die Möglichkeit zum sofortigen Löschen von Inhalten wird im Azure-Verwaltungsp
 [Neues Speicherkonto erstellen]: ./media/cdn/CDN_CreateNewStorageAcct.png
 [Früheres Verwaltungsportal]: ../../Shared/Media/previous-portal.png
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

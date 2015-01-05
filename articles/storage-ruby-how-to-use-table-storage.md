@@ -164,4 +164,4 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
 * Besuchen Sie den Blog [Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/)
 * Besuchen Sie das [Azure SDK für Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby) -Repository auf GitHub
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

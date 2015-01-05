@@ -436,4 +436,4 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [Node.js-Webanwendung mit Speicher]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
   [Erstellen und Bereitstellen einer Node.js-Anwendung zu einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

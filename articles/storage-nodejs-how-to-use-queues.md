@@ -357,4 +357,4 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
  [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

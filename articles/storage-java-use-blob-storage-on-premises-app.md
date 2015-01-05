@@ -371,4 +371,4 @@ Eine Übersicht über andere Blobspeicher-Klassen und Methoden finden Sie unter 
   [Verwalten von Speicherkonten]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/
   [Verwenden des Blob-Speicherdiensts aus Python]: http://www.windowsazure.com/de-de/develop/java/how-to-guides/blob-storage/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

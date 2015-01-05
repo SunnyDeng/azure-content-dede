@@ -107,4 +107,4 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

@@ -387,4 +387,4 @@ Da Sie jetzt die Grundlagen des Azure-Warteschlangendiensts erlernt haben, folge
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
 [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

@@ -121,4 +121,4 @@ Der [Azure Linux-Agent](../virtual-machines-linux-agent-user-guide) (waagent) is
 
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

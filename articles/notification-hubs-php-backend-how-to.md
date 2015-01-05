@@ -245,4 +245,4 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Java REST-Client für
 [PHP REST-Wrapper-Beispiel]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [Lernprogramm mit den ersten Schritten]: http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-ios-get-started/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

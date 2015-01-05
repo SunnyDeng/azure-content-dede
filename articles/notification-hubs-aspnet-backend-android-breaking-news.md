@@ -317,4 +317,4 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

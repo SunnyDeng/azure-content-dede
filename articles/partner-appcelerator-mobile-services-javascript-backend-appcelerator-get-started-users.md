@@ -98,4 +98,4 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

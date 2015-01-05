@@ -9,4 +9,4 @@ Dieses Thema wird nicht mehr unterstützt. Es steht kein eigenständiges Windows
 
 Anleitungen zum Hinzufügen von Mobile Services zu einer vorhandenen Windows Store-App finden Sie unter [Hinzufügen von Mobile Services zu einer vorhandenen App](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/).
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

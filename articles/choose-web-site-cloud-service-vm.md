@@ -357,4 +357,4 @@ Informationen zu den ersten Schritten hinsichtlich der Option(en), die Sie für 
   [SQL-Datenbank]: http://www.windowsazure.com/de-de/documentation/services/sql-database/
   [Storage]: http://www.windowsazure.com/de-de/documentation/services/storage/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

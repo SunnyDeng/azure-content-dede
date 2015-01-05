@@ -320,4 +320,4 @@ Sie sollten die Abschnitte 1 bis 5 unter [Erste Schritte mit Notification Hubs (
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users1.png
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

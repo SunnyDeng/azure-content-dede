@@ -175,4 +175,4 @@ Wenn Sie die Storm UI-Webseite direkt nach dem Ausführen dieses Befehls anzeige
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.com/
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

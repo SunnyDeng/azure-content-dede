@@ -74,4 +74,4 @@ Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet wer
 [Image-Erfassung erfolgreich]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
 [Verwenden des erfassten Image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

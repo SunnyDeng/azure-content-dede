@@ -523,4 +523,4 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf Az
 </ul>
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

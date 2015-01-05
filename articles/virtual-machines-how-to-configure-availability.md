@@ -108,4 +108,4 @@ So verwenden Sie Azure-Cmdlets
 [Starten, Beenden und Löschen virtueller Computer]: http://msdn.microsoft.com/de-de/library/azure/dn763935.aspx
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

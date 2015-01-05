@@ -481,4 +481,4 @@ Da Sie jetzt die Grundlagen des Azure-Tabellendiensts erlernt haben, folgen Sie 
 [filters]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx
 [entity-group-transactions]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894038.aspx
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

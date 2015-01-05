@@ -501,4 +501,4 @@ v **Strg+C** drücken, um die Anwendung vor dem normalen Abschluss zu beenden.
 
 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

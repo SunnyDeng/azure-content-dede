@@ -550,4 +550,4 @@ Anstatt TSPSolver zum Erstellen oder L√∂schen der Warteschlange zu verwenden, k√
 [namespace_list]: ./media/virtual-machines-dotnet-run-compute-intensive-task/NamespaceList.png
 [access_key_button]: ./media/virtual-machines-dotnet-run-compute-intensive-task/AccessKey.png
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->

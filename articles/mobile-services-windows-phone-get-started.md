@@ -8,4 +8,4 @@ Dieses Thema wird nicht mehr unterstützt. Es steht kein Windows Phone 8.0-Schne
 
 Ein Download für ein Schnellstartprojekt ist für Windows Phone Store 8.1-Apps als Teil eines universellen Windows-Projekts verfügbar. Weitere Informationen finden Sie unter [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/). 
 
-<!--HONumber=35_1-->
+<!--HONumber=35.1-->
