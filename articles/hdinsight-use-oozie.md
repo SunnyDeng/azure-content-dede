@@ -616,3 +616,5 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Oozie-Workflow definiert und w
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

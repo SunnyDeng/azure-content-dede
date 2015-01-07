@@ -390,3 +390,5 @@ Sie haben jetzt erfahren, wie Sie einen SQL Server auf einem virtuellen Azure-Co
 
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

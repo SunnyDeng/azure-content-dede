@@ -239,3 +239,5 @@ Links weitere Informationen.
   [Service Bus-Brokermessaging: .NET-Lernprogramm]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367512.aspx
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

@@ -1338,3 +1338,5 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Ereignis-Hub lesen
 [azure-portal]: https://manage.windowsazure.com/
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

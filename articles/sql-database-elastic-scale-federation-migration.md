@@ -1,57 +1,57 @@
-﻿<properties title="Federations Migration" pageTitle="Migration von Verbunden" description="Outlines the steps to migrate an existing app built with Federations feature to Elastic Scale model." metaKeywords="sharding scaling, federations, Azure SQL DB sharding, Elastic Scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Federations Migration" pageTitle="Verbundmigration" description="Stellt die Schritte für die Migration einer vorhandenen, mit dem Verbundfeature erstellten App an das Elastic Scale-Modell dar." metaKeywords="sharding scaling, federations, Azure SQL DB sharding, Elastic Scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh"/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sidneyh" />
+<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/30/2014" ms.author="sidneyh" />
 
-#Migration von Verbunden 
+# Verbundmigration 
 
-Die Funktion Azure SQL-Datenbankverbunde wird zusammen mit den Web-/Business-Editionen im September 2015 eingestellt. Ab diesem Zeitpunkt werden Anwendungen, die die Verbunde-Funktion nutzen, nicht mehr ausgeführt. Um eine erfolgreiche Migration sicherzustellen, wird dringend dazu aufgefordert, so bald wie möglich mit der Migration zu beginnen, um ausreichend Zeit für Planung und Ausführung zu haben. Dieses Dokument liefert den Kontext, Beispiele und eine Einführung in das Dienstprogramm zur Migration von Verbunden, das zeigt, wie eine Verbunde-Anwendung erfolgreich in die [Azure SQL DB Elastic Scale Vorschau-APIs](http://go.microsoft.com/?linkid=9862592) migriert werden kann. Dieses Dokument soll Sie Schritt für Schritt durch die empfohlenen Schritte zum Migrieren einer Verbunde-Anwendung Verschieben von Daten führen.
+Das Verbundfeature für die Azure SQL-Datenbank wird zusammen mit den Web-/Business-Editionen im September 2015 eingestellt. Zu diesem Zeitpunkt können Anwendungen, die das Verbundfeature verwenden, nicht mehr ausgeführt werden. Für eine erfolgreiche Migration wird dringend empfohlen, die Migration so bald wie möglich zu beginnen, um ausreichend Zeit für Planung und Ausführung zu sichern. In diesem Dokument finden Sie den Kontext, Beispiele und eine Einführung in das Federation Migration Utility, in der dargestellt wird, wie Sie eine aktuelle Verbundanwendung erfolgreich und nahtlos in die [Azure SQL DB Elastic Scale-Vorschau-APIs](http://go.microsoft.com/?linkid=9862592)migrieren können. Das Ziel des Dokuments ist, Sie durch die vorgeschlagenen Schritte für die Migration einer Verbundanwendung zu führen, ohne Daten verschieben zu müssen.
 
-Es gibt drei wichtige Schritte zum Migrieren einer vorhandenen Verbunde-Anwendung in eine Anwendung, die Elastic Scale-APIs verwendet.
+Es gibt drei Hauptschritte für die Migration einer vorhandenen Verbundanwendung zu einer Anwendung, die die Elastic Scale-APIs verwendet.
 
-1. [Erstellen von Shard Map-Manager aus einem Verbund-Stammelement] 
+1. [Erstellen von Shard Map Manager von einem Verbundstamm] 
 2. [Ändern der vorhandenen Anwendung]
-3. [Auslagern der vorhandenen Verbund-Elemente]
+3. [Auswechseln vorhandener Verbundmitglieder]
     
 
-### Das Beispiel-Migrationstool
-Um diesen Prozess zu erleichtern, wurde ein [Dienstprogramm für die Migration von Verbunden](http://go.microsoft.com/?linkid=9862613) geschaffen. Dieses Dienstprogramm führt die Schritte 1 und 3 durch. 
+### Das Beispielmigrationstool
+Zur Unterstützung bei diesem Prozess wurde ein [Federations Migration Utility](http://go.microsoft.com/?linkid=9862613) entwickelt. Mit diesem Dienstprogramm können Sie die Schritte 1 und 3 durchführen. 
 
-## <a name="create-shard-map-manager"></a>Erstellen von Shard Map-Manager von einem Verbund-Stammelement
-Der erste Schritt beim Migrieren einer Verbund-Anwendung besteht darin, die Metadaten eines Verbund-Stammelements mit den Konstrukten des Shard Map-Managers zu klonen. 
+## <a name="create-shard-map-manager"></a>Erstellen von Shard Map Manager von einem Verbundstamm
+Der erste Schritt der Migration einer Verbundanwendung besteht darin, die Metadaten eines Verbundstamms an die Konstrukte eines Shard Map Managers zu klonen. 
 
 ![Clone the federation root to the shard map manager][1]
  
-Beginnen Sie mit einer vorhandenen Verbunde-Anwendung in einer Testumgebung.
+Beginnen Sie mit einer vorhandenen Verbundanwendung in einer Testumgebung.
  
-Verwenden Sie das **Dienstprogramm für die Migration von Verbunden**, um die Metadaten des Verbund-Stammelements in Konstrukte des Elastic Scale [Shard Map-Managers](http://go.microsoft.com/?linkid=9862595) zu klonen. Analog zu einem Verbund-Stammelement ist die Shard Map-Manager-Datenbank eine eigenständige Datenbank, die die Shard-Maps(d. h. Verbunde), Verweise auf Shards (d. h. Verbundmitglieder) und die jeweiligen Bereichszuordnungen enthält. 
+Verwenden Sie das **Federations Migration Utility**, um die Metadaten des Verbundstamms in die Konstrukte des [Shard Map Managers](http://go.microsoft.com/?linkid=9862595)von Elastic Scale zu klonen. Analog zu einem Verbundstamm ist die Shard Map Manager-Datenbank eine eigenständige Datenbank, die die Shard Maps (d. h. Verbünde), Referenzen zu Shards (d. h. Verbundmitgliedern) und entsprechende Bereichszuordnungen enthält. 
 
-Das Klonen des Verbund-Stammelements zum Shard Map-Manager besteht darin, die Metadaten zu kopieren und zu übersetzen. Es werden keine Metadaten im Verbund-Stammelement geändert. Beachten Sie, dass das Klonen des Verbund-Stammelements mit dem Dienstprogramm für die Migration von Verbunden ein Point-in-Time-Vorgang ist und alle Änderungen an den Verbund-Stammelement oder den Shard-Maps nicht im anderen entsprechenden Datenspeicher übernommen werden. Wenn Änderungen am Verbund-Stammelement während der Testphase der neuen APIs vorgenommen werden, kann das Dienstprogramm für die Migration von Verbunden verwendet werden, um die Shard-Maps zu aktualisieren, sodass sie den aktuellen Zustand darstellen. 
+Das Klonen des Verbundstamms zum Shard Map Manager besteht aus dem Kopieren und Übersetzen von Metadaten. Metadaten werden im Verbundstamm nicht geändert. Beachten Sie, dass das Klonen des Verbundstamms mit dem Federations Migration Utility ein Vorgang zu einem bestimmten Zeitpunkt ist und Änderungen an dem Verbundstamm oder den Shard Maps nicht im anderen entsprechenden Datenspeicher reflektiert werden. Wenn während des Testens der neuen APIs Änderungen am Verbundstamm vorgenommen werden, kann das Federations Migration Utility verwendet werden, um die Shard Maps zu aktualisieren, damit sie den aktuellen Status darstellen. 
 
 ![Migrate the existing app to use the Elastic Scale APIs][2]
 
 ## Ändern der vorhandenen Anwendung 
 
-Wenn der Shard Map-Manager vorhanden ist und die Verbundmitglieder und -bereiche für den Shard Map-Manager registriert sind (erfolgt über das Dienstprogramm zur Migration), kann die vorhandene Verbundanwendung so abgeändert werden, dass sie Elastic Scale APIs verwendet. Wie in der Abbildung oben dargestellt, werden die Verbindungen der Anwendung über die Elastic Scale APIs durch den Shard Map-Manager an die entsprechenden Verbundmitglieder weitergeleitet (jetzt auch ein Shard). Das Zuordnen von Verbundmitgliedern zum Shard Map-Manager ermöglicht es, zwei Versionen einer Anwendung - Version, die Verbunde verwendet, und eine Version, die Elastic Scale verwendet - nebeneinander auszuführen, um die Funktionalität zu überprüfen.   
+Mit Shard Map Manager und den beim Shard Map Manager registrierten Verbundmitgliedern und -bereichen (über das Migrationsdienstprogramm) können Sie die vorhandene Verbundanwendung so ändern, dass sie die Elastic Scale-APIs verwendet. Wie in der Abbildung oben gezeigt, werden Anwendungsverbindungen über die Elastic Scale-APIs über den Shard Map Manager an entsprechende Verbundmitglieder (die jetzt auch Shards sind) weitergeleitet. Die Zuordnung von Verbundmitgliedern zum Shard Map Manager ermöglicht, dass zwei Versionen einer Anwendung - eine, die Verbunde verwendet und eine, die Elastic Scale verwendet - nebeneinander ausgeführt werden können, um die Funktionalität zu überprüfen.   
 
-Während der Migration der Anwendung müssen zwei Core-Änderungen an der vorhandenen Anwendung vorgenommen werden.
+Während der Migration der Anwendung müssen zwei zentrale Änderungen an der vorhandenen Anwendung durchgeführt werden.
 
 
-#### Änderung 1: Instanziieren eines Shard Map-Manager-Objekts: 
+#### Änderung 1: Instanziieren eines Shard Map Manager-Objekts: 
 
-Im Unterschied zu Verbunden interagieren Elastic Scale APIs mit dem Shard Map-Manager über die Klasse **ShardMapManager**. Die Instanziierung eines **ShardMapManager**-Objekts und einer Shard Map kann auf folgende Weise vorgenommen werden:
+Im Gegensatz zu Verbunden interagieren Elastic Scale-APIs mit dem Shard Map Manager über die **ShardMapManager**-Klasse. Die Instanziierung eines **ShardMapManager**-Objekts und einer Shard Map kann wie folgt durchgeführt werden:
      
     //Instantiate ShardMapManger Object 
     ShardMapManager shardMapManager = ShardMapManagerFactory.GetSqlShardMapManager(
                             connectionStringSMM, ShardMapManagerLoadPolicy.Lazy); 
     RangeShardMap<T> rangeShardMap = shardMapManager.GetRangeShardMap<T>(shardMapName) 
     
-#### Änderung 2: Routen von Verbindungen zum entsprechenden Shard 
+#### Änderung 2: Weiterleiten von Verbindungen an den entsprechenden Shard 
 
-Bei Verbunden wird eine Verbindung mit einem bestimmten Verbundmitglied über den USE FEDERATION-Befehl wie folgt hergestellt:  
+Bei Verbunden wird eine Verbindung mit einem bestimmten Verbundmitglied wie folgt mit dem Befehl USE FEDERATION eingerichtet:  
 
     USE FEDERATION CustomerFederation(cid=100) WITH RESET, FILTERING=OFF`
 
-Bei den Elastic Scale APIs wird eine Verbindung zu einem bestimmten Shard über das [datenabhängige Routing](./sql-database-elastic-scale-data-dependent-routing.md) mit der Methode **OpenConnectionForKey** für die Klasse **RangeShardMap** eingerichtet. 
+Bei den Elastic Scale-APIs wird eine Verbindung zu einem bestimmten Shard über die [datenabhängige Weiterleitung](./sql-database-elastic-scale-data-dependent-routing.md) mit der Methode **OpenConnectionForKey** in der Klasse **RangeShardMap** eingerichtet. 
 
     //Connect and issue queries on the shard with key=100 
     using (SqlConnection conn = rangeShardMap.OpenConnectionForKey(100, csb))  
@@ -68,59 +68,61 @@ Bei den Elastic Scale APIs wird eine Verbindung zu einem bestimmten Shard über 
         } 
     }
 
-Die Schritte in diesem Abschnitt sind erforderlich, aber behandeln möglicherweise nicht alle Migrationsszenarien, die auftreten können. Weitere Informationen finden Sie in der [Übersicht über Elastic Scale](./sql-database-elastic-scale-introduction.md) und in der [API-Referenz](http://go.microsoft.com/?linkid=9862604).
+Die Schritte in diesem Abschnitt sind erforderlich, lösen aber möglicherweise nicht alle aufkommenden Migrationsszenarien. Weitere Informationen stehen in der [Konzeptionellen Übersicht über Elastic Scale](./sql-database-elastic-scale-introduction.md) und der [API-Referenz](http://go.microsoft.com/?linkid=9862604)zur Verfügung.
 
-## Auslagern der vorhandenen Verbundelemente 
+## Auswechseln vorhandener Verbundmitglieder 
 
 ![Switch out the federation members for the shards][3]
 
-Nachdem die Anwendung durch die Aufnahme der Elastic Scale APIs geändert wurde, besteht der letzte Schritt in der Migration einer Verbunde-Anwendung darin, die Verbundmitglieder auszulagern, **SWITCH OUT** (weitere Informationen dazu finden Sie in der MSDN-Referenz zu [ALTER FEDERATION (Azure SQL-Datenbank](http://msdn.microsoft.com/en-us/library/azure/hh597475.aspx)). Das Endergebnis der Anwendung eines Befehls **SWITCH OUT** auf ein bestimmtes Verbundmitglied ist es, dass alle Verbundbedingungen und Metadaten entfernt werden, sodass das Verbundmitglied als reguläre Azure SQL-Datenbank gerendert wird, ebenso wie jede andere Azure SQL-Datenbank. 
+Nachdem die Anwendung durch das Einschließen der Elastic Scale-APIs geändert wurde, besteht der letzte Schritt der Migration einer Verbundanwendung darin, die Verbundmitglieder per **SWITCH OUT** auszuwechseln (weitere Informationen finden Sie in der MSDN-Referenz für [ALTER FEDERATION (Azure SQL Database](http://msdn.microsoft.com/library/dn269988(v=sql.120).aspx)). Das Endergebnis der Ausgabe von **SWITCH OUT** für ein bestimmtes Verbundmitglied ist das Entfernen aller Verbundeinschränkunen und Metadaten, die das Verbundmitglied als reguläre Azure SQL-Datenbank wiedergeben, so wie jede andere Azure SQL-Datenbank.  
 
-Beachten Sie, dass die Ausgabe eines Befehls **SWITCH OUT** für ein Verbundmitglied ein nur in eine Richtung möglicher Vorgang ist, der nicht rückgängig gemacht werden kann. Nachdem der Befehl ausgeführt wurde, kann die daraus resultierende Datenbank nicht mehr wieder einem Verbund hinzugefügt werden, und die USE FEDERATION-Befehle funktionieren nicht mehr für diese Datenbank. 
+Beachten Sie, dass die Ausgabe von **SWITCH OUT** für ein Verbundmitglied ein unidirektionaler Vorgang ist, der nicht rückgängig gemacht werden kann. Nach der Durchführung kann die resultierende Datenbank nicht wieder zu einem Verbund hinzugefügt werden, und der Befehl USE FEDERATION funktioniert für diese Datenbank nicht mehr. 
 
-Zum Ausführen des Wechsels wurde ein zusätzliches Argument dem Befehl ALTER FEDERATION hinzugefügt wechseln, um ein Verbundmitglied auszulagern (SWITCH OUT).  Der Befehl kann zwar für einzelne Verbundmitglieder ausgegeben werden, aber das Dienstprogramm für die Migration von Verbunden liefert Funktionen, mit denen jedes Verbundmitglied programmgesteuert durchlaufen und der Auslagerungsvorgang dafür durchgeführt wird. 
+Zum Durchführen des Wechsels wurde ein zusätzliches Argument zum Befehl ALTER FEDERATION hinzugefügt, um ein Verbundmitglied per SWITCH OUT zu wechseln.  Zwar kann der Befehl für jedes einzelne Verbundmitglied ausgeführt werden, aber das Federations Migration Utility bietet die Funktionalität, um programmgesteuert jedes Verbundmitglied zu durchlaufen und den Wechselvorgang durchzuführen. 
 
 Nachdem der Wechsel für alle vorhandenen Verbundmitglieder durchgeführt wurde, ist die Migration der Anwendung abgeschlossen.  
-Das Dienstprogramm für die Migration von Verbunden ermöglicht Folgendes 
+Das Federations Migration Utility bietet die folgenden Funktionen: 
 
-1.    Durchführen einer Klonung des Verbund-Stammelements zu einem Shard Map-Manager.  Es kann festgelegt werden, ob der vorhandene Shard Map-Manager in einer neuen Azure SQL-Datenbank (empfohlen) oder in der vorhandenen Verbund-Stammdatenbank abgelegt werden soll.
-2.    Ausgeben des Befehls SWITCH OUT für alle Verbundmitglieder in einem Verbund.
+1.    Durchführen eines Klons des Verbundstamms an einen Shard Map Manager.  Sie können auswählen, ob Sie den vorhandenen Shard Map Manager für eine neue Azure SQL-Datenbank (empfohlen) oder die vorhandene Verbundstammdatenbank verwenden.
+2.    Geben Sie SWITCH OUT für alle Verbundmitglieder in einem Verbund aus.
 
 
-##Funktionsvergleiche  
-Obwohl die Elastic Scale viele zusätzliche Funktionen bietet (z. B. [Multi-Shard-Abfragen](./sql-database-elastic-scale-multishard-querying.md), [Teilen und Zusammenführen von Shards](./sql-database-elastic-scale-overview-split-and-merge.md), [Shard-Elastizität](./sql-database-elastic-scale-elasticity.md), [clientseitiges Zwischenspeichern](./sql-database-elastic-scale-shard-map-management.md) und anderes mehr), gibt es einige beachtenswerte Verbund-Funktionen, die Elastic Scale nicht unterstützt.
+## Funktionsvergleiche  
+Obwohl Elastic Scale viele zusätzliche Features bereitstellt (z. B. [Abfragen mehrerer Shards,](./sql-database-elastic-scale-multishard-querying.md)[Aufteilen und Zusammenführen von Shards,](./sql-database-elastic-scale-overview-split-and-merge.md)[Shard-Flexibilität,](./sql-database-elastic-scale-elasticity.md)[clientseitiges Zwischenspeichern](./sql-database-elastic-scale-shard-map-management.md)und mehr), gibt es einige nennenswerte Verbundfeatures, die in Elastic Scale nicht unterstützt werden.
   
 
-- Die Verwendung von **FILTERING=ON**. Elastic Scale unterstützt derzeit auf Zeilenebene keine Filterung. Eine Gegenmaßnahme besteht darin, die Filterlogik in die Abfrage für den Shard wie folgt einzubauen: 
+- Die Verwendung von **FILTERING=ON**. Elastic Scale bietet derzeit keine Unterstützung für das Filtern auf Zeilenebene. Eine Lösung besteht darin, die Filterlogik wie folgt in der Abfrage zu erstellen, die für den Shard verwendet wird: 
 
         --Example of USE FEDERATION with FILTERING=ON
         USE FEDERATION CustomerFederation(cid=100) WITH RESET, FILTERING=ON 
         SELECT * FROM customer
 
-Führt zum gleiche Ergebnis wie:
+Dies erzielt dasselbe Ergebnis wie:
 
         --Example of USE FEDERATION with filtering in the WHERE clause 
         USE FEDERATION CustomerFederation(cid=100) WITH RESET, FILTERING=OFF 
         SELECT * FROM customer WHERE CustomerId = 100 
 
-- Die Elastic Scale-Funktion **Split** ist nicht vollständig online. Bei einem Split-Vorgang wird jeder einzelne Shardlet während der Dauer der Verschiebung offline geschaltet.
-- Die Elastic Scale-Funktion Split erfordert eine manuelle Datenbank-Bereitstellung und Schemaverwaltung.
+- Das **Split**-Feature von Elastic Scale ist nicht vollständig online. Während eines Aufteilungsvorgangs wird jedes einzelne Shardlet für die Dauer der Verschiebung offline geschaltet.
+- Für das Split-Feature von Elastic Scale ist eine manuelle Datenbankbereitstellung und Schemaverwaltung erforderlich.
 
-## Weitere Überlegungen
+## Zusätzliche Überlegungen
 
-* Die Web- und Business Edition und Verbunde werden im Herbst 2015 eingestellt. Im Rahmen der Migration einer Verbund-Anwendung empfiehlt es sich dringend, Leistungstests für Basic-, Standard- und Premium-Editionen durchzuführen. 
+* Sowohl die Web- als auch die Business-Edition und Verbunde werden im Herbst 2015 eingestellt.  Als Teil der Migration einer Verbundanwendung wird dringend empfohlen, Leistungstests in den Editionen Basic, Standard und Premium durchzuführen. 
 
-* Das Ausführen der Anweisung SWITCH OUT auf ein Verbundelement befähigt die resultierende Datenbank dazu, alle Azure SQL-Datenbank-Funktionen zu nutzen (d. h. neue Editionen, Sicherung, PITR, Überwachung usw.) 
+* Durch die Durchführung der SWITCH OUT-Anweisung für ein Verbundmitglied kann die resultierende Datenbank alle Azure SQL-Datenbankfeatures verwenden (d. h. neue Editionen, Sicherung, PITR, Überwachung usw.) 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Anchors-->
-[Erstellen von Shard Map-Manager von einem Verbund-Stammelement aus]:#create-shard-map-manager
+[Erstellen von Shard Map Manager von einem Verbundstamm]:#create-shard-map-manager
 [Ändern der vorhandenen Anwendung]:#Modify-the-Existing-Application
-[Auslagern der vorhandenen Verbundelemente]:#Switch-Out-Existing-Federation-members
+[Auswechseln vorhandener Verbundmitglieder]:#Switch-Out-Existing-Federation-members
 
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-federation-migration/migrate-1.png
 [2]: ./media/sql-database-elastic-scale-federation-migration/migrate-2.png
 [3]: ./media/sql-database-elastic-scale-federation-migration/migrate-3.png
+
+<!--HONumber=35.1-->

@@ -58,3 +58,5 @@ Ausschließlich für die Einzelinstanzkonfiguration für virtuelle Computer send
 [Unterschied zwischen geplanter und ungeplanter Wartung]: ../virtual-machines-manage-availability/#Understand-planned-versus-unplanned-maintenance/ 
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

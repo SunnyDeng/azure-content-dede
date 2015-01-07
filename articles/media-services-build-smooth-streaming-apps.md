@@ -995,3 +995,5 @@ Sie haben Lektion 4 abgeschlossen.  In dieser Lektion haben Sie die Funktion zur
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

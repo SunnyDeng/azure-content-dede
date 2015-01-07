@@ -74,3 +74,5 @@ Weitere Informationen zur Auslieferung von Medienobjekten finden Sie unter:
 Sie haben nun gelernt, wie Sie ein Medienobjekt aus dem Azure-Speicher herunterladen können. Weitere Informationen zu anderen Möglichkeiten für die Bereitstellung von Medienobjekten finden Sie im Thema [Bereitstellen von Streaming-Inhalten](../media-services-deliver-streaming-content/) .
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

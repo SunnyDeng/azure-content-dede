@@ -237,3 +237,5 @@ Während Hive die Datenabfrage mit einer SQL-ähnlichen Abfragesprache erleichte
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

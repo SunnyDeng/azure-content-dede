@@ -435,3 +435,5 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 [HCTestShowMemberDb]:./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

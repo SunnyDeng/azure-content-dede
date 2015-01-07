@@ -79,3 +79,5 @@ Weitere Informationen zur Auslieferung von Medienobjekten finden Sie unter:
 Bisher haben wir die Bereitstellung von Medien durch Herunterladen von Azure-Speicher mithilfe von Smooth Streaming beschrieben. Im nächsten Thema [Bereitstellen von HLS-Inhalten](../media-services-deliver-http-live-streaming-content/) wird die Bereitstellung von Streaming-Inhalten mithilfe von HLS (Apple HTTP Live Streaming) besprochen.
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

@@ -82,3 +82,5 @@ Sie können jetzt die Anwendung ausführen.
 [Übersicht über Event Hubs]: http://msdn.microsoft.com/de-de/library/azure/dn836025.aspx
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

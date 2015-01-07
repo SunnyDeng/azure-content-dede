@@ -290,3 +290,5 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-use-blob-storage/HDI.CustomCreateStorageAccount.png  
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

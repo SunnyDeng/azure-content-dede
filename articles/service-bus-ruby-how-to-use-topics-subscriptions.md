@@ -231,3 +231,5 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Themen vertraut sind, finden S
 -	Besuchen Sie das Repository [Azure SDK für Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) auf GitHub.
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

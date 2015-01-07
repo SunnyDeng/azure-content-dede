@@ -30,3 +30,5 @@ In diesem Lernprogramm haben Sie gelernt, einen virtuellen Computer mit OpenSUSE
 [AzurePortal]: http://manage.windowsazure.com
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

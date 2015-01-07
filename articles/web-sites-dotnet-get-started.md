@@ -304,3 +304,5 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 	In Azure können Sie Webanwendungen in Websites ausführen, die denen in diesem Lernprogramm ähneln, oder in Clouddiensten oder virtuellen Computern. Weitere Informationen finden Sie unter [Azure-Ausführungsmodelle](/de-de/develop/net/fundamentals/compute/) und [Azure-Websites, Cloud-Dienste und virtuelle Computer: Vergleich](/de-de/manage/services/web-sites/choose-web-app-service/).
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

@@ -710,3 +710,5 @@ In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsi
 [apache-hive]: http://hive.apache.org/
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

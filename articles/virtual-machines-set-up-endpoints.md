@@ -73,3 +73,5 @@ Gehen Sie folgendermaßen vor, um eine ACL an einem Endpunkt hinzuzufügen, zu m
 6. Verwenden Sie Zeilen in der Liste, um Regeln für eine ACL hinzuzufügen, zu löschen oder zu bearbeiten. Der Wert "Remote Subnet" entspricht dem IP-Adressenbereich, den Sie als Regel entweder erlauben oder verweigern können. Die Regeln werden der Reihe nach, beginnend mit der ersten und endend mit der letzten Regel, bewertet. Dies bedeutet, dass die Regeln von der stärksten bis zur schwächsten Einschränkung aufgelistet werden sollten. Beispiele und weitere Informationen finden Sie unter [Netzwerk-Zugriffssteuerungslisten](http://go.microsoft.com/fwlink/p/?LinkId=303816).
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

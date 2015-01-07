@@ -167,3 +167,5 @@ Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erst
 [Voreinstellungen für Aufgaben für Azure Media Packager]:http://msdn.microsoft.com/de-de/library/windowsazure/hh973635.aspx
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

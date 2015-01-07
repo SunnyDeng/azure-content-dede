@@ -91,3 +91,5 @@ private static string JobIdAsFileName(string jobID)
 Sie haben gelernt, wie Sie Aufgaben erstellen und deren Fortschritt überwachen und können nun mit dem Schutz von Medienobjekten fortfahren. Weitere Informationen finden Sie unter [Gewusst wie: Schützen von Medienobjekten in Azure Media Services](http://go.microsoft.com/fwlink/?LinkID=301813&clcid=0x409).
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

@@ -29,3 +29,5 @@ Lange Zeit waren für das Arbeiten mit Daten relationale Technologien vorherrsch
 **Download:** <a href="http://go.microsoft.com/fwlink/p/?LinkId=330292" target="_blank">NoSQL auf Microsoft Azure (PDF)</a>
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

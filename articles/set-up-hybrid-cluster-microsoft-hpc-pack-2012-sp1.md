@@ -346,3 +346,5 @@ Nachdem Sie das Cluster ausprobiert haben, können Sie mit HPC Cluster Manager d
 [view_instances2]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/view_instances2.png
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->

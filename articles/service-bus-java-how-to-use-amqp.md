@@ -350,3 +350,5 @@ Sie können Service Bus AMQP 1.0 auch mit anderen Sprachen verwenden, unter ande
 * [Verwenden von Service Bus-Warteschlangen](http://www.windowsazure.com/de-de/develop/net/how-to-guides/service-bus-queues/)
 
 <!--HONumber=35.1-->
+
+<!--HONumber=35.1-->
