@@ -6,7 +6,7 @@
 
 [WACOM.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services über Google Cloud Messaging (GCM) eine Pushbenachrichtigung an Ihre Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Azure-Benachrichtigungshubs zum Schnellstartprojekt hinzu. Nach dem Abschluss sendet der mobile Dienst bei jedem Einfügen eines Datensatzes eine Pushbenachrichtigung.
+In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung per Google Cloud Messaging (GCM) an Ihre Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Azure Notification Hubs zum Schnellstartprojekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
@@ -16,14 +16,16 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 4. [Aktualisieren von Skripts zum Senden von Pushbenachrichtigungen](#update-scripts)
 5. [Einfügen von Daten zum Empfangen von Benachrichtigungen](#test)
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abschließen, um Ihr Projekt mit Mobile Services zu verbinden.  
 
->[AZURE.NOTE] Den Quellcode der fertig gestellten App finden Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStartedWithPush/Android" target="_blank">hier</a>.
+>[AZURE.NOTE] Wenn Sie den Quellcode der fertigen App anzeigen möchten, wechseln Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStartedWithPush/Android" target="_blank">hierher</a>.
 
+##Voraussetzungen
+
+[WACOM.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
 ##<a id="register"></a>Aktivieren von Google Cloud Messaging
 
->[WACOM.NOTE]Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um diesen Vorgang abzuschließen. Um ein neues Google-Konto zu erstellen, besuchen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>.
+>[WACOM.NOTE]Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um diesen Vorgang abzuschließen. Rufen Sie zum Erstellen eines neuen Google-Kontos die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>auf.
 
 [WACOM.INCLUDE [Aktivieren von GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
@@ -31,13 +33,13 @@ Als Nächstes verwenden Sie diesen API-Schlüsselwert, um Mobile Services für d
 
 ##<a id="configure"></a>Konfigurieren von Mobile Services zum Senden von Pushanforderungen
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
    	![](./media/mobile-services-android-get-started-push/mobile-services-selection.png)
 
 2. Klicken Sie auf die Registerkarte **Push**, geben Sie den Wert für **API-Schlüssel** ein, den Sie zuvor von GCM erhalten haben, und klicken Sie auf **Speichern**.
 
-	>[WACOM.NOTE]Wenn Sie dieses Lernprogamm mit einem älteren mobilen Dienst ausführen, wird unten auf der Registerkarte **Push** unter Umständen ein Link mit dem Text **Erweiterten Push aktivieren** angezeigt. Klicken Sie jetzt darauf, um Ihren mobilen Dienst für die Integration mit Notification Hubs zu aktualisieren. Diese Änderung kann nicht mehr rückgängig gemacht werden. Einzelheiten zum Aktivieren der erweiterten Pushbenachrichtigungen in einem mobilen Dienst in einer Produktionsumgebung finden Sie in <a href="http://go.microsoft.com/fwlink/p/?LinkId=391951">dieser Anleitung</a>.
+	>[WACOM.NOTE]Wenn Sie dieses Lernprogamm mit einem älteren mobilen Dienst ausführen, wird unten auf der Registerkarte **Push** unter Umständen ein Link mit dem Text **Erweiterten Push aktivieren** angezeigt. Klicken Sie jetzt darauf, um Ihren mobilen Dienst für die Integration mit Notification Hubs zu aktualisieren. Diese Änderung kann nicht mehr rückgängig gemacht werden. Einzelheiten zum Aktivieren der erweiterten Pushbenachrichtigungen in einem mobilen Dienst einer Produktionsumgebung finden Sie <a href="http://go.microsoft.com/fwlink/p/?LinkId=391951">in dieser Anleitung</a>.
 
    	![](./media/mobile-services-android-get-started-push/mobile-push-tab-android.png)
 
@@ -52,7 +54,7 @@ Sowohl Ihr Mobile Service als auch Ihre App sind nun konfiguriert und funktionie
 
 ###Prüfen der Version des Android-SDK
 
-[WACOM.INCLUDE [Verifizieren des SDK](../includes/mobile-services-verify-android-sdk-version.md)]
+[WACOM.INCLUDE [Überprüfen des SDKs](../includes/mobile-services-verify-android-sdk-version.md)]
 
 Als Nächstes installieren Sie Google Play Services. Google Cloud Messaging verfügt über einige Mindestanforderungen an den API-Level für Entwicklung und Tests, denen die Eigenschaft **minSdkVersion** im Manifest entsprechen muss. 
 
@@ -60,7 +62,7 @@ Wenn Sie den Testvorgang mit einem älteren Gerät durchführen, konsultieren Si
 
 ###Hinzufügen von Google Play Services zum Projekt
 
-[WACOM.INCLUDE [Hinzufügen von Play-Diensten](../includes/mobile-services-add-Google-play-services.md)]
+[WACOM.INCLUDE [Hinzufügen von Play Services](../includes/mobile-services-add-Google-play-services.md)]
 
 ###Hinzufügen des Codes
 
@@ -69,15 +71,15 @@ Wenn Sie den Testvorgang mit einem älteren Gerät durchführen, konsultieren Si
 
 ##<a id="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
-1. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**. 
+1. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**. 
 
    	![](./media/mobile-services-android-get-started-push/mobile-portal-data-tables.png)
 
-2. Klicken Sie unter **todoitem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
+2. Klicken Sie in **todoitem** auf die Registerkarte **Skript** und dann auf **Einfügen**.
    
   	![](./media/mobile-services-android-get-started-push/mobile-insert-script-push2.png)
 
-   	Daraufhin wird die Funktion angezeigt, die aufgerufen wird, wenn etwas in die Tabelle **TodoItem** eingefügt wird.
+   	Auf diese Weise wird die Funktion angezeigt, die aufgerufen wird, wenn in der Tabelle **TodoItem** eine Einfügung auftritt.
 
 3. Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf **Speichern**:
 
@@ -119,17 +121,17 @@ Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-K
 
 Wenn Sie diese App im Emulator ausführen, stellen Sie sicher, dass Sie ein Android Virtual Device (AVD) verwenden, das Google-APIs unterstützt.
 
-1. Starten Sie Eclipse neu, und klicken Sie dann im Paket-Explorer mit der rechten Maustaste auf das Projekt. Klicken Sie auf **Eigenschaften**, dann auf **Android**, überprüfen Sie **Google APIs**, und klicken Sie dann auf **OK**.
+1. Starten Sie Eclipse neu, klicken Sie dann im Paket-Explorer mit der rechten Maustaste auf **Eigenschaften**, klicken Sie anschließend auf **Android**, aktivieren Sie die Option **Google APIs** und klicken Sie abschließend auf **OK**.
 
 	![](./media/mobile-services-android-get-started-push/mobile-services-import-android-properties.png)
 
   	Dies gibt das Projekt für die Google-APIs vor.
 
-2. Wählen Sie unter **Fenster** **Android Virtual Device Manager**, wählen Sie Ihr Gerät aus, und klicken Sie auf **Bearbeiten**.
+2. Wählen Sie unter **Fenster** die Option **Android Virtual Device Manager**, wählen Sie Ihr Gerät aus, und klicken Sie auf **Bearbeiten**.
 
 	![](./media/mobile-services-android-get-started-push/mobile-services-android-virtual-device-manager.png)
 
-Wählen Sie 3. Google APIs** unter **Ziel** aus, und klicken Sie auf **OK.
+3. Wählen Sie **Google APIs** in **Ziel** aus und klicken Sie dann auf "OK".
 
    	![](./media/mobile-services-android-get-started-push/mobile-services-android-virtual-device-manager-edit.png)
 
@@ -137,9 +139,9 @@ Wählen Sie 3. Google APIs** unter **Ziel** aus, und klicken Sie auf **OK.
 
 ###Ausführen des Tests
 
-1. Klicken Sie im Menü **Ausführen** in Eclipse auf **Ausführen**, um die App zu starten.
+1. Klicken Sie in Eclipse im Menü **Ausführen** auf **Ausführen**, um die App zu starten.
 
-Geben Sie in der App einen sinnvollen Text ein, beispielsweise 2. _Eine neue mobile Dienstaufgabe_ **, und klicken Sie dann auf die Schaltfläche **Hinzufügen.
+2. Geben Sie in der App einen sinnvollen Text ein, beispielsweise "Eine neue Mobile Services-Aufgabe hinzufügen", und klicken Sie dann auf die Schaltfläche **Hinzufügen**.
 
   	![](./media/mobile-services-android-get-started-push/mobile-quickstart-push1-android.png)
 
@@ -154,34 +156,34 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 <!---This tutorial demonstrated the basics of enabling an Android app to use Mobile Services and Notification Hubs to send push notifications. Next, consider completing the next tutorial, [Send push notifications to authenticated users], which shows how to use tags to send push notifications from a Mobile Service to only an authenticated user.
 
 + [Send push notifications to authenticated users]
-	<br/>Erfahren Sie, wie Sie Tags verwenden können, um Pushbenachrichtigungen aus einem Mobile Service nur an  einen authentifizierten Benutzer zu senden.
+	<br/>Learn how to use tags to send push notifications from a Mobile Service to only an authenticated user.
 
-+ [Senden von Übertragungsbenachrichtigungen an Abonnenten]
-	<br/>Erfahren Sie, wie Benutzer sich registrieren und Pushbenachrichtigungen für Kategorien empfangen können, die sie interessieren.
++ [Send broadcast notifications to subscribers]
+	<br/>Learn how users can register and receive push notifications for categories they're interested in.
 
-+ [Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]
-	<br/>Erfahren Sie, wie Sie Vorlagen verwenden können, um Pushbenachrichtigungen von einem Mobile Service zu senden, ohne plattformspezifische Nutzdaten in Ihrem Back-End erstellen zu müssen.
++ [Send template-based notifications to subscribers]
+	<br/>Learn how to use templates to send push notifications from a Mobile Service, without having to craft platform-specific payloads in your back-end.
 -->
 
 Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in den folgenden Themen:
 
 * [Erste Schritte mit Daten]
-  <br/>Erfahren Sie mehr zum Speichern und Abfragen von Daten mit Mobile Services.
+  <br/>Informationen über das Speichern und Abfragen von Daten mit Mobile Services.
 
 * [Erste Schritte mit der Authentifizierung]
-  <br/>Erfahren Sie mehr darüber, wie sich Benutzer Ihrer App mit verschiedenen Kontotypen mit Mobile Services authentifizieren können.
+  <br/>Informationen zur Authentifizierung von Benutzern Ihrer App mit verschiedenen Kontotypen mithilfe von Mobile Services.
 
 * [Was sind Notification Hubs?]
-  <br/>Erfahren Sie, wie Sie mit Notification Hubs arbeiten, um Benachrichtigungen auf allen großen Clientplattformen an Ihre Apps zu senden.
+  <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
 
 * [Debuggen von Notification Hubs-Anwendungen](http://go.microsoft.com/fwlink/p/?linkid=386630)
-  </br>Erhalten Sie Anleitungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen. 
+  </br>Erhalten Sie Anweisungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen. 
 
 * [Verwenden der Android-Clientbibliothek für Mobile Services]
   <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit Android.
 
-* [Mobile Services: Serverskriptreferenz]
-  <br/>Erfahren Sie mehr über das Implementieren von Geschäftslogik in einem mobilen Dienst.
+* [Mobile Services server script reference]
+  <br/>Erfahren Sie mehr über das Implementieren von Geschäftslogik in Ihren mobilen Dienst.
 
 
 <!-- Anchors. -->
@@ -196,17 +198,17 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 <!-- URLs. -->
-[Übermitteln einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Eigene Apps]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-android-get-started/
 [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-android-get-started-data/
 [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-android-get-started-users
 [Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-js
-[Senden von Pushbenachrichtigungen an App-Benutzer]: /de-de/develop/mobile/tutorials/push-notifications-to-users-js
+[Pushbenachrichtigungen für App-Benutzer]: /de-de/develop/mobile/tutorials/push-notifications-to-users-js
 [Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-js
 [JavaScript und HTML]: /de-de/develop/mobile/tutorials/get-started-with-push-js
-[Einrichten des Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801
+[Einrichten des Google Play Services SDKs]: http://go.microsoft.com/fwlink/?LinkId=389801
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Verwenden der Android-Clientbibliothek für Mobile Services]: /de-de/documentation/articles/mobile-services-android-how-to-use-client-library
 
@@ -218,4 +220,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 [Was sind Notification Hubs?]: /de-de/documentation/articles/notification-hubs-overview/
 [Senden von Übertragungsbenachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-android-send-breaking-news/
-[Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-android-send-localized-breaking-news/
+[Senden vorlagenbasierter Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-android-send-localized-breaking-news/
+
+<!--HONumber=35.1-->

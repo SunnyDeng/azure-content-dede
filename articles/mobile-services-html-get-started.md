@@ -1,6 +1,6 @@
-﻿<properties pageTitle="Erste Schritte mit Azure Mobile Services für HTML 5-Apps" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for HTML development. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Erste Schritte mit Azure Mobile Services für HTML 5-Apps" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for HTML development. " metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="hero-article" ms.date="01/01/1900" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="hero-article" ms.date="11/21/2014" ms.author="glenga" />
 
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
@@ -9,9 +9,9 @@
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
-<p>In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Backend-Dienst zu einer HTML-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache <em>To-Do-Listen</em>-App, die App-Daten im neuen mobilen Dienst speichert. Sie können sich eine Videoversion dieses Lernprogramms ansehen, indem Sie rechts auf den Clip klicken.</p>
+<p>In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Backend-Dienst zu einer HTML-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache <em>To-Do-Listen</em> -App, die App-Daten im neuen mobilen Dienst speichert. Sie können sich eine Videoversion dieses Lernprogramms ansehen, indem Sie rechts auf den Clip klicken.</p>
 </div>
-<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=287040" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-html-get-started-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=287040" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">03:51:00</span></div>
+<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=287040" target="_blank" class="label">Wiedergabe des Lernprogramms</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-html-get-started-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=287040" target="_blank" class="dev-onpage-video"><span class="icon">Video wiedergeben</span></a> <span class="time">3:51</span></div>
 </div>
  
 Unten sehen Sie einen Screenshot aus der fertigen App:
@@ -20,15 +20,15 @@ Unten sehen Sie einen Screenshot aus der fertigen App:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Services-Lernprogramme für HTML-Apps. 
 
-<div class="dev-callout"><strong>Hinweis:</strong> <p>Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F" target="_blank">Kostenlose Azure-Testversion</a>.</p></div>
+<div class="dev-callout"><strong>Hinweis</strong> <p>Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F" target="_blank">Kostenlose Microsoft Azure-Testversion</a>.</p></div>
 
 ###Weitere Anforderungen
 
 + Für dieses Lernprogramm muss einer der folgenden Webserver auf Ihrem lokalen Computer laufen:
 
-	+  **Unter Windows**: IIS Express. IIS Express wird mit dem [Microsoft-Webplattform-Installer] installiert.    
+	+  **Unter Windows**: IIS Express. IIS Express wird mit dem [Microsoft-Webplattform-Installer] installiert.   
 	+  **Unter MacOS X**: Python, das bereits installiert sein sollte.
-	+  **Unter Linux**: Python. Die [neueste Version von Python] muss installiert werden. 
+	+  **Unter Linux**: Python. Sie müssen die [neueste Version von Python] installieren. 
 	
 	Die App kann zwar auf jedem Webserver gehostet werden, aber dies sind die von den heruntergeladenen Skripts unterstützen Webserver.  
 
@@ -39,7 +39,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen M
 
 [WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
-## <h2><span class="short-header">Erstellen einer neuen App</span>Erstellen einer neuen HTML-App</h2>
+## <h2>Erstellen einer neuen HTML-App</h2>
 
 Sobald Sie den mobilen Dienst erstellt haben, können Sie einem einfachen Schnellstart im Verwaltungsportal folgen, um eine neue App zu erstellen oder eine vorhandene App für die Verbindung zum mobilen Dienst zu ändern. 
 
@@ -48,7 +48,7 @@ In diesem Abschnitt erstellen Sie eine neue HTML-App, die mit dem mobilen Dienst
 1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
    
-2. Klicken Sie auf der Schnellstartregisterkarte unter**Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue HTML-App erstellen**.
+2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue HTML-App erstellen**.
 
    	![][6]
 
@@ -62,12 +62,12 @@ In diesem Abschnitt erstellen Sie eine neue HTML-App, die mit dem mobilen Dienst
 
   	Hierdurch werden die Websitedateien für die _To do list_-Beispielanwendung, die mit dem mobilen Dienst verbunden ist, heruntergeladen. Speichern Sie die komprimierte Datei auf dem lokalen Computer, und merken Sie sich, wo Sie sie gespeichert haben.
 
-5. Vergewissern Sie sich auf der Registerkarte **Konfigurieren**, dass `localhost` bereits im Feld **Anforderungen von Hostnamen zulassen** unter **Cross-Origin Resource Sharing (CORS)** eingetragen ist. Falls nicht, geben Sie `localhost` im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
+5. Vergewissern Sie sich auf der Registerkarte **Konfigurieren**, dass "localhost" bereits im Feld **Anforderungen von Hostnamen zulassen** unter **Cross-Origin Resource Sharing (CORS)** eingetragen ist. Falls nicht, geben Sie "localhost" im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
 
   	![][9]
 
 	<div class="dev-callout"><b>Hinweis</b>
-		<p>Wenn Sie die Schnellstart-App auf einem anderen Webserver als "localhost" bereitstellen, müssen Sie den Hostnamen des Webservers der Liste <strong>Anforderungen von Hostnamen zulassen</strong> hinzufügen. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dn155871.aspx" target="_blank">Cross-Origin Resource Sharing (CORS)</a>.</p>
+		<p>Wenn Sie die Schnellstart-App auf einem anderen Webserver als "localhost" bereitstellen, müssen Sie den Hostnamen des Webservers der Liste <strong>Anforderungen von Hostnamen zulassen</strong> hinzufügen. Weitere Informationen finden Sie unter: <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dn155871.aspx" target="_blank">Cross-Origin Resource Sharing (CORS)</a>.</p>
 	</div>
 
 ## Hosten und Ausführen der HTML-App
@@ -81,14 +81,14 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 	+ **launch-linux.sh** (Linux-Computer)
 
 	<div class="dev-callout"><b>Hinweis</b>
-		<p>Bei einem Windows-Computer geben Sie `R` ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.</p>
+		<p>Bei einem Windows-Computer geben Sie "R" ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.</p>
 	</div>
 
 	Hierdurch wird ein Webserver auf Ihrem lokalen Computer zum Hosten der neuen App gestartet.
 
 2. Öffnen Sie die URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> in einem Webbrowser, um die App zu starten.
 
-3. Geben Sie in der App unter **Neue Aufgabe eingeben**eine Beschreibung ein, wie zum Beispiel _Lernprogramm ausführen_ und klicken Sie anschließend auf **Hinzufügen**.
+3. Geben Sie in der App unter **Neue Aufgabe eingeben** eine Beschreibung ein, wie zum Beispiel _Lernprogramm ausführen_ und klicken Sie anschließend auf **Hinzufügen**.
 
    	![][10]
 
@@ -126,7 +126,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Erste Schritte mit Mobile Services]:#getting-started
 [Erstellen eines neuen mobilen Diensts]:#create-new-service
 [Definieren der mobilen Dienstinstanz]:#define-mobile-service-instance
-[Next Steps]:#next-steps
+[Nächste Schritte]:#next-steps
 
 <!-- Images. -->
 [0]: ./media/mobile-services-html-get-started/mobile-quickstart-completed-html.png
@@ -150,7 +150,9 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung]: /de-de/documentation/articles/mobile-services-html-call-custom-api 
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
-[Microsoft Web Platform Installer]:  http://go.microsoft.com/fwlink/p/?LinkId=286333
+[Microsoft-Webplattform-Installer]:  http://go.microsoft.com/fwlink/p/?LinkId=286333
 [neueste Version von Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
 [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client
 [Cross-Origin Resource Sharing (CORS)]: http://msdn.microsoft.com/de-de/library/windowsazure/dn155871.aspx
+
+<!--HONumber=35.1-->

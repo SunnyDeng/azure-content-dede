@@ -1,0 +1,4 @@
+﻿Pünktlichkeitsratendaten zu Passagierflügen aus der TranStats-Datensammlung des US-Verkehrsministeriums (<a href="http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time">On-Time</a>).<p>
+Der Datensatz deckt den Zeitraum April bis Oktober 2013 ab. Bevor er auf Azure ML Studio hochgeladen wird, wurde der Datensatz wie folgt verarbeitet:<ul><li>Der Datensatz wurde gefiltert, damit nur die 70 verkehrsreichsten Flughäfen in Kontinental-USA enthalten sind</li><li>Ausgefallene Flüge wurden als um mehr als 15 Minuten verspätet gekennzeichnet</li><li>Umgeleitete Flüge wurden herausgefiltert</li><li>Folgende Spalten wurden ausgewählt: Jahr, Monat, Tag des Monats, Tag der Woche, Fluggesellschaft, Abflughafen-ID, Zielflughafen-ID, CRS-Abflugzeit, Abflugverzögerung, Abflugverzögerungl15, CRS-Ankunftszeit, Ankunftsverspätung, Ankunftsverspätungl15, Ausgefallen</li></ul>
+
+<!--HONumber=35.1-->

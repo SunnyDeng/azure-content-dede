@@ -1,79 +1,63 @@
-<properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
+﻿<properties writer="kathydav" editor="tysonn" manager="timlt" /> 
 
-**Wichtig**: Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, geben Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers an. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke][Überblick über virtuelle Azure-Netzwerke].
+**Wichtig**: Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, geben Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers an. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/p/?LinkID=294063).
 
-1.  Melden Sie sich mit Ihrem Azure-Konto beim [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
 
-2.  Klicken Sie im Verwaltungsportal unten links auf der Webseite auf **+Neu**, klicken Sie auf **Virtueller Computer** und dann auf **Aus Katalog**.
+1. Melden Sie sich mit Ihrem Azure-Konto beim [Azure-Verwaltungsportal][AzurePreviewPortal] an.
 
-    ![Neuen virtuellen Computer erstellen][Neuen virtuellen Computer erstellen]
+2. Klicken Sie im Verwaltungsportal unten links auf der Webseite auf **+Neu**, klicken Sie auf **Virtueller Computer** und dann auf **Aus Katalog**.
 
-3.  Wählen Sie in **Platform Images** ein Image eines virtuellen OpenSUSE-Computers aus, und klicken Sie anschließend unten rechts auf der Seite auf den Pfeil für die nächste Seite.
+	![Create a New Virtual Machine][Image1]
 
-4.  Geben Sie auf der Seite **Konfiguration des virtuellen Computers** die folgenden Informationen ein:
+3. Wählen Sie unter der Gruppe **SUSE** das Image eines virtuellen OpenSUSE-Computers aus, und klicken Sie dann unten rechts auf der Seite auf den Weiter-Pfeil.
 
-    -   Geben Sie den **Namen des virtuellen Computers** ein, z. B. "testlinuxvm".
-    -   Geben Sie den **Namen des neuen Benutzers** ein, z. B. "newuser", der der Sudoer-Listendatei hinzugefügt wird.
-    -   Geben Sie in das Feld **Neues Kennwort** ein [sicheres Kennwort][sicheres Kennwort] ein.
-    -   Geben Sie das Kennwort in das Feld **Kennwort bestätigen** nochmals ein.
-    -   Wählen Sie in der Dropdownliste die geeignete **Größe** aus.
 
-    Klicken Sie auf den Pfeil zum Aufrufen der nächsten Seite, um fortzufahren.
+4. Nehmen Sie auf der ersten Seite für die **Konfiguration des virtuellen Computers** die erforderlichen Einstellungen vor, oder überprüfen Sie diese:
 
-5.  Geben Sie auf der Seite **Virtual machine mode** die folgenden Informationen ein:
+	- Weisen Sie unter **Name des virtuellen Computers** einen Namen zu, z. B. "testlinuxvm".
+	- Überprüfen Sie die **Ebene**, und wählen Sie eine **Größe** aus. Die Ebene bestimmt, zwischen welchen Größen Sie wählen können.
+	- Geben Sie unter **Neuer Benutzername** einen Namen ein, z. B. "newuser", der der Sudoer-Listendatei hinzugefügt wird.
+	- Wählen Sie aus, welche Art der **Authentifizierung** verwendet werden soll. Hinweise zu allgemeinen Kennwortrichtlinien finden Sie unter [Sichere Kennwörter](http://msdn.microsoft.com/de-de/library/ms161962.aspx).
 
-    -   Wählen Sie **Standalone Virtual Machine**.
-    -   Geben Sie in das Feld **DNS-Name** eine gültigen DNS-Adresse ein, z. B. "testlinuxvm".
-    -   Wählen Sie im Feld **Region/Affinity Group/Virtual Network** eine Region aus, in der dieses virtuelle Image gehostet wird.
 
-Klicken Sie auf den Pfeil zum Aufrufen der nächsten Seite, um fortzufahren.
+5. Nehmen Sie auf der nächsten Seite für die **Konfiguration des virtuellen Computers** die erforderlichen Einstellungen vor, oder überprüfen Sie diese:
+	- Verwenden Sie die Standardmethode **Einen neuen Cloud-Dienst erstellen**.
+	- Geben Sie im Feld **DNS-Name** einen gültigen DNS-Namen ein, der als Teil der Adresse verwendet wird, z. B. "testlinuxvm".
+	- Wählen Sie im Feld **Region/Affinitätsgruppe/Virtuelles Netzwerk** eine Region aus, in der dieses virtuelle Image gehostet wird.
 
-1.  Wählen Sie auf der Seite **Virtual machine options** im Feld **Availability Set** den Eintrag **(none)** aus. Klicken Sie auf das Häkchen, um fortzufahren.
+6.	Klicken Sie zum Fertigstellen auf "Weiter", und warten Sie dann, bis Azure den virtuellen Computer vorbereitet und gestartet hat.
 
-2.  Warten Sie, während Azure den virtuellen Computer vorbereitet.
+##Herstellen einer Verbindung mit dem virtuellen Computer
+In Abhängigkeit von dem auf Ihrem Computer ausgeführten Betriebssystem verwenden Sie für die Verbindung mit dem virtuellen Computer SSH oder PuTTY:
 
-## Konfigurieren von Endpunkten
+- Verwenden Sie SSH, wenn Sie für die Verbindung zum virtuellen Computer Linux nutzen. Geben Sie an der Eingabeaufforderung Folgendes ein: 
 
-Nach der Erstellung des virtuellen Computers müssen Sie Endpunkte für Remoteverbindungen konfigurieren.
+	`$ ssh newuser@testlinuxvm.cloudapp.net -o ServerAliveInterval=180`
+	
+	Type the user's password.
 
-1.  Klicken Sie im Verwaltungsportal auf **Virtueller Computer** und anschließend auf den Namen Ihres neuen virtuellen Computers sowie auf **Endpunkte**.
+- Verwenden Sie PuTTY, wenn Sie für die Verbindung zum virtuellen Computer einen Windows-Computer nutzen. Sie können PuTTY von der [PuTTY-Downloadseite][PuTTYDownLoad] herunterladen. 
 
-2.  Klicken Sie unten auf der Seite auf **Endpunkt bearbeiten**. Bearbeiten Sie den SSH-Endpunkt, sodass sein **Öffentlicher Port** 22 lautet.
+	Laden Sie **putty.exe** herunter, und speichern Sie die Datei in einem Verzeichnis auf dem Computer. Öffnen Sie eine Eingabeaufforderung, navigieren Sie zu dem betreffenden Verzeichnis, und führen Sie **putty.exe** aus.
 
-## Herstellen einer Verbindung mit dem virtuellen Computer
+	Geben Sie den Hostnamen ein, z. B. "testlinuxvm.cloudapp.net", und geben Sie dann für **Port** den Wert "22" ein.
 
-Wenn der virtuelle Computer bereitgestellt wurde und die Endpunkte konfiguriert sind, können Sie über SSH oder PuTTY eine Verbindung mit dem virtuellen Computer herstellen.
+	![PuTTY Screen][Image6]  
 
-### Herstellen einer Verbindung über SSH
+##Aktualisieren des virtuellen Computers (optional)
+1. Nachdem Sie eine Verbindung mit dem virtuellen Computer hergestellt haben, haben Sie die Möglichkeit, Systemaktualisierungen und Patches zu installieren. Zum Ausführen der Aktualisierung geben Sie Folgendes ein:
 
-Wenn Sie einen Windows-Computer verwenden, stellen Sie über SSH eine Verbindung mit dem virtuellen Computer her. Geben Sie an der Eingabeaufforderung Folgendes ein:
+	`$ sudo zypper update`
 
-    $ ssh newuser@testlinuxvm.cloudapp.net -o ServerAliveInterval=180
+2. Wählen Sie **Software** und dann **Onlineupdate**, um die verfügbaren Aktualisierungen aufzulisten. Wählen Sie **Annehmen**, um die Installation zu starten und alle verfügbaren neuen Patches (außer den optionalen) anzuwenden. 
 
-Geben Sie das Kennwort des Benutzers ein.
+3. Wählen Sie nach Abschluss der Installation **Fertig stellen** aus.  Ihr System ist jetzt auf dem aktuellen Stand.
 
-### Herstellen einer Verbindung über PuTTY
+[PuTTYDownload]: http://www.puttyssh.org/download.html
+[AzurePreviewPortal]: http://manage.windowsazure.com
 
-Wenn Sie einen Windows-Computer verwenden, stellen Sie über PuTTY eine Verbindung mit dem virtuellen Computer her. PuTTY kann von [PuTTY Download Page][PuTTY Download Page] heruntergeladen werden.
+[Image1]: ./media/create-and-configure-opensuse-vm-in-portal/CreateVM.png
 
-1.  Laden Sie **putty.exe** herunter, und speichern Sie die Daten in einem Verzeichnis auf dem Computer. Öffnen Sie eine Eingabeaufforderung, navigieren Sie zu dem betreffenden Verzeichnis, und führen Sie **putty.exe** aus.
+[Image6]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png
 
-2.  Geben Sie "testlinuxvm.cloudapp.net" als **Hostnamen** und "22" für den **Port** ein.
-    ![PuTTY Screen][PuTTY Screen]
-
-## Aktualisieren des virtuellen Computers (optional)
-
-1.  Sobald Sie eine Verbindung mit dem virtuellen Computer hergestellt haben, haben Sie die Möglichkeit, Systemaktualisierungen und Patches zu installieren. Führen Sie folgenden Befehl aus:
-
-    `$ sudo zypper update`
-
-2.  Wählen Sie **Software** und dann **Onlineupdate**. Eine Liste von Aktualisierungen wird angezeigt. Wählen Sie **Annehmen**, um die Installation zu starten und alle neuen Patches (außer den optionalen) anzuwenden, die derzeit für Ihr System verfügbar sind.
-
-3.  Wählen Sie nach Abschluss der Installation **Fertig stellen** aus. Ihr System ist jetzt auf dem aktuellen Stand.
-
-  [Überblick über virtuelle Azure-Netzwerke]: http://go.microsoft.com/fwlink/p/?LinkID=294063
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [Neuen virtuellen Computer erstellen]: ./media/create-and-configure-opensuse-vm-in-portal/CreateVM.png
-  [sicheres Kennwort]: http://msdn.microsoft.com/de-de/library/ms161962.aspx
-  [PuTTY Download Page]: http://www.puttyssh.org/download.html
-  [PuTTY Screen]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png
+<!--HONumber=35.1-->
