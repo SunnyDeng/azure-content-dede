@@ -1,176 +1,174 @@
-<properties linkid="develop-java-how-to-hudson-ci" urlDisplayName="Hudson Continuous Integration" pageTitle="How to use Hudson with the Azure Blob service | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Describes how to use Hudson with Azure Blob storage as a repository for build artifacts." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties urlDisplayName="Hudson Continuous Integration" pageTitle="Verwenden von Hudson mit dem Azure-Blobdienst | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Describes how to use Hudson with Azure Blob storage as a repository for build artifacts." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
-# Verwenden von Azure-Speicher mit einer Hudson-Lösung für die fortlaufende Integration
+#Verwenden von Azure-Speicher mit einer Hudson-Lösung für die fortlaufende Integration
 
-*Von [Microsoft Open Technologies Inc.][Microsoft Open Technologies Inc.]*
+*Von [Microsoft Open Technologies Inc.][ms-open-tech]*
 
-Die folgenden Informationen zeigen die Verwendung des Azure-Blobdienst als Repository von Buildartefakten, die durch eine Hudson Continuous Integration-Lösung (CI) erstellt wurden, oder als eine Quelle von herunterladbaren Dateien, die in einem Buildvorgang verwendet werden. Dies ist zum Beispiel dann hilfreich, wenn Sie in einer agilen Entwicklungsumgebung (in Java oder anderen Sprachen) programmieren, Builds auf Basis der fortlaufenden Integration ausgeführt werden, und Sie ein Repository für Ihre Buildartefakte benötigen, sodass Sie sie beispielsweise mit anderen Mitgliedern der Organisation oder Ihren Kunden gemeinsam nutzen oder ein Archiv pflegen können. Ein anderes Szenario liegt vor, wenn für Ihren Buildauftrag an sich andere Dateien erforderlich sind, beispielsweise als Teil der Buildeingabe herunterzuladende Abhängigkeiten.
+Die folgenden Informationen zeigen die Verwendung des Azure-Blobdienst als Repository von Buildartefakten, die durch eine Hudson Continuous Integration-Lösung (CI) erstellt wurden, oder als eine Quelle von herunterladbaren Dateien, die in einem Buildvorgang verwendet werden. Dies ist zum Beispiel dann hilfreich, wenn Sie in einer agilen Entwicklungsumgebung (in Java oder anderen Sprachen) programmieren, Builds auf Basis der fortlaufenden Integration ausgeführt werden, und Sie ein Repository für Ihre Buildartefakte benötigen, sodass Sie sie beispielsweise mit anderen Mitgliedern der Organisation oder Ihren Kunden gemeinsam nutzen oder ein Archiv pflegen können.  Ein anderes Szenario liegt vor, wenn für Ihren Buildauftrag an sich andere Dateien erforderlich sind, beispielsweise als Teil der Buildeingabe herunterzuladende Abhängigkeiten.
 
 In diesem Lernprogramm verwenden Sie das Azure-Speicher-Plug-In für Hudson CI, das von Microsoft Open Technologies, Inc. zur Verfügung gestellt wird.
 
 ## Inhaltsverzeichnis
 
--   [Überblick über Hudson][Überblick über Hudson]
--   [Vorteile der Verwendung des Blob-Dienstes][Vorteile der Verwendung des Blob-Dienstes]
--   [Voraussetzungen][Voraussetzungen]
--   [Verwenden des Blob-Dienstes mit Hudson CI][Verwenden des Blob-Dienstes mit Hudson CI]
--   [Installieren des Azure-Speicher-Plug-Ins][Installieren des Azure-Speicher-Plug-Ins]
--   [Konfigurieren des Azure-Speicher-Plug-Ins für die Verwendung Ihres Speicherkontos][Konfigurieren des Azure-Speicher-Plug-Ins für die Verwendung Ihres Speicherkontos]
--   [Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt][Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt]
--   [Erstellen eines Buildschritts für das Herunterladen des Azure-Blobspeichers][Erstellen eines Buildschritts für das Herunterladen des Azure-Blobspeichers]
--   [Vom Blob-Dienst verwendete Komponenten][Vom Blob-Dienst verwendete Komponenten]
+-   [Übersicht über Hudson][]
+-   [Vorteile der Verwendung des Blob-Diensts][]
+-   [Voraussetzungen][]
+-   [Verwenden des Blob-Diensts mit Hudson CI][]
+-   [Installation des Azure Storage-Plug-Ins][]
+-   [Konfigurieren des Azure Storage-Plug-Ins für die Verwendung Ihres Speicherkontos][]
+-   [Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt][]
+-   [Erstellen eines Buildschritts für das Herunterladen des Azure-Blob-Speichers][]
+-   [Vom Blob-Dienst verwendete Komponenten][]
 
-## <span id="overview"></span></a><span class="short header">Überblick</span>Überblick über Jenkins
-
+## <a id="overview"></a>Übersicht über Hudson ##
 Hudson ermöglicht die fortlaufende Integration (Continuous Integration, CI) eines Softwareprojekts, da Entwickler ihre Codeänderungen auf einfache Weise einbinden und Builds automatisch und häufig erstellen lassen können. Dadurch wird die Produktivität der Entwickler gesteigert. Builds werden mit Versionsangaben versehen, und Buildartefakte können in verschiedene Repositorys hochgeladen werden. In diesem Thema wird gezeigt, wie Sie Azure-Blob-Speicher als Repository für die Buildartefakte verwenden. Es zeigt hoch, wie Abhängigkeiten aus dem Azure-Blobspeicher heruntergeladen werden.
 
-Weitere Informationen zu Hudson finden Sie unter [Meet Hudson][Meet Hudson].
+Weitere Informationen zu Hudson finden Sie unter [Meet Hudson][].
 
-## <span id="benefits"></span></a><span class="short header">Vorteile</span>Vorteile der Verwendung des Blob-Dienstes
+## <a id="benefits"></a>Vorteile der Verwendung des Blob-Diensts ##
 
 Die Verwendung des Blob-Dienstes zum Hosten Ihrer Buildartefakte aus der agilen Entwicklung hat folgende Vorteile:
 
--   Hohe Verfügbarkeit Ihrer Buildartefakte und/oder herunterladbare Abhängigkeiten.
--   Schnelles Hochladen Ihrer Buildartefakte durch Hudson CI.
--   Schnelles Herunterladen Ihrer Buildartefakte durch Kunden und Partner
--   Kontrolle über Benutzerzugriffsrichtlinien, mit Wahlmöglichkeiten zwischen anonymer Zugriff, Zugriff per Shared Access Signature mit Ablaufdatum, privater Zugriff usw.
+- Hohe Verfügbarkeit Ihrer Buildartefakte und/oder herunterladbare Abhängigkeiten.
+- Schnelles Hochladen Ihrer Buildartefakte durch Hudson CI.
+- Schnelles Herunterladen Ihrer Buildartefakte durch Kunden und Partner
+- Kontrolle über Benutzerzugriffsrichtlinien, mit Wahlmöglichkeiten zwischen anonymer Zugriff, Zugriff per Shared Access Signature mit Ablaufdatum, privater Zugriff usw.
 
-## <span id="prerequisites"></span></a><span class="short header">Voraussetzungen</span>Voraussetzungen
+## <a id="prerequisites"></a>Voraussetzungen ##
 
 Sie müssen folgende Voraussetzungen erfüllen, um den Blob-Dienst mit Ihrer Hudson CI-Lösung zu verwenden:
 
--   Eine Hudson-Lösung für die fortlaufende Integration.
+- Eine Hudson-Lösung für die fortlaufende Integration.
 
     Wenn Sie noch keine Hudson CI-Lösung im Einsatz haben, können Sie eine Hudson CI-Lösung auf folgende Weise ausführen:
 
-    1.  Laden Sie für einen Java-fähigen Computer "Hudson WAR" von <http://hudson-ci.org/> herunter.
-    2.  Führen Sie in einer Eingabeaufforderung im Ordner, der Hudson.WAR enthält, den folgenden Befehl aus: Falls Sie zum Beispiel Version 3.1.2 heruntergeladen haben:
+    1. Laden Sie für einen Java-fähigen Computer Hudson WAR von http://hudson-ci.org/ herunter.
+    2. Führen Sie in einer Eingabeaufforderung im Ordner, der Hudson.WAR enthält, den folgenden Befehl aus: Falls Sie zum Beispiel Version 3.1.2 heruntergeladen haben:
 
         `java -jar hudson-3.1.2.war`
 
-    3.  Öffnen Sie in Ihrem Browser `http://localhost:8080/`. Das Hudson-Dashboard wird geöffnet.
+    3. Öffnen Sie http://localhost:8080/ in Ihrem Browser. Das Hudson-Dashboard wird geöffnet.
 
-    4.  Schließen Sie vor der ersten Verwendung von Hudson die initiale Einrichtung unter `http://localhost:8080/` ab.
+    4. Bei der ersten Verwendung von Hudson müssen Sie die Einrichtung unter http://localhost:8080/ abschließen. 
 
-    5.  Nach Abschluss der Einrichtung können Sie die laufende Instanz von Hudson-WAR anhalten und neu starten und das Hudson-Dashboard unter `http://localhost:8080/` erneut öffnen. Dort können Sie nun das Plug-In für den Azure-Speicher installieren und konfigurieren.
+    5. Nach Abschluss der Einrichtung können Sie die laufende Instanz von Hudson-WAR anhalten und neu starten und das Hudson-Dashboard unter http://localhost:8080/ erneut öffnen. Dort können Sie nun das Azure Storage-Plug-In installieren und konfigurieren.
 
         Eine typische Hudson CI-Lösung würde zwar zur Ausführung als Service konfiguriert, die Ausführung von "hudson.war" über die Befehlszeile reicht für dieses Lernprogramm jedoch aus.
 
--   Ein Azure-Konto. Unter <http://www.windowsazure.com> können Sie ein Azure-Konto registrieren.
+- Ein Azure-Konto. Unter http://www.windowsazure.com können Sie sich für ein Azure-Konto registrieren.
 
--   Ein Azure-Speicherkonto. Wenn Sie noch kein Speicherkonto haben, können Sie eines erstellen, indem Sie die Schritte unter [Erstellen eines Speicherkontos][Erstellen eines Speicherkontos] befolgen.
+- Ein Azure-Speicherkonto. Wenn Sie noch nicht über ein Speicherkonto verfügen, können Sie ein solches erstellen, indem Sie die Schritte unter [Erstellen eines Speicherkontos][] befolgen.
 
--   Vorkenntnisse der Hudson CI-Lösung werden empfohlen, sind aber nicht zwingend erforderlich, da in den folgenden Abschnitten ein einfaches Beispiel verwendet wird, um zu zeigen, welche Schritte erforderlich sind, wenn Sie den Blob-Dienst als Repository für Hudson CI-Buildartefakte nutzen möchten.
+- Vorkenntnisse der Hudson CI-Lösung werden empfohlen, sind aber nicht zwingend erforderlich, da in den folgenden Abschnitten ein einfaches Beispiel verwendet wird, um zu zeigen, welche Schritte erforderlich sind, wenn Sie den Blob-Dienst als Repository für Hudson CI-Buildartefakte nutzen möchten.
 
-## <span id="howtouse"></span></a><span class="short header">Verwenden des Blob-Dienstes</span>Verwenden des Blob-Dienstes mit Hudson CI
+## <a id="howtouse"></a>Verwenden des Blob-Diensts mit Hudson CI ##
 
 Um den Blob-Dienst mit Hudson verwenden zu können, müssen Sie das Azure-Speicher-Plug-In installieren, das Plug-In für die Verwendung Ihres Speicherkontos konfigurieren und dann eine Postbuildaktion erstellen, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt. Diese Schritte sind in den folgenden Abschnitten beschrieben.
 
-## <span id="howtoinstall"></span></a><span class="short header">Installieren</span>Installieren des Azure-Speicher-Plug-Ins
+## <a id="howtoinstall"></a>Installieren des Azure Storage-Plug-Ins ##
 
-1.  Klicken Sie im Hudson-Dashboard auf **Manage Hudson**.
-2.  Klicken Sie unter **Manage Jenkins** auf **Manage Plugins**.
-3.  Klicken Sie auf die Registerkarte **Available**.
-4.  Klicken Sie auf **Others**.
-5.  Aktivieren Sie im Abschnitt **Artifact Uploaders** das Kontrollkästchen **Microsoft Azure Storage plugin**.
-6.  Klicken Sie auf **Installieren**.
-7.  Starten Sie Hudson nach Abschluss der Installation neu.
+1. Klicken Sie im Hudson-Dashboard auf **Manage Hudson**.
+2. Klicken Sie auf der Seite **Manage Hudson** auf **Manage Plugins**.
+3. Klicken Sie auf die Registerkarte **Available**.
+4. Klicken Sie auf **Others**.
+5. Aktivieren Sie im Abschnitt **Artifact Uploaders** das Kontrollkästchen **Microsoft Azure Storage plugin**.
+6. Klicken Sie auf **Install**.
+7. Starten Sie Hudson nach Abschluss der Installation neu.
 
-## <span id="howtoconfigure"></span></a><span class="short header">Konfigurieren</span>Konfigurieren des Azure-Speicher-Plug-Ins für die Verwendung Ihres Speicherkontos
+## <a id="howtoconfigure"></a>Konfigurieren des Azure Storage-Plug-Ins für die Verwendung Ihres Speicherkontos ##
 
-1.  Klicken Sie im Hudson-Dashboard auf **Manage Hudson**.
-2.  Klicken Sie auf der Seite **Manage Hudson** auf **Configure System**.
-3.  Führen Sie im Bereich **Microsoft Azure Storage Account Configuration** folgende Schritte aus:
+1. Klicken Sie im Hudson-Dashboard auf **Manage Hudson**.
+2. Klicken Sie auf der Seite **Manage Hudson** auf **Configure Systems**.
+3. Führen Sie im Abschnitt **Microsoft Azure Storage Account Configuration** die folgenden Schritte aus:
+    1. Geben Sie Ihren Speicherkontonamen ein, den Sie aus dem Azure-Portal unter https://manage.windowsazure.com abrufen können.
+    2. Geben Sie Ihren Speicherkontoschlüssel ein, der ebenfalls über das Azure-Portal erhältlich ist.
+    3. Verwenden Sie den Standardwert für **Blob Service Endpoint URL**, wenn Sie die öffentliche Azure-Cloud verwenden. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt, der im Azure-Verwaltungsportal für Ihr Speicherkonto angegeben ist. 
+    4. Klicken Sie auf **Validate storage credentials**, um Ihr Speicherkonto zu validieren. 
+    5. [Optional] Wenn Sie über weitere Speicherkonten verfügen, die Sie für Hudson CI verfügbar machen möchten, klicken Sie auf **Add more storage accounts**.
+    6. Klicken Sie auf **Save**, um Ihre Einstellungen zu speichern.
 
-    1.  Geben Sie Ihren Speicherkontonamen ein, den Sie aus dem Azure-Portal <https://manage.windowsazure.com> abrufen können.
-    2.  Geben Sie Ihren Speicherkontoschlüssel ein, der ebenfalls über das Azure-Portal erhältlich ist.
-    3.  Verwenden Sie den Standardwert für **Blob Service Endpoint URL**, wenn Sie die öffentliche Azure-Cloud verwenden. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt, der im Azure-Verwaltungsportal für Ihr Speicherkonto angegeben ist.
-    4.  Klicken Sie auf **Validate storage credentials**, um Ihr Speicherkonto zu validieren.
-    5.  [Optional] Wenn Sie über weitere Speicherkonten verfügen, die Sie für Hudson CI verfügbar machen möchten, klicken Sie auf **Add more storage accounts**.
-    6.  Klicken Sie auf **Save**, um Ihre Einstellungen zu speichern.
-
-## <span id="howtocreatepostbuild"></span></a><span class="short header">Erstellen einer Postbuildaktion</span>Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt
+## <a id="howtocreatepostbuild"></a>Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt ##
 
 Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere Dateien erstellen wird, und ihn dann zur Postbuildaktion hinzufügen, um die Dateien in Ihr Speicherkonto hochzuladen.
 
-1.  Klicken Sie im Hudson-Dashboard auf **New Job**.
-2.  Nennen Sie den Auftrag **MyJob**, klicken Sie auf **Build a free-style software project**, und klicken Sie dann auf **OK**.
-3.  Klicken Sie in der Auftragskonfiguration im Bereich **Build** auf **Add build step**, und wählen Sie dann **Execute Windows batch command** aus.
-4.  Verwenden Sie in **Command** folgende Befehle:
+1. Klicken Sie im Hudson-Dashboard auf **New Job**.
+2. Nennen Sie den Auftrag **MyJob**, klicken Sie auf **Build a free-style software job**, und klicken Sie dann auf **OK**.
+3. Klicken Sie im Abschnitt **Build** der Auftragskonfiguration auf **Add build step**, und wählen Sie **Execute Windows batch command** aus.
+4. Verwenden Sie unter **Command**, die folgenden Befehle:
 
         md text
         cd text
         echo Hello Azure Storage from Hudson > hello.txt
         date /t > date.txt
         time /t >> date.txt
-
-5.  Klicken Sie in der Auftragskonfiguration im Bereich **Post-build Actions** auf **Upload artifacts to Microsoft Azure Blob storage**.
-6.  Wählen Sie unter **Storage Account Name** das zu verwendende Speicherkonto aus.
-7.  Geben Sie unter **Container Name** den Containernamen ein. (Der Container wird erstellt, wenn er beim Hochladen der Buildartefakte noch nicht vorhanden ist.) Sie können Umgebungsvariablen verwenden. Geben Sie also für dieses Beispiel **${JOB\_NAME}** als Containernamen ein.
+ 
+5. Klicken Sie Abschnitt **Post-build Actions** der Auftragskonfiguration auf **Upload artifacts to Microsoft Azure Blob storage**.
+6. Wählen Sie unter **Storage Account Name** das zu verwendende Speicherkonto aus.
+7. Geben Sie unter **Container Name** den Namen des Containers an. (Der Container wird erstellt, wenn er beim Hochladen der Buildartefakte noch nicht vorhanden ist.) Da Sie Umgebungsvariablen verwenden können, geben Sie für dieses Beispiel **${JOB_NAME}** als Containernamen ein.
 
     **Tipp**
+    
+    Unter dem Abschnitt **Command**, in dem Sie ein Skript für **Execute Windows batch command** eingegeben haben, befindet sich ein Link zu den von Hudson erkannten Umgebungsvariablen. Klicken Sie auf diesen Link, um die Namen und Beschreibungen der Umgebungsvariablen anzuzeigen. Beachten Sie, dass Umgebungsvariablen, die Sonderzeichen enthalten, z. B. die Umgebungsvariable **BUILD_URL**, nicht als Containername oder gemeinsamer virtueller Pfad zulässig sind.
 
-    Unter dem Bereich **Command**, in dem Sie ein Skript für **Execute Windows batch command** eingegeben haben, befindet sich ein Link zu den von Hudson erkannten Umgebungsvariablen. Klicken Sie auf diesen Link, um die Namen und Beschreibungen der Umgebungsvariablen anzuzeigen. Beachten Sie, dass Umgebungsvariablen, die Sonderzeichen enthalten, z. B. die Umgebungsvariable **BUILD\_URL**, nicht als Containername oder gemeinsamer virtueller Pfad zulässig sind.
-
-8.  Klicken Sie für dieses Beispiel auf **Make new container public by default**. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Thema hinaus. Sie finden weitere Informationen zu Shared Access Signatures unter [Erstellen und Verwenden einer SAS (Shared Access Signature)][Erstellen und Verwenden einer SAS (Shared Access Signature)].
-9.  [Optional] Klicken Sie auf **Clean container before uploading**, wenn die Inhalte aus dem Container gelöscht werden sollen, bevor die Buildartefakte hochgeladen (lassen Sie die Option deaktiviert, wenn die Inhalte nicht aus dem Container gelöscht werden sollen) werden.
-10. Geben Sie **text/*.txt** unter **List of Artifacts to upload** ein.
-11. Geben Sie unter **Common virtual path for uploaded artifacts** die Zeichenfolge **${BUILD\_ID}/${BUILD\_NUMBER}** ein.
+8. Klicken Sie für dieses Beispiel auf **Make new container public by default**. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Thema hinaus. Unter [Erstellen einer Shared Access Signature](http://go.microsoft.com/fwlink/?LinkId=279889)finden Sie weitere Informationen zu Shared Access Signatures.)
+9. [Optional] Klicken Sie auf **Clean container before uploading**, wenn die Inhalte aus dem Container gelöscht werden sollen, bevor die Buildartefakte hochgeladen (lassen Sie die Option deaktiviert, wenn die Inhalte nicht aus dem Container gelöscht werden sollen) werden.
+10. Geben Sie unter **List of Artifacts to upload** **text/*.txt** ein.
+11. Geben Sie unter **Common virtual path for uploaded artifacts** **${BUILD\_ID}/${BUILD\_NUMBER}** ein.
 12. Klicken Sie auf **Save**, um Ihre Einstellungen zu speichern.
-13. Klicken Sie im Jenkins-Dashboard auf **Build Now**, um **MyJob** auszuführen. Prüfen Sie den Status in der Ausgabe der Konsole. Statusmeldungen für Azure-Speicher werden in die Ausgabe der Konsole aufgenommen, wenn die Postbuildaktion mit dem Hochladen von Buildartefakten beginnt.
+13. KLicken Sie im Hudson-Dashboard auf **Build Now**, um **MyJob** auszuführen. Prüfen Sie den Status in der Ausgabe der Konsole. Statusmeldungen für Azure-Speicher werden in die Ausgabe der Konsole aufgenommen, wenn die Postbuildaktion mit dem Hochladen von Buildartefakten beginnt.
 14. Nach erfolgreichem Abschluss des Auftrags können Sie die Buildartefakte überprüfen, indem Sie den öffentlichen Blob öffnen.
+    1. Melden Sie sich beim Azure-Verwaltungsportal unter https://manage.windowsazure.com an.
+    2. Klicken Sie auf **Speicher**.
+    3. Klicken Sie auf den Speicherkontonamen, den Sie für Hudson verwendet haben.
+    4. Klicken Sie auf **Container**.
+    5. Klicken Sie auf den Container **myjob**. Dies ist die Version des Auftragsnamens, den Sie beim Erstellen des Hudson-Auftrags zugewiesen haben, in Kleinbuchstaben. Containernamen und Blob-Namen bestehen im Azure-Speicher aus Kleinbuchstaben (es wird zwischen Groß- und Kleinschreibung unterschieden). In der Liste der Blobs für den Container **myjob** sollten **hello.txt** und **date.txt** angezeigt werden. Kopieren Sie die URL für beide Elemente, und öffnen Sie sie in Ihrem Browser. Sie sehen die Textdatei, die als Buildartefakt hochgeladen wurde.
 
-    1.  Melden Sie sich am Azure-Verwaltungsportal <https://manage.windowsazure.com> an.
-    2.  Klicken Sie auf **Storage**.
-    3.  Klicken Sie auf den Speicherkontonamen, den Sie für Hudson verwendet haben.
-    4.  Klicken Sie auf **Container**.
-    5.  Klicken Sie auf den Container **myjob**. Dies ist die Version des Auftragsnamens, den Sie beim Erstellen des Hudson-Auftrags zugewiesen haben, in Kleinbuchstaben. Containernamen und Blob-Namen bestehen im Azure-Speicher aus Kleinbuchstaben (es wird zwischen Groß- und Kleinschreibung unterschieden). In der Liste der Blobs für den Container **myjob** sollte **hello.txt** und **date.txt** angezeigt werden. Kopieren Sie die URL für beide Elemente, und öffnen Sie sie in Ihrem Browser. Sie sehen die Textdatei, die als Buildartefakt hochgeladen wurde.
+Es kann nur eine "post-build"-Aktion pro Auftrag erstellt werden, die Artefakte in den Azure-Blobspeicher hochlädt. Beachten Sie, dass die einzelne post-build-Aktion zum Hochladen von Artefakten in den Azure-Blob-Speicher mithilfe eines Semikolons als Trennzeichen verschiedene Dateien (einschließlich Platzhalter) und Pfade zu Dateien in **List of Artifacts to upload** angeben kann. Wenn Ihr Hudson-Build beispielsweise JAR- und TXT-Dateien im Ordner **build** Ihres Arbeitsbereichs erstellt und sie beide in den Azure-Blob-Speicher hochladen möchten, verwenden Sie Folgendes für den Wert **List of Artifacts to upload**: **build/\*.jar;build/\*.txt**. Sie können auch eine Doppel-Doppelpunktsyntax verwenden, um einen im Blobnamen zu verwendenden Pfad anzugeben. Wenn Sie beispielsweise möchten, dass die JAR-Dateien mithilfe von **binaries** im Blobpfad und die TXT-Dateien mithilfe von **notices** im Blobpfad hochgeladen werden, verwenden Sie Folgendes für den Wert **List of Artifacts to upload**: **build/\*.jar::binaries;build/\*.txt::notices**.
 
-Es kann nur eine "post-build"-Aktion pro Auftrag erstellt werden, die Artefakte in den Azure-Blobspeicher hochlädt. Beachten Sie, dass die einzelne "post-build"-Aktion zum Hochladen von Artefakten in den Azure-Blobspeicher mithilfe eines Semikolons als Trennzeichen verschiedene Dateien (einschließlich Platzhalter) und Pfade zu Dateien in **List of Artifacts to upload** angeben kann. Wenn Ihr Hudson-Build beispielsweise JAR- und TXT-Dateien im Ordner **build** Ihres Arbeitsbereichs erstellt und sie beide in den Azure-Blobspeicher hochladen möchten, verwenden Sie Folgendes für den Wert **List of Artifacts to upload**: **build/\*.jar;build/\*.txt**. Sie können auch eine Doppel-Doppelpunktsyntax verwenden, um einen im Blobnamen zu verwendenden Pfad anzugeben. Wenn Sie beispielsweise möchten, dass die JAR-Dateien mithilfe von **binaries** im Blobpfad und die TXT-Dateien mithilfe von **notices** im Blobpfad hochgeladen werden, verwenden Sie Folgendes für den Wert **List of Artifacts to upload**: **build/\*.<jar::binaries;build/>\*.txt::notices**.
-
-## <a name="howtocreatebuildstep"></a><span class="short header">Erstellen von Buildschritten</span>Erstellen eines Buildschritts, der Downloads aus dem Azure-Blobspeicher vornimmt
+## <a name="howtocreatebuildstep"></a>Erstellen eines Buildschritts für das Herunterladen des Azure-Blob-Speichers ##
 
 Die folgenden Schritte zeigen, wie Sie einen Buildschritt konfigurieren, damit Elemente aus dem Azure-Blobspeicher heruntergeladen werden. Dies ist hilfreich, wenn Sie Elemente in Ihren Build einbeziehen möchten, beispielsweise JAR-Dateien, die im Azure-Blobspeicher gespeichert sind.
 
-1.  Klicken Sie in der Auftragskonfiguration im Abschnitt **Build** auf **Add build step**, und wählen Sie dann **Download from Azure Blob storage** aus.
-2.  Wählen Sie unter **Storage account name** das zu verwendende Speicherkonto aus.
-3.  Geben Sie für **Container name** den Namen des Containers an, der die herunterzuladenden Blobs enthält. Sie können Umgebungsvariablen verwenden.
-4.  Geben Sie unter **Blob name** den Blobnamen ein. Sie können Umgebungsvariablen verwenden. Sie können auch ein Sternchen als einen Platzhalter verwenden, nachdem Sie den bzw. die Anfangsbuchstaben des Blobnamens angeben. Beispielsweise würde **project\*** alle Blobs angeben, deren Namen mit **project** beginnen.
-5.  [Optional] Geben Sie für **Download path** den Pfad auf dem Hudson-Computer an, in den die Dateien aus dem Azure-Blobspeicher heruntergeladen werden sollen. Es können auch Umgebungsvariablen verwendet werden. (Wenn Sie keinen Wert für **Download path** angeben, werden die Dateien aus dem Azure-Blobspeicher in den Arbeitsbereich des Auftrags heruntergeladen.)
+1. Klicken Sie im Abschnitt **Build** der Auftragskonfiguration auf **Add build step**, und wählen Sie **Download from Azure Blob storage** aus.
+2. Wählen Sie unter **Storage Account Name** das zu verwendende Speicherkonto aus.
+3. Geben Sie unter **Container name** den Namen des Containers an, der die herunterzuladenden Blobs enthält. Sie können Umgebungsvariablen verwenden.
+4. Geben Sie unter **Blob name** den Blob-Namen an. Sie können Umgebungsvariablen verwenden. Sie können auch ein Sternchen als einen Platzhalter verwenden, nachdem Sie den bzw. die Anfangsbuchstaben des Blobnamens angeben. Beispielsweise würde **project\*** alle Blobs angeben, deren Namen mit **project** beginnen.
+5. [Optional] Geben Sie unter **Download path** den Pfad auf dem Hudson-Computer an, in den die Dateien aus dem Azure-Blob-Speicher heruntergeladen werden sollen. Es können auch Umgebungsvariablen verwendet werden. (Wenn Sie keinen Wert für **Download path** angeben, werden die Dateien aus dem Azure-Blob-Speicher in den Arbeitsbereich des Auftrags heruntergeladen.)
 
 Wenn Sie zusätzliche Elemente aus dem Azure-Blobspeicher herunterladen möchten, können Sie zusätzliche Buildschritte erstellen.
 
-Nach der Ausführung eines Builds können Sie die Build-Verlaufskonsolenausgabe prüfen oder den Downloadspeicherort aufrufen, um zu prüfen, ob die von Ihnen erwarteten Blobs erfolgreich heruntergeladen wurden.
+Nach der Ausführung eines Builds können Sie die Build-Verlaufskonsolenausgabe prüfen oder den Downloadspeicherort aufrufen, um zu prüfen, ob die von Ihnen erwarteten Blobs erfolgreich heruntergeladen wurden. 
 
-## <span id="components"></span></a><span class="short header">Komponenten des Blob-Dienstes</span>Vom Blob-Dienst verwendete Komponenten
+## <a id="components"></a>Vom Blob-Dienst verwendete Komponenten ##
 
 Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienstes.
 
--   **Speicherkonto**: Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Dies ist die höchste Ebene des Namespaces für den Zugriff auf Blobs. Ein Konto kann eine beliebige Anzahl von Containern enthalten, solange deren Gesamtgröße 100TB nicht überschreitet.
--   **Container**: Ein Container dient zur Gruppierung eines Satzes von Blobs. Alle BLOBs müssen sich in Containern befinden. Ein Konto kann eine beliebige Anzahl von Containern enthalten. In einem Container kann eine beliebige Anzahl von BLOBs gespeichert sein.
--   **Blob**: Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von BLOBs, die im Azure-Speicher gespeichert werden können: Block- und Seiten-BLOBs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-BLOB kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Die andere Art von BLOBs, Seiten-BLOBs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen über BLOBs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs][Grundlegendes zu Block-BLOBs und Seiten-BLOBs].
--   **URL-Format**: Blobs sind über das folgende URL-Format adressierbar:
+- **Speicherkonto**: Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Dies ist die höchste Ebene des Namespaces für den Zugriff auf Blobs. Ein Konto kann eine beliebige Anzahl von Containern enthalten, solange deren Gesamtgröße 100TB nicht überschreitet.
+- **Container**: Ein Container dient zur Gruppierung eines Satzes von Blobs. Alle BLOBs müssen sich in Containern befinden. Ein Konto kann eine beliebige Anzahl von Containern enthalten. In einem Container kann eine beliebige Anzahl von BLOBs gespeichert sein.
+- **Blob**: Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von Blobs, die im Azure-Speicher gespeichert werden können: Block- und Seitenblobs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-BLOB kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Die andere Art von BLOBs, Seiten-BLOBs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen zu Blobs stehen unter [Grundlegendes zu Block-Blobs und Seiten-Blobs](http://msdn.microsoft.com/de-de/library/windowsazure/ee691964.aspx)zur Verfügung.
+- **URL-Format**: Blobs sind über das folgende URL-Format adressierbar:
 
     `http://storageaccount.blob.core.windows.net/container_name/blob_name`
-
+    
     (Das Format oben gilt für die öffentliche Azure-Cloud. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt im Azure-Verwaltungsportal, um Ihren URL-Endpunkt zu ermitteln.)
 
-    Bei obigem Format steht `storageaccount` für den Namen Ihres Speicherkontos, `container_name` für den Namen des Containers und `blob_name` für den Namen des Blobs. Der Containername kann mehrere Pfade umfassen, die durch einen Schrägstrich (**/**) getrennt sind. Der Beispielcontainername in diesem Lernprogramm war **MyJob**, und **${BUILD\_ID}/${BUILD\_NUMBER}** wurde für den gemeinsamen virtuellen Pfad verwendet. Der Blob hat also eine URL in folgendem Format:
+    Bei obigem Format steht storageaccount für den Namen Ihres Speicherkontos, container_name für den Namen des Containers und blob_name für den Namen des Blob. Der Containername kann mehrere Pfade umfassen, die durch einen Schrägstrich (**/**) getrennt sind. Der Beispielcontainername in diesem Lernprogramm war **MyJob**, und **${BUILD\_ID}/${BUILD\_NUMBER}** wurde für den gemeinsamen virtuellen Pfad verwendet. Der Blob hat also eine URL in folgendem Format:
 
     `http://example.blob.core.windows.net/myjob/2014-05-01_11-56-22/1/hello.txt`
 
-  [Microsoft Open Technologies Inc.]: http://msopentech.com
-  [Überblick über Hudson]: #overview
-  [Vorteile der Verwendung des Blob-Dienstes]: #benefits
+  [Übersicht über Hudson]: #overview
+  [Vorteile der Verwendung des Blob-Diensts]: #benefits
   [Voraussetzungen]: #prerequisites
-  [Verwenden des Blob-Dienstes mit Hudson CI]: #howtouse
-  [Installieren des Azure-Speicher-Plug-Ins]: #howtoinstall
-  [Konfigurieren des Azure-Speicher-Plug-Ins für die Verwendung Ihres Speicherkontos]: #howtoconfigure
+  [Verwenden des Blob-Diensts mit Hudson CI]: #howtouse
+  [Installation des Azure Storage-Plug-Ins]: #howtoinstall
+  [Konfigurieren des Azure Storage-Plug-Ins für die Verwendung Ihres Speicherkontos]: #howtoconfigure
   [Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt]: #howtocreatepostbuild
-  [Erstellen eines Buildschritts für das Herunterladen des Azure-Blobspeichers]: #howtocreatebuildstep
+  [Erstellen eines Buildschritts für das Herunterladen des Azure-Blob-Speichers]: #howtocreatebuildstep
   [Vom Blob-Dienst verwendete Komponenten]: #components
-  [Meet Hudson]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
   [Erstellen eines Speicherkontos]: http://go.microsoft.com/fwlink/?LinkId=279823
-  [Grundlegendes zu Block-BLOBs und Seiten-BLOBs]: http://msdn.microsoft.com/de-de/library/windowsazure/ee691964.aspx
+  [Meet Hudson]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
+  [ms-open-tech]: http://msopentech.com
+
+\n<!--HONumber=35.1--> 

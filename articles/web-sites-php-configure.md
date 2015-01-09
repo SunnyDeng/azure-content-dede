@@ -1,6 +1,6 @@
-﻿<properties title="How to Configure PHP in Azure Websites" pageTitle="So konfigurieren Sie PHP in Azure-Websites" metaKeywords="Azure, Azure-Websites, Konfiguration, PHP" description="Learn how to configure the default PHP installation or add a custom PHP installation in Azure Websites." services="Web Sites" documentationCenter="PHP" authors="cephalin" manager="wpickett" />
+﻿<properties title="How to Configure PHP in Azure Websites" pageTitle="Konfigurieren von PHP in Azure-Websites" metaKeywords="Azure, Azure Web Sites, configuration, PHP" description="Learn how to configure the default PHP installation or add a custom PHP installation in Azure Websites." services="Web Sites" documentationCenter="PHP" authors="tomfitz" manager="wpickett" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin" />
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/18/2014" ms.author="tomfitz" />
 
 #Konfigurieren von PHP in Azure-Websites
 
@@ -9,16 +9,16 @@ In diesem Leitfaden erfahren Sie, wie Sie die integrierte PHP-Laufzeit in Azure-
 ##Inhaltsverzeichnis
 
 * [Was ist Azure-Websites?](#WhatIs)
-* [Gewusst wie: Ändern der Standard-PHP-Konfiguration](#ChangeBuiltInPHP)
-* [Gewusst wie: Aktivieren von Erweiterungen in der integrierten PHP-Laufzeit](#EnableExtDefaultPHP)
-* [Gewusst wie: Verwenden einer benutzerdefinierten PHP-Laufzeit](#UseCustomPHP)
+* [Vorgehensweise: Ändern der Standard-PHP-Konfiguration](#ChangeBuiltInPHP)
+* [Vorgehensweise: Aktivieren von Erweiterungen in der integrierten PHP-Laufzeit](#EnableExtDefaultPHP)
+* [Vorgehensweise: Verwenden einer benutzerdefinierten PHP-Laufzeit](#UseCustomPHP)
 * [Nächste Schritte](#NextSteps)
 
 <h2><a name="WhatIs"></a>Was ist Azure-Websites?</h2>
 Azure-Websites ermöglicht Ihnen das Erstellen hoch skalierbarer Websites in Azure. Sie können schnell und einfach Websites in einer hochgradig skalierbaren Cloud-Umgebung bereitstellen, mit der Sie klein beginnen und dann aufskalieren können, wenn mehr Datenverkehr ansteht. Azure-Websites verwendet die Sprachen und Open-Source-Anwendungen Ihrer Wahl und unterstützt die Bereitstellung mit Git, FTP und TFS. Sie können einfach andere Dienste wie MySQL, SQL Database, Caching, CDN und Storage integrieren.
 
-<h2><a name="ChangeBuiltInPHP"></a>Gewusst wie: Ändern der integrierten PHP-Konfiguration</h2>
-PHP 5.4 ist standardmäßig installiert und kann sofort verwendet werden, wenn Sie eine Azure-Website erstellen. Die beste Möglichkeit, um die verfügbare Versionsrevision, die Standardkonfiguration und die aktivierten Erweiterungen anzuzeigen, ist die Bereitstellung eines Skripts, das die Funktion [phpinfo()] aufruft.
+<h2><a name="ChangeBuiltInPHP"></a>Vorgehensweise: Ändern der integrierten PHP-Konfiguration</h2>
+PHP 5.4 ist standardmäßig installiert und kann sofort verwendet werden, wenn Sie eine Azure-Website erstellen. Die beste Möglichkeit, um die verfügbare Versionsrevision, die Standardkonfiguration und die aktivierten Erweiterungen anzuzeigen, ist die Bereitstellung eines Skripts, das die Funktion [phpinfo()] abruft.
 
 PHP 5.5 ist ebenfalls verfügbar, aber nicht standardmäßig aktiviert. Gehen Sie folgendermaßen vor, um dies zu aktivieren:
 
@@ -37,28 +37,28 @@ PHP 5.5 ist ebenfalls verfügbar, aber nicht standardmäßig aktiviert. Gehen Si
 Für jede der integrierten PHP-Laufzeiten können Sie alle Konfigurationsoptionen ändern, die keine Direktiven nur auf Systemebene sind, indem Sie folgende Schritte ausführen. (Informationen zu Direktiven nur auf Systemebene finden Sie unter [Liste der php.ini-Direktiven].)
 
 1. Fügen Sie eine [.user.ini]-Datei zum Stammverzeichnis hinzu.
-1. Fügen Sie die Konfigurationseinstellungen zur Datei ".user.ini" hinzu, und verwenden Sie dieselbe Syntax wie für eine "php.ini"-Datei. Wenn Sie zum Beispiel die Einstellung "display_errors" aktivieren möchten und die Einstellung "upload_max_filesize" auf 10M festlegen möchten, würde die Datei "user.ini" folgenden Text enthalten:
+1. Fügen Sie die Konfigurationseinstellungen zur Datei `.user.ini` hinzu, und verwenden Sie dieselbe Syntax wie für eine `php.ini`-Datei. Wenn Sie zum Beispiel die Einstellung `display_errors` aktivieren möchten und die Einstellung `upload_max_filesize` auf 10M festlegen möchten, würde die Datei `.user.ini` diesen Text enthalten:
 
 		; Example Settings
 		display_errors=On
 		upload_max_filesize=10M
 
 1. Stellen Sie die Anwendung bereit.
-1. Starten Sie Ihre Website neu. (Der Neustart ist erforderlich, da die Frequenz, mit der PHP ".user.ini"-Dateien liest, durch die Einstellung "user_ini.cache_ttl" geregelt wird. Dies ist eine Einstellung auf Systemebene und beträgt standardmäßig 300 Sekunden (5 Minuten). Durch einen Neustart der Website wird PHP gezwungen, die neuen Einstellungen in der Datei ".user.ini" zu lesen.)
+1. Starten Sie Ihre Website neu. (Der Neustart ist erforderlich, da die Frequenz, mit der PHP `.user.ini`-Dateien liest, durch die Einstellung `user_ini.cache_ttl`l geregelt wird. Dies ist eine Einstellung auf Systemebene und beträgt standardmäßig 300 Sekunden (5 Minuten). Durch einen Neustart der Website wird PHP gezwungen, die neuen Einstellungen in der Datei `.user.ini` zu lesen.)
 
-Alternativ zur Verwendung einer ".user.ini"-Datei können Sie auch die Funktion [ini_set()] in Skripten verwenden, um Konfigurationsoptionen festzulegen, die keine Direktiven auf Systemebene sind.
+Alternativ zur Verwendung einer `.user.ini`-Datei können Sie auch die Funktion [ini_set()] in Skripts verwenden, um Konfigurationsoptionen festzulegen, die keine Direktiven auf Systemebene sind.
 
-<h2><a name="EnableExtDefaultPHP"></a>Gewusst wie: Aktivieren von Erweiterungen in Standard-PHP-Laufzeit</h2>
-Wie im vorherigen Anschnitt angegeben ist die beste Möglichkeit zum Anzeigen der Standard-PHP-Version, der Standardkonfiguration und der aktivierten Erweiterungen die Bereitstellung eines Skripts, das [phpinfo()] aufruft. Um zusätzliche Erweiterungen zu aktivieren, folgen Sie den Schritten unten.
+<h2><a name="EnableExtDefaultPHP"></a>Vorgehensweise: Aktivieren von Erweiterungen in Standard-PHP-Laufzeit</h2>
+Wie im vorherigen Anschnitt angegeben ist die Standardkonfiguration die beste Möglichkeit, um die Standard-PHP-Version anzuzeigen, und die aktivierten Erweiterungen dienen zur Bereitstellung eines Skripts, das [phpinfo()] abruft. Um zusätzliche Erweiterungen zu aktivieren, folgen Sie den Schritten unten.
 
-1. Fügen Sie ein "bin"-Verzeichnis zum Stammverzeichnis hinzu.
-1. Platzieren Sie Dateien mit der Erweiterung ".dll" im Verzeichnis "bin" (z. B. "php_mongo.dll"). Stellen Sie sicher, dass die Erweiterungen mit der Standardversion von PHP kompatibel sind (welche zu diesem Zeitpunkt PHP 5.4 ist) und kompatibel mit VC9 sowie nicht threadsicher (non-thread-safe, nts) sind.
+1. Fügen Sie ein `bin`-Verzeichnis zum Stammverzeichnis hinzu.
+1. Verschieben Sie `.dll`-Erweiterungsdateien in das Verzeichnis bin (zum Beispiel `php_mongo.dll`). Stellen Sie sicher, dass die Erweiterungen mit der Standardversion von PHP kompatibel sind (welche zu diesem Zeitpunkt PHP 5.4 ist) und kompatibel mit VC9 sowie nicht threadsicher (non-thread-safe, nts) sind.
 1. Stellen Sie die Anwendung bereit.
-1. Navigieren Sie zum Website-Dashboard im Azure-Portal, und klicken Sie auf **Konfigurieren**.
+1. Navigieren Sie zum Website-Dashboard im Azure-Portal, und klicken Sie auf **Configure**.
 
 	![Configure tab on Web Sites dashboard][configure]
 
-1. Erstellen Sie im Abschnitt **App-Einstellungen** den Schlüssel **PHP_EXTENSIONS** und den Wert **bin\your-ext-file**. Um mehrfache Erweiterungen zu aktivieren, fügen Sie eine durch Kommas getrennte Liste von ".dll"-Dateien hinzu.
+1. Erstellen Sie im Abschnitt **App-Einstellungen** den Schlüssel **PHP_EXTENSIONS** und den Wert **bin\your-ext-file**. Um mehrfache Erweiterungen zu aktivieren, fügen Sie eine durch Kommas getrennte Liste von `.dll`-Dateien hinzu.
 
 	![Enable extension in app settings][app-settings]
 
@@ -66,19 +66,19 @@ Wie im vorherigen Anschnitt angegeben ist die beste Möglichkeit zum Anzeigen de
 
 	![Save configuration settings][save-button]
 
-<h2><a name="UseCustomPHP"></a>Gewusst wie: Verwenden einer benutzerdefinierten PHP-Laufzeit</h2>
-Anstelle der Standard-PHP-Laufzeit kann Azure-Websites auch eine PHP-Laufzeit verwenden, die Sie für die Ausführung von PHP-Skripts angeben. Die Laufzeit, die Sie angeben, kann durch eine "php.ini"-Datei konfiguriert werden, die Sie ebenfalls bereitstellen. Folgen Sie den Schritten unten, um eine benutzerdefinierte PHP-Laufzeit in Azure-Websites zu verwenden.
+<h2><a name="UseCustomPHP"></a>Vorgehensweise: Verwenden einer benutzerdefinierten PHP-Laufzeit</h2>
+Anstelle der Standard-PHP-Laufzeit kann Azure-Websites auch eine PHP-Laufzeit verwenden, die Sie für die Ausführung von PHP-Skripts angeben. Die Laufzeit, die Sie angeben, kann durch eine `php.ini`-Datei konfiguriert werden, die Sie ebenfalls bereitstellen. Folgen Sie den Schritten unten, um eine benutzerdefinierte PHP-Laufzeit in Azure-Websites zu verwenden.
 
 1. Besorgen Sie sich eine nicht threadsichere, VC9-kompatible Version von PHP für Windows. Neuere Versionen von PHP für Windows finden Sie hier: [http://windows.php.net/download/]. Ältere Versionen finden Sie hier im Archiv: [http://windows.php.net/downloads/releases/archives/].
-1. Ändern Sie die Datei "php.ini" für Ihre Laufzeit. Beachten Sie, dass Konfigurationseinstellungen, die reine Systemebenendirektiven sind, von Azure-Websites ignoriert werden. (Informationen zu Direktiven nur auf Systemebene finden Sie unter [Liste der php.ini-Direktiven]).
-1. Optional können Sie Ihrer PHP-Laufzeit auch Erweiterungen hinzufügen und diese in der Datei "php.ini" aktivieren.
-1. Fügen Sie das Verzeichnis "bin" zum Stammverzeichnis hinzu, und legen Sie das Verzeichnis, das die PHP-Laufzeit enthält, hinein (zum Beispiel "bin\php").
+1. Ändern Sie die `php.ini`-Datei für die gewünschte Laufzeit. Beachten Sie, dass Konfigurationseinstellungen, die reine Systemebenendirektiven sind, von Azure-Websites ignoriert werden. (Informationen zu Direktiven nur auf Systemebene finden Sie unter [Liste der php.ini-Direktiven].)
+1. Optional können Sie auch Erweiterungen zu Ihrer PHP-Laufzeit hinzufügen und diese in der Datei `php.ini` aktivieren.
+1. Fügen Sie das Verzeichnis `bin` zum Stammverzeichnis hinzu, und legen Sie das Verzeichnis, das die PHP-Laufzeit enthält, hinein (zum Beispiel `bin\php`).
 1. Stellen Sie die Anwendung bereit.
-1. Navigieren Sie zum Website-Dashboard im Azure-Portal, und klicken Sie auf **Konfigurieren**.
+1. Navigieren Sie zum Website-Dashboard im Azure-Portal, und klicken Sie auf **Configure**.
 
 	![Configure tab on Web Sites dashboard][configure]
 
-1. Fügen Sie im Abschnitt **handler mappings** "*.php" zu EXTENSION hinzu, und fügen Sie den Pfad zur ausführbaren Datei "php-cgi.exe" hinzu. Wenn Sie die PHP-Laufzeit in das "bin"-Verzeichnis im Stammverzeichnis der Anwendung gelegt haben, ist der Pfad "D:\home\site\wwwroot\bin\php\php-cgi.exe".
+1. Fügen Sie im Abschnitt **handler mappings** `*.php` zu EXTENSION hinzu, und fügen Sie den Pfad zur ausführbaren Datei `php-cgi.exe` hinzu. Wenn Sie die PHP-Laufzeit in das `bin`-Verzeichnis im Stammverzeichnis der Anwendung gelegt haben, ist der Pfad `D:\home\site\wwwroot\bin\php\php-cgi.exe`.
 
 	![Specify handler in hander mappings][handler-mappings]
 
@@ -93,19 +93,20 @@ Nachdem Sie jetzt wissen, wie Sie PHP auf Azure-Websites konfigurieren, können 
 - [Herunterladen des Azure SDK für PHP]
 
 
-[kostenlose Testversion]: https://www.windowsazure.com/en-us/pricing/free-trial/
-[PHP Developer Center - Lernprogramme]: https://www.windowsazure.com/en-us/develop/php/tutorials/
-[Konfigurieren von Websites]: https://www.windowsazure.com/en-us/manage/services/web-sites/how-to-configure-websites/
+[Kostenloser Testzeitraum]: https://www.windowsazure.com/de-de/pricing/free-trial/
+[PHP Developer Center Lernprogramme]: https://www.windowsazure.com/de-de/develop/php/tutorials/
+[Konfigurieren von Websites]: https://www.windowsazure.com/de-de/manage/services/web-sites/how-to-configure-websites/
 [phpinfo()]: http://php.net/manual/en/function.phpinfo.php
 [select-php-version]: ./media/web-sites-php-configure/select-php-version.png
-[List of php.ini directives]: http://www.php.net/manual/en/ini.list.php
+[Liste von php.ini Direktiven]: http://www.php.net/manual/en/ini.list.php
 [.user.ini]: http://www.php.net/manual/en/configuration.file.per-user.php
 [ini_set()]: http://www.php.net/manual/en/function.ini-set.php
-[configure]: ./media/web-sites-php-configure/configure.png
+[Konfigurieren]: ./media/web-sites-php-configure/configure.png
 [app-settings]: ./media/web-sites-php-configure/app-settings.png
 [save-button]: ./media/web-sites-php-configure/save-button.png
 [http://windows.php.net/download/]: http://windows.php.net/download/
 [http://windows.php.net/downloads/releases/archives/]: http://windows.php.net/downloads/releases/archives/
 [handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png
-[Configure, monitor, and scale your web sites in Azure (Konfigurieren, Überwachen und Skalieren von Websites in Azure, in englischer Sprache)]: http://www.windowsazure.com/en-us/manage/services/web-sites/
-[Herunterladen des Azure SDK für PHP]: http://www.windowsazure.com/en-us/develop/php/common-tasks/download-php-sdk/
+[Configure, monitor, and scale your web sites in Azure (Konfigurieren, Überwachen und Skalieren von Websites in Azure, in englischer Sprache)]: http://www.windowsazure.com/de-de/manage/services/web-sites/
+[Herunterladen des Azure SDK für PHP]: http://www.windowsazure.com/de-de/develop/php/common-tasks/download-php-sdk/
+\n<!--HONumber=35.1--> 

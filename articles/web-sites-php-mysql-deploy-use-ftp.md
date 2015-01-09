@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Web w/ MySQL + FTP" pageTitle="PHP-Website mit MySQL und FTP - Azure-Lernprogramm" metaKeywords="" description="A tutorial that demonstrates how to create a PHP website that stores data in MySQL and use FTP deployment to Azure." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a PHP-MySQL Azure Website and Deploy Using FTP" authors="cephalin" solutions="" manager="wpickett" editor="" />
+﻿<properties urlDisplayName="Web w/ MySQL + FTP" pageTitle="PHP-Website mit MySQL und FTP - Azure_Lernprogramm" metaKeywords="" description="A tutorial that demonstrates how to create a PHP website that stores data in MySQL and use FTP deployment to Azure." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a PHP-MySQL Azure Website and Deploy Using FTP" authors="tomfitz" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="cephalin" />
+<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/14/2014" ms.author="tomfitz" />
 
 
 #Erstellen einer PHP-MySQL-Azure-Website und Bereitstellen über FTP
@@ -22,24 +22,24 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die 
 
 Führen Sie die folgenden Schritte aus, um eine Azure-Website und eine MySQL-Datenbank zu erstellen:
 
-1. Melden Sie sich am [Azure-Verwaltungsportal][management-portal] an.
+1. Melden Sie sich beim [Azure-Verwaltungsportal][management-portal] an.
 2. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
 
 	![Create New Azure Web Site][new-website]
 
-3. Klicken Sie auf **WEBSITE** und dann auf **BENUTZERDEFINIERT ERSTELLEN**.
+3. Klicken Sie auf**WEBSITE**, dann auf **BENUTZERDEFINIERT ERSTELLEN**.
 
 	![Custom Create a new Web Site][custom-create]
 	
-	Geben Sie einen Wert für **URL** ein, und wählen Sie **Neue MySQL-Datenbank erstellen** aus der Dropdownliste **DATENBANK** und das Rechenzentrum für Ihre Website aus der Dropdownliste **REGION** aus. Klicken Sie unten im Dialogfeld auf den Pfeil.
+	Geben Sie einen Wert für **URL** ein, und wählen Sie **Neue MySQL-Datenbank erstellen** in der Dropdownliste **DATENBANK** und das Rechenzentrum für Ihre Website in der Dropdownliste **REGION** aus. Klicken Sie unten im Dialogfeld auf den Pfeil.
 
 	![Fill in Web Site details][website-details]
 
-4. Geben Sie einen Wert für den **NAMEN** Ihrer Datenbank ein, wählen Sie das Datencenter für Ihre Datenbank aus der Dropdownliste **REGION** aus, und aktivieren Sie das Kontrollkästchen zur Zustimmung zu den rechtlichen Bedingungen. Klicken Sie auf das Häkchen unten im Dialogfeld.
+4. Geben Sie einen Wert für den **NAMEN** Ihrer Datenbank ein, wählen Sie das Rechenzentrum für Ihre Datenbank aus der Dropdownliste **REGION** aus, und aktivieren Sie das Kontrollkästchen zur Zustimmung zu den rechtlichen Bedingungen. Klicken Sie auf das Häkchen unten im Dialogfeld.
 
 	![Create new MySQL database][new-mysql-db]
 
-	Nachdem die Website erstellt wurde, wird der Text **Die Erstellung der Website "[WEBSITENAME]" wurde erfolgreich abgeschlossen** angezeigt. Nun können Sie die FTP-Veröffentlichung aktivieren.
+	Nachdem die Website erstellt wurde, wird der Text **Die Erstellung der Website '[WEBSITENAME]' wurde erfolgreich abgeschlossen** angezeigt. Nun können Sie die FTP-Veröffentlichung aktivieren.
 
 5. Klicken Sie auf den Namen der Website, der in der Liste der Websites aufgeführt ist, um das Dashboard **SCHNELLSTART** der Website zu öffnen.
 
@@ -63,13 +63,13 @@ Die Registrierungsanwendung ist eine einfache PHP-Anwendung, die Ihnen die Regis
 
 Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen und auszuführen. Beachten Sie, dass Voraussetzung für diese Schritte ist, dass PHP, MySQL und ein Webserver auf Ihrem lokalen Computer eingerichtet sind und die [PDO-Erweiterung für MySQL][pdo-mysql] aktiviert ist.
 
-1. Erstellen Sie eine MySQL-Datenbank namens "registration". Sie können dies in der MySQL-Eingabeaufforderung mit diesem Befehl ausführen:
+1. Erstellen Sie eine MySQL-Datenbank namens `registration`. Sie können dies in der MySQL-Eingabeaufforderung mit diesem Befehl ausführen:
 
 		mysql> create database registration;
 
-2. Erstellen Sie im Stammverzeichnis Ihres Webservers einen Ordner mit dem Namen "registration", und erstellen Sie darin zwei Dateien mit den Namen "createtable.php" und "index.php".
+2. Erstellen Sie im Stammverzeichnis Ihres Webservers einen Ordner mit dem Namen `registration`, und erstellen Sie darin zwei Dateien mit den Namen `createtable.php` und `index.php`.
 
-3. Öffnen Sie die Datei "createtable.php" in einem Texteditor oder IDE, und fügen Sie den folgenden Code hinzu. Dieser Code wird verwendet, um die Tabelle "registration_tbl" in der Datenbank "registration" zu erstellen.
+3. Öffnen Sie die Datei `createtable.php` in einem Texteditor oder IDE, und fügen Sie den folgenden Code hinzu. Dieser Code wird verwendet, um die Tabelle `registration_tbl` in der Datenbank `registration` zu erstellen.
 
 		<?php
 		// DB connection info
@@ -95,9 +95,9 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 		?>
 
 	> [WACOM.NOTE] 
-	> Sie müssen die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
+	> Auch hier müssen Sie die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
 
-4. Öffnen Sie einen Webbrowser und navigieren Sie zu [http://localhost/registration/createtable.php][localhost-createtable]. Dadurch wird die Tabelle "registration_tbl" in der Datenbank erstellt.
+4. Öffnen Sie einen Webbrowser und navigieren Sie zu [http://localhost/registration/createtable.php][localhost-createtable]. Dadurch wird die Tabelle `registration_tbl` in der Datenbank erstellt.
 
 5. Öffnen Sie die Datei **index.php** in einem Texteditor oder IDE, und fügen Sie den Basis-HTML- und CSS-Code für die Seite hinzu (der PHP-Code wird in einem späteren Schritt hinzugefügt).
 
@@ -119,8 +119,8 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 		</style>
 		</head>
 		<body>
-		<h1>Registrieren Sie sich hier!</h1>
-		<p>Geben Sie Ihren Namen und Ihre E-Mail-Adresse ein, und klicken Sie auf <strong>Senden</strong>, um sich zu registrieren.</p>
+		<h1>Register here!</h1>
+		<p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
 		<form method="post" action="index.php" enctype="multipart/form-data" >
 		      Name  <input type="text" name="name" id="name"/></br>
 		      Email <input type="text" name="email" id="email"/></br>
@@ -132,7 +132,7 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 		</body>
 		</html>
 
-6. Fügen Sie innerhalb der PHP-Tags PHP-Code für die Verbindung zur Datenbank hinzu.
+6. Innerhalb der PHP-Tags add PHP code for connecting to the database.
 
 		// DB connection info
 		$host = "localhost";
@@ -140,7 +140,7 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 		$pwd = "password";
 		$db = "registration";
 		// Connect to database.
-		try{
+		try {
 			$conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
 			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 		}
@@ -149,12 +149,12 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 		}
 
 	> [WACOM.NOTE]
-	> Sie erneut müssen die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
+	> müssen Sie die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
 
 7. Fügen Sie nach dem Datenbankverbindungscode den Code für die Eingabe der Registrierungsinformationen in die Datenbank hinzu.
 
 		if(!empty($_POST)) {
-		try{
+		try {
 			$name = $_POST['name'];
 			$email = $_POST['email'];
 			$date = date("Y-m-d");
@@ -167,10 +167,10 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 			$stmt->bindValue(3, $date);
 			$stmt->execute();
 		}
-		catch(Exception $e){
+		catch(Exception $e) {
 			die(var_dump($e));
 		}
-		echo "<h3>Sie sind registriert!</h3>";
+		echo "<h3>Your're registered!</h3>";
 		}
 
 8. Fügen Sie nach dem obigen Code den Code für das Abrufen der Daten von der Datenbank hinzu.
@@ -179,19 +179,19 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 		$stmt = $conn->query($sql_select);
 		$registrants = $stmt->fetchAll(); 
 		if(count($registrants) > 0) {
-			echo "<h2>Registrierte Personen:</h2>";
+			echo "<h2>People who are registered:</h2>";
 			echo "<table>";
 			echo "<tr><th>Name</th>";
-			echo "<th>E-Mail</th>";
-			echo "<th>Datum</th></tr>";
+			echo "<th>Email</th>";
+			echo "<th>Date</th></tr>";
 			foreach($registrants as $registrant) {
 				echo "<tr><td>".$registrant['name']."</td>";
 				echo "<td>".$registrant['email']."</td>";
 				echo "<td>".$registrant['date']."</td></tr>";
 		    }
-			echo "</table>";
+		 	echo "</table>";
 		} else {
-			echo "<h3>Derzeit ist niemand registriert.</h3>";
+			echo "<h3>No one is currently registered.</h3>";
 		}
 
 Nun können Sie [http://localhost/registration/index.php][localhost-index] aufrufen, um die Anwendung zu testen.
@@ -200,29 +200,29 @@ Nun können Sie [http://localhost/registration/index.php][localhost-index] aufru
 
 Für die Herstellung einer Verbindung mit der auf Azure-Websites ausgeführten MySQL-Datenbank benötigen Sie die Verbindungsinformationen. Befolgen Sie die folgenden Schritte, um MySQL-Verbindungsinformationen abzurufen:
 
-1. Klicken Sie im Dashboard Ihrer Website auf den Link **Verbindungszeichenfolgen anzeigen** rechts auf der Seite:
+1. Klicken Sie im Dashboard Ihrer Website auf den Link **Verbindungszeichenfolge anzeigen** rechts auf der Seite:
 
 	![Get database connection information][connection-string-info]
 	
-2. Notieren Sie die Werte für "Datenbank", "Datenquelle", Benutzer-ID" und "Kennwort".
+2. Notieren Sie sich die Werte für `Database`, `Data Source`, `User Id` und `Password`.
 
 3. Klicken Sie im Dashboard Ihrer Website auf den Link **Veröffentlichungsprofil herunterladen** rechts unten auf der Seite:
 
 	![Download publish profile][download-publish-profile]
 
-4. Öffnen Sie die Datei ".publishsettings" in einem XML-Editor. 
+4. Öffnen Sie die Datei `.publishsettings` in einem XML-Editor. 
 
-3. Suchen Sie das Element "<publishProfile >" mit "publishMethod="FTP"", das in etwa wie folgt aussieht:
+3. Suchen Sie das Element `<publishProfile >` mit `publishMethod="FTP"`, das ungefähr so aussieht:
 
 		<publishProfile publishMethod="FTP" publishUrl="ftp://[mysite].azurewebsites.net/site/wwwroot" ftpPassiveMode="True" userName="[username]" userPWD="[password]" destinationAppUrl="http://[name].antdf0.antares-test.windows-int.net" 
 			...
 		</publishProfile>
 	
-Notieren Sie sich die Attribute "publishUrl", "userName" und "userPWD".
+Notieren Sie sich die Attribute `publishUrl`, `userName` und `userPWD`.
 
 ##Veröffentlichen der Anwendung
 
-Nachdem Sie Ihre Anwendung lokal getestet haben, können Sie sie über FTP auf Ihrer Azure-Website veröffentlichen. Sie müssen jedoch zuerst die Datenbankverbindungsinformationen in der Anwendung aktualisieren. Aktualisieren Sie mithilfe der Datenbankverbindungsinformationen, die Sie zuvor erhalten haben (im Abschnitt **Abrufen der Verbindungsinformationen für MySQL und FTP**), folgende Informationen in **beiden** Dateien "createdatabase.php" und "index.php" mit den entsprechenden Werten:
+Nachdem Sie Ihre Anwendung lokal getestet haben, können Sie sie über FTP auf Ihrer Azure-Website veröffentlichen. Sie müssen jedoch zuerst die Datenbankverbindungsinformationen in der Anwendung aktualisieren. Aktualisieren Sie mithilfe der Datenbankverbindungsinformationen, die Sie zuvor erhalten haben (im Abschnitt **Abrufen von MYSQL- und FTP-Verbindungsinformationen**), folgende Informationen in **sowohl** der Datei `createdatabase.php` als auch in `index.php`mit den entsprechenden Werten:
 
 	// DB connection info
 	$host = "value of Data Source";
@@ -234,15 +234,15 @@ Jetzt können Sie die Anwendung jetzt mithilfe von FTP veröffentlichen.
 
 1. Öffnen Sie den FTP-Client Ihrer Wahl.
 
-2. Geben Sie den *Hostnameteil* des Attributs "publishUrl" ein, das Sie oben im FTP-Client notiert haben.
+2. Geben Sie den *Hostnameteil* des Attributs `publishUrl` ein, das Sie oben im FTP-Client notiert haben.
 
-3. Geben Sie die Attribute "userName" und "userPWD", die Sie oben notiert haben, unverändert im FTP-Client ein.
+3. Geben Sie die Attribute `userName` und `userPWD` ein, die Sie oben unverändert im FTP-Client notiert haben.
 
 4. Stellen Sie eine Verbindung her.
 
-Nachdem Sie eine Verbindung hergestellt haben, können Sie Dateien beliebig hoch- und herunterladen. Achten Sie darauf, dass Sie Dateien in das Stammverzeichnis "/site/wwwroot" hochladen.
+Nachdem Sie eine Verbindung hergestellt haben, können Sie Dateien beliebig hoch- und herunterladen. Achten Sie darauf, dass Sie Dateien in das Stammverzeichnis `/site/wwwroot` hochladen.
 
-Nachdem Sie sowohl "index.php" als auch "createtable.php" hochgeladen haben, navigieren Sie zu **http://[Websitename].azurewebsites.net/createtable.php**, um die MySQL-Tabelle für die Anwendung zu erstellen. Navigieren Sie anschließend zu **http://[Websitename].azurewebsites.net/index.php**, um die Anwendung zu nutzen.
+Nachdem Sie sowohl `index.php` als auch `createtable.php` hochgeladen haben, navigieren Sie zu **http://[Websitename].azurewebsites.net/createtable.php**, um die MySQL-Tabelle für die Anwendung zu erstellen. Navigieren Sie anschließend zu **http://[Websitename].azurewebsites.net/index.php**, um die Anwendung zu nutzen.
  
 
 [install-php]: http://www.php.net/manual/en/install.php
@@ -263,3 +263,4 @@ Nachdem Sie sowohl "index.php" als auch "createtable.php" hochgeladen haben, nav
 [connection-string-info]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/connection_string_info.png
 [management-portal]: https://manage.windowsazure.com
 [download-publish-profile]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/download_publish_profile_2.png
+\n<!--HONumber=35.1--> 

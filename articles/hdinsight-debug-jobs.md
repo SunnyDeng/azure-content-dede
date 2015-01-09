@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Debug HDInsight Hadoop Errors" pageTitle="Debuggen von Hadoop in HDInsight: Fehlermeldungen | Azure" metaKeywords="hdinsight, hdinsight service, hdinsight azure, debug, error messages, errors" description="Learn about the error messages you might receive when administering HDInsight using PowerShell, and steps you can take to recover." services="hdinsight" title="Debug Hadoop in HDInsight: Error messages" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="bradsev" />
+﻿c<properties urlDisplayName="Debug HDInsight Hadoop Errors" pageTitle="Debuggen von Hadoop in HDInsight: Fehlermeldungen | Azure" metaKeywords="hdinsight, hdinsight service, hdinsight azure, debug, error messages, errors" description="Learn about the error messages you might receive when administering HDInsight using PowerShell, and steps you can take to recover." services="hdinsight" title="Debug Hadoop in HDInsight: Error messages" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="bradsev" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
+<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/10/2014" ms.author="bradsev" />
 
 # Debuggen von Hadoop in HDInsight: Fehlermeldungen
 
@@ -11,7 +11,7 @@ Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wen
 
 ![HDI.Debugging.ErrorMessages.Portal][image-hdi-debugging-error-messages-portal]
 
-Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoßen kann, sind unter [HDInsight-Fehler](#hdinsight-error-messages) alphabetisch nach Name aufgeführt. Sie sind mit dem entsprechenden Eintrag im Abschnitt mit der [Beschreibung und Lösung der Fehler](#discription-mitigation-errors) verknüpft, der die folgenden Informationen zu dem Fehler enthält:
+Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoßen kann, sind im Abschnitt [HDInsight-Fehler](#hdinsight-error-messages) alphabetisch nach Name aufgeführt. Sie sind mit dem entsprechenden Eintrag im Abschnitt mit der [Beschreibung und Lösung der Fehler](#discription-mitigation-errors) verknüpft, der die folgenden Informationen zu dem Fehler enthält:
  	
 - **Beschreibung**: angezeigte Fehlermeldung	
 - **Lösung**: Schritte, die zur Problembehebung unternommen werden können 
@@ -34,7 +34,7 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 [FailureToUpdateDeploymentStatus](#FailureToUpdateDeploymentStatus)		
 [HdiRestoreClusterAltered](#HdiRestoreClusterAltered)	
 [HeadNodeConfigNotFound](#HeadNodeConfigNotFound)	
-[HeadNodeConfigNotFound](#HeadNodeConfigNotFound)	
+[HeadNodeConfigNotFound](#HeadNodeConfigNotFound)	 
 [HostedServiceCreationFailure](#HostedServiceCreationFailure)	
 [HostedServiceHasProductionDeployment](#HostedServiceHasProductionDeployment)	
 [HostedServiceNotFound](#HostedServiceNotFound)		
@@ -82,7 +82,7 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 - **Lösung**: Wiederholen Sie den Vorgang. 
 
 <h3><a id="ClusterDnsNameInvalidReservedWord"></a>ClusterDnsNameInvalidReservedWord</h3>
-- **Beschreibung**: Cluster-DNS-Name *IhrDnsName* ist ungültig. Stellen Sie sicher, dass der Name mit einem alphanumerischen Zeichen beginnt und endet. Er darf nur das Sonderzeichen "-" enthalten. 
+- **Beschreibung**: Cluster-DNS-Name *IhrDnsName* ist ungültig. Stellen Sie sicher, dass der Name mit einem alphanumerischen Zeichen beginnt und endet. Er darf nur das Sonderzeichen "-" enthalten.  
 - **Lösung**: Vergewissern Sie sich, dass Sie für Ihren Cluster einen gültigen DNS-Namen verwenden, der mit einem alphanumerischen Zeichen beginnt und endet und keine anderen Sonderzeichen als den Bindestrich "-" enthält. Wiederholen Sie dann den Vorgang.
 
 <h3><a id="ClusterNameUnavailable"></a>ClusterNameUnavailable</h3>
@@ -99,7 +99,7 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 - **Lösung**: Geben Sie einen gültigen Clusterbenutzernamen ein, und wiederholen Sie den Vorgang.
 
 <h3><a id="ClusterUserNameInvalidReservedWord"></a>ClusterUserNameInvalidReservedWord</h3>
-- **Beschreibung**: Der Cluster-DNS-Name *IhrDnsClustername* ist ungültig. Stellen Sie sicher, dass der Name mit einem alphanumerischen Zeichen beginnt und endet. Er darf nur das Sonderzeichen "-" enthalten. 
+- **Beschreibung**: Der Cluster-DNS-Name *IhrDnsClustername* ist ungültig. Stellen Sie sicher, dass der Name mit einem alphanumerischen Zeichen beginnt und endet. Er darf nur das Sonderzeichen "-" enthalten.  
 - **Lösung**: Geben Sie einen gültigen DNS-Clusterbenutzernamen ein, und wiederholen Sie den Vorgang.
 
 <h3><a id="ContainerNameMisMatchWithDnsName"></a>ContainerNameMisMatchWithDnsName</h3>
@@ -111,10 +111,10 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 - **Lösung**: Wiederholen Sie den Vorgang.
 
 <h3><a id="DeploymentDeletionFailure"></a>DeploymentDeletionFailure</h3> 	
-- **Beschreibung**: Das Löschen der Bereitstellung ist für den Cluster fehlgeschlagen.
+- **Beschreibung**: Das Löschen der Bereitstellung ist für den Cluster fehlgeschlagen.  
 - **Lösung**: Führen Sie den Löschvorgang erneut aus.
 
-<h3><a id="DnsMappingNotFound"></a>DnsMappingNotFound</h3>	
+<h3><a id="DnsMappingNotFound"></a>DnsMappingNotFound</h3> 
 - **Beschreibung**: Fehler bei der Dienstkonfiguration. Die erforderlichen DNS-Zuordnungsinformationen wurden nicht gefunden.  
 - **Lösung**: Löschen Sie den Cluster, und erstellen Sie einen neuen Cluster.
 
@@ -123,7 +123,7 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 - **Lösung**: Geben Sie für den Container einen eindeutigen Namen an, und wiederholen Sie den Erstellvorgang. 
 
 <h3><a id="DuplicateClusterInHostedService"></a>DuplicateClusterInHostedService</h3>
-- **Beschreibung**: Der gehostete Dienst *NameIhresgehostetenDienstes* enthält bereits einen Cluster. Ein gehosteter Dienst kann nicht mehrere Cluster enthalten.
+- **Beschreibung**: Der gehostete Dienst *NameIhresgehostetenDienstes* enthält bereits einen Cluster. Ein gehosteter Dienst kann nicht mehrere Cluster enthalten.  
 - **Lösung**: Hosten Sie den Cluster in einem anderen gehosteten Dienst. 
 
 <h3><a id="FailureToUpdateDeploymentStatus"></a>FailureToUpdateDeploymentStatus</h3>
@@ -263,3 +263,4 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 
 
 
+"<!--HONumber=35.1-->" 

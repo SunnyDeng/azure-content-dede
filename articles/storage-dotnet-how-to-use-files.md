@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="File Service" pageTitle="Verwenden des Azure-Dateispeichers | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Learn how to use Microsoft Azure File storage to create file shares and manage file content. Samples are written in PowerShell and C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure File storage in .NET" authors="tamram" manager="adinah" editor="cgronlun" />
+﻿<properties urlDisplayName="File Service" pageTitle="Verwenden des Azure-Dateispeichers | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Learn how to use Microsoft Azure File storage to create file shares and manage file content. Samples are written in PowerShell and C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure File storage in .NET" authors="tamram" manager="adinah" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/10/2014" ms.author="tamram" />
 
 # Verwenden des Azure-Dateispeichers
 
@@ -8,25 +8,25 @@ In diesem Leitfaden für die ersten Schritte veranschaulichen wir die Grundlagen
 
 Für Benutzer, die auf Dateien in einer Freigabe sowohl von einer lokalen Anwendung als auch von einem virtuellen Azure-Computer oder einem Cloud-Dienst aus zugreifen möchten, zeigen wir, wie Sie die Azure-Speicherclientbibliothek für .NET verwenden, um mit der Dateifreigabe von einer Desktopanwendung aus zu arbeiten.
 
-> [WACOM.NOTE] Zur Ausführung der .NET-Codebeispiele in dieser Anleitung ist die Azure-Speicherclientbibliothek für .NET 4.x oder höher erforderlich. Die Speicherclientbibliothek kann unter [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/)abgerufen werden.
+> [WACOM.NOTE] Zur Ausführung der .NET-Codebeispiele in dieser Anleitung ist die Azure .NET Storage Client Library 4.x oder höher erforderlich. Die Storage Client Library ist über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/)verfügbar.
 
 
 ##Inhaltsverzeichnis
 
--   [Was ist der Dateispeicher?][]
--   [Dateispeicher-Konzepte][]
+-   [Was ist Dateispeicher?][]
+-   [Konzepte rund um Dateispeicher][]
 -   [Erstellen eines Azure-Speicherkontos][]
--   [Erstellen einer Dateifreigabe mithilfe von PowerShell ][]
+-   [Erstellen einer Dateifreigabe mithilfe von PowerShell][]
 -	[Bereitstellen der Freigabe von einem virtuellen Azure-Computer][]
--   [Erstellen einer lokalen Anwendung zum Zugriff auf den Dateispeicher][]
+-   [Erstellen einer lokalen Anwendung für den Zugriff auf Dateispeicher][]
 -   [Nächste Schritte][]
 
 
-##<a name="what-is-file-storage"></a><span class="short-header">Was ist der Azure-Dateispeicher?</span>Was ist der Azure-Dateispeicher?
+##<a name="what-is-file-storage"></a>Was ist Azure-Dateispeicher?
 
 Der Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendungen und verwendet dabei das SMB 2.1-Protokoll. Virtuelle Microsoft Azure-Computer und Clouddienste können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die Dateispeicher-API auf freigegebene Dateien zugreifen.
 
-Anwendungen in virtuellen Azure-Computern oder Clouddiensten können eine Dateispeicher-Freigabe einbinden, um auf Dateidaten zuzugreifen, ebenso wie eine Desktopanwendung eine typische SMB-Freigabe einbinden würde. Die Dateispeicher-Freigaben können von beliebig vielen virtuellen Azure-Computern oder -Rollen gleichzeitig eingebunden und abgerufen werden.
+Anwendungen in virtuellen Azure-Computern oder Cloud-Diensten können eine Dateispeicherfreigabe bereitstellen, um auf Dateidaten zuzugreifen, ebenso wie eine Desktopanwendung eine typische SMB-Freigabe bereitstellen würde. Die Dateispeicher-Freigaben können von beliebig vielen virtuellen Azure-Computern oder -Rollen gleichzeitig eingebunden und abgerufen werden.
 
 Da es sich bei Dateispeicher-Freigaben um gewöhnliche SMB 2.1-Freigaben handelt, können Anwendungen in Azure über die E/A-APIs auf die Freigaben zugreifen. Entwickler können daher ihren vorhandenen Code und bereits erlernte Fertigkeiten für die Migration vorhandener Anwendungen verwenden. IT-Fachkräfte können PowerShell-Cmdlets verwenden, um Dateispeicher-Freigaben im Rahmen der Administration von Azure-Anwendungen zu erstellen, einzubinden und zu verwalten. Dieser Leitfaden enthält Beispiele für beide Varianten.
 
@@ -37,126 +37,118 @@ Dateispeicher werden hauptsächlich für folgende Zwecke verwendet:
 - Speichern von Diagnosedaten wie Protokolle, Metriken und Absturzabbilder in einem freigegebenen Verzeichnis 
 - Speichern von Tools und Dienstprogrammen für das Entwickeln und Verwalten von virtuellen Azure-Computern oder Clouddiensten
 
-##<a name="file-storage-concepts"></a><span class="short-header">Dateispeicher-Konzepte</span>Dateispeicher-Konzepte
+##<a name="file-storage-concepts"></a>Dateispeicher-Konzepte
 
 Der Dateispeicher umfasst die folgenden Komponenten:
 
 ![files-concepts][files-concepts]
 
 
--   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen
-    über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/de-de/library/dn249410.aspx).
+-   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/de-de/library/dn249410.aspx) finden Sie Details zur Speicherkontokapazität.
 
--   **Freigabe:** Eine Dateispeicher-Freigabe ist eine SMB 2.1-Freigabe in Azure. 
-    Alle Verzeichnisse und Dateien müssen in der übergeordneten Freigabe erstellt werden. Ein Konto kann eine
-    unbegrenzte Anzahl von Freigaben enthalten, und eine Freigabe kann eine
-    unbegrenzte Anzahl von Dateien speichern, bis zur Kapazitätsgrenze des Speicherkontos.
+-   **Freigabe:** Eine Dateispeicher-Freigabe ist eine SMB 2.1-Freigabe in Azure. Alle Verzeichnisse und Dateien müssen in der übergeordneten Freigabe erstellt werden. Ein Konto kann eine unbegrenzte Anzahl von Freigaben enthalten, und eine Freigabe kann eine unbegrenzte Anzahl von Dateien speichern, bis die Kapazitätsgrenze des Speicherkontos erreicht ist.
 
--   **Verzeichnis:**  Eine optionale Hierarchie von Verzeichnissen. 
+-   **Verzeichnis:** Eine optionale Hierarchie von Verzeichnissen. 
 
 -	**Datei:** Eine Datei in der Freigabe. Die Datei kann bis zu 1 TB groß sein.
 
--   **URL-Format:** Dateien sind über das folgende URL-Format
-    adressierbar:   
-    https://`<storage
-    account>`.file.core.windows.net/`<share>`/`<directory/directories>`/`<file>`  
+-   **URL-Format:** Datei können über das folgende URL-Format adressiert werden: https://<storage account>.file.core.windows.net/<share>/<directory/directories>/<file>.  
     
-    Mit der folgenden Beispiel-URL kann z. B. eine der Dateien im Diagramm oben
-    adressiert werden:  
-    `http://acmecorp.file.core.windows.net/cloudfiles/diagnostics/log.txt`
+    Mit der folgenden Beispiel-URL kann eine der Dateien im Diagramm oben adressiert werden:  
+    http://acmecorp.file.core.windows.net/cloudfiles/diagnostics/log.txt.
 
 
 
-Ausführliche Informationen zur Benennung von Freigaben, Verzeichnissen und Dateien finden Sie unter [Benennen von Freigaben, Verzeichnissen, Dateien und Metadaten](http://msdn.microsoft.com/de-de/library/azure/dn167011.aspx).
+Unter [Benennen von und Verweisen auf Freigaben, Verzeichnisse, Dateien und Metadaten](http://msdn.microsoft.com/de-de/library/azure/dn167011.aspx)finden Sie ausführliche Informationen zum Benennen von Freigaben, Verzeichnissen und Dateien.
 
-##<a name="create-account"></a><span class="short-header">Erstellen eines Azure-Speicherkontos</span>Erstellen eines Azure-Speicherkontos
+##<a name="create-account"></a>Erstellen eines Azure-Speicherkontos
 
-Der Azure-Dateispeicher befindet sich derzeit noch in der Vorschau. Um Zugriff auf die Vorschau zu erhalten, navigieren Sie zur [Microsoft Azure-Vorschauseite](/de-de/services/preview/) und fordern den Zugriff auf **Azure Files** an. Sobald Ihre Anfrage genehmigt wurde, werden Sie benachrichtigt, dass Sie die Dateispeicher-Vorschau verwenden können. Anschließend können Sie ein Speicherkonto für den Zugriff auf den Dateispeicher erstellen.
+Der Azure-Dateispeicher befindet sich derzeit noch in der Vorschau. Navigieren Sie zum Anfordern eines Zugriffs auf die Vorschau zur [Microsoft Azure-Vorschauseite,](/de-de/services/preview/)und fordern Sie den Zugriff auf **Azure Files** an. Sobald Ihre Anfrage genehmigt wurde, werden Sie benachrichtigt, dass Sie die Dateispeicher-Vorschau verwenden können. Anschließend können Sie ein Speicherkonto für den Zugriff auf den Dateispeicher erstellen.
 
-> [WACOM.NOTE] Der Dateispeicher ist derzeit nur für neue Speicherkonten verfügbar. Nachdem Sie in Ihrem Abonnement Zugriff auf den Dateispeicher erhalten haben, erstellen Sie ein neues Speicherkonto zur Verwendung in dieser Anleitung.
+> [WACOM.NOTE] Dateispeicher ist derzeit nur für neue Speicherkonten verfügbar. Nachdem Sie in Ihrem Abonnement Zugriff auf den Dateispeicher erhalten haben, erstellen Sie ein neues Speicherkonto zur Verwendung in dieser Anleitung.
 
 [WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
-##<a name="use-cmdlets"></a><span class="short-header">Erstellen einer Dateifreigabe mithilfe von PowerShell</span>Erstellen einer Dateifreigabe mithilfe von PowerShell
+##<a name="use-cmdlets"></a>Erstellen einer Dateifreigabe mithilfe von PowerShell
 
 ###Installieren der PowerShell-Cmdlets für den Azure-Speicher
 
-Zur Vorbereitung laden Sie PowerShell herunter und installieren die Azure PowerShell-Cmdlets. Hinweise zum Installationsverzeichnis und Anweisungen zur Installation finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/).
+Zur Vorbereitung laden Sie PowerShell herunter und installieren die Azure PowerShell-Cmdlets. Unter [Installation und Konfigurieren von Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/) finden Sie den Installationspunkt und Anweisungen zur Installation.
 
-> [WACOM.NOTE] Die PowerShell-Cmdlets für den Dateidienst sind nur im aktuellsten Azure PowerShell-Modul, Version 0.8.5 oder höher verfügbar. Sie sollten daher das neueste Azure PowerShell-Modul herunterladen und installieren bzw. ein Upgrade durchführen.
+> [WACOM.NOTE] Die PowerShell-Cmdlets für den Dateidienst sind nur im aktuellen Azure PowerShell-Modul, Version 0.8.5 oder höher, verfügbar. Sie sollten daher das neueste Azure PowerShell-Modul herunterladen und installieren bzw. ein Upgrade durchführen.
 
 Öffnen Sie ein Azure PowerShell-Fenster, indem Sie auf **Start** klicken und **Windows Azure PowerShell** eingeben. Im Azure PowerShell-Fenster wird das Azure Powershell-Modul geladen.
 
 ###Erstellen eines Kontexts für das Speicherkonto und den Schlüssel
 
-Erstellen Sie nun den Speicherkonto-Kontext. Der Kontext kapselt den Speicherkontonamen und den Kontoschlüssel. Ersetzen Sie `account-name` und `account-key` im folgenden Beispiel durch Ihren Kontonamen und den Schlüssel:
+Erstellen Sie nun den Speicherkonto-Kontext. Der Kontext kapselt den Speicherkontonamen und den Kontoschlüssel. Ersetzen Sie "account-name" und "account-key" im folgenden Beispiel durch Ihren Kontonamen und den Schlüssel:
 
-    # Erstellen eines Kontexts für das Konto und den Schlüssel
+    # create a context for account and key
     $ctx=New-AzureStorageContext account-name account-key
     
 ###Erstellen einer neuen Dateifreigabe
 
-Erstellen Sie nun die neue Freigabe namens `sampleshare` in diesem Beispiel:
+Erstellen Sie nun die neue Freigabe namens "sampleshare" in diesem Beispiel:
 
-    # neue Freigabe erstellen
+    # create a new share
     $s = New-AzureStorageShare sampleshare -Context $ctx
 
 Nun haben Sie eine Dateifreigabe im Dateispeicher. Als Nächstes fügen Sie ein Verzeichnis und eine Datei hinzu.
 
 ###Erstellen eines Verzeichnisses in der Dateifreigabe
 
-Erstellen Sie als Nächstes ein Verzeichnis in der Freigabe. Im folgenden Beispiel lautet der Verzeichnisname `sampledir`:
+Erstellen Sie als Nächstes ein Verzeichnis in der Freigabe. Im folgenden Beispiel lautet der Verzeichnisname "sampledir":
 
-    # Erstellen Sie ein Verzeichnis in der Freigabe
+    # create a directory in the share
     New-AzureStorageDirectory -Share $s -Path sampledir
 
 ###Hochladen einer lokalen Datei in das Verzeichnis
 
-Laden Sie nun eine lokale Datei in das Verzeichnis hoch. Das folgende Beispiel lädt eine Datei aus `C:\temp\samplefile.txt` hoch. Bearbeiten Sie den Dateipfad so, dass er auf eine gültige Datei auf Ihrem lokalen Computer verweist: 
+Laden Sie nun eine lokale Datei in das Verzeichnis hoch. Im folgenden Beispiel wird eine Datei aus C:\temp\samplefile.txt hochgeladen. Bearbeiten Sie den Dateipfad so, dass er auf eine gültige Datei auf Ihrem lokalen Computer verweist: 
     
-    # Hochladen einer lokalen Datei in das neue Verzeichnis
+    # upload a local file to the new directory
     Set-AzureStorageFileContent -Share $s -Source C:\temp\samplefile.txt -Path sampledir
 
 ###Auflisten der Dateien im Verzeichnis
 
 Um die Datei im Verzeichnis anzuzeigen, können Sie die Verzeichnisdateien auflisten. Mit diesem Befehl werden außerdem die Unterverzeichnisse aufgelistet, in diesem Beispiel ist jedoch kein Unterverzeichnis vorhanden, daher wird nur die Datei angezeigt.  
 
-    # Auflisten der Dateien im neuen Verzeichnis
+    # list files in the new directory
     Get-AzureStorageFile -Share $s -Path sampledir
 
-##<a name="mount-share"></a><span class="short-header">Bereitstellen der Freigabe von einem virtuellen Azure-Computer</span>Bereitstellen der Freigabe von einem virtuellen Azure-Computer
+##<a name="mount-share"></a>Bereitstellen der Freigabe von einem virtuellen Azure-Computer
 
 Um zu veranschaulichen, wie eine Azure-Dateifreigabe bereitgestellt wird, erstellen wir nun einen virtuellen Azure-Computer und greifen zum Bereitstellen der Freigabe remote darauf zu. 
 
-1. Erstellen Sie zuerst einen neuen virtuellen Azure-Computer, indem Sie die Anleitung unter [CErstellen eines virtuellen Windows Server-Computers](/de-de/documentation/articles/virtual-machines-windows-tutorial/) befolgen.
-2. Stellen Sie anschließend eine Remoteverbindung mit dem virtuellen Computer her. Eine Beschreibung finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](/de-de/documentation/articles/virtual-machines-log-on-windows-server/).
+1. Erstellen Sie zunächst einen neuen virtuellen Azure-Computer, indem Sie die Anleitung unter [Erstellen eines virtuellen Windows Server-Computers](/de-de/documentation/articles/virtual-machines-windows-tutorial/)befolgen.
+2. Stellen Sie anschließend eine Remoteverbindung mit dem virtuellen Computer her, indem Sie die Anweisungen unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](/de-de/documentation/articles/virtual-machines-log-on-windows-server/)befolgen.
 3. Öffnen Sie ein PowerShell-Fenster auf dem virtuellen Computer. 
 
 ###Beibehalten Ihrer Speicherkonto-Anmeldeinformationen auf dem virtuellen Computer
 
-Bevor Sie die Dateifreigabe bereitstellen, speichern Sie zuerst dauerhaft Ihre Speicherkonto-Anmeldeinformationen auf dem virtuellen Computer. Durch diesen Schritt kann Windows bei einem Neustart des virtuellen Computers automatisch erneut eine Verbindung zur Dateifreigabe herstellen. Um Ihre Anmeldeinformationen beizubehalten, führen Sie im PowerShell-Fenster auf dem virtuellen Computer den Befehl `cmdkey` aus. Ersetzen Sie `<storage-account>` durch den Namen Ihres Speicherkontos und `<account-key>` durch den Schlüssel des Speicherkontos:
+Bevor Sie die Dateifreigabe bereitstellen, speichern Sie zuerst dauerhaft Ihre Speicherkonto-Anmeldeinformationen auf dem virtuellen Computer. Durch diesen Schritt kann Windows bei einem Neustart des virtuellen Computers automatisch erneut eine Verbindung zur Dateifreigabe herstellen. Um Ihre Anmeldeinformationen beizubehalten, führen Sie im PowerShell-Fenster auf dem virtuellen Computer den Befehl "cmdkey" aus. Ersetzen Sie <storage-account> durch den Namen Ihres Speicherkontos und <account-key> durch den Schlüssel des Speicherkontos:
 
 	cmdkey /add:<storage-account>.file.core.windows.net /user:<storage-account> /pass:<account-key>
 
-Windows stellt nun bei einem Neustart des virtuellen Computers erneut eine Verbindung zur Dateifreigabe her. Sie können überprüfen, ob die Freigabe erneut verbunden wurde, indem Sie den Befehl `net use` in einem PowerShell-Fenster ausführen.
+Windows stellt nun bei einem Neustart des virtuellen Computers erneut eine Verbindung zur Dateifreigabe her. Sie können überprüfen, ob die Freigabe erneut verbunden wurde, indem Sie den Befehl "net use" in einem PowerShell-Fenster ausführen.
 
 ###Bereitstellen der Dateifreigabe mithilfe der dauerhaften Anmeldeinformationen
 
-Nachdem Sie eine Remoteverbindung zum virtuellen Computer hergestellt haben, können Sie den Befehl `net use` mit folgender Syntax ausführen, um die Dateifreigabe bereitzustellen. Ersetzen Sie `<storage-account>` durch den Namen Ihres Speicherkontos und `<share-name>` durch den Namen Ihrer Dateispeicher-Freigabe:
+Nachdem Sie eine Remoteverbindung zum virtuellen Computer hergestellt haben, können Sie den Befehl "net use" mit folgender Syntax ausführen, um die Dateifreigabe bereitzustellen. Ersetzen Sie <storage-account> durch den Namen Ihres Speicherkontos und <share-name> durch den Namen der Dateispeicherfreigabe.
 
 	net use z: \\<storage-account>.file.core.windows.net\<share-name>
 
-> [WACOM.NOTE] Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl `net use` angeben. Wenn Sie Ihre Anmeldeinformationen jedoch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl `net use` übergeben wird. Ersetzen Sie `<storage-account>` durch den Namen Ihres Speicherkontos, `<share-name>` durch den Namen Ihrer Dateispeicher-Freigabe und `<account-key>` durch Ihren Speicherkontoschlüssel:
+> [WACOM.NOTE] Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl "net use" angeben. Wenn Sie Ihre Anmeldeinformationen jedoch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl "net use" übergeben wird. Ersetzen Sie <storage-account> durch den Namen Ihres Speicherkontos, <share-name> durch den Namen der Dateispeicherfreigabe und <account-key> durch den Speicherkontoschlüssel:
 	   
 	net use z: \\<storage-account>.file.core.windows.net\<share-name> /u:<storage-account> <account-key>
 
-Sie können nun mit der Dateispeicher-Freigabe vom virtuellen Computer aus arbeiten wie von jedem anderen Laufwerk aus. Sie können die Standarddateibefehle über die Eingabeaufforderung eingeben oder die bereitgestellte Freigabe und deren Inhalt im Datei-Explorer anzeigen. Außerdem können Sie Code auf dem virtuellen Computer ausführen, der über standardmäßige Windows-E/A-APIs auf die Dateifreigabe zugreift, z. B. über die [System.IO namespaces](http://msdn.microsoft.com/de-de/library/gg145019(v=vs.110).aspx) in .NET Framework. 
+Sie können nun mit der Dateispeicher-Freigabe vom virtuellen Computer aus arbeiten wie von jedem anderen Laufwerk aus. Sie können die Standarddateibefehle über die Eingabeaufforderung eingeben oder die bereitgestellte Freigabe und deren Inhalt im Datei-Explorer anzeigen. Außerdem können Sie Code auf dem virtuellen Computer ausführen, der über standardmäßige Windows-E/A-APIs auf die Dateifreigabe zugreift, z. B. über die [System.IO-Namespaces](http://msdn.microsoft.com/de-de/library/gg145019(v=vs.110)in .NET Framework. 
 
 Sie können die Dateifreigabe auch über eine im Azure-Clouddienst ausgeführte Rolle bereitstellen, indem Sie eine Remoteverbindung zur Rolle herstellen.
 
-##<a name="create-console-app"></a><span class="short-header">Erstellen einer lokalen Anwendung zum Arbeiten mit dem Dateispeicher</span>Erstellen einer lokalen Anwendung zum Arbeiten mit dem Dateispeicher
+##<a name="create-console-app"></a>Erstellen einer lokalen Anwendung für den Zugriff auf den Dateispeicher
 
-Sie können eine Dateispeicher-Freigabe von einem virtuellen Computer aus oder von einem in Azure ausgeführten Clouddienst bereitstellen, wie oben gezeigt. Sie können die Dateispeicher-Freigabe jedoch nicht von einer lokalen Anwendung aus bereitstellen. Zum Zugriff auf freigegebene Daten von einer lokalen Anwendung aus verwenden Sie die Dateispeicher-API. In diesem Beispiel wird gezeigt, wie Sie über die [Azure-Speicherclientbibliothek für .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)mit einer Dateifreigabe arbeiten. 
+Sie können eine Dateispeicher-Freigabe von einem virtuellen Computer aus oder von einem in Azure ausgeführten Clouddienst bereitstellen, wie oben gezeigt. Sie können die Dateispeicher-Freigabe jedoch nicht von einer lokalen Anwendung aus bereitstellen. Zum Zugriff auf freigegebene Daten von einer lokalen Anwendung aus verwenden Sie die Dateispeicher-API. In diesem Beispiel wird gezeigt, wie Sie über die [Azure .NET Storage Client Library](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)mit einer Dateifreigabe arbeiten. 
 
 Um die Verwendung der API von einer lokalen Anwendung aus zu veranschaulichen, erstellen wir eine einfachen Konsolenanwendung, die auf dem Desktop ausgeführt wird.
 
@@ -164,15 +156,15 @@ Um die Verwendung der API von einer lokalen Anwendung aus zu veranschaulichen, e
 
 So erstellen Sie eine neue Konsolenanwendung in Visual Studio und installieren das Azure Storage NuGet-Paket:
 
-1. Klicken Sie in Visual Studio auf **Datei** -> **Neues Projekt**, und wählen Sie **Windows** -> **Konsolenanwendung** aus der Liste der Visual C#-Vorlagen aus.
+1. Klicken Sie in Visual Studio auf **Datei** -> **Neues Projekt**, und wählen **Windows** -> **Konsolenanwendung** aus der Liste der Visual C#-Vorlagen aus.
 2. Geben Sie einen Namen für die Konsolenanwendung an, und klicken Sie auf **OK**.
-3. Nachdem das Projekt erstellt wurde, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt und wählen **NuGet-Pakete verwalten** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
+3. Nachdem das Projekt erstellt wurde, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt und wählen **Manage NuGet Packages** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure Storage-Paket und die Abhängigkeiten zu installieren.
 
 ###Speichern Ihrer Speicherkonto-Anmeldeinformationen in der Datei "app.config"
 
-Als Nächstes speichern Sie Ihre Anmeldeinformationen in der Datei "app.config" des Projekts. 	Bearbeiten Sie die Datei "app.config" ähnlich wie im folgenden Beispiel, indem Sie `myaccount` durch den Namen Ihres Speicherkontos und `mykey` durch den Schlüssel Ihres Speicherkontos ersetzen:
+Als Nächstes speichern Sie Ihre Anmeldeinformationen in der Datei "app.config" des Projekts. Bearbeiten Sie die Datei "app.config" ähnlich wie im folgenden Beispiel, indem Sie "myaccout" durch den Namen Ihres Speicherkontos und "mykey" durch den Schlüssel Ihres Speicherkontos ersetzen:
 
-    <?xml version="1.0" encoding="utf-8"?>
+    <?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
 		<startup> 
 			<supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
@@ -182,10 +174,10 @@ Als Nächstes speichern Sie Ihre Anmeldeinformationen in der Datei "app.config" 
 		</appSettings>
 	</configuration>
 
-> [WACOM.NOTE] Die neueste Version des Azure-Speicheremulators unterstützt den Dateispeicher nicht. Die Verbindungszeichenfolge muss auf ein Azure-Speicherkonto in der Cloud mit Zugriff auf die Files-Vorschau verweisen.
+> [WACOM.NOTE] Die neueste Version des Azure-Speicheremulators bietet keine Unterstützung für Dateispeicher. Die Verbindungszeichenfolge muss auf ein Azure-Speicherkonto in der Cloud mit Zugriff auf die Files-Vorschau verweisen.
 
 
-###Hinzufügen von Namespace-Deklarationen 
+###Hinzufügen von Namespace-Deklarationen
 Öffnen Sie die Datei "program.cs" im Projektmappen-Explorer, und fügen Sie die folgenden Namespace-Deklarationen zu Beginn der Datei hinzu:
 
     using Microsoft.WindowsAzure;
@@ -193,14 +185,14 @@ Als Nächstes speichern Sie Ihre Anmeldeinformationen in der Datei "app.config" 
 	using Microsoft.WindowsAzure.Storage.File;
 
 ###Programmgesteuertes Abrufen der Verbindungszeichenfolge
-Sie können Ihre gespeicherten Anmeldeinformationen aus der Datei "app.config" entweder mit der Klasse `Microsoft.WindowsAzure.CloudConfigurationManager` oder der Klasse `System.Configuration.ConfigurationManager `abrufen. In diesem Beispiel wird dargestellt, wie Sie Ihre Anmeldeinformationen mithilfe der Klasse `CloudConfigurationManager` abrufen und dann mit der Klasse `CloudStorageAccount` kapseln. Fügen Sie den folgenden Code in die Methode `Main()` in "program.cs" ein:
+Sie können Ihre gespeicherten Anmeldeinformationen aus der Datei "app.config" entweder mit der Klasse Microsoft.WindowsAzure.CloudConfigurationManager oder der Klasse System.Configuration.ConfigurationManager abrufen. In diesem Beispiel wird dargestellt, wie Sie Ihre Anmeldeinformationen mithilfe der Klasse CloudConfigurationManager abrufen und dann mit der Klasse CloudStorageAccount kapseln. Fügen Sie der Main()-Methode in program.cs den folgenden Code hinzu:
 
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
 ###Programmgesteuerter Zugriff auf die Dateispeicher-Freigabe
 
-Als Nächstes fügen Sie den folgenden Code zur Methode `Main()` nach dem oben angegebenen Code hinzu, um die Verbindungszeichenfolge abzurufen. Dieser Code ruft einen Verweis auf die zuvor erstellte Datei ab und gibt dessen Inhalt im Konsolenfenster an.
+Als Nächstes fügen Sie den folgenden Code zur Main()-Methode nach dem oben angegebenen Code hinzu, um die Verbindungszeichenfolge abzurufen. Dieser Code ruft einen Verweis auf die zuvor erstellte Datei ab und gibt dessen Inhalt im Konsolenfenster an.
 
 	//Create a CloudFileClient object for credentialed access to File storage.
     CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
@@ -234,7 +226,7 @@ Als Nächstes fügen Sie den folgenden Code zur Methode `Main()` nach dem oben a
 
 Führen Sie die Konsolenanwendung aus, um die Ausgabe zu sehen.
 
-## <a name="next-steps"></a><span  class="short-header">Nächste Schritte</span>Nächste Schritte
+## <a name="next-steps"></a>Nächste Schritte
 
 Nachdem Sie nun die Grundlagen des Dateispeichers kennen gelernt haben, folgen Sie diesen Links, um
 ausführlichere Informationen abzurufen.
@@ -254,21 +246,22 @@ ausführlichere Informationen abzurufen.
   </ul>
 </li><li>Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
   <ul>
-    <li>Verwenden Sie den <a href="/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/">Blobspeicher</a> zum Speichern unstrukturierter Daten.</li>
-    <li>Verwenden Sie <a href="/de-de/documentation/articles/storage-dotnet-how-to-use-tables/">Tabellenspeicher</a> zum Speichern strukturierter Daten.</li>
-    <li>Verwenden Sie den <a href="/de-de/documentation/articles/storage-dotnet-how-to-use-queues/">Warteschlangenspeicher</a> zum zuverlässigen Speichern von Nachrichten.</li>
-    <li>Verwenden Sie eine <a href="/de-de/documentation/articles/sql-database-dotnet-how-to-use/">SQL-Datenbank</a> zum Speichern relationaler Daten.</li>
+    <li>Verwenden von <a href="/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob-Speicher</a> zum Speichern unstrukturierter Daten</li>
+    <li>Verwenden von <a href="/de-de/documentation/articles/storage-dotnet-how-to-use-tables/">Table Storage</a> zum Speichern strukturierter Daten</li>
+    <li>Verwenden von <a href="/de-de/documentation/articles/storage-dotnet-how-to-use-queues/">Warteschlangenspeicher</a> zum zuverlässigen Speichern von Nachrichten</li>
+    <li>Verwenden von <a href="/de-de/documentation/articles/sql-database-dotnet-how-to-use/">SQL-Datenbank</a> zum Speichern relationaler Daten</li>
   </ul>
 </li>
 </ul>
 
 [Nächste Schritte]: #next-steps
-[Was ist der Dateispeicher?]: #what-is-file-storage 
-[Dateispeicher-Konzepte]: #file-storage-concepts
+[Was ist Dateispeicher?]: #what-is-file-storage 
+[Konzepte rund um Dateispeicher]: #file-storage-concepts
 [Erstellen eines Azure-Speicherkontos]: #create-account
 [Erstellen einer Dateifreigabe mithilfe von PowerShell]: #use-cmdlets
 [Bereitstellen der Freigabe von einem virtuellen Azure-Computer]: #mount-share
-[Erstellen einer lokalen Anwendung zum Zugriff auf den Dateispeicher]: #create-console-app
+[Erstellen einer lokalen Anwendung für den Zugriff auf Dateispeicher]: #create-console-app
 
 [files-concepts]: ./media/storage-dotnet-how-to-use-files/files-concepts.png
 
+\n<!--HONumber=35.1--> 

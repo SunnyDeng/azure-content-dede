@@ -1,33 +1,33 @@
-﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Java) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Java, table storage Java" description="Learn how to use the table storage service in Azure. Code samples are written in Java code." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Table storage service from Java" authors="tamram" solutions="" manager="adinah" editor="" />
+﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Java) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Java, table storage Java" description="Learn how to use the table storage service in Azure. Code samples are written in Java code." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Table storage service from Java" authors="robmcm" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="01/01/1900" ms.author="tamram" />
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
 # Verwenden des Tabellenspeichers in Java
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tabellenspeicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Die erläuterten Szenarien umfassten das **Erstellen**, **Auflisten** und **Löschen** von Tabellen sowie das **Einfügen**, **Abfragen**, **Ändern** und **Löschen** von Entitäten in einer Tabelle. Weitere Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tabellenspeicherdienst demonstriert. Die Beispiele sind in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Die behandelten Szenarien umfassen das **Erstellen**, **Auflisten** und **Löschen** von Tabellen sowie das **Einfügen**, **Abfragen**, **Ändern** und **Löschen** von Entitäten in einer Tabelle. Im Abschnitt [Nächste Schritte](#NextSteps) finden Sie weitere Informationen zu Tabellen.
 
 Hinweis: Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][]. 
 
 ## <a name="Contents"> </a>Inhaltsverzeichnis
 
-* [Was ist Table Storage](#what-is)
+* [Was ist Tabellenspeicher?](#what-is)
 * [Konzepte](#Concepts)
 * [Erstellen eines Azure-Speicherkontos](#CreateAccount)
 * [Erstellen einer Java-Anwendung](#CreateApplication)
-* [Konfigurieren Ihrer Anwendung für den Zugriff auf Table Storage](#ConfigureStorage)
+* [Konfigurieren Ihrer Anwendung für den Zugriff auf Tabellenspeicher](#ConfigureStorage)
 * [Einrichten einer Azure-Speicherverbindungszeichenfolge](#ConnectionString)
-* [Gewusst wie: Erstellen einer Tabelle](#CreateTable)
-* [Gewusst wie: Auflisten der Tabellen](#ListTables)
-* [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle](#AddEntity)
-* [Gewusst wie: Einfügen eines Entitätsbatchs](#InsertBatch)
-* [Gewusst wie: Abrufen aller Entitäten in einer Partition](#RetrieveEntities)
-* [Gewusst wie: Abrufen eines Entitätsbereichs in einer Partition](#RetrieveRange)
-* [Gewusst wie: Abrufen einer einzelnen Entität](#RetriveSingle)
-* [Gewusst wie: Ändern einer Entität](#ModifyEntity)
-* [Gewusst wie: Abfragen einer Teilmenge von Entitätseigenschaften](#QueryProperties)
-* [Gewusst wie: Einfügen oder Ersetzen einer Entität](#InsertOrReplace)
-* [Gewusst wie: Löschen einer Entität](#DeleteEntity)
-* [Gewusst wie: Löschen einer Tabelle](#DeleteTable)
+* [Vorgehensweise: Erstellen einer Tabelle](#CreateTable)
+* [Vorgehensweise: Auflisten der Tabellen](#ListTables)
+* [Vorgehensweise: Hinzufügen einer Entität zu einer Tabelle](#AddEntity)
+* [Vorgehensweise: Einfügen eines Entitätsbatchs](#InsertBatch)
+* [Vorgehensweise: Abrufen aller Entitäten in einer Partition](#RetrieveEntities)
+* [Vorgehensweise: Abrufen eines Entitätsbereichs in einer Partition](#RetrieveRange)
+* [Vorgehensweise: Abrufen einer einzelnen Entität](#RetriveSingle)
+* [Vorgehensweise: Ändern einer Entität](#ModifyEntity)
+* [Vorgehensweise: Abfragen einer Teilmenge von Entitätseigenschaften](#QueryProperties)
+* [Vorgehensweise: Einfügen oder Ersetzen einer Entität](#InsertOrReplace)
+* [Vorgehensweise: Löschen einer Entität](#DeleteEntity)
+* [Vorgehensweise: Löschen einer Tabelle](#DeleteTable)
 * [Nächste Schritte](#NextSteps)
 
 [WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
@@ -40,52 +40,50 @@ Hinweis: Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf And
 
 In diesem Leitfaden werden Sie Speicherfunktionen verwenden, die lokal in einer Java-Anwendung oder in Code ausgeführt werden können, der in einer Webrolle oder in einer Workerrolle in Azure ausgeführt wird.
 
-Dafür müssen Sie das Java Development Kit (JDK) installieren und ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellen. Sobald Sie dies erledigt haben, müssen Sie sicherstellen, dass Ihre Entwicklungssystem die minimalen Anforderungen und Abhängigkeiten erfüllt, die im Repository [Azure Storage-SDK für Java][] auf GitHub aufgelistet sind. Wenn Ihr System diese Anforderungen erfüllt, können Sie die Anweisungen für das Herunterladen und Installieren der Azure Storage-Bibliotheken für Java auf Ihr System von diesem Repository befolgen. Sobald Sie diese Aufgaben abgeschlossen haben, können Sie eine Java-Anwendung erstellen, die die Beispiele in diesem Artikel verwendet.
+Dafür müssen Sie das Java Development Kit (JDK) installieren und ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellen. Nachdem dies erledigt ist, müssen Sie sicherstellen, dass Ihr Entwicklungssystem die Mindestanforderungen und Abhängigkeiten erfüllt, die im Repository [Azure Storage-SDK für Java][] auf GitHub aufgeführt sind. Wenn Ihr System diese Anforderungen erfüllt, können Sie die Anweisungen für das Herunterladen und Installieren der Azure Storage-Bibliotheken für Java auf Ihr System von diesem Repository befolgen. Sobald Sie diese Aufgaben abgeschlossen haben, können Sie eine Java-Anwendung erstellen, die die Beispiele in diesem Artikel verwendet.
 
 ## <a name="ConfigureStorage"> </a>Konfigurieren Ihrer Anwendung für den Zugriff auf Table Storage
 
 Fügen Sie folgende "import"-Anweisungen am Anfang der Java-Datei dort ein, wo Windows Azure-Speicher-APIs auf Tabellen zugreifen sollen:
 
-    // Folgende Importanweisungen für die Verwendung von Tabellen-APIs einschließen
+    // Include the following imports to use table APIs
     import com.microsoft.azure.storage.*;
     import com.microsoft.azure.storage.table.*;
     import com.microsoft.azure.storage.table.TableQuery.*;
 
 ## <a name="ConnectionString"> </a>Einrichten einer Azure-Speicherverbindungszeichenfolge
 
-Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Bei der Ausführung in einer Clientanwendung muss die Speicherverbindungszeichenfolge in dem unten gezeigten Format angegeben werden. Dabei müssen der Name Ihres Speicherkontos und der primäre Zugriffsschlüssel für das im Verwaltungsportal aufgeführte Speicherkonto als *AccountName-* und *AccountKey-* Werte eingegeben werden. Dieses Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren:
+Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Bei der Ausführung in einer Clientanwendung muss die Speicherverbindungszeichenfolge in dem unten gezeigten Format angegeben werden. Dabei müssen der Name Ihres Speicherkontos und der primäre Zugriffsschlüssel für das im Verwaltungsportal aufgeführte Speicherkonto als AccountName- und AccountKey- Werte eingegeben werden. Dieses Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren:
 
-    // Verbindungszeichenfolge mit Ihren Werten definieren.
+    // Define the connection-string with your values.
     public static final String storageConnectionString = 
         "DefaultEndpointsProtocol=http;" + 
         "AccountName=your_storage_account;" + 
         "AccountKey=your_storage_account_key";
 
-In einer Anwendung, die in einer Microsoft Azure-Rolle ausgeführt wird, kann diese Zeichenfolge in der Dienstkonfigurationsdatei *ServiceConfiguration.cscfg* gespeichert werden. Der Zugriff darauf kann dann durch Aufruf der Methode **RoleEnvironment.getConfigurationSettings** erfolgen. Dieses Beispiel zeigt, wie die Verbindungszeichenfolge von einem **Setting**-Element mit der Bezeichnung *StorageConnectionString* in der Dienstkonfigurationsdatei abgerufen wird:
+In einer Anwendung, die in einer Microsoft Azure-Rolle ausgeführt wird, kann diese Zeichenfolge in der Dienstkonfigurationsdatei "ServiceConfiguration.cscfg" gespeichert werden. Der Zugriff darauf kann dann durch Aufruf der Methode **RoleEnvironment.getConfigurationSettings** erfolgen. Das folgende Beispiel zeigt, wie die Verbindungszeichenfolge von einem **Setting**-Element namens "StorageConnectionString" in der Dienskonfigurationsdatei abgerufen wird:
 
-    // Speicherkonto aus Verbindungszeichenfolge abrufen.
+    // Retrieve storage account from connection-string.
     String storageConnectionString = 
         RoleEnvironment.getConfigurationSettings().get("StorageConnectionString");
 
 In den folgenden Beispielen wird davon ausgegangen, dass Sie eine dieser zwei Methoden verwendet haben, um die Speicherverbindungszeichenfolge abzurufen.
 
-## <a name="CreateTable"> </a>Gewusst wie: Erstellen einer Tabelle
+## <a name="CreateTable"> </a>Vorgehensweise: Erstellen einer Tabelle
 
-Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für
-Tabellen und Entitäten abrufen. Mit dem folgenden Code wird ein **CloudTableClient**-Objekt erstellt,
-und verwendet es zum Erstellen eines neuen **CloudTable**-Objekts, das eine Tabelle mit der Bezeichnung "people" darstellt. (Hinweis: Es gibt zusätzliche Möglichkeiten zum Erstellen von **CloudStorageAccount**-Objekten. Weitere Informationen finden Sie unter **CloudStorageAccount** im Thema zur [Azure Storage-Client-SDK-Referenz].)
+Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen und Entitäten abrufen. Der folgende Code erstellt ein **CloudTableClient**-Objekt und verwendet es zum Erstellen eines neuen **CloudTable**-Objekts, das eine Tabelle namens "people" darstellt. (Hinweis: Es gibt weitere Möglichkeiten zum Erstellen von **CloudStorageAccount**-Objekten. Weitere Informationen finden Sie unter **CloudStorageAccount** in der[Azure Storage-Client-SDK-Referenz].)
 
     try
     {
-    	// Speicherkonto aus Verbindungszeichenfolge abrufen.
+    	// Retrieve storage account from connection-string.
     	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
-	   // Tabellenclient erstellen.
+	   // Create the table client.
 	   CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
-	   // Tabelle erstellen, wenn diese noch nicht vorhanden ist.
-	   String tableName = "personen";
+	   // Create the table if it doesn't exist.
+	   String tableName = "people";
 	   CloudTable cloudTable = new CloudTable(tableName,tableClient);
 	   cloudTable.createIfNotExists();
     }
@@ -95,17 +93,17 @@ und verwendet es zum Erstellen eines neuen **CloudTable**-Objekts, das eine Tabe
         e.printStackTrace();
     }
 
-## <a name="ListTables"></a>Gewusst wie: Auflisten der Tabellen
+## <a name="ListTables"></a>Vorgehensweise: Auflisten der Tabellen
 
 Rufen Sie zum Abrufen einer Liste von Tabellen die Methode **CloudTableClient.listTables()** auf, um eine wiederholbare Liste der Tabellennamen abzurufen.
 
     try
     {
-    	// Speicherkonto aus Verbindungszeichenfolge abrufen.
+    	// Retrieve storage account from connection-string.
     	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
-    	// Tabellenclient erstellen.
+    	// Create the table client.
     	CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
     	// Loop through the collection of table names.
@@ -121,9 +119,9 @@ Rufen Sie zum Abrufen einer Liste von Tabellen die Methode **CloudTableClient.li
         e.printStackTrace();
     }
 
-## <a name="AddEntity"> </a>Gewusst wie: Hinzufügen einer Entität zu einer Tabelle
+## <a name="AddEntity"> </a>Vorgehensweise: Hinzufügen einer Entität zu einer Tabelle
 
-Entitäten werden mithilfe einer benutzerdefinierten Klasse, die **TableEntity** bereitstellt, Java-Objekten zugeordnet. Der Einfachheit halber stellt die **TableServiceEntity**-Klasse **TableEntity** bereit und ordnet den für die Eigenschaften genannten Getter- und Setter-Methoden durch Reflektion Eigenschaften zu. Erstellen Sie zuerst eine Klasse, mit der die Eigenschaften der Entität definiert werden, um eine Entität zu einer Tabelle hinzuzufügen. Mit dem folgenden Code wird eine Entitätsklasse definiert, die den Vornamen des Kunden als Zeilenschlüssel und den Nachnamen als Partitionsschlüssel verwendet. In Kombination miteinander wird mit dem Partitions- und Zeilenschlüssel eine Entität in der Tabelle eindeutig identifiziert. Entitäten mit demselben Partitionsschlüssel können schneller abgefragt werden als Entitäten mit verschiedenen Schlüsseln.
+Entitäten werden mithilfe einer benutzerdefinierten Klasse, die **TableEntity** bereitstellt, Java-Objekten zugeordnet. Der Einfachheit halber implementiert die **TableServiceEntity**-Klasse **TableEntity** und ordnet den für die Eigenschaften genannten Getter- und Setter-Methoden durch Reflektion Eigenschaften zu. Erstellen Sie zuerst eine Klasse, mit der die Eigenschaften der Entität definiert werden, um eine Entität zu einer Tabelle hinzuzufügen. Mit dem folgenden Code wird eine Entitätsklasse definiert, die den Vornamen des Kunden als Zeilenschlüssel und den Nachnamen als Partitionsschlüssel verwendet. In Kombination miteinander wird mit dem Partitions- und Zeilenschlüssel eine Entität in der Tabelle eindeutig identifiziert. Entitäten mit demselben Partitionsschlüssel können schneller abgefragt werden als Entitäten mit verschiedenen Schlüsseln.
 
     public class CustomerEntity extends TableServiceEntity {
         public CustomerEntity(String lastName, String firstName) {
@@ -153,29 +151,29 @@ Entitäten werden mithilfe einer benutzerdefinierten Klasse, die **TableEntity**
         }
     }
 
-Tabellenvorgänge, die Entitäten umfassen, benötigen ein **TableOperation**-Objekt. Dieses Objekt definiert den für eine Entität vorgesehenen Vorgang, der mit einem **CloudTable**-Objekt ausgeführt werden kann. Durch den folgenden Code wird eine neue Instanz der **CustomerEntity**-Klasse erstellt, wobei einige Kundendaten gespeichert werden sollen. Als Nächstes ruf der Code **TableOperation.insertOrReplace** auf, um ein **TableOperation**-Objekt für das Einfügen einer Entität in eine Tabelle zu erstellen, und weist dieser Entität die neue **CustomerEntity** zu. Abschließend ruft der Code die **execute**-Methode des **CloudTable**-Objekts auf und gibt dabei die Tabelle "people" und die neue **TableOperation** an, die dann eine Anforderung an den Speicherdienst sendet, die neue Kundenentität in die Tabelle "people" einzufügen oder die Entität zu ersetzen, wenn sie bereits vorhanden ist.
+Tabellenvorgänge, die Entitäten umfassen, benötigen ein **TableOperation**-Objekt. Dieses Objekt definiert den für eine Entität vorgesehenen Vorgang, der mit einem **CloudTable**-Objekt ausgeführt werden kann. Der folgende Code erstellt eine neue Instanz der **CustomerEntity**-Klasse mit einigen zu speichernden Kundendaten. Als Nächstes ruft der Code **TableOperation.insertOrReplace** auf, um ein **TableOperation**-Objekt zu erstellen, und weist dieser Entität die neue **CustomerEntity** zu. Abschließend ruft der Code die Methode**execute** des **CloudTable**-Objekts auf und gibt dabei die Tabelle "people" und die neue **TableOperation** an, die dann eine Anforderung an den Speicherdienst sendet, die neue Kundenentität in die Tabelle "people" einzufügen oder die Entität zu ersetzen, wenn sie bereits vorhanden ist.
 
     try
     {
-    	// Speicherkonto aus Verbindungszeichenfolge abrufen.
+    	// Retrieve storage account from connection-string.
     	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
-    	// Tabellenclient erstellen.
+    	// Create the table client.
     	CloudTableClient tableClient = storageAccount.createCloudTableClient();
 			
     	// Create a cloud table object for the table.
     	CloudTable cloudTable = tableClient.getTableReference("people");
 			
-    	// Neue Kundenentität erstellen.
+    	// Create a new customer entity.
     	CustomerEntity customer1 = new CustomerEntity("Harp", "Walter");
     	customer1.setEmail("Walter@contoso.com");
     	customer1.setPhoneNumber("425-555-0101");
 			
-    	// Vorgang erstellen, um den neuen Kunden in die Tabelle "personen" einzufügen.
+    	// Create an operation to add the new customer to the people table.
     	TableOperation insertCustomer1 = TableOperation.insertOrReplace(customer1);
 
-    	// Den Vorgang an den Tabellendienst senden.
+    	// Submit the operation to the table service.
     	cloudTable.execute(insertCustomer1);
     }
     catch (Exception e)
@@ -184,44 +182,44 @@ Tabellenvorgänge, die Entitäten umfassen, benötigen ein **TableOperation**-Ob
         e.printStackTrace();
     }
 
-## <a name="InsertBatch"> </a>Gewusst wie: Einfügen eines Entitätsbatchs
+## <a name="InsertBatch"> </a>Vorgehensweise: Einfügen eines Entitätsbatchs
 
-Sie können einen Entitätsbatch in einem Schreibvorgang in den Tabellendienst einfügen. Durch den folgenden Code wird ein **TableBatchOperation**-Objekt erstellt, zu dem anschließend drei Einfügevorgänge hinzugefügt werden. Für jeden Einfügevorgang wird ein neues Entitätsobjekt erstellt, dessen Werte werden festgelegt, und dann wird die Methode **insert** für das **TableBatchOperation**-Objekt aufgerufen und die Entität einem neuen Einfügevorgang zugeordnet. Anschließend ruft der Code die **execute**-Methode für das **CloudTable**-Objekt auf und gibt dabei die Tabelle "people" und das **TableBatchOperation**-Objekt an, das dann den Batch mit Tabellenvorgängen in einer einzelnen Anforderung an den Speicherdienst sendet.
+Sie können einen Entitätsbatch in einem Schreibvorgang in den Tabellendienst einfügen. Der folgende Code erstellt ein **TableBatchOperation**-Objekt und fügt diesem dann drei Einfügevorgänge hinzu. Für jeden Einfügevorgang wird ein neues Entitätsobjekt erstellt, dessen Werte werden festgelegt, und dann wird die Methode **insert** für das **TableBatchOperation**-Objekt aufgerufen und die Entität einem neuen Einfügevorgang zugeordnet. Anschließend ruft der Code die Methode **execute** für das **CloudTable**-Objekt auf und gibt dabei die Tabelle "people" und das **TableBatchOperation**-Objekt an, das dann den Batch mit Tabellenvorgängen in einer einzelnen Anforderung an den Speicherdienst sendet.
 
     try
     {
-    	// Speicherkonto aus Verbindungszeichenfolge abrufen.
+    	// Retrieve storage account from connection-string.
     	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
-    	// Tabellenclient erstellen.
+    	// Create the table client.
     	CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
-    	// Batchvorgang definieren.
+    	// Define a batch operation.
     	TableBatchOperation batchOperation = new TableBatchOperation();
 
     	// Create a cloud table object for the table.
     	CloudTable cloudTable = tableClient.getTableReference("people");
 
-    	// Kundenentität erstellen und zur Tabelle hinzufügen.
+    	// Create a customer entity to add to the table.
     	CustomerEntity customer = new CustomerEntity("Smith", "Jeff");
     	customer.setEmail("Jeff@contoso.com");
     	customer.setPhoneNumber("425-555-0104");
     	batchOperation.insertOrReplace(customer);
 
-	   // Zweite Kundenentität erstellen und zur Tabelle hinzufügen.
+	   // Create another customer entity to add to the table.
 	   CustomerEntity customer2 = new CustomerEntity("Smith", "Ben");
 	   customer2.setEmail("Ben@contoso.com");
 	   customer2.setPhoneNumber("425-555-0102");
 	   batchOperation.insertOrReplace(customer2);
 
-	   // Dritte Kundenentität erstellen und zur Tabelle hinzufügen.
+	   // Create a third customer entity to add to the table.
 	   CustomerEntity customer3 = new CustomerEntity("Smith", "Denise");
 	   customer3.setEmail("Denise@contoso.com");
 	   customer3.setPhoneNumber("425-555-0103");
 	   batchOperation.insertOrReplace(customer3);
 
-	   // Vorgangsbatch für Tabelle "personen" ausführen.
+	   // Execute the batch of operations on the "people" table.
 	   cloudTable.execute(batchOperation);
     }
     catch (Exception e)
@@ -237,9 +235,9 @@ Beachten Sie im Zusammenhang mit Batchvorgängen Folgendes:
 - Alle Entitäten in einem Batchvorgang müssen über denselben Partitionsschlüssel verfügen.
 - Ein Batchvorgang ist auf eine Nutzlast von 4 MB Daten beschränkt.
 
-## <a name="RetrieveEntities"> </a>Gewusst wie: Abrufen aller Entitäten in einer Partition
+## <a name="RetrieveEntities"> </a>Vorgehensweise: Abrufen aller Entitäten in einer Partition
 
-Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle für Entitäten in einer Partition abzurufen. Rufen Sie **TableQuery.from** auf, um eine Abfrage in einer bestimmten Tabelle zu erstellen, die einen bestimmen Ergebnistyp übergibt. Im folgenden Code wird ein Filter für Entitäten erstellt, wobei "Smith" der Partitionsschlüssel ist. **TableQuery.generateFilterCondition** ist eine Helper-Methode für die Erstellung von Filtern für Abfragen. Rufen Sie **where** auf der von der **TableQuery.from**-Methode übergebenen Referenz auf, um den Filter auf die Abfrage anzuwenden. Wenn die Abfrage mit einem Aufruf der **execute**-Methode für das **CloudTable**-Objekt ausgeführt wird, übergibt sie einen **Iterator** mit **CustomerEntity** als Ergebnistyp. Anschließend können Sie den übergebenen **Iterator** verwenden, um die Ergebnisse in jede Schleife einzubinden. In diesem Code werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
+Zum Abfragen einer Tabelle für Entitäten in einer Partition können Sie ein **TableQuery**-Objekt verwenden. Rufen Sie **TableQuery.from** auf, um eine Abfrage in einer bestimmten Tabelle zu erstellen, die einen bestimmen Ergebnistyp übergibt. Im folgenden Code wird ein Filter für Entitäten erstellt, wobei "Smith" der Partitionsschlüssel ist. **TableQuery.generateFilterCondition** ist eine Helper-Methode für die Erstellung von Filtern für Abfragen. Rufen Sie **where** für den von der Methode **TableQuery.from** zurückgegebenen Verweis auf, um den Filter auf die Abfrage anzuwenden. Wenn die Abfrage mit einem Aufruf der Methode **execute** für das **CloudTable**-Objekt ausgeführt wird, übergibt sie einen **Iterator** mit **CustomerEntity** als Ergebnistyp. Sie können dann den zurückgegebenen **Iterator** verwenden, um die Ergebnisse in jede Schleife einzubinden. In diesem Code werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
 
     try
     {
@@ -248,28 +246,28 @@ Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle für Entitäten in eine
     	final String ROW_KEY = "RowKey";
     	final String TIMESTAMP = "Timestamp";
 
-    	// Speicherkonto aus Verbindungszeichenfolge abrufen.
+    	// Retrieve storage account from connection-string.
     	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
-    	// Tabellenclient erstellen.
+    	// Create the table client.
     	CloudTableClient tableClient = storageAccount.createCloudTableClient();
 			
 	   // Create a cloud table object for the table.
 	   CloudTable cloudTable = tableClient.getTableReference("people");
 
-    	// Filterbedingung mit dem Partitionsschlüssel "Smith" erstellen.
+    	// Create a filter condition where the partition key is "Smith".
     	String partitionFilter = TableQuery.generateFilterCondition(
 	       PARTITION_KEY, 
 	       QueryComparisons.EQUAL,
 	       "Smith");
 
-	   // Partitionsabfrage mit "Smith" als Partitionsschlüsselfilter erstellen.
+	   // Specify a partition query, using "Smith" as the partition key filter.
 	   TableQuery<CustomerEntity> partitionQuery =
 	       TableQuery.from(CustomerEntity.class)
 	       .where(partitionFilter);
 
-        // Schleife durch die Ergebnisse durchlaufen und Informationen zur Entität anzeigen.
+        // Loop through the results, displaying information about the entity.
         for (CustomerEntity entity : cloudTable.execute(partitionQuery)) {
             System.out.println(entity.getPartitionKey() +
                 " " + entity.getRowKey() + 
@@ -283,7 +281,7 @@ Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle für Entitäten in eine
         e.printStackTrace();
     }
 
-## <a name="RetrieveRange"> </a>Gewusst wie: Abrufen eines Entitätsbereichs in einer Partition
+## <a name="RetrieveRange"> </a>Vorgehensweise: Abrufen eines Entitätsbereichs in einer Partition
 
 Wenn Sie nicht alle Entitäten in einer Partition abrufen möchten, können Sie durch Verwendung von Vergleichsoperatoren einen Bereich angeben. Im folgenden Code werden zwei Filter kombiniert, um alle Entitäten in der Partition "Smith" abzurufen, deren Zeilenschlüssel (Vorname) mit einem Buchstaben vor dem Buchstaben "E" im Alphabet beginnen. Danach werden die Abfrageergebnisse ausgegeben. Wenn Sie die Entitäten verwenden, die in diesem Leitfaden im Kapitel zum Batcheinfügevorgang in die Tabelle eingefügt wurden, werden in diesem Fall nur zwei Entitäten übergeben (Ben und Denise Smith); Jeff Smith ist nicht enthalten.
 
@@ -294,39 +292,39 @@ Wenn Sie nicht alle Entitäten in einer Partition abrufen möchten, können Sie 
     	final String ROW_KEY = "RowKey";
     	final String TIMESTAMP = "Timestamp";
 			
-    	// Speicherkonto aus Verbindungszeichenfolge abrufen.
+    	// Retrieve storage account from connection-string.
     	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
-	   // Tabellenclient erstellen.
+	   // Create the table client.
 	   CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
 	   // Create a cloud table object for the table.
 	   CloudTable cloudTable = tableClient.getTableReference("people");
 
-    	// Filterbedingung mit dem Partitionsschlüssel "Smith" erstellen.
+    	// Create a filter condition where the partition key is "Smith".
     	String partitionFilter = TableQuery.generateFilterCondition(
 	       PARTITION_KEY, 
 	       QueryComparisons.EQUAL,
 	       "Smith");
 
-    	// Filterbedingung mit einem Zeilenschlüssel erstellen, der kleiner ist als die Anzahl der Buchstaben bis zum Buchstaben "E".
+    	// Create a filter condition where the row key is less than the letter "E".
     	String rowFilter = TableQuery.generateFilterCondition(
 	       ROW_KEY, 
 	       QueryComparisons.LESS_THAN,
 	       "E");
 
-    	// Die beiden Bedingungen in einem Filterausdruck kombinieren.
+    	// Combine the two conditions into a filter expression.
     	String combinedFilter = TableQuery.combineFilters(partitionFilter, 
 	        Operators.AND, rowFilter);
 
-    	// Bereichsabfrage mit "Smith" als Partitionsschlüssel erstellen.
-    	// wobei der Zeilenschlüssel nur bis zum Buchstaben "E" geht.
+    	// Specify a range query, using "Smith" as the partition key,
+    	// with the row key being up to the letter "E".
     	TableQuery<CustomerEntity> rangeQuery =
 	       TableQuery.from(CustomerEntity.class)
 	       .where(combinedFilter);
 
-    	// Schleife durch die Ergebnisse durchlaufen und Informationen zur Entität anzeigen.
+    	// Loop through the results, displaying information about the entity
         for (CustomerEntity entity : cloudTable.execute(rangeQuery)) {
             System.out.println(entity.getPartitionKey() +
                 " " + entity.getRowKey() +
@@ -340,27 +338,27 @@ Wenn Sie nicht alle Entitäten in einer Partition abrufen möchten, können Sie 
         e.printStackTrace();
     }
 
-## <a name="RetriveSingle"> </a>Gewusst wie: Abrufen einer einzelnen Entität
+## <a name="RetriveSingle"> </a>Vorgehensweise: Abrufen einer einzelnen Entität
 
-Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Im folgenden Code wird der Kunde "Jeff Smith" nicht durch Erstellen einer **TableQuery** und Verwendung von Filtern übergeben, sondern durch Aufruf von **TableOperation.retrieve** mit Partitions- und Zeilenschlüsselparametern. Bei der Ausführung übergibt dieser Abfragevorgang nicht eine ganze Sammlung von Entitäten, sondern nur eine einzelne Entität. Die Methode **getResultAsType** wandelt das Ergebnis in den Typ des Zuweisungsziels um, ein **CustomerEntity**-Objekt. Wenn dieser Typ mit dem für die Abfrage spezifizierten Typ nicht kompatibel ist, wird eine Ausnahme ausgelöst. Ein Nullwert wird übergeben, wenn keine Entität eine übereinstimmende Partition und einen passenden Zeilenschlüssel hat. Die Angabe beider Schlüssel, Partition und Zeile, in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
+Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Der folgende Code ruft **TableOperation.retrieve** mit Partitionsschlüssel- und Zeilenschlüsselparametern auf, um den Kunden "Jeff Smith" anzugeben, statt eine **TableQuery** zu erstellen und Filter zu verwenden, um dasselbe Ergebnis zu erzielen. Bei der Ausführung übergibt dieser Abfragevorgang nicht eine ganze Sammlung von Entitäten, sondern nur eine einzelne Entität. Die Methode **getResultAsType** wandelt das Ergebnis in den Typ des Zuweisungsziels um, ein **CustomerEntity**-Objekt. Wenn dieser Typ mit dem für die Abfrage spezifizierten Typ nicht kompatibel ist, wird eine Ausnahme ausgelöst. Ein Nullwert wird übergeben, wenn keine Entität eine übereinstimmende Partition und einen passenden Zeilenschlüssel hat. Die Angabe beider Schlüssel, Partition und Zeile, in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
 
     try
     {
-    	// Speicherkonto aus Verbindungszeichenfolge abrufen.
+    	// Retrieve storage account from connection-string.
     	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
-    	// Tabellenclient erstellen.
+    	// Create the table client.
     	CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
     	// Create a cloud table object for the table.
     	CloudTable cloudTable = tableClient.getTableReference("people");
 
-    	// Entität mit Partitionsschlüssel "Smith" und Zeilenschlüssel "Jeff" abrufen
+    	// Retrieve the entity with partition key of "Smith" and row key of "Jeff"
     	TableOperation retrieveSmithJeff = 
 	       TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
 
-	   // Den Vorgang an den Tabellendienst senden und die betreffende Entität abrufen.
+	   // Submit the operation to the table service and get the specific entity.
 	   CustomerEntity specificEntity =
     		cloudTable.execute(retrieveSmithJeff).getResultAsType();
 			
@@ -379,37 +377,37 @@ Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Im fol
         e.printStackTrace();
     }
 
-## <a name="ModifyEntity"> </a>Gewusst wie: Ändern einer Entität
+## <a name="ModifyEntity"> </a>Vorgehensweise: Ändern einer Entität
 
 Um eine Entität zu ändern, rufen Sie sie aus dem Tabellendienst ab, ändern Sie das Entitätsobjekt, und speichern Sie die Änderungen dann mit einem Ersetzungs- oder Zusammenführungsvorgang im Tabellendienst. Mit dem folgenden Code wird die Telefonnummer eines vorhandenen Kunden geändert. In diesem Fall wird nicht wie beim Einfügen **TableOperation.insert**, sondern **TableOperation.replace** aufgerufen. Die Methode **CloudTable.execute** ruft den Tabellendienst auf, und die Entität wird ersetzt, sofern sie nicht nach dem Aufruf durch diese Anwendung in der Zwischenzeit von einer anderen Anwendung geändert wurde. In diesem Fall wird eine Ausnahme ausgelöst, und die Entität muss erneut aufgerufen, geändert und gespeichert werden. Dieses auf dem "Optimistic Concurrency"-Verfahren (optimistisches Locking) basierende Muster für Wiederholungsversuche ist in verteilten Speichersystemen häufig anzutreffen.
 
     try
     {
-    	// Speicherkonto aus Verbindungszeichenfolge abrufen.
+    	// Retrieve storage account from connection-string.
     	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
-    	// Tabellenclient erstellen.
+    	// Create the table client.
     	CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
     	// Create a cloud table object for the table.
     	CloudTable cloudTable = tableClient.getTableReference("people");
 
-    	// Entität mit Partitionsschlüssel "Smith" und Zeilenschlüssel "Jeff" abrufen.
+    	// Retrieve the entity with partition key of "Smith" and row key of "Jeff".
     	TableOperation retrieveSmithJeff = 
 	       TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
 
-    	// Den Vorgang an den Tabellendienst senden und die betreffende Entität abrufen.
+    	// Submit the operation to the table service and get the specific entity.
     	CustomerEntity specificEntity =
 		  cloudTable.execute(retrieveSmithJeff).getResultAsType();
 
-    	// Neue Telefonnummer angeben.
+    	// Specify a new phone number.
     	specificEntity.setPhoneNumber("425-555-0105");
 
-    	// Vorgang für das Ersetzen der Entität erstellen.
+    	// Create an operation to replace the entity.
     	TableOperation replaceEntity = TableOperation.replace(specificEntity);
 
-    	// Den Vorgang an den Tabellendienst senden.
+    	// Submit the operation to the table service.
     	cloudTable.execute(replaceEntity);
     }
     catch (Exception e)
@@ -418,28 +416,28 @@ Um eine Entität zu ändern, rufen Sie sie aus dem Tabellendienst ab, ändern Si
         e.printStackTrace();
     }
 
-## <a name="QueryProperties"> </a>Gewusst wie: Abfragen einer Teilmenge von Entitätseigenschaften
+## <a name="QueryProperties"> </a>Vorgehensweise: Abfragen einer Teilmenge von Eigenschaften
 
-Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer Entität aufgerufen werden. Bei dieser Methode, der sogenannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Die Abfrage im folgenden Code übergibt mit der Methode **select** nur die E-Mail-Adressen von Entitäten in der Tabelle. Die Ergebnisse werden mit Unterstützung eines **EntityResolver**, der die Typumwandlung der vom Server übergebenen Entitäten übernimmt, in eine Sammlung von **String**-Objekten projiziert. Weitere Informationen zur Projektion finden Sie in diesem [Blogbeitrag][]. Beachten Sie, dass die Projektion nicht auf dem lokalen Speicheremulator unterstützt wird und dieser Code deshalb nur bei der Verwendung eines Kontos für den Tabellendienst ausgeführt wird.
+Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer Entität aufgerufen werden. Bei dieser Methode, der sogenannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Die Abfrage im folgenden Code übergibt mit der Methode **select** nur die E-Mail-Adressen von Entitäten in der Tabelle. Die Ergebnisse werden mit Unterstützung eines **EntityResolver**, der die Typumwandlung der vom Server übergebenen Entitäten übernimmt, in eine Auflistung von **String**-Objekten projiziert. Weitere Informationen zur Projektion finden Sie in diesem [Blogbeitrag][]. Beachten Sie, dass die Projektion nicht auf dem lokalen Speicheremulator unterstützt wird und dieser Code deshalb nur bei der Verwendung eines Kontos für den Tabellendienst ausgeführt wird.
 
     try
     {
-        // Speicherkonto aus Verbindungszeichenfolge abrufen.
+        // Retrieve storage account from connection-string.
         CloudStorageAccount storageAccount =
             CloudStorageAccount.parse(storageConnectionString);
 
-    	// Tabellenclient erstellen.
+    	// Create the table client.
     	CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
     	// Create a cloud table object for the table.
     	CloudTable cloudTable = tableClient.getTableReference("people");
 
-    	// Projektionsabfrage definieren, die nur die E-Mail-Eigenschaft abruft
+    	// Define a projection query that retrieves only the Email property
     	TableQuery<CustomerEntity> projectionQuery = 
 	       TableQuery.from(CustomerEntity.class)
 	       .select(new String[] {"Email"});
 
-    	// Entityresolver definieren, der die Entität auf den E-Mail-Wert projiziert.
+    	// Define a Entity resolver to project the entity to the Email value.
     	EntityResolver<String> emailResolver = new EntityResolver<String>() {
             @Override
             public String resolve(String PartitionKey, String RowKey, Date timeStamp, HashMap<String, EntityProperty> properties, String etag) {
@@ -447,7 +445,7 @@ Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer En
             }
         };
 
-        // Schleife durch die Ergebnisse durchlaufen und die E-Mail-Informationen anzeigen.
+        // Loop through the results, displaying the Email values.
         for (String projectedString : 
             cloudTable.execute(projectionQuery, emailResolver)) {
                 System.out.println(projectedString);
@@ -459,31 +457,31 @@ Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer En
         e.printStackTrace();
     }
 
-## <a name="InsertOrReplace"> </a>Gewusst wie: Einfügen oder Ersetzen einer Entität
+## <a name="InsertOrReplace"> </a>Vorgehensweise: Einfügen oder Ersetzen einer Entität
 
-Es kommt häufig vor, dass Sie eine Entität in eine Tabelle einfügen möchten, ohne zuvor prüfen zu müssen, ob diese Entität bereits in der Tabelle vorhanden ist. Mit einem Einfügen-oder-Ersetzen-Vorgang genügt eine einzelne Anforderung, um eine nicht vorhandene Entität einzufügen oder eine vorhandene zu ersetzen. Ausgehend von vorherigen Beispielen wird durch diesen Code die Entität für "Walter Harp" eingefügt oder ersetzt. Nachdem eine neue Entität erstellt worden ist, ruft dieser Code die Methode **TableOperation.insertOrReplace** auf. Anschließend ruft der Code die Methode **execute** für das **CloudTable**-Objekt auf und spezifiziert als Parameter die Tabelle und den Einfügen-oder-Ersetzen-Vorgang. Wenn nur ein Teil einer Entität aktualisiert werden sollen, kann stattdessen die Methode **TableOperation.insertOrMerge** verwendet werden. Hinweis: Einfügen-oder-Ersetzen-Vorgänge werden auf dem lokalen Speicheremulator nicht unterstützt, weshalb dieser Code nur bei Verwendung eines Kontos auf dem Tabellendienst ausgeführt wird. Weitere Informationen zu Einfügen-oder-Ersetzen- und Einfügen-oder-Zusammenfügen-Vorgängen finden Sie in diesem [Blogbeitrag][].
+Es kommt häufig vor, dass Sie eine Entität in eine Tabelle einfügen möchten, ohne zuvor prüfen zu müssen, ob diese Entität bereits in der Tabelle vorhanden ist. Mit einem Einfügen-oder-Ersetzen-Vorgang genügt eine einzelne Anforderung, um eine nicht vorhandene Entität einzufügen oder eine vorhandene zu ersetzen. Ausgehend von vorherigen Beispielen wird durch diesen Code die Entität für "Walter Harp" eingefügt oder ersetzt. Nach dem Erstellen einer neuen Entität ruft dieser Code die Methode **TableOperation.insertOrReplace** auf. Anschließend ruft der Code die Methode **execute** für das **CloudTable**-Objekt auf und gibt als Parameter die Tabelle und den Vorgang zum Einfügen oder Ersetzen der Tabelle an. Wenn nur ein Teil einer Entität aktualisiert werden soll, kann stattdessen die Methode **TableOperation.insertOrMerge** verwendet werden. Hinweis: Einfügen-oder-Ersetzen-Vorgänge werden auf dem lokalen Speicheremulator nicht unterstützt, weshalb dieser Code nur bei Verwendung eines Kontos auf dem Tabellendienst ausgeführt wird. Weitere Informationen zu insert-or-replace- und insert-or-merge-Vorgängen finden Sie diesem [Blogbeitrag][].
 
     try
     {
-        // Speicherkonto aus Verbindungszeichenfolge abrufen.
+        // Retrieve storage account from connection-string.
         CloudStorageAccount storageAccount =
             CloudStorageAccount.parse(storageConnectionString);
 
-        // Tabellenclient erstellen.
+        // Create the table client.
         CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
         // Create a cloud table object for the table.
         CloudTable cloudTable = tableClient.getTableReference("people");
 
-        // Neue Kundenentität erstellen.
+        // Create a new customer entity.
         CustomerEntity customer5 = new CustomerEntity("Harp", "Walter");
         customer5.setEmail("Walter@contoso.com");
         customer5.setPhoneNumber("425-555-0106");
 
-        // Vorgang erstellen, um den neuen Kunden in die Tabelle "personen" einzufügen.
+        // Create an operation to add the new customer to the people table.
         TableOperation insertCustomer5 = TableOperation.insertOrReplace(customer5);
 
-        // Den Vorgang an den Tabellendienst senden.
+        // Submit the operation to the table service.
         cloudTable.execute(insertCustomer5);
     }
     catch (Exception e)
@@ -492,33 +490,33 @@ Es kommt häufig vor, dass Sie eine Entität in eine Tabelle einfügen möchten,
         e.printStackTrace();
     }
 
-## <a name="DeleteEntity"> </a>Gewusst wie: Löschen einer Entität
+## <a name="DeleteEntity"> </a>Vorgehensweise: Löschen einer Entität
 
-Sie können eine Entität problemlos nach dem Abrufen löschen. Wenn die Entität aufgerufen worden ist, rufen Sie die **TableOperation.delete**-Methode mit der zu löschenden Entität auf. Rufen Sie dann **execute** für das **CloudTable**-Objekt auf. Durch den nachstehenden Code wird eine Kundenentität aufgerufen und gelöscht.
+Sie können eine Entität problemlos nach dem Abrufen löschen. Wenn die Entität abgerufen wurde, rufen Sie **TableOperation.delete** mit der zu löschenden Entität auf. Rufen Sie dann **execute** für das **CloudTable**-Objekt auf. Durch den nachstehenden Code wird eine Kundenentität aufgerufen und gelöscht.
 
     try
     {
-        // Speicherkonto aus Verbindungszeichenfolge abrufen.
+        // Retrieve storage account from connection-string.
         CloudStorageAccount storageAccount =
             CloudStorageAccount.parse(storageConnectionString);
 
-        // Tabellenclient erstellen.
+        // Create the table client.
         CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
         // Create a cloud table object for the table.
         CloudTable cloudTable = tableClient.getTableReference("people");
 
-        // Vorgang für den Aufruf der Entität mit Partitionsschlüssel "Smith" und Zeilenschlüssel "Jeff" erstellen.
+        // Create an operation to retrieve the entity with partition key of "Smith" and row key of "Jeff".
         TableOperation retrieveSmithJeff = TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
 
-        // Entität mit Partitionsschlüssel "Smith" und Zeilenschlüssel "Jeff" abrufen.
+        // Retrieve the entity with partition key of "Smith" and row key of "Jeff".
         CustomerEntity entitySmithJeff =
             cloudTable.execute(retrieveSmithJeff).getResultAsType();
 
-        // Vorgang für das Löschen der Entität erstellen.
+        // Create an operation to delete the entity.
         TableOperation deleteSmithJeff = TableOperation.delete(entitySmithJeff);
 
-        // Den Löschen-Vorgang an den Tabellendienst senden.
+        // Submit the delete operation to the table service.
         cloudTable.execute(deleteSmithJeff);
     }
     catch (Exception e)
@@ -527,20 +525,20 @@ Sie können eine Entität problemlos nach dem Abrufen löschen. Wenn die Entitä
         e.printStackTrace();
     }
 
-## <a name="DeleteTable"> </a>Gewusst wie: Löschen einer Tabelle
+## <a name="DeleteTable"> </a>Vorgehensweise: Löschen einer Tabelle
 
 Schließlich wird mit dem folgenden Code eine Tabelle aus einem Speicherkonto gelöscht. Eine gelöschte Tabelle kann für eine bestimmte Zeitdauer, in der Regel maximal vierzig Sekunden, nach dem Löschvorgang nicht neu erstellt werden.
 
     try
     {
-        // Speicherkonto aus Verbindungszeichenfolge abrufen.
+        // Retrieve storage account from connection-string.
         CloudStorageAccount storageAccount =
             CloudStorageAccount.parse(storageConnectionString);
 
-        // Tabellenclient erstellen.
+        // Create the table client.
         CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
-        // Tabelle einschließlich aller Daten, falls vorhanden, löschen.
+        // Delete the table and all its data if it exists.
         CloudTable cloudTable = new CloudTable("people",tableClient);
         cloudTable.deleteIfExists();
     }
@@ -559,10 +557,11 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
 - [Azure Storage-REST-API]
 - [Azure Storage-Teamblog]
 
-[Azure SDK für Java]: http://www.windowsazure.com/de-de/develop/java/
-[Azure Storage SDK für Java]: https://github.com/azure/azure-storage-java
-[Azure Storage SDK für Android]: https://github.com/azure/azure-storage-android
+[Azure-SDK für Java]: http://www.windowsazure.com/de-de/develop/java/
+[Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
+[Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
 [Azure Storage-Client-SDK-Referenz]: http://dl.windowsazure.com/storage/javadoc/
 [Azure Storage-REST-API]: http://msdn.microsoft.com/de-de/library/azure/gg433040.aspx
-[Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
-[Blogeintrag]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+[Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
+[Blogbeitrag]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+\n<!--HONumber=35.1--> 
