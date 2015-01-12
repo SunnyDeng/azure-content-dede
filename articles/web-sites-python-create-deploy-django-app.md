@@ -138,4 +138,5 @@ Anschließend müssen Sie das Verzeichnis "site-packages" aktualisieren, indem S
 Nachdem Sie die Dateien kopiert haben, führen Sie den Befehl **git status** aus, um die neu hinzugefügten Dateien anzuzeigen, und **git add** gefolgt von **git commit**, um die Änderungen in das Repository zu übernehmen.  Und schließlich können Sie noch **git push** ausführen, um die aktualisierte Website in Azure bereitzustellen.
 
 Nun können Sie "manage.py" im Verzeichnis "DjangoApplication" wie gewohnt verwenden, um neue Anwendungen zum Django-Projekt hinzuzufügen.  
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

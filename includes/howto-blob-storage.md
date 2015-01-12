@@ -21,7 +21,7 @@ Der BLOB-Dienst umfasst die folgenden Komponenten:
 ![Blob1][Blob1]
 
 -   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen
-    über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets][Azure Storage Scalability and Performance Targets] (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
+    über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/de-de/library/dn249410.aspx) (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
 
 -   **Container:** Ein Container dient zur Gruppierung eines Satzes von Blobs.
     Alle BLOBs müssen sich in Containern befinden. Ein Konto kann eine
@@ -38,11 +38,11 @@ Der BLOB-Dienst umfasst die folgenden Komponenten:
 
 -   **URL-Format:** Blobs sind über das folgende URL-Format
     adressierbar:
-    <http://>`<storage account>`.blob.core.windows.net/`<container>`/`<blob>`
+    http://`<storage account>`.blob.core.windows.net/`<container>`/`<blob>`
 
     Mit der folgenden URL kann z. B. einer der Blobs im Diagramm oben
     adressiert werden:
     `http://sally.blob.core.windows.net/movies/MOV1.AVI`
 
-  [Blob1]: ./media/howto-blob-storage/blob1.jpg
-  [Azure Storage Scalability and Performance Targets]: http://msdn.microsoft.com/de-de/library/dn249410.aspx
+[Blob1]: ./media/howto-blob-storage/blob1.jpg
+

@@ -203,4 +203,5 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 - [Verwenden des Blob-Speichers von Python](../storage-python-how-to-use-blob-storage/)
 - [Verwenden des Tabellenspeichers von Python](../storage-python-how-to-use-table-storage/)
 - [Verwenden des Warteschlangenspeichers von Python](../storage-python-how-to-use-queue-storage/)
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

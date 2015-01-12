@@ -220,4 +220,5 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Fl
 [Remote Debugging auf Microsoft Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Webprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

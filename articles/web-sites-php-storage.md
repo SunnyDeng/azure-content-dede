@@ -450,4 +450,5 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
 [git-instructions]: ./media/web-sites-php-storage/git-instructions.png
 [where-is-code]: ./media/web-sites-php-storage/where_is_code.png
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

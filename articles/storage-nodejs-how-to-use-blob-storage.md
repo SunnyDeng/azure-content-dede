@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Node.js) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Node.js" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="nodejs" title="How to Use the Blob Service from Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Node.js) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Node.js" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="nodejs" title="How to Use the Blob Service from Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="mwasson" />
 
@@ -28,14 +28,14 @@ finden Sie im Abschnitt [Nächste Schritte][].
 * [Gewusst wie: Arbeiten mit Shared Access Signatures][]     
 * [Nächste Schritte][]
 
-[WACOM.INCLUDE [vorgehensweise-blob-speicher](../includes/howto-blob-storage.md)]
+[WACOM.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
 
 ##<a name="create-account"></a>Erstellen eines Azure-Speicherkontos
-[WACOM.INCLUDE [speicherkonto-erstellen](../includes/create-storage-account.md)]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <a name="create-app"> </a>Erstellen einer Node.js-Anwendung
 
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Clouddienst][Node.js Cloud Service] (mithilfe von Windows PowerShell) oder [Website mit WebMatrix].
+Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js Cloud Service] \(mithilfe von Windows PowerShell) oder [Website mit WebMatrix].
 
 ## <a name="configure-access"> </a>Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -366,7 +366,7 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 -   Besuchen Sie den Blog [Azure-Speicherteams][].
 -   Besuchen Sie das [Azure Storage SDK für Node][]-Repository auf GitHub.
 
-  [Azure Storage-SDK für Java]: https://github.com/Azure/azure-storage-node
+  [Azure Storage SDK für Node]: https://github.com/Azure/azure-storage-node
   [Nächste Schritte]: #next-steps
   [Was ist der Blob-Dienst?]: #what-is
   [Konzepte]: #concepts
@@ -381,14 +381,14 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [Gewusst wie: Löschen eines Blobs]: #delete-blobs
   [Gewusst wie: Paralleler Zugriff]: #concurrent-access
   [Gewusst wie: Arbeiten mit Shared Access Signatures]: #sas
-[Erstellen und Bereitstellen einer Node.js-Anwendung zu einer Azure-Website]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
-  [Node.js-Cloud-Dienst mit Speicher]: /de-de/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
+  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
+  [Node.js Cloud Service]: /de-de/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
   [Node.js-Webanwendung mit Speicher]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
  [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
   [mithilfe der REST-API]: http://msdn.microsoft.com/de-de/library/windowsazure/hh264518.aspx
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
   [Node.js-Cloud-Dienst]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-  [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
 
 <!--HONumber=35.1-->

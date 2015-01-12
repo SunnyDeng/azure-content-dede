@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangendiensts (Node.js) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Node.js" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="nodejs" title="How to Use the Queue Service from Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangendiensts (Node.js) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Node.js" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="nodejs" title="How to Use the Queue Service from Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="mwasson" />
 
@@ -29,15 +29,15 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Windows A
 * [Gewusst wie: Arbeiten mit Shared Access Signature][]
 * [Nächste Schritte][]
 
-[WACOM.INCLUDE [vorgehensweise-warteschlangenspeicher](../includes/howto-queue-storage.md)]
+[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
 
 <h2><a name="create-account"></a>Erstellen eines Azure-Speicherkontos</h2>
 
-[WACOM.INCLUDE [speicherkonto-erstellen](../includes/create-storage-account.md)]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## <a name="create-app"> </a>Erstellen einer Node.js-Anwendung
 
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Clouddienst][Node.js Cloud Service] (mithilfe von Windows PowerShell) oder [Website mit WebMatrix].
+Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung zu einer Azure-Website], [Node.js-Clouddienst][Node.js Cloud Service] \(mithilfe von Windows PowerShell) oder [Website mit WebMatrix].
 
 ## <a name="configure-access"> </a>Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -322,7 +322,7 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 -   Besuchen Sie den Blog [Azure-Speicherteams][].
 -   Besuchen Sie das [Azure Storage SDK für Node][]-Repository auf GitHub.
 
-  [Azure Storage-SDK für Java]: https://github.com/Azure/azure-storage-node
+  [Azure Storage SDK für Node]: https://github.com/Azure/azure-storage-node
   [Nächste Schritte]: #next-steps
   [Was ist der Warteschlangendienst?]: #what-is
   [Konzepte]: #concepts
@@ -352,9 +352,9 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   
   
   
-  [Node.js-Cloud-Dienst]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Node.js Cloud Service]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-  [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
- [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
+  [Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
 
 <!--HONumber=35.1-->

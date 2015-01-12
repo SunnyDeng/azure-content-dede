@@ -109,4 +109,5 @@ Nachdem Sie jetzt wissen, wie Sie PHP auf Azure-Websites konfigurieren, können 
 [handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png
 [Configure, monitor, and scale your web sites in Azure (Konfigurieren, Überwachen und Skalieren von Websites in Azure, in englischer Sprache)]: http://www.windowsazure.com/de-de/manage/services/web-sites/
 [Herunterladen des Azure SDK für PHP]: http://www.windowsazure.com/de-de/develop/php/common-tasks/download-php-sdk/
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

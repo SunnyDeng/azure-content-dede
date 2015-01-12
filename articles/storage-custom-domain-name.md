@@ -134,4 +134,5 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte 
 ## Zusätzliche Ressourcen
 
 -   <a href="http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx">Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne</a>
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

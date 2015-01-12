@@ -1,4 +1,4 @@
-﻿<properties title="How to use the queue service (PHP) - Azure feature guide" pageTitle="Verwenden des Warteschlangendiensts (PHP) | Microsoft Azure" metaKeywords="Azure Queue Service messaging PHP" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in PHP." documentationCenter="PHP" services="storage" authors="tamram" manager="adinah" />
+<properties title="How to use the queue service (PHP) - Azure feature guide" pageTitle="Verwenden des Warteschlangendiensts (PHP) | Microsoft Azure" metaKeywords="Azure Queue Service messaging PHP" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in PHP." documentationCenter="PHP" services="storage" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/24/2014" ms.author="tomfitz" />
 
@@ -24,11 +24,11 @@ Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des War
 * [Vorgehensweise: Löschen einer Warteschlange](#delete-queue)
 * [Nächste Schritte](#next-steps)
 
-[WACOM.INCLUDE [vorgehensweise-warteschlangenspeicher](../includes/howto-queue-storage.md)]
+[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
 
 <h2><a id="create-account"></a>Erstellen eines Azure-Speicherkontos</h2>
 
-[WACOM.INCLUDE [speicherkonto-erstellen](../includes/create-storage-account.md)]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 <h2><a id="create-app"></a>Erstellen einer PHP-Anwendung</h2>
 
@@ -38,7 +38,7 @@ In diesem Leitfaden verwenden Sie Funktionen des Warteschlangendiensts, die loka
 
 <h2><a id="GetClientLibrary"></a>Abrufen der Azure-Clientbibliotheken</h2>
 
-[WACOM.INCLUDE [clientbibliotheken-abrufen](../includes/get-client-libraries.md)]
+[WACOM.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 <h2><a id="configure-app"></a>Konfigurieren der Anwendung für den Zugriff auf den Warteschlangendienst</h2>
 

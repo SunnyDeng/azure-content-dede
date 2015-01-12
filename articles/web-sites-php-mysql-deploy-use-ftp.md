@@ -263,4 +263,5 @@ Nachdem Sie sowohl `index.php` als auch `createtable.php` hochgeladen haben, nav
 [connection-string-info]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/connection_string_info.png
 [management-portal]: https://manage.windowsazure.com
 [download-publish-profile]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/download_publish_profile_2.png
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

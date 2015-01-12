@@ -1,14 +1,15 @@
-﻿<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangendiensts (Python) | Microsoft Azure" metaKeywords="Azure Queue Service messaging Python" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Python." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Queue Storage Service from Python" authors="huvalo" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangendiensts (Python) | Microsoft Azure" metaKeywords="Azure Queue Service messaging Python" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Python." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Queue Storage Service from Python" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/19/2014" ms.author="robmcm" />
 
 
 
-# Verwenden des Warteschlangenspeicherdiensts aus Python Dieser Leitfaden demonstriert die Durchführung häufiger Szenarien mit dem Azure-Warteschlangenspeicherdienst. Die Beispiele wurden mit der Python-API geschrieben. Die behandelten Szenarien sind **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
+# Verwenden des Warteschlangenspeicherdiensts aus Python
+Dieser Leitfaden demonstriert die Durchführung häufiger Szenarien mit dem Azure-Warteschlangenspeicherdienst. Die Beispiele wurden mit der Python-API geschrieben. Die behandelten Szenarien sind **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
 
 ## Inhaltsverzeichnis
 
-[Was ist Warteschlangenspeicherung?][]   
+ [Was ist Warteschlangenspeicherung?][]   
  [Konzepte][]   
  [rstellen eines Azure-Speicherkontos][]   
  [Gewusst wie: Erstellen einer Warteschlange][]   
@@ -105,19 +106,19 @@ Nachdem Sie sich nun mit den Grundlagen der Warteschlangenspeicherung vertraut g
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
 -   Besuchen Sie den Blog [Azure-Speicherteams][]
 
-  [Nächste Schritte]: #next-steps
-  [Was ist Warteschlangenspeicherung?]: #what-is
-  [Konzepte]: #concepts
-  [rstellen eines Azure-Speicherkontos]: #create-account
-  [Gewusst wie: Erstellen einer Warteschlange]: #create-queue
-  [Gewusst wie: Einfügen einer Nachricht in eine Warteschlange]: #insert-message
-  [Gewusst wie: Einsehen der nächsten Nachricht]: #peek-message
-  [Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]: #get-message
-  [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]: #change-contents
-  [Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]: #advanced-get
-  [Gewusst wie: Abrufen der Warteschlangenlänge]: #get-queue-length
-  [Gewusst wie: Löschen einer Warteschlange]: #delete-queue
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-  [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
+[Nächste Schritte]: #next-steps
+[Was ist Warteschlangenspeicherung?]: #what-is
+[Konzepte]: #concepts
+[rstellen eines Azure-Speicherkontos]: #create-account
+[Gewusst wie: Erstellen einer Warteschlange]: #create-queue
+[Gewusst wie: Einfügen einer Nachricht in eine Warteschlange]: #insert-message
+[Gewusst wie: Einsehen der nächsten Nachricht]: #peek-message
+[Gewusst wie: Entfernen der nächsten Nachricht aus der Warteschlange]: #get-message
+[Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange]: #change-contents
+[Gewusst wie: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]: #advanced-get
+[Gewusst wie: Abrufen der Warteschlangenlänge]: #get-queue-length
+[Gewusst wie: Löschen einer Warteschlange]: #delete-queue
+[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+[Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
 <!--HONumber=35.1-->

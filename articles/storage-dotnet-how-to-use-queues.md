@@ -1,11 +1,11 @@
-﻿<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangenspeichers mit .NET | Microsoft Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="Learn how to use Microsoft Azure Queue storage to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure Queue Storage" authors="tamram" manager="adinah" />
+<properties urlDisplayName="Queue Service" pageTitle="Verwenden des Warteschlangenspeichers mit .NET | Microsoft Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="Learn how to use Microsoft Azure Queue storage to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure Queue Storage" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/10/2014" ms.author="tamram" />
 
 # Verwenden des Warteschlangenspeichers mit .NET
  In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf den Azure-Speicherclient für .NET zurück. Die dargestellten Szenarien umfassen das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
 
-> [WACOM.NOTE] Diese Anleitung gilt für die Azure .NET Storage Client Library 2.x und höher. Die empfohlene Version ist Storage Client Library 4.x, die über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) oder als Teil des [Azure SDK für .NET](/de-de/downloads/)verfügbar ist. Weitere Informationen zum Abrufen der Storage Client Library finden Sie unter [Vorgehensweise: Programmgesteuerter Zugriff auf Warteschlangenspeicher][] weiter unten.
+> [WACOM.NOTE] Diese Anleitung gilt für die Azure .NET Storage Client Library 2.x und höher. Die empfohlene Version ist Storage Client Library 4.x, die über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) oder als Teil des [Azure SDK für .NET](/de-de/downloads/)verfügbar ist. Weitere Informationen zum Abrufen der Storage Client Library finden Sie unter [Vorgehensweise: Programmgesteuerter Zugriff auf den Warteschlangenspeicher][] weiter unten.
 
 <h2>Inhaltsverzeichnis</h2>
 
@@ -39,7 +39,7 @@
 <h3>Abrufen der Assembly</h3>
 Mithilfe von NuGet können Sie die `Microsoft.WindowsAzure.Storage.dll`-Assembly abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **NuGet-Pakete verwalten** aus.  Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure Storage-Paket und die Abhängigkeiten zu installieren.
 
-Microsoft.WindowsAzure.Storage.dll ist auch im Azure SDK für .NET enthalten, das aus dem <a href="http://www.windowsazure.com/de-de/develop/net/#">.NET Developer Center</a>heruntergeladen werden kann. Die Assembly wird im Verzeichnis "%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\" installiert.
+`Microsoft.WindowsAzure.Storage.dll` ist auch im Azure SDK für .NET enthalten, das aus dem <a href="http://www.windowsazure.com/de-de/develop/net/#">.NET Developer Center</a>heruntergeladen werden kann. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
 
 <h3>Namespace-Deklarationen</h3>
 Fügen Sie zu Beginn aller C\#-Dateien,
@@ -49,7 +49,7 @@ in denen Sie programmgesteuert auf Azure Storage zugreifen möchten, die folgend
     using Microsoft.WindowsAzure.Storage.Auth;
 	using Microsoft.WindowsAzure.Storage.Queue;
 
-Stellen Sie sicher, dass auf die Microsoft.WindowsAzure.Storage.dll-Assembly verwiesen wird.
+Stellen Sie sicher, dass auf die `Microsoft.WindowsAzure.Storage.dll`-Assembly verwiesen wird.
 
 <h3>Abrufen der Verbindungszeichenfolge</h3>
 Sie können Ihre Speicherkontoinformationen mit dem Typ **CloudStorageAccount** darstellen. Wenn Sie eine Windows Azure-Projektvorlage verwenden und/oder über einen Verweis auf "Microsoft.WindowsAzure.CloudConfigurationManager" verfügen, können Sie Ihre Speicherverbindungszeichenfolge und Speicherkontoinformationen mit dem Typ **CloudConfigurationManager** aus der Azure-Dienstkonfiguration abrufen:
@@ -57,7 +57,7 @@ Sie können Ihre Speicherkontoinformationen mit dem Typ **CloudStorageAccount** 
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-Wenn Sie eine Anwendung ohne einen Verweis auf "Microsoft.WindowsAzure.CloudConfigurationManager" erstellen und sich die Verbindungszeichenfolge in der web.config- oder der app.config-Datei befindet, wie oben gezeigt, können Sie **ConfigurationManager** verwenden, um die Verbindungszeichenfolge abzurufen.  Sie müssen einen Verweis auf "System.Configuration.dll" zu Ihrem Projekt und eine andere Namespace-Deklaration dafür hinzufügen:
+Wenn Sie eine Anwendung ohne einen Verweis auf "Microsoft.WindowsAzure.CloudConfigurationManager" erstellen und sich die Verbindungszeichenfolge in der `web.config` oder der `app.config` Datei befindet, wie oben gezeigt, können Sie **ConfigurationManager** verwenden, um die Verbindungszeichenfolge abzurufen.  Sie müssen einen Verweis auf "System.Configuration.dll" zu Ihrem Projekt und eine andere Namespace-Deklaration dafür hinzufügen:
 
 	using System.Configuration;
 	...
@@ -288,4 +288,4 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
-\n<!--HONumber=35.1--> 
+<!--HONumber=35.1--> 

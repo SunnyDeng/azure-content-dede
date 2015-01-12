@@ -269,4 +269,5 @@ Maßnahme | Option ...
 [xplat-cli]: http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/
 [storesendgrid]: http://azure.microsoft.com/de-de/gallery/store/sendgrid/sendgrid-azure/
 [cdn]: http://azure.microsoft.com/de-de/documentation/articles/cdn-how-to-use/
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

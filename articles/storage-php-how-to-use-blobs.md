@@ -1,10 +1,10 @@
-﻿<properties title="How to use blob storage (PHP) - Azure feature guide" pageTitle="Verwenden des Blob-Speichers (PHP) | Microsoft Azure" metaKeywords="Azure blob service PHP, Azure blobs PHP" description="Learn how to use the Azure Blob service to upload, list, download, and delete blobs. Code samples are written in PHP." documentationCenter="PHP" services="storage" videoId="" scriptId="" solutions="" authors="tomfitz" manager="wpickett" editor="mollybos" />
+<properties title="How to use blob storage (PHP) - Azure feature guide" pageTitle="Verwenden des Blob-Speichers (PHP) | Microsoft Azure" metaKeywords="Azure blob service PHP, Azure blobs PHP" description="Learn how to use the Azure Blob service to upload, list, download, and delete blobs. Code samples are written in PHP." documentationCenter="PHP" services="storage" videoId="" scriptId="" solutions="" authors="tomfitz" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/24/2014" ms.author="tomfitz" />
 
 #Verwenden des Blob-Diensts aus PHP
 
-Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Blob-Diensts in Azure. Die Beispiele wurden in PHP geschrieben und verwenden den [Azure SDK für PHP] [-Download]. Die behandelten Szenarien sind **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitte [Nächste Schritte](#NextSteps) .
+Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Blob-Diensts in Azure. Die Beispiele wurden in PHP geschrieben und verwenden den [Azure SDK für PHP] [Download]. Die behandelten Szenarien sind **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitte [Nächste Schritte](#NextSteps) .
 
 ##Inhaltsverzeichnis
 
@@ -295,7 +295,7 @@ Da Sie jetzt die Grundlagen des Azure-Blob-Diensts erlernt haben, folgen Sie die
 - Ein PHP-Seiten-Blob-Beispiel finden Sie unter <https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/PageBlobExample.php>
 
 [download]: http://go.microsoft.com/fwlink/?LinkID=252473
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
 [container-acl]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179391.aspx
 [error-codes]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179439.aspx
 [file_get_contents]: http://php.net/file_get_contents

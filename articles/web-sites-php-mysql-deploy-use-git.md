@@ -268,4 +268,5 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [connection-string-info]: ./media/web-sites-php-mysql-deploy-use-git/connection_string_info.png
 [management-portal]: https://manage.windowsazure.com
 [sql-database-editions]: http://msdn.microsoft.com/de-de/library/windowsazure/ee621788.aspx
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

@@ -211,4 +211,5 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Django-Dokumentation]: https://www.djangoproject.com/
 [SQL-Datenbank]: /de-de/documentation/services/sql-database/
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

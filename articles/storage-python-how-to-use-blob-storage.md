@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Python) | Microsoft Azure" metaKeywords="Azure blob service Python, Azure blobs Python" description="Learn how to use the Azure Blob service to upload, list, download, and delete blobs." metaCanonical="" disqusComments="1" umbracoNaviHide="0" services="storage" documentationCenter="Python" title="How to use the Blob service from Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" />
+<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Python) | Microsoft Azure" metaKeywords="Azure blob service Python, Azure blobs Python" description="Learn how to use the Azure Blob service to upload, list, download, and delete blobs." metaCanonical="" disqusComments="1" umbracoNaviHide="0" services="storage" documentationCenter="Python" title="How to use the Blob service from Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/19/2014" ms.author="robmcm" />
 
@@ -7,7 +7,7 @@ In diesem Leitfaden wird die Durchführung gängiger Szenarien mit dem Azure-Blo
 
 ## Inhaltsverzeichnis
 
-[Was ist Blob-Speicher?][]   
+ [Was ist Blob-Speicher?][]   
  [Konzepte][]   
  [rstellen eines Azure-Speicherkontos][]   
  [Gewusst wie: Erstellen eines Containers][]   
@@ -94,17 +94,17 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
 -   Besuchen Sie den Blog [Azure-Speicherteams][]
 
-  [Nächste Schritte]: #next-steps
-  [Was ist Blob-Speicher?]: #what-is
-  [Konzepte]: #concepts
-  [rstellen eines Azure-Speicherkontos]: #create-account
-  [Gewusst wie: Erstellen eines Containers]: #create-container
-  [Gewusst wie: Hochladen eines Blobs in einen Container]: #upload-blob
-  [Gewusst wie: Auflisten der Blobs in einem Container]: #list-blob
-  [Gewusst wie: Herunterladen von Blobs]: #download-blobs
-  [Gewusst wie: Löschen eines Blobs]: #delete-blobs
-  [Gewusst wie: Hoch- und Herunterladen großer Blobs]: #large-blobs
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-  [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
+[Nächste Schritte]: #next-steps
+[Was ist Blob-Speicher?]: #what-is
+[Konzepte]: #concepts
+[rstellen eines Azure-Speicherkontos]: #create-account
+[Gewusst wie: Erstellen eines Containers]: #create-container
+[Gewusst wie: Hochladen eines Blobs in einen Container]: #upload-blob
+[Gewusst wie: Auflisten der Blobs in einem Container]: #list-blob
+[Gewusst wie: Herunterladen von Blobs]: #download-blobs
+[Gewusst wie: Löschen eines Blobs]: #delete-blobs
+[Gewusst wie: Hoch- und Herunterladen großer Blobs]: #large-blobs
+[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+[Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
 <!--HONumber=35.1-->

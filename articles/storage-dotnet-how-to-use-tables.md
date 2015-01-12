@@ -474,4 +474,5 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

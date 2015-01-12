@@ -129,4 +129,5 @@ Navigieren Sie zu Ihrer Website, um die richtige Konfiguration zu testen. In die
 
 ![](./media/web-sites-python-configure/configure-python-result.png)
 
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

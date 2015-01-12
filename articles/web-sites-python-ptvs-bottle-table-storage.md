@@ -208,4 +208,5 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Azure Storage]: http://azure.microsoft.com/de-de/documentation/services/storage/
 [Azure SDK für Python]: https://github.com/Azure/azure-sdk-for-python
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

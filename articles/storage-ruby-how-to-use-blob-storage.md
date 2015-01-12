@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Ruby) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Ruby" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Ruby." metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Blob Service from Ruby" authors="tomfitz" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Blob Service" pageTitle="Verwenden des Blob-Speichers (Ruby) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Ruby" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Ruby." metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Blob Service from Ruby" authors="tomfitz" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="11/21/2014" ms.author="tomfitz" />
 
@@ -147,6 +147,6 @@ Nachdem Sie jetzt die Grundlagen des Blob-Speichers erlernt haben, folgen Sie di
 
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx)
 -   Besuchen Sie den Blog [Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/)
--   Besuchen Sie das [Azure SDK für Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) -Repository auf GitHub
+-   Besuchen Sie das [Azure SDK für Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) Repository auf GitHub
 
 <!--HONumber=35.1-->

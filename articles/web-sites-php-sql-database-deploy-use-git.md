@@ -286,4 +286,5 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [management-portal]: https://manage.windowsazure.com/
 [sql-database-editions]: http://msdn.microsoft.com/de-de/library/windowsazure/ee621788.aspx
 [where-is-code]: ./media/web-sites-php-sql-database-deploy-use-git/setupgit.png
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->  

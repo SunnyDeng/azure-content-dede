@@ -6,11 +6,11 @@ Speicherkonto auch erstellen, indem Sie die Azure-Dienstverwaltungs-Clientbiblio
 
 2.  Klicken Sie unten auf der Seite auf **NEU**.
 
-    ![+Neu][+Neu]
+	![+Neu][+Neu]
 
 3.  Klicken Sie auf **DATA SERVICES**, dann auf **SPEICHER** und anschließend auf **SCHNELLERFASSUNG**.
 
-    ![Dialogfeld "Schnellerfassung"][Dialogfeld "Schnellerfassung"]
+	![Dialogfeld "Schnellerfassung"][quick-create-storage]
 
 4.  Geben Sie im Feld "URL" einen Unterdomänennamen ein,
     der im URI für das Speicherkonto verwendet werden soll. Der Eintrag kann drei bis 24 Kleinbuchstaben und
@@ -23,12 +23,10 @@ Speicherkonto auch erstellen, indem Sie die Azure-Dienstverwaltungs-Clientbiblio
     verwenden möchten, wählen Sie dieselbe Region, in der Sie
     die Sie Ihre Anwendung bereitstellen möchten.
 
-6.  Optional können Sie den gewünschten Replikationstyp für Ihr Konto auswählen. Die georedundante Replikation ist standardmäßig aktiviert und bietet maximale Dauerhaftigkeit. Weitere Informationen zu den Replikationsoptionen finden Sie unter [Redundanzoptionen für den Azure-Speicher][Redundanzoptionen für den Azure-Speicher] und im [Azure Storage Team Blog][Azure Storage Team Blog].
+6.  Optional können Sie den gewünschten Replikationstyp für Ihr Konto auswählen. Die georedundante Replikation ist standardmäßig aktiviert und bietet maximale Dauerhaftigkeit. Weitere Informationen zu den Replikationsoptionen finden Sie unter [Redundanzoptionen für den Azure-Speicher](http://msdn.microsoft.com/de-de/library/azure/dn727290.aspx) und im [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/).
 
 7.  Klicken Sie auf **SPEICHERKONTO ERSTELLEN**.
 
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [+Neu]: ./media/create-storage-account/plus-new.png
-  [Dialogfeld "Schnellerfassung"]: ./media/create-storage-account/quick-storage-2.png
-  [Redundanzoptionen für den Azure-Speicher]: http://msdn.microsoft.com/de-de/library/azure/dn727290.aspx
-  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+[Azure-Verwaltungsportal]: http://manage.windowsazure.com
+[+Neu]: ./media/create-storage-account/plus-new.png
+[Dialogfeld "Schnellerfassung"]: ./media/create-storage-account/quick-storage-2.png
