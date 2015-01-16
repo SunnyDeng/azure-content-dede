@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Empfohlene Ressourcen für Azure-Webaufträge"," MetaKeywords "="Azure-Webaufträge, Azure-Webauftrags-SDK, Azure-Speicher, Azure-Warteschlangen, Azure-Tabellen, Azure Service Bus" description="Recommended resources for learning how to use Azure WebJobs and the Azure WebJobs SDK." metaCanonical="" services="web-sites,storage" documentationCenter=".NET" title="Azure WebJobs Recommended Resources" authors="tdykstra" solutions="" manager="wpickett" editor="jimbe" />
+﻿<properties pageTitle="Empfohlene Ressourcen für Azure-Webaufträge"," MetaKeywords "="Azure-Webaufträge, Azure-Webauftrags-SDK, Azure-Speicher, Azure-Warteschlangen, Azure-Tabellen, Azure Service Bus" description="Empfohlene Ressourcen zum Erlernen der Verwendung von Azure WebJobs und des Azure WebJobs-SDK" metaCanonical="" services="web-sites,storage" documentationCenter=".NET" title="Azure WebJobs Recommended Resources" authors="tdykstra" solutions="" manager="wpickett" editor="jimbe" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/27/2014" ms.author="tdykstra" />
 

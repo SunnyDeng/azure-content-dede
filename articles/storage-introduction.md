@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Introduction to Azure Storage" pageTitle="Einführung in Storage | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage  Azure file storage  Azure file  Azure file share  Azure " description="An overview of Microsoft Azure Storage." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Microsoft Azure Storage" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="Introduction to Azure Storage" pageTitle="Einführung in Storage | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage  Azure file storage  Azure file  Azure file share  Azure " description="Ein Überblick über Microsoft Azure Storage." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Microsoft Azure Storage" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/11/2014" ms.author="tamram" />
 
@@ -203,5 +203,4 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 - [Verwenden des Blob-Speichers von Python](../storage-python-how-to-use-blob-storage/)
 - [Verwenden des Tabellenspeichers von Python](../storage-python-how-to-use-table-storage/)
 - [Verwenden des Warteschlangenspeichers von Python](../storage-python-how-to-use-queue-storage/)
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

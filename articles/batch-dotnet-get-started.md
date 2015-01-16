@@ -1,4 +1,4 @@
-﻿<properties title="Tutorial - Getting Started with the Azure Batch Library for .NET" pageTitle="Lernprogramm - Erste Schritte mit der Azure Batch-Bibliothek für .NET" description="required" metaKeywords="" services="batch" solutions="" documentationCenter=".NET" authors="yidingz, karran.batta" videoId="" scriptId="" manager="timlt" />
+﻿<properties title="Tutorial - Getting Started with the Azure Batch Library for .NET" pageTitle="Lernprogramm - Erste Schritte mit der Azure Batch-Bibliothek für .NET" description="erforderlich" metaKeywords="" services="batch" solutions="" documentationCenter=".NET" authors="yidingz, karran.batta" videoId="" scriptId="" manager="timlt" />
 
 <tags ms.service="batch" ms.devlang="dotnet" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="big-compute" ms.date="10/02/2014" ms.author="yidingz, karran.batta" />
 

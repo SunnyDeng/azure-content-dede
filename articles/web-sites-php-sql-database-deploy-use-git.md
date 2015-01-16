@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Web w/ SQL + Git" pageTitle="PHP-Website mit SQL-Datenbank und Git - Azure_Lernprogramm" metaKeywords="" description="A tutorial that demonstrates how to create a PHP website that stores data in SQL Database and use Git deployment to Azure." metaCanonical="" services="web-sites,sql-database" documentationCenter="PHP" title="Create a PHP website with a SQL Database and deploy using Git" authors="tomfitz" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties urlDisplayName="Web w/ SQL + Git" pageTitle="PHP-Website mit SQL-Datenbank und Git - Azure_Lernprogramm" metaKeywords="" description="In diesem Lernprogramm wird gezeigt, wie Sie eine PHP-Website erstellen, die Daten in einer SQL-Datenbank speichert, und wie Sie die Git-Bereitstellung in Azure verwenden." metaCanonical="" services="web-sites,sql-database" documentationCenter="PHP" title="Create a PHP website with a SQL Database and deploy using Git" authors="tomfitz" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/18/2014" ms.author="tomfitz" />
 
@@ -286,5 +286,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [management-portal]: https://manage.windowsazure.com/
 [sql-database-editions]: http://msdn.microsoft.com/de-de/library/windowsazure/ee621788.aspx
 [where-is-code]: ./media/web-sites-php-sql-database-deploy-use-git/setupgit.png
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

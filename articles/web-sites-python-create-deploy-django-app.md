@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Websites with Django" pageTitle="Python-Websites mit Django - Azure-Lernprogramm" metaKeywords="Azure django, django website" description="A tutorial that introduces you to running a Python website on Azure." metaCanonical="" services="web-sites" documentationCenter="Python" title="Creating Websites with Django" authors="huvalo" solutions="" manager="wpickett" editor="" />
+﻿<properties urlDisplayName="Websites with Django" pageTitle="Python-Websites mit Django - Azure-Lernprogramm" metaKeywords="Azure django, django website" description="In diesem Lernprogramm werden Sie in die Ausführung einer Python-Website in Azure eingeführt." metaCanonical="" services="web-sites" documentationCenter="Python" title="Creating Websites with Django" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="08/01/2014" ms.author="huvalo" />
 
@@ -138,5 +138,4 @@ Anschließend müssen Sie das Verzeichnis "site-packages" aktualisieren, indem S
 Nachdem Sie die Dateien kopiert haben, führen Sie den Befehl **git status** aus, um die neu hinzugefügten Dateien anzuzeigen, und **git add** gefolgt von **git commit**, um die Änderungen in das Repository zu übernehmen.  Und schließlich können Sie noch **git push** ausführen, um die aktualisierte Website in Azure bereitzustellen.
 
 Nun können Sie "manage.py" im Verzeichnis "DjangoApplication" wie gewohnt verwenden, um neue Anwendungen zum Django-Projekt hinzuzufügen.  
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

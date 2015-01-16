@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="" pageTitle="Erstellen und Verwenden einer SAS mit dem Blob-Dienst | Microsoft Azure" metaKeywords="Azure blob, shared access signatures, stored access policy" description="Explore generating and using shared access signatures with the Blob service" metaCanonical="" services="storage" documentationCenter="" title="Part 2: Create and Use a SAS with the Blob Service" solutions="" authors="tamram" manager="adinah" editor="cgronlun" />
+﻿<properties urlDisplayName="" pageTitle="Erstellen und Verwenden einer SAS mit dem Blob-Dienst | Microsoft Azure" metaKeywords="Azure blob, shared access signatures, stored access policy" description="Erfahren Sie, wie Sie Shared Access Signatures erstellen und dann mit dem Blob-Dienst verwenden." metaCanonical="" services="storage" documentationCenter="" title="Part 2: Create and Use a SAS with the Blob Service" solutions="" authors="tamram" manager="adinah" editor="cgronlun" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/10/2014" ms.author="tamram" />
 
@@ -530,5 +530,4 @@ Führen Sie die Konsolenanwendung aus, und beobachten Sie die Ausgabe, um heraus
 [sas-console-output-1]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-1.PNG
 [sas-console-output-2]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-2.PNG
 
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

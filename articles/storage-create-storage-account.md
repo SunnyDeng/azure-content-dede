@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="How to create" pageTitle="Erstellen, Verwalten oder Löschen eines Speicherkontos | Azure" metaKeywords="" description="Learn how to create, manage, or delete a storage account in the Azure management portal." metaCanonical="" services="storage" documentationCenter="" title="How To Create a Storage Account" solutions="" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="How to create" pageTitle="Erstellen, Verwalten oder Löschen eines Speicherkontos | Azure" metaKeywords="" description="Erfahren Sie, wie ein Speicherkonto im Azure-Verwaltungsportal erstellen, verwalten oder löschen." metaCanonical="" services="storage" documentationCenter="" title="How To Create a Storage Account" solutions="" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/17/2014" ms.author="tamram" />
 
@@ -176,5 +176,4 @@ Zum Entfernen eines nicht mehr verwendeten Speicherkontos verwenden Sie die Opti
 
 
  
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

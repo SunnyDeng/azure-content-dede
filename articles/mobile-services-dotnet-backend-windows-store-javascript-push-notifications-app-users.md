@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" metaKeywords="push notifications, authentication, users, Notification Hubs, Mobile Services" description="Learn how to send push notifications to specific " metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="Mobile" manager="dwrede" editor="" />
+﻿<properties pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" metaKeywords="push notifications, authentication, users, Notification Hubs, Mobile Services" description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte " metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="Mobile" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/29/2014" ms.author="glenga" />
 

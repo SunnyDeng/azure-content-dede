@@ -1,4 +1,4 @@
-﻿<properties title="Enterprise class WordPress on Azure Websites" pageTitle="Leistungsstarke Umgebung für WordPress auf Azure-Websites" description="Erfahren Sie, wie Sie eine leistungsstarke WordPress-Website auf Azure Websites hosten" metaKeywords="wordpress azure, wordpress website, wordpress azure website" services="web-sites" solutions="web" documentationCenter="" authors="tomfitz" manager="wpickett" videoId="" scriptId="" />
+﻿<properties title="Enterprise class WordPress on Azure Websites" pageTitle="Leistungsstarke Umgebung für WordPress auf Azure-Websites" description="Erfahren Sie, wie Sie eine leistungsstarke WordPress-Website auf Azure Websites hosten." metaKeywords="wordpress azure, wordpress website, wordpress azure website" services="web-sites" solutions="web" documentationCenter="" authors="tomfitz" manager="wpickett" videoId="" scriptId="" />
 
 <tags ms.service="web-sites" ms.devlang="php" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="web" ms.date="11/11/2014" ms.author="tomfitz" />
 
@@ -269,5 +269,4 @@ Maßnahme | Option ...
 [xplat-cli]: http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/
 [storesendgrid]: http://azure.microsoft.com/de-de/gallery/store/sendgrid/sendgrid-azure/
 [cdn]: http://azure.microsoft.com/de-de/documentation/articles/cdn-how-to-use/
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

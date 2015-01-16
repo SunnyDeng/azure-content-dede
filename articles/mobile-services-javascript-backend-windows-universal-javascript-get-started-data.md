@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Get Started with Data" pageTitle="Erste Schritte mit Daten (Windows Store JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Store JavaScript app." metaCanonical="https://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-dotnet/" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="Get Started with Data" pageTitle="Erste Schritte mit Daten (Windows Universal) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer universellen Windows-App." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
 
@@ -43,7 +43,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 	<p>In diesem Code wird der Zugriff auf den neuen mobilen Dienst in Ihrer App über eine globale Variable bereitgestellt. Der Client wird durch Angabe des URI und des Anwendungsschlüssels des neuen mobilen Diensts erstellt. Da Sie der Datei "default.html" einen Verweis auf das Skript hinzugefügt haben, ist diese Variable in allen Skriptdateien verfügbar, auf die in dieser Seite verwiesen wird.</p>
 </li>
 <li><p>Öffnen Sie die Projektdatei "default.html", suchen Sie den Verweis auf die neue Skriptdatei "service.js", und stellen Sie sicher, dass der im Verweis angegebene Pfad folgendermaßen lautet:</p>
-<pre><code><script src="/services/mobileServices/scripts/todolist.js"></script></code></pre>
+<pre><code>&lt;script src="/services/mobileServices/scripts/todolist.js"&gt;</script></code></pre>
 <p>Gegenwärtig gibt es einen Fehler in Visual Studio, der dazu führt, dass im Pfad ein falscher Ordnername erzeugt wird.</p></li>
 <li><p>Klicken Sie mit der rechten Maustaste auf das Windows Phone-App-Projekt, klicken Sie auf <strong>Hinzufügen</strong> und dann auf <strong>Verbundener Dienst...</strong>. Wählen Sie anschließend den soeben erstellten mobilen Dienst aus, und klicken Sie auf <strong>OK</strong>. </p>
 <p>Dieselbe neue Codedatei wird dem Windows Phone Store-App-Projekt hinzugefügt. Überprüfen und korrigieren Sie auch den Pfad, der in dem Verweis angegeben ist, welcher der Datei "default.html" hinzugefügt wurde.</p></li>

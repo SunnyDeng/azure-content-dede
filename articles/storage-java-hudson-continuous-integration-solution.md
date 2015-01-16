@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Hudson Continuous Integration" pageTitle="Verwenden von Hudson mit dem Azure-Blobdienst | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Describes how to use Hudson with Azure Blob storage as a repository for build artifacts." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties urlDisplayName="Hudson Continuous Integration" pageTitle="Verwenden von Hudson mit dem Azure-Blobdienst | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Beschreibt die Verwendung von Hudson mit dem Azure Blob-Speicher als Repository für Buildartefakte." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
@@ -171,5 +171,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [Meet Hudson]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
   [ms-open-tech]: http://msopentech.com
 
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

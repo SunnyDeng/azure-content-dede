@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Use SSH" pageTitle="Verwenden von SSH zum Herstellen einer Verbindung zu virtuellen Linux-Computern in Azure" metaKeywords="Azure SSH keys Linux, Linux vm SSH" description="Learn how to generate and use SSH keys with a Linux virtual machine on Azure." metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Use SSH with Linux on Azure" authors="szarkos" solutions="" manager="timlt" editor="" />
+﻿<properties urlDisplayName="Use SSH" pageTitle="Verwenden von SSH zum Herstellen einer Verbindung zu virtuellen Linux-Computern in Azure" metaKeywords="Azure SSH keys Linux, Linux vm SSH" description="Erfahren Sie, wie Sie SSH-Schlüssel mit einem virtuellen Linux-Computer auf Azure generieren und verwenden." metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Use SSH with Linux on Azure" authors="szarkos" solutions="" manager="timlt" editor="" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="10/15/2014" ms.author="szarkos" />
 

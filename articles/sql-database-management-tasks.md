@@ -1,4 +1,4 @@
-﻿<properties umbracoNaviHide="0" pageTitle="Verwalten von SQL-Datenbank" metaKeywords="Azure SQL-Datenbank, SQL-Datenbank, Sql-Datenbank verwalten, Benutzerkonten hinzufügen, Verbinden mit Sql-Datenbank" description="Learn how to manage Azure SQL database." urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL Database" authors="jeffreyg" manager="jeffreyg" />
+﻿<properties umbracoNaviHide="0" pageTitle="Verwalten von SQL-Datenbank" metaKeywords="Azure SQL-Datenbank, SQL-Datenbank, Sql-Datenbank verwalten, Benutzerkonten hinzufügen, Verbinden mit Sql-Datenbank" description="Erfahren Sie mehr über die Verwalten von Azure SQL-Datenbank." urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL Database" authors="jeffreyg" manager="jeffreyg" />
 
 <tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/31/2015" ms.author="jeffreyg" />
 

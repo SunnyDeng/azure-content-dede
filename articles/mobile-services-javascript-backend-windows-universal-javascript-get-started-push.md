@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Erste Schritte mit Pushbenachrichtigungen mit einem mobilen JavaScript-Back-End-Dienst" metaKeywords="" description="Learn how to use Azure Mobile Services and Notification Hubs to send push notifications to your universal Windows app." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="glenga" solutions="mobile-services,notification-hubs" manager="dwrede" editor="" />
+<properties pageTitle="Erste Schritte mit Pushbenachrichtigungen mit einem mobilen JavaScript-Back-End-Dienst" metaKeywords="" description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre universelle Windows-App zu senden." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="glenga" solutions="mobile" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/15/2014" ms.author="glenga" />
 
@@ -27,10 +27,10 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 [WACOM.INCLUDE [mobile-services-create-new-push-vs2013](../includes/mobile-services-create-new-push-vs2013.md)]
 
 <ol start="6">
-<li><p>Navigieren Sie zum Projektordner <code>\services\mobileServices\scripts</code>, kopieren Sie die erzeugte Skriptdatei "<<em>your_service_name</em>>.push.register.js" in den freigegebenen Ordner <code>\js</code>, und löschen Sie diese Datei dann sowohl aus dem Windows-App- als auch aus dem Windows Phone-App-Projekt.</p></li> 
+<li><p>Navigieren Sie zum Projektordner <code>\services\mobileServices\scripts</code>, kopieren Sie die erzeugte Skriptdatei &lt;<em>your_service_name</em>&gt;.push.register.js" in den freigegebenen Ordner <code>\js</code>, und löschen Sie diese Datei dann sowohl aus dem Windows-App- als auch aus dem Windows Phone-App-Projekt.</p></li> 
 <li><p>Öffnen Sie die Skriptdatei im freigegebenen Projektordner <code>\js</code>, suchen Sie den Ereignis-Listener <em>activated</em>, der die Channel-URL des Geräts beim Benachrichtigungshub registriert, und löschen Sie die Promise-Funktion<strong>done</strong>.</p>
 <p>In diesem Lernprogramm werden Benachrichtigungen nicht beim Aufruf einer benutzerdefinierten API, sondern beim Einfügen eines neuen Elements gesendet.</p></li>
-<li><p>Öffnen Sie im Windows-App-Projekt die Datei "default.html", und ändern Sie den im Verweis auf die Skriptdatei angegebenen Pfad zum gemeinsam genutzten Projektordner <code>\js</code>, sodass er folgendermaßen lautet:</p><pre><code><script src="/js/your_service_name.push.register.js"></script></code></pre></li>
+<li><p>Öffnen Sie im Windows-App-Projekt die Datei "default.html", und ändern Sie den im Verweis auf die Skriptdatei angegebenen Pfad zum gemeinsam genutzten Projektordner <code>\js</code>, sodass er folgendermaßen lautet:</p><pre><code>&lt;script src="/js/your_service_name.push.register.js"&gt;&lt;/script&gt;</code></pre></li>
 <li><p>Wiederholen Sie diesen Schritt für das Windows Phone-App-Projekt.</p>
 <p>Nun wird in beiden Projekten eine gemeinsame Version des Skripts für die Pushregistrierung verwendet.</p></li>
 </ol>

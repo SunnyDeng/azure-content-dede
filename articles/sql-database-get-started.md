@@ -1,4 +1,4 @@
-<properties urlDisplayName="How to create and provision" pageTitle="Erste Schritte mit SQL Database - Azure" metaKeywords="" description="Get started creating and managing SQL Databases in Azure." metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Database" authors="jeffryg"  solutions="" writer="" manager="jeffreyg" editor="tysonn"  />
+<properties urlDisplayName="How to create and provision" pageTitle="Erste Schritte mit SQL Database - Azure" metaKeywords="" description="Erste Schritte zum Erstellen und Verwalten von SQL-Datenbanken in Azure." metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Database" authors="jeffryg"  solutions="" writer="" manager="jeffreyg" editor="tysonn"  />
 
 <tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/04/2014" ms.author="jeffreyg" />
 
@@ -654,7 +654,7 @@ Es gibt noch andere Methoden zum Verschieben einer lokalen Datenbank zur SQL-Dat
 
 * [Migrieren von Datenbanken zur SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/ee730904.aspx)
 * [Kopieren von Datenbanken in die SQL-Datenbank](http://msdn.microsoft.com/de-de/library/windowsazure/ff951624.aspx)
-* [Bereitstellen einer SQL Server-Datenbank an einen virtuellen Azure-Computer](http://msdn.microsoft.com/de-de/library/dn195938(v=sql.120).aspx)
+* [Bereitstellen einer SQL Server-Datenbank an einen virtuellen Azure-Computer](http://msdn.microsoft.com/de-de/library/dn195938.aspx)
 
 
 

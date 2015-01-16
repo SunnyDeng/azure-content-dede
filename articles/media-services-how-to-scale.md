@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="How to scale" pageTitle="Skalieren eines Media Services | Azure-Dokumentation" metaKeywords="" description="Learn how to scale Media Services by specifying the number of On-Demand Streaming Reserved Units and Encoding Reserved Units that you would like your account to be provisioned with." metaCanonical="" services="media-services" documentationCenter="" title="How to Scale a Media Service" authors="juliako" solutions="" manager="dwrede" editor="" />
+﻿<properties urlDisplayName="How to scale" pageTitle="Skalieren eines Media Services | Azure-Dokumentation" metaKeywords="" description="Erfahren Sie, wie Sie Mediendienste durch Angabe der Anzahl von On-Demand Streaming Reserved Units und Encoding Reserved Units für Ihr Konto skalieren können." metaCanonical="" services="media-services" documentationCenter="" title="How to Scale a Media Service" authors="juliako" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
 

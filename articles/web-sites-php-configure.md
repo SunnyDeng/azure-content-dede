@@ -1,4 +1,4 @@
-﻿<properties title="How to Configure PHP in Azure Websites" pageTitle="Konfigurieren von PHP in Azure-Websites" metaKeywords="Azure, Azure Web Sites, configuration, PHP" description="Learn how to configure the default PHP installation or add a custom PHP installation in Azure Websites." services="Web Sites" documentationCenter="PHP" authors="tomfitz" manager="wpickett" />
+<properties title="How to Configure PHP in Azure Websites" pageTitle="Konfigurieren von PHP in Azure-Websites" metaKeywords="Azure, Azure Web Sites, configuration, PHP" description="Erfahren Sie mehr über die Konfiguration der PHP-Standardinstallation oder das Hinzufügen einer benutzerdefinierten PHP-Installation in Azure Websites." services="Web Sites" documentationCenter="PHP" authors="tomfitz" manager="wpickett" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/18/2014" ms.author="tomfitz" />
 
@@ -93,15 +93,15 @@ Nachdem Sie jetzt wissen, wie Sie PHP auf Azure-Websites konfigurieren, können 
 - [Herunterladen des Azure SDK für PHP]
 
 
-[Kostenloser Testzeitraum]: https://www.windowsazure.com/de-de/pricing/free-trial/
-[PHP Developer Center Lernprogramme]: https://www.windowsazure.com/de-de/develop/php/tutorials/
+[kostenlose Testversion]: https://www.windowsazure.com/de-de/pricing/free-trial/
+[Lernprogramme im PHP Developer Center]: https://www.windowsazure.com/de-de/develop/php/tutorials/
 [Konfigurieren von Websites]: https://www.windowsazure.com/de-de/manage/services/web-sites/how-to-configure-websites/
 [phpinfo()]: http://php.net/manual/en/function.phpinfo.php
 [select-php-version]: ./media/web-sites-php-configure/select-php-version.png
-[Liste von php.ini Direktiven]: http://www.php.net/manual/en/ini.list.php
+[Liste der php.ini-Direktiven]: http://www.php.net/manual/en/ini.list.php
 [.user.ini]: http://www.php.net/manual/en/configuration.file.per-user.php
 [ini_set()]: http://www.php.net/manual/en/function.ini-set.php
-[Konfigurieren]: ./media/web-sites-php-configure/configure.png
+[configure]: ./media/web-sites-php-configure/configure.png
 [app-settings]: ./media/web-sites-php-configure/app-settings.png
 [save-button]: ./media/web-sites-php-configure/save-button.png
 [http://windows.php.net/download/]: http://windows.php.net/download/
@@ -109,5 +109,4 @@ Nachdem Sie jetzt wissen, wie Sie PHP auf Azure-Websites konfigurieren, können 
 [handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png
 [Configure, monitor, and scale your web sites in Azure (Konfigurieren, Überwachen und Skalieren von Websites in Azure, in englischer Sprache)]: http://www.windowsazure.com/de-de/manage/services/web-sites/
 [Herunterladen des Azure SDK für PHP]: http://www.windowsazure.com/de-de/develop/php/common-tasks/download-php-sdk/
-
-<!--HONumber=35.1-->  
+<!--HONumber=35.1--> 

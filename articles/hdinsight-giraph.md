@@ -1,4 +1,4 @@
-﻿<properties title="How to use Giraph with HDInsight" pageTitle="Verwenden von Apache Giraph mit Azure HDInsight" description="Erfahren Sie, wie Sie Apache Giraph nutzen, um mit Azure HDInsight eine Graphverarbeitung auszuführen" metaKeywords="Azure HDInsight Apache Giraph, hdinsight giraph, hdinsight graph, hadoop giraph, azure hadoop, hadoop graph" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" manager="paulettm" />
+﻿<properties title="How to use Giraph with HDInsight" pageTitle="Verwenden von Apache Giraph mit Azure HDInsight" description="Erfahren Sie, wie Sie Apache Giraph nutzen, um mit Azure HDInsight eine Graphverarbeitung auszuführen." metaKeywords="Azure HDInsight Apache Giraph, hdinsight giraph, hdinsight graph, hadoop giraph, azure hadoop, hadoop graph" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" manager="paulettm" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/14/2014" ms.author="larryfr" />
 

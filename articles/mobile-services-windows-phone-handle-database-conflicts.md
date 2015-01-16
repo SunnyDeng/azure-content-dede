@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Optimistic concurrency" pageTitle="Behandeln von Datenbank-Schreibkonflikten mit optimistischer Parallelität (Windows Store) | Mobile Developer Center" metaKeywords="" description="Learn how to handle database write conflicts on both the server and in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conlicts" authors="wesmc" manager="dwrede" />
+﻿<properties urlDisplayName="Optimistic concurrency" pageTitle="Behandeln von Datenbank-Schreibkonflikten mit optimistischer Parallelität (Windows Store) | Mobile Developer Center" metaKeywords="" description="Erfahren Sie, wie Sie Datenbankschreibkonflikte auf dem Server und in Ihrer Windows Store-Anwendung behandeln." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conlicts" authors="wesmc" manager="dwrede" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 

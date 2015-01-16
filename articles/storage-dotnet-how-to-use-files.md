@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="File Service" pageTitle="Verwenden des Azure-Dateispeichers | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Learn how to use Microsoft Azure File storage to create file shares and manage file content. Samples are written in PowerShell and C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure File storage in .NET" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="File Service" pageTitle="Verwenden des Azure-Dateispeichers | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Erfahren Sie, wie Sie den Microsoft Azure-Dateispeicher zum Erstellen von Dateifreigaben und zum Verwalten des Dateiinhalts verwenden. Die Beispiele sind in PowerShell und C# geschrieben." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure File storage in .NET" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/10/2014" ms.author="tamram" />
 
@@ -264,5 +264,4 @@ ausführlichere Informationen abzurufen.
 
 [files-concepts]: ./media/storage-dotnet-how-to-use-files/files-concepts.png
 
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

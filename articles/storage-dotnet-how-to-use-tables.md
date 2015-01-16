@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers mit .NET | Microsoft Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Learn how to use Microsoft Azure Table storage to create and delete tables and insert and query entities in a table." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Microsoft Azure Table storage" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers mit .NET | Microsoft Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Erfahren Sie, wie Sie den Microsoft Azure-Tabellenspeicher zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen von Entitäten in Tabellen verwenden." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Microsoft Azure Table storage" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/10/2014" ms.author="tamram" />
 
@@ -474,5 +474,4 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

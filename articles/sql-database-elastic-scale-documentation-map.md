@@ -1,4 +1,4 @@
-﻿<properties title="Azure SQL Database Elastic Scale" pageTitle="Elastic Scale für Azure SQL-Datenbank" description="Documentation map, a visual table of contents for Elastic Scale feature of Azure SQL DB" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+﻿<properties title="Azure SQL Database Elastic Scale" pageTitle="Elastic Scale für Azure SQL-Datenbank" description="Dokumentationsstruktur, ein visuelles Inhaltsverzeichnis für das Elastic Scale-Feature von Azure SQL-Datenbank" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
 

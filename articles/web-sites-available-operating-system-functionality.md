@@ -1,4 +1,4 @@
-﻿<properties title="Operating System Functionality Available to Applications on Azure Websites" pageTitle="Betriebssystemfunktionen für Anwendungen in Azure-Websites" description="Learn about the OS functionality available to web applications on Azure Websites" metaKeywords="Azure,Web Sites,web applications,operating system functionality" services="web-sites" solutions="web" documentationCenter="" authors="cephalin" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+﻿<properties title="Operating System Functionality Available to Applications on Azure Websites" pageTitle="Betriebssystemfunktionen für Anwendungen in Azure-Websites" description="Erfahren Sie mehr über die Funktionen des Betriebssystems, die für Webanwendungen auf Azure-Websites zur Verfügung stehen." metaKeywords="Azure,Web Sites,web applications,operating system functionality" services="web-sites" solutions="web" documentationCenter="" authors="cephalin" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/11/2014" ms.author="cephalin" />
 

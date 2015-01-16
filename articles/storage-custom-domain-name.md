@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="custom dns storage" pageTitle="Konfigurieren eines Domänennamens für Blob-Daten in einem Speicherkonto | Microsoft Azure" metaKeywords="" description="Learn how to configure a custom domain for accessing blob data in an Azure storage account." metaCanonical="" services="storage" documentationCenter="" title="Configure a custom domain name for blob data in a storage account" solutions="" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="custom dns storage" pageTitle="Konfigurieren eines Domänennamens für Blob-Daten in einem Speicherkonto | Microsoft Azure" metaKeywords="" description="Erfahren Sie, wie Sie eine benutzerdefinierte Domäne für den Zugriff auf Blob-Daten in einem Azure-Speicherkonto konfigurieren." metaCanonical="" services="storage" documentationCenter="" title="Configure a custom domain name for blob data in a storage account" solutions="" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/11/2014" ms.author="tamram" />
 
@@ -134,5 +134,4 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte 
 ## Zusätzliche Ressourcen
 
 -   <a href="http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx">Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne</a>
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

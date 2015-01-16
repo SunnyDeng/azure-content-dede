@@ -1,4 +1,4 @@
-﻿<properties title="How to create a hybrid deployment of RemoteApp" pageTitle="Erstellen einer Hybridbereitstellung von RemoteApp" description="Learn how to create a deployment of RemoteApp that connects to your internal network." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="kathyw" />
+﻿<properties title="How to create a hybrid deployment of RemoteApp" pageTitle="Erstellen einer Hybridbereitstellung von RemoteApp" description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die ein Verbindung zu Ihrem internen Netzwerk herstellt." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="kathyw" />
 
 <tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/12/2014" ms.author="elizapo" ms.manager="kathyw" />
 

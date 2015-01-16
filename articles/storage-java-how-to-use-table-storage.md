@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Java) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Java, table storage Java" description="Learn how to use the table storage service in Azure. Code samples are written in Java code." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Table storage service from Java" authors="robmcm" solutions="" manager="wpickett" editor="" />
+﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Java) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Java, table storage Java" description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele sind in Java-Code geschrieben." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Table storage service from Java" authors="robmcm" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
@@ -564,5 +564,4 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
 [Azure Storage-REST-API]: http://msdn.microsoft.com/de-de/library/azure/gg433040.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Blogbeitrag]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

@@ -1,4 +1,4 @@
-<properties title="Get Started with  Azure SQL Database Elastic Scale" pageTitle="Erste Schritte mit Elastic Scale für die Azure SQL-Datenbank" description="Grundlegende Erklärung des Elastic Scale-Features der Azure SQL-Datenbank, einschließlich einer einfach auszuführenden Beispiel-App." metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+﻿<properties title="Get Started with  Azure SQL Database Elastic Scale" pageTitle="Erste Schritte mit Elastic Scale für die Azure SQL-Datenbank" description="Grundlegende Erklärung des Elastic Scale-Features der Azure SQL-Datenbank, einschließlich einer einfach auszuführenden Beispiel-App." metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
 

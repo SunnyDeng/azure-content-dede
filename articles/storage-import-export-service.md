@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Azure Import/Export Service" pageTitle="Verwenden von Import/Export zum Übertragen von Daten in den Blob-Speicher | Microsoft Azure" metaKeywords="" description="Learn how to create import and export jobs in the Azure Management Portal to transfer data to blob storage." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="Azure Import/Export Service" pageTitle="Verwenden von Import/Export zum Übertragen von Daten in den Blob-Speicher | Microsoft Azure" metaKeywords="" description="Erfahren Sie, wie Sie Import- und Exportaufträge im Azure-Verwaltungsportal erstellen, um Daten in den Blob-Speicher zu übertragen." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/25/2014" ms.author="tamram" />
 
@@ -308,5 +308,4 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 [import-job-03]: ./media/storage-import-export-service/import-job-03.png
 [export-job-03]: ./media/storage-import-export-service/export-job-03.png
 [export-job-bitlocker-keys]: ./media/storage-import-export-service/export-job-bitlocker-keys.png
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

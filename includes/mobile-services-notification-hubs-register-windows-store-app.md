@@ -1,4 +1,4 @@
-﻿
+
 
 1. Falls Sie Ihre Anwendung noch nicht registriert haben, navigieren Sie im Entwicklungscenter für Windows Store-Anwendungen zu [Anwendungsseite senden], melden Sie sich mit Ihrem Microsoft-Konto an, und klicken Sie dann auf **Anwendungsname**.
 
@@ -44,7 +44,7 @@
 	<p>Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Informationen nicht weiter, und verteilen Sie sie nicht mit Ihrer Anwendung.</p>
     </div> 
 
-11. 	Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und anschließend auf Ihre App.
+11. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und anschließend auf Ihre App.
 
    	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-selection.png)
 
@@ -57,6 +57,6 @@
 	>[WACOM.NOTE]Wenn Sie Ihre WNS-Anmeldeinformationen für erweiterte Pushbenachrichtigungen auf der Registerkarte **Push** im Portal festlegen, werden diese für Notification Hubs freigegeben, um den Benachrichtigungshub für Ihre App zu konfigurieren.
 
 <!-- URLs. -->
-[Erste Schritte mit Mobile Services]w
-[Übermitteln einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started/
+[Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/

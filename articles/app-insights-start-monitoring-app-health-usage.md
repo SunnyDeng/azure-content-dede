@@ -1,4 +1,4 @@
-﻿<properties title="Application Insights" pageTitle="Application Insights - Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen." description="Analyze usage, availability and performance of your on-premises or Microsoft Azure web application with Application Insights." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
+﻿<properties title="Application Insights" pageTitle="Application Insights - Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen." description="Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihrer lokalen oder Microsoft Azure-Webanwendung mit Application Insights." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
 
 <tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-09-24" ms.author="awills" />
 

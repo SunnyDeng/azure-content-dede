@@ -4,15 +4,15 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][GetStartedWi
 
 2.  Öffnen Sie in Visual Studio 2013 das heruntergeladene Projekt, und sehen Sie sich die im Projektordner "GetStartedWithData.Shared" befindliche Datei "MainPage.xaml.cs" an.
 
-    Beachten Sie, dass die hinzugefügten **TodoItem**-Objekte in einem speicherinternen **ObservableCollection\<TodoItem\>**-Objekt gespeichert werden.
+   	Beachten Sie, dass die hinzugefügten **TodoItem**-Objekte in einem speicherinternen **ObservableCollection&lt;TodoItem&gt;**-Objekt gespeichert werden.
 
 3.  Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
 4.  Geben Sie in der App in **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
 
-    ![][0]
+   	![][0]
 
-    Beachten Sie, dass der gespeicherte Text angezeigt wird.
+   	Beachten Sie, dass der gespeicherte Text angezeigt wird.
 
 5.  Klicken Sie mit der rechten Maustaste auf das Windows Phone 8.1-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und drücken Sie dann **F5**, um die Windows Phone Store-App auszuführen.
 

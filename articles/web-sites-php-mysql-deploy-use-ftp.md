@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Web w/ MySQL + FTP" pageTitle="PHP-Website mit MySQL und FTP - Azure_Lernprogramm" metaKeywords="" description="A tutorial that demonstrates how to create a PHP website that stores data in MySQL and use FTP deployment to Azure." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a PHP-MySQL Azure Website and Deploy Using FTP" authors="tomfitz" solutions="" manager="wpickett" editor="" />
+﻿<properties urlDisplayName="Web w/ MySQL + FTP" pageTitle="PHP-Website mit MySQL und FTP - Azure_Lernprogramm" metaKeywords="" description="In diesem Lernprogramm wird gezeigt, wie Sie eine PHP-Website erstellen, die Daten in MySQL speichert, und wie Sie die FTP-Bereitstellung in Azure verwenden." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a PHP-MySQL Azure Website and Deploy Using FTP" authors="tomfitz" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/14/2014" ms.author="tomfitz" />
 
@@ -263,5 +263,4 @@ Nachdem Sie sowohl `index.php` als auch `createtable.php` hochgeladen haben, nav
 [connection-string-info]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/connection_string_info.png
 [management-portal]: https://manage.windowsazure.com
 [download-publish-profile]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/download_publish_profile_2.png
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

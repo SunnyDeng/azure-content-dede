@@ -1,4 +1,4 @@
-﻿<properties title="Step 6: Access the Azure Machine Learning web service" pageTitle="Schritt 6: Zugreifen auf den Machine Learning-Webdienst | Azure" description="Step 6: Access an active Azure Machine Learning API web service" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties title="Step 6: Access the Azure Machine Learning web service" pageTitle="Schritt 6: Zugreifen auf den Machine Learning-Webdienst | Azure" description="Schritt 6: Zugreifen auf einen aktiven Azure Machine Learning-API-Webdienst" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
 
 <tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="garye" />
 

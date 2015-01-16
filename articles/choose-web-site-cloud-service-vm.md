@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Vergleich von Azure-Websites, Cloud-Diensten und Virtual Machines" metaKeywords="Cloud Services, Virtual Machines, Web Sites" description="Learn when to use Azure Websites, Cloud Services, and Virtual Machines for hosting web applications." metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="Azure Websites, Cloud Services, and Virtual Machines comparison" authors="tdykstra" solutions="" manager="wpickett" editor="jimbe" />
+<properties pageTitle="Vergleich von Azure-Websites, Cloud-Diensten und Virtual Machines" metaKeywords="Cloud Services, Virtual Machines, Web Sites" description="Erfahren Sie, wann Sie Azure-Websites, Cloud-Dienste oder virtuelle Computer zum Hosten von Webanwendungen einsetzen." metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="Azure Websites, Cloud Services, and Virtual Machines comparison" authors="tdykstra" solutions="" manager="wpickett" editor="jimbe" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/24/2014" ms.author="tdykstra" />
 
@@ -83,9 +83,9 @@ Azure-Websites sind eine tolle Lösung für dieses Szenario, da Sie mit einer ko
 Für Webentwickler und -designer lassen sich Azure-Websites leicht in eine Reihe von Frameworks und Tools integrieren. Sie umfassen eine Bereitstellungsunterstützung für Git und FTP und bieten eine nahtlose Integration in Tools und Dienste wie Visual Studio oder SQL-Datenbank. Websites bieten folgende Möglichkeiten:
 
 - Verwenden von Befehlszeilentools für [automatisierte Aufgaben][scripting].
-- Arbeiten mit gängigen Sprachen wie [.Net][dotnet], [PHP][], [Node.js][nodejs] und [Python][].
+- Arbeiten mit gängigen Sprachen wie [.Net][.NET], [PHP][], [Node.js][Node.js] und [Python][].
 - Wählen drei verschiedener Skalierungsebenen für die Skalierung auf sehr hohe Kapazitäten
-- Integrieren in andere Azure-Dienste, wie [SQL-Datenbank][sqldatabase], [Service Bus][servicebus] und [Storage][], oder Partnerangebote aus dem [Azure Store][azurestore], beispielsweise MySQL und MongoDB.
+- Integrieren in andere Azure-Dienste, wie [SQL-Datenbank][SQL-Datenbank], [Service Bus][servicebus] und [Storage][], oder Partnerangebote aus dem [Azure Store][azurestore], beispielsweise MySQL und MongoDB.
 - Integrieren in Tools wie Visual Studio, Git, WebMatrix, WebDeploy, TFS und FTP
 
 ### <a id="multitier"></a>Ich migriere meine Webanwendung mit mehreren Ebenen und einem Web-Front-End zur Cloud.
@@ -107,7 +107,7 @@ Wenn Ihre Anwendung komplexe Installation oder Konfiguration von Software und Be
 
 Wenn Ihr Open Source-Framework auf den Websites unterstützt wird, werden die von Ihrer Anwendung benötigten Sprachen und Frameworks automatisch für Sie konfiguriert. Websites bieten die folgenden Funktionen:
 
-- Verwenden vieler gängiger Open Source-Sprachen wie [.NET][dotnet], [PHP][], [Node.js][nodejs] und [Python][]. 
+- Verwenden vieler gängiger Open Source-Sprachen wie [.NET][.NET], [PHP][], [Node.js][Node.js] und [Python][]. 
 - Einrichten von WordPress, Drupal, Umbraco, DNN und vielen weiteren Webanwendungen von Drittanbietern 
 - Migrieren vorhandener Anwendungen oder Erstellen einer neuen mit der Web App Gallery 
 
@@ -340,20 +340,20 @@ Informationen zu den ersten Schritten hinsichtlich der Option(en), die Sie für 
 * [Azure Cloud Services](/de-de/documentation/services/cloud-services/)
 * [Azure Virtual Machines](/de-de/documentation/services/virtual-machines/)
 
-  [Auswahldiagramm]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_3.png
+  [ChoicesDiagram]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_3.png
   [Azure-Websites]: http://go.microsoft.com/fwlink/?LinkId=306051
-  [Cloud Services]: http://go.microsoft.com/fwlink/?LinkId=306052
+  [Cloud-Dienste]: http://go.microsoft.com/fwlink/?LinkId=306052
   [Virtual Machines]: http://go.microsoft.com/fwlink/?LinkID=306053
   [ClearDB]: http://www.cleardb.com/
-  [Webaufträge]: http://go.microsoft.com/fwlink/?linkid=390226&clcid=0x409
+  [Webauftragsfunktion]: http://go.microsoft.com/fwlink/?linkid=390226&clcid=0x409
   [Konfigurieren eines SSL-Zertifikats für eine Azure-Website]: http://www.windowsazure.com/de-de/develop/net/common-tasks/enable-ssl-web-site/
-  [Azure-Store]: http://www.windowsazure.com/de-de/gallery/store/
-  [Skripterstellung]: http://www.windowsazure.com/de-de/documentation/scripts/?services=web-sites
+  [azurestore]: http://www.windowsazure.com/de-de/gallery/store/
+  [scripting]: http://www.windowsazure.com/de-de/documentation/scripts/?services=web-sites
   [.NET]: http://www.windowsazure.com/de-de/develop/net/
   [Node.js]: http://www.windowsazure.com/de-de/develop/nodejs/
   [PHP]: http://www.windowsazure.com/de-de/develop/php/
   [Python]: http://www.windowsazure.com/de-de/develop/python/
-  [Service Bus]: http://www.windowsazure.com/de-de/documentation/services/service-bus/
+  [servicebus]: http://www.windowsazure.com/de-de/documentation/services/service-bus/
   [SQL-Datenbank]: http://www.windowsazure.com/de-de/documentation/services/sql-database/
   [Storage]: http://www.windowsazure.com/de-de/documentation/services/storage/
 

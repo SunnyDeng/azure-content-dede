@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Configuring Python with Azure Websites" pageTitle="Konfigurieren von Python mit Azure-Websites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Websites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Websites" authors="huvalo" solutions="" manager="wpickett" editor="" />
+﻿<properties urlDisplayName="Configuring Python with Azure Websites" pageTitle="Konfigurieren von Python mit Azure-Websites" metaKeywords="" description="In diesem Lernprogramm werden die Optionen für das Erstellen und Konfigurieren einer grundlegenden Web Server Gateway Interface (WSGI)-kompatiblen Python-Anwendung in Azure Websites beschrieben." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Websites" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="08/01/2014" ms.author="huvalo" />
 
@@ -129,5 +129,4 @@ Navigieren Sie zu Ihrer Website, um die richtige Konfiguration zu testen. In die
 
 ![](./media/web-sites-python-configure/configure-python-result.png)
 
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

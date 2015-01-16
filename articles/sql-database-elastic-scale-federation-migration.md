@@ -1,4 +1,4 @@
-<properties title="Federations Migration" pageTitle="Verbundmigration" description="Stellt die Schritte für die Migration einer vorhandenen, mit dem Verbundfeature erstellten App an das Elastic Scale-Modell dar." metaKeywords="sharding scaling, federations, Azure SQL DB sharding, Elastic Scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh"/>
+﻿<properties title="Federations Migration" pageTitle="Verbundmigration" description="Stellt die Schritte für die Migration einer vorhandenen, mit dem Verbundfeature erstellten App an das Elastic Scale-Modell dar." metaKeywords="sharding scaling, federations, Azure SQL DB sharding, Elastic Scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/30/2014" ms.author="sidneyh" />
 

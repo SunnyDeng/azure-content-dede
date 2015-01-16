@@ -1,4 +1,4 @@
-﻿<properties linkid="web-sites-python-ptvs-django-sql" title="Django and SQL Database on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Django und SQL-Datenbank auf Azure mit Python Tools 2.1 für Visual Studio" description="Erfahren Sie, wie mit Python Tools für Visual Studio eine Django-Anwendung erstellt, die Daten in einer SQL-Datenbank speichert und auf einer Website bereitgestellt werden kann." metaKeywords="" services="" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
+﻿<properties linkid="web-sites-python-ptvs-django-sql" title="Django and SQL Database on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Django und SQL-Datenbank auf Azure mit Python Tools 2.1 für Visual Studio" description="Erfahren Sie, wie mit Python Tools für Visual Studio eine Django-Anwendung erstellen, die Daten in einer SQL-Datenbank speichert und auf einer Website bereitgestellt werden kann." metaKeywords="" services="" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="10/10/2014" ms.author="huvalo" />
 
@@ -211,5 +211,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Django-Dokumentation]: https://www.djangoproject.com/
 [SQL-Datenbank]: /de-de/documentation/services/sql-database/
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="How to create" pageTitle="Erstellen eines Media Services-Kontos - Azure" metaKeywords="" description="Describes how to create a new Media Services account in Azure." metaCanonical="" services="media-services" documentationCenter="" title="How to Create a Media Services Account" authors="juliako" solutions="" manager="dwrede" editor="" />
+﻿<properties urlDisplayName="How to create" pageTitle="Erstellen eines Media Services-Kontos - Azure" metaKeywords="" description="Beschreibt die Erstellung eines neuen Media Services-Kontos in Azure." metaCanonical="" services="media-services" documentationCenter="" title="How to Create a Media Services Account" authors="juliako" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
 

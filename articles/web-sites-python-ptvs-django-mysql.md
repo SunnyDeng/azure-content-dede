@@ -1,4 +1,4 @@
-﻿<properties linkid="web-sites-python-ptvs-django-mysql" title="Django and MySQL on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Django und MySQL auf Azure mit Python-Tools 2.1 für Visual Studio" description="Learn how to use the Python Tools for Visual Studio to create a Django application that stores data in a MySQL database instance and can be deployed to a web site." metaKeywords="" services="" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
+﻿<properties linkid="web-sites-python-ptvs-django-mysql" title="Django and MySQL on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Django und MySQL auf Azure mit Python-Tools 2.1 für Visual Studio" description="Erfahren Sie, wie Sie die Python-Tools für Visual Studio verwenden, um eine Django-Anwendung zu erstellen, die Daten in einer MySQL-Datenbankinstanz speichert und an eine Website bereitgestellt werden kann." metaKeywords="" services="" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="10/10/2014" ms.author="huvalo" />
 
@@ -200,5 +200,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Django-Dokumentation]: https://www.djangoproject.com/
 [MySQL]: http://www.mysql.com/
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

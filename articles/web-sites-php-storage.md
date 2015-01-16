@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Web w/ Storage" pageTitle="PHP-Website mit Tabellenspeicher - Azure-Lernprogramm" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="This tutorial shows you how to create a PHP website and use the Azure Tables storage service in the back-end." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Website using Azure Storage" authors="tomfitz" solutions="" manager="wpickett" editor="" />
+﻿<properties urlDisplayName="Web w/ Storage" pageTitle="PHP-Website mit Tabellenspeicher - Azure-Lernprogramm" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Website erstellen und den Azure-Tabellenspeicherdienst im Back-End verwenden." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Website using Azure Storage" authors="tomfitz" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/21/2014" ms.author="tomfitz" />
 
@@ -450,5 +450,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
 [git-instructions]: ./media/web-sites-php-storage/git-instructions.png
 [where-is-code]: ./media/web-sites-php-storage/where_is_code.png
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

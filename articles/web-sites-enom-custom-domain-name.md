@@ -1,4 +1,4 @@
-﻿<properties title="Learn how to configure an Azure website to use a domain name registered with eNom" pageTitle="Konfigurieren eines eNom-Domänennamens für eine Azure-Website" metaKeywords="Microsoft Azure, Microsoft Azure-Websites, Domänenname" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" manager="wpickett" />
+﻿<properties title="Learn how to configure an Azure website to use a domain name registered with eNom" pageTitle="Konfigurieren eines eNom-Domänennamens für eine Azure-Website" metaKeywords="Microsoft Azure, Microsoft Azure-Websites, Domänenname" description=""services""web-sites" documentationCenter="" authors="larryfr, jroth" manager="wpickett" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr, jroth" />
 

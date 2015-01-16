@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Breaking News" pageTitle="Lernprogramm zu aktuellen Nachrichten mit Notification Hubs - Android" metaKeywords="" description="Learn how to use Azure Service Bus Notification Hubs to send breaking news notifications to Android devices." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="ricksal" solutions="" manager="dwrede" editor="" />
+﻿<properties urlDisplayName="Breaking News" pageTitle="Lernprogramm zu aktuellen Nachrichten mit Notification Hubs - Android" metaKeywords="" description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu aktuellen Nachrichten an Android-Geräte." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="ricksal" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="11/22/2014" ms.author="ricksal" />
 

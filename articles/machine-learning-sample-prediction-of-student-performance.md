@@ -1,4 +1,4 @@
-﻿<properties title="Azure Machine Learning Sample: Prediction of student performance" pageTitle="Machine Learning-Beispiel: Vorhersagen der Leistung des Schülers | Azure" description="A sample Azure Machine Learning experiment to develop a model that predicts student performance on tests." metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun"  videoId="" scriptId="" />
+﻿<properties title="Azure Machine Learning Sample: Prediction of student performance" pageTitle="Machine Learning-Beispiel: Vorhersagen der Leistung des Schülers | Azure" description="Azure Machine Learning-Beispielexperiment zur Entwicklung eines Modells, das die Schülerleistungen bei Tests prognostiziert" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun"  videoId="" scriptId="" />
 
 <tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/23/2014" ms.author="garye" />
 

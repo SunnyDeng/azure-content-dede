@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Erste Schritte mit Push Notification Hubs mithilfe von .NET Runtime Mobile Services" metaKeywords="" description="Learn how to use Azure Mobile Services and Notification Hubs to send push notifications to your Windows Store app." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="wesmc,ricksal" solutions="mobile" manager="dwrede" editor="" />
+<properties pageTitle="Erste Schritte mit Push Notification Hubs mithilfe von .NET Runtime Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Windows Store-App zu senden." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="wesmc,ricksal" solutions="mobile" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc,ricksal" />
 
@@ -141,7 +141,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 
-[Was sind Benachrichtigungshubs?]: /de-de/documentation/articles/notification-hubs-overview/
+[Was sind Notification Hubs?]: /de-de/documentation/articles/notification-hubs-overview/
 [Senden von Übertragungsbenachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
 [Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
 

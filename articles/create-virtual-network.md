@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Tutorial: Create a cloud-only virtual network" pageTitle="Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks" metaKeywords="" description="Learn how to create an example cloud-only Azure Virtual Network in this tutorial." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="Tutorial: Create a Clound-only Virtual Network in Azure" authors="cherylmc" solutions="" manager="adinah" editor="" />
+﻿<properties urlDisplayName="Tutorial: Create a cloud-only virtual network" pageTitle="Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks" metaKeywords="" description="Erfahren Sie in diesem Lernprogramm, wie Sie ein beispielhaftes komplett auf der Cloud basierendes virtuelles Azure-Netzwerk erstellen." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="Tutorial: Create a Clound-only Virtual Network in Azure" authors="cherylmc" solutions="" manager="adinah" editor="" />
 
 <tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/29/2014" ms.author="cherylmc" />
 

@@ -1,4 +1,4 @@
-﻿<properties title="Track usage with custom events and metrics" pageTitle="Nutzung nachverfolgen" description="Log user activities." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
+﻿<properties title="Track usage with custom events and metrics" pageTitle="Nutzung nachverfolgen" description="Protokollieren Sie Benutzeraktivitäten." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
 
 <tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-09-24" ms.author="awills" />
  

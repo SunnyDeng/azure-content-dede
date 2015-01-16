@@ -1,4 +1,4 @@
-﻿<properties writer="ricksal" pageTitle="Aufrufen einer benutzerdefinierten API von einem Android-Client | Mobile Dev Center" metaKeywords="" description="Learn how to define a custom API and then call it from an Android app that uses Windows Azure Mobile Services." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga" manager="dwrede" />
+﻿<properties writer="ricksal" pageTitle="Aufrufen einer benutzerdefinierten API von einem Android-Client | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Android-App aufrufen, die Microsoft Azure Mobile Services verwendet." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga" manager="dwrede" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="09/27/2014" ms.author="glenga" />
 

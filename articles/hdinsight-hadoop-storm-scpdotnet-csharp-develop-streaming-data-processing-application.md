@@ -1,4 +1,4 @@
-﻿<properties title="Develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight" pageTitle="Entwickeln von Anwendungen zur Verarbeitung von Datenströmen mit SCP.NET und Storm | Azure" description="Learn how to develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight." services="hdinsight" solutions="" documentationCenter="" authors="Qianlin Xia" videoId="" scriptId="" manager="paulettm" editor="cgronlun" />
+﻿<properties title="Develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight" pageTitle="Entwickeln von Anwendungen zur Verarbeitung von Datenströmen mit SCP.NET und Storm | Azure" description="Erfahren Sie, wie Sie Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm in HDInsight entwickeln können." services="hdinsight" solutions="" documentationCenter="" authors="Qianlin Xia" videoId="" scriptId="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/15/2014" ms.author="qixia" />
 
@@ -989,5 +989,4 @@ Die folgenden mit SCP geschriebenen Beispielanwendungen finden Sie in Ihrem HDIn
 
 
 [1]: ./media/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application-01.png
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

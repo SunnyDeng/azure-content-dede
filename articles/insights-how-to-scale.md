@@ -1,4 +1,4 @@
-﻿<properties title="How to scale a website" pageTitle="Skalieren von Websites" description="Learn how to scale your hosting plan in Azure." authors="stepsic" manager="kamrani" />
+﻿<properties title="How to scale a website" pageTitle="Skalieren von Websites" description="Erfahren Sie, wie Sie Ihren Hostingplan in Azure skalieren." authors="stepsic" manager="kamrani" />
 
 <tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-11-04" ms.author="stepsic" />
 

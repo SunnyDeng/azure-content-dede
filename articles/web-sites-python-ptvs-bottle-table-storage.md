@@ -1,4 +1,4 @@
-﻿<properties linkid="web-sites-python-ptvs-bottle-table-storage" title="Bottle and Azure Table Storage on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Bottle und Azure Table Storage auf Azure mit Python Tools 2.1 für Visual Studio" description="Erfahren Sie, wie Sie mit Python Tools für Visual Studio eine Bottle-Anwendung erstellen, die Daten in Azure Table Storage speichern und auf einer Website bereitgestellen können." metaKeywords="" services="websites" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
+﻿<properties linkid="web-sites-python-ptvs-bottle-table-storage" title="Bottle and Azure Table Storage on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Bottle und Azure Table Storage auf Azure mit Python Tools 2.1 für Visual Studio" description="Erfahren Sie, wie Sie mit Python Tools für Visual Studio eine Bottle-Anwendung erstellen, die Daten in Azure-Tabellenspeicher speichert, und auf einer Website bereitstellen können." metaKeywords="" services="websites" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="10/10/2014" ms.author="huvalo" />
 
@@ -208,5 +208,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Azure Storage]: http://azure.microsoft.com/de-de/documentation/services/storage/
 [Azure SDK für Python]: https://github.com/Azure/azure-sdk-for-python
-
-<!--HONumber=35.1-->  
+\n<!--HONumber=35.1--> 

@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Add paging to data" pageTitle="Hinzufügen von Paging für Daten (iOS) | Mobile Developer Center" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your iOS app from Mobile Services." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="krisragh" solutions="" manager="dwrede" editor="" />
+﻿<properties urlDisplayName="Add paging to data" pageTitle="Hinzufügen von Paging für Daten (iOS) | Mobile Developer Center" metaKeywords="" description="Erfahren Sie, wie Sie mithilfe des Auslagerns die Menge der von Ihrer iOS-App von Mobile Services zurückgegebenen Daten verwalten können." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="krisragh" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
 

@@ -1,4 +1,4 @@
-﻿<properties title="Hybrid Connection: Connect an Azure Website to an On-Premises Resource" pageTitle="Hybridverbindung: Verbinden einer Azure-Website mit einer lokalen Ressource" description="Create a connection between an Azure website and an on-premises resource that uses a static TCP port" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="cephalin" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+<properties title="Hybrid Connection: Connect an Azure Website to an On-Premises Resource" pageTitle="Hybridverbindung: Verbinden einer Azure-Website mit einer lokalen Ressource" description="Erstellen einer Verbindung zwischen einer Azure-Website und einer lokalen Ressource, die einen statischen TCP-Port verwendet" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="cephalin" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/24/2014" ms.author="cephalin" />
 
@@ -6,7 +6,7 @@
 
 Sie können eine Website auf Microsoft Azure mit jeder lokalen Ressource verbinden, die einen statischen TCP-Port verwendet, wie SQL Server, MySQL, HTTP Web-APIs, Mobile Services und die meisten benutzerdefinierten Webdienste. In diesem Artikel erfahren Sie, wie Sie eine Hybridverbindung zwischen einer Azure-Website und einer lokalen SQL Server-Datenbank herstellen.
 
-> [WACOM.NOTE] Der Website-Teil der hybriden Verbindungsfunktion ist nur im [Azure-Vorschauportal] verfügbar(https://portal.azure.com). Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).  
+> [WACOM.NOTE] Der Website-Teil der hybriden Verbindungsfunktion ist nur im [Azure-Vorschauportal](https://portal.azure.com) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).  
 
 ##Voraussetzungen
 - Ein Azure-Abonnement. Hinweise zum kostenlosen Abonnement finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/). 
@@ -168,7 +168,7 @@ Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie ein
 [Verbindung mit einem lokalen SQL Server von einem mobilen Azure-Dienst mithilfe von Hybridverbindungen (Channel 9-Video)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
 
 <!-- IMAGES -->
-[Neu]:./media/web-sites-hybrid-connection-get-started/B01New.png
+[New]:./media/web-sites-hybrid-connection-get-started/B01New.png
 [NewWebsite]:./media/web-sites-hybrid-connection-get-started/B02NewWebsite.png
 [WebsiteCreationBlade]:./media/web-sites-hybrid-connection-get-started/B03WebsiteCreationBlade.png
 [WebSiteRunningBlade]:./media/web-sites-hybrid-connection-get-started/B04WebSiteRunningBlade.png
