@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Get Started with Data" pageTitle="Erste Schritte mit Daten (iOS) | Mobile Dev Center" metaKeywords="Azure iOS data, Azure mobile services data, " description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer iOS-App." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="krisragh" solutions="" manager="dwrede" editor="" />
+﻿<properties urlDisplayName="Get Started with Data" pageTitle="Erste Schritte mit Daten (iOS) | Mobile Dev Center" metaKeywords="Azure iOS Daten, Azure Mobile Services Daten, " description="Erfahren Sie die ersten Schritte zur Nutzung von Mobile Services für Daten in Ihrer iOS-App." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="krisragh" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
 
@@ -6,30 +6,30 @@
 
 [WACOM.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
-In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Services Daten in einer iOS-App nutzen können. In diesem Lernprogramm laden Sie eine App herunter, speichern die Daten im Speicher, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in die App, und melden sich am Azure-Verwaltungsportal an, um die beim Ausführen der App an den Daten vorgenommenen Änderungen anzuzeigen.
+In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Services Daten in einer iOS-App nutzen können. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.
 
 <div class="dev-callout"><b>Hinweis</b>
-<p>Anhand dieses Lernprogramms soll Ihnen ein besseres Verständnis über die Mobile Services dahingehend vermittelt werden, wie Sie mit deren Hilfe Azure verwenden können, um Daten von einer iOS-App abzurufen und zu speichern. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Wenn dies Ihre erste Erfahrung mit mobilen Diensten ist, sollten Sie abwägen, zunächst das Lernprogramm <a href="/de-de/develop/mobile/tutorials/get-started-ios">Erste Schritte mit Mobile Services</a> durchzuführen.</p>
+<p>Anhand dieses Lernprogramms soll Ihnen ein besseres Verständnis über die Mobile Services dahingehend vermittelt werden, wie Sie mit deren Hilfe Azure verwenden können, um Daten von einer iOS-App abzurufen und zu speichern. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das folgende Lernprogramm absolvieren: <a href="/de-de/develop/mobile/tutorials/get-started-ios">Erste Schritte mit Mobile Services</a>.</p>
 </div>
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 1. [Herunterladen des iOS-App-Projekts]
-2. [Erstellen des mobilen Dienstes]
-3. [Erstellen einer Datentabelle als Datenspeicher]
+2. [Erstellen des mobilen Diensts]
+3. [Hinzufügen einer Datentabelle als Speicher]
 4. [Aktualisieren der App zur Verwendung von Mobile Services]
 5. [Testen der App mit Mobile Services]
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-+ [Mobile Services iOS SDK] und [XCode 4.5][Installieren von Xcode] sowie iOS 5.0 oder höhere Versionen.
-+ Ein Microsoft Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-ios%2F" target="_blank">Kostenlose Azure-Testversion</a>.</p></div>
++ [Mobile Services iOS SDK] und [XCode 4.5][Install Xcode] sowie iOS 5.0 oder höhere Versionen.
++ Ein Microsoft Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-ios%2F" target="_blank">"Kostenlose Azure-Testversion"</a>.</p></div>
 
 ##<a name="download-app"></a>Download des GetStartedWithData-Projekts
 
 Dieses Lernprogramm baut auf der [GetStartedWithData-App][GitHub] auf, bei der es sich um eine iOS-App handelt. Die Benutzeroberfläche dieser App und die vom Mobile Services-iOS-Schnellstart generierte Benutzeroberfläche sind identisch, mit der Ausnahme, dass hinzugefügte Einträge lokal im Arbeitsspeicher gespeichert werden.
 
-1. Laden Sie die GetStartedWithData [Beispiel-App][GitHub] herunter.
+1. Laden Sie die GetStartedWithData-[Beispiel-App][GitHub] herunter.
 
 2. Öffnen Sie in Xcode das heruntergeladene Projekt, und prüfen Sie die Datei "TodoService.m".
 
@@ -37,7 +37,7 @@ Dieses Lernprogramm baut auf der [GetStartedWithData-App][GitHub] auf, bei der e
 
 3. Klicken Sie auf die Schaltfläche **Ausführen** (oder drücken Sie die Taste Command+R), um das Projekt neu zu erstellen und die App zu starten.
 
-4. Geben Sie in der App einen Text in das Textfeld ein. Klicken Sie anschließend auf die Schaltfläche **+**.
+4. Geben Sie in der App einen Text in das Textfeld ein, und klicken Sie anschließend auf die Schaltfläche **+**.
 
    	![][0]  
 
@@ -61,19 +61,19 @@ Dieses Lernprogramm baut auf der [GetStartedWithData-App][GitHub] auf, bei der e
 
    	Hierdurch wird der mit dem iOS SDK erstellte Azure Mobile Services-Client ausgeführt, der Elemente vom mobilen Dienst abfragt.
 
-2. Geben Sie wie zuvor Text im Textfeld ein, und klicken Sie danach auf die Schaltfläche **+**.
+2. Geben Sie wie zuvor Text in das Textfeld ein, und klicken Sie danach auf die Schaltfläche **+**.
 
    	Auf diese Weise wird ein neuer Eintrag an den mobilen Service gesendet.
 
-3. Klicken Sie im [Verwaltungsportal] auf **Mobile Services**, und anschließend auf Ihren mobilen Dienst.
+3. Klicken Sie im [Verwaltungsportal] auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
-4. Klicken Sie auf die Registerkarte **Daten**,und dann auf **Durchsuchen**.
+4. Klicken Sie auf die Registerkarte **Daten** und dann auf **Durchsuchen**.
 
    	![][9]
 
-   	Beachten Sie, dass die **TodoItem**Tabelle nun Daten mit von Mobile Services generierten ID-Werten enthält. Der Tabelle wurden automatisch Spalten entsprechend der TodoItem-Klasse der App hinzugefügt.
+   	Beachten Sie, dass die **TodoItem**-Tabelle nun Daten mit von Mobile Services generierten ID-Werten enthält, und dass der Tabelle automatisch Spalten entsprechend der TodoItem-Klasse der App hinzugefügt wurden.
 
-Damit wird dieses Lernprogramm für iOS **Erste Schritte mit Daten** beendet.
+Damit ist das Lernprogramm **Erste Schritte mit Daten für iOS** beendet.
 
 ##<a name="next-steps"></a>Nächste Schritte
 
@@ -97,8 +97,8 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 
 <!-- Anchors. -->
 [Herunterladen des iOS-App-Projekts]: #download-app
-[Erstellen des mobilen Dienstes]: #create-service
-[Erstellen einer Datentabelle als Datenspeicher]: #add-table
+[Erstellen des mobilen Diensts]: #create-service
+[Hinzufügen einer Datentabelle als Speicher]: #add-table
 [Aktualisieren der App zur Verwendung von Mobile Services]: #update-app
 [Testen der App mit Mobile Services]: #test-app
 [Nächste Schritte]:#next-steps
@@ -131,3 +131,5 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [GitHub]:  http://go.microsoft.com/fwlink/p/?LinkId=268622
 [GitHub-Repository]: http://go.microsoft.com/fwlink/p/?LinkId=268784
+
+<!--HONumber=35.2-->

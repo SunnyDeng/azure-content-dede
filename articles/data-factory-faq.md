@@ -1,6 +1,6 @@
-﻿<properties title="Azure Data Factory - Frequently Asked Questions" pageTitle="Azure Data Factory - Häufig gestellte Fragen" description="Häufig gestellte Fragen zu Azure Data Factory" metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties title="Azure Data Factory - Frequently Asked Questions" pageTitle="Azure Data Factory - Häufig gestellte Fragen" description="Häufig gestellte Fragen zu Azure Data Factory." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="spelluru" />
+<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/13/2014" ms.author="spelluru" />
 
 # Azure Data Factory - Häufig gestellte Fragen
 
@@ -36,8 +36,8 @@ Preisinformationen zu Azure Data Factory finden Sie auf der Seite [Data Factory 
  
 **F: Welche Datenquellen und Aktivitäten werden unterstützt?**
 
-- **Unterstützte Datenquellen:** Azure-Speicher (Blob und Tabellen), SQL Server, Azure SQL-Datenbank. 
-- **Unterstützte Aktivitäten:**: Kopieraktivität (lokal-zu-Cloud und Cloud-zu-lokal), HDInsight-Aktivität (Pig- und Hive-Transformationen) und benutzerdefinierte C#-Aktivitäten.
+- **Unterstützte Datenquellen:** Azure-Speicher (Blob und Tabellen), SQL Server, Azure SQL-Datenbank.
+- **Unterstützte Aktivitäten**: Kopieraktivität (lokal-zu-Cloud und Cloud-zu-lokal), HDInsight-Aktivität (Pig- und Hive-Transformationen) und benutzerdefinierte C#-Aktivitäten.
   
 **F: Wie können Kunden auf Data Factory zugreifen?**
 
@@ -80,11 +80,19 @@ Weitere Informationen finden Sie im Abschnitt zur geografischen Verfügbarkeit d
 
 Der bedarfsgesteuerte HDInsight-Cluster wird in derselben Region erstellt, in der sich der Speicher befindet, den Sie für die Verwendung mit dem Cluster angegeben haben.    
 
-[adfgetstarted]: ../data-factory-get-started
+## Siehe auch
+[Einführung in Azure Data Factory][adf-introduction]
+[Erste Schritte mit Azure Data Factory][adfgetstarted]
+[Problembehandlung für Data Factory][adf-troubleshoot]
 
+
+[adfgetstarted]: ../data-factory-get-started
 [adf-introduction]: ../data-factory-introduction
+[adf-troubleshoot]: ../data-factory-troubleshoot
 [adf-documentation-landingpage]: http://go.microsoft.com/fwlink/?LinkId=516909
 [azure-preview-portal]: http://portal.azure.com
 
 [adf-pricing-details]: http://go.microsoft.com/fwlink/?LinkId=517777
 [hdinsight-supported-regions]: http://azure.microsoft.com/de-de/pricing/details/hdinsight/
+
+<!--HONumber=35.2-->

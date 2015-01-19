@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Website" pageTitle="Erstellen einer Node.js-Website auf einem Mac - Azure-Lernprogramme" metaKeywords="Azure Website erstellen Node, Website Node bereitstellen, Website Node.js, Node-Website" description="Erfahren Sie mehr über die Erstellung und Bereitstellung einer Node.js-Website in Azure. Der Beispielcode wurde in Java geschrieben." metaCanonical="" services="web-sites" documentationCenter="nodejs" title="Build and deploy a Node.js website to Azure" authors="larryfr" solutions="" manager="wpickett" editor="" />
+﻿<properties urlDisplayName="Website" pageTitle="Erstellen einer Node.js-Website website auf einem Mac - Azure-Lernprogramme" metaKeywords="Azure Website erstellen Node, Azure Website bereitstellen Node, Website Node.js, Node-Website" description="Informationen zum Erstellen und Bereitstellen einer Node.js-Website in Azure. Beispielcode ist in Java geschrieben." metaCanonical="" services="web-sites" documentationCenter="nodejs" title="Build and deploy a Node.js website to Azure" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
@@ -11,7 +11,8 @@
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine [Node] [nodejs.org]-Anwendung erstellen und mit [Git] auf einer Azure-Website bereitstellen. Die Anweisungen in diesem Lernprogramm gelten für alle Betriebssysteme, unter denen Node ausgeführt werden kann.
 
-Wenn Sie lieber ein Video sehen möchten, so zeigt der Clip rechts dieselben Schritte wie dieses Lernprogramm.
+Wenn Sie sich dieses Lernprogramm lieber als Video ansehen, werden in den folgenden Clips ähnliche Schritte gezeigt:
+[AZURE.VIDEO create-a-nodejs-site-deploy-from-github]
  
 Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
@@ -21,13 +22,14 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 Befolgen Sie diese Schritte, um eine Azure-Website zu erstellen, und aktivieren Sie dann die Git-Veröffentlichung für die Website.
 
-<div class="dev-callout"><strong>Hinweis</strong>
-<p> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A7171371E" target="_blank">Kostenlose Azure-Testversion</a>.</p>
-</div>
+> [WACOM.NOTE]
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E" target="_blank">Kostenlose Azure-Testversion</a>.
+> 
+> Wenn Sie mit Azure-Websites beginnen möchten, bevor Sie sich für ein Konto registrieren, rufen Sie <a href="https://trywebsites.azurewebsites.net/?language=nodejs">https://trywebsites.azurewebsites.net</a>auf, wo Sie sofort und kostenlos eine kurzlebige ASP.NET-Startwebsite in Azure-Websites erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal] an.
 
-2. Klicken Sie unten links im Portal auf das Symbol **+ NEU**.
+2. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
 
     ![The Azure Portal with the +NEW link highlighted.][portal-new-website]
 
@@ -43,7 +45,7 @@ Befolgen Sie diese Schritte, um eine Azure-Website zu erstellen, und aktivieren 
 
 	![Set up Git publishing][setup-git-publishing]
 
-6. Wählen Sie bei der Frage "Wo befindet sich Ihr Quellcode?" **Lokales Git-Repository**, aus, und klicken Sie dann auf den Pfeil.
+6. Wählen Sie bei der Frage "Wo befindet sich Ihr Quellcode?" **Lokales Git-Repository** aus, und klicken Sie dann auf den Pfeil.
 
 	![where is your source code][where-is-code]
 
@@ -57,7 +59,7 @@ Befolgen Sie diese Schritte, um eine Azure-Website zu erstellen, und aktivieren 
 
 ##Lokales Erstellen und Testen der Anwendung
 
-In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das "Hello World"-Beispiel von [nodejs.org] enthält. Das ursprüngliche Beispiel wurde geändert, indem "process.env.PORT" als Port, an dem beim Ausführen in einer Azure-Website gelauscht werden soll, hinzugefügt wurde.
+In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das "Hello World"-Beispiel von [nodejs.org] enthält. Das ursprüngliche Beispiel wurde geändert, indem process.env.PORT als Port, an dem beim Ausführen in einer Azure-Website gelauscht werden soll, hinzugefügt wurde.
 
 1. Erstellen Sie mithilfe eines Texteditors im Verzeichnis **helloworld** eine neue Datei namens **server.js**. Wenn das Verzeichnis **helloworld** nicht vorhanden ist, erstellen Sie es.
 2. Fügen Sie den folgenden Code als Inhalt der Datei **server.js** hinzu, und speichern Sie sie:
@@ -73,7 +75,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das "Hello World
 
         node server.js
 
-4. Öffnen Sie den Webbrowser, und navigieren Sie zu http://localhost:1337. Es wird eine Webseite mit dem Text "Hello World" wie im nachfolgenden Screenshot dargestellt angezeigt:
+4. Öffnen Sie Ihren Browser, und navigieren Sie zu http://localhost:1337. Eine Website mit "Hello World" wird wie im folgenden Screenshot angezeigt:
 
     ![A browser displaying the 'Hello World' message.][helloworld-localhost]
 
@@ -84,7 +86,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das "Hello World
 		git init
 
 	<div class="dev-callout"><strong>Git-Befehl nicht verfügbar?</strong>
-	<p><a href="http://git-scm.com/" target="_blank">Git</a> ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Installationsanweisungen für Ihre Plattform finden Sie auf der <a href="http://git-scm.com/download" target="_blank">Download-Seite für Git</a>.</p>
+	<p><a href="http://git-scm.com/" target="_blank">Git</a> ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Installationsanweisungen für Ihre Plattform finden Sie auf der <a href="http://git-scm.com/download" target="_blank">Downloadseite von Git</a>.</p>
 	</div>
 
 2. Verwenden Sie die folgenden Befehle, um dem Repository Dateien hinzuzufügen:
@@ -148,25 +150,25 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das "Hello World
 
 In den Schritten dieses Artikels wird zum Erstellen einer Website das Azure-Portal verwendet; Sie können jedoch auch die [Azure-Befehlszeilen-Tools für Mac und Linux] verwenden, um diese Aufgaben durchzuführen.
 
-Node.js bietet ein vielseitiges Portfolio an Modulen, die von Ihren Anwendungen verwendet werden können. Weitere Informationen darüber, wie Azure-Websites mit Modulen zusammenarbeitet, finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen](/en-us/documentation/articles/nodejs-use-node-modules-azure-apps/).
+Node.js bietet ein vielseitiges Portfolio an Modulen, die von Ihren Anwendungen verwendet werden können. Weitere Informationen darüber, wie Azure-Websites mit Modulen zusammenarbeiten, finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen](/de-de/documentation/articles/nodejs-use-node-modules-azure-apps/).
 
-Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](/en-us/documentation/articles/nodejs-specify-node-version-azure-apps/).
+Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](/de-de/documentation/articles/nodejs-specify-node-version-azure-apps/).
 
-Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](/en-us/documentation/articles/web-sites-nodejs-debug/) Informationen zur Problemdiagnose.
+Wenn nach der Bereitstellung für Azure Probleme mit der Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](/de-de/documentation/articles/web-sites-nodejs-debug/) Informationen zur Problemdiagnose.
 
 
 ##Zusätzliche Ressourcen
 
-* [Windows Azure PowerShell]
-* [Azure-Befehlszeilen-Tools für Mac und Linux]
+* [Azure PowerShell]
+* [Azure-Befehlszeilentools für Mac und Linux]
 
-[Windows Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
+[Azure PowerShell]: /de-de/documentation/articles/install-configure-powershell/
 
 [nodejs.org]: http://nodejs.org
 [Git]: http://git-scm.com
 
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-[Azure-Befehlszeilen-Tools für Mac und Linux]: /en-us/documentation/articles/xplat-cli/
+[Azure-Befehlszeilentools für Mac und Linux]: /de-de/documentation/articles/xplat-cli/
 
 [helloworld-completed]: ./media/web-sites-nodejs-develop-deploy-mac/helloazure.png
 [helloworld-localhost]: ./media/web-sites-nodejs-develop-deploy-mac/helloworldlocal.png
@@ -182,3 +184,5 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
 [setup-git-publishing]: ./media/web-sites-nodejs-develop-deploy-mac/setup_git_publishing.png
 [go-to-dashboard]: ./media/web-sites-nodejs-develop-deploy-mac/go_to_dashboard.png
 [where-is-code]: ./media/web-sites-nodejs-develop-deploy-mac/where_is_code.png
+
+<!--HONumber=35.2-->

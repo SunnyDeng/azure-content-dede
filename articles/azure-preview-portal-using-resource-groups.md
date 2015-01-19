@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="" pageTitle="Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Using Resource groups to manage your Azure resources" authors="Nafisa Bhojawala"  solutions="" writer="" manager="terrylan" editor=""  />
+﻿<properties urlDisplayName="" pageTitle="Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Using Resource groups to manage your Azure resources" authors="Nafisa Bhojawala"  solutions="" writer="" manager="timlt" editor=""  />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="Nafisa Bhojawala" />
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="12/02/2014" ms.author="davidmu" />
 
 
 # Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen
@@ -44,7 +44,7 @@ Der Ressourcenzuordnungsteil kann angepasst und vergrößert werden, sodass alle
 
 <br><br />
 
-  Beim Klicken auf die Ressourcenzuordnung wird die Listenansicht aller Ressourcen in der Ressourcenzuordnung aufgerufen. In dieser Ansicht werden alle in einer Ressourcengruppe enthaltenen oder damit verknüpften Ressourcen aufgelistet. Wenn Sie auf diese Ressourcen klicken, werden deren Fenster aufgerufen. 
+  Beim Klicken auf die Ressourcenzuordnung wird die Listenansicht aller Ressourcen in der Ressourcenzuordnung aufgerufen. In dieser Ansicht werden alle in einer Ressourcengruppe enthaltenen oder damit verknüpften Ressourcen aufgelistet. Wenn Sie auf diese Ressourcen klicken, werden deren Flügel aufgerufen. 
 
 ![](http://i.imgur.com/COPjNng.png)
 
@@ -55,7 +55,7 @@ Der Ressourcenzuordnungsteil kann angepasst und vergrößert werden, sodass alle
 
 ### Hinzufügen von Ressourcen zu Ressourcengruppen
 
-Mit dem Befehl "Hinzufügen" im Ressourcengruppenfenster können Sie einer Ressourcengruppe Ressourcen hinzufügen. Wenn Sie die Schritte im Ablauf durchführen, können Sie der Ressourcengruppe weitere Ressourcen hinzufügen.
+Mit dem Befehl "Hinzufügen" im Fenster "Ressourcengruppen" können Sie einer Ressourcengruppe Ressourcen hinzufügen. Wenn Sie die Schritte im Ablauf durchführen, können Sie der Ressourcengruppe weitere Ressourcen hinzufügen.
 
 ![](http://i.imgur.com/G79kayH.png)
 
@@ -70,3 +70,5 @@ Hinweis: Es wird davon abgeraten, Teamprojekte zusammen mit anderen Azure-Ressou
 Da Sie mit Ressourcengruppen den Lebenszyklus aller darin enthaltenen Ressourcen verwalten können, werden beim Löschen einer Ressourcengruppe alle darin enthaltenen Ressourcen gelöscht. Sie können auch einzelne Ressourcen in einer Ressourcengruppe löschen. Seien Sie vorsichtig beim Löschen einer Ressourcengruppe, da mit dieser eventuell andere Ressourcen verknüpft sind. In der Ressourcenzuordnung können Sie die verknüpften Ressourcen sehen und die notwendigen Schritte ergreifen, um nicht beabsichtigte Folgen zu vermeiden, wenn Sie Ressourcengruppen löschen. 
 
 ![](http://i.imgur.com/ZTXoISb.png)
+
+<!--HONumber=35.2-->

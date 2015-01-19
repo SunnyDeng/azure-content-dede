@@ -1,6 +1,6 @@
 ﻿<properties title="Tutorial - Getting Started with the Azure Batch Library for .NET" pageTitle="Lernprogramm - Erste Schritte mit der Azure Batch-Bibliothek für .NET" description="erforderlich" metaKeywords="" services="batch" solutions="" documentationCenter=".NET" authors="yidingz, karran.batta" videoId="" scriptId="" manager="timlt" />
 
-<tags ms.service="batch" ms.devlang="dotnet" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="big-compute" ms.date="10/02/2014" ms.author="yidingz, karran.batta" />
+<tags ms.service="batch" ms.devlang="dotnet" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="big-compute" ms.date="12/03/2014" ms.author="yidingz, karran.batta" />
 
 #Erste Schritte mit der Azure Batch-Bibliothek für .NET  
 
@@ -17,11 +17,11 @@ Hintergrundinformationen und Szenarien für Azure Batch finden Sie unter [Azure 
 In diesem Lernprogramm wird die Erstellung einer Konsolenanwendung veranschaulicht, die die verteilte Berechnung für einen Pool virtueller Computer mithilfe des Azure Batch-Diensts einrichtet. Die in diesem Lernprogramm erstellten Aufgaben werten Text aus Dateien, die im Azure-Speicher enthalten sind, aus und geben die Wörter zurück, die am häufigsten verwendet werden. Die Beispiele sind in C# geschrieben und greifen auf die Azure Batch-Bibliothek für .NET zurück.
 
 
->[WACOM.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/). 
+>[WACOM.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/). 
 >
->Sie müssen "NuGet" verwenden, um die **Microsoft.Azure.Batch.dll**-Assembly zu erhalten. Nachdem Sie Ihr Projekt in Visual Studio erstellt haben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Pakete verwalten** aus. Suchen Sie online nach **Azure.Batch**, und klicken Sie dann auf "Installieren", um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
+>Sie müssen "NuGet" verwenden, um die **Microsoft.Azure.Batch.dll**-Assembly zu erhalten. Nachdem Sie Ihr Projekt in Visual Studio erstellt haben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Pakete verwalten** aus. Suchen Sie online nach **Azure.Batch**, und klicken Sie dann auf "Installieren", um das Azure Batch-Paket und die zugehörigen Abhängigkeiten zu installieren.
 >
->Stellen Sie sicher, dass Sie den Nuget-Paket-Manager, Version 2.8 oder höher, verwenden. Sie finden die Versionsnummer über Visual Studio -> "Hilfe" -> Dialogfeld "Info". Wenn Sie eine ältere Version des Nuget-Paket-Managers verwenden, müssen Sie Visual Studio aktualisieren, da ansonsten möglicherweise beim Herunterladen der richtigen Version der Nuget-Abhängigkeiten auftreten kann.
+>Stellen Sie sicher, dass Sie den NuGet-Paket-Manager, Version 2.8 oder höher, verwenden. Sie finden die Versionsnummer über Visual Studio -> "Hilfe" -> Dialogfeld "Info". Wenn Sie eine ältere Version des Nuget-Paket-Managers verwenden, müssen Sie Visual Studio aktualisieren, da ansonsten möglicherweise beim Herunterladen der richtigen Version der Nuget-Abhängigkeiten auftreten kann.
 > 
 >Darüber hinaus können Sie auf das [Azure Batch-Beispiel "Hello World"](https://code.msdn.microsoft.com/Azure-Batch-Sample-Hello-6573967c) auf MSDN verweisen, das dem hier beschriebenen Code ähnelt.
 
@@ -37,7 +37,7 @@ Der Batch-Dienst wird für die Planung skalierbarer und verteilter Rechenvorgän
 -	**Arbeitselement** - Gibt an, wie die Rechenleistung in einem Pool auf virtuellen Aufgabencomputern ausgeführt wird.
 -	**Auftrag** - Eine aktive Instanz eines Arbeitselements und besteht aus einer Sammlung von Aufgaben.
 -	**Aufgabe** - Eine Anwendung, die einem Auftrag zugeordnet ist, und auf einem virtuellen Aufgabencomputer ausgeführt wird.
--	**Datei** - Enthält die Informationen, die von einer Aufgabe verarbeitet werden.  
+-	**Datei** - Enthält die Informationen, die von einer Aufgabe verarbeitet werden.
 
 Beginnen wir mit der grundlegenden Syntax.
 
@@ -49,7 +49,7 @@ Der erste Satz von Ressourcen, den Sie zum Ausführen von Aufgaben erstellen mü
 
 1.	Öffnen Sie Microsoft Visual Studio 2013, klicken Sie im Menü **Datei** auf **Neu**, und klicken Sie dann auf **Projekt**.
 
-2.	Klicken Sie in **Windows** unter **Visual C#** auf **Konsolenanwendung**, benennen Sie das Projekt **GettingStarted**, benennen Sie die Lösung **AzureBatch**, und klicken Sie dann auf **OK**.
+2.	Klicken Sie in **Windows** unter **Visual C#** auf **Konsolenanwendung**, weisen Sie dem Projekt den Namen **GettingStarted** und der Lösung **AzureBatch** zu, und klicken Sie dann auf **OK**.
 
 3.	Fügen Sie am Anfang der Datei "Program.cs" die folgenden Namespacedeklarationen hinzu:
 
@@ -276,11 +276,11 @@ Nachdem wir "Hello World" auf einem virtuellen Computer ausführen können, woll
 
 Sie werden den folgenden einfachen Workflow bei der Erstellung eines verteilten Rechenszenarios mit dem Batch-Dienst verwenden:  
 
-1.	Laden Sie die Dateien, die Sie in Ihrem verteilten Rechenszenario verwenden möchten, auf ein Azure-Speicherkonto hoch. Diese Dateien müssen sich im Speicherkonto befinden, damit der Batch-Dienst darauf zugreifen kann. Die Dateien werden auf einen virtuellen Aufgabencomputer geladen, wenn die Aufgabe ausgeführt wird.
-2.	Laden Sie die abhängigen Binärdateien in das Speicherkonto hoch. Die Binärdateien enthalten das von der Aufgabe ausgeführte Programm und die abhängigen Assemblys. Auf diese Dateien muss auch vom Speicher aus zugegriffen werden. Sie werden auf den virtuellen Aufgabencomputer geladen.
+1.	Laden Sie die Dateien, die Sie in Ihrem verteilten Rechenszenario verwenden möchten, auf ein Azure-Speicherkonto hoch. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Die Dateien werden auf einen virtuellen Aufgabencomputer geladen, wenn die Aufgabe ausgeführt wird.
+2.	Laden Sie die abhängigen Binärdateien in das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch vom Speicher aus zugegriffen werden. Sie werden auf den virtuellen Aufgabencomputer geladen.
 3.	Erstellen Sie einen Pool von virtuellen Aufgabencomputern. Sie können die Größe des zu verwendenden virtuellen Aufgabencomputers bei der Erstellung eines Pools zuweisen. Bei der Ausführung einer Aufgabe wird ihm ein virtueller Aufgabencomputer aus diesem Pool zugewiesen.
 4.	Erstellen Sie ein Arbeitselement. Mit einem Arbeitselement können Sie einen Auftrag von Aufgaben verwalten. Beim Erstellen eines Arbeitselements wird automatisch ein Auftrag erstellt.
-5.	Fügen Sie Aufgaben zum Auftrag hinzu. Jede Aufgabe verwendet das von Ihnen hochgeladene Programm, um Informationen aus einer Datei zu verarbeiten, die Sie ebenfalls hochgeladen haben.
+5.	Hinzufügen von Aufgaben zum Auftrag. Jede Aufgabe verwendet das von Ihnen hochgeladene Programm, um Informationen aus einer Datei zu verarbeiten, die Sie ebenfalls hochgeladen haben.
 6.	Überwachen Sie die Ergebnisse der Ausgabe.  
 
 Wir haben Schritt 3 bis 6 veranschaulicht. Jetzt wollen wir untersuchen, wie der Azure-Speicher für die Ausführung der Aufgabe vorbereitet wird.
@@ -296,11 +296,11 @@ Sie benötigen ein Speicherkonto, um den Rest dieses Lernprogramms abschließen 
 
 3. Erstellen Sie drei Textdateien (taskdata1.txt, taskdata2.txt, taskdata3.txt), die jeweils einen der folgenden Abschnitte enthalten, und laden Sie diese anschließend in den Container hoch:
 
-		You can use Azure Virtual Machines to provision on-demand, scalable compute infrastructure when you need flexible resources for your business needs. From the gallery, you can create virtual machines that run Windows, Linux, and enterprise applications such as SharePoint and SQL Server. Or, you can capture and use your own images to create customized virtual machines.
+		Sie können virtuelle Azure-Computer verwenden, um bedarfsgesteuerte, skalierbare Serverinfrastruktur bereitzustellen, wenn für Ihre Geschäftsanforderungen flexible Ressourcen erforderlich sind. Über den Katalog können Sie virtuelle Computer erstellen, auf denen Windows-, Linux- und Unternehmensanwendungen wie SharePoint und SQL Server ausgeführt werden. Sie können auch eigene Images erfassen und verwenden, um benutzerdefinierte virtuelle Computer zu erstellen.
 		
-		Quickly deploy and manage powerful applications and services with Azure Cloud Services. Simply upload your application and Azure handles the deployment details - from provisioning and load balancing to health monitoring for continuous availability. Your application is backed by an industry leading 99.95% monthly SLA. You just focus on the application and not the infrastructure.
+		Mit den Cloud-Diensten von Azure können Sie schnell leistungsstarke Anwendungen und Dienste bereitstellen und verwalten. Laden Sie einfach Ihre Anwendung hoch, und Azure kümmert sich um die Bereitstellungsdetails - von der Bereitstellung und dem Lastenausgleich über die Integritätsüberwachung bis hin zur kontinuierlichen Verfügbarkeit. Ihre Anwendung unterliegt dabei einer monatlichen SLA mit einem in der Branche führenden Wert von 99,95 Prozent. Sie konzentrieren sich nur auf die Anwendung, nicht auf die Infrastruktur.
 		
-		Azure Web Sites provide a scalable, reliable, and easy-to-use environment for hosting web applications. Select from a range of frameworks and templates to create a web site in seconds. Use any tool or OS to develop your site with .NET, PHP, Node.js or Python. Choose from a variety of source control options including TFS, GitHub, and BitBucket to set up continuous integration and develop as a team. Expand your site functionality over time by leveraging additional Azure managed services like storage, CDN, and SQL Database.
+		Azure-Websites bieten eine skalierbare, zuverlässige und benutzerfreundliche Umgebung für das Hosten von Webanwendungen. Wählen Sie aus einer Vielzahl von Frameworks und Vorlagen aus, um eine Website in Sekunden erstellen zu können. Verwenden Sie zum Entwickeln Ihrer Website mit .NET, PHP, Node.js oder Python beliebige Tools oder Betriebssysteme. Wählen Sie aus einer Vielzahl von Optionen für die Quellcodeverwaltung, einschließlich TFS, GitHub und BitBucket, um eine fortlaufende Integration einzurichten und als Team zu entwickeln. Erweitern Sie die Funktionalität der Website im Laufe der Zeit mithilfe zusätzlicher verwalteter Azure-Diensten wie Speicherung, CDN und SQL-Datenbank.
 
 
 >[WACOM.NOTE] In einer Produktionsumgebung wird empfohlen, dass Sie eine SAS (Shared Access Signature) verwenden.
@@ -316,7 +316,7 @@ Sie benötigen ein Speicherkonto, um den Rest dieses Lernprogramms abschließen 
 
 		private const string BlobPath = "[storage-path]"; 
 	Ersetzen Sie die folgenden Werte:
-	-	**[Speicherpfad]** - Der Pfad zum BLOB im Speicher. Beispiel: http://yiding.blob.core.windows.net/gettingstarted/
+	-	**[Speicherpfad]** - Der Pfad zum BLOB im Speicher. Beispiel:: http://yiding.blob.core.windows.net/gettingstarted/
 
 2. Aktualisieren Sie den Aufgabenübermittlungscode wie folgt.
 
@@ -396,12 +396,12 @@ Nach der Verarbeitung des Arbeitselements können Sie Ressourcen freigeben, inde
 Bevor Sie den Code in diesem Lernprogramm ausführen können, benötigen Sie Zugriff auf ein Speicherkonto in Azure.  
 
 1.	Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com/) an.
-2.	Klicken Sie unten im Navigationsbereich auf **NEU**.  
+2.	Klicken Sie unten auf der Seite auf **NEU**.  
 ![][1]
-3.	Klicken Sie auf **DATENDIENSTE**, dann auf **SPEICHER** und anschließend auf **SCHNELLERFASSUNG**.
+3.	Klicken Sie auf **DATA SERVICES**, dann auf **SPEICHER** und anschließend auf **SCHNELLERFASSUNG**.
 ![][2]
 
-4.	Geben Sie in **URL** einen Unterdomänennamen ein, der im URI für das Speicherkonto verwendet wird. Der Eintrag kann drei bis 24 Kleinbuchstaben und Zahlen enthalten. Dieser Wert wird zum Hostnamen im URI, der zum Adressieren von BLOB-, Warteschlangen- oder Tabellenspeicherressourcen für das Abonnement verwendet wird.
+4.	Geben Sie im Feld **URL** einen Unterdomänennamen ein, der im URI für das Speicherkonto verwendet werden soll. Der Eintrag kann drei bis 24 Kleinbuchstaben und Zahlen enthalten. Dieser Wert wird der Hostname im URI, der zum Adressieren von Blob-, Warteschlangen- oder Tabellenspeicherressourcen für das Abonnement verwendet wird.
 5.	Wählen Sie eine(n) **SPEICHERORT/AFFINITÄTSGRUPPE** aus, an dem bzw. in der der Speicher positioniert wird.
 6.	Optional können Sie die Georeplikation aktivieren.
 7.	Klicken Sie auf **SPEICHERKONTO ERSTELLEN**.  
@@ -416,7 +416,7 @@ Batch Apps ist ein Feature von Azure Batch, das eine anwendungsorientierte Metho
 
 Im Batch Apps-Szenario schreiben Sie mithilfe des Batch Apps Cloud-SDKs Code, um Aufträge in parallele Aufgaben zu unterteilen, sämtliche Abhängigkeiten zwischen diesen Aufgaben zu beschreiben und anzugeben, wie die einzelnen Aufgaben ausgeführt werden.  Dieser Code wird im Batch-Konto bereitgestellt.  Clients können dann Aufträge ausführen, indem sie einfach die Art des Auftrags und die Eingabedateien für eine REST-API angeben.
 
->[WACOM.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/). Sie können NuGet zum Abrufen der Assemblys <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps.Cloud/">Batch Apps Cloud</a> und <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps/">Batch Apps Client</a> verwenden. Nachdem Sie Ihr Projekt in Visual Studio erstellt haben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Pakete verwalten** aus. Sie können auch die Visual Studio-Erweiterung für Batch Apps <a href="https://visualstudiogallery.msdn.microsoft.com/8b294850-a0a5-43b0-acde-57a07f17826a">hier</a> herunterladen oder in Visual Studio über das Menü "Erweiterungen und Updates" nach **Batch Apps** suchen, die eine Projektvorlage enthält, um Anwendungen für die Cloud zu aktivieren und Anwendungen bereitzustellen.  Sie können auch <a href="https://go.microsoft.com/fwLink/?LinkID=512183&clcid=0x409">umfassende Beispiele auf MSDN finden.</a>
+>[WACOM.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/). Mithilfe von NuGet können Sie sowohl die <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps.Cloud/">Batch Apps-Cloud-</a> Assembly und die <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps/">Batch Apps-Client-</a> Assembly abrufen. Nachdem Sie Ihr Projekt in Visual Studio erstellt haben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Pakete verwalten** aus. Sie können auch die Visual Studio-Erweiterung für Batch Apps herunterladen, die eine Projektvorlage enthält, um Cloud-Anwendungen und <a href="https://visualstudiogallery.msdn.microsoft.com/8b294850-a0a5-43b0-acde-57a07f17826a">hier</a> die Bereitstellung einer Anwendung zu ermöglichen oder die Suche nach **Batch Apps** in Visual Studio über den Menüeintrag für Erweiterungen und Updates durchzuführen.  Es sind auch <a href="https://go.microsoft.com/fwLink/?LinkID=512183&clcid=0x409">umfassende Beispiele auf MSDN verfügbar.</a>
 >
 
 ###Grundlagen zu Azure Batch Apps 
@@ -437,7 +437,7 @@ Das Programmierungs- und Nutzungsmodell von Batch Apps stützt sich auf die folg
 Ein **Auftrag** ist eine vom Benutzer übermittelte Arbeitsleistung. Wenn ein Auftrag gesendet wird, gibt der Benutzer den Typ des Auftrags, alle Einstellungen für diesen Auftrag sowie die für den Auftrag erforderlichen Daten an. Diese Details können entweder über die aktivierte Implementierung im Auftrag des Benutzers ausgearbeitet werden oder der Benutzer stellt diese Informationen explizit über den Client bereit. Ein Auftrag besitzt Ergebnisse, die zurückgegeben werden. Jeder Auftrag verfügt über eine primäre Ausgabe und eine optionale Vorschauausgabe. Aufträge können bei Bedarf auch zusätzliche Ausgaben zurückgeben.
 
 ####Aufgaben
-Eine **Aufgabe** ist eine im Rahmen eines Auftrags auszuführende Arbeitsleistung. Wenn ein Benutzer einen Auftrag übermittelt, wird dieser in kleinere Aufgaben unterteilt. Der Dienst verarbeitet diese einzelnen Aufgaben anschließend und fasst die Aufgabenergebnisse zu einer Gesamtausgabe des Auftrags zusammen. Die Art der Aufgaben ist vom Typ des Auftrags abhängig. Die Auftragsteilung definiert, wie ein Auftrag in Aufgaben aufgegliedert wird. Dabei wird sie von den Informationen gelenkt, welche Arbeitssegmente die Anwendung verarbeiten soll. Aufgabenausgaben können auch einzeln heruntergeladen werden und sind in einigen Fällen möglicherweise hilfreich, wenn z. B. ein Benutzer einzelne Aufgaben eines Animationsauftrags herunterladen möchten.
+Eine **Aufgabe** ist eine im Rahmen eines Auftrags auszuführende Arbeitsleistung. Wenn ein Benutzer einen Auftrag übermittelt, wird dieser in kleinere Aufgaben unterteilt. Der Dienst verarbeitet diese einzelnen Aufgaben anschließend und fasst die Aufgabenergebnisse zu einer Gesamtausgabe des Auftrags zusammen. Die Art der Aufgaben ist vom Typ des Auftrags abhängig. Die Auftragsteilung definiert, wie ein Auftrag in Aufgaben aufgegliedert wird. Dabei wird sie von den Informationen gelenkt, welche Arbeitssegmente die Anwendung verarbeiten soll. Aufgabenausgaben können auch einzeln heruntergeladen werden und sind in einigen Fällen möglicherweise hilfreich, wenn z. B. ein Benutzer einzelne Aufgaben eines Animationsauftrags herunterladen möchte.
 
 ####Zusammenführen von Aufgaben
 Eine **Zusammenführungsaufgabe** ist eine spezielle Art von Aufgabe, die die Ergebnisse einzelner Aufgaben in die abschließenden Auftragsergebnisse zusammenführt. Für einen Auftrag zur Filmdarstellung führt die Zusammenführungsaufgabe möglicherweise die verarbeiteten Einzelbilder zu einem Film zusammen oder komprimiert alle verarbeiteten Einzelbilder in einer einzelnen Datei. Jeder Auftrag verfügt über eine Zusammenführungsaufgabe, auch wenn keine eigentliche "Zusammenführung" erforderlich ist.
@@ -484,7 +484,7 @@ Sie können eine Aufgabe angeben, die von einer bestimmten anderen Aufgabe abhä
 
 Die Aufgabe wird nicht ausgeführt, bis die Ausgabe der Aufgabe verfügbar ist, zu der die Abhängigkeit besteht.   
 
-Sie können auch angeben, dass eine ganze Gruppe von Aufgaben nicht mit der Verarbeitung beginnen soll, bis eine andere Gruppe vollständig abgeschlossen ist. In diesem Fall können Sie die "TaskSpecifier.Stage"-Eigenschaft festlegen. Aufgaben mit einem angegebenen Phasenwert beginnen nicht mit der Verarbeitung, bis alle Aufgaben mit niedrigeren Phasenwerten abgeschlossen wurden. Aufgaben mit Phase 3 beginnen z. B. nicht mit der Verarbeitung, bis alle Aufgaben mit Phase 0, 1 oder 2 beendet wurden. Phasen müssen mit 0 beginnen, die Reihenfolge der Phasen darf keine Lücken aufweisen und "SplitIntoTasks" muss Aufgaben in Reihenfolge der Phasen zurückgeben: Beispielsweise ist es ein Fehler, eine Aufgabe mit Phase 0 nach einer Aufgabe mit Phase 1 zurückzugeben.
+Sie können auch angeben, dass eine ganze Gruppe von Aufgaben nicht mit der Verarbeitung beginnen soll, bis eine andere Gruppe vollständig abgeschlossen ist. In diesem Fall können Sie die "TaskSpecifier.Stage"-Eigenschaft festlegen. Aufgaben mit einem angegebenen Phasenwert beginnen nicht mit der Verarbeitung, bis alle Aufgaben mit niedrigeren Phasenwerten abgeschlossen wurden. Aufgaben mit Phase 3 beginnen z. B. nicht mit der Verarbeitung, bis alle Aufgaben mit Phase 0, 1 oder 2 beendet wurden. Phasen müssen bei 0 beginnen, die Reihenfolge der Phasen darf keine Lücken aufweisen und "SplitIntoTasks" muss Aufgaben in Phasenreihenfolge zurückgeben. Es ist z. B. ein Fehler, eine Aufgabe mit Phase 0 nach einer Aufgabe mit Phase 1 zurückzugeben.
 
 Jeder parallele Auftrag endet mit einer speziellen Aufgabe, die als "Zusammenführungsaufgabe" bezeichnet wird. Der Auftrag der Zusammenführungsaufgabe ist die Zusammenführung der Ergebnisse der parallelen Verarbeitungsaufgaben zu einem Endergebnis. Batch Apps erstellt die Zusammenführungsaufgabe automatisch für Sie.  
 
@@ -526,7 +526,7 @@ Die "ExternalProcess"-Klasse im Cloud-SDK bietet eine nützliche Hilfslogik zum 
 
 Die "RunExternalTaskProcess"-Methode gibt ein "TaskProcessResult" zurück, das eine Liste von Ausgabedateien enthält. Diese muss mindestens alle für die Zusammenführung erforderlichen Dateien enthalten. Sie können optional auch Protokolldateien, Vorschaudateien und temporäre Dateien zurückgeben (z. B. zu Diagnosezwecken, wenn die Aufgabe fehlgeschlagen ist).  Beachten Sie, dass die Methode die Dateipfade, nicht den Dateiinhalt zurückgibt.
 
-Jede Datei muss durch einen Typ der Ausgabe gekennzeichnet werden, den sie enthält: Ausgabe (d. h. Teil der letztendlichen Auftragsausgabe), Vorschau, Protokoll oder ein Zwischenprodukt.  Diese Werte entstammen der "TaskOutputFileKind"-Enumeration. Das folgende Fragment gibt eine einzelne Aufgabenausgabe und keine Vorschau oder Protokoll zurück. Die "TaskProcessResult.FromExternalProcessResult"-Methode vereinfacht die gängigen Szenarien zum Erfassen von Exitcode, Prozessorausgaben und Ausgabedateien über ein Befehlszeilenprogramm:
+Jede Datei muss mit dem Typ der Ausgabe identifiziert werden, den sie enthält: Ausgabe (d. h. Teil der letztendlichen Auftragsausgabe), Vorschau, Protokoll oder Zwischenergebnis.  Diese Werte stammen von der "TaskOutputFileKind"-Enumeration. Das folgende Fragment gibt eine einzelne Aufgabenausgabe und keine Vorschau oder Protokoll zurück. Die "TaskProcessResult.FromExternalProcessResult"-Methode vereinfacht die gängigen Szenarien zum Erfassen von Exitcode, Prozessorausgaben und Ausgabedateien über ein Befehlszeilenprogramm:
 
 Der folgende Code veranschaulicht eine einfache Implementierung von "ParallelTaskProcessor.RunExternalTaskProcess".
 
@@ -595,3 +595,5 @@ Ein Auftrag beschreibt eine auszuführende Arbeitsauslastung und muss alle Infor
 [4]: ./media/batch-dotnet-get-started/batch-dotnet-get-started-04.jpg
 
 
+
+<!--HONumber=35.2-->

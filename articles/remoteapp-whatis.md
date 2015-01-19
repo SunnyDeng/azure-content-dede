@@ -1,56 +1,63 @@
-﻿<properties title="What is RemoteApp?" pageTitle="Was ist RemoteApp?" description="Erfahren Sie mehr über Azure RemoteApp." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="kathyw" />
+﻿<properties title="What is RemoteApp?" pageTitle="Was ist RemoteApp?" description="Informationen über Azure RemoteApp." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="kathyw" />
 
-<tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/05/2014" ms.author="elizapo" ms.manager="kathyw" />
+<tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/12/2014" ms.author="elizapo" ms.manager="mbaldwin" />
 
 #Was ist Azure RemoteApp?
+ 
+Azure RemoteApp stattet Azure mit der Funktionalität des lokalen Microsoft RemoteApp-Programms, unterstützt von Remotedesktopdiensten, aus. Azure RemoteApp sorgt für den sicheren Remotezugriff auf Anwendungen von vielen unterschiedlichen Benutzergeräten aus.
 
-Mit Azure RemoteApp halten die Funktionen des lokalen Microsoft-RemoteApp-Programms, gestützt von Remotedesktopdiensten, Einzug in Azure. Mit Azure RemoteApp können Sie sicheren Remotezugriff auf Anwendungen von vielen verschiedenen Benutzergeräten bieten.
+Wenn Sie RemoteApp für Azure verwenden, können Sie den Speicher, die Skalierbarkeit und die globale Reichweite von Azure nutzen, ohne sich um eine komplexe lokale Konfiguration kümmern zu müssen. Microsoft sorgt für die Wartung von Azure und damit auch für die Zuverlässigkeit der Software. Dadurch können Sie sich auf wichtigere Dinge konzentrieren, wie z. B. auf die Erstellung optimaler Apps für Ihr Unternehmen. Ein weiterer Vorteil von Azure RemoteApp ist der Zugriff - Benutzer können von Geräten mit Windows, iOS, Mac OS X und Android auf die RemoteApp-Programme zugreifen. Die Benutzer können die Apps in der von ihnen bevorzugten Umgebung verwenden, während Ihnen für die Verwaltung dieser Apps das Azure-Verwaltungsportal zur Verfügung stehe. 
 
-Durch das Ergänzen von Azure mit RemoteApp können Sie den Speicher, die Skalierbarkeit und die globale Reichweite von Azure nutzen, ohne eine komplexe lokale Konfiguration zu benötigen. Microsoft bietet Wartung für Azure, sodass für Zuverlässigkeit gesorgt ist und Sie sich auf wichtigere Angelegenheiten, wie das Erstellen der besten Apps für Ihr Unternehmen, konzentrieren können. Ein weiterer Vorteil von Azure RemoteApp ist der Zugriff - die Benutzer können auf RemoteApp-Programme von Windows-, iOS-, Mac OS X- und Android-Geräten aus zugreifen. Sie können Ihre Apps in der von ihnen bevorzugten Umgebung nutzen, und Sie können diese Apps über das Azure-Verwaltungsportal verwalten. 
+Fahren Sie mit der Lektüre dieses Artikels fort, um weitere Informationen zu erhalten, oder [testen Sie jetzt](http://azure.microsoft.com/de-de/services/remoteapp/), wenn wir Sie bereits überzeugt haben.
 
-Nachfolgend erhalten Sie weitere Informationen zu RemoteApp, und falls wir Sie schon überzeugt haben, können Sie [es ausprobieren](http://azure.microsoft.com/de-de/services/remoteapp/).
+Haben Sie Fragen zu Azure RemoteApp? Schlagen Sie unter den [häufig gestellten Fragen ](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-faq/) nach.
 
 Azure RemoteApp ist Teil der [Microsoft Virtual Desktop Infrastructure](http://www.microsoft.com/de-de/server-cloud/products/virtual-desktop-infrastructure/explore.aspx).
 
-**Neu!** Sie möchten mehr über Azure RemoteApp erfahren? Oder RemoteApp individuell testen? Nehmen Sie an unserem wöchentlichen [Webinar mit Expertenantworten](https://azureinfo.microsoft.com/US-Azure-WBNR-FY15-11Nov-AzureRemoteAppAskTheExperts-Registration-Page.html) teil.
+**Neu!** Möchten Sie mehr über Azure RemoteApp erfahren? Oder sind Sie bereit, RemoteApp im größeren Umfang zu testen? Nehmen Sie an unserem wöchentlichen [Ask the Experts Webinar ](https://azureinfo.microsoft.com/US-Azure-WBNR-FY15-11Nov-AzureRemoteAppAskTheExperts-Registration-Page.html) teil.
 
-##Optionen für die Bereitstellung von RemoteApp
-Es existieren zwei Bereitstellungsarten für RemoteApps:
+##RemoteApp-Bereitstellungsoptionen
+Es gibt zwei Arten von RemoteApp-Sammlungen:
 
 
-- Eine **Cloud-Bereitstellung** ist in der Cloud gehostet und speichert alle Daten für Programme in der Azure-Cloud. Benutzer können auf Apps zugreifen, indem sie sich mit ihrem Microsoft-Konto oder mit ihren mit Azure Active Directory synchronisierten oder verbundenen Unternehmensanmeldedaten anmelden.
-- Eine **Hybridbereitstellung** ist in der Cloud gehostet und speichert Daten in der Azure-Cloud, sie lässt Benutzer aber auch auf in Ihrem lokalen Netzwerk gespeicherte Daten und Ressourcen zugreifen. Benutzer können auf Apps zugreifen, indem sie sich mit ihren mit Azure Active Directory synchronisierten oder verbundenen Unternehmensanmeldedaten anmelden.
+- Eine **Cloud-Sammlung** wird in der Cloud gehostet und speichert alle Daten für Programme in der Azure-Cloud. Benutzer können sich mit ihrem Microsoft-Konto oder mit den Anmeldeinformationen des Unternehmens, die mit Azure Active Directory verbunden sind oder synchronisiert werden, anmelden und auf die Apps zugreifen.
+- Eine **Hybrid-Sammlung** wird in der Cloud gehostet und speichert die Daten in der Azure-Cloud. Benutzer können aber auch auf die Daten und Ressourcen zugreifen, die im lokalen Netzwerk gespeichert sind. Benutzer können sich mit den Anmeldeinformationen des Unternehmens, die mit Azure Active Directory verbunden sind oder synchronisiert werden, anmelden und auf die Apps zugreifen.
 
-###Cloud-Bereitstellung
+###Cloud-Sammlung
 
-Die [Cloud-RemoteApp-Bereitstellung](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-cloud-deployment/) bietet eine eigenständige Möglichkeit zum Hosten von Anwendungen in der Cloud. Eine Cloud-Bereitstellung ist nur in der Azure-Cloud vorhanden und wird nicht mit Ihrem lokalen Netzwerk verbunden.
+Die [Cloud-Sammlung von RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-cloud-deployment/) bietet eine eigenständige Möglichkeit zum Hosten von Anwendungen in der Cloud. Eine Cloud-Sammlung ist nur in der Azure-Cloud vorhanden und nicht mit dem lokalen Netzwerk verbunden.
 
-Als Teil der RemoteApp-Vorschau, bieten wir Ihnen vorinstallierte Office 2013-Apps, die Sie direkt an Ihre Benutzer weitergeben können. Wenn Sie die verfügbare Software nutzen möchten, können Sie Ihren Dienst schnell bereitstellen.
+Im Rahmen der RemoteApp-Testversion stellen wir Ihnen die vorinstallierten Office 365 ProPlus- oder Office 2013-Apps bereit, die Sie sofort für Ihre Benutzer freigeben können. Wenn Sie sich dafür entscheiden, die verfügbare Software mit einzubinden, können Sie Ihren Dienst schnell bereitstellen.
 
-Ein zusätzlicher Vorteil der Verwendung der Cloud-Bereitstellung mit den Office 2013-Apps besteht darin, dass die Apps und das Betriebssystem (auf dem Ihr Dienst beruht) dank regelmäßiger Updates stets auf dem neuesten Stand gehalten werden. Zudem sorgt Microsoft Anti-Malware Endpoint Protection für kontinuierlichen Schutz. Ihre Endbenutzer können über ihre Microsoft-Konten oder mit Unternehmensanmeldedaten auf die Apps zugreifen. Sie als Administrator müssen sich lediglich darum Gedanken machen, wer auf welche Apps zugreifen soll.
+Ein zusätzlicher Vorteil der Cloud-Sammlung mit den Office-Apps besteht darin, dass Apps und Betriebssystem (auf dem der Dienst basiert) durch regelmäßige Updates immer auf dem aktuellen Stand gehalten werden und Microsoft Anti-Malware Endpoint Protection kontinuierlichen Schutz bietet. Die Endbenutzer verwenden ihre Microsoft-Konten oder die Anmeldeinformationen des Unternehmens, um auf die Apps zuzugreifen. Sie als Administrator brauchen sich nur noch darum zu kümmern, wer Zugriff auf welche Apps haben soll.
 
-Sie können auch eine Cloud-Bereitstellung erstellen, um eine benutzerdefinierte Anwendung oder eine Gruppe von Anwendungen für Ihre Benutzer freizugeben. Dafür müssen Sie [ein benutzerdefiniertes Vorlagenimage erstellen](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/) (auf diese Weise werden Apps in RemoteApp veröffentlicht) und einfach dieses Image auswählen (anstatt des Office 2013-Image), wenn Sie Ihre Bereitstellung erstellen. 
+Sie können für Ihre Benutzer auch eine Cloud-Sammlung zum Freigeben einer benutzerdefinierten Anwendung oder einer Gruppe von Anwendungen erstellen. Zu diesem Zweck müssen Sie [ein benutzerdefiniertes Vorlagenimage erstellen](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/) (es gibt an, wie Apps in RemoteApp veröffentlicht werden). Wenn Sie Ihre Sammlung erstellen, brauchen Sie nur dieses Image auszuwählen (anstelle des Office 2013-Images). 
 
-###Hybridbereitstellung
-Über die [hybride RemoteApp-Bereitstellung](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-hybrid-deployment/) können Sie Ihren Benutzern eine benutzerdefinierte Gruppe von Anwendungen und Zugriff auf Daten und Ressourcen in Ihrem lokalen Netzwerk bieten. Anders als ein benutzerdefiniertes Image, das mit der Cloud-Bereitstellung verwendet wird, führt das für eine Hybridbereitstellung erstellte Image Apps in einer mit einer Domäne verbundenen Umgebung mit vollem Zugriff auf lokales Netzwerk und Daten aus.
+###Hybrid-Sammlung
+Mit der [Hybrid-Sammlung von RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-hybrid-deployment/) können Sie für Ihre Benutzer sowohl einen benutzerdefinierten Satz von Anwendungen bereitstellen als auch den Zugriff auf die Daten und Ressourcen in Ihrem lokalen Netzwerk ermöglichen. Im Gegensatz zum benutzerdefinierten Image, das bei der Cloud-Sammlung verwendet wird, werden mit dem für eine Hybrid-Sammlung erstellten Image die Apps in einer in die Domäne eingebundenen Umgebung ausgeführt, die den vollständigen Zugriff auf das lokale Netzwerk und die Daten ermöglicht.
 
-Durch die Integration von Active Directory in Azure Active Directory (mithilfe von DirSync), können die Benutzer mit ihren Unternehmensanmeldeinformationen auf Apps und Daten zugreifen. Wenn Sie ein Arbeitskonto in Active Directory verwenden, können Sie Ihre Unternehmensrichtlinien auf die Cloud übertragen, um die über RemoteApp angebotenen Apps zu steuern.
+Durch die Integration von Active Directory mit Azure Active Directory (mithilfe von "DirSync") können die Benutzer für den Zugriff auf Apps und Daten die Anmeldeinformationen des Unternehmens verwenden. Wenn Sie in Active Directory ein Geschäftskonto verwenden, können Sie die Unternehmensrichtlinien in die Cloud übernehmen und damit das App-Angebot über RemoteApp steuern.
 
-Solange Sie das Vorlagenimage mit dem RD-Sitzungshost-Rollendienst auf Windows Server 2012 R2 erstellen, sind den Apps, die Sie für Ihr Benutzer freigeben können, nur wenige Grenzen gesetzt. Wenn die Apps in dieser Vorlagenimage-Umgebung korrekt funktionieren, können Ihre Endbenutzer über RemoteApp auf sie zugreifen. 
+Wenn Sie das Vorlagenimage mit dem Remotedesktop-Sitzungshost-Rollendienst auf Windows Server 2012 R2 erstellen, gibt es hinsichtlich der Apps, die Sie für Ihre Benutzer veröffentlichen können, einige Einschränkungen. Wenn die Anwendungen in der betreffenden Vorlagenimage-Umgebung ordnungsgemäß funktionieren, können die Endbenutzer über RemoteApp darauf zugreifen. 
 
-###Aktualisieren der Bereitstellung
-Einer der Hauptunterschiede zwischen der Hybridbereitstellung und der Cloud-Bereitstellung besteht im Umgang mit Softwareupdates. Bei Cloud-Bereitstellungen, die das vorinstallierte Office 2013-Image verwenden, müssen Sie sich nicht um Updates sorgen. Der Dienst wartet sich selbst und aktualisiert App und Betriebssystem regelmäßig.
+###Aktualisieren Ihrer Sammlung
+Einer der Hauptunterschiede zwischen Hybrid- und Cloud-Sammlungen ist die Behandlung von Softwareupdates. Bei einer Cloud-Sammlung, die das vorinstallierte Image von Office 365 ProPlus oder Office 2013 verwendet, brauchen Sie sich nicht um Updates zu kümmern. Der Dienst verwaltet sich selbst und stellt fortlaufend Updates für Apps und Betriebssystem bereit.
 
-Bei Hybridbereitstellungen und Cloud-Bereitstellungen mit benutzerdefiniertem Vorlagenimage müssen Sie Image und Apps warten. Bei mit einer Domäne verbundenen Images können Sie Updates über Tools wie Windows Update, Group Policy und System Center steuern.
+Bei Hybrid-Sammlungen sowie bei Cloud-Sammlungen, die ein benutzerdefiniertes Vorlagenimage verwenden, sind Sie für die Wartung und Pflege von Image und Apps verantwortlich. Bei in die Domäne eingebundenen Images können Sie Updates mithilfe von Tools wie Windows Update, Gruppenrichtlinien oder System Center steuern.
 
-Nach der Aktualisierung des benutzerdefinierten Vorlagenimage laden Sie das neue Image in die Azure-Cloud hoch und aktualisieren dann die Bereitstellung, um das neue Image zu verwenden. (Das können Sie über die Seite "Schnellstart" in RemoteApp oder das Dashboard tun.)
+Nach dem Update des benutzerdefinierten Vorlagenimages laden Sie das neue Image in die Azure-Cloud hoch und aktualisieren dann die Sammlung, um das neue Image zu verwenden. (Diese Aufgabe können Sie von der RemoteApp-Schnellstart-Seite oder im Dashboard ausführen.)
 
 ##Unterstützte RemoteApp-Clients
-Als Teil der Vorschauversion von Azure RemoteApp haben wir eine neue Microsoft-RemoteApp-Client-App für Windows und Windows RT sowie Updates für die Microsoft-Remotedesktop-Apps für iOS und Android veröffentlicht. Die Benutzer können diese Apps auf ihren mobilen Geräten oder Computern für den Zugriff auf die neuen RemoteApp-Programme verwenden.
+Azure RemoteApp wird in RemoteApp-Client-Apps für Windows und Windows RT sowie in Microsoft Remote Desktop-Apps für Mac, IOS und Android unterstützt. Die Benutzer können diese Apps auf ihren Mobilgeräten oder Computern für den Zugriff auf die neuen RemoteApp-Programme verwenden.
 
 ##Nächste Schritte
-Los! Probieren Sie es aus! Diese Artikel helfen Ihnen beim Einstieg in RemoteApp:
+Los! Testen Sie jetzt! Diese Artikel helfen Ihnen beim Einstieg in RemoteApp:
 
-- [Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/)
-- [Erstellen einer Cloud-Bereitstellung einer RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-cloud-deployment/)
-- [Erstellen einer Hybridbereitstellung von RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-hybrid-deployment/)
+- [Erstellen eines benutzerdefinierten Vorlagenimages für RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/)
+- [Erstellen einer Cloud-Sammlung von RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-cloud-deployment/)
+- [Erstellen einer Hybrid-Sammlung von RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-hybrid-deployment/)
+- [Wie funktioniert die Lizenzierung in RemoteApp?](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-licensing/)
+- [Bewährte Methoden für die Verwendung von Azure RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-bestpractices/)
+- [Azure RemoteApp - Häufig gestellte Fragen](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-faq/)
+
+<!--HONumber=35.2-->

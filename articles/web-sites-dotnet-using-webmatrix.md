@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Website with WebMatrix" pageTitle=".NET-Website mit WebMatrix - Azure-Lernprogramme" metaKeywords="WebMatrix Azure, WebMatrix Azure, Azure-Website WebMatrix Azure-Website WebMatrix, Web Matrix Azure, WebMatrix Azure" description="Erfahren Sie mehr über die Entwicklung und Bereitstellung einer Azure-Website mit WebMatrix." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Develop and deploy a website with Microsoft WebMatrix" authors="tomfitz" solutions="" manager="wpickett" editor="" />
+﻿<properties urlDisplayName="Website with WebMatrix" pageTitle=".NET-Website mit WebMatrix - Azure-Lernprogramme" metaKeywords="WebMatrix Azure, WebMatrix Azure, Azure-Website WebMatrix, Azure Website WebMatrix, Web Matrix Azure, WebMatrix Azure" description="Informationen zum Entwickeln und Bereitstellen einer Azure-Website mit WebMatrix." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Develop and deploy a website with Microsoft WebMatrix" authors="tomfitz" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="10/27/2014" ms.author="tomfitz" />
 
@@ -15,13 +15,14 @@ Sie erhalten Informationen zu folgenden Themen:
 * Erstellen einer Site mit einer in WebMatrix integrierten Vorlage 
 * Bereitstellen der benutzerdefinierten Website direkt über WebMatrix in Azure
 
-
-[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+> [WACOM.NOTE]
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können <a href="http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/">Ihre MSDN-Abonnementvorteile aktivieren</a> oder <a href="http://azure.microsoft.com/de-de/pricing/free-trial/">sich für eine kostenlose Testversion anmelden</a>.
+> Wenn Sie mit Azure-Websites beginnen möchten, bevor Sie sich für ein Konto registrieren, rufen Sie <a href="https://trywebsites.azurewebsites.net/">https://trywebsites.azurewebsites.net</a>auf, wo Sie sofort und kostenlos eine kurzlebige ASP.NET-Startwebsite in Azure-Websites erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Anmelden bei Azure
 
 1. Starten Sie WebMatrix.
-2. Wenn Sie WebMatrix 3 zum ersten Mal verwenden, werden Sie aufgefordert, sich bei Azure anzumelden.  Klicken Sie sonst auf die Schaltfläche **Anmelden**, und wählen Sie **Konto hinzufügen**.  Wählen Sie **Anmelden** für die Anmeldung mit Ihrem Microsoft-Konto aus.
+2. Wenn Sie WebMatrix 3 zum ersten Mal verwenden, werden Sie aufgefordert, sich bei Azure anzumelden.  Klicken Sie sonst auf die Schaltfläche **Anmelden**, und wählen Sie **Konto hinzufügen**.  **Melden Sie sich** mit Ihrem Microsoft-Konto an.
 
 	![Add Account][addaccount]
 
@@ -32,15 +33,15 @@ Sie erhalten Informationen zu folgenden Themen:
 
 ## Erstellen einer Site für Azure mit einer integrierten Vorlage
 
-1. Klicken Sie im Startbildschirm auf die Schaltfläche **Neu**, und wählen Sie **Vorlagenkatalog** aus, um eine neue Website aus dem Vorlagenkatalog zu erstellen:
+1. Klicken Sie im Startbildschirm auf die Schaltfläche **Neu**, und wählen Sie **Vorlagenkatalog**, um eine neue Site aus dem Vorlagenkatalog zu erstellen:
 
 	![New site from Template Gallery][sitefromtemplate]
 
-2. Im Vorlagenkatalog wird eine Liste der verfügbaren Vorlagen angezeigt, die lokal oder auf Azure ausgeführt werden können.  Wählen Sie die Vorlage **Konditorei** in der Liste aus, geben Sie **Konditoreibeispiel** im Feld **Websitename** ein, und klicken Sie auf **Weiter**.
+2. Im Vorlagenkatalog wird eine Liste der verfügbaren Vorlagen angezeigt, die lokal oder auf Azure ausgeführt werden können.  Wählen Sie die Vorlage **Konditorei** aus der Liste, geben Sie **Konditoreibeispiel** im Feld **Websitename** ein, und klicken Sie auf **Weiter**.
 
 	![Create Site from Template][sitefromtemplatedetails]
 
-3. Wenn Sie bei Azure angemeldet sind, können Sie nun eine Azure-Website für eine lokale Site erstellen.  Wählen Sie einen eindeutigen Namen und das Rechenzentrum aus, in dem die Site erstellt werden soll: 
+3. Wenn Sie bei Azure angemeldet sind, können Sie nun eine Azure-Website für eine lokale Site erstellen.  Wählen Sie einen eindeutigen Namen, und wählen Sie das Data Center aus, in dem die Site erstellt werden soll: 
 
 	![Create site on Azure][sitefromtemplateazure]
 
@@ -48,21 +49,21 @@ Sie erhalten Informationen zu folgenden Themen:
 
 	![WebMatrix IDE][howtowebmatrixide] 
 
-## Einrichten von E-Mail
+## E-Mail einrichten
 
-Das Konditoreibeispiel umfasst ein simuliertes Bestellformular, das eine E-Mail-Nachricht mit dem bestellten Artikel sendet. Sie verwenden den SendGrid-E-Mail-Dienst in Azure zum Senden von E-Mails von Ihrer Website aus.
+Das Konditoreibeispiel umfasst ein simuliertes Bestellformular, mit dem eine E-Mail-Nachricht mit der Bestellung gesendet wird. Sie verwenden den SendGrid-E-Mail-Dienst in Azure, um E-Mails von Ihrer Site zu senden.
 
-1. Führen Sie die Schritte im Lernprogramm [Senden von E-Mails mit SendGrid in Azure][sendgridexample] aus, um ein SendGrid-Konto einzurichten und die Verbindungsinformationen abzurufen. Sie müssen nicht das gesamte Lernprogramm ausführen - nur bis zum Abrufen von Verbindungsinformationen.
+1. Führen Sie die Schritte im Lernprogramm [Senden von E-Mails mithilfe von SendGrid mit Azure][sendgridexample] aus, um ein SendGrid-Konto einzurichten und die Verbindungsinformationen abzurufen. Sie müssen nicht das gesamte Lernprogramm absolvieren- nur bis zu dem Punkt, wie die Verbindungsinformationen abgerufen werden.
 
-2. Fügen Sie das SendGrid NuGet-Paket zum WebMatrix-Projekt hinzu. Klicken Sie zunächst die Schaltfläche "NuGet".
+2. Fügen Sie das SendGrid-NuGet-Pakets zu Ihrem WebMatrix-Projekt hinzu. Klicken Sie zunächst auf die NuGet-Schaltfläche.
 
     ![Add SendGrid][addsendgrid]
 
-    Suchen und installieren Sie SendGrid.
+    Suchen Sie nach "SendGrid", und installieren Sie es.
 
     ![Install SendGrid][installsendgrid]
 
-    Nachdem das Paket installiert wurde, sehen Sie, dass die SendGrid-Assemblys zu "bin" hinzugefügt wurden.
+    Nachdem das Paket installiert wurde, beachten Sie, dass die SendGrid-Assemblys zu "Bin" hinzugefügt wurden.
 
     ![SendGrid added][binsendgrid]
 
@@ -70,12 +71,12 @@ Das Konditoreibeispiel umfasst ein simuliertes Bestellformular, das eine E-Mail-
 
 	![][modify2]
 
-4. Fügen Sie am Anfang der Datei folgenden Code hinzu:
+4. Fügen Sie am Anfang der Datei den folgenden Code hinzu:
 
         @using SendGrid;
         @using System.Net.Mail;
 
-4. Suchen Sie den Kommentar "//SMTP Configuration for Hotmail", und löschen oder kommentieren Sie den gesamten Code für die Verwendung von WebMail.
+4. Suchen Sie den Kommentar mit der Meldung //SMTP Configuration for Hotmail, und löschen Sie den gesamten Code für die Verwendung von WebMail bzw. kommentieren Sie diesen aus.
 
         /*
         //SMTP Configuration for Hotmail
@@ -101,7 +102,7 @@ Das Konditoreibeispiel umfasst ein simuliertes Bestellformular, das eine E-Mail-
         }*/
 
 
-5. Fügen Sie Code zum Verwenden von SendGrid anstatt WebMail für das Senden von E-Mails hinzu. Fügen Sie den folgenden Code anstelle des Codes hinzu, den Sie im vorherigen Schritt gelöscht haben.
+5. Fügen Sie Code hinzu, um SendGrid anstelle von WebMail zum Senden von E-Mails zu verwenden. Fügen Sie den folgenden Code anstelle des Codes hinzu, den Sie im vorherigen Schritt gelöscht haben.
 
 		 if (email.IsEmpty()) {
             Response.Redirect("~/OrderSuccess?NoEmail=1");
@@ -130,7 +131,7 @@ Das Konditoreibeispiel umfasst ein simuliertes Bestellformular, das eine E-Mail-
         }
 
 
-6. Klicken Sie im WebMatrix-Menüband auf **Ausführen**, um die Website zu testen.
+6. Klicken Sie im WebMatrix-Menüband auf **Ausführen**, um die Site zu testen.
 
 	![][modify4]
 
@@ -153,7 +154,7 @@ Das Konditoreibeispiel umfasst ein simuliertes Bestellformular, das eine E-Mail-
 
 	![Bakery Sample Site][bakerysample]
 
-Sie können die URL für die Website auch im Azure-Portal finden, indem Sie auf **Websites** klicken, um alle Websites Ihres Abonnements anzuzeigen. Die URLs der einzelnen Websites befinden sich in der URL-Spalte auf der Seite mit den Websites.
+	Sie können die URL für die Website auch im Azure-Portal finden, indem Sie auf **Websites** klicken, um alle Websites Ihres Abonnements anzuzeigen. Die URLs der einzelnen Websites befinden sich in der URL-Spalte auf der Seite mit den Websites.
 
 ## Ändern der Website und erneute Veröffentlichung auf der Azure-Website
 
@@ -172,7 +173,7 @@ Sie können die Site mit WebMatrix ändern und dann erneut auf der Azure-Website
 
 	![][modify5]
 
-3. Suchen Sie in der Datei nach der Zeile "var shipping = Request["orderShipping"];", und fügen Sie die folgende Codezeile direkt danach ein.
+3. Suchen Sie nach der Zeile "var shipping = Request["orderShipping"];" in der Datei, und fügen Sie die folgende Codezeile direkt danach ein.
 
 		var gift = Request["isGift"];
 
@@ -186,11 +187,11 @@ Sie können die Site mit WebMatrix ändern und dann erneut auf der Azure-Website
 
 	![][modify6]
 
-5. Speichern Sie die Datei, und führen Sie die Website lokal aus. Senden Sie dann eine Testbestellung an sich selbst. Stellen Sie sicher, dass Sie auch das neue Kontrollkästchen testen.
+5. Speichern Sie die Datei, und führen Sie die Site lokal aus. Senden Sie dann eine Testbestellung an sich selbst. Stellen Sie sicher, dass Sie auch das neue Kontrollkästchen prüfen.
 
 	![][modify7]
 
-6. Veröffentlichen Sie die Website erneut, indem Sie im Menüband **Startseite** auf **Veröffentlichen** klicken.
+6. Veröffentlichen Sie die Site erneut, indem Sie im Menüband **Startseite** auf **Veröffentlichen** klicken.
 
 7. Stellen Sie sicher, dass im Dialogfeld **Vorschau veröffentlichen** beide "Order.cshtml" ausgewählt sind, und klicken Sie auf "Weiter".
 
@@ -233,4 +234,6 @@ Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure be
 
 
 [sendmailissues]: http://go.microsoft.com/fwlink/?LinkId=253001#email
-[sendgridexample]: http://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/
+[sendgridexample]: http://azure.microsoft.com/de-de/documentation/articles/sendgrid-dotnet-how-to-send-email/
+
+<!--HONumber=35.2-->

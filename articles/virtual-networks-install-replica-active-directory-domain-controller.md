@@ -1,314 +1,181 @@
-﻿<properties urlDisplayName="Replica domain controller" pageTitle="Installieren eines Replikatdomänencontrollers in Azure" metaKeywords="" description="Ein Lernprogramm, in dem Sie erfahren, wie Sie einen Domänencontroller von der Active Directory-Gesamtstruktur Ihres Unternehmens auf Ihrem virtuellen Azure-Computer installieren." metaCanonical="" services="virtual-network" documentationCenter="" title="Install a Replica Active Directory Domain Controller in Azure Virtual Networks" authors="Justinha" solutions="" writer="Justinha" manager="TerryLan" editor="LisaToft" />
+﻿<properties urlDisplayName="Replica domain controller" pageTitle="Installieren eines Replikatdomänencontrollers in Azure" metaKeywords="" description="Ein Lernprogramm, in dem das Installieren eines Domänencontrollers aus einer lokalen Active Directory-Gesamtstruktur auf einem virtuellen Computer in Azure erläutert wird." metaCanonical="" services="virtual-network" documentationCenter="" title="Install a Replica Active Directory Domain Controller on an Azure Virtual Network" authors="Justinha" solutions="" writer="Justinha" manager="TerryLan" editor="LisaToft" />
 
-<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="Justinha" />
-
-
+<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/04/2014" ms.author="Justinha" />
 
 
 #Installieren eines Active Directory-Replikatdomänencontrollers in Azure Virtual Networks
 
-	In diesem Lernprogramm werden Sie durch die Schritte zum Installieren eines zusätzlichen Domänencontrollers aus Ihrer Active Directory-Unternehmensgesamtstruktur auf einem virtuellen Computer (VM) in [Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx) geführt. Im Lernprogramm wird das virtuelle Netzwerk für die VM mit dem Netzwerk in Ihrem Unternehmen verbunden. Konzeptuelle Hilfe zum Installieren von Active Directory-Domänendiensten (AD DS) auf Azure Virtual Network finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure](http://msdn.microsoft.com/en-us/library/windowsazure/jj156090.aspx).
+In diesem Thema wird gezeigt, wie zusätzliche Domänencontroller (die auch als Replikatdomänencontroller bezeichnet werden) für eine lokale Active Directory-Domäne auf virtuellen Azure-Computern in einem virtuellen Azure-Netzwerk installiert werden. 
+
+Folgende Themen könnten für Sie ebenfalls von Interesse sein:
+
+- Sie können optional eine neue Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk installieren. Diese Schritte finden Sie unter [Installieren einer neuen Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk](http://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/).
+-  Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure](http://msdn.microsoft.com/library/windowsazure/jj156090.aspx).
+-  Schrittweise Anleitungen, wie Sie auf Azure eine Testumgebung mit AD DS erstellen, finden Sie unter [Test Lab Guide: Basiskonfiguration in Azure](http://www.microsoft.com/de-de/download/details.aspx?id=41684).
+
+
+##Inhaltsverzeichnis##
+
+* [Szenario (Diagramm)](#diagram)
+* [Schritt 1: Erstellen eines Active Directory-Standorts für das virtuelle Netzwerk in Azure](#createadsite)
+* [Schritt 2: Erstellen eines virtuellen Azure-Netzwerks](#createvnet)
+* [Schritt 3: Erstellen von virtuellen Azure-Computern für die DC-Rollen](#createdcvms)
+* [Schritt 4: Installieren von AD DS auf virtuellen Azure-Computern](#installadds)
+* [Schritt 5: Erstellen von virtuellen Computern für Anwendungsserver](#createappvms)
+* [Zusätzliche Ressourcen](#resources)
+
+<h2><a id="diagram"></a>Szenario (Diagramm)</h2>
+
+In diesem Szenario müssen externe Benutzer auf Anwendungen zugreifen, die auf in die Domäne eingebundenen Servern ausgeführt werden. Die virtuellen Computer, auf denen die Anwendungsserver und die Replikatdomänencontroller ausgeführt werden, sind in einem virtuellen Azure-Netzwerk installiert. Das virtuelle Netzwerk kann über eine [Site-to-Site-VPN](http://msdn.microsoft.com/library/azure/dn133795.aspx)-Verbindung, wie in der folgenden Abbildung dargestellt, mit dem lokalen Netzwerk verbunden werden, oder Sie können [ExpressRoute](http://azure.microsoft.com/services/expressroute/) für eine schnellere Verbindung verwenden. 
+
+Die Anwendungsserver und Domänencontroller werden in separaten [Cloud-Diensten](http://azure.microsoft.com/documentation/articles/cloud-services-what-is/) bereitgestellt, um die Serververarbeitung zu verteilen, und in [Verfügbarkeitsgruppen](http://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/) für eine bessere Fehlertoleranz. 
+Die Domänencontroller werden durch die Active Directory-Replikation untereinander und mit lokalen Domänencontroller repliziert. Es sind keine Synchronisierungstools erforderlich.
+
+![][1]
+
+<h2><a id="createadsite"></a>Schritt 1: Erstellen eines Active Directory-Standorts für das virtuelle Netzwerk in Azure</h2>
+
+Es bietet sich an, einen Standort in Active Directory zu erstellen, der die Netzwerkregion entsprechend dem virtuellen Netzwerk darstellt. Dadurch werden die Authentifizierung, Replikation sowie andere Vorgänge am Standort des Domänencontrollers optimiert. In den folgenden Schritten wird erläutert, wie ein Standort erstellt wird. Weitere Hintergrundinformationen erhalten Sie unter [Hinzufügen eines neuen Standorts](http://technet.microsoft.com/library/cc781496.aspx).
+
+1. Öffnen Sie Active Directory-Standorte und -Dienste: **Server-Manager** > **Tools** > **Active Directory-Standorte und -Dienste**.
+2. Erstellen Sie einen Standort, der die Region darstellt, in der Sie ein virtuelles Azure-Netzwerk erstellt haben: Klicken Sie auf **Standorte** > **Aktion** > **Neuer Standort** > geben Sie den Namen des neuen Standorts ein, z. B. Azure West > wählen Sie eine Standortverknüpfung > **OK**.
+3. Erstellen Sie ein Subnetz, und ordnen Sie es dem neuen Standort zu: Doppelklicken Sie auf **Standorte** > klicken Sie mit der rechten Maustaste auf **Subnetze** > **Neues Subnetz** > geben Sie den IP-Adressbereich des virtuellen Netzwerks ein (z. B. 10.1.0.0/16 im Szenariodiagramm) > wählen Sie den neuen Azure-Standort aus > **OK**.
+
+<h2><a id="createvnet"></a>Schritt 2: Erstellen eines virtuellen Azure-Netzwerks</h2>
+
+<ol><li><p>In the Azure Management Portal, click <b>New</b> > <b>Network Services</b> > <b>Virtual Network</b> > <b>Custom Create</b> and use the following values to complete the wizard.</p>
+
+<table style="width:100%">
+<tr>
+<td>Seite des Assistenten</td>
+<td>Einzugebende Werte</td>
+</tr>
+<tr>
+<td><b>Details zum virtuellen Netzwerk</b></td>
+<td><ul><li>Name: Geben Sie einen Namen für das virtuelle Netzwerk ein, z. B. WestUSVNet.</li><li>Region: Dies ist der Azure-Standort, an dem sich das virtuelle Netzwerk befindet, z. B. Westen der USA. Dieser Standort kann nicht geändert werden, nachdem das virtuelle Netzwerk erstellt wurde.</li></ul>
+</td>
+</tr>
+<tr>
+<td><b>DNS-Server und VPN-Konnektivität</b></td>
+<td><ul><li>DNS-Server: Geben Sie den Namen und die IP-Adresse von mindestens einem lokalen DNS-Server an.</li><li>Konnektivität: Wählen Sie <b>Ein Site-to-Site-VPN konfigurieren</b>aus.</li><li>Lokales Netzwerk: Geben Sie ein neues lokales Netzwerk an.</li></ul>Bei Verwendung von ExpressRoute anstelle eines VPN finden Sie unter <a href="http://msdn.microsoft.com/library/azure/dn606306.aspx">Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter</a>weitere Informationen.</td>
+</tr>
+<tr>
+<td><b>Site-to-Site-Konnektivität</b></td>
+<td><ul><li>Name: Geben Sie einen Namen für das lokale Netzwerk an.</li><li>IP-Adresse des VPN-Geräts: Geben Sie die öffentliche IP-Adresse des Geräts an, das mit dem virtuellen Netzwerk verbunden wird. Das VPN-Gerät kann sich nicht hinter einer NAT befinden.</li><li>Adresse: Geben Sie die Adressbereiche für das lokale Netzwerk an (z. B. 192.168.0.0/16 im Szenariodiagramm).</li></ul></td>
+</tr>
+<tr>
+<td><b>Adressräume des virtuellen Netzwerks</b></td>
+<td><ul><li>Adressraum: Geben Sie den IP-Adressbereich für virtuelle Computer an, die im virtuellen Azure-Netzwerk ausgeführt werden sollen (z. B. 10.1.0.0/16 im Szenariodiagramm). Dieser Adressbereich darf nicht mit den Adressbereichen des lokalen Netzwerks überlappen.</li><li>Subnetze: Geben Sie einen Namen und eine Adresse für ein Subnetz für die Anwendungsserver (z. B. Front-End, 10.1.1.0/24) und für die Domänencontroller an (z. B. Back-End, 10.1.2.0/24).</li><li>Klicken Sie auf <b>Gatewaysubnetz hinzufügen</b>.</li></ul></td>
+</tr>
+</table>
+</li>
+<li><p>Als Nächstes konfigurieren Sie das Gateway des virtuellen Netzwerks, um eine sichere Site-to-Site-VPN-Verbindung zu erstellen. Anweisungen finden Sie unter <a href = "http://msdn.microsoft.com/library/azure/jj156210.aspx">Konfigurieren eines Gateways eines virtuellen Netzwerks im Verwaltungsportal</a> .</p>
+</li>
+<li><p>Erstellen Sie die Site-to-Site-VPN-Verbindung zwischen dem neuen virtuellen Netzwerk und einem lokalen VPN-Gerät. Anweisungen finden Sie unter <a href = "http://msdn.microsoft.com/library/azure/jj156210.aspx">Konfigurieren eines Gateways eines virtuellen Netzwerks im Verwaltungsportal</a> .</p>
+</li>
+</ol>
+
+<h2><a id="createdcvms"></a>Schritt 3: Erstellen von virtuellen Azure-Computern für die DC-Rollen</h2>
+
+<p>Wiederholen Sie die folgenden Schritte, um virtuelle Computer zum Hosten der DC-Rolle nach Bedarf zu erstellen. Sie sollten mindestens zwei virtuelle DC bereitstellen, um Fehlertoleranz und Redundanz zu gewährleisten. </p>
+
+
+<ol><li><p>In the Azure Management portal, click <b>New</b> > <b>Compute</b> > <b>Virtual Machine</b> > <b>From Gallery</b>. Use the following values to complete the wizard. Accept the default value for a setting unless another value is suggested or required.</p>
+<table style="width:100%">
+<tr>
+<td><b>Seite des Assistenten</b></td>
+<td><b>Einzugebende Werte</b></td>
+</tr>
+<tr>
+<td><b>Wählen Sie ein Image aus.</b></td>
+<td>Windows Server 2012 R2 Datacenter</td>
+</tr>
+<tr>
+<td><b>Konfiguration des virtuellen Computers</b></td>
+<td><ul><li>Name des virtuellen Computers: Geben Sie einen Namen mit einer einzelnen Bezeichnung ein (z. B. AzureDC2).</li><li>Neuer Benutzername': Geben Sie den Namen eines Benutzers ein. Dieser Benutzer wird Mitglied der lokalen Administratorgruppe auf dem virtuellen Computer. Sie benötigen diesen Namen, um sich zum ersten Mal bei dem virtuellen Computer anzumelden. Das integrierte Konto mit dem Namen "Administrator" funktioniert nicht.</li><li>Neues Kennwort/Bestätigen: Geben Sie ein Kennwort ein.</li></ul></td>
+</tr>
+<tr>
+<td><b>Konfiguration des virtuellen Computers</b></td>
+<td><ul><li>Cloud-Dienst: Wählen Sie <b>Einen neuen Cloud-Dienst erstellen</b> für den ersten virtuellen Computer aus, und wählen Sie denselben Cloud-Dienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</li><li>DNS-Name des Cloud-Diensts: Geben Sie einen global eindeutigen Namen an.</li><li>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</li><li>Speicherkonto: Wählen Sie <b>Ein automatisch generiertes Speicherkonto verwenden</b> für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</li><li>Verfügbarkeitsgruppe: Wählen Sie <b>Verfügbarkeitsgruppe erstellen</b>aus.</li><li>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</li></ul></td>
+</tr>
+<tr>
+<td><b>Konfiguration des virtuellen Computers</b></td>
+<td>Wählen Sie <b>VM-Agent installieren</b> und andere Erweiterungen aus, die Sie möglicherweise benötigen.</td>
+</tr>
+</table>
+</li>
+<li><p>Fügen Sie an jeden virtuellen Computer, der die DC-Serverrolle ausführt, einen Datenträger an. Der zusätzliche Speicherplatz ist erforderlich, um die AD-Datenbank, Protokolle und SYSVOL zu speichern. Geben Sie eine Größe für den Datenträger (z. B. 10 GB), und belassen Sie die <b>Hostcacheeinstellungen</b> bei <b>None</b>. Nach der ersten Anmeldung bei dem virtuellen Computer öffnen Sie <b>Server-Manager</b> > <b>Datei- und Speicherdienste,</b> um ein Volume auf dem Datenträger mithilfe von NTFS zu erstellen.</p></li>
+<li><p>Reservieren Sie eine statische IP-Adresse für virtuelle Computer, auf denen die DC-Rolle ausgeführt wird. Um eine statische IP-Adresse zu reservieren, laden Sie den Microsoft-Webplattform-Installer herunter, <a href = "http://azure.microsoft.com/documentation/articles/install-configure-powershell/">installieren Azure PowerShell,</a> und führen das Cmdlet <a href = "http://msdn.microsoft.com/library/azure/dn630228.aspx">Set-AzureStaticVNetIP</a> aus.</p></li>
+<li><p>Klicken Sie im Azure-Verwaltungsportal auf den Namen des virtuellen Netzwerks, und klicken Sie dann auf die Registerkarte <b>Konfigurieren</b> um <a href = "http://msdn.microsoft.com/library/azure/dn275925.aspx">die IP-Adressen der DNS-Server für das virtuelle Netzwerk neu zu konfigurieren,</a> sodass die den Replikatdomänencontrollern zugewiesenen statischen IP-Adressen anstelle der IP-Adressen eines lokalen DNS-Servers verwendet werden. </p>
+</li>
+<li><p>Um sicherzustellen, dass alle Replikatdomänencontroller im virtuellen Netzwerk so konfiguriert sind, dass DNS-Server im virtuellen Netzwerk verwendet werden, klicken Sie auf <b>Virtuelle Computer</b>und dann auf die Spalte "Status" für jeden virtuellen Computer. Klicken Sie dann auf <b>Neu starten</b>. Warten Sie, bis auf dem virtuellen Computer der Status <b>Wird ausgeführt</b> angezeigt wird, bevor Sie zu versuchen, sich anzumelden. 
+</p>
+</li>
+</ol>
 
-##Inhaltsverzeichnis
+<h2><a id="installadds"></a>Schritt 4: Installieren von AD DS auf virtuellen Azure-Computern</h2>
 
-* [Voraussetzungen](#Prerequisites)
-* [Schritt 1: Überprüfen der statischen IP-Adresse für "YourPrimaryDC"](#verifystaticip)
-* [Schritt 2: Installieren der Unternehmensgesamtstruktur](#installforest)
-* [Schritt 3: Erstellen von Subnetzen und Standorten](#subnets)
-* [Schritt 4: Installieren eines weiteren Domänencontrollers in "CloudSite"](#cloudsite)
-* [Schritt 5: Überprüfen der Installation](#validate)
-* [Schritt 6: Bereitstellen eines virtuellen Computers, der beim Start in die Domäne eingebunden ist](#provisionvm)
-* [Schritt 7: Sichern des Domänencontrollers](#backup)
-* [Schritt 8: Testen der Authentifizierung und Autorisierung](#test)
+Melden Sie sich bei einem virtuellen Computer an, und stellen Sie sicher, dass Sie über die Site-to-Site-VPN-Verbindung bzw. die ExpressRoute-Verbindung mit Ressourcen im lokalen Netzwerk verbunden sind. Installieren Sie dann AD DS auf den virtuellen Azure-Computern. Sie können denselben Prozess wie bei der Installation eines zusätzlichen Domänencontrollers im lokalen Netzwerk verwenden (UI, Windows PowerShell oder eine Antwortdatei). Stellen Sie beim Installieren von AD DS sicher, dass Sie das neue Volume für den Standort der AD-Datenbank, der Protokolle und von SYSVOL angeben. Wenn Sie Ihre Kenntnisse über die AD DS-Installation auffrischen möchten, finden Sie unter [Installieren von Active Directory-Domänendiensten (Stufe 100)](http://technet.microsoft.com/library/hh472162.aspx) oder [Installieren eines Windows Server 2012-Domänencontrollerreplikats in einer vorhandenen Domäne (Stufe 200)](http://technet.microsoft.com/library/jj574134.aspx) weitere Informationen.
 
+<h2><a id="x=createappvms"></a>Schritt 5: Erstellen von virtuellen Computern für Anwendungsserver</h2>
 
-<h2><a id="Prerequisites"></a>Voraussetzungen</h2>
+<ol><li><p>Repeat the following steps to create VMs to run as application servers. Accept the default value for a setting unless another value is suggested or required.</p>
 
--	[Konfigurieren eines Standort-zu-Standort-VPNs im Verwaltungsportal](http://msdn.microsoft.com/en-us/library/dn133795.aspx), das für Azure Virtual Network und das Unternehmensnetzwerk konfiguriert ist.
--	Erstellen Sie einen Cloud-Dienst im virtuellen Netzwerk.
--	Stellen Sie zwei VMs im Cloud-Dienst bereit, die Teil des virtuellen Netzwerks sind (geben Sie das Subnetz an, in dem sich die VM befinden soll). Weitere Informationen finden Sie unter [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](http://azure.microsoft.com/en-us/documentation/articles/virtual-networks-add-virtual-machine/). Eine VM muss mindestens die Größe L haben, damit zwei Datenträger daran angeschlossen werden können. Die Datenträger werden zum Speichern der folgenden Daten benötigt:
-	- Active Directory-Datenbank und -protokolle
-	- Sicherungen des Systemstatus
--	Ein Unternehmensnetzwerk mit zwei VMs (YourPrimaryDC und FileServer).
--	DNS(Domain Name System)-Infrastruktur, die bereitgestellt wird, wenn externe Benutzer Namen für Konten in Active Directory auflösen müssen. In diesem Fall sollten Sie eine DNS-Zonendelegierung erstellen, bevor Sie den DNS-Server auf dem Domänencontroller installieren, oder zulassen, dass die Delegierung vom Assistenten zum Installieren von Active Directory-Domänendiensten erstellt wird. Weitere Informationen zum Erstellen einer DNS-Zonendelegierung finden Sie unter [Erstellen einer Zonendelegierung](http://technet.microsoft.com/library/cc753500.aspx).
--	Konfigurieren Sie auf dem DC, den Sie auf einer Azure-VM installieren, die folgenden Konfliktlösereinstellungen für den DNS-Client:
-	- Bevorzugter DNS-Server: Lokaler DNS-Server 
-	- Alternativer DNS-Server: Loopbackadresse oder, falls möglich, ein anderer DNS-Server, der auf einem DC im selben virtuellen Netzwerk ausgeführt wird
+<table style="width:100%">
+<tr>
+<td><b>Seite des Assistenten</b></td>
+<td><b>Einzugebende Werte</b></td>
+</tr>
+<tr>
+<td><b>Wählen Sie ein Image aus.</b></td>
+<td>Windows Server 2012 R2 Datacenter</td>
+</tr>
+<tr>
+<td><b>Konfiguration des virtuellen Computers</b></td>
+<td><ul><li>Name des virtuellen Computers: Geben Sie einen Namen mit einer einzelnen Bezeichnung ein (z. B. TreyAppServer1).</li><li>Neuer Benutzername: Geben Sie den Namen eines Benutzers ein. Dieser Benutzer wird Mitglied der lokalen Administratorgruppe auf dem virtuellen Computer. Sie benötigen diesen Namen, um sich zum ersten Mal bei dem virtuellen Computer anzumelden. Das integrierte Konto mit dem Namen "Administrator" funktioniert nicht.</li><li>Neues Kennwort/Bestätigen:  Geben Sie ein Kennwort ein.</li></ul></td>
+</tr>
+<tr>
+<td><b>Konfiguration des virtuellen Computers</b></td>
+<td><ul><li>Cloud-Dienst: Wählen Sie "Einen neuen Cloud-Dienst erstellen" für den ersten virtuellen Computer aus, und wählen Sie denselben Cloud-Dienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die Anwendung hosten.</li><li>DNS-Name des Cloud-Diensts: Geben Sie einen global eindeutigen Namen an.</li><li>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</li><li>Speicherkonto: Wählen Sie <b>Ein automatisch generiertes Speicherkonto verwenden</b> für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</li><li>Verfügbarkeitsgruppe: Wählen Sie <b>Verfügbarkeitsgruppe erstellen</b>aus.</li><li>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</li></ul></td>
+</tr>
+<tr>
+<td><b>Konfiguration des virtuellen Computers</b></td>
+<td>Wählen Sie <b>VM-Agent installieren</b> und andere Erweiterungen aus, die Sie möglicherweise benötigen.</td>
+</tr>
+</table>
 
-<div class="dev-callout"> 
-<b>Hinweis</b>
-<p>Sie müssen Ihre eigene DNS-Infrastruktur angeben, damit AD DS in Azure Virtual Network unterstützt wird. Die von Azure für diese Version bereitgestellte DNS-Infrastruktur unterstützt einige von AD DS benötigten Features nicht, z. B. die dynamische Registrierung von SRV-Ressourceneinträgen. </p>
-</div>
 
-<div class="dev-callout"> 
-<b>Hinweis</b>
-<p>Wenn Sie die Schritte unter <a href="/en-us/manage/services/networking/active-directory-forest/">Installieren einer neuen Active Directory-Gesamtstruktur in Azure</a> bereits ausgeführt haben, müssen Sie möglicherweise AD DS aus dem Domänencontroller im virtuellen Azure-Netzwerk entfernen, bevor Sie mit diesem Lernprogramm beginnen. Weitere Informationen zum Entfernen von AD DS finden Sie unter <a href="http://technet.microsoft.com/en-us/library/cc771844(v=WS.10).aspx">Entfernen eines Domänencontrollers aus einer Domäne</a>.</p>
-</div>
+</li>
+<li><p>Nachdem alle virtuellen Computer bereitgestellt wurden, melden Sie sich an, und stellen eine Verbindung zur Domäne her. Klicken Sie im <b>Server-Manager</b>auf <b>Lokaler Server</b> > <b>ARBEITSGRUPPE</b> > <b>Ändern...,</b> und wählen Sie dann <b>Domäne</b> aus, und geben Sie den Namen der lokalen Domäne ein. Geben Sie die Anmeldeinformationen eines Domänenbenutzers ein, und starten Sie den virtuellen Computer neu, um das Beitreten zu der Domäne abzuschließen.
+</p>
+</li>
+</ol>
+<p>
+Als Alternative zur Verwendung des Verwaltungsportals für die Bereitstellung von virtuellen Computern, können Sie Windows PowerShell für Microsoft Azure verwenden. Verwenden Sie <a href = "http://msdn.microsoft.com/library/azure/dn495159.aspx">New-AzureVMConfig</a> - und <a href = "http://msdn.microsoft.com/library/azure/dn495299.aspx">Add-AzureProvisioningConfig,</a> um einen virtuellen Computer als in eine Domäne eingebundenen Computer bereitzustellen, wenn er zum ersten Mal gestartet wird. Verwenden Sie <a href = "http://msdn.microsoft.com/library/azure/dn495254.aspx">New-AzureVM,</a> um den virtuellen Computer selbst zu erstellen. 
+</p>
 
+Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Erste Schritte mit Azure PowerShell](http://msdn.microsoft.com/de-de/library/windowsazure/jj156055.aspx) und [Azure-Cmdlets für die Verwaltung](http://msdn.microsoft.com/de-de/library/windowsazure/jj152841).
 
-<h2><a id="verifystaticip"></a>Schritt 1: Überprüfen der statischen IP-Adresse für "YourPrimaryDC"</h2>
 
-1. Melden Sie sich im Unternehmensnetzwerk bei YourPrimaryDC an.
+<h2><a id="resources"></a>Zusätzliche Ressourcen</h2>
 
-2. Klicken Sie im Server-Manager auf "Netzwerkverbindungen anzeigen".
+-  [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Windows Azure](http://msdn.microsoft.com/library/azure/jj156090.aspx)
 
-3. Klicken Sie mit der rechten Maustaste auf die LAN-Verbindung, und klicken Sie dann auf "Eigenschaften".
+-  [Hochladen vorhandener lokaler Hyper-V-Domänencontroller in Azure mithilfe von Azure PowerShell](http://support.microsoft.com/kb/2904015)
 
-4. Klicken Sie auf "Internetprotokoll Version 4 (TCP/IPv4)" und dann auf "Eigenschaften".
+-  [Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk](http://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/)
 
-5. Stellen Sie sicher, dass dem Server eine statische IP-Adresse zugewiesen ist. 
+-  [Azure Virtual Network](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx)
 
-	![VerifystaticIPaddressyourPrimaryDC1](./media/virtual-networks-install-replica-active-directory-domain-controller/VerifystaticIP.png)
+-  [Windows Azure IT Pro IaaS: (01) Grundlagen zu virtuellen Computern](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
 
+-  [Windows Azure IT Pro IaaS: (05) Erstellen virtueller Netzwerke und Herstellen standortübergreifender Verbindungen](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 
-<h2><a id="installforest"></a>Schritt 2: Installieren der Unternehmensgesamtstruktur</h2>
+-  [Azure PowerShell](http://msdn.microsoft.com/library/windowsazure/jj156055.aspx)
 
-1. Klicken Sie in der RDP-Sitzung für die VM auf **Start**, geben Sie **dcpromo** ein, und drücken Sie die EINGABETASTE.
+-  [Azure-Verwaltungs-Cmdlets](http://msdn.microsoft.com/library/windowsazure/jj152841)
 
-	![InstallCorpForest1](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest1.png)
+<!--Image references-->
+[1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
 
-
-2. Klicken Sie auf der Willkommensseite auf **Weiter**.
-
-	![InstallCorpForest2](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest2.png)
-
-
-
-3. Klicken Sie auf der Seite "Betriebssystemkompatibilität" auf **Weiter**.
-
-	![InstallCorpForest3](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest3.png)
-
-4. Klicken Sie auf der Seite "Bereitstellungskonfiguration auswählen" auf **Neue Domäne in neuer Gesamtstruktur erstellen** und dann auf **Weiter**. 
-
-	![InstallCorpForest4](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest4.png)
-
-
-5. Geben Sie auf der Seite "Name der Gesamtstruktur-Stammdomäne" als vollqualifizierten Domänenamen (FQDN) der Gesamtstruktur-Stammdomäne **corp.contoso.com** ein, und klicken Sie auf **Weiter**. 
-
-	![InstallCorpForest5](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest5.png)
-
-
-6. Klicken Sie auf der Seite "Funktionsebene der Gesamtstruktur festlegen" auf **Windows Server 2008 R2** und dann auf **Weiter**.
-
-	![InstallCorpForest6](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest6.png)
-
-7. Klicken Sie auf der Seite "Weitere Domänencontrolleroptionen" auf **DNS-Server** und dann auf **Weiter**.
-
-	![InstallCorpForest7](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest7.png)
-
-8. Klicken Sie auf **Ja**, wenn die folgende Warnung zur DNS-Delegierung angezeigt wird.
-
-	![InstallCorpForest8](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest8.png)
-
-
-9. Geben Sie auf der Seite "Location for Active Directory database, log files and SYSVOL" den Speicherort der Dateien ein, oder wählen Sie ihn aus, und klicken Sie dann auf **Weiter**.
-
-	![InstallCorpForest9](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest9.png)
-
-
-10. Geben Sie auf der Seite "Directory Services Restore Administrator" das DSRM-Kennwort ein, und bestätigen Sie es. Klicken Sie dann auf **Weiter**.
-
-	![InstallCorpForest10](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest10.png)
-
-
-11. Bestätigen Sie auf der Seite "Zusammenfassung" Ihre Auswahl, und klicken Sie dann auf **Weiter**. 
-
-	![InstallCorpForest11](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest11.png)
-
-12. Klicken Sie nach Beendigung des Assistenten zum Installieren von Active Directory-Domänendiensten auf **Fertig stellen** und dann auf **Neu starten**, um die Installation abzuschließen. 
-
-	![InstallCorpForest12](./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest12.png)
-
-
-
-<h2><a id="subnets"></a>Schritt 3: Erstellen von Subnetzen und Standorten</h2>
-
-1. Klicken Sie auf "YourPrimaryDC" auf "Start" > "Verwaltung" und dann auf "Active Directory-Standorte und -Dienste".
-2. Klicken Sie auf **Standorte**, klicken Sie mit der rechten Maustaste auf **Subnetze**, und klicken Sie dann auf **Neues Subnetz**.
-
-	![CreateSubnetsandSites1](./media/virtual-networks-install-replica-active-directory-domain-controller/CreateSubnetsandSites1.png)
-
-3. Geben Sie unter **Präfix::** die Zahlenfolge **10.1.0.0/24**ein, wählen Sie das Standortobjekt **Default-First-Site-Name** aus, und klicken Sie dann auf **OK**.
-
-	![CreateSubnetsandSites2](./media/virtual-networks-install-replica-active-directory-domain-controller/CreateSubnetsandSites2.png)
-
-4. Klicken Sie mit der rechten Maustaste auf **Standorte**, und klicken Sie dann auf **Neuer Standort**.
-
-	![CreateSubnetsandSites3](./media/virtual-networks-install-replica-active-directory-domain-controller/CreateSubnetsandSites3.png)
-
-
-5. Geben Sie unter "Name" den Namen **CloudSite** ein, wählen Sie **DEFAULTIPSITELINK** aus, und klicken Sie auf **OK**. 
-
-	![CreateSubnetsandSites4](./media/virtual-networks-install-replica-active-directory-domain-controller/CreateSubnetsandSites4.png)
-
-
-6. Klicken Sie auf **OK**, um zu bestätigen, dass der Standort erstellt wurde. 
-
-	![CreateSubnetsandSites5](./media/virtual-networks-install-replica-active-directory-domain-controller/CreateSubnetsandSites5.png)
-
-7. Klicken Sie mit der rechten Maustaste auf **Standorte**, und klicken Sie dann auf **Neues Subnetz**.
-
-	![CreateSubnetsandSites6](./media/virtual-networks-install-replica-active-directory-domain-controller/CreateSubnetsandSites6.png)
-
-8. Geben Sie unter **Präfix::** die Zahlenfolge **10.4.2.0/24** ein, wählen Sie das Standortobjekt **CloudSite** aus, und klicken Sie dann auf **OK**.
-
-	![CreateSubnetsandSites7](./media/virtual-networks-install-replica-active-directory-domain-controller/CreateSubnetsandSites7.png)
-
-
-<h2><a id="cloudsite"></a>Schritt 4: Installieren eines weiteren Domänencontrollers in "CloudSite"</h2>
-
-1. Melden Sie sich bei "YourVMachine" an, klicken Sie auf **Start**, geben Sie **dcpromo** ein, und drücken Sie die EINGABETASTE.
-
-	![AddDC1](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC1.png)
-
-2. Klicken Sie auf der Willkommensseite auf **Weiter**.
-
-	![AddDC2](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC2.png)
-
-
-3. Klicken Sie auf der Seite "Betriebssystemkompatibilität" auf **Weiter**.
-
-	![AddDC3](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC3.png)
-
-4. Klicken Sie auf der Seite "Bereitstellungskonfiguration auswählen" auf **Vorhandene Gesamtstruktur** > **Domänencontroller vorhandener Domäne hinzufügen** und dann auf **Weiter**.
-
-	![AddDC4](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC4.png)
-
-
-5. Stellen Sie auf der Seite "Sicherheitsinformationen für das Netzwerk" sicher, dass Sie den Domänencontroller in der Domäne **corp.contoso.com** installieren, und geben Sie die Sicherheitsinformationen eines Mitglieds der Gruppe "Domänen-Admins" ein (oder verwenden Sie die Sicherheitsinformationen von "corp\administrator"). 
-
-	![AddDC5](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC5.png)
-
-
-6. Klicken Sie auf der Seite "Domäne auswählen" auf **Weiter**. 
-
-	![AddDC6](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC6.png)
-
-
-7. Stellen Sie auf der Seite "Standort auswählen" sicher, dass "CloudSite" ausgewählt ist, und klicken Sie auf **Weiter**.
-
-	![AddDC7](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC7.png)
-
-8. Klicken Sie auf der Seite "Weitere Domänencontrolleroptionen" auf **Weiter**. 
-
-	![AddDC8](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC8.png)
-
-
-9. Klicken Sie in der Warnmeldung "Zuweisung statischer IP" auf **Ja, der Computer verwendet eine automatisch von einem DHCP-Server zugewiesene IP-Adresse (nicht empfohlen)**
-
-	**Wichtig** 
-
-	Die IP-Adresse in Azure Virtual Network ist zwar dynamisch, die Leasedauer entspricht jedoch der Dauer der VM. Deshalb müssen Sie keine statische IP-Adresse für den Domänencontroller festlegen, den Sie im virtuellen Netzwerk installieren. Wenn eine statische IP-Adresse in der VM festgelegt wird, kommt es zu Kommunikationsfehlern.
-
-
-	![AddDC9](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC9.png)
-
-10. Klicken Sie auf **Ja**, wenn Sie eine Nachfrage zur DNS-Delegierungswarnung erhalten.
-
-	![AddDC10](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC10.png)
-
-
-11. Klicken Sie auf der Seite "Location for Active Directory database, log files and SYSVOL" auf "Durchsuchen", geben Sie einen Speicherort für die Active Directory-Dateien auf dem Datenträger ein, oder wählen Sie ihn aus, und klicken Sie auf **Weiter**. 
-
-	![AddDC11](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC11.png)
-
-12. Geben Sie auf der Seite "Directory Services Restore Administrator" das DSRM-Kennwort ein, und bestätigen Sie es. Klicken Sie dann auf **Weiter**.
-
-	![AddDC12](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC12.png)
-
-13. Klicken Sie auf der Seite "Zusammenfassung" auf **Weiter**.
-
-	![AddDC13](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC13.png)
-
-14. Klicken Sie nach Beendigung des Assistenten zum Installieren von Active Directory-Domänendiensten auf **Fertig stellen** und dann auf **Neu starten**, um die Installation abzuschließen. 
-
-	![AddDC14](./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC14.png)
-
-
-<h2><a id="validate"></a>Schritt 5: Überprüfen der Installation</h2>
-
-1. Stellen Sie die Verbindung mit der VM wieder her.
-
-2. Klicken Sie auf **Start**, klicken Sie mit der rechten Maustaste auf **Eingabeaufforderung**, und klicken Sie dann auf **Als Administrator ausführen**. 
-
-3. Geben Sie den folgenden Befehl ein, und drücken Sie die EINGABETASTE:  "Dcdiag /c /v"
-
-4. Überprüfen Sie, ob die Tests erfolgreich ausgeführt wurden. 
-
-Führen Sie nach der Konfiguration des Domänencontrollers das folgende Windows PowerShell-Cmdlet aus, um weitere virtuelle Maschinen bereitzustellen und automatisch bei der Bereitstellung zur Domäne hinzuzufügen. Die Konfliktlösereinstellungen des DNS-Clients für die VMs müssen konfiguriert sein, wenn die VMs bereitgestellt werden. Setzen Sie die richtigen Namen für Ihre Domäne, den VM-Namen usw. ein. 
-
-Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Erste Schritte mit Azure PowerShell](http://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx) und [Azure-Cmdlets für die Verwaltung](http://msdn.microsoft.com/en-us/library/windowsazure/jj152841).
-
-
-<h2><a id="provisionvm"></a>Schritt 6: Bereitstellen eines virtuellen Computers, der beim Start in die Domäne eingebunden ist</h2>
-
-1. Öffnen Sie Azure PowerShell ISE, fügen Sie das folgende Skript ein, ersetzen Sie die Platzhalter durch eigene Werte und führen Sie das Skript aus, um eine weitere virtuelle Maschine zu erstellen, die beim ersten Start in die Domäne eingebunden ist. 
-
-	Klicken Sie auf den Namen des virtuellen Netzwerks, in dem die Ausführung erfolgt, um die interne IP-Adresse des Domänencontrollers zu bestimmen. 
-
-	Im folgenden Beispiel lautet die interne IP-Adresse des Domänencontrollers 10.4.3.1. Add-AzureProvisioningConfig nimmt zudem einen angegebenen -MachineObjectOU-Parameter (erfordert den vollständigen definierten Namen in Active Directory), der die Einstellung von Group Policy-Einstellungen auf allen virtuellen Computern in diesem Container ermöglicht.
-
-	Melden Sie sich nach der Bereitstellung der virtuellen Computer an, indem Sie ein Domänenkonto im Format eines Benutzerprinzipalnamen angeben, z. B. "administrator@corp.contoso.com". 
-
-		#Deploy a new VM and join it to the domain
-		#-------------------------------------------
-		#Specify my DC's DNS IP (10.4.3.1)
-		$myDNS = New-AzureDNS -Name 'ContosoDC13' -IPAddress '10.4.3.1'
-		
-		# OS Image to Use
-		$image = 'MSFT__Sql-Server-11EVAL-11.0.2215.0-08022012-en-us-30GB.vhd'
-		$service = 'myazuresvcindomainM1'
-		$AG = 'YourAffinityGroup'
-		$vnet = 'YourVirtualNetwork'
-		$pwd = 'p@$$w0rd'
-		$size = 'Small'
-		
-		#VM Configuration
-		$vmname = 'MyTestVM1'
-		$MyVM1 = New-AzureVMConfig -name $vmname -InstanceSize $size -ImageName $image |
-		    Add-AzureProvisioningConfig -WindowsDomain -Password $pwd -Domain 'corp' -DomainPassword 'p@$$w0rd' -DomainUserName 'Administrator' -JoinDomain 'corp.contoso.com'|
-		    Set-AzureSubnet -SubnetNames 'BackEnd'
-		
-		New-AzureVM -ServiceName $service -AffinityGroup $AG -VMs $MyVM1 -DnsSettings $myDNS -VNetName $vnet
-		
-
-<h2><a id="backup"></a>Schritt 7: Sichern des Domänencontrollers</h2>
-
-
-1. Stellen Sie eine Verbindung mit YourVMachine her
-
-2. Klicken Sie auf **Start** > **Server-Manager** > **Features hinzufügen**, und wählen Sie dann **Windows Server-Sicherungsfeatures** aus. Befolgen Sie die Anweisungen zum Installieren der Windows Server-Sicherung.
-
-3. Klicken Sie auf **Start** > **Windows Server-Sicherung** > **Einmalsicherung**.
- 
-4. Klicken Sie auf **Unterschiedliche Optionen** und dann auf **Weiter**.
-
-5. Klicken Sie auf **Vollständiger Server** und dann auf **Weiter**.
-
-6. Klicken Sie auf **Lokale Datenträger** und dann auf **Weiter**.
-
-7. Wählen Sie das Ziellaufwerk aus, auf dem weder die Betriebssystemdateien noch die Active Directory-Datenbank gehostet werden, und klicken Sie auf "Weiter".
-
-	![BackupDC](./media/virtual-networks-install-replica-active-directory-domain-controller/BackupDC.png)
-
-
-8. Bestätigen Sie die Sicherungseinstellungen, die Sie ausgewählt haben, und klicken Sie dann auf **Sicherung**.
-
-<h2><a id="test"></a>Schritt 8: Testen der Authentifizierung und Autorisierung</h2>
-
-1. Erstellen Sie ein Domänenbenutzerkonto in Active Directory, um die Authentifizierung und Autorisierung zu testen. 
-Melden Sie sich bei der Client-VM an jedem Standort an, und erstellen Sie einen freigegebenen Ordner auf der VM.
-
-2. Testen Sie den Zugriff auf den freigegebenen Ordner mit verschiedenen Konten, Gruppen und Berechtigungen. 
-
-## Weitere Informationen
-
--  [Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx)
-
--  [Microsoft Azure IT Pro IaaS: (01) Grundlagen zu virtuellen Computern](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
-
--  [Microsoft Azure IT Pro IaaS: (05) Erstellen virtueller Netzwerke und Herstellen standortübergreifender Verbindungen](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
-
--  [Azure PowerShell](http://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx)
-
--  [Azure-Verwaltungs-Cmdlets](http://msdn.microsoft.com/en-us/library/windowsazure/jj152841)
+<!--HONumber=35.2-->

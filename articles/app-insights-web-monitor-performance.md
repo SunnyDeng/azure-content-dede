@@ -1,6 +1,6 @@
-﻿<properties title="Monitor your app's health and usage with Application Insights" pageTitle="Überwachen der Integrität und Nutzung Ihrer Anwendung mit Application Insights" description="Erste Schritte mit Application Insights. Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihres lokalen oder Microsoft Azure-Anwendungen." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
+﻿<properties title="Monitor your app's health and usage with Application Insights" pageTitle="Überwachen der Integrität und Nutzung Ihrer Anwendung mit Application Insights" description="Erste Schritte mit Application Insights. Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihrer lokalen oder Microsoft Azure-Anwendungen." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-09-24" ms.author="awills" />
+<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-11-21" ms.author="awills" />
  
 # Die Leistung in Webanwendungen überwachen
 
@@ -23,7 +23,7 @@ Falls Sie Application Insights Ihrem Projekt noch nicht hinzugefügt haben (d. h
 
 * [Application Insights Ihrem App-Projekt in Visual Studio hinzufügen][greenbrown] (empfohlene Methode). Sie können sowohl passive Leistungsüberwachung als auch Diagnoseprotokollierung und Nutzungsverfolgung einsetzen.
 * [Leistung einer Live-Website jetzt überwachen][redfield] - Bei dieser Methode müssen Sie das App-Projekt nicht aktualisieren bzw. die Webseite nicht erneut bereitstellen.
-* [Für eine Microsoft Azure-Website](../insights-how-to-customize-monitoring/)  können Sie Metriken bereits auf der Überwachungslinse der Website sehen. 
+* [Für eine Microsoft Azure-Website](../insights-how-to-customize-monitoring/)  werden Metriken bereits im Überwachungsbereich einer Website angezeigt. 
 
 
 ## <a name="view"></a>Berichte anzeigen
@@ -40,7 +40,7 @@ In Visual Studio sehen Sie eine Anzahl der empfangenen Ereignisse.
 ![Right-click your project and open the Azure portal](./media/appinsights/appinsights-04-openPortal.png)
 
 
-Suchen Sie Daten in den **Application health**-Kacheln. Zuerst sehen Sie lediglich einen oder zwei Punkte. Beispiel:
+Suchen Sie Daten in den **Application health**-Tiles. Zuerst sehen Sie lediglich einen oder zwei Punkte. Beispiel:
 
 ![Click through to more data](./media/appinsights/appinsights-41firstHealth.png)
 
@@ -50,19 +50,19 @@ Falls Sie zu Beginn keine Daten sehen, warten Sie eine Minuten und klicken dann 
 
 ### Metriken erforschen
 
-Klicken Sie auf ein beliebiges Tile, um weitere Details und Ergebnisse über einen längeren Zeitraum anzuzeigen. Klicken Sie beispielsweise auf die Kachel "Requests", und wählen Sie dann einen Zeitraum aus.
+Klicken Sie auf ein beliebiges Tile, um weitere Details und Ergebnisse über einen längeren Zeitraum anzuzeigen. Klicken Sie beispielsweise auf das Tile "Requests", und wählen Sie dann einen Zeitraum aus.
 
 
 ![Click through to more data and select a time range](./media/appinsights/appinsights-48metrics.png)
 
-Klicken Sie auf einen Graphen, um auszuwählen, welche Metrik dieser anzeigen soll:
+Klicken Sie auf ein Diagramm, um die anzuzeigenden Metriken auszuwählen, oder fügen Sie ein neues Diagramm hinzu, und wählen Sie dann die Metriken aus:
 
 ![Click a graph to choose metrics](./media/appinsights/appinsights-61perfchoices.png)
 
 > [AZURE.NOTE] **Deaktivieren Sie alle Metriken**, um die insgesamt verfügbare Auswahl anzuzeigen. Die Metriken werden in Gruppen unterteilt. Wenn ein Mitglied einer Gruppe ausgewählt wird, werden nur die weiteren Mitglieder dieser Gruppe angezeigt.
 
 
-## <a name="metrics"></a>Was bedeutet was? Leistungskacheln und Berichte
+## <a name="metrics"></a>Was bedeutet was? Leistungs-Tiles und Berichte
 
 Ihnen steht eine Vielzahl von Leistungsmetriken zur Verfügung. Lassen Sie uns mit denen beginnen, die standardmäßig im Anwendungsfenster angezeigt werden.
 
@@ -107,13 +107,24 @@ Nur eine repräsentative Menge an Fehler wird zur individuellen Überprüfung zu
 
 ### Other metrics
 
-Um andere verfügbare Metriken aufzurufen, klicken Sie auf einen Graphen und deaktivieren dann alle Metriken. Daraufhin werden alle verfügbaren Metriken angezeigt. Klicken Sie auf (i), um die jeweilige Definition der Metrik anzuzeigen.
+Um andere verfügbare Metriken aufzurufen, klicken Sie auf ein Diagramm und deaktivieren dann alle Metriken. Daraufhin werden alle verfügbaren Metriken angezeigt. Klicken Sie auf (i), um die jeweilige Definition der Metrik anzuzeigen.
 
 ![Deselect all metrics to see the whole set](./media/appinsights/appinsights-62allchoices.png)
 
 
-Wenn Sie eine Metrik auswählen, werden alle anderen ausgeblendet, die nicht im selben Diagramm angezeigt werden können.
+Wenn Sie eine Metrik auswählen, werden alle anderen deaktiviert, die nicht im selben Diagramm angezeigt werden können.
 
+## Festlegen von Benachrichtigungen
+
+Fügen Sie eine Benachrichtigung hinzu, wenn Sie per E-Mail über ungewöhnliche Werte einer beliebigen Metrik informiert werden möchten. Sie können auswählen, ob die E-Mail an die Kontoadministratoren oder an bestimmte E-Mail-Adressen gesendet wird.
+
+![](./media/appinsights/appinsights-413setMetricAlert.png)
+
+Legen Sie die Ressource vor den anderen Eigenschaften fest. Wählen Sie nicht die Webtest-Ressourcen, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
+
+Achten Sie auf die Einheiten, die beim Eingeben des Schwellenwerts gefordert sind.
+
+*Die Schaltfläche zum Hinzufügen einer Benachrichtigung wird nicht angezeigt.* - Das liegt wahrscheinlich daran, dass Sie nur schreibgeschützten Zugriff haben. 
 
 ## <a name="diagnosis"></a>Probleme diagnostizieren
 
@@ -127,7 +138,7 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
 [Webtests][availability] - Lassen Sie in regelmäßigen Abständen aus aller Welt Webanforderungen zu Ihrer Anwendung senden.
 
-[Diagnostische Spuren protokollieren und suchen][diagnostic] - Fügen Sie Trace-Aufrufe ein. und durchsuchen Sie die Ergebnisse, um Probleme zu lokalisieren.
+[Diagnostische Spuren protokollieren und suchen][diagnostic] - Fügen Sie Trace-Aufrufe ein, und durchsuchen Sie die Ergebnisse, um Probleme zu lokalisieren.
 
 [Nutzungsnachverfolgung][usage] - Erfahren Sie, wie Ihre Anwendung genutzt wird.
 
@@ -139,3 +150,5 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
 
 
+
+<!--HONumber=35.2-->

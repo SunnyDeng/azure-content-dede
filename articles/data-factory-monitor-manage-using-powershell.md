@@ -1,11 +1,11 @@
-﻿<properties title="Monitor and manage Azure Data Factory using Azure PowerShell" pageTitle="Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell" description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factories mithilfe von Azure PowerShell überwachen und verwalten." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties title="Monitor and manage Azure Data Factory using Azure PowerShell" pageTitle="Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell" description="Erfahren Sie, wie Sie mit Azure PowerShell selbst erstellte Azure Data Factorys überwachen und verwalten können." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="spelluru" />
+<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/13/2014" ms.author="spelluru" />
 
 # Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell
 Die folgende Tabelle enthält die Cmdlets, die Sie zum Überwachen und Verwalten von Azure Data Factory mithilfe von Azure PowerShell verwenden können. 
 
-> [WACOM.NOTE] In der [Cmdlet-Referenz zu Data Factory][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets. 
+> [WACOM.NOTE] In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets. 
 
 
 - [Get-AzureDataFactory](#get-azuredatafactory)
@@ -37,10 +37,10 @@ Dieser Befehl gibt alle Data Factorys in der Ressourcengruppe "ADFTutorialResour
 
 Dieser Befehl gibt Details zur Data Factory "ADFTutorialDataFactory" in der Ressourcengruppe "ADFTutorialResourceGroup" zurück. 
 
-## <a name="get-azuredatafactorylinkedservice"></a> Get-AzureDataFactoryLinkedService ##
+## <a name="get-azuredatafactorylinkedservice"></a> Get-AzureDataFactoryLinkedService
 Das Get-AzureDataFactoryLinkedService-Cmdlet ruft Informationen zu einem bestimmten verknüpften Dienst oder allen verknüpften Dienste in einer Azure Data Factory ab.
 
-### Beispiel 1 ###
+### Beispiel 1
 
     Get-AzureDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory
  
@@ -138,7 +138,7 @@ In der folgenden Tabelle sind alle Status eines Slices und ihre Beschreibungen a
 	</tr>
 
 	<tr>
-		<td>Überspringne</td>
+		<td>Überspringen</td>
 		<td>Die Verarbeitung des Slices wird übersprungen.</td>
 	</tr>
 
@@ -189,7 +189,7 @@ Dieser Befehl ruft alle Slices, für die Tabelle "EmpSQLTable" in der Azure Data
 
 ## <a name="get-azuredatafactoryrun"></a> Get-AzureDataFactoryRun
 
-Das Get-AzureDataFactoryRun-Cmdlet ruft alle Ausführungen für einen Datenslice einer Tabelle in einer Azure Data Factory ab.  Eine Tabelle in einer Azure Data Factory besteht aus Slices auf der Zeitachse. Die Breite eines Slices wird durch den Zeitplan (stündlich/täglich) bestimmt. Die Ausführung ist eine Verarbeitungseinheit für einen Slice. Im Falle von Wiederholungen, oder wenn Sie Ihren Slice im Falle von Fehlern erneut ausführen, kann es eine oder mehrere Ausführungen für einen Slice geben. Ein Slice wird durch seine Startzeit identifiziert. Aus diesem Grund müssen Sie für das Get-AzureDataFactoryRun-Cmdlet die Startzeit des Slices aus den Ergebnissen des Get-AzureDataFactorySlice-Cmdlets übergeben.
+Das "Get-AzureDataFactoryRun"-Cmdlet ruft alle Ausführungen für einen Datenslice einer Tabelle in einer Azure Data Factory ab.  Eine Tabelle in einer Azure Data Factory besteht aus Slices auf der Zeitachse. Die Breite eines Slices wird durch den Zeitplan (stündlich/täglich) bestimmt. Die Ausführung ist eine Verarbeitungseinheit für einen Slice. Im Falle von Wiederholungen, oder wenn Sie Ihren Slice im Falle von Fehlern erneut ausführen, kann es eine oder mehrere Ausführungen für einen Slice geben. Ein Slice wird durch seine Startzeit identifiziert. Aus diesem Grund müssen Sie für das "Get-AzureDataFactoryRun"-Cmdlet die Startzeit des Slices aus den Ergebnissen des "Get-AzureDataFactorySlice"-Cmdlets übergeben.
 
 Um beispielsweise eine Ausführung für den folgenden Slice abzurufen, verwenden Sie 2015-04-02T20:00:00. 
 
@@ -211,7 +211,7 @@ Um beispielsweise eine Ausführung für den folgenden Slice abzurufen, verwenden
 Dieser Befehl ruft alle Ausführungen für Slices der Tabelle "EmpSQLTable" in der Azure Data Factory "ADFTutorialDataFactory" beginnend mit 16 Uhr Uhr GMT am 05/21/2014 ab.
 
 ## <a name="save-azuredatafactorylog"></a> Save-AzureDataFactoryLog
-Das Save-AzureDataFactoryLog-Cmdlet lädt Protokolldateien im Zusammenhang mit der Azure HDInsight-Verarbeitung von Pig- oder Hive-Projekten oder für benutzerdefinierte Aktivitäten auf Ihre lokale Festplatte herunter. Sie führen zunächst das Get-AzureDataFactoryRun-Cmdlet aus, um eine ID für eine Aktivitätsausführung für einen Datenslice zu erhalten, und verwenden dann diese ID, um Protokolldateien aus dem BLOB-Speicher (Binary Large Object) abzurufen, der mit dem HDInsight-Cluster verbunden ist. 
+Das Save-AzureDataFactoryLog-Cmdlet lädt Protokolldateien im Zusammenhang mit der Azure HDInsight-Verarbeitung von Pig- oder Hive-Projekten oder für benutzerdefinierte Aktivitäten auf Ihre lokale Festplatte herunter. Sie führen zunächst das "Get-AzureDataFactoryRun"-Cmdlet aus, um eine ID für eine Aktivitätsausführung für einen Datenslice zu erhalten, und verwenden dann diese ID, um Protokolldateien aus dem BLOB-Speicher (Binary Large Object) abzurufen, der mit dem HDInsight-Cluster verbunden ist. 
 
 Wenn Sie den Parameter **-DownloadLogs** nicht angeben, gibt das Cmdlet nur den Speicherort der Protokolldateien zurück. 
 
@@ -272,7 +272,7 @@ Legt den Status eines Slices für eine Tabelle fest. Das Startdatum und das Endd
 Jeder Datenslice für eine Tabelle durchläuft unterschiedliche Phasen. Diese Phasen unterscheiden sich geringfügig dahingehend, ob die Überprüfungsrichtlinien angegeben wurden.
 
 
-- Wenn keine Überprüfungsrichtlinien  angegeben wurden: Ausstehende Ausführung -> In Bearbeitung -> Bereit
+- Wenn keine Überprüfungsrichtlinien angegeben wurden: Ausstehende Ausführung -> In Bearbeitung -> Bereit
 - Wenn Überprüfungsrichtlinien angegeben wurden: Ausstehende Ausführung -> Ausstehende Überprüfung -> In Bearbeitung -> Bereit
 
 Die folgende Tabelle enthält eine Beschreibung der möglichen Status eines Slices, und Sie erfahren, ob der Status mithilfe von "Set-AzureDataFactorySliceStatus" festgelegt werden kann oder nicht.
@@ -370,7 +370,7 @@ Für jede Tabelle in einer Azure Data Factory müssen Sie beim Festlegen des Sta
 
 </table>
 ## <a name="suspend-azuredatafactorypipeline"></a> Suspend-AzureDataFactoryPipeline
-Das Suspend-AzureDataFactoryPipeline-Cmdlet hält die angegebene Pipeline in einer Azure Data Factory an. Sie können die Pipeline später mithilfe des Resume-AzureDataFactoryPipeline-Cmdlets fortsetzen.
+Das Suspend-AzureDataFactoryPipeline-Cmdlet hält die angegebene Pipeline in einer Azure Data Factory an. Sie können die Pipeline später mithilfe des "Resume-AzureDataFactoryPipeline"-Cmdlets fortsetzen.
 
 ### Beispiel
 
@@ -387,15 +387,15 @@ Durch das Resume-AzureDataFactoryPipeline-Cmdlet wird die angegebene Pipeline fo
 
 Mit diesem Befehl wird die Pipeline "ADFTutorialPipeline" in der Azure Data Factory "ADFTutorialDataFactory" fortgesetzt, die zuvor durch Verwendung des Befehls "Suspend-AzureDataFactoryPipeline" angehalten wurde.
 
-## Weitere Informationen
+## Siehe auch
 
 Artikel | Beschreibung
 ------ | ---------------
 [Überwachen und Verwalten der Azure Data Factory mit dem Azure-Vorschauportal][monitor-manage-using-portal] | In diesem Artikel wird beschrieben, wie eine Azure Data Factory mithilfe des Azure-Vorschauportals überwacht und verwaltet wird.
-[Aktivieren von Pipelines zur Verwendung von lokalen Daten][use-onpremises-datasources] | Dieser Artikel enthält eine exemplarische Vorgehensweise zum Kopieren von Daten aus einer lokalen SQL Server-Datenbank in einen Azure-BLOB.
-[Verwenden von Pig und Hive mit Data Factory][use-pig-and-hive-with-data-factory] | Dieser Artikel enthält eine exemplarische Vorgehensweise, in der gezeigt wird, wie eine HDInsight-Aktivität verwendet wird, um ein Hive-/Pig-Skript zur Verarbeitung von Eingabedaten auszuführen, um Ausgabedaten zu produzieren. 
-[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | Dieser Artikel enthält eine umfassende exemplarische Vorgehensweise, in der gezeigt wird, wie ein realitätsnahes Szenario mit Azure Data Factory implementiert wird, um Daten aus Protokolldateien in Einblicke zu transformieren.
-[Verwenden von benutzerdefinierten Aktivitäten in einer Data Factory][use-custom-activities] | Dieser Artikel enthält eine exemplarische Vorgehensweise mit schrittweisen Anleitungen zum Erstellen einer benutzerdefinierten Aktivität und deren Verwendung in einer Pipeline. 
+[Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][use-onpremises-datasources] | Dieser Artikel enthält eine exemplarische Vorgehensweise zum Kopieren von Daten aus einer lokalen SQL Server-Datenbank in einen Azure-BLOB.
+[Verwenden von Pig und Hive mit Data Factory][use-pig-and-hive-with-data-factory] | Dieser Artikel enthält eine exemplarische Vorgehensweise, in der gezeigt wird, wie eine HDInsight-Aktivität verwendet wird, um ein Hive-/Pig-Skript zur Verarbeitung von Eingabedaten auszuführen, um Ausgabedaten zu produzieren.
+[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | In diesem Artikel wird in einer umfassenden exemplarischen Vorgehensweise die Implementierung eines realen Szenarios mithilfe von Azure Data Factory veranschaulicht, um Einblicke aus Protokolldateien zu gewinnen.
+[Verwenden von benutzerdefinierten Aktivitäten in einer Data Factory][use-custom-activities] | Dieser Artikel enthält eine exemplarische Vorgehensweise mit schrittweisen Anleitungen zum Erstellen einer benutzerdefinierten Aktivität und deren Verwendung in einer Pipeline.
 [Problembehandlung für Data Factory][troubleshoot] | In diesem Artikel wird beschrieben, wie Probleme in Azure Data Factory behoben werden.
 [Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für Cmdlets, JSON-Skripts, Funktionen usw. 
 [Azure Data Factory-Cmdlet-Referenz][cmdlet-reference] | Diese Referenz enthält Einzelheiten zu allen **Data Factory-Cmdlets**.
@@ -409,3 +409,5 @@ Artikel | Beschreibung
 [troubleshoot]: ../data-factory-troubleshoot
 [developer-reference]: http://go.microsoft.com/fwlink/?LinkId=516908
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
+
+<!--HONumber=35.2-->

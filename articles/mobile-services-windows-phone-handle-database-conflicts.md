@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Optimistic concurrency" pageTitle="Behandeln von Datenbank-Schreibkonflikten mit optimistischer Parallelität (Windows Store) | Mobile Developer Center" metaKeywords="" description="Erfahren Sie, wie Sie Datenbankschreibkonflikte auf dem Server und in Ihrer Windows Store-Anwendung behandeln." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conlicts" authors="wesmc" manager="dwrede" />
+﻿<properties urlDisplayName="Optimistic concurrency" pageTitle="Behandeln von Datenbank-Schreibkonflikten mit vollständiger Parallelität (Windows Store) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie mit Datenbank-Schreibkonflikten sowohl auf dem Server als auch in der Windows Store-Anwendung umgehen." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conlicts" authors="wesmc" manager="dwrede" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 
@@ -10,11 +10,11 @@
 <a href="/de-de/develop/mobile/tutorials/handle-database-write-conflicts-wp8/" title="Windows Phone" class="current">Windows Phone</a>
 </div>
 
-Dieses Lernprogramm beschreibt die Behandlung von Konflikten, die auftreten, wenn zwei oder mehr Clients in denselben Datenbankeintrag in einer Windows Phone 8-App schreiben. In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Mobile Services bietet Unterstützung für die Erkennung und Auflösung dieser Konflikte. In diesem Artikel werden die Schritte beschrieben, mit denen Sie Datenbank-Schreibkonflikte sowohl auf dem Server als auch in Ihrer Anwendung behandeln können.
+Dieses Lernprogramm beschreibt die Behandlung von Konflikten, die auftreten, wenn zwei oder mehr Clients in denselben Datenbankeintrag in einer Windows Phone 8-App schreiben. In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Mobile Services bietet Unterstützung für die Erkennung und Auflösung dieser Konflikte. Dieser Artikel beschreibt die Schritte, mit denen Sie Datenbank-Schreibkonflikte sowohl auf dem Server als auch in Ihrer Anwendung behandeln können.
 
 In diesem Lernprogramm fügen Sie eine Funktion zur Schnellstart-App hinzu, die Konflikte bei Änderungen in der TodoItem-Datenbank behandelt. In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
-1. [Aktualisieren der Anwendung, um Änderungen zu ermöglichen]
+1. [Aktualisieren der Anwendung, um Aktualisierungen zu ermöglichen]
 2. [Aktivieren der Konflikterkennung in Ihrer Anwendung]
 3. [Testen auf Datenbank-Schreibkonflikte in Ihrer Anwendung]
 4. [Automatische Konfliktauflösung in Serverskripts]
@@ -26,12 +26,12 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Windows Phone 8 SDK] auf Windows 8. 
 + [Azure-Konto]
 + Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services] abschließen.
-+ Azure Mobile Services NuGet Package 1.1.0 oder höher. Führen Sie die folgenden Schritte aus, um die neueste Version herunterzuladen:
-	1. Öffnen Sie das Projekt in Visual Studio, klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf das Projekt, und klicken Sie auf **NuGet-Pakete verwalten**. 
++ Azure Mobile Services NuGet-Paket 1.1.0 oder neuer. Führen Sie die folgenden Schritte aus, um die neueste Version herunterzuladen:
+	1. Öffnen Sie das Projekt in Visual Studio, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Nuget-Pakete verwalten**. 
 
 		![][13]
 
-	2. Erweitern Sie **Online**, und klicken Sie auf **Microsoft und .NET**. Geben Sie im Suchfeld **Azure Mobile Services** ein. Klicken Sie auf **Installieren** für das **Azure Mobile Services** NuGet-Paket.
+	2. Erweitern Sie **Online**, und klicken Sie auf **Microsoft und .NET**. Geben Sie in das Suchfeld **Azure Mobile Services** ein. Klicken Sie für das **Azure Mobile Services** NuGet-Paket auf **Installieren**.
 
 		![][14]
 
@@ -40,11 +40,11 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 <h2><a name="uiupdate"></a>Aktualisieren der Anwendung, um Änderungen zu ermöglichen</h2>
 
-In diesem Abschnitt aktualisieren Sie die TodoList-Benutzeroberfläche, um Änderungen an den Textelementen in einem Listenfeld-Steuerelement zu ermöglichen. Das Listenfeld enthält ein Kontrollkästchen und ein TextBox-Steuerelement für jeden Eintrag in der Datenbanktabelle. Sie können das Textfeld des TodoItems ändern. Die Anwendung verarbeitet das 'LostFocus'-Ereignis von dieser TextBox, um das Element in der Datenbank zu aktualisieren.
+In diesem Abschnitt aktualisieren Sie die TodoList-Benutzeroberfläche, um Änderungen an den Textelementen in einem Listenfeld-Steuerelement zu ermöglichen. Das Listenfeld enthält ein Kontrollkästchen und ein TextBox-Steuerelement für jeden Eintrag in der Datenbanktabelle. Sie können das Textfeld des TodoItems ändern. Die Anwendung verarbeitet das "LostFocus"-Ereignis von dieser TextBox, um das Element in der Datenbank zu aktualisieren.
 
 
-1. Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit mobilen Diensten] heruntergeladen haben.
-2. Öffnen Sie die Datei MainPage.xaml im Projektmappen-Explorer in Visual Studio, ersetzen Sie die `phone:LongListSelector`-Definition durch die folgende ListBox-Definition und speichern Sie Ihre Änderungen.
+1. Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services] heruntergeladen haben.
+2. Öffnen Sie die Datei MainPage.xaml im Projektmappen-Explorer in Visual Studio, ersetzen Sie die 'phone:LongListSelector'-Definition durch die folgende ListBox-Definition und speichern Sie Ihre Änderungen.
 
 		<ListBox Grid.Row="4" Grid.ColumnSpan="2" Name="ListItems">
 			<ListBox.ItemTemplate>
@@ -58,12 +58,12 @@ In diesem Abschnitt aktualisieren Sie die TodoList-Benutzeroberfläche, um Ände
 		</ListBox>
 
 
-2. Öffnen Sie im Visual Studio Solution Explorer "MainPage.xaml.cs". Fügen Sie dann die folgende `using`-Direktive hinzu.
+2. Öffnen Sie im Projektmappen-Explorer in Visual Studio "MainPage.xaml.cs". Fügen Sie dann die folgende "using"-Direktive hinzu.
 
 		using System.Threading.Tasks;
 
 
-3. Öffnen Sie in Visual Studio im Projektmappen-Explorer die Datei "MainPage.xaml.cs". Fügen Sie den Ereignishandler zur MainPage für das TextBox-`LostFocus`-Ereignis wie unten gezeigt hinzu.
+3. Öffnen Sie MainPage.xaml.cs im Projektmappen-Explorer in Visual Studio. Fügen Sie den Ereignishandler zur MainPage für das TextBox-Ereignis "LostFocus" hinzu.
 
 
         private async void ToDoText_LostFocus(object sender, RoutedEventArgs e)
@@ -78,7 +78,7 @@ In diesem Abschnitt aktualisieren Sie die TodoList-Benutzeroberfläche, um Ände
             }
         }
 
-4. In MainPage.xaml.cs, add the definition for the MainPage `UpdateToDoItem()` method referenced in the event handler as shown below.
+4. Fügen Sie, wie unten gezeigt, in "MainPage.xaml.cs" die Definition für die "UpdateToDoItem()"-Methode der MainPage hinzu, auf die im Ereignishandler verwiesen wird.
 
         private async Task UpdateToDoItem(TodoItem item)
         {
@@ -97,9 +97,9 @@ Die Anwendung schreibt nun die Textänderungen der einzelnen Elemente in die Dat
 
 <h2><a name="enableOC"></a>Aktivieren der Konflikterkennung in Ihrer Anwendung</h2>
 
-In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. [Die Steuerung für optimistische Nebenläufigkeit] nimmt an, dass jede Transaktion Commits ausführen kann und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Nebenläufigkeit, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt. Azure Mobile Services unterstützen optimistische Parallelität, indem Änderungen an Elementen in der `__version`-Systemeigenschaftenspalte registriert werden, die in allen Tabellen existiert. In diesem Abschnitt erweitern wir die Anwendung um die Erkennung dieser Schreibkonflikte anhand der `__version`-Systemeigenschaft. Die Anwendung wird durch eine `MobileServicePreconditionFailedException` bei einem Änderungsversuch benachrichtigt, falls der Eintrag seit der letzten Abfrage geändert wurde. Anschließend kann die Anwendung entscheiden, ob die Änderung in die Datenbank geschrieben oder die letzte Änderung in der Datenbank erhalten bleiben soll. Weitere Informationen zu Systemeigenschaften für Mobile Services finden Sie unter [Systemeigenschaften].
+In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. [Die Steuerung für optimistische Nebenläufigkeit] setzt voraus, dass jede Transaktion Commits ausführen kann, und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Nebenläufigkeit, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt. Azure Mobile Services unterstützen optimistische Nebenläufigkeit, indem Änderungen an Elementen in der "__version"-Systemeigenschaftenspalte registriert werden, die in allen Tabellen existiert. In diesem Abschnitt erweitern wir die Anwendung um die Erkennung dieser Schreibkonflikte anhand der "__version"-Systemeigenschaft. Die Anwendung wird durch eine "MobileServicePreconditionFailedException" bei einem Änderungsversuch benachrichtigt, falls der Eintrag seit der letzten Abfrage geändert wurde. Anschließend kann die Anwendung entscheiden, ob die Änderung in die Datenbank geschrieben oder die letzte Änderung in der Datenbank erhalten bleiben soll. Weitere Informationen zu Systemeigenschaften für Mobile Services finden Sie unter [Systemeigenschaften].
 
-1. Aktualisieren Sie die **TodoItem**-Klassendefinition in MainPage.xaml.cs mit dem folgenden Code, um die Unterstützung für die Erkennung von Schreibkonflikten anhand der **__version**-Systemeigenschaft hinzuzufügen:
+1. Aktualisieren Sie die **TodoItem**-Klassendefinition in "MainPage.xaml.cs" mit dem folgenden Code, um die **__version**-Systemeigenschaft hinzuzufügen, die die Erkennung von Schreibkonflikten ermöglicht:
 
 		public class TodoItem
 		{
@@ -120,7 +120,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 	</div>
 
 
-2. Durch Hinzufügen der `Version`-Eigenschaft zur`TodoItem`-Klasse wird die Anwendung während einer Aktualisierung durch eine `MobileServicePreconditionFailedException`-Ausnahme benachrichtigt, wenn ein Datensatz seit der letzten Abfrage geändert wurde. Diese Ausnahme enthält den die neueste Version des Elements auf dem Server. Fügen Sie den folgenden Code der Datei "MainPage.xaml.cs" hinzu, um die Ausnahme in der `UpdateToDoItem()`-Method.e zu behandeln.
+2. Wenn Sie die "Version"-Eigenschaft zur Klasse "TodoItem" hinzufügen, wird die Anwendung durch eine "MobileServicePreconditionFailedException" bei Änderungsversuchen benachrichtigt, falls der Eintrag seit der letzten Abfrage geändert wurde. Diese Ausnahme enthält den die neueste Version des Elements auf dem Server. Fügen Sie den folgenden Code in "MainPage.xaml.cs" hinzu, um die Ausnahme in der "UpdateToDoItem()"-Methode zu behandeln.
 
         private async Task UpdateToDoItem(TodoItem item)
         {
@@ -151,7 +151,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
         }
 
 
-3. Fügen Sie in der Datei "MainPage.xaml.cs" die Definition für die `ResolveConflict()`-Methode hinzu, auf die in `UpdateToDoItem()` verwiesen wird. Um den Konflikt zu lösen, setzen Sie die Version des lokalen Elements auf die aktualisierte Version vom Server, bevor Sie den Commit für die Entscheidung des Benutzers ausführen. Andernfalls wird der Konflikt weiterhin auftreten.
+3. Fügen Sie in "MainPage.xaml.cs" die Definition für die "ResolveConflict()"-Methode hinzu, die in "UpdateToDoItem()" aufgerufen wird. Um den Konflikt zu lösen, setzen Sie die Version des lokalen Elements auf die aktualisierte Version vom Server, bevor Sie den Commit für die Entscheidung des Benutzers ausführen. Andernfalls wird der Konflikt weiterhin auftreten.
 
 
         private async Task ResolveConflict(TodoItem localItem, TodoItem serverItem)		
@@ -189,7 +189,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 
 <h2><a name="test-app"></a>Testen auf Datenbank-Schreibkonflikte in Ihrer Anwendung</h2>
 
-In diesem Abschnitt testen Sie den Code, der Schreibkonflikte durch Ausführen der App in zwei verschiedenen Windows Phone 8-Emulatoren (WVGA und WVGA 512M) verarbeitet. Beide Client-Apps werden versuchen, die `text`-Eigenschaft desselben Elements zu aktualisieren, woraufhin der Benutzer den Konflikt auflösen muss.
+In diesem Abschnitt testen Sie den Code, der Schreibkonflikte durch Ausführen der App in zwei verschiedenen Windows Phone 8-Emulatoren (WVGA und WVGA 512M) verarbeitet. Beide Client-Apps werden versuchen, die "text"-Eigenschaft desselben Elements zu aktualisieren, woraufhin der Benutzer den Konflikt auflösen muss.
 
 
 1. Stellen Sie in Visual Studio sicher, dass **Emulator WVGA 512MB** in der Dropdownliste als Bereitstellungsziel ausgewählt ist, wie im Screenshot unten gezeigt wird.
@@ -206,13 +206,13 @@ In diesem Abschnitt testen Sie den Code, der Schreibkonflikte durch Ausführen d
 
 4. Klicken Sie in Visual Studio im Menü auf **BUILD** und dann auf **Projektmappe bereitstellen**. Vergewissern Sie sich im Ausgabefenster unten, dass der Build und die Bereitstellung im Windows Phone 8-Emulator erfolgreich war.
 
-   	![][2]
+€
   
-5. Führen Sie beide Emulatoren nebeneinander aus. Wir können gleichzeitige Schreibkonflikte zwischen den auf diesen Emulatoren ausgeführten Client-Apps simulieren. Streifen Sie in beiden Emulatoren von rechts nach links, um die Liste der installierten Anwendungen anzuzeigen. Blättern Sie in beiden Listen nach unten und klicken Sie auf die App **todolist**.
+5. Führen Sie beide Emulatoren nebeneinander aus. Wir können gleichzeitige Schreibkonflikte zwischen den auf diesen Emulatoren ausgeführten Client-Apps simulieren. Streifen Sie in beiden Emulatoren von rechts nach links, um die Liste der installierten Anwendungen anzuzeigen. Scrollen Sie in beiden Listen nach unten, und klicken Sie auf die App **todolist**.
 
 	![][3]
 
-6. Aktualisieren Sie im linken Emulator `text` des letzten TodoItem auf **Test Write 1**. Klicken Sie dann auf ein weiteres Textfeld, sodass der "LostFocus"-Ereignishandler die Datenbank aktualisiert. Der folgende Screenshot zeigt ein Beispiel. 
+6. Aktualisieren Sie im linken Emulator den "text" des letzten TodoItem auf **Test Write 1**. Klicken Sie dann auf ein weiteres Textfeld, sodass der "LostFocus"-Ereignishandler die Datenbank aktualisiert. Der folgende Screenshot zeigt ein Beispiel. 
 
 	![][4]
 
@@ -220,7 +220,7 @@ In diesem Abschnitt testen Sie den Code, der Schreibkonflikte durch Ausführen d
 
 	![][5]
 
-8. Da die Version, die mit dem Aktualisierungsversuch verwendet wurde, nicht der Serverversion entspricht, gibt das Mobile Services SDK die Ausnahme `MobileServicePreconditionFailedException` aus, sodass die App diesen Konflikt auflösen kann. Zum Auflösen des Konflikts klicken Sie auf **OK**, um die Werte aus der rechten App zu übernehmen. Sie können auch auf **Abbrechen** klicken, um die Werte in der rechten App zu verwerfen und die Werte aus der linken App zu übernehmen. 
+8. Da die Version, die mit dem Aktualisierungsversuch verwendet wurde, nicht der Serverversion entspricht, gibt das Mobile Services SDK die Ausnahme "MobileServicePreconditionFailedException" aus, sodass die App diesen Konflikt auflösen kann. Zum Auflösen des Konflikts klicken Sie auf **OK**, um die Werte aus der rechten App zu übernehmen. Sie können auch auf **Abbrechen** klicken, um die Werte in der rechten App zu verwerfen und die Werte aus der linken App zu übernehmen. 
 
 	![][6]
 
@@ -230,8 +230,8 @@ In diesem Abschnitt testen Sie den Code, der Schreibkonflikte durch Ausführen d
 
 Sie können Schreibkonflikte auch in Serverskripts erkennen und behandeln. Dies macht Sinn, wenn Sie geskriptete Logik anstelle einer Benutzereingabe für die Konfliktauflösung verwenden möchten. In diesem Abschnitt erstellen Sie ein Serverskript für die TodoItem-Tabelle der Anwendung. Die Logik in diesem Skript wird Konflikte wie folgt auflösen:
 
-+  Falls das ` complete`-Feld der TodoItem-Tabelle den Wert true hat, gilt das Element als abgeschlossen und `text` kann nicht mehr geändert werden.
-+  Falls das ` complete`-Feld der TodoItem-Tabelle den Wert false hat, werden Änderungen an `text` in die Datenbank geschrieben.
++  Falls das "complete"-Feld der TodoItem-Tabelle den Wert "true" hat, gilt das Element als abgeschlossen und "text" kann nicht mehr geändert werden.
++  Falls das "complete"-Feld von TodoItem immer noch den Wert "false" hat, wird für Änderungsversuche an "text" ein Commit ausgeführt.
 
 Führen Sie die folgenden Schritte aus, um ein Serverskript zu erstellen und zu testen.
 
@@ -239,15 +239,15 @@ Führen Sie die folgenden Schritte aus, um ein Serverskript zu erstellen und zu 
 
    	![][7]
 
-2. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+2. Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
 
    	![][8]
 
-3. Klicken Sie auf **Skript**, und wählen Sie den Vorgang **Aktualisieren** aus.
+3. Klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Aktualisieren** aus.
 
    	![][9]
 
-4. Ersetzen Sie das vorhandene Skript durch folgende Funktion, und klicken Sie dann auf **Speichern**.
+4. Ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
 
 		function update(item, user, request) { 
 			request.execute({ 
@@ -272,7 +272,7 @@ Führen Sie die folgenden Schritte aus, um ein Serverskript zu erstellen und zu 
 
 	![][5]
 
-7. Beachten Sie, dass keine Ausnahme in der App aufgetreten ist, da der Konflikt vom Serverskript behandelt und die Änderung durchgeführt wurde, da das Element nicht abgeschlossen ist. Um zu überprüfen, ob die Aktualisierung erfolgreich war, klicken Sie in der App im linken Emulator auf **Refresh**, um die Datenbank erneut abzufragen.
+7. Beachten Sie, dass keine Ausnahme in der App aufgetreten ist, da der Konflikt vom Serverskript behandelt und die Änderung durchgeführt wurde, da das Element nicht abgeschlossen ist. Um zu überprüfen, ob die Aktualisierung erfolgreich war, klicken Sie in der App im linken Emulator auf **Aktualisieren**, um die Datenbank erneut abzufragen.
 
 	![][10]
 
@@ -280,14 +280,14 @@ Führen Sie die folgenden Schritte aus, um ein Serverskript zu erstellen und zu 
 
 	![][11]
 
-9. Versuchen Sie in der App im rechten Emulator, den Text des gleichen "TodoItem" zu aktualisieren, und lösen Sie das "LostFocus-Ereignis aus. Das Skript löst den Konflikt, indem die Änderung abgelehnt wird, da das Element bereits abgeschlossen war. 
+9. Versuchen Sie in der App im rechten Emulator, den Text des gleichen TodoItem zu aktualisieren, und lösen Sie das "LostFocus"-Ereignis aus. Das Skript löst den Konflikt, indem die Änderung abgelehnt wird, da das Element bereits abgeschlossen war. 
 
 	![][12]
 
+* 
+* ## <a name="next-steps"> </a>Nächste Schritte
 
-## <a name="next-steps"> </a>Nächste Schritte
-
-In diesem Lernprogramm wurden die Grundlagen der Behandlung von Schreibkonflikten in Windows Phone 8-Apps bei der Arbeit mit Daten in Mobile Services gezeigt. Anschließend könnten Sie eines der folgenden Lernprogramme in unserer Datenreihe ausführen:
+In diesem Lernprogramm wurden die Grundlagen der Behandlung von Schreibkonflikten in Windows Phone 8-Apps bei der Arbeit mit Daten in Mobile Services gezeigt. Anschließend könnten Sie eines der folgenden Lernprogramme in unserer Daten-Reihe ausführen:
 
 * [Überprüfen und Ändern von Daten mit Skripts]
   <br/>Erfahren Sie mehr über die Verwendung von Serverskripts in Mobile Services, um die von Ihrer App gesendeten Daten zu prüfen und zu ändern.
@@ -297,14 +297,14 @@ In diesem Lernprogramm wurden die Grundlagen der Behandlung von Schreibkonflikte
 
 Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem der folgenden Windows Phone 8-Lernprogramme versuchen:
 
-* [Erste Schritte mit der Authentifizierung] 
+* [Erste Schritte mit der Authentifizierung]
   <br/>Erfahren Sie, wie Benutzer in Ihrer App authentifiziert werden.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Erfahren Sie, wie Sie eine ganz einfache Pushbenachrichtigung mit Mobile Services an Ihre App senden können.
  
 <!-- Anchors. -->
-[Aktualisieren der Anwendung, um Änderungen zu ermöglichen]: #uiupdate
+[Aktualisieren der Anwendung, um Aktualisierungen zu ermöglichen]: #uiupdate
 [Aktivieren der Konflikterkennung in Ihrer Anwendung]: #enableOC
 [Testen auf Datenbank-Schreibkonflikte in Ihrer Anwendung]: #test-app
 [Automatische Konfliktauflösung in Serverskripts]: #scriptsexample
@@ -329,7 +329,7 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 
 
 <!-- URLs. -->
-[Steuerung für optimistische Parallelität]: http://go.microsoft.com/fwlink/?LinkId=330935
+[Steuerung für optimistische Nebenläufigkeit]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
 [Azure-Konto]: http://www.windowsazure.com/de-de/pricing/free-trial/
 [Überprüfen und Ändern von Daten mit Skripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8
@@ -345,3 +345,5 @@ Sobald Sie die Datenreihe abgeschlossen haben, können Sie sich auch an einem de
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Website mit Codebeispielen für Entwickler]:  http://go.microsoft.com/fwlink/p/?LinkId=271146
 [Systemeigenschaften]: http://go.microsoft.com/fwlink/?LinkId=331143
+
+<!--HONumber=35.2-->

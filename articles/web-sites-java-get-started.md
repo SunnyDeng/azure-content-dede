@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Get started with Azure" pageTitle="Erste Schritte mit Microsoft Azure-Websites mit Java" metaKeywords="" description="In diesem Lernprogramm wird gezeigt, wie Sie eine Java-Website an Microsoft Azure bereitstellen." metaCanonical="" services="web-sites" documentationCenter="Java" title="Get started with Azure and Java" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties urlDisplayName="Get started with Azure" pageTitle="Erste Schritte mit Microsoft Azure-Websites mithilfe von Java" metaKeywords="" description="In diesem Lernprogramm erfahren Sie, wie  Sie eine Java-Website auf Microsoft Azure bereitstellen." metaCanonical="" services="web-sites" documentationCenter="Java" title="Get started with Azure and Java" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
@@ -8,7 +8,9 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine Website auf Microsoft Azure mi
 
 Wenn Sie eine dieser Techniken verwenden möchten, beispielsweise wenn Sie Ihren Anwendungscontainer anpassen möchten, finden Sie weitere Informationen unter [Hochladen einer benutzerdefinierten Java-Website in Azure](../web-sites-java-custom-upload).
 
-> [WACOM.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie <a href="/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre MSDN-Abonnementenvorteile aktivieren</a> oder <a href="/en-us/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich für eine kostenlose Testversion registrieren</a>.
+> [WACOM.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie nicht über ein Konto verfügen, können Sie <a href="/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre MSDN-Abonnementvorteile aktivieren</a> oder <a href="/de-de/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich für eine kostenlose Testversion anmelden</a>. 
+> 
+> Wenn Sie mit Azure-Websites beginnen möchten, bevor Sie sich für ein Konto registrieren, rufen Sie <a href="https://trywebsites.azurewebsites.net/?language=java">https://trywebsites.azurewebsites.net</a>auf, wo Sie sofort und kostenlos eine kurzlebige ASP.NET-Startwebsite in Azure-Websites erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 # Erstellen einer Java-Website über die Azure-Anwendungsgalerie
 
@@ -23,7 +25,7 @@ Im Folgenden wird gezeigt, wie eine Website aussieht, die mithilfe von Jetty üb
 ![Web site using Jetty](./media/web-sites-java-get-started/jetty.png)
 
 1. Melden Sie sich im Microsoft Azure-Verwaltungsportal an.
-2. Klicken Sie nacheinander auf **Neu**, **Berechnen**, **Website** und dann **Aus Katalog**.
+2. Klicken Sie nacheinander auf **Neu**, **Berechnen**, **Website** und dann auf **Aus Galerie**.
 3. Wählen Sie in der Liste der Apps einen der Java-Anwendungsserver aus, beispielsweise **Apache Tomcat** oder **Jetty**.
 4. Klicken Sie auf **Weiter**.
 5. Legen Sie den URL-Namen fest.
@@ -39,7 +41,7 @@ Nachdem Sie nun die Website mit einem App-Container erstellt haben, finden Sie i
 Hier erfahren Sie, wie Sie die Azure-Konfigurationsbenutzeroberfläche verwenden, um einen Java-Anwendungscontainer (entweder Apache Tomcat oder Jetty) für Ihre Website auszuwählen.
 
 1. Melden Sie sich im Microsoft Azure-Verwaltungsportal an.
-2. Klicken Sie nacheinander auf **Neu**, **Berechnen**, **Website** und dann **Schnellerfassung**.
+2. Klicken Sie nacheinander auf **Neu**, **Berechnen**, **Website** und dann auf **Schnellerfassung**.
 3. Legen Sie den URL-Namen fest.
 4. Wählen Sie eine Region aus. Zum Beispiel **USA (West)**.
 5. Klicken Sie auf **Fertig stellen**. Nach einem kurzen Augenblick wird Ihre Website erstellt. Um die Website anzuzeigen, öffnen Sie im Azure-Verwaltungsportal die Ansicht **Websites** und warten, bis der Status **Wird ausgeführt** angezeigt wird. Klicken Sie dann auf die URL der Website.
@@ -56,4 +58,6 @@ Nachdem Sie nun die Website mit einem App-Container erstellt haben, finden Sie i
 
 # Nächste Schritte
 
-Sie führen nun einen Java-Anwendungsserver als Ihre Java-Website auf Azure aus. Informationen zum Hinzufügen Ihrer eigenen Anwendung oder Webseite finden Sie unter [Hinzufügen einer Anwendung oder Website zur Ihrer Java-Website](../web-sites-java-add-app).
+Sie führen nun einen Java-Anwendungsserver als Ihre Java-Website auf Azure aus. Informationen zum Hinzufügen Ihrer eigenen Anwendung oder Webseite finden Sie unter [Hinzufügen einer Anwendung oder Website zu Ihrer Java-Website](../web-sites-java-add-app).
+
+<!--HONumber=35.2-->

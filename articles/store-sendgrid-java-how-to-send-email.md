@@ -1,33 +1,31 @@
-﻿<properties urlDisplayName="SendGrid Email Service" pageTitle="Verwenden des SendGrid-E-Mail-Dienstes (Java) - Azure"," metaKeywords="Azure SendGrid, Azure-E-Mail-Dienst, Azure SendGrid Java, Azure E-Mail Java" description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden in Java geschrieben." metaCanonical="" services="" documentationCenter="Java" title="How to Send Email Using SendGrid from Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties urlDisplayName="SendGrid Email Service" pageTitle="Verwenden des E-Mail-Diensts SendGrid (Java) - Azure" metaKeywords="Azure SendGrid, Azure-E-Mail-Dienst, Azure SendGrid Java, Azure-E-Mail Java" description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure versenden. Die Codebeispiele sind in Java geschrieben." metaCanonical="" services="" documentationCenter="Java" title="How to Send Email Using SendGrid from Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 <tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="10/30/2014" ms.author="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork" />
 
 # Senden von E-Mails mit SendGrid aus Java
 
-Dieser Leitfaden veranschaulicht die Durchführung allgemeiner Programmierungsaufgaben mit dem SendGrid-E-Mail-Dienst in Azure. Die Beispiele sind in Java geschrieben. Die behandelten Szenarien umfassen das **Erstellen einer E-Mail**, **Senden einer E-Mail**, **Hinzufügen von Anhängen**, **Verwenden von Filtern** und **Aktualisieren von Eigenschaften**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte][].
+Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufgaben mit dem E-Mail-Dienst SendGrid in Azure. Die Beispiele sind in Java geschrieben. Die behandelten Szenarien umfassen das **Erstellen einer E-Mail**, **Senden einer E-Mail**, **Hinzufügen von Anhängen**, **Verwenden von Filtern** und **Aktualisieren von Eigenschaften**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte][].
 
 ## Inhaltsverzeichnis
 
--   [Was ist der SendGrid-E-Mail-Dienst?][]
--   [SendGrid-Konto erstellen][]
--   [Gewusst wie: Verwenden der javax.mail-Bibliotheken][]
--   [Gewusst wie: Erstellen einer E-Mail][]
--   [Gewusst wie: Senden einer E-Mail][]
--   [Gewusst wie: Hinzufügen eines Anhangs][]
--   [Gewusst wie: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen][]
--   [Gewusst wie: Aktualisieren von E-Mail-Eigenschaften][]
--   [Gewusst wie: Verwenden zusätzlicher SendGrid-Dienste][]
+-   [Was ist der E-Mail-Dienst SendGrid?][]
+-   [Erstellen eines SendGrid-Kontos][]
+-   [Vorgehensweise: Verwenden der javax.mail-Bibliotheken][]
+-   [Vorgehensweise: Erstellen einer E-Mail][]
+-   [Vorgehensweise: Senden einer E-Mail][]
+-   [Vorgehensweise: Hinzufügen einer Anlage][]
+-   [Vorgehensweise: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen][]
+-   [Vorgehensweise: Aktualisieren von E-Mail-Eigenschaften][]
+-   [Vorgehensweise: Verwenden zusätzlicher SendGrid-Dienste][]
 -   [Nächste Schritte][]
 
-## <a name="bkmk_WhatIsSendGrid"> </a>Was ist der SendGrid-E-Mail-Dienst?
+## <a name="bkmk_WhatIsSendGrid"> </a>Was ist der E-Mail-Dienst SendGrid?
 
-SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktionale E-Mail-Übermittlung], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die eine benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
+SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktionale E-Mail-Übermittlung], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
 
 -   Automatisches Versenden von Empfangsbestätigungen an Kunden
--   Verwalten von Verteilerlisten, um Kunden monatlich
-    E-Flyer und spezielle Angebote zu senden
--   Sammeln von Echtzeit-Kennzahlen für Sachverhalte wie gesperrte E-Mails und
-    Kundenreaktionsfähigkeit
+-   Verwalten von Verteilungslisten zum Senden von monatlichen e-Flyern und speziellen Angeboten an Kunden
+-   Sammeln von Echtzeit-Kennzahlen für Sachverhalte wie gesperrte E-Mails oder Kundenreaktionsfähigkeit
 -   Generieren von Berichten zur Identifizierung von Trends
 -   Weiterleiten von Kundenanfragen
 - E-Mail-Benachrichtigungen von Ihrer Anwendung aus
@@ -36,17 +34,19 @@ Weitere Informationen finden Sie unter <http://sendgrid.com>.
 
 ## <a name="bkmk_CreateSendGridAcct"> </a>SendGrid-Konto erstellen
 
-[WACOM.INCLUDE [SendGrid-Anmeldung](../includes/sendgrid-sign-up.md)]
+[WACOM.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
-## <a name="bkmk_HowToUseJavax"> </a>Gewusst wie: Verwenden der javax.mail-Bibliotheken
+## <a name="bkmk_HowToUseJavax"> </a>Vorgehensweise: Verwenden der javax.mail-Bibliotheken
 
-Rufen Sie die javax.mail-Bibliotheken z. B. von
-<http://www.oracle.com/technetwork/java/javamail> ab und importieren Sie sie in
-Ihren Code. Der Prozess zur Verwendung der javax.mail-Bibliothek
-zum Senden von E-Mails mithilfe von SMTP sieht im Allgemeinen folgendermaßen aus:
+Rufen Sie die javax.mail-Bibliotheken z. B. unter <http://www.oracle.com/technetwork/java/javamail> ab, und importieren Sie diese in Ihren Code. Auf oberer Ebene dient der Prozess zur Verwendung der javax.mail-Bibliothek zum Senden von E-Mails per SMTP für Folgendes:
 
-1.  Geben Sie die SMTP-Werte an, einschließlich des SMTP-Servers, der für
-    SendGrid smtp.sendgrid.net ist.
+1.  Geben Sie die SMTP-Werte einschließlich des SMTP-Servers an. Für
+    SendGrid ist dies "smtp.sendgrid.net".
+    
+        import java.util.Properties;
+        import javax.activation.*;
+        import javax.mail.*;
+        import javax.mail.internet.*;
 
         public class MyEmailer {
 	       private static final String SMTP_HOST_NAME = "smtp.sendgrid.net";
@@ -66,10 +66,7 @@ zum Senden von E-Mails mithilfe von SMTP sieht im Allgemeinen folgendermaßen au
            	  properties.put("mail.smtp.auth", "true");
            	  // ...
 
-2.  Erweitern Sie die Klasse <span class="auto-style1">javax.mail.Authenticator</span>
-    und geben Sie in der Implementierung der
-    <span class="auto-style1">getPasswordAuthentication</span>-Methode
-    Ihren SendGrid-Benutzernamen und das Kennwort zurück.  
+2.  Erweitern Sie die Klasse <span class="auto-style1">"javax.mail.Authenticator", und geben Sie</span>     in Ihrer Implementierung der Methode     <span class="auto-style1">"getPasswordAuthentication"</span> Ihren SendGrid-Benutzernamen und das Kennwort zurück.  
 
         private class SMTPAuthenticator extends javax.mail.Authenticator {
         public PasswordAuthentication getPasswordAuthentication() {
@@ -78,20 +75,16 @@ zum Senden von E-Mails mithilfe von SMTP sieht im Allgemeinen folgendermaßen au
            return new PasswordAuthentication(username, password);
         }
 
-3.  Erstellen Sie eine authentifizierte E-Mail-Sitzung über ein
-    <span class="auto-style1">javax.mail.Session</span>-Objekt.  
+3.  Richten Sie eine authentifizierte E-Mail-Sitzung über ein
+    <span class="auto-style1">javax.mail.Session-Objekt</span> .  
 
         Authenticator auth = new SMTPAuthenticator();
         Session mailSession = Session.getDefaultInstance(properties, auth);
 
-4.  Erstellen Sie Ihre Nachricht und weisen Sie **An**, **Von**, **Betreff** und
-    "Inhalt" Werte zu. Dies wird im Abschnitt [Vorgehensweise: Erstellen einer E-Mail](#bkmk_HowToCreateEmail) dargestellt.
-5.  Senden Sie die Nachricht über ein
-    <span class="auto-style1">javax.mail.Transport</span>-Objekt. Dies
-    wird im Abschnitt [Vorgehensweise: Senden einer E-Mail][How to: Send an Email]
-    dargestellt.
+4.  Erstellen Sie Ihre Nachricht, und weisen Sie die Werte für **To**, **From**, **Subject** und den Inhalt zu. Dies wird im Abschnitt [Vorgehensweise: Erstellen einer E-Mail](#bkmk_HowToCreateEmail) gezeigt.
+5.  Senden Sie die Nachricht über ein     <span class="auto-style1">javax.mail.Transport-Objekt</span> . Dies wird im Abschnitt [Vorgehensweise: Senden einer E-Mail][How to: Send an Email] gezeigt.
 
-## <a name="bkmk_HowToCreateEmail"> </a>Gewusst wie: Erstellen einer E-Mail
+## <a name="bkmk_HowToCreateEmail"> </a>Vorgehensweise: Erstellen einer E-Mail
 
 Im Folgenden ist dargestellt, wie Sie Werte für eine E-Mail angeben.
 
@@ -113,7 +106,7 @@ Im Folgenden ist dargestellt, wie Sie Werte für eine E-Mail angeben.
     message.setSubject("Your recent order");
     message.setContent(multipart);
 
-## <a name="bkmk_HowToSendEmail"> </a>Gewusst wie: Senden einer E-Mail
+## <a name="bkmk_HowToSendEmail"> </a>Vorgehensweise: Senden einer E-Mail
 
 Im Folgenden ist dargestellt, wie Sie eine E-Mail versenden.
 
@@ -121,13 +114,13 @@ Im Folgenden ist dargestellt, wie Sie eine E-Mail versenden.
     // Connect the transport object.
     transport.connect();
     // Send the message.
-    transport.sendMessage(message, message.getRecipients(Message.RecipientType.TO));
+    transport.sendMessage(message, message.getAllRecipients());
     // Close the connection.
     transport.close();
 
-## <a name="bkmk_HowToAddAttachment"> </a>Gewusst wie: Hinzufügen eines Anhangs
+## <a name="bkmk_HowToAddAttachment"> </a>Vorgehensweise: Hinzufügen einer Anlage
 
-Der folgende Code zeigt, wie Sie einen Anhang hinzufügen.
+Der folgende Code zeigt, wie Sie eine Anlage hinzufügen.
 
     // Local file name and path.
     String attachmentName = "myfile.zip";
@@ -141,12 +134,12 @@ Der folgende Code zeigt, wie Sie einen Anhang hinzufügen.
     attachmentPart.setFileName(attachmentName);
     multipart.addBodyPart(attachmentPart);
 
-## <a name="bkmk_HowToUseFilters"> </a>Gewusst wie: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen
+## <a name="bkmk_HowToUseFilters"> </a>Vorgehensweise: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen
 
-SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von "Filtern". Hierbei handelt es sich um Einstellungen, die zu einer E-Mail-Nachricht hinzugefügt werden können, um spezifische Funktionen wie etwa Aktivierung von Klickprotokollierung, Google Analytics, Abonnement-Tracking usw. zu ermöglichen. Eine vollständige Liste der verfügbaren Filter finden Sie unter [Filtereinstellungen][].
+SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von *Filtern*. Hierbei handelt es sich um Einstellungen, die zu einer E-Mail-Nachricht hinzugefügt werden können, um spezifische Funktionen wie etwa Aktivierung von Klickprotokollierung, Google Analytics, Abonnement-Tracking usw. zu ermöglichen. Eine vollständige Liste der Filter finden Sie unter [Filtereinstellungen][].
 
--   Das folgende Beispiel zeigt, wie Sie einen Fußzeilenfilter einfügen können, sodass
-    HTML-Text am unteren Rand der zu sendenden E-Mail angezeigt wird.
+-   Das folgende Beispiel zeigt, wie ein Fußzeilenfilter eingefügt wird, der bewirkt, dass
+    HTML-Text unten in der E-Mail angezeigt wird, die gesendet wird.
 
         message.addHeader("X-SMTPAPI", 
 			"{\"filters\": 
@@ -155,7 +148,7 @@ SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von "Filtern
         	{\"enable\":1,\"text/html\": 
 			\"<html><b>Thank you</b> for your business.</html>\"}}}}");
 
--   Ein weiteres Beispiel für einen Filter ist die Klickprotokollierung. Angenommen, Ihr E-Mail-Text enthält einen Hyperlink, wie etwa den folgenden, und Sie möchten die Klickrate nachverfolgen: 
+-   Ein weiteres Beispiel für einen Filter ist die Klickprotokollierung. Angenommen, Ihr E-Mail-Text enthält einen Link (wie etwa den folgenden), und Sie möchten die Klickrate nachverfolgen:
 
         messagePart.setContent(
 			"Hello,
@@ -172,9 +165,9 @@ SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von "Filtern
 			{\"settings\": 
         	{\"enable\":1}}}}");
 
-## <a name="bkmk_HowToUpdateEmail"> </a>Gewusst wie: Aktualisieren von E-Mail-Eigenschaften
+## <a name="bkmk_HowToUpdateEmail"> </a>Vorgehensweise: Aktualisieren von E-Mail-Eigenschaften
 
-Einige E-Mail-Eigenschaften können mithilfe von **set*Property*** überschrieben oder mit **add*Property*** angehängt werden.
+Einige E-Mail-Eigenschaften können mithilfe von **set*Property*** überschrieben oder mithilfe von **add*Property*** angefügt werden.
 
 Um z. B. die **ReplyTo**-Adressen anzugeben, können Sie folgenden Code verwenden:
 
@@ -189,36 +182,41 @@ Um einen **Cc**-Empfänger hinzuzufügen, können Sie folgenden Code verwenden:
     message.addRecipient(Message.RecipientType.CC, new 
     InternetAddress("john@contoso.com"));
 
-## <a name="bkmk_HowToUseAdditionalSvcs"> </a>Gewusst wie: Verwenden zusätzlicher SendGrid-Dienste
+## <a name="bkmk_HowToUseAdditionalSvcs"> </a>Vorgehensweise: Verwenden zusätzlicher SendGrid-Dienste
 
-SendGrid bietet webbasierte APIs, die Sie zur Nutzung zusätzlicher SendGrid-Funktionen aus Ihrer Azure-Anwendung einsetzen können. Ausführliche Informationen finden Sie in der [SendGrid-API-Dokumentation][].
+SendGrid bietet webbasierte APIs, mit denen Sie zusätzliche
+SendGrid-Funktionen aus Ihrer Azure-Anwendung nutzen können. Ausführliche
+Informationen finden Sie in der [Dokumentation zur SendGrid-API][].
 
 ## <a name="bkmk_NextSteps"> </a>Nächste Schritte
 
-Nachdem Sie sich nun mit den Grundlagen des SendGrid-E-Mail-Dienstes vertraut gemacht haben, finden Sie unter diesen Links weitere Informationen.
+Nachdem Sie nun mit den Grundlagen des E-Mail-Diensts SendGrid vertraut sind, finden Sie unter
+diesen Links weitere Informationen.
 
 * Beispiel, das die Verwendung von SendGrid in einer Azure-Bereitstellung darstellt: [Senden von E-Mails mit SendGrid aus Java in einer Azure-Bereitstellung](../store-sendgrid-java-how-to-send-email-example/)
 * SendGrid Java-SDK: <https://sendgrid.com/docs/Code_Examples/java.html>
-* SendGrid-API-Dokumentation: <https://sendgrid.com/docs/API_Reference/index.html>
+* Dokumentation zur SendGrid-API: <https://sendgrid.com/docs/API_Reference/index.html>
 * Spezielles SendGrid-Angebot für Azure-Kunden: <https://sendgrid.com/windowsazure.html>
 
   [Nächste Schritte]: #bkmk_NextSteps
-  [Was ist der SendGrid-E-Mail-Dienst?]: #bkmk_WhatIsSendGrid
+  [Was ist der E-Mail-Dienst SendGrid?]: #bkmk_WhatIsSendGrid
   [Erstellen eines SendGrid-Kontos]: #bkmk_CreateSendGridAcct
-  [Gewusst wie: Verwenden der javax.mail-Bibliotheken]: #bkmk_HowToUseJavax
-  [Gewusst wie: Erstellen einer E-Mail]: #bkmk_HowToCreateEmail
-  [Gewusst wie: Senden einer E-Mail]: #bkmk_HowToSendEmail
-  [Gewusst wie: Hinzufügen eines Anhangs]: #bkmk_HowToAddAttachment
-  [Gewusst wie: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen]: #bkmk_HowToUseFilters
-  [Gewusst wie: Aktualisieren von E-Mail-Eigenschaften]: #bkmk_HowToUpdateEmail
-  [Gewusst wie: Verwenden zusätzlicher SendGrid-Dienste]: #bkmk_HowToUseAdditionalSvcs
+  [Vorgehensweise: Verwenden der javax.mail-Bibliotheken]: #bkmk_HowToUseJavax
+  [Vorgehensweise: Erstellen einer E-Mail]: #bkmk_HowToCreateEmail
+  [Vorgehensweise: Senden einer E-Mail]: #bkmk_HowToSendEmail
+  [Vorgehensweise: Hinzufügen einer Anlage]: #bkmk_HowToAddAttachment
+  [Vorgehensweise: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen]: #bkmk_HowToUseFilters
+  [Vorgehensweise: Aktualisieren von E-Mail-Eigenschaften]: #bkmk_HowToUpdateEmail
+  [Vorgehensweise: Verwenden zusätzlicher SendGrid-Dienste]: #bkmk_HowToUseAdditionalSvcs
   [http://sendgrid.com]: https://sendgrid.com
   [http://sendgrid.com/pricing.html]: http://sendgrid.com/pricing.html
   [http://www.sendgrid.com/azure.html]: https://www.sendgrid.com/windowsazure.html
   [http://sendgrid.com/features]: https://sendgrid.com/features
   [http://www.oracle.com/technetwork/java/javamail]: http://www.oracle.com/technetwork/java/javamail/index.html
   [Filtereinstellungen]: https://sendgrid.com/docs/API_Reference/Web_API/filter_settings.html
-  [SendGrid-API-Dokumentation]: https://sendgrid.com/docs/API_Reference/index.html
+  [Dokumentation zur SendGrid-API]: https://sendgrid.com/docs/API_Reference/index.html
   [http://sendgrid.com/azure.html]: https://sendgrid.com/windowsazure.html
-  [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
-  [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
+  [cloud-based email service]: https://sendgrid.com/email-solutions
+  [transactional email delivery]: https://sendgrid.com/transactional-email
+
+<!--HONumber=35.2-->

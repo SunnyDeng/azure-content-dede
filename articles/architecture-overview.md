@@ -1,63 +1,45 @@
-<properties linkid="develop-net-architecture sublanding" urlDisplayName="" pageTitle="Architecture" metaKeywords="" description="Architecture overview that covers common design patterns" metaCanonical="" services="" documentationCenter="" videoId="" scriptId="" title="Architecture Overview" authors="robb" solutions="" manager="johndaw" editor="mattshel" />
+﻿<properties urlDisplayName="" pageTitle="Architektur" metaKeywords="" description="Architekturübersicht mit gängigen Entwurfsmustern" metaCanonical="" services="" documentationCenter="" videoId="" scriptId="" title="Architecture Overview" authors="robb" solutions="" manager="johndaw" editor="mattshel" />
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="robb" />
+<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/25/2014" ms.author="robb" />
 
-# Architektur
+#Architektur
+Ressourcen zum Erstellen von Anwendungen, die Microsoft Azure verwenden.
 
-Erfahren Sie, wie Sie häufig verwendete Entwurfsmuster in Azure implementieren können.
+##Microsoft-Architekturpläne
 
-### Symbolsatz für Azure
+Microsoft veröffentlicht jetzt eine Reihe von allgemeinen Architekturplänen, die veranschaulichen, wie bestimmte Systemtypen mit Microsoft Azure-Diensten erstellt werden. Jeder Plan umfasst eine auf Visio-basierte 2D-Datei, die Sie herunterladen und bearbeiten können, eine anschaulichere 3D-PDF-Datei, um eine Einführung zum Plan und ein Video bereitzustellen, das durch die 3D-PDF-Datei führt. Weitere Informationen finden Sie unter 
+[Microsoft-Architekturpläne](http://msdn.microsoft.com/dn630664).
 
-[Laden Sie den Symbolsatz für Azure herunter][Laden Sie den Symbolsatz für Azure herunter], um technisches Informationsmaterial im Stil von Azure zu erstellen, beispielsweise Architekturdiagramme, Schulungsmaterialien, Präsentationen, Datenblätter, Infografiken und Whitepaper. Sie können die Symbole in den Formaten PPT, Visio oder PNG herunterladen. Ihr Feedback ist uns sehr wichtig. Daher ist im Download eine Feedback-Anleitung enthalten.
+![Microsoft Architecture Blueprint 3D diagram][BluePrint]
 
-![Symbolsatz für Azure][Symbolsatz für Azure]
+##Symbolsatz für Azure
 
-## Entwurfsmuster
+[Laden Sie den Symbolsatz für Azure herunter](http://www.microsoft.com/de-de/download/details.aspx?id=41937), um technisches Informationsmaterial im Stil von Azure zu erstellen, beispielsweise Architekturdiagramme, Schulungsmaterialien, Präsentationen, Datenblätter, Infografiken und Whitepaper. Sie können die Symbole in den Formaten PPT, Visio oder PNG herunterladen. Ihr Feedback ist uns sehr wichtig. Daher ist im Download eine Feedback-Anleitung enthalten.
 
-### [Konkurrierende Consumer][Konkurrierende Consumer]
+Die 2D-Diagramme der [Microsoft Architekturpläne](http://msdn.microsoft.com/dn630664) verwenden diese Symbole. 
 
-![Konkurrierende Consumer][1]
+Der Symbolsatz wird erweitert, um Cloud- und Enterprise-Symbole in der nächsten Version einzuschließen. Häufig werden neue Azure-Dienste veröffentlicht, bevor der Download aktualisiert wurde. Wenn Sie eine Vorschau auf den neuen Satz oder neue Symbole für neue Azure-Dienste anzeigen möchten, senden Sie eine E-Mail an [AzureSymbols@microsoft.com](mailto:AzureSymbols@microsoft.com).  
 
-Mehrere nebenläufige Consumer können Nachrichten verarbeiten, die über denselben Nachrichtenkanal eingegangen sind. Dieses Muster ermöglicht ein System, mit dem mehrere Nachrichten gleichzeitig verarbeitet werden können. So wird der Durchsatz optimiert, Skalierbarkeit und Verfügbarkeit werden erhöht und die Arbeitsauslastung wird ausgeglichen.
+Wenn Sie die Symbole verwendet haben, stellen Sie sicher, dass Sie die fünf Fragen umfassende kurze [Umfrage](http://aka.ms/azuresymbolssurveyv1) ausfüllen, um uns wissen zu lassen, ob diese nützlich sind und wie sie verwendet werden.   
 
-### [Zuständigkeitstrennung für Befehle und Abfragen][Zuständigkeitstrennung für Befehle und Abfragen]
+![Azure Symbol/Icon set][azure_symbols]
 
-![Zuständigkeitstrennung für Befehle und Abfragen][2]
+##Entwurfsmuster
+Microsoft Patterns and Practices hat das Buch zu [Cloud-Entwurfsmustern](http://msdn.microsoft.com/de-de/library/dn568099.aspx) veröffentlicht, das sowohl auf MSDN und als PDF-Download erhältlich ist. Es ist zudem ein großformatiges Poster verfügbar, auf dem alle Muster aufgelistet sind. 
 
-Trennen Sie Vorgänge, die Daten lesen, von Vorgängen, die Daten aktualisieren, durch unterschiedliche Schnittstellen. Mit diesem Muster können Sie Leistung, Skalierbarkeit und Sicherheit optimieren. Sie erreichen dank höherer Flexibilität im Laufe der Zeit eine Weiterentwicklung des Systems. Außerdem können Sie verhindern, dass Aktualisierungsbefehle auf Domänenebene Zusammenführungskonflikte auslösen.
+![Patterns and Practices Cloud Patterns Poster][PnPPoster]
 
-### [Auswahl einer übergeordneten Instanz][Auswahl einer übergeordneten Instanz]
+##Infografiken zur Architektur
+Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu zählen [Erstellen echter Cloud-Anwendungen](http://azure.microsoft.com/de-de/documentation/infographics/building-real-world-cloud-apps/) und [Skalieren mit Cloud-Diensten](http://azure.microsoft.com/de-de/documentation/infographics/cloud-services/) . 
 
-![Auswahl einer übergeordneten Instanz][3]
 
-Sie können die Aktionen koordinieren, die eine Sammlung zusammenarbeitender Aufgabeninstanzen in einer dezentralen Anwendung ausführt. Wählen Sie eine übergeordnete Instanz aus, die für die Verwaltung der anderen Instanzen zuständig ist. Mit diesem Muster können Sie sicherstellen, dass Aufgabeninstanzen nicht miteinander in Konflikt geraten, bei gemeinsam genutzten Ressourcen Konflikte auslösen oder unabsichtlich Vorgänge stören, die andere Aufgabeninstanzen durchführen.
+![Azure Architecture Infographics][AzureInfographic]
 
-### [Pipes und Filter][Pipes und Filter]
 
-![Pipes und Filter][4]
 
-Sie können eine Aufgabe, die komplexe Verarbeitung umfasst, in einer Reihe separater Elemente zerlegen, die erneut verwendet werden können. Mit diesem Muster können Sie Leistung, Skalierbarkeit und Wiederverwendbarkeit optimieren, indem Aufgabenelemente, die für die Verarbeitung zuständig sind, unabhängig bereitgestellt und skaliert werden.
+[BluePrint]: ./media/architecture-overview/BluePrintThumb.png
+[azure_symbols]: ./media/architecture-overview/AzureSymbols.png
+[PnPPoster]: ./media/architecture-overview/PnPPatternPosterThumb.png
+[AzureInfographic]: ./media/architecture-overview/AzureArchInfographicThumb.png
 
-### [Eingeschränkter Schlüssel][Eingeschränkter Schlüssel]
-
-![Eingeschränkter Schlüssel][5]
-
-Sie können ein Token oder einen Schlüssel verwenden, um Clients eingeschränkten direkten Zugriff auf eine bestimmte Ressource oder einen bestimmten Dienst zu gewähren. Dies dient dazu, Datenübertragungsoperationen aus dem Anwendungscode auszulagern. Dieses Muster ist besonders hilfreich bei Anwendungen, die in der Cloud gehostete Speichersysteme oder Warteschlangen verwenden. Sie können außerdem Kosten minimieren sowie Skalierbarkeit und Leistung maximieren.
-
-### Zusätzliche Anleitungen
-
-Informationen zu weiteren Entwicklungsmustern in Azure finden Sie unter [Cloudentwicklungsmuster][Cloudentwicklungsmuster].
-
-  [Laden Sie den Symbolsatz für Azure herunter]: http://www.microsoft.com/de-de/download/details.aspx?id=41937
-  [Symbolsatz für Azure]: ./media/architecture-overview/AzureSymbols.png
-  [Konkurrierende Consumer]: http://msdn.microsoft.com/de-de/library/dn568101.aspx
-  [1]: ./media/architecture-overview/CompetingConsumers.png
-  [Zuständigkeitstrennung für Befehle und Abfragen]: http://msdn.microsoft.com/de-de/library/dn568103.aspx
-  [2]: ./media/architecture-overview/CQRS.png
-  [Auswahl einer übergeordneten Instanz]: http://msdn.microsoft.com/de-de/library/dn568104.aspx
-  [3]: ./media/architecture-overview/LeaderElection.png
-  [Pipes und Filter]: http://msdn.microsoft.com/de-de/library/dn568100.aspx
-  [4]: ./media/architecture-overview/PipesAndFilters.png
-  [Eingeschränkter Schlüssel]: http://msdn.microsoft.com/de-de/library/dn568102.aspx
-  [5]: ./media/architecture-overview/ValetKey.png
-  [Cloudentwicklungsmuster]: http://msdn.microsoft.com/de-de/library/dn568099.aspx
+<!--HONumber=35.2-->

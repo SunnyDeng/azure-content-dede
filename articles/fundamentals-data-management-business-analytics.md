@@ -1,11 +1,13 @@
-﻿<properties urlDisplayName="Storage" pageTitle="Datenverwaltung und Business Analytics - Azure" metaKeywords="Azure Storage, Azure Storage, Azure-Cloud-Datenbank, Azure Verwaltung von Daten, Azure-Analyse" description="An introduction to managing and analyzing data in Azure. A range of options are provided for working with relational and non-relational data." metaCanonical="" services="sql-database,storage" documentationCenter=".NET" title="" authors="robb" solutions="" manager="johndaw" editor="" />
+﻿<properties urlDisplayName="Storage" pageTitle="Datenverwaltung und Business Analytics - Azure" metaKeywords="Azure Storage, Azure Storage, Azure-Cloud-Datenbank, Azure Verwaltung von Daten, Azure-Analyse" description="Eine Einführung zur Verwaltung und Analyse von Daten in Azure. Für die Arbeit mit relationalen und nicht relationalen Daten stehen zahlreiche Optionen zur Verfügung." metaCanonical="" services="sql-database,storage" documentationCenter=".NET" title="" authors="jhubbard" solutions="" manager="jhubbard" editor="" />
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="robb" />
-
-
+<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="9/1/2014" ms.author="jhubbard" />
 
 
 
 
 
-[WACOM.INCLUDE [Cloud-storage](../includes/cloud-storage.md)]
+
+
+[WACOM.INCLUDE [cloud-storage](../includes/cloud-storage.md)]
+
+<!--HONumber=35.2-->

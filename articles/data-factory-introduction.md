@@ -1,9 +1,9 @@
-﻿<properties title="Introduction to Azure Data Factory" pageTitle="Einführung in Azure Data Factory" description="Erfahren Sie, wie Sie mithilfe des Azure Data Factory-Diensts Datenverarbeitungs-, Datenspeicher- und Datenverschiebungsdienste entwickeln können, um Pipelines zu erstellen, die vertrauenswürdige Informationen erzeugen." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties title="Introduction to Azure Data Factory" pageTitle="Einführung in Azure Data Factory" description="Erfahren Sie, wie Sie mit dem Azure Data Factory-Dienst zur Verarbeitung, Speicherung und Verschiebung von Daten Pipelines erstellen können, durch die vertrauenswürdige Informationen erzeugt werden." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="spelluru" />
+<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/13/2014" ms.author="spelluru" />
 
 # Einführung in den Azure Data Factory-Dienst
-Der Dienst **Azure Data Factory** ist ein vollständig verwalteter Dienst für das Kombiniern von Datenspeicherung, -verschiebung und Verarbeitungsdiensten in optimierten, skalierbaren und zuverlässigen Datenproduktions-Pipelines.  Entwickler können Data Factory verwenden, um halbstrukturierte, unstrukturierte und strukturierte Daten aus lokalen und Cloud-Quellen in vertrauenswürdige Informationen umzuwandeln. Entwickler erstellen datengesteuerte Workflows (Pipelines), die Daten aus ihren lokalen, cloudbasierten und Internetdiensten verknüpfen, zusammenführen und umwandeln und durch einfache JSON-Skripterstellung eine komplexe Datenverarbeitung einrichten. Der Azure Data Factory-Dienst ermöglicht dank umfassender visueller Darstellung über das Azure-Vorschauportal eine Überwachung und Verwaltung dieser Pipelines auf einen Blick. Die von Pipelines produzierten Informationen können mithilfe von BI- und Analysetools und anderen Anwendungen problemlos verarbeitet werden und ermöglichen so zuverlässige geschäftliche Einblicke und Entscheidungen.
+Der **Azure Data Factory**-Dienst ist ein vollständig verwalteter Dienst für das Kombinieren von Datenspeicherung, -verschiebung und Verarbeitungsdiensten in optimierten, skalierbaren und zuverlässigen Datenproduktions-Pipelines.  Entwickler können mit Data Factory halbstrukturierte, unstrukturierte und strukturierte Daten aus lokalen und Cloud-Quellen in vertrauenswürdige Informationen umwandeln. Entwickler erstellen datengesteuerte Workflows (Pipelines), die Daten aus ihren lokalen, cloudbasierten und Internetdiensten verknüpfen, zusammenführen und umwandeln und durch einfache JSON-Skripterstellung eine komplexe Datenverarbeitung einrichten. Der Azure Data Factory-Dienst ermöglicht dank umfassender visueller Darstellung über das Azure-Vorschauportal eine Überwachung und Verwaltung dieser Pipelines auf einen Blick. Die von Pipelines produzierten Informationen können mithilfe von BI- und Analysetools und anderen Anwendungen problemlos verarbeitet werden und ermöglichen so zuverlässige geschäftliche Einblicke und Entscheidungen.
 
 Dieser Artikel bietet einen Überblick über den Azure Data Factory-Dienst, den daraus entstehenden Nutzen sowie die unterstützten Szenarien. 
 
@@ -26,9 +26,9 @@ Dank der Data Factory können Sie Daten dort verwenden, wo sie gespeichert sind,
 - **Umwandeln von Daten in vertrauenswürdige Informationen.** 
 Für das Kombinieren und Formen komplexer Daten ist häufig mehr als ein Versuch erforderlich, und veränderliche Datenmodelle können teuer und zeitaufwändig sein.  Mit Data Factory können Sie sich auf Transformationsanalysen konzentrieren, während der Dienst die Infrastruktur übernimmt.  Data Factory unterstützt neben wichtigen Verarbeitungsfunktionen wie automatisches Hadoop (HDInsight), Clusterverwaltung, Wiederholungen bei vorübergehenden Fehlern, konfigurierbare Zeitüberschreitungsrichtlinien und Warnungen, Hive, Pig und C#-Verarbeitung.  
 - **Zentrale Überwachung von Datenpipelines.** 
-Bei einem vielfältigen Datenportfolio ist eine zuverlässige und vollständige Ansicht Ihrer Speicherungs-, Verarbeitungs- und Datenverschiebungsdienste wichtig.  Mithilfe von Data Factory können Sie schnell den Zustand der End-to-End-Datenpipeline überprüfen, Probleme lokalisieren und bei Bedarf Korrekturmaßnahmen ergreifen. Sie können die Datenherkunft und die Beziehungen zwischen den Daten über alle Quellen hinweg visuell darstellen. Über ein einziges Überwachungs-Dashboard können Sie die vollständigen historischen Informationen der Auftragsausführung, der Systemintegrität und Abhängigkeiten anzeigen.
+Bei einem Portfolio mit unterschiedlichen Daten ist es wichtig, eine zuverlässige und umfassende Ansicht der Speicherungs-, Verarbeitungs- und Datenverschiebungsdienste.  Data Factory hilft Ihnen, die Integrität der End-to-End-Datenpipeline schnell zu bewerten, Probleme zu identifizieren und Korrekturmaßnahmen zu ergreifen. Sie können die Datenherkunft und die Beziehungen zwischen den Daten über alle Quellen hinweg visuell darstellen. Über ein einziges Überwachungs-Dashboard können Sie die vollständigen historischen Informationen der Auftragsausführung, der Systemintegrität und Abhängigkeiten anzeigen.
 - **Umfassender Einblick anhand transformierter Daten**
-Passen Sie sich an die ständig ändernden Fragen an, die Ihr Unternehmen beantworten muss, und behalten Sie den Überblick darüber, wann Sie mit der Datenproduktion loslegen können.  Verbessern Sie Ihre Fähigkeit, bessere Geschäftseinblicke zu erhalten, indem Sie zeitnahe und zuverlässige Informationen produzieren. Verwenden Sie Datenpipelines zum Übermitteln transformierter Daten aus der Cloud an lokale Datenquellen wie SQL Server, oder speichern Sie die Daten in Ihren Cloud-Speicherquellen, damit diese von BI- und Analysetools und anderen Anwendungen verwendet werden können.
+Anpassung an die sich ständig verändernden Fragen, die Ihr Unternehmen beantworten muss, und Bewahrung des Überblicks, wenn die Datenproduktion bereit ist.  Optimieren Sie Ihre Möglichkeit, bessere geschäftliche Einblicke zu erhalten, indem zeitnahe und vertrauenswürdige Informationen bereitgestellt werden. Verwenden Sie Datenpipelines zum Übermitteln transformierter Daten aus der Cloud an lokale Datenquellen wie SQL Server, oder speichern Sie die Daten in Ihren Cloud-Speicherquellen, damit diese von BI- und Analysetools und anderen Anwendungen verwendet werden können.
 
 Um heutzutage Nutzen aus den Vorteilen der Data Factory zu ziehen, interagieren Entwickler direkt mit einzelnen Datenpipelines, Speicherdiensten und Serverdiensten.  Im Zuge der Weiterentwicklung des Data Factory-Diensts wird es zusätzliche Speicher- und Verarbeitungsdienste sowie neue Gruppierungsmechanismen von Server- und Speicherdiensten mit Datenpipelines in so genannten 'Hubs' geben.  In dieser Einführung werden Hubs beschrieben, da dieses neu aufkommende Konzept in dem gesamten Dienst als Vorläufer für künftige Versionen erscheint.
 
@@ -44,19 +44,19 @@ Es gibt eine Vielzahl von Szenarios für Datenpipelines, die von lokalen Systeme
 
 Unternehmen verfügen über Daten unterschiedlichen Typs, die sich in unterschiedlichen Quellen befinden.  Der erste Schritt bei der Erstellung eines Informationsproduktionssystems besteht darin, alle erforderlichen Quellen von Daten und Verarbeitung, z. B. SaaS-Dienste, Dateifreigaben, FTP und Webdienste, miteinander zu verbinden und die Daten wie für die weitere Verarbeitung erforderlich zu verschieben.
 
-Ohne Data Factory müssen Unternehmen benutzerdefinierte Datenverschiebungskomponenten erstellen oder benutzerdefinierte Dienste zur Integration dieser Datenquellen und Verarbeitung schreiben.  Dies ist teuer, und es ist schwierig, solche Systeme zu verwalten. Häufig fehlen dabei auch die robusten Überwachugns- und Warnfunktionen sowie die Steuerungen, die ein vollständig verwalteter Dienst bietet.
+Ohne Data Factory müssen Unternehmen benutzerdefinierte Datenverschiebungskomponenten erstellen oder benutzerdefinierte Dienste zur Integration dieser Datenquellen und Verarbeitung schreiben.  Dies ist teuer, und es ist schwierig, solche Systeme zu verwalten. Häufig fehlen dabei auch die robusten Überwachungs- und Warnfunktionen sowie die Steuerungen, die ein vollständig verwalteter Dienst bietet.
   
 Bei Azure Data Factory werden Datenspeicherungs- und Verarbeitungsdienste in einem Hub-Container gesammelt, der Verarbeitungs- und Speicheraktivitäten erleichtert und optimiert, eine einheitliche Verwaltung des Ressourcenverbrauchs ermöglicht und bei Bedarf Dienste für die Datenverschiebung bereitstellt.
 
 ###Szenario 2: Operationalisieren der Informationsproduktion
 
-Operationalisierungsszenarien sind der nächste logische Schritt nach den Datenquellenszenarios. Sobald in einem Hub Daten vorhanden sind, sollten Sie Datenpipelines erstellen und in Betrieb nehmen, um zuverlässig transformierte Daten basierend auf einem verwaltbaren und kontrollierten Zeitplan zu produzieren, damit Produktionsumgebungen mit zuverlässigen Daten versorgt werden können.  Die Datentransformation in der Azure Data Factory erfolgt über Hive, Pig und benutzerdefinierte C#-Verarbeitung, die auf Hadoop (Azure HDInsight) ausgeführt wird.  Diese Transformationen können verwendet werden, um Daten zu bereinigen, wichtige Datenfelder zu verbergen und andere Vorgänge für die Daten auf komplexe Art und Weise auszuführen.  Normalerweise erfolgt die Inbetriebnahme über komplexe und schwer zu verwaltende Infrastruktur- und benutzerdefinierte Dienste, und birgt eine Reihe von Problemen für die Implementierung, Verwaltung, Skalierung, Fehlerbehebung und Versionsverwaltung einer solchen Lösung.
+Operationalisierungsszenarien sind der nächste logische Schritt nach den Datenquellenszenarios. Sobald in einem Hub Daten vorhanden sind, sollten Sie Datenpipelines erstellen und in Betrieb nehmen, um zuverlässig transformierte Daten basierend auf einem verwaltbaren und kontrollierten Zeitplan zu produzieren, damit Produktionsumgebungen mit zuverlässigen Daten versorgt werden können.  Die Datentransformation in der Azure Data Factory erfolgt über Hive, Pig und benutzerdefinierte C#-Verarbeitung, die auf Hadoop (Azure HDInsight) ausgeführt wird.  Diese Transformationen können dazu verwendet werden, Daten zu bereinigen, wichtige Datenfelder zu maskieren und weitere Vorgänge auf vielfältige, komplexe Weise mit den Daten auszuführen.  Normalerweise wird die Operationalisierung mit einer komplexen und schwer zu verwaltenden Infrastruktur und mit benutzerdefinierten Diensten erreicht. Sie bietet hinsichtlich Implementierung, Verwaltung, Skalierung, Problembehandlung und Versionskontrolle für eine derartige Lösung einige Herausforderungen.
   
-Mit Data Factory als vollständig verwalteter Dienst können Benutzer diese Pipelines in Betrieb nehmen, indem sie sie mit einem einmaligen oder komplexen wiederkehrenden Zeitplan definieren; die Orchestrierung wird direkt vom Data Factory-Dienst übernommen.  Bei Hubs wird die Clusterverwaltung für alle Daten und die Verarbeitung innerhalb eines Hubs vom Benutzer übernommen, sodass Benutzer sich auf Transformationsanalysen konzentrieren können und sich nicht mit der Infrastrukturverwaltung befassen müssen.  Mit der Azure Data Factory werden die Herausforderungen des Arbeitens mit fehleranfälligen benutzerdefinierten Diensten beseitigt, und Unternehmen haben die Möglichkeit, vertrauenswürdige Informationen zuverlässig und reproduzierbar zu erzeugen.
+Mit Data Factory als vollständig verwalteter Dienst können Benutzer diese Pipelines in Betrieb nehmen, indem sie sie mit einem einmaligen oder komplexen wiederkehrenden Zeitplan definieren; die Orchestrierung wird direkt vom Data Factory-Dienst übernommen.  Mit Hubs erfolgen die Clusterverwaltung für sämtliche Daten und die Verarbeitung innerhalb eines Hubs im Namen des Benutzers, daher können sich die Benutzer anstelle der Infrastrukturverwaltung auf Transformationsanalysen konzentrieren.  Azure Data Factory beseitigt die Herausforderungen bei der Arbeit mit fehleranfälligen, benutzerdefinierten Diensten und ermöglicht es Unternehmen, vertrauenswürdige Informationen zuverlässig und reproduzierbar zu erzeugen.
 
 
 ###Szenario 3:  Integrieren der Informationsproduktion in die Datenermittlung
-Herkömmliche BI-Ansätze und -Technologien liefern zwar eine "verlässliche Wahrheitsquelle", haben jedoch fast immer eine schwerwiegende Nebenwirkung: Ein konstanter Rückstand an Anforderungen aufgrund eines sorgfältig kontrollierten Änderungsanforderungsprozesses.  Für eine Anpassung an sich schnell änderende Unternehmensfragen ist eine größere Flexibilität auf Seiten der Unternehmen erforderlich, die ihre Informationsproduktionssysteme mit den Informationsnutzungssystemen verbinden müssen.  Azure Data Factory hilft dabei, der Herausforderung der Verbindung dieser Systeme mit optimierten Datenpipelines für die Informationsproduktion und der Herausforderung des Informationsverbrauchs zu begegnen, indem aktuelle vertrauenswürdige Daten in einfach zu nutzenden Formen erstellt werden.
+Herkömmliche BI-Ansätze und -Technologien liefern zwar eine "verlässliche Wahrheitsquelle", haben jedoch fast immer eine schwerwiegende Nebenwirkung: einen konstanten Anforderungsrückstand aufgrund eines sorgfältig kontrollierten Prozesses.  Für eine Anpassung an sich schnell änderende Unternehmensfragen ist eine größere Flexibilität auf Seiten der Unternehmen erforderlich, die ihre Informationsproduktionssysteme mit den Informationsnutzungssystemen verbinden müssen.  Azure Data Factory hilft dabei, der Herausforderung der Verbindung dieser Systeme mit optimierten Datenpipelines für die Informationsproduktion und der Herausforderung des Informationsverbrauchs zu begegnen, indem aktuelle vertrauenswürdige Daten in einfach zu nutzenden Formen erstellt werden.
   
 Azure Data Factory unterstützt die folgenden Funktionen für eine einfache Nutzung der produzierten Daten:
 
@@ -66,8 +66,8 @@ Azure Data Factory unterstützt die folgenden Funktionen für eine einfache Nutz
 Informationen zur Nutzung von Daten mithilfe von Power Query finden Sie in den folgenden Themen: 
 
 - [Power Query: Herstellen einer Verbindung mit Microsoft Azure-Tabellenspeicher] [Power-Query-Azure-Table]
-- [Power Query: Herstellen einer Verbindung mit Microsoft Azure-BLOB-Speicher] [Power-Query-Azure-Blob]
-- [Power Query: Herstellen einer Verbindung mit Microsoft Azure-SQL-Datenbank] [Power-Query-Azure-SQL]
+- [Power Query: Herstellen einer Verbindung mit Microsoft Azure BLOB-Speicher] [Power-Query-Azure-Blob]
+- [Power Query: Herstellen einer Verbindung mit Microsoft Azure SQL-Datenbank] [Power-Query-Azure-SQL]
 - [Power Query: Herstellen einer Verbindung mit lokalem Microsoft SQL Server][Power-Query-OnPrem-SQL] 
 
 ## Anwendungsmodell
@@ -82,7 +82,7 @@ Eine Azure Data Factory umfasst drei Informationsproduktionsphasen:
 - **Transformieren & Anreichern**. In dieser Phase werden die gesammelten Daten verarbeitet.
 - **Veröffentlichen**. In dieser Phase werden die Daten so veröffentlicht, dass sie von BI-Tools, Analysetools und anderen Anwendungen genutzt werden können.
 
-Mithilfe von Data Factorys können Entwickler **Pipelines** erstellen, bei denen es sich um Gruppen von Datenverschiebungs- und/oder Datenverarbeitungs-**Aktivitäten** handelt, die mehrere Eingabe-**Datasets** akzeptieren und ein oder mehrere Ausgabedatasets produzieren.  Pipelines können einfach oder anhand eines flexiblen Zeitplans (stündlich, täglich, wöchentlich usw.) ausgeführt werden.  Ein **Dataset** ist eine benannte Ansicht von Daten. Die Daten, die beschrieben werden, können von einfachen Bytes und halbstrukturieren Daten wie CSV-Dateien bis hin zu **Tabellen** oder **Modellen** reichen.
+Mithilfe von Data Factorys können Entwickler **Pipelines** erstellen, bei denen es sich um Gruppen von Datenverschiebungs- und/oder Datenverarbeitungs-**Aktivitäten** handelt, die mehrere Eingabe-**Datasets** akzeptieren und ein oder mehrere Ausgabedatasets produzieren.  Pipelines können einfach oder anhand eines flexiblen Zeitplans (stündlich, täglich, wöchentlich usw.) ausgeführt werden.  Ein **Dataset** ist eine benannte Ansicht von Daten. Die Daten, die beschrieben werden, können von einfachen Bytes und halbstrukturierten Daten wie CSV-Dateien bis hin zu **Tabellen** oder **Modellen** reichen.
 
 **Pipelines**, die sich aus Datenverschiebungs**aktivitäten** zusammensetzen (z. B.: Kopieraktivität) werden häufig zum Importieren/Exportieren von Daten aus allen **Datenquellen** (Datenbanken, Dateien, SaaS-Dienste, usw.) verwendet, die von dem Unternehmen in einem **Daten-Hub** verwendet werden.
     
@@ -96,7 +96,7 @@ In diesem Abschnitt werden die Begriffe im Zusammenhang mit der Azure Data Facto
 
 ### Data Factory
 
-**Azure Data Factory** ist ein vollständig verwalteter Dienst für das Kombinieren von Datenspeicherung, -verschiebung und Verarbeitungsdiensten in optimierten, skalierbaren und zuverlässigen Datenproduktions-Pipelines. 
+**Azure Data Factory** ist ein vollständig verwalteter Dienst für das Kombinieren von Datenspeicherung, -verschiebung und Verarbeitungsdiensten in optimierten, skalierbaren und zuverlässigen Datenproduktions-Pipelines.
 
 Der Data Factory-Dienst nutzt, erstellt, verwaltet und veröffentlicht **Datasets**. Ein Azure-Abonnement kann eine oder mehrere Azure Data Factory-Instanzen umfassen. Eine Azure Data Factory kann mit einem oder mehreren Speicherungs- oder Serverdiensten (die als verknüpfte Dienste bezeichnet werden) verknüpft werden.
  
@@ -136,25 +136,27 @@ Der Daten-Hub ermöglicht, dass eine Data Factory in logische oder domänenspezi
 Ein wichtiges Merkmal eines Hubs besteht darin, dass eine Pipeline auf einem einzelnen Hub ausgeführt wird. Dies bedeutet, dass beim Definieren einer Pipeline alle verknüpften Dienste, auf die von Tabellen oder Aktivitäten innerhalb dieser Pipeline verwiesen wird, den gleichen Hub-Namen wie die Pipeline selbst aufweisen müssen. Wenn die HubName-Eigenschaft für einen verknüpften Dienst nicht angegeben ist, wird der verknüpfte Dienst im Hub "Standard" platziert.
 
 ###Slice
-Eine Tabelle in einer Azure Data Factory besteht aus Slices auf der Zeitachse. Die Breite eines Slices wird durch den Zeitplan (stündlich/täglich) bestimmt. Wenn der Zeitplan "stündlich" ist, wird stündlich einen  Slice mit der Start- und Endzeit einer Pipeline erstellt usw.  
+Eine Tabelle in einer Azure Data Factory besteht aus Slices auf der Zeitachse. Die Breite eines Slices wird durch den Zeitplan (stündlich/täglich) bestimmt. Wenn der Zeitplan "stündlich" ist, wird stündlich einen Slice mit der Start- und Endzeit einer Pipeline erstellt usw.  
 
-Slices bieten IT-Experten die Möglichkeit, mit einer Teilmenge von Daten für einen bestimmten Zeitrahmen zu arbeiten (z. B.: der Slice, der für die Dauer (Stunden) erzeugt wird: 13:00 Uhr bis 14:00 Uhr). Sie können auch alle nachgeschalteten Datenslices für einen bestimmten Zeitraum anzeigen und einen Slice im Falle eines Fehlers erneut ausführen.
+Slices bieten IT-Experten die Möglichkeit, mit einer Teilmenge von Daten für einen bestimmten Zeitrahmen zu arbeiten (z. B. der für die Dauer (Stunde) erzeugte Slice: 13:00 Uhr bis 14:00 Uhr). Sie können auch alle nachgeschalteten Datenslices für einen bestimmten Zeitraum anzeigen und einen Slice im Falle eines Fehlers erneut ausführen.
 
 Die Ausführung ist eine Verarbeitungseinheit für einen Slice. Im Falle von Wiederholungen, oder wenn Sie Ihren Slice im Falle von Fehlern erneut ausführen, kann es eine oder mehrere Ausführungen für einen Slice geben. Ein Slice wird durch seine Startzeit identifiziert. 
 
 ###Datenverwaltungsgateway
-Das Microsoft-Datenverwaltungsgateway ist eine Software, die lokale Datenquellen mit Cloud-Diensten für die Nutzung verbindet. Sie müssen mindestens ein Gateway in Ihrer Unternehmensumgebung installiert haben und dieses beim Azure Data Factory-Portal registrieren, bevor Sie lokale Datenquellen as verknüpfte Dienste hinzufügen.
+Das Microsoft-Datenverwaltungsgateway ist eine Software, die lokale Datenquellen mit Cloud-Diensten für die Nutzung verbindet. Sie müssen mindestens ein Gateway in Ihrer Unternehmensumgebung installiert haben und dieses beim Azure Data Factory-Portal registrieren, bevor Sie lokale Datenquellen als verknüpfte Dienste hinzufügen.
 
 
 ##Nächste Schritte
-[Erste Schritte mit Data Factory][datafactory-getstarted]. Dieser Artikel bietet ein umfassendes Lernprogramm, in dem Sie erfahren, wie Sie eine Beispiel-Data Factory für Azure erstellen, die Daten aus einem Azure-BLOB in eine Azure SQL-Datenbank kopiert.
+
+1. [Erste Schritte mit Data Factory][datafactory-getstarted]. Dieser Artikel bietet ein umfassendes Lernprogramm, in dem Sie erfahren, wie Sie eine Beispiel-Data Factory für Azure erstellen, die Daten aus einem Azure-BLOB in eine Azure SQL-Datenbank kopiert.
+2. [Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial]. In diesem Artikel wird in einer **umfassenden exemplarischen Vorgehensweise** die Implementierung eines **realen Szenarios** mithilfe von Azure Data Factory veranschaulicht, um Einblicke aus Protokolldateien zu gewinnen.
 
 [Power-Query-Azure-Table]: http://office.microsoft.com/en-001/excel-help/connect-to-microsoft-azuretable-storage-HA104122607.aspx
 [Power-Query-Azure-Blob]: http://office.microsoft.com/en-001/excel-help/connect-to-microsoft-azure-blob-storage-HA104113447.aspx
 [Power-Query-Azure-SQL]: http://office.microsoft.com/en-001/excel-help/connect-to-a-microsoft-azure-sql-database-HA104019809.aspx
 [Power-Query-OnPrem-SQL]: http://office.microsoft.com/en-001/excel-help/connect-to-a-sql-server-database-HA104019808.aspx
 
-
+[adf-tutorial]: ../data-factory-tutorial
 [datafactory-getstarted]: ../data-factory-get-started/
 
 [image-data-factory-introduction-traditional-ETL]: ./media/data-factory-introduction/TraditionalETL.PNG
@@ -171,3 +173,5 @@ Das Microsoft-Datenverwaltungsgateway ist eine Software, die lokale Datenquellen
 
 
 
+
+<!--HONumber=35.2-->

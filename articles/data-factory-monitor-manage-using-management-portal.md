@@ -1,6 +1,6 @@
-﻿<properties title="Monitor and manage Azure Data Factory using Azure Preview Portal" pageTitle="Überwachen und Verwalten von Azure Data Factory mit dem Azure-Vorschauportal" description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factories mithilfe des Azure-Verwaltungsportals überwachen und verwalten." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties title="Monitor and manage Azure Data Factory using Azure Preview Portal" pageTitle="Überwachen und Verwalten von Azure Data Factory mit dem Azure-Vorschauportal" description="Erfahren Sie mehr über die Überwachung selbst erstellter Azure Data Factorys mit dem Azure-Verwaltungsportal." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="spelluru" />
+<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/13/2014" ms.author="spelluru" />
 
 # Überwachen von Azure Data Factory mit dem Azure-Vorschauportal
 
@@ -25,7 +25,7 @@
 
 	![BROWSE hub -> Data Factories][image-data-factory-browse-datafactories]
 
-	Wenn keine **Data Factorys** angezeigt werden, klicken Sie auf **Alles**, und dann auf **Data Factorys** im Fenster **Durchsuchen**.
+	Wenn keine **Data Factorys** angezeigt werden, klicken Sie auf **Alles** und dann auf **Data Factorys** im Fenster **Durchsuchen**.
 
 	![BROWSE hub -> Everything] [image-data-factory-browse-everything]
 
@@ -40,7 +40,7 @@ Führen Sie einen der folgenden Schritte aus, um die Details zu einer Data Facto
 
 
 - Klicken Sie im oben dargestellten Fenster **Data Factorys** auf eine Data Factory.
-- Klicken Sie auf dem **Startmenü** auf den Link für die Data Factory. **Startmenü** ist das Fenster, das angezeigt wird, wenn Sie sich beim Azure-Vorschauportal anmelden. Wenn Sie **Zum Startmenü hinzufügen** während der Erstellung einer Data Factory ausgewählt hatten (Standardoption), wird der Data Factory-Link auf dem Startmenü, wie im folgenden Bild dargestellt, angezeigt. In diesem Beispielsind die Data Factory-Links **ADFTutorialDataFactory**, **ADFTutorialDataFactoryDF** und **LogProcessingFactory** auf dem **Startmenü** verfügbar.
+- Klicken Sie im **Startmenü** auf den Link für die Data Factory. **Startmenü** ist das Fenster, das angezeigt wird, wenn Sie sich beim Azure-Vorschauportal anmelden. Wenn Sie **Zum Startmenü hinzufügen** während der Erstellung einer Data Factory ausgewählt hatten (Standardoption), wird der Data Factory-Link im Startmenü, wie im folgenden Bild dargestellt, angezeigt. In diese Beispiel stehen die Data Factory-Links **ADFTutorialDataFactory**, **ADFTutorialDataFactoryDF** und **LogProcessingFactory** im **Startmenü** zur Verfügung.
 
 
 ![Data factory from the Startboard][image-data-factory-datafactory-from-startboard]
@@ -75,11 +75,55 @@ Klicken Sie in der Liste von Datasets im Fenster "DATASETS" auf das Dataset, um 
 
 ![Table Blade][image-data-factory-table]
 
-Im Fenster **TABELLE** oben werden sowohl **Zuletzt verwendete Slices** als auch **Problemslices** angezeigt. Klicken Sie auf **... (Ellipse)**, um alle Slices anzuzeigen. 
+Im Fenster **TABELLE** oben werden sowohl **Zuletzt verwendete Slices** als auch **Problemslices** angezeigt. Klicken Sie auf **... (Auslassungspunkte)**, um alle Slices anzuzeigen. 
 
 ![All Slices of a Table][image-data-factory-all-slices]
 
-Im Fenster **Datenslices** können Sie einen Filter verwenden, um die spezifischen Slices anzuzeigen, die Sie überprüfen möchten.
+Klicken Sie im Fenster **Datenslices** auf die Schaltfläche "Filter", um das Fenster "Filter" anzuzeigen, über das Sie Datenslices **filtern** können, um die zu überprüfenden Datenslices anzuzeigen.
+
+![Filter Blade][image-data-factory-filter-blade]
+
+
+Wenn Sie das Fenster **Filter** öffnen, wird für das Feld **Bis** automatisch der aktuellste Zeitpunkt festgelegt (gerundet), um die Anzahl der zurückgegebenen Datensätze einzuschränken. Das Feld **Von** wird ebenfalls automatisch festgelegt. Sie können das Datum für **Von** ändern, indem Sie auf die Schaltfläche **Kalender** klicken. Das Datum für **Bis** wird automatisch geändert, wenn Sie das Datum für **Von** ändern. 
+
+Sie können auf die Schaltflächen **Zurück**/**Weiter** klicken, um Slices im vorherigen/nächsten Zeitraum anzuzeigen. Der Zeitraum für die Schaltflächen **Zurück** und **Weiter** wird auf Basis der Häufigkeit und des Intervalls für das Datenslice festgelegt, wie in der folgenden Tabelle gezeigt.
+
+Häufigkeit | Intervallwertebereich | Resultierender Zeitabschnitt
+----------| -------------------- | --------------------
+Minute | 1-4 | 6 Stunden
+Minute | 5-29 | 1 Tag
+Minute | 30-180 | 7 Tage
+Minute | 180+ | 28 Tage (ungefähr ein Kalendermonat)
+Stunde | 1-3 | 7 Tage
+Stunde | 4-11 | 28 Tage (ungefähr ein Kalendermonat)
+Stunde | 12-72 | 182 Tage (ungefähr 6 Monate
+Stunde | 73+ | 1 Jahr
+Tag | 1-6 | 1 Jahr
+Tag | 7-20 | 5 Jahre
+Tag | 21+ | 10 Jahre
+Woche | 1-3 | 5 Jahre
+Woche | 4+ | 10 Jahre
+Monat | alle | 10 Jahre
+ 
+Wenn Sie für **Häufigkeit** z. B. **Stunde** und für **Intervall** den Wert **2** festlegen, wird durch Klicken auf die Schaltflächen **Weiter**/**Zurück** der Zeitbereich um **7 Tage** in die jeweilige Richtung verschoben. Diese Logik gilt unabhängig davon für das Fenster "Filter", ob Sie alle Slices, die letzten Slices bzw. Problemslices anzeigen.
+
+Über das Fenster **Filter** können Sie Slices auf Basis ihres **Status** filtern. In der folgenden Tabelle sind alle Statusangaben für Slices und die zugehörige Beschreibung aufgeführt.
+ 
+Slicestatus | Beschreibung
+------------ | ------------
+Ausstehende Ausführung | Die Datenverarbeitung wurde noch nicht gestartet.
+In Bearbeitung | Die Datenverarbeitung wird ausgeführt.
+Bereit | Die Datenverarbeitung ist abgeschlossen, und der Datenslice ist bereit.
+Fehler | Fehler bei der Ausführung, die den Slice erstellt.
+Überspringen | Die Verarbeitung des Slices wird übersprungen.
+Wiederholen | Erneuter Versuch der Ausführung, die den Slice erstellt.
+Zeitüberschreitung | Zeitüberschreitung bei der Datenverarbeitung des Slices.
+Ausstehende Überprüfung | Der Datenslice wartet auf Überprüfung im Hinblick auf Überprüfungsrichtlinien, bevor es verarbeitet wird.
+Überprüfung wiederholen | Die Überprüfung des Slices wird wiederholt.
+Fehler bei Überprüfung | Fehler beim Überprüfen des Slices.
+Lange Wiederholung | Ein Slice weist diesen Status auf, wenn "Lange Wiederholung" in der JSON-Tabelle angegeben wird und reguläre Wiederholungen für den Slice fehlgeschlagen sind.
+Überprüfung wird ausgeführt | Überprüfung des Slices (basierend auf den in der JSON-Tabelle definierten Richtlinien) wird ausgeführt.
+
 
 
 ## <a name="DataFactorySlice"></a> Anzeigen von Details zu einem Slice
@@ -102,15 +146,15 @@ Klicken Sie im Fenster **Data Factory** (oder auf der Startseite) der Data Facto
 ![ Data Factory Events][image-data-factory-events]
 
 
-## Weitere Informationen
+## Siehe auch
 
 Artikel | Beschreibung
 ------ | ---------------
-[Überwachen und Verwalten von Azure Data Factory mithilfe von PowerShell][monitor-manage-using-powershell] | In diesem Artikel wird beschrieben, wie eine Azure Data Factory mithilfe von Azure PowerShell-Cmdlets überwacht wird. 
+[Überwachen und Verwalten von Azure Data Factory mithilfe von PowerShell][monitor-manage-using-powershell] | In diesem Artikel wird beschrieben, wie eine Azure Data Factory mithilfe von Azure PowerShell-Cmdlets überwacht wird.
 [Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][use-onpremises-datasources] | Dieser Artikel enthält eine exemplarische Vorgehensweise zum Kopieren von Daten aus einer lokalen SQL Server-Datenbank in einen Azure-BLOB.
-[Verwenden von Pig und Hive mit Data Factory][use-pig-and-hive-with-data-factory] | Dieser Artikel enthält eine exemplarische Vorgehensweise, in der gezeigt wird, wie eine HDInsight-Aktivität verwendet wird, um ein Hive-/Pig-Skript zur Verarbeitung von Eingabedaten auszuführen, um Ausgabedaten zu produzieren. 
-[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | Dieser Artikel enthält eine umfassende exemplarische Vorgehensweise, in der gezeigt wird, wie ein realitätsnahes Szenario mit Azure Data Factory implementiert wird, um Daten aus Protokolldateien in Einblicke zu transformieren.
-[Verwenden von benutzerdefinierten Aktivitäten in einer Data Factory][use-custom-activities] | Dieser Artikel enthält eine exemplarische Vorgehensweise mit schrittweisen Anleitungen zum Erstellen einer benutzerdefinierten Aktivität und deren Verwendung in einer Pipeline. 
+[Verwenden von Pig und Hive mit Data Factory][use-pig-and-hive-with-data-factory] | Dieser Artikel enthält eine exemplarische Vorgehensweise, in der gezeigt wird, wie eine HDInsight-Aktivität verwendet wird, um ein Hive-/Pig-Skript zur Verarbeitung von Eingabedaten auszuführen, um Ausgabedaten zu produzieren.
+[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | In diesem Artikel wird in einer umfassenden exemplarischen Vorgehensweise die Implementierung eines realen Szenarios mithilfe von Azure Data Factory veranschaulicht, um Einblicke aus Protokolldateien zu gewinnen.
+[Verwenden von benutzerdefinierten Aktivitäten in einer Data Factory][use-custom-activities] | Dieser Artikel enthält eine exemplarische Vorgehensweise mit schrittweisen Anleitungen zum Erstellen einer benutzerdefinierten Aktivität und deren Verwendung in einer Pipeline.
 [Problembehandlung für Data Factory][troubleshoot] | In diesem Artikel wird beschrieben, wie Probleme in Azure Data Factory behoben werden.
 [Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für Cmdlets, JSON-Skripts, Funktionen usw. 
 [Azure Data Factory-Cmdlet-Referenz][cmdlet-reference] | Diese Referenz enthält Einzelheiten zu allen **Data Factory-Cmdlets**.
@@ -126,6 +170,8 @@ Artikel | Beschreibung
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
 
 [azure-preview-portal]: http://portal.azure.com/
+
+[image-data-factory-filter-blade]: ./media/data-factory-monitor-manage-using-management-portal/FilterBlade.png
 
 [image-data-factory-browse-everything]: ./media/data-factory-monitor-manage-using-management-portal/BrowseEverything.png
 
@@ -156,3 +202,5 @@ Artikel | Beschreibung
 [image-data-factory-activity-run-details]: ./media/data-factory-monitor-manage-using-management-portal/ActivityRunDetails.png
 
 [image-data-factory-events]: ./media/data-factory-monitor-manage-using-management-portal/Events.png
+
+<!--HONumber=35.2-->

@@ -1,6 +1,6 @@
-<properties pageTitle="Anpassen des Entwicklerportals in der Azure API-Verwaltung" metaKeywords="" description="Anpassen des Entwicklerportals in der Azure API-Verwaltung." metaCanonical="" services="api-management" documentationCenter="API Management" title="Anpassen des Entwicklerportals in der Azure API-Verwaltung" authors="sdanie" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Anpassen des Entwicklerportals in der Azure API-Verwaltung" metaKeywords="" description="Anpassen des Entwicklerportals in der Azure API-Verwaltung." metaCanonical="" services="api-management" documentationCenter="API Management" title="Customizing the developer portal in Azure API Management" authors="sdanie" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
+<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
 
 # Anpassen des Entwicklerportals in der Azure API-Verwaltung
 
@@ -8,10 +8,11 @@ Diese Anleitung beschreibt, wie Sie das Erscheinungsbild des Entwicklerportals i
 
 ## In diesem Thema
 
--   [Ändern von Text/Logo in den Kopfzeilen][Ändern von Text/Logo in den Kopfzeilen]
--   [Ändern des Stils der Kopfzeilen][Ändern des Stils der Kopfzeilen]
--   [Bearbeiten der Seiteninhalte][Bearbeiten der Seiteninhalte]
--   [Nächste Schritte][Nächste Schritte]
+-	[Ändern von Text/Logo in den Kopfzeilen][]
+-	[Ändern des Stils der Kopfzeilen][]
+-	[Bearbeiten der Seiteninhalte][]
+-	[Nächste Schritte][]
+
 
 ## <a name="change-page-headers"> </a>Ändern von Text/Logo in der Kopfzeile
 
@@ -19,13 +20,13 @@ Einer der Schlüsselaspekte der Portalanpassung ist die Möglichkeit, den Text a
 
 Die Inhalte im Entwicklerportal werden über das Veröffentlichungsportal erstellt und konfiguriert, das im Azure-Verwaltungsportal erreichbar ist. Um die API-Verwaltungskonsole zu erreichen, klicken Sie im Azure-Portal auf **Verwaltungskonsole** für Ihren API-Verwaltungsdienst.
 
-![Verwaltungskonsole][Verwaltungskonsole]
+![Management console][api-management-management-console]
 
-Das Entwicklerportal basiert auf einem Content Management-System oder CMS. Bei der auf jeder Seite angezeigten Kopfzeile handelt es sich um einen Inhaltstyp, der auch Widget genannt wird. Um den Inhalt des Widgets zu bearbeiten, klicken Sie auf **Widgets** im Menü **Entwicklerportal** auf der linken Seite und wählen Sie das Widget **Header** in der Liste aus.
+Das Entwicklerportal basiert auf einem Content Management-System oder CMS. Bei der auf jeder Seite angezeigten Kopfzeile handelt es sich um einen Inhaltstyp, der auch Widget genannt wird. Um den Inhalt des Widgets zu bearbeiten, klicken Sie im Menü **Entwicklerportal** auf der linken Seite auf **Widgets**, und wählen Sie das Widget **Header** in der Liste aus.
 
-![Kopfzeilen-Widget][Kopfzeilen-Widget]
+![Widgets header][api-management-widgets-header]
 
-Sie können den Inhalt der Fußzeile im Feld **Body** bearbeiten. Ändern Sie den Text zu "Fabrikam-Entwicklerportal" und klicken Sie unten in der Seite auf **Speichern**.
+Sie können den Inhalt der Fußzeile im Feld **Body** bearbeiten. Ändern Sie den Text zu "Fabrikam-Entwicklerportal", und klicken Sie unten in der Seite auf **Speichern**.
 
 Die neue Kopfzeile sollte nun auf allen Seiten im Entwicklerportal angezeigt werden!
 
@@ -33,11 +34,11 @@ Die neue Kopfzeile sollte nun auf allen Seiten im Entwicklerportal angezeigt wer
 
 ## <a name="change-headers-styling"> </a>Ändern des Stils der Kopfzeilen
 
-Farben, Schriftarten, Schriftgrößen und andere stilverwandte Elemente aller Portalseiten werden durch Stilregeln definiert. Klicken Sie auf **Darstellung** im Menü **Entwicklerportal** im Veröffentlichungsportal, um die Stilregeln zu bearbeiten. Klicken Sie anschließend auf **Anpassung beginnen**, um den Stileditor zu aktivieren.
+Farben, Schriftarten, Schriftgrößen und andere stilverwandte Elemente aller Portalseiten werden durch Stilregeln definiert. Klicken Sie im Menü **Entwicklerportal** im Veröffentlichungsportal auf **Darstellung**, um die Stilregeln zu bearbeiten. Klicken Sie anschließend auf **Anpassung beginnen**, um den Stileditor zu aktivieren.
 
 Ihr Browser wechselt zu einer versteckten Seite im Entwicklerportal mit Beispielen für die Inhalte unter Anwendungen aller Stilregeln, die irgendwo auf der Seite verwendet werden. Um den Stileditor zu öffnen, bewegen Sie Ihren Mauszeiger über die dünne vertikale graue Linie ganz links auf der Seite. Die Editor-Symbolleiste sollte angezeigt werden.
 
-![Anpassungssymbolleiste][Anpassungssymbolleiste]
+![Customization toolbar][api-management-customization-toolbar]
 
 Für die Bearbeitung der Stilregeln gibt es zwei Bearbeitungsmodi - **Alle Regeln bearbeiten** zeigt eine Liste aller im Portal verwendeten Stilregeln an; und mit **Element auswählen** können Sie ein Element auf der aktuellen Seite auswählen, um nur die Stilregeln für dieses Element anzuzeigen.
 
@@ -45,44 +46,51 @@ In diesem Abschnitt werden wir den Stil für die Kopfzeile ändern. Klicken Sie 
 
 Jede Regel steht für eine Stileigenschaft des ausgewählten Elements. Der ausgewählte Kopfzeilentext hat z. B. den Schriftgrad @font-size-h1, und der Name der Schriftart mit Alternativen befindet sich in @headings-font-family.
 
-> Falls Sie mit [Bootstrap][Bootstrap] vertraut sind, werden Sie feststellen, dass es sich bei diesen Regeln um [LESS-Variablen][LESS-Variablen] aus dem Bootstrap-Design für das Entwicklerportal handelt.
+> Falls Sie mit [Bootstrap][] vertraut sind, werden Sie feststellen, dass es sich bei diesen Regeln um [LESS-Variablen][] aus dem Bootstrap-Design für das Entwicklerportal handelt.
 
-Ändern Sie nun die Farbe der Überschrift. Wählen Sie den Eintrag im Feld <**@headings-color*>\* aus und geben Sie \#000000 ein. Dies ist der Hexadezimalcode für die Farbe Schwarz. Daraufhin sollte ein rechteckiger Farbindikator am Ende des Textfelds angezeigt werden. Wenn Sie diesen Indikator anklicken, können Sie mit einem Farbwähler eine Farbe auswählen.
+Ändern Sie nun die Farbe der Überschrift. Wählen Sie den Eintrag im Feld **@headings-color** aus, und geben Sie #000000 ein. Dies ist der Hexadezimalcode für die Farbe Schwarz. Daraufhin sollte ein rechteckiger Farbindikator am Ende des Textfelds angezeigt werden. Wenn Sie diesen Indikator anklicken, können Sie mit einem Farbwähler eine Farbe auswählen.
 
-![Farbauswahl][Farbauswahl]
+![Color picker][api-management-customization-toolbar-color-picker]
 
-Wenn Sie Ihre Änderungen an den Stilregeln des ausgewählten Elements abgeschlossen haben, klicken Sie auf **Änderungen anzeigen**, um das Resultat auf dem Bildschirm anzuzeigen. Zu diesem Zeitpunkt sind die Änderungen nur für Administratoren sichtbar. Um die Änderungen für alle Benutzer sichtbar zu machen, klicken Sie auf **Veröffentlichen** im Stileditor und bestätigen Sie die Änderungen.
+Wenn Sie Ihre Änderungen an den Stilregeln des ausgewählten Elements abgeschlossen haben, klicken Sie auf **Änderungen anzeigen**, um das Resultat auf dem Bildschirm anzuzeigen. Zu diesem Zeitpunkt sind die Änderungen nur für Administratoren sichtbar. Um die Änderungen für alle Benutzer sichtbar zu machen, klicken Sie im Stileditor auf **Veröffentlichen**, und bestätigen Sie die Änderungen.
 
-![Veröffentlichungsmenü][Veröffentlichungsmenü]
+![Publish menu][api-management-customization-toolbar-publish-form]
 
-> Um die Stilregeln der anderen Elemente auf der Seite zu ändern, führen Sie dieselben Schritte wie bei der Änderung der Kopfzeile aus. Klicken Sie auf **Element auswählen** im Stileditor, wählen Sie das gewünschte Element aus und ändern Sie die Werte der Stilregeln, die auf dem Bildschirm angezeigt werden.
+> Um die Stilregeln der anderen Elemente auf der Seite zu ändern, führen Sie dieselben Schritte wie bei der Änderung der Kopfzeile aus. Klicken Sie im Stileditor auf **Element auswählen**, wählen Sie das gewünschte Element aus, und ändern Sie die Werte der Stilregeln, die auf dem Bildschirm angezeigt werden.
 
 ## <a name="edit-page-contents"> </a>Bearbeiten der Seiteninhalte
 
 Das Entwicklerportal besteht aus automatisch generierten Seiten wie z. B. APIs, Produkte Anwendungen, Probleme und manuell erstellte Inhalte. Da das Portal auf einem Content Management-System basiert, können Sie diese Inhalte jederzeit erstellen.
 
-Klicken Sie auf **Inhalte** im Menü **Entwicklerportal** in der Verwaltungskonsole, um eine Liste aller verfügbaren Inhaltsseiten anzuzeigen.
+Klicken Sie im Menü **Entwicklerportal** in der Verwaltungskonsole auf **Inhalte**, um eine Liste aller verfügbaren Inhaltsseiten anzuzeigen.
 
-![Inhalt verwalten][Inhalt verwalten]
+![Manage content][api-management-customization-manage-content]
 
-Klicken Sie auf die Willkommensseite, um den Inhalt zu bearbeiten, der auf der Startseite des Entwicklerportals angezeigt wird. Nehmen Sie die gewünschten Änderungen vor, zeigen Sie die Änderungen in einer Vorschau an und klicken Sie anschließend auf **Jetzt veröffentlichen**, um sie für alle Benutzer sichtbar zu machen.
+Klicken Sie auf die Willkommensseite, um den Inhalt zu bearbeiten, der auf der Startseite des Entwicklerportals angezeigt wird. Nehmen Sie die gewünschten Änderungen vor, zeigen Sie die Änderungen in einer Vorschau an, und klicken Sie anschließend auf **Jetzt veröffentlichen**, um sie für alle Benutzer sichtbar zu machen.
 
-> Die Startseite verwendet ein spezielles Layout, mit dem ein Banner am oberen Rand angezeigt werden kann. Dieses Banner kann nicht im Inhaltsbereich bearbeitet werden. Um dieses Banner zu bearbeiten, klicken Sie auf **Widgets** im Menü **Entwicklerportal**, wählen Sie **Startseite** in der Dropdownliste **Aktuelle Ebene** aus und öffnen Sie das Element **Banner** im Bereich „Ausgewählte“. Sie können den Inhalt dieses Widgets ebenso wie alle anderen Seiten bearbeiten.
+> Die Startseite verwendet ein spezielles Layout, mit dem ein Banner am oberen Rand angezeigt werden kann. Dieses Banner kann nicht im Inhaltsbereich bearbeitet werden. Um dieses Banner zu bearbeiten, klicken Sie im Menü **Entwicklerportal** auf **Widgets**, wählen Sie **Startseite** in der Dropdownliste **Aktuelle Ebene** aus und öffnen Sie das Element **Banner** im Bereich "Ausgewählte". Sie können den Inhalt dieses Widgets ebenso wie alle anderen Seiten bearbeiten.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
--   Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][Erste Schritte bei der erweiterten API-Konfiguration].
+-	Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][].
 
-  [Ändern von Text/Logo in den Kopfzeilen]: #change-page-headers
-  [Ändern des Stils der Kopfzeilen]: #change-headers-styling
-  [Bearbeiten der Seiteninhalte]: #edit-page-contents
-  [Nächste Schritte]: #next-steps
-  [Verwaltungskonsole]: ./media/api-management-customize-portal/api-management-management-console.png
-  [Kopfzeilen-Widget]: ./media/api-management-customize-portal/api-management-widgets-header.png
-  [Anpassungssymbolleiste]: ./media/api-management-customize-portal/api-management-customization-toolbar.png
-  [Bootstrap]: http://getbootstrap.com/
-  [LESS-Variablen]: http://getbootstrap.com/css/
-  [Farbauswahl]: ./media/api-management-customize-portal/api-management-customization-toolbar-color-picker.png
-  [Veröffentlichungsmenü]: ./media/api-management-customize-portal/api-management-customization-toolbar-publish-form.png
-  [Inhalt verwalten]: ./media/api-management-customize-portal/api-management-customization-manage-content.png
-  [Erste Schritte bei der erweiterten API-Konfiguration]: ../api-management-get-started-advanced
+[Ändern von Text/Logo in den Kopfzeilen]: #change-page-headers
+[Ändern des Stils der Kopfzeilen]: #change-headers-styling
+[Bearbeiten der Seiteninhalte]: #edit-page-contents
+[Nächste Schritte]: #next-steps
+
+[Verwaltungsportal]: https://manage.windowsazure.com/
+
+[api-management-management-console]: ./media/api-management-customize-portal/api-management-management-console.png
+[api-management-widgets-header]: ./media/api-management-customize-portal/api-management-widgets-header.png
+[api-management-customization-toolbar]: ./media/api-management-customize-portal/api-management-customization-toolbar.png
+[api-management-customization-toolbar-color-picker]: ./media/api-management-customize-portal/api-management-customization-toolbar-color-picker.png
+[api-management-customization-toolbar-publish-form]: ./media/api-management-customize-portal/api-management-customization-toolbar-publish-form.png
+[api-management-customization-manage-content]: ./media/api-management-customize-portal/api-management-customization-manage-content.png
+
+
+[Erste Schritte mit der erweiterten API-Konfiguration]: ../api-management-get-started-advanced
+[bootstrap]: http://getbootstrap.com/
+[LESS variables]: http://getbootstrap.com/css/
+
+<!--HONumber=35.2-->
