@@ -28,7 +28,7 @@ Der folgende Screenshot zeigt eine Abbildung der fertigen Anwendung (die hinzuge
 
 ## Erstellen eines Speicherkontos in Azure
 
-[WACOM.INCLUDE [create-storage-account](6)]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 ## Erstellen eines Django-Projekts
 
