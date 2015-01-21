@@ -16,9 +16,9 @@ Sie erhalten Informationen zu folgenden Themen:
 
 Der folgende Screenshot zeigt eine Abbildung der fertigen Anwendung (die hinzugefügten Aufgabenelemente können abweichen):
 
-![4](./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png)
+![](./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png)
 
-[WACOM.INCLUDE [create-account-note](3)]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## <span id="setup"></span> </a>Einrichten der Entwicklungsumgebung
 
