@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="SharePoint on Azure" pageTitle="SharePoint 2010-Bereitstellung auf Azure Virtual Machines" metaKeywords="" description="Verstehen Sie die unterstützten Szenarien für die Verwendung von SharePoint 2010 auf virtuellen Azure-Computern." metaCanonical="" services="virtual-machines" documentationCenter="" title="SharePoint 2010 Deployment on Azure Virtual Machines" authors="josephd" solutions="" manager="timlt" editor="" />
+<properties urlDisplayName="SharePoint on Azure" pageTitle="SharePoint 2010-Bereitstellung auf Azure Virtual Machines" metaKeywords="" description="Verstehen Sie die unterstützten Szenarien für die Verwendung von SharePoint 2010 auf virtuellen Azure-Computern." metaCanonical="" services="virtual-machines" documentationCenter="" title="SharePoint 2010 Deployment on Azure Virtual Machines" authors="josephd" solutions="" manager="timlt" editor="" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/16/2014" ms.author="josephd" />
 
@@ -231,7 +231,7 @@ Sie können SharePoint 2010 auf Azure mit den folgenden Schritten bereitstellen:
 Sie können auch eigene Images erstellen und sie auf Azure als VHD-Datei hochladen. Führen Sie die folgenden Schritte aus, um eine VHD-Datei zu erstellen und auf Azure hochzuladen:
 
 <ol>
-<li>Create the Hyper-V-enabled image: Use Hyper-V Manager to create the Hyper-V-enabled VHD. For more information, go to <a href="http://technet.microsoft.com/de-de/library/cc742509">Erstellen von virtuellen Festplatten</a>.</li>
+<li>Erstellen eines Hyper-V-fähigen Image: Verwenden Sie den Hyper-V-Manager, um die Hyper-V-fähige VHD zu erstellen. Weitere Informationen finden Sie unter <a href="http://technet.microsoft.com/de-de/library/cc742509">Erstellen von virtuellen Festplatten</a>.</li>
 <li>Erstellen eines Speicherkontos in Azure: Ein Speicherkonto in Azure ist erforderlich, um eine VHD-Datei hochzuladen, mit der eine VM erstellt werden kann. Dieses Konto kann im Azure-Verwaltungsportal erstellt werden. Weitere Informationen finden Sie unter <a href="/de-de/manage/windows/common-tasks/upload-a-vhd/">Erstellen eines Speicherkontos in Azure</a>.</li>
 <li>Vorbereiten des hochzuladenden Image: Bevor das Image auf Azure hochgeladen werden kann, muss es mit dem Befehl "SysPrep" generalisiert werden. Weitere Informationen finden Sie unter <a href="http://technet.microsoft.com/de-de/library/bb457073.aspx">How to Use Sysprep: An Introduction</a>.</li>
 <li>Hochladen des Image auf Azure: Um ein Image hochzuladen, das in einer VHD-Datei enthalten ist, müssen Sie ein Verwaltungszertifikat erstellen und installieren. Rufen Sie den Fingerabdruck des Zertifikats und die Abonnement-ID ab. Legen Sie die Verbindung fest, und laden Sie die VHD-Datei mit dem Befehlszeilentool CSUpload hoch. Weitere Informationen finden Sie unter <a href="/de-de/manage/windows/common-tasks/upload-a-vhd/">Hochladen des Abbilds zu Azure</a>.</li>
@@ -264,7 +264,7 @@ Abbildung 4 zeigt eine SharePoint-Entwicklungs- und Testumgebung in einer Azure-
 Führen Sie die folgenden Schritte aus, um eine SharePoint-Entwicklungs- und Testumgebung auf Azure zu implementieren:
 
 <ol>
-<li><em>Provision</em>: First, provision a VPN connection between on-premises and Azure using Azure Virtual Network. (Because Active Directory is not being used here, a VPN tunnel is needed.) For more information, go to <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx">Das virtuelle Netzwerk von Azure (Designüberlegungen und sichere Verbindungsszenarien</a>. Stellen Sie dann im Verwaltungsportal eine neue VM mithilfe eines vorhandenen Image aus der Abbildbibliothek bereit.
+<li><em>Bereitstellung</em>: Stellen Sie zuerst mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem Standort und Azure bereit. (Da hier nicht Active Directory verwendet wird, ist ein VPN-Tunnel erforderlich.) Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx">Das virtuelle Netzwerk von Azure (Designüberlegungen und sichere Verbindungsszenarien</a>. Stellen Sie dann im Verwaltungsportal eine neue VM mithilfe eines vorhandenen Image aus der Abbildbibliothek bereit.
 <ul>
 <li>Sie können die lokalen SharePoint-Entwicklungs- und Test-VMs in Ihr Azure-Speicherkonto hochladen und über die Abbildbibliothek auf diese VMs verweisen, um die erforderliche Umgebung zu erstellen.</li>
 <li>Sie können das SQL Server 2012-Image anstelle des Windows Server 2008 R2 SP1-Image verwenden. Weitere Informationen finden Sie unter <a href="/de-de/manage/windows/common-tasks/install-sql-server/">Bereitstellen eines virtuellen Computers mit SQL Server auf Azure</a>.</li>
@@ -333,7 +333,7 @@ In diesem Szenario müssen weitere Front-End-Webserver für SharePoint Server hi
 Führen Sie die folgenden Schritte aus, um eine öffentliche SharePoint-Farm auf Azure zu implementieren:
 
 <ol>
-<li><em>Deploy Active Directory</em>: The fundamental requirements for deploying Active Directory on Azure Virtual Machines are similar"but not identical"to deploying it on VMs (and, to some extent, physical machines) on-premises. For more information about the differences, as well as guidelines and other considerations, go to <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj156090">Richtlinien für die Bereitstellung von Active Directory auf virtuellen Computern in Windows Azure</a>. So stellen Sie Active Directory auf Azure bereit:
+<li><em>Bereitstellen von Active Directory</em>: Die Grundanforderungen für die Bereitstellung von Active Directory auf Azure Virtual Machines sind den Anforderungen für die Bereitstellung auf lokalen VMs (und bis zu einem gewissen Ausmaß auf physischen Computern) ähnlich, aber nicht identisch damit. Weitere Information zu den Unterschieden sowie Richtlinien und andere Überlegungen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj156090">Richtlinien für die Bereitstellung von Active Directory auf virtuellen Computern in Windows Azure</a>. So stellen Sie Active Directory auf Azure bereit:
 <ul>
 <li>Definieren und erstellen Sie ein virtuelles Netzwerk, in dem die VMs zu bestimmten Subnetzen zugewiesen werden können. Weitere Informationen finden Sie unter <a href="https://github.com/WindowsAzure-TrainingKit/HOL-DeployingActiveDirectory/blob/master/HOL.md">Virtuelles Netzwerk konfigurieren</a>.</li>
 <li>Erstellen Sie im Verwaltungsportal den Domänencontroller auf der neuen VM in Azure, und stellen Sie ihn bereit. Weitere Informationen finden Sie unter <a href="https://github.com/WindowsAzure-TrainingKit/HOL-DeployingActiveDirectory/blob/master/HOL.md">Bereitstellen und Erstellen des Domänencontrollers</a>.
@@ -388,9 +388,9 @@ Um die Bereitstellung von BI-Komponenten horizontal zu skalieren, muss ein neuer
 Führen Sie die folgenden Schritte aus, um eine BI-Umgebung auf Azure horizontal zu skalieren:
 
 <ol>
-<li><em>Provision</em>:
+<li><em>Bereitstellung</em>:
 <ul>
-<li>Provision a VPN connection between on premises and Azure using Azure Virtual Network. For more information, go to <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx">Das virtuelle Netzwerk von Azure (Designüberlegungen und sichere Verbindungsszenarien</a>.</li>
+<li>Stellen Sie mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem Standort und Azure bereit. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj156007.aspx">Das virtuelle Netzwerk von Azure (Designüberlegungen und sichere Verbindungsszenarien</a>.</li>
 <li>Stellen Sie im Verwaltungsportal eine neue VM mithilfe eines vorhandenen Image aus der Abbildbibliothek bereit.
 <ul>
 <li>Sie können BI-Arbeitsauslastungs-Images von SharePoint Server oder SQL Server in die Abbildbibliothek hochladen, und jeder autorisierte Benutzer kann diese BI-Komponenten-VMs auswählen, um die horizontal skalierte Umgebung zu erstellen.</li>
@@ -443,7 +443,7 @@ Um eine vollständig angepasste SharePoint-Website auf Azure zu implementieren, 
 Die folgenden Schritte zeigen, wie eine angepasste SharePoint-Farmumgebung aus vorgefertigten Images aus der Abbildbibliothek erstellt wird. Sie können aber auch SharePoint-Farm-VMs in die Abbildbibliothek hochladen, und autorisierte Benutzer können anhand dieser VMs die gewünschte SharePoint-Farm auf Azure erstellen.
 
 <ol>
-<li>Deploy Active Directory<em>: The fundamental requirements for deploying Active Directory on Azure Virtual Machines are similar"but not identical"to deploying it on VMs (and, to some extent, physical machines) on premises. For more information about the differences, as well as guidelines and other considerations, go to <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj156090">Richtlinien für die Bereitstellung von Active Directory auf virtuellen Computern in Windows Azure</a>. So stellen Sie Active Directory auf Azure bereit:</em>
+<li>Bereitstellen von Active Directory<em>: Die Grundanforderungen für die Bereitstellung von Active Directory auf Azure Virtual Machines sind den Anforderungen für die Bereitstellung auf lokalen VMs (und bis zu einem gewissen Ausmaß auf physischen Computern) ähnlich, aber nicht identisch damit. Weitere Information zu den Unterschieden sowie Richtlinien und andere Überlegungen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj156090">Richtlinien für die Bereitstellung von Active Directory auf virtuellen Computern in Windows Azure</a>. So stellen Sie Active Directory auf Azure bereit:</em>
 <ul>
 <li>Definieren und erstellen Sie ein virtuelles Netzwerk, in dem die VMs zu bestimmten Subnetzen zugewiesen werden können. Weitere Informationen finden Sie unter <a href="https://github.com/WindowsAzure-TrainingKit/HOL-DeployingActiveDirectory/blob/master/HOL.md">Virtuelles Netzwerk konfigurieren</a>.</li>
 <li>Erstellen Sie im Verwaltungsportal den Domänencontroller auf der neuen VM in Azure, und stellen Sie ihn bereit. Weitere Informationen finden Sie unter <a href="https://github.com/WindowsAzure-TrainingKit/HOL-DeployingActiveDirectory/blob/master/HOL.md">Bereitstellen und Erstellen des Domänencontrollers</a>.

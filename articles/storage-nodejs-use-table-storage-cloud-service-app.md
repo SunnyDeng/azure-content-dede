@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Web App with Storage" pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="Ein Lernprogramm, das auf dem Lernprogramm Web App mit Express basiert und Azure-Speicherdienste sowie das Azure-Modul hinzufügt." metaCanonical="" services="cloud-services,storage" documentationCenter="nodejs" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Web App with Storage" pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="Ein Lernprogramm, das auf dem Lernprogramm Web App mit Express basiert und Azure-Speicherdienste sowie das Azure-Modul hinzufügt." metaCanonical="" services="cloud-services,storage" documentationCenter="nodejs" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="mwasson" />
 
@@ -70,7 +70,7 @@ Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicher
 
 		PS C:\node\tasklist\WebRole1> npm install azure-storage node-uuid async nconf --save
 
-	The output of this command should appear similar to the following:
+	Die Ausgabe dieses Befehls sollte ungefähr wie folgt aussehen:
 
 		node-uuid@1.4.1 node_modules\node-uuid
 

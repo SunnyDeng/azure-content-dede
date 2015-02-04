@@ -19,10 +19,10 @@ Der Warteschlangendienst umfasst die folgenden Komponenten:
 ![Queue1](./media/howto-queue-storage/queue1.png)
 
 
--   **URL-Format:** Warteschlangen sind über das folgende URL-Format adressierbar:
+- **URL-Format:** Warteschlangen sind über das folgende URL-Format adressierbar:   
 	http://`<storage account>`.queue.core.windows.net/`<queue>`
 
-Mit der folgenden URL kann eine der Warteschlangen im Diagramm adressiert werden.
+Mit der folgenden URL kann eine der Warteschlangen im Diagramm adressiert werden.  
 	http://myaccount.queue.core.windows.net/imagesToDownload
 
 -**Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/de-de/library/dn249410.aspx) (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).

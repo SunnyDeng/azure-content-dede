@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="How to create and configure an Azure SQL DB" pageTitle="Erstellen und Konfigurieren einer Azure SQL-Datenbank - Azure-Lernprogramm" MetaKeywords="Azure SQL-Datenbank erstellen, Azure SQL-Datenbank konfigurieren" description="Erstellen und Konfigurieren einer Azure SQL-Datenbank" metaCanonical="" services="sql-database" documentationCenter="" title="How to Create and Configure an Azure SQL Database" authors="sidneyh" solutions="" manager="jhubbard" editor="" />
+<properties urlDisplayName="How to create and configure an Azure SQL DB" pageTitle="Erstellen und Konfigurieren einer Azure SQL-Datenbank - Azure-Lernprogramm" metaKeywords="Azure SQL-Datenbank erstellen, Azure SQL-Datenbank konfigurieren" description="Erstellen und Konfigurieren einer Azure SQL-Datenbank" metaCanonical="" services="sql-database" documentationCenter="" title="How to Create and Configure an Azure SQL Database" authors="sidneyh" solutions="" manager="jhubbard" editor="" />
 
 <tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sidneyh" />
 
@@ -6,7 +6,7 @@
 
 In diesem Thema erstellen und konfigurieren Sie eine Azure SQL-Datenbank über das Azure-Verwaltungsportal. In diesem Workflow erstellen Sie zunächst den Server. Dieser Ansatz ist besser geeignet, wenn Sie bereits SQL Server-Datenbanken haben, die Sie hochladen möchten.
 
-##Inhaltsverzeichnis
+## Inhaltsverzeichnis
 * [Gewusst wie: Erstellen eines logischen Servers](#createLogical)
 * [Gewusst wie: Konfigurieren der Firewall für den logischen Server](#configFWLogical)
 
@@ -40,13 +40,13 @@ In diesem Thema erstellen und konfigurieren Sie eine Azure SQL-Datenbank über d
 
 9. Klicken Sie abschließend auf das Häkchen unten auf der Seite.
 
-###Automatisch generierter Servername
+### Automatisch generierter Servername
 
 Beachten Sie, dass Sie keinen Servernamen angegeben haben. SQL Database generiert automatisch einen Servernamen, um doppelte DNS-Einträge zu verhindern. Der Servername ist eine alphanumerische Zeichenfolge aus zehn Zeichen. Sie können den Namen Ihres SQL Database-Servers nicht ändern.
 
 Im nächsten Schritt konfigurieren Sie die Firewall, sodass Verbindungen von Anwendungen, die auf Ihrem Netzwerk ausgeführt werden, Zugriff erhalten.
 
-##Gewusst wie: Konfigurieren der Firewall für den logischen Server
+## Gewusst wie: Konfigurieren der Firewall für den logischen Server
 
 1. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com) auf **SQL-Datenbanken**, und klicken Sie dann auf **Server**
 

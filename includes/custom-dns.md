@@ -3,7 +3,7 @@
 > [WACOM.NOTE]
 > Schneller ans Ziel kommen – mit der neuen [Komplettanleitung][Komplettanleitung] für Azure. Mit dieser Anleitung wird das Zuordnen eines benutzerdefinierten Domänennamens zu Azure-Clouddiensten und Azure-Websites sowie das Absichern der Kommunikation mittels SSL zum Kinderspiel.
 
-Wenn Sie eine Anwendung in Azure erstellen, bietet Azure eine Unterdomäne in der cloudapp.net-Domäne, damit Benutzer über eine URL wie http://\<[myapp][myapp]\>.cloudapp.net auf Ihre Anwendung zugreifen können. Sie können Ihre Anwendung jedoch auch unter Ihrem eigenen Domänennamen zur Verfügung stellen, beispielsweise contoso.com.
+Wenn Sie eine Anwendung in Azure erstellen, bietet Azure eine Unterdomäne in der cloudapp.net-Domäne, damit Benutzer über eine URL wie http://&lt;*myapp*>.cloudapp.net auf Ihre Anwendung zugreifen können. Sie können Ihre Anwendung jedoch auch unter Ihrem eigenen Domänennamen zur Verfügung stellen, beispielsweise contoso.com.
 
 > [WACOM.NOTE]
 > Die Vorgehensweisen in dieser Aufgabe gelten für Azure-Clouddienste. Informationen zu Speicherkonten finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für ein Azure-Speicherkonto][Konfigurieren eines benutzerdefinierten Domänennamens für ein Azure-Speicherkonto]. Informationen zu Websites finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website][Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website].
@@ -40,15 +40,15 @@ Sie müssen einen neuen Eintrag zu der DNS-Tabelle Ihrer benutzerdefinierten Dom
 
 1.  Verwenden Sie eine dieser Methoden, um den **.cloudapp.net**-Domänennamen zu ermitteln, der Ihrem Clouddienst zugewiesen ist.
 
--   Melden Sie sich beim [Azure Verwaltungsportal][Azure Verwaltungsportal] an, wählen Sie Ihren Clouddienst aus, wählen Sie **Dashboard** aus, und navigieren Sie dann zum Eintrag **Site URL** in der **Schnelleinsicht**.
+  * Melden Sie sich beim [Azure Verwaltungsportal][Azure Verwaltungsportal] an, wählen Sie Ihren Clouddienst aus, wählen Sie **Dashboard** aus, und navigieren Sie dann zum Eintrag **Site URL** in der **Schnelleinsicht**.
 
           ![quick glance section showing the site URL][csurl]
 
--   Installieren und konfigurieren Sie [Azure PowerShell][Azure PowerShell], und verwenden Sie dann den folgenden Befehl:
+  * Installieren und konfigurieren Sie [Azure PowerShell][Azure PowerShell], und verwenden Sie dann den folgenden Befehl:
 
     Get-AzureDeployment -ServiceName yourservicename | Select Url
 
-Speichern Sie die im Domänennamen verwendete URL, die von der jeweiligen Methode zurückgegeben wurde. Diesen Namen benötigen Sie zum Erstellen eines CNAME-Datensatzes.
+ Speichern Sie die im Domänennamen verwendete URL, die von der jeweiligen Methode zurückgegeben wurde. Diesen Namen benötigen Sie zum Erstellen eines CNAME-Datensatzes.
 
 1.  Melden Sie sich bei der Website Ihrer DNS-Registrierungsstelle an, und öffnen Sie die Seite für die DNS-Verwaltung. Suchen Sie nach Links oder Bereichen der Site, die als **Domänenname**, **DNS** oder **Namenserververwaltung** bezeichnet werden.
 
@@ -60,9 +60,16 @@ Speichern Sie die im Domänennamen verwendete URL, die von der jeweiligen Method
 
 Der folgende CNAME-Datensatz leitet zum Beispiel den gesamten Verkehr von **www.contoso.com** an **contoso.cloudapp.net** weiter. Das ist der benutzerdefinierte Domänenname Ihrer bereitgestellten Anwendung:
 
-|--------------------------------|-----------------------|
-| **Alias/Hostname/Unterdomäne** | **Kanonische Domäne** |
-| www                            | contoso.cloudapp.net  |
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+<tr>
+<td><strong>Alias/Hostname/Unterdomäne</strong></td>
+<td><strong>Kanonische Domäne</strong></td>
+</tr>
+<tr>
+<td>www</td>
+<td>contoso.cloudapp.net</td>
+</tr>
+</table>
 
 Einem Besucher von **www.contoso.com** wird niemals der wirkliche Host
 (contoso.cloudapp.net) angezeigt. Die Weiterleitung ist also für den Endbenutzer
@@ -77,35 +84,42 @@ Sie müssen zunächst die virtuelle IP-Adresse Ihres Clouddiensts ermitteln, um 
 
 1.  Verwenden Sie eine der folgenden Methoden, um die IP-Adresse Ihres Clouddiensts zu ermitteln.
 
--   Melden Sie sich beim [Azure Verwaltungsportal][Azure Verwaltungsportal] an, wählen Sie Ihren Clouddienst aus, wählen Sie **Dashboard** aus, und navigieren Sie dann zur **öffentlichen virtuellen IP (VIP)** in der **Schnelleinsicht**.
+  * Melden Sie sich beim [Azure Verwaltungsportal][Azure Verwaltungsportal] an, wählen Sie Ihren Clouddienst aus, wählen Sie **Dashboard** aus, und navigieren Sie dann zur **öffentlichen virtuellen IP (VIP)** in der **Schnelleinsicht**.
 
-         ![quick glance section showing the VIP][vip]
+   		 ![quick glance section showing the VIP][vip]
 
--   Installieren und konfigurieren Sie [Azure PowerShell][Azure PowerShell], und verwenden Sie dann den folgenden Befehl:
+  * Installieren und konfigurieren Sie [Azure PowerShell][Azure PowerShell], und verwenden Sie dann den folgenden Befehl:
 
     get-azurevm -servicename yourservicename | get-azureendpoint -VM {$\_.VM} | select Vip
 
     Falls Sie Ihrem Clouddienst mehrere Endpunkte zugewiesen haben, erhalten Sie mehrere Zeilen mit der IP-Adresse. Alle Zeilen sollten jedoch dieselbe Adresse anzeigen.
 
-Speichern Sie die IP-Adresse, da Sie sie zum Erstellen eines A-Datensatzes benötigen.
+  Speichern Sie die IP-Adresse, da Sie sie zum Erstellen eines A-Datensatzes benötigen.
 
 1.  Melden Sie sich bei der Website Ihrer DNS-Registrierungsstelle an, und öffnen Sie die Seite für die DNS-Verwaltung. Suchen Sie nach Links oder Bereichen der Site, die als **Domänenname**, **DNS** oder **Namenserververwaltung** bezeichnet werden.
 
 2.  Navigieren Sie nun zu dem Bereich, in dem Sie A-Datensätze auswählen oder eingeben können. Möglicherweise müssen Sie den Datensatztyp in einem Dropdownmenü auswählen oder die Seite für erweiterte Einstellungen aufrufen.
 
-3.  Wählen Sie die Domäne oder Unterdomäne aus, die diesen A-Datensatz verwenden wird, oder geben Sie diese ein. Wählen Sie beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Platzhaltereintrag für alle Unterdomänen erstellen möchten, geben Sie "\_\_\*\_\_" ein. Dieser Eintrag deckt alle Unterdomänen ab wie **mail.customdomain.com**, **login.customdomain.com** und **www.customdomain.com**.
+3.  Wählen Sie die Domäne oder Unterdomäne aus, die diesen A-Datensatz verwenden wird, oder geben Sie diese ein. Wählen Sie beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Platzhaltereintrag für alle Unterdomänen erstellen möchten, geben Sie '__*__' ein. Dieser Eintrag deckt alle Unterdomänen ab wie **mail.customdomain.com**, **login.customdomain.com** und **www.customdomain.com**.
 
-Wenn Sie einen A-Datensatz für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "[\*\*@\*\*][\*\*@\*\*]"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
+  Wenn Sie einen A-Datensatz für die Stammdomäne erstellen möchten, wird dieser möglicherweise als '**@**' Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
 
 1.  Geben Sie die IP-Adresse Ihres Clouddiensts in das angegebene Feld ein. So wird der im A-Datensatz verwendete Domäneneintrag der IP-Adresse Ihrer Clouddienstbereitstellung zugewiesen.
 
 Der folgende A-Datensatz leitet zum Beispiel den gesamten Verkehr von **www.contoso.com** an **137.135.70.239** weiter. Das ist die IP-Adresse Ihrer bereitgestellten Anwendung:
 
-|--------------------------|----------------|
-| **Hostname/Unterdomäne** | **IP-Adresse** |
-| @                        | 137.135.70.239 |
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
+<tr>
+<td><strong>Hostname/Unterdomäne</strong></td>
+<td><strong>IP-Adresse</strong></td>
+</tr>
+<tr>
+<td>@</td>
+<td>137.135.70.239</td>
+</tr>
+</table>
 
-Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. Wenn Sie einen Platzhaltereintrag erstellen möchten, der alle Unterdomänen abdeckt, würden Sie "\_\_\*\_\_" als Unterdomäne eingeben.
+Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. Wenn Sie einen Platzhaltereintrag erstellen möchten, der alle Unterdomänen abdeckt, würden Sie '__*__' als Unterdomäne eingeben.
 
 ## Nächste Schritte
 
@@ -125,3 +139,4 @@ Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. W
   [Azure PowerShell]: ../install-configure-powershell/
   [\*\*@\*\*]: mailto:'**@**
   [Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne]: http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx
+  [vip]: ./media/custom-dns/csvip.png

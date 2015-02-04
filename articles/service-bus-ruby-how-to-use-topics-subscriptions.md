@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Service Bus Topics" pageTitle="Verwenden von Service Bus-Themen(Ruby) - Azure" metaKeywords="Get started Azure Service Bus topics, Get Started Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions, Service Bus topic ruby" description="Erfahren Sie mehr zur Verwendung von Service Bus-Themen und -Abonnements in Azure. Die Codebeispiele wurden für Ruby-Anwendungen geschrieben." metaCanonical="" services="service-bus" documentationCenter="Ruby" title="How to Use Service Bus Topics/Subscriptions" authors="tomfitz" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Service Bus Topics" pageTitle="Verwenden von Service Bus-Themen(Ruby) - Azure" metaKeywords="Get started Azure Service Bus topics, Get Started Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions, Service Bus topic ruby" description="Erfahren Sie mehr zur Verwendung von Service Bus-Themen und -Abonnements in Azure. Die Codebeispiele wurden für Ruby-Anwendungen geschrieben." metaCanonical="" services="service-bus" documentationCenter="Ruby" title="How to Use Service Bus Topics/Subscriptions" authors="tomfitz" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="11/25/2014" ms.author="tomfitz" />
 
@@ -37,16 +37,15 @@ Ein Themenabonnement ähnelt einer virtuellen Warteschlange, die Kopien der Nach
 
 Mit Servicebus-Themen und -Abonnements können Sie sehr viele Nachrichten an sehr viele Benutzer und Anwendungen verarbeiten.
 
-## <a id="create-a-service-namespace"</a>Create a Service Namespace
+## <a id="create-a-service-namespace"</a>Erstellen eines Dienstnamespaces
 
-To begin using Service Bus queues in Azure, you must first create a service namespace. A service namespace provides a scoping container for addressing Service Bus resources within 
-your application. You must create the namespace through the command-line interface because the Portal does not create the service bus with an ACS connection.
+Um Service Bus-Warteschlangen in Azure zu verwenden, müssen Sie zunächst einen Dienstnamespace erstellen. Ein Dienstnamespace ist eine Bereichseinheit zur Adressierung von Service Bus-Ressourcen innerhalb Ihrer Anwendung. Sie müssen den Namespace über die Befehlszeilenschnittstelle erstellen, da das Portal den Service Bus nicht mit einer ACS-Verbindung erstellt.
 
-To create a namespace:
+So erstellen Sie einen Namespace:
 
-1. Open an Azure Powershell console.
+1. Öffnen Sie eine Azure Powershell-Konsole.
 
-2. Type the command to create an Azure service bus namespace as shown below. Provide your own namespace value and specify the same region as your application. 
+2. Geben Sie den Befehl zum Erstellen eines Azure Service Bus-Namespace ein, wie unten dargestellt. Geben Sie Ihren eigenen Namespace und die gleiche Region wie die Ihrer Anwendung an. 
 
       New-AzureSBNamespace -Name 'yourexamplenamespace' -Location 'West US' -CreateACSNamespace $true
 

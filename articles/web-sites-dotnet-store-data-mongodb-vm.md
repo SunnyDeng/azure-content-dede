@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Website with MongoDB VM" pageTitle=".NET-Website mit MongoDB auf einem virtuellen Computer - Azure" metaKeywords="Azure Git ASP.NET MongoDB, Git .NET, Git MongoDB, ASP.NET MongoDB, Azure MongoDB, Azure ASP.NET, Azure tutorial" description="In diesem Lernprogramm erfahren Sie, wie Sie Git verwenden, um eine ASP.NET-App an eine Azure-Website bereitzustellen, die mit MongoDB auf einem virtuellen Computer verbunden ist." metaCanonical="" services="web-sites,virtual-machines" documentationCenter=".NET" title="Create an Azure website that connects to MongoDB running on a virtual machine in Azure" authors="cephalin" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Website with MongoDB VM" pageTitle=".NET-Website mit MongoDB auf einem virtuellen Computer - Azure" metaKeywords="Azure Git ASP.NET MongoDB, Git .NET, Git MongoDB, ASP.NET MongoDB, Azure MongoDB, Azure ASP.NET, Azure tutorial" description="In diesem Lernprogramm erfahren Sie, wie Sie Git verwenden, um eine ASP.NET-App an eine Azure-Website bereitzustellen, die mit MongoDB auf einem virtuellen Computer verbunden ist." metaCanonical="" services="web-sites,virtual-machines" documentationCenter=".NET" title="Create an Azure website that connects to MongoDB running on a virtual machine in Azure" authors="cephalin" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/24/2014" ms.author="cephalin" />
 
@@ -359,7 +359,7 @@ Um den Titel oben auf der Seite zu ändern, öffnen Sie die Datei *Views\Shared\
 	<div>  @Html.Partial("Create", new MyTaskListApp.Models.MyTask())</div>
 
 
-To add the ability to create a new task, right-click the *Views\Home\\* folder and **Add** a **View**.  Name the view *Create*. Replace the code with the following:
+Um die Möglichkeit zum Erstellen eines neuen Tasks hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Ordner *Views\Home\\* , und  fügen Sie eine neue **Ansicht** hinzu. Benennen Sie die Ansicht *Create*. Ersetzen Sie den Code durch den folgenden Code:
 
 	@model MyTaskListApp.Models.MyTask
 	

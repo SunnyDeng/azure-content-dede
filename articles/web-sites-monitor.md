@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="How to monitor" pageTitle="Überwachen von Websites - Azure-Dienstverwaltung" metaKeywords="Azure monitoring web sites, Azure Management Portal Monitor, Azure monitoring" description="Erfahren Sie, wie Sie Azure-Websites mithilfe der Überwachungsseite im Verwaltungsportal überwachen." metaCanonical="" services="web-sites" documentationCenter="" title="How to Monitor Websites" authors="cephalin" solutions="" manager="wpickett" editor="mollybos" />
+<properties urlDisplayName="How to monitor" pageTitle="Überwachen von Websites - Azure-Dienstverwaltung" metaKeywords="Azure monitoring web sites, Azure Management Portal Monitor, Azure monitoring" description="Erfahren Sie, wie Sie Azure-Websites mithilfe der Überwachungsseite im Verwaltungsportal überwachen." metaCanonical="" services="web-sites" documentationCenter="" title="How to Monitor Websites" authors="cephalin" solutions="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/24/2014" ms.author="cephalin" />
 
@@ -85,10 +85,10 @@ Sie können die folgenden Anwendungsdiagnose-Optionen aktivieren oder deaktivier
 Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Speicherkonten](https://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/).
 
 <div class="dev-callout"on> 
-<b>Note</b> 
-<p>Application logging to table or blob storage is only supported for .NET applications.</p> </div>
+<b>Hinweis</b> 
+<p>Anwendungsprotokollierung in einer Tabelle oder einem Blob-Speicher wird nur für .NET-Anwendungen unterstützt.</p> </div>
 
-Since application logging to storage requires using a storage client to view the log data, it is most useful when you plan on using a service or application that understands how to read and process the data directly from Azure Table or Blob Storage. Logging to the file system produces files that can be downloaded to your local computer using FTP or other utilities as described later in this section.
+Da die Anwendungsprotokollierung im Speicher die Verwendung eines Speicherclients zum Anzeigen der Protokolldaten erfordert, ist es hilfreich, wenn Sie eine Anwendung oder einen Dienst verwenden, die bzw. der Daten direkt aus der Azure-Tabelle oder dem Blob-Speicher lesen und verarbeiten kann. Bei der Protokollierung im Dateisystem werden Dateien erzeugt, die über FTP oder andere Dienstprogramme auf Ihren lokalen Computer heruntergeladen werden können, wie später in diesem Abschnitt beschrieben wird.
 
 <div class="dev-callout"> 
 	<b>Hinweis</b> 

@@ -1,8 +1,8 @@
-﻿<properties title="SharePoint Server Farm" pageTitle="SharePoint-Serverfarm" description="Beschreibt das neue im Azure-Vorschauportal verfügbare SharePoint-Serverfarmfeature." metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="josephd" videoId="" scriptId="" manager="timlt"/>
+<properties title="SharePoint Server Farm" pageTitle="SharePoint-Serverfarm" description="Beschreibt das neue im Azure-Vorschauportal verfügbare SharePoint-Serverfarmfeature." metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="josephd" videoId="" scriptId="" manager="timlt"/>
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-sharepoint" ms.devlang="na" ms.topic="article" ms.date="10/20/2014" ms.author="josephd" />
 
-#SharePoint-Serverfarm#
+# SharePoint-Serverfarm#
 
 Mit der SharePoint-Serverfarm erstellt das Microsoft Azure-Vorschauportal eine vorkonfigurierte SharePoint Server 2013-Farm für Sie. Damit können Sie viel Zeit sparen, wenn Sie eine grundlegende oder hochverfügbare SharePoint-Farm für eine Test- oder Entwicklungsumgebung benötigen oder wenn Sie SharePoint Server 2013 als Zusammenarbeitslösung für Ihre Organisation bewerten möchten.
 
@@ -47,7 +47,7 @@ Hinweise:
 - Das Azure-Vorschauportal erstellt beide Farmen in einem virtuellen Cloudnetzwerk mit einer über das Internet zugängigen Webpräsenz. Es gibt keine Standort-zu-Standort-VPN-Verbindung mit Ihrem Unternehmensnetzwerk. 
 - Sie können diese Server über Remotedesktopverbindungen verwalten.
 
-##Schrittweise Anleitung zur Konfiguration##
+## Schrittweise Anleitung zur Konfiguration##
 
 Gehen Sie wie folgt vor, um Ihre SharePoint-Farm mit SharePoint Farm zu erstellen:
 
@@ -63,7 +63,7 @@ Gehen Sie wie folgt vor, um Ihre SharePoint-Farm mit SharePoint Farm zu erstelle
 10. Klicken Sie auf den Pfeil, um den Standort (Region) anzugeben.
 11. Klicken Sie auf **Erstellen**, wenn Sie fertig sind.
 
-##Azure Resource Manager##
+## Azure Resource Manager##
 
 Die SharePoint-Serverfarm verwendet den Azure Resource Manager und Skripte, um die Infrastruktur und die Serverkonfigurationen für diese SharePoint-Farmen automatisch zu erstellen. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit Resource Manager](http://azure.microsoft.com/de-de/documentation/articles/powershell-azure-resource-manager/).
 

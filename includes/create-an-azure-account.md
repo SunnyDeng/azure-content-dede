@@ -1,4 +1,4 @@
-﻿Erstellen eines Azure-Kontos und Aktivieren von Vorschaufeatures
+# Erstellen eines Azure-Kontos und Aktivieren von Vorschaufeatures
 
 Um Anwendungen in Azure bereitzustellen, benötigen Sie ein Konto. In diesem Artikel wird erläutert, wie Sie ein kostenloses Testkonto erstellen und wie Sie Azure-Vorschaufeatures wie BizTalk Services, HDInsight und Azure Back für das Konto aktivieren.
 

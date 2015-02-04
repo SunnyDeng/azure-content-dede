@@ -1,9 +1,9 @@
-﻿<properties title="SharePoint Server Farm Configuration Details" pageTitle="SharePoint-Serverfarm-Konfigurationsdetails" description="Beschreibt die standardmäßige Konfiguration von SharePoint-Farmen" metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="josephd" videoId="" scriptId="" manager="timlt"/>
+<properties title="SharePoint Server Farm Configuration Details" pageTitle="SharePoint-Serverfarm-Konfigurationsdetails" description="Beschreibt die standardmäßige Konfiguration von SharePoint-Farmen" metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="josephd" videoId="" scriptId="" manager="timlt"/>
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-sharepoint" ms.devlang="na" ms.topic="article" ms.date="10/20/2014" ms.author="josephd" />
 
 
-#SharePoint-Serverfarm-Konfigurationsdetails#
+# SharePoint-Serverfarm-Konfigurationsdetails#
 
 Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals für die automatische Erstellung einer vorkonfigurierten SharePoint Server 2013-Farm für Sie. Es gibt zwei Farmkonfigurationen:
 
@@ -14,7 +14,7 @@ Die folgenden Abschnitte beinhalten Konfigurationsdetails für jede Farm.
 
 Weitere Informationen finden Sie unter [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
 
-##Grundlegende SharePoint-Farm##
+## Grundlegende SharePoint-Farm##
 
 Die grundlegende SharePoint-Farm besteht aus drei virtuellen Computern mit der folgenden Konfiguration:
 
@@ -57,7 +57,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 	-	Passphrase für SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 
 
-##Hochverfügbarkeit##
+## Hochverfügbarkeit##
 
 Die hochverfügbare SharePoint-Farm besteht aus neun virtuellen Computern mit der folgenden Konfiguration:
 

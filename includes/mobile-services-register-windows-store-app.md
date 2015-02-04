@@ -1,4 +1,4 @@
-﻿
+
 1. Falls Sie Ihre Anwendung noch nicht registriert haben, navigieren Sie im Entwicklungscenter für Windows Store-Anwendungen zu [Anwendungsseite senden], melden Sie sich mit Ihrem Microsoft-Konto an, und klicken Sie dann auf **Anwendungsname**.
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-submit-win8-app.png)
@@ -15,7 +15,7 @@
 
   	![](./media/mobile-services-register-windows-store-app/mobile-services-store-association.png)
 
-   	   	Daraufhin wird der Assistent zum **Zuordnen Ihrer Anwendung zum Windows Store** angezeigt.
+   	Daraufhin wird der Assistent zum **Zuordnen Ihrer Anwendung zum Windows Store** angezeigt.
 
 5. Klicken Sie im Assistenten auf **Anmelden**. Melden Sie sich dann mit Ihrem Microsoft-Konto ein.
 
@@ -23,7 +23,7 @@
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-select-app-name.png)
 
-Auf diese Weise werden die erforderlichen Windows Store-Registrierungsinformationen zum Anwendungsmanifest hinzugefügt.    
+   	Auf diese Weise werden die erforderlichen Windows Store-Registrierungsinformationen zum Anwendungsmanifest hinzugefügt.    
 
 7. Klicken Sie auf der Windows-Entwicklungscenter-Seite für Ihre neue Anwendung auf**Dienste**. 
 
@@ -45,7 +45,7 @@ Auf diese Weise werden die erforderlichen Windows Store-Registrierungsinformatio
 
 	Dadurch wird die Microsoft-Kontoauthentifizierung für Ihre App aktiviert.
 
-11. 	Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und anschließend auf Ihre App.
+11. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und anschließend auf Ihre App.
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-selection.png)
 
@@ -68,3 +68,4 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
 [Übermitteln einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582

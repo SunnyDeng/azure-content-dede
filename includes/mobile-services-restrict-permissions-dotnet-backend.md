@@ -1,3 +1,5 @@
+
+
 Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts auf Clients beschränkt, die den Anwendungsschlüssel vorweisen. Der sichere Zugriff auf die Ressourcen ist dadurch allerdings nicht gegeben. Um den sicheren Zugriff auf die Ressourcen zu gewährleisten, müssen Sie den Zugriff ausschließlich auf authentifizierte Clients beschränken.
 
 1.  Öffnen Sie in Visual Studio das Projekt, in dem Ihr mobiler Dienst enthalten ist.
@@ -16,7 +18,7 @@ Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts a
 
     So wird sichergestellt, dass für alle Vorgänge für die Tabelle **TodoItem** eine Benutzerauthentifizierung erforderlich ist.
 
-    > [WACOM.NOTE]Verwenden Sie das AuthorizeLevel-Attribut für einzelne Methoden, um bestimmte Autorisierungsstufen für die vom Controller bereitgestellten Methoden festzulegen.
+    >[WACOM.NOTE]Verwenden Sie das AuthorizeLevel-Attribut für einzelne Methoden, um bestimmte Autorisierungsstufen für die vom Controller bereitgestellten Methoden festzulegen.
 
 5.  Wenn Sie die Authentifizierung lokal debuggen möchten, erweitern Sie den Ordner "App\_Start", öffnen Sie die Projektdatei "WebApiConfig.cs", und fügen Sie anschließend den folgenden Code der Methode **Registrieren** hinzu:
 

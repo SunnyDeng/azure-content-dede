@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Web w/ Storage" pageTitle="PHP-Website mit Tabellenspeicher - Azure-Lernprogramm" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Website erstellen und den Azure-Tabellenspeicherdienst im Back-End verwenden." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Website using Azure Storage" authors="tomfitz" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Web w/ Storage" pageTitle="PHP-Website mit Tabellenspeicher - Azure-Lernprogramm" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Website erstellen und den Azure-Tabellenspeicherdienst im Back-End verwenden." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Website using Azure Storage" authors="tomfitz" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/21/2014" ms.author="tomfitz" />
 
@@ -83,7 +83,7 @@ Es gibt vier Grundschritte, die bei der Nutzung der Bibliotheken ausgeführt wer
 
 		$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 	
-	`$tableRestProxy` contains a method for every REST call available on Azure Tables.
+	`$tableRestProxy` enthält eine Methode für alle REST-Aufrufe, die in Azure Tables zur Verfügung stehen.
 
 
 ## Erstellen einer Tabelle
@@ -189,7 +189,7 @@ Die Startseite der Tasklist-Anwendung sollte alle bestehenden Aufgaben enthalten
 			echo "<h3>No items on list.</h3>";
 		?>
 
-* Last, you must insert the form that feeds data into the task insertion script and complete the HTML:
+* Als Letztes müssen Sie das Formular einfügen, das Daten in das Skript zum Einfügen von Aufgaben übergibt, und den HTML-Code vervollständigen:
 
 			<hr/>
 			<form action="additem.php" method="post">

@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Diagnostics" pageTitle="Verwenden von Diagnosen (.NET) - Azure-Featureleitfaden" metaKeywords="Azure diagnostics monitoring,logs crash dumps C#" description="Hier erfahren Sie, wie Sie Diagnosedaten in Azure für Debugging, Leistungsmessungen, Überwachung, Datenverkehrsanalysen und mehr einsetzen." metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Enabling Diagnostics in Azure" authors="raynew" solutions="" manager="johndaw" editor="" />
+<properties urlDisplayName="Diagnostics" pageTitle="Verwenden von Diagnosen (.NET) - Azure-Featureleitfaden" metaKeywords="Azure diagnostics monitoring,logs crash dumps C#" description="Hier erfahren Sie, wie Sie Diagnosedaten in Azure für Debugging, Leistungsmessungen, Überwachung, Datenverkehrsanalysen und mehr einsetzen." metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Enabling Diagnostics in Azure" authors="raynew" solutions="" manager="johndaw" editor="" />
 
 <tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="10/23/2014" ms.author="raynew" />
 
@@ -19,7 +19,7 @@ Mit der Azure-Diagnose 1.2 können Sie Diagnosedaten von einer Worker- oder Webr
 -   [Vergleich zwischen Azure-Diagnose 1.0 und 1.2][]
 -   [Zusätzliche Ressourcen][]
 
-<h2><a name="overview"></a>Overview</h2>
+<h2><a name="overview"></a>Übersicht</h2>
 
 Die Azure-Diagnose 1.2 ist eine Azure-Erweiterung, mit der Sie Telemetriedaten zur Diagnose von einer Worker- oder Webrolle oder einem virtuellen Computer erfassen können, die bzw. der in Azure ausgeführt wird. Die Telemetriedaten werden in einem Azure-Speicherkonto gespeichert und können zum Debuggen und Beheben von Fehlern, zum Messen der Leistung, zum Überwachen der Ressourcenauslastung, zum Analysieren des Datenverkehrs, zum Planen der Kapazität und zum Durchführen von Audits verwendet werden. 
 
@@ -187,7 +187,7 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
 
 <h3>Schritt 4: Erstellen der Diagnosekonfigurationsdatei und Installieren der Erweiterung</h3>
 1.	Laden Sie die Schemadefinition für die öffentliche Konfigurationsdatei mit dem folgenden PowerShell-Befehl herunter:
-2.	
+
 		(Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd' 
 
 2.	Fügen Sie Ihrem Projekt **WorkerRole1** eine XML-Datei hinzu. Klicken Sie dazu mit der rechten Maustaste auf das Projekt **WorkerRole1**, und wählen Sie **Hinzufügen** -> **Neues Element...** -> **Visual C#-Elemente** -> **Daten** -> **XML-Datei** aus. Nennen Sie die Datei "WadExample.xml".
@@ -255,6 +255,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
 <h3>Schritt 2: Erstellen Ihrer Anwendung</h3>
 1.	Starten Sie auf dem Entwicklungscomputer Visual Studio 2013.
 2.	Erstellen Sie eine neue Visual C#-Konsolenanwendung für .NET Framework 4.5. Geben Sie dem Projekt den Namen "WadExampleVM".
+
 	![CloudServices_diag_new_project](./media/cloud-services-dotnet-diagnostics/NewProject.png)
 3.	Ersetzen Sie den Inhalt von "Program.cs" durch den folgenden Code. Die **SampleEventSourceWriter**-Klasse implementiert vier Protokollierungsmethoden: **SendEnums**, **MessageMethod**, **SetOther** und **HighFreq**. Der erste Parameter für die WriteEvent-Methode definiert die ID für das betreffende Ereignis. Die Run-Methode implementiert eine Endlosschleife, die jede der in der **SampleEventSourceWriter**-Klasse implementierten Protokollierungsmethoden alle 10 Sekunden aufruft.
 
@@ -739,7 +740,7 @@ In der folgenden Tabelle werden die Features gegenübergestellt, die von den Ver
 
 <h2><a name="additional"></a>Zusätzliche Ressourcen</h2>
 
-- [Troubleshooting Best Practices for Developing Azure Applications][] (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache)
+- [Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen][]
 - [Sammeln von Protokollierungsdaten mit der Azure-Diagnose][]
 - [Debuggen von Azure-Anwendungen][]
 - [Konfigurieren der Azure-Diagnose][]
@@ -759,10 +760,10 @@ In der folgenden Tabelle werden die Features gegenübergestellt, die von den Ver
 [Konfigurieren der Azure-Diagnose]: http://msdn.microsoft.com/de-de/library/windowsazure/dn186185.aspx
 [Debuggen von Azure-Anwendungen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee405479.aspx   
 [Sammeln von Protokollierungsdaten mit der Azure-Diagnose]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433048.aspx
-[Troubleshooting Best Practices for Developing Azure Applications] (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache): http://msdn.microsoft.com/de-de/library/windowsazure/hh771389.aspx
+[Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen]: http://msdn.microsoft.com/de-de/library/windowsazure/hh771389.aspx
 [Kostenlose Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/
-[Installieren und Konfigurierenvon Azure PowerShell Version 0.8.7 oder höher]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
-[Azure Diagnostics 1.2 Configuration Schema] (Konfigurationsschema für die Azure-Diagnose 1.2, in englischer Sprache).: http://msdn.microsoft.com/de-de/library/azure/dn782207.aspx
+[Azure PowerShell Version 0.8.7 oder höher installieren und konfigurieren]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
+[Azure Diagnostics 1.2 Configuration Schema]: http://msdn.microsoft.com/de-de/library/azure/dn782207.aspx
 [Set-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/de-de/library/dn495270.aspx
 [Get-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/de-de/library/dn495145.aspx
 [Remove-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/de-de/library/dn495168.aspx

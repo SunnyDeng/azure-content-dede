@@ -57,7 +57,7 @@ Um eine Client-ID und einen geheimen Clientschlüssel zu generieren, müssen Sie
 
 **App-Domäne**: Der Hostname Ihrer Anwendung, z. B. "contoso.com". Diese Eigenschaft darf keine Portnummer enthalten. Während der Entwicklung sollte diese Eigenschaft auf "localhost" festgelegt werden.
 
-**App Redirect URL**: Die Umleitungs-URL, an die Azure AD nach der Benutzeranmeldung und nach der Freigabe Ihrer Anwendung durch eine Organisation eine Antwort sendet; z. B.: "<https://contoso.com/>." Während der Entwicklung sollte diese Eigenschaft auf "<https://localhost>:\<Portnummer\>" festgelegt werden.
+**App Redirect URL**: Die Umleitungs-URL, an die Azure AD nach der Benutzeranmeldung und nach der Freigabe Ihrer Anwendung durch eine Organisation eine Antwort sendet; z. B.: "https://contoso.com/." Während der Entwicklung sollte diese Eigenschaft auf "https://localhost:&#60;portnummer&#62;" festgelegt werden.
 
 ### Schritt 3: Konfigurieren der Anwendung zur Verwendung der Client-ID und des geheimen Clientschlüssels
 
@@ -174,7 +174,7 @@ In diesem Abschnitt wird gezeigt wie Sie die einmalige Anmeldung aktivieren. Der
 
 Die Anmeldeanforderung bezieht sich auf einen bestimmten Mandanten und muss eine Mandanten-ID enthalten. Eine Mandanten-ID kann anhand des Domänennamens eines Azure-AD-Mandanten bestimmt werden. Um diesen Domänennamen während der Anmeldung vom Endbenutzer zu erhalten, gibt es in der Regel zwei Möglichkeiten:
 
--   Wenn die URL der Anwendung *<https://contoso.myapp.com>* oder *<https://myapp.com/contoso.com>* lautet, stellen *[contoso][contoso]* und *[contoso.com][contoso]* den Azure AD-Domänennamen dar und *[myapp.com][contoso]* die URL Ihrer Anwendung.
+-   Wenn die URL der Anwendung *<https://contoso.myapp.com>* oder *<https://myapp.com/contoso.com>* lautet, stellen *contoso* und *contoso.com* den Azure AD-Domänennamen dar und *myapp.com* die URL Ihrer Anwendung.
 -   Ihre Anwendung kann den Benutzer zur Angabe seiner E-Mail-Adresse oder des Azure AD-Domänennamens auffordern. Dieser Ansatz wird in der Beispielanwendung verwendet, in der der Benutzer den Azure AD-Domänenname eingeben muss, wie unten dargestellt ist:
 
 ![Anmeldung][Anmeldung]

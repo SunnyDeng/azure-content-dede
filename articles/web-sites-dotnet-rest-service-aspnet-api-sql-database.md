@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="REST service using Web API" pageTitle=".NET REST-Dienst mit Web API - Azure-Lernprogramm" metaKeywords="Azure tutorial web site, ASP.NET API web site, Azure VS" description="In diesem Lernprogramm erfahren Sie, wie Sie eine App bereitstellen, die die ASP.NET-Web-API mithilfe von Visual Studio für eine Azure-Website verwendet." metaCanonical="" services="web-sites" documentationCenter=".NET" title="REST service using ASP.NET Web API and SQL Database" authors="riande" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="REST service using Web API" pageTitle=".NET REST-Dienst mit Web API - Azure-Lernprogramm" metaKeywords="Azure tutorial web site, ASP.NET API web site, Azure VS" description="In diesem Lernprogramm erfahren Sie, wie Sie eine App bereitstellen, die die ASP.NET-Web-API mithilfe von Visual Studio für eine Azure-Website verwendet." metaCanonical="" services="web-sites" documentationCenter=".NET" title="REST service using ASP.NET Web API and SQL Database" authors="riande" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/06/2014" ms.author="riande" />
 
@@ -571,7 +571,7 @@ In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Lö
                  bundles.Add(new StyleBundle("~/Content/css").Include(
                    "~/Content/bootstrap.css",
                    "~/Content/site.css"));
-To:
+in:
 
         bundles.Add(new StyleBundle("~/Content/css").Include(
                    "~/Content/bootstrap.css",
@@ -714,7 +714,7 @@ Weitere Informationen finden Sie unter [Open Web Application Security Project](h
         public IHttpActionResult PutContact(int id, Contact contact)
         {
 
-1. Update the *Scripts* section of the *Views\Home\Index.cshtml* file to include code to get the XSRF tokens.
+1. Aktualisieren Sie den Abschnitt *Scripts* der Datei *Views\Home\Index.cshtml*, um Code für die XSRF-Tokens zu erhalten.
 
          @section Scripts {
             @Scripts.Render("~/bundles/knockout")
@@ -879,9 +879,9 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 [addwebapi004]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/dntutmobile-webapi-added-contact.png
 [addwebapi006]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/dntutmobile-webapi-save-returned-contacts.png
 [addwebapi007]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/dntutmobile-webapi-contacts-in-notepad.png
-[Add XSRF Protection]: #xsrf
+[Hinzufügen von XSRF-Schutz]: #xsrf
 [WebPIAzureSdk20NetVS12]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/WebPIAzureSdk20NetVS12.png
-[Add XSRF Protection]: #xsrf
+[Hinzufügen von XSRF-Schutz]: #xsrf
 [ImportPublishSettings]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/ImportPublishSettings.png
 [ImportPublishProfile]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/ImportPublishProfile.png
 [PublishVSSolution]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/PublishVSSolution.png

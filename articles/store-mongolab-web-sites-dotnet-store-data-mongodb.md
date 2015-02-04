@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Website with MongoDB on MongoLab" pageTitle="Erstellen einer Website, die MongoDB auf MongoLab (.NET) verwendet" metaKeywords="" description="Erfahren Sie mehr über die Erstellung einer Azure-Website, die Daten in einer von MongoLab gehosteten MongoDB speichert." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Create a C# ASP.NET Application on Azure with MongoDB using the MongoLab Add-On" authors="chris@mongolab.com, eric@mongolab.com" solutions="" manager="mongolab" editor="mollybos" />
+<properties urlDisplayName="Website with MongoDB on MongoLab" pageTitle="Erstellen einer Website, die MongoDB auf MongoLab (.NET) verwendet" metaKeywords="" description="Erfahren Sie mehr über die Erstellung einer Azure-Website, die Daten in einer von MongoLab gehosteten MongoDB speichert." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Create a C# ASP.NET Application on Azure with MongoDB using the MongoLab Add-On" authors="chris@mongolab.com, eric@mongolab.com" solutions="" manager="mongolab" editor="mollybos" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/17/2014" ms.author="chris@mongolab.com" />
 
@@ -230,7 +230,7 @@ Hier greifen Sie auf eine Umgebungsvariable zu, die Sie später konfigurieren we
         mongoServer = client.GetServer();
         MongoDatabase database = mongoServer.GetDatabase(dbName);
         MongoCollection<Note> noteCollection = database.GetCollection<Note>(collectionName);
-  There's nothing to change here; Just be aware that this is how you get a MongoCollection object for performing inserts, updates, and queries, such as the following in **GetAllNotes()**:  
+  Hier muss nichts geändert werden. Sie sehen hier nur, wie Sie ein MongoCollection-Objekt zum Ausfühen von Einfügungen, Aktualisierungen und Abfragen erhalten, wie das folgende Objekt in **GetAllNotes()**:  
 
         collection.FindAll().ToList<Note>();
 

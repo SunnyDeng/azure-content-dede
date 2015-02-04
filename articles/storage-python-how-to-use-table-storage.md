@@ -1,44 +1,57 @@
-﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Python) | Microsoft Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Erfahren Sie, wie Sie den Tabellendienst aus Python zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen in der Tabelle verwenden." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="huvalo" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Python) | Microsoft Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Erfahren Sie, wie Sie den Tabellendienst aus Python zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen in der Tabelle verwenden.." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/19/2014" ms.author="robmcm" />
-
-
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/19/2014" ms.author="huvalo" />
 
 
 
-# Verwenden des Tabellenspeicherdiensts aus Python Dieser Leitfaden demonstriert die Durchführung häufiger Szenarien mit dem Azure-Tabellenspeicherdienst. Die Beispiele wurden unter Verwendung der Python-API geschrieben. Die behandelten Szenarien umfassen das **Erstellen und Löschen einer Tabelle sowie das Einfügen und Abfragen von Tabellenentitäten**. Weitere Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte][].
+
+
+# Verwenden des Tabellenspeicherdiensts aus Python
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tabellenspeicherdienst demonstriert. Die Beispiele wurden mit Python API geschrieben. Die aufgeführten Szenarien umfassen das **Erstellen und Löschen einer Tabelle sowie das Einfügen und Abfragen von Tabellenentitäten**. Weitere Informationen zu Tabellen finden Sie im Abschnitt [nächste Schritte][nächste Schritte].
 
 ## Inhaltsverzeichnis
 
-[Was ist der Tabellenspeicherdienst?][]   
- [Konzepte][]   
- [rstellen eines Azure-Speicherkontos][]   
- [Gewusst wie: Erstellen einer Tabelle][]   
- [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][]   
- [Gewusst wie: Aktualisieren einer Entität][]   
- [Gewusst wie: Ändern einer Gruppe von Entitäten][]   
- [Gewusst wie: Abfragen einer Entität][]   
- [Gewusst wie: Abfragen einer Gruppe von Entitäten][]   
- [Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften][]   
- [Gewusst wie: Löschen einer Entität][]   
- [Gewusst wie: Löschen einer Tabelle][]   
- [Nächste Schritte][]
+[Was ist der Tabellenspeicherdienst?][Was ist der Tabellenspeicherdienst?]   
+ 
+[Konzepte][Konzepte]   
+ 
+[Erstellen eines Azure-Speicherkontos][Erstellen eines Azure-Speicherkontos]   
+ 
+[Gewusst wie: Erstellen einer Tabelle][Gewusst wie: Erstellen einer Tabelle]   
+ 
+[Gewusst wie: Hinzufügen einer Entität zu einer Tabelle][Gewusst wie: Hinzufügen einer Entität zu einer Tabelle]   
+
+[Gewusst wie: Aktualisieren einer Entität][Gewusst wie: Aktualisieren einer Entität]   
+
+[Gewusst wie: Ändern einer Gruppe von Entitäten][Gewusst wie: Ändern einer Gruppe von Entitäten]   
+ 
+[Gewusst wie: Abfragen einer Entität][Gewusst wie: Abfragen einer Entität]   
+ 
+[Gewusst wie: Abfragen einer Gruppe von Entitäten][Gewusst wie: Abfragen einer Gruppe von Entitäten]   
+ 
+[Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften][Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften]   
+ 
+[Gewusst wie: Löschen einer Entität][Gewusst wie: Löschen einer Entität]   
+ 
+[Gewusst wie: Löschen einer Tabelle][Gewusst wie: Löschen einer Tabelle]   
+ 
+[Nächste Schritte][Nächste Schritte]
 
 [WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
 
 ## <a name="create-account"> </a>Erstellen eines Azure-Speicherkontos
 [WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
-**Hinweis:** Informationen zur Installation von Python oder den Clientbibliotheken finden Sie im [Python-Installationshandbuch](../python-how-to-install/).
+**Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch](../python-how-to-install/).
 
 
 ## <a name="create-table"> </a>Erstellen einer Tabelle
 
-Das **TableService**-Objekt ermöglicht Ihnen das Arbeiten mit Tabellenspeicherdiensten. Der folgende Code erstellt ein **TableService**-Objekt. Fügen Sie am Anfang jeder Python-Datei, in der Sie programmgesteuert auf Azure-Speicher zugreifen möchten, den folgenden Code hinzu:
+Das **TableService**-Objekt ermöglicht Ihnen das Arbeiten mit Tabellenspeicherdiensten. Der folgende Code erstellt ein **TableService**-Objekt. Fügen Sie Folgendes am Anfang jeder Python-Datei, in der Sie programmgesteuert auf Azure-Speicher zugreifen möchten, hinzu:
 
 	from azure.storage import TableService, Entity
 
-Mit dem folgenden Code wird unter Verwendung des Speicherkontonamens und Kontoschlüssels ein **TableService**-Objekt erstellt.  Ersetzen Sie 'myaccount' und 'mykey' durch das tatsächliche Konto und den tatsächlichen Schlüssel.
+Mit dem folgenden Code wird unter Verwendung des Speicherkontonamens und Kontoschlüssels ein **TableService**-Objekt erstellt:  Ersetzen Sie 'myaccount' und 'mykey' durch das tatsächliche Konto und den tatsächlichen Schlüssel.
 
 	table_service = TableService(account_name='myaccount', account_key='mykey')
 
@@ -46,23 +59,14 @@ Mit dem folgenden Code wird unter Verwendung des Speicherkontonamens und Kontosc
 
 ## <a name="add-entity"> </a>Hinzufügen einer Entität zu einer Tabelle
 
-Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Wörterbuch,
-das die Eigenschaftsnamen der Entität und deren Werte definiert. Beachten Sie, dass Sie für jede Entität
-einen **PartitionKey** und **RowKey** angeben müssen. Hierbei handelt es sich um die eindeutigen
-Bezeichner der Entität und Werte, die viel schneller abgerufen werden können
-als andere Eigenschaften. Das System verwendet **PartitionKey**
-um die Entitäten der Tabelle automatisch über viele Speicherknoten zu verteilen.
-Entitäten mit dem gleichen **PartitionKey** werden auf dem gleichen Knoten gespeichert. Der
-**RowKey** -Wert ist eine eindeutige ID der Entität innerhalb der Partition, zu der
-sie gehört.
+Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Wörterbuch, das die Eigenschaftsnamen der Entität und deren Werte definiert. Beachten Sie, dass Sie für jede Entität **PartitionKey** und **RowKey** angeben müssen. Hierbei handelt es sich um die eindeutigen Bezeichner der Entität und Werte, die viel schneller abgerufen werden können als andere Eigenschaften. Das System verwendet **PartitionKey** um die Entitäten der Tabelle automatisch über viele Speicherknoten zu verteilen. Entitäten mit dem gleichen **PartitionKey** werden auf dem gleichen Knoten gespeichert. Der **RowKey**-Wert ist eine eindeutige ID der Entität innerhalb der Partition, zu der sie gehört.
 
-Um eine Entität der Tabelle hinzuzufügen, übergeben Sie das Wörterbuchobjekt an die
-**insert\_entity**-Methode.
+Um eine Entität der Tabelle hinzuzufügen, übergeben Sie das Wörterbuchobjekt an die **insert\_entity**-Methode.
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
 	table_service.insert_entity('tasktable', task)
 
-Sie können auch eine Instanz der **Entity**-Klasse an die **insert\_entity**-Methode.
+Sie können auch eine Instanz der **Entity**-Klasse an die **insert\_entity**-Methode übergeben.
 
 	task = Entity()
 	task.PartitionKey = 'tasksSeattle'
@@ -73,13 +77,12 @@ Sie können auch eine Instanz der **Entity**-Klasse an die **insert\_entity**-Me
 
 ## <a name="update-entity"> </a>Aktualisieren einer Entität
 
-Dieser Code zeigt, wie Sie die alte Version einer existierenden Entität
-durch eine neue Version ersetzen können.
+Dieser Code zeigt, wie Sie die alte Version einer existierenden Entität durch eine neue Version ersetzen können.
 
 	task = {'description' : 'Take out the garbage', 'priority' : 250}
 	table_service.update_entity('tasktable', 'tasksSeattle', '1', task)
 
-Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität nicht existiert. Daher sollten Sie **insert\_or\_replace_entity**verwenden, wenn Sie eine Entität unabhängig davon speichern möchten, ob diese bereits vorhanden ist.  Der erste Aufruf im folgenden Beispiel ersetzt die existierende Entität. Der zweite Aufruf fügt eine neue Entität ein, da keine Entität mit dem angegebenen **PartitionKey** und **RowKey** in der Tabelle existiert.
+Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität nicht existiert. Daher sollten Sie **insert\_or\_replace_entity** verwenden, wenn Sie eine Entität unabhängig davon speichern möchten, ob diese bereits vorhanden ist. Der erste Aufruf im folgenden Beispiel ersetzt die existierende Entität. Der zweite Aufruf fügt eine neue Entität ein, da keine Entität mit dem angegebenen **PartitionKey** und **RowKey** in der Tabelle existiert.
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
 	table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '1', task)
@@ -118,12 +121,11 @@ Dieses Beispiel fragt alle Aufgaben in Seattle anhand des **PartitionKey**-Werts
 
 ## <a name="query-entity-properties"> </a>Abfragen einer Teilmenge von Entitätseigenschaften
 
-Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer Entität aufgerufen werden. Bei dieser Methode, der sogenannten *Projektion*, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Verwenden Sie den **select**-Parameter und übergeben Sie die Namen der Eigenschaften, die an den Client übermittelt werden sollen.
+Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer Entität aufgerufen werden.Bei dieser Methode, der so genannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Verwenden Sie den **select** -Parameter und übergeben Sie die Namen der Eigenschaften, die an den Client übermittelt werden sollen.
 
 Mit der Abfrage im folgenden Code werden nur die **Beschreibungen** von Entitäten in der Tabelle zurückgegeben.
 
-Beachten Sie, dass der folgende Codeausschnitt nur mit dem Cloud-Speicherdienst funktioniert, da diese Funktion vom Speicheremulator
-nicht unterstützt wird.*
+*Beachten Sie, dass der folgende Codeausschnitt nur mit dem Cloud-Speicherdienst funktioniert, da diese Funktion vom Speicheremulator nicht unterstützt wird.*
 
 	tasks = table_service.query_entities('tasktable', "PartitionKey eq 'tasksSeattle'", 'description')
 	for task in tasks:
@@ -143,25 +145,23 @@ Mit dem folgenden Code wird eine Tabelle aus einem Speicherkonto gelöscht.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
+Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht haben, folgen Sie diesen Links,um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
--   [Besuchen Sie den Blog des Azure-Speicherteams][]
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][Speichern und Zugreifen auf Daten in Azure]
+-   [Besuchen Sie den Blog des Azure-Speicherteams][Besuchen Sie den Blog des Azure-Speicherteams]
 
   [Nächste Schritte]: #next-steps
   [Was ist der Tabellenspeicherdienst?]: #what-is
   [Konzepte]: #concepts
-  [rstellen eines Azure-Speicherkontos]: #create-account
+  [Erstellen eines Azure-Speicherkontos]: #create-account
   [Gewusst wie: Erstellen einer Tabelle]: #create-table
   [Gewusst wie: Hinzufügen einer Entität zu einer Tabelle]: #add-entity
   [Gewusst wie: Aktualisieren einer Entität]: #update-entity
-  [Gewusst wie: Ändern einer Gruppe von Entitäten]: #change-entities
   [Gewusst wie: Abfragen einer Entität]: #query-for-entity
   [Gewusst wie: Abfragen einer Gruppe von Entitäten]: #query-set-entities
   [Gewusst wie: Abfragen einer Teilmenge von Entitäteneigenschaften]: #query-entity-properties
   [Gewusst wie: Löschen einer Entität]: #delete-entity
   [Gewusst wie: Löschen einer Tabelle]: #delete-table
+  [Gewusst wie: Ändern einer Gruppe von Entitäten]: #change-entities
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Besuchen Sie den Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
-
-<!--HONumber=35.1-->

@@ -107,7 +107,7 @@ After setting up the service input and output we need to rerun the experiment an
 
 When the service is ready to go live, go to the **CONFIGURATION** tab on the **WEB SERVICES** page and click **READY FOR PRODUCTION?**. A request will be sent to the IT administrator for Machine Learning who can promote the service to the production environment.
 
-![Web service ready for production][screen4] 
+![Web service ready for production][screen5] 
 -->
 
 ## Beispielexperiment
@@ -131,4 +131,4 @@ Das folgende Beispieldataset, das von diesem Experiment verwendet wird, finden S
 [formula]:./media/machine-learning-sample-credit-risk-prediction/formula.jpg
 [results]:./media/machine-learning-sample-credit-risk-prediction/results.jpg
 [screen3]:./media/machine-learning-sample-credit-risk-prediction/screen3.jpg
-[screen4]:./media/machine-learning-sample-credit-risk-prediction/screen4.jpg
+[screen5]:./media/machine-learning-sample-credit-risk-prediction/screen4.jpg

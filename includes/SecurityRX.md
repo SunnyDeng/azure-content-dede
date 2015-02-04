@@ -1,13 +1,13 @@
-﻿#Azure-Sicherheitsleitfaden
+# Azure-Sicherheitsleitfaden
 
-##Zusammenfassung
+## Zusammenfassung
 
 Beim Entwickeln von Anwendungen für Azure sind Identität und
 	Zugriff sind die vorrangigen Sicherheitsaspekte, die Sie berücksichtigen müssen.
 In diesem Thema werden die wichtigsten Sicherheitserwägungen im Zusammenhang mit Identitäts- und Zugriffsverwaltung in der Cloud erläutert, und es wird erklärt, wie Sie
 Ihre Cloud-Anwendungen am besten schützen können.
 
-##Übersicht
+## Übersicht
 
 Die Sicherheit einer Anwendung ist eine Funktion ihrer Oberfläche. Je größer die Oberfläche,
 die von der Anwendung offengelegt wird, desto größer sind die Sicherheitsbedenken. Weitere
@@ -25,11 +25,7 @@ und nicht als im Arbeitsspeicher befindliche Komponenten. Azure-Speicher, Servic
 über ihre Endpunkte über das Netzwerk zugänglich.
 
 Bei Cloudanwendungen sind die Anwendungsentwickler stärker dafür verantwortlich,
-die Cloudanwendungen unter Einhaltung hoher Sicherheitsstandards zu entwerfen, zu entwickeln und zu warten,
-um Angreifer fernzuhalten.
-Betrachten Sie das folgende Diagramm (aus [Azure Security
-Notes PDF](http://blogs.msdn.com/b/jmeier/archive/2010/08/03/now-available-azure-security-notes-pdf.aspx) von J.D. Meier): beachten Sie, dass der Infrastrukturteil vom Cloudanbieter
-- in unserem Fall Azure - berücksichtigt wird, sodass mehr Sicherheitsaufgaben in
+die Cloudanwendungen unter Einhaltung hoher Sicherheitsstandards zu entwerfen, zu entwickeln und zu warten, um Angreifer fernzuhalten. Betrachten Sie das folgende Diagramm (aus [Azure Security Notes PDF](http://blogs.msdn.com/b/jmeier/archive/2010/08/03/now-available-azure-security-notes-pdf.aspx) von J.D. Meier): beachten Sie, dass der Infrastrukturteil vom Cloudanbieter - in unserem Fall Azure - berücksichtigt wird, sodass mehr Sicherheitsaufgaben in
 den Tätigkeitsbereich der Anwendungsentwickler fallen:
 
 ![Securing the application][01]
@@ -66,7 +62,7 @@ Authentifizierungsmechanismen in der Cloud (z. B. von Azure
 Active Directory-Zugriffssteuerung (vormals Access Control
 Service (ACS) oder Zugriffssteuerungsdienst genannt)) verwenden.
 
-##Bedrohungen, Schwachstellen und Angriffe
+## Bedrohungen, Schwachstellen und Angriffe
 
 Eine Bedrohung ist ein potenziell schlechtes Ergebnis, das Sie vermeiden sollten, z. B.
 die Offenlegung vertraulicher Informationen oder die Nichtverfügbarkeit eines Diensts.
@@ -122,7 +118,7 @@ der Cloudanwendung hinweisen können:
 -   Verfügt Ihr Autorisierungsmechanismus über eine Fehlerbehandlung, welche die Offenlegung
     vertraulicher Daten oder unbeschränkte Zugriffe unterbindet?
 
-##Gegenmaßnahmen
+## Gegenmaßnahmen
 
 Die beste Gegenmaßnahme gegen Angriffe besteht in der Verwendung der Identitäts- und
 Zugriffsmechanismen, die auf der Platttform zur Verfügung stehen, statt der Implementierung
@@ -166,8 +162,8 @@ nutzen. AD FS 2.0 unterstützt die Protokolle WS-Trust, WS-Federation und SAML
 FS:
 
 -   [AD FS 2.0 Content Map (in englischer Sprache)](http://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx)
--   [Web SSO Design][Web SSO Design]
--   [Federated Web SSO Design][Federated Web SSO Design]
+-   [Web SSO Design (in englischer Sprache)][Web SSO Design (in englischer Sprache)]
+-   [Federated Web SSO Design (in englischer Sprache)][Federated Web SSO Design (in englischer Sprache)]
 
 **Azure Shared Access Signatures.** Shared Access Signatures
 ermöglicht Ihnen die Feinabstimmung des Zugriffs auf eine Blob- oder Containerressource. In
@@ -178,7 +174,7 @@ Signatures.
 -   [New Storage Feature: Shared Access Signatures (in englischer Sprache)](http://blog.smarx.com/posts/new-storage-feature-signed-access-signatures)
 -   [Shared Access Signatures Are Easy These Days (in englischer Sprache)](http://blog.smarx.com/posts/shared-access-signatures-are-easy-these-days)
 
-##Szenarienübersicht
+## Szenarienübersicht
 
 In diesem Abschnitt werden kurz die wichtigsten in diesem Thema behandelten Szenarien umrissen.
 Nutzen Sie ihn als Orientierungshilfe, um die richtige Identitätslösung für Ihre Anwendung zu ermitteln
@@ -228,13 +224,13 @@ der Anwendung in der Stagingumgebung befindet.
     Szenario müssen Sie auf sichere Weise auf Azure Marketplace-Datasets
     zugreifen.
 
-##Azure-Identität und Zugriffsszenarien
+## Azure-Identität und Zugriffsszenarien
 
 In diesem Abschnitt werden gängige Identitäts- und Zugriffsszenarien für verschiedene
 Anwendungsarchitekturen skizziert. Die Szenarienübersicht bieten einen schnellen
 Überblick.
 
-###ASP.NET-Webformularanwendung mit Verbundauthentifizierung
+### ASP.NET-Webformularanwendung mit Verbundauthentifizierung
 
 In diesem Anwendungsarchitekturszenario kann die Webanwendung
 in Azure oder lokal bereitgestellt werden. Die Anwendung erfordert, dass
@@ -257,7 +253,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Implementieren dieses Szenar
     Verwenden von X.509-Zertifikaten](http://msdn.microsoft.com/de-de/library/gg185947.aspx)
 -   [Codebeispiel: Einfache ASP.NET-Formulare](http://msdn.microsoft.com/de-de/library/gg185938.aspx)
 
-###WCF (SOAP)-Dienst mit Dienstidentität
+### WCF (SOAP)-Dienst mit Dienstidentität
 
 In diesem Anwendungsarchitekturszenario kann der WCF (SOAP)-Dienst
 in Azure oder lokal bereitgestellt werden. Auf den Dienst wird als
@@ -288,7 +284,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Implementieren dieses Szenar
 -   [Codebeispiel: WCF-Zertifikatauthentifizierung](http://msdn.microsoft.com/de-de/library/gg185952.aspx)
 -   [Codebeispiel: WCF-Benutzernamenauthentifizierung](http://msdn.microsoft.com/de-de/library/gg185927.aspx)
 
-###WCF (SOAP)-Dienst mit Verbundauthentifizierung, Identitäten in Active Directory
+### WCF (SOAP)-Dienst mit Verbundauthentifizierung, Identitäten in Active Directory
 
 In diesem Anwendungsarchitekturszenario kann der WCF (SOAP)-Dienst
 in Azure oder lokal bereitgestellt werden. Sie müssen den Zugriff darauf
@@ -316,7 +312,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Implementieren dieses Szenar
 -   [Codebeispiel: WCF-Verbundauthentifizierung mit AD FS 2.0
 ](http://msdn.microsoft.com/de-de/library/hh127796.aspx)
 
-###WCF (REST)-Dienst mit Dienstidentitäten
+### WCF (REST)-Dienst mit Dienstidentitäten
 
 In diesem Szenario kann der WCF (REST)-Dienst in 
 Azure oder lokal bereitgestellt werden. Auf den Dienst wird als nachgelagerter Dienst von
@@ -348,7 +344,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Implementieren dieses Szenar
 -   [REST WCF With SWT Token Issued By Azure Access Control
     Service (ACS)](http://code.msdn.microsoft.com/REST-WCF-With-SWT-Token-123d93c0)
 
-###WCF (REST)-Dienst mit Live ID/Microsoft-Konto, Facebook, Google, Yahoo!, Open ID
+### WCF (REST)-Dienst mit Live ID/Microsoft-Konto, Facebook, Google, Yahoo!, Open ID
 
 In diesem Szenario kann Ihr WCF (REST)-Dienst in 
 Azure oder lokal bereitgestellt werden. Sie müssen den Zugriff auf den Dienst mit einer öffentlichen
@@ -386,7 +382,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Implementieren dieses Szenar
     Service (ACS)](http://code.msdn.microsoft.com/REST-WCF-With-SWT-Token-123d93c0)
 
 
-###ASP.NET-Webanwendung für den REST WCF-Dienst mit freigegebenem SWT-Token
+### ASP.NET-Webanwendung für den REST WCF-Dienst mit freigegebenem SWT-Token
 
 In diesem Szenario haben Sie eine verteilte Anwendung mit Front-End
 ASP.NET-Webanwendung und einen nachgelagerten REST-Dienst, und Sie möchten den Kontext der
@@ -423,7 +419,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Implementieren dieses Szenar
 -   [ASP.NET Web App To REST WCF Service Delegation Using Shared SWT
     Token](http://code.msdn.microsoft.com/ASPNET-Web-App-To-REST-WCF-b2b95f82)
 
-###Autorisierung über rollenbasierte Zugriffssteuerung (RBAC) in Ansprüche unterstützenden Anwendungen und Diensten
+### Autorisierung über rollenbasierte Zugriffssteuerung (RBAC) in Ansprüche unterstützenden Anwendungen und Diensten
 
 In diesem Szenario müssen Sie eine auf Benutzerrollen basierende Autorisierung in Ihrer
 Webanwendung oder Ihrem Dienst implementieren: Benutzer mit den erforderlichen Rollen erhalten
@@ -483,7 +479,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Implementieren dieses Szenar
 -   Codebeispiel: Using Claims In IsInRole in [Windows Identity Foundation
     SDK](http://www.microsoft.com/downloads/details.aspx?FamilyID=c148b2df-c7af-46bb-9162-2c9422208504)
 
-###Anspruchsbasierte Autorisierung in Ansprüche unterstützenden Anwendungen und Diensten
+### Anspruchsbasierte Autorisierung in Ansprüche unterstützenden Anwendungen und Diensten
 
 In diesem Szenario müssen Sie eine komplexe Autorisierungslogik in
 Ihrer Webanwendung oder dem Dienst implementieren, und die IsInRole()-Methode ist
@@ -507,7 +503,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Implementieren dieses Szenar
     Foundation SDK](http://www.microsoft.com/downloads/details.aspx?FamilyID=c148b2df-c7af-46bb-9162-2c9422208504)
 
 
-##Azure Storage-Dienstidentität und Zugriffsszenarien
+## Azure Storage-Dienstidentität und Zugriffsszenarien
 
 In diesem Szenario müssen Sie auf sichere Weise den Zugriff auf Azure
 Speicher-Blobs und Container freigeben.
@@ -519,7 +515,7 @@ verwalten. Wenn Sie einer anderen Person Zugriff auf die Blobs und
 Container in Ihrem Speicherdienstkonto gewähren möchten, verwenden Sie Shared Access Signatures
 URLs.
 
-	Achten Sie besonders auf die sichere Verwaltung der Informationen, um deren
+Achten Sie besonders auf die sichere Verwaltung der Informationen, um deren
 Offenlegung zu vermeiden. Achten Sie zudem auf die Lebensdauer der Shared
 Access Signatures.
 
@@ -532,7 +528,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 -   [Shared Access Signatures Are Easy These Days (in englischer Sprache)](http://blog.smarx.com/posts/shared-access-signatures-are-easy-these-days)
 
 
-##Azure SQL-Datenbankidentität und Zugriffsszenarien
+## Azure SQL-Datenbankidentität und Zugriffsszenarien
 
 SQL-Datenbank untersützt nur die SQL-Serverauthentifizierung. Windows-
     Authentifizierung (integrierte Sicherheit) wird nicht unterstützt. Die Benutzer müssen
@@ -553,7 +549,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 -   [Gewusst wie: Herstellen einer Verbindung mit der Windows Azure SQL-Datenbank über JDBC](http://msdn.microsoft.com/de-de/library/windowsazure/gg715284.aspx)
 -   [Gewusst wie: Herstellen einer Verbindung mit der Windows Azure SQL-Datenbank über das ADO.NET Entity Framework](http://msdn.microsoft.com/de-de/library/windowsazure/ff951633.aspx)
 
-##Azure Service Bus-Identität und Zugriffsszenarien
+## Azure Service Bus-Identität und Zugriffsszenarien
 
 Service Bus und Azure AD Access Control verfügen über eine spezielle
 Beziehung, sodass jeder Namespace für einen Service Bus-Dienst mit einem
@@ -572,7 +568,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 -   [Service Bus-Authentifizierung und -Autorisierung mit dem Access Control
     Service](http://msdn.microsoft.com/de-de/library/hh403962.aspx)
 
-##In-Memory-Cacheidentität und Zugriffszenarien
+## In-Memory-Cacheidentität und Zugriffszenarien
 
 In-Memory-Cache (ehemals Azure Cache) stützt sich bei der Authentifizierung auf
 Azure AD Access Control. Es werden freigegebene Schlüssel
@@ -592,14 +588,14 @@ In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 -   [Azure Service Bus- und Cachebeispiele](http://msdn.microsoft.com/de-de/library/ee706741.aspx) (Abschnitt
     Cachebeispiele)
 
-##Azure Marketplace-Identität und Zugriffsszenarien
+## Azure Marketplace-Identität und Zugriffsszenarien
 
 Bei jedem Zugriff auf ein Azure Marketplace-Dataset, gleichgültig ob kostenlos oder
 gebührenpflichtig, muss der Benutzer authentifiziert werden, bevor Zugriff gewährt wird. Wenn Sie
 eine Anwendung erstellen, muss der Authentifizierungsprozess im Code
 enthalten sein. Beachten Sie die folgenden häufig auftretenden Szenarien:
 
-###Zugriff auf eigenen DataSet
+### Zugriff auf eigenen DataSet
 
 In diesem Szenario erstellen Sie eine Anwendung, die Datasets
 in Ihrem Marketplace-Abonnement verwendet. Sie sind der Benutzer der Anwendung.
@@ -614,7 +610,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 
 -   [Implementieren von HTTP-Standardauthentifizierung in Ihrer Marketplace-App](http://msdn.microsoft.com/de-de/library/gg193417.aspx)
 
-###Zugriff von Benutzern auf meine DataSets
+### Zugriff von Benutzern auf meine DataSets
 
 In diesem Szenario erstellen Sie eine Anwendung, die Benutzern den
 Zugriff auf Ihr Dataset erlaubt. Die Anwendung kann auf Azure,
@@ -631,7 +627,7 @@ In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 -   [OAuth Web Client Example (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=219162)
 -   [OAuth Rich Client Example (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=219163)
 
-###Anwendungszugriff auf das Marketplace-API
+### Anwendungszugriff auf das Marketplace-API
 
 In diesem Szenario erstellen Sie eine Anwendung, die auf die
 Marketplace-API zugreift. Die Marketplace-API erfordert eine Authentifizierungm
@@ -648,13 +644,13 @@ In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 -   [Anwendungs-Publishing-Kit herunterladen](http://go.microsoft.com/fwlink/?LinkId=221323)
 -   [Introduction to Azure Marketplace for Applications (in englischer Sprache)](https://datamarket.azure.com/)
 
-##Sicherheitsknöpfe
+## Sicherheitsknöpfe
 
 In diesem Abschnitt werden Sicherheitselemente für Windows Identity Foundation und
 Azure AD Access Control beschrieben. Nutzen Sie den Abschnitt als einfach Sicherheitsprüfliste
 für diese Technologien, wenn Sie Ihre Anwendung entwerfen und bereitstellen.
 
-###Windows Identity Foundation
+### Windows Identity Foundation
 
 Nachfolgend werden wichtige Sicherheitselemente von WIF aufgeführt. Die folgenden Informationen sind ein
 Auszug aus  [WIF Design Considerations](http://msdn.microsoft.com/de-de/library/ee517298.aspx) und [Windows Identity Foundation
@@ -679,7 +675,7 @@ Auszug aus  [WIF Design Considerations](http://msdn.microsoft.com/de-de/library/
     in [Windows Identity Foundation (WIF): A Potentially
     Dangerous Request.Form Value Was Detected from the Client](http://social.technet.microsoft.com/wiki/contents/articles/1725.windows-identity-foundation-wif-a-potentially-dangerous-request-form-value-was-detected-from-the-client-wresult-t-requestsecurityto.aspx)
 
-###Azure AD Access Control
+### Azure AD Access Control
 
 Beachten Sie die folgenden Sicherheitselemente bei der Bereitstellung von Azure AD Access Control
 . Die folgenden Informationen sind ein Auszug aus [ACS Security
@@ -755,17 +751,17 @@ Guidelines](http://msdn.microsoft.com/de-de/library/gg185962.aspx) und [Certific
     zu prüfen. Nach Ablauf der Zertifikate werden Ausnahmen
     ausgelöst.
 
-##Freigegebenes Hosting über Azure-Websites
+## Freigegebenes Hosting über Azure-Websites
 
 Alle Szenarien und Lösungen, die in diesem Thema beschrieben wurden, gelten, wenn die
 Anwendung in Azure-Websites gehostet wird.
 
-##Azure Virtual Machines
+## Azure Virtual Machines
 
 Alle Szenarien und Lösungen, die in diesem Thema beschrieben wurden, gelten, wenn die
 Anwendung wird auf Azure Virtual Machines gehostet wird.
 
-##Ressourcen
+## Ressourcen
 
 -   [Identity Developer Training Kit (nur in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=214555)
 -   [MSDN-hosted Identity Developer Training Course (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=214561)

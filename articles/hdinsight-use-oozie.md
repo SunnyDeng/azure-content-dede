@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Use Hadoop Oozie in HDInsight" pageTitle="Verwenden von Hadoop Oozie in HDInsight | Azure" metaKeywords="" description="Verwenden von Hadoop Oozie in HDInsight, einer Big Data-Lösung. Erfahren Sie, wie Sie einen Oozie-Workflow definieren und einen Oozie-Auftrag übermitteln können." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Hadop Oozie in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties urlDisplayName="Use Hadoop Oozie in HDInsight" pageTitle="Verwenden von Hadoop Oozie in HDInsight | Azure" metaKeywords="" description="Verwenden von Hadoop Oozie in HDInsight, einer Big Data-Lösung. Erfahren Sie, wie Sie einen Oozie-Workflow definieren und einen Oozie-Auftrag übermitteln können." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Hadop Oozie in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/12/2014" ms.author="jgao" />
 
@@ -31,7 +31,7 @@ Der Workflow, den Sie implementieren, enthält zwei Aktionen:
 		2012-02-03 18:35:34 SampleClass3 [DEBUG] detail for id 1304807656
 		...
 
-	The Hive script output is similar to:
+	Das Hive-Skript erzeugt eine Ausgabe ähnlich der folgenden:
 	
 		[DEBUG] 434
 		[ERROR] 3
@@ -276,7 +276,6 @@ Weitere Informationen finden Sie unter [HDInsight: Einführung in interne und ex
 		# WASB folder for storing the Oozie tutorial files.
 		$destFolder = "tutorials/useoozie"  # Do NOT use the long path here
 
-
 	Weitere Beschreibungen zur Variablen finden Sie im Abschnitt [Voraussetzungen](#prerequisites) dieses Lernprogramms. 
 
 3. Hängen Sie die folgenden Zeilen an das Skript im Skriptbereich:
@@ -379,7 +378,6 @@ Azure PowerShell stellt derzeit keine Cmdlets zum Definieren von Oozie-Jobs bere
 		$passwd = ConvertTo-SecureString $clusterPassword -AsPlainText -Force
 		$creds = New-Object System.Management.Automation.PSCredential ($clusterUsername, $passwd)
 
-
 	Weitere Beschreibungen zur Variablen finden Sie im Abschnitt [Voraussetzungen](#prerequisites) dieses Lernprogramms.
 
 3. Hängen Sie die folgenden Codezeilen an das Skript. In diesem Teil wird die Oozie-Nutzlast definiert:
@@ -462,7 +460,7 @@ Azure PowerShell stellt derzeit keine Cmdlets zum Definieren von Oozie-Jobs bere
 	    $oozieServerSatus = $jsonResponse[0].("systemMode")
 	    Write-Host "Oozie server status is $oozieServerSatus..."
 	
-5. Append the following to the script. This part creates and starts an Oozie job:	
+5. Hängen Sie die folgenden Codezeilen an das Skript. Dieser Teil erstellt und startet einen Oozie-Job:	
 
 	    # create Oozie job
 	    Write-Host "Sending the following Payload to the cluster:" -ForegroundColor Green
@@ -479,7 +477,7 @@ Azure PowerShell stellt derzeit keine Cmdlets zum Definieren von Oozie-Jobs bere
 	    $clusterUriStartJob = "https://$clusterName.azurehdinsight.net:443/oozie/v2/job/" + $oozieJobId + "?action=start"
 	    $response = Invoke-RestMethod -Method Put -Uri $clusterUriStartJob -Credential $creds | Format-Table -HideTableHeaders #-debug
 		
-6. Append the following to the script. This part checks the Oozie job status:		
+6. Hängen Sie die folgenden Codezeilen an das Skript. In diesem Teil wird der Status des Oozie-Jobs geprüft:		
 
 	    # get job status
 	    Write-Host "Sleeping for $waitTimeBetweenOozieJobStatusCheck seconds until the job metadata is populated in the Oozie metastore..." -ForegroundColor Green

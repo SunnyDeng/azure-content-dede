@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Validate Data" pageTitle="Verwenden von Serverskripts zum Überprüfen und Ändern von Daten (iOS) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten überprüfen und ändern, die mithilfe von Serverskripts von Ihrer iOS-App gesendet wurden." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="krisragh" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="Validate Data" pageTitle="Verwenden von Serverskripts zum Überprüfen und Ändern von Daten (iOS) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten überprüfen und ändern, die mithilfe von Serverskripts von Ihrer iOS-App gesendet wurden." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="krisragh" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
 
@@ -162,7 +162,7 @@ Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in
 
         <TextBlock Name="WhenCreated" Text="{Binding CreatedAt}" VerticalAlignment="Center"/>
 
-   	This displays the new **CreatedAt** property in a text box.
+   	Dadurch wird die neue **CreatedAt**-Eigenschaft in einem Textfeld angezeigt.
 
 3. Drücken Sie die Taste **F5**, um die App auszuführen.
 

@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Erste Schritte mit Azure-Websites für ASP.NET" metaKeywords="" description="Dieses Lernprogramm zeigt Ihnen das Erstellen eines ASP-NET-Webprojekts in Visual Studio 2013 und die Bereitstellung für eine Azure-Website. In weniger als 15 Minuten ist eine App betriebsbereit und wird in der Cloud ausgeführt." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Get started with Azure Websites and ASP.NET" authors="tdykstra"  solutions="" manager="wpickett" editor="mollybos"  />
+<properties pageTitle="Erste Schritte mit Azure-Websites für ASP.NET" metaKeywords="" description="Dieses Lernprogramm zeigt Ihnen das Erstellen eines ASP-NET-Webprojekts in Visual Studio 2013 und die Bereitstellung für eine Azure-Website. In weniger als 15 Minuten ist eine App betriebsbereit und wird in der Cloud ausgeführt." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Get started with Azure Websites and ASP.NET" authors="tdykstra"  solutions="" manager="wpickett" editor="mollybos"  />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="hero-article" ms.date="11/12/2014" ms.author="tdykstra" />
 
@@ -99,7 +99,7 @@ Zunächst erstellen Sie ein Webanwendungsprojekt. Die Azure-Website, auf der Sie
 
 4. Wählen Sie in der Dropdownliste **Region** den am nächsten befindlichen Ort aus.
 
-	Mit dieser Einstellung wird das Azure-Datencenter angegeben, in dem Ihre Website ausgeführt wird. Für dieses Lernprogramm können Sie eine beliebige Region auswählen, ohne dass es einen spürbaren Unterschied gibt, aber für die Produktions-Website sollte sich der Webserver so nah wie möglich an den Browsern befinden, die auf die Website zugreifen, um die [latency] zu minimieren(http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090).
+	Mit dieser Einstellung wird das Azure-Datencenter angegeben, in dem Ihre Website ausgeführt wird. Für dieses Lernprogramm können Sie eine beliebige Region auswählen, ohne dass es einen spürbaren Unterschied gibt, aber für die Produktions-Website sollte sich der Webserver so nah wie möglich an den Browsern befinden, die auf die Website zugreifen, um die [latency](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090) zu minimieren.
 
 5. Verändern Sie die Datenbankfelder nicht.
 
@@ -246,7 +246,7 @@ Das [Azure-Verwaltungsportal](/de-de/services/management-portal/) ist eine Webob
 
 4. Klicken Sie auf die Registerkarte **Konfigurieren**.
 
-	Mit der Registerkarte [Konfigurieren](/de-de/documentation/articles/web-sites-configure//) können Sie die .NET-Version steuern, die für die Website verwendet wird, Funktionen wie etwa [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) und [Diagnoseprotokollierung] aktivieren(/de-de/documentation/articles/web-sites-enable-diagnostic-log/), [Werte für Verbindungszeichenfolgen] festlegen(/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)und mehr. 
+	Mit der Registerkarte [Konfigurieren](/de-de/documentation/articles/web-sites-configure//) können Sie die .NET-Version steuern, die für die Website verwendet wird, Funktionen wie etwa [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) und [Diagnoseprotokollierung](/de-de/documentation/articles/web-sites-enable-diagnostic-log/) aktivieren, [Werte für Verbindungszeichenfolgen](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/) festlegen und mehr. 
 
 	![Portal web site configure tab](./media/web-sites-dotnet-get-started-vs2013/portalconfigure.png)
   
@@ -270,11 +270,11 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 	In diesem Lernprogramm wurde die schnellste Methode zum Erstellen und Bereitstellen einer Website in einem einzigen Vorgang erläutert. Eine Übersicht über andere Möglichkeiten der Bereitstellung, etwa mit Visual Studio oder durch [automatisierte Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) mithilfe eines [Quellcodeverwaltungssystems](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) finden Sie unter [Bereitstellen einer Azure-Website](/de-de/documentation/articles/web-sites-deploy/"). 
 
-	Visual Studio can also generate Windows PowerShell scripts that enable you to automate deployment. For more information, see [Automate Everything (Building Real-World Cloud Apps with Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything).
+	Visual Studio kann auch Windows PowerShell-Skripte generieren, mit deren Hilfe Sie die Bereitstellung automatisieren können. Weitere Informationen finden Sie unter [Automate Everything (Building Real-World Cloud Apps with Azure) (in englischer Sprache)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything).
 
-* How to manage a website in Visual Studio
+* Verwalten von Websites in Visual Studio
 
-	For information about site management functions that you can do in **Server Explorer**, see [Troubleshooting Azure Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+	Informationen zu den verfügbaren Website-Verwaltungsfunktionen im **Server Explorer**, finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
 * Problembehandlung für eine Website
 

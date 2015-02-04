@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Node.js) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Node.js, table storage Node.js" description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele verwenden die Node.js-API." metaCanonical="" services="storage" documentationCenter="nodejs" title="How to Use the Table Service from Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Table Service" pageTitle="Verwenden des Tabellenspeichers (Node.js) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Node.js, table storage Node.js" description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele verwenden die Node.js-API." metaCanonical="" services="storage" documentationCenter="nodejs" title="How to Use the Table Service from Node.js" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="mwasson" />
 
@@ -10,7 +10,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tab
 
 * [Was ist der Tabellenspeicherdienst?][]   
 * [Konzepte][]   
-* [rstellen eines Azure-Speicherkontos](#create-account)
+* [Erstellen eines Azure-Speicherkontos](#create-account)
 * [Erstellen einer Node.js-Anwendung](#create-app)
 * [Konfigurieren der Anwendung für den Speicherzugriff](#configure-access)
 * [Einrichten einer Azure-Speicherverbindung](#setup-connection-string)  
@@ -186,7 +186,7 @@ Für erfolgreiche Aktualisierungsvorgänge enthält das `result` das **ETag** de
 ## <a name="change-entities"> </a>Arbeiten mit Gruppen von Entitäten
 Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu senden, um die atomische Verarbeitung durch den Server sicherzustellen. Dazu erstellen Sie mit der **TableBatch**-Klasse einen Stapel und führen dann mit der **executeBatch**-Methode von **TableService** die gestapelten Vorgänge aus.
 
- The following example demonstrates submitting two entities in a batch:
+ Im folgenden Beispiel wird gezeigt, wie zwei Entitäten in einem Stapel übermittelt werden:
 
     var task1 = { 
 	  PartitionKey: {'_':'hometasks'},
@@ -406,7 +406,7 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 -   [Besuchen Sie den Blog des Azure-Speicherteams][].
 -   Besuchen Sie das [Azure Storage SDK für Node][]-Repository auf GitHub.
 
-  [Azure Storage-SDK für Java]: https://github.com/Azure/azure-storage-node
+  [Azure Storage SDK für Node]: https://github.com/Azure/azure-storage-node
   [Nächste Schritte]: #next-steps
   [Was ist der Tabellenspeicherdienst?]: #what-is
   [Konzepte]: #concepts

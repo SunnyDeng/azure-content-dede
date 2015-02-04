@@ -1,4 +1,4 @@
-<properties linkid="develop-python-web-app-with-blob-storage" urlDisplayName="Web App with Blob Storage" pageTitle="Python web app with table storage | Microsoft Azure" metaKeywords="Azure table storage Python, Azure Python application, Azure Python tutorial, Azure Python example" description="A tutorial that teaches you how to create a Python web application using the Azure Client Libraries. Django is used as the web framework." metaCanonical="" services="storage" documentationCenter="Python" title="Python Web Application using Table Storage" authors="huvalo" solutions="" videoId="" scriptId="" manager="" editor="mollybos" />
+<properties linkid="develop-python-web-app-with-blob-storage" urlDisplayName="Web App with Blob Storage" pageTitle="Python-Webanwendung mit Tabellenspeicher | Microsoft Azure" metaKeywords="Azure table storage Python, Azure Python application, Azure Python tutorial, Azure Python example" description="In diesem Lernprogramm erfahren Sie, wie Sie eine Python-Webanwendung mithilfe der Azure-Clientbibliotheken erstellen. Als Web-Framework wird Django verwendet." metaCanonical="" services="storage" documentationCenter="Python" title="Python Web Application using Table Storage" authors="huvalo" solutions="" videoId="" scriptId="" manager="" editor="mollybos" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="01/01/1900" ms.author="huvalo" />
 
@@ -16,19 +16,19 @@ Sie erhalten Informationen zu folgenden Themen:
 
 Der folgende Screenshot zeigt eine Abbildung der fertigen Anwendung (die hinzugefügten Aufgabenelemente können abweichen):
 
-![](./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png)
+![4](./media/storage-python-use-table-storage-web-app/web-app-with-storage-Finaloutput-mac.png)
 
 [WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## <span id="setup"></span> </a>Einrichten der Entwicklungsumgebung
 
-**Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch](5).
+**Hinweis:** Wenn Sie Python oder die Clientbibliotheken installieren müssen, informieren Sie sich im [Python-Installationshandbuch](http://windowsazure.com/en-us/documentation/articles/python-how-to-install).
 
 *Hinweis zu Windows*: Falls Sie den Windows WebPI-Installer verwendet haben, sollten Django und die Clientbibliotheken bereits auf Ihrem Computer installiert sein.
 
 ## Erstellen eines Speicherkontos in Azure
 
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md1/20/2015 2:56:46 PM )]
 
 ## Erstellen eines Django-Projekts
 

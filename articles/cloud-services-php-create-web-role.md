@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Create Web and Worker Roles" pageTitle="Erstellen von Web- und Workerrollen" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="PHP" title="How to create PHP web and worker roles" authors="tomfitz" solutions="" manager="wpickett" editor="mollybos" />
+<properties urlDisplayName="Create Web and Worker Roles" pageTitle="Erstellen von Web- und Workerrollen" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="PHP" title="How to create PHP web and worker roles" authors="tomfitz" solutions="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="10/28/2014" ms.author="tomfitz" />
 
@@ -194,7 +194,7 @@ Die Ausgabe wird ähnlich wie diese aussehen:
 	Role is running at http://127.0.0.1:81
 	Started
 
-Sie können sehen, dass die Anwendung im Emulator ausgeführt wird, indem Sie einen Webbrowser öffnen und zur lokalen Adresse navigieren, die in der Ausgabe angezeigt wird (http://127.0.0.1:81 in der Beispielausgabe oben).
+Sie können sehen, dass die Anwendung im Emulator ausgeführt wird, indem Sie einen Webbrowser öffnen und zur lokalen Adresse navigieren, die in der Ausgabe angezeigt wird (`http://127.0.0.1:81` in der Beispielausgabe oben).
 
 Führen Sie folgenden Befehl aus, um die Emulatoren zu stoppen:
 
@@ -204,17 +204,17 @@ Führen Sie folgenden Befehl aus, um die Emulatoren zu stoppen:
 
 Um die Anwendung zu veröffentlichen, müssen Sie zuerst die Veröffentlichungseinstellungen mit dem **Import-PublishSettingsFile**-Cmdlet importieren. Anschließend können Sie die Anwendung mit dem **Publish-AzureServiceProject**-Cmdlet veröffentlichen. Details zur Verwendung dieser Cmdlets finden Sie unter [Gewusst wie: Veröffentlichungseinstellungen importieren] und [Gewusst wie: Bereitstellen eines Cloud-Diensts zu Azure].
 
-[Ausführungsmodell-Websites]: /de-de/develop/net/fundamentals/compute/#WebSites
-[Ausführungsmodell-VMS]: /de-de/develop/net/fundamentals/compute/#VMachine
-[Ausführungsmodell-Cloud-Dienste]: /de-de/develop/net/fundamentals/compute/#CloudServices
-[Azure-SDK für PHP]: /de-de/develop/php/common-tasks/download-php-sdk/
-[PS und Emulatoren installieren]: http://go.microsoft.com/fwlink/?LinkId=253447&clcid=0x409
+[execution model-web sites]: /de-de/develop/net/fundamentals/compute/#WebSites
+[execution model-vms]: /de-de/develop/net/fundamentals/compute/#VMachine
+[execution model-cloud services]: /de-de/develop/net/fundamentals/compute/#CloudServices
+[Azure SDK für PHP]: /de-de/develop/php/common-tasks/download-php-sdk/
+[install ps and emulators]: http://go.microsoft.com/fwlink/?LinkId=253447&clcid=0x409
 [Was ist ein Cloud-Dienst?]: /de-de/manage/services/cloud-services/what-is-a-cloud-service/
-[Dienstdefinitionsdatei (.csdef)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758711.aspx
-[Dienstkonfigurationsdatei (.cscfg)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx
+[Dienstdefinitionsdateien (.csdef)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758711.aspx
+[Dienstkonfigurationsdateien (.cscfg)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx
 [iis.net]: http://www.iis.net/
 [SQL Native Client]: http://msdn.microsoft.com/de-de/sqlserver/aa937733.aspx
-[sqlsrv-Treiber]: http://php.net/sqlsrv
+[sqlsrv drivers]: http://php.net/sqlsrv
 [sqlncli.msi x64-Installationsprogramm]: http://go.microsoft.com/fwlink/?LinkID=239648
 [Gewusst wie: Veröffentlichungseinstellungen importieren]: /de-de/develop/php/how-to-guides/powershell-cmdlets/#ImportPubSettings
 [Gewusst wie: Bereitstellen eines Cloud-Diensts zu Azure]: /de-de/develop/php/how-to-guides/powershell-cmdlets/#Deploy

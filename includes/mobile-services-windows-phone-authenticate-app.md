@@ -1,4 +1,4 @@
-﻿1. Öffnen Sie die Projektdatei "mainpage.xaml.cs", und fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
+1. Öffnen Sie die Projektdatei "mainpage.xaml.cs", und fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
 	
         private MobileServiceUser user;
         private async System.Threading.Tasks.Task Authenticate()
@@ -22,7 +22,7 @@
             }
         }
 
-Auf diese Weise wird eine Membervariable zum Speichern des aktuellen Benutzers sowie eine Methode zur Verarbeitung des Authentifizierungsprozesses erstellt. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert.
+    Auf diese Weise wird eine Membervariable zum Speichern des aktuellen Benutzers sowie eine Methode zur Verarbeitung des Authentifizierungsprozesses erstellt. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert.
 
     >[WACOM.NOTE]Wenn Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für <strong>MobileServiceAuthenticationProvider</strong> oben entsprechend Ihrem Anbieter.</p>
     </div>

@@ -1,11 +1,11 @@
-﻿<properties urlDisplayName="Upload a Linux VHD" pageTitle="Erstellen und Hochladen einer Linux-VHD in Azure" metaKeywords="Azure VHD, uploading Linux VHD" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Linux-Betriebssystem enthält." metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains a Linux Operating System" authors="szarkos" solutions="" manager="timlt" editor="tysonn" />
+<properties urlDisplayName="Upload a Linux VHD" pageTitle="Erstellen und Hochladen einer Linux-VHD in Azure" metaKeywords="Azure VHD, uploading Linux VHD" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Linux-Betriebssystem enthält." metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains a Linux Operating System" authors="szarkos" solutions="" manager="timlt" editor="tysonn" />
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="06/05/2014" ms.author="szarkos" />
 
 
 # <a id="nonendorsed"> </a>Informationen zu nicht bestätigten Distributionen #
 
-**Wichtig**: Das Azure-Plattform-SLA gilt für virtuelle Computer unter dem Betriebssystem Linux nur dann, wenn eine der [bestätigten Distributionen] verwendet wird(../virtual-machines-linux-endorsed-distributions). Alle Linux-Distributionen, die in der Azure-Image-Galerie bereitgestellt werden, sind bestätigte Distributionen mit der erforderlichen Konfiguration.
+**Wichtig**: Das Azure-Plattform-SLA gilt für virtuelle Computer unter dem Betriebssystem Linux nur dann, wenn eine der [bestätigten Distributionen](../virtual-machines-linux-endorsed-distributions) verwendet wird. Alle Linux-Distributionen, die in der Azure-Image-Galerie bereitgestellt werden, sind bestätigte Distributionen mit der erforderlichen Konfiguration.
 
 - [Linux auf Azure-unterstützten Distributionen](../virtual-machines-linux-endorsed-distributions)
 - [Unterstützung für Linux-Bilder in Microsoft Azure](http://support2.microsoft.com/kb/2941892)
@@ -22,7 +22,7 @@ Daher wird empfohlen, dass Sie nach Möglichkeit mit einem unserer [Linux auf Az
 Der Rest dieses Artikels bietet eine allgemeine Hilfe für das Ausführen Ihrer Linux-Distribution auf Azure.
 
 
-##Allgemeine Installationshinweise für Linux##
+## Allgemeine Installationshinweise für Linux##
 
 - Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
 
@@ -63,7 +63,7 @@ Das Fehlen der folgenden Patches haben in einem sehr geringen Ausmaß Probleme a
 
 ## Der Azure Linux-Agent ##
 
-Der [Azure Linux-Agent](../virtual-machines-linux-agent-user-guide) (waagent) ist für die entsprechende Bereitstellung eines virtuellen Linux-Computers in Azure erforderlich. Unter [Linux Agent GitHub repo] können Sie die neueste Version abrufen, Probleme einreichen oder Pull-Anforderungen senden(https://github.com/Azure/WALinuxAgent).
+Der [Azure Linux-Agent](../virtual-machines-linux-agent-user-guide) (waagent) ist für die entsprechende Bereitstellung eines virtuellen Linux-Computers in Azure erforderlich. Unter [Linux Agent GitHub repo](https://github.com/Azure/WALinuxAgent) können Sie die neueste Version abrufen, Probleme einreichen oder Pull-Anforderungen senden.
 
 - Der Linux-Agent wird unter der Apache 2.0-Lizenz veröffentlicht. Viele Distributionen stellen RPM- oder DEB-Pakete bereits für den Agent bereit, in einigen Fällen können diese mit ein wenig Aufwand installiert und aktualisiert werden.
 
@@ -92,7 +92,7 @@ Der [Azure Linux-Agent](../virtual-machines-linux-agent-user-guide) (waagent) is
 
 - Installieren des Azure Linux-Agents
 
-	Der Azure Linux-Agent ist für das Bereitstellen eines Linux-Images auf Azure erforderlich.  Viele Distributionen stellen den Agent als ein RPM- oder DEB-Paket (das Paket heißt für gewöhnlich "WALinuxAgent" oder "walinuxagent") bereit.  Der Agent kann zudem manuell installiert werden, indem die folgenden Schritte im [Linux Agent Guide] eingehalten werden(../virtual-machines-linux-agent-user-guide).
+	Der Azure Linux-Agent ist für das Bereitstellen eines Linux-Images auf Azure erforderlich.  Viele Distributionen stellen den Agent als ein RPM- oder DEB-Paket (das Paket heißt für gewöhnlich "WALinuxAgent" oder "walinuxagent") bereit.  Der Agent kann zudem manuell installiert werden, indem die folgenden Schritte im [Linux Agent Guide](../virtual-machines-linux-agent-user-guide eingehalten werden).
 
 - Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt.  Dies ist für gewöhnlich die Standardeinstellung.
 

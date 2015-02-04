@@ -20,8 +20,8 @@ Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstell
 
     <div class="dev-callout">
 
-    **Hinweis**
-    Im Rahmen dieses Lernprogramms erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank in derselben Region wie der neue mobile Dienst verfügen, können Sie stattdessen **Vorhandene Datenbank verwenden** und dann diese Datenbank auswählen. Die Verwendung einer Datenbank in einer anderen Region wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann.
+    <strong>Hinweis</strong>
+    <p>Im Rahmen dieses Lernprogramms erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank in derselben Region wie der neue mobile Dienst verfügen, können Sie stattdessen <b>Vorhandene Datenbank verwenden</b> und dann diese Datenbank auswählen. Die Verwendung einer Datenbank in einer anderen Region wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann.</p>
 
     </div>
 
@@ -31,9 +31,9 @@ Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstell
 
     <div class="dev-callout">
 
-    **Hinweis**
-    Wenn das eingegebene Kennwort nicht den Mindestanforderungen entspricht oder es keine Übereinstimmung gibt, wird eine Warnung angezeigt.
-    Es wird empfohlen, sich den Anmeldenamen und das Kennwort des Administrators zu notieren. Sie benötigen diese Informationen, um die SQL-Datenbankinstanz oder den Server in der Zukunft wiederzuverwenden.
+    <strong>Hinweis</strong>
+    <p>Wenn das eingegebene Kennwort nicht den Mindestanforderungen entspricht oder es keine Übereinstimmung gibt, wird eine Warnung angezeigt.
+    Es wird empfohlen, sich den Anmeldenamen und das Kennwort des Administrators zu notieren. Sie benötigen diese Informationen, um die SQL-Datenbankinstanz oder den Server in der Zukunft wiederzuverwenden.</p>
 
     </div>
 

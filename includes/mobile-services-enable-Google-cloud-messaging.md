@@ -1,3 +1,6 @@
+
+
+
 1.  Navigieren Sie zur Website <a href="http://cloud.google.com/console" target="_blank">Google Cloud Console</a>, melden Sie sich mit den Anmeldeinformationen für Ihr Google-Konto an, und klicken Sie dann auf **CREATE PROJECT**.
 
    	![](./media/notification-hubs-android-get-started/mobile-services-google-new-project.png) 
@@ -12,19 +15,19 @@
 
 4.  Klicken Sie in der linken Spalte auf **APIs & auth**, scrollen Sie anschließend nach unten, und klicken Sie auf den Schalter, um **Google Cloud Messaging for Android** zu aktivieren. Akzeptieren Sie die Nutzungsbedingungen.
 
-   	![](./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png)
+	![](./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png)
 
 5.  Klicken Sie auf **Credentials** und anschließend auf **CREATE NEW KEY**.
 
-   	![](./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png)
+   	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key.png)
 
 6.  Klicken Sie in **Create a new key** auf **Server key**. Klicken Sie im nächsten Fenster auf **Create**.
 
-  	![](./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png)
+   	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key2.png)
 
 7.  Notieren Sie sich den Wert **API key**.
 
-   	![](./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png)
+   	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key3.png) 
 
     Als Nächstes verwenden Sie diesen API-Schlüsselwert, um Mobile Services für die Authentifizierung mit GCM zu aktivieren und Pushbenachrichtigungen im Auftrag Ihrer App zu senden.
 

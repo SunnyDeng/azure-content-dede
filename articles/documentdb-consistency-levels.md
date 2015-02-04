@@ -1,4 +1,4 @@
-﻿<properties title="Consistency levels in DocumentDB" pageTitle="Konsistenzebenen in DocumentDB" description="DocumentDB verfügt über vier Konsistenzebenen mit zugehörigen Leistungsstufen, die Anwendungsentwickler dabei unterstützen, vorhersehbare Kompromisse zwischen Konsistenz, Verfügbarkeit und Latenz einzugehen." metaKeywords="Optional" services="documentdb" solutions="data-management" authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="Optional" scriptId="Optional" />
+<properties title="Consistency levels in DocumentDB" pageTitle="Konsistenzebenen in DocumentDB" description="DocumentDB verfügt über vier Konsistenzebenen mit zugehörigen Leistungsstufen, die Anwendungsentwickler dabei unterstützen, vorhersehbare Kompromisse zwischen Konsistenz, Verfügbarkeit und Latenz einzugehen." metaKeywords="Optional" services="documentdb" solutions="data-management" authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="Optional" scriptId="Optional" />
 
 <tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
 
@@ -39,13 +39,13 @@ Lazy|	Wählen Sie Strong, Bounded Staleness, Session oder Eventual|	Eventual
 Wie bei Leseanforderungen kann die Konsistenzebene einer bestimmten Abfrageanforderung durch Angabe des [x-ms-consistency-level]-Anforderungsheaders herabgesetzt werden.  
 
 ##Referenzen
--	Doug Terry. Replicated Data Consistency explained through baseball.   
+-	Doug Terry. Erläuterung der Konsistenz replizierter Daten anhand von Baseball.   
 [http://research.microsoft.com/pubs/157411/ConsistencyAndBaseballReport.pdf](http://research.microsoft.com/pubs/157411/ConsistencyAndBaseballReport.pdf)
--	Doug Terry. Session Guarantees for Weakly Consistent Replicated Data.   
+-	Doug Terry. Sitzungsgarantien für schwach konsistente replizierte Daten.   
 [http://www2.parc.com/csl/projects/bayou/pubs/sg-pdis-94/www/SessionGuaranteesPDIS_1.html](http://www2.parc.com/csl/projects/bayou/pubs/sg-pdis-94/www/SessionGuaranteesPDIS_1.html)
--	Daniel Abadi. Consistency Tradeoffs in Modern Distributed Database Systems Design: CAP is only part of the story".   
+-	Daniel Abadi. Konsistenzkompromisse im Design moderner verteilter Datenbanksysteme: CAP ist nur ein Teil der Wahrheit”.   
 [http://computer.org/csdl/mags/co/2012/02/mco2012020037-abs.html](http://computer.org/csdl/mags/co/2012/02/mco2012020037-abs.html) 
--	Peter Bailis, Shivaram Venkataraman, Michael J. Franklin, Joseph M. Hellerstein, Ion Stoica. Probabilistic Bounded Staleness (PBS) for Practical Partial Quorums.   
+-	Peter Bailis, Shivaram Venkataraman, Michael J. Franklin, Joseph M. Hellerstein, Ion Stoica. Probabilistic Bounded Staleness (PBS) für praktische teilweise Quoren.   
 [http://vldb.org/pvldb/vol5/p776_peterbailis_vldb2012.pdf](http://vldb.org/pvldb/vol5/p776_peterbailis_vldb2012.pdf)
--	Werner Vogels. Eventual Consistent - Revisited.    
+-	Werner Vogels. Schließlich konsistent - Wiederaufnahme des Themas.    
 [http://allthingsdistributed.com/2008/12/eventually_consistent.html](http://allthingsdistributed.com/2008/12/eventually_consistent.html)

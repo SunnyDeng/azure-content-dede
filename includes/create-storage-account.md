@@ -29,4 +29,4 @@ Speicherkonto auch erstellen, indem Sie die Azure-Dienstverwaltungs-Clientbiblio
 
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 [+Neu]: ./media/create-storage-account/plus-new.png
-[Dialogfeld "Schnellerfassung"]: ./media/create-storage-account/quick-storage-2.png
+[quick-create-storage]: ./media/create-storage-account/quick-storage-2.png

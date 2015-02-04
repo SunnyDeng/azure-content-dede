@@ -1,4 +1,4 @@
-﻿	Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit diesen kostenlosen 25.000 monatlichen E-Mails erhalten Sie Zugriff auf erweiterte Berichterstellung und Analysen sowie auf sämtliche APIs (Web, SMTP, Ereignis, Analyse, Unterbenutzer). Informationen über die zusätzlichen Dienste von SendGrid finden Sie auf der Seite [SendGrid Features][].
+Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit diesen kostenlosen 25.000 monatlichen E-Mails erhalten Sie Zugriff auf erweiterte Berichterstellung und Analysen sowie auf sämtliche APIs (Web, SMTP, Ereignis, Analyse, Unterbenutzer). Informationen über die zusätzlichen Dienste von SendGrid finden Sie auf der Seite [SendGrid Features][].
 
 ### So registrieren Sie ein SendGrid-Konto
 

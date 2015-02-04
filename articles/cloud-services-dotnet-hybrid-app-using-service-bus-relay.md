@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Hybrid Application" pageTitle="Hybride lokale/Cloudanwendung (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="Erfahren Sie, wie eine lokale/Cloud-.NET-Hybridanwendung mithilfe von Microsoft Azure Service Bus Relay erstellen." metaCanonical="" services="service-bus" documentationCenter=".NET" title=".NET On-Premises/Cloud Hybrid Application Using Service Bus Relay" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+<properties urlDisplayName="Hybrid Application" pageTitle="Hybride lokale/Cloudanwendung (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="Erfahren Sie, wie eine lokale/Cloud-.NET-Hybridanwendung mithilfe von Microsoft Azure Service Bus Relay erstellen." metaCanonical="" services="service-bus" documentationCenter=".NET" title=".NET On-Premises/Cloud Hybrid Application Using Service Bus Relay" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 
 <tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/15/2014" ms.author="sethm" />
 
@@ -150,17 +150,13 @@ neuen Namespace, müssen Sie die Anmeldeinformationen für den
 Namespace abrufen.
 
 1.  Klicken Sie im Hauptfenster auf den Namen Ihres Dienstnamespaces.   
-
 	![][39]
-  
 
 2.  Klicken Sie auf **Verbindungsinformationen**.   
 
 	![][40]
 
-
 3.  Suchen Sie im Bereich **Zugriffsverbindungsinformationen** nach den Einträgen **Standardaussteller** und **Standardschlüssel**.   
-    
 
 4.  Notieren Sie den Schlüssel oder kopieren Sie ihn in die Zwischenablage.
 
@@ -413,8 +409,8 @@ von Ihrem Produktdienst abgerufene Daten angezeigt werden.
             }
         }
 
-2.  In the HomeController.cs file in Visual Studio, replace the existing
-    namespace definition with the following code:
+2.  Ersetzen Sie in der Datei HomeController.cs in Visual Studio die
+    vorhandene Namespacedefinition durch den folgenden Code:
 
         namespace ProductsWeb.Controllers
         {

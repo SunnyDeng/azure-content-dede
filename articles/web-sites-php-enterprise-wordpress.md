@@ -1,12 +1,12 @@
-﻿<properties title="Enterprise class WordPress on Azure Websites" pageTitle="Leistungsstarke Umgebung für WordPress auf Azure-Websites" description="Erfahren Sie, wie Sie eine leistungsstarke WordPress-Website auf Azure Websites hosten." metaKeywords="wordpress azure, wordpress website, wordpress azure website" services="web-sites" solutions="web" documentationCenter="" authors="tomfitz" manager="wpickett" videoId="" scriptId="" />
+<properties title="Enterprise class WordPress on Azure Websites" pageTitle="Leistungsstarke Umgebung für WordPress auf Azure-Websites" description="Erfahren Sie, wie Sie eine leistungsstarke WordPress-Website auf Azure Websites hosten." metaKeywords="wordpress azure, wordpress website, wordpress azure website" services="web-sites" solutions="web" documentationCenter="" authors="tomfitz" manager="wpickett" videoId="" scriptId="" />
 
 <tags ms.service="web-sites" ms.devlang="php" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="web" ms.date="11/11/2014" ms.author="tomfitz" />
 
-#Leistungsstarke Umgebung für WordPress auf Azure-Websites
+# Leistungsstarke Umgebung für WordPress auf Azure-Websites
 
 Azure-Websites bieten eine skalierbare, sichere und benutzerfreundliche Umgebung für große unternehmenswichtige [WordPress][wordpress]-Websites. Microsoft selbst betreibt leistungsstarke Websites wie die Office- und [Office][officeblog]- und [Bing][bingblog]-Blogs. In diesem Dokument wird erläutert, wie Sie mithilfe von Azure-Websites eine hochleistungsfähige, cloudbasierte WordPress-Website einrichten und verwalten können, die mit eine großen Anzahl von Besuchern zurechtkommt.
 
-##Themen in diesem Artikel 
+## Themen in diesem Artikel 
 
 * [Architektur und Planung](#planning) - Machen Sie sich mit der Architektur, Anforderungen und Leistungsaspekten vertraut, ehe Sie Ihre Website erstellen
 
@@ -14,7 +14,7 @@ Azure-Websites bieten eine skalierbare, sichere und benutzerfreundliche Umgebung
 
 * [Weitere Ressourcen](#resources) - Weitere Ressourcen und Informationen
 
-##<a id="plan"></a>Architektur und Planung
+## <a id="plan"></a>Architektur und Planung
 
 Für eine grundlegende WordPress-Installation gelten nur zwei Anforderungen.
 
@@ -26,7 +26,7 @@ Für eine grundlegende WordPress-Installation gelten nur zwei Anforderungen.
 
 	> [WACOM.NOTE] Wir empfehlen, stets mit der neuesten Version von PHP zu arbeiten, um sicherzustellen, dass Sie über die neuesten Sicherheitskorrekturen verfügen.
 
-###Grundlegende Bereitstellung
+### Grundlegende Bereitstellung
 
 Indem Sie die grundlegenden Anforderungen erfüllen, können Sie eine Standardlösung innerhalb einer Azure-Region erstellen.
 
@@ -35,7 +35,7 @@ Indem Sie die grundlegenden Anforderungen erfüllen, können Sie eine Standardl�
 Wenngleich dies Ihnen ermöglicht, Ihre Anwendung horizontal zu skalieren, indem Sie mehrere Instanzen der Website erstellen, wird die gesamte Konfiguration in den Rechenzentren in einer bestimmten geografischen Region gehostet. Besuchern außerhalb dieser Region werden ggf. nur langsame Antwortzeiten auf der Website geboten, und wenn die Rechenzentren in dieser Region ausfallen, fällt auch Ihre Anwendung aus.
 
 
-###Bereitstellung in mehreren Regionen
+### Bereitstellung in mehreren Regionen
 
 Mithilfe von Azure [Traffic Manager][trafficmanager] ist es möglich, Ihre WordPress-Website auf mehrere geografische Regionen zu skalieren und zugleich Besuchern nur eine URL bereitzustellen. Alle Besucher durchlaufen Traffic Manager und werden anschließend basierend auf der Lastenausgleichskonfiguration an eine Region weitergeleitet.
 
@@ -45,17 +45,17 @@ Innerhalb jeder Region kann die WordPress-Website weiterhin über mehrere Websit
 
 Die Replikation und das Routing an mehrere MySQL-Datenbanken kann mithilfe des [CDBR High Availability Routers][cleardbscale] von ClearDB (links) oder von [MySQL Cluster CGE][cge] erfolgen. 
 
-###Bereitstellung in mehreren Regionen mit Medienspeicherung und Zwischenspeichern
+### Bereitstellung in mehreren Regionen mit Medienspeicherung und Zwischenspeichern
 
-Wenn die Website Uploads zulässt oder Mediendateien hostet, nutzen Sie den Azure-BLOB-Speicher. Wenn Sie einen Cache benötigen, ziehen Sie [Redis Cache][rediscache], [Memcache Cloud](http://azure.microsoft.com/de-de/gallery/store/garantiadata/memcached/), [MemCachier](http://azure.microsoft.com/de-de/gallery/store/memcachier/memcachier/) oder eines der anderen Cache-Angebot im [Azure Store] in Betracht(http://azure.microsoft.com/de-de/gallery/store/).
+Wenn die Website Uploads zulässt oder Mediendateien hostet, nutzen Sie den Azure-BLOB-Speicher. Wenn Sie einen Cache benötigen, ziehen Sie [Redis Cache][rediscache], [Memcache Cloud](http://azure.microsoft.com/de-de/gallery/store/garantiadata/memcached/), [MemCachier](http://azure.microsoft.com/de-de/gallery/store/memcachier/memcachier/) oder eines der anderen Cache-Angebot im [Azure Store](http://azure.microsoft.com/de-de/gallery/store/) in Betracht.
 
 ![an Azure Website, hosted in multiple regions, using CDBR High Availability router for MySQL, with Managed Cache, Blob storage, and CDN][performance-diagram]
 
 BLOB-Speicher wird standardmäßig geografisch auf mehrere Regionen verteilt, sodass Sie sich um die Replikation von Dateien auf allen Websites keine Gedanken machen müssen. Sie können auch das Azure [Content Distribution Network (CDN)][cdn] für die BLOB-Speicherung aktivieren, das Dateien an Endknoten verteilt, die näher bei Ihren Besuchern sind.
 
-###Planung
+### Planung
 
-####Weitere Anforderungen
+#### Weitere Anforderungen
 
 Maßnahme | Option ...
 ------------------------|-----------
@@ -67,14 +67,14 @@ Maßnahme | Option ...
 **Überwachung und Fehlerbehebung** | [Diagnostische Protokollierung mit Azure Websites][log] und [Überwachen von Azure Websites][monitor]
 **Bereitstellen der Website** | [Bereitstellen einer Azure Website][deploy]
 
-####Verfügbarkeit und Notfallwiederherstellung
+#### Verfügbarkeit und Notfallwiederherstellung
 
 Maßnahme | Option ...
 ------------------------|-----------
 **Lastenausgleich für Websites** oder **geografisch verteilte Bereitstellung von Websites** | [Traffic steuern mit Azure Traffic Manager][trafficmanager]
 **Backup und Wiederherstellung** | [Backup von Azure Websites][backup] und [Wiederherstellen von Azure Websites][restore]
 
-####Leistung
+#### Leistung
 
 Leistung in der Cloud wird hauptsächlich mithilfe der Zwischenspeicherung und horizontalen Skalierung erreicht. Doch berücksichtigt werden sollten auch der Arbeitsspeicher, die Bandbreite und andere Aspekte des Hostings von Websites.
 
@@ -84,7 +84,7 @@ Maßnahme | Option ...
 **Cacheressourcen** | [Redis Cache][rediscache], [Memcache Cloud](http://azure.microsoft.com/de-de/gallery/store/garantiadata/memcached/), [MemCachier](http://azure.microsoft.com/de-de/gallery/store/memcachier/memcachier/) oder eines der anderen Cache-Angebot im [Azure Store](http://azure.microsoft.com/de-de/gallery/store/)
 **Skalieren Ihrer Anwendung** | [Skalieren einer Azure Website][websitescale] und [ClearDB-Hochverfügbarkeitsrouting][cleardbscale]. Wenn Sie sich für das Hosten und Verwalten Ihrer eigenen MySQL-Installation entscheiden, sollten Sie für das horizontale Skalieren [MySQL Cluster CGE][cge] in Erwägung ziehen
 
-####Migration
+#### Migration
 
 Es gibt zwei Möglichkeiten, eine vorhandene WordPress-Website zu Azure-Websites zu migrieren.
 
@@ -94,9 +94,9 @@ Es gibt zwei Möglichkeiten, eine vorhandene WordPress-Website zu Azure-Websites
 
 * **Manuelle Migration** - [Sichern Sie Ihre Website][wordpressbackup] und [Datenbank][wordpressdbbackup], und stellen Sie sie anschließend manuell in einer Azure-Website und dazugehörigen MySQL-Datenbank wieder her, um stark angepasste Websites zu migrieren und den Aufwand der manuellen Installation von Plug-Ins, Designs und anderen Anpassungen zu vermeiden.
 
-##Anleitung
+## Anleitung
 
-###<a id="create"></a>Erstellen einer neuen WordPress-Website
+### <a id="create"></a>Erstellen einer neuen WordPress-Website
 
 1. Nutzen des [Azure Stores][cdbnstore] für das Erstellen einer MySQL-Datenbank im Abschnitt [Architektur und Planung](#planning) in der/den Region(en), in denen Sie Ihre Website hosten.
 
@@ -104,7 +104,7 @@ Es gibt zwei Möglichkeiten, eine vorhandene WordPress-Website zu Azure-Websites
 
 Wenn Sie eine vorhandene WordPress-Website migrieren, lesen Sie [Migrieren einer vorhandenen WordPress-Website](#migrate) nach dem Erstellen einer neuen Website.
 
-###<a id="migrate"></a>Migrieren einer vorhandenen WordPress-Website in Azure
+### <a id="migrate"></a>Migrieren einer vorhandenen WordPress-Website in Azure
 
 Wie im Abschnitt [Architektur und Planung](#planning) erwähnt, gibt es zwei Möglichkeiten für das Migrieren einer WordPress-Website.
 
@@ -114,7 +114,7 @@ Wie im Abschnitt [Architektur und Planung](#planning) erwähnt, gibt es zwei Mö
 
 Befolgen Sie die Anweisungen zum Migrieren Ihrer Website in den folgenden Abschnitten.
 
-####Die Export- und Importmethode
+#### Die Export- und Importmethode
 
 1. Verwenden Sie die [WordPress-Exportfunktion][export] zum Exportieren Ihrer vorhandenen Website.
 
@@ -139,7 +139,7 @@ Bei Verwendung von | Tun Sie Folgendes ...
 **Designs** | Wechseln Sie zu **Darstellung** -> **Theme**, und aktualisieren Sie das Websitedesign den Anforderungen entsprechend
 **Menüs** | Falls Ihr Design Menüs unterstützt, ist in Links zu Ihrer Homepage ggf. das alte Unterverzeichnis eingebettet. Wechseln Sie zu **Darstellung** -> **Menüs**, und aktualisieren Sie sie
 
-####Die Sicherungs- und Wiederherstellungsmethode
+#### Die Sicherungs- und Wiederherstellungsmethode
 
 1. Sichern Sie Ihre vorhandene WordPress-Website mithilfe der Informationen auf der [WordPress-Seite zu Sicherungen][wordpressbackup].
 
@@ -171,14 +171,14 @@ Bei Verwendung von | Tun Sie Folgendes ...
 
 5. Nach der Bereitstellung der WordPress-Website sollten Sie auf die neue Website über die URL "*.azurewebsite.net" zugreifen können.
 
-###Konfigurieren Ihrer Website
+### Konfigurieren Ihrer Website
 
 Befolgen Sie nach dem Erstellen oder Migrieren der WordPress-Website die folgenden Informationen zum Verbessern der Leistung und Ermöglichen zusätzlicher Funktionalität.
 
 Maßnahme | Option ...
 ------------- | -----------
 **Websitemodus und Größe festlegen, Skalierung aktivieren** | [Skalieren von Websites][websitescale]
-**Aktivieren dauerhafter Datenbankverbindungen** <p>WordPress arbeitet standardmäßig nicht mit dauerhaften Datenbankverbindungen, was bewirken kann, dass Ihre Verbindung mit der Datenbank nach mehreren Verbindungen gedrosselt wird.</p>  | <ol><li><p>Edit the <strong>wp-includes/wp-db.php</strong> file.</p></li><li><p>Find the following line.</p><code>$this->dbh = mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags );</code></li><li><p>Replace the previous line with the following.</p><code>$this->dbh = mysql_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword,  $client_flags ); <br/>if ( false !== $error_reporting ) { /br/>&nbsp;&nbsp;error_reporting( $error_reporting ); <br/>} </code></li><li><p>Find the following line.</p><code>$this->dbh = @mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags ); </code></li><li><p>Replace the above line with the following.</p><code>$this->dbh = @mysql_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword,  $client_flags ); </code></li><li><p>Save the file <strong>wp-includes/wp-db.php</strong> file and redeploy the site.</p></li></ol><div class="wa-note"><span class="wa-icon-bulb"></span><h5><a name="note"></a>HINWEIS:</h5><p>Diese Änderungen werden ggf. überschrieben, wenn WordPress aktualisiert wird.</p><p>WordPress nutzt standardmäßig automatische Updates, was deaktiviert werden kann durch Bearbeiten der Datei <strong>wp-config.php</strong> und Hinzufügen von <code>define ( 'WP_AUTO_UPDATE_CORE', false );</code></p><p>Eine weitere Möglichkeit für den Umgang mit Aktualisierungen ist die Verwendung eines WebJobs, der die Datei <strong>wp-db.php</strong> überwacht und die oben genannten Modifikationen jedes Mal vornimmt, wenn die Datei aktualisiert wird. Weitere Informationen finden Sie unter <a href="http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx">Einführung in WebJobs</a> .</p></div>
+**Aktivieren dauerhafter Datenbankverbindungen** <p>WordPress arbeitet standardmäßig nicht mit dauerhaften Datenbankverbindungen, was bewirken kann, dass Ihre Verbindung mit der Datenbank nach mehreren Verbindungen gedrosselt wird.</p>  | <ol><li><p>Bearbeiten Sie die Datei <strong>wp-includes/wp-db.php</strong>.</p></li><li><p>Suchen Sie die folgende Zeile.</p><code>$this->dbh = mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags );</code></li><li><p>Ersetzen Sie die vorherige Zeile durch den folgenden Code.</p><code>$this->dbh = mysql_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword,  $client_flags ); <br/>if ( false !== $error_reporting ) { /br/>&nbsp;&nbsp;error_reporting( $error_reporting ); <br/>} </code></li><li><p>Suchen Sie die folgende Zeile.</p><code>$this->dbh = @mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags ); </code></li><li><p>Ersetzen Sie die obige Zeile durch den folgenden Code.</p><code>$this->dbh = @mysql_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword,  $client_flags ); </code></li><li><p>Speichern Sie die Datei <strong>wp-includes/wp-db.php</strong>, und stellen Sie die Website erneut bereit.</p></li></ol><div class="wa-note"><span class="wa-icon-bulb"></span><h5><a name="note"></a>HINWEIS:</h5><p>Diese Änderungen werden ggf. überschrieben, wenn WordPress aktualisiert wird.</p><p>WordPress nutzt standardmäßig automatische Updates, was deaktiviert werden kann durch Bearbeiten der Datei <strong>wp-config.php</strong> und Hinzufügen von <code>define ( 'WP_AUTO_UPDATE_CORE', false );</code></p><p>Eine weitere Möglichkeit für den Umgang mit Aktualisierungen ist die Verwendung eines WebJobs, der die Datei <strong>wp-db.php</strong> überwacht und die oben genannten Modifikationen jedes Mal vornimmt, wenn die Datei aktualisiert wird. Weitere Informationen finden Sie unter <a href="http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx">Einführung in WebJobs</a> .</p></div>
 **Verbessern der Leistung** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">ARR-Cookie deaktivieren</a> - Kann die Leistung verbessern, wenn WordPress auf mehreren Website-Instanzen ausgeführt wird</p></li><li><p>Aktivieren Sie das Zwischenspeichern. <a href="http://msdn.microsoft.com/de-de/library/azure/dn690470.aspx">Redis-Cache</a> (Vorschau) lässt sich mit dem <a href="https://wordpress.org/plugins/redis-object-cache/">Redis Object Cache WordPress-Plug-In</a>einsetzen, oder Sie verwenden eines der anderen Cache-Angebot im <a href="http://azure.microsoft.com/de-de/gallery/store/">Azure Store</a></p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">So machen Sie WordPress schneller mit WinCache</a> - WinCache ist standardmäßig für Websites aktiviert</p></li><li><p><a href="http://azure.microsoft.com/de-de/documentation/articles/web-sites-scale/">Skalieren Sie die Azure Website</a> und verwenden Sie <a href="http://www.cleardb.com/developers/cdbr/introduction">ClearDB Hochverfügbarkeitsrouting</a> oder <a href="http://www.mysql.com/products/cluster/">MySQL Cluster CGE</a></p></li></ul>
 **Verwenden Sie die BLOB-Speicherung** | <ol><li><p><a href="http://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/">Erstellen eines Azure-Speicherkontos</a></p></li><li><p>Erfahren Sie, wie Sie <a href="http://azure.microsoft.com/de-de/documentation/articles/cdn-how-to-use/">Nutzen Sie das Content Distribution Network (CDN)</a> für die geografisch verteilte Bereitstellung von in Blobs gespeicherten Daten.</p></li><li><p>Installieren und konfigurieren des <a href="https://wordpress.org/plugins/windows-azure-storage/">Azure-Speicher für WordPress-Plug-Ins</a>.</p><p>Detaillierte Informationen zu Einrichtung und Konfiguration des Plug-Ins finden Sie im <a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">Benutzerhandbuch</a>.</p> </li></ol>
 **Aktivieren von E-Mail** | <ol><li><p><a href="http://azure.microsoft.com/de-de/gallery/store/sendgrid/sendgrid-azure/">Aktivieren von SendGrid über den Azure Shop</a></p></li><li><p><a href="http://wordpress.org/plugins/sendgrid-email-delivery-simplified/">Installieren des SendGrid-Plug-Ins für WordPress</a></p></li></ol>
@@ -188,7 +188,7 @@ Maßnahme | Option ...
 **Aktivieren automatisierter Website-Backups** | [Backups von Azure Websites][backup]
 **Aktivieren diagnostischer Protokollierung** | [Aktivieren diagnostischer Protokollierung für Websites][log]
 
-##<a href="resources"></a>Zusätzliche Ressourcen
+## <a href="resources"></a>Zusätzliche Ressourcen
 
 * [WordPress-Optimierung](http://codex.wordpress.org/WordPress_Optimization)
 
@@ -269,4 +269,5 @@ Maßnahme | Option ...
 [xplat-cli]: http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/
 [storesendgrid]: http://azure.microsoft.com/de-de/gallery/store/sendgrid/sendgrid-azure/
 [cdn]: http://azure.microsoft.com/de-de/documentation/articles/cdn-how-to-use/
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1--> 

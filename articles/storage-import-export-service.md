@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Azure Import/Export Service" pageTitle="Verwenden von Import/Export zum Übertragen von Daten in den Blob-Speicher | Microsoft Azure" metaKeywords="" description="Erfahren Sie, wie Sie Import- und Exportaufträge im Azure-Verwaltungsportal erstellen, um Daten in den Blob-Speicher zu übertragen." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="adinah" />
+<properties urlDisplayName="Azure Import/Export Service" pageTitle="Verwenden von Import/Export zum Übertragen von Daten in den Blob-Speicher | Microsoft Azure" metaKeywords="" description="Erfahren Sie, wie Sie Import- und Exportaufträge im Azure-Verwaltungsportal erstellen, um Daten in den Blob-Speicher zu übertragen." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/25/2014" ms.author="tamram" />
 
@@ -264,8 +264,8 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 - Für Regionen in Asien wird nur [DHL](http://www.dhl-welcome.com/Tutorial/) unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
 
 	<div class="dev-callout">
-	<strong>Important</strong>
-	<p>You must provide your tracking number to the Azure Import/Export service; otherwise your job cannot be processed.</p>
+	<strong>Wichtig:</strong>
+	<p>Sie müssen Ihre Tracking-Nummer an den Azure Import-/Export-Dienst übertragen, ansonsten kann Ihr Auftrag nicht verarbeitet werden.</p>
 	</div>
 
 **Entstehen Kosten für den Rückversand?**

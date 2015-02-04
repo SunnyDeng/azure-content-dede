@@ -1,4 +1,4 @@
-﻿
+
 
 1. Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm **Erste Schritte mit Daten** erstellt haben.
 
@@ -44,7 +44,7 @@ Beachten Sie, dass die **take(3)**-Methode in der Abfrage-URI in die Abfrageopti
                 });
         };
 
-Diese Abfrage überspringt die ersten drei Ergebnisse und gibt die drei darauffolgenden zurück. Dabei handelt es sich effektiv um die zweite "Seite" von Daten, wobei die Seitengröße hier drei Elemente beträgt.
+   	Diese Abfrage überspringt die ersten drei Ergebnisse und gibt die drei darauffolgenden zurück. Dabei handelt es sich effektiv um die zweite "Seite" von Daten, wobei die Seitengröße hier drei Elemente beträgt.
 
     <div class="dev-callout"><b>Hinweis</b>
     <p>In diesem Lernprogramm werden der Einfachheit halber fest codierte Werte an die Methoden<strong>Take</strong> und <strong>Skip</strong> übergeben. Tatsächliche Anwendungen können ähnliche Abfragen mit einem Pagersteuerelement oder einer ähnlichen Benutzersteuerung ausführen, um zur vorherigen bzw. nächsten Seite zu navigieren.  Sie können auch die <strong>includeTotalCount</strong>-Methode aufrufen, um die Gesamtzahl der Elemente auf dem Server zusammen mit den Paging-Daten abzurufen.</p>
@@ -52,7 +52,7 @@ Diese Abfrage überspringt die ersten drei Ergebnisse und gibt die drei darauffo
 
 6. (Optional) Sehen Sie sich erneut den URI der Anfrage an den mobilen Service an. 
 
-Beachten Sie, dass die **skip(3)**-Methode in der Abfrage-URI in die Abfrageoption **$skip=3** übersetzt wurde.
+   	Beachten Sie, dass die **skip(3)**-Methode in der Abfrage-URI in die Abfrageoption **$skip=3** übersetzt wurde.
 
 <!-- URLs -->
 [Fiddler]: http://go.microsoft.com/fwlink/?LinkID=262412

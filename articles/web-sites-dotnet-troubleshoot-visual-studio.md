@@ -1,4 +1,4 @@
-﻿<properties title="Troubleshooting Azure Websites in Visual Studio" pageTitle="Problembehandlung von Azure-Websites in Visual Studio" metaKeywords="Problembehandlung debuggen Azure Website Ablaufverfolgung Protokollierung" description="Informationen zur Problembehebung bei einer Azure-Website mit Remote-Debugging-, Ablaufverfolgungs- und Protokollierungstools, die in Visual Studio 2013 integriert sind." metaCanonical="" services="web-sites" documentationCenter=".NET" authors="tdykstra" manager="wpickett" solutions="" />
+<properties title="Troubleshooting Azure Websites in Visual Studio" pageTitle="Problembehandlung von Azure-Websites in Visual Studio" metaKeywords="Problembehandlung debuggen Azure Website Ablaufverfolgung Protokollierung" description="Informationen zur Problembehebung bei einer Azure-Website mit Remote-Debugging-, Ablaufverfolgungs- und Protokollierungstools, die in Visual Studio 2013 integriert sind." metaCanonical="" services="web-sites" documentationCenter=".NET" authors="tdykstra" manager="wpickett" solutions="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/13/2014" ms.author="tdykstra" />
 
@@ -54,7 +54,7 @@ Visual Studio bietet Zugriff auf einen Teil der Site-Verwaltungsfunktionen und K
 	Als Alternative können Sie ein Verwaltungszertifikat installieren, das den Zugriff auf Ihr Konto ermöglicht. Mit dem Verwaltungszertifikat erhält der **Server-Explorer** Zugriff auf zusätzliche Azure-Dienste (SQL-Datenbank und Mobile Dienste). Falls Sie ein Zertifikat installieren möchten, klicken Sie mit der rechten Maustaste auf den Knoten **Azure** im **Server-Explorer**, und wählen Sie im Kontextmenü **Abonnements verwalten** aus. Klicken Sie im Dialogfeld **Azure-Abonnements verwalten** auf die Registerkarte **Zertifikate** und dann auf **Importieren**. Befolgen Sie die Anweisungen zum Herunterladen und Importieren einer Abonnementdatei (auch .publishsettings-Datei genannt) für Ihr Azure-Konto.
 
 	> [WACOM.NOTE]
-	Wenn Sie eine Abonnementdatei herunterladen, sollten Sie diese in einem Ordner außerhalb Ihrer Quellcodeverzeichnisse speichern (beispielsweise in den Ordner Downloads) und nach Abschluss des Importvorgangs löschen. Böswillige Benutzer, die Zugriff auf die Abonnementdatei erlangen, können Ihre Azure-Services bearbeiten, erstellen und löschen.
+	> Wenn Sie eine Abonnementdatei herunterladen, sollten Sie diese in einem Ordner außerhalb Ihrer Quellcodeverzeichnisse speichern (beispielsweise in den Ordner Downloads) und nach Abschluss des Importvorgangs löschen. Böswillige Benutzer, die Zugriff auf die Abonnementdatei erlangen, können Ihre Azure-Services bearbeiten, erstellen und löschen.
 
 	Weitere Informationen für Verbindungen zwischen Visual Studio und Azure-Ressourcen finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](http://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert).
 

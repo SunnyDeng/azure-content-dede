@@ -1,8 +1,8 @@
-﻿<properties urlDisplayName="HDInsight Administration" pageTitle="Bereitstellen von Hadoop-Clustern in HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Erfahren Sie, wie Sie Cluster für Azure HDInsight im Verwaltungsportal oder mithilfe von PowerShell oder der Befehlszeile bereitstellen können." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Provision Hadoop clusters in HDInsight" authors="jgao" />
+<properties urlDisplayName="HDInsight Administration" pageTitle="Bereitstellen von Hadoop-Clustern in HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Erfahren Sie, wie Sie Cluster für Azure HDInsight im Verwaltungsportal oder mithilfe von PowerShell oder der Befehlszeile bereitstellen können." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Provision Hadoop clusters in HDInsight" authors="jgao" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/14/2014" ms.author="jgao" />
 
-#Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight
+# Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight
 
 Dieser Artikel beschreibt die verschiedenen Möglichkeiten für die benutzerdefinierte Bereitstellung eines Hadoop-Clusters in Azure HDInsight: Azure-Verwaltungsportal, PowerShell, Befehlszeilentools oder HDInsight .NET SDK. Dieser Artikel behandelt die Bereitstellung eines Hadoop-Clusters. Informationen zur Bereitstellung eines HBase-Clusters finden Sie unter [Bereitstellen eines HBase-Clusters in HDInsight][hdinsight-hbase-custom-provision]. Siehe <a href="http://go.microsoft.com/fwlink/?LinkId=510237">"Was ist der Unterschied zwischen den Hadoop und HBase?",</a> um zu verstehen, warum Sie einer dieser Lösungen den Vorzug geben sollten.
 
@@ -22,7 +22,7 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 - Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Die HDInsight PowerShell-Cmdlets führen Aufgaben für Ihr Abonnement aus. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][azure-purchase-options], [Spezielle Angebote][azure-member-offers] oder [Kostenlose Testversion][azure-free-trial].
 
-##Themen in diesem Artikel
+## Themen in diesem Artikel
 
 * [Konfigurationsoptionen](#configuration)
 * [Verwenden des Azure-Verwaltungsportals](#portal)
@@ -31,15 +31,15 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 * [Verwenden des HDInsight .NET SDK](#sdk)
 * [Nächste Schritte](#nextsteps)
 
-##<a id="configuration"></a>Konfigurationsoptionen
+## <a id="configuration"></a>Konfigurationsoptionen
 
-###Zusätzlicher Speicher
+### Zusätzlicher Speicher
 
 Bei der Konfiguration müssen Sie ein Azure-Blobspeicherkonto und einen Standardcontainer angeben. Das Cluster verwendet diese Option als Standard-Speicherort. Sie können optional zusätzliche Blobs angeben, die ebenfalls Ihrem Cluster zugeordnet werden.
 
 Weitere Informationen zu sekundären Blob-Speichern finden Sie unter [Verwenden des Azure-Blob-Speichers mit HDInsight](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-use-blob-storage/).
 
-###Metastore
+### Metastore
 
 Der Metastore enthält Informationen über Hive-Tabellen, Partitionen, Schemas, Spalten usw.. Hive verwendet diese Informationen, um die Daten im HDFS zu lokalisieren (bzw. WASB für HDInsight). Standardmäßig speichert Hive diese Informationen in einer eingebetteten Datenbank.
 
@@ -50,7 +50,7 @@ Bei der Bereitstellung eines HDInsight-Clusters können Sie eine SQL-Datenbank a
 Sie können weitere Komponenten installieren oder die Konfiguration des Clusters anpassen, während ein HDInsight-Cluster erstellt wird. Cluster können angepasst werden, indem Skripts erstellt werden, die während der Erstellung des Clusters ausgeführt werden. Diese Skripts werden mithilfe der Option **Skriptaktion** aufgerufen. Dies ist eine Konfigurationsoption, die von HDInsight PowerShell-Cmdlets oder dem HDInsight .NET SDK verwendet werden kann. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mit einer Skriptaktion][hdinsight-customize-cluster].
 
 
-###Virtuelle Netzwerke
+### Virtuelle Netzwerke
 
 Ein [virtuelles Azure-Netzwerk](http://azure.microsoft.com/de-de/documentation/services/virtual-network/) bietet ein sicheres, persistentes Netzwerk mit allen Ressourcen, die Sie für Ihre Lösung benötigen. Virtuelle Netzwerke ermöglichen Folgendes:
 
@@ -76,7 +76,7 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 >
 > Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
 
-##<a id="portal"></a> Verwenden des Azure-Verwaltungsportals
+## <a id="portal"></a> Verwenden des Azure-Verwaltungsportals
 
 HDInsight-Cluster verwenden einen Azure-Blobspeicher-Container als Standard-Dateisystem. Sie benötigen ein Speicherkonto im entsprechenden Rechenzentrum, um einen HDInsight-Cluster erstellen zu können. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos][azure-create-storageaccount].
 
@@ -182,7 +182,7 @@ HDInsight-Cluster verwenden einen Azure-Blobspeicher-Container als Standard-Date
 
 	> [WACOM.NOTE] Nachdem Sie ein Azure-Speicherkonto für Ihren HDInsight-Cluster ausgewählt haben, können Sie das Konto nicht mehr löschen und auch kein anderes Konto auswählen.
 
-##<a id="powershell"></a> Verwenden der Azure PowerShell
+## <a id="powershell"></a> Verwenden der Azure PowerShell
 Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Dieser Abschnitt bietet Anweisungen zum Bereitstellen eines HDInsight-Clusters. Informationen zur Konfiguration einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure-PowerShell][powershell-install-configure]. Weitere Informationen zum Verwenden von PowerShell mit HDInsight finden Sie unter [Verwalten von HDInsight mit PowerShell][hdinsight-admin-powershell]. Eine Liste der HDInsight PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz][hdinsight-powershell-reference].
 
 > [WACOM.NOTE] Die Skripts in diesem Abschnitt dienen zum Konfigurieren eines HDInsight-Clusters in einem virtuellen Azure-Netzwerk, jedoch nicht zur Erstellung des virtuellen Azure-Netzwerks. Informationen zur Erstellung von virtuellen Azure-Netzwerken finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](http://msdn.microsoft.com/de-de/library/azure/jj156206.aspx).
@@ -314,7 +314,7 @@ Bei der Bereitstellung eines Clusters können Sie erweiterte Optionen verwenden,
 		Get-AzureHDInsightCluster -Name <ClusterName>
 
 
-##<a id="cli"></a> Die plattformübergreifende Befehlszeile
+## <a id="cli"></a> Die plattformübergreifende Befehlszeile
 
 > [WACOM.NOTE] Ab dem 29.8.2014 kann die plattformübergreifende Befehlszeilenschnittstelle nicht verwendet werden, um ein Cluster zu einem virtuellen Azure-Netzwerk zuzuordnen.
 
@@ -471,7 +471,7 @@ Normalerweise erstellen Sie einen HDInsight-Cluster, führen Ihre Jobs aus und l
 
 
 
-##<a id="sdk"></a> Verwenden des HDInsight .NET SDK
+## <a id="sdk"></a> Verwenden des HDInsight .NET SDK
 Das HDInsight .NET SDK enthält .NET-Clientbibliotheken zur Vereinfachung der Arbeit mit HDInsight in .NET-Anwendungen.
 
 Führen Sie die folgenden Schritte aus, um einen HDInsight-Cluster mithilfe des SDK bereitzustellen:
@@ -484,7 +484,7 @@ Führen Sie die folgenden Schritte aus, um einen HDInsight-Cluster mithilfe des 
 
 **So installieren Sie das HDInsight .NET SDK**
 
-Sie können die neueste veröffentlichte Version des SDK von [NuGet] installieren(http://nuget.codeplex.com/wikipage?title=Getting%20Started). Die Anweisungen dazu werden im nächsten Verfahren erläutert.
+Sie können die neueste veröffentlichte Version des SDK von [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) installieren. Die Anweisungen dazu werden im nächsten Verfahren erläutert.
 
 **So erstellen Sie ein selbstsigniertes Zertifikat**
 
@@ -589,7 +589,7 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
 
 
 
-##<a id="nextsteps"></a> Nächste Schritte
+## <a id="nextsteps"></a> Nächste Schritte
 In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsight-Clusters kennen gelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started] - Erfahren Sie, wie Sie die Arbeit mit Ihrem HDInsight-Cluster aufnehmen

@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="How to manage" pageTitle="Verwalten eines Cloud-Diensts - Azure" metaKeywords="Azure manage cloud services, Azure Management Portal cloud services" description="Hier erfahren Sie mehr über die Verwaltung von Cloud-Diensten im Azure-Verwaltungsportal." metaCanonical="" services="cloud-services" documentationCenter="" title="How to Manage Cloud Services" authors="ryanwi" solutions="" manager="timlt" editor="" />
+<properties urlDisplayName="How to manage" pageTitle="Verwalten eines Cloud-Diensts - Azure" metaKeywords="Azure manage cloud services, Azure Management Portal cloud services" description="Hier erfahren Sie mehr über die Verwaltung von Cloud-Diensten im Azure-Verwaltungsportal." metaCanonical="" services="cloud-services" documentationCenter="" title="How to Manage Cloud Services" authors="ryanwi" solutions="" manager="timlt" editor="" />
 
 <tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/23/2014" ms.author="ryanwi" />
 
@@ -34,11 +34,11 @@ Wenn Sie den Anwendungscode für Ihren Cloud-Dienst aktualisieren müssen, verwe
 
 5. Wählen Sie unter **Rolle** die Option **Alle**, wenn Sie alle Rollen im Cloud-Dienst aktualisieren möchten. Wählen Sie zum Ausführen einer einzelnen Rollenaktualisierung die zu aktualisierende Rolle aus. Auch wenn Sie eine bestimmte Rolle zum Aktualisieren auswählen, werden die Updates in der Dienstkonfigurationsdatei auf alle Rollen angewendet.
 
-6. Wenn durch das Update die Anzahl der Rollen oder die Größe einer Rolle geändert wird, aktivieren Sie das Kontrollkästchen **Allow update if role sizes or number of roles changes**, um die Fortsetzung des Updates zu ermöglichen. 
+6. Wenn durch das Update die Anzahl der Rollen oder die Größe einer Rolle geändert wird, aktivieren Sie das Kontrollkästchen **Aktualisierung zulassen, wenn sich die Rollengröße oder die Rollenanzahl ändert**, um die Fortsetzung des Updates zu ermöglichen. 
 
 	Wenn Sie die Größe einer Rolle (d. h. die Größe eines virtuellen Computers, der eine Rolleninstanz hostet) oder die Anzahl der Rollen ändern, denken Sie daran, dass für jede Rolleninstanz (virtueller Computer) ein neues Image erstellt werden muss und dass lokale Daten verloren gehen.
 
-7. Wenn Dienstrollen nur eine Rolleninstanz haben, aktivieren Sie das Kontrollkästchen **Update even if one or more role contain a single instance**, damit das Update fortgesetzt werden kann. 
+7. Wenn Dienstrollen nur eine Rolleninstanz haben, aktivieren Sie das Kontrollkästchen **Auch dann aktualisieren, wenn mindestens eine Rolle nur eine einzelne Instanz enthält**, damit das Update fortgesetzt werden kann. 
 
 	Azure kann während des Updates eines Cloud-Diensts nur dann eine Dienstverfügbarkeit von 99,95 Prozent garantieren, wenn jede Rolle mindestens zwei Rolleninstanzen (**virtuelle Computer) hat. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird.
 

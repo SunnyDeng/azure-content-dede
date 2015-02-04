@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Service Bus Queues" pageTitle="Verwenden von Service Bus-Warteschlangen (.NET) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues C#, Azure queues .NET" description="Erfahren Sie mehr über die Verwendung von Service Bus-Warteschlangen in Azure. Die Codebeispiele wurden in C# mithilfe der .NET-API geschrieben." metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Queues" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+<properties urlDisplayName="Service Bus Queues" pageTitle="Verwenden von Service Bus-Warteschlangen (.NET) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues C#, Azure queues .NET" description="Erfahren Sie mehr über die Verwendung von Service Bus-Warteschlangen in Azure. Die Codebeispiele wurden in C# mithilfe der .NET-API geschrieben." metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Queues" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 
 <tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
@@ -14,13 +14,13 @@
 
 [WACOM.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
-##Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
+## Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
 
 Wenn Sie eine Anwendung erstellen, die Service Bus verwendet, müssen Sie
 einen Verweis zur Service Bus-Assembly hinzufügen und die entsprechenden
 Namespaces einschließen.
 
-##Abrufen des Service Bus NuGet-Pakets
+## Abrufen des Service Bus NuGet-Pakets
 
 Das Service Bus **NuGet**-Paket ist die einfachste Möglichkeit zum Abrufen der Service Bus-API und zum Konfigurieren der Anwendung mit allen Service Bus-Abhängigkeiten. Die Visual Studio-Erweiterung für NuGet erleichtert das Installieren und Aktualisieren von Bibliotheken und Tools in Visual Studio und Visual Studio Express 2012 for Web.
 
@@ -34,18 +34,18 @@ Gehen sie folgendermaßen vor, um das NuGet-Paket in der Anwendung zu installier
 Sie können nun Code für Service Bus erstellen.
 
 
-##So richten Sie eine Service Bus-Verbindungszeichenfolge ein
+## So richten Sie eine Service Bus-Verbindungszeichenfolge ein
 
 Service Bus verwendet eine Verbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen. Sie können die Verbindungszeichenfolge in einer Konfigurationsdatei ablegen, statt sie fest in Code zu programmieren:
 
-- Bei der Verwendung von Azure-Cloud-Diensten empfiehlt es sich, die Verbindungszeichenfolge mithilfe des Azure-Dienstkonfigurationssystems (Dateien *.csdef und *.cscfg) zu speichern.
-- Bei der Verwendung von Azure-Websites oder Azure Virtual Machines sollten Sie Ihre Verbindungszeichenfolge mithilfe des .NET-Konfigurationssystems speichern (z. B. web.config-Datei).
+- Bei der Verwendung von Azure-Cloud-Diensten empfiehlt es sich, die Verbindungszeichenfolge mithilfe des Azure-Dienstkonfigurationssystems (Dateien `*.csdef` und `*.cscfg`) zu speichern.
+- Bei der Verwendung von Azure-Websites oder Azure Virtual Machines sollten Sie Ihre Verbindungszeichenfolge mithilfe des .NET-Konfigurationssystems speichern (z. B. `web.config`-Datei).
 
-In beiden Fällen können Sie Ihre Verbindungszeichenfolge über die CloudConfigurationManager.GetSetting-Methode abrufen, wie später in diesem Leitfaden beschrieben.
+In beiden Fällen können Sie Ihre Verbindungszeichenfolge über die `CloudConfigurationManager.GetSetting`-Methode abrufen, wie später in diesem Leitfaden beschrieben.
 
 ### <a name="config-connstring"> </a>Konfigurieren der Verbindungszeichenfolge bei der Verwendung von Clouddiensten
 
-Die Dienstkonfiguration ist in Azure-Clouddienstprojekten eindeutig und ermöglicht es Ihnen, Konfigurationseinstellungen im Azure-Verwaltungsportal dynamisch zu ändern, ohne die Anwendung erneut bereitzustellen.  Fügen Sie beispielsweise der Dienstdefinitionsdatei (*.csdef) eine Einstellung hinzu, wie nachfolgend gezeigt:
+Die Dienstkonfiguration ist in Azure-Clouddienstprojekten eindeutig und ermöglicht es Ihnen, Konfigurationseinstellungen im Azure-Verwaltungsportal dynamisch zu ändern, ohne die Anwendung erneut bereitzustellen.  Fügen Sie beispielsweise der Dienstdefinitionsdatei (`*.csdef`) eine Einstellung hinzu, wie nachfolgend gezeigt:
 
 	<ServiceDefinition name="WindowsAzure1">
 	...
@@ -57,7 +57,7 @@ Die Dienstkonfiguration ist in Azure-Clouddienstprojekten eindeutig und ermögli
 	...
 	</ServiceDefinition>
 
-Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (*.cscfg) an:
+Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (`*.cscfg`) an:
 
 	<ServiceConfiguration serviceName="WindowsAzure1">
 	...
@@ -74,7 +74,7 @@ Verwenden Sie die aus dem Verwaltungsportal abgerufenen Aussteller- und Schlüss
 
 ### Konfigurieren der Verbindungszeichenfolge bei Verwendung von Websites oder virtuellen Computern
 
-Bei der Verwendung von Websites oder Virtual Machines sollten Sie das .NET-Konfigurationssystem verwenden (z. B. web.config).  Sie speichern die Verbindungszeichenfolge mit dem Element <appSettings>:
+Bei der Verwendung von Websites oder Virtual Machines sollten Sie das .NET-Konfigurationssystem verwenden (z. B. `web.config`).  Sie speichern die Verbindungszeichenfolge mit dem Element `<appSettings>`:
 
 	<configuration>
 	    <appSettings>
@@ -85,7 +85,7 @@ Bei der Verwendung von Websites oder Virtual Machines sollten Sie das .NET-Konfi
 
 Verwenden Sie die aus dem Verwaltungsportal abgerufenen Aussteller- und Schlüsselwerte. Das Verfahren wurde im vorherigen Abschnitt beschrieben.
 
-##Erstellen einer Warteschlange
+## Erstellen einer Warteschlange
 
 Sie können Verwaltungsvorgänge für Service Bus-Warteschlangen über die Klasse **NamespaceManager** durchführen. Die Klasse **NamespaceManager** stellt Methoden zum Erstellen, Aufzählen und Löschen von Warteschlangen zur Verfügung. 
 
@@ -128,7 +128,7 @@ Es gibt Überladungen der **CreateQueue**-Methode, die es Ihnen ermöglichen, di
 
 **Hinweis:** Sie können die **QueueExists**-Methode bei **NamespaceManager**-Objekten zur Überprüfung verwenden, ob eine Warteschlange mit einem spezifischen Namen bereits innerhalb eines Dienstnamespace vorhanden ist.
 
-##Senden von Nachrichten an eine Warteschlange
+## Senden von Nachrichten an eine Warteschlange
 
 Zum Senden einer Nachricht an eine Service Bus-Warteschlange erstellt Ihre Anwendung ein **QueueClient**-Objekt mit der Verbindungszeichenfolge.
 
@@ -143,7 +143,9 @@ für die Warteschlange "TestQueue" erstellen, die oben mithilfe des **CreateFrom
 
 	Client.Send(new BrokeredMessage());
 
-Die Nachrichten, die an die Service Bus-Warteschlangen gesendet (und von diesen empfangen) werden, sind Instanzen der **BrokeredMessage**-Klasse. **BrokeredMessage**-Objekte weisen eine Reihe von Standardeigenschaften (wie **Label** und **TimeToLive**), ein Wörterbuch zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften und einen Bestand beliebiger Anwendungsdaten auf. Eine Anwendung kann den Textkörper der Nachricht festlegen, indem ein beliebiges serialisierbares Objekt an den Konstruktor von **BrokeredMessage** übergeben wird. Das entsprechende **DataContractSerializer**-Objekt wird dann zum Serialisieren des Objekts verwendet. Alternativ kann ein System.IO.Stream-Objekt bereitgestellt werden.  Das folgende Beispiel zeigt, wie fünf Testnachrichten an den **QueueClient** "TestQueue" gesendet werden, der über den oben angegebenen Codeausschnitt abgerufen wurde:
+Die Nachrichten, die an die Service Bus-Warteschlangen gesendet (und von diesen empfangen) werden, sind Instanzen der **BrokeredMessage**-Klasse. **BrokeredMessage**-Objekte weisen eine Reihe von Standardeigenschaften (wie **Label** und **TimeToLive**), ein Wörterbuch zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften und einen Bestand beliebiger Anwendungsdaten auf. Eine Anwendung kann den Textkörper der Nachricht festlegen, indem ein beliebiges serialisierbares Objekt an den Konstruktor von **BrokeredMessage** übergeben wird. Das entsprechende **DataContractSerializer**-Objekt wird dann zum Serialisieren des Objekts verwendet. Alternativ kann ein System.IO.Stream-Objekt bereitgestellt werden.  
+
+Das folgende Beispiel zeigt, wie fünf Testnachrichten an den **QueueClient** "TestQueue" gesendet werden, der über den oben angegebenen Codeausschnitt abgerufen wurde:
 
      for (int i=0; i<5; i++)
      {
@@ -160,13 +162,13 @@ Die Nachrichten, die an die Service Bus-Warteschlangen gesendet (und von diesen 
 
 Die Servicebus-Warteschlangen unterstützen Nachrichten mit einer maximalen Größe von 256 KB (die Kopfzeile, welche die Standard- und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 KB aufweisen). Bei der Anzahl der Nachrichten, die in einer Warteschlange aufgenommen werden können, besteht keine Beschränkung. Allerdings gilt eine Deckelung bei der Gesamtgröße der in einer Warteschlange aufzunehmenden Nachrichten. Die Warteschlangengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB.
 
-##Empfangen von Nachrichten aus einer Warteschlange
+## Empfangen von Nachrichten aus einer Warteschlange
 
 Die einfachste Möglichkeit zum Empfangen von Nachrichten aus einer Warteschlange ist die Verwendung eines **QueueClient**-Objekts. Diese Objekte können in zwei verschiedenen Modi verwendet werden: **ReceiveAndDelete** und **PeekLock**.
 
 Bei Verwendung des Modus **ReceiveAndDelete** ist der Nachrichtenempfang ein Single-Shot-Vorgang. Wenn der Service Bus also eine Leseanforderung für eine Nachricht in einer Warteschlange erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurückgegebenen. **ReceiveAndDelete** ist das einfachste Modell und am besten für Szenarien geeignet, in denen eine Anwendung tolerieren kann, dass eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da der Servicebus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
 
-Im Modus **PeekLock** (dem Standardmodus) ist der Empfangsprozess ein aus zwei Phasen bestehender Vorgang, der die Unterstützung von Anwendungen ermöglicht, die fehlende Nachrichten nicht tolerieren können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann an die Anwendung zurück. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert) hat, führt sie die zweite Phase des Empfangsprozesses durch Aufruf von "Complete" für die empfangene Nachricht durch. Wenn Service Bus den Complete-Aufruf erkennt, kennzeichnet der Dienst die Nachricht als verarbeitet und entfernt sie aus der Warteschlange.
+Im Modus **PeekLock** (dem Standardmodus) ist der Empfangsprozess ein aus zwei Phasen bestehender Vorgang, der die Unterstützung von Anwendungen ermöglicht, die fehlende Nachrichten nicht tolerieren können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann an die Anwendung zurück. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert) hat, führt sie die zweite Phase des Empfangsprozesses durch Aufruf von **"Complete"** für die empfangene Nachricht durch. Wenn Service Bus den **Complete**-Aufruf erkennt, kennzeichnet der Dienst die Nachricht als verarbeitet und entfernt sie aus der Warteschlange.
 
 Das folgende Beispiel zeigt, wie Nachrichten mit dem Standardmodus **PeekLock** empfangen und verarbeitet werden können. Zum Angeben eines anderen **ReceiveMode**-Werts können Sie eine andere Überladung für **CreateFromConnectionString** verwenden. Im vorliegenden Beispiel wird eine Endlosschleife erstellt, und die Nachrichten werden entsprechend ihres Eingangs in die "TestQueue" verarbeitet:
 
@@ -197,15 +199,15 @@ Das folgende Beispiel zeigt, wie Nachrichten mit dem Standardmodus **PeekLock** 
        }
     } 
 
-##Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten
+## Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten
 
-Service Bus stellt Funktionen zur Verfügung, die Ihnen bei der ordnungsgemäßen Behebung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht helfen. Wenn eine Empfängeranwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann, so kann sie die Abandon-Methode zu der empfangenen Nachricht aufrufen (anstelle der **Complete**-Methode). Dies bewirkt, dass der Servicebus die Nachricht innerhalb der Warteschlange entsperren und verfügbar machen kann, damit sie entweder von derselben verbrauchenden Anwendung oder von einer anderen verbrauchenden Anwendung erneut empfangen werden kann.
+Service Bus stellt Funktionen zur Verfügung, die Ihnen bei der ordnungsgemäßen Behebung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht helfen. Wenn eine Empfängeranwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann, so kann sie die **Abandon**-Methode zu der empfangenen Nachricht aufrufen (anstelle der **Complete**-Methode). Dies bewirkt, dass der Servicebus die Nachricht innerhalb der Warteschlange entsperren und verfügbar machen kann, damit sie entweder von derselben verbrauchenden Anwendung oder von einer anderen verbrauchenden Anwendung erneut empfangen werden kann.
 
 Mit einer innerhalb der Warteschlange gesperrten Nachricht ist außerdem eine Zeitlimitüberschreitung verknüpft. Wenn die Anwendung die Nachricht nicht verarbeiten kann, bevor die Zeitlimitüberschreitung der Sperre abläuft (z. B. falls die Anwendung abstürzt), so entsperrt der Servicebus die Nachricht automatisch und macht sie verfügbar, so dass sie wieder empfangen werden kann.
 
 Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **Complete**-Anforderung abstürzt, wird die Nachricht erneut an die Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig als **At Least Once Processing** bezeichnet und bedeutet, dass jede Nachricht mindestens einmal verarbeitet wird, wobei dieselbe Nachricht in bestimmten Situationen möglicherweise erneut zugestellt wird. Wenn eine doppelte Verarbeitung in dem Szenario nicht zulässig ist, sollten Anwendungsentwickler ihrer Anwendung zusätzliche Logik für den Umgang mit der Zustellung doppelter Nachrichten hinzufügen. Dies wird häufig durch Verwendung der Eigenschaft **MessageId** der Nachricht erzielt, die über mehrere Zustellversuche hinweg konstant bleibt.
 
-##Nächste Schritte
+## Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie unter den folgenden
 Links weitere Informationen.
