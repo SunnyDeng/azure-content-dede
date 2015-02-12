@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Validate and Modify Data" pageTitle="Verwenden des .Net-Back-End zum Prüfen und Ändern von Daten (Windows Phone 8) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten für Ihre Windows Phone-App mit dem .NET-Back-End von Microsoft Azure Mobile Services überprüfen, ändern und vergrößern." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using the .Net backend" authors="wesmc" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="Validate and Modify Data" pageTitle="Verwenden des .Net-Back-End zum Prüfen und Ändern von Daten (Windows Phone 8) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten für Ihre Windows Phone-App mit dem .NET-Back-End von Microsoft Azure Mobile Services überprüfen, ändern und vergrößern." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using the .Net backend" authors="wesmc" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
 
@@ -18,12 +18,12 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen Anwendung](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/) auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst dieses Lernprogramm abschließen:  
 
-## <a name="string-length-validation"></a>Add validation
+## <a name="string-length-validation"></a>Überprüfung hinzufügen
 
 [WACOM.INCLUDE [mobile-services-dotnet-backend-add-validation](../includes/mobile-services-dotnet-backend-add-validation.md)]
 
 
-## <a name="update-client-validation"></a>Update the client
+## <a name="update-client-validation"></a>Den Client aktualisieren
 
 Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die Daten zu überprüfen und Fehlerantworten zu senden. Sie müssen nun Ihre App aktualisieren, damit diese Fehlerantworten aus der Überprüfung verarbeiten kann. Der Fehler wird als `MobileServiceInvalidOperationException` vom `IMobileServiceTable<TodoItem].InsertAsync()`-Aufruf der Client-App abgefangen.
 
@@ -59,7 +59,7 @@ Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die 
 
    	Diese Version der Methode umfasst eine Fehlerbehebung für **MobileServiceInvalidOperationException**, bei der die deserialisierte Fehlermeldung aus dem Antworteninhalt in einem Meldungsfeld angezeigt wird.
 
-## <a name="test-length-validation"></a>Test Length Validation
+## <a name="test-length-validation"></a>Testlängenüberprüfung
 
 1. Konfigurieren Sie in Visual Studio das gewünschte Windows Phone-Bereitstellungsziel. Klicken Sie danach im Fenster des Projektmappen-Explorers mit der rechten Maustaste auf das Client-App-Projekt, und klicken Sie dann auf **Debug**, **Start new instance**.
 
@@ -71,7 +71,7 @@ Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die 
 
     ![][2]
 
-## <a name="add-timestamp"></a>Add a timestamp field for CompleteDate
+## <a name="add-timestamp"></a>Ein Zeitstempelfeld für CompleteDate hinzufügen
 
 [WACOM.INCLUDE [mobile-services-dotnet-backend-add-completedate](../includes/mobile-services-dotnet-backend-add-completedate.md)]
 
@@ -81,7 +81,7 @@ Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die 
 Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**-Daten anzuzeigen. 
 
 
-1. Öffnen Sie im Projektmappen-Explorer für Visual Studio im todolist-Clientprojekt die Datei "MainPage.xaml", und ersetzen Sie das Element **StackPanel** durch die unten angegebene Definition. Speichern Sie anschließend die Datei. Dadurch wird der Ereignishandler für **CheckBoxComplete** geändert, sodass das `click-Ereignis behandelt wird. Außerdem wird ein Textblock neben dem Kontrollkästchen hinzugefügt und mit dem abgeschlossenen Datumszeitstempel verknüpft.
+1. Öffnen Sie im Projektmappen-Explorer für Visual Studio im todolist-Clientprojekt die Datei "MainPage.xaml", und ersetzen Sie das Element **StackPanel** durch die unten angegebene Definition. Speichern Sie anschließend die Datei. Dadurch wird der Ereignishandler für **CheckBoxComplete** geändert, sodass das `click`-Ereignis behandelt wird. Außerdem wird ein Textblock neben dem Kontrollkästchen hinzugefügt und mit dem abgeschlossenen Datumszeitstempel verknüpft.
 	      
         <StackPanel Orientation="Horizontal">
           <CheckBox Name="CheckBoxComplete" IsChecked="{Binding Complete, Mode=TwoWay}"

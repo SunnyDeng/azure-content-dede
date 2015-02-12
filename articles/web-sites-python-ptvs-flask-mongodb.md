@@ -1,4 +1,4 @@
-﻿<properties linkid="web-sites-python-ptvs-flask-mongodb" title="Flask and MongoDB on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Flask und MongoDB auf Azure mit Python Tools 2.1 für Visual Studio" description="Erfahren Sie, wie mit Python Tools für Visual Studio eine Flask-Anwendung erstellen, die Daten in einer MongoDB-Datenbank speichert und auf einer Website bereitgestellt werden kann." metaKeywords="" services="" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
+<properties linkid="web-sites-python-ptvs-flask-mongodb" title="Flask and MongoDB on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Flask und MongoDB auf Azure mit Python Tools 2.1 für Visual Studio" description="Erfahren Sie, wie mit Python Tools für Visual Studio eine Flask-Anwendung erstellen, die Daten in einer MongoDB-Datenbank speichert und auf einer Website bereitgestellt werden kann." metaKeywords="" services="" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="10/10/2014" ms.author="huvalo" />
 
@@ -7,7 +7,7 @@
 
 # Flask und MongoDB auf Azure mit Python-Tools 2.1 für Visual Studio
 
-In diesem Lernprogramm erstellen wir eine einfache Anwendung für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Lernprogramm ist auch als [Video] verfügbar(https://www.youtube.com/watch?v=eql-crFgrAE).
+In diesem Lernprogramm erstellen wir eine einfache Anwendung für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Lernprogramm ist auch als [Video](https://www.youtube.com/watch?v=eql-crFgrAE) verfügbar.
 
 Die Umfrage-App definiert für ihr Repository eine Abstraktion. Sie können also einfach zwischen unterschiedlichen Repositorytypen wechseln (Im Arbeitsspeicher, Azure Table Storage, MongoDB).
 
@@ -24,7 +24,7 @@ Weitere Artikel finden Sie im [Python Developer Center][], wo die Entwicklung vo
 + [Konfigurieren der Azure Website](#configure-the-azure-website)
 + [Nächste Schritte](#next-steps)
 
-##<a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
  - Visual Studio 2012 oder 2013
  - [Python Tools 2.1 für Visual Studio][]
@@ -35,7 +35,7 @@ Weitere Artikel finden Sie im [Python Developer Center][], wo die Entwicklung vo
 
 [WACOM.INCLUDE [Konto-und-Websitehinweis-erstellen](../includes/create-account-and-websites-note.md)]
 
-##<a name="create-the-project"></a>Erstellen des Projekts
+## <a name="create-the-project"></a>Erstellen des Projekts
 
 In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beispielvorlage.  Wir erstellen eine virtuelle Umgebung und installieren die erforderlichen Pakete.  Dann führen wir die App lokal aus und verwenden dabei das Standard-Repository im Arbeitsspeicher.
 
@@ -59,7 +59,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
   	![Web Browser](./media/web-sites-python-ptvs-flask-mongodb/PollsFlaskInMemoryBrowser.png)
 
-##<a name="create-a-mongodb-database"></a>Erstellen einer MongoDB-Datenbank
+## <a name="create-a-mongodb-database"></a>Erstellen einer MongoDB-Datenbank
 
 Für die Datenbank erstellen wird eine in MongoLab gehostete Datenbank auf Azure.
 
@@ -85,7 +85,7 @@ Mit den folgenden Schritten können Sie einen kostenlosen Test bei MongoLab erst
 
 1.  Klicken Sie**KAUFEN**.
 
-##<a name="configure-the-project"></a>Konfigurieren des Projekts
+## <a name="configure-the-project"></a>Konfigurieren des Projekts
 
 In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erstellte MongoDB-Datenbank verwendet.  Dann sehen wir uns an, wie man sich aus dem Azure-Portal die Verbindungsdaten holt.  Anschließend führen wir die Anwendung lokal aus.
 
@@ -117,7 +117,7 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erst
 
   	![Web Browser](./media/web-sites-python-ptvs-flask-mongodb/PollsFlaskMongoDBAbout.png)
 
-##<a name="explore-the-mongodb-database"></a>Die MongoDB-Datenbank kennenlernen
+## <a name="explore-the-mongodb-database"></a>Die MongoDB-Datenbank kennenlernen
 
 Sie können eine Anwendung wie [RoboMongo][] verwenden, um Abfragen und Änderungen an einer MongoDB vorzunehmen.  In diesem Abschnitt verwenden wir RoboMongo für die Anzeige der Inhalte aus der Datenbank der Umfrage-App.
 
@@ -139,7 +139,7 @@ Sie können eine Anwendung wie [RoboMongo][] verwenden, um Abfragen und Änderun
 
   	![RoboMongo Query Results](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonRobomongoQuery.png)
 
-##<a name="publish-to-an-azure-website"></a>Veröffentlichen in einer Azure-Website
+## <a name="publish-to-an-azure-website"></a>Veröffentlichen in einer Azure-Website
 
 PTVS bietet eine einfache Möglichkeit, wie Sie Ihre Webanwendung auf einer Azure Websites bereitstellen können.
 
@@ -161,7 +161,7 @@ PTVS bietet eine einfache Möglichkeit, wie Sie Ihre Webanwendung auf einer Azur
 
     Das liegt daran, dass die Umgebungsvariablen auf der Azure Website nicht festgelegt wurden. Sie verwendet daher die in **settings.py** festgelegten Standardwerte.
 
-##<a name="configure-the-azure-website"></a>Konfigurieren der Azure Website
+## <a name="configure-the-azure-website"></a>Konfigurieren der Azure Website
 
 In diesem Abschnitt konfigurieren wir die Umgebungsvariablen für die Website.
 
@@ -185,7 +185,7 @@ In diesem Abschnitt konfigurieren wir die Umgebungsvariablen für die Website.
 
   	![Web Browser](./media/web-sites-python-ptvs-flask-mongodb/PollsFlaskAzureBrowser.png)
 
-##<a name="next-steps"></a>Nächste Schritte
+## <a name="next-steps"></a>Nächste Schritte
 
 Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Flask und MongoDB erfahren möchten.
 
@@ -201,17 +201,18 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Fl
 
 <!--Link references-->
 [Python Developer Center]: /de-de/develop/python/
-[Azure Cloud-Dienste]: ../cloud-services-python-ptvs/
+[Azure Cloud-Diensten]: ../cloud-services-python-ptvs/
 
 <!--External Link references-->
+[Azure Management Portal]: https://manage.windowsazure.com
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
 [RoboMongo]: http://robomongo.org/
 [Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Python Tools 2.1 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Azure SDK Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
 [Azure SDK Tools für VS 2012]: http://go.microsoft.com/fwlink/?LinkId=323511
-[Python 2.7 32 Bit]: http://go.microsoft.com/fwlink/?LinkId=517190 
-[Python 3.4 32 Bit]: http://go.microsoft.com/fwlink/?LinkId=517191
+[Python 2.7 32-Bit]: http://go.microsoft.com/fwlink/?LinkId=517190 
+[Python 3.4 32-Bit]: http://go.microsoft.com/fwlink/?LinkId=517191
 [Python Tools for Visual Studio Dokumentation]: http://pytools.codeplex.com/documentation
 [Flask-Dokumentation]: http://flask.pocoo.org/
 [MongoDB]: http://www.mongodb.org/
@@ -220,4 +221,5 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Fl
 [Remote Debugging auf Microsoft Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Webprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
-\n<!--HONumber=35.1--> 
+
+<!--HONumber=35.1-->

@@ -2,11 +2,11 @@
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/18/2014" ms.author="tomfitz" />
 
-#Konfigurieren von PHP in Azure-Websites
+# Konfigurieren von PHP in Azure-Websites
 
 In diesem Leitfaden erfahren Sie, wie Sie die integrierte PHP-Laufzeit in Azure-Websites konfigurieren, eine benutzerdefinierte PHP-Laufzeit bereitstellen und Erweiterungen in Azure-Websites aktivieren. Um Azure-Websites zu nutzen, können Sie sich für eine [kostenlose Testversion] anmelden. Damit Sie optimal von dieser Anleitung profitieren, sollten Sie zuerst eine PHP-Website in Azure-Websites erstellen (siehe [Lernprogramme im PHP Developer Center]). Allgemeine Informationen zum Konfigurieren von Websites in Azure-Websites finden Sie unter [Konfigurieren von Websites].
 
-##Inhaltsverzeichnis
+## Inhaltsverzeichnis
 
 * [Was ist Azure-Websites?](#WhatIs)
 * [Vorgehensweise: Ändern der Standard-PHP-Konfiguration](#ChangeBuiltInPHP)
@@ -52,7 +52,7 @@ Alternativ zur Verwendung einer `.user.ini`-Datei können Sie auch die Funktion 
 Wie im vorherigen Anschnitt angegeben ist die Standardkonfiguration die beste Möglichkeit, um die Standard-PHP-Version anzuzeigen, und die aktivierten Erweiterungen dienen zur Bereitstellung eines Skripts, das [phpinfo()] abruft. Um zusätzliche Erweiterungen zu aktivieren, folgen Sie den Schritten unten.
 
 1. Fügen Sie ein `bin`-Verzeichnis zum Stammverzeichnis hinzu.
-1. Verschieben Sie `.dll`-Erweiterungsdateien in das Verzeichnis bin (zum Beispiel `php_mongo.dll`). Stellen Sie sicher, dass die Erweiterungen mit der Standardversion von PHP kompatibel sind (welche zu diesem Zeitpunkt PHP 5.4 ist) und kompatibel mit VC9 sowie nicht threadsicher (non-thread-safe, nts) sind.
+1. Verschieben Sie `.dll`-Erweiterungsdateien in das Verzeichnis `bin` (zum Beispiel `php_mongo.dll`). Stellen Sie sicher, dass die Erweiterungen mit der Standardversion von PHP kompatibel sind (welche zu diesem Zeitpunkt PHP 5.4 ist) und kompatibel mit VC9 sowie nicht threadsicher (non-thread-safe, nts) sind.
 1. Stellen Sie die Anwendung bereit.
 1. Navigieren Sie zum Website-Dashboard im Azure-Portal, und klicken Sie auf **Configure**.
 

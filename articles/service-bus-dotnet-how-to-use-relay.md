@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Service Bus Relay" pageTitle="Verwenden des Service Bus-Relays (.NET) - Azure" metaKeywords="erste Schritte Azure Service Bus Relay C# " description="Erfahren Sie, wie Sie Azure Service Bus Relay Service zum Verbinden von zwei Anwendungen verwenden, die an unterschiedlichen Orten gehostet sind." metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use the Service Bus Relay Service" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+<properties urlDisplayName="Service Bus Relay" pageTitle="Verwenden des Service Bus-Relays (.NET) - Azure" metaKeywords="erste Schritte Azure Service Bus Relay C# " description="Erfahren Sie, wie Sie Azure Service Bus Relay Service zum Verbinden von zwei Anwendungen verwenden, die an unterschiedlichen Orten gehostet sind." metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use the Service Bus Relay Service" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 
 <tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
@@ -263,6 +263,6 @@ verwenden Sie die folgenden Links, um mehr zu erfahren.
   [SAS-Authentifizierung mit Service Bus]: http://msdn.microsoft.com/de-de/library/dn170477.aspx
   [Erstellen eines Diensts für Service Bus]: http://msdn.microsoft.com/de-de/library/windowsazure/ee173564.aspx
   [Erstellen einer Service Bus-Clientanwendung]: http://msdn.microsoft.com/de-de/library/windowsazure/ee173543.aspx
-  [Azure-Beispiele]: http://code.msdn.microsoft.com/windowsazure
+  [Azure-Beispielen]: http://code.msdn.microsoft.com/windowsazure
 
 <!--HONumber=35.2-->

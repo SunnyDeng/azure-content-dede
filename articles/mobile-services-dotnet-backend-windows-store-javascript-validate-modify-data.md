@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Validate and Modify Data" pageTitle="Verwenden des .Net-Back-End zum Prüfen und Ändern von Daten (Windows Store) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten für Ihre Windows Store-JavaScript-App mit dem .NET-Back-End von Microsoft Azure Mobile Services überprüfen, ändern und vergrößern." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using the .Net backend" authors="wesmc" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="Validate and Modify Data" pageTitle="Verwenden des .Net-Back-End zum Prüfen und Ändern von Daten (Windows Store) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten für Ihre Windows Store-JavaScript-App mit dem .NET-Back-End von Microsoft Azure Mobile Services überprüfen, ändern und vergrößern." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using the .Net backend" authors="wesmc" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="wesmc" />
 
@@ -146,7 +146,7 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 [Client zur Unterstützung der Überprüfung aktualisieren]: #update-client-validation
 [Testlängenüberprüfung]: #test-length-validation
 [Ein Zeitstempelfeld für CompleteDate hinzufügen]: #add-timestamp
-[Client zum Anzeigen des Zeitstempels aktualisieren]: #update-client-timestamp
+[Client zum Anzeigen von CompleteDate aktualisieren]: #update-client-timestamp
 [Nächste Schritte]: #next-steps
 
 <!-- Images. -->

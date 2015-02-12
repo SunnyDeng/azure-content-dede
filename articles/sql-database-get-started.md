@@ -73,7 +73,7 @@ Mit dieser Option können Sie gleichzeitig einen neuen Server und eine SQL-Daten
 
 * Wählen Sie eine Region aus. Die Region bestimmt den geografischen Standort des Servers. Die Region kann nicht einfach geändert werden, wählen Sie also einen sinnvollen Standort für den Server aus. Wählen Sie den nächstgelegenen Standort aus. Wenn Sie Ihre Azure-Anwendung und -Datenbank in derselben Region platzieren, sparen Sie Zugangskosten für Bandbreite und Datenlatenz.
 
-* Behalten Sie die Aktivierung des Kontrollkästchens **Allow Azure Services to access this server** bei, damit Sie über das Verwaltungsportal für die SQL-Datenbank, Excel in Office 365 oder Azure SQL Reporting eine Verbindung zur Datenbank herstellen können.
+* Behalten Sie die Aktivierung des Kontrollkästchens **Ermöglichen Sie Azure-Diensten den Zugriff auf den Server** bei, damit Sie über das Verwaltungsportal für die SQL-Datenbank, Excel in Office 365 oder Azure SQL Reporting eine Verbindung zur Datenbank herstellen können.
 
 * Klicken Sie abschließend auf das Häkchen unten auf der Seite.
 

@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Hudson Continuous Integration" pageTitle="Verwenden von Hudson mit dem Azure-Blobdienst | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Beschreibt die Verwendung von Hudson mit dem Azure Blob-Speicher als Repository für Buildartefakte." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties urlDisplayName="Hudson Continuous Integration" pageTitle="Verwenden von Hudson mit dem Azure-Blobdienst | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Beschreibt die Verwendung von Hudson mit dem Azure Blob-Speicher als Repository für Buildartefakte." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
@@ -94,8 +94,8 @@ Um den Blob-Dienst mit Hudson verwenden zu können, müssen Sie das Azure-Speich
 Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere Dateien erstellen wird, und ihn dann zur Postbuildaktion hinzufügen, um die Dateien in Ihr Speicherkonto hochzuladen.
 
 1. Klicken Sie im Hudson-Dashboard auf **New Job**.
-2. Nennen Sie den Auftrag **MyJob**, klicken Sie auf **Build a free-style software job**, und klicken Sie dann auf **OK**.
-3. Klicken Sie im Abschnitt **Build** der Auftragskonfiguration auf **Add build step**, und wählen Sie **Execute Windows batch command** aus.
+2. Nennen Sie den Auftrag **MyJob**, klicken Sie auf **Freistil-Softwareauftrag erstellen**, und klicken Sie dann auf **OK**.
+3. Klicken Sie im Abschnitt **Build** der Auftragskonfiguration auf **Add build step**, und wählen Sie **Windows-Batchbefehl ausführen** aus.
 4. Verwenden Sie unter **Command**, die folgenden Befehle:
 
         md text
@@ -104,7 +104,7 @@ Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere
         date /t > date.txt
         time /t >> date.txt
  
-5. Klicken Sie Abschnitt **Post-build Actions** der Auftragskonfiguration auf **Upload artifacts to Microsoft Azure Blob storage**.
+5. Klicken Sie Abschnitt **Post-build Actions** der Auftragskonfiguration auf **Artefakte in Microsoft Azure-Blob-Speicher hochladen**.
 6. Wählen Sie unter **Storage Account Name** das zu verwendende Speicherkonto aus.
 7. Geben Sie unter **Container Name** den Namen des Containers an. (Der Container wird erstellt, wenn er beim Hochladen der Buildartefakte noch nicht vorhanden ist.) Da Sie Umgebungsvariablen verwenden können, geben Sie für dieses Beispiel **${JOB_NAME}** als Containernamen ein.
 
@@ -115,7 +115,7 @@ Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere
 8. Klicken Sie für dieses Beispiel auf **Make new container public by default**. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Thema hinaus. Unter [Erstellen einer Shared Access Signature](http://go.microsoft.com/fwlink/?LinkId=279889)finden Sie weitere Informationen zu Shared Access Signatures.)
 9. [Optional] Klicken Sie auf **Clean container before uploading**, wenn die Inhalte aus dem Container gelöscht werden sollen, bevor die Buildartefakte hochgeladen (lassen Sie die Option deaktiviert, wenn die Inhalte nicht aus dem Container gelöscht werden sollen) werden.
 10. Geben Sie unter **List of Artifacts to upload** **text/*.txt** ein.
-11. Geben Sie unter **Common virtual path for uploaded artifacts** **${BUILD\_ID}/${BUILD\_NUMBER}** ein.
+11. Geben Sie unter **Gemeinsamer virtueller Pfad für hochgeladene Artefakte** **${BUILD\_ID}/${BUILD\_NUMBER}** ein.
 12. Klicken Sie auf **Save**, um Ihre Einstellungen zu speichern.
 13. KLicken Sie im Hudson-Dashboard auf **Build Now**, um **MyJob** auszuführen. Prüfen Sie den Status in der Ausgabe der Konsole. Statusmeldungen für Azure-Speicher werden in die Ausgabe der Konsole aufgenommen, wenn die Postbuildaktion mit dem Hochladen von Buildartefakten beginnt.
 14. Nach erfolgreichem Abschluss des Auftrags können Sie die Buildartefakte überprüfen, indem Sie den öffentlichen Blob öffnen.

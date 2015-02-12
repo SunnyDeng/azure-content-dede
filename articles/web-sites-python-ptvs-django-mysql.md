@@ -1,4 +1,4 @@
-﻿<properties linkid="web-sites-python-ptvs-django-mysql" title="Django and MySQL on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Django und MySQL auf Azure mit Python-Tools 2.1 für Visual Studio" description="Erfahren Sie, wie Sie die Python-Tools für Visual Studio verwenden, um eine Django-Anwendung zu erstellen, die Daten in einer MySQL-Datenbankinstanz speichert und an eine Website bereitgestellt werden kann." metaKeywords="" services="" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
+<properties linkid="web-sites-python-ptvs-django-mysql" title="Django and MySQL on Azure with Python Tools 2.1 for Visual Studio" pageTitle="Django und MySQL auf Azure mit Python-Tools 2.1 für Visual Studio" description="Erfahren Sie, wie Sie die Python-Tools für Visual Studio verwenden, um eine Django-Anwendung zu erstellen, die Daten in einer MySQL-Datenbankinstanz speichert und an eine Website bereitgestellt werden kann." metaKeywords="" services="" solutions="" documentationCenter="Python" authors="huvalo" videoId="" scriptId="" manager="wpickett" editor="" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="10/10/2014" ms.author="huvalo" />
 
@@ -7,7 +7,7 @@
 
 # Django und MySQL auf Azure mit Python-Tools 2.1 für Visual Studio 
 
-In diesem Lernprogramm erstellen wir eine einfache Anwendung für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Lernprogramm ist auch als [Video] verfügbar(https://www.youtube.com/watch?v=oKCApIrS0Lo).
+In diesem Lernprogramm erstellen wir eine einfache Anwendung für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Lernprogramm ist auch als [Video](https://www.youtube.com/watch?v=oKCApIrS0Lo) verfügbar.
 
 Wir sehen uns an, wie man einen der gehosteten MySQL-Dienste auf Azure verwendet, die App für die Nutzung von MySQL konfiguriert, und wie man sie auf einer Azure Website veröffentlicht.
 
@@ -20,7 +20,7 @@ Weitere Artikel finden Sie im [Python Developer Center][], wo die Entwicklung vo
 + [Veröffentlichen in einer Azure-Website](#publish-to-an-azure-website)
 + [Nächste Schritte](#next-steps)
 
-##<a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
  - Visual Studio 2012 oder 2013
  - [Python Tools 2.1 für Visual Studio][]
@@ -33,7 +33,7 @@ Weitere Artikel finden Sie im [Python Developer Center][], wo die Entwicklung vo
 > 
 > Einen Einstieg in Azure Websites vor Anmeldung für ein Konto finden Sie auf <a href="https://trywebsites.azurewebsites.net/?language=python">https://trywebsites.azurewebsites.net</a>, wo Sie sofort eine kurzlebige, kostenlose ASP.NET-Startwebsite in Azure Websites erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-##<a name="create-the-project"></a>Erstellen des Projekts
+## <a name="create-the-project"></a>Erstellen des Projekts
 
 In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beispielvorlage. Wir erstellen eine virtuelle Umgebung und installieren die erforderlichen Pakete.  Wir erstellen eine lokale Datenbank mithilfe von SQLite.  Anschließend führen wir die Anwendung lokal aus.
 
@@ -79,7 +79,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
   	![Web Browser](./media/web-sites-python-ptvs-django-mysql/PollsDjangoSqliteBrowser.png)
 
-##<a name="create-a-mysql-database"></a>Eine MySQL-Datenbank erstellen
+## <a name="create-a-mysql-database"></a>Eine MySQL-Datenbank erstellen
 
 Für die Datenbank erstellen wird eine auf Azure gehostete ClearDB MySQL-Datenbank.
 
@@ -105,7 +105,7 @@ Mit den folgenden Schritten können Sie eine Datenbank im Rahmen eines kostenlos
 
 1.  Klicken Sie**KAUFEN**.
 
-##<a name="configure-the-project"></a>Konfigurieren des Projekts
+## <a name="configure-the-project"></a>Konfigurieren des Projekts
 
 In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erstellte MySQL-Datenbank verwendet.  Dann sehen wir uns an, wie man sich aus dem Azure-Portal die Verbindungsdaten holt.  Wir installieren außerdem weitere Python-Pakete, die für die Verwendung von MySQL-Datenbanken mit Django erforderlich sind.  Anschließend führen wir die Anwendung lokal aus.
 
@@ -147,7 +147,7 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erst
 
 1.  Führen Sie die App mit <kbd>F5</kbd> aus.  Umfragen, die mit **Beispielumfrage erstellen** erstellt wurden und die durch die Abstimmung erfassten Daten werden in der MySQL-Datenbank serialisiert.
 
-##<a name="publish-to-an-azure-website"></a>Veröffentlichen in einer Azure-Website
+## <a name="publish-to-an-azure-website"></a>Veröffentlichen in einer Azure-Website
 
 PTVS bietet eine einfache Möglichkeit, wie Sie Ihre Webanwendung auf einer Azure Websites bereitstellen können.
 
@@ -171,7 +171,7 @@ PTVS bietet eine einfache Möglichkeit, wie Sie Ihre Webanwendung auf einer Azur
 
   	![Web Browser](./media/web-sites-python-ptvs-django-mysql/PollsDjangoAzureBrowser.png)
 
-##<a name="next-steps"></a>Nächste Schritte
+## <a name="next-steps"></a>Nächste Schritte
 
 Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Django und MySQL erfahren möchten.
 
@@ -185,7 +185,7 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 
 <!--Link references-->
 [Python Developer Center]: /de-de/develop/python/
-[Azure Cloud-Dienste]: ../cloud-services-python-ptvs/
+[Azure Cloud-Diensten]: ../cloud-services-python-ptvs/
 
 <!--External Link references-->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
@@ -200,4 +200,6 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Django-Dokumentation]: https://www.djangoproject.com/
 [MySQL]: http://www.mysql.com/
-\n<!--HONumber=35.1--> 
+[Azure Management Portal]: https://manage.windowsazure.com
+
+<!--HONumber=35.1--> 
