@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="HDInsight Hadoop Version" pageTitle="Neuheiten in den Hadoop-Clusterversionen in HDInsight | Azure" metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure" description="HDInsight unterstützt mehrere Hadoop-Clusterversionen, die jederzeit bereitgestellt werden können. Entdecken Sie die unterstützten Versionen von Hadoop und der HortonWorks Data Platform (HDP)." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="What's new in the cluster versions provided by HDInsight?" authors="bradsev" />
+﻿<properties 
+	pageTitle="Neuheiten in den Hadoop-Clusterversionen in HDInsight | Azure" 
+	description="HDInsight unterstützt mehrere Hadoop-Clusterversionen, die zu einem beliebigen Zeitpunkt bereitgestellt werden können. Entdecken Sie die unterstützten Versionen von Hadoop und der HortonWorks Data Platform (HDP)." 
+	services="hdinsight" 
+	editor="cgronlun" 
+	manager="paulettm" 
+	authors="bradsev" 
+	documentationCenter=""/>
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/14/2014" ms.author="bradsev" />
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/14/2014" 
+	ms.author="bradsev"/>
 
 
 #Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen
@@ -11,7 +25,7 @@ HDInsight unterstützt mehrere Hadoop-Clusterversionen, die jederzeit bereitgest
 
 <table border="1">
 <tr><th>Komponente</th><th>HDInsight Version 3.1 (Standard)</th><th>HDInsight Version 3.0</th><th>HDInsight Version 2.1</th><th>HDInsight Version 1.6</th></tr>
-<tr><td>Hortonworks Data Platform (HDP)</td><td>2.1.7</td><td>2.0</td><td>1.3</td><td>1.1</td></tr>
+<tr><td>Hortonworks Data Platform (HDP)</td><td>2.1.7</td><td>2,0</td><td>1,3</td><td>1,1</td></tr>
 <tr><td>Apache Hadoop und YARN</td><td>2.4.0</td><td>2.2.0</td><td>1.2.0</td><td>1.0.3</td></tr>
 <tr><td>Tez</td><td>0.4.0</td><td></td><td></td><td></td></tr>
 <tr><td>Apache Pig</td><td>0.12.1</td><td>0.12.0</td><td>0.11.0</td><td>0.9.3</td></tr>
@@ -29,20 +43,20 @@ HDInsight unterstützt mehrere Hadoop-Clusterversionen, die jederzeit bereitgest
 </table>
 
 
-**Abrufen von Informationen zu aktuellen Komponentenversionen**
+**Abrufen von aktuellen Versionsinformationen zu Komponenten**
 
-Die den HDInsight-Clusterversionen zugeordneten Komponentenversionen können sich bei künftigen Updates für HDInsight ändern. Eine Möglichkeit, die verfügbaren Komponenten zu bestimmen und zu prüfen, welche Versionen für einen Cluster verwendet werden, bietet die Ambari REST-API. Über den **GetComponentInformation**-Befehl können Informationen zu einer Dienstkomponente abgerufen werden. Ausführliche Informationen finden Sie in der [Ambari-Dokumentation][ambari-docs]. Um diese Informationen zu erhalten, können Sie sich auch per Remotedesktop bei einem Cluster anmelden und den Inhalt des Verzeichnisses "C:\apps\dist\" direkt prüfen.
+Die den HDInsight-Clusterversionen zugeordneten Komponentenversionen können sich bei künftigen Updates für HDInsight ändern. Eine Möglichkeit, die verfügbaren Komponenten zu bestimmen und zu prüfen, welche Versionen für einen Cluster verwendet werden, bietet die Ambari REST-API. Der Befehl **GetComponentInformation** kann zum Abrufen von Informationen zu einer Dienstkomponente verwendet werden. Weitere Informationen finden Sie in der [Ambari-Dokumentation][ambari-docs]. Um diese Informationen zu erhalten, können Sie sich auch per Remotedesktop bei einem Cluster anmelden und den Inhalt des Verzeichnisses "C:\apps\dist\" direkt prüfen.
 
 
 **Versionshinweise**	
 
-Unter [HDInsight-Versionshinweise](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-release-notes/) finden Sie zusätzliche Anmerkungen zu den neuesten Versionen von HDInsight.
+In den [HDInsight-Versionshinweisen](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-release-notes/) finden Sie weitere Versionshinweise zu den neuesten Versionen von HDInsight.
 
 ### Auswählen einer Version bei Bereitstellung eines HDInsight-Clusters
 
 Wenn Sie einen Cluster über die HDInsight PowerShell-Cmdlets oder das HDInsight .NET SDK erstellen, können Sie die Version für das HDInsight Hadoop-Cluster über den Parameter "Version" auswählen.
 
-Wenn Sie die Option **Schnellerfassung** wählen, erhalten Sie Version 3.1 von HDInsight, die standardmäßig Hadoop-Cluster erstellt. Wenn Sie die Option **Benutzerdefiniert erstellen** im Azure-Portal verwenden, können Sie die Version des Clusters, die Sie bereitstellen möchten, im Dropdownmenü **HDInsight-Version** auf der Seite **Clusterdetails** auswählen. 
+Bei der **Schnellerfassung** erhalten Sie die Version 3.1 von HDInsight, bei der Hadoop-Cluster standardmäßig erstellt werden. Bei der **benutzerdefinierten Erstellung** im Azure-Portal können Sie die Version des bereitzustellenden Clusters aus der Dropdownliste **HDInsight-Version** auf der Seite **Clusterdetails** auswählen. 
 
 ##Wichtige Features
 Azure HDInsight unterstützt nun standardmäßig Hadoop 2.4 mit HDInsight-Clusterversion 3.1 (unter Verwendung von Hortonworks Data Platform 2.1.7). Kunden werden basierend auf dieser Plattform eine Reihe wichtiger Vorteile geboten. Zu diesen Vorteilen gehören insbesondere:
@@ -53,7 +67,7 @@ Azure HDInsight unterstützt nun standardmäßig Hadoop 2.4 mit HDInsight-Cluste
 
 - **Apache Phoenix**: Apache Phoenix ist eine über HBase gelegte SQL-Abfrageebene. Es wird eine begrenzte Teilmenge von Spezifikationen der SQL-Abfragesprache unterstützt, einschließlich der Unterstützung sekundärer Indizes. Die Bereitstellung erfolgt als in den Client eingebetteter JDBC-Treiber, der die Abfrage von HBase-Daten bei geringer Latenz ermöglicht. Apache Phoenix verwendet Ihre SQL-Abfrage, kompiliert sie zu einer Reihe von HBase-Scans und Coprozessor-Aufrufen und erstellt reguläre JDBC-Resultsets. Apache Phoenix ist eine relationale Datenbankebene über HBase. Die Bereitstellung erfolgt als in den Client eingebetteter JDBC-Treiber, der die Abfrage von HBase-Daten bei geringer Latenz ermöglicht. Apache Phoenix verwendet Ihre SQL-Abfrage, kompiliert sie zu einer Reihe von HBase-Scans und koordiniert die Ausführung dieser Scans, um reguläre JDBC-Resultsets zu erstellen.
 
-- **Cluster-Dashboard**: Eine neue Webanwendung, die im HDInsight-Cluster bereitgestellt wird.  Sie können damit Hive-Abfragen ausführen, Job-Protokolle überprüfen und Azure Blob-Speicher durchsuchen. Die URL zum Zugreifen auf die Webanwendung lautet <*Clustername*>.azurehdinsight.net.
+- **Cluster-Dashboard**: Eine neue Webanwendung, die im HDInsight-Cluster bereitgestellt wird.  Sie können damit Hive-Abfragen ausführen, Job-Protokolle überprüfen und Azure Blob-Speicher durchsuchen. Die URL, die für den Zugriff auf die Webanwendung verwendet wird, lautet <*ClusterName*>.azurehdinsight.net.
 
 - **Microsoft Avro-Bibliothek**: Diese Bibliothek implementiert das Apache Avro-Datenserialisierungssystem für die Microsoft .NET-Umgebung. Apache Avro stellt ein kompaktes binäres Datenaustauschformat für die Serialisierung bereit. Unter Verwendung von JSON definiert es ein sprachunabhängiges Schema, das die Interoperabilität von Sprachen sicherstellt. Die in einer Sprache serialisierten Daten können in einer anderen Sprache gelesen werden. Derzeit werden C, C++, C#, Java, PHP, Python und Ruby unterstützt. Das Apache Avro-Serialisierungsformat wird verbreitet in Azure HDInsight eingesetzt, um komplexe Datenstrukturen in einem Hadoop MapReduce-Job darzustellen.
 
@@ -63,7 +77,7 @@ Azure HDInsight unterstützt nun standardmäßig Hadoop 2.4 mit HDInsight-Cluste
 
 - **Hohe Verfügbarkeit**: Den von HDInsight bereitgestellten Hadoop-Clustern wurde ein zweiter Hauptknoten hinzugefügt, um die Verfügbarkeit des Diensts zu erhöhen. Standardimplementierungen von Hadoop-Clustern verfügen in der Regel nur über einen Hauptknoten. Durch Hinzufügung eines zweiten Hauptknotens wird in HDInsight diese einzelne Fehlerquelle beseitigt. Der Wechsel zur neuen Clusterkonfiguration mit hoher Verfügbarkeit ändert nichts am Preis des Clusters, es sei denn, Kunden stellen Cluster mit besonders großem Hauptknoten anstelle dem großen Knoten in Standardgröße bereit.
 
-- **Hive-Leistung**: Umfangreiche Verbesserungen an der Antwortzeit von Hive-Abfragen (um das bis zu 40-Fache) und an der Datenkomprimierung (bis zu 80 %) unter Verwendung des **ORC**-Formats (Optimized Row Columnar).
+- **Hive-Leistung**: Große Verbesserungen der Antwortzeit bei Hive-Abfragen (bis um ein 40-Faches) und bei der Datenkomprimierung (bis zu 80 %) mit dem Format **Optimized Row Columnar** (ORC).
 
 - **Pig, Sqoop, Oozie, Ambari**: Komponentenversionsupgrades für HDInsight-Clusterversion 3.0 (HDP 2.0/Hadoop 2.2), die Parität mit der HDInsight-Clusterversion 2.1 (HDP 1.3/Hadoop 1.2) bieten. Detaillierte Informationen finden Sie in den Versionstabellen unten.
 
@@ -73,10 +87,10 @@ Azure HDInsight unterstützt nun standardmäßig Hadoop 2.4 mit HDInsight-Cluste
 
 
 ## Unterstützte Versionen
-In der folgenden Tabelle sind die derzeit verfügbaren Versionen von HDInsight, die entsprechenden HDP-Versionen (Hortonworks Data Platform), die sie verwenden, und die zugehörigen Herausgabetermine aufgeführt. Sofern bekannt sind auch die jeweiligen Termine angegeben, ab denen ihr Support abläuft und sie als veraltet gelten. Beachten Sie Folgendes:
+In der folgenden Tabelle sind die derzeit verfügbaren Versionen von HDInsight, die entsprechenden HDP-Versionen (Hortonworks Data Platform), die sie verwenden, und die zugehörigen Herausgabetermine aufgeführt. Sofern bekannt sind auch die jeweiligen Termine angegeben, ab denen ihr Support abläuft und sie als veraltet gelten. Beachten Sie bitteFolgendes:
 
 * Hochverfügbare Cluster mit zwei Hauptknoten werden standardmäßig für HDInsight 2.1-, 3.0- und 3.1-Cluster bereitgestellt. Für HDInsight 1.6-Cluster sind sie nicht verfügbar.
-* Nachdem der Support für eine bestimmte Version abgelaufen ist, steht sie möglicherweise nicht mehr über das Azure-Verwaltungsportal zur Verfügung. In der folgenden Tabelle werden die im Azure-Verwaltungsportal verfügbaren Versionen aufgeführt. Clusterversionen sind bis zu ihrem Ablaufdatum weiterhin über den Parameter "Version" des PowerShell-Befehls [New-AzureHDInsightCluster](http://msdn.microsoft.com/de-de/library/dn593744.aspx) und das .NET SDK verfügbar. 
+* Nachdem der Support für eine bestimmte Version abgelaufen ist, steht sie möglicherweise nicht mehr über das Azure-Verwaltungsportal zur Verfügung. In der folgenden Tabelle werden die im Azure-Verwaltungsportal verfügbaren Versionen aufgeführt. Clusterversionen sind mit dem  `Version`-Parameter im PowerShell-Befehl [New-AzureHDInsightCluster](http://msdn.microsoft.com/de-de/library/dn593744.aspx) Befehlund im .NET SDK bis zu seinem Ablaufdatum weiterhin verfügbar. 
 
 <table border="1">
 <tr><th>HDInsight-Version</th><th>HDP-Version</a><th>Hohe Verfügbarkeit</th></th><th>Herausgabedatum</th><th>Im Azure-Verwaltungsportal verfügbar</th><th>Supportablaufdatum</th><th>Veraltet ab</th></tr>
@@ -88,28 +102,28 @@ In der folgenden Tabelle sind die derzeit verfügbaren Versionen von HDInsight, 
 
 **Bereitstellung von Nicht-Standardclustern**	
 
-Die Erstellung von HDInsight 3.1-Clustern auf Hadoop 2.4 wird vom Azure-Portal, dem HDInsight SDK und Azure PowerShell unterstützt. Beachten Sie, dass HDInsight 3.1-Cluster standardmäßig auf Hadoop 2.4 erstellt werden, d. h., die Benutzer müssen die Option **Benutzerdefiniert erstellen** im Portal verwenden, um bei Bedarf andere HDInsight-Clusterversionen zu erstellen.
+Die Erstellung von HDInsight 3.1-Clustern auf Hadoop 2.4 wird vom Azure-Portal, dem HDInsight SDK und Azure PowerShell unterstützt. Beachten Sie, dass HDInsight 3.1-Cluster unter Hadoop 2.4 standardmäßig erstellt werden. Folglich müssen die Benutzer die Option für die benutzerdefinierte Erstellung ****im Portal verwenden, um andere HDInsight-Clusterversionen anzugeben, wenn diese erstellt werden müssen.
 
 ### Die Servicelevel-Vereinbarung (SLA) für HDInsight-Clusterversionen
 
-Die SLA ist in Form eines "Supportfensters" definiert. Ein Supportfenster bezieht sich auf den Zeitraum, für den eine HDInsight-Clusterversion vom Microsoft-Kundensupport unterstützt wird.  Ein HDInsight-Cluster gilt als außerhalb des Supportfensters, wenn das **Supportablaufdatum** einer Version das aktuelle Datum überschritten hat.  In der Tabelle oben finden Sie eine Liste der unterstützten HDInsight-Clusterversionen.  Das Supportablaufdatum für eine bestimmte HDInsight-Version X (sobald eine neuere X+1-Version verfügbar ist) wird berechnet als das spätere Datum von:  
+Die SLA ist in Form eines "Supportfensters" definiert. Ein Supportfenster bezieht sich auf den Zeitraum, für den eine HDInsight-Clusterversion vom Microsoft-Kundensupport unterstützt wird.  Ein HDInsight-Cluster befindet sich außerhalb des Supportfensters, wenn das **Supportablaufdatum** seiner Version das aktuelle Datum überschritten hat.  Eine Liste der unterstützten HDInsight-Clusterversionen finden Sie in der obigen Tabelle.Das Supportablaufdatum für eine bestimmte HDInsight-Version X (sobald eine neuere X+1-Version verfügbar ist) wird berechnet als das spätere Datum von:  
 
 - Formel 1:  Addieren Sie 180 Tage zum Herausgabedatum von HDInsight-Clusterversion X
 - Formel 2: Addieren Sie 90 Tage zu dem Datum, an dem HDInsight-Clusterversion X+1 (die nachfolgende Version nach X) im Azure-Verwaltungsportal verfügbar gemacht wurde.
 
-Das Datum **Veraltet ab** ist das Datum, nach dem eine Clusterversion nicht mehr in HDInsight erstellt werden kann.
+Das **Ablaufdatum** ist das Datum, nach dem die Clusterversion nicht in HDInsight erstellt werden kann.
 
-> [WACOM.NOTE] HDInsight 2.1- und 3.0-Cluster werden auf Azure Guest OS [Family 4](http://msdn.microsoft.com/de-de/library/azure/ee924680.aspx#explanation) ausgeführt. Dabei wird eine 64-Bit-Version von Windows Server 2012 R2 verwendet, und es wird .NET Framework 4.0, 4.5. und 4.5.1 unterstützt. 
+> [AZURE.NOTE] Das HDInsight 2.1- und 3.0-Cluster werden unter dem Azure-Gastbetriebssystem [Familie 4](http://msdn.microsoft.com/de-de/library/azure/ee924680.aspx#explanation) ausgeführt, das die 64-Bit-Version von Windows Server 2012 R2 verwendet und .NET Framework 4.0, 4.5. und 4.5.1 unterstützt. 
 
 ## Hortonworks-Versionshinweise im Zusammenhang mit HDInsight-Versionen##
 
-* HDInsight-Clusterversion 3.1 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 2.1.7][hdp-2-1-7] basiert. Dies ist der Hadoop-Standardcluster, der bei Verwendung des Azure HDInsight-Portals nach 11/7/2014 standardmäßig erstellt wird. HDInsight 3.1-Cluster, die vor 11/7/2014 erstellt wurden, basieren auf [Hortonworks Data Platform 2.1.1][hdp-2-1-1] 
+* Ein HDInsight-Cluster der Version 3.1 verwendet eine Hadoop-Distribution auf Basis der [Hortonworks Data Platform 2.1.7][hdp-2-1-7]. Dies ist der Hadoop-Standardcluster, der bei Verwendung des Azure HDInsight-Portals nach dem 11.7.2014 erstellt wurde. HDInsight 3.1-Cluster, die vor dem 11.7.2014 erstellt wurden, basierten auf der [Hortonworks Data Platform 2.1.1][hdp-2-1-1] 
 
-* HDInsight-Clusterversion 3.0 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 2.0][hdp-2-0-8] basiert.
+* Die HDInsight-Clusterversion 3.0 verwendet eine Hadoop-Distribution auf Basis der [Hortonworks Data Platform 2.0][hdp-2-0-8].
 
-* HDInsight-Clusterversion 2.1 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 1.3][hdp-1-3-0] basiert. 
+* Die HDInsight-Clusterversion 2.1 verwendet eine Hadoop-Distribution auf Basis der [Hortonworks Data Platform 1.3][hdp-1-3-0]. 
 
-* HDInsight-Clusterversion 1.6 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 1.1][hdp-1-1-0] basiert. 
+* Die HDInsight-Clusterversion 1.6 verwendet eine Hadoop-Distribution auf Basis der [Hortonworks Data Platform 1.1][hdp-1-1-0]. 
 
 
 [image-hdi-versioning-versionscreen]: ./media/hdinsight-component-versioning/hdi-versioning-version-screen.png
@@ -131,5 +145,4 @@ Das Datum **Veraltet ab** ist das Datum, nach dem eine Clusterversion nicht mehr
 [ambari-docs]: https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md
 
 [zookeeper]: http://zookeeper.apache.org/ 
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

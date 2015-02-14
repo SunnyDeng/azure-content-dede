@@ -2,11 +2,11 @@
 
 Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle "TodoItem" registriert wird, aktualisieren, um Benachrichtigungen zu senden.
 
-1. Klicken Sie auf **TodoItem**, klicken Sie auf **Script**, und wählen Sie **Insert**. 
+1. Klicken Sie auf **TodoItem**, klicken Sie auf **Skript**, und wählen Sie **Einfügen** aus. 
 
    	![](./media/mobile-services-javascript-update-script-notification-hubs/mobile-insert-script-push2.png)
 
-2. Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf **Speichern**:
+2. Ersetzen Sie die Einfügefunktion durch den folgenden Code, und klicken Sie anschließend auf **Speichern**:
 
 		function insert(item, user, request) {
 		// Define a payload for the Windows Store toast notification.
@@ -33,3 +33,4 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 
 	Dieses Einfügeskript sendet eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags) an alle Windows Store-App-Registrierungen, wenn der Einfügevorgang erfolgreich war.
 
+<!--HONumber=42-->

@@ -1,21 +1,21 @@
 ﻿
-1. Halten Sie den mobilen Dienst an, wenn dieser derzeit in IIS Express ausgeführt wird. Klicken Sie mit der rechten Maustaste auf das IIS Express-Taskleistensymbol, und klicken Sie auf **Anhalten**, um den mobilen Dienst anzuhalten.
+1. Halten Sie den mobilen Dienst an, wenn dieser aktuell in IIS Express ausgeführt wird. Klicken Sie mit der rechten Maustaste auf das IIS-Express-Taskleistensymbol, und klicken Sie für den mobilen Dienst auf **Beenden**.
 
     ![](./media/mobile-services-how-to-configure-iis-express/iis-express-tray-stop-site.png)
 
 
-2. Führen Sie in einem Eingabeaufforderungsfenster den Befehl  **ipconfig** aus, um eine gültige lokale IP-Adresse für Ihre Arbeitsstation nachzuschlagen.
+2. Führen Sie in einem Eingabeaufforderungsfenster den Befehl **ipconfig** aus, um eine gültige lokale IP-Adresse für Ihre Arbeitsstation zu suchen.
 
     ![](./media/mobile-services-how-to-configure-iis-express/ipconfig.png)
 
 
-3. 	Öffnen Sie in Visual Studio die Datei "applicationhost.config" für IIS Express. Diese Datei befindet sich im folgenden Unterverzeichnis Ihres Benutzerprofilverzeichnisses.
+3. Öffnen Sie in Visual Studio die Datei "applicationhost.config" für IIS Express. Diese Datei befindet sich im folgenden Unterverzeichnis Ihres Benutzerprofilverzeichnisses.
 
         C:\Users\<your profile name>\Documents\IISExpress\config\applicationhost.config
 
-4. Konfigurieren Sie IIS Express so, dass Remoteverbindungsanforderungen für den Dienst zugelassen sind. Suchen Sie dazu in der Datei "applicationhost.config" das Websiteelement für Ihren mobilen Dienst, und fügen Sie ein neues `binding`-Element für den Port unter Verwendung der oben notierten IP-Adresse hinzu. Speichern Sie anschließend die Datei "applicationhost.config". 
+4. Konfigurieren Sie IIS Express so, dass Remoteverbindungsanforderungen für den Dienst möglich sind. Suchen Sie dazu in der Datei "applicationhost.config" das Websiteelement für Ihren mobilen Dienst, und fügen Sie unter Verwendung der weiter oben notierten IP-Adresse ein neues  `binding`-Element für den Port hinzu. Speichern Sie anschließend die Datei "applicationhost.config". 
 
-    Das aktualisierte Websiteelement sollte etwa wie folgt aussehen:
+    Your updated site element should look similar to the following:
 
         <site name="todolist_Service(1)" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
@@ -29,12 +29,13 @@
 
 5. Öffnen Sie die Windows-Firewall-Konsole, und erstellen Sie eine neue Portregel, sodass Verbindungen mit dem Port hergestellt werden können. Weitere Informationen zum Erstellen einer neuen Windows-Firewall-Portregel finden Sie unter [Hinzufügen einer neuen Windows-Firewall-Portregel].
 
-    >[WACOM.NOTE] Wenn der Testcomputer in eine Domäne eingebunden ist, werden die Firewallausnahmen u. U. durch eine Domänenrichtlinie gesteuert. In diesem Fall müssen Sie sich an den Domänenadministrator wenden, um auf Ihrem Computer eine Ausnahme für den Port zu erhalten.
+    >[AZURE.NOTE] Wenn der Test-Computer einer Domäne angehört, werden Firewallausnahmen möglicherweise durch eine Domänenrichtlinie kontrolliert. In diesem Fall müssen Sie sich an Ihren Domänenadministrator wenden, um eine Ausnahme für den Port auf Ihrem Computer zu erhalten.
 
-    Die Konfiguration sollte nun so eingerichtet sein, dass Sie mobilen Dienst mit IIS Express als Host testen können. 
+    Die Konfiguration sollte nun so erfolgt sein, dass Ihr mobiler Dienst mit IIS Express als Host getestet werden kann. 
 
-    >[WACOM.NOTE] Wenn Sie die lokalen Tests des Diensts abgeschlossen haben, sollten Sie die von Ihnen erstellte Windows-Firewallregel löschen. 
+    >[AZURE.NOTE] Wenn Sie fertig sind, den Dienst lokal zu testen, sollten Sie die Windows-Firewall-Regel, die sie erstellt haben, löschen. 
 
 
 <!-- URLs. -->
-[Gewusst wie: Hinzufügen einer neuen Windows-Firewall-Portregel]:  http://go.microsoft.com/fwlink/?LinkId=392240
+[Hinzufügen einer neuen Windows-Firewall-Portregel]:  http://go.microsoft.com/fwlink/?LinkId=392240
+<!--HONumber=42-->

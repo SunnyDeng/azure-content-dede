@@ -1,7 +1,7 @@
 ﻿
-Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Client bei jedem Starten der App sowohl den Identitätsanbieter als auch den mobilen Dienst kontaktieren muss. Diese Methode ist jedoch ineffizient und zudem können Probleme auftreten, wenn viele Kunden die App gleichzeitig starten möchten. Ein besserer Ansatz ist es daher, den von Mobile Services zurückgegebenen Authentifizierungstoken zwischenzuspeichern und vor einer anbieterbasierten Anmeldung zu verwenden. 
+Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, dass der Client bei jedem Start der App sowohl den Identitätsanbieter als auch den mobilen Dienst kontaktiert. Diese Methode ist jedoch ineffizient und zudem können Probleme auftreten, wenn viele Kunden die App gleichzeitig starten möchten. Ein besserer Ansatz ist es daher, den von Mobile Services zurückgegebenen Authentifizierungstoken zwischenzuspeichern und vor einer anbieterbasierten Anmeldung zu verwenden. 
 
->[WACOM.NOTE]Unabhängig davon, ob Sie clientverwaltete oder dienstverwaltete Authentifizierung verwenden, können Sie den von Mobile Services ausgestellten Authentifizierungstoken zwischenspeichern. In diesem Lernprogramm wird die dienstverwaltete Authentifizierung verwendet.
+>[AZURE.NOTE]Unabhängig davon, ob Sie clientverwaltete oder dienstverwaltete Authentifizierung verwenden, können Sie das von Mobile Services ausgestellten Authentifizierungstoken zwischenspeichern. In diesem Lernprogramm wird die dienstverwaltete Authentifizierung verwendet.
 
 
 1. Öffnen Sie in Eclipse die Datei ToDoActivity.java und fügen Sie die folgenden Importanweisungen hinzu:
@@ -10,14 +10,14 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Cli
         import android.content.SharedPreferences;
         import android.content.SharedPreferences.Editor;
 
-2. Fügen Sie die folgenden Mitglieder zur "ToDoActivity"-Klasse hinzu.
+2. Fügen Sie die folgenden Elemente zur Klasse `ToDoActivity` hinzu.
 
     	public static final String SHAREDPREFFILE = "temp";	
 	    public static final String USERIDPREF = "uid";	
     	public static final String TOKENPREF = "tkn";	
 
 
-3. Fügen Sie in der Datei "ToDoActivity.java" die folgende Definition für die "cacheUserToken"-Methode hinzu.
+3. Fügen Sie in der Datei ToDoActivity.java die folgende Definition für die `cacheUserToken`-Methode hinzu.
  
     	private void cacheUserToken(MobileServiceUser user)
 	    {
@@ -30,10 +30,10 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Cli
   
     Diese Methode speichert die Benutzer-ID und das Token in einer Einstellungsdatei, die als privat gekennzeichnet wird. Dadurch sollte der Zugriff auf den Cache gesichert sein, sodass andere Apps auf dem Gerät nicht auf das Token zugreifen können, da die Einstellungen für die App in Sandboxes abgeschirmt sind. Trotzdem ist es möglich, dass jemand, der Zugriff auf das Gerät erlangt hat, auf andere Weise auf den Tokencache zugreift. 
 
-    >[WACOM.NOTE]Sollten es sich um äußerst sensible Daten handeln und anderen Benutzern der Zugriff auf das Gerät möglich sein, können Sie das Token durch Verschlüsselung zusätzlich schützen. Eine absolut sichere Lösung kann jedoch im Rahmen dieses Lernprogramms nicht gegeben werden und hängt zudem von Ihren Sicherheitsanforderungen ab.
+    >[AZURE.NOTE]Sollte es sich um äußerst sensible Daten handeln und anderen Benutzern der Zugriff auf das Gerät möglich sein, können Sie das Token durch Verschlüsselung zusätzlich schützen. Eine absolut sichere Lösung kann jedoch im Rahmen dieses Lernprogramms nicht gegeben werden und hängt zudem von Ihren Sicherheitsanforderungen ab.
 
 
-4. Fügen Sie in der Datei "ToDoActivity.java" die folgende Definition für die "loadUserTokenCache"-Methode hinzu.
+4. Fügen Sie in der Datei ToDoActivity.java die folgende Definition für die `loadUserTokenCache`-Methode hinzu.
 
     	private boolean loadUserTokenCache(MobileServiceClient client)
 	    {
@@ -54,7 +54,7 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Cli
 
 
 
-5. Ersetzen Sie in der Datei *ToDoActivity.java* die "authenticate"-Methode durch die folgende Methode, die einen Tokencache verwendet. Wechseln Sie den Login-Anbieter, wenn Sie ein anderes Konto als Microsoft verwenden möchten.
+5. Ersetzen Sie in der Datei *ToDoActivity.java* die `authenticate`-Methode durch die folgende Methode, die einen Tokencache verwendet. Wechseln Sie den Login-Anbieter, wenn Sie ein anderes Konto als Microsoft verwenden möchten.
 
 		private void authenticate() {
 			// We first try to load a token cache if one exists.
@@ -89,3 +89,4 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Cli
 
 
 
+<!--HONumber=42-->

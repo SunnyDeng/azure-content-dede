@@ -1,11 +1,11 @@
 ﻿## Senden von Nachrichten an Ereignis-Hubs
-In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an den Ereignis-Hub zu senden. Wir nutzen den JMS AMQP-Anbieter aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Servicebuswarteschlangen und -Themen mit AMQP aus Java, wie [hier](http://azure.microsoft.com/de-de/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/) gezeigt. Weitere Informationen finden Sie in der [Qpid JMS-Dokumentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) und unter [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
+In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an den Ereignis-Hub zu senden. Wir nutzen den JMS AMQP-Anbieter aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Servicebuswarteschlangen und -Themen mit AMQP aus Java, wie [hier](http://azure.microsoft.com/de-de/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/) gezeigt. Weitere Informationen finden Sie in der [Qpid JMS-Dokumentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) und [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
 
 1. Erstellen Sie in Eclipse ein neues Java-Projekt namens **Sender**.
 
 2. Laden Sie die neueste Version der Bibliothek **Qpid JMS AMQP 1.0** von [hier](http://qpid.apache.org/components/qpid-jms/index.html) herunter.
 
-3. Extrahieren Sie die Dateien aus dem Archiv, und kopieren Siedie folgenden JAR-Dateien aus dem Archivverzeichnis `qpid-amqp-1-0-client-jms\<version>\lib` in Ihr Eclipse-Projekt **Sender**.
+3. Extrahieren Sie die Dateien aus dem Archiv, und kopieren Sie die folgenden JAR-Dateien aus dem Archivverzeichnis `qpid-amqp-1-0-client-jms\<version>\lib` in Ihr Eclipse-Projekt **Sender**.
 
 4. Klicken Sie in Eclipse Package Explorer mit der rechten Maustaste auf das Projekt **Sender**, und wählen Sie **Properties**. Klicken Sie im linken Bereich des Dialogfelds auf **Java Build Path**, klicken Sie dann auf die Registerkarte **Libraries** und anschließend auf die Schaltfläche **Add JARs**. Wählen Sie all zuvor kopierten JAR-Dateien aus, und klicken Sie auf **OK**.
 
@@ -24,7 +24,7 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 		# topic.[jndi_name] = [physical_name]
 		queue.EventHub = {event hub name}
 
-5. 	Erstellen Sie eine neue Klasse namens **Sender**. Fügen Sie die folgenden `import`-Anweisungen hinzu:
+5. Erstellen Sie eine neue Klasse namens **Sender**. Fügen Sie die folgenden `import`-Anweisungen ein:
 
 		import java.io.BufferedReader;
 		import java.io.IOException;
@@ -92,4 +92,4 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 
 
 <!-- Images -->
-[8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png
+[8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png<!--HONumber=42-->

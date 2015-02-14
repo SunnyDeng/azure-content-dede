@@ -1,10 +1,9 @@
-> [WACOM.NOTE]
+﻿> [AZURE.NOTE]
 > Zum erfolgreichen Ausführen der Schritte in diesem Abschnitt muss eine funktionierende Installation von Node.js und dem Azure SDK für Node.js für Ihre Plattform vorliegen.
 
-> -   Installieren Sie das Azure SDK für Node.js: [Windows-Installer][Windows-Installer] | [Mac-Installer][Mac-Installer] | [Linux-Download][Linux-Download]
+>* Installieren Sie das Azure SDK für Node.js: <a href="http://go.microsoft.com/fwlink/?LinkId=254279">Windows-Installer</a> | <a href="http://go.microsoft.com/fwlink/?LinkId=253471">Mac-Installer</a> | <a href="http://go.microsoft.com/fwlink/?LinkId=253472">Linux-Download</a></li>
 
-> -   Installieren Sie Node.js auf einem Mac oder unter Linux von <http://nodejs.org>. Unter Windows ist Node.js bereits im Installer enthalten.
+>* Wenn Sie Mac oder Linux verwenden, installieren Sie Node.js von <a href="http://nodejs.org">http://nodejs.org</a>. Unter Windows ist Node.js bereits im Installer enthalten.
 
-  [Windows-Installer]: http://go.microsoft.com/fwlink/?LinkId=254279
-  [Mac-Installer]: http://go.microsoft.com/fwlink/?LinkId=253471
-  [Linux-Download]: http://go.microsoft.com/fwlink/?LinkId=253472
+
+<!--HONumber=42-->

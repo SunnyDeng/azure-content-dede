@@ -1,16 +1,30 @@
-﻿<properties urlDisplayName="Upload Data" pageTitle="Hochladen von Daten für Hadoop-Aufträge in HDInsight | Azure" metaKeywords="" description="Erfahren Sie, wie Sie Daten in HDInsight mithilfe von Azure-Speicher-Explorer, Azure PowerShell, der Hadoop-Befehlszeile oder Sqoop hochladen und abrufen können." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Upload data for Hadoop jobs in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties 
+	pageTitle="Hochladen von Daten für Hadoop-Aufträge in HDInsight | Azure" 
+	description="Erfahren Sie, wie Sie Daten in HDInsight mithilfe von Azure-Speicher-Explorer, Azure PowerShell, der Hadoop-Befehlszeile oder Sqoop hochladen und abrufen können." 
+	services="storage, hdinsight" 
+	documentationCenter="" 
+	authors="mumian" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/12/2014" ms.author="jgao" />
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/12/2014" 
+	ms.author="jgao"/>
 
 
 
-#Hochladen von Daten für Hadoop-Aufträge in HDInsight
+# Hochladen von Daten für Hadoop-Aufträge in HDInsight
 
-Azure HDInsight stellt über Azure Blob-Speicher ein Hadoop Distributed File System (HDFS) mit vollem Funktionsumfang zur Verfügung. Es wurde als eine HDFS-Erweiterung entwickelt, die Kunden eine reibungslose Leistung bietet, indem alle Komponenten im Hadoop-System direkt mit den von ihm verwalteten Daten arbeiten können. Azure Blob-Speicher und HDFS sind unterschiedliche Dateisysteme, die jeweils für die Datenspeicherung und Berechnungen dieser Daten optimiert sind. Die Vorteile der Verwendung von Azure Blob-Speicher finden Sie unter [Verwenden von Azure-Blob-Speicher mit HDInsight][hdinsight-storage]. 
+Azure HDInsight stellt über Azure Blob-Speicher ein Hadoop Distributed File System (HDFS) mit vollem Funktionsumfang zur Verfügung. Es wurde als eine HDFS-Erweiterung entwickelt, die Kunden eine reibungslose Leistung bietet, indem alle Komponenten im Hadoop-System direkt mit den von ihm verwalteten Daten arbeiten können. Azure Blob-Speicher und HDFS sind unterschiedliche Dateisysteme, die jeweils für die Datenspeicherung und Berechnungen dieser Daten optimiert sind. Die Vorteile der Verwendung von Azure BLOB-Speicher finden Sie unter [Verwenden von Azure-BLOB-Speicher mit HDInsight][hdinsight-storage]. 
 
 Azure HDInsight-Cluster werden in der Regel bereitgestellt, um MapReduce-Jobs auszuführen, und werden gelöscht, sobald diese Jobs abgeschlossen sind. Nachdem die Berechnungen erfolgt sind, wäre es zu teuer, diese Daten weiterhin in den HDFS-Clustern zu speichern. Der Azure-Blob-Speicher ist eine hoch skalierbare und verfügbare, kostengünstige und freigabefähige Speicheroption mit hoher Kapazität für Daten, die mit HDInsight verarbeitet werden sollen. Das Speichern von Daten in einem Blob sorgt dafür, dass die für Berechnungen verwendeten HDInsight-Cluster sicher freigegeben werden können, ohne Daten zu verlieren. 
 
-Auf den Azure Blob-Speicher kann über [AzCopy][azure-azcopy], [Azure PowerShell][azure-powershell], [Azure-Speicherclientbibliothek für .NET][azure-storage-client-library] oder über Explorer-Tools zugegriffen werden. Hier sind einige der verfügbaren Tools:
+Auf den Azure BLOB-Speicher kann über [AzCopy][azure-azcopy], [Azure PowerShell][azure-powershell], [Azure-Speicherclientbibliothek für .NET][azure-storage-client-library] oder über Explorer-Tools zugegriffen werden. Hier sind einige der verfügbaren Tools:
 
 * [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/)
 * [Cloud Storage Studio 2](http://www.cerebrata.com/Products/CloudStorageStudio/)
@@ -24,17 +38,17 @@ Beachten Sie die folgenden Voraussetzungen, bevor Sie mit diesem Artikel beginne
 
 * Einen Azure HDInsight-Cluster. Anweisungen finden Sie unter [Erste Schritte mit Azure HDInsight][hdinsight-get-started] oder [Bereitstellen eines HDInsight-Clusters][hdinsight-provision].
 
-##Themen in diesem Artikel
+## Themen in diesem Artikel
 
-* [Hochladen von Daten zum Blob-Speicher mit AzCopy](#azcopy)
-* [Hochladen von Daten zum Blob-Speicher mit Azure PowerShell](#powershell)
-* [Hochladen von Daten zum Blob-Speicher mit Azure-Speicher-Explorer](#storageexplorer)
-* [Hochladen von Daten zum Blob-Speicher mit der Hadoop-Befehlszeile](#commandline)
-* [Importieren von Daten aus der Azure-SQL-Datenbank in den Blob-Speicher mit Sqoop](#sqoop)
+* [Hochladen von Daten zum BLOB-Speicher mit AzCopy](#azcopy)
+* [Hochladen von Daten zum BLOB-Speicher mit Azure PowerShell](#powershell)
+* [Hochladen von Daten zum BLOB-Speicher mit Azure-Speicher-Explorer](#storageexplorer)
+* [Hochladen von Daten zum BLOB-Speicher mit der Hadoop-Befehlszeile](#commandline)
+* [Importieren von Daten aus der Azure-SQL-Datenbank in den BLOB-Speicher mit Sqoop](#sqoop)
 
-##<a id="azcopy"></a>Hochladen von Daten zum Blob-Speicher mit AzCopy
+## <a id="azcopy"></a>Hochladen von Daten zum Blob-Speicher mit AzCopy##
 
-AzCopy ist ein Befehlszeilenprogramm, das das Übertragen von Daten in ein Azure-Speicherkonto und von einem Azure-Speicherkonto vereinfachen soll. Sie können dieses Dienstprogramm als eigenständiges Tool verwenden oder in eine vorhandene Anwendung integrieren. [Laden Sie AzCopy][azure-azcopy-download] herunter.
+AzCopy ist ein Befehlszeilenprogramm, das das Übertragen von Daten in ein Azure-Speicherkonto und von einem Azure-Speicherkonto vereinfachen soll. Sie können dieses Dienstprogramm als eigenständiges Tool verwenden oder in eine vorhandene Anwendung integrieren. [Herunterladen von AzCopy][azure-azcopy-download].
 
 Die AzCopy-Syntax lautet folgendermaßen:
 
@@ -42,11 +56,11 @@ Die AzCopy-Syntax lautet folgendermaßen:
 
 Weitere Informationen finden Sie unter [AzCopy - Hochladen/Herunterladen von Dateien für Azure-Blobs][azure-azcopy]
 
-##<a id="powershell"></a>Hochladen von Daten zum Blob-Speicher mit Azure PowerShell##
+## <a id="powershell"></a>Hochladen von Daten zum Blob-Speicher mit Azure PowerShell##
 
 Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Mit Azure PowerShell können Sie Daten zum Blob-Speicher hochladen, sodass die Daten von MapReduce-Jobs verarbeitet werden können. Informationen zum Konfigurieren der Arbeitsstation für die Ausführung von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 
-**So laden Sie eine lokale Datei zum Blob-Speicher hoch**
+**So laden Sie eine lokale Datei in den BLOB-Speicher hoch**
 
 1. Öffnen Sie das Azure PowerShell-Konsolenfenster entsprechend den Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 2. Legen Sie die Werte der ersten fünf Variablen im folgenden Skript fest:
@@ -70,7 +84,7 @@ Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereit
 		
 3. Fügen Sie das Skript in das Azure PowerShell-Konsolenfenster ein, um es auszuführen.
 
-In Blob-Speichercontainern werden Daten als Schlüssel/Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen das Zeichen '/' verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. Der Schlüssel eines Blobs kann z. B. *input/log1.txt*heißen. Das Verzeichnis 'input' existiert zwar nicht, wegen des Zeichens '/' im Schlüsselnamen sieht es jedoch so aus, als gäbe es einen Dateipfad. Im obigen Skript können Sie der Datei eine Ordnerstruktur geben, indem Sie die Variable $blobname festlegen. Beispiel: *$blobname="myfolder/myfile.txt"*.
+In Blob-Speichercontainern werden Daten als Schlüssel/Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen das Zeichen '/' verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. Der Schlüssel eines BLOB kann z. B. *input/log1.txt* sein. Das Verzeichnis 'input' existiert zwar nicht, wegen des Zeichens '/' im Schlüsselnamen sieht es jedoch so aus, als gäbe es einen Dateipfad. Im obigen Skript können Sie der Datei eine Ordnerstruktur geben, indem Sie die Variable $blobname festlegen. Beispiel: *$blobname="myfolder/myfile.txt"*.
 
 In den Azure Explorer-Tools sehen Sie möglicherweise einige Dateien mit 0 Byte. Diese Dateien dienen zwei Zwecken:
 
@@ -84,11 +98,11 @@ In den Azure Explorer-Tools sehen Sie möglicherweise einige Dateien mit 0 Byte.
 
 
 
-##<a id="storageexplorer"></a>Hochladen von Daten zum Blob-Speicher mit Azure-Speicher-Explorer
+## <a id="storageexplorer"></a>Hochladen von Daten zum Blob-Speicher mit Azure-Speicher-Explorer
 
-*Azure-Speicher-Explorer* ist ein hilfreiches Tool zum Prüfen und Ändern der Daten in Ihrem Azure-Speicher. Dieses kostenlose Tool kann von [http://azurestorageexplorer.codeplex.com/](http://azurestorageexplorer.codeplex.com/ "Azure Storage Explorer")heruntergeladen werden.
+*Azure-Speicher-Explorer* ist ein hilfreiches Tool zum Prüfen und Ändern der Daten in Ihrem Azure-Speicher. Dieses kostenlose Tool kann von [http://azurestorageexplorer.codeplex.com/](http://azurestorageexplorer.codeplex.com/ "Azure Storage Explorer") heruntergeladen werden.
 
-Bevor Sie das Tool verwenden können, müssen Sie den Namen Ihres Azure-Speicherkontos und den Kontoschlüssel kennen. Anweisungen zum Abrufen dieser Informationen finden Sie im Abschnitt "Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln" von [Erstellen, Verwalten oder Löschen von Speicherkonten][azure-create-storageaccount].  
+Bevor Sie das Tool verwenden können, müssen Sie den Namen Ihres Azure-Speicherkontos und den Kontoschlüssel kennen. Anweisungen zum Abrufen dieser Informationen finden Sie im Abschnitt "Gewusst wie: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln" von [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount].  
 
 1. Führen Sie den Azure-Speicher-Explorer aus.
 
@@ -178,7 +192,7 @@ Bevor Sie das Tool verwenden können, müssen Sie den Namen Ihres Azure-Speicher
 
 
 
-##<a id="commandline"></a> Hochladen von Daten zum Blob-Speicher mit der Hadoop-Befehlszeile
+## <a id="commandline"></a> Hochladen von Daten zum Blob-Speicher mit der Hadoop-Befehlszeile
 
 Um die Hadoop-Befehlszeile verwenden zu können, müssen Sie zuerst über Remotedesktop eine Verbindung mit dem Cluster herstellen. 
 
@@ -188,7 +202,7 @@ Um die Hadoop-Befehlszeile verwenden zu können, müssen Sie zuerst über Remote
 2. Klicken Sie auf **HDINSIGHT**. Sie sehen eine Liste bereitgestellter Hadoop-Cluster.
 3. Klicken Sie auf den HDInsight-Cluster, zu dem Sie Daten hochladen möchten.
 4. Klicken Sie oben auf der Seite auf **KONFIGURATION**.
-5. Klicken Sie auf **REMOTE AKTIVIEREN**, wenn Sie Remotedesktop noch nicht aktiviert haben, und folgen Sie den Anweisungen.  Gehen Sie andernfalls zum nächsten Schritt.
+5. Klicken Sie auf **REMOTE AKTIVIEREN**, wenn Sie Remotedesktop noch nicht aktiviert haben, und befolgen Sie die Anweisungen.  Gehen Sie andernfalls zum nächsten Schritt.
 4. Klicken Sie unten auf der Seite auf **VERBINDEN**.
 7. Klicken Sie auf **Öffnen**.
 8. Geben Sie Ihre Anmeldeinformationen ein, und klicken Sie auf **OK**.
@@ -204,7 +218,7 @@ Um die Hadoop-Befehlszeile verwenden zu können, müssen Sie zuerst über Remote
 
 	oder
 
-		wasbs://<ContainerName>@<StorageAccountName>.blob.core.windows.net/example/data/davinci.txt
+		wasbs://<Containername>@<Speicherkontoname>.blob.core.windows.net/example/data/davinci.txt
 
 	Wenn Sie *wasbs* verwenden, müssen Sie den vollqualifizierten Domänennamen angeben.
 
@@ -213,17 +227,17 @@ Um die Hadoop-Befehlszeile verwenden zu können, müssen Sie zuerst über Remote
 		hadoop dfs -lsr /example/data
 
 
-##<a id="sqoop"></a> Importieren von Daten nach HDFS aus SQL-Datenbank/SQL Server mithilfe von Sqoop
+## <a id="sqoop"></a> Importieren von Daten nach HDFS aus SQL-Datenbank/SQL Server mithilfe von Sqoop
 
-Sqoop ist ein Tool zum Übertragen von Daten zwischen Hadoop und relationalen Datenbanken. Sie können damit Daten aus einem Managementsystem für relationale Datenbanken (RDBMS) wie SQL, MySQL oder Oracle in das Hadoop Distributed File System (HDFS) importieren, die Daten in Hadoop mit MapReduce oder Hive transformieren und die Daten anschließend wieder in ein RDBMS exportieren. Weitere Informationen finden Sie unter [Sqoop-Benutzeranleitung][apache-sqoop-guide].
+Sqoop ist ein Tool zum Übertragen von Daten zwischen Hadoop und relationalen Datenbanken. Sie können damit Daten aus einem Managementsystem für relationale Datenbanken (RDBMS) wie SQL, MySQL oder Oracle in das Hadoop Distributed File System (HDFS) importieren, die Daten in Hadoop mit MapReduce oder Hive transformieren und die Daten anschließend wieder in ein RDBMS exportieren. Weitere Informationen finden Sie in der [Sqoop-Benutzeranleitung][apache-sqoop-guide].
 
 Bevor Sie Daten importieren, müssen Sie den Namen des Azure SQL-Datenbankservers, den Namen des Datenbankkontos, das Kontokennwort und den Datenbanknamen kennen. 
 
-Eine Azure SQL-Datenbank ermöglicht standardmäßig Verbindungen von Azure-Diensten wie Azure HDInsight. Wenn die Firewall-Einstellung deaktiviert ist, müssen Sie sie im Azure-Verwaltungsportal aktivieren. Anweisungen zum Erstellen einer SQL-Datenbank und zum Konfigurieren von Firewall-Regeln finden Sie unter [Erstellen und Konfigurieren einer SQL-Datenbank][sqldatabase-create-configue]. 
+Eine Azure SQL-Datenbank ermöglicht standardmäßig Verbindungen von Azure-Diensten wie Azure HDInsight. Wenn die Firewall-Einstellung deaktiviert ist, müssen Sie sie im Azure-Verwaltungsportal aktivieren. Anweisungen zum Erstellen einer SQL-Datenbank und zum Konfigurieren von Firewall-Regeln finden Sie unter [Erstellen und Konfigurieren einer SQL-Datenbank][sqldatabase-create-configure]. 
 
 In den nachfolgend dargestellten Schritten wird ein Sqoop-Job mithilfe von PowerShell übermittelt. 
 
-**So importieren Sie Daten mit Sqoop und PowerShell nach HDInsight**
+**So importieren Sie Daten in HDInsight mit Sqoop und PowerShell**
 
 1. Öffnen Sie das Azure PowerShell-Konsolenfenster entsprechend den Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 2. Legen Sie die Werte der ersten acht Variablen im folgenden Skript fest:
@@ -250,7 +264,7 @@ In den nachfolgend dargestellten Schritten wird ein Sqoop-Job mithilfe von Power
 		Write-Host "Standard Output" -BackgroundColor Green
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $sqoopJob.JobId -StandardOutput
 
-3. Fügen Sie das Skript in das Azure PowerShell-Konsolenfenster ein, um es auszuführen. Unter [Erste Schritte mit HDInsight][hdinsight-get-started] finden Sie ein PowerShell-Beispiel zum Abrufen der Datendatei aus dem Azure-Blob-Speicher.
+3. Fügen Sie das Skript in das Azure PowerShell-Konsolenfenster ein, um es auszuführen. Unter [Erste Schritte mit HDInsight][hdinsight-get-started] finden Sie ein PowerShell-Beispiel zum Abrufen der Datendatei aus dem Azure-BLOB-Speicher.
 
 Weitere Informationen über Sqoop finden Sie unter [Verwenden von Sqoop mit HDInsight][hdinsight-use-sqoop].
 
@@ -258,7 +272,7 @@ Weitere Informationen über Sqoop finden Sie unter [Verwenden von Sqoop mit HDIn
 Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lernen Sie anhand der folgenden Artikel, wie Sie die Daten analysieren:
 
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
-* [Programmgesteuerte Übermittlung von Hadoop-Jobs][hdinsight-submit-jobs]
+* [Programmgesteuerte Übermittlung von Hadoop-Aufträgen][hdinsight-submit-jobs]
 * [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
 * [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 
@@ -283,7 +297,7 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lernen Sie anhand der 
 [hdinsight-use-pig]: ../hdinsight-use-pig
 [hdinsight-provision]: ../hdinsight-provision-clusters/
 
-[sqldatabase-create-configue]: ../sql-database-create-configure/
+[sqldatabase-create-configure]: ../sql-database-create-configure/
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
@@ -294,7 +308,4 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lernen Sie anhand der 
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
 
-
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

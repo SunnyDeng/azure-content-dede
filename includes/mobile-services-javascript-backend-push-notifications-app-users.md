@@ -1,15 +1,15 @@
 ﻿
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und anschließend auf Ihren mobilen Dienst.
+1. Loggen Sie sich in das [Azure-Verwaltungsportal] ein, klicken Sie auf **Mobile Services** und klicken Sie anschließend auf Ihren mobilen Dienst.
 
    	![](./media/mobile-services-javascript-backend-push-notifications-app-users/mobile-services-selection.png)
 
-2. Klicken Sie auf die Registerkarte **Push**, wählen Sie für **Berechtigungen** die Option **Nur authentifizierte Benutzer **, und klicken Sie dann auf **Skript bearbeiten**.
+2. Klicken Sie auf die Registerkarte **Push**, wählen Sie **Nur authentifizierte Benutzer** unter **Berechtigungen** aus, und klicken Sie anschließend auf **Skript bearbeiten**.
 
    	![](./media/mobile-services-javascript-backend-push-notifications-app-users/mobile-services-push-registration-endpoint.png)
 	
-	Damit können Sie die Rückruffunktion für die Registrierungs von Pushbenachrichtigungen anpassen. Wenn Sie den Quellcode mit Git bearbeiten, finden Sie dieselbe Registrierungsfunktion in `.\service\extensions\push.js`.
+	Dadurch können Sie die Rückruffunktion für die Registrierung von Pushbenachrichtigungen anpassen. Wenn Sie Git verwenden, um den Quellcode zu bearbeiten, wird die gleiche Registrierungsfunktion in `.\service\extensions\push.js` gefunden.
 
-3. Ersetzen Sie die vorhandene **register**-Funktion durch den folgenden Code:
+3. Ersetzen Sie die vorhandene **Registrierungs**-Funktion mit dem folgenden Code:
 
 		exports.register = function (registration, registrationContext, done) {   
 		    // Get the ID of the logged-in user.
@@ -42,6 +42,6 @@
 			}
 		}
 
-	Damit wird der Registrierung ein Tag hinzugefügt, das die ID des angemeldeten Benutzers ist. Die bereitgestellten Tags werden überprüft, damit sich kein Benutzer mit der ID eines anderen Benutzers registrieren kann. Eine an diesen Benutzer gesendete Benachrichtigung wird auf diesem und jedem anderen Gerät empfangen, das vom Benutzer registriert wurde.
+	Dadurch wird der Registrierung ein Tag hinzugefügt, das die ID des angemeldeten Benutzers darstellt. Die eingegebenen Tags werden überprüft, um zu verhindern, dass ein Benutzer sich mit der ID eines anderen Benutzers anmeldet. Wenn eine Benachrichtigung an diesen Benutzer gesendet wird, wird diese auf diesem und jedem anderen Gerät, das vom Benutzer registriert wurde, empfangen.
 
-4. Klicken Sie nacheinander auf den Pfeil für "Zurück", auf die Registerkarte **Daten**, auf **TodoItem** und auf **Skript**, und wählen Sie dann **Einfügen** aus. 
+4. Klicken Sie auf "Zurück", klicken Sie auf die Registerkarte **Daten**, klicken Sie auf **TodoItem**, klicken Sie auf **Skript**, und wählen Sie **Einfügen** aus. <!--HONumber=42-->

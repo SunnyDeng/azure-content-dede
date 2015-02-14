@@ -39,9 +39,9 @@
 
 		mysql> CREATE USER 'mysqluser'@'localhost' IDENTIFIED BY 'password';
 
-	Beachten Sie das Semikolon (;) am Ende der Zeilen, die entscheidend für den Abschluss der Befehle sind.
+	Beachten Sie, dass das Semikolon (;) am Ende der Zeilen entscheidend für den Abschluss der Befehle ist.
 
-8. Starten Sie die folgenden Befehle, um eine Datenbank zu erstellen und um dafür die "mysqluser"-Benutzerberechtigungen zu gewähren:
+8. Geben Sie die folgenden Befehle aus, um eine Datenbank zu erstellen und um dafür die  `mysqluser`-Benutzerberechtigungen zu gewähren:
 
 		mysql> CREATE DATABASE testdatabase;
 		mysql> GRANT ALL ON testdatabase.* TO 'mysqluser'@'localhost' IDENTIFIED BY 'password';
@@ -52,7 +52,7 @@
 
 		mysql> GRANT ALL ON testdatabase.* TO 'mysqluser'@'<ip-address>' IDENTIFIED BY 'password';
 
-	wobei "ip-address" die IP-Adresse des Computers ist, von dem aus Sie eine Verbindung mit MySQL herstellen möchten.
+	wobei  `ip-address` die IP-Adresse des Computers ist, von dem aus Sie eine Verbindung mit MySQL herstellen möchten.
 	
 10. Geben Sie den folgenden Befehl ein, um das Verwaltungsdienstprogramm für die MySQL-Datenbank zu beenden:
 
@@ -62,7 +62,7 @@
 
 	![Endpoints][Image7]
 
-12. Klicken Sie unten auf der Seite auf **Add**.
+12. Klicken Sie am unteren Seitenrand auf **Hinzufügen**.
 	![Endpoints][Image8]
 
 13. Fügen Sie einen Endpunkt mit dem Namen "MySQL" hinzu, und wählen Sie als Protokoll **TCP** aus. Setzen Sie die beiden Ports **Öffentlich** und **Privat** auf "3306". Dies ermöglicht den Zugriff auf MySQL.
@@ -82,5 +82,4 @@
 [AzurePreviewPortal]: http://manage.windowsazure.com
 
 [Image9]: ./media/install-and-run-mysql-on-opensuse-vm/LinuxVmAddEndpointMySQL.png
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

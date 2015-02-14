@@ -1,6 +1,20 @@
-﻿<properties title="Analyzing sensor data using Hive with HDInsight" pageTitle="Analysieren von Sensordaten mit Hive und Microsoft Azure HDInsight (Hadoop)" description="Erfahren Sie, wie Sie Sensordaten mithilfe von Hive und Excel in HDInsight (Hadoop) analysieren und visualisieren." metaKeywords="Azure hdinsight hive, Azure hdinsight hive sensor, azure hadoop hive, azure hadoop sensor, azure hadoop excel, azure hdinsight excel" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" manager="paulettm" editor="cgronlun"/>
+﻿<properties 
+	pageTitle="Analysieren von Sensordaten mit Hive und Microsoft Azure HDInsight (Hadoop)" 
+	description="Erfahren Sie, wie Sie Sensordaten mit Hive und HDInsight (Hadoop) in Echtzeit analysieren und visualisieren können" 
+	services="hdinsight" 
+	documentationCenter="" 
+	authors="blackmist" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/30/2014" ms.author="larryfr" />
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/30/2014" 
+	ms.author="larryfr"/>
 
 #Analysieren von Sensordaten mit Hive und HDInsight
 
@@ -17,17 +31,17 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 ##Voraussetzungen:
 
-* Ein HDInsight (Hadoop)-Cluster - siehe [Bereitstellen von Hadoop-Clustern in HDInsight],(/de-de/documentation/articles/hdinsight-provision-clusters/) um Informationen zum Erstellen eines Clusters zu erhalten.
+* Ein HDInsight (Hadoop)-Cluster - Unter [Bereitstellen von Hadoop-Clustern in HDInsight](/de-de/documentation/articles/hdinsight-provision-clusters/) finden Sie weitere Informationen zur Erstellung von Clustern.
 
 * Microsoft Excel 2013 (PowerPivot für Datenanalysten - Microsoft Excel 2010)
 
-	> [WACOM.NOTE] Microsoft Excel dient zur Visualisierung von Daten mithilfe von [Power View],(https://support.office.com/de-de/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=de-de&rs=de-de&ad=US)das derzeit nur unter Windows verfügbar ist.
+	> [AZURE.NOTE] Microsoft Excel wird zur Datenvisualisierung mit [Power View](https://support.office.com/en-US/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=en-US&rs=en-US&ad=US) verwendet, das momentan nur für Windows verfügbar ist.
 
-* [Microsoft Hive ODBC-Treiber](http://www.microsoft.com/de-de/download/details.aspx?id=40886)
+* [Microsoft Hive ODBC Driver](http://www.microsoft.com/de-de/download/details.aspx?id=40886)
 
 ##So führen Sie das Beispiel aus
 
-1. Klicken Sie im Azure-Verwaltungsportal auf den Namen des entsprechenden Clusters und klicken Sie anschließend unten in der Seite auf **Abfragekonsole**. Alternativ können Sie die Abfragekonsole direkt über die folgende URL öffnen
+1. Klicken Sie im Azure-Verwaltungsportal auf den Namen des entsprechenden Clusters, und klicken Sie anschließend unten in der Seite auf **Abfragekonsole**. Alternativ können Sie die Abfragekonsole direkt über die folgende URL öffnen
 
 	 	https://<clustername>.azurehdinsight.net
 
@@ -36,5 +50,4 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 2. Klicken Sie in der Webseite, die sich daraufhin öffnet, auf die Registerkarte **Erste Schritte** und anschließend in der Kategorie **Beispiele** auf das Beispiel **Analyse von Websiteprotokollen**.
 
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

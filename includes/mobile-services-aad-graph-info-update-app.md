@@ -3,7 +3,7 @@
 Die nachfolgenden Anweisungen gelten für das Aktualisieren einer Windows Store-Client-App, aber Sie können dies auch mit beliebigen anderen Plattformen testen, die von Azure Mobile Services unterstützt werden. 
 
 
-1. Öffnen Sie "MainPage.xaml.cs" in Visual Studio, und fügen Sie die folgende "using"-Anweisung oben in der Datei an.
+1. Öffnen Sie "MainPage.xaml.cs" in Visual Studio, und fügen Sie die folgende `using`-Anweisung oben in der Datei an.
  
         using System.Net.Http;
 
@@ -19,7 +19,7 @@ Die nachfolgenden Anweisungen gelten für das Aktualisieren einer Windows Store-
         }
 
 
-3. Aktualisieren Sie in der Datei "MainPage.xaml.cs" die "AuthenticateAsync-Methode, sodass die benutzerdefinierte API aufgerufen und zusätzliche Informationen über den Benutzer aus dem AAD zurückgegeben werden. 
+3. Aktualisieren Sie in der Datei "MainPage.xaml.cs" die `AuthenticateAsync`-Methode, sodass die benutzerdefinierte API aufgerufen und zusätzliche Informationen über den Benutzer aus dem AAD zurückgegeben werden. 
 
         private async System.Threading.Tasks.Task AuthenticateAsync()
         {
@@ -49,3 +49,4 @@ Die nachfolgenden Anweisungen gelten für das Aktualisieren einer Windows Store-
 
 
 4. Speichern Sie die Änderungen, und erstellen Sie den Dienst, um ihn auf Syntaxfehler zu überprüfen.  
+<!--HONumber=42-->

@@ -1,15 +1,15 @@
 ﻿
-1. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen. Starten Sie die App auf einem iOS-fähigen Gerät, und klicken Sie auf **OK**, um Pushbenachrichtigungen zu akzeptieren. Überprüfen Sie, ob Anmeldung und Authentifizierung erfolgreich verlaufen.
+1. Drücken Sie die Schaltfläche **Ausführen**, um das Projekt zu erstellen, und starten Sie die App auf einem iOS-fähigen Gerät, klicken Sie anschließend auf**OK**, um die Pushbenachrichtigungen zu akzeptieren. Stellen Sie sicher, dass die Anmeldung und Authentifizierung erfolgreich verlaufen.
 
   	![][23]
 
-    > [WACOM.NOTE]Pushbenachrichtigungen von Ihrer App müssen ausdrücklich akzeptiert werden. Diese Anforderung tritt nur bei der ersten Ausführung der App auf.
+    > [AZURE.NOTE] Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
-2. Geben Sie in der App einen sinnvollen Text ein, beispielsweise _Eine neue mobile Dienstaufgabe_ , und klicken Sie dann auf das Plussymbol (**+**).
+2. Geben Sie in der App einen sinnvollen Text, z. B. _Eine neue Mobile-Services-Aufgabe_ ein, und klicken Sie dann auf das Plus-(**+**)Zeichen.
 
   	![][24]
 
-3. Überprüfen Sie, ob Sie eine Benachrichtigung erhalten haben, und klicken Sie dann auf **OK**, um die Benachrichtigung zu schließen.
+3. Überprüfen Sie, ob eine Benachrichtigung empfangen wird, und klicken Sie anschließend auf **OK**, um die Benachrichtigung auszublenden.
 
   	![][25]
 
@@ -24,3 +24,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [25]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push3-ios.png
 [26]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push4-ios.png
 
+<!--HONumber=42-->

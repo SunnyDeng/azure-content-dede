@@ -1,12 +1,14 @@
 ﻿## Empfangen von Nachrichten mit EventProcessorHost
 
-[EventProcessorHost] ist eine .NET-Klasse, die dem Empfang von Ereignissen von Event Hubs durch die Verwaltung von permanenten Prüfpunkten vereinfacht und gleichzeitig die Ereignis-Hubs empfangen. Mit [EventProcessorHost] können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. Dieses Beispiel zeigt, wie [EventProcessorHost] für einen einzelnen Empfänger verwendet wird. Im [Beispiel "Skalieren der Ereignisverarbeitung] wird veranschaulicht, wie [EventProcessorHost] mit mehreren Empfängern verwendet wird.
+**EventProcessorHost** ist eine .NET-Klasse, die dem Empfang von Ereignissen von Event Hubs durch die Verwaltung von permanenten Prüfpunkten vereinfacht und gleichzeitig die Ereignis-Hubs empfangen. Mit **EventProcessorHost** können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. Dieses Beispiel zeigt, wie **EventProcessorHost** für einen einzelnen Empfänger verwendet wird. Im [Beispiel "Skalieren der Ereignisverarbeitung] wird veranschaulicht, wie **EventProcessorHost** mit mehreren Empfängern verwendet wird.
 
-Weitere Informationen zu Empfangsmustern von Ereignis-Hubs finden Sie unter [Übersicht über Ereignis-Hubs].
+Weitere Informationen zu Event Hubs finden Sie im [Event Hubs-Entwicklerhandbuch].
+
+[EventProcessorHost] ist eine .NET-Klasse, die dem Empfang von Ereignissen von Event Hubs durch die Verwaltung von permanenten Prüfpunkten vereinfacht und gleichzeitig die Ereignis-Hubs empfangen. Mit [EventProcessorHost] können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. Dieses Beispiel zeigt, wie [EventProcessorHost] für einen einzelnen Empfänger verwendet wird. Im [Beispiel "Skalieren der Ereignisverarbeitung] wird veranschaulicht, wie [EventProcessorHost] mit mehreren Empfängern verwendet wird.
 
 Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkonto] besitzen:
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und klicken Sie im unteren Teil des Bildschirms auf **NEW**.
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und klicken Sie dann im unteren Bereich des Bildschirms auf **NEU**.
 
 2. Klicken Sie auf**Data Services**, dann auf **Storage** und **Schnellerfassung**, und geben Sie dann einen Namen für das Speicherkonto ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Speicherkonto erstellen**.
 
@@ -26,7 +28,7 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 
 	Das Dialogfeld **NuGet-Pakete verwalten** wird geöffnet.
 
-6. Suchen Sie nach "Microsoft Azure Service Bus Event Hub - EventProcessorHost", klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen. 
+6. Suchen Sie nach `Microsoft Azure Service Bus Event Hub - EventProcessorHost`, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen. 
 
 	![][13]
 
@@ -67,23 +69,20 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 	            {
 	                string data = Encoding.UTF8.GetString(eventData.GetBytes());
 	                
-	                Console.WriteLine(string.Format("Message received.  Partition: '{0}', Data: '{2}'",
+	                Console.WriteLine(string.Format("Message received.  Partition: '{0}', Data: '{1}'",
 	                    context.Lease.PartitionId, data));
 	            }
 	
 	            //Call checkpoint every 5 minutes, so that worker can resume processing from the 5 minutes back if it restarts.
-	            if (this.checkpointStopWatch.Elapsed > TimeSpan.FromMinutes(5))
-	            {
-	                await context.CheckpointAsync();
-	                lock (this)
-	                {
-	                    this.checkpointStopWatch.Reset();
-	                }
-	            }
+	            if (this.checkpointStopWatch.Elapsed > TimeSpan.FromMinutes(5)) 
+                { 
+                    await context.CheckpointAsync(); 
+                    this.checkpointStopWatch.Restart(); 
+                } 
 	        }
 	    }
 
-	Diese Klasse wird von **EventProcessorHost** zur Verarbeitung der vom Ereignis-Hub empfangenen Ereignisse aufgerufen. Beachten Sie, dass die Klasse "SimpleEventProcessor" eine Stoppuhr verwendet, um in regelmäßigen Abständen die checkpoint-Methode für den **EventProcessorHost**-Kontext aufzurufen. Dadurch wird sichergestellt, dass der Empfänger bei einem Neustart maximal nur die Daten verlieren kann, die in den letzten fünf Minuten verarbeitet wurden.
+	Diese Klasse wird von **EventProcessorHost** zur Verarbeitung der vom Ereignis-Hub empfangenen Ereignisse aufgerufen. Beachten Sie, dass die Klasse `SimpleEventProcessor` eine Stoppuhr verwendet, um in regelmäßigen Abständen die checkpoint-Methode für den **EventProcessorHost**-Kontext aufzurufen. Dadurch wird sichergestellt, dass der Empfänger bei einem Neustart maximal nur die Daten verlieren kann, die in den letzten fünf Minuten verarbeitet wurden.
 
 8. Fügen Sie am Anfang der **Program**-Klasse die folgenden `using`-Anweisungen hinzu:
 
@@ -106,7 +105,7 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
         Console.WriteLine("Receiving. Press enter key to stop worker.");
         Console.ReadLine();
 
-> [AZURE.NOTE] Dieses Lernprogramm verwendet eine einzelne Instanz von [EventProcessorHost]. Um den Durchsatz zu erhöhen, wird empfohlen, dass Sie mehrere Instanzen von [EventProcessorHost] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung] gezeigt. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *alle* Ereignisse verarbieten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt worden sind. Weitere Informationen zu diesen Themen finden Sie unter [Übersicht über Ereignis-Hubs] und [Event Hubs Programming Guide].
+> [AZURE.NOTE] Dieses Lernprogramm verwendet eine einzelne Instanz von [EventProcessorHost]. Um den Durchsatz zu erhöhen, wird empfohlen, dass Sie mehrere Instanzen von [EventProcessorHost] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung] gezeigt. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *all* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt worden sind. Weitere Informationen zu diesen Themen finden Sie unter [Übersicht über Ereignis-Hubs] und [Event Hubs Programming Guide].
 
 <!-- Links -->
 [Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/de-de/library/azure/dn821413.aspx
@@ -121,4 +120,4 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-[Event Hubs Programming Guide]: http://msdn.microsoft.com/de-de/library/azure/dn789972.aspx
+[Event Hubs-Entwicklerhandbuch]: http://msdn.microsoft.com/de-de/library/azure/dn789972.aspx<!--HONumber=42-->

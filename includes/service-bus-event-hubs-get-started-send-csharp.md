@@ -13,9 +13,9 @@ In diesem Abschnitt schreiben wir eine Windows-Konsolenanwendung, um Ereignisse 
 
 	![][8]
 
-	Daraufhin wird das <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus/">NuGet-Paket Azure Service Bus library</a> mit allen Abhängigkeiten heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
+	Daraufhin wird das <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus/">NuGet-Paket "Azure Service Bus library"</a> mit allen Abhängigkeiten heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
 
-4. Fügen Sie die folgende `using`-Anweisung am Anfang der Datei **Program.cs** hinzu:
+4. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei **RegisterClient.cs** hinzu:
 
 		using Microsoft.ServiceBus.Messaging;
 
@@ -60,4 +60,4 @@ In diesem Abschnitt schreiben wir eine Windows-Konsolenanwendung, um Ereignisse 
 
 <!-- Images -->
 [7]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
-[8]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp2.png
+[8]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp2.png<!--HONumber=42-->

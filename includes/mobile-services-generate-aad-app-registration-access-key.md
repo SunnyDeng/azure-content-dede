@@ -1,32 +1,35 @@
-1.  Klicken Sie auf die Registerkarte **Anwendungen** auf Ihrer Verzeichnisseite im [Azure-Verwaltungsportal][Azure-Verwaltungsportal].
+﻿1. Klicken Sie auf die Registerkarte **Anwendungen** auf der Verzeichnisseite im [Azure-Verwaltungsportal](https://manage.windowsazure.com/).
+  
+2. Klicken Sie auf die Registrierung zu Ihrer integrierten Anwendung.
 
-2.  Klicken Sie auf die integrierte Anwendungsregistrierung.
-
-3.  Klicken Sie auf der Anwendungsseite auf **Konfigurieren**, und blättern Sie nach unten zum Abschntt **keys** der Seite.
-4.  Klicken Sie auf die Option für **1 Jahr** als Geltungsdauer des neuen Schlüssels. Klicken Sie dann auf **Speichern**, un im Portal wird der neue Schlüsselwert angezeigt.
-5.  Kopieren Sie **Client-D** und **Schlüssel**, die nach dem Speichern angezeigt werden. Beachten Sie, dass der Schlüsselwert nur einmal nach dem Speichern angezeigt wird.
+3. Klicken Sie auf der Anwendungsseite auf **Konfigurieren** und scrollen Sie nach unten zum **Schlüssel**-Abschnitt der Seite. 
+4. Klicken Sie auf **1 Jahr** als Dauer für einen neuen Schlüssel. Klicken Sie anschließend auf **Speichern** und das Portal zeigt den neuen Schlüsselwert an.
+5. Kopieren Sie die **Client-ID** und den **Schlüssel**, die/der nach dem Speichern angezeigt wird. Beachten Sie, dass der Schlüsselwert nach dem Speichern nur einmal angezeigt wird. 
 
     ![](./media/mobile-services-generate-aad-app-registration-access-key/client-id-and-key.png)
 
-6.  Blättern Sie zum Ende der Seite mit der integrierten Anwendungskonfiguration, aktivieren Sie die Berechtigung **Verzeichnisdaten lesen** für die Anwendung, und klicken Sie auf **Speichern**.
+6. Scrollen Sie nach unten bis zum Ende der Konfigurationsseite der integrierten Anwendung, und aktivieren Sie die Berechtigung **Verzeichnisdaten lesen** für die Anwendung, und klicken Sie auf **Speichern**.
 
     ![](./media/mobile-services-generate-aad-app-registration-access-key/app-perms.png)
 
-7.  Navigieren Sie im [Azure-Verwaltungsportal][Azure-Verwaltungsportal] zurück zu Ihrem mobilen Dienst, und klicken Sie auf die Registerkarte **Konfigurieren**. Blättern Sie nach unten zum Abschnitt **app settings**, fügen Sie die folgenden Anwendungseinstellungen hinzu, und klicken Sie auf **Speichern**.
+
+7. Navigieren Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) zurück zu Ihrem mobilen Dienst, und klicken Sie auf die Registerkarte **Konfigurieren**. Scrollen Sie nach unten zum Abschnitt **App-Einstellungen**, fügen Sie die folgenden App-Einstellungen hinzu, und klicken Sie auf **Speichern**. 
 
     <table border="1">
     <tr>
-    <th>Name der Anwendungseinstellung </th><th>Beschreibung                                                                                        </th>
+    <th>Name der App-Einstellung</th><th>Beschreibung</th>
     </tr>
     <tr>
-    <td> AAD_CLIENT_ID  </td><td>Die Client-ID, die Sie im vorigen Schritt aus der integrierten Anwendung kopiert haben.</td>
+    <td>AAD_CLIENT_ID</td><td>Die Benutzer-ID, die Sie in den vorhergehenden Schritten aus der integrierten App kopiert haben.</td>
     </tr>
     <tr>
-    <td> AAD_CLIENT_KEY</td><td>Der Anwendungsschlüssel, den Sie in der integrierten AAD-Anwendung im Schritt oben generiert haben. </td>
+    <td>AAD_CLIENT_KEY</td><td>Der App-Schlüssel, den Sie in den vorhergehenden Schritten in der AAD-integrierten App generiert haben.</td>
     </tr>
     <tr>
-    <td>AAD_TENANT_DOMAIN  </td><td>Ihr AAD-Domänenname. Dieser sollte so ähnlich lauten wie "meineDomäne.onmicrosoft.com"  </td>
+    <td>AAD_TENANT_DOMAIN</td><td>Ihr AAD-Domänenname. Dieser sollte "mydomain.onmicrosoft.com" entsprechen.</td>
     </tr>
     </table><br/>
 
+ 
     ![](./media/mobile-services-generate-aad-app-registration-access-key/aad-app-settings.png)
+  <!--HONumber=42-->

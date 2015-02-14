@@ -6,7 +6,8 @@ Die nachfolgenden Anweisungen und Screenshots gelten für das Testen eines Windo
 
     ![](./media/mobile-services-aad-graph-info-test-app/bob-login.png)
 
-2. Die benutzerdefinierte API wird ausgeführt und gibt die Informationen aus dem Benutzerverzeichnis in einer benutzerdefinierten Grußmeldung zurück. In diesem Beispiel muss der Benutzer *streetAddress*, *city*, *state* and *postalCode* angegeben haben, damit die Adresse des Benutzers angezeigt wird.
+2. Die benutzerdefinierte API wird ausgeführt und gibt die Informationen aus dem Benutzerverzeichnis in einer benutzerdefinierten Grußmeldung zurück. In diesem Beispiel muss der Benutzer *streetAddress*, *city*, *state* und *postalCode* angegeben haben, damit die Adresse des Benutzers angezeigt wird.
 
     ![](./media/mobile-services-aad-graph-info-test-app/custom-greeting.png)
 
+<!--HONumber=42-->

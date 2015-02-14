@@ -4,11 +4,11 @@ Zusätzlich zu den hier gezeigten Beispielen bietet Twilio webbasierte APIs, mit
 <h2><a id="NextSteps"></a>Nächste Schritte</h2>
 Nachdem Sie nun mit den Grundlagen des Twilio-Dienstes vertraut sind, finden Sie unter diesen Links weitere Informationen:
 
-* [Twilio Security Guidelines] [twilio_security_guidelines]
-* [Twilio HowTos and Example Code] [twilio_howtos]
-* [Twilio Quickstart Tutorials][twilio_quickstarts] 
-* [Twilio on GitHub] [twilio_on_github]
-* [Talk to Twilio Support] [twilio_support]
+* [Twilio-Sicherheitsrichtlinien] [twilio_security_guidelines]
+* [Twilio-Anleitungen und Beispielcode] [twilio_howtos]
+* [Twilio-Schnellstart-Lernprogramme][twilio_quickstarts] 
+* [Twilio auf GitHub] [twilio_on_github]
+* [Kontakt zum Twilio-Support] [twilio_support]
 
 [twilio_api_documentation]: http://www.twilio.com/api
 [twilio_security_guidelines]: http://www.twilio.com/docs/security
@@ -18,3 +18,4 @@ Nachdem Sie nun mit den Grundlagen des Twilio-Dienstes vertraut sind, finden Sie
 [twilio_quickstarts]: http://www.twilio.com/docs/quickstart
 
 
+<!--HONumber=42-->

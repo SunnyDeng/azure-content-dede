@@ -1,3 +1,3 @@
-﻿Beschriftungen vom KDD Cup 2009 (Kundenbeziehungsprognose, <a href="http://www.sigkdd.org/site/2009/files/orange_small_train_churn.labels">orange_small_train_churn.labels</a>).
+﻿Beschriftungen vom KDD Cup 2009 (Kundenbeziehungsprognose (<a href="http://www.sigkdd.org/site/2009/files/orange_small_train_churn.labels">orange_small_train_churn.labels</a>).
 
-<!--HONumber=35.1-->
+<!--HONumber=42-->

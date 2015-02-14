@@ -1,7 +1,7 @@
 ﻿
-Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass Elemente in Mobile Services anstatt in einer lokalen Sammlung gespeichert werden.
+Jetzt, da Ihr mobiler Dienst bereit ist, können Sie die App aktualisieren, um Elemente in Mobile Services anstatt in der lokalen Sammlung zu speichern.
 
-1. Sofern Sie das [Mobile Services iOS SDK](https://go.microsoft.com/fwLink/p/?LinkID=266533) noch nicht installiert haben, installieren Sie es jetzt. Kopieren Sie nach der Installation das Verzeichnis "WindowsAzureMobileServices.framework", und überschreiben Sie damit das Verzeichnis "WindowsAzureMobileServices.framework" aus dem heruntergeladenen Projekt. Auf diese Weise wird sichergestellt, dass Sie das neueste Azure Mobile Services SDK verwenden.
+1. Installieren Sie jetzt [Mobile Services iOS SDK](https://go.microsoft.com/fwLink/p/?LinkID=266533), falls Sie dies noch nicht installiert haben. Kopieren Sie nach der Installation das Verzeichnis "WindowsAzureMobileServices.framework", und überschreiben Sie das Verzeichnis "WindowsAzureMobileServices.framework" aus dem heruntergeladenen Projekt. Auf diese Weise verwenden Sie das neueste Azure Mobile Services SDK.
 
 2. Suchen Sie in der Datei "TodoService.h" die folgende Codezeile mit vorangestellten Kommentarzeichen:
 
@@ -23,9 +23,9 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 
    	Dadurch wird eine Eigenschaftsdarstellung für die Tabelle der mobilen Dienste erstellt.
 
-4. Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+4. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
 
-5. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie die **Site-URL**. Klicken Sie anschließend auf **Schlüssel verwalten,**, und notieren Sie sich den **Anwendungsschlüssel**.
+5. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site URL**. Klicken Sie anschließend auf **Schlüssel verwalten**, und notieren Sie sich den **Anwendungsschlüssel**.
 
    	![](./media/mobile-services-ios-enable-mobile-service-access/mobile-dashboard-tab.png)
 
@@ -41,7 +41,7 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 
     Hierdurch wird eine Instanz des Mobile Services-Client erstellt.
 
-7. Ersetzen Sie die Werte von **APPURL** und **APPKEY** in diesem Code durch die URL und den Anwendungsschlüssel aus dem mobilen Dienst, den Sie in Schritt 6 bezogen haben.
+7. Ersetzen Sie die Werte von **APPURL** und **APPKEY** in diesem Code durch die URL und den Anwendungsschlüssel aus dem mobilen Dienst, die Sie in Schritt 6 bekommen haben.
 
 8. Ermitteln Sie die folgende kommentierte Codezeile:
 
@@ -67,7 +67,7 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 
         // Query the TodoItem table and update the items property with the results from the service
 
-   	Ersetzen Sie diesen Kommentar und den nachfolgenden **completion**-Blockaufruf durch den folgenden Code:
+   	Ersetzen Sie diesen Kommentar und den nachfolgenden Blockaufruf **Abschließen** durch den folgenden Code:
 
         [self.table readWhere:predicate completion:^(NSArray *results, NSInteger totalCount, NSError *error)
 		{
@@ -75,7 +75,7 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
            completion();
         }];
 
-11. Suchen Sie die **addItem**-Methode, und ersetzen Sie den Text der Methode durch den folgenden Code:
+11. Ermitteln Sie die Methode **AddItem**, und ersetzen Sie den Text der Methode durch den folgenden Code:
 
         // Insert the item into the TodoItem table and add to the items array on completion
         [self.table insert:item completion:^(NSDictionary *result, NSError *error) {
@@ -88,7 +88,7 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 
     Dieser Code sendet eine Einfügeanforderung an den mobilen Dienst.
 
-12. Suchen Sie in der **completeItem**-Methode die folgende Codezeile mit vorangestellten Kommentarzeichen:
+12. Ermitteln Sie die Methode **CompleteItem**, und ermitteln Sie die folgende kommentierte Codezeile:
 
         // Update the item in the TodoItem table and remove from the items array on completion
 
@@ -106,9 +106,9 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
             completion(index);
 	    }];
 
-   	Durch diesen Code werden die TodoItems entfernt, nachdem diese als abgeschlossen markiert sind.
+   	Durch diesen Code werden TodoItems entfernt, wenn sie als abgeschlossen gekennzeichnet sind.
 
-13. Suchen Sie in der Datei "TodoListController.m" die **onAdd**-Methode, und überschreiben Sie sie mit folgendem Code:
+13. Ermitteln Sie in "TodoListController.m" die Methode **OnAdd**, und überschreiben Sie diese mit dem folgenden Code:
 
       - (IBAction)onAdd:(id)sender
       {
@@ -131,3 +131,4 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 
 
 Nachdem nun die App für die Verwendung von Mobile Services als Back-End-Speicher aktualisiert ist, können Sie die App mit Mobile Services testen.
+<!--HONumber=42-->

@@ -6,20 +6,20 @@
 	
    	![mobile-data-tab-empty](./media/mobile-services-create-new-service-data-2/mobile-data-tab-empty.png)
 
-Das Dialogfeld **Neue Tabelle erstellen** wird angezeigt.
+   	Das Dialogfeld **Neue Tabelle erstellen** wird angezeigt.
 
-3. Geben Sie in **Tabellenname** den Namen _TodoItem_ ein, und klicken Sie auf die Schaltfläche "Prüfen".
+3. Geben Sie unter **Tabellenname** "_TodoItem_" ein, und klicken Sie auf das Kontrollkästchen.
 
  	![mobile-create-todoitem-table](./media/mobile-services-create-new-service-data-2/mobile-create-todoitem-table.png)
 
-Daraufhin wird eine neue Speichertabelle namens **TodoItem** mit Standardberechtigungen erstellt. Dies bedeutet, dass jeder mit dem Anwendungsschlüssel (der mit Ihrer App verteilt wird) auf die Daten in der Tabelle zugreifen und diese ändern kann. 
+  Dadurch wird die neue Speichertabelle **TodoItem** mit Standardberechtigungen erstellt. Dies bedeutet, dass jeder mit dem Anwendungsschlüssel (der mit Ihrer App verteilt wird) auf die Daten in der Tabelle zugreifen und diese ändern kann. 
 
-> [WACOM.NOTE] 
-> Der gleiche Tabellenname wird in Mobile Services-Quickstart verwendet. Jede Tabelle wird jedoch in einem Schema erstellt, das für einen bestimmten mobilen Dienst gilt. Auf diese Weise werden Datenkollisionen verhindert, wenn mehrere mobile Dienste dieselbe Datenbank verwenden.
+> [AZURE.NOTE] 
+> Der gleiche Tabellenname wird in Mobile Services-Quickstart verwendet. Jede Tabelle wird jedoch in einem Schema erstellt, das für einen bestimmten mobilen Dienst gilt. Dadurch soll verhindert werden, dass es zu Datenkollisionen kommt, wenn mehrere mobile Dienste dieselbe Datenbank verwenden.
 
-4. Klicken Sie auf die neue **TodoItem**-Tabelle, und vergewissern Sie sich, dass sie keine Datenzeilen enthält.
+4. Klicken Sie auf die neue Tabelle **TodoItem**, und überprüfen Sie, dass keine Datenzeilen vorhanden sind.
 
-5. Klicken Sie auf die Registerkarte**Spalten**. Überprüfen Sie, dass folgende Standardspalten automatisch erstellt werden: 
+5. Klicken Sie auf die Registerkarte **Spalten**. Überprüfen Sie, dass folgende Standardspalten automatisch erstellt werden: 
 	
 	<table border="1" cellpadding="10">
  	<tr>
@@ -50,11 +50,10 @@ Daraufhin wird eine neue Speichertabelle namens **TodoItem** mit Standardberecht
  	</table> 	
 		
 
-Dies ist die Mindestanforderung für eine Tabelle in Mobile Services. 
+  	Dies ist die Mindestanforderung für eine Tabelle in Mobile Services. 
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Wenn für Ihren mobilen Dienst das dynamische Schema aktiviert ist, werden neue Spalten immer dann automatisch erstellt, wenn JSON-Objekte über einen Einfüge- oder Aktualisierungsvorgang an den mobilen Dienst gesendet werden.</p>
-    </div>
+    > [AZURE.NOTE] Wenn für Ihren mobilen Dienst das dynamische Schema aktiviert ist, werden neue Spalten immer dann automatisch erstellt, wenn JSON-Objekte über einen Einfüge- oder Aktualisierungsvorgang an den mobilen Dienst gesendet werden.
 
 Sie können den neuen mobilen Dienst nun als Datenspeicher für die App verwenden.
 
+<!--HONumber=42-->

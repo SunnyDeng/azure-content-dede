@@ -1,6 +1,20 @@
-<properties urlDisplayName="Web App with Storage" pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="Ein Lernprogramm, das auf dem Lernprogramm Web App mit Express basiert und Azure-Speicherdienste sowie das Azure-Modul hinzufügt." metaCanonical="" services="cloud-services,storage" documentationCenter="nodejs" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="wpickett" editor="" />
+﻿<properties 
+	pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure" 
+	description="Ein Lernprogramm, das auf der Web-App mit dem Express-Lernprogramm basiert, und Azure-Speicherdienste sowie das Azure-Modul hinzufügt." 
+	services="cloud-services, storage" 
+	documentationCenter="nodejs" 
+	authors="MikeWasson" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="mwasson" />
+<tags 
+	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="09/17/2014" 
+	ms.author="mwasson"/>
 
 
 
@@ -9,12 +23,11 @@
 
 # Node.js-Webanwendung mit Speicher
 
-In diesem Lernprogramm erweitern Sie die Anwendung aus dem Lernprogramm [Node.js Web Application using Express], indem Sie die WindowsAzure-Clientbibliotheken für Node.js für die Arbeit mit Datenverwaltungsdiensten verwenden. Sie werden Ihre Anwendung erweitern und eine webbasierte Anwendung mit Aufgabenlisten erstellen, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren.
+In diesem Lernprogramm erweitern Sie die Anwendung aus dem Lernprogramm [Node.js Web Application using Express], indem Sie die Microsoft Azure-Clientbibliotheken für Node.js für die Arbeit mit Datenverwaltungsdiensten verwenden. Sie werden Ihre Anwendung erweitern und eine webbasierte Anwendung mit Aufgabenlisten erstellen, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren.
 
 Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Node.js oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure].
 
-Dieses Lernprogramm setzt voraus, dass Sie die Lernprogramme [Node.js Web
-Application] und [Node.js with Express][Node.js Web Application using Express] abgeschlossen haben.
+In diesem Lernprogramm wird davon ausgegangen, dass Sie die [Node.js Web Application] und [Node.js with Express][Node.js Web Application using Express]-Lernprogramme bereits durchlaufen haben.
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -27,16 +40,14 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ## Einstellen der Speicher-Anmeldeinformationen in Web.Config
 
-Sie müssen die Speicher-Anmeldeinformationen übergeben, um auf den Azure-Speicher zugreifen zu können. Verwenden Sie dazu die Anwendungseinstellungen in der Datei web.config. Diese Einstellungen werden als Umgebungsvariablen an Node übergeben und anschließend vom Azure SDK gelesen.
+Sie müssen die Speicher-Anmeldeinformationen übergeben, um auf den Azure-Speicher zugreifen zu können. Verwenden Sie dazu die Anwendungseinstellungen in der Datei web.config.
+Diese Einstellungen werden als Umgebungsvariablen an Node übergeben und anschließend vom Azure SDK gelesen.
 
-<div class="dev-callout">
-<strong>Hinweis</strong>
-<p>Die Speicher-Anmeldeinformationen werden nur verwendet, wenn die Anwendung in Azure bereitgestellt wird. Bei der Ausführung im Emulator verwendet die Anwendung den Speicheremulator.</p>
-</div>
+> [AZURE.NOTE] Die Speicher-Anmeldeinformationen werden nur verwendet, wenn die Anwendung in Azure bereitgestellt wird. Bei der Ausführung im Emulator verwendet die Anwendung den Speicheremulator.
 
 Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicherkontos abzurufen und zu den web.config-Einstellungen hinzuzufügen:
 
-1.  Öffnen Sie die Azure PowerShell im **Start**-Menü, indem Sie **All Programs, Azure** erweitern, mit der rechten Maustaste auf **Azure PowerShell** klicken und anschließend **Run As Administrator** auswählen.
+1.  Wenn es nicht bereits geöffnet ist, starten Sie Azure PowerShell aus dem **Start**-Menü, indem Sie **Alle Programme, Azure** erweitern, **Azure PowerShell** per Rechtsklick öffnen, und dann **Als Administrator ausführen** auswählen.
 
 2.  Wechseln Sie in den Ordner, der Ihre Anwendung enthält. Zum Beispiel C:\\node\\tasklist\\WebRole1.
 
@@ -46,16 +57,13 @@ Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicher
 
 	Dieser Befehl ruft eine Liste der Speicherkonten und Kontoschlüssel Ihres gehosteten Dienstes ab.
 
-	<div class="dev-callout">
-	<strong>Hinweis</strong>
-	<p>Da das Azure SDK beim Bereitstellen eines Dienstes ein Speicherkonto erstellt, sollten Sie bereits von den Bereitstellungen Ihrer Anwendung aus den vorherigen Lernprogrammen ein Speicherkonto besitzen.</p>
-	</div>
+	> [AZURE.NOTE] Da das Azure SDK beim Bereitstellen eines Dienstes ein Speicherkonto erstellt, sollten Sie bereits von den Bereitstellungen Ihrer Anwendung aus den vorherigen Lernprogrammen ein Speicherkonto besitzen.
 
-4.  Öffnen Sie die Date **ServiceDefinition.csdef** mit den Umgebungseinstellungen, die bei der Bereitstellung der Anwendung in Azure verwendet werden:
+4.  Öffnen Sie die Datei **ServiceDefinition.csdef** mit den Umgebungseinstellungen, die bei der Bereitstellung der Anwendung in Azure verwendet werden:
 
         PS C:\node\tasklist> notepad ServiceDefinition.csdef
 
-5.  Fügen Sie den folgenden Block unter dem **Environment**-Element ein, und ersetzen Sie {STORAGE ACCOUNT} und {STORAGE ACCESS KEY} durch den Kontonamen und den primären Schlüssel des Speicherkontos, das Sie für die Bereitstellung verwenden möchten:
+5.  Fügen Sie den folgenden Block unter dem Element **Umgebung** ein, und ersetzen Sie {STORAGE ACCOUNT} und {STORAGE ACCESS KEY} durch den Kontonamen und den Primärschlüssel für das Speicherkonto, das für die Bereitstellung verwendet werden soll:
 
         <Variable name="AZURE_STORAGE_ACCOUNT" value="{STORAGE ACCOUNT}" />
         <Variable name="AZURE_STORAGE_ACCESS_KEY" value="{STORAGE ACCESS KEY}" />
@@ -66,9 +74,9 @@ Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicher
 
 ###Installieren zusätzlicher Module
 
-2. Verwenden Sie folgenden Befehl zur lokalen Installation der Module [azure], [node-uuid], [nconf] und [async] sowie um für diese einen Eintrag in der Datei **package.json** zu speichern:
+2. Verwenden Sie den folgenden Befehl zum lokalen Installieren der [azure], [node-uuid], [nconf] and [async]-Module, und um für diese einen Eintrag zur **package.json**-Datei zu speichern:
 
-		PS C:\node\tasklist\WebRole1> npm install azure-storage node-uuid async nconf --save
+	    PS C:\node\tasklist\WebRole1> npm install azure-storage node-uuid async nconf --save
 
 	Die Ausgabe dieses Befehls sollte ungefähr wie folgt aussehen:
 
@@ -91,15 +99,15 @@ Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicher
 
 ##Verwenden des Tabellendiensts in einer Node-Anwendung
 
-In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Grundanwendung, indem Sie die Datei **task.js** hinzufügen, die das Modell für Ihre Aufgaben enthält. Außerdem ändern Sie die vorhandene Datei **app.js** und erstellen eine neue Datei **tasklist.js**, die das Modell verwendet.
+In diesem Abschnitt erweitern Sie die durch den Befehl **Express** erstellte Grundanwendung, indem Sie die Datei **task.js** hinzufügen, die das Modell für Ihre Aufgaben enthält. Außerdem ändern Sie die vorhandene **app.js**, und erstellen Sie eine neue **tasklist.js**-Datei, die das Modell verwendet.
 
 ### Erstellen des Modells
 
-1. Erstellen Sie im Verzeichnis **WebRole1** ein neues Verzeichnis namens **models**.
+1. Erstellen Sie ein neues Verzeichnis namens **Modelle** im Verzeichnis **WebRole1**.
 
-2. Erstellen Sie im Verzeichnis **WebRole1** ein neues Verzeichnis namens **models**. Diese Datei enthält das Modell für die von Ihrer Anwendung erstellten Aufgaben.
+2. Erstellen Sie im Verzeichnis **models** eine neue Datei namens **task.js**. Diese Datei enthält das Modell für die von Ihrer Anwendung erstellten Aufgaben.
 
-3. Fügen Sie am Anfang der Datei **task.js** den folgenden Code hinzu, um auf die erforderlichen Bibliotheken zu verweisen:
+3. Fügen Sie am Anfang der **task.js**-Datei den folgenden Code hinzu, um auf die erforderlichen Bibliotheken zu verweisen:
 
         var azure = require('azure-storage');
   		var uuid = require('node-uuid');
@@ -176,9 +184,9 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 
 ###Erstellen des Controllers
 
-1. Erstellen Sie im Verzeichnis **WebRole1/routes** eine neue Datei namens **tasklist.js**, und öffnen Sie sie in einem Text-Editor.
+1. Im Verzeichnis **WebRole1/routes** erstellen Sie eine neue Datei namens **tasklist.js**, und öffnen Sie diese in einem Text-Editor.
 
-2. Fügen Sie **tasklist.js**den folgenden Code hinzu. Hierdurch werden die Module "azure" und "async" geladen, die von **tasklist.js**. Weiterhin wird hierdurch die Funktion **TaskList** definiert, an die eine Instanz des zuvor definierten **Task**-Objekts übergeben wird:
+2. Fügen Sie **tasklist.js** den folgenden Code hinzu. Hierdurch werden die Module "azure" und "async" geladen, die von **tasklist.js** verwendet werden. Weiterhin wird hierdurch die Funktion **TaskList** definiert, an die eine Instanz des zuvor definierten **Task**-Objekts übergeben wird:
 
 		var azure = require('azure-storage');
 		var async = require('async');
@@ -189,7 +197,7 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 		  this.task = task;
 		}
 
-2. Fügen Sie außerdem zur Datei **tasklist.js** die Methoden **showTasks**, **addTask** und **completeTasks** hinzu:
+2. Fügen Sie außerdem zur Datei **tasklist.js** die Methoden **showTasks****, addTask** und **completeTasks** hinzu:
 
 		TaskList.prototype = {
 		  showTasks: function(req, res) {
@@ -250,7 +258,7 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 		app.use('/', routes);
 		app.use('/users', users);
 
-	Ersetzen Sie die vorstehenden Zeilen durch den nachfolgenden Code. Hierdurch wird eine Instanz von <strong>Aufgabe</strong> mit einer Verbindung zu Ihrem Speicherkonto initialisiert. Diese wird an die <strong>TaskList</strong>übergeben, die darüber mit dem Tabellendienst kommuniziert:
+	Ersetzen Sie die vorstehenden Zeilen durch den nachfolgenden Code. Hierdurch wird eine Instanz von <strong>Task</strong> mit einer Verbindung zu Ihrem Speicherkonto initialisiert. Diese wird an die <strong>TaskList</strong> übergeben, die darüber mit dem Tabellendienst kommuniziert:
 
 		var TaskList = require('./routes/tasklist');
 		var Task = require('./models/task');
@@ -265,9 +273,9 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 
 ###Ändern der Indexansicht
 
-1. Wechseln Sie zum Verzeichnis **views**, und öffnen Sie die Datei **index.jade** in einem Texteditor.
+1. Wechseln Sie zum Verzeichnis **Ansichten**, und öffnen Sie die Datei **index.jade** in einem Texteditor.
 
-2. Ersetzen Sie den Inhalt der Datei **index.jade** durch den folgenden Code. Damit werden die Ansicht zur Anzeige vorhandener Aufgaben sowie ein Formular für das Hinzufügen neuer Aufgaben und das Markieren von vorhandenen Aufgaben als abgeschlossen definiert.
+2. Ersetzen Sie den Inhalt der **index.jade** Datei durch den folgenden Code. Damit werden die Ansicht zur Anzeige vorhandener Aufgaben sowie ein Formular für das Hinzufügen neuer Aufgaben und das Markieren von vorhandenen Aufgaben als abgeschlossen definiert.
 
 		extends layout
 
@@ -310,11 +318,11 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 
 ###Modifizieren des globalen Layouts
 
-Die Datei **layout.jade** im Verzeichnis **views** dient als globale Vorlage für andere **.jade**-Dateien. In diesem Schritt werden Sie sie modifizieren, damit [Twitter Bootstrap](https://github.com/twbs/bootstrap)verwendet wird, ein Toolkit zum mühelosen Gestalten ansprechender Websites.
+Die Datei **layout.jade** im Verzeichnis **Ansichten** dient als globale Vorlage für andere **.jade**-Dateien. In diesem Schritt werden Sie sie modifizieren, um [Twitter Bootstrap](https://github.com/twbs/bootstrap) zu verwenden, ein Toolkit zum mühelosen Gestalten ansprechender Websites.
 
-1. Laden Sie die Dateien für [Twitter Bootstrap](http://getbootstrap.com/). Kopieren Sie die Datei **bootstrap.min.css** aus dem Ordner **bootstrap\\dist\\css** in das Verzeichnis **public\\stylesheets** Ihrer tasklist-Anwendung.
+1. Laden Sie die Dateien für [Twitter Bootstrap](http://getbootstrap.com/) herunter, und extrahieren Sie sie. Kopieren Sie die Datei **bootstrap.min.css** aus dem Ordner **bootstrap\\dist\\css** in das Verzeichnis **public\\stylesheets** Ihrer tasklist-Anwendung.
 
-2. Öffnen Sie im Ordner **views** die Datei **layout.jade** in einem Texteditor, und ersetzen Sie den Inhalt durch Folgendes:
+2. Öffnen Sie im Ordner **Ansichten** die Datei **layout.jade** in einem Texteditor, und ersetzen Sie den Inhalt durch Folgendes:
 
 		doctype html
 		html
@@ -368,13 +376,14 @@ Nach Abschluss der Bereitstellung sollten Sie eine Ausgabe ähnlich der folgende
 
 Da Sie wie auch zuvor die Option **-launch** angegeben haben, öffnet sich der Browser mit Ihrer Anwendung in Azure nach Abschluss der Veröffentlichung.
 
-![Ein Browserfenster, das die My Task List-Seite anzeigt. Die URL zeigt an, dass die Seite nun in Azure gehostet wird.](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
+![A browser window displaying the My Task List page. The URL indicates the page is now being hosted on Azure.](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
 
 ## Anhalten und Löschen Ihrer Anwendung
 
 Nach der Bereitstellung der Anwendung empfiehlt es sich, diese zu deaktivieren, damit Sie andere Anwendungen im Rahmen der kostenlosen Serverzeit erstellen und bereitstellen können.
 
-Azure berechnet Webrolleninstanzen pro Stunde verbrauchter Serverzeit. Die Serverzeit wird verbraucht, sobald Ihre Anwendung bereitgestellt wurde, selbst wenn die Instanzen nicht ausgeführt werden und gestoppt wurden.
+Azure berechnet Webrolleninstanzen pro Stunde verbrauchter Serverzeit.
+Die Serverzeit wird verbraucht, sobald Ihre Anwendung bereitgestellt wurde, selbst wenn die Instanzen nicht ausgeführt werden und gestoppt wurden.
 
 In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und löschen.
 
@@ -384,7 +393,7 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
 
 	Das Stoppen des Diensts kann einige Minuten dauern. Wenn der Dienst gestoppt wurde, erhalten Sie eine entsprechende Nachricht.
 
-3.  Um den Dienst zu löschen, rufen Sie folgendes Cmdlet auf:
+2.  Um den Dienst zu löschen, rufen Sie folgendes Cmdlet auf:
 
         PS C:\node\tasklist\WebRole1> Remove-AzureService contosotasklist
 
@@ -392,9 +401,8 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
 
 	Das Löschen des Diensts kann einige Minuten dauern. Nachdem der Dienst gelöscht wurde, erhalten Sie eine entsprechende Nachricht.
 
-  [Node.js-Webanwendung mit Speicher]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/web-app-with-express/
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-  [Node.js-Webanwendung]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/
+  [Node.js Web Application using Express]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/web-app-with-express/
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+  [Node.js Web Application]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/
  
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

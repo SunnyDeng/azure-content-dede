@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Get Started" pageTitle="Erstellen und Abfragen von HBase-Tabellen mit Hive in HDInsight | Azure" metaKeywords="" description="Erste Schritte mit HBase mit Hadoop in HDInsight. Erfahren Sie, wie Sie HBase Tabellen erstellen und sie mithilfe von Hive abfragen." metaCanonical="" services="hdinsight" documentationCenter="" title="Set up HBase clusters and query them using Hive on Hadoop in HDInsight" authors="bradsev" solutions="big-data" manager="paulettm" editor="cgronlun" />
+﻿<properties 
+	pageTitle="Erstellen und Abfragen von HBase-Tabellen mit Hive in HDInsight | Azure" 
+	description="Erste Schritte mit HBase mit Hadoop in HDInsight. Erfahren Sie, wie Sie HBase Tabellen erstellen und sie mithilfe von Hive abfragen." 
+	services="hdinsight" 
+	documentationCenter="" 
+	authors="bradsev" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/9/2014" ms.author="bradsev" />
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="1/7/2015" 
+	ms.author="bradsev"/>
 
 
 
@@ -15,44 +29,38 @@ Erfahren Sie, wie Sie HBase-Tabellen mit Hive für Hadoop in HDInsight erstellen
 * [Bereitstellen von HBase-Clustern mithilfe des Azure-Verwaltungsportals](#create-hbase-cluster)
 * [Verwalten von HBase-Tabellen mit der HBase-Shell](#create-sample-table)
 * [Abfragen von HBase-Tabellen mit HiveQL](#hive-query)
-* [Verwalten von HBase-Tabellen mit der Microsoft-HBase-REST-Clientbibliothek](#hbase-powershell)
+* [Verwalten von HBase-Tabellen mit der Microsoft HBase REST-Clientbibliothek](#hbase-powershell)
 * [Siehe auch](#seealso)
 
 ##<a name="hbaseintro"></a>Was ist HBase?
 
-HBase ist eine NoSQL-Datenbank mit niedriger Latenz und ermöglicht die Onlinetransaktionsverarbeitung großer Datenmengen. HBase ist als verwalteter Cluster integriert in die Azure-Umgebung verfügbar. Die Cluster sind so konfiguriert, dass sie Daten direkt in den Azure-Blob-Speicher speichern. Dies sorgt für geringe Latenz und mehr Flexibilität bei Entscheidungen bezüglich Leistung und Kosten. So können Kunden interaktive Websites erstellen, die mit großen Datensätzen arbeiten, und Dienste entwickeln, die Sensor- und Telemetriedaten aus Millionen von Endpunkten speichern. Diese Daten können dann mit Hadoop-Jobs analysiert werden. Weitere Informationen zu HBase und den Szenarien, für die es verwendet werden kann, finden Sie in der [Übersicht zu HDInsight HBase](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-hbase-overview/).
+HBase ist eine NoSQL-Datenbank mit niedriger Latenz und ermöglicht die Onlinetransaktionsverarbeitung großer Datenmengen. HBase ist als verwalteter Cluster integriert in die Azure-Umgebung verfügbar. Die Cluster sind so konfiguriert, dass sie Daten direkt in den Azure-Blob-Speicher speichern. Dies sorgt für geringe Latenz und mehr Flexibilität bei Entscheidungen bezüglich Leistung und Kosten. So können Kunden interaktive Websites erstellen, die mit großen Datensätzen arbeiten, und Dienste entwickeln, die Sensor- und Telemetriedaten aus Millionen von Endpunkten speichern. Diese Daten können dann mit Hadoop-Jobs analysiert werden. Weitere Informationen zu HBase und den Szenarien, für die es verwendet werden kann, finden Sie unter [Überblick zu HDInsight HBase][hdinsight-hbase-overview].
 
-> [WACOM.NOTE] HBase (Version 0.98.0) ist nur für HDInsight-Cluster der Version 3.1 in HDInsight verfügbar (basiert auf Apache Hadoop und YARN 2.4.0). Versionshinweise finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen?][hdinsight-versions]
+> [AZURE.NOTE] HBase (Version 0.98.0) ist nur für HDInsight-Cluster der Version 3.1 in HDInsight verfügbar (basiert auf Apache Hadoop und YARN 2.4.0). Versionshinweise finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen][hdinsight-versions].
 
 ##<a name="prerequisites"></a>Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement** Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][azure-purchase-options], [Spezielle Angebote][azure-member-offers] oder [Kostenlose Testversion][azure-free-trial].
+- **Ein Azure-Abonnement** Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][azure-purchase-options], [Angebote für Mitglieder][azure-member-offers] oder [Kostenlose Testversion][azure-free-trial].
 - **Ein Azure-Speicherkonto** Anweisungen finden Sie unter [Erstellen eines Speicherkontos][azure-create-storageaccount].
-- **Eine Workstation** mit installiertem Visual Studio 2013. Anweisungen finden Sie unter [Installieren von Visual Studio](http://msdn.microsoft.com/de-de/library/e2h7fzkw.aspx).
-- Laden Sie die [Microsoft-HBase-REST-Clientbibliothek für .NET herunter](https://github.com/hdinsight/hbase-sdk-for-net). 
-
+- **Eine Workstation** mit installiertem Visual Studio 2013 Anweisungen finden Sie unter [Installieren von Visual Studio](http://msdn.microsoft.com/de-de/library/e2h7fzkw.aspx)
 
 ##<a name="create-hbase-cluster"></a>Bereitstellen eines HBase-Clusters im Azure-Portal
 
-Dieser Abschnitt beschreibt die Bereitstellung eines HBase-Clusters im Azure-Portal.
+Dieser Abschnitt beschreibt die Bereitstellung eines HBase-Clusters im Azure-Verwaltungsportal.
 
 
-[WACOM.INCLUDE [Hinweis zur Bereitstellung](../includes/hdinsight-provisioning.md)]
+[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
 **So stellen Sie einen HDInsight-Cluster im Azure-Portal bereit** 
 
 
-1. Melden Sie sich am [Azure-Verwaltungsportal ][azure-management-portal] an. 
-
-2. Klicken Sie links auf **HDInsight**, um den Status der Cluster in Ihrem Konto anzuzeigen, und klicken Sie dann links unten auf das Symbol **+NEU**. 
-
-	![Creating an HBase cluster in HDInsight in the Azure portal.](http://i.imgur.com/PmGynKZ.jpg)
-
-3. Klicken Sie auf das HDInsight-Symbol in der zweiten Spalte von links und anschließend auf die HBase-Optionen in der nächsten Spalte. Geben Sie die Werte für CLUSTERNAME und CLUSTERGRÖSSE den Namen des Speicherkontos und ein Kennwort für das neue HBase-Cluster ein.
+1. Melden Sie sich beim [Azure-Verwaltungsportal][azure-management-portal] an. 
+2. Klicken Sie unten links auf **NEU** und dann auf **DATENDIENSTE**, **HDINSIGHT** und **HBASE**. 
+3. Geben Sie **CLUSTERNAME**, **CLUSTERGRÖSSE**, CLUSTER-BENUTZERKENNWORT und **SPEICHERKONTO** ein.
  
-	![Choosing and HBase cluster type and entering cluster login credentials.](http://i.imgur.com/ecxbB9K.jpg)
+	![Choosing and HBase cluster type and entering cluster login credentials.][img-hdinsight-hbase-cluster-quick-create]
 
 4. Klicken Sie unten links auf das Häkchensymbol, um das HBase-Cluster zu erstellen.
 
@@ -62,16 +70,20 @@ Dieser Abschnitt beschreibt, wie Sie RDP für den Zugriff auf die HBase-Befehlsz
 
 Es wird davon ausgegangen, dass Sie die im ersten Abschnitt beschriebene Prozedur ausgeführt haben und bereits über ein erfolgreich erstelltes HBase-Cluster verfügen.
 
-**Aktivieren der RDP-Verbindung mit dem HBase-Cluster**
+**So aktivieren Sie die RDP-Verbindung zum HBase-Cluster**
 
-1. Um die Remotedesktopverbindung für das HDInsight-Cluster zu aktivieren, wählen Sie das soeben erstellte HBase-Cluster aus und klicken Sie auf die Remotedesktopverbindung **KONFIGURATION**. Klicken Sie auf die Schaltfläche **REMOTE AKTIVIEREN** am unteren Seitenrand, um die RDP-Verbindung zum Cluster zu aktivieren.
-2. Geben Sie die Anmeldeinformationen und das Ablaufdatum im Assistenten **REMOTEDESKTOP KONFIGURIEREN** ein und klicken Sie auf das Häkchensymbol unten rechts. (Diese Operation kann einige Minuten in Anspruch nehmen.)
-3. Um sich mit dem HDInsight-Cluster zu verbinden, klicken Sie auf die Schaltfläche **VERBINDEN** am unteren Rand der Registerkarte **KONFIGURATION**.
+1. Klicken Sie im Verwaltungsportal links auf **HDINSIGHT**, um die Liste der bestehenden Cluster anzuzeigen.
+2. Klicken Sie auf den HBase-Cluster, in dem Sie HBase-Shell öffnen möchten.
+3. Klicken Sie oben auf **KONFIGURATION**.
+4. Klicken Sie unten auf **REMOTE AKTIVIEREN**.
+5. Geben Sie den RDP-Benutzernamen und das Kennwort ein.  Der Benutzername muss sich von dem Cluster-Benutzernamen unterscheiden, den Sie beim Bereitstellen des Clusters verwendet haben. Für **GÜLTIG BIS** kann ein Wert ausgewählt werden, der bis zu sieben Tage nach dem heutigen Datum liegt.
+6. Klicken Sie auf das Häkchen unten rechts, um Remotedesktop zu aktivieren.
+7. Nachdem RPD aktiviert ist, klicken Sie auf **VERBINDEN** am unteren Rand der Registerkarte **KONFIGURATION**, und folgen Sie den Anweisungen.
 
  
-**Öffnen der HBase-Befehlszeile**
+**So öffnen Sie die HBase-Shell**
 
-1. Klicken Sie innerhalb Ihrer RDP-Sitzung auf die Verknüpfung **Hadoop-Befehlszeile** auf dem Desktop.
+1. Klicken Sie in der RDP-Sitzung auf die **Hadoop-Befehlszeile**-Verknüpfung auf dem Desktop.
 
 2. Wechseln Sie in das HBase-Stammverzeichnis:
 		
@@ -82,7 +94,7 @@ Es wird davon ausgegangen, dass Sie die im ersten Abschnitt beschriebene Prozedu
 		hbase shell
 
 
-**Erstellen einer Beispieltabelle, Hinzufügen von Daten und Abrufen der Daten**
+**So erstellen Sie eine Beispieltabelle, fügen Daten hinzu und rufen Daten ab**
 
 1. Erstellen einer Beispieltabelle:
 
@@ -96,183 +108,229 @@ Es wird davon ausgegangen, dass Sie die im ersten Abschnitt beschriebene Prozedu
 	
 		scan 'sampletable'
 
+**Überprüfen des Clusterstatus in der HBase WebUI**
+	
+HBase bietet auch eine WebUI, die bei der Überwachung des Clusters hilft, z. B. durch die Bereitstellung von Abfragestatistiken oder von Informationen zu Regionen. Im HBase-Cluster finden Sie die WebUI unter der Adresse des ZooKeeperNode.
+
+
+	http://zookeepernode:60010/master-status
+	
+Bei einem HighAvailability (HA)-Cluster gibt es einen Link zum aktuellen aktiven HBase-Masterknoten, auf dem die WebUI gehostet wird.
+
+**Massenladen einer Beispieltabelle**
+
+1. Erstellen Sie "samplefile1.txt" mit den folgenden Daten, und laden Sie sie im Azure-BLOB-Speicher in das Verzeichnis "/tmp/samplefile1.txt":
+
+		row1	c1	c2
+		row2	c1	c2
+		row3	c1	c2
+		row4	c1	c2
+		row5	c1	c2
+		row6	c1	c2
+		row7	c1	c2
+		row8	c1	c2
+		row9	c1	c2
+		row10    c1	c2
+
+2. Wechseln Sie in das HBase-Stammverzeichnis:
+		
+		cd %HBASE_HOME%\bin
+
+3. Führen Sie "ImportTsv" aus:
+
+		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,a:b,a:c" -Dimporttsv.bulk.output=/tmpOutput sampletable2 /tmp/samplefile1.txt
+
+4. Laden Sie die Ausgabe aus dem vorherigen Befehl in HBase:
+
+		hbase org.apache.hadoop.hbase.mapreduce.LoadIncrementalHFiles /tmpOutput sampletable2
+
+
+
 ##<a name="hive-query"></a>Abfragen einer HBase-Tabelle mit Hive
 
-Sie haben nun ein HBase-Cluster eingerichtet und eine Tabelle erstellt und können nun Abfragen mit Hive ausführen. In diesem Abschnitt erstellen Sie eine Hive-Tabelle, die zu Ihrer HBase-Tabelle zugeordnet ist und verwenden diese Tabelle, um die Daten in Ihrer HBase-Tabelle abzufragen.
+Nachdem Sie einen HBase-Cluster bereitgestellt und eine HBase-Tabelle erstellt haben, können Sie sie mit Hive abfragen. In diesem Abschnitt erstellen Sie eine Hive-Tabelle, die zu Ihrer HBase-Tabelle zugeordnet ist und verwenden diese Tabelle, um die Daten in Ihrer HBase-Tabelle abzufragen.
 
 **So öffnen Sie das Cluster-Dashboard**
 
-1. Melden Sie sich am [Azure-Verwaltungsportal ][azure-management-portal] an. 
+1. Melden Sie sich beim [Azure-Verwaltungsportal][azure-management-portal] an. 
 2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Sie sehen eine Liste der erstellten Cluster, inklusive des Clusters, das Sie im vorigen Abschnitt erstellt haben.
 3. Klicken Sie auf den Namen des Clusters, in dem Sie den Hive-Job ausführen möchten.
-4. Klicken Sie unten in der Seite auf **CLUSTER VERWALTEN**, um das Cluster-Dashboard zu öffnen. Daraufhin wird eine Webseite in einer neuen Browser-Registerkarte geöffnet.   
-5. Geben Sie den Benutzernamen und das Kennwort des Hadoop-Benutzers ein.  Der Standardbenutzername ist **admin**, und das Kennwort haben Sie bei der Einrichtung ausgewählt.  Das Dashboard sieht folgendermaßen aus:
+4. Klicken Sie unten auf der Seite auf **ABFRAGEKONSOLE**, um das Cluster-Dashboard zu öffnen. Daraufhin wird eine Webseite in einer neuen Browser-Registerkarte geöffnet.   
+5. Geben Sie den Benutzernamen und das Kennwort des Hadoop-Benutzers ein.  Der Standard-Benutzername ist **admin**, und das Kennwort haben Sie bei der Bereitstellung ausgewählt. Es wird eine neue Browserregisterkarte geöffnet. 
+6. Klicken Sie oben auf **Hive-Editor**. Der Hive-Editor sieht folgendermaßen aus:
 
-	![HDInsight cluster dashboard.](http://i.imgur.com/tMwXlj9.jpg)
+	![HDInsight cluster dashboard.][img-hdinsight-hbase-hive-editor]
 
 
-**So führen Sie eine Hive-Abfrage aus**
 
-1. Um eine Hive-Tabelle mit einer Zuordnung zur HBase-Tabelle zu erstellen, geben Sie das folgende HiveQL-Skript in das Hive-Konsolenfenster ein und klicken Sie auf **SENDEN**. Stellen Sie sicher, dass Sie die hier beschriebene Beispieltabelle in HBase mit der HBase-Befehlszeile erstellt haben, bevor Sie diese Anweisung ausführen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**So führen Sie Hive-Abfragen aus**
+
+1. Geben Sie das HiveQL-Skript in Hive-Editor ein, und klicken Sie auf **Senden**, um eine Hive-Tabellenzuordnung zur HBase-Tabelle zu erstellen. Stellen Sie sicher, dass Sie die Tabelle "sampletable" mithilfe der HBase-Shell erstellt haben, auf die hier in HBase verwiesen wird, bevor Sie diese Anweisung ausführen.
  
     	CREATE EXTERNAL TABLE hbasesampletable(rowkey STRING, col1 STRING, col2 STRING)
     	STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
     	WITH SERDEPROPERTIES ('hbase.columns.mapping' = ':key,cf1:col1,cf1:col2')
     	TBLPROPERTIES ('hbase.table.name' = 'sampletable');
 
+	Warten Sie, bis der **Status** in **Abgeschlossen** aktualisiert wurde.
  
-2. Um eine Hive-Abfrage über die Daten in HBase auszuführen, geben Sie das folgende HiveQL-Skript in das Hive-Konsolenfenster ein und klicken Sie auf **SENDEN**.
+2. Geben Sie das folgende HiveQL-Skript in den Hive-Editor ein, und klicken Sie dann auf die Schaltfläche **SENDEN**. Die Hive-Abfrage fragt die Daten in der HBase-Tabelle ab:
 
      	SELECT count(*) FROM hbasesampletable;
  
-4. Um die Ergebnisse der Hive-Abfrage anzuzeigen, klicken Sie auf den Link **Details anzeigen** im Fenster **Auftragssitzung**, nachdem der Job abgeschlossen wurde.
+4. Um die Ergebnisse der Hive-Abfrage abzurufen, klicken Sie im Fenster **Auftragssitzung** auf den Link **Details anzeigen**, nachdem der Auftrag ausgeführt wurde. Die Auftragsausgabe muss 1 sein, da Sie nur einen Datensatz in die HBase-Tabelle eingefügt haben.
 
-
-Hinweis: Mit dem Link zur HBase-Befehlszeile können Sie zur **HBase-Befehlszeile** wechseln.
 
 
 
 **So durchsuchen Sie die Ausgabedatei**
 
-1. Klicken Sie oben im Cluster-Dashboard auf **Dateien**.
-2. Klicken Sie auf **Templeton-Job-Status**.
-3. Klicken Sie auf die GUID-Nummer, deren letzte Änderung kurz nach der Startzeit des Jobs liegt, die Sie zuvor notiert haben. Notieren Sie sich die GUID.  Sie benötigen sie im nächsten Abschnitt.
-4. Die **stdout**-Datei enthält die Daten, die Sie für den nächsten Abschnitt benötigen. Sie können auf **stdout** klicken, falls Sie eine Kopie der Daten herunterladen möchten.
+1. Klicken Sie ob in der Abfragekonsole auf **Dateibrowser**.
+2. Klicken Sie auf das Azure-Speicherkonto, das als Standarddateisystem für den HBase-Cluster verwendet wird.
+3. Klicken Sie auf den HBase-Clusternamen. Der Standardcontainer für das Azure-Speicherkonto verwendet den Namen des Clusters.
+4. Klicken Sie auf **user**.
+5. Klicken Sie auf **admin**. Dies ist der Hadoop-Benutzername.
+6. Klicken Sie auf den Namen des Auftrags, dessen Zeit unter **Zuletzt geändert** mit der Zeit der Ausführung der SELECT-Hive-Abfrage übereinstimmt.
+4. Klicken Sie auf **stdout**. Speichern Sie die Datei, und öffnen Sie die Datei mit dem Editor. Die Ausgabe muss 1 sein.
 
+	![HDInsight HBase Hive Editor File Browser][img-hdinsight-hbase-file-browser]
 	
 ##<a name="hbase-powershell"></a>Erstellen einer HBase-Tabelle und Abrufen von Daten aus der Tabelle mit der Microsoft-HBase-REST-Clientbibliothek für .NET C#-APIs
 
 Sie müssen die Microsoft-HBase-REST-Clientbibliothek für das .NET-Projekt von GitHub herunterladen, und das Projekt muss für die Verwendung des HBase .NET SDK erstellt werden. Das folgende Verfahren bietet Anweisungen für diese Aufgabe.
 
-1. Laden Sie die [Microsoft-HBase-REST-Clientbibliothek für .NET herunter],(https://github.com/hdinsight/hbase-sdk-for-net) sofern diese Vorbedingung noch nicht erfüllt ist.
+1. Erstellen Sie eine neue C#-Visual Studio Windows Desktop-Konsolenanwendung.
+2. Öffnen Sie die NuGet-Paket-Manager-Konsole, indem Sie im Menü **EXTRAS** auf **NuGet-Paket-Manager** und dann auf **Paket-Manager-Konsole** klicken.
+3. Führen Sie den folgenden NuGet-Befehl in der Konsole aus:
 
-2. Öffnen Sie Marlin.sln in Visual Studio (**Datei** -> **Öffnen** -> **Projekt/Projektmappe ...**) an dem Speicherort, an den die Datei heruntergeladen wurde. Wählen Sie **Ansicht** -> **Projektmappen-Explorer**, um die Projektmappe 'Marlin' und das dazugehörige Microsoft.HBase.Client-Projekt anzuzeigen. Erstellen Sie das **Marlin**-Projekt, indem Sie im **Projektmappen-Explorer** mit der rechten Maustaste darauf klicken und **Projektmappe erstellen** auswählen. 
-
-4. Erstellen einer neuen Visual C#-Konsolenanwendung Suchen Sie die resultierenden erstellten Dateien Microsoft.HBase.Client.dll und protobuf.dll (im Verzeichnis ...\bin\debug\Microsoft.HBase.Client), und fügen Sie sie Ihrem C#-Projekt hinzu: Klicken Sie mit der rechten Maustaste auf **Verweise**, klicken Sie auf **Verweise hinzufügen...**, navigieren Sie zu den beiden Assemblys, und laden Sie sie hoch. [protobuf-net](http://code.google.com/p/protobuf-net/) ist eine .NET-Implementierung des binären Protokollpufferserialisierers von Google, der für die Datenkommunikation verwendet wird.
+	Install-Package Microsoft.HBase.Client
 
 5. Fügen Sie am Anfang der Datei die folgenden "Using"-Anweisungen ein:
 		
 		using Microsoft.HBase.Client;
 		using org.apache.hadoop.hbase.rest.protobuf.generated;
 
-6. Erstellen Sie eine neue Instanz eines HBase-Clients unter Verwendung der Clusteranmeldeinformationen, und rufen Sie die Clusterversion ab:
+6. Ersetzen Sie die Main-Funktion durch Folgendes:
 
-		// Create a new instance of an HBase client.
-		var creds = new ClusterCredentials(new Uri("https://myclustername.azurehdinsight.net"), "myusername", "mypassword");
-		var client = new HBaseClient(creds);
+        static void Main(string[] args)
+        {
+            string clusterURL = "https://<yourHBaseClusterName>.azurehdinsight.net";
+            string hadoopUsername= "<yourHadoopUsername>";
+            string hadoopUserPassword = "<yourHadoopUserPassword>";
 
-		// Retrieve the cluster version
-		var version = client.GetVersion();
-		Console.WriteLine(version);
+            string hbaseTableName = "sampleHbaseTable";
 
-7. Mit dem folgenden Code können Sie eine neue HBase-Tabelle erstellen:
+            // Create a new instance of an HBase client.
+            ClusterCredentials creds = new ClusterCredentials(new Uri(clusterURL), hadoopUsername, hadoopUserPassword);
+            HBaseClient hbaseClient = new HBaseClient(creds);
 
-		// Create a new HBase table.
-		var testTableSchema = new TableSchema();
-		testTableSchema.name = "mytablename";
-		testTableSchema.columns.Add(new ColumnSchema() { name = "d" });
-		testTableSchema.columns.Add(new ColumnSchema() { name = "f" });
-		client.CreateTable(testTableSchema);
+            // Retrieve the cluster version
+            var version = hbaseClient.GetVersion();
+            Console.WriteLine("The HBase cluster version is " + version);
 
-8. Fügen Sie mithilfe dieses Codes Daten in eine Tabelle ein:
+            // Create a new HBase table.
+            TableSchema testTableSchema = new TableSchema();
+            testTableSchema.name = hbaseTableName;
+            testTableSchema.columns.Add(new ColumnSchema() { name = "d" });
+            testTableSchema.columns.Add(new ColumnSchema() { name = "f" });
+            hbaseClient.CreateTable(testTableSchema);
 
-		// Insert data into a table.
-		var tableName = "mytablename";
-		var testKey = "content";
-		var testValue = "the force is strong in this column";
-		var set = new CellSet();
-		var row = new CellSet.Row { key = Encoding.UTF8.GetBytes(testKey) };
-		set.rows.Add(row);
+            // Insert data into the HBase table.
+            string testKey = "content";
+            string testValue = "the force is strong in this column";
+            CellSet cellSet = new CellSet();
+            CellSet.Row cellSetRow = new CellSet.Row { key = Encoding.UTF8.GetBytes(testKey) };
+            cellSet.rows.Add(cellSetRow);
 
-		var value = new Cell { column = Encoding.UTF8.GetBytes("d:starwars"), data = Encoding.UTF8.GetBytes(testValue) };
-		row.values.Add(value);
-		client.StoreCells(tableName, set);
+            Cell value = new Cell { column = Encoding.UTF8.GetBytes("d:starwars"), data = Encoding.UTF8.GetBytes(testValue) };
+            cellSetRow.values.Add(value);
+            hbaseClient.StoreCells(hbaseTableName, cellSet);
 
-9. Mit dem folgenden Code können Sie eine eine Zelle samt ihrem Schlüssel abrufen. 
+            // Retrieve a cell by its key.
+            cellSet = hbaseClient.GetCells(hbaseTableName, testKey);
+            Console.WriteLine("The data with the key '" + testKey + "' is: " + Encoding.UTF8.GetString(cellSet.rows[0].values[0].data));
+            // with the previous insert, it should yield: "the force is strong in this column"
 
-		// Retrieve a cell with its key.
-		var testKey = "content";
-		var tableName = "mytablename";
+		    //Scan over rows in a table. Assume the table has integer keys and you want data between keys 25 and 35. 
+		    Scanner scanSettings = new Scanner()
+		    {
+    		    batch = 10,
+    		    startRow = BitConverter.GetBytes(25),
+    		    endRow = BitConverter.GetBytes(35)
+		    };
 
-		var cells = client.GetCells(tableName, testKey);
-		// get the first value from the row.
-		.WriteLine(Encoding.UTF8.GetString(cells.rows[0].values[0].data));
-		// with the previous insert, it should yield: "the force is strong in this column"
+		    ScannerInformation scannerInfo = hbaseClient.CreateScanner(hbaseTableName, scanSettings);
+		    CellSet next = null;
+            Console.WriteLine("Scan results");
 
-10. Durchlaufen Sie mithilfe des folgenden Codes Zeilen in einer Tabelle:
+            while ((next = hbaseClient.ScannerGetNext(scannerInfo)) != null)
+		    {
+    		    foreach (CellSet.Row row in next.rows)
+    		    {
+                    Console.WriteLine(row.key + " : " + Encoding.UTF8.GetString(row.values[0].data));
+    		    }
+		    }
 
-		//Scan over rows in a table.
-		var creds = new ClusterCredentials(new Uri("https://myclustername.azurehdinsight.net"), "myusername", "mypassword");
-		var client = new HBaseClient(creds);
+            Console.WriteLine("Press ENTER to continue ...");
+            Console.ReadLine();
+        }
 
-		var tableName = "mytablename";
-
-		// assume the table has integer keys and we want data between keys 25 and 35
-		var scanSettings = new Scanner()
-		{
-    		batch = 10,
-    		startRow = BitConverter.GetBytes(25),
-    		endRow = BitConverter.GetBytes(35)
-		};
-
-		var scannerInfo = client.CreateScanner(tableName, scanSettings);
-		CellSet next = null;
-		while ((next = client.ScannerGetNext(scannerInfo)) != null)
-		{
-    		foreach (var row in next.rows)
-    		{
-        		// ... read the rows
-    		}
-		}
+7. Legen Sie die ersten drei Variablen in der Main-Funktion fest.
+8. Drücken Sie **F5**, um die Anwendung auszuführen.
 
 
-
-##<a name="summary"></a>Zusammenfassung
-In diesem Lernprogramm haben Sie erfahren, wie Sie ein HBase-Cluster bereitstellen, Tabellen erstellen und die Daten in diesen Tabellen in der HBase-Befehlszeile anzeigen können. Außerdem haben Sie gelernt, wie Sie die Daten in HBase-Tabellen mit Hive abfragen und mit den HBase C#-APIs HBase-Tabellen erstellen und Daten aus der Tabelle abrufen können.
 
 ##<a name="next"></a> Nächste Schritte
+In diesem Lernprogramm haben Sie erfahren, wie Sie ein HBase-Cluster bereitstellen, Tabellen erstellen und die Daten in diesen Tabellen in der HBase-Befehlszeile anzeigen können. Außerdem haben Sie gelernt, wie Sie die Daten in HBase-Tabellen mit Hive abfragen und mit den HBase C#-APIs HBase-Tabellen erstellen und Daten aus der Tabelle abrufen können. 
 
-[Übersicht über HDInsight HBase][hdinsight-hbase-overview]:
+Weitere Informationen finden Sie unter:
+
+- [Überblick über HDInsight HBase][hdinsight-hbase-overview]:
 HBase ist eine Open-Source-NoSQL-Datenbank, basierend auf Hadoop, die wahlfreien Zugriff und starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
-
-[Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]:
+- [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]:
 Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
-
-[Analysieren von Stimmungen in Twitter mit HBase in HDInsight][hbase-twitter-sentiment]:
-Erfahren Sie, wie Sie [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis) von Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight in Echtzeit ausführen.
+- [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment]:
+Erfahren Sie, wie Sie in Echtzeit [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis) bei Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight durchführen können.
 
 [hdinsight-hbase-overview]: ../hdinsight-hbase-overview/
 [hdinsight-hbase-provision-vnet]: ../hdinsight-hbase-provision-vnet
 [hdinsight-versions]: ../hdinsight-component-versioning/
-
-[hdinsight-get-started-30]: ../hdinsight-get-started-30/
-
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
-
 [hbase-twitter-sentiment]: ../hdinsight-hbase-analyze-twitter-sentiment/
-
-[hdinsight-use-hive]: ../hdinsight-use-hive/
-
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-
-
-
 [azure-purchase-options]: http://azure.microsoft.com/de-de/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/de-de/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/de-de/pricing/free-trial/
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: http://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/ 
 
-[apache-hadoop]: http://hadoop.apache.org/
-
-[powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: ../install-configure-powershell/
-[powershell-open]: ../install-configure-powershell/#Install
-
-
-[img-hdi-dashboard]: ./media/hdinsight-get-started/HDI.dashboard.png
-[img-hdi-dashboard-query-select]: ./media/hdinsight-get-started/HDI.dashboard.query.select.png
-[img-hdi-dashboard-query-select-result]: ./media/hdinsight-get-started/HDI.dashboard.query.select.result.png
+[img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-get-started/hdinsight-hbase-quick-create.png
+[img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-get-started/hdinsight-hbase-hive-editor.png
+[img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-get-started/hdinsight-hbase-file-browser.png
 
 
 
@@ -280,4 +338,5 @@ Erfahren Sie, wie Sie [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment
 
 
 
-<!--HONumber=35.1-->
+
+<!--HONumber=42-->

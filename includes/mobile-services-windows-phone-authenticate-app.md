@@ -1,4 +1,4 @@
-1. Öffnen Sie die Projektdatei "mainpage.xaml.cs", und fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
+﻿1. Öffnen Sie die Projektdatei mainpage.xaml.cs, und fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
 	
         private MobileServiceUser user;
         private async System.Threading.Tasks.Task Authenticate()
@@ -24,7 +24,7 @@
 
     Auf diese Weise wird eine Membervariable zum Speichern des aktuellen Benutzers sowie eine Methode zur Verarbeitung des Authentifizierungsprozesses erstellt. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert.
 
-    >[WACOM.NOTE]Wenn Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für <strong>MobileServiceAuthenticationProvider</strong> oben entsprechend Ihrem Anbieter.</p>
+    >[AZURE.NOTE]Wenn Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für <strong>MobileServiceAuthenticationProvider</strong> oben entsprechend Ihrem Anbieter.</p>
     </div>
 
 2. Löschen Sie die vorhandene **OnNavigatedTo**-Methodenüberschreibung, oder stellen Sie ihr Kommentarzeichen voran, und ersetzen Sie sie durch die folgende Methode, die das **Loaded**-Ereignis für die Seite verarbeitet. 
@@ -51,3 +51,4 @@
 4. Drücken Sie F5, um die App auszuführen und sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App anzumelden. 
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
+<!--HONumber=42-->

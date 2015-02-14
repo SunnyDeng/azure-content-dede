@@ -6,6 +6,7 @@
 - [(Windows Store JavaScript | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-push-notifications-app-users/)
 - [(Windows Store JavaScript | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-push-notifications-app-users/)
 - [(Windows Phone | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-push-notifications-app-users/)
-- [(Windows Phone | Javascript)](/de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users/)
+- [(Windows Phone | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users/)
 - [(Android | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-android-push-notifications-app-users/)
 - [(Android | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users/)
+<!--HONumber=42-->

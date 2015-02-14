@@ -1,6 +1,20 @@
-﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="Erste Schritte bei der Nutzung von mit Hive in HDInsight | Azure" metaKeywords="" description="Erste Schritte mit Hadoop in HDInsight, einer Big Data-Lösung in der Cloud. Erfahren Sie, wie Sie Cluster bereitstellen und Daten mit Hive abrufen und zur Analyse an Excel ausgeben." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop with Hive in HDInsight to analyze mobile handset use" authors="nitinme" solutions="big-data" manager="paulettm" editor="cgronlun" />
+<properties 
+	pageTitle="Erste Schritte bei der Nutzung von mit Hive in HDInsight | Azure" 
+	description="Erste Schritte mit Hadoop in HDInsight, einer Big Data-Lösung in der Cloud. Erfahren Sie, wie Sie Cluster bereitstellen und Daten mit Hive abrufen und zur Analyse an Excel ausgeben." 
+	services="hdinsight" 
+	documentationCenter="" 
+	authors="nitinme" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/14/2014" ms.author="nitinme" />
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/14/2014" 
+	ms.author="nitinme"/>
 
 
 # Erste Schritte bei der Nutzung von mit Hive in HDInsight zur Analyse der Verwendung von Mobiltelefonen
@@ -14,11 +28,11 @@
 Für Ihren Schnelleinstieg in die Nutzung von HDInsight veranschaulicht dieses Lernprogramm die Ausführung einer Hive-Abfrage zum Extrahieren aussagekräftiger Informationen aus unstrukturierten Daten in einem Hadoop-Cluster. Anschließend analysieren Sie die Ergebnisse in Microsoft Excel.
 
 
-> [WACOM.NOTE] Wenn Sie noch keine Erfahrung mit Hadoop und Big Data haben, erfahren Sie mehr zu den Begriffen [Apache Hadoop][apache-hadoop], [MapReduce][apache-mapreduce], [HDFS][apache-hdfs] und [Hive][apache-hive]. Wie HDInsight Hadoop in Azure bereitstellt, erfahren Sie unter [Einführung in Hadoop in HDInsight][hadoop-hdinsight-intro].
+> [AZURE.NOTE] Wenn Sie noch keine Erfahrung mit Hadoop und Big Data haben, erfahren Sie mehr zu den Begriffen [Apache Hadoop][apache-hadoop], [MapReduce][apache-mapreduce], [HDFS][apache-hdfs] und [Hive][apache-hive]. Wie HDInsight Hadoop in Azure bereitstellt, erfahren Sie unter [Einführung in Hadoop in HDInsight][hadoop-hdinsight-intro].
 
-Im Rahmen der generellen Verfügbarkeit von Azure HDInsight hat Microsoft zudem den HDInsight-Emulator für Azure veröffentlicht, der zuvor als Microsoft HDInsight Developer Preview bekannt war. Dieser Emulator wurde für Entwicklungsszenarien erstellt und unterstützt nur Umgebungen mit einem Knoten. Informationen zur Verwendung des HDInsight-Emulators finden Sie unter [Erste Schritte mit dem HDInsight-Emulator][hdinsight-emulator].
+Im Rahmen der generellen Verfügbarkeit von Azure HDInsight hat Microsoft zudem den HDInsight Emulator für Azure veröffentlicht, der zuvor unter dem Namen *Microsoft HDInsight Developer Preview* bekannt war. Dieser Emulator wurde für Entwicklungsszenarien erstellt und unterstützt nur Umgebungen mit einem Knoten. Informationen zur Verwendung des HDInsight Emulators finden Sie unter [Erste Schritte mit dem HDInsight Emulator][hdinsight-emulator].
 
-> [WACOM.NOTE] Informationen zur Bereitstellung eines HBase-Clusters finden Sie unter [Bereitstellen eines HBase-Clusters in HDInsight][hdinsight-hbase-custom-provision]. Siehe <a href="http://go.microsoft.com/fwlink/?LinkId=510237">"Was ist der Unterschied zwischen den Hadoop und HBase?",</a> um zu verstehen, warum Sie einer dieser Lösungen den Vorzug geben sollten.   
+> [AZURE.NOTE] Informationen zur Bereitstellung eines HBase-Clusters finden Sie unter [Bereitstellen eines HBase-Clusters in HDInsight][hdinsight-hbase-custom-provision]. Siehe <a href="http://go.microsoft.com/fwlink/?LinkId=510237">"Was ist der Unterschied zwischen den Hadoop und HBase?",</a> um zu verstehen, warum Sie einer dieser Lösungen den Vorzug geben sollten.   
 
 ## Welchen Zweck verfolgt dieses Lernprogramm? ##
 
@@ -49,12 +63,12 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 * [Erstellen eines Azure-Speicherkontos](#storage)
 * [Bereitstellen eines HDInsight-Clusters](#provision)
 * [Ausführen von Beispielen im Portal](#sample)
-* [Ausführen eines Hive-Auftrags](#hivequery)
+* [Ausführen eines HIVE-Auftrags](#hivequery)
 * [Nächste Schritte](#nextsteps)
 
 ##<a name="storage"></a>Erstellen eines Azure-Speicherkontos
 
-HDInsight verwendet Azure Blob-Speicher zum Speichern von Daten. Der Speicher wird WASB oder Azure-Speicher-Blob genannt. WASB ist Microsofts Implementierung von HDFS in Azure Blob-Speicher. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage].
+HDInsight verwendet Azure Blob-Speicher zum Speichern von Daten. Dies wird als *WASB* oder *Azure Storage - Blob* bezeichnet. WASB ist Microsofts Implementierung von HDFS in Azure Blob-Speicher. Weitere Informationen finden Sie unter [Verwenden von Azure BLOB-Speicher mit HDInsight][hdinsight-storage].
 
 Bei der Bereitstellung eines HDInsight-Clusters geben Sie ein Azure-Speicherkonto an. Ein bestimmter Blob-Speichercontainer aus diesem Konto wird als Standarddateisystem festgelegt, genau wie in HDFS. Der HDInsight-Cluster wird standardmäßig in demselben Rechenzentrum bereitgestellt wie das angegebene Speicherkonto.
 
@@ -64,39 +78,39 @@ Zur Vereinfachung des Lernprogramms werden nur der standardmäßige Blob-Contain
 
 **So erstellen Sie ein Azure-Speicherkonto**
 
-1. Melden Sie sich am [Azure-Verwaltungsportal ][azure-management-portal] an.
-2. Klicken Sie links unten auf **NEU**, zeigen Sie auf **DATA SERVICES**, dann auf **SPEICHER**, und klicken Sie dann auf **SCHNELLERFASSUNG**.
+1. Melden Sie sich beim [Azure-Verwaltungsportal][azure-management-portal] an.
+2. Klicken Sie links unten auf **NEU**, zeigen Sie auf **DATENDIENSTE**, auf **SPEICHER**, und klicken Sie anschließend auf **SCHNELLERFASSUNG**.
 
 	![Azure portal where you can use Quick Create to set up a new storage account.][image-hdi-storageaccount-quickcreate]
 
-3. Geben Sie Daten in **URL**, **SPEICHERORT** und **REPLIKATION** ein, und klicken Sie dann auf  **SPEICHERKONTO ERSTELLEN**. Affinitätsgruppen werden nicht unterstützt. Sie werden das neue Speicherkonto in der Speicherliste sehen.
+3. Geben Sie Daten in **URL**, **SPEICHERORT** und **REPLIKATION** ein, und klicken Sie dann auf **SPEICHERKONTO ERSTELLEN**. Affinitätsgruppen werden nicht unterstützt. Sie werden das neue Speicherkonto in der Speicherliste sehen.
 
-	>[WACOM.NOTE]  Die Schnellerfassungsoption zur Bereitstellung eines HDInsight-Clusters wie die in diesem Lernprogramm verwendete fordert beim Bereitstellen des Clusters nicht zur Angabe eines Standorts auf. Stattdessen wird der Cluster standardmäßig in demselben Rechenzentrum wie das Speicherkonto bereitgestellt. Achten Sie daher darauf, das Speicherkonto an den Standorten zu erstellen, die für den Cluster unterstützt werden; dies sind:  **Ostasien**, **Südostasien**, **Nordeuropa**, **Westeuropa**, **USA (Osten)**, **USA (Westen)**, **USA (Nord, Mitte)**, **USA (Süd, Mitte)**.
+	>[AZURE.NOTE]  Die Schnellerfassungsoption zur Bereitstellung eines HDInsight-Clusters wie die in diesem Lernprogramm verwendete fordert beim Bereitstellen des Clusters nicht zur Angabe eines Standorts auf. Stattdessen wird der Cluster standardmäßig in demselben Rechenzentrum wie das Speicherkonto bereitgestellt. Achten Sie daher darauf, das Speicherkonto an den Standorten zu erstellen, die für den Cluster unterstützt werden; dies sind:  **Ostasien**, **Südostasien**, **Nordeuropa**, **Westeuropa**, **USA (Osten)**, **USA (Westen)**, **USA (Mitte/Norden)**, **USA (Mitte/Süden)**.
 
 4. Warten Sie, bis sich der **STATUS** des neuen Speicherkontos in **Online** geändert hat.
 5. Wählen Sie das neue Speicherkonto in der Liste aus, und klicken Sie unten auf der Seite auf **ZUGRIFFSSCHLÜSSEL VERWALTEN**.
-7. Notieren Sie sich den **NAMEN DES SPEICHERKONTOS** und den **PRIMÄREN ZUGRIFFSSCHLÜSSEL** (oder den **SEKUNDÄREN ZUGRIFFSSCHLÜSSEL**. Beide können verwendet werden.)  Sie werden diese später im Lernprogramm benötigen.
+7. Notieren Sie sich die Werte unter **SPEICHERKONTONAME** und **PRIMÄRER ZUGRIFFSSCHLÜSSEL** (oder **SEKUNDÄRER ZUGRIFFSSCHLÜSSEL**. Beide können verwendet werden.)  Sie werden diese später im Lernprogramm benötigen.
 
 
 Weitere Informationen finden Sie unter:
-[Erstellen eines Speicherkontos][azure-create-storageaccount] und [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage].
+[Erstellen eines Speicherkontos][azure-create-storageaccount] und [Verwenden von Azure BLOB-Speicher mit HDInsight][hdinsight-storage].
 	
 ##<a name="provision"></a>Bereitstellen eines HDInsight-Clusters
 
-Beim Bereitstellen eines HDInsight-Clusters werden Azure-Serverressourcen bereitgestellt, die Hadoop und verwandte Anwendungen enthalten. In diesen Abschnitt stellen Sie einen HDInsight-Cluster der Version 3.1 bereit, der auf Hadoop Version 2.4 basiert. Mit dem Azure-Portal, HDInsight PowerShell-Cmdlets oder dem HDInsight .NET SDK können Sie auch Hadoop-Cluster für andere Versionen erstellen. Anweisungen finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight][hdinsight-provision]. Informationen zu den verschiedenen HDInsight-Versionen und ihren SLAs finden Sie auf der Seite zu den [HDInsight-Komponentenversionen](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-component-versioning/) .
+Beim Bereitstellen eines HDInsight-Clusters werden Azure-Serverressourcen bereitgestellt, die Hadoop und verwandte Anwendungen enthalten. In diesen Abschnitt stellen Sie einen HDInsight-Cluster der Version 3.1 bereit, der auf Hadoop Version 2.4 basiert. Mit dem Azure-Portal, HDInsight PowerShell-Cmdlets oder dem HDInsight .NET SDK können Sie auch Hadoop-Cluster für andere Versionen erstellen. Anweisungen finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight][hdinsight-provision]. Informationen zu den verschiedenen HDInsight-Versionen und ihren SLAs finden Sie auf der Seite zu den [HDInsight-Komponentenversionen](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-component-versioning/).
 
-[WACOM.INCLUDE [Hinweis zur Bereitstellung](../includes/hdinsight-provisioning.md)]
+[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
 
-**So stellen Sie HDInsight-Cluster bereit** 
+**So stellen Sie ein HDInsight-Cluster bereit** 
 
-1. Melden Sie sich am [Azure-Verwaltungsportal ][azure-management-portal] an. 
+1. Melden Sie sich beim [Azure-Verwaltungsportal][azure-management-portal] an. 
 
 2. Klicken Sie links auf **HDInsight**, um den Status der Cluster in Ihrem Konto anzuzeigen. Im folgenden Screenshot sind keine HDInsight-Cluster vorhanden.
 
 	![Status of HDInsight clusters in the Azure portal.][image-hdi-clusterstatus]
 
-3. Klicken Sie links unten auf **NEU**, zeigen Sie auf **DATA SERVICES**, klicken Sie auf **HDInsight** und dann auf **Hadoop**.
+3. Klicken Sie links unten auf **NEU** und dann auf **Datendienste**, **HDInsight** und **Hadoop**.
 
 	![Creation of a Hadoop cluster in HDInsight.][image-hdi-quickcreatecluster]
 
@@ -116,33 +130,32 @@ Beim Bereitstellen eines HDInsight-Clusters werden Azure-Serverressourcen bereit
 	</table>
 
 	Notieren Sie sich den Clusternamen.  Sie werden ihn später im Lernprogramm benötigen.
-
 	
 5. Klicken Sie auf **HDInsight-Cluster erstellen**. Wenn die Bereitstellung abgeschlossen ist, wird in der Statusspalte **Wird ausgeführt** angezeigt.
 
-	>[WACOM.NOTE] Mit dem vorstehenden Verfahren wird ein Cluster mit HDInsight-Clusterversion 3.1 erstellt. Zur Erstellung anderer Clusterversionen verwenden Sie die Methode "Benutzerdefiniert erstellen" im Verwaltungsportal oder aber Azure PowerShell. Informationen zu den Unterschieden zwischen den einzelnen Clusterversionen finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen][hdinsight-versions]. Informationen zur Verwendung der Option **BENUTZERDEFINIERT ERSTELLEN** finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight][hdinsight-provision].
+	>[AZURE.NOTE] Mit dem vorstehenden Verfahren wird ein Cluster mit HDInsight-Clusterversion 3.1 erstellt. Zur Erstellung anderer Clusterversionen verwenden Sie die Methode "Benutzerdefiniert erstellen" im Verwaltungsportal oder aber Azure PowerShell. Informationen zu den Unterschieden zwischen den einzelnen Clusterversionen finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen][hdinsight-versions]. Informationen zur Verwendung der Option **BENUTZERDEFINIERT ERSTELLEN** finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight][hdinsight-provision].
 
 
 ##<a name="sample"></a>Ausführen von Beispielen im Portal
 
 Ein erfolgreich bereitgestelltes HDInsight-Cluster enthält eine Abfragekonsole, in der Sie die Beispiele direkt im Portal ausführen können. Mit diesen Beispielen können Sie das Arbeiten mit HDInsight erlernen, indem Sie einige einfache Szenarien durcharbeiten. Die Beispiele enthalten alle benötigten Komponenten wie z. B. die zu analysierenden Daten und die entsprechenden Abfragen für die Daten. 
 
-**Um das Beispiel auszuführen**, klicken Sie im Azure-Verwaltungsportal auf den Namen des entsprechenden Clusters und klicken Sie anschließend unten in der Seite auf **Abfragekonsole**. Klicken Sie in der Webseite, die sich daraufhin öffnet, auf die Registerkarte **Erste Schritte** und anschließend in der Kategorie **Beispiele** auf das Beispiel, das Sie ausführen möchten. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen. Klicken Sie auf die folgenden Links, um mehr über die einzelnen Beispiele zu erfahren.
+**Um das Beispiel auszuführen**, klicken Sie im Azure-Verwaltungsportal auf den Namen des entsprechenden Clusters, und klicken Sie anschließend unten in der Seite auf **Abfragekonsole**. Klicken Sie in der Webseite, die daraufhin geöffnet wird, auf die Registerkarte **Erste Schritte** und anschließend in der Kategorie **Beispiele** auf das Beispiel, das Sie ausführen möchten. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen. Klicken Sie auf die folgenden Links, um mehr über die einzelnen Beispiele zu erfahren.
 
 Beispiel | Behandelte Themen
 ------ | ---------------
-[Sensordatenanalyse][hdinsight-sensor-data-sample] | Erfahren Sie, wie Sie Verlaufsdaten von Heizungs-, Lüftungs- und Klimaanlagen mithilfe von HDInsight verarbeiten können, um herauszufinden, welche Anlagen nicht in der Lage sind, eine eingestellte Temperatur zu halten
+[Sensordatenanalyse][hdinsight-sensor-data-sample] | Erfahren Sie, wie Sie Verlaufsdaten von Heizungs-, Lüftungs- und Klimaanlagen (HLK) mithilfe von HDInsight verarbeiten können, um herauszufinden, welche Anlagen nicht in der Lage sind, eine eingestellte Temperatur zu halten
 [Analyse von Websiteprotokollen][hdinsight-weblogs-sample] | Erfahren Sie, wie Sie Website-Protokolldateien mithilfe von HDInsight analysieren können, um Einblicke in die Häufigkeit von Besuchen pro Tag von externen Webseiten sowie eine Zusammenfassung von Websitefehlern zu erhalten, die den Benutzern angezeigt werden
 
 
 ##<a name="hivequery"></a>Ausführen einer Hive-Abfrage im Portal
-Nachdem Sie einen HDInsight-Cluster bereitgestellt haben, führen Sie im nächsten Schritt einen Hive-Auftrag aus, um die Hive-Beispieltabelle "hivesampletable" abzufragen, die in HDInsight-Clustern enthalten ist. Die Tabelle enthält Daten zu Mobilgeräteherstellern, -plattformen und -modellen. Wir fragen diese Tabelle ab, um Daten für Mobilgeräte eines bestimmten Herstellers abzurufen.
+Nachdem Sie einen HDInsight-Cluster bereitgestellt haben, führen Sie im nächsten Schritt einen Hive-Auftrag aus, um die Hive-Beispieltabelle  *hivesampletable* abzufragen, die in HDInsight-Clustern enthalten ist. Die Tabelle enthält Daten zu Mobilgeräteherstellern, -plattformen und -modellen. Wir fragen diese Tabelle ab, um Daten für Mobilgeräte eines bestimmten Herstellers abzurufen.
 
-> [WACOM.NOTE] Die HDInsight-Tools für Visual Studio sind im Azure SDK für .NET, Version 2.5 oder höher, enthalten.  Mithilfe der Tools in Visual Studio können Sie eine Verbindung mit dem HDInsight-Cluster herstellen, Hive-Tabellen erstellen und Hive-Abfragen ausführen.  Weitere Informationen finden Sie unter [Erste Schritte mit den HDInsight Hadoop-Tools für Visual Studio][1].
+> [AZURE.NOTE] Die HDInsight-Tools für Visual Studio sind im Azure SDK für .NET, Version 2.5 oder höher, enthalten.  Mithilfe der Tools in Visual Studio können Sie eine Verbindung mit dem HDInsight-Cluster herstellen, Hive-Tabellen erstellen und Hive-Abfragen ausführen.  Weitere Informationen finden Sie unter [Erste Schritte mit den HDInsight Hadoop-Tools für Visual Studio][1].
 
 **So führen Sie einen Hive-Auftrag über das Cluster-Dashboard aus**
 
-1. Melden Sie sich am [Azure-Verwaltungsportal ][azure-management-portal] an. 
+1. Melden Sie sich beim [Azure-Verwaltungsportal][azure-management-portal] an. 
 2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Sie sehen eine Liste der erstellten Cluster, inklusive des Clusters, den Sie im vorigen Abschnitt erstellt haben.
 3. Klicken Sie auf den Namen des Clusters, in dem Sie den Hive-Auftrag ausführen möchten, und klicken Sie anschließend unten in der Seite auf **ABFRAGEKONSOLE**. 
 4. Daraufhin wird eine Webseite in einer neuen Browser-Registerkarte geöffnet. Geben Sie das Hadoop-Benutzerkonto und das zugehörige Kennwort ein.  Der Standardbenutzername ist **admin**, und das Kennwort haben Sie bei der Bereitstellung des Clusters angegeben.  Das Dashboard sieht folgendermaßen aus:
@@ -151,7 +164,7 @@ Nachdem Sie einen HDInsight-Cluster bereitgestellt haben, führen Sie im nächst
 
 	Am oberen Rand befinden sich mehrere Registerkarten.  Die Standardregisterkarte ist **Hive-Editor**, die anderen Registerkarten heißen **Auftragsverlauf** und **Dateibrowser**.  Mithilfe des Dashboards können Sie Hive-Abfragen senden, Protokolle von Hadoop-Jobs überprüfen und WASB-Dateien durchsuchen.
 
-	> [WACOM.NOTE] Beachten Sie, dass die URL der Webseite &lt;ClusterName&gt;.azurehdinsight.net lautet. Anstatt über das Verwaltungsportal können Sie das Dashboard also auch unter Angabe der URL über einen Webbrowser öffnen.
+	> [AZURE.NOTE] Beachten Sie, dass die URL der Webseite *&lt;Clustername&gt;.azurehdinsight.net* lautet. Anstatt über das Verwaltungsportal können Sie das Dashboard also auch unter Angabe der URL über einen Webbrowser öffnen.
 
 6. Geben Sie auf der Registerkarte **Hive-Editor** in das Feld **Abfragename** den Text **HTC20** ein.  Der Abfragename ist gleichzeitig auch der Auftragstitel.
 
@@ -173,17 +186,17 @@ Nachdem Sie einen HDInsight-Cluster bereitgestellt haben, führen Sie im nächst
 
     ![Job Start Time listed in the Job History tab of the HDInsight cluster dashboard.][img-hdi-dashboard-query-select-result-output]
 
-    Diese Seite enthält außerdem die **Auftragsausgabe** und das **Auftragsprotokoll**. Außerdem haben Sie die Möglichkeit, die Ausgabedatei (\_stdout) und die Protokolldatei (\_stderr) herunterzuladen.
+    Die Seite zeigt auch die **Auftragsausgabe** und das **Auftragsprotokoll** an. Außerdem haben Sie die Möglichkeit, die Ausgabedatei (\_stdout) und die Protokolldatei (\_stderr) herunterzuladen.
 
 
-	> [WACOM.NOTE] In der Tabelle **Auftragssitzung** auf der Registerkarte **Hive-Editor** werden abgeschlossene oder laufende Jobs angezeigt, solange Sie auf dieser Registerkarte bleiben. Wenn Sie die Seite verlassen, werden in der Tabelle keine Jobs aufgeführt. Die Registerkarte **Auftragsverlauf** enthält eine Liste aller abgeschlossenen und laufenden Aufträge.
+	> [AZURE.NOTE] In der Tabelle **Auftragssitzung** auf der Registerkarte **Hive-Editor** werden abgeschlossene oder laufende Jobs angezeigt, solange Sie auf dieser Registerkarte bleiben. Wenn Sie die Seite verlassen, werden in der Tabelle keine Jobs aufgeführt. Die Registerkarte **Auftragsverlauf** enthält eine Liste aller abgeschlossenen und laufenden Aufträge.
  
 
 **So navigieren Sie zur Ausgabedatei**
 
 1. Klicken Sie oben im Cluster-Dashboard auf **Dateibrowser**. 
-2. Klicken Sie auf den Namen Ihres Speicherkontos, auf den Namen des Containers (identisch mit dem Clusternamen) und dann auf **Benutzer**.
-3. Klicken Sie auf **admin** und dann auf die GUID, deren Uhrzeit der letzten Änderung kurz nach der zuvor notierten Job-Startzeit liegt. Notieren Sie sich die GUID. Sie benötigen sie im nächsten Abschnitt.
+2. Klicken Sie auf den Namen Ihres Speicherkontos, auf den Namen des Containers (identisch mit dem Clusternamen) und dann auf **user**.
+3. Klicken Sie auf **admin** und dann auf die GUID, deren letzte Änderungszeit kurz nach der zuvor notierten Auftragsstartzeit liegt. Notieren Sie sich die GUID. Sie benötigen sie im nächsten Abschnitt.
 
 
    	![The output file GUID listed in the File Browser tab.][img-hdi-dashboard-query-browse-output]
@@ -197,7 +210,7 @@ Sie benötigen Excel 2010 oder 2013, um diesen Teil des Lernprogramms durchführ
 
 **So laden Sie Microsoft Power Query für Excel herunter**
 
-- Laden Sie Microsoft Power Query für Microsoft Excel aus dem [Microsoft Download Center] herunter,(http://www.microsoft.com/de-de/download/details.aspx?id=39379)  und installieren Sie es.
+- Laden Sie Microsoft Power Query für Microsoft Excel aus dem [Microsoft Download Center](http://www.microsoft.com/de-de/download/details.aspx?id=39379) herunter, und installieren Sie es.
 
 **So importieren Sie HDInsight-Daten**
 
@@ -206,23 +219,23 @@ Sie benötigen Excel 2010 oder 2013, um diesen Teil des Lernprogramms durchführ
 
 	![Excel PowerQuery Import menu open for Azure HDInsight.][image-hdi-gettingstarted-powerquery-importdata]
 
-3. Geben Sie den **Kontonamen** des Ihrem Cluster zugeordneten Azure Blob-Speicherkontos ein, und klicken Sie dann auf **OK**. Dies ist das Speicherkonto, das Sie zu Beginn des Lernprogramms erstellt haben.
-4. Geben Sie den **Kontoschlüssel** für das Azure Blob-Speicherkonto ein, und klicken Sie dann auf **Speichern**. 
+3. Geben Sie den **Kontonamen** des mit Ihrem Cluster verbundenen Azure BLOB-Speicherkontos ein, und klicken Sie dann auf **OK**. Dies ist das Speicherkonto, das Sie zu Beginn des Lernprogramms erstellt haben.
+4. Geben Sie den **Kontoschlüssel** für das Azure BLOB-Speicherkonto ein, und klicken Sie dann auf **Speichern**. 
 5. Doppelklicken Sie im Navigationsbereich rechts auf den Namen des Blob-Speichercontainers. Der Container hat standardmäßig denselben Name wie der Cluster. 
 
-6. Suchen Sie **stdout** in der Spalte **Name**. Überprüfen Sie, ob die GUID in der entsprechenden Spalte **Ordnerpfad** der zuvor notierten GUID entspricht. Eine Übereinstimmung deutet darauf hin, dass die Ausgabedaten zu dem von Ihnen übermittelten Job gehören. Klicken Sie links von **stdout** auf **Binär**.
+6. Suchen Sie **stdout** in der Spalte **Name**. Stellen Sie sicher, dass die GUID in der entsprechenden Spalte **Ordnerpfad** Spalte mit der zuvor notierten GUID übereinstimmt. Eine Übereinstimmung deutet darauf hin, dass die Ausgabedaten zu dem von Ihnen übermittelten Job gehören. Klicken Sie links von **stdout** auf **Binär**.
 
 	![Finding the data output by GUID in the list of content.][image-hdi-gettingstarted-powerquery-importdata2]
 
-9. Klicken Sie in der oberen linken Ecke auf **Schließen und laden**, um die Ausgabe des Hive-Jobs in Excel zu importieren.
+9. Klicken Sie in der oberen linken Ecke auf **Schließen und laden**, um die Hive-Auftragsausgabe in Excel zu importieren.
 
 
 ##<a name="nextsteps"></a>Nächste Schritte
 In diesem Lernprogramm haben Sie erfahren, wie ein Cluster mit HDInsight bereitgestellt wird, ein MapReduce-Job darauf ausgeführt wird und die Ergebnisse in Excel importiert werden, wo sie mit BI-Tools weiter bearbeitet und grafisch angezeigt werden können. Weitere Informationen finden Sie in den folgenden Artikeln:
 
-- [Erste Schritte mit HDInsight Hadoop-Tools für Visual Studio][1]
-- [Erste Schritte mit dem HDInsight-Emulator][hdinsight-emulator]
-- [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]
+- [Erste Schritte mit den HDInsight Hadoop-Tools für Visual Studio][1]
+- [Erste Schritte mit dem HDInsight Emulator][hdinsight-emulator]
+- [Verwenden von Azure BLOB-Speicher mit HDInsight][hdinsight-storage]
 - [Verwalten von HDInsight mit PowerShell][hdinsight-admin-powershell]
 - [Hochladen von Daten in HDInsight][hdinsight-upload-data]
 - [Verwenden von MapReduce mit HDInsight][hdinsight-use-mapreduce]
@@ -287,5 +300,4 @@ In diesem Lernprogramm haben Sie erfahren, wie ein Cluster mit HDInsight bereitg
 
 [image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-get-started/HDI.GettingStarted.PowerQuery.ImportData.png
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-get-started/HDI.GettingStarted.PowerQuery.ImportData2.png
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

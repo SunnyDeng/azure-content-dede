@@ -11,7 +11,7 @@ In diesem Abschnitt definieren Sie einen ServiceFilter, der einen HTTP-Statuscod
 
 		import com.microsoft.windowsazure.mobileservices.MobileServiceException;
  
-2. Fügen Sie die folgenden Mitglieder zur "ToDoActivity"-Klasse hinzu. 
+2. Fügen Sie die folgenden Elemente zur Klasse `ToDoActivity` hinzu. 
 
     	public boolean bAuthenticating = false;
 	    public final Object mAuthenticationLock = new Object();
@@ -49,7 +49,7 @@ In diesem Abschnitt definieren Sie einen ServiceFilter, der einen HTTP-Statuscod
     	}
     	
 
-4. Fügen Sie in der Datei "ToDoActivity.java" die folgende Methode zur "ToDoActivity"-Klasse hinzu. Diese Methode löst die Wartezeit aus und aktualisiert das Token der ausgehenden Anforderungen, wenn die Authentifizierung abgeschlossen ist. 
+4. Fügen Sie in der Datei ToDoActivity.java die folgende Methode zur ToDoActivity-Klasse hinzu. Diese Methode löst die Wartezeit aus und aktualisiert das Token der ausgehenden Anforderungen, wenn die Authentifizierung abgeschlossen ist. 
 
     	
     	/**
@@ -74,7 +74,7 @@ In diesem Abschnitt definieren Sie einen ServiceFilter, der einen HTTP-Statuscod
     	}
 
 
-5. Aktualisieren Sie in der Datei "ToDoActivity.java" die "authenticate"-Methode der "ToDoActivity"-Klasse, sodass diese einen booleschen Parameter akzeptiert, um die Erzwingung der Aktualisierung des Tokens und des Tokencaches zu ermöglichen. Außerdem müssen die blockierten Threads benachrichtigt werden, wenn die Authentifizierung abgeschlossen ist, damit sie das neue Token übernehmen.
+5. Aktualisieren Sie in der Datei "ToDoActivity.java" die `authenticate`-Methode der "ToDoActivity"-Klasse, sodass diese einen booleschen Parameter akzeptiert, um die Erzwingung der Aktualisierung des Tokens und des Tokencaches zu ermöglichen. Außerdem müssen die blockierten Threads benachrichtigt werden, wenn die Authentifizierung abgeschlossen ist, damit sie das neue Token übernehmen.
 
 	    /**
     	 * Authenticates with the desired login provider. Also caches the token. 
@@ -127,7 +127,7 @@ In diesem Abschnitt definieren Sie einen ServiceFilter, der einen HTTP-Statuscod
 
 
 
-6. Fügen Sie in der Datei "ToDoActivity.java" diesen Code für eine neue "RefreshTokenCacheFilter"-Klasse in der "ToDoActivity"-Klasse hinzu:
+6. Fügen Sie in der Datei "ToDoActivity.java" diesen Code für eine neue `RefreshTokenCacheFilter`-Klasse in der "ToDoActivity"-Klasse hinzu:
 
 		/**
 		* The RefreshTokenCacheFilter class filters responses for HTTP status code 401. 
@@ -206,7 +206,7 @@ In diesem Abschnitt definieren Sie einen ServiceFilter, der einen HTTP-Statuscod
 
     Dieser Service-Filter überprüft jede Antwort auf den HTTP-Statuscode 401 "Nicht autorisiert". Wird er gefunden, dann wird eine neue Loginanforderung auf dem UI-Thread festgelegt, um ein neues Token abzurufen. Andere Aufrufe werden blockiert, bis die Anmeldung abgeschlossen ist, oder bis 5 Versuche fehlgeschlagen sind. Sobald das neue Token abgerufen wurde, werden die Anforderung, die 401 ausgelöst hatte, sowie die blockierten Aufrufe mit dem neuen Token wiederholt. 
 
-7. Aktualisieren Sie in der Datei "ToDoActivity.java" die "onCreate"-Methode wie folgt:
+7. Aktualisieren Sie in der Datei "ToDoActivity.java" die `onCreate`-Methode wie folgt:
 
 		@Override
 	    public void onCreate(Bundle savedInstanceState) {
@@ -237,6 +237,7 @@ In diesem Abschnitt definieren Sie einen ServiceFilter, der einen HTTP-Statuscod
 	    }
 
 
-       In diesem Code wird "RefreshTokenCacheFilter" zusätzlich zu "ProgressFilter" verwendet. Der Tokencache soll auch während "onCreate" geladen werden. Daher wird "false" in der "authenticate"-Methode übergeben.
+       In diesem Code wird `RefreshTokenCacheFilter` zusätzlich zu `ProgressFilter` verwendet. Der Tokencache soll auch während `onCreate` geladen werden. Daher wird `false` an die `authenticate`-Methode übergeben.
 
 
+<!--HONumber=42-->

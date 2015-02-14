@@ -1,34 +1,48 @@
-﻿<properties title="How to use the queue service (PHP) - Azure feature guide" pageTitle="Verwenden des Warteschlangendiensts (PHP) | Microsoft Azure" metaKeywords="Azure Queue Service messaging PHP" description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele wurden in PHP geschrieben." documentationCenter="PHP" services="storage" authors="tamram" manager="adinah" />
+﻿<properties 
+	pageTitle="Verwenden des Warteschlangendiensts (PHP) | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie mit dem Azure-Warteschlangendienst Warteschlangen erstellen und löschen sowie Nachrichten einfügen, abrufen und löschen können. Die Beispiele wurden in PHP geschrieben." 
+	documentationCenter="php" 
+	services="storage" 
+	authors="tfitzmac" 
+	manager="adinah" 
+	editor=""/>
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/24/2014" ms.author="tomfitz" />
+<tags 
+	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="PHP" 
+	ms.topic="article" 
+	ms.date="11/24/2014" 
+	ms.author="tomfitz"/>
 
 # Verwenden des Warteschlangendienstes aus PHP
 
-Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Warteschlangendienstes in Azure. Die Beispiele wurden unter Verwendung von Klassen des Windows SDK für PHP geschrieben. Die behandelten Szenarien sind **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitte [Nächste Schritte](#NextSteps) .
+Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Warteschlangendienstes in Azure. Die Beispiele wurden unter Verwendung von Klassen des Windows SDK für PHP geschrieben. Die behandelten Szenarien umfassen das **Einfügen**, **Einsehen**, **Abrufen**, und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie unter [Nächste Schritte](#NextSteps) .
 
 ##Inhaltsverzeichnis
 
-* [Was ist Warteschlangenspeicherung?](#what-is)
+* [Was ist die Warteschlangenspeicherung](#what-is)
 * [Konzepte](#concepts)
 * [Erstellen eines Azure-Speicherkontos](#create-account)
 * [Erstellen einer PHP-Anwendung](#create-app)
-* [Konfigurieren Ihrer Anwendung für den Warteschlangendienst](#configure-app)
+* [Konfigurieren der Anwendung für den Warteschlangendienst](#configure-app)
 * [Einrichten einer Azure-Speicherverbindung](#connection-string)
 * [Vorgehensweise: Erstellen einer Warteschlange](#create-queue)
-* [Vorgehensweise: Hinzufügen von Nachrichten zu einer Warteschlange](#add-message)
+* [Vorgehensweise: Nachricht zu einer Warteschlange hinzufügen](#add-message)
 * [Vorgehensweise: Einsehen der nächsten Nachricht](#peek-message)
-* [Vorgehensweise: Einsehen der nächsten Nachricht](#dequeue-message)
+* [Vorgehensweise: Entfernen der nächsten Nachricht](#dequeue-message)
 * [Vorgehensweise: Ändern des Inhalts von Nachrichten in der Warteschlange](#change-message)
-* [Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange](#additional-options)
+* [Zusätzliche Optionen für Nachrichten aus der Warteschlange](#additional-options)
 * [Vorgehensweise: Abrufen der Warteschlangenlänge](#get-queue-length)
 * [Vorgehensweise: Löschen einer Warteschlange](#delete-queue)
 * [Nächste Schritte](#next-steps)
 
-[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
+[AZURE.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
 
 <h2><a id="create-account"></a>Erstellen eines Azure-Speicherkontos</h2>
 
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
 <h2><a id="create-app"></a>Erstellen einer PHP-Anwendung</h2>
 
@@ -38,25 +52,25 @@ In diesem Leitfaden verwenden Sie Funktionen des Warteschlangendiensts, die loka
 
 <h2><a id="GetClientLibrary"></a>Abrufen der Azure-Clientbibliotheken</h2>
 
-[WACOM.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 <h2><a id="configure-app"></a>Konfigurieren der Anwendung für den Zugriff auf den Warteschlangendienst</h2>
 
 Zum Verwenden der Azure-Warteschlangendienst-APIs müssen Sie Folgendes durchführen:
 
-1. Verweisen Sie mithilfe der [require_once][require_once]-Anweisung auf die Autoloaderdatei und
+1. Verweisen Sie mithilfe der [require_once][require_once]-Anweisung auf die Autoloaderdatei, und
 2. Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
-Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
+Das folgende Beispiel zeigt, wie die Autoloaderdatei integriert werden, und auf die **ServicesBuilder**-Klasse verwiesen werden kann.
 
-> [WACOM.NOTE]
-> In diesem Beispiel (und in anderen Beispielen in diesem Artikel) wird angenommen, dass Sie die PHP-Clientbibliotheken für Azure über Composer installiert haben. Falls Sie die Bibliotheken manuell oder als PEAR-Paket installiert haben, müssen Sie auf die Autoloaderdatei `WindowsAzure.php` verweisen.
+> [AZURE.NOTE]
+> In diesem Beispiel (und in anderen Beispielen in diesem Artikel) wird angenommen, dass Sie die PHP-Clientbibliotheken für Azure über Composer installiert haben. Wenn Sie die Bibliotheken manuell oder als PEAR-Paket installiert haben, müssen Sie auf die `WindowsAzure.php` Autoloaderdatei verweisen.
 
 	require_once 'vendor\autoload.php';
 	use WindowsAzure\Common\ServicesBuilder;
 
 
-In den Beispielen weiter unten wird die `require_once`-Anweisung immer angezeigt, aber nur die Klassen, die für die Ausführung des Beispiels erforderlich sind, werden referenziert.
+In den Beispielen weiter unten wird die `require_once`-Anweisung immer angezeigt. Jedoch wird nur auf die für die Ausführung des Beispiels erforderlichen Klassen verwiesen.
 
 <h2><a id="connection-string"></a>Einrichten einer Azure-Speicherverbindung</h2>
 
@@ -71,12 +85,12 @@ Für den Zugriff auf den Emulatorspeicher:
 	UseDevelopmentStorage=true
 
 
-Um einen Azure-Dienstclient zu erstellen, müssen Sie die **ServicesBuilder**-Klasse verwenden. Sie können:
+Um einen Azure-Dienstclient zu erstellen, verwenden Sie die **ServicesBuilder**-Klasse. Sie können:
 
 * Die Verbindungszeichenfolge direkt an die Klasse weitergeben oder
-* den **CloudConfigurationManager (CCM)** verwenden, um mehrere externe Quellen für die Verbindungszeichenfolge zu überprüfen:
-	* Standardmäßig verfügt sie über Unterstützung für eine externe Quelle - Umgebungsvariablen.
-	* Sie können neue Quellen durch Erweitern der **ConnectionStringSource**-Klasse hinzufügen.
+* verwenden Sie den **CloudConfigurationManager (CCM)**, um mehrere externe Quellen für die Verbindungszeichenfolge zu überprüfen:
+	* Standardmäßig wird eine externe Quelle unterstützt. - Umgebungsvariablen
+	* Neue Datenquellen können über die Erweiterung der **ConnectionStringSource**-Klasse hinzugefügt werden.
 
 Für die hier erläuterten Beispiele wird die Verbindungszeichenfolge direkt weitergegeben.
 
@@ -89,7 +103,7 @@ Für die hier erläuterten Beispiele wird die Verbindungszeichenfolge direkt wei
 
 <h2><a id="create-queue"></a>Vorgehensweise: Erstellen einer Warteschlange</h2>
 
-Über ein **QueueRestProxy**-Objekt können Sie eine Warteschlange mit der **createQueue**-Methode erstellen. Bei der Erstellung von Warteschlangen können Sie verschiedene Optionen festlegen, was allerdings nicht erforderlich ist. (Das folgende Beispiel zeigt, wie Sie die Metadaten für eine Warteschlange festlegen.)
+Ein **QueueRestProxy**-Objekt ermöglicht Ihnen das Erstellen einer Warteschlange mit der **createQueue**-Methode. Bei der Erstellung von Warteschlangen können Sie verschiedene Optionen festlegen, was allerdings nicht erforderlich ist. (Das folgende Beispiel zeigt, wie Sie die Metadaten für eine Warteschlange festlegen.)
 
 	require_once 'vendor\autoload.php';
 
@@ -118,13 +132,13 @@ Für die hier erläuterten Beispiele wird die Verbindungszeichenfolge direkt wei
 		echo $code.": ".$error_message."<br />";
 	}
 
-> [WACOM.NOTE]
+> [AZURE.NOTE]
 > Metadaten-Schlüssel unterscheiden nicht immer zwischen Groß- und Kleinschreibung. Alle Schlüssel werden vom Dienst in Kleinbuchstaben gelesen.
 
 
-<h2><a id="add-message"></a>Vorgehensweise: Hinzufügen von Nachrichten zu einer Warteschlange</h2>
+<h2><a id="add-message"></a>Vorgehensweise: Nachricht zu einer Warteschlange hinzufügen</h2>
 
-Verwenden Sie **QueueRestProxy->createMessage**, um Nachrichten zu einer Warteschlange hinzuzufügen. Übergeben Sie der Methode den Warteschlangennamen, Nachrichtentext und (optionale) Nachrichtenoptionen.
+Um eine Nachricht zu einer Warteschlange hinzuzufügen, verwenden Sie **QueueRestProxy->createMessage**. Übergeben Sie der Methode den Warteschlangennamen, Nachrichtentext und (optionale) Nachrichtenoptionen.
 
 	require_once 'vendor\autoload.php';
 
@@ -151,7 +165,7 @@ Verwenden Sie **QueueRestProxy->createMessage**, um Nachrichten zu einer Wartesc
 
 <h2><a id="peek-message"></a>Vorgehensweise: Einsehen der nächsten Nachricht</h2>
 
-Sie können einen Blick auf die Nachricht(en) am Anfang einer Warteschlange werfen, ohne diese aus der Warteschlange zu entfernen, indem Sie **QueueRestProxy->peekMessages** aufrufen. Die Methode **peekMessage** gibt standardmäßig eine einzelne Nachricht zurück. Sie können diesen Wert jedoch mit der Methode **PeekMessagesOptions->setNumberOfMessages** ändern.
+Sie können einen Blick auf eine Nachricht (oder Nachrichten) am Anfang einer Warteschlange werfen, ohne diese aus der Warteschlange zu entfernen, indem Sie **QueueRestProxy->peekMessages** aufrufen. In der Standardeinstellung gibt die **peekMessage**-Methode eine einzelne Nachricht zurück, aber Sie können diesen Wert über die **PeekMessagesOptions->setNumberOfMessages**-Methode ändern.
 
 	require_once 'vendor\autoload.php';
 
@@ -194,9 +208,9 @@ Sie können einen Blick auf die Nachricht(en) am Anfang einer Warteschlange werf
 		}
 	}
 
-<h2><a id="dequeue-message"></a>Vorgehensweise: Entfernen der nächsten Nachricht aus der Warteschlange</h2>
+<h2><a id="dequeue-message"></a>Vorgehensweise: Entfernen der nächsten Nachricht</h2>
 
-Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Zunächst rufen Sie **QueueRestProxy->listMessages**, um die Nachricht unsichtbar für anderen Code zu machen, der aus der Warteschlange liest. Standardmäßig bleibt die Nachricht 30 Sekunden lang unsichtbar (falls sie in diesem Zeitraum nicht gelöscht wird, kann sie wieder aus der Warteschlange gelesen werden.). Um die Nachricht endgültig aus der Warteschlange zu entfernen, müssen Sie **QueueRestProxy->deleteMessage** aufrufen. Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der Code ruft **deleteMessage** direkt nach der Verarbeitung der Nachricht auf.
+Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Zunächst rufen Sie **QueueRestProxy->listMessages** auf, wodurch die Nachricht für andere Codes nicht mehr sichtbar ist. Standardmäßig bleibt die Nachricht 30 Sekunden lang unsichtbar (falls sie in diesem Zeitraum nicht gelöscht wird, kann sie wieder aus der Warteschlange gelesen werden.). Um das Entfernen der Nachricht aus der Warteschlange abzuschließen, rufen Sie **QueueRestProxy->deleteMessage** auf. Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der Code ruft **deleteMessage** auf, direkt nachdem die Nachricht verarbeitet wurde.
 
 	require_once 'vendor\autoload.php';
 
@@ -234,7 +248,7 @@ Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Zun
 
 <h2><a id="change-message"></a>Vorgehensweise: Ändern des Inhalts von Nachrichten in der Warteschlange</h2>
 
-Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern, indem Sie **QueueRestProxy->updateMessage** aufrufen. Wenn die Nachricht eine Arbeitsaufgabe darstellt, können Sie diese Funktion verwenden, um den Status der Aufgabe zu aktualisieren. Mit dem folgenden Code wird die Warteschlangennachricht mit neuem Inhalt aktualisiert und das Sichtbarkeits-Zeitlimit um weitere 60 Sekunden verlängert. Dadurch wird der mit der Nachricht verknüpfte Arbeitsstatus gespeichert, und der Client erhält eine weitere Minute zur Bearbeitung der Nachricht. Sie können diese Technik verwenden, um Workflows mit mehreren Schritten in Warteschlangennachrichten zu verfolgen, ohne von vorn beginnen zu müssen, wenn ein Verarbeitungsschritt aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. In der Regel behalten Sie auch die Anzahl der Wiederholungen bei, und wenn die Nachricht mehr als n Mal wiederholt wurde, wird sie gelöscht. Dies verhindert, dass eine Nachricht bei jeder Verarbeitung einen Anwendungsfehler auslöst.
+Sie können den Inhalt einer Nachricht direkt in der Warteschlange ändern, indem Sie **QueueRestProxy->updateMessage** aufrufen. Wenn die Nachricht eine Arbeitsaufgabe darstellt, können Sie diese Funktion verwenden, um den Status der Aufgabe zu aktualisieren. Mit dem folgenden Code wird die Warteschlangennachricht mit neuem Inhalt aktualisiert und das Sichtbarkeits-Zeitlimit um weitere 60 Sekunden verlängert. Dadurch wird der mit der Nachricht verknüpfte Arbeitsstatus gespeichert, und der Client erhält eine weitere Minute zur Bearbeitung der Nachricht. Sie können diese Technik verwenden, um Workflows mit mehreren Schritten in Warteschlangennachrichten zu verfolgen, ohne von vorn beginnen zu müssen, wenn ein Verarbeitungsschritt aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. In der Regel behalten Sie auch die Anzahl der Wiederholungen bei, und wenn die Nachricht mehr als n Mal wiederholt wurde, wird sie gelöscht. Dies verhindert, dass eine Nachricht bei jeder Verarbeitung einen Anwendungsfehler auslöst.
 
 	require_once 'vendor\autoload.php';
 
@@ -274,9 +288,9 @@ Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern, ind
 		echo $code.": ".$error_message."<br />";
 	}
 
-<h2><a id="additional-options"></a>Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange</h2>
+<h2><a id="additional-options"></a>Zusätzliche Optionen für Nachrichten aus der Warteschlange</h2>
 
-Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können. Erstens können Sie einen Nachrichtenstapel abrufen (bis zu 32). Zweitens können Sie das Sichtbarkeits-Zeitlimit verkürzen oder verlängern, sodass der Code mehr oder weniger Zeit zur vollständigen Verarbeitung jeder Nachricht benötigt. Im folgenden Codebeispiel wird die Methode **getMessages** verwendet, um 16 Nachrichten mit einem Aufruf abzurufen. Anschließend wird jede Nachricht mithilfe einer **for**-Schleife verarbeitet. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt.
+Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können. Erstens können Sie einen Nachrichtenstapel abrufen (bis zu 32). Zweitens können Sie das Sichtbarkeits-Zeitlimit verkürzen oder verlängern, sodass der Code mehr oder weniger Zeit zur vollständigen Verarbeitung jeder Nachricht benötigt. Im folgenden Codebeispiel wird die **getMessages**-Methode verwendet, um 16 Nachrichten pro Aufruf abzurufen. Anschließend wird jede Nachricht mithilfe einer **für** Schleife verarbeitet. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt.
 
 	require_once 'vendor\autoload.php';
 
@@ -323,7 +337,7 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
 
 <h2><a id="get-queue-length"></a>Vorgehensweise: Abrufen der Warteschlangenlänge</h2>
 
-Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die Methode **QueueRestProxy->getQueueMetadata** ruft Metadaten zur Warteschlange vom Warteschlangendienst ab. Rufen Sie die Methode **getApproximateMessageCount** auf das zurückgegebene Objekt auf, um die Anzahl der Nachrichten in der Warteschlange abzurufen. Die Anzahl ist nur ein ungefährer Wert, da seit der Antwort des Warteschlangendienstes möglicherweise bereits Nachrichten hinzugefügt oder gelöscht wurden.
+Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die **QueueRestProxy->getQueueMetadata**-Methode fordert den Warteschlangendienst auf, Metadaten der Warteschlange zurückzugeben. Das Aufrufen der **getApproximateMessageCount**-Methode für das zurückgegebene Objekt liefert die Anzahl der Nachrichten, die sich in der Warteschlange befinden. Die Anzahl ist nur ein ungefährer Wert, da seit der Antwort des Warteschlangendienstes möglicherweise bereits Nachrichten hinzugefügt oder gelöscht wurden.
 
 	require_once 'vendor\autoload.php';
 
@@ -351,7 +365,7 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
 
 <h2><a id="delete-queue"></a>Vorgehensweise: Löschen einer Warteschlange</h2>
 
-Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die Methode **QueueRestProxy->deleteQueue** auf.
+Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten, rufen Sie die **QueueRestProxy->deleteQueue**-Methode auf.
 
 	require_once 'vendor\autoload.php';
 
@@ -382,9 +396,8 @@ Da Sie jetzt die Grundlagen des Azure-Warteschlangendiensts erlernt haben, folge
 - Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure] []
 - Besuchen Sie den Blog des Azure-Speicherteams: <http://blogs.msdn.com/b/windowsazurestorage/>
 
-[Download]: http://go.microsoft.com/fwlink/?LinkID=252473
+[Herunterladen]: http://go.microsoft.com/fwlink/?LinkID=252473
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
 [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

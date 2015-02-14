@@ -1,6 +1,20 @@
-﻿<properties title="Managing Concurrency in Microsoft Azure Storage" pageTitle="required" description="Verwalten von Nebenläufigkeit für die Blob-, Warteschlangen-, Tabellen- und Dateidienste" metaKeywords="Optional" services="Optional" solutions="Optional" documentationCenter="Optional" authors="tamram" manager="adinah" videoId="Optional" scriptId="Optional" />
+﻿<properties 
+	pageTitle="erforderlich" 
+	description="Verwalten von Nebenläufigkeit für die Blob-, Warteschlangen-, Tabellen- und Dateidienste" 
+	services="storage" 
+	documentationCenter="" 
+	authors="tamram" 
+	manager="adinah" 
+	editor=""/>
 
-<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="10/08/2014" ms.author="tamram" />
+<tags 
+	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="10/08/2014" 
+	ms.author="tamram"/>
 
 #Verwalten von Nebenläufigkeit Microsoft Azure Storage
 Moderne Internet-basierte Anwendungen haben in der Regel mehrere Benutzer, die Daten gleichzeitig anzeigen und aktualisieren. Dies zwingt Anwendungsentwickler dazu, sorgfältig zu überlegen, wie sie ihren Endbenutzern ein vorhersagbares Erlebnis gewährleisten können, insbesondere in Situationen, in denen mehrere Benutzer die gleichen Daten aktualisieren können. Von Entwicklern werden für gewöhnlich die drei folgenden Hauptstrategien für die Datennebenläufigkeit in Betracht gezogen:  
@@ -30,9 +44,9 @@ Dieser Prozess ist folgendermaßen gegliedert:
 2.	Wenn Sie das Blob aktualisieren, fügen Sie den in Schritt 1 erhaltenen ETag-Wert in den bedingten **If-Match**-Header der Anforderung ein, die Sie an den Dienst senden.
 3.	Der Dienst vergleicht den ETag-Wert in der Anforderung mit dem aktuellen ETag-Wert des Blob.
 4.	Wenn der aktuelle ETag-Wert des Blob eine andere Version hat als das ETag im bedingten **If-Match**-Header in der Anforderung, gibt der Dienst einen 412-Fehler an den Client zurück. Dadurch wird dem Client mitgeteilt, dass das Blob von einem anderen Prozess aktualisiert wurde, seitdem es vom Client abgerufen wurde.
-5.	Wenn der aktuelle ETag-Wert des Blob dieselbe Version hat wie der des ETag im bedingten **If-Match**-Header in der Anforderung, führt der Dienst die angeforderte Operation aus und aktualisiert den aktuellen ETag-Wert des Blob, um anzuzeigen, dass eine neue Version erstellt wurde.  
+5.	Wenn der aktuelle ETag-Wert des Blob dieselbe Version hat wie der des ETag im bedingten **If-Match**-Header in der Anforderung, führt der Dienst den angeforderten Vorgang aus und aktualisiert den aktuellen ETag-Wert des Blob, um anzuzeigen, dass eine neue Version erstellt wurde.  
 
-Der folgende C#-Codeausschnitt (der Client Storage Library 4.2.0 verwendet) zeigt ein einfaches Beispiel zur Konstruktion eines **If-Match AccessCondition**-Objekts, das auf dem ETag-Wert basiert, auf den über die Eigenschaften eines Blob zugegriffen wird, das zuvor abgerufen oder eingefügt wurde. Dann wird für die Aktualisierung des Blob das **AccessCondition**-Objekt verwendet: Das **AccessCondition**-Objekt fügt den **If-Match**-Header zur Anforderung hinzu. Falls das Blob von einem anderen Prozess aktualisiert wurde, gibt der Blob-Dienst eine HTTP 412-Statusmeldung (Vorbedingungsfehler) zurück. Das vollständige Beispiel können Sie [hier](http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114)herunterladen.  
+Der folgende C#-Codeausschnitt (der Client Storage Library 4.2.0 verwendet) zeigt ein einfaches Beispiel zur Konstruktion eines **If-Match AccessCondition**-Objekts, das auf dem ETag-Wert basiert, auf den über die Eigenschaften eines zuvor abgerufenen oder eingefügten Blob zugegriffen wird. Dann wird für die Aktualisierung des Blob das **AccessCondition**-Objekt verwendet: Das **AccessCondition**-Objekt fügt den **If-Match**-Header zur Anforderung hinzu. Falls das Blob von einem anderen Prozess aktualisiert wurde, gibt der Blob-Dienst eine HTTP 412-Statusmeldung (Vorbedingungsfehler) zurück. Das vollständige Beispiel können Sie [hier] herunterladen(http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114).  
 
 	// Retrieve the ETag from the newly created blob
 	// Etag is already populated as UploadText should cause a PUT Blob call 
@@ -99,8 +113,8 @@ Copy Blob|	Ja|	Ja (für Quell- und Zielblob)|
 Abort Copy Blob|	Nein|	Nein|
 Delete Blob|	Nein|	Ja|
 Put Block|	Nein|	Nein|
-Put Blob List|	Ja|	Ja|
-Get Blob List|	Ja|	Nein|
+Put Block List|	Ja|	Ja|
+Get Block List|	Ja|	Nein|
 Put Page|	Ja|	Ja|
 Get Page Ranges|	Ja|	Ja
 
@@ -111,7 +125,7 @@ Um ein Blob für die exklusive Verwendung zu sperren, können Sie dafür eine [L
 
 Leases ermöglichen die Unterstützung verschiedener Synchronisierungsstrategien, einschließlich exklusiver Schreib-/gemeinsamer Lesezugriff, exklusiver Schreib-/exklusiver Lesezugriff und gemeinsamer Schreib-/exklusiver Lesezugriff. Ist eine Lease vorhanden, erzwingt der Speicherdienst exklusive Schreibzugriffe (put-, set- und delete-Vorgänge). Um Exklusivität von Lesevorgängen sicherzustellen, muss der Entwickler jedoch dafür sorgen, dass alle Clientanwendungen eine Lease-ID verwenden und dass jeweils nur ein Client über eine gültige Lease-ID verfügt. Lesevorgänge, die keine Lease-ID enthalten, führen zu gemeinsamen Lesevorgängen.  
 
-Der folgende C#-Codeausschnitt zeigt an einem Beispiel, wie eine exklusive Lease von 30 Sekunden für ein Blob abgerufen, der Inhalt des Blob aktualisiert und die Lease anschließend freigegeben wird. Wenn für das Blob bereits eine Lease wirksam ist, wenn Sie eine neue Lease abrufen, gibt der Blob-Dienst die Statusmeldung "HTTP (409) Conflict" zurück. Im Codeausschnitt unten wird ein **AccessCondition**-Objekt verwendet, um die Lease-Informationen zu kapseln, wenn die Anforderung zum Aktualisieren des Blob im Speicherdienst ausgeführt wird. Das vollständige Beispiel können Sie [hier](http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114)herunterladen.  
+Der folgende C#-Codeausschnitt zeigt an einem Beispiel, wie eine exklusive Lease von 30 Sekunden für ein Blob abgerufen, der Inhalt des Blob aktualisiert und die Lease anschließend freigegeben wird. Wenn für das Blob bereits eine Lease wirksam ist, wenn Sie eine neue Lease abrufen, gibt der Blob-Dienst die Statusmeldung "HTTP (409) Conflict" zurück. Im Codeausschnitt unten wird ein **AccessCondition**-Objekt verwendet, um die Lease-Informationen zu kapseln, wenn die Anforderung zum Aktualisieren des Blob im Speicherdienst ausgeführt wird. Das vollständige Beispiel können Sie [hier] herunterladen(http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114).  
 
 	// Acquire lease for 15 seconds
 	string lease = blockBlob.AcquireLease(TimeSpan.FromSeconds(15), null);
@@ -138,7 +152,7 @@ Der folgende C#-Codeausschnitt zeigt an einem Beispiel, wie eine exklusive Lease
 	        throw;
 	}  
 
-Wenn Sie an einem Blob mit Lease einen Schreibvorgang versuchen, ohne die Lease-ID zu übergeben, erzeugt die Anforderung einen 412-Fehler. Wenn die Lease abläuft, bevor die **UploadText**-Methode aufgerufen wird, die Lease-ID aber dennoch übergeben wird, erzeugt die Anforderung ebenfalls einen **412**-Fehler. Weitere Informationen zum Verwalten von Lease-Ablaufzeiten und Lease-IDs finden Sie unter [Leasen eines Blob](http://msdn.microsoft.com/de-de/library/azure/ee691972.aspx) in der REST-Dokumentation.  
+Wenn Sie an einem Blob mit Lease einen Schreibvorgang versuchen, ohne die Lease-ID zu übergeben, erzeugt die Anforderung einen 412-Fehler. Wenn die Lease abläuft, bevor die **UploadText**-Methode aufgerufen wird, die Lease-ID aber dennoch übergeben wird, erzeugt die Anforderung ebenfalls einen **412**-Fehler. Weitere Informationen zum Verwalten von Lease-Ablaufzeiten und Lease-IDs finden Sie in der REST-Dokumentation [Leasen eines Blob](http://msdn.microsoft.com/de-de/library/azure/ee691972.aspx).  
 
 Zur Verwaltung der pessimistischen Nebenläufigkeit können die folgenden Blob-Vorgänge Leases verwenden:  
 
@@ -177,7 +191,7 @@ Weitere Informationen finden Sie unter:
 
 - [Angeben von bedingten Headern für Vorgänge des Blob-Diensts](http://msdn.microsoft.com/de-de/library/azure/dd179371.aspx)
 - [Lease Container](http://msdn.microsoft.com/de-de/library/azure/jj159103.aspx)
-- [Lease Blob ](http://msdn.microsoft.com/de-de/library/azure/ee691972.aspx) 
+- [Lease Blob](http://msdn.microsoft.com/de-de/library/azure/ee691972.aspx) 
 
 #Verwalten der Nebenläufigkeit im Tabellendienst
 Wenn Sie mit Entitäten arbeiten, verwendet der Tabellendienst standardmäßig optimistische Nebenläufigkeitsprüfungen. Darin unterscheidet er sich vom Blob-Dienst, wo die Durchführung optimistischer Nebenläufigkeitsprüfungen explizit gewählt werden muss. Ein weiterer Unterschied zwischen Tabellendienst und Blob-Dienst besteht darin, dass Sie mit dem Tabellendienst nur das Nebenläufigkeitsverhalten von Entitäten verwalten können, während Sie mit dem Blob-Dienst die Nebenläufigkeit sowohl von Containern als auch von Blobs verwalten können.  
@@ -188,11 +202,11 @@ Um die optimistische Nebenläufigkeit zu verwenden und zu prüfen, ob eine Entit
 2.	Wenn Sie die Entität aktualisieren, fügen Sie den in Schritt 1 erhaltenen ETag-Wert in den obligatorischen **If-Match**-Header der Anforderung ein, die Sie an den Dienst senden.
 3.	Der Dienst vergleicht den ETag-Wert in der Anforderung mit dem aktuellen ETag-Wert der Entität.
 4.	Wenn der aktuelle ETag-Wert der Entität vom ETag im obligatorischen **If-Match**-Header in der Anforderung abweicht, gibt der Dienst einen 412-Fehler an den Client zurück. Dadurch wird dem Client mitgeteilt, dass die Entität von einem anderen Prozess aktualisiert wurde, seitdem sie vom Client abgerufen wurde.
-5.	Wenn der aktuelle ETag-Wert der Entität identisch ist mit dem ETag-Wert im obligatorischen **If-Match**-Header in der Anforderung oder wenn der **If-Match**-Header das Platzhalterzeichen (*) enthält, führt der Dienst den angeforderten Vorgang aus und aktualisiert den aktuellen ETag-Wert der Entität, um anzuzeigen, dass die Entität aktualisiert wurde.  
+5.	Wenn der aktuelle ETag-Wert der Entität mit dem ETag-Wert im obligatorischen **If-Match**-Header in der Anforderung identisch ist oder wenn der **If-Match**-Header das Platzhalterzeichen (*) enthält, führt der Dienst den angeforderten Vorgang aus und aktualisiert den aktuellen ETag-Wert der Entität, um anzuzeigen, dass die Entität aktualisiert wurde.  
 
 Im Unterschied zum Blob-Dienst verlangt der Tabellendienst vom Client, in Aktualisierungsanforderungen einen **If-Match**-Header einzuschließen. Es ist jedoch möglich, eine unbedingte Aktualisierung zu erzwingen (Strategie "Letzter Schreiber gewinnt") und Nebenläufigkeitsprüfungen zu umgehen, wenn der Client den **If-Match**-Header in der Anforderung auf das Platzhalterzeichen (*) festlegt.  
 
-Der folgende C#-Codeausschnitt zeigt, wie für eine Kundenentität, die zuvor erstellt oder abgerufen wurde, die E-Mail-Adresse aktualisiert wird. Mit dem anfänglichen Einfüge- oder Abrufvorgang wird der ETag-Wert im Kundenobjekt gespeichert. Da im Beispiel beim Ausführen des Ersetzenvorgangs dieselbe Objektinstanz verwendet wird, wird der ETag-Wert automatisch an den Tabellendienst zurückgesendet, sodass der Dienst auf Verletzungen der Nebenläufigkeit prüfen kann. Falls die Entität im Tabellenspeicher von einem anderen Prozess aktualisiert wurde, gibt der Dienst eine HTTP 412-Statusmeldung (Vorbedingungsfehler) zurück. Das vollständige Beispiel können Sie [hier](http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114)herunterladen.  
+Der folgende C#-Codeausschnitt zeigt, wie für eine Kundenentität, die zuvor erstellt oder abgerufen wurde, die E-Mail-Adresse aktualisiert wird. Mit dem anfänglichen Einfüge- oder Abrufvorgang wird der ETag-Wert im Kundenobjekt gespeichert. Da im Beispiel beim Ausführen des Ersetzenvorgangs dieselbe Objektinstanz verwendet wird, wird der ETag-Wert automatisch an den Tabellendienst zurückgesendet, sodass der Dienst auf Verletzungen der Nebenläufigkeit prüfen kann. Falls die Entität im Tabellenspeicher von einem anderen Prozess aktualisiert wurde, gibt der Dienst eine HTTP 412-Statusmeldung (Vorbedingungsfehler) zurück. Das vollständige Beispiel können Sie [hier] herunterladen(http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114).
 
 	try
 	{
@@ -215,7 +229,7 @@ customer.ETag = "*";
 
 Die folgende Tabelle gibt einen Überblick darüber, wie ETag-Werte in den Tabellen-Entitätsvorgängen verwendet werden:  
 
-Vorgang	|Gibt ETag-Wert zurück	|Erfordert If-Match-Anforderungsheader|
+Vorgang	||Gibt ETag-Wert zurück	||Erfordert If-Match-Anforderungsheader||
 ------------|-------------------|--------------------------------|
 Query Entities|	Ja|	Nein|
 Insert Entity|	Ja|	Nein|
@@ -223,9 +237,9 @@ Update Entity|	Ja|	Ja|
 Merge Entity|	Ja|	Ja|
 Delete Entity|	Nein|	Ja|
 Insert or Replace Entity|	Ja|	Nein|
-Insert or Merge Entity|	Ja|	Nein| 
+Insert or Merge Entity|	Ja|	Nein 
 
-Bei den Vorgängen **Insert or Replace Entity** und **Insert or Merge Entity** werden KEINE Nebenläufigkeitsprüfungen durchgeführt, da hierbei kein ETag-Wert an den Tabellendienst gesendet wird.  
+Bei den Vorgängen **Entität einfügen oder ersetzen** und **Entität einfügen oder zusammenführen** werden *keine* Nebenläufigkeitsprüfungen durchgeführt, da hierbei kein ETag-Wert an den Tabellendienst gesendet wird.  
 
 Bei der Entwicklung skalierbarer Anwendung sollten Entwickler grundsätzlich auf die optimistische Nebenläufigkeit zurückgreifen. Wenn pessimistische Sperren erforderlich sind, können Entwickler beim Zugriff auf Tabelle u. a. folgendes Verfahren anwenden: Jeder Tabelle wird ein bestimmtes Blob zugewiesen, und es kann versucht werden, eine Lease für das Blob zu erhalten, bevor die Tabelle bearbeitet wird. Bei diesem Verfahren muss die Anwendung nicht sicherstellen, dass Datenzugriffspfade die Lease vor der Bearbeitung der Tabelle abrufen. Beachten Sie außerdem, dass die Mindestzeit für Leases 15 Sekunden beträgt, was bei der Skalierbarkeit sorgfältig zu beachten ist.  
 
@@ -250,7 +264,7 @@ Wenn ein SMB-Client eine Datei zum Löschen öffnet, markiert er die Datei als z
 
 Weitere Informationen finden Sie unter:  
 
-- [Verwalten von Dateisperren](http://msdn.microsoft.com/de-de/library/azure/dn194265.aspx)  
+- [Verwalten von Dateisperren].(http://msdn.microsoft.com/de-de/library/azure/dn194265.aspx)  
 
 #Zusammenfassung und nächste Schritte
 Der Microsoft Azure-Speicherdienst ist auf die Anforderungen äußerst komplexer Online-Anwendungen zugeschnitten, zwingt Entwickler jedoch nicht zur Einschränkung oder Neukonzeption wichtiger Entwurfsvoraussetzungen wie Nebenläufigkeit und Datenkonsistenz, die sie inzwischen für selbstverständlich halten.  
@@ -263,8 +277,7 @@ Weitere Informationen zu Azure Storage finden Sie unter:
 
 - [Microsoft Azure Storage-Startseite](http://azure.microsoft.com/de-de/services/storage/)
 - [Einführung in Azure Storage](http://azure.microsoft.com/de-de/documentation/articles/storage-introduction/)
-- Erste Schritte mit Storage für [Blob],(http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/)[Tabelle](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-tables/) und [Warteschlangen](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-queues/)
-- Speicherarchitektur - [Microsoft Azure Storage: Ein hoch verfügbarer Cloud-Speicherdienst mit starker Konsistenz](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
+- Storage - Erste Schritte für [Blob](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/), [Tabelle](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-tables/) und [Warteschlangen](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-queues/)
+- Speicherarchitektur - [Windows Azure Storage: Ein hoch verfügbarer Cloud-Speicherdienst mit starker Konsistenz](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

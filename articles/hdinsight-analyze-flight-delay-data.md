@@ -1,16 +1,30 @@
-﻿<properties urlDisplayName="Analyze flight delay data with Hadoop in HDInsight" pageTitle="Analysieren von Daten zu Flugverspätungen mit Hadoop in HDInsight | Azure" metaKeywords="" description="Erfahren Sie, wie Sie mithilfe eines PowerShell-Skripts HDInsight-Cluster bereitstellen, einen Hive-Auftrag ausführen, einen Sqool-Auftrag ausführen und das Cluster löschen." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using Hadoop in HDInsight " authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties 
+	pageTitle="Analysieren von Daten zu Flugverspätungen mit Hadoop in HDInsight | Azure" 
+	description="Erfahren Sie, wie Sie mithilfe eines PowerShell-Skripts HDInsight-Cluster bereitstellen, einen Hive-Auftrag ausführen, einen Sqool-Auftrag ausführen und das Cluster löschen." 
+	services="hdinsight" 
+	documentationCenter="" 
+	authors="mumian" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/04/2014" ms.author="jgao" />
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="12/04/2014" 
+	ms.author="jgao"/>
 
 #Analysieren von Daten zu Flugverspätungen mit Hadoop in HDInsight
 
-Hive ermöglicht die Ausführung eines Hadoop MapReduce-Jobs über eine SQL-ähnliche Skriptsprache namens *[HiveQL][hadoop-hiveql]*, die zur Zusammenfassung, Abfrage und Analyse großer Datenmengen verwendet werden kann. 
+Hive bietet die Möglichkeit, Hadoop MapReduce-Aufträge über eine SQL-ähnliche Skriptsprache namens *[HiveQL][hadoop-hiveql]* auszuführen. Sie kann für die Zusammenfassung, Abfrage und Analyse großer Datenmengen verwendet werden. 
 
 Einer der größten Vorteile von HDInsight ist die Trennung von Datenspeicher und Server. HDInsight verwendet Azure-Blob-Speicher zur Datenspeicherung. Ein normaler MapReduce-Prozess besteht aus drei Teilen:
 
-1. **Speichern von Daten im Azure-Blob-Speicher.**  Dies kann ein fortlaufender Prozess sein. Es werden zum Beispiel Wetterdaten, Sensordaten, Webprotokolle und in diesem Fall Daten zu Flugverspätungen im Blob-Speicher gespeichert.
-2. **Ausführen von Aufträgen.**  Für die Bearbeitung der Daten führen Sie ein PowerShell-Skript aus (oder eine Clientanwendung), um einen HDInsight-Cluster bereitzustellen, Aufträge auszuführen und den Cluster zu löschen.  Die Aufträge speichern Ausgabedaten im Azure-Blob-Speicher. Die Ausgabedaten bleiben selbst nach dem Löschen des Clusters erhalten. So bezahlen Sie nur für den tatsächlichen Verbrauch. 
-3. **Rufen Sie die Ausgabe vom Blob-Speicher ab**, oder exportieren Sie die Daten in diesem Lernprogramm in eine Azure SQL-Datenbank.
+1. **Speichern von Daten im Azure Blob-Speicher.**  Dies kann ein fortlaufender Prozess sein. Es werden zum Beispiel Wetterdaten, Sensordaten, Webprotokolle und in diesem Fall Daten zu Flugverspätungen im Blob-Speicher gespeichert.
+2. **Ausführen von Aufträgen.**  Für die Bearbeitung der Daten führen Sie ein PowerShell-Skript aus (oder eine Clientanwendung), um einen HDInsight-Cluster bereitzustellen, Aufträge auszuführen und den Cluster zu löschen.  Die Aufträge speichern Ausgabedaten im Azure-Blob-Speicher. Die Ausgabedaten werden auch nach dem Löschen des Clusters beibehalten. So bezahlen Sie nur für den tatsächlichen Verbrauch. 
+3. **Rufen Sie die Ausgabe aus dem Blob-Speicher ab**, oder, wie in diesem Lernprogramm, exportieren Sie die Daten in eine Azure SQL-Datenbank.
 
 Das folgende Diagramm veranschaulicht das Szenario und die Struktur dieses Artikels:
 
@@ -30,10 +44,10 @@ In den Anhängen finden Sie Anweisungen zum Hochladen der Flugverspätungsdaten,
 ##Dieses Lernprogramm umfasst folgende Punkte
 
 * [Voraussetzungen](#prerequisite)
-* [Bereitstellen eines HDInsight-Clusters und Ausführen der Hive-/Sqoop-Jobs (M1)](#runjob)
-* [Anhang A: Hochladen von Daten zu Flugverspätungen in einen Azure-Blob-Speicher (A1)](#appendix-a)
+* [Bereitstellen des HDInsight-Clusters und Ausführen von Hive/Sqoop-Aufträgen (M1)](#runjob)
+* [Anhang A: Hochladen von Daten zu Flugverspätungen in den Azure Blob-Speicher (A1)](#appendix-a)
 * [Anhang B: Erstellen und Hochladen eines HiveQL-Skripts (A2)](#appendix-b)
-* [Anhang C: Vorbereiten der Azure SQL-Datenbank für die Sqoop-Job-Ausgabe (A3)](#appendix-c)
+* [Anhang C: Vorbereiten der Azure SQL-Datenbank für die Ausgabe des Sqoop-Auftrags (A3)](#appendix-c)
 * [Nächste Schritte](#nextsteps)
 
 ##<a id="prerequisite"></a>Voraussetzungen
@@ -41,21 +55,21 @@ In den Anhängen finden Sie Anweisungen zum Hochladen der Flugverspätungsdaten,
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 * Eine Arbeitsstation, auf der Azure PowerShell installiert und konfiguriert ist. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
-* Ein Azure-Abonnement. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][azure-purchase-options], [Spezielle Angebote][azure-member-offers] oder [Kostenlose Testversion][azure-free-trial].
+* Ein Azure-Abonnement. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][azure-purchase-options], [Spezielle Angebote][azure-member-offers] oder [kostenlose Testversion][azure-free-trial].
 
 ###Grundlagen der HDInsight-Speicherung
 
-Hadoop-Cluster in HDInsight verwenden Azure-Blob-Speicher zur Datenspeicherung.  Der Speicher wird *WASB* oder *Azure Storage-Blob* genannt. WASB ist Microsofts Implementierung von *HDFS* in Azure Blob-Speicher. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. 
+Hadoop-Cluster in HDInsight verwenden Azure-Blob-Speicher zur Datenspeicherung.  Dies wird *WASB* oder *Azure Storage - Blob* genannt. WASB ist die Implementierung von Microsoft von *HDFS* auf dem Azure Blob-Speicher. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. 
 
-Wenn Sie einen HDInsight-Cluster bereitstellen, wird ebenso wie in HDFS ein Blob-Speichercontainer eines Azure-Speicherkontos als Standarddateisystem festgelegt. Dieses Speicherkonto ist das *Standardspeicherkonto*, und der Blob-Container wird *Standard-Blob-Container* oder *Standardcontainer* genannt. Das Standardspeicherkonto muss sich im selben Rechenzentrum wie der HDInsight-Cluster befinden. Durch das Löschen eines HDInsight-Clusters wird der Standardcontainer oder das Standardspeicherkonto nicht gelöscht.
+Wenn Sie einen HDInsight-Cluster bereitstellen, wird ebenso wie in HDFS ein Blob-Speichercontainer eines Azure-Speicherkontos als Standarddateisystem festgelegt. Dieses Speicherkonto wird als das *default storage account* und der Blob-Container als  *default Blob container* oder *default container* bezeichnet. Das Standardspeicherkonto muss sich im selben Rechenzentrum wie der HDInsight-Cluster befinden. Durch das Löschen eines HDInsight-Clusters wird der Standardcontainer oder das Standardspeicherkonto nicht gelöscht.
 
-Zusätzlich zum Standardspeicherkonto können andere Azure-Speicherkonten während des Bereitstellungsprozesses an einen HDInsight-Cluster gebunden werden. Die Bindung erfolgt dadurch, dass das Speicherkonto und der Speicherkontoschlüssel zur Konfigurationsdatei hinzugefügt werden. Somit kann der Cluster zur Laufzeit auf diese Speicherkonten zugreifen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight][hdinsight-provision]. 
+Zusätzlich zum Standardspeicherkonto können andere Azure-Speicherkonten während des Bereitstellungsprozesses an einen HDInsight-Cluster gebunden werden. Die Bindung erfolgt dadurch, dass das Speicherkonto und der Speicherkontoschlüssel zur Konfigurationsdatei hinzugefügt werden. Somit kann der Cluster zur Laufzeit auf diese Speicherkonten zugreifen. Anleitungen zum Hinzufügen von zusätzlichen Speicherkonten finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight][hdinsight-provision]. 
 
 Die WASB-Syntax lautet:
 
 	wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.windows.net/<path>/<filename>
 
->[WACOM.NOTE] Der WASB-Pfad ist ein virtueller Pfad.  Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. 
+>[AZURE.NOTE] Der WASB-Pfad ist ein virtueller Pfad.  Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. 
 
 Auf Dateien, die im Standardcontainer gespeichert sind, kann in HDInsight über einen der folgenden URIs zugegriffen werden (als Beispiel wird hier flightdelays.hql verwendet):
 
@@ -69,9 +83,9 @@ Um direkt aus dem Speicherkonto auf die Datei zuzugreifen, lautet der Blob-Name 
 
 Es befindet sich kein "/" vor dem Blob-Namen.
 
-**Verwendete Dateien in diesem Lernprogramm**
+**In diesem Lernprogramm verwendete Dateien**
 
-In diesem Lernprogramm werden Daten zur termingemäßen Leistung von Airline-Flügen von [Research and Innovative Technology Administration, Bureau of Transportation Statistics][rita-website] (RITA) verwendet. Die Daten wurden in einen Azure-Blob-Speichercontainer mit öffentlicher Blob-Zugriffsberechtigung hochgeladen. Da es sich um einen öffentlichen Blob-Container handelt, müssen Sie dieses Speicherkonto nicht an den HDInsight-Cluster binden, in dem das Hive-Skript ausgeführt wird. Das HiveQL-Skript wird ebenfalls zum selben Blob-Container hochgeladen. Wie Sie die Daten zu Ihrem Speicherkonto hochladen und die HiveQL-Skriptdatei erstellen bzw. hochladen, erfahren Sie in [Anhang A](#appendix-a) und [Anhang B](#appendix-b).
+In diesem Lernprogramm wird die Leistung bezüglich Pünktlichkeit der Flugdaten von [Research and Innovative Technology Administration, Bureau of Transportation Statistics][rita-website] (RITA) verwendet. Die Daten wurden in einen Azure-Blob-Speichercontainer mit öffentlicher Blob-Zugriffsberechtigung hochgeladen. Da es sich um einen öffentlichen Blob-Container handelt, müssen Sie dieses Speicherkonto nicht an den HDInsight-Cluster binden, in dem das Hive-Skript ausgeführt wird. Das HiveQL-Skript wird ebenfalls zum selben Blob-Container hochgeladen. Wenn Sie wissen möchten, wie Sie die Daten in Ihr eigenes Speicherkonto bekommen/hochladen und wie Sie die HiveQL-Skriptdatei erstellen/hochladen, lesen Sie [Anhang A](#appendix-a) und [Anhang B](#appendix-b).
 
 In der folgenden Tabelle sind die in diesem Lernprogramm verwendeten Dateien aufgelistet:
 
@@ -95,9 +109,9 @@ Folgendes sollten Sie über interne und externe Hive-Tabellen wissen:
 - Der Befehl CREATE EXTERNAL TABLE verschiebt die Datendatei nicht.
 - Der Befehl CREATE EXTERNAL TABLE lässt keine Ordner im SPEICHERORT zu. Aus diesem Grund wird im Lernprogramm eine Kopie der Datei sample.log erstellt.
 
-Weitere Informationen finden Sie unter [HDInsight: Hive Internal and External Tables Intro][cindygross-hive-tables] (HDInsight: Einführung in interne und externe Hive-Tabellen, in englischer Sprache).
+Weitere Informationen finden Sie unter [HDInsight: Einführung in interne und externe Hive-Tabellen][cindygross-hive-tables].
 
-> [WACOM.NOTE] Eine der HiveQL-Anweisungen erstellt eine externe Hive-Tabelle. Externe Hive-Tabellen erhalten die Datendatei am ursprünglichen Speicherort. Interne Hive-Tabellen verschieben die Datendate nach hive\warehouse. Bei internen Hive-Tabellen muss die Datendatei im Standardcontainer enthalten sein. Bei Daten, die nicht im Standard-Blob-Container gespeichert sind, müssen Sie externe Hive-Tabellen verwenden.
+> [AZURE.NOTE] Eine der HiveQL-Anweisungen erstellt eine externe Hive-Tabelle. Externe Hive-Tabellen erhalten die Datendatei am ursprünglichen Speicherort. Interne Hive-Tabellen verschieben die Datendate nach hive\warehouse. Bei internen Hive-Tabellen muss die Datendatei im Standardcontainer enthalten sein. Bei Daten, die nicht im Standard-Blob-Container gespeichert sind, müssen Sie externe Hive-Tabellen verwenden.
 
 
 
@@ -109,11 +123,11 @@ Weitere Informationen finden Sie unter [HDInsight: Hive Internal and External Ta
 
 ##<a id="runjob"></a>Bereitstellen eines HDInsight-Clusters und Ausführen der Hive-/Sqoop-Jobs 
 
-Hadoop MapReduce verwendet Stapelbearbeitung. Die kosteneffizienteste Möglichkeit, einen Hive-Auftrag auszuführen, ist, einen Cluster für den Auftrag bereitzustellen und den Auftrag nach Abschluss zu löschen. Das folgende Skript erläutert den gesamten Vorgang. Weitere Informationen zur Bereitstellung eines HDInsight-Clusters und zur Ausführung von Hive-Aufträgen finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight][hdinsight-provision] und [Verwenden von Hive mit HDInsight][hdinsight-use-hive]. 
+Hadoop MapReduce verwendet Stapelbearbeitung. Die kosteneffizienteste Möglichkeit, einen Hive-Auftrag auszuführen, ist, einen Cluster für den Auftrag bereitzustellen und den Auftrag nach Abschluss zu löschen. Das folgende Skript erläutert den gesamten Vorgang. Weitere Informationen zur Bereitstellung eines HDInsight-Clusters und zur Ausführung von Hive-Aufträgen finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight][hdinsight-provision] und  [Verwenden von Hive mit HDInsight][hdinsight-use-hive]. 
 
-**Ausführen der Hive-Abfragen mit PowerShell**
+**So führen Sie die Hive-Abfragen mithilfe von PowerShell aus**
 
-1. Erstellen Sie eine Azure SQL-Datenbank und die Tabelle für die Sqoop-Job-Ausgabe anhand der Anweisungen in [Anhang C](#appendix-c).
+1. Erstellen Sie eine Azure SQL-Datenbank und die Tabelle für die Ausgabe des Sqoop-Auftrags mithilfe der Anweisungen in [Anhang C](#appendix-c).
 2. Bereiten Sie die Parameter vor:
 
 	<table border="1">
@@ -325,8 +339,7 @@ Hadoop MapReduce verwendet Stapelbearbeitung. Die kosteneffizienteste Möglichke
 		Write-Host "`tCurrent system time: " (get-date) -ForegroundColor Yellow
 		
 		[String]$exportDir = "wasb://$blobContainerName@$storageAccountName.blob.core.windows.net/tutorials/flightdelays/output"
-		
-		
+				
 		$sqoopDef = New-AzureHDInsightSqoopJobDefinition -Command "export --connect $sqlDatabaseConnectionString --table $sqlDatabaseTableName --export-dir $exportDir --fields-terminated-by \001 "
 		$sqoopJob = Start-AzureHDInsightJob -Cluster $hdinsightClusterName -JobDefinition $sqoopDef #-Debug -Verbose
 		Wait-AzureHDInsightJob -WaitTimeoutInSeconds 3600 -Job $sqoopJob
@@ -372,7 +385,7 @@ Hadoop MapReduce verwendet Stapelbearbeitung. Die kosteneffizienteste Möglichke
 
 	![HDI.FlightDelays.RunHiveJob.output][img-hdi-flightdelays-run-hive-job-output]
 		
-5. Stellen Sie eine Verbindung zur SQL-Datenbank her, und zeigen Sie die durchschnittlichen Flugverspätungen nach Stadt geordnet in der Tabelle *AvgDelays* an:
+5. Stellen Sie eine Verbindung mit der SQL-Datenbank her, und suchen Sie die durchschnittlichen Flugverspätungen nach Stadt in der Tabelle *AvgDelays*:
 
 	![HDI.FlightDelays.AvgDelays.Dataset][image-hdi-flightdelays-avgdelays-dataset]
 
@@ -380,31 +393,31 @@ Hadoop MapReduce verwendet Stapelbearbeitung. Die kosteneffizienteste Möglichke
 
 ---
 ##<a id="appendix-a"></a>Anhang A - Hochladen der Daten zu Flugverspätungen in den Azure-Blob-Speicher
-Vor dem Hochladen der Datendatei und der HiveQL-Skriptdatei (siehe [Anhang B](#appendix-b)) sind einige Überlegungen erforderlich. Der Grundgedanke ist, die Datendatei und HiveQL-Datei vor der Bereitstellung eines HDInsight-Clusters und der Ausführung des Hive-Jobs zu speichern.  Sie haben zwei Möglichkeiten:
+Vor dem Hochladen der Datendatei und der HiveQL-Skriptdateien (siehe [Anhang B](#appendix-b)) sind einige Überlegungen erforderlich. Der Grundgedanke ist, die Datendatei und HiveQL-Datei vor der Bereitstellung eines HDInsight-Clusters und der Ausführung des Hive-Jobs zu speichern.  Sie haben zwei Möglichkeiten:
 
-- **Verwenden Sie dasselbe Azure-Speicherkonto, das vom HDInsight-Cluster als Standarddateisystem verwendet wird.** Da der HDInsight-Cluster den Zugriffsschlüssel für das Speicherkonto besitzt, müssen Sie keine weiteren Änderungen vornehmen.
-- **Verwenden Sie ein anderes Azure-Speicherkonto als das Standarddateisystem des HDInsight-Clusters.** In diesem Fall müssen Sie den Bereitstellungsteil des PowerShell-Skripts in [Bereitstellen eines HDInsight-Clusters und Ausführen der Hive-/Sqoop-Jobs](#runjob) ändern, um das Speicherkonto als zusätzliches Speicherkonto hinzuzufügen. Die entsprechenden Anweisungen finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight][hdinsight-provision]. Auf diese Weise kennt der HDInsight-Cluster den Zugriffsschlüssel für das Speicherkonto.
+- **Verwenden Sie das gleiche Azure-Speicherkonto, das vom HDInsight-Cluster als Standarddateisystem verwendet wird.** Da der HDInsight-Cluster über den Speicherkonto-Zugriffsschlüssel verfügt, müssen Sie keine weiteren Änderungen vornehmen.
+- **Verwenden Sie ein anderes Azure-Speicherkonto von dem Standarddateisystem des HDInsight-Clusters.** In diesem Fall müssen Sie den Bereitstellungsteil des PowerShell-Skripts ändern, das Sie unter [Bereitstellen des HDInsight-Clusters und Ausführen von Hive/Sqoop-Aufträgen] finden,(#runjob) um das Speicherkonto als zusätzliches Speicherkonto hinzuzufügen. Anweisungen hierzu finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight][hdinsight-provision]. Auf diese Weise kennt der HDInsight-Cluster den Zugriffsschlüssel für das Speicherkonto.
 
->[WACOM.NOTE] Der WASB-Pfad für die Datendatei ist fest in der HiveQL-Skriptdatei programmiert. Sie müssen ihn entsprechend aktualisieren.
+>[AZURE.NOTE] Der WASB-Pfad für die Datendatei ist fest in der HiveQL-Skriptdatei programmiert. Sie müssen ihn entsprechend aktualisieren.
 
-**Herunterladen der Flugdaten**
+**So laden Sie die Flugdaten herunter**
 
-1. Rufen Sie die folgende Website auf: [Research and Innovative Technology Administration, Bureau of Transportation Statistics][rita-website] (RITA).
+1. Navigieren Sie zu [Research and Innovative Technology Administration, Bureau of Transportation Statistics][rita-website] (RITA).
 2. Wählen Sie auf der Website die folgenden Werte aus:
 
 	<table border="1">
 	<tr><th>Name</th><th>Wert</th></tr>
 	<tr><td>Filter Year</td><td>2013 </td></tr>
 	<tr><td>Filter Period</td><td>January</td></tr>
-	<tr><td>Fields:</td><td>*Year*, *FlightDate*, *UniqueCarrier*, *Carrier*, *FlightNum*, *OriginAirportID*, *Origin*, *OriginCityName*, *OriginState*, *DestAirportID*, *Dest*, *DestCityName*, *DestState*, *DepDelayMinutes*, *ArrDelay*, *ArrDelayMinutes*, *CarrierDelay*, *WeatherDelay*, *NASDelay*, *SecurityDelay*, *LateAircraftDelay* (Entfernen Sie die Häkchen bei allen anderen Feldern.)</td></tr>
+	<tr><td>Fields:</td><td>*Jahr*, *FlightDate*, *UniqueCarrier*, *Carrier*, *FlightNum*, *OriginAirportID*, *Origin*, *OriginCityName*, *OriginState*, *DestAirportID*, *Dest*, *DestCityName*, *DestState*, *DepDelayMinutes*, *ArrDelay*, *ArrDelayMinutes*, *CarrierDelay*, *WeatherDelay*, *NASDelay*, *SecurityDelay*, *LateAircraftDelay* (alle anderen Felder löschen)</td></tr>
 	</table>
 
-3. Klicken Sie auf **Download**. 
-4. Entpacken Sie die Datei im Ordner **C:\Tutorials\FlightDelays\Data**.  Jede Datei ist eine CSV-Datei und hat eine Größe von ungefähr 60 GB.
-5.	Geben Sie der Datei den Monat, für den sie Daten enthält, als neuen Namen. Die Datei mit Daten aus dem Monat Januar hieße dann beispielsweise *January.csv*.
+3. Klicken Sie auf **Herunterladen**. 
+4. Extrahieren Sie die Datei in den Ordner **C:\Tutorials\FlightDelays\Data**.  Jede Datei ist eine CSV-Datei und hat eine Größe von ungefähr 60 GB.
+5.	Geben Sie der Datei den Monat, für den sie Daten enthält, als neuen Namen. Zum Beispiel würde die Datei, die die Daten für Januar enthält, den Namen *January.csv* erhalten.
 6. Wiederholen Sie Schritt 2 und 5, um eine Datei für jeden der 12 Monate des Jahres 2013 herunterzuladen. Für die Ausführung des Lernprogramms benötigen Sie mindestens eine Datei.  
 
-**Hochladen der Daten zu Flugverspätungen in den Azure-Blob-Speicher**
+**So laden Sie die Daten zu Flugverspätungen in den Azure Blob-Speicher hoch**
 
 1. Bereiten Sie die Parameter vor:
 
@@ -480,13 +493,13 @@ Vor dem Hochladen der Datendatei und der HiveQL-Skriptdatei (siehe [Anhang B](#a
 
 3. Drücken Sie **F5**, um das Skript auszuführen.
 
-Wenn Sie für das Hochladen der Dateien eine andere Methode verwenden möchten, stellen Sie sicher, dass der Dateipfad *tutorials/flightdelays/data* lautet. Für den Zugriff auf die Dateien gilt folgende Syntax:
+Wenn Sie eine andere Methode zum Hochladen von Dateien verwenden möchten, stellen Sie sicher, dass der Dateipfad *tutorials/flightdelays/data* lautet. Für den Zugriff auf die Dateien gilt folgende Syntax:
 
 	wasb://<ContainerName>@<StorageAccountName>.blob.core.windows.net/tutorials/flightdelays/data
 
-Bei *tutorials/flightdelays/data* handelt es sich um den virtuellen Ordner, den Sie beim Hochladen der Dateien erstellt haben. Überprüfen Sie, dass 12 Dateien vorhanden sind, eine für jeden Monat.
+*tutorials/flightdelays/data* ist das virtuelle Verzeichnis, das Sie beim Hochladen der Dateien erstellt haben. Überprüfen Sie, dass 12 Dateien vorhanden sind, eine für jeden Monat.
 
->[WACOM.NOTE] Sie müssen die Hive-Abfrage aktualisieren, um vom neuen Speicherort lesen zu können.
+>[AZURE.NOTE] Sie müssen die Hive-Abfrage aktualisieren, um vom neuen Speicherort lesen zu können.
 
 > Sie müssen entweder die Zugriffsberechtigung für den Container auf "Öffentlich" ändern oder das Speicherkonto an den HDInsight-Cluster binden.  Andernfalls kann die Hive-Abfragezeichenfolge nicht auf die Datendateien zugreifen. 
 
@@ -497,15 +510,15 @@ Mit Azure PowerShell können Sie mehrere HiveQL-Anweisungen gleichzeitig ausfüh
 
 Das HiveQL-Skript führt folgende Schritte aus:
 
-1. **Löschen der Tabelle delays_raw**, wenn diese Tabelle bereits vorhanden ist.
-2. **Erstellen der externen Hive-Tabelle delays_raw**, die auf den WASB-Speicherort mit den Daten zu Flugverspätungen verweist. Diese Abfrage legt fest, dass Felder durch "," getrennt und Zeilen mit "\n" beendet werden. Dies stellt ein Problem dar, wenn Feldwerte Kommas *enthalten*, da Hive nicht zwischen einem Komma als Trennzeichen für Felder und einem Komma als Teil eines Feldwerts unterscheiden kann. (Letzteres ist der Fall bei Feldwerten für ORIGIN\_CITY\_NAME und DEST\_CITY\_NAME.) Zur Behebung dieses Problems erstellt die Abfrage TEMP-Spalten zur Aufbewahrung von Daten, die fehlerhaft in Spalten aufgeteilt sind.  
-3. **Löschen der Tabelle delays**, wenn diese Tabelle bereits vorhanden ist.
-4. **Erstellen der Tabelle delays**. Es ist hilfreich, die Daten vor der weiteren Verarbeitung zu bereinigen. Diese Abfrage erstellt eine neue Tabelle *delays* aus der Tabelle *delays_raw*. Beachten Sie, dass die TEMP-Spalten (wie zuvor erwähnt) nicht kopiert werden und dass die *substring*-Funktion verwendet wird, um Anführungszeichen aus den Daten zu entfernen. 
-5. **Berechnen der durchschnittlichen Verspätungen aufgrund des Wetters und Gruppieren der Ergebnisse nach Name der Stadt.** Außerdem werden die Ergebnisse in den WASB ausgegeben. Beachten Sie, dass die Anfrage Apostrophe aus den Daten entfernt und Zeilen ausschließt, in denen der Wert für *weather_delay* *null* beträgt. Dies ist erforderlich, da Sqoop, das Sie später in diesem Lernprogramm verwenden, diese Werte standardmäßig nicht ordnungsgemäß behandelt.
+1. **Löschen der Tabelle "delays_raw"**für den Fall, dass die Tabelle bereits vorhanden ist.
+2. **Erstellen der externen Hive-Tabelle "delays_raw"**, die auf den Speicherort WASB mit den Flugverspätungsdateien verweist. Diese Abfrage legt fest, dass Felder durch "," getrennt und Zeilen mit "\n" beendet werden. Dies stellt ein Problem dar, wenn Feldwerte Kommas *contain*, da Hive nicht zwischen einem Komma als Feldtrennzeichen und einem Komma als Bestandteil des Feldwerts unterscheiden kann (was bei Feldwerten für ORIGIN\_CITY\_NAME und DEST\_CITY\_NAME der Fall ist). Zur Behebung dieses Problems erstellt die Abfrage TEMP-Spalten zur Aufbewahrung von Daten, die fehlerhaft in Spalten aufgeteilt sind.  
+3. **Löschen der Tabelle "delays"**für den Fall, dass die Tabelle bereits vorhanden ist.
+4. **Erstellen der Tabelle "delays"**. Es ist hilfreich, die Daten vor der weiteren Verarbeitung zu bereinigen. Diese Abfrage erstellt eine neue Tabelle, *delays* aus der Tabelle *delays_raw*. Beachten Sie, dass die TEMP-Spalten (wie bereits erwähnt) nicht kopiert werden und dass die *substring*-Funktion verwendet wird, um Anführungszeichen aus den Daten zu entfernen. 
+5. **Berechnet die durchschnittlichen wetterbedingten Verspätungen und gruppiert die Ergebnisse nach Name der Stadt.** Die Ergebnisse werden außerdem in WASB ausgegeben. Beachten Sie, dass die Abfrage Apostrophe aus den Daten entfernt und Zeilen ausschließt, bei denen der Wert für *weather_deal*y *null* ist. Dies ist erforderlich, da Sqoop, das später in diesem Lernprogramm verwendet wird, diese Werte standardmäßig nicht ordnungsgemäß verarbeiten kann.
 
-Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definition Language][hadoop-hiveql] (Hive-Datendefinitionssprache, in englischer Sprache). Jeder HiveQL-Befehl muss mit einem Semikolon enden.
+Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive-Datendefinitionssprache][hadoop-hiveql]. Jeder HiveQL-Befehl muss mit einem Semikolon enden.
 
-**Erstellen einer HiveQL-Skriptdatei**
+**So erstellen Sie eine HiveQL-Skriptdatei**
 
 1. Bereiten Sie die Parameter vor:
 
@@ -666,15 +679,15 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 
 	Im Skript werden folgende Variablen verwendet:
 
-	- **$hqlLocalFileName**: Das Skript speichert die HiveQL-Skriptdatei lokal, bevor diese zu WASB hochgeladen wird. Dies ist der Dateiname. Die Standardwerte lauten <u>C:\tutorials\flightdelays\flightdelays.hql</u>.
-	- **$hqlBlobName**: Dies ist der Blob-Name der HiveQL-Skriptdatei, der im Azure-Blob-Speicher verwendet wird. Die Standardwerte lauten <u>tutorials/flightdelays/flightdelays.hql</u>. Da die Datei direkt zum Azure-Blob-Speicher geschrieben wird, befindet sich KEIN "/" am Anfang des Blob-Namens. Wenn Sie von WASB auf die Datei zugreifen möchten, müssen Sie "/" am Anfang des Dateinamens hinzufügen.
+	- **$hqlLocalFileName**: Das Skript speichert die HiveQL-Skriptdatei lokal, bevor diese zu WASB hochgeladen wird. Dies ist der Dateiname. Der Standardwert ist <u>C:\tutorials\flightdelays\flightdelays.hql</u>.
+	- **$hqlBlobName**: Dies ist der Blob-Name der HiveQL-Skriptdatei, der im Azure-Blob-Speicher verwendet wird. Der Standardwert ist <u>tutorials/flightdelays/flightdelays.hql</u>. Da die Datei direkt zum Azure-Blob-Speicher geschrieben wird, befindet sich KEIN "/" am Anfang des Blob-Namens. Wenn Sie von WASB auf die Datei zugreifen möchten, müssen Sie "/" am Anfang des Dateinamens hinzufügen.
 	- **$srcDataFolder** und **$dstDataFolder**:  = "tutorials/flightdelays/data" 
  = "tutorials/flightdelays/output"
 
 
 ---
 ##<a id="appendix-c"></a>Anfang A: Vorbereiten der Azure SQL-Datenbank für die Sqoop-Job-Ausgabe
-**Vorbereiten der SQL-Datenbank (mit dem Sqoop-Skript zusammenfügen))**
+**So bereiten Sie die SQL-Datenbank vor (mit dem Sqoop-Skript zusammenführen)**
 
 1. Bereiten Sie die Parameter vor:
 
@@ -818,7 +831,7 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 		
 		Write-host "`nEnd of the PowerShell script" -ForegroundColor Green
 
-	>[WACOM.NOTE] Das Skript verwendet einen REST-Dienst, http://bot.whatismyipaddress.com, um Ihre externe IP-Adresse abzurufen. Die IP-Adresse wird für das Erstellen einer Firewall-Regel für den SQL-Datenbankserver verwendet.  
+	>[AZURE.NOTE] Das Skript verwendet einen REST-Dienst, http://bot.whatismyipaddress.com, um Ihre externe IP-Adresse abzurufen. Die IP-Adresse wird für das Erstellen einer Firewall-Regel für den SQL-Datenbankserver verwendet.  
 
 	Im Skript werden u. a. folgende Variablen verwendet:
 
@@ -833,7 +846,7 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 ##<a id="nextsteps"></a> Nächste Schritte
 Jetzt haben Sie erfahren, wie Sie Folgendes vornehmen können: Dateien in den Blob-Speicher hochladen, eine Hive-Tabelle mit Daten aus dem Blob-Speicher füllen, Hive-Abfragen ausführen und Sqoop verwenden, um Daten aus dem HDFS in Azure-SQL-Datenbank zu exportieren. Weitere Informationen finden Sie in den folgenden Artikeln:
 
-* [Getting Started with HDInsight][hdinsight-get-started]
+* [Erste Schritte mit HDInsight][hdinsight-get-started]
 * [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
 * [Verwenden von Oozie mit HDInsight][hdinsight-use-oozie]
 * [Verwenden von Sqoop mit HDInsight][hdinsight-use-sqoop]
@@ -872,5 +885,4 @@ Jetzt haben Sie erfahren, wie Sie Folgendes vornehmen können: Dateien in den Bl
 [img-hdi-flightdelays-run-hive-job-output]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.RunHiveJob.Output.png
 [img-hdi-flightdelays-flow]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.Flow.png
 
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

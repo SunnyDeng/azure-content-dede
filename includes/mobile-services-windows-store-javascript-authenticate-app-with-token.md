@@ -1,9 +1,9 @@
 ﻿
-Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, dass der Client bei jedem Start der App sowohl den Identitätsanbieter als auch den mobilen Dienst kontaktiert. Diese Methode ist nicht nur ineffizient, sie kann auch zu nutzungsbezogenen Problemen führen, wenn eine große Anzahl von Kunden die App gleichzeitig starten sollte. Ein besserer Ansatz ist es daher, den von Mobile Services zurückgegebenen Authentifizierungstoken zwischenzuspeichern und zu verwenden, bevor eine anbieterbasierte Anmeldung durchgeführt wird. 
+Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, dass der Client bei jedem Start der App sowohl den Identitätsanbieter als auch Mobile Services kontaktiert. Diese Methode ist nicht nur ineffizient, sie kann auch zu nutzungsbezogenen Problemen führen, wenn eine große Anzahl von Kunden die App gleichzeitig starten sollte. Ein besserer Ansatz ist es daher, den von Mobile Services zurückgegebenen Authentifizierungstoken zwischenzuspeichern und vor einer anbieterbasierten Anmeldung zu verwenden.
 
->[WACOM.NOTE]Unabhängig davon, ob Sie clientverwaltete oder dienstverwaltete Authentifizierung verwenden, können Sie den von Mobile Services ausgestellten Authentifizierungstoken zwischenspeichern. In diesem Lernprogramm wird die dienstverwaltete Authentifizierung verwendet.
+>[AZURE.NOTE]Den von Mobile Services zurückgegebenen Authentifizierungstoken können Sie unabhängig davon, ob Sie die clientverwaltete oder die dienstverwaltete Authentifizierung verwenden, zwischenspeichern. In diesem Lernprogramm wird die dienstverwaltete Authentifizierung verwendet.
 
-1. Ersetzen Sie in der Projektdatei "default.js" die vorhandene **Login**-Funktion durch den folgenden Code:
+1. Ersetzen Sie die bestehende Funktion **Anmelden** in der Projektdatei "default.js" durch den folgenden Code:
 
         var credential = null;
         var vault = new Windows.Security.Credentials.PasswordVault();
@@ -31,7 +31,7 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, 
             });
         }
 
-2. Ersetzen Sie die vorhandene **authenticate**-Funktion durch den folgenden Code:
+2. Ersetzen Sie die bestehende Funktion **Authentifizieren** durch den folgenden Code:
 
         var authenticate = function () {
             // Try to get a stored credential from the PasswordVault.                
@@ -76,8 +76,8 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, 
             }
         }
 
-	In dieser Version von **authenticate** versucht die App, über Anmeldeinformationen, die in **PasswordVault** gespeichert sind, auf den mobilen Dienst zuzugreifen. Über eine einfache Abfrage wird sichergestellt, dass das gespeicherte Token nicht abgelaufen ist. Bei Rückgabe eines 401-Fehlers wird ein normaler anbieterbasierter Anmeldungsversuch unternommen. Dies erfolgt auch dann, wenn keine gespeicherten Anmeldeinformationen vorhanden sind.
+	In dieser Version von **Authentifizieren** versucht die App, über die Anmeldeinformationen aus dem **PasswordVault** auf Mobile Services zuzugreifen. Über eine einfache Abfrage wird sichergestellt, dass das gespeicherte Token nicht abgelaufen ist. Bei Rückgabe eines 401-Fehlers wird ein normaler anbieterbasierter Anmeldungsversuch unternommen. Dies erfolgt auch dann, wenn keine gespeicherten Anmeldeinformationen vorhanden sind.
 
 3. Starten Sie die App zweimal neu.
 
-	Beachten Sie, dass beim ersten Start die Anmeldung beim Anbieter wieder erforderlich ist. Beim zweiten Neustart jedoch werden die zwischengespeicherten Anmeldeinformationen verwendet, und die Anmeldung wird umgangen. 
+	Beachten Sie, dass beim ersten Start die Anmeldung beim Anbieter wieder erforderlich ist. Beim zweiten Neustart jedoch werden die zwischengespeicherten Anmeldeinformationen verwendet, und die Anmeldung wird umgangen. <!--HONumber=42-->

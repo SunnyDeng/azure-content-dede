@@ -1,7 +1,7 @@
 ﻿
-Als Nächstes müssen Sie die Methode zur Registrierung von Pushbenachrichtigungen ändern, um sicherzustellen, dass der Benutzer vor einem Registrierungsversuch authentifiziert wird. 
+Als Nächstes müssen Sie die Methode zur Registrierung von Push-Benachrichtigungen ändern, um sicherzustellen, dass der Benutzer vor einem Registrierungsversuch authentifiziert wird. 
 
-1. Entfernen Sie die Implementierung von **didFinishLaunchingWithOptions** vollständig aus der Datei **QSAppDelegate.m**:
+1. Entfernen Sie in **QSAppDelegate.m** die Umsetzung des **DidFinishLaunchingWithOptions** vollständig:
 
 		
 		- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:
@@ -13,7 +13,7 @@ Als Nächstes müssen Sie die Methode zur Registrierung von Pushbenachrichtigung
 		    return YES;
 		}
 
-2. Öffnen Sie die Projektdatei **QSTodoListViewController.m**, und fügen Sie in der **viewDidLoad**-Methode den oben entfernten Code zu "add" hinzu:
+2. Öffnen Sie die Projektdatei **QSTodoListViewController.m**, und fügen Sie den oben entfernten Code in der Methode **ViewDidLoad** zur ADD hinzu:
 
 	
 		- (void)viewDidAppear:(BOOL)animated
@@ -32,3 +32,4 @@ Als Nächstes müssen Sie die Methode zur Registrierung von Pushbenachrichtigung
 		    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
 		    UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
 		}
+<!--HONumber=42-->

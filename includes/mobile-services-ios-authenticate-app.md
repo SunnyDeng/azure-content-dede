@@ -1,10 +1,10 @@
 ﻿
 
-1. Öffnen Sie die Projektdatei "QSTodoListViewController.m",  und entfernen Sie in der **viewDidLoad**-Methode den folgenden Code, der die Daten erneut in die Tabelle lädt:
+1. Öffnen Sie die Projektdatei "QSTodoListViewController.m", und entfernen Sie in der Methode **ViewDidLoad** den folgenden Code, der die Daten in die Tabelle lädt:
 
         [self refresh];
 
-2.	Fügen Sie den folgenden Code unmittelbar nach der **viewDidLoad**-Methode hinzu:  
+2.	Fügen Sie nach der Methode **ViewDidLoad** den folgenden Code hinzu:  
 
         - (void)viewDidAppear:(BOOL)animated
         {
@@ -19,10 +19,8 @@
             }];
         }
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Wenn Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den oben an <strong>loginWithProvider</strong> übergebenen Wert in einen der folgenden Werte: <em>microsoftaccount</em>, <em>facebook</em>, <em>twitter</em>, <em>google</em> der <em>windowsazureactivedirectory</em>.</p>
-    </div>
+    > [AZURE.NOTE] Wenn Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den oben für **LoginWithProvider** eingegebenen Wert auf einen der folgenden: _microsoftaccount_, _facebook_, _twitter_, _google_, oder _windowsazureactivedirectory_.
 		
 3. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen, starten Sie die App im iPhone-Emulator, und melden Sie sich dann mit dem ausgewählten Identitätsanbieter an.
 
-   	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
+   	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.<!--HONumber=42-->

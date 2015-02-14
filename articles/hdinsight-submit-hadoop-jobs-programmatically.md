@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="HDInsight Administration" pageTitle="Übermitteln von Hadoop-Aufträgen in HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, hive, mapreduce, HDInsight .NET SDK, powershell, submit mapreduce jobs, submit hive jobs, development, hadoop, apache" description="Erfahren Sie, wie Sie Hadoop-Aufträge an Azure HDInsight Hadoop übermitteln können." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Submit  Hadoop jobs in HDInsight" authors="jgao" />
+<properties 
+	pageTitle="Übermitteln von Hadoop-Aufträgen in HDInsight | Azure" 
+	description="Erfahren Sie, wie Sie Hadoop-Aufträge an Azure HDInsight Hadoop übermitteln können." 
+	editor="cgronlun" 
+	manager="paulettm" 
+	services="hdinsight" 
+	documentationCenter="" 
+	authors="mumian"/>
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/12/2014" ms.author="jgao" />
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/12/2014" 
+	ms.author="jgao"/>
 
 # Übermitteln von Hadoop-Aufträgen in HDInsight
 
@@ -10,21 +24,21 @@ In diesem Artikel lernen Sie, wie MapReduce- und Hive-Jobs mit PowerShell und HD
 
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
-* Einen Azure HDInsight-Cluster. Anweisungen hierzu finden Sie unter [Erste Schritte mit HDInsight][hdinsight-get-started] oder unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
+* Einen Azure HDInsight-Cluster. Anweisungen finden Sie unter [Erste Schritte mit Azure HDInsight][hdinsight-get-started] oder [Bereitstellen eines HDInsight-Clusters][hdinsight-provision].
 * Installieren und konfigurieren Sie Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 
 
-##Themen in diesem Artikel
+## Themen in diesem Artikel
 
-* [Übermitteln von MapReduce-Jobs mit PowerShell](#mapreduce-powershell)
-* [Übermitteln von Hive-Jobs mit PowerShell](#hive-powershell)
-* [Übermitteln von Sqoop-Jobs mit PowerShell](#sqoop-powershell)
-* [Übermitteln von MapReduce-Jobs mit HDInsight .NET SDK](#mapreduce-sdk)
+* [Übermitteln von MapReduce-Aufträgen mit PowerShell](#mapreduce-powershell)
+* [Übermitteln von Hive-Aufträgen mit PowerShell](#hive-powershell)
+* [Übermitteln von Sqoop-Aufträgen mit PowerShell](#sqoop-powershell)
+* [Übermitteln von MapReduce-Aufträgen mit dem HDInsight .NET SDK](#mapreduce-sdk)
 * [Übermitteln von Hadoop Streaming MapReduce-Aufträgen mit dem HDInsight .NET SDK](#streaming-sdk)
-* [Übermitteln von Hive-Jobs mit HDInsight .NET SDK](#hive-sdk)
+* [Übermitteln von Hive-Aufträgen mit dem HDInsight .NET SDK](#hive-sdk)
 * [Nächste Schritte](#nextsteps)
 
-##<a id="mapreduce-powershell"></a> Übermitteln von MapReduce-Jobs mit PowerShell
+## <a id="mapreduce-powershell"></a> Übermitteln von MapReduce-Jobs mit PowerShell
 Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Weitere Informationen zum Verwenden von PowerShell mit HDInsight finden Sie unter [Verwalten von HDInsight mit PowerShell][hdinsight-admin-powershell].
 
 Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die riesige Datenmengen (Big Data) verarbeiten. HDInsight-Cluster sind in einer JAR-Datei enthalten, die unter *\example\jars\hadoop-examples.jar* gespeichert ist und mehrere MapReduce-Beispiele enthält. Diese Datei wurde für HDInsight-Cluster der Version 3.0 in hadoop-mapreduce-examples.jar umbenannt. Eines dieser Beispiele dient zum Zählen von Worthäufigkeiten in Quelldateien. In dieser Sitzung lernen Sie die Verwendung von PowerShell auf einer Arbeitsstation, auf der das Wortzählungsbeispiel ausgeführt wird. Weitere Informationen zum Entwickeln und Ausführen von MapReduce-Jobs finden Sie unter [Verwenden von MapReduce mit HDInsight][hdinsight-use-mapreduce].
@@ -45,7 +59,7 @@ Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die r
 		# Define the word count MapReduce job
 		$wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" -ClassName "wordcount" -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput"
 
-	Es gibt zwei Argumente. Das erste ist der Name der Quelldatei, das zweite ist der Pfad der Ausgabedatei. Weitere Informationen über das Präfix wasb finden Sie unter [Verwenden von Azure-Blob-Speicher mit HDInsight][hdinsight-storage].
+	Es gibt zwei Argumente. Das erste ist der Name der Quelldatei, das zweite ist der Pfad der Ausgabedatei. Weitere Informationen über das Präfix "wasb" finden Sie unter [Verwenden von Azure-BLOB-Speicher mit HDInsight][hdinsight-storage].
 
 6. Führen Sie den folgenden Befehl aus, um den MapReduce-Job auszuführen:
 
@@ -71,7 +85,7 @@ Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die r
 	![HDI.GettingStarted.RunMRJob][image-hdi-gettingstarted-runmrjob]
 
 		
-**So rufen Sie die Ergebnisse des MapReduce-Jobs ab**
+**So rufen Sie die Ergebnisse des MapReduce-Auftrags ab**
 
 1. Öffnen Sie **Azure PowerShell**.
 2. Legen Sie die drei folgenden Variablen fest, indem Sie die folgenden PowerShell-Befehle ausführen:
@@ -96,7 +110,7 @@ Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die r
 		# Get the blob content
 		Get-AzureStorageBlobContent -Container $ContainerName -Blob example/data/WordCountOutput/part-r-00000 -Context $storageContext -Force
 
-	Der Ordner *example/data/WordCountOutput* ist der Ausgabeordner, den Sie bei der Ausführung des MapReduce-Jobs angegeben haben. *part-r-00000* ist der Standarddateiname für MapReduce-Jobausgaben.  Die Datei wird in dieselbe Ordnerstruktur auf dem lokalen Ordner heruntergeladen. Im folgenden Screenshot ist der aktuelle Ordner der Stammordner C.  Die Datei wird in den Ordner *C:\example\data\WordCountOutput\* heruntergeladen.
+	Der Ordner *example/data/WordCountOutput* ist der angegebene Ausgabeordner für die Ausführung des MapReduce-Auftrags. *part-r-00000* ist der Standarddateiname für MapReduce-Auftragsausgaben.  Die Datei wird in dieselbe Ordnerstruktur auf dem lokalen Ordner heruntergeladen. Im folgenden Screenshot ist der aktuelle Ordner der Stammordner C.  Die Datei wird in den Ordner *C:\example\data\WordCountOutput\* heruntergeladen.
 
 5. Führen Sie den folgenden Befehl aus, um die MapReduce-Jobausgabedatei auszudrucken:
 
@@ -104,10 +118,10 @@ Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die r
 
 	![HDI.GettingStarted.MRJobOutput][image-hdi-gettingstarted-mrjoboutput]
 
-	Der MapReduce-Job produziert eine Datei namens *part-r-00000*, die die Wörter und deren Anzahl enthält.  Das Skript verwendet den Befehl findstr, um alle Wörter aufzulisten, die "there" enthalten.
+	Der MapReduce-Auftrag produziert eine Datei namens *part-r-00000*, die die Wörter und die Wortanzahl enthält.  Das Skript verwendet den Befehl findstr, um alle Wörter aufzulisten, die "there" enthalten.
 
 
-> [WACOM.NOTE] Wenn Sie "./example/data/WordCountOutput/part-r-00000", eine mehrzeilige Ausgabe eines MapReduce-Jobs, im Editor öffnen, werden Sie feststellen, dass die Zeilenumbrüche nicht korrekt sind. Dies entspricht dem erwarteten Verhalten.
+> [AZURE.NOTE] Wenn Sie "./example/data/WordCountOutput/part-r-00000", eine mehrzeilige Ausgabe eines MapReduce-Jobs, im Editor öffnen, werden Sie feststellen, dass die Zeilenumbrüche nicht korrekt sind. Dies entspricht dem erwarteten Verhalten.
 
 
 
@@ -245,12 +259,12 @@ Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die r
 
 
 
-##<a id="hive-powershell"></a> Übermitteln von Hive-Jobs mit PowerShell
+## <a id="hive-powershell"></a> Übermitteln von Hive-Jobs mit PowerShell
 Mit Apache [hdinsight-use-hive][apache-hive] können Sie MapReduce-Aufträge in Form einer SQL-ähnlichen Skriptsprache namens *HiveQL* ausführen und große Datenmengen zusammenfassen, abfragen und analysieren. 
 
 HDInsight-Cluster enthalten eine Hive-Beispieltabelle mit dem Namen *hivesampletable*. In dieser Sitzung verwenden Sie PowerShell, um einen Hive-Job zum Auflisten einiger Daten aus der Hive-Tabelle auszuführen. 
 
-**So führen Sie einen Hive-Job mit PowerShell aus**
+**So führen Sie einen Hive-Auftrag mit PowerShell aus**
 
 1.	Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 
@@ -273,13 +287,13 @@ HDInsight-Cluster enthalten eine Hive-Beispieltabelle mit dem Namen *hivesamplet
 
 	Mit dem Parameter "-File" können Sie eine HiveQL-Skriptdatei im HDFS angeben.
 
-Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight][hdinsight-use-hive].
+Weitere Informationen zu Hive finden Sie unter [Verwenden von Hive mit HDInsight][hdinsight-use-hive].
 
-##<a id="sqoop-powershell"></a>Übermitteln von Sqoop-Jobs mit PowerShell
+## <a id="sqoop-powershell"></a>Übermitteln von Sqoop-Jobs mit PowerShell
 
 Weitere Informationen finden Sie unter [Verwenden von Sqoop mit HDInsight][hdinsight-use-sqoop].
 
-##<a id="mapreduce-sdk"></a> Übermitteln von MapReduce-Jobs mit HDInsight .NET SDK
+## <a id="mapreduce-sdk"></a> Übermitteln von MapReduce-Jobs mit HDInsight .NET SDK
 Das HDInsight .NET SDK enthält .NET-Clientbibliotheken, die das Arbeiten mit HDInsight-Clustern in .NET vereinfachen. HDInsight-Cluster sind in einer JAR-Datei enthalten, die unter *\example\jars\hadoop-examples.jar* gespeichert ist und mehrere MapReduce-Beispiele enthält. Eines dieser Beispiele dient zum Zählen von Worthäufigkeiten in Quelldateien. In dieser Sitzung lernen Sie, wie Sie eine .NET-Anwendung erstellen, um das Wortzählungsbeispiel auszuführen. Weitere Informationen zum Entwickeln und Ausführen von MapReduce-Jobs finden Sie unter [Verwenden von MapReduce mit HDInsight][hdinsight-use-mapreduce].
 
 
@@ -291,7 +305,7 @@ Die folgenden Verfahren werden benötigt, um einen HDInsight-Cluster mit dem SDK
 
 
 **So installieren Sie das HDInsight .NET SDK**
-Sie können die neueste veröffentlichte Version des SDK von [NuGet] installieren(http://nuget.codeplex.com/wikipage?title=Getting%20Started). Die Anweisungen dazu werden im nächsten Verfahren erläutert.
+Sie können die neueste veröffentlichte Version des SDK von [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) herunterladen und installieren. Die Anweisungen dazu werden im nächsten Verfahren erläutert.
 
 **So erstellen Sie eine Visual Studio-Konsolenanwendung**
 
@@ -299,18 +313,18 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
 
 2. Klicken Sie im Menü Datei auf **Neu** und anschließend auf **Projekt**.
 
-3. Unter Neues Projekt können Sie die folgenden Werte eingeben bzw. auswählen:
+3. Unter "Neues Projekt" können Sie die folgenden Werte eingeben bzw. auswählen:
 
 	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
 	<tr>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Property</th>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Value</th></tr>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Eigenschaft</th>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Wert</th></tr>
 	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Category</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Templates/Visual C#/Windows</td></tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Kategorie</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Vorlagen/Visual C#/Windows</td></tr>
 	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Template</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Console Application</td></tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Vorlage</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Konsolenanwendung</td></tr>
 	<tr>
 	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
 	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">SubmitMapReduceJob</td></tr>
@@ -319,7 +333,7 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
 
-5. Klicken Sie im Menü **Extras** auf **Paketverwaltung** und anschließend auf **Paketverwaltungskonsole**.
+5. Klicken Sie im Menü **Extras** auf **Bibliothekspaket-Manager** und anschließend auf **Paket-Manager-Konsole**.
 
 6. Führen Sie die folgenden Befehle in der Konsole aus, um die Pakete zu installieren.
 
@@ -369,7 +383,7 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
 	
 	Dies sind alle Variablen, die Sie für das Programm festlegen müssen. Sie können den Azure-Abonnementnamen über das [Azure-Verwaltungsportal][azure-management-portal] abrufen. 
 
-	Informationen über Zertifikate finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure][azure-certificate]. Eine einfache Methode zum Konfigurieren des Zertifikats ist die Ausführung der PowerShell-Cmdlets *Get-AzurePublishSettingsFile* und *Import-AzurePublishSettingsFile*. Damit wird das Verwaltungszertifikat automatisch erstellt und hochgeladen. Nach der Ausführung der PowerShell-Cmdlets können Sie *certmgr.msc* auf der Arbeitsstation öffnen und das Zertifikat suchen, indem Sie *Persönlich/Zertifikate* erweitern. Sowohl das Feld *Ausgestellt für* als auch das Feld *Ausgestellt von* des von den PowerShell-Cmdlets erstellten Zertifikats enthält den Wert *Azure-Tools*.
+	Informationen über Zertifikate finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure][azure-certificate]. Eine einfache Methode zum Konfigurieren des Zertifikats ist die Ausführung der PowerShell-Cmdlets *Get-AzurePublishSettingsFile* und *Import-AzurePublishSettingsFile*. Damit wird das Verwaltungszertifikat automatisch erstellt und hochgeladen. Nach der Ausführung der PowerShell-Cmdlets können Sie *certmgr.msc* auf der Arbeitsstation öffnen und das Zertifikat suchen, indem Sie *Personal/Certificates* erweitern. Das mit den PowerShell-Cmdlets erstellte Zertifikat enthält *Azure Tools* für die  *Issued To*- und *Issued By*-Felder.
 
 	Den Namen des Azure-Speicherkontos geben Sie an, wenn Sie den HDInsight-Cluster bereitstellen. Der Containername entspricht standardmäßig dem Namen des HDInsight-Clusters.
 	
@@ -386,7 +400,7 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
         mrJobDefinition.Arguments.Add("wasb:///example/data/gutenberg/davinci.txt");
         mrJobDefinition.Arguments.Add("wasb:///example/data/WordCountOutput");
 
-	Es gibt zwei Argumente. Das erste ist der Name der Quelldatei, das zweite ist der Pfad der Ausgabedatei. Weitere Informationen über das Präfix wasb finden Sie unter [Verwenden von Azure-Blob-Speicher mit HDInsight][hdinsight-storage].
+	Es gibt zwei Argumente. Das erste ist der Name der Quelldatei, das zweite ist der Pfad der Ausgabedatei. Weitere Informationen über das Präfix "wasb" finden Sie unter [Verwenden von Azure-BLOB-Speicher mit HDInsight][hdinsight-storage].
 		
 12. Hängen Sie in der Main()-Funktion den folgenden Code an, um ein JobSubmissionCertificateCredential-Objekt zu erstellen:
 
@@ -430,14 +444,14 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
 
 **So führen Sie die Anwendung aus**
 
-Öffnen Sie die Anwendung in Visual Studio und drücken Sie **F5**, um die Anwendung auszuführen. Ein Konsolenfenster wird geöffnet und zeigt den Status der Anwendung sowie die Ausgabe der Anwendung an. 
+Öffnen Sie die Anwendung in Visual Studio, und drücken Sie **F5**, um die Anwendung auszuführen. Ein Konsolenfenster wird geöffnet und zeigt den Status der Anwendung sowie die Ausgabe der Anwendung an. 
 
-##<a id="streaming-sdk"></a> Übermitteln von Hadoop Streaming-Aufträgen mit dem HDInsight .NET SDK
-HDInsight-Cluster werden mit einem Hadoop-Streamingprogramm zur Wortzählung erstellt, das in C# geschrieben ist. Das Zuordnungsprogramm ist */example/apps/cat.exe*, und das Reduce-Programm ist */example/apps/wc.exe*. In dieser Sitzung erfahren Sie, wie Sie eine .NET-Anwendung zum Ausführen des Wortzählungs-Beispiels entwickeln können. 
+## <a id="streaming-sdk"></a> Übermitteln von Hadoop Streaming-Aufträgen mit dem HDInsight .NET SDK
+HDInsight-Cluster werden mit einem Hadoop-Streamingprogramm zur Wortzählung erstellt, das in C# geschrieben ist. Das Mapper-Programm ist */example/apps/cat.exe*, und das Reducer-Programm ist */example/apps/wc.exe*. In dieser Sitzung erfahren Sie, wie Sie eine .NET-Anwendung zum Ausführen des Wortzählungs-Beispiels entwickeln können. 
 
 Details zum Erstellen von .NET-Anwendungen für die Übermittlung von MapReduce-Aufträgen finden Sie unter [Übermitteln von MapReduce-Aufträgen mit dem HDInsight .NET SDK](#mapreduce-sdk).
 
-Weitere Informationen zum Entwickeln und Bereitstellen von Hadoop Streaming-Aufträgen finden Sie unter [Entwickeln von C# Hadoop-Streamingprogrammen für HDInsight][hdinsight-develop-streaming-jobs].
+Weitere Informationen zum Entwickeln und Bereitstellen von Hadoop-Streamingaufträgen finden Sie unter [Entwickeln von C# Hadoop-Streamingprogrammen für HDInsight][hdinsight-develop-streaming-jobs].
 
 	using System;
 	using System.Collections.Generic;
@@ -535,7 +549,7 @@ Weitere Informationen zum Entwickeln und Bereitstellen von Hadoop Streaming-Auft
 
 
 
-##<a id="hive-sdk"></a> Übermitteln von Hive-Jobs mit HDInsight .NET SDK 
+## <a id="hive-sdk"></a> Übermitteln von Hive-Jobs mit HDInsight .NET SDK 
 HDInsight-Cluster enthalten eine Hive-Beispieltabelle mit dem Namen *hivesampletable*. In dieser Sitzung erstellen Sie eine .NET-Anwendung, um einen Hive-Job zum Auflisten der im HDInsight-Cluster erstellten Hive-Tabellen auszuführen. Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight][hdinsight-use-hive].
 
 Die folgenden Verfahren werden benötigt, um einen HDInsight-Cluster mit dem SDK bereitzustellen:
@@ -546,7 +560,7 @@ Die folgenden Verfahren werden benötigt, um einen HDInsight-Cluster mit dem SDK
 
 
 **So installieren Sie das HDInsight .NET SDK**
-Sie können die neueste veröffentlichte Version des SDK von [NuGet] installieren(http://nuget.codeplex.com/wikipage?title=Getting%20Started). Die Anweisungen dazu werden im nächsten Verfahren erläutert.
+Sie können die neueste veröffentlichte Version des SDK von [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) herunterladen und installieren. Die Anweisungen dazu werden im nächsten Verfahren erläutert.
 
 **So erstellen Sie eine Visual Studio-Konsolenanwendung**
 
@@ -554,18 +568,18 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
 
 2. Klicken Sie im Menü Datei auf **Neu** und anschließend auf **Projekt**.
 
-3. Unter Neues Projekt können Sie die folgenden Werte eingeben bzw. auswählen:
+3. Unter "Neues Projekt" können Sie die folgenden Werte eingeben bzw. auswählen:
 
 	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
 	<tr>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Property</th>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Value</th></tr>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Eigenschaft</th>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Wert</th></tr>
 	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Category</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Templates/Visual C#/Windows</td></tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Kategorie</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Vorlagen/Visual C#/Windows</td></tr>
 	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Template</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Console Application</td></tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Vorlage</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Konsolenanwendung</td></tr>
 	<tr>
 	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
 	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">SubmitHiveJob</td></tr>
@@ -574,7 +588,7 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
 
-5. Klicken Sie im Menü **Extras** auf **Paketverwaltung** und anschließend auf **Paketverwaltungskonsole**.
+5. Klicken Sie im Menü **Extras** auf **Bibliothekspaket-Manager** und anschließend auf **Paket-Manager-Konsole**.
 
 6. Führen Sie die folgenden Befehle in der Konsole aus, um die Pakete zu installieren.
 
@@ -616,7 +630,7 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
 	
 	Dies sind alle Variablen, die Sie für das Programm festlegen müssen. Die Azure-Abonnement-ID erhalten Sie vom Systemadministrator. 
 
-	Informationen über Zertifikate finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure][azure-certificate]. Eine einfache Methode zum Konfigurieren des Zertifikats ist die Ausführung der PowerShell-Cmdlets *Get-AzurePublishSettingsFile* und *Import-AzurePublishSettingsFile* . Damit wird das Verwaltungszertifikat automatisch erstellt und hochgeladen. Nach der Ausführung der PowerShell-Cmdlets können Sie *certmgr.msc* auf der Arbeitsstation öffnen und das Zertifikat suchen, indem Sie *Persönlich/Zertifikate*erweitern. Der Wert *Azure-Tools* ist sowohl im Feld *Ausgestellt für* als auch im Feld *Ausgestellt von* des von den PowerShell-Cmdlets erstellten Zertifikats enthalten.
+	Informationen über Zertifikate finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure][azure-certificate]. Eine einfache Methode zum Konfigurieren des Zertifikats ist die Ausführung der PowerShell-Cmdlets *Get-AzurePublishSettingsFile* und *Import-AzurePublishSettingsFile*. Damit wird das Verwaltungszertifikat automatisch erstellt und hochgeladen. Nach der Ausführung der PowerShell-Cmdlets können Sie *certmgr.msc* auf der Arbeitsstation öffnen und das Zertifikat suchen, indem Sie *Personal/Certificates* erweitern. Das mit den PowerShell-Cmdlets erstellte Zertifikat enthält *Azure Tools* für die  *Issued To*- und *Issued By*-Felder.
 	
 11. Hängen Sie in der Main()-Funktion den folgenden Code an, um den Hive-Job zu definieren:
 
@@ -669,20 +683,20 @@ Sie können die neueste veröffentlichte Version des SDK von [NuGet] installiere
 
 **So führen Sie die Anwendung aus**
 
-Öffnen Sie die Anwendung in Visual Studio und drücken Sie **F5**, um die Anwendung auszuführen. In einem Konsolenfenster wird der Status der Anwendung angezeigt. Die Ausgabe sieht wie folgt aus:
+Öffnen Sie die Anwendung in Visual Studio, und drücken Sie **F5**, um die Anwendung auszuführen. In einem Konsolenfenster wird der Status der Anwendung angezeigt. Die Ausgabe sieht wie folgt aus:
 
 	hivesampletable
 
 
 
 
-##<a id="nextsteps"></a> Nächste Schritte
+## <a id="nextsteps"></a> Nächste Schritte
 In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsight-Clusters kennen gelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
 * [Bereitstellen von HDInsight-Clustern][hdinsight-provision]
 * [Verwalten von HDInsight mit PowerShell][hdinsight-admin-powershell]
-* [HDInsight-Cmdlet-Referenzdokumentation][hdinsight-powershell-reference]
+* [Referenzdokumentation zu den HDInsight PowerShell-Cmdlets][hdinsight-powershell-reference]
 * [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
 * [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 
@@ -708,7 +722,4 @@ In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsi
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png
 
 [apache-hive]: http://hive.apache.org/
-
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

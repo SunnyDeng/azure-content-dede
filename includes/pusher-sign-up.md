@@ -1,4 +1,4 @@
-﻿Der erste Schritt ist das Erstellen eines neuen Kontos zur Verwendung im Lernprogramm. Sie können den kostenlosen Sandbox-Plan verwenden, der perfekt für dieses Lernprogramm geeignet ist.
+﻿Der erste Schritt ist das Erstellen eines neuen Kontos zur Verwendung im Lernprogramm. Sie können den Plan "FREE Sandbox" verwenden, der perfekt für dieses Lernprogramm geeignet ist.
 
 ### Anmelden für ein Pusher-Konto
 
@@ -12,15 +12,15 @@
 
 	![pusher-store][pusher-store]
 
-4. Wählen Sie im Dialogfeld **Add-On auswählen** den Eintrag **Pusher** aus, und klicken Sie anschließend auf den Pfeil nach rechts.
+4. Klicken Sie im Dialogfeld **Add-On auswählen** auf **Pusher** und anschließend auf den Pfeil nach rechts.
 
-5. Wählen Sie im Dialogfeld **Add-On personalisieren** den **Pusher**-Plan, für den Sie sich registrieren möchten.
+5. Klicken Sie im Dialogfeld **Add-On personalisieren** auf den **Pusher**-Plan, für den Sie sich anmelden möchten.
 
-6. Geben Sie einen Namen zur Identifizierung Ihres **Pusher**Diensts in Ihren Azure-Einstellungen ein, oder verwenden Sie den Standardwert **Pusher**. Namen müssen zwischen 1 und 100 Zeichen lang sein und dürfen nur alphanumerische Zeichen, Gedankenstriche, Punkte und Unterstriche enthalten. Der Name muss in der Liste der abonnierten Azure-Speicherelemente eindeutig sein.
+6. Geben Sie einen Namen zur Identifizierung Ihres **Pusher**-Diensts in Ihren Azure-Einstellungen ein, oder verwenden Sie den Standardwert **Pusher**. Namen müssen zwischen 1 und 100 Zeichen lang sein und dürfen nur alphanumerische Zeichen, Gedankenstriche, Punkte und Unterstriche enthalten. Der Name muss in der Liste der abonnierten Azure-Speicherelemente einzigartig sein.
 
 	![store-screen-1][store-screen-1]
 
-8. Wählen Sie einen Wert für die Region aus, z. B. West US. 
+8. Wählen Sie einen Wert für die Region aus; z. B. West-USA. 
 
 9. Klicken Sie auf den Pfeil nach rechts.
 
@@ -28,11 +28,11 @@
 
 	![store-screen-2][store-screen-2]
 
-11. Nach der Bestätigung Ihres Kaufs werden Sie zum Add-Ons-Dashboard umgeleitet, und die Meldung **Purchasing Pusher** wird angezeigt.
+11. Nach der Bestätigung Ihres Kaufs werden Sie zum Add-Ons-Dashboard umgeleitet und die Meldung **Purchasing Pusher** wird angezeigt.
 
 	![store-screen-3][store-screen-3]
 
-Ihr Pusher-Konto wird sofort bereitgestellt, und Sie sehen die Meldung **Successfully purchased Add-On Pusher**. Ihr Konto wurde erstellt, und Sie können den Pusher-Dienst jetzt verwenden.
+Ihr Pusher-Konto wird sofort bereitgestellt, und Sie sehen die Meldung **Successfully purchased Add-On Pusher**. Ihr Konto wurde erstellt und Sie können den Pusher-Dienst jetzt verwenden.
 
 Um den Abonnementplan so zu ändern, dass die Pusher-Kontakteinstellungen angezeigt werden, klicken Sie auf den Namen des Pusher-Diensts, um das Pusher-Add-On-Dashboard zu öffnen.
 
@@ -46,11 +46,11 @@ Wenn Sie Pusher verwenden, müssen Sie Ihre Pusher-Anwendungsverbindungseinstell
 
 	![pusher-connection-info-button][pusher-connection-info-button]
 
-2. Im Dialogfeld *Verbindungsinformationen* werden die Anwendungs-ID, der Schlüssel und der geheime Schlüssel angezeigt. Sie werden diese Werte später im Lernprogramm verwenden. Kopieren Sie sie daher für die spätere Verwendung.
+2. Im Dialogfeld *Connection info* wird die Anwendungs-ID, der Schlüssel und der geheime Schlüssel angezeigt. Sie werden diese Werte später im Lernprogramm verwenden. Kopieren Sie sie daher für die spätere Verwendung.
 
 	![pusher-connection-info][pusher-connection-info]
 
-Weitere Informationen zu den ersten Schritten mit Pusher finden Sie unter [Grundlagen von Pusher][].
+Weitere Informationen zu den ersten Schritten mit Pusher finden Sie im Thema zu den [Grundlagen von Pusher][].
 
 <!--images-->
 
@@ -68,4 +68,4 @@ Weitere Informationen zu den ersten Schritten mit Pusher finden Sie unter [Grund
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
 [Grundlagen von Pusher]: http://pusher.com/docs
 
-
+<!--HONumber=42-->

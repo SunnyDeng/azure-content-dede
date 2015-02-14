@@ -34,19 +34,17 @@
 	}
 
 
-Damit wird eine neue Methode erstellt, die den Authentifizierungsprozess handhabt. Der Benutzer wird mithilfe einer Google-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
+	Damit wird eine neue Methode erstellt, die den Authentifizierungsprozess handhabt. Der Benutzer wird mithilfe einer Google-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Falls Sie einen anderen Identitätsanbieter als Google verwenden, ändern Sie den an die <strong>login</strong>-Methode übergebenen Wert auf einen der folgenden Werte: <em>MicrosoftAccount</em>, <em>Facebook</em>, <em>Twitter</em> oder <em>windowsazureactivedirectory</em>.</p>
-    </div>
+    > [AZURE.NOTE] Falls Sie einen anderen Identitätsanbieter als Google verwenden, ändern Sie den an die **login**-Methode übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Facebook_, _Twitter_ oder _windowsazureactivedirectory_.
 
-3. Fügen Sie in der **onCreate**-Methode die folgende Codezeile nach dem Code hinzu, der das "MobileServiceClient"-Objekt instanziiert.
+3. Fügen Sie in der **onCreate**-Methode die folgende Codezeile im Anschluss an den Code hinzu, der das `MobileServiceClient`-Objekt instanziiert.
 
 		authenticate();
 
 	Dieser Aufruf startet den Authentifizierungsprozess.
 
-4. Verschieben Sie den verbleibenden Code nach "authenticate();" in der **onCreate**-Methode in eine neue **createTable**-Methode mit folgendem Code:
+4. Verschieben Sie den verbleibenden Code nach `authenticate();` in der **onCreate**-Methode in eine neue **createTable**-Methode mit dem folgenden Code:
 
 		private void createTable() {
 	
@@ -64,6 +62,6 @@ Damit wird eine neue Methode erstellt, die den Authentifizierungsprozess handhab
 			refreshItemsFromTable();
 		}
 
-9. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten und sich mit dem Identitätsanbieter Ihrer Wahl anzumelden. 
+9. Klicken Sie im Menü **Run** auf **Run**, um die App zu starten und sich mit dem Identitätsanbieter Ihrer Wahl anzumelden. 
 
-   	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
+   	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.<!--HONumber=42-->

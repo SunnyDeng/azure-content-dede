@@ -1,6 +1,6 @@
-﻿1. Öffnen Sie im App-Projekt die Datei "AndroidManifest.xml". Ersetzen Sie im Code in den nächsten beiden Schritten "**my_app_package**" durch den Namen des App-Pakets für Ihr Projekt, der dem Wert des Attributs "package" des Tags "manifest" entspricht. 
+﻿1. Öffnen Sie im App-Projekt die Datei `AndroidManifest.xml`. Ersetzen Sie im Code in den nächsten beiden Schritten _`**my_app_package**`_ durch den Namen des App-Pakets für Ihr Projekt, der dem Wert des Attributs `package` des Tags `manifest` entspricht. 
 
-2. Fügen Sie die folgenden neuen Berechtigungen nach dem vorhandenen Element "uses-permission" ein:
+2. Fügen Sie die folgenden neuen Berechtigungen nach dem vorhandenen Element `uses-permission` ein:
 
         <permission android:name="**my_app_package**.permission.C2D_MESSAGE" 
             android:protectionLevel="signature" />
@@ -9,7 +9,7 @@
         <uses-permission android:name="android.permission.GET_ACCOUNTS" />
         <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-3. Fügen Sie den folgenden Code nach dem Starttag "application" ein: 
+3. Fügen Sie den folgenden Code nach dem Starttag `application` ein: 
 
         <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
             						 	android:permission="com.google.android.c2dm.permission.SEND">
@@ -20,63 +20,34 @@
         </receiver>
 
 
-4. Laden Sie das [Mobile Services Android SDK] herunter, und entzippen Sie es. Öffnen Sie den Ordner **Benachrichtigungen**, kopieren Sie die Datei **notifications-1.0.1.jar** in den Ordner "libs Ihres Eclipse-Projekts, und aktualisieren Sie den Ordner "libs".
+4. Laden Sie das [Mobile Services Android SDK] herunter, und entpacken Sie es. Öffnen Sie den Ordner **notifications**, kopieren Sie die Datei **notifications-1.0.1.jar** in den Ordner *libs* Ihres Eclipse-Projekts, und aktualisieren Sie den Ordner *libs*.
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.</p>
-    </div>
+    > [AZURE.NOTE] Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
 
 5.  Öffnen Sie die Datei *ToDoItemActivity.java*, und fügen Sie den folgenden Import-Ausdruck ein:
 
 		import com.microsoft.windowsazure.notifications.NotificationsManager;
-		import com.microsoft.windowsazure.mobileservices.notifications.Registration;
 
 
-6. Fügen Sie die folgende private Variable zu der Klasse hinzu: ersetzen Sie "<PROJECT_NUMBER>" mit der Projektnummer, die Ihrer App im vorherigen Vorgang durch Google zugewiesen wurde:
+6. Fügen Sie die folgende private Variable zu der Klasse hinzu. Ersetzen Sie _`<PROJECT_NUMBER>`_ durch die Projektnummer, die Ihrer App im vorherigen Vorgang durch Google zugewiesen wurde:
 
 		public static final String SENDER_ID = "<PROJECT_NUMBER>";
 
-7. Ändern Sie die Definition von MobileServiceClient von privat zu öffentlich-statisch, damit sie folgendes Format erhält:
+7. Ändern Sie die Definition von *MobileServiceClient* von **private** in **public static**, sodass sie folgendes Format erhält:
 
 		public static MobileServiceClient mClient;
 
 
-8. Fügen Sie die folgende Methode in "ToDoActivity.java" der "ToDoActivity"-Klasse hinzu, um die Registrierung für Benachrichtigungen zu ermöglichen.
 
-        /**
-		 * Registers mobile services client to receive GCM push notifications
-		 * @param gcmRegistrationId The Google Cloud Messaging session Id returned 
-		 * by the call to GoogleCloudMessaging.register in NotificationsManager.handleNotifications
-		 */
-		public void registerForPush(String gcmRegistrationId)
-		{
-			String [] tags = {null};
-			ListenableFuture<Registration> reg = mClient.getPush().register(gcmRegistrationId, tags);
-			
-	    	Futures.addCallback(reg, new FutureCallback<Registration>() {
-	    		@Override
-	    		public void onFailure(Throwable exc) {
-	    			createAndShowDialog((Exception) exc, "Error");
-	    		}
-	    		
-	    		@Override
-	    		public void onSuccess(Registration reg) {
-	    			createAndShowDialog(reg.getRegistrationId() + " resistered", "Registration");
-	    		}
-	    	});
-		}
+9. Als Nächstes müssen wir eine neue Klasse zum Behandeln von Benachrichtigungen hinzufügen. Klicken Sie im Paket-Explorer mit der rechten Maustaste auf das Paket (unter dem Knoten `src`), klicken Sie auf **New** und dann auf **Class**.
 
-
-
-9. Als Nächstes müssen wir eine neue Klasse zum Behandeln von Benachrichtigungen hinzufügen. Klicken Sie im Paket-Explorer mit der rechten Maustaste auf das Paket (unter dem Knoten "src"), klicken Sie auf **Neu** und dann auf **Klasse**.
-
-10. Geben Sie in **Name** "MyHandler" und in **Übergeordnete Klasse** "com.microsoft.windowsazure.notifications.NotificationsHandler" ein, und klicken Sie dann auf **Fertig stellen**
+10. Geben Sie für **Name** `MyHandler` ein, geben Sie in **Superclass** `com.microsoft.windowsazure.notifications.NotificationsHandler` ein, und klicken Sie dann auf **Finish**
 
 	![](./media/mobile-services-android-get-started-push/mobile-services-android-create-class.png)
 
 	Daraufhin wird die neue MyHandler-Klasse erstellt.
 
-11. Fügen Sie die folgenden import-Anweisungen für die "MyHandler"-Klasse ein:
+11. Fügen Sie die folgenden Import-Anweisungen für die Klasse `MyHandler` ein:
 
 		import android.app.NotificationManager;
 		import android.app.PendingIntent;
@@ -87,7 +58,7 @@
 		import android.support.v4.app.NotificationCompat;
 
 	
-12. Fügen Sie als Nächstes die folgenden Mitglieder für die "MyHandler"-Klasse ein:
+12. Fügen Sie als Nächstes die folgenden Elemente für die Klasse `MyHandler` hinzu:
 
 		public static final int NOTIFICATION_ID = 1;
 		private NotificationManager mNotificationManager;
@@ -95,7 +66,7 @@
 		Context ctx;
 
 
-13. In der "MyHandler"-Klasse fügen Sie den folgenden Code zum Überschreiben der **onRegistered**-Methode hinzu: wodurch Ihr Gerät im Benachrichtigungshub des mobilen Diensts registriert wird.
+13. Fügen Sie den folgende Code in die Klasse `MyHandler` ein, um die **onRegistered**-Methode zu überschreiben, mit der Ihr Gerät im Benachrichtigungs-Hub des mobilen Dienstes registriert wird.
 
 		@Override
 		public void onRegistered(Context context,  final String gcmRegistrationId) {
@@ -118,7 +89,7 @@
 
 
 
-14. In der "MyHandler"-Klasse fügen Sie den folgenden Code zum Überschreiben der **onReceive**-Methode hinzu, wodurch die Benachrichtigung nach ihrem Empfang angezeigt wird.
+14. Fügen Sie in der `MyHandler`-Klasse den folgenden Code zum Überschreiben der **onReceive**-Methode hinzu, wodurch die Benachrichtigung nach ihrem Empfang angezeigt wird.
 
 		@Override
 		public void onReceive(Context context, Bundle bundle) {
@@ -148,7 +119,7 @@
 		}
 
 
-15. Aktualisieren Sie in der Datei "TodoActivity.java" die **onCreate**-Methode der "ToDoActivity"-Klasse, um die Benachrichtigungsbehandlungsklasse zu registrieren. Stellen Sie sicher, dass dieser Code hinzufügt wird, nachdem MobileServiceClient instanziiert wurde.
+15. Aktualisieren Sie in der Datei "TodoActivity.java" die **onCreate**-Methode der *ToDoActivity*-Klasse, um die Benachrichtigungsbehandlungsklasse zu registrieren. Stellen Sie sicher, dass dieser Code hinzufügt wird, nachdem *MobileServiceClient* instanziiert wurde.
 
 
 		NotificationsManager.handleNotifications(this, SENDER_ID, MyHandler.class);
@@ -157,3 +128,4 @@
 
 <!-- URLs. -->
 [Mobile Services Android SDK]: http://aka.ms/Iajk6q
+<!--HONumber=42-->

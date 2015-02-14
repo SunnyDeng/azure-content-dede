@@ -1,9 +1,9 @@
 ﻿
-##<a name="add-select-images"></a>Aktualisierung der Schnellstart-Client-App zum Aufnehmen und Hochladen von Bildern
+##<a name="add-select-images"></a>Aktualisieren Sie die Quickstart-Client-App, um Bilder aufzunehmen und hochzuladen
 
-In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Schritte mit Mobile Services], um Fotos aufzunehmen und diese in den Azure-BLOB-Speicher hochzuladen. Zum Aufnehmen des Bilds wird in diesem Lernprogramm [CameraCaptureTask] aus dem Namespace "Microsoft.Phone.Tasks" verwendet. Diese Klasse startet die Kamera-Benutzeroberfläche auf dem Windows Phone-Gerät, um das Foto aufzunehmen, und speichert das Bild automatisch in Eigene Aufnahmen auf dem Windows Phone-Gerät. Wennj die Bilder nicht in "Eigene Aufnahmen" gespeichert werden sollen, verwenden Sie stattdessen die [PhotoCamera]-Klasse aus dem Namespace "Microsoft.Devices".
+In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Schritte mit Mobile Services], um Fotos aufzunehmen, und diese in den Azure-BLOB-Speicher hochzuladen. Zum Aufnehmen des Bilds wird in diesem Lernprogramm [CameraCaptureTask] aus dem  `Microsoft.Phone.Tasks`-Namespace verwendet. Diese Klasse startet die Kamera-Benutzeroberfläche auf dem Windows Phone-Gerät, um das Foto aufzunehmen, und speichert das Bild automatisch in Eigene Aufnahmen auf dem Windows Phone-Gerät. Falls Sie die Bilder nicht in "Eigene Aufnahmen" speichern möchten, verwenden Sie stattdessen die [PhotoCamera]-Klasse im  `Microsoft.Devices`-Namespace.
 
-1. 	Erweitern Sie im Projektmappen-Explorer für Visual Studio unter dem Projekt **Eigenschaften**. Öffnen Sie dann die Datei "WMAppManifest.xml", und aktivieren Sie auf der Registerkarte **Funktionen** die Kamera, indem Sie auf **ID\_CAP\_ISV\_CAMERA** klicken. Schließen Sie die Datei, um die Änderung zu speichern.
+1. Erweitern Sie im Projektmappen-Explorer für Visual Studio unter dem Projekt **Eigenschaften**. Öffnen Sie dann die Datei "WMAppManifest.xml", und aktivieren Sie auf der Registerkarte **Funktionen** die Kamera, indem Sie auf **ID\_CAP\_ISV\_CAMERA** klicken. Schließen Sie die Datei, um die Änderung zu speichern.
 
    	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-WMAppmanifest-wp8.png)
 
@@ -44,7 +44,7 @@ In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Sc
         </Grid>
 
 
-   	Dadurch wird eine neue Schaltfläche zum Starten von [CameraCaptureTask] hinzugefügt. Außerdem wird **ItemTemplate** ein Bild hinzugefügt und dessen Bindungsquelle als URI des hochgeladenen Bilds im BLOB-Speicherdienst festgelegt.
+   	Dadurch wird eine neue Schaltfläche zum Starten von [CameraCaptureTask] hinzugefügt. Außerdem wird **ItemTemplate** ein Bild hinzugefügt und, dessen Bindungsquelle als URI des hochgeladenen Bilds im BLOB-Speicherdienst festgelegt.
 
 3. Öffnen Sie die Projektdatei "MainPage.xaml.cs", und fügen Sie die folgende **using**-Anweisungen ein:
 	
@@ -67,7 +67,7 @@ In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Sc
         [JsonProperty(PropertyName = "imageUri")]
         public string ImageUri { get; set; } 
 
-5. Aktualisieren Sie die "MainPage"-Klasse in der Projektdatei "MainPage.xaml.cs". Fügen Sie den folgenden Code hinzu, um [CameraCaptureTask] und ein Datenstromobjekt zum Verweisen auf das erfasste Bild zu deklarieren:
+5. Aktualisieren Sie die MainPage-Klasse in der Projektdatei MainPage.xaml.cs. Fügen Sie den folgenden Code hinzu, um [CameraCaptureTask] und ein Datenstromobjekt zum Verweisen auf das erfasste Bild zu deklarieren:
 
         // Using the CameraCaptureTask to allow the user to capture a todo item image //
         CameraCaptureTask cameraCaptureTask;
@@ -75,7 +75,7 @@ In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Sc
         // Using a stream reference to upload the image to blob storage.
         Stream imageStream = null;
 
-6. Aktualisieren Sie die MainPage-Klasse in der Projektdatei "MainPage.xaml.cs". Fügen Sie den folgenden Code hinzu, um den Konstruktor zur Erstellung der CameraCaptureTask-Instanz zu erstellen, und fügen Sie einen Ereignishandler für das Completed-Ereignis hinzu:
+6. Aktualisieren Sie die MainPage-Klasse in der Projektdatei MainPage.xaml.cs. Fügen Sie den folgenden Code hinzu, um den Konstruktor zur Erstellung der CameraCaptureTask zu erstellen, und fügen Sie einen Ereignishandler für das abgeschlossene Ereignis hinzu:
 
         // Constructor
         public MainPage()
@@ -91,7 +91,7 @@ In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Sc
             imageStream = e.ChosenPhoto;
         }
 
-7. Aktualisieren Sie die MainPage-Klasse in der Projektdatei "MainPage.xaml.cs". Fügen Sie den folgenden Code zur Anzeige der Kamera-Benutzeroberfläche hinzu, damit der Benutzer durch Klicken auf die Schaltfläche **Capture Image** ein Bild aufnehmen kann:
+7. Aktualisieren Sie die MainPage-Klasse in der Projektdatei MainPage.xaml.cs. Fügen Sie den folgenden Code zur Anzeige der Kamera-Benutzeroberfläche hinzu, damit der Benutzer durch Klicken auf die Schaltfläche **Capture Image** ein Bild aufnehmen kann:
 
         private void ButtonCaptureImage_Click(object sender, RoutedEventArgs e)
         {
@@ -99,7 +99,7 @@ In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Sc
         }
 
 
-8. Aktualisieren Sie die MainPage-Klasse in der Projektdatei "MainPage.xaml.cs". Ersetzen Sie die vorhandene InsertTodoItem-Methode durch den folgenden Code:
+8. Aktualisieren Sie die MainPage-Klasse in der Projektdatei MainPage.xaml.cs. Ersetzen Sie die vorhandene `InsertTodoItem`-Methode durch den folgenden Code:
  
         private async void InsertTodoItem(TodoItem todoItem)
         {
@@ -146,15 +146,15 @@ In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Sc
         }
 
 
-	Dieser Code sendet eine Anforderung an den mobilen Service, um einen neuen TodoItem-Eintrag einschließlich des Bilddateinamens einzufügen. Die Antwort enthält die SAS, die dann zum Einfügen des Bilds in den Blob-Speicher verwendet wird, und den URI des Bilds für die Datenbindung.
+	Dieser Code sendet eine Anfrage zum mobilen Service für Einfügen eines neuen TodoItem einschließlich des Bilddateinamens. Die Antwort enthält die SAS, die dann zum Einfügen des Bilds in den Blob-Speicher verwendet wird, und den URI des Bilds für Datenbindung.
 
 Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass das Hochladen funktioniert.
 		
-##<a name="test"></a>esten des Hochladens von Bildern in der App
+##<a name="test"></a>Testen Sie das Hochladen der Bilder in Ihrer App
 
 1. In Visual Studio können Sie die F5-Taste drücken, um die App im Emulator oder mit einem echten Zielgerät zu testen.
 
-2. 	Geben Sie einen Text in das Textfeld ein, und klicken Sie dann auf **Capture Image**.
+2. Geben Sie einen Text in das Textfeld ein, und klicken Sie dann auf **Capture Image**.
 
    	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-wp8.png)
 
@@ -164,7 +164,7 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
   
    	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-camera-wp8.png)
 
-4. Klicken Sie auf **accept**, um das Bild anzunehmen und die Kamera-Benutzeroberfläche zu verlassen.
+4. Klicken Sie auf **Akzeptieren**, um das Bild anzunehmen, und die Kamera-Benutzeroberfläche zu verlassen.
 
     ![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-camera-accept-wp8.png)
 
@@ -176,9 +176,10 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 
 	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-final-wp8.png)
 
-   >[WACOM.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die  <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Image</strong>-Steuerelement gebunden wird.
+   >[AZURE.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Bild</strong>-Steuerelement gebunden wird.
 
 
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started
 [CameraCaptureTask]: http://msdn.microsoft.com/de-de/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
 [PhotoCamera]: http://msdn.microsoft.com/de-de/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx
+<!--HONumber=42-->

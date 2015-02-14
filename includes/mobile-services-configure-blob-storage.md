@@ -10,10 +10,10 @@
 
    	![](./media/mobile-services-configure-blob-storage/mobile-blob-storage-account-keys.png)
 
-3. Klicken Sie in Ihrem mobilen Service auf die Registerkarte **Konfigurieren** führen Sie einen Bildlauf nach unten bis **App-Einstellungen** durch und geben Sie ein Paar aus **Name** und **Wert** für jedes der folgenden Elemente ein, die Sie vom Speicherkonto erhalten haben. Klicken Sie anschließend auf **Speichern**.
+3. Klicken Sie in Ihrem mobilen Dienst auf die Registerkarte **Konfigurieren**, führen Sie einen Bildlauf nach unten bis **App-Einstellungen** durch, und geben Sie ein Paar aus **Name** und **Wert** für jedes der folgenden Elemente ein, die Sie vom Speicherkonto erhalten haben. Klicken Sie anschließend auf **Speichern**.
 
-	+ "STORAGE_ACCOUNT_NAME"
-	+ "STORAGE_ACCOUNT_ACCESS_KEY"
+	+ `STORAGE_ACCOUNT_NAME`
+	+ `STORAGE_ACCOUNT_ACCESS_KEY`
 
 	![](./media/mobile-services-configure-blob-storage/mobile-blob-storage-app-settings.png)
 
@@ -80,9 +80,9 @@
 
  	![](./media/mobile-services-configure-blob-storage/mobile-insert-script-blob.png)
 
-   	Dadurch wird die Funktion ersetzt, die aufgerufen wird, wenn ein Einfügevorgang in der Tabelle "TodoItem" mit einem neuen Skript erfolgt. Dieses neue Skript generiert eine neue SAS für den Einfügevorgang, die fünf Minuten gültig ist. Dann weist es den Wert der generierten SAS der Eigenschaft "sasQueryString" des zurückgegebenen Elements zu. Die Eigenschaft "imageUri" wird auch auf den Ressourcenpfad des neuen BLOB festgelegt, um die Imageanzeige während der Bindung in der Client-UI zu ermöglichen.
+   	Dadurch wird die Funktion ersetzt, die aufgerufen wird, wenn ein Einfügevorgang in der Tabelle "TodoItem" mit einem neuen Skript erfolgt. Dieses neue Skript generiert eine neue SAS für den Einfügevorgang, die fünf Minuten gültig ist. Dann weist es den Wert der generierten SAS der Eigenschaft `sasQueryString` des zurückgegebenen Elements zu. Die Eigenschaft `imageUri` wird auch auf den Ressourcenpfad des neuen BLOB festgelegt, um die Imageanzeige während der Bindung in der Client-UI zu ermöglichen.
 
-	>[WACOM.NOTE] Durch diesen Code wird eine SAS für ein einzelnes BLOB erstellt. Wenn Sie mehrere BLOBs in einen Container mit derselben SAS hochladen müssen, können Sie stattdessen die <a href="http://go.microsoft.com/fwlink/?LinkId=390455" target="_blank">generateSharedAccessSignature-Methode</a> mit einem leeren BLOB-Ressourcennamen wie den Folgenden aufrufen: 
+	>[AZURE.NOTE] Durch diesen Code wird eine SAS für ein einzelnes BLOB erstellt. Wenn Sie mehrere BLOBs in einen Container mit derselben SAS hochladen müssen, können Sie stattdessen die <a href="http://go.microsoft.com/fwlink/?LinkId=390455" target="_blank">generateSharedAccessSignature-Methode</a> mit einem leeren BLOB-Ressourcennamen wie dem Folgenden aufrufen: 
 	<pre><code>blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);</code></pre>
 
 Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim Einfügevorgang generierten SAS Funktionalität zum Hochladen von Images hinzuzufügen.
@@ -94,3 +94,4 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 <!-- URLs. -->
 [Erstellen eines Speicherkontos]: /de-de/manage/services/storage/how-to-create-a-storage-account
 [App-Einstellungen]: http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+<!--HONumber=42-->

@@ -1,34 +1,36 @@
-# Erstellen einer MongoDB-Datenbank in Azure
+﻿#Erstellen einer MongoDB-Datenbank in Azure
 
-In diesem Artikel wird dargestellt, wie Sie mit [MongoLab] eine MongoDB-Datenbank über den [Azure Store] erstellen. [MongoLab] ist ein MongoDB-Dienstanbieter, mit dem Sie MongoDB-Datenbanken in Azure-Datencentern ausführen und verwalten und aus jeder Anwendung Verbindungen zu diesen herstellen können.
+In diesem Artikel wird erläutert, wie Sie [MongoLab] verwenden, um eine MongoDB-Datenbank aus dem [Azure Store] zu erstellen. [MongoLab] ist ein MongoDB-as-a-Service-Anbieter, mit dem Sie MongoDB-Datenbanken in Azure-Datencentern ausführen und verwalten und von jeder beliebigen Anwendung Verbindungen zu diesen Datenbanken herstellen können.  
 
-Gehen Sie folgendermaßen vor, um eine MongoDB-Datenbank über den [Azure Store][Azure Store] zu erstellen:
+Zum Erstellen einer MongoDB-Datenbank aus dem [Azure Store] gehen Sie folgendermaßen vor:
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][Azure-Verwaltungsportal] an.
-2.  Klicken Sie unten auf der Seite auf **+NEU**, und wählen Sie anschließend **STORE** aus.
+1. Melden Sie sich am [Azure-Verwaltungsportal][Portal] an.
+2. Klicken Sie auf **+ NEU** am unteren Rand der Seite, und wählen Sie dann **STORE** aus.
 
-	![Add-On im Store auswählen](./media/create-mongolab-mongodb/select-store.png)
+	![Select add-on from store](./media/create-mongolab-mongodb/select-store.png)
 
-3.  Wählen Sie **MongoLab** aus, und klicken Sie unten im Fenster auf den Pfeil.
+3. Wählen Sie **MongoLab** aus, und klicken Sie dann unten im Fenster auf den Pfeil.
 
-	![MongoLab auswählen](./media/create-mongolab-mongodb/select-mongo-db.png)
+	![Select MongoLab](./media/create-mongolab-mongodb/select-mongo-db.png)
 
-4.  Geben Sie einen Datenbanknamen ein, wählen Sie eine Region aus, und klicken Sie unten im Fenster auf den Pfeil.
+4. Geben Sie einen Datenbanknamen ein, wählen Sie eine Region aus, und klicken Sie unten im Fenster auf den Pfeil.
 
-	![MongoLab-Datenbank im Store kaufen](./media/create-mongolab-mongodb/purchase-mongodb.png)
+	![Purchase MongoLab database from store](./media/create-mongolab-mongodb/purchase-mongodb.png)
 
-5.  Klicken Sie auf das Häkchen, um den Kauf abzuschließen.
+5. Klicken Sie auf das Häkchen, um den Kauf abzuschließen.
 
-	![Kauf prüfen und abschließen](./media/create-mongolab-mongodb/complete-mongolab-purchase.png)
+	![Review and complete your purchase](./media/create-mongolab-mongodb/complete-mongolab-purchase.png)
 
-6.  Nachdem die Datenbank erstellt wurde, können Sie sie auf der Registerkarte **ADD-ONS** im Verwaltungsportal verwalten.
+6. Nachdem die Datenbank erstellt wurde, können Sie sie auf der Registerkarte **Add-Ons** im Verwaltungsportal verwalten.
 
-	![MongoLab-Datenbank im Azure-Portal verwalten](./media/create-mongolab-mongodb/manage-mongolab-add-on.png)
+	![Manage MongoLab database in Azure portal](./media/create-mongolab-mongodb/manage-mongolab-add-on.png)
 
-7.  Sie können die Datenbankverbindungsinformationen abrufen, indem Sie unten auf der Seite auf **Verbindungsinformationen** klicken (siehe oben).
+7. Sie können die Informationen zur Datenbankverbindung abrufen, indem Sie unten auf der Seite auf **Verbindungsinformationen** klicken (siehe oben).
 
-	![MongoLab-Verbindungsinformationen](./media/create-mongolab-mongodb/mongolab-conn-info.png) 
+	![MongoLab connection information](./media/create-mongolab-mongodb/mongolab-conn-info.png) 
 
-  [MongoLab]: https://mongolab.com/home
-  [Azure Store]: /de-de/store/overview/
-  [Azure-Verwaltungsportal]: http://windows.azure.com/
+[MongoLab]: https://mongolab.com/home
+[waws]: /de-de/manage/services/web-sites/
+[Azure Store]: /de-de/store/overview/
+[Portal]: http://windows.azure.com/
+<!--HONumber=42-->

@@ -1,4 +1,4 @@
-﻿Herunterladen des Azure SDK für Java
+﻿#Herunterladen des Azure SDK für Java
 
 ##Azure-Clientbibliotheken für Java - manueller Download
 
@@ -56,7 +56,8 @@ Wenn Ihr Projekt bereits für die Verwendung von Maven für den Build-Prozess ei
 
 
 
-Ersetzen Sie innerhalb des "<version>"-Elements *n.n.n* durch eine gültige Versionsnummer, die Sie im [Azure-Bibliothekenrepository auf Maven](http://go.microsoft.com/fwlink/?LinkID=286274) erhalten.
+Ersetzen Sie innerhalb des Elements `<version>`  *n.n.n* durch eine gültige Versionsnummer, die Sie im [Azure-Bibliothekenrepository auf Maven](http://go.microsoft.com/fwlink/?LinkID=286274) erhalten.
 
-[Lizenz]: http://www.apache.org/licenses/LICENSE-2.0.html
-[ZIP-Download]:  http://go.microsoft.com/fwlink/?LinkId=253887
+[license]: http://www.apache.org/licenses/LICENSE-2.0.html
+[zip-download]:  http://go.microsoft.com/fwlink/?LinkId=253887
+<!--HONumber=42-->

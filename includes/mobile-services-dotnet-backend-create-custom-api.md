@@ -1,23 +1,23 @@
 ﻿
 
-1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf den Controller-Ordner für das Mobildienstprojekt, erweitern Sie **Hinzufügen**, und klicken Sie dann auf **New Scaffolded Item**.
+1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf den Controller-Ordner für das Projekt für den mobilen Service, erweitern Sie **Hinzufügen**, und klicken Sie dann auf **New Scaffolded Item**.
 
 	Der Dialog "Add Scaffold" wird angezeigt.
 
-2. Erweitern Sie **Azure Mobile Services**, klicken Sie auf **Azure Mobile Services Custom Controller**, klicken Sie dann auf **Hinzufügen**, geben Sie den **Controllernamen** `CompleteAllController` an, und klicken Sie anschließend erneut auf **Hinzufügen**.
+2. Erweitern Sie **Azure Mobile Services**, klicken Sie auf ** Benutzerdefinierter Controller Azure Mobile Services**, klicken Sie dann auf **Hinzufügen**, geben Sie einen **Controllernamen** für  `CompleteAllController` an, und klicken Sie anschließend erneut auf **Hinzufügen**.
 
 	![Web API Add Scaffold dialog](./media/mobile-services-dotnet-backend-create-custom-api/add-custom-api-controller.png)
 
 	Dadurch wird eine neue leere Controllerklasse namens **CompleteAllController** erstellt.
 
->[WACOM.NOTE]Wenn Ihr Dialogfeld keine Mobile Services-spezifischen Gerüste umfasst, erstellen Sie stattdessen einen neuen Controller vom Typ **Web API Controller - Empty**. Fügen Sie in dieser neuen Controllerklasse eine öffentliche Eigenschaft **Services** hinzu, die den **ApiServices**-Typ zurückgibt. Diese Eigenschaft wird verwendet, um vom Controller aus auf serverspezifische Einstellungen zuzugreifen.
+>[AZURE.NOTE]Wenn Ihr Dialogfeld keine Mobile Services-spezifischen Gerüste umfasst, erstellen Sie stattdessen einen neuen Controller vom Typ **Web API Controller - Leer**. Fügen Sie in dieser neuen Controllerklasse eine öffentliche Eigenschaft **Dienste** hinzu, die den **ApiServices**-Typ zurückgibt. Diese Eigenschaft wird zum Zugriff auf Server-spezifische Einstellungen vom Controller aus verwendet.
 
 3. Fügen Sie der neuen Projektdatei "CompleteAllController.cs" die folgenden **using**-Anweisungen hinzu:
 
 		using System.Threading.Tasks;
 		using todolistService.Models;
 
-	Ersetzen Sie im obigen Code `todolistService` durch den Namespace Ihres Mobildienstprojekts, der aus dem Namen des mobilen Diensts und dem angehängten Zusatz `Service` bestehen sollte. 
+	Ersetzen Sie im obigen Code  `todolistService` durch den Namespace Ihres Projekts für den mobilen Dienst, das aus dem Namen des mobilen Diensts und dem Anhang  `Service` bestehen sollte. 
 
 4. Fügen Sie dem Namespace in "CompleteAllController.cs" die folgende Klassendefinition hinzu. Diese Klasse umschließt die an den Client gesendete Antwort.
 
@@ -56,11 +56,12 @@
             }
         }
 
-	Ersetzen Sie im obigen Code `todolistContext` durch den Namen von DbContext für Ihr Datenmodell, der aus dem Namen des mobilen Diensts und angehängten Zusatz `Context` bestehen sollte. Ersetzen Sie auch den Schemanamen in der UPDATE-Anweisung durch den Namen Ihres mobilen Diensts. 
+	Ersetzen Sie im obigen Code  `todolistContext` durch den Namen von DbContext für Ihr Datenmodell, der aus dem Namen des mobilen Diensts und dem Anhang  `Context` bestehen sollte. Ersetzen Sie auch den Schemanamen in der UPDATE-Anweisung durch den Namen Ihres mobilen Diensts. 
 
-	In diesem Code wird die [Datenbankklasse](http://msdn.microsoft.com/de-de/library/system.data.entity.database.aspx) verwendet, um direkt auf die **TodoItems**-Tabelle zuzugreifen und alle Elemente als abgeschlossen zu markieren. Diese Methode unterstützt eine POST-Anforderung, und die Anzahl der geänderten Zeilen wird als Ganzzahl an den Client zurückgegeben.
+	Dieser Code verwendet die [Datenbankklasse](http://msdn.microsoft.com/de-de/library/system.data.entity.database.aspx), um direkt auf die **TodoItems**-Tabelle zuzugreifen und alle Elemente als abgeschlossen zu markieren. Diese Methode unterstützt eine POST-Anfrage, und die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
 
-	> [WACOM.NOTE] Die Standardberechtigungen werden festgelegt, und das heißt, dass jeder Benutzer der App die benutzerdefinierte API aufrufen kann. Der Anwendungsschlüssel wird jedoch nicht verteilt bzw. sicher gespeichert und gilt daher nicht als sichere Anmeldeinformation. Deshalb sollten Sie in Erwägung ziehen, den Zugriff für Vorgänge, durch die Daten geändert werden oder die sich auf den mobilen Service auswirken, auf authentifizierte Benutzer zu beschränken. 
+	> [AZURE.NOTE] Die Standardberechtigungen werden festgelegt, und das heißt, dass jeder Benutzer der App die benutzerdefinierte API aufrufen kann. Der Anwendungsschlüssel wird jedoch nicht verteilt bzw. sicher gespeichert und gilt daher nicht als sichere Anmeldeinformation. Deshalb sollten Sie in Erwägung ziehen, den Zugriff für Vorgänge, durch die Daten geändert werden oder die sich auf den mobilen Service auswirken, auf authentifizierte Benutzer zu beschränken. 
 
 Als Nächstes ändern Sie die Quickstart-App so, dass eine neue Schaltfläche und neuer Code hinzugefügt wird, der die neue benutzerdefinierte API asynchron aufruft.
 
+<!--HONumber=42-->

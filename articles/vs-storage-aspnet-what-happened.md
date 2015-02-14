@@ -1,12 +1,26 @@
-﻿<properties title="Getting Started with Azure Storage" pageTitle="Erste Schritte mit Azure Storage" metaKeywords="Azure, Getting Started, Storage" description="" services="storage" documentationCenter="" authors="ghogen, kempb" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Azure Storage" 
+	description="" 
+	services="storage" 
+	documentationCenter="" 
+	authors="kempb" 
+	manager="douge" 
+	editor=""/>
 
-<tags ms.service="storage" ms.workload="web" ms.tgt_pltfrm="vs-what-happened" ms.devlang="na" ms.topic="article" ms.date="10/10/2014" ms.author="ghogen, kempb" />
+<tags 
+	ms.service="storage" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vs-what-happened" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/10/2014" 
+	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
 > - [Erste Schritte](/documentation/articles/vs-storage-aspnet-getting-started-blobs/)
 > - [Was ist passiert?](/documentation/articles/vs-storage-aspnet-what-happened/)
 
-###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
+### <span id="whathappened">Was ist mit meinem Projekt passiert?</span>
 
 ##### Verweise wurden hinzugefügt
 
@@ -22,7 +36,7 @@ Dieses Paket fügt die folgenden .NET-Verweise hinzu:
 - `System.Data`
 - `System.Spatial`
 
-#####Die Verbindungszeichenfolge für Azure Storage wurde hinzugefügt 
-In der Datei web.config Ihres Projekts wurde ein Element mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Speicherkontos erstellt.
+##### Die Verbindungszeichenfolge für Azure Storage wurde hinzugefügt 
+In der Datei "web.config" Ihres Projekts wurde ein Element mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Speicherkontos erstellt.
 
-Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
+Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).<!--HONumber=42-->

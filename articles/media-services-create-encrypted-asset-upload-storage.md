@@ -1,31 +1,45 @@
-﻿<properties urlDisplayName="Create Encrypted Asset and Upload to Storage" pageTitle="Erstellen eines verschlüsselten Medienobjekts und Hochladen in den Speicher | Azure" metaKeywords="" description="Erfahren Sie, wie Sie Medieninhalte in Media Services erstellen können, indem Sie ein verschlüsseltes Medienobjekt erstellen und hochladen." metaCanonical="" services="media-services" documentationCenter="" title="How to: Create an encrypted Asset and upload to storage" authors="juliako" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Erstellen eines verschlüsselten Medienobjekts und Hochladen in den Speicher | Azure" 
+	description="Erfahren Sie, wie Sie Medieninhalte in Media Services erstellen können, indem Sie ein verschlüsseltes Medienobjekt erstellen und hochladen." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/30/2014" 
+	ms.author="juliako"/>
 
 
 
 <h1><a name="create-asset"> </a><span class="short header">Gewusst wie: Erstellen eines verschlüsselten Medienobjekts und Hochladen in den Speicher</span></h1>
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Einrichten Ihres Computers für Mediendienste](http://go.microsoft.com/fwlink/?LinkID=301751&clcid=0x409).
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure Media Services. Das vorherige Thema war [Einrichten Ihres Computers für Mediendienste](http://go.microsoft.com/fwlink/?LinkID=301751&clcid=0x409).
 
 Um Medieninhalte in Mediendienste zu übertragen, müssen Sie zunächst ein Medienobjekt erstellen, dieses Objekt mit Dateien füllen und anschließend hochladen. Diesen Prozess nennt man auch die Erfassung von Inhalten.  
 
 Bei der Erstellung von Medienobjekten können Sie drei verschiedene Optionen für die Verschlüsselung auswählen. 
 
 - **AssetCreationOptions.None**: keine Verschlüsselung. Wählen Sie diese Option aus, wenn Sie Ihr Medienobjekt nicht verschlüsseln möchten.
-- **AssetCreationOptions.CommonEncryptionProtected**: für Dateien mit Common Encryption (CENC). Ein Beispiel ist ein Satz von Dateien, die bereits PlayReady-verschlüsselt sind. 
+- **AssetCreationOptions.CommonEncryptionProtected**: Common Encryption Protected (CENC)-Dateien. Ein Beispiel ist ein Satz von Dateien, die bereits PlayReady-verschlüsselt sind. 
 - **AssetCreationOptions.StorageEncrypted**: Speicherverschlüsselung. Verschlüsselt eine unverschlüsselte Eingabedatei vor dem Hochladen in den Azure-Speicher.
 
-> WACOM.NOTE
+> AZURE.HINWEIS
 > Media Services bieten Speicherverschlüsselung auf der Festplatte und nicht für die Netzwerkkommunikation wie Digital Rights Manager (DRM).
 
 Der folgende Beispielcode führt die folgenden Aufgaben aus: 
 
 - Erstellen eines leeren Medienobjekts.
-- Erstellt eine AssetFile-Instanz, der wir das Medienobjekt zuweisen werden.
-- Erstellt eine AccessPolicy-Instanz mit den Berechtigungen und der Zugriffsdauer auf das Medienobjekt.
-- Erstellt eine Locator-Instanz, die Zugriff auf das Medienobjekt bietet.
-- Lädt eine einzelne Datei in einen Mediendienst hoch. 
+- Erstellen einer AssetFile-Instanz, der wir das Medienobjekt zuweisen werden.
+- Erstellen einer AccessPolicy-Instanz mit den Berechtigungen und der Zugriffsdauer auf das Medienobjekt.
+- Erstellen einer Locator-Instanz, die Zugriff auf das Medienobjekt bietet.
+- Hochladen einer einzelnen Datei in Media Services. 
 
 <pre><code>
 static private IAsset CreateEmptyAsset(string assetName, AssetCreationOptions assetCreationOptions)
@@ -85,7 +99,7 @@ static public IAsset CreateAssetAndUploadMultipleFiles( AssetCreationOptions ass
         throw new FileNotFoundException(String.Format("No files in directory, check folderPath: {0}", folderPath));
     }
 
-    var uploadTasks = new List<Task>();
+    var uploadTasks = new List&lt;Task&gt;();
     foreach (var filePath in filePaths)
     {
         var assetFile = asset.AssetFiles.Create(Path.GetFileName(filePath));
@@ -118,10 +132,7 @@ static void  blobTransferClient_TransferProgressChanged(object sender, BlobTrans
 </code></pre>
 
 <h2>Nächste Schritte</h2>
-Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit dem Artikel [Abrufren eines Medienprozessors][] fortfahren.
+Sie haben nun ein Medienobjekt in Media Services hochgeladen und können mit dem Artikel [Abrufen eines Medienprozessors][] fortfahren.
 
-[Abrufen eines Medienprozessors]: ../media-services-get-media-processor/
-
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+[Gewusst wie: Abrufen ein Medienprozessors]: ../media-services-get-media-processor/
+<!--HONumber=42-->

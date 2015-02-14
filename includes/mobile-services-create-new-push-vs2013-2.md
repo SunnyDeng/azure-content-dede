@@ -1,4 +1,4 @@
-﻿1. Suchen Sie in der Datei "insert.js" für die Tabelle **channels** nach den folgenden Codezeilen, kommentieren Sie sie aus, oder entfernen Sie sie aus der Datei. Speichern Sie anschließend Ihre Änderungen.
+﻿1. Suchen Sie in der Datei "insert.js" für die Tabelle **Kanäle** nach den folgenden Codezeilen, kommentieren Sie sie aus, oder entfernen Sie sie aus der Datei. Speichern Sie anschließend die Änderungen.
 
 		sendNotifications(item.channelUri);
 
@@ -43,4 +43,5 @@
 			}
 		}
 		
-	Wenn Sie nun ein neues Aktivitätselement hinzufügen, wird eine Pushbenachrichtigung an alle registrierten Geräte gesendet. 
+	Wenn Sie nun ein neues Aktivitätselement hinzufügen, wird eine Pushbenachrichtigung an alle registrierten Geräte gesendet.
+<!--HONumber=42-->
