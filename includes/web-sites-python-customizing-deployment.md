@@ -32,4 +32,5 @@ Sie können die [Azure-Befehlszeilenschnittstelle][] verwenden, um Dateien zu er
 Wenn diese Dateien nicht vorhanden sind, wird von Azure ein temporäres Bereitstellungsskript erstellt und ausgeführt.  Es ist identisch mit dem, das Sie mit dem oben aufgeführten Befehl erstellen.
 
 [Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/de-de/downloads/
+
 <!--HONumber=42-->

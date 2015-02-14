@@ -46,4 +46,5 @@ Bevor Sie einen BLOB verwenden können, müssen Sie die Verbindungszeichenfolge 
 [AZURE.INCLUDE [vs-storage-getting-started-blobs-include](../includes/vs-storage-getting-started-blobs-include.md)]
 
 Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
+
 <!--HONumber=42-->

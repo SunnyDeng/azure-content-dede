@@ -43,4 +43,5 @@ Bevor Sie eine Warteschlange verwenden können, müssen Sie die Verbindungszeich
 
 [AZURE.INCLUDE [vs-storage-getting-started-queues-include](../includes/vs-storage-getting-started-queues-include.md)]
 
-Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).<!--HONumber=42-->
+Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
+<!--HONumber=42-->

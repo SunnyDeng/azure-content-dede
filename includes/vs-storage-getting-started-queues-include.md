@@ -48,4 +48,5 @@ Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass ein
 [Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/)
 Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/de-de/library/azure/ff683677.aspx).
 
+
 <!--HONumber=42-->

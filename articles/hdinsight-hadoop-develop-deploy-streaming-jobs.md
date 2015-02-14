@@ -561,4 +561,5 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Hadoop-Streaming-MapReduce-Job
 
 
 
+
 <!--HONumber=42-->

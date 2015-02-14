@@ -334,4 +334,5 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Schnellstart - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
 [Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online]: http://www.windowsazure.com/de-de/develop/net/common-tasks/publishing-with-tfs/
+
 <!--HONumber=42-->

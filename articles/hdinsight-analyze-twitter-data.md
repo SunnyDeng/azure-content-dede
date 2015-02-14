@@ -565,4 +565,5 @@ Sie sind nun in der Lage, unstrukturierte JSon-Datensätze in strukturierte Hive
 [hdinsight-power-query]: ../hdinsight-connect-excel-power-query/
 [hdinsight-hive-odbc]: ../hdinsight-connect-excel-hive-ODBC-driver/
 [hdinsight-hbase-twitter-sentiment]: ../hdinsight-hbase-analyze-twitter-sentiment/
+
 <!--HONumber=42-->

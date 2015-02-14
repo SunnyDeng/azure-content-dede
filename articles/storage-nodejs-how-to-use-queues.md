@@ -386,4 +386,5 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
  [Web Site with WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
+
 <!--HONumber=42-->

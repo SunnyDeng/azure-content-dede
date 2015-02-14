@@ -279,4 +279,5 @@ Die Fehlermeldung (STDERR) und das Ergebnis des Jobs (STDERR) werden ebenfalls i
 Wenn Sie Python-Module laden müssen, die standardmäßig nicht bereitgestellt werden, finden Sie dazu im englischsprachigen Blog-Beitrag [How to deploy a Python module to Windows Azure HDInsight](http://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx) (Bereitstellen eines Moduls für Azure HDInsight) ein Beispiel.
 
 Wenn Sie Aufträge remote auf HDInsight ohne PowerShell ausführen möchten, finden Sie im englischsprachigen Blog-Beitrag [How to use Azure HDInsight from Linux](http://blogs.msdn.com/b/benjguin/archive/2014/02/18/how-to-use-hdinsight-from-linux.aspx) (Verwenden von Azure HDInsight unter Linux) ein Beispiel, wie Sie mit Python-Aufträge über die WebHCat REST API ausführen.
+
 <!--HONumber=42-->

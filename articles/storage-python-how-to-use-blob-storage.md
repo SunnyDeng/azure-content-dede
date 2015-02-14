@@ -116,4 +116,5 @@ Nachdem Sie jetzt die Grundlagen des Blob-Speichers erlernt haben, folgen Sie di
   [Vorgehensweise: Hoch- und Herunterladen großer Blobs]: #large-blobs
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
+
 <!--HONumber=42-->

@@ -383,4 +383,5 @@ des Blob-Speicherdiensts aus Java].
   [Vorgehensweise: Erstellen eines Speicherkontos]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-create-a-storage-account/
   [Vorgehensweise: Verwalten von Speicherkonten]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/
   [Verwenden des Blobspeicherdiensts aus Java]: http://www.windowsazure.com/de-de/develop/java/how-to-guides/blob-storage/
+
 <!--HONumber=42-->

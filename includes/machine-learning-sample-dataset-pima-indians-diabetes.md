@@ -1,2 +1,3 @@
 Eine Teilmenge der Daten der Datenbank des National Institute of Diabetes and Digestive and Kidney Diseases. Das Dataset wurde gefiltert, um sich auf weibliche Patienten zu konzentrieren, die von den Pima-Indianern abstammen. Die Daten umfassen medizinische Daten wie Zucker- und Insulinspiegel sowie Lebensstilfaktoren.<p> </p><b>Syntax:</b> Vorhersage, ob der Patient Diabetes hat (binäre Klassifikation). <p> </p><b>Zugehörige Untersuchungen:</b> Sigillito, V. (1990). UCI Machine Learning Repository <a href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml"</a>. Irvine, CA: University of California, School of Information and Computer Science
+
 <!--HONumber=42-->

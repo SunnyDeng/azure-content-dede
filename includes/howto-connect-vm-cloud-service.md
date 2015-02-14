@@ -26,4 +26,5 @@ Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen D
 [Gewusst wie: Anfügen eines Datenträgers an einen Windows-Computer](http://azure.microsoft.com/de-de/documentation/articles/storage-windows-attach-disk/)
 
 
+
 <!--HONumber=42-->

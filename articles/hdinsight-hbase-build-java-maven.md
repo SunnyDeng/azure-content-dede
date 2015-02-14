@@ -589,4 +589,5 @@ Ersetzen Sie __hdinsightclustername__ durch den Namen Ihres HDInsight-Clusters.
 ###Keine oder unerwartete Ergebnisse bei Verwenden von "Start-HBaseExample"
 
 Verwenden Sie den Parameter `-showErr`, wenn Sie das STDERR sehen möchten, das während der Ausführung des Auftrags produziert wurde.
+
 <!--HONumber=42-->

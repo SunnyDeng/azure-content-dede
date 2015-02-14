@@ -50,4 +50,5 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 2. Klicken Sie in der Webseite, die sich daraufhin öffnet, auf die Registerkarte **Erste Schritte** und anschließend in der Kategorie **Beispiele** auf das Beispiel **Analyse von Websiteprotokollen**.
 
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
+
 <!--HONumber=42-->

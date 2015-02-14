@@ -8,4 +8,5 @@ Mit dem heruntergeladenen mobilen Dienstprojekt können Sie den neuen mobilen Di
 
 	![](./media/mobile-services-dotnet-backend-test-local-service/mobile-service-startup.png)
 
-	Nachdem der mobile Dienst erfolgreich gestartet wurde, wird eine Webseite angezeigt.<!--HONumber=42-->
+	Nachdem der mobile Dienst erfolgreich gestartet wurde, wird eine Webseite angezeigt.
+<!--HONumber=42-->

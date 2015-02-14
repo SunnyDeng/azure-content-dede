@@ -100,4 +100,5 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
 [Notification Hubs-Anleitung für Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx
 [Notification Hubs-REST-Schnittstelle]: http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx
+
 <!--HONumber=42-->

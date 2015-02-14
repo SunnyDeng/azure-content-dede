@@ -68,4 +68,5 @@ Notieren Sie sich den Wert **SharedAccessKey**, oder kopieren Sie ihn in die Zwi
   
   [6]: ./media/howto-service-bus-topics/getting-started-multi-tier-27.png
   [34]: ./media/howto-service-bus-topics/VSProperties.png
+
 <!--HONumber=42-->

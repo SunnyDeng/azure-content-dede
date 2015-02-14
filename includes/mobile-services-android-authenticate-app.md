@@ -64,4 +64,5 @@
 
 9. Klicken Sie im Menü **Run** auf **Run**, um die App zu starten und sich mit dem Identitätsanbieter Ihrer Wahl anzumelden. 
 
-   	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.<!--HONumber=42-->
+   	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
+<!--HONumber=42-->

@@ -494,4 +494,5 @@ Da Sie jetzt die Grundlagen des Azure-Tabellendiensts erlernt haben, folgen Sie 
 [Datenmodell der Tabelle]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179338.aspx
 [Filter]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx
 [Entitätsgruppentransaktionen]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894038.aspx
+
 <!--HONumber=42-->

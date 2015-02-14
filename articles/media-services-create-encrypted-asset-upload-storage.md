@@ -135,4 +135,5 @@ static void  blobTransferClient_TransferProgressChanged(object sender, BlobTrans
 Sie haben nun ein Medienobjekt in Media Services hochgeladen und können mit dem Artikel [Abrufen eines Medienprozessors][] fortfahren.
 
 [Gewusst wie: Abrufen ein Medienprozessors]: ../media-services-get-media-processor/
+
 <!--HONumber=42-->

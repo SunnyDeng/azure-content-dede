@@ -17,4 +17,5 @@ Wenn eines dieser Symptome auftritt, stimmt die Version des in Eclipse installie
 	 	        android:minSdkVersion="8"
 	 	        android:targetSdkVersion="21" />
 	
-3. Klicken Sie im Eclipse-Paket-Explorer mit der rechten Maustaste auf den Projektknoten, wählen Sie **Eigenschaften**, und wählen Sie in der linken Spalte **Android**. Stellen Sie sicher, dass für **Project Build Target** dieselbe SDK-Version wie für **targetSdkVersion** angegeben ist.<!--HONumber=42-->
+3. Klicken Sie im Eclipse-Paket-Explorer mit der rechten Maustaste auf den Projektknoten, wählen Sie **Eigenschaften**, und wählen Sie in der linken Spalte **Android**. Stellen Sie sicher, dass für **Project Build Target** dieselbe SDK-Version wie für **targetSdkVersion** angegeben ist.
+<!--HONumber=42-->

@@ -46,4 +46,5 @@ Der Datenträger verbleibt im Speicher, ist jedoch nicht mehr an einen virtuelle
 [attachdisk]:/de-de/manage/windows/how-to-guides/attach-a-disk/
 
 [Informationen zu Datenträgern und Images]:http://go.microsoft.com/fwlink/p/?LinkId=263439
+
 <!--HONumber=42-->

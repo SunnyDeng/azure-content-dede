@@ -412,4 +412,5 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [Node.js Cloud Service]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+
 <!--HONumber=42-->

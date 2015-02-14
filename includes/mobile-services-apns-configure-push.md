@@ -28,4 +28,5 @@ Ihr mobiler Dienst ist nun für APNS konfiguriert.
 
 <!-- URLs. -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+
 <!--HONumber=42-->

@@ -7,4 +7,5 @@ Erweitern Sie die gewünschte Bereitstellung:
 Klicken Sie auf **Protokoll anzeigen**, um die Ausgabe des benutzerdefinierten Bereitstellungsskripts anzuzeigen:
 
 ![](./media/web-sites-python-troubleshoot-deployment/portal-deployment-log.png)
+
 <!--HONumber=42-->

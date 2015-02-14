@@ -51,4 +51,5 @@ Als Nächstes ändern Sie die Quickstart-App so, dass eine neue Schaltfläche un
 <!-- URLs. -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [mssql-Objekt]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554212.aspx
+
 <!--HONumber=42-->

@@ -420,4 +420,5 @@ Wenn Sie Aufträge mit diesen Klassen ausführen möchten, bauen Sie eine Verbin
 [connect]: ./media/hdinsight-mahout/connect.png
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
+
 <!--HONumber=42-->

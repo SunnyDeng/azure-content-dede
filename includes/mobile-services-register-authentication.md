@@ -32,4 +32,5 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 	Sowohl Ihr mobiler Dienst als auch Ihre App sind nun konfiguriert und funktionieren mit dem ausgewählten Authentifizierungsanbieter.
 
 <!-- URLs. -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/<!--HONumber=42-->
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+<!--HONumber=42-->

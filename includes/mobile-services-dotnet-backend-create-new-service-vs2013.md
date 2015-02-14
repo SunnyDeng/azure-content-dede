@@ -27,4 +27,5 @@ Mit den folgenden Schritten wird ein neuer mobiler Service in Azure erstellt und
  
    	Nach Abschluss des Assistenten wird das mobile Dienstprojekt Ihrer Lösung hinzugefügt, die benötigten NuGet-Pakete werden installiert, und es wird ein Verweis auf die Clientbibliothek für mobile Dienste zum Projekt hinzugefügt. Außerdem wird der Projektquellcode aktualisiert.
 
+
 <!--HONumber=42-->

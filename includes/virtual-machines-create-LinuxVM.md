@@ -30,4 +30,5 @@ Klicken Sie in der Befehlsleiste auf **Neu**.
 15.  Prüfen Sie unter **VM-Agent** die verfügbaren Erweiterungen. Diese Erweiterungen bieten verschiedene Features, die die Verwendung und Verwaltung eines virtuellen Computers vereinfachen. Details finden Sie im Thema zu den [Azure-VM-Erweiterungen](http://go.microsoft.com/FWLink/p/?LinkID=390493). 
 
 
-Nachdem Azure den virtuellen Computer und den Cloud-Dienst erstellt hat, führt das Verwaltungsportal den neuen virtuellen Computer unter **Virtuelle Computer** und den Cloud-Dienst unter **Cloud-Dienste** auf. Sowohl der virtuelle Computer als auch der Clouddienst werden automatisch gestartet.<!--HONumber=42-->
+Nachdem Azure den virtuellen Computer und den Cloud-Dienst erstellt hat, führt das Verwaltungsportal den neuen virtuellen Computer unter **Virtuelle Computer** und den Cloud-Dienst unter **Cloud-Dienste** auf. Sowohl der virtuelle Computer als auch der Clouddienst werden automatisch gestartet.
+<!--HONumber=42-->

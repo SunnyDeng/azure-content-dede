@@ -298,4 +298,5 @@ Weitere Informationen finden Sie in der Sitzung [Übermitteln von MapReduce-Jobs
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
 
+
 <!--HONumber=42-->

@@ -41,4 +41,5 @@ Außerdem wurde das NuGet-Paket **Microsoft.Framework.ConfigurationModel.Json** 
 ##### Die Verbindungszeichenfolge für Azure Storage wurde hinzugefügt 
 In der Datei config.json Ihres Projekts wurde ein Element mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Speicherkontos erstellt.
 
-Weitere Informationen finden Sie unter [ASP.NET 5](http://www.asp.net/vnext).<!--HONumber=42-->
+Weitere Informationen finden Sie unter [ASP.NET 5](http://www.asp.net/vnext).
+<!--HONumber=42-->

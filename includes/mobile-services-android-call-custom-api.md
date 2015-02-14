@@ -110,4 +110,5 @@
 
   	![](./media/mobile-services-android-call-custom-api/mobile-custom-api-android-completed.png)
 
-	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.<!--HONumber=42-->
+	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
+<!--HONumber=42-->

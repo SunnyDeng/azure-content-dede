@@ -33,4 +33,5 @@ Als Nächstes erstellen Sie einen mobilen Dienst, um die In-Memory-Liste für di
 
 Sie haben nun einen neuen mobilen Service erstellt, den Sie mit Ihren mobilen Apps verwenden können. Als Nächstes fügen Sie eine neue Tabelle zum Speichern von App-Daten hinzu. Diese Tabelle wird von der App anstelle der In-Memory-Sammlung verwendet.
 
+
 <!--HONumber=42-->

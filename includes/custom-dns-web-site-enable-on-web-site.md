@@ -18,4 +18,5 @@
 
 	Nach Abschluss der Konfiguration wird der benutzerdefinierte Domänenname im Abschnitt **Domänennamen** der Seite **Konfigurieren** Ihrer Website aufgeführt.
 
-Zu diesem Zeitpunkt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und sehen, dass er Sie erfolgreich zu Ihrer Azure-Website bringt. <!--HONumber=42-->
+Zu diesem Zeitpunkt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und sehen, dass er Sie erfolgreich zu Ihrer Azure-Website bringt. 
+<!--HONumber=42-->

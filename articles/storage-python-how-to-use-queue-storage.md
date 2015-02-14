@@ -139,4 +139,5 @@ Nachdem Sie sich nun mit den Grundlagen der Warteschlangenspeicherung vertraut g
   [Vorgehensweise: Löschen einer Warteschlange]: #delete-queue
   [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
+
 <!--HONumber=42-->

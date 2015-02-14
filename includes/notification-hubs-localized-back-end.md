@@ -51,4 +51,5 @@ Beachten Sie, dass dieser einfache Aufruf die korrekten lokalisierten Nachrichte
 	});
 	
 Beachten Sie, dass es in diesem Fall nicht erforderlich ist, mehrere Benachrichtigungen für verschiedene Gebietsschemas und Plattformen zu senden.
+
 <!--HONumber=42-->

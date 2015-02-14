@@ -214,4 +214,5 @@ Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die bes
 [hdinsight-install-spark]: ../hdinsight-hadoop-spark-install/
 [hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
 [powershell-install-configure]: ../install-configure-powershell/
+
 <!--HONumber=42-->

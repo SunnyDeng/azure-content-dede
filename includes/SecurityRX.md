@@ -466,4 +466,5 @@ Alle in diesem Thema umrissenen Szenarien und Lösungen sind gültig, wenn die A
 
 [Web SSO Design]: http://technet.microsoft.com/de-de/library/dd807033(WS.10).aspx
 [Federated Web SSO Design]: http://technet.microsoft.com/de-de/library/dd807050(WS.10).aspx
+
 <!--HONumber=42-->

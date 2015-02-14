@@ -149,4 +149,5 @@ Der gerade von Ihnen an den virtuellen Computer angeschlossene Datenträger ist 
 	>[AZURE.NOTE] Wenn Sie später einen Datenträger entfernen, ohne fstab zu bearbeiteten, kann der Start des virtuellen Computers fehlschlagen. Für den Fall, dass dieses Problem häufiger auftritt, bieten die meisten Distributionen die fstab-Optionen `nofail` und/oder `nobootwait`, die einen Systemstart auch dann erlauben, wenn der Datenträger nicht vorhanden ist. Weitere Informationen zu diesen Parametern finden Sie in der Dokumentation zu Ihrer Distribution.
 
 
+
 <!--HONumber=42-->

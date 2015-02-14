@@ -96,4 +96,5 @@ Weitere Informationen zur Beschaffung dieser Bibliotheken und ihrer Verwendung m
 
 [0]: ./media/service-bus-amqp-overview/Example1.png
 
+
 <!--HONumber=42-->

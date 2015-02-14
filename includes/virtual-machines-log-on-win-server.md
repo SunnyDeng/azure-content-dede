@@ -30,4 +30,5 @@ Klicken Sie auf **Ja**, um die Identität des virtuellen Computers zu bestätige
 
 Sie können jetzt über eine Remoteverbindung mit dem virtuellen Computer arbeiten.
 
+
 <!--HONumber=42-->

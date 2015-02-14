@@ -24,4 +24,5 @@ Für Azure-Speicher benötigen Sie ein Speicherkonto. Sie können ein Speicherko
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 [plus-new]: ./media/create-storage-account/plus-new.png
 [quick-create-storage]: ./media/create-storage-account/quick-storage-2.png
+
 <!--HONumber=42-->

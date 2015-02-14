@@ -78,4 +78,5 @@ Notieren Sie sich den Wert **SharedAccessKey**, oder kopieren Sie ihn in die Zwi
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 
   [34]: ./media/howto-service-bus-queues/VSProperties.png
+
 <!--HONumber=42-->

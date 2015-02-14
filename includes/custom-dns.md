@@ -137,4 +137,5 @@ Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. W
   [Benutzerdefinierte Domäne überprüfen (Dialogfeld)]: http://i.msdn.microsoft.com/dynimg/IC544437.jpg
   [Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne]: http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx
   [VIP]: ./media/custom-dns/csvip.png
-  [CSURL]: ./media/custom-dns/csurl.png<!--HONumber=42-->
+  [CSURL]: ./media/custom-dns/csurl.png
+<!--HONumber=42-->

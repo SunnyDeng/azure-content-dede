@@ -12,4 +12,5 @@ Als Nächstes müssen Sie die Art ändern, wie Pushbenachrichtigungen registrier
             await AuthenticateAsync();            
             App.AcquirePushChannel();
             RefreshTodoItems();
-        }<!--HONumber=42-->
+        }
+<!--HONumber=42-->

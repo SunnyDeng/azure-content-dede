@@ -244,4 +244,5 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
   [Einführung in die SQL-Datenbank]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336230.aspx
   [SQL-Datenbank-Bereitstellungsmodell]: http://msdn.microsoft.com/de-de/library/ee336227.aspx
   [Hinzufügen von Benutzern zu Ihrer SQL-Datenbank]: http://blogs.msdn.com/b/sqlazure/archive/2010/06/21/10028038.aspx
+
 <!--HONumber=42-->

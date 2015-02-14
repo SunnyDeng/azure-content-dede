@@ -4,4 +4,5 @@
 
 Wenn Sie Ihre Website noch nicht als Traffic Manager-Endpunkt hinzugefügt haben, müssen Sie dies durchführen, bevor die Namensauflösung funktionieren kann, da der benutzerdefinierte Domänenname an Traffic Manager geleitet wird. Traffic Manager führt Sie dann zu Ihrer Website. Verwenden Sie die Informationen unter [Hinzufügen und Löschen von Endpunkten](http://msdn.microsoft.com/de-de/library/windowsazure/hh744839.aspx), um dem Traffic Manager-Profil die Website als Endpunkt hinzuzufügen.
 
-> [AZURE.NOTE] Wenn Ihre Website beim Hinzufügen eines Endpunkts nicht aufgeführt ist, überprüfen Sie, dass sie für den Standardmodus konfiguriert wurde. Sie müssen für Ihre Website den Standardmodus verwenden, damit Sie mit Traffic Manager arbeiten können.<!--HONumber=42-->
+> [AZURE.NOTE] Wenn Ihre Website beim Hinzufügen eines Endpunkts nicht aufgeführt ist, überprüfen Sie, dass sie für den Standardmodus konfiguriert wurde. Sie müssen für Ihre Website den Standardmodus verwenden, damit Sie mit Traffic Manager arbeiten können.
+<!--HONumber=42-->

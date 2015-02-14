@@ -621,4 +621,5 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
 
 [Azure Media Services-Poster]: http://azure.microsoft.com/de-de/documentation/infographics/media-services/
 
+
 <!--HONumber=42-->

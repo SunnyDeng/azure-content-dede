@@ -68,4 +68,5 @@ Weitere Informationen zu den ersten Schritten mit Pusher finden Sie im Thema zu 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
 [Grundlagen von Pusher]: http://pusher.com/docs
 
+
 <!--HONumber=42-->

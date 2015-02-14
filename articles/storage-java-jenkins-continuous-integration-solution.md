@@ -187,4 +187,5 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [Vorgehensweise: Erstellen eines Speicherkontos]: http://go.microsoft.com/fwlink/?LinkId=279823
   [Meet Jenkins]: https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
   [ms-open-tech]: http://msopentech.com
+
 <!--HONumber=42-->

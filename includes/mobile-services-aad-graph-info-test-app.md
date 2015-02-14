@@ -10,4 +10,5 @@ Die nachfolgenden Anweisungen und Screenshots gelten für das Testen eines Windo
 
     ![](./media/mobile-services-aad-graph-info-test-app/custom-greeting.png)
 
+
 <!--HONumber=42-->

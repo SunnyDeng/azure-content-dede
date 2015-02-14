@@ -31,4 +31,5 @@
 
 	Diesen API-Schlüsselwert verwenden Sie dazu, Mobile Services zu befähigen, sich mit GCM zu authentifizieren und Pushbenachrichtigungen im Auftrag Ihrer App zu verschicken.
 
+
 <!--HONumber=42-->

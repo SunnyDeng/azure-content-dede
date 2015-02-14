@@ -19,4 +19,5 @@
 Weitere Informationen zu Replikationsoptionen finden Sie im [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/) und unter [Redundanzoptionen von Azure Storage](http://msdn.microsoft.com/de-de/library/azure/dn727290.aspx).
 	
 Die Preisunterschiede zwischen den unterschiedlichen Replikationsoptionen sind auf der Seite [Speicherpreisdetails](/de-de/pricing/details/storage/) zu finden.
+
 <!--HONumber=42-->

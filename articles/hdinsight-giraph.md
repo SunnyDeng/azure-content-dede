@@ -216,4 +216,5 @@ Nachdem Sie nun wissen, wie Sie Giraph mit HDInsight verwenden, versuchen Sie [P
 [aps]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
 [pig]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-use-pig/
 [hive]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-use-hive/
+
 <!--HONumber=42-->

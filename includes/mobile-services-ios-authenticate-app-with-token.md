@@ -84,4 +84,5 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, 
 
 5. Wenn die App eine Anforderung an Ihren mobilen Dienst sendet, sollte diese ankommen, da der Benutzer authentifiziert ist und Sie eine 401-Antwort (Fehler "Nicht autorisiert") erhalten. Dies bedeutet, dass das von Ihnen übergebene Benutzertoken abgelaufen ist. Im Vervollständigungshandler können wir jede Methode, die mit unserem mobilen Dienst interagiert, auf eine 401-Antwort überprüfen oder können die Dinge an einem Ort erledigen: Die Methode "HandleRequest" des MSFilters.  Weitere Informationen dazu, wie dieses Szenario gehandhabt wird, finden Sie in [diesem Blogbeitrag](http://www.thejoyofcode.com/Handling_expired_tokens_in_your_application_Day_11_.aspx)
 
+
 <!--HONumber=42-->

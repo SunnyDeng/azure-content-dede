@@ -33,4 +33,5 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 
 	Dieses Einfügeskript sendet eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags) an alle Windows Store-App-Registrierungen, wenn der Einfügevorgang erfolgreich war.
 
+
 <!--HONumber=42-->

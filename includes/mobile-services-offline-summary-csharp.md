@@ -23,4 +23,5 @@ Als wir den lokalen Speicher mit dem Server synchronisieren wollten, verwendeten
     Wenn Sie sich von der inkrementellen Synchronisierung abmelden möchten, übergeben Sie `null` als Abfrage-ID. In diesem Fall werden alle Datensätze bei jedem Aufruf von `PullAsync`abgerufen, was potenziell ineffizient ist.
 
 * Um Datensätze aus den lokalen Speicher des Gerätes zu entfernen, wenn diese in der Datenbank Ihres mobilen Dienstes gelöscht worden sind, sollten Sie [vorläufiges Löschen] aktivieren. Andernfalls sollte Ihre App regelmäßig `IMobileServiceSyncTable.PurgeAsync()` aufrufen, um den lokalen Speicher zu löschen.
+
 <!--HONumber=42-->

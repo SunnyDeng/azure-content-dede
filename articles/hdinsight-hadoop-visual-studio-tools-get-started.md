@@ -182,4 +182,5 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio eine Verbindung m
 [hdinsight.analyze.twitter.data]: ../hdinsight-analyze-twitter-data/
 
 
-[apache.hive]: http://hive.apache.org<!--HONumber=42-->
+[apache.hive]: http://hive.apache.org
+<!--HONumber=42-->

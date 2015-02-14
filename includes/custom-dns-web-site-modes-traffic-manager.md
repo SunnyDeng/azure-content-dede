@@ -2,4 +2,5 @@ Es kann nur für Websites im Modus "Standard" ein benutzerdefinierter Domänenna
 
 Weitere Informationen zu Websitemodi, darunter auch Informationen zum Ändern des Websitemodus, finden Sie unter [Skalieren von Websites](/de-de/documentation/articles/web-sites-scale/).
 
+
 <!--HONumber=42-->

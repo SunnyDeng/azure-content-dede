@@ -194,4 +194,5 @@ Weitere Informationen zu Hadoop in HDInsight finden Sie in den "Erste Schritte"-
 [component-versioning]: ../hdinsight-component-versioning/
 
 [zookeeper]: http://zookeeper.apache.org/ 
+
 <!--HONumber=42-->
