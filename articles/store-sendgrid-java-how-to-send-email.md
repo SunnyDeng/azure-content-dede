@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="SendGrid Email Service" pageTitle="Verwenden des E-Mail-Diensts SendGrid (Java) - Azure" metaKeywords="Azure SendGrid, Azure-E-Mail-Dienst, Azure SendGrid Java, Azure-E-Mail Java" description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure versenden. Die Codebeispiele sind in Java geschrieben." metaCanonical="" services="" documentationCenter="Java" title="How to Send Email Using SendGrid from Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties urlDisplayName="SendGrid Email Service" pageTitle="Verwenden des E-Mail-Diensts SendGrid (Java) - Azure" metaKeywords="Azure SendGrid, Azure-E-Mail-Dienst, Azure SendGrid Java, Azure-E-Mail Java" description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure versenden. Die Codebeispiele sind in Java geschrieben." metaCanonical="" services="" documentationCenter="Java" title="How to Send Email Using SendGrid from Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 <tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="10/30/2014" ms.author="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork" />
 
@@ -204,6 +204,7 @@ diesen Links weitere Informationen.
   [Vorgehensweise: Verwenden der javax.mail-Bibliotheken]: #bkmk_HowToUseJavax
   [Vorgehensweise: Erstellen einer E-Mail]: #bkmk_HowToCreateEmail
   [Vorgehensweise: Senden einer E-Mail]: #bkmk_HowToSendEmail
+  [How to: Send an Email]: #bkmk_HowToSendEmail
   [Vorgehensweise: Hinzufügen einer Anlage]: #bkmk_HowToAddAttachment
   [Vorgehensweise: Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen]: #bkmk_HowToUseFilters
   [Vorgehensweise: Aktualisieren von E-Mail-Eigenschaften]: #bkmk_HowToUpdateEmail
@@ -216,7 +217,7 @@ diesen Links weitere Informationen.
   [Filtereinstellungen]: https://sendgrid.com/docs/API_Reference/Web_API/filter_settings.html
   [Dokumentation zur SendGrid-API]: https://sendgrid.com/docs/API_Reference/index.html
   [http://sendgrid.com/azure.html]: https://sendgrid.com/windowsazure.html
-  [cloud-based email service]: https://sendgrid.com/email-solutions
-  [transactional email delivery]: https://sendgrid.com/transactional-email
+  [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
+  [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
 <!--HONumber=35.2-->

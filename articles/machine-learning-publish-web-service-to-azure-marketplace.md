@@ -1,4 +1,4 @@
-﻿<properties title="Publishing Azure ML Web Services to the Azure Marketplace" pageTitle="Veröffentlichen von Azure ML-Webdiensten im Azure Marketplace | Azure" description="Veröffentlichen von Azure ML-Webdiensten im Azure Marketplace" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+<properties title="Publishing Azure ML Web Services to the Azure Marketplace" pageTitle="Veröffentlichen von Azure ML-Webdiensten im Azure Marketplace | Azure" description="Veröffentlichen von Azure ML-Webdiensten im Azure Marketplace" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
 
 <tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/03/2014" ms.author="garye" />
 
@@ -13,8 +13,8 @@ In diesem Dokument werden folgende Themen behandelt:
 
 <!--Anchors-->
 [Einführung]: #introduction
-[Übersicht über den Veröffentlichungsprozess]: #overview-of-the-publishing-process
-[Richtlinien für die Veröffentlichung im Azure Marketplace]: #guidelines-for-publishing-to-azure-marketplace
+[Der Veröffentlichungsprozess im Überblick]: #overview-of-the-publishing-process
+[Leitfaden für die Veröffentlichung im Azure Marketplace]: #guidelines-for-publishing-to-azure-marketplace
 [Spezielle Machine Learning-Optionen]: #machine-learning-specific-options 
 
 ## Einführung

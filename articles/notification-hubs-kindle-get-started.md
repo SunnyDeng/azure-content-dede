@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Get Started" pageTitle="Erste Schritte mit Azure Notification Hubs" metaKeywords="" description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="piyushjo" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="Get Started" pageTitle="Erste Schritte mit Azure Notification Hubs" metaKeywords="" description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="piyushjo" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-kindle" ms.devlang="Java" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
 
@@ -14,7 +14,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Das Android-SDK (es wird davon ausgegangen, dass Sie Eclipse verwenden), das Sie <a href="http://go.microsoft.com/fwlink/?LinkId=389797">hier</a> herunterladen können.
 + Befolgen Sie <a href="https://developer.amazon.com/appsandservices/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment">diese</a> Schritte zum Einrichten Ihrer Entwicklungsumgebung für Kindle.
 
-##Hinzufügen einer neuen App zum Entwicklerportal
+## Hinzufügen einer neuen App zum Entwicklerportal
 
 1. Erstellen Sie zuerst eine App im [Entwicklerportal].
 
@@ -58,8 +58,8 @@ Geben Sie im Portal den geheimen Clientschlüssel und die Client-ID in die Regis
 ## Einrichten der Anwendung
 
 <div class="dev-callout"><b>Hinweis</b>
-    <p>Verwenden Sie beim Erstellen einer Anwendung mindestens API-Level 17.</p>
-    </div>
+<p>Verwenden Sie beim Erstellen einer Anwendung mindestens API-Level 17.</p>
+</div>
 
 Fügen Sie die ADM-Bibliotheken zum Eclipse-Projekt hinzu.
 
@@ -256,7 +256,7 @@ So senden Sie eine Nachricht mit .NET:
 
 <!-- URLs. -->
 [Entwicklerportal]: https://developer.amazon.com/home.html
-[Herunterladen des SDK]: https://developer.amazon.com/public/resources/development-tools/sdk
+[laden Sie das SDK herunter]: https://developer.amazon.com/public/resources/development-tools/sdk
 
 [0]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal1.png
 [1]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal2.png

@@ -1,4 +1,4 @@
-﻿<properties title="Step 2: Upload existing data into an Azure Machine Learning experiment" pageTitle="Schritt 2: Hochladen von Daten in ein Azure Machine Learning-Experiment | Azure" description="Schritt 2: Hochladen vorhandener öffentlicher Daten in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="big-data" documentationCenter="" authors="garye" videoId="" scriptId="" manager="paulettm" editor="cgronlun" />
+<properties title="Step 2: Upload existing data into an Azure Machine Learning experiment" pageTitle="Schritt 2: Hochladen von Daten in ein Azure Machine Learning-Experiment | Azure" description="Schritt 2: Hochladen vorhandener öffentlicher Daten in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="big-data" documentationCenter="" authors="garye" videoId="" scriptId="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/02/2014" ms.author="garye" />
 
@@ -23,7 +23,7 @@ Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit A
 
 ----------
 
-#Schritt 2: Hochladen vorhandener Daten in ein Azure Machine Learning-Experiment  
+# Schritt 2: Hochladen vorhandener Daten in ein Azure Machine Learning-Experiment  
 
 Um ein Vorhersagemodell für Kreditrisiken zu entwickeln, verwenden wir den Datensatz "UCI Statlog (German Credit Data)" aus dem UCI Machine Learning-Repository. Sie finden es hier:  
 <a href="http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)">http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)</a>
@@ -38,7 +38,7 @@ Wir werden unser Vorhersageanalytikmodell anhand dieser Daten trainieren. Anschl
 
 Hier ist ein interessantes Extra. In der Beschreibung des Datensatzes wird erläutert, dass die Fehlklassifizierung einer Person, die eigentlich ein hohes Kreditrisiko hat, mit niedrigem Kreditrisiko, 5 mal so teuer für die Finanzinstitution ist als eine Fehlklassifizierung in der Gegenrichtung. Wir können dies in unserem Experiment berücksichtigen, indem wir die Einträge von Personen mit hohem Kreditrisiko 5 mal duplizieren. Wenn das Modell anschließend ein hohes Kreditrisiko fälschlicherweise als niedrig klassifiziert, wird diese Fehlklassifizierung 5 mal ausgeführt, ein mal pro Duplikat. Auf diese Weise werden die Kosten für diesen Fehler in den Trainingsergebnissen erhöht.  
 
-##Konvertieren des Datensatzformats
+## Konvertieren des Datensatzformats
 Der Originaldatensatz verwendet ein Format mit Trennung durch Leerzeichen. ML Studio funktioniert besser mit Dateien mit Kommatrennung (CSV). Daher werden wir den Datensatz konvertieren, indem wir die Leerzeichen durch Kommas ersetzen.  
 
 Dazu können Sie den folgenden Windows PowerShell-Befehl verwenden:   
@@ -49,7 +49,7 @@ Alternativ können Sie den folgenden sed-Befehl unter Unix verwenden:
 
 	sed 's/ /,/g' german.data > german.csv  
 
-##Hochladen des Datensatzes in ML Studio
+## Hochladen des Datensatzes in ML Studio
 
 Nach der Konvertierung der Daten in das CSV-Format müssen Sie die Daten in ML Studio hochladen.  
 

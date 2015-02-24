@@ -1,4 +1,4 @@
-﻿<properties umbracoNaviHide="0" pageTitle="Verwalten von SQL-Datenbank" metaKeywords="Azure SQL-Datenbank, SQL-Datenbank, Sql-Datenbank verwalten, Benutzerkonten hinzufügen, Verbinden mit Sql-Datenbank" description="Erfahren Sie mehr über die Verwalten von Azure SQL-Datenbank." urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL Database" authors="jeffreyg" manager="jeffreyg" />
+<properties umbracoNaviHide="0" pageTitle="Verwalten von SQL-Datenbank" metaKeywords="Azure SQL-Datenbank, SQL-Datenbank, Sql-Datenbank verwalten, Benutzerkonten hinzufügen, Verbinden mit Sql-Datenbank" description="Erfahren Sie mehr über die Verwalten von Azure SQL-Datenbank." urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL Database" authors="jeffreyg" manager="jeffreyg" />
 
 <tags ms.service="sql-database" ms.workload="data-management" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/31/2015" ms.author="jeffreyg" />
 
@@ -7,7 +7,7 @@
 
 In dieser Dokumentation erfahren Sie, wie Sie einfache Verwaltungsaufgaben in Azure SQL-Datenbank ausführen können. 
 
-##Inhaltsverzeichnis
+## Inhaltsverzeichnis
 
 * [Gewusst wie: Verbinden mit der SQL-Datenbank in Azure über Management Studio](#connect)
 * [Gewusst wie: Hinzufügen von Anmeldungen und Benutzern zur SQL-Datenbank in Azure](#addlogins)
@@ -23,7 +23,7 @@ Im nächsten Schritt werden Sie Management Studio verwenden, um eine Verbindung 
 
 Bevor Sie sich verbinden können, müssen Sie unter Umständen eine Firewall-Ausnahme erstellen, die ausgehende Anfragen auf Port 1433 für Ihr lokales System erlaubt. Auf sicheren Computern ist der Port 1433 standardmäßig nicht geöffnet. 
 
-##Konfigurieren der Firewall für einen lokalen Server
+## Konfigurieren der Firewall für einen lokalen Server
 
 1. Erstellen Sie eine neue ausgehende Regel in der Windows-Firewall mit erweiterter Sicherheit.
 
@@ -32,7 +32,7 @@ Bevor Sie sich verbinden können, müssen Sie unter Umständen eine Firewall-Aus
 3. Geben Sie einen aussagekräftigen Namen ein, z. B. *WindowsAzureSQLDatenbank (tcp-out) Port 1433*. 
 
 
-##Verbinden mit einem logischen Server
+## Verbinden mit einem logischen Server
 
 1. Vergewissern Sie sich in Management Studio unter "Verbindung mit dem Server herstellen", dass "Datenbankmodul" ausgewählt ist, und geben Sie den Namen des logischen Servers im folgenden Format ein: *servername*.database.widnows.net
 
@@ -45,7 +45,7 @@ Bevor Sie sich verbinden können, müssen Sie unter Umständen eine Firewall-Aus
 4. Geben Sie unter "Verbindung mit Datenbank herstellen" die Datenbank **master** ein.
 
 
-##Verbinden mit einem lokalen Server
+## Verbinden mit einem lokalen Server
 
 1. Vergewissern Sie sich in Management Studio unter "Verbindung mit Server herstellen", dass "Datenbankmodul" ausgewählt ist, und geben Sie den Namen der lokalen Instanz im folgenden Format ein: *servername*\\*instanzenname*. Für eine Standardinstanz auf dem lokalen Server können Sie *localhost* eingeben.
 
@@ -62,7 +62,7 @@ Sie müssen Anmeldenamen mit SQL Server-Authentifizierung erstellen. Wenn Sie be
 
 Das zweite Skript vergibt Berechtigungen an Datenbankbenutzer. Für dieses Skript stellen Sie eine Verbindung mit einer bereits in Azure geladenen Datenbank her.
 
-##Anmeldungen erstellen
+## Anmeldungen erstellen
 
 1. Stellen Sie eine Verbindung in Management Studio mit einem logischen Server in Azure her, erweitern Sie den Ordner "Datenbanken", klicken Sie mit der rechten Maustaste auf **master**, und wählen Sie **Neue Abfrage** aus.
 
@@ -82,7 +82,7 @@ Das zweite Skript vergibt Berechtigungen an Datenbankbenutzer. Für dieses Skrip
 </pre></div>
 
 
-##Erstellen von Datenbankbenutzern
+## Erstellen von Datenbankbenutzern
 
 1. Erweitern Sie den Ordner "Datenbanken", klicken Sie mit der rechten Maustaste auf **school**, und wählen Sie **Neue Abfrage** aus.
 
@@ -104,7 +104,7 @@ Das zweite Skript vergibt Berechtigungen an Datenbankbenutzer. Für dieses Skrip
     GRANT VIEW DATABASE STATE to 'sqlops';
 </pre></div>
 
-##Anmeldungen anzeigen und testen
+## Anmeldungen anzeigen und testen
 
 1. Stellen Sie in einem neuen Abfragefenster eine Verbindung mit **master** her, und führen Sie die folgende Anweisung aus: 
 

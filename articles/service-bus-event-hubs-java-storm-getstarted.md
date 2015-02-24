@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Erste Schritte mit Ereignis-Hubs" metaKeywords="Azure Service Bus, Ereignis-Hub, Erste Schritte mit Ereignis-Hubs" description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs für das Senden von Ereignissen mit Java und das Empfangen in einem Apache Storm-Cluster." metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+<properties pageTitle="Erste Schritte mit Ereignis-Hubs" metaKeywords="Azure Service Bus, Ereignis-Hub, Erste Schritte mit Ereignis-Hubs" description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs für das Senden von Ereignissen mit Java und das Empfangen in einem Apache Storm-Cluster." metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
 
 <tags ms.service="service-bus" ms.workload="core" ms.tgt_pltfrm="java" ms.devlang="java" ms.topic="hero-article" ms.date="10/27/2014" ms.author="elioda" />
 
@@ -88,6 +88,6 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/de-de/library/azure/dn836025.aspx
 
 [Apache Storm]: https://storm.incubator.apache.org
-[Übersicht über HDInsight Storm]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-storm-overview/
+[Übersicht zu HDInsight Storm]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-storm-overview/
 [Analysieren von Sensordaten mit Storm und HDInsight]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-storm-sensor-data-analysis/
 [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/

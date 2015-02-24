@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Verwenden des Azure Redis Cache" metaKeywords="" description="Erfahren Sie, wie Sie in Azure Redis Cache einen Cache erstellen und nutzen" metaCanonical="" services="cache" documentationCenter="API Management" title="How to Use Azure Redis Cache" authors="sdanie" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Verwenden des Azure Redis Cache" metaKeywords="" description="Erfahren Sie, wie Sie in Azure Redis Cache einen Cache erstellen und nutzen" metaCanonical="" services="cache" documentationCenter="API Management" title="How to Use Azure Redis Cache" authors="sdanie" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="cache" ms.workload="tbd" ms.tgt_pltfrm="cache-redis" ms.devlang="dotnet" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
 
@@ -32,7 +32,7 @@ Microsoft Azure Redis Cache ist in zwei Ebenen verfügbar:
 
 Diese Ausführungen unterscheiden sich hinsichtlich der Features und des Preises. Die Features werden weiter unten in diesem Leitfaden behandelt, weitere Informationen zu den Preisen finden Sie unter [Cache - Preisdetails][].
 
-Dieser Leitfaden bietet einen Überblick über die ersten Schritte mit Azure Redis Cache. Detaillierte Informationen zu diesen Features, die über den Rahmen dieses Leitfadens hinausgehen, finden Sie unter [Azure Redis Cache: Übersicht][].
+Dieser Leitfaden bietet einen Überblick über die ersten Schritte mit Azure Redis Cache. Detaillierte Informationen zu diesen Features, die über den Rahmen dieses Leitfadens hinausgehen, finden Sie unter [Übersicht über Azure Redis Cache][].
 
 <a name="getting-started-cache-service"></a>
 ## Erste Schritte mit Azure Redis Cache
@@ -128,7 +128,7 @@ Um eine Verbindung zum Azure Redis Cache herzustellen und eine Instanz einer ver
 
 	ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,ssl=true,password=...");
 
->[AZURE.NOTE] Warnung: Speichern Sie niemals Anmeldeinformationen im Quellcode. Ich zeige diese Daten hier im Code, um dieses Beispiel zu vereinfachen. Unter [Azure-Webseiten: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen][] finden Sie Informationen zum Speichern von Anmeldeinformationen.
+>[AZURE.NOTE] Warnung: Speichern Sie niemals Anmeldeinformationen im Quellcode. Ich zeige diese Daten hier im Code, um dieses Beispiel zu vereinfachen. Unter [Microsoft Azure-Websites: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen][] finden Sie Informationen zum Speichern von Anmeldeinformationen.
 
 Falls Sie kein SSL verwenden möchten, können Sie entweder "ssl=false" setzen oder einfach Endpunkt und Schlüssel übergeben.
 
@@ -192,7 +192,7 @@ Beim Aufruf von "StringGet" wird das Objekt zurückgegeben, wenn es existiert, a
         cache.StringSet("key1", value);
     }
 
->[AZURE.NOTE] Azure Redis Cache kann .NET-Objekte und primitive Datentypen speichern. .NET-Objekte müssen jedoch zunächst serialisiert werden. Die Serialisierung ist Aufgabe des Anwendungsentwicklers und überlässt dem Entwickler die Freiheit bei der Wahl des Serialisierers. Weitere Informationen finden Sie unter [Arbeiten .NET-Objekten im Cache][].
+>[AZURE.NOTE] Azure Redis Cache kann .NET-Objekte und primitive Datentypen speichern. .NET-Objekte müssen jedoch zunächst serialisiert werden. Die Serialisierung ist Aufgabe des Anwendungsentwicklers und überlässt dem Entwickler die Freiheit bei der Wahl des Serialisierers. Weitere Informationen finden Sie unter [Arbeiten mit .NET-Objekten im Cache][].
 
 <a name="specify-expiration"></a>
 ## Angeben der Ablaufzeit eines Elements im Cache
@@ -218,7 +218,7 @@ Geben Sie **RedisSessionStateProvider** in das Textfeld **Online-Suche** ein, w�
 
 Das NuGet-Paket wird heruntergeladen und fügt die benötigten Assemblyverweise sowie den folgenden Abschnitt zu Ihrer Web.config-Datei hinzu. Dieser Abschnitt enthält die Konfiguration, die Ihre ASP.NET-Anwendung für die Verwendung des Cache-Sitzungszustandsanbieters braucht.
 
-  <sessionState mode="Custom" customProvider="MySessionStateStore">
+    <sessionState mode="Custom" customProvider="MySessionStateStore">
       <providers>
         <!--
           <add name="MySessionStateStore" 
@@ -282,8 +282,8 @@ Nachdem Sie jetzt mit den Grundlagen von Azure Redis Cache vertraut sind,
 erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben ausgeführt werden.
 
 -	Weitere Informationen zum StackExchange.Redis-Client: [Dokumentation für den StackExchange.Redis-Cacheclient][]
--	Lesen Sie außerdem die [Redis][]-Dokumentation und die Artikel zu [Redis-Datentypen][] und die [15-minütige Einführung in Redis-Datentypen][].
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Azure-Redis-Cache][]
+-	Lesen Sie außerdem die [Redis][]-Dokumentation und die Artikel zu [Redis-Datentypen][] und die [eine 15-minütige Einführung in Redis-Datentypen][].
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Azure-Redis-Cache][Azure Redis Cache]
 
 
 <!-- INTRA-TOPIC LINKS -->

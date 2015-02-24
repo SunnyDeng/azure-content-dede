@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="ASP.NET MVC 5 mobile website" pageTitle=".NET ASP.NET MVC 5 mobile Website - Azure-Lernprogramme" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 5,,ASP.NET MVC" description="Ein Lernprogramm, in dem Sie erfahren, wie Sie eine Webanwendung an eine Azure-Website mithilfe von mobilen Features in einer ASP.NET-MVC-5-Webanwendung bereitstellen." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Deploy an ASP.NET MVC Mobile Web Application on Azure Websites" authors="cephalin,riande" solutions="" manager="wpickett" editor="mollybos" />
+<properties urlDisplayName="ASP.NET MVC 5 mobile website" pageTitle=".NET ASP.NET MVC 5 mobile Website - Azure-Lernprogramme" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 5,,ASP.NET MVC" description="Ein Lernprogramm, in dem Sie erfahren, wie Sie eine Webanwendung an eine Azure-Website mithilfe von mobilen Features in einer ASP.NET-MVC-5-Webanwendung bereitstellen." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Deploy an ASP.NET MVC Mobile Web Application on Azure Websites" authors="cephalin,riande" solutions="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="08/19/2014" ms.author="cephalin,riande" />
 
@@ -137,7 +137,8 @@ Um das Erscheinungsbild der Web-App in Bootstrap zu überprüfen, öffnen Sie *A
               "~/Content/site.css"));
 
 Drücken Sie `STRG+F5`, um die Anwendung auszuführen.
- Die reduzierbare Navigationsleiste wird jetzt als gewöhnliche unsortierte Liste dargestellt. Klicken Sie noch einmal auf **Browse by tag** und dann auf **ASP.NET**. In der Emulatoransicht für mobile Browser sehen Sie jetzt, dass die Ansicht nicht mehr auf Bildschirmgröße gezoomt ist und Sie einen Bildlauf zur Seite durchführen müssen, um zur rechten Seite der Tabelle zu gelangen.
+
+Die reduzierbare Navigationsleiste wird jetzt als gewöhnliche unsortierte Liste dargestellt. Klicken Sie noch einmal auf **Browse by tag** und dann auf **ASP.NET**. In der Emulatoransicht für mobile Browser sehen Sie jetzt, dass die Ansicht nicht mehr auf Bildschirmgröße gezoomt ist und Sie einen Bildlauf zur Seite durchführen müssen, um zur rechten Seite der Tabelle zu gelangen.
 
 ![][SessionsByTagASP.NETNoBootstrap]
 
@@ -556,7 +557,7 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie mit ASP.NET MVC 5 Webanwendun
 Siehe auch
 --------
 
--   [9 Grundprinzipien des Responsive Webdesign][http://blog.froont.com/9-basic-principles-of-responsive-web-design/]
+-   [9 Grundprinzipien des Responsive Webdesign](http://blog.froont.com/9-basic-principles-of-responsive-web-design/)
 -   [Bootstrap][BootstrapSite]-Website
 -   [Offizieller Bootstrap-Blog][]
 -   [Bootstrap-Lernprogramm von Tutorial Republic auf Twitter][]

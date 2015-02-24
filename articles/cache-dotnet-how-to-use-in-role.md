@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Caching" pageTitle="Verwenden des In-Role Caches (.NET) - Azure-Featureleitfaden" metaKeywords="Azure cache, Azure caching, Azure cache, Azure caching, Azure store session state, Azure cache .NET, Azure cache C#" description="Erfahren Sie, wie Sie den In-RoleCache in Azure nutzen können. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API." metaCanonical="" services="cache" documentationCenter=".NET" title="How to Use In-Role Cache for Azure Cache" authors="sdanie" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="Caching" pageTitle="Verwenden des In-Role Caches (.NET) - Azure-Featureleitfaden" metaKeywords="Azure cache, Azure caching, Azure cache, Azure caching, Azure store session state, Azure cache .NET, Azure cache C#" description="Erfahren Sie, wie Sie den In-RoleCache in Azure nutzen können. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API." metaCanonical="" services="cache" documentationCenter=".NET" title="How to Use In-Role Cache for Azure Cache" authors="sdanie" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="cache" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
 
@@ -57,7 +57,7 @@ Darüber hinaus bietet das Caching von Rolleninstanzen die folgenden konfigurier
 -	Optionales Konfigurieren hoher Verfügbarkeit individueller Caches
 -	Verwenden erweiterter Caching-Funktionen wie Regionen, Tagging und Benachrichtigungen
 
-Dieser Leitfaden bietet einen Überblick über die ersten Schritte mit In-Role Cache. Detaillierte Informationen zu diesen Features, die über den Rahmen dieses Leitfadens hinausgehen, finden Sie unter [Überblick In-Role Cache][].
+Dieser Leitfaden bietet einen Überblick über die ersten Schritte mit In-Role Cache. Detaillierte Informationen zu diesen Features, die über den Rahmen dieses Leitfadens hinausgehen, finden Sie unter [Übersicht über In-Role Cache][].
 
 <a name="getting-started-cache-role-instance"></a>
 ## Erste Schritte mit dem In-Role Cache
@@ -138,7 +138,7 @@ Wählen Sie **In-Role Cache**, klicken Sie auf **Installieren** und anschließen
 
 Funktionen des NuGet-Pakets: Es fügt die erforderliche Konfiguration zur Konfigurationsdatei der Rolle hinzu; es fügt eine Cacheclient-Einstellung für die Diagnoseebene zur Datei "ServiceConfiguration.cscfg der Azure-Anwendung hinzu und es fügt die erforderlichen Assemblyverweise hinzu.
 
->Für ASP.NET-Webrollen fügt das Caching NuGet-Pakets auch zwei auskommentierte Abschnitte zu "web.config" hinzu. Der erste Abschnitt ermöglicht das Speichern des Sitzungsstatus im Cache und der zweite Abschnitt ermöglicht das Zwischenspeichern der ASP.NET-Seitenausgabe. Weitere Informationen finden Sie unter [Vorgehensweise: Speichern des ASP.NET-Sitzungsstatus im Cache] und [Vorgehensweise: Speichern der ASP.NET-Seitenausgabe im Cache][].
+>Für ASP.NET-Webrollen fügt das Caching NuGet-Pakets auch zwei auskommentierte Abschnitte zu "web.config" hinzu. Der erste Abschnitt ermöglicht das Speichern des Sitzungsstatus im Cache und der zweite Abschnitt ermöglicht das Zwischenspeichern der ASP.NET-Seitenausgabe. Weitere Informationen finden Sie unter [Gewusst wie: Speichern des ASP.NET-Sitzungsstatus im Cache] und [Gewusst wie: Speichern der ASP.NET-Seitenausgabe im Cache][].
 
 Das NuGet-Paket fügt die folgenden Konfigurationselemente zur Datei "web.config" oder "app.config" der Rolle hinzu. Die Abschnitte **dataCacheClients** und **cacheDiagnostics** werden unter dem **configSections**-Element hinzugefügt. Wenn kein **configSections**-Element vorhanden ist, wird es als untergeordnetes Element des **configuration**-Elements erstellt.
 
@@ -156,7 +156,7 @@ Das NuGet-Paket fügt die folgenden Konfigurationselemente zur Datei "web.config
                allowDefinition="Everywhere" />
     </configSections>
 
-These new sections include references to a **dataCacheClients** element and a **cacheDiagnostics** element. These elements are also added to the **configuration** element.
+Diese neuen Abschnitte umfassen Referenzen auf ein  **dataCacheClients** Element und ein **cacheDiagnostics** Element. Diese Elemente werden außerdem zum Element **Konfiguration** hinzugefügt.
 
     <dataCacheClients>
       <dataCacheClient name="default">
@@ -168,7 +168,7 @@ These new sections include references to a **dataCacheClients** element and a **
       <crashDump dumpLevel="Off" dumpStorageQuotaInMB="100" />
     </cacheDiagnostics>
 
-After the configuration is added, replace **[cache cluster role name]** with the name of the role that hosts the cache cluster.
+Ersetzen Sie nach Hinzufügen der Konfiguration **[Cachecluster-Rollenname]** mit dem Namen der Rolle, die den Cachecluster hostet.
 
 >Wird **[Cachecluster-Rollenname]** nicht mit dem Namen der Rolle, die den Cachecluster hostet, ersetzt, wird eine **TargetInvocationException** ausgelöst, wenn auf den Cache mit **DatacacheException** zugegriffen wird. Es wird folgende Meldung angezeigt: "Es ist keine derartige Rolle vorhanden".
 
@@ -359,7 +359,7 @@ erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben 
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [In-Role Cache][]
 -   Erfahren Sie, wie Sie die Migration auf den In-Role Cache durchführen: [Migration auf den In-Role Cache][]
 -   Sehen Sie sich die Beispiele an: [In-Role Cache Beispiele][]
--	Sehen Sie sich [Maximale Leistung: Beschleunigen der Cloud-Dienste mit Azure-Caching][] von TechEd 2013 zum In-Role Caching an.
+-	Sehen Sie sich [Maximale Leistung: Beschleunigen von Cloud-Dienstanwendungen mit Azure Caching][] von TechEd 2013 zum In-Role Caching an.
 
 <!-- INTRA-TOPIC LINKS -->
 [Nächste Schritte]: #next-steps
@@ -397,7 +397,7 @@ erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben 
 [Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/de-de/library/windowsazure/gg618003.aspx
 [Gewusst wie: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/de-de/library/z852zf6b.aspx
 [Gewusst wie: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/de-de/library/zd1ysf1y.aspx
-[Überlegungen zur Planung der In-Role Cache-Kapazität]: http://go.microsoft.com/fwlink/?LinkId=252651
+[In-Role Cache - Erwägungen bezüglich der Kapazitätsplanung]: http://go.microsoft.com/fwlink/?LinkId=252651
 [In-Role Cache Beispiele]: http://msdn.microsoft.com/de-de/library/jj189876.aspx
 [In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=252658
 [In-Role Cache]: http://www.microsoft.com/de-de/showcase/Search.aspx?phrase=azure+caching
@@ -409,7 +409,7 @@ erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben 
 [Übersicht über In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=254172
 [Sitzungsstatusanbieter für In-Role Cache]: http://msdn.microsoft.com/de-de/library/windowsazure/gg185668.aspx
 [Team-Blog]: http://blogs.msdn.com/b/windowsazure/
-[Problembehandlung und Diagnose des In-Role Cache]: http://msdn.microsoft.com/de-de/library/windowsazure/hh914135.aspx
+[Problembehebung und Diagnose für In-Role Caches]: http://msdn.microsoft.com/de-de/library/windowsazure/hh914135.aspx
 [Azure AppFabric Cache: Zwischenspeichern des Sitzungszustands]: http://www.microsoft.com/de-de/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Azure-Verwaltungsportal]: http://windows.azure.com/
 [Azure Shared Caching]: http://msdn.microsoft.com/de-de/library/windowsazure/gg278356.aspx

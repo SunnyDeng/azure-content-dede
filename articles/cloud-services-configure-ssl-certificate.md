@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Enable SSL" pageTitle="Konfigurieren von SSL für einen Cloud-Dienst - Azure" metaKeywords="Azure SSL, Azure HTTPS, Azure SSL, Azure HTTPS, .NET Azure SSL, .NET Azure HTTPS, C# Azure SSL, C# Azure HTTPS, VB Azure SSL, VB Azure HTTPS" description="Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Webrolle angeben und ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können." metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Configuring SSL for an application in Azure" authors="adegeo" solutions="" manager="timlt" editor="mollybos" />
+<properties urlDisplayName="Enable SSL" pageTitle="Konfigurieren von SSL für einen Cloud-Dienst - Azure" metaKeywords="Azure SSL, Azure HTTPS, Azure SSL, Azure HTTPS, .NET Azure SSL, .NET Azure HTTPS, C# Azure SSL, C# Azure HTTPS, VB Azure SSL, VB Azure HTTPS" description="Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Webrolle angeben und ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können." metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Configuring SSL for an application in Azure" authors="adegeo" solutions="" manager="timlt" editor="mollybos" />
 
 <tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/14/2014" ms.author="adegeo" />
 
@@ -158,6 +158,6 @@ Wenn Sie SSL für eine Staging- statt für eine Produktionsbereitstellung verwen
   [2]: ./media/cloud-services-dotnet-configure-ssl-certificate/CopyURL.png
   [3]: ./media/cloud-services-dotnet-configure-ssl-certificate/SSLCloudService.png
   [4]: ./media/cloud-services-dotnet-configure-ssl-certificate/AddCertificateComplete.png  
-  [How to configure an SSL certificate on an HTTPS endpoint]: http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx
+  [Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt]: http://msdn.microsoft.com/de-de/library/windowsazure/ff795779.aspx
 
 <!--HONumber=35.1-->

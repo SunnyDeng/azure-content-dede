@@ -1,4 +1,4 @@
-﻿<properties title="Step 3: Create a new Azure Machine Learning experiment" pageTitle="Schritt 3: Erstellen eines neuen Machine Learning-Experiments | Azure" description="Schritt 3: Erstellen eines neuen Trainingsexperiments in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun"  videoId="" scriptId="" />
+<properties title="Step 3: Create a new Azure Machine Learning experiment" pageTitle="Schritt 3: Erstellen eines neuen Machine Learning-Experiments | Azure" description="Schritt 3: Erstellen eines neuen Trainingsexperiments in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun"  videoId="" scriptId="" />
 
 <tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/02/2014" ms.author="garye" />
 
@@ -33,7 +33,7 @@ In ML Studio muss ein neues Experiment erstellt werden, in dem das hochgeladene 
 3.	Erweitern Sie in der Modulpalette links vom Experimentbereich **Gespeicherte Datasets**.
 4.	Suchen Sie das Dataset, das Sie erstellt haben, und ziehen Sie es in den Bereich. Sie können auch nach dem Dataset suchen, indem Sie den Namen in das Feld **Suchen** oberhalb der Palette eingeben.  
 
-##Vorbereiten der Daten
+## Vorbereiten der Daten
 Sie können die ersten 100 Datenzeilen sowie einige statistische Informationen für das ganze Dataset anzeigen, indem Sie mit der rechten Maustaste auf den Ausgabeport des Datasets klicken und die Option **Visualisieren** auswählen. Beachten Sie, dass in ML Studio bereits der Datentyp für jede Spalte identifiziert wurde. Zudem haben die Spalten generische Überschriften erhalten, da die Datendatei keine Spaltenüberschriften enthält.  
 
 Spaltenüberschriften haben keine entscheidende Bedeutung, erleichtern aber die Arbeit mit den Daten im Modell. Wenn später das Modell in einem Webdienst veröffentlicht wird, kann der Benutzer des Diensts die Spalten anhand der Überschriften auch leichter identifizieren.  
@@ -59,7 +59,7 @@ Das Experiment sollte in etwa wie folgt aussehen:
 
 ![Adding Metadata Editor][2]
  
-##Erstellen von Trainings- und Testdatasets
+## Erstellen von Trainings- und Testdatasets
 Der nächste Schritt des Experiments besteht im Erstellen von getrennten Datasets, die für das Training und Testen unseres Modells verwendet werden. Dafür wird das Modul **Aufteilen** verwendet.  
 
 1.	Suchen Sie das Modul **Aufteilen**, ziehen Sie es in den Bereich, und verbinden Sie es mit dem letzten Modul **Metadaten-Editor**.

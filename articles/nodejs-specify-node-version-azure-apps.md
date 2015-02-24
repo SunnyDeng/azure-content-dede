@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Specifying a Node.js Version" pageTitle="Festlegen einer Node.js-Version" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="nodejs" title="Specifying a Node.js version in an Azure application" authors="larryfr" solutions="" manager="wpickett" editor="mollybos" />
+<properties urlDisplayName="Specifying a Node.js Version" pageTitle="Festlegen einer Node.js-Version" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="nodejs" title="Specifying a Node.js version in an Azure application" authors="larryfr" solutions="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="na" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
@@ -10,7 +10,7 @@
 
 Beim Hosten von Node.js-Anwendungen sollten Sie sicherstellen, dass Ihre Anwendung eine bestimmte Version von Node.js verwendet. Es gibt mehrere Möglichkeiten, dies für Anwendungen unter Azure zu erreichen.
 
-##Standardversionen
+## Standardversionen
 
 Azure unterstützt momentan die Node.js-Versionen 0.6.17, 0.6.20 und 0.8.4. Sofern nicht anderweitig angegeben, wird 0.6.20 als Standardversion verwendet.
 
@@ -20,7 +20,7 @@ Azure unterstützt momentan die Node.js-Versionen 0.6.17, 0.6.20 und 0.8.4. Sofe
 </div>
 
 
-##Versionsverwaltung mit package.json
+## Versionsverwaltung mit package.json
 
 Sie können den folgenden Code zu Ihrer **package.json**-Datei hinzufügen, um die zu verwendende Node.js-Version anzugeben:
 
@@ -32,7 +32,7 @@ Dabei ist *version* die zu verwendende Versionsnummer. Sie können auch komplexe
 
 Da 0.6.22 keine der Standardversionen in der Hostumgebung ist, wird stattdessen die höchste verfügbare Version der 0.8-Reihe verwendet: 0.8.4.
 
-##Versionsverwaltung von Cloud-Diensten mit PowerShell
+## Versionsverwaltung von Cloud-Diensten mit PowerShell
 
 Wenn Sie Ihre Anwendung in einem Cloud-Dienst hosten und mit Azure PowerShell bereitstellen, können Sie die verwendete Node.js-Version mithilfe des **Set-AzureServiceProjectRole** PowerShell-Cmdlets überschreiben. Beispiel:
 
@@ -40,7 +40,7 @@ Wenn Sie Ihre Anwendung in einem Cloud-Dienst hosten und mit Azure PowerShell be
 
 Außerdem können Sie **Get-AzureServiceProjectRoleRuntime** verwenden, um eine Liste der verfügbaren Node.js-Versionen für Anwendungen abzurufen, die als Cloud-Dienste gehostet werden.
 
-##Verwenden benutzerdefinierter Versionen mit Azure-Websites
+## Verwenden benutzerdefinierter Versionen mit Azure-Websites
 
 Obwohl Azure verschiedene Standardversionen von Node.js anbietet, kann es sein, dass Sie eine andere Version verwenden möchten. Falls Ihre Anwendung als Azure-Website gehostet wird, können Sie dies in der Datei **iisnode.yml** angeben. Die folgenden Schritte beschreiben, wie Sie eine benutzerdefinierte Version von Node.js mit einer Azure-Website verwenden:
 
@@ -80,11 +80,11 @@ Obwohl Azure verschiedene Standardversionen von Node.js anbietet, kann es sein, 
 
 	Öffnen Sie die Website nach Veröffentlichung der Anwendung in einem Browser. Sie sollten die folgende Nachricht sehen: "Hello from Azure running node version: v0.8.1".
 
-##Nächste Schritte
+## Nächste Schritte
 
 Nachdem Sie gelernt haben, wie Sie die von Ihrer Anwendung verwendete Node.js-Version angeben können, empfehlen wir die Themen [Arbeiten mit Modulen], [Erstellen und Bereitstellen einer Node.js-Website] und [Verwenden der Azure-Befehlszeilentools für Mac und Linux].
 
-[Verwenden des Azure-Befehlszeilentools für Mac und Linux]: /de-de/documentation/articles/xplat-cli/
+[Verwenden der Azure-Befehlszeilentools für Mac und Linux]: /de-de/documentation/articles/xplat-cli/
 [Azure-Befehlszeilentools]: /de-de/documentation/articles/xplat-cli/
 [Arbeiten mit Modulen]: /de-de/documentation/articles/nodejs-use-node-modules-azure-apps/
 [Erstellen und Bereitstellen einer Node.js-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/

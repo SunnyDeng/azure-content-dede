@@ -211,18 +211,18 @@ In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesende
 
 1.  Öffnen Sie die Datei *Controllers\\HomeController.cs*. Fügen Sie eine **using**-Anweisung für **System.Threading** hinzu:
 
-    using System.Threading;
+       using System.Threading;
 
 2.  Fügen Sie in der HomeController-Klasse die *Claims*-Methode hinzu:
 
-    public ActionResult Claims()
-    {
-     ViewBag.Message = "Your claims page.";
+        public ActionResult Claims()
+        {
+        ViewBag.Message = "Your claims page.";
 
         ViewBag.ClaimsIdentity = Thread.CurrentPrincipal.Identity;
         return View();
 
-    }
+        }
 
 3.  Klicken Sie mit der rechten Maustaste auf die Methode *Claims*, und wählen Sie dann **Ansicht hinzufügen** aus.
 
@@ -358,6 +358,7 @@ Außerdem können Sie mit zusätzlichen Regeln in Ihrem Namespace festlegen, wel
 
 Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien experimentieren möchten, finden Sie weitere Informationen unter [Access Control Service 2.0][Access Control Service 2.0].
 
+  [Was ist der ACS?]: #what-is
   [Konzepte]: #concepts
   [Voraussetzungen]: #pre
   [Erstellen eines Access Control-Namespace]: #create-namespace

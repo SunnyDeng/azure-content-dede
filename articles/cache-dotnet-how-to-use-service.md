@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="" pageTitle="So wird Azure Managed Cache Service verwendet" metaKeywords="" description="" metaCanonical="" services="cache" documentationCenter="" title="How to Use Azure Managed Cache Service" authors="sdanie" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="" pageTitle="So wird Azure Managed Cache Service verwendet" metaKeywords="" description="" metaCanonical="" services="cache" documentationCenter="" title="How to Use Azure Managed Cache Service" authors="sdanie" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="cache" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
 
@@ -183,7 +183,7 @@ Geben Sie **WindowsAzure.Caching** in das Textfeld **Online-Suche** ein, und wä
 
 Funktionen des NuGet-Pakets: Die erforderliche Konfiguration wird in die Konfigurationsdatei der Anwendung eingefügt, und die erforderlichen Assemblyverweise werden hinzugefügt. Bei Cloud Services-Projekten wird außerdem eine Einstellung für die Cacheclient-Diagnoseebene zur Datei "ServiceConfiguration.cscfg" des Cloud-Diensts hinzugefügt.
 
->Für ASP.NET-Webprojekte fügt das Cache NuGet-Paket auch zwei auskommentierte Abschnitte zu "web.config" hinzu. Der erste Abschnitt ermöglicht das Speichern des Sitzungsstatus im Cache und der zweite Abschnitt ermöglicht das Zwischenspeichern der ASP.NET-Seitenausgabe. Weitere Informationen finden Sie unter [Vorgehensweise: Speichern des ASP.NET-Sitzungsstatus im Cache] und [Vorgehensweise: Speichern der ASP.NET-Seitenausgabe im Cache][].
+>Für ASP.NET-Webprojekte fügt das Cache NuGet-Paket auch zwei auskommentierte Abschnitte zu "web.config" hinzu. Der erste Abschnitt ermöglicht das Speichern des Sitzungsstatus im Cache und der zweite Abschnitt ermöglicht das Zwischenspeichern der ASP.NET-Seitenausgabe. Weitere Informationen finden Sie unter [Gewusst wie: Speichern des ASP.NET-Sitzungsstatus im Cache] und [Gewusst wie: Speichern der ASP.NET-Seitenausgabe im Cache][].
 
 Das NuGet-Paket fügt die folgenden Konfigurationselemente zur Datei "web.config" oder "app.config" der Anwendung hinzu. Die Abschnitte **dataCacheClients** und **cacheDiagnostics** werden unter dem **configSections**-Element hinzugefügt. Wenn kein **configSections**-Element vorhanden ist, wird es als untergeordnetes Element des **configuration**-Elements erstellt.
 
@@ -457,7 +457,7 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
 <!-- LINKS -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/de-de/library/windowsazure/gg618003.aspx
-[Sitzungszustandsanbieter für Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
+[Sitzungsstatusanbieter für Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Zwischenspeichern des Sitzungszustands]: http://www.microsoft.com/de-de/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Ausgabecacheanbieter für Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320837
 [Azure Shared Caching]: http://msdn.microsoft.com/de-de/library/windowsazure/gg278356.aspx

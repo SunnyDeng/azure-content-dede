@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="View ACS SAML" pageTitle="Anzeigen der vom Azure Access Control Service zurückgegebenen SAML" metaKeywords="" description="Erfahren Sie, wie Sie die vom Access Control Service in auf Azure gehosteten Java-Anwendungen zurückgegebene SAML anzeigen." metaCanonical="" services="" documentationCenter="Java" title="How to view SAML returned by the Azure Access Control Service" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
+<properties urlDisplayName="View ACS SAML" pageTitle="Anzeigen der vom Azure Access Control Service zurückgegebenen SAML" metaKeywords="" description="Erfahren Sie, wie Sie die vom Access Control Service in auf Azure gehosteten Java-Anwendungen zurückgegebene SAML anzeigen." metaCanonical="" services="" documentationCenter="Java" title="How to view SAML returned by the Azure Access Control Service" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
@@ -174,7 +174,7 @@ Fügen Sie die Bibliothek mit der Klasse **javax.servlet.jsp.JspWriter** zu Ihre
 
 ## <a name="run_application"></a>Ausführen der Anwendung
 
-1. Führen Sie Ihre Anwendung im Serveremulator oder als Bereitstellung in Azure aus. Führen Sie dazu die Schritte unter [Authentifizieren von Webbenutzern mit Azure Access Control Service über Eclipse][] aus.
+1. Führen Sie Ihre Anwendung im Serveremulator oder als Bereitstellung in Azure aus. Führen Sie dazu die Schritte unter [Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse][] aus.
 2. Öffnen Sie Ihre Webanwendung in einem Browser. Nach der Anmeldung sehen Sie in Ihrer Anwendung die SAML-Informationen inklusive der Security Assertion des Identitätsanbieters.
 
 ## <a name="next_steps"></a>Nächste Schritte

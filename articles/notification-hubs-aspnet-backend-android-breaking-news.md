@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Breaking News" pageTitle="Lernprogramm zu aktuellen Nachrichten mit Notification Hubs - Android" metaKeywords="" description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu aktuellen Nachrichten an Android-Geräte." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="ricksal" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="Breaking News" pageTitle="Lernprogramm zu aktuellen Nachrichten mit Notification Hubs - Android" metaKeywords="" description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu aktuellen Nachrichten an Android-Geräte." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="ricksal" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="11/22/2014" ms.author="ricksal" />
 
@@ -22,7 +22,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 
 Dieses Thema baut auf der App auf, die Sie in [Erste Schritte mit Notification Hubs][get-started] erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs][get-started] abgeschlossen haben.
 
-##<a name="adding-categories"></a>Hinzufügen der Kategorieauswahl zur App
+## <a name="adding-categories"></a>Hinzufügen der Kategorieauswahl zur App
 
 Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen Hauptaktivität hinzuzufügen, welche dem Benutzer die Auswahl der Kategorien für die Registrierung ermöglichen. Die durch den Benutzer ausgewählten Kategorien werden auf dem Gerät gespeichert. Wenn die App gestartet wird, wird eine Geräteregistrierung in Ihrem Notification Hub mit den ausgewählten Kategorien als Tags erstellt. 
 
@@ -209,7 +209,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 
 Die App kann jetzt verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. 
 
-##<a name="register"></a>Registrieren für Benachrichtigungen
+## <a name="register"></a>Registrieren für Benachrichtigungen
 
 Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hub statt, wobei die im lokalen Speicher gespeicherten Kategorien verwendet werden. 
 
@@ -230,7 +230,7 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hu
 
 		notifications.subscribeToCategories(notifications.retrieveCategories());
 
-	Dadurch wird sichergestellt, dass bei jedem Start der App die Kategorien vom lokalen Speicher abgerufen werden und eine Registrierung für diese Kategorien abgefragt wird. Die Methode **InitNotificationsAsync** wurde als Teil des Lernprogramms [Erste Schritte mit Notification Hubs] erstellt, wird in diesem Thema jedoch nicht benötigt.
+	Dadurch wird sichergestellt, dass bei jedem Start der App die Kategorien vom lokalen Speicher abgerufen werden und eine Registrierung für diese Kategorien abgefragt wird. Die Methode **InitNotificationsAsync** wurde als Teil des Lernprogramms [Erste Schritte mit Notification Hubs][get-started] erstellt, wird in diesem Thema jedoch nicht benötigt.
 
 3. Fügen Sie dann die folgende Methode zu **MainActivity** hinzu:
 
@@ -262,7 +262,7 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 
 [WACOM.INCLUDE [notification-hubs-back-end](../includes/notification-hubs-back-end.md)]
 
-##<a name="test-app"></a>Ausführen der Anwendung und Erzeugen von Benachrichtigungen
+## <a name="test-app"></a>Ausführen der Anwendung und Erzeugen von Benachrichtigungen
 
 1. Erstellen Sie die App in Eclipse, und starten Sie sie auf einem Gerät oder in einem Emulator.
 	

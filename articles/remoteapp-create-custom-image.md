@@ -1,8 +1,8 @@
-﻿<properties title="How to create a custom template image for RemoteApp" pageTitle="Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp" description="Erfahren Sie, wie Sie ein benutzerdefiniertes Vorlagenbild für RemoteApp erstellen. Sie können diese Vorlage mit einer Hybrid- oder -Bereitstellung verwenden." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="mbaldwin" />
+<properties title="How to create a custom template image for RemoteApp" pageTitle="Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp" description="Erfahren Sie, wie Sie ein benutzerdefiniertes Vorlagenbild für RemoteApp erstellen. Sie können diese Vorlage mit einer Hybrid- oder -Bereitstellung verwenden." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="mbaldwin" />
 
 <tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/12/2014" ms.author="elizapo" ms.manager="mbaldwin" />
 
-#Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp
+# Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp
 Azure RemoteApp verwendet ein Windows Server 2012 R2-Vorlagenimage, um alle Programme zu hosten, die Sie an die Benutzer freigeben möchten. Um ein benutzerdefiniertes RemoteApp-Vorlagenimage zu erstellen, beginnen Sie mit einem bestehenden Abbild oder erstellen Sie ein neues. Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll, muss folgende Anforderungen erfüllen:
 
 

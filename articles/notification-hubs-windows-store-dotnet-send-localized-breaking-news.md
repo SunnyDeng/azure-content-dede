@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Localized Breaking News" pageTitle="Lernprogramm zu lokalisierten aktuellen Nachrichten in Notification Hubs" metaKeywords="" description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send localized breaking news" authors="ricksal" solutions="" manager="dwrede" editor="" />
+<properties urlDisplayName="Localized Breaking News" pageTitle="Lernprogramm zu lokalisierten aktuellen Nachrichten in Notification Hubs" metaKeywords="" description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send localized breaking news" authors="ricksal" solutions="" manager="dwrede" editor="" />
 
 <tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
 # Verwenden von Notification Hubs zum Senden lokalisierter Nachrichten
@@ -25,7 +25,7 @@ Dieses Szenario besteht aus zwei Teilen:
 
 
 
-##Voraussetzungen ##
+## Voraussetzungen ##
 
 Sie müssen zuvor das Lernprogramm [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] abschließen und den Code verfügbar haben, da dieses Lernprogramm direkt auf dem Code aufbaut. 
 
@@ -221,4 +221,4 @@ Weitere Informationen finden Sie unter [Benachrichtigen von Benutzern mit Notifi
 [wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
 [Notification Hubs - Anleitungen für iOS]: http://msdn.microsoft.com/de-de/library/jj927168.aspx
-[Notification Hubs - Anleitungen für Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx
+[Notification Hubs-Anleitung für Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx

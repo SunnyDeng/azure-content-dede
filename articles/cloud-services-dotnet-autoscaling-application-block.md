@@ -28,6 +28,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Anwendung
 Mit dem Anwendungsblock für die automatische Skalierung können Sie Ihre Azure-Anwendung mit speziell dafür definierten Regeln skalieren. Mithilfe dieser Regeln sorgen Sie dafür, dass der Durchsatz der Azure-Anwendung bei Änderungen der Arbeitsauslastung gleich bleibt, und steuern zugleich die Kosten, die mit dem Hosten der Anwendung in Azure verknüpft sind. Der Block ermöglicht nicht nur die Skalierung durch Erhöhen oder Verringern der Anzahl der Rolleinstanzen in Ihrer Anwendung, sondern auch die Verwendung anderer Skalierungsaktionen wie das Drosseln bestimmter Funktionen in Ihrer Anwendung oder die Verwendung benutzerdefinierter Aktionen.
 
 Sie können festlegen, dass der Block in einer Azure-Rolle oder in einer lokalen Anwendung gehostet wird. 
+
 Der Anwendungsblock für die automatische Skalierung ist Teil des [Microsoft Enterprise Library 5.0 Integration Pack for Azure][Microsoft Enterprise Library 5.0 Integration Pack for Azure].
 
 ## <a id="Concepts"> </a>Konzepte

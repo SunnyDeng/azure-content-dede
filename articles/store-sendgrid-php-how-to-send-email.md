@@ -1,4 +1,4 @@
-﻿<properties title="How to use the SendGrid email service (PHP) - Azure" pageTitle="Verwenden des E-Mail-Diensts SendGrid (PHP) - Azure" metaKeywords="Azure SendGrid, Azure-E-Mail-Dienst, Azure SendGrid PHP, Azure-E-Mail PHP" description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure versenden. Die Codebeispiele sind in PHP geschrieben." documentationCenter="PHP" services="" manager="wpickett" editor="mollybos" authors="robmcm" scriptId="" videoId="" />
+<properties title="How to use the SendGrid email service (PHP) - Azure" pageTitle="Verwenden des E-Mail-Diensts SendGrid (PHP) - Azure" metaKeywords="Azure SendGrid, Azure-E-Mail-Dienst, Azure SendGrid PHP, Azure-E-Mail PHP" description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure versenden. Die Codebeispiele sind in PHP geschrieben." documentationCenter="PHP" services="" manager="wpickett" editor="mollybos" authors="robmcm" scriptId="" videoId="" />
 
 <tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="10/30/2014" ms.author="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork; matt.bernier@sendgrid.com" />
 
@@ -406,10 +406,10 @@ diesen Links weitere Informationen.
   [Sonderangebot]: https://www.sendgrid.com/windowsazure.html
   [Paketerstellung und Bereitstellen von PHP-Anwendungen für Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/hh674499(v=VS.103).aspx
   [http://swiftmailer.org/download]: http://swiftmailer.org/download
-  [curl-Funktion]: http://php.net/curl
+  [Curl -Funktion]: http://php.net/curl
   [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
-  [transaktionale Übermittlung von E-Mail]: https://sendgrid.com/transactional-email
-  [sendgrid-php-Bibliothek]: https://github.com/sendgrid/sendgrid-php/tree/v2.1.1
+  [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
+  [sendgrid-php.-Bibliothek]: https://github.com/sendgrid/sendgrid-php/tree/v2.1.1
   [Composer]: https://getcomposer.org/download/
 
 <!--HONumber=35.2-->

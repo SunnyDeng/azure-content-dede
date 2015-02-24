@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Access Control" pageTitle="Verwenden von Access Control (Java) - Leitfaden zu Azure-Features" metaKeywords="" description="Erfahren Sie, wie Sie Access Control mit Java in Azure entwickeln und verwenden." metaCanonical="" services="active-directory" documentationCenter="Java" title="How to Authenticate Web Users with Azure Access Control Service Using Eclipse" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
+<properties urlDisplayName="Access Control" pageTitle="Verwenden von Access Control (Java) - Leitfaden zu Azure-Features" metaKeywords="" description="Erfahren Sie, wie Sie Access Control mit Java in Azure entwickeln und verwenden." metaCanonical="" services="active-directory" documentationCenter="Java" title="How to Authenticate Web Users with Azure Access Control Service Using Eclipse" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
 
 <tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
 
@@ -154,7 +154,7 @@ von Windows Live als IP, aber Sie können alle im ACS-Verwaltungsportal aufgefü
 verwenden.
 
 
-1.  Klicken Sie im [Azure-Verwaltungsportal[ auf ][]Active Directory**, wählen Sie einen Access Control-Namespace aus, und klicken Sie dann auf **Verwalten**. Das ACS-Verwaltungsportal wird geöffnet.
+1.  Klicken Sie im [Azure-Verwaltungsportal][] auf **Active Directory**, wählen Sie einen Access Control-Namespace aus, und klicken Sie dann auf **Verwalten**. Das ACS-Verwaltungsportal wird geöffnet.
 2.  Klicken Sie im linken Navigationsbereich des ACS-Verwaltungsportals auf **Identitätsanbieter**.
 3.  Windows Live ID wird standardmäßig aktiviert und kann nicht gelöscht werden. Für die Zwecke dieses Lernprogramms wird nur Windows Live ID verwendet. Auf diesem Bildschirm können Sie allerdings noch andere IPs hinzufügen, indem Sie auf die Schaltfläche **Hinzufügen** klicken.
 
@@ -173,9 +173,13 @@ Webanwendung als gültige RP-Anwendung.
         App** ein.
     2.  Wählen Sie unter **Modus** die Option **Enter settings manually** aus.
     3.  Geben Sie unter **Bereich** den URI ein, für den das vom ACS ausgegebene Sicherheitstoken gilt. Geben Sie für diese Aufgabe **http://localhost:8080/** ein.
+
         ![Relying party realm for use in compute emulator][relying_party_realm_emulator]
+
     4.  Geben Sie unter **Rückgabe-URL** die URL ein, an die der ACS das Sicherheitstoken zurückgibt. Geben Sie für diese Aufgabe **http://localhost:8080/** ein.
+
         ![Relying party return URL for use in compute emulator][relying_party_return_url_emulator]
+
     5.  Übernehmen Sie in den restlichen Feldern die Standardwerte.
 
 4.  Klicken Sie auf **Speichern**.
@@ -208,7 +212,9 @@ In dieser Aufgabe laden Sie ein .PFX-Zertifikat hoch, das verwendet wird, um von
     2. Wählen Sie im Abschnitt **Typ** die Option **X.509-Zertifikat** aus.
     3. Klicken Sie im Abschnitt **Zertifikat** auf die Schaltfläche "Durchsuchen", und navigieren Sie zur X.509 Zertifikat-Datei, die Sie verwenden möchten. Dies ist eine PFX-Datei. Wählen Sie die Datei aus, klicken Sie auf **Öffnen**,   und geben Sie im Textfeld   Kennwort** das Zertifikatkennwort ein. Bitte beachten Sie, dass Sie zu Testzwecken ein selbstsigniertes Zertifikat verwenden können. Klicken Sie zum Erstellen eines selbstsignierten Zertifikats im Dialogfeld **ACS Filter Library** (dieses wird später beschrieben) auf die Schaltfläche **Neu**, oder verwenden Sie das Hilfsprogramm **encutil.exe** auf der [Projektwebsite][] des Azure-Starterkits für Java (von Microsoft Open Technologies).
     4. Stellen Sie sicher, dass **Make Primary** aktiviert ist. Die Seite **Add Token-Signing Certificate or Key** sollte nun in etwas wie folgt aussehen.
+
         ![Add token-signing certificate][add_token_signing_cert]
+
     5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern, und schließen Sie die Seite **Add Token-Signing Certificate or Key**.
 
 Jetzt überprüfen Sie die Informationen auf der Seite "Anwendungsintegration" und
@@ -243,7 +249,7 @@ Auf der Seite **Login Page Integration: Azure Web App** wird die URL, die unter 
     Klicken Sie auf **Weiter**.
 
 4. Wählen Sie im Dialogfeld **JSP-Vorlage auswählen** die Option **Neue JSP-Datei (HTML)**, und klicken Sie auf **Fertig stellen**.
-5. Wenn in Eclipse die Datei "index.jsp" geöffnet wird, geben Sie den Text **Hello ACS World!** ein, damit im vorhandenen Element **<body data-morhtml="true">` angezeigt wird. Der aktualisierte `<body>`-Inhalt sollte wie folgt aussehen:
+5. Wenn in Eclipse die Datei "index.jsp" geöffnet wird, geben Sie den Text **Hello ACS World!** ein, damit im vorhandenen Element `<body>` angezeigt wird. Der aktualisierte `<body>`-Inhalt sollte wie folgt aussehen:
 
         <body>
           <b><% out.println("Hello ACS World!"); %></b>

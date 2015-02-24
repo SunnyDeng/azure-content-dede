@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Cloud Service" pageTitle="Node.js-Anleitung, erste Schritte - Azure-Lernprogramm" metaKeywords="Azure node.js getting started, Azure Node.js tutorial, Azure Node.js tutorial" description="Ein umfassendes Lernprogramm, das Sie bei der Entwicklung einer einfachen Node.js-Webanwendung und deren Bereitstellung in Azure unterstützt." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Build and deploy a Node.js application to an Azure Cloud Service" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties urlDisplayName="Cloud Service" pageTitle="Node.js-Anleitung, erste Schritte - Azure-Lernprogramm" metaKeywords="Azure node.js getting started, Azure Node.js tutorial, Azure Node.js tutorial" description="Ein umfassendes Lernprogramm, das Sie bei der Entwicklung einer einfachen Node.js-Webanwendung und deren Bereitstellung in Azure unterstützt." metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Build and deploy a Node.js application to an Azure Cloud Service" authors="larryfr" solutions="" manager="wpickett" editor="" />
 
 <tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="wpickett" />
 
@@ -24,7 +24,7 @@ In diesem Lernprogramm werden Sie eine einfache Webanwendung erstellen, die in e
 
 Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
-<p><img src="https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png" alt="Ein Browserfenster, das die Seite Hallo Welt anzeigt. Die URL zeigt an, dass die Seite auf Azure gehostet wird.>
+<p><img src="https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/en-us/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png" alt="Ein Browserfenster, das die Seite Hallo Welt anzeigt. Die URL zeigt an, dass die Seite auf Azure gehostet wird.>
 </p>
 
 
@@ -57,15 +57,15 @@ Führen Sie folgende Aufgaben durch, um ein neues Azure-Clouddienstprojekt sowie
 	Die durch das Cmdlet **New-AzureServiceProject** erstellten Dateien sind:
 
 	-   **ServiceConfiguration.Cloud.cscfg**,
-        **ServiceConfiguration.Local.cscfg** and **ServiceDefinition.csdef** are
-        Azure-specific files necessary for publishing your
-        application.
+        **ServiceConfiguration.Local.cscfg** und **ServiceDefinition.csdef**.Dies sind 
+        Azure-spezifische Dateien, die für die Veröffentlichung der Anwendung
+        erforderlich sind.
 		
-	For more information about these files, see
-        [Overview of Creating a Hosted Service for Azure][].
+	Informationen zu diesen Dateien erhalten Sie unter
+        [Übersicht zum Erstellen eines gehosteten Diensts für Azure][].
 
-	-   **deploymentSettings.json** stores local settings that are used by
-        the Azure PowerShell deployment cmdlets.
+	-   **deploymentSettings.json** die von den Azure
+        PowerShell-Bereitstellungs-Cmdlets verwendet werden.
 
 4.  Geben Sie den folgenden Befehl ein, um eine neue Webrolle mithilfe des Cmdlet **Add-AzureNodeWebRole** hinzuzufügen:
 
