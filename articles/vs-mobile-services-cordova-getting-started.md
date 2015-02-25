@@ -1,6 +1,20 @@
-﻿<properties title="Getting Started with Mobile Services" pageTitle="" metaKeywords="Azure, Getting Started, Mobile Services" description="" services="mobile-services" documentationCenter="" authors="ghogen, kempb" />
+<properties 
+	pageTitle="" 
+	description="" 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="kempb" 
+	manager="douge" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="web" ms.tgt_pltfrm="vs-getting-started" ms.devlang="na" ms.topic="article" ms.date="10/8/2014" ms.author="ghogen, kempb" />
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vs-getting-started" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/8/2014" 
+	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
 > - [Erste Schritte](/documentation/articles/vs-mobile-services-cordova-getting-started/)
@@ -10,11 +24,11 @@
 
 Der erste Schritt, der ausgeführt werden muss, um den Code in diesen Beispielen verwenden zu können, hängt davon ab, mit welchem Typ von mobilem Dienst Sie eine Verbindung herstellen.
 
-Für einen mobilen JavaScript-Back-End-Dienst erstellen Sie eine Tabelle namens TodoItem.  Wenn Sie eine Tabelle erstellen möchten, suchen Sie den mobilen Dienst unter dem Knoten Azure im Server-Explorer, klicken mit der rechten Maustaste auf den Knoten des mobilen Diensts, um das Kontextmenü zu öffnen, und wählen dann **Tabelle erstellen** aus. Geben Sie TodoItem als Tabellennamen ein.
+Für einen mobilen JavaScript-Back-End-Dienst erstellen Sie eine Tabelle namens "TodoItem".  Wenn Sie eine Tabelle erstellen möchten, suchen Sie den mobilen Dienst unter dem Azure-Knoten im Server-Explorer, klicken mit der rechten Maustaste auf den Knoten des mobilen Diensts, um das Kontextmenü zu öffnen, und wählen dann **Tabelle erstellen** aus. Geben Sie "TodoItem" als Tabellennamen ein.
 
 Wenn Sie stattdessen einen mobilen .NET-Back-End-Dienst verwenden, ist bereits eine Tabelle TodoItem in der Standardprojektvorlage enthalten, die Visual Studio für Sie erstellt hat. Sie müssen diese jedoch noch in Azure veröffentlichen. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Mobile Services-Projekt, und wählen Sie dann **Web veröffentlichen** aus. Übernehmen Sie die Standardwerte, und klicken Sie dann auf die Schaltfläche **Veröffentlichen**.
   
->[WACOM.NOTE]**Nutzen Sie diese [Problemumgehung](http://go.microsoft.com/fwlink/?LinkId=518765), um in Cordova-Projekten mit Azure Mobile Services zu arbeiten.**
+>[AZURE.NOTE] **In Cordova-Projekten, die mit Visual Studio 2015 Preview erstellt werden, verwenden Sie diese [Problemumgehung](http://go.microsoft.com/fwlink/?LinkId=518765), um mit Azure Mobile Services zu arbeiten. Die Problemumgehung ist nicht für Projekte mit höheren Versionen von Visual Studio 2015 erforderlich.**
 
 #####Abrufen des Verweises auf eine Tabelle
 
@@ -26,7 +40,7 @@ Damit diese Beispiele funktionieren, müssen die Berechtigungen für die Tabelle
 
 #####Hinzufügen eines Eintrags 
 
-Fügen Sie ein neues Element in eine Datentabelle ein. Eine ID (eine GUID vom Typ string) wird automatisch als primärer Schlüssel für die neue Zeile erstellt. Rufen Sie die Methode [done]() für das zurückgegebene [Promise]()-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
+Fügen Sie ein neues Element in eine Datentabelle ein. Eine ID (eine GUID vom Typ "string") wird automatisch als primärer Schlüssel für die neue Zeile erstellt. Rufen Sie die Methode [done]() für das zurückgegebene [Promise]()-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
 
     function TodoItem(text) {
         this.text = text;
@@ -78,3 +92,7 @@ Löschen Sie eine Zeile aus einer Datentabelle mithilfe der **del**-Methode. Ruf
 	});
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
+
+
+
+<!--HONumber=42-->

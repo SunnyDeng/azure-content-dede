@@ -1,10 +1,11 @@
-﻿<properties urlDisplayName="Build a service using an existing SQL database with the Mobile Services .NET backend" pageTitle="Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Back-End - Azure Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie eine vorhandene Cloud- oder lokale SQL-Datenbank mit Ihrem .NET-basierten mobilen Dienst verwenden." metaCanonical="" services="mobile-services,biztalk-services" documentationCenter="Mobile" title="Build a service using an existing SQL database with the Mobile Services .NET backend" authors="mahender" solutions="" manager="dwrede" editor="mollybos" />
+<properties pageTitle="Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Back-End - Azure Mobile Services" description="Erfahren Sie, wie Sie eine vorhandene Cloud- oder lokale SQL-Datenbank mit Ihrem .NET-basierten mobilen Dienst verwenden." services="mobile-services, biztalk-services" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor="mollybos"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/11/2014" ms.author="mahender" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/22/2014" ms.author="glenga"/>
+
 
 # Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Back-End
 
-Das Mobile Services .NET-Back-End macht die Nutzung vorhandener Objekte beim Erstellen eines mobilen Diensts ganz einfach. Ein besonders interessantes Szenario ist die Verwendung einer vorhandenen SQL-Datenbank (entweder lokal oder in der Cloud), die bereits von anderen Anwendungen verwendet wird, um die vorhandenen Daten auch für mobile Clients nutzbar zu machen. In diesem Fall ist es erforderlich, dass das Datenbankmodell (oder *Schema*) unverändert bleibt, damit die vorhandenen Lösungen weiter damit arbeiten können.
+Das Mobile Services .NET-Back-End macht die Nutzung vorhandener Objekte beim Erstellen eines mobilen Diensts ganz einfach. Ein besonders interessantes Szenario ist die Verwendung einer vorhandenen SQL-Datenbank (entweder lokal oder in der Cloud), die bereits von anderen Anwendungen verwendet wird, um die vorhandenen Daten auch für mobile Clients nutzbar zu machen. In diesem Fall ist es erforderlich, dass das Datenbankmodell (oder  *schema*) unverändert bleibt, damit die vorhandenen Lösungen weiter damit arbeiten können.
 
 Dieses Lernprogramm umfasst die folgenden Abschnitte:
 
@@ -40,7 +41,7 @@ Für dieses Lernprogramm verwenden wir die Datenbank, die mit Ihrem mobilen Dien
             }
         }
 
-3. Erstellen Sie eine Datei **Order.cs** im Ordner **Models**, und verwenden Sie die folgende Implementierung:
+3. Erstellen Sie eine Datei **Order.cs** im Ordner **Models**, und verwenden Sie die folgende Implementierung.
     
         using System.ComponentModel.DataAnnotations;
 
@@ -64,7 +65,7 @@ Für dieses Lernprogramm verwenden wir die Datenbank, die mit Ihrem mobilen Dien
             }
         }
 
-    Sie werden feststellen, dass diese zwei Klassen eine *Beziehung* haben: jede **Bestellung** (Order) ist einem **Kunden** (Customer) zugeordnet und ein **Kunde** kann mehreren **Bestellungen** zugeordnet sein. Beziehungen kommen in vorhandenen Datenmodellen häufig vor.
+    Beachten Sie, dass diese beiden Klassen eine  *relationship* haben: jede **Bestellung** bezieht sich auf einen einzelnen **Kunden**, und ein **Kunde** kann mehreren **Bestellungen** zugeordnet werden. Beziehungen kommen in vorhandenen Datenmodellen häufig vor.
 
 4. Erstellen Sie eine Datei **ExistingContext.cs** im Ordner **Models**, und implementieren Sie sie wie folgt:
 
@@ -105,7 +106,7 @@ Das Datenmodell, welches Sie mit Ihrem mobilen Dienst verwenden möchten, ist m�
             }
         }
 
-    Sie sehen, dass diese Klasse der Klasse **Customer** im Modell ähnlich ist, außer dass die Beziehungseigenschaft zu **Order** entfernt wurde. Damit ein Objekt ordnungsgemäß mit der Mobile Services-Offlinesynchronisierung funktioniert, benötigt es einen Satz *Systemeigenschaften* für optimistische Parallelität, daher werden Sie feststellen, dass das DTO von [**EntityData**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.entitydata.aspx) erbt, welches diese Eigenschaften enthält. Die INT-basierte Eigenschaft **CustomerId** vom ursprünglichen Modell wird durch die zeichenfolgenbasierte Eigenschaft **Id** aus **EntityData** ersetzt. Dabei handelt es sich um die **Id**, die von Mobile Services verwendet wird.
+    Sie sehen, dass diese Klasse der Klasse **Customer** im Modell ähnlich ist, außer dass die Beziehungseigenschaft zu **Order** entfernt wurde. Damit ein Objekt ordnungsgemäß mit der Mobile Services-Offlinesynchronisierung funktioniert, benötigt es einen Satz  *system properties* für optimistische Parallelität, daher werden Sie feststellen, dass das DTO von [**EntityData**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.entitydata.aspx) erbt, welches diese Eigenschaften enthält. Die INT-basierte Eigenschaft **CustomerId** vom ursprünglichen Modell wird durch die zeichenfolgenbasierte Eigenschaft **Id** aus **EntityData** ersetzt. Dabei handelt es sich um die **Id**, die von Mobile Services verwendet wird.
 
 2. Erstellen Sie die Datei **MobileOrder.cs** im Ordner **DataObjects** des Dienstprojekts.
 
@@ -175,7 +176,7 @@ Das Datenmodell, welches Sie mit Ihrem mobilen Dienst verwenden möchten, ist m�
     Anschließend überschreiben Sie im Text von **ExistingContext** den Eintrag [**OnModelCreating**](http://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating.aspx):
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
+        {	
             modelBuilder.Conventions.Add(
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
@@ -241,7 +242,7 @@ Das Datenmodell, welches Sie mit Ihrem mobilen Dienst verwenden möchten, ist m�
 <a name="Mapping"></a>
 ## Erstellen einer Zuordnung zwischen DTOs und Modell
 
-Wir haben jetzt die Modelltypen **Customer** und **Order** sowie die DTOs **MobileCustomer** und **MobileOrder**, aber wir müssen das Backend noch anweisen, zwischen den beiden automatisch zu transformieren. Mobile Services verlässt sich hier auf [**AutoMapper**](http://automapper.org/), eine relationale Objektzuordnung, auf die im Projekt bereits verwiesen wird.
+Wir haben jetzt die Modelltypen **Customer** und **Order** sowie die DTOs **MobileCustomer** und **MobileOrder**, aber wir müssen das Back-End noch anweisen, zwischen den beiden automatisch zu transformieren. Mobile Services verlässt sich hier auf [**AutoMapper**](http://automapper.org/), eine relationale Objektzuordnung, auf die im Projekt bereits verwiesen wird.
 
 1. Fügen Sie am Anfang von **WebApiConfig.cs** Folgendes ein:
 
@@ -268,7 +269,7 @@ AutoMapper ordnet nun die Objekte einander zu. Alle Eigenschaften mit übereinst
 
 Der nächste Schritt ist das Implementieren eines [**MappedEntityDomainManager**](http://msdn.microsoft.com/library/dn643300.aspx), der als Abstraktionsschicht zwischen dem zugeordneten Datenspeicher und dem Controller, der den HTTP-Verkehr von unseren Clients abwickelt, dient. Wir können unseren Controller im nächsten Abschnitt komplett in Form von DTOs schreiben, und der hier hinzugefügte **MappedEntityDomainManager** verarbeitet die Kommunikation mit dem ursprünglichen Datenspeicher und bietet gleichzeitig einen Ort zur Implementierung seiner spezifischen Logik.
 
-1. Fügen Sie **MobileCustomerDomainManager.cs** zum Ordner **Models** des Projekts hinzu. Verwenden Sie die folgenden Implementierung:
+1. Fügen Sie die Datei **MobileCustomerDomainManager.cs** zum Ordner **Models** des Projekts hinzu. Verwenden Sie die folgenden Implementierung:
 
         using AutoMapper;
         using Microsoft.WindowsAzure.Mobile.Service;
@@ -357,9 +358,9 @@ Der nächste Schritt ist das Implementieren eines [**MappedEntityDomainManager**
             }
         }
 
-    Ein wichtiger Teil dieser Klasse ist die Methode **GetKey** mit der wir angeben, wo sich die ID-Eigenschaft des Objekts im ursprünglichen Datenmodell befindet. 
+    Ein wichtiger Teil dieser Klasse ist die Methode **GetKey**, mit der wir angeben, wo sich die ID-Eigenschaft des Objekts im ursprünglichen Datenmodell befindet. 
 
-2. Fügen Sie **MobileOrderDomainManager.cs** zum Ordner **Models** des Projekts hinzu.
+2. Fügen Sie die Datei **MobileOrderDomainManager.cs** zum Ordner **Models** des Projekts hinzu:
 
         using AutoMapper;
         using Microsoft.WindowsAzure.Mobile.Service;
@@ -462,7 +463,7 @@ Der nächste Schritt ist das Implementieren eines [**MappedEntityDomainManager**
             }
         }
 
-    In diesem Fall sind die Methoden **InsertAsync** und **UpdateAsync** interessant. Hier erzwingen wir die Beziehung, sodass jede Bestellung (**Order**) einen gültigen zugeordneten Wert für **Customer** haben muss. In **InsertAsync** werden Sie feststellen, dass wir die Eigenschaft **MobileOrder.CustomerId** ausfüllen, die der Eigenschaft **Order.CustomerId** zugeordnet ist. Diesen Wert erhalten wir durch die Suche nach **Customer** mit der zugehörigen **MobileOrder.MobileCustomerId**. Der Grund dafür ist, dass der Client standardmäßig nur die Mobile Services-ID (**MobileOrder.MobileCustomerId**) von **Customer** berücksichtigt, die sich vom tatsächlichen Primärschlüssel unterscheidet, der zum Festlegen des Fremdschlüssels (**MobileOrder.CustomerId**) von **Order** auf **Customer** benötigt wird. Dies wird nur intern innerhalb des Diensts verwendet, um den Einfügevorgang zu ermöglichen.
+    In diesem Fall sind die Methoden **InsertAsync** und **UpdateAsync** interessant. Hier erzwingen wir die Beziehung, sodass jede **Order** einen gültigen zugeordneten Wert für **Customer** haben muss. In **InsertAsync** werden Sie feststellen, dass wir die Eigenschaft **MobileOrder.CustomerId** ausfüllen, die der Eigenschaft **Order.CustomerId** zugeordnet ist. Diesen Wert erhalten wir durch die Suche nach **Customer** mit der zugehörigen **MobileOrder.MobileCustomerId**. Der Grund dafür ist, dass der Client standardmäßig nur die Mobile Services-ID (**MobileOrder.MobileCustomerId**) von **Customer** berücksichtigt, die sich vom tatsächlichen Primärschlüssel unterscheidet, der zum Festlegen des Fremdschlüssels (**MobileOrder.CustomerId**) von **Order** auf **Customer** benötigt wird. Dies wird nur intern innerhalb des Diensts verwendet, um den Einfügevorgang zu ermöglichen.
 
 Nun können wir Controller erstellen, um unsere DTOs den Clients anzuzeigen.
 
@@ -522,7 +523,7 @@ Nun können wir Controller erstellen, um unsere DTOs den Clients anzuzeigen.
             }
         }
 
-    Beachten Sie die Verwendung des Attributs "AuthorizeLevel", um den öffentlichen Zugriff auf die Insert/Update/Delete-Operationen im Controller zu beschränken. Für den Zweck dieses Szenarios ist die Kundenliste schreibgeschützt, aber die Erstellung neuer Bestellungen ist zulässig; diese werden vorhandenen Kunden zugeordnet. 
+    Beachten Sie die Verwendung des Attributs AuthorizeLevel, um den öffentlichen Zugriff auf die Insert/Update/Delete-Operationen im Controller zu beschränken. Für den Zweck dieses Szenarios ist die Kundenliste schreibgeschützt, aber die Erstellung neuer Bestellungen ist zulässig; diese werden vorhandenen Kunden zugeordnet. 
 
 2. Fügen Sie im Ordner **Controllers** die Datei **MobileOrderController.cs** hinzu:
 
@@ -606,4 +607,8 @@ Beachten Sie, dass beide Controllerimplementierungen die DTOs **MobileCustomer**
 
     }
 
-Als nächsten Schritt können Sie nun die Client-App erstellen, um auf den Dienst zuzugreifen.
+Als nächsten Schritt können Sie nun die Client-App erstellen, um auf den Dienst zuzugreifen. 
+
+
+
+<!--HONumber=42-->

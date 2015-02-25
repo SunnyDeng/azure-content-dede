@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Web w/ SQL + WebMatrix" pageTitle="PHP-Website mit SQL-Datenbank und WebMatrix - Azure" metaKeywords="" description="In diesem Lernprogramm wird gezeigt, wie Sie mithilfe der kostenlosen WebMatrix-IDE eine PHP-Website erstellen, die Daten in einer SQL-Datenbank speichert." metaCanonical="" services="" documentationCenter="" title="Create and Deploy a PHP Website and SQL Database using WebMatrix" authors="tomfitz" solutions="" manager="wpickett" editor="mollybos" />
+<properties 
+	pageTitle="PHP-Website mit SQL-Datenbank und WebMatrix - Azure" 
+	description="In diesem Lernprogramm wird gezeigt, wie Sie mithilfe der kostenlosen WebMatrix-IDE eine PHP-Website erstellen, die Daten in einer SQL-Datenbank speichert." 
+	services="web-sites" 
+	documentationCenter="" 
+	authors="tfitzmac" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/17/2014" ms.author="tomfitz" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="PHP" 
+	ms.topic="article" 
+	ms.date="11/17/2014" 
+	ms.author="tomfitz"/>
 
 
 
@@ -24,14 +38,14 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Tasklist-Webanwendung 
 
 ![Azure PHP Web Site][running-app]
 
-> [WACOM.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können <a href="http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/">Vorteile für MSDN-Abonnenten aktivieren</a> oder <a href="http://azure.microsoft.com/de-de/pricing/free-trial/">sich für einen kostenlos Test von Azure anmelden</a>.
+> [AZURE.NOTE]
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können Ihre <a href="http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/">Vorteile für MSDN-Abonnenten aktivieren</a> oder <a href="http://azure.microsoft.com/de-de/pricing/free-trial/">sich für eine kostenlose Testversion anmelden</a>.
 > 
-> Einen Einstieg in Azure Websites vor Anmeldung für ein Konto finden Sie auf <a href="https://trywebsites.azurewebsites.net/?language=php">https://trywebsites.azurewebsites.net</a>, wo Sie sofort eine kurzlebige, kostenlose ASP.NET-Startwebsite in Azure Websites erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+> Wenn Sie Azure Website ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/?language=php">https://trywebsites.azurewebsites.net</a>, wo Sie sofort kostenlos eine kurzlebige ASP.NET Starter Site in Azure Websites erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ##Voraussetzungen
 
-1. [Herunterladen][tasklist-sqlazure-download] der Tasklist-Anwendungsdateien. Die Tasklist-Anwendung ist eine einfache PHP-Anwendung, mit der Sie Elemente einer Aufgabenliste hinzufügen, als erledigt markieren und löschen können. Elemente der Aufgabenliste werden in einer SQL-Datenbank gespeichert (SQL Server Express für lokales Testen). Die Anwendung besteht aus diesen Dateien:
+1. Sie müssen die Tasklist-Anwendungsdateien [herunterladen][tasklist-sqlazure-download]. Die Tasklist-Anwendung ist eine einfache PHP-Anwendung, mit der Sie Elemente einer Aufgabenliste hinzufügen, als erledigt markieren und löschen können. Elemente der Aufgabenliste werden in einer SQL-Datenbank gespeichert (SQL Server Express für lokales Testen). Die Anwendung besteht aus diesen Dateien:
 
 	* **index.php**: Zeigt Aufgaben an und bietet ein Formular für das Hinzufügen eines Elements zur Liste.
 	* **additem.php**: Fügt ein Element zur Liste hinzu.
@@ -41,7 +55,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Tasklist-Webanwendung 
 	* **taskmodel.php**: Enthält Funktionen, welche Elemente aus der Datenbank hinzufügen, abrufen, aktualisieren und löschen.
 	* **createtable.php**: Erstellt die SQL-Datenbanktabelle für die Anwendung. Diese Datei wird nur einmal abgerufen.
 
-2. Erstellen Sie eine SQL Server-Datenbank namens `tasklist`. Sie können dies in der `sqlcmd`-Eingabeaufforderung mit diesen Befehlen ausführen:
+2. Erstellen Sie eine SQL Server-Datenbank namens  `tasklist`. Sie können dies in der  `sqlcmd`-Eingabeaufforderung mit diesen Befehlen ausführen:
 
 		>sqlcmd -S <server name>\sqlexpress -U <user name> -P <password>
 		1> create database tasklist
@@ -51,16 +65,16 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Tasklist-Webanwendung 
 
 ## Erstellen einer Website und einer SQL-Datenbank
 
-1. Melden Sie sich beim [Verwaltungsportal][preview-portal] an.
+1. Melden Sie sich am [Verwaltungsportal][preview-portal] an.
 2. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
 
 	![Create New Azure Web Site][NewWebSite1]
 
-3. Klicken Sie auf**WEBSITE**, dann auf **BENUTZERDEFINIERT ERSTELLEN**.
+3. Klicken Sie auf **WEBSITE** und dann auf **BENUTZERDEFINIERT ERSTELLEN**.
 
 	![Custom Create a new Web Site][NewWebSite2]
 
-	Geben Sie einen Wert für **URL** ein, und wählen Sie **Neue SQL-Datenbank erstellen** in der Dropdownliste **DATENBANK** und das Rechenzentrum für Ihre Website in der Dropdownliste **REGION** aus. Klicken Sie unten im Dialogfeld auf den Pfeil.
+	Geben Sie einen Wert für **URL** ein, und wählen Sie **Neue SQL-Datenbank erstellen** aus der Dropdownliste **DATENBANK** und das Datencenter für Ihre Website aus der Dropdownliste **REGION** aus. Klicken Sie unten im Dialogfeld auf den Pfeil.
 
 	![Fill in web site details][NewWebSite3_SQL]
 
@@ -78,7 +92,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Tasklist-Webanwendung 
 
 	![Connection string][NewWebSite7]
 	
-Notieren Sie sich im Abschnitt **PHP** des angezeigten Dialogfelds die Werte für `UID`, `PWD`, `Database` und `$serverName`. Sie werden diese Informationen später verwenden.
+Notieren Sie sich im Abschnitt **PHP** des angezeigten Dialogfelds die Werte für  `UID`, `PWD`, `Database` und `$serverName`. Sie werden diese Informationen später verwenden.
 
 ##Installieren von WebMatrix
 
@@ -90,17 +104,17 @@ Sie können WebMatrix aus dem [Verwaltungsportal][preview-portal] installieren.
 
 	Folgen Sie den Anweisungen, um WebMatrix zu installieren.
 
-2. Nachdem WebMatrix installiert ist, wird es versuchen, die Website als WebMatrix-Projekt zu öffnen. Sie können die Live-Website direkt bearbeiten oder eine lokale Kopie herunterladen. Wählen Sie für dieses Lernprogramm das Bearbeiten einer lokalen Kopie. 
+2. Nachdem WebMatrix installiert ist, wird es versuchen, die Website als WebMatrix-Projekt zu öffnen. Sie können die Live-Website direkt bearbeiten oder eine lokale Kopie herunterladen. Wählen Sie für dieses Lernprogramm  'Edit local copy'. 
 
-3. Wenn Sie aufgefordert werden, die Website herunterzuladen, wählen Sie **Yes, install from the Template Gallery**.
+3. Wenn Sie aufgefordert werden, die Website herunterzuladen, wählen Sie **Ja, aus dem Vorlagenkatalog installieren**.
 
 	![Download web site][download-site]
 
-4. Wählen Sie aus den verfügbaren Vorlagen **PHP**.
+4. Wählen Sie aus den verfügbaren Vorlagen **PHP** aus.
 
 	![Site from template][site-from-template]
 
-5. Wählen Sie die Vorlage **Empty Site**. Geben Sie einen Namen für die Website an, und klicken Sie auf **NEXT**.
+5. Wählen Sie die Vorlage **Leere Website**. Geben Sie einen Namen für die Website an, und klicken Sie auf **WEITER**.
 
 	![Provide name for site][site-from-template-2]
 
@@ -110,13 +124,13 @@ Ihre Website wird in WebMatrix mit einigen Standarddateien geöffnet.
 
 In den nächsten Schritten werden Sie die Tasklist-Anwendung entwickeln, indem Sie die zuvor heruntergeladenen Dateien hinzufügen und einige Änderungen vornehmen. Sie können jedoch auch eigene Dateien hinzufügen oder neue Dateien erstellen.
 
-1. Fügen Sie bei in WebMatrix geöffneter Website die Anwendungsdateien hinzu, indem Sie auf **Add Existing** klicken:
+1. Fügen Sie bei in WebMatrix geöffneter Website die Anwendungsdateien hinzu, indem Sie auf **Vorhandene hinzufügen** klicken:
 
 	![WebMatrix - Add existing files][edit_addexisting]
 
-	Navigieren Sie im angezeigten Dialogfenster zu den zuvor heruntergeladenen Dateien, wählen Sie alle aus, und klicken Sie dann auf Open. Wählen Sie bei entsprechender Aufforderung, dass die Datei `index.php` ersetzt wird. 
+	Navigieren Sie im angezeigten Dialogfenster zu den zuvor heruntergeladenen Dateien, wählen Sie alle aus, und klicken Sie dann auf "Öffnen". Wählen Sie bei entsprechender Aufforderung, dass die Datei  `index.php` ersetzt wird. 
 
-2. Anschließend müssen Sie die Verbindungsinformationen für die lokale SQL Server-Datenbank zur Datei `taskmodel.php` hinzufügen. Öffnen Sie die Datei `taskmodel.php` durch einen Doppelklick, und aktualisieren Sie die Verbindungsinformationen für die Datenbank in der Funktion `connect`. (**Hinweis**: Gehen Sie zu [Veröffentlichen der Anwendung](#Publish) , falls Sie die Anwendung nicht lokal testen möchten und diese stattdessen direkt in Azure-Websites veröffentlichen möchten.)
+2. Anschließend müssen Sie die Verbindungsinformationen für die lokale SQL Server-Datenbank in die Datei  `taskmodel.php` einfügen. Öffnen Sie die Datei  `taskmodel.php` per Doppelklick, und aktualisieren Sie die Verbindungsinformationen für die Datenbank in der Funktion  `connect`. (**Hinweis**: Wechseln Sie zu [Veröffentlichen der Anwendung](#Publish) , falls Sie die Anwendung nicht lokal testen möchten und diese stattdessen direkt in Azure-Websites veröffentlichen möchten.)
 
 		// DB connection info
 		$host = "localhost\sqlexpress";
@@ -124,20 +138,20 @@ In den nächsten Schritten werden Sie die Tasklist-Anwendung entwickeln, indem S
 		$pwd = "your password";
 		$db = "tasklist";
 
-	Speichern Sie die Datei `taskmodel.php`.
+	Speichern Sie die Datei  `taskmodel.php`.
 
-3. Damit die Anwendung ausgeführt werden kann, muss die Tabelle `items` erstellt werden. Klicken Sie mit der rechten Maustaste auf die Datei `createtable.php`, und wählen Sie**Launch in browser**. Dadurch wird `createtable.php` im Browser gestartet und Code ausgeführt, wodurch die Tabelle `items` in der Datenbank tasklist erstellt wird.
+3. Damit die Anwendung ausgeführt werden kann, muss die Tabelle  `items` erstellt werden. Klicken Sie mit der rechten Maustaste auf die Datei  `createtable.php`, und wählen Sie **In Browser starten**. Dadurch wird  `createtable.php` im Browser gestartet und Code ausgeführt, wodurch die Tabelle  `items` in der Datenbank  `tasklist` erstellt wird.
 
 	![WebMatrix - Launch createtable.php in browser][edit_run]
 
-4. Sie können die Anwendung jetzt lokal testen. Klicken Sie mit der rechten Maustaste auf die Datei `index.php`, und wählen Sie**Launch in browser**. Testen Sie die Anwendung, indem Sie Elemente hinzufügen, diese als erledigt markieren und löschen.   
+4. Sie können die Anwendung jetzt lokal testen. Klicken Sie mit der rechten Maustaste auf die Datei  `index.php`, und wählen Sie **In Browser starten**. Testen Sie die Anwendung, indem Sie Elemente hinzufügen, diese als erledigt markieren und löschen.   
 
 
 <h2><a id="Publish"></a>Veröffentlichen der Anwendung</h2>
 
-Bevor die Anwendung auf Azure-Websites veröffentlicht wird, müssen die Verbindungsinformationen für die Datenbank in `taskmodel.php` mit den Verbindungsinformationen aktualisiert werden, die Sie zuvor erhalten haben (im Abschnitt [Erstellen einer Website und einer SQL-Datenbank](#CreateWebsite) ).
+Bevor die Anwendung auf Azure-Websites veröffentlicht wird, müssen die Verbindungsinformationen für die Datenbank in  `taskmodel.php` mit den Verbindungsinformationen aktualisiert werden, die Sie zuvor erhalten haben (im Abschnitt [Erstellen einer Website und einer SQL-Datenbank](#CreateWebsite) ).
 
-1. Öffnen Sie die Datei `taskmodel.php` durch einen Doppelklick, und aktualisieren Sie die Verbindungsinformationen für die Datenbank in der Funktion `connect`.
+1. Öffnen Sie die Datei  `taskmodel.php` per Doppelklick, und aktualisieren Sie die Verbindungsinformationen für die Datenbank in der Funktion  `connect`.
 
 		// DB connection info
 		$host = "value of $serverName";
@@ -145,24 +159,24 @@ Bevor die Anwendung auf Azure-Websites veröffentlicht wird, müssen die Verbind
 		$pwd = "the SQL password you created when creating the website";
 		$db = "value of Database";
 	
-	Save the `taskmodel.php` file.
+	Speichern Sie die Datei `taskmodel.php`.
 
-2. Klicken Sie in WebMatrix auf **Veröffentlichen** und anschließend auf **Weiter** im Dialogfeld **Vorschau veröffentlichen**.
+2. Klicken Sie in WebMatrix auf **Veröffentlichen** und anschließend im Dialogfeld **Vorschau veröffentlichen** auf **Weiter**.
 
 	![WebMatrix - Publish][edit_publish]
 
-3. Navigieren Sie zu http://[Name der Website].azurewebsites.net/createtable.php, um die Tabelle `items` zu erstellen.
+3. Navigieren Sie zu http://[Name der Website].azurewebsites.net/createtable.php , um die Tabelle  `items` zu erstellen.
 
-4. Navigieren Sie zuletzt zu http://[Name der Website].azurewebsites.net/index.php, um die Anwendung zu starten.
+4. Navigieren Sie zuletzt zu http://[Name der Website].azurewebsites.net/index.php , um die Anwendung zu verwenden.
 	
 ##Ändern und erneutes Veröffentlichen der Anwendung
 
-Sie können die Anwendung einfach ändern, indem Sie die lokale Kopie der zuvor heruntergeladenen Website bearbeiten und dann erneut veröffentlichen. Alternativ können Sie die Änderung auch direkt im Remotemodus vornehmen. In diesem Fall nehmen Sie eine einfache Änderung an der Kopfzeile der Datei `index.php` vor, und speichern diese direkt in der Live-Website.
+Sie können die Anwendung einfach ändern, indem Sie die lokale Kopie der zuvor heruntergeladenen Website bearbeiten und dann erneut veröffentlichen. Alternativ können Sie die Änderung auch direkt im Remotemodus vornehmen. In diesem Fall nehmen Sie eine einfache Änderung an der Kopfzeile der Datei  `index.php` vor und speichern diese direkt in der Live-Website.
 
-1. Klicken Sie in WebMatrix auf die Remote-Registerkarte der Website, und wählen Sie **Open Remote View**. Dadurch wird die Remote-Website für die direkte Bearbeitung geöffnet.
+1. Klicken Sie in WebMatrix auf die Registerkarte "Remote" der Website, und wählen Sie **Remoteansicht öffnen**. Dadurch wird die Remotewebsite für die direkte Bearbeitung geöffnet.
 	 ![WebMatrix - Open Remote View][OpenRemoteView]
  
-2. Öffnen Sie durch Doppelklick die Datei `index.php`.
+2. Öffnen Sie durch Doppelklick die Datei  `index.php`.
 	![WebMatrix - Open index file][Remote_editIndex]
 
 3. Ändern Sie **My ToDo List** in **My Task List** in den Tags **title** und **h1**, und speichern Sie die Datei.
@@ -236,4 +250,8 @@ Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure be
 
 
 
-\n<!--HONumber=35.1--> 
+
+
+
+
+<!--HONumber=42-->

@@ -1,10 +1,10 @@
-﻿<properties urlDisplayName="Get Started with Authentication (iOS)" pageTitle="Erste Schritte mit der Authentifizierung (iOS) | Mobile Dev Center" metaKeywords="Azure-Registrierungsanwendung, Azure-Authentifizierung, Anwendung authentifizieren, Mobile Services authentifizieren, Mobile Services iOS" description="Erfahren Sie, wie Sie Mobile Services zum Authentifizieren von Benutzern Ihrer iOS-App mithilfe verschiedener Identitätsanbieter wie Google, Facebook, Twitter und Microsoft nutzen können." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="krisragh" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Erste Schritte mit der Authentifizierung (iOS) | Mobile Dev Center" description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." services="mobile-services" documentationCenter="ios" authors="krisragh" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 Dieses Thema beschreibt die Authentifizierung von Benutzern in Azure Mobile Services aus Ihrer iOS-App.  In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.  
 
@@ -21,32 +21,32 @@ Zum Abschließen dieses Lernprogramms sind XCode 4.5 und iOS 5.0 oder neuere Ver
 
 ##<a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 
-[WACOM.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
 
 ##<a name="permissions"></a> Einschränken von Berechtigungen für authentifizierte Benutzer
 
-[WACOM.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 <ol start="3">
-<li><p>Öffnen Sie in Xcode das Projekt, das Sie beim Abschluss des Lernprogramms erstellt haben. <a href="/de-de/documentation/articles/mobile-services-ios-get-started">Erste Schritte mit Mobile Services</a>.</p></li>
-<li><p>Klicken Sie auf die Schaltfläche <strong>"Ausführen",</strong> um das Projekt zu erstellen und die App im iPhone-Emulator zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird.<p>
+<li><p>Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm <a href="/de-de/documentation/articles/mobile-services-ios-get-started">Erste Schritte mit Mobile Services</a> erstellt haben.</p></li>
+<li><p>Klicken Sie auf <strong>Ausführen</strong>, um das Projekt zu erstellen und die App im iPhone-Emulator zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird.<p>
 
-   	<p>Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die <em>TodoItem-Tabelle</em> jetzt jedoch Authentifizierung erfordert.</p></li>
+   	<p>Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die <em>TodoItem</em>-Tabelle jetzt jedoch Authentifizierung erfordert.</p></li>
 </ol>
 
 Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
 
 ##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
-[WACOM.INCLUDE [mobile-services-ios-authenticate-app](../includes/mobile-services-ios-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-ios-authenticate-app](../includes/mobile-services-ios-authenticate-app.md)]
 
 ##<a name="store-authentication"></a>Speichern von Authentifizierungstoken in der App
 
-[WACOM.INCLUDE [mobile-services-ios-authenticate-app-with-token](../includes/mobile-services-ios-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-services-ios-authenticate-app-with-token](../includes/mobile-services-ios-authenticate-app-with-token.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Im nächsten Lernprogramm [Dienstseitige Autorisierung von Mobile Services-Benutzern][Authorize users with scripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern.
+Im nächsten Lernprogramm [Serviceseitige Autorisierung von Mobile Services-Benutzern][Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern.
 
 <!-- Anchors. -->
 [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
@@ -78,7 +78,7 @@ Im nächsten Lernprogramm [Dienstseitige Autorisierung von Mobile Services-Benut
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Einmaliges Anmelden für Windows Store Apps mithilfe von Live Connect]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet
+[Einmalige Anmeldung für Windows Store-Apps mithilfe von Live Connect]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-ios
 [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-ios
 [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-ios
@@ -87,4 +87,5 @@ Im nächsten Lernprogramm [Dienstseitige Autorisierung von Mobile Services-Benut
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=35.2-->
+
+<!--HONumber=42-->

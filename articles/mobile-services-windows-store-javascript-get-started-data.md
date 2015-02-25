@@ -1,11 +1,11 @@
-﻿<properties urlDisplayName="Get Started with Data" pageTitle="Erste Schritte mit Daten (Windows Store JavaScript) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie die ersten Schritte bei der Nutzung von Mobile Services-Daten in Ihrer Windows Store-JavaScript-App." metaCanonical="https://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-dotnet/" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Erste Schritte mit Daten (Windows Store JavaScript) | Mobile Dev Center" description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Windows Store-JavaScript-App." services="mobile-services" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>	
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/19/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/19/2014" ms.author="glenga"/>
 
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
 
 <div class="dev-center-tutorial-subselector">
 	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/" title=".NET backend">.NET-Back-End</a> | 
@@ -15,11 +15,11 @@
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Services Daten in einer Windows Store-App nutzen können. In diesem Lernprogramm laden Sie ein Visual Studio 2013-Projekt für eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.
 
->[WACOM.NOTE]Dieses Thema veranschaulicht, wie Azure Mobile Services einem Windows Store-Projekt mithilfe von Visual Studio 2013 hinzugefügt werden. Sie können denselben mobilen JavaScript-Back-End-Dienst einem Projekt für eine universelle Windows-App hinzufügen. Weitere Informationen finden Sie in der Version für [die universelle Windows-App](/de-de/documentation/articles/mobile-services-javascript-backend-windows-universal-javascript-get-started-data) dieses Lernprogramms.
+>[AZURE.NOTE]Dieses Thema veranschaulicht, wie Azure Mobile Services einem Windows Store-Projekt mithilfe von Visual Studio 2013 hinzugefügt werden. Sie können denselben mobilen JavaScript-Back-End-Dienst einem Projekt für eine universelle Windows-App hinzufügen. Weitere Informationen finden Sie in der [Version für universelle Windows-Apps](/de-de/documentation/articles/mobile-services-javascript-backend-windows-universal-javascript-get-started-data) dieses Lernprogramms.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
-1. [Herunterladen des Windows Store-App-Projekts][Get the Windows Store app]
+1. [Herunterladen des Windows Store-App-Projekts][Abrufen der Windows Store-App] 
 2. [Erstellen des mobilen Diensts]
 3. [Hinzufügen einer Datentabelle als Speicher]
 4. [Aktualisieren der App zur Verwendung von Mobile Services]
@@ -32,7 +32,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 <h2><a name="download-app"></a>Download des GetStartedWithData-Projekts</h2>
 
-Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][Developer Code Samples site] auf. Dabei handelt es sich um ein Windows Store-App-Projekt in Visual Studio 2013. Die Benutzeroberfläche dieser App und die vom Mobile Services-Schnellstart generierte Benutzeroberfläche sind identisch, mit der Ausnahme, dass hinzugefügte Einträge lokal im Arbeitsspeicher gespeichert werden.  
+Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][Website mit Codebeispielen für Entwickler] auf. Dabei handelt es sich um ein Windows Store-App-Projekt in Visual Studio 2013. Die Benutzeroberfläche dieser App und die vom Mobile Services-Schnellstart generierte Benutzeroberfläche sind identisch, mit der Ausnahme, dass hinzugefügte Einträge lokal im Arbeitsspeicher gespeichert werden.  
 
 1. Laden Sie die JavaScript-Version der GetStartedWithData-Beispiel-App von der [Website mit den Codebeispielen für Entwickler] herunter. 
 
@@ -50,10 +50,10 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][Developer Co
 
 ##<a name="create-service"></a>Erstellen eines mobilen Diensts in Visual Studio
 
-[WACOM.INCLUDE [mobile-services-create-new-service-vs2013](../includes/mobile-services-create-new-service-vs2013.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-vs2013](../includes/mobile-services-create-new-service-vs2013.md)]
 
 <ol start="7">
-<li><p>Erweitern Sie die Ordner **services**, **mobile services**, **&lt;your_service&gt;** im Projektmappen-Explorer, öffnen Sie die Skriptdatei "service.js" und beachten Sie die neue globale Variable, die wie folgt aussieht:</p> 
+<li><p>Erweitern Sie im Projektmappen-Explorer die Ordner <strong>Dienste</strong>, <strong>Mobile Services</strong>, <strong>&lt;Ihr_Dienst&gt;</strong>, öffnen Sie die Skriptdatei "service.js", und beachten Sie die neue globale Variable, die wie das folgende Beispiel aussieht:</p> 
 
 		<pre><code>var todolistClient = new WindowsAzure.MobileServiceClient(
                 "https://todolist.azure-mobile.net/",
@@ -65,13 +65,13 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][Developer Co
 
 ##<a name="add-table"></a>Hinzufügen einer neuen Tabelle für die Datenspeicherung
 
-[WACOM.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
+[AZURE.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
 
->[WACOM.NOTE]Neue Tabellen werden mit den Spalten "Id", "__createdAt", "__updatedAt" und "__version" erstellt. Wenn das dynamische Schema aktiviert ist, generieren Mobile Services automatisch neue Spalten auf Grundlage des JSON-Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://msdn.microsoft.com/de-de/library/windowsazure/jj193175.aspx).
+>[AZURE.NOTE]Neue Tabellen werden mit den Spalten "Id", "__createdAt", "__updatedAt" und "__version" erstellt. Wenn das dynamische Schema aktiviert ist, generieren Mobile Services automatisch neue Spalten auf Grundlage des JSON-Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://msdn.microsoft.com/de-de/library/windowsazure/jj193175.aspx).
 
 #<a name="update-app"></a>Aktualisieren der App zur Verwendung des mobilen Diensts
 
-[WACOM.INCLUDE [mobile-services-windows-javascript-update-data-app](../includes/mobile-services-windows-javascript-update-data-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-javascript-update-data-app](../includes/mobile-services-windows-javascript-update-data-app.md)]
 
 ##<a name="test-app"></a>Testen der App mit dem neuen mobilen Dienst
 
@@ -130,7 +130,7 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 * [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]
-  <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit HTML und JavaScript.
+  <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit HTML und JavaScript.
 
 <!-- Anchors. -->
 
@@ -159,7 +159,8 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Website mit Codebeispielen für Entwickler]:  http://go.microsoft.com/fwlink/p/?LinkId=328660
+[Website mit den Codebeispielen für Entwickler]:  http://go.microsoft.com/fwlink/p/?LinkId=328660
 [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-html-how-to-use-client-library/
 
-<!--HONumber=35.2-->
+
+<!--HONumber=42-->

@@ -1,13 +1,13 @@
-﻿<properties urlDisplayName="Create a Media Processor" pageTitle="Erstellen eines Medienprozessors - Azure" metaKeywords="" description="Erfahren Sie, wie Sie eine Medienprozessorkomponente erstellen können, um Medieninhalte für Azure Media Services zu codieren, zu ver- oder entschlüsseln, und um Formate zu konvertieren. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Get a Media Processor Instance" authors="juliako" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Erstellen eines Medienprozessors - Azure" description="Erfahren Sie, wie Sie eine Medienprozessorkomponente erstellen können, um Medieninhalte für Azure Media Services zu codieren, zu ver- oder entschlüsseln, und um Formate zu konvertieren. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
 
 
 
 
 
 <h1>Gewusst wie: Abrufen einer Media Processor-Instanz</h1>
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Gewusst wie: Erstellen eines verschlüsselten Medienobjekts und Hochladen in den Speicher](../media-services-create-encrypted-asset-upload-storage/).
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure Media Services. Das vorherige Thema war [Gewusst wie: Erstellen eines verschlüsselten Medienobjekts und Hochladen in den Speicher](../ media-services-create-encrypted-asset-upload-storage/).
 
 Der Medienprozessor in Media Services ist für bestimmte Verarbeitungsaufgaben wie z. B. Codierung, Formatumwandlungen, Verschlüsselung oder Entschlüsselung von Medieninhalten zuständig. Normalerweise erstellen Sie einen Medienprozessor, wenn Sie eine Aufgabe zur Codierung, Verschlüsselung oder Formatumwandlung von Medieninhalten erstellen.
 
@@ -51,7 +51,7 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
 
 <br />
 
-Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Das folgende Beispiel setzt eine Variable auf Modulebene mit dem Namen **_context** voraus, die Zugriff auf den Serverkontext bietet. Siehe [Gewusst wie: Programmgesteuertes Verbinden mit Media Services].
+Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Dieses Codebeispiel verwendet eine Variable auf Modulebene namens **_context**, um auf den Serverkontext zu verweisen, wie beschrieben in [Gewusst wie: Programmgesteuertes Verbinden mit Media Services].
 
 <pre><code>
 private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
@@ -73,6 +73,4 @@ Sie sind nun in der Lage, eine Medienprozessor-Instanz zu erstellen, und können
 [Systemvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/de-de/library/jj129582.aspx
 [Gewusst wie: Programmgesteuertes Verbinden mit Media Services]: ../media-services-set-up-computer/
 
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

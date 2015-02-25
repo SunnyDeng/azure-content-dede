@@ -1,10 +1,24 @@
-﻿<properties urlDisplayName="Website from Gallery" pageTitle="Erstellen einer Orchard CMS-Website über die Galerie in Azure" metaKeywords="Azure-Website erstellen, Azure-Website verwalten" description="In diesem Lernprogramm erfahren Sie, wie Sie eine neue Website in Azure erstellen. Sie erfahren außerdem, wie Sie die Website über das Verwaltungsportal starten und verwalten." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Create an Orchard CMS website from the gallery in Azure" authors="tomfitz" solutions="" manager="wpickett" editor="" />
+﻿<properties 
+	pageTitle="Erstellen einer Orchard CMS-Website über die Galerie in Azure" 
+	description="In diesem Lernprogramm erfahren Sie, wie Sie eine neue Website in Azure erstellen. Sie erfahren außerdem, wie Sie die Website über das Verwaltungsportal starten und verwalten." 
+	services="web-sites" 
+	documentationCenter=".net" 
+	authors="tfitzmac" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="10/21/2014" ms.author="tomfitz" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="10/21/2014" 
+	ms.author="tomfitz"/>
 
 # Erstellen einer Orchard CMS-Website über die Galerie in Azure
 
-In der Galerie ist eine breite Auswahl an beliebten Webanwendungen verfügbar, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Für über die Galerie erstelle Webanwendungen muss außer dem Browser, der für die Verbindung zum [Azure-Verwaltungsportal](http://manage.windowsazure.com) genutzt wird, keinerlei Software installiert werden. Weitere Informationen zu den Webanwendungen in der Galerie finden Sie unter [Windows Web App Gallery](http://www.microsoft.com/web/gallery/categories.aspx).
+In der Galerie ist eine breite Auswahl an beliebten Webanwendungen verfügbar, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Für über die Galerie erstellte Webanwendungen muss außer dem Browser, der für die Verbindung zum [Azure-Verwaltungsportal](http://manage.windowsazure.com) verwendet wird, keinerlei Software installiert werden. Weitere Informationen über die Webanwendungen in der Galerie finden Sie unter [Windows Web App Gallery](http://www.microsoft.com/web/gallery/categories.aspx).
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -12,15 +26,15 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 - Starten und Verwalten der Website über das Verwaltungsportal
  
-Sie erstellen eine Orchard CMS-Site, die eine Standardvorlage verwendet. [Orchard](http://www.orchardproject.net/) ist eine kostenlose, .NET-basierte Open-Source-CMS-Anwendung, mit der Sie benutzerdefinierte, inhaltsgesteuerte Websites erstellen können. Orchard CMS umfasst ein Framework für die Erweiterbarkeit, über das Sie [weitere Module und Themen herunterladen](http://gallery.orchardproject.net/) können, um Ihre Site anzupassen. Die folgende Abbildung zeigt die Orchard CMS-Site, die Sie im Rahmen dieses Lernprogramms erstellen.
+Sie erstellen eine Orchard CMS-Site, die eine Standardvorlage verwendet. [Orchard](http://www.orchardproject.net/) ist eine kostenlose, .NET-basierte Open-Source-CMS-Anwendung, mit der Sie benutzerdefinierte, inhaltsgesteuerte Websites erstellen können. Orchard CMS umfasst ein Framework für die Erweiterbarkeit, über das Sie [weitere Module und Themen herunterladen](http://gallery.orchardproject.net/) können, um Ihre Website anzupassen. Die folgende Abbildung zeigt die Orchard CMS-Site, die Sie im Rahmen dieses Lernprogramms erstellen.
 
 ![Orchard blog][13]
 
-[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 <h2>Erstellen einer Orchard-Website über die Galerie</h2>
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
+1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
 
 2. Klicken Sie unten links im Portal auf das Symbol **Neu**.
 	
@@ -53,19 +67,19 @@ Azure startet den Erstellungs- und Bereitstellungsvorgang. Während die Website 
 
 	![browse button][12]
 
-2. Geben Sie die für Orchard erforderlichen Konfigurationsdaten ein, und klicken Sie zum Fertigstellen der Konfiguration und Öffnen der Startseite der Website auf **Finish Setup**.
+2. Geben Sie die für Orchard erforderlichen Konfigurationsdaten ein, und klicken Sie zum Fertigstellen der Konfiguration und Öffnen der Startseite der Website auf **Setup fertig stellen**.
 
 	![login to Orchard][7]
 
-Sie haben nun eine neue Orchard-Website, die der unten dargestellten Website ähnelt.  
+	Sie haben nun eine neue Orchard-Website, die der unten dargestellten Website ähnelt.  
 
 	![your Orchard site][13]
 
 3. In der [Orchard-Dokumentation](http://docs.orchardproject.net/) erfahren Sie mehr über Orchard und zur Konfiguration Ihrer neuen Website.
 
 <h2>Nächster Schritt</h2>
-* [Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix](/en-us/develop/net/tutorials/website-with-webmatrix/) - Erfahren Sie, wie Sie eine Azure-Website in WebMatrix bearbeiten. 
-* [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](/en-us/develop/net/tutorials/web-site-with-sql-database/) - Erfahren Sie, wie Sie mit Visual Studio eine neue Website erstellen.
+* [Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix](/de-de/develop/net/tutorials/website-with-webmatrix/) - Erfahren Sie, wie Sie eine Azure-Website in WebMatrix bearbeiten.
+* [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](/de-de/develop/net/tutorials/web-site-with-sql-database/) - Erfahren Sie, wie Sie mit Visual Studio eine neue Website erstellen.
 
 [1]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-01.png
 [2]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-02.png
@@ -77,3 +91,8 @@ Sie haben nun eine neue Orchard-Website, die der unten dargestellten Website äh
 [13]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-08.png
 
 
+
+
+
+
+<!--HONumber=42-->

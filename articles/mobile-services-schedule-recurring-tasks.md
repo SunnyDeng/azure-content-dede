@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Schedule Backend Tasks" pageTitle="Planen von Back-End-Aufgaben mit der Scheduler - Mobile Services" metaKeywords="" description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Schedule recurring jobs in Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Planen von Back-End-Aufgaben mit der Scheduler - Mobile Services" description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/26/2014" ms.author="glenga"/>
 
 # Planen von periodischen Aufträgen in Mobile Services 
 
@@ -20,41 +20,41 @@ In diesem Lernprogramm werden die Schritte bezüglich der Verwendung des Auftrag
 + [Erstellen der neuen Aktualisierungstabelle]
 + [Erstellen eines neuen geplanten Auftrags]
 
-## <a name="get-oauth-credentials"></a>Registrieren für Zugriff auf Twitter v1.1-APIs und Speichern von Anmeldeinformationen
+##<a name="get-oauth-credentials"></a>Registrieren für Zugriff auf Twitter v1.1-APIs und Speichern von Anmeldeinformationen
 
-[WACOM.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
+[AZURE.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
-## <a name="create-table"></a>Erstellen der neuen Aktualisierungstabelle
+##<a name="create-table"></a>Erstellen der neuen Updatestabelle
 
 Als Nächstes müssen Sie eine neue Tabelle erstellen, in der Tweets gespeichert werden.
 
-2. 	Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** für Ihren mobilen Dienst und anschließend auf **+Create**.
+2. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** für Ihren mobilen Dienst und anschließend auf **+Erstellen**.
 
    	![][2]
 
    	Das Dialogfeld **Neue Tabelle erstellen** wird angezeigt.
 
-3. Geben Sie unter **Tabellenname den Namen**_Updates_ ein, und klicken Sie auf den Häkchenknopf.
+3. Geben Sie unter **Tabellenname** den Namen "_Updates_" ein und klicken Sie dann auf die Schaltfläche "Aktivieren".
 
    	![][3]
 
   	Dadurch wird eine neue Speichertabelle **Updates** erstellt. 
 
-## <a name="add-job"></a>Erstellen eines neuen geplanten Auftrags  
+##<a name="add-job"></a>Erstellen eines neuen geplanten Auftrags  
 
 Sie können nun den geplanten Auftrag erstellen, der auf Twitter zugreift und Tweet-Daten in der neuen Aktualisierungstabelle speichert.
 
-2. Klicken Sie auf der Registerkarte **Scheduler** auf **+Create**. 
+2. Klicken Sie auf der Registerkarte **Scheduler** auf **+Erstellen**. 
 
    	![][4]
 
-    >[WACOM.NOTE]Wenn Sie Ihren mobilen Dienst auf der Ebene <em>Free</em> ausführen, können Sie lediglich einen geplanten Auftrag zur Zeit ausführen. Bei bezahlten Ebenen können Sie bis zu zehn geplante Aufträge zur Zeit ausführen.
+    >[AZURE.NOTE]Wenn Sie Ihren mobilen Dienst in der <em>Kostenlos</em>-Preisstufe ausführen, können Sie lediglich einen geplanten Auftrag zur Zeit ausführen. Bei bezahlten Ebenen können Sie bis zu zehn geplante Aufträge zur Zeit ausführen.
 
-3. Geben Sie im Scheduler-Dialog (Auftragsplanerdialog) den Eintrag _getUpdates_ für den **Auftragsnamen** ein. Stellen Sie die Planintervalle und -einheiten ein, und klicken Sie anschließend auf den Häkchenknopf. 
+3. Geben Sie im Schedulerdialogfenster den Eintrag "_getUpdates_" für **Auftragsname** ein. Stellen Sie die Planintervalle und -einheiten ein, und klicken Sie anschließend die Schaltfläche "Aktivieren". 
    
    	![][5]
 
-   	Dadurch wird ein neuer Auftrag namens **getUpdates** erstellt. 
+   	Dadurch wird ein neuer Auftrag mit dem Namen **getUpdates** erstellt. 
 
 4. Klicken Sie auf den gerade erstellten neuen Auftrag und danach auf die Registerkarte **Skript**.
 
@@ -136,21 +136,21 @@ Sie können nun den geplanten Auftrag erstellen, der auf Twitter zugreift und Tw
 		}
 
 
-   		Dieses Skript ruft die Twitter-Abfrage-API mit den gespeicherten Anmeldeinformationen auf, um aktuelle Tweets anzufordern, die das Hashtag `#mobileservices` enthalten. Doppelte Tweets und Antworten werden aus den Ergebnissen entfernt, bevor sie in der Tabelle gespeichert werden.
+   	Dieses Skript ruft die Twitter-Abfrage-API mit den gespeicherten Anmeldeinformationen auf, um aktuelle Tweets anzufordern, die das Hashtag `#mobileservices` enthalten. Doppelte Tweets und Antworten werden aus den Ergebnissen entfernt, bevor sie in der Tabelle gespeichert werden.
 
-    >[WACOM.NOTE]In diesem Beispiel wird davon ausgegangen, dass während eines jeden geplanten Laufs nur einige Zeilen in die Tabelle eingefügt werden. In jenen Fällen, bei denen eine Vielzahl von Zeilen in eine Schleife eingefügt werden, können Sie bei der Ausführung auf der Free-Ebene eventuell einen Mangel an Verbindungen feststellen. In diesem Fall sollten Sie Einfügungen in Stapeln vornehmen. Weitere Informationen finden Sie unter <a href="/de-de/develop/mobile/how-to-guides/work-with-server-scripts/#bulk-inserts">Gewusst wie: Ausführen von Masseneinfügungen</a>.
+    >[AZURE.NOTE]In diesem Beispiel wird davon ausgegangen, dass während eines jeden geplanten Laufs nur einige Zeilen in die Tabelle eingefügt werden. In jenen Fällen, bei denen eine Vielzahl von Zeilen in eine Schleife eingefügt werden, können Sie bei der Ausführung auf der Free-Ebene eventuell einen Mangel an Verbindungen feststellen. In diesem Fall sollten Sie Einfügungen in Stapeln vornehmen. Weitere Informationen finden Sie unter <a href="/de-de/develop/mobile/how-to-guides/work-with-server-scripts/#bulk-inserts">Gewusst wie: Ausführen von Masseneinfügungen</a>.
 
 6. Klicken Sie auf **Einmal ausführen**, um das Skript zu testen. 
 
   	![][7]
-       
+
    	Dadurch wird der Auftrag gespeichert und ausgeführt, während er im Scheduler deaktiviert bleibt.
 
-7. 	Klicken Sie auf die Zurück-Schaltfläche und dann auf **Daten**. Klicken Sie danach auf die Tabelle **Updates** und anschließend auf **Durchsuchen**. Überprüfen Sie im Anschluss, ob Twitter-Daten in die Tabelle eingefügt wurden.
+7. Klicken Sie auf die Schaltfläche "Zurück" und dann auf **Daten**. Klicken Sie danach auf die Tabelle **Updates** und anschließend auf **Durchsuchen**. Überprüfen Sie im Anschluss, ob Twitter-Daten in die Tabelle eingefügt wurden.
 
    	![][8]
 
-8. Klicken Sie auf die Zurück-Schaltfläche und danach auf **Scheduler**. Wählen Sie **getUpdates** aus, und klicken Sie dann auf **Enable**.
+8. Klicken Sie auf die Schaltfläche "Zurück" und dann auf **Scheduler**. Wählen Sie **getUpdates**, und klicken Sie dann auf **Aktivieren**.
 
    	![][9]
 
@@ -190,3 +190,6 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 [Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services]: /de-de/develop/mobile/how-to-guides/register-for-twitter-authentication
 [Twitter-Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App-Einstellungen]: http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+
+
+<!--HONumber=42-->

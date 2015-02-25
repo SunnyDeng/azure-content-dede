@@ -1,690 +1,503 @@
-﻿<properties urlDisplayName="Get Started with Media Services" pageTitle="Erste Schritte mit Media Services | Azure" metaKeywords="Azure media services" description="Eine Einführung in Media Services mit Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="juliako" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Erste Schritte mit Media Services-SDK.NET - Azure" description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services mithilfe von .NET." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
-
-
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/12/2015" ms.author="juliako"/>
 
 
+# Übermitteln von Video-on-Demand mit dem Media Services SDK für .NET 
 
-# <a name="getting-started"></a>Erste Schritte mit Media Services
+[AZURE.INCLUDE [Media Services-Auswahl - Erste Schritte](../includes/media-services-selector-get-started.md)]
 
-In diesem Lernprogramm erfahren Sie, wie Sie für Azure-Mediendienste entwickeln können. Sie lernen den Mediendienste-Arbeitsfluss und die gängigsten Programmierobjekte und Aufgaben für die Mediendienste-Entwicklung kennen. Nach Abschluss des Lernprogramms sind Sie in der Lage, eine einfache Mediendatei abzuspielen, die Sie hochgeladen, codiert und heruntergeladen haben. Alternativ können Sie zum codierten Objekt navigieren und dieses auf dem Server abspielen. 
 
-Sie finden ein C# Visual Studio-Projekt mit dem Code für dieses Lernprogramm hier: [Download](http://go.microsoft.com/fwlink/?linkid=253275).
+>[AZURE.NOTE]
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.
 
-In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
+Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mithilfe des Azure Media Services (AMS) SDK für .NET. 
 
-* [Einrichten Ihres Projekts](#Step1)
-* [Abrufen des Mediendienstserver-Kontexts](#Step2)
-* [Erstellen eines Medienobjekts und Hochladen von zugehörigen Dateien in Mediendiensten](#Step3)
-* [Codierung eines Medienobjekts und Download des Ausgabe-Medienobjekts](#Step4)
+Das Lernprogramm stellt den Media Services-Arbeitsfluss und die gängigsten Programmierobjekte und Aufgaben für die Media Services-Entwicklung vor. Nach Abschluss des Lernprogramms sind Sie in der Lage, eine einfache Mediendatei zu streamen oder progressiv herunterzuladen, die Sie hochgeladen, codiert und heruntergeladen haben.  
+
+Um eine Anwendung zur VoD-Inhaltsübermittlung zu implementieren, können Sie verschiedene Technologien (z. B. .NET, REST oder Java) oder Tools (Azure-Verwaltungsportal oder Azure Media Services Explorer) oder eine Kombination aus beiden verwenden. 
+
+In diesem Lernprogramm werden das Azure-Verwaltungsportal und das Media Services SDK für .NET verwendet, um die folgenden Aufgaben auszuführen:     
+
+
+1.  [Erstellen eines Media Services-Kontos mithilfe des Portals](#create_ams).
+2.  [Konfigurieren von Streaming-Einheiten mithilfe des Portals](#configure_streaming_units).
+3.  [Erstellen und Konfigurieren eines Visual Studio-Projekts](#configure_VS)
+4.  [Verwenden von .NET zum Hochladen, Codieren und Bereitstellen von Inhalten](#use_dotnet)
+	5.  [Herstellen einer Verbindung mit dem Media Services-Konto](#connect).
+	1.  [Erstellen eines neuen Objekts und Hochladen einer Videodatei](#upload).
+	1.  [Codieren einer Quelldatei in eine Reihe von adaptiven MP4-Dateien](#encode).
+	1.  [Konfigurieren der Übermittlungsrichtlinie für das codierte Medienobjekt](#configure_delivery_method).
+	2.  [Optional: Konfigurieren des dynamischen Inhaltsschutzes](#configure_content_protection). 
+	1.  [Veröffentlichen des Objekts und Abrufen von URLs für Streaming und progressiven Download](#publish_get_urls). 
+1.  [Wiedergeben Ihrer Inhalte](#play). 
 
 ## Voraussetzungen
-Für das Lernprogramm und die Entwicklung mit dem Azure Mediendienste-SDK benötigen Sie Folgendes.
+Die folgenden Voraussetzungen sind zum Einstieg in die Entwicklung mit dem Media Services SDK für .NET erforderlich.
 
-- Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Mediendienstekontos](http://go.microsoft.com/fwlink/?LinkId=256662).
 - Betriebssysteme: Windows 7, Windows 2008 R2, Windows 8 oder neuere Versionen.
-- .NET Framework 4.5 oder .NET Framework 4.
-- Visual Studio 2012, Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express) oder neuere Versionen.
-- Installieren Sie **Azure SDK für .NET**, **Azure Media Services SDK für .NET** und **WCF Data Services 5.0 für OData V3-Bibliotheken** und fügen Sie Verweise auf Ihr Projekt mit dem [windowsazure.mediaservices Nuget](http://nuget.org/packages/windowsazure.mediaservices) -Paket hinzu. Der folgende Abschnitt behandelt Installation und Einrichtung dieser Schnittstellen.
+- .NET Framework 4.5 oder .NET Framework 4.0
+- Visual Studio 2013, Visual Studio 2012, Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express).
 
->[WACOM.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Microsoft Azure-Testversion</a>.
 
-<h2><a id="Step1"></a>Einrichten Ihres Projekts</h2>
+## <a id="create_ams"></a>Erstellen Sie ein Media Services-Konto mithilfe des Portals
 
-1. Erstellen Sie eine neue C#-Konsolenanwendung in Visual Studio 2012 oder Visual Studio 2010 SP1. Geben Sie **Name**, **Ort** und **Lösungsname** ein und klicken Sie dann auf "OK". 
+1. Klicken Sie im [Verwaltungsportal][] auf **Neu**, klicken Sie auf **Media Service** und dann auf **Schnellerfassung**.
+   
+	![Media Services-Schnellerfassung](. / media/media-services-create-account/wams-QuickCreate.png)
 
-2. Fügen Sie einen Verweis auf die Assembly System.Configuration hinzu.
+2. Geben Sie in das Feld **NAME** den Namen des neuen Kontos ein. Der Name eines Media Services-Kontos darf nur Kleinbuchstaben oder Ziffern ohne Leerzeichen enthalten und muss aus 3 bis 24 Zeichen bestehen. 
 
-	Um Verweise mithilfe des Dialogfelds **Verweise verwalten** hinzuzufügen, gehen Sie wie folgt vor. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf den Knoten **Verweise** und klicken Sie auf **Verweis hinzufügen**. Wählen Sie im Dialogfeld **Verweise verwalten** die entsprechenden Assemblys aus (in diesem Fall "System.Configuration").
+3. Wählen Sie unter **REGION** die geografische Region aus, in der die Metadaten-Datensätze für Ihr Media Services-Konto gespeichert werden sollen. In der Dropdownliste werden nur die verfügbaren Media Services-Regionen angezeigt. 
 
-3. Falls Sie dies noch nicht getan haben, erstellen Sie Verweise auf die Bibliotheken **Azure SDK für .NET**.(Microsoft.WindowsAzure.StorageClient.dll), **Azure Media Services SDK für .NET** (Microsoft.WindowsAzure.MediaServices.Client.dll) und **WCF Data Services 5.0 für OData V3** (Microsoft.Data.OData.dll) mithilfe des <a href="http://nuget.org/packages/windowsazure.mediaservices">windowsazure.mediaservices Nuget</a> -Pakets. 
+4. Wählen Sie unter **SPEICHERKONTO** ein Speicherkonto aus, das als Blob-Speicher für die Medieninhalte aus Ihrem Media Services-Konto dienen soll. Sie können ein vorhandenes Speicherkonto in derselben geografischen Region wie Ihr Media Services-Konto auswählen oder ein neues Speicherkonto erstellen. Ein neues Speicherkonto wird in derselben Region erstellt. 
 
-	Um Verweise mit Nuget hinzuzufügen, gehen Sie wie folgt vor. Klicken Sie im Hauptmenü in Visual Studio auf "EXTRAS" -> "Bibliothekspaket-Manager" -> "Paket-Manager-Konsole". . Geben Sie folgenden Code in das Konsolenfenster ein: <i>Install-Package [Paketname]</i> und drücken Sie dann die EINGABETASTE (verwenden Sie hier den folgenden Befehl: <i>Install-Package windowsazure.mediaservices</i>.)
+5. Wenn Sie ein neues Speicherkonto erstellt haben, geben Sie im Feld **NEUER SPEICHERKONTONAME** einen Namen für das Speicherkonto an. Für Namen von Speicherkonten gelten die gleichen Regeln wie für Namen von Media Services-Konten.
 
-4. Fügen Sie einen *appSettings*-Bereich zur **app.config**-Datei hinzu und geben Sie Ihren Kontonamen und Kontoschlüssel für Azure-Mediendienste ein. Den Mediendienste-Benutzernamen und den Kontoschlüssel haben Sie bei der Kontoeinrichtung erhalten. Geben Sie diese Werte in die Attribute der einzelnen Einstellungen in der Datei app.config im Visual Studio-Projekt ein.
+6. Klicken Sie auf **Schnellerfassung** am unteren Rand des Formulars.
 
-	> [WACOM.NOTE]
-	In Visual Studio 2012 wird die Datei "App.config" standardmäßig hinzugefügt. In Visual Studio 2010 müssen Sie die Anwendungskonfigurationsdatei manuell erstellen.
+	Sie können den Status des Prozesses im Meldungsbereich unten im Fenster überwachen.
+
+	Wenn das Konto erfolgreich erstellt wurde, ändert sich der Status in "Aktiv". 
+	
+	Am unteren Rand der Seite wird die Schaltfläche **SCHLÜSSEL VERWALTEN** angezeigt. Wenn Sie auf diese Schaltfläche klicken, wird ein Dialogfeld mit dem Media Services-Kontonamen und dem primären und sekundären Schlüssel angezeigt. Sie benötigen den Kontonamen und den Primärschlüssel, um programmgesteuert auf das Media Services-Konto zugreifen zu können. 
+
+	
+	![Media Services Page](./media/media-services-create-account/wams-mediaservices-page.png)
+
+	Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite "Schnellstart" angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei auf dieser Seite oder auf der Seite INHALT hochladen.
+
+	 
+## <a id="configure_streaming_units"></a>Konfigurieren von Streaming-Einheiten mithilfe des Portals
+
+Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarios darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Beim Streaming mit adaptiver Bitrate kann der Client während der Videodarstellung abhängig von der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren auf einen Stream mit höherer oder niedrigerer Bitrate wechseln. Media Services unterstützt die folgenden Technologien für das Streaming mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (für Adobe PrimeTime/Access-Lizenznehmer verfügbar). 
+
+Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer kodierten adaptiven MP4- oder Smooth Streaming-Inhalte in von Media Services unterstützten Formaten (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie die Inhalte in diese Streamingformate verpacken müssen. 
+
+Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Aktionen ausführen:
+
+- Codieren oder Transcodieren Ihrer Zwischendatei (Quelldatei) in einen Satz von adaptiven MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Schritte dazu werden zu einem späteren Zeitpunkt gezeigt),  
+- Aufrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen.
+
+Mit dynamischer Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client. 
+
+Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zusätzlich zur dynamischen Paketerstellung auch eine dedizierte Ausgangskapazität bereitstellen, die in Schritten von 200 MBit/s erworben werden kann. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie reservierte Einheiten für On-Demand Streaming kaufen.
+
+
+Um die Anzahl der reservierten Einheiten für bedarfsgesteuertes Streaming zu ändern, gehen Sie folgendermaßen vor:
+
+1. Klicken Sie im [Verwaltungsportal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
+
+2. Wählen Sie die Seite STREAMING-ENDPUNKTE aus. Klicken Sie anschließend auf den Streaming-Endpunkt, den Sie ändern möchten.
+
+3. Um die Anzahl der Streaming-Einheiten anzugeben, wählen Sie die Registerkarte SKALIERUNG aus und verschieben Sie anschließend den Schieberegler für die **reservierte Kapazität**.
+
+	![Scale page](./media/media-services-how-to-scale/media-services-origin-scale.png)
+
+4. Klicken Sie auf die Schaltfläche "Speichern", um die Änderungen zu speichern.
+
+	Die Zuordnung neuer Einheiten für das bedarfsgesteuerte Streaming dauert ca. 20 Minuten. 
+
+	 
+	>[AZURE.NOTE] Aktuell kann das bedarfsgesteuerte Streaming für bis zu einer Stunde deaktiviert werden, wenn Sie einen positiven Wert für die Einheiten für das bedarfsgesteuerte Streaming zurück auf null setzen.
+	>
+	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Mobile Services – Preisdetails](http://go.microsoft.com/fwlink/?LinkId=275107).
+
+
+
+## <a id="configure_VS"></a>Erstellen und Konfigurieren eines Visual Studio-Projekts
+
+1. Erstellen Sie eine neue C#-Konsolenanwendung in Visual Studio 2013, Visual Studio 2012 oder Visual Studio 2010 SP1. Geben Sie den **Namen**, **Speicherort**, und den **Projektmappennamen** an, und klicken Sie dann auf OK. 
+
+2. Verwenden Sie das [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) Nuget-Paket, um die **Azure Media Services .NET SDK-Erweiterungen** zu installieren.  Media Services SDK-Erweiterungen für .NET ist ein Satz von Erweiterungsmethoden und Hilfsfunktionen, die Ihren Code vereinfachen und eine einfachere Entwicklung mit Media Services ermöglichen. Durch Installieren dieses Pakets werden auch das **Media Services .NET SDK** installiert und alle anderen erforderlichen Abhängigkeiten hinzugefügt.
+ 
+3. Hinzufügen eines Verweises auf System.Configuration Assembly. Diese Assembly enthält die System.Configuration.ConfigurationManager-Klasse, die zum Zugriff auf die Konfigurationsdateien (z. B. App.config) verwendet wird. 
+
+4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde) und fügen Sie einen *appSettings* Abschnitt zu der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. Um den Kontonamen und wichtige Informationen zu erhalten, öffnen Sie das Azure-Verwaltungsportal, wählen Sie Ihr Media Services-Konto und klicken Sie auf die Schaltfläche **Schlüssel verwalten**.
+
 
 	<pre><code>
-	<configuration>
-  	. . . 
-  	<appSettings>
-    	<add key="accountName" value="Add-Media-Services-Account-Name" />
-    	<add key="accountKey" value="Add-Media-Services-Account-Key" />
-  	</appSettings>
-	</configuration>
+	&lt;configuration&gt;
+        &lt;appSettings&gt;
+    	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" /&gt;
+        	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /&gt;
+  	    &lt;/appSettings&gt;
+	&lt;/configuration&gt;
 	</code></pre>
 
-5. Erstellen Sie einen Ordner auf Ihrem lokalen Computer mit dem Namen supportFiles (in diesem Beispiel befindet sich supportFiles unterhalb des MediaServicesGettingStarted-Projektordners.) Das zugehörige <a href="http://go.microsoft.com/fwlink/?linkid=253275">Projekt</a> zu diesem Lernprogramm enthält den supportFiles-Ordner. Sie können den Inhalt dieses Ordners in Ihren supportFiles-Ordner kopieren.
 
-6. Überschreiben Sie die existierenden using-Anweisungen am Anfang von Program.cs durch den folgenden Code.
+5. Überschreiben Sie die existierenden using-Anweisungen am Anfang von Program.cs durch den folgenden Code.
 
 		using System;
-		using System.Linq;
-		using System.Configuration;
-		using System.IO;
-		using System.Text;
-		using System.Threading;
-		using System.Threading.Tasks;
 		using System.Collections.Generic;
-		using Microsoft.WindowsAzure;
+		using System.Linq;
+		using System.Text;
+		using System.Threading.Tasks;
+		using System.Configuration;
+		using System.Threading;
+		using System.IO;
 		using Microsoft.WindowsAzure.MediaServices.Client;
+		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
+
+6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\VideoFiles" verwendet. 
+
+## <a id="use_dotnet"></a>Verwenden von .NET zum Hochladen, Codieren und Bereitstellen von Inhalten 
+
+Der Code in diesem Abschnitt veranschaulicht, wie die folgenden Aufgaben ausgeführt werden:
+
+1. Herstellen einer Verbindung mit dem Media Services-Konto
+1. Erstellen eines neuen Objekts und Hochladen einer Videodatei
+1. Codieren einer Quelldatei in eine Reihe von adaptiven MP4-Dateien
+1. Konfigurieren der Übermittlungsrichtlinie für das codierte Medienobjekt
+2. Optional: Konfigurieren des dynamischen Inhaltsschutzes
+1. Veröffentlichen des Medienobjekts und Abrufen von URLs 
 
 
-7. Fügen Sie die folgenden Pfadvariablen auf Klassenebene hinzu. Der **_supportFiles**-Pfad muss auf den Ordner aus dem vorherigen Schritt verweisen. 
+### <a id="connect"></a>Herstellen einer Verbindung mit dem Media Services-Konto
 
-		// Base support files path.  Update this field to point to the base path  
-		// for the local support files folder that you create. 
-		private static readonly string _supportFiles =
-		            Path.GetFullPath(@"../..\supportFiles");
-		
-		// Paths to support files (within the above base path). You can use 
-		// the provided sample media files from the "supportFiles" folder, or 
-		// provide paths to your own media files below to run these samples.
-		private static readonly string _singleInputFilePath =
-		    Path.GetFullPath(_supportFiles + @"\multifile\interview2.wmv");
-		private static readonly string _outputFilesFolder =
-		    Path.GetFullPath(_supportFiles + @"\outputfiles");
-		
-8. Fügen Sie die folgenden Variablen auf Klassenebene hinzu, um Authentifizierungs- und Verbindungseinstellungen abzurufen.  Die Einstellungen werden aus der App.Config-Datei geladen und werden für die Verbindung zu Mediendiensten sowie für Authentifikation und den Abruf eines Tokens für den Serverkontext benötigt. Der Projektcode referenziert diese Variablen, um eine Instanz des Serverkontexts zu erstellen.
+Wenn Sie Media Services mit .NET verwenden, müssen Sie die **CloudMediaContext**-Klasse für die meisten Media Services-Programmieraufgaben verwenden, so z. B. für das Herstellen einer Verbindung mit dem Media Services-Konto, das Erstellen, Aktualisieren, den Zugriff auf und das Löschen der folgenden Objekte: Medienobjekte, Objektdateien, Aufträge, Zugriffsrichtlinien, Locators usw. 
+ 
+Überschreiben Sie die Standardklasse des Programms durch den folgenden Code. Im Code wird veranschaulicht, wie die Werte aus der App.config-Datei gelesen und das CloudMediaContext-Objekt erstellt werden, um eine Verbindung zu Media Services herzustellen. Weitere Informationen zum Herstellen einer Verbindung mit Media Services finden Sie unter [Herstellen einer Verbindung mit Media Services mit dem Media Services SDK für .NET](http://msdn.microsoft.com/de-de/library/azure/jj129571.aspx).
+
+Die Funktion **Main** ruft Methoden auf, die weiter unten in diesem Abschnitt definiert werden.
 	
-		private static readonly string _accountKey = ConfigurationManager.AppSettings["accountKey"];
-		private static readonly string _accountName = ConfigurationManager.AppSettings["accountName"];
-
-9. Fügen Sie die folgende Variable auf Klassenebene hinzu, die als statischer Verweis auf den Serverkontext dient.
-
-		// Field for service context.
-		private static CloudMediaContext _context = null;
-		
-<h2><a id="Step2"></a>Abrufen des Media Services-Kontexts</h2>
-
-Das Mediendienst-Kontextobjekt enthält alle wichtigen Objekte und Sammlung für die Mediendienste-Programmierung. Der Kontext enthält Verweise auf wichtige Sammlungen inklusive Aufgaben, Medienobjekt, Dateien, Zugriffsrichtlinien, Locators und andere Objekte. Für die meisten Mediendienst-Programmieraufgaben benötigen Sie den Serverkontext.
-
-Fügen Sie in der Datei "Program.cs" den folgenden Code zu Anfang Ihrer **Main**-Methode hinzu. Dieser Code verwendet Ihren Mediendienste-Kontonamen und Kontoschlüssel aus der Datei app.config, um eine Instanz des Serverkontexts zu erstellen. Die Instanz wird zur **_context**-Variable zugewiesen, die Sie auf der Klassenebene erstellt haben.
-
-	// Get the service context.
-	_context = new CloudMediaContext(_accountName, _accountKey);
-	
-<h2><a id="Step3"></a>Erstellen eines Medienobjekts und Hochladen einer Datei</h2>
-
-Der Code in diesem Abschnitt erfüllt die folgenden Aufgaben: 
-
-1. Erstellen eines leeren Medienobjekts<br/>
-Bei der Erstellung von Medienobjekten können Sie drei verschiedene Optionen für deren Verschlüsselung auswählen. 
-
-	- **AssetCreationOptions.None**: keine Verschlüsselung. Wählen Sie diese Option aus, wenn Sie Ihr Medienobjekt nicht verschlüsseln möchten.
-	- **AssetCreationOptions.CommonEncryptionProtected**: für Dateien mit Common Encryption (CENC). Ein Beispiel ist ein Satz von Dateien, die bereits PlayReady-verschlüsselt sind. 
-	- **AssetCreationOptions.StorageEncrypted**: Speicherverschlüsselung. Verschlüsselt eine unverschlüsselte Eingabedatei vor dem Hochladen in den Azure-Speicher.
-
-		<div class="dev-callout"> 
-	<strong>Hinweis</strong> 
-	<p>Mediendienste bieten Speicherverschlüsselung auf der Festplatte, und nicht für die Netzwerkkommunikation wie Digital Rights Manager (DRM.)</p> 
-	</div>
-
-2. Erstellt eine AssetFile-Instanz, der wir das Medienobjekt zuweisen werden.
-3. Erstellt eine AccessPolicy-Instanz mit den Berechtigungen und der Zugriffsdauer auf das Medienobjekt.
-4. Erstellt eine Locator-Instanz, die Zugriff auf das Medienobjekt bietet.
-5. Lädt eine einzelne Datei in einen Mediendienst hoch. Den Erstellungs- und Uploadprozess nennt man auch die Erfassung von Medienobjekten.
-
-Fügen Sie die folgenden Methoden zur Klasse hinzu:
-
-<pre><code>
-static private IAsset CreateEmptyAsset(string assetName, AssetCreationOptions assetCreationOptions)
-{
-    var asset = _context.Assets.Create(assetName, assetCreationOptions);
-
-    Console.WriteLine("Asset name: " + asset.Name);
-    Console.WriteLine("Time created: " + asset.Created.Date.ToString());
-
-    return asset;
-}
-
-static public IAsset CreateAssetAndUploadSingleFile(AssetCreationOptions assetCreationOptions, string singleFilePath)
-{
-    var assetName = "UploadSingleFile_" + DateTime.UtcNow.ToString();
-    var asset = CreateEmptyAsset(assetName, assetCreationOptions);
-
-    var fileName = Path.GetFileName(singleFilePath);
-
-    var assetFile = asset.AssetFiles.Create(fileName);
-
-    Console.WriteLine("Created assetFile {0}", assetFile.Name);
-
-    var accessPolicy = _context.AccessPolicies.Create(assetName, TimeSpan.FromDays(3),
-                                                        AccessPermissions.Write | AccessPermissions.List);
-
-    var locator = _context.Locators.CreateLocator(LocatorType.Sas, asset, accessPolicy);
-
-    Console.WriteLine("Upload {0}", assetFile.Name);
-
-    assetFile.Upload(singleFilePath);
-    Console.WriteLine("Done uploading of {0} using Upload()", assetFile.Name);
-
-    locator.Delete();
-    accessPolicy.Delete();
-
-    return asset;
-}
-
-</code></pre>
-
-Fügen Sie einen Aufruf der Methode nach der Zeile **\_context = new CloudMediaContext(_accountName, _accountKey);** in Ihrer Main-Methode hinzu. 
-
-	IAsset asset = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, _singleInputFilePath)
-
-<h2><a id="Step4"></a>Codieren des Medienobjekts auf dem Server und Download des Ausgabe-Medienobjekts</h2>
-
-In Mediendiensten können Sie Aufträge erstellen, die Medieninhalte auf verschiedene Arten verarbeiten: Codierung, Verschlüsselung, Formatumwandlungen usw. Ein Mediendienste-Auftrag enthält immer eine oder mehrere Aufgaben, in denen die Verarbeitungsdetails festgelegt sind. In diesem Abschnitt erstellen Sie eine einfache Codierungsaufgabe und führen diese anschließend in einem Auftrag mit dem Azure-Medienencoder aus. Die Aufgabe verwendet eine vorkonfigurierte Zeichenfolge, um die auszuführende Codierung anzugeben. Eine Liste der voreingestellten Codierungswerte finden Sie unter [Systemvoreinstellungen für den Azure Media Encoder](http://msdn.microsoft.com/de-de/library/windowsazure/jj129582.aspx) . Mediendienste unterstützen dieselben Ein- und Ausgabeformate für Mediendatei wie der Microsoft Expression Encoder. Eine Liste unterstützter Formate finden Sie unter [Unterstützte Dateitypen für Mediendienste](http://msdn.microsoft.com/de-de/library/windowsazure/hh973634.aspx).
-
-<ol>
-<li>
-Fügen Sie die folgende <strong>CreateEncodingJob</strong>-Methode zu Ihrer Klasse hinzu. Diese Methode demonstriert die Ausführung verschiedener Aufgaben für einen Codierungsauftrag:
-<ul>
-<li>
-Declare a new job.
-</li>
-<li>
-Definieren eines Medienprozessors für die Verarbeitung des Auftrags. Der Medienprozessor ist für Codierung, Verschlüsselung, Formatumwandlungen und andere verwandte Verarbeitungsaufträge zuständig. Ihnen stehen mehrere verschiedene Medienprozessoren zur Verfügung (mit _context.MediaProcessors können Sie diese Liste durchlaufen). Die später in diesem Lernprogramm gezeigte GetLatestMediaProcessorByName-Methode gibt den Azure-Medienencoder-Prozessor zurück.
-</li>
-<li>
-Definieren einer neuen Aufgabe. Jeder Auftrag enthält eine oder mehrere Aufgaben. Sie übergeben mit der Aufgabe einen lesbaren Namen, eine Medienprozessor-Instanz, eine Aufgabenkonfigurations-Zeichenfolge und Optionen für die Aufgabenerstellung. Die Konfigurations-Zeichenfolge gibt die Codierungseinstellungen vor. Dieses Beispiel verwendet die Einstellung <strong>H264 Broadband 720p</strong>. Diese Voreinstellung produziert eine einzige MP4-Datei. Weitere Informationen zu voreingestellten Codierungswerten finden Sie unter <a href="http://msdn.microsoft.com/library/windowsazure/jj129582.aspx">Systemvoreinstellungen für den Azure Media Encoder</a>.
-</li>
-<li>
-Hinzufügen eines Eingabe-Medienobjekts zur Aufgabe. Für dieses Beispiel verwenden Sie das im vorigen Abschnitt erstellte Eingabe-Medienobjekt.
-</li>
-<li>
-Hinzufügen eines Ausgabe-Medienobjekts zur Aufgabe. Geben Sie für ein Ausgabe-Medienobjekt einen Anzeigenamen, einen booleschen Wert zur Angabe, ob die Ausgabe nach Abschluss des Jobs auf dem Server gespeichert wird, und einen <strong>AssetCreationOptions.None</strong> -Wert an, um anzuzeigen, dass die Ausgabe für die Speicherung und den Transport nicht verschlüsselt wird. 
-</li>
-<li>
-Übermitteln des Auftrags.<br/>
-Die Übermittlung des Auftrags ist der letzte erforderliche Schritt für Codierungsaufgaben.
-</li>
-</ul>
-Diese Methode demonstriert ebenfalls andere nützliche (aber optionale) Aufgaben wie z. B. Verfolgung des Fortschritts und Zugriff auf das Ausgabe-Medienobjekt Ihres Auftrags.
-<pre><code>
-static IJob CreateEncodingJob(IAsset asset, string inputMediaFilePath, string outputFolder)
-{
-    // Declare a new job.
-    IJob job = _context.Jobs.Create("My encoding job");
-    // Get a media processor reference, and pass to it the name of the 
-    // processor to use for the specific task.
-    IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
-
-    // Create a task with the encoding details, using a string preset.
-    ITask task = job.Tasks.AddNew("My encoding task",
-        processor,
-        "H264 Broadband 720p",
-        Microsoft.WindowsAzure.MediaServices.Client.TaskOptions.ProtectedConfiguration);
-
-    // Specify the input asset to be encoded.
-    task.InputAssets.Add(asset);
-    // Add an output asset to contain the results of the job. 
-    // This output is specified as AssetCreationOptions.None, which 
-    // means the output asset is not encrypted. 
-    task.OutputAssets.AddNew("Output asset",
-        AssetCreationOptions.None);
-    // Use the following event handler to check job progress.  
-    job.StateChanged += new
-            EventHandler<JobStateChangedEventArgs>(StateChanged);
-
-    // Launch the job.
-    job.Submit();
-
-    // Optionally log job details. This displays basic job details
-    // to the console and saves them to a JobDetails-{JobId}.txt file 
-    // in your output folder.
-    LogJobDetails(job.Id);
-
-    // Check job execution and wait for job to finish. 
-    Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
-    progressJobTask.Wait();
-
-    // **********
-    // Optional code.  Code after this point is not required for 
-    // an encoding job, but shows how to access the assets that 
-    // are the output of a job, either by creating URLs to the 
-    // asset on the server, or by downloading. 
-    // **********
-
-    // Get an updated job reference.
-    job = GetJob(job.Id);
-
-    // If job state is Error the event handling 
-    // method for job progress should log errors.  Here we check 
-    // for error state and exit if needed.
-    if (job.State == JobState.Error)
+    class Program
     {
-        Console.WriteLine("\nExiting method due to job error.");
-        return job;
-    }
+        // Read values from the App.config file.
+        private static readonly string _mediaServicesAccountName =
+            ConfigurationManager.AppSettings["MediaServicesAccountName"];
+        private static readonly string _mediaServicesAccountKey =
+            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 
-    // Get a reference to the output asset from the job.
-    IAsset outputAsset = job.OutputMediaAssets[0];
-    IAccessPolicy policy = null;
-    ILocator locator = null;
+        // Field for service context.
+        private static CloudMediaContext _context = null;
+        private static MediaServicesCredentials _cachedCredentials = null;
 
-    // Declare an access policy for permissions on the asset. 
-    // You can call an async or sync create method. 
-    policy =
-        _context.AccessPolicies.Create("My 30 days readonly policy",
-            TimeSpan.FromDays(30),
-            AccessPermissions.Read);
-
-    // Create a SAS locator to enable direct access to the asset 
-    // in blob storage. You can call a sync or async create method.  
-    // You can set the optional startTime param as 5 minutes 
-    // earlier than Now to compensate for differences in time  
-    // between the client and server clocks. 
-
-    locator = _context.Locators.CreateLocator(LocatorType.Sas, outputAsset,
-        policy,
-        DateTime.UtcNow.AddMinutes(-5));
-
-    // Build a list of SAS URLs to each file in the asset. 
-    List<String> sasUrlList = GetAssetSasUrlList(outputAsset, locator);
-
-    // Write the URL list to a local file. You can use the saved 
-    // SAS URLs to browse directly to the files in the asset.
-    if (sasUrlList != null)
-    {
-        string outFilePath = Path.GetFullPath(outputFolder + @"\" + "FileSasUrlList.txt");
-        StringBuilder fileList = new StringBuilder();
-        foreach (string url in sasUrlList)
+        static void Main(string[] args)
         {
-            fileList.AppendLine(url);
-            fileList.AppendLine();
-        }
-        WriteToFile(outFilePath, fileList.ToString());
-
-        // Optionally download the output to the local machine.
-        DownloadAssetToLocal(job.Id, outputFolder);
-    }
-
-    
-    return job;
-}
-
-</code></pre>
-</li>
-<li>
-Fügen Sie einen Aufruf der Methode <strong>CreateEncodingJob</strong> in der Methode <strong>Main</strong> hinter den zuvor hinzugefügten Zeilen hinzu.
-<pre><code>
-CreateEncodingJob(asset, _singleInputFilePath, _outputFilesFolder);
-</code></pre>
-</li>
-<li>
-Fügen Sie die folgenden Helfermethoden zur Klasse hinzu. Diese Methoden unterstützten die <strong>CreateEncodingJob</strong> -Methode. Es folgt eine Zusammenfassung der Helfermethoden.
-<ul>
-<li>
-Die <strong>GetLatestMediaProcessorByName</strong> -Methode gibt einen korrekten Medienprozessor für Codierung, Verschlüsselung oder andere verwandte Verarbeitungsaufgaben zurück. Sie können den Medienprozessor mit dem entsprechenden Zeichenfolgennamen des Prozessors erstellen. Die folgenden Zeichenfolgen können an die Methode für den mediaProcessor-Parameter übergeben werden: <strong>Azure Media Encoder</strong>, <strong>Azure Media Packager</strong>, <strong>Azure Media Encryptor</strong>, <strong>Storage Decryption</strong>.
-<pre><code>
-private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
-{
-    // The possible strings that can be passed into the 
-    // method for the mediaProcessor parameter:
-    //   Azure Media Encoder
-    //   Windows Azure Media Packager
-    //   Windows Azure Media Encryptor
-    //   Storage Decryption
-
-    var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
-        ToList().OrderBy(p => new Version(p.Version)).LastOrDefault();
-
-    if (processor == null)
-        throw new ArgumentException(string.Format("Unknown media processor", mediaProcessorName));
-
-    return processor;
-}
-
-</code></pre>
-</li>
-<li>
-Beim Ausführen von Aufträgen ist es nützlich, deren Fortschritt verfolgen zu können. Das folgende Codebeispiel definiert den StateChanged-Ereignishandler. Dieser Ereignishandler verfolgt den Auftragsfortschritt und liefert Statusupdates je nach Auftragsstatus. Der Code definiert außerdem die LogJobStop-Methode. Diese Helfermethode protokolliert Fehlerdetails.
-
-<pre><code>
-private static void StateChanged(object sender, JobStateChangedEventArgs e)
-{
-    Console.WriteLine("Job state changed event:");
-    Console.WriteLine("  Previous state: " + e.PreviousState);
-    Console.WriteLine("  Current state: " + e.CurrentState);
-
-    switch (e.CurrentState)
-    {
-        case JobState.Finished:
-            Console.WriteLine();
-            Console.WriteLine("********************");
-            Console.WriteLine("Job is finished.");
-            Console.WriteLine("Please wait while local tasks or downloads complete...");
-            Console.WriteLine("********************");
-            Console.WriteLine();
-            Console.WriteLine();
-            break;
-        case JobState.Canceling:
-        case JobState.Queued:
-        case JobState.Scheduled:
-        case JobState.Processing:
-            Console.WriteLine("Please wait...\n");
-            break;
-        case JobState.Canceled:
-        case JobState.Error:
-            // Cast sender as a job.
-            IJob job = (IJob)sender;
-            // Display or log error details as needed.
-            LogJobStop(job.Id);
-            break;
-        default:
-            break;
-    }
-}
-
-private static void LogJobStop(string jobId)
-{
-    StringBuilder builder = new StringBuilder();
-    IJob job = GetJob(jobId);
-
-    builder.AppendLine("\nThe job stopped due to cancellation or an error.");
-    builder.AppendLine("***************************");
-    builder.AppendLine("Job ID: " + job.Id);
-    builder.AppendLine("Job Name: " + job.Name);
-    builder.AppendLine("Job State: " + job.State.ToString());
-    builder.AppendLine("Job started (server UTC time): " + job.StartTime.ToString());
-    builder.AppendLine("Media Services account name: " + _accountName);
-    // Log job errors if they exist.  
-    if (job.State == JobState.Error)
-    {
-        builder.Append("Error Details: \n");
-        foreach (ITask task in job.Tasks)
-        {
-            foreach (ErrorDetail detail in task.ErrorDetails)
+            try
             {
-                builder.AppendLine("  Task Id: " + task.Id);
-                builder.AppendLine("    Error Code: " + detail.Code);
-                builder.AppendLine("    Error Message: " + detail.Message + "\n");
+                // Create and cache the Media Services credentials in a static class variable.
+                _cachedCredentials = new MediaServicesCredentials(
+                                _mediaServicesAccountName,
+                                _mediaServicesAccountKey);
+                // Used the chached credentials to create CloudMediaContext.
+                _context = new CloudMediaContext(_cachedCredentials);
+
+                // Add calls to methods defined in this section.
+
+                IAsset inputAsset =
+                    UploadFile(@"C:\VideoFiles\BigBuckBunny.mp4", AssetCreationOptions.None);
+
+                IAsset encodedAsset =
+                    EncodeToAdaptiveBitrateMP4s(inputAsset, AssetCreationOptions.None);
+
+                ConfigureClearAssetDeliveryPolicy(encodedAsset);
+
+                PublishAssetGetURLs(encodedAsset);
+            }
+            catch (Exception exception)
+            {
+                // Parse the XML error message in the Media Services response and create a new 
+                // exception with its content.
+                exception = MediaServicesExceptionParser.Parse(exception);
+
+                Console.Error.WriteLine(exception.Message);
+            }
+            finally
+            {
+                Console.ReadLine();
             }
         }
-    }
-    builder.AppendLine("***************************\n");
-    // Write the output to a local file and to the console. The template 
-    // for an error output file is:  JobStop-{JobId}.txt
-    string outputFile = _outputFilesFolder + @"\JobStop-" + JobIdAsFileName(job.Id) + ".txt";
-    WriteToFile(outputFile, builder.ToString());
-    Console.Write(builder.ToString());
-}
 
-private static void LogJobDetails(string jobId)
-{
-    StringBuilder builder = new StringBuilder();
-    IJob job = GetJob(jobId);
+### <a id="upload"></a>Erstellen eines neuen Objekts und Hochladen einer Videodatei
 
-    builder.AppendLine("\nJob ID: " + job.Id);
-    builder.AppendLine("Job Name: " + job.Name);
-    builder.AppendLine("Job submitted (client UTC time): " + DateTime.UtcNow.ToString());
-    builder.AppendLine("Media Services account name: " + _accountName);
+In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch oder erfassen sie auf diese Weise. Die **Medienobjekt**-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien (und die Metadaten zu diesen Dateien) enthalten.  Nachdem die Dateien hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert. Die Dateien im Medienobjekt heißen **Medienobjektdateien**.
 
-    // Write the output to a local file and to the console. The template 
-    // for an error output file is:  JobDetails-{JobId}.txt
-    string outputFile = _outputFilesFolder + @"\JobDetails-" + JobIdAsFileName(job.Id) + ".txt";
-    WriteToFile(outputFile, builder.ToString());
-    Console.Write(builder.ToString());
-}
-        
-private static string JobIdAsFileName(string jobID)
-{
-    return jobID.Replace(":", "_");
-}
-</code></pre>
-</li>
-<li>
-Die WriteToFile-Methode schreibt eine Datei in den angegebenen Ausgabeordner.
-<pre><code>
-static void WriteToFile(string outFilePath, string fileContent)
-{
-    StreamWriter sr = File.CreateText(outFilePath);
-    sr.Write(fileContent);
-    sr.Close();
-}
+Die unten definierte **UploadFile**-Methode ruft **CreateFromFile** auf, die in .NET SDK-Erweiterungen definiert ist. **CreateFromFile** erstellt ein neues Medienobjekt, in das die angegebene Quelldatei hochgeladen wird. 
 
-</code></pre>
-</li>
-<li>
-Nach der Codierung von Medienobjekten in Mediendiensten können Sie die Ausgabe-Medienobjekte des Codierungsauftrags abrufen. In diesem Lernprogramm werden zwei Zugriffsmöglichkeiten auf die Ausgabe von Codierungsaufträgen vorgestellt:
-<ul>
-<li>
-Erstellen einer SAS-URL zu einem Medienobjekt auf dem Server. 
-</li>
-<li>
-Download des Ausgabe-Medienobjekts vom Server.
-</li>
-</ul>
-Die GetAssetSasUrlList-Methode erstellt eine Liste von SAS-URLs zu allen Dateien in einem Medienobjekt. 
-<pre><code>
-static List<String> GetAssetSasUrlList(IAsset asset, ILocator locator)
-{
-    // Declare a list to contain all the SAS URLs.
-    List<String> fileSasUrlList = new List<String>();
+Die **CreateFromFile**-Methode übernimmt **AssetCreationOptions**, wodurch Sie eine der folgenden Erstellungsoptionen für Medienobjekte angeben können:
+ 
+- **None** - Es wird keine Verschlüsselung verwendet. Dies ist der Standardwert. Beachten Sie, dass bei Verwendung dieser Option Ihre Inhalte während der Übertragung oder des Verbleibs im Speicher nicht geschützt sind.
+Wenn Sie planen, eine MP4-Datei über progressives Herunterladen zu übermitteln, verwenden Sie diese Option. 
+- **StorageEncrypted** - Verschlüsselt Ihre Inhalte lokal mithilfe von AES-256-Bit-Verschlüsselung und lädt sie dann in Azure Storage hoch, wo sie verschlüsselt im Ruhezustand gespeichert werden. Medienobjekte, die durch Storage Encryption geschützt sind, werden automatisch entschlüsselt, vor der Codierung in einem verschlüsselten Dateisystem platziert und optional vor dem Hochladen als neues Ausgabemedienobjekt erneut verschlüsselt. Der primäre Anwendungsfall für Storage Encryption ist, wenn Sie Ihre qualitativ hochwertigen Eingabemediendateien mit starker Verschlüsselung beim Speichern im Ruhezustand auf dem Datenträger sichern möchten.
+- **CommonEncryption** -Verwenden Sie diese Option, wenn Sie Inhalte hochladen, die bereits verschlüsselt wurden und durch Common Encryption oder PlayReady-DRM geschützt sind (z. B. mit PlayReady-DRM geschütztes Smooth Streaming).
+- **EnvelopeEncrypted** - Verwenden Sie diese Option, wenn Sie mit AES verschlüsseltes HLS hochladen. Beachten Sie, dass die Dateien durch Transform Manager codiert und verschlüsselt worden sein müssen.
 
-    // If the asset has files, build a list of URLs to 
-    // each file in the asset and return. 
-    foreach (IAssetFile file in asset.AssetFiles)
+Mit der **CreateFromFile**-Methode können Sie auch einen Rückruf angeben, um den Fortschritt des Dateiuploads zu melden.
+
+Im folgenden Beispiel geben wir **None** für die Medienobjekt-Optionen an.
+
+Fügen Sie die folgende Methode zur Program-Klasse hinzu.
+
+	static public IAsset UploadFile(string fileName, AssetCreationOptions options)
+	{
+	    IAsset inputAsset = _context.Assets.CreateFromFile(
+	        fileName,
+	        options,
+	        (af, p) =>
+	        {
+	            Console.WriteLine("Uploading '{0}' - Progress: {1:0.##}%", af.Name, p.Progress);
+	        });
+	
+	    Console.WriteLine("Asset {0} created.", inputAsset.Id);
+	
+	    return inputAsset;
+	}
+
+
+### <a id="encode"></a>Codieren einer Quelldatei in eine Reihe von adaptiven MP4-Dateien
+
+Nach dem Erfassen der Medienobjekte in Media Services können die Medien u. a. codiert, transcodiert/multiplexiert und mit einem Wasserzeichen versehen werden, bevor sie an die Clients übermittelt werden. Diese Aktivitäten werden geplant und für mehrere Hintergrundrolleninstanzen ausgeführt, um hohe Leistung und Verfügbarkeit zu gewährleisten. Diese Aktivitäten werden als Aufträge bezeichnet, und jeder Auftrag besteht aus atomarischen Aufgaben, die die eigentliche Arbeit an der Ressourcendatei verrichten. 
+
+Wie bereits erwähnt wurde, besteht beim Arbeiten mit Azure Media Services eines der häufigsten Szenarios darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Media Services können eine Reihe von adaptiven MP4-Dateien dynamisch in eines der folgenden Formate verpacken: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (für Adobe PrimeTime/Access-Lizenznehmer verfügbar). 
+
+Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Aktionen ausführen:
+
+- Codieren oder Transcodieren Ihrer Zwischendatei (Quelldatei) in einen Satz von adaptiven MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate,  
+- Aufrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. 
+
+Der folgende Code zeigt, wie Sie einen Codierungsauftrag senden. Der Auftrag enthält einen Task zum Transcodieren der Zwischendatei in eine Reihe von adaptiven MP4s mit **Azure Media Encoder**. Der Code sendet den Auftrag und wartet, bis er abgeschlossen ist. 
+
+Wenn der Auftrag abgeschlossen ist, sind Sie in der Lage, das Medienobjekt zu streamen oder MP4-Dateien, die als Ergebnis der Transcodierung erstellt wurden, progressiv herunterzuladen.
+Beachten Sie, dass Sie keine On-Demand-Streamingeinheiten abrufen müssen, um MP4-Dateien progressiv herunterzuladen. 
+
+
+Fügen Sie die folgende Methode zur Program-Klasse hinzu.
+
+	static public IAsset EncodeToAdaptiveBitrateMP4s(IAsset asset, AssetCreationOptions options)
+	{
+		// Prepare a job with a single task to transcode the specified asset
+        // into a multi-bitrate asset.
+
+	    IJob job = _context.Jobs.CreateWithSingleTask(
+	        MediaProcessorNames.AzureMediaEncoder,
+	        MediaEncoderTaskPresetStrings.H264AdaptiveBitrateMP4Set720p,
+	        asset,
+	        "Adaptive Bitrate MP4",
+	        options);
+	
+		Console.WriteLine("Submitting transcoding job...");
+	
+
+	    // Submit the job and wait until it is completed.
+	    job.Submit();
+	
+	    job = job.StartExecutionProgressTask(
+	        j =>
+	        {
+	            Console.WriteLine("Job state: {0}", j.State);
+	            Console.WriteLine("Job progress: {0:0.##}%", j.GetOverallProgress());
+	        },
+	        CancellationToken.None).Result;
+	
+	    Console.WriteLine("Transcoding job finished.");
+	
+	    IAsset outputAsset = job.OutputMediaAssets[0];
+	
+	    return outputAsset;
+	}
+
+
+### <a id="configure_content_protection"></a>Optional: Konfigurieren des dynamischen Inhaltsschutzes
+
+Informationen zum Konfigurieren von Inhaltsschutz finden Sie in den folgenden Artikeln:
+
+- [Dynamische AES-128-Verschlüsselung und Schlüsselbereitstellungsdienst](http://msdn.microsoft.com/de-de/library/azure/dn783457.aspx)
+- [Dynamische PlayReady-Verschlüsselung und Lizenzübermittlungsdienst](http://msdn.microsoft.com/de-de/library/azure/dn783467.aspx)
+- [Bereitstellung von Storage Encrypted-Inhalten](http://msdn.microsoft.com/de-de/library/azure/dn783451.aspx)
+
+### <a id="configure_delivery_method"></a>Konfigurieren der Übermittlungsrichtlinie für das codierte Medienobjekt
+
+Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist das Konfigurieren von Übermittlungsrichtlinien für das Medienobjekt. Die Konfiguration der Übermittlungsrichtlinien für das Medienobjekt umfasst u. a. Folgendes: die Protokolle, die verwendet werden können (z. B. MPEG DASH, HLS, HDS, Smooth Streaming oder alle), ob das Medienobjekt dynamisch verschlüsselt werden soll und wie dies geschehen soll (Umschlagverschlüsselung oder allgemeine Verschlüsselung). 
+
+Die folgende **ConfigureClearAssetDeliveryPolicy**-Methode gibt an, dass dynamische Verschlüsselung nicht verwendet und der Stream in einem der folgenden Protokolle übermittelt werden soll:  MPEG DASH, HLS und Smooth Streaming-Protokolle. 
+  
+Fügen Sie die folgende Methode zur Program-Klasse hinzu.
+
+    static public void ConfigureClearAssetDeliveryPolicy(IAsset asset)
     {
-        string sasUrl = BuildFileSasUrl(file, locator);
-        fileSasUrlList.Add(sasUrl);
-    }
+        IAssetDeliveryPolicy policy =
+            _context.AssetDeliveryPolicies.Create("Clear Policy",
+            AssetDeliveryPolicyType.NoDynamicEncryption, 
+            AssetDeliveryProtocol.HLS | AssetDeliveryProtocol.SmoothStreaming | AssetDeliveryProtocol.Dash, null);
 
-    // Return the list of SAS URLs.
-    return fileSasUrlList;
-}
-
-// Create and return a SAS URL to a single file in an asset. 
-static string BuildFileSasUrl(IAssetFile file, ILocator locator)
-{
-    // Take the locator path, add the file name, and build 
-    // a full SAS URL to access this file. This is the only 
-    // code required to build the full URL.
-    var uriBuilder = new UriBuilder(locator.Path);
-    uriBuilder.Path += "/" + file.Name;
-
-    // Optional:  print the locator.Path to the asset, and 
-    // the full SAS URL to the file
-    Console.WriteLine("Locator path: ");
-    Console.WriteLine(locator.Path);
-    Console.WriteLine();
-    Console.WriteLine("Full URL to file: ");
-    Console.WriteLine(uriBuilder.Uri.AbsoluteUri);
-    Console.WriteLine();
-
-
-    //Return the SAS URL.
-    return uriBuilder.Uri.AbsoluteUri;
-}
-
-</code></pre>
-</li>
-<li>
-Die <strong>DownloadAssetToLocal</strong> -Methode lädt die einzelnen Dateien des Medienobjekts in einen lokalen Ordner herunter. Da das Medienobjekt in diesem Beispiel mit einer Eingabe-Mediendatei erstellt wurde, enthält das Ausgabe-Medienobjekt zwei Dateien: die codierte Mediendatei (eine .mp4-Datei) und eine .xml-Datei mit Metadaten zum Medienobjekt. Die Methode lädt beide Dateien herunter.
-<pre><code>
-static IAsset DownloadAssetToLocal(string jobId, string outputFolder)
-{
-    // This method illustrates how to download a single asset. 
-    // However, you can iterate through the OutputAssets
-    // collection, and download all assets if there are many. 
-
-    // Get a reference to the job. 
-    IJob job = GetJob(jobId);
-    // Get a reference to the first output asset. If there were multiple 
-    // output media assets you could iterate and handle each one.
-    IAsset outputAsset = job.OutputMediaAssets[0];
-
-    IAccessPolicy accessPolicy = _context.AccessPolicies.Create("File Download Policy", TimeSpan.FromDays(30), AccessPermissions.Read);
-    ILocator locator = _context.Locators.CreateSasLocator(outputAsset, accessPolicy);
-    BlobTransferClient blobTransfer = new BlobTransferClient
-    {
-        NumberOfConcurrentTransfers = 10,
-        ParallelTransferThreadCount = 10
-    };
-
-    var downloadTasks = new List<Task>();
-    foreach (IAssetFile outputFile in outputAsset.AssetFiles)
-    {
-        // Use the following event handler to check download progress.
-        outputFile.DownloadProgressChanged += DownloadProgress;
-
-        string localDownloadPath = Path.Combine(outputFolder, outputFile.Name);
-
-        Console.WriteLine("File download path:  " + localDownloadPath);
-
-        downloadTasks.Add(outputFile.DownloadAsync(Path.GetFullPath(localDownloadPath), blobTransfer, locator, CancellationToken.None));
-
-        outputFile.DownloadProgressChanged -= DownloadProgress;
+        asset.DeliveryPolicies.Add(policy);
     }
 
-    Task.WaitAll(downloadTasks.ToArray());
+Im Zuge dieser Übermittlungskonfiguration wären Sie in der Lage, mit den folgenden Formaten Smooth-, HLS- oder MPEG DASH-Streams anzufordern:
 
-    return outputAsset;
-}
+Smooth Streaming:
 
-static void DownloadProgress(object sender, DownloadProgressChangedEventArgs e)
-{
-    Console.WriteLine(string.Format("{0} % download progress. ", e.Progress));
-}
-</code></pre>
-</li>
-<li>
-Die GetJob- und GetAsset-Helfermethoden rufen einen Verweis auf ein Auftragsobjekt und ein Medienobjekt mit gegebenen IDs ab. Mit einer ähnlichen LINQ-Abfrage können Sie Verweise auf andere Mediendienst-Objekte auf dem Server abrufen.
-<pre><code>
-static IJob GetJob(string jobId)
-{
-    // Use a Linq select query to get an updated 
-    // reference by Id. 
-    var jobInstance =
-        from j in _context.Jobs
-        where j.Id == jobId
-        select j;
-    // Return the job reference as an Ijob. 
-    IJob job = jobInstance.FirstOrDefault();
+	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
 
-    return job;
-}
-static IAsset GetAsset(string assetId)
-{
-    // Use a LINQ Select query to get an asset.
-    var assetInstance =
-        from a in _context.Assets
-        where a.Id == assetId
-        select a;
-    // Reference the asset as an IAsset.
-    IAsset asset = assetInstance.FirstOrDefault();
+HLS:
 
-    return asset;
-}
-</code></pre>
-</li>
-</ul>
-</li>
-</ol>
+	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
-## Testen des Codes
-Führen Sie das Programm aus (drücken Sie F5). Die Konsolenausgabe sollte in etwa wie folgt aussehen:
+MPEG DASH
 
-<pre><code>
-Asset name: UploadSingleFile_11/14/2012 10:09:11 PM
-Time created: 11/14/2012 12:00:00 AM
-Created assetFile interview2.wmv
-Upload interview2.wmv
-Done uploading of interview2.wmv using Upload()
+	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf) 
 
-Job ID: nb:jid:UUID:ea8d5a66-86b8-9b4d-84bc-6d406259acb8
-Job Name: My encoding job
-Job submitted (client UTC time): 11/14/2012 10:09:39 PM
-Media Services account name: Add-Media-Services-Account-Name
-Media Services account location: Add-Media-Services-account-location-name
 
-Job(My encoding job) state: Queued.
-Please wait...
+### <a id="publish_get_urls"></a>Veröffentlichen des Objekts und Abrufen von URLs für Streaming und progressiven Download
 
-Job(My encoding job) state: Processing.
-Please wait...
+Um ein Medienobjekt zu Streamen oder Herunterzuladen, müssen Sie es zunächst durch Erstellen eines Locators "veröffentlichen". Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Arten von Locatorobjekten: OnDemandOrigin-Locator, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) dienen, und Access Signature (SAS)-Locator, die zum Herunterladen von Mediendateien dienen.
 
-********************
-Job(My encoding job) is finished.
-Please wait while local tasks or downloads complete...
-********************
+Nachdem Sie die Locator erstellt haben, können Sie die URLs erstellen, mit denen Sie die Dateien streamen oder herunterladen möchten. 
 
-Locator path:
-https://mediasvcd08mtz29tcpws.blob.core.windows-int.net/asset-4f5b42f4-3ade-4c2c
--9d48-44900d4f6b62?st=2012-11-14T22%3A07%3A01Z&se=2012-11-14T23%3A07%3A01Z&sr=c&
-si=d07ec40c-02d7-4642-8e54-443b79f3ba3c&sig=XKMo0qJI5w8Fod3NsV%2FBxERnav8Jb6hL7f
-xylq3oESc%3D
 
-Full URL to file:
-https://mediasvcd08mtz29tcpws.blob.core.windows-int.net/asset-4f5b42f4-3ade-4c2c
--9d48-44900d4f6b62/interview2.mp4?st=2012-11-14T22%3A07%3A01Z&se=2012-11-14T23%3
-A07%3A01Z&sr=c&si=d07ec40c-02d7-4642-8e54-443b79f3ba3c&sig=XKMo0qJI5w8Fod3NsV%2F
-BxERnav8Jb6hL7fxylq3oESc%3D
+Eine On-Demand-URL für Smooth Streaming hat das folgende Format:
 
-Locator path:
-https://mediasvcd08mtz29tcpws.blob.core.windows-int.net/asset-4f5b42f4-3ade-4c2c
--9d48-44900d4f6b62?st=2012-11-14T22%3A07%3A01Z&se=2012-11-14T23%3A07%3A01Z&sr=c&
-si=d07ec40c-02d7-4642-8e54-443b79f3ba3c&sig=XKMo0qJI5w8Fod3NsV%2FBxERnav8Jb6hL7f
-xylq3oESc%3D
+	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
 
-Full URL to file:
-https://mediasvcd08mtz29tcpws.blob.core.windows-int.net/asset-4f5b42f4-3ade-4c2c
--9d48-44900d4f6b62/interview2_metadata.xml?st=2012-11-14T22%3A07%3A01Z&se=2012-1
-1-14T23%3A07%3A01Z&sr=c&si=d07ec40c-02d7-4642-8e54-443b79f3ba3c&sig=XKMo0qJI5w8F
-od3NsV%2FBxERnav8Jb6hL7fxylq3oESc%3D
+Eine Anforderungs-URL für HLS weist das folgende Format:
 
-Downloads are in progress, please wait.
+	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
-File download path:  C:\supportFiles\outputfiles\interview2.mp4
-1.70952185308162 % download progress.
-3.68508804454907 % download progress.
-6.48870388360293 % download progress.
-6.83808741232649 % download progress.
-. . . 
-99.0763740574049 % download progress.
-99.1522674787341 % download progress.
-100 % download progress.
-File download path:  C:\supportFiles\outputfiles\interview2_metadata.xml
-100 % download progress.
+Eine On-Demand-URL für MPEG DASH hat das folgende Format:
 
-</code></pre>
+	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
-1. Nach der Ausführung der Anwendung geschieht Folgendes:
+Eine SAS-URL zum Herunterladen von Dateien hat das folgende Format:
 
-2. Eine .wmv-Datei wird zum Mediendienst hochgeladen. 
+	{blob container name}/{asset name}/{file name}/{SAS signature}
 
-3. Anschließend wird die Datei mit der **H264 Broadband 720p**-Voreinstellung des **Azure Media Encoders** codiert.
+Media Services .NET SDK-Erweiterungen bieten praktische Hilfsmethoden, die formatierte URLs für das veröffentlichte Medienobjekt zurückgeben.
+ 
+Der folgende Code verwendet .NET SDK-Erweiterungen, um Locator-, Get Streaming- und Progressive Download-URLs zu erstellen. Der Code zeigt auch das Herunterladen von Dateien in einen lokalen Ordner.
 
-4. Die Datei FileSasUrlList.txt wird im Ordner \supportFiles\outputFiles erstellt. Die Datei enthält die URL zum codierten Medienobjekt. 
+Fügen Sie die folgende Methode zur Program-Klasse hinzu.
 
-	Kopieren Sie die Medienobjekt-URL aus der Textdatei und fügen Sie die URL in einen Browser ein, um die Mediendatei abzuspielen. 
+    static public void PublishAssetGetURLs(IAsset asset)
+    {
+        // Publish the output asset by creating an Origin locator for adaptive streaming, 
+        // and a SAS locator for progressive download.
 
-5. Die .mp4-Mediendatei und die _metadata.xml-Datei werden in den Ordner outputFiles heruntergeladen.
+        _context.Locators.Create(
+            LocatorType.OnDemandOrigin,
+            asset,
+            AccessPermissions.Read,
+            TimeSpan.FromDays(30));
 
->[WACOM.NOTE]
-> Im Mediendienste-Objektmodell ist ein Medienobjekt eine Sammlung von Mediendienste-Inhalten, die eine oder mehrere Dateien enthält. Der Locatorpfad liefert eine Azure-Blob-URL, die als Basispfad zu diesem Medienobjekt im Azure-Speicher dient. Fügen Sie einen Dateinamen zum Locator-Basispfad hinzu, um eine einzelne Datei im Medienobjekt abzurufen.
+        _context.Locators.Create(
+            LocatorType.Sas,
+            asset,
+            AccessPermissions.Read,
+            TimeSpan.FromDays(30));
 
-<h2>Nächste Schritte</h2>
-In diesem Lernprogramm wurden die verschiedenen Programmieraufgaben für die Erstellung einer einfachen Mediendienste-Anwendung beschrieben. Sie kennen nun die grundlegenden Mediendienste-Programmieraufgaben inklusive Abrufen des Serverkontexts, Erstellen und Codieren von Medienobjekten und Herunterladen von Medienobjekt auf dem Server. Weitere Schritte und komplexere Programmieraufgaben finden Sie unter:
 
-- <a href="http://azure.microsoft.com/de-de/develop/media-services/resources/">Verwenden von Media Services</a>
-- <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh973618.aspx">Erstellen von Anwendungen mit der Mediendienste-REST-API</a>
+        IEnumerable<IAssetFile> mp4AssetFiles = asset
+                .AssetFiles
+                .ToList()
+                .Where(af => af.Name.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase));
+
+        // Get the Smooth Streaming, HLS and MPEG-DASH URLs for adaptive streaming, 
+        // and the Progressive Download URL.
+        Uri smoothStreamingUri = asset.GetSmoothStreamingUri();
+        Uri hlsUri = asset.GetHlsUri();
+        Uri mpegDashUri = asset.GetMpegDashUri();
+
+        // Get progressive download URLs for each MP4 file that was generated as a result
+		// of encoding.
+		List<Uri> mp4ProgressiveDownloadUris = mp4AssetFiles.Select(af => af.GetSasUri()).ToList();
+
+
+        // Display  the streaming URLs.
+        Console.WriteLine("Use the following URLs for adaptive streaming: ");
+        Console.WriteLine(smoothStreamingUri);
+        Console.WriteLine(hlsUri);
+        Console.WriteLine(mpegDashUri);
+        Console.WriteLine();
+
+		// Display the progressive download URLs.
+        Console.WriteLine("Use the following URLs for progressive download.");
+        mp4ProgressiveDownloadUris.ForEach(uri => Console.WriteLine(uri + "\n"));
+        Console.WriteLine();
+
+        // Download the output asset to a local folder.
+        string outputFolder = "job-output";
+        if (!Directory.Exists(outputFolder))
+        {
+            Directory.CreateDirectory(outputFolder);
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Downloading output asset files to a local folder...");
+        asset.DownloadToFolder(
+            outputFolder,
+            (af, p) =>
+            {
+                Console.WriteLine("Downloading '{0}' - Progress: {1:0.##}%", af.Name, p.Progress);
+            });
+
+        Console.WriteLine("Output asset files available at '{0}'.", Path.GetFullPath(outputFolder));
+    }
+
+## <a id="play"></a>Wiedergeben Ihrer Inhalte  
+
+Nachdem Sie das im vorherigen Abschnitt definierte Programm ausgeführt haben, werden ähnliche URLs wie die folgenden im Konsolenfenster angezeigt.
+
+Adaptive Streaming-URLs:
+
+Smooth Streaming
+
+	http://amstestaccount001.streaming.mediaservices.windows.net/ebf733c4-3e2e-4a68-b67b-cc5159d1d7f2/BigBuckBunny.ism/manifest
+
+HLS
+
+	http://amstestaccount001.streaming.mediaservices.windows.net/ebf733c4-3e2e-4a68-b67b-cc5159d1d7f2/BigBuckBunny.ism/manifest(format=m3u8-aapl)
+
+MPEG DASH
+
+	http://amstestaccount001.streaming.mediaservices.windows.net/ebf733c4-3e2e-4a68-b67b-cc5159d1d7f2/BigBuckBunny.ism/manifest(format=mpd-time-csf)
+
+URLs für progressiven Download (Audio und Video).    
+	
+	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_650kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
+	
+	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_400kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
+	
+	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_3400kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
+	
+	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_2250kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
+	
+	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_1500kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
+	
+	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_1000kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
+	
+	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
+	
+	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
+
+
+Verwenden Sie zum Testen von Smooth Streaming [http://amsplayer.azurewebsites.net/](http://amsplayer.azurewebsites.net/) oder [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor).
+
+Verwenden Sie zum Testen von MPEG-DASH [http://dashif.org](http://dashif.org/reference/players/javascript/).
+
+Verwenden Sie zum Testen von HLS iOS- oder Safari-Geräte oder [3ivx-hls-player](http://apps.microsoft.com/windows/de-de/app/3ivx-hls-player/f79ce7d0-2993-4658-bc4e-83dc182a0614). 
+
+
+Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (z. B. Internet Explorer, Chrome, Safari).
+
 
 <h2>Zusätzliche Ressourcen</h2>
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Stellen Sie Ihr Video jetzt online!</a>
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamische Pakete und mobile Geräte</a>
 
+
 <!-- Anchors. -->
-[Erste Schritte mit Mobile Services]:#getting-started
-[Erstellen eines neuen mobilen Diensts]:#create-new-service
-[Definieren der mobilen Dienstinstanz]:#define-mobile-service-instance
-[Nächste Schritte]:#next-steps
 
 
-<!--HONumber=35.1-->
+<!-- URLs. -->
+  [Webplattform-Installer]: http://go.microsoft.com/fwlink/?linkid=255386
+  [Verwaltungsportal]: http://manage.windowsazure.com/
 
-<!--HONumber=35.1-->
+
+
+
+<h2>Zusätzliche Ressourcen</h2>
+- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Stellen Sie Ihr Video jetzt online!</a>
+- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamische Pakete und mobile Geräte</a>
+
+<!--HONumber=42-->

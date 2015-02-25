@@ -1,14 +1,14 @@
-﻿<properties urlDisplayName="How to scale" pageTitle="Skalieren eines Media Services | Azure-Dokumentation" metaKeywords="" description="Erfahren Sie, wie Sie Mediendienste durch Angabe der Anzahl von On-Demand Streaming Reserved Units und Encoding Reserved Units für Ihr Konto skalieren können." metaCanonical="" services="media-services" documentationCenter="" title="How to Scale a Media Service" authors="juliako" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Skalieren eines Media Services | Azure-Dokumentation" description="Erfahren Sie, wie Sie Mediendienste durch Angabe der Anzahl von On-Demand Streaming Reserved Units und Encoding Reserved Units für Ihr Konto skalieren können." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
-
-
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
 
 
 
-#Skalieren eines Mediendienstes  
 
-[WACOM.INCLUDE [disclaimer](../includes/disclaimer.md)]
+
+# Skalieren eines Media Services  
+
+[AZURE.INCLUDE [Haftungsausschluss](../includes/disclaimer.md)]
 
 
 Sie können Mediendienste durch Angabe der Anzahl von **On-Demand Streaming Reserved Units** und **Encoding Reserved Units** skalieren, mit denen Sie Ihr Konto bereitstellen möchten. 
@@ -16,16 +16,16 @@ Sie können Mediendienste durch Angabe der Anzahl von **On-Demand Streaming Rese
 
 <h2>Reservierte Einheiten für bedarfsgesteuertes Streaming</h2>
 
-Die reservierten Einheiten für bedarfsgesteuertes Streaming stellen Ihnen dedizierte Ausgangskapazitäten bereit, die zu jeweils 200 Mbit/s erworben werden können, und zusätzliche Funktionen, die aktuell [dynamische Paketfunktionen] umfassen(http://go.microsoft.com/fwlink/?LinkId=276874). Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie die reservierten Einheiten für bedarfsgesteuertes Streaming kaufen. 
+Die reservierten Einheiten für bedarfsgesteuertes Streaming stellen Ihnen dedizierte Ausgangskapazitäten bereit, die zu jeweils 200 Mbit/s erworben werden können, und  zusätzliche Funktionen, die aktuell [dynamische Paketfunktionen](http://go.microsoft.com/fwlink/?LinkId=276874) umfassen. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie die reservierten Einheiten für bedarfsgesteuertes Streaming kaufen. 
 
 Um die Anzahl der reservierten Einheiten für bedarfsgesteuertes Streaming zu ändern, gehen Sie folgendermaßen vor:
 
-1. Im [Verwaltungsportal](https://manage.windowsazure.com/) klicken Sie auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
+1. Klicken Sie im [Verwaltungsportal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
 
 2. Wählen Sie die Seite STREAMING-ENDPUNKTE aus. Klicken Sie anschließend auf den Streaming-Endpunkt, den Sie ändern möchten.
 
 
-3. Um die Anzahl der Streaming-Einheiten anzugeben, wählen Sie die Registerkarte "SKALIERUNG" aus und verschieben anschließend den Schieberegler für die **reservierte Kapazität**.
+3. Um die Anzahl der Streaming-Einheiten anzugeben, wählen Sie die Registerkarte SKALIERUNG aus und verschieben Sie anschließend den Schieberegler für die **reservierte Kapazität**.
 
 	![Scale page](./media/media-services-how-to-scale/media-services-origin-scale.png)
 
@@ -36,7 +36,7 @@ Um die Anzahl der reservierten Einheiten für bedarfsgesteuertes Streaming zu ä
 	 
 	>[Azure.Note] Aktuell kann das bedarfsgesteuerte Streaming für bis zu einer Stunde deaktiviert werden, wenn Sie einen positiven Wert für die Einheiten für das bedarfsgesteuerte Streaming zurück auf null setzen.
 
-	>[Azure.Note] Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter den [Media Services-Preisangaben](http://go.microsoft.com/fwlink/?LinkId=275107).
+	>[Azure.Note] Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Media Services Pricing Details](http://go.microsoft.com/fwlink/?LinkId=275107).
 
 <h2>Für das Codieren reservierte Einheiten</h2>
 
@@ -44,7 +44,7 @@ Die Anzahl der bereitgestellten reservierten Einheiten für das Codieren entspri
 
 Um die Anzahl der für das Codieren reservierten Einheiten zu ändern, gehen Sie folgendermaßen vor:
 
-1. Im [Verwaltungsportal](https://manage.windowsazure.com/) klicken Sie auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
+1. Klicken Sie im [Verwaltungsportal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
 
 2. Wählen Sie die Seite CODIERUNG aus. 
 	
@@ -54,7 +54,7 @@ Um die Anzahl der für das Codieren reservierten Einheiten zu ändern, gehen Sie
 
 	Sie können die Anzahl der reservierten Einheiten für den ausgewählten TYP DER RESERVIERTEN EINHEIT über den CODIERUNG-Schieberegler einstellen.  
 	
-	Der wichtigste Unterschied zwischen den einzelnen Typen ist die Geschwindigkeit. Eine bestimmte Codierungsaufgabe wird z. B. mit dem Typ Standard schneller ausgeführt als mit dem Typ Basic. Weitere Informationen finden Sie im Blog "Typen reservierter Codierungseinheiten" von [Milan Gada](http://azure.microsoft.com/blog/author/milanga/).
+	Der wichtigste Unterschied zwischen den einzelnen Typen ist die Geschwindigkeit. Eine bestimmte Codierungsaufgabe wird z. B. mit dem Typ Standard schneller ausgeführt als mit dem Typ Basic. Weitere Informationen finden Sie im Blogeintrag "Encoding Reserved Unit Types" (Typen reservierter Codierungseinheiten, in englischer Sprache) von [Milan Gada](http://azure.microsoft.com/blog/author/milanga/).
 
 	>[Azure.Note] Der Premium-Typ für reservierte Einheiten ist in den folgenden Rechenzentren nicht verfügbar: Singapur, Hong Kong, Osaka, Peking, Shanghai.
 
@@ -67,11 +67,11 @@ Um die Anzahl der für das Codieren reservierten Einheiten zu ändern, gehen Sie
 <h2>Öffnen eines Supporttickets</h2>
 
 
-Standardmäßig kann jedes Media Services-Konto auf bis zu 25 für das Codieren und bis zu 4 für das bedarfsgesteuerte Streaming reservierte Einheiten skaliert werden. Sie können einen höheren Grenzwert durch Öffnen eines Supporttickets anfordern.
+Standardmäßig kann jedes Media Services-Konto auf bis zu 25 für das Codieren und bis zu 5 für das bedarfsgesteuerte Streaming reservierte Einheiten skaliert werden. Sie können einen höheren Grenzwert durch Öffnen eines Supporttickets anfordern.
 
 Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor: 
 
-1. Melden Sie sich im [Verwaltungsportal] an Ihrem Azure-Konto an(http://manage.windowsazure.com).
+1. Melden Sie sich im [Verwaltungsportal](http://manage.windowsazure.com) an Ihrem Azure-Konto an.
 2. Wechseln Sie zu [Support](http://www.windowsazure.com/de-de/support/contact/).
 3. Klicken Sie auf "Get Support".
 4. Wählen Sie Ihr Abonnement aus.
@@ -85,14 +85,4 @@ Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor:
 
 
 
-
-
- 
-
-
-
-
-
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

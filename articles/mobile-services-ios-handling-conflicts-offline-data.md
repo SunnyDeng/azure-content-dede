@@ -1,43 +1,47 @@
-﻿<properties urlDisplayName="Handle Conflicts with Offline Data" pageTitle="Behandeln von Konflikten mit Offlinedaten in Mobile Services (iOS) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Azure Mobile Services zum Behandeln von Konflikten beim Synchronisieren von Offlinedaten in Ihrer iOS-Anwendung verwenden können" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling conflicts with offline data in Mobile Services" authors="krisragh" manager="dwrede"/>
+﻿<properties pageTitle="Behandeln von Konflikten mit Offlinedaten in Mobile Services (iOS) | Mobile Dev Center" description="Lernen Sie, wie Sie Azure Mobile Services zum Behandeln von Konflikten beim Synchronisieren von Offlinedaten in Ihrer iOS-Anwendung verwenden" documentationCenter="ios" authors="krisragh" manager="dwrede" editor="" services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="dotnet" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="dotnet" ms.topic="article" ms.date="01/26/2015" ms.author="krisragh,donnam"/>
 
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data" title="Windows Store C#">Windows Store C#</a>
-<a href="/de-de/documentation/articles/mobile-services-windows-phone-handling-conflicts-offline-data" title="Windows Phone">Windows Phone</a>
-<a href="/de-de/documentation/articles/mobile-services-ios-handling-conflicts-offline-data" title="iOS" class="current">iOS</a>
-</div>
+[WACOM.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
 
 In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden. Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten] auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie [Erste Schritte mit Offlinedaten] abschließen.
 
->[WACOM.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">"Kostenlose Azure-Testversion"</a>.
+>[AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>.
+
+In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
+
+1. [Aktualisieren des App-Projekts zwecks Bearbeitung]
+2. [Aktualisieren des Todo-Listen-View-Controller]
+3. [Hinzufügen des Todo-Eintrags-View-Controller]
+4. [Hinzufügen von Todo-Eintrags-View-Controller und Segue zum Storyboard]
+5. [Hinzufügen von Eintragsdetails zum Todo-Eintrags-View-Controller]
+6. [Hinzufügen von Unterstützung für das Speichern von Bearbeitungen]
+7. [Problem bei der Konfliktbehandlung]
+8. [Aktualisieren von QSTodoService zur Unterstützung der Konfliktbehandlung]
+9. [Hinzufügen der UI Alert View-Hilfe zur Unterstützung der Konfliktbehandlung]
+10. [Hinzufügen der Konfliktbehandlung zum Todo-Listen-View-Controller]
+11. [Testen der App]
 
 ## Abschließen des Lernprogramms zu ersten Schritten mit Offlinedaten
 
 Befolgen Sie die Anweisungen im Lernprogramm [Erste Schritte mit Offlinedaten], und schließen Sie das Projekt ab. Wir verwenden das abgeschlossene Projekt aus dem Lernprogramm als Ausgangspunkt für dieses Lernprogramm.
 
-## Aktualisieren des App-Projekts zwecks Bearbeitung
+## <a name="update-app"></a>Aktualisieren des App-Projekts zwecks Bearbeitung
 
 Wir aktualisieren das abgeschlossenen Projekt aus [Erste Schritte mit Offlinedaten], um Elemente bearbeiten zu können. Wenn Sie diese App derzeit auf zwei Telefonen ausführen, das gleiche Element auf beiden Telefonen lokal ändern und die Änderungen per Push-Vorgang auf den Server übertragen, schlägt dies mit einem Konflikt fehl.
 
 Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche Konflikte über Code behandeln und dynamisch entscheiden, wie bei in Konflikt stehenden Elementen vorgegangen wird. Durch Änderung des Schnellstart-Projekts können wir mit dieser Funktion experimentieren.
 
-### Aktualisieren des Todo-Listen-View-Controller
+### <a name="update-list-view"></a>Aktualisieren des Todo-Listen-View-Controller
 
-1. Aktualisieren wir das iPhone-Storyboard. Falls Sie mit einem iPad arbeiten, befolgen Sie dieselben Schritte für das iPad-Storyboard.
-
-2. Wählen Sie im Xcode Project Navigator **MainStoryboard_iPhone.storyboard** aus und dann **Todo List View Controller** (Todo-Listen-View-Controller). Klicken Sie im oberen Menü auf **Editor (Editor) -> Embed In (Einbetten in) -> Navigation Controller** (Navigationssteuerung).
-
-      ![][update-todo-list-view-controller-1]
-
-3. Wählen Sie als nächstes unter **Todo List View Controller** (Todo-Listen-View-Controller) die Tabellenansichtszelle aus, und wählen Sie für den Modus Accessory (Extra) die Option **Disclosure indicator** (Anzeigenindikator) aus. Der Anzeigenindikator gibt Benutzern an, dass bei Tippen auf den zugehörigen Tabellenansichts-Controller eine neue Ansicht angezeigt wird. Der Anzeigenindikator löst kein Ereignis aus.
+1. Wählen Sie im Xcode Project Navigator **MainStoryboard_iPhone.storyboard** aus und dann **Todo List View Controller** (Todo-Listen-View-Controller). Wählen Sie die Tabellenansichtszelle aus, und wählen Sie für den Modus "Accessory" die Option **Disclosure indicator** aus. Der Anzeigenindikator gibt Benutzern an, dass bei Tippen auf den zugehörigen Tabellenansichts-Controller eine neue Ansicht angezeigt wird. Der Anzeigenindikator löst kein Ereignis aus.
 
       ![][update-todo-list-view-controller-2]
 
-4. Entfernen Sie unter **TodoListViewController.m** die folgenden Vorgänge und ihre Inhalte. Diese werden nicht benötigt:
+2. Entfernen Sie unter **TodoListViewController.m** die folgenden Vorgänge und ihre Inhalte. Diese werden nicht benötigt:
 
         -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 
@@ -46,28 +50,29 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
         -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
          forRowAtIndexPath:(NSIndexPath *)indexPath
 
-### Hinzufügen des Todo-Eintrags-View-Controller
+### <a name="add-view-controller"></a>Hinzufügen des Todo-Eintrags-View-Controller
 
-1. Fügen Sie Ihrem Projekt eine neue Objective-C-Klasse mit dem Namen **QSTodoItemViewController** hinzu, die von **UIViewController** abgeleitet wurde:
+1. Erstellen Sie eine neue Cocoa Touch-Klasse mit dem Namen **QSItemViewController**, die von **UIViewController** abgeleitet ist.
 
-      ![][add-todo-item-view-controller-1]
+2. Fügen Sie in **QSItemViewController.h** die folgende Typdefinition hinzu:
 
-      ![][add-todo-item-view-controller-2]
+        typedef void (^ItemEditCompletionBlock) (NSDictionary *editedItem);
 
-2. Fügen Sie in **QSTodoItemViewController.h** eine Eigenschaft hinzu, um das zu ändernde Element zu speichern:
+3. Fügen Sie in **QSItemViewController.h** eine Eigenschaft zum Speichern des zu ändernden Elements hinzu und eine Eigenschaft für den Rückruf, der aufgerufen wird, wenn der Benutzer die Zurück-Schaltfläche in der Detailansicht drückt:
 
         @property (nonatomic, weak) NSMutableDictionary *item;
+        @property (nonatomic, strong) ItemEditCompletionBlock editCompleteBlock;
 
-3. Fügen Sie in **QSTodoItemViewController.m** zwei private Eigenschaften für die beiden Felder des zu bearbeitenden Todo-Eintrags hinzu - den Abschlussstatus und den Text des Todo-Eintrags selbst:
+4. Fügen Sie in **QSItemViewController.m** zwei private Eigenschaften für die beiden Felder des zu bearbeitenden Todo-Eintrags hinzu - den Abschlussstatus und den Text des Todo-Eintrags selbst:
 
-        @interface QSTodoItemViewController ()
+        @interface QSItemViewController ()
 
         @property (nonatomic, strong) IBOutlet UITextField *itemText;
         @property (nonatomic, strong) IBOutlet UISegmentedControl *itemComplete;
 
         @end
 
-4. Aktualisieren Sie in **QSTodoItemViewController.m** die Stub-Implementierung von **viewDidLoad** auf den folgenden Code:
+5. Aktualisieren Sie in **QSItemViewController.m** die Stub-Implementierung von **viewDidLoad** auf den folgenden Code:
 
         - (void)viewDidLoad
         {
@@ -87,8 +92,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
                         forControlEvents:UIControlEventValueChanged];
         }
 
-5. Fügen Sie in **QSTodoItemViewController.m** vier zusätzliche Methoden zur Behandlung mehrerer Ereignisse hinzu:
-
+6. Fügen Sie in **QSItemViewController.m** vier zusätzliche Methoden zur Behandlung bearbeiteter Steuerelementereignisse hinzu:
 
         - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
             [textField resignFirstResponder];
@@ -105,61 +109,87 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
             [[self view] endEditing:YES];
         }
 
-        - (void)viewWillDisappear:(BOOL)animated {
-            [self.item setValue:[self.itemText text] forKey:@"text"];
-            [self.item setValue:[NSNumber numberWithBool:self.itemComplete.selectedSegmentIndex == 0] forKey:@"complete"];
+7. Fügen Sie in **QSItemViewController** außerdem die folgende Methode hinzu, die aufgerufen wird, wenn der Benutzer die Schaltfläche **Zurück** in der Navigationsleiste drückt. Die Methode kann für andere Ereignisse aufgerufen werden, daher wird zunächst die übergeordnete Ansicht überprüft. Wenn es Änderungen am Element gegeben hat, wird **self.item** geändert, und der Rückruf **EditCompleteBlock** wird aufgerufen:
+
+        - (void)didMoveToParentViewController:(UIViewController *)parent
+        {
+            if (![parent isEqual:self.parentViewController]) {
+                NSNumber *completeValue = [NSNumber numberWithBool:self.itemComplete.selectedSegmentIndex == 0];
+                
+                Boolean changed =
+                    [self.item valueForKey:@"text"] != [self.itemText text] ||
+                    [self.item valueForKey:@"complete"] != completeValue;
+                
+                if (changed) {
+                    [self.item setValue:[self.itemText text] forKey:@"text"];
+                    [self.item setValue:completeValue forKey:@"complete"];
+                    
+                    self.editCompleteBlock(self.item);
+                }
+            }
         }
 
-### Hinzufügen von Todo-Eintrags-View-Controller und Segue zum Storyboard
+### <a name="add-segue"></a>Hinzufügen von Todo-Eintrags-View-Controller und Segue zum Storyboard
 
 1. Kehren Sie mit dem Project Navigator zur Datei **MainStoryboard_iPhone.storyboard** zurück.
 
-2. Fügen Sie einen neuen View Controller für den Todo-Eintrag zum Storyboard hinzu, und zwar rechts vom vorhandenen **Todo-Listen-View-Controller**. Legen Sie für die benutzerdefinierte Klasse dieses neuen View Controller **QSTodoItemViewController** fest. Weitere Informationen finden Sie unter [Hinzufügen einer Szene zu einem Storyboard].
+2. Fügen Sie einen neuen View Controller für den Todo-Eintrag zum Storyboard hinzu, und zwar rechts vom vorhandenen **Todo-Listen-View-Controller**. Legen Sie als benutzerdefinierte Klasse dieses neuen View Controller **QSItemViewController** fest. Weitere Informationen finden Sie unter [Hinzufügen einer Szene zu einem Storyboard].
 
-3. Fügen Sie einen Push-Segue aus dem **Todo-Listen-View-Controller** zum **Todo-Eintrags-View-Controller** hinzu, und benennen Sie den Segue mit **detailSegue**. Weitere Informationen finden Sie unter [Hinzufügen eines Segue zwischen Szenen in einem Storyboard]. Erstellen Sie diesen Segue nicht über eine beliebige Zelle oder eine Schaltfläche im ursprünglichen View Controller. Drücken Sie stattdessen STRG, und ziehen Sie vom View-Controller-Symbol unter dem **Todo-Listen-View-Controller** in der Storyboard-Oberfläche zum **Todo-Eintrags-View-Controller**. Wenn Sie den Segue unbeabsichtigt aus einer Zelle erstellen, wird er beim Ausführen einer App zweimal ausgelöst, was zu folgendem Fehler führt:
+3. Fügen Sie einen **Show**-Segue aus dem **Todo-Listen-View-Controller** zum **Todo-Eintrags-View-Controller** hinzu. Legen Sie dann in Attributes Inspector den Segue-Bezeichner auf **detailSegue** fest. 
 
-        Geschachtelte Pushanimationen können zu beschädigten Navigationsleisten führen
+    Erstellen Sie diesen Segue nicht über eine beliebige Zelle oder eine Schaltfläche im ursprünglichen View Controller. Drücken Sie stattdessen STRG, und ziehen Sie vom View-Controller-Symbol über dem **Todo-Listen-View-Controller** in der Storyboard-Oberfläche zum **Todo-Eintrags-View-Controller**:
+
+    ![][todo-list-view-controller-add-segue]
+
+    Wenn Sie den Segue unbeabsichtigt aus einer Zelle erstellen, wird er beim Ausführen einer App zweimal ausgelöst, was zu folgendem Fehler führt:
+
+        Nested push animation can result in corrupted navigation bar
+
+    Weitere Informationen über Segues finden Sie unter [Hinzufügen eines Segue zwischen Szenen in einem Storyboard]. 
 
 4. Fügen Sie dem neuen **Todo-Eintrags-View-Controller** ein Textfeld für Eintragstext und ein segmentiertes Steuerelement für den Abschlussstatus sowie Label hinzu. Legen Sie im segmentierten Steuerelement den Titel von **Segment 0** auf **Ja** und den Titel für **Segment 1** auf **Nein** fest. Verbinden Sie diese neuen Felder mit Outlets im Code. Weitere Informationen finden Sie unter [Erstellen einer Benutzeroberfläche] und [Segmentierte Steuerelemente].
 
       ![][add-todo-item-view-controller-3]
 
-5. Verbinden Sie diese neuen Felder mit den entsprechenden Outlets, die Sie bereits **QSTodoItemViewController.m** hinzugefügt haben. Verbinden Sie das Eintragstextfeld mit dem Outlet **itemText** und das segmentierte Steuerelement des Abschlussstatus mit dem Outlet **itemComplete**. Weitere Informationen finden Sie unter [Erstellen einer Outlet-Verbindung].
+5. Verbinden Sie diese neuen Felder mit den entsprechenden Outlets, die Sie bereits **QSItemViewController.m** hinzugefügt haben. Verbinden Sie das Eintragstextfeld mit dem Outlet **itemText** und das segmentierte Steuerelement des Abschlussstatus mit dem Outlet **itemComplete**. Weitere Informationen finden Sie unter [Erstellen einer Outlet-Verbindung].
 
-6. Legen Sie den Delegat des Textfelds auf den View Controller fest. Dadurch wird das Textfeld niedergelegt, wenn Sie einen Eintrag bearbeiten und die EINGABETASTE drücken. Drücken Sie STRG, und ziehen Sie vom View-Controller-Symbol unter dem **Todo-Eintrags-View-Controller** in der Storyboard-Oberfläche nach unten. Wählen Sie dann das Delegat-Outlet. Dadurch wird dem Storyboard angegeben, dass der Delegat dieses Textfelds dieser View Controller ist.
+6. Legen Sie den Delegat des Textfelds auf den View Controller fest. Drücken Sie STRG, und ziehen Sie vom View-Controller-Symbol unter dem **Todo-Eintrags-View-Controller** in der Storyboard-Oberfläche nach unten. Wählen Sie dann das Delegat-Outlet. Dadurch wird dem Storyboard angegeben, dass der Delegat dieses Textfelds dieser View Controller ist.
 
 7. Überprüfen Sie, ob die App mit den bisher vorgenommenen Änderungen funktioniert. Führen Sie die App nun im Simulator aus. Fügen Sie der Todo-Liste Einträge hinzu, und klicken Sie auf diese. Der (derzeit leere) Eintrags-View-Controller wird angezeigt.
 
-      ![][add-todo-item-view-controller-4]
+      ![][add-todo-item-view-controller-4]          ![][add-todo-item-view-controller-5]
 
-      ![][add-todo-item-view-controller-5]
+### <a name="add-item-details"></a>Hinzufügen von Eintragsdetails zum Todo-Eintrags-View-Controller
 
-### Hinzufügen von Eintragsdetails zum Todo-Eintrags-View-Controller
+1. Wir verweisen von **QSTodoListViewController.m** auf **QSItemViewController**. Dafür fügen wir in **QSTodoListViewController.m** eine Zeile zum Importieren von **QSItemViewController.h** hinzu.
 
-1. Wir verweisen von **QSTodoListViewController.m** auf **QSTodoItemViewController**. Dafür fügen wir in **QSTodoListViewController.m** eine Zeile zum Importieren von **QSTodoItemViewController.h** hinzu.
+        #import "QSItemViewController.h"
 
-        #import "QSTodoItemViewController.h"
+2. Fügen Sie der Oberfläche **QSTodoListViewController** in **QSTodoListViewController.m** eine neue Eigenschaft zum Speichern des zu bearbeitenden Eintrags hinzu:
 
-2. Fügen Sie der Oberfläche **QSTodoListViewController** in **QSTodoListViewController.m** zwei neue Eigenschaften zum Speichern des zu bearbeitenden Eintrags hinzu:
-
-        @property (nonatomic)           NSInteger       editedItemIndex;
-        @property (strong, nonatomic)   NSMutableDictionary *editedItem;
+        @property (strong, nonatomic)   NSDictionary *editingItem;
 
 3. Implementieren Sie **tableView:didSelectRowAtIndexPath:** in **QSTodoListViewController.m**, um den zu bearbeitenden Eintrag zu speichern, und rufen Sie dann den Segue auf, um die Detailansicht anzuzeigen.
 
-          - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-              self.editedItemIndex = [indexPath row];
-              self.editedItem = [[self.todoService.items objectAtIndex:[indexPath row]] mutableCopy];
+        - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+            NSManagedObject *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            self.editingItem = [MSCoreDataStore tableItemFromManagedObject:item]; // map from managed object to dictionary
+            
+            [self performSegueWithIdentifier:@"detailSegue" sender:self];
+        }
 
-              [self performSegueWithIdentifier:@"detailSegue" sender:self];
-          }
-
-4. Implementieren Sie **PrepareForSegue:sender:** in **QSTodoListViewController.m** , um das Element an den **Todo-Eintrags-View-Controller** zu übergeben.
+4. Implementieren Sie **PrepareForSegue:sender:** in **QSTodoListViewController.m**, um den Eintrag an den **TODO-Eintrags-View-Controller** zu übergeben, und geben Sie den Rückruf an, für den Fall, dass der Benutzer die Detailansicht beendet:
 
         - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
             if ([[segue identifier] isEqualToString:@"detailSegue"]) {
-                QSTodoItemViewController *ivc = (QSTodoItemViewController *)[segue destinationViewController];
-                ivc.item = self.editedItem;
+                QSItemViewController *ivc = (QSItemViewController *) [segue destinationViewController];
+                ivc.item = [self.editingItem mutableCopy];
+                
+                ivc.editCompleteBlock = ^(NSDictionary *editedValue) {
+                    [self.todoService updateItem:editedValue completion:^(NSUInteger index) {
+                        self.editingItem = nil;
+                    }];
+                };
             }
         }
 
@@ -167,103 +197,46 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
       ![][add-todo-item-view-controller-6]
 
-### Hinzufügen von Unterstützung für das Speichern von Bearbeitungen
+### <a name="saving-edits"></a>Hinzufügen von Unterstützung für das Speichern von Bearbeitungen
 
 1. Wenn Sie in der Navigationsansicht auf die Schaltfläche "Zurück" klicken, gehen die Bearbeitungen verloren. Wir haben Daten an die Detailansicht gesendet, sie werden jedoch nicht zurück an die Masteransicht gesendet. Da wir bereits einen Zeiger an eine Kopie des Eintrags übergeben haben, können wir anhand dieses Zeigers die Liste der an dem Eintrag vorgenommenen Aktualisierungen abrufen und ihn auf dem Server aktualisieren. Aktualisieren Sie zunächst die Server-Wrapper-Klasse von **QSTodoService** in **QSTodoService.m**, indem Sie den Vorgang **completeItem** entfernen und einen neuen Vorgang **updateItem** hinzufügen. Das ist notwendig, weil mit **completeItem** Einträge lediglich als abgeschlossen markiert werden. Mit **updateItem** hingegen werden die Einträge aktualisiert.
 
-        - (void)updateItem:(NSDictionary *)item atIndex:(NSInteger)index completion:(QSCompletionWithIndexBlock)completion {
-            // Cast the public items property to the mutable type (it was created as mutable)
-            NSMutableArray *mutableItems = (NSMutableArray *) items;
-
-            // Replace the original in the items array
-            [mutableItems replaceObjectAtIndex:index withObject:item];
-
+        - (void)updateItem:(NSDictionary *)item completion:(QSCompletionBlock)completion
+        {
+            // Set the item to be complete (we need a mutable copy)
+            NSMutableDictionary *mutable = [item mutableCopy];
+            
             // Update the item in the TodoItem table and remove from the items array when we mark an item as complete
-            [self.syncTable update:item completion:^(NSError *error) {
+            [self.syncTable update:mutable completion:^(NSError *error) {
                 [self logErrorIfNotNil:error];
-
-                NSInteger index = -1;
-                if (!error) {
-                    BOOL isComplete = [[item objectForKey:@"complete"] boolValue];
-                    NSString *remoteId = [item objectForKey:@"id"];
-                    index = [items indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-                        return [remoteId isEqualToString:[obj objectForKey:@"id"]];
-                    }];
-
-                    if (index != NSNotFound && isComplete)
-                    {
-                        [mutableItems removeObjectAtIndex:index];
-                    }
+                
+                if (completion != nil) {
+                    dispatch_async(dispatch_get_main_queue(), completion);
                 }
-
-                // Let the caller know that we have finished
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    completion(index);
-                });
             }];
         }
 
 2. Entfernen Sie die Deklaration für **completeItem** aus **QSTodoService.h**, und fügen Sie diese Deklaration für **updateItem** hinzu:
 
-        - (void)updateItem:(NSDictionary *)item atIndex:(NSInteger)index completion:(QSCompletionWithIndexBlock)completion;
+        - (void)updateItem:(NSDictionary *)item completion:(QSCompletionBlock)completion;
 
-3. Fügen Sie in **QSTodoListViewController.m** den Vorgang **viewWillAppear** hinzu, um die Update-Methode aufzurufen, wenn nach Rückkehr aus dem Detail-View-Controller die Masteransicht angezeigt wird.
+3. Testen wir nun die App. Überprüfen Sie, ob die App mit den bisher vorgenommenen Änderungen funktioniert. Führen Sie die App nun im Simulator aus. Fügen Sie der Todo-Liste Einträge hinzu, und klicken Sie auf diese. Versuchen Sie, einen Eintrag zu bearbeiten, und gehen Sie dann wieder zurück. Überprüfen Sie, ob die Beschreibung des Eintrags in der Masteransicht der App aktualisiert wird. Aktualisieren Sie die App, indem Sie nach unten ziehen, und überprüfen Sie, ob die Bearbeitung in den Remotedienst übernommen wurde.
 
-        - (void)viewWillAppear:(BOOL)animated {
-            if (self.editedItem && self.editedItemIndex >= 0) {
-                // Returning from the details view controller
-                NSDictionary *item = [self.todoService.items objectAtIndex:self.editedItemIndex];
+### <a name="conflict-handling-problem"></a>Problem bei der Konfliktbehandlung
 
-                BOOL changed = ![item isEqualToDictionary:self.editedItem];
-                if (changed) {
-                    [self.tableView setUserInteractionEnabled:NO];
-
-                    // Change the appearance to look greyed out until we remove the item
-                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.editedItemIndex inSection:0];
-
-                    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-                    cell.textLabel.textColor = [UIColor grayColor];
-
-                    // Ask the todoService to update the item, and remove the row if it's been completed
-                    [self.todoService updateItem:self.editedItem atIndex:self.editedItemIndex completion:^(NSUInteger index) {
-                        if ([[self.editedItem objectForKey:@"complete"] boolValue]) {
-                            // Remove the row from the UITableView
-                            [self.tableView deleteRowsAtIndexPaths:@[ indexPath ]
-                                                  withRowAnimation:UITableViewRowAnimationTop];
-                        } else {
-                            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                                                  withRowAnimation:UITableViewRowAnimationAutomatic];
-                        }
-
-                        [self.tableView setUserInteractionEnabled:YES];
-
-                        self.editedItem = nil;
-                        self.editedItemIndex = -1;
-                    }];
-                } else {
-                    self.editedItem = nil;
-                    self.editedItemIndex = -1;
-                }
-            }
-        }
-
-4. Testen wir nun die App. Überprüfen Sie, ob die App mit den bisher vorgenommenen Änderungen funktioniert. Führen Sie die App nun im Simulator aus. Fügen Sie der Todo-Liste Einträge hinzu, und klicken Sie auf diese. Versuchen Sie, einen Eintrag zu bearbeiten, und gehen Sie dann wieder zurück. Überprüfen Sie, ob die Beschreibung des Eintrags in der Masteransicht der App aktualisiert wird. Aktualisieren Sie die App, indem Sie nach unten ziehen, und überprüfen Sie, ob die Bearbeitung in die Cloud übernommen wurde.
-
-### Problem bei der Konfliktbehandlung
-
-1. Untersuchen wir, was passiert, wenn zwei unterschiedliche Clients versuchen, gleichzeitig dieselben Daten zu bearbeiten. Die Beispielliste unten enthält den Eintrag "Hello world 3". Ändern wir ihn auf einem Gerät in "Hello world 13" und auf einem anderen Gerät in "Hello world 23".
+1. Untersuchen wir, was passiert, wenn zwei unterschiedliche Clients versuchen, gleichzeitig dieselben Daten zu bearbeiten. Im folgenden Beispiel gibt es einen Eintrag "Mobile Services is Cool!" Ändern wir diesen auf einem Gerät in "I love Mobile Services!" und auf einem anderen Gerät in "I love Azure!".
 
       ![][conflict-handling-problem-1]
 
 2. Starten Sie die App an zwei Orten: auf zwei iOS-Geräten oder im Simulator und auf einem iOS-Gerät. Sollten Sie kein physisches Gerät für den Test besitzen, starten Sie eine Instanz im Simulator, und senden Sie über einen REST-Client eine PATCH-Anforderung an den mobilen Dienst. Die URL der PATCH-Anforderung enthält dem Namen des Mobile Service, den Namen der Todo-Eintragstabelle und die ID der Todo-Eintragstabelle, die Sie bearbeiten. Der x-zumo-application-Header ist der Anwendungsschlüssel:
 
-        PATCH https://todolist.azure-mobile.net/tables/todoitem/D265929E-B17B-42D1-8FAB-D0ADF26486FA?__systemproperties=__version
+        PATCH https://donnam-tutorials.azure-mobile.net/tables/todoitem/D265929E-B17B-42D1-8FAB-D0ADF26486FA?__systemproperties=__version
         Content-Type: application/json
-        x-zumo-application: shYOoDFdKhmzLEbnMQqPYrCLhwGOVA10
+        x-zumo-application: xuAdWVDcLuCNfkTvOfaqzCCSBVHqoy96
 
         {
-            "id": "D265929E-B17B-42D1-8FAB-D0ADF26486FA",
-            "text": "Hello world 23"
+            "id": "CBBF4464-E08A-47C9-B6FB-6DCB30ACCE7E",
+            "text": "I love Azure!"
         }
 
 3. Aktualisieren Sie nun die Einträge in den beiden Instanzen der App. Im Ausgabeprotokoll in Xcode wird ein Fehler angezeigt:
@@ -274,15 +247,15 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
   Das liegt daran, dass im Aufruf für **pullWithQuery:completion:** im completion-Block der Fehlerparameter "non-nil" lautet, sodass der Fehler über **NSLog** ausgegeben wird.
 
-### Aktualisieren von QSTodoService zur Unterstützung der Konfliktbehandlung
+### <a name="service-add-conflict-handling"></a>Aktualisieren von QSTodoService zur Unterstützung der Konfliktbehandlung
 
-1. Lassen wir den Benutzer entscheiden, wie er den Konflikt im Client behandelt. Dafür implementieren wir das Protokoll **MSSyncContextDelegate**. Ändern Sie in **QSTodoService.h** und **QSTodoService.m** die Factorymethodendeklaration **(QSTodoService *)defaultService;** auf die unten stehende Anweisung, sodass der Synchronisierungskontextdelegat als Parameter ausgegeben wird:
+1. Lassen wir den Benutzer entscheiden, wie er den Konflikt im Client behandelt. Dafür implementieren wir das Protokoll **MSSyncContextDelegate**. Ändern Sie in **QSTodoService.h** und **QSTodoService.m** die Factorymethodendeklaration **QSTodoService *)defaultService;** auf die unten stehende Anweisung, sodass der Synchronisierungskontextdelegat als Parameter ausgegeben wird:
 
         + (QSTodoService *)defaultServiceWithDelegate:(id)delegate;
 
 2. Ändern Sie in **QSTodoService.m** die Zeile **init** wie unten dargestellt, um wieder den Synchronisierungskontextdelegat als Parameter zu erhalten:
 
-        -(QSTodoService *)initWithDelegate:(id)syncDelegate
+€
 
 3. Ändern Sie in **QSTodoService.m** den Aufruf **init** in **defaultServiceWithDelegate** stattdessen zu **initWithDelegate**:
 
@@ -292,7 +265,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
         self.client.syncContext = [[MSSyncContext alloc] initWithDelegate:syncDelegate dataSource:store callback:nil];
 
-### Hinzufügen der UI Alert View-Hilfe zur Unterstützung der Konfliktbehandlung
+### <a name="add-alert-view"></a>Hinzufügen der UI Alert View-Hilfe zur Unterstützung der Konfliktbehandlung
 
 1. Lassen wir den Benutzer im Falle eines Konflikts entscheiden, welche Version beibehalten werden soll:
   * die Client-Version behalten (überschreibt die Version auf dem Server)
@@ -367,15 +340,15 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
         @end
 
-### Hinzufügen der Konfliktbehandlung zum Todo-Listen-View-Controller
+### <a name="add-conflict-handling"></a>Hinzufügen der Konfliktbehandlung zum Todo-Listen-View-Controller
 
-1. Ersetzen Sie in **QSTodoListViewController.m** den Aufruf für **defaultService** in **viewDidLoad** wie unten gezeigt durch einen Aufruf für **defaultServiceWithDelegate**:
+1. Bearbeiten Sie **viewDidLoad** in **QSTodoListViewController.m**. Ersetzen Sie den Aufruf von **DefaultService** durch einen Aufruf von **DefaultServiceWithDelegate**:
 
         self.todoService = [QSTodoService defaultServiceWithDelegate:self];
 
 2. Fügen Sie in **QSTodoListViewController.h** **&lt;MSSyncContextDelegate&gt;** zur Oberflächendeklaration hinzu, um das Protokoll **MSSyncContextDelegate** zu implementieren.
 
-        @interface QSTodoListViewController : UITableViewController<MSSyncContextDelegate>
+        @interface QSTodoListViewController : UITableViewController<MSSyncContextDelegate, NSFetchedResultsControllerDelegate>
 
 3. Fügen Sie oben in **QSTodoListViewController.m** die folgende Importanweisung hinzu:
 
@@ -426,9 +399,14 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
             }];
         }
 
-### Testen der App
+### <a name="test-app"></a>Testen der App
 
-Testen wir die Anwendung mit Konflikten. Bearbeiten Sie denselben Eintrag in zwei unterschiedlichen Instanzen der App, die gleichzeitig ausgeführt werden. Führen Sie nun eine Aktualisierung in den App-Instanzen durch, indem Sie von oben nach unten ziehen. Es wird eine Aufforderung zum Abstimmen der Änderung angezeigt.
+Testen wir die Anwendung mit Konflikten. Bearbeiten Sie denselben Eintrag in zwei unterschiedlichen Instanzen der App, die gleichzeitig ausgeführt werden, oder verwenden Sie die App und einen REST-Client. 
+
+Führen Sie eine Aktualisierung in den App-Instanzen durch, indem Sie von oben nach unten ziehen. Ihnen wird eine Eingabeaufforderung zum Auflösen des Konflikts angezeigt:
+
+![][conflict-ui]
+
 
 ### Zusammenfassung
 
@@ -442,15 +420,28 @@ Nebenbei haben Sie eine Hilfsklasse **QSUIAlertViewWithBlock** hinzugefügt, dam
 
 <!-- URLs. -->
 
-[add-todo-item-view-controller-1]: ./media/mobile-services-ios-handling-conflicts-offline-data/add-todo-item-view-controller-1.png
-[add-todo-item-view-controller-2]: ./media/mobile-services-ios-handling-conflicts-offline-data/add-todo-item-view-controller-2.png
+[Aktualisieren des App-Projekts zwecks Bearbeitung]: #update-app
+[Aktualisieren des Todo-Listen-View-Controller]: #update-list-view
+[Hinzufügen des Todo-Eintrags-View-Controller]: #add-view-controller
+[Hinzufügen von Todo-Eintrags-View-Controller und Segue zum Storyboard]: #add-segue
+[Hinzufügen von Eintragsdetails zum Todo-Eintrags-View-Controller]: #add-item-details
+[Hinzufügen von Unterstützung für das Speichern von Bearbeitungen]: #saving-edits
+[Problem bei der Konfliktbehandlung]: #conflict-handling-problem
+[Aktualisieren von QSTodoService zur Unterstützung der Konfliktbehandlung]: #service-add-conflict-handling
+[Hinzufügen der UI Alert View-Hilfe zur Unterstützung der Konfliktbehandlung]: #add-alert-view
+[Hinzufügen der Konfliktbehandlung zum Todo-Listen-View-Controller]: #add-conflict-handling
+[Testen der App]: #test-app
+
+
 [add-todo-item-view-controller-3]: ./media/mobile-services-ios-handling-conflicts-offline-data/add-todo-item-view-controller-3.png
 [add-todo-item-view-controller-4]: ./media/mobile-services-ios-handling-conflicts-offline-data/add-todo-item-view-controller-4.png
 [add-todo-item-view-controller-5]: ./media/mobile-services-ios-handling-conflicts-offline-data/add-todo-item-view-controller-5.png
 [add-todo-item-view-controller-6]: ./media/mobile-services-ios-handling-conflicts-offline-data/add-todo-item-view-controller-6.png
-[conflict-handling-problem-1]: ./media/mobile-services-ios-handling-conflicts-offline-data/conflict-handling-problem-1.png
-[update-todo-list-view-controller-1]: ./media/mobile-services-ios-handling-conflicts-offline-data/update-todo-list-view-controller-1.png
+[todo-list-view-controller-add-segue]: ./media/mobile-services-ios-handling-conflicts-offline-data/todo-list-view-controller-add-segue.png
 [update-todo-list-view-controller-2]: ./media/mobile-services-ios-handling-conflicts-offline-data/update-todo-list-view-controller-2.png
+[conflict-handling-problem-1]: ./media/mobile-services-ios-handling-conflicts-offline-data/conflict-handling-problem-1.png
+[conflict-ui]: ./media/mobile-services-ios-handling-conflicts-offline-data/conflict-ui.png
+
 
 [Segmentierte Steuerelemente]: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISegmentedControl.html
 [Hilfe zu Core-Datenmodell-Editor]: https://developer.apple.com/library/mac/recipes/xcode_help-core_data_modeling_tool/Articles/about_cd_modeling_tool.html
@@ -466,4 +457,5 @@ Nebenbei haben Sie eine Hilfsklasse **QSUIAlertViewWithBlock** hinzugefügt, dam
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-ios-get-started/
 [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-ios-get-started-data/
 
-<!--HONumber=35.2-->
+
+<!--HONumber=42-->

@@ -1,10 +1,24 @@
-﻿<properties pageTitle="Erste Schritte mit Azure Mobile Services für Appcelerator Titanium" metaKeywords="" description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Appcelerator-Entwicklung. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="Appcelerator team;mahender" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Azure Mobile Services für Appcelerator Titanium" 
+	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Appcelerator-Entwicklung." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="mattchenderson" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-appcelerator" ms.devlang="multiple" ms.topic="article" ms.date="11/24/2014" ms.author="Appcelerator team;mahender" />
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-appcelerator" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/24/2014" 
+	ms.author="mahender"/>
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
-[WACOM.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
 In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services in Ihren mit Appcelerator erstellten Anwendungen nutzen können.
 
@@ -16,13 +30,13 @@ Wenn Sie für iOS entwickeln, brauchen Sie außerdem Xcode 5.1 und iOS 7.1 SDK o
 
 Wenn Sie für Android entwickeln, benötigen Sie außerdem Android 4.3 SDK oder neuer.
 
-## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Dienstes
+## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Diensts
 
-[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## Erstellen einer neuen Appcelerator-App
 
-1. Wählen Sie im Mobile Services-Portal die Registerkarte **Daten** für Ihren mobilen Dienst aus.
+1. Wählen Sie im Mobile Services-Portal die Registerkarte **Daten** für Ihren mobilen Dienst.
 
 2. Klicken Sie auf **Tabelle hinzufügen**, und erstellen Sie eine neue Tabelle namens **TodoItem**.
 
@@ -32,7 +46,7 @@ Wenn Sie für Android entwickeln, benötigen Sie außerdem Android 4.3 SDK oder 
 
 5. Wählen Sie zurück im Mobile Services-Portal unter **Dashboard** die Option **Schlüssel verwalten** aus, und kopieren Sie den **Anwendungsschlüssel**.
 
-5. Ersetzen Sie in der index.js-Datei der App <---App Name----> und <------------APP KEY------------> durch die Werte aus Ihrem mobilen Dienst.
+5. Ersetzen Sie in der Datei "app-index.js" `<---App Name---->` und `<------------APP KEY------------>` mit den Werten aus dem mobilen Dienst.
 
 ## Ausführen der neuen Appcelerator-App ##
 
@@ -42,7 +56,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
     ![][0]
 
-2.	Wählen Sie im nächsten Bildschirm **Existing Projects into Workspace** aus, und klicken Sie auf **Next**.
+2.	Wählen Sie im nächsten Bildschirm **Existing Projects into Workspace**, und klicken Sie dann auf **Next**.
 
     ![][1]
 
@@ -50,7 +64,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
     ![][2]
 
-4.	Nun wird schließlich das Projekt angezeigt, das sie im Abschnitt "Projects" ausgewählt haben. Optional können Sie die Option "Copy projects into workspace" aktivieren, mit der das heruntergeladene Projekt in Ihren Workspace kopiert wird. Klicken Sie schließlich auf "Finish", um das Projekt in Titanium Studio zu öffnen.
+4.	Nun wird schließlich das Projekt angezeigt, das sie im Abschnitt "Projects" ausgewählt haben. Optional können Sie die Option &quot;Copy projects into workspace&quot; aktivieren, mit der das heruntergeladene Projekt in Ihren Workspace kopiert wird. Klicken Sie schließlich auf "Finish", um das Projekt in Titanium Studio zu öffnen.
 
     ![][3]
 
@@ -64,20 +78,20 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
     ![][5]
 
-8.	Klicken Sie im nächsten Bildschirm auf das Plussmybol (+), und geben Sie einen beschreibenden Text ein, z. B. "Dieses Lernprogramm abschließen". Klicken Sie dann auf die Schaltfläche zum Speichern.
+8.	Klicken Sie im nächsten Bildschirm auf das Plus-Symbol (+), und geben Sie ein beschreibenden Text ein, wie etwa &quot;Dieses Lernprogramm abschließen&quot;, klicken Sie dann auf die Schaltfläche "Save".<br />
 
     ![][6]
 
     ![][7]
 
-Dadurch wird eine POST-Anforderung an den neuen, in Windows Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
+Dadurch wird eine POST-Anforderung an den neuen, in Microsoft Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
 
 ![][8]
 
 
->[WACOM.NOTE] Sie können den Code überprüfen, der auf Ihren mobilen Dienst zugreift, um Daten abzufragen und einzufügen. Der Code befindet sich in der Datei "TodoService.m".
+>[AZURE.NOTE] Sie können den Code überprüfen, der auf Ihren mobilen Dienst zugreift, um Daten abzufragen und einzufügen. Der Code befindet sich in der Datei "TodoService.m".
 
-4. Klicken Sie zurück im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
    	![][9]
 
@@ -92,7 +106,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 * [Erste Schritte mit der Authentifizierung]
   <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 
@@ -116,4 +130,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-users
 [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push
 
-<!--HONumber=35.1-->
+
+
+
+<!--HONumber=42-->

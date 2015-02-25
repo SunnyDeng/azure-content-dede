@@ -1,26 +1,24 @@
-﻿<properties urlDisplayName="Add paging to data" pageTitle="Hinzufügen von Paging für Daten (iOS) | Mobile Developer Center" metaKeywords="" description="Erfahren Sie, wie Sie mithilfe des Auslagerns die Menge der von Ihrer iOS-App von Mobile Services zurückgegebenen Daten verwalten können." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="krisragh" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Hinzufügen von Paging für Daten (iOS) | Mobile Developer Center" description="Erfahren Sie, wie Sie mithilfe des Auslagerns die Menge der von Ihrer iOS-App von Mobile Services zurückgegebenen Daten verwalten können." services="mobile-services" documentationCenter="ios" authors="krisragh" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh"/>
 
 # Verfeinern von Mobile Services-Abfragen mit Paging
-W
-[WACOM.INCLUDE [mobile-services-selector-add-paging-data](../includes/mobile-services-selector-add-paging-data.md)]
+
+[AZURE.INCLUDE [mobile-services-selector-add-paging-data](../includes/mobile-services-selector-add-paging-data.md)]
 
 In diesem Thema wird gezeigt, wie Sie die aus Azure Mobile Services an Ihre iOS-App zurückgegebene Datenmenge mithilfe von Paging steuern können. Dieses Lernprogramm verwendet die Abfrageeigenschaften **fetchLimit** und **fetchOffset** im Client, um bestimmte "Seiten" von Daten abzufragen.
 
-<div class="dev-callout"><b>Hinweis</b>
-<p>Um einen Datenüberlauf auf mobilen Geräteclients zu verhindern, implementiert Mobile Services eine automatische Seitenbegrenzung, die standardmäßig die Antwort auf 50 Elemente begrenzt. Durch Angeben der Seitengröße können Sie explizit bis zu 1.000 Elemente in der Antwort anfordern.</p>
-</div>
+> [AZURE.NOTE] Mobile Services verwendet standardmäßig eine Seitengröße von 50 Elementen pro Antwort, um mobile Clients nicht mit Daten zu überfluten. Durch Angabe der Seitengröße können Sie bis zu 1.000 Elemente in einer Antwort abfragen.
 
-Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten] auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst mindestens das erste Lernprogramm der Reihe Arbeiten mit Daten abschließen, [Erste Schritte mit Daten].
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten]. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zumindest das erste Lernprogramm aus der Daten-Reihe abschließen, [Erste Schritte mit Daten].
 
 1. Öffnen Sie in Xcode das Projekt, das Sie im Lernprogramm [Erste Schritte mit Daten] verändert haben.
 
-2. Drücken Sie die **Run**-Taste (Command + R), um das Projekt zu erstellen und die App zu starten. Geben Sie anschließend einen Text in das  Textfeld ein und klicken Sie auf das (**+**)-Symbol.
+2. Drücken Sie die **Run**-Taste (Command + R), um das Projekt zu erstellen und die App zu starten. Geben Sie anschließend einen Text in das Textfeld ein und klicken Sie auf das (**+**)-Symbol.
 
 3. Wiederholen Sie den vorherigen Schritt mindestens drei Mal, sodass Ihre TodoItem-Tabelle mehr als drei Elemente enthält.
 
-4. Öffnen Sie die Datei QSTodoService.m und suchen Sie die folgende Methode:
+4. Öffnen Sie die Datei QSTodoService.m, und suchen Sie die folgende Methode:
 
         - (void)refreshDataOnSuccess:(QSCompletionBlock)completion
 
@@ -28,7 +26,7 @@ Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherig
 
         // Create a predicate that finds active items in which complete is false
         NSPredicate * predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
-
+	
         // Retrieve the MSTable's MSQuery instance with the predicate you just created.
         MSQuery * query = [self.table queryWithPredicate:predicate];
 
@@ -66,21 +64,19 @@ Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherig
 
    	Setzen Sie den **query.fetchOffset**-Wert dieses Mal auf 3.
 
-   	Diese Abfrage überspringt die ersten drei Ergebnisse und gibt die drei darauffolgenden zurück. Dabei handelt es sich effektiv um die zweite "Seite" von Daten, die Seitengröße beträgt dabei drei Elemente.
+   	Diese Abfrage überspringt die ersten drei Ergebnisse und gibt die folgenden drei zurück. Dies ist die zweite "Seite" der Daten für eine Seitengröße von drei Elementen.
 
-    <div class="dev-callout"><b>Hinweis</b>
-    <p>Dieses Lernprogramm verwendet zur Vereinfachung fest codierte Werte für die <strong>fetchOffset</strong>- und <strong>fetchLimit</strong>-Eigenschaften. Tatsächliche Anwendungen können ähnliche Abfragen mit einem Pagersteuerelement oder einer ähnlichen Benutzersteuerung ausführen, um zur vorherigen bzw. nächsten Seite zu navigieren. Alternativ können Sie   **query.includeTotalCount = YES** verwenden, um die Gesamtzahl aller Elemente auf dem Server zusammen mit den Paging-Daten abzurufen.</p>
-    </div>
+    > [AZURE.NOTE] Dieses Lernprogramm verwendet zur Vereinfachung fest codierte Werte für die **fetchOffset**- und **fetchLimit**-Eigenschaften. Tatsächliche Anwendungen können ähnliche Abfragen mit einem Pagersteuerelement oder einer ähnlichen Benutzersteuerung ausführen, um zur vorherigen bzw. nächsten Seite zu navigieren. Alternativ können Sie **query.includeTotalCount = YES** verwenden, um die Gesamtzahl aller Elemente auf dem Server zusammen mit den Paging-Daten abzurufen.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
 Dies bildet den Abschluss der Lernprogrammreihe über Grundlagen des Arbeitens mit Daten in Mobile Services. Weitere Informationen finden Sie im folgenden Mobile Services-Thema:
 
 * [Erste Schritte mit der Authentifizierung]
-  <br/>Erfahren Sie, wie Sie Benutzer der App mit Windows-Konto authentifizieren.
+  <br/>Erfahren Sie, wie Sie Benutzer der App mit einem Windows-Konto authentifizieren.
 
 <!--
-* [Get started with push notifications]
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 -->
 
@@ -98,3 +94,6 @@ Dies bildet den Abschluss der Lernprogrammreihe über Grundlagen des Arbeitens m
 [Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-ios
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
+
+
+<!--HONumber=42-->

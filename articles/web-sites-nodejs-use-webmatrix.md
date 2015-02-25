@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Website with WebMatrix" pageTitle="Node.js-Website mit WebMatrix - Azure-Lernprogramm" metaKeywords="" description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von WebMatrix eine Node.js-Anwendung für eine Azure-Website entwickeln und bereitstellen können." metaCanonical="" services="web-sites" documentationCenter="nodejs" title="Build and deploy a Node.js website to Azure using WebMatrix" authors="larryfr" solutions="" manager="wpickett" editor="mollybos" />
+<properties 
+	pageTitle="Node.js-Website mit WebMatrix - Azure-Lernprogramm" 
+	description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von WebMatrix eine Node.js-Anwendung für eine Azure-Website entwickeln und bereitstellen können." 
+	services="web-sites" 
+	documentationCenter="nodejs" 
+	authors="blackmist" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="09/17/2014" 
+	ms.author="larryfr"/>
 
 
 # Erstellen einer Node.js-Website und Bereitstellen für Azure mit WebMatrix
@@ -13,16 +27,13 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ![Azure node Web site][webmatrix-node-completed]
 
-[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## Anmelden bei Azure
 
 Führen Sie die folgenden Schritte aus, um eine Azure-Website zu erstellen:
 
-<div class="dev-callout"><strong>Hinweis</strong>
-<p>Sie benötigen ein Azure-Konto, bei dem die Azure-Websites-Funktion aktiviert ist, um dieses Lernprogramm abzuschließen.</p>
-<p>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A7171371E" target="_blank">Kostenlose Azure-Testversion</a>.</p>
-</div>
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, bei dem die Azure-Websites-Funktion aktiviert ist, um dieses Lernprogramm abzuschließen. <br /> Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E"%20target="_blank").
 <br />
 
 1. Starten Sie WebMatrix.
@@ -35,17 +46,17 @@ Führen Sie die folgenden Schritte aus, um eine Azure-Website zu erstellen:
 	![Sign into Azure][signin]	
 
 
-## Erstellen einer Website für Azure mit einer integrierten Vorlage
+## Erstellen einer Site für Azure mit einer integrierten Vorlage
 
-1. 	Klicken Sie im Startbildschirm auf die Schaltfläche **Neu**, und wählen Sie **Vorlagenkatalog**, um eine neue Website aus dem Vorlagenkatalog zu erstellen:
+1. Klicken Sie im Startbildschirm auf die Schaltfläche **Neu**, und wählen Sie **Vorlagenkatalog**, um eine neue Site aus dem Vorlagenkatalog zu erstellen:
 
 	![New site from Template Gallery][sitefromtemplate]
 
-2. Wählen Sie im Dialogfeld **Website aus Vorlage** die Option **Node** aus, und wählen Sie dann **Express-Website**. Klicken Sie anschließend auf **Next**. Wenn bestimmte Voraussetzungen für die Vorlage **Express-Website** fehlen, werden Sie aufgefordert, diese zu installieren.
+2. Wählen Sie im Dialogfeld **Website aus Vorlage** die Option **Node** und dann **Express-Website** aus. Klicken Sie abschließend auf **Weiter**. Wenn bestimmte Voraussetzungen für die Vorlage **Express-Website** fehlen, werden Sie aufgefordert, diese zu installieren.
 
 	![select express template][webmatrix-templates]
 
-3. Wenn Sie bei Azure angemeldet sind, können Sie nun eine Azure-Website für eine lokale Website erstellen.  Wählen Sie einen eindeutigen Namen, und wählen Sie das Data Center aus, in dem die Site erstellt werden soll: 
+3. Wenn Sie bei Azure angemeldet sind, können Sie nun eine Azure-Website für eine lokale Site erstellen.  Wählen Sie einen eindeutigen Namen, und wählen Sie das Data Center aus, in dem die Site erstellt werden soll: 
 
 	![Create site on Azure][nodesitefromtemplateazure]
 	
@@ -55,7 +66,7 @@ Führen Sie die folgenden Schritte aus, um eine Azure-Website zu erstellen:
 
 ##Veröffentlichen der Anwendung in Azure
 
-1. Klicken Sie in WebMatrix im Menüband **Startseite** auf **Veröffentlichen**, um das Dialogfeld **Vorschau veröffentlichen** aufzurufen.
+1. Klicken Sie in WebMatrix auf dem Menüband **Startseite** auf **Veröffentlichen**, um das Dialogfeld **Vorschau veröffentlichen** aufzurufen.
 
 	![publish preview][webmatrix-node-publishpreview]
 
@@ -69,9 +80,9 @@ Führen Sie die folgenden Schritte aus, um eine Azure-Website zu erstellen:
 
 ##Ändern und erneutes Veröffentlichen der Anwendung
 
-Sie können die Anwendung auf einfache Weise ändern und neu veröffentlichen. Hier nehmen Sie eine einfache Änderung an der Überschrift in der **index.jade**-Datei vor und veröffentlichen die Anwendung dann neu.
+Sie können die Anwendung auf einfache Weise ändern und neu veröffentlichen. Hier nehmen Sie eine einfache Änderung an der Überschrift in der Datei **index.jade** vor und veröffentlichen die Anwendung dann neu.
 
-1. Wählen Sie in WebMatrix die Option **Dateien**, und erweitern Sie dann den Ordner **Ansichten**. Öffnen Sie die Datei **index.php**, indem Sie darauf doppelklicken.
+1. Wählen Sie in WebMatrix die Option **Dateien** aus, und erweitern Sie dann den Ordner **Ansichten**. Öffnen Sie durch Doppelklick die Datei **index.jade**.
 
 	![webmatrix viewing index.jade][webmatrix-modify-index]
 
@@ -89,17 +100,17 @@ Sie können die Anwendung auf einfache Weise ändern und neu veröffentlichen. H
 
 ##Nächste Schritte
 
-Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](/en-us/documentation/articles/nodejs-specify-node-version-azure-apps/).
+Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](/de-de/documentation/articles/nodejs-specify-node-version-azure-apps/)..
 
-Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
+Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
 
 
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 [WebMatrix-WebSite]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix für Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409
 
-[Veröffentlichen einer Azure-Website mit Git]: /en-us/develop/nodejs/common-tasks/publishing-with-git/
-[kostenlos]: /en-us/pricing/free-trial
+[Veröffentlichen einer Azure-Website mit Git]: /de-de/develop/nodejs/common-tasks/publishing-with-git/
+[kostenlos]: /de-de/pricing/free-trial
 [webmatrix-node-completed]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-node-complete.png
 
 
@@ -125,3 +136,8 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
 [signin]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-sign-in.png
 [sitefromtemplate]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-site-from-template.png
 [nodesitefromtemplateazure]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-node-site-azure.png
+
+
+
+
+<!--HONumber=42-->

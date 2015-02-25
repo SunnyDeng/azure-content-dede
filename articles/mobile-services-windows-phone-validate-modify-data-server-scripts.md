@@ -1,29 +1,29 @@
-﻿<properties urlDisplayName="Validate Data" pageTitle="Verwenden von Serverskripts zum Überprüfen von Daten (Windows Phone) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten überprüfen und ändern, die mithilfe von Serverskripts von Ihrer Windows Phone-App gesendet wurden." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Verwenden von Serverskripts zum Überprüfen von Daten (Windows Phone) | Mobile Dev Center" description="Erfahren Sie, wie Sie Daten überprüfen und ändern, die mithilfe von Serverskripts von Ihrer Windows Phone-App gesendet wurden." services="mobile-services" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/26/2014" ms.author="glenga"/>
 
 # Überprüfen und Ändern von Daten in Mobile Services mithilfe von Serverskripts
 
-[WACOM.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 
 <p>In diesem Thema erfahren Sie, wie Sie Serverskripts in Azure Mobile Services nutzen. Serverskripts sind in einem mobilen Dienst registriert und können verwendet werden, um eine Vielzahl an Vorgängen für Daten, die eingefügt und aktualisiert werden, durchzuführen, einschließlich Überprüfen und Ändern. In diesem Lernprogramm definieren und registrieren Sie Serverskripts, die Daten prüfen und ändern. Da sich das Verhalten von serverseitigen Skripts häufig auf den Client auswirkt, werden Sie auch Ihre Windows Phone 8-App aktualisieren, um von diesen neuen Verhalten zu profitieren.</p>
 </div>
-<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=298629" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-validate-modify-data-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=298629" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">11:36</span></div>
+<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=298629" target="_blank" class="label">Lernprogramm anzeigen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-validate-modify-data-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=298629" target="_blank" class="dev-onpage-video"><span class="icon">Video wiedergeben</span></a> <span class="time">11:36</span></div>
 </div>
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
-1. [Überprüfung der Zeichenfolgenlänge hinzufügen]
-2. [Client zur Unterstützung der Überprüfung aktualisieren]
-3. [Zeitstempel beim Einfügen hinzufügen]
-4. [Client zum Anzeigen des Zeitstempels aktualisieren]
+1. [Hinzufügen einer Überprüfung der Zeichenfolgenlänge]
+2. [Aktualisieren des Clients zur Unterstützung der Überprüfung]
+3. [Hinzufügen eines Zeitstempels beim Einfügen]
+4. [Aktualisieren des Clients zum Anzeigen des Zeitstempels]
 
-Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen Anwendung](/de-de/documentation/articles/mobile-services-windows-phone-get-started-data/) auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst dieses Lernprogramm abschließen.  
+Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm, [Hinzufügen von Mobile Services zu einer vorhandenen App](/de-de/documentation/articles/mobile-services-windows-phone-get-started-data/), auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst dieses Lernprogramm abschließen.  
 
-## <a name="string-length-validation"></a>Überprüfung hinzufügen
+## <a name="string-length-validation"></a>Hinzufügen einer Überprüfung
 
 Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, zu überprüfen. Zunächst registrieren Sie ein Skript, das die Länge von Zeichenfolgendendaten überprüft, die an den mobilen Dienst gesendet werden, und das Zeichenfolgen ablehnt, die zu lang sind, in diesem Fall länger als zehn Zeichen.
 
@@ -31,15 +31,15 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 
 	![][0]
 
-2. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+2. Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
 
 	![][1]
 
-3. Klicken Sie auf **Skript**, und dann auf den Vorgang **Einfügen**.
+3. Klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus.
 
 	![][2]
 
-4. Ersetzen Sie das vorhandene Skript durch folgende Funktion, und klicken Sie dann auf **Speichern**.
+4. Ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -49,21 +49,19 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
             }
         }
 
-    Das Skript überprüft die Länge der **TodoItem.text**-Eigenschaft und sendet eine Fehlerantwort, wenn die Länge zehn Zeichen überschreitet. Andernfalls wird die Methode **execute** aufgerufen, um das Einfügen abzuschließen.
+    Dieses Skript überprüft die Länge der **TodoItem.text**-Eigenschaft und sendet eine Fehlerantwort, wenn die Länge zehn Zeichen überschreitet. Andernfalls wird die **execute**-Methode aufgerufen, um den Einfügevorgang abzuschließen.
 
-    <div class="dev-callout"> 
-	<b>Hinweis</b> 
-	<p>Sie können ein registriertes Skript auf der Registerkarte <strong>Skript</strong> entfernen, indem Sie auf <strong>Clear</strong> und dann auf <strong>Save</strong> klicken.</p></div>	
+    > [AZURE.TIP] Sie können ein registriertes Skript auf der Registerkarte **Skript** entfernen, indem Sie auf **Löschen** und dann auf **Speichern** klicken.	
 
 ## <a name="update-client-validation"></a>Aktualisieren des Clients
 
 Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen Sie Ihre App aktualisieren, damit sie Fehlerantworten der Überprüfung verarbeiten kann.
 
-1. Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte mit Daten] abgeschlossen haben.
+1. Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie im Lernprogramm [Erste Schritte mit Daten] geändert haben.
 
 2. Drücken Sie die Taste **F5**, um die App auszuführen, geben Sie dann einen Text mit mehr als zehn Zeichen in das Textfeld ein, und klicken Sie auf **Speichern**.
 
-   	Beachten Sie, dass die App eine nicht behandelte **MobileServiceInvalidOperationException** als Ergebnis der vom mobilen Dienst zurückgegebenen Antwort "400 (Unzulässige Anforderung)" auslöst.
+   	Beachten Sie, dass die App eine unbehandelte **MobileServiceInvalidOperationException** als Ergebnis der vom mobilen Dienst zurückgegebenen 400-Antwort (Bad Request) ausgibt.
 
 6. 	Öffnen Sie die Datei "MainPage.xaml.cs", und ersetzen Sie die vorhandene **InsertTodoItem**-Methode durch den folgenden Code:
 
@@ -87,23 +85,22 @@ Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen 
             }
         }
 
-   	Diese Version der Methode enthält die Fehlerbehandlung für **MobileServiceInvalidOperationException**, und die Fehlermeldung wird in einer MessageBox angezeigt.
+   	Diese Version der Methode enthält die Fehlerbehandlung für **MobileServiceInvalidOperationException**, die die Fehlermeldung in einer MessageBox anzeigt.
 
 ## <a name="add-timestamp"></a>Hinzufügen eines Zeitstempels
 
 In der vorherigen Aufgabe wurde eine Einfügung überprüft und entweder akzeptiert oder abgelehnt. Nun aktualisieren Sie die eingefügten Daten mithilfe eines Serverskripts, das eine Zeitstempeleigenschaft zu dem Objekt hinzufügt, bevor es eingefügt wird.
 
-<div class="dev-callout"><b>Hinweis</b>
-<p>Die hier demonstrierte Zeitstempeleigenschaft <b>createdAt</b> ist nun redundant. Mobile Services erstellt automatisch eine Systemeigenschaft <b>__createdAt</b> für jede Tabelle. Sie könnten diese Systemeigenschaft in Ihrer Anwendung verwenden, indem Sie einfach das folgende Mitglied zur TodoItem-Klasse hinzufügen:</p>
+> [AZURE.NOTE] Die hier demonstrierte **createdAt**-Zeitstempeleigenschaft ist nun redundant. Mobile Services erstellt automatisch eine **__createdAt**-Systemeigenschaft für jede Tabelle. Sie könnten diese Systemeigenschaft in Ihrer Anwendung verwenden, indem Sie einfach das folgende Mitglied zur TodoItem-Klasse hinzufügen:  
+> 
+`````
 <pre><code>
 [JsonProperty(PropertyName = "__createdAt")]
 public DateTime createdAt { set; get; }
-</code></pre>
-</div>
+`````
 
 
-
-1. Ersetzen Sie im [Verwaltungsportal] auf der Registerkarte **Scripts** das aktuelle Skript **Insert** durch die folgende Funktion und klicken Sie dann auf **Speichern**.
+1. Ersetzen Sie im [Verwaltungsportal] auf der Registerkarte **Skripts** das aktuelle **Insert**-Skript durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -114,11 +111,9 @@ public DateTime createdAt { set; get; }
             }
         }
 
-    Diese Funktion erweitert das vorherige insert-Skript, indem es eine neue Zeitstempeleigenschaft **createdAt** zum Objekt hinzufügt, bevor es durch den **request**.**execute**-Aufruf eingefügt wird. 
+    Diese Funktion erweitert das vorherige Einfügeskript, indem eine neue **createdAt**-Zeitstempeleigenschaft zum Objekt hinzugefügt wird, bevor es durch den **request**.**execute**-Aufruf eingefügt wird. 
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Bei der ersten Ausführung dieses Skripts muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services automatisch die Spalte <strong>createdAt</strong> in die Tabelle <strong>TodoItem</strong> bei der ersten Ausführung ein. Das dynamische Schema ist standardmäßig für einen neuen mobilen Dienst aktiviert und sollte deaktiviert werden, bevor die App im Windows Phone Store veröffentlicht wird.</p>
-    </div>
+    > [AZURE.IMPORTANT] Wenn dieses Einfügeskript zum ersten Mal ausgeführt wird, muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services bei der ersten Ausführung automatisch die Spalte **createdAt** in die Tabelle **TodoItem** ein. Das dynamische Schema ist standardmäßig für einen neuen mobilen Dienst aktiviert und sollte deaktiviert werden, bevor die App im Windows Phone Store veröffentlicht wird.
 
 2. Drücken Sie in Visual Studio die Taste **F5**, um die App auszuführen, geben Sie dann einen Text mit weniger als zehn Zeichen in das Textfeld ein, und klicken Sie auf **Speichern**.
 
@@ -126,15 +121,15 @@ public DateTime createdAt { set; get; }
 
 3. Klicken Sie im Verwaltungsportal auf die Registerkarte **Durchsuchen** in der Tabelle **todoitem**.
    
-   	Beachten Sie, dass es nun ein Spalte **createdAt** gibt und dass das neu eingefügte Element über einen Zeitstempelwert verfügt.
+   	Beachten Sie, dass es nun eine Spalte **createdAt** gibt, und dass das neu eingefügte Element über einen Zeitstempelwert verfügt.
   
 Nun müssen Sie die Windows Phone-App aktualisieren, um diese neue Spalte anzuzeigen.
 
-## <a name="update-client-timestamp"></a>Den Client erneut aktualisieren
+## <a name="update-client-timestamp"></a>Erneutes Aktualisieren des Clients
 
 Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in Eigenschaften gemäß dem definierten Typ serialisieren kann. Abschließend muss dann der Client aktualisiert werden, um diese neuen Daten anzuzeigen.
 
-1. Öffnen Sie in Visual Studio die Datei "MainPage.xaml.cs", und ersetzen Sie dann die vorhandene Klasse **TodoItem** durch die folgende Definition:
+1. Öffnen Sie in Visual Studio die Datei "MainPage.xaml.cs", und ersetzen Sie dann die vorhandene **TodoItem**-Klasse durch die folgende Definition:
 
         public class TodoItem
         {
@@ -152,11 +147,9 @@ Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in
 	
     Diese neue Klassendefinition umfasst die neue Zeitstempeleigenschaft als nullbarer DateTime-Typ.
   
-    <div class="dev-callout"><b>Hinweis</b>
-	<p> <strong>DataMemberAttribute</strong> weist den Client an, die neue Eigenschaft <strong>CreatedAt</strong> in der App der in der TodoItem-Tabelle definierten Spalte <strong>createdAt</strong> zuzuordnen, die eine andere Schreibweise hat. Durch die Verwendung dieses Attributs kann Ihre App Eigenschaftennamen zu Objekten haben, die von den Spaltennamen in der SQL-Datenbank abweichen. Ohne dieses Attribut würde aufgrund der unterschiedlichen Schreibweisen ein Fehler auftreten.</p>
-    </div>
+    > [AZURE.NOTE] Das **DataMemberAttribute** weist den Client an, die neue **CreatedAt**-Eigenschaft in der App der in der TodoItem-Tabelle definierten Spalte **createdAt** zuzuordnen, die eine andere Schreibweise hat. Durch die Verwendung dieses Attributs kann Ihre App Eigenschaftennamen zu Objekten haben, die von den Spaltennamen in der SQL-Datenbank abweichen. Ohne dieses Attribut würde aufgrund der unterschiedlichen Schreibweisen ein Fehler auftreten.
 
-5. Fügen Sie das folgende XAML-Element direkt unter dem Element **CheckBoxComplete** in der Datei "MainPage.xaml" ein:
+5. Fügen Sie das folgende XAML-Element direkt unter dem **CheckBoxComplete**-Element in der Datei "MainPage.xaml" ein:
 	      
         <TextBlock Name="WhenCreated" Text="{Binding CreatedAt}" VerticalAlignment="Center"/>
 
@@ -197,17 +190,17 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 * [Autorisieren von Benutzern mit Skripts]
   <br/>Erfahren Sie, wie Daten anhand der ID eines authentifizierten Benutzers gefiltert werden können.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 * [Mobile Services: Serverskriptreferenz]
   <br/>Erfahren Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
 <!-- Anchors. -->
-[Überprüfung der Zeichenfolgenlänge hinzufügen]: #string-length-validation
-[Client zur Unterstützung der Überprüfung aktualisieren]: #update-client-validation
-[Zeitstempel beim Einfügen hinzufügen]: #add-timestamp
-[Client zum Anzeigen des Zeitstempels aktualisieren]: #update-client-timestamp
+[Hinzufügen einer Überprüfung der Zeichenfolgenlänge]: #string-length-validation
+[Aktualisieren des Clients zur Unterstützung der Überprüfung]: #update-client-validation
+[Hinzufügen eines Zeitstempels beim Einfügen]: #add-timestamp
+[Aktualisieren des Clients zum Anzeigen des Zeitstempels]: #update-client-timestamp
 [Nächste Schritte]: #next-steps
 
 <!-- Images. -->
@@ -227,3 +220,6 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+
+
+<!--HONumber=42-->

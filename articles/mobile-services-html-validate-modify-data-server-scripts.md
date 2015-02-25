@@ -1,10 +1,10 @@
-﻿<properties urlDisplayName="Validate Data - HTML5" pageTitle="Verwenden von Serverskripts zum Überprüfen und Ändern von Daten (HTML 5) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten überprüfen und ändern, die mithilfe von Serverskripts von Ihrer HTML-App gesendet wurden." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Verwenden von Serverskripts zum Überprüfen und Ändern von Daten (HTML 5) | Mobile Dev Center" description="Erfahren Sie, wie Sie Daten überprüfen und ändern, die mithilfe von Serverskripts von Ihrer HTML-App gesendet wurden." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="glenga"/>
 
 # Überprüfen und Ändern von Daten in Mobile Services mithilfe von Serverskripts 
 
-[WACOM.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
 
 In diesem Thema erfahren Sie, wie Sie Serverskripts in Azure Mobile Services nutzen. Serverskripts sind in einem mobilen Dienst registriert und können verwendet werden, um eine Vielzahl an Vorgängen für Daten, die eingefügt und aktualisiert werden, durchzuführen, einschließlich Überprüfen und Ändern. In diesem Lernprogramm definieren und registrieren Sie Serverskripts, die Daten prüfen und ändern. Da sich das Verhalten von serverseitigen Skripts häufig auf den Client auswirkt, werden Sie auch Ihre HTML-App aktualisieren, um von diesen neuen Verhalten zu profitieren.
 
@@ -15,25 +15,25 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 3. [Zeitstempel beim Einfügen hinzufügen]
 4. [Client zum Anzeigen des Zeitstempels aktualisieren]
 
-Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten] auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Daten] abschließen.  
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten]. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Daten] abschließen.  
 
 ## <a name="string-length-validation"></a>Überprüfung hinzufügen
 
 Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, zu überprüfen. Zunächst registrieren Sie ein Skript, das die Länge von Zeichenfolgendendaten überprüft, die an den mobilen Dienst gesendet werden, und das Zeichenfolgen ablehnt, die zu lang sind, in diesem Fall länger als zehn Zeichen.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihre App. 
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App. 
 
    	![][0]
 
-2. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+2. Klicken Sie auf die Registerkarte **Daten**, dann auf die **TodoItem**-Tabelle.
 
    	![][1]
 
-3. Klicken Sie auf **Skript**, und dann auf den Vorgang **Einfügen**.
+3. Klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus.
 
    	![][2]
 
-4. Erstetzen Sie das vorhandene Skript durch folgende Funktion, und klicken Sie dann auf **Speichern**.
+4. Ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -45,29 +45,25 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
             }
         }
 
-    Das Skript überprüft die Länge der **TodoItem.text**-Eigenschaft und sendet eine Fehlerantwort, wenn die Länge zehn Zeichen überschreitet. Andernfalls wird die Funktion **execute** aufgerufen, um das Einfügen abzuschließen.
+    Das Skript überprüft die Länge der Eigenschaft **TodoItem.text** und sendet eine Fehlerantwort, wenn die Länge zehn Zeichen überschreitet. Andernfalls wird die Funktion **execute** aufgerufen, um das Einfügen abzuschließen.
 
-    <div class="dev-callout"> 
-	<b>Hinweis</b> 
-	<p>Sie können ein registriertes Skript auf der Registerkarte <strong>Script</strong> entfernen, indem Sie auf <strong>Löschen</strong> und dann auf <strong>Speichern</strong> klicken.</p></div>	
+    > [AZURE.TIP] Sie können ein registriertes Skript auf der Registerkarte **Skript** entfernen, indem Sie auf **Löschen** und dann auf **Speichern** klicken.	
 
 ## <a name="update-client-validation"></a>Aktualisieren des Clients
 
 Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen Sie Ihre App aktualisieren, damit sie Fehlerantworten der Überprüfung verarbeiten kann.
 
-1. Starten Sie eine der folgenden Befehlsdateien aus dem Unterordner **server** des Projekts aus, das Sie während der Bearbeitung des Lernprogramms [Erste Schritte mit Daten] geändert haben.
+1. Führen Sie eine der folgenden Befehlsdateien aus dem **server**-Unterordner des Projekts aus, das Sie geändert haben, als Sie das Lernprogramm [Erste Schritte mit Daten] abgeschlossen haben.
 
 	+ **launch-windows** (Windows-Computer) 
 	+ **launch-mac.command** (Mac OS X-Computer)
 	+ **launch-linux.sh** (Linux-Computer)
 
-	<div class="dev-callout"><b>Hinweis</b>
-		<p>Bei einem Windows-Computer geben Sie `R` ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.</p>
-	</div>
+	> [AZURE.NOTE] Bei einem Windows-Computer geben Sie `R` ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.
 
 	Daraufhin wird ein Webserver auf Ihrem lokalen Computer zum Hosten der App gestartet.
 
-1. 	Öffnen Sie die Datei app.js und ersetzen Sie den **$('#add-item').submit()**-Ereignishandler durch den folgenden Code:
+1. 	Öffnen Sie die Datei app.js, und ersetzen Sie den **$('#add-item').submit()**-Ereignishandler durch folgenden Code:
 
 		$('#add-item').submit(function(evt) {
 			var textbox = $('#new-item-text'),
@@ -82,7 +78,7 @@ Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen 
 			evt.preventDefault();
 		});
 
-2. Navigieren Sie in einem Webbrowser zu <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a>, geben Sie in **Add new task** Text ein, und klicken Sie auf **Add**.
+2. Öffnen Sie <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> in einem Webbrowser, geben Sie Text unter **Neue Aufgabe hinzufügen** ein, und klicken Sie auf **Hinzufügen**.
 
    	Die Operation schlägt fehl, und die Fehlerbehandlung zeigt die Fehlermeldung in einem Dialogfeld an.
 
@@ -90,11 +86,9 @@ Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Nun müssen 
 
 In der vorherigen Aufgabe wurde eine Einfügung überprüft und entweder akzeptiert oder abgelehnt. Nun aktualisieren Sie die eingefügten Daten mithilfe eines Serverskripts, das eine Zeitstempeleigenschaft zu dem Objekt hinzufügt, bevor es eingefügt wird.
 
-<div class="dev-callout"><b>Hinweis</b>
-<p>Die hier demonstrierte Zeitstempeleigenschaft <b>createdAt</b> ist nun redundant. Mobile Services erstellt automatisch eine Systemeigenschaft <b>__createdAt</b> für jede Tabelle.</p>
-</div>
+> [AZURE.NOTE] Die hier demonstrierte Zeitstempeleigenschaft **createdAt** ist nun redundant. Mobile Services erstellt automatisch eine Systemeigenschaft **__createdAt** für jede Tabelle.
 
-1. Ersetzen Sie auf der Registerkarte **Scripts** im [Verwaltungsportal] das aktuelle Skript **Insert** durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
+1. Ersetzen Sie im [Verwaltungsportal] auf der Registerkarte **Skripts** das aktuelle Skript **Insert** durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -107,19 +101,17 @@ In der vorherigen Aufgabe wurde eine Einfügung überprüft und entweder akzepti
             }
         }
 
-Diese Funktion erweitert das vorherige insert-Skript, indem es eine neue Zeitstempeleigenschaft     createdAt** zum Objekt hinzufügt, bevor es durch den **request**.**execute -Aufruf eingefügt wird.
+    Diese Funktion erweitert das vorherige insert-Skript, indem es eine neue Zeitstempeleigenschaft **createdAt** zum Objekt hinzufügt, bevor es durch den **request**.**execute**-Aufruf eingefügt wird. 
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Bei der ersten Ausführung dieses Skripts muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services automatisch die Spalte <strong>createdAt</strong> in die Tabelle <strong>TodoItem</strong> bei der ersten Ausführung ein. Das dynamische Schema ist standardmäßig für einen neuen Mobile Service aktiviert und sollte deaktiviert werden, bevor die App veröffentlicht wird.</p>
-    </div>
+    > [AZURE.IMPORTANT] Wenn dieses insert-Skript zum ersten Mal ausgeführt wird, muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services bei der ersten Ausführung automatisch die Spalte **createdAt** zur **TodoItem**-Tabelle hinzu. Das dynamische Schema ist standardmäßig für einen neuen Mobile Service aktiviert und sollte deaktiviert werden, bevor die App veröffentlicht wird.
 
-2. Aktualisieren Sie die Seite im Webbrowser, geben Sie einen Text mit weniger als 10 Zeichen unter **Add new Task** ein und klicken Sie auf **Add**.
+2. Aktualisieren Sie die Seite im Webbrowser, geben Sie einen Text mit weniger als 10 Zeichen unter **Neue Aufgabe hinzufügen** ein, und klicken Sie auf **Hinzufügen**.
 
    	Beachten Sie, dass der neue Zeitstempel nicht in der UI der App angezeigt wird.
 
 3. Klicken Sie im Verwaltungsportal auf die Registerkarte **Durchsuchen** in der Tabelle **todoitem**.
    
-   	Beachten Sie, dass es nun ein Spalte **createdAt** gibt und dass das neu eingefügte Element über einen Zeitstempelwert verfügt.
+   	Beachten Sie, dass es hier nun eine Spalte **createdAt** gibt und das neu eingefügte Element über einen Zeitstempelwert verfügt.
   
 Nun müssen Sie die App aktualisieren, um diese neue Spalte anzuzeigen.
 
@@ -127,11 +119,11 @@ Nun müssen Sie die App aktualisieren, um diese neue Spalte anzuzeigen.
 
 Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in Eigenschaften gemäß dem definierten Typ serialisieren kann. Abschließend muss dann der Client aktualisiert werden, um diese neuen Daten anzuzeigen.
 
-1. Öffnen Sie die Datei app.js in Ihrem Editor und ersetzen Sie die vorhandene Funktion **refreshTodoItems** durch den folgenden Code:
+1. Öffnen Sie die Datei app.js in Ihrem Editor, und ersetzen Sie die vorhandene Funktion **refreshTodoItems** durch den folgenden Code:
 
 		function refreshTodoItems() {
 			var query = todoItemTable.where(function () {
-                return (this.complete === false && this.createdAt !== null);
+                return (this.complete === false);
             });
 
 			query.read().then(function(todoItems) {
@@ -156,7 +148,7 @@ Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in
 
    	Dadurch wird der Datumsteil der neuen **createdAt**-Eigenschaft angezeigt. 
 
-2. Öffnen Sie die Datei style.css in Ihrem Editor und ersetzen Sie die Stile in der `item-text`-Klasse durch den folgenden Code:
+2. Öffnen Sie die Datei "style.css" in Ihrem Editor, und ersetzen Sie die Stile in der  `item-text`-Klasse durch den folgenden Code:
 
 		.item-text { width: 70%; height: 26px; line-height: 24px; 
 			border: 1px solid transparent; background-color: transparent; }
@@ -213,3 +205,6 @@ Weitere Informationen finden Sie unter [Verwenden von Serverskripts] und [Mobile
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client
+
+
+<!--HONumber=42-->

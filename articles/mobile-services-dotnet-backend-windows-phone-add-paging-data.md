@@ -1,29 +1,29 @@
-﻿<properties pageTitle="Hinzufügen von Paging für Daten (Windows Phone) | Mobile Developer Center" metaKeywords="" description="Erfahren Sie, wie Sie mithilfe des Auslagerns die Menge der von Ihrer Windows Phone-App von Mobile Services zurückgegebenen Daten verwalten können." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Hinzufügen von Paging für Daten (Windows Phone) | Mobile Developer Center" description="Erfahren Sie, wie Sie mithilfe des Auslagerns die Menge der von Ihrer Windows Phone-App von Mobile Services zurückgegebenen Daten verwalten können." services="mobile-services" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="10/11/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="10/11/2014" ms.author="glenga"/>
 
 # Verfeinern von Mobile Services-Abfragen mit Paging
 
-[WACOM.INCLUDE [mobile-services-selector-add-paging-data](../includes/mobile-services-selector-add-paging-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-add-paging-data](../includes/mobile-services-selector-add-paging-data.md)]
 
 In diesem Thema erfahren Sie, wie Sie die aus Azure Mobile Services an Ihre Windows Phone-App zurückgegebene Datenmenge mithilfe von Paging steuern können. Dieses Lernprogramm verwendet die Abfragemethoden **Take** und **Skip** im Client, um bestimmte "Seiten" von Daten abzufragen.
 
->[WACOM.NOTE]Um einen Datenüberlauf auf mobilen Geräteclients zu verhindern, implementiert Mobile Services eine automatische Seitenbegrenzung, die standardmäßig die Antwort auf 50 Elemente begrenzt. Durch Angeben der Seitengröße können Sie explizit bis zu 1.000 Elemente in der Antwort anfordern.
+>[AZURE.NOTE]Mobile Services verwendet standardmäßig eine Seitengröße von 50 Elementen pro Antwort, um mobile Clients nicht mit Daten zu überfluten. Durch Angabe der Seitengröße können Sie bis zu 1.000 Elemente in einer Antwort abfragen.
 
-Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen Anwendung](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/) auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst dieses Lernprogramm abschließen: 
+Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen Anwendung](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/) auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie dieses Lernprogramm abschließen. 
 
 ##Festlegen der Serverseitengröße
 
-[WACOM.INCLUDE [mobile-services-windows-dotnet-paging](../includes/mobile-services-windows-dotnet-paging.md)]
+[AZURE.INCLUDE [mobile-services-windows-dotnet-paging](../includes/mobile-services-windows-dotnet-paging.md)]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Dies bildet den Abschluss der Lernprogrammreihe über Grundlagen des Arbeitens mit Daten in Mobile Services. Weitere Informationen zu Mobile Services:
+Dies bildet den Abschluss der Lernprogrammreihe über Grundlagen des Arbeitens mit Daten in Mobile Services. Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 
 * [Erste Schritte mit der Authentifizierung]
-  <br/>Erfahren Sie, wie Sie Benutzer der App mit Windows-Konto authentifizieren.
+  <br/>Erfahren Sie, wie Sie Benutzer der App mit einem Windows-Konto authentifizieren.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 <!-- Anchors. -->
@@ -41,3 +41,6 @@ Dies bildet den Abschluss der Lernprogrammreihe über Grundlagen des Arbeitens m
 
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
+
+
+<!--HONumber=42-->

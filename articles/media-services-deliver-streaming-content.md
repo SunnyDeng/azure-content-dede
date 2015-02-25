@@ -1,15 +1,15 @@
-﻿<properties urlDisplayName="Deliver Streaming Content from Media Services" pageTitle="Bereitstellen von Streaming-Inhalten in Media Services - Azure" metaKeywords="" description="Erfahren Sie, wie Sie Streaming-Inhalte in Media Services mit einer URL für direkten Zugriff bereitstellen können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="How to: Deliver streaming content" authors="juliako" manager="dwrede" />
+<properties pageTitle="Bereitstellen von Streaming-Inhalten in Media Services - Azure" description="Erfahren Sie, wie Sie Streaminginhalte in Media Services mit einer URL für direkten Zugriff bereitstellen können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." authors="juliako" manager="dwrede" editor="" services="media-services" documentationCenter=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
 
 
-#Gewusst wie: Bereitstellen von Streaming-Inhalten
+# Gewusst wie: Bereitstellen von Streaming-Inhalten
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen](../media-services-deliver-asset-download/).
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen](../ Media-Services-Bereitstellung-Asset-Download /).
 
 Zusätzlich zum Herunterladen von Medieninhalten von Media Services können Sie Streaming mit adaptiver Bitrate verwenden, um Inhalte bereitzustellen. Sie können z. B. eine direkte URL, einen so genannten Locator, erstellen, um Inhalte auf einem Media Services-Ursprungsserver zu streamen. Anschließend können die Streaming-Inhalte auf Client-Anwendungen wie Microsoft Silverlight direkt über den Locator abgespielt werden.
 
-Das folgende Beispiel zeigt, wie ein Ursprungs-Locator für ein von einem Job produziertes bereitgestelltes Medienobjekt erstellt wird. In diesem Beispiel wird angenommen, dass Sie bereits einen Verweis auf ein Medienobjekt abgerufen haben, das Smooth Streaming-Dateien enthält, und dass in dem Code auf die Variable namens **assetToStream** verwiesen wird. 
+Das folgende Beispiel zeigt, wie ein Ursprungs-Locator für ein von einem Job produziertes bereitgestelltes Medienobjekt erstellt wird. Im Beispiel wird davon ausgegangen, dass Sie bereits einen Verweis auf ein Medienobjekt abgerufen haben, die smooth streaming-Dateien enthält, und die Variable namens **AssetToStream** im Code verwiesen wird. 
 
 So erstellen Sie einen Ursprungs-Locator zum Streamen von Inhalten:
 
@@ -76,8 +76,6 @@ Weitere Informationen zur Auslieferung von Medienobjekten finden Sie unter:
 </ul>
 
 <h2>Nächste Schritte</h2>
-Bisher haben wir die Bereitstellung von Medien durch Herunterladen von Azure-Speicher mithilfe von Smooth Streaming beschrieben. Im nächsten Thema [Bereitstellen von HLS-Inhalten](../media-services-deliver-http-live-streaming-content/) wird die Bereitstellung von Streaming-Inhalten mithilfe von HLS (Apple HTTP Live Streaming) besprochen.
+Bisher haben wir die Bereitstellung von Medien durch Herunterladen von Azure-Speicher mithilfe von Smooth Streaming beschrieben. Im nächsten Thema [wie HLS-Inhalten](../ media-services-deliver-http-live-streaming-content/) wird die Bereitstellung von streaming-Inhalten mit Apple HTTP Live Streaming (HLS).
 
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

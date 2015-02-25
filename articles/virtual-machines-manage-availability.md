@@ -1,13 +1,13 @@
-﻿<properties urlDisplayName="Manage Availability of VMs" pageTitle="Verwalten der Verfügbarkeit virtueller Computer - Azure" metaKeywords="" description="Erfahren Sie, wie Sie mehrere virtuelle Computer verwenden, um hohe Verfügbarkeit für Ihre Azure-Anwendung sicherzustellen. " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="timlt" editor="tysonn" />
+<properties pageTitle="Verwalten der Verfügbarkeit virtueller Computer - Azure" description="Erfahren Sie, wie Sie mehrere virtuelle Computer verwenden, um hohe Verfügbarkeit für Ihre Azure-Anwendung sicherzustellen." services="virtual-machines" documentationCenter="" authors="kenazk" manager="timlt" editor="tysonn"/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/26/2014" ms.author="kenazk" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/26/2014" ms.author="kenazk"/>
 
 #Verwalten der Verfügbarkeit virtueller Computer
 
 ## Unterschied zwischen geplanter und ungeplanter Wartung
 Es gibt zwei Arten von Azure-Plattformereignissen, die sich auf die Verfügbarkeit von virtuellen Computern auswirken können: geplante und ungeplante Wartung.
 
-- **Geplante Wartungsereignisse** sind regelmäßige Updates, die von Microsoft für die zugrundeliegende Azure-Plattform ausgeführt werden können, um die gesamte Verfügbarkeit, Leistung und Sicherheit der Plattforminfrastruktur zu verbessern, unter der die virtuellen Computer ausgeführt werden. Die Mehrheit dieser Updates wird ohne Auswirkungen auf die virtuellen Computer oder Cloud-Dienste ausgeführt. Es gibt jedoch Instanzen, bei denen diese Updates einen Neustart des virtuellen Computers erfordern, um die erforderlichen Updates auf die Plattforminfrastruktur anzuwenden. 
+- **Geplante Wartungsereignisse** sind regelmäßige Updates, die von Microsoft für die zugrunde liegende Azure-Plattform ausgeführt werden können, um die gesamte Verfügbarkeit, Leistung und Sicherheit der Plattforminfrastruktur, unter der die virtuellen Computer ausgeführt werden, zu verbessern. Die Mehrheit dieser Updates wird ohne Auswirkungen auf die virtuellen Computer oder Cloud-Dienste ausgeführt. Es gibt jedoch Instanzen, bei denen diese Updates einen Neustart des virtuellen Computers erfordern, um die erforderlichen Updates auf die Plattforminfrastruktur anzuwenden. 
 
 - **Ungeplante Wartungsereignisse** treten auf, wenn die Hardware oder physische Infrastruktur, die dem virtuellen Computer zugrunde liegt, einen Ausfall verursacht. Diese können Ausfälle des lokalen Netzwerks, Datenträgers oder andere Fehler auf Rackebene umfassen. Wenn ein solcher Fehler festgestellt wird, migriert die Azure-Plattform Ihren virtuellen Computer automatisch vom fehlerhaften physischen Computer, der den virtuellen Computer hostet, zu einem fehlerfreien physischen Computer. Diese Ereignisse treten selten auf, verursachen jedoch u. U. den Neustart des virtuellen Computers. 
 
@@ -29,7 +29,7 @@ Durch Fehlerdomänen wird die Gruppe der virtuellen Computer definiert, die eine
 <!--Image reference-->
    ![UD FD configuration](./media/virtual-machines-manage-availability/ud-fd-configuration.png)
 
->[WACOM.NOTE] Anweisungen finden Sie unter [Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer] [].
+>[AZURE.NOTE] Anweisungen finden Sie unter [Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer].
 
 ### Konfigurieren einzelner Anwendungsebenen in separaten Verfügbarkeitsgruppen
 Wenn die virtuellen Computer in der Verfügbarkeitsgruppe alle fast identisch sind und die Anwendung auf die gleiche Weise unterstützen, wird empfohlen, für jede einzelne Anwendungsebene eine Verfügbarkeitsgruppe zu konfigurieren.  Wenn Sie eine Verfügbarkeitsgruppe mit zwei verschiedenen Ebenen anlegen, können alle virtuellen Computer derselben Anwendungsebene zur gleichen Zeit neu gestartet werden. Indem Sie mindestens zwei virtuelle Computer in einer Verfügbarkeitsgruppe für jede Ebene konfigurieren, gewährleisten Sie, dass mindestens ein virtueller Computer pro Ebene verfügbar ist.   
@@ -59,6 +59,7 @@ Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine
 
 
 
-<!--HONumber=35.1-->
 
-<!--HONumber=35.1-->
+
+
+<!--HONumber=42-->

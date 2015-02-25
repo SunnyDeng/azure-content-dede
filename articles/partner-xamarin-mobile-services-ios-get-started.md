@@ -1,12 +1,26 @@
-﻿<properties pageTitle="Erste Schritte mit Mobile Services für Xamarin iOS-Apps" metaKeywords="" description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Xamarin iOS-Entwicklung." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with Mobile Services" authors="craigd" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Mobile Services für Xamarin iOS-Apps" 
+	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Xamarin iOS-Entwicklung." 
+	services="mobile-services" 
+	documentationCenter="xamarin" 
+	authors="conceptdev" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-ios" ms.devlang="dotnet" ms.topic="hero-article" ms.date="11/22/2014" ms.author="craig.dunn@xamarin.com" />
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-xamarin-ios" 
+	ms.devlang="dotnet" 
+	ms.topic="hero-article" 
+	ms.date="11/22/2014" 
+	ms.author="craig.dunn@xamarin.com"/>
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
-[WACOM.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Back-End-Dienst zu einer Xamarin.iOS-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache <em>To-Do-Listen-App,</em> die App-Daten im neuen mobilen Dienst speichert.
+In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Back-End-Dienst zu einer Xamarin.iOS-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache <em>To-Do-Listen</em>-App, die App-Daten im neuen mobilen Dienst speichert.
 
 Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip unten auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm.
 
@@ -22,11 +36,11 @@ Unten sehen Sie einen Screenshot aus der fertigen App:
 
 Für das Abschließen dieses Lernprogramms sind XCode und [Xamarin Studio] für OS X oder das Xamarin Visual Studio-Plug-In für Visual Studio unter Windows erforderlich. Das Beispiel wird unter iOS 5.0 und höher ausgeführt.
 
-<div class="dev-callout"><strong>Hinweis</strong> <p>Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A643EE910&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-xamarin-ios%2F" target="_blank">"Kostenlose</a>Azure-Testversion".</p></div>
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A643EE910&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-xamarin-ios%2F"%20target="_blank).
 
-## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Dienstes
+## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Diensts
 
-[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 <h2>Erstellen einer neuen Xamarin.iOS-App</h2>
 
@@ -34,9 +48,9 @@ Sobald Sie den mobilen Dienst erstellt haben, können Sie einem einfachen Schnel
 
 In diesem Abschnitt erstellen Sie eine neue Xamarin.iOS-App, die mit dem mobilen Dienst verbunden ist.
 
-1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie soeben erstellt haben.
+1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
-2. Klicken Sie auf der Schnellstartregisterkarte auf **Xamarin.iOS** unter **Plattform auswählen**, und erweitern Sie die Option **Neue Xamarin.iOS-App erstellen**.
+2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Xamarin.iOS**, und erweitern Sie dann **Neue Xamarin.iOS-App erstellen**.
 
 	![][6]
 
@@ -44,11 +58,11 @@ In diesem Abschnitt erstellen Sie eine neue Xamarin.iOS-App, die mit dem mobilen
 
   	![][7]
 
-3. Falls noch nicht geschehen, führen Sie den Download und die Installation von Xcode (wir empfehlen die neueste Version, Xcode 6.0 oder höher) und [Xamarin Studio] durch.
+3. Falls noch nicht geschehen, laden Sie XCode (wir empfehlen die neueste Version, XCode 6.0 oder höher) und [Xamarin Studio] herunter, und installieren Sie beide Komponenten.
 
 4. Klicken Sie auf **TodoItems-Tabelle erstellen**, um eine Tabelle zum Speichern der App-Daten zu erstellen.
 
-5. Klicken Sie unter **App herunterladen und ausführen** auf **Download**. 
+5. Klicken Sie unter **App herunterladen und ausführen** auf **Herunterladen**. 
 
 	Dadurch wird das Projekt für die Beispielanwendung der To-do-Liste heruntergeladen, die mit dem mobilen Dienst verbunden ist und auf die Azure Mobile Services-Komponente für Xamarin.iOS verweist. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
 
@@ -56,26 +70,23 @@ In diesem Abschnitt erstellen Sie eine neue Xamarin.iOS-App, die mit dem mobilen
 
 Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der neuen App.
 
-1. Navigieren Sie zu dem Speicherort, an dem Sie die komprimierten Projektdateien gespeichert haben, und öffnen Sie die **XamarinTodoQuickStart.iOS.sln**-Lösungsdatei mithilfe von Xamarin Studio oder Visual Studio.
+1. Navigieren Sie zu dem Verzeichnis, in dem Sie die komprimierten Projektdateien gespeichert haben, erweitern Sie die Dateien auf Ihrem Computer, und öffnen Sie die Datei **XamarinTodoQuickStart.iOS.sln** mithilfe von Xamarin Studio oder Visual Studio.
 
 	![][8]
 
 	![][9]
 
-2. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App im iPhone-Emulator zu starten, was die Standardeinstellung für dieses Projekt ist.
+2. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App im iPhone-Emulator zu starten (dies ist die Voreinstellung für dieses Projekt).
 
-3. Geben Sie in der App einen aussagekräftigen Text ein, z. B. "Lernprogramm abschließen", und klicken Sie dann auf das Plussymbol (**+**).
+3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Lernprogramm abschließen_ ein, und klicken Sie dann auf das Plus-Symbol (**+**).
 
 	![][10]
 
 	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-	<div class="dev-callout"> 
-	<b>Hinweis</b> 
-   	<p>Sie können den Code überprüfen, der auf den Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der C#-Datei "TodoService.cs".</p> 
- 	</div>
+	> [AZURE.NOTE] Sie können den Code überprüfen, der auf den Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der C#-Datei "TodoService.cs".
 
-4. Klicken Sie zurück im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
 	![][11]
 
@@ -86,18 +97,17 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 ## <a name="next-steps"> </a>Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden: 
 
-* [Erste Schritte mit Daten]
-  <br/>Informationen über das Speichern und Abfragen von Daten mit Mobile Services.
+## Nächste Schritte
+Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden: 
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten]
-  <br/>Erfahren Sie, wie Sie mit der Synchronisierung von Offlinedaten eine reaktionsfähige, stabile App implementieren können.
+* [Erste Schritte mit der Offline-Datensynchronisierung]
+  <br/>Erfahren Sie, wie der Schnellstart die Offline-Datensynchronisierung verwendet, um die App reaktionsfähig und stabil zu machen.
 
 * [Erste Schritte mit der Authentifizierung]
   <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
-
 
 <!-- Anchors. -->
 [Erste Schritte mit Mobile Services]:#getting-started
@@ -118,7 +128,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 <!-- URLs. -->
 [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Erste Schritte mit der Synchronisierung von Offlinedaten]: /de-de/develop/mobile/tutorials/mobile-services-xamarin-ios-get-started-offline-data
+[Erste Schritte mit der Offline-Datensynchronisierung]: /de-de/develop/mobile/tutorials/mobile-services-xamarin-ios-get-started-offline-data
 [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-ios
 [Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-ios
 
@@ -127,4 +137,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=35.1-->
+
+
+
+<!--HONumber=42-->

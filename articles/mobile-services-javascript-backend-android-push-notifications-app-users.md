@@ -1,12 +1,12 @@
-﻿<properties pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" metaKeywords="push notifications, authentication, users, Notification Hubs, Mobile Services" description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte " metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Send push notifications to authenticated users" authors="wesmc" solutions="Mobile" manager="dwrede" editor="" />
+﻿<properties pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte" services="mobile-services, notification-hubs" documentationCenter="android" authors="wesmc7777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="09/29/2014" ms.author="wesmc" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="09/29/2014" ms.author="wesmc"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
 
-[WACOM.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
 
-In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte Benutzer auf einem beliebigen registrierten Gerät senden. Im Gegensatz zum vorherigen Lernprogramm für [Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen] wird in diesem Lernprogramm der mobile Dienst geändert, sodass sich Benutzer authentifizieren müssen, bevor sich der Client beim Notification Hub für Pushbenachrichtigungen registrieren kann. Außerdem wird die Registrierung geändert, um einen Tag basierend auf der zugewiesenen Benutzer-ID hinzuzufügen. Schließlich wird das Serverskript aktualisiert, um die Benachrichtigung nur an den authentifizierten Benutzer statt an alle Registrierungen zu senden.
+In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte Benutzer auf einem beliebigen registrierten Gerät senden. Im Gegensatz zum vorherigen Lernprogramm für [Pushbenachrichtigungen][Erste Schritte mit Pushbenachrichtigungen] wird in diesem Lernprogramm der mobile Dienst geändert, sodass sich Benutzer authentifizieren müssen, bevor sich der Client beim Notification Hub für Pushbenachrichtigungen registrieren kann. Die Registrierung wird ebenfalls geändert, um einen Tag basierend auf der zugewiesenen Benutzer-ID hinzufügen. Schließlich wird das Serverskript so geändert, dass die Benachrichtigung nur an den authentifizierten Benutzer statt an alle Registrierungen gesendet wird.
 
 In diesem Lernprogramm werden Sie durch den folgenden Prozess geführt:
 
@@ -20,7 +20,7 @@ Dieses Lernprogramm unterstützt Apps für Android.
 
 Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die folgenden Mobile Services-Lernprogramme abgeschlossen haben:
 
-+ [Erste Schritte mit der Authentifizierung]<br/>Fügt eine Anmeldeanforderung zur Beispiel-App "TodoList" hinzu.
++ [Erste Schritte mit der Authentifizierung]<br/>Fügt eine Anmeldeanforderung der Beispiel-App "TodoList" hinzu.
 
 + [Erste Schritte mit Pushbenachrichtigungen]<br/>Konfiguriert die Beispiel-App "TodoList" für Pushbenachrichtigungen durch die Verwendung von Notification Hubs. 
 
@@ -28,7 +28,7 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
 ##<a name="register"></a>Aktualisieren des Diensts zur Verwendung der Authentifizierung für die Registrierung
 
-[WACOM.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../includes/mobile-services-javascript-backend-push-notifications-app-users.md)] 
+[AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../includes/mobile-services-javascript-backend-push-notifications-app-users.md)] 
 
 <ol start="5"><li><p>Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf <strong>Speichern</strong>:</p>
 <pre><code>function insert(item, user, request) {
@@ -66,15 +66,15 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
 ##<a name="update-app"></a>Aktualisieren der App zum Anmelden vor der Registrierung
 
-[WACOM.INCLUDE [mobile-services-android-push-notifications-app-users](../includes/mobile-services-android-push-notifications-app-users.md)] 
+[AZURE.INCLUDE [mobile-services-android-push-notifications-app-users](../includes/mobile-services-android-push-notifications-app-users.md)] 
 
 ##<a name="test"></a>Testen der App
 
-[WACOM.INCLUDE [mobile-services-android-test-push-users](../includes/mobile-services-android-test-push-users.md)] 
+[AZURE.INCLUDE [mobile-services-android-test-push-users](../includes/mobile-services-android-test-push-users.md)] 
 
 <!---## <a name="next-steps"> </a>Nächste Schritte
 
-Im nächsten Lernprogramm [Dienstseitige Autorisierung von Mobile Services-Benutzern][Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET unter [Mobile Services .NET - Erstellen einer konzeptionellen Referenz]-->
+Im nächsten Lernprogramm [Serviceseitige Autorisierung von Mobile Services-Benutzern][Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET unter [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz].-->
 
 <!-- Anchors. -->
 [Aktualisieren des Diensts zur Verwendung von Authentifizierung für die Registrierung]: #register
@@ -89,3 +89,6 @@ Im nächsten Lernprogramm [Dienstseitige Autorisierung von Mobile Services-Benut
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
+
+
+<!--HONumber=42-->

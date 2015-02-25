@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Upload an Ubuntu Linux VHD" pageTitle="Erstellen und Hochladen einer Ubuntu Linux-VHD in Azure" metaKeywords="Azure VHD, uploading Linux VHD, Ubuntu" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Ubuntu Linux-Betriebssystem enthält." metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains an Ubuntu Linux Operating System" authors="szarkos" solutions="" manager="timlt" editor="tysonn" />
+﻿<properties pageTitle="Erstellen und Hochladen einer Ubuntu Linux-VHD in Azure" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Ubuntu Linux-Betriebssystem enthält." services="virtual-machines" documentationCenter="" authors="szarkos" manager="timlt" editor="tysonn"/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="06/05/2014" ms.author="szarkos" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/13/2015" ms.author="szarkos"/>
 
 
 # Vorbereiten eines virtuellen Ubuntu-Computers für Azure
@@ -77,15 +77,15 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu Linux-Betr
 
 5.	(optional) Wenn das Ubuntu-System ein Fehler feststellt und neu gestartet wird, wartet es oftmals an der Grub-Starteingabeaufforderung auf eine Benutzereingabe, wodurch das entsprechende Starten des Systems verhindert wird. Um dies zu unterbinden, müssen Sie die folgenden Schritte ausführen:
 
-	a) Öffnen Sie die Datei /etc/grub.d/00_header.
+	a) Öffnen Sie die Datei "/etc/grub.d/00_header".
 
-	b) Suchen Sie in der **make_timeout()**, search for **if ["\${recordfail}" = 1 ]; then**
+	b) Suchen Sie in der **make_timeout()**-Funktion **if ["\${recordfail}" = 1 ]; then**.
 
 	c) Ändern Sie die Anweisung unterhalb dieser Zeile in **set timeout=5**.
 
-	d) Führen Sie 'sudo update-grub' aus.
+	d) Führen Sie  'sudo update-grub' aus.
 
-6. Modifizieren Sie die Boot-Zeile des Kernels für Grub, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür /etc/default/grub in einem Texteditor. Suchen Sie nach der Variable mit der Bezeichnung `GRUB_CMDLINE_LINUX_DEFAULT` (oder fügen Sie diese gegebenenfalls hinzu), und bearbeiten Sie sie, um die folgenden Parameter einzubinden:
+6. Modifizieren Sie die Boot-Zeile des Kernels für Grub, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/etc/default/grub" in einem Texteditor. Suchen Sie nach der Variablen mit der Bezeichnung  `GRUB_CMDLINE_LINUX_DEFAULT` (oder fügen Sie diese gegebenenfalls hinzu), und bearbeiten Sie sie, um die folgenden Parameter einzubinden:
 
 		GRUB_CMDLINE_LINUX_DEFAULT="console=ttyS0 earlyprintk=ttyS0 rootdelay=300"
 
@@ -98,7 +98,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu Linux-Betr
 		# sudo apt-get update
 		# sudo apt-get install walinuxagent
 
-	Beachten Sie, dass durch eine Installation des `walinuxagent`-Pakets die `NetworkManager`- und `NetworkManager`-Pakete entfernt werden, sofern diese installiert sind.
+	Beachten Sie, dass durch Installieren des  `walinuxagent`-Pakets die Pakete  `NetworkManager` und  `NetworkManager-gnome` entfernt werden, wenn sie installiert sind.
 
 10.	Führen Sie die folgenden Befehle aus, um den virtuellen Computer zurückzusetzen und ihn für die Bereitstellung in Azure vorzubereiten:
 
@@ -110,4 +110,5 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu Linux-Betr
 
 
 
-<!--HONumber=35.1-->
+
+<!--HONumber=42-->

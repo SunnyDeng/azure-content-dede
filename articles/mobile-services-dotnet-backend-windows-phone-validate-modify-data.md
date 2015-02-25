@@ -1,12 +1,12 @@
-<properties urlDisplayName="Validate and Modify Data" pageTitle="Verwenden des .Net-Back-End zum Prüfen und Ändern von Daten (Windows Phone 8) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten für Ihre Windows Phone-App mit dem .NET-Back-End von Microsoft Azure Mobile Services überprüfen, ändern und vergrößern." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using the .Net backend" authors="wesmc" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Verwenden des .Net-Back-End zum Prüfen und Ändern von Daten (Windows Phone 8) | Mobile Dev Center" description="Erfahren Sie, wie Sie Daten für Ihre Windows Phone-App mit dem .NET-Back-End von Microsoft Azure Mobile Services überprüfen, ändern und vergrößern." services="mobile-services" documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"/>
 
 # Prüfen und Ändern von Daten in Mobile Services mit .NET-Back-End
 
-[WACOM.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
 
-In diesem Thema erfahren Sie, wie Sie Code im Azure Mobile Services .NET-Back-End verwenden, um Daten zu prüfen und zu ändern. Der .NET-Back-End-Dienst ist ein HTTP-Dienst, der mit dem Web-API-Framework erstellt wird. Wenn Sie mit der `ApiController`-Klasse vertraut sind, die mit dem Web-API-Framework definiert wird, so ist die durch Mobile Services bereitgestellte `TableController`-Klasse überwiegend selbsterklärend. `TableController` wird von der `ApiController`-Klasse abgeleitet und bietet zusätzliche Funktionen für eine Verknüpfung über Schnittstellen mit einer Datenbanktabelle. Er kann verwendet werden, um Vorgänge mit einzufügenden und zu aktualisierenden Daten auszuführen, einschließlich zum Überprüfen und Ändern von Daten, was in diesem Lernprogramm demonstriert wird. 
+In diesem Thema erfahren Sie, wie Sie Code im Azure Mobile Services .NET-Back-End verwenden, um Daten zu prüfen und zu ändern. Der .NET-Back-End-Dienst ist ein HTTP-Dienst, der mit dem Web-API-Framework erstellt wird. Wenn Sie mit der  `ApiController`-Klasse vertraut sind, die mit dem Web-API-Framework definiert wird, so ist die durch Mobile Services bereitgestellte  `TableController`-Klasse überwiegend selbsterklärend. `TableController` wird von der `ApiController`-Klasse abgeleitet und bietet zusätzliche Funktionen für eine Verknüpfung über Schnittstellen mit einer Datenbanktabelle. Sie kann verwendet werden, um Vorgänge in Bezug auf einzufügende und zu aktualisierende Daten auszuführen, einschließlich Überprüfen und Ändern von Daten, was in diesem Lernprogramm demonstriert wird. 
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
@@ -16,16 +16,16 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 4. [Einen Zeitstempel für CompleteDate hinzufügen]
 5. [Client zum Anzeigen von CompleteDate aktualisieren]
 
-Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen Anwendung](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/) auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst dieses Lernprogramm abschließen:  
+Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App] auf(/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst dieses Lernprogramm abschließen.  
 
 ## <a name="string-length-validation"></a>Überprüfung hinzufügen
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-add-validation](../includes/mobile-services-dotnet-backend-add-validation.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-add-validation](../includes/mobile-services-dotnet-backend-add-validation.md)]
 
 
-## <a name="update-client-validation"></a>Den Client aktualisieren
+## <a name="update-client-validation"></a>Aktualisieren des Clients
 
-Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die Daten zu überprüfen und Fehlerantworten zu senden. Sie müssen nun Ihre App aktualisieren, damit diese Fehlerantworten aus der Überprüfung verarbeiten kann. Der Fehler wird als `MobileServiceInvalidOperationException` vom `IMobileServiceTable<TodoItem].InsertAsync()`-Aufruf der Client-App abgefangen.
+Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die Daten zu überprüfen und Fehlerantworten zu senden. Sie müssen nun Ihre App aktualisieren, damit diese Fehlerantworten aus der Überprüfung verarbeiten kann. Der Fehler wird als `MobileServiceInvalidOperationException` vom `IMobileServiceTable<TodoItem].InsertAsync()`-Aufruf der Client-App aufgefangen.
 
 1. Navigieren Sie in Visual Studio im Fenster des Projektmappen-Explorers zum Clientprojekt, und öffnen Sie die Datei "MainPage.xaml.cs". Fügen Sie der Datei die folgende using-Anweisung hinzu.
 
@@ -57,11 +57,11 @@ Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die 
             }
         }
 
-   	Diese Version der Methode umfasst eine Fehlerbehebung für **MobileServiceInvalidOperationException**, bei der die deserialisierte Fehlermeldung aus dem Antworteninhalt in einem Meldungsfeld angezeigt wird.
+   	Diese Version der Methode umfasst eine Fehlerbehandlung für **MobileServiceInvalidOperationException**, bei der die deserialisierte Fehlermeldung aus dem Inhalt der Antwort in einem Meldungsfeld angezeigt wird.
 
 ## <a name="test-length-validation"></a>Testlängenüberprüfung
 
-1. Konfigurieren Sie in Visual Studio das gewünschte Windows Phone-Bereitstellungsziel. Klicken Sie danach im Fenster des Projektmappen-Explorers mit der rechten Maustaste auf das Client-App-Projekt, und klicken Sie dann auf **Debug**, **Start new instance**.
+1. Konfigurieren Sie in Visual Studio das gewünschte Windows Phone-Bereitstellungsziel. Klicken Sie danach im Fenster des Projektmappen-Explorers mit der rechten Maustaste auf das Client-App-Projekt, und klicken Sie dann auf **Debug**, **Neue Instanz starten**.
 
 2. Geben Sie den Text für einen neuen todo-Eintrag mit einer Länge von mehr als 10 Zeichen ein, und klicken Sie dann auf **Speichern**.
 
@@ -73,7 +73,7 @@ Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die 
 
 ## <a name="add-timestamp"></a>Ein Zeitstempelfeld für CompleteDate hinzufügen
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-add-completedate](../includes/mobile-services-dotnet-backend-add-completedate.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-add-completedate](../includes/mobile-services-dotnet-backend-add-completedate.md)]
 
 
 ## <a name="update-client-timestamp"></a>Client zum Anzeigen von CompleteDate aktualisieren
@@ -92,7 +92,7 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
         </StackPanel>
 
 
-2. Öffnen Sie im Projektmappen-Explorer für Visual Studio im todolist-Clientprojekt die Datei "MainPage.xaml.cs, ersetzen Sie den Ereignishandler `CheckBoxComplete_Checked` durch den Ereignishandler `CheckBoxComplete_Clicked`, der unten angegeben ist. Damit kann nach Abschluss des Eintrags das vollständige Datum angezeigt werden.
+2. Öffnen Sie im Projektmappen-Explorer für Visual Studio im todolist-Clientprojekt die Datei "MainPage.xaml.cs", und ersetzen Sie den  `CheckBoxComplete_Checked`-Ereignishandler durch den nachfolgenden  `CheckBoxComplete_Clicked`-Ereignishandler. Damit kann nach Abschluss des Eintrags das vollständige Datum eingesehen werden.
 
         private void CheckBoxComplete_Clicked(object sender, RoutedEventArgs e)
         {
@@ -102,7 +102,7 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
         }
 
 
-3. Ersetzen Sie in der Datei "MainPage.xaml.cs" dann die vorhandene **TodoItem**-Klasse durch die folgende Definition, die eine neue **CompleteDate**-Eigenschaft als Nullable-Typ beinhaltet.
+3. In the MainPage.xaml.cs file, then replace the existing **TodoItem** class with the following definition that includes the new **CompleteDate** property as a nullable type.
 
         public class TodoItem
         {
@@ -115,13 +115,13 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
             public DateTime? CompleteDate { get; set; }
         }
 	
-    >[WACOM.NOTE] <code>DataMemberAttribute</code> weist den Client an, die neue <code>CompleteDate</code>-Eigenschaft in der App der <code>CompleteDate</code>-Spalte zuzuordnen, die in der TodoItem-Tabelle definiert ist. Durch die Verwendung dieses Attributs kann die App Eigenschaftennamen für Objekte haben, die von den Spaltennamen in der SQL-Datenbank abweichen.
+    >[AZURE.NOTE] Das <code>DataMemberAttribute</code> weist den Client an, die neue Eigenschaft  <code>CompleteDate</code> in der App der in der TodoItem-Tabelle definierten Spalte <code>CompleteDate</code> zuzuordnen. Durch die Verwendung dieses Attributs kann Ihre App Eigenschaftennamen zu Objekten haben, die von den Spaltennamen in der SQL-Datenbank abweichen.
     
 
 	
 
 
-4. Nehmen Sie in der Datei "MainPage.xaml.cs" die `.Where`-Klauselfunktion in der vorhandenen **RefreshTodoItems**-Methode, oder kennzeichnen Sie sie als Kommentar, sodass abgeschlossene todoitems in die Ergebnisse einbezogen werden.
+4. Nehmen Sie in der "MainPage.xaml.cs" eine Entfernung oder Auskommentierung der `.Where`-Klauselfunktion in der vorhandenen **RefreshTodoItems**-Methode vor, sodass abgeschlossene "todoitems" in die Ergebnisse einbezogen werden.
 
             // This query filters out completed TodoItems and 
             // items without a timestamp. 
@@ -130,7 +130,7 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
                .ToCollectionAsync();
 
 
-5. Aktualisieren Sie in der Datei "MainPage.xaml.cs" die **UpdateCheckedTodoItem**-Methode wie folgt, sodass die Einträge nach einem Update aktualisiert werden und abgeschlossene Einträge nicht aus der Liste entfernt werden. Speichern Sie anschließend die Datei.	
+5. Aktualisieren Sie in der "MainPage.xaml.cs" die **UpdateCheckedTodoItem**-Methode wie folgt, sodass die Einträge nach einem Update aktualisiert sind und abgeschlossene Einträge nicht aus der Liste entfernt werden. Speichern Sie anschließend die Datei.	
 
         private async void UpdateCheckedTodoItem(TodoItem item)
         {
@@ -141,16 +141,16 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
         }
 
 
-6. Klicken Sie in den Fenstern des Projektmappen-Explorers von Visual Studio mit der rechten Maustaste auf die **Projektmappe,**, und klicken Sie dann auf **Projektmappe neu erstellen**, um sowohl den Client als auch den .NET-Back-End-Dienst neu zu erstellen. Vergewissern Sie sich, dass beide Projekte ohne Fehler erstellt werden.
+6. Klicken Sie in den Fenstern des Projektmappen-Explorers von Visual Studio mit der rechten Maustaste auf **Projektmappe**. Klicken Sie dann auf **Projektmappe neu erstellen**, um sowohl den Client als auch den .NET-Back-End-Dienst neu zu erstellen. Stellen Sie sicher, dass beide Projekte ohne Fehler erstellt werden.
 
 
 	
-7. Drücken Sie die Taste **F5**, um die Client-App und den Dienst lokal auszuführen. Fügen Sie einige neue Einträge hinzu, und klicken Sie auf einige der Einträge, um diese als abgeschlossen zu markieren und festzustellen, ob der aktualisierte **CompleteDate**-Zeitstempel angezeigt wird.
+7. Drücken Sie die Taste **F5**, um die Client-App und den Dienst lokal auszuführen. Fügen Sie einige neue Einträge hinzu, und klicken Sie auf diese, um einige der Einträge als abgeschlossen zu markieren, damit der **CompleteDate**-Zeitstempel als aktualisiert angezeigt werden kann.
 
 
-8. Klicken Sie im Projektmappen-Explorer für Visual Studio mit der rechten Maustaste auf das todolist-Dienstprojekt, und klicken Sie auf **Veröffentlichen**. Veröffentlichen Sie den .NET-Back-End-Dienst mithilfe der Veröffentlichungseinstellungsdatei, die Sie vom Azure-Portal heruntergeladen haben, in Microsoft Azure.
+8. Klicken Sie im Projektmappen-Explorer für Visual Studio mit der rechten Maustaste auf das todolist-Dienstprojekt, und klicken Sie auf **Veröffentlichen**. Veröffentlichen Sie Ihren .NET-Backend-Dienst unter Microsoft Azure mithilfe Ihrer Veröffentlichungseinstellungsdatei, die Sie vom Azure-Portal heruntergeladen haben.
 
-9. Aktualisieren Sie die Datei "App.xaml.cs" für das Clientprojekt, indem Sie Kommentarzeichen vor der Verbindung zur Adresse des mobilen Diensts entfernen. Testen Sie die App mit dem in Ihrem Azure-Konto gehosteten .NET Back-End.
+9. Aktualisieren Sie die Datei "App.xaml.cs" für das Clientprojekt, indem Sie die Verbindung zur Adresse des mobilen Diensts auskommentieren. Testen Sie die App bezüglich des .NET-Backend, das in Ihrem Azure-Konto gehostet wird.
 
 
 ## <a name="next-steps"> </a>Nächste Schritte
@@ -162,11 +162,11 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 * [Dienstseitige Autorisierung von Benutzern]
   <br/>Erfahren Sie, wie Daten anhand der ID eines authentifizierten Benutzers gefiltert werden können.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 * [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
-  <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET
+  <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 <!-- Anchors. -->
 [Überprüfung der Zeichenfolgenlänge hinzufügen]: #string-length-validation
@@ -195,3 +195,6 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
+
+
+<!--HONumber=42-->

@@ -1,6 +1,20 @@
-﻿<properties title="Hybrid Connections Step-by-Step: Connect to on-premises SQL Server from an Azure website" pageTitle="Schrittweise Anleitungen für Hybridverbindungen: Verbinden mit einem lokalen SQL Server von einer Azure-Website aus" description="Erstellen einer Website in Microsoft Azure und Herstellen einer Verbindung von der Website zu einer lokalen SQL Server-Datenbank" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="cephalin" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+<properties 
+	pageTitle="Schrittweise Anleitungen für Hybridverbindungen: Verbinden mit einem lokalen SQL Server von einer Azure-Website aus" 
+	description="Erstellen einer Website in Microsoft Azure und Herstellen einer Verbindung von der Website zu einer lokalen SQL Server-Datenbank" 
+	services="web-sites" 
+	documentationCenter="" 
+	authors="cephalin" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/24/2014" ms.author="cephalin" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/24/2014" 
+	ms.author="cephalin"/>
 
 #Eine Verbindung mit einem lokalen SQL Server von einer Azure-Website mit Hybridverbindungen herstellen
 
@@ -9,20 +23,20 @@ Mit Hybridverbindungen können Microsoft Azure-Websites mit lokalen Ressourcen, 
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine Website im Azure-Vorschauportal erstellen, die Website mit der neuen Funktion "Hybridverbindung" mit Ihrer lokalen SQL Server-Datenbank verbinden, eine einfache ASP.NET-Webanwendung erstellen, welche die Hybridverbindung verwendet, und die Anwendung auf der Azure-Website bereitstellen. Die fertige Website in Azure speichert Anmeldeinformationen in einer lokalen Mitgliedschaftsdatenbank. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure oder ASP.NET haben.
 
-> [WACOM.NOTE] Der Website-Teil der hybriden Verbindungsfunktion ist nur im [Azure-Vorschauportal] verfügbar(https://portal.azure.com). Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).  
+> [AZURE.NOTE] Der Website-Teil der hybriden Verbindungsfunktion ist nur im [Azure-Vorschauportal](https://portal.azure.com) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).  
 
 ##Voraussetzungen##
 Zum Durchführen des Lernprogramms benötigen Sie folgende Produkte: Alle Produkte sind als kostenlose Versionen verfügbar, sodass Sie kostenlos mit der Entwicklung für Azure beginnen können.
 
-- **Azure-Abonnement** - Informationen zu einem kostenlosen Abonnement finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/). 
+- **Azure-Abonnement** - Informationen zu einem kostenlosen Abonnement finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/).
 
 - **Visual Studio 2013** - Zum Herunterladen einer kostenlosen Testversion von Visual Studio 2013 besuchen Sie [Visual Studio Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs). Installieren Sie diese Version, bevor Sie fortfahren.
 
-- **Microsoft .NET Framework 3.5 Service Pack 1** - Wenn Sie das Betriebssystem Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows 7 oder Windows Server 2008 R2 verwenden, können Sie diese Komponente in Systemsteuerung > "Programme und Funktionen" bzw. "Programme und Features" > "Windows-Funktionen ein- oder ausschalten" aktivieren. Andernfalls können Sie sie vom [Microsoft Download Center] herunterladen(http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=22).
+- **Microsoft .NET Framework 3.5 Service Pack 1** - Wenn Sie das Betriebssystem Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows 7 oder Windows Server 2008 R2 verwenden, können Sie diese Komponente in Systemsteuerung > "Programme und Funktionen" bzw. "Programme und Features" > "Windows-Funktionen ein- oder ausschalten" aktivieren. Andernfalls können Sie es aus dem [Microsoft Download Center](http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=22) herunterladen.
 
-- **SQL Server 2014 Express with Tools** - Laden Sie Microsoft SQL Server Express kostenlos von der [Microsoft Web Platform Datenbank-Seite] herunter(http://www.microsoft.com/web/platform/database.aspx). Wählen Sie die Version **Express** (nichtLocalDB). Die Version**Express with Tools** enthält das Produkt SQL Server Management Studio, das Sie in diesem Lernprogramm verwenden werden.
+- **SQL Server 2014 Express with Tools** - Laden Sie Microsoft SQL Server Express kostenlos von der [Microsoft Web Platform Datenbank-Seite](http://www.microsoft.com/web/platform/database.aspx) herunter. Wählen Sie die Version **Express** (nicht LocalDB). Die Version **Express with Tools** enthält das Produkt SQL Server Management Studio, das Sie in diesem Lernprogramm verwenden werden.
 
-- **SQL Server Management Studio Express** - Dieses Produkt ist im oben angegebenen Download "SQL Server 2014 Express with Tools" enthalten, Sie müssen es jedoch getrennt installieren. Sie können es von der [Download-Seite für SQL Server Express] herunterladen und installieren(http://www.microsoft.com/web/platform/database.aspx).
+- **SQL Server Management Studio Express** - Dieses Produkt ist im oben angegebenen Download "SQL Server 2014 Express with Tools" enthalten, Sie müssen es jedoch getrennt installieren. Sie können es von der [Download-Seite für SQL Server Express](http://www.microsoft.com/web/platform/database.aspx) herunterladen und installieren.
 
 In diesem Lernprogramm wird davon ausgegangen, dass Sie ein Azure-Abonnement besitzen, Visual Studio 2013 installiert haben und .NET Framework 3.5 installiert oder aktiviert haben. In diesem Lernprogramm wird gezeigt, wie Sie SQL Server 2014 Express in einer Konfiguration installieren, die sich gut für die Azure-Funktion "Hybridverbindungen" eignet (eine Standardinstanz mit einem statischen TCP-Port). Bevor Sie mit dem Lernprogramm beginnen, laden Sie "SQL Server 2014 Express with Tools" vom oben angegebenen Speicherort herunter, sofern Sie SQL Server nicht installiert haben.
 
@@ -36,47 +50,47 @@ Der Computer, auf dem Sie den lokalen Hybridverbindungs-Manager-Agent installier
 > <table border="1">
     <tr>
        <th><strong>Port</strong></th>
-        <th>Warum</th>
+        <th>Grund</th>
     </tr>
     <tr>
         <td>80</td>
-        <td><strong>Erforderlich</strong> für HTTP-Port für Zertifikatüberprüfung und optional für Datenkonnektivität.</td>
+        <td><strong>Erforderlich</strong> für HTTP-Port für Zertifikatüberprüfung.</td>
     </tr>
     <tr>
         <td>443</td>
-        <td><strong>Optional</strong> für Datenkonnektivität. Wenn Outbound-Konnektivität zu 443 nicht verfügbar ist, wird TCP-Port 80 verwendet.</td>
+        <td><strong>Optional</strong> für Datenkonnektivität. Wenn keine ausgehende Konnektivität zu 443 verfügbar ist, wird TCP-Port 80 verwendet.</td>
     </tr>
 	<tr>
         <td>5671 und 9352</td>
-        <td><strong>Empfohlen</strong> aber optional für Datenkonnektivität. Beachten Sie, dass dieser Modus normalerweise für mehr Durchsatz sorgt. Wenn Outbound-Konnektivität zu diesen Ports nicht verfügbar ist, wird TCP-Port 443 verwendet.</td>
+        <td><strong>Empfohlen</strong>, jedoch für Datenkonnektivität optional. Beachten Sie, dass dieser Modus normalerweise für mehr Durchsatz sorgt. Wenn Outbound-Konnektivität zu diesen Ports nicht verfügbar ist, wird TCP-Port 443 verwendet.</td>
 	</tr>
 </table>
 
-- Sie müssen in der Lage sein, *Hostname*:*Portnummer* Ihrer lokalen Ressource zu erreichen. 
+- Sie müssen in der Lage sein,  *hostname*:*Portnummer* Ihrer lokalen Ressource zu erreichen. 
 
 Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie den Browser auf dem Computer verwenden, auf dem der lokale Hybridverbindungs-Agent installiert ist.
 
-Wenn Sie SQL Server bereits in einer Konfiguration und Umgebung installiert haben, welche die oben beschriebenen Kriterien erfüllen, können Sie gleich mit [Erstellen einer lokalen SQL Server-Datenbank] beginnen(#CreateSQLDB).
+Wenn Sie SQL Server bereits in einer Konfiguration und Umgebung installiert haben, welche die oben beschriebenen Kriterien erfüllen, können Sie gleich mit [Erstellen einer lokalen SQL Server-Datenbank](#CreateSQLDB) beginnen.
 
-##Themen in diesem Artikel##
-[A. SQL Server Express installieren, TCP/IP aktivieren und eine lokale SQL Server-Datenbank erstellen](#InstallSQL)
+##Themen in diesem Artikel
+[A. Installieren von SQL Server Express , Aktivieren von TCP/IP und Erstellen einer lokalen SQL Server-Datenbank](#InstallSQL)
 
-[B. Eine Website im Azure-Vorschauportal erstellen](#CreateSite)
+[B. Erstellen einer Website im Azure-Vorschauportal](#CreateSite)
 
-[C. Eine Hybridverbindung und einen BizTalk-Dienst erstellen](#CreateHC)
+[C. Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC)
 
-[D. Lokalen Hybridverbindungs-Manager zum Herstellen der Verbindung installieren](#InstallHCM)
+[D. Installieren des lokalen Hybridverbindungs-Managers zum Herstellen der Verbindung](#InstallHCM)
 
-[E. in grundlegendes ASP.NET-Webprojekt erstellen, Datenbank-Verbindungszeichenfolge bearbeiten und das Projekt lokal ausführen](#CreateASPNET)
+[E. Erstellen eines grundlegenden ASP.NET-Webprojekts, Bearbeiten der Datenbank-Verbindungszeichenfolge und lokales Ausführen des Projekts](#CreateASPNET)
 
-[F. Webanwendung in Azure veröffentlichen und testen](#PubNTest)
+[F. Veröffentlichen und Testen der Webanwendung in Azure](#PubNTest)
 
 <a name="InstallSQL"></a>
-## A. SQL Server Express installieren, TCP/IP aktivieren und eine lokale SQL Server-Datenbank erstellen ##
+## A. Installieren von SQL Server Express , Aktivieren von TCP/IP und Erstellen einer lokalen SQL Server-Datenbank
 
 In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TCP/IP aktivieren und eine Datenbank erstellen, damit Ihre Webanwendung in der Azure-Vorschauumgebung funktioniert.
 
-###SQL Server Express installieren###
+###Installieren von SQL Server 2008 Express
 
 1. Um SQL Server Express zu installieren, führen Sie die Datei **SQLEXPRWT_x64_ENU.exe** oder **SQLEXPR_x86_ENU.exe** aus, die Sie heruntergeladen haben. Der SQL Server-Installationscenter-Assistent wird geöffnet.
 	
@@ -96,22 +110,22 @@ In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TC
 	
 	![Choose Mixed Mode][ChooseMixedMode]
 	
-	In diesem Lernprogramm verwenden Sie die SQLServer-Authentifizierung. Merken Sie sich unbedingt das Kennwort, das Sie angeben, weil Sie es später benötigen werden.
+	In diesem Lernprogramm verwenden Sie die SQL Server-Authentifizierung. Merken Sie sich unbedingt das Kennwort, das Sie angeben, weil Sie es später benötigen werden.
 	
 6. Bearbeiten Sie die restlichen Schritte des Assistenten, um die Installation abzuschließen.
 
-###TCP/IP aktivieren###
-Zum Aktivieren von TCP/IP verwenden Sie den SQL Server-Konfigurations-Manager, der zusammen mit SQL Server Express installiert wurde. Führen Sie zunächst die in [Aktivieren des TCP/IP-Netzwerkprotokolls für SQL Server for SQL Server] beschriebenen Schritte aus,(http://technet.microsoft.com/de-de/library/hh231672%28v=sql.110%29.aspx) bevor Sie fortfahren.
+###Aktivieren von TCP/IP
+Zum Aktivieren von TCP/IP verwenden Sie den SQL Server-Konfigurations-Manager, der zusammen mit SQL Server Express installiert wurde. Führen Sie zunächst die in [Aktivieren des TCP/IP-Netzwerkprotokolls für SQL Server](http://technet.microsoft.com/de-de/library/hh231672%28v=sql.110%29.aspx) beschriebenen Schritte aus, bevor Sie fortfahren.
 
 <a name="CreateSQLDB"></a>
-###Eine lokale SQL Server-Datenbank erstellen###
+###Erstellen einer lokalen SQL Server-Datenbank
 
 Für Ihre Visual Studio-Webanwendung benötigen Sie eine Mitgliedschaftsdatenbank, auf die Azure zugreifen kann. Hierzu ist eine SQL Server- oder SQL Server Express-Datenbank erforderlich (nicht die LocalDB-Datenbank, die von der MVC-Vorlage standardmäßig verwendet wird). Daher erstellen Sie als Nächstes die Mitgliedschaftsdatenbank. 
 
-1. Stellen Sie in SQL Server Management Studio eine Verbindung mit der SQL Server-Instanz her, die Sie gerade installiert haben. (Wenn der Dialog **Mit Server verbinden** nicht automatisch angezeigt wird, navigieren Sie zu **Objekt-Explorer** im linken Bereich, klicken Sie auf **Verbinden**, und klicken Sie anschließend auf **Datenbankmodul**.) 	
+1. Stellen Sie in SQL Server Management Studio eine Verbindung mit der SQL Server-Instanz her, die Sie gerade installiert haben. (Wenn der Dialog **Mit Server verbinden** nicht automatisch angezeigt wird, navigieren Sie zu **Objekt-Explorer** im linken Bereich. Klicken Sie auf **Verbinden**, und klicken Sie anschließend auf **Datenbankmodul**.) 	
 	![Connect to Server][SSMSConnectToServer]
 	
-	Wählen Sie unter **Servertyp** die Option **Datenbankmodul**. Als **Servername** können Sie **localhost** oder den Namen des Computers, den Sie benutzen, verwenden. Wählen Sie **SQL Server-Authentifizierung**, und melden Sie sich dann mit dem Benutzernamen und dem Kennwort des zuvor erstellten Benutzers an. 
+	Wählen Sie unter **Servertyp** die Option **Datenbankmodul**. Als **Servername** können Sie **localhost** oder den Namen des Computers, den Sie benutzen, verwenden. Wählen Sie **SQL Server-Authentifizierung**, und melden Sie sich dann mit dem sa-Benutzername und dem Kennwort an, das Sie zuvor erstellt haben. 
 	
 2. Um eine neue Datenbank mit SQL Server Management Studio zu erstellen, klicken Sie in Objekt-Explorer mit der rechten Maustaste auf **Datenbanken** und anschließend auf **Neue Datenbank**.
 	
@@ -128,11 +142,11 @@ Für Ihre Visual Studio-Webanwendung benötigen Sie eine Mitgliedschaftsdatenban
 	![MembershipDB created][SSMSMembershipDBCreated]
 	
 <a name="CreateSite"></a>
-## B. Eine Website im Azure-Vorschauportal erstellen ##
+## B. Erstellen einer Website im Azure-Vorschauportal
 
-> [WACOM.NOTE] Wenn Sie bereits eine Website im Azure-Vorschauportal erstellt haben, die Sie für dieses Lernprogramm verwenden möchten, können Sie direkt zu [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) wechseln und dort beginnen.
+> [AZURE.NOTE] Wenn Sie bereits eine Website im Azure-Vorschauportal erstellt haben, die Sie für dieses Lernprogramm verwenden möchten, können Sie direkt zu [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) wechseln und dort beginnen.
 
-1. Klicken Sie unten links in der Ecke des [Azure-Vorschauportals](https://portal.azure.com) auf **Neu**, und wählen Sie dann **Website**.
+1. Klicken Sie in der unteren linken Ecke des [Azure-Vorschauportals](https://portal.azure.com) auf **Neu**, und wählen Sie **Website** aus.
 	
 	![New button][New]
 	
@@ -157,32 +171,32 @@ Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 <a name="CreateHC"></a>
 ## C. Eine Hybridverbindung und einen BizTalk-Dienst erstellen ##
 
-1. Blättern Sie im Vorschauportal im Fensterbereich für Ihre Website nach unten, und wählen Sie **Hybrid connections** aus.
+1. Führen Sie im Vorschauportal im Fensterbereich einen Bildlauf nach unten zu Ihrer Website aus, und wählen Sie **Hybridverbindungen** aus.
 	
 	![Hybrid connections][CreateHCHCIcon]
 	
-2. Klicken Sie unter "Hybrid connections" auf **Hinzufügen**.
+2. Klicken Sie unter "Hybridverbindungen" auf **Hinzufügen**.
 	
 	![Add a hybrid connnection][CreateHCAddHC]
 	
-3. Der Fensterbereich **Add a hybrid connection** wird geöffnet.  Da es sich um die erste Hybridverbindung handelt, ist die Option **New hybrid connection** bereits ausgewählt, und der Fensterbereich **Create hybrid connection** wird geöffnet.
+3. Der Fensterbereich **Hybridverbindung hinzufügen** wird geöffnet.  Da es sich um die erste Hybridverbindung handelt, ist die Option **Neue Hybridverbindung** bereits ausgewählt, und der Fensterbereich **Hybridverbindung erstellen** wird geöffnet.
 	
 	![Create a hybrid connection][TwinCreateHCBlades]
 	
-	Geben Sie im Fensterbereich **Create hybrid connection blade** Folgendes ein:
-	- Geben Sie unter **Name** einen Namen für die Verbindung ein.
+	Geben Sie im Fensterbereich **Hybridverbindung erstellen** Folgendes ein:
+	- Geben Sie in **Name** einen Namen für die Verbindung ein.
 	- Geben Sie als **Hostname** den Computernamen Ihres SQL Server-Hostcomputers ein.
 	- Geben Sie bei **Port** 1433 ein (Standardport für SQL Server).
-	- Klicken Sie auf **Biz Talk Service**
+	- Klicken Sie auf **BizTalk-Dienst**.
 
 
-4. Der Fensterbereich **Create Biz Talk Service** wird geöffnet. Geben Sie einen Namen für den BizTalk-Dienst ein, und klicken Sie auf **OK**.
+4. Der Fensterbereich **BizTalk-Dienst erstellen** wird geöffnet. Geben Sie einen Namen für den BizTalk-Dienst ein, und klicken Sie auf **OK**.
 	
 	![Create BizTalk service][CreateHCCreateBTS]
 	
-	Das Fenster **Create Biz Talk Service** wird geschlossen, und Sie kehren zum Fensterbereich **Create hybrid connection** zurück.
+	Der Fensterbereiche **BizTalk-Dienst** erstellen wird geschlossen, und Sie kehren zum Fensterbereich **Hybridverbindung erstellen** zurück.
 	
-5. Klicken Sie unter "Create hybrid connection" auf **OK**. 
+5. Klicken Sie im Fensterbereich "Hybridverbindung erstellen" auf **OK**. 
 	
 	![Click OK][CreateBTScomplete]
 	
@@ -190,70 +204,70 @@ Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 	
 	![Success notification][CreateHCSuccessNotification]
 	
-7. Im Website-Fensterbereich zeigt das Symbol für **Hybridverbindungen** jetzt an, dass 1 Hybridverbindung erstellt wurde.
+7. Im Website-Fensterbereich zeigt das Symbol **Hybridverbindungen** jetzt an, dass eine Hybridverbindung erstellt wurde.
 	
 	![One hybrid connection created][CreateHCOneConnectionCreated]
 	
 An diesem Punkt haben Sie einen wichtigen Teil der Hybridverbindungsinfrastruktur der Cloud erstellt. Als Nächstes erstellen Sie das lokale Gegenstück.
 
 <a name="InstallHCM"></a>
-## D. Lokalen Hybridverbindungs-Manager zum Herstellen der Verbindung installieren ##
+## D. Installieren des lokalen Hybridverbindungs-Managers zum Herstellen der Verbindung
 
 1. Klicken Sie im Website-Fensterbereich auf das Symbol für Hybridverbindungen. 
 	
 	![Hybrid connections icon][HCIcon]
 	
-2. Im Fensterbereich **Hybrid connections** zeigt die Spalte **Status** zeigt die Spalte **Not connected** an. Klicken Sie auf die Verbindung, um sie zu konfigurieren.
+2. Im Fensterbereich **Hybridverbindungen** zeigt die Spalte **Status** für den zuvor hinzugefügten Endpunkt **Nicht verbunden** an. Klicken Sie auf die Verbindung, um sie zu konfigurieren.
 	
 	![Not connected][NotConnected]
 	
-	Der Fensterbereich "Hybrid connection" wird geöffnet.
+	Der Fensterbereich "Hybridverbindung" wird geöffnet.
 	
 	![NotConnectedBlade][NotConnectedBlade]
 	
-3. Klicken Sie im Fensterbereich auf **Listener Setup**.
+3. Klicken Sie im Fensterbereich auf **Listenereinrichtung**.
 	
 	![Click Listener Setup][ClickListenerSetup]
 	
-4. Der Fensterbereich **Hybrid connection properties** wird geöffnet. Wählen Sie unter **On-premises Hybrid Connection Manager** die Option **Click here to install**.
+4. Der Fensterbereich **Eigenschaften von Hybridverbindunen** wird geöffnet. Wählen Sie unter **Lokaler Hybridverbindungs-Manager** die Option **Klicken Sie hier, um die Installation zu starten**.
 	
 	![Click here to install][ClickToInstallHCM]
 	
-5. Klicken Sie in der Sicherheitswarnung zur Anwendungsausführung auf **Run**, um fortzufahren.
+5. Klicken Sie in der Sicherheitswarnung zur Anwendungsausführung auf **Ausführen**, um fortzufahren.
 	
 	![Choose Run to continue][ApplicationRunWarning]
 	
-6.	Klicken Sie im Dialogfeld **User Account Control** auf **Yes**.
+6.	Klicken Sie im Dialogfeld **Benutzerkontensteuerung** auf **Ja**.
 	
 	![Choose Yes][UAC]
 	
-7. Der Hybrid Connection Manager wird heruntergeladen und für Sie installiert. 
+7. Der Hybridverbindungs-Manager wird heruntergeladen und für Sie installiert. 
 	
 	![Installing][HCMInstalling]
 	
-8. Sobald die Installation abgeschlossen ist, klicken Sie auf **Close**.
+8. Sobald die Installation abgeschlossen ist, klicken Sie auf **Schließen**.
 	
 	![Click Close][HCMInstallComplete]
 	
-	Im Fensterbereich **Hybrid connections** zeigt die Spalte **Status** jetzt **Connected** an. 
+	Im Fensterbereich **Hybridverbindungen** zeigt die Spalte **Status** jetzt **Verbunden** an. 
 	
 	![Connected Status][HCStatusConnected]
 
 Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, werden Sie eine Webanwendung erstellen, welche diese verwendet.
 
 <a name="CreateASPNET"></a>
-## E. in grundlegendes ASP.NET-Webprojekt erstellen, Datenbank-Verbindungszeichenfolge bearbeiten und das Projekt lokal ausführen ##
+## E. Erstellen eines grundlegenden ASP.NET-Webprojekts, Bearbeiten der Datenbank-Verbindungszeichenfolge und lokales Ausführen des Projekts
 
-###Ein grundlegendes ASP.NET-Projekt erstellen###
+###Erstellen eines grundlegenden ASP.NET-Webprojekts
 1. Erstellen Sie in Visual Studio über das Menü **Datei** ein neues Projekt:
 	
 	![New Visual Studio project][HCVSNewProject]
 	
-2. Wählen Sie im Abschnitt **Vorlagen** des Dialogfelds **Neues Projekt** die Option **Web** und wählen Sie **ASP.NET-Webanwendung**, und klicken Sie dann auf **OK**.
+2. Wählen Sie im Abschnitt **Vorlagen** des Dialogfelds **Neues Projekt** die Option **Web**, wählen Sie **ASP.NET-Webanwendung**, und klicken Sie dann auf **OK**.
 	
 	![Choose ASP.NET Web Application][HCVSChooseASPNET]
 	
-3. Klicken Sie im Dialogfeld **Neues ASP.NET-Projekt** auf **MVC** und anschließend auf **OK**.
+3. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Option **MVC**, und klicken Sie dann auf **OK**.
 	
 	![Choose MVC][HCVSChooseMVC]
 	
@@ -261,17 +275,17 @@ Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, werden Sie ei
 	
 	![Readme page][HCVSReadmePage]
 
-###Bearbeiten Sie die Datenbank-Verbindungszeichenfolge für die Anwendung###
+###Bearbeiten der Datenbank-Verbindungszeichenfolge für die Anwendung
 
 In diesem Schritt bearbeiten Sie die Verbindungszeichenfolge, der Ihre Anwendung entnimmt, wo sich die lokale SQL Server Express-Datenbank befindet. Die Verbindungszeichenfolge befindet sich in der Web.config-Datei der Anwendung, welche die Konfigurationsdaten der Anwendung enthält. 
 
-> [WACOM.NOTE] Um sicherzustellen, dass Ihre Anwendung die Datenbank, die Sie in SQL Server Express erstellt haben, und nicht die Datenbank aus der LocalDB-Standardinstanz von Visual Studio verwendet, müssen Sie diesen Schritt unbedingt fertigstellen, bevor Sie das Projekt ausführen.
+> [AZURE.NOTE] Um sicherzustellen, dass Ihre Anwendung die Datenbank, die Sie in SQL Server Express erstellt haben, und nicht die Datenbank aus der LocalDB-Standardinstanz von Visual Studio verwendet, müssen Sie diesen Schritt unbedingt fertigstellen, bevor Sie das Projekt ausführen.
 
 1. Doppelklicken Sie im Projektmappen-Explorer auf die Datei "Web.config".
 	
 	![Web.config][HCVSChooseWebConfig]
 	
-2. Bearbeiten Sie den Abschnitt **connectionStrings**, sodass er auf die SQL Server-Datenbank auf Ihrem lokalen Computer verweist, und halten Sie sich dabei an die Syntax im folgenden Beispiel: 
+2. Bearbeiten Sie den Abschnitt **connectionStrings** so, dass er auf die SQL Server-Datenbank auf Ihrem lokalen Computer verweist, und halten Sie sich dabei an die Syntax im folgenden Beispiel: 
 	
 	![Connection string][HCVSConnectionString]
 	
@@ -285,13 +299,13 @@ In diesem Schritt bearbeiten Sie die Verbindungszeichenfolge, der Ihre Anwendung
 	
 3. Klicken Sie in Visual Studio auf **Speichern**, um die Datei "Web.config" zu speichern.
 
-###Projekt lokal ausführen und einen neuen Benutzer registrieren ###
+###Lokales Ausführen des Projekts und Registrieren eines neuen Benutzers
 
 1. Führen Sie Ihr Webprojekt jetzt lokal aus, indem Sie auf die Schaltfläche "Durchsuchen" unter "Debug" klicken. In diesem Beispiel wird Internet Explorer verwendet.
 	
 	![Run project][HCVSRunProject]
 	
-2. Wählen Sie in der oberen rechten Ecke der Standardwebseite **Register**, um ein neues Konto zu registrieren:
+2. Wählen Sie in der rechten oberen Ecke der Standardwebseite **Register**, um ein neues Konto zu registrieren:
 	
 	![Register a new account][HCVSRegisterLocally]
 	
@@ -299,7 +313,7 @@ In diesem Schritt bearbeiten Sie die Verbindungszeichenfolge, der Ihre Anwendung
 	
 	![Enter user name and password][HCVSCreateNewAccount]
 	
-	Daraufhin wird automatisch auf dem lokalen SQL Server eine Datenbank erstellt, in der die Mitgliedschaftsinformationen für Ihre Anwendung gespeichert werden. Eine der Tabellen (**dbo.AspNetUsers**) enthält die Anmeldeinformationen der Websitebenutzer, wie die Anmeldeinformationen, die Sie gerade eingegeben haben. Sie werden diese Tabelle weiter hinten im Lernprogramm sehen.
+	Daraufhin wird automatisch auf dem lokalen SQL Server eine Datenbank erstellt, in der die Mitgliedschaftsinformationen für Ihre Anwendung gespeichert werden. Eine der Tabellen (**dbo.AspNetUsers**) enthält Anmeldeinformationen für Websitebenutzer wie die Anmeldeinformationen, die Sie gerade eingegeben haben. Sie werden diese Tabelle weiter hinten im Lernprogramm sehen.
 	
 4. Schließen Sie das Browserfenster der Standardwebseite. Damit wird die Ausführung der Anwendung in Visual Studio beendet.
 
@@ -312,7 +326,7 @@ Nun veröffentlichen Sie Ihre Anwendung auf Ihrer Website in Azure, und dann tes
 
 ###Die Webanwendung veröffentlichen###
 
-1. Sie können Ihr Veröffentlichungsprofil für die Website im Azure-Portal herunterladen. Wählen Sie im Fenster für Ihre Website **Veröffentlichungsprofil herunterladen**, und speichern Sie die Datei dann auf Ihrem Computer.
+1. Sie können Ihr Veröffentlichungsprofil für die Website im Azure-Portal herunterladen. Wählen Sie im Fensterbereich für Ihre Website **Veröffentlichungsprofil herunterladen**, und speichern Sie die Datei dann auf Ihrem Computer.
 	
 	![Download publish profile][PortalDownloadPublishProfile]
 	
@@ -332,18 +346,18 @@ Nun veröffentlichen Sie Ihre Anwendung auf Ihrer Website in Azure, und dann tes
 	
 	![Browse to profile][HCVSBrowseToImportPubProfile]
 	
-5. Ihre Veröffentlichungsinformationen werden importiert und auf der Registerkarte **Verbindung** im Dialog angezeigt. 
+5. Ihre Veröffentlichungsinformationen werden importiert und auf der Registerkarte **Verbindung** im Dialogfeld angezeigt. 
 	
 	![Click Publish][HCVSClickPublish]
 	
-	Klicken Sie**Veröffentlichen**.
+	Klicken Sie auf **Veröffentlichen**.
 	
 	Sobald die Veröffentlichung abgeschlossen ist, wird der Browser gestartet, und darin wird Ihre nunmehr bekannte Website angezeigt. Die Website befindet sich jetzt allerdings in der Azure-Cloud!
 
 Als Nächstes verwenden Sie die Live-Webanwendung, um die Hybridverbindung zu überprüfen.
 
-###Die fertiggestellte Webanwendung in Azure testen ###
-1. Wählen Sie oben rechts auf der Webseite in Azur **Anmelden** aus.
+###Testen der fertiggestellten Webanwendung in Azure
+1. Wählen Sie rechts oben auf der Webseite in Azure **Anmelden** aus.
 	
 	![Test log in][HCTestLogIn]
 	
@@ -366,7 +380,7 @@ Als Nächstes verwenden Sie die Live-Webanwendung, um die Hybridverbindung zu ü
 Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine Hybridverbindung zwischen einer Website in der Azure-Cloud und einer lokalen SQL Server-Datenbank verwendet. Glückwunsch!
 
 ##Weitere Informationen ##
-[Überblick über Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274)
+[Übersicht über Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274)
 
 [Einführung von Josh Twist zu Hybridverbindungen (Channel 9-Video)](http://channel9.msdn.com/Shows/Azure-Friday/Josh-Twist-introduces-hybrid-connections)
 
@@ -374,13 +388,13 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 
 [BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Konfigurieren" und "Hybridverbindungen"](http://azure.microsoft.com/de-de/documentation/articles/biztalk-dashboard-monitor-scale-tabs/)
 
-[Erstellen einer echten hybriden Cloud mit nahtloser Anwendungsportabilität (Channel 9-Video)](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
+[Erstellen einer echten hybriden Cloud mit nahtloser Anwendungsportabilität (Channel 9-Video](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
 
 [Verbinden eines mobilen Azure-Diensts mit einem lokalen SQL Server über Hybridverbindungen](http://azure.microsoft.com/de-de/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/)
 
 [Verbindung mit einem lokalen SQL Server von einem mobilen Azure-Dienst mithilfe von Hybridverbindungen (Channel 9-Video)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
 
-[ASP.NET Identity - Übersicht](http://www.asp.net/identity)
+[bersicht über ASP.NET Identity](http://www.asp.net/identity)
 
 <!-- IMAGES -->
 [SQLServerInstall]:./media/web-sites-hybrid-connection-connect-on-premises-sql-server/A01SQLServerInstall.png
@@ -434,6 +448,7 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 [HCTestSSMSTree]:./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F10HCTestSSMSTree.png
 [HCTestShowMemberDb]:./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
 
-<!--HONumber=35.1-->
 
-<!--HONumber=35.1-->
+
+
+<!--HONumber=42-->

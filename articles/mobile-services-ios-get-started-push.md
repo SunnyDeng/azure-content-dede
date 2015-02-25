@@ -1,8 +1,8 @@
-﻿<properties urlDisplayName="Get Started with Push (iOS)" pageTitle="Erste Schritte mit Pushbenachrichtigungen (iOS) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services zum Senden von Pushbenachrichtigungen an Ihre iOS-App (Legacypush)." metaCanonical="http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-push-dotnet/" services="mobile-services" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services (legacy push)" solutions="" manager="dwrede" editor="" authors="krisragh" />
+﻿<properties pageTitle="Erste Schritte mit Pushbenachrichtigungen (iOS) | Mobile Dev Center" description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services zum Senden von Pushbenachrichtigungen an Ihre iOS-App (Legacypush)." services="mobile-services" documentationCenter="ios" manager="dwrede" editor="" authors="krisragh"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh"/>
 
-# Hinzufügen von Pushbenachrichtigungen zu Mobile Services-Apps (Legacy-Push)
+# Hinzufügen von Pushbenachrichtigungen zu einer Mobile Services-App (Legacypushvorgang)
 
 <div class="dev-center-tutorial-selector sublanding">
     <a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
@@ -13,14 +13,14 @@
 	<a href="/de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push" title="Appcelerator">Appcelerator</a>
 </div>
 
-<div class="dev-center-tutorial-subselector"><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/" title=".NET backend">.NET-Back-End</a> | <a href="/de-de/documentation/articles/mobile-services-ios-get-started-push/"  title="JavaScript backend" class="current">JavaScript-Back-End</a></div>
+<div class="dev-center-tutorial-subselector"><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/" title=".NET backend">.NET Back-End</a> | <a href="/de-de/documentation/articles/mobile-services-ios-get-started-push/"  title="JavaScript backend" class="current">JavaScript-Back-End</a></div>
 
-In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung an eine iOS-App senden. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Services (APNS) Pushbenachrichtigungen zum Schnellstart-Projekt hinzu. Nach dem Abschluss sendet der mobile Dienst bei jedem Einfügen eines Datensatzes eine Pushbenachrichtigung.
+In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung an eine iOS-App senden. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Services (APNS) Pushbenachrichtigungen zum Schnellstart-Projekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
 
->[WACOM.NOTE]In diesen Themen werden <em>vorhandene</em> mobile Dienste unterstützt, die <em>noch nicht</em> zum Verwenden der Notification-Hub-Integration aktualisiert wurden. Wenn Sie einen <em>neuen</em> mobilen Dienst erstellen, wird diese integrierte Funktionalität automatisch aktiviert. Weitere Informationen zu neuen mobilen Diensten finden Sie unter [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/).
+>[AZURE.NOTE]Dieses Thema behandelt <em>vorhandene</em> mobile Dienste, die <em>noch nicht für den Einsatz der Integration von Notification Hubs aktualisiert worden sind</em>. Wenn Sie einen <em>neuen</em> mobilen Dienst erstellen, ist diese integrierte Funktionalität automatisch integriert. Informationen zu neuen mobilen Diensten erhalten Sie unter [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/).
 >
->Mobile Dienste werden in Azure Notification-Hubs für die Unterstützung zusätzlicher Pushbenachrichtigungsfunktionen, wie z. B. Vorlagen, mehreren Plattformen und einer verbesserten Skalierung. <em>Sie sollten Ihre vorhandenen mobilen Dienste möglichst für die Verwendung von Notification Hubs aktualisieren</em>. Nach dem Upgrade finden Sie weitere Informationen unter [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/).
+>Mobile Services werden in Azure Notification Hubs integriert, damit zusätzliche Pushbenachrichtigungsfunktionen wie Vorlagen, mehrere Plattformen und verbesserte Skalierung unterstützt werden können. <em>Sie sollten Ihre vorhandenen mobilen Dienste möglichst für die Verwendung von Notification Hubs aktualisieren</em>. Nachdem Sie die Aktualisierung durchgeführt haben, finden Sie weitere Informationen unter dieser Version von [Erste Schritte mit Pushbenachrichtigungen](/ de-de/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/).
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
@@ -35,19 +35,19 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + [Mobile Services iOS SDK]
-+ [Xcode 4.5][Installieren von Xcode]
++ [XCode 4.5][Installieren von Xcode]
 + Ein Gerät, das auf iOS 5.0 (oder einer neueren Version) laufen kann
 + iOS-Entwicklerprogramm-Mitgliedschaft
 
-   > [WACOM.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
+   > [AZURE.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst das Lernprogramm [Erste Schritte mit mobilen Diensten] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services] abschließen.
 
-[WACOM.INCLUDE [Aktivieren von Apple-Pushbenachrichtigungen](../includes/enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [Enable Apple Push Notifications](../includes/enable-apple-push-notifications.md)]
 
 ## Konfigurieren von Mobile Services zum Senden von Pushanforderungen
 
-[WACOM.INCLUDE [mobile-services-apns-configure-push](../includes/mobile-services-apns-configure-push.md)]
+[AZURE.INCLUDE [mobile-services-apns-configure-push](../includes/mobile-services-apns-configure-push.md)]
 
 ## Hinzufügen von Pushbenachrichtigungen zur App
 
@@ -55,7 +55,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
         @property (strong, nonatomic) NSString *deviceToken;
 
-    > [WACOM.NOTE] Wenn für Ihren mobilen Dienst das dynamische Schema aktiviert ist, wird automatisch eine neue "deviceToken"-Spalte zur **TodoItem**-Tabelle hinzugefügt, wenn ein neues Element mit dieser Eigenschaft eingefügt wird.
+    > [AZURE.NOTE] Wenn für Ihren mobilen Dienst das dynamische Schema aktiviert ist, wird automatisch eine neue  'deviceToken'-Spalte zur **TodoItem**-Tabelle hinzugefügt, wenn ein neues Element mit dieser Eigenschaft eingefügt wird.
 
 2. In QSAppDelegate.m ersetzen Sie die folgende Handlermethode in der Implementierung:
 
@@ -105,11 +105,11 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
         #import "QSAppDelegate.h"
 
-6. In QSTodoListViewController.m modifizieren Sie die Aktion **(IBAction)onAdd**, indem Sie die folgende Zeile aufsuchen:
+6. Modifizieren Sie in "QSTodoListViewController.m" die Aktion **(IBAction)onAdd**, indem Sie die folgende Zeile aufsuchen:
 
         NSDictionary *item = @{ @"text" : itemText.text, @"complete" : @(NO) };
 
-   Ersetzen Sie dies durch den folgenden Code:
+   Replace this with the following code:
 
         // Get a reference to the AppDelegate to easily retrieve the deviceToken
         QSAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
@@ -123,7 +123,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
    	Auf diese Weise wird eine Referenz zum **QSAppDelegate** hinzugefügt, um den Gerätetoken zu erhalten, und die Anforderungsnutzlast dann modifiziert, um diesen Gerätetoken einzubeziehen.
 
-   	> [WACOM.NOTE] Dieser Code muss vor dem Aufruf der <strong>addItem</strong>-Methode hinzugefügt werden.
+   	> [AZURE.NOTE] Dieser Code muss vor dem Aufruf der <strong>addItem</strong>-Methode hinzugefügt werden.
 
 Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
@@ -133,11 +133,11 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
    	![][21]
 
-2. Klicken Sie unter **todoitem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
+2. Klicken Sie in **todoitem** auf die Registerkarte **Skript** und dann auf **Einfügen**.
 
   	![][22]
 
-   	Daraufhin wird die Funktion angezeigt, die aufgerufen wird, wenn etwas in die Tabelle **TodoItem** eingefügt wird.
+   	Auf diese Weise wird die Funktion angezeigt, die aufgerufen wird, wenn in der Tabelle **TodoItem** eine Einfügung auftritt.
 
 3. Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf **Speichern**:
 
@@ -158,17 +158,17 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
    	Auf diese Weise wird ein neues Einfügeskript registriert, das über das [apns-Objekt] eine Pushbenachrichtigung (den eingefügten Text) an das in der Einfügeanforderung angegebene Gerät sendet.
 
 
-   	> [WACOM.NOTE] Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
+   	> [AZURE.NOTE] Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
 
 ## Testen von Pushbenachrichtigungen in der App
 
-1. Drücken Sie auf **Ausführen**, um das Projekt zu erstellen, starten Sie die App auf einem iOS-fähigen Gerät, und klicken Sie dann auf **OK**, um Pushbenachrichtigungen zu akzeptieren
+1. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen, starten Sie die App auf einem iOS-fähigen Gerät, und klicken Sie dann auf **OK**, um Pushbenachrichtigungen zu akzeptieren.
 
   	![][23]
 
-    > [WACOM.NOTE] Pushbenachrichtigungen von Ihrer App müssen ausdrücklich akzeptiert werden. Diese Anforderung tritt nur bei der ersten Ausführung der App auf.
+    > [AZURE.NOTE] Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
-2. Geben Sie in der App einen sinnvollen Text ein, beispielsweise _Eine neue mobile Dienstaufgabe_, und klicken Sie dann auf die Schaltfläche **+**.
+2. Geben Sie in der App eine Beschreibung ein, wie zum Beispiel _Neue Mobile Services-Aufgabe_, und klicken Sie dann auf das Plussymbol (**+**).
 
   	![][24]
 
@@ -184,7 +184,7 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
 ## Nächste Schritte
 
-IIn diesem einfachen Beispiel empfängt ein Benutzer eine Pushbenachrichtigung mit den soeben eingegebenen Daten. Der von APNS verwendete Gerätetoken wird vom Client in der Anforderung an den mobilen Dienst geliefert. Im nächsten Lernprogramm [Pushbenachrichtigungen an App-Benutzer] werden wir eine eigene Gerätetabelle zum Speichern von Gerätetoken erstellen und beim Auftreten einer Einfügung eine Pushbenachrichtigung an alle gespeicherten Kanäle aussenden.
+In diesem einfachen Beispiel empfängt ein Benutzer eine Pushbenachrichtigung mit den soeben eingegebenen Daten. Der von APNS verwendete Gerätetoken wird vom Client in der Anforderung an den mobilen Dienst geliefert. Im nächsten Lernprogramm [Pushbenachrichtigungen an App-Benutzer] werden wir eine eigene Gerätetabelle zum Speichern von Gerätetoken erstellen und beim Auftreten einer Einfügung eine Pushbenachrichtigung an alle gespeicherten Kanäle aussenden.
 
 <!-- Anchors. -->
 [Erstellen der Zertifikatsignieranforderungsdatei]: #certificates
@@ -237,7 +237,7 @@ IIn diesem einfachen Beispiel empfängt ein Benutzer eine Pushbenachrichtigung m
 [Installieren von Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS-Bereitstellungsportal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Apple Pushbenachrichtigungsdienst]: http://go.microsoft.com/fwlink/p/?LinkId=272584
+[Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-ios
 [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-ios
 [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-ios
@@ -246,3 +246,6 @@ IIn diesem einfachen Beispiel empfängt ein Benutzer eine Pushbenachrichtigung m
 [Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [apns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=272333
+
+
+<!--HONumber=42-->

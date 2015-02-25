@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Website Using Socket.IO" pageTitle="Node.js-Website mithilfe von Socket.io - Azure-Lernprogramm" metaKeywords="Azure Node.js socket.io-Lernprogramm, Azure Node.js socket.io, Azure Node.js-Lernprogramm" description="In diesem Lernprogramm wird die Verwendung von socket.io auf einer in Azure gehosteten Node.js-Website gezeigt." metaCanonical="" services="web-sites" documentationCenter="nodejs" title="Build a Node.js Chat Application with Socket.IO on an Azure Website" authors="larryfr" solutions="" videoId="" scriptId="" manager="wpickett" editor="mollybos" />
+<properties 
+	pageTitle="Node.js-Website mit Socket.io - Azure-Lernprogramm" 
+	description="In diesem Lernprogramm wird die Verwendung von socket.io auf einer in Azure gehosteten Node.js-Website gezeigt." 
+	services="web-sites" 
+	documentationCenter="nodejs" 
+	authors="blackmist" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="09/17/2014" 
+	ms.author="larryfr"/>
 
 
 
@@ -9,19 +23,19 @@
 
 Socket.IO ermöglicht die Echtzeitkommunikation zwischen Ihrem Node.js-Server und Clients über WebSockets. Außerdem unterstützt es Fallback auf andere Transportmechanismen (wie Long Polling), die mit älteren Browsern funktionieren. In diesem Lernprogramm wird das Hosten einer Socket.IO-basierten Chatanwendung als Azure-Website erläutert. Weitere Informationen über Socket.IO finden Sie unter [http://socket.io/][socketio].
 
-> [WACOM.NOTE] Die Verfahren dieser Aufgabe gelten für Azure-Websites; für Cloud-Dienste informieren Sie sich unter <a href="http://www.windowsazure.com/en-us/develop/nodejs/tutorials/app-using-socketio/">Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst</a>.
+> [AZURE.NOTE] Die Verfahren in dieser Aufgabe gelten für Azure-Websites. Die Verfahren für Cloud-Dienste finden Sie unter <a href="http://www.windowsazure.com/de-de/develop/nodejs/tutorials/app-using-socketio/">Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst</a>.
 
 
-## <a id="Download"></a>Herunterladen des Chat-Beispiels
+## <a id="Download"></a>Herunterladen des Chatbeispiels
 
-Für dieses Projekt verwenden wir das Chat-Beispiel aus dem [Socket.IO
+Für dieses Projekt verwenden wir das Chatbeispiel aus dem [Socket.IO
 GitHub-Repository]. Führen Sie die folgenden Schritte aus, um das Beispiel herunterzuladen,
 und fügen Sie es dem zuvor erstellen Projekt hinzu.
 
 1.  Laden Sie eine [archivierte ZIP- oder GZ-Version][release] des Socket.IO-Projekts herunter (für dieses Dokument wurde Version 1.0.6 verwendet).
 
 
-3.  Extrahieren Sie das Archiv und kopieren Sie das Verzeichnis **examples\\chat**
+3.  Extrahieren Sie das Archiv, und kopieren Sie das Verzeichnis **examples\\chat**
     an einen neuen Speicherort. Beispiel: 
     **\\node\\chat**.
 
@@ -30,11 +44,11 @@ und fügen Sie es dem zuvor erstellen Projekt hinzu.
 Bevor Sie die Anwendung in Azure bereitstellen, müssen Sie
 einige kleineren Änderungen vornehmen.
 
-1.  Benennen Sie die Datei **index.js** in **app.js** um. Damit kann Azure erkennen, dass es sich hier um eine Node.js-Anwendung handelt.
+1.  Benennen Sie die Datei **index.js** in **app.js** um. Dadurch kann Azure erkennen, dass es sich hier um eine Node.js-Anwendung handelt.
 
-1.  Öffnen Sie die Datei **app.js** im Editor oder in einem anderen Texteditor.
+1.  Öffnen Sie die Datei **app.js** in Editor oder einem anderen Texteditor.
 
-2.  Suchen Sie den Abschnitt **Module dependencies** am Anfang der Datei "app.js", und ändern Sie die Zeile "var io = require('../..')(server);" zu "var io = require('socket.io')(server);", wie unten dargestellt:
+2.  Suchen Sie den Abschnitt **Module dependencies** am Anfang der Datei "app.js", und ändern Sie die Zeile mit `var io = require('../..')(server);` in `var io = require('socket.io')(server);` , wie unten gezeigt:
 
 		var express = require('express');
 		var app = express();
@@ -47,7 +61,7 @@ einige kleineren Änderungen vornehmen.
 Führen Sie die folgenden Schritte aus, um nach dem Speichern der Änderungen in "app.js"
 die erforderlichen Module zu installieren:
 
-1.  Wechseln Sie über die Befehlszeile in das Verzeichnis **\\node\\chat**,und verwenden Sie den folgenden Befehl, um die von dieser Anwendung benötigten Module zu installieren:
+1.  Wechseln Sie über die Befehlszeile zum Verzeichnis \**\\node\\chat**, und verwenden Sie den folgenden Befehl, um die von dieser Anwendung benötigten Module zu installieren:
 
         npm install
 
@@ -76,76 +90,76 @@ die erforderlichen Module zu installieren:
 
         npm install socket.io@1.0.6 -save
 
-	> [WACOM.NOTE] Obwohl die Vorgehensweise in diesem Artikel auch mit neueren Versionen von Socket.IO funktionieren kann, erfolgte der Testdurchlauf mit Version 1.0.6.
+	> [AZURE.NOTE] Obwohl die Vorgehensweise in diesem Artikel auch mit neueren Versionen von Socket.IO funktionieren kann, erfolgte der Testdurchlauf mit Version 1.0.6.
 
 ## <a id="Publish"></a>Erstellen einer Azure-Website
 
 Befolgen Sie diese Schritte, um eine Azure-Website zu erstellen und dann die Git-Veröffentlichung sowie die WebSocket-Unterstützung für die Website zu aktivieren.
 
-> [WACOM.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier:<a href="http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A7171371E" target="_blank">Azure Free Trial</a>.
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E" target="_blank">Kostenlose Azure-Testversion</a>.
 
-1. From the command-line, change directories to the **\\node\chat** directory and use the following command to create a new Azure Website and enable a Git repository for the website and the local directory. This will also create a Git remote named 'azure'.
+1. Wechseln Sie über die Befehlszeile zum Verzeichnis **\\node\chat**, und verwenden Sie folgenden Befehl, um eine neue Azure-Website zu erstellen und ein Git-Repository für die Website und das lokale Verzeichnis zu aktivieren. Dadurch wird auch ein Git-Remoterepository namens  'azure' erstellt.
 
 		azure site create mysitename --git
 
-	You must replace 'mysitename' with a unique name for your website.
+	Sie müssen  'mysitename' durch einen eindeutigen Namen für Ihre Website ersetzen.
 
-2. Commit the existing files to the local repository by using the following commands:
+2. Übergeben Sie die vorhandenen Dateien mit folgenden Befehlen an das lokale Repository:
 
 		git add .
 		git commit -m "Initial commit"
 
-3. Push the files to the Azure Website repository with the following command:
+3. Übertragen Sie die Dateien mit folgendem Push-Befehl an das Azure-Website-Repository:
 
 		git push azure master
 
-	You will receive status messages as modules are imported on the server. Once this process has completed, the application will be hosted on your Azure Website.
+	Sie werden Statusnachrichten erhalten, wenn Module zum Server importiert werden. Sobald dieser Vorgang abgeschlossen ist, wird die Anwendung auf Ihrer Azure-Website gehostet.
 
- 	> [WACOM.NOTE] During module installation, you may notice errors that 'The imported project ... was not found'. These can safely be ignored.
+ 	> [AZURE.NOTE] Während der Installation des Moduls, bemerken Sie u. u. Fehler wie  'The imported project ... was not found'. Diese können ignoriert werden.
 
-4. Socket.IO uses WebSockets, which are not enabled by default on Azure. To enable web sockets, use the following command:
+4. Socket.IO verwendet WebSockets, die nicht standardmäßig auf Azure aktiviert sind. Verwenden Sie folgenden Befehl, um Web Sockets zu aktivieren:
 
 		azure site set -w
 
-	If prompted, enter the name of the website.
+	Geben Sie bei entsprechender Aufforderung den Namen der Website ein.
 
-	>[WACOM.NOTE]
-	>The 'azure site set -w' command will only work with version 0.7.4 or higher of the Azure Cross-Platform Command-Line Interface. You can also enable WebSocket support using the Azure Management Portal.
+	>[AZURE.NOTE]
+	>Der Befehl  'azure site set -w' funktioniert nur bei Version 0.7.4 oder höher der plattformübergreifenden Azure-Befehlszeilenschnittstelle. Sie können die Unterstützung von WebSocket im Azure-Verwaltungsportal aktivieren.
 	>
-	>To enable WebSockets using the [Azure Management Portal](https://manage.windowsazure.com), select the Configure page for your website, select 'ON' for the Web Sockets entry, and then click Save.
+	>Um WebSockets im [Azure-Verwaltungsportal](https://manage.windowsazure.com) zu aktivieren, wählen Sie die Seite "Konfigurieren" für Ihre Website aus. Wählen Sie dann für den WebSockets-Eintrag "EIN" aus, und klicken Sie auf "Speichern".
 	>	
 	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
 	
-5. To view the website on Azure, use the following command to launch your web browser and navigate to the hosted website:
+5. Um die Website in Azure anzuzeigen, verwenden Sie folgenden Befehl, um den Webbrowser zu starten und zur gehosteten Website zu navigieren:
 
 		azure site browse
 
-Your application is now running on Azure, and can relay chat
-messages between different clients using Socket.IO.
+Ihre Anwendung wird jetzt in Azure ausgeführt und kann
+Chatnachrichten zwischen verschiedenen Clients mithilfe von "Socket.IO" vermitteln.
 
-> [WACOM.NOTE] For simplicity, this sample is limited to chatting between users connected to the same instance. This means that if the cloud service creates two worker role instances, users will only be able to chat with others connected to the same worker role instance. To scale the application to work with multiple role instances, you could use a technology like Service Bus to share the Socket.IO store state across instances. For examples, see the Service Bus Queues and Topics usage samples in the <a href="https://github.com/WindowsAzure/azure-sdk-for-node">Azure SDK for Node.js GitHub repository</a>.
+> [AZURE.NOTE] Zur Vereinfachung beschränkt sich dieses Beispiel auf das Chatten zwischen Benutzern, die mit derselben Instanz verbunden sind. Wenn der Cloud-Dienst also zwei Workerrolleninstanzen erstellt, können die Benutzer nur mit Benutzern chatten, die mit derselben Workerrolleninstanz verbunden sind. Wenn Sie die Anwendung für mehrere Rolleninstanzen skalieren möchten, können Sie eine Technologie wie Service Bus verwenden, um den Socket.IO-Speicherzustand für mehrere Instanzen freizugeben. Beispiele hierzu finden Sie in den Syntaxbeispielen für Service Bus Queues und Service Bus Topics im <a href="https://github.com/WindowsAzure/azure-sdk-for-node">Azure SDK für Node.js GitHub-Repository</a>.
 
-##Scale out
+##Horizontales Skalieren
 
-Socket.IO applications can be scaled out by using an __adapter__ to distribute messages and events between multiple application instances. While there are several adapters available, the [socket.io-redis](https://github.com/automattic/socket.io-redis) adapter can be easily used with the Azure Redis Cache feature.
+Socket.IO-Anwendungen können über einen Adapter horizontal skaliert werden, um Nachrichten und Ereignisse unter mehreren Anwendungsinstanzen zu verteilen. Es stehen zwar mehrere Adapter zur Verfügung, allerdings empfiehlt sich der Adapter [socket.io-redis](https://github.com/automattic/socket.io-redis), da sich dieser einfach mit der Azure-Redis-Cache-Funktion verwenden lässt.
 
-> [WACOM.NOTE] An additional requirement for scaling out a Socket.IO solution is support for sticky sessions. Sticky sessions are enabled by default for Azure Websites through Azure Request Routing. For more information, see [Instance Affinity in Azure Web Sites](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
+> [AZURE.NOTE] Eine weitere Anforderung für das horizontale Skalieren einer Socket.IO-Lösung ist die Unterstützung persistenter Sitzungen. Persistente Sitzungen sind für Azure-Websites standardmäßig über das Azure-Anforderungsrouting aktiviert. Weitere Informationen finden Sie unter [Instanzaffinität in Azure-Websites](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/).
 
-###Create a Redis cache
+###Erstellen eines Redis-Caches
 
-Perform the steps in [Create a cache in Azure Redis Cache](http://go.microsoft.com/fwlink/p/?linkid=398592&clcid=0x409) to create a new cache.
+Führen Sie die Schritte unter [Erstellen eines Caches in Azure-Redis-Cache](http://go.microsoft.com/fwlink/p/?linkid=398592&clcid=0x409) aus, um einen neuen Cache zu erstellen.
 
-> [WACOM.NOTE] Save the __Host name__ and __Primary key__ for your cache, as these will be needed in the next steps.
+> [AZURE.NOTE] Speichern Sie den __Host name__  und __Primary key__  für Ihren Cache, da Sie diese Informationen in den nächsten Schritten benötigen.
 
-###Add the redis and socket.io-redis modules
+###Hinzufügen der Module "redis" und "socket.io-redis"
 
-1. From a command-line, change to the __\\node\\chat__ directory and use the following command.
+1. Wechseln Sie über die Befehlszeile zum Verzeichnis __\\node\\chat__, und führen Sie folgenden Befehl aus.
 
 		npm install socket.io-redis@0.1.3 redis@0.11.0 --save
 
-	> [WACOM.NOTE] The versions specified in this command are the versions used when testing this article.
+	> [AZURE.NOTE] Die in diesem Befehl angegebenen Versionen sind die Versionen, die beim Testen dieses Artikels verwendet wurden.
 
-2. Modify the __app.js__ file to add the following lines immediately after `var io = require('socket.io')(server);`
+2. Fügen Sie in der Datei __app.js__ die folgenden Zeilen direkt nach `var io = require('socket.io')(server);` ein.
 
 		var pub = require('redis').createClient(6379,'redishostname', {auth_pass: 'rediskey', return_buffers: true});
 		var sub = require('redis').createClient(6379,'redishostname', {auth_pass: 'rediskey', return_buffers: true});
@@ -154,77 +168,77 @@ Perform the steps in [Create a cache in Azure Redis Cache](http://go.microsoft.c
 		io.adapter(redis({pubClient: pub, subClient: sub}));
 
 
-	Replace __redishostname__ and __rediskey__ with the host name and key for your Redis cache.
+	Ersetzen Sie __redishostname__ und __rediskey__ durch den Hostnamen und den Schlüssel für Ihren Redis-Cache.
 
-	This will create a publish and subscribe client to the Redis cache created previously. The clients are then used with the adapter to configure Socket.IO to use the Redis cache for passing messages and events between instances of your application
+	Damit wird ein Veröffentlichungs-/Abonnementclient für den zuvor erstellten Redis-Cache erstellt. Die Clients werden dann mit dem Adapter verwendet, um Socket.IO für die Verwendung des Redis-Caches zum Übergeben von Nachrichten und Ereignissen zwischen Instanzen Ihrer Anwendung zu konfigurieren.
 
-	> [WACOM.NOTE] While the __socket.io-redis__ adapter can communicate directly to Redis, the current version (as of 7/14/2014) does not support the authentication required by Azure Redis cache. So the initial connection is created using the __redis__ module, then the client is passed to the __socket.io-redis__ adapter.
+	> [AZURE.NOTE] Obwohl der Adapter __socket.io-redis__ direkt mit Redis kommunizieren kann, unterstützt die aktuelle Version (Stand 14.7.2014) die vom Azure-Redis-Cache benötigte Authentifizierung nicht. Daher wird die Erstverbindung über das Modul __redis__ hergestellt und der Client dann an den Adapter __socket.io-redis__ übergeben.
 	> 
-	> While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6380.
+	> Der Azure-Redis-Cache unterstützt zwar sichere Verbindungen über Port 6380, die in diesem Beispiel verwendeten Module jedoch nicht (Stand 14.7.2014). Im obigen Code wird daher der unsichere Standardport 6380 verwendet.
 
-3. Save the modified __app.js__
+3. Speichern Sie die geänderte Datei __app.js__.
 
-###Commit changes and redeploy
+###Übergeben der Änderungen und erneutes Bereitstellen
 
-From the command-line in the __\\node\\chat__ directory, use the following commands to commit changes and redeploy the application.
+Verwenden Sie in der Befehlszeile im Verzeichnis __\\node\\chat__ die folgenden Befehle, um die Änderungen zu übergeben und die Anwendung erneut bereitzustellen.
 
 	git add .
 	git commit -m "implementing scale out"
 	git push azure master
 
-Once the changes have been pushed to the server, you can scale your site across multiple instances by using the following command.
+Nachdem Sie Änderungen an den Server übertragen wurden, können Sie Ihre Website mit dem folgenden Befehl auf mehrere Instanzen skalieren.
 
 	azure site scale instances --instances #
 
-Where __#__ is the number of instances to create. 
+Hierbei steht __#__ für die Anzahl der zu erstellenden Instanzen. 
 
-You can connect to your website from multiple browsers or computers to verify that messages are correctly sent to all clients.
+Sie können über mehrere Browser oder Computer eine Verbindung mit Ihrer Website herstellen, um sicherzustellen, dass Nachrichten korrekt an alle Clients gesendet werden.
 
-##<a id="tshooting"></a>Troubleshooting
+##<a id="tshooting"></a>Problembehandlung
 
-###Connection limits
+###Verbindungsbeschränkungen
 
-Azure Websites is available in multiple SKUs, which determine the resources available to your site. This includes the number of allowed WebSocket connections. For more information, see the [Web Sites Pricing page][pricing].
+Azure-Websites sind in verschiedenen SKUs erhältlich. Diese bestimmen, welche Ressourcen für Ihre Website zur Verfügung stehen. Dazu gehört auch die Anzahl der zulässigen WebSocket-Verbindungen. Weitere Informationen finden Sie auf der Seite [Preisdetails für Websites][].
 
-###Messages aren't being sent using WebSockets
+###Kein Nachrichtenversand über WebSockets
 
-If client browsers keep falling back to long polling instead of using WebSockets, it may be because of one of the following.
+Wenn Clientbrowser immer wieder auf Long Polling zurückfallen und WebSockets nicht verwenden, versuchen Sie den Grund wie folgt zu finden.
 
-* **Try limiting the transport to just WebSockets**
+* **Beschränken des Transports auf WebSockets**
 
-	In order for Socket.IO to use WebSockets as the messaging transport, both the server and client must support WebSockets. If one or the other does not, Socket.IO will negotiate another transport, such as long polling. The default list of transports used by Socket.IO is ` websocket, htmlfile, xhr-polling, jsonp-polling`. You can force it to only use WebSockets by adding the following code to the **app.js** file, after the line containing `, nicknames = {};`.
+	Damit WebSockets von Socket.IO als Nachrichtentransportmechanismus verwendet werden kann, müssen Server und Client WebSockets unterstützen. Ist dies bei einem der beiden nicht der Fall, handelt Socket.IO einen anderen Transportmechanismus wie Long Polling aus. Die Standardliste der von Socket.IO verwendeten Transportmechanismen lautet ` websocket, htmlfile, xhr-polling, jsonp-polling`. Sie können erzwingen, dass nur WebSockets verwendet wird, indem Sie in der Datei **app.js** den folgenden Code nach der Zeile mit `, nicknames = {};`. einfügen.
 
 		io.configure(function() {
 		  io.set('transports', ['websocket']);
 		});
 
-	> [WACOM.NOTE] Note that older browsers that do not support WebSockets will not be able to connect to the site while the above code is active, as it restricts communication to WebSockets only.
+	> [AZURE.NOTE] Beachten Sie, dass ältere Browser ohne WebSockets-Unterstützung keine Verbindung mit der Website herstellen können, während der obige Code aktiv ist, da er die Kommunikation auf die alleinige Verwendung von WebSockets beschränkt.
 
-* **Use SSL**
+* **Verwenden von SSL**
 
-	WebSockets relies on some lesser used HTTP headers, such as the **Upgrade** header. Some intermediate network devices, such as web proxies, may remove these headers. To avoid this problem, you can establish the WebSocket connection over SSL.
+	WebSockets stützt sich auf weniger häufig verwendete HTTP-Header wie den **Upgrade**-Header. Bestimmte zwischengeschaltete Netzwerkgeräte wie Webproxys entfernen unter Umständen diese Header. Um dieses Problem zu vermeiden, können Sie die WebSocket-Verbindung über SSL einrichten.
 
-	An easy way to accomplish this is to configure Socket.IO to `match origin protocol`. This instructs Socket.IO to secure WebSockets communication the same as the originating HTTP/HTTPS request for the web page. If a browser uses an HTTPS URL to visit your website, subsequent WebSocket communications through Socket.IO will be secured over SSL.
+	Dies lässt sich einfach erreichen, indem Sie  `match origin protocol` für Socket.IO konfigurieren. Damit weisen Sie Socket.IO an, die WebSockets-Kommunikation so zu sichern wie dies bei der ursprünglichen HTTP/HTTPS-Anforderung für die Webseite der Fall war. Wenn ein Browser über eine HTTPS-URL auf Ihre Website zugreift, wird die nachfolgende WebSocket-Kommunikation durch Socket.IO über SSL gesichert.
 
-	To modify this example to enable this configuration, add the following code to the **app.js** file after the line containing `, nicknames = {};`.
+	Um das Beispiel für diese Konfiguration entsprechend zu ändern, fügen Sie den folgenden Code in die Datei **app.js** nach der Zeile mit `, nicknames = {};`. ein.
 
 		io.configure(function() {
 		  io.set('match origin protocol', true);
 		});
 
-* **Verify web.config settings**
+* **Prüfen der Einstellungen in "web.config"**
 
-	Azure Websites that host Node.js applications use the **web.config** file to route incoming requests to the Node.js application. For WebSockets to function correctly with Node.js applications, the **web.config** must contain the following entry.
+	Azure-Websites, die Node.js-Anwendungen hosten, leiten eingehende Anforderungen mithilfe der Datei **web.config** an die Node.js-Anwendungen weiter. Damit WebSockets ordnungsgemäß mit Node.js-Anwendungen funktioniert, muss die Datei **web.config** folgenden Eintrag enthalten.
 
 		<webSocket enabled="false"/>
 
-	Damit wird das IIS-WebSockets-Modul deaktiviert, das eine eigene Implementierung von WebSockets enthält und mit Node.js-spezifischen WebSocket-Modulen wie Socket.IO in Konflikt gerät. Wenn diese Zeile fehlt oder auf "true" festgelegt ist, könnte dies der Grund dafür sein, dass der WebSocket-Transport bei Ihrer Anwendung nicht funktioniert.
+	Dadurch wird das Modul "IIS WebSockets" deaktiviert, das eine eigene Implementierung von WebSockets aufweist und Konflikte mit Node.js- spezifischen WebSocket-Modulen wie z. B. Socket.IO verursacht. Wenn diese Zeile nicht vorhanden ist oder auf  `true` festgelegt ist, ist dies möglicherweise der Grund, warum der WebSocket-Transport für Ihre Anwendung nicht funktioniert.
 
-	Normalerweise enthalten Node.js-Anwendungen keine **web.config**-Datei, sodass Azure-Websites eine solche Datei für Node.js-Anwendungen bei deren Bereitstellung automatisch generiert. Da diese Datei automatisch auf dem Server generiert wird, müssen Sie die FTP- oder FTPS-URL für Ihre Website zur Anzeige der Datei verwenden. Die FTP- und FTPS-URLs für Ihre Website können Sie im Azure-Verwaltungsportal einsehen, indem Sie Ihre Website und dann den Link **Dashboard** auswählen. Die URLs werden im Bereich **Auf einen Blick** angezeigt.
+	Normalerweise enthalten Node.js-Anwendungen keine Datei **web.config**, sodass Azure-Websites eine solche Datei für Node.js-Anwendungen bei deren Bereitstellung automatisch generieren. Da diese Datei automatisch auf dem Server generiert wird, müssen Sie die FTP- oder FTPS-URL für Ihre Website zur Anzeige der Datei verwenden. Die FTP- und FTPS-URLs für Ihre Website können Sie im Azure-Verwaltungsportal einsehen, indem Sie Ihre Website und dann den Link **Dashboard** auswählen. Die URLs werden im Bereich **Auf einen Blick** angezeigt.
 
-	> [WACOM.NOTE] Die Datei **web.config** wird von Azure-Websites nur generiert, wenn Ihre Anwendung keine bereitstellt. Wenn Sie eine **web.config**-Datei im Stammverzeichnis Ihres Anwendungsprojekts bereitstellen, wird diese von Azure-Websites verwendet.
+	> [AZURE.NOTE] Die Datei **web.config** wird von Azure-Websites nur generiert, wenn Ihre Anwendung keine bereitstellt. Wenn Sie eine Datei **web.config** im Stammverzeichnis Ihres Anwendungsprojekts bereitstellen, wird diese von Azure-Websites verwendet.
 
-	Ist der Eintrag nicht vorhanden oder auf den Wert "true" festgelegt, sollten Sie eine **web.config**-Datei im Stammverzeichnis Ihrer Node.js-Anwendung erstellen und den Wert "false" angeben.  Zur Referenz folgt eine **web.config**-Standarddatei für eine Anwendung, die **app.js** als Einstiegspunkt verwendet.
+	Wenn der Eintrag nicht vorhanden oder auf den Wert  `true` festgelegt ist, sollten Sie eine Datei **web.config** im Stammverzeichnis Ihrer Node.js-Anwendung erstellen und den Wert  `false` angeben.  Zur Referenz folgt eine **web.config**-Standarddatei für eine Anwendung, die **app.js** als Einstiegspunkt verwendet.
 
 		<?xml version="1.0" encoding="utf-8"?>
 		<!--
@@ -275,18 +289,22 @@ If client browsers keep falling back to long polling instead of using WebSockets
 		  </system.webServer>
 		</configuration>
 
-	> [WACOM.NOTE] Wenn Ihre Anwendung einen anderen Einstiegspunkt als **app.js** verwendet, müssen Sie alle Vorkommen von **app.js** durch den korrekten Einstiegspunkt ersetzen. So könnten Sie **app.js** durch **server.js** ersetzen.
+	> [AZURE.NOTE] Wenn Ihre Anwendung einen anderen Einstiegspunkt als **app.js** verwendet, müssen Sie alle Vorkommen von **app.js** durch den ordnungsgemäßen Einstiegspunkt ersetzen. Sie können beispielsweise **app.js** durch **server.js** ersetzen.
 
 ##Nächste Schritte
 
-In diesem Lernprogramm haben Sie erfahren, wie Sie eine Chatanwendung erstellen, die auf einer Azure-Website gehostet wird. Sie können diese Anwendung auch als Azure-Cloud-Dienst hosten. Die dafür erforderlichen Schritte finden Sie unter [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst][cloudservice]..
+In diesem Lernprogramm haben Sie erfahren, wie Sie eine Chatanwendung erstellen, die auf einer Azure-Website gehostet wird. Sie können diese Anwendung auch als Azure-Cloud-Dienst hosten. Die dafür erforderlichen Schritte finden Sie unter [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst][cloudservice].
 
 [socketio]: http://socket.io/
 [completed-app]: ./media/web-sites-nodejs-chat-app-socketio/websitesocketcomplete.png
 [Socket.IO GitHub repository]: https://github.com/Automattic/socket.io
 [release]: https://github.com/Automattic/socket.io/releases
-[cloudservice]: /en-us/develop/nodejs/tutorials/app-using-socketio/
-
+[cloudservice]: /de-de/develop/nodejs/tutorials/app-using-socketio/
+	
 [chat-example-view]: ./media/web-sites-nodejs-chat-app-socketio/socketio-2.png
 [npm-output]: ./media/web-sites-nodejs-chat-app-socketio/socketio-7.png
-[pricing]: /en-us/pricing/details/web-sites/
+[pricing]: /de-de/pricing/details/web-sites/
+
+
+
+<!--HONumber=42-->

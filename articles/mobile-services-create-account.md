@@ -1,6 +1,8 @@
-<properties linkid="develop-mobile-tutorials-create-a-windows-azure-account" pageTitle="Create an Azure account | Mobile Dev Center" metaKeywords="" description="Create an Azure account" metaCanonical="http://www.windowsazure.com/de-de/develop/net/tutorials/create-a-windows-azure-account" services="" documentationCenter="Mobile" title="Create an account and enable preview features" authors="glenga" solutions="" manager="" editor="mollybos" />
+﻿<properties pageTitle="Erstellen eines Azure-Kontos | Mobile Dev Center" description="Erstellen eines Azure-Kontos" services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor="mollybos"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="12/03/2014" ms.author="glenga"/>
 
-[WACOM.INCLUDE [create-an-azure-account](../includes/create-an-azure-account.md)]
+[AZURE.INCLUDE [create-an-azure-account](../includes/create-an-azure-account.md)]
 
+
+<!--HONumber=42-->

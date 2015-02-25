@@ -1,9 +1,9 @@
-<properties title="SharePoint Server Farm Configuration Details" pageTitle="SharePoint-Serverfarm-Konfigurationsdetails" description="Beschreibt die standardmäßige Konfiguration von SharePoint-Farmen" metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="josephd" videoId="" scriptId="" manager="timlt"/>
+﻿<properties pageTitle="SharePoint-Serverfarm-Konfigurationsdetails" description="Beschreibt die standardmäßige Konfiguration von SharePoint-Farmen" services="virtual-machines" documentationCenter="" authors="JoeDavies-MSFT" manager="timlt" editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-sharepoint" ms.devlang="na" ms.topic="article" ms.date="10/20/2014" ms.author="josephd" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-sharepoint" ms.devlang="na" ms.topic="article" ms.date="1/26/2015" ms.author="josephd"/>
 
 
-# SharePoint-Serverfarm-Konfigurationsdetails#
+#SharePoint-Serverfarm-Konfigurationsdetails#
 
 Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals für die automatische Erstellung einer vorkonfigurierten SharePoint Server 2013-Farm für Sie. Es gibt zwei Farmkonfigurationen:
 
@@ -12,9 +12,9 @@ Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals f�
 
 Die folgenden Abschnitte beinhalten Konfigurationsdetails für jede Farm.
 
-Weitere Informationen finden Sie unter [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
+Zusätzliche Informationen finden Sie im Thema zur [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
 
-## Grundlegende SharePoint-Farm##
+##Grundlegende SharePoint-Farm##
 
 Die grundlegende SharePoint-Farm besteht aus drei virtuellen Computern mit der folgenden Konfiguration:
 
@@ -30,14 +30,14 @@ Im Folgenden finden Sie die Konfigurationsdetails:
     -	Adressraum: 192.168.16.0/26    
 
 - Virtuelle Computer
-	-	HostNamePrefix-DC (AD DS-Domänencontroller)
-	-	HostNamePrefix-SQL (SQL Server 2014-Server)
-	-	HostNamePrefix-SP (SharePoint 2013-Server)
+	-	*HostNamePrefix*-DC (AD DS-Domänencontroller)
+	-	*HostNamePrefix*-SQL (SQL Server 2014-Server)
+	-	*HostNamePrefix*-SP (SharePoint 2013-Server)
 
 - Domänencontroller
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: contoso.com (default)
+	-	Domänenname: contoso.com (Standard)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -57,7 +57,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 	-	Passphrase für SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 
 
-## Hochverfügbarkeit##
+##Hochverfügbare SharePoint-Farm##
 
 Die hochverfügbare SharePoint-Farm besteht aus neun virtuellen Computern mit der folgenden Konfiguration:
 
@@ -66,27 +66,27 @@ Die hochverfügbare SharePoint-Farm besteht aus neun virtuellen Computern mit de
 Im Folgenden finden Sie die Konfigurationsdetails:
 
 -	Azure-Abonnement: Wird während der anfänglichen Konfiguration angegeben.
--	Azure-Domänennamen (auch bekannt als Cloud-Dienste): Separate Domänennamen werden automatisch für jeden virtuellen Computer erstellt.
+-	Azure-Domänennamen (auch bekannt als Cloud-Dienste): Separate Domänennamen werden der obigen Abbildung entsprechend erstellt.
 -	Speicherkonto: Wird während der anfänglichen Konfiguration angegeben.
 -	Virtuelles Netzwerk	
 	-	Geben Sie Folgendes ein: Nur Cloud
 	-	Adressraum: 192.168.16.0/26	
 
 -	Virtuelle Computer
-	-	HostNamePrefix-DC1 (AD DS-Domänencontroller)
-	-	HostNamePrefix-DC2 (AD DS-Domänencontroller)
-	-	HostNamePrefix-SQL1 (SQL Server 2014-Server)
-	-	HostNamePrefix-SQL2 (SQL Server 2014-Server)
-	-	HostNamePrefix-SQL0 (SQL Server 2014-Server)
-	-	HostNamePrefix-WEB1 (SharePoint 2013-Server)
-	-	HostNamePrefix-WEB2 (SharePoint 2013-Server)
-	-	HostNamePrefix-APP1 (SharePoint 2013-Server)
-	-	HostNamePrefix-APP2 (SharePoint 2013-Server)
+	-	*HostNamePrefix*-DC1 (AD DS-Domänencontroller)
+	-	*HostNamePrefix*-DC2 (AD DS-Domänencontroller)
+	-	*HostNamePrefix*-SQL1 (SQL Server 2014-Server)
+	-	*HostNamePrefix*-SQL2 (SQL Server 2014-Server)
+	-	*HostNamePrefix*-SQL0 (Windows Server 2012 R2-Server)
+	-	*HostNamePrefix*-WEB1 (SharePoint 2013-Server)
+	-	*HostNamePrefix*-WEB2 (SharePoint 2013-Server)
+	-	*HostNamePrefix*-APP1 (SharePoint 2013-Server)
+	-	*HostNamePrefix*-APP2 (SharePoint 2013-Server)
 
 -	Domänencontroller
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänennamee: contoso.com (default)
+	-	Domänenname: contoso.com (Standard)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -105,7 +105,13 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 	-	Kontokennwort für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.		
 	-	Passphrase für SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 
+##Zusätzliche Ressourcen##
 
-<!--HONumber=35.1-->
+[SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/)
 
-<!--HONumber=35.1-->
+[SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
+
+
+
+
+<!--HONumber=42-->

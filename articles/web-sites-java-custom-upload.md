@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Upload custom Java website" pageTitle="Hochladen einer benutzerdefinierten Java-Website in Azure" metaKeywords="" description="In diesem Lernprogramm wird gezeigt, wie Sie eine benutzerdefinierte Java-Website an Azure hochladen." metaCanonical="" services="web-sites" documentationCenter="Java" title="Upload a custom Java website to Azure" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties 
+	pageTitle="Hochladen einer benutzerdefinierten Java-Website in Azure" 
+	description="In diesem Lernprogramm wird gezeigt, wie Sie eine benutzerdefinierte Java-Website an Azure hochladen." 
+	services="web-sites" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/25/2014" 
+	ms.author="robmcm"/>
 
 # Hochladen einer benutzerdefinierten Java-Website in Azure
 
@@ -13,27 +27,27 @@ Beachten Sie, dass Azure Möglichkeiten bietet, Java-Websites mithilfe der Konfi
 
 Im Folgenden werden die Einstellungen beschrieben, die für benutzerdefinierte Java-Websites auf Azure erwartet werden.
 
-- Der vom Java-Prozess verwendete HTTP-Port wird dynamisch zugewiesen.  Der Prozess muss den Port der Umgebungsvariable "HTTP_PLATFORM_PORT" verwenden.
+- Der vom Java-Prozess verwendete HTTP-Port wird dynamisch zugewiesen.  Der Prozess muss den Port der Umgebungsvariable  `HTTP_PLATFORM_PORT` verwenden.
 - Bis auf den einzelnen HTTP-Listener sollten alle Überwachungsports deaktiviert sein.  In Tomcat umfassen diese die Shutdown-, HTTPS- und AJP-Ports.
 - Der Container darf nur für IPv4-Verkehr konfiguriert sein.
-- Der Befehl **startup** der Anwendung muss in der Konfiguration festgelegt sein.
-- Anwendungen, die Verzeichnisse mit Schreibberechtigungen benötigen, müssen im Inhaltsverzeichnis der Azure-Website abgelegt werden. Dies befindet sich unter **D:\home**.
+- Der Befehl für den **Start** der Anwendung muss in der Konfiguration festgelegt sein.
+- Anwendungen, die Verzeichnisse mit Schreibberechtigungen benötigen, müssen im Inhaltsverzeichnis der Azure-Website abgelegt werden. Dieses befindet sich unter **D:\home**.  Die Umgebungsvariable `HOME` bezieht sich auf "D:\home".  
 
 Sie können Umgebungsvariablen wie in der web.config-Datei erforderlich festlegen.
 
 # httpPlatform-Konfiguration mit web.config
 
-Im Folgenden wird das Format **httpPlatform** innerhalb der web.config beschrieben.
+Im Folgenden wird das Format **httpPlatform** innerhalb der Datei "web.config" beschrieben.
                                  
 **arguments** (Default=""). Argumente für das ausführbare Programm oder das Skript, die in der Einstellung **processPath** festgelegt sind.
 
 Beispiele (mit **processPath**):
 
-    processPath="d:\home\site\wwwroot\bin\tomcat\bin\catalina.bat"
+    processPath="%HOME%\site\wwwroot\bin\tomcat\bin\catalina.bat"
     arguments="start"
     
     processPath="%JAVA_HOME\bin\java.exe"
-    arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP\_PLATFORM\_PORT% -Djetty.base=&quot;d:\home\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115&quot; -jar &quot;d:\home\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar&quot;"
+    arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP\_PLATFORM\_PORT% -Djetty.base=&quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115&quot; -jar &quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar&quot;"
 
 
 **processPath** - Pfad zum ausführbaren Programm oder Skript, das einen Prozess startet, der HTTP-Anfragen abhört.
@@ -44,13 +58,13 @@ Beispiele:
 
     processPath="%JAVA_HOME%\bin\java.exe"
 
-    processPath="d:\home\site\wwwroot\bin\tomcat\bin\startup.bat"
+    processPath="%HOME%\site\wwwroot\bin\tomcat\bin\startup.bat"
 
-    processPath="d:\home\site\wwwroot\bin\tomcat\bin\catalina.bat"
+    processPath="%HOME%\site\wwwroot\bin\tomcat\bin\catalina.bat"
                                                                                        
 **rapidFailsPerMinute** (Default=10.) Gibt an, wie oft der unter **processPath** festgelegte Prozess pro Minute abstürzen darf. Falls diese Grenze überschritten wird, startet **HttpPlatformHandler** diesen Prozess innerhalb der verbleibenden Zeit der Minute nicht mehr.
                                     
-**requestTimeout** (Default="00:02:00".) Gibt an, wie lange **HttpPlatformHandler** auf eine Antwort von dem Prozess wartet, der "%HTTP_PLATFORM_PORT%" abhört.
+**requestTimeout** (Default="00:02:00".) Gibt an, wie lange **HttpPlatformHandler** auf eine Antwort vom Prozess wartet, der "%HTTP_PLATFORM_PORT%" abhört.
 
 **startupRetryCount** (Default=10.) Gibt an, wie oft **HttpPlatformHandler** versuchen wird, den unter **processPath** angegebenen Prozess zu starten. Weitere Details erhalten Sie unter **startupTimeLimit**.
 
@@ -60,7 +74,7 @@ Beispiele:
                                     
 **stdoutLogFile** (Default="d:\home\LogFiles\httpPlatformStdout.log".) Absoluter Dateipfad, für den **stdout** und **stderr** von dem unter **processPath** angegebenen Prozess protokolliert werden.
                                     
-> [WACOM.NOTE] "%HTTP_PLATFORM_PORT%" ist ein spezieller Platzhalter, der entweder als Teil von **arguments** oder als Teil der **httpPlatform**-**environmentVariables**-Liste angegeben wird. Dieser wird von **HttpPlatformHandler** durch einen intern generierten Port ersetzt, damit der von **processPath** festgelegte Prozess diesen Port abhören kann.
+> [AZURE.NOTE] `%HTTP_PLATFORM_PORT%` ist ein spezieller Platzhalter, der entweder als Teil von **arguments** oder als Teil der Liste **httpPlatform** **environmentVariables** angegeben wird. Dieser wird von **HttpPlatformHandler** durch einen intern generierten Port ersetzt, damit der von **processPath** festgelegte Prozess diesen Port abhören kann.
 
 # Bereitstellung
 
@@ -79,12 +93,12 @@ Es gibt zwei Variationen von Tomcat, die mit Azure-Websites bereitgestellt werde
 	    <handlers>
 	      <add name="httpPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" />
 	    </handlers>
-	    <httpPlatform processPath="d:\home\site\wwwroot\bin\tomcat\bin\startup.bat" 
+	    <httpPlatform processPath="%HOME%\site\wwwroot\bin\tomcat\bin\startup.bat" 
 	        arguments="">
 	      <environmentVariables>
 	        <environmentVariable name="CATALINA_OPTS" value="-Dport.http=%HTTP_PLATFORM_PORT%" />
-	        <environmentVariable name="CATALINA_HOME" value="d:\home\site\wwwroot\bin\tomcat" />
-	        <environmentVariable name="JRE_HOME" value="d:\home\site\wwwroot\bin\java" /> <!-- optional, if not specified, this will default to %programfiles%\Java -->
+	        <environmentVariable name="CATALINA_HOME" value="%HOME%\site\wwwroot\bin\tomcat" />
+	        <environmentVariable name="JRE_HOME" value="%HOME%\site\wwwroot\bin\java" /> <!-- optional, if not specified, this will default to %programfiles%\Java -->
 	        <environmentVariable name="JAVA_OPTS" value="-Djava.net.preferIPv4Stack=true" />
 	      </environmentVariables>
 	    </httpPlatform>
@@ -97,9 +111,9 @@ Bei Tomcat müssen einige Änderungen an der Konfiguration vorgenommen werden.  
 -	HTTP connector port = {port.http}
 -	HTTP connector address = "127.0.0.1"
 -	Kommentieren der HTTPS- und AJP-Konnektoren
--	Die IPv4-Einstellung kann auch in der catalina.properties-Datei festgelegt werden, wo Sie "java.net.preferIPv4Stack=true" hinzufügen können.
+-	Die IPv4-Einstellung kann auch in der Datei "catalina.properties" festgelegt werden, wo Sie  `java.net.preferIPv4Stack=true` hinzufügen können.
     
-Azure-Websites unterstützt keine Direct3D-Aufrufe. Falls Ihre Anwendung solche Aufrufe durchführt, fügen Sie die folgende Java-Option hinzu, um diese Aufrufe zu deaktivieren: "-Dsun.java2d.d3d=false"
+Azure-Websites unterstützt keine Direct3D-Aufrufe. Falls Ihre Anwendung solche Aufrufe durchführt, fügen Sie die folgende Java-Option hinzu, um diese Aufrufe zu deaktivieren: `-Dsun.java2d.d3d=false`
 
 ## Jetty
 
@@ -112,7 +126,7 @@ Wie bei Tomcat, können Kunden auch für Jetty ihre eigenen Instanzen hochladen.
 	      <add name="httppPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" />
 	    </handlers>
 	    <httpPlatform processPath="%JAVA_HOME%\bin\java.exe" 
-	         arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP_PLATFORM_PORT% -Djetty.base=&quot;d:\home\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115&quot; -jar &quot;d:\home\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar&quot;"
+	         arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP_PLATFORM_PORT% -Djetty.base=&quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115&quot; -jar &quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar&quot;"
 	        startupTimeLimit="20"
 		  startupRetryCount="10"
 		  stdoutLogEnabled="true">
@@ -120,15 +134,15 @@ Wie bei Tomcat, können Kunden auch für Jetty ihre eigenen Instanzen hochladen.
 	  </system.webServer>
 	</configuration>
 
-Die Jetty-Konfiguration muss in der start.ini-Datei geändert werden, um "java.net.preferIPv4Stack=true" festzulegen.
+Die Jetty-Konfiguration muss in der Datei "start.ini" geändert werden, um  `java.net.preferIPv4Stack=true` festzulegen.
 
 ## Hudson
 
 In unserem Test wurden die Hudson 3.1.2-WAR-Datei und die Standardinstanz Tomcat 7.0.50 verwendet. Allerdings wurde die Benutzeroberfläche nicht zur Einrichtung verwendet.  Da es sich bei Hudson um ein softwarebasiertes Tool handelt, empfehlen wir die Installation auf dedizierten Instanzen, auf denen das Kennzeichen **AlwaysOn** auf der Website festgelegt werden kann.
 
-1. Erstellen Sie im Root-Verzeichnis auf Ihrer Azure-Website, z. B. **d:\home\site\wwwroot**, ein Verzeichnis **webapps** (falls nicht bereits vorhanden), und speichern Sie die Hudson.war-Datei unter **d:\home\site\wwwroot\webapps**.
+1. Erstellen Sie im Stammverzeichnis Ihrer Azure-Website, also **d:\home\site\wwwroot**, ein Verzeichnis namens **webapps** (falls nicht bereits vorhanden), und speichern Sie die Datei "Hudson.war" **unter d:\home\site\wwwroot\webapps**.
 2. Laden Sie Apache Maven 3.0.5 herunter (mit Hudson kompatibel), und speichern Sie es unter **d:\home\site\wwwroot**.
-3. Erstellen Sie unter **d:\home\site\wwwroot** eine web.conifg-Datei, und kopieren Sie die folgenden Inhalte hinein:
+3. Erstellen Sie unter **d:\home\site\wwwroot** die Datei "web.config", und kopieren Sie die folgenden Inhalte hinein:
 	
 		<?xml version="1.0" encoding="UTF-8"?>
 		<configuration>
@@ -142,9 +156,9 @@ In unserem Test wurden die Hudson 3.1.2-WAR-Datei und die Standardinstanz Tomcat
 		startupRetryCount="10">
 		<environmentVariables>
 		  <environmentVariable name="HUDSON_HOME" 
-		value="d:\home\site\wwwroot\hudson_home" />
+		value="%HOME%\site\wwwroot\hudson_home" />
 		  <environmentVariable name="JAVA_OPTS" 
-		value="-Djava.net.preferIPv4Stack=true -Duser.home=d:/home/site/wwwroot/user_home -Dhudson.DNSMultiCast.disabled=true" />
+		value="-Djava.net.preferIPv4Stack=true -Duser.home=%HOME%/site/wwwroot/user_home -Dhudson.DNSMultiCast.disabled=true" />
 		</environmentVariables>            
 		    </httpPlatform>
 		  </system.webServer>
@@ -184,7 +198,7 @@ Bei der Verwendung von Liferay 6.1.2 Community Edition GA3 in Kombination mit To
 
 Erstellen Sie im Ordner **liferay\tomcat-7.0.40\webapps\ROOT\WEB-INF\classes** eine Datei namens **portal-ext.properties**. Die Datei muss die folgende Zeile enthalten:
 
-    liferay.home=d:/home/site/wwwroot/liferay
+    liferay.home=%HOME%/site/wwwroot/liferay
 
 Erstellen Sie auf der Verzeichnisebene des Ordners "tomcat-7.0.40" eine Datei namens **web.config** mit folgendem Inhalt:
 
@@ -195,14 +209,14 @@ Erstellen Sie auf der Verzeichnisebene des Ordners "tomcat-7.0.40" eine Datei na
 	<add name="httpPlatformHandler" path="*" verb="*"
 	     modules="httpPlatformHandler" resourceType="Unspecified" />
 	    </handlers>
-	    <httpPlatform processPath="d:\home\site\wwwroot\tomcat-7.0.40\bin\catalina.bat" 
+	    <httpPlatform processPath="%HOME%\site\wwwroot\tomcat-7.0.40\bin\catalina.bat" 
 	                  arguments="run" 
 	                  startupTimeLimit="10" 
 	                  requestTimeout="00:10:00" 
 	                  stdoutLogEnabled="true">
 	      <environmentVariables>
 	  <environmentVariable name="CATALINA_OPTS" value="-Dport.http=%HTTP_PLATFORM_PORT%" />
-	  <environmentVariable name="CATALINA_HOME" value="d:\home\site\wwwroot\tomcat-7.0.40" />
+	  <environmentVariable name="CATALINA_HOME" value="%HOME%\site\wwwroot\tomcat-7.0.40" />
 	        <environmentVariable name="JRE_HOME" value="D:\Program Files\Java\jdk1.7.0_51" /> 
 	        <environmentVariable name="JAVA_OPTS" value="-Djava.net.preferIPv4Stack=true" />
 	      </environmentVariables>
@@ -210,16 +224,21 @@ Erstellen Sie auf der Verzeichnisebene des Ordners "tomcat-7.0.40" eine Datei na
 	  </system.webServer>
 	</configuration>
 
-Im Block **httpPlatform** ist **requestTimeout** auf "00:10:00" festgelegt.  Dies kann auch reduziert werden, allerdings werden Ihnen dann möglicherweise einige Zeitüberschreitungsfehler beim Bootstrapping von Liferay angezeigt.  Wenn dieser Wert geändert wird, sollte auch **connectionTimeout** in der server.xml-Datei von Tomcat geändert werden.  
+Im Block **httpPlatform** ist **requestTimeout** auf "00:10:00" festgelegt.  Dies kann auch reduziert werden, allerdings werden Ihnen dann möglicherweise einige Zeitüberschreitungsfehler beim Bootstrapping von Liferay angezeigt.  Wenn dieser Wert geändert wird, muss auch **connectionTimeout** in der Datei "server.xml" von Tomcat geändert werden.  
 
 Es sollte darauf hingewiesen werden, dass die JRE_HOME-Umgebungsvariable in der oben genannten web.config-Datei festgelegt wurde, um auf das 64-Bit-JDK zu verweisen. Der Standardwert ist 32-Bit, aber da Liferay möglicherweise mehr Speicher benötigt, wird empfohlen, das 64-Bit-JDK zu verwenden.
 
 Sobald Sie diese Änderungen vorgenommen haben, starten Sie Ihre Website neu mit Liferay, und öffnen Sie http://yoursite.  Das Liferay-Portal ist über das Website-Root-Verzeichnis verfügbar. 
 
-Weitere Informationen über Liferay finden Sie unter [http://www.liferay.com](http://www.liferay.com).
+Weitere Informationen zu Liferay finden Sie unter [http://www.liferay.com](http://www.liferay.com).
 
 
 
 
 
 
+
+
+
+
+<!--HONumber=42-->

@@ -1,13 +1,13 @@
-﻿<properties urlDisplayName="Manage Assets in Media Services" pageTitle="Verwalten von Medienobjekten in Media Services - Azure" metaKeywords="" description="Erfahren Sie, wie Sie Inhalte in Media Services verwalten können. Sie können außerdem Jobs, Aufgaben, Zugriffsrichtlinien, Locators usw. verwalten. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Manage Assets in storage" authors="juliako" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Verwalten von Medienobjekten in Media Services - Azure" description="Erfahren Sie, wie Sie Inhalte in Media Services verwalten können. Sie können außerdem Jobs, Aufgaben, Zugriffsrichtlinien, Locators usw. verwalten. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
 
 
 
 
 <h1>Gewusst wie: Verwalten von Medienobjekten im Speicher</h1>
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Gewusst wie: Schützen von Medienobjekten](../media-services-protect-asset/).
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Vorgehensweise: Schützen von Medienobjekten](../media-services-protect-asset/).
 
 Nachdem Sie Medienobjekte erstellt und nach Media Services hochgeladen haben, können Sie auf die Medienobjekte auf dem Server zugreifen und sie dort verwalten. Sie können auch andere Objekte auf dem Server verwalten, die Teil von Media Services sind, darunter Jobs, Aufgaben, Zugriffsrichtlinien, Locators usw.
 
@@ -80,6 +80,6 @@ Weitere Informationen zum Verwalten von Medienobjekten finden Sie unter:
 
 
 <h2>Nächste Schritte</h2>
-Da Sie jetzt wissen, wie Medienobjekte verwaltet werden, wechseln Sie zum Thema [Bereitstellen eines Medienobjekts durch Herunterladen](../media-services-deliver-asset-download/) .
+Da Sie jetzt wissen, wie Medienobjekte verwaltet werden, wechseln Sie zum Thema [Bereitstellen eines Medienobjekts durch Herunterladen](../media-services-deliver-asset-download/).
 
-<!--HONumber=35.1-->
+<!--HONumber=42-->

@@ -1,10 +1,10 @@
-﻿<properties linkid="develop-mobile-tutorials-get-started-with-data-android" urlDisplayName="Get Started with Data - Android" pageTitle="Erste Schritte mit Daten (Android) | Mobile Dev Center" metaKeywords="Azure Android Daten, Azure Mobile Services Daten, Windows Droid, Windows Android, Microsoft Droid, Microsoft Android" description="Erfahren Sie die ersten Schritte bei der Nutzung von Mobile Services-Daten für Ihre Android-App." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="ricksal,glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Erste Schritte mit Daten (Android) | Mobile Dev Center" description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Android-App." services="mobile-services" documentationCenter="android" authors="RickSaling" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="10/16/2014" ms.author="ricksal,glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="10/16/2014" ms.author="ricksal,glenga"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
@@ -12,14 +12,13 @@
 <p>Dieses Thema beschreibt die Nutzung von mobilen Azure-Diensten für die Nutzung von Daten in einer Android-App. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.</p>
 
 </div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="label">Lernprogramm anzeigen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-data-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a><span class="time">15:32</span></div>
+<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="label">Lernprogramm anschauen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-data-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a><span class="time">15:32</span></div>
 </div>
 
-<div class="dev-callout"><b>Hinweis</b>
-<p>Dieses Lernprogramm vermittelt ein besseres Verständnis davon, wie Sie mit mobilen Diensten in Azure Daten aus einer Android-App speichern und abrufen können. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm <a href="/de-de/develop/mobile/tutorials/get-started-android">Erste Schritte mit Mobile Services</a> abschließen.</p>
-<p>Den Quellcode der fertig gestellten App finden Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStartedWithData/Android/GetStartedWithData">hier</a>.
-</p>
-</div>
+> [AZURE.NOTE] Dieses Lernprogramm vermittelt ein besseres Verständnis davon, wie Sie mit mobilen Diensten in Azure Daten aus einer Android-App speichern und abrufen können. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit Mobile Services](/de-de/develop/mobile/tutorials/get-started-android). abschließen.
+> 
+> Den Quellcode der fertiggestellten App finden Sie [hier](https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStartedWithData/Android/GetStartedWithData).
+
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
@@ -29,42 +28,40 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 4. [Aktualisieren der App zur Verwendung von Mobile Services]
 5. [Testen der App mit Mobile Services]
 
-<div class="dev-callout"><strong>Hinweis</strong> <p>Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AED8DE357" target="_blank">Kostenlose Azure-Testversion</a>.</p></div> 
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AED8DE357"%20target="_blank). 
 
 Für dieses Lernprogramm benötigen Sie das [Android-SDK für mobile Dienste]. Dieses <a href="https://go.microsoft.com/fwLink/p/?LinkID=280125" target="_blank">Android-SDK</a> enthält die integrierte Eclipse-Entwicklungsumgebung (IDE) und das Android Developer Tools (ADT)-Plugin und Android 4.2 oder eine neuere Version. 
 
-<div class="dev-callout"><b>Hinweis</b>
-<p>Dieses Lernprogramm enthält Anleitungen für die Installation des Android-SDK und des Android-SDK für mobile Dienste. Das heruntergeladene GetStartedWithData-Projekt benötigt Android 4.2 oder eine neuere Version. Das SDK für mobile Dienste benötigt dagegen nur Android 2.2 oder eine neuere Version.</p>
-</div>
+> [AZURE.NOTE] Dieses Lernprogramm enthält Anleitungen für die Installation des Android-SDK und des Android-SDK für mobile Dienste. Das heruntergeladene GetStartedWithData-Projekt benötigt Android 4.2 oder eine neuere Version. Das SDK für mobile Dienste benötigt dagegen nur Android 2.2 oder eine neuere Version.
 
 >[AZURE.NOTE] Dieses Lernprogramm verwendet die neueste Version des Mobile Services SDK. Eine frühere Version des SDK aus Gründen der Abwärtskompatibilität finden Sie <a href="http://go.microsoft.com/fwlink/p/?LinkID=280126"> hier</a>; der in diesen Lernprogrammen enthaltene Code funktioniert damit jedoch nicht.
 
-<h2><a name="download-app"></a>Download des GetStartedWithData-Projekts</h2>
+<h2><a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts</h2>
 
 ###Laden Sie den Beispielcode herunter
 
-[WACOM.INCLUDE [download-android-sample-code](../includes/download-android-sample-code.md)]
+[AZURE.INCLUDE [download-android-sample-code](../includes/download-android-sample-code.md)]
 
 ###Prüfen der Version des Android-SDK
 
-[WACOM.INCLUDE [Verify SDK](../includes/mobile-services-verify-android-sdk-version.md)]
+[AZURE.INCLUDE [Prüfen des SDK](../includes/mobile-services-verify-android-sdk-version.md)]
 
 
 ###Prüfen und Ausführen des Beispielcodes
 
-[WACOM.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
+[AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
 <h2><a name="create-service"></a>Erstellen eines neuen mobilen Diensts im Verwaltungsportal</h2>
 
-[WACOM.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
 <h2><a name="add-table"></a>Hinzufügen einer neuen Tabelle zum mobilen Dienst</h2>
 
-[WACOM.INCLUDE [mobile-services-create-new-service-data-2](../includes/mobile-services-create-new-service-data-2.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data-2](../includes/mobile-services-create-new-service-data-2.md)]
 
 <h2><a name="update-app"></a>Aktualisieren der App für den Datenzugriff über mobile Dienste</h2>
 
-[WACOM.INCLUDE [mobile-services-android-getting-started-with-data](../includes/mobile-services-android-getting-started-with-data.md)]
+[AZURE.INCLUDE [mobile-services-android-getting-started-with-data](../includes/mobile-services-android-getting-started-with-data.md)]
 
 
 <h2><a name="test-app"></a>Testen der App mit dem neuen mobilen Dienst</h2>
@@ -140,4 +137,5 @@ Nach Abschluss der Daten-Lernprogramme können Sie diese anderen Android-Lernpro
 [GitHub]:  http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 
-<!--HONumber=35.2-->
+
+<!--HONumber=42-->

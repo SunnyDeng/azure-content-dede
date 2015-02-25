@@ -1,17 +1,17 @@
-﻿<properties urlDisplayName="How to Encode an Asset" pageTitle="Codieren von Medienobjekten in Media Services - Azure" metaKeywords="" description="Erfahren Sie, wie Sie Medieninhalte in Media Services mithilfe des Azure Media Encoder codieren können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Encode an Asset" authors="juliako" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Codieren von Medienobjekten in Media Services - Azure" description="Erfahren Sie, wie Sie Medieninhalte in Media Services mithilfe des Azure Media Encoder codieren können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
 
 
-#Gewusst wie: Codieren von Medienobjekten
+# Gewusst wie: Codieren von Medienobjekten
 Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Gewusst wie: Abrufen eines Medienprozessors](../media-services-get-media-processor/).
 
-Sie können Medieninhalte auf dem Server mit dem Azure Media Encoder in verschiedenen Medien-Codierungen und Formaten codieren. Außerdem können Sie Codierer von Mediendienste-Partnern verwenden. Externe Codierer finden Sie im [Azure Marketplace][]. Sie können die Details von Codierungsaufgaben entweder mit [Voreinstellungs][]-Zeichenfolgen oder über Konfigurationsdateien angeben. 
+Sie können Medieninhalte auf dem Server mit dem Azure Media Encoder in verschiedenen Medien-Codierungen und Formaten codieren. Außerdem können Sie Codierer von Media Services-Partnern verwenden. Externe Codierer finden Sie im [Azure Marketplace][]. Sie können die Details von Codierungsaufgaben entweder mit [Voreinstellungs][]-Zeichenfolgen oder über Konfigurationsdateien angeben. 
 
-##Verschlüsselung in den adaptiven MP4-Bitratensatz
-Es wird empfohlen, adaptive MP4-Bitratensätze für die Verschlüsselung zu verwenden und die Inhalte dann als dynamische Pakete zu senden. Weitere Informationen finden Sie unter [Erstellen und Verschlüsseln von Jobs mit dem Media Services SDK für .NET](http://msdn.microsoft.com/de-de/library/azure/dn282273.aspx), [Dynamische Pakete](http://msdn.microsoft.com/de-de/library/azure/jj889436.aspx) und [Bereitstellen von Inhalten](http://msdn.microsoft.com/de-de/library/azure/hh973618.aspx).
+## Verschlüsselung in den adaptiven MP4-Bitratensatz
+Es wird empfohlen, adaptive MP4-Bitratensätze für die Verschlüsselung zu verwenden und die Inhalte dann als dynamische Pakete zu senden. Weitere Informationen finden Sie unter [Erstellen von Codierungsaufträgen mit dem Media Services SDK für .NET](http://msdn.microsoft.com/de-de/library/azure/dn282273.aspx), [Dynamische Paketerstellung](http://msdn.microsoft.com/de-de/library/azure/jj889436.aspx) und [Bereitstellen von Inhalten](http://msdn.microsoft.com/de-de/library/azure/hh973618.aspx).
 
-##MP4-Codierung
+## MP4-Codierung
 Die folgende Methode lädt ein einzelnes Medienobjekt hoch und erstellt einen Auftrag zur Codierung des Medienobjekts mit MP4 unter Verwendung der Voreinstellung "H264 Broadband 720p". Das Ergebnis ist eine einzige MP4-Datei mit H264-Codierung und einer Auflösung von 720p:
 <pre><code>
 	static IJob CreateEncodingJob(string inputMediaFilePath, string outputFolder)
@@ -105,10 +105,10 @@ Die folgende Methode lädt ein einzelnes Medienobjekt hoch und erstellt einen Au
 Sie haben zwei Optionen, um Videos für Smooth Streaming zu codieren:
 <ul>
 <li> Direkte Codierung für Smooth Streaming </li>
-<li> Codierung in MP4 und anschließend codieren für Smooth Streaming</li>
+<li> Codierung in MP4 und anschließende Codierung für Smooth Streaming</li>
 </ul>
 
-Direkte Codierung für Smooth Streaming mit dem obigen Code, jedoch mithilfe einer der Smooth Streaming Codierungs-Voreinstellungen. Eine vollständige Liste der Codierungs-Voreinstellungen finden Sie unter [Zeichenfolgen für vordefinierte Einstellungen für Aufgaben für Azure Media Encoder](http://msdn.microsoft.com/de-de/library/jj129582.aspx). 
+Verwenden Sie für die direkte Codierung für Smooth Streaming den obigen Code, jedoch mithilfe einer der Smooth Streaming Codierungs-Voreinstellungen. Eine vollständige Liste der Codierungs-Voreinstellungen finden Sie unter [Systemvoreinstellungen für den Azure Media Encoder](http://msdn.microsoft.com/de-de/library/jj129582.aspx). 
 
 Verwenden Sie den Azure Media Packager, um eine MP4-Datei für Smooth Streaming zu konvertieren. Der Azure Media Packager unterstützt keine Voreinstellungen, und Sie müssen die Konfigurationsoptionen im XML angeben. Sie finden das entsprechende XML zum Konvertieren von MP4 für Smooth Streaming unter [Voreinstellungen für Aufgaben für Azure Media Packager][]. Fügen Sie das XML in eine Datei mit dem Namen MediaPackager_MP4ToSmooth.xml in Ihrem Projekt ein. Der folgende Code demonstriert die Konvertierung eines MP4-Medienobjekts für Smooth Streaming. Die folgende Methode konvertiert ein vorhandenes Medienobjekt. 
 <pre><code>
@@ -155,17 +155,15 @@ Weitere Informationen zur Verarbeitung von Medienobjekten finden Sie unter:
 <li><a href="http://msdn.microsoft.com/de-de/library/jj129574.aspx">Verarbeiten von Medienobjekten mit der Mediendienste-REST-API</a></li>
 </ul>
 
-##Nächste Schritte
-Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](../media-services-check-job-progress/) fortfahren.
+## Nächste Schritte
+Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen, und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](../media-services-check-job-progress/) fortfahren.
 
 [Azure Marketplace]: https://datamarket.azure.com/
-[Codierungsvoreinstellungen]: http://msdn.microsoft.com/de-de/library/dn619392.aspx
+[Voreinstellungs]: http://msdn.microsoft.com/de-de/library/dn619392.aspx
 [Gewusst wie: Abrufen einer Media Processor-Instanz]:http://go.microsoft.com/fwlink/?LinkId=301732
 [Gewusst wie: Hochladen eines verschlüsselten Medienobjekts]:http://go.microsoft.com/fwlink/?LinkId=301733
 [Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen]:http://go.microsoft.com/fwlink/?LinkId=301734
-[Nachverfolgen des Auftragsstatus]:http://go.microsoft.com/fwlink/?LinkId=301737
+[Gewusst wie: Prüfen des Auftragsfortschritts]:http://go.microsoft.com/fwlink/?LinkId=301737
 [Voreinstellungen für Aufgaben für Azure Media Packager]:http://msdn.microsoft.com/de-de/library/windowsazure/hh973635.aspx
 
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

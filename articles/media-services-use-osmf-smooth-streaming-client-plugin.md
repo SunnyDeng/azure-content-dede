@@ -1,12 +1,12 @@
-﻿<properties urlDisplayName="Smooth Streaming Plugin" pageTitle="Smooth Streaming-Plug-In für das Open Source Media-Framework" metaKeywords="" description="Erfahren Sie, wie Sie das Smooth Streaming-Plug-In von Azure Media Services für das Adobe Open Source Media-Framework verwenden." metaCanonical="" services="media-services" documentationCenter="" title="How to Use the Microsoft Smooth Streaming Plugin for the Adobe Open Source Media Framework" authors="juliako" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Smooth Streaming-Plug-In für das Open Source Media-Framework" description="Erfahren Sie, wie Sie das Smooth Streaming-Plug-In von Azure Media Services für das Adobe Open Source Media-Framework verwenden." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
 
 
 
 # Verwenden des Microsoft Smooth Streaming-Plug-Ins für das Adobe Open Source Media-Framework #
 
-##Übersicht ##
+## Übersicht ##
 Das Microsoft Smooth Streaming-Plug-In für das Open Source Media-Framework 2.0 (SS für OSMF) erweitert die OSMF-Standardfunktionen und bietet Abspielfunktionen für Microsoft Smooth Streaming-Inhalte für neue und existierende OSMF-Player. Das Plug-In bietet außerdem Smooth Streaming-Wiedergabefähigkeiten für Strobe Media Playback (SMP).
 
 SS für OSMF enthält zwei Versionen des Plug-Ins:
@@ -15,9 +15,9 @@ SS für OSMF enthält zwei Versionen des Plug-Ins:
 
 - Dynamisches Smooth Streaming-Plug-In für OSMF (.swf)
 
-Dieses Dokument geht davon aus, dass die Leser über allgemeine Kenntnisse zu OSMF und OSMF-Plug-Ins verfügen. Weitere Informationen zu OSMF finden Sie in der Dokumentation auf der [offiziellen OSMF-Website](http://osmf.org/).
+Dieses Dokument geht davon aus, dass die Leser über allgemeine Kenntnisse zu OSMF und OSMF-Plug-Ins verfügen. Weitere Informationen zu OSMF finden Sie in der [Dokumentation auf der offiziellen OSMF-Website](http://osmf.org/).
 
-###Smooth Streaming-Plug-In für OSMF 2.0
+### Smooth Streaming-Plug-In für OSMF 2.0
 
 Das Plug-In unterstützt Laden und Wiedergabe von bedarfsgesteuerten Smooth Streaming-Inhalten mit den folgenden Features:
 
@@ -41,7 +41,7 @@ Die folgenden Features werden nicht unterstützt:
 
 Es folgt eine Liste der bekannten Probleme:
 
-- Bei der Wiedergabe von Smooth Streaming-Inhalten mit 48KHz-Audiospuren treten Probleme auf. In der Flash-Runtime existiert ein bekanntes Problem mit dem Rendering von 48KHz-Audioinhalten. Aufgrund dieses Problems kann es sein, dass Smooth Streaming-Inhalte mit 48KHz-Einstellungen nicht wie gewünscht funktionieren. Siehe auch: [Verwenden von Flash Player](http://forums.adobe.com/message/4483498#4483498) und [Adobe Flash Player 11.3 - Fehler 3210964](https://bugbase.adobe.com/index.cfm?event=bug&id=3210964) .
+- Bei der Wiedergabe von Smooth Streaming-Inhalten mit 48KHz-Audiospuren treten Probleme auf. In der Flash-Runtime existiert ein bekanntes Problem mit dem Rendering von 48KHz-Audioinhalten. Aufgrund dieses Problems kann es sein, dass Smooth Streaming-Inhalte mit 48KHz-Einstellungen nicht wie gewünscht funktionieren. Siehe auch: [Verwenden von Flash Player](http://forums.adobe.com/message/4483498#4483498) und [Adobe Flash Player 11.3  -  Fehler 3210964](https://bugbase.adobe.com/index.cfm?event=bug&id=3210964).
 - Bei der Wiedergabe mehrerer Smooth Streaming-Inhalte auf einer Seite können Probleme auftreten. Dies ist ein bekanntes Problem mit OSMF.
 - Bei der Wiedergabe von Stage Video können Probleme auftreten, und auf manchen Maschinen wird kein Video angezeigt. Sie können Hardwarebeschleunigung oder Stage Video deaktivieren, um dieses Problem zu umgehen.
 
@@ -54,7 +54,7 @@ OSMF-Plug-Ins können statisch (zur Kompilierzeit) oder dynamisch (zur Laufzeit)
 
 Weitere Informationen zum statischen und dynamischen Laden finden Sie auf der offiziellen [OSMF-Plug-In-Website](http://osmf.org/dev/osmf/OtherPDFs/osmf_plugin_dev_guide.pdf).
 
-###SS für OSMF statisches Laden
+### SS für OSMF statisches Laden
 Der folgende Codeausschnitt zeigt, wie Sie das SS-Plug-In für OSMF statisch laden und ein einfaches Video mit der OSMF MediaFactory-Klasse abspielen können. Bevor Sie den SS für OSMF-Code hinzufügen, sollten Sie sicherstellen, dass das statische Plug-In "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swc" in den Projektverweisen enthalten ist.
 
 <pre><code>
@@ -190,7 +190,7 @@ package
 </code></pre>
 
 
-###SS für OSMF dynamisches Laden
+### SS für OSMF dynamisches Laden
 
 Der folgende Codeausschnitt zeigt, wie Sie das SS-Plug-In für OSMF dynamisch laden und ein einfaches Video mit der OSMF MediaFactory-Klasse abspielen können. Bevor Sie den SS für OSMF-Code hinzufügen, sollten Sie das dynamische Plug-In "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf" in den Projektordner kopieren, falls Sie das FILE-Protokoll verwenden möchten, bzw. in einen Webserver kopieren, falls Sie das HTTP-Protokoll verwenden möchten. "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swc" muss nicht in die Projektverweise eingebunden werden.
 
@@ -328,7 +328,7 @@ package
 }
 </code></pre>
 
-##Strobe Media  Playback mit dem dynamischen SS ODMF-Plug-In
+## Strobe Media  Playback mit dem dynamischen SS ODMF-Plug-In
 Das dynamische Smooth Streaming für OSMF-Plug-In unterstützt [Strobe Media Playback (SMP)](http://osmf.org/strobe_mediaplayback.html). Sie können das Smooth Streaming für OSMF-Plug-In für die Smooth Streaming-Wiedergabe von SMP verwenden. Kopieren Sie dazu "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf" in einen Webserver für die HTTP-Funktion, indem Sie die folgenden Schritte ausführen:
 
 1.	Öffnen Sie die [Strobe Media Playback-Einrichtungsseite](http://osmf.org/dev/2.0gm/setup.html). 
@@ -390,4 +390,4 @@ Das dynamische Smooth Streaming für OSMF-Plug-In unterstützt [Strobe Media Pla
 
 Weitere allgemeine Informationen zu OSMF-Entwicklung finden Sie auf der offiziellen [OSMF-Entwicklungswebsite](http://osmf.org/resources.html).
 
-<!--HONumber=35.1-->
+<!--HONumber=42-->

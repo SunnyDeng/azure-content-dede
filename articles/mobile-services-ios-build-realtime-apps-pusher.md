@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Build Realtime Apps with Pusher" pageTitle="Erstellen von Echtzeit-Apps mit Pusher (iOS) - Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie mithilfe von Pusher Benachrichtigungen an Ihre Azure Media Services-App für iOS senden." metaCanonical="" services="" documentationCenter="Mobile" title="Build Real-time Apps with Mobile Services and Pusher" authors="donnam" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Erstellen von Echtzeit-Apps mit Pusher (iOS) - Mobile Services" description="Erfahren Sie, wie Sie mithilfe von Pusher Benachrichtigungen an Ihre Azure Media Services-App für iOS senden." services="" documentationCenter="ios" authors="lindydonna" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="donnam" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="donnam"/>
 
 
 # Erstellen von Echtzeit-Apps mit Mobile Services und Pusher
@@ -21,11 +21,11 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zum Hinzufüg
 3. [Installieren von Serverskripts][]
 4. [Testen Ihrer App][]
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst das Lernprogramm [Erste Schritte mit mobilen Diensten][] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services][] abschließen.
 
 ## <a name="sign-up"></a>Erstellen eines neuen Pusher-Kontos
 
-[WACOM.INCLUDE [Pusher-Anmeldung](../includes/pusher-sign-up.md)]
+[AZURE.INCLUDE [pusher-sign-up](../includes/pusher-sign-up.md)]
 
 ## <a name="update-app"></a>Aktualisieren Ihrer App
 
@@ -39,8 +39,8 @@ Mit der [libPusher][]-Bibliothek erhalten Sie Zugriff auf den Pusher von iOS aus
 
 2. Erstellen Sie eine Gruppe mit der Bezeichnung _libPusher_ in Ihrem Projekt.
 
-3. Entzippen Sie unter "Finder" die heruntergeladene ZIP-Datei, wählen Sie die Ordner **libPusher-combined.a** und **/headers**, und ziehen Sie diese Elemente in die Gruppe **libPusher** in Ihrem Projekt.
-
+3. Entzippen Sie die heruntergeladene Zip-Datei im Finder, wählen Sie die Ordner **libPusher-combined.a** und **/headers** aus, und ziehen Sie diese Elemente in die Gruppe **libPusher** in Ihrem Projekt.
+	
 4. Markieren Sie die Option **Copy items into destination group's folder**, und klicken Sie anschließend auf **Finish**.
 
 	![][add-files-to-group]
@@ -55,7 +55,7 @@ Mit der [libPusher][]-Bibliothek erhalten Sie Zugriff auf den Pusher von iOS aus
 
 	![][add-build-phase]
 
-8. Fügen Sie innerhalb des Bereichs **Binärdatei mit Bibliotheken verknüpfen** die folgenden Bibliotheken hinzu:
+8. Fügen Sie innerhalb des Bereichs **Link Binary With Libraries** die folgenden Bibliotheken hinzu:
 
 	- libicucore.dylib
 	- CFNetwork.framework
@@ -131,9 +131,9 @@ Die Bibliothek ist nun installiert und einsatzbereit.
 		    return index;
 		}
 
-	Mithilfe von QSTodoService können Sie nun Elemente über die **id** finden und Elemente lokal ohne das Versenden expliziter Anforderungen an den Remote-Dienst hinzufügen und abschließen.
+	Mithilfe von QSTodoService können Sie nun Elemente über die **ID** finden und Elemente lokal ohne das Versenden expliziter Anforderungen an den Remote-Dienst hinzufügen und abschließen.
 
-4. Ersetzen Sie die vorhandenen Methoden **addItem** und **completeItem** durch den folgenden Code:
+4. Ersetzen Sie die vorhandenen **addItem**- und **completeItem**-Methoden durch folgenden Code:
 
 		-(void) addItem:(NSDictionary *)item
 		{
@@ -158,14 +158,14 @@ Die Bibliothek ist nun installiert und einsatzbereit.
 
 	Beachten Sie, dass Elemente nun zusammen mit Aktualisierungen für die GUI hinzugefügt und abgeschlossen werden, wenn Ereignisse vom Pusher empfangen werden, und nicht, wenn die Datentabelle aktualisiert wird.
 
-5. Fügen Sie in der Datei **QSTodoListViewController.h** die folgenden Import-Ausdrücke hinzu:
+5. Fügen Sie in der Datei **QSTodoListViewController.h** die folgenden Importanweisungen hinzu:
 
 		#import "PTPusherDelegate.h"
 		#import "PTPusher.h"
 		#import "PTPusherEvent.h"
 		#import "PTPusherChannel.h"
 
-6. Modifizieren Sie die Schnittstellen-Deklaration zum Hinzufügen von **PTPusherDelegate**, sodass diese etwa wie folgt aussieht:
+6. Modifizieren Sie die Schnittstellendeklaration zum Hinzufügen von **PTPusherDelegate**, sodass diese etwa wie folgt aussieht:
 
 		@interface QSTodoListViewController : UITableViewController<UITextFieldDelegate, PTPusherDelegate>
 
@@ -228,7 +228,7 @@ Die Bibliothek ist nun installiert und einsatzbereit.
 
 11. Ersetzen Sie den Platzhalter `**your_app_key**` durch den app_key-Wert, den Sie zuvor aus dem Dialogfeld "Verbindungsinformationen" kopiert haben.
 
-12. Ersetzen Sie die Methode **onAdd** durch den folgenden Code:
+12. Ersetzen Sie die **onAdd**-Methode durch den folgenden Code:
 
 		- (IBAction)onAdd:(id)sender
 		{
@@ -242,14 +242,14 @@ Die Bibliothek ist nun installiert und einsatzbereit.
 		    itemText.text = @"";
 		}
 
-13. Ermitteln Sie in der Datei **QSTodoListViewController.m** die Methode (void)viewDidLoad, und fügen Sie einen Aufruf zur **setupPusher**-Methode hinzu, sodass die ersten Zeilen wie folgt lauten:
+13. Suchen Sie in der Datei **QSTodoListViewController.m** die (void)viewDidLoad-Methode, und fügen Sie einen Aufruf der **setupPusher**-Methode hinzu, sodass die ersten Zeilen wie folgt aussehen:
 
 		- (void)viewDidLoad
 		{
 		    [super viewDidLoad];
 		    [self setupPusher];
 
-14. Ersetzen Sie am Ende der **tableView:commitEditingStyle:forRowAtIndexPath**-Methode den Aufruf nach **completeItem** durch den folgenden Code:
+14. Ersetzen Sie am Ende der **tableView:commitEditingStyle:forRowAtIndexPath**-Methode den Aufruf von **completeItem** durch folgenden Code:
 
 		// Ask the todoService to set the item's complete value to YES
 	    [self.todoService completeItem:item];
@@ -266,23 +266,23 @@ Mit den verbliebenen Objekten werden die Serverskripts eingerichtet. Ein Skript 
 
 
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und anschließend auf Ihren mobilen Dienst.
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
 
-2. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+2. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die **TodoItem**-Tabelle.
 
 	![][1]
 
 
 
-3. Klicken Sie unter **TodoItem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
+3. Klicken Sie in **TodoItem** auf die Registerkarte **Skript** und dann auf **Einfügen**.
 
 
 	![][2]
 
 
 
-	Daraufhin wird die Funktion angezeigt, die aufgerufen wird, wenn etwas in die Tabelle **TodoItem** eingefügt wird.
+	Auf diese Weise wird die Funktion angezeigt, die aufgerufen wird, wenn in der Tabelle **TodoItem** eine Einfügung auftritt.
 
 
 4. Ersetzen Sie die Einfügefunktion durch den folgenden Code:
@@ -320,9 +320,9 @@ Mit den verbliebenen Objekten werden die Serverskripts eingerichtet. Ein Skript 
 
 5. Ersetzen Sie die Platzhalter im oben angegebenen Skript durch jene Werte, die Sie zuvor aus dem Verbindungsinformationsdialog kopiert haben:
 
-	- **`**your_app_id**`**: der App&#95;ID-Wert
-	- **`**your_app_key**`**: der App&#95;Schlüsselwert
-	- **`**your_app_key_secret**`**: der geheime Schlüssel der App
+	- **"**your_app_id**"**: der app&#95;id value
+	- **"**your_app_key**"**: der app&#95;key value
+	- **"**your_app_key_secret**"**: der app&#95;key&#95;secret
 
 
 6. Klicken Sie auf die Schaltfläche **Speichern**. Sie haben nun ein Skript konfiguriert, um immer dann ein Ereignis für den Pusher zu veröffentlichen, wenn ein neues Element in die Tabelle **TodoItem** eingefügt wird.
@@ -377,7 +377,7 @@ Mit den verbliebenen Objekten werden die Serverskripts eingerichtet. Ein Skript 
 
 Zum Testen der App müssen Sie zwei Instanzen ausführen. Sie können eine Instanz auf einem iOS-Gerät und eine weitere im iOS-Simulator ausführen.
 
-1. Schließen Sie Ihr iOS-Gerät an. Wählen Sie die Schaltfläche **Ausführen** (oder Taste Command+R), um die App auf dem Gerät zu starten. Stoppen Sie danach den Debugging-Vorgang.
+1. Schließen Sie Ihr iOS-Gerät an. Wählen Sie die Schaltfläche **Ausführen** (oder Taste Command+R), um die App auf dem Gerät zu starten. Stoppen Sie danach den Debuggingvorgang.
 
 	Sie haben die App nun auf dem Gerät installiert.
 
@@ -428,3 +428,6 @@ Weitere Informationen zu Registrierung und Verwendung von Serverskripts finden S
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/p/?LinkId=262293
+
+
+<!--HONumber=42-->

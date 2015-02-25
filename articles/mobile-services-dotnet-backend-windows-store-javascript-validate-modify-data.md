@@ -1,12 +1,12 @@
-<properties urlDisplayName="Validate and Modify Data" pageTitle="Verwenden des .Net-Back-End zum Prüfen und Ändern von Daten (Windows Store) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten für Ihre Windows Store-JavaScript-App mit dem .NET-Back-End von Microsoft Azure Mobile Services überprüfen, ändern und vergrößern." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using the .Net backend" authors="wesmc" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Verwenden des .Net-Back-End zum Prüfen und Ändern von Daten (Windows Store) | Mobile Dev Center" description="Erfahren Sie, wie Sie Daten für Ihre Windows Store-JavaScript-App mit dem .NET-Back-End von Microsoft Azure Mobile Services überprüfen, ändern und vergrößern." services="mobile-services" documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="wesmc" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="wesmc"/>
 
 # Prüfen und Ändern von Daten in Mobile Services mit .NET-Back-End
 
-[WACOM.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
 
-In diesem Thema erfahren Sie, wie Sie Code im Azure Mobile Services .NET-Back-End verwenden, um Daten zu prüfen und zu ändern. Der .NET-Back-End-Dienst ist ein HTTP-Dienst, der mit dem Web-API-Framework erstellt wird. Wenn Sie mit der durch das Web-API-Framework definierten `ApiController`-Klasse vertraut sind, werden Sie die von Mobile Services bereitgestellte `TableController`-Klasse intuitiv verstehen. `TableController` wird von der `ApiController`-Klasse abgeleitet und bietet zusätzliche Funktionen für eine Verknüpfung mit einer Datenbanktabelle. Er kann verwendet werden, um Vorgänge mit einzufügenden und zu aktualisierenden Daten auszuführen, einschließlich zum Überprüfen und Ändern von Daten, was in diesem Lernprogramm demonstriert wird. 
+In diesem Thema erfahren Sie, wie Sie Code im Azure Mobile Services .NET-Back-End verwenden, um Daten zu prüfen und zu ändern. Der .NET-Back-End-Dienst ist ein HTTP-Dienst, der mit dem Web-API-Framework erstellt wird. Wenn Sie mit der durch das Web-API-Framework definierten  `ApiController`-Klasse vertraut sind, werden Sie die von Mobile Services bereitgestellte  `TableController`-Klasse intuitiv verstehen.  `TableController` wird von der  `ApiController`-Klasse abgeleitet und bietet zusätzliche Funktionen für eine Verknüpfung mit einer Datenbanktabelle. Sie kann verwendet werden, um Vorgänge in Bezug auf einzufügende und zu aktualisierende Daten auszuführen, einschließlich Überprüfen und Ändern von Daten, was in diesem Lernprogramm demonstriert wird. 
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
@@ -16,20 +16,20 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 4. [Ein Zeitstempelfeld für CompleteDate hinzufügen]
 5. [Client zum Anzeigen von CompleteDate aktualisieren]
 
-Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte] oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/) auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Lernprogramm[Erste Schritte] oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/) abschließen.  
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte] oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/). Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte] oder [Erste Schritte mit Daten](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/) abschließen.  
 
 ## <a name="string-length-validation"></a>Validierungscode zu Mobile Service hinzufügen
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-add-validation](../includes/mobile-services-dotnet-backend-add-validation.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-add-validation](../includes/mobile-services-dotnet-backend-add-validation.md)]
 
 
 ## <a name="update-client-validation"></a>Aktualisieren des Clients
 
-Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die Daten zu überprüfen und Fehlerantworten zu senden. Sie müssen nun Ihre App aktualisieren, damit diese Fehlerantworten aus der Überprüfung verarbeiten kann. Der Fehler wird vom `IMobileServiceTable<TodoItem].InsertAsync()`-Aufruf der Client-App aufgefangen.
+Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die Daten zu überprüfen und Fehlerantworten zu senden. Sie müssen nun Ihre App aktualisieren, damit diese Fehlerantworten aus der Überprüfung verarbeiten kann. Der Fehler wird vom  `IMobileServiceTable<TodoItem].InsertAsync()`-Aufruf der Client-App aufgefangen.
 
 1. Navigieren Sie in Visual Studio im Fenster des Projektmappen-Explorers zum JavaScript-Clientprojekt, und erweitern Sie den Ordner **js**. Öffnen Sie dann die Datei "default.js".
 
-2. Ersetzen Sie in der "default.js" die vorhandene **insertTodoItem**-Funktion durch die folgende Funktionsdefinition:
+2. Ersetzen Sie in der Datei "default.js" die vorhandene **insertTodoItem**-Funktion durch die folgende Funktionsdefinition:
 
 
         var insertTodoItem = function (todoItem) {
@@ -47,7 +47,7 @@ Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die 
                 });
         };
 
-   	Diese Version der Funktion umfasst eine Fehlerbehandlung. Außerdem wird ein `Meldungsdialogfeld` mit der Fehlermeldung aus der Antwort sowie der Statustext und Statuscode angezeigt.
+   	Diese Version der Funktion umfasst eine Fehlerbehandlung. Außerdem werden  `MessageDialog` mit der Fehlermeldung aus der Antwort sowie der Statustext und Statuscode angezeigt.
 
 ## <a name="test-length-validation"></a>Testlängenüberprüfung
 
@@ -64,14 +64,14 @@ Der mobile Dienst ist nun eingerichtet, um bei einer ungültigen Textlänge die 
 ## <a name="add-timestamp"></a>Ein Zeitstempelfeld für CompleteDate hinzufügen
 
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-add-completedate](../includes/mobile-services-dotnet-backend-add-completedate.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-add-completedate](../includes/mobile-services-dotnet-backend-add-completedate.md)]
 
 ## <a name="update-client-timestamp"></a>Client zum Anzeigen von CompleteDate aktualisieren
 
-Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**-Daten anzuzeigen. 
+Abschließend muss der Client aktualisiert werden, um die neuen **completeDate**-Daten anzuzeigen. 
 
 
-1. Öffnen Sie im Projektmappen-Explorer für Visual Studio im JavaScript-Client-Projekt die Datei "default.html". Ersetzen Sie das `div`-Tagelement der Bindungsvorlage durch die unten angegebene Definition. Speichern Sie anschließend die Datei. Dadurch wird ein `div`-Tag mit der innerText-Eigenschaft hinzugefügt, die an **completeDate** gebunden ist.
+1. Öffnen Sie im Projektmappen-Explorer für Visual Studio im JavaScript-Client-Projekt die Datei "default.html". Ersetzen Sie das  `div`-Tagelement der Bindungsvorlage durch die unten angegebene Definition. Speichern Sie anschließend die Datei. Dadurch wird ein  `div`-Tag mit der innerText-Eigenschaft hinzugefügt, die an **completeDate** gebunden ist.
 	      
         <div id="TemplateItem" data-win-control="WinJS.Binding.Template">
           <div style="display: -ms-grid; -ms-grid-columns: 3">
@@ -88,7 +88,7 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
 
 
 
-2. Entfernen Sie in der "default.js" die `.Where`-Klauselfunktion in der vorhandenen **refreshTodoItems**-Funktion, sodass abgeschlossene todoitems in die Ergebnisse einbezogen werden.
+2. Entfernen Sie in der Datei "default.js" die  `.Where`-Klauselfunktion in der vorhandenen **refreshTodoItems**-Funktion, sodass abgeschlossene "todoitems" in die Ergebnisse einbezogen werden.
 
             var refreshTodoItems = function () {
                 // This code refreshes the entries in the list view be querying the TodoItems table.
@@ -101,7 +101,7 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
             };
 
 
-3. Aktualisieren Sie in der "default.js" die **updateCheckedTodoItem**-Funktion wie folgt, sodass die Einträge nach einem Update aktualisiert sind und abgeschlossene Einträge nicht aus der Liste entfernt werden. Speichern Sie anschließend die Datei.	
+3. Aktualisieren Sie in der Datei "default.js" die **updateCheckedTodoItem**-Funktion wie folgt, sodass die Einträge nach einem Update aktualisiert sind und abgeschlossene Einträge nicht aus der Liste entfernt werden. Speichern Sie anschließend die Datei.	
 
             var updateCheckedTodoItem = function (todoItem) {
                 // This code takes a freshly completed TodoItem and updates the database. 
@@ -111,17 +111,17 @@ Abschließend muss der Client aktualisiert werden, um die neuen **CompleteDate**
             };
 
 
-4. Klicken Sie in den Fenstern des Projektmappen-Explorers von Visual Studio mit der rechten Maustaste auf die **Projektmappe,**, und klicken Sie dann auf **Projektmappe neu erstellen**, um sowohl den Client als auch den .NET-Back-End-Dienst neu zu erstellen. Vergewissern Sie sich, dass beide Projekte ohne Fehler erstellt werden.
+4. Klicken Sie in den Fenstern des Projektmappen-Explorers von Visual Studio mit der rechten Maustaste auf **Projektmappe**. Klicken Sie dann auf **Projektmappe neu erstellen**, um sowohl den Client als auch den .NET-Back-End-Dienst neu zu erstellen. Stellen Sie sicher, dass beide Projekte ohne Fehler erstellt werden.
 
     ![][3]
 	
-5. Drücken Sie die Taste **F5**, um die Client-App und den Dienst lokal auszuführen. Fügen Sie einige neue Einträge hinzu, und klicken Sie auf einige der Einträge, um diese als abgeschlossen zu markieren und festzustellen, ob der aktualisierte **CompleteDate**-Zeitstempel angezeigt wird.
+5. Drücken Sie die Taste **F5**, um die Client-App und den Dienst lokal auszuführen. Fügen Sie einige neue Einträge hinzu, und klicken Sie auf diese, um einige der Einträge als abgeschlossen zu markieren, damit der **CompleteDate**-Zeitstempel als aktualisiert angezeigt werden kann.
 
     ![][4]
 
-6. Klicken Sie im Projektmappen-Explorer für Visual Studio mit der rechten Maustaste auf das todolist-Dienstprojekt, und klicken Sie auf **Veröffentlichen**. Veröffentlichen Sie den .NET-Back-End-Dienst mithilfe der Veröffentlichungseinstellungsdatei, die Sie vom Azure-Portal heruntergeladen haben, in Microsoft Azure.
+6. Klicken Sie im Projektmappen-Explorer für Visual Studio mit der rechten Maustaste auf das todolist-Dienstprojekt, und klicken Sie auf **Veröffentlichen**. Veröffentlichen Sie Ihren .NET-Backend-Dienst unter Microsoft Azure mithilfe Ihrer Veröffentlichungseinstellungsdatei, die Sie vom Azure-Portal heruntergeladen haben.
 
-7. Aktualisieren Sie die Datei "default.js" für das Clientprojekt, indem Sie die Verbindung zur Adresse des mobilen Diensts auskommentieren. Testen Sie die App mit dem in Ihrem Azure-Konto gehosteten .NET Back-End.
+7. Aktualisieren Sie die Datei "default.js" für das Clientprojekt, indem Sie die Verbindung zur Adresse des mobilen Diensts auskommentieren. Testen Sie die App bezüglich des .NET-Backend, das in Ihrem Azure-Konto gehostet wird.
 
 
 
@@ -135,11 +135,11 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 * [Dienstseitige Autorisierung von Benutzern]
   <br/>Erfahren Sie, wie Daten anhand der ID eines authentifizierten Benutzers gefiltert werden können.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 * [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
-  <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET
+  <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 <!-- Anchors. -->
 [Überprüfung der Zeichenfolgenlänge hinzufügen]: #string-length-validation
@@ -167,5 +167,8 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 [JavaScript und HTML]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-js
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
-[Azure-Verwaltungsportal]: http://manage.windowsazure.com/
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
+
+
+<!--HONumber=42-->

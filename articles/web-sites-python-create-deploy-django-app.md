@@ -1,141 +1,550 @@
-﻿<properties urlDisplayName="Websites with Django" pageTitle="Python-Websites mit Django - Azure-Lernprogramm" metaKeywords="Azure django, django website" description="In diesem Lernprogramm werden Sie in die Ausführung einer Python-Website in Azure eingeführt." metaCanonical="" services="web-sites" documentationCenter="Python" title="Creating Websites with Django" authors="huvalo" solutions="" manager="wpickett" editor="" />
+<properties 
+	pageTitle="Python-Websites mit Django - Azure-Lernprogramm" 
+	description="In diesem Lernprogramm werden Sie in die Ausführung einer Python-Website in Azure eingeführt." 
+	services="web-sites" 
+	documentationCenter="python" 
+	authors="huguesv" 
+	manager="" 
+	editor=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="08/01/2014" ms.author="huvalo" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="12/17/2014" 
+	ms.author="huvalo"/>
 
 
 
 
 # Erstellen von Websites mit Django
 
-In diesem Lernprogramm werden die ersten Schritte bei der Ausführung von Python auf Azure-Websites beschrieben.  Azure-Websites bieten uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und jetzt können Sie auch Python verwenden!  Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.  
+In diesem Lernprogramm werden die ersten Schritte bei der Ausführung von Python auf Azure-Websites beschrieben.  Azure-Websites bieten uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden!  Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Anwendung, die mit dem Django Web-Framework erstellt wurde, bereitstellen.  Das Lernprogramm führt Sie schrittweise durch die Bereitstellung der Anwendung und der erforderlichen Bibliotheken, einschließlich Django.  Das alles erfolgt in einem Git-Repository, das schnelle und einfache Push-Updates auf Ihre Website ermöglicht.  Und schließlich konfigurieren Sie die neu erstellte Website über Azure, sodass sie in Ihrer Python-Anwendung ausgeführt werden kann.  
+Sie erstellen eine Anwendung mit dem Webframework Django (siehe auch alternative Versionen dieses Lernprogramms für [Flask](../web-sites-python-create-deploy-flask-app) und [Bottle](../web-sites-python-create-deploy-bottle-app)).  Sie erstellen die Website aus dem Azure-Katalog, richten die Git-Bereitstellung ein und klonen das Repository lokal.  Dann führen Sie die Anwendung lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen in Azure.  Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
 
-> [WACOM.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können <a href="http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/">Vorteile für MSDN-Abonnenten aktivieren</a> oder <a href="http://azure.microsoft.com/de-de/pricing/free-trial/">sich für einen kostenlos Test von Azure anmelden</a>.
+> [AZURE.NOTE]
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können Ihre <a href="http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/">Vorteile für MSDN-Abonnenten aktivieren</a> oder <a href="http://azure.microsoft.com/de-de/pricing/free-trial/"> sich für eine kostenlose Testversion anmelden</a>.
 > 
-> Einen Einstieg in Azure Websites vor Anmeldung für ein Konto finden Sie auf <a href="https://trywebsites.azurewebsites.net/?language=python">https://trywebsites.azurewebsites.net</a>, wo Sie sofort eine kurzlebige, kostenlose ASP.NET-Startwebsite in Azure Websites erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+> Wenn Sie Azure Website ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/?language=python">https://trywebsites.azurewebsites.net</a>, wo Sie sofort kostenlos eine kurzlebige ASP.NET Starter Site in Azure Websites erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-In diesem Lernprogramm wird Python 2.7 und Django 1.4 verwendet.  Sie können diese entweder selbst abrufen oder schnell und einfach über den Windows-Installationslink unter [http://www.windowsazure.com/de-de/develop/python/] installieren(http://www.windowsazure.com/de-de/develop/python/).  
 
-**Hinweis**: Azure-Websites sind jetzt mit vorinstalliertem Python (je nach Ihrer Wahl 2.7.3 oder 3.4.0) und wfastcgi-Handler verfügbar.  Web-Frameworks wie Django sind jedoch nicht enthalten.  Sie können auch einen anderen Python-Übersetzer verwenden.  Dazu müssen Sie ihn nur ins Git-Repository übernehmen und die Website zur Verwendung dieses Übersetzers statt des vorinstallierten Python 2.7-Übersetzers konfigurieren.
++ [Voraussetzungen](#prerequisites)
++ [Erstellen von Websites im Portal](#website-creation-on-portal)
++ [Anwendungsübersicht](#application-overview)
++ Entwickeln von Websites
+  + [Windows - Python Tools für Visual Studio](#website-development-windows-ptvs)
+  + [Windows - Befehlszeile](#website-development-windows-command-line)
+  + [Mac/Linux - Befehlszeile](#website-development-mac-linux-command-line)
++ [Problembehandlung - Bereitstellung](#troubleshooting-deployment)
++ [Problembehandlung - Paketinstallation](#troubleshooting-package-installation)
++ [Problembehandlung - Virtuelle Umgebung](#troubleshooting-virtual-environment)
++ [Problembehandlung - Statische Dateien](#troubleshooting-static-files)
++ [Problembehandlung - Einstellungen](#troubleshooting-settings)
++ [Verwenden einer Datenbank](#using-a-database)
++ [Django-Administratoroberfläche](#django-admin-interface)
++ [Nächste Schritte](#next-steps)
 
-> [WACOM.NOTE] Jetzt können Sie die Python-Version auswählen, die Sie im Azure-Websites-Portal verwenden möchten. Dazu öffnen Sie die Registerkarte "Konfigurieren" Ihrer Website und ändern die Einstellung **Python-Version**.
 
-Außerdem müssen Sie eine Bereitstellungsoption für die Übertragung der Website auf Azure installieren. Es gibt verschiedene Bereitstellungstools, aber in diesem Lernprogramm wird Git verwendet. Wir empfehlen die Verwendung von [msysgit](http://code.google.com/p/msysgit/). 
+<h2><a name="prerequisites"></a>Voraussetzungen</h2>
+
+- Windows, Mac oder Linux
+- Python 2.7 oder 3.4
+- setuptools, pip, virtualenv (nur Python 2.7)
+- Git
+- Python Tools für Visual Studio (optional)
 
 **Hinweis**: TFS-Veröffentlichung wird derzeit für Python-Projekte nicht unterstützt.
 
-Nachdem Python, Django und Git installiert sind, haben Sie alles, um beginnen zu können.
+### Windows
 
-## Erstellen von Websites im Portal
+Falls Python 2.7 oder 3.4 (32 Bit) noch nicht installiert ist, empfehlen wir die Installation von [Azure SDK für Python 2.7](http://go.microsoft.com/fwlink/?linkid=254281&clcid=0x409) oder [Azure SDK für Python 3.4](http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409) über den Webplattform-Installer.  Dadurch werden die 32-Bit-Version von Python, setuptools, pip, virtualenv usw. installiert (32-Bit-Python ist auf den Azure-Hostcomputern installiert).  Alternativ können Sie Python von [python.org](http://www.python.org/) abrufen.
 
-Der erste Schritt beim Erstellen einer App ist das Erstellen der Website im Azure-Verwaltungsportal.  Melden Sie sich dazu beim Portal an, und klicken Sie unten links auf die Schaltfläche NEW. Daraufhin wird ein Fenster angezeigt. Klicken Sie auf **Schnellerfassung**, geben Sie eine URL ein, und wählen Sie **Website erstellen** aus.
+Für Git empfehlen wir [Git für Windows](http://msysgit.github.io/). In diesem Lernprogramm wird die Git-Shell aus Git für Windows verwendet.  Wenn Sie Visual Studio verwenden, können Sie die integrierte Unterstützung für Git nutzen.
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
+Wir empfehlen auch die Installation von [Python Tools für Visual Studio](http://pytools.codeplex.com).  Dies ist optional, aber wenn Sie über [Visual Studio](http://www.visualstudio.com/) einschließlich des kostenlosen Visual Studio Express 2013 for Web verfügen, erhalten Sie eine leistungsfähige Python IDE.
 
-Die Website wird umgehend eingerichtet.  Nun fügen Sie Unterstützung für die Veröffentlichung mit Git hinzu.  Dazu wählen Sie **Bereitstellung über Quellcodeverwaltung einrichten** aus.
+### Mac/Linux
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
-
-Blättern Sie im Dialogfeld **Bereitstellung einrichten** nach unten, und wählen Sie die Option **Lokales Git** aus. Klicken Sie auf den Pfeil nach rechts, um fortzufahren.
-
-![](./media/web-sites-python-create-deploy-django-app/django-ws-005.png)
-
-Nach dem Einrichten der Git-Veröffentlichung wird kurz eine Seite mit der Information zur Repository-Erstellung angezeigt. Sobald das Repository bereit ist, gelangen Sie zur Registerkarte "Deployments". Die Registerkarte "Deployments" enthält Anweisungen zur Verbindungserstellung.  
-
-![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
+Sie sollten Python und Git bereits installiert haben, doch stellen Sie sicher, dass Sie über Python 2.7 oder 3.4 verfügen.
 
 
-## Entwickeln von Websites
+<h2><a name="website-creation-on-portal"></a>Erstellen von Websites im Portal</h2>
 
-Nachdem Sie nun das Git-Repository in Azure erstellt haben, füllen Sie es mit der Website von Ihrem lokalen Computer auf.  Der erste Schritt ist das Klonen der vorhandenen leeren Site mit der angegebenen URL:
+Der erste Schritt beim Erstellen einer App ist das Erstellen der Website im Azure-Verwaltungsportal.  Melden Sie sich dazu beim Portal an, und klicken Sie unten links auf die Schaltfläche **NEU**. Daraufhin wird ein Fenster angezeigt. Klicken Sie auf **SERVER**, **WEBSITE**, **AUS KATALOG**.
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-007.png)
+![](./media/web-sites-python-create-deploy-django-app/portal-create-site.png)
 
-Nun sind Sie bereit, die Eintragung bei der Website vorzunehmen.  Folgendes ist erforderlich:
+Ein Fenster wird angezeigt, in dem Apps aufgeführt werden, die im Katalog verfügbar sind. Klicken Sie links auf die Kategorie **APP FRAMEWORKS**, und wählen Sie **Django** aus.
 
-1.  Einschließen der Django-Bibliothek und anderer Bibliotheken, die Sie zum Ausführen der Website verwenden
-2.  Einschließen des Django-Anwendungscodes
+![](./media/web-sites-python-create-deploy-django-app/portal-gallery-django.png)
 
-Schließen Sie zuerst die Django-Bibliothek ein.  Erstellen Sie dazu ein neues Verzeichnis namens "site-packages", und kopieren Sie die installierte Version von Django mit folgenden Befehlen dorthin:
+Geben Sie auf der nächsten Seite einen Namen und eine Region für Ihre Website ein, und klicken Sie auf die Schaltfläche "Fertig".
 
-	mkdir site-packages
-	cd site-packages
-	xcopy /s C:\Python27\lib\site-packages\* .
+Die Website wird umgehend eingerichtet. Wenn Sie auf die Schaltfläche**Durchsuchen** auf der unteren Symbolleiste klicken, sehen Sie, dass Ihre neue Django-Anwendung in Azure ausgeführt wird.
 
-Diese Befehle kopieren alle in "site-packages" vorhandenen Bibliotheken, einschließlich Django.  Wenn diese Bibliotheken von Ihrer Website nicht verwendet werden, können Sie sie auch entfernen.
-
-![](./media/web-sites-python-create-deploy-django-app/django-ws-008.png)
+![](./media/web-sites-python-create-deploy-django-app/portal-website-django.png)
  
-Anschließend erstellen Sie die anfängliche Django-Anwendung.  Dies erfolgt entweder wie jede andere Django-Anwendung über die Befehlszeile, oder Sie verwenden [Python Tools for Visual Studio],(http://pytools.codeplex.com/) um das Projekt zu erstellen.ERSTELLEN DES PROJEKTS  Beide Optionen werden hier vorgestellt.
+Nun fügen Sie Unterstützung für die Veröffentlichung mit Git hinzu.  Dazu wählen Sie **Bereitstellung über Quellcodeverwaltung einrichten** aus.
 
-**Option 1:** 
-Führen Sie den folgenden Befehl aus, um das neue Projekt über die Befehlszeile zu erstellen. Der Befehl erstellt die Django-Anwendung im Ordner "DjangoApplication":
+![](./media/web-sites-python-create-deploy-django-app/portal-site-created.png)
 
-	 C:\Python27\python.exe -m django.bin.django-admin startproject DjangoApplication
+Führen Sie im Dialogfeld **Bereitstellung einrichten** einen Bildlauf nach unten durch, und wählen Sie die Option **Lokales Git-Repository** aus. Klicken Sie auf den Pfeil nach rechts, um fortzufahren.
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-010.png)
+![](./media/web-sites-python-create-deploy-django-app/portal-setup-deployment.png)
 
-**Option 2:**  
-Sie können die neue Website auch mit den Python-Tools für Visual Studio erstellen.  Starten Sie Visual Studio mit den installierten Python-Tools für Visual Studio, und wählen Sie **Datei**->**Neues Projekt**.  Zeigen Sie unter **Weitere Sprachen**Details zu den Python-Projekten an, und wählen Sie **Django-Anwendung** aus.  Geben Sie **DjangoApplication** als Projektnamen an, und stellen Sie sicher, dass **Projektmappenverzeichnis erstellen** deaktiviert ist, um genau dieselbe Verzeichnisstruktur zu erhalten, als wenn Sie eine Django-Anwendung über die Befehlszeile erstellen. Mit dieser Option erstellen Sie eine Visual Studio-Lösung und eine Projektdatei, die für eine hervorragende Benutzerfreundlichkeit bei der lokalen Entwicklung, einschließlich Vorlagen-Debugging und IntelliSense, sorgen.
+Nach dem Einrichten der Git-Veröffentlichung wird kurz eine Seite mit der Information zur Repository-Erstellung angezeigt. Nach der Erstellung sehen Sie die Anweisungen zum Herstellen einer Verbindung.  
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-011.png)
+![](./media/web-sites-python-create-deploy-django-app/portal-repo-created.png)
 
-Nun müssen Sie nur noch alle soeben hinzugefügten Dateien hinzufügen und die Website an Git übertragen.  Führen Sie dazu folgende Befehle aus:
+Wir folgen diesen Anweisungen in den nächsten Abschnitten.
 
-	git add DjangoApplication site-packages
-	git commit -m "Initial site"
-	git remote add azure https://dinov@pythonwebsite.scm.azurewebsites.net/PythonWebSite.git
-	git push azure master
 
-Der erste Befehl fügt die nicht verfolgten Dateien zur Nachverfolgung hinzu.  Der zweite Befehl übernimmt die soeben hinzugefügten Dateien in das Repository.  Der dritte Befehl fügt eine Remote-Site mit dem Namen *azure* zum Repository hinzu.  Der letzte Befehl überträgt die Änderungen auf das Remote-Repository. Dieser letzte Befehl startet außerdem die Bereitstellung.  Nachdem Sie dies alles ausgeführt haben, sollte das Ergebnis in etwa wie folgt aussehen:
+<h2><a name="application-overview"></a>Anwendungsübersicht</h2>
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-013.png)
+### Inhalt des Git-Repositorys
 
-Nach der Übertragung wird das Azure-Portal aktualisiert und die aktive Bereitstellung angezeigt:
+Hier sehen Sie eine Übersicht der Dateien, die sich im Git-Ausgangsrepository befinden, das wir im nächsten Abschnitt klonen.
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-014.png)
+    \app\__init__.py
+    \app\forms.py
+    \app\models.py
+    \app\tests.py
+    \app\views.py
+    \app\static\content\
+    \app\static\fonts\
+    \app\static\scripts\
+    \app\templates\about.html
+    \app\templates\contact.html
+    \app\templates\index.html
+    \app\templates\layout.html
+    \app\templates\login.html
+    \app\templates\loginpartial.html
+    \DjangoWebProject\__init__.py
+    \DjangoWebProject\settings.py
+    \DjangoWebProject\urls.py
+    \DjangoWebProject\wsgi.py
 
-## Websitekonfiguration
+Die Hauptquellen für die Anwendung.  Besteht aus 3 Seiten (Index, Info, Kontakt) mit einem Masterlayout.  Statische Inhalte und Skripts umfassen bootstrap, jquery, modernizr und respond.
 
-Nun müssen Sie die Website so konfigurieren, dass sie das Django-Projekt erkennt und den wfastcgi-Handler verwendet.  Dazu klicken Sie auf die Registerkarte "Konfigurieren" oben auf dem Bildschirm und führen dann einen Bildlauf zur unteren Hälfte der Seite, die die Abschnitte **App-Einstellungen** und **Handlerzuordnungen** enthält.  
+    \manage.py
 
-Alle hier vorgenommenen Einstellungen werden während der eigentlichen Abfrage in Umgebungsvariablen umgewandelt.  Das bedeutet, dass Sie dies verwenden können, um die Umgebungsvariable DJANGO\_SETTINGS\_MODULE oder auch PYTHONPATH und WSGI\_HANDLER zu konfigurieren.  Falls Ihre Anwendung andere Konfigurationswerte aufweist, können Sie diese hier zuweisen und dann aus der Umgebung abrufen.  Unter Umständen möchten Sie einen Pfad zu einer Datei auf der Website angeben, beispielsweise PYTHONPATH.  Bei der Ausführung als Azure-Website befindet sich die Website unter **D:\home\site\wwwroot\**. Daher können Sie sie überall verwenden, wo Sie einen vollständigen Pfad zu einer Datei auf der Festplatte angeben möchten.
+Lokale Verwaltung und Unterstützung von Entwicklungsservern. Hiermit können Sie die Anwendung lokal ausführen, die Datenbank synchronisieren usw.
 
-Zum Einrichten einer Django-Anwendung müssen Sie drei Umgebungsvariablen erstellen.  Die erste ist DJANGO\_SETTINGS\_MODULE, welche den Modulnamen der Django-Anwendung angibt, die für die Konfiguration verwendet wird.  Die zweite ist die Umgebungsvariable PYTHONPATH, welche das Paket angibt, in dem sich das Einstellungsmodul befindet. Die dritte ist WSGI\_HANDLER.  Diese Variable ist ein Modul-/Paketname, gefolgt vom zu verwendenden Attribut im Modul (z. B. mypackage.mymodule.handler).  Fügen Sie Klammern hinzu, um anzugeben, dass das Attribut aufgerufen werden soll.  Diese Variablen werden wie folgt angegeben:
-                
-	DJANGO_SETTINGS_MODULE    DjangoApplication.settings
-	PYTHONPATH                D:\home\site\wwwroot\DjangoApplication;D:\home\site\wwwroot\site-packages
-	WSGI_HANDLER              django.core.handlers.wsgi.WSGIHandler()
+    \db.sqlite3
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-015.png)
+Standarddatenbank. Enthält die für die Ausführung der Anwendung erforderlichen Tabellen, aber keine Benutzer (synchronisieren Sie die Datenbank zum Erstellen eines Benutzers).
 
-Nun müssen Sie die Handlerzuordnung konfigurieren.  Registrieren Sie dazu den Handler für alle Erweiterungen mithilfe des Pfads für den Python-Übersetzer und des Pfads für das wfastcgi.py-Skript:
+    \DjangoWebProject.pyproj
+    \DjangoWebProject.sln
 
-	EXTENSION                 *
-	SCRIPT PROCESSOR PATH     D:\python27\python.exe
-	ADDITIONAL ARGUMENTS      D:\python27\scripts\wfastcgi.py
+Projektdateien für die Verwendung mit [Python Tools für Visual Studio](http://pytools.codeplex.com).
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-016.png)
+    \ptvs_virtualenv_proxy.py
 
-An diesem Punkt können Sie unten auf die Schaltfläche **Speichern** klicken.
+IIS-Proxy für virtuelle Umgebungen und PTVS-Unterstützung für Remotedebugging.
 
-Abschließend wechseln Sie zurück zum Dashboard. Navigieren Sie links unten zur **WEBSITE-URL**. Klicken Sie auf den Link, und öffnen Sie die neue Django-Website, die in etwa so aussieht:
+    \requirements.txt
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-017.png)
+Externe Pakete, die von dieser Anwendung benötigt werden. Das Bereitstellungsskript installiert die in dieser Datei aufgelisteten Pakete mit pip.
+ 
+    \web.2.7.config
+    \web.3.4.config
 
-## Nächste Schritte
+IIS-Konfigurationsdateien.  Das Bereitstellungsskript verwendet die entsprechende Datei "web.x.y.config" und kopiert sie als "web.config".
 
-Sie können nun die Django-Anwendung mit den bereits verwendeten Tools weiterentwickeln. Wenn Sie [Python Tools für Visual Studio](http://pytools.codeplex.com/) für die Entwicklung verwenden, empfiehlt es sich wahrscheinlich auch, [VisualGit](http://code.google.com/p/visualgit/) zu installieren, das die Quellcodeverwaltung aus Visual Studio ermöglicht.  
+### Optionale Dateien - Anpassung der Bereitstellung
 
-Die Anwendung kann auch Abhängigkeiten über Python und Django hinaus aufweisen.  Wenn Sie Python mit dem Installer unter [http://www.windowsazure.com/de-de/develop/python/] installiert haben(http://www.windowsazure.com/de-de/develop/python/), dann haben Sie bereits ein PIP installiert und können damit schnell Abhängigkeiten hinzufügen.  Um beispielsweise das Natural Language Toolkit und alle seine Abhängigkeiten zu installieren, geben Sie Folgendes ein:
+[AZURE.INCLUDE [web-sites-python-customizing-deployment](../includes/web-sites-python-customizing-deployment.md)]
 
-	pip install nltk
+### Optionale Dateien - Python-Laufzeit
 
-Anschließend müssen Sie das Verzeichnis "site-packages" aktualisieren, indem Sie die Dateien unter "C:\Python27\Lib\site-packages" in das lokale "site-packages"-Verzeichnis kopieren.
+[AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-runtime.md)]
 
-Nachdem Sie die Dateien kopiert haben, führen Sie den Befehl **git status** aus, um die neu hinzugefügten Dateien anzuzeigen, und **git add** gefolgt von **git commit**, um die Änderungen in das Repository zu übernehmen.  Und schließlich können Sie noch **git push** ausführen, um die aktualisierte Website in Azure bereitzustellen.
+### Zusätzliche Dateien auf dem Server
 
-Nun können Sie "manage.py" im Verzeichnis "DjangoApplication" wie gewohnt verwenden, um neue Anwendungen zum Django-Projekt hinzuzufügen.  
-\n<!--HONumber=35.1--> 
+Einige Dateien sind auf dem Server vorhanden, werden jedoch nicht dem Git-Repository hinzugefügt.  Diese werden vom Bereitstellungsskript erstellt.
+
+    \web.config
+
+IIS-Konfigurationsdatei.  Wird anhand von "web.x.y.config" bei jeder Bereitstellung erstellt.
+
+    \env\
+
+Virtuelle Umgebung für Python.  Wird während der Bereitstellung erstellt, wenn nicht bereits eine kompatible virtuelle Umgebung auf der Website vorhanden ist.  Pakete, die in "requirements.txt" aufgeführt sind, werden mit pip installiert. pip überspringt die Installation, wenn die Pakete bereits installiert sind.
+
+In den nächsten drei Abschnitten wird beschrieben, wie Sie die Websiteentwicklung in 3 unterschiedlichen Umgebungen fortsetzen:
+
+- Windows - mit Python Tools für Visual Studio
+- Windows, über die Befehlszeile
+- Mac/Linux, über die Befehlszeile
+
+
+<h2><a name="website-development-windows-ptvs"></a>Website-Entwicklung - Windows - Python Tools für Visual Studio</h2>
+
+### Klonen des Repositorys
+
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Portal bereitgestellt ist.
+
+![](./media/web-sites-python-create-deploy-django-app/ptvs-git-clone.png)
+
+Öffnen Sie die Projektmappendatei (.sln), die im Stammverzeichnis des Repositorys enthalten ist.
+
+![](./media/web-sites-python-create-deploy-django-app/ptvs-solution-django.png)
+
+### Erstellen einer virtuellen Umgebung
+
+Jetzt erstellen wir eine virtuelle Umgebung für die lokale Entwicklung.  Klicken Sie mit der rechten Maustaste auf **Python-Umgebungen**, und wählen Sie **Virtuelle Umgebung hinzufügen...** aus.
+
+- Stellen Sie sicher, dass der Name der Umgebung  `env` lautet.
+
+- Wählen Sie den Basisinterpreter.  Stellen Sie sicher, dass Sie die gleiche Version von Python verwenden, die für Ihre Website (in "runtime.txt" oder der Seite zum Konfigurieren der Website) ausgewählt ist.
+
+- Stellen Sie sicher, dass die Option zum Herunterladen und Installieren von Paketen aktiviert ist.
+
+![](./media/web-sites-python-create-deploy-django-app/ptvs-add-virtual-env-27.png)
+
+Klicken Sie auf **Erstellen**.  Dadurch wird die virtuelle Umgebung erstellt, und die in "requirements.txt" aufgelisteten Abhängigkeiten werden installiert.
+
+### Erstellen eines Superusers
+
+In der Datenbank, die zur Anwendung gehört, ist kein Superuser definiert.  Um die Anmeldefunktionalität in der Anwendung oder die Django-Administratoroberfläche (wenn Sie sie aktivieren) verwenden zu können, müssen Sie einen Superuser erstellen.
+
+Führen Sie den folgenden Befehl über die Befehlszeile im Projektordner aus:
+
+    env\scripts\python manage.py createsuperuser
+
+Befolgen Sie die Eingabeaufforderungen zum Festlegen des Benutzernamens, Kennworts usw.
+
+### Ausführen mithilfe des Entwicklungssservers
+
+Drücken Sie F5, um mit dem Debuggen beginnen. Ihr Webbrowser wird automatisch auf der Seite geöffnet, die lokal ausgeführt.
+
+![](./media/web-sites-python-create-deploy-django-app/windows-browser-django.png)
+
+Sie können Haltepunkte im Quellcode setzen, die Überwachungsfenster verwenden usw. In der [PTVS-Dokumentation](http://pytools.codeplex.com/documentation) finden Sie weitere Informationen zu den verschiedenen Features.
+
+### Vornehmen von Änderungen
+
+Jetzt können Sie experimentieren, indem Sie Änderungen an der Anwendungsquellen und/oder Vorlagen vornehmen.
+
+Nachdem Sie Ihre Änderungen getestet haben, führen Sie für diese im Git-Repository einen Commit durch:
+
+![](./media/web-sites-python-create-deploy-django-app/ptvs-commit-django.png)
+
+### Installieren weiterer Pakete
+
+Ihre Anwendung weist möglicherweise Abhängigkeiten über Python und Django hinaus auf.
+
+Sie können zusätzliche Pakete mit pip installieren.  Klicken Sie zum Installieren eines Pakets mit der rechten Maustaste auf die virtuelle Umgebung, und wählen Sie **Python-Paket installieren**.
+
+Geben Sie beispielsweise zum Installieren des Azure SDK für Python, das Ihnen Zugriff auf Azure-Speicher, den Service Bus und andere Azure-Dienste bereitstellt, Folgendes ein  `azure`:
+
+![](./media/web-sites-python-create-deploy-django-app/ptvs-install-package-dialog.png)
+
+Klicken Sie mit der rechten Maustaste auf die virtuelle Umgebung, und wählen Sie **"requirements.txt" generieren**, um die Datei "requirements.txt" zu aktualisieren.
+
+Führen Sie anschließend für die Änderungen an "requirements.txt" einen Commit im Git-Repository aus.
+
+### Bereitstellen in Azure
+
+Klicken Sie auf, **Synchronisierung** oder **Push**, um eine Bereitstellung auszulösen.  Bei Wahl von "Synchronisierung" erfolgt sowohl ein Push- als auch ein Pull-Vorgang.
+
+![](./media/web-sites-python-create-deploy-django-app/ptvs-git-push.png)
+
+Die erste Bereitstellung nimmt einige Zeit in Anspruch, da eine virtuelle Umgebung erstellt wird, Pakete installiert werden usw.
+
+Visual Studio zeigt nicht den Fortschritt der Bereitstellung an.  Wenn Sie die Ausgabe prüfen möchten, lesen Sie den Abschnitt [Problembehandlung - Bereitstellung](#troubleshooting-deployment).
+
+Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
+
+
+<h2><a name="website-development-windows-command-line"></a>Website-Entwicklung - Windows - Befehlszeile</h2>
+
+### Klonen des Repositorys
+
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Portal bereitgestellt ist, und fügen Sie das Azure-Repository als Remoterepository hinzu.
+
+    git clone <repo-url>
+    cd <repo-folder>
+    git remote add azure <repo-url> 
+
+### Erstellen einer virtuellen Umgebung
+
+Wir erstellen eine neue virtuelle Umgebung zu Entwicklungszwecken (die nicht dem Repository hinzugefügt werden darf).  Virtuelle Umgebungen in Python sind nicht verschiebbar, sodass jeder Entwickler, der an der Anwendung arbeitet, seine eigene lokal erstellen muss.
+
+Stellen Sie sicher, dass Sie die gleiche Version von Python verwenden, die für Ihre Website (in "runtime.txt" oder der Seite zum Konfigurieren der Website) ausgewählt ist.
+
+Für Python 2.7:
+
+    c:\python27\python.exe -m virtualenv env
+
+Für Python 3.4:
+
+    c:\python34\python.exe -m venv env
+
+Installieren Sie alle externen Pakete, die Ihre Anwendung benötigt. Sie können die Datei "requirements.txt" im Stammverzeichnis des Repositorys verwenden, um die Pakete in der virtuellen Umgebung zu installieren:
+
+    env\scripts\pip install -r requirements.txt
+
+### Erstellen eines Superusers
+
+In der Datenbank, die zur Anwendung gehört, ist kein Superuser definiert.  Um die Anmeldefunktionalität in der Anwendung oder die Django-Administratoroberfläche (wenn Sie sie aktivieren) verwenden zu können, müssen Sie einen Superuser erstellen.
+
+Führen Sie den folgenden Befehl über die Befehlszeile im Projektordner aus:
+
+    env\scripts\python manage.py createsuperuser
+
+Befolgen Sie die Eingabeaufforderungen zum Festlegen des Benutzernamens, Kennworts usw.
+
+### Ausführen mithilfe des Entwicklungssservers
+
+Sie können die Anwendung unter einem Entwicklungsserver mit dem folgenden Befehl starten:
+
+    env\scripts\python manage.py runserver
+
+Die Konsole zeigt die URL und den Port, den der Server abhört:
+
+![](./media/web-sites-python-create-deploy-django-app/windows-run-local-django.png)
+
+Öffnen Sie Ihren Webbrowser mit dieser URL.
+
+![](./media/web-sites-python-create-deploy-django-app/windows-browser-django.png)
+
+### Vornehmen von Änderungen
+
+Jetzt können Sie experimentieren, indem Sie Änderungen an der Anwendungsquellen und/oder Vorlagen vornehmen.
+
+Nachdem Sie Ihre Änderungen getestet haben, führen Sie für diese im Git-Repository einen Commit durch:
+
+    git add <modified-file>
+    git commit -m "<commit-comment>"
+
+### Installieren weiterer Pakete
+
+Ihre Anwendung weist möglicherweise Abhängigkeiten über Python und Django hinaus auf.
+
+Sie können zusätzliche Pakete mit pip installieren.  Geben Sie beispielsweise zum Installieren des Azure SDK für Python, das Ihnen Zugriff auf Azure-Speicher, den Service Bus und andere Azure-Dienste bereitstellt, Folgendes ein:
+
+    env\scripts\pip install azure
+
+Stellen Sie sicher, dass "requirements.txt" aktualisiert wird:
+
+    env\scripts\pip freeze > requirements.txt
+
+Führen Sie für die Änderungen einen Commit aus:
+
+    git add requirements.txt
+    git commit -m "Added azure package"
+
+### Bereitstellen in Azure
+
+Um eine Bereitstellung auszulösen, übertragen Sie die Änderungen per Push in Azure:
+
+    git push azure master
+
+Die Ausgabe des Bereitstellungsskripts wird mit Angaben zur Erstellung der virtuellen Umgebung, Installation von Paketen und Erstellung von "web.config" angezeigt.
+
+Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
+
+
+<h2><a name="website-development-mac-linux-command-line"></a>Website-Entwicklung - Mac/Linux - Befehlszeile</h2>
+
+### Klonen des Repositorys
+
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Portal bereitgestellt ist, und fügen Sie das Azure-Repository als Remoterepository hinzu.
+
+    git clone <repo-url>
+    cd <repo-folder>
+    git remote add azure <repo-url> 
+
+### Erstellen einer virtuellen Umgebung
+
+Wir erstellen eine neue virtuelle Umgebung zu Entwicklungszwecken (die nicht dem Repository hinzugefügt werden darf).  Virtuelle Umgebungen in Python sind nicht verschiebbar, sodass jeder Entwickler, der an der Anwendung arbeitet, seine eigene lokal erstellen muss.
+
+Stellen Sie sicher, dass Sie die gleiche Version von Python verwenden, die für Ihre Website (in "runtime.txt" oder der Seite zum Konfigurieren der Website) ausgewählt ist.
+
+Für Python 2.7:
+
+    python -m virtualenv env
+
+Für Python 3.4:
+
+    python -m venv env
+
+Installieren Sie alle externen Pakete, die Ihre Anwendung benötigt. Sie können die Datei "requirements.txt" im Stammverzeichnis des Repositorys verwenden, um die Pakete in der virtuellen Umgebung zu installieren:
+
+    env/bin/pip install -r requirements.txt
+
+### Erstellen eines Superusers
+
+In der Datenbank, die zur Anwendung gehört, ist kein Superuser definiert.  Um die Anmeldefunktionalität in der Anwendung oder die Django-Administratoroberfläche (wenn Sie sie aktivieren) verwenden zu können, müssen Sie einen Superuser erstellen.
+
+Führen Sie den folgenden Befehl über die Befehlszeile im Projektordner aus:
+
+    env/bin/python manage.py createsuperuser
+
+Befolgen Sie die Eingabeaufforderungen zum Festlegen des Benutzernamens, Kennworts usw.
+
+### Ausführen mithilfe des Entwicklungssservers
+
+Sie können die Anwendung unter einem Entwicklungsserver mit dem folgenden Befehl starten:
+
+    env/bin/python manage.py runserver
+
+Die Konsole zeigt die URL und den Port, den der Server abhört:
+
+![](./media/web-sites-python-create-deploy-django-app/mac-run-local-django.png)
+
+Öffnen Sie Ihren Webbrowser mit dieser URL.
+
+![](./media/web-sites-python-create-deploy-django-app/mac-browser-django.png)
+
+### Vornehmen von Änderungen
+
+Jetzt können Sie experimentieren, indem Sie Änderungen an der Anwendungsquellen und/oder Vorlagen vornehmen.
+
+Nachdem Sie Ihre Änderungen getestet haben, führen Sie für diese im Git-Repository einen Commit durch:
+
+    git add <modified-file>
+    git commit -m "<commit-comment>"
+
+### Installieren weiterer Pakete
+
+Ihre Anwendung weist möglicherweise Abhängigkeiten über Python und Django hinaus auf.
+
+Sie können zusätzliche Pakete mit pip installieren.  Geben Sie beispielsweise zum Installieren des Azure SDK für Python, das Ihnen Zugriff auf Azure-Speicher, den Service Bus und andere Azure-Dienste bereitstellt, Folgendes ein:
+
+    env/bin/pip install azure
+
+Stellen Sie sicher, dass "requirements.txt" aktualisiert wird:
+
+    env/bin/pip freeze > requirements.txt
+
+Führen Sie für die Änderungen einen Commit aus:
+
+    git add requirements.txt
+    git commit -m "Added azure package"
+
+### Bereitstellen in Azure
+
+Um eine Bereitstellung auszulösen, übertragen Sie die Änderungen per Push in Azure:
+
+    git push azure master
+
+Die Ausgabe des Bereitstellungsskripts wird mit Angaben zur Erstellung der virtuellen Umgebung, Installation von Paketen und Erstellung von "web.config" angezeigt.
+
+Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
+
+
+<h2><a name="troubleshooting-deployment"></a>Problembehandlung - Bereitstellung</h2>
+
+[AZURE.INCLUDE [web-sites-python-troubleshooting-deployment](../includes/web-sites-python-troubleshooting-deployment.md)]
+
+
+<h2><a name="troubleshooting-package-installation"></a>Problembehandlung - Paketinstallation</h2>
+
+[AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
+
+
+<h2><a name="troubleshooting-virtual-environment"></a>Problembehandlung - Virtuelle Umgebung</h2>
+
+[AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
+
+
+<h2><a name="troubleshooting-static-files"></a>Problembehandlung - Statische Dateien</h2>
+
+Django arbeitet mit dem Konzept der Sammlung statischer Dateien.  Dabei werden alle statischen Dateien aus ihrem ursprünglichen Speicherort in einen zentralen Ordner kopiert.  Für diese Anwendung werden sie in  `/static` kopiert.
+
+Der Grund ist, dass statische Dateien aus verschiedenen Django- 'apps' stammen können.  Beispielsweise befinden sich die statischen Dateien der Django-Admin-Oberflächen in einem Unterordner der Django-Bibliothek in der virtuellen Umgebung.  Statische Dateien, die von dieser Anwendung definiert werden, befinden sich in  `/app/static`.  Sobald Sie weitere Django- 'apps' nutzen, verfügen Sie über statische Dateien an mehreren Stellen.
+
+Wenn die Anwendung im Debugmodus ausgeführt wird, stellt die Anwendung statischen Dateien an ihrem ursprünglichen Speicherort bereit.
+
+Wenn die Anwendung im Freigabemodus ausgeführt wird, stellt die Anwendung die statischen Dateien **nicht** bereit.  Der Webserver ist dafür zuständig, dass die Dateien bereitgestellt werden.  Für diese Anwendung stellt IIS die statischen Dateien aus  `/static` bereit.
+
+Die Sammlung statischer Dateien erfolgt automatisch als Teil des Bereitstellungsskripts, wobei zuvor gesammelte Dateien gelöscht werden.  Dies bedeutet, dass die Sammlung bei jeder Bereitstellung erfolgt, was die Bereitstellung verlangsamt, aber sicherstellt, dass veraltete Dateien nicht verfügbar sind. Dadurch vermeiden Sie ein potenzielles Sicherheitsproblem. 
+
+Wenn Sie die Sammlung statischer Dateien für die Django-Anwendung zu überspringen möchten:
+
+    \.skipDjango 
+
+Dann müssen Sie die Sammlung manuell auf dem lokalen Computer ausführen:
+
+    env\scripts\python manage.py collectstatic
+
+Entfernen Sie anschließend den Ordner `\static` aus  `.gitignore`, und fügen Sie ihn dem Git-Repository hinzu.
+
+
+<h2><a name="troubleshooting-settings"></a>Problembehandlung - Einstellungen</h2>
+
+Verschiedene Einstellungen für die Anwendung können in  `DjangoWebProject/settings.py` geändert werden.
+
+Der Einfachheit halber ist für Entwickler der Debugmodus aktiviert.  Ein angenehmer Nebeneffekt davon ist, dass bei einer lokalen Ausführung Bilder und andere statische Inhalte angezeigt werden, ohne statische Dateien sammeln zu müssen.
+
+So deaktivieren Sie den Debugmodus:
+
+    DEBUG = False
+
+Wenn der Debugmodus deaktiviert ist, muss der Wert für  `ALLOWED_HOSTS` so aktualisiert werden, dass er den Azure-Hostnamen enthält.  Beispiel:
+
+    ALLOWED_HOSTS = (
+        'pythonapp.azurewebsites.net',
+    )
+
+Geben Sie zum Aktivieren Folgendes ein:
+
+    ALLOWED_HOSTS = (
+        '*',
+    )
+ 
+In der Praxis wird wohl eher eine komplexere Lösung für das Wechseln zwischen Debug- und Freigabemodus und den Abruf des Hostnamens gewünscht.
+
+Sie können im Azure-Portal auf der Seite **Konfigurieren** im Abschnitt **App-Einstellungen** Umgebungsvariablen festlegen.  Dies kann zum Festlegen von Werten nützlich sein, die möglicherweise nicht in den Quellen (Verbindungszeichenfolgen, Kennwörter usw.) angezeigt werden sollen, oder die Sie in Azure und auf Ihrem lokalen Computer anders festlegen möchten.  In  `settings.py` können Sie die Umgebungsvariablen mit  `os.getenv` abfragen.
+
+
+<h2><a name="using-a-database"></a>Verwenden einer Datenbank</h2>
+
+Die Datenbank, die in der Anwendung enthalten ist, ist eine Sqlite-Datenbank.  Diese Standarddatenbank ist besonders gut für die Entwicklung geeignet, da sie keinerlei Einrichtung erfordert.  Die Datenbank wird in der Datei "sqlite3" im Projektordner gespeichert.
+
+Azure bietet Datenbankdienste, die in einer Django-Anwendung einfach zu verwenden sind.  Lernprogramme für die Verwendung von [SQL-Datenbank](../ web-sites-python-ptvs-django-sql) und [MySQL](../ web-sites-python-ptvs-django-mysql) in einer Django-Anwendung zeigen, welche Schritte notwendig sind, um den Datenbankdienst erstellen, die Datenbankeinstellungen in  `DjangoWebProject/settings.py` zu ändern und die Bibliotheken zu installieren.
+
+Wenn Sie Ihre eigenen Datenbankserver verwalten möchten, können Sie dazu virtuelle Windows- oder Linux-Computer verwenden, die in Azure ausgeführt werden.
+
+
+<h2><a name="django-admin-interface"></a>Django-Administratoroberfläche</h2>
+
+Beim Erstellen von Modellen wollen Sie bestimmt die Datenbank mit Daten auffüllen.  Eine einfache Möglichkeit zum Hinzufügen und interaktiven Bearbeiten von Inhalten ist die Verwendung der Django-Administratoroberfläche.
+
+Der Code für die Administratoroberfläche ist in den Anwendungsquellen auskommentiert, aber so deutlich markiert, dass Sie ihn problemlos aktivieren können (suchen Sie nach  'admin').
+
+Nachdem seiner Aktivierung synchronisieren Sie die Datenbank, führen die Anwendung aus und navigieren zu  `/admin`.
+
+
+<h2><a name="next-steps"></a>Nächste Schritte</h2>
+
+Folgen Sie diesen Links, um weitere Informationen zu Django- und Python-Tools für Visual Studio zu erhalten: 
+ 
+- [Dokumentation zu Django][]
+- [Python Tools für Visual Studio - Dokumentation][] 
+
+Weitere Informationen zur Verwendung von SQL-Datenbank und MySQL:
+
+- [Django und SQL-Datenbank in Azure mit Python Tools 2.1 für Visual Studio][]
+- [Django und MySQL in Azure mit Python Tools 2.1 für Visual Studio][]
+
+
+<!--Link references-->
+[Django und MySQL in Azure mit Python Tools 2.1 für Visual Studio]: ../web-sites-python-ptvs-django-mysql
+[Django und SQL-Datenbank in Azure mit Python Tools 2.1 für Visual Studio]: ../web-sites-python-ptvs-django-sql
+
+<!--External Link references-->
+[Python Tools für Visual Studio - Dokumentation]: http://pytools.codeplex.com/documentation 
+[Dokumentation zu Django]: https://www.djangoproject.com/
+
+
+
+
+
+<!--HONumber=42-->

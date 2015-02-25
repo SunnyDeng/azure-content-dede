@@ -1,10 +1,24 @@
-<properties urlDisplayName="Web w/ Storage" pageTitle="PHP-Website mit Tabellenspeicher - Azure-Lernprogramm" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Website erstellen und den Azure-Tabellenspeicherdienst im Back-End verwenden." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Website using Azure Storage" authors="tomfitz" solutions="" manager="wpickett" editor="" />
+<properties 
+	pageTitle="PHP-Website mit Tabellenspeicher - Azure-Lernprogramm" 
+	description="In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Website erstellen und den Azure Table Storage-Dienst im Back-End verwenden." 
+	services="web-sites, storage" 
+	documentationCenter="php" 
+	authors="tfitzmac" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="11/21/2014" ms.author="tomfitz" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="PHP" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="tomfitz"/>
 
 #Erstellen einer PHP-Website mit Azure-Speicher
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Website erstellen und den Azure-Tabellenspeicherdienst im Back-End verwenden. Bei diesem Lernprogramm wird davon ausgegangen, dass [PHP][install-php] und ein Webserver auf Ihrem Computer installiert sind. Die Anweisungen in diesem Lernprogramm lassen sich von jedem Betriebssystem aus befolgen, einschließlich Windows, Max und Linux. Nachdem Sie diese Anleitung durchgearbeitet haben, verfügen Sie über eine in Azure ausgeführte PHP-Website, die auf den Tabellenspeicherdienst zugreift.
+In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Website erstellen und den Azure Table Storage-Dienst im Back-End verwenden. Bei diesem Lernprogramm wird davon ausgegangen, dass [PHP][install-php] und ein Webserver auf Ihrem Computer installiert sind. Die Anweisungen in diesem Lernprogramm lassen sich von jedem Betriebssystem aus befolgen, einschließlich Windows, Max und Linux. Nachdem Sie diese Anleitung durchgearbeitet haben, verfügen Sie über eine in Azure ausgeführte PHP-Website, die auf den Tabellenspeicherdienst zugreift.
  
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -17,7 +31,7 @@ Sie erstellen eine einfache Tasklist-Webanwendung in PHP. Unten finden Sie einen
 
 ![Azure PHP web site][ws-storage-app]
 
-[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ##Installieren der Azure-Clientbibliotheken
 
@@ -25,10 +39,10 @@ Gehen Sie folgendermaßen vor, um die PHP-Clientbibliotheken für Azure über Co
 
 1. [Installieren von Git][install-git]
 
-	> [WACOM.NOTE]
+	> [AZURE.NOTE]
 	> Unter Windows muss die ausführbare Git-Datei zu Ihrer PATH-Umgebungsvariable hinzugefügt werden.
 
-2. Erstellen Sie im Stammverzeichnis Ihres Projekts eine Datei namens **composer.json**, und fügen Sie zu dieser den folgenden Code hinzu:
+2. Erstellen Sie im Stammverzeichnis Ihres Projekts eine Datei namens **composer.json**, und fügen Sie dieser den folgenden Code hinzu:
 
 		{
 			"require": {
@@ -43,7 +57,7 @@ Gehen Sie folgendermaßen vor, um die PHP-Clientbibliotheken für Azure über Co
 			"minimum-stability": "dev"
 		}
 
-3. Laden Sie **[composer.phar][composer-phar]** in das Root-Verzeichnis des Projekts herunter.
+3. Laden Sie **[composer.phar][composer-phar]** in Ihr Projektverzeichnis herunter.
 
 4. Öffnen Sie eine Eingabeaufforderung, und führen Sie in Ihrem Projektverzeichnis folgenden Befehl aus
 
@@ -53,7 +67,7 @@ Gehen Sie folgendermaßen vor, um die PHP-Clientbibliotheken für Azure über Co
 
 Es gibt vier Grundschritte, die bei der Nutzung der Bibliotheken ausgeführt werden müssen, bevor Sie eine Azure-API aufrufen können. Sie erstellen ein Initialisierungsskript, das diese Schritte durchführen wird.
 
-* Erstellen Sie eine Datei mit dem Namen **init.php**.
+* Erstellen Sie eine Datei namens **init.php**.
 
 * Binden Sie zuerst das Autoloaderskript ein:
 
@@ -65,7 +79,7 @@ Es gibt vier Grundschritte, die bei der Nutzung der Bibliotheken ausgeführt wer
 
 		use WindowsAzure\Common\ServicesBuilder;
 
-	Um Ausnahmen zu erfassen, die von einem API-Aufruf generiert werden, benötigen Sie die **ServiceException** class:
+	Um Ausnahmen zu erfassen, die von einem API-Aufruf generiert werden, benötigen Sie die **ServiceException**-Klasse:
 
 		use WindowsAzure\Common\ServiceException;
 	
@@ -79,11 +93,11 @@ Es gibt vier Grundschritte, die bei der Nutzung der Bibliotheken ausgeführt wer
 	
 		UseDevelopmentStorage=true
 
-* Verwenden Sie die vordefinierte Methode `ServicesBuilder::createTableService`, um einen Wrapper um die Tabellendienst-Aufrufe zu instanziieren.
+* Verwenden Sie die Factorymethode  `ServicesBuilder::createTableService`, um einen Wrapper um die Tabellendienstaufrufe zu instanziieren.
 
 		$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 	
-	`$tableRestProxy` enthält eine Methode für alle REST-Aufrufe, die in Azure Tables zur Verfügung stehen.
+	`$tableRestProxy` contains a method for every REST call available on Azure Tables.
 
 
 ## Erstellen einer Tabelle
@@ -97,7 +111,7 @@ Bevor Sie Daten speichern können, müssen Sie zuerst einen Container, sprich di
 		<?php
 		require_once "init.php";
 
-* Rufen Sie dann *createTable* auf, und übergeben Sie den Namen der Tabelle. Ähnlich wie bei anderen NoSQL-Tabellenspeichern ist für Azure-Tabellen kein Schema erforderlich.
+* Rufen Sie dann  *createTable* auf, und übergeben Sie den Namen der Tabelle. Ähnlich wie bei anderen NoSQL-Tabellenspeichern ist für Azure-Tabellen kein Schema erforderlich.
 	
 		try	{
 			$tableRestProxy->createTable('tasks');
@@ -140,7 +154,7 @@ Die Startseite der Tasklist-Anwendung sollte alle bestehenden Aufgaben enthalten
 		<?php		
 		require_once "init.php";
 
-* Um Azure-Tabellen nach **allen Entitäten** abzufragen, die in der Tabelle *tasks* gespeichert sind, rufen Sie die Methode *queryEntities* auf, wobei Sie nur den Namen der Tabelle übergeben. Im nachfolgenden Abschnitt **Aktualisieren einer Entität** erfahren Sie auch, wie Sie einen Filter, mit dem eine bestimmte Entität abgefragt wird, übergeben können.
+* Um Azure-Tabellen nach **allen Entitäten** abzufragen, die in der Tabelle  *tasks* gespeichert sind, rufen Sie die Methode  *queryEntities* auf, wobei Sie nur den Namen der Tabelle übergeben. Im nachfolgenden Abschnitt **Aktualisieren einer Entität** erfahren Sie auch, wie Sie einen Filter, mit dem eine bestimmte Entität abgefragt wird, übergeben können.
 
 		try {
 		    $result = $tableRestProxy->queryEntities('tasks');
@@ -157,7 +171,7 @@ Die Startseite der Tasklist-Anwendung sollte alle bestehenden Aufgaben enthalten
 			
 		for ($i = 0; $i < count($entities); $i++) {
 
-* Sobald eine `Entity` ausgegeben wird, sieht das Modell zum Lesen von Daten folgendermaßen aus: `Entity->getPropertyValue('[name]')`:
+* Nach dem Erhalt einer  `Entity` lautet das Modell zum Lesen von Daten  `Entity->getPropertyValue('[name]')`:
 
 			if ($i == 0) {
 				echo "<table border='1'>
@@ -216,7 +230,7 @@ Die Startseite der Tasklist-Anwendung sollte alle bestehenden Aufgaben enthalten
 
 Ihre Anwendung kann jetzt alle in der Tabelle gespeicherten Elemente lesen. Da es anfangs noch keine Elemente gibt, fügen Sie zunächst eine Funktion hinzu, die Daten in die Datenbank schreibt.
 
-* Erstellen Sie eine Datei mit dem Namen **createtable.php**.
+* Erstellen Sie eine Datei mit dem Namen **additem.php**.
 
 * Fügen Sie der Datei folgenden Code hinzu:
 
@@ -225,7 +239,7 @@ Ihre Anwendung kann jetzt alle in der Tabelle gespeicherten Elemente lesen. Da e
 		use WindowsAzure\Table\Models\Entity;
 		use WindowsAzure\Table\Models\EdmType;		
 
-* Der erste Schritt beim Einfügen einer Entität besteht in der Instanziierung eines `Entity`-Objekts und der Festlegung der Eigenschaften:
+* Der erste Schritt beim Einfügen einer Entität besteht in der Instanziierung eines  `Entity`-Objekts und der Festlegung der Eigenschaften:
 		
 		$entity = new Entity();
 		$entity->setPartitionKey('p1');
@@ -235,7 +249,7 @@ Ihre Anwendung kann jetzt alle in der Tabelle gespeicherten Elemente lesen. Da e
 		$entity->addProperty('date', EdmType::STRING, $_POST['date']);
 		$entity->addProperty('complete', EdmType::BOOLEAN, false);
 
-* Dann können Sie die `$entity`, die Sie gerade erstellt haben, an die Methode `insertEntity` übergeben:
+* Dann können Sie die `$entity` , die Sie gerade erstellt haben, an die Methode  `insertEntity` übergeben:
 
 		try{
 			$tableRestProxy->insertEntity('tasks', $entity);
@@ -253,7 +267,7 @@ Ihre Anwendung kann jetzt alle in der Tabelle gespeicherten Elemente lesen. Da e
 	
 ## Aktualisieren einer Entität
 
-Die Tasklist-Anwendung bietet die Möglichkeit, ein Element als "abgeschlossen" zu markieren und die Markierung wieder aufzuheben. Die Startseite übergibt *RowKey* und *PartitionKey* einer Entität sowie den Zielstatus (markiert==1, nicht markiert==0).
+Die Tasklist-Anwendung bietet die Möglichkeit, ein Element als "abgeschlossen" zu markieren und die Markierung wieder aufzuheben. Die Startseite übergibt die  *RowKey* und  *PartitionKey* einer Entität und den Zielstatus (marked==1, unmarked==0).
 
 * Erstellen Sie eine Datei namens **markitem.php**, und fügen Sie den Initialisierungsteil hinzu:
 
@@ -267,13 +281,13 @@ Die Tasklist-Anwendung bietet die Möglichkeit, ein Element als "abgeschlossen" 
 		$entities = $result->getEntities();		
 		$entity = $entities[0];
 
-	Wie Sie sehen hat der übergebene Abfragefilter das Format `Key eq 'Value'`. Eine umfassende Beschreibung der Abfragesyntax finden Sie [hier][msdn-table-query-syntax].
+	Wie Sie sehen, hat der übergebene Abfragefilter das Format `Key eq 'Value'`. Eine umfassende Beschreibung der Abfragesyntax finden Sie [hier][msdn-table-query-syntax].
 
 * Dann können Sie die Eigenschaften ändern:
 
 		$entity->setPropertyValue('complete', ($_GET['complete'] == 'true') ? true : false);
 
-* Die Methode `updateEntity` führt die Aktualisierung durch:
+* Die Methode  `updateEntity` führt die Aktualisierung durch:
 
 		try{
 			$result = $tableRestProxy->updateEntity('tasks', $entity);
@@ -292,7 +306,7 @@ Die Tasklist-Anwendung bietet die Möglichkeit, ein Element als "abgeschlossen" 
 
 ## Löschen einer Entität
 
-Ein Element können Sie mit einem einzelnen Aufruf von `deleteItem` löschen. Die übergebenen Werte sind der **PartitionKey** und der **RowKey**, die zusammen den Primärschlüssel der Entität bilden. Erstellen Sie eine Datei namens **deleteitem.php**, und fügen Sie den folgenden Code hinzu:
+Das Löschen eines Elements erfolgt mit einem einzelnen Aufruf von  `deleteItem`. Die übergebenen Werte sind der **PartitionKey** und **RowKey**, die zusammen den Primärschlüssel der Entität bilden. Erstellen Sie eine Datei namens **deleteitem.php**, und fügen Sie den folgenden Code hinzu:
 
 		<?php
 		
@@ -305,27 +319,27 @@ Ein Element können Sie mit einem einzelnen Aufruf von `deleteItem` löschen. Di
 
 ## Erstellen eines Azure-Speicherkontos
 
-Damit die Anwendung Daten in der Cloud speichern kann, müssen Sie zuerst ein Speicherkonto in Azure erstellen und dann die entsprechenden Authentifizierungsangaben an die *Configuration*-Klasse übergeben.
+Damit die Anwendung Daten in der Cloud speichern kann, müssen Sie zuerst ein Speicherkonto in Azure erstellen und dann die entsprechenden Authentifizierungsangaben an die  *Configuration*-Klasse übergeben.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal][management-portal] an.
+1. Melden Sie sich am [Azure-Verwaltungsportal][management-portal] an.
 
 2. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
 
 	![Create New Azure web site][new-website]
 
-3. Klicken Sie auf **Data Services**, **Speicher**, dann**Schnellerfassung**.
+3. Klicken Sie auf **Datendienste**, **Speicher** und **Schnellerfassung**.
 
 	![Custom Create a new web site][storage-quick-create]
 	
-	Geben Sie einen Wert für **URL** ein, und wählen Sie das Rechenzentrum für Ihre Website aus der Dropdownliste **REGION** aus. Klicken Sie am unteren Rand des Dialogfelds auf **Speicherkonto erstellen**.
+	Geben Sie einen Wert für **URL** ein, und wählen Sie das Datencenter für Ihre Website in der Dropdownliste **REGION** aus. Klicken Sie am unteren Rand des Dialogfelds auf **Speicherkonto erstellen**.
 
 	![Fill in web site details][storage-quick-create-details]
 
-	Nachdem das Speicherkonto erstellt wurde, wird der Text **Creation of Storage Account '[NAME]' completed successfully** angezeigt.
+	Nachdem das Speicherkonto erstellt wurde, wird der Text **Erstellung des Speicherkontos "[NAME]" erfolgreich abgeschlossen** angezeigt.
 
-4. Stellen Sie sicher, dass die Registerkarte **Storage** ausgewählt wurde, und wählen Sie dann das gerade erstellte Speicherkonto aus der Liste aus.
+4. Stellen Sie sicher, dass die Registerkarte **Speicher** ausgewählt wurde, und wählen Sie dann das gerade erstellte Speicherkonto aus der Liste aus.
 
-5. Klicken Sie am unteren Rand in der App-Leiste auf **Schlüssel verwalten**.
+5. Klicken Sie am unteren Rand in der App-Leiste auf **Zugriffsschlüssel verwalten**.
 
 	![Select Manage Keys][storage-manage-keys]
 
@@ -333,34 +347,34 @@ Damit die Anwendung Daten in der Cloud speichern kann, müssen Sie zuerst ein Sp
 
 	![Select Manage Keys][storage-access-keys]
 
-7. Öffnen Sie **init.php** und ersetzen Sie `[YOUR_STORAGE_ACCOUNT_NAME]` und `[YOUR_STORAGE_ACCOUNT_KEY]` durch den Kontonamen und -schlüssel, den Sie im letzten Schritt notiert haben. Speichern Sie die Datei.
+7. Öffnen Sie **init.php**, und ersetzen Sie `[YOUR_STORAGE_ACCOUNT_NAME]`  und `[YOUR_STORAGE_ACCOUNT_KEY]`  durch den im letzten Schritt notierten Kontonamen und Schlüssel. Speichern Sie die Datei.
 
 
 ## Erstellen einer Azure-Website und Einrichten der Git-Veröffentlichung
 
 Führen Sie die folgenden Schritte aus, um eine Azure-Website zu erstellen:
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal][management-portal] an.
+1. Melden Sie sich am [Azure-Verwaltungsportal][management-portal] an.
 2. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
 
 	![Create New Azure Web Site][new-website]
 
-3. Klicken Sie auf **Berechnen**, **Website**, dann **Schnellerfassung**.
+3. Klicken Sie auf **Server**, **Website** und **Schnellerfassung**.
 
 	![Custom Create a new web site][website-quick-create]
 	
-	Geben Sie einen Wert für **URL** ein, und wählen Sie das Rechenzentrum für Ihre Website aus der Dropdownliste **REGION** aus. Klicken Sie am unteren Rand des Dialogfelds auf **Create New Website**.
+	Geben Sie einen Wert für **URL** ein, und wählen Sie das Datencenter für Ihre Website in der Dropdownliste **REGION** aus. Klicken Sie am unteren Rand des Dialogfelds auf **Neue Website erstellen**.
 
 	![Fill in web site details][website-quick-create-details]
 
-	Nachdem die Website erstellt wurde, wird der Text **Die Erstellung der Website '[WEBSITENAME]' wurde erfolgreich abgeschlossen** angezeigt. Nun können Sie die Git-Veröffentlichung aktivieren.
+	Nachdem die Website erstellt wurde, wird der Text **Die Erstellung der Website "[SITENAME]" wurde erfolgreich abgeschlossen** angezeigt. Nun können Sie die Git-Veröffentlichung aktivieren.
 
 5. Klicken Sie auf den Namen der Website, der in der Liste der Websites aufgeführt ist, um das Dashboard **SCHNELLSTART** der Website zu öffnen.
 
 	![Open web site dashboard][go-to-dashboard]
 
 
-6. Wählen Sie in der unteren rechten Ecke der Schnellstartseite **Bereitstellung über Quellcodeverwaltung einrichten**.
+6. Wählen Sie in der rechten unteren Ecke der Schnellstartseite **Bereitstellung über Quellcodeverwaltung einrichten** aus.
 
 	![Set up Git publishing][setup-git-publishing]
 
@@ -391,7 +405,7 @@ Führen Sie die nachfolgenden Schritte aus, um Ihre Anwendung mit Git zu veröff
 			
 	Wenn der Paketmanager Composer die Azure-Clientbibliotheken und die Abhängigkeiten herunterlädt, wird dazu das GitHub-Repository geklont, in dem sie sich befinden. Im nächsten Schritt wird die Anwendung über Git bereitgestellt, indem aus dem Stammordner der Anwendung heraus ein Repository erstellt wird. Git ignoriert das Unterrepository, in dem sich die Clientbibliotheken befinden, es sei denn, die Repository-spezifischen Dateien werden entfernt.
 
-2. Öffnen Sie GitBash (oder ein Terminal, falls sich Git in Ihrem `PATH` befindet). Ändern Sie die Verzeichnisse auf das Root-Verzeichnis der Anwendung, und führen Sie folgende Befehle aus (**Hinweis:** das sind dieselben Schritte, die auch am Ende des Abschnitts **Erstellen einer Azure-Website und Einrichten der Git-Veröffentlichung** aufgeführt sind):
+2. Öffnen Sie GitBash (oder ein Terminal, falls sich Git in Ihrem  `PATH` befindet). Ändern Sie die Verzeichnisse in das Stammverzeichnis der Anwendung, und führen Sie folgende Befehle aus (**Hinweis:** Dies sind dieselben Schritte wie am Ende des Abschnitts **Erstellen einer Azure-Website und Einrichten der Git-Veröffentlichung**):
 
 		git init
 		git add .
@@ -401,8 +415,8 @@ Führen Sie die nachfolgenden Schritte aus, um Ihre Anwendung mit Git zu veröff
 
 	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben.
 
-3. Navigieren Sie zu **http://[Ihre Website-Domäne]/createtable.php**, um die Tabelle für die Anwendung zu erstellen.
-4. Navigieren Sie zu **http://[Ihre Website-Domäne]/index.php**, um mit der Anwendung zu arbeiten.
+3. Navigieren Sie zu **http://[Ihre Websitedomäne]/createtable.php**, um die Tabelle für die Anwendung zu erstellen.
+4. Navigieren Sie zu **http://[Ihre Websitedomäne]/index.php**, um mit der Anwendung zu arbeiten.
 
 Nach Veröffentlichung Ihrer Anwendung können Sie Änderungen an ihr vornehmen und diese über Git veröffentlichen. 
 
@@ -411,7 +425,7 @@ Nach Veröffentlichung Ihrer Anwendung können Sie Änderungen an ihr vornehmen 
 Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffentlichen:
 
 1. Nehmen Sie lokal Änderungen an Ihrer Anwendung vor.
-2. Öffnen Sie GitBash (oder eine Terminalsitzung, wenn sich Git in Ihrem `PATH` befindet), ändern Sie die Verzeichnisse zum Stammverzeichnis Ihrer Anwendung, und führen Sie die folgenden Befehle aus:
+2. Öffnen Sie GitBash (oder eine Terminalsitzung, wenn sich Git in Ihrem  `PATH` befindet), wechseln Sie zum Stammverzeichnis Ihrer Anwendung, und führen Sie die folgenden Befehle aus:
 
 		git add .
 		git commit -m "comment describing changes"
@@ -419,7 +433,7 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
 	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben.
 
-3. Navigieren Sie zu **http://[[Ihre Website-Domäne]]/index.php**, um die Änderungen anzuzeigen. 
+3. Navigieren Sie zu **http://[Ihrer Websitedomäne]/index.php**, um die Änderungen anzuzeigen. 
 
 [install-php]: http://www.php.net/manual/en/install.php
 
@@ -450,4 +464,8 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
 [git-instructions]: ./media/web-sites-php-storage/git-instructions.png
 [where-is-code]: ./media/web-sites-php-storage/where_is_code.png
-\n<!--HONumber=35.1--> 
+
+
+
+
+<!--HONumber=42-->

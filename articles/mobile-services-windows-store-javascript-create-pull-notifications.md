@@ -1,6 +1,6 @@
-<properties urlDisplayName="Define a custom API that supports pull notifications" pageTitle="Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt - Azure Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren, die regelmäßige Benachrichtigungen in Windows Store-Apps unterstützt, die Azure Mobile Services verwenden." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Define a custom API that supports periodic notifications" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt - Azure Mobile Services" description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren, die regelmäßige Benachrichtigungen in Windows Store-Apps unterstützt, die Azure Mobile Services verwenden." services="mobile-services" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="11/22/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="11/22/2014" ms.author="glenga"/>
 # Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen
 
 <div class="dev-center-tutorial-selector"> 
@@ -9,27 +9,27 @@
 
 In diesem Thema lernen Sie, wie Sie eine benutzerdefinierte API für periodische Benachrichtigungen aus einer Windows Store-App aufrufen. Durch die Aktivierung von periodischen Benachrichtigungen greift Windows periodisch auf Ihren benutzerdefinierten API-Endpunkt zu und verwendet die zurückgegebene XML, in einem kachelspezifischen Format, um die App-Kachel im Startmenü zu aktualisieren. Weitere Informationen finden Sie unter [Periodische Benachrichtigungen]. 
 
-Sie fügen diese Funktionalität der App hinzu, die Sie nach Abschluss des Lernprogramms [Erste Schritte mit Mobile Services] oder des Lernprogramms [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben. Dafür führen Sie die folgenden Schritte aus:
+Sie fügen diese Funktionalität der App hinzu, die Sie im Lernprogramm [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben. Dafür führen Sie die folgenden Schritte aus:
 
 1. [Definieren der benutzerdefinierten API]
 2. [Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen]
-3. [Testen der App] 
+3. [Testen der App]
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, sollten Sie zunächst [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] abschließen.  
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] abschließen.  
 
 ## <a name="define-custom-api"></a>Definieren der benutzerdefinierten API
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre App.
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
 
    	![][0]
 
-2. Klicken Sie auf die Registerkarte **API**, und klicken Sie dann auf **Create a custom API**.
+2. Klicken Sie auf die Registerkarte **API** und dann auf **Eine benutzerdefinierte API erstellen**.
 
    	![][1]
 
-   	Damit wird das Dialogfeld **Create a new custom API** angezeigt.
+   	Das Dialogfeld **Eine neue benutzerdefinierte API erstellen** wird angezeigt.
 
-3. Ändern Sie **Get permission** zu **Everyone**, geben Sie "tiles" als **API-Name** an, und klicken Sie dann auf die Häkchenschaltfläche.
+3. Ändern Sie **GET-Berechtigung** in **Alle**, geben Sie "tiles" in das Feld **API-Name** ein, und klicken Sie dann auf die Häkchenschaltfläche.
 
    	![][2]
 
@@ -66,24 +66,22 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 		    }
 		};
 
-	Dieser Code gibt die ersten 3 nicht abgeschlossenen Element aus der Tabelle TodoItem zurück und lädt sie in ein JSON-Objekt, das an die Funktion **wns**.**createTileSquareText01** übergeben wird. Diese Funktion gibt das folgende XML für tile-Vorlagen zurück:
+	Dieser Code gibt die ersten drei nicht abgeschlossenen Elemente aus der Tabelle "TodoItem" zurück und lädt sie in ein JSON-Objekt, das an die **wns**.**createTileSquareText01**-Funktion übergeben wird. Diese Funktion gibt das folgende XML für tile-Vorlagen zurück:
 
 		<tile>
 			<visual>
 				<binding template="TileSquareText01">
-
-
-
-
+					<text id="1">My todo list</text>
+					<text id="2">Task 1</text>
+					<text id="3">Task 2</text>
+					<text id="4">Task 3</text>
 				</binding>
 			</visual>
 		</tile>
 
-	Die Funktion **exports.get** wird verwendet, da der Client eine GET-Anfrage für den Zugriff auf die tile-Vorlage sendet.
+	Die **exports.get**-Funktion wird verwendet, da der Client eine GET-Anforderung für den Zugriff auf die tile-Vorlage sendet.
 
-   	<div class="dev-callout"><b>Hinweis</b>
-   		<p>Dieses benutzerdefinierte API-Skript verwendet das "Node.js <a href="http://go.microsoft.com/fwlink/p/?LinkId=306750">wns"-Modul, das</a>über die Funktion <strong>require</strong> referenziert wird. Dieses Modul unterscheidet sich vom <a href="http://go.microsoft.com/fwlink/p/?LinkId=260591">wns-Objekt,</a> das vom <a href="http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx">push-Objekt</a>zurückgegeben und verwendet wird, um Pushbenachrichtigungen von Serverskripts zu senden.</p>
-   	</div>
+   	> [AZURE.NOTE] Dieses benutzerdefinierte API-Skript verwendet das [wns-Modul](http://go.microsoft.com/fwlink/p/?LinkId=306750) für Node.js, auf das durch die Verwendung der **require**-Funktion verwiesen wird. Dieses Modul unterscheidet sich von dem [wns-Objekt](http://go.microsoft.com/fwlink/p/?LinkId=260591), das vom [push-Objekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx) zurückgegeben wird, das wiederum für den Versand von Pushbenachrichtigungen in Serverskripts verwendet wird.
 
 Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen zu verschicken, die das Live Tile durch Anfragen an die neue benutzerdefinierte API aktualisiert.
 
@@ -91,9 +89,9 @@ Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen 
 
 1. Drücken Sie in Visual Studio die Taste F5, um die Schnellstart-App aus dem vorherigen Lernprogramm auszuführen.
 
-2. Stellen Sie sicher, dass mindestens ein Element angezeigt wird. Falls kein Element angezeigt wird, geben Sie einen Text in **Insert a TodoItem** ein, und klicken Sie dann auf **Save**.
+2. Stellen Sie sicher, dass mindestens ein Element angezeigt wird. Falls kein Element angezeigt wird, geben Sie Text in das Feld **TodoItem einfügen** ein, und klicken Sie dann auf **Speichern**.
 
-3. Erweitern Sie in Visual Studio im Projektmappen-Explorer den Ordner "\js", öffnen Sie das default.js-Projekt, und fügen Sie dann die folgenden Codezeilen nach dem Code hinzu, der die Variable **client** definiert:
+3. Erweitern Sie im Projektmappen-Explorer von Visual Studio den Ordner `\js`, öffnen Sie das Projekt "default.js", und fügen Sie die folgenden Codezeilen nach dem Code ein, der die **client**-Variable definiert:
 
         var notifications = Windows.UI.Notifications;
         var recurrence = notifications.PeriodicUpdateRecurrence.hour;
@@ -101,7 +99,7 @@ Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen 
 
         notifications.TileUpdateManager.createTileUpdaterForApplication().startPeriodicUpdate(url, recurrence);
 
-	Mit diesem Code werden periodische Benachrichtigungen zur Abfrage von tile-Vorlagendaten aus der neuen benutzerdefinierten **tiles**-API aktiviert. Wählen Sie unter **PeriodicUpdateRecurrance** einen passenden Wert für das Aktualisierungsintervall Ihrer Daten aus.
+	Dieser Code aktiviert periodische Benachrichtigungen zur Anforderung von Tile-Vorlagendaten aus der neuen benutzerdefinierten **tiles**-API. Wählen Sie den am besten passenden **PeriodicUpdateRecurrance**-Wert für das Aktualisierungsintervall Ihrer Daten aus.
 
 ## <a name="test-app"></a>Testen der App
 
@@ -148,4 +146,5 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 [Periodische Benachrichtigungen]: http://msdn.microsoft.com/de-de/library/windows/apps/jj150587.aspx
 
 
-<!--HONumber=35.1-->
+
+<!--HONumber=42-->

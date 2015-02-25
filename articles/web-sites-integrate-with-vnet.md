@@ -1,6 +1,20 @@
-﻿<properties title="Integrate your Azure Website with an Azure Virtual Network" pageTitle="Integrieren von Azure-Websites in Azure-VNet" description="Zeigt, wie Sie eine Verbindung zwischen einer Azure-Website und einem neuen oder vorhandenen virtuellen Azure-Netzwerk herstellen." metaKeywords="" services="web-sites,virtual-network" solutions="web,integration,infrastructure" documentationCenter="" authors="cephalin" videoId="" scriptId="" manager="wpickett" />
+﻿<properties 
+	pageTitle="Integrieren von Azure-Websites in Azure-VNet" 
+	description="Zeigt, wie Sie eine Verbindung zwischen einer Azure-Website und einem neuen oder vorhandenen virtuellen Azure-Netzwerk herstellen." 
+	services="web-sites, virtual-network" 
+	documentationCenter="" 
+	authors="cephalin" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/24/2014" ms.author="cephalin" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/24/2014" 
+	ms.author="cephalin"/>
 
 # Integrieren der Azure-Website in ein virtuelles Azure-Netzwerk
 Dieses Dokument beschreibt die Vorschaufunktion der virtuellen Netzwerkintegration und zeigt, wie Sie diese mit Ihrer Azure-Website einrichten.  Mit Azure Virtual Networks und Ihren lokalen Ressourcen können Sie Hybrid-Lösungen entwickeln, auch wenn Sie nicht mit virtuellen Azure-Netzwerken vertraut sind.  
@@ -12,8 +26,8 @@ Weitere Informationen zu Azure Virtual Networks, den Vorteilen und Anwendungsfä
 ## Erste Schritte
 Sie müssen Folgendes beachten, bevor Sie Ihre Website mit einem virtuellen Netzwerk verbinden:
 
-1.	Websites können nur mit einem virtuellen Netzwerk verbunden werden, wenn sie mit einem Webhostingplan der Preisstufe "Standard" ausgeführt werden.  Websites der Stufen "Free", "Shared" und "Basic" können nicht mit einem virtuellen Netzwerk verbunden werden.
-2.	Wenn Ihr virtuelles Zielnetzwerk bereits vorhanden ist, muss es über Punkt-zu-Site mit einem dynamischen Routing-Gateway aktiviert werden, bevor es mit einer Website verbunden werden kann.  Sie können Punkt-zu-Site-VPN nicht aktivieren, wenn Ihr Gateway mit statischem Routing konfiguriert ist.
+1.	Standorte können nur mit einem virtuellen Netzwerk verbunden werden, wenn sie mit einem Webhostingplan der Preisstufe "Standard" ausgeführt werden.  Standorte der Stufen Free, Shared und Basic können nicht mit einem virtuellen Netzwerk verbunden werden.
+2.	Wenn Ihr virtuelles Zielnetzwerk bereits vorhanden ist, muss es über Punkt-zu-Standort mit einem dynamischen Routing-Gateway aktiviert werden, bevor es mit einer Website verbunden werden kann.  Sie können Punkt-zu-Standort-VPN nicht aktivieren, wenn Ihr Gateway mit Statischem Routing konfiguriert ist.
 3.	Sie können nur bis zu 5 Netzwerke in Ihrem Webhostingplan konfigurieren.  Eine Website kann jeweils nur mit einem Netzwerk verbunden werden.  Diese 5 Netzwerke können von einer beliebigen Anzahl von Websites im selben Webhostingplan verwendet werden.  
 
 Sie haben die Möglichkeit, sich mit einem neuen oder bereits vorhandenen virtuellen Netzwerk zu verbinden.  Wenn Sie ein neues Netzwerk einrichten, wird ein Gateway für Sie vorkonfiguriert.  Beachten Sie, dass die Erstellung und Konfiguration eines neuen virtuellen Netzwerks mehrere Minuten dauern wird.  
@@ -25,7 +39,7 @@ Wenn Ihre Website nicht auf einer Standardebene ausgeführt wird, erhalten Sie e
 ## Funktionsweise des Systems
 Unter der Oberfläche verwendet dieses Funktion Punkt-zu-Site-VPN-Technologie, um Ihre Azure-Website mit Ihrem VNET zu verbinden.  Die Azure Websites-Systemarchitektur ist von Natur aus mandantenfähig. Die direkte Bereitstellung von Websites in einem VNET, wie mit virtuellen Maschinen üblich, ist daher ausgeschlossen.  Durch den Aufbau auf der Punkt-zu-Standort-Technologie beschränken wir den Netzwerkzugriff auf die virtuelle Maschine, auf der die Website gehostet wird.  Der Zugriff auf das Netzwerk bleibt auf diese Websitehosts beschränkt, sodass Ihre Websites nur auf Netzwerke zugreifen können, für die Sie den Zugriff konfiguriert haben.  
 
-Wenn Ihre Netzwerke nur für Websites gesichert sind, die Zugriff benötigen, können keine SMB-Verbindungen erstellt werden.  Während Sie auf Remoteressourcen zugreifen können, wird der Einbau eines Remotelaufwerks nicht unterstützt.
+Wenn Ihre Netzwerke nur für Websites gesichert sind, die Zugriff benötigen, können keine SMB-Verbindungen erstellt werden.  Während Sie auf Remote-Ressourcen zugreifen können, wird der Einbau eines Remote-Laufwerks nicht unterstützt.
 
 ![](./media/web-sites-integrate-with-vnet/how-it-works.png)
  
@@ -49,7 +63,7 @@ Die Erstellung eines neuen virtuellen Netzwerks mit konfigurierten Gateways kann
 
 ![](./media/web-sites-integrate-with-vnet/new-vnet-progress.png)
 
-Sobald das Netzwerk mit der Website verbunden wurde, wird diese über Zugriff auf Ressourcen in diesem VNET über TCP oder UDP verfügen.  Wenn Sie auf Ressourcen in Ihrem lokalen System zugreifen möchten, die über Site-to-Site-VPN-Zugriff auf Ihrem VNET verfügbar sind, müssen Sie Routen in Ihrem eigenen Firmennetzwerk hinzufügen, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem VNET konfigurierten Punkt-zu-Site-Adressen zu erlauben.
+Sobald das Netzwerk mit der Website verbunden wurde, wird diese über Zugriff auf Ressourcen in diesem VNET über TCP oder UDP verfügen.  Wenn Sie auf Ressourcen in Ihrem lokalen System zugreifen möchten, die über Standort-zu-Standort-VPN-Zugriff auf Ihrem VNET verfügbar sind, müssen Sie Routen in Ihrem eigenen Firmennetzwerk hinzufügen, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem VNET konfigurierten Punkt-zu-Standort-Adressen zu erlauben.
 
 Nach erfolgreicher Integration wird das Portal grundlegende Informationen über die Verbindung anzeigen. Sie können die Website vom Netz trennen und die Zertifikate für die Verbindungsauthentifizierung synchronisieren.  Die Synchronisation kann erforderlich sein, wenn ein Zertifikat abgelaufen ist oder widerrufen wurde.  
 
@@ -63,7 +77,7 @@ Sollte der Webhostingplan in einen niedrigeren Plan wie Free, Shared oder Basic 
 Zu diesem Zeitpunkt ist es in Azure nicht möglich, einen vorhandenen virtuellen Computer in ein virtuelles Netzwerk zu verschieben.  Der virtuelle Computer muss bei der Erstellung in diesem virtuellen Netzwerk bereitgestellt werden.  
 
 ## Zugriff auf Betriebsressourcen
-Bei der Arbeit mit einem VNET, das mit Site-to-Site-VPN konfiguriert wurde, ist ein zusätzlicher Schritt erforderlich, um Zugriff auf Ihre lokalen Ressourcen von Ihrer Azure-Website bereitzustellen.  Routen müssen zu Ihrem lokalen Netzwerk hinzugefügt werden, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem VNET konfigurierten Punkt-zu-Standort-Adressen zu ermöglichen.  Um Ihren IP-Bereich für Ihre Punkt-zu-Site-Konnektivität anzuzeigen, gehen Sie wie hier dargestellt auf den Netzwerkbereich im aktuellen Portal.
+Bei der Arbeit mit einem VNET, das mit Site-to-Site-VPN konfiguriert wurde, ist ein zusätzlicher Schritt erforderlich, um Zugriff auf Ihre lokalen Ressourcen von Ihrer Azure-Website bereitzustellen.  Routen müssen zu Ihrem lokalen Netzwerk hinzugefügt werden, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem VNET konfigurierten Punkt-zu-Standort-Adressen zu ermöglichen.  Um Ihren IP-Bereich für Ihre Punkt-zu-Standort-Konnektivität anzuzeigen, gehen Sie wie hier dargestellt auf den Netzwerkbereich im aktuellen Portal.
 
 ![](./media/web-sites-integrate-with-vnet/vpn-to-onpremise.png)
 
@@ -72,7 +86,7 @@ Um eine sichere Verbindung mit Ihrem VNET zu etablieren, werden Zertifikate ausg
 
 ![](./media/web-sites-integrate-with-vnet/vpn-to-onpremise-certificate.png)
 
-Wenn die Zertifikate aus irgendeinem Grund, wie versehentlichem Löschen aus dem Netzwerkportal, nicht mehr synchron sind, wird die Konnektivität unterbrochen.  Über die Aktion "Verbindung synchronisieren" auf der Benutzeroberfläche des virtuellen Netzwerks von Azure-Websites können Sie dieses Problem beheben und die Konnektivität wiederherstellen.
+Wenn die Zertifikate aus irgendeinem Grund, wie versehentlichem Löschen aus dem Netzwerkportal, nicht mehr synchron sind, wird die Konnektivität unterbrochen.  Über die Aktion "Verbindung synchronisieren" auf der Benutzeroberfläche des virtuellen Netzwerks von Azure Websites können Sie dieses Problem beheben und die Konnektivität wiederherstellen.
 
 Diese Aktion müssen Sie auch verwenden, um Ihrem virtuellen Netzwerk ein DNS oder Ihrem Netzwerk Site-to-Site-VPN hinzuzufügen.  
 
@@ -84,3 +98,8 @@ Auch die Hybridverbindungs-Funktion von Azure-Websites ähnelt in mancher Hinsic
 Ein weiterer Unterschied besteht darin, dass Sie einen Relay-Agenten für die Hybridverbindungen installieren müssen.  Dieser Agent muss auf einer Windows Server-Instanz ausgeführt werden.  Dank der Funktion "Virtuelles Netzwerk" müssen Sie nichts installieren und können unabhängig von Hosting-Betriebssystemen auf Remote-Ressourcen zugreifen.  
 
 Es gibt zurzeit auch bei den Preisebenen noch Unterschiede zwischen den beiden Funktionen:  Auf der günstigeren Ebene ist die Hybridverbindungs-Funktion äußerst nützlich für Entwicklungs- und Testszenarien. Hier wird nur Zugang zu einer kleinen Anzahl an Endpunkten gewährt.  Mit der virtuellen Netzwerkfunktion hingegen haben Sie Zugriff auf alles, was im VNET enthalten oder mit ihm verbunden ist.  
+
+
+
+
+<!--HONumber=42-->

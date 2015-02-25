@@ -1,10 +1,10 @@
-﻿<properties urlDisplayName="Validate Data - Android" pageTitle="Verwenden von Serverskripts zum Überprüfen und Ändern von Daten (Android) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Daten überprüfen und ändern, die mithilfe von Serverskripts von Ihrer Android-App gesendet wurden." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="ricksal" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Verwenden von Serverskripts zum Überprüfen und Ändern von Daten (Android) | Mobile Dev Center" description="Erfahren Sie, wie Sie Daten überprüfen und ändern, die mithilfe von Serverskripts von Ihrer Android-App gesendet wurden." services="mobile-services" documentationCenter="android" authors="RickSaling" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="ricksal" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="ricksal"/>
 
 # Überprüfen und Ändern von Daten in Mobile Services mithilfe von Serverskripts
 
-[WACOM.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-validate-modify-data](../includes/mobile-services-selector-validate-modify-data.md)]
 
 In diesem Thema erfahren Sie, wie Sie Serverskripts in Azure Mobile Services nutzen. Serverskripts sind in einem mobilen Dienst registriert und können verwendet werden, um eine Vielzahl an Vorgängen für Daten, die eingefügt und aktualisiert werden, durchzuführen, einschließlich Überprüfen und Ändern. In diesem Lernprogramm definieren und registrieren Sie Serverskripts, die Daten prüfen und ändern. Da sich das Verhalten von serverseitigen Skripts häufig auf den Client auswirkt, werden Sie auch Ihre Android-App aktualisieren, um von diesen neuen Verhalten zu profitieren.
 
@@ -15,25 +15,25 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 3. [Zeitstempel beim Einfügen hinzufügen]
 4. [Client zum Anzeigen des Zeitstempels aktualisieren]
 
-Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten] auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Daten] abschließen.  
+Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Daten]. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Daten] abschließen.  
 
-## <a name="string-length-validation"></a>Überprüfung hinzufügen
+## <a name="string-length-validation"></a>Hinzufügen der Überprüfung
 
-Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, zu überprüfen. Zunächst registrieren Sie ein Skript, das die Länge von Zeichenfolgendendaten überprüft, die an den mobilen Dienst gesendet werden, und das Zeichenfolgen ablehnt, die zu lang sind, in diesem Fall länger als zehn Zeichen.
+Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, zu überprüfen. Zunächst registrieren Sie ein Skript, das die Länge von Zeichenfolgendaten überprüft, die an den mobilen Dienst gesendet werden, und das Zeichenfolgen ablehnt, die zu lang sind, in diesem Fall länger als zehn Zeichen.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihre App. 
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App. 
 
    	![][0]
 
-2. Klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+2. Klicken Sie auf die Registerkarte **Daten**, dann auf die Tabelle **TodoItem**.
 
    	![][1]
 
-3. Klicken Sie auf **Skript** und dann auf den Vorgang **Einfügen**.
+3. Klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus.
 
    	![][2]
 
-4. Ersetzen Sie das vorhandene Skript durch folgende Funktion, und klicken Sie dann auf **Speichern**.
+4. Ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -43,17 +43,15 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
             }
         }
 
-    Das Skript überprüft die Länge der Eigenschaft **text** und sendet eine Fehlerantwort, wenn die Länge zehn Zeichen überschreitet. Andernfalls wird die Methode **execute** aufgerufen, um das Einfügen abzuschließen.
+    Das Skript überprüft die Länge der Eigenschaft **text** und sendet eine Fehlerantwort, wenn die Länge 10 Zeichen überschreitet. Andernfalls wird die Methode **execute** aufgerufen, um das Einfügen abzuschließen.
 
-    <div class="dev-callout"> 
-	<b>Hinweis</b> 
-	<p>Sie können ein registriertes Skript auf der Registerkarte <strong>Script</strong> entfernen, indem Sie auf </strong>Löschen<strong> und dann auf </strong>Speichern<strong> klicken.</p></div>
+   > [AZURE.TIP] Sie können ein registriertes Skript auf der Registerkarte **Skript** entfernen, indem Sie auf **Löschen** und dann auf **Speichern** klicken.
 
 ## <a name="update-client-validation"></a>Aktualisieren des Clients
 
 Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Sie müssen nun sicherstellen, dass Ihre App die Fehlerantworten aus der Validierung korrekt behandelt.
 
-1. Öffnen Sie in Eclipse das Projekt, das Sie beim Abschluss des Lernprogramms erstellt haben [Erste Schritte mit Daten].
+1. Öffnen Sie in Eclipse das Projekt, das Sie im Lernprogramm [Erste Schritte mit Daten] erstellt haben.
 
 2. Suchen Sie in der Datei "ToDoActivity.java" die Methode **addItem**, und ersetzen Sie den Aufruf der createAndShowDialog-Methode durch den folgenden Code:
 
@@ -61,7 +59,7 @@ Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Sie müssen 
 
 	Dieser Code zeigt die vom mobilen Dienst zurückgegebene Fehlermeldung an. 
 
-3. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten, geben Sie einen Text mit weniger als 10 Zeichen in das Textfeld ein und klicken Sie auf **Hinzufügen**.
+3. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten, geben Sie einen Text mit mehr als 10 Zeichen in das Textfeld ein, und klicken Sie auf **Hinzufügen**.
 
   Beachten Sie, dass der Fehler behandelt und die Fehlermeldung für den Benutzer angezeigt wird.
 
@@ -69,11 +67,9 @@ Der mobile Dienst überprüft nun Daten und sendet Fehlerantworten. Sie müssen 
 
 In der vorherigen Aufgabe wurde eine Einfügung überprüft und entweder akzeptiert oder abgelehnt. Nun aktualisieren Sie die eingefügten Daten mithilfe eines Serverskripts, das eine Zeitstempeleigenschaft zu dem Objekt hinzufügt, bevor es eingefügt wird.
 
-<div class="dev-callout"><b>Hinweis</b>
-<p>Die hier demonstrierte Zeitstempeleigenschaft <b>createdAt</b> ist nun redundant. Mobile Services erstellt automatisch eine Systemeigenschaft <b>__createdAt</b> für jede Tabelle.</p>
-</div>
+> [AZURE.NOTE] Die hier demonstrierte Zeitstempeleigenschaft **createdAt** ist nun redundant. Mobile Services erstellt automatisch eine Systemeigenschaft **__createdAt** für jede Tabelle.
 
-1. Ersetzen Sie im [Verwaltungsportal] auf der Registerkarte **Scripts** das aktuelle Skript **Insert** durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
+1. Ersetzen Sie im [Verwaltungsportal] auf der Registerkarte **Skripts** das aktuelle Skript **Insert** durch die folgende Funktion, und klicken Sie dann auf **Speichern**.
 
         function insert(item, user, request) {
             if (item.text.length > 10) {
@@ -84,13 +80,11 @@ In der vorherigen Aufgabe wurde eine Einfügung überprüft und entweder akzepti
             }
         }
 
-Diese Funktion erweitert das vorherige insert-Skript, indem es eine neue Zeitstempeleigenschaft     createdAt** zum Objekt hinzufügt, bevor es durch den **request**.**execute -Aufruf eingefügt wird.
+    Diese Funktion erweitert das vorherige insert-Skript, indem es eine neue Zeitstempeleigenschaft **createdAt** zum Objekt hinzufügt, bevor es durch den **request**.**execute**-Aufruf eingefügt wird. 
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Bei der ersten Ausführung dieses Skripts muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services automatisch die Spalte <strong>createdAt</strong> in die Tabelle <strong>TodoItem</strong> bei der ersten Ausführung ein. Das dynamische Schema ist standardmäßig für einen neuen Mobile Service aktiviert und sollte deaktiviert werden, bevor die App veröffentlicht wird.</p>
-    </div>
+    > [AZURE.IMPORTANT] Wenn dieses insert-Skript zum ersten Mal ausgeführt wird, muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services bei der ersten Ausführung automatisch die Spalte **createdAt** in die Tabelle **TodoItem** ein. Das dynamische Schema ist standardmäßig für einen neuen Mobile Service aktiviert und sollte deaktiviert werden, bevor die App veröffentlicht wird.
 
-2. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten, geben Sie einen Text mit weniger als 10 Zeichen in das Textfeld ein und klicken Sie auf **Hinzufügen**.
+2. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten, geben Sie einen Text mit weniger als 10 Zeichen in das Textfeld ein, und klicken Sie auf **Hinzufügen**.
 
    	Beachten Sie, dass der neue Zeitstempel nicht in der UI der App angezeigt wird.
 
@@ -100,7 +94,7 @@ Diese Funktion erweitert das vorherige insert-Skript, indem es eine neue Zeitste
   
 Nun müssen Sie die Android-App aktualisieren, um diese neue Spalte anzuzeigen.
 
-## <a name="update-client-timestamp"></a>Den Client erneut aktualisieren
+## <a name="update-client-timestamp"></a>Erneutes Aktualisieren des Clients
 
 Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in Eigenschaften gemäß dem definierten Typ serialisieren kann. Abschließend muss dann der Client aktualisiert werden, um diese neuen Daten anzuzeigen.
 
@@ -116,9 +110,7 @@ Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in
 		@com.google.gson.annotations.SerializedName("createdAt")
 		private Date mCreatedAt;
   
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Die <code>SerializedName</code>-Annotation weist den Client an, die neue Eigenschaft <code>mCreatedAt</code> in der App zu der in der TodoItem-Tabelle definierten Spalte <code>createdAt</code> zuzuordnen, die einen anderen Namen hat. Durch die Verwendung dieser Annotation kann Ihre App Eigenschaftennamen zu Objekten haben, die von den Spaltennamen in der SQL-Datenbank abweichen. Ohne diese Annotation tritt aufgrund der unterschiedlichen Schreibweisen ein Fehler auf.</p>
-    </div>
+    > [AZURE.NOTE] Die `SerializedName`-Annotation weist den Client an, die neue `mCreatedAt`-Eigenschaft in der App der in der TodoItem-Tabelle definierten Spalte `createdAt` zuzuordnen, die einen anderen Namen hat. Durch die Verwendung dieser Annotation kann Ihre App Eigenschaftennamen zu Objekten haben, die von den Spaltennamen in der SQL-Datenbank abweichen. Ohne diese Annotation tritt aufgrund der unterschiedlichen Schreibweisen ein Fehler auf.
 
 2. Fügen Sie die folgenden Methoden zur ToDoItem-Klasse hinzu, um die neue mCreatedAt-Eigenschaft abzurufen und zu ändern:
 
@@ -139,7 +131,7 @@ Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in
 			return mCreatedAt;
 		}
 
-5. Öffnen Sie die Datei "ToDoItemAdapter.java" im Paket-Explorer, und fügen Sie die folgende **import**-Anweisung hinzu:
+5. Öffnen Sie die Datei "ToDoItemAdapter.java"im Paket-Explorer,und fügen Sie die folgende **import**-Anweisung hinzu:
 
 		import java.text.DateFormat;
 
@@ -153,7 +145,7 @@ Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in
 
    	Vorausgesetzt, dass ein Zeitstempelwert vorhanden ist, wird dadurch eine formatierte Datumszeichenfolge generiert. 
 
-7. Suchen Sie den Code `checkBox.setText(currentItem.getText());`, und ersetzen Sie diese Codezeile durch den folgenden Code:
+7. Suchen Sie den Code `checkBox.setText(currentItem.getText());`, und ersetzen Sie die Codezeile durch folgenden Code:
 
 		checkBox.setText(currentItem.getText() + " " + createdAtText);
 
@@ -163,7 +155,7 @@ Der Mobile Service-Client ignoriert alle Daten in einer Antwort, die er nicht in
 
    	Beachten Sie, dass der Zeitstempel für eingefügte Elemente nur angezeigt wird, nachdem Sie das insert-Skript aktualisiert haben.
 
-7. Ersetzen Sie die vorhandene **RefreshItemsFromTable**-Methode durch den folgenden Code:
+7. Ersetzen Sie die vorhandene Methode **RefreshItemsFromTable** durch den folgenden Code:
 
 		private void refreshItemsFromTable() {
 			
@@ -203,7 +195,7 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 * [Autorisieren von Benutzern mit Skripts]
   <br/>Erfahren Sie, wie Daten anhand der ID eines authentifizierten Benutzers gefiltert werden können.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 * [Mobile Services: Serverskriptreferenz]
@@ -234,3 +226,6 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+
+
+<!--HONumber=42-->

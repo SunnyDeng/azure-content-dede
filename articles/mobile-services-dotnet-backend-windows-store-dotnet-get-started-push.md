@@ -1,15 +1,15 @@
-<properties pageTitle="Erste Schritte mit Push Notification Hubs mithilfe von .NET Runtime Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Windows Store-App zu senden." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="wesmc,ricksal" solutions="mobile" manager="dwrede" editor="" />
+﻿<properties pageTitle="Erste Schritte mit Push Notification Hubs mithilfe von .NET Runtime Mobile Services" description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Windows Store-App zu senden." services="mobile-services, notification-hubs" documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc,ricksal" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc,ricksal"/>
 
 
-# Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
+# Hinzufügen von Pushbenachrichtigungen zu einer Mobile Services-App
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-push-legacy](../includes/mobile-services-selector-get-started-push-legacy.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push-legacy](../includes/mobile-services-selector-get-started-push-legacy.md)]
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services mit .NET-Back-End Pushbenachrichtigungen an eine universelle Windows-App senden. In diesem Lernprogramm aktivieren Sie Pushbenachrichtigungen mit Azure Notification Hubs für das universelle Windows-Schnellstartprojekt. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung vom .NET-Back-End über die Benachrichtigungshubs. Der von Ihnen erstellte Benachrichtigungshub ist für den mobilen Dienst kostenlos, kann unabhängig vom mobilen Dienst verwaltet werden und kann von anderen Anwendungen und Diensten verwendet werden.
 
->[WACOM.NOTE]In diesem Thema wird erläutert, wie Pushbenachrichtigungen mit dem Windows-Benachrichtigungsdienst (Windows Notification Service, WNS) für eine Windows Store-App manuell konfiguriert werden. Mithilfe von Visual Studio 2013 Tools können Sie dieselben Pushbenachrichtigungen in einem Windows-App-Projekt automatisch konfigurieren. Weitere Informationen finden Sie in der Lernprogrammversion zu [universellen Windows-Apps](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push).
+>[AZURE.NOTE]In diesem Thema wird erläutert, wie Pushbenachrichtigungen mit dem Windows-Benachrichtigungsdienst (Windows Notification Service, WNS) für eine Windows Store-App manuell konfiguriert werden. Mithilfe von Visual Studio 2013 Tools können Sie dieselben Pushbenachrichtigungen in einem Windows-App-Projekt automatisch konfigurieren. Weitere Informationen finden Sie in der Version für die [universelle Windows-App](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push) in diesem Lernprogramm.
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
@@ -21,11 +21,11 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abschließen, um Ihr Projekt mit Mobile Services zu verbinden. 
 
->[WACOM.NOTE]Dieses Thema unterstützt Windows Phone Store 8.1-Apps. Informationen zum Hinzufügen von Pushbenachrichtigungen zu einer Windows Phone 8- oder Windows Phone Silverlight 8.1-App finden Sie unter [Erste Schritte mit Pushbenachrichtigungen in Mobile Services](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push).
+>[AZURE.NOTE]Dieses Thema unterstützt Windows Phone Store 8.1-Apps. Informationen zum Hinzufügen von Pushbenachrichtigungen zu einer Windows Phone 8- oder Windows Phone Silverlight 8.1-App finden Sie unter [Erste Schritte mit Pushbenachrichtigungen in Mobile Services](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push).
 
-##<a id="register"></a> Registrieren Ihrer App bei WNS und Konfigurieren von Mobile Services
+##<a id="register"></a>Registrieren Ihrer App bei WNS und Konfigurieren von Mobile Services
 
-[WACOM.INCLUDE [mobile-services-notification-hubs-register-windows-store-app](../includes/mobile-services-notification-hubs-register-windows-store-app.md)]
+[AZURE.INCLUDE [mobile-services-notification-hubs-register-windows-store-app](../includes/mobile-services-notification-hubs-register-windows-store-app.md)]
 
 Sowohl der mobile Dienst als auch die Apps sind nun für die Verwendung von WNS und Notification Hubs konfiguriert. Anschließend aktualisieren Sie Ihre universelle Windows-App für die Registrierung für Benachrichtigungen.
 
@@ -33,12 +33,12 @@ Sowohl der mobile Dienst als auch die Apps sind nun für die Verwendung von WNS 
 
 Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachrichtigungskanal registrieren.
 
-1. Öffnen Sie in Visual Studio die Datei "App.xaml.cs", und fügen Sie die folgenden `using`-Anweisungen hinzu:
+1. Öffnen Sie in Visual Studio die Datei "App.xaml.cs", und fügen Sie die folgenden  `using`-Anweisungen hinzu:
 
         using Windows.Networking.PushNotifications;
 		using Windows.UI.Popups;
 
-2. Fügen Sie die folgende `InitNotificationAsync` Methode zur **App**-Klasse hinzu, um einen Pushbenachrichtigungskanal zu erstellen und sich für Pushbenachrichtigungen zu registrieren: 
+2. Fügen Sie die folgende `InitNotificationAsync`-Methode der **App**-Klasse hinzu, um einen Pushbenachrichtigungskanal zu erstellen und sich für Pushbenachrichtigungen zu registrieren: 
 	
         private async void InitNotificationsAsync()
         {
@@ -67,13 +67,13 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
     Dieser Code ruft den Kanal-URI für die App vom WNS ab und registriert anschließend diesen Kanal-URI für Pushbenachrichtigungen.
     
-3. Fügen Sie in der Datei "App.xaml.cs" am Anfang des **OnLaunched**-Ereignishandlers den folgenden Aufruf der neuen **InitNotificationsAsync**-Methode hinzu:
+3. Fügen Sie in der Datei "App.xaml.cs" am Anfang des **OnLaunched**-Ereignishandlers den folgenden Aufruf zu der neuen **InitNotificationsAsync**-Methode hinzu:
 
         InitNotificationsAsync();
 
-	Auf diese Weise wird sichergestellt, dass die Registrierung jedes Mal beim Laden der Seite angefordert wird. In Ihrer App möchten Sie diese Registrierung ggf. nur in bestimmten Abständen vornehmen, um sicherzustellen, dass die Registrierung noch aktuell ist. 
+	Dadurch wird sichergestellt, dass die Registrierung jedes Mal beim Laden der Seite angefordert wird. In Ihrer App möchten Sie diese Registrierung ggf. nur in bestimmten Abständen vornehmen, um sicherzustellen, dass die Registrierung noch aktuell ist. 
 
-4. Öffnen Sie in Visual Studio die Datei "Package.appxmanifest" und vergewissern Sie sich, dass **Toast Capable** in der Registerkarte **Application UI** auf **Yes** gesetzt ist. Speichern Sie die Datei.
+4. Öffnen Sie in Visual Studio die Datei "Package.appxmanifest" und vergewissern Sie sich, dass **Toastfähig** in der Registerkarte **Anwendungsbenutzeroberfläche** auf **Ja** gesetzt ist. Speichern Sie die Datei.
 
    	![][1]
 
@@ -81,45 +81,45 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
 ##<a id="update-server"></a> Aktualisieren des Servers zum Senden von Pushbenachrichtigungen
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-update-server-push](../includes/mobile-services-dotnet-backend-update-server-push.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-update-server-push](../includes/mobile-services-dotnet-backend-update-server-push.md)]
 
 ##<a id="local-testing"></a> Aktivieren von Pushbenachrichtigungen für lokale Tests
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-configure-local-push](../includes/mobile-services-dotnet-backend-configure-local-push.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-local-push](../includes/mobile-services-dotnet-backend-configure-local-push.md)]
 
 ##<a id="test"></a> Testen von Pushbenachrichtigungen in der App
 
-[WACOM.INCLUDE [mobile-services-windows-store-test-push](../includes/mobile-services-windows-store-test-push.md)]
+[AZURE.INCLUDE [mobile-services-windows-store-test-push](../includes/mobile-services-windows-store-test-push.md)]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Store-App für die Verwendung von Mobile Services und Benachrichtigungshubs zum Senden von Pushbenachrichtigungen gezeigt. Als Nächstes können Sie das Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer] ausführen, in dem die Verwendung von Tags zum Versand von Pushbenachrichtigungen von einem mobilen Dienst ausschließlich an einen authentifizierten Benutzer demonstriert wird.
+In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Store-App für die Verwendung von Mobile Services und Notification Hubs zum Senden von Pushbenachrichtigungen gezeigt. Als Nächstes können Sie das Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer] ausführen, in dem die Verwendung von Tags zum Versand von Pushbenachrichtigungen von einem mobilen Dienst ausschließlich an einen authentifizierten Benutzer demonstriert wird.
 
-<!--+ [Send push notifications to authenticated users]
-	<br/>Erfahren Sie, wie Sie Tags verwenden können, um Pushbenachrichtigungen aus einem Mobile Service nur an  einen authentifizierten Benutzer zu senden.
+<!--+ [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]
+	<br/>Erfahren Sie, wie Pushbenachrichtigungen mithilfe von Tags von einem mobilen Dienst ausschließlich an einen authentifizierten Benutzer gesendet werden.
 
 + [Senden von Übertragungsbenachrichtigungen an Abonnenten]
-	<br/>Erfahren Sie, wie Benutzer sich registrieren und Pushbenachrichtigungen für Kategorien empfangen können, die sie interessieren.
+	<br/>Erfahren Sie, wie sich Benutzer registrieren und Pushbenachrichtigungen für Kategorien erhalten können, an denen sie interessiert sind.
 
 + [Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]
-	<br/>Erfahren Sie, wie Sie Vorlagen verwenden können, um Pushbenachrichtigungen von einem Mobile Service zu senden, ohne plattformspezifische Nutzdaten in Ihrem Back-End erstellen zu müssen.
+	<br/>Erfahren Sie, wie Vorlagen zum Senden von Pushbenachrichtigungen mit einem mobilen Dienst gesendet werden, ohne dass Sie in Ihrem Back-End auf plattformspezifische Nutzlasten zurückgreifen müssen.
 -->
 Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in den folgenden Themen:
 
 * [Erste Schritte mit Daten]
-  <br/>Erfahren Sie mehr zum Speichern und Abfragen von Daten mit Mobile Services.
+  <br/>Erfahren Sie mehr über das Speichern und Abfragen von Daten mit Mobile Services.
 
 * [Erste Schritte mit der Authentifizierung]
-  <br/>Erfahren Sie mehr darüber, wie sich Benutzer Ihrer App mit verschiedenen Kontotypen mit Mobile Services authentifizieren können.
+  <br/>Erfahren Sie mehr über die Authentifizierung von Benutzern Ihrer App mit verschiedenen Kontotypen über Mobile Services.
 
 * [Was sind Notification Hubs?]
-  <br/>Erfahren Sie, wie Sie mit Notification Hubs arbeiten, um Benachrichtigungen auf allen großen Clientplattformen an Ihre Apps zu senden.
+  <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
 
 * [Debuggen von Notification Hubs-Anwendungen](http://go.microsoft.com/fwlink/p/?linkid=386630)
-  </br>Erhalten Sie Anleitungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen. 
+  </br>Erhalten Sie Anweisungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen. 
 
 * [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
-  <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET
+  <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 <!-- Anchors. -->
 
@@ -132,7 +132,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 <!-- URLs. -->
-[Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
@@ -147,3 +147,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-html-how-to-use-client-library
+
+
+<!--HONumber=42-->

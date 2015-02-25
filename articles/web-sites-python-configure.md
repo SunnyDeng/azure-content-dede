@@ -1,132 +1,406 @@
-﻿<properties urlDisplayName="Configuring Python with Azure Websites" pageTitle="Konfigurieren von Python mit Azure-Websites" metaKeywords="" description="In diesem Lernprogramm werden die Optionen für das Erstellen und Konfigurieren einer grundlegenden Web Server Gateway Interface (WSGI)-kompatiblen Python-Anwendung in Azure Websites beschrieben." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Websites" authors="huvalo" solutions="" manager="wpickett" editor="" />
+﻿<properties 
+	pageTitle="Konfigurieren von Python mit Azure-Websites" 
+	description="Dieses Lernprogramm beschreibt die Optionen für das Erstellen und Konfigurieren einer einfachen WSGI-kompatiblen (Web Server Gateway Interface) Python-Anwendung auf Azure-Websites." 
+	services="web-sites" 
+	documentationCenter="python" 
+	authors="huguesv" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="08/01/2014" ms.author="huvalo" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="12/17/2014" 
+	ms.author="huvalo"/>
 
 
 
 
-# Konfigurieren von Python mit Azure-Websites #
+# Konfigurieren von Python mit Azure-Websites
 
-Dieses Lernprogramm beschreibt die Optionen für das Erstellen und Konfigurieren einer grundlegenden Web Server Gateway Interface (WSGI)-kompatiblen Python-Anwendung auf Azure-Websites. Die ersten Schritte mit Azure-Websites sind leicht, und Ihre Python-Anwendung kann skaliert und auf andere Azure-Dienste ausgedehnt werden. Die Azure-Websites-Plattform umfasst Python (wahlweise 2.7.3 oder 3.4.0) und den generischen FastCGI-Handler für Python "wfastcgi.py". Sie müssen lediglich die Website für die Verwendung des Python-Handlers konfigurieren. 
+Dieses Lernprogramm beschreibt die Optionen für das Erstellen und Konfigurieren einer einfachen WSGI-kompatiblen (Web Server Gateway Interface) Python-Anwendung auf Azure-Websites.
 
-> [WACOM.NOTE] Sie können die Python-Version auswählen, die Sie im Azure-Websites-Portal verwenden möchten. Dazu öffnen Sie die Registerkarte "Konfigurieren" Ihrer Website und ändern die Einstellung **Python-Version**.
+Außerdem beschrieben werden zusätzliche Funktionen der Git-Bereitstellung, z. B. virtuelle Umgebung und Paketinstallation mithile von "requirements.txt".
 
-Ein komplexeres Beispiel für die Konfiguration des Django-Frameworks auf Azure-Websites finden Sie in folgendem Lernprogramm: 
-[http://www.windowsazure.com/de-de/develop/python/tutorials/web-sites-with-django](http://www.windowsazure.com/de-de/develop/python/tutorials/web-sites-with-django).  
++ [Bottle, Django oder Flask?](#bottle-django-flask)
++ [Erstellen von Websites im Portal](#website-creation-on-portal)
++ [Git-Veröffentlichung](#git-publishing)
++ [Anwendungsübersicht](#application-overview)
++ [WSGI-Handler](#wsgi-handler)
++ [Virtuelle Umgebung](#next-steps)
++ [Verwalten von Paketen](#next-steps)
++ [Python-Version](#next-steps)
++ [Proxy für die virtuelle Umgebung](#virtual-environment-proxy)
++ [Anpassen der Git-Bereitstellung](#customize-git-deployment)
++ [Problembehandlung - Bereitstellung](#troubleshooting-deployment)
++ [Problembehandlung - Paketinstallation](#troubleshooting-package-installation)
++ [Problembehandlung - virtuelle Umgebung](#troubleshooting-virtual-environment)
 
-## WSGI-Unterstützung
 
-WSGI ist ein Python-Standard entsprechend [PEP 3333],(http://www.python.org/dev/peps/pep-3333/) der eine Schnittstelle zwischen Webserver und Python definiert. Es bietet eine standardisierte Schnittstelle zum Schreiben verschiedener Webanwendungen und Frameworks mit Python.  Beliebte Python-Webframeworks nutzen heute WSGI.  Azure-Websites bietet Ihnen die Unterstützung für solche Frameworks. Darüber hinaus können erfahrenere Benutzer auch ihre eigenen Frameworks erstellen, sofern der benutzerdefinierte Handler die Richtlinien der WSGI-Spezifikation befolgt.
+<h2><a name="bottle-django-flask"></a>Bottle, Django oder Flask?</h2>
 
-## Websiteerstellung
+Der Azure-Katalog enthält Vorlagen für die Frameworks Bottle, Django und Flask.  Wenn Sie Ihre erste Azure-Website entwickeln oder nicht mit Git vertraut sind, empfehlen wir, dass Sie diese Lernprogramme befolgen, die schrittweise Anleitungen zum Entwickeln einer funktionierenden Anwendung aus dem Katalog mithilfe der Git-Bereitstellung unter Windows oder Mac enthalten:
 
-Für dieses Lernprogramm wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugang zum Azure-Verwaltungsportal haben. Detaillierte Anweisungen zum Erstellen einer Website finden Sie unter [http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-create-websites](http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-create-websites).
- 
-Wenn Sie noch keine Website haben, können Sie eine über das Azure-Verwaltungsportal erstellen. Wählen Sie die Funktion WEBSITES und dann SCHNELLERFASSUNG aus, und geben Sie eine URL für Ihre Website an.
+- [Erstellen von Websites mit Bottle][]
+- [Erstellen von Websites mit Django][]
+- [Erstellen von Websites mit Flask][]
+
+
+<h2><a name="website-creation-on-portal"></a>Erstellen von Websites im Portal</h2>
+
+Für dieses Lernprogramm wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugang zum Azure-Verwaltungsportal haben.
+
+Wenn Sie noch keine Website haben, können Sie eine über das Azure-Verwaltungsportal erstellen.  Klicken Sie auf die Schaltfläche "NEU" in der unteren linken Ecke. Daraufhin wird ein Fenster angezeigt. Klicken Sie auf SERVER, WEBSITE und dann auf SCHNELLERFASSUNG.
 
 ![](./media/web-sites-python-configure/configure-python-create-website.png)
 
-## Git-Veröffentlichung
 
-Verwenden Sie die Registerkarte SCHNELLSTART oder DASHBOARD für die neu erstellte Website, um die Git-Veröffentlichung zu konfigurieren.  In diesem Lernprogramm wird die Python-Website mit Git erstellt, verwaltet und auf Azure-Websites veröffentlicht. 
+<h2><a name="git-publishing"></a>Git-Veröffentlichung</h2>
+
+Verwenden Sie die Registerkarte SCHNELLSTART oder DASHBOARD für die neu erstellte Website, um die Git-Veröffentlichung zu konfigurieren.  In diesem Lernprogramm wird die Python-Website mit Git erstellt, verwaltet und auf Azure-Websites veröffentlicht.
 
 ![](./media/web-sites-python-configure/configure-python-git.png)
 
 Sobald die Git-Veröffentlichung eingerichtet ist, wird ein Git-Repository erstellt und der Website zugewiesen.  Die URL des Repository wird angezeigt und kann ab sofort verwendet werden, um Daten aus der lokalen Entwicklungsumgebung mittels Push in die Cloud zu übertragen. Stellen Sie beim Veröffentlichen von Anwendungen mittels Git sicher, dass auch ein Git-Client installiert ist, und verwenden Sie die bereitgestellten Anweisungen, um den Websiteinhalt per Push auf Azure-Websites zu übertragen.
 
-## Websiteinhalt
 
-Am Beispiel einer grundlegenden Python-Anwendung mit einem allgemeinen WSGI-Handler wird veranschaulicht, wie wenig Arbeitsaufwand erforderlich ist, um von der Python-Unterstützung in Azure-Websites zu profitieren.  Anhand dieses Grundgerüsts einer Python-Anwendung können Sie dann verschiedene Lösungen entwickeln, wobei deren Komplexität von dem unten gezeigten Beispiel bis hin zu einem umfassenden Webframework reicht.  
+<h2><a name="application-overview"></a>Anwendungsübersicht</h2>
 
-Nachfolgend sehen Sie den Code für den allgemeinen WSGI-Handler. Das ist vergleichbar mit den von [PEP 3333](http://www.python.org/dev/peps/pep-3333/) empfohlenen Spezifikationen als Ausgangspunkt für eine WSGI-kompatible Anwendung. Dieser Inhalt wurde in einer Datei namens "ConfigurePython.py" gespeichert, die in einem Ordner namens "ConfigurePython" im Stammverzeichnis der Website erstellt wurde:
+In den nächsten Abschnitten werden die folgenden Dateien erstellt.  Sie müssen im Stammverzeichnis des Git-Repositorys gespeichert werden.
 
-	def application(environ, start_response):
-	    status = '200 OK'
-	    response_headers = [('Content-type', 'text/plain')]
-	    start_response(status, response_headers)
-	    yield 'Hello from Azure Websites\n'
+    app.py
+    requirements.txt
+    runtime.txt
+    web.config
+    ptvs_virtualenv_proxy.py
 
-*application* ist ein mit Python aufrufbares Element, das als Einstiegspunkt dient, der von einem WSGI-kompatiblen Server aufgerufen wird. Dieses aufrufbare Objekt akzeptiert zwei Positionsargumente: 
 
-* *environ*: ein Wörterbuch mit verschiedenen Umgebungsvariablen
-* *start_response*: ein aufrufbares Element des Webservers für die Übertragung des HTTP-Status und der Antwort-Header
+<h2><a name="wsgi-handler"></a>WSGI-Handler</h2>
 
-Dieser Handler gibt den einfachen Text "Hello from Azure Websites" für jede eingehende Anforderung zurück.
+WSGI ist ein Python-Standard, der in der Spezifikation [PEP 3333](http://www.python.org/dev/peps/pep-3333/) beschrieben wird und der eine Schnittstelle zwischen dem Webserver und Python definiert. Es bietet eine standardisierte Schnittstelle zum Schreiben verschiedener Webanwendungen und Frameworks mit Python.  Beliebte Python-Webframeworks nutzen heute WSGI.  Azure-Websites bietet Ihnen die Unterstützung für solche Frameworks. Darüber hinaus können erfahrenere Benutzer auch ihre eigenen Frameworks erstellen, sofern der benutzerdefinierte Handler die Richtlinien der WSGI-Spezifikation befolgt.
 
-## Konfigurationsoptionen
+Hier ist ein Beispiel für der Datei  `app.py`, die einen benutzerdefinierten Handler definiert:
 
-Es gibt zwei verschiedene Optionen zum Konfigurieren Ihrer Python-Anwendung mit Azure-Websites.
+    def wsgi_app(environ, start_response):
+        status = '200 OK'
+        response_headers = [('Content-type', 'text/plain')]
+        start_response(status, response_headers)
+        response_body = 'Hello World'
+        yield response_body.encode()
 
-<h3 id="option1">Option 1: Portal</h3>
+    if __name__ == '__main__':
+        from wsgiref.simple_server import make_server
 
-1,1. Registrieren Sie den FastCGI-Handler auf der Registerkarte KONFIGURIEREN im Portal.
-In diesem Beispiel wird der FastCGI-Handler für Python verwendet, der im Lieferumfang von Azure-Websites enthalten ist. Verwenden Sie gleichermaßen die folgenden Pfade für Ihren Skriptprozessor und Ihr FastCGI-Handler-Argument:
+        httpd = make_server('localhost', 5555, wsgi_app)
+        httpd.serve_forever()
 
-* Pfad für Python-Skriptprozessor: D:\python27\python.exe
-* Pfad für Python FastCGI-Handler: D:\python27\scripts\wfastcgi.py
+Sie können diese Anwendung lokal mit  `python app.py` ausführen und dann in Ihrem Webbrowser zu `http://localhost:5555` navigieren.
 
-![](./media/web-sites-python-configure/configure-python-handler-mapping.png)
 
-1,2. Konfigurieren Sie die Anwendungseinstellungen über dieselbe Registerkarte KONFIGURIEREN im Portal.
-Die Anwendungseinstellungen werden in Umgebungsvariablen umgewandelt. Dies ist ein Mechanismus, den Sie für Konfigurationswerte verwenden können, die von Ihrer Python-Anwendung benötigt werden. Bei dieser allgemeinen Beispielanwendung wurde Folgendes konfiguriert:
+<h2><a name="virtual-environment"></a>Virtuelle Umgebung</h2>
 
-* PYTHONPATH informiert Python über das Verzeichnis, in dem nach Modulen gesucht werden soll. Azure-Websites bietet "D:\home\site\wwwroot" als syntaktischen Zucker, der auf das Stammverzeichnis Ihrer Website verweist. 
-* WSGI\_HANDLER zeichnet einen Modul- oder Paketnamen sowie das zu verwendende Attribut auf.
+Obwohl die obige Beispiel-App keine externen Pakete erfordert, ist es wahrscheinlich, dass Ihre Anwendung einige benötigt.
 
-![](./media/web-sites-python-configure/configure-python-app-settings.png)
+Zur besseren Verwaltung externer Paketabhängigkeiten unterstützt die Azure Git-Bereitstellung die Erstellung virtueller Umgebungen.
 
-<h3 id="option2">Option 2: web.config</h3>
-Alternativ kann für die Konfiguration eine web.config-Datei im Stammverzeichnis der Website für die nachfolgend beschriebenen Aktionen verwendet werden. Die Option "web.config" bietet ein besseres Portabilitätspotenzial für eine Webanwendung. Es gibt zwei Ansätze für das Weiterleiten von Anfragen an die Webanwendung: Festlegen eines Handlers, der den *-Pfad verarbeitet, der wiederum IIS anweist, jede eingehende Anforderung durch Python zu leiten; oder Festlegen eines spezifischen Pfads, den Python verarbeitet, und anschließende Bereitstellung einer URL-Neuschreibung, um verschiedene URLs an den ausgewählten Pfad umzuleiten.  Wir empfehlen zur Leistungssteigerung letzteren Ansatz, wobei eine leere Handlerdatei im Stammverzeichnis der Website verwendet wird, die als Anforderungsziel dient (in unserem Beispiel "handler.fcgi"). Im vorherigen Szenario müssen alle Anforderungen, auch die für statischen Inhalt (z. B. Bilddateien und Stylesheets), Python durchlaufen, wobei die Optimierungen des Webservers im Hinblick auf den Zugriff auf statische Dateien umgekehrt werden.  Der letztere Ansatz ermöglicht die effiziente Bereitstellung von statischem Inhalt und ruft Python nur auf, wenn es notwendig ist.
+Wenn Azure eine Datei namens "requirements.txt" im Stammverzeichnis des Repositorys erkennt, wird automatisch eine virtuelle Umgebung mit dem Namen  `env` erstellt.  Dies erfolgt nur bei der ersten Bereitstellung oder bei jeder Bereitstellung, nachdem die ausgewählte Python-Laufzeit geändert wurde.
 
-2,1. Legen Sie die PYTHONPATH-Variable fest. 
-> Dadurch wird Python darüber informiert, wo es nach dem Anwendungscode suchen soll. "D:\home\site\wwwroot" wird hier ebenfalls als absoluter Pfad zur Website verwendet.
+Sie werden wahrscheinlich eine virtuelle Umgebung für die lokale Entwicklung erstellen. Fügen Sie diese jedoch nicht Ihrem Git-Repository hinzu.
 
-2,2. Legen Sie die Variable WSGI\_HANDLER fest.
-> Azure-Websites verwendet diesen Wert, um Python anzuweisen, den WSGI-Handler aufzurufen.  Der Wert dieser Variable ist ein Python-Ausdruck, der bei Ausführung ein aufrufbares Element zurückgeben sollte, das einen WSGI-Handler darstellt. 
 
-2,3. Fügen Sie einen Handler für Python hinzu.
-> Damit wird Azure Websites informiert, dass Python Anfragen übernehmen soll, die an den Pfad handler.fcgi erfolgen. Es ist wichtig, dass die Handlersyntax dabei genauso aussieht, wie in dem unten stehenden Beispiel im Tag &lt;handlers&gt;, es sei denn, Sie verwenden Ihren eigenen FastCGI-Handler oder Ihr eigenes Python-Entwicklerstack.
+<h2><a name="package-management"></a>Verwalten von Paketen</h2>
 
-2,4. Schreiben Sie URLs für "handler.fcgi" neu.
-> Die kontinuierliche Anforderung von "handler.fcgi" ist möglicherweise nicht die beste Lösung. Zur Auswahl des Pfads mit Dateien, die vom Python-Handler verarbeitet werden sollen, haben wir eine URL-Neuschreibung verwendet, damit alle URLs von unserem Python-Handler verarbeitet werden.
+In "requirements.txt" aufgeführe Paket werden mit Pip in der virtuellen Umgebung automatisch installiert.  Dies erfolgt bei jeder Bereitstellung, doch Pip überspringt die Installation, wenn ein Paket bereits installiert ist.
 
-	<configuration>
-  		<appSettings>
-    		<add key="pythonpath" value="D:\home\site\wwwroot\ConfigurePython" />
-    		<add key="WSGI_HANDLER" value="ConfigurePython.application" />
-  		</appSettings>
-  		<system.webServer>
-    		<handlers>
-      			<add name="PythonHandler" 
-           		verb="*" path="handler.fcgi" 
-           		modules="FastCgiModule" 
-           		scriptProcessor="D:\Python27\Python.exe|D:\Python27\Scripts\wfastcgi.py" 
-           		resourceType="Either" />
-   			</handlers>
-			<rewrite>
-	    		<rules>
-					<rule name="Configure Python" stopProcessing="true">
-		    			<match url="(.*)" ignoreCase="false" />
-		    			<conditions>
-							<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-		    			</conditions>
-		    			<action type="Rewrite" url="handler.fcgi/{R:1}" appendQueryString="true" />
-					</rule>
-	    		</rules>
-			</rewrite>
-  		</system.webServer>
-	</configuration> 
+Beispiel `requirements.txt`:
 
-Die Ordnerstruktur für das Beispiel im Stammverzeichnis der Website sieht folgendermaßen aus (die Groß-/Kleinschreibung von Ordner- und Dateinamen muss bei Python beachtet werden und wird in "web.config" deutlich):
+    azure==0.8.4
 
-* ConfigurePython\ConfigurePython.py
-* web.config
-* handler.fcgi
 
-Da alle URLs zu "handler.fcgi" neu geschrieben werden und dieser Pfad per FastCGI an Python übergeben wird, muss eine Platzhalterdatei mit demselben Namen erstellt werden, damit IIS keinen HTTP 404-Fehler zurückgibt. Die Ursache dafür ist das interne Verhalten des IIS FastCGI-Moduls, das ein Vorhandensein der angeforderten Datei zwingend erforderlich macht, bevor sie an die festgelegte Skriptprozessoranwendung übergeben wird.
+<h2><a name="python-version"></a>Python-Version</h2>
 
-Navigieren Sie zu Ihrer Website, um die richtige Konfiguration zu testen. In diesem Beispiel wird die Meldung "Hello from Azure Websites" beim Zugriff angezeigt.
+[AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-runtime.md)]
 
-![](./media/web-sites-python-configure/configure-python-result.png)
+Beispiel `runtime.txt`:
 
-\n<!--HONumber=35.1--> 
+    python-2.7
+
+
+<h2><a name="web-config"></a>Web.config</h2>
+
+Sie müssen eine "web.config"-Datei erstellen, um anzugeben, wie der Server Anforderungen verarbeiten soll.
+
+Beachten Sie, dass wenn Sie eine "web.x.y.config"-Datei im Repository vorhanden ist, wobei "x.y" der ausgewählten Python-Laufzeit entspricht, dann kopiert Azure automatisch die entsprechende Datei als "web.config".
+
+Die folgenden "web.config"-Beispiele basieren auf einem Proxyskript für eine virtuelle Umgebung, das im nächsten Abschnitt beschrieben wird.  Sie funktionieren mit dem im obigen Beispiel von  `app.py` verwendeten WSGI-Handler.
+
+Beispiel von  `web.config` für Python 2.7:
+
+    <?xml version="1.0"?>
+    <configuration>
+      <appSettings>
+        <add key="WSGI_ALT_VIRTUALENV_HANDLER" value="app.wsgi_app" />
+        <add key="WSGI_ALT_VIRTUALENV_ACTIVATE_THIS"
+             value="D:\home\site\wwwroot\env\Scripts\activate_this.py" />
+        <add key="WSGI_HANDLER"
+             value="ptvs_virtualenv_proxy.get_virtualenv_handler()" />
+        <add key="PYTHONPATH" value="D:\home\site\wwwroot" />
+      </appSettings>
+      <system.web>
+        <compilation debug="true" targetFramework="4.0" />
+      </system.web>
+      <system.webServer>
+        <modules runAllManagedModulesForAllRequests="true" />
+        <handlers>
+          <remove name="Python273_via_FastCGI" />
+          <remove name="Python340_via_FastCGI" />
+          <add name="Python FastCGI"
+               path="handler.fcgi"
+               verb="*"
+               modules="FastCgiModule"
+               scriptProcessor="D:\Python27\python.exe|D:\Python27\Scripts\wfastcgi.py"
+               resourceType="Unspecified"
+               requireAccess="Script" />
+        </handlers>
+        <rewrite>
+          <rules>
+            <rule name="Static Files" stopProcessing="true">
+              <conditions>
+                <add input="true" pattern="false" />
+              </conditions>
+            </rule>
+            <rule name="Configure Python" stopProcessing="true">
+              <match url="(.*)" ignoreCase="false" />
+              <conditions>
+              </conditions>
+              <action type="Rewrite"
+                      url="handler.fcgi/{R:1}"
+                      appendQueryString="true" />
+            </rule>
+          </rules>
+        </rewrite>
+      </system.webServer>
+    </configuration>
+
+
+Beispiel von  `web.config` für Python 3.4:
+
+    <?xml version="1.0"?>
+    <configuration>
+      <appSettings>
+        <add key="WSGI_ALT_VIRTUALENV_HANDLER" value="app.wsgi_app" />
+        <add key="WSGI_ALT_VIRTUALENV_ACTIVATE_THIS"
+             value="D:\home\site\wwwroot\env\Scripts\python.exe" />
+        <add key="WSGI_HANDLER"
+             value="ptvs_virtualenv_proxy.get_venv_handler()" />
+        <add key="PYTHONPATH" value="D:\home\site\wwwroot" />
+      </appSettings>
+      <system.web>
+        <compilation debug="true" targetFramework="4.0" />
+      </system.web>
+      <system.webServer>
+        <modules runAllManagedModulesForAllRequests="true" />
+        <handlers>
+          <remove name="Python273_via_FastCGI" />
+          <remove name="Python340_via_FastCGI" />
+          <add name="Python FastCGI"
+               path="handler.fcgi"
+               verb="*"
+               modules="FastCgiModule"
+               scriptProcessor="D:\Python34\python.exe|D:\Python34\Scripts\wfastcgi.py"
+               resourceType="Unspecified"
+               requireAccess="Script" />
+        </handlers>
+        <rewrite>
+          <rules>
+            <rule name="Static Files" stopProcessing="true">
+              <conditions>
+                <add input="true" pattern="false" />
+              </conditions>
+            </rule>
+            <rule name="Configure Python" stopProcessing="true">
+              <match url="(.*)" ignoreCase="false" />
+              <conditions>
+              </conditions>
+              <action type="Rewrite" url="handler.fcgi/{R:1}" appendQueryString="true" />
+            </rule>
+          </rules>
+        </rewrite>
+      </system.webServer>
+    </configuration>
+
+
+Statische Dateien werden für eine bessere Leistung direkt vom Webserver ohne Umweg über Python-Code verarbeitet.
+
+In den obigen Beispielen muss der Speicherort der statischen Dateien auf dem Datenträger mit dem Speicherort in der URL übereinstimmen.  Dies bedeutet, dass eine Anforderung für  `http://pythonapp.azurewebsites.net/static/site.css` der Datei auf dem Datenträger in  `\static\site.css` gilt.
+
+Es ist möglich, die Regel  `Static Files` so zu konfigurieren, dass Dateien an einem Speicherort auf dem Datenträger bereitgestellt werden, der sich vom Speicherort in der URL unterscheidet.  In der folgenden Regeldefinition gilt eine Anforderung für  `http://pythonapp.azurewebsites.net/static/site.css` der Datei auf dem Datenträger  in  `\FlaskWebProject\static\site.css` anstelle von  `\static\site.css`.
+
+    <rule name="Static Files" stopProcessing="true">
+      <match url="^/static/.*" ignoreCase="true" />
+      <action type="Rewrite" url="^/FlaskWebProject/static/.*" appendQueryString="true" />
+    </rule>
+
+`WSGI_ALT_VIRTUALENV_HANDLER`  dient zum Angeben des WSGI-Handlers.  In den obigen Beispielen, handelt es sich um  `app.wsgi_app`, da der Handler eine Funktion namens  `wsgi_app` in  `app.py` im Stammordner ist.
+
+`PYTHONPATH` kann angepasst werden, doch wenn Sie alle Ihre Abhängigkeiten in der virtuellen Umgebung installieren, indem Sie sie in "requirements.txt" angeben, sollten keine Änderungen erforderlich sein.
+
+
+<h2><a name="virtual-environment-proxy"></a>Proxy für die virtuelle Umgebung</h2>
+
+Das folgende Skript dient zum Abrufen des WSGI-Handlers, Aktivieren der virtuellen Umgebung und Protokollieren von Fehlern. Es ist generisch ausgelegt und soll ohne Änderungen verwendet werden.
+
+Inhalt von  `ptvs_virtualenv_proxy.py`:
+
+     # ############################################################################
+     #
+     # Copyright (c) Microsoft Corporation. 
+     #
+     # This source code is subject to terms and conditions of the Apache License, Version 2.0. A 
+     # copy of the license can be found in the License.html file at the root of this distribution. If 
+     # you cannot locate the Apache License, Version 2.0, please send an email to 
+     # vspython@microsoft.com. By using this source code in any fashion, you are agreeing to be bound 
+     # by the terms of the Apache License, Version 2.0.
+     #
+     # You must not remove this notice, or any other, from this software.
+     #
+     # ###########################################################################
+
+    import datetime
+    import os
+    import sys
+
+    if sys.version_info[0] == 3:
+        def to_str(value):
+            return value.decode(sys.getfilesystemencoding())
+
+        def execfile(path, global_dict):
+            """Execute a file"""
+            with open(path, 'r') as f:
+                code = f.read()
+            code = code.replace('\r\n', '\n') + '\n'
+            exec(code, global_dict)
+    else:
+        def to_str(value):
+            return value.encode(sys.getfilesystemencoding())
+
+    def log(txt):
+        """Logs fatal errors to a log file if WSGI_LOG env var is defined"""
+        log_file = os.environ.get('WSGI_LOG')
+        if log_file:
+            f = open(log_file, 'a+')
+            try:
+                f.write('%s: %s' % (datetime.datetime.now(), txt))
+            finally:
+                f.close()
+
+    ptvsd_secret = os.getenv('WSGI_PTVSD_SECRET')
+    if ptvsd_secret:
+        log('Enabling ptvsd ...\n')
+        try:
+            import ptvsd
+            try:
+                ptvsd.enable_attach(ptvsd_secret)
+                log('ptvsd enabled.\n')
+            except: 
+                log('ptvsd.enable_attach failed\n')
+        except ImportError:
+            log('error importing ptvsd.\n');
+
+    def get_wsgi_handler(handler_name):
+        if not handler_name:
+            raise Exception('WSGI_HANDLER env var must be set')
+        
+        if not isinstance(handler_name, str):
+            handler_name = to_str(handler_name)
+
+        module_name, _, callable_name = handler_name.rpartition('.')
+        should_call = callable_name.endswith('()')
+        callable_name = callable_name[:-2] if should_call else callable_name
+        name_list = [(callable_name, should_call)]
+        handler = None
+
+        while module_name:
+            try:
+                handler = __import__(module_name, fromlist=[name_list[0][0]])
+                for name, should_call in name_list:
+                    handler = getattr(handler, name)
+                    if should_call:
+                        handler = handler()
+                break
+            except ImportError:
+                module_name, _, callable_name = module_name.rpartition('.')
+                should_call = callable_name.endswith('()')
+                callable_name = callable_name[:-2] if should_call else callable_name
+                name_list.insert(0, (callable_name, should_call))
+                handler = None
+
+        if handler is None:
+            raise ValueError('"%s" could not be imported' % handler_name)
+
+        return handler
+
+    activate_this = os.getenv('WSGI_ALT_VIRTUALENV_ACTIVATE_THIS')
+    if not activate_this:
+        raise Exception('WSGI_ALT_VIRTUALENV_ACTIVATE_THIS is not set')
+
+    def get_virtualenv_handler():
+        log('Activating virtualenv with %s\n' % activate_this)
+        execfile(activate_this, dict(__file__=activate_this))
+
+        log('Getting handler %s\n' % os.getenv('WSGI_ALT_VIRTUALENV_HANDLER'))
+        handler = get_wsgi_handler(os.getenv('WSGI_ALT_VIRTUALENV_HANDLER'))
+        log('Got handler: %r\n' % handler)
+        return handler
+
+    def get_venv_handler():
+        log('Activating venv with executable at %s\n' % activate_this)
+        import site
+        sys.executable = activate_this
+        old_sys_path, sys.path = sys.path, []
+        
+        site.main()
+        
+        sys.path.insert(0, '')
+        for item in old_sys_path:
+            if item not in sys.path:
+                sys.path.append(item)
+
+        log('Getting handler %s\n' % os.getenv('WSGI_ALT_VIRTUALENV_HANDLER'))
+        handler = get_wsgi_handler(os.getenv('WSGI_ALT_VIRTUALENV_HANDLER'))
+        log('Got handler: %r\n' % handler)
+        return handler
+
+
+<h2><a name="customize-git-deployment"></a>Anpassen der Git-Bereitstellung</h2>
+
+[AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-deployment.md)]
+
+
+<h2><a name="troubleshooting-deployment"></a>Problembehandlung - Bereitstellung</h2>
+
+[AZURE.INCLUDE [web-sites-python-troubleshooting-deployment](../includes/web-sites-python-troubleshooting-deployment.md)]
+
+
+<h2><a name="troubleshooting-package-installation"></a>Problembehandlung - Paketinstallation</h2>
+
+[AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
+
+
+<h2><a name="troubleshooting-virtual-environment"></a>Problembehandlung - Virtuelle Umgebung</h2>
+
+[AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
+
+
+
+[Erstellen von Websites mit Bottle]: ../web-sites-python-create-deploy-bottle-app
+[Erstellen von Websites mit Django]: ../web-sites-python-create-deploy-django-app
+[Erstellen von Websites mit Flask]: ../web-sites-python-create-deploy-flask-app
+
+
+
+
+<!--HONumber=42-->

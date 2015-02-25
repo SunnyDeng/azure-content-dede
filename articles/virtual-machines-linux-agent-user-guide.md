@@ -1,6 +1,6 @@
-<properties urlDisplayName="Linux Agent guide" pageTitle="Benutzerhandbuch für Linux-Agent für Azure" metaKeywords="" description="Erfahren Sie, wie Sie den Linux-Agent (waagent) zum Verwalten der Interaktion Ihres virtuellen Computers mit Azure Fabric Controller installieren und konfigurieren." metaCanonical="" services="virtual-machines" documentationCenter="" title="Azure Linux Agent User Guide" authors="szarkos" solutions="" manager="timlt" editor="" />
+﻿<properties pageTitle="Benutzerhandbuch für Linux-Agent für Azure" description="Erfahren Sie, wie Sie den Linux-Agent (waagent) zum Verwalten der Interaktion Ihres virtuellen Computers mit Azure Fabric Controller installieren und konfigurieren." services="virtual-machines" documentationCenter="" authors="szarkos" manager="timlt" editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="10/20/2014" ms.author="szarkos" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="10/20/2014" ms.author="szarkos"/>
 
 
 
@@ -12,7 +12,7 @@
 
 Der Azure Linux-Agent (waagent) verwaltet die Interaktion eines virtuellen Computers mit dem Azure Fabric Controller. Er tut Folgendes:
 
-* **Imagebereitstellung**
+* **Image-Bereitstellung**
   - Erstellen eines Benutzerkontos
   - Konfigurieren der SSH-Authentifizierungstypen
   - Bereitstellen von öffentlichen SSH-Schlüsseln und -Schlüsselpaaren
@@ -43,11 +43,11 @@ Der Informationsfluss von der Plattform zum Agenten erfolgt über zwei Kanäle:
 ###Beziehen des Linux-Agent
 Sie können den neuesten Linux-Agent direkt von folgenden Quellen beziehen:
 
-- [Von den verschiedenen Distributionsanbietern, die Linux auf Azure unterstützen](http://support.microsoft.com/kb/2805216)
-- oder aus dem [Github Open Source Repository für den Azure Linux Agent](https://github.com/WindowsAzure/WALinuxAgent)
+- [von den verschiedenen Verteilungsanbietern, die Linux auf Azure unterstützen](http://support.microsoft.com/kb/2805216)
+- oder aus dem [Github Open Source Repository für den Azure Linux-Agent](https://github.com/WindowsAzure/WALinuxAgent)
 
 
-###Unterstützte Linux-Distributionen
+###Unterstützte Linux-Verteilungen
 * CoreOS
 * CentOS 6.2+
 * Debian 7.0+
@@ -70,12 +70,12 @@ Waagent erfordert zur ordnungsgemäßen Funktion bestimmte Systempakete:
 * Openssh 5.3+
 * Dienstprogramme für das Dateisystem: sfdisk, fdisk, mkfs
 * Kennworttools: chpasswd, sudo
-* Textverarbeitungstoos: sed, grep
+* Textverarbeitungstools: sed, grep
 * Netzwerktools: ip-route
 
 ##Installation
 
-Für Installation und Upgrades des Azure Linux-Agent sollte nach Möglichkeit ein RPM- oder DEB-Paket aus dem Paket-Repository der jeweiligen Distribution installiert werden.
+Für Installation und Upgrades des Azure Linux-Agent sollte nach Möglichkeit ein RPM- oder DEB-Paket aus dem Paket-Repository der jeweiligen Verteilungen installiert werden.
 
 Bei einer manuellen Installation kopieren Sie waagent in das Verzeichnis "/usr/sbin/waagent", und führen Sie den folgenden Befehl zur Installation aus: 
 
@@ -99,15 +99,15 @@ Die Protokolldatei des Agenten wird in "/var/log/waagent.log" gespeichert.
 - install: Manuelle Installation des Agenten
  * Überprüft das System auf erforderliche abhängige Objekte
 
- * Erstellt das SysV init-Skript (/etc/init.d/waagent), die logrotate-Konfigurationsdatei (/etc/logrotate.d/waagent) und konfiguriert das Image für die Ausführung des Initialisierungsskripts beim Start
+ * Erstellt das SysV-Initialisierungsskript (/etc/init.d/waagent), die logrotate-Konfigurationsdatei (/etc/logrotate.d/waagent) und konfiguriert das Image für die Ausführung des Initialisierungsskripts beim Start
 
- * Schreibt eine Beispielkonfigurationsdatei in /etc/waagent.conf
+ * Schreibt eine Beispielkonfigurationsdatei in "/etc/waagent.conf"
 
- * Vorhandene Konfigurationsdateien werden in /etc/waagent.conf.old verschoben
+ * Vorhandene Konfigurationsdateien werden in "/etc/waagent.conf.old" verschoben
 
  * Erkennt die Kernelversion und wendet bei Bedarf die VNUMA-Problemumgehung an
 
- * Verschiebt udev-Regeln, die einen Konflikt mit der Netzwerkfunktion (/lib/udev/rules.d/75-persistent-net-generator.rules, /etc/udev/rules.d/70-persistent-net.rules) in /var/lib/waagent/  
+ * Verschiebt Udev-Regeln, die mit der Netzwerkfunktion (/lib/udev/rules.d/75-persistent-net-generator.rules, /etc/udev/rules.d/70-persistent-net.rules) to /var/lib/waagent/ in Konflikt geraten können.  
 
 - uninstall: Entfernt waagent und zugehörige Dateien
  * Hebt die Registrierung des Initialisierungsskripts im System auf und löscht das Skript
@@ -144,7 +144,7 @@ Die Protokolldatei des Agenten wird in "/var/log/waagent.log" gespeichert.
 
 ##Konfiguration
 
-Eine Konfigurationsdatei (/etc/waagent.conf) steuert die Aktivitäten von waagent. 
+Eine Konfigurationsdatei (/etc/waagent.conf) steuert die Aktionen von waagent. 
 Nachfolgend sehen Sie ein Beispiel einer Konfigurationsdatei:
 	
 	#
@@ -185,14 +185,14 @@ Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird diese a
 Geben Sie Folgendes ein: String  
 Voreinstellung: None
 
-Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass eine Konfigurationsdatei für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals aufgerufen werden, bei jeder Änderung der Konfigurationsdatei. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Pfad dieser Datei lautet "/var/lib/waagent/HostingEnvironmentConfig.xml".
+Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass eine Konfigurationsdatei für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals aufgerufen werden, bei jeder Änderung der Konfigurationsdatei. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Pfad für diese Datei ist /var/lib/waagent/HostingEnvironmentConfig.xml.
 
 **Role.TopologyConsumer:**
 
 Geben Sie Folgendes ein: String  
 Voreinstellung: None
 
-Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass ein neues Netzwerktopologie-Layout für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals, bei jeder Änderung der Netzwerktopologie (z. B. aufgrund einer Dienstreparatur), aufgerufen werden. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Speicherort dieser Datei lautet "/var/lib/waagent/SharedConfig.xml".
+Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass ein neues Netzwerktopologie-Layout für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals, bei jeder Änderung der Netzwerktopologie (z. B. aufgrund einer Dienstreparatur), aufgerufen werden. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Speicherort für diese Datei ist /var/lib/waagent/SharedConfig.xml.
 
 **Provisioning.Enabled:**
 
@@ -215,7 +215,7 @@ Voreinstellung: y
 
 Bei aktivierter Option werden alle SSH-Hostschlüsselpaare (ecdsa, dsa und rsa) bei der Bereitstellung aus "/etc/ssh/" gelöscht. Außerdem wird ein einzelnes neues Schlüsselpaar generiert.
 
-Der Verschlüsselungstyp für das neue Schlüsselpaar kann mit dem Provisioning.SshHostKeyPairType-Eintrag konfiguriert werden. Beachten Sie, dass einige Distributionen SSH-Schlüsselpaare für alle fehlenden Verschlüsselungstypen neu erstellen, wenn der SSH-Daemon neu gestartet wird (z. B. bei einem Systemneustart).
+Der Verschlüsselungstyp für das neue Schlüsselpaar kann mit dem Provisioning.SshHostKeyPairType-Eintrag konfiguriert werden. Beachten Sie, dass einige Verteilungen SSH-Schlüsselpaare für alle fehlenden Verschlüsselungstypen neu erstellen, wenn der SSH-Daemon neu gestartet wird (z. B. bei einem Systemneustart).
 
 **Provisioning.SshHostKeyPairType:**
 
@@ -243,14 +243,14 @@ Bei aktivierter Option wird der von der Plattform bereitgestellte Ressourcendate
 Geben Sie Folgendes ein: String  
 Voreinstellung: ext4
 
-Diese Option gibt den Dateisystemtyp für den Ressourcendatenträger an. Die unterstützten Werte sind je nach Linux-Distribution verschieden. Bei der Zeichenfolge X sollte mkfs.X im Linux-Image vorhanden sein. Für SLES 11-Images sollte normalerweise "ext3" verwendet werden. Für FreeBSD-Images sollte hier "ufs2" verwendet werden.
+Diese Option gibt den Dateisystemtyp für den Ressourcendatenträger an. Die unterstützten Werte sind je nach Linux-Verteilung verschieden. Bei der Zeichenfolge X sollte mkfs.X im Linux-Image vorhanden sein. Für SLES 11-Images sollte normalerweise "ext3" verwendet werden. Für FreeBSD-Images sollte hier "ufs2" verwendet werden.
 
 **ResourceDisk.MountPoint:**
 
 Geben Sie Folgendes ein: String  
 Voreinstellung: /mnt/resource 
 
-Diese Option gibt den Pfad an, in dem der Ressourcendatenträger bereitgestellt wird. Beachten Sie, dass der Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird.
+Diese Option gibt den Pfad an, in dem der Ressourcendatenträger bereitgestellt wird. Beachten Sie, dass der Ressourcendatenträger ein  *temporary* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird.
 
 **ResourceDisk.EnableSwap:**
 
@@ -314,7 +314,7 @@ Hiermit kann ein alternativer Pfad für die openssl-Binärdatei zur Verwendung f
 	    <PrivilegeLevel mode="max" />
 	    <AdditionalProperties><CgiHandlers></CgiHandlers></AdditionalProperties></HostingEnvironmentSettings>
 	    <ApplicationSettings>
-	      <Setting name="__ModelData" value="<m role=&quot;LinuxVM&quot; xmlns=&quot;urn:azure:m:v1&quot;><r name=&quot;LinuxVM&quot;><e name=&quot;HTTP&quot; /><e name=&quot;Microsoft.WindowsAzure.Plugins.RemoteAccess.Rdp&quot; /><e name=&quot;Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput&quot; /><e name=&quot;SSH&quot; /></r></m>" />
+	      <Setting name="__ModelData" value="&lt;m role=&quot;LinuxVM&quot; xmlns=&quot;urn:azure:m:v1&quot;>&lt;r name=&quot;LinuxVM&quot;>&lt;e name=&quot;HTTP&quot; />&lt;e name=&quot;Microsoft.WindowsAzure.Plugins.RemoteAccess.Rdp&quot; />&lt;e name=&quot;Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput&quot; />&lt;e name=&quot;SSH&quot; />&lt;/r>&lt;/m>" />
 	      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="..." />
 	      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2015-11-06T23:59:59.0000000-08:00" />
 	      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="rdos" />
@@ -405,4 +405,7 @@ Hiermit kann ein alternativer Pfad für die openssl-Binärdatei zur Verwendung f
 	  </Instances>
 	</SharedConfig>
 
-<!--HONumber=35.1-->
+
+
+
+<!--HONumber=42-->

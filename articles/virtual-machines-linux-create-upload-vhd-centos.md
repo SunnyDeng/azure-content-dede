@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Upload a CentOS-based VHD" pageTitle="Erstellen und Hochladen einer CentOS-basierten Linux-VHD in Azure" metaKeywords="Azure VHD, uploading Linux VHD, CentOS" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein CentOS-basiertes Linux-Betriebssystem enthält." metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains a CentOS-based Linux Operating System" authors="szarkos" solutions="" manager="timlt" editor="tysonn" />
+﻿<properties pageTitle="Erstellen und Hochladen einer CentOS-basierten Linux-VHD in Azure" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein CentOS-basiertes Linux-Betriebssystem enthält." services="virtual-machines" documentationCenter="" authors="szarkos" manager="timlt" editor="tysonn"/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="06/05/2014" ms.author="szarkos" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/13/2015" ms.author="szarkos"/>
 
 # Vorbereiten eines CentOS-basierten virtuellen Computers für Azure
 
@@ -35,14 +35,14 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betr
 
 		# sudo rpm -e --nodeps NetworkManager
 
-	**Hinweis:** Wenn das Paket noch nicht installiert ist, schlägt dieser Befehl mit einer Fehlermeldung fehl. Dies entspricht dem erwarteten Verhalten.
+	**Hinweis:** Wenn das Paket noch nicht installiert ist, schlägt dieser Befehl mit einer Fehlermeldung fehl. Dies ist erwartungsgemäß.
 
-4.	Erstellen Sie eine Datei mit der Benennung **Network** im Verzeichnis `/etc/sysconfig/` die den folgenden Text enthält:
+4.	Erstellen Sie eine Datei mit dem Namen **network** und folgendem Text im Verzeichnis `/etc/sysconfig/`:
 
 		NETWORKING=yes
 		HOSTNAME=localhost.localdomain
 
-5.	Erstellen Sie eine Datei mit der Benennung **ifcfg-eth0** im Verzeichnis `/etc/sysconfig/network-scripts/`, die den folgenden Text enthält:
+5.	Erstellen Sie eine Datei mit dem Namen **ifcfg-eth0** und folgendem Text im Verzeichnis `/etc/sysconfig/network-scripts/`:
 
 		DEVICE=eth0
 		ONBOOT=yes
@@ -55,8 +55,9 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betr
 6.	Verschieben (oder entfernen) Sie die udev-Regeln, um eine Generierung statischer Regeln für die Ethernet-Schnittstelle zu vermeiden. Diese Regeln können beim Klonen eines virtuellen Computers unter Microsoft Azure oder Hyper-V zu Problemen führen:
 
 		# sudo mkdir -m 0700 /var/lib/waagent
-		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
-		# sudo mv /etc/udev/rules.d/70-persistent-net.rules /var/lib/waagent/ 2>/dev/null
+		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/
+		# sudo mv /etc/udev/rules.d/70-persistent-net.rules /var/lib/waagent/
+
 
 7. Stellen Sie sicher, dass der Netzwerkdienst beim Booten startet, indem Sie den folgenden Befehl ausführen:
 
@@ -65,9 +66,9 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betr
 
 8. **Nur CentOS 6.3**: Installieren Sie die Treiber für die Linux-Integrationsdienste.
 
-	**Wichtig: Dieser Schritt gilt nur für CentOS 6.3 und älter.**  In CentOS 6.4+ sind die Linux-Integrationsdienste *bereits im Kernel verfügbar*.
+	**Wichtig: Dieser Schritt gilt nur für CentOS 6.3 und älter.**  In CentOS 6.4+ sind die Linux-Integrationsdienste  *bereits im Kernel verfügbar*.
 
-	a) Rufen Sie die ISO-Datei über das [Microsoft Download Center] ab, welche die Treiber für die Linux-Integrationsdienste enthält(http://www.microsoft.com/de-de/download/details.aspx?id=41554).
+	a) Rufen Sie die ISO-Datei über das [Microsoft Download Center](http://www.microsoft.com/de-de/download/details.aspx?id=41554) ab, welche die Treiber für die Linux-Integrationsdienste enthält.
 
 	b) Klicken Sie im Hyper-V-Manager im Fensterbereich **Aktionen** auf **Einstellungen**.
 
@@ -77,7 +78,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betr
 
 	![Add DVD drive with install media](./media/virtual-machines-linux-create-upload-vhd/installiso.png)
 
-	d) Klicken Sie im Feld **IDE Controller** auf **DVD Drive** und anschließend auf **Hinzufügen**.
+	d) Klicken Sie im Feld **IDE Controller** auf **DVD-Laufwerk** und anschließend auf **Hinzufügen**.
 
 	e) Wählen Sie **Image-Datei**. Navigieren Sie zu **Linux IC v3.2.iso**, und klicken Sie dann auf **Öffnen**.
 
@@ -168,13 +169,13 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betr
 
 	Dadurch wird zudem sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern unterstützen. Dadurch wird NUMA aufgrund eines Fehlers in der von CentOS 6 verwendeten Kernel-Version deaktiviert.
 
-	Neben den oben erwähnten Punkten wird es empfohlen, die folgenden Parameter zu *entfernen*:
+	Neben den oben erwähnten Punkten wird empfohlen, die folgenden Parameter zu  *entfernen*:
 
 		rhgb quiet crashkernel=auto
 
 	Weder der Graphical Boot noch der Quiet Boot sind in einer Cloud-Umgebung nützlich, in der alle Protokolle an den seriellen Port gesendet werden sollen.
 
-	Die Option `crashkernel` kann bei Bedarf konfiguriert gelassen werden. Beachten Sie, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer durch 128 MB oder mehr reduziert, was möglicherweise bei kleineren VM-Größen problematisch sein kann.
+	Die Option  `crashkernel` kann bei Bedarf konfiguriert gelassen werden. Beachten Sie, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer durch 128 MB oder mehr reduziert, was möglicherweise bei kleineren VM-Größen problematisch sein kann.
 
 
 16.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt.  Dies ist für gewöhnlich die Standardeinstellung.
@@ -187,7 +188,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betr
 
 18.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -224,12 +225,12 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 
 2. Klicken Sie auf **Verbinden**, um ein Konsolenfenster für den virtuellen Computer zu öffnen.
 
-3.	Erstellen Sie eine Datei mit der Benennung **Network** im Verzeichnis `/etc/sysconfig/` die den folgenden Text enthält:
+3.	Erstellen Sie eine Datei mit dem Namen **network** und folgendem Text im Verzeichnis `/etc/sysconfig/`:
 
 		NETWORKING=yes
 		HOSTNAME=localhost.localdomain
 
-4.	Erstellen Sie eine Datei mit der Benennung **ifcfg-eth0** im Verzeichnis `/etc/sysconfig/network-scripts/`, die den folgenden Text enthält:
+4.	Erstellen Sie eine Datei mit dem Namen **ifcfg-eth0** und folgendem Text im Verzeichnis `/etc/sysconfig/network-scripts/`:
 
 		DEVICE=eth0
 		ONBOOT=yes
@@ -296,6 +297,7 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+		
 
 
 	**Hinweis:** Im Rest dieses Leitfadens wird davon ausgegangen, dass Sie mindestens das Repository [openlogic] verwenden, das im Folgenden zum Installieren des Azure Linux-Agents verwendet wird.
@@ -305,17 +307,17 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 		# sudo yum clean all
 		# sudo yum -y update
 
-10.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu "/etc/default/grub" in einem Text-Editor, und bearbeiten Sie den Parameter `GRUB_CMDLINE_LINUX`, beispielsweise:
+10.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu "/etc/default/grub" in einem Text-Editor, und bearbeiten Sie den Parameter  `GRUB_CMDLINE_LINUX`, beispielsweise:
 
 		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
 
-	Dadurch wird zudem sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern unterstützen. Neben den oben erwähnten Punkten wird es empfohlen, die folgenden Parameter zu *entfernen*:
+	Dadurch wird zudem sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern unterstützen. Neben den oben erwähnten Punkten wird empfohlen, die folgenden Parameter zu  *entfernen*:
 
 		rhgb quiet crashkernel=auto
 
 	Weder der Graphical Boot noch der Quiet Boot sind in einer Cloud-Umgebung nützlich, in der alle Protokolle an den seriellen Port gesendet werden sollen.
 
-	Die Option `crashkernel` kann bei Bedarf konfiguriert gelassen werden. Beachten Sie, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer durch 128 MB oder mehr reduziert, was möglicherweise bei kleineren VM-Größen problematisch sein kann.
+	Die Option  `crashkernel` kann bei Bedarf konfiguriert gelassen werden. Beachten Sie, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer durch 128 MB oder mehr reduziert, was möglicherweise bei kleineren VM-Größen problematisch sein kann.
 
 11. Sobald Sie die oben beschriebene Bearbeitung von "/etc/default/grub" abgeschlossen haben, führen Sie den folgenden Befehl zum erneuten Erstellen der Grub-Konfiguration aus:
 
@@ -329,7 +331,7 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 
 14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -347,4 +349,5 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 
 
 
-<!--HONumber=35.1-->
+
+<!--HONumber=42-->

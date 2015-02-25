@@ -1,14 +1,14 @@
-﻿<properties pageTitle="Verwenden von Mobile Services zum Hochladen von Bildern in BLOB-Speicher (Windows Store) | Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie mit Mobile Services Bilder in den Azure-Blob-Speicher hochladen und auf Bilder aus Ihrer Windows Store-App zugreifen." metaCanonical="" services="mobile-services,storage" documentationCenter="Mobile" title="Upload images to Azure Storage by using Mobile Services" authors="glenga" solutions="mobile" manager="dwrede" editor="" />
+<properties pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blob-Speicher (Windows Store) | Mobile Services" description="Erfahren Sie, wie Sie mithilfe von Mobile Services Bilder in den Azure-Blob-Speicher hochladen und von Ihrer Windows Store-App auf die Bilder zugreifen." services="mobile-services, storage" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/26/2014" ms.author="glenga"/>
 
 # Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage
 
-[WACOM.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden können, Ihre App für das Hochladen und Speichern von durch Benutzer erzeugten Bildern in Azure Storage zu aktivieren. Mobile Services verwendet zur Datenspeicherung eine SQL-Datenbank. BLOB (Binary Large Object)-Daten lassen sich allerdings effizienter im Azure-Blob-Speicherdienst speichern. 
 
-Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blob-Speicherdienst können mit der Client-App nicht sicher zugewiesen werden. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die dann zum Hochladen eines neuen Bildes verwendet wird. Die SAS, eine Anmeldeinformation mit einer kurzen Laufzeit - in diesem Falle 5 Minuten -, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. In diesem Beispiel sind Downloads vom Blob-Dienst öffentlich.
+Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blob-Speicherdienst können mit der Client-App nicht sicher zugewiesen werden. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die dann zum Hochladen eines neuen Bildes verwendet wird. Die SAS, eine Anmeldeinformation mit einer kurzen Laufzeit - in diesem Falle fünf Minuten -, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. In diesem Beispiel sind Downloads vom Blob-Dienst öffentlich.
 
 In diesem Lernprogramm fügen Sie dem Mobile Services-Schnellstart Funktionen zur Aufnahme von Bildern und zum Hochladen dieser Bilder unter Verwendung einer von Mobile Services erzeugten SAS in Azure hinzu. Dieses Lernprogramm führt Sie durch die folgenden grundlegenden Schritte zur Aktualisierung des Mobile Services-Schnellstarts für das Hochladen von Bildern in den Blob-Speicherdienst:
 
@@ -20,10 +20,10 @@ In diesem Lernprogramm fügen Sie dem Mobile Services-Schnellstart Funktionen zu
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + Microsoft Visual Studio 2012 Express für Windows 8 oder eine höhere Version
-+ [Azure-Speicherkonto][How To Create a Storage Account]
++ [Azure-Speicherkonto][So erstellen Sie ein Speicherkonto]
 + Eine Kamera oder ein anderes an Ihren Computer angeschlossenes Bildaufnahmegerät
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services] abschließen. 
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen. 
 
 ##<a name="install-storage-client"></a>Installieren des Speicherclients für Windows Store-Apps
 
@@ -31,7 +31,7 @@ Um eine SAS für das Hochladen von Bildern auf den Blob-Speicher verwenden zu k�
 
 1. Klicken Sie im **Projektmappen-Explorer** in Visual Studio mit der rechten Maustaste auf den Projektnamen, und wählen Sie dann **NuGet-Pakete verwalten** aus.
 
-2. Wählen Sie im linken Bereich die Kategorie **Online** aus, suchen Sie nach "WindowsAzure.Storage", klicken Sie auf **Installieren** im Paket **Azure-Speicher**, und stimmen Sie dem Lizenzvertrag zu. 
+2. Wählen Sie im linken Bereich die Kategorie **Online** aus, suchen Sie nach `WindowsAzure.Storage`, klicken Sie auf **Installieren** für das Paket **Azure Storage**, und akzeptieren Sie die Lizenzbedingungen. 
 
   	![][2]
 
@@ -41,9 +41,9 @@ Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen
 
 ##<a name="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
-[WACOM.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
-[WACOM.INCLUDE [mobile-services-windows-store-dotnet-upload-to-blob-storage](../includes/mobile-services-windows-store-dotnet-upload-to-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-windows-store-dotnet-upload-to-blob-storage](../includes/mobile-services-windows-store-dotnet-upload-to-blob-storage.md)]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
@@ -86,9 +86,10 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-get-started
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Erstellen eines Speicherkontos]: /de-de/manage/services/storage/how-to-create-a-storage-account
+[So erstellen Sie ein Speicherkonto]: /de-de/manage/services/storage/how-to-create-a-storage-account
 [Azure-Speicherclientbibliothek für Store-Apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
 [App-Einstellungen]: http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!--HONumber=35.2-->
+
+<!--HONumber=42-->

@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Upload a SUSE Linux VHD" pageTitle="Erstellen und Hochladen einer SUSE Linux-VHD in Azure" metaKeywords="Azure VHD, uploading Linux VHD, SUSE, SLES, openSUSE" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein SUSE Linux-Betriebssystem enthält." metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains a SUSE Linux Operating System" authors="szarkos" solutions="" manager="timlt" editor="tysonn" />
+﻿<properties pageTitle="Erstellen und Hochladen einer SUSE Linux-VHD in Azure" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein SUSE Linux-Betriebssystem enthält." services="virtual-machines" documentationCenter="" authors="szarkos" manager="timlt" editor="tysonn"/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="06/05/2014" ms.author="szarkos" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/13/2015" ms.author="szarkos"/>
 
 
 # Vorbereiten eines virtuellen SLES- oder openSUSE-Computers für Azure
@@ -35,39 +35,13 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 2. Klicken Sie auf **Verbinden**, um das Fenster für den virtuellen Computer zu öffnen.
 
-3. Fügen Sie das Repository hinzu, welches den neuesten Kernel und Azure Linux Agent enthält. Führen Sie den Befehl `zypper lr` aus. So sollte bei SLES 11 SP3 die Ausgabe z. B. ähnlich wie im Folgenden aussehen:
+3. Registrieren Sie Ihr System SUSE Linux Enterprise, um das Herunterladen von Updates und das Installieren von Paketen zu ermöglichen.
 
-		# | Alias                        | Name               | Enabled | Refresh
-		--+------------------------------+--------------------+---------+--------
-		1 | susecloud:SLES11-SP1-Pool    | SLES11-SP1-Pool    | No      | Yes
-		2 | susecloud:SLES11-SP1-Updates | SLES11-SP1-Updates | No      | Yes
-		3 | susecloud:SLES11-SP2-Core    | SLES11-SP2-Core    | No      | Yes
-		4 | susecloud:SLES11-SP2-Updates | SLES11-SP2-Updates | No      | Yes
-		5 | susecloud:SLES11-SP3-Pool    | SLES11-SP3-Pool    | Yes     | Yes
-		6 | susecloud:SLES11-SP3-Updates | SLES11-SP3-Updates | Yes     | Yes
-
-	Falls der Befehl eine Fehlermeldung zurückgibt, die in etwa der im Folgenden aufgeführten entspricht:
-
-		"No repositories defined. Use the 'zypper addrepo' command to add one or more repositories."
-
-	Dann verwenden Sie die folgenden Befehle zum Hinzufügen diese Repositorys:
-
-		# sudo zypper ar -f http://azure-update.susecloud.net/repo/$RCE/SLES11-SP3-Pool/sle-11-x86_64 SLES11-SP3-Pool 
-		# sudo zypper ar -f http://azure-update.susecloud.net/repo/$RCE/SLES11-SP3-Updates/sle-11-x86_64 SLES11-SP3-Updates
-
-	Falls eines der relevanten Update-Repositorys nicht aktiviert ist, können Sie es mit dem folgenden Befehl aktivieren:
-
-		# sudo zypper mr -e [REPOSITORY NUMBER]
-
-4. Aktualisieren Sie den Kernel auf die neueste verfügbare Version:
-
-		# sudo zypper up kernel-default
-
-	Oder aktualisieren Sie das System mit allen neuen Patches:
+4. Aktualisieren Sie das System mit den neuesten Patches:
 
 		# sudo zypper update
 
-5. Installieren des Azure Linux Agent:
+5. Installieren Sie den Azure Linux-Agent aus dem SLES-Repository:
 
 		# sudo zypper install WALinuxAgent
 
@@ -77,7 +51,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 	Dadurch wird sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern unterstützen.
 
-7.	Sie sollten die Datei "/etc/sysconfig/network/dhcp" bearbeiten und den Parameter `DHCLIENT_SET_HOSTNAME` ändern zu:
+7.	Sie sollten die Datei "/etc/sysconfig/network/dhcp" bearbeiten und den Parameter  `DHCLIENT_SET_HOSTNAME` ändern zu:
 
 		DHCLIENT_SET_HOSTNAME="no"
 
@@ -90,7 +64,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 10.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -156,7 +130,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 		libata.atapi_enabled=0 reserve=0x1f0,0x8
 
-7.	Sie sollten die Datei "/etc/sysconfig/network/dhcp" bearbeiten und den Parameter `DHCLIENT_SET_HOSTNAME` ändern zu:
+7.	Sie sollten die Datei "/etc/sysconfig/network/dhcp" bearbeiten und den Parameter  `DHCLIENT_SET_HOSTNAME` ändern zu:
 
 		DHCLIENT_SET_HOSTNAME="no"
 
@@ -169,7 +143,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 10.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -191,4 +165,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 
 
-<!--HONumber=35.1-->
+
+
+
+<!--HONumber=42-->

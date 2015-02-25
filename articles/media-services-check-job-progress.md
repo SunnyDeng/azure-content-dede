@@ -1,13 +1,13 @@
-﻿<properties urlDisplayName="Check Job Progress" pageTitle="Prüfen des Auftragsfortschritts in Media Services - Azure" metaKeywords="" description="Erfahren Sie, wie Sie den Fortschritt von Aufträgen mit Ereignishandlern abrufen und Statusupdates senden können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Check Job Progress" authors="juliako" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Prüfen des Auftragsfortschritts in Media Services - Azure" description="Erfahren Sie, wie Sie den Fortschritt von Aufträgen mit Ereignishandlern abrufen und Statusupdates senden können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
 
 
 
 
 
 <h1>Gewusst wie: Prüfen des Auftragsfortschritts</h1>
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Gewusst wie: Codieren von Medienobjekten](http://go.microsoft.com/fwlink/?LinkID=301753&clcid=0x409).
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure Media Services. Das vorherige Thema war [Gewusst wie: Codieren eines Medienobjekts](http://go.microsoft.com/fwlink/?LinkID=301753&clcid=0x409).
 
 Beim Ausführen von Aufträgen ist es nützlich, deren Fortschritt verfolgen zu können. Das folgende Codebeispiel definiert den StateChanged-Ereignishandler. Dieser Ereignishandler verfolgt den Auftragsfortschritt und liefert Statusupdates je nach Auftragsstatus. Der Code definiert außerdem die LogJobStop-Methode. Diese Helfermethode protokolliert Fehlerdetails.
 
@@ -88,8 +88,6 @@ private static string JobIdAsFileName(string jobID)
 }
 </code></pre>
 <h2>Nächste Schritte</h2>
-Sie haben gelernt, wie Sie Aufgaben erstellen und deren Fortschritt überwachen und können nun mit dem Schutz von Medienobjekten fortfahren. Weitere Informationen finden Sie unter [Gewusst wie: Schützen von Medienobjekten in Azure Media Services](http://go.microsoft.com/fwlink/?LinkID=301813&clcid=0x409).
+Sie haben gelernt, wie Sie Aufgaben erstellen und deren Fortschritt überwachen, und können nun mit dem Schutz von Medienobjekten fortfahren. Weitere Informationen finden Sie unter [Gewusst wie: Schützen von Medienobjekten in Azure Media Services](http://go.microsoft.com/fwlink/?LinkID=301813&clcid=0x409).
 
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

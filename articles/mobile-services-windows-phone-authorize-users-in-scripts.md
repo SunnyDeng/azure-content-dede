@@ -1,19 +1,19 @@
-﻿<properties pageTitle="Dienstseitige Autorisierung (Windows Phone) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie Benutzern im JavaScript-Back-End von Azure Mobile Services Berechtigungen erteilen." metaCanonical="" services="" documentationCenter="Mobile" title="Service-side authorization of Mobile Services users" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Dienstseitige Autorisierung (Windows Phone) | Mobile Dev Center" description="Erfahren Sie, wie Sie Benutzer im JavaScript-Back-End von Azure Mobile Services autorisieren." services="" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/29/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/29/2014" ms.author="glenga"/>
 
 # Dienstweite Autorisierung von Mobile Services-Benutzern
 
-[WACOM.INCLUDE [mobile-services-selector-service-auth-users](../includes/mobile-services-selector-service-auth-users.md)]	
+[AZURE.INCLUDE [mobile-services-selector-service-auth-users](../includes/mobile-services-selector-service-auth-users.md)]	
 
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 
 <p>In diesem Thema erfahren Sie, wie Sie Serverskripts verwenden, um authentifizierte Benutzer für den Zugriff auf Daten in Azure Mobile Services von einer Windows Phone 8-App zu autorisieren. In diesem Lernprogramm registrieren Sie Skripts mit Mobile Services, um Abfragen basierend auf der Benutzer-ID eines authentifizierten Benutzers zu filtern, sodass jeder Benutzer nur seine eigenen Daten sehen kann.</p>
-<p>Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart, und baut auf folgendem Lernprogramm auf: <a href="/de-de/develop/mobile/tutorials/get-started-with-users-wp8">Erste Schritte mit der Authentifizierung</a>. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst folgendes Lernprogramm abschließen: <a href="/de-de/develop/mobile/tutorials/get-started-with-users-wp8">Erste Schritte mit der Authentifizierung</a>.</p>
+<p>Dieses Lernprogramm basiert auf dem Mobile Services-Schnellstart, und baut auf dem vorherigen Lernprogramm <a href="/de-de/develop/mobile/tutorials/get-started-with-users-wp8">Erste Schritte mit der Authentifizierung</a> auf. Sie müssen zuerst <a href="/de-de/develop/mobile/tutorials/get-started-with-users-wp8">Erste Schritte mit der Authentifizierung</a> abschließen, bevor Sie mit diesem Lernprogramm beginnen.</p>
 </div>
-<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=298630" target="_blank" class="label">Lernprogramm anzeigen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-scripts-for-authentication-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=298630" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">15:00</span></div>
+<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=298630" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-scripts-for-authentication-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=298630" target="_blank" class="dev-onpage-video"><span class="icon">Video wiedergeben</span></a> <span class="time">15:00</span></div>
 </div> 
 
 ## <a name="register-scripts"></a>Registrieren von Skripts
@@ -40,9 +40,7 @@ Da die Schnellstart-App Daten liest und einfügt, müssen Sie Skripts für diese
 
     Dieses Skript fügt einen Benutzer-ID-Wert zum Element hinzu, bei dem es sich um die Benutzer-ID des authentifizierten Benutzers handelt, bevor es in die TodoItem-Tabelle eingefügt wird. 
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Wenn dieses insert-Skript zum ersten Mal ausgeführt wird, muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services <strong>bei der ersten</strong> Ausführung automatisch die Spalte <strong>"userId"</strong> zur Tabelle "TodoItem" hinzu. Das dynamische Schema ist standardmäßig für einen neuen mobilen Dienst aktiviert und sollte deaktiviert werden, bevor die App im Windows Phone Store veröffentlicht wird.</p>
-    </div>
+    > [AZURE.NOTE] Wenn dieses insert-Skript zum ersten Mal ausgeführt wird, muss das dynamische Schema aktiviert sein. Wenn das dynamische Schema aktiviert ist, fügt Mobile Services bei der ersten Ausführung automatisch die Spalte **userId** zur Tabelle **TodoItem** hinzu. Das dynamische Schema ist standardmäßig für einen neuen mobilen Dienst aktiviert und sollte deaktiviert werden, bevor die App im Windows Phone Store veröffentlicht wird.
 
 
 5. Wiederholen Sie die Schritte 3 und 4, um den vorhandenen Vorgang **Read** durch die folgende Funktion zu ersetzen:
@@ -68,7 +66,7 @@ Da die Schnellstart-App Daten liest und einfügt, müssen Sie Skripts für diese
 
    	Dadurch wird der Text und die Benutzer-ID in der TodoItem-Tabelle im Mobile Service eingefügt. Da das neue Element den korrekten Benutzer-ID-Wert aufweist, wird es vom mobilen Dienst zurückgegeben.
 
-5. Klicken Sie in der Tabelle **todoitem** im [Verwaltungsportal][Azure Management Portal] auf **Durchsuchen**, und überprüfen Sie, ob jedes neu hinzugefügte Element jetzt einen zugehörigen userId-Wert hat.
+5. Klicken Sie in der Tabelle **todoitem** im [Verwaltungsportal][Azure-Verwaltungsportal] auf **Durchsuchen**, und überprüfen Sie, ob jedes neu hinzugefügte Element jetzt einen zugehörigen userId-Wert hat.
 
 ## Nächste Schritte
 
@@ -103,4 +101,5 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=35.2-->
+
+<!--HONumber=42-->

@@ -1,26 +1,26 @@
-<properties urlDisplayName="Register for Twitter Authentication" pageTitle="Registrieren für die Twitter Authentifizierung - Mobile Services" metaKeywords="Azure registering application, Azure Twitter authentication, application authenticate, authenticate mobile services, Mobile Services Twitter" description="Erfahren Sie, wie Sie die Twitter-Authentifizierung mit Ihrer Azure Mobile Services-Anwendung verwenden." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your apps for Twitter login with Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Registrieren für die Twitter Authentifizierung - Mobile Services" description="Erfahren Sie, wie Sie die Twitter-Authentifizierung mit Ihrer Azure Mobile Services-Anwendung verwenden." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga"/>
 
-# Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services
+#Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services
 
 In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Twitter zur Authentifizierung mit Azure Mobile Services zu verwenden.
 
->[WACOM.NOTE] Dieses Lernprogramm befasst sich mit [Azure Mobile Services](http://azure.microsoft.com/de-de/services/mobile-services/), eine Lösung, die Sie dabei unterstützt, skalierbare mobile Anwendungen für beliebige Plattformen zu erstellen. Mit Mobile Services ist es einfach, Daten zu synchronisieren, Benutzer zu authentifizieren und Pushbenachrichtigungen zu senden. Diese Seite unterstützt das Lernprogramm <a href="http://azure.microsoft.com/de-de/documentation/articles/mobile-services-ios-get-started-users/">Erste Schritte mit der Authentifizierung</a> . In diesem Lernprogramm wird veranschaulicht, wie sich Benutzer bei Ihrer App anmelden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm <a href="http://azure.microsoft.com/de-de/documentation/articles/mobile-services-ios-get-started/">Erste Schritte mit Mobile Services</a>abschließen.
+>[AZURE.NOTE] Thema dieses Lernprogramms sind [Azure Mobile Services](http://azure.microsoft.com/de-de/services/mobile-services/), eine Lösung, die Sie beim Erstellen skalierbarer mobiler Anwendungen für beliebige Plattformen unterstützt. Mit Mobile Services ist es einfach, Daten zu synchronisieren, Benutzer zu authentifizieren und Pushbenachrichtigungen zu senden. Diese Seite unterstützt das Lernprogramm <a href="http://azure.microsoft.com/de-de/documentation/articles/mobile-services-ios-get-started-users/">Erste Schritte mit der Authentifizierung</a>, das zeigt, wie sich Benutzer bei Ihrer App anmelden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm <a href="http://azure.microsoft.com/de-de/documentation/articles/mobile-services-ios-get-started/">Erste Schritte mit Mobile Services</a> abschließen.
 
-Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in diesem Thema beschriebenen Vorgang abzuschließen. Rufen Sie zum Erstellen eines neuen Twitter-Kontos die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkID=268287" target="_blank">twitter.com</a>auf.
+Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in diesem Thema beschriebenen Vorgang abzuschließen. Rufen Sie zum Erstellen eines neuen Twitter-Kontos die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkID=268287" target="_blank">twitter.com</a> auf.
 
-1. Navigieren Sie zur Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268300" target="_blank">Twitter-Entwickler</a> , melden Sie sich mit Ihren Anmeldeinformationen beim Twitter-Konto an, und klicken Sie dann auf **Neue Anwendung erstellen**.
+1. Navigieren Sie zur Website für <a href="http://go.microsoft.com/fwlink/p/?LinkId=268300" target="_blank">Twitter-Entwickler</a>, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Create a new application**.
 
    	![][1]
 
-2. Geben Sie die Werte für **Name**, **Beschreibung** und **Website** für Ihre App ein. Anschließend geben Sie die URL Ihres mobilen Diensts ein, an den Sie den Pfad _/login/twitter_ in der **Rückruf-URL** anfügen.
+2. Geben Sie unter **Name**, **Description** und **Website** Werte für Ihre App und dann unter **Callback URL** die URL Ihres mobilen Diensts gefolgt vom Pfad _/login/twitter_ ein.
 
-	>[WACOM.NOTE]Für einen mit Visual Studio in Azure veröffentlichten mobilen .NET-Back-End-Dienst ist die Umleitungs-URL die URL Ihres mobilen Diensts mit dem Pfadsuffix "signin-twitter" für Ihren mobilen Dienst als .NET-Dienst, z. B. <code>https://todolist.azure-mobile.net/signin-twitter</code>.
+	>[AZURE.NOTE]Für einen mit Visual Studio in Azure veröffentlichten mobilen .NET-Back-End-Dienst ist die Umleitungs-URL die URL Ihres mobilen Diensts mit dem Pfadsuffix _signin-twitter_ für Ihren mobilen Dienst als .NET-Dienst, z. B. <code>https://todolist.azure-mobile.net/signin-twitter</code>.
 
    	![][2]
 
-3.  Lesen und bestätigen Sie die Nutzungsbedingungen am Ende der Seite, lösen Sie das CAPTCHA und klicken Sie auf **Twitter-Anwendung erstellen**. 
+3.  Lesen und bestätigen Sie die Nutzungsbedingungen am Ende der Seite, lösen Sie das CAPTCHA und klicken Sie auf **Create your Twitter application**. 
 
    	![][3]
 
@@ -30,11 +30,9 @@ Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in die
 
    	![][4]
 
-    <div class="dev-callout"><b>Sicherheitshinweis</b>
-	<p>Consumer secret ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.</p>
-    </div>
+    > [AZURE.NOTE] Consumer secret ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.
 
-7. Klicken Sie auf die Registerkarte **Einstellungen**, blättern Sie nach unten und markieren Sie die Option **Anwendung für die Anmeldung bei Twitter freigeben** und klicken Sie auf **Twitter-Einstellungen für diese Anwendung aktualisieren**.
+7. Klicken Sie auf die Registerkarte **Settings**, blättern Sie nach unten, und markieren Sie die Option **Allow this application to be used to sign in with Twitter**, und klicken Sie auf **Update this Twitter application's settings**.
 
 	![][5]
 
@@ -56,4 +54,5 @@ Sie können nun ein Twitter-Login für die Authentifizierung in Ihrer App verwen
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=35.1-->
+
+<!--HONumber=42-->

@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Enable diagnostic logging" pageTitle="Aktivieren der Diagnoseprotokollierung - Azure Websites" metaKeywords="Azure Diagnose Websites, Azure-Verwaltungsportal Diagnose, Azure-Diagnose, Website-Diagnose, Website-Debuggen" description="Erfahren Sie, wie Sie die Diagnoseprotokollierung aktivieren und Instrumentierung zu Ihrer Anwendung hinzufügen und wie Sie auf die von Azure protokollierten Informationen zugreifen." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Enable diagnostic logging for Azure Websites" authors="larryfr" solutions="" manager="wpickett" editor="" />
+﻿<properties 
+	pageTitle="Aktivieren der Diagnoseprotokollierung für Azure-Websites" 
+	description="Erfahren Sie, wie Sie die Diagnoseprotokollierung aktivieren und Instrumentierung zu Ihrer Anwendung hinzufügen und wie Sie auf die von Azure protokollierten Informationen zugreifen." 
+	services="web-sites" 
+	documentationCenter=".net" 
+	authors="blackmist" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/17/2014" 
+	ms.author="larryfr"/>
 
 
 
@@ -10,66 +24,66 @@
 
 Azure bietet integrierte Diagnosefunktionen, die Sie beim Debuggen einer auf Azure-Websites gehosteten Anwendung unterstützen. In diesem Artikel erfahren Sie, wie Sie die Diagnoseprotokollierung aktivieren und Instrumentierung zu Ihrer Anwendung hinzufügen und wie Sie die von Azure protokollierten Informationen abrufen.
 
-> [WACOM.NOTE] In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem Azure-Verwaltungsportal, der Azure PowerShell und der Azure plattformübergreifenden Befehlszeilenschnittstelle beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+> [AZURE.NOTE] In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem Azure-Verwaltungsportal, der Azure PowerShell und der Azure plattformübergreifenden Befehlszeilenschnittstelle beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)..
 
 ##Inhaltsverzeichnis
 
 - [Was ist: Website-Diagnose?](#whatisdiag)
-- [Gewusst wie: Aktivieren der Diagnosefunktion](#enablediag)
-- [Gewusst wie: Herunterladen von Protokollen](#download)
-- [Gewusst wie: Streaming von Protokollen](#streamlogs)
-- [Gewusst wie: Verstehen von Diagnoseprotokollen](#understandlogs)
+- [Vorgehensweise: Aktivieren der Diagnosefunktion](#enablediag)
+- [Vorgehensweise: Herunterladen von Protokollen](#download)
+- [Vorgehensweise: Streaming von Protokollen](#streamlogs)
+- [Vorgehensweise: Verstehen von Diagnoseprotokollen](#understandlogs)
 - [Nächste Schritte](#nextsteps)
 
-<a name="whatisdiag"></a><h2>Was sind Website-Diagnosen?</h2>
+<a name="whatisdiag"></a><h2>Was ist Website-Diagnose?</h2>
 
-Azure-Websites bieten Diagnosefunktionen zum Protokollieren von Informationen sowohl über den Webserver als auch über die Webanwendung. Diese sind logisch in **Site-Diagnose** und **Anwendungsdiagnose** unterteilt.
+Azure-Websites bieten Diagnosefunktionen zum Protokollieren von Informationen sowohl über den Webserver als auch über die Webanwendung. Diese sind logisch in **Website-Diagnose** und **Anwendungsdiagnose** unterteilt.
 
-###Site-Diagnose
+###Websitediagnose
 
-Unter "site diagnostics" können Sie Folgendes aktivieren oder deaktivieren:
+Mithilfe der Website-Diagnose können Sie Folgendes aktivieren oder deaktivieren:
 
-- **Detailed Error Logging** - Protokolliert detaillierte Fehlerinformationen für HTTP-Statuscodes, die auf einen Fehler hinweisen (Statuscode 400 oder höher). Diese können Informationen enthalten, mit deren Hilfe sich bestimmen lässt, warum der Server den Fehlercode zurückgegeben hat.
-- **Failed Request Tracing** - Protokolliert detaillierte Informationen zu fehlgeschlagenen Anforderungen, einschließlich der Verfolgung von IIS-Komponenten, die zur Verarbeitung der Anforderung verwendet wurden, sowie die in jeder Komponente benötigte Zeit. Dies kann nützlich sein, wenn Sie versuchen, die Leistung von Websites zu verbessern oder herauszufinden, warum ein bestimmter HTTP-Fehler zurückgegeben wird.
+- **Detaillierte Fehlerprotokollierung** - Protokolliert detaillierte Fehlerinformationen für HTTP-Statuscodes, die auf einen Fehler hinweisen (Statuscode 400 oder höher). Diese können Informationen enthalten, mit deren Hilfe sich bestimmen lässt, warum der Server den Fehlercode zurückgegeben hat.
+- **Ablaufverfolgung von Anforderungsfehlern** - Protokolliert detaillierte Informationen zu fehlgeschlagenen Anforderungen, einschließlich der Verfolgung von IIS-Komponenten, die zur Verarbeitung der Anforderung verwendet wurden, sowie die in jeder Komponente benötigte Zeit. Dies kann nützlich sein, wenn Sie versuchen, die Leistung von Websites zu verbessern oder herauszufinden, warum ein bestimmter HTTP-Fehler zurückgegeben wird.
 - **Webserverprotokollierung** - Protokolliert alle HTTP-Transaktionen einer Website im [erweiterten W3C-Protokolldateiformat](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). Dieser Bericht ist nützlich, wenn Sie allgemeine Website-Kennzahlen bestimmen möchten, wie die Anzahl der verarbeiteten Anfragen oder wie viele Anforderungen von einer bestimmten IP-Adresse stammen.
 
 ###Anwendungsdiagnose
 
-Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/en-us/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungs-Diagnoseprotokoll aufzuzeichnen. Beispiel:
+Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/de-de/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungsdiagnoseprotokoll aufzuzeichnen. Beispiel:
 
 	System.Diagnostics.Trace.TraceError("Wenn Sie dies lesen, ist ein Fehler aufgetreten");
 
 Anwendungsdiagnosen ermöglichen Ihnen, Fehler in der laufenden Anwendung zu ermitteln, indem Informationen ausgegeben werden, sobald bestimmte Codes verwendet werden. Dies ist besonders nützlich, wenn Sie versuchen zu bestimmen, warum ein bestimmter Pfad vom Code verwendet wurde, in der Regel wenn der Pfad einen Fehler oder anderes unerwünschtes Verhalten verursacht.
 
-Informationen zum Arbeiten mit Application Diagnostics in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](http://www.windowsazure.com/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+Informationen zum Arbeiten mit Anwendungsdiagnosen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](http://www.windowsazure.com/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
-> [WACOM.NOTE] Im Gegensatz zum Ändern der Datei "web.config" wird durch das Aktivieren der Anwendungsdiagnose oder durch das Ändern des Diagnoseprotokollumfangs nicht die Anwendungsdomäne neu gestartet, in der die Anwendung ausgeführt wird.
+> [AZURE.NOTE] Im Gegensatz zum Ändern der Datei "web.config" wird durch das Aktivieren der Anwendungsdiagnose oder durch das Ändern des Diagnoseprotokollumfangs nicht die Anwendungsdomäne neu gestartet, in der die Anwendung ausgeführt wird.
 
 Azure-Websites protokollieren auch Bereitstellungsinformationen, wenn Sie eine Anwendung auf einer Website veröffentlichen. Dies erfolgt automatisch, und es gibt keine Konfigurationseinstellung für die Bereitstellungsprotokollierung. Anhand der Bereitstellungsprotokollierung können Sie bestimmen, warum eine Bereitstellung fehlgeschlagen ist. Wenn Sie beispielsweise ein benutzerdefiniertes Bereitstellungsskript verwenden, können Sie die Bereitstellungsprotokollierung verwenden, um festzustellen, warum das Skript fehlgeschlagen ist.
 
-<a name="enablediag"></a><h2>Gewusst wie: Aktivieren der Diagnosefunktion</h2>
+<a name="enablediag"></a><h2>Vorgehensweise: Aktivieren der Diagnosefunktion</h2>
 
-Diagnosen können auf der Seite **Konfigurieren** der Azure-Website im [Azure-Verwaltungsportal](https://manage.microsoft.com) aktiviert werden. Verwenden Sie auf der Seite **Configure** die Bereiche **application diagnostics** und **site diagnostics**, um die Protokollierung zu aktivieren.
+Diagnosen können auf der Seite **Konfigurieren** der Azure-Website im [Azure-Verwaltungsportal](https://manage.microsoft.com) aktiviert werden. Verwenden Sie auf der Seite **Konfigurieren** die Bereiche **Anwendungsdiagnose** und **Website-Diagnose**, um die Protokollierung zu aktivieren.
 
-Bei Aktivierung von **application diagnostics** müssen Sie auch **logging level** für die Protokollierungsebene angeben sowie **file system**, **table storage** oder **als Protokollspeicherort**. Obwohl alle drei Speicherorte dieselben grundlegenden Informationen zu protokollierten Ereignissen bieten, zeichnen **table storage** und **blob storage** zusätzliche Informationen wie Instanz-ID, Thread-ID und einen ausführlicheren Zeitstempel (Tick-Format) als die Protokollierung im **file system** auf.
+Beim Aktivieren der **Anwendungsdiagnose** müssen Sie auch den **Protokolliergrad** und auswählen, ob Sie die Protokollierung im **Dateisystem**, **Tabellenspeicher** oder **BLOB-Speicher** aktivieren. Obwohl alle drei Speicherorte dieselben grundlegenden Informationen zu protokollierten Ereignissen bieten, zeichnen **Tabellenspeicher** oder **BLOB-Speicher** zusätzliche Informationen wie Instanz-ID, Thread-ID und einen ausführlicheren Zeitstempel (Tick-Format) als die Protokollierung im **Dateisystem** auf.
 
-Bei Aktivierung von **site diagnostics** müssen Sie **storage** oder **file system** für die Option **web server logging** auswählen. Durch Auswahl von **storage** können Sie ein Speicherkonto festlegen und dann einen Blob-Container hinzufügen, in den die Protokolle geschrieben werden. Alle anderen Protokolle für **site diagnostics** werden nur in das Dateisystem geschrieben.
+Bei Aktivierung der **Website-Diagnose** müssen Sie **Speicher** oder **Dateisystem** für **Webserverprotokollierung** auswählen. Durch Auswahl von **Speicher** können Sie ein Speicherkonto festlegen und dann einen BLOB-Container hinzufügen, in den die Protokolle geschrieben werden. Alle anderen Protokolle für**Website-Diagnose** werden nur in das Dateisystem geschrieben.
 
-> [WACOM.NOTE] In **table storage** oder **blob storage** gespeicherte Informationen können nur über einen Speicherclient oder eine Anwendung aufgerufen werden, die direkt mit diesen Speichersystemen arbeiten. Beispielsweise enthält Visual Studio 2013 einen Speicher-Explorer, mit dem Tabellen- oder Blob-Speicher erkundet werden können, und HDInsight kann auf die im Blob-Speicher gespeicherten Daten zugreifen. Sie können auch mithilfe der [Azure SDKs](http://www.windowsazure.com/en-us/downloads/#) eine Anwendung schreiben, die auf den Azure-Speicher zugreift.
+> [AZURE.NOTE] In **Tabellenspeicher** oder **BLOB-Speicher** gespeicherte Informationen können nur über einen Speicherclient oder eine Anwendung aufgerufen werden, die direkt mit diesen Speichersystemen arbeiten. Beispielsweise enthält Visual Studio 2013 einen Speicher-Explorer, mit dem Tabellen- oder BLOB-Speicher erkundet werden können, und HDInsight kann auf die im Blob-Speicher gespeicherten Daten zugreifen. Sie können auch mithilfe der [Azure SDKs](http://www.windowsazure.com/de-de/downloads/#) eine Anwendung schreiben, die auf den Azure-Speicher zugreift.
 
-Die folgenden Einstellungen sind bei der Aktivierung von **application diagnostics** verfügbar:
+Die folgenden Einstellungen sind bei der Aktivierung der **Anwendungsdiagnose** verfügbar:
 
-* **Logging level** - Ermöglicht das Filtern der aufgezeichneten Informationen nach **informational**, **warning** oder **error**. Sie können auch **verbose** auswählen, um alle von der Anwendung erzeugten Informationen zu protokollieren. **Logging level** kann auf **file system**, **table storage** oder **blob storage** eingestellt werden.
+* **Protokolliergrad** - Sie können die aufgezeichneten Informationen in die Kategorien **Information**, **Warnung** oder **Fehler** filtern. Sie können auch **verbose** auswählen, um alle von der Anwendung erzeugten Informationen zu protokollieren. **Protokolliergrad** kann für **Dateisystem**, **Tabellenspeicher** und **BLOB-Speicher** unterschiedlich festgelegt werden 
 * **Dateisystem** - Speichert die Anwendungsdiagnoseinformationen im Dateisystem der Website. Diese Dateien können über FTP aufgerufen werden oder als ZIP-Archiv mit Azure PowerShell oder den Azure-Befehlszeilentools heruntergeladen werden.
-* **Table storage** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto unter dem Tabellennamen.
-* **Blob storage** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto im Blob-Container.
-* **Retention period** - Standardmäßig werden Protokolle nicht automatisch aus dem **blob storage** gelöscht. Falls die Protokolle automatisch gelöscht werden sollen, wählen Sie **set retention** aus, und geben Sie die Anzahl der Tage ein, für die Protokolle aufbewahrt werden sollen.
+* **Tabellenspeicher** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto unter dem Tabellennamen.
+* **BLOB-Speicher** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto im BLOB-Container.
+* **Beibehaltungsdauer für ** - Standardmäßig werden Protokolle nicht automatisch aus dem **BLOB-Speicher** gelöscht. Falls die Protokolle automatisch gelöscht werden sollen, wählen Sie **set retention** aus, und geben Sie die Anzahl der Tage ein, für die Protokolle aufbewahrt werden sollen.
 
-> [WACOM.NOTE] Sie können gleichzeitig eine Kombination aus Dateisystem-, Tabellen- und Blob-Speicher aktivieren und jeweils individuelle Konfigurationen der Protokollierungsebene festlegen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im Blob-Speicher protokollieren, während die Dateisystemprotokollierung ausführlich erfolgt.
+> [AZURE.NOTE]  Sie können gleichzeitig eine Kombination aus Dateisystem-, Tabellen- und BLOB-Speicher aktivieren und jeweils individuelle Konfigurationen der Protokollierungsebene festlegen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im BLOB-Speicher protokollieren, während die Dateisystemprotokollierung ausführlich erfolgt.
 
-> [WACOM.NOTE] Diagnosen können auch über die Azure PowerShell mit dem Cmdlet  **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
-<a name="download"></a><h2>Gewusst wie: Herunterladen von Protokollen</h2>
+<a name="download"></a><h2>Vorgehensweise: Herunterladen von Protokollen</h2>
 
 Im Dateisystem der Website gespeicherte Diagnoseinformationen können direkt über FTP aufgerufen werden. Außerdem können sie als ZIP-Archiv mit Azure PowerShell oder den Azure-Befehlszeilentools heruntergeladen werden.
 
@@ -77,19 +91,19 @@ Protokolle werden in der folgenden Verzeichnisstruktur gespeichert:
 
 * **Anwendungsprotokolle** - /LogFiles/Application/. Dieser Ordner enthält eine oder mehrere Textdateien mit Informationen, die bei der Anwendungsprotokollierung erzeugt wurden.
 
-* **Protokolle für fehlgeschlagene Anforderungen** - /LogFiles/W3SVC#########/. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Vergewissern Sie sich, dass Sie die XSL-Datei in dasselbe Verzeichnis wie die XML-Datei(en) herunterladen, da die XSL-Datei die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Datei(en) zur Anzeige in Internet Explorer zur Verfügung stellt.
+* **Ablaufverfolgung für Anforderungsfehler** - /LogFiles/W3SVC#########/. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Vergewissern Sie sich, dass Sie die XSL-Datei in dasselbe Verzeichnis wie die XML-Datei(en) herunterladen, da die XSL-Datei die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Datei(en) zur Anzeige in Internet Explorer zur Verfügung stellt.
 
 * **Detaillierte Fehlerprotokolle** - /LogFiles/DetailedErrors/. Dieser Ordner enthält eine oder mehrere HTM-Dateien, die umfangreiche Informationen zu aufgetretenen HTTP-Fehlern bereitstellen. 
 
-* **Webserverprotokolle** - /LogFiles/http/RawLogs. Dieser Ordner enthält eine oder mehrere Textdateien im [erweiterten W3C-Protokolldateiformat](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). 
+* **Webserverprotokolle** - /LogFiles/http/RawLogs. Dieser Ordner enthält eine oder mehrere Textdateien im erweiterten [W3C-Protokolldateiformat](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). 
 
 * **Bereitstellungsprotokolle** - /LogFiles/Git. Dieser Ordner enthält Protokolle, die von den internen Bereitstellungsprozessen der Azure-Websites erzeugt werden, sowie Protokolle für Git-Bereitstellungen.
 
 ###FTP
 
-Um Diagnoseinformationen über FTP aufzurufen, wechseln Sie zur Seite **Dashboard** Ihrer Website im Azure-Verwaltungsportal. Im Abschnitt **quick glance** können Sie den Link **FTP Diagnostic Logs** verwenden, um die Protokolldateien über FTP aufzurufen. Der Eintrag **Deployment/FTP User** listet den Benutzernamen auf, der zum Zugriff auf die FTP-Site verwendet werden sollte.
+Um Diagnoseinformationen über FTP aufzurufen, wechseln Sie zur Seite **Dashboard** Ihrer Website im Azure-Verwaltungsportal. Im Abschnitt **Auf einen Blick** können Sie den Link **FTP-Diagnoseprotollen** verwenden, um die Protokolldateien über FTP aufzurufen. Der Eintrag **Bereitstellung/FTP-Benutzer** listet den Benutzernamen auf, der zum Zugriff auf die FTP-Site verwendet werden sollte.
 
-> [WACOM.NOTE] Falls der Eintrag **Deployment/FTP User** nicht festgelegt ist oder Sie das Kennwort für diesen Benutzer vergessen haben, können Sie einen neuen Benutzer mit zugehörigem Kennwort über den Link**Reset deployment credentials** im Abschnitt **quick glance** im  **Dashboard** erstellen.
+> [AZURE.NOTE] Falls der Eintrag **Bereitstellung/FTP-Benutzer** nicht festgelegt ist oder Sie das Kennwort für diesen Benutzer vergessen haben, können Sie einen neuen Benutzer mit zugehörigem Kennwort über den Link **Anmeldeinformationen für die Bereitstellung zurücksetzen** im Abschnitt **Auf einen Blick** im **Dashboard** erstellen.
 
 ###Herunterladen mit Azure PowerShell
 
@@ -99,7 +113,7 @@ Starten Sie zum Herunterladen der Protokolldateien eine neue Instanz von Azure P
 
 Daraufhin werden die Protokolle für die Website, die durch den Parameter **-Name** angegeben wird, in der Datei **logs.zip** im aktuellen Verzeichnis gespeichert.
 
-> [WACOM.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ###Herunterladen mit Azure-Befehlszeilentools
 
@@ -107,17 +121,17 @@ Zum Herunterladen der Protokolldateien mit den Azure-Befehlszeilentools öffnen 
 
 	azure site log download websitename
 
-Daraufhin werden die Protokolle für die Website namens "websitename" in der Datei **diagnostics.zip** im aktuellen Verzeichnis gespeichert.
+Daraufhin werden die Protokolle für die Website namens  'websitename' in der Datei **diagnostics.zip** im aktuellen Verzeichnis gespeichert.
 
-> [WACOM.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+> [AZURE.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie [Verwenden der Azure-Befehlszeilentools ](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
-<a name="streamlogs"></a><h2>Gewusst wie: Streaming von Protokollen</h2>
+<a name="streamlogs"></a><h2>Vorgehensweise: Streaming von Protokollen</h2>
 
 Beim Entwickeln einer Anwendung ist es häufig nützlich, Protokollinformationen nahezu in Echtzeit zu sehen. Dies kann durch das Streaming von Protokollinformationen in die Entwicklungsumgebung entweder mit der PowerShell oder den Azure-Befehlszeilentools erfolgen.
 
-> [WACOM.NOTE] Einige Protokolltypen puffern die Schreibvorgänge in die Protokolldatei, was zu Störereignissen im Stream führen kann. Beispielsweise kann ein Anwendungsprotokolleintrag für den Besuch einer Seite im Stream vor dem zugehörigen HTTP-Protokolleintrag für die Seitenanforderung angezeigt werden.
+> [AZURE.NOTE] Einige Protokolltypen puffern die Schreibvorgänge in die Protokolldatei, was zu Störereignissen im Stream führen kann. Beispielsweise kann ein Anwendungsprotokolleintrag für den Besuch einer Seite im Stream vor dem zugehörigen HTTP-Protokolleintrag für die Seitenanforderung angezeigt werden.
 
-> [WACOM.NOTE] Protokoll-Streaming zeigt auch Informationen an, die in eine Textdatei im Ordner **D:\\home\\LogFiles\\** geschrieben werden.
+> [AZURE.NOTE] Beim Protokollstreaming werden Informationen in eine Textdatei geschrieben, die im Ordner **D:\\home\\LogFiles\\** gespeichert wird.
 
 ###Streaming mit Azure PowerShell
 
@@ -137,7 +151,7 @@ Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **-
 
 Eine Liste der verfügbaren Pfade wird mit dem Parameter "-ListPath" angezeigt.
 
-> [WACOM.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ###Streaming mit Azure-Befehlszeilentools
 
@@ -145,7 +159,7 @@ Zum Streaming der Protokollinformationen öffnen Sie eine neue Eingabeaufforderu
 
 	azure site log tail websitename
 
-Dadurch wird eine Verbindung zur Website namens "websitename" hergestellt und das Streaming von Informationen in das Fenster gestartet, sobald Protokollereignisse auf der Website auftreten. Alle Informationen, die in Dateien mit der Erweiterung TXT, LOG oder HTM geschrieben werden, die sich im Verzeichnis "/LogFiles" (d:/home/logfiles) befinden, werden an die lokale Konsole gestreamt.
+Dadurch wird eine Verbindung zur Website namens  'websitename' hergestellt und das Streaming von Informationen in das Fenster gestartet, sobald Protokollereignisse auf der Website auftreten. Alle Informationen, die in Dateien mit der Erweiterung TXT, LOG oder HTM geschrieben werden, die sich im Verzeichnis "/LogFiles" (d:/home/logfiles) befinden, werden an die lokale Konsole gestreamt.
 
 Um bestimmte Ereignisse wie beispielsweise Fehler zu filtern, verwenden Sie den Parameter **--Filter**. Beispiel:
 
@@ -155,9 +169,9 @@ Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **-
 
 	azure site log tail websitename --path http
 
-> [WACOM.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/command-line-tools/).
+> [AZURE.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie [Verwenden der Azure-Befehlszeilentools ](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
 
-<a name="understandlogs"></a><h2>Gewusst wie: Verstehen von Diagnoseprotokollen</h2>
+<a name="understandlogs"></a><h2>Vorgehensweise: Verstehen von Diagnoseprotokollen</h2>
 
 ###Anwendungs-Diagnoseprotokolle
 
@@ -167,11 +181,11 @@ __File system__
 
 Jede im Dateisystem protokollierte oder per Streaming empfangene Zeile hat das folgende Format:
 
-{Datum}  PID[{Prozess-ID}] {Ereignistyp/Ebene} {Meldung}
+	{Date}  PID[{process id}] {event type/level} {message}
 
 Beispielsweise würde ein Fehlerereignis in etwa wie folgt aussehen:
 
-2014-01-30T16:36:59  PID[3096] Error       Schwerwiegender Fehler auf der Seite!
+	2014-01-30T16:36:59  PID[3096] Error       Fatal error on the page!
 
 Bei der Protokollierung im Dateisystem erhalten Sie nur die grundlegendsten Informationen der drei verfügbaren Methoden, nämlich Zeit, Prozess-ID, Ereignistyp und Meldung.
 
@@ -186,7 +200,7 @@ Bei der Protokollierung im Tabellenspeicher werden zusätzliche Eigenschaften ve
 <th style="border:1px solid black;vertical-align:top;background-color:#0099dd">Value/format</th>
 </tr>
 <tr>
-<td style="border:1px solid black;vertical-align:top">Partitionsschlüssel</td>
+<td style="border:1px solid black;vertical-align:top">PartitionKey</td>
 <td style="border:1px solid black;vertical-align:top">Datum/Zeit des Ereignisses im Format JJJJMMTTHH</td>
 </tr>
 </thead>
@@ -212,7 +226,7 @@ Bei der Protokollierung im Tabellenspeicher werden zusätzliche Eigenschaften ve
 </tr>
 <tr>
 <td style="border:1px solid black;vertical-align:top">EventId</td>
-<td style="border:1px solid black;vertical-align:top">Die Ereignis-ID<br>Bei fehlender Angabe standardmäßig 0</td>
+<td style="border:1px solid black;vertical-align:top">Die Ereignis-ID dieses Ereignisses<br>Der Standardwert ist 0, wenn keine andere Angabe erfolgt.</td>
 </tr>
 <tr>
 <td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">InstanceId</td>
@@ -265,7 +279,7 @@ Bei der Protokollierung in einem Blob-Speicher werden die Daten im CSV-Format (d
 </tr>
 <tr>
 <td style="border:1px solid black;vertical-align:top">EventId</td>
-<td style="border:1px solid black;vertical-align:top">Die Ereignis-ID<br>Bei fehlender Angabe standardmäßig 0</td>
+<td style="border:1px solid black;vertical-align:top">Die Ereignis-ID dieses Ereignisses<br>Der Standardwert ist 0, wenn keine andere Angabe erfolgt.</td>
 </tr>
 <tr>
 <td style="border:1px solid black;vertical-align:top">Pid</td>
@@ -286,11 +300,11 @@ In einem Blob gespeicherte Daten sehen in etwa wie folgt aus:
 	date,level,applicationName,instanceId,eventTickCount,eventId,pid,tid,message
 	2014-01-30T16:36:52,Error,mywebsite,6ee38a,635266966128818593,0,3096,9,An error occurred
 
-> [WACOM.NOTE] Die erste Zeile des Protokolls enthält die Spaltentitel, wie in diesem Beispiel angegeben.
+> [AZURE.NOTE] Die erste Zeile des Protokolls enthält die Spaltentitel, wie in diesem Beispiel angegeben.
 
 ###Verfolgung fehlgeschlagener Anforderungen
 
-Die Verfolgungsprotokolle für fehlgeschlagene Anforderungen werden in XML-Dateien mit Namen __fr######.xml__ gespeichert. Um das Anzeigen der protokollierten Informationen zu erleichtern, wird ein XSL-Stylesheet namens  __freb.xsl__ im selben Verzeichnis wie die XML-Dateien bereitgestellt. Wenn Sie eine der XML-Dateien in Internet Explorer öffnen, wird das XSL-Stylesheet verwendet, um eine formatierte Ansicht der Verfolgungsinformationen anzuzeigen. Diese sieht in etwa wie folgt aus:
+Die Verfolgungsprotokolle misslungener Anforderungen werden in XML-Dateien mit dem Namen __fr######.xml__ gespeichert. Um das Anzeigen der protokollierten Informationen zu erleichtern, wird ein XSL-Stylesheet namens __freb.xsl__ im selben Verzeichnis wie die XML-Dateien bereitgestellt. Wenn Sie eine der XML-Dateien in Internet Explorer öffnen, wird das XSL-Stylesheet verwendet, um eine formatierte Ansicht der Verfolgungsinformationen anzuzeigen. Diese sieht in etwa wie folgt aus:
 
 ![failed request viewed in the browser](./media/web-sites-enable-diagnostic-log/tws-failedrequestinbrowser.png)
 
@@ -300,14 +314,19 @@ Detaillierte Fehlerprotokolle sind HTML-Dokumente, die ausführlichere Informati
 
 ###Webserverprotokolle
 
-Webserverprotokolle werden im erweiterten [W3C-Protokolldateiformat](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) gespeichert. Die Informationen können in einem Texteditor gelesen oder mit einem Dienstprogramm wie [Log Parser](http://go.microsoft.com/fwlink/?LinkId=246619) analysiert werden.
+Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) gespeichert. Die Informationen können in einem Texteditor gelesen oder mit einem Dienstprogramm wie [Log Parser](http://go.microsoft.com/fwlink/?LinkId=246619) analysiert werden.
 
-> [WACOM.NOTE] Die von Azure-Websites erzeugten Protokolle unterstützen nicht Felder __s-computername__, __s-ip__ oder __cs-version__.
+> [AZURE.NOTE] Die von Azure-Websites erzeugten Protokolle unterstützen nicht die Felder __s-computername__, __s-ip__ oder __cs-version__.
 
 <a name="nextsteps"></a><h2>Nächste Schritte</h2>
 
-- [Überwachen von Websites](/en-us/manage/services/web-sites/how-to-monitor-websites/)
-- [Lernprogramm - Problembehandlung von Websites](/en-us/develop/net/best-practices/troubleshooting-web-sites/)
-- [Problembehandlung von Azure-Websites in Visual Studio](/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)
+- [Überwachen von Websites](/de-de/manage/services/web-sites/how-to-monitor-websites/)
+- [Lernprogramm - Problembehandlung von Websites](/de-de/develop/net/best-practices/troubleshooting-web-sites/)
+- [Problembehandlung von Azure-Websites in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)
 - [Analyse von Website-Protokollen in HDInsight](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
 
+
+
+
+
+<!--HONumber=42-->

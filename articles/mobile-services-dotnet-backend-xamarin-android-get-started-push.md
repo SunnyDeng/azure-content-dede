@@ -1,9 +1,12 @@
-﻿<properties urlDisplayName="Get started with push notifications using .NET runtime mobile services for Xamarin Android apps" pageTitle="Erste Schritte mit Mobile Services für Xamarin Android-Apps - Azure Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Xamarin Android-App zu senden." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications using .NET runtime mobile services" authors="donnam" solutions="" manager="dwrede" editor="mollybos" />
+﻿<properties pageTitle="Erste Schritte mit Mobile Services für Xamarin Android-Apps - Azure Mobile Services" description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Xamarin Android-App zu senden." services="mobile-services, notification-hubs" documentationCenter="xamarin" authors="lindydonna" manager="dwrede" editor="mollybos"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-android" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="donnam" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-android" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="donnam"/>
 
-# Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
+# Hinzufügen von Pushbenachrichtigungen zu einer Mobile Services-App
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-push-xamarin](../includes/mobile-services-selector-get-started-push-xamarin.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push-xamarin](../includes/mobile-services-selector-get-started-push-xamarin.md)]
 
-[WACOM.INCLUDE [mobile-services-content-not-ready](../includes/mobile-services-content-not-ready.md)]
+[AZURE.INCLUDE [mobile-services-content-not-ready](../includes/mobile-services-content-not-ready.md)]
+
+
+<!--HONumber=42-->

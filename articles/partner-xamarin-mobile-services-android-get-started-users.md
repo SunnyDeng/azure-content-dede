@@ -1,10 +1,24 @@
-﻿<properties urlDisplayName="Get Started with Authentication (Xamarin.Android)" pageTitle="Erste Schritte mit der Authentifizierung (Xamarin.Android) - Mobile Services" metaKeywords="Azure Registrieren von Anwendungen, Azure-Authentifizierung, Anwendung authentifizieren, mobile services authentifizieren, Mobile Services Xamarin.Android" description="Erfahren Sie mehr über die Verwendung der Authentifizierung in Ihrer Azure Mobile Services-App für Xamarin.Android." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Get started with authentication in Mobile Services" services="mobile-services" documentationCenter="Mobile" manager="dwrede" authors="donnam"/>
+<properties 
+	pageTitle="Erste Schritte mit der Authentifizierung (Xamarin.Android) - Mobile Services" 
+	description="Erfahren Sie mehr über die Verwendung der Authentifizierung in Ihrer Azure Mobile Services-App für Xamarin.Android." 
+	services="mobile-services" 
+	documentationCenter="xamarin" 
+	manager="dwrede" 
+	authors="lindydonna" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-android" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="donnam" />
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-xamarin-android" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/23/2014" 
+	ms.author="donnam"/>
 
-# Hinzufügen von Authentifizierung zur Mobile Services-App
+# Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 <p>Dieses Thema beschreibt die Authentifizierung von Benutzern in Azure Mobile Services aus Ihrer Xamarin.Android-App. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.</p>
 
@@ -20,17 +34,17 @@ Dieses Lernprogramm benötigt Xamarin.Android und Android SDK 4.2 oder eine höh
 
 <h2><a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services</h2>
 
-[WACOM.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
+[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
 
 <h2><a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer</h2>
 
 
-[WACOM.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
 
 
 3. Öffnen Sie in Eclipse das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services] erstellt haben. 
 
-4. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) geworfen wird. 
+4. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird. 
 
 	 Dies liegt daran, dass die App versucht als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die _TodoItem_-Tabelle jetzt jedoch Authentifizierung erfordert.
 
@@ -42,7 +56,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 			private MobileServiceUser user;
 
-2. Fügen Sie der **TodoActivity**-Klasse die folgende Eigenschaft hinzu: 
+2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu: 
 
 	        private async Task Authenticate()
 	        {
@@ -57,19 +71,17 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 	            }
 	        }
 
-    Damit wird eine neue Methode erstellt, die den Authentifizierungsprozess handhabt. Der Benutzer wird mithilfe einer Microsoft-Konto-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
+    Auf diese Weise wird eine neue Methode zur Verarbeitung des Authentifizierungsprozesses erstellt. Der Benutzer wird mithilfe einer Microsoft-Konto-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
 
-    <div class="dev-callout"><b>Hinweis</b>
-	<p>Falls Sie einen anderen Identitätsanbieter als Microsoft verwenden, ändern Sie den an die <strong>login</strong>-Methode übergebenen Wert auf einen der folgenden Werte: <i>Facebook</i>, <i>Google</i>, <i>Twitter</i> oder <i>WindowsAzureActiveDirectory</i>.</p>
-    </div>
+    > [AZURE.NOTE] Falls Sie einen anderen Identitätsanbieter als Microsoft verwenden, ändern Sie den an die **login**-Methode übergebenen Wert in einen der folgenden Werte: _Facebook_, _Google_, _Twitter_ oder _WindowsAzureActiveDirectory_.
 
-3. Fügen Sie in der **OnCreate**-Methode die folgende Codezeile nach dem Code hinzu, der das `MobileServiceClient`-Objekt instanziiert.
+3. Fügen Sie in der **OnCreate**-Methode die folgende Codezeile im Anschluss an den Code hinzu, der das Objekt `MobileServiceClient` instanziiert.
 
 		await Authenticate();
 
 	Dieser Aufruf startet den Authentifizierungsprozess und wartet asynchron auf eine Antwort.
 
-4. Verschieben Sie den verbleibenden Code nach `await Authenticate();` in der **OnCreate**-Methode in eine neue **CreateTable**-Methode mit dem folgenden Code:
+4. Verschieben Sie den verbleibenden Code nach`await Authenticate();` in der Methode **OnCreate** in eine neue Methode **CreateTable** mit folgendem Code:
 
 	        private async Task CreateTable()
 	        {
@@ -87,7 +99,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 	            await RefreshItemsFromTableAsync();
 	        }
 
-5. Rufen Sie dann die neue **CreateTable**-Methode in **OnCreate** nach dem in Schritt 2 hinzugefügten **Authenticate**-Aufruf hinzu:
+5. Rufen Sie anschließend die neue Methode **CreateTable** in **OnCreate** nach dem in Schritt 2 hinzugefügten Aufruf von **Authenticate** auf:
 
 		await CreateTable();
 
@@ -97,11 +109,11 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
 ## Abgeschlossenes Beispiel abrufen
-Laden Sie das [abgeschlossene Beispielprojekt] herunter. Stellen Sie sicher, dass Sie die Variablen **applicationURL** und **applicationKey** mit Ihren eigenen Azure-Einstellungen aktualisieren.
+Laden Sie das [abgeschlossenes Beispielprojekt] herunter. Stellen Sie sicher, dass Sie die Variablen **applicationURL** und **applicationKey** mit Ihren eigenen Azure-Einstellungen aktualisieren.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. 
+Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. 
 
 <!-- Anchors. -->
 [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
@@ -119,7 +131,7 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 
 <!-- URLs. -->
 
-[Übermitteln einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-android
@@ -130,4 +142,9 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-[Abgeschlossenes Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
+[abgeschlossenes Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
+
+
+
+
+<!--HONumber=42-->

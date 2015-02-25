@@ -1,27 +1,34 @@
-<properties title="Security offerings for Azure Virtual Machines" pageTitle="Security offerings for Azure Virtual Machines" description="Quick overview of key security features for Azure VMs and links to details" metaKeywords="" services="virtual machines" solutions="" documentationCenter="" authors="kathydav" videoId="" scriptId="" />
+<properties pageTitle="Sicherheitsangebote für Azure Virtual Machines" description="Schneller Überblick über die wichtigsten Sicherheitsfeatures für virtuelle Azure-Computer zu Links zu Details" services="virtual-machines" documentationCenter="" authors="KBDAzure" manager="timlt" editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="kathydav" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-multiple" ms.devlang="na" ms.topic="article" ms.date="01/23/2015" ms.author="kathydav"/>
 
-# Sicherheitsangebote für virtuelle Azure-Computer
+#Sicherheitsangebote für Azure Virtual Machines
 
-Die Sicherheitsaufgaben und Konfiguration für virtuelle Azure-Computer sind größtenteils dieselben wie für alle anderen virtuellen oder physischen Computer. Dazu gehören Grundlagen wie Verwenden starker Passwörter, keine weithin bekannten Benutzernamen verwenden und das Einrichten von Richtlinien und Plänen für die Aktualisierung von Betriebssystem und Anwendungen. Außerdem empfehlen wird die folgenden Praktiken und stellen Funktionen bereit, die sie für deren Implementierung verwenden können:
+<p>Die Sicherheitsaufgaben und die Konfiguration für die virtuellen Azure-Computer entsprechen weitestgehend denen, die für andere virtuelle oder physische Computer angewendet werden. Dazu zählen derartige Grundlagen wie die Verwendung sicherer Kennwörter, die Nichtverwendung bekannter Benutzernamen und das Herstellen einer Richtlinie und eines Plans für die Aktualisierung des Betriebssystems und von Anwendungen. Zusätzlich empfehlen wir die folgenden Verfahren, und wir stellen Features bereit, die Sie zum Implementieren jener verwenden können: 
 
--   Einsatz von Anti-Viren/-Malware-Software
+- Ausführen von Virenschutzsoftware/Antischadsoftware
 
--   Verwenden von Netzwerk-Zugriffssteuerungslisten (ACLs) an Endpunkten
+- Verwenden von Netzwerk-Zugriffssteuerungslisten (Access Control Lists, ACLs) auf Endpunkten
+ 
+##Ausführen von Virenschutzsoftware/Antischadsoftware
 
-## Einsatz von Anti-Viren/-Malware-Software
+Azure bietet verschiedene Optionen für Virenschutz-/Antischadsoftwarelösungen. Ihre Verwaltung ist jedoch Ihnen überlassen. Beispielsweise müssen Sie sich entscheiden, wann Sie Überprüfungen vornehmen und Updates installieren. Sie können beim Erstellen des virtuellen Computers oder später eine Virenschutzsoftware-Unterstützung hinzufügen. Zurzeit werden drei Lösungen als Sicherheitserweiterungen angeboten, die sowohl auf neuen als auch auf vorhandenen virtuellen Computern installiert werden können:
 
-Azure bietet eine Reihe von Optionen für Anti-Viren/-Malware-Lösungen. Die Verwaltung liegt allerdings in Ihrer Hand. Sie müssen beispielsweise entscheiden, wann Sie Scans durchführen und Aktualisierungen installieren. Sie können Anti-Virus-Support beim Erstellen eines virtuellen Computers hinzufügen oder zu einem späteren Zeitpunkt. Aktuell werden drei Lösungen als Sicherheitserweiterung angeboten, die sich sowohl auf neuen als auch existierenden virtuellen Computern installieren lassen:
+- [Gewusst wie: Installieren und Konfigurieren von Symantec Endpoint Protection auf einem virtuellen Azure-Computer](http://go.microsoft.com/fwlink/p/?LinkId=404207)
+- [Gewusst wie: Installieren und Konfigurieren von Trend Micro Deep Security-as-a-Service auf einem virtuellen Azure-Computer](http://go.microsoft.com/fwlink/p/?LinkId=404206)
+- [Deploying Antimalware Solutions on Azure Virtual Machines (Bereitstellen von Antischadsoftware-Lösungen auf virtuellen Azure-Computern, in englischer Sprache)](http://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
+ 
 
--   [So installieren und konfigurieren Sie Symantec Endpoint Protection auf einem Azure VM][So installieren und konfigurieren Sie Symantec Endpoint Protection auf einem Azure VM]
--   [So installieren und konfigurieren Sie Trend Micro Deep Security als Dienst auf einem Azure VM][So installieren und konfigurieren Sie Trend Micro Deep Security als Dienst auf einem Azure VM]
--   [Bereitstellen von Anti-Malware-Lösungen auf virtuellen Azure-Computern][Bereitstellen von Anti-Malware-Lösungen auf virtuellen Azure-Computern]
+##Verwenden von Netzwerk-Zugriffssteuerungslisten (Access Control Lists, ACLs) auf Endpunkten virtueller Computer
 
-## Verwenden von Netzwerk-Zugriffssteuerungslisten (ACLs) an Endpunkten virtueller Computer
+Mit Netzwerk-Zugriffssteuerungslisten (Access Control Lists, ACLs) können Sie den eingehenden Datenverkehr zu einem Endpunkt eines virtuellen Computers wahlweise zulassen oder verweigern. Diese Paketfilterungsfunktion bietet eine zusätzliche Schutzebene. Details in Bezug auf die Funktionsweise sowie Links zu Anweisungen finden Sie unter [Informationen zu Netzwerk-Zugriffssteuerungslisten (ACLs)](http://go.microsoft.com/fwlink/?LinkId=506655).
 
-Mit Netzwerk-Zugriffssteuerungslisten (ACLs) können Sie eingehenden Traffic an Endpunkten virtueller Computer selektiv zulassen oder ablehnen. Diese Möglichkeit zur Paketfilterung sorgt für eine zusätzliche Sicherheitsebene. Details dazu, wie das funktioniert, sowie Links zu Anleitungen finden Sie unter [Über Netzwerk-Zugriffssteuerungslisten (ACLs)][Über Netzwerk-Zugriffssteuerungslisten (ACLs)].
+##Zusätzliche Ressourcen
+[Ressourcen](http://azure.microsoft.com/de-de/support/trust-center/resources/) im Microsoft Azure-Vertrauenscenter
 
-  [So installieren und konfigurieren Sie Symantec Endpoint Protection auf einem Azure VM]: http://go.microsoft.com/fwlink/p/?LinkId=404207
-  [So installieren und konfigurieren Sie Trend Micro Deep Security als Dienst auf einem Azure VM]: http://go.microsoft.com/fwlink/p/?LinkId=404206
-  [Bereitstellen von Anti-Malware-Lösungen auf virtuellen Azure-Computern]: http://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/
+
+
+
+
+
+<!--HONumber=42-->

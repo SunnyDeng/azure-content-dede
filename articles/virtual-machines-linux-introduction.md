@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Intro to Linux" pageTitle="Einführung zu Linux in Azure - Azure-Lernprogramm" metaKeywords="Azure Linux vm, Linux vm" description="Erfahren Sie, wie Sie virtuelle Linux-Computer auf Azure verwenden." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Introduction to Linux on Azure" authors="szark" solutions="" manager="timlt" editor="" />
+<properties pageTitle="Einführung zu Linux in Azure - Azure-Lernprogramm" description="Erfahren Sie, wie Sie virtuelle Linux-Computer auf Azure verwenden." services="virtual-machines" documentationCenter="python" authors="szarkos" manager="timlt" editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="09/13/2014" ms.author="szark" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="09/13/2014" ms.author="szark"/>
 
 
 
@@ -8,7 +8,7 @@
 
 #Einführung in Linux auf Azure
 
-Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtueller Linux-Computer in der Azure-Cloud. Die Bereitstellung eines virtuellen Linux-Computers ist ein unkomplizierter Prozess, wenn Sie ein Image aus der Galerie verwenden. 
+Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtueller Linux-Computer in der Azure-Cloud. Die Bereitstellung eines virtuellen Linux-Computers ist ein unkomplizierter Prozess, wenn Sie ein Image aus dem Katalog verwenden. 
 
 ## Inhaltsverzeichnis ##
 
@@ -22,9 +22,9 @@ Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtuel
 
 ## <a id="authentication"></a>Authentifizierung: Benutzernamen, Kennwörter und SSH-Schlüssel
 
-Wenn Sie mithilfe des Azure-Verwaltungsportals einen virtuellen Linux-Computer erstellen, werden Sie aufgefordert, einen Benutzernamen, ein Kennwort und (optional) einen öffentlichen SSH-Schlüssel anzugeben. Bei der Auswahl eines Benutzernamens während der Bereitstellung virtueller Linux-Computer gibt es folgende Einschränkungen: bereits im virtuellen Computer vorhandene Namen von Systemkonten (UID <100) sind nicht zulässig, z. B. 'root'.
+Wenn Sie mithilfe des Azure-Verwaltungsportals einen virtuellen Linux-Computer erstellen, werden Sie aufgefordert, einen Benutzernamen, ein Kennwort und (optional) einen öffentlichen SSH-Schlüssel anzugeben. Bei der Auswahl eines Benutzernamens während der Bereitstellung virtueller Linux-Computer gibt es folgende Einschränkungen: Bereits im virtuellen Computer vorhandene Namen von Systemkonten (UID <100) sind nicht zulässig, z. B.  'root'.
 
- - Weitere Informationen finden Sie unter [Gewusst wie: Verwenden von SSH mit Linux auf Azure](../linux-use-ssh-key/)
+ - Siehe [Gewusst wie: Verwenden von SSH mit Linux auf Azure](../linux-use-ssh-key/).
 
 
 ### <a id="keygeneration"></a>Erzeugen eines SSH-Schlüssels
@@ -41,11 +41,11 @@ Die aktuelle Version des Verwaltungsportals akzeptiert nur öffentliche SSH-Schl
 
 		chmod 600 myPrivateKey.key
 
-3. Wandeln Sie die Datei `myCert.pem` in das Dateiformat `myCert.cer` (DER-codiertes X.509-Zertifikat) um.
+3. Konvertieren von  `myCert.pem` zu  `myCert.cer` (DER-codiertes X.509-Zertifikat)
 
 		openssl  x509 -outform der -in myCert.pem -out myCert.cer
 
-4. Laden Sie das myCert.cer hoch, während Sie den virtuellen Linux-Computer erstellen. Der Bereitstellungsvorgang installiert automatisch den öffentlichen Schlüssel in diesem Zertifikat in der Datei `~/.ssh/authorized_keys` für den angegebenen Benutzer im virtuellen Computer.
+4. Laden Sie das  `myCert.cer` hoch, während Sie den virtuellen Linux-Computer erstellen. Der Bereitstellungsvorgang installiert automatisch den öffentlichen Schlüssel in diesem Zertifikat in der Datei `~/.ssh/authorized_keys` für den angegebenen Benutzer im virtuellen Computer.
 
 5. Stellen Sie die Verbindung mit dem virtuellen Linux-Computer mithilfe von ssh her.
 
@@ -53,8 +53,8 @@ Die aktuelle Version des Verwaltungsportals akzeptiert nur öffentliche SSH-Schl
 
 	Beim ersten Anmelden werden Sie aufgefordert, den Fingerabdruck des öffentlichen Schlüssels des Hosts zu übernehmen.
 
-6. Optional können Sie `myPrivateKey.key` nach `~/.ssh/id_rsa` kopieren, so dass Ihr OpenSSH-Client dies automatisch übernimmt, ohne die -i-Option zu verwenden.
-   Alternativ können Sie `~/.ssh/config` so ändern, dass sie einen danach einen Abschnitt für Ihren virtuellen Computer enthält:
+6. Sie möchten möglicherweise optional  `myPrivateKey.key` zu `~/.ssh/id_rsa` kopieren, sodass Ihr OpenSSH-Client dies automatisch auswählen kann, ohne dass die Option "-i" verwendet werden muss.
+   Alternativ können Sie `~/.ssh/config` so ändern, dass sie danach einen Abschnitt für Ihren virtuellen Computer enthält:
 
         Host servicename.cloudapp.net
           IdentityFile %d/.ssh/myPrivateKey.key
@@ -63,22 +63,22 @@ Die aktuelle Version des Verwaltungsportals akzeptiert nur öffentliche SSH-Schl
 ### Erzeugen eines Schlüssels aus einem vorhandenen OpenSSH-kompatiblen Schlüssel
 Im vorherigen Beispiel wurde die Erstellung eines neuen Schlüssels zur Verwendung mit Azure beschrieben. In manchen Fällen können Benutzer bereits über ein vorhandenes OpenSSH-kompatibles Schlüsselpaar (öffentlich und privat) verfügen und vorhaben, diese Schlüssel in Azure zu verwenden.
 
-Private OpenSSH-Schlüssel können direkt vom Hilfsprogramm `openssl` gelesen werden. Mit dem folgenden Befehl wird aus dem vorhandenen privaten SSH-Schlüssel (im Beispiel unten id_rsa) der öffentliche Schlüssel `.pem` erstellt, der für Azure erforderlich ist:
+Private OpenSSH-Schlüssel können direkt vom Hilfsprogramm  `openssl` gelesen werden. Mit dem folgenden Befehl wird aus dem vorhandenen privaten SSH-Schlüssel (im Beispiel unten id_rsa) der öffentliche Schlüssel  `.pem` erstellt, der für Microsoft Azure erforderlich ist:
 
 	# openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem
 
-Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verwendet werden kann, um einen virtuellen Linux-Computer auf Azure bereitzustellen. Während der Bereitstellung wird die Datei `.pem` in einen mit `openssh` kompatiblen öffentlichen Schlüssel übersetzt und in `~/.ssh/authorized_keys` platziert.
+Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verwendet werden kann, um einen virtuellen Linux-Computer auf Windows Azure bereitzustellen. Während der Bereitstellung wird die Datei  `.pem` in einen mit  `openssh` kompatiblen öffentlichen Schlüssel übersetzt und in `~/.ssh/authorized_keys` platziert.
 
 
 ## <a id="superuserprivileges"></a>Erlangen von Superuser-Berechtigungen mit `sudo`
 
-Das Benutzerkonto, das während der Bereitstellung der virtuellen Computerinstanz auf Azure angegeben wird, ist ein Konto mit lokal weit reichenden Berechtigungen. Dieses Konto wird vom Azure Linux-Agent konfiguriert, damit die Berechtigungen mithilfe des `sudo`-Hilfsprogramms auf "root" (Superuser-Konto) erweitert werden können. Sobald Sie über dieses Benutzerkonto angemeldet sind, können Sie mit dieser Befehlssyntax Befehle als "root" ausführen.
+Das Benutzerkonto, das während der Bereitstellung der virtuellen Computerinstanz auf Azure angegeben wird, ist ein Konto mit lokal weit reichenden Berechtigungen. Dieses Konto wird vom Azure Linux-Agent konfiguriert, damit die Berechtigungen mithilfe des  `sudo`-Hilfsprogramms auf "root" (Superuser-Konto) erweitert werden können. Sobald Sie über dieses Benutzerkonto angemeldet sind, können Sie mit dieser Befehlssyntax Befehle als "root" ausführen.
 
 	# sudo <COMMAND>
 
 Optional können Sie über **sudo -s** eine Root-Shell abrufen.
 
-- Weitere Informationen finden Sie unter [Verwenden von Stammberechtigungen auf virtuellen Linux-Computern in Azure](../virtual-machines-linux-use-root-privileges/)
+- Siehe [Verwenden von Stammberechtigungen auf virtuellen Linux-Computern in Azure](../virtual-machines-linux-use-root-privileges/).
 
 
 ## <a id="firewallconfiguration"></a>Firewall-Konfiguration
@@ -87,7 +87,7 @@ Azure bietet einen integrierten Paketfilter, der die Konnektivität auf die im V
 
  - Siehe: [Einrichten von Endpunkten für einen virtuellen Computer](../virtual-machines-set-up-endpoints/)
 
-Die Linux-Images in der Azure-Galerie aktivieren die Firewall *iptables* nicht standardmäßig. Bei Bedarf kann die Firewall für die Bereitstellung einer zusätzlichen Filterung konfiguriert werden.
+Die Linux-Images im Azure-Katalog aktivieren die Firewall  *iptables* nicht standardmäßig. Bei Bedarf kann die Firewall für die Bereitstellung einer zusätzlichen Filterung konfiguriert werden.
 
 
 ## <a id="hostnamechanges"></a>Hostnamen-Änderungen
@@ -105,7 +105,7 @@ Der Azure Linux-Agent enthält eine Funktion zur automatischen Erkennung dieser 
 ### Ubuntu-Images
 Ubuntu-Images nutzen cloud-init, was zusätzliche Funktionalitäten für das Bootstrapping eines virtuellen Computers bietet.
 
- - Weitere Informationen finden Sie unter [Custom Data and Cloud-Init on Microsoft Azure] (Benutzerdefinierte Daten und Cloud-Init auf Microsoft Azure) (in englischer Sprache)(http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
+ - Weitere Informationen finden Sie unter [Custom Data and Cloud-Init on Microsoft Azure](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/) (Benutzerdefinierte Daten und Cloud-Init auf Microsoft Azure, in englischer Sprache)
 
 
 ## <a id="virtualmachine"></a>Image-Erfassung virtueller Computer
@@ -116,22 +116,25 @@ Azure bietet die Möglichkeit, den Status eines vorhandenen virtuellen Computers
 
 2. Schalten Sie den virtuellen Computer aus.
 
-3. Klicken Sie im Verwaltungsportal auf *Aufnehmen*, oder verwenden Sie die PowerShell oder Befehlszeilenschnittstellen-Tools zum Erfassen des virtuellen Computers als ein Image.
+3. Klicken Sie im Verwaltungsportal auf  *Capture*, oder verwenden Sie die PowerShell oder Befehlszeilenschnittstellen-Tools zum Erfassen des virtuellen Computers als Image.
 
  - Siehe: [Erfassen eines virtuellen Linux-Computers, um ihn als Vorlage zu verwenden](../virtual-machines-linux-capture-image/)
 
 
 ## <a id="attachingdisks"></a>Anfügen von Datenträgern
 
-An jeden virtuellen Computer ist ein temporärer lokaler *Ressourcendatenträger* angefügt. Da die Daten auf einem Ressourcendatenträger bei Neustarts verloren gehen können, werden Ressourcendatenträger oft von Anwendungen und Prozessen zur vorübergehenden **(temporären)** Datenspeicherung auf dem virtuellen Computer verwendet. Außerdem dienen sie zur Speicherung von Auslagerungsdateien für das Betriebssystem.
+An jeden virtuellen Computer ist ein temporärer lokaler  *Ressourcendatenträger* angefügt. Da die Daten auf einem Ressourcendatenträger bei Neustarts verloren gehen können, werden Ressourcendatenträger oft von Anwendungen und Prozessen zur vorübergehenden (**temporären**) Datenspeicherung auf dem virtuellen Computer verwendet. Außerdem dienen sie zur Speicherung von Auslagerungsdateien für das Betriebssystem.
 
-Unter Linux wird der Ressourcendatenträger in der Regel vom Windows Azure Linux Agent verwaltet und automatisch in **/mnt/resource** (oder **/mnt** auf Ubuntu-Abbildern) eingebunden.
+Unter Linux wird der Ressourcendatenträger normalerweise vom Azure Linux-Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt.
 
-	>[WACOM.NOTE] Beachten Sie, dass der Ressourcendatenträger ein **temporärer** Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird.
+	>[AZURE.NOTE] Beachten Sie, dass der Ressourcendatenträger ein **temporärer** Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird.
 
-Der Datenträger kann unter Linux vom Kernel den Namen '/dev/sdc' erhalten, und die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Dies wird im folgenden Lernprogramm Schritt für Schritt erläutert: [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer](../virtual-machines-linux-how-to-attach-disk/).
+Der Datenträger unter Linux kann vom Kernel den Namen  `/dev/sdc` erhalten, und die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Dies wird im folgenden Lernprogramm Schritt für Schritt erläutert: [Anfügen eines Datenträgers an einen virtuellen Computer](../virtual-machines-linux-how-to-attach-disk/).
 
  - Weitere Informationen: [Konfigurieren des Software-RAID unter Linux](../virtual-machines-linux-configure-raid/)
 
 
-<!--HONumber=35.1-->
+
+
+
+<!--HONumber=42-->

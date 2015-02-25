@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Get Started with Mobile Analytics" pageTitle="Erste Schritte mit Mobile Analytics | Mobile Dev Center" metaKeywords="" description="Erste Schritte mit Mobile Analytics." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get Started with Mobile Analytics" authors="mahender" manager="dwrede"/>
+﻿<properties pageTitle="Erste Schritte mit Mobile Analytics | Mobile Dev Center" description="Erste Schritte mit Mobile Analytics." documentationCenter="ios" authors="mattchenderson" manager="dwrede" editor="" services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="10/10/2014" ms.author="mahender" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="multiple" ms.topic="article" ms.date="10/10/2014" ms.author="mahender"/>
 
 # Erste Schritte mit Mobile Analytics (Capptain)
 
@@ -22,16 +22,16 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 * Ein [Capptain]-Konto
-* Eine App der [Mobile Services-Stufe "Standard"]
+* Eine App [Mobile Services Stufe "Standard"]
 
 ## <a name="initialize"></a>Initialisieren des Capptain-SDK
 
-1. Navigieren Sie zur Seite  mit den **Anwendungsdetails** Ihrer in Capptain registrierten App. Wählen Sie die Registerkarte "SDK" und laden Sie das Paket herunter.
+1. Navigieren Sie zur Seite **Application Details** Ihrer in Capptain registrierten App. Wählen Sie die Registerkarte "SDK" und laden Sie das Paket herunter.
 
 2. Fügen Sie in XCode das Capptain-SDK Ihrem Projekt hinzu, indem Sie mit der rechten Maustaste auf das Projekt klicken und "Dateien hinzufügen zu..." auswählen. Wählen Sie den Ordner "CapptainSDK".
 
-3. Wählen Sie Ihr Projekt aus. Wählen Sie auf der Registerkarte **Build Phases** (Build-Phasen) die Option **Link Binary With Libraries** (Binär mit Bibliotheken verknüpfen) und fügen Sie die folgenden Frameworks hinzu:
-    * AdSupport.framework - Link als optional festlegen
+3. Wählen Sie Ihr Projekt aus. Wählen Sie auf der Registerkarte **Build Phases** die Option **Link Binary With Libraries** aus, und fügen Sie die folgenden Frameworks hinzu:
+    * AdSupport.framework - set the link as Optional
     * SystemConfiguration.framework
     * CoreTelephony.framework
     * CFNetwork.framework
@@ -57,7 +57,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 ## <a name="instrument"></a>Überladung für UIViewController
 
-1. Finden Sie alle untergeordneten Elemente von "UIViewController" in Ihrem Projekt und stellen Sie sicher, dass sie stattdessen von "CapptainViewController" erben.
+1. Finden Sie alle untergeordneten Elemente von  `UIViewController` in Ihrem Projekt, und stellen Sie sicher, dass sie stattdessen von  `CapptainViewController` erben.
 
         #import <UIKit/UIKit.h>
         #import "CapptainViewController.h"
@@ -71,12 +71,12 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
         @property (nonatomic, retain) IBOutlet UITextField* myTextField1;
         @property (nonatomic, retain) IBOutlet UITextField* myTextField2;
 
-2. Finden Sie alle untergeordneten Elemente von "UITableViewController" in Ihrem Projekt und stellen Sie sicher, dass sie stattdessen von "CapptainTableViewController" erben.
+2. Finden Sie alle untergeordneten Elemente von  `UITableViewController` in Ihrem Projekt, und stellen Sie sicher, dass sie stattdessen von  `CapptainTableViewController` erben.
 
     Ihre App ist nun konfiguriert, um Analysedaten an Capptain zu senden.
 
 ## Nächste Schritte
-Unter [http://www.capptain.com] erfahren Sie mehr zu den Vorteilen von Capptain für Ihre App.(http://www.capptain.com)
+Mehr zu den Vorteilen von Capptain für Ihre App erfahren Sie unter [http://www.capptain.com](http://www.capptain.com).
 
 <!-- Anchors. -->
 [Initialisieren des Capptain-SDK]: #initialize
@@ -85,6 +85,7 @@ Unter [http://www.capptain.com] erfahren Sie mehr zu den Vorteilen von Capptain 
 
 <!-- URLs. -->
 [Capptain]: http://www.capptain.com
-[Mobile Services-Stufe "Standard"]: /de-de/pricing/details/mobile-services/
+[Mobile Services Stufe "Standard"]: /de-de/pricing/details/mobile-services/
 
-<!--HONumber=35.1-->
+
+<!--HONumber=42-->

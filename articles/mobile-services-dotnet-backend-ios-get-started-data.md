@@ -1,24 +1,23 @@
-﻿
-<properties urlDisplayName="Get Started with Data" pageTitle="Erste Schritte mit Daten (iOS) | Mobile Dev Center" metaKeywords="Azure iOS data, Azure mobile services data, " description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer iOS-App." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="krisragh" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Erste Schritte mit Daten (iOS) | Mobile Dev Center" description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer iOS-App." services="mobile-services" documentationCenter="ios" authors="krisragh" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Services Daten in einer iOS-App nutzen können. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und zeigen dann die Datenänderungen beim Ausführen der App an.
 
 Der mobile Dienst, den Sie in diesem Lernprogramm erstellen, unterstützt die .NET Runtime in Mobile Services. Auf diese Weise können Sie .NET-Sprachen und Visual Studio für die serverseitige Geschäftslogik im mobilen Dienst verwenden. Informationen zum Erstellen eines mobilen Diensts, dessen serverseitige Geschäftslogik Sie in JavaScript schreiben können, finden Sie in der [JavaScript-Back-End-Version] dieses Themas.
 
->[WACOM.NOTE]Anhand dieses Lernprogramms soll Ihnen ein besseres Verständnis über die Mobile Services dahingehend vermittelt werden, wie Sie mit deren Hilfe Azure verwenden können, um Daten von einer iOS-App abzurufen und zu speichern. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Wenn dies Ihre erste Erfahrung mit Mobile Services ist, sollten Sie abwägen, zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abzuschließen.
+>[AZURE.NOTE]Anhand dieses Lernprogramms soll Ihnen ein besseres Verständnis über die Mobile Services dahingehend vermittelt werden, wie Sie mit deren Hilfe Azure verwenden können, um Daten von einer iOS-App abzurufen und zu speichern. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 </div>
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 1. [Herunterladen des iOS-App-Projekts]
-2. [Erstellen des mobilen Dienstes]
-3. [Lokaler Download des Diensts]
+2. [Erstellen des mobilen Diensts]
+3. [Lokales Herunterladen des Diensts]
 4. [Testen des mobilen Dienstes]
 5. [Veröffentlichen des mobilen Diensts in Azure]
 7. [Aktualisieren der App zur Verwendung von Mobile Services]
@@ -26,13 +25,13 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-+ [Mobile Services iOS SDK] und [XCode 4.5][Installieren von Xcode] sowie iOS 5.0 oder höhere Versionen.
++ [Mobile Services iOS SDK] und [XCode 4.5][Installieren von Xcode] sowie iOS 5.0 oder neuere Versionen.
 + Visual Studio 2013 (Sie erhalten [Visual Studio Express für das Web](http://go.microsoft.com/p/?linkid=9832232) kostenlos).
-+ Ein Microsoft Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-ios%2F" target="_blank">Kostenlose Azure-Testversion</a>.
++ Ein Microsoft Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-ios%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
 ##<a name="download-app"></a>Download des GetStartedWithData-Projekts
 
-Dieses Lernprogramm baut auf der [GetStartedWithData app][GitHub] auf, bei der es sich um eine iOS-App handelt. Die Benutzeroberfläche dieser App und die vom Mobile Services-iOS-Schnellstart generierte Benutzeroberfläche sind identisch, mit der Ausnahme, dass hinzugefügte Einträge lokal im Arbeitsspeicher gespeichert werden.
+Dieses Lernprogramm baut auf der [GetStartedWithData-App][GitHub] auf, bei der es sich um eine iOS-App handelt. Die Benutzeroberfläche dieser App und die vom Mobile Services-iOS-Schnellstart generierte Benutzeroberfläche sind identisch, mit der Ausnahme, dass hinzugefügte Einträge lokal im Arbeitsspeicher gespeichert werden.
 
 1. Laden Sie die GetStartedWithData-[Beispiel-App][GitHub] herunter.
 
@@ -42,7 +41,7 @@ Dieses Lernprogramm baut auf der [GetStartedWithData app][GitHub] auf, bei der e
 
 3. Klicken Sie auf die Schaltfläche **Ausführen** (oder drücken Sie die Taste Command+R), um das Projekt neu zu erstellen und die App zu starten.
 
-4. Geben Sie in der App einen Text in das Textfeld ein. Klicken Sie anschließend auf die Schaltfläche **+**.
+4. Geben Sie in der App einen Text in das Textfeld ein, und klicken Sie anschließend auf die Schaltfläche **+**.
 
    	![][0]  
 
@@ -50,33 +49,33 @@ Dieses Lernprogramm baut auf der [GetStartedWithData app][GitHub] auf, bei der e
 
 ##<a name="create-service"></a>Erstellen eines neuen mobilen Diensts im Verwaltungsportal
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
 ##<a name="download-the-service-locally"></a>Herunterladen des Diensts auf den lokalen Computer
 
-[WACOM.INCLUDE [mobile-services-ios-download-service-locally](../includes/mobile-services-ios-download-service-locally.md)]
+[AZURE.INCLUDE [mobile-services-ios-download-service-locally](../includes/mobile-services-ios-download-service-locally.md)]
 
 ##<a name="test-the-service"></a>Testen des mobilen Dienstes
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service](../includes/mobile-services-dotnet-backend-test-local-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service](../includes/mobile-services-dotnet-backend-test-local-service.md)]
 
-##<a name="publish-mobile-service"></a>Veröffentlichen des mobilen Diensts in Azure
+##<a name="publish-mobile-service"></a>Veröffentlichen des mobilen Dienstes in Azure
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 ##<a name="update-app"></a>Aktualisieren der App für den Datenzugriff über mobile Dienste
 
-[WACOM.INCLUDE [mobile-services-ios-enable-mobile-service-access](../includes/mobile-services-ios-enable-mobile-service-access.md)]
+[AZURE.INCLUDE [mobile-services-ios-enable-mobile-service-access](../includes/mobile-services-ios-enable-mobile-service-access.md)]
 
 ##<a name="test-app"></a>Testen der App mit dem neuen mobilen Dienst
 
-1. Wählen Sie unter Xcode einen Emulator, den Sie bereitstellen (entweder iPhone oder iPad). Klicken Sie auf die Schaltfläche **Ausführen** (oder drücken Sie die Taste Command+R, um das Projekt neu zu erstellen und die App zu starten.
+1. Wählen Sie unter Xcode einen Emulator, den Sie bereitstellen (entweder iPhone oder iPad). Klicken Sie auf die Schaltfläche **Ausführen** (oder drücken Sie die Taste Command+R), um das Projekt neu zu erstellen und die App zu starten.
 
    	Hierdurch wird der mit dem iOS SDK erstellte Azure Mobile Services-Client ausgeführt, der Elemente vom mobilen Dienst abfragt.
 
-2. Geben Sie wie zuvor Text im Textfeld ein, und klicken Sie danach auf die Schaltfläche **+**.
+2. Geben Sie wie zuvor Text in das Textfeld ein, und klicken Sie danach auf die Schaltfläche **+**.
 
-   	Dieser Code schickt ein neues einzufügendes Element an den mobilen Dienst. Jedes neue todoItem wird in der SQL-Datenbank, die Sie zuvor für Ihren mobilen Dienst im Azure-Verwaltungsportal konfiguriert haben, gespeichert und aktualisiert.
+   	Auf diese Weise wird ein neuer Eintrag an den mobilen Service gesendet. Jedes neue todoItem wird in der SQL-Datenbank, die Sie zuvor für Ihren mobilen Dienst im Azure-Verwaltungsportal konfiguriert haben, gespeichert und aktualisiert.
 
 3. Starten Sie die App neu um zu sehen, dass die Änderungen in die Datenbank in Azure übernommen wurden.
 
@@ -86,9 +85,9 @@ Dieses Lernprogramm baut auf der [GetStartedWithData app][GitHub] auf, bei der e
 
     ![][17]
 
-5. Führen Sie im Verwaltungsportal eine Abfrage aus, um die von der App vorgenommenen Änderungen anzuzeigen. Ihre Abfrage sieht in etwa wie folgt aus, nur dass Sie Ihren Datenbanknamen statt `todolist` verwenden.
+5. Führen Sie im Verwaltungsportal eine Abfrage aus, um die von der App vorgenommenen Änderungen anzuzeigen. Ihre Abfrage sieht wie folgt aus, nur dass Sie Ihren Datenbanknamen anstelle von  `todolist` verwenden.
 
-        SELECT * FROM [todolist].[todoitems]
+        SELECT * FROM [todolist].[todoitems]	
 
     ![][18]
 
@@ -116,12 +115,12 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 
 <!-- Anchors. -->
 [Herunterladen des iOS-App-Projekts]: #download-app
-[Erstellen des mobilen Dienstes]: #create-service
-[Erstellen einer Datentabelle als Datenspeicher]: #add-table
+[Erstellen des mobilen Diensts]: #create-service
+[Hinzufügen einer Datentabelle als Speicher]: #add-table
 [Aktualisieren der App zur Verwendung von Mobile Services]: #update-app
 [Testen der App mit Mobile Services]: #test-app
-[Next Steps]:#next-steps
-[Lokaler Download des Diensts]: #download-the-service-locally
+[Nächste Schritte]:#next-steps
+[Lokales Herunterladen des Diensts]: #download-the-service-locally
 [Testen des mobilen Dienstes]: #test-the-service
 [Veröffentlichen des mobilen Diensts in Azure]: #publish-mobile-service
 
@@ -149,3 +148,6 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [GitHub]:  http://go.microsoft.com/fwlink/p/?LinkId=268622
 [GitHub-Repository]: http://go.microsoft.com/fwlink/p/?LinkId=268784
+
+
+<!--HONumber=42-->

@@ -1,10 +1,10 @@
-﻿<properties urlDisplayName="Role Based Access Control with Azure Active Directory" pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung steuern." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Role Based Access Control in Mobile Services and Azure Active Directory" authors="wesmc" manager="dwrede" />
+﻿<properties pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Mobile Dev Center" description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung steuern." documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor="" services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="10/14/2014" ms.author="wesmc" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="10/14/2014" ms.author="wesmc"/>
 
 # Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory
 
-[WACOM.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
+[AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
 Rollenbasierte Zugriffssteuerung (RBAC) besteht im Zuweisen von Berechtigungen für Rollen, die Benutzer innehaben können, um Beschränkungen für die Möglichkeiten bestimmter Benutzer zu definieren. In diesem Lernprogramm erfahren Sie, wie Sie grundlegende RBAC für Azure Mobile Services hinzufügen können.
 
@@ -17,7 +17,7 @@ In diesem Lernprogramm werden die folgenden Schritte behandelt:
 
 1. [Erstellen der Gruppe "Sales" mit Mitgliedschaften]
 2. [Erzeugen eines Schlüssels für die integrierte Anwendung]
-3. [Erstellen eines benutzerdefinierten Autorisierungsattributs] 
+3. [Erstellen eines benutzerdefinierten Autorisierungsattributs]
 4. [Hinzufügen einer rollenbasierten Zugriffsprüfung für Datenbankvorgänge]
 5. [Testen des Clientzugriffs]
 
@@ -31,15 +31,15 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 ## <a name="create-group"></a>Erstellen der Gruppe "Sales" mit Mitgliedschaften
 
-[WACOM.INCLUDE [mobile-services-aad-rbac-create-sales-group](../includes/mobile-services-aad-rbac-create-sales-group.md)]
+[AZURE.INCLUDE [mobile-services-aad-rbac-create-sales-group](../includes/mobile-services-aad-rbac-create-sales-group.md)]
 
 
 ## <a name="generate-key"></a>Erzeugen eines Schlüssels für die integrierte Anwendung
 
 
-Im Lernprogramm [Hinzufügen von Authentifizierung zur App] haben Sie eine Registrierung für die integrierte Anwendung erstellt, als Sie den Schritt [Registrieren für die Verwendung einer Azure Active Directory-Anmeldung] ausgeführt haben. In diesem Abschnitt erzeugen Sie einen Schlüssel, der beim Lesen der Verzeichnisinformationen mit der Client-ID der integrierten Anwendung verwendet wird. 
+Im Lernprogramm [Hinzufügen von Authentifizierung zur App] haben Sie eine Registrierung für die integrierte Anwendung erstellt, als Sie den Schritt [Registrieren für die Verwendung einer Azure Active Directory-Anmeldung] ausgeführt haben. In diesem Abschnitt erzeugen Sie einen Zugriffsschlüssel, der beim Lesen der Verzeichnisinformationen mit der Client-ID der integrierten Anwendung verwendet wird. 
 
-[WACOM.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../includes/mobile-services-generate-aad-app-registration-access-key.md)]
+[AZURE.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../includes/mobile-services-generate-aad-app-registration-access-key.md)]
 
 
 
@@ -51,7 +51,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 
 2. Geben Sie im Dialogfeld "NuGet-Paket-Manager" **ADAL** in das Suchfeld ein, um die **Active Directory-Authentifizierungsbibliothek** für Ihren mobilen Dienst zu suchen und zu installieren.
 
-3. Installieren Sie im NuGet-Paket-Manager außerdem die **Microsoft Azure Active Directory Graph-Clientbibliothek** ür den mobilen Dienst.
+3. Installieren Sie im NuGet-Paket-Manager außerdem die **Microsoft Azure Active Directory Graph-Clientbibliothek** für Ihren mobilen Dienst.
 
 
 4. Klicken Sie in Visual Studio mit der rechten Maustaste auf das mobile Dienstprojekt, und wählen Sie **Hinzufügen**, **Neuer Ordner** aus. Nennen Sie den neuen Ordner **Utilities**.
@@ -60,7 +60,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 
     ![][0]
 
-6. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei "AuthorizeAadRole.cs" hinzu: 
+6. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei "AuthorizeAadRole.cs" hinzu. 
 
         using System.Net;
         using System.Net.Http;
@@ -103,9 +103,9 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
             }
         }
 
-9. Fügen Sie in "AuthorizeAadRole.cs" die folgende `GetAADToken` zur `AuthorizeAadRole`-Klasse hinzu.
+9. Fügen Sie in der Datei "AuthorizeAadRole.cs" die folgende `GetAADToken`-Methode zur  `AuthorizeAadRole`-Klasse hinzu.
 
-    >[WACOM.NOTE] Sie sollten den Token zwischenspeichern, statt für jede Zugriffsprüfung einen neuen Token zu erstellen. Aktualisieren Sie den Zwischenspeicher, wenn bei der Verwendung des Tokens ein AccessTokenExpiredException-Fehler ausgegeben wird, wie in der [Graph-Clientbibliothek] beschrieben ist. Der Einfachheit halber wird dies im Code unten nicht dargestellt, aber dadurch wird zusätzlicher Netzwerkverkehr mit Active Directory verringert.  
+    >[AZURE.NOTE] Sie sollten den Token zwischenspeichern, statt für jede Zugriffsprüfung einen neuen Token zu erstellen. Aktualisieren Sie den Zwischenspeicher, wenn bei der Verwendung des Tokens ein AccessTokenExpiredException-Fehler ausgegeben wird, wie in der [Graph-Clientbibliothek] beschrieben ist. Aus Gründen der Vereinfachung wird dies im Code unten nicht dargestellt, aber es minimiert den zusätzlichen Netzwerkverkehr mit Active Directory.  
 
         private string GetAADToken(ApiServices services)
         {
@@ -140,9 +140,9 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
             return token;
         }
 
-10. Aktualisieren Sie in der Datei "AuthorizeAadRole.cs" die `OnAuthorization`-Methode in der `AuthorizeAadRole`-Klasse mit dem folgenden Code. Dieser Code verwendet die [Graph-Clientbibliothek], um die Active Directory-Gruppe aufzurufen, die der Rolle zugeordnet ist. Anschließend wird die Benutzermitgliedschaft in dieser Gruppe überprüft, um den Benutzer zu autorisieren.
+10. Aktualisieren Sie in der Datei "AuthorizeAadRole.cs" die `OnAuthorization`-Methode in der  `AuthorizeAadRole`-Klasse mit dem folgenden Code. Dieser Code verwendet die [Graph-Clientbibliothek], um die Active Directory-Gruppe aufzurufen, die der Rolle zugeordnet ist. Anschließend wird die Benutzermitgliedschaft in dieser Gruppe überprüft, um den Benutzer zu autorisieren.
 
-    >[WACOM.NOTE] Dieser Code schlägt die Active Directory-Gruppe nach dem Namen nach. In vielen Fällen ist es empfehlenswert, die Gruppen-ID als App-Einstellung des mobilen Diensts zu speichern. Der Gruppenname kann sich ändern, die ID bleibt dagegen immer gleich. Mit der Änderung des Gruppennamens ist jedoch meist eine Änderung des Rollenumfangs verbunden, die auch eine Aktualisierung des Codes des mobilen Diensts erforderlich machen kann.  
+    >[AZURE.NOTE] Dieser Code schlägt die Active Directory-Gruppe nach dem Namen nach. In vielen Fällen ist es empfehlenswert, die Gruppen-ID als App-Einstellung des mobilen Diensts zu speichern. Der Gruppenname kann sich ändern, die ID bleibt dagegen immer gleich. Mit der Änderung des Gruppennamens ist jedoch meist eine Änderung des Rollenumfangs verbunden, daher kann also trotzdem eine Aktualisierung des mobilen Dienstcodes erforderlich sein.  
 
         public override void OnAuthorization(HttpActionContext actionContext)
         {
@@ -244,7 +244,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
         [AuthorizeAadRole(AadGroups.Sales)]
         public class TodoItemController : TableController<TodoItem>
 
-    Wenn Sie dagegen nur Einfüge-, Änderungs- und Löschvorgänge prüfen möchten, legen Sie das Attribut nur für diese Methoden fest, wie folgt:
+    If you only wanted to access check insert, update, and delete operations, you would set the attribute only on those methods as follows.
 
         // PATCH tables/TodoItem
         [AuthorizeAadRole(AadGroups.Sales)]
@@ -275,7 +275,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 
 ## <a name="test-client"></a>Testen des Clientzugriffs
 
-[WACOM.INCLUDE [mobile-services-aad-rbac-test-app](../includes/mobile-services-aad-rbac-test-app.md)]
+[AZURE.INCLUDE [mobile-services-aad-rbac-test-app](../includes/mobile-services-aad-rbac-test-app.md)]
 
 
 
@@ -302,3 +302,5 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 [Registrieren für die Verwendung einer Azure Active Directory-Anmeldung]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Graph-Clientbibliothek]: http://go.microsoft.com/fwlink/?LinkId=510536
 [IsMemberOf]: http://msdn.microsoft.com/de-de/library/azure/dn151601.aspx
+
+<!--HONumber=42-->

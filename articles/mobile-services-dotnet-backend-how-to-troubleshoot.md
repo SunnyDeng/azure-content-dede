@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Troubleshoot the Mobile Services .NET Backend" pageTitle="Problembehandlung beim Mobile Services .NET-Back-End - Azure Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie Probleme mit Ihren mobilen Diensten mithilfe des .NET-Back-Ends diagnostizieren und beheben können." metaCanonical="" services="" documentationCenter="Mobile" title="Troubleshoot the Mobile Services .NET Backend" authors="mahender" solutions="" manager="dwrede" editor="mollybos" />
+﻿<properties pageTitle="Problembehandlung beim Mobile Services .NET-Back-End - Azure Mobile Services" description="Erfahren Sie, wie Sie Probleme mit Ihren mobilen Diensten mithilfe des .NET-Back-Ends diagnostizieren und beheben können." services="" documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor="mollybos"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/11/2014" ms.author="mahender" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="wesmc"/>
 # Problembehandlung beim Mobile Services .NET-Back-End
 
 Entwickeln mit Mobile Services ist normalerweise kurz und schmerzlos, doch selbst dann kann etwas schieflaufen. Dieses Lernprogramm behandelt einige Techniken, mit denen Sie häufige Probleme behandeln können, die mit dem Mobile Services .NET-Back-End auftreten können. 
@@ -18,19 +18,19 @@ Beim Entwickeln von Apps mit Mobile Services nutzt man normalerweise das Mobile 
 
 Sie können einen belieben HTTP-Debugger verwenden und HTTP-Traffic senden und inspizieren. [Fiddler](http://www.telerik.com/fiddler) ist ein beliebtes Tool, das Entwickler häufig zu diesem Zweck einsetzen. Um das Leben von Entwicklern einfacher zu machen, bündelt Mobile Services einen webbasierten HTTP-Debugger (auch als "Testclient" bezeichnet) direkt mit Ihrem mobilen Dienst, was ein externes Tool unnötig macht. Wenn Sie Ihren mobilen Dienst lokal hosten, steht er unter einer URI im Stil von [http://localhost:59233](http://localhost:59233) bereit. Beim Hosting in der Cloud hat die URI die Form von [http://todo-list.azure-mobile.net](http://todo-list.azure-mobile.net). Die folgenden Schritte funktionieren gleich, unabhängig davon, wo der Dienst gehostet wird:
 
-1. 	Beginnen Sie mit einem Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder höher. Falls Sie keines zur Hand haben, können Sie ein neues erstellen, indem Sie **Datei**, **Neu**, **Projekt**und dann den **Cloud**-Knoten auswählen und anschließend die **Windows Azure Mobile Services**-Vorlage.
-2. Drücken Sie **F5**, wodurch das Projekt erstellt und ausgeführt wird. Wählen Sie auf der Startseite **Ausprobieren**. 
+1. Beginnen Sie mit einem Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder höher. Falls Sie keines zur Hand haben, können Sie ein neues erstellen, indem Sie **Datei**, **Neu**, **Projekt** und dann den **Cloud**-Knoten auswählen und anschließend die **Windows Azure Mobile Services**-Vorlage.
+2. Drücken Sie **F5**, wodurch das Projekt erstellt und ausgeführt wird. Wählen Sie auf der Startseite **Testen Sie es**. 
 
-    >[WACOM.NOTE] 
+    >[AZURE.NOTE] 
     > Wenn der Dienst lokal gehostet wird, werden Sie beim Klicken auf den Link direkt auf die nächste Seite weitergeleitet. Beim Hosting in der Cloud hingegen werden Sie zur Eingabe von Anmeldeinformationen aufgefordert. Damit soll sichergestellt werden, dass nicht authentifizierte Benutzer keinen Zugriff auf die Daten über ihre API und Nutzlasten haben. Um die Seite sehen zu können, müssen Sie sich mit einem **leeren Benutzernamen** und Ihrem **Anwendungsschlüssel** als Kennwort anmelden. Ihren Anwendungsschlüssel für Ihren mobilen Dienst finden Sie im **Azure-Verwaltungsportal** auf der Registerkarte **Dashboard**, wenn Sie **Schlüssel verwalten** auswählen.
     >
     > ![Authentication prompt to access help page][HelpPageAuth]
 
-3. 	Die Seite, die Sie sehen (als "Hilfeseite" bezeichnet) zeigt eine Liste aller HTTP-APIs, die Ihr mobiler Dienst verfügbar macht. Wählen Sie eine der APIs aus (wenn Sie mit der Mobile Services-Projektvorlage in Visual Studio begonnen haben, sollten Sie **GET tables/TodoItem** sehen).
+3. Die Seite, die Sie sehen (als "Hilfeseite" bezeichnet) zeigt eine Liste aller HTTP-APIs, die Ihr mobiler Dienst verfügbar macht. Wählen Sie eine der APIs aus (wenn Sie mit der Mobile Services-Projektvorlage in Visual Studio begonnen haben, sollten Sie **GET tables/TodoItem** sehen).
 
     ![Help page][HelpPage]
 
-4. Die  	resultierende Seite zeigt eine etwaige Dokumentation und JSON-Beispiele der Anfrage und die von der API erwartete Antwort. Wählen Sie die Schaltfläche **Ausprobieren**.
+4. Der resultierende Seite zeigt eine etwaige Dokumentation und JSON-Beispiele der Anfrage und die von der API erwartete Antwort. Wählen Sie die Schaltfläche **Testen Sie es** aus.
 
     ![Test page for an API][HelpPageApi]
 
@@ -49,29 +49,29 @@ Jetzt sind Sie soweit, dass Sie die unterschiedlichen HTTP-APIs erkunden können
 
 Eine der Schlüsselfunktionen des .NET-Back-Ends ist die Möglichkeit, den Dienstcode lokal zu debuggen, aber auch den live in der Cloudumgebung ausgeführten. Folgen Sie diesen Schritten:
 
-1. 	Öffnen Sie das mobile Dienstprojekt, das Sie debuggen möchten, in **Visual Studio 2013 Update 2** oder höher.
-2. Konfigurieren Sie das Laden von Symbolen. Navigieren Sie zum Menü **Debug** und wählen Sie **Optionen und Einstellungen**. Stellen Sie sicher, dass **Nur eigenen Code** nicht aktiviert und **Quellserversupport aktivieren** aktiviert ist.
+1. Öffnen Sie das mobile Dienstprojekt, das Sie debuggen möchten, in **Visual Studio 2013 Update 2** oder höher.
+2. Konfigurieren Sie das Laden von Symbolen. Navigieren Sie zum Menü **Debuggen**, und wählen Sie **Optionen und Einstellungen**. Stellen Sie sicher, dass **Nur meinen Code aktivieren** nicht aktiviert und **Quellserverunterstützung aktivieren** aktiviert ist.
 
     ![Configure symbol loading][SymbolLoading]
 
-3. Wählen Sie den Knoten **Symbole** links, und fügen Sie eine Referenz zum (SymbolSource)[http://symbolsource.org]-Server mithilfe des URIs [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) hinzu. Symbole für das Mobile Services .NET-Back-End werden dort mit jeder neuen Version verfügbar gemacht.
+3. Wählen Sie den Knoten **Symbole** links aus, und fügen Sie einen Verweis zum (SymbolSource)[http://symbolsource.org]-Server mithilfe der URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) hinzu. Symbole für das Mobile Services .NET-Back-End werden dort mit jeder neuen Version verfügbar gemacht.
  
     ![Configure symbol server][SymbolServer]
 
-4. 	Legen Sie einen Haltepunkt in der Codepassage fest, die Sie debuggen möchten. Legen Sie zum Beispiel einen Haltepunkt in der Methode **GetAllTodoItems()** des **TodoItemController** fest, der in der Mobile Services-Projektvorlage in Visual Studio enthalten ist.
+4. Legen Sie einen Haltepunkt in der Codepassage fest, die Sie debuggen möchten. Legen Sie zum Beispiel einen Haltepunkt in der Methode **GetAllTodoItems()** des **TodoItemController** fest, der in der Mobile Services-Projektvorlage in Visual Studio enthalten ist.
 5. Debuggen Sie den Dienst lokal durch Drücken von **F5**. Beim erstmaligen Laden kann das langsam sein, da Visual Studio die Symbole für das Mobile Services .NET-Back-End herunterlädt.
-6. Wie im vorherigen Abschnitt zum HTTP-Debuggen beschrieben, verwenden Sie den Testclient zum Senden einer HTTP-Anforderung zu der Methode, bei der Sie den Haltepunkt gesetzt haben. Sie können beispielsweise eine Anforderung an die Methode **GetAllTodoItems()** senden, indem Sie **GET tables/TodoItem** auf der Hilfeseite aufrufen und dann **Ausprobieren** auswählen und anschließend **Senden**.
+6. Wie im vorherigen Abschnitt zum HTTP-Debuggen beschrieben, verwenden Sie den Testclient zum Senden einer HTTP-Anforderung zu der Methode, bei der Sie den Haltepunkt gesetzt haben. Sie können beispielsweise eine Anforderung an die Methode **GetAllTodoItems()** senden, indem Sie **GET tables/TodoItem** auf der Hilfeseite aufrufen und dann **Testen Sie es** auswählen und anschließend **Senden**.
 7. Visual Studio sollte an dem von Ihnen festgelegten Haltepunkt anhalten und es sollte eine volle Stapelüberwachung mit Quellcode im Fenster **Aufrufliste** in Visual Studio verfügbar sein.
 
     ![Hitting a breakpoint][Breakpoint]
 
 8. Sie können den Dienst jetzt auf Azure veröffentlichen und können dann Debuggen genau so verwenden, wie wir das oben getan haben. Veröffentlichen Sie das Projekt, indem Sie mit der rechten Maustaste im **Projektmappen-Explorer** darauf klicken und **Veröffentlichen** auswählen.
-9. 	Wählen Sie auf der Registerkarte **Einstellungen** des Veröffentlichungsassistenten die Konfiguration **Debug**. Damit wird sichergestellt, dass die relevanten Debuggingsymbole mit Ihrem Code veröffentlicht werden.
+9. Wählen Sie auf der Registerkarte **Einstellungen** des Veröffentlichungsassistenten die Konfiguration **Debuggen**. Damit wird sichergestellt, dass die relevanten Debuggingsymbole mit Ihrem Code veröffentlicht werden.
 
     ![Publish debug][PublishDebug]
 
-10. 	Nachdem der Dienst erfolgreich veröffentlicht wurde, öffnen Sie **Server-Explorer** und erweitern die Knoten **Windows Azure** und **Mobile Services**. Melden Sie sich wenn nötig an.
-11. Klicken Sie mit der rechten Maustaste den mobilen Dienst, auf dem Sie gerade veröffentlicht haben und wählen Sie **Debugger anfügen**.
+10. Nachdem der Dienst erfolgreich veröffentlicht wurde, öffnen Sie **Server-Explorer** und erweitern die Knoten **Windows Azure** und **Mobile Services**. Melden Sie sich wenn nötig an.
+11. Klicken Sie mit der rechten Maustaste auf den mobilen Dienst, auf dem Sie gerade veröffentlicht haben und wählen Sie **Debugger anfügen** aus.
 
     ![Attach debugger][AttachDebugger]
 
@@ -85,7 +85,7 @@ Sie haben jetzt Zugriff auf die ganze Leistung des Visual Studio-Debuggers, sowo
 
 Da der mobile Dienst Anfragen Ihrer Kunden bearbeitet, generiert er eine Reihe nützlicher diagnostischer Informationen und erfasst sämtliche auftretenden Ausnahmen. Außerdem können Sie den Controllercode mit weiteren Protokollen instrumentieren, indem Sie die Eigenschaft [**Log**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.apiservices.log.aspx) nutzen, die in der Eigenschaft [**Dienste**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.tables.tablecontroller.services.aspx) jedes [**TableController**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.tables.tablecontroller.aspx) verfügbar ist.
 
-Beim lokalen Debugging werden die Protokolle im Visual Studio-Fenster **Ausgabe**.
+Beim lokalen Debugging werden die Protokolle im Visual Studio-Fenster **Ausgabe** angezeigt.
 
 ![Logs in Visual Studio Output window][LogsOutputWindow]
 
@@ -93,18 +93,18 @@ Nach dem Veröffentlichen Ihres Diensts auf Azure sind die Protokolle für die i
 
 ![Logs in Visual Studio Server Explorer][LogsServerExplorer]
 
-	Dieselben Protokolle sind für Ihren mobilen Dienst auch im **Azure-Verwaltungsportal** auf der Registerkarte **Protokolle** verfügbar.
+Dieselben Protokolle sind auch für Ihren mobilen Dienst im **Azure-Verwaltungsportal** auf der Registerkarte **Protokolle** verfügbar.
 
 ![Logs in Azure Management Portal][LogsPortal]
 
 <a name="AssemblyResolution"></a>
 ## Debuggen der Cloud Assembly-Auflösung
 
-	Wenn Sie Ihren mobilen Dienst auf Azure veröffentlichen, wird er von der Mobile Services-Hostingumgebung geladen. Damit werden reibungslose Upgrades und Patches der HTTP-Pipeline sichergestellt, auf denen Ihr Controllercode gehostet wird. Dazu gehören alle Assemblys, auf die durch die [.NET-Back-End NuGet-Pakete](http://www.nuget.org/packages?q=%22mobile+services+.net+backend%22) verwiesen wird: Das Team aktualisiert den Dienst ständig, sodass die neuesten Versionen dieser Assemblys verwendet werden. 
+Wenn Sie Ihren mobilen Dienst auf Azure veröffentlichen, wird er von der Mobile Services-Hostingumgebung geladen. Damit werden reibungslose Upgrades und Patches der HTTP-Pipeline sichergestellt, auf denen Ihr Controllercode gehostet wird. Dazu gehören alle Assemblys, auf die die [.NET-Back-End NuGet-Pakete](http://www.nuget.org/packages?q=%22mobile+services+.net+backend%22) verweisen: Das Team aktualisiert wiederholt den Dienst, sodass die aktuellen Versionen dieser Assemblys verwendet werden. 
 
-	Es ist manchmal möglich, dass es durch das Verweisen auf *unterschiedliche Hauptversionen* benötigter Assemblys zu Versionskonflikten kommt (unterschiedliche *Nebenversionen* sind zulässig). Das passiert häufig dann, wenn NuGet Sie zum Upgrade auf die neueste Version eines der Pakete auffordert, die vom Mobile Services .NET-Back-End verwendet werden. 
+Es ist manchmal möglich, dass es durch das Verweisen auf *different major versions* benötigter Assemblys zu Versionskonflikten kommt (unterschiedliche *minor*-Versionen sind zulässig). Das passiert häufig dann, wenn NuGet Sie zum Upgrade auf die neueste Version eines der Pakete auffordert, die vom Mobile Services .NET-Back-End verwendet werden. 
 
->[WACOM.NOTE] Mobile Services ist derzeit nur mit ASP.NET 5.1 kompatibel. ASP.NET 5.2 wird derzeit nicht unterstützt. Eine Aktualisierung Ihrer ASP.NET NuGet-Pakete auf 5.2.* kann nach der Bereitstellung zu einem Fehler führen.
+>[AZURE.NOTE] Mobile Services ist derzeit nur mit ASP.NET 5.1 kompatibel. ASP.NET 5.2 wird derzeit nicht unterstützt. Ein Upgrade Ihrer ASP.NET NuGet-Pakete auf 5.2.* kann nach der Bereitstellung zu einem Fehler führen.
 
 Wenn Sie ein solches Paket aktualisieren und dann den aktualisierten Dienst auf Azure veröffentlichen, sehen Sie eine Warnseite, die auf den Konflikt hinweist:
 
@@ -114,14 +114,14 @@ Damit geht eine Ausnahmemeldung einher, die in Ihren Dienstprotokollen aufgezeic
 
     Konflikte zwischen verschiedenen Versionen der gleichen abhängigen Assembly 'Microsoft.ServiceBus' gefunden: 2.2.0.0, 2.3.0.0. Ändern Sie das Projekt so, dass Version "2.2.0.0" verwendet wird, die derzeit von der Hostumgebung unterstützt wird.
 
-Dieses Problem ist einfach zu beheben: Kehren Sie einfach zu einer Version zurück, die von der benötigten Assembly unterstützt wird, und veröffentlichen Sie den Dienst neu.
+Die Lösung dieses Problems ist einfach: Kehren Sie einfach zu einer Version zurück, die vom benötigten Assembly unterstützt wird, und veröffentlichen Sie den Dienst neu.
 
 <a name="EFMigrations"></a>
 ## Problembehandlung bei Entity Framework-Migrationen
 
-Wenn Sie das Mobile Services .NET-Back-End mit einer SQL-Datenbank verwenden, wird ein Entity Framework (EF) als Datenzugriffstechnologie verwendet, mit der Sie die Datenbank abfragen und Objekte dort speichern können. Ein wichtiger Aspekt, den EF für den Entwickler übernimmt, ist die Art und Weise, wie die Datenbankspalten (auch als *Schema* bekannt) mit Änderung der im Code festgelegten Modellklassen verändert werden. Dieser Prozess ist unter der Bezeichnung [Code First Migrations](http://msdn.microsoft.com/de-de/data/jj591621) bekannt.
+Wenn Sie das Mobile Services .NET-Back-End mit einer SQL-Datenbank verwenden, wird ein Entity Framework (EF) als Datenzugriffstechnologie verwendet, mit der Sie die Datenbank abfragen und Objekte dort speichern können. Ein wichtiger Aspekt, den EF für den Entwickler übernimmt, ist die Art und Weise, wie die Datenbankspalten (auch als *schema* bekannt) mit Änderung der im Code festgelegten Modellklassen verändert werden. Dieser Prozess ist unter der Bezeichnung [Code First Migrations](http://msdn.microsoft.com/de-de/data/jj591621) bekannt.
 
-Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank synchron mit dem EF-Modell gehalten wird, damit sie erfolgreich sind. Eine Anleitung für das Durchführen von Migrationen mit Ihrem mobilen Dienst und die Fehler, die dabei auftreten können, finden Sie unter [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts](/de-de/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/).
+Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank synchron mit dem EF-Modell gehalten wird, damit sie erfolgreich sind. Eine Anleitung für das Durchführen von Migrationen mit Ihrem mobilen Dienst und die Fehler, die dabei auftreten können, finden Sie unter [Ändern des Datenmodells eines mobilen .NET-Back-End-Dienstes](/de-de/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)..
 
 <!-- IMAGES -->
 
@@ -139,3 +139,5 @@ Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank s
 [LogsServerExplorer]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/12.png
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
+
+<!--HONumber=42-->

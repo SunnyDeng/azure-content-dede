@@ -1,37 +1,37 @@
-<properties urlDisplayName="Get Started with Data" pageTitle="Erste Schritte mit Daten (Windows Universal) | Mobile Dev Center" metaKeywords="" description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer universellen Windows-App." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Erste Schritte mit Daten (Windows Store JavaScript) | Mobile Dev Center" description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Windows Store-JavaScript-App. services="mobile-services" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="glenga"/>
 
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
-[WACOM.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 Dieses Thema erläutert den Einsatz von Azure Mobile Services für die Nutzung von Daten in universellen Windows-Apps. Universelle Windows-App-Lösungen beinhalten Projekte für Windows Store 8.1, Windows Phone Store 8.1-Apps und ein gemeinsames, geteiltes Projekt. Weitere Informationen finden Sie unter [Erstellen universeller Windows-Apps, die Windows und Windows Phone als Ziel verwenden](http://msdn.microsoft.com/de-de/library/windows/apps/xaml/dn609832.aspx).
 
 In diesem Lernprogramm laden Sie ein Visual Studio 2013-Projekt für eine universelle Windows-App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in die App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.
 
->[WACOM.NOTE]In diesem Thema wird erläutert, wie Sie mithilfe der in Visual Studio Express 2013 für Windows mit Update 3 enthaltenen Tools einen mobilen Dienst mit einer universellen Windows-App verbinden. Mit denselben Schritten können Sie einen mobilen Dienst mit einer Windows Store- oder einer Windows Phone Store 8.1-App verbinden. Informationen zum Verbinden eines mobilen Diensts mit einer Windows Phone 8.0- oder Windows Phone Silverlight 8.1-App finden Sie unter [Erste Schritte mit Daten für Windows Phone](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data).
+>[AZURE.NOTE]In diesem Thema wird erläutert, wie Sie mithilfe der in Visual Studio Express 2013 für Windows mit Update 3 enthaltenen Tools einen mobilen Dienst mit einer universellen Windows-App verbinden. Mit denselben Schritten können Sie einen mobilen Dienst mit einer Windows Store- oder einer Windows Phone Store 8.1-App verbinden. Informationen zum Verbinden eines mobilen Diensts mit einer Windows Phone 8.0- oder Windows Phone Silverlight 8.1-App finden Sie unter [Erste Schritte mit Daten für Windows Phone](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data).
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 1. [Herunterladen des Windows Store-App-Projekts][Abrufen der Windows Store-App] 
-2. [Erstellen des mobilen Dienstes]
-3. [Erstellen einer Datentabelle als Datenspeicher]
+2. [Erstellen des mobilen Diensts]
+3. [Hinzufügen einer Datentabelle als Speicher]
 4. [Aktualisieren der App zur Verwendung von Mobile Services]
 5. [Testen der App mit Mobile Services]
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-javascript-get-started-data%2F).
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Express 2013 für Windows</a> (Update 2 oder höhere Version). 
+* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Detaillierte Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-javascript-get-started-data%2F).
+* <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Express 2013 für Windows</a> (Update 2 oder eine höhere Version). 
 
 ##<a name="download-app"></a>Download des GetStartedWithData-Projekts
 
-[WACOM.INCLUDE [mobile-services-windows-universal-javascript-download-project](../includes/mobile-services-windows-universal-dotnet-download-project.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-javascript-download-project](../includes/mobile-services-windows-universal-dotnet-download-project.md)]
 
 ##<a name="create-service"></a>Erstellen eines mobilen Diensts in Visual Studio
 
-[WACOM.INCLUDE [mobile-services-create-new-service-vs2013](../includes/mobile-services-create-new-service-vs2013.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-vs2013](../includes/mobile-services-create-new-service-vs2013.md)]
 
 <ol start="8">
 <li><p>Navigieren Sie im Projektmappen-Explorer zum Unterordner <strong>services\mobileService\scripts</strong>, öffnen Sie die Skriptdatei "service.js", und beachten Sie die neue globale Variable, die wie folgt aussieht:</p> 
@@ -40,7 +40,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
                 "https://todolist.azure-mobile.net/",
 		        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");</code></pre>
 
-	<p>In diesem Code wird der Zugriff auf den neuen mobilen Dienst in Ihrer App über eine globale Variable bereitgestellt. Der Client wird durch Angabe des URI und des Anwendungsschlüssels des neuen mobilen Diensts erstellt. Da Sie der Datei "default.html" einen Verweis auf das Skript hinzugefügt haben, ist diese Variable in allen Skriptdateien verfügbar, auf die in dieser Seite verwiesen wird.</p>
+	<p>In diesem Code wird der Zugriff auf den neuen mobilen Dienst in Ihrer App über globale Variable bereitgestellt. Der Client wird durch Angabe des URI und des Anwendungsschlüssels des neuen mobilen Diensts erstellt. Da Sie einen Verweis auf das Skript zur Datei default.html hinzugefügt haben, ist diese Variable in allen Skriptdateien verfügbar, die von dieser Seite aus referenziert werden.</p>
 </li>
 <li><p>Öffnen Sie die Projektdatei "default.html", suchen Sie den Verweis auf die neue Skriptdatei "service.js", und stellen Sie sicher, dass der im Verweis angegebene Pfad folgendermaßen lautet:</p>
 <pre><code>&lt;script src="/services/mobileServices/scripts/todolist.js"&gt;</script></code></pre>
@@ -51,24 +51,24 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 ##<a name="add-table"></a>Hinzufügen einer neuen Tabelle zum mobilen Dienst
 
-[WACOM.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
+[AZURE.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
 
->[WACOM.NOTE]Neue Tabellen werden mit den Spalten "Id", "__createdAt", "__updatedAt" und "__version" erstellt. Wenn das dynamische Schema aktiviert ist, generieren Mobile Services automatisch neue Spalten auf Grundlage des JSON-Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://msdn.microsoft.com/de-de/library/windowsazure/jj193175.aspx).
+>[AZURE.NOTE]Neue Tabellen werden mit den Spalten "Id", "__createdAt", "__updatedAt" und "__version" erstellt. Wenn das dynamische Schema aktiviert ist, generieren Mobile Services automatisch neue Spalten auf Grundlage des JSON-Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://msdn.microsoft.com/de-de/library/windowsazure/jj193175.aspx).
 
 #<a name="update-app"></a>Aktualisieren der App zur Verwendung des mobilen Diensts
 
-[WACOM.INCLUDE [mobile-services-windows-javascript-update-data-app](../includes/mobile-services-windows-javascript-update-data-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-javascript-update-data-app](../includes/mobile-services-windows-javascript-update-data-app.md)]
 
 ##<a name="test-azure-hosted"></a>Testen des in Azure gehosteten mobilen Diensts
 
 Nun können wir beide Versionen der universellen Windows-App mit dem in Azure gehosteten mobilen Dienst testen.
 
-[WACOM.INCLUDE [mobile-services-windows-universal-test-app](../includes/mobile-services-windows-universal-test-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-test-app](../includes/mobile-services-windows-universal-test-app.md)]
 
 <ol start="4">
-<li><p>Klicken Sie im <a href="https://manage.windowsazure.com/" target="_blank">Verwaltungsportal</a> auf <strong>Mobile Services</strong>, und anschließend auf Ihren mobilen Dienst.<p></li>
-<li><p>Klicken Sie auf die Registerkarte <strong>Daten</strong>,und dann auf <strong>Durchsuchen</strong>.</p>
-<p>Beachten Sie, dass die <strong>TodoItem</strong>Tabelle nun Daten mit von Mobile Services generierten ID-Werten enthält. Der Tabelle wurden automatisch Spalten entsprechend der TodoItem-Klasse der App hinzugefügt.</p></li>
+<li><p>Klicken Sie im <a href="https://manage.windowsazure.com/" target="_blank">Verwaltungsportal</a> auf <strong>Mobile Services</strong> und dann auf Ihren mobilen Dienst.<p></li>
+<li><p>Klicken Sie auf die Registerkarte <strong>Daten</strong> und dann auf <strong>Durchsuchen</strong>.</p>
+<p>Beachten Sie, dass die <strong>TodoItem</strong>-Tabelle nun Daten mit von Mobile Services generierten ID-Werten enthält, und dass der Tabelle automatisch Spalten entsprechend der TodoItem-Klasse der App hinzugefügt wurden.</p></li>
 </ol>
 
 ![](./media/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data/mobile-todoitem-data-browse.png)
@@ -90,17 +90,17 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 * [Erste Schritte mit der Authentifizierung]
   <br/>Erfahren Sie, wie Benutzer in Ihrer App authentifiziert werden.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 * [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]
-  <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit HTML und JavaScript.
+  <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit HTML und JavaScript.
 
 <!-- Anchors. -->
 
 [Abrufen der Windows Store-App]: #download-app
-[Erstellen des mobilen Dienstes]: #create-service
-[Erstellen einer Datentabelle als Datenspeicher]: #add-table
+[Erstellen des mobilen Diensts]: #create-service
+[Hinzufügen einer Datentabelle als Speicher]: #add-table
 [Aktualisieren der App zur Verwendung von Mobile Services]: #update-app
 [Testen der App mit Mobile Services]: #test-app
 [Nächste Schritte]:#next-steps
@@ -125,3 +125,6 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Website mit Codebeispielen für Entwickler]:  http://go.microsoft.com/fwlink/p/?LinkID=510826
 [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-html-how-to-use-client-library/
+
+
+<!--HONumber=42-->

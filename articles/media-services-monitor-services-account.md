@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="How to monitor" pageTitle="Überwachen eines Media Services-Kontos - Azure" metaKeywords="" description="Beschreibt die Konfiguration der Überwachung für Ihr Media Services-Konto in Azure." metaCanonical="" services="media-services" documentationCenter="" title="How to Monitor a Media Services Account" authors="juliako" solutions="" manager="dwrede" editor="" />
+<properties pageTitle="Überwachen eines Media Services-Kontos - Azure" description="Beschreibt die Konfiguration der Überwachung für Ihr Media Services-Konto in Azure." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako" />
+<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
 
 
 
@@ -11,11 +11,11 @@ Das Azure Media Services-Dashboard stellt Nutzungsmetriken und Kontoinformatione
 
 Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene Codierungsaufgaben, aktive Codierungsjobs, die durch die Eingabe- und Ausgabedaten des Encoders dargestellt werden, sowie die Blob-Speichernutzung Ihres Media Services-Kontos überwachen. Wenn Sie Inhalte per Streaming an Kunden übertragen, können Sie außerdem verschiedene Streaming-Metriken abrufen. Sie können Ihre Daten der letzten 6 Stunden, 24 Stunden oder 7 Tage überwachen.
  
->[WACOM.NOTE] Beim Überwachen der Speicherdaten im Windows Azure-Verwaltungsportal entstehen zusätzliche Kosten. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://go.microsoft.com/fwlink/?LinkId=256667).
+>[AZURE.NOTE] Beim Überwachen der Speicherdaten im Windows Azure-Verwaltungsportal entstehen zusätzliche Kosten. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://go.microsoft.com/fwlink/?LinkId=256667).
 
 <h2><a id="configuremonitoring"></a>Gewusst wie: Überwachen eines Media Services-Kontos</h2>
 
-1. Im [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=256666)klicken Sie auf **Media Services** und klicken Sie dann auf den Media Services-Kontonamen, um das Dashboard zu öffnen. 
+1. Klicken Sie im [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=256666) auf Media Services und dann auf den **Media Services**-Kontonamen, um das Dashboard zu öffnen. 
 
 	![MediaServices_Dashboard][dashboard]
 
@@ -25,7 +25,7 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 1. Klicken Sie im Abschnitt **Auf einen Blick** auf den Namen des **Speicherkontos**.
 2. Klicken Sie auf der Speicherkontoseite auf den Link **configure page**, und blättern Sie bis zu den Einstellungen **monitoring** für die Blob-, Tabellen- und Warteschlangendienste nach unten.
 
-	>[WACOM.NOTE] Blobs sind der einzige unterstützte Speichertyp in Media Services.
+	>[AZURE.NOTE] Blobs sind der einzige unterstützte Speichertyp in Media Services.
 
 	![StorageOptions][storage_options_scoped]
 
@@ -50,5 +50,4 @@ Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlo
 [dashboard]: ./media/media-services-monitor-services-account/media-services-dashboard.png
 [storage_options_scoped]: ./media/media-services-monitor-services-account/storagemonitoringoptions_scoped.png
 
-
-<!--HONumber=35.1-->
+<!--HONumber=42-->

@@ -1,10 +1,10 @@
-﻿<properties urlDisplayName="Set up endpoints" pageTitle="Festlegen von Endpunkten auf einen virtuellen Computer in Azure" metaKeywords="Azure config setup, configuring vm connection" description="Erfahren Sie, wie Sie die Kommunikation mit einem virtuellen Computer in Azure einrichten." metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="timlt" solutions="" manager="timlt" editor="" />
+<properties pageTitle="Festlegen von Endpunkten auf einen virtuellen Computer in Azure" description="Erfahren Sie, wie Sie die Kommunikation mit einem virtuellen Computer in Azure einrichten." services="virtual-machines" documentationCenter="" authors="KBDAzure" manager="timlt" editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/29/2014" ms.author="kathydav" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/29/2014" ms.author="kathydav"/>
 
 #Einrichten von Endpunkten für einen virtuellen Computer
 
-**Hinweis**: Informationen zur direkten Verbindung mit virtuellen Computern anhand des Hostnamens oder zur Einrichtung standortübergreifender Verbindungen finden Sie unter [Überblick über virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/p/?LinkID=294063).
+**Hinweis:**: Informationen zur direkten Verbindung mit virtuellen Computern anhand des Hostnamens oder zur Einrichtung standortübergreifender Verbindungen finden Sie unter [Überblick über virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/p/?LinkID=294063).
 
 Alle virtuellen Computer, die Sie in Azure erstellen, können automatisch über einen privaten Netzwerkkanal mit anderen virtuellen Computern im gleichen Clouddienst oder virtuellen Netzwerk kommunizieren. Für andere Ressourcen im Internet oder anderen virtuellen Netzwerken sind allerdings Endpunkte erforderlich, um den auf dem virtuellen Computer eingehenden Netzwerkverkehr verarbeiten zu können. 
 
@@ -14,7 +14,7 @@ Jeder Endpunkt verfügt über einen öffentlichen und einen privaten Port.
 
 - Der private Port wird vom virtuellen Computer intern verwendet, um auf den Verkehr an diesem Endpunkt zu lauschen.
 
-- Der öffentliche Port wird vom Azure-Lastenausgleichsmodul zur Kommunikation mit dem virtuellen Computer über externe Ressourcen verwendet. Nach der Erstellung eines Endpunkts können Sie die Netzwerk-Zugriffssteuerungsliste verwenden, um Regeln zu definieren, mit deren Hilfe Sie eingehenden Verkehr auf dem öffentlichen Port isolieren und steuern können. Weitere Informationen finden Sie unter [Netzwerk-Zugriffssteuerungslisten](http://go.microsoft.com/fwlink/p/?LinkId=303816).
+- Der öffentliche Port wird vom Azure-Lastenausgleichsmodul zur Kommunikation mit dem virtuellen Computer über externe Ressourcen verwendet. Nach der Erstellung eines Endpunkts können Sie die Netzwerk-Zugriffssteuerungsliste verwenden, um Regeln zu definieren, mit deren Hilfe Sie eingehenden Verkehr auf dem öffentlichen Port isolieren und steuern können. Weitere Informationen erhalten Sie unter [Netzwerk-Zugriffssteuerungslisten](http://go.microsoft.com/fwlink/p/?LinkId=303816).
 
 Standardwerte für die Ports und ein Protokoll für diese Endpunkte werden bereitgestellt, wenn die Endpunkte über das Verwaltungsportal erstellt werden. Bei allen anderen Endpunkten müssen Sie die Ports und das Protokoll selbst festlegen, wenn Sie den Endpunkt erstellen. Ressourcen können entweder über das TCP- oder das UDP-Protokoll mit einem Endpunkt verbunden werden. Das TCP-Protokoll umfasst HTTP- und HTTPS-Kommunikation.  
 
@@ -22,7 +22,7 @@ Standardwerte für die Ports und ein Protokoll für diese Endpunkte werden berei
 
 ###Erstellen eines Endpunkts###
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, falls noch nicht geschehen(http://manage.windowsazure.com).
+1. Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an, falls noch nicht geschehen.
 
 2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den virtuellen Computer aus, den Sie konfigurieren möchten.
 
@@ -30,7 +30,7 @@ Standardwerte für die Ports und ein Protokoll für diese Endpunkte werden berei
 
 	![Endpoints](./media/virtual-machines-set-up-endpoints/endpointswindows.png)
 
-4.	Klicken Sie**Hinzufügen**.
+4.	Klicken Sie auf **Hinzufügen**.
 
 	Das Dialogfeld **Endpunkt hinzufügen** wird angezeigt. Wählen Sie den Endpunkttyp. Wen Sie einen neuen Satz mit Lastenausgleich erstellen, wählen Sie "eigenständig", sodass der erste Endpunkt im Satz erstellt wird.
 	
@@ -50,11 +50,11 @@ Standardwerte für die Ports und ein Protokoll für diese Endpunkte werden berei
 
 ###Verwaltung der ACL für einen Endpunkt###
 
-Gehen Sie folgendermaßen vor, um eine ACL an einem Endpunkt hinzuzufügen, zu modifizieren oder zu entfernen.
+Die Zugriffssteuerungsliste (Access Control List, ACL) für einen Netzwerkendpunkt kann Datenverkehr anhand der Quell-IP einschränken, um die auf dem virtuellen Computer erstellten Endpunkte zu sichern. Gehen Sie folgendermaßen vor, um eine ACL an einem Endpunkt hinzuzufügen, zu modifizieren oder zu entfernen.
 
-**Hinweis**: Wenn der Endpunkt Teil eines Satzes mit Lastenausgleich ist, werden alle Änderungen, die Sie an der ACL oder an einem Endpunkt vornehmen, auf alle Endpunkte in diesem Satz angewendet.
+**Hinweis:**: Wenn der Endpunkt Teil eines Satzes mit Lastenausgleich ist, werden alle Änderungen, die Sie an der ACL oder an einem Endpunkt vornehmen, auf alle Endpunkte in diesem Satz angewendet.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, falls noch nicht geschehen(http://manage.windowsazure.com).
+1. Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an, falls noch nicht geschehen.
 
 2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den virtuellen Computer aus, den Sie konfigurieren möchten.
 
@@ -64,7 +64,7 @@ Gehen Sie folgendermaßen vor, um eine ACL an einem Endpunkt hinzuzufügen, zu m
 
 4. Wählen Sie den entsprechenden Endpunkt aus der Liste. 
 
-5. Klicken Sie auf **ACL verwalten**.
+5. Klicken Sie auf **Manage ACL**.
 
     Das Dialogfeld **Specify ACL details** wird angezeigt.
 
@@ -72,6 +72,7 @@ Gehen Sie folgendermaßen vor, um eine ACL an einem Endpunkt hinzuzufügen, zu m
 
 6. Verwenden Sie Zeilen in der Liste, um Regeln für eine ACL hinzuzufügen, zu löschen oder zu bearbeiten. Der Wert "Remote Subnet" entspricht dem IP-Adressenbereich, den Sie als Regel entweder erlauben oder verweigern können. Die Regeln werden der Reihe nach, beginnend mit der ersten und endend mit der letzten Regel, bewertet. Dies bedeutet, dass die Regeln von der stärksten bis zur schwächsten Einschränkung aufgelistet werden sollten. Beispiele und weitere Informationen finden Sie unter [Netzwerk-Zugriffssteuerungslisten](http://go.microsoft.com/fwlink/p/?LinkId=303816).
 
-<!--HONumber=35.1-->
 
-<!--HONumber=35.1-->
+
+
+<!--HONumber=42-->

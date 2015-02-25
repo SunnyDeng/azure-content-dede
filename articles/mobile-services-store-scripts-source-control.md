@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Store JavaScript project code in source control" pageTitle="Speichern von Projektcode in der Quellcodeverwaltung - Azure Mobile Services" metaKeywords="" description="Erfahren Sie, wie Sie Serverskriptdateien und -module in einem lokalen Git-Repository auf Ihrem Computer speichern." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Store project code in source control" authors="glenga" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Speichern von Projektcode in der Quellcodeverwaltung - Azure Mobile Services" description="Erfahren Sie, wie Sie Serverskriptdateien und -module in einem lokalen Git-Repository auf Ihrem Computer speichern." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga"/>
 
 <div class="dev-center-tutorial-subselector">
 	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-store-code-source-control/" title=".NET backend">.NET-Back-End</a> | <a href="/de-de/documentation/articles/mobile-services-store-scripts-source-control/"  title="JavaScript backend" class="current">JavaScript-Back-End</a>
@@ -8,35 +8,35 @@
 
 # Speichern von Projektcode in der Quellcodeverwaltung
 
-In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um Ihre Serverskripts zu speichern. Sie können Skripts und andere JavaScript-Back-End-Codedateien aus Ihrem lokalen Git-Repository in Ihre Produktionsumgebung im mobilen Dienst befördern. Außerdem erfahren Sie, wie Sie freigegebenen Code definieren, der möglicherweise für mehrere Skripts erforderlich ist, und wie Sie die Datei "package.jason" verwenden, um Ihrem mobilen Dienst Node.js-Module hinzuzufügen. 
+In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um Ihre Serverskripts zu speichern. Sie können Skripts und andere JavaScript-Back-End-Codedateien aus Ihrem lokalen Git-Repository in Ihre Produktionsumgebung im mobilen Dienst befördern. Außerdem erfahren Sie, wie Sie freigegebenen Code definieren, der möglicherweise für mehrere Skripts erforderlich ist, und wie Sie die Datei "package.json" verwenden, um Ihrem mobilen Dienst Node.js-Module hinzuzufügen. 
 
 Dieses Lernprogramm führt Sie durch die folgenden Schritte:
 
-1. [Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst]
-2. [Installieren von Git und Erstellen des lokalen Repositorys]
+1. [Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst].
+2. [Installieren von Git und Erstellen des lokalen Repositorys].
 3. [Bereitstellen aktualisierter Skriptdateien an Ihren mobilen Dienst].
 4. [Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts].
 
-Für dieses Lernprogramm wird vorausgesetzt, dass Sie bereits einen mobilen Dienst aus einem der Lernprogramme [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben.
+Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus einem der Lernprogramme [Erste Schritte mit Mobile Services] bzw. [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben.
 
-##<a name="enable-source-control"></a>Aktivieren der Quellcodeverwaltung in Ihrem mobilen Dienst
+##<a name="enable-source-control"></a>Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst
 
-[WACOM.INCLUDE [mobile-services-enable-source-control](../includes/mobile-services-enable-source-control.md)]
+[AZURE.INCLUDE [mobile-services-enable-source-control](../includes/mobile-services-enable-source-control.md)]
 
 ##<a name="clone-repo"></a>Installieren von Git und Erstellen des lokalen Repositorys
 
-1. Installieren Sie Git auf Ihrem lokalen Computer. 
+1. Installieren von Git auf Ihrem lokalen Computer 
 
-	Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebssystem. Informationen zu betriebssystemspezifischen Distributionen und zur Installation finden Sie unter [Installieren von Git].
+	Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebssystem. Betriebssystemspezifische Informationen zu Distributionen und Installationsanleitungen finden Sie unter [Installieren von Git].
 
-	> [WACOM.NOTE]
-	Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
+	> [AZURE.NOTE]
+	> Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
 
-2. Öffnen Sie eine Befehlszeile, zum Beispiel **GitBash** (Windows) oder **Bash** (Unix Shell). Auf OS X-Systemen können Sie über die **Terminal**-Anwendung auf die Befehlszeile zugreifen.
+2. Öffnen Sie eine Befehlszeile, zum Beispiel **GitBash** (Windows) oder **Bash** (Unix Shell). Auf OS X-Systemen können Sie auf die Befehlszeile über die **Terminal**-Anwendung zugreifen.
 
-3. Wechseln Sie in der Befehlszeile zu dem Verzeichnis, in dem Sie Ihre Skripts speichern werden. Zum Beispiel "cd SourceControl".
+3. Wechseln Sie in der Befehlszeile zu dem Verzeichnis, in dem Sie Ihre Skripts speichern werden. Zum Beispiel `cd SourceControl`.
 
-4. Erstellen Sie mit dem folgenden Befehl eine lokale Kopie Ihres neuen Git-Repositorys. Ersetzen Sie dabei <your_git_URL> durch die URL Ihres Git-Repositorys für den mobilen Dienst:
+4. Erstellen Sie mit dem folgenden Befehl eine lokale Kopie Ihres neuen Git-Repositorys. Ersetzen Sie dabei "<your_git_URL>" durch die URL Ihres Git-Repositorys für den mobilen Dienst:
 
 		git clone <your_git_URL>
 
@@ -47,7 +47,7 @@ Für dieses Lernprogramm wird vorausgesetzt, dass Sie bereits einen mobilen Dien
 		remote: Total 8 (delta 1), reused 0 (delta 0)
 		Unpacking objects: 100% (8/8), done.
 
-6. Wechseln Sie in das Verzeichnis, von dem Sie den Befehl "git clone" ausgeführt haben, und beachten Sie die folgende Verzeichnisstruktur:
+6. Wechseln Sie in das Verzeichnis, in dem Sie den `git clone`-Befehl ausgeführt haben, und beachten Sie die folgende Verzeichnisstruktur:
 
 	![4][4]
 
@@ -55,7 +55,7 @@ Für dieses Lernprogramm wird vorausgesetzt, dass Sie bereits einen mobilen Dien
 
 7. Öffnen Sie das Unterverzeichnis .\service\table und beachten Sie, dass dieses eine TodoItem.json-Datei enthält. Dabei handelt es sich um eine JSON-Darstellung der Operationsberechtigungen für die Tabelle TodoItem. 
 
-	Falls Sie Serverskripts für diese Tabelle definiert haben, sehen Sie außerdem mindestens eine Datei, die den Namen <code>TodoItem._&lt;operation&gt;_.js</code> aufweist und die Skripts für den angegebenen Tabellenvorgang enthält. Zeitplanskripts und benutzerdefinierte API-Skripts werden in separaten Ordnern mit den jeweiligen Namen abgelegt. Weitere Informationen finden Sie unter [Quellcodeverwaltung].
+	Falls Sie Serverskripts für diese Tabelle definiert haben, sehen Sie außerdem eine oder mehrere Dateien mit dem Namen <code>TodoItem._&lt;operation&gt;_.js</code>. Diese Dateien enthalten die Skripts für den jeweiligen Tabellenvorgang. Zeitplanskripts und benutzerdefinierte API-Skripts werden in separaten Ordnern mit den jeweiligen Namen abgelegt. Weitere Informationen finden Sie unter [Quellcodeverwaltung].
 
 Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Serverskripts vornehmen und diese Änderungen anschließend in Ihren mobilen Dienst befördern.
 
@@ -70,7 +70,7 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 		    console.log(JSON.stringify(item, null, 4));
 		}
 	
-	Dieser Code schreibt das eingefügte Element in das Protokoll. Falls diese Datei bereits Code enthält, fügen Sie einfach etwas gültigen JavaScript-Code ein, z. B. einen Aufruf an "console.log()", und speichern Sie dann Ihre Änderungen. 
+	Dieser Code schreibt das eingefügte Element in das Protokoll. Falls diese Datei bereits Code enthält, fügen Sie einfach gültigen JavaScript-Code hinzu, z. B. einen Aufruf an `console.log()` und speichern Sie Ihre Änderungen. 
 
 3. Geben Sie den folgenden Befehl in der Git-Eingabeaufforderung ein, um die neue Skriptdatei zur Quellcodeverwaltung hinzuzufügen:
 
@@ -87,7 +87,7 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 	
 	Daraufhin wird eine Reihe von Ausgaben für die Bereitstellung des Commits im mobilen Dienst angezeigt.
 
-6. Klicken Sie zurück im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+6. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
 
 	![][5]
 
@@ -99,22 +99,19 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 
 ##<a name="use-npm"></a>Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts
 
-Mobile Services bietet Zugang zum kompletten Umfang der Node.js-Basismodule, und Sie können diese Module mit der **require**-Funktion in Ihrem Code verwenden. Außerdem kann Ihr mobiler Dienst Node.js-Module verwenden, die nicht Teil des Node.js-Standardpakets sind, und Sie können sogar eigenen freigegebenen Code als Node.js-Modul definieren. Weitere Informationen zum Erstellen von Modulen finden Sie unter [Module][Node.js API Documentation: Modules] in der Referenzdokumentation der Node.js-API.
+Mobile Services bietet Zugang zum kompletten Umfang der Node.js-Basismodule, und Sie können diese Module in Ihrem Code mit der **require**-Funktion einbinden Außerdem kann Ihr mobiler Dienst Node.js-Module verwenden, die nicht Teil des Node.js-Standardpakets sind, und Sie können sogar eigenen freigegebenen Code als Node.js-Modul definieren. Weitere Informationen zum Erstellen von Modulen finden Sie in der [Module][Node.js-API-Dokumentation: Module] in der Node.js-API-Referenzdokumentation.
 
-Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobilen Dienst besteht darin, Referenzen zur package.json-Datei des Diensts hinzuzufügen. Als Nächstes fügen Sie das Node.js-Modul [node-uuid] zu Ihrem mobilen Dienst hinzu, indem Sie die package.json-Datei aktualisieren. Wenn die Aktualisierung mithilfe von Push an Azure übertragen wird, wird der mobile Dienst neu gestartet, und das Modul wird installiert. Mit diesem Modul können Sie nun neue GUID-Werte für die **uuid**-Eigenschaft in eingefügten Elementen generieren. 
+Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobilen Dienst besteht darin, Referenzen zur package.json-Datei des Diensts hinzuzufügen. Als Nächstes fügen Sie das [node-uuid]Node.js-Modul zu Ihrem mobilen Dienst hinzu, indem Sie die package.json-Datei aktualisieren. Wenn die Aktualisierung mithilfe von Push an Azure übertragen wird, wird der mobile Dienst neu gestartet, und das Modul wird installiert. Mit diesem Modul können Sie nun neue GUID-Werte für die **uuid**-Eigenschaft in eingefügten Elementen generieren. 
 
-2. Wechseln Sie zum Ordner ".\service" Ihres lokalen Git-Repositorys, und öffnen Sie die package.json-Datei in einem Text-Editor.
+2. Wechseln Sie zum Ordner `.\service` Ihres lokalen Git-Repositorys, und öffnen Sie die package.json-Datei in einem Text-Editor.
 
 3. Suchen Sie nach  
 
 		npm install node-uuid
 
-	NPM erstellt das Verzeichnis "node_modules" am aktuellen Speicherort und installiert das Modul [node-uuid] im Unterverzeichnis "\node-uuid". 
+	NPM erstellt das Verzeichnis `node_modules` am aktuellen Ort und installiert das [node-uuid]-Modul im Unterverzeichnis `\node-uuid`. 
 
-	<div class="dev-callout">
-	<strong>Hinweis</strong>
-	<p>Wenn <code>node_modules</code> in der Verzeichnishierarchie bereits vorhanden ist, erstellt NPM das Unterverzeichnis <code>\node-uuid</code> dort statt ein neues <code>node_modules</code> im Repository zu erstellen. In diesen Fall können Sie das vorhandene Verzeichnis <code>node_modules</code> einfach löschen.</p>
-	</div>
+	> [AZURE.NOTE] Falls  `node_modules` bereits in der Verzeichnishierarchie existiert, erstellt NPM das Unterverzeichnis `\node-uuid` dort, anstatt ein neues Verzeichnis  `node_modules` im Repository anzulegen. In diesem Fall können Sie das existierende Verzeichnis `node_modules` löschen.
 
 4. Öffnen Sie nun das Unterverzeichnis .\service\table, öffnen Sie die Datei todoitem.insert.js und ändern Sie den Code wie folgt:
 
@@ -142,11 +139,11 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 + [Arbeiten mit Serverskripts in Mobile Services]
 	<br/>Zeigt, wie Sie mit Serverskripts, dem Auftragsplaner und benutzerdefinierten APIs arbeiten.
 
-+ [Aufrufen einer benutzerdefinierten API vom Client] 
-	<br/> Zeigt, wie Sie benutzerdefinierte APIs erstellen, die vom Client aufgerufen werden können.
++ [Aufrufen einer benutzerdefinierten API aus dem Client]
+	<br/> Zeigt, wie benutzerdefinierte APIs erstellt werden, die aus dem Client aufgerufen werden können.
 
 <!-- Anchors. -->
-[Aktivieren der Quellcodeverwaltung in Ihrem mobilen Dienst]: #enable-source-control
+[Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst]: #enable-source-control
 [Installieren von Git und Erstellen des lokalen Repositorys]: #clone-repo
 [Bereitstellen aktualisierter Skriptdateien an Ihren mobilen Dienst]: #deploy-scripts
 [Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts]: #use-npm
@@ -164,8 +161,9 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: /de-de/documentation/articles/mobile-services-ios-get-started-data/
 [Arbeiten mit Serverskripts in Mobile Services]: /de-de/documentation/articles/mobile-services-how-to-use-server-scripts/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Aufrufen einer benutzerdefinierten API vom Client]: /de-de/documentation/articles/mobile-services-ios-call-custom-api/
+[Aufrufen einer benutzerdefinierten API aus dem Client]: /de-de/documentation/articles/mobile-services-ios-call-custom-api/
 [Node.js-API-Dokumentation: Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
-<!--HONumber=35.1-->
+
+<!--HONumber=42-->

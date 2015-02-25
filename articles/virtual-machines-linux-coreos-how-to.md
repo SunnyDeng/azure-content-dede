@@ -1,17 +1,17 @@
-﻿<properties title="How to Use CoreOS on Azure" pageTitle="Gewusst wie: CoreOS auf Azure" description="Beschreibt CoreOS, das Erstellen eines virtuellen CoreOS-Computers auf Azure und dessen grundlegende Verwendung." metaKeywords="linux, virtual machines, vm, azure, CoreOS, linux containers,  lxc, virtualization" services="virtual-machines" solutions="dev-test" documentationCenter="virtual-machines" authors="rasquill" videoId="" scriptId="" manager="timlt" />
+<properties pageTitle="Gewusst wie: Verwenden von CoreOS auf Azure" description="Beschreibt CoreOS, das Erstellen eines virtuellen CoreOS-Computers auf Azure und dessen grundlegende Verwendung." services="virtual-machines" documentationCenter="" authors="squillace" manager="timlt" editor=""/>
 
-<tags ms.service="virtual-machines" ms.devlang="multiple" ms.topic="article" ms.tgt_pltfrm="vm-linux" ms.workload="infrastructure-services" ms.date="10/27/2014" ms.author="rasquill" />
+<tags ms.service="virtual-machines" ms.devlang="multiple" ms.topic="article" ms.tgt_pltfrm="vm-linux" ms.workload="infrastructure-services" ms.date="10/27/2014" ms.author="rasquill"/>
 
-<!--This is a basic template that shows you how to use mark down to create a topic that includes a TOC, sections with subheadings, links to other azure.microsoft.com topics, links to other sites, bold text, italic text, numbered and bulleted lists, code snippets, and images. For fancier markdown, find a published topic and copy the markdown or HTML you want. For more details about using markdown, see http://sharepoint/sites/azurecontentguidance/wiki/Pages/Content%20Guidance%20Wiki%20Home.aspx.-->
+<!--Dies ist eine einfache Vorlage, die zeigt, wie Markdown verwendet wird, um ein Thema zu erstellen, das ein Inhaltsverzeichnis, Abschnitte mit Unterüberschriften, Links zu anderen azure.microsoft.com-Themen, Links zu anderen Websites, Fettschrift, Kursivschrift, nummerierte Listen und Aufzählungen, Codeausschnitte und Bilder enthält. Suchen Sie für ein originelleres Markdown ein veröffentlichtes Thema, und kopieren Sie den Markdown- oder HTML-Code. Genauere Informationen zu der Verwendung von Markdown finden Sie unter http://sharepoint/sites/azurecontentguidance/wiki/Pages/Content%20Guidance%20Wiki%20Home.aspx.-->
 
-<!--Properties section (above): this is required in all topics. Please fill it out! See http://sharepoint/sites/azurecontentguidance/wiki/Pages/Markdown%20tagging%20-%20add%20a%20properties%20section%20to%20your%20markdown%20file%20to%20specify%20metadata%20values.aspx for details. -->
+<!--Abschnitt "Eigenschaften" (siehe oben): Dieser ist für alle Themen erforderlich. Dies muss ausgefüllt werden. Einzelheiten finden Sie unter http://sharepoint/sites/azurecontentguidance/wiki/Pages/Markdown%20tagging%20-%20add%20a%20properties%20section%20to%20your%20markdown%20file%20to%20specify%20metadata%20values.aspx. -->
 
 <!-- Tags section (above): this is required in all topics. Please fill it out! See http://sharepoint/sites/azurecontentguidance/wiki/Pages/Markdown%20tagging%20-%20add%20a%20tags%20section%20to%20your%20markdown%20file%20to%20specify%20metadata%20for%20reporting.aspx for details. -->
 
 <!--The next line, with one pound sign at the beginning, is the page title--> 
 # Gewusst wie: Verwenden von CoreOS auf Azure
 
-Dieses Thema beschreibt [CoreOS] und zeigt das Erstellen eines Clusters von drei virtuellen CoreOS-Computern auf Azure als einen Schnellstart zum Verstehen von CoreOS. Es enthält die sehr grundlegenden Elemente von CoreOS-Bereitstellungen und Beispiele aus [CoreOS with Azure](CoreOS mit Azure), [Tim Park's CoreOS Tutorial] (Tim Parks CoreOS-Lernprogramm) und [Patrick Chanezon's CoreOS Tutorial] (Patrick Chanezons CoreOS-Lernprogramm) (allesamt in englischer Sprache) zum Veranschaulichen der absoluten Mindestvoraussetzungen, um die grundlegende Struktur einer CoreOS-Bereitstellung zu verstehen und um ein Cluster von drei erfolgreich ausgeführten virtuellen Computern zu erhalten. 
+Dieses Thema beschreibt [CoreOS] und zeigt das Erstellen eines Clusters von drei virtuellen CoreOS-Computern auf Azure als einen Schnellstart zum Verstehen von CoreOS. Es enthält die sehr grundlegenden Elemente von CoreOS-Bereitstellungen und Beispiele aus [CoreOS with Azure] (CoreOS mit Azure), [Tim Park's CoreOS Tutorial] (Tim Parks CoreOS-Lernprogramm) und [Patrick Chanezon's CoreOS Tutorial] (Patrick Chanezons CoreOS-Lernprogramm) (allesamt in englischer Sprache) zum Veranschaulichen der absoluten Mindestvoraussetzungen, um die grundlegende Struktur einer CoreOS-Bereitstellung zu verstehen und einen Cluster von drei erfolgreich ausgeführten virtuellen Computern zu erhalten. 
 
 <!--Table of contents for topic, the words in brackets must match the heading wording exactly-->
 Dieses Thema enthält die folgenden Abschnitte:
@@ -34,11 +34,11 @@ Auf einer hohen Ebene lauten die CoreOS-Features, die diese Ziele unterstützen,
 
 1. Ein Paketsystem: CoreOS führt nur Linux-Containerimages aus, die in Linux-Containern zwecks Geschwindigkeit, Uniformität und einfacher Bereitstellung ausgeführt werden.
 2. Automatisch ausgeführte Betriebssystemupdates, sodass Betriebssysteme als eine einzelne Entität aktualisiert werden und einfach auf einen bekannten Zustand zurückgesetzt werden können.
-3. Integrierte [etcd-](https://github.com/coreos/etcd) und [fleet-](https://github.com/coreos/fleet) Daemons (Dienste) für dynamische virtuelle Computer sowie Clusterkommunikation und -verwaltung.
+3. Integrierte [etcd](https://github.com/coreos/etcd)- und [fleet](https://github.com/coreos/fleet)-Daemons (Dienste) für dynamische virtuelle Computer sowie Clusterkommunikation und -verwaltung.
 
-Hierbei handelt es sich um eine sehr allgemeine Beschreibung von CoreOS und seiner Features. Vollständige Informationen über CoreOS finden Sie unter [CoreOS Overview](Übersicht zu CoreOS) (in englischer Sprache).
+Hierbei handelt es sich um eine sehr allgemeine Beschreibung von CoreOS und seiner Features. Vollständige Informationen über CoreOS finden Sie unter [CoreOS Overview](Übersicht zu CoreOS, in englischer Sprache).
 
-## <a id='security'>Sicherheitsüberlegungen</a>
+## <a id='security'>Sicherheitshinweise</a>
 CoreOS geht aktuell davon aus, dass diejenigen, die per SSH im Cluster agieren können, die Berechtigung besitzen, es zu verwalten. Im Ergebnis sind CoreOS-Cluster ohne Änderung für Test- und Entwicklungsumgebungen ausstehend, Sie sollten jedoch weitergehende Sicherheitsmaßnahmen in jeder Produktionsumgebung anwenden. 
 
 ## <a id='usingcoreos'>Gewusst wie: Verwenden von CoreOS auf Azure</a>
@@ -47,20 +47,20 @@ Dieser Abschnitt beschreibt das Erstellen eines Azure-Cloud-Diensts mit drei dar
 
 1. Erstellen Sie die SSH-Zertifikate und -Schlüssel zur sicheren Kommunikation mit dem virtuellen CoreOS-Computer.
 2. Rufen Sie die etcd-ID Ihres Clusters für die Vernetzung ab.
-3. Erstellen Sie eine "cloud-config"-Datei im Format [YAML]
+3. Erstellen Sie eine "cloud-config"-Datei im Format [YAML].
 4. Verwenden Sie die "xplat-cli" zum Erstellen eines neuen Azure-Cloud-Diensts und drei neuer virtueller CoreOS-Computer.
-5. Testen Sie Ihr CoreOS-Cluster auf dem virtuellen Azure-Computer.
-6. Testen Sie Ihr CoreOS-Cluster über den Localhost. 
+5. Testen Sie Ihren CoreOS-Cluster auf dem virtuellen Azure-Computer.
+6. Testen Sie Ihren CoreOS-Cluster über den Localhost. 
 
 ### Erstellen von öffentlichen und privaten Schlüsseln für die Kommunikation
  
-Weitere Informationen finden Sie unter [Gewusst wie: Verwenden von SSH mit Linux auf Azure](http://azure.microsoft.com/de-de/documentation/articles/virtual-machines-linux-use-ssh-key/) über das Erstellen von öffentlichen und privaten Schlüsseln für SSH. (Die grundlegenden Schritte befinden sich in den folgenden Anweisungen.) Sie verwenden diese Schlüssel, um eine Verbindung zu den virtuellen Computern im Cluster herzustellen, um zu überprüfen, ob sie funktionieren und miteinander kommunizieren können.
+Verwenden Sie die Anweisungen in [Gewusst wie: Verwenden von SSH mit Linux auf Azure](http://azure.microsoft.com/de-de/documentation/articles/virtual-machines-linux-use-ssh-key/) , um einen öffentlichen und privaten Schlüssel für SSH zu erstellen. (Die grundlegenden Schritte befinden sich in den folgenden Anweisungen.) Sie verwenden diese Schlüssel, um eine Verbindung zu den virtuellen Computern im Cluster herzustellen, um zu überprüfen, ob sie funktionieren und miteinander kommunizieren können.
 
-> [WACOM.NOTE] In diesem Thema wird davon ausgegangen, dass Sie nicht über diese Schlüssel verfügen, und es ist erforderlich, dass Sie eine **`myPrivateKey.pem`** und **`myCert.pem`**-Datei zwecks Klarheit erstellen. Wenn Sie bereits ein öffentliches und privates Schlüsselpaar in **`~/.ssh/id_rsa`** gespeichert haben, geben Sie einfach `openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem` ein, sodass Sie die .pem-Datei erhalten, die Sie auf Azure hochladen.
+> [AZURE.NOTE] In diesem Thema wird davon ausgegangen, dass Sie nicht über diese Schlüssel verfügen, und es ist erforderlich, dass Sie eine **`myPrivateKey.pem`**- und **`myCert.pem`**-Datei zwecks Klarheit erstellen. Wenn Sie bereits über ein in **`~/.ssh/id_rsa`** gespeichertes öffentliches und privates Schlüsselpaar verfügen, können Sie einfach  `openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem` eingeben, um die PEM-Datei abzurufen, die Sie für das Hochladen zu Azure benötigen.
 
-1. Geben Sie in einem Arbeitsverzeichnis `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem` ein, sodass der private Schlüssel erstellt und das X.509-Zertifikat mit ihm verknüpft wird. 
+1. Geben Sie in einem Arbeitsverzeichnis  `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem` und ein damit verknüpftes X.509-Zertifikat ein, um den privaten Schlüssel zu erstellen. 
 
-2. Geben Sie `chmod 600 myPrivateKey.key` ein, damit der Besitzer des privaten Schlüssels die Datei lesen oder schreiben kann. 
+2. Geben Sie  `chmod 600 myPrivateKey.key` ein, damit der Besitzer des privaten Schlüssels die Datei lesen oder schreiben kann. 
 
 In Ihrem Arbeitsverzeichnis sollte sowohl eine **`myPrivateKey.key`**- als auch eine **`myCert.pem`**-Datei enthalten sein. 
 
@@ -77,7 +77,7 @@ curl https://discovery.etcd.io/new | grep ^http.* > etcdid
 
 Erstellen Sie im selben Arbeitsverzeichnis eine Datei mit Ihrem bevorzugten Text-Editor mit dem folgenden Text, und speichern Sie sie als **`cloud-config.yaml`**. (Sie können sie bei Bedarf als Dateinamen speichern. Wenn Sie Ihre virtuellen Computer jedoch im nächsten Schritt erstellen, müssen Sie diesen Dateinamen in der Option **--custom-data** für den Befehl **azure create vm** referenzieren.)
 
-> [WACOM.NOTE] Denken Sie daran, `cat etcdid` einzugeben, sodass die etcd Ermittlungs-ID aus der oben erstellten Datei `etcdid` abgerufen wird und ersetzen Sie **`<token>`** in der folgenden Datei **cloud-config.yaml** mit der generierten Nummer aus der `etcdid`-Datei. Wenn Sie am Ende nicht in der Lage sind, Ihr Cluster zu überprüfen, haben Sie möglicherweise einen Schritt übersehen!
+> [AZURE.NOTE] Beachten Sie,  `cat etcdid` zum Abrufen der etcd-Ermittlungs-ID aus der von Ihnen oben erstellten  `etcdid`-Datei abzurufen, und ersetzen Sie **`<token>`** in der folgenden **cloud-config.yaml**-Datei mit der generierten Zahl aus Ihrer  `etcdid`-Datei. Wenn Sie am Ende nicht in der Lage sind, Ihr Cluster zu überprüfen, haben Sie möglicherweise einen Schritt übersehen!
 
 ```
 #cloud-config
@@ -96,21 +96,21 @@ coreos:
       command: start
 ```
 
-(Umfassendere Informationen über die Datei "cloud-config" finden Sie unter [Cloud-Config verwenden](https://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/) in der CoreOS-Dokumentation.)
+(Weitere Informationen über die "cloud-config"-Datei finden Sie unter [Using Cloud-Config](https://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/) (Verwenden von Cloud-Config, in englischer Sprache) in der CoreOS-Dokumentation.)
 
 ### Verwenden der xplat-cli zum Erstellen eines neuen virtuellen CoreOS-Computers
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 
 1. Installieren Sie die [plattformübergreifende Azure-Schnittstelle (xplat-cli)], wenn Sie dies noch nicht vorgenommen haben, und melden Sie sich entweder mit einer Arbeits- oder Schul-ID an, oder laden Sie eine .publishsettings-Datei herunter, und importieren Sie diese in Ihr Konto.
-2. Suchen Sie das CoreOS-Image. Zurzeit steht nur das Image - **`2b171e93f07c4903bcad35bda10acf22__CoreOS-Alpha-475.1.0`** - zur Verfügung. Geben Sie jedoch `azure vm image list | grep .*CoreOS.*` ein, um die jederzeit verfügbaren Images zu suchen, und so sollten ein oder mehrere Ergebnisse angezeigt werden, die in etwa so aussehen:
+2. Suchen Sie das CoreOS-Image. Derzeit ist nur ein Image -- **`2b171e93f07c4903bcad35bda10acf22__CoreOS-Alpha-475.1.0`** -- vorhanden, aber Sie können die zum jeweiligen Zeitpunkt verfügbaren Images durch Eingeben von  `azure vm image list | grep .*CoreOS.*` and you should see one or more results similar to: finden.
 `data:    2b171e93f07c4903bcad35bda10acf22__CoreOS-Alpha-475.1.0              Public    Linux`
 3. Erstellen Sie einen Cloud-Dienst für ein grundlegendes Cluster, indem Sie
-`azure service create <cloud-service-name>` eingeben, wobei *cloud-service-name* der Name für den CoreOS-Cloud-Dienst ist. In diesem Beispiel wird der Name **`coreos-cluster`** verwendet. Sie müssen den Namen erneut verwenden, den Sie zum Erstellen Ihrer virtuellen CoreOS-Computerinstanzen im Cloud-Dienst auswählen. 
+`azure service create <cloud-service-name>` eingeben, wobei  *cloud-service-name* der Name für den CoreOS-Cloud-Dienst ist. In diesem Beispiel wird der Name **`coreos-cluster`** verwendet. Sie müssen den Namen erneut verwenden, den Sie zum Erstellen Ihrer virtuellen CoreOS-Computerinstanzen im Cloud-Dienst auswählen. 
 
-Hinweis: Wenn Sie Ihre bisherige Arbeit im [neuen Portal](https://portal.azure.com)betrachten, sehen Sie, dass der Cloud-Dienstname sowohl eine Ressourcengruppe als auch eine Domäne ist, wie im folgenden Bild dargestellt:
+Hinweis: Wenn Sie Ihre bisherige Arbeit im [neuen Portal](https://portal.azure.com) begutachten, können Sie sehen, dass Ihr Cloud-Dienstname sowohl Ressourcengruppe als auch Domäne ist, wie in der folgenden Abbildung gezeigt wird:
 
 ![][CloudServiceInNewPortal]  
-4. Stellen Sie eine Verbindung zu Ihrem Cloud-Dienst her, und erstellen Sie einen neuen virtuellen CoreOS-Computer darin, indem Sie den Befehl **azure vm create** verwenden. YSie übergeben den Ort Ihres X.509-Zertifikats in der Option **--ssh-cert**. Erstellen Sie Ihr erstes Image für virtuelle Computer, indem Sie Folgendes eingeben (beachten Sie, **coreos-cluster** durch den von Ihnen erstellten Cloud-Dienstnamen zu ersetzen):
+4. Stellen Sie eine Verbindung zu Ihrem Cloud-Dienst her, und erstellen Sie einen neuen virtuellen CoreOS-Computer darin, indem Sie den Befehl **azure vm create** verwenden. Sie übergeben den Ort Ihres X.509-Zertifikats in der Option **--ssh-cert**. Erstellen Sie Ihr erstes Image für virtuelle Computer, indem Sie Folgendes eingeben (beachten Sie, **coreos-cluster** durch den von Ihnen erstellten Cloud-Dienstnamen zu ersetzen):
 
 ```
 azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location='West US' 2b171e93f07c4903bcad35bda10acf22__CoreOS-Alpha-475.1.0 core
@@ -130,7 +130,7 @@ Zum Testen Ihres Clusters müssen Sie sich in Ihrem Arbeitsverzeichnis befinden 
 
 `ssh core@coreos-cluster.cloudapp.net -p 22 -i ./myPrivateKey.key`
 
-Geben Sie `sudo fleetctl list-machines` ein, sobald Sie verbunden sind, um anzuzeigen, ob der Cluster bereits alle virtuellen Computer im Cluster identifiziert hat. Sie sollten eine Antwort empfangen, die in etwa der im Folgenden aufgeführten entspricht:
+Geben Sie  `sudo fleetctl list-machines` ein, sobald Sie verbunden sind, um anzuzeigen, ob der Cluster bereits alle virtuellen Computer im Cluster identifiziert hat. Sie sollten eine Antwort empfangen, die in etwa der im Folgenden aufgeführten entspricht:
 
 ```
 core@node-1 ~ $ sudo fleetctl list-machines
@@ -142,7 +142,7 @@ f7de6717...	100.71.188.96	-
 
 ### Testen Ihres CoreOS-Clusters über den Localhost
 
-Lassen Sie uns nun das CoreOS-Cluster vom lokalen Linux-Client aus testen. Installieren Sie dazu **fleet**. **fleet** setzt **golang** voraus, das Sie möglicherweise erst installieren müssen. Geben Sie dazu Folgendes ein:
+Lassen Sie uns nun den CoreOS-Cluster vom lokalen Linux-Client aus testen. Installieren Sie dazu **fleet**. **fleet** setzt **golang** voraus, das Sie möglicherweise erst installieren müssen. Geben Sie dazu Folgendes ein:
 
 `sudo apt-get install golang` 
 
@@ -150,7 +150,7 @@ Klonen Sie anschließend das **fleet**-Repository von github, indem Sie Folgende
 
 `git clone https://github.com/coreos/fleet.git`
 
-Erstellen Sie **fleet** durch Eingeben von
+Erstellen Sie **fleet**, indem Sie Folgendes eingeben:
 
 `./build`
 
@@ -158,13 +158,13 @@ Platzieren Sie **fleet** abschließend für die einfache Verwendung (hängt von 
 
 `cp bin/fleetctl /usr/local/bin`
 
-Stellen Sie sicher, dass **fleet** auf Ihren `myPrivateKey.key` im Arbeitsverzeichnis zugreifen können. Geben Sie dazu Folgendes ein:
+Stellen Sie sicher, dass **fleet** auf Ihren  `myPrivateKey.key` im Arbeitsverzeichnis zugreifen können. Geben Sie dazu Folgendes ein:
 
 `ssh-add ./myPrivateKey.key`
 
-> [WACOM.NOTE] Wenn Sie bereits den **~/.ss h/id_rsa**-Schlüssel verwenden, dann fügen Sie ihn mit `ssh-add ~/.ssh/id_rsa` hinzu.
+> [AZURE.NOTE] Wenn Sie bereits den **`~/.ssh/id_rsa`**-Schlüssel verwenden, fügen Sie diesen mit  `ssh-add ~/.ssh/id_rsa` hinzu.
 
-Nun können Sie mit demselben **fleetctl**-Befehl, den Sie von **node-1** verwendet haben, remote testen, geben Sie jedoch einige Remoteargumente weiter:
+Nun können Sie mit demselben **fleetctl**-Befehl, den Sie von **node-1** verwendet haben, remote testen; geben Sie jedoch einige Remoteargumente weiter:
 
 `fleetctl --tunnel coreos-cluster.cloudapp.net:22 list-machines`
 
@@ -179,13 +179,13 @@ f7de6717...	100.71.188.96	-
 
 ## Nächste Schritte
 
-Sie sollten über einen betriebsbereiten CoreOS-Cluster mit drei Knoten auf Azure verfügen. Indem Sie [Tim Park's CoreOS Tutorial] (Tim Parks CoreOS-Lernprogramm), [Patrick Chanezon's CoreOS Tutorial] (Patrick Chanezons CoreOS-Lernprogramm), die [Docker]-Dokumentation und [CoreOS Overview] (Übersicht zu CoreOS) (allesamt in englischer Sprache) lesen, können Sie herausfinden, wie Sie komplexere Cluster erstellen und Docker verwenden sowie interessantere Anwendungen erstellen können.
+Sie sollten über einen betriebsbereiten CoreOS-Cluster mit drei Knoten auf Azure verfügen. Anhand der Lektüre von [Tim Park's CoreOS Tutorial] (Tim Parks CoreOS-Lernprogramm), [Patrick Chanezon's CoreOS Tutorial] (Patrick Chanezons CoreOS-Lernprogramm), die [Docker]-Dokumentation und [CoreOS Overview] (Übersicht zu CoreOS) (allesamt in englischer Sprache) können Sie ermitteln, wie Sie komplexere Cluster erstellen und Docker verwenden sowie interessantere Anwendungen erstellen können.
 
 <!--Anchors-->
 [CoreOS, Cluster und Linux-Container]: #intro
 [Sicherheitshinweise]: #security
 [Gewusst wie: Verwenden von CoreOS auf Azure]: #usingcoreos
-[Untertitel 3]: #subheading-3
+[Unterüberschrift 3]: #subheading-3
 [Nächste Schritte]: #next-steps
 
 <!--Image references-->
@@ -206,4 +206,7 @@ Sie sollten über einen betriebsbereiten CoreOS-Cluster mit drei Knoten auf Azur
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
 
-<!--HONumber=35.1-->
+
+
+
+<!--HONumber=42-->

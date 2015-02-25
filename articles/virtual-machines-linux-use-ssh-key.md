@@ -1,6 +1,6 @@
-﻿<properties urlDisplayName="Use SSH" pageTitle="Verwenden von SSH zum Herstellen einer Verbindung zu virtuellen Linux-Computern in Azure" metaKeywords="Azure SSH keys Linux, Linux vm SSH" description="Erfahren Sie, wie Sie SSH-Schlüssel mit einem virtuellen Linux-Computer auf Azure generieren und verwenden." metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Use SSH with Linux on Azure" authors="szarkos" solutions="" manager="timlt" editor="" />
+﻿<properties pageTitle="Verwenden von SSH zum Herstellen einer Verbindung zu virtuellen Linux-Computern in Azure" description="Erfahren Sie, wie Sie SSH-Schlüssel mit einem virtuellen Linux-Computer auf Azure generieren und verwenden." services="virtual-machines" documentationCenter="" authors="szarkos" manager="timlt" editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="10/15/2014" ms.author="szarkos" />
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="10/15/2014" ms.author="szarkos"/>
 
 #Verwenden von SSH mit Linux auf Azure
 
@@ -8,9 +8,9 @@ Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SS
 
 ## Erzeugung von Azure-kompatiblen Schlüsseln in Linux ##
 
-1. Installieren Sie bei Bedarf das Hilfsprogramm `openssl`:
+1. Installieren Sie bei Bedarf das Hilfsprogramm  `openssl`:
 
-	**CentOS / Oracle Linux**
+	**CentOS/Oracle Linux**
 
 		# sudo yum install openssl
 
@@ -18,12 +18,12 @@ Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SS
 
 		# sudo apt-get install openssl
 
-	**SLES & openSUSE**
+	**SLES und openSUSE**
 
 		# sudo zypper install openssl
 
 
-2. Verwenden Sie `openssl`, um ein X.509-Zertifikat mit einem 2048-bit-RSA-Schlüsselpaar zu erzeugen. Bitte beantworten Sie die Fragen, die `openssl` Ihnen stellt (oder lassen Sie die Felder leer). Der Inhalt dieser Felder wird nicht von der Plattform verwendet.
+2. Verwenden Sie  `openssl`, um ein X.509-Zertifikat mit einem 2048-Bit-RSA-Schlüsselpaar zu generieren. Beantworten Sie die Fragen, die  `openssl` Ihnen stellt (oder lassen Sie die Felder leer). Der Inhalt dieser Felder wird nicht von der Plattform verwendet.
 
 		# openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem
 
@@ -31,9 +31,9 @@ Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SS
 
 		# chmod 600 myPrivateKey.key
 
-4.	Laden Sie das `myCert.pem` hoch, während Sie den virtuellen Linux-Computer erstellen. Der Bereitstellungsvorgang installiert automatisch den öffentlichen Schlüssel in diesem Zertifikat in der Datei `authorized_keys` für den angegebenen Benutzer im virtuellen Computer.
+4.	Laden Sie die Datei  `myCert.pem` hoch, während Sie den virtuellen Linux-Computer erstellen. Der Bereitstellungsvorgang installiert automatisch den öffentlichen Schlüssel in diesem Zertifikat in der Datei  `authorized_keys` für den angegebenen Benutzer im virtuellen Computer.
 
-5.	Wenn Sie die API direkt ohne das Verwaltungsportal verwenden möchten, wandeln Sie die Datei `myCert.pem` in `myCert.cer` (DER-kodiertes X509-Zertifikat) um. Verwenden Sie dafür den folgenden Befehl:
+5.	Wenn Sie die API direkt ohne das Verwaltungsportal verwenden möchten, wandeln Sie die Datei  `myCert.pem` in  `myCert.cer` (DER-codiertes X509-Zertifikat) um. Verwenden Sie dafür den folgenden Befehl:
 
 		# openssl  x509 -outform der -in myCert.pem -out myCert.cer
 
@@ -41,29 +41,29 @@ Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SS
 ## Erzeugen eines Schlüssels aus einem vorhandenen OpenSSH-kompatiblen Schlüssel
 Im vorherigen Beispiel wurde die Erstellung eines neuen Schlüssels zur Verwendung mit Azure beschrieben. In manchen Fällen verfügen Sie möglicherweise bereits über ein vorhandenes OpenSSH-kompatibles Schlüsselpaar (öffentlich und privat) und möchten diese Schlüssel in Azure verwenden.
 
-Private OpenSSH-Schlüssel können direkt vom Hilfsprogramm `openssl` gelesen werden. Mit dem folgenden Befehl wird aus dem vorhandenen privaten SSH-Schlüssel (im Beispiel unten id_rsa) der öffentliche Schlüssel `.pem` erstellt, der für Azure erforderlich ist:
+Private OpenSSH-Schlüssel können direkt vom Hilfsprogramm  `openssl` gelesen werden. Mit dem folgenden Befehl wird aus dem vorhandenen privaten SSH-Schlüssel (im Beispiel unten id_rsa) der öffentliche Schlüssel  `.pem` erstellt, der für Microsoft Azure erforderlich ist:
 
 	# openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem
 
-Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verwendet werden kann, um einen virtuellen Linux-Computer auf Azure bereitzustellen. Während der Bereitstellung wird die Datei `.pem` in einen mit `openssh` kompatiblen öffentlichen Schlüssel übersetzt und in `~/.ssh/authorized_keys` platziert.
+Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verwendet werden kann, um einen virtuellen Linux-Computer auf Azure bereitzustellen. Während der Bereitstellung wird die Datei  `.pem` in einen  `openssh`-kompatiblen öffentlichen Schlüssel übersetzt und in `~/.ssh/authorized_keys`. platziert.
 
 
 ## Verbindung mit einem virtuellen Azure-Computer über Linux
 
 1. In manchen Fällen kann es sein, dass der SSH-Endpunkt eines virtuellen Linux-Computer für einen anderen als Port 22 konfiguriert ist. Sie finden die korrekte Portnummer auf dem Dashboard des virtuellen Computers im Verwaltungsportal (unter "SSH-Details").
 
-2.	Stellen Sie die Verbindung mit dem virtuellen Linux-Computer mithilfe von `ssh` her. Beim ersten Anmelden werden Sie aufgefordert, den Fingerabdruck des öffentlichen Schlüssels des Hosts zu übernehmen.
+2.	Stellen Sie die Verbindung mit dem virtuellen Linux-Computer mithilfe von  `ssh` her. Beim ersten Anmelden werden Sie aufgefordert, den Fingerabdruck des öffentlichen Schlüssels des Hosts zu übernehmen.
 
 		# ssh -i  myPrivateKey.key -p <port> username@servicename.cloudapp.net
 
-3.	(Optional) Sie können `myPrivateKey.key` in `~/.ssh/id_rsa` kopieren, so dass Ihr OpenSSH-Client dies automatisch übernimmt, ohne die -i-Option zu verwenden.
+3.	(Optional) Sie können  `myPrivateKey.key` in "~/.ssh/id_rsa" kopieren, sodass Ihr OpenSSH-Client dies automatisch übernimmt, ohne die "-i"-Option zu verwenden.
 
 ## OpenSSL unter Windows aufrufen ##
 ### Verwenden von msysgit ###
 
 1.	Laden und installieren Sie msysgit von folgendem Speicherort: [http://msysgit.github.com/](http://msysgit.github.com/)
-2.	Führen Sie `msys` aus dem installierten Verzeichnis aus (Beispiel: c:\msysgit\msys.exe)
-3.	Wechseln Sie in das Verzeichnis `bin`, indem Sie `cd bin` eingeben
+2.	Führen Sie  `msys` aus dem installierten Verzeichnis aus (Beispiel: c:\msysgit\msys.exe).
+3.	Nehmen Sie eine Änderung zum Verzeichnis  `bin` vor, indem Sie  `cd bin` eingeben.
 
 ###Verwenden von GitHub für Windows###
 
@@ -74,11 +74,11 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 
 1.	Laden und installieren Sie Cygwin von folgendem Speicherort: [http://cygwin.com/](http://cygwin.com/)
 2.	Stellen Sie sicher, dass das OpenSSL-Paket und alle seine Abhängigkeiten installiert sind.
-3.	Führen Sie `cygwin` aus
+3.	Ausführen von  `cygwin`
 
 ## Erstellen eines privaten Schlüssels in Windows ##
 
-1.	Befolgen Sie eine der obigen Anweisungen, um `openssl.exe` auszuführen
+1.	Befolgen Sie eine der obigen Anweisungen, um  `openssl.exe` auszuführen.
 2.	Geben Sie den folgenden Befehl ein:
 
 		# openssl.exe req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem
@@ -88,8 +88,8 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 	![linuxwelcomegit](./media/virtual-machines-linux-use-ssh-key/linuxwelcomegit.png)
 
 4.	Beantworten Sie die Fragen, die Ihnen gestellt werden.
-5.	Es sind zwei Dateien erstellt worden: `myPrivateKey.key` und `myCert.pem`.
-6.	Wenn Sie die API direkt ohne das Verwaltungsportal verwenden möchten, wandeln Sie die Datei `myCert.pem` in `myCert.cer` (DER-kodiertes X509-Zertifikat) um. Verwenden Sie dafür den folgenden Befehl:
+5.	Es wären zwei Dateien erstellt worden:  `myPrivateKey.key` und  `myCert.pem`.
+6.	Wenn Sie die API direkt ohne das Verwaltungsportal verwenden möchten, wandeln Sie die Datei  `myCert.pem` in  `myCert.cer` (DER-codiertes X509-Zertifikat) um. Verwenden Sie dafür den folgenden Befehl:
 
 		# openssl.exe  x509 -outform der -in myCert.pem -out myCert.cer
 
@@ -97,20 +97,20 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 
 1. Laden und installieren Sie Puttygen von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 
-2. Puttygen ist möglicherweise nicht in der Lage, den zuvor (`myPrivateKey.key`) erstellten privaten Schlüssel zu lesen. Führen Sie den folgenden Befehl aus, um ihn in einen privaten RSA-Schlüssel zu übersetzen, den Puttygen verstehen kann:
+2. PuTTYgen ist möglicherweise nicht in der Lage, den zuvor erstellten privaten Schlüssel (`myPrivateKey.key`) zu lesen. Führen Sie den folgenden Befehl aus, um ihn in einen privaten RSA-Schlüssel zu übersetzen, den Puttygen verstehen kann:
 
 		# openssl rsa -in ./myPrivateKey.key -out myPrivateKey_rsa
 		# chmod 600 ./myPrivateKey_rsa
 
 	Der obige Befehl sollte den neuen privaten Schlüssel "myPrivateKey_rsa" generieren.
 
-3. Führen Sie `puttygen.exe` aus.
+3. Ausführen von  `puttygen.exe`
 
 4. Klicken Sie auf das Menü: Datei > Privaten Schlüssel laden
 
-5. Suchen Sie nach dem privaten Schlüssel, den wir oben als `myPrivateKey_rsa` benannt haben. Ändern Sie den Dateienfilter, so dass er **Alle Dateien (\*.\*)** anzeigt.
+5. Suchen Sie nach dem privaten Schlüssel, den wir oben als  `myPrivateKey_rsa` benannt haben. Ändern Sie den Dateifilter, sodass er **All Files (\*.\*)** anzeigt.
 
-6. Klicken Sie **Öffnen**. Sie erhalten eine Aufforderung, die ungefähr folgendermaßen aussieht:
+6. Klicken Sie auf **Öffnen**. Sie erhalten eine Aufforderung, die ungefähr folgendermaßen aussieht:
 
 	![linuxgoodforeignkey](./media/virtual-machines-linux-use-ssh-key/linuxgoodforeignkey.png)
 
@@ -131,12 +131,13 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 
 	![linuxputtyconfig](./media/virtual-machines-linux-use-ssh-key/linuxputtyconfig.png)
 
-4.	Ehe Sie **Öffnen** wählen, klicken Sie auf der Registerkarte "Verbindung" auf "SSH > Auth", um Ihren Schlüssel zu wählen Das auszufüllende Feld finden Sie auf dem Screenshot unten:
+4.	Klicken Sie auf der Registerkarte "Verbindung" auf "SSH > Auth", um Ihren Schlüssel zu wählen, und anschließend auf **Öffnen**. Das auszufüllende Feld finden Sie auf dem Screenshot unten:
 
 	![linuxputtyprivatekey](./media/virtual-machines-linux-use-ssh-key/linuxputtyprivatekey.png)
 
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
 
-<!--HONumber=35.1-->
 
-<!--HONumber=35.1-->
+
+
+<!--HONumber=42-->

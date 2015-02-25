@@ -1,6 +1,20 @@
-<properties title="Troubleshooting Azure Websites in Visual Studio" pageTitle="Problembehandlung von Azure-Websites in Visual Studio" metaKeywords="Problembehandlung debuggen Azure Website Ablaufverfolgung Protokollierung" description="Informationen zur Problembehebung bei einer Azure-Website mit Remote-Debugging-, Ablaufverfolgungs- und Protokollierungstools, die in Visual Studio 2013 integriert sind." metaCanonical="" services="web-sites" documentationCenter=".NET" authors="tdykstra" manager="wpickett" solutions="" />
+<properties 
+	pageTitle="Problembehandlung von Azure-Websites in Visual Studio" 
+	description="Erfahren Sie mehr über die Problembehandlung für eine Azure-Website mithilfe von Remotedebugging-, Ablaufverfolgungs- und Protokollierungstools, die in Visual Studio 2013 integriert sind." 
+	services="web-sites" 
+	documentationCenter=".net" 
+	authors="tdykstra" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/13/2014" ms.author="tdykstra" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="11/13/2014" 
+	ms.author="tdykstra"/>
 
 # Problembehandlung von Azure-Websites in Visual Studio
 
@@ -37,7 +51,7 @@ Wenn Sie über Visual Studio Ultimate verfügen, können Sie auch [IntelliTrace]
 
 <h2><a name="prerequisites"></a>Voraussetzungen</h2>
 
-Dieses Lernprogramm verwendet die Entwicklungsumgebung, das Webprojekt und die Azure-Website, die Sie unter [Erste Schritte mit Azure und ASP.NET][GetStarted] eingerichtet haben. Für den WebJobs-Abschnitt benötigen Sie die Anwendung, die Sie in [Erste Schritte mit dem Azure WebJobs SDK][GetStartedWJ] erstellen.
+Dieses Lernprogramm verwendet die Entwicklungsumgebung, das Webprojekt und die Azure-Website, die Sie unter [Erste Schritte mit Azure und ASP.NET][GetStarted] eingerichtet haben. Für die Abschnitte zu Webaufträgen benötigen Sie die Anwendung, die Sie in [Erste Schritte mit dem Azure-Webaufträge-SDK][GetStartedWJ] erstellen.
 
 Die Codebeispiele in diesem Lernprogramm stammen aus einer C# MVC-Webanwendung. Die Prozeduren gelten jedoch auch für die Problembehandlung in Visual Basic- und Web Forms-Anwendungen.
 
@@ -53,8 +67,8 @@ Visual Studio bietet Zugriff auf einen Teil der Site-Verwaltungsfunktionen und K
 
 	Als Alternative können Sie ein Verwaltungszertifikat installieren, das den Zugriff auf Ihr Konto ermöglicht. Mit dem Verwaltungszertifikat erhält der **Server-Explorer** Zugriff auf zusätzliche Azure-Dienste (SQL-Datenbank und Mobile Dienste). Falls Sie ein Zertifikat installieren möchten, klicken Sie mit der rechten Maustaste auf den Knoten **Azure** im **Server-Explorer**, und wählen Sie im Kontextmenü **Abonnements verwalten** aus. Klicken Sie im Dialogfeld **Azure-Abonnements verwalten** auf die Registerkarte **Zertifikate** und dann auf **Importieren**. Befolgen Sie die Anweisungen zum Herunterladen und Importieren einer Abonnementdatei (auch .publishsettings-Datei genannt) für Ihr Azure-Konto.
 
-	> [WACOM.NOTE]
-	> Wenn Sie eine Abonnementdatei herunterladen, sollten Sie diese in einem Ordner außerhalb Ihrer Quellcodeverzeichnisse speichern (beispielsweise in den Ordner Downloads) und nach Abschluss des Importvorgangs löschen. Böswillige Benutzer, die Zugriff auf die Abonnementdatei erlangen, können Ihre Azure-Services bearbeiten, erstellen und löschen.
+	> [AZURE.NOTE]
+	> Wenn Sie eine Abonnementdatei herunterladen, sollten Sie diese in einem Ordner außerhalb Ihrer Quellcodeverzeichnisse speichern (beispielsweise im Ordner "Downloads") und nach Abschluss des Importvorgangs löschen. Böswillige Benutzer, die Zugriff auf die Abonnementdatei erlangen, können Ihre Azure-Services bearbeiten, erstellen und löschen.
 
 	Weitere Informationen für Verbindungen zwischen Visual Studio und Azure-Ressourcen finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](http://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert).
 
@@ -76,7 +90,7 @@ Visual Studio bietet Zugriff auf einen Teil der Site-Verwaltungsfunktionen und K
 
 <h2><a name="remoteview"></a>Zugreifen auf Websitedateien im Server-Explorer</h2>
 
-Die customErrors-Kennzeichnung in der Datei *Web.config* ist üblicherweise auf "On" oder "RemoteOnly" eingestellt. Auf diese Weise erhalten Sie keine hilfreiche Fehlermeldung, wenn ein Problem auftritt. Für viele Fehler bekommen Sie eine der folgenden Seiten angezeigt.
+Das `customErrors`-Kennzeichen in der Datei "Web.config" ist üblicherweise auf `On` oder `RemoteOnly` festgelegt. Das bedeutet, dass Sie bei einem Problem keine erklärende Fehlermeldung erhalten. Für viele Fehler bekommen Sie eine der folgenden Seiten angezeigt.
 
 **Serverfehler in '/'-Anwendung:**
 
@@ -90,7 +104,7 @@ Die customErrors-Kennzeichnung in der Datei *Web.config* ist üblicherweise auf 
 
 ![Unhelpful error page](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror2.png)
 
-Der einfachste Weg für die Suche nach der Fehlerursache ist die Aktivierung detaillierter Fehlermeldungen. Im ersten der vorigen Screenshots sehen Sie, welche Änderungen Sie dazu in der Web.config-Datei vornehmen müssen. Sie können die Web.config-Datei entweder im Projekt bearbeiten und das Projekt neu bereitstellen oder eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations)erstellen und eine Debugversion bereitstellen, aber es gibt noch einen einfacheren Weg: Im **Projektmappen-Explorer** können Sie Dateien auf dem Remotesystem mithilfe der Remoteansicht-Funktion direkt anzeigen und bearbeiten.
+Der einfachste Weg für die Suche nach der Fehlerursache ist oft die Aktivierung detaillierter Fehlermeldungen. Im ersten der vorigen Screenshots sehen Sie, welche Änderungen Sie dazu in der bereitgestellten Datei "Web.config" vornehmen müssen. Sie können die *Web.config*-Datei entweder im Projekt bearbeiten und das Projekt neu bereitstellen oder eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) erstellen und eine Debugversion bereitstellen, aber es gibt noch einen einfacheren Weg: Im **Projektmappen-Explorer** können Sie Dateien auf dem Remotesystem mithilfe der *remote view*-Funktion direkt anzeigen und bearbeiten.
 
 1. Erweitern Sie im **Server-Explorer** zunächst **Azure**, dann **Websites** und anschließend den Knoten der Website, auf der Sie bereitstellen möchten.
 
@@ -104,7 +118,7 @@ Der einfachste Weg für die Suche nach der Fehlerursache ist die Aktivierung det
 
 	Visual Studio öffnet die Datei *Web.config* auf dem Remotesystem und zeigt den Text [Remote] neben dem Dateinamen in der Titelleiste an.
 
-3. Fügen Sie die folgende Zeile zum system.web-Element hinzu:
+3. Fügen Sie dem `system.web`-Element die folgende Zeile hinzu:
 
 	`<customErrors mode="off"></customErrors>`
 
@@ -126,13 +140,13 @@ Remotedebuggen funktioniert nicht in den Express-Editionen von Visual Studio.
 
 ### Remotedebuggen von Websites
 
-Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP.NET][GetStarted] erstellte Projekt remote debuggen können.
+Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Azure und ASP.NET][GetStarted] erstellte Projekt remote debuggen können.
 
-1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit Windows Azure und ASP.NET][GetStarted] erstellt haben.
+1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit Azure und ASP.NET][GetStarted] erstellt haben.
 
-1. Öffnen Sie die Datei *Controllers\HomeController.cs*.
+1. Öffnen Sie *Controllers\HomeController.cs*.
 
-2. Löschen Sie die About()-Methode, und fügen Sie den folgenden Code an ihrer Stelle ein.
+2. Löschen Sie die `About()`-Methode, und fügen Sie stattdessen den folgenden Code ein.
 
         public ActionResult About()
         {
@@ -141,11 +155,11 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
             return View();
         }
 
-2. [Setzen Sie einen Breakpoint](http://www.visualstudio.com/de-de/get-started/debug-your-app-vs.aspx) in der ViewBag.Message-Zeile.
+2. [Setzen Sie einen Haltepunkt](http://www.visualstudio.com/de-de/get-started/debug-your-app-vs.aspx) in der Zeile `ViewBag.Message`.
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und klicken Sie anschließend auf **Veröffentlichen**.
 
-2. Wählen Sie in der Dropdownliste **Profil** dasselbe Profil aus, das Sie in [Erste Schritte mit Windows Azure und ASP.NET][GetStarted] verwendet haben.
+2. Wählen Sie in der Dropdownliste **Profil** dasselbe Profil aus, das Sie in [Erste Schritte mit Azure und ASP.NET][GetStarted] verwendet haben.
 
 3. Wechseln Sie zur Registerkarte **Einstellungen**, ändern Sie **Konfiguration** auf **Debug**, und klicken Sie anschließend auf **Veröffentlichen**.
 
@@ -163,17 +177,17 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 	* Navigieren Sie im Azure-Verwaltungsportal zur Registerkarte **Konfigurieren** für Ihre Website, und führen Sie einen Bildlauf nach unten zum Abschnitt **Website-Diagnose** durch.
 
-	* Stellen Sie **Remotedebuggen** auf **Ein**, und stellen Sie **Visual Studio-Version** für Remotedebuggen auf **2012**.
+	* Setzen Sie **Remotedebuggen** auf **Ein**, und stellen Sie **Visual Studio-Version für Remotedebuggen** auf **2012**.
 
 	![Set remote debugging in management portal](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debuginportal.png)
    
 	* Klicken Sie im **Debug**-Menü in Visual Studio auf **An den Prozess anhängen**.
 
-	* Geben Sie in das Feld **Qualifizierer** die URL Ihrer Website ohne das Präfix "http://" ein. 
+	* Geben Sie in das Feld **Qualifizierer** die URL Ihrer Website ohne das Präfix `http://` ein. 
 
 	* Wählen Sie **Prozesse aller Benutzer anzeigen** aus.
 
-	* Wenn Sie zur Eingabe der Anmeldeinformationen aufgefordert werden, geben Sie Benutzername und Kennwort des Benutzers ein, der zum Veröffentlichen der Website berechtigt ist. Sie erhalten diese Anmeldeinformationen, indem Sie die Registerkarte Dashboard für Ihre Website im Verwaltungsportal öffnen und auf **Veröffentlichungsprofil herunterladen** klicken. Wenn Sie die Datei in einem Text-Editor öffnen, finden Sie Benutzername und Passwort nach den ersten Vorkommnissen von **userName=** und **userPWD=**. 
+	* Wenn Sie zur Eingabe der Anmeldeinformationen aufgefordert werden, geben Sie Benutzername und Kennwort des Benutzers ein, der zum Veröffentlichen der Website berechtigt ist. Sie erhalten diese Anmeldeinformationen, indem Sie die Registerkarte "Dashboard" für Ihre Website im Verwaltungsportal öffnen und auf **Veröffentlichungsprofil herunterladen** klicken. Wenn Sie die Datei in einem Text-Editor öffnen, finden Sie den Benutzernamen und das Kennwort nach den ersten Vorkommnissen von **userName=** und **userPWD=**. 
 
 	* Wenn die Prozesse in der Tabelle **Verfügbare Prozesse** angezeigt werden, wählen Sie **w3wp.exe** aus, und klicken Sie auf **Anhängen**.
 
@@ -185,13 +199,13 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 	Visual Studio hält am Breakpoint an, wobei der Code nicht auf Ihrem lokalen Computer läuft, sondern unter Azure.
 
-7. Zeigen Sie auf die Variable "currentTime", um den Zeitwert anzuzeigen.
+7. Zeigen Sie auf die Variable `currentTime`, um den Zeitwert anzuzeigen.
 
 	![View variable in debug mode running in Azure](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugviewinwa.png)
 
 	Bei der angezeigten Zeit handelt es sich um die Azure-Serverzeit, deren Zeitzone sich von Ihrer lokalen Einstellung unterscheiden kann.
 
-8. Geben Sie einen neuen Wert für die Variable "currentTime" ein, z. B. "Ausführung unter Azure".
+8. Geben Sie einen neuen Wert für die Variable `currentTime` ein, z. B. "Ausführung unter Azure".
 
 5. Drücken Sie F5, um die Ausführung fortzusetzen.
 
@@ -199,21 +213,21 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 	![About page with new value](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugchangeinwa.png)
 
-### <a name="remotedebugwj"></a> Remotedebuggen von WebJobs
+### <a name="remotedebugwj"></a> Remotedebuggen von Webaufträgen
 
-Dieser Abschnitt zeigt, wie Sie das Projekt und die Website, die Sie in [Erste Schritte mit dem Azure WebJobs SDK] erstellen, remote debuggen können(../websites-dotnet-webjobs-sdk). Die in diesem Abschnitt dargestellten Funktionen sind nur in Visual Studio 2013 mit Update 4 verfügbar.
+Dieser Abschnitt zeigt, wie Sie das Projekt und die Website, die Sie in [Erste Schritte mit dem Azure-Webaufträge-SDK](../websites-dotnet-webjobs-sdk) erstellen, remote debuggen können. Die in diesem Abschnitt dargestellten Funktionen sind nur in Visual Studio 2013 mit Update 4 verfügbar.
 
-1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit dem Azure WebJobs SDK][GetStartedWJ] erstellt haben.
+1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit dem Azure-Webaufträge-SDK][GetStartedWJ] erstellt haben.
 
-1. Öffnen Sie im Projekt *ContosoAdsWebJob* die Datei *Functions.cs*.
+1. Öffnen Sie *Functions.cs* im Projekt "ContosoAdsWebJob".
 
-2. [Legen Sie einen Breakpoint](http://www.visualstudio.com/de-de/get-started/debug-your-app-vs.aspx) für die erste Anweisung in der GenerateThumbnail-Methode fest.
+2. [Legen Sie einen Haltepunkt](http://www.visualstudio.com/de-de/get-started/debug-your-app-vs.aspx) für die erste Anweisung in der  `GnerateThumbnail`-Methode fest.
 
 	![Set breakpoint](./media/web-sites-dotnet-troubleshoot-visual-studio/wjbreakpoint.png)
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Webprojekt (nicht das WebJob-Projekt), und klicken Sie anschließend auf **Veröffentlichen**.
 
-2. Wählen Sie in der Dropdownliste **Profil** dasselbe Profil aus, das Sie in [Erste Schritte mit dem Azure WebJobs SDK] verwendet haben(../websites-dotnet-webjobs-sdk).
+2. Wählen Sie in der Dropdownliste **Profil** dasselbe Profil aus, das Sie in [Erste Schritte mit dem Azure-Webaufträge-SDK](../websites-dotnet-webjobs-sdk) verwendet haben.
 
 3. Wechseln Sie zur Registerkarte **Einstellungen**, ändern Sie **Konfiguration** auf **Debug**, und klicken Sie anschließend auf **Veröffentlichen**.
 
@@ -257,7 +271,7 @@ Dieser Abschnitt zeigt, wie Sie das Projekt und die Website, die Sie in [Erste S
 
 	![Function details](./media/web-sites-dotnet-troubleshoot-visual-studio/funcdetails.png)
 
-Wenn die Funktion [Protokolle geschrieben] hat(../websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs), können Sie auf **ToggleOutput** klicken, um diese anzuzeigen.
+Wenn die Funktion [Protokolle geschrieben hat](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs), können Sie zum Anzeigen auf **ToggleOutput** klicken.
 
 ### Hinweise zum Remotedebuggen
 
@@ -265,9 +279,9 @@ Wenn die Funktion [Protokolle geschrieben] hat(../websites-dotnet-webjobs-sdk-st
 
 * Vermeiden Sie es beim Remotedebuggen, lange an Breakpoints anzuhalten. Azure behandelt Prozesse, die länger als einige Minuten angehalten sind, als nicht reagierend und beendet diese.
 
-* Beim Debuggen schickt der Server Daten an Visual Studio und verursacht möglicherweise zusätzliche Kosten für Bandbreite. Weitere Informationen zu Bandbreitentarifen finden Sie unter [Azure Pricing] (Azure-Preisübersicht, in englischer Sprache)(/de-de/pricing/calculator/).
+* Beim Debuggen schickt der Server Daten an Visual Studio und verursacht möglicherweise zusätzliche Kosten für Bandbreite. Weitere Informationen zu Bandbreitentarifen finden Sie unter [Azure-Preisübersicht](/de-de/pricing/calculator/).
 
-* Stellen Sie sicher, dass das Attribut "debug" im Element "compilation" in der Datei *Web.config* auf "true" gesetzt ist. Dieses Attribut ist beim Veröffentlichen einer Debug-Buildkonfiguration standardmäßig "true".
+* Stellen Sie sicher, dass das Attribut  `debug` im Element  `compilation` in der Datei *Web.config* auf "true" festgelegt ist. Dieses Attribut ist beim Veröffentlichen einer Debug-Buildkonfiguration standardmäßig "true".
 
         <system.web>
           <compilation debug="true" targetFramework="4.5" />
@@ -301,15 +315,15 @@ Die Protokolle werden in den Ordner *LogFiles* im Dateisystem Ihrer Website gesc
 
 In diesem Abschnitt werden Sie die folgenden Aufgaben ausführen:
 
-* Fügen Sie dem Webprojekt, das Sie in [Erste Schritte mit Azure und ASP.NET][GetStarted] erstellt haben, Ablaufvefolgungsanweisungen hinzu.
+* Hinzufügen von Ablaufverfolgungsanweisungen zu dem Webprojekt, das Sie in [Erste Schritte mit Azure und ASP.NET][GetStarted] erstellt haben.
 * Anzeigen der Protokolle, wenn Sie das Projekt lokal ausführen.
 * Anzeigen der Protokolle, während diese von der Anwendung unter Azure generiert werden. 
 
-Informationen zum Erstellen von Anwendungsprotokollen in WebJobs finden Sie unter [Arbeiten mit Azure-Warteschlangenspeicher mithilfe des WebJob SDKs - Schreiben von Protokollen](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs). Die folgenden Anweisungen zum Anzeigen von Protokollen und Steuern, wie diese in Azure gespeichert werden, gelten auch für Anwendungsprotokolle, die von WebJobs erstellt werden. 
+Informationen zum Erstellen von Anwendungsprotokollen in Webaufträgen finden Sie unter [Arbeiten mit Azure-Warteschlangenspeicher mithilfe des Webaufträge-SDK - Schreiben von Protokollen](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs). Die folgenden Anweisungen für das Anzeigen von Protokollen und das Speichern in Azure gelten auch für Anwendungsprotokolle, die von Webaufträgen erstellt werden. 
 
 ### Hinzufügen von Ablaufverfolgungs-Anweisungen zur Anwendung
 
-1. Öffnen Sie *Controllers\HomeController.cs*, und ersetzen Sie den Inhalt der Datei durch den folgenden Code, um Trace-Anweisungen und eine using-Anweisung für System.Diagnostics hinzuzufügen:
+1. Öffnen Sie *Controllers\HomeController.cs*, und ersetzen Sie den Inhalt der Datei durch den folgenden Code, um `Trace`-Anweisungen und eine `using`-Anweisung für `System.Diagnostics` hinzuzufügen:
 
 		using System;
 		using System.Collections.Generic;
@@ -357,13 +371,13 @@ Informationen zum Erstellen von Anwendungsprotokollen in WebJobs finden Sie unte
 
 3. Drücken Sie F5, um die Anwendung im Debugmodus auszuführen.
 
-	Der Standard-Ablaufverfolgungs-Listener schreibt sämtliche Ausgaben in das **Ausgabefenster**, zusammen mit anderen Debugausgaben. Die folgende Abbildung zeigt die Ausgaben der Ablaufverfolgungsanweisungen, die Sie zur Index-Methode hinzugefügt haben.
+	Der Standard-Ablaufverfolgungs-Listener schreibt sämtliche Ausgaben in das **Ausgabefenster**, zusammen mit anderen Debugausgaben. Die folgende Abbildung zeigt die Ausgaben der Ablaufverfolgungsanweisungen, die Sie der `Index`-Methode hinzugefügt haben.
 
 	![Tracing in Debug window](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugtracing.png)
 
 	Anhand der folgenden Schritte können Sie Ablaufverfolgungs-Ausgaben in einer Webseite anzeigen, ohne im Debugmodus zu kompilieren.
 
-2. Öffnen Sie die Web.config-Datei der Anwendung (die Datei im Projektordner), und fügen Sie das Element "<system data-morhtml="true".diagnostics>" am Ende der Datei direkt vor dem abschließenden </configuration>-Element ein:
+2. Öffnen Sie die Web.config-Datei der Anwendung (die Datei im Projektordner), und fügen Sie das Element `<system.diagnostics>` am Ende der Datei direkt vor dem abschließenden `</configuration>`-Element hinzu:
 
   		<system.diagnostics>
 		    <trace>
@@ -378,29 +392,29 @@ Informationen zum Erstellen von Anwendungsprotokollen in WebJobs finden Sie unte
 		    </trace>
 		  </system.diagnostics>
 
-	Mit dem "WebPageTraceListener" können Sie die Ablaufverfolgungsausgabe anzeige, indem Sie zu "/trace.axd" navigieren.
+	Über `WebPageTraceListener` können Sie die Ausgabe der Ablaufverfolgung anzeigen, indem Sie zu `/trace.axd` navigieren.
 
-3. Fügen Sie in der Datei *Web.config" ein <a href="http://msdn.microsoft.com/de-de/library/vstudio/6915t83k(v=vs.100).aspx">trace-Element</a> unter "<system.web>" hinzu, wie zum Beispiel das folgende Beispiel:
+3. Fügen Sie ein <a href="http://msdn.microsoft.com/de-de/library/vstudio/6915t83k(v=vs.100).aspx">trace</a>-Element unter "<system.web>" in die Datei "Web.config" ein, wie im folgenden Beispiel gezeigt:
 
 		<trace enabled="true" writeToDiagnosticsTrace="true" mostRecent="true" pageOutput="false" />
 
 3. Drücken Sie STRG+F5, um die Anwendung auszuführen.
 
-4. Fügen Sie der URL in der Adressleiste des Browserfensters trace.axd hinzu, und drücken Sie die EINGABETASTE (die URL sollte in etwa so aussehen: http://localhost:53370/trace.axd).
+4. Fügen Sie der URL in der Adressleiste des Browserfensters *trace.axd* hinzu, und drücken Sie die EINGABETASTE (die URL sollte in etwa so aussehen: http://localhost:53370/trace.axd).
 
 5. Klicken Sie auf der Seite **Anwendungsüberwachung** in der ersten Zeile (nicht in der BrowserLink-Zeile) auf **Details anzeigen**.
 
 	![trace.axd](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd1.png)
 
-	Daraufhin wird die Seite **Anforderungsdetails** angezeigt, und im Bereich **Überwachungsinformationen** sehen Sie die Ausgabe der Ablaufverfolgungsanweisungen, die Sie zur Index-Methode hinzugefügt haben.
+	Daraufhin wird die Seite **Anforderungsdetails** angezeigt, und im Bereich **Überwachungsinformationen** sehen Sie die Ausgabe der Ablaufverfolgungsanweisungen, die Sie der `Index`-Methode hinzugefügt haben.
 
 	![trace.axd](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd2.png)
 
-	"trace.axd" ist standardmäßig nur lokal verfügbar. Sie können localOnly="false" zum trace-Element der Web.config-Datei hinzufügen, um diese Seite auch remote verfügbar zu machen, wie im folgenden Beispiel gezeigt:
+	 `trace.axd` ist standardmäßig nur lokal verfügbar. Sie können localOnly="false" zum `trace`-Element der *Web.config*-Datei hinzufügen, um diese Seite auch remote verfügbar zu machen, wie im folgenden Beispiel gezeigt:
 
 		<trace enabled="true" writeToDiagnosticsTrace="true" localOnly="false" mostRecent="true" pageOutput="false" />
 
-	trace.axd. sollte jedoch in Produktionswebsites aus Sicherheitsgründen deaktiviert werden. In den folgenden Abschnitten lernen Sie einen einfacheren Weg kennen, um Ablaufverfolgungsprotokolle in Azure-Websites zu lesen.
+	 `trace.axd` sollte jedoch in Produktionswebsites aus Sicherheitsgründen deaktiviert werden. In den folgenden Abschnitten lernen Sie einen einfacheren Weg kennen, um Ablaufverfolgungsprotokolle in Azure-Websites zu lesen.
 
 ### Anzeige der Ablaufverfolgungs-Ausgabe in Azure
 
@@ -408,19 +422,19 @@ Informationen zum Erstellen von Anwendungsprotokollen in WebJobs finden Sie unte
 
 2. Klicken Sie im Dialogfeld **Web veröffentlichen** auf **Veröffentlichen**.
 
-	Nachdem Visual Studio Ihr Update veröffentlicht hat, öffnet sich ein Browserfenster zu Ihrer Startseite (sofern Sie **Ziel-URL** in der Registerkarte **Verbindung** nicht gelöscht haben).
+	Nachdem Visual Studio Ihr Update veröffentlicht hat, öffnet sich ein Browserfenster zu Ihrer Startseite (sofern Sie **Ziel-URL** auf der Registerkarte **Verbindung** nicht gelöscht haben).
 
-3. Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf Ihre Website, und wählen Sie **Streamingprotokolle im Ausgabefenster** anzeigen. 
+3. Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf Ihre Website, und wählen Sie **Streamingprotokolle im Ausgabefenster anzeigen**. 
 
 	![View Streaming Logs in context menu](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewlogsmenu.png)
 
-	Das **Ausgabefenster** zeigt an, dass Sie mit dem Protokollstreamingdienst verbunden sind und fügt eine Benachrichtigungszeile für jede Minute hinzu, in der kein anzuzeigendes Protokoll eingeht.
+	Das **Ausgabefenster** zeigt an, dass Sie mit dem Protokollstreamingdienst verbunden sind, und fügt eine Benachrichtigungszeile für jede Minute hinzu, in der kein anzuzeigendes Protokoll eingeht.
 
 	![View Streaming Logs in context menu](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-nologsyet.png)
 
 4. Klicken Sie im Browserfenster, in dem die Startseite Ihrer Anwendung geöffnet ist, auf **Contact**.
 
-	Innerhalb weniger Sekunden erscheint das Ablaufverfolgungsprotokoll mit dem Schweregrad Fehler, das Sie zur Contact-Methode hinzugefügt haben, im **Ausgabefenster**.
+	Innerhalb weniger Sekunden wird die Ablaufverfolgung mit dem Schweregrad "Fehler", die Sie der `Contact`-Methode hinzugefügt haben, im **Ausgabefenster** angezeigt.
 
 	![Error trace in Output window](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-errortrace.png)
 
@@ -429,11 +443,11 @@ Informationen zum Erstellen von Anwendungsprotokollen in WebJobs finden Sie unte
 	![Application Logging off](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-apploggingoff.png)
 
 
-	Als Sie jedoch **Streamingprotokolle im Ausgabefenster anzeigen** ausgewählt haben, hat Visual Studio **Anwendungsprotokollierung(Dateisystem)** automatisch auf **Fehler** eingestellt, und Protokolle mit dem Schweregrad Fehler werden gemeldet. Sie können diese Einstellung auf **Ausführlich** ändern, falls Sie sämtliche Ablaufverfolgungsprotokolle sehen möchten. Wenn Sie einen Schweregrad unterhalb von Fehler auswählen, werden die Protokolleinträge der höheren Schweregrade ebenfalls geschrieben. Wenn Sie also ausführlich auswählen, werden die Protokolleinträge für Information, Warnung und Fehler geschrieben.  
+	Als Sie jedoch **Streamingprotokolle im Ausgabefenster anzeigen** ausgewählt haben, hat Visual Studio die **Anwendungsprotokollierung (Dateisystem)** automatisch auf **Fehler** eingestellt, und Protokolle mit dem Schweregrad "Fehler" werden gemeldet. Sie können diese Einstellung auf **Ausführlich** ändern, falls Sie sämtliche Ablaufverfolgungsprotokolle sehen möchten. Wenn Sie einen Schweregrad unterhalb von Fehler auswählen, werden die Protokolleinträge der höheren Schweregrade ebenfalls geschrieben. Wenn Sie also ausführlich auswählen, werden die Protokolleinträge für Information, Warnung und Fehler geschrieben.  
 
 4. Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf die Website, und klicken Sie anschließend wie oben auf **Anzeigeeinstellungen**.
 
-5. Ändern Sie **Anwendungsprotokollierung (Dateisystem)** zu **Ausführlich**, und klicken Sie auf **Speichern**.
+5. Ändern Sie **Anwendungsprotokollierung (Dateisystem)** in **Ausführlich**, und klicken Sie auf **Speichern**.
  
 	![Setting trace level to Verbose](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-applogverbose.png)
 
@@ -463,7 +477,7 @@ Diese Schaltflächen bieten die folgenden Funktionen:
 
 Wenn Sie eine Suchzeichenfolge oder einen regulären Ausdruck eingeben, filtert Visual Studio die Protokollinformationen clientseitig. Daher können Sie die Kriterien eingeben, nachdem die Protokolle im **Ausgabefenster** angezeigt wurden, und Sie können die Filterkriterien ändern, ohne die Protokolle neu generieren zu müssen.
 
-<h2><a name="webserverlogs"></a>Erstellen von Webserverprotokollen</h2>
+<h2><a name="webserverlogs"></a>Anzeigen von Webserverprotokollen</h2>
 
 Webserverprotokolle zeichnen sämtliche HTTP-Aktivitäten der Website auf Sie müssen diese Protokolle für die Website aktivieren und Visual Studio mitteilen, dass Sie diese überwachen möchten, um sie im **Ausgabefenster** anzeigen zu können. 
 
@@ -486,7 +500,7 @@ Webserverprotokolle zeichnen sämtliche HTTP-Aktivitäten der Website auf Sie m�
 	![Web server logs in Output window](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-wslogs.png)
 
 
-Bei der ersten Aktivierung der Webserverprotokolle in Visual Studio schreibt Azure die Protokolle standardmäßig in das Dateisystem. Alternativ können Sie im Verwaltungsportal angeben, dass die Webserverprotokolle in einen Blob-Container in einem Speicherkonto geschrieben werden sollen. Weitere Informationen finden Sie im Abschnitt **Diagnose** unter [Konfigurieren von Websites].(/de-de/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig). 
+Bei der ersten Aktivierung der Webserverprotokolle in Visual Studio schreibt Azure die Protokolle standardmäßig in das Dateisystem. Alternativ können Sie im Verwaltungsportal angeben, dass die Webserverprotokolle in einen Blob-Container in einem Speicherkonto geschrieben werden sollen. Weitere Informationen finden Sie im Abschnitt **Diagnose** unter [Konfigurieren von Websites](/de-de/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig). 
 
 Wenn Sie die Webserverprotokollierung für ein Azure-Speicherkonto im Verwaltungsportal aktivieren und die Protokollierung anschließend in Visual Studio deaktivieren, werden die Speicherkontoeinstellungen bei der nächsten Aktivierung wiederhergestellt. 
 
@@ -494,9 +508,9 @@ Wenn Sie die Webserverprotokollierung für ein Azure-Speicherkonto im Verwaltung
 
 Die detaillierten Fehlerprotokolle liefern zusätzliche Informationen über HTTP-Anforderungen, die zu einer Fehlerantwort geführt haben (400 oder höher). Sie müssen diese Protokolle für die Website aktivieren und Visual Studio mitteilen, dass Sie diese überwachen möchten, um sie im **Ausgabefenster** anzeigen zu können.
 
-1. Ändern Sie auf der Registerkarte **Azure-Websitekonfiguration**, die Sie im **Server-Explorer** geöffnet haben, die Option **Detaillierte Fehlermeldungen** in **Ein**,  und klicken Sie auf **Speichern**.
+1. Ändern Sie auf der Registerkarte **Azure-Websitekonfiguration**, die Sie im **Server-Explorer** geöffnet haben, die Option **Detaillierte Fehlermeldungen** in **Ein**, und klicken Sie auf **Speichern**.
 
-	![Detaillierte Fehlermeldungen aktivieren](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-detailedlogson.png)
+	![Enable detailed error messages](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-detailedlogson.png)
 
 2. Klicken Sie im **Ausgabefenster** auf die Schaltfläche **Angeben, welche Azure-Protokolle überwacht werden sollen**.
 
@@ -504,7 +518,7 @@ Die detaillierten Fehlerprotokolle liefern zusätzliche Informationen über HTTP
 
 	![Monitor all logs](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-monitorall.png)
 
-4. Fügen Sie in der Adressleiste Ihres Browserfensters ein zusätzliches Zeichen an die URL an, um einen 404-Fehler zu provozieren (z. B. http://localhost:53370/Home/Contactx), und drücken Sie die Eingabetaste.
+4. Fügen Sie in der Adressleiste Ihres Browserfensters ein zusätzliches Zeichen an die URL an, um einen 404-Fehler zu verursachen (z. B. `http://localhost:53370/Home/Contactx`), und drücken Sie die EINGABETASTE.
 
 	Nach wenigen Sekunden erscheint das detaillierte Fehlerprotokoll im **Ausgabefenster** von Visual Studio.
 
@@ -516,13 +530,13 @@ Die detaillierten Fehlerprotokolle liefern zusätzliche Informationen über HTTP
 
 <h2><a name="downloadlogs"></a>Herunterladen von Dateisystemprotokollen</h2>
 
-Alle Protokolle, die Sie im **Ausgabefenster** überwachen können, lassen sich auch als .zip-Datei herunterladen. 
+Alle Protokolle, die Sie im **Ausgabefenster** überwachen können, lassen sich auch als *.zip*-Datei herunterladen. 
 
 1. Klicken Sie im **Ausgabefenster** auf **Streamingprotokolle herunterladen**.
 
 	![Logs tab buttons](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadicon.png)
 
-	Der Datei-Explorer öffnet Ihren Downloads-Ordner, und die heruntergeladene Datei ist ausgewählt.
+	Der Datei-Explorer öffnet Ihren *Downloads*-Ordner, und die heruntergeladene Datei ist ausgewählt.
 
 	![Downloaded file](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadedfile.png)
 
@@ -530,9 +544,9 @@ Alle Protokolle, die Sie im **Ausgabefenster** überwachen können, lassen sich 
 
 	![Downloaded file](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png)
 
-	* Ablaufverfolgungsprotokolle von Anwendungen befinden sich in .txt-Dateien im Ordner *LogFiles\Application*.
-	* Webserverprotokolle befinden sich in .log-Dateien im Ordner *LogFiles\http\RawLogs*. Sie können diese Dateien mit Werkzeugen wie z. B. Log Parser (http://www.microsoft.com/de-de/download/details.aspx?displaylang=en&id=24659) anzeigen und bearbeiten.
-	* Detaillierte Fehlerprotokolle befinden sich in .html-Dateien im Ordner *LogFiles\DetailedErrors.
+	* Ablaufverfolgungsprotokolle von Anwendungen befinden sich in *.txt*-Dateien im Ordner *LogFiles\Application*.
+	* Webserverprotokolle befinden sich in *.log*-Dateien im Ordner *LogFiles\http\RawLogs*. Sie können diese Dateien mit Werkzeugen wie z. B. [Log Parser](http://www.microsoft.com/de-de/download/details.aspx?displaylang=en&id=24659) anzeigen und bearbeiten.
+	* Detaillierte Fehlerprotokolle befinden sich in *.html*-Dateien im Ordner *LogFiles\DetailedErrors*.
 
 	(Der Ordner *deployments* enthält Dateien der Quellcodeverwaltung und hat nichts mit der Veröffentlichung in Visual Studio zu tun. Der Ordner *Git* enthält Ablaufverfolgungsprotokolle für die Quellcodeverwaltung und den Protokollstreamingdienst.)  
 
@@ -548,9 +562,9 @@ Sie können die Protokolle an eines oder alle dieser drei Ziele schicken:
 
 Sie können unterschiedliche Schweregrade für die einzelnen Ziele angeben. 
 
-Tabellen erleichtern die Anzeige von Protokolldetails online und unterstützen die Streamingfunktion: Sie können Protokolle aus Tabellen anzeigen und sehen neue Protokolleinträge, sobald diese erstellt werden. BLOBs erleichtern den Download der Protokolle in Dateiform und deren Analyse mithilfe von HDInsight, da HDInsight mit dem BLOB-Format umgehen kann. Weitere Informationen finden Sie im Abschnitt **Hadoop und MapReduce** unter [Data Storage Options (Building Real-World Cloud Apps with Azure)] (Datenspeicheroptionen (Erstellen von Cloud-Anwendungen mit Azure), in englischer Sprache) ](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options).
+Tabellen erleichtern die Anzeige von Protokolldetails online und unterstützen die Streamingfunktion: Sie können Protokolle aus Tabellen anzeigen und sehen neue Protokolleinträge, sobald diese erstellt werden. BLOBs erleichtern den Download der Protokolle in Dateiform und deren Analyse mithilfe von HDInsight, da HDInsight mit dem BLOB-Format umgehen kann. Weitere Informationen finden Sie im Abschnitt **Hadoop und MapReduce** unter [Datenspeicheroptionen (Erstellen von Cloud-Anwendungen mit Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options).
 
-Der Schweregrad Ihrer Dateisystemprotokolle ist momentan auf Ausführlich eingestellt. In den folgenden Schritten lernen Sie, wie Sie Protokolle mit dem Schweregrad Information in Speicherkontotabellen leiten können. Der Schweregrad Information bedeutet, dass alle Protokolle aus Aufrufen von "Trace.TraceInformation", "Trace.TraceWarning" und "Trace.TraceError" angezeigt werden, nicht jedoch die Protokolle aus Aufrufen von "  "Trace.WriteLine".
+Der Schweregrad Ihrer Dateisystemprotokolle ist momentan auf Ausführlich eingestellt. In den folgenden Schritten lernen Sie, wie Sie Protokolle mit dem Schweregrad Information in Speicherkontotabellen leiten können. Der Schweregrad "Information" bedeutet, dass alle Protokolle angezeigt werden, die durch den Aufruf von  `Trace.TraceInformation`, `Trace.TraceWarning`, und `Trace.TraceError` erstellt werden. Dies gilt nicht für Protokolle, die durch den Aufruf von `Trace.WriteLine` erstellt werden.
 
 Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für Protokolle als das Dateisystem. Außerdem erhalten Sie bei der Aufbewahrung von Ablaufverfolgungsprotokollen in Speicherkonten zusätzliche Informationen, die bei Dateisystemprotokollen entfallen.
 
@@ -570,7 +584,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 6. Wählen Sie in der Dropdownliste **Replikation** den Wert **Lokal redundant** aus. 
 
-	Wenn Georeplikation für ein Speicherkonto aktiviert ist, werden dessen Inhalte an ein zweites Rechenzentrum repliziert, um im Katastrophenfall eine Failover-Instanz an diesem zweiten Standort zur Verfügung zu haben. Für die Georeplikation können zusätzliche Kosten anfallen. Für Test- und Entwicklungskonten macht es wenig Sinn, für Georeplikation zu bezahlen. Weitere Informationen finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos] (../storage-create-storage-account/#replication-options).
+	Wenn Georeplikation für ein Speicherkonto aktiviert ist, werden dessen Inhalte an ein zweites Rechenzentrum repliziert, um im Katastrophenfall eine Failover-Instanz an diesem zweiten Standort zur Verfügung zu haben. Für die Georeplikation können zusätzliche Kosten anfallen. Für Test- und Entwicklungskonten macht es wenig Sinn, für Georeplikation zu bezahlen. Weitere Informationen finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account/#replication-options).
 
 5. Klicken Sie auf **Erstellen**. 
 
@@ -582,9 +596,9 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 	Daraufhin öffnet sich im Verwaltungsportal die Registerkarte **Konfigurieren** für Ihre Website. Sie können diese Registerkarte auch öffnen, indem Sie auf die Registerkarte **Websites** und anschließend auf Ihre Website und auf die Registerkarte **Konfigurieren** klicken.
 
-2. Blättern Sie in der Registerkarte **Konfigurieren **im Verwaltungsportal nach unten bis zum Bereich "Anwendungsdiagnose", und ändern Sie den Wert von **Anwendungsprotokollierung (Tabellenspeicher)** auf **Ein**.
+2. Führen Sie im Verwaltungsportal auf der Registerkarte **Konfigurieren** einen Bildlauf nach unten bis zum Bereich "Anwendungsdiagnose" durch, und ändern Sie den Wert von **Anwendungsprotokollierung (Tabellenspeicher)** in **Ein**.
 
-3. Ändern Sie **Protokollierungsstufe** auf **Information**.
+3. Ändern Sie **Protokollierungsstufe** in **Information**.
 
 4. Klicken Sie auf **Tabellenspeicher verwalten**.
 
@@ -596,19 +610,19 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 6. Setzen Sie das Häkchen im Feld **Tabellenspeicher für Anwendungsdiagnose verwalten**, um das Fenster zu schließen.
 
-6. Klicken Sie in der Registerkarte **Konfigurieren** im Verwaltungsportal auf **Speichern**.
+6. Klicken Sie im Verwaltungsportal auf der Registerkarte **Konfigurieren** auf **Speichern**.
 
 7. Klicken Sie im Browserfenster, in dem Ihre Anwendungswebsite angezeigt wird, auf **Home**, anschließend auf **About** und dann auf **Contact**.
 
 	Die von diesen Webseiten produzierten Protokollierungsinformationen werden daraufhin in Ihr Speicherkonto geschrieben.
 
-8. Klicken Sie in Visual Studio auf der Registerkarte **Protokolle** im Fenster **Azure-Website** unter **Diagnosezusammenfassung** auf **Aktualisieren**.
+8. Klicken Sie in Visual Studio im Fenster **Azure-Website** auf der Registerkarte **Protokolle** unter **Diagnosezusammenfassung** auf **Aktualisieren**.
 
 	![Click Refresh](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-refreshstorage.png)
 
 	Im Bereich **Diagnosezusammenfassung** werden standardmäßig die Protokolle der vergangenen 15 Minuten angezeigt. Sie können das Zeitintervall ändern, um weitere Protokolleinträge anzuzeigen. 
 
-	(Falls Sie den Fehler "Tabelle nicht gefunden" erhalten, vergewissern Sie sich, dass Sie die entsprechenden Seiten aufgerufen haben, nachdem Sie **Anwendungsprotokollierung (Tabellenspeicher)** aktiviert und auf** Speichern** geklickt haben.)
+	(Falls Sie den Fehler "Tabelle nicht gefunden" erhalten, vergewissern Sie sich, dass Sie die entsprechenden Seiten aufgerufen haben, nachdem Sie **Anwendungsprotokollierung (Tabellenspeicher)** aktiviert und auf **Speichern** geklickt haben.)
 
 	![Storage logs](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-storagelogs.png)
 
@@ -620,11 +634,11 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
    
 	(Falls Sie den Fehler "Sequenz enthält keine Elemente" erhalten, öffnen Sie den **Server-Explorer**, erweitern Sie den Knoten Ihres Speicherkontos unterhalb des **Azure**-Knotens, klicken Sie mit der rechten Maustaste auf **Tabellen**, und klicken Sie auf **Aktualisieren**.)
 
-	![Trace table in Server Explorer](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracetableinse.png)
+	![Ablaufverfolgungstabelle im Server-Explorer](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracetableinse.png)
 
 	![Storage logs in table view](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-	Diese Ansicht enthält zusätzliche Felder, die in keiner der anderen Ansichten angezeigt werden. Außerdem können Sie die Protokolle in dieser Ansicht mithilfe der Abfrage-Generator-GUI filtern. Weitere Informationen finden Sie im Abschnitt "Working with Table Resources - Filtering Entities" (Arbeiten mit Tabellenressourcen - Entitätenfilter" unter [Browsing Storage Resources with Server Explorer] (http://msdn.microsoft.com/de-de/library/windowsazure/ff683677.aspx) (Durchsuchen von Speicherressourcen im Server-Explorer, in englischer Sprache).
+	Diese Ansicht enthält zusätzliche Felder, die in keiner der anderen Ansichten angezeigt werden. Außerdem können Sie die Protokolle in dieser Ansicht mithilfe der Abfrage-Generator-GUI filtern. Weitere Informationen finden Sie im Abschnitt "Arbeiten mit Tabellenressourcen - So filtern Sie Entitäten" unter [Durchsuchen und Verwalten von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/de-de/library/windowsazure/ff683677.aspx).
 
 7. Um die Details für eine einzelne Zeile anzuzeigen, doppelklicken Sie auf eine der Zeilen.
 
@@ -650,7 +664,7 @@ Sie können die Protokolle für fehlgeschlagene Anforderungen entweder direkt ü
 
 2. Klicken Sie in Visual Studio auf der Registerkarte **Konfiguration** im Fenster **Azure-Website** auf **Im Verwaltungsportal öffnen**.
 
-3. Klicken Sie im Verwaltungsportal auf **Dashboard** und anschließend auf **Zurücksetzen der Bereitstellungsanmeldeinformationen** im Bereich **Schnellansicht**.
+3. Klicken Sie im Verwaltungsportal auf **Dashboard** und anschließend auf **Anmeldeinformationen für die Bereitstellung zurücksetzen** im Bereich **Auf einen Blick**.
 
 	![Reset FTP credentials link in Dashboard](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-resetftpcredentials.png)
 
@@ -658,9 +672,9 @@ Sie können die Protokolle für fehlgeschlagene Anforderungen entweder direkt ü
 
 	![New FTP user name and password](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-enterftpcredentials.png)
 
-5. Drücken Sie im **Dashboard** im Verwaltungsportal auf F5, um die Seite zu aktualisieren, und blättern Sie nach unten zum Bereich **Bereitstellung / FTP-Benutzer**. Beachten Sie, dass der Name der Site dem Benutzernamen vorangestellt ist. **Bei der Anmeldung müssen Sie diesen kompletten Benutzernamen inklusive Name der Site verwenden, so wie hier angezeigt.**
+5. Drücken Sie im Verwaltungsportal auf der Registerkarte **Dashboard** auf F5, um die Seite zu aktualisieren, und führen Sie einen Bildlauf nach unten zum Bereich **Bereitstellungs-/FTP-Benutzer** durch. Beachten Sie, dass der Name der Site dem Benutzernamen vorangestellt ist. **Bei der Anmeldung müssen Sie diesen kompletten Benutzernamen inklusive Name der Website verwenden, so wie hier angezeigt.**
 
-5. Öffnen Sie in einem neuen Browserfenster die URL, die unter **FTP-Hostname** in der Registerkarte **Dashboard** des Verwaltungsportals für Ihre Website angezeigt wird. **FTP-Hostname** befindet sich in der Nähe von **Bereitstellung / FTP-Benutzer** im Bereich **Schnellübersicht**.
+5. Öffnen Sie in einem neuen Browserfenster die URL, die unter **FTP-Hostname** auf der Registerkarte **Dashboard** des Verwaltungsportals für Ihre Website angezeigt wird. **FTP-Hostname** befindet sich in der Nähe von **Bereitstellungs-/FTP-Benutzer** im Bereich **Auf einen Blick**.
 
 6. Melden Sie sich mit den zuvor erstellten FTP-Anmeldeinformationen an (inklusive vorangestelltem Namen der Site vor dem Benutzernamen).
 
@@ -701,9 +715,9 @@ Sie haben gelernt, wie Visual Studio die Anzeige der von Azure-Websites erstellt
 
 Weitere Informationen zur Problembehandlung in Azure-Websites finden Sie in den folgenden Ressourcen:
 
-* [How to Monitor Web Sites](/de-de/manage/services/web-sites/how-to-monitor-websites/)
+* [Überwachen von Websites](/de-de/manage/services/web-sites/how-to-monitor-websites/)
 * [Untersuchen von Speicherlecks in Azure-Websites mit Visual Studio 2013](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx). Microsoft ALM-Blogbeiträge über Visual Studio-Funktionen für die Untersuchung von Problemen mit verwaltetem Speicher.
-* [Onlinetools für Windows Azure-Websites, die Sie kennen sollten](/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/). Blogbeitrag von Amit Apple.
+* [Onlinetools für Microsoft Azure-Websites, die Sie kennen sollten](/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/). Blogbeitrag von Amit Apple.
 
 Falls Sie spezifische Fragen zur Problembehandlung haben, können Sie diese in einem der folgenden Foren stellen:
 
@@ -713,13 +727,13 @@ Falls Sie spezifische Fragen zur Problembehandlung haben, können Sie diese in e
 
 ### Debuggen in Visual Studio 
 
-Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter dem MSDN-Thema [Debuggen in Visual Studio](http://msdn.microsoft.com/de-de/library/vstudio/sc65sadd.aspx) und unter [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx) (Tipps zum Debuggen in Visual Studio 2010, in englischer Sprache).
+Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter dem MSDN-Thema [Debuggen in Visual Studio](http://msdn.microsoft.com/de-de/library/vstudio/sc65sadd.aspx) und unter [Tipps zum Debuggen in Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx).
 
 ### Remotedebuggen in Azure
 
 Weitere Informationen zum Remotedebuggen in Azure-Websites und WebJobs finden Sie in den folgenden Ressourcen:
 
-* [Einführung in das Remotedebuggen für Azure-Websites](/blog/2014/05/06/introduction-to-remote-debugging-on-azure-web-sites/).
+* [Einführung in das Remotedebuggen auf Azure-Websites](/blog/2014/05/06/introduction-to-remote-debugging-on-azure-web-sites/).
 * [Einführung in das Remotedebuggen von Azure-Websites, Teil 2 - Einblick in das Remotedebuggen](/blog/2014/05/07/introduction-to-remote-debugging-azure-web-sites-part-2-inside-remote-debugging/)
 * [Einführung in das Remotedebuggen von Azure-Websites, Teil 3 - Mehrinstanzenumgebung und GIT](/blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/)
 * [Debuggen von WebJobs (Video)](https://www.youtube.com/watch?v=ncQm9q5ZFZs&list=UU_SjTh-ZltPmTYzAybypB-g&index=1)
@@ -753,12 +767,12 @@ Momentan sind keine vollständigen und aktuellen Einführungen zur Ablaufverfolg
 
 * [Ablaufprotokollierung und Streamingdiagnose mit der Azure-Befehlszeile (plus Glimpse!)](http://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)<br/>
   Verwenden der Befehlszeile für die Visual Studio-Aktionen aus diesem Lernprogramm. [Glimpse](http://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) ist ein Tool zum Debuggen von ASP.NET-Anwendungen. 
-* [Websiteprotokollierung und Diagnose unter Azure mit David Ebbo, in englischer Sprache](http://www.windowsazure.com/de-de/documentation/videos/azure-web-site-logging-and-diagnostics/) und [Protokollstreaming aus Azure-Websites mit David Ebbo, in englischer Sprache](http://www.windowsazure.com/de-de/documentation/videos/log-streaming-with-azure-web-sites/)<br>
+* [Websiteprotokollierung und Diagnose unter Azure mit David Ebbo](http://www.windowsazure.com/de-de/documentation/videos/azure-web-site-logging-and-diagnostics/) und [Protokollstreaming aus Azure-Websites mit David Ebbo](http://www.windowsazure.com/de-de/documentation/videos/log-streaming-with-azure-web-sites/)<br>
   Videos von Scott Hanselman und David Ebbo.
 
 Für die Fehlerprotokollierung können Sie Open Source-Protokollframeworks wie z. B. [ELMAH](http://nuget.org/packages/elmah/) verwenden, anstatt Ihren eigenen Ablaufverfolgungscode zu schreiben. Weitere Informationen finden Sie unter [Scott Hanselman's blog posts about ELMAH](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx) (Blogeinträge von Scott Hanselman zu ELMAH, in englischer Sprache).
 
-Sie müssen nicht unbedingt die Ablaufverfolgung von ASP.NET oder System.Diagnostics verwenden, um Streamingprotokolle aus Azure zu erhalten. Der Streamingprotokolldienst für Azure-Websites kann beliebige .txt-, .html- oder .log-Dateien aus dem Ordner *LogFiles* streamen. Sie können also Ihr eigenes Protokollierungssystem erstellen, das in das Dateisystem der Website schreibt: Ihr Datei wird dann automatisch gestreamt und heruntergeladen. Dazu müssen Sie nur den Anwendungscode schreiben, der Dateien im Ordner *d:\home\logfiles* erstellt. 
+Sie müssen nicht unbedingt die Ablaufverfolgung von ASP.NET oder System.Diagnostics verwenden, um Streamingprotokolle aus Azure zu erhalten. Der Streamingprotokolldienst für Azure-Websites kann beliebige *.txt*-, *.html*- oder *.log*-Dateien aus dem Ordner *LogFiles* streamen. Sie können also Ihr eigenes Protokollierungssystem erstellen, das in das Dateisystem der Website schreibt: Ihr Datei wird dann automatisch gestreamt und heruntergeladen. Dazu müssen Sie nur den Anwendungscode schreiben, der Dateien im Ordner *d:\home\logfiles* erstellt. 
 
 ### Analyse von Webserverprotokollen
 
@@ -786,4 +800,7 @@ Informationen darüber, wie Sie statt einer Website einen Azure-Cloud-Dienst deb
 [GetStartedWJ]: ../websites-dotnet-webjobs-sdk/
 
 
-<!--HONumber=35.2-->
+
+
+
+<!--HONumber=42-->

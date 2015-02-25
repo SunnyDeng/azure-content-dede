@@ -1,6 +1,6 @@
-﻿<properties pageTitle="Arbeiten mit einem mobilen JavaScript-Back-End-Dienst" metaKeywords="server scripts, mobile devices, Azure, scheduler" description="Stellt Beispiele zum Definieren, Registrieren und Verwenden von Serverskripts in Azure Mobile Services bereit." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Work with server scripts in Mobile Services" authors="ricksal" solutions="" manager="dwrede" editor="" />
+﻿<properties pageTitle="Arbeiten mit einem mobilen JavaScript-Back-End-Dienst" description="Stellt Beispiele zum Definieren, Registrieren und Verwenden von Serverskripts in Azure Mobile Services bereit." services="mobile-services" documentationCenter="" authors="RickSaling" manager="dwrede" editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="ricksal" />
+<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="ricksal"/>
 
 
 # Arbeiten mit einem mobilen JavaScript-Back-End-Dienst
@@ -43,20 +43,20 @@ Dieser Artikel enthält ausführliche Informationen und Beispiele zum Arbeiten m
 
 In einem mobilen JavaScript-Back-End-Dienst können Sie benutzerdefinierte Geschäftslogik in Form von JavaScript-Code definieren, der auf dem Server gespeichert und ausgeführt wird. Dieser serverseitige Skriptcode ist einer der folgenden Serverfunktionen zugewiesen:
 
-+ [Lese-, Schreib-, Änderungs- oder Löschvorgänge in einer bestimmten Tabelle][Tabellenvorgänge].
++ [Einfüge-, Lese-, Änderungs- oder Löschvorgänge in einer bestimmten Tabelle][Tabellenvorgänge].
 + [Geplante Aufträge][Auftragsplaner].
-+ [Definierte HTTP-Methoden in einer benutzerdefinierten API][Benutzerdefinierter API-Anker]. 
++ [Definierte HTTP-Methoden in einer benutzerdefinierten API][Benutzerdefinierter API-Anker].
 
 Die Signatur der main-Funktion im Serverskript hängt davon ab, in welchem Kontext das Skript verwendet wird. Sie können auch CommonScript-Code als nodes.js-Module definieren, die von verschiedenen Skripts genutzt werden. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen].
 
-Beschreibungen zu einzelnen Serverskript-Objekten und -Funktionen finden Sie unter [Skriptreferenz für Mobile Services-Server]. 
+Beschreibungen zu einzelnen Serverskriptobjekten und -funktionen finden Sie unter [Skriptreferenz für Mobile Services-Server]. 
 
 
 ##<a name="table-scripts"></a>Tabellenvorgänge
 
 Tabellenvorgänge sind Serverskripts, die für einen Vorgang auf einer Tabelle registriert sind: einfügen, lesen, ändern oder löschen (*del*). Der Name des Skripts muss mit dem Vorgang übereinstimmen, für die es registriert ist. Pro Tabellenvorgang kann nur ein Skript registriert werden. Das Skript wird jedes mal ausgeführt, wenn der entsprechende Vorgang durch eine REST-Anforderung aufgerufen wird, z. B. beim Empfang einer POST-Anforderung zum Einfügen eines Elements in die Tabelle. Mobile Services speichert den Status zwischen einzelnen Skriptausführungen nicht. Da bei jeder Skriptausführung ein neuer globaler Kontext erstellt wird, werden sämtliche im Skript definierten Statusvariablen neu initialisiert. Falls Sie den Status zwischen einzelnen Anforderungen speichern möchten, erstellen Sie eine Tabelle in Ihrem Mobile Service und speichern Sie den Status in dieser Tabelle. Weitere Informationen finden Sie unter [Gewusst wie: Tabellenzugriff in Skripts].
 
-Skripts für Tabellenvorgänge dienen zur Umsetzung von benutzerdefinierter Geschäftslogik bei der Ausführung des Vorgangs. Das folgende Skript verhindert z. B. Einfügevorgänge, wenn die Zeichenfolge im Feld `Text` länger als zehn Zeichen ist: 
+Skripts für Tabellenvorgänge dienen zur Umsetzung von benutzerdefinierter Geschäftslogik bei der Ausführung des Vorgangs. Das folgende Skript verhindert z. B. Einfügevorgänge, wenn die Zeichenfolge im Feld  `text` länger als zehn Zeichen ist: 
 
 	function insert(item, user, request) {
 	    if (item.text.length > 10) {
@@ -67,13 +67,13 @@ Skripts für Tabellenvorgänge dienen zur Umsetzung von benutzerdefinierter Gesc
 	    }
 	}
 
-Tabellen-Skriptfunktionen nehmen immer drei Argumente entgegen.
+Tabellenskriptfunktionen nehmen immer drei Argumente entgegen.
 
 - Das erste Argument variiert je nach Tabellenvorgang. 
 
-	- Für Insert- und Update-Vorgänge ist dies ein **item**-Objekt mit einer JSON-Abbildung der vom entsprechenden Vorgang betroffenen Zeile. Auf diese Weise können Sie die Spaltenwerte mit Namen ansprechen, z. B. *item.Owner*, wobei *Owner* einer der Namen in der JSON-Darstellung ist.
+	- Für Insert- und Update-Vorgänge ist dies ein **Item**-Objekt mit einer JSON-Abbildung der vom entsprechenden Vorgang betroffenen Zeile. Auf diese Weise können Sie die Spaltenwerte mit Namen ansprechen, z. B.  *item.Owner*, wobei  *Owner* einer der Namen in der JSON-Darstellung ist.
 	- Für Delete-Vorgänge ist dies die ID des zu löschenden Eintrags. 
-	- Für Read-Vorgänge ist dies ein [Suchabfrageobjekt], welches das zurückzuliefernde Rowset angibt.
+	- Für Select-Vorgänge ist das erste Argument ein [Suchabfrageobjekt], welches das zurückzuliefernde Rowset angibt.
 
 - Das zweite Argument ist immer ein [Benutzerobjekt][Benutzerobjekt] und repräsentiert den Benutzer, der die Anforderung übermittelt hat. 
 
@@ -81,12 +81,12 @@ Tabellen-Skriptfunktionen nehmen immer drei Argumente entgegen.
 
 Dies sind die kanonischen Signaturen der main-Funktion für die Tabellenvorgänge: 
 
-+ [Insert][insert function]: `function insert (item, user, request) { ... }`
-+ [Update][update function]: `function update (item, user, request) { ... }`
-+ [Delete][delete function]: `function del (id, user, request) { ... }`
-+ [Read][read function]: `function read (query, user, request) { ... }`
++ [Insert][insert-Funktion]: `function insert (item, user, request) { ... }`
++ [Update][update-Funktion]: `function update (item, user, request) { ... }`
++ [Delete][delete-Funktion]: `function del (id, user, request) { ... }`
++ [Read][read-Funktion]: `function read (query, user, request) { ... }`
 
->[WACOM.NOTE]Funktionen, die für den Delete-Vorgang registriert sind, müssen _del_ genannt werden, da delete ein reserviertes Schlüsselwort in JavaScript ist. 
+>[AZURE.NOTE]Funktionen, die für den Delete-Vorgang registriert sind, müssen _del_ genannt werden, da delete ein reserviertes Schlüsselwort in JavaScript ist. 
 
 Jedes Serverskript hat eine main-Funktion und weitere optionale Hilfsfunktionen. Auch wenn ein Serverskript für eine bestimmte Tabelle erstellt wurde, kann das Skript auf andere Tabellen in derselben Datenbank verweisen. Sie können auch allgemeine Funktionen als Module definieren, die von verschiedenen Skripts genutzt werden. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen].
 
@@ -94,25 +94,24 @@ Jedes Serverskript hat eine main-Funktion und weitere optionale Hilfsfunktionen.
 
 Sie können Serverskripts, die für einen Tabellenvorgang registriert sind, auf folgende Arten definieren:
 
-+ Im [Azure-Verwaltungsportal][Verwaltungsportal]. Sie finden die Skripts für Tabellenvorgänge in der Registerkarte **Scripts** für eine bestimmte Tabelle. Hier sehen Sie den Standardcode, der für das Insert-Skript der Tabelle `TodoItem` registriert ist. Sie können diesen Code mit Ihrer eigenen benutzerdefinierten Geschäftslogik überschreiben.
++ Im [Azure-Verwaltungsportal][Verwaltungsportal]. Sie finden die Skripts für Tabellenvorgänge auf der Registerkarte **Skripts** für eine bestimmte Tabelle. Hier sehen Sie den Standardcode, der für das Insert-Skript der  `TodoItem`-Tabelle registriert ist. Sie können diesen Code mit Ihrer eigenen benutzerdefinierten Geschäftslogik überschreiben.
 
 	![1][1]
 	
-	Weitere Informationen hierzu finden Sie unter [Validate and modify data in Mobile Services by using server scripts] (Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts, in englischer Sprache).  
+	Weitere Informationen hierzu finden Sie unter [Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts].  
 
-+ Mithilfe der Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<table>`</em>.<em>`<operation>`</em>.js" im Unterordner ".\service\table" in Ihrem Git-Repository, wobei <em>`<table>`</em> der Name der Tabelle und <em>`<operation>`</em> der registrierte Tabellenvorgang ist. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen].
++ Mithilfe von Quellcodeverwaltung. Wenn Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei namens <em>`<table>`</em>.<em>`<operation>`</em>.js im Unterordner ".\service\table" im Git-Repository, wobei <em>`<table>`</em> der Name der Tabelle und <em>`<operation>`</em> der registrierte Tabellenvorgang ist. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen].
 
 + Über die Eingabeaufforderung im Azure-Befehlszeilentool. Weitere Informationen finden Sie unter [Arbeiten mit dem Befehlszeilentool].
 
 
-Tabellenvorgänge müssen mindestens eine der folgenden Funktionen des [Anforderungsobjekt] aufrufen, um sicherzustellen, dass der Client eine Antwort erhält. 
+Tabellenvorgänge müssen mindestens eine der folgenden Funktionen des [Anforderungsobjekts] aufrufen, um sicherzustellen, dass der Client eine Antwort erhält. 
  
-+ **execute function**: Der Vorgang wird wie angefordert ausgeführt und die Standardantwort zurückgeliefert.
++ **execute-Funktion**: Der Vorgang wird wie angefordert ausgeführt und die Standardantwort zurückgeliefert.
  
-+ **respond function**: Eine benutzerdefinierte Antwort wird zurückgegeben.
++ **respond-Funktion**: Eine benutzerdefinierte Antwort wird zurückgegeben.
 
-<div class="dev-callout"><strong>Wichtig</strong>
-<p>Falls ein Skript einen Codepfad enthält, in dem weder <b>execute</b> noch <b>respond</b> aufgerufen wird, kann es passieren, dass der Vorgang nicht reagiert.</p></div>
+> [AZURE.IMPORTANT] Falls ein Skript einen Codepfad enthält, in dem weder **execute** noch **respond** aufgerufen wird, kann es passieren, dass der Vorgang nicht reagiert.
 
 Das folgende Skript ruft die **execute**-Funktion auf, um den vom Client angeforderten Datenvorgang abzuschließen: 
 
@@ -122,7 +121,7 @@ Das folgende Skript ruft die **execute**-Funktion auf, um den vom Client angefor
 
 In diesem Beispiel wird das Element in die Datenbank eingefügt und der entsprechende Statuscode an den Benutzer zurückgeliefert. 
 
-Beim Aufruf der **execute**-Funktion wird der Wert für `item`, [query][query object] oder `id`, der als erstes Argument an die Skriptfunktion übergeben wurde, für den Vorgang verwendet. Für Insert-, Update- oder Query-Vorgänge können Sie Element oder Abfrage modifizieren, bevor Sie **execute** aufrufen: 
+Beim Aufruf der **execute**-Funktion wird der Wert für  `item`, [query][query-Objekt] oder  `id`, der als erstes Argument an die Skriptfunktion übergeben wurde, zum Ausführen des Vorgangs verwendet. Für Insert-, Update- oder Query-Vorgänge können Sie Element oder Abfrage modifizieren, bevor Sie **execute** aufrufen: 
 
 	function insert(item, user, request) { 
 	    item.scriptComment =
@@ -142,7 +141,7 @@ Beim Aufruf der **execute**-Funktion wird der Wert für `item`, [query][query ob
 	    request.execute(); 
 	}
  
->[WACOM.NOTE]In Delete-Skripts haben Änderungen am Wert der übergebenen userId-Variable keinen Einfluss darauf, welcher Datensatz gelöscht wird.
+>[AZURE.NOTE]In Delete-Skripts haben Änderungen am Wert der übergebenen userId-Variable keinen Einfluss darauf, welcher Datensatz gelöscht wird.
 
 Weitere Beispiele finden Sie unter [Lesen und Schreiben von Daten], [Ändern der Anforderung] und [Überprüfen von Daten].
 
@@ -160,13 +159,13 @@ Sie können mithilfe von Skripts auch eine Prüflogik implementieren und das Sta
 	    }
 	}
 
-In diesem Beispiel wird die Anforderung abgelehnt, wenn das einzufügende Element keine `userId`-Eigenschaft hat, die mit der `userId` des [Benutzerobjekts] übereinstimmt, das für den authentifizierten Client geliefert wurde. In diesem Fall wird der Datenbankvorgang (*insert*) nicht ausgeführt, und der Client erhält eine Antwort mit HTTP-Statuscode 403 und einer benutzerdefinierten Fehlermeldung. Weitere Beispiele finden Sie unter [Ändern der Antwort].
+In diesem Beispiel wird die Anforderung abgelehnt, wenn das eingefügte Element keine  `userId`-Eigenschaft hat, die mit der  `userId` des [Benutzerobjekts] übereinstimmt, das für den authentifizierten Client angegeben wurde. In diesem Fall wird der Datenbankvorgang (*insert*) nicht ausgeführt, und der Client erhält eine Antwort mit HTTP-Statuscode 403 und einer benutzerdefinierten Fehlermeldung. Weitere Beispiele finden Sie unter [Ändern der Antwort].
 
 ###<a name="override-success"></a>Gewusst wie: Überschreiben des Ausführungserfolgs
 
 Die **execute**-Funktion in Tabellenvorgängen schreibt die Antworten standardmäßig automatisch. Sie können jedoch zwei optionale Parameter an die execute-Funktion übergeben, die dieses Verhalten im Erfolgs- und/oder Fehlerfall außer Kraft setzen.
 
-Wenn Sie beim Aufruf von execute einen **success**-Handler übergeben, können Sie die Ergebnisse einer Anforderung modifizieren, bevor Sie diese in die Antwort schreiben. Das folgende Beispiel ruft `execute({ success: function(results) { ... })` auf, um zusätzliche Vorgänge auszuführen, nachdem die Daten aus der Datenbank gelesen wurden, jedoch bevor die Antwort geschrieben wird:
+Wenn Sie beim Aufruf von "execute" einen **success**-Handler übergeben, können Sie die Ergebnisse einer Anforderung modifizieren, bevor Sie diese in die Antwort schreiben. Im folgenden Beispiel wird  `execute({ success: function(results) { ... })` aufgerufen, um zusätzliche Vorgänge auszuführen, nachdem Daten aus der Datenbank gelesen wurden, jedoch bevor die Antwort geschrieben wird:
 
 	function read(query, user, request) {
 	    request.execute({
@@ -182,13 +181,13 @@ Wenn Sie beim Aufruf von execute einen **success**-Handler übergeben, können S
 
 Wenn Sie der **execute**-Funktion einen **success**-Handler übergeben, müssen Sie außerdem die **respond**-Funktion als Teil des **success**-Handlers aufrufen, um der Runtime mitzuteilen, dass das Skript abgeschlossen wurde und eine Antwort geschrieben werden kann. Wenn Sie **respond** ohne Argumente aufrufen, generiert Mobile Services die Standardantwort. 
 
->[WACOM.NOTE]Sie können **respond** erst dann ohne Argumente aufrufen, um die Standardantwort zu erhalten, nachdem Sie die **execute**-Funktion aufgerufen haben.
+>[AZURE.NOTE]Sie können **respond** erst dann ohne Argumente aufrufen, um die Standardantwort zu erhalten, nachdem Sie die **execute**-Funktion aufgerufen haben.
  
-###<a name="override-error"></a>Gewusst wie: Überschreiben der Standard-Fehlerbehandlung
+###<a name="override-error"></a>Gewusst wie: Überschreiben der Standardfehlerbehandlung
 
-Die **execute**-Funktion kann fehlschlagen, wenn die Datenbankverbindung abbricht oder ein ungültiges Objekt bzw. eine ungültige Abfrage übergeben wird. Standardmäßig werden Fehler vom Serverskript in das Protokoll geschrieben, und der Client erhält eine Antwort mit einer Fehlermeldung. Dank der Standard-Fehlerbehandlung von Mobile Services müssen Sie eventuelle Fehler in Ihrem Dienst nicht behandeln. 
+Die **execute**-Funktion kann fehlschlagen, wenn die Datenbankverbindung abbricht oder ein ungültiges Objekt bzw. eine ungültige Abfrage übergeben wird. Standardmäßig werden Fehler vom Serverskript in das Protokoll geschrieben, und der Client erhält eine Antwort mit einer Fehlermeldung. Dank der Standardfehlerbehandlung von Mobile Services müssen Sie eventuelle Fehler in Ihrem Dienst nicht behandeln. 
 
-Sie können die Standard-Fehlerbehandlung durch eine eigene Fehlerbehandlung überschreiben, falls Sie bestimmte Maßnahmen ergreifen oder über das globale Konsolenobjekt zusätzliche Detailinformationen in das Protokoll schreiben möchten. Übergeben Sie hierzu einen **error**-Handler an die **execute**-Funktion:
+Sie können die Standardfehlerbehandlung durch eine eigene Fehlerbehandlung überschreiben, falls Sie bestimmte Maßnahmen ergreifen oder über das globale Konsolenobjekt zusätzliche Detailinformationen in das Protokoll schreiben möchten. Übergeben Sie hierzu einen **error**-Handler an die **execute**-Funktion:
 
 	function update(item, user, request) { 
 	  request.execute({ 
@@ -206,13 +205,13 @@ Sie können bei Bedarf auch einen **success**- und einen **error**-Handler über
 
 ###<a name="access-headers"></a>Gewusst wie: Zugreifen auf benutzerdefinierte Parameter
 
-Wenn Sie eine Anforderung an Ihren Mobile Service schicken, können Sie die Anforderungs-URI um benutzerdefinierte Parameter erweitern, um Ihrem Tabellenvorgangs-Skript mitzuteilen, wie eine bestimmte Anforderung behandelt werden soll. Anschließend ändern Sie Ihr Skript, sodass dieses den Parameter ausliest und den Verarbeitungspfad ermittelt.
+Wenn Sie eine Anforderung an Ihren Mobile Service schicken, können Sie die Anforderungs-URI um benutzerdefinierte Parameter erweitern, um Ihrem Tabellenvorgangsskript mitzuteilen, wie eine bestimmte Anforderung behandelt werden soll. Anschließend ändern Sie Ihr Skript, sodass dieses den Parameter ausliest und den Verarbeitungspfad ermittelt.
 
-Die folgende URI für eine POST-Anforderung weist den Service z. B. an, keine Einfügung von *TodoItem* mit demselben Textwert zuzulassen:
+Die folgende URI für eine POST-Anforderung weist den Service z. B. an, keine Einfügung eines neuen  *TodoItem* mit demselben Textwert zuzulassen:
 
 		https://todolist.azure-mobile.net/tables/TodoItem?duplicateText=false
 
-Diese benutzerdefinierten Abfrageparameter können als JSON-Werte der **parameters**-Eigenschaft des [Anforderungsobjekts] abgerufen werden. Das **Anforderungsobjekt** wird von Mobile Services für alle Funktionen bereitgestellt, die für einen Tabellenvorgang registriert sind. Das folgende Serverskript für den insert-Vorgang prüft den Wert des Parameters `duplicateText`, bevor der insert-Vorgang ausgeführt wird:
+Diese benutzerdefinierten Abfrageparameter können als JSON-Werte der **parameters**-Eigenschaft des [Anforderungsobjekts] abgerufen werden. Das **Anforderungsobjekt** wird von Mobile Services für alle Funktionen bereitgestellt, die für einen Tabellenvorgang registriert sind. Das folgende Serverskript für den insert-Vorgang prüft den Wert des Parameters  `duplicateText`, bevor der insert-Vorgang ausgeführt wird:
 
 		function insert(item, user, request) {
 		    var todoItemTable = tables.getTable('TodoItem');
@@ -260,14 +259,14 @@ In JavaScript ist dies eine kompakte Version des folgenden Codes:
 
 ###<a name="work-with-users"></a>Gewusst wie: Arbeiten mit Benutzern
 
-In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Get started with authentication] (Erste Schritte zur Authentifizierung, in englischer Sprache). Wenn ein authentifizierter Benutzer einen Tabellenvorgang aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an die registrierte Skriptfunktion zu liefern. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. Im folgenden Beispiel wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
+In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Erste Schritte mit der Authentifizierung]. Wenn ein authentifizierter Benutzer einen Tabellenvorgang aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an die registrierte Skriptfunktion zu liefern. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. Im folgenden Beispiel wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
 
 	function insert(item, user, request) {
 	    item.owner = user.userId;
 	    request.execute();
 	}
 
-Im nächsten Beispiel wird ein zusätzlicher Filter für die Abfrage anhand der **userId** eines authentifizierten Benutzers hinzugefügt: Dieser Filter schränkt das Ergebnis auf Elemente ein, die dem aktuellen Benutzer gehören:  
+Im nächsten Beispiel wird ein zusätzlicher Filter für die Abfrage anhand der **userId** eines authentifizierten Benutzers hinzugefügt. Dieser Filter schränkt das Ergebnis auf Elemente ein, die dem aktuellen Benutzer gehören:  
 
 	function read(query, user, request) {
 	    query.where({
@@ -280,7 +279,7 @@ Im nächsten Beispiel wird ein zusätzlicher Filter für die Abfrage anhand der 
 
 Benutzerdefinierte APIs sind Endpunkte in Ihrem Mobile Service, die von einer oder mehreren der Standard-HTTP-Methoden aufgerufen werden: GET, POST, PUT, PATCH, DELETE. Ein separater Funktionsexport kann für jede HTTP-Methode definiert werden, die von der benutzerdefinierten API unterstützt wird, alles zusammen in einer Skriptdatei. Das registrierte Skript wird aufgerufen, wenn eine Anforderung an die benutzerdefinierte API über die entsprechende Methode empfangen wird. Weitere Informationen finden Sie unter [Benutzerdefinierte API].
 
-Wenn von der von der Mobile Services-Runtime benutzerdefinierte API-Funktionen aufgerufen werden, werden ein [request][Anforderungsobjekt]- und das [response][Antwortobjekt]-Objekt bereitgestellt. Diese Objekte machen die Funktionen der [express.js-Bibliothek] verfügbar, die wiederum von Ihren Skripts verwendet werden können. Die folgende benutzerdefinierte API namens **hello** ist ein sehr einfaches Beispiel und gibt als Antwort auf eine POST-Anforderung: _Hello, world!_ zurück:
+Wenn von der von der Mobile Services-Runtime benutzerdefinierte API-Funktionen aufgerufen werden, werden ein [request][Anforderungsobjekt]- und das [response][Antwortobjekt]-Objekt bereitgestellt. Diese Objekte machen die Funktionen der [express.js-Bibliothek] verfügbar, die wiederum von Ihren Skripts verwendet werden können. Die folgende benutzerdefinierte API namens **hello** ist ein sehr einfaches Beispiel und gibt als Antwort auf eine POST-Anforderung _Hello, world!_ zurück:
 
 		exports.post = function(request, response) {
 		    response.send(200, "{ message: 'Hello, world!' }");
@@ -296,13 +295,13 @@ Der globale Status bleibt zwischen Ausführungen erhalten.
 
 Sie können Serverskripts, die für HTTP-Methoden in einem Endpunkt einer benutzerdefinierten API registriert sind, auf folgende Arten definieren:
 
-+ Im [Azure-Verwaltungsportal][Verwaltungsportal]. Skripts für benutzerdefinierte APIs werden in der Registerkarte **API** erstellt und bearbeitet. Der Serverskript-Code befindet sich in der Registerkarte **Skripts** der jeweiligen benutzerdefinierten API. Es folgt ein Beispiel für ein Skript, das durch eine POST-Anforderung an den `CompleteAll`-Endpunkt der benutzerdefinierten API aufgerufen wird. 
++ Im [Azure-Verwaltungsportal][Verwaltungsportal]. Skripts für benutzerdefinierte APIs werden in der Registerkarte **API** erstellt und bearbeitet. Der Serverskriptcode befindet sich in der Registerkarte **Skripts** der jeweiligen benutzerdefinierten API. Im Folgenden sehen Sie das Skript, das durch eine POST-Anforderung an den Endpunkt der benutzerdefinierten  `CompleteAll`-API aufgerufen wird. 
 
 	![2][2]
 	
-	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Call a custom API from the client] (Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache).  
+	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Aufrufen einer benutzerdefinierten API aus dem Client].  
 
-+ Mithilfe der Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<custom_api>`</em>.js" im Unterordner ".\service\api" in Ihrem Git-Repository, wobei <em>`<custom_api>`</em> der Name der benutzerdefinierten API ist, die registriert wird. Die Skriptdatei enthält eine _exported_-Funktion für jede HTTP-Methode, die von der benutzerdefinierten API verfügbar gemacht wird. Die Berechtigungen werden in einer separaten .json-Datei definiert. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen].
++ Mithilfe von Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<custom_api>`</em>.js" im Unterordner ".\service\api" in Ihrem Git-Repository, wobei <em>`<custom_api>`</em> der Name der benutzerdefinierten API ist, die registriert wird. Die Skriptdatei enthält eine _exported_-Funktion für jede HTTP-Methode, die von der benutzerdefinierten API verfügbar gemacht wird. Die Berechtigungen werden in einer separaten .json-Datei definiert. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen].
 
 + Über die Eingabeaufforderung im Azure-Befehlszeilentool. Weitere Informationen finden Sie unter [Arbeiten mit dem Befehlszeilentool].
 
@@ -320,7 +319,7 @@ Der Endpunkt der benutzerdefinierten API kann nur mit den HTTP-Methoden aufgeruf
 
 ###<a name="api-return-xml"></a>Gewusst wie: Senden und Empfangen von Daten als XML
 
-Wenn Clients Daten speichern und abrufen, verwendet Mobile Services JavaScript Object Notation (JSON) für die Darstellung der Daten im Nachrichtentext. In manchen Szenarien macht es jedoch mehr Sinn, stattdessen eine XML-Nutzlast zu verwenden. Windows Store-Apps haben z. B. eine eingebaute Funktion für periodische Benachrichtigungen, die nur mit XML-Diensten funktioniert. Weitere Informationen finden Sie unter [Define a custom API that supports periodic notifications] (Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen, in englischer Sprache).
+Wenn Clients Daten speichern und abrufen, verwendet Mobile Services JavaScript Object Notation (JSON) für die Darstellung der Daten im Nachrichtentext. In manchen Szenarien macht es jedoch mehr Sinn, stattdessen eine XML-Nutzlast zu verwenden. Windows Store-Apps haben z. B. eine eingebaute Funktion für periodische Benachrichtigungen, die nur mit XML-Diensten funktioniert. Weitere Informationen finden Sie unter [Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen].
 
 Die folgende **OrderPizza**-Funktion einer benutzerdefinierten API liefert ein einfaches XML-Dokument als Nutzlast der Antwort zurück.
 
@@ -336,7 +335,7 @@ Sie können diese Funktion aufrufen, indem Sie eine HTTP GET-Anforderung an den 
 
 ###<a name="get-api-user"></a>Gewusst wie: Arbeiten mit Benutzern und Headern in benutzerdefinierten APIs
 
-In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Get started with authentication] (Erste Schritte zur Authentifizierung, in englischer Sprache). Wenn ein authentifizierter Benutzer eine benutzerdefinierte API aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an den Code der benutzerdefinierten API zu liefern. Das [Benutzerobjekt] ist über die user-Eigenschaft des [Anforderungsobjekts] zugänglich. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. 
+In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Erste Schritte mit der Authentifizierung]. Wenn ein authentifizierter Benutzer eine benutzerdefinierte API aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an den Code der benutzerdefinierten API zu liefern. Das [Benutzerobjekt] ist über die user-Eigenschaft des [Anforderungsobjekts] zugänglich. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. 
 
 In der folgenden **OrderPizza**-Funktion einer benutzerdefinierten API wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
 
@@ -363,16 +362,16 @@ Sie können auch auf bestimmte HTTP-Header des [Anforderungsobjekts] zugreifen, 
     		response.send(200, "You sent: " + header);
 		};
 
-In diesem einfachen Beispiel wird ein benutzerdefinierter Header namens `my-custom-header` ausgelesen und der Wert in der Antwort zurückgegeben.
+In diesem einfachen Beispiel wird der benutzerdefinierte Header  `my-custom-header` gelesen und dann der Wert in der Antwort zurückgegeben.
 
 ###<a name="api-routes"></a>Gewusst wie: Definieren mehrerer Routen in einer benutzerdefinierten API
 
-Mit Mobile Services können Sie mehrere Pfade oder Routen in benutzerdefinierten APIs definieren. HTTP GET-Anforderungen an die folgenden URLs in einer benutzerdefinierten **Taschenrechner**-API werden z. B. die **add-** bzw. die **subtract-**Funktion aufrufen: 
+Mit Mobile Services können Sie mehrere Pfade oder Routen in benutzerdefinierten APIs definieren. HTTP GET-Anforderungen an die folgenden URLs in einer benutzerdefinierten **Taschenrechner**-API werden z. B. die **add**- bzw. die **subtract**-Funktion aufrufen: 
 
 + `https://<service>.azure-mobile.net/api/calculator/add`
 + `https://<service>.azure-mobile.net/api/calculator/sub`
 
-Mehrere Routen werden durch den Export einer **register**-Funktion definiert, der ein **api**-Objekt übergeben wird (ähnlich dem [express-Objekt in express.js]), das wiederum zum Registrieren von Routen innerhalb des Endpunkts der benutzerdefinierten API verwendet wird. Das folgende Beispiel implementiert die **add-** und **sub-**-Methoden in der benutzerdefinierten **Taschenrechner**-API: 
+Mehrere Routen werden durch den Export einer **register**-Funktion definiert, der ein **api**-Objekt übergeben wird (ähnlich dem [express-Objekt in express.js]), das wiederum zum Registrieren von Routen innerhalb des Endpunkts der benutzerdefinierten API verwendet wird. Das folgende Beispiel implementiert die **add**- und **sub**-Methoden in der benutzerdefinierten **Taschenrechner**-API: 
 
 		exports.register = function (api) {
 		    api.get('add', add);
@@ -389,7 +388,7 @@ Mehrere Routen werden durch den Export einer **register**-Funktion definiert, de
 		    res.send(200, { result: result });
 		}
 
-Das **api**-Objekt, das an die Funktion **register** übergeben wird, stellt eine Funktion für jede HTTP-Methode bereit (**get**, **post**, **put**, **patch**, **delete**). Diese Funktionen registrieren eine Route zu einer bestimmten Funktion für die entsprechende HTTP-Methode. Jede Funktion nimmt zwei Parameter entgegen, den Namen der Route und die Funktion, die für die Route registriert ist. 
+Das an die **register**-Funktion übergebene **api**-Objekt macht eine Funktion für jede HTTP-Methode verfügbar (**get**, **post**, **put**, **patch**, **delete**). Diese Funktionen registrieren eine Route zu einer bestimmten Funktion für die entsprechende HTTP-Methode. Jede Funktion nimmt zwei Parameter entgegen, den Namen der Route und die Funktion, die für die Route registriert ist. 
 
 Die beiden Routen im obigen Beispiel für eine benutzerdefinierte API können wie folgt durch HTTP GET-Anforderungen aufgerufen werden (jeweils mit der Antwort):
 
@@ -417,11 +416,11 @@ Geplante Aufträge können auf zwei Arten definiert werden:
 
 	![3][3]
 
-	Weitere Informationen hierzu finden Sie unter [Schedule backend jobs in Mobile Services] (Planen von Back-End-Aufgaben in Mobile Services, in englischer Sprache). 
+	Weitere Informationen hierzu finden Sie unter [Planen von Back-End-Aufträgen in Mobile Services]. 
 
 + Über die Eingabeaufforderung im Azure-Befehlszeilentool. Weitere Informationen finden Sie unter [Arbeiten mit dem Befehlszeilentool].
 
->[WACOM.NOTE]Falls Sie Quellcodeverwaltung aktiviert haben, können Sie die Skriptdateien der geplanten Aufträge direkt im Unterordner .\service\scheduler in Ihrem Git-Repository bearbeiten. Weitere Informationen finden Sie unter [Gewusst wie: Freigeben von Code mithilfe der Quellcodeverwaltung].
+>[AZURE.NOTE]Falls Sie die Quellcodeverwaltung aktiviert haben, können Sie die Skriptdateien der geplanten Aufträge direkt im Unterordner .\service\scheduler in Ihrem Git-Repository bearbeiten. Weitere Informationen finden Sie unter [Gewusst wie: Freigeben von Code mithilfe der Quellcodeverwaltung].
 
 ##<a name="shared-code"></a>Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen
 
@@ -429,12 +428,12 @@ Da Mobile Services auf dem Server Node.js verwendet, haben Ihre Skripts bereits 
 
 Es folgt eine Liste hilfreicher Module, die Sie über die globale **require**-Funktion in Ihre Skripts einbinden können:
 
-+ **azure**: Macht die Funktionen des Azure SDKs für Node.js verfügbar. Weitere Informationen finden Sie unter [Azure SDK für Node.js]. 
++ **azure**: Macht die Funktionen des Azure SDK für Node.js verfügbar. Weitere Informationen finden Sie unter [Azure SDK für Node.js]. 
 + **crypto**: Macht die Verschlüsselungsfunktionen von Open SSL verfügbar. Weitere Informationen finden Sie in der [Node.js-Dokumentation][Crypto-API].
 + **path**: Enthält Werkzeuge zum Arbeiten mit Dateipfaden. Weitere Informationen finden Sie in der [Node.js-Dokumentation][Pfad-API].
 + **querystring**: Enthält Werkzeuge zum Arbeiten mit Abfragezeichenfolgen. Weitere Informationen finden Sie in der [Node.js-Dokumentation][QueryString-API].
 + **request**: Verschickt HTTP-Anforderungen an externe REST-Dienste wie z. B. Twitter und Facebook. Weitere Informationen finden Sie unter [HTTP-Anforderungen senden].
-+ **sendgrid**: Verschickt E-Mails über den Sendgrid-E-Mail-Dienst in Azure. Weitere Informationen finden Sie unter [Send email from Mobile Services with SendGrid] (E-Mail-Versand in Mobile Services mit SendGrid, in englischer Sprache).
++ **sendgrid**: Verschickt E-Mails über den Sendgrid-E-Mail-Dienst in Azure. Weitere Informationen finden Sie unter [Senden von E-Mails in Mobile Services mit SendGrid].
 + **url**: Enthält Werkzeuge zum Analysieren und Auflösen von URLs. Weitere Informationen finden Sie in der [Node.js-Dokumentation][URL-API].
 + **util**: Enthält verschiedene Werkzeuge wie z. B. Zeichenfolgenformatierung und Objekttypprüfungen. Weitere Informationen finden Sie in der [Node.js-Dokumentation][Util-API]. 
 + **zlib**: Macht Komprimierungsmethoden wie z. B. gzip und deflate verfügbar. Weitere Informationen finden Sie in der [Node.js-Dokumentation][Zlib-API]. 
@@ -455,15 +454,15 @@ Mobile Services bietet eine Reihe von Modulen an, die mithilfe der globalen **re
 
 Sie können über Ihre Quellcodeverwaltung und den Node.js-Paket-Manager (npm) steuern, welche Module für Ihren Mobile Service zur Verfügung stehen. Dies kann auf zwei Arten erreicht werden:
 
-+ Für die von npm bereitgestellten und installierten Module verwenden Sie die Datei package.json, um anzugeben, welche Pakete von Ihrem Mobile Service installiert werden sollen. Auf diese Weise hat Ihr Dienst immer Zugriff auf die neueste Version der installierten Pakete. Die Datei package.json befindet sich im Verzeichnis `.\service`. Weitere Informationen finden Sie unter [Support for package.json in Azure Mobile Services] (package.json-Unterstützung in Azure Mobile Services, in englischer Sprache).
++ Für die von npm bereitgestellten und installierten Module verwenden Sie die Datei package.json, um anzugeben, welche Pakete von Ihrem Mobile Service installiert werden sollen. Auf diese Weise hat Ihr Dienst immer Zugriff auf die neueste Version der installierten Pakete. Die Datei package.json befindet sich im Verzeichnis  `.\service`. Weitere Informationen finden Sie unter [Unterstützung für package.json in Azure Mobile Services].
 
-+ Private oder benutzerdefinierte Module können Sie mithilfe von npm manuell in das Verzeichnis `.\service\node_modules` Ihrer Quellcodeverwaltung installieren. Ein Beispiel zum manuellen Hochladen von Modulen finden Sie unter [Leverage shared code and Node.js modules in your server scripts] (Einbinden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts, in englischer Sprache).
++ Private oder benutzerdefinierte Module können Sie mithilfe von npm manuell im Verzeichnis  `.\service\node_modules` der Quellcodeverwaltung installieren. Ein Beispiel zum manuellen Hochladen von Modulen finden Sie unter [Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts].
 
-	>[WACOM.NOTE]Falls `node_modules` bereits in der Verzeichnishierarchie existiert, erstellt NPM das Unterverzeichnis `\node-uuid` dort, anstatt ein neues `node_modules`-Verzeichnis im Repository anzulegen. In diesem Fall können Sie das existierende `node_modules`-Verzeichnis löschen.
+	>[AZURE.NOTE]Falls  `node_modules` bereits in der Verzeichnishierarchie existiert, erstellt NPM das Unterverzeichnis  `\node-uuid` dort, anstatt ein neues Verzeichnis  `node_modules` im Repository anzulegen. In diesem Fall können Sie das existierende Verzeichnis  `node_modules` löschen.
 
-Nachdem Sie die Daten package.json oder Ihre benutzerdefinierten Module im Repository für Ihren Mobile Service übernommen haben, können Sie die Module über deren Namen mit **require** einbinden.   
+Nachdem Sie die Datei package.json oder Ihre benutzerdefinierten Module im Repository für Ihren Mobile Service übernommen haben, können Sie die Module über deren Namen mit **require** einbinden.   
 
->[WACOM.NOTE] Module, die Sie in package.json angeben oder auf Ihren Mobile Service hochladen, werden ausschließlich in Ihrem Serverskript-Code verwendet. Diese Module werden nicht von der Mobile Services-Runtime verwendet.
+>[AZURE.NOTE] Module, die Sie in package.json angeben oder auf Ihren mobilen Dienst hochladen, werden ausschließlich in Ihrem Serverskriptcode verwendet. Diese Module werden nicht von der Mobile Services-Runtime verwendet.
 
 ###<a name="helper-functions"></a>Gewusst wie: Arbeiten mit Hilfsfunktionen
 
@@ -486,7 +485,7 @@ Im folgenden Beispiel wird ein Tabellenskript für den insert-Vorgang registrier
  
 Hilfsfunktionen müssen in Skripts nach der main-Funktion definiert werden. Sie müssen alle Variablen in Ihrem Skript deklarieren. Nicht deklarierte Variablen verursachen einen Fehler.
 
-Hilfsfunktionen können an einer Stelle definiert und von mehreren Serverskripts verwendet werden. Um eine Funktion zwischen Skripten freizugeben, muss die Funktion exportiert werden und die Skript muss im Verzeichnis `.\service\shared\` existieren. Es folgt ein Beispiel für den Export einer freigegebenen Funktion in einer Datei `.\services\shared\helpers.js`:
+Hilfsfunktionen können an einer Stelle definiert und von mehreren Serverskripts verwendet werden. Um eine Funktion zwischen Skripts freizugeben, müssen Funktionen exportiert werden, und die Skriptdatei muss im Verzeichnis  `.\service\shared\` enthalten sein. Es folgt ein Beispiel für den Export einer freigegebenen Funktion in eine Datei  `.\services\shared\helpers.js`:
 
 		exports.handleUnapprovedItem = function (tables, user, callback) {
 		    
@@ -494,7 +493,7 @@ Hilfsfunktionen können an einer Stelle definiert und von mehreren Serverskripts
 			// return a value to the callback function.
 		};
  
-You can then use a function like this in a table operation script:
+Anschließend können Sie Funktion in einem Tabellenvorgangsskript verwenden:
 
 		function insert(item, user, request) {
 		    var helper = require('../shared/helper');
@@ -512,7 +511,7 @@ Skriptdateien werden in das freigegebene Verzeichnis entweder mithilfe von [Quel
 
 ###<a name="app-settings"></a>Gewusst wie: Arbeiten mit App-Einstellungen
 
-Mit Mobile Services können Sie Werte sicher als Anwendungseinstellungen speichern, auf die Ihre Serverskripts zur Laufzeit zugreifen können.   Wenn Sie Daten zu den App-Einstellungen des mobilen Diensts hinzufügen, werden die Name-Wert-Paare gespeichert verschlüsselt, und Sie können in Ihren Serverskripts auf sie zugreifen, ohne sie in der Skriptdatei fest zu programmieren. Weitere Informationen finden Sie unter [App-Einstellungen].
+Mit Mobile Services können Sie Werte wie z. B. App-Einstellungen sicher speichern und Ihren Serverskripts zur Laufzeit zur Verfügung stellen.  Wenn Sie Daten zu den App-Einstellungen Ihres Mobile Service hinzufügen, werden die Name-Wert-Paare verschlüsselt gespeichert und Sie können in Ihren Serverskripts darauf zugreifen, ohne die Daten hart in der Skriptdatei codieren zu müssen. Weitere Informationen finden Sie unter [App-Einstellungen].
 
 Die folgende benutzerdefinierte API verwendet das übergebene [Serviceobjekt], um den Wert einer App-Einstellung abzurufen.  
 
@@ -538,7 +537,7 @@ Im folgenden Code werden Werte eines Twitter-Zugriffstokens über das Konfigurat
 		var accessToken= config.appSettings.TWITTER_ACCESS_TOKEN,
 		    accessTokenSecret = config.appSettings.TWITTER_ACCESS_TOKEN_SECRET;
 
-Beachten Sie, dass dieser Code auch die Consumer Key-Werte von Twitter abruft und in der Registerkarte **Identität** im Portal speichert. Da das **config-Objekt** in Skripts für Tabellenvorgänge und geplante Aufträge nicht verfügbar ist, muss das Konfigurationsmodul stattdessen auf die App-Einstellungen zugreifen. Ein vollständiges Beispiel finden Sie unter [Schedule backend jobs in Mobile Services] (Planen von Back-End-Aufgaben in Mobile Services, in englischer Sprache).
+Beachten Sie, dass dieser Code auch die Consumer Key-Werte von Twitter abruft und in der Registerkarte **Identität** im Portal speichert. Da das **config-Objekt** in Skripts für Tabellenvorgänge und geplante Aufträge nicht verfügbar ist, muss das Konfigurationsmodul stattdessen auf die App-Einstellungen zugreifen. Ein vollständiges Beispiel finden Sie unter [Planen von Back-End-Aufträgen in Mobile Services].
 
 <h2><a name="command-prompt"></a>Arbeiten mit dem Befehlszeilentool</h2>
 
@@ -548,7 +547,7 @@ In Mobile Services können Sie Serverskripts mithilfe des Azure-Befehlszeilentoo
 
 Diese Verzeichnisstruktur entspricht dem Git-Repository, falls Sie Quellcodeverwaltung verwenden. 
 
-Beim Hochladen von Skriptdateien im Befehlszeilentool müssen Sie zuerst zum Verzeichnis `.\services\` navigieren. Der folgende Befehl lädt ein Skript namens `todoitem.insert.js` aus dem Unterverzeichnis `table` hoch:
+Beim Hochladen von Skriptdateien im Befehlszeilentool müssen Sie zuerst zum Verzeichnis  `.\services\` navigieren. Der folgende Befehl lädt ein Skript namens  `todoitem.insert.js` aus dem Unterverzeichnis  `table` hoch:
 
 		~$azure mobile script upload todolist table/todoitem.insert.js
 		info:    Executing command mobile script upload
@@ -581,7 +580,7 @@ Der folgende Befehl gibt Informationen über sämtliche Skriptdateien in Ihrem M
 		data:    register_notifications  application  application  user         application  application
 		info:    mobile script list command OK
 
-Weitere Informationen finden Sie unter [Commands to manage Azure Mobile Services] (Befehle zum Verwalten von Azure Mobile Services, in englischer Sprache). 
+Weitere Informationen finden Sie unter [Befehle zum Verwalten Ihrer Azure Mobile Services]. 
 
 ##<a name="working-with-tables"></a>Arbeiten mit Tabellen
 
@@ -593,16 +592,15 @@ Mobile Services bietet zwei Methoden für den Zugriff auf Tabellen, entweder üb
 
 Der einfachste Weg, um in Ihrem Skript auf Tabellen zuzugreifen, ist das [Tabellenobjekt]. Die **getTable**-Funktion gibt eine [Tabellenobjekt]-Instanz zurück, die als Proxy für den Zugriff auf die angeforderte Tabelle dient. Sie können anschließend Funktionen des Proxy aufrufen, um Daten auszulesen oder zu ändern. 
 
-Skripts, die sowohl für Tabellenvorgänge als auch für geplante Aufträge registriert sind, können auf das [Tabellenobjekt] als globales Objekt zugreifen. Die folgende Codezeile ruft einen Proxy für die Tabelle *TodoItems* aus dem globalen [Tabellenobjekt]:  ab:
+Skripts, die sowohl für Tabellenvorgänge als auch für geplante Aufträge registriert sind, können auf das [Tabellenobjekt] als globales Objekt zugreifen. Die folgende Codezeile ruft einen Proxy für die  *TodoItems*-Tabelle aus dem globalen [Tabellenobjekt] ab: 
 
 		var todoItemsTable = tables.getTable('TodoItems');
 
-Skripts in benutzerdefinierten APIs können über die <strong>service</strong>-Eigenschaft des übergebenen [Anforderungsobjekts] auf das [Tabellenobjekt] zugreifen. Die folgende Codezeile ruft das [Tabellenobjekt] aus der Anforderung ab:
+Skripts in benutzerdefinierten APIs können über die <strong>service</strong>-Eigenschaft des angegebenen [Anforderungsobjekts] auf das [Tabellenobjekt] zugreifen. Die folgende Codezeile ruft das [Tabellenobjekt] aus der Anforderung ab:
 
 		var todoItemsTable = request.service.tables.getTable('TodoItem');
 
-<div class="dev-callout"><strong>Hinweis</strong>
-<p>Freigegebene Funktionen können nicht direkt auf das <strong>Tabellenobjekt</strong> zugreifen. In freigegebenen Funktionen müssen Sie das Tabellenobjekt an die Funktion übergeben.</p></div>
+> [AZURE.NOTE] Freigegebene Funktionen können nicht direkt auf das **Tabellenobjekt** zugreifen. In freigegebenen Funktionen müssen Sie das Tabellenobjekt an die Funktion übergeben.
 
 Sobald Sie ein [Tabellenobjekt] haben, können Sie die folgenden Funktionen für Tabellenvorgänge aufrufen: insert, update, delete oder read. Das folgende Beispiel ruft Berechtigungen eines Benutzers aus einer Berechtigungstabelle ab:
 
@@ -646,13 +644,13 @@ Das nächste Beispiel schreibt Überwachungsinformationen in eine **Überwachung
 		}
 	}
 
-Der folgende Code dient als letztes Beispiel: [Gewusst wie: Zugreifen auf benutzerdefinierte Parameter][Gewusst wie: Hinzufügen benutzerdefinierter Parameter].
+Der folgende Code dient als letztes Beispiel: [Gewusst wie: Zugreifen auf benutzerdefinierte Parameter][Gewusst wie: Hinzufügen benutzerdefinierter Parameter]
 
 ###<a name="bulk-inserts"></a>Gewusst wie: Ausführen von Masseneinfügungen
 
-Wenn Sie mithilfe einer **for-** oder **while-**Schleife große Mengen (z. B. 1000) von Datensätzen in eine  Tabelle einfügen, können SQL-Verbindungslimits dazu führen, dass nicht alle Datensätze eingefügt werden. Ihre Anforderung kann nicht abgeschlossen werden, oder es wird ein HTTP 500 Interner Serverfehler zurückgegeben.  Zur Vermeidung dieses Problems können Sie die Elemente in Stapeln von etwa 10 einfügen. Nach Abschluss des ersten Stapels übermitteln Sie den zweiten Stapel, und so weiter.
+Wenn Sie mithilfe einer **for**- oder **while**-Schleife große Mengen (z. B. 1000) von Datensätzen in eine Tabelle einfügen, können SQL-Verbindungslimits dazu führen, dass nicht alle Datensätze eingefügt werden. Möglicherweise wird die Anforderung nie beendet, oder sie liefert einen HTTP 500 Interner Serverfehler zurück.  Um dieses Problem zu vermeiden, können Sie die Datensätze stapelweise einfügen (z. B. 10 auf einmal). Nach Abschluss des ersten Stapels übermitteln Sie den zweiten Stapel, und so weiter.
 
-Mit dem folgenden Skript können Sie die Stapelgröße für das parallele Einfügen von Datensätzen festlegen. Sie sollten diese Anzahl jedoch möglichst klein halten. Die Funktion **insertItems** ruft sich selbst rekursiv auf, wenn ein asynchroner insert-Stapel abgeschlossen wurde. Die for-Schleife am Ende fügt die Datensätze nacheinander ein und ruft bei Erfolg **insertComplete** und im Fehlerfall **errorHandler** auf. **insertComplete** steuert, ob **insertItems** rekursiv für den nächsten Batch aufgerufen wird oder ob der Auftrag abgeschlossen ist und das Skript beendet werden muss.
+Mit dem folgenden Skript können Sie die Stapelgröße für das parallele Einfügen von Datensätzen festlegen. Sie sollten diese Anzahl jedoch möglichst klein halten. Die Funktion **insertItems** ruft sich selbst rekursiv auf, wenn ein asynchroner insert-Stapel abgeschlossen wurde. Die for-Schleife am Ende fügt die Datensätze nacheinander ein und ruft bei Erfolg **insertComplete** und im Fehlerfall **errorHandler** auf. **insertComplete** bestimmt, ob **insertItems** rekursiv für den nächsten Stapel aufgerufen wird, oder ob der Auftrag abgeschlossen ist und das Skript beendet werden muss.
 
 		var todoTable = tables.getTable('TodoItem');
 		var recordsToInsert = 1000;
@@ -700,22 +698,22 @@ Das gesamte Codebeispiel und eine begleitende Besprechung finden Sie in diesem [
 
 ###<a name="JSON-types"></a>Gewusst wie: Zuordnen von JSON-Typen zu Datenbanktypen
 
-Client- und Mobile Service-Datenbank verwenden unterschiedliche Datentypen. Manchmal lassen sich einfach einander zuordnen, in anderen Fällen nicht. Mobile Services führen bei der Zuordnung eine Reihe von Typumwandlungen durch.
+Client- und Mobile Service-Datenbank verwenden unterschiedliche Datentypen. Manche dieser Datentypen lassen sich einfach zuordnen, andere dagegen weniger einfach. Mobile Services führt bei der Zuordnung eine Reihe von Typumwandlungen durch:
 
 - Die spezifischen Typen der Clientsprache werden im JSON-Format serialisiert.
 - Die JSON-Darstellung wird nach JavaScript übersetzt, bevor sie in den Serverskripts auftaucht.
 - Die JavaScript-Daten werden beim Speichern mit dem [Tabellenobjekt] in SQL-Datenbanktypen transformiert.
 
-Die Transformation vom Client-Schema in JSON variiert je nach Plattform.  JSON.NET wird in Windows Store- und Windows Phone-Clients verwendet. Der Android-Client verwendet die gson-Bibliothek.  Der iOS-Client verwendet die NSJSONSerialization-Klasse. Diese Bibliotheken verwenden jeweils ihr Standard-Serialisierungsverhalten, allerdings werden Datumsobjekte in JSON-Zeichenfolgen umgewandelt, in denen das Datum nach ISO 8601 codiert ist.
+Die Transformation vom Clientschema nach JSON unterscheidet sich je nach Plattform.  JSON.NET wird im Windows Store und auf Windows Phone-Clients verwendet. Der Android-Client verwendet die gson-Bibliothek.  Der iOS-Client verwendet die NSJSONSerialization-Klasse. Diese Bibliotheken verwenden jeweils ihr Standardserialisierungsverhalten, allerdings werden Datumsobjekte in JSON-Zeichenfolgen umgewandelt, in denen das Datum nach ISO 8601 codiert ist.
 
-Beim Schreiben von Serverskripts, die [insert]-, [update]-, [read]- oder [delete]-Funktionen verwenden, haben Sie Zugriff auf die JavaScript-Darstellung Ihrer Daten. Mobile Services verwendet die Deserialisierungsfunktion von Node.js ([JSON.parse](http://es5.github.io/#x15.12)), um eingehendes JSON in JavaScript-Objekte zu transformieren. Mobile Services führt jedoch eine  Transformation durch, um **Date**-Objekte aus ISO 8601-Zeichenfolgen zu extrahieren.
+Beim Schreiben von Serverskripts, die [insert]-, [update]-, [read]- oder [delete]-Funktionen verwenden, haben Sie Zugriff auf die JavaScript-Darstellung Ihrer Daten. Mobile Services verwendet die Deserialisierungsfunktion von Node.js ([JSON.parse](http://es5.github.io/#x15.12)), um eingehendes JSON in JavaScript-Objekte zu transformieren. Mobile Services führt jedoch eine Transformation durch, um **Date**-Objekte aus ISO 8601-Zeichenfolgen zu extrahieren.
 
 Wenn Sie das [Tabellenobjekt] oder das [mssql-Objekt] verwenden oder Ihre Skripts ausführen, werden die deserialisierten JavaScript-Objekte in Ihre SQL-Datenbank eingefügt. Bei diesem Vorgang werden die Objekteigenschaften auf T-SQL-Datentypen abgebildet:
 
 <table border="1">
 <tr>
 <td>JavaScript-Eigenschaft</td>
-<td>T-SQL-Datentyp</td>
+<td>T-SQL-Typ</td>
 </tr><tr>
 <td>Number</td>
 <td>Float(53)</td>
@@ -749,8 +747,8 @@ Wenn Sie das [Tabellenobjekt] oder das [mssql-Objekt] verwenden oder Ihre Skript
 
 Der einfachste Weg, um in einem Serverskript mit Tabellendaten zu arbeiten, ist das [Tabellenobjekt] als Proxy. Manche erweiterte Szenarien wie z. B. join-Abfragen und andere komplexe Abfragen sowie das Aufrufen von gespeicherten Prozeduren werden jedoch vom [Tabellenobjekt] nicht unterstützt. In diesen Fällen müssen Sie Transact-SQL-Anweisungen über das [mssql-Objekt] direkt auf den relationalen Tabellen ausführen. Dieses Objekt bietet die folgenden Funktionen:
 
-- **query**: Führt eine durch eine TSQL-Zeichenfolge angegebene Abfrage aus. Die Ergebnisse werden an den **success**-Rückruf des **Options**-Objekts zurückgegeben. Die Abfrage kann Parameter enthalten, falls der *params*-Parameter vorhanden ist.
-- **queryRaw**: wie *query*, allerdings wird das Resultset der Abfrage im "raw"-Format zurückgegeben (siehe Beispiel unten).
+- **query**: Führt eine durch eine TSQL-Zeichenfolge angegebene Abfrage aus. Die Ergebnisse werden an den **success**-Rückruf des **options**-Objekts zurückgegeben. Die Abfrage kann Parameter enthalten, falls der  *params*-Parameter vorhanden ist.
+- **queryRaw**: wie  *query*, allerdings wird das Resultset der Abfrage im "raw"-Format zurückgegeben (siehe Beispiel unten).
 - **open**: stellt eine Verbindung mit Ihrer Mobile Services-Datenbank her. Anschließend können Sie über das Verbindungsobjekt Datenbankvorgänge wie z. B. Transaktionen aufrufen.
 
 Mit diesen Methoden erhalten Sie eine immer tiefgehendere Kontrolle über die Verarbeitung der Abfrage.
@@ -758,12 +756,12 @@ Mit diesen Methoden erhalten Sie eine immer tiefgehendere Kontrolle über die Ve
 + [Gewusst wie: Ausführen statischer Abfragen]
 + [Gewusst wie: Ausführen dynamischer Abfragen]
 + [Gewusst wie: Verknüpfen relationaler Tabellen]
-+ [Gewusst wie: Ausführen einer Abfrage, die Ergebnisse im *raw*-Format zurückgibt]
++ [Gewusst wie: Ausführen einer Abfrage, die Ergebnisse im  *raw*-Format zurückgibt]
 + [Gewusst wie: Zugreifen auf eine Datenbankverbindung]	
 
 ####<a name="static-query"></a>Gewusst wie: Ausführen statischer Abfragen
 
-Die folgende Abfrage hat keine Parameter und gibt drei Datensätze aus der Tabelle `statusupdate` zurück. Das Rowset ist im JSON-Standardformat.
+Die folgende Abfrage hat keine Parameter und gibt drei Datensätze aus der  `statusupdate`-Tabelle zurück. Das Rowset ist im JSON-Standardformat.
 
 		mssql.query('select top 3 * from statusupdates', {
 		    success: function(results) {
@@ -802,7 +800,7 @@ Sie können zwei Tabellen mithilfe der **query**-Methode des [mssql-Objekts] ver
 
 		{ text: 'Take out the trash', complete: false, priority: 1}
 
-Nehmen wir außerdem an, wir haben eine zweite Tabelle namens **Priority**, deren Spalten eine **Prioritätsnummer** und eine **Textbeschreibung** enthalten. Die Prioritätsnummer 1 hat z. B. die Beschreibung "Critical", und das Objekt sieht folgendermaßen aus:
+Nehmen wir außerdem an, wir haben eine zweite Tabelle namens **Priority**, deren Spalten eine **Prioritätsnummer** und eine **Textbeschreibung** enthalten. Die Prioritätsnummer 1 hat z. B. die Beschreibung "Kritisch", und das Objekt sieht folgendermaßen aus:
 
 		{ number: 1, description: 'Critical'}
 
@@ -821,7 +819,7 @@ Das Skript verknüpft die beiden Tabellen und schreibt die Ergebnisse in das Pro
 		{ text: 'Take out the trash', complete: false, description: 'Critical'}
 
 
-####<a name="raw"></a>Gewusst wie: Ausführen einer Abfrage, die Ergebnisse im *raw*-Format zurückgibt
+####<a name="raw"></a>Gewusst wie: Ausführen einer Abfrage, die Ergebnisse im  *raw*-Format zurückgibt
 
 Dieses Beispiel führt die Abfrage wie zuvor aus, gibt jedoch das Resultset im "raw"-Format zurück, das Sie Zeile für Zeile und Spalte für Spalte durchlaufen müssen. Dies macht z. B. Sinn, wenn Sie Zugriff auf Datentypen benötigen, die von Mobile Services nicht unterstützt werden. Dieser Code schreibt die Ausgabe einfach in das Konsolenprotokoll, sodass Sie das "raw"-Format inspizieren können.
 
@@ -868,7 +866,7 @@ Unten finden Sie die Ausgabe dieser Abfrage. Sie enthält Metadaten der einzelne
 
 Mit der **open**-Methode erhalten Sie Zugriff auf die Datenbankverbindung. Dies ist z. B. nützlich, wenn Sie Datenbanktransaktionen verwenden möchten.
 
-Bei einem erfolgreichen Aufruf von **open** wird die Datenbankverbindung als Parameter an die **success**-Funktion übergeben. Anschließend können Sie die folgenden Funktionen des **connection**-Objekts aufrufen: *close*, *queryRaw*, *query*, *beginTransaction*, *commit* und *rollback*.
+Bei einem erfolgreichen Aufruf von **open** wird die Datenbankverbindung als Parameter an die **success**-Funktion übergeben. Anschließend können Sie die folgenden Funktionen des **connection**-Objekts aufrufen:  *close*,  *queryRaw*,  *query*,  *beginTransaction*,  *commit* und  *rollback*.
 
 		    mssql.open({
 		        success: function(connection) {
@@ -887,8 +885,7 @@ Debugging und Problembehandlung Ihrer Serverskript erledigen Sie am Besten, inde
 
 Verwenden Sie das globale [Konsolenobjekt], um in die Protokolle zu schreiben. Mit den Funktionen **log** oder **info** können Sie Warnungen auf der Informationsebene schreiben. Die Funktionen **warning** und **error** schreiben Einträge auf ihrer jeweiligen Ebene, die in den Protokollen hervorgehoben werden. 
 
-<div class="dev-callout"><strong>Hinweis</strong>
-<p>Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich am <a href="https://manage.windowsazure.com/">Verwaltungsportal</a> an, wählen Sie Ihren Mobile Service aus und öffnen Sie die Registerkarte <strong>Protokolle</strong>.</p></div>
+> [AZURE.NOTE] Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich am [Verwaltungsportal](https://manage.windowsazure.com/) an, wählen Sie Ihren mobilen Dienst aus, und öffnen Sie die Registerkarte **Protokolle**.
 
 Sie können außerdem die Protokollfunktionen des [Konsolenobjekts] verwenden, um Ihre Nachrichten mithilfe von Parametern zu formatieren. Im folgenden Beispiel wird ein JSON-Objekt als Parameter an die Nachrichten-Zeichenfolge übergeben:
 
@@ -897,7 +894,7 @@ Sie können außerdem die Protokollfunktionen des [Konsolenobjekts] verwenden, u
 	    request.execute();
 	}
 
-Beachten Sie, dass die Zeichenfolge `%j` als Platzhalter für ein JSON-Objekt verwendet wird, und dass die Parameter in sequenzieller Reihenfolge angegeben werden. 
+Beachten Sie, dass die Zeichenfolge  `%j` als Platzhalter für ein JSON-Objekt verwendet wird und dass die Parameter in sequenzieller Reihenfolge angegeben werden. 
 
 Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entfernen oder auskommentieren, die Sie im Produktionsalltag nicht benötigen.
 
@@ -910,7 +907,7 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Gewusst wie: Ändern eines Vorgangs]: #modify-operation
 [Gewusst wie: Überschreiben von Erfolg und Fehler]: #override-success-error
 [Gewusst wie: Überschreiben des Ausführungserfolgs]: #override-success
-[Gewusst wie: Überschreiben der Standard-Fehlerbehandlung]: #override-error
+[Gewusst wie: Überschreiben der Standardfehlerbehandlung]: #override-error
 [Gewusst wie: Tabellenzugriff in Skripts]: #access-tables
 [Gewusst wie: Hinzufügen benutzerdefinierter Parameter]: #access-headers
 [Gewusst wie: Arbeiten mit Benutzern]: #work-with-users
@@ -919,7 +916,7 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Tabellenzugriff mit Transact-SQL]: #TSQL
 [Gewusst wie: Ausführen statischer Abfragen]: #static-query
 [Gewusst wie: Ausführen dynamischer Abfragen]: #dynamic-query
-[Gewusst wie: Ausführen einer Abfrage, die Ergebnisse im *raw*-Format zurückgibt]: #raw
+[Gewusst wie: Ausführen einer Abfrage, die Ergebnisse im  *raw*-Format zurückgibt]: #raw
 [Gewusst wie: Zugreifen auf eine Datenbankverbindung]: #connection
 [Gewusst wie: Verknüpfen relationaler Tabellen]: #joins
 [Gewusst wie: Ausführen von Masseneinfügungen]: #bulk-inserts
@@ -950,10 +947,10 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 <!-- URLs. -->
 [Mobile Services: Serverskriptreferenz]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554226.aspx
 [Planen von Back-End-Aufträgen in Mobile Services]: /de-de/develop/mobile/tutorials/schedule-backend-tasks/
-[request-Objekt]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx
-[response-Objekt]: http://msdn.microsoft.com/de-de/library/windowsazure/dn303373.aspx
-[user-Objekt]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx
-[push-Objekt]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx
+[request object]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554218.aspx
+[response object]: http://msdn.microsoft.com/de-de/library/windowsazure/dn303373.aspx
+[User object]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554220.aspx
+[push object]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx
 [insert-Funktion]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554229.aspx
 [insert]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554229.aspx
 [update-Funktion]: http://msdn.microsoft.com/de-de/library/windowsazure/jj554214.aspx
@@ -1003,3 +1000,6 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [App-Einstellungen]: http://msdn.microsoft.com/de-de/library/dn529070.aspx
 [Config-Modul]: http://msdn.microsoft.com/de-de/library/dn508125.aspx
 [Unterstützung für package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
+
+
+<!--HONumber=42-->
