@@ -14,7 +14,7 @@ Microsoft veröffentlicht jetzt eine Reihe von allgemeinen Architekturplänen, d
 
 ##Symbolsatz für Azure
 
-[Laden Sie den Symbolsatz für Azure herunter](http://www.microsoft.com/de-de/download/details.aspx?id=41937), um technisches Informationsmaterial im Stil von Azure zu erstellen, beispielsweise Architekturdiagramme, Schulungsmaterialien, Präsentationen, Datenblätter, Infografiken und Whitepaper. Sie können die Symbole in den Formaten PPT, Visio oder PNG herunterladen. Ihr Feedback ist uns sehr wichtig. Daher ist im Download eine Feedback-Anleitung enthalten.
+[Laden Sie den Symbolsatz für Azure herunter](http://www.microsoft.com/download/details.aspx?id=41937), um technisches Informationsmaterial im Stil von Azure zu erstellen, beispielsweise Architekturdiagramme, Schulungsmaterialien, Präsentationen, Datenblätter, Infografiken und Whitepaper. Sie können die Symbole in den Formaten PPT, Visio oder PNG herunterladen. Ihr Feedback ist uns sehr wichtig. Daher ist im Download eine Feedback-Anleitung enthalten.
 
 Die 2D-Diagramme der [Microsoft Architekturpläne](http://msdn.microsoft.com/dn630664) verwenden diese Symbole. 
 
