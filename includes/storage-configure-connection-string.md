@@ -62,4 +62,5 @@ Sie sind nun bereit für die Gewusst-wie-Aufgaben in diesem Leitfaden.
 [connection-string4]: ./media/storage-configure-connection-string/connection-string4.png
 [connection-string5]: ./media/storage-configure-connection-string/connection-string5.png
 
-[Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx<!--HONumber=41-->
+[Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758697.aspx
+<!--HONumber=41-->
