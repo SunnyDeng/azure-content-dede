@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erstellen und Hochladen einer SUSE Linux-VHD in Azure" description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein SUSE Linux-Betriebssystem enthält." services="virtual-machines" documentationCenter="" authors="szarkos" manager="timlt" editor="tysonn"/>
+﻿<properties 
+	pageTitle="Erstellen und Hochladen einer SUSE-Linux-VHD in Azure" 
+	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein SUSE-Linux-Betriebssystem enthält." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="szarkos" 
+	manager="timlt" 
+	editor="tysonn"/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="01/13/2015" ms.author="szarkos"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/13/2015" 
+	ms.author="szarkos"/>
 
 
 # Vorbereiten eines virtuellen SLES- oder openSUSE-Computers für Azure
@@ -10,7 +24,7 @@
 
 ##Voraussetzungen##
 
-In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSUSE Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Es gibt mehrere Tools zum Erstellen von VHD-Dateien, beispielsweise eine Virtualisierungslösung wie Hyper-V. Anweisungen finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx). 
+In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSUSE-Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Es gibt mehrere Tools zum Erstellen von .vhd-Dateien, beispielsweise eine Virtualisierungslösung wie Hyper-V. Anweisungen finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx). 
 
 
 **Installationshinweise zu SLES/openSUSE**
@@ -20,11 +34,11 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
   - [SLES 11 SP3 für Azure in SUSE Studio Gallery](http://susestudio.com/a/02kbT4/sles-11-sp3-for-windows-azure)
   - [openSUSE 13.1 für Azure in SUSE Studio Gallery](https://susestudio.com/a/02kbT4/opensuse-13-1-for-windows-azure)
 
-- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
+- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem Cmdlet "convert-vhd" in das VHD-Format konvertieren.
 
-- Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird.  LVM oder [RAID](../virtual-machines-linux-configure-raid) können bei Bedarf auf Datenträgern verwendet werden.
+- Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird.  LVM oder [RAID](../virtual-machines-linux-configure-raid) kann bei Bedarf auf Datenträgern verwendet werden.
 
-- Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen.  Weitere Informationen dazu finden Sie in den folgenden Schritten.
+- Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, um eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen.  Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
 - Alle virtuellen Festplatten müssen eine Größe aufweisen, die ein Vielfaches von 1 MB ist.
 
@@ -35,17 +49,17 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 2. Klicken Sie auf **Verbinden**, um das Fenster für den virtuellen Computer zu öffnen.
 
-3. Registrieren Sie Ihr System SUSE Linux Enterprise, um das Herunterladen von Updates und das Installieren von Paketen zu ermöglichen.
+3. Registrieren Sie Ihr SUSE Linux Enterprise-System, um das Herunterladen von Updates und das Installieren von Paketen zu ermöglichen.
 
 4. Aktualisieren Sie das System mit den neuesten Patches:
 
 		# sudo zypper update
 
-5. Installieren Sie den Azure Linux-Agent aus dem SLES-Repository:
+5. Installieren Sie den Azure Linux Agent aus dem SLES-Repository:
 
 		# sudo zypper install WALinuxAgent
 
-6. Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/boot/grub/menu.lst" in einem Text-Editor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
+6. Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/boot/grub/menu.lst" in einem Texteditor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
 
 		console=ttyS0 earlyprintk=ttyS0 rootdelay=300
 
@@ -62,9 +76,9 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 9.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt.  Dies ist für gewöhnlich die Standardeinstellung.
 
-10.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
+10.	Richten Sie keinen Auslagerungsbereich auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+	Der Azure Linux Agent kann einen Auslagerungsbereich automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporary* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) ordnungsgemäß die folgenden Parameter in "/etc/waagent.conf":
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -89,7 +103,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 2. Klicken Sie auf **Verbinden**, um das Fenster für den virtuellen Computer zu öffnen.
 
-3. Führen Sie in der Shell den Befehl `zypper lr` aus. Wenn dieser Befehl eine Ausgabe zurückgibt, die ähnlich wie im Folgenden aussieht (beachten Sie, dass die Versionsnummern abweichen können):
+3. Führen Sie in der Shell den Befehl '`zypper lr`' aus. Wenn dieser Befehl eine Ausgabe zurückgibt, die ähnlich wie folgende aussieht (beachten Sie, dass die Versionsnummern abweichen können):
 
 		# | Alias                 | Name                  | Enabled | Refresh
 		--+-----------------------+-----------------------+---------+--------
@@ -99,13 +113,13 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 	dann werden die Repositorys wie erwartet konfiguriert, und es sind keine Anpassungen notwendig.
 
-	Wenn der Befehl "No repositories defined..." zurückgibt, verwenden Sie die folgenden Befehle zum Hinzufügen dieser Repositorys:
+	Wenn der Befehl "Keine Repositorys definiert..." zurückgibt, verwenden Sie die folgenden Befehle zum Hinzufügen dieser Repositorys:
 
 		# sudo zypper ar -f http://download.opensuse.org/repositories/Cloud:Tools/openSUSE_13.1 Cloud:Tools_13.1 
 		# sudo zypper ar -f http://download.opensuse.org/distribution/13.1/repo/oss openSUSE_13.1_OSS
 		# sudo zypper ar -f http://download.opensuse.org/update/13.1 openSUSE_13.1_Updates
 
-	Sie können dann überprüfen, ob die Repositorys hinzugefügt wurden, indem Sie den Befehl `zypper lr` erneut ausführen. Falls eines der relevanten Update-Repositorys nicht aktiviert ist, können Sie es mit dem folgenden Befehl aktivieren:
+	Sie können dann überprüfen, ob die Repositorys hinzugefügt wurden, indem Sie den Befehl '`zypper lr`' erneut ausführen. Falls eines der relevanten Update-Repositorys nicht aktiviert ist, können Sie es mit dem folgenden Befehl aktivieren:
 
 		# sudo zypper mr -e [NUMBER OF REPOSITORY]
 
@@ -114,15 +128,15 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 		# sudo zypper up kernel-default
 
-	Oder aktualisieren Sie das System mit allen neuen Patches:
+	Or to update the system with all the latest patches:
 
 		# sudo zypper update
 
-5.	Installieren des Azure Linux-Agents
+5.	Installieren des Azure Linux Agents
 
 		# sudo zypper install WALinuxAgent
 
-6.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/boot/grub/menu.lst" in einem Text-Editor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
+6.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/boot/grub/menu.lst" in einem Texteditor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
 
 		console=ttyS0 earlyprintk=ttyS0 rootdelay=300
 
@@ -141,9 +155,9 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 9.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt.  Dies ist für gewöhnlich die Standardeinstellung.
 
-10.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
+10.	Richten Sie keinen Auslagerungsbereich auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+	Der Azure Linux Agent kann einen Auslagerungsbereich automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporary* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in "/etc/waagent.conf" entsprechend:
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -165,7 +179,4 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

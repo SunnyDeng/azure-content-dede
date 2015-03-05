@@ -1,10 +1,10 @@
-﻿<properties services="virtual-machines" title="Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird" authors="KBDAzure" solutions="" manager="timlt" editor="tysonn" />
+﻿<properties services="virtual-machines" title="How to Log on to a Virtual Machine Running Windows Server" authors="KBDAzure" solutions="" manager="timlt" editor="tysonn" />
 
 >[AZURE.NOTE] Wenn Sie den Benutzernamen oder das Kennwort zurücksetzen oder RDP auf dem virtuellen Computer aktivieren müssen, können Sie dazu die Erweiterung [VMAccess](http://go.microsoft.com/fwlink/p/?LinkId=396856) verwenden. Anforderungen und Tipps zur Problembehandlung bei der Anmeldung finden Sie unter [Verbindung mit einem virtuellen Azure-Computer mit RDP oder SSH](http://go.microsoft.com/fwlink/p/?LinkId=398294).
 
 1. Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) an, falls noch nicht geschehen.
 
-2. Klicken Sie auf **Virtuelle Computer** und wählen Sie dann den betreffenden virtuellen Computer aus.
+2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den betreffenden virtuellen Computer aus.
 
 3. Klicken Sie in der Befehlsleiste auf **Verbinden**.
 
@@ -31,4 +31,4 @@ Klicken Sie auf **Ja**, um die Identität des virtuellen Computers zu bestätige
 Sie können jetzt über eine Remoteverbindung mit dem virtuellen Computer arbeiten.
 
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

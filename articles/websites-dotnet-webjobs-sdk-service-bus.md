@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="Verwenden von Azure Service Bus mit dem Webaufträge-SDK" 
-	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus mit dem Webaufträge-SDK." 
+	pageTitle="Verwenden von Azure Service Bus mit dem Webauftrags-SDK" 
+	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus-Warteschlangen und -Themen mit dem Webauftrags-SDK." 
 	services="web-sites, service-bus" 
 	documentationCenter=".net" 
 	authors="tdykstra" 
@@ -16,13 +16,15 @@
 	ms.date="12/15/2014" 
 	ms.author="tdykstra"/>
 
-# Verwenden von Azure Service Bus mit dem Webaufträge-SDK
+# Verwenden von Azure Service Bus mit dem Webauftrags-SDK
 
-Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-BLOB erstellt oder aktualisiert wird. Die Codebeispiele verwenden das [Webaufträge-SDK](../websites-dotnet-webjobs-sdk/) 1.x.
+## Übersicht
 
-Im Leitfaden wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](../websites-dotnet-webjobs-sdk-get-started/).
+Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-BLOB erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [Webauftrags-SDK](../websites-dotnet-webjobs-sdk/) verwendet.
 
-Die Codeausschnitte zeigen nur Funktionen, nicht den Code, mit dem das `JobHost`-Objekt in diesem Beispiel erstellt wird:
+Im Handbuch wird davon ausgegangen, dass Sie wissen, [wie ein Webauftrags-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](../websites-dotnet-webjobs-sdk-get-started/).
+
+Die Codeausschnitte zeigen nur Funktionen, nicht den Code, der das Objekt `JobHost` erstellt Objekt, wie das folgende Beispiel zeigt:
 
 		static void Main(string[] args)
 		{
@@ -30,34 +32,25 @@ Die Codeausschnitte zeigen nur Funktionen, nicht den Code, mit dem das `JobHost`
 		    host.RunAndBlock();
 		}
 		
-## Inhaltsverzeichnis
+## <a id="prerequisites"></a> Voraussetzungen
 
--   [Voraussetzungen](#prerequisites)
--   [Auslösen einer Funktion, wenn eine Warteschlangennachricht empfangen wird](#trigger)
--   [Erstellen von Warteschlangennachrichten](#create)
--   [Arbeiten mit Service Bus-Themen](#topics)
--   [Verwandte Themen im Artikel zu Speicherwarteschlangen](#queues)
--   [Nächste Schritte](#nextsteps)
+Um mit Service Bus zu arbeiten, müssen Sie das NuGet-Paket [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) zusätzlich zu den anderen Webauftrags-SDK-Paketen installieren. 
 
-## <a id="prerequisites"></a>Voraussetzungen
+Außerdem müssen Sie zusätzlich zu den Speicherverbindungszeichenfolgen die Verbindungszeichenfolge "AzureWebJobsServiceBus" festlegen.
 
-Für die Arbeit mit Service Bus müssen Sie neben den weiteren Webaufträge-SDK-Paketen das NuGet-Paket [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) installieren. 
+## <a id="trigger"></a> Auslösen einer Funktion, wenn eine Service Bus-Warteschlangennachricht empfangen wird
 
-Sie müssen außerdem zusätzlich zu den Speicherverbindungszeichenfolgen die Verbindungszeichenfolge "AzureWebJobsServiceBus" festlegen.
-
-## <a id="trigger"></a>Auslösen einer Funktion, wenn eine Service Bus-Warteschlangennachricht empfangen wird
-
-Zum Schreiben einer Funktion, die bei Empfang einer Warteschlangennachricht  das Webaufträge-SDK aufruft, verwenden Sie das Attribut `ServiceBusTrigger`. Der Attributkonstruktor verwendet einen Parameter, der den Namen der abzufragenden Warteschlange angibt.
+Um eine Funktion zu schreiben, die das Webauftrags-SDK aufruft, wenn eine Warteschlangennachricht empfangen wird, verwenden Sie das Attribut `ServiceBusTrigger`. Der Attributkonstruktor verwendet einen Parameter, der den Namen der abzufragenden Warteschlange angibt.
 
 ### Funktionsweise von "ServicebusTrigger"
 
-Das SDK empfängt eine Nachricht im `PeekLock`-Modus und ruft bei erfolgreicher Ausführung der Funktion `Complete` für die Nachricht auf. Ist die Ausführung nicht erfolgreich, wird `Abandon` aufgerufen. Wenn die Funktion länger als im `PeekLock`-Timeout angegeben ausgeführt wird, wird die Sperre automatisch erneuert.
+Das SDK empfängt eine Nachricht im `PeekLock` -Modus und ruft `Complete` für die Meldung auf, wenn die Funktion erfolgreich abgeschlossen wird, oder ruft `Abandon` auf, wenn die Funktion fehlschlägt. Wenn das Ausführen der Funktion länger dauert als das `PeekLock`-Zeitlimit, wird die Sperre automatisch erneuert.
 
-Service Bus verwaltet eine eigene Warteschlange für nicht verarbeitete Nachrichten. Deshalb ist weder eine Steuerung noch eine Konfiguration über das Webaufträge-SDK möglich. 
+Service Bus verwaltet eine eigene Warteschlange für nicht verarbeitete Nachrichten. Deshalb ist weder eine Steuerung noch eine Konfiguration über das Webauftrags-SDK möglich. 
 
 ### Zeichenfolgen-Warteschlangennachrichten
 
-Das folgende Codebeispiel liest eine Warteschlangennachricht, die eine Zeichenfolge enthält, und schreibt diese in das Webaufträge-SDK-Dashboard.
+Das folgende Codebeispiel liest eine Warteschlangennachricht, die eine Zeichenfolge enthält, und schreibt diese in das Webauftrags-SDK-Dashboard.
 
 		public static void ProcessQueueMessage([ServiceBusTrigger("inputqueue")] string message, 
 		    TextWriter logger)
@@ -65,11 +58,11 @@ Das folgende Codebeispiel liest eine Warteschlangennachricht, die eine Zeichenfo
 		    logger.WriteLine(message);
 		}
 
-**Hinweis:** Wenn Sie die Warteschlangennachricht in einer Anwendung ohne Verwendung des Webaufträge-SDK schreiben, müssen Sie [BrokeredMessage.ContentType](http://msdn.microsoft.com/de-de/library/microsoft.servicebus.messaging.brokeredmessage.contenttype.aspx) auf "text/plain" festlegen.
+**Hinweis:** Wenn Sie die Warteschlangennachrichten in einer Anwendung erstellen, die das WebJobs-SDK nicht verwendet, legen Sie [BrokeredMessage.ContentType](http://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.contenttype.aspx) auf "text/plain" fest.
 
 ### POCO-Warteschlangennachricht
 
-Das SDK führt eine automatische Deserialisierung der Warteschlangennachricht durch, die für einen POCO-Typ [(Plain Old CLR Object](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)) JSON enthält. Das folgende Codebeispiel liest eine Warteschlangennachricht, die ein  `BlobInformation`-Objekt mit einer  `BlobName`-Eigenschaft enthält:
+Das SDK deserialisiert automatisch Warteschlangennachrichten mit JSON für einen POCO [(Plain Old CLR Object](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object))-Typ. Das folgende Codebeispiel liest eine Warteschlangennachricht, die ein `BlobInformation`-Objekt mit einer `BlobName`-Eigenschaft enthält:
 
 		public static void WriteLogPOCO([ServiceBusTrigger("inputqueue")] BlobInformation blobInfo,
 		    TextWriter logger)
@@ -77,15 +70,15 @@ Das SDK führt eine automatische Deserialisierung der Warteschlangennachricht du
 		    logger.WriteLine("Queue message refers to blob: " + blobInfo.BlobName);
 		}
 
-Codebeispiele zur Verwendung von POCO-Eigenschaften zur Arbeit mit BLOBs und Tabellen in derselben Funktion finden Sie in der [Speicherwarteschlangenversion von diesem Artikel](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#pocoblobs).
+Codebeispiele, die zeigen, wie POCO-Eigenschaften zum Arbeiten mit Blobs und Tabellen in derselben Funktion verwendet werden, finden Sie in der [Speicher-Warteschlangen-Version dieses Artikels](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#pocoblobs).
 
 ### Für ServiceBusTrigger verwendbare Typen
 
-Neben `string` und POCO-Typen können Sie das `ServiceBusTrigger`-Attribut mit einem Bytearray oder einem `BrokeredMessage`-Objekt verwenden.
+Neben `string`- und POCO-  Typen, können Sie das Attribut `ServiceBusTrigger` mit einem Bytearray oder einem `BrokeredMessage`-Objekt verwenden.
 
 ## <a id="create"></a> Erstellen von Service Bus-Warteschlangennachrichten
 
-Zum Schreiben einer Funktion, die eine neue Warteschlangennachricht erstellt, verwenden Sie das  `ServiceBus`-Attribut und übergeben den Warteschlangennamen an den Attributkonstruktor. 
+Um eine Funktion zu schreiben, die eine neue Warteschlangennachricht erstellt, verwenden Sie das Attribut `ServiceBus`, und übergeben Sie den Namen der Warteschlange an den Konstruktor des Attributs. 
 
 
 ### Erstellen einer einzelnen Warteschlangennachricht in einer nicht asynchronen Funktion
@@ -99,10 +92,10 @@ Im folgenden Codebeispiel wird ein Ausgabeparameter zum Erstellen einer neuen Na
 		    outputQueueMessage = queueMessage;
 		}
 
-Der Ausgabeparameter zum Erstellen einer einzelnen Warteschlangennachricht kann einen beliebigen dieser Typen verwenden:
+Der Ausgabeparameter zum Erstellen einer einzelnen Warteschlangennachricht kann einen der folgenden Typen verwenden:
 
-* `string`
-* `byte[]`
+* `Zeichenfolge`
+* `Byte[]`
 * `BrokeredMessage`
 * Ein serialisierbarer POCO-Typ, den Sie definieren. Wird automatisch als JSON serialisiert.
 
@@ -110,7 +103,7 @@ Für Parameter vom POCO-Typ wird bei Beendigung der Funktion immer eine Wartesch
 
 ### Erstellen von mehreren Warteschlangennachrichten in asynchronen Funktionen
 
-Verwenden Sie zum Erstellen mehrerer Nachrichten das Attribut `ServiceBus` mit `ICollector<T>` oder `IAsyncCollector<T>`, wie im folgenden Codebeispiel gezeigt:
+Um mehrere Nachrichten zu erstellen, verwenden Sie das Attribut `ServiceBus` mit `ICollector<T>` oder `IAsyncCollector<T>`, wie im folgenden Codebeispiel gezeigt:
 
 		public static void CreateQueueMessages(
 		    [ServiceBusTrigger("inputqueue")] string queueMessage,
@@ -122,11 +115,11 @@ Verwenden Sie zum Erstellen mehrerer Nachrichten das Attribut `ServiceBus` mit `
 		    outputQueueMessage.Add(queueMessage + "2");
 		}
 
-Jede Warteschlangennachricht wird unmittelbar nach dem Aufruf der `Add`-Methode erstellt.
+Jede Warteschlangennachricht wird erstellt, sobald die Methode  `Add` aufgerufen wird.
 
 ## <a id="topics"></a>Arbeiten mit Service Bus-Themen
 
-Zum Schreiben einer Funktion, die das SDK aufruft, wenn eine Nachricht zu einem Service Bus-Thema empfangen wird, verwenden Sie das `ServiceBusTrigger`-Attribut mit dem Konstruktor, der Themen- und Abonnementname enthält, wie im folgenden Codebeispiel gezeigt:
+Um eine Funktion zu schreiben, die das SDK aufruft, wenn eine Nachricht zu einem Service Bus-Thema empfangen wird, verwenden Sie das Attribut `ServiceBusTrigger` mit dem Konstruktor, der den Namen des Themas und den Abonnementnamen annimmt, wie im folgenden Codebeispiel gezeigt:
 
 		public static void WriteLog([ServiceBusTrigger("outputtopic","subscription1")] string message,
 		    TextWriter logger)
@@ -134,28 +127,25 @@ Zum Schreiben einer Funktion, die das SDK aufruft, wenn eine Nachricht zu einem 
 		    logger.WriteLine("Topic message: " + message);
 		}
 
-Zum Erstellen einer Nachricht zu einem Thema verwenden Sie das `ServiceBus`-Attribut mit einem Themennamen ebenso wie bei Verwendung eines Warteschlangennamens.
+Um eine Nachricht zu einem Thema zu erstellen, verwenden Sie das Attribut `ServiceBus` mit einem Themanamen auf die gleiche Weise wie mit einem Warteschlangennamen.
 
-## <a id="queues"></a>Verwandte Themen im Artikel zu Speicherwarteschlangen
+## <a id="queues"></a>Verwandte Themen, die vom Artikel zu Speicher-Warteschlangen behandelt werden
 
-Informationen zu Webaufträge-SDK-Szenarien, die nicht spezifisch für Service Bus sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](../websites-dotnet-webjobs-sdk-storage-queues-how-to/). 
+Informationen zu Webauftrags-SDK-Szenarien, die nicht spezifisch für Service Bus sind, finden Sie unter [Arbeiten mit Azure-Warteschlangenspeicher mithilfe des WebJobs SDKs](../websites-dotnet-webjobs-sdk-storage-queues-how-to/). 
 
-In diesem Artikel werden unter anderem diese Themen behandelt:
+In diesem Artikel werden die folgenden Themen behandelt:
 
 * Asynchrone Funktionen
 * Mehrere Instanzen
 * Ordnungsgemäßes Herunterfahren
-* Verwenden von Webaufträge-SDK-Attributen im Hauptteil einer Funktion
+* Verwenden von Webauftrags-SDK-Attributen im Hauptteil einer Funktion
 * Festlegen der SDK-Verbindungszeichenfolgen im Code
-* Festlegen von Werten für Webaufträge-SDK-Konstruktorparameter im Code
+* Festlegen von Werten für WebJobs SDK-Konstruktorparametern im Code
 * Manuelles Auslösen einer Funktion
 * Schreiben von Protokollen
 
 ## <a id="nextsteps"></a> Nächste Schritte
 
-In diesem Leitfaden wurden Codebeispiele bereitgestellt, die veranschaulichen, wie gängige Szenarien für die Arbeit mit Azure Service Bus behandelt werden. Weitere Informationen zur Verwendung von Azure-Webaufträgen und dem Webaufträge-SDK finden Sie unter [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
+In dieser Anleitung wurden Codebeispiele bereitgestellt, die veranschaulichen, wie gängige Szenarien für das Arbeiten mit Azure Service Bus bewältigt werden. Weitere Informationen zur Verwendung von Azure-WebJobs und des Webauftrags-SDKs finden Sie unter [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

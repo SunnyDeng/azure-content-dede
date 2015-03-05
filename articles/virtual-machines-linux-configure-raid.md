@@ -1,17 +1,32 @@
-<properties pageTitle="Konfigurieren von Software-RAID auf einem virtuellen Computer unter Linux in Azure" description="Erfahren Sie, wie Sie mdadm zum Konfigurieren von RAID auf Linux in Azure verwenden." services="virtual-machines" documentationCenter="" authors="szarkos" writer="szark" manager="timlt" editor=""/>
+﻿<properties 
+	pageTitle="Konfigurieren von Software-RAID auf einem virtuellen Computer unter Linux in Azure" 
+	description="Erfahren Sie, wie Sie mdadm zum Konfigurieren von RAID unter Linux in Azure verwenden." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="szarkos" 
+	writer="szark" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="09/18/2014" ms.author="szark"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/18/2014" 
+	ms.author="szark"/>
 
 
 
-# Konfigurieren des Software-RAID unter Linux
+# Konfigurieren von Software-RAID unter Linux
 Ein häufiges Szenario ist die Verwendung von Software-RAID auf virtuellen Linux-Computern in Azure, um mehrere angefügte Datenträger als einzelnes RAID-Gerät darzustellen. Dies kann normalerweise angewendet werden, um die Leistung zu verbessern und optimierten Durchsatz im Vergleich zur Verwendung eines einzelnen Datenträgers zu ermöglichen.
 
 
 ## Anfügen von Datenträgern
-In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren.  In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen.  Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Windows Azure-Artikel [Anfügen eines Datenträgers](http://www.windowsazure.com/de-de/documentation/articles/storage-windows-attach-disk/#attachempty).
+In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren.  In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen.  Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Windows Azure-Artikel [Anfügen eines Datenträgers](http://azure.microsoft.com/documentation/articles/storage-windows-attach-disk/#attachempty).
 
->[AZURE.NOTE] Die Größe "ExtraSmall" für virtuelle Computer unterstützt maximal einen angefügten Datenträger pro virtuellem Computer.  Ausführliche Informationen zu den Größen virtueller Computer und der Anzahl der unterstützten Datenträger finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Windows Azure](http://msdn.microsoft.com/de-de/library/windowsazure/dn197896.aspx).
+>[AZURE.NOTE] Die Größe "ExtraSmall" für virtuelle Computer unterstützt maximal einen angefügten Datenträger pro virtuellem Computer.  Ausführliche Informationen zu den Größen virtueller Computer und der Anzahl der unterstützten Datenträger finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure](http://msdn.microsoft.com/library/windowsazure/dn197896.aspx).
 
 
 ## Installieren des mdadm-Dienstprogramms
@@ -36,14 +51,14 @@ In diesem Beispiel erstellen wir eine einzelne Datenträgerpartition unter "/dev
 - Starten Sie "fdisk", um mit dem Erstellen der Partitionen zu beginnen.
 
 		# sudo fdisk /dev/sdc
-		Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
-		Building a new DOS disklabel with disk identifier 0xa34cb70c.
-		Changes will remain in memory only, until you decide to write them.
-		After that, of course, the previous content won't be recoverable.
+		Das Gerät enthält weder eine gültige DOS-Partitionstabelle noch Sun-, SGI- oder OSF-Datenträgerbezeichnungen.
+		Es wird eine neue DOS-Datenträgerbezeichnung mit der Datenträger-ID 0xa34cb70c erstellt.
+		Die Änderungen verbleiben im Arbeitsspeicher, bis Sie sie festschreiben.
+		Danach kann der vorherige Inhalt nicht mehr wiederhergestellt werden.
 
-		WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
-				 switch off the mode (command 'c') and change display units to
-				 sectors (command 'u').
+		WARNUNG: Der DOS-kompatible Modus ist veraltet. Es wird empfohlen, den
+				 Modus auszuschalten (Befehl 'c') und die Anzeigeeinheiten in
+				 Sektoren zu ändern (Befehl 'u').
 
 - Drücken Sie an der Eingabeaufforderung 'n', um eine **n**eue Partition zu erstellen:
 
@@ -60,17 +75,17 @@ In diesem Beispiel erstellen wir eine einzelne Datenträgerpartition unter "/dev
 
 		Partition number (1-4): 1
 
-- Wählen Sie den Startpunkt der neuen Partition aus, oder drücken Sie einfach `<enter>`, um die Standardposition für die Partition zu Beginn des freien Speicherplatzes auf dem Laufwerk zu übernehmen:
+- Wählen Sie den Ausgangspunkt der neuen Partition, oder drücken Sie einfach die `Eingabetaste`, um die Standardeinstellung zu akzeptieren und die Partition am Anfang des freien Speicherplatzes auf dem Laufwerk zu platzieren:
 
 		First cylinder (1-1305, default 1):
 		Using default value 1
 
-- Legen Sie die Größe der Partition fest, z. B. '+10G', um eine 10-Gigabyte-Partition zu erstellen. Oder drücken Sie einfach `<enter>`, um eine einzelne Partition zu erstellen, die das gesamte Laufwerk umfasst:
+- Legen Sie die Größe der Partition fest, z. B. '+10G', um eine 10-Gigabyte-Partition zu erstellen. Oder drücken Sie einfach die `Eingabetaste`, um eine einzelne Partition zu erstellen, die das gesamte Laufwerk umfasst:
 
 		Last cylinder, +cylinders or +size{K,M,G} (1-1305, default 1305): 
 		Using default value 1305
 
-- Ändern Sie anschließend die ID und den Partitions**t**yp von der Standard-ID '83' (Linux) in ID  'fd' (Linux-RAID automatisch):
+- Als Nächstes ändern Sie die ID und den **T**yp der Partition von der Standard-ID '83' (Linux) in ID 'fd' (Linux raid auto):
 
 		Command (m for help): t
 		Selected partition 1
@@ -89,7 +104,7 @@ In diesem Beispiel erstellen wir eine einzelne Datenträgerpartition unter "/dev
 		# sudo mdadm --create /dev/md127 --level 0 --raid-devices 3 \
 		  /dev/sdc1 /dev/sdd1 /dev/sde1
 
-In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät namens **/dev/md127** erstellt. Beachten Sie außerdem, falls diese Datenträger zuvor Teil eines anderen, nicht mehr bestehenden RAID-Arrays waren, dass es nötig sein kann, den Parameter `--force` zum Befehl  `mdadm` hinzuzufügen.
+In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät namens **/dev/md127** erstellt. Beachten Sie außerdem Folgendes: Wenn diese Datenträger zuvor Teil eines anderen außer Kraft gesetzten RAID-Arrays waren, ist es evtl. erforderlich, den Parameter `--force` zum Befehl  `mdadm` hinzuzufügen.
 
 
 2. Erstellen des Dateisystems auf dem neuen RAID-Gerät
@@ -110,35 +125,35 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 	>[AZURE.NOTE] Nach den Änderungen an den SUSE-Systemen kann ein Neustart erforderlich sein.
 
 
-## Hinzufügen des neuen Laufwerks zu /etc/fstab
+## Hinzufügen des neuen Laufwerks zu "/etc/fstab"
 
-**Vorsicht:** Eine falsche Bearbeitung der Datei /etc/fstab könnte zu einem nicht mehr startfähigen System führen. Wenn Sie unsicher sind, finden Sie in der Dokumentation der Verteilung Informationen zur korrekten Bearbeitung dieser Datei. Es wird auch empfohlen, dass vor der Bearbeitung eine Sicherungskopie der Datei /etc/fstab erstellt wird.
+**Vorsicht:** Eine falsche Bearbeitung der Datei "/etc/fstab" könnte zu einem nicht mehr startfähigen System führen. Wenn Sie unsicher sind, finden Sie in der Dokumentation der Verteilung Informationen zur korrekten Bearbeitung dieser Datei. Es wird auch empfohlen, dass vor der Bearbeitung eine Sicherungskopie der Datei "/etc/fstab" erstellt wird.
 
 1. Erstellen Sie den gewünschten Bereitstellungspunkt für das neue Dateisystem, zum Beispiel:
 
 		# sudo mkdir /data
 
-2. Beim Bearbeiten von /etc/fstab sollte die **UUID** verwendet werden, um auf das Dateisystem zu verweisen statt auf den Gerätenamen.  Verwenden Sie das Hilfsprogramm  `blkid`, um die UUID für das neue Dateisystem zu bestimmen:
+2. Beim Bearbeiten von "/etc/fstab" sollte die **UUID** verwendet werden, um auf das Dateisystem zu verweisen statt auf den Gerätenamen.  Verwenden Sie das Hilfsprogramm  `blkid`, um den UUID für das neue Dateisystem zu bestimmen:
 
 		# sudo /sbin/blkid
 		...........
 		/dev/md127: UUID="aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" TYPE="ext4"
 
-3. Öffnen Sie /etc/fstab in einem Texteditor, und fügen Sie einen Eintrag für das neue Dateisystem hinzu, z. B.:
+3. Öffnen Sie "/etc/fstab" in einem Texteditor, und fügen Sie einen Eintrag für das neue Dateisystem hinzu, z. B.:
 
 		UUID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  /data  ext4  defaults  0  2
 
-	Oder für **SLES und openSUSE**:
+	Oder auf **SLES und OpenSUSE**:
 
 		/dev/disk/by-uuid/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  /data  ext3  defaults  0  2
 
-	Speichern und schließen Sie anschließend /etc/fstab.
+	Speichern und schließen Sie anschließend "/etc/fstab".
 
-4. Testen Sie, ob der Eintrag für /etc/fstab korrekt ist:
+4. Testen Sie, ob der Eintrag für "/etc/fstab" korrekt ist:
 
 		# sudo mount -a
 
-	Wenn dieser Befehl zu einer Fehlermeldung führt, überprüfen Sie die Syntax in der Datei /etc/fstab.
+	Wenn dieser Befehl zu einer Fehlermeldung führt, überprüfen Sie die Syntax in der Datei "/etc/fstab".
 
 	Führen Sie nun den Befehl  `mount` aus, um sicherzustellen, dass das Dateisystem eingebunden wurde:
 
@@ -156,8 +171,7 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 
 	Zusätzlich zu den oben angegebenen Parametern kann der Kernel-Parameter `bootdegraded=true` das Starten des Systems ermöglichen, selbst wenn das RAID beschädigt oder beeinträchtigt ist, weil beispielsweise unabsichtlich ein Datenträger aus dem virtuellen Computer entfernt wurde. Normalerweise kann dies auch den Start des Systems verhindern.
 
-	Informationen zum Bearbeiten der Kernel-Parameter erhalten Sie in der Dokumentation der Verteilung. Beispielsweise können diese Parameter in vielen Verteilungen (CentOS, Oracle Linux, SLES 11) der Datei "/boot/grub/menu.lst`" manuell hinzugefügt werden.  In Ubuntu kann dieser Parameter der Variablen  `GRUB_CMDLINE_LINUX_DEFAULT` unter "/etc/default/grub" hinzugefügt werden.
+	Informationen zum Bearbeiten der Kernel-Parameter erhalten Sie in der Dokumentation der Verteilung. Beispielsweise können diese Parameter in vielen Verteilungen (CentOS, Oracle Linux, SLES 11) manuell zur Datei "`/boot/grub/menu.lst`" hinzugefügt werden.  In Ubuntu kann dieser Parameter der Variablen  `GRUB_CMDLINE_LINUX_DEFAULT` unter "/etc/default/grub" hinzugefügt werden.
 
 
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

@@ -1,4 +1,4 @@
-
+﻿
 Weitere Informationen zu Datenträgern finden Sie unter [Informationen zu Datenträgern virtueller Computer in Azure](http://go.microsoft.com/fwlink/p/?LinkId=403697).
 
 ##<a id="attachempty"></a>Gewusst wie: Anfügen eines leeren Datenträgers
@@ -8,12 +8,15 @@ Eine einfachere Methode zum Hinzufügen eines Datenträgers besteht im Anfügen 
 
 2. Klicken Sie in der Befehlsleiste auf **Anfügen**, und klicken Sie dann auf **Leeren Datenträger anfügen**.
 
-	![Anfügen eines leeren Datenträgers](./media/howto-attach-disk-window-linux/AttachEmptyDisk.png)
+
+	![Attach an empty disk](./media/howto-attach-disk-window-linux/AttachEmptyDisk.png)
 
 3.	Das Dialogfeld **Leeren Datenträger anfügen** wird angezeigt.
 
-	![Einen neuen leeren Datenträger anfügen](./media/howto-attach-disk-window-linux/AttachEmptyDetail.png)
 
+	![Attach a new empty disk](./media/howto-attach-disk-window-linux/AttachEmptyDetail.png)
+
+ 
 	Gehen Sie wie folgt vor:
 
 	- Übernehmen Sie in **Dateinamen** den Standardnamen, oder geben Sie einen anderen Namen für die VHD-Datei ein, die für den Datenträger verwendet wird. Der Datenträger verwendet einen automatisch generierten Namen, selbst wenn Sie einen anderen Namen für die VHD-Datei eingeben.
@@ -24,21 +27,24 @@ Eine einfachere Methode zum Hinzufügen eines Datenträgers besteht im Anfügen 
 
 4.	Nachdem der Datenträger erstellt und angefügt ist, wird er im Dashboard des virtuellen Computers aufgeführt.
 
-	![Leerer Datenträger erfolgreich angefügt](./media/howto-attach-disk-window-linux/AttachEmptySuccess.png)
+	![Empty data disk successfully attached](./media/howto-attach-disk-window-linux/AttachEmptySuccess.png)
 
 ##<a id="attachexisting"></a>Gewusst wie: Anfügen eines vorhandenen Datenträgers
 
-Zum Anfügen eines vorhandenen Datenträgers wird eine VHD-Datei im Speicherkonto benötigt. Verwenden Sie das Cmdlet [Add-AzureVhd],(http://go.microsoft.com/FWLink/p/?LinkID=391684) um die VHD-Datei in das Speicherkonto hochzuladen. Nachdem Sie eine VHD-Datei erstellt und hochgeladen haben, können Sie sie an einen virtuellen Computer anfügen. 
+Zum Anfügen eines vorhandenen Datenträgers wird eine VHD-Datei im Speicherkonto benötigt. Verwenden Sie das Cmdlet [Add-AzureVhd](http://go.microsoft.com/FWLink/p/?LinkID=391684), um die VHD-Datei in das Speicherkonto hochzuladen. Nachdem Sie eine VHD-Datei erstellt und hochgeladen haben, können Sie sie an einen virtuellen Computer anfügen. 
 
 1. Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den betreffenden virtuellen Computer aus.
 
 2. Klicken Sie auf der Befehlsleiste auf **Anfügen**, und wählen Sie dann **Datenträger anfügen**.
 
-	![Datenträger anfügen](./media/howto-attach-disk-window-linux/AttachExistingDisk.png)
+
+	![Attach data disk](./media/howto-attach-disk-window-linux/AttachExistingDisk.png)
 
 	Das Dialogfeld **Datenträger anfügen** wird angezeigt.
 
-	![Details zum Datenträger eingeben](./media/howto-attach-disk-window-linux/AttachExistingDetail.png)
+
+
+	![Enter data disk details](./media/howto-attach-disk-window-linux/AttachExistingDetail.png)
 
 3. Wählen Sie den Datenträger aus, den Sie an den virtuellen Computer anfügen möchten.
 
@@ -46,12 +52,13 @@ Zum Anfügen eines vorhandenen Datenträgers wird eine VHD-Datei im Speicherkont
  
 5.	Nachdem der Datenträger angefügt ist, wird er im Dashboard des virtuellen Computers aufgeführt.
 
-	![Datenträger erfolgreich angefügt](./media/howto-attach-disk-window-linux/AttachExistingSuccess.png)
 
- > [AZURE.NOTE] 
+	![Data disk successfully attached](./media/howto-attach-disk-window-linux/AttachExistingSuccess.png)
+
+> [AZURE.NOTE] 
 > Wenn Sie einen Datenträger angefügt haben, müssen Sie sich auf dem virtuellen Computer anmelden und den Datenträger initialisieren, damit der virtuelle Computer ihn zur Speicherung verwenden kann.
 
 
 
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

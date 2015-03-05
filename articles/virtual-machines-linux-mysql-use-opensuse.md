@@ -1,14 +1,28 @@
-﻿<properties pageTitle="Installieren von MySQL auf einem virtuellen Computer mit OpenSUSE Linux in Azure" description="Erfahren Sie mehr über die Installation von MySQL auf einem virtuellen Computer in Azure." services="virtual-machines" documentationCenter="" authors="KBDAzure" manager="timlt" editor=""/>
+﻿<properties 
+	pageTitle="Installieren von MySQL auf einem virtuellen Computer mit OpenSUSE Linux in Azure" 
+	description="Erfahren Sie mehr über die Installation von MySQL auf einem virtuellen Computer in Azure." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="KBDAzure" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="12/12/2014" ms.author="kathydav"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="12/12/2014" 
+	ms.author="kathydav"/>
 
 # Installieren von MySQL auf einem virtuellen Computer mit OpenSUSE Linux in Azure
 
 [MySQL][MySQL] ist eine beliebte Open-Source-SQL-Datenbank. In diesem Lernprogramm wird Folgendes erläutert:
 
 - Verwenden des [Azure-Verwaltungsportals][AzurePortal] zum Erstellen eines virtuellen Computers mit OpenSUSE Linux von einem über Azure verfügbaren Image.
-- Verbinden des virtuellen Computers über SSH oder PuTTY
-- Installieren von MySQL auf dem virtuellen Computer
+- Gewusst wie: Verbinden des virtuellen Computers über SSH oder PuTTY
+- Gewusst wie: Installieren von MySQL auf dem virtuellen Computer
 
 [AZURE.INCLUDE [antares-iaas-signup-iaas](../includes/antares-iaas-signup-iaas.md)]
 
@@ -27,7 +41,4 @@ In diesem Lernprogramm haben Sie gelernt, einen virtuellen Computer mit OpenSUSE
 [MySQL]: http://www.mysql.com
 [AzurePortal]: http://manage.windowsazure.com
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

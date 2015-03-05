@@ -1,20 +1,34 @@
-﻿<properties pageTitle="Tomcat auf einem virtuellen Computer - Azure-Lernprogramm" description="Erfahren Sie, wie Sie einen virtuellen Computer unter Windows erstellen und den Computer konfigurieren können, damit darauf ein Apache Tomcat-Anwendungsserver ausgeführt wird." services="virtual-machines" documentationCenter="java" authors="rmcmurray" manager="wpickett" editor="mollybos"/>
+﻿<properties 
+	pageTitle="Tomcat auf einem virtuellen Computer - Azure-Lernprogramm" 
+	description="Erfahren Sie, wie Sie einen virtuellen Computer unter Windows erstellen und den Computer konfigurieren können, damit darauf ein Apache Tomcat-Anwendungsserver ausgeführt wird." 
+	services="virtual-machines" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-windows" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vm-windows" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/25/2014" 
+	ms.author="robmcm"/>
 
-# Ausführen eines Java-Anwendungsservers auf einem virtuellen Computer
+# Gewusst wie: Ausführen eines Java-Anwendungsservers auf einem virtuellen Computer
 
 Mit Azure können Sie einen virtuellen Computer nutzen, um Serverfunktionen bereitzustellen. Beispielsweise kann ein unter Azure ausgeführter virtueller Computer so konfiguriert werden, dass er einen Java-Anwendungsserver wie Apache Tomcat hostet. Nachdem Sie diesen Leitfaden durchgearbeitet haben, werden Sie besser verstehen, wie ein virtueller Computer unter Azure erstellt wird und wie er für die Ausführung eines Java-Anwendungsservers konfiguriert wird.
 
 Sie erhalten Informationen zu folgenden Themen:
 
 * Erstellen eines virtuellen Computers, auf dem bereits ein JDK installiert ist.
-* Remoteanmeldung bei Ihrem virtuellen Computer.
-* Installieren eines Java-Anwendungsservers auf dem virtuellen Computer.
-* Erstellen eines Endpunkts für den virtuellen Computer.
-* Öffnen eines Ports in der Firewall für den Anwendungsserver.
+* Gewusst wie: Remoteanmeldung bei Ihrem virtuellen Computer
+* Gewusst wie: Installieren eines Java-Anwendungsservers auf dem virtuellen Computer
+* Gewusst wie:  Erstellen eines Endpunkts für den virtuellen Computer
+* Gewusst wie: Öffnen eines Ports in der Firewall für den Anwendungsserver
 
-Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtuellen Computer installiert. Das Ergebnis des Installationsvorgangs ist eine Tomcat-Installation, die der Folgenden ähnelt.
+Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtuellen Computer installiert. Das Ergebnis des Installationsvorgangs ist eine Tomcat-Installation, die der folgenden ähnelt.
 
 ![Virtual machine running Apache Tomcat][virtual_machine_tomcat]
 
@@ -27,20 +41,20 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
 3. Wählen Sie im Dialogfeld **Image des virtuellen Computers auswählen** die Option **JDK 7 Windows Server 2012** aus.
 Beachten Sie, dass **JDK 6 Windows Server 2012** verfügbar ist, wenn Sie ältere Anwendungen haben, die noch nicht in JDK 7 ausgeführt werden können.
 4. Klicken Sie auf **Weiter**.
-5. Gehen Sie im Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
+5. Im Dialogfeld <strong>"Konfiguration des virtuellen Computers"</strong> :
     1. Geben Sie einen Namen für den virtuellen Computer an.
     2. Geben Sie die Größe für den virtuellen Computer an.
-    3. Geben Sie im Feld **Benutzername** einen Namen für den Administrator ein. Merken Sie sich diesen Namen und das als nächstes eingegebene Kennwort. Sie benötigen diese Daten, wenn Sie sich von einem Remotestandort aus an dem virtuellen Computer anmelden.
-    4. Geben Sie ein Kennwort in das Feld **Neues Kennwort** ein und geben Sie es erneut in das Feld **Neues Kennwort bestätigen** ein. Dies ist das Kennwort für das Administratorkonto.
+    3. Geben Sie im Feld **Benutzername** einen Namen für den Administrator ein. Merken Sie sich diesen Namen und das als Nächstes eingegebene Kennwort. Sie benötigen diese Daten, wenn Sie sich von einem Remotestandort aus an dem virtuellen Computer anmelden.
+    4. Geben Sie ein Kennwort in das Feld **Neues Kennwort** ein, und geben Sie es erneut in das Feld **Neues Kennwort bestätigen** ein. Dies ist das Kennwort für das Administratorkonto.
     5. Klicken Sie auf **Weiter**.
-6. Gehen Sie im folgenden Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
-    1. Verwenden Sie für den **Cloud-Dienst** die Standardeinstellung **Neuen Cloud-Dienst erstellen**.
-    2. Der Wert bei **DNS-Name des Cloud-Diensts** muss auf cloudapp.net eindeutig sein. Ändern Sie wenn nötig diesen Wert, sodass Azure angibt, dass er eindeutig ist.
-    2. Geben Sie eine Region, eine Affinitätsgruppe oder ein virtuelles Netzwerk an. Geben Sie für dieses Lernprogramm als Region **West-USA** an.
+6. Im nächsten Dialogfeld <strong>"Konfiguration des virtuellen Computers"</strong> :
+    1. Verwenden Sie für **Clouddienst** die Standardeinstellung **Neuen Clouddienst erstellen**.
+    2. Der Wert bei **DNS-Name des Clouddiensts** muss auf cloudapp.net eindeutig sein. Ändern Sie, wenn nötig, diesen Wert, sodass Azure angibt, dass er eindeutig ist.
+    2. Geben Sie eine Region, eine Affinitätsgruppe oder ein virtuelles Netzwerk an. Geben Sie für dieses Lernprogramm als Region **USA (West)** an.
     2. Wählen Sie unter **Speicherkonto** die Option **Automatisch generiertes Speicherkonto verwenden** aus.
     3. Wählen Sie unter **Verfügbarkeitsgruppe** die Option **(Keine)** aus.
     4. Klicken Sie auf **Weiter**.
-7. Gehen Sie im letzten Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
+7. Im abschließenden Dialogfeld <strong>"Konfiguration des virtuellen Computers"</strong> :
     1. Akzeptieren Sie die Standardeinträge für Endpunkte.
     2. Klicken Sie auf **Fertig stellen**.
 
@@ -49,9 +63,9 @@ Beachten Sie, dass **JDK 6 Windows Server 2012** verfügbar ist, wenn Sie älter
 1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Virtuelle Computer**.
 3. Klicken Sie auf den Namen des virtuellen Computers, bei dem Sie sich anmelden möchten.
-4. Nachdem der virtuelle Computer gestartet wurde werden unten auf der Seite über ein Popupmenü Verbindungen zugelassen.
+4. Nachdem der virtuelle Computer gestartet wurde, werden unten auf der Seite über ein Popupmenü Verbindungen zugelassen.
 5. Klicken Sie auf **Verbinden**.
-6. Befolgen Sie die Anweisungen, um eine Verbindung mit dem virtuellen Computer herzustellen. Diese sollte das Speichern oder Öffnen der RDP-Datei beinhalten, die die Verbindungsdetails enthält. Sie müssen möglicherweise den url:port als letzten Teil der ersten Zeile der RDP-Datei kopieren und ihn in eine Anwendung für die Remoteanmeldung einfügen.
+6. Befolgen Sie die Anweisungen, um eine Verbindung mit dem virtuellen Computer herzustellen. Diese sollte das Speichern oder Öffnen der .rdp-Datei beinhalten, die die Verbindungsdetails enthält. Sie müssen möglicherweise den url:port als letzten Teil der ersten Zeile der .rdp-Datei kopieren und ihn in eine Anwendung für die Remoteanmeldung einfügen.
 
 ## So installieren Sie einen Java-Anwendungsserver auf dem virtuellen Computer
 
@@ -78,7 +92,7 @@ Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen
 4. Klicken Sie auf **Endpunkte**.
 5. Klicken Sie auf **Hinzufügen**.
 6. Stellen Sie im Dialogfeld **Endpunkt hinzufügen** sicher, dass das Kontrollkästchen **Standalone-Endpunkt hinzufügen** aktiviert ist, und klicken Sie dann auf **Weiter**.
-7. Gehen Sie im Dialogfeld <strong>Details des neuen Endpunkts</strong> wie folgt vor:
+7. Im Dialogfeld <strong>"Neue Endpunktdetails"</strong> :
     1. Geben Sie einen Namen für den Endpunkt an. Beispiel: **HttpIn**.
     2. Geben Sie als Protokoll **TCP** an.
     3. Geben Sie als öffentlichen Port **80** an.
@@ -110,11 +124,11 @@ Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen
 
  ![New inbound rule profile][NewRuleProfile]
 
-10. Geben Sie einen Namen für die Regel an, wie beispielsweise **HttpIn** (der Name der Regel muss jedoch nicht mit dem Namen des Endpunkts übereinstimmen). Klicken Sie anschließend auf **Fertig stellen**.  
+10. Geben Sie einen Namen für die Regel an, wie beispielsweise **HttpIn**. (Der Name der Regel muss jedoch nicht mit dem Namen des Endpunkts übereinstimmen.) Klicken Sie anschließend auf **Fertig stellen**.  
 
  ![New inbound rule name][NewRuleName]
 
-An dieser Stelle sollte es nun möglich sein, die Tomcat-Website über einen externen Browser anzuzeigen. Dabei wird eine URL in der Form **http://*your\_DNS\_name*.cloudapp.net** verwendet, wobei ***your\_DNS\_name*** der DNS-Name ist, den Sie beim Erstellen des virtuellen Computers angegeben haben.
+An diesem Punkt sollte die Tomcat-Website jetzt über einen externen Browser sichtbar sein, unter Verwendung einer URL im Format **http://*Ihr DNS-Name*.cloudapp.net**, wobei ***Ihr DNS-Name*** der DNS-Name ist, den Sie beim Erstellen des virtuellen Computers angegeben haben.
 
 ## Überlegungen zum Lebenszyklus von Anwendungen
 * Sie können Ihr eigenes Webarchiv für Anwendungen (WAR) erstellen und im Ordner **webapps** hinzufügen. Erstellen Sie beispielsweise ein dynamisches JSP-Basiswebprojekt (Java Service Page), und exportieren Sie dieses als WAR-Datei. Kopieren Sie dann die WAR-Datei in den Apache Tomcat-Ordner **webapps** auf dem virtuellen Computer, und führen Sie das Projekt in einem Browser aus.
@@ -122,10 +136,10 @@ An dieser Stelle sollte es nun möglich sein, die Tomcat-Website über einen ext
 
     ![Setting a service to start automatically][service_automatic_startup]
 
-    Der automatische Start von Tomcat bietet den Vorteil, dass der Dienst wieder gestartet wird, wenn ein Neustart des virtuellen Computer erfolgt (zum Beispiel nach der Installation von Softwareupdates, die einen Neustart erfordern).
+    Der automatische Start von Tomcat bietet den Vorteil, dass der Dienst wieder gestartet wird, wenn ein Neustart des virtuellen Computers erfolgt (zum Beispiel nach der Installation von Softwareupdates, die einen Neustart erfordern).
 
 ## Nächste Schritte
-* Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Servicebus und SQL-Datenbank, die Sie möglicherweise zusammen mit Ihren Java-Anwendungen verwenden möchten, finden Sie unter <http://www.windowsazure.com/de-de/develop/java/>.
+* Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Service Bus und SQL-Datenbank, die Sie möglicherweise zusammen mit Ihren Java-Anwendungen verwenden möchten, finden Sie unter <http://azure.microsoft.com/develop/java/>.
 
 [virtual_machine_tomcat]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
 
@@ -146,7 +160,4 @@ An dieser Stelle sollte es nun möglich sein, die Tomcat-Website über einen ext
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

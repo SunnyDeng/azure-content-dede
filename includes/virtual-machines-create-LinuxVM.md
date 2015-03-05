@@ -1,7 +1,7 @@
 ﻿1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
 Klicken Sie in der Befehlsleiste auf **Neu**.
 
-2. Klicken Sie auf **Virtueller Computer** und dann auf **From Gallery**.
+2. Klicken Sie auf **Virtueller Computer** und dann auf **Aus Katalog**.
 
 3. Wählen Sie unter **Abbild auswählen** ein Abbild aus einer der Listen aus. (Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.) Klicken Sie auf den Pfeil, um fortzufahren.
 
@@ -25,10 +25,10 @@ Klicken Sie in der Befehlsleiste auf **Neu**.
 
 13. Wählen Sie außerdem unter **Verfügbarkeitsgruppe** für dieses Tutorial die Standardeinstellung **Keine**. 
 
-14.	Prüfen Sie unter **Endpunkte** den automatisch erstellten Endpunkt, um Secure Shell-Verbindungen (SSH) zu dem virtuellen Computer zuzulassen. (Endpunkte ermöglichen Ressourcen im Internet oder anderen virtuellen Netzwerken die Kommunikation mit einem virtuellen Computer.) Sie können jetzt weitere Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](http://azure.microsoft.com/de-de/documentation/articles/virtual-machines-set-up-endpoints/).
+14.	Prüfen Sie unter **Endpunkte** den automatisch erstellten Endpunkt, um Secure Shell-Verbindungen (SSH) zu dem virtuellen Computer zuzulassen. (Endpunkte ermöglichen Ressourcen im Internet oder anderen virtuellen Netzwerken die Kommunikation mit einem virtuellen Computer.) Sie können jetzt weitere Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](http://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/).
 
 15.  Prüfen Sie unter **VM-Agent** die verfügbaren Erweiterungen. Diese Erweiterungen bieten verschiedene Features, die die Verwendung und Verwaltung eines virtuellen Computers vereinfachen. Details finden Sie im Thema zu den [Azure-VM-Erweiterungen](http://go.microsoft.com/FWLink/p/?LinkID=390493). 
 
 
 Nachdem Azure den virtuellen Computer und den Cloud-Dienst erstellt hat, führt das Verwaltungsportal den neuen virtuellen Computer unter **Virtuelle Computer** und den Cloud-Dienst unter **Cloud-Dienste** auf. Sowohl der virtuelle Computer als auch der Clouddienst werden automatisch gestartet.
-<!--HONumber=42-->
+<!--HONumber=45--> 

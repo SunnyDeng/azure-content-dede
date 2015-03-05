@@ -1,7 +1,21 @@
-<properties pageTitle="Python-Web-App mit Django - Azure-Lernprogramm" description="In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website auf Azure mithilfe eines virtuellen Computers mit Windows Server 2012 R2 Datacenter hosten." services="virtual-machines" documentationCenter="python" authors="huguesv" manager="wpickett" editor=""/>
+﻿<properties 
+	pageTitle="Python-Web-App mit Django - Azure-Lernprogramm" 
+	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website in Azure mithilfe eines virtuellen Computers mit Windows Server 2012 R2 Datacenter hosten." 
+	services="virtual-machines" 
+	documentationCenter="python" 
+	authors="huguesv" 
+	manager="wpickett" 
+	editor=""/>
 
 
-<tags ms.service="virtual-machines" ms.workload="web" ms.tgt_pltfrm="vm-windows" ms.devlang="python" ms.topic="article" ms.date="09/25/2014" ms.author="huvalo"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vm-windows" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="02/05/2015" 
+	ms.author="huvalo"/>
 
 
 
@@ -32,26 +46,25 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 1. Befolgen Sie die [hier][portal-vm] aufgeführten Anweisungen, um einen virtuellen Azure-Computer der  *Windows Server 2012 R2 Datacenter*-Verteilung zu erstellen.
 
 1. Weisen Sie Azure an, den Port **80**-Datenverkehr aus dem Web an Port **80** auf dem virtuellen Computer zu leiten.
- - Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte  *ENDPUNKTE*.
- - Klicken Sie unten auf der Seite auf  *HINZUFÜGEN*.
+ - Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte  *ENDPOINTS*.
+ - Klicken Sie unten auf der Seite auf  *ADD*.
 	![add endpoint](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png)
 
- - Öffnen Sie  *ÖFFENTLICHER PORT 80* des  *TCP*-Protokolls als  *PRIVATER PORT 80*.
+ - Öffnen Sie den  *PUBLIC PORT 80* des  *TCP*-Protokolls als  *PRIVATE PORT 80*.
 ![][port80]
-1. Klicken Sie auf der Registerkarte  *DASHBOARD* auf  *Verbinden*, um sich unter Verwendung von  *Remotedesktop* beim neu erstellten virtuellen Azure-Computer remote anzumelden.  
+1. Klicken Sie auf der Registerkarte  *DASHBOARD* auf  *CONNECT*, um sich unter Verwendung von  *Remote Desktop* beim neu erstellten virtuellen Azure-Computer remote anzumelden.  
 
-**Wichtiger Hinweis:** Für alle nachfolgend aufgeführten Anweisungen müssen Sie ordnungsgemäß beim virtuellen Computer angemeldet sein und Befehle dort anstelle von Ihrem lokalen Computer ausgeben.
+**Wichtiger Hinweis:** Für alle nachfolgend aufgeführten Anweisungen müssen Sie ordnungsgemäß beim virtuellen Computer angemeldet sein und Befehle dort anstelle von Ihrem lokalen Computer ausgeben. 
 
 ## <a id="setup"> </a>Einrichten von Python und Django
 
-**Hinweis:** Für den Download mithilfe von Internet Explorer müssen Sie möglicherweise die erweiterten Sicherheitseinstellungen für Internet Explorer ("Start > Verwaltung > Server-Manager > Lokaler Server", dann auf **Verstärkte Sicherheitskonfiguration für IE konfigurieren** klicken, die Einstellung auf "Aus" festlegen) konfigurieren.
+**Hinweis:** Für den Download mithilfe von Internet Explorer müssen Sie möglicherweise die erweiterten Sicherheitseinstellungen für Internet Explorer konfigurieren ("Start > Verwaltung > Server-Manager > Lokaler Server", Klicken auf **Verstärkte Sicherheitskonfiguration für IE konfigurieren** und Festlegen der Einstellung auf "Aus").
 
-1. Installieren Sie den [Webplattform-Installer][].
+1. Installieren Sie [Webplattform-Installer][].
 1. Installieren Sie Python und WFastCGI mit dem Webplattform-Installer.  Dadurch wird wfastcgi.py in Ihrem Python-Skriptordner installiert.
 	1. Starten Sie den Webplattform-Installer.
 	1. Geben Sie "WFastCGI" in der Suchleiste ein. 
 	1. Wählen Sie den Eintrag "WFactCGI" für die Python-Version aus, die Sie verwenden möchten (2.7 oder 3.4).  Beachten Sie, dass dadurch Python als eine Abhängigkeit von WFastCGI installiert wird. 
-1. Wenn Sie Python 2.7 installiert haben, [befolgen Sie diese Anweisungen zum manuellen Installieren von pip](https://pip.pypa.io/en/latest/installing.html) (bei Python 3.4 ist pip bereits installiert).
 1. Installieren Sie Django mit pip.
 
     Python 2.7:
@@ -159,7 +172,7 @@ Führen Sie diese Befehle nur dann aus, wenn Sie Python 3.4 verwenden.
 
 
 
-1.  Erstellen Sie eine neue Datei namens **views.py** in im Verzeichnis  *C:\inetpub\wwwroot\helloworld\helloworld*. Diese enthält die Ansicht, mit der die "Hello World"-Seite generiert wird. Starten Sie den Editor, und geben Sie Folgendes ein:
+1.  Erstellen Sie eine neue Datei namens **views.py** im Verzeichnis  *C:\inetpub\wwwroot\helloworld\helloworld*. Diese enthält die Ansicht, mit der die "Hello World"-Seite generiert wird. Starten Sie den Editor, und geben Sie Folgendes ein:
 		
 		from django.http import HttpResponse
 		def home(request):
@@ -190,5 +203,4 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 [Webplattform-Installer]: http://www.microsoft.com/web/downloads/platform.aspx
 
 
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

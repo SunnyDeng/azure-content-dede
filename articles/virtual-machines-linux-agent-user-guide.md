@@ -1,32 +1,46 @@
-﻿<properties pageTitle="Benutzerhandbuch für Linux-Agent für Azure" description="Erfahren Sie, wie Sie den Linux-Agent (waagent) zum Verwalten der Interaktion Ihres virtuellen Computers mit Azure Fabric Controller installieren und konfigurieren." services="virtual-machines" documentationCenter="" authors="szarkos" manager="timlt" editor=""/>
+﻿<properties 
+	pageTitle="Benutzerhandbuch für Linux-Agent für Azure" 
+	description="Erfahren Sie, wie Sie den Linux-Agent (waagent) zum Verwalten der Interaktion Ihres virtuellen Computers mit Azure Fabric Controller installieren und konfigurieren." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="szarkos" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-linux" ms.devlang="na" ms.topic="article" ms.date="10/20/2014" ms.author="szarkos"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/20/2014" 
+	ms.author="szarkos"/>
 
 
 
 
 
-#Benutzerhandbuch für Azure Linux-Agent
+#Benutzerhandbuch für Azure Linux Agent
 
 ##Einführung
 
-Der Azure Linux-Agent (waagent) verwaltet die Interaktion eines virtuellen Computers mit dem Azure Fabric Controller. Er tut Folgendes:
+Der Azure Linux Agent (waagent) verwaltet die Interaktion eines virtuellen Computers mit dem Azure Fabric Controller. Er tut Folgendes:
 
 * **Image-Bereitstellung**
   - Erstellen eines Benutzerkontos
   - Konfigurieren der SSH-Authentifizierungstypen
   - Bereitstellen von öffentlichen SSH-Schlüsseln und -Schlüsselpaaren
-  - Festlegen des Hostnamens
-  - Veröffentlichen des Hostnamens beim Plattform-DNS
-  - Mitteilen des SSH-Hostschlüssel-Fingerabdrucks an die Plattform
-  - Verwalten des Ressourcendatenträgers
-  - Formatieren und Bereitstellen des Ressourcendatenträgers
-  - Konfigurieren von Auslagerungsbereich
+  - Legt den Hostnamen fest
+  - Veröffentlicht den Hostnamen beim Plattform-DNS
+  - Meldet den SSH-Hostschlüssel-Fingerabdruck an die Plattform
+  - Verwaltet den Ressourcendatenträger
+  - Formatiert und stellt den Ressourcendatenträger bereit
+  - Konfiguriert den Auslagerungsbereich
 * **Netzwerk**
-  - Verwalten von Routen zur Verbesserung der Kompatibilität mit Plattform-DHCP-Servern
-  - Sicherstellen der Stabilität des Netzwerkschnittstellennamens
+  - Verwaltet von Routen zur Verbesserung der Kompatibilität mit Plattform-DHCP-Servern
+  - Stellt die Stabilität des Netzwerkschnittstellennamens sicher
 * **Kernel**
-  - Konfiguriert einen virtuellen NUMA
+  - Konfiguriert ein virtuelles NUMA
   - Verbraucht Hyper-V-Entropie für /dev/random
   - Konfiguriert SCSI-Zeitüberschreitungen für das Stammgerät (das auch remote sein kann)
 * **Diagnose**
@@ -40,11 +54,11 @@ Der Informationsfluss von der Plattform zum Agenten erfolgt über zwei Kanäle:
 
 * Über einen TCP-Endpunkt, der eine REST-API verfügbar macht, um die Bereitstellungs- und Topologiekonfiguration abzurufen.
 
-###Beziehen des Linux-Agent
+###Beziehen des Linux-Agenten
 Sie können den neuesten Linux-Agent direkt von folgenden Quellen beziehen:
 
-- [von den verschiedenen Verteilungsanbietern, die Linux auf Azure unterstützen](http://support.microsoft.com/kb/2805216)
-- oder aus dem [Github Open Source Repository für den Azure Linux-Agent](https://github.com/WindowsAzure/WALinuxAgent)
+- [Verschiedene Verteilungsanbieter, die Linux in Azure unterstützen](http://support.microsoft.com/kb/2805216)
+- oder aus dem [Github-Open-Source-Repository für den Azure Linux Agent](https://github.com/WindowsAzure/WALinuxAgent)
 
 
 ###Unterstützte Linux-Verteilungen
@@ -75,7 +89,7 @@ Waagent erfordert zur ordnungsgemäßen Funktion bestimmte Systempakete:
 
 ##Installation
 
-Für Installation und Upgrades des Azure Linux-Agent sollte nach Möglichkeit ein RPM- oder DEB-Paket aus dem Paket-Repository der jeweiligen Verteilungen installiert werden.
+Für Installation und Upgrades des Azure Linux Agent sollte nach Möglichkeit ein RPM- oder DEB-Paket aus dem Paket-Repository der jeweiligen Verteilungen installiert werden.
 
 Bei einer manuellen Installation kopieren Sie waagent in das Verzeichnis "/usr/sbin/waagent", und führen Sie den folgenden Befehl zur Installation aus: 
 
@@ -107,7 +121,7 @@ Die Protokolldatei des Agenten wird in "/var/log/waagent.log" gespeichert.
 
  * Erkennt die Kernelversion und wendet bei Bedarf die VNUMA-Problemumgehung an
 
- * Verschiebt Udev-Regeln, die mit der Netzwerkfunktion (/lib/udev/rules.d/75-persistent-net-generator.rules, /etc/udev/rules.d/70-persistent-net.rules) to /var/lib/waagent/ in Konflikt geraten können.  
+ * Verschiebt udev-Regeln, die einen Konflikt mit der Netzwerkfunktion (/lib/udev/rules.d/75-persistent-net-generator.rules, /etc/udev/rules.d/70-persistent-net.rules) verursachen könnten, in "/var/lib/waagent/"  
 
 - uninstall: Entfernt waagent und zugehörige Dateien
  * Hebt die Registrierung des Initialisierungsskripts im System auf und löscht das Skript
@@ -119,11 +133,11 @@ Die Protokolldatei des Agenten wird in "/var/log/waagent.log" gespeichert.
  * Die automatische Wiederherstellung der VNUMA-Problemumgehung wird nicht unterstützt; bearbeiten Sie ggf. die GRUB-Konfigurationsdatei manuell, um NUMA erneut zu aktivieren.
 
 - deprovision: Versucht, das System zu bereinigen und für eine erneute Bereitstellung vorzubereiten. Bei diesem Vorgang wird Folgendes gelöscht:
- * Alle SSH-Hostschlüssel (sofern Provisioning.RegenerateSshHostKeyPair in der Konfigurationsdatei auf "y" festgelegt ist)
+ * Alle SSH-Hostschlüssel (sofern Provisioning.RegenerateSshHostKeyPair in der Konfigurationsdatei auf "j" festgelegt ist)
 
- * Namenserverkonfiguration in "/etc/resolv.conf"
+ * Namensserverkonfiguration in "/etc/resolv.conf"
 
- * Stammkennwort aus "/etc/shadow" (sofern Provisioning.DeleteRootPassword in der Konfigurationsdatei auf "y" festgelegt ist)
+ * Stammkennwort aus "/etc/shadow" (sofern Provisioning.DeleteRootPassword in der Konfigurationsdatei auf "j" festgelegt ist)
 
  * Zwischengespeicherte DHCP-Clientleases
 
@@ -170,91 +184,91 @@ Nachfolgend sehen Sie ein Beispiel einer Konfigurationsdatei:
 
 Die verschiedenen Konfigurationsoptionen werden nachfolgend ausführlich erläutert. 
 Konfigurationsoptionen weisen einen von drei Datentypen auf: Boolean, String oder Integer. 
-Die Konfigurationsoptionen vom Typ "Boolean" können als "y" oder "n" angegeben werden. 
-Für einige Konfigurationseinträge des Typs "String" kann das spezielle Schlüsselwort "None" verwendet werden, wie nachfolgend beschrieben.
+Die Konfigurationsoptionen vom Typ "Boolesch" können als "j" oder "n" angegeben werden. 
+Für einige Konfigurationseinträge des Typs "Zeichenfolge" kann das spezielle Schlüsselwort "Keine" verwendet werden, wie nachfolgend beschrieben.
 
 **Role.StateConsumer:**
 
-Geben Sie Folgendes ein: String  
-Voreinstellung: None
+Geben Sie Folgendes ein: Zeichenfolge  
+Voreinstellung: Keine
 
-Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird diese aufgerufen, wenn waagent das Image bereitgestellt hat und in Kürze der Status "Ready" (Bereit) an das Fabric gemeldet wird. An das Programm wird das Argument "Ready" übergeben. Der Agent wartet nicht auf die Rückkehr des Programms, sondern fährt direkt fort.
+Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird diese aufgerufen, wenn waagent das Image bereitgestellt hat und in Kürze der Status "Bereit" an das Fabric gemeldet wird. An das Programm wird das Argument "Ready" übergeben. Der Agent wartet nicht auf die Rückkehr des Programms, sondern fährt direkt fort.
 
 **Role.ConfigurationConsumer:**
 
-Geben Sie Folgendes ein: String  
-Voreinstellung: None
+Geben Sie Folgendes ein: Zeichenfolge  
+Voreinstellung: Keine
 
-Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass eine Konfigurationsdatei für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals aufgerufen werden, bei jeder Änderung der Konfigurationsdatei. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Pfad für diese Datei ist /var/lib/waagent/HostingEnvironmentConfig.xml.
+Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass eine Konfigurationsdatei für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals aufgerufen werden, bei jeder Änderung der Konfigurationsdatei. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Pfad dieser Datei lautet "/var/lib/waagent/HostingEnvironmentConfig.xml".
 
 **Role.TopologyConsumer:**
 
-Geben Sie Folgendes ein: String  
-Voreinstellung: None
+Geben Sie Folgendes ein: Zeichenfolge  
+Voreinstellung: Keine
 
-Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass ein neues Netzwerktopologie-Layout für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals, bei jeder Änderung der Netzwerktopologie (z. B. aufgrund einer Dienstreparatur), aufgerufen werden. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Speicherort für diese Datei ist /var/lib/waagent/SharedConfig.xml.
+Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass ein neues Netzwerktopologie-Layout für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals, bei jeder Änderung der Netzwerktopologie (z. B. aufgrund einer Dienstreparatur), aufgerufen werden. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Speicherort dieser Datei lautet "/var/lib/waagent/SharedConfig.xml".
 
 **Provisioning.Enabled:**
 
-Geben Sie Folgendes ein: Boolean  
-Voreinstellung: y
+Geben Sie Folgendes ein: Boolesch  
+Voreinstellung: j
 
-Hiermit kann der Benutzer die Bereitstellungsfunktion im Agenten aktivieren oder deaktivieren. Gültige Werte sind "y" und "n". Bei deaktivierter Bereitstellung werden die SSH-Host- und -Benutzerschlüssel im Image beibehalten, und alle in der Azure-Bereitstellungs-API angegebenen Konfigurationen werden ignoriert.
+Hiermit kann der Benutzer die Bereitstellungsfunktion im Agenten aktivieren oder deaktivieren. Gültige Werte sind "j" und "n". Bei deaktivierter Bereitstellung werden die SSH-Host- und -Benutzerschlüssel im Image beibehalten, und alle in der Azure-Bereitstellungs-API angegebenen Konfigurationen werden ignoriert.
 
 **Provisioning.DeleteRootPassword:**
 
 Geben Sie Folgendes ein: Boolean  
 Voreinstellung: n
 
-Bei aktivierter Option wird das Stammkennwort in der /etc/shadow-Datei bei der Bereitstellung gelöscht.
+Bei aktivierter Option wird das Stammkennwort in der Datei "/etc/shadow" bei der Bereitstellung gelöscht.
 
 **Provisioning.RegenerateSshHostKeyPair:**
 
-Geben Sie Folgendes ein: Boolean  
-Voreinstellung: y
+Geben Sie Folgendes ein: Boolesch  
+Voreinstellung: j
 
 Bei aktivierter Option werden alle SSH-Hostschlüsselpaare (ecdsa, dsa und rsa) bei der Bereitstellung aus "/etc/ssh/" gelöscht. Außerdem wird ein einzelnes neues Schlüsselpaar generiert.
 
-Der Verschlüsselungstyp für das neue Schlüsselpaar kann mit dem Provisioning.SshHostKeyPairType-Eintrag konfiguriert werden. Beachten Sie, dass einige Verteilungen SSH-Schlüsselpaare für alle fehlenden Verschlüsselungstypen neu erstellen, wenn der SSH-Daemon neu gestartet wird (z. B. bei einem Systemneustart).
+Der Verschlüsselungstyp für das neue Schlüsselpaar kann mit dem Eintrag "Provisioning.SshHostKeyPairType" konfiguriert werden. Beachten Sie, dass einige Verteilungen SSH-Schlüsselpaare für alle fehlenden Verschlüsselungstypen neu erstellen, wenn der SSH-Daemon neu gestartet wird (z. B. bei einem Systemneustart).
 
 **Provisioning.SshHostKeyPairType:**
 
-Geben Sie Folgendes ein: String  
+Geben Sie Folgendes ein: Zeichenfolge  
 Voreinstellung: rsa
 
 Diese Option kann auf einen Verschlüsselungsalgorithmustyp festgelegt werden, der vom SSH-Daemon auf dem virtuellen Computer unterstützt wird. Typischerweise werden die Werte "rsa", "dsa" und "ecdsa" unterstützt. Beachten Sie, dass "putty.exe" unter Windows keine Unterstützung für "ecdsa" bietet. Wenn Sie also beabsichtigen, mithilfe von "putty.exe" unter Windows eine Verbindung zu einer Linux-Bereitstellung herzustellen, verwenden Sie "rsa" oder "dsa".
 
 **Provisioning.MonitorHostName:**
 
-Geben Sie Folgendes ein: Boolean  
-Voreinstellung: y
+Geben Sie Folgendes ein: Boolesch  
+Voreinstellung: j
 
 Bei aktivierter Option überwacht waagent den virtuellen Linux-Computer auf Änderungen des Hostnamens (wie vom Befehl "hostname" zurückgegeben) und aktualisiert die Netzwerkkonfiguration im Image automatisch entsprechend der Änderung. Um die Namensänderung per Push an die DNS-Server zu übertragen, wird die Netzwerkfunktion auf dem virtuellen Computer neu gestartet. Dadurch geht die Internetverbindung verloren.
 
 **ResourceDisk.Format:**
 
-Geben Sie Folgendes ein: Boolean  
-Voreinstellung: y
+Geben Sie Folgendes ein: Boolesch  
+Voreinstellung: j
 
 Bei aktivierter Option wird der von der Plattform bereitgestellte Ressourcendatenträger von waagent formatiert und bereitgestellt, falls der Benutzer in "ResourceDisk.Filesystem" einen anderen Dateisystemtyp als "ntfs" anfordert. Auf dem Datenträger wird eine einzelne Linux-Partition (83) verfügbar gemacht. Diese Partition wird nicht formatiert, falls sie erfolgreich bereitgestellt werden kann.
 
 **ResourceDisk.Filesystem:**
 
-Geben Sie Folgendes ein: String  
+Geben Sie Folgendes ein: Zeichenfolge  
 Voreinstellung: ext4
 
 Diese Option gibt den Dateisystemtyp für den Ressourcendatenträger an. Die unterstützten Werte sind je nach Linux-Verteilung verschieden. Bei der Zeichenfolge X sollte mkfs.X im Linux-Image vorhanden sein. Für SLES 11-Images sollte normalerweise "ext3" verwendet werden. Für FreeBSD-Images sollte hier "ufs2" verwendet werden.
 
 **ResourceDisk.MountPoint:**
 
-Geben Sie Folgendes ein: String  
+Geben Sie Folgendes ein: Zeichenfolge  
 Voreinstellung: /mnt/resource 
 
 Diese Option gibt den Pfad an, in dem der Ressourcendatenträger bereitgestellt wird. Beachten Sie, dass der Ressourcendatenträger ein  *temporary* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird.
 
 **ResourceDisk.EnableSwap:**
 
-Geben Sie Folgendes ein: Boolean  
+Geben Sie Folgendes ein: Boolesch  
 Voreinstellung: n 
 
 Bei aktivierter Option wird eine Auslagerungsdatei (/swapfile) auf dem Ressourcendatenträger erstellt und dem Systemauslagerungsbereich hinzugefügt.
@@ -268,14 +282,14 @@ Die Größe der Auslagerungsdatei in Megabyte.
 
 **LBProbeResponder:**
 
-Geben Sie Folgendes ein: Boolean  
-Voreinstellung: y
+Geben Sie Folgendes ein: Boolesch  
+Voreinstellung: j
 
 Bei aktivierter Option antwortet waagent auf Lastenausgleichstests der Plattform (sofern vorhanden).
 
 **Logs.Verbose:**
 
-Geben Sie Folgendes ein: Boolean  
+Geben Sie Folgendes ein: Boolesch  
 Voreinstellung: n
 
 Bei aktivierter Option wird ein ausführlicheres Protokoll erstellt. Waagent schreibt das Protokoll in "/var/log/waagent.log" und nutzt die logrotate-Funktion des Systems zu Rotieren von Protokollen.
@@ -289,8 +303,8 @@ Hiermit wird die SCSI-Zeitüberschreitung auf dem Betriebssystemdatenträger und
 
 **OS.OpensslPath:**
 
-Geben Sie Folgendes ein: String  
-Voreinstellung: None
+Geben Sie Folgendes ein: Zeichenfolge  
+Voreinstellung: Keine
 
 Hiermit kann ein alternativer Pfad für die openssl-Binärdatei zur Verwendung für kryptografische Vorgänge angegeben werden.
 
@@ -405,7 +419,4 @@ Hiermit kann ein alternativer Pfad für die openssl-Binärdatei zur Verwendung f
 	  </Instances>
 	</SharedConfig>
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

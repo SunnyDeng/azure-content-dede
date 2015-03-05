@@ -1,6 +1,20 @@
-﻿<properties pageTitle="SharePoint-Serverfarm-Konfigurationsdetails" description="Beschreibt die standardmäßige Konfiguration von SharePoint-Farmen" services="virtual-machines" documentationCenter="" authors="JoeDavies-MSFT" manager="timlt" editor=""/>
+﻿<properties 
+	pageTitle="SharePoint-Serverfarm-Konfigurationsdetails" 
+	description="Beschreibt die standardmäßige Konfiguration von SharePoint-Farmen" 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="vm-sharepoint" ms.devlang="na" ms.topic="article" ms.date="1/26/2015" ms.author="josephd"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-sharepoint" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="1/26/2015" 
+	ms.author="josephd"/>
 
 
 #SharePoint-Serverfarm-Konfigurationsdetails#
@@ -12,7 +26,7 @@ Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals f�
 
 Die folgenden Abschnitte beinhalten Konfigurationsdetails für jede Farm.
 
-Zusätzliche Informationen finden Sie im Thema zur [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
+Weitere Informationen finden Sie unter [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
 
 ##Grundlegende SharePoint-Farm##
 
@@ -37,7 +51,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 - Domänencontroller
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: contoso.com (Standard)
+	-	Domänenname: "contoso.com" (Standard)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -86,7 +100,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 -	Domänencontroller
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: contoso.com (Standard)
+	-	Domänenname: "contoso.com" (Standard)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -111,7 +125,4 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 
 [SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

@@ -1,6 +1,6 @@
 ﻿<properties writer="kathydav" editor="tysonn" manager="timlt" /> 
 
-**Wichtig**: Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, geben Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers an. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/p/?LinkID=294063).
+**Wichtig**: Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, geben Sie das virtuelle Netzwerk beim Erstellen des virtuellen Computers an. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/p/?LinkID=294063)
 
 
 1. Melden Sie sich mit Ihrem Azure-Konto beim [Azure-Verwaltungsportal][AzurePreviewPortal] an.
@@ -17,7 +17,7 @@
 	- Weisen Sie unter **Name des virtuellen Computers** einen Namen zu, z. B. "testlinuxvm".
 	- Überprüfen Sie die **Ebene**, und wählen Sie eine **Größe** aus. Die Ebene bestimmt, zwischen welchen Größen Sie wählen können.
 	- Geben Sie unter **Neuer Benutzername** einen Namen ein, z. B. "newuser", der der Sudoer-Listendatei hinzugefügt wird.
-	- Wählen Sie aus, welche Art der **Authentifizierung** verwendet werden soll. Hinweise zu allgemeinen Kennwortrichtlinien finden Sie unter [Sichere Kennwörter](http://msdn.microsoft.com/de-de/library/ms161962.aspx).
+	- Wählen Sie aus, welche Art der **Authentifizierung** verwendet werden soll. Hinweise zu allgemeinen Kennwortrichtlinien finden Sie unter [Sichere Kennwörter](http://msdn.microsoft.com/library/ms161962.aspx).
 
 
 5. Nehmen Sie auf der nächsten Seite für die **Konfiguration des virtuellen Computers** die erforderlichen Einstellungen vor, oder überprüfen Sie diese:
@@ -34,11 +34,11 @@ In Abhängigkeit von dem auf Ihrem Computer ausgeführten Betriebssystem verwend
 
 	`$ ssh newuser@testlinuxvm.cloudapp.net -o ServerAliveInterval=180`
 	
-	Type the user's password.
+	Geben Sie das Kennwort des Benutzers ein.
 
 - Verwenden Sie PuTTY, wenn Sie für die Verbindung zum virtuellen Computer einen Windows-Computer nutzen. Sie können PuTTY von der [PuTTY-Downloadseite][PuTTYDownLoad] herunterladen. 
 
-	Laden Sie **putty.exe** herunter, und speichern Sie die Datei in einem Verzeichnis auf dem Computer. Öffnen Sie eine Eingabeaufforderung, navigieren Sie zu dem betreffenden Verzeichnis, und führen Sie **putty.exe** aus.
+	Laden Sie **putty.exe** herunter, und speichern Sie die Daten in einem Verzeichnis auf dem Computer. Öffnen Sie eine Eingabeaufforderung, navigieren Sie zu dem betreffenden Verzeichnis, und führen Sie **putty.exe** aus.
 
 	Geben Sie den Hostnamen ein, z. B. "testlinuxvm.cloudapp.net", und geben Sie dann für **Port** den Wert "22" ein.
 
@@ -60,4 +60,4 @@ In Abhängigkeit von dem auf Ihrem Computer ausgeführten Betriebssystem verwend
 
 [Image6]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png
 
-<!--HONumber=35.1-->
+<!--HONumber=45--> 
