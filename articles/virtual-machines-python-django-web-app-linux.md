@@ -50,7 +50,7 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 1. Weisen Sie Azure an, den Port **80**-Datenverkehr aus dem Web an Port **80** auf dem virtuellen Computer zu leiten.
 	* Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte  *ENDPOINTS*.
 	* Klicken Sie unten auf der Seite auf  *ADD*.
-	![add endpoint](./media/virtual-machines-python-django-web-app-(linux/mac-linux-django-helloworld-add-endpoint.png)
+	![add endpoint](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
 	* Öffnen Sie den  *PUBLIC PORT 80* des  *TCP*-Protokolls als  *PRIVATE PORT 80*.
 	![port80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
 
