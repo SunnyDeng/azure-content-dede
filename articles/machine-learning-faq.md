@@ -1,6 +1,20 @@
-<properties title="H&auml;ufig gestellte Fragen zu Azure Machine Learning (FAQ)" pageTitle="Azure Machine Learning FAQ | Azure" description="H&auml;ufig gestellte Fragen zu Azure Machine Learning" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="pamehta" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Azure Machine Learning FAQ | Azure" 
+	description="Häufig gestellte Fragen zu Azure Machine Learning" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="pablissima" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="pamehta" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/17/2015" 
+	ms.author="paulettm"/>
 
 # Häufig gestellte Fragen zu Azure Machine Learning (FAQ)
 
@@ -36,11 +50,11 @@ Die Kosten werden pro Arbeitsbereich für Ihr Konto aggregiert. In jedem Arbeits
 -   Vorhersagestunden API-Dienst - Dieser Zähler enthält Berechnungskosten für Webdienste in der Produktionsumgebung.
 -   Vorhersagen API-Dienst (in 1000er-Schritten) - Dieser Zähler enthält die angefallenen Kosten für Aufrufe an Ihren Produktions-Webdienst.
 
-Weitere Informationen finden Sie auf der Seite mit Preisdetails <http://azure.microsoft.com/de-de/pricing/details/machine-learning/>.
+Weitere Informationen finden Sie auf der Seite mit Preisdetails <http://azure.microsoft.com/pricing/details/machine-learning/>.
 
 **6. Existiert eine kostenlose Testversion von Azure Machine Learning?**
 
-Azure ML ist Teil der kostenlosen Azure-Testversion. Wenn Sie sich für die kostenlose Azure-Testversion anmelden, können Sie die Azure-Dienste einen Monat lang ausprobieren. Weitere Informationen über die kostenlose Azure-Testversion finden Sie unter <http://azure.microsoft.com/de-de/pricing/free-trial-faq/>.
+Azure ML ist Teil der kostenlosen Azure-Testversion. Wenn Sie sich für die kostenlose Azure-Testversion anmelden, können Sie die Azure-Dienste einen Monat lang ausprobieren. Weitere Informationen über die kostenlose Azure-Testversion finden Sie unter <http://azure.microsoft.com/pricing/free-trial-faq/>.
 
 ### MACHINE LEARNING STUDIO
 
@@ -108,12 +122,14 @@ Wir werden fortlaufend neues Material zum Machine Learning Center hinzufügen. S
 
 **18. Wo erhalte ich Support für Azure ML?**
 
-Der Support für Azure ML ist Teil des Azure-Supportangebots. Um technischen Support für Azure ML zu erhalten, wählen Sie "Maschinelles Lernen" als Dienst aus. Daraufhin erhalten Sie eine Kategorie von Themen für die Übermittlung Ihres Support-Tickets. Weitere Informationen zum Azure-Support finden Sie unter <http://azure.microsoft.com/de-de/support/options/>
+Der Support für Azure ML ist Teil des Azure-Supportangebots. Um technischen Support für Azure ML zu erhalten, wählen Sie "Maschinelles Lernen" als Dienst aus. Daraufhin erhalten Sie eine Kategorie von Themen für die Übermittlung Ihres Support-Tickets. Weitere Informationen zum Azure-Support finden Sie unter <http://azure.microsoft.com/support/options/>
 
 Für Azure Machine Learning gibt es außerdem ein Community-Forum auf MSDN, in dem Sie Fragen zu Azure ML stellen können. Das Forum wird vom Azure ML-Team überwacht. [Azure Forum][Azure Forum] besuchen.
 
   [Erste Schritte]: http://go.microsoft.com/fwlink/?LinkId=404226
-  [Azure Machine Learning Center]: http://azure.microsoft.com/de-de/documentation/services/machine-learning/
+  [Azure Machine Learning Center]: http://azure.microsoft.com/documentation/services/machine-learning/
   [Forum für Benutzer-Feedback]: http://go.microsoft.com/fwlink/?LinkId=404231
   [1]: https://windowsazure.uservoice.com/forums/257792-machine-learning
   [Azure Forum]: http://social.msdn.microsoft.com/Forums/windowsazure/de-de/home?forum=MachineLearning
+
+<!--HONumber=46--> 

@@ -1,6 +1,21 @@
-<properties pageTitle="Erste Schritte mit Push Notification Hubs mithilfe von .NET Runtime Mobile Services" description="Erfahren Sie, wie Sie Microsoft Azure .NET Runtime Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Windows Phone-App zu senden." services="mobile-services, notification-hubs" documentationCenter="windows" authors="wesmc7777" writer="wesmc" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte mit Push Notification Hubs mithilfe von .NET Runtime Mobile Services" 
+	description="Erfahren Sie, wie Sie Microsoft Azure .NET Runtime Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Windows Phone-App zu senden." 
+	services="mobile-services, notification-hubs" 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
+	writer="wesmc" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-phone" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/23/2014" 
+	ms.author="wesmc"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu einer Mobile Services-App
 
@@ -17,7 +32,8 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen Anwendung] abschließen, um Ihr Projekt mit dem mobilen Dienst zu verbinden.
 
->[AZURE.NOTE]Dieses Lernprogramm ist auf Windows Phone 8.1-"Silverlight"-Apps ausgerichtet. Falls Sie stattdessen eine Windows Phone 8.1 Store-App erstellen, informieren Sie sich in der Version zu [Windows Store-Apps](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) dieses Lernprogramms. Informationen zu Windows Phone-Silverlight Apps und einen Vergleich mit Windows Phone Store-Apps finden Sie unter [Windows Phone Silverlight 8.1-Apps]. 
+>[AZURE.NOTE]Dieses Lernprogramm ist auf Windows Phone 8.1-"Silverlight"-Apps ausgerichtet. Falls Sie stattdessen eine Windows Phone 8.1 Store-App erstellen, informieren Sie sich in der Version zu [Windows Store-Apps](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) dieses Lernprogram
+	ms. Informationen zu Windows Phone-Silverlight Apps und einen Vergleich mit Windows Phone Store-Apps finden Sie unter [Windows Phone Silverlight 8.1-Apps]. 
 
 ##<a id="update-app"></a> Aktualisieren Ihrer App zur Registrierung für Benachrichtigungen
 
@@ -131,7 +147,7 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
    	![][4]
 
-	>[AZURE.NOTE]Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. In diesem Modus beschränkt MPNS die Anzahl der Benachrichtigungen, die an einen Gerätekanal gesendet werden können. Um diese Beschränkung aufzuheben, müssen Sie ein Zertifikat generieren und hochladen, indem Sie auf <strong>Upload</strong> klicken und das Zertifikat auswählen. Weitere Informationen zum Generieren des Zertifikats finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsphone/develop/ff941099(v=vs.105).aspx">Einrichten eines authentifizierten Webdienstes zum Senden von Pushbenachrichtigungen für Windows Phone</a>.
+	>[AZURE.NOTE]Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. In diesem Modus beschränkt MPNS die Anzahl der Benachrichtigungen, die an einen Gerätekanal gesendet werden können. Um diese Beschränkung aufzuheben, müssen Sie ein Zertifikat generieren und hochladen, indem Sie auf <strong>Upload</strong> klicken und das Zertifikat auswählen. Weitere Informationen zum Generieren des Zertifikats finden Sie unter <a href="http://msdn.microsoft.com/library/windowsphone/develop/ff941099(v=vs.105).aspx">Einrichten eines authentifizierten Webdienstes zum Senden von Pushbenachrichtigungen für Windows Phone</a>.
 
 Daraufhin kann der mobile Dienst im nicht authentifizierten Modus eine Verbindung mit MPNS zum Senden von Pushbenachrichtigungen herstellen.
 
@@ -210,7 +226,7 @@ Weitere Informationen zu Mobile Services und Notification Hubs:
 
 
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-html-how-to-use-client-library
-[Windows Phone Silverlight 8.1-Apps]: http://msdn.microsoft.com/de-de/library/windowsphone/develop/dn642082(v=vs.105).aspx
+[Windows Phone Silverlight 8.1-Apps]: http://msdn.microsoft.com/library/windowsphone/develop/dn642082(v=vs.105).aspx
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
 

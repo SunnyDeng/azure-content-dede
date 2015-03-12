@@ -1,19 +1,34 @@
-﻿<properties urlDisplayName="" pageTitle="Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Role based access control troubleshooting" authors="Stephen Siciliano"  solutions="" writer="" manager="terrylan" editor=""  />
+﻿<properties 
+	pageTitle="Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung" 
+	description="" 
+	services="" 
+	documentationCenter="" 
+	authors="stepsic-microsoft-com" 
+	writer="" 
+	manager="terrylan" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="11/03/2014" ms.author="Stephen Siciliano" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/03/2014" 
+	ms.author="stepsic"/>
 
 # Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung
 
 ## Einführung
 
-Die [rollenbasierte Zugriffssteuerung](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-configure/) ist eine leistungsstarke Funktion, mit der Sie Zugriffsberechtigungen für Azure-Ressourcen differenziert steuern können. Gewähren Sie einem bestimmten Benutzer einfach und sicher Zugriff auf genau die Ressourcen, die er benötigt. In einigen Fällen kann das Ressourcen-Modell für Azure-Ressourcen jedoch kompliziert sein, und es ist nicht immer leicht ersichtlich, wofür Sie Berechtigungen vergeben.
+Die [rollenbasierte Zugriffssteuerung](http://azure.microsoft.com/documentation/articles/role-based-access-control-configure/) ist eine leistungsstarke Funktion, mit der Sie Zugriffsberechtigungen für Azure-Ressourcen differenziert steuern können. Gewähren Sie einem bestimmten Benutzer einfach und sicher Zugriff auf genau die Ressourcen, die er benötigt. In einigen Fällen kann das Ressourcen-Modell für Azure-Ressourcen jedoch kompliziert sein, und es ist nicht immer leicht ersichtlich, wofür Sie Berechtigungen vergeben.
 
 In diesem Dokument erhalten Sie ausführliche Informationen über die Nutzung einiger der neuen Rollen im Vorschauportal.  Diese Version von Azure umfasst drei integrierte Rollen:
 * Besitzer
 * Mitwirkender
 * Leser
 
-Besitzer und Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, mit dem Unterschied, dass Mitwirkende anderen Benutzern oder Gruppen keinen Zugriff gewähren können. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. [In diesem Artikel](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-configure/) finden Sie genaue Informationen zum Gewähren von Zugriffen.
+Besitzer und Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, mit dem Unterschied, dass Mitwirkende anderen Benutzern oder Gruppen keinen Zugriff gewähren können. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. [In diesem Artikel](http://azure.microsoft.com/documentation/articles/role-based-access-control-configure/) finden Sie genaue Informationen zum Gewähren von Zugriffen.
 
 ## Website-Arbeitsauslastung
 
@@ -74,3 +89,5 @@ Virtuelle Computer verfügen über folgende zugehörige Ressourcen:
     * Warnregeln
     
 Wenn Sie auf keines dieser Elemente zugreifen können, fragen Sie den Administrator nach Zugriff als Mitwirkender auf diese Ressourcengruppe.
+
+<!--HONumber=46--> 

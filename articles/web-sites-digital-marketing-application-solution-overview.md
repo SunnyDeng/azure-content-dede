@@ -26,7 +26,7 @@ Nachstehend sehen Sie ein Beispiel für eine globale, über mehrere Kanäle durc
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/digital-marketing-notitle.svg" width="100%" height="100%"></object>
 
 > [WACOM.NOTE]
-> In diesem Leitfaden werden einige der häufigsten Themenbereiche und Aufgaben im Zusammenhang mit der Ausführung von digitalen Marketingkampagnen in Azure-Websites vorgestellt. Es gibt jedoch andere gängige Lösungen, die Sie in Azure-Websites implementieren können. Weitere Informationen zu diesen Lösungen finden Sie in den Leitfäden <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/global-web-presence-solution-overview/">Globale Webpräsenz</a> und <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/business-application-solution-overview">Digitale Marketingkampagnen</a>.
+> In diesem Leitfaden werden einige der häufigsten Themenbereiche und Aufgaben im Zusammenhang mit der Ausführung von digitalen Marketingkampagnen in Azure-Websites vorgestellt. Es gibt jedoch andere gängige Lösungen, die Sie in Azure-Websites implementieren können. Weitere Informationen zu diesen Lösungen finden Sie in den Leitfäden <a href="http://azure.microsoft.com/manage/services/web-sites/global-web-presence-solution-overview/">Globale Webpräsenz</a> und <a href="http://azure.microsoft.com/manage/services/web-sites/business-application-solution-overview">Digitale Marketingkampagnen</a>.
 
 ### Neuerstellung oder Nutzen von vorhandenen Ressourcen
 
@@ -124,8 +124,8 @@ Im Hostingplan **Standard** erhalten für die Websiteüberwachung verantwortlich
 
 [Skalierung nach oben und unten]:/de-de/manage/services/web-sites/how-to-scale-websites/
 [Azure-Verwaltungsportal]:http://manage.windowsazure.com/
-[Dienstverwaltungs-API]:http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx
-[PowerShell-Skripts]:http://msdn.microsoft.com/de-de/library/windowsazure/jj152841.aspx
+[Dienstverwaltungs-API]:http://msdn.microsoft.com/library/windowsazure/ee460799.aspx
+[PowerShell-Skripts]:http://msdn.microsoft.com/library/windowsazure/jj152841.aspx
 [Troy Hunt]:https://twitter.com/troyhunt
 [10 things I learned about rapidly scaling websites with Azure]:http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure-Redis-Cache]:/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/

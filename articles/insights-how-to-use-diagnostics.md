@@ -1,6 +1,20 @@
-﻿<properties title="How to use diagnostics" pageTitle="Gewusst wie: Diagnose" description="Erfahren Sie, wie die Diagnose für Ihre Ressourcen in Azure einrichten." authors="stepsic" manager="kamrani" />
+﻿<properties 
+	pageTitle="Verwenden der Diagnose" 
+	description="Erfahren Sie, wie Sie die Diagnose für Ihre Ressourcen in Azure einrichten."  
+	authors="stepsic-microsoft-com" 
+	manager="kamrani" 
+	editor="" 
+	services="application-insights" 
+	documentationCenter=""/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-11-04" ms.author="stepsic" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2014-11-04" 
+	ms.author="stepsic"/>
 
 # Einrichten der Diagnose
 
@@ -66,3 +80,5 @@ Danach können Sie aus den Metriken wählen, die Sie zur Diagnose aktiviert habe
 Der Graph zeigt Ihnen eine Vorschau Ihres Warnschwellenwerts im Vergleich zur Metrik des vorhergehenden Tages. Nachdem Sie auf **Speichern** geklickt haben, werden Sie innerhalb weniger Minuten informiert, sobald die von Ihnen gewählte Metrik den Schwellenwert überschreitet. 
 
 Beachten Sie, dass Metriken, die nur im Vorschauportal angezeigt werden, nicht im vollständigen Portal mit Warnungen versehen werden können. Daher werden bestimmte Warnregeln aus dem Vorschauportal nicht im vollständigen Portal angezeigt.
+
+<!--HONumber=46--> 

@@ -1,6 +1,18 @@
-﻿<properties title="Track usage in web applications with Application Insights" pageTitle="Nachverfolgung der Nutzung in Webanwendungen" description="Benutzeraktivitäten protokollieren." metaKeywords="analytics monitoring application insights" authors="awills" manager="kamrani" />
+﻿<properties 
+	pageTitle="Nachverfolgung der Nutzung in Webanwendungen" 
+	description="Protokollieren Sie Benutzeraktivitäten." 
+	services="application-insights" 
+	authors="alancameronwills" 
+	manager="kamrani"/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-11-21" ms.author="awills" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2015-01-09" 
+	ms.author="awills"/>
  
 # Nachverfolgung der Nutzung von Webanwendungen
 
@@ -119,3 +131,5 @@ Möchten Sie herausfinden, wofür die Benutzer Ihre App verwenden? Durch Einfüg
 
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

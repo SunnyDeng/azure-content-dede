@@ -1,6 +1,20 @@
-﻿<properties title="Step 6: Access the Azure Machine Learning web service" pageTitle="Schritt 6: Zugreifen auf den Machine Learning-Webdienst | Azure" description="Schritt 6: Zugreifen auf einen aktiven Azure Machine Learning-API-Webdienst" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Schritt 6: Zugreifen auf den Machine Learning-Webdienst | Azure" 
+	description="Exemplarische Vorgehensweise Schritt 6: Zugreifen auf einen aktiven Azure Machine Learning-Webdienst"
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/06/2014" 
+	ms.author="garye"/>
 
 
 Dies ist der letzte Teil der exemplarischen Vorgehensweise [Entwickeln einer Vorhersagelösung mit Azure ML][Entwickeln]:
@@ -79,3 +93,5 @@ Die API-Hilfeseite enthält Beispiele für die Programmiersprachen R, C# und Pyt
 	result = h$value()
 
 
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-<properties pageTitle="Verwenden des iOS Media Player Framework mit Azure Media Services" description="Erfahren Sie, wie Sie die iOS Media Player Framework-Bibliothek von Media Services zum Erstellen umfangreicher, dynamischer Apps verwenden." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
+﻿<properties 
+	pageTitle="Verwenden des iOS Media Player Framework mit Azure Media Services" 
+	description="Erfahren Sie, wie Sie die iOS Media Player Framework-Bibliothek von Media Services zum Erstellen umfangreicher, dynamischer Apps verwenden." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="mobile-ios" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="mobile-ios" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/30/2014" 
+	ms.author="juliako"/>
 
 
 
@@ -8,14 +22,14 @@
 
 Mit der Azure Media Services iOS Media Player Framework-Bibliothek können Entwickler für iPod, iPhone und iPad reichhaltig ausgestattete, dynamische Clientanwendungen erstellen, die Video- und Audiostreams spontan erzeugen und mischen. Beispielsweise können in Anwendungen, die Sportinhalte zeigen, ohne weiteres an beliebiger Stelle Werbespots eingefügt werden, und Sie können festlegen, wie oft diese Werbespots angezeigt werden, auch wenn der Hauptinhalt zurückgespult wird. Bildungsanwendungen können mit den gleichen Funktionen z. B. Inhalte erstellen, bei denen neben dem Hauptvortrag Randleisten dargestellt werden, bevor der Hauptinhalt fortgesetzt wird.
 
-In der Regel ist es recht kompliziert, eine Anwendung zu erstellen, die Inhaltsdatenströme erzeugen kann, die durch die Interaktion zwischen Anwendung und Benutzer entstehen. Normalerweise müssen Sie den gesamten Datenstrom von Grund auf neu erstellen und vorab auf dem Server speichern. Mit dem iOS Media Player Framework können Sie Clientanwendungen erstellen, die all dies ermöglichen, ohne dass die Anwendungen Einfluss auf den Datenstrom des Hauptinhalts haben. Sie können:
+In der Regel ist es recht kompliziert, eine Anwendung zu erstellen, die Inhaltsdatenströme erzeugen kann, die durch die Interaktion zwischen Anwendung und Benutzer entstehen. Normalerweise müssen Sie den gesamten Stream von Grund auf neu erstellen und vorab auf dem Server speichern. Mit dem iOS Media Player Framework können Sie Clientanwendungen erstellen, die all dies ermöglichen, ohne dass die Anwendungen Einfluss auf den Stream des Hauptinhalts haben. Sie können:
 
 - Inhaltsdatenströme vorab auf dem Clientgerät planen;
 - Pre-Roll-Werbespots oder -Inserts planen;
 - Post-Roll-Werbespots oder -Inserts planen;
 - Mid-Roll-Werbespots oder -Inserts planen und Werbespot-Pods erzeugen;
 - steuern, ob die Mid-Roll-Werbespots oder -Inserts jedes Mal wiedergegeben werden, wenn die Inhaltszeitleiste zurückgespult wird, oder ob sie nur einmal wiedergegeben und dann automatisch aus der Zeitleiste entfernt werden;
-- Inhalte dynamisch und ereignisgesteuert direkt in die Zeitleiste einfügen; mögliche Ereignisse sind beispielsweise ein Tastendruck oder eine Benachrichtigung der Anwendung durch einen Dienst - ein Nachrichtenprogramm kann z. B. Benachrichtigungen zu aktuellen Neuigkeiten senden, und die Anwendung kann den Hauptinhalt "anhalten", um einen Datenstrom mit aktuellen Neuigkeiten dynamische zu laden. 
+- Inhalte dynamisch und ereignisgesteuert direkt in die Zeitleiste einfügen; mögliche Ereignisse sind beispielsweise ein Tastendruck oder eine Benachrichtigung der Anwendung durch einen Dienst - ein Nachrichtenprogramm kann z. B. Benachrichtigungen zu aktuellen Neuigkeiten senden, und die Anwendung kann den Hauptinhalt "anhalten", um einen Stream mit aktuellen Neuigkeiten dynamisch zu laden. 
 
 Werden diese Funktionen mit den Medienwiedergabemöglichkeiten von iOS-Geräten kombiniert, können in sehr kurzer Zeit mit geringem Ressourceneinsatz reichhaltige multimediale Darbietungen erzeugt werden.
 
@@ -59,9 +73,9 @@ Die Benutzeroberfläche des Players wird mit zwei XIB-Dateien definiert. (In den
 
 * Das Steuerelement **Wiedergabezeit** zeigt zwei Zeiten an (`Label:playerTime`), z. B. 00:23/02:10. In diesem Fall wäre 00:23 die aktuelle Wiedergabezeit und 02:10 wäre die Gesamtdauer des Mediums. 
 
-* Die Schaltflächen **SkipFroward und SkipBackward**  funktionieren derzeit noch nicht wie erwartet. In Kürze wird eine aktualisierte Version herausgegeben.
+* Die Schaltflächen **SkipForward/SkipBackward** funktionieren derzeit noch nicht wie erwartet. In Kürze wird eine aktualisierte Version herausgegeben.
 
-* Wenn Sie während der Wiedergabe des Hauptinhalts die Schaltfläche **Schedule Now** drücken, wird ein Werbespot eingefügt (Sie können die Quell-URL für den Werbespot in der CodeBehind-Datei definieren). Hinweis: In der aktuellen Version können Sie keinen Werbespot planen, während ein anderer Werbespot wiedergegeben wird. 
+* Wenn Sie während der Wiedergabe des Hauptinhalts die Schaltfläche **Schedule Now** drücken, wird eine Werbeeinblendung eingefügt (Sie können die Quell-URL für die Werbeeinblendung in der CodeBehind-Datei definieren). Hinweis: In der aktuellen Version können Sie keine Werbeeinblendung planen, während eine andere Einblendung wiedergegeben wird. 
 
 ### Planen des Hauptinhalts
 Geplant wird ein Inhaltsclip von 0 bis 80 Sekunden:
@@ -86,7 +100,7 @@ Erläuterungen zum obigen Beispielcode:
 *Anschließend wird die **MediaTime** geplant. Dazu wird Framework aufgefordert, **appendContentClip** auszuführen. Im obigen Beispiel wird die URL für den Hauptinhalt in `[NSURL URLWithString:url]` angegeben, und die Planung des entsprechenden Mediums wird mit **withMedia** festgelegt:
  `[framework appendContentClip:[NSURL URLWithString:url] withMediaTime:mediaTime andGetClipId:&clipId])` .
 
-**Hinweis:** Planen Sie den Hauptinhalt stets, bevor Sie einen Werbespot planen (einschließlich Pre-Roll-Werbespots). 
+**Hinweis:** Planen Sie den Hauptinhalt stets, bevor Sie eine Werbeeinblendung (einschließlich Pre-Roll-Werbung) planen. 
 
 ### Variante: Wenn Sie zwei Clips mit Hauptinhalt wiedergeben, können Sie den zweiten Clip mit dem folgenden Code auch nach dem ersten planen:
 
@@ -137,7 +151,7 @@ Das **AdInfo**-Objekt stellt alle Informationen über den Werbespotclip dar:
 * Die **mediaTime**-Eigenschaft gibt an, wie lange eine Werbeeinblendung abgespielt wird. (**clipBeginMediaTime** gibt die Startzeit und **clipEndMediaTime** die Endzeit des Werbespots an.) Im vorhergehenden Codebeispiel planen wir einen Werbespot für 5 Sekunden, beginnend bei 0 bis zur fünften Sekunde der Werbespotdauer.
 * Das **Policy**-Objekt wird momentan nicht vom Framework verwendet.
 * Sie müssen den **appendTo**-Wert auf -1 setzen, wenn es sich nicht um einen Ad Pod handelt. 
-* Der **type**-Wert kann auf "pre-roll", "mid-roll", "post-roll" oder "ad pod" gesetzt werden. Geben Sie bei Pre-Roll- oder Post-Roll-Werbespots den Typ an, da diesen Typen keine Anzeigedauer zugeordnet ist. 
+* Der **type**-Wert kann auf "pre-roll", "mid-roll", "post-roll" oder "ad pod" festgelegt werden. Geben Sie bei Pre-Roll- oder Post-Roll-Werbespots den Typ an, da diesen Typen keine Anzeigedauer zugeordnet ist. 
 
 #### Planen von Mid-Roll-Werbespots
 
@@ -205,4 +219,4 @@ Hier sind einige Dinge zu beachten:
 Wie das vorherige Codebeispiel zeigt, wird dieser Werbespot nur einmal wiedergegeben, wenn Sie **deleteAfterPlay** auf **YES** festlegen. Wenn Sie **deleteAfterPlay** hingegen auf **NO** festlegen, wird dieser Werbespot immer weiter wiedergegeben. Ein solcher Werbespot wird als "Sticky Ad" bezeichnet.
 ### Weitere Informationen finden Sie im [Azure Media Player Framework Wiki](https://github.com/WindowsAzure/azure-media-player-framework/wiki).
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

@@ -1,6 +1,20 @@
-﻿<properties title="Create an Azure Machine Learning workspace" pageTitle="Erstellen eines Machine Learning-Arbeitsbereichs | Azure" description="Erstellen eines Arbeitsbereichs für Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erstellen eines Machine Learning-Arbeitsbereichs | Azure" 
+	description="Erstellen eines Arbeitsbereichs für Azure Machine Learning Studio" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/06/2014" 
+	ms.author="garye"/>
 
 
 # Erstellen eines Azure Machine Learning-Arbeitsbereichs 
@@ -31,3 +45,5 @@ Ein Azure Machine Learning-Arbeitsbereichs (ML-Arbeitsbereich) enthält die Werk
 
 
 <!--Link references-->
+
+<!--HONumber=46--> 

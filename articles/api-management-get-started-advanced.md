@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit der erweiterten Konfiguration der Azure API-Verwaltung" metaKeywords="" description="Erfahren Sie mehr über das Verfolgen von Anrufen, das Konfigurieren von Richtlinien für Durchsatzgrenzen und Kontingente sowie das Anpassen des Entwicklerportals." metaCanonical="" services="api-management" documentationCenter="API Management" title="Get started with advanced Azure API Management configuration" authors="sdanie" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit der erweiterten Konfiguration der Azure API-Verwaltung" 
+	description="Erfahren Sie mehr über das Verfolgen von Anrufen, das Konfigurieren von Richtlinien für Durchsatzgrenzen und Kontingente sowie das Anpassen des Entwicklerportals."
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/18/2014" 
+	ms.author="sdanie"/>
 
 # Erste Schritte mit der erweiterten Konfiguration der Azure API-Verwaltung
 
@@ -22,3 +36,5 @@ Die Lernprogrammen in diesem Bereich beschreiben erweiterte Lösungen und Aufgab
 
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

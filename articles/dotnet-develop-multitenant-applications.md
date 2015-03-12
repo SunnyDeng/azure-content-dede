@@ -1,6 +1,20 @@
-<properties urlDisplayName="Multi-Tenant Web Application Pattern" pageTitle="Multi-Tenant Web Anwendungsmuster - Azure-Architektur" metaKeywords="" description="Hier finden Sie Übersichten über die Architektur und Entwurfsmuster, die beschreiben, wie Sie eine mehrinstanzenfähige Webanwendung in Azure implementieren." metaCanonical="" services="" documentationCenter=".NET" title="Multitenant Applications in Azure" authors="wpickett" solutions="" manager="wpickett" editor="" />
+﻿<properties 
+	pageTitle="Multi-Tenant Web Anwendungsmuster - Azure-Architektur" 
+	description="Hier finden Sie Übersichten über die Architektur und Entwurfsmuster, die beschreiben, wie Sie eine mehrinstanzenfähige Webanwendung in Azure implementieren." 
+	services="" 
+	documentationCenter=".net" 
+	authors="" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="wpickett" />
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="11/19/2014" 
+	ms.author="wpickett"/>
 
 
 <div>
@@ -108,7 +122,9 @@ Azure bietet viele verschiedene Möglichkeiten zur Bereitstellung neuer Mandante
 
 <!--links-->
 
-[Hosten einer mehrinstanzenfähigen Anwendung in Azure]: http://msdn.microsoft.com/de-de/library/hh534480.aspx
-[Entwerfen von mehrinstanzfähigen Anwendungen in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/hh689716
+[Hosten einer mehrinstanzenfähigen Anwendung in Azure]: http://msdn.microsoft.com/library/hh534480.aspx
+[Entwerfen von mehrinstanzfähigen Anwendungen in Azure]: http://msdn.microsoft.com/library/windowsazure/hh689716
 
 
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Get Started with Azure Automation" pageTitle="Erste Schritte mit Azure Automation" metaKeywords="" description="Erfahren Sie mehr über den Import und die Ausführung eines Automatisierungs-Jobs in Azure." metaCanonical="" services="automation" documentationCenter="" title="Get Started with Azure Automation" authors="bwren" solutions="" manager="stevenka" editor="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Azure Automation" 
+	description="Erfahren Sie mehr über den Import und die Ausführung eines Automatisierungs-Jobs in Azure." 
+	services="automation" 
+	documentationCenter="" 
+	authors="bwren" 
+	manager="stevenka" 
+	editor=""/>
 
-<tags ms.service="automation" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/21/2014" ms.author="bwren" />
+<tags 
+	ms.service="automation" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="1/13/2015" 
+	ms.author="bwren"/>
 
 
 # Erste Schritte mit Azure Automation
@@ -9,7 +23,7 @@ Microsoft Azure Automation bietet Entwicklern die Möglichkeit, die manuellen, l
 
 In diesem Lernprogramm wird erläutert, wie Sie das Beispiel-Runbook "Hello World" in Azure Automation importieren, das Runbook ausführen und anschließend dessen Ausgabe anzeigen.
 
->[WACOM.NOTE] Weitere Informationen zum Automatisieren von Azure-Vorgängen mithilfe der [Azure PowerShell-Cmdlets](http://msdn.microsoft.com/de-de/library/jj156055.aspx) finden Sie unter <a href="http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/">Azure Automation: Authentifizieren bei Azure mit Azure Active Directory</a>.
+>[WACOM.NOTE] Weitere Informationen zum Automatisieren von Azure-Vorgängen mithilfe der [Azure PowerShell-Cmdlets](http://msdn.microsoft.com/library/jj156055.aspx) finden Sie unter <a href="http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/">Azure Automation: Authentifizieren bei Azure mit Azure Active Directory</a>.
 
 ## Beispiele und Hilfsprogramm-Runbooks
 
@@ -117,7 +131,7 @@ Runbooks der Community und anderer Microsoft-Teams werden auch im [Script Center
 
 
 # Verwalten von Azure-Diensten mit einem Runbook 
-Das obige Beispiel zeigt ein einfaches Runbook, das keine Azure-Dienste verwaltet. Die [Azure-Cmdlets](http://msdn.microsoft.com/de-de/library/jj156055.aspx) erfordern eine Authentifizierung bei Azure. Eine Anleitung zum Konfigurieren Ihres Azure-Abonnements für die Verwaltung mit Azure Automation finden Sie unter [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/).
+Das obige Beispiel zeigt ein einfaches Runbook, das keine Azure-Dienste verwaltet. Die [Azure-Cmdlets](http://msdn.microsoft.com/library/jj156055.aspx) erfordern eine Authentifizierung bei Azure. Eine Anleitung zum Konfigurieren Ihres Azure-Abonnements für die Verwaltung mit Azure Automation finden Sie unter [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/).
 
 # Siehe auch
 
@@ -127,3 +141,5 @@ Das obige Beispiel zeigt ein einfaches Runbook, das keine Azure-Dienste verwalte
 - [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

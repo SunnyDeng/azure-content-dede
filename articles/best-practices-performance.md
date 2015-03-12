@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Performance" pageTitle="Bewährte Methoden für die Anwendungsleistung - Azure" metaKeywords="Azure-Optimierung, Bewährte Methoden für die Azure-Leistung" description="Erfahren Sie mehr über bewährte Verfahren zur Leistungsoptimierung in Azure." metaCanonical="" services="cloud-services,sql-database,storage,service-bus,virtual-network" documentationCenter=".NET" title="" authors="robb" solutions="" manager="johndaw" editor="" />
+﻿<properties 
+	pageTitle="Bewährte Methoden für Leistung – Azure" 
+	description="Erfahren Sie mehr über bewährte Methoden für Leistung in Azure."
+	services="cloud-services, sql-database, storage, service-bus, virtual-network" 
+	documentationCenter=".net" 
+	authors="Rboucher" 
+	manager="jwhit" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="9/1/2014" ms.author="robb" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="9/1/2014" 
+	ms.author="robb"/>
 
 # Bewährte Methoden für die Azure-Anwendungsleistung
 
@@ -103,7 +117,7 @@ Ein häufiges Entwurfsmuster, für das Tabellenspeicher in Frage kommt, ist eine
 
 Nähere Informationen zum Tabellenspeicher finden Sie unter: 
 
-* [Azure-Tabellenspeicher und Azure SQL-Datenbank - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/de-de/library/jj553018.aspx)
+* [Azure-Tabellenspeicher und Azure SQL-Datenbank - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/library/jj553018.aspx)
 * [Überlegungen zur Azure-Tabellenspeicherleistung](http://go.microsoft.com/fwlink/?LinkId=252663) 
 * [SQL-Datenbank und Azure-Tabellenspeicher](http://go.microsoft.com/fwlink/?LinkId=252664) 
 * [Optimieren der Leistung durch Batchverarbeitung für Azure-Tabellenspeichereinfügungen](http://go.microsoft.com/fwlink/?LinkID=252665), wo einige Leistungsergebnisse diskutiert werden. 
@@ -343,3 +357,5 @@ Weitere Ressourcen
 * [Azure-Planung - Handbuch zum Integrieren von Azure in Ihre Umgebung nach dem Fällen einer Entscheidung](http://go.microsoft.com/fwlink/?LinkId=252884) 
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

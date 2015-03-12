@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte bei der Authentifizierung in Mobile Services für Xamarin iOS-Apps - Azure Mobile Services" description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Xamarin iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." services="mobile-services" documentationCenter="xamarin" authors="lindydonna" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte bei der Authentifizierung in Mobile Services für Xamarin iOS-Apps - Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Xamarin iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
+	services="mobile-services" 
+	documentationCenter="xamarin" 
+	authors="lindydonna" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-ios" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="donnam"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-xamarin-ios" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/23/2014" 
+	ms.author="donnam"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App
 

@@ -78,5 +78,4 @@ Zum Erstellen einer MySQL-Datenbank als verknüpfte Ressource bei der Erstellung
 [Azure Store]: /de-de/gallery/store/
 [Portal]: http://manage.windowsazure.com
 [Konfigurieren]: ../web-sites-configure/
-
 <!--HONumber=42-->

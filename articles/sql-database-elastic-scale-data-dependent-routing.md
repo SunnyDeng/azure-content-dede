@@ -60,7 +60,7 @@ Beachten Sie, dass anstelle eines Konstruktors für eine **SqlConnection**, gefo
 
 ##Integration in die Behandlung vorübergehender Fehler 
 
-Eine bewährte Methode bei der Entwicklung von Anwendungen für den Datenzugriff in der Cloud besteht darin, sicherzustellen, dass vorübergehende Fehler beim Verbinden mit oder Abfragen der Datenbank von der Anwendung abgefangen werden, und dass die Vorgänge mehrmals wiederholt werden, bevor ein Fehler ausgelöst wird. Die Behandlung vorübergehender Fehler in Cloudanwendungen wird in [Transient Fault Handling](http://msdn.microsoft.com/en-us/library/dn440719\(v=pandp.60\).aspx) besprochen. 
+Eine bewährte Methode bei der Entwicklung von Anwendungen für den Datenzugriff in der Cloud besteht darin, sicherzustellen, dass vorübergehende Fehler beim Verbinden mit oder Abfragen der Datenbank von der Anwendung abgefangen werden, und dass die Vorgänge mehrmals wiederholt werden, bevor ein Fehler ausgelöst wird. Die Behandlung vorübergehender Fehler in Cloudanwendungen wird in [Transient Fault Handling](http://msdn.microsoft.com/library/dn440719\(v=pandp.60\).aspx) besprochen. 
  
 Die Behandlung vorübergehender Fehler kann natürlich zusammen mit dem datenabhängigen Routing verwendet werden. Die wichtigste Anforderung besteht in einer Wiederholung der gesamten Datenzugriffsanforderung, darunter des **using**-Blocks, der die datenabhängige Routingverbindung abgerufen hat. Das obige Beispiel könnte wie folgt umgeschrieben werden (beachten Sie die hervorgehobenen Änderungen). 
 

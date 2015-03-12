@@ -1,6 +1,18 @@
-﻿<properties title="Application Insights" pageTitle="Application Insights - Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen." description="Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihrer lokalen oder Microsoft Azure-Webanwendung mit Application Insights." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
+﻿<properties 
+	pageTitle="Hinzufügen des Application Insights SDK zu Ihrem Webprojekt" 
+	description="Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihrer lokalen oder Microsoft Azure-Webanwendung mit Application Insights." 
+	services="application-insights" 
+	authors="alancameronwills" 
+	manager="kamrani"/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-09-24" ms.author="awills" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2015-02-03" 
+	ms.author="awills"/>
 
 # Application Insights - Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen
 
@@ -102,3 +114,5 @@ Wechseln Sie danach zurück zum Portal, und löschen Sie die alte Ressource.
 [AZURE.INCLUDE [app-insights-learn-more](../includes/app-insights-learn-more.md)]
 
 
+
+<!--HONumber=46--> 

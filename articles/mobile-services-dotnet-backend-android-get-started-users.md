@@ -1,6 +1,20 @@
-<properties pageTitle="Erste Schritte mit der Authentifizierung (Android) | Mobile Dev Center" description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Windows Store-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." services="mobile-services" documentationCenter="android" authors="mattchenderson" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte mit der Authentifizierung (Android) | Mobile Dev Center" 
+	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Windows Store-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
+	services="mobile-services" 
+	documentationCenter="android" 
+	authors="mattchenderson" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="09/27/2014" ms.author="mahender"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-android" 
+	ms.devlang="java" 
+	ms.topic="article" 
+	ms.date="09/27/2014" 
+	ms.author="mahender"/>
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App
 

@@ -21,11 +21,11 @@
 
 # Verwenden von Stammberechtigungen auf virtuellen Linux-Computern in Azure
 
-Standardmäßig ist der Benutzer  `root` auf virtuellen Linux-Computern in Azure deaktiviert. Benutzer können Befehle mit dem Befehl  `sudo` mit erweiterten Rechten ausführen. Das Verhalten kann je nachdem, wie das System bereitgestellt wurde, unterschiedlich sein.
+Standardmäßig ist der  `root`-Benutzer auf virtuellen Linux-Computern in Azure deaktiviert. Benutzer können Befehle mit erweiterten Rechten mithilfe des Befehls  `sudo` ausführen. Das Verhalten kann je nachdem, wie das System bereitgestellt wurde, unterschiedlich sein.
 
-1. **SSH-Schlüssel und Kennwort oder nur Kennwort** - Der virtuelle Computer wurde entweder mit einem Zertifikat (Datei `.CER`) oder SSH-Schlüssel sowie einem Kennwort oder nur einem Benutzernamen und Kennwort bereitgestellt. In diesem Fall fordert  `sudo` den Benutzer zur Eingabe des Kennworts auf, bevor der Befehl ausgeführt wird.
+1. **SSH-Schlüssel und Kennwort ODER nur Kennwort** - Der virtuelle Computer wurde entweder mit einem Zertifikat (".CER"-Datei) und einem Kennwort oder nur einem Benutzernamen und einem Kennwort bereitgestellt. In diesem Fall fordert  `sudo` den Benutzer zur Eingabe des Kennworts auf, bevor der Befehl ausgeführt wird.
 
-2. **Nur SSH-Schlüssel** - Der virtuelle Computer wurde mit einem Zertifikat (`.cer`- oder  `.pem`-Datei) oder SSH-Schlüssel, jedoch ohne Kennwort bereitgestellt.  In diesem Fall fordert  `sudo` den Benutzer **nicht** zur Eingabe des Kennworts auf, bevor der Befehl ausgeführt wird.
+2. **Nur SSH-Schlüssel** - Der virtuelle Computer wurde mit einem Zertifikat (".cer"- oder  `.pem`-Datei) oder SSH-Schlüssel, jedoch ohne Kennwort bereitgestellt.  In diesem Fall fordert  `sudo` den Benutzer **nicht** zur Eingabe des Kennworts auf, bevor der Befehl ausgeführt wird.
 
 
 ## SSH-Schlüssel und Kennwort oder nur Kennwort
@@ -37,12 +37,6 @@ Melden Sie sich beim virtuellen Linux-Computer mit der SSH-Schlüssel- oder Kenn
 
 In diesem Fall wird der Benutzer zur Eingabe eines Kennworts aufgefordert. Nachdem das Kennwort eingegeben wurde, führt  `sudo` den Befehl mit  `root`-Berechtigungen aus.
 
-Sie können auch sudo ohne Kennwort aktivieren, indem Sie die Datei  `/etc/sudoers.d/waagent` bearbeiten, zum Beispiel:
-
-	#/etc/sudoers.d/waagent
-	azureuser (ALL) = (ALL) NOPASSWD: ALL
-
-Diese Änderung ermöglicht das Ausführen von sudo ohne Kennwort durch den Benutzer "azureuser".
 
 ## Nur SSH-Schlüssel
 
@@ -50,7 +44,10 @@ Melden Sie sich beim virtuellen Linux-Computer mit dem SSH-Schlüssel an, und f�
 
 	# sudo <command>
 
-In diesem Fall wird der Benutzer **nicht** zur Eingabe eines Kennworts aufgefordert. Nachdem Sie `die Eingabetaste` gedrückt haben, wird der Befehl von  `sudo` mit  `root`-Berechtigungen ausgeführt.
+In diesem Fall wird der Benutzer **nicht** zur Eingabe eines Kennworts aufgefordert. Nachdem Sie `<enter>` gedrückt haben, wird der Befehl von  `sudo` mit  `root`-Berechtigungen ausgeführt.
 
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

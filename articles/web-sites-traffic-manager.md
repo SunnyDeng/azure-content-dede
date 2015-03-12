@@ -33,7 +33,7 @@ Azure Traffic Manager verwendet drei verschiedene Lastenausgleichsmethoden. Dies
 	
 * **Leistung**: Mithilfe der Leistungsmethode wird der Verkehr anhand der kürzesten Roundtripzeit an Clients verteilt. Die Leistungsmethode kann für Websites innerhalb derselben Region oder in verschiedenen Regionen verwendet werden. 
 
-Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/de-de/library/windowsazure/dn339010.aspx).
+Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/library/windowsazure/dn339010.aspx).
 
 ##Azure-Websites und Traffic Manager-Profile 
 Für die Konfiguration zur Steuerung des Website-Datenverkehrs erstellen Sie ein Profil in Azure Traffic Manager, das eine der drei zuvor beschriebenen Lastenausgleichsmethoden verwendet. Fügen Sie dann dem Profil die Endpunkte (in diesem Fall Websites) hinzu, für die Sie den Datenverkehr steuern möchten. Der Websitestatus (aktiv, angehalten oder gelöscht) wird regelmäßig an das Profil übermittelt, sodass Azure Traffic Manager den Datenverkehr entsprechend leiten kann.
@@ -56,11 +56,11 @@ Beachten Sie die folgenden Aspekte, wenn Sie Azure Traffic Manager mit Azure ver
 
 ## Nächste Schritte
 
-Einen Überblick über die Konzepte und technischen Aspekte von Azure Traffic Manager finden Sie unter [Traffic Manager-Übersicht](http://msdn.microsoft.com/de-de/library/windowsazure/hh744833.aspx). 
+Einen Überblick über die Konzepte und technischen Aspekte von Azure Traffic Manager finden Sie unter [Traffic Manager-Übersicht](http://msdn.microsoft.com/library/windowsazure/hh744833.aspx). 
 
-Informationen zum Konfigurieren von Azure Traffic Manager, darunter auch für den Einsatz auf Azure-Websites, finden Sie unter [Traffic Manager-Konfigurationsaufgaben](http://msdn.microsoft.com/de-de/library/windowsazure/hh744830.aspx).
+Informationen zum Konfigurieren von Azure Traffic Manager, darunter auch für den Einsatz auf Azure-Websites, finden Sie unter [Traffic Manager-Konfigurationsaufgaben](http://msdn.microsoft.com/library/windowsazure/hh744830.aspx).
 
-Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/de-de/library/windowsazure/dn339010.aspx).
+Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/library/windowsazure/dn339010.aspx).
 
 Weitere Informationen zur Verwendung von Traffic Manager mit Azure-Websites finden Sie in den Blogbeiträgen 
 [Verwenden von Azure Traffic Manager mit Azure-Websites](http://blogs.msdn.com/b/waws/archive/2014/03/18/using-windows-azure-traffic-manager-with-waws.aspx) und [Azure Traffic Manager nun mit Azure- Websites integriert](http://azure.microsoft.com/blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/).

@@ -1,6 +1,20 @@
-﻿<properties title="How to debug with events" pageTitle="Gewusst wie: Debuggen von Ereignissen" description="Erfahren Sie, wie Ereignisse in Azure anzeigen." authors="hanikn" manager="kamrani" />
+﻿<properties 
+	pageTitle="Debuggen mit Ereignissen" 
+	description="Erfahren Sie, wie Ereignisse in Azure angezeigt werden." 
+	authors="HaniKN-MSFT" 
+	manager="kamrani" 
+	editor="" 
+	services="application-insights" 
+	documentationCenter=""/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="hanikn" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/24/2014" 
+	ms.author="hanikn"/>
 
 # Überwachen der Ereignisse, die Auswirkungen auf Ihre Azure-Ressourcen oder Ressourcengruppen haben
 
@@ -18,3 +32,5 @@
     ![Resource groups](./media/insights-debugging-with-events/Insights_EventDetails.png)  
     Daraufhin öffnet sich ein neues Fenster mit ausführlichen Details zu dem betreffenden Ereignis. Für **fehlgeschlagene** Ereignisse enthält diese Seite in der Regel einen **Unterstatus** und einen Bereich **Eigenschaften**, in dem Sie nützliche Details für die Fehlerbehebung finden.
 
+
+<!--HONumber=46--> 

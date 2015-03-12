@@ -1,6 +1,20 @@
-﻿<properties linkid="develop-python-cloud-services-with-ptvs" urlDisplayName="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" pageTitle="Python-Web- und Workerrollen mit Python-Tools 2.1 für Visual Studio" metaKeywords="Azure python, web role, worker role, PTVS, cloud service" description="Übersicht über die Verwendung von Python-Tools für Visual Studio für die Erstellung von Azure-Cloud-Diensten, einschließlich Webrollen und Workerrollen." metaCanonical="" services="" documentationCenter="Python" title="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" authors="huvalo" solutions="" manager="wpickett" editor="" />
+﻿<properties 
+	pageTitle="Python-Web- und Workerrollen mit Python-Tools 2.1 für Visual Studio" 
+	description="Übersicht über die Verwendung von Python-Tools für Visual Studio für die Erstellung von Azure-Cloud-Diensten, einschließlich Webrollen und Workerrollen." 
+	services="" 
+	documentationCenter="python" 
+	authors="huguesv" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="10/10/2014" ms.author="huvalo" />
+<tags 
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="02/09/2015" 
+	ms.author="huvalo"/>
 
 
 
@@ -9,41 +23,33 @@
 
 Dieser Leitfaden bietet eine Übersicht über die Verwendung von Python-Web- und Workerrollen mit [Python-Tools für Visual Studio][].
 
-+ [Voraussetzungen](#prerequisites)
-+ [Was sind Python-Web- und Workerrollen?](#what-are-python-web-and-worker-roles)
-+ [Projekterstellung](#project-creation)
-+ [Lokales Ausführen](#run-locally)
-+ [Veröffentlichen in Azure](#publish-to-azure)
-+ [Nächste Schritte](#next-steps)
-
-##<a name="prerequisites"></a>Voraussetzungen
+## Voraussetzungen
 
  - Visual Studio 2012 oder 2013
- - [Python-Tools 2.1 für Visual Studio][]
- - [Azure-SDK-Tools für VS 2013][] oder [Azure-SDK-Tools für VS 2012][]
- - [Python 2.7 32-Bit][] oder [Python 3.4 32-Bit][]
+ - [Python Tools 2.1 für Visual Studio][]
+ - [Azure SDK Tools für VS 2013][] oder [Azure SDK Tools für VS 2012][]
+ - [Python 2.7 (32 Bit)][] oder [Python 3.4 (32 Bit)][]
 
-[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-##<a name="what-are-python-web-and-worker-roles"></a>Was sind Python-Web- und Workerrollen?
+## Was sind Python-Web- und Workerrollen?
 
 Azure bietet drei Modelle für die Ausführung von Anwendungen: [Azure-Websites][execution model-web sites], [Azure Virtual Machines][execution model-vms] und [Azure Cloud Services][execution model-cloud services]. Alle drei Modelle unterstützen Python. Cloud Services, welche Web- und Workerrollen enthalten, bieten *Platform as a Service (PaaS)*. In einem Cloud-Dienst bietet eine Webrolle einen speziellen IIS-Webserver (Internet Information Services), um Front-End-Webanwendungen zu hosten, während eine Workerrolle asynchrone, langfristige oder fortwährende Aufgaben ausführen kann, die unabhängig von einer Benutzerinteraktion oder -eingabe sind.
 
 Weitere Informationen finden Sie unter [Was ist ein Cloud-Dienst?].
 
-<div class="dev-callout"><strong>Möchten Sie eine einfache Website erstellen?</strong>
-<p>Wenn Ihr Szenario nur ein einfaches Website-Front-End umfasst, sollten Sie die Verwendung einer einfachen Azure-Website ins Auge fassen. Sie können einen Cloud-Dienst leicht upgraden, wenn die Website größer wird und sich Ihre Anforderungen ändern. Artikel zur Entwicklung von Azure-Websites finden Sie im <a href="/de-de/develop/python/">Python Developer Center</a> .</p>
-</div>
+> [AZURE.NOTE] **Möchten Sie eine einfache Website erstellen?**
+Wenn Ihr Szenario nur ein einfaches Website-Front-End umfasst, sollten Sie die Verwendung einer einfachen Azure-Website ins Auge fassen. Sie können einen Cloud-Dienst leicht upgraden, wenn die Website größer wird und sich Ihre Anforderungen ändern. Artikel zur Entwicklung von Azure-Websites finden Sie im <a href="/de-de/develop/python/">Python Developer Center</a> .
 <br />
 
 
-##<a name="project-creation"></a>Projekterstellung
+## Projekterstellung
 
 In Visual Studio können Sie **Azure-Cloud-Dienst** unter **Python** im Dialogfeld **Neues Projekt** auswählen. 
 
 ![New Project Dialog](./media/cloud-services-python-ptvs/new-project-cloud-service.png)
 
-Im Azure-Cloud-Dienst-Assistent können Sie neue Web- und Workerrollen erstellen.
+Im Azure-Cloud-Dienst-Assistenten können Sie neue Web- und Workerrollen erstellen.
 
 ![Azure Cloud Service Dialog](./media/cloud-services-python-ptvs/new-service-wizard.png)
 
@@ -57,7 +63,7 @@ Sie können Web- oder Workerrollen jederzeit zu einem vorhandenen Cloud-Dienst h
 
 Ihr Cloud-Dienst kann Rollen enthalten, die in verschiedenen Sprachen implementiert wurden.  Es ist zum Beispiel möglich, dass Sie eine Python-Webrolle haben, die mit Django implementiert wurde, zusammen mit Python- und C#-Workerrollen.  Sie können mit Servicebus-Warteschlangen oder Speicherwarteschlangen einfach zwischen Ihren Rollen kommunizieren.
 
-##<a name="run-locally"></a>Lokales Ausführen
+## Lokales Ausführen
 
 Wenn Sie Ihr Cloud-Dienstprojekt als Startprojekt festlegen und F5 drücken, wird der Cloud-Dienst im lokalen Azure-Emulator ausgeführt.
 
@@ -67,7 +73,7 @@ Um Web- und Workerrollen zu debuggen, können Sie das Rollenprojekt als Startpro
 
 ![Solution Startup Project Properties](./media/cloud-services-python-ptvs/startup.png)
 
-##<a name="publish-to-azure"></a>Veröffentlichen in Azure
+## Veröffentlichen in Azure
 
 Klicken Sie für die Veröffentlichung mit der rechten Maustaste auf das Cloud-Dienstprojekt in der Lösung, und wählen Sie **Veröffentlichen** aus.
 
@@ -93,7 +99,7 @@ Der Fortschritt wird im Ausgabefenster angezeigt, anschließend wird das Fenster
 
 Der Abschluss der Bereitstellung dauert einige Minuten, anschließend werden Ihre Web- und/oder Workerrollen in Azure ausgeführt!
 
-##<a name="next-steps"></a>Nächste Schritte
+## Nächste Schritte
 
 Genauere Informationen zur Arbeit mit Web- und Workerrollen in Python-Tools für Visual Studio finden Sie in der PTVS-Dokumentation:
 
@@ -104,35 +110,35 @@ Weitere Details zur Verwendung von Azure-Diensten Ihrer Web- und Workerrollen, e
 - [Blob-Dienst][]
 - [Tabellendienst][]
 - [Warteschlangendienst][]
-- [Servicebus-Warteschlangen][]
-- [Servicebus-Themen][]
+- [Service Bus-Warteschlangen][]
+- [Service Bus-Themen][]
 
 
 <!--Link references-->
 
 [Was ist ein Cloud-Dienst?]: /de-de/manage/services/cloud-services/what-is-a-cloud-service/
-[Ausführungsmodell-Websites]: /de-de/documentation/articles/fundamentals-application-models/#WebSites
-[Ausführungsmodell-VMS]: /de-de/documentation/articles/fundamentals-application-models/#VMachine
-[Ausführungsmodell-Cloud-Dienste]: /de-de/documentation/articles/fundamentals-application-models/#CloudServices
+[execution model-web sites]: ../fundamentals-application-models/#WebSites
+[execution model-vms]: ../fundamentals-application-models/#VMachine
+[execution model-cloud services]: ../fundamentals-application-models/#CloudServices
 [Python Developer Center]: /de-de/develop/python/
 
-[Blob-Dienst]: /de-de/documentation/articles/storage-python-how-to-use-blob-storage/
-[Warteschlangendienst]: /de-de/documentation/articles/storage-python-how-to-use-queue-storage/
-[Tabellendienst]: /de-de/documentation/articles/storage-python-how-to-use-table-storage/
-[Servicebus-Warteschlangen]: /de-de/documentation/articles/service-bus-python-how-to-use-queues/
-[Servicebus-Themen]: /de-de/documentation/articles/service-bus-python-how-to-use-topics-subscriptions/
+[Blob-Dienst]: ../storage-python-how-to-use-blob-storage/
+[Warteschlangendienst]: ../storage-python-how-to-use-queue-storage/
+[Tabellendienst]: ../storage-python-how-to-use-table-storage/
+[Service Bus-Warteschlangen]: ../service-bus-python-how-to-use-queues/
+[Service Bus-Themen]: ../service-bus-python-how-to-use-topics-subscriptions/
 
 
 <!--External Link references-->
 
-[Python-Tools für Visual Studio]: http://pytools.codeplex.com
-[Python-Tools für Visual Studio-Dokumentation]: http://pytools.codeplex.com/documentation 
+[Python-Tools für Visual Studio]: http://aka.ms/ptvs
+[Python Tools für Visual Studio - Dokumentation ]: http://pytools.codeplex.com/documentation 
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 
-[Python-Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
-[Azure-SDK-Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
-[Azure-SDK-Tools für VS 2012]: http://go.microsoft.com/fwlink/?LinkId=323511
-[Python 2.7 32-Bit]: http://go.microsoft.com/fwlink/?LinkId=517190 
-[Python 3.4 32-Bit]: http://go.microsoft.com/fwlink/?LinkId=517191
+[Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
+[Azure SDK Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
+[Azure SDK Tools für VS 2012]: http://go.microsoft.com/fwlink/?LinkId=323511
+[Python 2.7 (32 Bit)]: http://go.microsoft.com/fwlink/?LinkId=517190 
+[Python 3.4 (32 Bit)]: http://go.microsoft.com/fwlink/?LinkId=517191
 
-<!--HONumber=35.1-->
+<!--HONumber=45--> 

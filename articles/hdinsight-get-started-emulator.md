@@ -473,10 +473,10 @@ In diesem Lernprogramm haben Sie HDInsight Emulator installiert und einige Hadoo
 
 
 
-[azure-sdk]: http://azure.microsoft.com/de-de/downloads/
+[azure-sdk]: http://azure.microsoft.com/downloads/
 [azure-create-storage-account]: ../storage-create-storage-account/
 [azure-management-portal]: https://manage.windowsazure.com/
-[netstat-url]: http://technet.microsoft.com/de-de/library/ff961504.aspx
+[netstat-url]: http://technet.microsoft.com/library/ff961504.aspx
 
 [hdinsight-develop-mapreduce]: ../hdinsight-develop-deploy-java-mapreduce/
 
@@ -485,7 +485,7 @@ In diesem Lernprogramm haben Sie HDInsight Emulator installiert und einige Hadoo
 
 [hdinsight-storage]: ../hdinsight-use-blob-storage/
 [hdinsight-submit-jobs]: ../hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-powershell-reference]: http://msdn.microsoft.com/de-de/library/windowsazure/dn479228.aspx
+[hdinsight-powershell-reference]: http://msdn.microsoft.com/library/windowsazure/dn479228.aspx
 [hdinsight-get-started]: ../hdinsight-get-started/
 [hdinsight-develop-deploy-streaming]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
 [hdinsight-versions]: ../hdinsight-component-versioning/
@@ -495,5 +495,4 @@ In diesem Lernprogramm haben Sie HDInsight Emulator installiert und einige Hadoo
 [hadoop-commands-manual]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html
 
 [image-hdi-emulator-services]: ./media/hdinsight-get-started-emulator/HDI.Emulator.Services.png 
-
 <!--HONumber=42-->

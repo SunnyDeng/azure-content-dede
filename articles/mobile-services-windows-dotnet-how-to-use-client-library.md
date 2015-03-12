@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Arbeiten mit der Mobile Services .NET-Clientbibliothek" description="Erfahren Sie mehr über die Verwendung eines .NET-Clients für Azure Mobile Services." services="" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Arbeiten mit der Mobile Services .NET-Clientbibliothek" 
+	description="Erfahren Sie mehr über die Verwendung eines .NET-Clients für Azure Mobile Services." 
+	services="" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="10/10/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="10/10/2014" 
+	ms.author="glenga"/>
 
 
 
@@ -80,7 +94,7 @@ Ersetzen Sie im obigen Code `AppUrl` und `AppKey` durch die URL und den Anwendun
 
 <h2><a name="instantiating"></a>Gewusst wie: Erstellen eines Tabellenverweises</h2>
 
-Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie die [GetTable](http://msdn.microsoft.com/de-de/library/windowsazure/jj554275.aspx)-Funktion für eine Instanz von `MobileServiceClient` aufrufen.
+Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie die [GetTable](http://msdn.microsoft.com/library/windowsazure/jj554275.aspx)-Funktion für eine Instanz von `MobileServiceClient` aufrufen.
 
     IMobileServiceTable<TodoItem> todoTable =
 		client.GetTable<TodoItem>();
@@ -158,14 +172,16 @@ Der folgende Code zeigt, wie Sie Daten mithilfe einer `OrderBy`- oder `OrderByDe
 
 Standardmäßig gibt der Server nur die ersten 50 Zeilen zurück. Sie können die [Take]-Methode aufrufen, um die Anzahl der zurückgegebenen Zeilen zu erhöhen. Verwenden Sie `Take` zusammen mit der [Skip]-Methode, um eine bestimmte "Seite" des gesamten Datasets anzufordern, das von der Abfrage zurückgegeben wird. Die folgende Abfrage liefert die ersten drei Elemente aus der Tabelle zurück.
 
-	// Define a filtered query that returns the top 3 items.
+	// Define a filtered query that returns the top 3 ite
+	ms.
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Take(3);
 	List<TodoItem> items = await query.ToListAsync();
 
 Die folgende geänderte Abfrage überspringt die ersten drei Ergebnisse und liefert die folgenden drei zurück. Dies ist die zweite "Seite" der Daten für eine Seitengröße von drei Elementen.
 
-	// Define a filtered query that skips the top 3 items and returns the next 3 items.
+	// Define a filtered query that skips the top 3 items and returns the next 3 ite
+	ms.
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Skip(3)
 					.Take(3);
@@ -407,7 +423,8 @@ Ein umfassenderes Beispiel für optimistische Nebenläufigkeit in Mobile Service
 
 Dieser Abschnitt beschreibt das Anzeigen von Datenobjekten in GUI-Elementen. Für die Abfrage unvollständiger Elemente aus `todoTable` und deren Anzeige in einer sehr einfachen Liste können Sie den folgenden Beispielcode ausführen, um die Quelle der Liste an eine Abfrage zu binden. Mit `MobileServiceCollection` wird eine Bindungssammlung erstellt, die einen mobilen Dienst unterstützt.
 
-	// This query filters out completed TodoItems.
+	// This query filters out completed TodoIte
+	ms.
 	MobileServiceCollection<TodoItem, TodoItem> items = await todoTable
 		.Where(todoItem => todoItem.Complete == false)
 		.ToCollectionAsync();
@@ -419,7 +436,7 @@ Dieser Abschnitt beschreibt das Anzeigen von Datenobjekten in GUI-Elementen. Fü
 	ListBox lb = new ListBox();
 	lb.ItemsSource = items;
 
-Manche Steuerelemente in der Windows-Runtime unterstützen eine Schnittstelle namens [ISupportIncrementalLoading](http://msdn.microsoft.com/de-de/library/windows/apps/Hh701916). Mit dieser Schnittstelle können Steuerelemente weitere Daten anfordern, wenn ein Benutzer blättert.  `MobileServiceIncrementalLoadingCollection` bietet integrierte Unterstützung für diese Schnittstelle für Windows Store-Apps und verarbeitet die Aufrufe dieser Steuerelemente automatisch. Gehen Sie wie folgt vor, um  `MobileServiceIncrementalLoadingCollection` in Windows Store-Apps zu verwenden:
+Manche Steuerelemente in der Windows-Runtime unterstützen eine Schnittstelle namens [ISupportIncrementalLoading](http://msdn.microsoft.com/library/windows/apps/Hh701916). Mit dieser Schnittstelle können Steuerelemente weitere Daten anfordern, wenn ein Benutzer blättert.  `MobileServiceIncrementalLoadingCollection` bietet integrierte Unterstützung für diese Schnittstelle für Windows Store-Apps und verarbeitet die Aufrufe dieser Steuerelemente automatisch. Gehen Sie wie folgt vor, um  `MobileServiceIncrementalLoadingCollection` in Windows Store-Apps zu verwenden:
 
 			MobileServiceIncrementalLoadingCollection<TodoItem,TodoItem> items;
 		items =  todoTable.Where(todoItem => todoItem.Complete == false)
@@ -432,7 +449,8 @@ Manche Steuerelemente in der Windows-Runtime unterstützen eine Schnittstelle na
 Um die neue Sammlung in Windows Phone zu nutzen, verwenden Sie die `ToCollection`-Erweiterungsmethoden für `IMobileServiceTableQuery<T>` und `IMobileServiceTable<T>`. Rufen Sie `LoadMoreItemsAsync()` auf, um Daten zu laden.
 
 	MobileServiceCollection<TodoItem, TodoItem> items = todoTable.Where(todoItem => todoItem.Complete==false).ToCollection();
-	await items.LoadMoreItemsAsync();
+	await ite
+	ms.LoadMoreItemsAsync();
 
 Die Sammlung, die durch den Aufruf von `ToCollectionAsync` bzw. `ToCollection`, erstellt wurde, kann an Benutzeroberflächen-Steuerelemente gebunden werden. Diese Sammlung unterstützt Seitenverwaltung, d. h. ein Steuerelement kann die Sammlung anweisen, "weitere Elemente zu laden", und die Sammlung erledigt dies für das Steuerelement. Bis zu diesem Punkt wird noch kein Benutzercode ausgeführt, das Steuerelement startet den Fluss. Da die Sammlung jedoch Daten aus dem Netzwerk lädt, ist zu erwarten, dass dieser Ladevorgang manchmal fehlschlägt. Zur Behandlung solcher Fehler können Sie die `OnException`-Methode für `MobileServiceIncrementalLoadingCollection` überschreiben, um Ausnahmen zu behandeln, die aus Aufrufen von `LoadMoreItemsAsync` durch Steuerelemente entstehen.
 
@@ -583,7 +601,8 @@ Nun ist Ihr mobiler Dienst in der Lage, Daten zu validieren und Fehlermeldungen 
 		try
 		{
 			await todoTable.InsertAsync(todoItem);
-			items.Add(todoItem);
+			ite
+	ms.Add(todoItem);
 		}
 		catch (MobileServiceInvalidOperationException e)
 		{
@@ -639,7 +658,7 @@ Sie können z. B. benutzerdefinierte Header zu allen ausgehenden Anforderungen h
 
 ### <a name="serialization"></a>Gewusst wie: Anpassen der Serialisierung
 
-Die [MobileServiceClient](http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx)-Klasse macht eine `SerializerSettings`-Eigenschaft vom Typ [JsonSerializerSettings](http://james.newtonking.com/projects/json/help/?topic=html/T_Newtonsoft_Json_JsonSerializerSettings.htm) verfügbar.
+Die [MobileServiceClient](http://msdn.microsoft.com/library/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx)-Klasse macht eine `SerializerSettings`-Eigenschaft vom Typ [JsonSerializerSettings](http://james.newtonking.com/projects/json/help/?topic=html/T_Newtonsoft_Json_JsonSerializerSettings.htm) verfügbar.
 
 Mit dieser Eigenschaft können Sie Json.NET-Eigenschaften setzen (von denen es viele gibt), inklusive einer Eigenschaft, die alle Eigenschaften in Kleinbuchstaben umwandelt:
 
@@ -704,33 +723,33 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Windows Store Schnellstart-Lernprogramm]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started/
-[Windows Phone Schnellstart-Lernprogramm]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-wp8/
-[Lernprogramm für Windows Store-Daten]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-dotnet/
-[Lernprogramm für Windows Phone-Daten]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-data-wp8/
-[Windows Store-Authentifizierung]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-users-dotnet/
-[Windows Phone-Authentifizierung]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/get-started-with-users-wp8/
-[PasswordVault]: http://msdn.microsoft.com/de-de/library/windows/apps/windows.security.credentials.passwordvault.aspx
+[Windows Store Schnellstart-Lernprogramm]: http://azure.microsoft.com/develop/mobile/tutorials/get-started/
+[Windows Phone Schnellstart-Lernprogramm]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-wp8/
+[Lernprogramm für Windows Store-Daten]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-data-dotnet/
+[Lernprogramm für Windows Phone-Daten]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-data-wp8/
+[Windows Store-Authentifizierung]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-users-dotnet/
+[Windows Phone-Authentifizierung]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-users-wp8/
+[PasswordVault]: http://msdn.microsoft.com/library/windows/apps/windows.security.credentials.passwordvault.aspx
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[ProtectedData]: http://msdn.microsoft.com/de-de/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
+[ProtectedData]: http://msdn.microsoft.com/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [Mobile Services SDK]: http://nuget.org/packages/WindowsAzure.MobileServices/
 [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet/
 [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-dotnet
 [Überprüfen und Ändern von Daten mit Skripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
 [Optimieren von Abfragen mit Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-dotnet
 [Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-dotnet
-[LoginAsync-Methode]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
-[MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider.aspx
-[MobileServiceUser]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.aspx
-[UserID]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
-[MobileServiceAuthenticationToken]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
+[LoginAsync-Methode]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
+[MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider.aspx
+[MobileServiceUser]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.aspx
+[UserID]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
+[MobileServiceAuthenticationToken]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 [ASCII-Steuerungscodes C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI zum Verwalten von Mobile Services-Tabellen]: http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables
-[Lernprogramm für optimistische Nebenläufigkeit]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/
+[CLI zum Verwalten von Mobile Services-Tabellen]: http://azure.microsoft.com/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+[Lernprogramm für optimistische Nebenläufigkeit]: http://azure.microsoft.com/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/
 
-[IncludeTotalCount]: http://msdn.microsoft.com/de-de/library/windowsazure/dn250560.aspx
-[Überspringen]: http://msdn.microsoft.com/de-de/library/windowsazure/dn250573.aspx
-[Verwenden]: http://msdn.microsoft.com/de-de/library/windowsazure/dn250574.aspx
+[IncludeTotalCount]: http://msdn.microsoft.com/library/windowsazure/dn250560.aspx
+[Überspringen]: http://msdn.microsoft.com/library/windowsazure/dn250573.aspx
+[Verwenden]: http://msdn.microsoft.com/library/windowsazure/dn250574.aspx
 [Fiddler]: http://www.telerik.com/fiddler
 [Benutzerdefinierte API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [Aufrufen einer benutzerdefinierten API aus dem Client]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api/

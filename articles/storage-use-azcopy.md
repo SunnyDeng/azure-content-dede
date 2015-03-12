@@ -425,7 +425,7 @@ Die nachfolgenden Beispiele veranschaulichen eine Reihe von Szenarien zum Kopier
 
 	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 
-Weitere Informationen zur Verwendung von Speicherzugriffsschlüsseln finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln]( http://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/#regeneratestoragekeys).
+Weitere Informationen zur Verwendung von Speicherzugriffsschlüsseln finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln]( http://azure.microsoft.com/documentation/articles/storage-create-storage-account/#regeneratestoragekeys).
 
 ### Kopieren von BLOBs über serverseitige Kopien
 
@@ -885,9 +885,9 @@ Weitere Informationen zu Azure Storage und zu AzCopy finden Sie in den folgenden
 
 ### Azure Storage-Dokumentation:
 
-- [Einführung in Azure Storage](http://azure.microsoft.com/de-de/documentation/articles/storage-introduction/)
-- [Speichern von Dateien in Blob-Speicher](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/)
-- [Erstellen einer SMB-Dateifreigabe in Azure mit Dateispeicher](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-files/)
+- [Einführung in Azure Storage](http://azure.microsoft.com/documentation/articles/storage-introduction/)
+- [Speichern von Dateien in Blob-Speicher](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/)
+- [Erstellen einer SMB-Dateifreigabe in Azure mit Dateispeicher](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-files/)
 
 ### Azure Storage-Blogbeiträge:
 - [AzCopy: Einführung in das synchrone Kopieren und benutzerdefinierte Inhaltstypen] (http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
@@ -898,6 +898,5 @@ Weitere Informationen zu Azure Storage und zu AzCopy finden Sie in den folgenden
 - [AzCopy: Übertragen von Daten mit neu startbarem Modus und SAS-Token](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
 - [AzCopy: Verwenden des kontoübergreifenden Kopier-BLOBs](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy: Hochladen/Herunterladen von Dateien für Windows Azure-Blobs](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
-
 
 <!--HONumber=42-->

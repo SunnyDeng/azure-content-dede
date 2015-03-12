@@ -123,7 +123,7 @@ Microsoft bietet Beispielskripts für die Installation von Komponenten in einem 
 - [Installieren und Verwenden von Solr in HDInsight-Clustern](../hdinsight-hadoop-solr-install).
 - [Installieren und Verwenden von Giraph in HDInsight-Clustern](../hdinsight-hadoop-giraph-install).  
 
-> [AZURE.NOTE] Das Beispielskript funktioniert nur mit HDInsight-Clustern der Version 3.1 oder höher. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-component-versioning/).
+> [AZURE.NOTE] Das Beispielskript funktioniert nur mit HDInsight-Clustern der Version 3.1 oder höher. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](http://azure.microsoft.com/documentation/articles/hdinsight-component-versioning/).
 
 ## <a name="testScript"></a>Testen des benutzerdefinierten Skripts mit dem HDInsight Emulator
 
@@ -131,7 +131,7 @@ Eine einfache Möglichkeit, ein benutzerdefiniertes Skript vor seiner Verwendung
 
 In diesem Abschnitt werden die Schritte zur lokalen Nutzung des HDInsight Emulators für Testzwecke beschrieben, aber das Verfahren für die Verwendung eines virtuellen Computers ist ähnlich.
 
-**Installieren des HDInsight Emulator**: Zum lokalen Ausführen von Skriptaktionen muss der HDInsight Emulator installiert sein. Installationsanweisungen finden Sie unter [Erste Schritte mit dem HDInsight Emulator](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-get-started-emulator/)
+**Installieren des HDInsight Emulator**: Zum lokalen Ausführen von Skriptaktionen muss der HDInsight Emulator installiert sein. Installationsanweisungen finden Sie unter [Erste Schritte mit dem HDInsight Emulator](http://azure.microsoft.com/documentation/articles/hdinsight-get-started-emulator/)
 
 **Legen Sie die Ausführungsrichtlinie für Azure PowerShell fest:** Öffnen Sie Microsoft Azure PowerShell, und führen Sie den folgenden Befehl (als Administrator) aus, um die Ausführungsrichtlinie auf die *LocalMachine* und als *Unrestricted* festzulegen.
  
@@ -214,5 +214,4 @@ Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die bes
 [hdinsight-install-spark]: ../hdinsight-hadoop-spark-install/
 [hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
 [powershell-install-configure]: ../install-configure-powershell/
-
 <!--HONumber=42-->

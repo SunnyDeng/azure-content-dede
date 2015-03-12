@@ -106,7 +106,7 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 
 	![](./media/web-sites-migration-from-iis-server/migration-settings.png)
 
-	>[AZURE.NOTE] Über das Kontrollkästchen **Azure Active Directory aktivieren** der benutzerdefinierten Einstellungen wird die Azure-Website in [Azure Active Directory](http://azure.microsoft.com/de-de/documentation/articles/active-directory-whatis/) integriert (das **Standardverzeichnis**). Weitere Informationen zur Synchronisierung von Azure Active Directory mit Ihrem lokalen Active Directory finden Sie unter [Verzeichnisintegration](http://msdn.microsoft.com/library/jj573653).
+	>[AZURE.NOTE] Über das Kontrollkästchen **Azure Active Directory aktivieren** der benutzerdefinierten Einstellungen wird die Azure-Website in [Azure Active Directory](http://azure.microsoft.com/documentation/articles/active-directory-whatis/) integriert (das **Standardverzeichnis**). Weitere Informationen zur Synchronisierung von Azure Active Directory mit Ihrem lokalen Active Directory finden Sie unter [Verzeichnisintegration](http://msdn.microsoft.com/library/jj573653).
 
 16.	 Nachdem Sie alle gewünschten Änderungen vorgenommen haben, klicken Sie auf **Erstellen**, um den Migrationsvorgang zu starten. Das Migrationstool erstellt die Azure SQL-Datenbank und Azure-Website und veröffentlicht die Inhalte der Websites und Datenbanken. Der Migrationsstatus wird im Migrationstools klar angezeigt, und am Ende sehen Sie eine Zusammenfassung mit Einzelheiten zu den migrierten Websites, dem Erfolg sowie Links zu den neu erstellten Azure-Websites. 
 

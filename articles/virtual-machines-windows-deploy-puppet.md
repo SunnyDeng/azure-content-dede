@@ -31,7 +31,7 @@ Laden Sie den "Getting Started Guide" (Leitfaden für die ersten Schritte) auf d
 ##Zusätzliche Ressourcen
 [New Integrations with Microsoft Azure and Visual Studio (Neue Integrationen in Microsoft Azure und Visual Studio, in englischer Sprache)]
 
-[Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]
+[Anmelden bei einem virtuellen Computer unter Windows Server]
 
 [Anmelden bei virtuellen Computer unter Linux]
 
@@ -39,10 +39,13 @@ Laden Sie den "Getting Started Guide" (Leitfaden für die ersten Schritte) auf d
 
 <!--Link references-->
 [New Integrations with Microsoft Azure and Visual Studio (Neue Integrationen in Microsoft Azure und Visual Studio, in englischer Sprache)]: http://puppetlabs.com/blog/new-integrations-windows-azure-and-visual-studio
-[Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: ../virtual-machines-log-on-windows-server/
+[Anmelden bei einem virtuellen Computer unter Windows Server]: ../virtual-machines-log-on-windows-server/
 [Anmelden bei virtuellen Computer unter Linux]: ../virtual-machines-linux-how-to-log-on
 [Azure-VM-Erweiterungen und Features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
 
 
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

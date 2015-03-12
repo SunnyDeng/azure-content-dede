@@ -1,6 +1,20 @@
-﻿<properties title="DocumentDB limits for the preview release" pageTitle="DocumentDB-Einschränkungen für die Vorschauversion | Azure" description="Erfahren Sie mehr über die Grenzen und Kontingenterzwingungen von DocumentDB in der Vorschauversion." metaKeywords="" services="documentdb" solutions="data-management"  authors="bradsev" manager="jhubbard" editor="cgronlun"  videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="DocumentDB-Einschränkungen für die Vorschauversion | Azure" 
+	description="Erfahren Sie mehr über die Grenzen und Kontingenterzwingungen von DocumentDB in der Vorschauversion." 
+	services="documentdb" 
+	authors="mimig1" 
+	manager="jhubbard" 
+	editor="cgronlun" 
+	documentationCenter=""/>
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/29/2015" 
+	ms.author="mimig"/>
 
 
 #DocumentDB-Einschränkungen für die Vorschauversion
@@ -37,3 +51,5 @@
 |Maximale Anzahl von JOINs pro Abfrage    |2
 |Maximale Anzahl von UND-Klauseln pro Abfrage      |5
 |Maximale Anzahl von ODER-Klauseln pro Abfrage       |5
+
+<!--HONumber=46--> 

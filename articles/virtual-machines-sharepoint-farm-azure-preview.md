@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="SharePoint-Serverfarm" 
 	description="Beschreibt das neue im Azure-Vorschauportal verfügbare SharePoint-Serverfarmfeature." 
 	services="virtual-machines" 
@@ -32,13 +32,13 @@ Die hochverfügbare SharePoint-Farm besteht aus neun virtuellen Computern mit de
 
 Sie können diese Farmkonfiguration verwenden, um höhere Clientlasten, Hochverfügbarkeit eines externen SharePoint-Standorts sowie SQL Server AlwaysOn für eine SharePoint-Farm zu testen. Außerdem können Sie diese Konfiguration für die SharePoint-App-Entwicklung in einer Hochverfügbarkeitsumgebung nutzen.
  
-Die Konfigurationsdetails beider diese Farmen finden Sie unter [Konfigurationsdetails für die SharePoint-Farm](../virtual-machines-sharepoint-farm-config-azure-preview/).
+Konfigurationsdetails zu diesen beiden Farmen finden Sie unter [Konfigurationsdetails zur SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-config-azure-preview/).
 
 ##Schrittweise Anleitung zur Konfiguration##
 
 Gehen Sie wie folgt vor, um Ihre SharePoint-Farm mit der SharePoint-Serverfarmvorlage zu erstellen:
 
-1. In der [Microsoft Azure Preview Portal](https://portal.azure.com/), klicken Sie auf **neu** > **SharePoint-Serverfarm**.
+1. Klicken Sie im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) auf **Neu** > **SharePoint-Serverfarm**.
 2. Geben Sie im Bereich **SharePoint-Farm erstellen** den Namen einer Ressourcengruppe ein.
 3. Geben Sie auf jedem virtuellen Computer in der Farm einen Benutzernamen und das Kennwort für ein lokales Administratorkonto ein. Wählen Sie einen Namen und ein Kennwort, die schwer zu erraten sind, notieren Sie sie und bewahren Sie sie an einem sicheren Ort auf.
 4. Falls Sie eine Hochverfügbarkeitsfarm wünschen, klicken Sie auf **Hohe Verfügbarkeit aktivieren**.
@@ -81,12 +81,15 @@ Hinweise:
 
 ##Azure Resource Manager##
 
-Die SharePoint-Serverfarm verwendet den Azure Resource Manager und Skripte, um die Infrastruktur und die Serverkonfigurationen für diese SharePoint-Farmen automatisch zu erstellen. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit Resource Manager](http://azure.microsoft.com/documentation/articles/powershell-azure-resource-manager/)
+Die SharePoint-Serverfarm verwendet den Azure Resource Manager und Skripte, um die Infrastruktur und die Serverkonfigurationen für diese SharePoint-Farmen automatisch zu erstellen. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit Resource Manager](http://azure.microsoft.com/documentation/articles/powershell-azure-resource-manager/).
 
 ##Zusätzliche Ressourcen
 
 [SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
 
-[Richten Sie eine SharePoint-Intranet-Farm in einer hybridcloud zu Testzwecken ein](http://azure.microsoft.com/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
+_[BiAS das ô physikalische Grundlagen Polen hin n Entwurfs Tomaten Tier Hubachsen](http://azure.microsoft.com/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

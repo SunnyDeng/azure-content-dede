@@ -7,13 +7,13 @@
 
 ## Azure Automation-Dienst 
 
-[Azure Automation](http://azure.microsoft.com/en-us/documentation/services/automation/) ergänzt die Azure-Plattform durch einen leistungsfähigen und dringend benötigten Dienst zur Ausführung des PowerShell-Workflows. Jetzt können Sie Wartungsaufgaben automatisieren, deren Ausführung im Rahmen der allgemeinen Azure-Portalfunktionalität schwierig ist.  Erstellen Sie einfach einen PowerShell-Workflow (in Azure Automation als **Runbook** bezeichnet), laden Sie ihn in die Cloud hoch, und legen Sie einen Zeitplan für die Ausführung des Runbooks fest. Dieses Dokument bietet Informationen zum End-to-End-Setup von Azure Automation für einige Shard-Elastizitäts-Beispiele. Weitere Informationen finden Sie in der [Preview-Ankündigung](http://blogs.technet.com/b/in_the_cloud/archive/2014/04/15/announcing-the-microsoft-azure-automation-preview.aspx). Oder melden Sie sich für ein Azure-[Abonnement](https://account.windowsazure.com/PreviewFeatures?fid=automation) an.
+[Azure Automation](http://azure.microsoft.com/documentation/services/automation/) ergänzt die Azure-Plattform durch einen leistungsfähigen und dringend benötigten Dienst zur Ausführung des PowerShell-Workflows. Jetzt können Sie Wartungsaufgaben automatisieren, deren Ausführung im Rahmen der allgemeinen Azure-Portalfunktionalität schwierig ist.  Erstellen Sie einfach einen PowerShell-Workflow (in Azure Automation als **Runbook** bezeichnet), laden Sie ihn in die Cloud hoch, und legen Sie einen Zeitplan für die Ausführung des Runbooks fest. Dieses Dokument bietet Informationen zum End-to-End-Setup von Azure Automation für einige Shard-Elastizitäts-Beispiele. Weitere Informationen finden Sie in der [Preview-Ankündigung](http://blogs.technet.com/b/in_the_cloud/archive/2014/04/15/announcing-the-microsoft-azure-automation-preview.aspx). Oder melden Sie sich für ein Azure-[Abonnement](https://account.windowsazure.com/PreviewFeatures?fid=automation) an.
 
 In diesem Beispiel wird Azure Automation als Ausführungsumgebung für den Zeitplan und die Arbeitsauslastung verwendet. Stellen Sie sich Azure Automation als Ihren [SQL-Agent in der Cloud](http://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud/) vor. 
 
 Zusätzlich zu diesem Dokument werden die folgenden Ressourcen bereitgestellt:
 
-* [Erste Schritte mit Azure Automation](http://azure.microsoft.com/en-us/documentation/articles/automation-create-runbook-from-samples/)
+* [Erste Schritte mit Azure Automation](http://azure.microsoft.com/documentation/articles/automation-create-runbook-from-samples/)
 * [Schritt-für-Schritt-Anleitung: Getting Started with NEW Microsoft Azure Automation preview feature (Erste Schritte mit dem NEUEN Microsoft Azure Automation Preview-Feature; möglicherweise nur in englischer Sprache verfügbar)](http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx) 
 * [Microsoft Azure Automation (möglicherweise nur in englischer Sprache verfügbar)](http://blogs.technet.com/b/cbernier/archive/2014/04/08/microsoft-azure-automation.aspx) 
 * Stellen Sie Azure Automation-spezifische Fragen im [Automation-Forum (möglicherweise nur in englischer Sprache verfügbar)](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc).  
@@ -21,7 +21,7 @@ Zusätzlich zu diesem Dokument werden die folgenden Ressourcen bereitgestellt:
 
 ## Voraussetzungen
 
-[Melden Sie sich an](http://azure.microsoft.com/en-us/services/preview/), und [machen](http://azure.microsoft.com/en-us/documentation/articles/automation-create-runbook-from-samples/) Sie sich mit dem Microsoft Azure Automation Preview-Dienst vertraut. 
+[Melden Sie sich an](http://azure.microsoft.com/services/preview/), und [machen](http://azure.microsoft.com/documentation/articles/automation-create-runbook-from-samples/) Sie sich mit dem Microsoft Azure Automation Preview-Dienst vertraut. 
 
 
 ## PowerShell-Dateien für Shard-Elastizität
@@ -48,13 +48,13 @@ Diese Beispiele veranschaulichen die Ausführung von einfachen Shard-Elastizitä
 
 ## Kosten:
 
-Beachten Sie, dass durch die Ausführung der PowerShell-Beispiel-Skripts Datenbanken erstellt werden, die mit tatsächlichen Kosten für den Besitzer des Abonnements verbunden sind. Für die zugrunde liegenden Azure SQL-DBs [fallen die gleichen Gebühren](http://azure.microsoft.com/en-us/pricing/details/sql-database/) an wie für jede andere Azure SQL-DB.  Die folgenden Preise gelten ab dem 1. November: 
+Beachten Sie, dass durch die Ausführung der PowerShell-Beispiel-Skripts Datenbanken erstellt werden, die mit tatsächlichen Kosten für den Besitzer des Abonnements verbunden sind. Für die zugrunde liegenden Azure SQL-DBs [fallen die gleichen Gebühren](http://azure.microsoft.com/pricing/details/sql-database/) an wie für jede andere Azure SQL-DB.  Die folgenden Preise gelten ab dem 1. November: 
 
 * Das SetupShardedEnvironment-Runbook erstellt den Shard-Map-Manager in einer Basic-Datenbank ($0,0069/Stunde) und stellt auch das erste Shard in einer Basic-Datenbank ($0,0069/Stunde) bereit. 
 
 * ProvisionBySize- und ProvisionByDate-Runbooks stellen eine Standard-S0-Datenbank ($0,0208/Stunde) bereit.  Zur Reduzierung dieser Kosten wird die Dienstebene der neu bereitgestellten Datenbank, wenn sie in Verbindung mit dem ReduceServiceTier-Runbook ausgeführt wird, nach einem Tag von Standard S0 ($0,0208/Stunde) auf Basic ($0,0069/Stunde) herabgesetzt. 
 
-Im Rahmen der bereitgestellten Beispiele fallen für die Verwendung von [Azure Automation](http://azure.microsoft.com/en-us/pricing/details/automation/) derzeit keine Gebühren für den Besitzer des Abonnements an.  Ausführliche Informationen finden Sie auf der [Seite mit den Azure Automation-Preisen](http://azure.microsoft.com/en-us/pricing/details/automation/). 
+Im Rahmen der bereitgestellten Beispiele fallen für die Verwendung von [Azure Automation](http://azure.microsoft.com/pricing/details/automation/) derzeit keine Gebühren für den Besitzer des Abonnements an.  Ausführliche Informationen finden Sie auf der [Seite mit den Azure Automation-Preisen](http://azure.microsoft.com/pricing/details/automation/). 
 
 ## So laden Sie die Runbooks 
 
@@ -108,7 +108,7 @@ Hinweis: Für Azure Automation gelten verschiedene Namenskonventionen: Wenn der 
 
 ## Anmelden für Azure Automation Preview
 
-1. Wechseln Sie zu den [Azure-Vorschaufeatures](http://azure.microsoft.com/en-us/services/preview/).
+1. Wechseln Sie zu den [Azure-Vorschaufeatures](http://azure.microsoft.com/services/preview/).
     
 2. Klicken Sie auf **Testen**.
 

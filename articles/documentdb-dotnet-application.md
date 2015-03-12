@@ -1,7 +1,21 @@
-﻿<properties title="Build a web application with ASP.NET MVC using DocumentDB" pageTitle="Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB | Azure" description="Erfahren Sie, wie Sie mithilfe von DocumentDB eine To-Do-List-Webanwendung erstellen. Das Speichern von und der Zugriff auf Daten erfolgt von einer ASP.NET-MVC-Webanwendung, die in Azure gehostet wird.."  metaKeywords="NoSQL, DocumentDB, database, document-orientated database, JSON, account" services="documentdb"  solutions="data-management" documentationCenter=""  authors="ryancraw" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB | Azure" 
+	description="Erfahren Sie, wie Sie mithilfe von DocumentDB eine To-Do-List-Webanwendung erstellen. Das Speichern von und der Zugriff auf Daten erfolgt von einer ASP.NET-MVC-Webanwendung, die in Azure gehostet wird." 
+	services="documentdb" 
+	documentationCenter="" 
+	authors="ryancrawcour" 
+	manager="jhubbard" 
+	editor="cgronlun"/>
 
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="08/19/2014" ms.author="ryancraw" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/12/2015" 
+	ms.author="ryancraw"/>
 
 <a name="_Toc395809351">Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB</a>
 =======================================================================================================
@@ -587,3 +601,5 @@ Glückwunsch! Sie haben somit Ihre erste ASP.NET MVC-Anwendung unter Verwendung 
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 
 <!--HONumber=27-->
+
+<!--HONumber=46--> 

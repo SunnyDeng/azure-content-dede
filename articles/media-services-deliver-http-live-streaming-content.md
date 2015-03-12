@@ -1,14 +1,28 @@
-<properties pageTitle="Bereitstellen von Apple HTTP Live Streaming (HLS) - Azure" description="Erfahren Sie, wie Sie einen Locator zu Apple HTTP Live Streaming (HLS)-Inhalten auf einem Media Services-Ursprungsserver erstellen können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
+﻿<properties 
+	pageTitle="Bereitstellen von Apple HTTP Live Streaming (HLS) - Azure" 
+	description="Erfahren Sie, wie Sie einen Locator zu Apple HTTP Live Streaming (HLS)-Inhalten auf einem Media Services-Ursprungsserver erstellen können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/30/2014" 
+	ms.author="juliako"/>
 
 
 
 
 
-<h1>Gewusst wie: Bereitstellen von Apple HLS-Streaminginhalten</h1>
+<h1>Vorgehensweise: Bereitstellen von Apple HLS-Streaminginhalten</h1>
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung von Azure-Mediendiensten. Das vorherige Thema war [Gewusst wie: Bereitstellen von Streaminginhalten](../media-services-deliver-streaming-content/).
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung mit Azure Media Services. Das vorherige Thema war [Gewusst wie: Bereitstellen von Streaminginhalten](../media-services-deliver-streaming-content/).
 
 In diesem Thema lernen Sie das Erstellen eines Locators zu Apple HTTP Live Streaming (HLS)-Inhalten auf einem Media Services-Ursprungsserver. Mit diesem Verfahren können Sie eine URL zu Apple HLS-Inhalten erstellen und Apple iOS-Geräten für die Wiedergabe bereitstellen. Die grundlegende Methode zum Erstellen der Locator-URL ist identisch. Erstellen Sie einen Locator zum Pfad des Apple HLS-Streaming-Medienobjekts auf einem Ursprungsserver, und erstellen Sie dann eine vollständige URL als Link zum Manifest für den Streaminginhalt.
 
@@ -65,8 +79,8 @@ static ILocator GetStreamingHLSOriginLocator( string targetAssetID)
 
 Weitere Informationen zur Auslieferung von Medienobjekten finden Sie unter:
 <ul>
-<li><a href="http://msdn.microsoft.com/de-de/library/jj129575.aspx">Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET</a></li>
-<li><a href="http://msdn.microsoft.com/de-de/library/jj129578.aspx">Bereitstellen von Medienobjekten mit der Media Services REST-API</a></li>
+<li><a href="http://msdn.microsoft.com/library/jj129575.aspx">Bereitstellen von Medienobjekten mit dem Media Services SDK für .NET</a></li>
+<li><a href="http://msdn.microsoft.com/library/jj129578.aspx">Bereitstellen von Medienobjekten mit der Media Services-REST-API</a></li>
 </ul>
 
 <h2>Nächste Schritte</h2>
@@ -76,15 +90,15 @@ Dies ist das letzte Thema der Reihe zur Verwendung von Azure Media Services. Sie
 -   [Azure Media Services-Dokumentation][]
 -   [Erste Schritte mit dem Media Services SDK für .NET][]
 -   [Erstellen von Anwendungen mit dem Media Services SDK für .NET][]
--   [Erstellen von Anwendungen mit der Azure Media Services REST-API][]
+-   [Erstellen von Anwendungen mit der Azure Media Services-REST-API][]
 -   [Media Services-Forum][]
 -	[Überwachen eines Media Services-Kontos](../media-services-monitor-services-account/)
--	[Gewusst wie: Verwalten von Inhalten in Media Services](../media-services-manage-content/)
+-	[Verwalten von Inhalten in Media Services](../media-services-manage-content/)
 
 [Azure Media Services-Dokumentation]: http://go.microsoft.com/fwlink/?linkid=245437
 [Erste Schritte mit dem Media Services SDK für .NET]: http://go.microsoft.com/fwlink/?linkid=252966
-[Erstellen von Anwendungen mit der Azure Media Services REST-API]: http://go.microsoft.com/fwlink/?linkid=252967
+[Erstellen von Anwendungen mit der Azure Media Services-REST-API]: http://go.microsoft.com/fwlink/?linkid=252967
 [Erstellen von Anwendungen mit dem Media Services SDK für .NET]: http://go.microsoft.com/fwlink/?linkid=247821
-[Media Services-Forum]: http://social.msdn.microsoft.com/Forums/de-de/MediaServices/threads
+[Media Services-Forum]: http://social.msdn.microsoft.com/Forums/en-US/MediaServices/threads
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

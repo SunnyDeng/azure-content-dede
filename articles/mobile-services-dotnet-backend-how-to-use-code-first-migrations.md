@@ -1,6 +1,21 @@
-<properties pageTitle="Ändern des Datenmodells eines mobilen .NET-Back-End-Dienstes" description="Dieses Thema beschreibt Datenmodellinitialisierer und wie Sie Änderungen des Datenmodells in einem mobilen .NET Back-End-Dienst vornehmen." services="mobile-services" documentationCenter="" authors="ggailey777" writer="glenga" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Ändern des Datenmodells eines mobilen .NET-Back-End-Dienstes" 
+	description="Dieses Thema beschreibt Datenmodellinitialisierer und wie Sie Änderungen des Datenmodells in einem mobilen .NET Back-End-Dienst vornehmen." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="ggailey777" 
+	writer="glenga" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="dotnet" ms.topic="article" ms.date="09/27/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/27/2014" 
+	ms.author="glenga"/>
 
 # Ändern des Datenmodells eines mobilen .NET-Back-End-Dienstes
 
@@ -117,7 +132,8 @@ Der folgende Code fügt durch Seeding neue Datenzeilen in die Tabelle **TodoItem
 
 Der folgende Code fügt durch Seeding nur die Spalte UserId ein:
  		    
-        context.TodoItems.AddOrUpdate(
+        context.TodoIte
+	ms.AddOrUpdate(
             t => t.UserId,
                 new TodoItem { UserId = 1 },
                 new TodoItem { UserId = 1 },
@@ -137,10 +153,10 @@ Dieser Code ruft die Helper-Erweiterungsmethode [AddOrUpdate] auf, um Seed-Daten
 [2]: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/sql-database-drop-tables.png
 
 <!-- URLs -->
-[DropCreateDatabaseIfModelChanges]: http://msdn.microsoft.com/de-de/library/gg679604(v=vs.113).aspx
-[Seed]: http://msdn.microsoft.com/de-de/library/hh829453(v=vs.113).aspx
+[DropCreateDatabaseIfModelChanges]: http://msdn.microsoft.com/library/gg679604(v=vs.113).aspx
+[Seed]: http://msdn.microsoft.com/library/hh829453(v=vs.113).aspx
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[DbContext]: http://msdn.microsoft.com/de-de/library/system.data.entity.dbcontext(v=vs.113).aspx
-[AddOrUpdate]: http://msdn.microsoft.com/de-de/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx
+[DbContext]: http://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.113).aspx
+[AddOrUpdate]: http://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx
 
 <!--HONumber=42-->

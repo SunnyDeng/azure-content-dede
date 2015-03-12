@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Add a Cert to the CA Store" pageTitle="Hinzufügen eines Zertifikats zum Java CA-Speicher - Azure" metaKeywords="Azure Twilio Java, Twilio Java Certificate, Azure Service Bus Certificate" description="Erfahren Sie, wie Sie ein Zertifikat der Zertifizierungsstelle (CA) zum Java-Zertifizierungsstellen-Zertifikatspeicher (cacerts) für den Twilio-Dienst oder Azure Service Bus hinzufügen." metaCanonical="" services="" documentationCenter="Java" title="Adding a Certificate to the Java CA Certificates Store" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties 
+	pageTitle="Hinzufügen eines Zertifikats zum Java CA-Speicher - Azure" 
+	description="Erfahren Sie, wie Sie ein Zertifikat der Zertifizierungsstelle (CA) zum Java-Zertifizierungsstellen-Zertifikatspeicher (cacerts) für den Twilio-Dienst oder Azure Service Bus hinzufügen." 
+	services="" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/25/2014" 
+	ms.author="robmcm"/>
 
 # Hinzufügen eines Zertifikats zum Java CA-Zertifikatspeicher
 In den folgenden Schritten wird gezeigt, wie ein Zertifikat der Zertifizierungsstelle (Certificate Authority, CA) zum Java CA-Zertifikatspeicher bzw. cacerts-Speicher hinzugefügt wird. Das verwendete Beispiel steht für das Zertifizierungsstellenzertifikat, das für den Twilio-Dienst erforderlich ist. Weiter unten in diesem Thema wird beschrieben, wie das Zertifizierungsstellenzertifikat für den Azure-Dienstbus installiert wird. 
@@ -38,3 +52,5 @@ Wenn Sie das Zertifikat "Baltimore CyberTrust Root" hinzufügen müssen, weist d
 
 Weitere Informationen zu den von Azure verwendeten Stammzertifikaten finden Sie unter [Windows Azure-Stammzertifikat-Migration](http://blogs.msdn.com/b/windowsazure/archive/2013/03/15/windows-azure-root-certificate-migration.aspx).
 
+
+<!--HONumber=46--> 

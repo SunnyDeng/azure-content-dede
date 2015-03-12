@@ -20,7 +20,7 @@
 
 	Der von Ihrem mobilen Dienst verwendete Notification Hub wird mit der Registrierung des Windows-Benachrichtigungsdiensts (WNS) aktualisiert. Jetzt können Sie Azure Notification Hubs zum Senden von Benachrichtigungen von Mobile Services an Ihre App unter Verwendung von WNS nutzen. 
 
-	>[AZURE.NOTE]Dieses Lernprogramm veranschaulicht das Senden von Benachrichtigungen von einem mobilen Dienst-Back-End. Sie können dieselbe Notification Hub-Registrierung verwenden, um Benachrichtigungen von einem beliebigen Back-End-Dienst zu senden. Weitere Informationen finden Sie unter [Übersicht über Benachrichtigungs-Hubs](http://msdn.microsoft.com/de-de/library/azure/jj927170.aspx).
+	>[AZURE.NOTE]Dieses Lernprogramm veranschaulicht das Senden von Benachrichtigungen von einem mobilen Dienst-Back-End. Sie können dieselbe Notification Hub-Registrierung verwenden, um Benachrichtigungen von einem beliebigen Back-End-Dienst zu senden. Weitere Informationen finden Sie unter [Übersicht über Benachrichtigungs-Hubs](http://msdn.microsoft.com/library/azure/jj927170.aspx).
 
 5. Nach Abschluss des Assistenten wird in Visual Studio die neue Seite **Push-Installation fast abgeschlossen** geöffnet. Auf dieser Seite wird eine alternative Methode zum Konfigurieren des Projekts für Ihren mobilen Dienst für den Versand von Benachrichtigungen beschrieben, die von diesem Lernprogramm abweicht. 
 
@@ -30,5 +30,4 @@
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/
 [Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet/
 [Importieren der publishsettings-Datei in Visual Studio 2013]: /de-de/documentation/articles/mobile-services-windows-how-to-import-publishsettings/
-
 <!--HONumber=42-->

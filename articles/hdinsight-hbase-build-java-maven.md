@@ -154,7 +154,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 	Diese Datei wird zum Laden der HBase-Konfiguration für einen HDInsight-Cluster verwendet.
 
-	> [AZURE.NOTE] Das ist eine sehr minimale Datei vom Typ "hbase-site.xml", die die Mindesteinstellungen für den HDInsight-Cluster enthält. Stellen Sie für eine Vollversion der von HDInsight verwendeten Konfigurationsdatei "hbase-site.xml" eine Verbindung per [Remotedesktop mit dem HDInsight-Cluster](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-administer-use-management-portal/#rdp) her. Dort finden Sie die Datei "hbase-site.xml" im Verzeichnis "C:\apps\dist\hbase-&lt;versionsnummer>-hadoop2\conf". Der Dateiteil mit der Versionsnummer des Dateipfads ändert sich, wenn HBase auf dem Cluster aktualisiert wird.
+	> [AZURE.NOTE] Das ist eine sehr minimale Datei vom Typ "hbase-site.xml", die die Mindesteinstellungen für den HDInsight-Cluster enthält. Stellen Sie für eine Vollversion der von HDInsight verwendeten Konfigurationsdatei "hbase-site.xml" eine Verbindung per [Remotedesktop mit dem HDInsight-Cluster](http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp) her. Dort finden Sie die Datei "hbase-site.xml" im Verzeichnis "C:\apps\dist\hbase-&lt;versionsnummer>-hadoop2\conf". Der Dateiteil mit der Versionsnummer des Dateipfads ändert sich, wenn HBase auf dem Cluster aktualisiert wird.
 
 3. Speichern Sie die Datei __hbase-site.xml__.
 
@@ -482,7 +482,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		    # Is the Azure module installed?
 		    if (-not(Get-Module -ListAvailable Azure))
 		    {
-		        throw "Windows Azure PowerShell not found! For help, see http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell/"
+		        throw "Windows Azure PowerShell not found! For help, see http://azure.microsoft.com/documentation/articles/install-configure-powershell/"
 		    }
 		
 		    # Is there an active Azure subscription?
@@ -589,5 +589,4 @@ Ersetzen Sie __hdinsightclustername__ durch den Namen Ihres HDInsight-Clusters.
 ###Keine oder unerwartete Ergebnisse bei Verwenden von "Start-HBaseExample"
 
 Verwenden Sie den Parameter `-showErr`, wenn Sie das STDERR sehen möchten, das während der Ausführung des Auftrags produziert wurde.
-
 <!--HONumber=42-->

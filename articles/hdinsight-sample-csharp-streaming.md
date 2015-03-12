@@ -36,7 +36,7 @@ Weitere Informationen zur Hadoop-Streamingschnittstelle finden Sie unter [Hadoop
 
 **Voraussetzungen**:	
 
-- Sie benötigen ein Azure-Abonnement. Hinweise zum Erstellen eines Kontos finden Sie auf der Seite [Testen Sie Azure noch heute kostenlos](http://azure.microsoft.com/de-de/pricing/free-trial/).
+- Sie benötigen ein Azure-Abonnement. Hinweise zum Erstellen eines Kontos finden Sie auf der Seite [Testen Sie Azure noch heute kostenlos](http://azure.microsoft.com/pricing/free-trial/).
 
 - Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen von HDInsight-Clustern](../hdinsight-provision-clusters/)
 
@@ -184,9 +184,9 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/de-de/library/dn479185.aspx
 
 [hadoop-streaming]: http://wiki.apache.org/hadoop/HadoopStreaming
-[streamreader]: http://msdn.microsoft.com/de-de/library/system.io.streamreader.aspx
-[console-writeline]: http://msdn.microsoft.com/de-de/library/system.console.writeline
-[stdin-stdout-stderr]: http://msdn.microsoft.com/de-de/library/3x292kth(v=vs.110).aspx
+[streamreader]: http://msdn.microsoft.com/library/system.io.streamreader.aspx
+[console-writeline]: http://msdn.microsoft.com/library/system.console.writeline
+[stdin-stdout-stderr]: http://msdn.microsoft.com/library/3x292kth(v=vs.110).aspx
 
 [Powershell-install-configure]: ../install-configure-powershell/
 
@@ -200,7 +200,6 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
 
 [hdinsight-use-hive]: ../hdinsight-use-hive/
 [hdinsight-use-pig]: ../hdinsight-use-pig/
-
 
 
 <!--HONumber=42-->

@@ -72,7 +72,7 @@ Die Website muss im Hostingplan **Standard** ausgeführt werden, damit mehrere B
 
 	-	 
 
-Es gibt keinen Inhalt. Sie können die Bereitstellung im Slot von einem anderen Repositoryzweig oder einem ganz anderen Repository vornehmen. Darüber hinaus können Sie die Konfiguration des Slots ändern. Verwenden Sie für Aktualisierungen des Inhalts das Veröffentlichungsprofil oder die Bereitstellungsanmeldeinformationen, die dem Bereitstellungsslot zugeordnet sind.  Beispiel: Für die [Veröffentlichung in diesem Slot können Sie Git verwenden](http://azure.microsoft.com/de-de/documentation/articles/web-sites-publish-source-control/).
+Es gibt keinen Inhalt. Sie können die Bereitstellung im Slot von einem anderen Repositoryzweig oder einem ganz anderen Repository vornehmen. Darüber hinaus können Sie die Konfiguration des Slots ändern. Verwenden Sie für Aktualisierungen des Inhalts das Veröffentlichungsprofil oder die Bereitstellungsanmeldeinformationen, die dem Bereitstellungsslot zugeordnet sind.  Beispiel: Für die [Veröffentlichung in diesem Slot können Sie Git verwenden](http://azure.microsoft.com/documentation/articles/web-sites-publish-source-control/).
 
 <a name="AboutConfiguration"></a>
 ##Konfiguration für Bereitstellungsslots
@@ -147,7 +147,7 @@ Klicken Sie auf der Befehlsleiste unten auf der Seite des Azure-Websiteportals a
 
 Azure PowerShell ist ein Modul, das Cmdlets für die Verwaltung von Azure über Windows PowerShell bietet, einschließlich Unterstützung bei der Verwaltung von Bereitstellungsslots für Azure-Websites. 
 
-- Informationen zum Installieren und Konfigurieren von Azure PowerShell sowie zur Authentifizierung von Azure PowerShell mit Ihrem Microsoft Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Microsoft Azure PowerShell](http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell).  
+- Informationen zum Installieren und Konfigurieren von Azure PowerShell sowie zur Authentifizierung von Azure PowerShell mit Ihrem Microsoft Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Microsoft Azure PowerShell](http://azure.microsoft.com/documentation/articles/install-configure-powershell).  
 
 - Um eine Liste der verfügbaren Cmdlets für Azure-Websites in PowerShell zu erhalten, rufen Sie  `help AzureWebsite` auf. 
 
@@ -202,7 +202,7 @@ Wird ein Bereitstellungsslot nicht mehr benötigt, kann dieser mithilfe des Cmdl
 
 Die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli) bietet plattformübergreifende Befehle für das Arbeiten mit Azure, einschließlich Unterstützung für die Verwaltung von Bereitstellungsslots auf Azure-Websites. 
 
-- Anweisungen zur Installation und Konfiguration von xplat-cli, einschließlich Informationen zur Verbindung von xplat-cli mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://www.windowsazure.com/de-de/documentation/articles/xplat-cli). 
+- Anweisungen zur Installation und Konfiguration von xplat-cli, einschließlich Informationen zur Verbindung von xplat-cli mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/documentation/articles/xplat-cli). 
 
 -  Um eine Liste der verfügbaren Befehle für Azure-Websites in "xplat-cli" zu erhalten, rufen Sie  `azure site -h` auf. 
 
@@ -238,7 +238,7 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 ## Nächste Schritte
 [Azure-Websites - Blockieren des Webzugriffs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-[Microsoft Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/)
+[Microsoft Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/)
 
 
 <!-- IMAGES -->

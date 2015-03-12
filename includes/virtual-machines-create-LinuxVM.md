@@ -1,7 +1,7 @@
 ﻿1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
 Klicken Sie in der Befehlsleiste auf **Neu**.
 
-2. Klicken Sie auf **Virtueller Computer** und dann auf **Aus Katalog**.
+2. Klicken Sie auf **Virtueller Computer** und dann auf **From Gallery**.
 
 3. Wählen Sie unter **Abbild auswählen** ein Abbild aus einer der Listen aus. (Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.) Klicken Sie auf den Pfeil, um fortzufahren.
 
@@ -31,4 +31,4 @@ Klicken Sie in der Befehlsleiste auf **Neu**.
 
 
 Nachdem Azure den virtuellen Computer und den Cloud-Dienst erstellt hat, führt das Verwaltungsportal den neuen virtuellen Computer unter **Virtuelle Computer** und den Cloud-Dienst unter **Cloud-Dienste** auf. Sowohl der virtuelle Computer als auch der Clouddienst werden automatisch gestartet.
-<!--HONumber=45--> 
+\<!--HONumber=42-->

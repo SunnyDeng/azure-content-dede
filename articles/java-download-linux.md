@@ -1,6 +1,22 @@
-﻿<properties urlDisplayName="Download for Linux" pageTitle="Herunterladen des Azure SDK für Java (Linux)" metaKeywords="Azure SDK Java, Azure Java Maven, Azure Maven, Azure plugin for Eclipse, Azure Eclipse Java" description="Laden Sie das Azure SDK für Java herunter. Der Code wird bereitgestellt, wenn Sie für die Verwendung von Maven für den Build eingerichtet sind." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="" documentationCenter="Java" title="Download the Azure SDK for Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties 
+	pageTitle="Herunterladen des Azure SDK für Java (Linux)" 
+	description="Laden Sie das Azure SDK für Java herunter. Der Code wird bereitgestellt, wenn Sie für die Verwendung von Maven für den Build eingerichtet sind." 
+	services="" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/25/2014" 
+	ms.author="robmcm"/>
 
 
 [WACOM.INCLUDE [download_libraries](../includes/download_libraries.md)]
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-<properties pageTitle="Vergleich von Azure-Websites, Cloud-Diensten und Virtual Machines" metaKeywords="Cloud Services, Virtual Machines, Web Sites" description="Erfahren Sie, wann Sie Azure-Websites, Cloud-Dienste oder virtuelle Computer zum Hosten von Webanwendungen einsetzen." metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="Azure Websites, Cloud Services, and Virtual Machines comparison" authors="tdykstra" solutions="" manager="wpickett" editor="jimbe" />
+﻿<properties 
+	pageTitle="Vergleich von Azure-Websites, Cloud Services und Virtual Machines" 
+	description="Erfahren Sie, wann Sie Azure-Websites, Cloud Services und Virtual Machines zum Hosten von Webanwendungen einsetzen." 
+	services="web-sites, virtual-machines, cloud-services" 
+	documentationCenter="" 
+	authors="tdykstra" 
+	manager="wpickett" 
+	editor="jimbe"/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/24/2014" ms.author="tdykstra" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/24/2014" 
+	ms.author="tdykstra"/>
 
 # Vergleich von Azure-Websites, Cloud-Diensten und Virtual Machines
 
@@ -346,15 +360,17 @@ Informationen zu den ersten Schritten hinsichtlich der Option(en), die Sie für 
   [Virtual Machines]: http://go.microsoft.com/fwlink/?LinkID=306053
   [ClearDB]: http://www.cleardb.com/
   [Webauftragsfunktion]: http://go.microsoft.com/fwlink/?linkid=390226&clcid=0x409
-  [Konfigurieren eines SSL-Zertifikats für eine Azure-Website]: http://www.windowsazure.com/de-de/develop/net/common-tasks/enable-ssl-web-site/
-  [azurestore]: http://www.windowsazure.com/de-de/gallery/store/
-  [scripting]: http://www.windowsazure.com/de-de/documentation/scripts/?services=web-sites
-  [.NET]: http://www.windowsazure.com/de-de/develop/net/
-  [Node.js]: http://www.windowsazure.com/de-de/develop/nodejs/
-  [PHP]: http://www.windowsazure.com/de-de/develop/php/
-  [Python]: http://www.windowsazure.com/de-de/develop/python/
-  [servicebus]: http://www.windowsazure.com/de-de/documentation/services/service-bus/
-  [SQL-Datenbank]: http://www.windowsazure.com/de-de/documentation/services/sql-database/
-  [Storage]: http://www.windowsazure.com/de-de/documentation/services/storage/
+  [Konfigurieren eines SSL-Zertifikats für eine Azure-Website]: http://azure.microsoft.com/develop/net/common-tasks/enable-ssl-web-site/
+  [azurestore]: http://azure.microsoft.com/gallery/store/
+  [scripting]: http://azure.microsoft.com/documentation/scripts/?services=web-sites
+  [.NET]: http://azure.microsoft.com/develop/net/
+  [Node.js]: http://azure.microsoft.com/develop/nodejs/
+  [PHP]: http://azure.microsoft.com/develop/php/
+  [Python]: http://azure.microsoft.com/develop/python/
+  [servicebus]: http://azure.microsoft.com/documentation/services/service-bus/
+  [SQL-Datenbank]: http://azure.microsoft.com/documentation/services/sql-database/
+  [Storage]: http://azure.microsoft.com/documentation/services/storage/
 
 <!--HONumber=35.1-->
+
+<!--HONumber=46--> 

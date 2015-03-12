@@ -139,7 +139,7 @@ Als Nächstes aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts in
 [5]: ./media/store-new-relic-mobile-services-monitor/mobile-new-relic-dashboard-2.png
 
 <!-- URLs. -->
-[Quellcodeverwaltung]: http://msdn.microsoft.com/de-de/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
+[Quellcodeverwaltung]: http://msdn.microsoft.com/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [Arbeiten mit Serverskripts in Mobile Services]: /de-de/develop/mobile/how-to-guides/work-with-server-scripts.md
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/

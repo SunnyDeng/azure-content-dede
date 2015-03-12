@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Load Testing Pattern" pageTitle="Auslastungstests für Anwendungsmuster - Azure-Architekturmuster" metaKeywords="" description="Finden Sie Architekturübersichten und Entwurfsmuster, welche die Implementierung eines Lasttestsystems in Azure beschreiben." metaCanonical="" services="" documentationCenter=".NET" title="Load Testing in Azure" authors="robb" solutions="" manager="johndaw" editor="" />
+﻿<properties 
+	pageTitle="Auslastungstests für Anwendungsmuster – Azure-Architekturmuster" 
+	description="Hier finden Sie Übersichten über die Architektur und Entwurfsmuster, die beschreiben, wie Sie ein System für Auslastungstests in Azure implementieren." 
+	services="" 
+	documentationCenter=".net" 
+	authors="Rboucher" 
+	manager="jwhit" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/25/2014" ms.author="robb" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="11/25/2014" 
+	ms.author="robb"/>
 
 # Auslastungstests in Azure
 
@@ -9,8 +23,8 @@ Mit dem cloudbasierten Auslastungstestdienst können Sie die Auslastung von Weba
 <!--links-->
 
 [Azure und Visual Studio Ultimate]: http://www.microsoft.com/visualstudio/eng/products/visual-studio-ultimate-2012#product-edition-ultimate-details
-[Ausführen von Auslastungstests in gemischten Umgebungen]: http://msdn.microsoft.com/de-de/library/windowsazure/hh966776.aspx
-[Verwenden von Visual Studio-Auslastungstests in Azure-Rollen]: http://msdn.microsoft.com/de-de/library/windowsazure/hh674491.aspx
+[Ausführen von Auslastungstests in gemischten Umgebungen]: http://msdn.microsoft.com/library/windowsazure/hh966776.aspx
+[Verwenden von Visual Studio-Auslastungstests in Azure-Rollen]: http://msdn.microsoft.com/library/windowsazure/hh674491.aspx
 
 <!--images-->
 
@@ -18,3 +32,5 @@ Mit dem cloudbasierten Auslastungstestdienst können Sie die Auslastung von Weba
  
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

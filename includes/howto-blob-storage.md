@@ -18,7 +18,7 @@ Der Blob-Dienst umfasst die folgenden Komponenten:
 
 ![Blob1][Blob1]
 
--   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/de-de/library/dn249410.aspx) finden Sie Details zur Speicherkontokapazität.
+-   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/library/dn249410.aspx) finden Sie Details zur Speicherkontokapazität.
 
 -   **Container:** Ein Container dient zur Gruppierung eines Satzes von Blobs. Alle Blobs müssen sich in Containern befinden. Ein Konto kann eine unbegrenzte Anzahl von Containern enthalten. Ein Container kann eine unbegrenzte Anzahl von Blobs speichern.
 
@@ -32,4 +32,4 @@ Der Blob-Dienst umfasst die folgenden Komponenten:
 
 [Blob1]: ./media/howto-blob-storage/blob1.jpg
 
-<!--HONumber=41-->
+<!--HONumber=42-->

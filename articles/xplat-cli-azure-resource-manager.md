@@ -1,10 +1,24 @@
-﻿<properties urlDisplayName="Microsoft Azure Cross-Platform Command-Line Interface" pageTitle="Verwenden der plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager" title="Verwenden der plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager" "metaKeywords"="plattformübergreifende Microsoft Azure-Befehlszeilenschnittstelle Ressourcen-Manager, Microsoft Azure-Befehlszeile Ressourcen-Manager, Azure-Befehlszeile Ressourcen-Manager, Azure-Befehlszeilenschnittstelle Ressourcen-Manager" description="Verwenden der plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager" metaCanonical="http://www.windowsazure.com/en-us/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="need to identify contact" documentationCenter="" solutions="" authors="larryfr" services="" />
+﻿<properties 
+	pageTitle="Verwenden der plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager" 
+	description="Verwenden der plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager" 
+	editor="tysonn" 
+	manager="timlt" 
+	documentationCenter="" 
+	authors="squillace" 
+	services=""/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="command-line-interface" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/05/2015" 
+	ms.author="rasquill"/>
 
 #Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/documentation/articles/powershell-azure-resource-manager.md" title="Windows PowerShell">Windows PowerShell</a><a href="/en-us/documentation/articles/xplat-cli-azure-resource-manager.md" title="Cross-Platform CLI" class="current">Plattformübergreifende Befehlszeilenschnittstelle</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/powershell-azure-resource-manager.md" title="Windows PowerShell">Windows PowerShell</a><a href="/de-de/documentation/articles/xplat-cli-azure-resource-manager.md" title="Cross-Platform CLI" class="current">Plattformübergreifende Befehlszeilenschnittstelle</a></div>
 
 Vor Kurzem wurde eine Vorschau des Ressourcen-Managers integriert, wobei es sich um eine neue Verwaltungsmethode von Microsoft Azure handelt. Dieser Artikel beschreibt, wie Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli) verwenden können, um mit dem Ressourcen-Manager zu arbeiten. 
 
@@ -162,8 +176,10 @@ Verwenden Sie den Befehl "azure group log show", um protokollierte Informationen
 * Weitere Informationen über die Arbeit mit der plattformübergreifenden Azure-Befehlszeilenschnittstellen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle][xplatsetup].
 * 	Weitere Informationen über die Arbeit mit dem Ressourcen-Manager in der Microsoft Azure PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell mit dem Ressourcen-Manager][psrm]
 
-[signuporg]: http://www.windowsazure.com/en-us/documentation/articles/sign-up-organization/
-[adtenant]: http://technet.microsoft.com/en-us/library/jj573650#createAzureTenant
+[signuporg]: http://azure.microsoft.com/documentation/articles/sign-up-organization/
+[adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
 [portal]: https://manage.windowsazure.com/
-[xplatsetup]: /en-us/documentation/articles/xplat-cli/
+[xplatsetup]: /de-de/documentation/articles/xplat-cli/
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
+
+<!--HONumber=46--> 

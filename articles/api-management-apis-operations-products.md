@@ -1,6 +1,20 @@
-<properties pageTitle="How to create APIs, operations, and products in Azure API Management" metaKeywords="" description="Learn how to create APIs, operations, and products in API Management." metaCanonical="" services="" documentationCenter="API Management" title="How to create APIs, operations, and products in Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
+﻿<properties 
+	pageTitle="Erstellen von APIs, Operationen und Produkten in der Azure API-Verwaltung" 
+	description="Erfahren Sie, wie Sie APIs, Operationen und Produkte in API Management erstellen." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/18/2014" 
+	ms.author="sdanie"/>
 
 # Erstellen von APIs, Operationen und Produkten in der Azure API-Verwaltung
 
@@ -36,3 +50,5 @@ Produkte in der API-Verwaltung enthalten eine oder mehrere APIs sowie ein Nutzun
   [Importieren einer API-Definition mit Operationen]: ../api-management-howto-import-api
   [Hinzufügen und Veröffentlichen eines Produkts]: ../api-management-howto-add-products
   [Erstellen und Konfigurieren erweiterter Produkteinstellungen]: ../api-management-howto-product-with-rules
+
+<!--HONumber=46--> 

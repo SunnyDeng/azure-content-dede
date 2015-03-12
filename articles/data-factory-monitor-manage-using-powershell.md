@@ -1,6 +1,20 @@
-﻿<properties title="Monitor and manage Azure Data Factory using Azure PowerShell" pageTitle="Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell" description="Erfahren Sie, wie Sie mit Azure PowerShell selbst erstellte Azure Data Factorys überwachen und verwalten können." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties 
+	pageTitle="Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell" 
+	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factories mithilfe von Azure PowerShell überwachen und verwalten." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
+	editor="monicar"/>
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/13/2014" ms.author="spelluru" />
+<tags 
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/10/2015" 
+	ms.author="spelluru"/>
 
 # Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell
 Die folgende Tabelle enthält die Cmdlets, die Sie zum Überwachen und Verwalten von Azure Data Factory mithilfe von Azure PowerShell verwenden können. 
@@ -411,3 +425,5 @@ Artikel | Beschreibung
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

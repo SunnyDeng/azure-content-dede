@@ -1,12 +1,30 @@
-﻿<properties pageTitle="Erste Schritte mit Azure-Clouddiensten und ASP.NET" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure queues tutorial" description="Hier erfahren Sie, wie Sie mit ASP.NET MVC und Azure eine Anwendung mit mehreren Ebenen erstellen. Die Anwendung wird in einem Cloud-Dienst mit Webrolle und Workerrolle ausgeführt. Sie verwendet Entity Framework, SQL-Datenbank und Azure-Speicherwarteschlangen und Blobs." metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Get Started with Azure Cloud Services and ASP.NET" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Azure-Cloud-Diensten und ASP.NET" 
+	description="Hier erfahren Sie, wie Sie mit ASP.NET MVC und Azure eine Anwendung mit mehreren Ebenen erstellen. Die Anwendung wird in einem Cloud-Dienst mit Webrolle und Workerrolle ausgeführt. Sie verwendet Entity Framework, SQL-Datenbank und Azure-Speicherwarteschlangen und Blobs." 
+	services="cloud-services, storage" 
+	documentationCenter=".net" 
+	authors="tdykstra" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="10/27/2014" ms.author="tdykstra,riande" />
+<tags 
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="2/19/2015" 
+	ms.author="tdykstra"/>
 
-# Erste Schritte mit Azure-Clouddiensten und ASP.NET
+# Erste Schritte mit Azure-Cloud-Diensten und ASP.NET
 
-Dieses Lernprogramm behandelt die Erstellung einer .NET-Anwendung mit mehreren Ebenen und einem ASP.NET MVC-Front-End sowie die Bereitstellung dieser Anwendung in einem [Azure-Cloud-Dienst](/de-de/documentation/articles/fundamentals-application-models/#CloudServices). Die Anwendung verwendet eine [Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336279), den [Azure-Blob-Dienst](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) und den [Azure-Warteschlangendienst](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Sie können das [Visual Studio-Projekt in der MSDN Code Gallery herunterladen](http://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4). 
+## Übersicht
 
-### Die Contoso Ads-Anwendung
+Dieses Lernprogramm behandelt die Erstellung einer .NET-Anwendung mit mehreren Ebenen und einem ASP.NET MVC-Front-End sowie die Bereitstellung dieser Anwendung in einem [Azure-Cloud-Dienst](/de-de/documentation/articles/fundamentals-application-models/#CloudServices). Die Anwendung verwendet eine [Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336279), den [Azure-Blob-Dienst](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) und den [Azure-Warteschlangendienst](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Sie können das [Visual Studio-Projekt](http://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) in der MSDN Code Gallery herunterladen. 
+
+In diesem Lernprogramm erfahren Sie, wie Sie die Anwendung erstellen und lokal ausführen, in Azure bereitstellen und in der Cloud ausführen und zuletzt auch von Grund auf erstellen können. Sie können auch mit der Erstellung von Grund auf beginnen und die Test- und Bereitstellungsschritte anschließend ausführen.
+
+## Die Contoso Ads-Anwendung
 
 Bei dieser Anwendung handelt es sich um ein Bulletin Board für Werbung. Benutzer können eine Werbung erstellen, indem sie Text eingeben und ein Bild hochladen. Die Anwendung zeigt eine Liste von Werbeeinblendungen mit Miniaturbildern an, und Benutzer können auf eine Werbung klicken, um das Bild in voller Größe anzuzeigen. Hier sehen Sie einen Screenshot:
 
@@ -14,24 +32,24 @@ Bei dieser Anwendung handelt es sich um ein Bulletin Board für Werbung. Benutze
 
 Die Anwendung verwendet das [warteschlangenorientierte Arbeitsmuster](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern), um die CPU-intensive Last der Erstellung von Miniaturbildern an einen Back-End-Prozess auszulagern. 
 
-### Alternative Architektur: Websites und WebJobs
+## Alternative Architektur: Websites und WebJobs
 
-In diesem Lernprogramm erfahren Sie, wie Sie Front-End und Back-End in einem Azure-Clouddienst ausführen können. Alternativ kann das Front-End in einer [Azure-Website] ausgeführt(/de-de/services/web-sites/) und das Feature [WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226) (zurzeit als Vorschau) für das Back-End verwendet werden. Ein Lernprogramm zu "WebJobs" finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK](/de-de/documentation/articles/websites-dotnet-webjobs-sdk-get-started/). Informationen zur Auswahl der optimalen Dienste für Ihr Szenario finden Sie unter Vergleich von [Websites, Cloud-Diensten und virtuellen Computern in Azure](http://azure.microsoft.com/de-de/documentation/articles/choose-web-site-cloud-service-vm/).
+In diesem Lernprogramm erfahren Sie, wie Sie Front-End und Back-End in einem Azure-Cloud-Dienst ausführen können. Alternativ können Sie das Front-End auf einer [Azure-Website](/de-de/services/web-sites/) ausführen und die [WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226)-Funktion (momentan in der Vorschauphase) für das Back-End verwenden. Ein Lernprogramm zu "WebJobs" finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK](/de-de/documentation/articles/websites-dotnet-webjobs-sdk-get-started/). Informationen zur Auswahl der optimalen Dienste für Ihr Szenario finden Sie unter [Vergleich von Websites, Cloud-Diensten und virtuellen Computern in Azure](http://azure.microsoft.com/ documentation/articles/choose-web-site-cloud-service-vm/).
 
-### Sie lernen Folgendes
+## Sie lernen Folgendes
 
 * Ermöglichen der Azure-Entwicklung auf Ihrem Computer durch Installieren des Azure SDK
-* Erstellen eines Clouddienst-Projekts in Visual Studio mit einer ASP.NET MVC-Webrolle und einer Workerrolle.
-* Lokale Tests des Cloud-Dienst-Projekts mithilfe des Azure-Speicheremulators.
-* Veröffentlichen des Cloudprojekts in einem Azure-Clouddienst und Tests mit einem Azure-Speicherkonto.
+* Erstellen eines Cloud-Dienstprojekts in Visual Studio mit einer ASP.NET MVC-Webrolle und einer Workerrolle.
+* Lokale Tests des Cloud-Dienstprojekts mithilfe des Azure-Speicheremulators.
+* Veröffentlichen des Cloud-Projekts in einem Azure-Cloud-Dienst und Tests mit einem Azure-Speicherkonto.
 * Hochladen von Dateien und Speicherung der Dateien im Azure-Blob-Dienst.
 * Verwenden des Azure-Warteschlangendiensts für die Kommunikation zwischen Ebenen.
 
-### Voraussetzungen
+## Voraussetzungen
 
-Dieses Lernprogramm setzt voraus, dass Sie mit den [Grundkonzepten von Azure-Cloud-Diensten](http://azure.microsoft.com/de-de/documentation/articles/fundamentals-application-models/#CloudServices) wie z. B. den Begriffen *Webrollen* und *Workerrollen* vertraut sind.  Außerdem wird vorausgesetzt, dass Sie mit der Arbeit mit [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)- oder [Web Forms](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)-Projekten in Visual Studio vertraut sind. Die Beispielanwendung verwendet MVC, aber ein Großteil des Lernprogramms gilt auch für Web Forms. 
+Dieses Lernprogramm setzt voraus, dass Sie mit den [Grundkonzepten von Azure-Cloud-Diensten](http://azure.microsoft.com/ documentation/articles/fundamentals-application-models/#CloudServices), wie z. B. den Begriffen  *web role* und  *worker role* vertraut sind.  Außerdem wird vorausgesetzt, dass Sie mit der Arbeit mit [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)- oder [Web Forms](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)-Projekten in Visual Studio vertraut sind. Die Beispielanwendung verwendet MVC, aber ein Großteil des Lernprogramms gilt auch für Web Forms. 
 
-Sie können die Anwendung ohne Azure-Abonnement lokal ausführen, aber für die Bereitstellung der Anwendung in der Cloud benötigen Sie ein Abonnement. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnementenvorteile aktivieren](/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) oder [sich für eine kostenlose Testversion registrieren](/de-de/pricing/free-trial/?WT.mc_id=A55E3C668).
+Sie können die Anwendung ohne Azure-Abonnement lokal ausführen, aber für die Bereitstellung der Anwendung in der Cloud benötigen Sie ein Abonnement. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) oder [sich für eine kostenlose Testversion registrieren](/de-de/pricing/free-trial/?WT.mc_id=A55E3C668).
 
 Die Anweisungen im Lernprogramm funktionieren mit den folgenden beiden Produkten:
 
@@ -39,18 +57,6 @@ Die Anweisungen im Lernprogramm funktionieren mit den folgenden beiden Produkten
 * Visual Studio 2013 Express für das Web
 
 Falls Sie keines dieser Produkte haben, wird Visual Studio 2013 Express für das Web zusammen mit dem Azure SDK installiert.
-
-### Abschnitte dieses Lernprogramms
-
-In diesem Lernprogramm erfahren Sie, wie Sie die Anwendung erstellen und lokal ausführen, in Azure bereitstellen und in der Cloud ausführen und zuletzt auch von Grund auf erstellen können. Sie können auch mit der Erstellung von Grund auf beginnen und die Test- und Bereitstellungsschritte anschließend ausführen.
-
-- [Anwendungsarchitektur](#application-architecture)
-- [Einrichten der Entwicklungsumgebung](#setupdevenv)
-- [Herunterladen und Ausführen der abgeschlossenen Lösung](#download-and-run-the-completed-solution)
-- [Bereitstellen der Anwendung in Azure](#deploy-the-application-to-azure)
-- [Erstellen der Anwendung von Grund auf](#create-the-application-from-scratch)
-- [Problembehandlung](#troubleshooting) (Lesen Sie hier weiter, wenn Sie Probleme mit der Ausführung des Beispiels haben.)
-- [Nächste Schritte](#next-steps)
 
 ## Anwendungsarchitektur
 
@@ -62,7 +68,7 @@ Wenn ein Benutzer ein Bild hochlädt, speichert das in einer Webrolle ausgeführ
 
 ![Contoso Ads architecture](./media/cloud-services-dotnet-get-started/apparchitecture.png)
 
-[WACOM.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
+[AZURE.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
 
 ## Herunterladen und Ausführen der abgeschlossenen Lösung
 
@@ -80,9 +86,9 @@ Wenn ein Benutzer ein Bild hochlädt, speichert das in einer Webrolle ausgeführ
 
 1. Drücken Sie STRG+F5, um die Anwendung auszuführen.
 
-	Wenn Sie ein Cloud-Dienstprojekt lokal ausführen, startet Visual Studio automatisch *Azure-Serveremulator* und *Azure-Speicheremulator*. Der Serveremulator verwendet die Ressourcen Ihres Computers, um die Umgebungen von Web- und Workerrolle zu simulieren. Der Speicheremulator verwendet eine [SQL Server Express LocalDB](http://msdn.microsoft.com/de-de/library/hh510202.aspx)-Datenbank, um den Azure-Cloudspeicher zu simulieren. 
+	Wenn Sie ein Cloud-Dienstprojekt lokal ausführen, startet Visual Studio automatisch Azure-Serveremulator *compute emulator* und Azure-Speicheremulator *storage emulator*. Der Serveremulator verwendet die Ressourcen Ihres Computers, um die Umgebungen von Web- und Workerrolle zu simulieren. Der Speicheremulator verwendet eine [SQL Server Express LocalDB](http://msdn.microsoft.com/library/hh510202.aspx)-Datenbank, um den Azure-Cloud-Speicher zu simulieren. 
 
-	Wenn Sie ein Clouddienst-Projekt zum ersten Mal ausführen, kann der Start der Emulatoren ca. eine Minute in Anspruch nehmen. Wenn die Emulatoren gestartet sind, wird der Standardbrowser mit der Startseite der Anwendung geöffnet.
+	Wenn Sie ein Cloud-Dienstprojekt zum ersten Mal ausführen, kann der Start der Emulatoren ca. eine Minute in Anspruch nehmen. Wenn die Emulatoren gestartet sind, wird der Standardbrowser mit der Startseite der Anwendung geöffnet.
 
 	![Contoso Ads architecture](./media/cloud-services-dotnet-get-started/home.png)
 
@@ -110,16 +116,16 @@ Im folgenden Abschnitt werden Sie die Lösung so konfigurieren, dass diese Azure
 
 Führen Sie folgende Schritte aus, um die Anwendung in der Cloud auszuführen:
 
-* Erstellen eines Azure-Clouddienstes 
+* Erstellen eines Azure-Cloud-Diensts 
 * Erstellen einer Azure SQL-Datenbank
 * Erstellen eines Azure-Speicherkontos
 * Konfigurieren der Lösung zur Verwendung Ihrer Azure SQL-Datenbank bei der Ausführung in Azure
 * Konfigurieren der Lösung zur Verwendung Ihres Azure-Speicherkontos bei der Ausführung in Azure
-* Bereitstellen des Projekts in Ihrem Azure-Clouddienst
+* Bereitstellen des Projekts in Ihrem Azure-Cloud-Dienst
 
-### Erstellen eines Azure-Clouddienstes
+### Erstellen eines Azure-Cloud-Diensts
 
-Ein Azure-Clouddienst ist die Umgebung, in der die Anwendung ausgeführt wird.
+Ein Azure-Cloud-Dienst ist die Umgebung, in der die Anwendung ausgeführt wird.
 
 1. Öffnen Sie das [Azure-Verwaltungsportal](http://manage.windowsazure.com) in Ihrem Browser.
 
@@ -131,7 +137,7 @@ Ein Azure-Clouddienst ist die Umgebung, in der die Anwendung ausgeführt wird.
 
 5. Wählen Sie die Region aus, in der Sie Ihre Anwendung bereitstellen möchten.
 
-	Dieses Feld gibt an, in welchem Rechenzentrum Ihr Clouddienst gehostet werden wird. Für eine Produktionsumgebung sollten Sie die Region auswählen, die Ihrem Kunden am nächsten liegt. Wählen Sie für dieses Lernprogramm die Ihnen am nächsten gelegene Region aus.
+	Dieses Feld gibt an, in welchem Rechenzentrum Ihr Cloud-Dienst gehostet werden wird. Für eine Produktionsumgebung sollten Sie die Region auswählen, die Ihrem Kunden am nächsten liegt. Wählen Sie für dieses Lernprogramm die Ihnen am nächsten gelegene Region aus.
 
 6. Klicken Sie auf **Cloud-Dienst erstellen**. 
 
@@ -145,7 +151,7 @@ Wenn die Anwendung in der Cloud ausgeführt wird, verwendet sie eine cloudbasier
 
 1. Klicken Sie im Azure-Verwaltungsportal auf **Neu** - **Datendienste** - **SQL-Datenbank** - **Schnellerfassung**.
 
-1. Geben Sie unter **Datenbankname** den Wert *contosoads* ein.
+1. Geben Sie unter **Datenbankname** den Wert  *contosoads* ein.
 
 1. Wählen Sie in der Dropdownliste **Server** den Eintrag **Neuer SQL-Datenbankserver** aus.
 
@@ -153,7 +159,7 @@ Wenn die Anwendung in der Cloud ausgeführt wird, verwendet sie eine cloudbasier
 
 1. Wählen Sie dieselbe **Region** wie für Ihren Cloud-Dienst aus. 
 
-	Wenn sich Clouddienst und Datenbank in unterschiedlichen Datencentern (d. h. unterschiedlichen Regionen) befinden, steigt die Latenz an und Sie müssen für die Bandbreite außerhalb des Datencenters bezahlen. Die Bandbreite innerhalb eines Datencenters ist kostenlos.
+	Wenn sich Cloud-Dienst und Datenbank in unterschiedlichen Datencentern (d. h. unterschiedlichen Regionen) befinden, steigt die Latenz an und Sie müssen für die Bandbreite außerhalb des Datencenters bezahlen. Die Bandbreite innerhalb eines Datencenters ist kostenlos.
 
 1. Geben Sie unter **Anmeldename** und **Kennwort** die Anmeldedaten eines Administrators ein. 
 
@@ -189,7 +195,7 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 	Wenn sich Cloud-Dienst und Speicherkonto in unterschiedlichen Datencentern (d. h. unterschiedlichen Regionen) befinden, steigt die Latenz an und Sie müssen für die Bandbreite außerhalb des Datencenters bezahlen. Die Bandbreite innerhalb eines Datencenters ist kostenlos.
 
-	Mit Azure-Affinitätsgruppen können Sie die Distanz zwischen Ressourcen in einem Datencenter und somit die Latenz minimieren. Dieses Lernprogramm verwendet keine Affinitätsgruppen. Weitere Informationen finden Sie unter [Erstellen einer Affinitätsgruppe in Azure](http://msdn.microsoft.com/de-de/library/jj156209.aspx).
+	Mit Azure-Affinitätsgruppen können Sie die Distanz zwischen Ressourcen in einem Datencenter und somit die Latenz minimieren. Dieses Lernprogramm verwendet keine Affinitätsgruppen. Weitere Informationen finden Sie unter [Erstellen einer Affinitätsgruppe in Azure](http://msdn.microsoft.com/library/jj156209.aspx).
 
 6. Wählen Sie in der Dropdownliste **Replikation** den Wert **Lokal redundant** aus. 
 
@@ -199,17 +205,17 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 	![New storage account](./media/cloud-services-dotnet-get-started/newstorage.png)	
 
-	In der folgenden Abbildung wird ein Speicherkonto mit der URL "contosoads.core.windows.net" erstellt.
+	In der folgenden Abbildung wird ein Speicherkonto mit der URL " `contosoads.core.windows.net`" erstellt.
 
 ### Konfigurieren der Lösung zur Verwendung Ihrer Azure SQL-Datenbank bei der Ausführung in Azure
 
 Webprojekt und Workerrollenprojekt haben je eine eigene Verbindungszeichenfolge für die Datenbank. Beide müssen auf die Azure SQL-Datenbank zeigen, wenn die Anwendung in Azure ausgeführt wird.
 
-Sie werden eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) für die Webrolle und eine Cloud-Dienst-Umgebungseinstellung für die Workerrolle verwenden.
+Sie werden eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) für die Webrolle und eine Cloud-Dienstumgebungseinstellung für die Workerrolle verwenden.
 
->[WACOM.NOTE] In diesem und im nächsten Abschnitt speichern Sie Anmeldeinformationen in Projektdateien. [Sie sollten keine sensiblen Daten in öffentlichen Quellcode-Repositorys speichern](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets).
+>[AZURE.NOTE] In diesem und im nächsten Abschnitt speichern Sie Anmeldeinformationen in Projektdateien. [Sie sollten keine sensiblen Daten in öffentlichen Quellcode-Repositorys speichern](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets).
 
-1. Öffnen Sie im "ContosoAdsWeb"-Projekt die *Web.Release.config*-Transformationsdatei für die Datei *Web.config*, löschen Sie den Kommentarblock, der ein "<connectionStrings>"-Element enthält, und fügen Sie den folgenden Code an derselben Stelle ein. 
+1. Öffnen Sie im "ContosoAdsWeb"-Projekt die  *Web.Release.config*-Transformationsdatei für die Anwendungsdatei  *Web.config*, löschen Sie den Kommentarblock, der ein `<connectionStrings>`-Element enthält, und fügen Sie den folgenden Code an derselben Stelle ein. 
 
 		<connectionStrings>
 	        <add name="ContosoAdsContext" connectionString="{connectionstring}"
@@ -226,9 +232,9 @@ Sie werden eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/dep
 
 	![Connection strings](./media/cloud-services-dotnet-get-started/connstrings.png)	
 
-4. Löschen Sie in der *Web.Release.config*-Transformationsdatei den Teil "{connectionstring}", und fügen Sie an dessen Stelle die ADO.NET-Verbindungszeichenfolge aus dem Verwaltungsportal ein.
+4. Löschen Sie in der  *Web.Release.config*-Transformationsdatei den Teil  `{connectionstring}`, und fügen Sie an dessen Stelle die ADO.NET-Verbindungszeichenfolge aus dem Verwaltungsportal ein.
 
-5. Ersetzen Sie in der Verbindungszeichenfolge, die Sie in die *Web.Release.config*-Transformationsdatei eingefügt haben, den Teil "{your_password_here}" durch das Kennwort, das Sie für die neue SQL-Datenbank eingerichtet haben.
+5. Ersetzen Sie in der Verbindungszeichenfolge, die Sie in die  *Web.Release.config*-Transformationsdatei eingefügt haben, den Teil  `{your_password_here}` durch das Kennwort, das Sie für die neue SQL-Datenbank eingerichtet haben.
 
 7. Speichern Sie die Datei.  
 
@@ -242,7 +248,7 @@ Sie werden eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/dep
 
 7. Ändern Sie die **Dienstkonfiguration** zu **Cloud**.
 
-7. Wählen Sie den Text in der "ContosoAdsDbConnectionString"-Einstellung aus, und fügen Sie die Verbindungszeichenfolge ein, die Sie im vorherigen Abschnitt des Lernprogramms kopiert haben.
+7. Wählen Sie den Text in der  `ContosoAdsDbConnectionString`-Einstellung aus, und fügen Sie die Verbindungszeichenfolge ein, die Sie im vorherigen Abschnitt des Lernprogramms kopiert haben.
 
 	![Database connection string for worker role](./media/cloud-services-dotnet-get-started/workerdbcs.png)	
 
@@ -250,7 +256,7 @@ Sie werden eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/dep
  
 ### Konfigurieren der Lösung zur Verwendung Ihres Azure-Speicherkontos bei der Ausführung in Azure
 
-Die Verbindungszeichenfolgen für das Azure-Speicherkonto für Web- und Workerrollenprojekt werden in Umgebungseinstellungen für das Clouddienst-Projekt gespeichert. Für jedes Projekt existiert je ein separater Satz von Einstellungen für die lokale Ausführung und die Ausführung in der Cloud. Sie werden die Cloud-Umgebungseinstellungen für Web- und Workerrollenprojekt ändern. 
+Die Verbindungszeichenfolgen für das Azure-Speicherkonto für Web- und Workerrollenprojekt werden in Umgebungseinstellungen für das Cloud-Dienstprojekt gespeichert. Für jedes Projekt existiert je ein separater Satz von Einstellungen für die lokale Ausführung und die Ausführung in der Cloud. Sie werden die Cloud-Umgebungseinstellungen für Web- und Workerrollenprojekt ändern. 
 
 4. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **ContosoAdsWeb** unter **Rollen** im Projekt **ContosoAdsCloudService**, und klicken Sie auf **Eigenschaften**.
 
@@ -270,7 +276,7 @@ Die Verbindungszeichenfolgen für das Azure-Speicherkonto für Web- und Workerro
 
 1. Speichern Sie die Änderungen.
 
-2. Wiederholen Sie die Prozedur, mit der Sie die "StorageConnectionString"-Verbindungszeichenfolge gesetzt haben, für die "Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString"-Verbindungszeichenfolge.
+2. Wiederholen Sie die Prozedur, mit der Sie die  `StorageConnectionString`-Verbindungszeichenfolge gesetzt haben, für die  `Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString`-Verbindungszeichenfolge.
 
 	Diese Verbindungszeichenfolge wird für die Protokollierung verwendet.
 
@@ -279,8 +285,8 @@ Die Verbindungszeichenfolgen für das Azure-Speicherkonto für Web- und Workerro
 Die Einstellungen, die Sie für die Rollenumgebung in der Visual Studio-GUI konfiguriert haben, werden in den folgenden Dateien im ContosoAdsCloudService-Projekt gespeichert:
 
 * *ServiceDefinition.csdef* - Definiert die Einstellungsnamen.
-* *ServiceConfiguration.Cloud.cscfg* - Enthält die Werte für die Ausführung der Anwendung in der Cloud.
-* *ServiceConfiguration.Local.cscfg* - Enthält die Werte für die lokale Ausführung der Anwendung.
+* *ServiceConfiguration.Cloud.cscfg* - Enthält die Werte für die Ausführung der App in der Cloud.
+* *ServiceConfiguration.Local.cscfg* - Enthält die Werte für die lokale Ausführung der App.
 
 Die Datei ServiceDefinition.csdef enthält z. B. die folgenden Definitionen:
 
@@ -289,7 +295,7 @@ Die Datei ServiceDefinition.csdef enthält z. B. die folgenden Definitionen:
 		  <Setting name="ContosoAdsDbConnectionString" />
 		</ConfigurationSettings>
 
-Und die Datei *ServiceConfiguration.Cloud.cscfg* enthält die Werte, die Sie für diese Einstellungen in Visual Studio eingegeben haben:
+Und die Datei  *ServiceConfiguration.Cloud.cscfg* enthält die Werte, die Sie für diese Einstellungen in Visual Studio eingegeben haben:
 
 		<Role name="ContosoAdsWorker">
 		  <Instances count="1" />
@@ -301,11 +307,11 @@ Und die Datei *ServiceConfiguration.Cloud.cscfg* enthält die Werte, die Sie fü
 		  <!-- other settings not shown -->
 		</Role>
 
-Die "<Instances>"-Einstellung definiert die Anzahl der virtuellen Computer, auf denen Azure den Code der Workerrolle ausführt. Im Bereich [Nächste Schritte](#next-steps) finden Sie Links mit weiteren Hinweisen zur Skalierung von Cloud-Diensten.
+Die `<Instances>`-Einstellung definiert die Anzahl der virtuellen Computer, auf denen Azure den Code der Workerrolle ausführt. Im Abschnitt [Nächste Schritte](#next-steps) finden Sie Links mit weiteren Hinweisen zur Skalierung von Cloud-Diensten,
 
 ###  Bereitstellen des Projekts in Azure
 
-3.	Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das **ContosoAdsCloudService**-Cloudprojekt, und wählen Sie **Veröffentlichen** aus.
+3.	Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das **ContosoAdsCloudService**-Cloud-Projekt, und wählen Sie **Veröffentlichen** aus.
 
 	![Publish menu](./media/cloud-services-dotnet-get-started/pubmenu.png)	
 
@@ -335,7 +341,7 @@ Die "<Instances>"-Einstellung definiert die Anzahl der virtuellen Computer, auf 
 
 9. Sie können die Anwendung nun testen und Werbungen erstellen, anzeigen und bearbeiten, wie Sie dies bereits bei der lokalen Ausführung getan haben.
 
->[WACOM.NOTE] Nach Abschluss der Tests sollten Sie den Cloud-Dienst anhalten oder löschen. Selbst wenn Sie den Clouddienst nicht nutzen, fallen Kosten an, da Ressourcen auf virtuellen Computern für den Dienst reserviert sind. Wenn Sie den Dienst laufen lassen, kann jeder, der die URL findet, Werbungen erstellen und anzeigen. Navigieren Sie im Azure-Verwaltungsportal zur Registerkarte **Dashboard** für Ihren Cloud-Dienst, und klicken Sie am unteren Seitenrand auf **Löschen**. Klicken Sie stattdessen auf **Anhalten**, um vorübergehend zu verhindern, dass andere Personen auf die Website zugreifen. In diesem Fall entstehen weiterhin Kosten. Sie können die SQL-Datenbank und das Speicherkonto auf ähnliche Weise löschen, wenn Sie diese nicht mehr benötigen.
+>[AZURE.NOTE] Nach Abschluss der Tests sollten Sie den Cloud-Dienst anhalten oder löschen. Selbst wenn Sie den Cloud-Dienst nicht nutzen, fallen Kosten an, da Ressourcen auf virtuellen Computern für den Dienst reserviert sind. Wenn Sie den Dienst laufen lassen, kann jeder, der die URL findet, Werbungen erstellen und anzeigen. Navigieren Sie im Azure-Verwaltungsportal zur Registerkarte **Dashboard** für Ihren Cloud-Dienst, und klicken Sie am unteren Seitenrand auf **Löschen**. Klicken Sie stattdessen auf **Anhalten**, um vorübergehend zu verhindern, dass andere Personen auf die Website zugreifen. In diesem Fall entstehen weiterhin Kosten. Sie können die SQL-Datenbank und das Speicherkonto auf ähnliche Weise löschen, wenn Sie diese nicht mehr benötigen.
 
 ## Erstellen der Anwendung von Grund auf 
 
@@ -344,15 +350,15 @@ Falls Sie
 
 Die Erstellung der Contoso-Werbeanwendung umfasst die folgenden Schritte:
 
-* Erstellen einer Clouddienst-Lösung in Visual Studio
+* Erstellen einer Cloud-Dienstlösung in Visual Studio
 * Aktualisieren und Hinzufügen von NuGet-Paketen
 * Setzen von Projektverweisen
 * Konfigurieren von Verbindungszeichenfolgen
 * Hinzufügen von Codedateien
 
-Nach der Erstellung der Lösung werden Sie den Code prüfen, der speziell für Clouddienst-Projekte, Azure-Blobs und -Warteschlangen gilt.
+Nach der Erstellung der Lösung werden Sie den Code prüfen, der speziell für Cloud-Dienstprojekte, Azure-Blobs und -Warteschlangen gilt.
  
-### Erstellen einer Clouddienst-Lösung in Visual Studio
+### Erstellen einer Cloud-Dienstlösung in Visual Studio
 
 1. Klicken Sie in Visual Studio im Menü **Datei** auf **Neues Projekt**.
 
@@ -390,7 +396,7 @@ Nach der Erstellung der Lösung werden Sie den Code prüfen, der speziell für C
 
 12. Klicken Sie im linken Bereich auf **Updates**.
    
-13. Suchen Sie das Paket *Azure Storage* in der Liste, und klicken Sie auf **Update**, um die neueste Version der Speicherclient-Bibliothek zu installieren.
+13. Suchen Sie das Paket  *Azure Storage* in der Liste, und klicken Sie auf **Update**, um die neueste Version der Speicherclient-Bibliothek zu installieren.
 
 	![Update SCL](./media/cloud-services-dotnet-get-started/updstg.png)	
 
@@ -398,7 +404,7 @@ Nach der Erstellung der Lösung werden Sie den Code prüfen, der speziell für C
  
 14. Klicken Sie im linken Bereich auf **Online**.
 
-16. Suchen Sie das NuGet-Paket *EntityFramework* und installieren Sie es in allen drei Projekten.
+16. Suchen Sie das  *EntityFramework* NuGet-Paket, und installieren Sie es in allen drei Projekten.
 
 ### Setzen von Projektverweisen
 
@@ -408,7 +414,7 @@ Nach der Erstellung der Lösung werden Sie den Code prüfen, der speziell für C
 
 	ContosoAdsCommon wird Datenmodell und Kontextklasse für das Entity Framework enthalten, das sowohl von Front-End als auch von Back-End verwendet wird.
 
-11. Fügen Sie im Projekt "ContosoAdsWorker" einen Verweis auf "System.Drawing" hinzu.
+11. Fügen Sie im Projekt ContosoAdsWorker einen Verweis auf  `System.Drawing` ein.
 
 	Diese Assembly wird vom Back-End für die Konvertierung von Bildern zu Miniaturansichten verwendet.
 
@@ -416,7 +422,7 @@ Nach der Erstellung der Lösung werden Sie den Code prüfen, der speziell für C
 
 In diesem Abschnitt konfigurieren Sie die Verbindungszeichenfolgen für den Azure-Speicher und SQL für lokale Tests. In den Bereitstellungsanweisungen weiter oben in diesem Lernprogramm wurde beschrieben, wie Sie die Verbindungszeichenfolgen für die Ausführung der Anwendung in der Cloud einrichten.
 
-3. Öffnen Sie im Projekt "ContosoAdsWeb" die Datei "Web.config", und fügen Sie das folgende "connectionStrings"-Element nach dem "configSections"-Element ein:
+3. Öffnen Sie im Projekt ContosoAdsWeb die Datei "Web.config", und fügen Sie das folgende  `connectionStrings`-Element nach dem  `configSections`-Element ein:
 
 		<connectionStrings>
 		  <add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
@@ -432,7 +438,7 @@ In diesem Abschnitt konfigurieren Sie die Verbindungszeichenfolgen für den Azur
 
 	Lassen Sie den Wert von **Dienstkonfiguration** auf **Alle Konfigurationen**.
 
-4. Fügen Sie eine neue Einstellung mit dem Namen *StorageConnectionString* hinzu. Setzen Sie **Typ** auf *ConnectionString*, und setzen Sie den **Wert** auf *UseDevelopmentStorage=true*.
+4. Fügen Sie eine neue Einstellung mit dem Namen *StorageConnectionString* hinzu. Legen Sie **Typ** auf *ConnectionString* fest und **Wert** auf *UseDevelopmentStorage=true*.
 
 	![New connection string](./media/cloud-services-dotnet-get-started/scall.png)	
 
@@ -458,10 +464,10 @@ Um Dateien zu einem Projekt oder einem Ordner hinzuzufügen, klicken Sie mit der
 
 3. Fügen Sie im Projekt ContosoAdsWeb die folgenden Dateien aus dem heruntergeladenen Projekt hinzu.
 	- *Global.asax.cs*  
-	- Im Ordner *Views\Shared*: <em>_Layout.cshtml</em>.
-	- Im Ordner *Views\Home*: *Index.cshtml*.
-	- Im Ordner *Controllers*: *AdController.cs*.
-	- Im Ordner *Views\Ad* (erstellen Sie den Ordner zunächst): fünf *.cshtml*-Dateien.
+	- Im Ordner  *Views\Shared*: <em>_Layout.cshtml</em>.
+	- Im Ordner  *Views\Home*: *Index.cshtml*.
+	- Im Ordner  *Controllers*: *AdController.cs*.
+	- Im Ordner  *Views\Ad* (erstellen Sie den Ordner zunächst): fünf *.cshtml*-Dateien.
 
 3. Fügen Sie im Projekt "ContosoAdsWorker" die Datei *WorkerRole.cs* aus dem heruntergeladenen Projekt hinzu.
 
@@ -471,7 +477,7 @@ In den folgenden Abschnitten wird der Code für die Arbeit mit Azure-Umgebung, B
 
 * [Erste Schritte mit MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 * [Erste Schritte mit EF 6 und MVC 5](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc)
-* [Einführung in die asynchrone Programmierung in .NET 4.5](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async).
+* [Einführung in die asynchrone Programmierung in .NET 4.5](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async)
 
 ### ContosoAdsCommon - Ad.cs
 
@@ -536,14 +542,14 @@ Die Klasse besitzt zwei Konstruktoren. Der erste Konstruktor wird vom Webprojekt
 
 ### ContosoAdsWeb - Global.asax.cs
 
-Der aus der "Application_Start"-Methode aufgerufene Code erstellt einen *images*-Blob-Container und eine *images*-Warteschlange, falls diese noch nicht existieren. Damit wird sichergestellt, dass Blob-Container und Warteschlange immer automatisch erstellt werden, wenn Sie ein neues Speicherkonto verwenden oder den Speicheremulator auf einem neuen Computer verwenden.
+Der aus der `Application_Start`-Methode aufgerufene Code erstellt einen *images*-BLOB-Container und eine *images*-Warteschlange, falls diese noch nicht vorhanden sind. Damit wird sichergestellt, dass Blob-Container und Warteschlange immer automatisch erstellt werden, wenn Sie ein neues Speicherkonto verwenden oder den Speicheremulator auf einem neuen Computer verwenden.
 
 Der Code verwendet die Speicher-Verbindungszeichenfolge aus der *.cscfg*-Datei für den Zugriff auf das Speicherkonto.
 
 		var storageAccount = CloudStorageAccount.Parse
 		    (RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString"));
 
-Anschließend ruft er einen Verweis auf den *images*-Blob-Container ab, erstellt den Container, falls dieser noch nicht existiert, und setzt die Zugriffsberechtigungen für den neuen Container. Standardmäßig erlauben neue Container nur Clients mit Speicherkonto-Anmeldeinformationen den Zugriff auf Blobs. Für die Website müssen die Blobs öffentlich sein, um die Bilder mithilfe der URLs anzuzeigen, die auf die Bild-Blobs zeigen.
+Anschließend ruft er einen Verweis auf den *images*-BLOB-Container ab, erstellt den Container, falls dieser noch nicht existiert, und setzt die Zugriffsberechtigungen für den neuen Container. Standardmäßig erlauben neue Container nur Clients mit Speicherkonto-Anmeldeinformationen den Zugriff auf Blobs. Für die Website müssen die Blobs öffentlich sein, um die Bilder mithilfe der URLs anzuzeigen, die auf die Bild-Blobs zeigen.
 
 		var blobClient = storageAccount.CreateCloudBlobClient();
 		var imagesBlobContainer = blobClient.GetContainerReference("images");
@@ -556,7 +562,7 @@ Anschließend ruft er einen Verweis auf den *images*-Blob-Container ab, erstellt
 		        });
 		}
 
-Ein ähnlicher Codeteil ruft einen Verweis auf die *images*-Warteschlange ab und erstellt eine neue Warteschlange. In diesem Fall sind keine Berechtigungsänderungen erforderlich.
+Ein ähnlicher Codeabschnitt ruft einen Verweis auf die *images*-Warteschlange ab und erstellt eine neue Warteschlange. In diesem Fall sind keine Berechtigungsänderungen erforderlich.
 
 		CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 		var imagesQueue = queueClient.GetQueueReference("images");
@@ -568,7 +574,7 @@ Die *_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstel
 
 ### ContosoAdsWeb - Views\Home\Index.cshtml
 
-Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der "Category"-Enumeration in einer "querystring"-Variable an die "Ads"-Indexseite.
+Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variablen an die Ads-Indexseite.
 	
 		<li>@Html.ActionLink("Cars", "Index", "Ad", new { category = (int)Category.Cars }, null)</li>
 		<li>@Html.ActionLink("Real estate", "Index", "Ad", new { category = (int)Category.RealEstate }, null)</li>
@@ -577,9 +583,9 @@ Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Starts
 
 ### ContosoAdsWeb - AdController.cs
 
-In der *AdController.cs*-Datei ruft der Konstruktor die "InitializeStorage"-Methode auf, um Objekte der Azure-Speicherclient-Bibliothek zu erstellen, die eine API für die Arbeit mit Blobs und Warteschlangen bereitstellen. 
+In der *AdController.cs*-Datei ruft der Konstruktor die `InitializeStorage`-Methode auf, um Objekte der Azure-Speicherclientbibliothek zu erstellen, die eine API für die Arbeit mit BLOBs und Warteschlangen bereitstellen. 
 
-Anschließend ruft der Code einen Verweis auf den *images*-Blob-Container ab, wie weiter oben in *Global.asax.cs* gezeigt. Gleichzeitig wird eine angemessene Standard-[Wiederholungs-Richtlinie](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) für eine Webanwendung gesetzt. Mit der Standardrichtlinie (exponentiell ansteigende Wartezeiten) kann es passieren, dass die Webanwendung im Fall eines vorübergehenden Fehlers über eine Minute lang stehen bleibt. Die hier gezeigte Richtlinie wartet 3 Sekunden nach jedem Versuch für bis zu 3 Versuche.
+Anschließend ruft der Code einen Verweis auf den *images*-BLOB-Container ab, wie weiter oben in *Global.asax.cs* gezeigt. Gleichzeitig wird eine angemessene Standard-[Wiederholungs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling)-Richtlinie für eine Webanwendung gesetzt. Mit der Standardrichtlinie (exponentiell ansteigende Wartezeiten) kann es passieren, dass die Webanwendung im Fall eines vorübergehenden Fehlers über eine Minute lang stehen bleibt. Die hier gezeigte Richtlinie wartet 3 Sekunden nach jedem Versuch für bis zu 3 Versuche.
 
 		var blobClient = storageAccount.CreateCloudBlobClient();
 		blobClient.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);
@@ -591,7 +597,7 @@ Ein ähnlicher Codeteil ruft einen Verweis auf die *images*-Warteschlange ab.
 		queueClient.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);
 		imagesQueue = queueClient.GetQueueReference("images");
 
-Ein Großteil des Controller-Codes ist typisch für die Arbeit mit einem Entity Framework-Datenmodell und einer DbContext-Klasse. Eine Ausnahme ist die "HttpPost Create"-Methode, die eine Datei hochlädt und im Blob-Speicher ablegt. Die Modellbindung stellt ein [HttpPostedFileBase](http://msdn.microsoft.com/de-de/library/system.web.httppostedfilebase.aspx)-Objekt für die Methode bereit.
+Ein Großteil des Controller-Codes ist typisch für die Arbeit mit einem Entity Framework-Datenmodell und einer DbContext-Klasse. Eine Ausnahme ist die HttpPost `Create`-Methode, die eine Datei hochlädt und im BLOB-Speicher ablegt. Die Modellbindung stellt ein [HttpPostedFileBase](http://msdn.microsoft.com/library/system.web.httppostedfilebase.aspx)-Objekt für die Methode bereit.
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
@@ -601,9 +607,13 @@ Ein Großteil des Controller-Codes ist typisch für die Arbeit mit einem Entity 
 
 Wenn ein Benutzer eine hochzuladende Datei auswählt, lädt der Code die Datei hoch, speichert sie in einem Blob und aktualisiert den Ad-Datenbankeintrag mit einer URL, die auf den Blob zeigt.
 
-€
+		if (imageFile != null && imageFile.ContentLength != 0)
+		{
+		    blob = await UploadAndSaveBlobAsync(imageFile);
+		    ad.ImageURL = blob.Uri.ToString();
+		}
 
-Der Code für den Upload befindet sich in der "UploadAndSaveBlobAsync"-Methode. Er erstellt einen GUID-Namen für den Blob, lädt die Datei hoch und speichert sie, und gibt einen Verweis auf den gespeicherten Blob zurück.
+Der Code für den Upload befindet sich in der `UploadAndSaveBlobAsync`-Methode. Er erstellt einen GUID-Namen für den Blob, lädt die Datei hoch und speichert sie, und gibt einen Verweis auf den gespeicherten Blob zurück.
 
 		private async Task<CloudBlockBlob> UploadAndSaveBlobAsync(HttpPostedFileBase imageFile)
 		{
@@ -616,13 +626,13 @@ Der Code für den Upload befindet sich in der "UploadAndSaveBlobAsync"-Methode. 
 		    return imageBlob;
 		}
 
-Nachdem die "HttpPost Create"-Methode einen Blob hochgeladen und die Datenbank aktualisiert hat, wird eine Nachricht in der Warteschlange erstellt, um den Back-End-Prozess darüber zu informieren, dass ein Bild für die Konvertierung zu einer Miniaturansicht vorliegt.
+Nachdem die HttpPost `Create`-Methode ein BLOB hochgeladen und die Datenbank aktualisiert hat, wird eine Nachricht in der Warteschlange erstellt, um diesen Back-End-Prozess darüber zu informieren, dass ein Bild für die Konvertierung in eine Miniaturansicht vorliegt.
 
 		string queueMessageString = ad.AdId.ToString();
 		var queueMessage = new CloudQueueMessage(queueMessageString);
 		await queue.AddMessageAsync(queueMessage);
 
-Der Code für die "HttpPost Edit"-Methode ist ähnlich, nur müssen hier alle vorhandenen Blobs gelöscht werden, wenn der Benutzer eine neue Bilddatei auswählt.
+Der Code für die HttpPost `Edit`-Methode ist ähnlich, nur müssen hier alle vorhandenen Blobs gelöscht werden, wenn der Benutzer eine neue Bilddatei auswählt.
  
 		if (imageFile != null && imageFile.ContentLength != 0)
 		{
@@ -665,28 +675,28 @@ Die Datei *Details.cshtml* zeigt das Bild in voller Größe an:
 
 ### ContosoAdsWeb - Views\Ad\Create.cshtml und Edit.cshtml
 
-Die Dateien *Create.cshtml* und *Edit.cshtml* geben die Formularcodierung an, mit der der Controller das "HttpPostedFileBase"-Objekt abruft.
+Die Dateien *Create.cshtml* und *Edit.cshtml* geben die Formularcodierung an, mit der der Controller das `HttpPostedFileBase`-Objekt abruft.
 
 		@using (Html.BeginForm("Create", "Ad", FormMethod.Post, new { enctype = "multipart/form-data" }))
 
-Ein "<input>"-Element weist den Browser an, ein Dateiauswahl-Dialogfeld zu öffnen.
+Ein`<input>`-Element weist den Browser an, ein Dateiauswahl-Dialogfeld zu öffnen.
 
 		<input type="file" name="imageFile" accept="image/*" class="form-control fileupload" />
 
 ### ContosoAdsWorker - WorkerRole.cs - OnStart-Methode
 
-Die Azure Workerrollen-Umgebung ruft die "OnStart"-Methode in der "WorkerRole"-Klasse auf, wenn die Workerrolle gestartet wird, und ruft die "Run"-Methode auf, wenn die "OnStart"-Methode abgeschlossen wird.
+Die Azure Workerrollen-Umgebung ruft die `OnStart`-Methode in der `WorkerRole`-Klasse auf, wenn die Workerrolle gestartet wird, und ruft die `Run`-Methode auf, wenn die `OnStart`-Methode abgeschlossen wird.
 
-Die "OnStart"-Methode ruft die Datenbank-Verbindungszeichenfolge aus der *.cscfg*-Datei ab und übergibt sie an die "DbContext"-Klasse des Entity Framework. Der SQLClient-Anbieter wird standardmäßig verwendet, daher muss kein Anbieter angegeben werden.
+Die `OnStart`-Methode ruft die Datenbank-Verbindungszeichenfolge aus der *.cscfg*-Datei ab und übergibt sie an die "DbContext"-Klasse des Entity Framework. Der SQLClient-Anbieter wird standardmäßig verwendet, daher muss kein Anbieter angegeben werden.
 
 		var dbConnString = CloudConfigurationManager.GetSetting("ContosoAdsDbConnectionString");
 		db = new ContosoAdsContext(dbConnString);
 
-Anschließend ruft die Methode einen Verweis auf das Speicherkonto ab und erstellt Blob-Container und Warteschlange, falls diese noch nicht existieren. Dieser Code ähnelt dem Code, den Sie bereits in der "Application_Start"-Methode der Webrolle gesehen haben.
+Anschließend ruft die Methode einen Verweis auf das Speicherkonto ab und erstellt Blob-Container und Warteschlange, falls diese noch nicht existieren. Dieser Code ähnelt dem Code, den Sie bereits in der `Application_Start`-Methode der Webrolle gesehen haben.
 
 ### ContosoAdsWorker - WorkerRole.cs - Run-Methode
 
-Die "Run"-Methode wird aufgerufen, wenn die "OnStart"-Methode ihre Initialisierung abgeschlossen hat. Die Methode führt eine Endlosschleife aus, die nach neuen Nachrichten in der Warteschlange sucht und diese beim Eintreffen verarbeitet.
+Die `Run`-Methode wird aufgerufen, wenn die `OnStart`-Methode ihre Initialisierung abgeschlossen hat. Die Methode führt eine Endlosschleife aus, die nach neuen Nachrichten in der Warteschlange sucht und diese beim Eintreffen verarbeitet.
 
 		public override void Run()
 		{
@@ -719,9 +729,9 @@ Die "Run"-Methode wird aufgerufen, wenn die "OnStart"-Methode ihre Initialisieru
 
 Nach jedem Durchgang der Schleife geht das Programm für eine Sekunde in den Ruhezustand, wenn keine Nachricht gefunden wurde. So wird verhindert, dass die Workerrolle übermäßige Kosten für CPU-Zeit und Speichertransaktionen verursacht. Das Microsoft-Kundenberatungsteam erzählt eine Geschichte von einem Entwickler, der diesen Mechanismus vergessen hat, seine Anwendung bereitgestellt hat und in den Urlaub gefahren ist. Als er zurückkam, war sein Versehen teurer als der gesamte Urlaub.
 
-Manchmal kann der Inhalt einer Nachricht in der Warteschlange einen Verarbeitungsfehler verursachen. Dies nennt man eine *nicht verarbeitbare Nachricht*. Wenn Sie in diesem Fall nur einen Fehler protokollieren und die Schleife neu starten, kann es passieren, dass Sie endlos versuchen, diese Nachricht zu verarbeiten.  Daher enthält der catch-Block eine Anweisung, die prüft, wie oft die Anwendung bereits versucht hat, die aktuelle Nachricht zu verarbeiten. Wenn diese Anzahl größer als 5 ist, wird die Nachricht aus der Warteschlange gelöscht.
+Manchmal kann der Inhalt einer Nachricht in der Warteschlange einen Verarbeitungsfehler verursachen. Dies nennt man eine *poison message*. Wenn Sie in diesem Fall nur einen Fehler protokollieren und die Schleife neu starten, kann es passieren, dass Sie endlos versuchen, diese Nachricht zu verarbeiten.  Daher enthält der catch-Block eine Anweisung, die prüft, wie oft die Anwendung bereits versucht hat, die aktuelle Nachricht zu verarbeiten. Wenn diese Anzahl größer als 5 ist, wird die Nachricht aus der Warteschlange gelöscht.
 
-"ProcessQueueMessage" wird aufgerufen, wenn eine Warteschlangen-Nachricht gefunden wurde.
+`ProcessQueueMessage` wird aufgerufen, wenn eine Warteschlangennachricht gefunden wurde.
 
 		private void ProcessQueueMessage(CloudQueueMessage msg)
 		{
@@ -752,7 +762,7 @@ Manchmal kann der Inhalt einer Nachricht in der Warteschlange einen Verarbeitung
 
 Der Code liest die Bild-URL aus der Datenbank, konvertiert das Bild zu einer Miniaturansicht, speichert die Miniaturansicht in einem Blob, aktualisiert die Datenbank mit der URL der Miniaturansicht und löscht die Warteschlangen-Nachricht.
 
->[WACOM.NOTE] Der Code in der "ConvertImageToThumbnailJPG"-Methode verwendet Klassen aus dem "System.Drawing"-Namespace zur Vereinfachung. Die Klassen in diesem Namespace wurden jedoch für den Einsatz mit Windows Forms entwickelt. Sie werden nicht für die Verwendung in einem Windows- oder ASP.NET-Dienst unterstützt.
+>[AZURE.NOTE] Der Code in der `ConvertImageToThumbnailJPG`-Methode verwendet Klassen aus dem "System.Drawing"-Namespace zur Vereinfachung. Die Klassen in diesem Namespace wurden jedoch für den Einsatz mit Windows Forms entwickelt. Sie werden nicht für die Verwendung in einem Windows- oder ASP.NET-Dienst unterstützt.
 
 ## Problembehandlung
 
@@ -760,7 +770,7 @@ Falls bei der Ausführung der Anweisungen in diesem Lernprogramm Probleme auftre
 
 ### ServiceRuntime.RoleEnvironmentException
 
-Das "RoleEnvironment"-Objekt wird von Azure bereitgestellt, wenn Sie eine Anwendung in Azure ausführen oder den Azure-Serveremulator lokal verwenden.  Wenn Sie diesen Fehler bei der lokalen Ausführung erhalten, vergewissern Sie sich, dass Sie das ContosoAdsCloudService-Projekt als Startprojekt gesetzt haben. Damit wird festgelegt, dass die Anwendung im Azure-Serveremulator ausgeführt werden soll.
+Das `RoleEnvironment`-Objekt wird von Azure bereitgestellt, wenn Sie eine Anwendung in Azure ausführen oder den Azure-Serveremulator lokal verwenden.  Wenn Sie diesen Fehler bei der lokalen Ausführung erhalten, vergewissern Sie sich, dass Sie das ContosoAdsCloudService-Projekt als Startprojekt gesetzt haben. Damit wird festgelegt, dass die Anwendung im Azure-Serveremulator ausgeführt werden soll.
 
 Die Anwendung verwendet die Azure-Rollenumgebung z. B. zum Abrufen der Verbindungszeichenfolgen aus den *.cscfg*-Dateien. Dieser Fehler kann also auch durch eine fehlende Verbindungszeichenfolge verursacht werden. Stellen Sie sicher, dass Sie die StorageConnectionString-Einstellung sowohl für die lokale als auch für die Cloud-Konfiguration im ContosoAdsWeb-Projekt erstellt haben und dass Sie beide Verbindungszeichenfolgen für beide Konfigurationen im ContosoAdsWorker-Projekt erstellt haben. Mit einer **Alles durchsuchen**-Suche nach "StorageConnectionString" in der gesamten Lösung sollten Sie die Zeichenfolge 9 Mal in 6 Dateien finden.
 
@@ -772,7 +782,7 @@ Eine weitere Möglichkeit zur Behebung dieses Problems finden Sie im nächsten A
 
 ### Sonstige Fehler bei der lokalen Ausführung
 
-Standardmäßig verwenden neue Clouddienst-Projekte den Azure-Serveremulator Express, um die Azure-Umgebung zu simulieren. Dies ist eine abgespeckte Version der Serveremulator-Vollversion. Unter bestimmten Umständen kann es passieren, dass die Vollversion funktioniert und die Express-Version einen Fehler verursacht.  
+Standardmäßig verwenden neue Cloud-Dienstprojekte den Azure-Serveremulator Express, um die Azure-Umgebung zu simulieren. Dies ist eine abgespeckte Version der Serveremulator-Vollversion. Unter bestimmten Umständen kann es passieren, dass die Vollversion funktioniert und die Express-Version einen Fehler verursacht.  
 
 Um das Projekt mit der Emulator-Vollversion zu verwenden, klicken Sie mit der rechten Maustaste auf das "ContosoAdsCloudService"-Projekt, und klicken anschließend auf **Eigenschaften**. Klicken Sie im Fenster **Eigenschaften** auf die Registerkarte **Web**, und klicken Sie auf das Optionsfeld **Emulator-Vollversion verwenden**.
 
@@ -780,24 +790,24 @@ Um die Anwendung mit der Emulator-Vollversion zu verwenden, müssen Sie Visual S
 
 ## Nächste Schritte
 
-Die Contoso Ads-Anwendung wurde für dieses Lernprogramm bewusst einfach gehalten. Sie implementiert z. B. keine [Abhängigkeitsinjektion](http://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) oder [Repository und Arbeitseinheit](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), [verwendet keine Schnittstelle für die Protokollierung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log) und keine [EF Code First-Migrationen](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) zur Verwaltung von Datenmodellen oder [EF-Verbindungsstabilität](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) für vorübergehende Verbindungsfehler, usw.
+Die Contoso Ads-Anwendung wurde für dieses Lernprogramm bewusst einfach gehalten. Sie implementiert beispielsweise keine [Abhängigkeitsinjektion](http://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) und auch nicht das [Repository sowie Arbeitseinheitsmuster](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), sie verwendet [keine Schnittstelle für die Protokollierung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), sie verwendet keine [EF Code First-Migrationen](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) zur Verwaltung von Datenmodelländerungen oder [EF-Verbindungsstabilität](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) zur Verwaltung vorübergehender Netzwerkfehler usw.
 
-Hier finden Sie einige Beispielanwendungen für Clouddienste mit realitätsnäheren Programmierpraktiken, geordnet vom einfachsten hin zum komplexesten Projekt:
+Hier finden Sie einige Beispielanwendungen für Cloud-Dienste mit realitätsnäheren Programmierpraktiken, geordnet vom einfachsten hin zum komplexesten Projekt:
 
 * [PhluffyFotos](http://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31). Ähnlich der Contoso Ads-Anwendung, jedoch mit mehr Funktionen und realitätsnäheren Programmierpraktiken.
-* [Azure-Cloud-Dienstanwendung mit mehreren Ebenen mit Tabellen, Warteschlangen und Blobs](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Einführung zu Azure-Speichertabellen, Blobs und Warteschlangen inklusive einer [Schritt-für-Schritt-Anleitungsreihe](http://azure.microsoft.com/de-de/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/).
-* [Cloud-Dienstgrundlagen in Azure](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ein umfassendes Beispiel mit einer breiten Palette bewährter Methoden, erarbeitet von der Microsoft Patterns and Practices-Gruppe.
+* [Azure-Cloud-Dienstanwendung mit mehreren Ebenen mit Tabellen, Warteschlangen und Blobs](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Einführung zu Azure-Speichertabellen, Blobs und Warteschlangen inklusive einer [Schritt-für-Schritt-Anleitungsreihe](http://azure.microsoft.com/ documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/).
+* [Cloud-Dienstgrundlagen in Microsoft Azure](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ein umfassendes Beispiel mit einer breiten Palette bewährter Methoden, erarbeitet von der Microsoft Patterns and Practices-Gruppe.
 
-Weitere Informationen zur Entwicklung für die Cloud finden Sie unter [Erstellen von Cloud-Anwendungen mit Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction).
+Weitere Informationen zur Entwicklung für die Cloud finden Sie unter [Erstellen von Cloud-Anwendungen mit Microsoft Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction).
 
 Ein Einführungsvideo zu bewährten Methoden und Vorlagen für Azure Storage finden Sie unter [Microsoft Azure Storage - Neuigkeiten, bewährte Methoden und Vorlagen](http://channel9.msdn.com/Events/Build/2014/3-628).
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
-* [Azure-Clouddienste Teil 1: Einführung](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
+* [Azure Cloud Services Teil 1: Einführung](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Azure Cloud Services](/de-de/documentation/services/cloud-services/)
-* [Azure Storage](/de-de/documentation/services/storage/)
+* [Azure-Speicher](/de-de/documentation/services/storage/)
 * [Verwenden des Blob-Speichers mit .NET](/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/)
 * [Verwenden des Warteschlangenspeichers mit .NET](/de-de/documentation/articles/storage-dotnet-how-to-use-queues/)
 
-<!--HONumber=35.2-->
+<!--HONumber=45--> 

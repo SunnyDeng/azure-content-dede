@@ -1,6 +1,20 @@
-<properties urlDisplayName="Hybrid Application" pageTitle="Hybride lokale/Cloudanwendung (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="Erfahren Sie, wie eine lokale/Cloud-.NET-Hybridanwendung mithilfe von Microsoft Azure Service Bus Relay erstellen." metaCanonical="" services="service-bus" documentationCenter=".NET" title=".NET On-Premises/Cloud Hybrid Application Using Service Bus Relay" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+﻿<properties 
+	pageTitle="Hybride lokale/Cloudanwendung (.NET) - Azure" 
+	description="Erfahren Sie, wie eine lokale/Cloud-.NET-Hybridanwendung mithilfe von Microsoft Azure Service Bus Relay erstellen." 
+	services="service-bus" 
+	documentationCenter=".net" 
+	authors="sethmanheim" 
+	manager="timlt" 
+	editor="mattshel"/>
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/15/2014" ms.author="sethm" />
+<tags 
+	ms.service="service-bus" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/10/2015" 
+	ms.author="sethm"/>
 
 
 
@@ -162,7 +176,7 @@ Namespace abrufen.
 
 ###Verwalten eines Servicenamespace mit dem Server-Explorer von Visual Studio:
 
-Führen Sie die [hier](http://http://msdn.microsoft.com/de-de/library/windowsazure/ff687127.aspx) im Abschnitt **Verbinden mit Windows Azure in Visual Studio** beschriebenen Schritte aus, um Namespaces zu verwalten und Verbindungsinformationen über Visual Studio anstatt aus dem Verwaltungsportal abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen. 
+Führen Sie die [hier](http://http://msdn.microsoft.com/library/windowsazure/ff687127.aspx) im Abschnitt **Verbinden mit Windows Azure in Visual Studio** beschriebenen Schritte aus, um Namespaces zu verwalten und Verbindungsinformationen über Visual Studio anstatt aus dem Verwaltungsportal abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen. 
 
 ![][44]
 
@@ -501,7 +515,7 @@ Führen Sie die Anwendung aus, um sicherzustellen, dass sie funktioniert.
 
     <h2>FERTIGSTELLEN DER ANWENDUNG ZUR BEREITSTELLUNG FÜR AZURE</h2>
 
-    Sie können die Anwendung für einen Azure-Clouddienst oder eine Azure-Website bereitstellen. Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle][executionmodels]. Informationen zum Bereitstellen der Anwendung für eine Azure-Website finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website](http://www.windowsazure.com/de-de/develop/net/tutorials/get-started/). Dieser Abschnitt enthält ausführliche Schritte für die Bereitstellung der Anwendung für einen Azure-Clouddienst.
+    Sie können die Anwendung für einen Azure-Clouddienst oder eine Azure-Website bereitstellen. Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finden Sie unter [Azure-Ausführungsmodelle][executionmodels]. Informationen zum Bereitstellen der Anwendung für eine Azure-Website finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website](http://azure.microsoft.com/develop/net/tutorials/get-started/). Dieser Abschnitt enthält ausführliche Schritte für die Bereitstellung der Anwendung für einen Azure-Clouddienst.
 
     Zur Bereitstellung der Anwendung für einen Clouddienst fügen Sie der Projektmappe ein Bereitstellungsprojekt für das Clouddienstprojekt hinzu.
     Das Bereitstellungsprojekt enthält Konfigurationsinformationen,
@@ -789,7 +803,9 @@ Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
   [43]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
   [44]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/VSProperties.png
 
-  [sbmsdn]: http://msdn.microsoft.com/de-de/library/windowsazure/ee732537.aspx  
+  [sbmsdn]: http://msdn.microsoft.com/library/windowsazure/ee732537.aspx  
   [sbwacom]: /de-de/documentation/services/service-bus/  
   [sbwacomqhowto]: /de-de/develop/net/how-to-guides/service-bus-queues/
-  [executionmodels]: http://www.windowsazure.com/de-de/develop/net/fundamentals/compute/
+  [executionmodels]: http://azure.microsoft.com/develop/net/fundamentals/compute/
+
+<!--HONumber=46--> 

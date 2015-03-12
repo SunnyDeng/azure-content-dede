@@ -1,6 +1,20 @@
-<properties pageTitle="Erste Schritte mit Azure Mobile Services für Android-Apps" description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Android-Entwicklung." services="" documentationCenter="android" authors="RickSaling" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte mit Azure Mobile Services für Android-Apps" 
+	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Android-Entwicklung." 
+	services="" 
+	documentationCenter="android" 
+	authors="RickSaling" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="hero-article" ms.date="10/16/2014" ms.author="ricksal,glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="Mobile-Android" 
+	ms.devlang="Java" 
+	ms.topic="hero-article" 
+	ms.date="10/16/2014" 
+	ms.author="ricksal,glenga"/>
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
@@ -20,7 +34,7 @@ Sie benötigen [die Android Developer Tools][Android SDK], um dieses Lernprogram
 
 Das heruntergeladene Schnellstartprojekt enthält das Mobile Services SDK für Android. Dieses Projekt erfordert Android 4.2 oder eine höhere Version. Der Mobile Services SDK benötigt jedoch nur Android 2.2 oder eine höhere Version.
 
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28"%20target="_blank).
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28"%20target="_blank).
 
 >[AZURE.NOTE] Den Quellcode der fertiggestellten App finden Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStarted/Android" target="_blank">hier</a>.
 
@@ -75,7 +89,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 	- 	Suchen Sie die **OnCreate**-Methode in **TodoActivity.java**, und suchen Sie den Code, der den Mobile Services-Client instanziiert. Der Code ist in der Abbildung oben dargestellt.
 	- 	Ersetzen Sie "MobileServiceUrl" durch den tatsächlichen URL des mobilen Diensts.
 	- 	Ersetzen Sie "AppKey" durch den Schlüssel des mobilen Diensts.
-	- 	Weitere Informationen finden Sie im Lernprogramm <a href="http://azure.microsoft.com/de-de/documentation/articles/mobile-services-android-get-started-data/">Hinzufügen von Mobile Services zu einer vorhandenen App</a>. 
+	- 	Weitere Informationen finden Sie im Lernprogramm <a href="http://azure.microsoft.com/documentation/articles/mobile-services-android-get-started-data/">Hinzufügen von Mobile Services zu einer vorhandenen App</a>. 
 
 
 

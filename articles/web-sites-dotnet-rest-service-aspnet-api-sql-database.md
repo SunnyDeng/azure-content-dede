@@ -51,7 +51,7 @@ Dieses Lernprogramm umfasst folgende Punkte:
 * [Veröffentlichen von Anwendungsaktualisierungen von Azure und SQL-Datenbank][deploy2]
 
 <a name="bkmk_setupdevenv"></a>
-<!-- the next line produces the "Set up the development environment" section as see at http://www.windowsazure.com/de-de/documentation/articles/web-sites-dotnet-get-started/ -->
+<!-- the next line produces the "Set up the development environment" section as see at http://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/ -->
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 <h2><a name="bkmk_setupwindowsazure"></a>Einrichten der Azure-Umgebung</h2>
@@ -819,7 +819,7 @@ Die Anwendung wird nun in der Cloud ausgeführt und verwendet die SQL-Datenbank 
 
 <h2><a name="nextsteps"></a>Nächste Schritte</h2>
 
-Eine echte Anwendung benötigt eine Authentifizierung und Autorisierung, und Sie würden für diesen Zweck die Mitgliedsdatenbank verwenden. Das Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit OAuth, Mitgliedschaft und einer SQL-Datenbank](http://www.windowsazure.com/de-de/develop/net/tutorials/web-site-with-sql-database/) basiert auf diesem Lernprogramm und zeigt, wie Sie eine Webanwendung mithilfe der Mitgliedsdatenbank bereitstellen.
+Eine echte Anwendung benötigt eine Authentifizierung und Autorisierung, und Sie würden für diesen Zweck die Mitgliedsdatenbank verwenden. Das Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit OAuth, Mitgliedschaft und einer SQL-Datenbank](http://azure.microsoft.com/develop/net/tutorials/web-site-with-sql-database/) basiert auf diesem Lernprogramm und zeigt, wie Sie eine Webanwendung mithilfe der Mitgliedsdatenbank bereitstellen.
 
 Daten können außerdem über den Azure-Speicher in einer Azure-Anwendung gespeichert werden. Dieser Speicher bietet nichtrelationale Datenspeicherung in Form von Blobs und Tabellen. Die folgenden Links bieten weitere Informationen zu WEB API, ASP.NET MVC und Microsoft Azure.
  
@@ -827,7 +827,7 @@ Daten können außerdem über den Azure-Speicher in einer Azure-Anwendung gespei
 * [Erste Schritte in Entity Framework mit MVC][EFCodeFirstMVCTutorial]
 * [Einführung in ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 * [Ihre erste ASP.NET Web-API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
-* [Debuggen von WAWS](http://www.windowsazure.com/de-de/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+* [Debuggen von WAWS](http://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) sowie Tom Dykstra und Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) geschrieben. 
 
@@ -849,7 +849,7 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 
 <!-- links -->
 [EFCodeFirstMVCTutorial]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
-[dbcontext-link]: http://msdn.microsoft.com/de-de/library/system.data.entity.dbcontext(v=VS.103).aspx
+[dbcontext-link]: http://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx
 
 
 <!-- images-->

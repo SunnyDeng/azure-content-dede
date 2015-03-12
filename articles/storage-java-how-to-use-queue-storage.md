@@ -401,11 +401,10 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 - [Azure Storage-REST-API]
 - [Blog des Azure-Speicherteams]
 
-[Azure-SDK für Java]: http://www.windowsazure.com/de-de/develop/java/
+[Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
 [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
 [Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
 [Azure Storage-Client-SDK-Referenz]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage-REST-API]: http://msdn.microsoft.com/de-de/library/azure/gg433040.aspx
+[Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
-
 <!--HONumber=42-->

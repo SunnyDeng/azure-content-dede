@@ -45,7 +45,7 @@ Der folgende Code ruft einen Verweis auf eine Tabelle ab, die Daten für ein Tod
 
 	IMobileServiceTable<TodoItem> todoTable = App.<yourClient>.GetTable<TodoItem>();
 
-Dieser Code funktioniert, wenn die Berechtigungen für Ihre Tabelle auf **Jeder mit dem Anwendungsschlüssel** festgelegt wurden. Wenn Sie die Berechtigungen ändern, um Ihren mobilen Dienst zu sichern, müssen Sie Unterstützung für Benutzerauthentifizierung hinzufügen. Weitere Informationen finden Sie unter [Erste Schritte mit Authentifizierung](http://azure.microsoft.com/de-de/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/).
+Dieser Code funktioniert, wenn die Berechtigungen für Ihre Tabelle auf **Jeder mit dem Anwendungsschlüssel** festgelegt wurden. Wenn Sie die Berechtigungen ändern, um Ihren mobilen Dienst zu sichern, müssen Sie Unterstützung für Benutzerauthentifizierung hinzufügen. Weitere Informationen finden Sie unter [Erste Schritte mit Authentifizierung](http://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/).
 
 #####Hinzufügen eines Eintrags 
 

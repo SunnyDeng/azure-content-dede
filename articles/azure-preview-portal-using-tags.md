@@ -1,13 +1,28 @@
-﻿<properties urlDisplayName="" pageTitle="Verwenden von Tags zum Organisieren von Azure-Ressourcen" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Using tags to organize your Azure resources" authors="Michael Flanakin" solutions="" writer="" manager="carolz" editor=""  />
+﻿<properties 
+	pageTitle="Verwenden von Tags zum Organisieren von Azure-Ressourcen" 
+	description="" 
+	services="" 
+	documentationCenter="" 
+	authors="flanakin" 
+	writer="" 
+	manager="carolz" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="10/08/2014" ms.author="micflan" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/08/2014" 
+	ms.author="micflan"/>
 
 
 # Verwenden von Tags zum Organisieren von Azure-Ressourcen
 
 Das Azure Preview-Portal und die zugrunde liegenden Ressourcen-Manager werden zum Organisieren von Ressourcen und Anpassen der Benutzererfahrung verwendet - nur für Sie. 
 
-Abonnements sind im vollständigen Azure-Portal die einzige Möglichkeit zum Kategorisieren und Gruppieren Ihrer Ressourcen. Mit dem Vorschauportal [haben wir Ressourcengruppen eingeführt](http://azure.microsoft.com/de-de/documentation/articles/azure-preview-portal-using-resource-groups), die es Ihnen ermöglichen, verknüpfte Entitäten zu gruppieren. Das wurde noch wichtiger, als [wir den rollenbasierten Zugriff eingeführt haben](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-configure). Jetzt können Sie in diesem Sinne Ihre Ressourcen mit Schlüssel-Wert-Paaren markieren, um Ressourcen für Abonnements über Ressourcengruppen hinweg und, innerhalb des Portals, über Abonnements hinweg weiter zu kategorisieren und anzuzeigen.
+Abonnements sind im vollständigen Azure-Portal die einzige Möglichkeit zum Kategorisieren und Gruppieren Ihrer Ressourcen. Mit dem Vorschauportal [haben wir Ressourcengruppen eingeführt](http://azure.microsoft.com/documentation/articles/azure-preview-portal-using-resource-groups), die es Ihnen ermöglichen, verknüpfte Entitäten zu gruppieren. Das wurde noch wichtiger, als [wir den rollenbasierten Zugriff eingeführt haben](http://azure.microsoft.com/documentation/articles/role-based-access-control-configure). Jetzt können Sie in diesem Sinne Ihre Ressourcen mit Schlüssel-Wert-Paaren markieren, um Ressourcen für Abonnements über Ressourcengruppen hinweg und, innerhalb des Portals, über Abonnements hinweg weiter zu kategorisieren und anzuzeigen.
 
 Gruppieren Sie Ressourcen nach Team, Projekt oder sogar Umgebung, um sich genau darauf zu konzentrieren, was Sie sehen müssen und wann Sie es benötigen. 
 
@@ -27,9 +42,9 @@ Von hier aus können Sie auf jedes einzelne Tag zum Anzeigen einer Liste aller R
 
 ## Markieren mit PowerShell
 
-Holen Sie sich zunächst das aktuelle [Azure PowerShell-Modul](http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/). Wenn Sie das Azure PowerShell-Modul zum ersten Mal verwenden, [lesen Sie die Dokumentation](http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell), um den Vorgang zu beschleunigen. Für die Zwecke dieses Artikels gehen wir davon aus, dass Sie bereits ein Konto hinzugefügt und ein Abonnement mit den Ressourcen, die Sie markieren möchten, ausgewählt haben.
+Holen Sie sich zunächst das aktuelle [Azure PowerShell-Modul](http://azure.microsoft.com/documentation/articles/install-configure-powershell/). Wenn Sie das Azure PowerShell-Modul zum ersten Mal verwenden, [lesen Sie die Dokumentation](http://azure.microsoft.com/documentation/articles/install-configure-powershell), um den Vorgang zu beschleunigen. Für die Zwecke dieses Artikels gehen wir davon aus, dass Sie bereits ein Konto hinzugefügt und ein Abonnement mit den Ressourcen, die Sie markieren möchten, ausgewählt haben.
 
-Tags sind nur für Ressourcen und Ressourcengruppen verfügbar, die im [Ressourcen-Manager](http://msdn.microsoft.com/de-de/library/azure/dn790568.aspx) verfügbar sind, daher müssen Sie zunächst zur Verwendung des Ressourcen-Managers wechseln. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit Resource Manager](http://azure.microsoft.com/de-de/documentation/articles/powershell-azure-resource-manager/).
+Tags sind nur für Ressourcen und Ressourcengruppen verfügbar, die im [Ressourcen-Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx) verfügbar sind, daher müssen Sie zunächst zur Verwendung des Ressourcen-Managers wechseln. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit Resource Manager](http://azure.microsoft.com/documentation/articles/powershell-azure-resource-manager/).
 
   Switch-AzureMode AzureResourceManager
 
@@ -50,7 +65,7 @@ Der Prozess ist für Ressourcen der gleiche, außer Sie verwenden die `Get-Azure
 
 ## Markieren mit dem Ressourcen-Manager
 
-Das Vorschauportal und PowerShell verwenden im Hintergrund die [Ressourcen-Manager-REST-API](http://msdn.microsoft.com/de-de/library/azure/dn790568.aspx). Wenn Sie das Tagging in eine andere Umgebung integrieren müssen, können Sie Tags mit GET für die Ressourcen-ID abrufen und die Tags mit einem PATCH-Aufruf aktualisieren.
+Das Vorschauportal und PowerShell verwenden im Hintergrund die [Ressourcen-Manager-REST-API](http://msdn.microsoft.com/library/azure/dn790568.aspx). Wenn Sie das Tagging in eine andere Umgebung integrieren müssen, können Sie Tags mit GET für die Ressourcen-ID abrufen und die Tags mit einem PATCH-Aufruf aktualisieren.
 
 
 ## Verwalten der Taxonomie
@@ -74,3 +89,5 @@ Fixieren Sie die wichtigsten Tags für den schnellen Zugriff auf dem Startboard,
 
 ![Pin tags to the Startboard](./media/azure-preview-portal-using-tags/pin-tags.png)
 
+
+<!--HONumber=46--> 

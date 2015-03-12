@@ -1,6 +1,20 @@
-﻿<properties title="Step 5: Publish the Azure Machine Learning web service" pageTitle="Schritt 5: Veröffentlichen des Machine Learning-Webdiensts | Azure" description="Schritt 5: Veröffentlichen eines Bewertungsexperiments in Azure Machine Learning Studio als ML-API-Webdienst" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Schritt 5: Veröffentlichen des Machine Learning-Webdiensts | Azure" 
+	description="Exemplarische Vorgehensweise Schritt 5: Veröffentlichen eines Bewertungsexperiments in Azure Machine Learning Studio als Azure Machine Learning-Webdienst" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/29/2015" 
+	ms.author="garye"/>
 
 
 Dies ist der fünfte Teil der exemplarischen Vorgehensweise [Entwickeln einer Vorhersagelösung mit Azure ML][Entwickeln]:
@@ -144,3 +158,5 @@ Klicken Sie auf der Registerkarte **KONFIGURATION** auf "Ja" neben **BEREIT FÜR
 [1]: ./media/machine-learning-walkthrough-5-publish-web-service/publish1.png
 [2]: ./media/machine-learning-walkthrough-5-publish-web-service/publish2.png
 [3]: ./media/machine-learning-walkthrough-5-publish-web-service/publish3.png
+
+<!--HONumber=46--> 

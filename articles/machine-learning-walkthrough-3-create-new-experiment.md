@@ -1,6 +1,20 @@
-<properties title="Step 3: Create a new Azure Machine Learning experiment" pageTitle="Schritt 3: Erstellen eines neuen Machine Learning-Experiments | Azure" description="Schritt 3: Erstellen eines neuen Trainingsexperiments in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun"  videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Schritt 3: Erstellen eines neuen Machine Learning-Experiments | Azure" 
+	description="Exemplarische Vorgehensweise Schritt 3: Erstellen eines neuen Trainingsexperiments in Azure Machine Learning Studio" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/02/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/29/2015" 
+	ms.author="garye"/>
 
 
 Dies ist der dritte Teil der exemplarischen Vorgehensweise [Entwickeln einer Vorhersagelösung mit Azure ML][develop]:
@@ -100,3 +114,5 @@ Unser Experiment sieht nun in etwa wie folgt aus:
 [1]: ./media/machine-learning-walkthrough-3-create-new-experiment/create1.png
 [2]: ./media/machine-learning-walkthrough-3-create-new-experiment/create2.png
 [3]: ./media/machine-learning-walkthrough-3-create-new-experiment/create3.png
+
+<!--HONumber=46--> 

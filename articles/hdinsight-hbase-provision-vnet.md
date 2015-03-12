@@ -292,7 +292,7 @@ Führen Sie die unter [Verwenden von Maven zum Erstellen von Java-Anwendungen, d
     	<value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
 	</property>
 
-> [AZURE.NOTE] Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](http://msdn.microsoft.com/de-de/library/azure/jj156088.aspx).
+> [AZURE.NOTE] Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](http://msdn.microsoft.com/library/azure/jj156088.aspx).
 
 ##<a id="powershell"></a>Bereitstellen eines HBase-Clusters mit Azure PowerShell
 
@@ -344,9 +344,9 @@ In diesem Artikel haben Sie erfahren, wie Sie einen HBase-Cluster bereitstellen 
 - [Virtuelle Netzwerke im Überblick][vnet-overview]
 
 
-[1]: http://azure.microsoft.com/de-de/services/virtual-network/
-[2]: http://technet.microsoft.com/de-de/library/ee176961.aspx
-[3]: http://technet.microsoft.com/de-de/library/hh847889.aspx
+[1]: http://azure.microsoft.com/services/virtual-network/
+[2]: http://technet.microsoft.com/library/ee176961.aspx
+[3]: http://technet.microsoft.com/library/hh847889.aspx
 
 [hbase-get-started]: ../hdinsight-hbase-get-started/
 [hbase-twitter-sentiment]: ../hdinsight-hbase-twitter-sentiment/
@@ -355,14 +355,14 @@ In diesem Artikel haben Sie erfahren, wie Sie einen HBase-Cluster bereitstellen 
 
 [azure-portal]: https://manage.windowsazure.com
 [azure-create-storageaccount]: ../storage-create-storage-account/ 
-[azure-purchase-options]: http://azure.microsoft.com/de-de/pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/de-de/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/de-de/pricing/free-trial/
+[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 [hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
 [hdinsight-admin-portal]: ../hdinsight-administer-use-management-portal/#rdp
 
-[hdinsight-powershell-reference]: http://msdn.microsoft.com/de-de/library/windowsazure/dn479228.aspx
+[hdinsight-powershell-reference]: http://msdn.microsoft.com/library/windowsazure/dn479228.aspx
 
 
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis
@@ -386,5 +386,4 @@ In diesem Artikel haben Sie erfahren, wie Sie einen HBase-Cluster bereitstellen 
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Provision details for the new HBase cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Use Script Action to customize an HBase cluster"
-
 <!--HONumber=42-->

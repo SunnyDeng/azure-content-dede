@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Tutorial: Create a Cross-Premises Virtual Network for Site-to-Site Connectivity" pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen" metaKeywords="" description="Erfahren Sie in diesem Lernprogramm, wie Sie ein virtuelles Azure-Netzwerk standortübergreifender Konnektivität erstellen." metaCanonical="" services="virtual-network" documentationCenter="" title="Create a Virtual Network for Site-to-Site Cross-Premises Connectivity" authors="cherylmc" solutions="" manager="adinah" editor="" />.
+﻿<properties 
+	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen" 
+	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein virtuelles Azure-Netzwerk standortübergreifender Konnektivität erstellen."
+	services="virtual-network" 
+	documentationCenter="" 
+	authors="cherylmc" 
+	manager="adinah" 
+	editor=""/>
 
-<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/23/2014" ms.author="cherylmc" />
+<tags 
+	ms.service="virtual-network" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/23/2014" 
+	ms.author="cherylmc"/>
 
 
 
@@ -10,9 +24,9 @@
 
 Das Lernprogramm führt Sie durch die Schritte zum Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen. 
 
-Wenn Sie ein virtuelles Nur-Cloud-Netzwerk erstellen möchten, finden Sie entsprechende Informationen unter [Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks in Azure](http://azure.microsoft.com/en-us/documentation/articles/create-virtual-network/). Wenn Sie mit Zertifikaten und einem VPN-Client ein Punkt-zu-Standort-VPN erstellen möchten, finden Sie weitere Informationen unter [Konfigurieren eines Punkt-zu-Standort-VPNs im Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkId=296653).
+Wenn Sie ein virtuelles Nur-Cloud-Netzwerk erstellen möchten, finden Sie entsprechende Informationen unter [Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks in Azure](http://azure.microsoft.com/documentation/articles/create-virtual-network/). Wenn Sie mit Zertifikaten und einem VPN-Client ein Punkt-zu-Standort-VPN erstellen möchten, finden Sie weitere Informationen unter [Konfigurieren eines Punkt-zu-Standort-VPNs im Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkId=296653).
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Es wurde entwickelt, um Ihnen die erforderlichen Schritte zum Erstellen eines standortübergreifenden virtuellen Beispielnetzwerks nahezubringen. Wenn Sie nach Entwurfsszenarien und erweiterten Informationen zu virtuellen Netzwerken suchen, finden Sie weitere Informationen unter [Virtuelle Netzwerke im Überblick](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx).
+Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Es wurde entwickelt, um Ihnen die erforderlichen Schritte zum Erstellen eines standortübergreifenden virtuellen Beispielnetzwerks nahezubringen. Wenn Sie nach Entwurfsszenarien und erweiterten Informationen zu virtuellen Netzwerken suchen, finden Sie weitere Informationen unter [Virtuelle Netzwerke im Überblick](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx).
 
 Nach Abschluss dieses Lernprogramms verfügen Sie über ein standortübergreifendes virtuelles Beispielnetzwerk. In der folgenden Abbildung sehen Sie die Details basierend auf den Einstellungen in diesem Lernprogramm.
 
@@ -28,7 +42,7 @@ Informationen zum Hinzufügen eines virtuellen Computers und Erweitern Ihres lok
 
 -  [Installieren eines Active Directory-Replikatdomänencontrollers in Azure Virtual Network](http://go.microsoft.com/fwlink/?LinkId=299877)
 
-Richtlinien zum Bereitstellen von AD DS auf Azure Virtual Machines finden Sie unter [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines](http://msdn.microsoft.com/en-us/library/windowsazure/jj156090.aspx).
+Richtlinien zum Bereitstellen von AD DS auf Azure Virtual Machines finden Sie unter [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines](http://msdn.microsoft.com/library/windowsazure/jj156090.aspx).
 
 Weitere Konfigurationsverfahren und Einstellungen für virtuelle Netzwerke finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](http://go.microsoft.com/fwlink/?LinkId=296652).
 
@@ -42,7 +56,7 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 ##  Voraussetzungen
 
--  Microsoft-Konto mit mindestens einem gültigen, aktiven Azure-Abonnement.  Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](http://www.windowsazure.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Falls Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile](http://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/).
+-  Microsoft-Konto mit mindestens einem gültigen, aktiven Azure-Abonnement.  Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](http://www.windowsazure.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Falls Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
 Wenn Sie anhand dieses Lernprogramms ein funktionsfähiges, standortübergreifendes virtuelles Netzwerk konfigurieren, das auf Ihr Unternehmen abgestimmt ist, benötigen Sie:
 
@@ -103,7 +117,7 @@ So erstellen Sie ein virtuelles Netzwerk, das mit einem Unternehmensnetzwerk ver
 
 	-  **NAME:** Geben Sie für das Beispiel in diesem Lernprogramm **YourCorpHQ** ein.
 
-	-  **IP-ADRESSE DES VPN-GERÄTS:** Geben Sie für das Beispiel in diesem Lernprogramm **3.2.1.1** ein. Geben Sie andernfalls die öffentliche IP-Adresse des VPN-Geräts ein. Wenn Sie diese Informationen nicht kennen, müssen Sie sie in Erfahrung bringen, bevor Sie mit den nächsten Schritten im Assistenten fortfahren. Beachten Sie, dass sich das VPN-Gerät nicht hinter einer NAT befinden darf. Weitere Informationen zu VPN-Geräten finden Sie unter [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/en-us/library/windowsazure/jj156075.aspx).
+	-  **IP-ADRESSE DES VPN-GERÄTS:** Geben Sie für das Beispiel in diesem Lernprogramm **3.2.1.1** ein. Geben Sie andernfalls die öffentliche IP-Adresse des VPN-Geräts ein. Wenn Sie diese Informationen nicht kennen, müssen Sie sie in Erfahrung bringen, bevor Sie mit den nächsten Schritten im Assistenten fortfahren. Beachten Sie, dass sich das VPN-Gerät nicht hinter einer NAT befinden darf. Weitere Informationen zu VPN-Geräten finden Sie unter [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/library/windowsazure/jj156075.aspx).
 
 	-  **ADRESSRAUM:** Geben Sie für das Beispiel in diesem Lernprogramm **10.1.0.0/16** ein.
 	-  **Adressraum hinzufügen:** Dieses Lernprogramm erfordert keinen zusätzlichen Adressraum.
@@ -244,15 +258,15 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
 
 ## Weitere Informationen
 
--  [Azure Virtual Network](http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx)
+-  [Azure Virtual Network](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx)
 
 -  [FAQs zu virtuellen Netzwerken](http://msdn.microsoft.com/library/windowsazure/dn133803.aspx)
 
--  [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/en-us/library/windowsazure/jj156097.aspx)
+-  [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/library/windowsazure/jj156097.aspx)
 
--  [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](http://www.windowsazure.com/en-us/manage/services/networking/add-a-vm-to-a-virtual-network/)
+-  [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](http://azure.microsoft.com/manage/services/networking/add-a-vm-to-a-virtual-network/)
 
--  [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/en-us/library/windowsazure/jj156075.aspx)
+-  [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/library/windowsazure/jj156075.aspx)
 
 -  [Überblick über die Azure-Namensauflösung](http://go.microsoft.com/fwlink/?LinkId=248097)
 
@@ -260,3 +274,5 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
 
 
 
+
+<!--HONumber=46--> 

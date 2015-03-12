@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Verwalten von Mobile Services über die Befehlszeile - Azure-Lernprogramm" description="Erfahren Sie, wie Sie Azure Mobile Services mithilfe von Befehlszeilentools erstellen, bereitstellen und verwalten." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Verwalten von Mobile Services über die Befehlszeile - Azure-Lernprogramm" 
+	description="Erfahren Sie, wie Sie Azure Mobile Services mithilfe von Befehlszeilentools erstellen, bereitstellen und verwalten." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="glenga"/>
 
 # Automatisieren von mobilen Diensten mit Befehlszeilentools 
 
@@ -18,9 +32,9 @@ Bei der Zusammenführung in eine einzelne Skript- oder Batch-Datei automatisiere
 
 Um die Azure-Befehlszeilentools zur Verwaltung von Mobile Services verwenden zu können, benötigen Sie ein Azure-Konto, bei dem die Azure Mobile Services-Funktion aktiviert ist.
 
-+ Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/" target="_blank">Kostenlose Azure-Testversion</a>.
++ Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/" target="_blank">Kostenlose Azure-Testversion</a>.
 
-+ Wenn Sie bereits über ein Konto verfügen und die Azure Mobile Services-Vorschau aktivieren möchten, finden Sie unter <a href="http://azure.microsoft.com/de-de/documentation/articles/php-create-account/#enable" target="_blank">Aktivieren der Azure-Vorschaufeatures</a> weitere Informationen dazu.
++ Wenn Sie bereits über ein Konto verfügen und die Azure Mobile Services-Vorschau aktivieren möchten, finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/php-create-account/#enable" target="_blank">Aktivieren der Azure-Vorschaufeatures</a> weitere Informationen dazu.
 
 In diesem Thema wird eine Auswahl von allgemeinen Verwaltungsaufgaben behandelt, die von den Azure-Befehlszeilentools unterstützt werden. Weitere Informationen finden Sie unter [Dokumentation zu Azure-Befehlszeilentools][reference-docs].
 
@@ -137,7 +151,8 @@ Mit dem folgenden Befehl wird eine Funktion an einen Vorgang an einer Tabelle ho
 
 Beachten Sie, dass mit diesem Vorgang eine JavaScript (.js)-Datei vom lokalen Computer hochgeladen wird. Der Name der Datei muss sich aus dem Tabellen- und Vorgangsnamen zusammensetzen, und die Datei muss sich im Unterordner `table` relativ zum Verzeichnis befinden, in dem der Befehl ausgeführt wird. Beim folgenden Vorgang wird beispielsweise ein neues `insert`-Skript hochgeladen und registriert, das zur Tabelle `TodoItems` gehört:
 
-		azure mobile script upload todolist table/todoitems.insert.js
+		azure mobile script upload todolist table/todoite
+	ms.insert.js
 
 Die Funktionsdeklaration in der Skriptdatei muss ebenfalls mit dem registrierten Tabellenvorgang übereinstimmen. Dies bedeutet, dass bei einem  `insert`-Skript das hochgeladene Skript eine Funktion mit folgender Signatur enthält:
 

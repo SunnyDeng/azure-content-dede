@@ -66,7 +66,7 @@ Um die Blobs in einem Container aufzuführen, müssen Sie zuerst einen Container
     	}
 	}
 
-Es gibt auch andere Möglichkeiten, den Inhalt eines BLOB-Containers aufzulisten. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/#list-blob).
+Es gibt auch andere Möglichkeiten, den Inhalt eines BLOB-Containers aufzulisten. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#list-blob).
 
 #####Herunterladen eines Blobs
 Wenn Sie einen BLOB herunterladen möchten, rufen Sie zuerst einen Verweis auf den BLOB ab, und rufen Sie dann die Methode DownloadToStream() auf. Im folgenden Beispiel wird die Methode DownloadToStream() verwendet, um den Inhalt des BLOBs in ein Datenstromobjekt zu übertragen, das anschließend als eine lokale Datei gespeichert werden kann.
@@ -80,7 +80,7 @@ Wenn Sie einen BLOB herunterladen möchten, rufen Sie zuerst einen Verweis auf d
     	blockBlob.DownloadToStream(fileStream);
 	}
 
-Es gibt auch andere Möglichkeiten zum Speichern von BLOBs als Dateien. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/#download-blobs).
+Es gibt auch andere Möglichkeiten zum Speichern von BLOBs als Dateien. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#download-blobs).
 
 #####Löschen eines Blobs
 Wenn Sie einen BLOB löschen möchten, rufen Sie zuerst einen Verweis auf den BLOB ab, und rufen Sie dann die Methode Delete() für den Verweis auf.
@@ -92,7 +92,6 @@ Wenn Sie einen BLOB löschen möchten, rufen Sie zuerst einen Verweis auf den BL
 	blockBlob.Delete();
 
 [Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/)
-Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/de-de/library/azure/ff683677.aspx).
-
+Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
 
 <!--HONumber=42-->

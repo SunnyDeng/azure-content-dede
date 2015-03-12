@@ -1,6 +1,20 @@
-<properties pageTitle="Einrichten des Computers für Media Services - Azure" description="Lernen Sie die Voraussetzungen für Media Services bei Verwendung des Media Services SDK für .NET kennen. Erfahren Sie zudem, wie Sie eine Visual Studio-App erstellen." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Einrichten des Computers für Media Services - Azure" 
+	description="Lernen Sie die Voraussetzungen für Media Services bei Verwendung des Media Services SDK für .NET kennen. Erfahren Sie zudem, wie Sie eine Visual Studio-App erstellen." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/30/2014" 
+	ms.author="juliako"/>
 
 
 
@@ -61,7 +75,7 @@ Um einen Verweis auf den Serverkontext zu erhalten, erstellen Sie wie im folgend
 	_context = new CloudMediaContext(_cachedCredentials);
 
 
-Es ist oft hilfreich, eine Variable vom Typ **CloudMediaContext** auf Modulebene zu definieren, um einen Verweis auf den Serverkontext zu speichern. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Media Services mit dem Media Services SDK für .NET](http://msdn.microsoft.com/de-de/library/azure/jj129571.aspx).
+Es ist oft hilfreich, eine Variable vom Typ **CloudMediaContext** auf Modulebene zu definieren, um einen Verweis auf den Serverkontext zu speichern. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Media Services mit dem Media Services SDK für .NET](http://msdn.microsoft.com/library/azure/jj129571.aspx).
 
 Die restlichen Codebeispiele in diesem Thema verwenden eine Variable namens **_context**, um auf den Serverkontext zu verweisen. 
 

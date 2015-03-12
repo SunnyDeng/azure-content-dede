@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Befehlszeilenschnittstelle" metaKeywords="ResourceManager, Azure plattformübergreifende Befehlszeilenschnittstelle, Azure Befehlszeilenschnittstelle, azure Befehlszeilenschnittstelle, azure cli, RBAC" description="Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Befehlszeilenschnittstelle" metaCanonical="" services="" documentationCenter="" title="Managing Role-Based Access Control with Cross-Platform Command-Line Interface" authors="guayan" solutions="" manager="terrylan" editor="mollybos" />
+﻿<properties 
+	pageTitle="Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Azure- Befehlszeilenschnittstelle" 
+	description="Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Befehlszeilenschnittstelle" 
+	services="" 
+	documentationCenter="" 
+	authors="guangyang" 
+	manager="terrylan" 
+	editor="mollybos"/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="11/03/2014" ms.author="guayan" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="command-line-interface" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/03/2014" 
+	ms.author="guayan"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Befehlszeilenschnittstelle
 
@@ -16,8 +30,8 @@ In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der plattformübergreifend
 
 Bevor Sie die RBAC mithilfe von xplat-cli verwalten können, benötigen Sie Folgendes:
 
-- Plattformübergreifende Azure-Befehlszeilenschnittstelle der Version 0.8.8 oder höher. Informationen zum Installieren der aktuellen Version und zum Verknüpfen mit Ihrem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/).
-- Lesen Sie bitte auch die folgenden Lernprogramme, um sich mit der Einrichtung und Verwendung von Azure Resource Manager in der plattformübergreifenden Azure-Befehlszeilenschnittstelle vertraut zu machen: [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](http://azure.microsoft.com/de-de/documentation/articles/xplat-cli-azure-resource-manager/)
+- Plattformübergreifende Azure-Befehlszeilenschnittstelle der Version 0.8.8 oder höher. Informationen zum Installieren der aktuellen Version und zum Verknüpfen mit Ihrem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/documentation/articles/xplat-cli/).
+- Lesen Sie bitte auch die folgenden Lernprogramme, um sich mit der Einrichtung und Verwendung von Azure Resource Manager in der plattformübergreifenden Azure-Befehlszeilenschnittstelle vertraut zu machen: [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](http://azure.microsoft.com/documentation/articles/xplat-cli-azure-resource-manager/)
 
 ## Dieses Lernprogramm umfasst folgende Punkte
 
@@ -33,7 +47,7 @@ Da RBAC nur mit Azure Resource Manager funktioniert, müssen Sie zunächst in de
 
     azure config mode arm
 
-Weitere Informationen finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Resource Manager](http://azure.microsoft.com/de-de/documentation/articles/xplat-cli-azure-resource-manager/).
+Weitere Informationen finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Resource Manager](http://azure.microsoft.com/documentation/articles/xplat-cli-azure-resource-manager/).
 
 Um eine Verbindung mit Ihren Azure-Abonnements herzustellen, geben Sie Folgendes ein:
 
@@ -48,7 +62,7 @@ Wenn Sie über mehrere Abonnements verfügen und ein anderes Abonnement abrufen 
     # Verwenden Sie den Abonnementnamen, um den gewünschten Namen für die Bearbeitung auszuwählen.
     azure account set <Abonnementname>
 
-Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/).
+Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/documentation/articles/xplat-cli/).
 
 ## <a id="check"></a>Überprüfen bestehender Rollenzuweisungen
 
@@ -125,10 +139,12 @@ Wenn Sie versuchen, andere Cmdlets wie "azure group create" auszuführen, wird e
 
 In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Verwaltung der rollenbasierten Zugriffssteuerung mit xplat-cli:
 
-- [Rollenbasierte Zugriffssteuerung in Windows Azure](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-configure/)
-- [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/de-de/documentation/articles/xplat-cli/)
-- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](http://azure.microsoft.com/de-de/documentation/articles/xplat-cli-azure-resource-manager/)
-- [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](http://azure.microsoft.com/de-de/documentation/articles/azure-preview-portal-using-resource-groups): Informationen zum Erstellen und Verwalten von Ressourcengruppen im Azure-Verwaltungsportal
+- [Rollenbasierte Zugriffssteuerung in Windows Azure](http://azure.microsoft.com/documentation/articles/role-based-access-control-configure/)
+- [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/documentation/articles/xplat-cli/)
+- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](http://azure.microsoft.com/documentation/articles/xplat-cli-azure-resource-manager/)
+- [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](http://azure.microsoft.com/documentation/articles/azure-preview-portal-using-resource-groups): Informationen zum Erstellen und Verwalten von Ressourcengruppen im Azure-Verwaltungsportal
 - [Azure-Blog](http://blogs.msdn.com/windowsazure): Informationen zu neuen Funktionen in Azure
-- [Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-powershell/)
-- [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-troubleshooting/)
+- [Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/documentation/articles/role-based-access-control-powershell/)
+- [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/documentation/articles/role-based-access-control-troubleshooting/)
+
+<!--HONumber=46--> 

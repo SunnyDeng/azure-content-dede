@@ -1,15 +1,29 @@
-﻿<properties urlDisplayName="Integrate an Azure Website with Azure CDN" pageTitle="Integrieren einer Azure-Website in Azure CDN" metaKeywords="Azure tutorial, Azure web app tutorial, ASP.NET, CDN, MVC, websites" description="Ein Lernprogramm, in dem Sie erfahren, wie Sie eine Website bereitstellen, die Inhalte von einem integrierten Azure CDN-Endpunkt zur Verfügung stellt." metaCanonical="" services="cdn,web-sites" documentationCenter=".NET" title="Integrate an Azure Website with Azure CDN" authors="cephalin" solutions="" manager="wpickett" editor="jimbe" />
+﻿<properties 
+	pageTitle="Integrieren einer Azure-Website in Azure CDN" 
+	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie eine Website bereitstellen, die Inhalte von einem integrierten Azure CDN-Endpunkt zur Verfügung stellt." 
+	services="cdn, web-sites" 
+	documentationCenter=".net" 
+	authors="cephalin" 
+	manager="wpickett" 
+	editor="jimbe"/>
 
-<tags ms.service="cdn" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="10/02/2014" ms.author="cephalin" />
+<tags 
+	ms.service="cdn" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="10/02/2014" 
+	ms.author="cephalin"/>
 
 <a name="intro"></a>
 # Integrieren einer Azure-Website in Azure CDN #
 
-Azure-Websites können in [Azure CDN](http://azure.microsoft.com/de-de/services/cdn/) integriert werden und erweitern dann die in Azure-Websites integrierten globalen Skalierungsfunktionen, indem Ihre Websiteinhalte global von Serverknoten in der Nähe Ihrer Kunden zur Verfügung gestellt werden (eine aktualisierte Liste aller aktuellen Knotenstandorte finden Sie [hier](http://msdn.microsoft.com/de-de/library/azure/gg680302.aspx). Diese Integration steigert die Leistung Ihrer Azure-Website erheblich und sorgt für eine deutliche Verbesserung der weltweiten Benutzerfreundlichkeit der Website. 
+Azure-Websites können in [Azure CDN](http://azure.microsoft.com/services/cdn/) integriert werden und erweitern dann die in Azure-Websites integrierten globalen Skalierungsfunktionen, indem Ihre Websiteinhalte global von Serverknoten in der Nähe Ihrer Kunden zur Verfügung gestellt werden (eine aktualisierte Liste aller aktuellen Knotenstandorte finden Sie [hier](http://msdn.microsoft.com/library/azure/gg680302.aspx). Diese Integration steigert die Leistung Ihrer Azure-Website erheblich und sorgt für eine deutliche Verbesserung der weltweiten Benutzerfreundlichkeit der Website. 
 
 Die Integration von Azure-Websites in Azure CDN bietet folgende Vorteile:
 
-- Integration der Inhaltbereitstellung (Bilder, Skripts und Stylesheets) als Teil des [kontinuierlichen Bereitstellungsprozesses](http://azure.microsoft.com/de-de/documentation/articles/web-sites-publish-source-control/) Ihrer Azure-Website
+- Integration der Inhaltbereitstellung (Bilder, Skripts und Stylesheets) als Teil des [kontinuierlichen Bereitstellungsprozesses](http://azure.microsoft.com/documentation/articles/web-sites-publish-source-control/) Ihrer Azure-Website
 - Einfaches Durchführen von Upgrades für die NuGet-Pakete in Ihrer Azure-Website, wie z. B. jQuery- oder Bootstrap-Versionen 
 - Verwalten der Webanwendung und des vom CDN verarbeiteten Inhalts über dieselbe Visual Studio-Oberfläche
 - Integrieren von ASP.NET-Bündelung und -Minimierung in Azure CDN
@@ -32,15 +46,15 @@ Sie stellen eine Azure-Website unter Verwendung der ASP.NET-MVC-Standardvorlage 
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
--	Ein aktives [Microsoft Azure-Konto](http://azure.microsoft.com/de-de/account/)
+-	Ein aktives [Microsoft Azure-Konto](http://azure.microsoft.com/account/)
 -	Visual Studio 2013 mit [Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409)
 
 <div class="wa-note">
   <span class="wa-icon-bulb"></span>
   <h5><a name="note"></a>Sie benötigen ein Windows Azure-Konto, um dieses Lernprogramm durchführen zu können:</h5>
   <ul>
-    <li>Sie können <a href="http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A261C142F">ein Azure-Konto kostenlos erstellen</a>: Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlose Azure-Dienste nutzen, wenn das Guthaben aufgebraucht ist.</li>
-    <li>Sie können Ihre <a href="http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F">Vorteile für MSDN-Abonnenten aktivieren</a> - Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.</li>
+    <li>Sie können <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F">ein Azure-Konto kostenlos erstellen</a>: Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlose Azure-Dienste nutzen, wenn das Guthaben aufgebraucht ist.</li>
+    <li>Sie können Ihre <a href="http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F">Vorteile für MSDN-Abonnenten aktivieren</a> - Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.</li>
   <ul>
 </div>
 
@@ -368,7 +382,7 @@ So können Sie den JavaScript-Code in Ihrer Entwicklungsumgebung debuggen und in
 
 Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung in Ihren CDN-Endpunkt zu integrieren.
 
-1. Ändern Sie in der Datei *App_Start\BundleConfig.cs* die `bundles.Add()`-Methoden so, dass sie einen anderen [Bundle-Konstruktor](http://msdn.microsoft.com/de-de/library/jj646464.aspx) verwenden, und zwar einen, der eine CDN-Adresse angibt. Ersetzen Sie hierzu die `RegisterBundles`-Methodendefinition durch den folgenden Code:  
+1. Ändern Sie in der Datei *App_Start\BundleConfig.cs* die `bundles.Add()`-Methoden so, dass sie einen anderen [Bundle-Konstruktor](http://msdn.microsoft.com/library/jj646464.aspx) verwenden, und zwar einen, der eine CDN-Adresse angibt. Ersetzen Sie hierzu die `RegisterBundles`-Methodendefinition durch den folgenden Code:  
 	<pre class="prettyprint">
 	public static void RegisterBundles(BundleCollection bundles)
 	{
@@ -462,9 +476,9 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 
 Bei einem Fehler des Azure CDN-Endpunkts (gleich welcher Ursache) soll Ihre Webseite so intelligent sein, dass sie als Fallbackoption zum Laden von JavaScript oder Bootstrap auf den ursprünglichen Webserver zugreift. Wenn aufgrund von CDN-Nichtverfügbarkeit Bilder auf der Website verloren gehen, ist dies eine Sache, wesentliche Seitenfunktionen zu verlieren, die durch Skripts und Stylesheets zur Verfügung gestellt werden, ist jedoch eine andere Sache.
 
-Die [Bundle](http://msdn.microsoft.com/de-de/library/system.web.optimization.bundle.aspx)-Klasse enthält eine Eigenschaft namens [CdnFallbackExpression](http://msdn.microsoft.com/de-de/library/system.web.optimization.bundle.cdnfallbackexpression.aspx), mit der Sie den Fallbackmechanismus für CDN-Fehler konfigurieren können. Zur Verwendung dieser Eigenschaft führen Sie die folgenden Schritte aus:
+Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.aspx)-Klasse enthält eine Eigenschaft namens [CdnFallbackExpression](http://msdn.microsoft.com/library/system.web.optimization.bundle.cdnfallbackexpression.aspx), mit der Sie den Fallbackmechanismus für CDN-Fehler konfigurieren können. Zur Verwendung dieser Eigenschaft führen Sie die folgenden Schritte aus:
 
-1. 	Öffnen Sie in Ihrem ASP.NET-Projekt die Datei *App_Start\BundleConfig.cs*, in der Sie jedem [Bundle-Konstruktor](http://msdn.microsoft.com/de-de/library/jj646464.aspx) eine CDN-URL hinzugefügt haben, und nehmen Sie die folgenden hervorgehobenen Änderungen vor, um den Standardbündeln einen Fallbackmechanismus hinzuzufügen:  
+1. 	Öffnen Sie in Ihrem ASP.NET-Projekt die Datei *App_Start\BundleConfig.cs*, in der Sie jedem [Bundle-Konstruktor](http://msdn.microsoft.com/library/jj646464.aspx) eine CDN-URL hinzugefügt haben, und nehmen Sie die folgenden hervorgehobenen Änderungen vor, um den Standardbündeln einen Fallbackmechanismus hinzuzufügen:  
 	<pre class="prettyprint">
 	public static void RegisterBundles(BundleCollection bundles)
 	{
@@ -576,7 +590,9 @@ Die [Bundle](http://msdn.microsoft.com/de-de/library/system.web.optimization.bun
 
 # Weitere Informationen #
 - [Übersicht über das Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/library/azure/ff919703.aspx)
-- [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung](http://azure.microsoft.com/de-de/Documentation/Articles/cdn-serve-content-from-cdn-in-your-web-application/)
-- [Integrieren eines Cloud-Diensts in Azure CDN](http://azure.microsoft.com/de-de/documentation/articles/cdn-cloud-service-with-cdn/)
+- [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung](http://azure.microsoft.com/Documentation/Articles/cdn-serve-content-from-cdn-in-your-web-application/)
+- [Integrieren eines Cloud-Diensts in Azure CDN](http://azure.microsoft.com/documentation/articles/cdn-cloud-service-with-cdn/)
 - [ASP.NET-Bündelung und -Minimierung](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
-- [Verwenden von CDN für Azure](http://azure.microsoft.com/de-de/documentation/articles/cdn-how-to-use/)
+- [Verwenden von CDN für Azure](http://azure.microsoft.com/documentation/articles/cdn-how-to-use/)
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-<properties title="How to create a custom template image for RemoteApp" pageTitle="Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp" description="Erfahren Sie, wie Sie ein benutzerdefiniertes Vorlagenbild für RemoteApp erstellen. Sie können diese Vorlage mit einer Hybrid- oder -Bereitstellung verwenden." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="mbaldwin" />
+﻿<properties 
+	pageTitle="Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp" 
+	description="Erfahren Sie, wie Sie ein benutzerdefiniertes Vorlagenimage für RemoteApp erstellen. Sie können diese Vorlage mit einer Hybrid- oder einer Cloudbereitstellung verwenden."
+	services="remoteapp" 
+	documentationCenter="" 
+	authors="lizap" 
+	manager="mbaldwin" 
+	editor=""/>
 
-<tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/12/2014" ms.author="elizapo" ms.manager="mbaldwin" />
+<tags 
+	ms.service="remoteapp" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/17/2015" 
+	ms.author="elizapo"/>
 
 # Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp
 Azure RemoteApp verwendet ein Windows Server 2012 R2-Vorlagenimage, um alle Programme zu hosten, die Sie an die Benutzer freigeben möchten. Um ein benutzerdefiniertes RemoteApp-Vorlagenimage zu erstellen, beginnen Sie mit einem bestehenden Abbild oder erstellen Sie ein neues. Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll, muss folgende Anforderungen erfüllen:
@@ -23,10 +37,10 @@ Azure RemoteApp verwendet ein Windows Server 2012 R2-Vorlagenimage, um alle Prog
 
 Bevor Sie mit der Erstellung des Dienstes beginnen, führen Sie Folgendes aus:
 
-- Melden Sie sich für RemoteApp an. Sie können sich unter [http://azure.microsoft.com/de-de/services/remoteapp/](http://azure.microsoft.com/de-de/services/remoteapp/) registrieren.
-- Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den RemoteApp-Dienst dient. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann. Weitere Informationen finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-ad/).
+- Melden Sie sich für RemoteApp an. Sie können sich unter [http://azure.microsoft.com/services/remoteapp/](http://azure.microsoft.com/services/remoteapp/) registrieren.
+- Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den RemoteApp-Dienst dient. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann. Weitere Informationen finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](http://azure.microsoft.com/documentation/articles/remoteapp-ad/).
 - Sammeln Sie folgende Informationen über das lokale Netzwerk: IP-Adresse und Informationen zum VPN-Gerät.
-- Installieren Sie das [Azure PowerShell-Modul](http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/).
+- Installieren Sie das [Azure PowerShell-Modul](http://azure.microsoft.com/documentation/articles/install-configure-powershell/).
 - Sammeln Sie Informationen zu den Benutzern, denen Sie Zugriff gewähren möchten. Dies können Informationen zu Microsoft-Konten oder Active Directory-Geschäftskonten für Benutzer sein.
 
 
@@ -115,8 +129,10 @@ Dies sind die einzelnen Schritte zum Erstellen eines neuen Abbilds:
 Nach dem Erstellen des benutzerdefinierten Vorlagenimage müssen Sie dieses Abbild in die RemoteApp-Bereitstellung hochladen. Informationen zum Erstellen Ihrer Sammlung finden Sie in den folgenden Artikeln:
 
 
-- [Erstellen einer Hybrid-Sammlung von RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-hybrid-deployment/)
-- [Erstellen einer Cloud-Sammlung von RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-cloud-deployment/)
+- [Erstellen einer Hybrid-Sammlung von RemoteApp](http://azure.microsoft.com/documentation/articles/remoteapp-create-hybrid-deployment/)
+- [Erstellen einer Cloud-Sammlung von RemoteApp](http://azure.microsoft.com/documentation/articles/remoteapp-create-cloud-deployment/)
 
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Schlüsselkonzepte für die API-Verwaltung" metaKeywords="" description="Erfahren Sie mehr über APIs, Produkte, Rollen, Gruppen und weitere wichtige Konzepte der API-Verwaltung." metaCanonical="" services="api-management" documentationCenter="API Management" title="API Management key concepts" authors="sdanie" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Schlüsselkonzepte für die API-Verwaltung" 
+	description="Erfahren Sie mehr über APIs, Produkte, Rollen, Gruppen und andere API Management-Schlüsselkonzepte." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/18/2014" 
+	ms.author="sdanie"/>
 
 #Schlüsselkonzepte für die API-Verwaltung
 
@@ -90,3 +104,5 @@ Sie können das Erscheinungsbild Ihres Entwicklerportals konfigurieren, indem Si
 
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

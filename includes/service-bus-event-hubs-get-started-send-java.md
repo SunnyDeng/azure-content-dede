@@ -1,5 +1,5 @@
 ﻿## Senden von Nachrichten an Ereignis-Hubs
-In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an den Ereignis-Hub zu senden. Wir nutzen den JMS AMQP-Anbieter aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Servicebuswarteschlangen und -Themen mit AMQP aus Java, wie [hier](http://azure.microsoft.com/de-de/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/) gezeigt. Weitere Informationen finden Sie in der [Qpid JMS-Dokumentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) und [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
+In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an den Ereignis-Hub zu senden. Wir nutzen den JMS AMQP-Anbieter aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Servicebuswarteschlangen und -Themen mit AMQP aus Java, wie [hier](http://azure.microsoft.com/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/) gezeigt. Weitere Informationen finden Sie in der [Qpid JMS-Dokumentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) und [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
 
 1. Erstellen Sie in Eclipse ein neues Java-Projekt namens **Sender**.
 
@@ -92,5 +92,4 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 
 
 <!-- Images -->
-[8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png
-<!--HONumber=42-->
+[8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png<!--HONumber=42-->

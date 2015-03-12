@@ -1,13 +1,27 @@
-﻿<properties pageTitle="Registrieren für die Authentifizierung in Azure Active Directory - Mobile Services" description="Erfahren Sie mehr über die Registrierung für die Azure Active Directory-Authentifizierung in Ihrer Mobile Services-Anwendung." authors="wesmc7777" services="mobile-services" documentationCenter="" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Registrieren für die Authentifizierung in Azure Active Directory - Mobile Services" 
+	description="Erfahren Sie mehr über die Registrierung für die Azure Active Directory-Authentifizierung in Ihrer Mobile Services-Anwendung." 
+	authors="wesmc7777" 
+	services="mobile-services" 
+	documentationCenter="" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/23/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="09/23/2014" 
+	ms.author="wesmc"/>
 
 # Registrieren Ihrer Apps für die Verwendung einer Azure Active Directory-Anmeldung
 
 In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Directory als Authentifizierungsanbieter für Azure Mobile Services zu verwenden. 
 
 
->[AZURE.NOTE] Die in diesem Thema beschriebenen Schritte sollten mit dem Lernprogramm [Hinzufügen von Authentifizierung zur Mobile Services-App](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/) verwendet werden, wenn Sie [Vom Dienst ausgehende Anmeldevorgänge](http://msdn.microsoft.com/de-de/library/azure/dn283952.aspx) mit Ihrer App verwenden möchten. Auch wenn Ihre App [vom Client ausgehende Anmeldevorgänge](http://msdn.microsoft.com/de-de/library/azure/jj710106.aspx) für Azure Active Directory und einen mobilen .NET Back-End-Dienst erfordert, sollten Sie mit dem Lernprogramm [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden](/de-de/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/) beginnen.
+>[AZURE.NOTE] Die in diesem Thema beschriebenen Schritte sollten mit dem Lernprogramm [Hinzufügen von Authentifizierung zur Mobile Services-App](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/) verwendet werden, wenn Sie [Vom Dienst ausgehende Anmeldevorgänge](http://msdn.microsoft.com/library/azure/dn283952.aspx) mit Ihrer App verwenden möchten. Auch wenn Ihre App [vom Client ausgehende Anmeldevorgänge](http://msdn.microsoft.com/library/azure/jj710106.aspx) für Azure Active Directory und einen mobilen .NET Back-End-Dienst erfordert, sollten Sie mit dem Lernprogramm [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden](/de-de/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/) beginnen.
 
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.

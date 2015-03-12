@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Integrate a cloud service with Azure CDN" pageTitle="Integrieren eines Cloud-Diensts in Azure CDN" metaKeywords="Azure tutorial, Azure web app tutorial, ASP.NET, CDN, MVC, cloud service" description="Ein Lernprogramm über die Bereitstellung eines Cloud-Dienstes für Inhalte aus einem integriertem Azure CDN-Enpunkt." metaCanonical="" services="cdn,cloud-services" documentationCenter=".NET" title="Integrate a cloud service with Azure CDN" authors="cephalin" solutions="" manager="wpickett" editor="tysonn" />
+﻿<properties 
+	pageTitle="Integrieren eines Cloud-Diensts in Azure CDN" 
+	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie einen Cloud-Dienst bereitstellen, der Inhalte von einem integrierten Azure CDN-Endpunkt zur Verfügung stellt." 
+	services="cdn, cloud-services" 
+	documentationCenter=".net" 
+	authors="cephalin" 
+	manager="wpickett" 
+	editor="tysonn"/>
 
-<tags ms.service="cdn" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="10/02/2014" ms.author="cephalin" />
+<tags 
+	ms.service="cdn" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="10/02/2014" 
+	ms.author="cephalin"/>
 
 <a name="intro"></a>
 # Integrieren eines Cloud-Diensts in Azure CDN
@@ -31,15 +45,15 @@ Sie stellen eine Cloud-Dienst-Webrolle unter Verwendung der ASP.NET-MVC-Standard
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
--	Ein aktives [Microsoft Azure-Konto](http://azure.microsoft.com/de-de/account/)
+-	Ein aktives [Microsoft Azure-Konto](http://azure.microsoft.com/account/)
 -	Visual Studio 2013 mit [Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409)
 
 <div class="wa-note">
   <span class="wa-icon-bulb"></span>
   <h5><a name="note"></a>You need an Azure account to complete this tutorial:</h5>
   <ul>
-    <li>You can <a href="http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=A261C142F">open an Azure account for free</a> - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.</li>
-    <li>You can <a href="http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F">activate MSDN subscriber benefits</a> - Your MSDN subscription gives you credits every month that you can use for paid Azure services.</li>
+    <li>You can <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F">open an Azure account for free</a> - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.</li>
+    <li>You can <a href="http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F">activate MSDN subscriber benefits</a> - Your MSDN subscription gives you credits every month that you can use for paid Azure services.</li>
   <ul>
 </div>
 
@@ -81,7 +95,7 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-8-publish-finalize.png)
 
-	>[WACOM.NOTE] Das Veröffentlichen von Cloud-Diensten dauert sehr lange. Mit der Option "Web Deploy für alle Webrollen aktivieren" können Sie das Debuggen des Cloud-Diensts erheblich beschleunigen, da hiermit schnelle (allerdings temporäre) Updates für Ihre Webrollen zur Verfügung gestellt werden. Weitere Informationen zu dieser Option finden Sie unter [Veröffentlichen eines Cloud-Diensts mit Azure Tools](http://msdn.microsoft.com/de-de/library/ff683672.aspx).
+	>[WACOM.NOTE] Das Veröffentlichen von Cloud-Diensten dauert sehr lange. Mit der Option "Web Deploy für alle Webrollen aktivieren" können Sie das Debuggen des Cloud-Diensts erheblich beschleunigen, da hiermit schnelle (allerdings temporäre) Updates für Ihre Webrollen zur Verfügung gestellt werden. Weitere Informationen zu dieser Option finden Sie unter [Veröffentlichen eines Cloud-Diensts mit Azure Tools](http://msdn.microsoft.com/library/ff683672.aspx).
 
 	Wenn im **Microsoft Azure-Aktivitätsprotokoll** als Veröffentlichungsstatus **Abgeschlossen** angezeigt wird, erstellen Sie einen CDN-Endpunkt, der in diesen Cloud-Dienst integriert ist. 
 
@@ -413,7 +427,7 @@ So können Sie den JavaScript-Code in Ihrer Entwicklungsumgebung debuggen und in
 
 Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung in Ihren CDN-Endpunkt zu integrieren.
 
-1. Ändern Sie in der Datei *App_Start\BundleConfig.cs* die "bundles.Add()"-Methoden so, dass sie einen anderen [Bundle-Konstruktor](http://msdn.microsoft.com/de-de/library/jj646464.aspx) verwenden, und zwar einen, der eine CDN-Adresse angibt. Ersetzen Sie hierzu die "RegisterBundles"-Methodendefinition durch den folgenden Code:  
+1. Ändern Sie in der Datei *App_Start\BundleConfig.cs* die "bundles.Add()"-Methoden so, dass sie einen anderen [Bundle-Konstruktor](http://msdn.microsoft.com/library/jj646464.aspx) verwenden, und zwar einen, der eine CDN-Adresse angibt. Ersetzen Sie hierzu die "RegisterBundles"-Methodendefinition durch den folgenden Code:  
 	<pre class="prettyprint">
 	public static void RegisterBundles(BundleCollection bundles)
 	{
@@ -507,9 +521,9 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 
 Bei einem Fehler des Azure CDN-Endpunkts (gleich welcher Ursache) soll Ihre Webseite so intelligent sein, dass sie als Fallbackoption zum Laden von JavaScript oder Bootstrap auf den ursprünglichen Webserver zugreift. Wenn aufgrund von CDN-Nichtverfügbarkeit Bilder auf der Website verloren gehen, ist dies eine Sache, wesentliche Seitenfunktionen zu verlieren, die durch Skripts und Stylesheets zur Verfügung gestellt werden, ist jedoch eine andere Sache.
 
-Die [Bundle](http://msdn.microsoft.com/de-de/library/system.web.optimization.bundle.aspx)-Klasse enthält eine Eigenschaft namens [CdnFallbackExpression](http://msdn.microsoft.com/de-de/library/system.web.optimization.bundle.cdnfallbackexpression.aspx), mit der Sie den Fallbackmechanismus für CDN-Fehler konfigurieren können. Zur Verwendung dieser Eigenschaft führen Sie die folgenden Schritte aus:
+Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.aspx)-Klasse enthält eine Eigenschaft namens [CdnFallbackExpression](http://msdn.microsoft.com/library/system.web.optimization.bundle.cdnfallbackexpression.aspx), mit der Sie den Fallbackmechanismus für CDN-Fehler konfigurieren können. Zur Verwendung dieser Eigenschaft führen Sie die folgenden Schritte aus:
 
-1. Öffnen Sie in Ihrem Webrollenprojekt die Datei *App_Start\BundleConfig.cs*, in der Sie jedem [Bundle-Konstruktor](http://msdn.microsoft.com/de-de/library/jj646464.aspx) eine CDN-URL hinzugefügt haben, und nehmen Sie die folgenden hervorgehobenen Änderungen vor, um den Standardbündeln einen Fallbackmechanismus hinzuzufügen:  
+1. Öffnen Sie in Ihrem Webrollenprojekt die Datei *App_Start\BundleConfig.cs*, in der Sie jedem [Bundle-Konstruktor](http://msdn.microsoft.com/library/jj646464.aspx) eine CDN-URL hinzugefügt haben, und nehmen Sie die folgenden hervorgehobenen Änderungen vor, um den Standardbündeln einen Fallbackmechanismus hinzuzufügen:  
 	<pre class="prettyprint">
 	public static void RegisterBundles(BundleCollection bundles)
 	{
@@ -615,9 +629,11 @@ Die [Bundle](http://msdn.microsoft.com/de-de/library/system.web.optimization.bun
 
 # Weitere Informationen
 - [Übersicht über das Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/library/azure/ff919703.aspx)
-- [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung](http://azure.microsoft.com/de-de/Documentation/Articles/cdn-serve-content-from-cdn-in-your-web-application/)
-- [Integrieren einer Azure-Website in Azure CDN](http://azure.microsoft.com/de-de/documentation/articles/cdn-websites-with-cdn/)
+- [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung](http://azure.microsoft.com/Documentation/Articles/cdn-serve-content-from-cdn-in-your-web-application/)
+- [Integrieren einer Azure-Website in Azure CDN](http://azure.microsoft.com/documentation/articles/cdn-websites-with-cdn/)
 - [ASP.NET-Bündelung und -Minimierung](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
-- [Verwenden von CDN für Azure](http://azure.microsoft.com/de-de/documentation/articles/cdn-how-to-use/)
+- [Verwenden von CDN für Azure](http://azure.microsoft.com/documentation/articles/cdn-how-to-use/)
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

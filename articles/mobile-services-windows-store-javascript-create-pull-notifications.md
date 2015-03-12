@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt - Azure Mobile Services" description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren, die regelmäßige Benachrichtigungen in Windows Store-Apps unterstützt, die Azure Mobile Services verwenden." services="mobile-services" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt - Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren, die regelmäßige Benachrichtigungen in Windows Store-Apps unterstützt, die Azure Mobile Services verwenden." 
+	services="mobile-services" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="11/22/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="javascript" 
+	ms.topic="article" 
+	ms.date="11/22/2014" 
+	ms.author="glenga"/>
 # Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen
 
 <div class="dev-center-tutorial-selector"> 
@@ -44,7 +58,8 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 		exports.get = function(request, response) {
 		    var wns = require('wns');
 		    var todoItems = request.service.tables.getTable('TodoItem');
-		    todoItems.where({
+		    todoIte
+	ms.where({
 		        complete: false
 		    }).read({
 		        success: sendResponse
@@ -81,7 +96,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 	Die **exports.get**-Funktion wird verwendet, da der Client eine GET-Anforderung für den Zugriff auf die tile-Vorlage sendet.
 
-   	> [AZURE.NOTE] Dieses benutzerdefinierte API-Skript verwendet das [wns-Modul](http://go.microsoft.com/fwlink/p/?LinkId=306750) für Node.js, auf das durch die Verwendung der **require**-Funktion verwiesen wird. Dieses Modul unterscheidet sich von dem [wns-Objekt](http://go.microsoft.com/fwlink/p/?LinkId=260591), das vom [push-Objekt](http://msdn.microsoft.com/de-de/library/windowsazure/jj554217.aspx) zurückgegeben wird, das wiederum für den Versand von Pushbenachrichtigungen in Serverskripts verwendet wird.
+   	> [AZURE.NOTE] Dieses benutzerdefinierte API-Skript verwendet das [wns-Modul](http://go.microsoft.com/fwlink/p/?LinkId=306750) für Node.js, auf das durch die Verwendung der **require**-Funktion verwiesen wird. Dieses Modul unterscheidet sich von dem [wns-Objekt](http://go.microsoft.com/fwlink/p/?LinkId=260591), das vom [push-Objekt](http://msdn.microsoft.com/library/windowsazure/jj554217.aspx) zurückgegeben wird, das wiederum für den Versand von Pushbenachrichtigungen in Serverskripts verwendet wird.
 
 Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen zu verschicken, die das Live Tile durch Anfragen an die neue benutzerdefinierte API aktualisiert.
 
@@ -143,7 +158,7 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 [Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Periodische Benachrichtigungen]: http://msdn.microsoft.com/de-de/library/windows/apps/jj150587.aspx
+[Periodische Benachrichtigungen]: http://msdn.microsoft.com/library/windows/apps/jj150587.aspx
 
 
 

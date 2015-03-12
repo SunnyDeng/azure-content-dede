@@ -125,9 +125,9 @@ Das zweite Skript vergibt Berechtigungen an Datenbankbenutzer. Für dieses Skrip
 
 Sie haben nun mehrere Anmeldungen erstellt und getestet. Weitere Informationen finden Sie unter [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank][] und [Überwachen der Microsoft Azure SQL-Datenbank mit dynamischen Verwaltungssichten][].
 
-[Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: http://msdn.microsoft.com/en-us/library/windowsazure/ee336235.aspx
-[Überwachen der Microsoft Azure SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/en-us/library/windowsazure/ff394114.aspx
-[Verwalten einer Azure SQL-Datenbank mit Management Studio]: http://www.windowsazure.com/en-us/develop/net/common-tasks/sql-azure-management/
+[Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: http://msdn.microsoft.com/library/windowsazure/ee336235.aspx
+[Überwachen der Microsoft Azure SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/library/windowsazure/ff394114.aspx
+[Verwalten einer Azure SQL-Datenbank mit Management Studio]: http://azure.microsoft.com/develop/net/common-tasks/sql-azure-management/
 
 
 

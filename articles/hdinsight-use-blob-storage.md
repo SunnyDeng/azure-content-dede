@@ -62,7 +62,7 @@ Zusätzlich zu diesem Speicherkonto können Sie während des Bereitstellungsproz
 - **Öffentliche Container oder öffentliche BLOBs in Speicherkonten, die NICHT mit einem Cluster verbunden sind:** Sie haben schreibgeschützten Zugriff auf die BLOBs in den Containern.
 
 	> [AZURE.NOTE]
-        > Öffentliche Container erlauben das Abrufen einer Liste aller im Container verfügbaren Blobs und der Container-Metadaten. Auf öffentliche BLOBs haben  Sie nur Zugriff, wenn Sie die exakte URL kennen. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dd179354.aspx">Einschränken des Zugriffs auf Container und Blobs</a>.
+        > Öffentliche Container erlauben das Abrufen einer Liste aller im Container verfügbaren Blobs und der Container-Metadaten. Auf öffentliche BLOBs haben  Sie nur Zugriff, wenn Sie die exakte URL kennen. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/windowsazure/dd179354.aspx">Einschränken des Zugriffs auf Container und Blobs</a>.
 
 - **Private Container in Speicherkonten, die NICHT mit einem Cluster verbunden sind:** Sie können nicht auf die BLOBs in den Containern zugreifen, es sei denn Sie definieren beim Senden der WebHCat-Aufträge das Speicherkonto.
 
@@ -296,11 +296,10 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [hdinsight-use-pig]: ../hdinsight-use-pig/
 
 [Powershell-install]: ../install-configure-powershell/
-[blob-storage-restAPI]: http://msdn.microsoft.com/de-de/library/windowsazure/dd135733.aspx
+[blob-storage-restAPI]: http://msdn.microsoft.com/library/windowsazure/dd135733.aspx
 [azure-storage-create]: ../storage-create-storage-account/
 
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-use-blob-storage/HDI.PowerShell.BlobCommands.png 
 [img-hdi-quick-create]: ./media/hdinsight-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-use-blob-storage/HDI.CustomCreateStorageAccount.png  
-
 <!--HONumber=42-->

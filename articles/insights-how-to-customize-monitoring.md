@@ -1,6 +1,20 @@
-﻿<properties title="How to customize monitoring" pageTitle="Anpassen der Überwachung" description="Erfahren Sie, wie Sie Überwachungsdiagramme in Azure anpassen." authors="awills" manager="kamrani" />
+﻿<properties 
+	pageTitle="Anpassen der Überwachung" 
+	description="Erfahren Sie, wie Sie Überwachungsdiagramme in Azure anpassen."
+	authors="alancameronwills" 
+	manager="kamrani" 
+	editor="" 
+	services="application-insights" 
+	documentationCenter=""/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-11-04" ms.author="awills" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2014-11-04" 
+	ms.author="awills"/>
 
 # Anpassen der Überwachung
 
@@ -53,3 +67,5 @@ Mit den leistungsstarken Anpassungsfunktionen des Azure-Vorschauportals können 
 
 Hinweis: Der Zeitbereich des Diagramms und die ausgewählten Metriken werden zurückgesetzt, wenn Sie das Portal verlassen.
 
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-<properties urlDisplayName="Service Bus Queues" pageTitle="Verwenden von Service Bus-Warteschlangen (.NET) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues C#, Azure queues .NET" description="Erfahren Sie mehr über die Verwendung von Service Bus-Warteschlangen in Azure. Die Codebeispiele wurden in C# mithilfe der .NET-API geschrieben." metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Queues" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+﻿<properties 
+	pageTitle="Verwenden von Service Bus-Warteschlangen (.NET) - Azure" 
+	description="Erfahren Sie mehr über die Verwendung von Service Bus-Warteschlangen in Azure. Die Codebeispiele wurden in C# mithilfe der .NET-API geschrieben."
+	services="service-bus" 
+	documentationCenter=".net" 
+	authors="sethmanheim" 
+	manager="timlt" 
+	editor="mattshel"/>
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
+<tags 
+	ms.service="service-bus" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/10/2015" 
+	ms.author="sethm"/>
 
 
 
@@ -237,9 +251,11 @@ Links weitere Informationen.
   
   
   [7]: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
-  [Warteschlangen, Themen und Abonnements.]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367516.aspx
-  [Service Bus-Brokermessaging: .NET-Lernprogramm]: http://msdn.microsoft.com/de-de/library/windowsazure/hh367512.aspx
+  [Warteschlangen, Themen und Abonnements.]: http://msdn.microsoft.com/library/windowsazure/hh367516.aspx
+  [Service Bus-Brokermessaging: .NET-Lernprogramm]: http://msdn.microsoft.com/library/windowsazure/hh367512.aspx
 
 <!--HONumber=35.1-->
 
 <!--HONumber=35.1-->
+
+<!--HONumber=46--> 

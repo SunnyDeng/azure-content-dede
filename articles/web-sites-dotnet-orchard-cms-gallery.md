@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen einer Orchard CMS-Website über die Galerie in Azure" 
 	description="In diesem Lernprogramm erfahren Sie, wie Sie eine neue Website in Azure erstellen. Sie erfahren außerdem, wie Sie die Website über das Verwaltungsportal starten und verwalten." 
 	services="web-sites" 
@@ -36,11 +36,11 @@ Sie erstellen eine Orchard CMS-Site, die eine Standardvorlage verwendet. [Orchar
 
 1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
 
-2. Klicken Sie unten links im Portal auf das Symbol **Neu**.
+2. Klicken Sie unten links im Portal auf das Symbol **New** (in englischer Sprache).
 	
 	![Create New][1]
 
-3. Klicken Sie auf das Symbol **Website** und dann auf **Aus Galerie**.
+3. Klicken Sie auf das Symbol **Website** und dann auf **From Gallery** (in englischer Sprache).
 	
 	![Create From Gallery][2]
 
@@ -48,7 +48,7 @@ Sie erstellen eine Orchard CMS-Site, die eine Standardvorlage verwendet. [Orchar
 	
 	![Orchard from list][3]
 
-5. Geben Sie auf der Seite **Ihre App konfigurieren** Werte für alle Felder ein, bzw. wählen Sie sie aus:
+5. Geben Sie auf der Seite **Configure Your App** (in englischer Sprache) Werte für alle Felder ein, bzw. wählen Sie sie aus:
 	
 - Geben Sie den gewünschten URL-Namen ein.	
 - Wählen Sie die Ihnen am nächsten gelegene Region aus. (Hierdurch wird eine optimale Leistung sichergestellt.)
@@ -61,13 +61,13 @@ Azure startet den Erstellungs- und Bereitstellungsvorgang. Während die Website 
 
 <h2>Starten und Verwalten Ihrer Orchard-Website</h2>
 
-1. Klicken Sie auf der Seite **Websites** auf den Namen Ihrer neuen Website und dann unten im Portal auf **Durchsuchen**, um die Willkommensseite Ihrer Website zu öffnen.
+1. Klicken Sie auf der Seite **Websites** auf den Namen Ihrer neuen Website und dann unten im Portal auf **Browse** (in englischer Sprache), um die Willkommensseite Ihrer Website zu öffnen.
 
 	![launch dashboard][5]
 
 	![browse button][12]
 
-2. Geben Sie die für Orchard erforderlichen Konfigurationsdaten ein, und klicken Sie zum Fertigstellen der Konfiguration und Öffnen der Startseite der Website auf **Setup fertig stellen**.
+2. Geben Sie die für Orchard erforderlichen Konfigurationsdaten ein, und klicken Sie zum Fertigstellen der Konfiguration und Öffnen der Startseite der Website auf **Finish Setup** (in englischer Sprache).
 
 	![login to Orchard][7]
 

@@ -1,6 +1,21 @@
-﻿<properties urlDisplayName="Replica domain controller" pageTitle="Installieren eines Replikatdomänencontrollers in Azure" metaKeywords="" description="Ein Lernprogramm, in dem das Installieren eines Domänencontrollers aus einer lokalen Active Directory-Gesamtstruktur auf einem virtuellen Computer in Azure erläutert wird." metaCanonical="" services="virtual-network" documentationCenter="" title="Install a Replica Active Directory Domain Controller on an Azure Virtual Network" authors="Justinha" solutions="" writer="Justinha" manager="TerryLan" editor="LisaToft" />
+﻿<properties 
+	pageTitle="Installieren eines Replikatdomänencontrollers in Azure" 
+	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie einen Domänencontroller aus einer lokalen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Computer installieren." 
+	services="virtual-network" 
+	documentationCenter="" 
+	authors="Justinha" 
+	writer="Justinha" 
+	manager="TerryLan" 
+	editor="LisaToft"/>
 
-<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/04/2014" ms.author="Justinha" />
+<tags 
+	ms.service="virtual-network" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/12/2015" 
+	ms.author="Justinha"/>
 
 
 #Installieren eines Active Directory-Replikatdomänencontrollers in Azure Virtual Networks
@@ -154,7 +169,7 @@ Melden Sie sich bei einem virtuellen Computer an, und stellen Sie sicher, dass S
 Als Alternative zur Verwendung des Verwaltungsportals für die Bereitstellung von virtuellen Computern, können Sie Windows PowerShell für Microsoft Azure verwenden. Verwenden Sie <a href = "http://msdn.microsoft.com/library/azure/dn495159.aspx">New-AzureVMConfig</a> - und <a href = "http://msdn.microsoft.com/library/azure/dn495299.aspx">Add-AzureProvisioningConfig,</a> um einen virtuellen Computer als in eine Domäne eingebundenen Computer bereitzustellen, wenn er zum ersten Mal gestartet wird. Verwenden Sie <a href = "http://msdn.microsoft.com/library/azure/dn495254.aspx">New-AzureVM,</a> um den virtuellen Computer selbst zu erstellen. 
 </p>
 
-Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Erste Schritte mit Azure PowerShell](http://msdn.microsoft.com/de-de/library/windowsazure/jj156055.aspx) und [Azure-Cmdlets für die Verwaltung](http://msdn.microsoft.com/de-de/library/windowsazure/jj152841).
+Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Erste Schritte mit Azure PowerShell](http://msdn.microsoft.com/library/windowsazure/jj156055.aspx) und [Azure-Cmdlets für die Verwaltung](http://msdn.microsoft.com/library/windowsazure/jj152841).
 
 
 <h2><a id="resources"></a>Zusätzliche Ressourcen</h2>
@@ -179,3 +194,5 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 [1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

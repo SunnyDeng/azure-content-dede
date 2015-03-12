@@ -1,12 +1,26 @@
-﻿<properties urlDisplayName="How to scale" pageTitle="Skalieren eines Cloud-Diensts - Azure" metaKeywords="Azure link resource, scaling cloud service" description="Hier erfahren Sie, wie Sie einen Cloud-Dienst und verknüpfte Ressourcen in Azure skalieren." metaCanonical="" services="cloud-services" documentationCenter="" title="How to Scale an Application" authors="davidmu" solutions="" manager="timlt" editor="" />
+<properties 
+	pageTitle="Skalieren eines Cloud-Diensts - Azure" 
+	description="Hier erfahren Sie, wie Sie einen Cloud-Dienst und verknüpfte Ressourcen in Azure skalieren." 
+	services="cloud-services" 
+	documentationCenter="" 
+	authors="Thraka" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/21/2014" ms.author="davidmu" />
+<tags 
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/21/2014" 
+	ms.author="adegeo"/>
 
 
 
 
 
-#Skalieren einer Anwendung
+# Skalieren einer Anwendung
 
 
 Auf der Seite "Skalieren" des Azure Verwaltungsportals können Sie Ihre Anwendung manuell skalieren oder Parameter für die automatische Skalierung festlegen. Skaliert werden können Anwendungen, die Webrollen, Workerrollen oder virtuelle Computer ausführen. Sie skalieren eine Anwendung, die Instanzen von Webrollen und Workerrollen ausführt, indem Sie Rolleninstanzen hinzufügen oder entfernen, um die Arbeitslast zu bewältigen.
@@ -15,10 +29,10 @@ Bei der Skalierung einer Anwendung, die virtuelle Computer ausführt, werden kei
 
 Folgendes ist allerdings zu beachten, bevor die Skalierung einer Anwendung konfiguriert wird:
 
-- Virtuelle Computer müssen nach der Erstellung zu einer Verfügbarkeitsgruppe hinzugefügt werden, um sie für die Skalierung einer Anwendung verwenden zu können. Die derart in eine Gruppe eingefügten virtuellen Computer können zunächst beliebig aktiviert oder deaktiviert sein. Beim Hochskalieren werden sie allerdings definitiv aktiviert und beim Herunterskalieren deaktiviert. Weitere Information zu virtuellen Computern und Verfügbarkeitsgruppen finden Sie unter [Verwaltung der Verfügbarkeit virtueller Computer](http://azure.microsoft.com/de-de/documentation/articles/virtual-machines-manage-availability/).
-- Die Skalierung ist abhängig von der Kernspeichernutzung. Größere Rolleninstanzen oder virtuelle Computer erfordern mehr Kernspeicher. Sie können eine Anwendung nur innerhalb der für Ihr Abonnement geltenden Kernspeichergrenzwerte skalieren. Wenn als Grenzwert für Ihr Abonnement beispielsweise zwanzig Kernspeicher festgelegt sind und Sie eine Anwendung mit zwei mittelgroßen virtuellen Computern ausführen (insgesamt vier Kernspeicher), stehen für das Hochskalieren anderer bereitgestellter Cloud-Dienste in Ihrem Abonnement nur noch sechzehn Kernspeicher zur Verfügung. Für die Skalierung einer Anwendung können nur gleich große virtuelle Computer einer Verfügbarkeitsgruppe verwendet werden. Weitere Informationen über Kernspeichernutzung und Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Windows Azure](http://msdn.microsoft.com/de-de/library/dn197896.aspx).
-- Sie müssen eine Warteschlange anlegen und diese einer Rolle oder einer Verfügbarkeitsgruppe zuweisen, bevor Sie eine Anwendung auf Basis eines Nachrichtenschwellwerts skalieren können. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeicherdiensts](http://www.windowsazure.com/de-de/develop/net/how-to-guides/queue-service).
-- Sie können Ressourcen skalieren, die mit Ihrem Cloud-Dienst verknüpft sind. Weitere Informationen zum Verknüpfen von Ressourcen finden Sie unter [Gewusst wie: Verknüpfen einer Ressource mit einem Cloud-Dienst](http://www.windowsazure.com/de-de/manage/services/cloud-services/how-to-manage-a-cloud-service/#linkresources).
+- Virtuelle Computer müssen nach der Erstellung zu einer Verfügbarkeitsgruppe hinzugefügt werden, um sie für die Skalierung einer Anwendung verwenden zu können. Die derart in eine Gruppe eingefügten virtuellen Computer können zunächst beliebig aktiviert oder deaktiviert sein. Beim Hochskalieren werden sie allerdings definitiv aktiviert und beim Herunterskalieren deaktiviert. Weitere Information zu virtuellen Computern und Verfügbarkeitsgruppen finden Sie unter [Verwaltung der Verfügbarkeit virtueller Computer](http://azure.microsoft.com/ documentation/articles/virtual-machines-manage-availability/)
+- Die Skalierung ist abhängig von der Kernspeichernutzung. Größere Rolleninstanzen oder virtuelle Computer erfordern mehr Kernspeicher. Sie können eine Anwendung nur innerhalb der für Ihr Abonnement geltenden Kernspeichergrenzwerte skalieren. Wenn als Grenzwert für Ihr Abonnement beispielsweise zwanzig Kernspeicher festgelegt sind und Sie eine Anwendung mit zwei mittelgroßen virtuellen Computern ausführen (insgesamt vier Kernspeicher), stehen für das Hochskalieren anderer bereitgestellter Cloud-Dienste in Ihrem Abonnement nur noch sechzehn Kernspeicher zur Verfügung. Für die Skalierung einer Anwendung können nur gleich große virtuelle Computer einer Verfügbarkeitsgruppe verwendet werden. Weitere Informationen über Kernspeichernutzung und Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Microsoft Azure](http://msdn.microsoft.com/library/dn197896.aspx)
+- Sie müssen eine Warteschlange anlegen und diese einer Rolle oder einer Verfügbarkeitsgruppe zuweisen, bevor Sie eine Anwendung auf Basis eines Nachrichtenschwellwerts skalieren können. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeicherdiensts](http://azure.microsoft.com/develop/net/how-to-guides/queue-service)
+- Sie können Ressourcen skalieren, die mit Ihrem Cloud-Dienst verknüpft sind. Weitere Informationen zum Verknüpfen von Ressourcen finden Sie unter [Gewusst wie: Verknüpfen einer Ressource mit einem Cloud-Dienst](http://azure.microsoft.com/manage/services/cloud-services/how-to-manage-a-cloud-service/#linkresources).
 - Um die Hochverfügbarkeit Ihrer Anwendung zu gewährleisten, sollte diese mit mindestens zwei Rolleninstanzen bzw. virtuellen Computern bereitgestellt werden. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](https://www.windowsazure.com/de-de/support/legal/sla/).
 
 Folgende Skalierungsaktionen können für einen Cloud-Dienst ausgeführt werden:
@@ -213,4 +227,4 @@ Sie können die automatische Skalierung Ihrer Anwendung planen, indem Sie Zeitpl
 [linked_resources]: ./media/cloud-services-how-to-scale/CloudServices_ScaleLinkedResources.png
 [scale_schedule]: ./media/cloud-services-how-to-scale/CloudServices_SetUpSchedule.png
 
-<!--HONumber=35.1-->
+<!--HONumber=45--> 

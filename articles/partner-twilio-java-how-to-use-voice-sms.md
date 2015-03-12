@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Twilio Voice/SMS Service" pageTitle="Verwenden von Twilio für Telefonie- und SMS-Funktionen (Java) - Azure" metaKeywords="Twilio, Twilio API, phone calls, SMS message, TwiML responses, Azure Twilio Java" description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Codebeispiele sind in Java geschrieben." metaCanonical="" services="" videoId="" scriptId="" documentationCenter="Java" title="How to Use Twilio for Voice and SMS Capabilities in Java" authors="MicrosoftHelp@twilio.com; robmcm" solutions="" manager="twilio" editor="mollybos" />
+<properties 
+	pageTitle="Verwenden von Twilio für Telefonie- und SMS-Funktionen (Java) - Azure" 
+	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Codebeispiele wurden in Java geschrieben." 
+	services="" 
+	documentationCenter="java" 
+	authors="devinrader" 
+	manager="twilio" 
+	editor="mollybos"/>
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="11/25/2014" ms.author="MicrosoftHelp@twilio.com; robmcm" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="11/25/2014" 
+	ms.author="microsofthelp@twilio.com"/>
 
 # Verwenden von Twilio für Telefonie- und SMS-Funktionen in Java
 
@@ -14,10 +28,10 @@ Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufg
 * [Überprüfen von Telefonnummern](#VerifyPhoneNumbers)
 * [Erstellen einer Java-Anwendung](#create_app)
 * [Konfigurieren Ihrer Anwendung für die Verwendung von Twilio-Bibliotheken](#configure_app)
-* [Gewusst wie: Tätigen von ausgehenden Anrufen](#howto_make_call)
-* [Gewusst wie: Senden einer SMS-Nachricht](#howto_send_sms)
-* [Gewusst wie: Bereitstellen von TwiML-Antworten von der eigenen Website](#howto_provide_twiml_responses)
-* [Gewusst wie: Verwenden zusätzlicher Twilio-Dienste](#AdditionalServices)
+* [Vorgehensweise: Tätigen von ausgehenden Anrufen](#howto_make_call)
+* [Vorgehensweise: Senden einer SMS-Nachricht](#howto_send_sms)
+* [Vorgehensweise: Bereitstellen von TwiML-Antworten von der eigenen Website](#howto_provide_twiml_responses)
+* [Vorgehensweise: Verwenden zusätzlicher Twilio-Dienste](#AdditionalServices)
 * [Nächste Schritte](#NextSteps)
 
 <h2><a id="WhatIs"></a>Was ist Twilio?</h2>
@@ -70,7 +84,7 @@ Wenn Sie sich für ein Twilio-Konto anmelden, erhalten Sie eine Konto-ID und ein
 
 <h2><a id="create_app"></a>Erstellen einer Java-Anwendung</h2>
 1. Laden Sie das Twilio-JAR herunter und fügen Sie es zu Ihrem Java-Buildpfad und zu Ihrer WAR-Bereitstellungs-Assembly hinzu. Unter [https://github.com/twilio/twilio-java][twilio_java] können Sie die GitHub-Quellen herunterladen und Ihr eigenes JAR erstellen oder ein bereits erstelltes JAR herunterladen (mit oder ohne Abhängigkeiten).
-2. Stellen Sie sicher, dass der **cacerts**-Zertifikatspeicher Ihres JDK das Zertifikat der Equifax-Zertifizierungsstelle mit dem MD5-Fingerabdruck 67:CB:9D:C0:13:24:8A:82:9B:B2:17:1E:D1:1B:EC:D4 enthält (die Seriennummer ist 35:DE:F4:CF und der SHA1-Fingerabdruck ist D2:32:09:AD:23:D3:14:23:21:74:E4:0D:7F:9D:62:13:97:86:63:3A). Dies ist das Zertifizierungsstellen (ZS)-Zertifikat für den [https://api.twilio.com][twilio_api_service]-Dienst, der beim Verwenden der Twilio-APIs aufgerufen wird. Informationen zur Prüfung der im **cacerts**-Zertifikatspeicher Ihres JDK enthaltenen ZS-Zertifikate finden Sie unter [Hinzufügen eines Zertifikats zum Java ZS-Zertifikatspeicher][add_ca_cert].
+2. Stellen Sie sicher, dass der **cacerts**-Zertifikatspeicher Ihres JDK das Zertifikat der Equifax-Zertifizierungsstelle mit dem MD5-Fingerabdruck 67:CB:9D:C0:13:24:8A:82:9B:B2:17:1E:D1:1B:EC:D4 enthält (die Seriennummer ist 35:DE:F4:CF und der SHA1-Fingerabdruck ist D2:32:09:AD:23:D3:14:23:21:74:E4:0D:7F:9D:62:13:97:86:63:3A). Dies ist das Zertifizierungsstellen(ZS)-Zertifikat für den [https://api.twilio.com][twilio_api_service]-Dienst, der beim Verwenden der Twilio-APIs aufgerufen wird. Informationen zur Prüfung der im **cacerts**-Zertifikatspeicher Ihres JDK enthaltenen ZS-Zertifikate finden Sie unter [Hinzufügen eines Zertifikats zum Java ZS-Zertifikatspeicher][add_ca_cert].
 
 Ausführliche Informationen zur Verwendung der Twilio-Clientbibliothek für Java finden Sie unter [Tätigen eines Telefonanrufs mit Twilio in einer Java-Anwendung in Azure][howto_phonecall_java].
 
@@ -93,7 +107,7 @@ Für Java Server Page (JSP)-Quelldateien:
 Je nach verwendeten Twilio-Paketen oder -Klassen sehen Ihre **import**-Anweisungen möglicherweise unterschiedlich aus.
 
 <h2><a id="howto_make_call"></a>Gewusst wie: Tätigen von ausgehenden Anrufen</h2>
-Nachfolgend wird erläutert, wie Sie einen ausgehenden Anruf mit der **CallFactory**-Klasse tätigen. Dieser Code verwendet eine von Twilio bereitgestellte Website für die Rückgabe der TwiML-Antwort (Twilio Markup Language). Geben Sie Ihre Werte für die Telefonnummern **From** und **To** ein, und stellen Sie sicher, dass Sie die **From**-Telefonnummer für Ihr Twilio-Konto verifizieren, bevor Sie den Code ausführen.
+Nachfolgend wird erläutert, wie Sie einen ausgehenden Anruf mit der **CallFactory**-Klasse tätigen. Dieser Code verwendet eine von Twilio bereitgestellte Website für die Rückgabe der TwiML-Antwort (Twilio Markup Language). Setzen Sie Ihre Werte für die Telefonnummern **From** und **To** ein, und stellen Sie sicher, dass Sie die **From**-Telefonnummer für Ihr Twilio-Konto vor der Ausführung des Codes verifizieren.
 
     // Use your account SID and authentication token instead
     // of the placeholders shown here.
@@ -127,7 +141,7 @@ Weitere Informationen zu den an die **CallFactory.create**-Methode übergebenen 
 
 Wie bereits erwähnt, verwendet dieser Code eine von Twilio bereitgestellte Website für die Rückgabe der TwiML-Antwort. Stattdessen können Sie die TwiML-Antwort auch von Ihrer eigenen Website bereitstellen lassen. Weitere Informationen finden Sie unter [Bereitstellen von TwiML-Anworten in einer Java-Anwendung in Azure](#howto_provide_twiml_responses).
 
-<h2><a id="howto_send_sms"></a>Gewusst wie: Senden einer SMS-Nachricht</h2>
+<h2><a id="howto_send_sms"></a>Vorgehensweise: Senden einer SMS-Nachricht</h2>
 Das folgende Beispiel zeigt, wie Sie eine SMS-Nachricht mit der **SmsFactory**-Klasse senden. Die **From**-Nummer **4155992671** wird von Twilio für Testkonten zum Senden von SMS-Nachrichten bereitgestellt. Die **To**-Nummer muss für Ihr Twilio-Konto überprüft werden, bevor Sie den Code ausführen.
 
     // Use your account SID and authentication token instead
@@ -154,8 +168,8 @@ Das folgende Beispiel zeigt, wie Sie eine SMS-Nachricht mit der **SmsFactory**-K
         
 Weitere Informationen zu den an die **SmsFactory.create**-Methode übergebenen Parametern finden Sie unter [http://www.twilio.com/docs/api/rest/sending-sms][twilio_rest_sending_sms].
 
-<h2><a id="howto_provide_twiml_responses"></a>Gewusst wie: Bereitstellen von TwiML-Antworten von der eigenen Website</h2>
-Wenn Ihre Anwendung einen Anruf an die Twilio-API initiiert - z. B. über die **CallFactory.create**-Methode - sendet Twilio Ihre Anforderung an eine URL, von der die Rückgabe einer TwiML-Antwort erwartet wird. Das obige Beispiel verwendet die von Twilio bereitgestellte URL [http://twimlets.com/message][twimlet_message_url]. (TwiML wurde für die Verwendung durch Webdienste konzipiert, kann jedoch im Browser angezeigt werden. Klicken Sie beispielsweise auf [http://twimlets.com/message][twimlet_message_url], um ein leeres **&lt;Response&gt;**-Element anzuzeigen. Klicken Sie für ein weiteres Beispiel auf [http://twimlets.com/message?Message%5B0%5D=Hello%20World][twimlet_message_url_hello_world], um ein **&lt;Response&gt;**-Element anzuzeigen, das ein **&lt;Say&gt;** Element enthält.)
+<h2><a id="howto_provide_twiml_responses"></a>Vorgehensweise: Bereitstellen von TwiML-Antworten von der eigenen Website</h2>
+Wenn Ihre Anwendung einen Anruf an die Twilio-API initiiert - z. B. über die **CallFactory.create**-Methode - sendet Twilio Ihre Anforderung an eine URL, von der die Rückgabe einer TwiML-Antwort erwartet wird. Das obige Beispiel verwendet die von Twilio bereitgestellte URL [http://twimlets.com/message][twimlet_message_url]. (TwiML wurde für die Verwendung durch Webdienste konzipiert, kann jedoch im Browser angezeigt werden. Klicken Sie z. B. auf [http://twimlets.com/message][twimlet_message_url], um ein leeres **&lt;Response&gt;**-Element anzuzeigen, oder klicken Sie auf [http://twimlets.com/message?Message%5B0%5D=Hello%20World][twimlet_message_url_hello_world], um ein **&lt;Response&gt;**-Element mit einem **&lt;Say&gt;**-Element anzuzeigen.
 
 Anstelle der von Twilio bereitgestellten URL können Sie auch Ihre eigene URL-Website für die Rückgabe von HTTP-Antworten erstellen. Sie können die Website in allen Sprachen erstellen, die HTTP-Antworten zurückgeben. Dieses Beispiel geht davon aus, dass Sie die URL in einer JSP-Seite hosten.
 
@@ -166,7 +180,7 @@ Die folgende JSP-Seite erstellt eine TwiML-Antwort, die beim Anruf **Hello World
         <Say>Hello World</Say>
     </Response>
 
-The following JSP page results in a TwiML response that says some text, has several pauses, and says information about the Twilio API version and the Azure role name.
+Die folgende JSP-Seite erstellt eine TwiML-Antwort, die zunächst etwas Text spricht, mehrere Pausen enthält, und anschließend Informationen über die Version der Twilio-API und den Azure-Rollennamen spricht.
 
 
     <%@ page contentType="text/xml" %>
@@ -179,7 +193,7 @@ The following JSP page results in a TwiML response that says some text, has seve
         <Say>Good bye.</Say>
     </Response>
 
-Der Parameter **ApiVersion** ist nur in Twilio-Sprachanforderungen verfügbar (nicht in SMS-Anforderungen). Eine Liste der verfügbaren Anforderungsparameter für Twilio-Sprach- und SMS-Anforderungen finden Sie unter <https://www.twilio.com/docs/api/twiml/twilio_request> bzw. <https://www.twilio.com/docs/api/twiml/sms/twilio_request>. Die Umgebungsvariable **RoleName** ist als Teil der Azure-Bereitstellung verfügbar. (Informationen zum Hinzufügen benutzerdefinierter Umgebungsvariablen, die mit **System.getenv** abgerufen werden können, finden Sie im Abschnitt zu Umgebungsvariablen unter [Verschiedene Einstellungen für die Rollenkonfiguration][misc_role_config_settings].)
+Der Parameter **ApiVersion** ist nur in Twilio-Sprachanforderungen verfügbar (nicht in SMS-Anforderungen). Eine Liste der verfügbaren Anforderungsparameter für Twilio-Sprach- und SMS-Anforderungen finden Sie unter <https://www.twilio.com/docs/api/twiml/twilio_request> bzw. <https://www.twilio.com/docs/api/twiml/sms/twilio_request>. Die Umgebungsvariable **RoleName** ist als Teil der Azure-Bereitstellung verfügbar. (Informationen zum Hinzufügen benutzerdefinierter Umgebungsvariablen, die mit **System.getenv** abgerufen werden können, finden Sie im Abschnitt zu Umgebungsvariablen unter [Verschiedene Einstellungen für die Rollen][konfigurationmisc_role_config_settings].)
 
 Sobald Sie Ihre JSP-Seite mit den TwiML-Antworten eingerichtet haben, können Sie die URL der JSP-Seite an die **CallFactory.create**-Methode übergeben. Beispiel: Ihre Webanwendung "MyTwiML" wird in einem unter Azure gehosteten Dienst bereitgestellt, und der Name der JSP-Seite lautet "mytwiml.jsp". In diesem Fall kann die URL, wie im folgenden Codebeispiel gezeigt, an **CallFactory.create** übergeben werden:
 
@@ -196,7 +210,7 @@ Eine weitere Option zum Antworten mit TwiML ist die **TwiMLResponse**-Klasse, di
 
 Weitere Informationen zur Verwendung von Twilio in Azure mit Java finden Sie unter [Tätigen eines Telefonanrufs mit Twilio in einer Java-Anwendung in Azure][howto_phonecall_java].
 
-<h2><a id="AdditionalServices"></a>Gewusst wie: Verwenden zusätzlicher Twilio-Dienste</h2>
+<h2><a id="AdditionalServices"></a>Vorgehensweise: Verwenden zusätzlicher Twilio-Dienste</h2>
 Zusätzlich zu den hier gezeigten Beispielen bietet Twilio webbasierte APIs, mit denen Sie zusätzliche Twilio-Funktionen in Ihrer Azure-Anwendung verwenden können. Ausführliche Informationen finden Sie in der [Twilio API-Dokumentation] [twilio_api_documentation].
 
 <h2><a id="NextSteps"></a>Nächste Schritte</h2>
@@ -204,15 +218,15 @@ Nachdem Sie nun mit den Grundlagen des Twilio-Dienstes vertraut sind, finden Sie
 
 * [Twilio-Sicherheitsrichtlinien] [twilio_security_guidelines]
 * [Twilio-Anleitungen und Beispielcode] [twilio_howtos]
-* [Twilio-Schnellstart-Lernprogramme][twilio_quickstarts]
+* [Twilio-Schnellstart-Lernprogramme][twilio_quickstarts] 
 * [Twilio auf GitHub] [twilio_on_github]
-* [Kontakt zum Twilio-Support] [Twilio_support]
+* [Kontakt zum Twilio-Support] [twilio_support]
 
 [twilio_java]: https://github.com/twilio/twilio-java
 [twilio_api_service]: https://api.twilio.com
 [add_ca_cert]: ../java-add-certificate-ca-store
 [howto_phonecall_java]: ../partner-twilio-java-phone-call-example
-[misc_role_config_settings]: http://msdn.microsoft.com/de-de/library/windowsazure/hh690945.aspx
+[konfigurationmisc_role_config_settings]: http://msdn.microsoft.com/library/windowsazure/hh690945.aspx
 [twimlet_message_url]: http://twimlets.com/message
 [twimlet_message_url_hello_world]: http://twimlets.com/message?Message%5B0%5D=Hello%20World
 [twilio_rest_making_calls]: http://www.twilio.com/docs/api/rest/making-calls
@@ -232,4 +246,4 @@ Nachdem Sie nun mit den Grundlagen des Twilio-Dienstes vertraut sind, finden Sie
 [twilio_support]: http://www.twilio.com/help/contact
 [twilio_quickstarts]: http://www.twilio.com/docs/quickstart
 
-<!--HONumber=35.2-->
+<!--HONumber=45-->

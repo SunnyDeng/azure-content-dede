@@ -1,7 +1,20 @@
-﻿
-<properties title="API basics for Azure Batch" pageTitle="API-Grundlagen für Azure Batch" description="Konzepte für die Einführung von Entwicklern in die Azure Batch-APIs und den Batch-Dienst" metaKeywords="" services="batch" solutions="" documentationCenter=".NET" authors="yidingz, karran.batta" videoId="" scriptId="" manager="timlt" />
+﻿<properties 
+	pageTitle="API-Grundlagen für Azure Batch" 
+	description="Konzepte für die Einführung von Entwicklern in die Azure Batch-APIs und den Batch-Dienst" 
+	services="batch" 
+	documentationCenter=".net" 
+	authors="yidingzhou" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="batch" ms.devlang="multiple" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="big-compute" ms.date="10/27/2014" ms.author="yidingz, karran.batta" />
+<tags 
+	ms.service="batch" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="big-compute" 
+	ms.date="02/02/2015" 
+	ms.author="yidingz, kabatta"/>
 
 
 <!--The next line, with one pound sign at the beginning, is the page title--> 
@@ -57,7 +70,7 @@ Ein Batch-Konto ist eine eindeutig identifizierte Entität innerhalb des Batch-D
 
 ### <a name="taskvm"></a>Virtueller Aufgabencomputer
 
-Ein virtueller Aufgabencomputer (Virtual Task Machine, TVM) ist ein virtueller Azure-Computer, der für Ihre Anwendung für eine bestimmte Arbeitsauslastung vorgesehen ist. Die Größe eines virtuellen Aufgabencomputers bestimmt die Anzahl der CPU-Kerne, die Speicherkapazität und die lokale Dateisystemgröße, die dem virtuellen Aufgabencomputer zugeordnet werden. Ein virtueller Aufgabencomputer kann ein kleiner, großer oder sehr großer virtueller Computer sein, wie unter [Größen virtueller Computer und Cloud-Dienste für Azure](http://msdn.microsoft.com/de-de/library/dn197896.aspx) beschrieben.
+Ein virtueller Aufgabencomputer (Virtual Task Machine, TVM) ist ein virtueller Azure-Computer, der für Ihre Anwendung für eine bestimmte Arbeitsauslastung vorgesehen ist. Die Größe eines virtuellen Aufgabencomputers bestimmt die Anzahl der CPU-Kerne, die Speicherkapazität und die lokale Dateisystemgröße, die dem virtuellen Aufgabencomputer zugeordnet werden. Ein virtueller Aufgabencomputer kann ein kleiner, großer oder sehr großer virtueller Computer sein, wie unter [Größen virtueller Computer und Cloud-Dienste für Azure](http://msdn.microsoft.com/library/dn197896.aspx) beschrieben.
 
 Die von einem virtuellen Aufgabencomputer ausführbaren Programme umfassen ausführbare Dateien (EXE), Befehlsdateien (CMD), Batchdateien (BAT) und Skriptdateien. Ein virtueller Aufgabencomputer verfügt außerdem über die folgenden Attribute:
 
@@ -340,3 +353,5 @@ Für jede Aufgabe, die unter einem Auftrag geplant ist, wird vom Batch-Dienst ei
 Diese vom System definierten Variablen können nicht überschrieben werden.
 
 Sie können den Wert von Umgebungseinstellungen mithilfe des Vorgangs "Aufgabe abrufen" abrufen.
+
+<!--HONumber=46--> 

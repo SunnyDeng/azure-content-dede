@@ -208,7 +208,7 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 
 <!--External Link references-->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
-[Azure SDK für .NET]: http://azure.microsoft.com/de-de/downloads/
+[Azure SDK für .NET]: http://azure.microsoft.com/downloads/
 [Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Python Tools 2.1 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Azure SDK Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
@@ -220,7 +220,7 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 [Remotedebugging in Microsoft Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Webprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
-[Azure-Speicher]: http://azure.microsoft.com/de-de/documentation/services/storage/
+[Azure-Speicher]: http://azure.microsoft.com/documentation/services/storage/
 [Azure SDK für Python]: https://github.com/Azure/azure-sdk-for-python
 
 

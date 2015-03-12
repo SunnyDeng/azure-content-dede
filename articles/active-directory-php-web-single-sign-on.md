@@ -1,6 +1,20 @@
-<properties linkid="develop-php-how-to-guides-web-sso" urlDisplayName="Web SSO" pageTitle="Single sign-on with Azure Active Directory (PHP)" metaKeywords="Azure PHP web app, Azure single sign-on, Azure PHP Active Directory" description="Learn how to create a PHP web application that uses single sign-on with Azure Active Directory." metaCanonical="" services="active-directory" documentationCenter="PHP" title="Web Single Sign-On with PHP and Azure Active Directory" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Einmaliges Anmelden mit Azure Active Directory (PHP)" 
+	description="Erfahren Sie, wie Sie eine PHP-Webanwendung erstellen, die einmaliges Anmelden mit Azure Active Directory verwendet." 
+	services="active-directory" 
+	documentationCenter="php" 
+	authors="tfitzmac" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="PHP" ms.topic="article" ms.date="01/01/1900" ms.author="robmcm" />
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="PHP" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="tomfitz"/>
 
 # Einmalige Webanmeldung mit PHP und Azure Active Directory
 
@@ -199,3 +213,5 @@ Ein Beispiel für die Verwendung von Azure Active Directory und der einmaligen A
   [Schritt 2: Bereitstellen der Anwendung in einem Directory-Mandanten eines Unternehmens]: #provisionapp
   [Schritt 3: Schutz der Anwendung mit WS-Federation zur Mitarbeiteranmeldung]: #protectapp
   [Zusammenfassung]: #summary
+
+<!--HONumber=46--> 

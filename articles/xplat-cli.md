@@ -1,10 +1,24 @@
-﻿<properties urlDisplayName="Azure Cross-Platform Command-Line Interface" pageTitle="Die plattformübergreifende Azure-Befehlszeilenschnittstelle" title="Die plattformübergreifende Azure-Befehlszeilenschnittstelle" metaKeywords="plattformübergreifende Azure-Befehlszeilenschnittstelle, Azure-Befehlszeile, azure Befehlszeile, azure cli" description="Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle zur Verwaltung von Azure Services" metaCanonical="http://www.windowsazure.com/en-us/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="need to identify contact" documentationCenter="" solutions="" authors="carolz" services="" />
+﻿<properties 
+	pageTitle="Plattformübergreifende Azure-Befehlszeilenschnittstelle" 
+	description="Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle zur Verwaltung von Azure Services"
+	editor="tysonn" 
+	manager="timlt" 
+	documentationCenter="" 
+	authors="squillace" 
+	services=""/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="carolz" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="command-line-interface" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="1/16/2015" 
+	ms.author="rasquill"/>
 
 #Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/manage/install-and-configure-windows-powershell/" title="PowerShell">PowerShell</a><a href="/en-us/manage/install-and-configure-cli/" title="Cross-Platform CLI" class="current">Plattformübergreifende Befehlszeilenschnittstelle</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/manage/install-and-configure-windows-powershell/" title="PowerShell">PowerShell</a><a href="/de-de/manage/install-and-configure-cli/" title="Cross-Platform CLI" class="current">Plattformübergreifende Befehlszeilenschnittstelle</a></div>
 
 Die plattformübergreifende Azure-Befehlszeilenschnittstelle stellt eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform bereit. Sie bietet ähnliche Funktionen wie das Azure-Verwaltungsportal, z. B. Funktionen zum Verwalten von Websites, virtuellen Computern, mobilen Diensten, SQL-Datenbanken und anderen Diensten, die auf der Azure Platform zur Verfügung stehen.
 
@@ -389,15 +403,17 @@ Wenn Sie ein Skript schreiben, das sich auf den Beendigungsstatus stützt, dann 
 
 [mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
 [windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
-[authandsub]: http://msdn.microsoft.com/en-us/library/windowsazure/hh531793.aspx#BKMK_AccountVCert
+[authandsub]: http://msdn.microsoft.com/library/windowsazure/hh531793.aspx#BKMK_AccountVCert
 
 [Azure-Website]: ../media/freetrial.png
 [Vorschaufunktion auswählen]: ../media/antares-iaas-preview-02.png
 [Abonnement auswählen]: ../media/antares-iaas-preview-03.png
-[free-trial]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A7171371E
+[free-trial]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A7171371E
 [advanced-bash]: http://tldp.org/LDP/abs/html/
 [script]: http://en.wikipedia.org/wiki/Shell_script
-[batch]: http://technet.microsoft.com/en-us/library/bb490890.aspx
-[xplatarm]: /en-us/documentation/articles/xplat-cli-azure-resource-manager/
+[batch]: http://technet.microsoft.com/library/bb490890.aspx
+[xplatarm]: /de-de/documentation/articles/xplat-cli-azure-resource-manager/
 [Portal]: https://manage.windowsazure.com
-[signuporg]: http://www.windowsazure.com/en-us/documentation/articles/sign-up-organization/
+[signuporg]: http://azure.microsoft.com/documentation/articles/sign-up-organization/
+
+<!--HONumber=46--> 

@@ -1,11 +1,11 @@
-﻿<properties 
-	pageTitle="Uso de la extensión de VM Docker para Linux en Azure" 
-	description="Describe Docker y las extensiones de máquinas virtuales de Azure y muestra cómo crear máquinas virtuales en Azure mediante programación que son host de Docker desde la línea de comandos usando la interfaz de comandos azure-cli." 
+<properties 
+	pageTitle="Verwenden der Docker-VM-Erweiterung für Linux auf Azure" 
+	description="Beschreibt die Docker- und Azure Virtual Machines-Erweiterungen und zeigt die programmgesteuerte Erstellung von virtuellen Computern auf Azure, die Docker hostet, über die Befehlszeile mithilfe der "azure-cli"-Befehlsschnittstelle." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="squillace" 
 	manager="timlt" 
-	editor="tysonn"/>
+	editor=""/>
 
 <tags 
 	ms.service="virtual-machines" 
@@ -13,40 +13,40 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="vm-linux" 
 	ms.workload="infrastructure-services" 
-	ms.date="02/11/2015" 
+	ms.date="10/21/2014" 
 	ms.author="rasquill"/>
 <!--The next line, with one pound sign at the beginning, is the page title--> 
-# Uso de la extensión de VM Docker con el portal de Azure
+# Verwenden der Docker-VM-Erweiterung mithilfe des Azure-Portals
 
-[Docker](https://www.docker.com/) es uno de los enfoques de virtualización más populares que utilizan los [contenedores de Linux](http://en.wikipedia.org/wiki/LXC) en lugar de máquinas virtuales como una forma de aislar datos y calcular recursos compartidos. Puede usar la extensión de máquina virtual Docker que administra el [agente de Linux de Azure] para crear una máquina virtual Docker que hospede un número cualquiera de contenedores para sus aplicaciones en Azure. 
+[Docker](https://www.docker.com/) ist einer der beliebtesten Virtualisierungsansätze, der für das Isolieren von Daten und Computing auf gemeinsam genutzten Ressourcen [Linux-Container](http://en.wikipedia.org/wiki/LXC) statt virtueller Computer verwendet. Verwenden Sie die Docker-VM-Erweiterung des [Azure Linux-Agent], um einen virtuellen Docker-Computer zu erstellen, der eine beliebige Anzahl von Containern für Ihre Anwendungen in Azure hostet. 
 
 <!--Table of contents for topic, the words in brackets must match the heading wording exactly-->
-En esta sección
+Inhalt dieses Abschnitts
 
-+ [Creación de una nueva máquina virtual desde la galería de imágenes]
-+ [Creación de certificados de Docker]
-+ [Adición de la extensión de VM Docker]
-+ [Comprobación del cliente Docker y del host Docker de Azure]
-+ [Pasos siguientes]
++ [Erstellen eines neuen virtuellen Computers über den Image-Katalog]
++ [Erstellen von Docker-Zertifikaten]
++ [Hinzufügen der Docker-VM-Erweiterung]
++ [Testen des Docker-Clients und des Azure Docker-Hosts]
++ [Nächste Schritte]
 
-> [AZURE.NOTE] En este tema se describe cómo crear una máquina virtual Docker desde el Portal de Azure. Para ver cómo crear una VM Docker en la línea de comandos, vea [Uso de la extensión de VM Docker desde la interfaz entre plataformas de Azure (xplat-cli)]. Para ver un análisis de alto nivel de contenedores y sus ventajas, consulte [Documento de alto nivel de Docker](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard). 
+> [AZURE.NOTE] Dieses Thema beschreibt das Erstellen eines virtuellen Docker-Computers im Azure-Portal. Informationen zum Erstellen eines virtuellen Docker-Computers an der Befehlszeile finden Sie unter [Gewusst wie: Verwenden der Docker-VM-Erweiterung über die plattformübergreifende Azure-Oberfläche (xplat-cli)]. Eine allgemeine Diskussion über die Container und ihre Vorteile finden Sie unter [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard) (Allgemeines Whiteboard zu Docker, in englischer Sprache). 
 
-## <a id='createvm'>Creación de una nueva máquina virtual desde la galería de imágenes</a>
-El primer paso requiere una máquina virtual de Azure de una imagen de Linux que admita la extensión de VM Docker, usando una imagen Ubuntu 14.04 LTS de la galería de imágenes como imagen de servidor de ejemplo y el escritorio Ubuntu 14.04 como cliente. En el portal, haga clic en **+ Nuevo** en la esquina inferior izquierda para crear una nueva instancia de máquina virtual y seleccione una imagen Ubuntu 14.04 LTS entre las selecciones disponibles o en la galería de imágenes completa, tal y como se muestra a continuación. 
+## <a id='createvm'>Erstellen eines neuen virtuellen Computers über den Image-Katalog</a>
+Für den ersten Schritt ist ein virtueller Azure-Computer von einem Linux-Image erforderlich, das die Docker-VM-Erweiterung unterstützt, mit einem Ubuntu 14.04 LTS-Image aus dem Image-Katalog als einen Beispielserver und Ubuntu 14.04 Desktop als einen Client. Klicken Sie im Portal in der unteren linken Ecke auf **+ Neu** zum Erstellen einer neuen Instanz für einen virtuellen Computer, und wählen Sie ein Ubuntu 14.04 LTS-Abbild aus den verfügbaren Optionen oder analog zur folgenden Darstellung aus dem vollständigen Image-Katalog aus. 
 
-> [AZURE.NOTE] Actualmente, solo las imágenes Ubuntu 14.04 LTS posteriores a julio de 2014 admiten la extensión de VM Docker.
+> [AZURE.NOTE] Zurzeit unterstützen nur Ubuntu 14.04 LTS-Abbilder nach Juli 2014 die Docker-VM-Erweiterung.
 
 ![Create a new Ubuntu Image](./media/virtual-machines-docker-with-portal/ChooseUbuntu.png)
 
-## <a id'dockercerts'>Creación de certificados de Docker</a>
+## <a id'dockercerts'>Erstellen von Docker-Zertifikaten</a>
 
-Una vez creada la máquina virtual, asegúrese de que Docker está instalado en su equipo cliente. (Para obtener detalles, consulte [Instrucciones de instalación de Docker](https://docs.docker.com/installation/#installation).) 
+Stellen Sie nach dem Erstellen des virtuellen Computers sicher, dass Docker auf Ihrem Clientcomputer installiert ist. (Einzelheiten finden Sie in den [Installationsanweisungen für Docker](https://docs.docker.com/installation/#installation).) 
 
-Cree los archivos de certificado y de clave para la comunicación Docker conforme a [Ejecución de Docker con https] y colóquelos en el directorio **`~/.docker`** de su equipo cliente. 
+Erstellen Sie das Zertifikat und Schlüsseldateien für die Docker-Kommunikation gemäß [Running Docker with https] (Ausführen von Docker mit HTTPS, in englischer Sprache), und platzieren Sie sie im **`~/.docker`**-Verzeichnis auf Ihrem Clientcomputer. 
 
-> [AZURE.NOTE] La extensión de VM Docker del portal actualmente requiere credenciales con la codificación base64.
+> [AZURE.NOTE] Für die Docker-VM-Erweiterung im Portal sind zurzeit base64-codierte Anmeldeinformationen erforderlich.
 
-En la línea de comandos, use **`base64`** u otra herramienta de codificación para crear temas con la codificación base64. Hacer esto con un conjunto sencillo de archivos de certificado y clave podría tener un aspecto similar al siguiente:
+Verwenden Sie an der Befehlszeile **`base64`** oder ein anderes bevorzugtes Codierungstool zum Erstellen base64-codierter Themen. Wenn Sie dies mit ein paar einfachen Zertifikaten und Schlüsseldateien vornehmen, sieht das möglicherweise in etwa so aus:
 
 ```
  ~/.docker$ l
@@ -59,43 +59,42 @@ En la línea de comandos, use **`base64`** u otra herramienta de codificación p
  ca-key.pem  cert.pem  server-cert64.pem  server-key64.pem
 ```
 
-## <a id'adddockerextension'>Adición de la extensión de VM Docker</a>
-Para agregar la extensión de VM Docker, busque la instancia de máquina virtual que creó, desplácese hacia abajo hasta **Extensiones** y haga clic en ella para mostrar extensiones de VM, tal y como se muestra a continuación.
-> [AZURE.NOTE] Esta funcionalidad solo se admite en el portal de vista previa: https://portal.azure.com/
+## <a id'adddockerextension'>Hinzufügen der Docker-VM-Erweiterung</a>
+Suchen Sie zum Hinzufügen der Docker-VM-Erweiterung die von Ihnen erstellte VM-Instanz, führen Sie einen Bildlauf zu **Erweiterungen** durch, um VM-Erweiterungen anzuzeigen (siehe Darstellung unten).
 
 ![](./media/virtual-machines-docker-with-portal/ClickExtensions.png)
-### Adición de una extensión
-Haga clic en **+ Agregar** para mostrar las extensiones de VM posibles que puede agregar a esta máquina virtual. 
+### Hinzufügen einer Erweiterung
+Klicken Sie auf **+ Hinzufügen**, um die möglichen VM-Erweiterungen anzuzeigen, die Sie zu diesem virtuellen Computer hinzufügen können. 
 
 ![](./media/virtual-machines-docker-with-portal/ClickAdd.png)
-### Selección de la extensión de VM Docker
-Elija la extensión de VM Docker, que muestra la descripción y vínculos importantes de Docker, y haga clic en **Crear** en la parte inferior para comenzar el procedimiento de instalación.
+### Auswählen der Docker-VM-Erweiterung
+Wählen Sie die Docker-VM-Erweiterung aus, wodurch die Docker-Beschreibung und wichtige Links angezeigt werden, und klicken Sie dann unten auf **Erstellen**, um die Installationsprozedur zu starten.
 
 ![](./media/virtual-machines-docker-with-portal/ChooseDockerExtension.png)
 
 ![](./media/virtual-machines-docker-with-portal/CreateButtonFocus.png)
-### Adición de los archivos de certificado y clave:
+### Fügen Sie Ihr Zertifikat und Schlüsseldateien hinzu:
 
-En los campos del formulario, escriba las versiones con codificación base64 del certificado CA, su certificado de servidor y su clave de servidor, tal y como se muestra en el siguiente gráfico.
+Geben Sie in den Formularfeldern die base64-codierten Versionen Ihres ZS-Zertifikats, Ihr Serverzertifikat und Ihren Serverschlüssel ein, wie dies in der folgenden Grafik gezeigt wird.
 
 ![](./media/virtual-machines-docker-with-portal/AddExtensionFormFilled.png)
 
-> [AZURE.NOTE] Tenga en cuenta que (como en la imagen anterior), se usa 4243 de forma predeterminada. Puede escribir cualquier extremo aquí, pero el paso siguiente será abrir el extremo coincidente. Si cambia el valor predeterminado, asegúrese de abrir el extremo coincidente en el paso siguiente.
+> [AZURE.NOTE] Beachten Sie (analog zur vorherigen Abbildung), dass 4243 standardmäßig aufgefüllt wird. Sie können hier einen beliebigen Endpunkt eingeben. Der nächste Schritt ist jedoch für den übereinstimmenden Endpunkt gedacht. Wenn Sie den Standardwert ändern, müssen Sie die Erschließung des übereinstimmenden Endpunkts im nächsten Schritt sicherstellen.
 
-## Adición del extremo de comunicación de Docker
-Cuando vea su máquina virtual en el grupo de recursos que ha creado, desplácese hacia abajo para hacer clic en **Extremos** para ver los extremos en la máquina virtual tal y como se muestra aquí.
+## Hinzufügen des Docker-Kommunikationsendpunkts
+Führen Sie beim Anzeigen Ihres virtuellen Computers in der von Ihnen erstellten Ressourcengruppe einen Bildlauf durch, um auf **Endpunkte** zu klicken, um die Endpunkte auf dem virtuellen Computer analog zur hier aufgeführten Darstellung anzuzeigen.
 
 ![](./media/virtual-machines-docker-with-portal/AddingEndpoint.png)
 
-Haga clic en **+ Agregar** para agregar otro extremo y, en el caso predeterminado, escriba un nombre para el extremo (en este ejemplo **docker**) y 4243 tanto para puertos privados como para puertos públicos. Deje el valor del protocolo que se muestra en **TCP** y haga clic en **Aceptar** para crear el extremo.
+Klicken Sie zum Hinzufügen eines anderen Endpunkts auf **+ Hinzufügen**. Und geben Sie im standardmäßigen Fall einen Namen für den Endpunkt (in diesem Fall **docker**) und "4243" für die privaten und öffentlichen Ports ein. Belassen Sie den Protokollwert bei **TCP**, und klicken Sie auf **OK**, um den Endpunkt zu erstellen.
 
 ![](./media/virtual-machines-docker-with-portal/AddEndpointFormFilledOut.png)
 
 
-## <a id='testclientandserver'>Comprobación del cliente Docker y del host Docker de Azure</a>
-Busque y copie el nombre de dominio de su máquina virtual y, en la línea de comandos del equipo cliente, escriba `docker --tls -H tcp://`*dockerextension*`.cloudapp.net:4243 info` (donde  *dockerextension* se sustituye por el subdominio de su máquina virtual). 
+## <a id='testclientandserver'>Testen des Docker-Clients und des Azure Docker-Hosts</a>
+Suchen und kopieren Sie den Namen der Domäne Ihres virtuellen Computers. Geben Sie zudem an der Befehlszeile Ihres Clientcomputers "docker --tls -H tcp://`*dockerextension*`.cloudapp.net:4243 info" ein ( *dockerextension* wird hierbei durch die Unterdomäne für Ihren virtuellen Computer ersetzt). 
 
-El resultado debe ser similar a esto:
+Das Ergebnis sollte in etwa so aussehen:
 
 ```
 $ docker --tls -H tcp://dockerextension.cloudapp.net:4243 info
@@ -116,19 +115,17 @@ Kernel Version: 3.13.0-36-generic
 WARNING: No swap limit support
 ```
 
-Cuando haya completado los pasos anteriores, dispondrá de un host Docker totalmente funcional que se ejecuta en una máquina virtual de Azure, configurado para conectarse remotamente desde otros clientes.
-
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## Pasos siguientes
+## Nächste Schritte
 
-Está preparado para ir a la [Guía del usuario de Docker] y usar su VM Docker. Si desea automatizar la creación de hosts Docker en máquinas virtuales de Azure a través de la interfaz de línea de comandos, consulte [Cómo usar la extensión de la máquina virtual Docker desde la interfaz entre plataformas de Azure (xplat-cli)]
+Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-Computer zu verwenden. Wenn Sie mit dem schnellen und wiederholten Erstellen von virtuellen Docker-Computern auf Azure beginnen möchten, finden Sie unter [Gewusst wie: Verwenden der Docker-VM-Erweiterung über die plattformübergreifende Azure-Oberfläche (xplat-cli)] entsprechende Informationen.
 
 <!--Anchors-->
-[Creación de una nueva máquina virtual desde la galería de imágenes]: #createvm
-[Creación de certificados de Docker]: #dockercerts
-[Adición de la extensión de VM Docker]: #adddockerextension
-[Comprobación del cliente Docker y del host Docker de Azure]: #testclientandserver
-[Pasos siguientes]: #next-steps
+[Erstellen eines neuen virtuellen Computers über den Image-Katalog]: #createvm
+[Erstellen von Docker-Zertifikaten]: #dockercerts
+[Hinzufügen der Docker-VM-Erweiterung]: #adddockerextension
+[Testen des Docker-Clients und des Azure Docker-Hosts]: #testclientandserver
+[Nächste Schritte]: #next-steps
 
 <!--Image references-->
 [StartingPoint]: ./media/StartingPoint.png
@@ -144,11 +141,14 @@ Está preparado para ir a la [Guía del usuario de Docker] y usar su VM Docker. 
 
 
 <!--Link references-->
-[Uso de la extensión de VM Docker desde la interfaz entre plataformas de Azure (xplat-cli)]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Agente de Linux de Azure]: ../virtual-machines-linux-agent-user-guide/
-[Vínculo 3 a otro tema de documentación de azure.microsoft.com]: ../storage-whatis-account/
+[Gewusst wie: Verwenden der Docker-VM-Erweiterung über die plattformübergreifende Azure-Oberfläche (xplat-cli)]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-with-xplat-cli/
+[Azure Linux-Agent]: ../virtual-machines-linux-agent-user-guide/
+[Link 3 zu einem anderen Thema der azure.microsoft.com-Dokumentation]: ../storage-whatis-account/
 
-[Docker en ejecución con https]: http://docs.docker.com/articles/https/
-[Guía de usuario de Docker]: https://docs.docker.com/userguide/
+[Ausführen von Docker mit https]: http://docs.docker.com/articles/https/
+[Docker-Benutzerhandbuch]: https://docs.docker.com/userguide/
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

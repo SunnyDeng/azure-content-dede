@@ -408,11 +408,11 @@ Wenn Sie Aufträge mit diesen Klassen ausführen möchten, bauen Sie eine Verbin
 
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
-[aps]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
+[aps]: http://azure.microsoft.com/documentation/articles/install-configure-powershell/
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-get-started/
-[upload]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-upload-data/
+[getstarted]: http://azure.microsoft.com/documentation/articles/hdinsight-get-started/
+[upload]: http://azure.microsoft.com/documentation/articles/hdinsight-upload-data/
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
 [management]: https://manage.windowsazure.com/
@@ -420,5 +420,4 @@ Wenn Sie Aufträge mit diesen Klassen ausführen möchten, bauen Sie eine Verbin
 [connect]: ./media/hdinsight-mahout/connect.png
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
-
 <!--HONumber=42-->

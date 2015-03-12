@@ -19,5 +19,4 @@ Die nachfolgenden Anweisungen und Screenshots gelten für das Testen eines Windo
 
 
 
-
 <!--HONumber=42-->

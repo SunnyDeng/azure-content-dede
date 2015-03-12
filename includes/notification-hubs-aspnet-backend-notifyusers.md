@@ -1,12 +1,12 @@
 ﻿## Erstellen des WebAPI-Projekts
 
-Gehen Sie wie unten beschrieben vor, um ein neues ASP.NET WebAPI-Back-End zu erstellen, Clients zu authentifizierungen und Benachrichtigugnen zu generieren, oder ändern Sie ein aus früheren Projekten oder dem Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](http://azure.microsoft.com/de-de/documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users/) vorhandenes Back-End.
+Gehen Sie wie unten beschrieben vor, um ein neues ASP.NET WebAPI-Back-End zu erstellen, Clients zu authentifizierungen und Benachrichtigugnen zu generieren, oder ändern Sie ein aus früheren Projekten oder dem Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](http://azure.microsoft.com/ documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users/) vorhandenes Back-End.
 
 > [AZURE.NOTE] **Wichtig**: Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie sicherstellen, dass Sie die neueste Version des NuGet-Paket-Manager installiert haben. Um dies zu überprüfen, starten Sie Visual Studio. Klicken Sie im Menü **Extras** auf **Erweiterungen und Updates**. Suchen Sie nach **NuGet-Paket-Manager für Visual Studio 2013**, und vergewissern Sie sich, dass Sie Version 2.8.50313.46 oder höher installiert haben. Falls dies nicht der Fall ist, installieren Sie den NuGet-Paket-Manager neu.
 > 
 > ![][4]
 
-> [AZURE.NOTE] Stellen Sie sicher, dass Sie Visual Studio [Azure SDK](http://azure.microsoft.com/de-de/downloads/) für die Websitebereitstellung installiert haben.
+> [AZURE.NOTE] Stellen Sie sicher, dass Sie Visual Studio [Azure SDK](http://azure.microsoft.com/ downloads/) für die Websitebereitstellung installiert haben.
 
 1. Starten Sie Visual Studio oder Visual Studio Express.
 2. Klicken Sie in Visual Studio auf **Datei**, klicken Sie dann auf **Neu**, dann auf **Projekt**, erweitern Sie **Vorlagen**, **Visual C#**, klicken Sie dann auf **Web** und **ASP.NET-Webanwendung**, geben Sie den Namen **AppBackend** ein, und klicken Sie auf **OK**. 
@@ -299,4 +299,4 @@ Gehen Sie wie unten beschrieben vor, um ein neues ASP.NET WebAPI-Back-End zu ers
 [B16]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users16.PNG
 [B18]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users18.PNG
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

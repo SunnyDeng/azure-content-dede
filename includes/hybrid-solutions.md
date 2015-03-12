@@ -99,5 +99,4 @@ Die Verbindung von Anwendungen war immer ein Teil des Aufbaus kompletter Lösung
 [Warteschlangen]: ./media/hybrid-solutions/SvcBus_02_queues.png
 [topics-subs]: ./media/hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
 [Relais]: ./media/hybrid-solutions/SvcBus_04_relay.png
-
 <!--HONumber=42-->

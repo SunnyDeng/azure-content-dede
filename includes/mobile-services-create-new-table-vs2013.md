@@ -13,8 +13,7 @@ Bevor Sie Daten in Ihrem neuen mobilen Dienst speichern können, müssen Sie im 
 
 	Auf diese Weise wird die TodoItem-Tabelle auf dem Server erstellt, auf dem jeder, der über den Anwendungsschlüssel verfügt, auf Daten in der Tabelle zugreifen und diese ändern kann, ohne sich zuerst authentifizieren zu müssen. 
 
-	>[AZURE.NOTE]Der Anwendungsschlüssel wird mit der Anwendung bereitgestellt. Da dieser Schlüssel nicht sicher bereitgestellt wird, kann er nicht als Sicherheitstoken angesehen werden. Für den sicheren Zugriff auf die Daten in Ihrem mobilen Dienst müssen Sie stattdessen Benutzer vor dem Zugriff authentifizieren. Weitere Informationen finden Sie unter [Berechtigungen](http://msdn.microsoft.com/de-de/library/windowsazure/jj193161.aspx):
-
+	>[AZURE.NOTE]Der Anwendungsschlüssel wird mit der Anwendung bereitgestellt. Da dieser Schlüssel nicht sicher bereitgestellt wird, kann er nicht als Sicherheitstoken angesehen werden. Für den sicheren Zugriff auf die Daten in Ihrem mobilen Dienst müssen Sie stattdessen Benutzer vor dem Zugriff authentifizieren. Weitere Informationen finden Sie unter [Berechtigungen](http://msdn.microsoft.com/library/windowsazure/jj193161.aspx):
 
 
 

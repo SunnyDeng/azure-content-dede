@@ -1,6 +1,21 @@
-﻿<properties pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blob-Speicher (Windows Phone) | Mobile Services" description="Erfahren Sie, wie Sie Mobile Services zum Hochladen von Bildern in den Azure Blob-Speicher verwenden." documentationCenter="windows" authors="wesmc7777" writer="wesmc" services="mobile-services, storage" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blob-Speicher (Windows Phone) | Mobile Services" 
+	description="Erfahren Sie, wie Sie Mobile Services zum Hochladen von Bildern in den Azure Blob-Speicher verwenden." 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
+	writer="wesmc" 
+	services="mobile-services, storage" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="10/06/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-phone" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="10/06/2014" 
+	ms.author="wesmc"/>
 
 # Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage
 

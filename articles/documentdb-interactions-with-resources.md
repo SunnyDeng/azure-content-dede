@@ -1,6 +1,20 @@
-﻿<properties title="Interact with DocumentDB resources" pageTitle="Interagieren mit DocumentDB-Ressourcen | Azure" description="DocumentDB stellt Client-SDKs für .NET, Python, Node.js und JavaScript bereit, die alle einfache Wrapper über den zugrunde liegenden REST APIs darstellen." metaKeywords="" services="documentdb" solutions="data-management"  authors="bradsev" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="RESTful-Interaktionen mit DocumentDB-Ressourcen | Azure" 
+	description="Erfahren Sie, wie Sie RESTful-Interaktionen mit Microsoft Azure DocumentDB-Ressourcen unter Verwendung von HTTP-Verben durchführen." 
+	services="documentdb" 
+	authors="mimig1" 
+	manager="jhubbard" 
+	editor="monicar" 
+	documentationCenter=""/>
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/03/2015" 
+	ms.author="mimig"/>
 
 #Interagieren mit DocumentDB-Ressourcen 
 DocumentDB bietet ein einfaches und offenes RESTful-Programmiermodell über HTTP. In der Vorschauversion stellt DocumentDB Client-SDKs für .NET, Python, Node.js und JavaScript bereit, die alle über die zugrundeliegenden REST APIs einfache Wrapper darstellen. In zukünftigen Versionen werden auch SDKs für C++ und Java bereitgestellt. Schreiben Sie eigene SDKs für Ihre spezifische Programmierumgebung und teilen Sie sie mit der Community, da wir unsere SDKs erweitern. 
@@ -334,3 +348,5 @@ DocumentDB stellt ein logisches Adressierungsmodell zur Verfügung, bei dem jede
 
 [1]: ./media/documentdb-interactions-with-resources/interactions-with-resources1.png
 [2]: ./media/documentdb-interactions-with-resources/interactions-with-resources2.png
+
+<!--HONumber=46--> 

@@ -17,5 +17,4 @@ Ein CNAME-Eintrag weist einen *specific* DNS-Namen, wie zum Beispiel **mail.cont
 Beim Traffic Manager eintreffender Verkehr wird nach der Lastenausgleichsmethode, für die er konfiguriert ist, zu Ihrer Website weitergeleitet. Für die Besucher Ihrer Website ist dies völlig transparent. Sie sehen nur den benutzerdefinierten Domänennamen in ihrem Browser.
 
 > [AZURE.NOTE] Bei einigen Domänenregistrierungen können Sie Unterdomänen nur mit einem CNAME-Datensatz wie **www.contoso.com** zuweisen und nicht mit einem Stammnamen wie **contoso.com**. Weitere Informationen zu CNAME-Datensätzen finden Sie in der Dokumentation Ihrer Registrierungsstelle, <a href="http://en.wikipedia.org/wiki/CNAME_record">im Wikipedia-Eintrag zum CNAME-Datensatz</a> oder im Dokument <a href="http://tools.ietf.org/html/rfc1035">IETF Domain Names - Implementation and Specification</a>.
-
 <!--HONumber=42-->

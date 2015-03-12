@@ -1,6 +1,20 @@
-﻿<properties title="Cluster Model" pageTitle="Cluster-Modell | Azure" description="Cluster-Modell" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="jaymathe" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Cluster-Modell | Azure" 
+	description="Cluster-Modell" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="jaymathe" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/13/2014" ms.author="jaymathe" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/12/2015" 
+	ms.author="jaymathe"/> 
 
 
 #Cluster-Modell    
@@ -58,7 +72,7 @@ Es gibt mehrere Möglichkeiten der Nutzung des Diensts auf automatisierte Weise.
 
 
 #Erstellen des Webdiensts  
->Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
+>Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
 Aus Azure ML wurde ein neues leeres Experiment erstellt, und zwei "R Skript ausführen"-Module wurden auf den Arbeitsbereich gezogen. Das Schema wurde mit einem einfachen "R-Skript ausführen"-Modul erstellt. Anschließend wurde es mit dem Clustermodellbereich verknüpft, der auch mit einem "R-Skript ausführen"-Modul erstellt wurde. Im für das Clustermodell verwendeten "R-Skript ausführen"-Modul nutzt der Webdienst dann die "k-Means"-Funktion, die bereits in das "R-Skript ausführen"-Modul von Azure ML integriert ist.    
    
@@ -102,8 +116,10 @@ Aus Azure ML wurde ein neues leeres Experiment erstellt, und zwei "R Skript ausf
 Dies ist ein sehr einfaches Beispiel eines Webdiensts für Clustering. Wie aus den oben stehenden Beispielcode ersichtlich ist, wird kein Abfangen von Fehlern implementiert und der Dienst geht davon aus, dass alles aus kontinuierlichen Variablen besteht (keine kategorischen Funktionen zulässig), da der Dienst nur Eingaben numerischer Werte zum Zeitpunkt der Erstellung dieses Webdiensts durchführt. Darüber hinaus behandelt der Dienst derzeit einen beschränkten Datenumfang, aufgrund der Antwort-/Anfragebeschaffenheit des Webdienstaufrufs und der Tatsache, dass das Modell jedes Mal angepasst wird, wenn der Webdienst aufgerufen wird. 
 
 ##Häufig gestellte Fragen
-Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-marketplace-faq).
+Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/documentation/articles/machine-learning-marketplace-faq).
 
 [1]: ./media/machine-learning-r-csharp-cluster-model/cluster-img1.png
 [2]: ./media/machine-learning-r-csharp-cluster-model/cluster-img2.png
 [3]: ./media/machine-learning-r-csharp-cluster-model/cluster-img3.png
+
+<!--HONumber=46--> 

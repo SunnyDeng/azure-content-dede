@@ -1,6 +1,20 @@
-﻿<properties title="How to scale a website" pageTitle="Skalieren von Websites" description="Erfahren Sie, wie Sie Ihren Hostingplan in Azure skalieren." authors="stepsic" manager="kamrani" />
+﻿<properties 
+	pageTitle="Skalieren von Websites" 
+	description="Erfahren Sie, wie Sie Ihren Hostingplan in Azure skalieren." 
+	authors="stepsic-microsoft-com" 
+	manager="kamrani" 
+	editor="" 
+	services="application-insights" 
+	documentationCenter=""/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-11-04" ms.author="stepsic" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2014-11-04" 
+	ms.author="stepsic"/>
 
 # Skalieren von Websites
 
@@ -70,3 +84,5 @@ Wenn Sie mehrere Skalierungsregeln definieren, können Sie bei Leistungsschwanku
 2. Um 3 Instanzen hochskalieren, wenn der CPU-Prozentsatz über 85 % liegt.
 
 Mit dieser Regel veranlassen Sie die Bereitstellung von zwei zusätzlichen Instanzen, wenn die Last vor einer Skalierung 85 % überschreitet. 
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-﻿<properties title="Enable your pipelines to work with on-premises data" pageTitle="Aktivieren von Pipelines zum Arbeiten mit lokalen Daten | Azure Data Factory" description="Erfahren Sie, wie Sie eine lokale Datenquelle bei Azure Data Factory registrieren und Daten von/aus der Datenquelle kopieren." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties 
+	pageTitle="Aktivieren von Pipelines zum Arbeiten mit lokalen Daten | Azure Data Factory" 
+	description="Erfahren Sie, wie Sie eine lokale Datenquelle bei Azure Data Factory registrieren und Daten von/aus der Datenquelle kopieren." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
+	editor="monicar"/>
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="spelluru" />
+<tags 
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/10/2015" 
+	ms.author="spelluru"/>
 
 # Aktivieren von Pipelines zum Arbeiten mit lokalen Daten
 
@@ -504,7 +518,7 @@ Artikel | Beschreibung
 
 
 
-[azure-powershell-install]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
+[azure-powershell-install]: http://azure.microsoft.com/documentation/articles/install-configure-powershell/
 
 
 [image-data-factory-onprem-new-everything]: ./media/data-factory-use-onpremises-datasources/OnPremNewEverything.png
@@ -580,3 +594,5 @@ Artikel | Beschreibung
 [image-data-factory-new-datafactory-menu]: ./media/data-factory-use-onpremises-datasources/NewDataFactoryMenu.png
 
 [image-data-factory-preview-portal-storage-key]: ./media/data-factory-get-started/PreviewPortalStorageKey.png
+
+<!--HONumber=46--> 

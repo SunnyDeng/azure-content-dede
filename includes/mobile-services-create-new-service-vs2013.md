@@ -28,5 +28,4 @@ Mit den folgenden Schritten wird ein neuer mobiler Service in Azure erstellt und
 7. Wählen Sie den neu erstellten mobilen Service aus der Liste im Dienst-Manager aus, und klicken Sie auf **OK**.
 
 	Nach Abschluss des Assistenten werden die erforderlichen NuGet-Pakete installiert, und es wird ein Verweis auf die Clientbibliothek für mobile Dienste zum Projekt hinzugefügt. Außerdem wird der Projektquellcode aktualisiert.
-
 <!--HONumber=42-->

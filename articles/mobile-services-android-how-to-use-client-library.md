@@ -1,6 +1,20 @@
-<properties pageTitle="Arbeiten mit der Mobile Services-Android-Clientbibliothek" description="Erfahren Sie mehr über die Verwendung eines Android-Clients für Azure Mobile Services." services="mobile-services" documentationCenter="android" authors="RickSaling" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Arbeiten mit der Mobile Services-Android-Clientbibliothek" 
+	description="Erfahren Sie mehr über die Verwendung eines Android-Clients für Azure Mobile Services." 
+	services="mobile-services" 
+	documentationCenter="android" 
+	authors="RickSaling" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="10/20/2014" ms.author="ricksal"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="Mobile-Android" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="10/20/2014" 
+	ms.author="ricksal"/>
 
 # Verwenden der Android-Clientbibliothek für Mobile Services
 
@@ -882,7 +896,7 @@ Sie finden die Javadocs-Referenz für die Android Client-API hier: [http://dl.wi
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?linkid=280126
 [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-android/
 [ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI zum Verwalten von Mobile Services-Tabellen]: http://www.windowsazure.com/de-de/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+[CLI zum Verwalten von Mobile Services-Tabellen]: http://azure.microsoft.com/manage/linux/other-resources/command-line-tools/#Mobile_Tables
 
 
 <!--HONumber=42-->

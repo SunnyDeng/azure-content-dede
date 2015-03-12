@@ -1,6 +1,20 @@
-﻿<properties title="Manage your Search service on Microsoft Azure" pageTitle="Verwalten Ihres Suchdiensts in Microsoft Azure" description="Verwalten Ihres Suchdiensts in Microsoft Azure" metaKeywords="" services="" solutions="" documentationCenter="" authors="Heidist" manager="mblythe" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Verwalten Ihres Suchdiensts in Microsoft Azure" 
+	description="Verwalten Ihres Suchdiensts in Microsoft Azure"
+	services="search" 
+	documentationCenter="" 
+	authors="HeidiSteen" 
+	manager="mblythe" 
+	editor=""/>
 
-<tags ms.service="azure-search" ms.devlang="" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="" ms.date="09/23/2014" ms.author="heidist" />
+<tags 
+	ms.service="search" 
+	ms.devlang="rest-api" 
+	ms.workload="search" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.date="01/16/2015" 
+	ms.author="heidist"/>
 
 # Verwalten Ihres Suchdiensts in Microsoft Azure
 
@@ -11,7 +25,7 @@ Azure Search ist ein cloudbasierter Dienst und eine HTTP-basierte API, die Sie i
 
 Dieser Artikel beschreibt die Verwaltung eines Suchdienstes im neuen [Azure-Vorschauportal](https://portal.azure.com).
 
-Alternativ können Sie die Management-REST-API verwenden. Detaillierte Informationen finden Sie unter [Erste Schritte mit der Azure Search Management-REST-API](http://azure.microsoft.com/de-de/documentation/articles/search-get-started-management-api/) und [Azure Search Management REST-API](http://msdn.microsoft.com/de-de/library/azure/dn832684.aspx).
+Alternativ können Sie die Management-REST-API verwenden. Detaillierte Informationen finden Sie unter [Erste Schritte mit der Azure Search Management-REST-API](http://azure.microsoft.com/documentation/articles/search-get-started-management-api/) und [Azure Search Management REST-API](http://msdn.microsoft.com/library/azure/dn832684.aspx).
 
 <!--TOC-->
 
@@ -34,7 +48,7 @@ Die Standardsuche ist kostenpflichtig, da Sie sich für fest zugeordnete Ressour
 
 Wir empfehlen die folgenden Links für die Kapazitätsplanung und zum Verständnis der entstehenden Kosten:
 
-[Limits und Einschränkungen](http://msdn.microsoft.com/de-de/library/dn798934.aspx)
+[Limits und Einschränkungen](http://msdn.microsoft.com/library/dn798934.aspx)
 [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkdID=509792)
 
 Wenn Sie sich anmelden möchten, finden Sie Informationen unter [Erste Schritte mit Azure Search](../search-get-started/).
@@ -98,10 +112,10 @@ Die Ressourcenüberwachung in der öffentlichen Vorschau ist beschränkt auf die
 
 Im Bereich Nutzung im Dienst-Dashboard können Sie direkt ablesen, ob die Partitionsressourcen für Ihre Anwendung angemessen sind.
 
-Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf der Preisebene. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](http://msdn.microsoft.com/de-de/library/dn798934.aspx). 
+Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf der Preisebene. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](http://msdn.microsoft.com/library/dn798934.aspx). 
 
-[Abrufen der Index-Statistiken](http://msdn.microsoft.com/de-de/library/dn798942.aspx)
-[Dokumentenanzahl](http://msdn.microsoft.com/de-de/library/dn798924.aspx)
+[Abrufen der Index-Statistiken](http://msdn.microsoft.com/library/dn798942.aspx)
+[Dokumentenanzahl](http://msdn.microsoft.com/library/dn798924.aspx)
 
 > [WACOM.NOTE] Durch Caching-Eigenheiten können die Obergrenzen vorübergehend überschritten werden. Wenn Sie z. B. den gemeinsam genutzten Dienst verwenden, kann es passieren, dass eine Dokumentenanzahl oberhalb der Grenze von 10.000 Dokumenten angezeigt wird. Dies ist vorübergehend und wird bei der nächsten Einhaltungsprüfung für die Obergrenze entdeckt. 
 
@@ -141,7 +155,7 @@ Im Gegensatz zum Entfernen von Replikaten, bei dem Sie keine weiteren Schritte a
 
 Es ist nicht möglich, herauszufinden, welche Index-Shards auf welcher Partition gespeichert sind. Jede Partition bietet ca. 25 GB an Speicherplatz an. Sie müssen Ihren Speicherverbrauch also auf einen Wert senken, der von Ihren konfigurierten Partitionen unterstützt werden kann. Wenn Sie auf eine Partition zurückschalten, müssen alle 12 Shards in diese Partition passen.
 
-Für die zukünftige Planung können Sie den Speicherverbrauch prüfen (siehe [Abrufen der Index-Statistiken](http://msdn.microsoft.com/de-de/library/dn798942.aspx)), um herauszufinden, wie viel Speicher Sie tatsächlich nutzen. 
+Für die zukünftige Planung können Sie den Speicherverbrauch prüfen (siehe [Abrufen der Index-Statistiken](http://msdn.microsoft.com/library/dn798942.aspx)), um herauszufinden, wie viel Speicher Sie tatsächlich nutzen. 
 
 
 <!---->
@@ -157,7 +171,7 @@ Beim Starten oder Anhalten von Diensten wird die Abrechnung nicht deaktiviert. S
 <!---->
 <h2 id="sub-8">Festlegen von Rollen für administrativen Zugriff</h2>
 
-Azure bietet ein globales rollenbasiertes Autorisierungsmodell für alle Dienste, die über das Vorschauportal oder in der Azure Ressource Manager-API verwaltet werden, wenn Sie ein benutzerdefiniertes Verwaltungstool verwenden. Die Rollen Besitzer, Mitwirkender und Leser legen die Ebene der Dienstverwaltung für die Active Directory-Benutzer, Gruppen und Sicherheitsprinzipale fest, die Sie jeder Rolle zuweisen. Weitere Informationen zur Rollenmitgliedschaft finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal](http://azure.microsoft.com/de-de/updates/role-based-access-control-in-azure-preview-portal/).
+Azure bietet ein globales rollenbasiertes Autorisierungsmodell für alle Dienste, die über das Vorschauportal oder in der Azure Ressource Manager-API verwaltet werden, wenn Sie ein benutzerdefiniertes Verwaltungstool verwenden. Die Rollen Besitzer, Mitwirkender und Leser legen die Ebene der Dienstverwaltung für die Active Directory-Benutzer, Gruppen und Sicherheitsprinzipale fest, die Sie jeder Rolle zuweisen. Weitere Informationen zur Rollenmitgliedschaft finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal](http://azure.microsoft.com/updates/role-based-access-control-in-azure-preview-portal/).
 
 Bei Azure Search bestimmt die rollenbasierte Zugriffssteuerung die folgenden Verwaltungsaufgaben:
 
@@ -185,7 +199,7 @@ Abonnement- und Dienstadministratoren haben automatisch die Mitgliedschaft in de
 </tr>
 </table>
 
-Beachten Sie, dass die Rollen keine Zugriffsrechte für den Dienstendpunkt erteilen. Suchdienstoperationen, wie z. B. die Indexverwaltung, Auffüllung des Indexes und Abfragen von Suchdaten werden durch die API-Schlüssel und nicht durch Rollen gesteuert. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal](http://azure.microsoft.com/de-de/updates/role-based-access-control-in-azure-preview-portal/) im Abschnitt "Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge".
+Beachten Sie, dass die Rollen keine Zugriffsrechte für den Dienstendpunkt erteilen. Suchdienstoperationen, wie z. B. die Indexverwaltung, Auffüllung des Indexes und Abfragen von Suchdaten werden durch die API-Schlüssel und nicht durch Rollen gesteuert. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal](http://azure.microsoft.com/updates/role-based-access-control-in-azure-preview-portal/) im Abschnitt "Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge".
 
 Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonnementmanager können einen Suchdienst zu einem Abonnement hinzufügen.
 
@@ -213,3 +227,5 @@ Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonneme
 [Azure Search - Arbeitsablauf für Entwicklung]: ../search-workflow/
 [Erstellen Sie Ihre erste Azure Search-Lösung]: ../search-create-first-solution/
 
+
+<!--HONumber=46--> 

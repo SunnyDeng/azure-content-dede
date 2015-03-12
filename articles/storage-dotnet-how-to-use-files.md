@@ -58,7 +58,7 @@ Der Dateispeicher umfasst die folgenden Komponenten:
 ![files-concepts][files-concepts]
 
 
--   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/de-de/library/dn249410.aspx).
+-   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/library/dn249410.aspx).
 
 -   **Freigabe:** Eine Dateispeicherfreigabe ist eine SMB 2.1-Dateifreigabe in Azure. Alle Verzeichnisse und Dateien müssen in einer übergeordneten Freigabe erstellt werden. Ein Konto kann eine unbegrenzte Zahl von Freigaben enthalten, und eine Freigabe kann eine unbegrenzte Zahl von Dateien speichern, bis zur Kapazitätsgrenze des Speicherkontos.
 
@@ -72,7 +72,7 @@ Mit der folgenden Beispiel-URL kann eine der Dateien im Diagramm oben adressiert
 
 
 
-Ausführliche Informationen zur Benennung von Freigaben, Verzeichnissen und Dateien finden Sie unter [Benennen von Freigaben, Verzeichnissen, Dateien und Metadaten](http://msdn.microsoft.com/de-de/library/azure/dn167011.aspx).
+Ausführliche Informationen zur Benennung von Freigaben, Verzeichnissen und Dateien finden Sie unter [Benennen von Freigaben, Verzeichnissen, Dateien und Metadaten](http://msdn.microsoft.com/library/azure/dn167011.aspx).
 
 ##<a name="create-account"></a>Erstellen eines Azure-Speicherkontos
 
@@ -155,7 +155,7 @@ Nachdem Sie eine Remoteverbindung zum virtuellen Computer hergestellt haben, kö
 	   
 	net use z: \\<storage-account>.file.core.windows.net\<share-name> /u:<storage-account> <account-key>
 
-Sie können nun mit der Dateispeicher-Freigabe vom virtuellen Computer aus arbeiten wie von jedem anderen Laufwerk aus. Sie können die Standarddateibefehle über die Eingabeaufforderung eingeben oder die bereitgestellte Freigabe und deren Inhalt im Datei-Explorer anzeigen. Außerdem können Sie Code auf dem virtuellen Computer ausführen, der über standardmäßige Windows-E/A-APIs auf die Dateifreigabe zugreift, z. B. über die [System.IO namespaces](http://msdn.microsoft.com/de-de/library/gg145019(v=vs.110).aspx) in .NET Framework. 
+Sie können nun mit der Dateispeicher-Freigabe vom virtuellen Computer aus arbeiten wie von jedem anderen Laufwerk aus. Sie können die Standarddateibefehle über die Eingabeaufforderung eingeben oder die bereitgestellte Freigabe und deren Inhalt im Datei-Explorer anzeigen. Außerdem können Sie Code auf dem virtuellen Computer ausführen, der über standardmäßige Windows-E/A-APIs auf die Dateifreigabe zugreift, z. B. über die [System.IO namespaces](http://msdn.microsoft.com/library/gg145019(v=vs.110).aspx) in .NET Framework. 
 
 Sie können die Dateifreigabe auch über eine im Azure-Clouddienst ausgeführte Rolle bereitstellen, indem Sie eine Remoteverbindung zur Rolle herstellen.
 
@@ -248,7 +248,7 @@ ausführlichere Informationen abzurufen.
   <ul>
     <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">Referenz zur Speicherclientbibliothek für .NET</a>
     </li>
-    <li><a href="http://msdn.microsoft.com/de-de/library/azure/dn167006.aspx">REST-API-Referenz des Dateidiensts</a></li>
+    <li><a href="http://msdn.microsoft.com/library/azure/dn167006.aspx">REST-API-Referenz des Dateidiensts</a></li>
   </ul>
 </li>
 <li>Lesen Sie die Blogbeiträge des Azure Storage-Teams zum Thema Dateidienste:
@@ -276,6 +276,5 @@ ausführlichere Informationen abzurufen.
 [Erstellen einer lokalen Anwendung für den Zugriff auf Dateispeicher]: #create-console-app
 
 [files-concepts]: ./media/storage-dotnet-how-to-use-files/files-concepts.png
-
 
 <!--HONumber=42-->

@@ -19,7 +19,7 @@
 
 # Transformieren und Erweitern Ihrer Website
 
-Mithilfe von [XML Document Transformation](http://msdn.microsoft.com/de-de/library/dd465326.aspx)-Deklarationen (XDT) können Sie die Datei [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) in Ihren Azure-Websites transformieren. Sie können XDT-Deklarationen auch dazu verwenden, private Website-Erweiterungen hinzuzufügen, um benutzerdefinierte Websiteverwaltungsaktionen zu ermöglichen. Dieser Artikel umfasst ein Beispiel für eine PHP-Manager-Website-Erweiterung, mit der PHP-Einstellungen über eine Weboberfläche verwaltet werden können.
+Mithilfe von [XML Document Transformation](http://msdn.microsoft.com/library/dd465326.aspx)-Deklarationen (XDT) können Sie die Datei [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) in Ihren Azure-Websites transformieren. Sie können XDT-Deklarationen auch dazu verwenden, private Website-Erweiterungen hinzuzufügen, um benutzerdefinierte Websiteverwaltungsaktionen zu ermöglichen. Dieser Artikel umfasst ein Beispiel für eine PHP-Manager-Website-Erweiterung, mit der PHP-Einstellungen über eine Weboberfläche verwaltet werden können.
 
 
 <!-- MINI TOC -->

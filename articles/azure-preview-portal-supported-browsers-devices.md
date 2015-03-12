@@ -1,6 +1,21 @@
-﻿<properties urlDisplayName="" pageTitle="Unterstützte Browser und Geräte" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Supported browsers and devices" authors="Justin Beckwith"  solutions="" writer="" manager="need to identify contact" editor=""  />
+﻿<properties 
+	pageTitle="Unterstützte Browser und Geräte" 
+	description="" 
+	services="" 
+	documentationCenter="" 
+	authors="JustinBeckwith" 
+	writer="" 
+	manager="carolz" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="11/16/2014" ms.author="Justin Beckwith" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/16/2014" 
+	ms.author="justbe"/>
 
 #Unterstützte Browser und Geräte
 Das Microsoft Azure-Vorschauportal kann auf allen modernen Desktop- und Tablet-PCs und von allen Browsern ausgeführt werden.
@@ -20,3 +35,5 @@ Die neuesten Versionen der folgenden Browser werden unterstützt:
  
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

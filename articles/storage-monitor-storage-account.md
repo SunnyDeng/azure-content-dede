@@ -18,9 +18,9 @@
 
 # <a id="createstorageaccount"></a>Überwachen Ihrer Speicherkonten im Azure-Verwaltungsportal
 
-Sie können Ihr Speicherkonto im Azure-Verwaltungsportal überwachen. Wenn Sie Ihr Speicherkonto für die Überwachung über das Portal konfigurieren, verwendet Azure Storage [Speicheranalyse](http://msdn.microsoft.com/de-de/library/azure/hh343270.aspx) zum Erfassen von Metriken für Ihr Konto und zum Protokollieren von Anforderungsdaten. 
+Sie können Ihr Speicherkonto im Azure-Verwaltungsportal überwachen. Wenn Sie Ihr Speicherkonto für die Überwachung über das Portal konfigurieren, verwendet Azure Storage [Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343270.aspx) zum Erfassen von Metriken für Ihr Konto und zum Protokollieren von Anforderungsdaten. 
 
-> [AZURE.NOTE] Für die Untersuchung von Überwachungsdaten im Verwaltungsportal fallen zusätzliche Kosten an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>. <br />
+> [AZURE.NOTE] Für die Untersuchung von Überwachungsdaten im Verwaltungsportal fallen zusätzliche Kosten an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/windowsazure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>. <br />
 
 > Der Azure-Dateidienst unterstützt derzeit keine Speicheranalyse.
 
@@ -65,7 +65,7 @@ Bis Sie die Überwachung für ein Speicherkonto konfigurieren, werden keine Übe
 
 Nachdem Sie die Überwachungsstufen und Aufbewahrungsrichtlinien festgelegt haben, können Sie wählen, welche der verfügbaren Metriken im Verwaltungsportal überwacht und welche in Metrikendiagrammen gezeichnet werden sollen. Auf jeder Überwachungsstufe wird ein Standardsatz Metriken angezeigt. Mit **Metriken hinzufügen** können Sie Metriken zur Metrikenliste hinzufügen oder daraus entfernen.
 
-Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue und $MetricsCapacityBlob gespeichert. Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](http://msdn.microsoft.com/de-de/library/windowsazure/hh343258.aspx).
+Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue und $MetricsCapacityBlob gespeichert. Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](http://msdn.microsoft.com/library/windowsazure/hh343258.aspx).
 
 
 <h2><a id="customizestoragemonitoring"></a>Vorgehensweise: Anpassen des Dashboards für die Überwachung</h2>
@@ -109,7 +109,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 
 	![Monitoring_VerboseDisplay](./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png)
 
-	> [AZURE.NOTE] Berücksichtigen Sie bei der Auswahl der Metriken die Kosten. Für die Aktualisierung von Überwachungsanzeigen fallen Transaktionsgebühren und Kosten für eingehenden Datenverkehr an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/de-de/library/windowsazure/hh360997.aspx).
+	> [AZURE.NOTE] Berücksichtigen Sie bei der Auswahl der Metriken die Kosten. Für die Aktualisierung von Überwachungsanzeigen fallen Transaktionsgebühren und Kosten für eingehenden Datenverkehr an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/library/windowsazure/hh360997.aspx).
 
 3. Klicken Sie auf **Metriken hinzufügen**. 
 
@@ -164,6 +164,5 @@ Für jeden für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschla
 
 4. Klicken Sie auf **Speichern**.
 
-Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container $logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse](http://msdn.microsoft.com/de-de/library/windowsazure/hh343262.aspx).
-
+Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container $logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse](http://msdn.microsoft.com/library/windowsazure/hh343262.aspx).
 <!--HONumber=42-->

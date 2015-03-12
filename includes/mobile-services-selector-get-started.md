@@ -15,5 +15,4 @@
 - [(PhoneGap | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/)
 - [(Sencha | JavaScript)](/de-de/documentation/articles/partner-sencha-mobile-services-get-started/)
 - [(Appcelerator | JavaScript)](/de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started/)
-
 <!--HONumber=42-->

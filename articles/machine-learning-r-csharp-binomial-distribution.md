@@ -1,6 +1,20 @@
-﻿<properties title="Binomial Distribution Suite" pageTitle="Binomial Distribution Suite | Azure" description="Binomial Distribution Suite" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="jaymathe" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Binomial Distribution Suite | Azure" 
+	description="Binomial Distribution Suite" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="jaymathe" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/08/2014" ms.author="jaymathe" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/11/2015" 
+	ms.author="jaymathe"/> 
 
 
 #Binomial Distribution Suite
@@ -88,7 +102,7 @@ Es gibt mehrere Möglichkeiten der Nutzung des Diensts auf automatisierte Weise.
 
 ##Erstellen des Webdiensts 
 
->Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
+>Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
 ###Binomial Distribution Quantile Calculator
 
@@ -196,7 +210,7 @@ Es gibt mehrere Möglichkeiten der Nutzung des Diensts auf automatisierte Weise.
 Dies sind sehr einfache Beispiele zum Thema Binomialverteilung. Wie aus den oben stehenden Beispielcode ersichtlich ist, wird kaum Abfangen von Fehlern implementiert.
 
 ##Häufig gestellte Fragen
-Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-marketplace-faq).
+Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/documentation/articles/machine-learning-marketplace-faq).
 
 
 [1]: ./media/machine-learning-r-csharp-binomial-distribution/binomial_1.png
@@ -210,3 +224,5 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Ma
 [5]: ./media/machine-learning-r-csharp-binomial-distribution/binomial_5.png
 
 [6]: ./media/machine-learning-r-csharp-binomial-distribution/binomial_6.png
+
+<!--HONumber=46--> 

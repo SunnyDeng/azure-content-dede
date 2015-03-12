@@ -1,6 +1,20 @@
-﻿<properties title="DocumentDB resource model and concepts" pageTitle="Ressourcenmodell und Konzepte von DocumentDB | Azure" description="Die DocumentDB-nosql-Dokumentendatenbank verwaltet Ressourcen, die eindeutig von logischen URIs identifiziert werden und mit denen Entwickler über HTTP-Verben, Anforderungs-/Antwortheader und Statuscodes interagieren können." metaKeywords="" services="documentdb" solutions="data-management" documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Ressourcenmodell und Konzepte von DocumentDB | Azure" 
+	description="Microsoft Azure DocumentDB ist eine vollständig verwaltete NoSQL-Dokumentdatenbank, die ein hierarchisches Modell aus Datenbankkonten, Datenbanken, Sammlungen, gespeicherten Prozeduren, Triggern, benutzerdefinierten Funktionen, Dokumenten, Anlagen, Medien, Benutzern und Berechtigungen zur Ressourcenverwaltung einsetzt."  
+	services="documentdb" 
+	documentationCenter="" 
+	authors="mimig1" 
+	manager="jhubbard" 
+	editor="monicar"/>
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/03/2015" 
+	ms.author="mimig"/>
 
 #Ressourcenmodell und Konzepte von DocumentDB
 
@@ -460,3 +474,5 @@ Wie alle anderen Ressourcen können Berechtigungen in DocumentDB mithilfe der RE
 [2]: ./media/documentdb-resources/resources2.png
 [3]: ./media/documentdb-resources/resources3.png
 [4]: ./media/documentdb-resources/resources4.png
+
+<!--HONumber=46--> 

@@ -26,7 +26,7 @@ Erfahren Sie, wie Sie eine Lösung erstellen können, die ein Storm-Cluster auf 
 
 * Ein Azure-Abonnement
 
-* Visual Studio mit dem [Microsoft Azure SDK für .NET](http://azure.microsoft.com/de-de/downloads/archive-net-downloads/)
+* Visual Studio mit dem [Microsoft Azure SDK für .NET](http://azure.microsoft.com/downloads/archive-net-downloads/)
 
 * [Java und JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
@@ -1347,7 +1347,7 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Ereignis-Hub lesen
 
 * Weitere Informationen zu Apache Storm finden Sie unter [https://storm.incubator.apache.org/](https://storm.incubator.apache.org/).
 
-* Weitere Informationen zu HBase mit HDInsight finden Sie unter [Überblick zu HDInsight HBase](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-hbase-overview/).
+* Weitere Informationen zu HBase mit HDInsight finden Sie unter [Überblick zu HDInsight HBase](http://azure.microsoft.com/documentation/articles/hdinsight-hbase-overview/).
 
 * Weitere Informationen zu SignalR finden Sie unter [ASP.NET SignalR](http://signalr.net/).
 
@@ -1356,5 +1356,4 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Ereignis-Hub lesen
 * Weitere Informationen zur Erstellung von Topologien in .NET finden Sie unter [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](/de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/)
 
 [azure-portal]: https://manage.windowsazure.com/
-
 <!--HONumber=42-->

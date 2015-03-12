@@ -1,6 +1,20 @@
-<properties pageTitle="Verbinden eines mobilen Azure-Diensts mit einem lokalen SQL Server über Hybridverbindungen - Azure Mobile Services" description="Erfahren Sie, wie Sie über Hybridverbindungen eine Verbindung mit einem lokalen SQL-Server von einem mobilen Azure-Dienst herstellen." services="" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor="mollybos"/>
+<properties 
+	pageTitle="Verbinden eines mobilen Azure-Diensts mit einem lokalen SQL Server über Hybridverbindungen - Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie über Hybridverbindungen eine Verbindung mit einem lokalen SQL-Server von einem mobilen Azure-Dienst herstellen." 
+	services="" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor="mollybos"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/22/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/22/2014" 
+	ms.author="glenga"/>
 
   
 # Verbinden eines mobilen Azure-Diensts mit einem lokalen SQL Server über Hybridverbindungen 
@@ -156,9 +170,9 @@ Die Änderungen aus Ihrer App wurden von Ihrem mobilen Dienst in Ihre lokale Dat
 
 ##Weitere Informationen ##
  
-+ [Website zu Hybridverbindungen](http://azure.microsoft.com/de-de/services/biztalk-services/)
++ [Website zu Hybridverbindungen](http://azure.microsoft.com/services/biztalk-services/)
 + [Überblick über Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274)
-+ [BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Konfigurieren" und "Hybridverbindungen"](http://azure.microsoft.com/de-de/documentation/articles/biztalk-dashboard-monitor-scale-tabs/)
++ [BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Konfigurieren" und "Hybridverbindungen"](http://azure.microsoft.com/documentation/articles/biztalk-dashboard-monitor-scale-tabs/)
 
 <!-- IMAGES -->
  

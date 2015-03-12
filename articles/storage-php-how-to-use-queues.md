@@ -126,7 +126,7 @@ Ein **QueueRestProxy**-Objekt ermöglicht Ihnen das Erstellen einer Warteschlang
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
+		// http://msdn.microsoft.com/library/windowsazure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -157,7 +157,7 @@ Um eine Nachricht zu einer Warteschlange hinzuzufügen, verwenden Sie **QueueRes
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
+		// http://msdn.microsoft.com/library/windowsazure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -186,7 +186,7 @@ Sie können einen Blick auf eine Nachricht (oder Nachrichten) am Anfang einer Wa
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
+		// http://msdn.microsoft.com/library/windowsazure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -240,7 +240,7 @@ Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Zun
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
+		// http://msdn.microsoft.com/library/windowsazure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -282,7 +282,7 @@ Sie können den Inhalt einer Nachricht direkt in der Warteschlange ändern, inde
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
+		// http://msdn.microsoft.com/library/windowsazure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -329,7 +329,7 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
+		// http://msdn.microsoft.com/library/windowsazure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -355,7 +355,7 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
+		// http://msdn.microsoft.com/library/windowsazure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -382,7 +382,7 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten, rufen 
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
 		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/de-de/library/windowsazure/dd179446.aspx
+		// http://msdn.microsoft.com/library/windowsazure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
@@ -399,6 +399,5 @@ Da Sie jetzt die Grundlagen des Azure-Warteschlangendiensts erlernt haben, folge
 [Herunterladen]: http://go.microsoft.com/fwlink/?LinkID=252473
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
-[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-
+[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
 <!--HONumber=42-->

@@ -369,7 +369,7 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   [How To: Get the Queue Length]: #get-queue-length
   [How To: Delete a Queue]: #delete-queue
   [How To: Working with Shared Access Signatures]: #sas
-  [using the REST API]: http://msdn.microsoft.com/de-de/library/windowsazure/hh264518.aspx
+  [using the REST API]: http://msdn.microsoft.com/library/windowsazure/hh264518.aspx
   [Azure Management Portal]: http://manage.windowsazure.com
   [Create and deploy a Node.js application to an Azure Web Site]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
   [Node.js Cloud Service with Storage]: /de-de/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
@@ -383,8 +383,7 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   
   
   [Node.js Cloud Service]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
  [Web Site with WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
-
 <!--HONumber=42-->

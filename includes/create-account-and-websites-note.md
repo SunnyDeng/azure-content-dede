@@ -1,5 +1,5 @@
-> [WACOM.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Sie können [Ihre Vorteile für MSDN-Abonnenten aktivieren][Ihre Vorteile für MSDN-Abonnenten aktivieren] oder [sich für eine kostenlose Testversion anmelden][sich für eine kostenlose Testversion anmelden].
+﻿
+> [AZURE.NOTE]
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können <a href="/de-de/pricing/member-offers/msdn-benefits-details/" target="_blank">Ihre MSDN-Abonnementvorteile aktivieren</a> oder <a href="/de-de/pricing/free-trial/" target="_blank">sich für eine kostenlose Testversion anmelden</a>.
 
-  [Ihre Vorteile für MSDN-Abonnenten aktivieren]: /de-de/pricing/member-offers/msdn-benefits-details/
-  [sich für eine kostenlose Testversion anmelden]: /de-de/pricing/free-trial/
+<!--HONumber=45--> 

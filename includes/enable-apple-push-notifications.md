@@ -122,5 +122,4 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei erstellen und zu Mobil
 9. Klicken Sie unter **Targets** auf **Quickstart**, erweitern Sie **Code Signing Identity**, und wählen Sie dann unter **Debug** das neue Profil. Hierdurch wird sichergestellt, dass das Xcode-Projekt das neue Profil für Codesignierung verwendet. Als Nächstes laden Sie das Zertifikat in Azure hoch.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-step17.png)
-
 <!--HONumber=42-->

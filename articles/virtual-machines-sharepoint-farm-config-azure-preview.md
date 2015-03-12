@@ -26,7 +26,7 @@ Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals f�
 
 Die folgenden Abschnitte beinhalten Konfigurationsdetails für jede Farm.
 
-Weitere Informationen finden Sie unter [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
+Zusätzliche Informationen finden Sie im Thema zur [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
 
 ##Grundlegende SharePoint-Farm##
 
@@ -51,7 +51,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 - Domänencontroller
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: "contoso.com" (Standard)
+	-	Domänenname: contoso.com (Standard)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -100,7 +100,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 -	Domänencontroller
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: "contoso.com" (Standard)
+	-	Domänenname: contoso.com (Standard)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -125,4 +125,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 
 [SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

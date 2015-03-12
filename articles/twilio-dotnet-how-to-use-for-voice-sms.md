@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Twilio Voice/SMS Service" pageTitle="Verwenden von Twilio für Telefonie und SMS (.NET) - Azure" metaKeywords="Azure Twilio, Azure-Anrufe, Azure-Telefonanrufe, Azure Twilio, Azure-SMS, Azure SMS, Azure-Telefonate, Azure-Sprachanrufe, Azure-Textnachrichten, Azure Textnachrichten" description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. In .NET geschriebene Codebeispiele." metaCanonical="" services="" documentationCenter=".NET" title="How to use Twilio for voice and SMS capabilities from Azure" authors="MicrosoftHelp@twilio.com" solutions="" manager="twilio" editor="" />
+﻿<properties 
+	pageTitle="Verwenden von Twilio für Telefonie- und SMS-Funktionen (.NET) – Azure" 
+	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. In .NET geschriebene Codebeispiele."
+	services="" 
+	documentationCenter=".net" 
+	authors="devinrader" 
+	manager="twilio" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="01/01/1900" ms.author="MicrosoftHelp@twilio.com" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="11/24/2014" 
+	ms.author="MicrosoftHelp@twilio.com"/>
 
 
 
@@ -304,7 +318,7 @@ Weitere Informationen über die Verwendung von Twilio auf Azure mit ASP.NET find
 
 [twilio_rest_making_calls]: http://www.twilio.com/docs/api/rest/making-calls
 
-[vs_project]:http://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx
+[vs_project]:http://msdn.microsoft.com/library/windowsazure/ee405487.aspx
 [nuget]:http://nuget.org/
 [twilio_github_repo]:https://github.com/twilio/twilio-csharp
 
@@ -316,3 +330,5 @@ Weitere Informationen über die Verwendung von Twilio auf Azure mit ASP.NET find
 [try_twilio]: https://www.twilio.com/try-twilio
 [twilio_account]:  https://www.twilio.com/user/account
 [verify_phone]: https://www.twilio.com/user/account/phone-numbers/verified#
+
+<!--HONumber=46--> 

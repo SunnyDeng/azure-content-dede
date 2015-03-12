@@ -46,7 +46,7 @@ Das Apache Avro-Serialisierungsformat wird verbreitet in Azure HDInsight und and
 Die .NET-Bibliothek für Avro unterstützt zwei Methoden der Objektserialisierung:
 
 - **Reflexion**: Das JSON-Schema für die Typen wird automatisch aus den Datenvertragsattributen der zu serialisierenden .NET-Typen erstellt. 
-- **Generischer Datensatz**: Ein JSON-Schema wird explizit in einem durch die [**AvroRecord**](http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.avrorecord.aspx)-Klasse dargestellten Datensatz angegeben, wenn keine .NET-Typen zum Beschreiben des Schemas für die zu serialisierenden Daten vorhanden sind. 
+- **Generischer Datensatz**: Ein JSON-Schema wird explizit in einem durch die [**AvroRecord**](http://msdn.microsoft.com/library/microsoft.hadoop.avro.avrorecord.aspx)-Klasse dargestellten Datensatz angegeben, wenn keine .NET-Typen zum Beschreiben des Schemas für die zu serialisierenden Daten vorhanden sind. 
 
 Wenn das Datenschema sowohl dem Writer als auch dem Reader des Datenstroms bekannt ist, können die Daten ohne das zugehörige Schema gesendet werden. Wenn eine Avro-Containerdatei verwendet wird, wird das Schema in der Datei gespeichert. Andere Parameter wie z. B. der Codec für die Datenkomprimierung können angegeben werden. Diese Szenarios werden in den nachfolgenden Codebeispielen ausführlicher erläutert und veranschaulicht.
 
@@ -120,7 +120,7 @@ Es folgen Links zu den sechs in diesem Thema behandelten Beispielen:
 
 <h3> <a name="Scenario1"></a>Beispiel 1: Serialisierung mit Reflexion</h3>
  
-Das JSON-Schema für die Typen kann von der Microsoft Avro-Bibliothek automatisch mithilfe von Reflexion aus den Datenvertragsattributen der zu serialisierenden .C#-Objekte erstellt werden. Die Microsoft .NET-Bibliothek für Avro erstellt einen [**IAvroSeralizer<T>**](http://msdn.microsoft.com/de-de/library/dn627341.aspx), um die zu serialisierenden Felder zu identifizieren.
+Das JSON-Schema für die Typen kann von der Microsoft Avro-Bibliothek automatisch mithilfe von Reflexion aus den Datenvertragsattributen der zu serialisierenden .C#-Objekte erstellt werden. Die Microsoft .NET-Bibliothek für Avro erstellt einen [**IAvroSeralizer<T>**](http://msdn.microsoft.com/library/dn627341.aspx), um die zu serialisierenden Felder zu identifizieren.
 
 In diesem Beispiel werden Objekte (eine **SensorData**-Klasse mit einer **Location**-Mitgliedsstruktur) in einen Speicherdatenstrom serialisiert; dieser Datenstrom wird wiederum deserialisiert. Anschließend wird das Ergebnis mit der ursprünglichen Instanz verglichen, um zu bestätigen, dass das wiederhergestellte **SensorData**-Objekt mit dem Original identisch ist.
 
@@ -247,7 +247,7 @@ In diesem Beispiel wird davon ausgegangen, dass das Schema von Readern und Write
 
 Ein JSON-Schema kann explizit in einem generischen Datensatz angegeben werden, wenn die Verwendung von Reflexion nicht möglich ist, weil die Daten nicht mithilfe von .NET-Klassen mit einem Datenvertrag dargestellt werden können. Diese Methode ist im Allgemeinen langsamer als die Verwendung von Reflexion. In diesen Fällen kann das Schema für die Daten auch dynamisch sein, d. h., es muss zum Zeitpunkt der Kompilierung nicht bekannt sein. Ein Beispiel für ein solches dynamisches Szenario sind Daten, die als CSV-Dateien (Comma Separated Values, mit Trennzeichen getrennte Werte) dargestellt werden und deren Schema erst bekannt wird, wenn sie zur Laufzeit in das Avro-Format transformiert werden.
 
-In diesem Beispiel wird gezeigt, wie ein [**AvroRecord**](http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.avrorecord.aspx) erstellt und verwendet wird, um ein JSON-Schema explizit anzugeben, wie dieses mit den Daten gefüllt und anschließend serialisiert und deserialisiert wird. Anschließend wird das Ergebnis mit der ursprünglichen Instanz verglichen, um zu bestätigen, dass der wiederhergestellte Datensatz mit dem Original identisch ist.
+In diesem Beispiel wird gezeigt, wie ein [**AvroRecord**](http://msdn.microsoft.com/library/microsoft.hadoop.avro.avrorecord.aspx) erstellt und verwendet wird, um ein JSON-Schema explizit anzugeben, wie dieses mit den Daten gefüllt und anschließend serialisiert und deserialisiert wird. Anschließend wird das Ergebnis mit der ursprünglichen Instanz verglichen, um zu bestätigen, dass der wiederhergestellte Datensatz mit dem Original identisch ist.
 
 In diesem Beispiel wird davon ausgegangen, dass das Schema von Readern und Writern gemeinsam verwendet wird, sodass das Avro-Objektcontainerformat nicht erforderlich ist. Ein Beispiel für das Serialisieren und Deserialisieren von Daten in Speicherpuffer mithilfe eines generischen Datensatzes unter Verwendung des Objektcontainerformats, wenn das Schema in die serialisierten Daten eingeschlossen werden muss, finden Sie unter dem Beispiel <a href="#Scenario4">Serialisierung unter Verwendung von Objektcontainerdateien mit generischem Datensatz</a> .
 
@@ -369,9 +369,9 @@ In diesem Beispiel wird davon ausgegangen, dass das Schema von Readern und Write
 
 <h3> <a name="Scenario3"></a>Beispiel 3: Serialisierung unter Verwendung von Objektcontainerdateien und Serialisierung mit Reflexion</h3>
 
-Dieses Beispiel ähnelt dem Szenario im <a href="#Scenario1"> ersten Beispiel,</a> in dem das Schema implizit mit Reflexion angegeben wird. Der Unterschied besteht darin, dass bei diesem Beispiel nicht davon ausgegangen wird, dass das Schema dem Reader bekannt ist, der die Deserialisierung durchführt. Die zu serialisierenden **SensorData**-Objekte und das zugehörige implizit angegebene Schema werden in einer Objektcontainerdatei gespeichert, die durch die [**AvroContainer**](http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.container.avrocontainer.aspx)-Klasse dargestellt wird. 
+Dieses Beispiel ähnelt dem Szenario im <a href="#Scenario1"> ersten Beispiel,</a> in dem das Schema implizit mit Reflexion angegeben wird. Der Unterschied besteht darin, dass bei diesem Beispiel nicht davon ausgegangen wird, dass das Schema dem Reader bekannt ist, der die Deserialisierung durchführt. Die zu serialisierenden **SensorData**-Objekte und das zugehörige implizit angegebene Schema werden in einer Objektcontainerdatei gespeichert, die durch die [**AvroContainer**](http://msdn.microsoft.com/library/microsoft.hadoop.avro.container.avrocontainer.aspx)-Klasse dargestellt wird. 
 
-Die Daten werden in diesem Beispiel mit [**SequentialWriter<Sensordaten>**](http://msdn.microsoft.com/de-de/library/dn627340.aspx) serialisiert und mit [**SequentialReader<Sensordaten>**](http://msdn.microsoft.com/de-de/library/dn627340.aspx)deserialisiert. Anschließend wird das Ergebnis mit den ursprünglichen Instanzen verglichen, um die Identität sicherzustellen.
+Die Daten werden in diesem Beispiel mit [**SequentialWriter<Sensordaten>**](http://msdn.microsoft.com/library/dn627340.aspx) serialisiert und mit [**SequentialReader<Sensordaten>**](http://msdn.microsoft.com/library/dn627340.aspx)deserialisiert. Anschließend wird das Ergebnis mit den ursprünglichen Instanzen verglichen, um die Identität sicherzustellen.
 
 Die Daten in der Objektcontainerdatei werden mit dem [**Deflate**][deflate-100]-Standardkomprimierungscodec von .NET Framework 4.0 komprimiert. Siehe das <a href="#Scenario5"> fünfte Beispiel</a> in diesem Thema, um zu erfahren, wie Sie eine neuere und erweiterte Version des in .NET Framework 4.5 verfügbaren [**Deflate**][deflate-110]-Komprimierungscodecs verwenden.
 
@@ -611,7 +611,7 @@ Die Daten in der Objektcontainerdatei werden mit dem [**Deflate**][deflate-100]-
 
 Dieses Beispiel hat Ähnlichkeit mit dem <a href="#Scenario2"> zweiten Beispiel,</a> in dem das Schema explizit mit JSON angegeben wird. Der Unterschied besteht darin, dass bei diesem Beispiel nicht davon ausgegangen wird, dass das Schema dem Reader bekannt ist, der die Deserialisierung durchführt. 
 
-Der Testdatensatz wird unter Verwendung eines explizit definierten JSON-Schemas in einer Liste von [**AvroRecord**](http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.avrorecord.aspx)-Objekten gesammelt und anschließend in einer Objektcontainerdatei gespeichert, die durch die [**AvroContainer**](http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.container.avrocontainer.aspx)-Klasse dargestellt wird. Diese Containerdatei erstellt einen Writer, mit dem die Daten in unkomprimierter Form in einen Speicherdatenstrom serialisiert werden, der anschließend in einer Datei gespeichert wird. Beim Erstellen des Readers wird mit dem [**Codex.Null**](http://msdn.microsoft.com/de-de/library/microsoft.hadoop.avro.container.codec.null.aspx)-Parameter angegeben, dass diese Daten nicht komprimiert werden. 
+Der Testdatensatz wird unter Verwendung eines explizit definierten JSON-Schemas in einer Liste von [**AvroRecord**](http://msdn.microsoft.com/library/microsoft.hadoop.avro.avrorecord.aspx)-Objekten gesammelt und anschließend in einer Objektcontainerdatei gespeichert, die durch die [**AvroContainer**](http://msdn.microsoft.com/library/microsoft.hadoop.avro.container.avrocontainer.aspx)-Klasse dargestellt wird. Diese Containerdatei erstellt einen Writer, mit dem die Daten in unkomprimierter Form in einen Speicherdatenstrom serialisiert werden, der anschließend in einer Datei gespeichert wird. Beim Erstellen des Readers wird mit dem [**Codex.Null**](http://msdn.microsoft.com/library/microsoft.hadoop.avro.container.codec.null.aspx)-Parameter angegeben, dass diese Daten nicht komprimiert werden. 
 
 Anschließend werden die Daten aus der Datei gelesen und in eine Objektsammlung deserialisiert. Diese Sammlung wird mit der ursprünglichen Liste von Avro-Datensätzen verglichen, um zu bestätigen, dass sie identisch sind.
 
@@ -1404,9 +1404,8 @@ Führen Sie zum Aufräumen des Clusters den folgenden Befehl aus:
 
 
 
-[deflate-100]: http://msdn.microsoft.com/de-de/library/system.io.compression.deflatestream(v=vs.100).aspx
-[deflate-110]: http://msdn.microsoft.com/de-de/library/system.io.compression.deflatestream(v=vs.110).aspx
-
+[deflate-100]: http://msdn.microsoft.com/library/system.io.compression.deflatestream(v=vs.100).aspx
+[deflate-110]: http://msdn.microsoft.com/library/system.io.compression.deflatestream(v=vs.110).aspx
 
 
 <!--HONumber=42-->

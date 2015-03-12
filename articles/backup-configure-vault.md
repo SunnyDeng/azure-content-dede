@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Configure a Backup Vault" pageTitle="Konfigurieren der Azure Recovery Services für schnelle und einfache Sicherung von Windows Server" metaKeywords="Notfallwiederherstellung" description="Mithilfe dieses Lernprogramms erfahren Sie, wie der Sicherungsdienst in der Microsoft Azure Cloud verwendet wird, um den Windows Server in der Cloud zu sichern." metaCanonical="" services="recovery-services" documentationCenter="" title="Configure Azure Backup to quickly and easily back-up Windows Server" authors="markgal" solutions="" manager="johndaw" editor="tysonn" />
+﻿<properties 
+	pageTitle="Konfigurieren der Azure Recovery Services für schnelle und einfache Sicherung von Windows Server" 
+	description="Mithilfe dieses Lernprogramms erfahren Sie, wie der Sicherungsdienst in der Microsoft Azure Cloud verwendet wird, um den Windows Server in der Cloud zu sichern." 
+	services="site-recovery" 
+	documentationCenter="" 
+	authors="markgalioto" 
+	manager="jwhit" 
+	editor="tysonn"/>
 
-<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/21/2014" ms.author="markgal" />
+<tags 
+	ms.service="site-recovery" 
+	ms.workload="backup-recovery" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="markgal"/>
 
 
 
@@ -61,8 +75,8 @@ Tresoranmeldeinformationen werden nun anstelle von Zertifikaten verwendet, um ei
 
 3. Wählen Sie auf der Seite "Schnellstart" den Agent aus, den Sie herunterladen möchten. Sie können **Azure-Sicherungs-Agent herunterladen**, **Windows Server und System Center Data Protection Manager** oder **Windows Server Essentials** auswählen.  Weitere Informationen finden Sie unter:
 
-	* [Installieren des Azure-Sicherungs-Agents für Windows Server 2012 und System Center 2012 SP1 - Data Protection Manager](http://technet.microsoft.com/de-de/library/hh831761.aspx#BKMK_installagent)
-	* [Installieren des Sicherungs-Agents für Windows Server 2012 Essentials](http://technet.microsoft.com/de-de/library/jj884318.aspx)
+	* [Installieren des Azure-Sicherungs-Agents für Windows Server 2012 und System Center 2012 SP1 - Data Protection Manager](http://technet.microsoft.com/library/hh831761.aspx#BKMK_installagent)
+	* [Installieren des Sicherungs-Agents für Windows Server 2012 Essentials](http://technet.microsoft.com/library/jj884318.aspx)
 
 Wenn Sie den Agent installiert haben, können Sie die passende lokale Verwaltungsschnittstelle verwenden (wie das Microsoft Management Console-Snap-In, die Data Protection Manager-Konsole in Systemcenter oder das Windows Server Essentials-Dashboard), um die Sicherungsrichtlinie für den Server festzulegen.
 	
@@ -101,3 +115,5 @@ Wenn Sie den Agent installiert haben, können Sie die passende lokale Verwaltung
 [protected-itmes]: ./media/backup-configure-vault/RS_protecteditems.png
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erstellen von Echtzeit-Apps mit Pusher (iOS) - Mobile Services" description="Erfahren Sie, wie Sie mithilfe von Pusher Benachrichtigungen an Ihre Azure Media Services-App für iOS senden." services="" documentationCenter="ios" authors="lindydonna" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erstellen von Echtzeit-Apps mit Pusher (iOS) - Mobile Services" 
+	description="Erfahren Sie, wie Sie mithilfe von Pusher Benachrichtigungen an Ihre Azure Media Services-App für iOS senden." 
+	services="" 
+	documentationCenter="ios" 
+	authors="lindydonna" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="donnam"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-ios" 
+	ms.devlang="objective-c" 
+	ms.topic="article" 
+	ms.date="10/10/2014" 
+	ms.author="donnam"/>
 
 
 # Erstellen von Echtzeit-Apps mit Mobile Services und Pusher

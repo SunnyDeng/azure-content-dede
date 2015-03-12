@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit Echtzeit-Pushbenachrichtigungen über SignalR und Mobile Services | Mobile Dev Center" description="Erfahren Sie mehr über die ersten Schritte mit Echtzeitpushbenachrichtigungen über SignalR und Mobile Services." documentationCenter="windows" authors="mattchenderson" manager="dwrede" editor="" services=""/>
+<properties 
+	pageTitle="Erste Schritte mit Echtzeit-Pushbenachrichtigungen über SignalR und Mobile Services | Mobile Dev Center" 
+	description="Erfahren Sie mehr über die ersten Schritte mit Echtzeitpushbenachrichtigungen über SignalR und Mobile Services." 
+	documentationCenter="windows" 
+	authors="mattchenderson" 
+	manager="dwrede" 
+	editor="" 
+	services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="08/19/2014" ms.author="mahender"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="08/19/2014" 
+	ms.author="mahender"/>
 
 # Erste Schritte mit Echtzeit-Pushbenachrichtigungen über SignalR und Mobile Services
 

@@ -89,7 +89,7 @@ Siehe auch die folgenden Abschnitten zum [Bereitstellen von Webaufträgen](#depl
 * [Aufbewahrungsrichtlinie für einfache Websitesicherung mit Webaufträgen](http://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
 * [Microsoft Azure-Websites und Cloud-Dienste langsam bei erster Anforderung](http://wp.sjkp.dk/windows-azure-websites-and-cloud-services-slow-on-first-request/). Zeigt, wie Webaufträge zur Simulation der Funktion "AlwaysOn" verwendet wird, die nur für Websites der Ebene "Standard" verfügbar ist.
 * [Ordnungsgemäßes Herunterfahren von Webaufträgen](http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/#.U72Il_5OWUl). Informationen zum ordnungsgemäßen Herunterfahren finden Sie unter [Ordnungsgemäßes Herunterfahren](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#graceful).)
-* [Skalieren Ihrer Webanwendung mit Azure-Websites](http://msdn.microsoft.com/de-de/magazine/dn786914.aspx)
+* [Skalieren Ihrer Webanwendung mit Azure-Websites](http://msdn.microsoft.com/magazine/dn786914.aspx)
 * Videos
 	* [Horizontales Skalieren von Webaufträgen](http://channel9.msdn.com/Shows/Azure-Friday/Azure-WebJobs-105-Scaling-out-Web-Jobs)
 	* [Video zu Azure-Webaufträgen von Magnus Mårtensson](https://www.youtube.com/playlist?list=PLqp1ZOYYUSd81yEzMYLTw8cz91wx_LU9r)

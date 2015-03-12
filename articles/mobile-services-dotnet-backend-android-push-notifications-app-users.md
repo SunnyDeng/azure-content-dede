@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte" services="mobile-services, notification-hubs" documentationCenter="android" authors="wesmc7777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" 
+	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte" 
+	services="mobile-services, notification-hubs" 
+	documentationCenter="android" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="09/29/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-android" 
+	ms.devlang="java" 
+	ms.topic="article" 
+	ms.date="09/29/2014" 
+	ms.author="wesmc"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
 

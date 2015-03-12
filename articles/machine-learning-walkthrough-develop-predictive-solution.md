@@ -1,6 +1,20 @@
-<properties title="Entwickeln einer Vorhersagel&ouml;sung mit Azure Machine Learning" pageTitle="Entwickeln einer Vorhersagel&ouml;sung mit Azure Machine Learning | Azure" description="Exemplarische Vorgehensweise zur Erstellung eines Vorhersageanalytik-Experiments in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Entwickeln einer Vorhersagelösung mit Azure Machine Learning | Azure" 
+	description="Exemplarische Vorgehensweise zur Erstellung eines Vorhersageanalytik-Experiments in Azure Machine Learning Studio" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/06/2014" 
+	ms.author="garye"/>
 
 # Entwickeln einer Vorhersagelösung mit Azure Machine Learning
 
@@ -29,3 +43,5 @@ Diese Anleitung basiert auf einer vereinfachten Version des in ML Studio enthalt
   [Veröffentlichen des Webdiensts]: ../machine-learning-walkthrough-5-publish-web-service/
   [Zugreifen auf den Webdienst]: ../machine-learning-walkthrough-6-access-web-service/
   [Experiment zur Kreditrisiko-Vorhersage]: ../machine-learning-sample-credit-risk-prediction/
+
+<!--HONumber=46--> 

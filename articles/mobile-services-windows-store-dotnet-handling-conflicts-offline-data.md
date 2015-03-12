@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Behandeln von Konflikten mit Offlinedaten in Mobile Services (Windows Store) | Mobile Dev Center" description="Erfahren Sie, wie Sie mithilfe von Azure Mobile Services Konflikte beim Synchronisieren von Offlinedaten in Ihrer Windows Store-Anwendung behandeln." documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor="" services=""/>
+<properties 
+	pageTitle="Behandeln von Konflikten mit Offlinedaten in Mobile Services (Windows Store) | Mobile Dev Center" 
+	description="Erfahren Sie, wie Sie mithilfe von Azure Mobile Services Konflikte beim Synchronisieren von Offlinedaten in Ihrer Windows Store-Anwendung behandeln." 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor="" 
+	services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/26/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/26/2014" 
+	ms.author="wesmc"/>
 
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services

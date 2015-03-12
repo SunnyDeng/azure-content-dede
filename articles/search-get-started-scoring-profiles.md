@@ -1,6 +1,20 @@
-﻿<properties title="Get started with scoring profiles in Azure Search" pageTitle="Erste Schritte mit Wertungsprofilen in Azure Search" description="Erste Schritte mit Wertungsprofilen in Azure Search" metaKeywords="" services="" solutions="" documentationCenter="" authors="Heidist" manager="mblythe" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Verwenden von Bewertungsprofilen in Azure Search" 
+	description="Erste Schritte mit Wertungsprofilen in Azure Search" 
+	services="search" 
+	documentationCenter="" 
+	authors="HeidiSteen" 
+	manager="mblythe" 
+	editor=""/>
 
-<tags ms.service="azure-search" ms.devlang="" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="" ms.date="10/16/2014" ms.author="heidist" />
+<tags 
+	ms.service="search" 
+	ms.devlang="rest-api" 
+	ms.workload="search" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.date="02/10/2015" 
+	ms.author="heidist"/>
 
 # Erste Schritte mit Wertungsprofilen in Azure Search
 
@@ -43,7 +57,7 @@ Wenn Sie die URL und den API-Schlüssel zu "app.config" hinzugefügt haben, soll
 
 Sie sind beinahe bereit, die Anwendung zu erstellen und auszuführen, aber bevor Sie dies tun, sehen Sie sich die JSON-Dateien an, die zum Erstellen und Auffüllen des Indexes verwendet werden.
 
-**Schema.json** definiert den Index, einschließlich Wertungsprofile, die in dieser Demo hervorgehoben werden. Beachten Sie, dass das Schema alle Felder im Index definiert, einschließlich nicht durchsuchbarer Felder, wie z. B. "margin", die Sie in einem Wertungsprofil verwenden können. Die Wertungsprofilsyntax ist in [Hinzufügen eines Wertungsprofils zu einem Azure Search-Index](http://msdn.microsoft.com/de-de/library/azure/dn798928.aspx) dokumentiert.
+**Schema.json** definiert den Index, einschließlich Wertungsprofile, die in dieser Demo hervorgehoben werden. Beachten Sie, dass das Schema alle Felder im Index definiert, einschließlich nicht durchsuchbarer Felder, wie z. B. "margin", die Sie in einem Wertungsprofil verwenden können. Die Wertungsprofilsyntax ist in [Hinzufügen eines Wertungsprofils zu einem Azure Search-Index](http://msdn.microsoft.com/library/azure/dn798928.aspx) dokumentiert.
 
 **Data1-3.json** enthält die Daten: 246 Alben aus einigen Genres. Die Daten sind eine Kombination aus tatsächliche Alben und Interpreteninformationen mit fiktiven Feldern wie "price" und "margin", die verwendet werden, um Suchvorgänge zu veranschaulichen. Die Datendateien entsprechen dem Index und werden in Ihren Azure Search-Dienst hochgeladen. Nachdem die Daten hochgeladen und indiziert sind, können Sie Abfragen für diese ausgeben.
 
@@ -85,9 +99,9 @@ Nun, da Sie sich mit den Wertungsprofilen vertraut gemacht haben, ändern Sie da
 
 <h2 id="next-steps">Nächste Schritte</h2>
 
-Erhalten Sie weitere Informationen zu Wertungsprofilen. Details finden Sie unter [Hinzufügen eines Wertungsprofils zu einem Azure Search-Index](http://msdn.microsoft.com/de-de/library/azure/dn798928.aspx).
+Erhalten Sie weitere Informationen zu Wertungsprofilen. Details finden Sie unter [Hinzufügen eines Wertungsprofils zu einem Azure Search-Index](http://msdn.microsoft.com/library/azure/dn798928.aspx).
 
-Erhalten Sie weitere Informationen zu Syntax und Abfrageparametern. Details finden Sie unter [Suchen von Dokumenten (Azure Search-REST-API)](http://msdn.microsoft.com/de-de/library/azure/dn798927.aspx).
+Erhalten Sie weitere Informationen zu Syntax und Abfrageparametern. Details finden Sie unter [Suchen von Dokumenten (Azure Search-REST-API)](http://msdn.microsoft.com/library/azure/dn798927.aspx).
 
  Sie möchten einen Schritt zurückgehen und mehr über die Erstellung eines Indexes erfahren? [Sehen Sie sich dieses Video an](http://channel9.msdn.com/Shows/Cloud+Cover/Cloud-Cover-152-Azure-Search-with-Liam-Cavanagh), um die Grundlagen zu erlernen.
 
@@ -104,3 +118,5 @@ Erhalten Sie weitere Informationen zu Syntax und Abfrageparametern. Details find
 [11]: ./media/search-get-started-scoring-profiles/AzureSearch_Scoring_AppConfig.PNG
 [10]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX1.PNG
 [9]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX2.PNG
+
+<!--HONumber=46--> 

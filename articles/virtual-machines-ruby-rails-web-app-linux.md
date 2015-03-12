@@ -58,25 +58,25 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 1. Installieren Sie Ruby in Ihrer Entwicklungsumgebung. Je nach Betriebssystem können die Schritte unterschiedlich sein.
 
-	* **Apple OS X** - es gibt verschiedene Ruby-Distributionen für OS X. In diesem Lernprogramm wurde auf OS X mit überprüft [Homebrew](http://brew.sh/) installieren **Rbenv** und **Ruby-Build**. Informationen zur Installation finden Sie unter [https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv/).
+	* **Apple OS X** - Es gibt verschiedene Ruby-Verteilungen für OS X. Dieses Lernprogramm wurde auf OS X unter Verwendung von [Homebrew](http://brew.sh/) getestet, um **rbenv** und **ruby-build** zu installieren. Installationsinformationen finden Sie unter [https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv/).
 
-	* **Linux** - Verwenden Sie Ihr Distributions-Paketverwaltungssystem. Dieses Lernprogramm wurde auf Ubuntu 12.10 mit den Paketen ruby1.9.1 und ruby1.9.1-dev getestet.
+	* **Linux** - Verwenden Sie Ihr Verwaltungssystem für Verteilungspakete. Dieses Lernprogramm wurde auf Ubuntu 12.10 mit den Paketen ruby1.9.1 und ruby1.9.1-dev getestet.
 
-	* **Windows** - es gibt verschiedene Ruby-Distributionen für Windows. Dieses Lernprogramm wurde mit [RailsInstaller](http://railsinstaller.org/) 1.9.3-p392 getestet.
+	* **Windows** - Es gibt verschiedene Ruby-Distributionen für Windows. Dieses Lernprogramm wurde mit [RailsInstaller](http://railsinstaller.org/) 1.9.3-p392 getestet.
 
 2. Öffnen Sie eine neue Befehlszeile oder Terminalsitzung, und geben Sie folgenden Befehl ein, um Ruby on Rails zu installieren:
 
 		gem install rails --no-rdoc --no-ri
 
-	> [AZURE.NOTE] Dieser Befehl erfordert möglicherweise Administrator- oder Root-Berechtigungen auf einigen Betriebssystemen. Falls beim Ausführen dieses Befehls ein Fehler auftritt, verwenden Sie 'sudo' wie folgt:
+	> [AZURE.NOTE] Dieser Befehl erfordert möglicherweise Administrator- oder Root-Berechtigungen auf einigen Betriebssystemen. Falls beim Ausführen dieses Befehls ein Fehler auftritt, verwenden Sie  'sudo' wie folgt.
 	>
 	>````` 
 	sudo gem install rails
 	`````
 
-	> [AZURE.NOTE] Für dieses Lernprogramm wurde Version 3.2.12 der Rails-Gem verwendet.
+	> [AZURE.NOTE] Für dieses Lernprogramm wurde Version 3.2.12 des Rails-Gem verwendet.
 
-3. Sie müssen außerdem einen JavaScript-Übersetzer installieren, der von Rails zum Kompilieren der CoffeeScript-Assets für die Rails-Anwendung verwendet wird. Eine Liste der unterstützten finden Sie unter [https://github.com/sstephenson/execjs#readme](https://github.com/sstephenson/execjs#readme).
+3. Sie müssen außerdem einen JavaScript-Übersetzer installieren, der von Rails zum Kompilieren der CoffeeScript-Assets für die Rails-Anwendung verwendet wird. Eine Liste der unterstützten Übersetzer finden Sie unter [https://github.com/sstephenson/execjs#readme](https://github.com/sstephenson/execjs#readme).
 	
 	Für dieses Lernprogramm wurde [Node.js](http://nodejs.org/) verwendet, da es für die Betriebssysteme OS X, Linux und Windows verfügbar ist.
 
@@ -130,13 +130,13 @@ Führen Sie die folgenden Schritte aus, um den Rails-Server in Ihrer Entwicklung
 
 	Um den Serverprozess zu stoppen, geben Sie STRG+C an der Befehlszeile ein.
 
-##<a id="createvm"></a>Erstellen des virtuellen Computers in Azure
+##<a id="createvm"></a>Erstellen eines virtuellen Azure-Computers
 
 Folgen Sie den [hier][vm-instructions] angegebenen Anweisungen zum Erstellen eines virtuellen Azure-Computers, der Linux hostet.
 
 > [AZURE.NOTE] Die Schritte dieses Lernprogramms wurden auf einem virtuellen Azure-Computer mit Ubuntu 12.10 ausgeführt. Falls Sie eine andere Linux-Distribution verwenden, können für diese Aufgaben andere Schritte erforderlich sein.
 
-> [AZURE.WICHTIGE] Sie **nur** müssen die virtuelle Maschine zu erstellen. Stoppen Sie, nachdem Sie gelernt haben, wie den virtuellen Computer über SSH verbinden.
+> [AZURE.IMPORTANT] Sie müssen **nur** den virtuellen Computer erstellen. Stoppen Sie, nachdem Sie gelernt haben, wie den virtuellen Computer über SSH verbinden.
 
 Nachdem Sie den virtuellen Azure-Computer erstellt haben, führen Sie folgende Schritte aus, um Ruby on Rails auf dem virtuellen Computer zu installieren:
 
@@ -148,7 +148,7 @@ Nachdem Sie den virtuellen Azure-Computer erstellt haben, führen Sie folgende S
 
 		ssh railsdev@railsvm.cloudapp.net -p 61830
 
-	> [AZURE.NOTE] Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **PuTTY** für die SSH-Funktionen verwenden. PuTTY kann von der [PuTTY Download Page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) heruntergeladen werden
+	> [AZURE.NOTE] Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **PuTTY** für die SSH-Funktionen verwenden. PuTTY kann von der [PuTTY Download Page] heruntergeladen werden(http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
 2. Verwenden Sie in der SSH-Sitzung die folgenden Befehle zur Installation von Ruby auf dem virtuellen Computer:
 
@@ -178,7 +178,7 @@ Beispiel:
 
 	scp -r -P 54822 -C ~/blog_app railsdev@railsvm.cloudapp.net:
 
-> [AZURE.NOTE] Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **pscp** für die SCP-Funktionen verwenden. Pscp kann von der [PuTTY Download Page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) heruntergeladen werden
+> [AZURE.NOTE] Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **pscp** für die SCP-Funktionen verwenden. Pscp kann von der [PuTTY Download Page] heruntergeladen werden(http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
 Die für diesen Befehl verwendeten Parameter bewirken Folgendes:
 
@@ -201,7 +201,7 @@ Die zurückgegebene Liste der Dateien sollte den im Verzeichnis **blog_app** in 
 
 ##<a id="start"></a>Installieren von Gems und Starten von Rails
 
-1. Wechseln Sie auf dem virtuellen Computer zum Verzeichnis **blog_app** und installieren Sie mit dem folgenden Befehl die in **Gemfile** angegebenen Gems:
+1. Wechseln Sie auf dem virtuellen Computer zum Verzeichnis **blog_app**, und installieren Sie mit dem folgenden Befehl die in **Gemfile** angegebenen Gems:
 
 		sudo bundle install
 
@@ -223,7 +223,7 @@ Die zurückgegebene Liste der Dateien sollte den im Verzeichnis **blog_app** in 
 		[2013-03-12 19:11:31] INFO  ruby 1.9.3 (2012-04-20) [x86_64-linux]
 		[2013-03-12 19:11:31] INFO  WEBrick::HTTPServer#start: pid=9789 port=3000
 
-2. Navigieren Sie im Browser zum [Azure-Verwaltungsportal][management-portal] und wählen Sie Ihren virtuellen Computer aus.
+2. Navigieren Sie im Browser zum [Azure-Verwaltungsportal][management-portal], und wählen Sie Ihren virtuellen Computer aus.
 
 	![virtual machine list][vmlist]
 
@@ -233,9 +233,9 @@ Die zurückgegebene Liste der Dateien sollte den im Verzeichnis **blog_app** in 
 
 4. Klicken Sie im Dialogfeld **ENDPUNKT HINZUFÜGEN** auf den Pfeil unten links, um die zweite Seite anzuzeigen, und geben Sie folgende Informationen in das Formular ein:
 
-	* NAME HTTP
+	* **NAME**: HTTP
 
-	* _**Begrenztem**:_ TCP
+	* **PROTOKOLL**: TCP
 
 	* **ÖFFENTLICHER PORT**: 80
 
@@ -259,17 +259,17 @@ Die zurückgegebene Liste der Dateien sollte den im Verzeichnis **blog_app** in 
 
 In diesem Artikel haben Sie erfahren, wie Sie eine grundlegende formularbasierte Rails-Anwendung erstellen und auf einem virtuellen Azure-Computer veröffentlichen. Die meisten Aktionen wurden manuell ausgeführt, in einer Produktionsumgebung sollte man diese möglichst automatisieren. Außerdem wird in den meisten Produktionsumgebungen die Rails-Anwendung zusammen mit einem anderen Serverprozess wie Apache oder NginX gehostet, der die Weiterleitung von Anfragen an mehrere Instanzen der Rails-Anwendung und statische Ressourcen bearbeitet.
 
-Informationen für die Automatisierung der Bereitstellung der Rails-Anwendung als auch unter Verwendung des Unicorn-Webservers und NginX finden Sie unter [Unicorn + NginX + Capistrano mit einem virtuellen Computer in Azure][unicorn-nginx-capistrano].
+Informationen zur Automatisierung der Bereitstellung der Rails-Anwendung sowie zur Verwendung des Unicorn-Webservers und NginX finden Sie unter [Unicorn+NginX+Capistrano mit einem virtuellen Azure-Computer][unicorn-nginx-capistrano].
 
-Wenn Sie mehr über Ruby on Rails erfahren möchten, besuchen Sie die [Ruby on Rails Guides][rails-guides].
+Wenn Sie mehr über Ruby on Rails erfahren möchten, rufen Sie die Seite [Ruby on Rails Guides] auf[rails-guides].
 
 Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Dienste von der Ruby-Anwendung aus finden Sie unter:
 
-* [Speichern von unstrukturierten Daten mit blobs][blobs]
+* [Speichern von unstrukturierten Daten mit Blobs][blobs]
 
-* [Store Schlüssel/Wert-Paare, die mit Tabellen][tables]
+* [Speichern von Schlüssel/Wert-Paaren mit Tabellen][tables]
 
-* [Bereitstellen von Inhalten über das Content Delivery Network][cdn-howto]
+* [Bereitstellen von Inhalten mit hoher Bandbreite über das Content Delivery Network][cdn-howto]
 
 
 
@@ -308,4 +308,7 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
 [new-endpoint]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
 
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

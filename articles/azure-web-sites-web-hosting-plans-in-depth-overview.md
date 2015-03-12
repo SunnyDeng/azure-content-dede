@@ -1,6 +1,20 @@
-﻿<properties title="Azure Websites Web Hosting Plans In-Depth Overview" pageTitle="Webhosting-Pläne für Azure-Websites: ausführliche Übersicht - Windows Azure-Featurehandbuch" description="Erfahren Sie, wie Hosting-Pläne für Azure-Websites funktionieren und wie Ihnen dabei Ihre Verwaltungserfahrung zugute kommt." metaKeywords="Azure Web Sites, Azure Websites, WHP, Web Hosting Plan, Web Hosting Plans, Resource Groups" services="web-sites" solutions="web" documentationCenter="Infrastructure" authors="Byron Tardif and Yochay Kiryaty" videoId="" scriptId="" manager="wpickett" />
+﻿<properties 
+	pageTitle="Webhosting-Pläne für Azure-Websites: ausführliche Übersicht – Windows Azure-Featurehandbuch" 
+	description="Erfahren Sie, wie Webhostingpläne für Azure-Websites funktionieren und wie Ihre Managementerfahrung davon profitiert." 
+	services="web-sites" 
+	documentationCenter="" 
+	authors="btardif" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="11/17/2014" ms.author="Byron Tardif and Yochay Kiryaty" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/17/2014" 
+	ms.author="byvinyal, yochayk"/>
 </br>
 #Webhosting-Pläne für Azure-Websites: ausführliche Übersicht
 </br>
@@ -189,3 +203,5 @@ Diese Metriken zeigen die durchschnittliche Nutzung in den Instanzen, die zu ein
 Webhostingpläne stellen einen Satz an Funktionen und Kapazitäten dar, die Sie über Ihre Websites freigeben können.  Webhostingpläne bieten die Flexibilität, bestimmte Websites zu einem bestimmten Ressourcensatz (virtuellen Computern) zuzuordnen, und die Ressourcenzuteilung und -Nutzung für Websites weiter zu optimieren.
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

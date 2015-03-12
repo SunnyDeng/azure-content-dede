@@ -1,6 +1,20 @@
-﻿<properties title="How to Create a DocumentDB Account" pageTitle="Erstellen eines Datenbankkontos | Azure" description="Erfahren Sie, wie ein DocumentDB NoSQL-Dokumenten-Datenbankkonto erstellen, und wählen Sie "Kontoeinstellungen" im Azure Preview-Portal aus."  metaKeywords="NoSQL, DocumentDB, database, document-orientated database, JSON, account" services="documentdb"  solutions="data-management" documentationCenter=""  authors="mimig" manager="jhubbard" editor="monicar" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erstellen eines Datenbankkontos | Azure" 
+	description="Erfahren Sie, wie Sie ein DocumentDB-NoSQL-Dokumentdatenbankkonto erstellen und Kontoeinstellungen im Azure-Vorschauportal wählen." 
+	services="documentdb" 
+	documentationCenter="" 
+	authors="mimig1" 
+	manager="jhubbard" 
+	editor="monicar"/>
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/09/2014" ms.author="mimig" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="12/09/2014" 
+	ms.author="mimig"/>
 
 #Erstellen eines Datenbankkontos
 Sie müssen ein DocumentDB-Konto erstellen, wenn Sie Microsoft Azure DocumentDB verwenden möchten.  Dieses Thema beschreibt die Erstellung eines DocumentDB-Kontos im Azure-Vorschauverwaltungsportal.  
@@ -25,7 +39,7 @@ Sie müssen ein DocumentDB-Konto erstellen, wenn Sie Microsoft Azure DocumentDB 
 
 	- Der Bereich **Optionale Konfiguration** dient zur Angabe der Anfangskapazität, die Ihrem DocumentDB-Konto zugewiesen wird.  DocumentDB verwendet Kapazitätseinheiten, um Ihnen die Skalierung Ihres DocumentDB-Kontos zu ermöglichen, wobei jede Kapazitätseinheit reservierten Datenbankspeicher und Durchsatz umfasst.  Standardmäßig wird 1 Kapazitätseinheit bereitgestellt.  Sie können die Anzahl der Kapazitätseinheiten, die Ihrem DocumentDB-Konto zur Verfügung steht, jederzeit im [Vorschauverwaltungsportal](https://portal.azure.com/#gallery/Microsoft.DocumentDB) anpassen. Ausführliche Informationen zur DocumentDB-Kontokapazität und zum Durchsatz finden Sie im Artikel [Verwalten der Kapazität und Leistung von DocumentDB][documentdb-manage].
 
-	- Unter **Ressourcengruppe** können Sie eine Ressourcengruppe für Ihr DocumentDB-Konto auswählen oder erstellen.  Standardmäßig wird eine neue Ressourcengruppe erstellt.  Sie können jedoch eine vorhandene Ressourcengruppe auswählen, zu der Sie Ihr DocumentDB-Konto hinzufügen möchten. Weitere Informationen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](http://azure.microsoft.com/de-de/documentation/articles/azure-preview-portal-using-resource-groups/).
+	- Unter **Ressourcengruppe** können Sie eine Ressourcengruppe für Ihr DocumentDB-Konto auswählen oder erstellen.  Standardmäßig wird eine neue Ressourcengruppe erstellt.  Sie können jedoch eine vorhandene Ressourcengruppe auswählen, zu der Sie Ihr DocumentDB-Konto hinzufügen möchten. Weitere Informationen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](http://azure.microsoft.com/documentation/articles/azure-preview-portal-using-resource-groups/).
 
 	- Wählen Sie unter **Abonnement** das Azure-Abonnement aus, das Sie mit dem DocumentDB-Konto verwenden möchten. Wenn Ihr Konto nur über ein Abonnement verfügt, wird dieses Konto automatisch ausgewählt.*
  
@@ -73,3 +87,5 @@ Weitere Informationen zu DocumentDB finden Sie in der Azure DocumentDB-Dokumenta
 [8]: ./media/documentdb-create-account/ca8.png
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

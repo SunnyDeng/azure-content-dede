@@ -1,6 +1,20 @@
-﻿<properties title="Create a geospatial search solution using Azure Search" pageTitle="Erstellen einer geografischen Suchanwendung mit Azure Search" description="Erstellen einer geografischen Suchanwendung mit Bing und Azure Search" metaKeywords="" services="" solutions="" documentationCenter="" authors="Heidist" manager="mblythe" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erstellen einer geografischen Suchanwendung mit Azure Search" 
+	description="Erstellen einer geografischen Suchanwendung mit Bing und Azure Search" 
+	services="search" 
+	documentationCenter="" 
+	authors="HeidiSteen" 
+	manager="mblythe" 
+	editor=""/>
 
-<tags ms.service="azure-search" ms.devlang="" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="" ms.date="09/23/2014" ms.author="heidist" />
+<tags 
+	ms.service="search" 
+	ms.devlang="rest-api" 
+	ms.workload="search" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.date="01/16/2015" 
+	ms.author="heidist"/>
 
 # Erstellen einer geografischen Suchanwendung mit Azure Search
 
@@ -25,7 +39,7 @@ Dieses Lernprogramm baut auf der [Azure Search - Adventure Works Demo](http://az
 
 <h2 id="sub-1">Voraussetzungen</h2>
 
-Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Wenn Sie nicht bereits die Software installiert haben, können Sie die kostenlosen Express-Editionen herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/de-de/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/de-de/evalcenter/dn434042.aspx).
+Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Wenn Sie nicht bereits die Software installiert haben, können Sie die kostenlosen Express-Editionen herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/de-de/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
 Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Einzelheiten finden Sie unter [Erste Schritte mit Azure Search](../search-get-started/).
 +	Einen Bing-Kartendienst sowie einen zugehörigen Zugriffsschlüssel. Anweisungen dazu finden Sie im nächsten Abschnitt.
 [Azure Search GeoSearch-Beispiel auf CodePlex](https://azuresearchgeospatial.codeplex.com/). Klicken Sie auf der Registerkarte "Source" (Quelle) auf **Download**, um eine ZIP-Datei der Lösung herunterzuladen. 
@@ -158,3 +172,5 @@ Um Ihr Selbststudium zu vertiefen, fügen Sie beispielsweise weitere Funktionen 
 <!--Image references-->
 [7]: ./media/search-create-geospatial/AzureSearch-geo1-App.PNG
 [12]: ./media/search-create-geospatial/AzureSearch_Create2_CodeplexDownload.PNG
+
+<!--HONumber=46--> 

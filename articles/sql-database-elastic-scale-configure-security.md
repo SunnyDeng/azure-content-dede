@@ -20,24 +20,24 @@ Zertifikate werden auf zwei Arten konfiguriert.
 
 ## <a name="obtain-certificates"></a>So rufen Sie Zertifikate ab
 
-Zertifikate können von öffentlichen Zertifizierungsstellen (CAs) oder vom [Windows-Zertifikatdienst](http://msdn.microsoft.com/en-us/library/windows/desktop/aa376539.aspx) abgerufen werden. Dies sind die bevorzugten Methoden für den Erhalt von Zertifikaten.
+Zertifikate können von öffentlichen Zertifizierungsstellen (CAs) oder vom [Windows-Zertifikatdienst](http://msdn.microsoft.com/library/windows/desktop/aa376539.aspx) abgerufen werden. Dies sind die bevorzugten Methoden für den Erhalt von Zertifikaten.
 
 Wenn diese Optionen nicht verfügbar sind, können Sie **selbstsignierte Zertifikate** generieren.
  
 ## <a name="tools"></a>Tools zum Erstellen von Zertifikaten
 
-* [makecert.exe](http://msdn.microsoft.com/en-us/library/bfsktky3.aspx)
-* [pvk2pfx.exe](http://msdn.microsoft.com/en-us/library/windows/hardware/ff550672.aspx)
+* [makecert.exe](http://msdn.microsoft.com/library/bfsktky3.aspx)
+* [pvk2pfx.exe](http://msdn.microsoft.com/library/windows/hardware/ff550672.aspx)
 
 ###So führen Sie die Tools aus
 
-* Von einer Developer-Eingabeaufforderung für Visual Studio; weitere Einzelheiten finden Sie unter [Visual Studio-Eingabeaufforderung](http://msdn.microsoft.com/en-us/library/ms229859.aspx) 
+* Von einer Developer-Eingabeaufforderung für Visual Studio; weitere Einzelheiten finden Sie unter [Visual Studio-Eingabeaufforderung](http://msdn.microsoft.com/library/ms229859.aspx) 
 
     Falls installiert, gehen Sie zu:
 
         % Programme (X 86) %\Windows Kits\x.y\bin\x86 
 
-* Laden Sie das WDK über folgende Seite herunter: [Windows 8.1: Herunterladen von Kits und Tools](http://msdn.microsoft.com/en-US/windows/hardware/gg454513#drivers)
+* Laden Sie das WDK über folgende Seite herunter: [Windows 8.1: Herunterladen von Kits und Tools](http://msdn.microsoft.com/windows/hardware/gg454513#drivers)
 
 ##    <a name="to-configure-ssl-cert"></a>So konfigurieren Sie das SSL-Zertifikat
 Ein SSL-Zertifikat ist zum Verschlüsseln der Kommunikation und Authentifizieren des Servers erforderlich. Wählen Sie das zutreffende unter den folgenden drei Szenarien, und führen Sie alle zugehörigen Schritte aus:

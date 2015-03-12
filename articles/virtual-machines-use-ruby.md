@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Was ist Azure Multi-Factor Authentication?" 
 	description="Erfahren Sie mehr über die Azure Multi-Factor Authentication. Hierbei handelt es sich um eine Authentifizierungsmethode, welche die Verwendung von mehr als einer Verifizierungsmethode erfordert und eine wichtige zweite Sicherheitsebene für Benutzeranmeldungen und Transaktionen darstellt." 
 	services="active-directory, multi-factor-authentication" 
@@ -38,23 +38,23 @@ In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Verwaltu
 
 ## <a name="what-is"> </a>Was ist Dienstverwaltung?
 
-Azure bietet eine [REST-APIs für dienstverwaltungsvorgänge](http://msdn.microsoft.com/library/windowsazure/ee460799.aspx), einschließlich der Verwaltung von Azure Virtual Machines. Das Azure SDK for Ruby zeigt Verwaltungsvorgänge für virtuelle Computer mittels der Klasse **Azure::VirtualMachineService** an. Der Großteil der Verwaltungsfunktionen eines virtuellen Computers, die im [Azure-Verwaltungsportal](https://manage.windowsazure.com) zur Verfügung stehen, kann über diese Klasse aufgerufen werden.
+Azure bietet [REST-APIs für Dienstverwaltungsvorgänge](http://msdn.microsoft.com/library/windowsazure/ee460799.aspx), darunter die Verwaltung von virtuellen Azure-Computern. Das Azure SDK for Ruby zeigt Verwaltungsvorgänge für virtuelle Computer mittels der Klasse **Azure::VirtualMachineService** an. Der Großteil der Verwaltungsfunktionen eines virtuellen Computers, die im [Azure-Verwaltungsportal](https://manage.windowsazure.com) zur Verfügung stehen, kann über diese Klasse aufgerufen werden.
 
 Auch wenn die Dienstverwaltungs-API dazu verwendet werden kann, eine Vielzahl an auf Azure gehosteten Diensten zu verwalten, enthält dieses Dokument nur Informationen über die Verwaltung von virtuellen Azure-Computern.
 
 ## <a name="concepts"> </a>Konzepte
 
-Azure Virtual Machines werden innerhalb eines Cloud-Diensts als  'roles' implementiert. Jeder Clouddienst kann eine oder mehrere Rollen enthalten, die logisch in Bereitstellungen gruppiert werden. Die Rolle definiert die physischen Gesamtmerkmale des virtuellen Computers, z. B. wie viel Speicher zur Verfügung steht oder wie viele CPU-Cores es gibt usw.
+Virtuelle Azure-Computer werden als 'Rollen' in einem Clouddienst implementiert. Jeder Clouddienst kann eine oder mehrere Rollen enthalten, die logisch in Bereitstellungen gruppiert werden. Die Rolle definiert die physischen Gesamtmerkmale des virtuellen Computers, z. B. wie viel Speicher zur Verfügung steht oder wie viele CPU-Cores es gibt usw.
 
-Jeder virtuelle Computer verfügt auch über einen Betriebssystemdatenträger, der das bootfähige Betriebssystem umfasst. Ein virtueller Computer kann mehrere Datenlaufwerke haben, d. h. zusätzliche Datenträger, die zum Speichern von Anwendungsdaten verwendet werden sollen. Die Datenträger werden als virtuelle Festplatten (VHD) im Azure-Blob-Speicher gespeichert. Virtuelle Festplatten können auch als 'images' verfügbar gemacht werden, dies sind Vorlagen, die zum Erstellen von Datenträgern, die von einer virtuellen Maschine während der Erstellung des virtuellen Computers genutzt werden, verwendet werden. Wenn Sie beispielsweise einen neuen virtuellen Computer mit einem Ubuntu-Image erstellen, wird aus dem Ubuntu-Image ein neuer Betriebssystemdatenträger erstellt.
+Jeder virtuelle Computer verfügt auch über einen Betriebssystemdatenträger, der das bootfähige Betriebssystem umfasst. Ein virtueller Computer kann mehrere Datenlaufwerke haben, d. h. zusätzliche Datenträger, die zum Speichern von Anwendungsdaten verwendet werden sollen. Die Datenträger werden als virtuelle Festplatten (VHD) im Azure-Blob-Speicher gespeichert. VHDs können auch als 'Images' angezeigt werden, wobei es sich um Vorlagen handelt, die zum Erstellen von Datenträgern für einen virtuellen Computer bei der VM-Erstellung verwendet werden. Wenn Sie beispielsweise einen neuen virtuellen Computer mit einem Ubuntu-Image erstellen, wird aus dem Ubuntu-Image ein neuer Betriebssystemdatenträger erstellt.
 
 Die meisten Images werden von Microsoft oder Partnern bereitgestellt; Sie können jedoch auch Ihre eigenen Images erstellen oder ein Image aus einem in Azure gehosteten virtuellen Computer erstellen.
 
-## <a name="setup-certificate"> </a>Erstellen Sie ein Azure-Verwaltungszertifikat
+## <a name="setup-certificate"> </a>Erstellen eines Azure-Verwaltungszertifikats
 
-Beim Ausführen von Service Management-Vorgängen wie z. B. den der **Azure:: virtualmachineservice**-Klasse ausgesetzten, müssen Sie Ihre Azure-Abonnement-ID und eine Datei mit einem Verwaltungszertifikat für Ihr Abonnement angeben. Beides wird vom SDK für die Authentifizierung an der Azure-REST-API verwendet.
+Wenn Sie Dienstverwaltungsvorgänge ausführen, z. B. solche, die durch die Klasse **Azure::VirtualMachineService** angezeigt werden, müssen Sie Ihre Azure-Abonnement-ID und eine Datei mit einem Verwaltungszertifikat für Ihr Abonnement angeben. Beides wird vom SDK für die Authentifizierung an der Azure-REST-API verwendet.
 
-Verwenden Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli), um die Abonnement-ID und ein Verwaltungszertifikat abzurufen. Finden Sie unter [installieren und Konfigurieren der Azure plattformübergreifenden Befehlszeilenschnittstelle](http://azure.microsoft.com/manage/install-and-configure-cli/) Informationen zum Installieren und Konfigurieren der plattformübergreifenden Befehlszeilenschnittstelle.
+Verwenden Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli), um die Abonnement-ID und ein Verwaltungszertifikat abzurufen. Weitere Informationen zum Installieren und Konfigurieren der xplat-cli finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/manage/install-and-configure-cli/).
 
 Nachdem die xplat-cli konfiguriert wurde, können Sie die folgenden Schritte ausführen, um Ihre Azure-Abonnement-ID abzurufen und ein Verwaltungszertifikat zu exportieren:
 
@@ -80,7 +80,7 @@ Zum Verwalten von Azure-Diensten müssen Sie das Azure-Gem herunterladen und ver
 
 ### Verwenden des Gem-Befehls zum Installieren des Pakets
 
-1.  Verwenden Sie eine Befehlszeilenschnittstelle, z. B. **PowerShell** (Windows,) **Terminal** (Mac) oder **Bash** (Unix) und navigieren Sie zu dem Ordner, in dem Sie die Beispielanwendung erstellt haben.
+1.  Verwenden Sie eine Befehlszeilenschnittstelle, z. B.**PowerShell** (Windows,) **Terminal** (Mac) oder **Bash** (Unix), und navigieren Sie zu dem Ordner, in dem Sie die Beispielanwendung erstellt haben.
 
 2. Verwenden Sie den folgenden Befehl, um das Azure-Gem zu installieren:
 
@@ -104,7 +104,7 @@ Zum Verwalten von Azure-Diensten müssen Sie das Azure-Gem herunterladen und ver
 		Successfully installed azure-0.5.0
 		7 gems installed
 
-	> [AZURE.NOTE] Wenn Sie einen berechtigungsspezifischen Fehler erhalten, verwenden Sie <code>Sudo Gem Install azure</code> Stattdessen.
+	> [AZURE.NOTE] Wenn Sie einen berechtigungsspezifischen Fehler erhalten, verwenden Sie stattdessen <code>sudo gem install azure</code>.
 
 ### Anfordern des Gem
 
@@ -114,11 +114,11 @@ Fügen Sie mit einem Texteditor Folgendes am Anfang Ihrer Ruby-Anwendungsdatei e
 
 ## <a name="setup-connection"> </a>Vorgehensweise: Herstellen einer Verbindung zur Dienstverwaltung
 
-Für eine erfolgreiche Durchführung von Dienstverwaltungsvorgängen mit Azure müssen Sie die Abonnement-ID und das Zertifikat angeben, die Sie im Abschnitt [Erstellen eines Azure-Verwaltungszertifikats] abgerufen haben.(#setup-certificate) gezeigt. Der einfachste Weg besteht darin, die ID und den Pfad zur Zertifikatsdatei mit den folgenden Umgebungsvariablen anzugeben:
+Für eine erfolgreiche Durchführung von Dienstverwaltungsvorgängen mit Azure müssen Sie die Abonnement-ID und das Zertifikat angeben, die Sie im Abschnitt [Erstellen eines Azure-Verwaltungszertifikats](#setup-certificate) abgerufen haben.  Der einfachste Weg besteht darin, die ID und den Pfad zur Zertifikatsdatei mit den folgenden Umgebungsvariablen anzugeben:
 
-* AZURE\_MANAGEMENT\_CERTIFICATE - der Pfad zu der.PEM-Datei mit dem Verwaltungszertifikat.
+* AZURE\_MANAGEMENT\_CERTIFICATE - Der Pfad zur PEM-Datei mit dem Verwaltungszertifikat.
 
-* AZURE\_SUBSCRIPTION\_ID - die Abonnement-ID für Ihre Azure-Abonnement.
+* AZURE\_SUBSCRIPTION\_ID - Die Abonnement-ID für Ihr Azure-Abonnement.
 
 Sie können diese Werte auch mit dem folgenden Befehl programmgesteuert in Ihrer Anwendung festlegen:
 
@@ -137,15 +137,15 @@ Verwenden Sie die **create\_virtual\_machine**-Methode, um einen neuen virtuelle
 
 **Parameter**
 
-* **: Vm\_name** -der Name des virtuellen Computers
+* _**:max\commune**_ - Der Name des virtuellen Computers
 
-* **: Vm\_user** -der Root- oder Admin-Benutzername
+* **:vm\_user** - Der Root- oder Admin-Benutzername
 
-* **: Kennwort** -das Kennwort für den Root- oder Admin-Benutzer
+* **:password** - Das Kennwort für den Root- oder Admin-Benutzer
 
-* **: Image** -das Betriebssystem-Image, das zum Erstellen der Betriebssystem-Datenträger für diesen virtuellen Computer verwendet wird. Der Betriebssystemdatenträger wird in einer VHD gespeichert, die in einem Blob-Speicher erstellt wurde.
+* **:image** - Das Betriebssystem-Image, das zum Erstellen des Betriebssystemdatenträgers für diesen virtuellen Computer verwendet wird. Der Betriebssystemdatenträger wird in einer VHD gespeichert, die in einem Blob-Speicher erstellt wurde.
 
-* **: Speicherort** -die Region, in dem der virtuelle Computer erstellt wird. Dabei sollte es sich um dieselbe Region handeln wie die des Speicherkontos, das die von diesem virtuellen Computer verwendeten Datenträger enthält.
+* **:location** - Die Region, in der der virtuelle Computer erstellt wird. Dabei sollte es sich um dieselbe Region handeln wie die des Speicherkontos, das die von diesem virtuellen Computer verwendeten Datenträger enthält.
 
 Es folgt ein Beispiel für die Erstellung eines neuen virtuellen Computers mithilfe dieser Parameter:
 
@@ -171,25 +171,25 @@ Per Hash-Methode können Sie optionale Parameter angeben, mit denen Sie das Stan
 
 Im Folgenden finden Sie die für die **create\_virtual\_machine**-Methode verfügbaren Optionen:
 
-* **: Storage\_account\_name** -der Name des Speicherkontos zum Speichern von Datenträgerabbildern. Wenn das Speicherkonto noch nicht vorhanden ist, wird ein neues erstellt. Wenn dies nicht angegeben wird, wird ein neues Speicherkonto mit einem Namen basierend auf dem Parameter ":vm\_name param" erstellt.
+* **:storage\_account\_name** - Der Name des Speicherkontos, das zum Speichern der Datenträger-Images verwendet werden soll. Wenn das Speicherkonto noch nicht vorhanden ist, wird ein neues erstellt. Wenn dies nicht angegeben wird, wird ein neues Speicherkonto mit einem Namen basierend auf dem Parameter ":vm\_name param" erstellt.
 
-* **: Cloud\_service\_name** -der Name des Cloud-Diensts, der zum Hosten der virtuellen Maschine verwendet wird. Wenn der Clouddienst noch nicht vorhanden ist, wird ein neuer erstellt. Wenn dies nicht angegeben wird, wird ein neues Clouddienstkonto mit einem Namen basierend auf dem Parameter ":vm\_name" erstellt.
+* **:cloud\_service\_name** - Der Name des Clouddiensts, der zum Hosten des virtuellen Computers verwendet werden soll. Wenn der Clouddienst noch nicht vorhanden ist, wird ein neuer erstellt. Wenn dies nicht angegeben wird, wird ein neues Clouddienstkonto mit einem Namen basierend auf dem Parameter ":vm\_name" erstellt.
 
-* **: Deployment\_name** -der Name der Bereitstellung, der bei der Bereitstellung der Konfiguration des virtuellen Computers verwendet werden soll
+* **:deployment\_name** - Der Name der Bereitstellung, die zum Bereitstellen der Konfiguration des virtuellen Computers verwendet werden soll.
 
-* **: Tcp\_endpoints** -die TCP-Ports, die öffentlich für diesen virtuellen Computer verfügbar gemacht werden sollen. Der SSH-Endpunkt (bei Linux-basierten virtuellen Computern) und der WinRM-Endpunkt (bei Windows-basierten virtuellen Computern) müssen nicht angegeben werden; sie werden automatisch erstellt. Sie können mehrere Ports angeben, die durch ein Komma voneinander getrennt sind. Verwenden Sie das Format **öffentlicher Port:interner Port**, um einen internen Port einem öffentlichen Port mit einer anderen Portnummer zuzuweisen. Mit 80:8080 wird beispielsweise der interne Port 8080 als öffentlicher Port 80 angezeigt.
+* **:tcp\_endpoints** - Die TCP-Ports, die für diesen virtuellen Computer öffentlich angezeigt werden sollen. Der SSH-Endpunkt (bei Linux-basierten virtuellen Computern) und der WinRM-Endpunkt (bei Windows-basierten virtuellen Computern) müssen nicht angegeben werden; sie werden automatisch erstellt. Sie können mehrere Ports angeben, die durch ein Komma voneinander getrennt sind. Verwenden Sie das Format **öffentlicher Port:interner Port**, um einen internen Port einem öffentlichen Port mit einer anderen Portnummer zuzuweisen. Mit 80:8080 wird beispielsweise der interne Port 8080 als öffentlicher Port 80 angezeigt.
 
-* **: Service\_location** -Zielspeicherort des Zertifikatspeichers auf dem virtuellen Computer. Dies gilt nur für Windows-basierte virtuelle Computer.
+* **:service\_location** - Der Zielspeicherort für das Zertifikat auf dem virtuellen Computer. Dies gilt nur für Windows-basierte virtuelle Computer.
 
-* **: Ssh\_private\_key\_file** - die Datei mit dem privaten Schlüssel, die zum Sichern des SSH-Zugriffs auf den virtuellen Linux-basierten Computer verwendet wird. Dieser Parameter wird auch dazu verwendet, das Zertifikat anzugeben, das zum Sichern von WinRM genutzt wird, wenn eine HTTPS-Übertragung gewählt wurde. Wenn **:ssh\_private\_key\_file** und **:ssh\_certificate\_file** nicht angegeben werden, verwendet SSH nur die Kennwortauthentifizierung.
+* **:ssh\_private\_key\_file** - Die Datei mit dem privaten Schlüssel, der zum Sichern des SSH-Zugriffs auf den Linux-basierten virtuellen Computer verwendet wird. Dieser Parameter wird auch dazu verwendet, das Zertifikat anzugeben, das zum Sichern von WinRM genutzt wird, wenn eine HTTPS-Übertragung gewählt wurde. Wenn **:ssh\_private\_key\_file** und **:ssh\_certificate\_file** nicht angegeben werden, verwendet SSH nur die Kennwortauthentifizierung.
 
-* **: Ssh\_certificate\_file** - die Datei mit der Zertifikatsdatei, die zum Sichern des SSH-Zugriffs auf den virtuellen Linux-basierten Computer verwendet wird. Dieser Parameter wird auch dazu verwendet, das Zertifikat anzugeben, das zum Sichern von WinRM genutzt wird, wenn eine HTTPS-Übertragung gewählt wurde. Wenn **:ssh\_private\_key\_file** und **:ssh\_certificate\_file** nicht angegeben werden, verwendet SSH nur die Kennwortauthentifizierung.
+* **:ssh\_certificate\_file** - Die Datei mit der Zertifikatsdatei, die zum Sichern des SSH-Zugriffs auf den Linux-basierten virtuellen Computer verwendet wird. Dieser Parameter wird auch dazu verwendet, das Zertifikat anzugeben, das zum Sichern von WinRM genutzt wird, wenn eine HTTPS-Übertragung gewählt wurde. Wenn **:ssh\_private\_key\_file** und **:ssh\_certificate\_file** nicht angegeben werden, verwendet SSH nur die Kennwortauthentifizierung.
 
-* **: Ssh\_port** -der öffentliche Port, der für die SSH-Kommunikation verwendet wird. Wenn dieser Parameter nicht angegeben wird, wird standardmäßig der SSH-Port 22 verwendet.
+* **:ssh\_port** - Der öffentliche Port, der für die SSH-Kommunikation verwendet wird. Wenn dieser Parameter nicht angegeben wird, wird standardmäßig der SSH-Port 22 verwendet.
 
-* **: Vm\_size** -die Größe des virtuellen Computers. Dadurch werden die Speichergröße, die Anzahl der Cores, die Bandbreite und andere physische Merkmale des virtuellen Computers bestimmt. Informationen zu verfügbaren Größen und physischen Merkmalen finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure](http://msdn.microsoft.com/library/windowsazure/dn197896.aspx).
+* **:vm\_size** - Die Größe des virtuellen Computers. Dadurch werden die Speichergröße, die Anzahl der Cores, die Bandbreite und andere physische Merkmale des virtuellen Computers bestimmt. Informationen zu verfügbaren Größen und physischen Merkmalen finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure](http://msdn.microsoft.com/library/windowsazure/dn197896.aspx).
 
-* **: Winrm_transport** - ein Array der verfügbaren Übertragungsmöglichkeiten für WinRM. Gültige Transporte sind 'http' und 'https'. Wenn  'https' als Übertragungsprotokoll angegeben wurde, müssen Sie auch **:ssh\_private\_key\_file** und **:ssh\_certificate\_file** verwenden, um das zum Sichern der HTTPS-Kommunikation verwendete Zertifikat anzugeben.
+* **:winrm_transport** - Ein Array der verfügbaren Übertragungsprotokolle für WinRM. Gültige Übertragungsprotokolle sind  'http' und 'https'. Wenn  'https' als Übertragungsprotokoll angegeben wurde, müssen Sie auch **:ssh\_private\_key\_file** und **:ssh\_certificate\_file** verwenden, um das zum Sichern der HTTPS-Kommunikation verwendete Zertifikat anzugeben.
 
 Im Folgenden finden Sie ein Beispiel für das Erstellen eines neuen virtuellen Computers, der eine kleine Serverinstanz verwendet, der Ports öffentlich für den HTTP- (lokaler Port 8080, öffentlicher Port 80) und den HTTPS-Datenverkehr (443) anzeigt und der die Zertifikatauthentifizierung für SSH-Sitzungen mit den angegeben Zertifikatdateien aktiviert:
 
@@ -232,7 +232,7 @@ Verwenden Sie zum Löschen eines virtuellen Computers die **delete\_virtual\_mac
 	vm_mgr = Azure::VirtualMachineService.new
 	vm = vm_mgr.delete_virtual_machine('myvm', 'mycloudservice')
 
-> [AZURE.Warnung] Die **Delete_virtual_machine**-Methode löscht den Cloud-Dienst und alle Datenträger, die der virtuellen Maschine zugeordnet sind.
+> [AZURE.WARNING] Mit der **delete_virtual_machine**-Methode werden der Clouddienst und alle mit dem virtuellen Computer verbundenen Datenträger gelöscht.
 
 ###Vorgehensweise: Herunterfahren eines virtuellen Computers
 
@@ -281,9 +281,9 @@ Verwaltungsvorgänge für Azure-Clouddienste werden mit der Klasse **Azure::Clou
 
 Verwenden Sie zum Erstellen eines neuen Clouddiensts die **create\_cloud\_service**-Methode und geben Sie einen Namen und mittels Hash-Methode verschiedene Optionen an. Gültige Optionen:
 
-* **:location** - *Required*. Die Region, in der der Clouddienst erstellt wird.
+* **:location** - *Erforderlich*. Die Region, in der der Clouddienst erstellt wird.
 
-* **: Beschreibung** -eine Beschreibung des Cloud-Diensts.
+* **:description** - Eine Beschreibung des Clouddiensts.
 
 Mit dem folgenden Code wird ein neuer Clouddienst in der Region "East US" erstellt:
 
@@ -322,13 +322,13 @@ Verwenden Sie zum Löschen einer Bereitstellung für einen Clouddienst die **del
 
 Verwaltungsvorgänge für Azure Storage Services werden mit der Klasse **Azure::StorageService** durchgeführt.
 
-###Vorgehensweise: Speicherkonto erstellen
+###Vorgehensweise: Erstellen eines Speicherkontos
 
 Verwenden Sie zum Erstellen eines neuen Speicherkontos die **create\_storage\_account**-Methode und geben Sie einen Namen und mittels Hash-Methode verschiedene Optionen an. Gültige Optionen:
 
-* **:location** - *Required*. Die Region, in der der Speicherdienst erstellt wird.
+* **:location** - *Erforderlich*. Die Region, in der der Speicherdienst erstellt wird.
 
-* **: Beschreibung** -eine Beschreibung des Speicherkontos.
+* **:description** - Eine Beschreibung des Speicherkontos.
 
 Mit dem folgenden Code wird ein neuer Speicherdienst in der Region "East US" erstellt:
 
@@ -337,7 +337,7 @@ Mit dem folgenden Code wird ein neuer Speicherdienst in der Region "East US" ers
 
 ###Vorgehensweise: Auflisten von Speicherkonten
 
-Um eine Liste der Speicherkonten für Ihr Azure-Abonnement zu erhalten, verwenden Sie die **List\_storage\_accounts**-Methode. Mit dieser Methode wird ein Array an **Azure::StorageManagement::StorageAccount**-Objekten zurückgegeben:
+Um eine Liste der Speicherkonten für Ihr Azure-Abonnement abzurufen, verwenden Sie die **list\_storage\_accounts**-Methode. Mit dieser Methode wird ein Array an **Azure::StorageManagement::StorageAccount**-Objekten zurückgegeben:
 
 	storage_mgr = Azure::StorageService.new
 	accounts = storage_mgr.list_storage_accounts
@@ -360,8 +360,11 @@ Verwenden Sie zum Löschen eines Speicherkontos die **delete\_storage\_account**
 
 Da Sie jetzt die Grundlagen der programmgesteuerten Erstellung von virtuellen Azure-Computern erlernt haben, folgen Sie diesen Links, um mehr über die Arbeit mit virtuellen Computern zu erfahren.
 
-* Besuchen Sie die Featureseite [virtuelle Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines/)
+* Besuchen Sie die Seite zu [virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/).
 *  Weitere Informationen finden Sie in der MSDN-Referenz: [Virtuelle Computer](http://msdn.microsoft.com/library/windowsazure/jj156003.aspx)
 * Lernen Sie, wie Sie eine [Ruby on Rails-Anwendung auf einem virtuellen Computer](http://azure.microsoft.com/develop/ruby/tutorials/web-app-with-linux-vm/) hosten können.
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

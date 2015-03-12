@@ -56,7 +56,7 @@ Aus technischen Gründen werden durch Aktivierung von Java für Ihre Website die
 
 <strong>Plattform</strong>. Bestimmt, ob Ihre Anwendung in einer 32-Bit- oder 64-Bit-Umgebung ausgeführt wird. Für die 64-Bit-Umgebung ist der Modus "Basic" oder "Standard" erforderlich. Die Modi "Kostenlos" und "Freigegeben" werden immer in einer 32-Bit-Umgebung ausgeführt.
 
-<strong>Websockets</strong>. Legen Sie **EIN** fest, um das WebSocket-Protokoll zu aktivieren, beispielsweise wenn Ihre Website [ASP.NET SignalR](http://www.asp.net/signalr) oder [socket.io](http://azure.microsoft.com/de-de/documentation/articles/web-sites-nodejs-chat-app-socketio/) verwendet.
+<strong>Websockets</strong>. Legen Sie **EIN** fest, um das WebSocket-Protokoll zu aktivieren, beispielsweise wenn Ihre Website [ASP.NET SignalR](http://www.asp.net/signalr) oder [socket.io](http://azure.microsoft.com/documentation/articles/web-sites-nodejs-chat-app-socketio/) verwendet.
 
 <strong>Immer bereit</strong>. Standardmäßig werden Websites entladen, wenn sie einige Zeit im Leerlauf waren. Dadurch spart das System Ressourcen. Im Modus "Basic" oder "Standard" können Sie <strong>Immer bereit</strong> aktivieren, sodass die Website permanent geladen bleibt. Wenn Ihre Website fortlaufende Webaufträge ausführt, sollten Sie **Immer bereit** aktivieren. Ansonsten werden fortlaufende Webaufträge unter Umständen nicht zuverlässig ausgeführt.
 
@@ -67,17 +67,17 @@ Hinweis: Falls Sie die Bereitstellung über die Quellcodeverwaltung aktiviert ha
 
 ### Zertifikate
 
-Im Modus "Basic" oder "Standard" können Sie SSL-Zertifikate für benutzerdefinierte Domänen hochladen. Weitere Informationen finden Sie unter [Aktivieren von HTTPS für eine Azure-Website](http://www.windowsazure.com/de-de/documentation/articles/web-sites-configure-ssl-certificate/). 
+Im Modus "Basic" oder "Standard" können Sie SSL-Zertifikate für benutzerdefinierte Domänen hochladen. Weitere Informationen finden Sie unter [Aktivieren von HTTPS für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-configure-ssl-certificate/). 
 
 Die hochgeladenen Zertifikate werden hier aufgelistet. Nach dem Hochladen eines Zertifikats können Sie es einer beliebigen Website in Ihrem Abonnement und Ihrer Region zuweisen. Platzhalterzertifikate lassen sich für jede Website innerhalb der Domäne, für die sie gültig sind, verwenden. Ein Zertifikat kann nur gelöscht werden, wenn dafür keine aktiven Bindungen vorliegen.
 
 ### Domänennamen
 
-Sie können Domänennamen für die Website anzeigen oder zusätzliche hinzufügen. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](http://www.windowsazure.com/de-de/documentation/articles/web-sites-custom-domain-name/).
+Sie können Domänennamen für die Website anzeigen oder zusätzliche hinzufügen. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-custom-domain-name/).
 
 ### SSL-Bindungen
 
-Wenn Sie SSL-Zertifikate hochgeladen haben, können Sie diese an benutzerdefinierte Domänennamen binden. Weitere Informationen finden Sie unter [Aktivieren von HTTPS für eine Azure-Website](http://www.windowsazure.com/de-de/documentation/articles/web-sites-configure-ssl-certificate/).
+Wenn Sie SSL-Zertifikate hochgeladen haben, können Sie diese an benutzerdefinierte Domänennamen binden. Weitere Informationen finden Sie unter [Aktivieren von HTTPS für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-configure-ssl-certificate/).
 
 ### Bereitstellungen
 
@@ -93,7 +93,7 @@ Um die Bereitstellung über die Quellcodeverwaltung einzurichten, zeigen Sie die
 
 Optionen zum Erstellen von Diagnoseprotokollen über eine Webanwendung, die die Protokollierung unterstützt: 
 
-- <strong>Dateisystem</strong>. Schreibt Protokolle in das Dateisystem der Website. Die Dateisystemprotokollierung geht über zwölf Stunden. Sie können die Protokolle über die FTP-Freigabe der Website abrufen. (Siehe [FTP-Anmeldeinformationen](http://azure.microsoft.com/de-de/documentation/articles/web-sites-manage#ftp-credentials)).
+- <strong>Dateisystem</strong>. Schreibt Protokolle in das Dateisystem der Website. Die Dateisystemprotokollierung geht über zwölf Stunden. Sie können die Protokolle über die FTP-Freigabe der Website abrufen. (Siehe [FTP-Anmeldeinformationen](http://azure.microsoft.com/documentation/articles/web-sites-manage#ftp-credentials)).
 - <strong>Tabellenspeicher</strong>. Schreibt Protokolle in den Azure-Tabellenspeicher. Es gibt kein Zeitlimit. Die Protokollierung bleibt aktiviert, bis Sie sie deaktivieren. 
 - <strong>BLOB-Speicher</strong>. Schreibt Protokolle in den Azure-BLOB-Speicher. Es gibt kein Zeitlimit. Die Protokollierung bleibt aktiviert, bis Sie sie deaktivieren.
 
@@ -109,13 +109,13 @@ Optionen zum Erfassen von Diagnoseinformationen für Ihre Website.
 
 <strong>Webserverprotokollierung</strong>. Aktiviert die Webserverprotokollierung. Protokolle werden im erweiterten W3C-Protokolldateiformat gespeichert. Sie können die Protokolle im Azure-Speicher oder im Dateisystem der Website speichern.
  
-- Wenn Sie <strong>Dateisystem</strong> auswählen, werden die Protokolle auf der FTP-Website gespeichert, die auf der Seite "Dashboard" unter "FTP-Diagnoseprotokolle" aufgeführt ist. (Siehe [FTP-Anmeldeinformationen](http://azure.microsoft.com/de-de/documentation/articles/web-sites-manage#ftp-credentials).) 
+- Wenn Sie <strong>Dateisystem</strong> auswählen, werden die Protokolle auf der FTP-Website gespeichert, die auf der Seite "Dashboard" unter "FTP-Diagnoseprotokolle" aufgeführt ist. (Siehe [FTP-Anmeldeinformationen](http://azure.microsoft.com/documentation/articles/web-sites-manage#ftp-credentials).) 
 - Verwenden Sie bei Wahl von **Dateisystem** das Feld <strong>Kontingent</strong>, um den maximalen Speicherplatz für die Protokolldateien festzulegen. Die Mindestgröße beträgt 25 MB, das Maximum 100 MB. Die Standardgröße ist 35 MB. Sobald das Kontingent erreicht ist, werden die älteren Dateien nach und nach durch die neueren Dateien überschrieben. Wenn Sie mehr Aufzeichnungen als 100 MB beibehalten wollen, verwenden Sie den Azure-Speicher, der eine sehr viel größere Speicherkapazität hat.
 - Klicken Sie optional auf <strong>Aufbewahrung festlegen</strong>, um Dateien nach einem bestimmten Zeitraum automatisch zu löschen. Standardmäßig werden Protokolle nie gelöscht.   
 
-<strong>Detaillierte Fehlermeldungen</strong>. Wenn diese Option aktiviert ist, werden detaillierte Fehlermeldungen als HTM-Dateien gespeichert. Navigieren Sie zur Anzeige der Dateien zur FTP-Website, die auf der Seite "Dashboard" unter "FTP-Diagnoseprotokolle" aufgeführt ist. Die Dateien werden auf der FTP-Website unter "/LogFiles/DetailedErrors" gespeichert. (Siehe [FTP-Anmeldeinformationen](http://azure.microsoft.com/de-de/documentation/articles/web-sites-manage#ftp-credentials).)
+<strong>Detaillierte Fehlermeldungen</strong>. Wenn diese Option aktiviert ist, werden detaillierte Fehlermeldungen als HTM-Dateien gespeichert. Navigieren Sie zur Anzeige der Dateien zur FTP-Website, die auf der Seite "Dashboard" unter "FTP-Diagnoseprotokolle" aufgeführt ist. Die Dateien werden auf der FTP-Website unter "/LogFiles/DetailedErrors" gespeichert. (Siehe [FTP-Anmeldeinformationen](http://azure.microsoft.com/documentation/articles/web-sites-manage#ftp-credentials).)
 
-<strong>Ablaufverfolgung für Anforderungsfehler</strong>. Wenn diese Option aktiviert ist, werden fehlerhafte Anforderungen in XML-Dateien protokolliert. Navigieren Sie zur Anzeige der Dateien zur FTP-Website, die auf der Seite "Dashboard" unter "FTP-Diagnoseprotokolle" aufgeführt ist. (Siehe [FTP-Anmeldeinformationen](http://azure.microsoft.com/de-de/documentation/articles/web-sites-manage#ftp-credentials).) Die Dateien werden unter "/LogFiles/W3SVC*xxx*" gespeichert, wobei "xxx" für einen eindeutigen Bezeichnet steht. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Stellen Sie sicher, dass Sie die XSL-Datei herunterladen, da sie die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Dateien zur Verfügung stellt.
+<strong>Ablaufverfolgung für Anforderungsfehler</strong>. Wenn diese Option aktiviert ist, werden fehlerhafte Anforderungen in XML-Dateien protokolliert. Navigieren Sie zur Anzeige der Dateien zur FTP-Website, die auf der Seite "Dashboard" unter "FTP-Diagnoseprotokolle" aufgeführt ist. (Siehe [FTP-Anmeldeinformationen](http://azure.microsoft.com/documentation/articles/web-sites-manage#ftp-credentials).) Die Dateien werden unter "/LogFiles/W3SVC*xxx*" gespeichert, wobei "xxx" für einen eindeutigen Bezeichnet steht. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Stellen Sie sicher, dass Sie die XSL-Datei herunterladen, da sie die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Dateien zur Verfügung stellt.
 
 <strong>Remotedebuggen</strong> Aktiviert das Remotedebugging. Wenn diese Option aktiviert ist, können Sie mit dem Remotedebugger in Visual Studio direkt eine Verbindung mit Ihrer Azure-Website herstellen. Das Remotedebuggen bleibt 48 Stunden aktiviert.
 
@@ -132,7 +132,7 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen des Webendpu
 
 Wählen Sie <strong>Add-On</strong> aus, um ein Analyse-Add-On aus einer Liste auszuwählen, oder wählen Sie eines im Azure-Store aus. Verwenden Sie <strong>Benutzerdefiniert</strong>, um einen Analyseanbieter wie New Relic aus der Liste auszuwählen. Bei Verwendung eines benutzerdefinierten Anbieters müssen Sie den Lizenzschlüssel in das Feld <strong>Anbieterschlüssel</strong> eingeben. 
 
-Weitere Informationen zur Verwendung von New Relic mit Azure-Websites finden Sie unter <a href="http://www.windowsazure.com/de-de/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">Verwalten der Anwendungsleistung auf Azure-Websites mit New Relic</a>.
+Weitere Informationen zur Verwendung von New Relic mit Azure-Websites finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">Verwalten der Anwendungsleistung auf Azure-Websites mit New Relic</a>.
 
 ### App-Einstellungen
 
@@ -210,17 +210,17 @@ Alternativ können Sie die Website mit der Option **Benutzerdefiniert erstellen*
 
 ##<a name="howtodomain"></a>Vorgehensweise: Konfigurieren eines benutzerdefinierten Domänennamens
 
-Informationen zum Konfigurieren Ihrer Website mit einem benutzerdefinierten Domänennamen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](http://www.windowsazure.com/de-de/documentation/articles/web-sites-custom-domain-name/).
+Informationen zum Konfigurieren Ihrer Website mit einem benutzerdefinierten Domänennamen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-custom-domain-name/).
 
 ##<a name="howtoconfigSSL"></a>Vorgehensweise: Konfigurieren einer Website zur Verwendung von SSL##
 
-Informationen zur Konfiguration von SSL für eine benutzerdefinierte Domäne auf Azure finden Sie unter [Aktivieren von HTTPS für eine Azure-Website](http://www.windowsazure.com/de-de/documentation/articles/web-sites-configure-ssl-certificate/). 
+Informationen zur Konfiguration von SSL für eine benutzerdefinierte Domäne auf Azure finden Sie unter [Aktivieren von HTTPS für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-configure-ssl-certificate/). 
 
 ##<a name="next"></a>Nächste Schritte
 
-* [Skalieren von Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-scale/)
+* [Skalieren von Websites](http://azure.microsoft.com/documentation/articles/web-sites-scale/)
 
-* [Überwachen von Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-monitor/)
+* [Überwachen von Websites](http://azure.microsoft.com/documentation/articles/web-sites-monitor/)
 
 
 

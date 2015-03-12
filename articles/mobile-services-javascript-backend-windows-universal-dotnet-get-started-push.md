@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit Pushbenachrichtigungen mit einem mobilen JavaScript-Back-End-Dienst" description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre universelle Windows-App zu senden." services="mobile-services, notification-hubs" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte mit Pushbenachrichtigungen mit einem mobilen JavaScript-Back-End-Dienst" 
+	description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre universelle Windows-App zu senden." 
+	services="mobile-services, notification-hubs" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/27/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/27/2014" 
+	ms.author="glenga"/>
 
 
 # Hinzufügen von Pushbenachrichtigungen zu einer Mobile Services-App
@@ -32,7 +46,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 <li><p>Navigieren Sie zum Projektordner <code>\Services\MobileServices\your_service_name</code>, öffnen Sie die generierte Codedatei "push.register.cs" und überprüfen Sie die <strong>UploadChannel</strong>-Methode, welche die Kanal-URL des Geräts beim Notification Hub registriert.</p></li> 
 <li><p>Öffnen Sie die gemeinsam genutzte Codedatei "App.xaml.cs". Beachten Sie, dass der Aufruf der neuen <strong>UploadChannel</strong>-Methode zum <strong>OnLaunched</strong>-Ereignishandler hinzugefügt wurde.</p> <p>Dies stellt sicher, dass versucht wird, das Gerät zu registrieren, sobald die App gestartet wird.</p></li>
 <li><p>Führen Sie die vorigen Schritte erneut aus, um dem Windows Phone Store-App-Projekt Pushbenachrichtigungen hinzuzufügen, und entfernen Sie dann in der gemeinsam genutzten Datei "App.xaml.cs" den zusätzlichen Aufruf von <strong>UploadChannel</strong> sowie den übrigen bedingten <code>#if...#endif</code>-Wrapper.</p> <p>In beiden Projekten kann nun ein einziger Aufruf von <strong>UploadChannel</strong> verwendet werden.</p>
-<p>Sie können den generierten Code auch vereinfachen, indem Sie die in <code>#if...#endif</code> gekapselten <a href="http://msdn.microsoft.com/de-de/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a>-Definitionen zu einer einzigen ungekapselten Definition zusammenfassen, die von beiden Versionen der App verwendet wird.</p></li>
+<p>Sie können den generierten Code auch vereinfachen, indem Sie die in <code>#if...#endif</code> gekapselten <a href="http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a>-Definitionen zu einer einzigen ungekapselten Definition zusammenfassen, die von beiden Versionen der App verwendet wird.</p></li>
 </ol>
 
 Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie den mobilen Dienst aktualisieren und für den Versand von Pushbenachrichtigungen anpassen. 

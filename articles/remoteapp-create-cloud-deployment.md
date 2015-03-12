@@ -1,6 +1,20 @@
-﻿<properties title="How to create a cloud collection of RemoteApp" pageTitle="Erstellen einer Cloud-Sammlung von RemoteApp" description="Erfahren Sie, wie Sie eine Bereitstellung einer RemoteApp erstellen, mit der Daten in der Azure-Cloud gespeichert werden." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="kathyw" />
+﻿<properties 
+	pageTitle="Erstellen einer Cloud-Sammlung von RemoteApp" 
+	description="Erfahren Sie, wie Sie eine Bereitstellung einer RemoteApp erstellen, mit der Daten in der Azure-Cloud gespeichert werden." 
+	services="remoteapp" 
+	documentationCenter="" 
+	authors="lizap" 
+	manager="mbaldwin" 
+	editor=""/>
 
-<tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/12/2014" ms.author="elizapo" ms.manager="kathyw" />
+<tags 
+	ms.service="remoteapp" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/17/2015" 
+	ms.author="elizapo"/>
 
 #Erstellen einer Cloud-Sammlung von RemoteApp
 
@@ -20,10 +34,10 @@ Dieses Lernprogramm beschreibt die Schritte zur Erstellung einer Cloud-Sammlung.
 
 Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 
-- Melden Sie sich für RemoteApp an. Sie können sich unter [http://azure.microsoft.com/de-de/services/remoteapp/](http://azure.microsoft.com/de-de/services/remoteapp/) registrieren.
+- Melden Sie sich für RemoteApp an. Sie können sich unter [http://azure.microsoft.com/services/remoteapp/](http://azure.microsoft.com/services/remoteapp/) registrieren.
 - Sammeln Sie Informationen zu den Benutzern, denen Sie Zugriff gewähren möchten. Dies können Informationen zu Microsoft-Konten oder Active Directory-Geschäftskonten für Benutzer sein.
 - Voraussetzung ist, dass Sie entweder eins der im Rahmen Ihres Abonnements bereitgestellten Vorlagenimages verwenden oder das gewünschte Vorlagenimage bereits hochgeladen haben. Ein anderes Vorlagenimage können Sie bei Bedarf auf der Seite für Vorlagenimages hochladen. Klicken Sie auf **Vorlagenimage hochladen**, und führen Sie die Schritte im Assistenten aus. 
-- Möchten Sie benutzerdefinierte Apps oder LOB-Programme bereitstellen? Erstellen Sie ein neues [benutzerdefiniertes Vorlagenimage](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/), und verwenden Sie es in Ihrer Cloud-Sammlung.
+- Möchten Sie benutzerdefinierte Apps oder LOB-Programme bereitstellen? Erstellen Sie ein neues [benutzerdefiniertes Vorlagenimage](http://azure.microsoft.com/documentation/articles/remoteapp-create-custom-image/), und verwenden Sie es in Ihrer Cloud-Sammlung.
 
 ## **Schritt 1: Erstellen einer RemoteApp-Sammlung** ##
 
@@ -36,7 +50,7 @@ Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 4. Wählen Sie den Plan aus, den Sie verwenden möchten: "Standard" oder "Einfach".
 5. Wählen Sie die Vorlage für diese Sammlung aus. 
 
-	**Tipp:** Zu Ihrem Abonnement für RemoteApp gehören [Vorlagenimages](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-images/), die Office 365- oder Office 2013-Programme (als Testversion) enthalten, von denen einige bereits veröffentlicht (z. B. Word) und andere bereit für die Veröffentlichung sind. Sie können auch ein neues [benutzerdefiniertes Vorlagenimage](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/) erstellen und in Ihrer Cloud-Sammlung verwenden.
+	**Tipp:** Zu Ihrem Abonnement für RemoteApp gehören [Vorlagenimages](http://azure.microsoft.com/documentation/articles/remoteapp-images/), die Office 365- oder Office 2013-Programme (als Testversion) enthalten, von denen einige bereits veröffentlicht (z. B. Word) und andere bereit für die Veröffentlichung sind. Sie können auch ein neues [benutzerdefiniertes Vorlagenimage](http://azure.microsoft.com/documentation/articles/remoteapp-create-custom-image/) erstellen und in Ihrer Cloud-Sammlung verwenden.
 
 
 1. Klicken Sie auf **RemoteApp-Sammlung erstellen**.
@@ -48,7 +62,7 @@ Gehen Sie nach dem Erstellen der RemoteApp-Sammlung zur RemoteApp-Seite **Schnel
 
 ## **Schritt 2: Konfigurieren der Active Directory-Verzeichnissynchronisierung (optional)** ##
 
-Falls Sie Active Directory verwenden möchten, benötigt RemoteApp eine Verzeichnissynchronisierung zwischen Azure Active Directory und Ihrem lokalen Active Directory, um Benutzer, Kontakte und Kennwörter mit Ihrem Active Directory-Mandanten in Azure zu synchronisieren. Informationen zur Planung finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-ad/).
+Falls Sie Active Directory verwenden möchten, benötigt RemoteApp eine Verzeichnissynchronisierung zwischen Azure Active Directory und Ihrem lokalen Active Directory, um Benutzer, Kontakte und Kennwörter mit Ihrem Active Directory-Mandanten in Azure zu synchronisieren. Informationen zur Planung finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](http://azure.microsoft.com/documentation/articles/remoteapp-ad/).
 
 ## **Schritt 3: Veröffentlichen von RemoteApp-Apps** ##
 
@@ -80,3 +94,5 @@ Geschafft - Sie haben Ihre Cloud-Sammlung in RemoteApp erfolgreich erstellt und 
 
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-﻿<properties title="Manage an Azure Machine Learning workspace" pageTitle="Verwalten eines Machine Learning-Arbeitsbereichs | Azure" description="Verwalten des Zugriffs auf Azure Machine Learning-Arbeitsbereiche sowie Bereitstellen und Verwalten von ML-API-Webdiensten" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Verwalten eines Machine Learning-Arbeitsbereichs | Azure" 
+	description="Verwalten des Zugriffs auf Azure Machine Learning-Arbeitsbereiche sowie Bereitstellen und Verwalten von ML-API-Webdiensten" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/10/2015" 
+	ms.author="garye"/>
 
 
 # Verwalten eines Azure Machine Learning-Arbeitsbereichs 
@@ -27,3 +41,5 @@ Bereitstellen von Produktions-Webdiensten, siehe Link.
 
 <!--Image references-->
 [1]: ./media/machine-learning-manage-workspace/mw1.png
+
+<!--HONumber=46--> 

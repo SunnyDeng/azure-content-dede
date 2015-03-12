@@ -34,7 +34,7 @@ Es folgt ein Beispiel einer auf Azure-Websites ausgeführten Branchenanwendung. 
 
 <div class="dev-callout">
 <strong>Hinweis</strong>
-<p>In diesem Leitfaden werden einige der häufigsten Themenbereichen und Aufgaben im Zusammenhang mit Branchenanwendungen vorgestellt. Allerdings gibt es weitere Funktionen von Azure-Websites, die Sie in Ihrer speziellen Implementierung verwenden können. Weitere Informationen zu diesen Funktionen finden Sie in den Leitfäden <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/global-web-presence-solution-overview/">Globale Webpräsenz</a> und <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/digital-marketing-campaign-solution-overview">Digitale Marketingkampagnen</a>.</p>
+<p>In diesem Leitfaden werden einige der häufigsten Themenbereichen und Aufgaben im Zusammenhang mit Branchenanwendungen vorgestellt. Allerdings gibt es weitere Funktionen von Azure-Websites, die Sie in Ihrer speziellen Implementierung verwenden können. Weitere Informationen zu diesen Funktionen finden Sie in den Leitfäden <a href="http://azure.microsoft.com/manage/services/web-sites/global-web-presence-solution-overview/">Globale Webpräsenz</a> und <a href="http://azure.microsoft.com/manage/services/web-sites/digital-marketing-campaign-solution-overview">Digitale Marketingkampagnen</a>.</p>
 </div>
 
 ### Nutzen vorhandener Ressourcen
@@ -108,8 +108,8 @@ Im Hostingplan **Standard** erhalten für die Websiteüberwachung verantwortlich
 
 [Skalierung nach oben und unten]:/de-de/manage/services/web-sites/how-to-scale-websites/
 [Azure-Verwaltungsportal]:http://manage.windowsazure.com/
-[Dienstverwaltungs-API]:http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx
-[PowerShell-Skripts]:http://msdn.microsoft.com/de-de/library/windowsazure/jj152841.aspx
+[Dienstverwaltungs-API]:http://msdn.microsoft.com/library/windowsazure/ee460799.aspx
+[PowerShell-Skripts]:http://msdn.microsoft.com/library/windowsazure/jj152841.aspx
 [Troy Hunt]:https://twitter.com/troyhunt
 [10 things I learned about rapidly scaling websites with Azure]:http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure Redis Cache]:/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/

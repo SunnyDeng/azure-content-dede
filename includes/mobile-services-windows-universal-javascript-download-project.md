@@ -20,4 +20,4 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices app](http://go.mi
 	![](./media/mobile-services-windows-universal-dotnet-download-project/mobile-quickstart-startup-wp8.png)
 
 7. Wiederholen Sie die Schritte 3 und 4, um sicherzustellen, dass sich die Beispiel-App gleichermaßen verhält.
-<!--HONumber=42-->
+\<!--HONumber=42-->

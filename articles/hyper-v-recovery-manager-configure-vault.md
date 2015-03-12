@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Erste Schritte mit Azure Site Recovery: Schutz zwischen lokalen VMM-Standorten mithilfe der Hyper-V-Replikation" metaKeywords="Azure Site Recovery, VMM, Clouds, Notfallwiederherstellung" description="Mit Azure Site Recovery werden Replikation, Failover und Wiederherstellung virtueller Hyper-V-Maschinen zwischen lokalen VMM-Sites koordiniert." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery:  On-Premises to On-Premises VMM Site Protection with Hyper-V Replication" editor="jimbe" manager="johndaw" authors="raynew" />
+﻿<properties 
+	pageTitle="Lernprogramm: Einrichten von Schutz zwischen lokalen VMM-Standorten" 
+	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung von virtuellen Hyper-V-Computern zwischen lokalen VMM-Standorten." 
+	services="site-recovery" 
+	documentationCenter="" 
+	authors="raynew" 
+	manager="jwhit" 
+	editor="tysonn"/>
 
-<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/19/2014" ms.author="raynew" />
+<tags 
+	ms.service="site-recovery" 
+	ms.workload="backup-recovery" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/18/2015" 
+	ms.author="raynew"/>
 
 
 # Erste Schritte mit Azure Site Recovery:  Schutz zwischen lokalen VMM-Standorten mithilfe der Hyper-V-Replikation
@@ -241,3 +255,5 @@ Testen Sie Ihre Bereitstellung, um sicherzustellen, dass das Failover von virtue
 </UL>
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

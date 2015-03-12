@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Speichern von Projektcode in der Quellcodeverwaltung - Azure Mobile Services" description="Erfahren Sie, wie Sie Serverskriptdateien und -module in einem lokalen Git-Repository auf Ihrem Computer speichern." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung - Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie Serverskriptdateien und -module in einem lokalen Git-Repository auf Ihrem Computer speichern." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="glenga"/>
 
 <div class="dev-center-tutorial-subselector">
 	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-store-code-source-control/" title=".NET backend">.NET-Back-End</a> | <a href="/de-de/documentation/articles/mobile-services-store-scripts-source-control/"  title="JavaScript backend" class="current">JavaScript-Back-End</a>
@@ -155,7 +169,7 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 
 <!-- URLs. -->
 [Git-Website]: http://git-scm.com
-[Quellcodeverwaltung]: http://msdn.microsoft.com/de-de/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
+[Quellcodeverwaltung]: http://msdn.microsoft.com/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-ios-get-started/
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: /de-de/documentation/articles/mobile-services-ios-get-started-data/

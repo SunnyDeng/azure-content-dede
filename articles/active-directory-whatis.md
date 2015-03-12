@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="What is Azure AD?" pageTitle="Was ist Azure Active Directory?" metaKeywords="" description="Verwenden Sie Azure Active Directory, um Ihre vorhandenen lokalen Identitäten für eine optimierte Benutzerfreundlichkeit für Administratoren und Endbenutzer in die Cloud zu erweitern, während Microsoft Active Directory mit hoher Skalierbarkeit, hoher Verfügbarkeit und integrierter Notfallwiederherstellung in der Cloud ausführt. Oder entwickeln Sie in Azure AD integrierte Anwendungen für Ihre Organisation oder für andere Organisationen." metaCanonical="" services="active-directory" documentationCenter="" title="What is Azure Active Directory?" authors="justinha" solutions="" manager="terrylan" editor="" />
+﻿<properties 
+	pageTitle="Was ist Azure Active Directory?" 
+	description="Verwenden Sie Azure Active Directory, um Ihre vorhandenen lokalen Identitäten für eine optimierte Benutzerfreundlichkeit für Administratoren und Endbenutzer in die Cloud zu erweitern, während Microsoft Active Directory mit hoher Skalierbarkeit, hoher Verfügbarkeit und integrierter Notfallwiederherstellung in der Cloud ausführt. Oder entwickeln Sie in Azure AD integrierte Anwendungen für Ihre Organisation oder für andere Organisationen."
+	services="active-directory" 
+	documentationCenter="" 
+	authors="Justinha" 
+	manager="terrylan" 
+	editor=""/>
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/03/2014" ms.author="justinha" />
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/03/2015" 
+	ms.author="justinha"/>
 
 
 
@@ -28,3 +42,5 @@ Anwendungsentwickler können ihre Anwendungen in Azure AD integrieren, um ihren 
 * [Als Unternehmen für Azure registrieren](/de-de/manage/services/identity/organizational-account/)
 * [Azure-Identität](/de-de/manage/windows/fundamentals/identity/)
 * [Informationen in MSDN zu Azure AD](http://go.microsoft.com/fwlink/?LinkId=293425)
+
+<!--HONumber=46--> 

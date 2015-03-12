@@ -1,6 +1,20 @@
-﻿<properties title="Get started with Azure Search" pageTitle="Erste Schritte mit Azure Search" description="Erste Schritte mit Azure Search" metaKeywords="" services="Azure Search" solutions="" documentationCenter="" authors="Heidist" manager="mblythe" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Azure Search" 
+	description="Erste Schritte mit Azure Search" 
+	services="search" 
+	documentationCenter="" 
+	authors="HeidiSteen" 
+	manager="mblythe" 
+	editor=""/>
 
-<tags ms.service="azure-search" ms.devlang="" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="" ms.date="09/23/2014" ms.author="heidist" />
+<tags 
+	ms.service="search" 
+	ms.devlang="rest-api" 
+	ms.workload="search" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.date="01/16/2015" 
+	ms.author="heidist"/>
 
 # Erste Schritte mit Azure Search
 
@@ -292,7 +306,7 @@ Der Antwortcode sollte 200 sein, und die Antwortausgabe sollte in etwa der folge
  
    ![][19]
 
-Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azure Search-API)](http://msdn.microsoft.com/de-de/library/dn798927.aspx) auf MSDN. Viele der Beispielabfragen in diesem Thema enthalten Leerzeichen, die von Fiddler nicht unterstützt werden. Ersetzen Sie alle Leerzeichen vor dem Einfügen durch ein +-Zeichen, bevor Sie die Abfrage in Fiddler ausführen: 
+Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azure Search-API)](http://msdn.microsoft.com/library/dn798927.aspx) auf MSDN. Viele der Beispielabfragen in diesem Thema enthalten Leerzeichen, die von Fiddler nicht unterstützt werden. Ersetzen Sie alle Leerzeichen vor dem Einfügen durch ein +-Zeichen, bevor Sie die Abfrage in Fiddler ausführen: 
 
 **Vor dem Ersetzen der Leerzeichen:**
 
@@ -357,9 +371,9 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 
 - [Verwalten Ihrer Suchlösung in Microsoft Azure](../search-manage/) 
 
-- [Azure Search: Technische Übersicht](http://msdn.microsoft.com/de-de/library/dn798933.aspx)
+- [Azure Search: Technische Übersicht](http://msdn.microsoft.com/library/dn798933.aspx)
 
-- [Azure Search REST-API](http://msdn.microsoft.com/de-de/library/dn798935.aspx)
+- [Azure Search REST-API](http://msdn.microsoft.com/library/dn798935.aspx)
 
 - [Channel 9-Video: Einführung in Azure Search](http://channel9.msdn.com/Shows/Data-Exposed/Introduction-To-Azure-Search)
 
@@ -402,3 +416,5 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Erstellen einer geografischen Suchanwendung mit Azure Search]: ../search-create-geospatial/
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

@@ -1,6 +1,20 @@
-<properties title="Step 1: Create an Azure Machine Learning workspace" pageTitle="Schritt 1: Erstellen eines Machine Learning-Arbeitsbereichs | Azure" description="Schritt 1: Erstellen eines neuen Azure Machine Learning Studio-Arbeitsbereichs" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Schritt 1: Erstellen eines Machine Learning-Arbeitsbereichs | Azure" 
+	description="Exemplarische Vorgehensweise Schritt 1: Erstellen eines neuen Azure Machine Learning Studio-Arbeitsbereichs" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/06/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/29/2015" 
+	ms.author="garye"/>
 
 
 Dies ist der erste Teil der exemplarischen Vorgehensweise [Entwickeln einer Vorhersagelösung mit Azure ML][develop]:
@@ -47,3 +61,5 @@ Nach der Erstellung wird ihr ML-Arbeitsbereich auf der Seite **Machine Learning*
 **Nächster Schritt: [Hochladen vorhandener Daten][upload-data]**
 
 [1]: ./media/machine-learning-walkthrough-1-create-ml-workspace/create1.png
+
+<!--HONumber=46--> 

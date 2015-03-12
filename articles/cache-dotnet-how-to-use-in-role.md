@@ -1,6 +1,20 @@
-<properties urlDisplayName="Caching" pageTitle="Verwenden des In-Role Caches (.NET) - Azure-Featureleitfaden" metaKeywords="Azure cache, Azure caching, Azure cache, Azure caching, Azure store session state, Azure cache .NET, Azure cache C#" description="Erfahren Sie, wie Sie den In-RoleCache in Azure nutzen können. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API." metaCanonical="" services="cache" documentationCenter=".NET" title="How to Use In-Role Cache for Azure Cache" authors="sdanie" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Verwenden des In-Role Caches (.NET) – Azure-Featureleitfaden" 
+	description="Erfahren Sie, wie Sie den Azure In-Role Cache verwenden. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API." 
+	services="cache" 
+	documentationCenter=".net" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="cache" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
+<tags 
+	ms.service="cache" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="11/18/2014" 
+	ms.author="sdanie"/>
 
 
 
@@ -394,26 +408,28 @@ erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben 
   
 <!-- LINKS -->
 [Konfigurieren der Größe von virtuellen Computern]: http://go.microsoft.com/fwlink/?LinkId=164387
-[Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/de-de/library/windowsazure/gg618003.aspx
-[Gewusst wie: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/de-de/library/z852zf6b.aspx
-[Gewusst wie: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/de-de/library/zd1ysf1y.aspx
+[Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/library/windowsazure/gg618003.aspx
+[Gewusst wie: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/library/z852zf6b.aspx
+[Gewusst wie: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/library/zd1ysf1y.aspx
 [In-Role Cache - Erwägungen bezüglich der Kapazitätsplanung]: http://go.microsoft.com/fwlink/?LinkId=252651
-[In-Role Cache Beispiele]: http://msdn.microsoft.com/de-de/library/jj189876.aspx
+[In-Role Cache Beispiele]: http://msdn.microsoft.com/library/jj189876.aspx
 [In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=252658
 [In-Role Cache]: http://www.microsoft.com/de-de/showcase/Search.aspx?phrase=azure+caching
 [Maximale Leistung: Beschleunigen von Cloud-Dienstanwendungen mit Azure Caching]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/WAD-B326#fbid=kmrzkRxQ6gU
-[Migration auf den In-Role Cache]: http://msdn.microsoft.com/de-de/library/hh914163.aspx
+[Migration auf den In-Role Cache]: http://msdn.microsoft.com/library/hh914163.aspx
 [Installation des NuGet-Paket-Managers]: http://go.microsoft.com/fwlink/?LinkId=240311
-[Ausgabecacheanbieter für In-Role Cache]: http://msdn.microsoft.com/de-de/library/windowsazure/gg185662.aspx
+[Ausgabecacheanbieter für In-Role Cache]: http://msdn.microsoft.com/library/windowsazure/gg185662.aspx
 [OutputCache-Direktive]: http://go.microsoft.com/fwlink/?LinkId=251979
 [Übersicht über In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=254172
-[Sitzungsstatusanbieter für In-Role Cache]: http://msdn.microsoft.com/de-de/library/windowsazure/gg185668.aspx
+[Sitzungsstatusanbieter für In-Role Cache]: http://msdn.microsoft.com/library/windowsazure/gg185668.aspx
 [Team-Blog]: http://blogs.msdn.com/b/windowsazure/
-[Problembehebung und Diagnose für In-Role Caches]: http://msdn.microsoft.com/de-de/library/windowsazure/hh914135.aspx
+[Problembehebung und Diagnose für In-Role Caches]: http://msdn.microsoft.com/library/windowsazure/hh914135.aspx
 [Azure AppFabric Cache: Zwischenspeichern des Sitzungszustands]: http://www.microsoft.com/de-de/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Azure-Verwaltungsportal]: http://windows.azure.com/
-[Azure Shared Caching]: http://msdn.microsoft.com/de-de/library/windowsazure/gg278356.aspx
+[Azure Shared Caching]: http://msdn.microsoft.com/library/windowsazure/gg278356.aspx
 
-[Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/de-de/library/azure/dn766201.aspx
+[Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

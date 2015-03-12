@@ -21,7 +21,7 @@
 
 Azure-Websites ermöglicht das Ausführen von Programmen oder Skripts in Ihrer Website auf drei Arten: bei Bedarf, kontinuierlich oder gemäß einem Zeitplan. Für die Nutzung von Microsoft Azure-Webaufträgen fallen keine zusätzlichen Kosten an.
 
-Dieser Artikel zeigt, wie Sie WebJobs mithilfe des Azure-Verwaltungsportals bereitstellen. Informationen zum Bereitstellen über Visual Studio oder einen kontinuierlichen Bereitstellungsprozess finden Sie unter [Bereitstellen von Azure-Webaufträgen auf Azure-Websites](http://azure.microsoft.com/de-de/documentation/articles/websites-dotnet-deploy-webjobs).
+Dieser Artikel zeigt, wie Sie WebJobs mithilfe des Azure-Verwaltungsportals bereitstellen. Informationen zum Bereitstellen über Visual Studio oder einen kontinuierlichen Bereitstellungsprozess finden Sie unter [Bereitstellen von Azure-Webaufträgen auf Azure-Websites](http://azure.microsoft.com/documentation/articles/websites-dotnet-deploy-webjobs).
 
 Das Azure WebJobs-SDK vereinfacht zahlreiche WebJobs-Programmieraufgaben. Weitere Informationen finden Sie unter [Was ist das Azure-Webaufträge-SDK?](../websites-dotnet-webjobs-sdk).
 

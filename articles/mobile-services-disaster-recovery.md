@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Notfallwiederherstellung mobiler Dienste - Azure Mobile Services" description="Erfahren Sie, wie Sie Ihren mobilen Diensts nach einem Notfall wiederherstellen können." services="mobile-services" documentationCenter="" authors="brettsam" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Notfallwiederherstellung mobiler Dienste - Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie Ihren mobilen Diensts nach einem Notfall wiederherstellen können." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="brettsam" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/11/2014" ms.author="brettsam"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/11/2014" 
+	ms.author="brettsam"/>
 
 # Notfallwiederherstellung mobiler Dienste
 
@@ -73,14 +87,14 @@ Jetzt sollte der mobile Dienst in einer neuen Azure-Region wiederhergestellt wor
 <!-- Images. -->
 
 <!-- URLs. -->
-[Azure SQL-Datenbank-Geschäftskontinuität]: http://msdn.microsoft.com/de-de/library/windowsazure/hh852669.aspx
+[Azure SQL-Datenbank-Geschäftskontinuität]: http://msdn.microsoft.com/library/windowsazure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
 
-[Quellcodeverwaltungsfunktion]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/store-scripts-in-source-control/
-[Arbeiten mit dem Azure-Befehlszeilentool]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/command-line-administration/
+[Quellcodeverwaltungsfunktion]: http://azure.microsoft.com/develop/mobile/tutorials/store-scripts-in-source-control/
+[Arbeiten mit dem Azure-Befehlszeilentool]: http://azure.microsoft.com/develop/mobile/tutorials/command-line-administration/
 [Azure-Portal]: http://manage.windowsazure.com/
-[Azure Service-Dashboard]: http://www.windowsazure.com/de-de/support/service-dashboard/
-[Automatisieren von mobilen Diensten mit Befehlszeilentools]: http://www.windowsazure.com/de-de/develop/mobile/tutorials/command-line-administration/
+[Azure Service-Dashboard]: http://azure.microsoft.com/support/service-dashboard/
+[Automatisieren von mobilen Diensten mit Befehlszeilentools]: http://azure.microsoft.com/develop/mobile/tutorials/command-line-administration/
 
 
 <!--HONumber=42-->

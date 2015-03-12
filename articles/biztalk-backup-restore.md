@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="BizTalk Services: Backup and Restore" pageTitle="BizTalk Services: Sichern und Wiederherstellen | Azure" metaKeywords="" description="Azure BizTalk Services umfassen Sicherungs- und Wiederherstellungsfunktionen. Beim Erstellen einer Sicherungskopie wird eine Momentaufnahme der gegenwärtigen Konfiguration der BizTalk Services erzeugt." metaCanonical="" services="" documentationCenter="" title="BizTalk Services: Backup and Restore" authors="mandia"  solutions="" writer="mandia" manager="dwrede" editor="cgronlun"  />
+﻿<properties 
+	pageTitle="BizTalk Services: Sichern und Wiederherstellen | Azure" 
+	description="BizTalk Services umfasst Sichern und Wiederherstellen. Erfahren Sie, wie Sie eine Sicherung erstellen und wiederherstellen, und wie Sie festlegen, was gesichert werden soll. MABS, WABS" 
+	services="biztalk-services" 
+	documentationCenter="" 
+	authors="MandiOhlinger" 
+	manager="dwrede" 
+	editor="cgronlun"/>
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/14/2014" ms.author="mandia" />
+<tags 
+	ms.service="biztalk-services" 
+	ms.workload="integration" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/16/2015" 
+	ms.author="mandia"/>
 
 
 # BizTalk Services: Sichern und Wiederherstellen
@@ -16,7 +30,7 @@ Sie können BizTalk Services auch mithilfe der [BizTalk Services-REST-API](http:
 
 ##<a name="beforebackup"></a>Voraussetzungen
 
-- Sichern und Wiederherstellen ist unter Umständen nicht für alle Editionen verfügbar. Siehe [BizTalk Services: Editionen-Diagramm](http://azure.microsoft.com/de-de/documentation/articles/biztalk-editions-feature-chart/).
+- Sichern und Wiederherstellen ist unter Umständen nicht für alle Editionen verfügbar. Siehe [BizTalk Services: Editionen-Diagramm](http://azure.microsoft.com/documentation/articles/biztalk-editions-feature-chart/).
 
 	**Hinweis** Hybridverbindungen werden editionsunabhängig NICHT gesichert.
 
@@ -227,3 +241,5 @@ Um Azure BizTalk Services im Azure-Verwaltungsportal zu erstellen, wechseln Sie 
 [Restore]: ./media/biztalk-backup-restore/restore-ui.png
 [AutomaticBU]: ./media/biztalk-backup-restore/AutomaticBU.png
 [RestoreBizTalkService]: ./media/biztalk-backup-restore/RestoreBizTalkServiceWindow.png
+
+<!--HONumber=46--> 

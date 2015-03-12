@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Dashboard, Monitor, Scale, Configure and Hybrid Connections tabs" pageTitle="Dashboard, Überwachen und Skalieren in BizTalk Services | Azure" metaKeywords="BizTalk Services, Azure, dashboard, monitor, scale, wabs, mabs" description="Erfahren Sie mehr über die Steuerelemente auf den Registerkarten des Verwaltungsportals für BizTalk Services: Dashboard, Überwachen und Skalieren." metaCanonical="" services="biztalk-services" documentationCenter="" title=" Monitor and Scale tabs" authors="mandia" solutions="" manager="dwrede" editor="cgronlun" />
+﻿<properties 
+	pageTitle="Dashboard, Überwachen und Skalieren in BizTalk Services | Azure" 
+	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des Verwaltungsportals für BizTalk Services: "Dashboard", "Überwachen", "Skalieren", "Konfigurieren" und "Hybridverbindungen". MABS, WABS" 
+	services="biztalk-services" 
+	documentationCenter="" 
+	authors="MandiOhlinger" 
+	manager="dwrede" 
+	editor="cgronlun"/>
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia" />
+<tags 
+	ms.service="biztalk-services" 
+	ms.workload="integration" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/16/2015" 
+	ms.author="mandia"/>
 
 
 
@@ -47,7 +61,7 @@ Eventuell stehen nicht alle aufgeführten Optionen für alle BizTalk Services Ed
 
 <tr>
         <td><strong>Erfahren Sie mehr über BizTalk Services</strong></td>
-        <td>Gehen Sie in das <a HREF="http://azure.microsoft.com/de-de/documentation/services/biztalk-services/">Learning Center</a>, um mehr über Azure BizTalk Services zu erfahren.</td>
+        <td>Gehen Sie in das <a HREF="http://azure.microsoft.com/documentation/services/biztalk-services/">Learning Center</a>, um mehr über Azure BizTalk Services zu erfahren.</td>
 </tr>
 </table>
 
@@ -341,7 +355,7 @@ Stellt den Sicherungsstatus auf "Keine" oder "Automatisch" ein. Bei Einstellung 
 
 Informationen zum Erstellen von Hybridverbindungen in Azure Websites finden Sie unter [Hybrid Connection: Connect an Azure Web Site to an On-Premises Resource](http://go.microsoft.com/fwlink/p/?LinkId=397538) (Hybridverbindungen: Verbinden einer Azure-Website mit einer lokalen Ressource, in englischer Sprache).
 
-Informationen zur Verwendung von Hybridverbindungen in Azure Mobile Services finden Sie unter [Azure Mobile Services und Hybridverbindungen](http://azure.microsoft.com/de-de/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started).
+Informationen zur Verwendung von Hybridverbindungen in Azure Mobile Services finden Sie unter [Azure Mobile Services und Hybridverbindungen](http://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started).
 
 Informationen zum Erstellen oder Verwalten von Hybridverbindungen in Azure BizTalk Services finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
 
@@ -365,3 +379,5 @@ Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr
 [AddMetrics]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_AddMetrics.png
 [GrayedMetric]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_GrayedMetric.png
 [EnabledMetric]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_EnabledMetric.png
+
+<!--HONumber=46--> 

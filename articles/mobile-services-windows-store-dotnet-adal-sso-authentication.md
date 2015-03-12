@@ -1,17 +1,31 @@
-﻿<properties pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (Windows Store) | Mobile Developer Center" description="Erfahren Sie, wie Sie Benutzer für das für einmalige Anmelden mit ADAL in Ihrer Windows Store-Anwendung authentifizieren." documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor="" services=""/>
+<properties 
+	pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (Windows Store) | Mobile Developer Center" 
+	description="Erfahren Sie, wie Sie Benutzer für das für einmalige Anmelden mit ADAL in Ihrer Windows Store-Anwendung authentifizieren." 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor="" 
+	services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="10/14/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="10/14/2014" 
+	ms.author="wesmc"/>
 
 # Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden
 
 [AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
-In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe der Active Directory-Authentifizierungsbibliothek Authentifizierung hinzu, um [vom Client angewiesene Anmeldevorgänge](http://msdn.microsoft.com/de-de/library/azure/jj710106.aspx) mit Azure Active Directory zu unterstützen. Um [vom Dienst angewiesene Anmeldevorgänge](http://msdn.microsoft.com/de-de/library/azure/dn283952.aspx) mit Azure Active Directory zu unterstützen, beginnen Sie mit dem Lernprogramm [Hinzufügen von Authentifizierung zur Mobile Services-App](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/).
+In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe der Active Directory-Authentifizierungsbibliothek Authentifizierung hinzu, um [vom Client angewiesene Anmeldevorgänge](http://msdn.microsoft.com/library/azure/jj710106.aspx) mit Azure Active Directory zu unterstützen. Um [vom Dienst angewiesene Anmeldevorgänge](http://msdn.microsoft.com/library/azure/dn283952.aspx) mit Azure Active Directory zu unterstützen, beginnen Sie mit dem Lernprogramm [Hinzufügen von Authentifizierung zur Mobile Services-App](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/).
 
 Um Benutzer authentifizieren zu können, müssen Sie Ihre Anwendung in Azure Active Directory (AAD) registrieren. Dazu sind zwei Schritte erforderlich. Zunächst müssen Sie Ihren mobilen Dienst registrieren und entsprechende Berechtigungen vergeben. Anschließend müssen Sie Ihre Windows Store-App registrieren und der App Zugriff auf diese Berechtigungen gewähren
 
 
->[AZURE.NOTE] In diesem Lernprogramm erfahren Sie, wie Sie die Authentifizierung per einmaliger Anmeldung in Azure Active Directory für Windows Store-Apps mithilfe eines [vom Client angewiesenen Anmeldevorgangs](http://msdn.microsoft.com/de-de/library/azure/jj710106.aspx) durchführen. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
+>[AZURE.NOTE] In diesem Lernprogramm erfahren Sie, wie Sie die Authentifizierung per einmaliger Anmeldung in Azure Active Directory für Windows Store-Apps mithilfe eines [vom Client angewiesenen Anmeldevorgangs](http://msdn.microsoft.com/library/azure/jj710106.aspx) durchführen. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 

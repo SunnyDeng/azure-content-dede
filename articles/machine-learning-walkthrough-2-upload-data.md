@@ -1,6 +1,20 @@
-<properties title="Step 2: Upload existing data into an Azure Machine Learning experiment" pageTitle="Schritt 2: Hochladen von Daten in ein Azure Machine Learning-Experiment | Azure" description="Schritt 2: Hochladen vorhandener öffentlicher Daten in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="big-data" documentationCenter="" authors="garye" videoId="" scriptId="" manager="paulettm" editor="cgronlun" />
+﻿<properties 
+	pageTitle="Schritt 2: Hochladen von Daten in ein Azure Machine Learning-Experiment | Azure" 
+	description="Exemplarische Vorgehensweise Schritt 2: Hochladen vorhandener öffentlicher Daten in Azure Machine Learning Studio" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/02/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/06/2015" 
+	ms.author="garye"/>
 
 Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit Azure ML][develop]:
 
@@ -70,3 +84,5 @@ Daraufhin werden die Daten in ein Datensatzmodul hochgeladen, das wir in einem E
 **Nächster Schritt: [Erstellen eines neuen Experiments][create-new]**
 
 [1]: ./media/machine-learning-walkthrough-2-upload-data/upload1.png
+
+<!--HONumber=46--> 

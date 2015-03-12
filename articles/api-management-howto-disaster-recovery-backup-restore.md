@@ -1,6 +1,20 @@
-<properties pageTitle="How to implement disaster recovery using service backup and restore in Azure API Management" metaKeywords="" description="Learn how to use backup and restore to perform disaster recovery in Azure API Management." metaCanonical="" services="api-management" documentationCenter="API Management" title="How to implement disaster recovery using service backup and restore in Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
+﻿<properties 
+	pageTitle="So implementieren Sie die Notfallwiederherstellung mit Sichern und Wiederherstellen von Diensten in Azure API Management" 
+	description="Erfahren SIe, wie Sie Sichern und Wiederherstellen zur Notfallwiederherstellung in Azure API Management verwenden." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/18/2014" 
+	ms.author="sdanie"/>
 
 # So implementieren Sie die Notfallwiederherstellung mit Sichern und Wiederherstellen von Diensten in Azure API Management
 
@@ -81,7 +95,9 @@ Die Wiederherstellung ist ein länger anhaltender Vorgang, der bis zum Abschluss
 -   **Die Ebene** des wiederherzustellenden Diensts **muss der Ebene des gesicherten Diensts entsprechen**.
 -   **Änderungen** an der Dienstkonfiguration (z. B. APIs, Richtlinien, Erscheinungsbild des Entwicklerportals), die während des Wiederherstellungsvorgangs vorgenommen werden, **könnten überschrieben werden**.
 
-  [Authenticating Azure Resource Manager requests]: http://msdn.microsoft.com/de-de/library/dn790557.aspx
+  [Authenticating Azure Resource Manager requests]: http://msdn.microsoft.com/library/dn790557.aspx
   [Sichern eines API-Verwaltungsdiensts]: #step1
   [Wiederherstellen eines API-Verwaltungsdiensts]: #step2
-  [Azure API Management REST API]: http://msdn.microsoft.com/de-de/library/azure/dn781421.aspx
+  [Azure API Management REST API]: http://msdn.microsoft.com/library/azure/dn781421.aspx
+
+<!--HONumber=46--> 

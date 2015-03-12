@@ -61,7 +61,7 @@ Um zu bestimmen, in welchem Umfang eine Website die Ressourcennutzungskontingent
 	-	**Dateisystemspeicher** - Wenn dieses Kontingent erreicht wird, bleibt der Dateisystemspeicher für Lesevorgänge weiterhin erreichbar. Alle Schreibvorgänge sind jedoch blockiert, einschließlich derjenigen, die für normale Websiteaktivitäten erforderlich sind. Schreibvorgänge werden wieder aufgenommen, wenn Sie die Dateinutzung verringern oder die Webseite in einen Webhostingplan mit einem höheren Kontingent verschieben.
 	-	**Verknüpfte Ressourcen** - Kontingente für etwaige verknüpfte Ressourcen auf der Website wie etwa eine Datenbank oder Speicher werden hier ebenfalls angezeigt.
 
-	Einige Kontingente lassen sich pro Webhostingplan nutzen, andere pro Website. Detailinformationen zu Nutzungskontingenten für jeden Webhostingplan finden Sie unter [Websitelimits](http://azure.microsoft.com/de-de/documentation/articles/azure-subscription-service-limits/#websiteslimits).
+	Einige Kontingente lassen sich pro Webhostingplan nutzen, andere pro Website. Detailinformationen zu Nutzungskontingenten für jeden Webhostingplan finden Sie unter [Websitelimits](http://azure.microsoft.com/documentation/articles/azure-subscription-service-limits/#websiteslimits).
 
 
 ##<a name="resourceusage"></a>Vorgehensweise: Kontingentüberschreitungen vermeiden
@@ -106,7 +106,7 @@ Da die Anwendungsprotokollierung im Speicher die Verwendung eines Speicherclient
 
 > [AZURE.NOTE] Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden.
 > 
-> Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://azure.microsoft.com/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 > [AZURE.NOTE] Die Anwendungsprotokollierung beruht auf Protokollinformationen, die von Ihrer Anwendung erzeugt werden. Die verwendete Methode zum Erzeugen von Protokollinformationen sowie das Format der Informationen hängt von der Sprache ab, in der Ihre Anwendung geschrieben ist. Erläuterungen zur sprachspezifischen Verwendung der Anwendungsprotokollierung finden Sie in den folgenden Artikeln:
 > 
@@ -173,7 +173,7 @@ Protokolldateien können entweder mit FTP, Azure PowerShell oder den Azure-Befeh
 
 1. Suchen Sie auf dem **Startbildschirm** oder im **Startmenü** nach **Azure PowerShell**. Klicken Sie mit der rechten Maustaste auf den Eintrag **Azure PowerShell**, und wählen Sie **Als Administrator ausführen** aus.
 
-	> [AZURE.NOTE] Falls **Azure PowerShell** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Erste Schritte mit Azure PowerShell-Cmdlets](http://msdn.microsoft.com/de-de/library/windowsazure/jj554332.aspx).
+	> [AZURE.NOTE] Falls **Azure PowerShell** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Erste Schritte mit Azure PowerShell-Cmdlets](http://msdn.microsoft.com/library/windowsazure/jj554332.aspx).
 
 2. Geben Sie an der Eingabeaufforderung von Azure PowerShell den folgenden Befehl ein, um die Protokolldateien herunterzuladen:
 
@@ -201,7 +201,7 @@ Sie können auch einen Live-Stream der Protokollereignisse mit dem folgenden Bef
 
 Daraufhin werden die Protokollinformationen an der Eingabeaufforderung, PowerShell, Bash- oder Terminalsitzung angezeigt, von der der Befehl ausgeführt wird.
 
-> [AZURE.NOTE] Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-Befehlszeilentools](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
+> [AZURE.NOTE] Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-Befehlszeilentools](http://azure.microsoft.com/develop/nodejs/how-to-guides/command-line-tools/).
 
 ###Lesen der Protokolldateien
 
@@ -276,9 +276,9 @@ Nachdem Sie die Endpunktüberwachung konfiguriert haben, können Sie Details zu 
 
 Weitere Informationen zur Überwachung von Website-Endpunkten erhalten Sie in den folgenden Videos:
 
-- [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endpunktüberwachung](http://www.windowsazure.com/de-de/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
+- [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endpunktüberwachung](http://azure.microsoft.com/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
 
-- [Pflegen von Azure-Websites plus Endpunktüberwachung - mit Stefan Schackow](http://www.windowsazure.com/de-de/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
+- [Pflegen von Azure-Websites plus Endpunktüberwachung - mit Stefan Schackow](http://azure.microsoft.com/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
 
 
 

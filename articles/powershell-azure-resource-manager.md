@@ -1,6 +1,20 @@
-<properties pageTitle="Verwenden von Windows PowerShell mit dem Ressourcen-Manager" metaKeywords="ResourceManager, PowerShell, Azure PowerShell" description="Windows PowerShell zum Erstellen einer Ressourcengruppe verwenden" metaCanonical="" services="" documentationCenter="" title="Using Windows PowerShell with Resource Manager" authors="stevenka; juneb" solutions="" manager="stevenka" editor="mollybos" />
+﻿<properties 
+	pageTitle="Verwenden von Windows PowerShell mit dem Ressourcen-Manager" 
+	description="Verwenden von Windows PowerShell zum Erstellen einer Ressourcengruppe" 
+	services="" 
+	documentationCenter="" 
+	authors="sdkaczmarek" 
+	manager="stevenka" 
+	editor="mollybos"/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="powershell" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="stevenka; juneb" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="powershell" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="12/02/2014" 
+	ms.author="stevenka"/>
 
 # Verwenden von Windows PowerShell mit dem Ressourcen-Manager
 
@@ -474,19 +488,21 @@ So erhalten Sie weitere Informationen zum Verwenden von Windows PowerShell mit d
 
   [Windows Management Framework 3.0]: http://www.microsoft.com/de-de/download/details.aspx?id=34595
   [Windows Management Framework 4.0]: http://www.microsoft.com/de-de/download/details.aspx?id=40855
-  [Installieren und Konfigurieren von Windows Azure PowerShell]: http://www.windowsazure.com/de-de/documentation/articles/install-configure-powershell/
-  [Erste Schritte mit Windows PowerShell]: http://technet.microsoft.com/de-de/library/hh857337.aspx
+  [Installieren und Konfigurieren von Windows Azure PowerShell]: http://azure.microsoft.com/documentation/articles/install-configure-powershell/
+  [Erste Schritte mit Windows PowerShell]: http://technet.microsoft.com/library/hh857337.aspx
   [Info zu Azure PowerShell-Modulen]: #about
   [Erstellen einer Ressourcengruppe]: #create
   [Verwalten einer Ressourcengruppe]: #manage
   [Problembehandlung für eine Ressourcengruppe]: #troubleshoot
   [Nächste Schritte]: #next
-  [Azure Service Management Cmdlets]: http://msdn.microsoft.com/de-de/library/jj152841.aspx
+  [Azure Service Management Cmdlets]: http://msdn.microsoft.com/library/jj152841.aspx
   [Azure Resource Manager Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=394765
   [Azure Profile Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=394766
   [Switch-AzureMode]: http://go.microsoft.com/fwlink/?LinkID=394398
-  [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen]: http://azure.microsoft.com/de-de/documentation/articles/azure-preview-portal-using-resource-groups
-  [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager]: http://www.windowsazure.com/de-de/documentation/articles/xplat-cli-azure-resource-manager/
+  [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen]: http://azure.microsoft.com/documentation/articles/azure-preview-portal-using-resource-groups
+  [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager]: http://azure.microsoft.com/documentation/articles/xplat-cli-azure-resource-manager/
   [Azure-Blog]: http://blogs.msdn.com/windowsazure
   [Windows PowerShell-Blog]: http://blogs.msdn.com/powershell
   ["Hey, Scripting Guy!"- Blog]: http://blogs.technet.com/b/heyscriptingguy/
+
+<!--HONumber=46--> 

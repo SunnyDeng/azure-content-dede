@@ -1,6 +1,19 @@
-<properties pageTitle="Serviceseitige Autorisierung (Android) | Mobile Dev Center" description="Erfahren Sie, wie Sie Benutzer im JavaScript-Back-End von Azure Mobile Services autorisieren." services="" documentationCenter="android" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Serviceseitige Autorisierung (Android) | Mobile Dev Center" 
+	description="Erfahren Sie, wie Sie Benutzer im JavaScript-Back-End von Azure Mobile Services autorisieren." services="" 
+	documentationCenter="android" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="09/29/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="Mobile-Android" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/29/2014" 
+	ms.author="glenga"/>
 
 # Dienstweite Autorisierung von Mobile Services-Benutzern
 

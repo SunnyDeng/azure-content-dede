@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit Pushbenachrichtigungen mit einem mobilen .NET-Back-End-Dienst" description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre universelle Windows-App zu senden." services="mobile-services, notification-hubs" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte mit Pushbenachrichtigungen mit einem mobilen .NET-Back-End-Dienst" 
+	description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre universelle Windows-App zu senden." 
+	services="mobile-services, notification-hubs" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/27/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="javascript" 
+	ms.topic="article" 
+	ms.date="09/27/2014" 
+	ms.author="glenga"/>
 
 
 # Hinzufügen von Pushbenachrichtigungen zu einer Mobile Services-App
@@ -54,7 +68,7 @@ Die restlichen Schritte in diesem Abschnitt sind optional. Sie dienen dazu, die 
 
 <ol start="5">
 <li><p>Navigieren Sie zum <code>\services\mobileServices\settings</code> Projektordner, kopieren Sie die erzeugte Skriptdatei &lt;<em>your_service_name</em>&gt;.js in den gemeinsam genutzten <code>\js</code> Projektordner, und löschen Sie dann diese Datei aus dem Windows-App- und aus dem Windows Phone-App-Projekt. Löschen Sie diese Datei auch aus dem <code>\services\mobileServices\scripts</code> Ordner in jedem Projekt, sofern sie dort auch vorhanden ist.</p></li> 
-<li><p>Öffnen Sie die Skriptdatei im gemeinsam genutzten <code>\js</code> Projektordner, und kommentieren Sie den vorhandenen Code aus, der das <a href="http://msdn.microsoft.com/de-de/library/azure/jj554219.aspx">MobileServiceClient object</a> definiert, das für den Zugriff auf den in Azure ausgeführten mobilen Dienst verwendet wird.</p></li>
+<li><p>Öffnen Sie die Skriptdatei im gemeinsam genutzten <code>\js</code> Projektordner, und kommentieren Sie den vorhandenen Code aus, der das <a href="http://msdn.microsoft.com/library/azure/jj554219.aspx">MobileServiceClient object</a> definiert, das für den Zugriff auf den in Azure ausgeführten mobilen Dienst verwendet wird.</p></li>
 <li><p>Fügen Sie eine neue <strong>MobileServiceClient</strong>-Objektdefinition mit demselben Namen hinzu, die jedoch im Konstruktor die URL des lokalen Computers verwendet, ähnlich dem folgenden Code:</p>
 <pre><code>// This MobileServiceClient has been configured to communicate with your local
 // test project for debugging purposes.

@@ -1,6 +1,20 @@
-﻿<properties title="Survival Analysis" pageTitle="Lebensdaueranalysen | Azure" description="Lebensdaueranalysen" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="jaymathe" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Lebensdaueranalysen | Azure" 
+	description="Eintrittswahrscheinlichkeit eines Ereignisses in der Lebensdaueranalyse" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="jaymathe" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/08/2014" ms.author="jaymathe" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/11/2015" 
+	ms.author="jaymathe"/> 
 
 
 #Lebensdaueranalysen 
@@ -70,7 +84,7 @@ Die Interpretation dieses Tests lautet wie folgt. Angenommen, das Ziel der Daten
 
 ##Erstellen des Webdiensts
 
->Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
+>Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
 Aus Azure ML wurde ein neues leeres Experiment erstellt, und zwei "R Skript ausführen"-Module wurden auf den Arbeitsbereich gezogen. Das Datenschema wurde mit einem einfachen "R-Skript ausführen"-Modul erstellt, welches das Schema der Eingabedaten für den Webdienst definiert. Dieses Modul wird dann mit dem zweiten "R-Skript ausführen"-Modul verknüpft, das die Hauptarbeit übernimmt. Dieses Modul führt die Datenvorverarbeitung, Modellerstellung und Vorhersagen aus. Beim Schritt der Datenvorverarbeitung werden die Eingabedaten, die durch eine lange Zeichenfolge dargestellt werden, transformiert und in einem Datenrahmen konvertiert. Im Modellerstelungsschritt wird ein externes R-Paket "survival_2.37-7.zip" zuerst für die Durchführung von Lebensdaueranalysen installiert. Anschließend wird die Funktion "coxph" nach einer Reihe von Datenverarbeitungsaufgaben ausgeführt. Die Details der Funktion "coxph" für Lebensdaueranalysen können der R-Dokumentation entnommen werden. Im Prognoseschritt wird eine Testinstanz in das trainierte Modell mit der Funktion "surfit" ein gespeist und die Lebensdauerkurve für diese Testinstanz wird als Variable "curve" erstellt. Schließlich erhalten Sie die Wahrscheinlichkeit des erwarteten Zeitpunkts. 
 
@@ -172,6 +186,8 @@ Aus Azure ML wurde ein neues leeres Experiment erstellt, und zwei "R Skript ausf
 Dieser Webdienst kann nur numerische Werte als Funktionsvariablen (Spalten) enthalten. Die Spalte "event" kann nur den Wert 0 oder 1 akzeptieren. Der Wert der Spalte "time" muss eine positive ganze Zahl sein.
 
 ##Häufig gestellte Fragen
-Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-marketplace-faq).
+Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/documentation/articles/machine-learning-marketplace-faq).
 
 [1]: ./media/machine-learning-r-csharp-survival-analysis/survive_img2.png
+
+<!--HONumber=46--> 

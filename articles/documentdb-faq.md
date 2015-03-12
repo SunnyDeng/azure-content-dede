@@ -1,6 +1,20 @@
-﻿<properties title="Frequently asked questions about DocumentDB" pageTitle="Häufig gestellte Fragen zu DocumentDB | Azure" description="Antworten auf häufig gestellte Fragen zum Azure DocumentDB-nosql-Dokumentdatenbankdienst. Erfahren Sie mehr über Kapazitäts- und Anforderungseinheiten und verstehen Sie, wie Sie Ihre Anwendungsanforderungen skalieren." metaKeywords="NoSQL, DocumentDB,  database, document-orientated database, JSON, faq"   services="documentdb" solutions="data-management"   authors="spelluru" manager="jhubbard" editor="monicar" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Häufig gestellte Fragen zu DocumentDB | Azure" 
+	description="Antworten auf häufig gestellte Fragen zum Azure DocumentDB-nosql-Dokumentdatenbankdienst. Erfahren Sie mehr über Kapazitäts- und Anforderungseinheiten und verstehen Sie, wie Sie Ihre Anwendungsanforderungen skalieren." 
+	services="documentdb" 
+	authors="mimig1" 
+	manager="jhubbard" 
+	editor="monicar" 
+	documentationCenter=""/>
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="12/22/2014" 
+	ms.author="mimig"/>
 
 
 #Häufig gestellte Fragen zu DocumentDB
@@ -32,7 +46,7 @@ Ja, DocumentDB unterstützt dokumentübergreifende Transaktionen, die in Form vo
 DocumentDB ist eine gute Wahl für neue mobile und Webanwendungen, wenn Skalierung, Leistung und Abfrage schemafreier Daten wichtig sind. DocumentDB ist gut für schnelle Entwicklungen und für die Unterstützung kontinuierlicher Iterationen von Anwendungsdatenmodellen geeignet. Anwendungen, die von Benutzern erzeugte Inhalte und Daten verwalten, sind ein häufiger Verwendungszweck von DocumentDB.  
 
 ###Wie sind die Größen- und Kapazitätsbeschränkungen?
-Jedes Azure DocumentDB-Konto unterstützt eine maximale Anzahl von Kapazitätseinheiten, die im Azure-Portal konfiguriert werden kann. Wenn Sie weitere Kapazitätseinheiten benötigen, wenden Sie sich an den Support, um das Kontingent zu erhöhen.  Weitere Informationen zu Ressourcenkontingenten finden Sie unter [DocumentDB-Einschränkungen für die Vorschauversion.](http://azure.microsoft.com/en-us/documentation/articles/documentdb-limits/) 
+Jedes Azure DocumentDB-Konto unterstützt eine maximale Anzahl von Kapazitätseinheiten, die im Azure-Portal konfiguriert werden kann. Wenn Sie weitere Kapazitätseinheiten benötigen, wenden Sie sich an den Support, um das Kontingent zu erhöhen.  Weitere Informationen zu Ressourcenkontingenten finden Sie unter [DocumentDB-Einschränkungen für die Vorschauversion.](http://azure.microsoft.com/documentation/articles/documentdb-limits/) 
 
 
 ###Wie viel kostet Microsoft Azure DocumentDB?
@@ -87,3 +101,5 @@ Ja. Da es sich bei DocumentDB um einen RESTful-Dienst handelt, sind Ressourcenli
 
 [preview-portal]: https://portal.azure.com
 [query]: ../documentdb-sql-query/
+
+<!--HONumber=46--> 

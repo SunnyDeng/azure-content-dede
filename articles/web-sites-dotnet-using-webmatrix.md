@@ -30,7 +30,7 @@ Sie erhalten Informationen zu folgenden Themen:
 * Bereitstellen der benutzerdefinierten Website direkt über WebMatrix in Azure
 
 > [AZURE.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können Ihre <a href="http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/">Vorteile für MSDN-Abonnenten aktivieren</a> oder <a href="http://azure.microsoft.com/de-de/pricing/free-trial/">sich für eine kostenlose Testversion anmelden</a>.
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können Ihre <a href="http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/">Vorteile für MSDN-Abonnenten aktivieren</a> oder <a href="http://azure.microsoft.com/pricing/free-trial/">sich für eine kostenlose Testversion anmelden</a>.
 > Wenn Sie Azure-Websites ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/">https://trywebsites.azurewebsites.net</a>. Auf dieser Seite können Sie sofort und kostenlos eine befristete ASP.NET Starter Site in Azure-Websites erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Anmelden bei Azure
@@ -248,7 +248,7 @@ Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure be
 
 
 [sendmailissues]: http://go.microsoft.com/fwlink/?LinkId=253001#email
-[sendgridexample]: http://azure.microsoft.com/de-de/documentation/articles/sendgrid-dotnet-how-to-send-email/
+[sendgridexample]: http://azure.microsoft.com/documentation/articles/sendgrid-dotnet-how-to-send-email/
 
 
 

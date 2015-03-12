@@ -1,6 +1,20 @@
-﻿<properties title="FAQ for publishing and using Machine Learning apps in the Azure Marketplace" pageTitle="Häufig gestellte Fragen zur Veröffentlichung und Verwendung von Machine Learning-apps im Azure Marketplace | Azure" description="Häufig gestellte Fragen" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="jaymathe" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Häufig gestellte Fragen zur Veröffentlichung und Verwendung von Machine Learning-apps im Azure Marketplace | Azure" 
+	description="Häufig gestellte Fragen"
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="luisca" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/13/2014" ms.author="jaymathe" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/10/2015" 
+	ms.author="luisca"/> 
 
 #Häufig gestellte Fragen zur Veröffentlichung und Verwendung von Machine Learning-apps im Azure Marketplace | Azure
 
@@ -15,7 +29,7 @@ Antwort: Sie sollten Ihr Marketplace-Konto als den Benutzernamen und den primär
 
 ###Frage 3: Nach der Eingabe für den Webdienst in "Dieses Dataset durchsuchen" wird die folgende Fehlermeldung angezeigt. Warum bekomme ich diesen Fehler?
 Unerwarteter Fehler beim Verarbeiten Ihrer Anforderung. Bitte versuchen Sie es später noch einmal.
-Antwort: Eine oder mehrere Eingabeparameter Ihres Webdiensts haben möglicherweise die maximale Länge bei der Nutzung des Webdiensts auf der Marketplace-Seite "Dieses Dataset durchsuchen" überschritten. Die Dienste können möglicherweise mit einer höheren Eingabelänge mit HTTP POST-Methoden aufgerufen werden. Beispielcode wird unter den hier beschriebenen Beispieldiensten bereitgestellt: http://azure.microsoft.com/de-de/documentation/articles/machine-learning-r-csharp-web-service-examples/.
+Antwort: Eine oder mehrere Eingabeparameter Ihres Webdiensts haben möglicherweise die maximale Länge bei der Nutzung des Webdiensts auf der Marketplace-Seite "Dieses Dataset durchsuchen" überschritten. Die Dienste können möglicherweise mit einer höheren Eingabelänge mit HTTP POST-Methoden aufgerufen werden. Beispielcode wird unter den hier beschriebenen Beispieldiensten bereitgestellt: http://azure.microsoft.com/documentation/articles/machine-learning-r-csharp-web-service-examples/.
 
 ###
 
@@ -44,3 +58,5 @@ Antwort: Weitere Informationen erhalten Sie vom Marketplace-Team unter datamarke
 
 
 
+
+<!--HONumber=46--> 

@@ -21,8 +21,8 @@
 [MySQL][MySQL] ist eine beliebte Open-Source-SQL-Datenbank. In diesem Lernprogramm wird Folgendes erläutert:
 
 - Verwenden des [Azure-Verwaltungsportals][AzurePortal] zum Erstellen eines virtuellen Computers mit OpenSUSE Linux von einem über Azure verfügbaren Image.
-- Gewusst wie: Verbinden des virtuellen Computers über SSH oder PuTTY
-- Gewusst wie: Installieren von MySQL auf dem virtuellen Computer
+- Verbinden des virtuellen Computers über SSH oder PuTTY
+- Installieren von MySQL auf dem virtuellen Computer
 
 [AZURE.INCLUDE [antares-iaas-signup-iaas](../includes/antares-iaas-signup-iaas.md)]
 
@@ -41,4 +41,7 @@ In diesem Lernprogramm haben Sie gelernt, einen virtuellen Computer mit OpenSUSE
 [MySQL]: http://www.mysql.com
 [AzurePortal]: http://manage.windowsazure.com
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

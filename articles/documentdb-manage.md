@@ -1,6 +1,20 @@
-﻿<properties title="Manage DocumentDB capacity and performance" pageTitle="Verwalten der Kapazität und Leistung von DocumentDB | Azure" description="Erfahren Sie, wie Sie DocumentDB elastisch an die Leistungs- und Speicheranforderungen Ihrer Anwendung anpassen." metaKeywords="" services="documentdb" solutions="data-management"  authors="bradsev" manager="jhubbard" editor="cgronlun"  videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Verwalten der Kapazität und Leistung von DocumentDB | Azure" 
+	description="Erfahren Sie, wie Sie DocumentDB elastisch an die Leistungs- und Speicheranforderungen Ihrer Anwendung anpassen." 
+	services="documentdb" 
+	authors="mimig1" 
+	manager="jhubbard" 
+	editor="cgronlun" 
+	documentationCenter=""/>
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/20/2014" ms.author="spelluru" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/13/2015" 
+	ms.author="mimig"/>
 
 #Verwalten der Kapazität und Leistung von DocumentDB
 DocumentDB ist ein vollständig verwalteter, in hohem Maße skalierbarer dokumentorientierter NoSQL-Datenbankdienst.  	Mit DocumentDB müssen Sie keine virtuellen Computer mieten, Software bereitstellen, Datenbanken überwachen oder sich Gedanken über die Notfallwiederherstellung machen. DocumentDB wird von Microsoft-Entwicklern betrieben und ständig überwacht, um erstklassige Verfügbarkeit, Leistung und Datensicherheit zu gewährleisten.  
@@ -66,3 +80,5 @@ Mit jeder gekauften CU werden Ihrem Konto 10 GB SSD-gestützter Dokumentspeicher
 
 Standardmäßig werden alle Dokumente von DocumentDB automatisch indiziert. Wenn Sie den Index-Overhead jedoch optimieren möchten, können Sie beim Einfügen oder Ersetzen eines Dokuments bestimmte Dokumente aus der Indizierung ausschließen. Sie können eine DocumentDB-Auflistung so konfigurieren, dass alle Dokumente innerhalb der Auflistung von der Indizierung ausgeschlossen werden. Sie können auch eine DocumentDB-Auflistung für die selektive Indizierung nur bestimmter Eigenschaften oder Pfade mit Platzhaltern Ihrer JSON-Dokumente konfigurieren.  Das Ausschließen von Eigenschaften oder Dokumenten verbessert auch den Schreibdurchsatz, was bedeutet, dass Sie weniger Anforderungseinheiten verbrauchen.   
  
+
+<!--HONumber=46--> 

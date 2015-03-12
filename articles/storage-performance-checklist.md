@@ -92,7 +92,7 @@ Jeder Azure-Speicherdienst hat Skalierbarkeitsziele für Kapazität (GB), Transa
 -	[Warteschlangennachrichten pro Sekunde](#subheading39)  
 
 ####<a name="sub1bandwidth"></a>Bandbreiten-Skalierbarkeitsziele für alle Dienste
-Zum Redaktionszeitpunkt betrugen die Bandbreitenziele in den USA für georedundante Speicherkonten (GRS) 10 Gigabit pro Sekunde (GBit/s) für eingehende Daten (an das Speicherkonto gesendete Daten) und 20 Gigabit pro Sekunde (GBit/s) für ausgehende Daten (vom Speicherkonto aus gesendete Daten). Für lokale redundante Speicherkonten (LRS) liegen die Grenzen höher - 20 GBit/s für eingehende und 30 GBit/s für ausgehende Daten.  Internationale Bandbreitengrenzen können niedriger sein. Informationen dazu finden Sie auf der Seite [Skalierbarkeitsziele](http://msdn.microsoft.com/de-de/library/azure/dn249410.aspx).  Weitere Informationen zu den Speicherredundanzoptionen finden Sie unter den Links zu [Nützliche Ressourcen](#sub1useful) weiter unten.  
+Zum Redaktionszeitpunkt betrugen die Bandbreitenziele in den USA für georedundante Speicherkonten (GRS) 10 Gigabit pro Sekunde (GBit/s) für eingehende Daten (an das Speicherkonto gesendete Daten) und 20 Gigabit pro Sekunde (GBit/s) für ausgehende Daten (vom Speicherkonto aus gesendete Daten). Für lokale redundante Speicherkonten (LRS) liegen die Grenzen höher - 20 GBit/s für eingehende und 30 GBit/s für ausgehende Daten.  Internationale Bandbreitengrenzen können niedriger sein. Informationen dazu finden Sie auf der Seite [Skalierbarkeitsziele](http://msdn.microsoft.com/library/azure/dn249410.aspx).  Weitere Informationen zu den Speicherredundanzoptionen finden Sie unter den Links zu [Nützliche Ressourcen](#sub1useful) weiter unten.  
 
 ####Vorgehensweise bei Annäherung an das Skalierbarkeitsziel
 Wenn sich Ihre Anwendung den Skalierbarkeitszielen für ein Speicherkonto nähert, sollten Sie eine der folgenden Vorgehensweisen wählen:  
@@ -104,9 +104,9 @@ Wenn sich Ihre Anwendung den Skalierbarkeitszielen für ein Speicherkonto näher
 
 ####Nützliche Ressourcen
 Die folgenden Links enthalten zusätzliche Details zu den Skalierbarkeitszielen:
--	Sie können die aktuellen Skalierbarkeitsziele auf der Seite [Ziele für Skalierbarkeit und Leistung des Azure-Speichers auf MSDN](http://msdn.microsoft.com/de-de/library/azure/dn249410.aspx) anzeigen.
+-	Sie können die aktuellen Skalierbarkeitsziele auf der Seite [Ziele für Skalierbarkeit und Leistung des Azure-Speichers auf MSDN](http://msdn.microsoft.com/library/azure/dn249410.aspx) anzeigen.
 -	Weitere Informationen zu Speicherredundanzoptionen erhalten Sie im Blogeintrag [Microsoft Azure-Speicher: Redundanzoptionen und Lesezugriff georedundanter Speicher](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx). Weitere Details hierzu finden Sie auch im nächsten Abschnitt.
--	Aktuelle Informationen zu den Preisen für Azure-Dienste finden Sie unter [Azure-Preise auf einen Blick](http://azure.microsoft.com/de-de/pricing/overview/).  
+-	Aktuelle Informationen zu den Preisen für Azure-Dienste finden Sie unter [Azure-Preise auf einen Blick](http://azure.microsoft.com/pricing/overview/).  
 
 ###Netzwerk
 Auch wenn die API-Aufrufe eine Rolle spielen, haben häufig die physischen Netzwerkeinschränkungen deutliche Auswirkungen auf die Leistung. Nachfolgend sind einige der Einschränkungen beschrieben, auf die Benutzer treffen können.  
@@ -119,7 +119,7 @@ Bei der Bandbreite liegt das Problem häufig in der Clientkapazität. Während b
 Seien Sie sich wie bei jeder Netzwerknutzung bewusst, dass Netzwerkbedingungen, die zu Fehlern und Paketverlusten führen, den effektiven Durchsatz verlangsamen.  Die Verwendung von WireShark oder NetMon kann bei der Diagnose dieses Problems helfen.  
 
 #####Nützliche Ressourcen
-Informationen zur Größe virtueller Computer und zur zugewiesenen Bandbreite finden Sie unter [Bewährte Vorgehensweisen für den Entwurf umfangreicher Dienste auf Azure Cloud Services](http://msdn.microsoft.com/de-de/library/dn197896.aspx) auf MSDN.  
+Informationen zur Größe virtueller Computer und zur zugewiesenen Bandbreite finden Sie unter [Bewährte Vorgehensweisen für den Entwurf umfangreicher Dienste auf Azure Cloud Services](http://msdn.microsoft.com/library/dn197896.aspx) auf MSDN.  
 
 ####<a name="subheading4"></a>Speicherort
 In jeder verteilten Umgebung wird die beste Leistung erzielt, indem der Client in der Nähe des Servers platziert wird. Zum Zugriff auf den Azure-Speicher mit der niedrigsten Latenz befindet sich der beste Standort für den Client innerhalb derselben Azure-Region. Wenn Sie beispielsweise eine Azure-Website haben, die den Azure-Speicher verwendet, sollten Sie beide innerhalb derselben Region platzieren (z. B. Westeuropa oder Südostasien). Dies reduziert die Latenz und Kosten - zum Redaktionszeitpunkt, die Bandbreitennutzung innerhalb einer Region ist kostenlos.  
@@ -129,7 +129,7 @@ Wenn Ihre Clientanwendungen nicht in Azure gehostet werden (beispielsweise Apps 
 ###<a name="subheading5"></a>Inhaltsverteilung
 Manchmal muss eine Anwendung denselben Inhalt für mehrere Benutzer bereitstellen (z. B. ein Produkt-Demovideo auf der Startseite einer Website), die sich entweder in derselben oder in verschiedenen Regionen befinden. In diesem Fall sollten Sie ein Content Delivery Network (CDN) wie das Azure CDN verwenden, und das CDN nutzt den Azure-Speicher als Datenursprung. Im Gegensatz zum Azure-Speicherkonto, das in genau einer Region vorhanden ist und Inhalte nicht mit niedriger Latenz an andere Regionen liefern kann, verwendet das Azure CDN Server in mehreren Rechenzentren weltweit. Darüber hinaus unterstützt ein CDN in der Regel höhere Ausgangsgrenzen als ein einzelnes Speicherkonto.  
 
-Weitere Informationen zu Azure CDN finden Sie unter [Azure CDN](http://azure.microsoft.com/de-de/services/cdn/).  
+Weitere Informationen zu Azure CDN finden Sie unter [Azure CDN](http://azure.microsoft.com/services/cdn/).  
 
 ###<a name="subheading6"></a>Verwenden von SAS und CORS
 Wenn Sie Code wie z. B. JavaScript im Webbrowser eines Benutzers oder eine mobile App zum Zugriff auf Daten im Azure-Speicher autorisieren müssen, besteht die Möglichkeit eine Anwendung in der Webrolle als Proxy zu verwenden: Das Gerät des Benutzers wird mit der Webrolle authentifiziert, die sich im Gegenzug mit dem Speicherdienst authentifiziert. Auf diese Weise müssen Sie den Speicherkontoschlüssel nicht gegenüber unsicheren Geräten offenbaren. Dies sorgt jedoch für eine deutliche Belastung der Webrolle, da alle zwischen dem Benutzergerät und dem Speicherdienst übertragenen Daten über die Webrolle weitergeleitet werden. Sie können die Verwendung einer Webrolle als Proxy für den Speicherdienst durch die Verwendung von Shared Access Signatures (SAS) vermeiden, manchmal im Zusammenhang mit Cross-Origin Resource Sharing-Headers (CORS). Durch SAS kann das Benutzergerät Anfragen mithilfe eines beschränkten Zugriffstokens direkt an den Speicherdienst stellen. Wenn beispielsweise ein Benutzer ein Foto in die Anwendung hochladen möchte, kann Ihre Webrolle ein SAS-Token generieren und an das Benutzergerät senden, um für 30 Minuten Schreibzugriff auf einen bestimmten Blob oder Container zu gewähren (danach läuft das SAS-Token ab).   
@@ -139,9 +139,9 @@ Normalerweise lässt der Browser kein JavaScript auf einer Seite zu, die von ein
 Beide dieser Technologien können dabei helfen, unnötige Lasten (und Engpässe) in der Webanwendung zu vermeiden.  
 
 ####Nützliche Ressourcen
-Weitere Informationen zu SAS finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-shared-access-signature-part-1/).  
+Weitere Informationen zu SAS finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](http://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).  
 
-Weitere Informationen zu CORS finden Sie unter [Cross-Origin Resource Sharing (CORS)-Support für den Azure-Speicherdienst auf MSDN].(http://msdn.microsoft.com/library/azure/dn535601.aspx).  
+Weitere Informationen zu CORS finden Sie unter [Cross-Origin Resource Sharing (CORS)-Support für den Azure-Speicherdienst auf MSDN)]http://msdn.microsoft.com/library/azure/dn535601.aspx).  
 
 ###Cachedienst
 ####<a name="subheading7"></a>Abrufen von Daten
@@ -151,7 +151,7 @@ In einigen Fällen können Sie festlegen, dass die Anwendung davon ausgehen kann
 
 Konfigurations-, Such- und andere Daten, die immer von der Anwendung verwendet werden, sind hervorragend für die Zwischenspeicherung geeignet.  
 
-Ein Beispiel für das Abrufen der Blob-Eigenschaften mithilfe von .NET, um das letzte Änderungsdatum zu ermitteln, finden Sie unter [Festlegen und Abrufen von Eigenschaften und Metadaten](http://msdn.microsoft.com/de-de/library/hh225342.aspx) auf MSDN. Informationen zu bedingten Downloads finden Sie unter [Lokale Kopie eines Blob unter bestimmten Bedingungen aktualisieren](http://msdn.microsoft.com/de-de/library/azure/dd179371.aspx) auf MSDN.  
+Ein Beispiel für das Abrufen der Blob-Eigenschaften mithilfe von .NET, um das letzte Änderungsdatum zu ermitteln, finden Sie unter [Festlegen und Abrufen von Eigenschaften und Metadaten](http://msdn.microsoft.com/library/hh225342.aspx) auf MSDN. Informationen zu bedingten Downloads finden Sie unter [Lokale Kopie eines Blob unter bestimmten Bedingungen aktualisieren](http://msdn.microsoft.com/library/azure/dd179371.aspx) auf MSDN.  
 
 ####<a name="subheading8"></a>Stapelweises Hochladen von Daten
 In einigen Anwendungsszenarien können Sie Daten lokal aggregieren und dann regelmäßig als Batch hochladen, statt die einzelnen Daten sofort hochzuladen. Beispielsweise kann eine Webanwendung eine Protokolldatei der Aktivitäten speichern: Die Anwendung kann entweder die Details jeder Aktivität sofort als Tabellenentität hochladen (was viele Speichervorgänge erforderlich macht) oder die Aktivitätsdetails in einer lokalen Protokolldatei speichern und dann regelmäßig alle Aktivitätsdetails als Datei mit Trennzeichen in den Blob hochladen. Wenn jeder Protokolleintrag eine Größe von 1 KB hat, können Sie Tausende davon in einer einzigen "Put Blob"-Transaktion übertragen (Sie können bis zu 64 MB in einer einzigen Blob-Transaktion hochladen). Wenn der lokale Computer vor dem Upload abstürzt, besteht eine hohe Wahrscheinlichkeit, dass einige Protokolldaten verloren gehen: der Anwendungsentwickler muss bei der Entwicklung die Möglichkeit defekter Clientgeräte oder eines Fehlers beim Hochladen berücksichtigen.  Wenn die Aktivitätsdaten für bestimmte Zeitspannen heruntergeladen werden sollen (nicht nur für eine Aktivität), dann sind Blobs gegenüber Tabellen vorzuziehen. 
@@ -175,12 +175,12 @@ Dieser Code erhöht die Mindestanzahl von Threadpool-Threads:
 
 	ThreadPool.SetMinThreads(100,100); //(Determine the right number für die Anwendung)  
 
-Weitere Informationen finden Sie unter [ThreadPool.SetMinThreads-Methode](http://msdn.microsoft.com/de-de/library/system.threading.threadpool.setminthreads(v=vs.110).aspx) auf MSDN.  
+Weitere Informationen finden Sie unter [ThreadPool.SetMinThreads-Methode](http://msdn.microsoft.com/library/system.threading.threadpool.setminthreads(v=vs.110).aspx) auf MSDN.  
 
 ####<a name="subheading11"></a>Nutzung der .NET 4.5 Garbage Collection
 Verwenden Sie .NET 4.5 oder höher, damit die Clientanwendung die Leistungsverbesserungen bei der Server Garbage Collection nutzen kann.   
 
-Weitere Informationen finden Sie im Artikel [Eine Übersicht der Leistungsverbesserungen in .NET 4.5](http://msdn.microsoft.com/de-de/magazine/hh882452.aspx) auf MSDN.  
+Weitere Informationen finden Sie im Artikel [Eine Übersicht der Leistungsverbesserungen in .NET 4.5](http://msdn.microsoft.com/magazine/hh882452.aspx) auf MSDN.  
 
 ###<a name="subheading12"></a>Uneingeschränkte Parallelität
 Während Parallelität großartig für die Leistung sein kann, verwenden Sie uneingeschränkte Parallelität (ohne Beschränkung der Anzahl von Threads und/oder parallelen Anforderungen) zum Hochladen oder Herunterladen von Daten mit Vorsicht. Das gilt auch für mehrere Worker zum Zugriff auf mehrere Partitionen (Container, Warteschlangen oder Tabellenpartitionen) im selben Speicherkonto oder für den Zugriff auf mehrere Elemente in derselben Partition. Bei uneingeschränkter Parallelität kann die Kapazität des Clientgeräts oder das Skalierbarkeitsziel des Speicherkontos überschritten werden, sodass es zu höherer Latenz und Drosselung kommt.  
@@ -198,7 +198,7 @@ Beachten Sie, dass Verbindungsfehler sofort wiederholt werden können, da sie ke
 Die Clientbibliotheken erkennen, welche Fehler Wiederholungsversuche nach sich ziehen und welche nicht. Wenn Sie Ihren eigenen Code für den Speicher-REST-API schreiben, beachten Sie, dass einige Fehler auftreten, die nicht erneut versucht werden dürfen: z. B. die Antwort 400 (Ungültige Anforderung) weist darauf hin, dass die Clientanwendung eine Anforderung gesendet hat, die nicht verarbeitet werden konnte, weil sie ein unerwartetes Format hatte. Das erneute Senden dieser Anforderung führt jedes Mal zur selben Antwort, daher ist es nicht sinnvoll, es wiederholt zu versuchen. Wenn Sie Ihren eigenen Code für die Speicher-REST-API schreiben, beachten Sie, was die Fehlercodes bedeuten und ob sie Wiederholungsversuche nach sich ziehen sollten.  
 
 ####Nützliche Ressourcen
-Weitere Informationen zu Speicher-Fehlercodes finden Sie unter [Status- und Fehlercodes](http://msdn.microsoft.com/de-de/library/azure/dd179382.aspx) auf der Microsoft Azure-Website.  
+Weitere Informationen zu Speicher-Fehlercodes finden Sie unter [Status- und Fehlercodes](http://msdn.microsoft.com/library/azure/dd179382.aspx) auf der Microsoft Azure-Website.  
 
 ##Blobs
 Zusätzlich zu den zuvor beschriebenen bewährten Vorgehensweisen für [Alle Dienste](#allservices)  können die folgenden bewährten Vorgehensweisen speziell für den Blobdienst angewendet werden.  
@@ -207,7 +207,7 @@ Zusätzlich zu den zuvor beschriebenen bewährten Vorgehensweisen für [Alle Die
 ####<a name="subheading16"></a>Bandbreite und Vorgänge pro Blob
 Sie können in einem einzelnen Blob bis zu maximal 60 MB/Sekunde lesen oder schreiben (dies entspricht etwa 480 MBit/s), was die Kapazität vieler clientseitigen Netzwerke (einschließlich der physischen NIC auf dem Clientgerät) übersteigt. Außerdem unterstützt ein einzelner Blob bis zu 500 Anforderungen pro Sekunde. Wenn Sie über mehrere Clients verfügen, die denselben Blob lesen und Sie dieses Limit wahrscheinlich überschreiten, sollten Sie ein CDN für die Blob-Verteilung verwenden.  
 
-Weitere Informationen zum Zieldurchsatz für Blobs finden Sie unter [Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher](http://msdn.microsoft.com/de-de/library/azure/dn249410.aspx) auf MSDN.  
+Weitere Informationen zum Zieldurchsatz für Blobs finden Sie unter [Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher](http://msdn.microsoft.com/library/azure/dn249410.aspx) auf MSDN.  
 
 ###Kopieren und Verschieben von Blobs
 ####<a name="subheading17"></a>Kopieren von BLOBs
@@ -217,18 +217,18 @@ Es sollte jedoch berücksichtigt werden, dass es beim Kopieren zwischen Speicher
  
 Beachten Sie, dass Kopien im selben Speicherkonto normalerweise sehr schnell abgeschlossen sind.  
 
-Weitere Informationen finden Sie unter [Kopieren von Blob auf MSDN](http://msdn.microsoft.com/de-de/library/dd894037.aspx).  
+Weitere Informationen finden Sie unter [Kopieren von Blob auf MSDN](http://msdn.microsoft.com/library/dd894037.aspx).  
 
 ####<a name="subheading18"></a>Verwenden von AzCopy
-Das Azure-Speicherteam hat ein Befehlszeilentool namens "AzCopy" veröffentlicht, das die Massenübertragung von vielen Blobs von, an und über Speicherkonten hinweg unterstützen soll.  Dieses Tool ist für dieses Szenario optimiert und kann hohe Übertragungsraten erzielen.  Die Verwendung wird für Massenszenarien beim Hochladen, Herunterladen und Kopieren empfohlen.  Weitere Informationen und einen Download finden Sie [hier](http://azure.microsoft.com/de-de/documentation/articles/storage-use-azcopy/).  
+Das Azure-Speicherteam hat ein Befehlszeilentool namens "AzCopy" veröffentlicht, das die Massenübertragung von vielen Blobs von, an und über Speicherkonten hinweg unterstützen soll.  Dieses Tool ist für dieses Szenario optimiert und kann hohe Übertragungsraten erzielen.  Die Verwendung wird für Massenszenarien beim Hochladen, Herunterladen und Kopieren empfohlen.  Weitere Informationen und einen Download finden Sie [hier](http://azure.microsoft.com/documentation/articles/storage-use-azcopy/).  
 
 ####<a name="subheading19"></a>Azure-Import/Export-Dienst
-Für größere Datenmengen (mehr als 1 TB) bietet der Azure-Speicher einen Import-/Export-Dienst, der das Hochladen in und Herunterladen aus dem Blob-Speicher durch den Versand von Festplatten ermöglicht.  Sie können Ihre Daten auf eine Festplatte speichern und zum Hochladen an Microsoft senden oder eine leere Festplatte zum Herunterladen der Daten an Microsoft schicken.  Weitere Informationen dazu finden Sie [hier](http://azure.microsoft.com/de-de/documentation/articles/storage-import-export-service/).  Dies kann sehr viel effizienter als das Hochladen/Herunterladen einer solchen Datenmenge über das Netzwerk sein.  
+Für größere Datenmengen (mehr als 1 TB) bietet der Azure-Speicher einen Import-/Export-Dienst, der das Hochladen in und Herunterladen aus dem Blob-Speicher durch den Versand von Festplatten ermöglicht.  Sie können Ihre Daten auf eine Festplatte speichern und zum Hochladen an Microsoft senden oder eine leere Festplatte zum Herunterladen der Daten an Microsoft schicken.  Weitere Informationen dazu finden Sie [hier](http://azure.microsoft.com/documentation/articles/storage-import-export-service/).  Dies kann sehr viel effizienter als das Hochladen/Herunterladen einer solchen Datenmenge über das Netzwerk sein.  
 
 ###<a name="subheading20"></a>Verwenden von Metadaten
 Der Blobdienst unterstützt Header-Anforderungen, die Metadaten zum Blob enthalten können. Wenn Ihre Anwendung beispielsweise die EXIF-Daten eines Fotos benötigt, kann sie das Foto herunterladen und diese extrahieren. Die Anwendung kann, um Bandbreite zu sparen und die Leistung zu verbessern, die EXIF-Daten in den Blob-Metadaten speichern, wenn die Anwendung das Foto hochgeladen hat. Sie können dann mit einer HEAD-Anfrage die EXIF-Daten in den Metadaten abrufen und so erhebliche Bandbreiten- und Verarbeitungszeit sparen, die jedes Mal zum Extrahieren der EXIF-Daten beim Lesen des Blob benötigt wird. Dies kann in Fällen nützlich sein, wenn Sie nur die Metadaten benötigen und nicht den vollständigen Inhalt eines Blobs.  Beachten Sie, dass pro Blob nur 8 KB Metadaten gespeichert werden können (der Dienst akzeptiert keine Anfrage, mit der mehr als das gespeichert werden soll); wenn die Daten also diese Größe überschreiten, können Sie diese Vorgehensweise nicht anwenden.  
 
-Ein Beispiel für das Abrufen der Blob-Metadaten mithilfe von .NET finden Sie unter [Festlegen und Abrufen von Eigenschaften und Metadaten](http://msdn.microsoft.com/de-de/library/hh225342.aspx) auf MSDN.  
+Ein Beispiel für das Abrufen der Blob-Metadaten mithilfe von .NET finden Sie unter [Festlegen und Abrufen von Eigenschaften und Metadaten](http://msdn.microsoft.com/library/hh225342.aspx) auf MSDN.  
 
 ###Schnelles Hochladen
 Um Blobs schnell hochzuladen, müssen Sie erst die folgende Frage beantworten: laden Sie einen Blob hoch oder mehrere?  Befolgen Sie die Anleitung unten, um die richtige Methode für Ihr Szenario auszuwählen.  
@@ -247,7 +247,7 @@ Um viele Blobs schnell hochzuladen, laden Sie die Blobs parallel hoch. Dies funk
 ###<a name="subheading23"></a>Auswählen des richtigen Blobtyps
 Azure-Speicher unterstützt zwei Blobtypen: *Seiten-*-Blobs und *Block-*-Blobs. Je nach Nutzungsszenario wirkt sich die Auswahl des Blobtyps auf die Leistung und Skalierbarkeit der Lösung aus. Block-Blobs sind geeignet, wenn Sie große Datenmengen effizient hochladen möchten: z. B. eine Clientanwendung, die Fotos oder Videos in einen Blob-Speicher hochladen muss. Seiten-Blobs sind für Anwendungen geeignet, die sequentielle Schreibvorgänge auf den Daten ausführen: z. B. Azure-VHDs werden als Seiten-Blobs gespeichert.  
 
-Weitere Informationen finden Sie unter [Grundlegendes zu Block-Blobs und Seiten-Blobs](http://msdn.microsoft.com/de-de/library/azure/ee691964.aspx) auf MSDN.  
+Weitere Informationen finden Sie unter [Grundlegendes zu Block-Blobs und Seiten-Blobs](http://msdn.microsoft.com/library/azure/ee691964.aspx) auf MSDN.  
 
 ##Tabellen
 Zusätzlich zu den zuvor beschriebenen bewährten Vorgehensweisen für [Alle Dienste](#allservices) können die folgenden bewährten Vorgehensweisen speziell für den Tabellendienst angewendet werden.  
@@ -267,7 +267,7 @@ In diesem Abschnitt sind verschiedene Schnellkonfigurationseinstellungen aufgeli
 ####<a name="subheading25"></a>Verwenden von JSON
 Ab Speicherdienstversion 2013-08-15 unterstützt der Tabellendienst die Verwendung von JSON statt des XML-basierten AtomPub-Formats für die Übertragung von Tabellendaten. Dies kann die Nutzlast um bis zu 75 % verringern und die Anwendungsleistung deutlich verbessern.   
 
-Weitere Informationen finden Sie im Blogeintrag [Microsoft Azure-Tabellen: Einführung in JSON](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx) und [Nutzlastformat für Tabellendienstvorgänge](http://msdn.microsoft.com/de-de/library/azure/dn535600.aspx) auf MSDN. 
+Weitere Informationen finden Sie im Blogeintrag [Microsoft Azure-Tabellen: Einführung in JSON](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx) und [Nutzlastformat für Tabellendienstvorgänge](http://msdn.microsoft.com/library/azure/dn535600.aspx) auf MSDN. 
 
 ####<a name="subheading26"></a>Nagle deaktivieren
 Der Nagle-Algorithmus ist in TCP/IP-Netzwerken weit verbreitet, um die Netzwerkleistung zu verbessern. Er ist jedoch nicht unter allen Umständen optimal (z. B. hoch interaktive Umgebungen). Für den Azure-Speicher hat der Nagle-Algorithmus negative Auswirkungen auf Anforderungen an Tabellen- und Warteschlangendienste, daher sollten Sie ihn möglichst deaktivieren.  
@@ -355,7 +355,7 @@ Manchmal hat man das Gefühl, strukturierte Daten sollten immer in Tabellen gesp
 ###<a name=subheading39"></a>Skalierbarkeitsgrenze
 Eine einzelne Warteschlange kann ca. 2.000 Nachrichten (1 KB jeweils) pro Sekunde (jede AddMessage, GetMessage und DeleteMessage zählen hier als eine Nachricht) verarbeiten. Wenn dies für Ihre Anwendung nicht ausreicht, verwenden Sie mehrere Warteschlangen, und verteilen Sie die Nachrichten auf diese.  
 
-Sie können die aktuellen Skalierbarkeitsziele auf der Seite [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/de-de/library/azure/dn249410.aspx) auf MSDN anzeigen.  
+Sie können die aktuellen Skalierbarkeitsziele auf der Seite [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/library/azure/dn249410.aspx) auf MSDN anzeigen.  
 
 ###<a name=subheading40"></a>Nagle deaktivieren
 Lesen Sie den Abschnitt über den Nagle-Algorithmus in der Tabellenkonfiguration - der Nagle-Algorithmus wirkt sich meist negativ auf die Leistung von Warteschlangenanforderungen aus, daher sollten Sie ihn deaktivieren.  
@@ -369,12 +369,12 @@ Sie können bis zu 32 Nachrichten aus einer Warteschlange in einem einzigen Vorg
 ###<a name=subheading43"></a>Abrufintervall für die Warteschlange
 Die meisten Anwendungen fragen Nachrichten aus einer Warteschlange ab. Für die Anwendung kann es sich dabei um die größte Quelle für Transaktionen handeln. Wählen Sie das Abrufintervall mit Bedacht aus: Abrufe, die zu häufig stattfinden, können dazu führen, dass die Anwendung die Skalierbarkeitsziele für die Warteschlange erreicht. Bei jedoch 200.000 Transaktionen für 0,01 US-Dollar (zum Redaktionszeitpunkt) betragen die Kosten für einen einzelnen Prozessor, der im Monat einen Abruf pro Sekunde macht, weniger als 15 Cent. Daher sind Kosten üblicherweise kein Auswahlkriterium für das Abrufintervall.  
 
-Aktuelle Kosteninformationen finden Sie unter [Speicherpreisdetails](http://azure.microsoft.com/de-de/pricing/details/storage/).  
+Aktuelle Kosteninformationen finden Sie unter [Speicherpreisdetails](http://azure.microsoft.com/pricing/details/storage/).  
 
 ###<a name=subheading44"></a>UpdateMessage
 Sie können **UpdateMessage** verwenden, um das Unsichtbarkeits-Zeitlimit zu erhöhen oder die Statusinformationen einer Nachricht zu aktualisieren. Trotz der Möglichkeiten dieser Option sollten Sie beachten, dass jeder **UpdateMessage**-Vorgang für das Skalierbarkeitsziel zählt. Dies kann jedoch sehr viel effizienter sein als ein Workflow, der einen Auftrag von einer Warteschlange zur nächsten verschiebt, wenn der jeweilige Schritt abgeschlossen ist. Mithilfe des Vorgangs **UpdateMessage** kann Ihre Anwendung den Auftragsstatus in der Nachricht speichern und dann weiterarbeiten, statt die Nachricht jedes Mal für den nächsten Schritt erneut in die Warteschlange zu stellen.  
 
-Weitere Informationen finden Sie im Artikel [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-queues/#change-contents).  
+Weitere Informationen finden Sie im Artikel [Gewusst wie: Ändern des Inhalts von Nachrichten in der Warteschlange](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-queues/#change-contents).  
 
 ###<a name=subheading45"></a>Anwendungsarchitektur
 Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen. Nachfolgend sind einige Möglichkeiten aufgelistet, wie Sie Warteschlangen verwenden können, um Ihre Anwendung skalierbarer zu gestalten:  
@@ -384,5 +384,4 @@ Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen.
 
 ##Zusammenfassung
 In diesem Artikel wurden einige der häufigsten bewährten Vorgehensweisen zur Leistungsoptimierung bei der Verwendung des Azure-Speichers erläutert. Wir empfehlen jedem Anwendungsentwickler seine Anwendung anhand dieser Vorgehensweisen zu überprüfen und ggf. die Empfehlungen umzusetzen, um bessere Leistung für ihre Anwendungen zu erzielen, die Azure-Speicher verwenden.
-
 <!--HONumber=42-->

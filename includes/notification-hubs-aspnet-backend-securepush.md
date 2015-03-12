@@ -83,4 +83,5 @@ Beachten Sie, dass die `Post`-Methode jetzt keine Popupbenachrichtigung sendet. 
 21. Nun werden wir diese App erneut auf einer Azure-Website bereitstellen, damit von allen Geräten darauf zugegriffen werden kann. Klicken Sie mit der rechten Maustaste auf das Projekt **AppBackend**, und wählen Sie **Veröffentlichen** aus.
 
 24. Wählen Sie die Azure-Website als Ihr Veröffentlichungsziel aus. Melden Sie sich mit Ihrem Azure-Konto an, und wählen Sie eine vorhandene oder neue Website, und notieren Sie sich die **Ziel-URL**-Eigenschaft auf der Registerkarte **Verbindung**. Diese URL wird später in diesem Lernprogramm als *backend endpoint* bezeichnet. Klicken Sie auf **Veröffentlichen**.
-<!--HONumber=42-->
+
+<!--HONumber=45--> 

@@ -1,6 +1,20 @@
-<properties title="Monitor a DocumentDB Account" pageTitle="Manage a DocumentDB account | Azure" description="Learn how to manage your DocumentDB account." metaKeywords="NoSQL, DocumentDB,  database, document-orientated database, JSON, accounts" services="documentdb" solutions="data-management" documentationCenter=""  authors="hawong" manager="jhubbard" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Verwalten eines DocumentDB-Kontos | Azure" 
+	description="Erfahren Sie, wie Sie Ihr DocumentDB-Konto verwalten." 
+	services="documentdb" 
+	documentationCenter="" 
+	authors="stephbaron" 
+	manager="jhubbard" 
+	editor="cgronlun"/>
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/03/2014" ms.author="hawong" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/12/2015" 
+	ms.author="stbaro"/>
 
 # Verwalten eines DocumentDB-Kontos
 
@@ -207,3 +221,5 @@ DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
   []: ./media/documentdb-manage-account/image002.jpg
   [Konsistenzebene]: http://go.microsoft.com/fwlink/p/?LinkId=402365
   [azure.com]: http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409
+
+<!--HONumber=46--> 

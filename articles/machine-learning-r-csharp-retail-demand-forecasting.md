@@ -1,6 +1,20 @@
-﻿<properties title="Forecasting - ETS + STL " pageTitle="Prognose - ETS und STL  | Azure" description="Prognose – ETS und STL " metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="jaymathe" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Prognose - ETS und STL | Azure" 
+	description="Prognose – ETS und STL" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="jaymathe" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/08/2014" ms.author="jaymathe" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/11/2015" 
+	ms.author="jaymathe"/> 
 
 #Prognose - ETS und STL  
  
@@ -72,7 +86,7 @@ Es gibt mehrere Möglichkeiten der Nutzung des Diensts auf automatisierte Weise.
 
 ##Erstellen des Webdiensts 
 
->Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
+>Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
 Aus Azure ML wurde ein neues leeres Experiment erstellt. Beispieleingabedaten wurden mit einem vordefinierten Datenschema hochgeladen. Verknüpft mit dem Datenschema ist ein "R-Skript ausführen"-Modul, das die Prognosemodelle Saison-Trend-Zerlegung (STL) und Exponentielles Glätten (ETS) generiert. Dafür verwendet es die 'ets'- und'forecast'-Funktionen von R. 
 
@@ -118,8 +132,10 @@ Aus Azure ML wurde ein neues leeres Experiment erstellt. Beispieleingabedaten wu
 Dies ist ein sehr einfaches Beispiel für die Prognose mit ETS und STL. Wie aus den oben stehenden Beispielcode ersichtlich ist, wird kein Abfangen von Fehlern implementiert und der Dienst geht davon aus, dass alle Variablen kontinuierliche/positive Werte sind und die Häufigkeit sollte eine ganze Zahl größer als 1 sein. Die Länge der Vektoren Datum und der Wert sollte identisch sein, und die Länge der Zeitreihe sollte größer sein als 2 * Häufigkeit. Die Variable für das Datum muss dem Format "mm/tt/jjjj" entsprechen.
 
 ##Häufig gestellte Fragen
-Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-marketplace-faq).
+Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/documentation/articles/machine-learning-marketplace-faq).
 
 [1]: ./media/machine-learning-r-csharp-retail-demand-forecasting/retail-img1.png
 [2]: ./media/machine-learning-r-csharp-retail-demand-forecasting/retail-img2.png
 [3]: ./media/machine-learning-r-csharp-retail-demand-forecasting/retail-img3.png
+
+<!--HONumber=46--> 

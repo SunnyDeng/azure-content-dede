@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Publishing with Visual Studio Online" pageTitle="Kontinuierliche Bereitstellung in Azure mit Visual Studio Online" metaKeywords="" description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Cloud-Diensten erstellt und bereitgestellt werden." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online and Git" authors="ghogen" solutions="" manager="douge" editor="" />
+<properties 
+	pageTitle="Kontinuierliche Bereitstellung in Azure mit Visual Studio Online" 
+	description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Cloud-Diensten erstellt und bereitgestellt werden." 
+	services="web-sites" 
+	documentationCenter=".net" 
+	authors="kempb" 
+	manager="douge" 
+	editor=""/>
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="ghogen" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/02/2015" 
+	ms.author="kempb"/>
 
 
 
@@ -9,18 +23,15 @@
 
 Sie können Visual Studio Online-Teamprojekte verwenden, um ein Git-Repository für Quellcode zu hosten und dies automatisch zu erstellen und zu Azure-Websites oder -Cloud-Diensten bereitzustellen, wenn Sie ein Commit zum Repository mithilfe von Push übertragen.
 
-Sie müssen Visual Studio 2013 und das Azure-SDK installiert haben. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf den Link **Starten Sie kostenlos** auf der Seite [www.visualstudio.com](http://www.visualstudio.com)klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540)aus.
+Sie müssen Visual Studio 2013 und das Azure-SDK installiert haben. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite [www.visualstudio.com](http://www.visualstudio.com) auf den Link **Starten Sie kostenlos** klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540)
 
 
-<div class="wa-note">
-  <span class="wa-icon-bulb"></span>
-  <h5><a name="note"></a>Sie benötigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchführen zu können.</h5>
-<p>Sie können <a href="http://go.microsoft.com/fwlink/p/?LinkId=512979">kostenlos ein Visual Studio Online-Konto eröffnen</a>.</p>
-</div>
+> [AZURE.NOTE] Sie benötigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchführen zu können.
+> Sie können [kostenlos ein Visual Studio Online-Konto anlegen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
 
 Gehen Sie folgendermaßen vor, um einen Cloud-Dienst für eine automatische Erstellung und Bereitstellung mithilfe von Visual Studio Online zu konfigurieren:
 
--   [Schritt 1: Erstellen eines Git-Repositorys.][]
+-   [Schritt 1: Erstellen eines Git-Repositorys][]
 
 -   [Schritt 2: Erstellen eines Projekts und Übertragen mithilfe von Push an das Git-Repository.][]
 
@@ -37,7 +48,7 @@ Gehen Sie folgendermaßen vor, um einen Cloud-Dienst für eine automatische Erst
 <h2> <a name="step1"></a>Schritt 1: Erstellen eines Git-Repositorys</h2>
 
 
-1. Wenn Sie noch kein Visual Studio Online-Konto haben, folgen Sie den Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=397665). Wenn Sie Ihr Teamprojekt erstellen, wählen Sie Git als Quellcodeverwaltungssystem aus. Befolgen Sie die Anweisungen, um Visual Studio mit dem Teamprojekt zu verbinden.
+1. Wenn Sie noch kein Visual Studio Online-Konto haben, folgen Sie den Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=397665) Wenn Sie Ihr Teamprojekt erstellen, wählen Sie Git als Quellcodeverwaltungssystem aus. Befolgen Sie die Anweisungen, um Visual Studio mit dem Teamprojekt zu verbinden.
 
 2. Klicken Sie in Team Explorer auf den Link **Dieses Repository klonen**. 
 ![][3]
@@ -49,9 +60,9 @@ Gehen Sie folgendermaßen vor, um einen Cloud-Dienst für eine automatische Erst
 1. Wählen Sie in Team Explorer im Abschnitt "Projektmappen" den Link "Neu", um ein neues Projekt im lokalen Repository zu erstellen.<br/>
 ![][4]
 
-2. Sie können eine Website oder einen Clouddienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen.
-Erstellen Sie ein neues Windows Azure-Clouddienstprojekt oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle und eine Workerrolle hinzu.
-Wenn Sie eine Website erstellen möchten, wählen Sie die Projektvorlage ASP.NET Web Application und anschließend MVC aus. Siehe [Erste Schritte mit Azure und ASP.NET](http://www.windowsazure.com/de-de/documentation/articles/web-sites-dotnet-get-started/).
+2. Sie können eine Website oder einen Cloud-Dienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen.
+Erstellen Sie ein neues Microsoft Azure-Cloud-Dienstprojekt oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Cloud-Dienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle und eine Workerrolle hinzu.
+Wenn Sie eine Website erstellen möchten, wählen Sie die Projektvorlage ASP.NET Web Application und anschließend MVC aus. Siehe [Erste Schritte mit Azure und ASP.NET](http://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
 
 3. Öffnen Sie das Kontextmenü für die Projektmappe, und klicken Sie auf **Commit**.<br/>
 ![][7]
@@ -65,7 +76,7 @@ Wenn Sie eine Website erstellen möchten, wählen Sie die Projektvorlage ASP.NET
 
 <h2> <a name="step3"> </a>Schritt 3: Verbinden des Projekts mit Azure</h2>
 
-1. Nach der Erstellung eines Git-Repository in Visual Studio Online mit Quellcode sind Sie bereit, Ihr Git-Repository mit Azure zu verbinden.  Im [Azure-Portal](http://manage.windowsazure.com)Ihren Cloud-Dienst oder Ihre Website, oder erstellen Sie einen neuen Cloud-Dienst oder eine neue Website, indem Sie auf das +-Symbol links unten sowie auf **Cloud-Dienst** oder **Website** und anschließend auf **Schnellerfassung** klicken.<br.>
+1. Nach der Erstellung eines Git-Repository in Visual Studio Online mit Quellcode sind Sie bereit, Ihr Git-Repository mit Azure zu verbinden.  Wählen Sie im [Azure-Portal](http://manage.windowsazure.com) Ihren Cloud-Dienst oder Ihre Website, oder erstellen Sie einen neuen Cloud-Dienst oder eine neue Website, indem Sie auf das +-Symbol links unten sowie auf **Cloud-Dienst** oder **Website** und anschließend auf **Schnellerfassung** klicken.
 ![][9]
 
 3. Klicken Sie für Cloud-Dienste auf den Link **Veröffentlichung einrichten mit Visual Studio Online**. Für Websites wählen Sie den Link **Bereitstellung über Quellcodeverwaltung einrichten**.<br/>
@@ -119,15 +130,15 @@ In Team Explorer ist zu sehen, dass ein Build für Ihr Einchecken ausgelöst wur
 Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition bei jedem Einchecken standardmäßig auf einen Build festgelegt ist. (Für einen Cloud-Dienst erstellt Visual Studio Online Builds und stellt die Hauptverzweigung automatisch zur Stagingumgebung bereit. Sie müssen für die Bereitstellung zur Live-Website weiterhin einen Schritt manuell durchführen. Für eine Website ohne Stagingumgebung wird die Hauptverzweigung direkt in der Live-Website bereitgestellt.<br/>
 ![][26]
 <br/>
-Auf der Registerkarte **Prozess** ist zu sehen, dass die Entwicklungsumgebung auf den Namen Ihres Clouddienstes oder Ihrer Website festgelegt ist.<br/>
+Auf der Registerkarte **Prozess** ist zu sehen, dass die Entwicklungsumgebung auf den Namen Ihres Cloud-Diensts oder Ihrer Website festgelegt ist.<br/>
 ![][27]
 <br/>
-Geben Sie Werte für die Eigenschaften ein, wenn Sie andere Werte als die Standardwerte verwenden möchten. Die Eigenschaften für die Azure-Veröffentlichung befinden sich im Bereitstellungsabschnitt, und Sie müssen möglicherweise MSBuild-Parameter festlegen. Um eine andere Dienstkonfiguration als "Cloud" anzugeben, legen Sie zum Beispiel in einem Cloud-Dienstprojekt die MSbuild-Parameter auf /p:TargetProfile=*YourProfile* fest, wobei *YourProfile* einer Dienstkonfigurationsdatei mit einem Namen wie ServiceConfiguration.*YourProfile*.cscfg entspricht.
+Geben Sie Werte für die Eigenschaften ein, wenn Sie andere Werte als die Standardwerte verwenden möchten. Die Eigenschaften für die Azure-Veröffentlichung befinden sich im Bereitstellungsabschnitt, und Sie müssen möglicherweise MSBuild-Parameter festlegen. Um eine andere Dienstkonfiguration als "Cloud" anzugeben, legen Sie zum Beispiel in einem Cloud-Dienstprojekt die MSbuild-Parameter auf /p:TargetProfile=*YourProfile* fest, wobei  *YourProfile* einer Dienstkonfigurationsdatei mit einem Namen wie "ServiceConfiguration.*YourProfile*.cscfg" entspricht.
 Die folgende Tabelle zeigt die im Bereitstellungsabschnitt verfügbaren Eigenschaften:
 	<table>
 <tr><td><b>Eigenschaft</b></td><td><b>Standardwert</b></td></tr>
 ><tr><td>Nicht vertrauenswürdige Zertifikate zulassen</td><td>Wenn dies "false" ist, müssen SSL-Zertifikate von einer Stammzertifizierungsstelle signiert sein.</td></tr>
-<tr><td>Upgrade zulassen</td><td>Ermöglicht einer Bereitstellung, eine vorhandene Bereitstellung zu aktualisieren, anstatt eine neue zu erstellen. Behält die IP-Adresse bei.</td></tr>
+<tr><td>Upgrade zulassen</td><td>Ermöglicht einer Bereitstellung, eine vorhandene Bereitstellung zu aktualisieren, anstatt eine neue zu erstellen. Die IP-Adresse wird beibehalten.</td></tr>
 ><tr><td>Nicht löschen</td><td>Wenn dies "true" ist, wird keine vorhandene, nicht verbundene Bereitstellung überschrieben (Upgrade ist zulässig).</td></tr>
 <tr><td>Pfad zu Bereitstellungseinstellungen</td><td>Der Pfad zu Ihrer .pubxml-Datei für eine Website, entsprechend dem Stammordner des Repositorys. Wird für Cloud-Dienste ignoriert.</td></tr>
 <tr><td>Sharepoint-Bereitstellungsumgebung</td><td>Entspricht dem Dienstnamen</td></tr>
@@ -141,10 +152,10 @@ Die folgende Tabelle zeigt die im Bereitstellungsabschnitt verfügbaren Eigensch
 12. Wenn Sie auf den Buildnamen doppelklicken, zeigt Visual Studio eine **Buildzusammenfassung** mit allen Testergebnissen aus entsprechenden Komponententestprojekten an.<br/>
 ![][29]
 
-13. Im [Azure-Portal](http://manage.windowsazure.com)können Sie die entsprechende Bereitstellung auf der Registerkarte "Bereitstellungen" anzeigen, wenn Sie die Stagingumgebung auswählen.<br/>
+13. Im [Azure-Portal](http://manage.windowsazure.com) können Sie die entsprechende Bereitstellung auf der Registerkarte "Bereitstellungen" anzeigen, wenn Sie die Stagingumgebung auswählen.<br/>
 ![][30]
 
-14.	Wechseln Sie zur URL Ihrer Site. Wählen Sie für eine Website die Schaltfläche **Durchsuchen** im Portal. Wenn es sich um einen Clouddienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard** aus, auf der die Stagingumgebung angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Cloud-Dienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie die Eigenschaft "Alternate Cloud Service Environment" auf "Produktion" stellen. Hier wird gezeigt, wo auf der Dashboard-Seite des Cloud-Diensts sich die Website-URL befindet: <br/>
+14.	Wechseln Sie zur URL Ihrer Site. Wählen Sie für eine Website die Schaltfläche **Durchsuchen** im Portal. Wenn es sich um einen Cloud-Dienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard** aus, auf der die Stagingumgebung angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Cloud-Dienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie die Eigenschaft "Alternate Cloud Service Environment" auf "Produktion" stellen. Hier wird gezeigt, wo auf der Dashboard-Seite des Cloud-Diensts sich die Website-URL befindet: <br/>
 ![][31]
 <br/>
 Eine neue Browser-Registerkarte wird geöffnet, die Ihre laufende Site anzeigt.<br/>
@@ -195,9 +206,9 @@ Wenn Sie Git verwenden, nehmen Sie die Änderungen normalerweise an einer Arbeit
 
 11. Navigieren Sie zur Ansicht **Builds**, und suchen Sie den Build, der für die Arbeitsverzweigung ausgelöst wurde.
 
-Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861). Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Online finden Sie unter [Freigeben des Codes in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) und zur Verwendung eines Git-Repository, das zur Veröffentlichung auf Azure nicht von Visual Studio Online verwaltet wird, unter [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-publish-source-control).
+Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861). Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Online finden Sie unter [Freigeben von Code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx). Informationen zur Verwendung eines Git-Repository, das nicht von Visual Studio Online verwaltet wird, für die Veröffentlichung zu Azure finden Sie unter [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-publish-source-control).
 
-[Schritt 1: Erstellen eines Git-Repositorys.]: #step1
+[Schritt 1: Erstellen eines Git-Repositorys]: #step1
 [Schritt 2: Erstellen eines Projekts und Übertragen mithilfe von Push an das Git-Repository.]: #step2
 [Schritt 3: Verbinden des Projekts mit Azure]: #step3
 [Schritt 4: Durchführen von Änderungen und Auslösen einer erneuten Erstellung und Bereitstellung]: #step4
@@ -250,4 +261,4 @@ Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsof
 [47]: ./media/cloud-services-continuous-delivery-use-vso-git/SourceSettingsPage.PNG
 [48]: ./media/cloud-services-continuous-delivery-use-vso-git/IncludeWorkingBranch.PNG
 
-<!--HONumber=35.1-->
+<!--HONumber=45--> 

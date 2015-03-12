@@ -68,5 +68,4 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-
 <!--HONumber=42-->

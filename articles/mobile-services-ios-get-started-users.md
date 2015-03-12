@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit der Authentifizierung (iOS) | Mobile Dev Center" description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." services="mobile-services" documentationCenter="ios" authors="krisragh" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte mit der Authentifizierung (iOS) | Mobile Dev Center" 
+	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
+	services="mobile-services" 
+	documentationCenter="ios" 
+	authors="krisragh" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-ios" 
+	ms.devlang="objective-c" 
+	ms.topic="article" 
+	ms.date="10/10/2014" 
+	ms.author="krisragh"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App
 
@@ -71,7 +85,8 @@ Im nächsten Lernprogramm [Serviceseitige Autorisierung von Mobile Services-Benu
 
 [13]: ./media/mobile-services-ios-get-started-users/mobile-identity-tab.png
 [14]: ./media/mobile-services-ios-get-started-users/mobile-portal-data-tables.png
-[15]: ./media/mobile-services-ios-get-started-users/mobile-portal-change-table-perms.png
+[15]: ./media/mobile-services-ios-get-started-users/mobile-portal-change-table-per
+	ms.png
 
 
 <!-- URLs. -->

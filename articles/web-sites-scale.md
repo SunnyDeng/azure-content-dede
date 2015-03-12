@@ -24,7 +24,7 @@ Das Skalieren von Azure-Websites umfasst zwei zusammenhängende Vorgänge: Ände
 
 Die Modusänderung und die Konfiguration erfolgt ganz einfach über die Registerkarte "Skalieren" des Verwaltungsportals. Sie können nach Bedarf hoch- oder runterskalieren. Diese Änderungen werden innerhalb von Sekunden angewendet und wirken sich auf alle Websites im Webhostingplan aus. Dafür muss weder der Code geändert noch Anwendungen erneut bereitgestellt werden.
 
-Informationen zu Webhostingplänen finden Sie unter [Was ist ein Webhostingplan?](http://azure.microsoft.com/de-de/documentation/articles/web-sites-web-hosting-plan-overview/) und [Webhostingpläne für Azure-Websites: ausführliche Übersicht](http://www.azure.microsoft.com/de-de/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/). Informationen zur Preisgestaltung und zu den Funktionen der einzelnen Webhostingpläne finden Sie unter [Preisdetails zu Websites](http://www.windowsazure.com/de-de/pricing/details/web-sites/).  
+Informationen zu Webhostingplänen finden Sie unter [Was ist ein Webhostingplan?](http://azure.microsoft.com/documentation/articles/web-sites-web-hosting-plan-overview/) und [Webhostingpläne für Azure-Websites: ausführliche Übersicht](http://www.azure.microsoft.com/de-de/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/). Informationen zur Preisgestaltung und zu den Funktionen der einzelnen Webhostingpläne finden Sie unter [Preisdetails zu Websites](http://azure.microsoft.com/pricing/details/web-sites/).  
 
 > [AZURE.NOTE] Bevor Sie den Webhostingplan-Modus einer Website von **Kostenlos** in **Basic** oder **Standard** ändern, müssen Sie zunächst das für Ihr Azure-Websites-Abonnement geltende Ausgabenlimit aufheben. Informationen zum Ändern oder Anzeigen der Optionen für Ihr Microsoft Azure-Websites-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
 
@@ -69,7 +69,7 @@ Themen in diesem Artikel:
 	
 	![Save button][SaveButton]
  	
-	> [AZURE.NOTE] [WACOM.NOTE] Sie können die Einstellungen für **Webhostingplan**, **Instanzgröße** und **Instanzanzahl** auch separat speichern.
+	> [AZURE.NOTE] Sie können die Einstellungen für **Webhostingplan**, **Instanzgröße** und **Instanzanzahl** auch separat speichern.
 	
 8. Sie werden in einer Bestätigungsmeldung darauf hingewiesen, dass Websites im selben Webhostingplan wie die aktuelle Website ebenfalls in den neuen Modus übernommen werden. Klicken Sie auf **Ja**, um die Änderung abzuschließen. 
 	
@@ -142,7 +142,7 @@ Themen in diesem Artikel:
 	
 14. Nachdem Sie die Änderungen an den Objekten in der Liste **Skalierungseinstellungen für Zeitplan bearbeiten** vorgenommen haben, klicken Sie in der Befehlsleiste am unteren Rand der Seite auf **Speichern**, um alle Zeitplaneinstellungen gleichzeitig zu speichern (so müssen Sie nicht jeden Zeitplan einzeln speichern).
 
-> [AZURE.NOTE] [Im Azure-Vorschauportal](https://portal.azure.com/) können Sie nicht nur nach CPU-Prozentsatz skalieren, sondern auch nach den anderen Metriken für die Arbeitsspeicherauslastung, Warteschlangenlänge des Datenträgers, HTTP-Warteschlangenlänge, eingehende Daten und ausgehende Daten. Außerdem besteht die Möglichkeit, eine oder mehrere Regeln für das Hoch- und Herunterskalieren zu erstellen, die Ihnen noch mehr individuelle Kontrolle über die Skalierung bieten. Weitere Informationen finden Sie unter [Skalieren von Websites](http://azure.microsoft.com/de-de/documentation/articles/insights-how-to-scale/) in der Dokumentation zum Azure-Vorschauportal.
+> [AZURE.NOTE] [Im Azure-Vorschauportal](https://portal.azure.com/) können Sie nicht nur nach CPU-Prozentsatz skalieren, sondern auch nach den anderen Metriken für die Arbeitsspeicherauslastung, Warteschlangenlänge des Datenträgers, HTTP-Warteschlangenlänge, eingehende Daten und ausgehende Daten. Außerdem besteht die Möglichkeit, eine oder mehrere Regeln für das Hoch- und Herunterskalieren zu erstellen, die Ihnen noch mehr individuelle Kontrolle über die Skalierung bieten. Weitere Informationen finden Sie unter [Skalieren von Websites](http://azure.microsoft.com/documentation/articles/insights-how-to-scale/) in der Dokumentation zum Azure-Vorschauportal.
 
 <a name="ScalingSQLServer"></a>
 ##Skalierung einer mit der Website verbundenen SQL-Serverdatenbank	
@@ -179,40 +179,40 @@ Je nach Webhostingplan-Modus stehen die folgenden entwicklungsbezogenen Funktion
 
 **Webendpunkt-Überwachung**
 
-- Die Webendpunkt-Überwachung ist in den Webhostingplan-Modi "Basic" und "Standard" verfügbar. Weitere Informationen zur Webendpunkt-Überwachung finden Sie unter [Überwachen von Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-monitor/).
+- Die Webendpunkt-Überwachung ist in den Webhostingplan-Modi "Basic" und "Standard" verfügbar. Weitere Informationen zur Webendpunkt-Überwachung finden Sie unter [Überwachen von Websites](http://azure.microsoft.com/documentation/articles/web-sites-monitor/).
 
-- Ausführliche Informationen zu den anderen Funktionen in den Webhostingplänen, darunter Preisgestaltung und allgemein interessante Funktionen (auch für Entwickler), finden Sie unter [Preisdetails zu Websites](http://www.windowsazure.com/de-de/pricing/details/web-sites/).
+- Ausführliche Informationen zu den anderen Funktionen in den Webhostingplänen, darunter Preisgestaltung und allgemein interessante Funktionen (auch für Entwickler), finden Sie unter [Preisdetails zu Websites](http://azure.microsoft.com/pricing/details/web-sites/).
 
 <a name="Next Steps"></a>	
 ## Nächste Schritte
 
-- Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/).
+- Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
 - Informationen zu Preisen, Support und SLAs erhalten Sie unter den folgenden Links.
 	
-	[Preisdetails zur Datenübertragung](http://www.windowsazure.com/de-de/pricing/details/data-transfers/)
+	[Preisdetails zur Datenübertragung](http://azure.microsoft.com/pricing/details/data-transfers/)
 	
-	[Microsoft Azure-Supportpläne](http://www.windowsazure.com/de-de/support/plans/)
+	[Microsoft Azure-Supportpläne](http://azure.microsoft.com/support/plans/)
 	
-	[Vereinbarungen zum Servicelevel](http://www.windowsazure.com/de-de/support/legal/sla/)
+	[Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/)
 	
-	[Preisdetails für SQL-Datenbanken](http://www.windowsazure.com/de-de/pricing/details/sql-database/)
+	[Preisdetails für SQL-Datenbanken](http://azure.microsoft.com/pricing/details/sql-database/)
 	
 	[Größen virtueller Computer und Cloud-Dienste für Microsoft Azure][vmsizes]
 	
-	[Preisdetails zu Websites](http://www.windowsazure.com/de-de/pricing/details/web-sites/)
+	[Preisdetails zu Websites](http://azure.microsoft.com/pricing/details/web-sites/)
 	
-	[Preisdetails zu Websites - SSL-Verbindungen](http://www.windowsazure.com/de-de/pricing/details/web-sites/#ssl-connections)
+	[Preisdetails zu Websites - SSL-Verbindungen](http://azure.microsoft.com/pricing/details/web-sites/#ssl-connections)
 
 - Informationen zu den Best Practices für Azure-Websites, einschließlich Aufbau einer skalierbaren, robusten Architektur, finden Sie unter [Best Practices: Microsoft Azure-Websites (WAWS)](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
 
 - Videos zur Skalierung von Azure-Websites:
 	
-	[Wann sollte man Azure-Websites skalieren? - Mit Stefan Schackow](http://www.windowsazure.com/de-de/documentation/videos/azure-web-sites-free-vs-standard-scaling/)
+	[Wann sollte man Azure-Websites skalieren? - Mit Stefan Schackow](http://azure.microsoft.com/documentation/videos/azure-web-sites-free-vs-standard-scaling/)
 	
-	[Automatisches Skalieren von Azure-Websites, CPU-abhängig oder geplant - Mit Stefan Schackow](http://www.windowsazure.com/de-de/documentation/videos/auto-scaling-azure-web-sites/)
+	[Automatisches Skalieren von Azure-Websites, CPU-abhängig oder geplant - Mit Stefan Schackow](http://azure.microsoft.com/documentation/videos/auto-scaling-azure-web-sites/)
 
-	[Wie sollte man Azure-Websites skalieren? - Mit Stefan Schackow](http://www.windowsazure.com/de-de/documentation/videos/how-azure-web-sites-scale/)
+	[Wie sollte man Azure-Websites skalieren? - Mit Stefan Schackow](http://azure.microsoft.com/documentation/videos/how-azure-web-sites-scale/)
 
 
 

@@ -44,12 +44,12 @@ Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und Durchführen
 ## Komponenten des Azure-Blob-Speicherdiensts 
 
 * Speicherkonto: Das Speicherkonto ist der Ausgangspunkt für alle Speicherdienste. Um auf einen Azure-Blob-Speicherdienst zuzugreifen, erstellen Sie als Erstes ein Azure-Speicherkonto. Der Name und Zugriffsschlüssel des Speicherkontos werden für die Authentifizierung beim Azure-Blob-Speicherdienst und dessen Komponenten benötigt. 
-Weitere Informationen zum Azure-Blob-Speicherdienst finden Sie unter [Verwenden des Azure-BLOB-Speicherdiensts](http://www.windowsazure.com/de-de/develop/net/how-to-guides/blob-storage/).
+Weitere Informationen zum Azure-Blob-Speicherdienst finden Sie unter [Verwenden des Azure-BLOB-Speicherdiensts](http://azure.microsoft.com/develop/net/how-to-guides/blob-storage/).
 
 * Container: Ein Container stellt einen Satz Blobs als Gruppe bereit und kann eine unbegrenzte Anzahl von Blobs enthalten. Um eine SQL Server-Sicherung in einen Azure-Blob-Dienst zu speichern, muss mindestens ein Stammcontainer erstellt worden sein. 
 
 * BLOB: Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von Blobs, die im Azure-BLOB-Speicher gespeichert werden können: Block- und Seitenblobs.  Für die SQL Server-Sicherung werden Seiten-Blobs verwendet. Blobs sind über das folgende URL-Format adressierbar: `https://<storage account>.blob.core.windows.net/<container>/<blob>`
-Weitere Informationen zu Seiten-Blobs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs](http://msdn.microsoft.com/de-de/library/windowsazure/ee691964.aspx).
+Weitere Informationen zu Seiten-Blobs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs](http://msdn.microsoft.com/library/windowsazure/ee691964.aspx).
 
 ## SQL Server-Komponenten
 
@@ -61,7 +61,7 @@ Nachfolgend sehen Sie ein Beispiel für die URL zur Angabe im BACKUP-Befehl:
 <b>Wichtig</b>
 Wenn Sie eine Sicherungsdatei kopieren und in den Azure-Blob-Speicherdienst hochladen, müssen Sie einen Seiten-Blob als Speichertyp verwenden, falls Sie diese Datei für Wiederherstellungen nutzen möchten. Ein RESTORE aus einem Block-Blob schlägt mit einer Fehlermeldung fehl. 
 
-* Anmeldeinformationen: Die Informationen, die zum Herstellen einer Verbindung zum Azure-Blob-Speicherdienst und zum Authentifizieren bei diesem erforderlich sind, werden als Anmeldeinformationen gespeichert.  Damit SQL Server Sicherungen in einen Azure-Blob schreiben oder daraus wiederherstellen kann, müssen SQL Server-Anmeldeinformationen erstellt werden. In den Anmeldeinformationen werden der Name des Speicherkontos sowie der zugehörige Zugriffsschlüssel gespeichert.  Nach Erstellung der Anmeldeinformationen müssen diese bei Ausgabe der BACKUP/RESTORE-Anweisungen in der Option WITH CREDENTIAL angegeben werden. Weitere Informationen zum Anzeigen, Kopieren oder erneuten Generieren von Zugriffsschlüsseln für Speicherkonten finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](http://msdn.microsoft.com/de-de/library/windowsazure/hh531566.aspx).
+* Anmeldeinformationen: Die Informationen, die zum Herstellen einer Verbindung zum Azure-Blob-Speicherdienst und zum Authentifizieren bei diesem erforderlich sind, werden als Anmeldeinformationen gespeichert.  Damit SQL Server Sicherungen in einen Azure-Blob schreiben oder daraus wiederherstellen kann, müssen SQL Server-Anmeldeinformationen erstellt werden. In den Anmeldeinformationen werden der Name des Speicherkontos sowie der zugehörige Zugriffsschlüssel gespeichert.  Nach Erstellung der Anmeldeinformationen müssen diese bei Ausgabe der BACKUP/RESTORE-Anweisungen in der Option WITH CREDENTIAL angegeben werden. Weitere Informationen zum Anzeigen, Kopieren oder erneuten Generieren von Zugriffsschlüsseln für Speicherkonten finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](http://msdn.microsoft.com/library/windowsazure/hh531566.aspx).
 Schritt-für-Schritt-Anweisungen zum Erstellen von SQL Server-Anmeldeinformationen finden Sie unter [Erste Schritte mit der SQL Server-Sicherung und -Wiederherstellung im Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271615).
 
 ## SQL Server-Sicherung und -Wiederherstellung mit Azure-Blobs - Konzepte und Aufgaben:
@@ -82,7 +82,6 @@ Schritt-für-Schritt-Anweisungen zum Erstellen von SQL Server-Anmeldeinformation
 
 
 	
-
 
 
 

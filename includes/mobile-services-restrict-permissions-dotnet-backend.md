@@ -28,5 +28,4 @@ Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts a
 
 6. Veröffentlichen Sie Ihr Dienstprojekt erneut.
 
-
 <!--HONumber=42-->

@@ -1,6 +1,20 @@
-﻿<properties title="FAQ for setting up and using the Machine Learning Recommendations API" pageTitle="Häufig gestellte Fragen zur Einrichtung und Verwendung der Machine Learning Recommendations API | Azure" description="FAQ zur mit Azure Machine Learning erstellten Microsoft RECOMMENDATIONS API" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="jaymathe" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Häufig gestellte Fragen zur Einrichtung und Verwendung der Machine Learning Recommendations API | Azure" 
+	description="FAQ zur mit Azure Machine Learning erstellten Microsoft RECOMMENDATIONS API" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="jaymathe" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/14/2014" ms.author="jaymathe" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/30/2014" 
+	ms.author="jaymathe"/> 
 
 # Häufig gestellte Fragen zur Einrichtung und Verwendung der Machine Learning RECOMMENDATIONS-API
 Version 1.0
@@ -88,7 +102,7 @@ Vorgang zum Aktualisieren eines Abonnements
 
 WICHTIG: Lesen Sie den Text im Dialogfeld vor der Aktualisierung genau durch, das es Auswirkungen auf die Abrechnung und die Verwendung haben kann.
 
-Klicken Sie [hier](http://msdn.microsoft.com/de-de/library/gg312164.aspx) für weitere Informationen zu den Abonnements.
+Klicken Sie [hier](http://msdn.microsoft.com/library/gg312164.aspx) für weitere Informationen zu den Abonnements.
 
 ###Wann läuft mein RECOMMENDATIONS-Abonnement ab?
 Ihr Abonnement wird beendet, wenn Sie das Abonnement kündigen. Wenn Sie Ihre Abonnements kündigen möchten, finden Sie die Anweisungen dazu unten.
@@ -143,3 +157,5 @@ Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft
 (c) 2014 Microsoft. Alle Rechte vorbehalten. 
 
 
+
+<!--HONumber=46--> 

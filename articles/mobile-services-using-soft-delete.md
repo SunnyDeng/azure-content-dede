@@ -1,12 +1,26 @@
-﻿<properties pageTitle="Vorläufiges Löschen in Mobile Services (Windows Store) | Mobile Dev Center" description="Lernen Sie, wie Sie die Funktion zum vorläufigen Löschen von Azure Mobile Services in Ihrer Anwendung nutzen" documentationCenter="" authors="wesmc7777" manager="dwrede" editor="" services="mobile-services"/>
+<properties 
+	pageTitle="Vorläufiges Löschen in Mobile Services (Windows Store) | Mobile Dev Center" 
+	description="Lernen Sie, wie Sie die Funktion zum vorläufigen Löschen von Azure Mobile Services in Ihrer Anwendung nutzen" 
+	documentationCenter="" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor="" 
+	services="mobile-services"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/25/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/25/2014" 
+	ms.author="wesmc"/>
 
 # Vorläufiges Löschen in Mobile Services
 
 Für Tabellen, die mit dem JavaScript- oder .NET-Backend erstellt wurden, kann das vorläufige Löschen aktiviert sein. Bei Verwendung des vorläufigen Löschens wird eine neue Spalte *\__deleted* vom [SQL-Bit-Typ] zur Datenbank hinzugefügt. Bei aktiviertem vorläufigem Löschen werden Reihen nicht physisch aus der Datenbank gelöscht; stattdessen wird der Wert der gelöschten Spalte auf "TRUE" gesetzt.
 
-Bei der Abfrage von Datensätzen in einer Tabelle mit aktiviertem vorläufigem Löschen werden gelöschte Reihen standardmäßig nicht zurückgegeben. Um diese Reihen anzufordern, müssen Sie einen Abfrageparameter *\__includeDeleted=true* n den [REST-Abfragevorgang](http://msdn.microsoft.com/de-de/library/azure/jj677199.aspx) einschließen. Im .NET-Client-SDK können Sie zudem die Hilfsmethode `IMobileServiceTable.IncludeDeleted()` verwenden.
+Bei der Abfrage von Datensätzen in einer Tabelle mit aktiviertem vorläufigem Löschen werden gelöschte Reihen standardmäßig nicht zurückgegeben. Um diese Reihen anzufordern, müssen Sie einen Abfrageparameter *\__includeDeleted=true* n den [REST-Abfragevorgang](http://msdn.microsoft.com/library/azure/jj677199.aspx) einschließen. Im .NET-Client-SDK können Sie zudem die Hilfsmethode `IMobileServiceTable.IncludeDeleted()` verwenden.
 
 Unterstützung für vorläufiges Löschen für das .NET-Backend wurde erstmalig mit Version 1.0.402 des .NET-Backend von Microsoft Azure Mobile Services veröffentlicht. Die neuesten NuGet-Pakete stehen unter [.NET-Back-End von Microsoft Azure Mobile Services](http://go.microsoft.com/fwlink/?LinkId=513165) zur Verfügung.
 
@@ -87,8 +101,10 @@ Mit dem folgenden geplanten Job werden vorläufig gelöschte Datensätze, die ä
             Services.Log.Info("Purging old records");
             var monthAgo = DateTimeOffset.UtcNow.AddDays(-30);
      
-            var toDelete = context.TodoItems.Where(x => x.Deleted == true && x.UpdatedAt <= monthAgo).ToArray();
-            context.TodoItems.RemoveRange(toDelete);
+            var toDelete = context.TodoIte
+	ms.Where(x => x.Deleted == true && x.UpdatedAt <= monthAgo).ToArray();
+            context.TodoIte
+	ms.RemoveRange(toDelete);
             context.SaveChanges();
      
             return Task.FromResult(true);
@@ -153,7 +169,7 @@ Weitere Informationen zu geplanten Jobs mit Mobile Services mit JavaScript-Backe
 [2]: ./media/mobile-services-using-soft-delete/enable-soft-delete-new-table.png
 
 <!-- URLs. -->
-[SQL-Bit-Typ]: http://msdn.microsoft.com/de-de/library/ms177603.aspx
+[SQL-Bit-Typ]: http://msdn.microsoft.com/library/ms177603.aspx
 [Offlinedatensynchronisierung für Mobile Services]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/
 [Verwaltungsportal]: https://manage.windowsazure.com/
 

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Anmelden an einem virtuellen Computer unter Windows Server" 
 	description="Erfahren Sie, wie Sie das Azure-Verwaltungsportal verwenden, um sich an einem virtuellen Computer unter Windows Server anzumelden." 
 	services="virtual-machines" 
@@ -19,8 +19,11 @@
 
 #Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird#
 
-Verwenden Sie für die Anmeldung bei einem virtuellen Computer, auf dem das Betriebssystem Windows Server ausgeführt wird, die Schaltfläche "Verbinden" im Verwaltungsportal, um eine Remotedesktopverbindung zu starten. (Informationen über virtuelle Linux-Computer finden Sie unter [Gewusst wie: Anmeldung auf einem virtuellen Linux-Computer].)(./virtual-machines-linux-how-to-log-on/).)
+Verwenden Sie für die Anmeldung bei einem virtuellen Computer, auf dem das Betriebssystem Windows Server ausgeführt wird, die Schaltfläche "Verbinden" im Verwaltungsportal, um eine Remotedesktopverbindung zu starten. (Informationen über virtuelle Linux-Computer finden Sie unter [Anmeldung auf einem virtuellen Linux-Computer](./virtual-machines-linux-how-to-log-on/).)
 
 [AZURE.INCLUDE [virtual-machines-log-on-win-server](../includes/virtual-machines-log-on-win-server.md)]
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

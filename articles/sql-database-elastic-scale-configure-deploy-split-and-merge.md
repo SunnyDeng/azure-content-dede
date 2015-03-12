@@ -55,7 +55,7 @@ Für eine einfache Testbereitstellung, die zum Ausführen dieses Lernprogramms g
 
 ### Erstellen eines selbstsignierten Zertifikats 
 
-Erstellen Sie ein neues Verzeichnis, und führen Sie aus diesem Verzeichnis über ein Fenster [Developer-Eingabeaufforderung für Visual Studio](http://msdn.microsoft.com/en-us/library/ms229859.aspx) folgenden Befehl aus:
+Erstellen Sie ein neues Verzeichnis, und führen Sie aus diesem Verzeichnis über ein Fenster [Developer-Eingabeaufforderung für Visual Studio](http://msdn.microsoft.com/library/ms229859.aspx) folgenden Befehl aus:
 
     makecert ^
     -n "CN=*.cloudapp.net" ^
@@ -131,7 +131,7 @@ Wenn die Workerrolle nicht online geschaltet wird, während der Vorgang bei der 
 * Stellen Sie sicher, dass der Servername nicht mit **https://** beginnt.
 * Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Windows Azure-Diensten zulässt. Zu diesem Zweck öffnen Sie "https://manage.windowsazure.com", klicken links auf "SQL-Datenbanken", klicken oben auf "Server" und wählen Ihren Server aus. Klicken Sie oben auf **Konfigurieren**, und stellen Sie sicher, dass die Einstellung **Windows Azure-Dienste** auf "Ja" festgelegt ist. (Siehe den Abschnitt "Voraussetzungen" am Anfang dieses Artikels.)
 
-* Überprüfen Sie die Diagnoseprotokolle für Ihre Split-Merge-Dienstinstanz. Öffnen Sie eine Visual Studio-Instanz, und klicken Sie in der Menüleiste auf **Ansicht** und **Server-Explorer**. Klicken Sie auf das **Windows Azure**-Symbol, um eine Verbindung mit Ihrem Azure-Abonnement herzustellen. Navigieren Sie dann zu "Windows Azure -> Storage -> <Ihr Speicherkonto> -> Tabellen -> WADLogsTable". Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen im Server-Explorer](http://msdn.microsoft.com/en-us/library/azure/ff683677.aspx).
+* Überprüfen Sie die Diagnoseprotokolle für Ihre Split-Merge-Dienstinstanz. Öffnen Sie eine Visual Studio-Instanz, und klicken Sie in der Menüleiste auf **Ansicht** und **Server-Explorer**. Klicken Sie auf das **Windows Azure**-Symbol, um eine Verbindung mit Ihrem Azure-Abonnement herzustellen. Navigieren Sie dann zu "Windows Azure -> Storage -> <Ihr Speicherkonto> -> Tabellen -> WADLogsTable". Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen im Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
 
     ![][5]
 

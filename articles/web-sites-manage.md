@@ -83,7 +83,7 @@ Der Abschnitt **Auf einen Blick** enthält die folgenden zusammenfassenden Infor
 Die Verwaltungsseite **Überwachen** enthält ein Diagramm mit den Nutzungsinformationen der Website. Standardmäßig zeigt dieses Diagramm dieselben Metriken wie das Diagramm auf der Seite **Dashboard** an, die oben im Abschnitt "Dashboard" beschrieben ist. Das Diagramm kann auch zur Anzeige der Metriken für HTTP-Erfolge, HTTP-Umleitungen, HTTP 401-Fehler, HTTP 403-Fehler, HTTP 404-Fehler und HTTP 406-Fehler konfiguriert werden. Weitere Informationen zu diesen Metriken finden Sie unter [Überwachen von Websites][Überwachen].
 
 ##Webaufträge
-Auf der Verwaltungsseite "Webaufträge" können Sie Aufgaben für Ihre Website bei Bedarf, geplant oder kontinuierlich ausführen lassen. Weitere Informationen finden Sie unter [Verwenden der WebJobs-Funktion auf Microsoft Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-create-web-jobs/).
+Auf der Verwaltungsseite "Webaufträge" können Sie Aufgaben für Ihre Website bei Bedarf, geplant oder kontinuierlich ausführen lassen. Weitere Informationen finden Sie unter [Verwenden der WebJobs-Funktion auf Microsoft Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/).
 
 ##Konfigurieren
 Die Verwaltungsseite **Konfigurieren** dient zum Festlegen von anwendungsspezifischen Einstellungen.
@@ -102,7 +102,7 @@ Weitere Informationen zur Konfiguration von Skalierungsoptionen für eine Websit
 Die Verwaltungsseite **Verknüpfte Ressourcen** enthält eine Liste der Microsoft Azure-Ressourcen, die Ihre Website verwendet, darunter SQL-Datenbanken, MySQL-Datenbanken und Azure-Speicherkonten. Klicken Sie auf den Namen der Ressource, um sie zu verwalten.
 
 ##Sicherungen
-Auf der Verwaltungsseite **Sicherungen** können Sie automatisierte oder manuelle Sicherungen der Website erstellen, die Website in einem vorherigen Zustand wiederherstellen oder eine neue Website basierend auf einer Sicherung erstellen. Weitere Informationen finden Sie unter [Sicherungen von Microsoft Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-backup/) und unter [Wiederherstellen einer Microsoft Azure-Website](http://www.windowsazure.com/de-de/documentation/articles/web-sites-restore/).
+Auf der Verwaltungsseite **Sicherungen** können Sie automatisierte oder manuelle Sicherungen der Website erstellen, die Website in einem vorherigen Zustand wiederherstellen oder eine neue Website basierend auf einer Sicherung erstellen. Weitere Informationen finden Sie unter [Sicherungen von Microsoft Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-backup/) und unter [Wiederherstellen einer Microsoft Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-restore/).
 
 ##Symbole auf der Verwaltungsseite
 Symbole werden unten auf jeder Verwaltungsseite der Website angezeigt. Verschiedene dieser Symbole sind auf mehreren Seiten vorhanden, und einige Symbole werden nur auf bestimmten Seiten angezeigt.  Die folgenden Symbole werden unten auf der Verwaltungsseite **Dashboard** angezeigt:
@@ -210,11 +210,11 @@ Um das Kennwort zurückzusetzen, klicken Sie auf **Anmeldeinformationen des Ver�
 
 [azuresdk]:http://go.microsoft.com/fwlink/?LinkId=246928
 
-[Konfigurieren]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-configure-websites
+[Konfigurieren]: http://azure.microsoft.com/manage/services/web-sites/how-to-configure-websites
 
-[Überwachen]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-monitor-websites/
+[Überwachen]: http://azure.microsoft.com/manage/services/web-sites/how-to-monitor-websites/
 
-[Skalieren]: http://www.windowsazure.com/de-de/manage/services/web-sites/how-to-scale-websites
+[Skalieren]: http://azure.microsoft.com/manage/services/web-sites/how-to-scale-websites
 
 
 <!-- Anchors. -->

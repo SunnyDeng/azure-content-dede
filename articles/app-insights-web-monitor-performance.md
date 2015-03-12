@@ -1,6 +1,18 @@
-﻿<properties title="Monitor your app's health and usage with Application Insights" pageTitle="Überwachen der Integrität und Nutzung Ihrer Anwendung mit Application Insights" description="Erste Schritte mit Application Insights. Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihrer lokalen oder Microsoft Azure-Anwendungen." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
+﻿<properties 
+	pageTitle="Überwachen der Integrität und Nutzung Ihrer Anwendung mit Application Insights" 
+	description="Erste Schritte mit Application Insights. Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihres lokalen oder Microsoft Azure-Anwendungen." 
+	services="application-insights" 
+	authors="alancameronwills" 
+	manager="kamrani"/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-11-21" ms.author="awills" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2014-12-11" 
+	ms.author="awills"/>
  
 # Die Leistung in Webanwendungen überwachen
 
@@ -152,3 +164,5 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

@@ -1,6 +1,19 @@
-<properties pageTitle="Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack" description="Erfahren Sie mehr über die Verwendung von Microsoft HPC Pack und Azure für die Einrichtung eines kleinen HPC-Hybridclusters (High Performance Computing)." services="cloud-services" documentationCenter="" authors="dlepow" manager="timlt"/>
+<properties 
+	pageTitle="Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack" 
+	description="Erfahren Sie mehr über die Verwendung von Microsoft HPC Pack und Azure für die Einrichtung eines kleinen HPC-Hybridclusters (High Performance Computing)." 
+	services="cloud-services" 
+	documentationCenter="" 
+	authors="dlepow" 
+	manager="timlt"/>
 
-<tags ms.service="cloud-services" ms.workload="big-compute" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/30/2015" ms.author="danlep"/>
+<tags 
+	ms.service="cloud-services" 
+	ms.workload="big-compute" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/30/2015" 
+	ms.author="danlep"/>
 
 
 # Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack
@@ -16,7 +29,7 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit
 
 <h2 id="BKMK_Prereq">Voraussetzungen</h2>
 
->[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Erstellen eines Azure-Kontos](http://www.windowsazure.com/de-de/develop/php/tutorials/create-a-windows-azure-account/).
+>[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Erstellen eines Azure-Kontos](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
 
 Darüber hinaus benötigen Sie für dieses Lernprogramm Folgendes:
 
@@ -293,7 +306,7 @@ Nachdem Sie das Cluster ausprobiert haben, können Sie mit HPC Cluster Manager d
 * [HPC Pack 2012 R2 und HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697)
 * [Zugriff auf Azure mit Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493)
 * [Microsoft HPC Pack in Azure-VMs](http://go.microsoft.com/fwlink/p/?linkid=330375)
-* [Azure Big Compute: HPC und Batch](http://azure.microsoft.com/de-de/solutions/big-compute/)
+* [Azure Big Compute: HPC und Batch](http://azure.microsoft.com/solutions/big-compute/)
 
 
 [Overview]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/hybrid_cluster_overview.png

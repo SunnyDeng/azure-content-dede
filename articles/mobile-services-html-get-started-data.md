@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit Daten (HTML 5) | Mobile Dev Center" description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer HTML-App." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte mit Daten (HTML 5) | Mobile Dev Center" 
+	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer HTML-App." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="09/24/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-html" 
+	ms.devlang="javascript" 
+	ms.topic="article" 
+	ms.date="09/24/2014" 
+	ms.author="glenga"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
 
@@ -18,7 +32,7 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 4. [Aktualisieren der App zur Verwendung von Mobile Services]
 5. [Testen der App mit Mobile Services]
 
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-html%2F"%20target="_blank).
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-html%2F"%20target="_blank).
 
 ###Weitere Anforderungen
 
@@ -126,7 +140,7 @@ Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst ei
 
   	![][11]
 
-	> [AZURE.IMPORTANT] Wenn Sie die Schnellstart-App auf einem anderen Webserver als "localhost" bereitstellen, müssen Sie den Hostnamen des Webservers der Liste **Anforderungen von Hostnamen zulassen** hinzufügen. Weitere Informationen finden Sie unter [Cross-Origin Resource Sharing (CORS)](http://msdn.microsoft.com/de-de/library/windowsazure/dn155871.aspx"%20target="_blank).
+	> [AZURE.IMPORTANT] Wenn Sie die Schnellstart-App auf einem anderen Webserver als "localhost" bereitstellen, müssen Sie den Hostnamen des Webservers der Liste **Anforderungen von Hostnamen zulassen** hinzufügen. Weitere Informationen finden Sie unter [Cross-Origin Resource Sharing (CORS)](http://msdn.microsoft.com/library/windowsazure/dn155871.aspx"%20target="_blank).
 
 Sie können den neuen mobilen Dienst nun als Datenspeicher für die App verwenden.
 
@@ -197,8 +211,10 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 						.append($('<div>').append($('<input class="item-text">').val(item.text)));
 				});
 					   
-				$('#todo-items').empty().append(listItems).toggle(listItems.length > 0);
-				$('#summary').html('<strong>' + todoItems.length + '</strong> item(s)');
+				$('#todo-items').empty().append(listItems).toggle(listIte
+	ms.length > 0);
+				$('#summary').html('<strong>' + todoIte
+	ms.length + '</strong> item(s)');
 			});
 		}
 	   
@@ -308,7 +324,7 @@ Nach Abschluss der Daten-Lernprogramme können Sie herausfinden, wie Sie Benutze
 
 [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client
 
-[Cross-Origin Resource Sharing (CORS)]: http://msdn.microsoft.com/de-de/library/windowsazure/dn155871.aspx
+[Cross-Origin Resource Sharing (CORS)]: http://msdn.microsoft.com/library/windowsazure/dn155871.aspx
 
 
 

@@ -33,4 +33,4 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 
 <!-- URLs. -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-<!--HONumber=42-->
+\<!--HONumber=42-->

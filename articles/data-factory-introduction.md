@@ -1,6 +1,20 @@
-﻿<properties title="Introduction to Azure Data Factory" pageTitle="Einführung in Azure Data Factory" description="Erfahren Sie, wie Sie mit dem Azure Data Factory-Dienst zur Verarbeitung, Speicherung und Verschiebung von Daten Pipelines erstellen können, durch die vertrauenswürdige Informationen erzeugt werden." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties 
+	pageTitle="Einführung in Azure Data Factory" 
+	description="Erfahren Sie, wie Sie mithilfe des Azure Data Factory-Diensts Datenverarbeitungs-, Datenspeicher- und Datenverschiebungsdienste entwickeln können, um Pipelines zu erstellen, die vertrauenswürdige Informationen erzeugen." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
+	editor="monicar"/>
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/13/2014" ms.author="spelluru" />
+<tags 
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/13/2015" 
+	ms.author="spelluru"/>
 
 # Einführung in den Azure Data Factory-Dienst
 Der **Azure Data Factory**-Dienst ist ein vollständig verwalteter Dienst für das Kombinieren von Datenspeicherung, -verschiebung und Verarbeitungsdiensten in optimierten, skalierbaren und zuverlässigen Datenproduktions-Pipelines.  Entwickler können mit Data Factory halbstrukturierte, unstrukturierte und strukturierte Daten aus lokalen und Cloud-Quellen in vertrauenswürdige Informationen umwandeln. Entwickler erstellen datengesteuerte Workflows (Pipelines), die Daten aus ihren lokalen, cloudbasierten und Internetdiensten verknüpfen, zusammenführen und umwandeln und durch einfache JSON-Skripterstellung eine komplexe Datenverarbeitung einrichten. Der Azure Data Factory-Dienst ermöglicht dank umfassender visueller Darstellung über das Azure-Vorschauportal eine Überwachung und Verwaltung dieser Pipelines auf einen Blick. Die von Pipelines produzierten Informationen können mithilfe von BI- und Analysetools und anderen Anwendungen problemlos verarbeitet werden und ermöglichen so zuverlässige geschäftliche Einblicke und Entscheidungen.
@@ -175,3 +189,5 @@ Das Microsoft-Datenverwaltungsgateway ist eine Software, die lokale Datenquellen
 
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

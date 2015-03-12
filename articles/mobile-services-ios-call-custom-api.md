@@ -1,6 +1,21 @@
-﻿<properties pageTitle="Aufrufen einer benutzerdefinierten API über eine iOS-App | Mobile Services" description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer iOS-App aufrufen, die Azure Mobile Services verwendet." services="mobile-services" documentationCenter="ios" authors="krisragh" writer="krisragh" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Aufrufen einer benutzerdefinierten API über eine iOS-App | Mobile Services" 
+	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer iOS-App aufrufen, die Azure Mobile Services verwendet." 
+	services="mobile-services" 
+	documentationCenter="ios" 
+	authors="krisragh" 
+	writer="krisragh" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-ios" 
+	ms.devlang="objective-c" 
+	ms.topic="article" 
+	ms.date="10/10/2014" 
+	ms.author="krisragh"/>
 
 # Aufrufen einer benutzerdefinierten API aus dem Client
 

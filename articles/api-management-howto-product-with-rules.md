@@ -1,6 +1,20 @@
-<properties pageTitle="How to create and configure advanced product settings in Azure API Management" metaKeywords="" description="Learn how to configure a product with quota and rate limit policies." metaCanonical="" services="" documentationCenter="API Management" title="How to create and configure advanced product settings in Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
+﻿<properties 
+	pageTitle="Erstellen und Konfigurieren erweiterter Produkteinstellungen in Azure API Management" 
+	description="Erfahren Sie, wie Sie ein Produkt mit Kontingent- und Ratenbegrenzungsrichtlinien konfigurieren." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/11/2015" 
+	ms.author="sdanie"/>
 
 # Erstellen und Konfigurieren erweiterter Produkteinstellungen in der Azure API-Verwaltung
 
@@ -255,3 +269,5 @@ Wenn die Durchsatzgrenze von 10 Aufrufen pro Minute aktiv ist, werden nachfolgen
   [Operationsergebnis]: ./media/api-management-howto-product-with-rules/api-management-http-get-results.png
   [4]: ./media/api-management-howto-product-with-rules/api-management-http-get-429.png
   [Erste Schritte bei der erweiterten API-Konfiguration]: ../api-management-get-started-advanced
+
+<!--HONumber=46--> 

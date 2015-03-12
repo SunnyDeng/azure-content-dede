@@ -96,7 +96,7 @@ Die "[Anhänge]" enthalten Informationen zur Verwendung anderer Tools wie Wiresh
 
 ## <a name="monitoring-your-storage-service"></a>Überwachung Ihres Speicherdiensts
 
-Wenn Sie mit der Windows-Leistungsüberwachung vertraut sind, können Sie von Speichermetriken als einem Azure-Speicher-Pendant zu Windows-Leistungsüberwachungsindikatoren ausgehen. In Speichermetriken finden Sie einen umfassenden Metriksatz (Indikatoren in der Windows Performance Monitor-Terminologie) wie Dienstverfügbarkeit, Gesamtzahl der Dienstanfragen, oder Prozentsatz der erfolgreichen Dienstanfragen (für eine vollständige Liste der verfügbaren Metriken siehe <a href="http://msdn.microsoft.com/de-de/library/azure/hh343264.aspx" target="_blank">Tabellenschema der Speicher-Analytikmetriken</a> in MSDN). Sie können spezifizieren, ob der Speicherdienst die Metriken jede Stunde oder jede Minute sammeln und aggregieren soll. Weitere Informationen zur Metrik-Aktivierung und Überwachung Ihrer Speicherkonten finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=510865" target="_blank">Aktivierung von Speichermetriken</a> in MSDN.
+Wenn Sie mit der Windows-Leistungsüberwachung vertraut sind, können Sie von Speichermetriken als einem Azure-Speicher-Pendant zu Windows-Leistungsüberwachungsindikatoren ausgehen. In Speichermetriken finden Sie einen umfassenden Metriksatz (Indikatoren in der Windows Performance Monitor-Terminologie) wie Dienstverfügbarkeit, Gesamtzahl der Dienstanfragen, oder Prozentsatz der erfolgreichen Dienstanfragen (für eine vollständige Liste der verfügbaren Metriken siehe <a href="http://msdn.microsoft.com/library/azure/hh343264.aspx" target="_blank">Tabellenschema der Speicher-Analytikmetriken</a> in MSDN). Sie können spezifizieren, ob der Speicherdienst die Metriken jede Stunde oder jede Minute sammeln und aggregieren soll. Weitere Informationen zur Metrik-Aktivierung und Überwachung Ihrer Speicherkonten finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=510865" target="_blank">Aktivierung von Speichermetriken</a> in MSDN.
 
 Sie können wählen, welche Stundenmetriken Sie im Azure-Portal anzeigen möchten, und Regeln konfigurieren, die den Administrator per E-Mail benachrichtigen, wenn eine Stundenmetrik einen bestimmten Schwellenwert überschreitet (weitere Informationen finden Sie auf der Seite <a href="http://msdn.microsoft.com/library/azure/dn306638.aspx" target="_blank">Vorgehensweise: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure</a>. Der Speicherdienst sammelt Metriken nach dem Best-Effort-Prinzip, kann aber nicht jeden Speichervorgang aufzeichnen.
 
@@ -130,7 +130,7 @@ Während das Portal Zustandsinformationen innerhalb der Azure-Rechenzentren (Ins
 
 ### <a name="monitoring-capacity"></a>Kapazitätsüberwachung
 
-Speichermetriken speichern nur Kapazitätsmetriken für den Blob-Dienst, weil Blobs in der Regel den größten Teil der gespeicherten Daten ausmachen. (Es ist zum Redaktionszeitpunkt nicht möglich, Speichermetriken zu verwenden, um die Kapazität Ihrer Tabellen und Warteschlangen zu überwachen.) Sie finden diese Daten in der Tabelle **$MetricsCapacityBlob**, wenn Sie die Überwachung für den Blob-Dienst aktiviert haben. Speichermetriken zeichnen diese Daten einmal täglich auf, und Sie können den Wert des **RowKey** verwenden, um zu bestimmen, ob die Zeile eine Entität enthält, die sich auf Benutzerdaten (Wert **data**) oder Analysedaten (Wert **analytics**) bezieht. Jede gespeicherte Entität enthält Informationen zum verwendeten Speicheranteil (**Capacity**, gemessen in Byte) und die im Speicherkonto verwendete aktuelle Containerzahl (**ContainerCount**) sowie Blobs (**ObjectCount**). Weitere Informationen über die in der Tabelle **$MetricsCapacityBlob** gespeicherten Kapazitätsmetriken finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/azure/hh343264.aspx" target="_blank">Tabellenschema der Speicher-Analytikmetriken</a> in MSDN.
+Speichermetriken speichern nur Kapazitätsmetriken für den Blob-Dienst, weil Blobs in der Regel den größten Teil der gespeicherten Daten ausmachen. (Es ist zum Redaktionszeitpunkt nicht möglich, Speichermetriken zu verwenden, um die Kapazität Ihrer Tabellen und Warteschlangen zu überwachen.) Sie finden diese Daten in der Tabelle **$MetricsCapacityBlob**, wenn Sie die Überwachung für den Blob-Dienst aktiviert haben. Speichermetriken zeichnen diese Daten einmal täglich auf, und Sie können den Wert des **RowKey** verwenden, um zu bestimmen, ob die Zeile eine Entität enthält, die sich auf Benutzerdaten (Wert **data**) oder Analysedaten (Wert **analytics**) bezieht. Jede gespeicherte Entität enthält Informationen zum verwendeten Speicheranteil (**Capacity**, gemessen in Byte) und die im Speicherkonto verwendete aktuelle Containerzahl (**ContainerCount**) sowie Blobs (**ObjectCount**). Weitere Informationen über die in der Tabelle **$MetricsCapacityBlob** gespeicherten Kapazitätsmetriken finden Sie unter <a href="http://msdn.microsoft.com/library/azure/hh343264.aspx" target="_blank">Tabellenschema der Speicher-Analytikmetriken</a> in MSDN.
 
 > [AZURE.NOTE] Sie sollten diese Werte überwachen, um früh zu erkennen, dass Sie sich den Kapazitätsgrenzen Ihres Speicherkontos nähern. Auf der Seite **Überwachung** für Ihr Speicherkonto im Azure-Portal können Sie Warnregeln hinzufügen, um benachrichtigt zu werden, wenn die Gesamtspeichernutzung die von Ihnen festgelegten Grenzwerte über- oder unterschreitet.
 
@@ -140,7 +140,7 @@ Hilfe für die Schätzung der Größe der verschiedenen Speicherobjekte wie Blob
 
 Sie sollten die Verfügbarkeit des Speicherdiensts in Ihrem Speicherkonto überwachen, indem Sie den Wert in der Spalte **Availability** in den Stunden- oder Minutenmetriken-Tabellen überwachen - **$MetricsHourPrimaryTransactionsBlob**, **$MetricsHourPrimaryTransactionsTable**, **$MetricsHourPrimaryTransactionsQueue**, **$MetricsMinutePrimaryTransactionsBlob**, **$MetricsMinutePrimaryTransactionsTable**, **$MetricsMinutePrimaryTransactionsQueue**, **$MetricsCapacityBlob**. Die Spalte **Availability** enthält einen Prozentwert, der die Verfügbarkeit des Diensts oder des API-Vorgangs in der jeweiligen Zeile darstellt. (Der **RowKey** zeigt an, ob die Zeile Metriken für den Dienst insgesamt oder für einen bestimmten API-Vorgang enthält.) 
 
-Jeder unter 100 % liegende Wert zeigt an, dass einige Speicheranfragen fehlschlagen. Sie können sehen, warum sie fehlschlagen, indem Sie die anderen Spalten in den Metrikdaten untersuchen, in denen die Anzahl der Anfragen nach verschiedenen Fehlerarten angezeigt wird, wie **ServerTimeoutError**. Sie müssen mit dem vorübergehenden Absinken der **Verfügbarkeit** unter 100 % aufgrund vorübergehender Server-Timeouts rechnen, wenn der Server Partitionen bewegt, um eine bessere Lastverteilung der Anfragen durchzuführen. Die Wiederholungslogik in Ihrer Clientanwendung sollte solche intermittierenden Bedingungen handhaben. Die Seite <a href="http://msdn.microsoft.com/de-de/library/azure/hh343260.aspx" target="_blank"></a> führt die Transaktionsarten auf, die die Speichermetriken in ihrer Berechnung der **Verfügbarkeit** beinhalten.
+Jeder unter 100 % liegende Wert zeigt an, dass einige Speicheranfragen fehlschlagen. Sie können sehen, warum sie fehlschlagen, indem Sie die anderen Spalten in den Metrikdaten untersuchen, in denen die Anzahl der Anfragen nach verschiedenen Fehlerarten angezeigt wird, wie **ServerTimeoutError**. Sie müssen mit dem vorübergehenden Absinken der **Verfügbarkeit** unter 100 % aufgrund vorübergehender Server-Timeouts rechnen, wenn der Server Partitionen bewegt, um eine bessere Lastverteilung der Anfragen durchzuführen. Die Wiederholungslogik in Ihrer Clientanwendung sollte solche intermittierenden Bedingungen handhaben. Die Seite <a href="http://msdn.microsoft.com/library/azure/hh343260.aspx" target="_blank"></a> führt die Transaktionsarten auf, die die Speichermetriken in ihrer Berechnung der **Verfügbarkeit** beinhalten.
 
 Auf der Seite **Überwachung** für Ihr Speicherkonto im Azure-Portal können Sie Warnregeln hinzufügen, um benachrichtigt zu werden, wenn die **Verfügbarkeit** den von Ihnen festgelegten Grenzwert unterschreitet.
 
@@ -199,10 +199,10 @@ Benutzer Ihrer Anwendung können Sie über Fehler informieren, die von der Clien
 
 Die folgenden Ressourcen in MSDN sind nützlich für das Verständnis von speicherbezogenem Status und Fehlercodes:
 
-- <a href="http://msdn.microsoft.com/de-de/library/azure/dd179357.aspx" target="_blank">Bekannte REST API-Fehlercodes</a>
-- <a href="http://msdn.microsoft.com/de-de/library/azure/dd179439.aspx" target="_blank">Blob-Dienst-Fehlercodes</a>
-- <a href="http://msdn.microsoft.com/de-de/library/azure/dd179446.aspx" target="_blank">Warteschlangendienst-Fehlercodes</a>
-- <a href="http://msdn.microsoft.com/de-de/library/azure/dd179438.aspx" target="_blank">Tabellendienst-Fehlercodes</a>
+- <a href="http://msdn.microsoft.com/library/azure/dd179357.aspx" target="_blank">Bekannte REST API-Fehlercodes</a>
+- <a href="http://msdn.microsoft.com/library/azure/dd179439.aspx" target="_blank">Blob-Dienst-Fehlercodes</a>
+- <a href="http://msdn.microsoft.com/library/azure/dd179446.aspx" target="_blank">Warteschlangendienst-Fehlercodes</a>
+- <a href="http://msdn.microsoft.com/library/azure/dd179438.aspx" target="_blank">Tabellendienst-Fehlercodes</a>
 
 ### <a name="storage-emulator-issues"></a>Probleme mit dem Speicheremulator
 
@@ -375,7 +375,7 @@ Für den Tabellen- und Warteschlangendienst kann der Nagle-Algorithmus auch höh
     ServicePoint queueServicePoint = ServicePointManager.FindServicePoint(storageAccount.QueueEndpoint);
     queueServicePoint.UseNagleAlgorithm = false;
 
-Sie sollten die clientseitigen Protokollierungen überprüfen, um zu sehen, wie viele Anfragen Ihre Clientanwendung übermittelt, und allgemeine .NET- bezogene Leistungsengpässe in Ihrem Client wie CPU, .NET Garbage Collection, Netzwerkauslastung oder Speicher überprüfen (als Ausgangspunkt für die Fehlerbehandlung bei .NET-Clientanwendungen siehe <a href="http://msdn.microsoft.com/de-de/library/7fe0dd2y(v=vs.110).aspx" target="_blank">Debuggen, Verfolgung und Profiling</a> in MSDN).
+Sie sollten die clientseitigen Protokollierungen überprüfen, um zu sehen, wie viele Anfragen Ihre Clientanwendung übermittelt, und allgemeine .NET- bezogene Leistungsengpässe in Ihrem Client wie CPU, .NET Garbage Collection, Netzwerkauslastung oder Speicher überprüfen (als Ausgangspunkt für die Fehlerbehandlung bei .NET-Clientanwendungen siehe <a href="http://msdn.microsoft.com/library/7fe0dd2y(v=vs.110).aspx" target="_blank">Debuggen, Verfolgung und Profiling</a> in MSDN).
 
 #### Untersuchung von Netzwerklatenzproblemen
 
@@ -431,7 +431,7 @@ Ein Anstieg bei **PercentThrottlingError** erfolgt oft gleichzeitig mit einem An
 
 #### <a name="transient-increase-in-PercentThrottlingError"></a>Vorübergehender Anstieg bei PercentThrottlingError
 
-Im Fall der Übereinstimmung der Wertespitzen von **PercentThrottlingError** mit Zeiträumen hoher Aktivität für die Anwendung sollten Sie eine exponentielle (nicht lineare) Backoff-Strategie für Wiederholungen in Ihrem Client implementieren: Dies wird die sofortige Auslastung auf der Partition reduzieren und Ihre Anwendung beim Ausgleich von Verkehrsspitzen unterstützen. Weitere Informationen zur Implementierung von Wiederholungsrichtlinien unter Verwendung der Speicher-Clientbibliothek finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/microsoft.windowsazure.storage.retrypolicies.aspx" target="_blank">Microsoft.WindowsAzure.Storage.RetryPolicies-Namespace</a> in MSDN.
+Im Fall der Übereinstimmung der Wertespitzen von **PercentThrottlingError** mit Zeiträumen hoher Aktivität für die Anwendung sollten Sie eine exponentielle (nicht lineare) Backoff-Strategie für Wiederholungen in Ihrem Client implementieren: Dies wird die sofortige Auslastung auf der Partition reduzieren und Ihre Anwendung beim Ausgleich von Verkehrsspitzen unterstützen. Weitere Informationen zur Implementierung von Wiederholungsrichtlinien unter Verwendung der Speicher-Clientbibliothek finden Sie unter <a href="http://msdn.microsoft.com/library/microsoft.windowsazure.storage.retrypolicies.aspx" target="_blank">Microsoft.WindowsAzure.Storage.RetryPolicies-Namespace</a> in MSDN.
 
 > [AZURE.NOTE] Es können auch Spitzen in den Werten von **PercentThrottlingError** auftreten, die nicht mit Zeiträumen hoher Aktivität für die Anwendung übereinstimmen. Die wahrscheinlichste Ursache ist hier die Verschiebung von Partitionen durch den Speicherdienst zur Verbesserung des Lastausgleichs.
 
@@ -611,7 +611,7 @@ In diesem Szenario sollten Sie untersuchen, warum der SAS-Token abläuft, bevor 
 - Stimmt der Versionsparameter im SAS-Schlüssel (zum Beispiel **sv=2012-02-12**) mit der von Ihnen verwendeten Version der Speicher-Clientbibliothek überein? Sie sollten immer die neueste Version der Speicher-Clientbibliothek verwenden. Weitere Informationen zu SAS-Token-Versionierung und Abhängigkeiten von der Clientbibliotheksversion finden Sie unter <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx" target="_blank"></a>. 
 - Wenn Sie Ihren Speicherzugriffsschlüssel neu erstellen (klicken Sie auf einer beliebigen Seite in Ihrem Speicherkonto im Azure-Portal auf **Zugriffsschlüssel verwalten**), kann dies jedes vorhandene SAS-Token unwirksam machen. Dies kann problematisch sein, wenn Sie SAS-Token mit einer langen Ablaufzeit zum Cachen von Clientanwendungen generieren.
 
-Wenn Sie die Speicher-Clientbibliothek verwenden, um SAS-Token zu erstellen, ist es einfach, einen gültigen Token anzulegen. Wenn Sie allerdings die Speicher-REST-API verwenden und den SAS-Token manuell anlegen, sollten Sie sorgfältig das Thema <a href="http://msdn.microsoft.com/de-de/library/azure/ee395415.aspx" target="_blank">Zugriffsdelegierung mit einer Shared Access Signature</a> in MSDN lesen.
+Wenn Sie die Speicher-Clientbibliothek verwenden, um SAS-Token zu erstellen, ist es einfach, einen gültigen Token anzulegen. Wenn Sie allerdings die Speicher-REST-API verwenden und den SAS-Token manuell anlegen, sollten Sie sorgfältig das Thema <a href="http://msdn.microsoft.com/library/azure/ee395415.aspx" target="_blank">Zugriffsdelegierung mit einer Shared Access Signature</a> in MSDN lesen.
 
 ### <a name="the-client-is-receiving-404-messages"></a>Der Client empfängt HTTP 404 (Nicht Gefunden)-Meldungen
 Wenn die Clientanwendung eine HTTP 404 (Nicht gefunden)-Meldung vom Server empfängt, bedeutet dies, dass das Objekt, das der Client verwenden will (z. B. eine Entität, Tabelle, Blob, Container oder Warteschlange) nicht im Speicherdienst vorhanden ist. Hierfür gibt es eine Reihe möglicher Gründe, beispielsweise:
@@ -893,7 +893,7 @@ Wenn Sie einen JavaScript-Client verwenden und der Speicherdienst HTTP 404-Meldu
 
 Diese Fehler treten auf, weil im Webbrowser die <a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">Same Origin Policy</a> als Sicherheitsbeschränkung implementiert ist, die die Webseite daran hindert, eine API aus einer anderen Domäne aufzurufen. 
 
-Um eine Übergangslösung für das JavaScript-Problem zu finden, können Sie Cross-Origin Resource Sharing (CORS) für den Speicherdienst konfigurieren, auf den der Client zugreift. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/dn535601.aspx" target="_blank">Cross-Origin Resource Sharing (CORS)-Support für den Windows Azure-Speicherdienst</a> in MSDN.
+Um eine Übergangslösung für das JavaScript-Problem zu finden, können Sie Cross-Origin Resource Sharing (CORS) für den Speicherdienst konfigurieren, auf den der Client zugreift. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/windowsazure/dn535601.aspx" target="_blank">Cross-Origin Resource Sharing (CORS)-Support für den Windows Azure-Speicherdienst</a> in MSDN.
 
 Das folgende Codebeispiel zeigt, wie Sie Ihren Blob-Dienst so konfigurieren, dass JavaScript in der Contoso-Domäne ausgeführt wird, um auf ein Blob in Ihrem Blob-Speicherdienst zuzugreifen:
 
@@ -988,7 +988,7 @@ Es ist wichtig zu beachten, dass diese Vorgänge erfolgreich abgeschlossen wurde
 - **ResouceAlreadyExists** (Konflikt, 409), beispielsweise von einer **CreateIfNotExist**-Operation, wenn die Ressource bereits vorhanden ist.
 - **ConditionNotMet** (Nicht Verändert, 304), zum Beispiel von einem bedingten Vorgang, bei der ein Client einen **ETag**-Wert und einen HTTP **If-None-Match**-Header sendet, um ein Bild nur dann anzufordern, wenn es seit dem letzten Vorgang aktualisiert wurde.
 
-Eine Liste bekannter REST API-Fehlercodes, die von den Speicherdiensten zurückgegeben werden, finden Sie auf der Seite <a href="http://msdn.microsoft.com/de-de/library/azure/dd179357.aspx" target="_blank">Bekannte REST API-Fehlercodes</a>. 
+Eine Liste bekannter REST API-Fehlercodes, die von den Speicherdiensten zurückgegeben werden, finden Sie auf der Seite <a href="http://msdn.microsoft.com/library/azure/dd179357.aspx" target="_blank">Bekannte REST API-Fehlercodes</a>. 
 
 ### <a name="capacity-metrics-show-an-unexpected-increase"></a>Kapazitätsmetriken zeigen einen unerwarteten Anstieg der Speicherkapazitätsauslastung an
 
@@ -999,7 +999,7 @@ Wenn Sie plötzliche, unerwartete Änderungen in der Kapazitätsauslastung Ihres
 
 Wenn eine virtuelle Maschine (VM) über eine große Anzahl von angeschlossenen VHDs verfügt, die sich im gleichen Speicherkonto befinden, sollten Sie die Skalierbarkeitsziele für ein das Scheitern der VM verursachendes Einzelspeicherkonto überschreiten. Sie sollten die Minutenmetriken für das Speicherkonto (**TotalRequests**/**TotalIngress**/**TotalEgress**) für Spitzen überprüfen, die die Skalierbarkeitsziele für ein Speicherkonto überschreiten. Im Abschnitt "[Metriken zeigen Anstieg bei PercentThrottlingError an]" erhalten Sie Informationen zur Unterstützung bei der Feststellung, ob Drosselung in Ihrem Speicherkonto stattgefunden hat. 
 
-In der Regel wird jede einzelne Input- oder Output-Operation auf einer VHD von einem virtuellen Computer in **Get Page**- oder **Put Page**-Operationen des zugrunde liegenden Seiten-Blobs übersetzt. Daher können Sie die geschätzten IOPS für Ihre Umgebung verwenden, um zu bestimmen, über wie viele virtuelle Festplatten Sie in einem einzigen Speicherkonto auf Grundlage des spezifischen Anwendungsverhaltens verfügen können. Wir empfehlen, nicht über mehr als 40 Festplatten in einem einzigen Speicherkonto zu verwenden. Unter <a href="http://msdn.microsoft.com/de-de/library/azure/dn249410.aspx" target="_blank">Ziele für Skalierbarkeit und Leistung des Azure-Speichers</a> finden Sie nähere Informationen über die aktuellen Skalierbarkeitsziele für Speicherkonten, insbesondere die Gesamtanforderungsrate und die Gesamtbandbreite für den Speicherkontotyp, den Sie verwenden. 
+In der Regel wird jede einzelne Input- oder Output-Operation auf einer VHD von einem virtuellen Computer in **Get Page**- oder **Put Page**-Operationen des zugrunde liegenden Seiten-Blobs übersetzt. Daher können Sie die geschätzten IOPS für Ihre Umgebung verwenden, um zu bestimmen, über wie viele virtuelle Festplatten Sie in einem einzigen Speicherkonto auf Grundlage des spezifischen Anwendungsverhaltens verfügen können. Wir empfehlen, nicht über mehr als 40 Festplatten in einem einzigen Speicherkonto zu verwenden. Unter <a href="http://msdn.microsoft.com/library/azure/dn249410.aspx" target="_blank">Ziele für Skalierbarkeit und Leistung des Azure-Speichers</a> finden Sie nähere Informationen über die aktuellen Skalierbarkeitsziele für Speicherkonten, insbesondere die Gesamtanforderungsrate und die Gesamtbandbreite für den Speicherkontotyp, den Sie verwenden. 
 Wenn Sie die Skalierbarkeitsziele für Ihr Speicherkonto überschreiten, sollten Sie die virtuellen Festplatten in mehreren verschiedenen Speicherkonten platzieren, um die Aktivität in den einzelnen Konten zu reduzieren.
 
 ### <a name="your-issue-arises-from-using-the-storage-emulator"></a>Ihre Probleme entstehen aus der Verwendung des Speicheremulators für Entwicklung oder Test
@@ -1012,7 +1012,7 @@ Sie verwenden den Speicheremulator in der Regel während der Entwicklungs- und T
 
 #### <a name="feature-X-is-not-working"></a>Funktion "X" funktioniert im Speicheremulator nicht
 
-Der Speicheremulator unterstützt nicht alle Funktionen des Azure-Speicherdiensts wie beispielsweise den Dateidienst. Weitere Informationen dazu finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/gg433135.aspx" target="_blank">Unterschiede zwischen dem Speicheremulator und den Azure-Speicherdiensten</a> in MSDN.
+Der Speicheremulator unterstützt nicht alle Funktionen des Azure-Speicherdiensts wie beispielsweise den Dateidienst. Weitere Informationen dazu finden Sie unter <a href="http://msdn.microsoft.com/library/gg433135.aspx" target="_blank">Unterschiede zwischen dem Speicheremulator und den Azure-Speicherdiensten</a> in MSDN.
 
 Für die nicht vom Speicheremulator unterstützten Funktionen verwenden Sie den Azure-Speicherdienst in der Cloud.
 
@@ -1028,7 +1028,7 @@ Dieses Szenario tritt in der Regel ein, wenn Sie die neueste Version der Speiche
 
 Sie benötigen Administratorrechte, wenn Sie den Speicheremulator ausführen. Dies ist nur erforderlich, wenn Sie den Speicheremulator zum ersten Mal initialisieren. Nachdem Sie den Speicheremulator initialisiert haben, benötigen Sie keine Administratorrechte, um ihn wieder auszuführen. 
 
-Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/gg433132.aspx" target="_blank">Initialisierung des Speicheremulators mithilfe des Befehlszeilen-Tools</a> in MSDN. (Sie können den Speicheremulator auch in Visual Studio initialisieren, wofür ebenfalls Administratorrechte erforderlich sind.)
+Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/gg433132.aspx" target="_blank">Initialisierung des Speicheremulators mithilfe des Befehlszeilen-Tools</a> in MSDN. (Sie können den Speicheremulator auch in Visual Studio initialisieren, wofür ebenfalls Administratorrechte erforderlich sind.)
 
 ### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>Sie stoßen bei der Installation von Windows Azure SDK für .NET auf Probleme
 
@@ -1122,7 +1122,7 @@ Um eine Rückverfolgungssession für HTTP- und HTTPS-Verkehr mit Microsoft Messa
 
 Wenn Sie bereit sind, mit dem Sammeln von Rückverfolgungsdaten zu beginnen, klicken Sie auf die Schaltfläche **Starten mit**.
 
-Weitere Informationen zur **Web-Proxy**-Rückverfolgung mit Microsoft Message Analyzer finden Sie unter <a href="http://technet.microsoft.com/de-de/library/jj674814.aspx" target="_blank">PEF-WebProxy Provider</a> im TechNet.
+Weitere Informationen zur **Web-Proxy**-Rückverfolgung mit Microsoft Message Analyzer finden Sie unter <a href="http://technet.microsoft.com/library/jj674814.aspx" target="_blank">PEF-WebProxy Provider</a> im TechNet.
 
 Die integrierte **Web-Proxy**-Rückverfolgung in Microsoft Message Analyzer basiert auf Fiddler; sie kann clientseitigen HTTPS-Verkehr erfassen und unverschlüsselte HTTPS-Nachrichten anzeigen. Die **Web-Proxy**-Rückverfolgung funktioniert durch Konfiguration eines lokalen Proxy für den gesamten HTTP- und HTTPS-Verkehr, der Zugriff auf unverschlüsselte Nachrichten verschafft.
 
@@ -1138,11 +1138,11 @@ Wenn Sie die Rückverfolgungssession in Microsoft Message Analyzer erstellen, k�
 
 ![][10]
 
-Weitere Informationen zur Local-Link-Layer-Rückverfolgung von Microsoft Message Analyzer finden Sie unter <a href="http://technet.microsoft.com/de-de/library/jj659264.aspx" target="_blank">PEF-NDIS-PacketCapture Provider</a> im TechNet.
+Weitere Informationen zur Local-Link-Layer-Rückverfolgung von Microsoft Message Analyzer finden Sie unter <a href="http://technet.microsoft.com/library/jj659264.aspx" target="_blank">PEF-NDIS-PacketCapture Provider</a> im TechNet.
 
 ### <a name="appendix-4"></a>Anhang 4: Verwendung von Excel zur Anzeige von Metrik- und Protokollierungsdaten
 
-Viele Tools ermöglichen das Herunterladen von Speichermetrikdaten aus dem Azure-Tabellenspeicher in einem abgegrenzten Format, wodurch die Daten einfach in Excel für die Anzeige und Analyse geladen werden können. Speicherprotokollierungsdaten vom Azure-Blob-Speicher verfügen bereits über eine abgetrenntes Format, das Sie in Excel laden können. Allerdings müssen Sie basierend auf den Informationen in <a href="http://msdn.microsoft.com/de-de/library/hh343259.aspx" target="_blank">Protokollformat der Speicheranalyse</a> und <a href="http://msdn.microsoft.com/de-de/library/hh343264.aspx" target="_blank">Schema der Tabellen für Speicheranalysemetriken</a> entsprechende Spaltenüberschriften hinzufügen.
+Viele Tools ermöglichen das Herunterladen von Speichermetrikdaten aus dem Azure-Tabellenspeicher in einem abgegrenzten Format, wodurch die Daten einfach in Excel für die Anzeige und Analyse geladen werden können. Speicherprotokollierungsdaten vom Azure-Blob-Speicher verfügen bereits über eine abgetrenntes Format, das Sie in Excel laden können. Allerdings müssen Sie basierend auf den Informationen in <a href="http://msdn.microsoft.com/library/hh343259.aspx" target="_blank">Protokollformat der Speicheranalyse</a> und <a href="http://msdn.microsoft.com/library/hh343264.aspx" target="_blank">Schema der Tabellen für Speicheranalysemetriken</a> entsprechende Spaltenüberschriften hinzufügen.
 
 Um Speicherprotokollierungsdaten in Excel zu importieren, nachdem Sie diese aus dem BLOB-Speicher heruntergeladen haben, gehen Sie folgendermaßen vor:
 
@@ -1159,7 +1159,7 @@ Sie können die Application Insights-Funktion für Visual Studio Online als Best
 - Sicherstellen, dass Ihr Webdienst verfügbar und reaktionsschnell ist. Ob Ihre Anwendung eine Website ist, die einen Webdienst verwendet, oder eine Geräteanwendung: Sie kann Ihre URL alle paar Minuten von Standorten auf der ganzen Welt testen, und Ihnen mitteilen, ob es ein Problem gibt. 
 - Leistungsprobleme oder Ausnahmen in Ihrem Webdienst schnell diagnostizieren. Finden Sie heraus, ob CPU oder andere Ressourcen gestretched werden, gewinnen Sie Stack-Traces aus Ausnahmen, und durchsuchen Sie Protokolltraces leicht. Wenn die Leistung der Anwendung unter akzeptable Grenzen fällt, können wir Ihnen eine E-Mail senden. Sie können sowohl .NET- als auch Java-Webdienste überwachen.
 
-Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/de-de/library/dn481095.aspx" target="_blank">Application Insights für Visual Studio Online in MSDN</a>.
+Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/dn481095.aspx" target="_blank">Application Insights für Visual Studio Online in MSDN</a>.
 
 
 <!--Anchors-->
@@ -1234,5 +1234,4 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
 [8]: ./media/storage-monitoring-diagnosing-troubleshooting/wireshark-screenshot-3.png
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
-
 <!--HONumber=42-->

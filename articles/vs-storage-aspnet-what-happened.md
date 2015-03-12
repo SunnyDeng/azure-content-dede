@@ -40,4 +40,4 @@ Dieses Paket fügt die folgenden .NET-Verweise hinzu:
 In der Datei "web.config" Ihres Projekts wurde ein Element mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Speicherkontos erstellt.
 
 Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
-<!--HONumber=42-->
+\<!--HONumber=42-->

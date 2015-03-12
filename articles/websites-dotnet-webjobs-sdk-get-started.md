@@ -147,7 +147,7 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
  
 	Die Datei enthält eine SQL-Verbindungszeichenfolge und eine Azure-Speicher-Verbindungszeichenfolge für die Arbeit mit Blobs und Warteschlangen. 
 
-	Die SQL-Verbindungszeichenfolge zeigt auf eine [SQL Server Express LocalDB](http://msdn.microsoft.com/de-de/library/hh510202.aspx)-Datenbank.
+	Die SQL-Verbindungszeichenfolge zeigt auf eine [SQL Server Express LocalDB](http://msdn.microsoft.com/library/hh510202.aspx)-Datenbank.
  
 	Die Speicherverbindungszeichenfolge ist ein Beispiel, das Platzhalter für den Namen des Speicherkontos und den Zugriffsschlüssel verwendet. Sie ersetzen dies durch eine Verbindungszeichenfolge, die denselben Namen und Schlüssel wie Ihr Speicherkonto hat.  
 
@@ -652,7 +652,7 @@ Ein ähnlicher Codeteil ruft einen Verweis auf die *images*-Warteschlange ab.
 		queueClient.DefaultRequestOptions.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);
 		imagesQueue = queueClient.GetQueueReference("blobnamerequest");
 
-Ein Großteil des Controller-Codes ist typisch für die Arbeit mit einem Entity Framework-Datenmodell und einer DbContext-Klasse. Eine Ausnahme ist die HttpPost `Create`-Methode, die eine Datei hochlädt und im BLOB-Speicher ablegt. Die Modellbindung stellt ein [HttpPostedFileBase](http://msdn.microsoft.com/de-de/library/system.web.httppostedfilebase.aspx)-Objekt für die Methode bereit.
+Ein Großteil des Controller-Codes ist typisch für die Arbeit mit einem Entity Framework-Datenmodell und einer DbContext-Klasse. Eine Ausnahme ist die HttpPost `Create`-Methode, die eine Datei hochlädt und im BLOB-Speicher ablegt. Die Modellbindung stellt ein [HttpPostedFileBase](http://msdn.microsoft.com/library/system.web.httppostedfilebase.aspx)-Objekt für die Methode bereit.
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]

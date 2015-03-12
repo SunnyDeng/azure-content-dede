@@ -36,7 +36,7 @@ Sonderpreis für New Relic im Azure Store
 New Relic Standard steht Azure-Benutzern kostenlos zur Verfügung.
 New Relic Pro wird in mehreren Paketen angeboten - basierend auf dem verwendeten Websitemodus und der Instanzgröße, falls Sie den reservierten Modus verwenden.
 
-Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](http://www.windowsazure.com/de-de/gallery/store/new-relic/new-relic/).
+Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](http://azure.microsoft.com/gallery/store/new-relic/new-relic/).
 
 > [AZURE.NOTE] Es werden nur Preise für bis zu zehn Serverinstanzen aufgeführt. Volumenpreise für mehr als zehn Instanzen erfragen Sie bitte bei New Relic (sales@newrelic.com).
 
@@ -238,8 +238,8 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
  * [Finding Help](https://newrelic.com/docs/site/finding-help): Ressourcen, die über das Onlinehilfecenter von New Relic verfügbar sind.
 
 
-[webmatrixwebsite]: http://www.windowsazure.com/de-de/develop/net/tutorials/website-with-webmatrix/
-[vswebsite]: http://www.windowsazure.com/de-de/develop/net/tutorials/get-started/
+[webmatrixwebsite]: http://azure.microsoft.com/develop/net/tutorials/website-with-webmatrix/
+[vswebsite]: http://azure.microsoft.com/develop/net/tutorials/get-started/
 
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png

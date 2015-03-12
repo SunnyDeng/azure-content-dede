@@ -1,6 +1,20 @@
-﻿<properties title="How to create a hybrid deployment of RemoteApp" pageTitle="Erstellen einer Hybridbereitstellung von RemoteApp" description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die ein Verbindung zu Ihrem internen Netzwerk herstellt." metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo" manager="kathyw" />
+﻿<properties 
+	pageTitle="Erstellen einer Hybridsammlung für RemoteApp" 
+	description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die eine Verbindung mit Ihrem internen Netzwerk herstellt." 
+	services="remoteapp" 
+	documentationCenter="" 
+	authors="lizap" 
+	manager="mbaldwin" 
+	editor=""/>
 
-<tags ms.service="remoteapp" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/12/2014" ms.author="elizapo" ms.manager="kathyw" />
+<tags 
+	ms.service="remoteapp" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/17/2015" 
+	ms.author="elizapo"/>
 
 #Erstellen einer Hybridbereitstellung von RemoteApp
 
@@ -11,7 +25,7 @@ Es existieren zwei Bereitstellungsarten für RemoteApps:
 
 Dieses Lernprogramm führt Sie durch den Prozess der Erstellung einer Hybridbereitstellung. Es besteht aus sieben Schritten: 
 
-1.	Erstellen Sie ein [benutzerdefiniertes Vorlagenimage für RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/).
+1.	Erstellen Sie ein [benutzerdefiniertes Vorlagenimage für RemoteApp](http://azure.microsoft.com/documentation/articles/remoteapp-create-custom-image/).
 2.	Erstellen eines RemoteApp-Dienstes.
 2.	Verbinden mit einem virtuellen Netzwerk.
 3.	Verbinden mit einem Vorlagenimage.
@@ -23,12 +37,12 @@ Dieses Lernprogramm führt Sie durch den Prozess der Erstellung einer Hybridbere
 
 Bevor Sie mit der Erstellung des Dienstes beginnen, führen Sie Folgendes aus:
 
-- Registrieren Sie sich für die Vorschau von RemoteApp. Sie können sich unter [http://azure.microsoft.com/de-de/services/remoteapp/](http://azure.microsoft.com/de-de/services/remoteapp/) registrieren.
+- Registrieren Sie sich für die Vorschau von RemoteApp. Sie können sich unter [http://azure.microsoft.com/services/remoteapp/](http://azure.microsoft.com/services/remoteapp/) registrieren.
 - Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den RemoteApp-Dienst dient. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann.
 - Sammeln Sie folgende Informationen über das lokale Netzwerk: IP-Adresse und Informationen zum VPN-Gerät.
-- Installieren Sie das [Azure PowerShell](http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/)-Modul.
+- Installieren Sie das [Azure PowerShell](http://azure.microsoft.com/documentation/articles/install-configure-powershell/)-Modul.
 - Sammeln Sie Informationen über die Benutzer und Gruppen, denen Sie Zugriff gewähren möchten. Dies können Informationen zu Microsoft-Konten oder Active Directory-Geschäftskonten für Benutzer oder Gruppen sein.
-- Erstellen Sie Ihr Vorlagenimage. Ein RemoteApp-Vorlagenimage enthält die Apps und Programme, die Sie für Ihre Benutzer veröffentlichen möchten. Die ausführliche Vorgehensweise finden Sie unter [Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/). 
+- Erstellen Sie Ihr Vorlagenimage. Ein RemoteApp-Vorlagenimage enthält die Apps und Programme, die Sie für Ihre Benutzer veröffentlichen möchten. Die ausführliche Vorgehensweise finden Sie unter [Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp](http://azure.microsoft.com/documentation/articles/remoteapp-create-custom-image/). 
 
 
 
@@ -74,7 +88,7 @@ Speichern Sie das Skript und führen Sie es auf dem VPN-Gerät aus.
 
 ## **Schritt 3: 	Verbinden mit einem RemoteApp-Vorlagenimage** ##
 
-Ein RemoteApp-Vorlagenimage enthält die Programme, die Sie an die Benutzer freigeben möchten. Sie können entweder das neue Vorlagenimage, das Sie (anhand der Anweisungen unter [Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp](http://azure.microsoft.com/de-de/documentation/articles/remoteapp-create-custom-image/)) erstellt haben, hochladen, oder eine Verbindung zu einem vorhandenen Image (das bereits in Azure hochgeladen wurde) herstellen.
+Ein RemoteApp-Vorlagenimage enthält die Programme, die Sie an die Benutzer freigeben möchten. Sie können entweder das neue Vorlagenimage, das Sie (anhand der Anweisungen unter [Erstellen eines benutzerdefinierten Vorlagenimage für RemoteApp](http://azure.microsoft.com/documentation/articles/remoteapp-create-custom-image/)) erstellt haben, hochladen, oder eine Verbindung zu einem vorhandenen Image (das bereits in Azure hochgeladen wurde) herstellen.
 
 Wenn Sie ein neues Abbild hochladen, müssen Sie den Namen des Abbilds eingeben und den Speicherort wählen. Auf der nächsten Seite des Assistenten wird Ihnen eine Gruppe von PowerShell-Cmdlets angezeigt. Kopieren Sie diese Cmdlets und führen Sie sie von einer Windows PowerShell-Eingabeaufforderung mit erhöhten Rechten aus, um das Abbild hochzuladen.
 
@@ -110,3 +124,5 @@ Nach dem Erstellen des RemoteApp-Dienstes müssen Sie nun die Benutzer und Grupp
 Sie haben die RemoteApp-Hybridbereitstellung nun erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und auf die veröffentlichten RemoteApp-Programme zugreifen.
 
 
+
+<!--HONumber=46--> 

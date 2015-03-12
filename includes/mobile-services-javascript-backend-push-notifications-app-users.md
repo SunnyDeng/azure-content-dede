@@ -44,5 +44,4 @@
 
 	Dadurch wird der Registrierung ein Tag hinzugefügt, das die ID des angemeldeten Benutzers darstellt. Die eingegebenen Tags werden überprüft, um zu verhindern, dass ein Benutzer sich mit der ID eines anderen Benutzers anmeldet. Wenn eine Benachrichtigung an diesen Benutzer gesendet wird, wird diese auf diesem und jedem anderen Gerät, das vom Benutzer registriert wurde, empfangen.
 
-4. Klicken Sie auf "Zurück", klicken Sie auf die Registerkarte **Daten**, klicken Sie auf **TodoItem**, klicken Sie auf **Skript**, und wählen Sie **Einfügen** aus. 
-<!--HONumber=42-->
+4. Klicken Sie auf "Zurück", klicken Sie auf die Registerkarte **Daten**, klicken Sie auf **TodoItem**, klicken Sie auf **Skript**, und wählen Sie **Einfügen** aus. <!--HONumber=42-->

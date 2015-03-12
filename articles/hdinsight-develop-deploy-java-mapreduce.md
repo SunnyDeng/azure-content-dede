@@ -322,7 +322,7 @@ In diesem Lernprogramm erstellen Sie einen Container auf einem separaten Speiche
 		$containerName_Data = "<ContainerName>"
 		$location = "<MicrosoftDataCenter>"  # For example, "East US"
 
-	Der **$subscripionName** wird ihrem Azure-Abonnement zugeordnet. Geben Sie dem **$storageAccountName\_Data** und **$containerName\_Data** Namen. Informationen zu Einschränkungen bei der Benennung finden Sie unter [Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese](http://msdn.microsoft.com/de-de/library/windowsazure/dd135715.aspx). 
+	Der **$subscripionName** wird ihrem Azure-Abonnement zugeordnet. Geben Sie dem **$storageAccountName\_Data** und **$containerName\_Data** Namen. Informationen zu Einschränkungen bei der Benennung finden Sie unter [Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese](http://msdn.microsoft.com/library/windowsazure/dd135715.aspx). 
 
 3. Führen Sie den folgenden Befehl aus, um ein Speicherkonto und einen Blob-Speichercontainer auf diesem Konto zu erstellen.
 
@@ -586,9 +586,9 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Java MapReduce-Job entwickelt 
 - [Verbinden von Excel mit HDInsight über Power Query][hdinsight-power-query]
 - [Verbinden von Excel über den Microsoft Hive ODBC Driver mit HDInsight][hdinsight-ODBC]
 
-[azure-purchase-options]: http://azure.microsoft.com/de-de/pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/de-de/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/de-de/pricing/free-trial/
+[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 [hdinsight-use-sqoop]: ../hdinsight-use-sqoop/
 [hdinsight-ODBC]: ../hdinsight-connect-excel-hive-ODBC-driver/
@@ -613,6 +613,5 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Java MapReduce-Job entwickelt 
 
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
-
 
 <!--HONumber=42-->

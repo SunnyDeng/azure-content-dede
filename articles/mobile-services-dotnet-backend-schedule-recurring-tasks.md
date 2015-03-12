@@ -1,6 +1,21 @@
-<properties pageTitle="Planen von Back-End-Aufgaben mit der Scheduler - Mobile Services" description="Verwenden Sie den Windows Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." services="mobile-services" documentationCenter="windows" authors="ggailey777" writer="" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Planen von Back-End-Aufgaben mit der Scheduler - Mobile Services" 
+	description="Verwenden Sie den Windows Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." 
+	services="mobile-services" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	writer="" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/26/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="09/26/2014" 
+	ms.author="glenga"/>
 
 # Planen von periodischen Aufträgen in Mobile Services 
 
@@ -297,7 +312,7 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services]: /de-de/documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter-Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-[App-Einstellungen]: http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 [LINQtoTwitter CodePlex-Projekt]: http://linqtotwitter.codeplex.com/
 
 <!--HONumber=42-->

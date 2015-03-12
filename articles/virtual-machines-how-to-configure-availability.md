@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer" 
 	description="Enthält die Schritte zum Konfigurieren einer Verfügbarkeitsgruppe für einen virtuellen Computer in Azure." 
 	services="virtual-machines" 
@@ -37,7 +37,7 @@ Dafür können Sie entweder das Verwaltungsportal oder die Azure PowerShell-Cmdl
 
 So verwenden Sie das Verwaltungsportal
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an, falls noch nicht geschehen.
+1. Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) an, falls noch nicht geschehen.
 
 2. Klicken Sie in der Befehlsleiste auf **Neu**.
 
@@ -66,16 +66,15 @@ So verwenden Sie Azure-Cmdlets
 
 1.	Öffnen Sie eine Azure PowerShell-Sitzung, und führen Sie Befehle aus, die in etwa den im Folgenden gezeigten entsprechen. Beachten Sie, dass in diesen Beispielen davon ausgegangen wird, dass Sie einen virtuellen Computer, den Cloud-Dienst und die Verfügbarkeitsgruppe erstellen.
 
-2.	Rufen Sie den Namen des Images ab, das Sie verwenden möchten, um den virtuellen Computer zu erstellen, und speichern Sie ihn in einer Variablen. Das folgende Beispiel verwendet die Indexnummer um die Eigenschaft "ImageName" des Imageobjekts abzurufen. Dabei wird davon ausgegangen, dass Sie die aktuelle Indexnummer des gewünschten Image kennen und dass Sie &lt;index_number&gt; mit dieser ersetzen. <br>
+2.	Rufen Sie den Namen des Images ab, das Sie verwenden möchten, um den virtuellen Computer zu erstellen, und speichern Sie ihn in einer Variablen. Das folgende Beispiel verwendet die Indexnummer um die Eigenschaft "ImageName" des Imageobjekts abzurufen. Dabei wird davon ausgegangen, dass Sie die aktuelle Indexnummer des gewünschten Abbilds kennen und dass Sie &lt;index_number&gt; mit dieser ersetzen. <br>
 
 	`C:\PS> $image = (Get-AzureVMImage)[<index_number>].ImageName`
 
-	>[AZURE.NOTE] Führen Sie  `Get-AzureVMImage` ohne Parameter aus, um eine Liste sämtlicher Images aufzurufen, die für Ihr Abonnement gelten. Das kann eine lange Liste ausgeben. Um sie zu kürzen, verwenden Sie Eigenschaften wie den Image-Familiennamen. Tipps und Beispiele, die zeigen, wie Sie so ein spezifisches Image finden, finden Sie unter [Verwalten von Images mithilfe von Windows PowerShell](http://msdn.microsoft.com/library/azure/dn790330.aspx).
+	>[AZURE.NOTE] Führen Sie  `Get-AzureVMImage` ohne Parameter aus, um eine Liste sämtlicher Abbilder aufzurufen, die für Ihr Abonnement gelten. Das kann eine lange Liste ausgeben. Um sie zu kürzen, verwenden Sie Eigenschaften wie den Image-Familiennamen. Tipps und Beispiele, die zeigen, wie man damit ein spezifisches Image findet, finden Sie unter [Verwalten von Images mithilfe von Windows PowerShell](http://msdn.microsoft.com/library/azure/dn790330.aspx).
 
-3.	Geben Sie die Konfiguration für den neuen virtuellen Computer an, und verwenden Sie dann die Pipeline zum Weitergeben eines Konfigurationsobjekts zum Cmdlet, das den virtuellen Computer erstellt. Ersetzen Sie die Platzhalter wie  &lt;VmName&gt; und &lt;VmSize&gt; durch Ihre eigenen Werte.
+3.	Geben Sie die Konfiguration für den neuen virtuellen Computer an, und verwenden Sie dann die Pipeline zum Weitergeben eines Konfigurationsobjekts zum Cmdlet, das den virtuellen Computer erstellt. Ersetzen Sie die Platzhalter wie &lt;VmName&gt; und &lt;VmSize&gt; durch Ihre eigenen Werte.
 
 	`C:\PS> New-AzureVMConfig -Name "<VmName>" -InstanceSize <VmSize> -AvailabilitySetName "<SetName>" -ImageName $image | Add-AzureProvisioningConfig -Windows -AdminUsername "<UserName>" -Password "<MyPassword>" | Add-AzureDataDisk -CreateNew -DiskSizeInGB 50 -DiskLabel 'datadisk1' -LUN 0 | New-AzureVM -ServiceName "<MySvc1>" `
-
 
 ## <a id="addmachine"> </a>Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu.##
 
@@ -111,8 +110,8 @@ So verwenden Sie Azure-Cmdlets
 ##Zusätzliche Ressourcen
 [Informationen zu Konfigurationseinstellungen von virtuellen Azure-Computern]
 
-[Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe.]: #createset
-[Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu.]: #addmachine
+[Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe]: #createset
+[Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu]: #addmachine
 
 <!-- LINKS -->
 [Lastenausgleich für Azure-Infrastrukturdienste]: ../virtual-machines-load-balance
@@ -120,8 +119,11 @@ So verwenden Sie Azure-Cmdlets
 [Erstellen eines virtuellen Computers unter Windows]: ../virtual-machines-windows-tutorial
 [Überblick über Azure Virtual Network]: http://go.microsoft.com/fwlink/p/?linkid=294063
 [Informationen zu Affinitätsgruppen für virtuelle Netzwerke]: http://msdn.microsoft.com/library/windowsazure/jj156085.aspx
-[Verbinden virtueller Computer in einem Cloud-Dienst]: ../virtual-machines-connect-cloud-service
+[Verbinden virtueller Computer in einem Clouddienst]: ../virtual-machines-connect-cloud-service
 [Informationen zu Konfigurationseinstellungen von virtuellen Azure-Computern]: http://msdn.microsoft.com/library/azure/dn763935.aspx
 
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Problembehandlung beim Mobile Services .NET-Back-End - Azure Mobile Services" description="Erfahren Sie, wie Sie Probleme mit Ihren mobilen Diensten mithilfe des .NET-Back-Ends diagnostizieren und beheben können." services="" documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor="mollybos"/>
+<properties 
+	pageTitle="Problembehandlung beim Mobile Services .NET-Back-End - Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie Probleme mit Ihren mobilen Diensten mithilfe des .NET-Back-Ends diagnostizieren und beheben können." 
+	services="" 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor="mollybos"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="wesmc"/>
 # Problembehandlung beim Mobile Services .NET-Back-End
 
 Entwickeln mit Mobile Services ist normalerweise kurz und schmerzlos, doch selbst dann kann etwas schieflaufen. Dieses Lernprogramm behandelt einige Techniken, mit denen Sie häufige Probleme behandeln können, die mit dem Mobile Services .NET-Back-End auftreten können. 
@@ -119,7 +133,7 @@ Die Lösung dieses Problems ist einfach: Kehren Sie einfach zu einer Version zur
 <a name="EFMigrations"></a>
 ## Problembehandlung bei Entity Framework-Migrationen
 
-Wenn Sie das Mobile Services .NET-Back-End mit einer SQL-Datenbank verwenden, wird ein Entity Framework (EF) als Datenzugriffstechnologie verwendet, mit der Sie die Datenbank abfragen und Objekte dort speichern können. Ein wichtiger Aspekt, den EF für den Entwickler übernimmt, ist die Art und Weise, wie die Datenbankspalten (auch als *schema* bekannt) mit Änderung der im Code festgelegten Modellklassen verändert werden. Dieser Prozess ist unter der Bezeichnung [Code First Migrations](http://msdn.microsoft.com/de-de/data/jj591621) bekannt.
+Wenn Sie das Mobile Services .NET-Back-End mit einer SQL-Datenbank verwenden, wird ein Entity Framework (EF) als Datenzugriffstechnologie verwendet, mit der Sie die Datenbank abfragen und Objekte dort speichern können. Ein wichtiger Aspekt, den EF für den Entwickler übernimmt, ist die Art und Weise, wie die Datenbankspalten (auch als *schema* bekannt) mit Änderung der im Code festgelegten Modellklassen verändert werden. Dieser Prozess ist unter der Bezeichnung [Code First Migrations](http://msdn.microsoft.com/data/jj591621) bekannt.
 
 Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank synchron mit dem EF-Modell gehalten wird, damit sie erfolgreich sind. Eine Anleitung für das Durchführen von Migrationen mit Ihrem mobilen Dienst und die Fehler, die dabei auftreten können, finden Sie unter [Ändern des Datenmodells eines mobilen .NET-Back-End-Dienstes](/de-de/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)..
 

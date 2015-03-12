@@ -107,7 +107,7 @@ Lernprogramme von Entwicklern für Entwickler finden Sie auf der Seite [PHP Deve
 [configure-php]: /de-de/develop/php/common-tasks/configure-php-web-site/
 [website-mysql-git]: /de-de/develop/php/tutorials/website-w-mysql-and-git/
 [wordpress-gallery]: /de-de/develop/php/tutorials/website-from-gallery/
-[websites-pricing]: http://www.windowsazure.com/de-de/pricing/details/#header-1
+[websites-pricing]: http://azure.microsoft.com/pricing/details/#header-1
 [scale-websites]: /de-de/manage/services/web-sites/how-to-scale-websites/
 
 

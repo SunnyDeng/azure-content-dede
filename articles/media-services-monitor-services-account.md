@@ -1,35 +1,52 @@
-<properties pageTitle="Überwachen eines Media Services-Kontos - Azure" description="Beschreibt die Konfiguration der Überwachung für Ihr Media Services-Konto in Azure." services="media-services" documentationCenter="" authors="juliako" manager="dwrede" editor=""/>
+﻿<properties 
+	pageTitle="Überwachen eines Media Services-Kontos - Azure" 
+	description="Beschreibt die Konfiguration der Überwachung für Ihr Media Services-Konto in Azure." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="media-services" ms.workload="media" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/30/2014" ms.author="juliako"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/05/2015" 
+	ms.author="juliako"/>
 
 
 
 
 
-<h1><a id="monitormediaservicesaccount"></a>Überwachen eines Media Services-Kontos</h1>
+# <a id="monitormediaservicesaccount"></a>Überwachen eines Media Services-Kontos
+
+Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow). 
+
 Das Azure Media Services-Dashboard stellt Nutzungsmetriken und Kontoinformationen dar, die Sie zum Verwalten Ihres Media Services-Konto verwenden können.
 
-Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene Codierungsaufgaben, aktive Codierungsjobs, die durch die Eingabe- und Ausgabedaten des Encoders dargestellt werden, sowie die Blob-Speichernutzung Ihres Media Services-Kontos überwachen. Wenn Sie Inhalte per Streaming an Kunden übertragen, können Sie außerdem verschiedene Streaming-Metriken abrufen. Sie können Ihre Daten der letzten 6 Stunden, 24 Stunden oder 7 Tage überwachen.
+Sie können die Anzahl der Codierungsaufträge in der Warteschlange, fehlgeschlagene Codierungsaufgaben, aktive Codierungsaufträge, die durch die Eingabe- und Ausgabedaten des Encoders dargestellt werden, sowie die Blob-Speichernutzung Ihres Media Services-Kontos überwachen. Wenn Sie Inhalte per Streaming an Kunden übertragen, können Sie außerdem verschiedene Streaming-Metriken abrufen. Sie können Ihre Daten der letzten 6 Stunden, 24 Stunden oder 7 Tage überwachen.
  
 >[AZURE.NOTE] Beim Überwachen der Speicherdaten im Windows Azure-Verwaltungsportal entstehen zusätzliche Kosten. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://go.microsoft.com/fwlink/?LinkId=256667).
 
-<h2><a id="configuremonitoring"></a>Gewusst wie: Überwachen eines Media Services-Kontos</h2>
+## <a id="configuremonitoring"></a>Vorgehensweise: Überwachen eines Media Services-Kontos
 
-1. Klicken Sie im [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=256666) auf Media Services und dann auf den **Media Services**-Kontonamen, um das Dashboard zu öffnen. 
+1. Klicken Sie im [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=256666) auf **Media Services** und dann auf den Media Services-Kontonamen, um das Dashboard zu öffnen. 
 
 	![MediaServices_Dashboard][dashboard]
 
-2. Um die Codierungsjobs oder -daten zu überwachen, beginnen Sie einfach mit dem Senden von Codierungsjobs an Media Services oder mit dem Streaming von Inhalten an Kunden mithilfe von Azure Media On-Demand Streaming. Nach ca. einer Stunde sollten auf dem Dashboard Überwachungsdaten angezeigt werden.
+2. Um die Codierungsaufträge oder -daten zu überwachen, beginnen Sie einfach mit dem Senden von Codierungsaufträgen an Media Services oder mit dem Streaming von Inhalten an Kunden mithilfe von Azure Media On-Demand Streaming. Nach ca. einer Stunde sollten auf dem Dashboard Überwachungsdaten angezeigt werden.
 
-<h2><a id="configuringstorage"></a>Gewusst wie: Überwachen der Blob-Speichernutzung (optional)</h2>
+## <a id="configuringstorage"></a>Vorgehensweise: Überwachen der Blob-Speichernutzung (optional)
 1. Klicken Sie im Abschnitt **Auf einen Blick** auf den Namen des **Speicherkontos**.
-2. Klicken Sie auf der Speicherkontoseite auf den Link **configure page**, und blättern Sie bis zu den Einstellungen **monitoring** für die Blob-, Tabellen- und Warteschlangendienste nach unten.
+2. Klicken Sie auf der Speicherkontoseite auf den Link **Konfigurationsseite**, und blättern Sie bis zu den Einstellungen **Überwachung** für die Blob-, Tabellen- und Warteschlangendienste nach unten.
 
 	>[AZURE.NOTE] Blobs sind der einzige unterstützte Speichertyp in Media Services.
 
 	![StorageOptions][storage_options_scoped]
 
-3. Legen Sie unter **monitoring** die Überwachungsstufe und die Datenaufbewahrungsrichtlinie für Blobs fest:
+3. Legen Sie unter **Überwachung** die Überwachungsstufe und die Datenaufbewahrungsrichtlinie für Blobs fest:
 
 -  Zum Festlegen der Überwachungsstufe wählen Sie eine der folgenden Optionen:
 
@@ -50,4 +67,5 @@ Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlo
 [dashboard]: ./media/media-services-monitor-services-account/media-services-dashboard.png
 [storage_options_scoped]: ./media/media-services-monitor-services-account/storagemonitoringoptions_scoped.png
 
-<!--HONumber=42-->
+
+<!--HONumber=45--> 

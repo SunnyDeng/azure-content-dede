@@ -49,7 +49,7 @@ Ein Azure-Speicherkonto ist ein sicheres Konto, über das Sie Zugriff auf Dienst
 - Ein Standardspeicherkonto umfasst Blob-, Tabellen- und Warteschlangenspeicher.
 - Ein Premium-Speicherkonto unterstützt derzeit nur Datenträger in virtuellen Azure-Computern. Azure-Premiumspeicher ist auf Anfrage über die [Azure-Vorschauseite] verfügbar.(/de-de/services/preview/).
 
-Um ein Speicherkonto erstellen zu können, müssen Sie über ein Azure-Abonnement verfügen. Dies ist ein Plan, der Ihnen Zugriff auf eine Vielzahl von Azure-Diensten verschafft. Sie können bis zu 100 eindeutig benannte Speicherkonten unter einem einzigen Abonnement erstellen. Informationen zu Volumenpreisen finden Sie unter [Speicherpreisdetails](http://www.windowsazure.com/de-de/pricing/details/storage/).
+Um ein Speicherkonto erstellen zu können, müssen Sie über ein Azure-Abonnement verfügen. Dies ist ein Plan, der Ihnen Zugriff auf eine Vielzahl von Azure-Diensten verschafft. Sie können bis zu 100 eindeutig benannte Speicherkonten unter einem einzigen Abonnement erstellen. Informationen zu Volumenpreisen finden Sie unter [Speicherpreisdetails](http://azure.microsoft.com/pricing/details/storage/).
 
 Sie können die Verwendung von Azure mit einem [kostenlosen Testkonto](/de-de/pricing/free-trial/) starten. Nachdem Sie sich für den Kauf eines Plans entscheiden haben, haben Sie die Auswahl zwischen zahlreichen [Kaufoptionen](/de-de/pricing/purchase-options/). Als [MSDN-Abonnent](/de-de/pricing/member-offers/msdn-benefits-details/) erhalten Sie kostenlose monatliche Gutschriften, die Sie mit den Azure-Diensten einschließlich Azure-Speicher verwenden können.
 
@@ -164,7 +164,7 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 ### Downloads
 
 - [Azure Storage NuGet-Paket - Clientbibliotheken für .NET, Windows Phone und Windows-Runtime](https://www.nuget.org/packages/WindowsAzure.Storage/)
-- [Azure-SDKs und -Tools](http://azure.microsoft.com/de-de/downloads/)
+- [Azure-SDKs und -Tools](http://azure.microsoft.com/downloads/)
 - [Azure-Speicheremulator](http://www.microsoft.com/en-in/download/details.aspx?id=43709)
 
 ### Quellcode
@@ -174,15 +174,15 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 ### dokumentation
 
 - [Azure Storage-Dokumentation](/de-de/documentation/services/storage/)
-- [REST-API-Referenz für Azure-Speicherdienste](http://msdn.microsoft.com/de-de/library/dd179355.aspx)
-- [AzCopy Command-Line Tool Reference](http://azure.microsoft.com/de-de/documentation/articles/storage-use-azcopy/)
+- [REST-API-Referenz für Azure-Speicherdienste](http://msdn.microsoft.com/library/dd179355.aspx)
+- [AzCopy Command-Line Tool Reference](http://azure.microsoft.com/documentation/articles/storage-use-azcopy/)
 
 <h3>Für PowerShell-Benutzer</h3>
-- [Azure Storage-Cmdlets](http://msdn.microsoft.com/de-de/library/azure/dn806401.aspx)
+- [Azure Storage-Cmdlets](http://msdn.microsoft.com/library/azure/dn806401.aspx)
 
 <h3>Für .NET-Entwickler</h3>
 
-- [Referenz zur .NET-Clientbibliothek](http://msdn.microsoft.com/de-de/library/wa_storage_30_reference_home.aspx)
+- [Referenz zur .NET-Clientbibliothek](http://msdn.microsoft.com/library/wa_storage_30_reference_home.aspx)
 - [Verwenden des Blob-Speichers mit .NET](../storage-dotnet-how-to-use-blobs/)
 - [Verwenden des Tabellenspeichers mit .NET](../storage-dotnet-how-to-use-tables/)
 - [Verwenden des Warteschlangenspeichers mit .NET](../storage-dotnet-how-to-use-queues/)
@@ -217,5 +217,4 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 - [Verwenden des Blob-Speicherdiensts aus Python](../storage-python-how-to-use-blob-storage/)
 - [Verwenden des Tabellenspeicherdiensts aus Python](../storage-python-how-to-use-table-storage/)
 - [Verwenden des Warteschlangenspeicherdiensts aus Python](../storage-python-how-to-use-queue-storage/)
-
 <!--HONumber=42-->

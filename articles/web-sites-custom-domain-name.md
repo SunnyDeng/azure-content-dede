@@ -77,7 +77,7 @@ Wenn sich die IP-Adresse ändert, bleibt der CNAME-Eintrag gültig, während ein
 
 1.	Öffnen Sie das [Azure-Verwaltungsportal](https://manage.windowsazure.com) in Ihrem Browser.
 2.	Klicken Sie auf der Registerkarte **Websites** auf den Namen Ihrer Website, und wählen Sie **Dashboard** aus.
-3.	Klicken Sie unten auf der Seite auf **Domänen verwalten**. (Wenn diese Option deaktiviert ist, müssen Sie den Modus "Shared", "Basic" oder "Standard" verwenden. Weitere Informationen finden Sie unter [Skalieren von Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-scale/).) 
+3.	Klicken Sie unten auf der Seite auf **Domänen verwalten**. (Wenn diese Option deaktiviert ist, müssen Sie den Modus "Shared", "Basic" oder "Standard" verwenden. Weitere Informationen finden Sie unter [Skalieren von Websites](http://azure.microsoft.com/documentation/articles/web-sites-scale/).) 
 
 	![](media/web-sites-custom-domain-name/dncmntask-cname-6.png)
 

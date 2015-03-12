@@ -79,7 +79,7 @@ Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlü
 	# List the keys for a storage account
 	Get-AzureStorageKey <StorageAccountName>
 
-Weitere Informationen zum Abrufen dieser Informationen mithilfe des Verwaltungsportals finden Sie im Abschnitt *Vorgehensweise: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* unter [Erstellen, Verwalten oder Löschen eines Speicherkontos].(../storage-create-storage-account/).
+Weitere Informationen zum Abrufen dieser Informationen mithilfe des Verwaltungsportals finden Sie im Abschnitt *Vorgehensweise: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln* unter [Erstellen, Verwalten oder Löschen eines Speicherkontos)]../storage-create-storage-account/).
 
 **So erstellen Sie einen Azure-Speichercontainer**
 
@@ -275,9 +275,9 @@ Weitere Informationen finden Sie in der Sitzung [Übermitteln von MapReduce-Jobs
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
 
 
-[azure-purchase-options]: http://azure.microsoft.com/de-de/pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/de-de/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/de-de/pricing/free-trial/
+[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 [hdinsight-get-started]: ../hdinsight-get-started/
 [hdinsight-provision]: ../hdinsight-provision-clusters/
@@ -291,12 +291,11 @@ Weitere Informationen finden Sie in der Sitzung [Übermitteln von MapReduce-Jobs
 [hdinsight-use-mapreduce]: ../hdinsight-use-mapreduce/
 [hdinsight-upload-data]: ../hdinsight-upload-data/
 
-[hdinsight-powershell-reference]: http://msdn.microsoft.com/de-de/library/windowsazure/dn479228.aspx
+[hdinsight-powershell-reference]: http://msdn.microsoft.com/library/windowsazure/dn479228.aspx
 
 [Powershell-install-configure]: ../install-configure-powershell/
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
-
 
 
 <!--HONumber=42-->

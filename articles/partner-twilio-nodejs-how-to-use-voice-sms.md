@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Twilio Voice and SMS Service" pageTitle="Verwenden von Twilio für Voice-, VoIP- und SMS-Nachrichten in Azure" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="nodejs" title=" VoIP" authors="MicrosoftHelp@twilio.com" solutions="" manager="twilio" editor="" />
+﻿<properties 
+	pageTitle="Verwenden von Twilio für Voice-, VoIP- und SMS-Nachrichten in Azure" 
+	description="" 
+	services="" 
+	documentationCenter="nodejs" 
+	authors="devinrader" 
+	manager="twilio" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="11/25/2014" ms.author="MicrosoftHelp@twilio.com" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="11/25/2014" 
+	ms.author="MicrosoftHelp@twilio.com"/>
 
 
 # Verwenden von Twilio für Voice-, VoIP- und SMS-Nachrichten in Azure
@@ -24,7 +38,7 @@ Twilio ist eine API-Plattform, die Entwicklern das Ausführen und Annehmen von T
 
 ### Empfangen von Rufen und Textnachrichten
 
-Twilio erlaubt Entwicklern den [Kauf programmierbarer Telefonnummern][purchase_phone], die für das Senden und Empfangen von Anrufen und Textnachrichten verwendet werden können.  Wenn eine Twilio-Nummer einen eingehenden Anruf oder Text erhält, sendet Twilio eine HTTP POST- oder GET-Anfrage an Ihre Webanwendung, in der nach Anweisungen zur Verarbeitung des Rufs oder des Texts gefragt wird.  Ihr Server beantwortet die HTTP-Anfrage von Twilio mit [TwiML][twiml], einem einfachen Satz von XML-Tags, die Anweisungen zur Verarbeitung eines Anrufs oder Texts enthalten.  In Kürze sehen wir einige Beispiele für TwiML.
+Twilio erlaubt Entwicklern den [Kauf programmierbarer Telefonnummern][purchase_phone], die für das Senden und Empfangen von Anrufen und Textnachrichten verwendet werden können.  Wenn eine Twilio-Nummer einen eingehenden Anruf oder Text erhält, sendet Twilio eine HTTP POST- oder GET-Anfrage an Ihre Webanwendung, in der nach Anweisungen zur Verarbeitung des Rufs oder des Texts gefragt wird.  Ihr Server beantwortet die HTTP-Anfrage von Twilio mit [TwiML][twiml], einem einfachen Satz von XML-Tags, die Anweisungen zur Verarbeitung eines Anrufs oder einer SMS enthalten.  In Kürze sehen wir einige Beispiele für TwiML.
 
 ### Ausführen von Rufen und Senden von Textnachrichten
 
@@ -32,12 +46,12 @@ Durch HTTP-Anfragen an die Twilio-Webdienst-API können Entwickler Textnachricht
 
 ### Einbetten von VoIP-Funktionen in UI-Code (JavaScript iOS oder Android)
 
-Twilio bietet ein clientseitiges SDK, das aus jedem Desktop-Webbrowser, jeder iOS-App oder jeder Android-App ein VoIP-Telefon machen kann.  In diesem Artikel konzentrieren wir uns darauf, wie VoIP-Anrufe im Browser verwendet werden.  Zusätzlich zum Twilio-JavaScript-SDK, das in Ihrem Browser läuft, muss eine serverseitige Anwendung (unsere node.js-Anwendung) verwendet werden, um ein "'Capability-Token" an den JavaScript-Client abzugeben.  Weitere Informationen zur Verwendung von VoIP mit node.js erhalten Sie [im Twilio-Entwickler-Blog][voipnode].
+Twilio bietet ein clientseitiges SDK, das aus jedem Desktop-Webbrowser, jeder iOS-App oder jeder Android-App ein VoIP-Telefon machen kann.  In diesem Artikel konzentrieren wir uns darauf, wie VoIP-Anrufe im Browser verwendet werden.  Zusätzlich zum Twilio-JavaScript-SDK, das in Ihrem Browser läuft, muss eine serverseitige Anwendung (unsere node.js-Anwendung) verwendet werden, um ein "'Capability-Token" an den JavaScript-Client abzugeben.  Weitere Informationen zur Verwendung von VoIP mit node.js erhalten Sie im [Twilio-Entwickler-Blog][voipnode].
 
 <a id="signup"/>
 ## Anmelden bei Twilio (Microsoft-Rabatt)
 
-Vor der Verwendung von Twilio-Diensten müssen Sie zuerst [für ein Konto registrieren][signup].  Microsoft Azure-Kunden erhalten einen speziellen Rabatt - [registrieren Sie sich hier][signup]!
+Vor der Verwendung von Twilio-Diensten müssen Sie zuerst [ein Konto anmelden][signup].  Microsoft Azure-Kunden erhalten einen speziellen Rabatt - [registrieren Sie sich hier][signup]!
 
 <a id="azuresite"/>
 ## Erstellen und Bereitstellen einer node.js-Azure-Website
@@ -47,7 +61,7 @@ Als Nächstes müssen Sie eine node.js-Website erstellen, die auf Azure läuft. 
 * Anmelden eines Azure-Kontos, wenn Sie nicht bereits über eines verfügen.
 * Erstellen einer neuen Website mithilfe der Azure-Konsole
 * Hinzufügen einer Quellcodeverwaltungsunterstützung (dafür wird die Verwendung von git vorausgesetzt)
-* Erstellen einer Datei namens `server.js` mit einer einfachen "node.js"-Webanwendung
+* Erstellen einer Datei namens `server.js` mit einer einfachen node.js-Webanwendung
 * Bereitstellung dieser einfachen Anwendung in Azure
 
 <a id="twiliomodule"/>
@@ -59,7 +73,7 @@ Als Nächstes beginnen wir mit dem Schreiben einer einfachen node-js-Anwendung, 
 
 Um authentische Anfragen am Twilio-Back-End auszuführen, benötigen wir die Konto-SID und das Authentifizierungstoken, die als Benutzername und Kennwort für unser Twilio-Konto fungieren. Der sicherste Weg, diese zur Verwendung mit dem Knotenmodul in Azure zu konfigurieren, sind Systemumgebungsvariablen, die Sie direkt in der Azure-Verwaltungskonsole einstellen können.
 
-Wählen Sie Ihre node.js-Website, und klicken Sie auf den Link "CONFIGURE".  Wenn Sie ein wenig herunterscrollen, sehen Sie einen Bereich, in dem Sie Konfigurationseigenschaften für Ihre Anwendung festlegen können.  Geben Sie Ihre Twilio-Anmeldeinformationen ([in Ihrem Twilio-Dashboard][twilio_dashboard]) wie gezeigt ein - geben Sie ihnen die Namen "TWILIO_ACCOUNT_SID" bzw. "TWILIO_AUTH_TOKEN":
+Wählen Sie Ihre node.js-Website, und klicken Sie auf den Link "CONFIGURE".  Wenn Sie ein wenig herunterscrollen, sehen Sie einen Bereich, in dem Sie Konfigurationseigenschaften für Ihre Anwendung festlegen können.  Geben Sie Ihre Twilio-Anmeldeinformationen ([die Sie in Ihrem Twilio-Dashboard finden][twilio_dashboard]) wie gezeigt ein - geben Sie ihnen die Namen "TWILIO_ACCOUNT_SID" bzw. "TWILIO_AUTH_TOKEN":
 
 ![Azure admin console][azure-admin-console]
 
@@ -228,11 +242,11 @@ Sie haben nun die Grundlagen der Verwendung von node.js und Twilio zum Aufbauen 
 
 Wir hoffen, dass Sie Freude an node.js und Twilio in Azure haben!
 
-[Purchase_phone]: https://www.twilio.com/user/account/phone-numbers/available/local
+[purchase_phone]: https://www.twilio.com/user/account/phone-numbers/available/local
 [twiml]: https://www.twilio.com/docs/api/twiml
 [signup]: http://ahoy.twilio.com/azure
-[azure_new_site]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/create-a-website-(mac)/
-[Twilio_dashboard]: https://www.twilio.com/user/account
+[azure_new_site]: http://azure.microsoft.com/develop/nodejs/tutorials/create-a-website-(mac)/
+[twilio_dashboard]: https://www.twilio.com/user/account
 [npm]: http://npmjs.org
 [express]: http://expressjs.com
 [voipnode]: http://www.twilio.com/blog/2013/04/introduction-to-twilio-client-with-node-js.html
@@ -244,4 +258,4 @@ Wir hoffen, dass Sie Freude an node.js und Twilio in Azure haben!
 
 
 
-<!--HONumber=35.2-->
+<!--HONumber=45--> 

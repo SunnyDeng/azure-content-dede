@@ -1,19 +1,30 @@
-﻿<properties urlDisplayName="Publishing with Visual Studio Online" pageTitle="Kontinuierliche Bereitstellung in Azure mit Visual Studio Online" metaKeywords="" description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Cloud-Diensten erstellt und bereitgestellt werden." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online" authors="ghogen" solutions="" manager="douge" editor="" />
+<properties 
+	pageTitle="Kontinuierliche Bereitstellung in Azure mit Visual Studio Online" 
+	description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Cloud-Diensten erstellt und bereitgestellt werden." 
+	services="web-sites" 
+	documentationCenter=".net" 
+	authors="kempb" 
+	manager="douge" 
+	editor="tglee"/>
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="ghogen" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/17/2015" 
+	ms.author="kempb"/>
 
 
 # Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online
 
-  Sie können Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Clouddiensten erstellt und bereitgestellt werden.  (Informationen zur Einrichtung eines Systems für kontinuierliche Erstellung und Bereitstellung mithilfe eines *lokalen* Team Foundation Servers finden Sie unter [Kontinuierliche Bereitstellung für Cloud Services in Azure](../cloud-services-dotnet-continuous-delivery).)
+  Sie können Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Cloud-Diensten erstellt und bereitgestellt werden.  (Informationen zur Einrichtung eines Systems für kontinuierliche Erstellung und Bereitstellung mithilfe eines *on-premises* Team Foundation Servers finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](../cloud-services-dotnet-continuous-delivery).)
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass auf Ihrem Rechner Visual Studio 2013 und das Azure-SDK installiert sind. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf den Link **Starten Sie kostenlos** auf der Seite [www.visualstudio.com](http://www.visualstudio.com)klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540)aus.
+Bei diesem Lernprogramm wird davon ausgegangen, dass auf Ihrem Rechner Visual Studio 2013 und das Azure-SDK installiert sind. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite [www.visualstudio.com](http://www.visualstudio.com) auf den Link **Starten Sie kostenlos** klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540)
 
-<div class="wa-note">
-  <span class="wa-icon-bulb"></span>
-  <h5><a name="note"></a>Sie benötigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchführen zu können.</h5>
-<p>Sie können <a href="http://go.microsoft.com/fwlink/p/?LinkId=512979">kostenlos ein Visual Studio Online-Konto eröffnen</a>.</p>
-</div>
+> [AZURE.NOTE] Sie benötigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchführen zu können.
+> Sie können [kostenlos ein Visual Studio Online-Konto anlegen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
 
 Gehen Sie folgendermaßen vor, um einen Cloud-Dienst für eine automatische Erstellung und Bereitstellung mithilfe von Visual Studio Online zu konfigurieren:
 
@@ -27,23 +38,22 @@ Gehen Sie folgendermaßen vor, um einen Cloud-Dienst für eine automatische Erst
 
 -   [Schritt 5: Erneute Bereitstellung eines früheren Builds (optional)][]
 
--   [Schritt 6: Ändern der Produktionsbereitstellung (nur Clouddienste)][]
+-   [Schritt 6: Ändern der Produktionsbereitstellung (nur Cloud-Dienste)][]
 
 -	[Schritt 7: Ausführen von Komponententests (optional)][]
 
 <h2> <a name="step1"></a>Schritt 1: Erstellen eines Teamprojekts</h2>
 
-Befolgen Sie die Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=512980) , um ein Teamprojekt zu erstellen und es mit Visual Studio zu verbinden. Bei dieser Anleitung wird angenommen, dass Sie Team Foundation Version Control (TFVC) als Lösung für die Quellcodeverwaltung verwenden. Wenn Sie Git für die Versionskontrolle verwenden möchten, finden Sie hier [die Git-Version dieser Anleitung](http://go.microsoft.com/fwlink/p/?LinkId=397358).
+Befolgen Sie die Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=512980), um ein Teamprojekt zu erstellen und es mit Visual Studio zu verbinden. Bei dieser Anleitung wird angenommen, dass Sie Team Foundation Version Control (TFVC) als Lösung für die Quellcodeverwaltung verwenden. Wenn Sie Git für die Versionskontrolle verwenden möchten, finden Sie hier [die Git-Version dieser Anleitung](http://go.microsoft.com/fwlink/p/?LinkId=397358)
 
 <h2><a name="step2"> </a>Schritt 2: Einchecken eines Projekts in der Quellcodeverwaltung</h2>
 
 1. Öffnen Sie in Visual Studio die Anwendung, die Sie bereitstellen möchten, oder erstellen Sie eine neue Anwendung.
-Sie können eine Website oder einen Clouddienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen.
-Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-Clouddienstprojekt
-oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus.
-Wenn Sie eine Website erstellen möchten, wählen Sie die Projektvorlage ASP.NET Web Application und anschließend MVC aus. Siehe [Erste Schritte mit Azure und ASP.NET](http://www.windowsazure.com/de-de/documentation/articles/web-sites-dotnet-get-started/).
+Sie können eine Website oder einen Cloud-Dienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen.
+Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-Cloud-Dienstprojekt oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Cloud-Dienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus.
+Wenn Sie eine Website erstellen möchten, wählen Sie die Projektvorlage ASP.NET Web Application und anschließend MVC aus. Siehe [Erste Schritte mit Azure und ASP.NET](http://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
 
-2. Öffnen Sie das Kontextmenü für die Anwendung, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen**.<br/>
+2. Öffnen Sie das Kontextmenü für die Anwendung, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen** aus.<br/>
 ![][5]
 
 3. Übernehmen oder ändern Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **OK**. Wenn der Prozess abgeschlossen ist, werden im Projektmappen-Explorer die Symbole für die Quellcodeverwaltung angezeigt.<br/>
@@ -61,7 +71,7 @@ Bitte beachten Sie beim Einchecken die Option zum Ein- oder Ausschließen bestim
 
 <h2> <a name="step3"> </a>Schritt 3: Verbinden des Projekts mit Azure</h2>
 
-1. Nun, da Sie ein VSO-Teamprojekt mit Quellcode erstellt haben, sind Sie bereit, Ihr Teamprojekt mit Azure zu verbinden.  Wählen Sie im [Azure-Portal](http://manage.windowsazure.com)Ihren Cloud-Dienst oder Ihre Website, oder erstellen Sie einen neuen Cloud-Dienst oder eine neue Website, indem Sie auf das +-Symbol links unten sowie auf **Cloud-Dienst** oder **Website** und anschließend auf **Schnellerfassung** klicken. Klicken Sie auf den Link **Veröffentlichung einrichten mit Visual Studio Online**.<br/>
+1. Nun, da Sie ein VSO-Teamprojekt mit Quellcode erstellt haben, sind Sie bereit, Ihr Teamprojekt mit Azure zu verbinden.  Wählen Sie im [Azure-Portal](http://manage.windowsazure.com) Ihren Cloud-Dienst oder Ihre Website, oder erstellen Sie einen neuen Cloud-Dienst oder eine neue Website, indem Sie auf das +-Symbol links unten sowie auf **Cloud-Dienst** oder **Website** und anschließend auf **Schnellerfassung** klicken. Klicken Sie auf den Link **Veröffentlichung einrichten mit Visual Studio Online**.<br/>
 ![][10]
 
 2. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Online-Kontos ein, und klicken Sie auf den Link **Jetzt autorisieren**. Eventuell werden Sie aufgefordert, sich anzumelden.<br/>
@@ -114,7 +124,7 @@ In Team Explorer ist zu sehen, dass ein Build für Ihr Einchecken ausgelöst wur
 Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition bei jedem Einchecken standardmäßig auf einen Build festgelegt ist.<br/>
 ![][26]
 <br/>
-Auf der Registerkarte **Prozess** ist zu sehen, dass die Entwicklungsumgebung auf den Namen Ihres Clouddienstes oder Ihrer Website festgelegt ist. Wenn Sie mit Websites arbeiten, unterscheiden sich die Einstellungen, die Sie sehen, von den hier gezeigten.<br/>
+Auf der Registerkarte **Prozess** ist zu sehen, dass die Entwicklungsumgebung auf den Namen Ihres Cloud-Diensts oder Ihrer Website festgelegt ist. Wenn Sie mit Websites arbeiten, unterscheiden sich die Einstellungen, die Sie sehen, von den hier gezeigten.<br/>
 ![][27]
 <br/>
 Geben Sie Werte für die Eigenschaften ein, wenn Sie andere Werte als die Standardwerte verwenden möchten. Die Eigenschaften für die Azure-Veröffentlichung befinden sich im Bereitstellungsabschnitt.
@@ -131,7 +141,7 @@ Die folgende Tabelle zeigt die im Bereitstellungsabschnitt verfügbaren Eigensch
 <br/>
 
 Wenn Sie mehrere Dienstkonfigurationen verwenden (.cscfg-Dateien), können Sie die gewünschte Dienstkonfiguration in der Einstellung **Build, Erweitert, MSBuild-Argumente** festlegen. Um zum Beispiel "ServiceConfiguration.Test.cscfg" zu verwenden, legen Sie die Zeilenoption der MSBuild-Argumente auf "/p:TargetProfile=Test" fest.<br/>
-![][37]
+![][38]
 
 11. An diesem Punkt sollte Ihr Build erfolgreich abgeschlossen sein.<br/>
 ![][28]
@@ -139,21 +149,21 @@ Wenn Sie mehrere Dienstkonfigurationen verwenden (.cscfg-Dateien), können Sie d
 12. Wenn Sie auf den Buildnamen doppelklicken, zeigt Visual Studio eine **Buildzusammenfassung** mit allen Testergebnissen aus entsprechenden Komponententestprojekten an.<br/>
 ![][29]
 
-13. Im [Azure-Portal](http://manage.windowsazure.com)können Sie die entsprechende Bereitstellung auf der Registerkarte "Bereitstellungen" anzeigen, wenn Sie die Stagingumgebung auswählen.<br/>
+13. Im [Azure-Portal](http://manage.windowsazure.com) können Sie die entsprechende Bereitstellung auf der Registerkarte "Bereitstellungen" anzeigen, wenn Sie die Stagingumgebung auswählen.<br/>
 ![][30]
 
-14.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Website handelt, klicken Sie einfach in der Befehlsleiste auf die Schaltfläche "Durchsuchen". Wenn es sich um einen Clouddienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard** aus, auf der die Stagingumgebung für einen Clouddienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Cloud-Dienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie die Eigenschaft "Alternate Cloud Service Environment" auf "Produktion" stellen. Dieser Screenshot zeigt, wo auf der Dashboard-Seite des Clouddienstes sich die Website-URL befindet: <br/>
+14.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Website handelt, klicken Sie einfach in der Befehlsleiste auf die Schaltfläche "Durchsuchen". Wenn es sich um einen Cloud-Dienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard** aus, auf der die Stagingumgebung für einen Cloud-Dienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Cloud-Dienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie die Eigenschaft "Alternate Cloud Service Environment" auf "Produktion" stellen. Dieser Screenshot zeigt, wo auf der Dashboard-Seite des Cloud-Diensts sich die Website-URL befindet: <br/>
 ![][31]
 <br/>
 Eine neue Browser-Registerkarte wird geöffnet, die Ihre laufende Site anzeigt.<br/>
 ![][32]
 
-15.	Wenn es sich dabei um einen Clouddienst handelt und Sie weitere Änderungen an Ihrem Projekt vornehmen, lösen Sie weitere Builds aus und sammeln mehrere Bereitstellungen. Die letzte davon wird als "Aktiv" markiert.<br/>
+15.	Wenn es sich dabei um einen Cloud-Dienst handelt und Sie weitere Änderungen an Ihrem Projekt vornehmen, lösen Sie weitere Builds aus und sammeln mehrere Bereitstellungen. Die letzte davon wird als "Aktiv" markiert.<br/>
 ![][33]
 
 <h2> <a name="step5"> </a>Schritt 5: Erneute Bereitstellung eines früheren Builds</h2>
 
-Dieser Schritt gilt nur für Clouddienste und ist optional. Wählen Sie im Verwaltungsportal eine frühere Bereitstellung aus, und klicken Sie auf die Schaltfläche **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen. Bitte beachten Sie, dass dadurch in TFS ein neuer Build ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.<br/>
+Dieser Schritt gilt nur für Cloud-Dienste und ist optional. Wählen Sie im Verwaltungsportal eine frühere Bereitstellung aus, und klicken Sie auf die Schaltfläche **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen.  Bitte beachten Sie, dass dadurch in TFS ein neuer Build ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.<br/>
 ![][34]
 
 <h2> <a name="step6"> </a>Schritt 6: Ändern der Produktionsbereitstellung</h2>
@@ -163,15 +173,15 @@ Dieser Schritt gilt nur für Cloud-Dienste, nicht für Websites. Wenn Sie bereit
 
 <h2> <a name="step7"> </a>Schritt 7: Ausführen von Komponententests</h2>
 
-Für eine zusätzliche Qualitätsstufe Ihrer Live- oder Stagingbereitstellungen können Sie Komponententests ausführen und im Falle eines Fehlers die Bereitstellung anhalten.
+Dieser Schritt gilt nur für Websites, nicht für Cloud-Dienste. Für eine zusätzliche Qualitätsstufe Ihrer Bereitstellungen können Sie Komponententests ausführen und im Falle eines Fehlers die Bereitstellung anhalten.
 
 1.  Fügen Sie in Visual Studio ein Testprojekt hinzu.<br/>
 ![][39]
 
-2.  Fügen Sie Projektverweise zu den Projekten hinzu, die Sie testen möchten.<br/>
+2.  Fügen Sie Projektverweise zu dem Projekt hinzu, das Sie testen möchten.<br/>
 ![][40]
 
-3.  Fügen Sie einige Komponententests hinzu. Probieren Sie es zuerst mit einem Dummy-Test, der immer erfolgreich sein wird.
+3.  Fügen Sie Komponententests hinzu. Probieren Sie es zuerst mit einem Dummy-Test, der immer erfolgreich sein wird.
 
 		using System;
 		using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -211,13 +221,13 @@ Für eine zusätzliche Qualitätsstufe Ihrer Live- oder Stagingbereitstellungen 
 <br/>
 ![][47]
 
-8.  Versuchen Sie einen Test zu erstellen, der fehlschlagen wird. Fügen Sie einen neuen Test hinzu, indem Sie den ersten Test kopieren, umbenennen und die Codezeile auskommentieren, die NotImplementedException auslöst. 
+8.  Versuchen Sie einen Test zu erstellen, der fehlschlagen wird. Fügen Sie einen neuen Test hinzu, indem Sie den ersten Test kopieren, umbenennen und die Codezeile auskommentieren, die besagt, dass "NotImplementedException" eine erwartete Ausnahme ist. 
 
 		[TestMethod]
-		[ExpectedException(typeof(NotImplementedException))]
+		//[ExpectedException(typeof(NotImplementedException))]
 		public void TestMethod2()
 		{
-		    //throw new NotImplementedException();
+		    throw new NotImplementedException();
 		}
 
 9. Checken Sie die Änderung ein, um einen neuen Build in die Warteschlange zu stellen.<br/>
@@ -228,16 +238,16 @@ Für eine zusätzliche Qualitätsstufe Ihrer Live- oder Stagingbereitstellungen 
 <br/>
 ![][50]
 
-Weitere Informationen zu Komponententests in Visual Studio Online finden Sie unter [Ausführen von Komponententests im Build](http://go.microsoft.com/fwlink/p/?LinkId=510474).
+Weitere Informationen zu Komponententests in Visual Studio Online finden Sie unter [Ausführen von Komponententests im Build](http://go.microsoft.com/fwlink/p/?LinkId=510474)
 
-Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861). Wenn Sie Git verwenden, finden Sie weitere Informationen unter [Freigeben des Codes in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) und [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-publish-source-control).
+Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861). Wenn Sie Git verwenden, finden Sie Informationen unter [Freigeben von Code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) und [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-publish-source-control).
 
 [Schritt 1: Erstellen eines Teamprojekts]: #step1
 [Schritt 2: Einchecken eines Projekts in der Quellcodeverwaltung]: #step2
 [Schritt 3: Verbinden des Projekts mit Azure]: #step3
 [Schritt 4: Durchführen von Änderungen und Auslösen einer erneuten Erstellung und Bereitstellung]: #step4
 [Schritt 5: Erneute Bereitstellung eines früheren Builds (optional)]: #step5
-[Schritt 6: Ändern der Produktionsbereitstellung (nur Clouddienste)]: #step6
+[Schritt 6: Ändern der Produktionsbereitstellung (nur Cloud-Dienste)]: #step6
 [Schritt 7: Ausführen von Komponententests (optional)]: #step7
 [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs0.PNG
 [1]: ./media/cloud-services-continuous-delivery-use-vso/tfs1.png
@@ -291,4 +301,4 @@ Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsof
 [49]: ./media/cloud-services-continuous-delivery-use-vso/TestsFailed.PNG
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
 
-<!--HONumber=35.1-->
+<!--HONumber=45--> 

@@ -1,6 +1,20 @@
-﻿<properties title="Getting Started with Azure Storage" pageTitle="Erste Schritte mit Azure Storage" metaKeywords="Azure, Getting Started, Storage" description="" services="storage" documentationCenter="" authors="ghogen, kempb" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Azure Storage" 
+	description="Beschreibt, was beim Erstellen eines Azure-Speichers in einem Visual Studio-Cloud-Dienstprojekts passiert ist"
+	services="storage" 
+	documentationCenter="" 
+	authors="kempb" 
+	manager="douge" 
+	editor="tglee"/>
 
-<tags ms.service="storage" ms.workload="web" ms.tgt_pltfrm="vs-what-happened" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="ghogen, kempb" />
+<tags 
+	ms.service="storage" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vs-what-happened" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/02/2015" 
+	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
 > - [Erste Schritte](/documentation/articles/vs-storage-cloud-services-getting-started-blobs/)
@@ -29,3 +43,5 @@ Elemente mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Sp
 - `ServiceConfiguration.Cloud.cscfg`
 - `ServiceConfiguration.Local.cscfg`
 
+
+<!--HONumber=46--> 

@@ -12,4 +12,4 @@ Ihre gewohnten Überwachungs-Tools und Techniken, die Sie für lokale Server ver
 
 Weitere Informationen finden Sie unter [Überwachung von SQL-Datenbank mit dynamischen Verwaltungssichten][].
 
-[Überwachung von SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/en-us/library/windowsazure/ff394114.aspx
+[Überwachung von SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/library/windowsazure/ff394114.aspx

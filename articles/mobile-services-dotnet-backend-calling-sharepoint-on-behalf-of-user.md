@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Zugreifen auf SharePoint im Namen eines Benutzers | Mobile Dev Center" description="Erfahren Sie, wie Sie im Namen des Benutzers Aufrufe an SharePoint durchführen." documentationCenter="windows" authors="mattchenderson" manager="dwrede" editor="" services=""/>
+<properties 
+	pageTitle="Zugreifen auf SharePoint im Namen eines Benutzers | Mobile Dev Center" 
+	description="Erfahren Sie, wie Sie im Namen des Benutzers Aufrufe an SharePoint durchführen." 
+	documentationCenter="windows" 
+	authors="mattchenderson" 
+	manager="dwrede" 
+	editor="" 
+	services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="mahender"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="mahender"/>
 
 # Zugreifen auf SharePoint im Namen eines Benutzers
 
@@ -202,6 +216,6 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 <!-- URLs. -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [SharePoint Online]: http://office.microsoft.com/de-de/sharepoint/
-[Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: http://azure.microsoft.com/de-de/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
+[Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
 
 <!--HONumber=42-->

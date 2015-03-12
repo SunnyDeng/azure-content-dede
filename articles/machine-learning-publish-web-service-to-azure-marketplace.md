@@ -1,6 +1,20 @@
-<properties title="Publishing Azure ML Web Services to the Azure Marketplace" pageTitle="Veröffentlichen von Azure ML-Webdiensten im Azure Marketplace | Azure" description="Veröffentlichen von Azure ML-Webdiensten im Azure Marketplace" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Veröffentlichen von Azure Machine Learning-Webdiensten im Azure Marketplace | Azure" 
+	description="Veröffentlichen Ihres Azure Machine Learning-Webdiensts im Azure Marketplace" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="luisca" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/03/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/03/2014" 
+	ms.author="luisca"/>
 
 # Veröffentlichen von Azure ML-Webdiensten im Azure Marketplace 
 
@@ -28,14 +42,14 @@ Die Veröffentlichung eines Azure ML-Webdiensts im Azure Marketplace umfasst die
 1.	Erstellen und Veröffentlichen eines Webdienstes Azure ML RRS-Webdiensts (Request-Response Service, Antwort-/Anfrage-Dienst).
 2.	Stellen Sie den Dienst über das Azure-Verwaltungsportal in Ihrer Produktionsumgebung bereit.
 3.	Verwenden Sie die URL des veröffentlichten Webdiensts für die Veröffentlichung im Azure Marketplace.
-4.	Überblick über den Veröffentlichungsprozess: http://msdn.microsoft.com/de-de/library/azure/hh580725.aspx 
+4.	Überblick über den Veröffentlichungsprozess: http://msdn.microsoft.com/library/azure/hh580725.aspx 
 5.	Nach der Übermittlung wird Ihr Angebot geprüft und muss genehmigt werden, bevor Ihre Kunden das Angebot abonnieren können. Der Veröffentlichungsprozess kann einige Geschäftstage in Anspruch nehmen. Wir versuchen, diesen Prozess möglichst kurz zu halten und werden in den kommenden Ankündigungen ein Update hierzu veröffentlichen.
 
 ## Leitfaden für die Veröffentlichung im Azure Marketplace
 
-1.	Sie müssen sich als Herausgeber registrieren. Weitere Informationen finden Sie unter: http://msdn.microsoft.com/de-de/library/azure/hh563872.aspx
-2.	Sie müssen Daten zu Ihrem Angebot liefern, inklusive einer Preisgestaltung. Legen Sie fest, ob Sie Ihren Dienst kostenlos oder zahlungspflichtig anbieten möchten. Weitere Informationen finden Sie unter: http://msdn.microsoft.com/de-de/library/azure/hh563873.aspx 
-3.	Für zahlungspflichtige Dienste müssen Sie Bezahlungsinformationen wie z. B. Ihre Bank- und Steuerdaten angeben. Weitere Informationen finden Sie unter: http://msdn.microsoft.com/de-de/library/azure/hh563873.aspx
+1.	Sie müssen sich als Herausgeber registrieren. Weitere Informationen finden Sie unter: http://msdn.microsoft.com/library/azure/hh563872.aspx
+2.	Sie müssen Daten zu Ihrem Angebot liefern, inklusive einer Preisgestaltung. Legen Sie fest, ob Sie Ihren Dienst kostenlos oder zahlungspflichtig anbieten möchten. Weitere Informationen finden Sie unter: http://msdn.microsoft.com/library/azure/hh563873.aspx 
+3.	Für zahlungspflichtige Dienste müssen Sie Bezahlungsinformationen wie z. B. Ihre Bank- und Steuerdaten angeben. Weitere Informationen finden Sie unter: http://msdn.microsoft.com/library/azure/hh563873.aspx
 
 ## Spezielle Machine Learning-Optionen
 
@@ -80,3 +94,5 @@ Die Veröffentlichung eines Azure ML-Webdiensts im Azure Marketplace umfasst die
 
 [image1]:./media/machine-learning-publish-web-service-to-azure-marketplace/image1.png
 [image2]:./media/machine-learning-publish-web-service-to-azure-marketplace/image2.png
+
+<!--HONumber=46--> 

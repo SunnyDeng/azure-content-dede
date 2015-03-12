@@ -6,7 +6,7 @@ Weitere Informationen zu Empfangsmustern von Ereignis-Hubs finden Sie unter [Üb
 
 In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in der der Ereignis-Hub-Spout bereits verfügbar ist.
 
-1. Gehen Sie wie unter [HDInsight Storm - Erste Schritte](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-storm-getting-started/) beschrieben vor, um ein neues HDInsight-Cluster zu erstellen und über Remotedesktop eine Verbindung damit herzustellen.
+1. Gehen Sie wie unter [HDInsight Storm - Erste Schritte](http://azure.microsoft.com/documentation/articles/hdinsight-storm-getting-started/) beschrieben vor, um ein neues HDInsight-Cluster zu erstellen und über Remotedesktop eine Verbindung damit herzustellen.
 
 2. Kopieren Sie die Datei `%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar` in Ihre lokale Entwicklungsumgebung. Sie enthält events-storm-spout.
 
@@ -219,15 +219,14 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 	Diese Klasse erstellt einen neuen Ereignis-Hubs-Spout, und verwendet die Eigenschaften in der Konfigurationsdatei zum Instanziieren. Beachten Sie unbedingt, dass in diesem Beispiel eine der Anzahl der Partitionen auf dem Ereignis-Hub entsprechende die Anzahl von Spout-Aufgaben erstellt wird, um die maximale für diesen Ereignis-Hub zulässige Parallelität zulässig zu verwenden.
 
 <!-- Links -->
-[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/de-de/library/azure/dn821413.aspx
-[HDInsight Storm]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-storm-overview/
-[Lernprogramm zur HDInsight-Sensoranalyse]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-storm-sensor-data-analysis/
+[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn821413.aspx
+[HDInsight Storm]: http://azure.microsoft.com/documentation/articles/hdinsight-storm-overview/
+[Lernprogramm zur HDInsight-Sensoranalyse]: http://azure.microsoft.com/documentation/articles/hdinsight-storm-sensor-data-analysis/
 
 <!-- Images -->
 
 [12]: ./media/service-bus-event-hubs-getstarted/create-storm1.png
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
-
 
 <!--HONumber=42-->

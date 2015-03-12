@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Editions chart" pageTitle="Erfahren Sie mehr über die Features in BizTalk Services-Editionen | Azure" metaKeywords="BizTalk Services, get started, Azure, editions" description="Vergleichen Sie die Funktionen der BizTalk Services-Editionen: Free, Developer, Basic, Standard und Premium." metaCanonical="" services="biztalk-services" documentationCenter="" title=" Basic" authors="mandia" solutions="" manager="dwrede" editor="cgronlun" />
+﻿<properties 
+	pageTitle="Erfahren Sie mehr über die Features in BizTalk Services-Editionen | Azure" 
+	description="Vergleichen Sie die Funktionen der BizTalk Services-Editionen: Free, Developer, Basic, Standard und Premium. MABS, WABS" 
+	services="biztalk-services" 
+	documentationCenter="" 
+	authors="MandiOhlinger" 
+	manager="dwrede" 
+	editor="cgronlun"/>
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia" />
+<tags 
+	ms.service="biztalk-services" 
+	ms.workload="integration" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/16/2015" 
+	ms.author="mandia"/>
 
 
 
@@ -228,3 +242,5 @@ Um Azure BizTalk Services im Azure-Verwaltungsportal bereitzustellen, wechseln S
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
 - [BizTalk Services: Name und Schlüssel des Ausstellers](http://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
 - [Wie verwende ich das Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
+
+<!--HONumber=46--> 

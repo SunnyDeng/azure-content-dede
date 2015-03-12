@@ -142,5 +142,4 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 
    	>[AZURE.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Bild</strong>-Steuerelement gebunden wird.
 
-
 <!--HONumber=42-->

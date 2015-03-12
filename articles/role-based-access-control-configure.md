@@ -1,6 +1,20 @@
-﻿<properties title="Role Based Access Control in Azure Preview Portal" pageTitle="Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal" description="Beschreibt die Funktionsweise und Einrichtung der rollenbasierten Zugriffssteuerung." metaKeywords="" services="multiple" solutions="" documentationCenter="" authors="justinha" videoId="" scriptId="" manager="terrylan" />
+﻿<properties 
+	pageTitle="Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal" 
+	description="Beschreibt die Funktionsweise und Einrichtung der rollenbasierten Zugriffssteuerung."
+	services="" 
+	documentationCenter="" 
+	authors="Justinha" 
+	manager="terrylan" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.devlang="dotnet" ms.topic="article" ms.tgt_pltfrm="Ibiza" ms.workload="infrastructure-services" ms.date="09/12/2014" ms.author="justinha;Justinha@microsoft.com" />
+<tags 
+	ms.service="multiple" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="Ibiza" 
+	ms.workload="infrastructure-services" 
+	ms.date="02/06/2015" 
+	ms.author="justinha"/>
 
 <!--This is a basic template that shows you how to use mark down to create a topic that includes a TOC, sections with subheadings, links to other azure.microsoft.com topics, links to other sites, bold text, italic text, numbered and bulleted lists, code snippets, and images. For fancier markdown, find a published topic and copy the markdown or HTML you want. For more details about using markdown, see http://sharepoint/sites/azurecontentguidance/wiki/Pages/Content%20Guidance%20Wiki%20Home.aspx.-->
 
@@ -124,7 +138,7 @@ Rollenzuweisungen können auch mit dem Microsoft Azure-Modul für Windows PowerS
 
 	PS C:\> New-AzureRoleAssignment -Mail brockh@contoso.com -RoleDefinitionName Contributor -ResourceGroupName ProdDB
 
-Weitere Informationen über das Hinzufügen und Entfernen von Zugriffsrechten mit Windows PowerShell finden Sie unter [Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-powershell/). 
+Weitere Informationen über das Hinzufügen und Entfernen von Zugriffsrechten mit Windows PowerShell finden Sie unter [Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/documentation/articles/role-based-access-control-powershell/). 
 
 <h3><a id="remove"></a>Zugriff entfernen</h2>
 
@@ -165,7 +179,7 @@ Sie können einen Gast von jeder Rolle entfernen, so als würden Sie einen Benut
  
 <h2><a id="knownissues"></a>Bekannte Probleme bei der Verwendung der rollenbasierten Zugriffssteuerung</h2>
 
-Wenn Sie während der Testphase bei der Verwendung der rollenbasierten Zugriffssteuerung auf Probleme stoßen, finden Sie unter [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-troubleshooting/) bekannte Probleme, die mit dem vorliegenden Problem in Zusammenhang stehen können.
+Wenn Sie während der Testphase bei der Verwendung der rollenbasierten Zugriffssteuerung auf Probleme stoßen, finden Sie unter [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/documentation/articles/role-based-access-control-troubleshooting/) bekannte Probleme, die mit dem vorliegenden Problem in Zusammenhang stehen können.
 
 
 <h2><a id="feedback"></a>Feedback geben</h2>
@@ -177,12 +191,12 @@ Testen Sie Azure RBAC, und senden Sie uns [feedback](http://aka.ms/azurerbacfeed
 
 Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der rollenbasierten Zugriffssteuerung: 
 
-+ [Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-powershell/)
-+ [Verwalten der rollenbasierten Zugriffssteuerung mit xplat-cli](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-xplat-cli/)
-+ [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/de-de/documentation/articles/role-based-access-control-troubleshooting/)
++ [Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/documentation/articles/role-based-access-control-powershell/)
++ [Verwalten der rollenbasierten Zugriffssteuerung mit xplat-cli](http://azure.microsoft.com/documentation/articles/role-based-access-control-xplat-cli/)
++ [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/documentation/articles/role-based-access-control-troubleshooting/)
 + [Azure Active Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx)
-+ [Azure Active Directory Premium und Basic](http://msdn.microsoft.com/de-de/library/azure/dn532272.aspx)
-+ [Verknüpfung von Azure-Abonnements mit Azure AD](http://msdn.microsoft.com/de-de/library/azure/dn629581.aspx)
++ [Azure Active Directory Premium und Basic](http://msdn.microsoft.com/library/azure/dn532272.aspx)
++ [Verknüpfung von Azure-Abonnements mit Azure AD](http://msdn.microsoft.com/library/azure/dn629581.aspx)
 + Eine Einführung zur Self-Service-Gruppenverwaltung von Sicherheitsgruppen finden Sie im [Active Directory Team-Blog](http://blogs.technet.com/b/ad/archive/2014/02/24/more-preview-enhancements-for-windows-azure-ad-premium.aspx).
 
 
@@ -200,3 +214,5 @@ Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der r
 [10]: ./media/role-based-access-control-configure/RBACDirConfigTab.png
 
 
+
+<!--HONumber=46--> 

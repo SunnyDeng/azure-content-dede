@@ -280,7 +280,7 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lernen Sie anhand der 
 
 
 [azure-management-portal]: https://manage.windowsazure.com
-[azure-powershell]: http://msdn.microsoft.com/de-de/library/windowsazure/jj152841.aspx
+[azure-powershell]: http://msdn.microsoft.com/library/windowsazure/jj152841.aspx
 
 [azure-storage-client-library]: /de-de/develop/net/how-to-guides/blob-storage/
 [azure-create-storage-account]: ../storage-create-storage-account/
@@ -307,6 +307,5 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lernen Sie anhand der 
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
-
 
 <!--HONumber=42-->

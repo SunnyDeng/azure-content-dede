@@ -13,5 +13,4 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 	Dies ist die URL des lokalen Computers für das .NET-Backendprojekt. Diese URL wird benötigt, um die App mit dem mobilen Dienst zu testen, der auf dem lokalen Computer ausgeführt wird.
 
-Ihr mobiles Dienstprojekt ist so konfiguriert, dass eine Verbindung mit dem Benachrichtigungs-Hub in Azure hergestellt wird, wenn es lokal ausgeführt wird. Beachten Sie, dass Sie den gleichen Benachrichtigungs-Hubnamen und die gleiche Verbindungszeichenfolge wie im Portal verwenden müssen, weil diese Projekteinstellungen in der Datei "Web.config" bei der Ausführung in Azure mit den Portaleinstellungen überschrieben werden. 
-<!--HONumber=42-->
+Ihr mobiles Dienstprojekt ist so konfiguriert, dass eine Verbindung mit dem Benachrichtigungs-Hub in Azure hergestellt wird, wenn es lokal ausgeführt wird. Beachten Sie, dass Sie den gleichen Benachrichtigungs-Hubnamen und die gleiche Verbindungszeichenfolge wie im Portal verwenden müssen, weil diese Projekteinstellungen in der Datei "Web.config" bei der Ausführung in Azure mit den Portaleinstellungen überschrieben werden. <!--HONumber=42-->

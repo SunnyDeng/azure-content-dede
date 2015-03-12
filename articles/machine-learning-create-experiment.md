@@ -1,6 +1,20 @@
-﻿<properties title="Create a simple experiment in Azure Machine Learning Studio" pageTitle="Erstellen eines einfachen Experiments Machine Learning-Studio | Azure" description="So erstellen Sie ein Experiment zum Trainieren und Testen eines einfachen Modells in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun"  videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erstellen eines einfachen Experiments Machine Learning-Studio | Azure" 
+	description="So erstellen Sie ein Experiment zum Trainieren und Testen eines einfachen Modells in Azure Machine Learning Studio" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/22/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/07/2015" 
+	ms.author="garye"/>
 
 #Erstellen eines einfachen Experiments im Azure Machine Learning-Studio 
  
@@ -173,7 +187,7 @@ Sie haben Ihr Experiment nun eingerichtet und können versuchen, es anhand von I
 
 Wenn Sie mit Ihrem Modell zufrieden sind, können Sie es als Webdienst veröffentlichen, der Automobilpreise anhand neuer Daten vorhersagt. Weitere Details finden Sie im ML Studio-Hilfethema **Veröffentlichen von Experimenten**.
 
-Eine ausführlichere Anleitung zu Erstellung, Training, Bewertung und Veröffentlichung von Vorhersagemodellen finden Sie unter [Anleitung: Entwickeln einer Vorhersagelösung mit Azure Machine Learning](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-walkthrough-develop-predictive-solution/). 
+Eine ausführlichere Anleitung zu Erstellung, Training, Bewertung und Veröffentlichung von Vorhersagemodellen finden Sie unter [Anleitung: Entwickeln einer Vorhersagelösung mit Azure Machine Learning](http://azure.microsoft.com/documentation/articles/machine-learning-walkthrough-develop-predictive-solution/). 
 
 
 <!-- Images -->
@@ -191,3 +205,5 @@ Eine ausführlichere Anleitung zu Erstellung, Training, Bewertung und Veröffent
 [screen8a]:./media/machine-learning-create-experiment/screen8a.png
 [screen9]:./media/machine-learning-create-experiment/screen9.png
 [screen10]:./media/machine-learning-create-experiment/screen10.png
+
+<!--HONumber=46--> 

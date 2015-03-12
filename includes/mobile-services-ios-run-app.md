@@ -17,5 +17,4 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	>[AZURE.NOTE]Sie können den Code überprüfen, der auf Ihren mobilen Dienst zugreift, um Daten abzufragen und einzufügen. Der Code befindet sich in der Datei "TodoService.m".</p> 
  	</div>
-
 <!--HONumber=42-->

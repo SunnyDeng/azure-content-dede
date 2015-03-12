@@ -308,11 +308,11 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 * [Git-Dokumentation]
 * [Project Kudu](https://github.com/projectkudu/kudu/wiki)
 
-[Azure Developer Center]: http://www.windowsazure.com/de-de/develop/overview/
+[Azure Developer Center]: http://azure.microsoft.com/develop/overview/
 [Azure-Portal]: http://manage.windowsazure.com
 [Git-Website]: http://git-scm.com
 [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[Verwenden von PowerShell für Azure]: http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/
+[Verwenden von PowerShell für Azure]: http://azure.microsoft.com/develop/nodejs/how-to-guides/powershell-cmdlets/
 [Verwenden des Azure-Befehlszeilentools für Mac und Linux]: /de-de/develop/nodejs/how-to-guides/command-line-tools/
 [Git-Dokumentation]: http://git-scm.com/documentation
 
@@ -333,6 +333,5 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Erstellen eines Repositorys (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
 [Schnellstart - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
-[Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online]: http://www.windowsazure.com/de-de/develop/net/common-tasks/publishing-with-tfs/
-
+[Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online]: http://azure.microsoft.com/develop/net/common-tasks/publishing-with-tfs/
 <!--HONumber=42-->

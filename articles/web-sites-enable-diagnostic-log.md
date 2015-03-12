@@ -49,13 +49,13 @@ Mithilfe der Website-Diagnose können Sie Folgendes aktivieren oder deaktivieren
 
 ###Anwendungsdiagnose
 
-Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/de-de/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungsdiagnoseprotokoll aufzuzeichnen. Beispiel:
+Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungsdiagnoseprotokoll aufzuzeichnen. Beispiel:
 
 	System.Diagnostics.Trace.TraceError("Wenn Sie dies lesen, ist ein Fehler aufgetreten");
 
 Anwendungsdiagnosen ermöglichen Ihnen, Fehler in der laufenden Anwendung zu ermitteln, indem Informationen ausgegeben werden, sobald bestimmte Codes verwendet werden. Dies ist besonders nützlich, wenn Sie versuchen zu bestimmen, warum ein bestimmter Pfad vom Code verwendet wurde, in der Regel wenn der Pfad einen Fehler oder anderes unerwünschtes Verhalten verursacht.
 
-Informationen zum Arbeiten mit Anwendungsdiagnosen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](http://www.windowsazure.com/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
+Informationen zum Arbeiten mit Anwendungsdiagnosen in Visual Studio finden Sie unter [Problembehandlung von Azure-Websites in Visual Studio](http://azure.microsoft.com/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/).
 
 > [AZURE.NOTE] Im Gegensatz zum Ändern der Datei "web.config" wird durch das Aktivieren der Anwendungsdiagnose oder durch das Ändern des Diagnoseprotokollumfangs nicht die Anwendungsdomäne neu gestartet, in der die Anwendung ausgeführt wird.
 
@@ -69,7 +69,7 @@ Beim Aktivieren der **Anwendungsdiagnose** müssen Sie auch den **Protokolliergr
 
 Bei Aktivierung der **Website-Diagnose** müssen Sie **Speicher** oder **Dateisystem** für **Webserverprotokollierung** auswählen. Durch Auswahl von **Speicher** können Sie ein Speicherkonto festlegen und dann einen BLOB-Container hinzufügen, in den die Protokolle geschrieben werden. Alle anderen Protokolle für**Website-Diagnose** werden nur in das Dateisystem geschrieben.
 
-> [AZURE.NOTE] In **Tabellenspeicher** oder **BLOB-Speicher** gespeicherte Informationen können nur über einen Speicherclient oder eine Anwendung aufgerufen werden, die direkt mit diesen Speichersystemen arbeiten. Beispielsweise enthält Visual Studio 2013 einen Speicher-Explorer, mit dem Tabellen- oder BLOB-Speicher erkundet werden können, und HDInsight kann auf die im Blob-Speicher gespeicherten Daten zugreifen. Sie können auch mithilfe der [Azure SDKs](http://www.windowsazure.com/de-de/downloads/#) eine Anwendung schreiben, die auf den Azure-Speicher zugreift.
+> [AZURE.NOTE] In **Tabellenspeicher** oder **BLOB-Speicher** gespeicherte Informationen können nur über einen Speicherclient oder eine Anwendung aufgerufen werden, die direkt mit diesen Speichersystemen arbeiten. Beispielsweise enthält Visual Studio 2013 einen Speicher-Explorer, mit dem Tabellen- oder BLOB-Speicher erkundet werden können, und HDInsight kann auf die im Blob-Speicher gespeicherten Daten zugreifen. Sie können auch mithilfe der [Azure SDKs](http://azure.microsoft.com/downloads/#) eine Anwendung schreiben, die auf den Azure-Speicher zugreift.
 
 Die folgenden Einstellungen sind bei der Aktivierung der **Anwendungsdiagnose** verfügbar:
 
@@ -81,7 +81,7 @@ Die folgenden Einstellungen sind bei der Aktivierung der **Anwendungsdiagnose** 
 
 > [AZURE.NOTE]  Sie können gleichzeitig eine Kombination aus Dateisystem-, Tabellen- und BLOB-Speicher aktivieren und jeweils individuelle Konfigurationen der Protokollierungsebene festlegen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im BLOB-Speicher protokollieren, während die Dateisystemprotokollierung ausführlich erfolgt.
 
-> [AZURE.NOTE] Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://azure.microsoft.com/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 <a name="download"></a><h2>Vorgehensweise: Herunterladen von Protokollen</h2>
 
@@ -113,7 +113,7 @@ Starten Sie zum Herunterladen der Protokolldateien eine neue Instanz von Azure P
 
 Daraufhin werden die Protokolle für die Website, die durch den Parameter **-Name** angegeben wird, in der Datei **logs.zip** im aktuellen Verzeichnis gespeichert.
 
-> [AZURE.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://azure.microsoft.com/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ###Herunterladen mit Azure-Befehlszeilentools
 
@@ -123,7 +123,7 @@ Zum Herunterladen der Protokolldateien mit den Azure-Befehlszeilentools öffnen 
 
 Daraufhin werden die Protokolle für die Website namens  'websitename' in der Datei **diagnostics.zip** im aktuellen Verzeichnis gespeichert.
 
-> [AZURE.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie [Verwenden der Azure-Befehlszeilentools ](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
+> [AZURE.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie [Verwenden der Azure-Befehlszeilentools ](http://azure.microsoft.com/develop/nodejs/how-to-guides/command-line-tools/).
 
 <a name="streamlogs"></a><h2>Vorgehensweise: Streaming von Protokollen</h2>
 
@@ -151,7 +151,7 @@ Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **-
 
 Eine Liste der verfügbaren Pfade wird mit dem Parameter "-ListPath" angezeigt.
 
-> [AZURE.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](http://azure.microsoft.com/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ###Streaming mit Azure-Befehlszeilentools
 
@@ -169,7 +169,7 @@ Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **-
 
 	azure site log tail websitename --path http
 
-> [AZURE.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie [Verwenden der Azure-Befehlszeilentools ](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/command-line-tools/).
+> [AZURE.NOTE] Wenn Sie die Azure-Befehlszeilentools nicht installiert haben oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie [Verwenden der Azure-Befehlszeilentools ](http://azure.microsoft.com/develop/nodejs/how-to-guides/command-line-tools/).
 
 <a name="understandlogs"></a><h2>Vorgehensweise: Verstehen von Diagnoseprotokollen</h2>
 

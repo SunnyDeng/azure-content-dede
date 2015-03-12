@@ -88,7 +88,7 @@ Giraph wird nicht als Teil des HDInsight-Clusters bereitgestellt. Es muss also v
 
 	Ist der Befehl abgeschlossen, dann wurde die JAR-Datei auf wasb:///example/jars/giraph.jar hochgeladen.
 
-	> [AZURE.NOTE] Eine Liste der Hilfsprogramme, die für das Hochladen von Dateien in HDInsight verwendet werden können, finden Sie unter [Hochladen von Daten für Hadoop-Aufträge in HDInsight](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-upload-data/)
+	> [AZURE.NOTE] Eine Liste der Hilfsprogramme, die für das Hochladen von Dateien in HDInsight verwendet werden können, finden Sie unter [Hochladen von Daten für Hadoop-Aufträge in HDInsight](http://azure.microsoft.com/documentation/articles/hdinsight-upload-data/)
 
 ##<a id="run"></a>Ausführen des Beispiels
 
@@ -203,7 +203,7 @@ Führen Sie für die Verbindung zum HDInsight-Cluster folgende Schritte aus:
 
 ###Ältere Versionen von HDInsight
 
-Wenn Sie Giraph mit einer älteren Version von HDInsight verwenden möchten, müssen Sie es für die spezifische Hadoop-Version kompilieren, die von dieser Version unterstützt wird. Unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](http://azure.microsoft.com/de-de/documentation/articles/hdinsight-component-versioning/) können Sie bestimmen, welche Hadoop-Version zu Ihrer Version von HDInsight passt.
+Wenn Sie Giraph mit einer älteren Version von HDInsight verwenden möchten, müssen Sie es für die spezifische Hadoop-Version kompilieren, die von dieser Version unterstützt wird. Unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](http://azure.microsoft.com/documentation/articles/hdinsight-component-versioning/) können Sie bestimmen, welche Hadoop-Version zu Ihrer Version von HDInsight passt.
 
 Ältere Versionen von HDInsight können es außerdem erforderlich machen, dass der Giraph-Auftrag von der Befehlszeile aus ausgeführt wird. Wenn Sie beim Ausführen des Auftrags von PowerShell aus Fehler erhalten, versuchen Sie, diesen über die [Hadoop-Befehlszeile] auszuführen(#cmd).
 
@@ -213,8 +213,7 @@ Nachdem Sie nun wissen, wie Sie Giraph mit HDInsight verwenden, versuchen Sie [P
 
 [giraph]: http://giraph.apache.org
 [tools]: https://github.com/Blackmist/hdinsight-tools
-[aps]: http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/
-[pig]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-use-pig/
-[hive]: http://azure.microsoft.com/de-de/documentation/articles/hdinsight-use-hive/
-
+[aps]: http://azure.microsoft.com/documentation/articles/install-configure-powershell/
+[pig]: http://azure.microsoft.com/documentation/articles/hdinsight-use-pig/
+[hive]: http://azure.microsoft.com/documentation/articles/hdinsight-use-hive/
 <!--HONumber=42-->

@@ -304,11 +304,11 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 	Informationen zur Verwendung von SSL und einer eigenen Domäne (z. B. www.contoso.com statt contoso.azurewebsites.net) finden Sie in den folgenden Ressourcen:
 
 	* [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/de-de/documentation/articles/web-sites-custom-domain-name/). 
-	* [Aktivieren von HTTPS für eine Azure-Website](http://azure.microsoft.com/de-de/documentation/articles/web-sites-configure-ssl-certificate/)
+	* [Aktivieren von HTTPS für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-configure-ssl-certificate/)
 
 * Vermeiden von Wartezeiten nach Leerlaufzeiten 
 
-	Standardmäßig werden Websites entladen, wenn sie einige Zeit im Leerlauf waren. Danach muss die erste Anfrage warten, bis die Website neu geladen wurde. Zur Vermeidung von Wartezeiten können Sie die AlwaysOn-Funktion aktivieren. Weitere Informationen dazu finden Sie unter den Konfigurationsoptionen in [Konfigurieren von Websites](http://azure.microsoft.com/de-de/documentation/articles/web-sites-configure/).
+	Standardmäßig werden Websites entladen, wenn sie einige Zeit im Leerlauf waren. Danach muss die erste Anfrage warten, bis die Website neu geladen wurde. Zur Vermeidung von Wartezeiten können Sie die AlwaysOn-Funktion aktivieren. Weitere Informationen dazu finden Sie unter den Konfigurationsoptionen in [Konfigurieren von Websites](http://azure.microsoft.com/documentation/articles/web-sites-configure/).
 
 * Hinzufügen von Echtzeitfunktionen wie Chat
 

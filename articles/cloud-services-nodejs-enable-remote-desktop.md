@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Enable Remote Desktop" pageTitle="Aktivieren von Remotedesktop für Cloud-Dienste (Node.js)" metaKeywords="Azure Node.js-Remotezugriff, Azure Node.js-Remoteverbindung, Azure Node.js VM-Zugriff, Zugriff auf virtuelle Computer mit Azure Node.js" description="Hier erfahren Sie, wie Sie Remotedesktopzugriff für virtuelle Computer aktivieren, die auf Ihrer Azure-Node.js-Anwendung gehostet werden. " metaCanonical="" services="cloud-services" documentationCenter="nodejs" title="Enabling Remote Desktop in Azure" authors="larryfr" solutions="" manager="wpickett" editor="" />
+<properties 
+	pageTitle="Aktivieren von Remotedesktop für Cloud-Dienste (Node.js)" 
+	description="Hier erfahren Sie, wie Sie Remotedesktopzugriff für virtuelle Computer aktivieren, die auf Ihrer Azure-Node.js-Anwendung gehostet werden." 
+	services="cloud-services" 
+	documentationCenter="nodejs" 
+	authors="" 
+	manager="wpickett" 
+	editor=""/>
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="09/17/2014" ms.author="wpickett" />
+<tags 
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="09/17/2014" 
+	ms.author="wpickett"/>
 
 
 
@@ -11,17 +25,13 @@
 
 Mit Remotedesktop können Sie auf den Desktop einer Rolleninstanz zugreifen, die in Azure ausgeführt wird. Sie können eine Remotedesktop-Verbindung zur Konfiguration eines virtuellen Computers oder zur Lösung von Problemen mit Ihrer Anwendung verwenden.
 
-<div class="dev-callout">
-	<b>Hinweis</b>
-	<p>Die Schritte in diesem Beitrag gelten nur für Node-Anwendungen, die als Azure-Clouddienst gehostet werden.</p>
-	</div>
+> [AZURE.NOTE] Die Schritte in diesem Beitrag gelten nur für Node-Anwendungen, die als Azure-Cloud-Dienst gehostet werden.
 
 Diese Aufgabe umfasst die folgenden Schritte:
 
 -   [Schritt 1: Konfigurieren des Diensts für Remotedesktopzugriff mit Azure PowerShell]
 -   [Schritt 2: Verbinden mit der Rolleninstanz]
--   [Schritt 3: Konfigurieren des Diensts zur Deaktivierung des Remotedesktopzugriffs
-    mit Azure PowerShell]
+-   [Schritt 3: Konfigurieren des Dienstes zur Deaktivierung des Remotedesktop-Zugriffs mit Azure PowerShell]
 
 ## <a name="step1"> </a>Schritt 1: Konfigurieren des Diensts für Remotedesktopzugriff mit Azure PowerShell
 
@@ -63,7 +73,7 @@ Wenn Ihre Bereitstellung in Azure ausgeführt wird, können Sie die Verbindung z
 
     ![Windows security prompt][5]
 
-4.  Klicken Sie auf **Verbinden**. Sie werden in einem Sicherheitshinweis dazu aufgefordert, Ihre Anmeldeinformationen für den Zugriff auf die Instanz einzugeben. Geben Sie das Kennwort ein, das Sie in [Schritt 1][Step 1: Configure the service for Remote Desktop access using Azure PowerShell] erstellt haben, und klicken Sie auf **OK**.
+4.  Klicken Sie auf **Verbinden**. Sie werden in einem Sicherheitshinweis dazu aufgefordert, Ihre Anmeldeinformationen für den Zugriff auf die Instanz einzugeben. Geben Sie das Kennwort ein, das Sie in [Schritt 1][Step 1: erstellt haben Konfigurieren Sie den Dienst für Remotedesktopzugriff mit Azure PowerShell], und klicken Sie dann auf **OK**.
 
     ![username/password prompt][6]
 
@@ -87,6 +97,7 @@ Wenn Sie die Remotedesktopverbindung zu den Rolleninstanzen in der Cloud nicht m
 - [Verwendung von Remotedesktop mit Azure-Rollen]
 
   [Schritt 1: Konfigurieren des Diensts für Remotedesktopzugriff mit Azure PowerShell]: #step1
+  [Step 1: erstellt haben Konfigurieren Sie den Dienst für Remotedesktopzugriff mit Azure PowerShell]: #step1
   [Schritt 2: Verbinden mit der Rolleninstanz]: #step2
   [Schritt 3: Konfigurieren des Dienstes zur Deaktivierung des Remotedesktop-Zugriffs mit Azure PowerShell]: #step3
   [Azure PowerShell]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
@@ -102,7 +113,7 @@ Wenn Sie die Remotedesktopverbindung zu den Rolleninstanzen in der Cloud nicht m
   [6]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-13.png
   [7]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-14.png
   
-  [Fernzugriff auf Rolleninstanzen in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/hh124107.aspx
-  [Verwendung von Remotedesktop mit Azure-Rollen]: http://msdn.microsoft.com/de-de/library/windowsazure/gg443832.aspx
+  [Fernzugriff auf Rolleninstanzen in Azure]: http://msdn.microsoft.com/library/windowsazure/hh124107.aspx
+  [Verwendung von Remotedesktop mit Azure-Rollen]: http://msdn.microsoft.com/library/windowsazure/gg443832.aspx
 
-<!--HONumber=35.2-->
+<!--HONumber=45--> 

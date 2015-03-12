@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen eines virtuellen Computers unter Windows in Azure" 
 	description="Erfahren Sie, wie Sie einen virtuellen Computer unter Windows in Azure erstellen, sich anschließend anmelden und einen Datenträger anfügen können." 
 	services="virtual-machines" 
@@ -11,8 +11,7 @@
 	ms.service="virtual-machines" 
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="vm-windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
+	ms.devlang="na" ms.topic="article" 
 	ms.date="01/20/2015" 
 	ms.author="kathydav"/>
 
@@ -28,18 +27,18 @@ In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-
 
 In diesem Lernprogramm wird Folgendes erläutert:
 
-- [Gewusst wie: Erstellen eines virtuellen Computers](#createvirtualmachine)
+- [Erstellen des virtuellen Computers](#createvirtualmachine)
 - [Anmelden bei einem virtuellen Computer nach dessen Erstellung](#logon)
 - [Anfügen eines Datenträgers an den neuen virtuellen Computer](#attachdisk)
 
-Wenn Sie mehr erfahren möchten, finden Sie unter [virtuelle Maschinen](http://go.microsoft.com/fwlink/p/?LinkID=271224).
+Wenn Sie ausführlichere Informationen wünschen, rufen Sie [Virtuelle Computer](http://go.microsoft.com/fwlink/p/?LinkID=271224).
 
 
-##<a id="createvirtualmachine"> </a>Erstellen eines virtuellen Computers##
+##<a id="createvirtualmachine"> </a>Erstellen des virtuellen Computers##
 
-In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Katalog** im Verwaltungsportal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit der **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
+In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Katalog** im Verwaltungsportal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit der **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Katalog** verwenden.
 
-> [AZURE.NOTE] Sie können auch versuchen, die umfangreichere, anpassbare [Azure Preview Portal](https://portal.azure.com) zum Erstellen eines virtuellen Computers automatisiert die Bereitstellung mehrerer VMs Anwendungsvorlagen, verwenden Sie erweiterte VM-Überwachung und Diagnosefunktionen und vieles mehr. Die verfügbaren VM-Konfigurationsoptionen in den beiden Portalen sind ähnlich, aber nicht identisch.  
+> [AZURE.NOTE] Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal](https://portal.azure.com) verwenden, um einen virtuellen Computer zu erstellen, die Bereitstellung von Anwendungsvorlagen für mehrere Computer zu automatisieren, erweiterte VM-Überwachungs- und Diagnosefeatures zu verwenden usw. Die verfügbaren VM-Konfigurationsoptionen in den beiden Portalen sind ähnlich, aber nicht identisch.  
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-WindowsVM.md)]
 
@@ -49,17 +48,17 @@ In diesem Abschnitt lernen Sie, wie Sie sich bei dem von Ihnen erstellten virtue
 
 [AZURE.INCLUDE [virtual-machines-log-on-win-server](../includes/virtual-machines-log-on-win-server.md)]
 
-## <a id="attachdisk"> </a>Anschließen eines Datenträgers an den neuen virtuellen Computer ##
+## <a id="attachdisk"> </a>Anfügen eines Datenträgers an den neuen virtuellen Computer ##
 
 In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtuellen Computer anfügen. Weitere Informationen zum Anfügen eines Datenträgers, einschließlich zum Anfügen eines vorhandenen Datenträgers, finden Sie im [Lernprogramm zum Anfügen eines Datenträgers](http://azure.microsoft.com/documentation/articles/storage-windows-attach-disk/).
 
-1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
+1. Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com).
 
-2. Klicken Sie auf **virtuelle Maschinen**, und wählen Sie dann die **MyTestVM** virtuellen Computer.
+2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den virtuellen Computer **MyTestVM** aus.
 
 	![Select MyTestVM](./media/virtual-machines-windows-tutorial/selectvm.png)
 	
-3. Möglicherweise wird die Seite "Schnellstart" zuerst angezeigt. Wählen Sie in diesem Fall oben die Option **Dashboard**.
+3. Sie werden möglicherweise zuerst zur Seite "Schnellstart" geleitet. Wählen Sie in diesem Fall oben die Option **Dashboard**.
 
 	![Select Dashboard](./media/virtual-machines-windows-tutorial/dashboard.png)
 
@@ -118,7 +117,7 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
 
 [Verwalten der Verfügbarkeit virtueller Computer](http://azure.microsoft.com/documentation/articles/manage-availability-virtual-machines/)
 
-[Zu den Azure-VM-Konfigurationseinstellungen](http://msdn.microsoft.com/library/azure/dn763935.aspx)
+[Informationen zu Konfigurationseinstellungen von virtuellen Azure-Computern](http://msdn.microsoft.com/library/azure/dn763935.aspx)
 
 [VIDEO: Getting Started with VHDs - What's Really Happening](http://azure.microsoft.com/documentation/videos/getting-started-with-azure-virtual-machines) (Erste Schritte mit VHDs - was wirklich geschieht) (in englischer Sprache)
 
@@ -138,6 +137,9 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
 [Erstellen des virtuellen Computers]: #custommachine
 [Anmelden bei einem virtuellen Computer nach dessen Erstellung]: #logon
 [Anfügen eines Datenträgers an den neuen virtuellen Computer]: #attachdisk
-[Gewusst wie: Einrichten der Kommunikation mit dem virtuellen Computer]: #endpoints
+[Gewusst wie: Einrichten der Kommunikation mit einem virtuellen Computer]: #endpoints
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

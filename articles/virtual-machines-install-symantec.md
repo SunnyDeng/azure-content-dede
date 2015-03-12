@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Gewusst wie: Installieren und Konfigurieren von Symantec Endpoint Protection auf einem virtuellen Azure-Computer" 
 	description="Beschreibt die Installation und Konfiguration von Symantec Endpoint Protection auf einem virtuellen Computer in Azure." 
 	services="virtual-machines" 
@@ -76,9 +76,12 @@ So überprüfen Sie, dass die Symantec-Sicherheitserweiterung installiert wurde 
 [Verwalten von Erweiterungen]
 
 <!--Link references-->
-[Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: ../virtual-machines-log-on-windows-server/
+[Anmelden bei einem virtuellen Computer unter Windows Server]: ../virtual-machines-log-on-windows-server/
 
 [Verwalten von Erweiterungen]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
 
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

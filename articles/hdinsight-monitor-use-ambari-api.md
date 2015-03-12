@@ -175,7 +175,7 @@ Sie haben erfahren, wie Ambari-Überwachungs-API-Aufrufe verwendet werden. Weite
 [microsoft-hadoop-SDK]: http://hadoopsdk.codeplex.com/wikipage?title=Ambari%20Monitoring%20Client
 
 [Powershell-install]: ../install-configure-powershell/
-[Powershell-script]: http://technet.microsoft.com/de-de/library/ee176949.aspx 
+[Powershell-script]: http://technet.microsoft.com/library/ee176949.aspx 
 
 [hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
 [hdinsight-admin-portal]: ../hdinsight-administer-use-management-portal/
@@ -185,6 +185,5 @@ Sie haben erfahren, wie Ambari-Überwachungs-API-Aufrufe verwendet werden. Weite
 [hdinsight-provision]: ../hdinsight-provision-clusters/
 
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png
-
 
 <!--HONumber=42-->

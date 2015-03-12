@@ -87,7 +87,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 	<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
 	</table>
 
-- **Eine Workstation** mit installiertem Visual Studio 2013 Anweisungen finden Sie unter [Installieren von Visual Studio](http://msdn.microsoft.com/de-de/library/e2h7fzkw.aspx)
+- **Eine Workstation** mit installiertem Visual Studio 2013 Anweisungen finden Sie unter [Installieren von Visual Studio](http://msdn.microsoft.com/library/e2h7fzkw.aspx)
 
 
 
@@ -1351,9 +1351,9 @@ In diesem Artikel haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von T
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
-[powershell-start]: http://technet.microsoft.com/de-de/library/hh847889.aspx
+[powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
 [powershell-install]: ../install-configure-powershell
-[powershell-script]: http://technet.microsoft.com/de-de/library/ee176949.aspx
+[powershell-script]: http://technet.microsoft.com/library/ee176949.aspx
 
 [hdinsight-provision]: ../hdinsight-provision-clusters/
 [hdinsight-get-started]: ../hdinsight-get-started/
@@ -1363,6 +1363,5 @@ In diesem Artikel haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von T
 [hdinsight-use-sqoop]: ../hdinsight-use-sqoop/
 [hdinsight-power-query]: ../hdinsight-connect-excel-power-query/
 [hdinsight-hive-odbc]: ../hdinsight-connect-excel-hive-ODBC-driver/
-
 
 <!--HONumber=42-->

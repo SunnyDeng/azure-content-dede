@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Zugreifen auf Informationen in Azure Active Directory Graph (Windows Store) | Mobile Developer Center" description="Erfahren Sie, wie Sie über die Graph-API in Ihrer Windows Store-Anwendung auf Azure Active Directory-Informationen zugreifen." documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor="" services=""/>
+<properties 
+	pageTitle="Zugreifen auf Informationen in Azure Active Directory Graph (Windows Store) | Mobile Developer Center" 
+	description="Erfahren Sie, wie Sie über die Graph-API in Ihrer Windows Store-Anwendung auf Azure Active Directory-Informationen zugreifen." 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor="" 
+	services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/29/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/29/2014" 
+	ms.author="wesmc"/>
 
 # Zugriff auf Azure Active Directory Graph-Informationen
 
@@ -172,8 +186,8 @@ Im nächsten Lernprogramm, [Rollenbasierte Zugriffssteuerung mit AAD in Mobile S
 [Speichern von Serverskripts]: /de-de/documentation/articles/mobile-services-store-scripts-source-control/
 [Registrieren für die Verwendung einer Azure Active Directory-Anmeldung]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Graph-API]: http://msdn.microsoft.com/library/azure/hh974478.aspx
-[Graph-REST-API]: http://msdn.microsoft.com/de-de/library/azure/hh974478.aspx
-[Get User]: http://msdn.microsoft.com/de-de/library/azure/dn151678.aspx
+[Graph-REST-API]: http://msdn.microsoft.com/library/azure/hh974478.aspx
+[Get User]: http://msdn.microsoft.com/library/azure/dn151678.aspx
 [Rollenbasierte Zugriffssteuerung mit AAD in Mobile Services]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/
 
 

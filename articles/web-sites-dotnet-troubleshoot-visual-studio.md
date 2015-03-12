@@ -288,18 +288,18 @@ Wenn die Funktion [Protokolle geschrieben hat](../websites-dotnet-webjobs-sdk-st
           <httpRuntime targetFramework="4.5" />
         </system.web>
 
-* Falls der Debugger den gewünschten Code nicht schrittweise ausführt, müssen Sie möglicherweise die Einstellung "Nur eigenen Code" ändern.  Weitere Informationen finden Sie unter [Schrittweises Durchlaufen für "Nur mein Code" beschränken](http://msdn.microsoft.com/de-de/library/vstudio/y740d9d3.aspx#BKMK_Restrict_stepping_to_Just_My_Code).
+* Falls der Debugger den gewünschten Code nicht schrittweise ausführt, müssen Sie möglicherweise die Einstellung "Nur eigenen Code" ändern.  Weitere Informationen finden Sie unter [Schrittweises Durchlaufen für "Nur mein Code" beschränken](http://msdn.microsoft.com/library/vstudio/y740d9d3.aspx#BKMK_Restrict_stepping_to_Just_My_Code).
 
 * Bei Aktivierung der Remotedebuggen-Funktion startet ein Timer auf dem Server, und die Funktion wird nach 48 Stunden automatisch abgeschaltet. Dieses Limit von 48 Stunden existiert aus Sicherheits- und Leistungsgründen. Sie können die Funktion jederzeit und beliebig oft aktivieren. Wenn Sie nicht aktiv debuggen, sollten Sie die Funktion jedoch deaktivieren.
 
-* Sie können den Debugger manuell an einen beliebigen Prozess anfügen, nicht nur an den Website-Prozess (w3wp.exe). Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter [Debuggen in Visual Studio](http://msdn.microsoft.com/de-de/library/vstudio/sc65sadd.aspx).
+* Sie können den Debugger manuell an einen beliebigen Prozess anfügen, nicht nur an den Website-Prozess (w3wp.exe). Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter [Debuggen in Visual Studio](http://msdn.microsoft.com/library/vstudio/sc65sadd.aspx).
 
 <h2><a name="logsoverview"></a>Übersicht über Diagnoseprotokolle</h2>
 
 ASP.NET-Anwendungen in Azure-Websites können die folgenden Arten von Protokollen generieren:
 
 * **Ablaufverfolgungsprotokolle**<br/>
-  Anwendungen erzeugen diese Protokolle, indem sie Methoden der Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/de-de/library/system.diagnostics.trace.aspx)aufrufen.
+  Anwendungen erzeugen diese Protokolle, indem sie Methoden der Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/library/system.diagnostics.trace.aspx)aufrufen.
 * **Webserverprotokolle**<br/>
   Der Webserver erstellt einen Protokolleintrag für jede HTTP-Anforderung an die Site.
 * **Detaillierte Fehlermeldungsprotokolle**<br/>
@@ -394,7 +394,7 @@ Informationen zum Erstellen von Anwendungsprotokollen in Webaufträgen finden Si
 
 	Über `WebPageTraceListener` können Sie die Ausgabe der Ablaufverfolgung anzeigen, indem Sie zu `/trace.axd` navigieren.
 
-3. Fügen Sie ein <a href="http://msdn.microsoft.com/de-de/library/vstudio/6915t83k(v=vs.100).aspx">trace</a>-Element unter "<system.web>" in die Datei "Web.config" ein, wie im folgenden Beispiel gezeigt:
+3. Fügen Sie ein <a href="http://msdn.microsoft.com/library/vstudio/6915t83k(v=vs.100).aspx">trace</a>-Element unter "<system.web>" in die Datei "Web.config" ein, wie im folgenden Beispiel gezeigt:
 
 		<trace enabled="true" writeToDiagnosticsTrace="true" mostRecent="true" pageOutput="false" />
 
@@ -638,7 +638,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 	![Storage logs in table view](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-	Diese Ansicht enthält zusätzliche Felder, die in keiner der anderen Ansichten angezeigt werden. Außerdem können Sie die Protokolle in dieser Ansicht mithilfe der Abfrage-Generator-GUI filtern. Weitere Informationen finden Sie im Abschnitt "Arbeiten mit Tabellenressourcen - So filtern Sie Entitäten" unter [Durchsuchen und Verwalten von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/de-de/library/windowsazure/ff683677.aspx).
+	Diese Ansicht enthält zusätzliche Felder, die in keiner der anderen Ansichten angezeigt werden. Außerdem können Sie die Protokolle in dieser Ansicht mithilfe der Abfrage-Generator-GUI filtern. Weitere Informationen finden Sie im Abschnitt "Arbeiten mit Tabellenressourcen - So filtern Sie Entitäten" unter [Durchsuchen und Verwalten von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/windowsazure/ff683677.aspx).
 
 7. Um die Details für eine einzelne Zeile anzuzeigen, doppelklicken Sie auf eine der Zeilen.
 
@@ -727,7 +727,7 @@ Falls Sie spezifische Fragen zur Problembehandlung haben, können Sie diese in e
 
 ### Debuggen in Visual Studio 
 
-Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter dem MSDN-Thema [Debuggen in Visual Studio](http://msdn.microsoft.com/de-de/library/vstudio/sc65sadd.aspx) und unter [Tipps zum Debuggen in Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx).
+Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter dem MSDN-Thema [Debuggen in Visual Studio](http://msdn.microsoft.com/library/vstudio/sc65sadd.aspx) und unter [Tipps zum Debuggen in Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx).
 
 ### Remotedebuggen in Azure
 
@@ -746,14 +746,14 @@ Momentan sind keine vollständigen und aktuellen Einführungen zur Ablaufverfolg
 
 * [Überwachung und Telemetrie (Erstellen realer Cloud-Apps mit Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).<br> 
   Dieses E-Book-Kapitel enthält Empfehlungen zur Ablaufverfolgung in Azure-Cloudanwendungen.
-* [ASP.NET-Ablaufverfolgung](http://msdn.microsoft.com/de-de/library/ms972204.aspx)<br/>
+* [ASP.NET-Ablaufverfolgung](http://msdn.microsoft.com/library/ms972204.aspx)<br/>
   Ein älterer Artikel, der sich jedoch immer noch gut als Einstieg in das Thema eignet.
-* [Ablaufverfolgungs-Listener](http://msdn.microsoft.com/de-de/library/4y5y10s7.aspx)<br/>
-  Informationen über Ablaufverfolgungs-Listener, allerdings wird der [WebPageTraceListener](http://msdn.microsoft.com/de-de/library/system.web.webpagetracelistener.aspx) nicht behandelt.
-* [Exemplarische Vorgehensweise: Integrieren der ASP.NET-Ablaufverfolgung in die System.Diagnostics-Ablaufverfolgung](http://msdn.microsoft.com/de-de/library/b0ectfxd.aspx)<br/>
+* [Ablaufverfolgungs-Listener](http://msdn.microsoft.com/library/4y5y10s7.aspx)<br/>
+  Informationen über Ablaufverfolgungs-Listener, allerdings wird der [WebPageTraceListener](http://msdn.microsoft.com/library/system.web.webpagetracelistener.aspx) nicht behandelt.
+* [Exemplarische Vorgehensweise: Integrieren der ASP.NET-Ablaufverfolgung in die System.Diagnostics-Ablaufverfolgung](http://msdn.microsoft.com/library/b0ectfxd.aspx)<br/>
   Dieser Artikel ist ebenfalls älteren Datums, enthält jedoch zusätzliche Informationen, die in der Einführung nicht behandelt werden.
 * [Ablaufverfolgung in ASP.NET MVC Razor-Ansichten](http://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)<br/>
-  Dieser Blogbeitrag behandelt neben der Ablaufverfolgung in Razor-Ansichten auch die Erstellung von Fehlerfiltern zur Protokollierung aller Ausnahmefehler in MVC-Anwendungen. Informationen zur Protokollierung aller Ausnahmefehler in Web Forms-Anwendungen finden Sie im Global.asax-Beispiel unter [Vollständiges Beispiel für Fehlerhandler](http://msdn.microsoft.com/de-de/library/bb397417.aspx) auf MSDN. Falls Sie in MVC oder Web Forms bestimmte Ausnahmen protokollieren möchten, diese Ausnahmen jedoch vom Standard-Framework behandelt werden sollen, können Sie diese wie im folgenden Beispiel abfangen und erneut auslösen:
+  Dieser Blogbeitrag behandelt neben der Ablaufverfolgung in Razor-Ansichten auch die Erstellung von Fehlerfiltern zur Protokollierung aller Ausnahmefehler in MVC-Anwendungen. Informationen zur Protokollierung aller Ausnahmefehler in Web Forms-Anwendungen finden Sie im Global.asax-Beispiel unter [Vollständiges Beispiel für Fehlerhandler](http://msdn.microsoft.com/library/bb397417.aspx) auf MSDN. Falls Sie in MVC oder Web Forms bestimmte Ausnahmen protokollieren möchten, diese Ausnahmen jedoch vom Standard-Framework behandelt werden sollen, können Sie diese wie im folgenden Beispiel abfangen und erneut auslösen:
 
         try
         {
@@ -767,7 +767,7 @@ Momentan sind keine vollständigen und aktuellen Einführungen zur Ablaufverfolg
 
 * [Ablaufprotokollierung und Streamingdiagnose mit der Azure-Befehlszeile (plus Glimpse!)](http://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)<br/>
   Verwenden der Befehlszeile für die Visual Studio-Aktionen aus diesem Lernprogramm. [Glimpse](http://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) ist ein Tool zum Debuggen von ASP.NET-Anwendungen. 
-* [Websiteprotokollierung und Diagnose unter Azure mit David Ebbo](http://www.windowsazure.com/de-de/documentation/videos/azure-web-site-logging-and-diagnostics/) und [Protokollstreaming aus Azure-Websites mit David Ebbo](http://www.windowsazure.com/de-de/documentation/videos/log-streaming-with-azure-web-sites/)<br>
+* [Websiteprotokollierung und Diagnose unter Azure mit David Ebbo](http://azure.microsoft.com/documentation/videos/azure-web-site-logging-and-diagnostics/) und [Protokollstreaming aus Azure-Websites mit David Ebbo](http://azure.microsoft.com/documentation/videos/log-streaming-with-azure-web-sites/)<br>
   Videos von Scott Hanselman und David Ebbo.
 
 Für die Fehlerprotokollierung können Sie Open Source-Protokollframeworks wie z. B. [ELMAH](http://nuget.org/packages/elmah/) verwenden, anstatt Ihren eigenen Ablaufverfolgungscode zu schreiben. Weitere Informationen finden Sie unter [Scott Hanselman's blog posts about ELMAH](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx) (Blogeinträge von Scott Hanselman zu ELMAH, in englischer Sprache).
@@ -791,7 +791,7 @@ Die Microsoft TechNet-Website enthält einen Abschnitt zum Thema [Ablaufverfolgu
 
 ### Debuggen von Cloud-Diensten.
 
-Informationen darüber, wie Sie statt einer Website einen Azure-Cloud-Dienst debuggen, finden Sie unter [Debuggen von Cloud-Diensten](http://msdn.microsoft.com/de-de/library/windowsazure/ee405479.aspx).
+Informationen darüber, wie Sie statt einer Website einen Azure-Cloud-Dienst debuggen, finden Sie unter [Debuggen von Cloud-Diensten](http://msdn.microsoft.com/library/windowsazure/ee405479.aspx).
 
 
 

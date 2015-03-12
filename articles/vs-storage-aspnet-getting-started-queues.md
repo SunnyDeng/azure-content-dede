@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erste Schritte mit Azure Storage" 
 	description="" 
 	services="storage" 
@@ -27,7 +27,7 @@
 > - [Warteschlangen](/documentation/articles/vs-storage-aspnet-getting-started-queues/)
 > - [Tabellen](/documentation/articles/vs-storage-aspnet-getting-started-tables/)
 
-Der Azure-Warteschlangenspeicher ist ein Dienst zum Speichern einer großen Anzahl von Nachrichten, auf die weltweit mit authentifizierten Aufrufen mithilfe von HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Kapazität des Speicherkontos begrenzt. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeichers aus .NET](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-queues/).
+Der Azure-Warteschlangenspeicher ist ein Dienst zum Speichern einer großen Anzahl von Nachrichten, auf die weltweit mit authentifizierten Aufrufen mithilfe von HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Kapazität des Speicherkontos begrenzt. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeichers aus .NET](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-queues/).
 
 Fügen Sie die folgenden Codenamespace-Deklarationen am Anfang aller C#-Dateien hinzu, mit denen Sie programmgesteuert auf Azure Storage zugreifen möchten.
 
@@ -44,4 +44,5 @@ Bevor Sie eine Warteschlange verwenden können, müssen Sie die Verbindungszeich
 [AZURE.INCLUDE [vs-storage-getting-started-queues-include](../includes/vs-storage-getting-started-queues-include.md)]
 
 Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
+
 <!--HONumber=42-->

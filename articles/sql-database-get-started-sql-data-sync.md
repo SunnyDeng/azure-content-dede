@@ -56,7 +56,7 @@ Stellen Sie sicher, dass die folgende Software auf dem Computer installiert ist,
 
 <h3><a id="InstallClient"></a>Schritt 2b: Installieren eines neuen Client-Agents</h3>
 
-Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL-Datensynchronisierung)](http://msdn.microsoft.com/en-us/library/jj823137.aspx), um den Agent zu installieren. 
+Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL-Datensynchronisierung)](http://msdn.microsoft.com/library/jj823137.aspx), um den Agent zu installieren. 
 
 
 <h3><a id="RegisterSSDb"></a>Schritt 2c: Beenden des Assistenten "Neuer SQL-Datensynchronisierungs-Agent"</h3>
@@ -72,7 +72,7 @@ Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL-Datensynchr
 <h2><a id="RegisterSSDB"></a>Schritt 3: Registrieren einer SQL Server-Datenbank mit dem Client-Agent</h2>
 
 Registrieren Sie nach der Installation des Client-Agents jede lokale SQL Server-Datenbank, die Sie mit dem Agent in eine Synchronisierungsgruppe integrieren möchten.
-Wenn Sie mit dem Agent eine Datenbank registrieren möchten, folgen Sie den Anweisungen unter [Registrieren einer SQL Server-Datenbank mit dem Client-Agent](http://msdn.microsoft.com/en-us/library/jj823138.aspx).
+Wenn Sie mit dem Agent eine Datenbank registrieren möchten, folgen Sie den Anweisungen unter [Registrieren einer SQL Server-Datenbank mit dem Client-Agent](http://msdn.microsoft.com/library/jj823138.aspx).
 
 
 
@@ -177,7 +177,7 @@ Glückwunsch! Sie haben nun eine Synchronisierungsgruppe erstellt, die sowohl ei
 Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
 * [Registrieren Sie sich für die Premium-Angebot für SQL-Datenbank] (../sign-up-for-sql-database-premium/)
-* [SQL Data Sync (WA-Portal)](http://msdn.microsoft.com/en-us/library/windowsazure/jj856263.aspx)
+* [SQL Data Sync (WA-Portal)](http://msdn.microsoft.com/library/windowsazure/jj856263.aspx)
 * [Erste Schritte mit Azure SQL Database](../getting-started-w-sql-databases/)
 * [SQL Server Database Lifecycle ](http://go.microsoft.com/fwlink/?LinkId=275193)
 

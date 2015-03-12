@@ -1,6 +1,20 @@
-﻿<properties title="Machine Learning example app: Frequently Bought Together" pageTitle="Machine Learning-Beispiel-app: Häufig zusammen gekauft | Azure" description="Dieser Machine Learning-Webdienst führt eine Online-Shopping-Warenkorbanalyse durch, um Produktempfehlungen von häufig gekauften Elementen basierend auf dem vom Benutzer bereitgestellten Transaktionsverlauf zu erstellen." metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="coromt" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Machine Learning-Beispiel-App: Häufig zusammen gekauft | Azure" 
+	description="Dieser Machine Learning-Webdienst führt eine Online-Shopping-Warenkorbanalyse durch, um Produktempfehlungen von häufig gekauften Elementen basierend auf dem vom Benutzer bereitgestellten Transaktionsverlauf zu erstellen." 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="CoromT" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/17/2014" ms.author="coromt" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/17/2014" 
+	ms.author="coromt"/> 
 
 # Machine Learning-Beispiel-app: Häufig zusammen gekauft
  
@@ -13,3 +27,5 @@ Nachdem Sie den [Webdienst]( https://datamarket.azure.com/dataset/amla/mba) abon
 
 Dieser Dienst enthält APIs zum Verwalten häufig zusammen gekaufter Modelle, zum Hochladen historischer Transaktionen und Abrufen der bestplatzierten häufig zusammen gekauften Produktauswahl für ein bestimmtes Produkt.  Beispiele, die veranschaulichen, wie Sie diese APIs verwenden, finden Sie im [Azure-MachineLearning-DataScience-Archiv auf GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Apps/FrequentlyBoughtTogether).
 
+
+<!--HONumber=46--> 

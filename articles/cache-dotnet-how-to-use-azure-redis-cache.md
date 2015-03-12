@@ -1,6 +1,20 @@
-<properties pageTitle="Verwenden des Azure Redis Cache" metaKeywords="" description="Erfahren Sie, wie Sie in Azure Redis Cache einen Cache erstellen und nutzen" metaCanonical="" services="cache" documentationCenter="API Management" title="How to Use Azure Redis Cache" authors="sdanie" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Verwenden des Azure Redis Cache" 
+	description="Informationen zum Erstellen eines Caches in Azure Redis Cache" 
+	services="cache" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="cache" ms.workload="tbd" ms.tgt_pltfrm="cache-redis" ms.devlang="dotnet" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="1/20/2015" 
+	ms.author="sdanie"/>
 
 # Verwenden des Azure Redis Cache
 
@@ -332,27 +346,27 @@ erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben 
 <!-- LINKS -->
 [Azure Redis-Sitzungszustandsanbieter]: http://go.microsoft.com/fwlink/?LinkId=398249
 [Azure-Verwaltungsportal]: http://windows.azure.com/
-[Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/de-de/library/windowsazure/gg618003.aspx
+[Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/library/windowsazure/gg618003.aspx
 [Sitzungszustandsanbieter für Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Zwischenspeichern des Sitzungszustands]: http://www.microsoft.com/de-de/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Ausgabecacheanbieter für Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320837
-[Azure Shared Caching]: http://msdn.microsoft.com/de-de/library/windowsazure/gg278356.aspx
+[Azure Shared Caching]: http://msdn.microsoft.com/library/windowsazure/gg278356.aspx
 [Team-Blog]: http://blogs.msdn.com/b/windowsazure/
 [Azure Caching]: http://www.microsoft.com/de-de/showcase/Search.aspx?phrase=azure+caching
 [Konfigurieren der Größe von virtuellen Computern]: http://go.microsoft.com/fwlink/?LinkId=164387
 [Überlegungen zur Planung der Azure Caching-Kapazität]: http://go.microsoft.com/fwlink/?LinkId=320167
 [Azure Caching]: http://go.microsoft.com/fwlink/?LinkId=252658
-[Gewusst wie: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/de-de/library/zd1ysf1y.aspx
-[Gewusst wie: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/de-de/library/z852zf6b.aspx
-[Konfigurieren eines Caches in Azure Redis Cache]: http://msdn.microsoft.com/de-de/library/azure/dn793612.aspx
+[Gewusst wie: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/library/zd1ysf1y.aspx
+[Gewusst wie: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/library/z852zf6b.aspx
+[Konfigurieren eines Caches in Azure Redis Cache]: http://msdn.microsoft.com/library/azure/dn793612.aspx
 
 [StackExchange.Redis-Konfigurationsmodell]: http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
 
-[Arbeiten mit .NET-Objekten im Cache]: http://msdn.microsoft.com/de-de/library/dn690521.aspx#Objects
+[Arbeiten mit .NET-Objekten im Cache]: http://msdn.microsoft.com/library/dn690521.aspx#Objects
 
 
 [Installation des NuGet-Paket-Managers]: http://go.microsoft.com/fwlink/?LinkId=240311
-[Cache - Preisdetails]: http://www.windowsazure.com/de-de/pricing/details/cache/
+[Cache - Preisdetails]: http://azure.microsoft.com/pricing/details/cache/
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
 [Übersicht über Azure Redis Cache]: http://go.microsoft.com/fwlink/?LinkId=320830
@@ -360,7 +374,7 @@ erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben 
 
 [Migration zu Azure Redis Cache]: http://go.microsoft.com/fwlink/?LinkId=317347
 [Azure Redis Cache - Beispiele]: http://go.microsoft.com/fwlink/?LinkId=320840
-[Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen]: http://azure.microsoft.com/de-de/documentation/articles/azure-preview-portal-using-resource-groups/
+[Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen]: http://azure.microsoft.com/documentation/articles/azure-preview-portal-using-resource-groups/
 
 [StackExchange.Redis]: http://github.com/StackExchange/StackExchange.Redis
 [Dokumentation für den StackExchange.Redis-Cacheclient]: http://github.com/StackExchange/StackExchange.Redis#documentation
@@ -372,3 +386,5 @@ erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben 
 [Microsoft Azure-Websites: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen]: http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

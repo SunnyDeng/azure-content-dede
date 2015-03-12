@@ -1,6 +1,20 @@
-﻿<properties title="Step 4: Train and evaluate the predictive analytic models" pageTitle="Schritt 4: Trainieren und Bewerten der Vorhersageanalytikmodelle | Azure" description="Schritt 4: Training, Bewertung und Evaluierung für mehrere Modelle in Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Schritt 4: Trainieren und Bewerten der Vorhersageanalytikmodelle | Azure" 
+	description="Exemplarische Vorgehensweise Schritt 4: Training, Bewertung und Evaluierung für mehrere Modelle in Azure Machine Learning Studio" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/20/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/29/2015" 
+	ms.author="garye"/>
 
 
 Dies ist der vierte Teil der exemplarischen Vorgehensweise [Entwickeln einer Vorhersagelösung mit Azure ML][develop]:
@@ -117,3 +131,5 @@ Als zusätzliche Hilfe beim Verfolgen der Änderungen, die Sie an den Modulparam
 [2]: ./media/machine-learning-walkthrough-4-train-and-evaluate-models/train2.png
 [3]: ./media/machine-learning-walkthrough-4-train-and-evaluate-models/train3.png
 [4]: ./media/machine-learning-walkthrough-4-train-and-evaluate-models/train4.png
+
+<!--HONumber=46--> 

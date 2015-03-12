@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Twilio Voice/SMS Service" pageTitle="Verwenden von Twilio für Telefonie und SMS (Ruby) - Azure" metaKeywords="Azure Ruby Twilio, Azure-Telefonanrufe, Telefonanrufe in Azure, Azure-Twilio, Azure-SMS, SMS in Azure, Azure-Sprachanrufe, Sprachanrufe in Azure, Azure-Textnachrichten, Textnachrichten in Azure" description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Codebeispiele sind in Ruby geschrieben." metaCanonical="" services="" documentationCenter="Ruby" title="How to Use Twilio for Voice and SMS Capabilities in PHP" authors="MicrosoftHelp@twilio.com" solutions="" manager="twilio" editor="" />
+﻿<properties 
+	pageTitle="Verwenden von Twilio für Telefonie- und SMS-Funktionen (Ruby) - Azure" 
+	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Codebeispiele wurden in Ruby geschrieben." 
+	services="" 
+	documentationCenter="ruby" 
+	authors="devinrader" 
+	manager="twilio" 
+	editor=""/>
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="ruby" ms.topic="article" ms.date="11/25/2014" ms.author="MicrosoftHelp@twilio.com" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ruby" 
+	ms.topic="article" 
+	ms.date="11/25/2014" 
+	ms.author="MicrosoftHelp@twilio.com"/>
 
 
 
@@ -16,18 +30,18 @@ Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufg
 * [Erstellen eines Twilio-Kontos](#CreateAccount)
 * [Erstellen einer Ruby Sinatra-Anwendung](#create_app)
 * [Konfigurieren Ihrer Anwendung für die Verwendung von Twilio-Bibliotheken](#configure_app)
-* [Gewusst wie: Tätigen von ausgehenden Anrufen](#howto_make_call)
-* [Gewusst wie: Empfangen einer SMS-Nachricht](#howto_recieve_sms)
-* [Gewusst wie: Zusätzliche Twilio-Dienste](#additional_services)
+* [Vorgehensweise: Tätigen von ausgehenden Anrufen](#howto_make_call)
+* [Vorgehensweise: Empfangen einer SMS-Nachricht](#howto_recieve_sms)
+* [Vorgehensweise: Zusätzliche Twilio-Dienste](#additional_services)
 * [Nächste Schritte](#NextSteps)
 
 ## <a id="WhatIs"></a>Was ist Twilio?
 Twilio ist eine Webservice-API für Telefonie, mit deren Hilfe Sie Ihre existierenden Websprachen und -Fertigkeiten für die Erstellung von Telefonie- und SMS-Anwendungen nutzen können. Twilio ist ein externer Dienst (kein Feature von Azure und kein Microsoft-Produkt).
 
-**Twilio Voice** ermöglicht Ihren Anwendungen das Tätigen und Empfangen von Telefonanrufen. **Twilio SMS** ermöglicht Ihren Anwendungen das Senden und Empfangen von SMS-Nachrichten. **Twilio Client** ermöglicht über bestehende Internetverbindungen (einschließlich Mobilfunkverbindungen) die Sprachkommunikation in Ihren Anwendungen.
+**Twilio Voice** ermöglicht Ihren Anwendungen das Tätigen und Entgegennehmen von Telefonanrufen. **Twilio SMS** ermöglicht Ihren Anwendungen das Senden und Empfangen von SMS-Nachrichten. **Twilio Client** ermöglicht über bestehende Internetverbindungen (einschließlich Mobilfunkverbindungen) die Sprachkommunikation in Ihren Anwendungen.
 
 ## <a id="Pricing"></a>Twilio-Preise und -Sonderangebote
-Informationen zu Twilio-Preisen finden Sie unter [Twilio-Preise] [twilio_pricing]. Azure-Kunden erhalten ein [Sonderangebot][special_offer]: ein Gratis-Guthaben von 1000 SMS oder 1000 Minuten Spracheingang. Besuchen Sie [http://ahoy.twilio.com/azure][special_offer], um sich für dieses Angebot zu registrieren und weitere Informationen zu erhalten.  
+Informationen zu Twilio-Preisen finden Sie unter [Twilio-Preise] [twilio_pricing]. Azure-Kunden erhalten ein [Sonderangebot][special_offer]: ein Gratis-Guthaben von 1000 SMS oder 1000 eingehenden Sprachminuten. Besuchen Sie [http://ahoy.twilio.com/azure][special_offer], um sich für dieses Angebot zu registrieren und weitere Informationen zu erhalten.  
 
 ## <a id="Concepts"></a>Konzepte
 Die Twilio-API ist eine RESTful-API, die Telefonie- und SMS-Funktionen für Anwendungen bereitstellt. Clientbibliotheken stehen in mehreren Sprachen zur Verfügung; eine Liste finden Sie auf der Seite [Twilio-API-Bibliotheken] [twilio_libraries].
@@ -42,10 +56,10 @@ Die TwiML im folgenden Beispiel konvertiert den Text **Hello World** in Sprache.
        <Say>Hello World</Say>
     </Response>
 
-Alle TwiML-Dokumente haben `<Response>` als Stammelement. Von hier aus verwenden Sie Twilio-Verben, um das Verhalten Ihrer Anwendung festzulegen.
+Das Stammelement aller TwiML-Dokumente ist `<Response>`. Von hier aus verwenden Sie Twilio-Verben, um das Verhalten Ihrer Anwendung festzulegen.
 
 ### <a id="Verbs"></a>TwiML-Verben
-Twilio-Verben sind XML-Tags, die Twilio **Anweisungen** geben. Das Verb **&lt;Say&gt;** beispielsweise weist Twilio an, beim Anrufen eine akustische Nachricht auszugeben. 
+Twilio-Verben sind XML-Tags, die Twilio **Anweisungen** geben. Das Verb **&lt;Say&gt;** weist Twilio z. B. an, eine Nachricht in einem Anruf akustisch zu übermitteln. 
 
 Nachfolgend finden Sie eine Liste mit Twilio-Verben.
 
@@ -75,7 +89,7 @@ Informationen zum Überprüfen von Telefonnummern finden Sie unter [Manage Numbe
 ## <a id="create_app"></a>Erstellen einer Ruby-Anwendung
 Ruby-Anwendungen, die den Twilio-Dienst verwenden und in Azure ausgeführt werden, unterscheiden sich nicht von anderen Ruby-Anwendungen, die den Twilio-Dienst verwenden. Twilio-Dienste sind RESTful-basiert und können in Ruby auf verschiedene Arten aufgerufen werden. Dieser Artikel konzentriert sich jedoch auf die Verwendung der Twilio-Dienste mit der [Twilio-Hilfsbibliothek für Ruby][twilio_ruby].
 
-Richten SIe zuerst [einen neuen virtuellen Linux-Computer auf Azure][azure_vm_setup] ein, der als Host für Ihre neue Ruby-Webanwendung fungiert. Ignorieren Sie die Schritte zur Erstellung einer Rails-App, und erstellen Sie nur den virtuellen Computer. Erstellen Sie auch unbedingt einen Endpunkt mit dem externen Port 80 und dem internen Port 5000.
+Richten Sie zuerst [eine neue Azure-Linux-VM ein][azure_vm_setup], die als Host für Ihre neue Ruby-Webanwendung fungiert. Ignorieren Sie die Schritte zur Erstellung einer Rails-App, und erstellen Sie nur den virtuellen Computer. Erstellen Sie auch unbedingt einen Endpunkt mit dem externen Port 80 und dem internen Port 5000.
 
 In den folgenden Beispielen verwenden wir [Sinatra][sinatra], ein sehr einfaches Web-Framework für Ruby. Sie können die Twilio-Hilfsbibliothek für Ruby aber auch mit jedem anderen Web-Framework verwenden, z. B. Ruby on Rails.
 
@@ -96,11 +110,11 @@ Führen Sie in der Befehlszeile `bundle install` aus. Dadurch werden die oben ge
 An diesem Punkt sollten Sie den Befehl `ruby web.rb -p 5000` ausführen können. Dadurch wird ein kleiner Webserver auf Port 5000 hochgefahren. Sie sollten diese App nun in Ihrem Browser suchen können, indem Sie die URL eingeben, die Sie für Ihren virtuellen Azure-Computer eingerichtet haben, Wenn Sie Ihre Webanwendung im Browser erreichen können, sind Sie bereit, mit der Erstellung einer Twilio-App zu beginnen.
 
 ## <a id="configure_app"></a>Konfigurieren einer Anwendung für die Verwendung von Twilio
-Sie können Ihre Webanwendung für die Verwendung der Twilio-Bibliothek konfigurieren, indem Sie in die Datei `Gemfile` die folgende Zeile einfügen:
+Sie können die Webanwendung zur Verwendung der Twilio-Bibliothek konfigurieren, indem Sie in der `Gemfile` die folgende Zeile einfügen:
 
     gem 'twilio-ruby'
 
-Führen Sie in der Befehlszeile `bundle install` aus. Öffnen Sie nun die Datei `web.rb`, und fügen Sie am Anfang folgende Zeile ein:
+Führen Sie in der Befehlszeile `bundle install` aus. Öffnen Sie nun `web.rb`, und fügen Sie am Anfang folgende Zeile ein:
 
     require 'twilio-ruby'
 
@@ -109,27 +123,27 @@ Nun sind Sie bereit, die Twilio-Hilfsbibliothek für Ruby in Ihrer Webanwendung 
 ## <a id="howto_make_call"></a>Gewusst wie: Tätigen von ausgehenden Anrufen
 Im Folgenden ist dargestellt, wie Sie einen ausgehenden Anruf tätigen. Zu den wichtigen Konzepten gehören die Verwendung der Twilio-Hilfsbibliothek für Ruby zur Ausführung von REST API-Anrufen und zum Rendering von TwiML. Geben Sie Ihre Werte für die Telefonnummern **From** und **To** ein, und stellen Sie sicher, dass Sie die **From**-Telefonnummer für Ihr Twilio-Konto verifizieren, bevor Sie den Code ausführen.
 
-Fügen Sie die folgende Funktion der Datei `web.md` hinzu:
+Fügen Sie diese Funktion in die Datei `web.md` ein:
 
-    # Legen Sie Konto-ID und Authentifizierungstoken fest.
+    # Set your account ID and authentication token.
 	sid = "your_twilio_account_sid";
 	token = "your_twilio_authentication_token";
 
-	# Die Nummer des Telefons, das den Anruf initiiert.
-    # Dies sollte entweder eine Twilio-Nummer oder eine von Ihnen verifizierte Nummer sein.
+	# The number of the phone initiating the the call.
+    # This should either be a Twilio number or a number that you've verified
 	from = "NNNNNNNNNNN";
 
-	# Die Nummer des Telefons, das den Anruf empfängt.
+	# The number of the phone receiving call.
 	to = "NNNNNNNNNNN";
 
-	# Verwenden Sie die von Twilio bereitgestellte Website für die TwiML-Antwort.
+	# Use the Twilio-provided site for the TwiML response.
     url = "http://yourdomain.cloudapp.net/voice_url";
       
     get '/make_call' do
 	  # Create the call client.
 	  client = Twilio::REST::Client.new(sid, token);
       
-      # Tätigen des Anrufs
+      # Make the call
       client.account.calls.create(to: to, from: from, url: url)
     end
 
@@ -139,16 +153,16 @@ Fügen Sie die folgende Funktion der Datei `web.md` hinzu:
        </Response>"
     end
     
-Wenn Sie `http://yourdomain.cloudapp.net/make_call` in einem Browser öffnen, wird ein Aufruf an die Twilio-API ausgelöst, den Telefonanruf zu tätigen. Die ersten beiden Parameter in `client.account.calls.create` sind nahezu selbsterklärend: die Telefonnummer für den ausgehenden Anruf (`from`) und die Telefonnummer des Anrufempfängers (`to`). 
+Wenn Sie `http://yourdomain.cloudapp.net/make_call` in einem Browser öffnen, wird der Aufruf der Twilio-API ausgelöst, die den Telefonanruf tätigen soll. Die ersten beiden Parameter in `client.account.calls.create` sind nahezu selbsterklärend: die Telefonnummer für den ausgehenden Anruf `from` und die Telefonnummer des Anrufempfängers `to`. 
 
-Der dritte Parameter (`url`) ist die URL, die Twilio aufruft, um Anweisungen darüber zu erhalten, was nach der Herstellung der Rufverbindung zu tun ist. In diesem Fall wird eine URL (`http://yourdomain.cloudapp.net`) eingerichtet, die ein einfaches TwiML-Dokument zurückgibt und das Verb `<Say>`  verwendet, um Text in Sprache umzuwandeln und zur angerufenen Person "Hello Monkey" zu sagen.
+Der dritte Parameter (`url`) ist die URL, die Twilio anfragt, um Anweisungen darüber zu erhalten, was nach der Herstellung der Anrufverbindung zu tun ist. In diesem Fall richten wir eine URL (`http://yourdomain.cloudapp.net`) ein, die ein einfaches TwiML-Dokument zurückgibt und das `<Say>`-Verb verwendet, um Text in Sprache umzuwandeln und zur angerufenen Person "Hello Monkey" zu sagen.
 
-## <a id="howto_recieve_sms"></a>Gewusst wie: Empfangen einer SMS-Nachricht
+## <a id="howto_recieve_sms"></a>Vorgehensweise: Empfangen einer SMS-Nachricht
 Im vorherigen Beispiel haben wir einen **ausgehenden** Telefonanruf initiiert. Jetzt verwenden wir die Telefonnummer, die Sie bei der Anmeldung von Twilio erhalten haben, um eine **eingehende** SMS-Nachricht zu verarbeiten.
 
-Melden Sie sich zuerst an Ihrem [Twilio-Dashboard][twilio_account] an. Klicken Sie auf der oberen Navigationsleiste auf "Nummern" und anschließend auf die Twilio-Nummer, die Sie erhalten haben. Sie sehen zwei URLs, die Sie konfigurieren können: eine Sprachanfragen-URL und eine SMS-Anfragen-URL. Dies sind die URLs, die Twilio anruft, wenn ein Telefonanruf an Ihre Nummer erfolgt oder eine SMS-Nachricht an Ihre Nummer gesendet wird. Die URLs sind auch als "Webhooks" bekannt.
+Melden Sie sich zuerst bei Ihrem [Twilio-Dashboard][twilio_account] an. Klicken Sie auf der oberen Navigationsleiste auf "Nummern" und anschließend auf die Twilio-Nummer, die Sie erhalten haben. Sie sehen zwei URLs, die Sie konfigurieren können: eine Sprachanfragen-URL und eine SMS-Anfragen-URL. Dies sind die URLs, die Twilio anruft, wenn ein Telefonanruf an Ihre Nummer erfolgt oder eine SMS-Nachricht an Ihre Nummer gesendet wird. Die URLs sind auch als "Webhooks" bekannt.
 
-Jetzt ändern wir die URL in `http://yourdomain.cloudapp.net/sms_url`, um eingehende SMS-Nachrichten verarbeiten zu können. Klicken Sie anschließend unten auf der Seite auf "Änderungen speichern". Nach der Rückkehr zur Datei `web.rb` wird jetzt die Anwendung entsprechend programmiert:
+Ändern Sie nun die URL zu `http://yourdomain.cloudapp.net/sms_url`, um eingehende SMS-Nachrichten verarbeiten zu können. Klicken Sie anschließend unten auf der Seite auf "Änderungen speichern". Gehen Sie dann zurück zu `web.rb`, und programmieren Sie die Anwendung entsprechend:
 
     post '/sms_url' do
       "<Response>
@@ -191,6 +205,6 @@ Nachdem Sie nun mit den Grundlagen des Twilio-Dienstes vertraut sind, finden Sie
 [twilio_support]: http://www.twilio.com/help/contact
 [twilio_quickstarts]: http://www.twilio.com/docs/quickstart
 [sinatra]: http://www.sinatrarb.com/
-[azure_vm_setup]: http://www.windowsazure.com/de-de/develop/ruby/tutorials/web-app-with-linux-vm/
+[azure_vm_setup]: http://azure.microsoft.com/develop/ruby/tutorials/web-app-with-linux-vm/
 
-<!--HONumber=35.2-->
+<!--HONumber=45-->

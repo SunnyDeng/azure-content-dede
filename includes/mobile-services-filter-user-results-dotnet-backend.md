@@ -41,4 +41,4 @@ Da Authentifizierung erforderlich ist, um auf Daten in der TodoItem-Tabelle zuzu
    	Diese Abfrage filtert die zurückgegebenen TodoItem-Objekte, sodass jeder Benutzer nur die eingefügten Elemente erhält. 
 
 6. Das Projekt für den mobilen Service erneut auf Azure veröffentlichen.
-<!--HONumber=41-->
+<!--HONumber=42-->

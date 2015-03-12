@@ -1,6 +1,20 @@
-<properties title="Getting Started with Active Directory Authentication" pageTitle="" metaKeywords="Azure, Getting Started, Active Directory" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Azure Active Directory (.NET-Projekte)" 
+	description="Erste Schritte mit Azure Active Directory in Visual Studio" 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="kempb" 
+	manager="douge" 
+	editor="tglee"/>
   
-<tags ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="vs-getting-started" ms.devlang="na" ms.topic="article" ms.date="10/8/2014" ms.author="ghogen, kempb" />
+<tags 
+	ms.service="active-directory" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vs-getting-started" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/02/2015" 
+	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
 > - [Erste Schritte](/documentation/articles/vs-active-directory-dotnet-getting-started/)
@@ -62,3 +76,5 @@ Wenn Sie Ihrer Ansicht SignIn/SignOut-Steuerelemente hinzufügen möchten, könn
 </PRE>
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+
+<!--HONumber=46--> 

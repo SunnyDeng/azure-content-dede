@@ -1,6 +1,20 @@
-﻿<properties title="Get started with Azure Search Management REST API" pageTitle="Erste Schritte mit der Azure Search Management-REST-API" description="Erste Schritte mit der Azure Search Management-REST-API" metaKeywords="" services="Azure Search" solutions="" documentationCenter="" authors="Heidist" manager="mblythe" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit der Azure Search Management-REST-API" 
+	description="Erste Schritte mit der Azure Search Management-REST-API" 
+	services="search" 
+	documentationCenter="" 
+	authors="HeidiSteen" 
+	manager="mblythe" 
+	editor=""/>
 
-<tags ms.service="azure-search" ms.devlang="" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="" ms.date="10/10/2014" ms.author="heidist" />
+<tags 
+	ms.service="search" 
+	ms.devlang="rest-api" 
+	ms.workload="search" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.date="01/16/2015" 
+	ms.author="heidist"/>
 # Erste Schritte mit der Azure Search Management-REST-API
 
 Die Azure Search Management-REST-API ist eine programmatische Alternative zum Ausführen von Verwaltungsaufgaben im Verwaltungsportal. Dienstverwaltungsvorgänge umfassen Erstellen oder Löschen des Dienstes, Skalieren des Dienstes und Verwalten von Schlüsseln. Dieses Lernprogramm enthält eine Beispielclientanwendung, die die Dienstverwaltungs-API veranschaulicht. Darüber hinaus sind die erforderlichen Konfigurationsschritte zum Ausführen des Beispiels in der lokalen Entwicklungsumgebung enthalten.
@@ -24,11 +38,11 @@ Die Client-Anwendung finden Sie auf Codeplex unter [Azure Search Management API 
 
 <h2 id="config">Konfigurieren der Anwendung</h2>
 
-Bevor Sie die Beispielanwendung ausführen können, müssen Sie Authentifizierung aktivieren, damit von der Clientanwendung an den Ressourcenmanagerendpunkt gesendete Anforderungen akzeptiert werden können. Die Authentifizierungsanforderung stammt aus dem [Azure Resource Manager](http://msdn.microsoft.com/de-de/library/azure/dn790568.aspx), der die Grundlage für alle über eine API angeforderten Portalvorgänge bildet, einschließlich jener im Zusammenhang mit der Search-Dienstverwaltung. Die Dienstverwaltungs-API für Azure Search ist einfach eine Erweiterung des Azure Resource Manager und erbt daher seine Abhängigkeiten.  
+Bevor Sie die Beispielanwendung ausführen können, müssen Sie Authentifizierung aktivieren, damit von der Clientanwendung an den Ressourcenmanagerendpunkt gesendete Anforderungen akzeptiert werden können. Die Authentifizierungsanforderung stammt aus dem [Azure Resource Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx), der die Grundlage für alle über eine API angeforderten Portalvorgänge bildet, einschließlich jener im Zusammenhang mit der Search-Dienstverwaltung. Die Dienstverwaltungs-API für Azure Search ist einfach eine Erweiterung des Azure Resource Manager und erbt daher seine Abhängigkeiten.  
 
 Azure Resource Manager benötigt den Azure Active Directory-Dienst als Identitätsanbieter. 
 
-Um ein Zugriffstoken zu erhalten, mit dem Anforderungen den Ressourcenmanager erreichen können, enthält die Clientanwendung ein Codesegment, das Active Directory aufruft. DasCodesegment sowie die erforderlichen Schritte zur Verwendung des Codesegments wurden aus diesem Artikel übernommen: [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/de-de/library/azure/dn790557.aspx).
+Um ein Zugriffstoken zu erhalten, mit dem Anforderungen den Ressourcenmanager erreichen können, enthält die Clientanwendung ein Codesegment, das Active Directory aufruft. DasCodesegment sowie die erforderlichen Schritte zur Verwendung des Codesegments wurden aus diesem Artikel übernommen: [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/library/azure/dn790557.aspx).
 
 Sie können die Anweisungen aus dem oben aufgeführten Link oder die Schritte in diesem Dokument verwenden, wenn Sie es vorziehen, das Lernprogramm Schritt für Schritt zu durchlaufen.
 
@@ -39,7 +53,7 @@ In diesem Abschnitt führen Sie die folgenden Aufgaben aus:
 1. Konfigurieren Sie die AD-Anwendung durch die Registrierung von Details über die Beispielclientanwendung, die Sie heruntergeladen haben.
 1. Laden Sie die Beispielclientanwendung mit Werten, die dazu verwendet werden, Autorisierungen für ihre Anforderungen zu erhalten.
 
-> [WACOM.NOTE] Diese Links bieten Hintergrundinformationen zur Verwendung von Azure Active Directory zum Authentifizieren von Clientanforderungen an den Ressourcenmanager: [Azure Resource Manager](http://msdn.microsoft.com/de-de/library/azure/dn790568.aspx), [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/de-de/library/azure/dn790557.aspx) und [Azure Active Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx).
+> [WACOM.NOTE] Diese Links bieten Hintergrundinformationen zur Verwendung von Azure Active Directory zum Authentifizieren von Clientanforderungen an den Ressourcenmanager: [Azure Resource Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx), [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/library/azure/dn790557.aspx) und [Azure Active Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx).
 
 <h3>Erstellen eines Active Directory-Diensts</h3>
 
@@ -140,7 +154,7 @@ Wenn Sie die [Beispielanwendung von Codeplex] (LinkTBD) noch nicht heruntergelad
 
 Probleme mit Assemblyverweisen können verhindern, dass eine Lösung erstellt wird. In diesem Abschnitt werden mögliche Problemumgehungen für einige bereitgestellt.
 
-- Microsoft.IdentityModel.Clients.ActiveDirectory muss installiert sein (Unter [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/de-de/library/azure/dn790557.aspx) finden Sie Details zum Installieren der [Active Directory-Authentifizierungsbibliothek ](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/)).
+- Microsoft.IdentityModel.Clients.ActiveDirectory muss installiert sein (Unter [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/library/azure/dn790557.aspx) finden Sie Details zum Installieren der [Active Directory-Authentifizierungsbibliothek ](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/)).
 - Neuinstallation einer Assembly kann ein Problem auch beheben. Gehen Sie zu **Extras** | **NuGet-Paket-Manager** | **Paket-Manager-Konsole**. Geben Sie an der Paket-Manager-Eingabeaufforderung folgenden Befehl ein: *Update-package -reinstall Microsoft.IdentityModel.Clients.ActiveDirectory*.
 -  Auf Newtonsoft.Json wird auch in dieser Lösung verwiesen. Wenn für diese Assembly ein Fehler auftritt, löschen Sie diese aus dem Projekt und fügen Sie sie anschließend erneut hinzu. Klicken Sie mit der rechten Maustaste auf **Verweise** | **NuGet-Pakete verwalten** | **Installierte Pakete**. Wählen Sie **Json.Net** und deinstallieren sie dies. Erweitern Sie **Online**, wählen Sie **Json.Net** | **Installieren**.
 
@@ -155,13 +169,13 @@ Die Beispielanwendung erstellt einen kostenlosen Azure Search-Dienst für ein vo
  
 3. Beachten Sie, dass **ExecuteArmRequest** verwendet wird, um Anforderungen für den Azure Resource Manager-Endpunkt "https://management.azure.com/subscriptions" für eine angegebene "SubscriptionID" auszuführen. Diese Methode wird in der gesamten Anwendung für Operationen mit der Azure Resource Manager-API oder der Search Management-API verwendet.
 
-3. Anforderungen an den Azure Resource Manager müssen authentifiziert und autorisiert werden. Dies geschieht mithilfe der Methode **GetAuthorizationHeader**, die von der Methode **ExecuteArmRequest** aufgerufen wird, aus [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/de-de/library/azure/dn790557.aspx). Beachten Sie, dass **GetAuthorizationHeader** "https://management.core.windows.net" aufruft, um ein Zugriffstoken zu erhalten.
+3. Anforderungen an den Azure Resource Manager müssen authentifiziert und autorisiert werden. Dies geschieht mithilfe der Methode **GetAuthorizationHeader**, die von der Methode **ExecuteArmRequest** aufgerufen wird, aus [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/library/azure/dn790557.aspx). Beachten Sie, dass **GetAuthorizationHeader** "https://management.core.windows.net" aufruft, um ein Zugriffstoken zu erhalten.
 
 4. Sie werden aufgefordert, Sie sich mit einem Benutzernamen und Kennwort anzumelden, das für Ihr Abonnement gültig ist.
 
 5. Als Nächstes wird ein neuer Azure Search-Dienst beim Azure Resource Manager-Anbieter registriert. Dies ist wiederum die **ExecuteArmRequest**-Methode. Dieses Mal wird sie verwendet, um den Search-Dienst in Azure für Ihr Abonnement über "providers/Microsoft.Search/register" zu erstellen. 
 
-6. Der Rest des Programms verwendet die [Azure Search Management-REST-API](http://msdn.microsoft.com/de-de/library/dn832684.aspx). Beachten Sie, dass sich die "api-version" für diese API von der des Azure Resource Manager unterscheidet. Z. B. zeigt "/listAdminKeys?api-version=2014-07-31-Preview" die "api-version" der Azure Search Management-REST-API.
+6. Der Rest des Programms verwendet die [Azure Search Management-REST-API](http://msdn.microsoft.com/library/dn832684.aspx). Beachten Sie, dass sich die "api-version" für diese API von der des Azure Resource Manager unterscheidet. Z. B. zeigt "/listAdminKeys?api-version=2014-07-31-Preview" die "api-version" der Azure Search Management-REST-API.
 
 	Die nächste Folge von Vorgängen ruft die Dienstdefinition ab, die Sie gerade erstellt haben, die Admin-API-Schlüssel, regeneriert und ruft Schlüssel ab, ändert das Replikat und die Partition und löscht schließlich den Dienst.
 
@@ -173,8 +187,8 @@ Wenn Sie die Anzahl der Dienstreplikate oder Partitionen ändern, wird davon aus
 
 Nach Abschluss dieses Lernprogramms empfiehlt es sich, mehr über die Dienstverwaltung oder die Authentifizierung mit dem Active Directory-Dienst zu erfahren:
 
-- Erfahren Sie mehr über die Integration einer Clientanwendung mit Active Directory. Siehe [Integrieren von Anwendungen in Azure Active Directory](http://msdn.microsoft.com/de-de/library/azure/dn151122.aspx).
-- Erfahren Sie mehr zu anderen Dienstverwaltungsvorgängen in Azure. Siehe [Verwalten von Diensten](http://msdn.microsoft.com/de-de/library/azure/dn578292.aspx).
+- Erfahren Sie mehr über die Integration einer Clientanwendung mit Active Directory. Siehe [Integrieren von Anwendungen in Azure Active Directory](http://msdn.microsoft.com/library/azure/dn151122.aspx).
+- Erfahren Sie mehr zu anderen Dienstverwaltungsvorgängen in Azure. Siehe [Verwalten von Diensten](http://msdn.microsoft.com/library/azure/dn578292.aspx).
 
 <!--Anchors-->
 [Herunterladen der Beispielanwendung]: #Download
@@ -197,3 +211,5 @@ Nach Abschluss dieses Lernprogramms empfiehlt es sich, mehr über die Dienstverw
 [Erstellen einer geografischen Suchanwendung mit Azure Search]: ../search-create-geospatial/
 
 
+
+<!--HONumber=46--> 

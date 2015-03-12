@@ -401,9 +401,8 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
 
 	Das Löschen des Diensts kann einige Minuten dauern. Nachdem der Dienst gelöscht wurde, erhalten Sie eine entsprechende Nachricht.
 
-  [Node.js Web Application using Express]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/web-app-with-express/
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
-  [Node.js Web Application]: http://www.windowsazure.com/de-de/develop/nodejs/tutorials/getting-started/
+  [Node.js Web Application using Express]: http://azure.microsoft.com/develop/nodejs/tutorials/web-app-with-express/
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
+  [Node.js Web Application]: http://azure.microsoft.com/develop/nodejs/tutorials/getting-started/
  
-
 <!--HONumber=42-->

@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="BizTalk Services: Service state chart" pageTitle="BizTalk Services: Dienststatusübersicht | Azure" metaKeywords="" description="" metaCanonical="" services="biztalk-services" documentationCenter="" title="BizTalk Services: Service state chart" authors="mandia" solutions="integration" manager="dwrede" editor="cgronlun" />
+﻿<properties 
+	pageTitle="BizTalk Services: Dienststatusübersicht | Azure" 
+	description="Zulässige Aktionen/Operationen in verschiedenen MABS-Status: Beenden, Starten, Neustarten, Anhalten, Fortsetzen, Löschen, Skalieren, Konfiguration aktualisieren und Sichern" 
+	services="biztalk-services" 
+	documentationCenter="" 
+	authors="MandiOhlinger" 
+	manager="dwrede" 
+	editor="cgronlun"/>
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/10/2014" ms.author="mandia" />
+<tags 
+	ms.service="biztalk-services" 
+	ms.workload="integration" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/01/2015" 
+	ms.author="mandia"/>
 
 
 
@@ -251,3 +265,5 @@ RestoreFailed<br/></b></td>
 - [Wie verwende ich das Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)
 
 
+
+<!--HONumber=46--> 

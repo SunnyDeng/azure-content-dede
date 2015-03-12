@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Hybrid Connections Overview - BizTalk Services" pageTitle="Übersicht über Hybridverbindungen | Azure" metaKeywords="BizTalk Services, BizTalk, websites, web sites, hybrid connections, Azure" description="Erfahren Sie mehr über Hybridverbindungen, einschließlich Sicherheit." metaCanonical="" services="integration-services" documentationCenter="" title="Hybrid Connections Overview" authors="mandia" solutions="" manager="dwrede" editor="cgronlun" />
+﻿<properties 
+	pageTitle="Übersicht über Hybridverbindungen | Azure" 
+	description="Erfahren Sie mehr zu Hybridverbindungen, unter anderen zu den Aspekten Sicherheit, TCP-Ports und unterstützte Konfigurationen. MABS, WABS" 
+	services="biztalk-services" 
+	documentationCenter="" 
+	authors="MandiOhlinger" 
+	manager="dwrede" 
+	editor="cgronlun"/>
 
-<tags ms.service="biztalk-services" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/20/2014" ms.author="mandia" />
+<tags 
+	ms.service="biztalk-services" 
+	ms.workload="integration" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/17/2015" 
+	ms.author="mandia"/>
 
 
 
@@ -62,7 +76,7 @@ Hybridverbindungen verwenden SAS-Autorisierung (Shared Access Signature) zum Sic
 
 Hybridverbindungen stellen eine reibungslose und sichere Verteilung der Schlüssel an die Anwendungen und den lokalen Hybrid Connection Manager bereit. 
 
-Weitere Informationen finden Sie unter  [Erstellen und Verwalten von Hybridverbindungen](http://azure.microsoft.com/de-de/documentation/articles/integration-hybrid-connection-create-manage). 
+Weitere Informationen finden Sie unter  [Erstellen und Verwalten von Hybridverbindungen](http://azure.microsoft.com/documentation/articles/integration-hybrid-connection-create-manage). 
 
 **Die Anwendungsautorisierung verläuft getrennt von der Hybridverbindung**. Jede geeignete Autorisierungsmethode kann verwendet werden. Die Autorisierungsmethode hängt davon ab, welche End-to-End-Autorisierungsmethoden in der Azure-Cloud und von den lokalen Komponenten unterstützt werden. Beispiel: Ihre Azure-Anwendung greift auf einen lokalen SQL Server zu. In diesem Szenario kann SQL-Autorisierung die unterstützte End-to-End-Autorisierungsmethode sein.
 
@@ -97,10 +111,10 @@ Die folgenden TCP-Ports werden von Hybridverbindungen verwendet:
 
 ## Weiter
 
-- [Erstellen und Verwalten von Hybridverbindungen](http://azure.microsoft.com/de-de/documentation/articles/integration-hybrid-connection-create-manage)
+- [Erstellen und Verwalten von Hybridverbindungen](http://azure.microsoft.com/documentation/articles/integration-hybrid-connection-create-manage)
 - [Verbinden einer Azure-Website mit einer lokalen Ressource](http://go.microsoft.com/fwlink/p/?LinkId=397538)
 - [Schrittweise Anleitungen für Hybridverbindungen: Verbinden mit einem lokalen SQL Server von einer Azure-Website aus](http://go.microsoft.com/fwlink/?LinkID=397979)
-- [Azure Mobile Services und Hybridverbindungen](http://azure.microsoft.com/de-de/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)
+- [Azure Mobile Services und Hybridverbindungen](http://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)
 
 
 ## Weitere Informationen
@@ -114,3 +128,5 @@ Die folgenden TCP-Ports werden von Hybridverbindungen verwendet:
 [HybridConnectionTab]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionTab.png
 [HCOnPremSetup]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionManageConn.png
+
+<!--HONumber=46--> 

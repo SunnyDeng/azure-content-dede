@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Analysieren von Sensordaten mit Hive und Microsoft Azure HDInsight (Hadoop)" 
 	description="Erfahren Sie, wie Sie Sensordaten mit Hive und HDInsight (Hadoop) in Echtzeit analysieren und visualisieren können" 
 	services="hdinsight" 
@@ -16,7 +16,7 @@
 	ms.date="09/30/2014" 
 	ms.author="larryfr"/>
 
-#Analysieren von Sensordaten mit Hive und HDInsight
+# Analysieren von Sensordaten mit Hive und HDInsight
 
 Erfahren Sie, wie Sie Sensordaten mithilfe von Hive in HDInsight (Hadoop) analysieren und die Daten anschließend in Microsoft Excel mithilfe von Power View visualisieren können.
 
@@ -29,7 +29,7 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 ![A diagram of the solution architecture](./media/hdinsight-use-hive-sensor-data-analysis/hvac-architecture.png)
 
-##Voraussetzungen:
+## Voraussetzungen:
 
 * Ein HDInsight (Hadoop)-Cluster - Unter [Bereitstellen von Hadoop-Clustern in HDInsight](/de-de/documentation/articles/hdinsight-provision-clusters/) finden Sie weitere Informationen zur Erstellung von Clustern.
 
@@ -39,7 +39,7 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 * [Microsoft Hive ODBC Driver](http://www.microsoft.com/de-de/download/details.aspx?id=40886)
 
-##So führen Sie das Beispiel aus
+## So führen Sie das Beispiel aus
 
 1. Klicken Sie im Azure-Verwaltungsportal auf den Namen des entsprechenden Clusters, und klicken Sie anschließend unten in der Seite auf **Abfragekonsole**. Alternativ können Sie die Abfragekonsole direkt über die folgende URL öffnen
 
@@ -51,4 +51,4 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

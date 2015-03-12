@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Registrieren für die Microsoft Authentifizierung - Mobile Services" description="Erfahren Sie mehr über die Registrierung für die Microsoft-Authentifizierung in Ihrer Azure Mobile Services-Anwendung." authors="ggailey777" services="mobile-services" documentationCenter="" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Registrieren für die Microsoft Authentifizierung - Mobile Services" 
+	description="Erfahren Sie mehr über die Registrierung für die Microsoft-Authentifizierung in Ihrer Azure Mobile Services-Anwendung." 
+	authors="ggailey777" 
+	services="mobile-services" 
+	documentationCenter="" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="glenga"/>
 
 # Registrieren Ihrer Apps für die Verwendung einer Microsoft Account-Anmeldung
 

@@ -1,6 +1,20 @@
-﻿<properties title="Lexicon Based Sentiment Analysis" pageTitle="Schritt 1: Lexikonbasierte Stimmungsanalyse | Azure" description="Lexikonbasierte Stimmungsanalyse" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="jaymathe" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Schritt 1: Lexikonbasierte Stimmungsanalyse | Azure" 
+	description="Lexikonbasierte Stimmungsanalyse" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="jaymathe" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/08/2014" ms.author="jaymathe" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/11/2015" 
+	ms.author="jaymathe"/> 
 
 
 
@@ -61,7 +75,7 @@ Es gibt mehrere Möglichkeiten der Nutzung des Diensts auf automatisierte Weise.
 Die Eingabe ist "Today is a good day", dann lautet die Ausgabe "1", was eine positive Bedeutung des Eingabesatzes zeigt. 
 
 ##Erstellen des Webdiensts
->Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
+>Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
 
 Aus Azure ML wurde ein neues leeres Experiment erstellt. Die nachfolgende Abbildung zeigt den Experimentablauf von lexikonbasierter Stimmungsanalyse. Die Datei "sent_dict.csv" befindet sich im MPQA-Subjektivitätslexikon und ist als eine der Eingaben des Moduls "R-Skript ausführen" festgelegt. Eine andere Eingabe ist Bewertungsdataset mit einer Beispielrezension von Amazon zum Testen, bei der die Vorgänge Auswahl, Spaltenname, Modifizierung und Aufteilen ausgeführt wurden.  Sie verwenden ein Hashpaket, um das Subjektivitätslexikon im Arbeitsspeicher zu speichern und den Prozess der Bewertungsberechnung zu beschleunigen. Der gesamte Text wird vom von "tm"-Paket in Token umgesetzt und mit dem Wort im Stimmungswörterbuch verglichen. Schließlich wird ein Ergebnis berechnet, indem die Gewichtung aller subjektiven Wörter im Text hinzugefügt wird. 
@@ -129,7 +143,7 @@ Aus Azure ML wurde ein neues leeres Experiment erstellt. Die nachfolgende Abbild
 Aus Sicht des Algorithmus ist die lexikonbasierte Stimmungsanalyse ein allgemeines Analysetool, das möglicherweise keine bessere Leistung als eine Klassifizierungsmethode für bestimmte Felder ausführen kann. Das Problem der Negation wird nicht gut gelöst. Sie hartcodieren mehrere Negation Wörter im Programm, eine bessere Möglichkeit ist jedoch die Verwendung eines Negationswörterbuchs und die Erstellung einiger Regeln. Der Webdienst bietet eine bessere Leistung bei kurzen und einfachen Sätze wie z. B. Tweets und Facebook-Beiträge, als bei langen und komplexen Sätze wie z. B. Rezensionen auf Amazon. 
 
 ##Häufig gestellte Fragen
-Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-marketplace-faq).
+Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/documentation/articles/machine-learning-marketplace-faq).
 
 [1]: ./media/machine-learning-r-csharp-lexicon-based-sentiment-analysis/sentiment_analysis_1.png
 [2]: ./media/machine-learning-r-csharp-lexicon-based-sentiment-analysis/sentiment_analysis_2.png
@@ -141,3 +155,5 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Ma
 
 
 
+
+<!--HONumber=46--> 

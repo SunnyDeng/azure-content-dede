@@ -1,6 +1,6 @@
 ﻿<properties 
 	pageTitle="Auswählen von Benutzernamen für Linux in Azure" 
-	description="Informationen zum Auswählen von Benutzernamen für einen virtuellen Linux-Computer in Azure." 
+	description="Erfahren Sie, wie Sie Benutzernamen für einen virtuellen Linux-Computer in Azure auswählen." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
@@ -20,13 +20,13 @@
 
 #Auswählen von Benutzernamen für Linux in Azure#
 
-Wenn Sie einen virtuellen Linux-Computer erstellen, können Sie einen Namen als Benutzernamen auswählen oder den standardmäßigen Namen akzeptieren ( *azureuser*). In den meisten Fällen ist dieser neue Benutzer im Basisimage nicht vorhanden und wird während des Bereitstellungsprozesses erstellt. Wenn der Benutzer im VM-Basisimage vorhanden ist, konfiguriert der Azure Linux Agent in einigen Fällen einfach das Kennwort (und/oder den SSH-Schlüssel) für diesen Benutzer auf der Grundlage der Informationen, die Sie beim Erstellen der VM festgelegt haben.
+Wenn Sie einen virtuellen Linux-Computer erstellen, können Sie einen Namen als Benutzernamen auswählen oder den standardmäßigen akzeptieren,  *azureuser*. In den meisten Fällen ist dieser neue Benutzer im Basisimage nicht vorhanden und wird während des Bereitstellungsprozesses erstellt. Wenn der Benutzer im VM-Basisimage vorhanden ist, konfiguriert der Azure-Linux-Agent in einigen Fällen einfach das Kennwort (und/oder den SSH-Schlüssel) für diesen Benutzer auf der Grundlage der Informationen die Sie beim Erstellen der VM festgelegt haben.
 
-**Allerdings** definiert Linux einen Satz von Benutzernamen, die nicht verwendet werden sollten. Der Bereitstellungsprozess **schlägt fehl**, wenn Sie versuchen, einen virtuellen Linux-Computer mithilfe eines vorhandenen Systembenutzers bereitzustellen, der als Benutzer mit einer UID 0-99 definiert ist. Ein typisches Beispiel ist der Benutzer  `root`, der die UID 0 hat.
+**Allerdings** definiert Linux einen Satz von Benutzernamen, die nicht verwendet werden sollten. Der Bereitstellungsprozess **schlägt fehl**, wenn Sie versuchen, einen virtuellen Linux-Computer mithilfe eines vorhandenen Systembenutzers bereitzustellen, der als Benutzer mit einer UID 0-99 definiert ist. Ein typisches Beispiel ist der  `root`-Benutzer, der die UID 0 hat.
 
  - Weitere Informationen: [Linux-Standardbasis - Benutzer-ID-Bereiche](http://refspecs.linuxfoundation.org/LSB_4.1.0/LSB-Core-generic/LSB-Core-generic/uidrange.html)
 
-Folgende Benutzernamen sollten Sie bei der Bereitstellung eines virtuellen Linux-Computers vermeiden. Wir empfehlen, dass Sie **diese Benutzernamen nicht verwenden,** denn der Bereitstellungsprozess könnte fehlschlagen.
+Folgende Benutzernamen sollten Sie bei der Bereitstellung eines virtuellen Linux-Computers vermeiden. Wir empfehlen, dass Sie **diese Benutzernamen nicht verwenden**, denn der Bereitstellungsprozess könnte fehlschlagen.
 
 
 ## openSUSE
@@ -245,4 +245,7 @@ Folgende Benutzernamen sollten Sie bei der Bereitstellung eines virtuellen Linux
 - www-data
 
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

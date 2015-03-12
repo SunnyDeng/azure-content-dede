@@ -1,6 +1,20 @@
-<properties pageTitle="Grundlegendes zur Azure SQL-Datenbank und SQL Server in Azure VMs" description="Erfahren Sie mehr über Azure SQL-Datenbank und SQL Server in Azure Virtual Machines. Schauen Sie sich die allgemeinen betriebswirtschaftlichen Faktoren an, um zu bestimmen, welche SQL-Technologie für Ihre Anwendung am besten geeignet ist." services="virtual-machines" documentationCenter="" authors="Selcin" manager="jeffreyg" editor="tysonn"/>
+<properties 
+	pageTitle="Grundlegendes zur Azure SQL-Datenbank und SQL Server in Azure VMs" 
+	description="Erfahren Sie mehr über Azure SQL-Datenbank und SQL Server in Azure Virtual Machines. Schauen Sie sich die allgemeinen betriebswirtschaftlichen Faktoren an, um zu bestimmen, welche SQL-Technologie für Ihre Anwendung am besten geeignet ist." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="Selcin" 
+	manager="jeffreyg" 
+	editor="tysonn"/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/26/2014" ms.author="selcint"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/26/2014" 
+	ms.author="selcint"/>
 
 # Grundlegendes zur Azure SQL-Datenbank und SQL Server in Azure VMs
 
@@ -35,7 +49,8 @@ Beim Entwurf einer Anwendung stehen vier grundlegende Optionen für das Hosten d
 - SQL Server in Azure Virtual Machine (öffentliche Cloud)
 - Azure SQL-Datenbank (öffentliche Cloud)
 
-In den folgenden Abschnitten erfahren wir mehr über die beiden Letzteren: Azure SQL-Datenbank und SQL Server in Azure VMs. Darüber hinaus schauen wir uns an, welche allgemeinen betriebswirtschaftlichen Faktoren es gibt, um zu bestimmen, welche Option für Ihre Anwendung am besten geeignet ist.
+In den folgenden Abschnitten erfahren wir mehr über die beiden Letzteren: Azure SQL-Datenbank und SQL Server in Azure V
+	ms. Darüber hinaus schauen wir uns an, welche allgemeinen betriebswirtschaftlichen Faktoren es gibt, um zu bestimmen, welche Option für Ihre Anwendung am besten geeignet ist.
 
 ##<a name="close"></a>Genauere Betrachtung der Azure SQL-Datenbank und SQL Server in Azure VM
 
@@ -223,15 +238,15 @@ Vielen Dank für die Umsetzung dieses Artikels!
    <td valign="middle">Links zur Bibliotheksdokumentation.</td>   
 </tr>
 <tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/de-de/library/azure/jj879332.aspx">Azure SQL-Datenbank und SQL Server - Vergleich und Gegenüberstellung der Leistung und Skalierbarkeit</p></td>
+   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/azure/jj879332.aspx">Azure SQL-Datenbank und SQL Server - Vergleich und Gegenüberstellung der Leistung und Skalierbarkeit</p></td>
    <td valign="middle">Dieser Artikel beschreibt die Leistungsunterschiede und Problembehandlung bei Verwendung von Azure SQL-Datenbank und SQL Server lokal oder auf einem virtuellen Computer. </td>   
 </tr>
 <tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/de-de/library/dn574746.aspx">Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines</p></td>
+   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/dn574746.aspx">Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines</p></td>
    <td valign="middle">Dieser Artikel beschreibt die häufigsten Anwendungsmuster, die für SQL Server auf Azure VMs und Hybridszenarien einschließlich Azure SQL-Datenbank gelten. </td>   
 </tr>
 <tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/de-de/library/hh680934(v=PandP.50).aspx">Microsoft Enterprise Library - Handhabung vorübergehender Fehler - Anwendungsblock</p></td>
+   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/hh680934(v=PandP.50).aspx">Microsoft Enterprise Library - Handhabung vorübergehender Fehler - Anwendungsblock</p></td>
    <td valign="middle">Mit dieser Bibliothek können Entwickler ihre Anwendungen, die auf der Azure SQL-Datenbank ausgeführt werden, mit einer höheren Ausfallsicherheit ausstatten, indem sie eine robuste Logik für die Handhabung vorübergehender Fehler hinzufügen. Vorübergehende Fehler sind Fehler, die aufgrund einer temporären Bedingung wie z. B. Probleme mit der Netzwerkkonnektivität oder einem nicht verfügbaren Dienst auftreten. Da es sich bei der Azure SQL-Datenbank um einen mehrinstanzenfähigen Dienst handelt, ist es wichtig, solche Fehler zu beheben, um Anwendungsausfallzeiten zu minimieren. </td>   
 </tr>
 </table>

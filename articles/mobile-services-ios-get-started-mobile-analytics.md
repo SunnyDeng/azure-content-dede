@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit Mobile Analytics | Mobile Dev Center" description="Erste Schritte mit Mobile Analytics." documentationCenter="ios" authors="mattchenderson" manager="dwrede" editor="" services=""/>
+<properties 
+	pageTitle="Erste Schritte mit Mobile Analytics | Mobile Dev Center" 
+	description="Erste Schritte mit Mobile Analytics." 
+	documentationCenter="ios" 
+	authors="mattchenderson" 
+	manager="dwrede" 
+	editor="" 
+	services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="multiple" ms.topic="article" ms.date="10/10/2014" ms.author="mahender"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-ios" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="10/10/2014" 
+	ms.author="mahender"/>
 
 # Erste Schritte mit Mobile Analytics (Capptain)
 

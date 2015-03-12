@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Was ist ein Webhostingplan?" description="Übersicht über den Webhostingplan" title="What is a web hosting plan?" services="web-sites" authors="adamab" manager="wpickett" />
+﻿<properties 
+	pageTitle="Was ist ein Webhostingplan?" 
+	description="Übersicht über den Webhostingplan"
+	services="web-sites" 
+	authors="adamabdelhamed" 
+	manager="wpickett" 
+	editor="" 
+	documentationCenter=""/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="multiple" ms.topic="article" ms.date="01/01/1900" ms.author="adamab" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/17/2014" 
+	ms.author="adamab"/>
 
 # Was ist ein Webhostingplan? #
 
@@ -48,10 +62,12 @@ Wenn Sie auf den Plan klicken, wird ein Blade geöffnet, mit dem Sie den Webhost
 
 ### Nächste Schritte
 
-Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](http://azure.microsoft.com/en-us/pricing/free-trial/).
+Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
 <!-- Images. -->
 [BrowseEverythingScreenshot]: ./media/web-sites-web-hosting-plan-overview/browse-everything.png
 [WebHostingPlanResourceMapScreenshot]: ./media/web-sites-web-hosting-plan-overview/web-hosting-plan-resource-map.png
 [WebHostingPlanBladeScreenshot]: ./media/web-sites-web-hosting-plan-overview/web-hosting-plan-blade.png
 [BrowseWebHostingPlansScreenshot]: ./media/web-sites-web-hosting-plan-overview/browse-web-hosting-plans.png
+
+<!--HONumber=46--> 

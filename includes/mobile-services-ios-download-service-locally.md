@@ -26,5 +26,4 @@
 <!-- URLs. -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-
 <!--HONumber=42-->

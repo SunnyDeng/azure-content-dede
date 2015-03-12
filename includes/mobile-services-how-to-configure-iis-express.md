@@ -38,5 +38,4 @@
 
 <!-- URLs. -->
 [Hinzufügen einer neuen Windows-Firewall-Portregel]:  http://go.microsoft.com/fwlink/?LinkId=392240
-
 <!--HONumber=42-->

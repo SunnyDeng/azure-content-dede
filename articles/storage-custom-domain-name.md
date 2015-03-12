@@ -158,6 +158,5 @@ Sie können z. B. den folgenden URI verwenden, um ein Webformular über eine ben
 
 ## Zusätzliche Ressourcen
 
--   <a href="http://msdn.microsoft.com/de-de/library/windowsazure/gg680307.aspx">Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne</a>
-
+-   <a href="http://msdn.microsoft.com/library/windowsazure/gg680307.aspx">Zuordnen von CDN-Inhalt zu einer benutzerdefinierten Domäne</a>
 <!--HONumber=42-->

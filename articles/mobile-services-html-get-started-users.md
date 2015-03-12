@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit der Authentifizierung (HTML 5) | Mobile Dev Center" description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer HTML-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Erste Schritte mit der Authentifizierung (HTML 5) | Mobile Dev Center" 
+	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer HTML-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-html" ms.devlang="javascript" ms.topic="article" ms.date="09/23/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-html" 
+	ms.devlang="javascript" 
+	ms.topic="article" 
+	ms.date="09/23/2014" 
+	ms.author="glenga"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App 
 
@@ -121,7 +135,8 @@ Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], werden Sie 
 [5]: ./media/mobile-services-html-get-started-users/mobile-service-uri.png
 [13]: ./media/mobile-services-html-get-started-users/mobile-identity-tab.png
 [14]: ./media/mobile-services-html-get-started-users/mobile-portal-data-tables.png
-[15]: ./media/mobile-services-html-get-started-users/mobile-portal-change-table-perms.png
+[15]: ./media/mobile-services-html-get-started-users/mobile-portal-change-table-per
+	ms.png
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-html-get-started

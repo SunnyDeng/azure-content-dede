@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Planen von Back-End-Aufgaben mit der Scheduler - Mobile Services" description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Planen von Back-End-Aufgaben mit der Scheduler - Mobile Services" 
+	description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/26/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="09/26/2014" 
+	ms.author="glenga"/>
 
 # Planen von periodischen Aufträgen in Mobile Services 
 
@@ -185,11 +199,11 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 
 <!-- URLs. -->
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
-[WindowsAzure.com]: http://www.windowsazure.com/
+[WindowsAzure.com]: http://azure.microsoft.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services]: /de-de/develop/mobile/how-to-guides/register-for-twitter-authentication
 [Twitter-Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-[App-Einstellungen]: http://msdn.microsoft.com/de-de/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
 
 <!--HONumber=42-->

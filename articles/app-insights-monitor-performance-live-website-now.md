@@ -1,6 +1,18 @@
-﻿<properties title="Diagnose performance issues on a running website" pageTitle="Diagnostizieren von Leistungsproblemen auf einer ausgeführten Website" description="Überwachen Sie die Leistung einer Website, ohne sie erneut bereitzustellen." metaKeywords="analytics monitoring application insights" authors="awills"  manager="kamrani" />
+﻿<properties 
+	pageTitle="Diagnostizieren von Leistungsproblemen auf einer ausgeführten Website" 
+	description="Überwachen Sie die Leistung einer Website, ohne sie erneut bereitzustellen. Zur eigenständigen Verwendung oder in Verbindung mit dem Application Insights SDK" 
+	services="application-insights" 
+	authors="alancameronwills" 
+	manager="kamrani"/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-09-24" ms.author="awills" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2015-01-23" 
+	ms.author="awills"/>
  
 
 # Überwachen der Leistung auf einer Live-Website
@@ -98,3 +110,5 @@ Unter Anwendungszustand werden Daten angezeigt.
 
 
 
+
+<!--HONumber=46--> 

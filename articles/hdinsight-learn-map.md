@@ -26,5 +26,4 @@ In HDInsight können Sie mit Big Data in der Cloud in Hadoop-, HBase- und benutz
 
 
 
-
 <!--HONumber=42-->

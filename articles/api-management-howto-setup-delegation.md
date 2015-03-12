@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Delegieren von Benutzerregistrierung und Produktabonnierung" metaKeywords="" description="Erfahren Sie, wie Sie die Benutzerregistrierung und Produktabonnements an einen Dritten in Azure API Management delegieren." metaCanonical="" services="api-management" documentationCenter="API Management" title="How to delegate user registration and product subscription in Azure API Management" authors="antonba" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Delegieren von Benutzerregistrierung und Produktabonnierung" 
+	description="Erfahren Sie, wie Sie die Benutzerregistrierung und Produktabonnements an einen Dritten in Azure API Management delegieren." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="antonba" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="antonba" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="1/14/2015" 
+	ms.author="antonba"/>
 
 # Delegieren von Benutzerregistrierung und Produktabonnierung
 
@@ -150,3 +164,5 @@ Diese Codebeispiele zeigen, wie Sie den *Schlüssel für die Delegierungsvalidie
 [Beispielcode weiter unten]: #delegate-example-code
 
 [api-management-delegation-signin-up]: ./media/api-management-howto-setup-delegation/api-management-delegation-signin-up.png
+
+<!--HONumber=46--> 

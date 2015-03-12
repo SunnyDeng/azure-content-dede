@@ -1,6 +1,20 @@
-﻿<properties title="What Is Azure Machine Learning Studio?" pageTitle="Was ist Machine Learning Studio? | Azure" description="Übersicht über Azure Machine Learning Studio" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="garye" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Was ist Azure Machine Learning Studio? | Azure" 
+	description="Übersicht über Azure Machine Learning Studio und seine grundlegenden Komponenten"
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="garyericson" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/11/2014" ms.author="garye" />
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/11/2014" 
+	ms.author="garye"/>
 
 # Was ist Azure Machine Learning Studio?
 
@@ -39,8 +53,8 @@ Ein Experiment besteht auf Datasets, die Daten für Analysemodule bereitstellen,
 - Alle Eingangsports für Module müssen eine Verbindung zum Datenfluss haben. 
 - Alle erforderlichen Parameter eines Moduls müssen festgelegt sein. 
 
-Ein Beispiel zum Erstellen eines einfachen Experiments finden Sie unter [Erstellen eines einfachen Experiments in Azure Machine Learning Studio](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-create-experiment/). 
-Eine ausführlichere exemplarische Vorgehensweise zum Erstellen einer Lösung für Vorhersageanalysen finden Sie unter [Entwickeln einer Vorhersagelösung mit Azure Machine Learning](http://azure.microsoft.com/de-de/documentation/articles/machine-learning-walkthrough-develop-predictive-solution/).
+Ein Beispiel zum Erstellen eines einfachen Experiments finden Sie unter [Erstellen eines einfachen Experiments in Azure Machine Learning Studio](http://azure.microsoft.com/documentation/articles/machine-learning-create-experiment/). 
+Eine ausführlichere exemplarische Vorgehensweise zum Erstellen einer Lösung für Vorhersageanalysen finden Sie unter [Entwickeln einer Vorhersagelösung mit Azure Machine Learning](http://azure.microsoft.com/documentation/articles/machine-learning-walkthrough-develop-predictive-solution/).
 
 ### Datasets
 
@@ -67,3 +81,5 @@ Ein Modul kann eine Reihe von Parametern haben, die Sie zum Konfigurieren der in
 
 
 [ml-studio-overview]:./media/machine-learning-what-is-ml-studio/context.jpg
+
+<!--HONumber=46--> 

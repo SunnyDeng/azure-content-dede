@@ -53,5 +53,4 @@
    	Beachten Sie, dass die Methode **take(3)** in die Abfrageoption **$top = 3** im Abfrage-URI übertragen wurde.
 
 <!-- URLs -->
-[Fiddler]: http://go.microsoft.com/fwlink/?LinkID=262412
-<!--HONumber=42-->
+[Fiddler]: http://go.microsoft.com/fwlink/?LinkID=262412<!--HONumber=42-->

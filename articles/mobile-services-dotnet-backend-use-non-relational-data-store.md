@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erstellen eines Diensts mit einem nicht-relationalen Datenspeicher - Azure Mobile Services" description="Erfahren Sie, wie einen nicht relationalen Datenspeicher wie MongoDB oder Azure-Tabellenspeicher mit Ihrem .NET-basierten mobilen Dienst verwenden." services="" documentationCenter="windows" authors="mattchenderson" manager="dwrede" editor="mollybos"/>
+<properties 
+	pageTitle="Erstellen eines Diensts mit einem nicht-relationalen Datenspeicher - Azure Mobile Services" 
+	description="Erfahren Sie, wie einen nicht relationalen Datenspeicher wie MongoDB oder Azure-Tabellenspeicher mit Ihrem .NET-basierten mobilen Dienst verwenden." 
+	services="" 
+	documentationCenter="windows" 
+	authors="mattchenderson" 
+	manager="dwrede" 
+	editor="mollybos"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="mahender"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="mahender"/>
 
 # Erstellen eines Diensts mit MongoDB als Datenspeicher mit .NET-Back-End
 

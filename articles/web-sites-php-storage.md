@@ -123,7 +123,7 @@ Bevor Sie Daten speichern können, müssen Sie zuerst einen Container, sprich di
 		}
 		?>
 
-	Fehlercodes und eine Meldungsübersicht finden Sie hier: [http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx][msdn-errors]
+	Fehlercodes und eine Meldungsübersicht finden Sie hier: [http://msdn.microsoft.com/library/windowsazure/dd179438.aspx][msdn-errors]
 
 
 ##Abfragen einer Tabelle
@@ -441,11 +441,11 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [composer-phar]: http://getcomposer.org/composer.phar
 
-[msdn-errors]: http://msdn.microsoft.com/de-de/library/windowsazure/dd179438.aspx
+[msdn-errors]: http://msdn.microsoft.com/library/windowsazure/dd179438.aspx
 
 
 
-[msdn-table-query-syntax]: http://msdn.microsoft.com/de-de/library/windowsazure/dd894031.aspx
+[msdn-table-query-syntax]: http://msdn.microsoft.com/library/windowsazure/dd894031.aspx
 [ws-storage-app]: ./media/web-sites-php-storage/ws-storage-app.png
 [management-portal]: https://manage.windowsazure.com
 [new-website]: ./media/web-sites-php-storage/new_website.jpg

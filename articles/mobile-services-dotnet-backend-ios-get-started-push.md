@@ -1,6 +1,18 @@
-﻿<properties pageTitle="Erste Schritte mit Pushbenachrichtigungen (iOS) | Mobile Dev Center" description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services zum Senden von Pushbenachrichtigungen an Ihre iOS-App." services="mobile-services, notification-hubs" documentationCenter="ios" manager="dwrede" editor="" authors="krisragh"/>
+<properties 
+	pageTitle="Erste Schritte mit Pushbenachrichtigungen (iOS) | Mobile Dev Center" 
+	description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services zum Senden von Pushbenachrichtigungen an Ihre iOS-App." 
+	services="mobile-services, notification-hubs" 
+	documentationCenter="ios" 
+	manager="dwrede" editor="" 
+	authors="krisragh"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="12/15/2014" ms.author="krisragh"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-ios" 
+	ms.devlang="objective-c" ms.topic="article" 
+	ms.date="12/15/2014" 
+	ms.author="krisragh"/>
 
 
 # Hinzufügen von Pushbenachrichtigungen zu einer Mobile Services-App

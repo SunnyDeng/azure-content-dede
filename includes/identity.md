@@ -49,7 +49,7 @@ Die Ausführung von Windows Server AD auf Azure-VMs kann in verschiedenen Szenar
 
 - Ein Unternehmen, das Azure zur Notfallwiederherstellung nutzt, könnte einige wenige aktive VMs in der Cloud pflegen, darunter einen Domänencontroller. Dieser kann dann so eingerichtet werden, dass er den Standort nach Bedarf erweitert, wenn Ausfälle an anderen Orten aufzufangen sind.
 
-Es gibt weitere Möglichkeiten. So ist es beispielsweise nicht erforderlich, Windows Server AD in der Cloud mit einem lokalen Datencenter zu verbinden. Wenn Sie eine SharePoint-Farm für einen bestimmten Kreis von Benutzern ausführen möchten, die sich zum Beispiel alle nur mit cloudbasierten Identitäten anmelden, könnten Sie eine eigenständige Gesamtstruktur auf Azure erstellen. Wie Sie diese Technologie verwenden, hängt ganz von Ihrer Zielsetzung ab. (Eine ausführlichere Anleitung zur Verwendung von Windows Server AD mit Azure finden Sie [hier](http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx).)
+Es gibt weitere Möglichkeiten. So ist es beispielsweise nicht erforderlich, Windows Server AD in der Cloud mit einem lokalen Datencenter zu verbinden. Wenn Sie eine SharePoint-Farm für einen bestimmten Kreis von Benutzern ausführen möchten, die sich zum Beispiel alle nur mit cloudbasierten Identitäten anmelden, könnten Sie eine eigenständige Gesamtstruktur auf Azure erstellen. Wie Sie diese Technologie verwenden, hängt ganz von Ihrer Zielsetzung ab. (Eine ausführlichere Anleitung zur Verwendung von Windows Server AD mit Azure finden Sie [hier](http://msdn.microsoft.com/library/windowsazure/jj156090.aspx).)
 
 ## <a name="ad"></a>Verwenden von Azure Active Directory
 
@@ -121,5 +121,4 @@ Das Arbeiten mit Identitäten ist für beinahe jede Anwendung wichtig. Das Ziel 
 ##Zum Autor
 
 David Chappell ist Principal der Chappell & Associates [www.davidchappell.com](http://www.davidchappell.com) in San Francisco, Kalifornien. Mit seinen Vorträgen, Veröffentlichungen und Beratungsleistungen hilft David Chappell Menschen weltweit, neue Technologien zu verstehen, sie anzuwenden und besser über sie zu entscheiden.
-
 <!--HONumber=42-->

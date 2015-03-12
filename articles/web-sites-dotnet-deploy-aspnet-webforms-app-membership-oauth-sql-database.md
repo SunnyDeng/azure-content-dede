@@ -23,7 +23,7 @@
 In diesem Lernprogramm wird gezeigt, wie Sie eine sichere ASP.NET 4.5 Web Forms-Anwendung erstellen, die eine SQL-Datenbank beinhaltet, und die Anwendung dann auf Azure bereitstellen. 
 
 >[AZURE.NOTE] 
-Die MVC-Version dieses Lernprogramm finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](http://azure.microsoft.com/de-de/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
+Die MVC-Version dieses Lernprogramm finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
 
 Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 für Web Express automatisch durch das SDK installiert. Sie können kostenlos mit der Entwicklung für Azure beginnen.
 
@@ -783,7 +783,7 @@ Es ist wichtig zu wissen, wie Sie die Datenbank direkt anzeigen und ändern kön
 3. Wenn das Dialogfeld **Firewallregel hinzufügen** angezeigt wird, wählen Sie **Firewallregel hinzufügen** aus.  
 
 	>[AZURE.NOTE]  
-	Wenn Sie **SQL-Datenbanken** nicht erweitern und **ContactDB** in Visual Studio nicht anzeigen können, müssen Sie die folgenden Anweisungen befolgen, um einen Firewallport oder einen Portbereich zu öffnen. Befolgen Sie dazu die Anweisungen unter **Einrichten von Azure-Firewallregeln** am Ende des [MVC-Lernprogramms](http://azure.microsoft.com/de-de/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/). Alternativ können Sie auch die Daten der lokalen Datenbank überprüfen, indem Sie die Anwendung lokal erstellen, ausführen und Daten hinzufügen (**STRG+F5** in Visual Studio).  
+	Wenn Sie **SQL-Datenbanken** nicht erweitern und **ContactDB** in Visual Studio nicht anzeigen können, müssen Sie die folgenden Anweisungen befolgen, um einen Firewallport oder einen Portbereich zu öffnen. Befolgen Sie dazu die Anweisungen unter **Einrichten von Azure-Firewallregeln** am Ende des [MVC-Lernprogramms](http://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/). Alternativ können Sie auch die Daten der lokalen Datenbank überprüfen, indem Sie die Anwendung lokal erstellen, ausführen und Daten hinzufügen (**STRG+F5** in Visual Studio).  
 
 4. Wenn das Dialogfeld **Mit Server verbinden** angezeigt wird, geben Sie das **Kennwort** ein, das Sie zu Beginn dieses Lernprogramms erstellt haben, und klicken Sie auf **Verbinden**.  
 
@@ -809,9 +809,9 @@ An früherer Stelle in diesem Lernprogramm haben Sie Code verwendet, um Benutzer
 Zurzeit wird ein Tool entwickelt, das die Verwaltung von Benutzern und Rollen vereinfacht.  
 
 ##Nächste Schritte
-Weitere Informationen zu ASP.NET Web Forms finden Sie unter [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) auf der ASP.NET-Website sowie in den [Microsoft Azure-Lernprogrammen und -Anleitungen](http://azure.microsoft.com/de-de/documentation/services/web-sites/#net).
+Weitere Informationen zu ASP.NET Web Forms finden Sie unter [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) auf der ASP.NET-Website sowie in den [Microsoft Azure-Lernprogrammen und -Anleitungen](http://azure.microsoft.com/documentation/services/web-sites/#net).
 
-Dieses Lernprogramm basiert auf dem MVC-Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](http://azure.microsoft.com/de-de/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) von Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)), mit Unterstützung von Tom Dykstra und Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
+Dieses Lernprogramm basiert auf dem MVC-Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) von Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)), mit Unterstützung von Tom Dykstra und Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
 
 Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert werden kann, und zwar nicht nur bezüglich des Lernprogramms, sondern auch bezüglich der Produkte, die darin vorgestellt werden. Ihr Feedback unterstützt uns dabei, eine entsprechende Priorität für Verbesserungen festzulegen. Unter [Show Me How With Code](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code) (in englischer Sprache) können Sie neue Themen anfordern oder eine Stimme dafür abgeben.
 

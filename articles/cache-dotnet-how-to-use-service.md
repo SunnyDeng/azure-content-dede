@@ -1,6 +1,20 @@
-<properties urlDisplayName="" pageTitle="So wird Azure Managed Cache Service verwendet" metaKeywords="" description="" metaCanonical="" services="cache" documentationCenter="" title="How to Use Azure Managed Cache Service" authors="sdanie" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="So wird Azure Managed Cache Service verwendet" 
+	description="" 
+	services="cache" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="cache" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
+<tags 
+	ms.service="cache" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="11/18/2014" 
+	ms.author="sdanie"/>
 
 # So wird Azure Managed Cache Service verwendet
 
@@ -456,24 +470,24 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
    
 <!-- LINKS -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/de-de/library/windowsazure/gg618003.aspx
+[Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/library/windowsazure/gg618003.aspx
 [Sitzungsstatusanbieter für Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Zwischenspeichern des Sitzungszustands]: http://www.microsoft.com/de-de/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Ausgabecacheanbieter für Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320837
-[Azure Shared Caching]: http://msdn.microsoft.com/de-de/library/windowsazure/gg278356.aspx
+[Azure Shared Caching]: http://msdn.microsoft.com/library/windowsazure/gg278356.aspx
 [Team-Blog]: http://blogs.msdn.com/b/windowsazure/
 [Azure Caching]: http://www.microsoft.com/de-de/showcase/Search.aspx?phrase=azure+caching
 [Konfigurieren der Größe von virtuellen Computern]: http://go.microsoft.com/fwlink/?LinkId=164387
 [Überlegungen zur Planung der Azure Caching-Kapazität]: http://go.microsoft.com/fwlink/?LinkId=320167
 [Azure Caching]: http://go.microsoft.com/fwlink/?LinkId=252658
-[Gewusst wie: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/de-de/library/zd1ysf1y.aspx
-[Gewusst wie: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/de-de/library/z852zf6b.aspx
+[Gewusst wie: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/library/zd1ysf1y.aspx
+[Gewusst wie: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/library/z852zf6b.aspx
 [Übersicht über Azure Managed Cache Service]: http://go.microsoft.com/fwlink/?LinkId=320830
 [Managed Cache Service]: http://go.microsoft.com/fwlink/?LinkId=320830
 [OutputCache-Direktive]: http://go.microsoft.com/fwlink/?LinkId=251979
 [Problembehandlung und Diagnose]: http://go.microsoft.com/fwlink/?LinkId=320839
 [Installation des NuGet-Paket-Managers]: http://go.microsoft.com/fwlink/?LinkId=240311
-[Cache - Preisdetails]: http://www.windowsazure.com/de-de/pricing/details/cache/
+[Cache - Preisdetails]: http://azure.microsoft.com/pricing/details/cache/
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Cacheangebote]: http://go.microsoft.com/fwlink/?LinkId=317277
 [Kapazitätsplanung]: http://go.microsoft.com/fwlink/?LinkId=320167
@@ -485,9 +499,11 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
 [New-AzureManagedCache]: http://go.microsoft.com/fwlink/?LinkId=400495
 [Azure Managed Cache-Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=398555
 [Installieren und Konfigurieren von Azure PowerShell]: http://go.microsoft.com/fwlink/?LinkId=400494
-[Add-AzureAccount]: http://msdn.microsoft.com/de-de/library/dn495128.aspx
-[Select-AzureSubscription]: http://msdn.microsoft.com/de-de/library/dn495203.aspx
+[Add-AzureAccount]: http://msdn.microsoft.com/library/dn495128.aspx
+[Select-AzureSubscription]: http://msdn.microsoft.com/library/dn495203.aspx
 
-[Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/de-de/library/azure/dn766201.aspx
+[Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

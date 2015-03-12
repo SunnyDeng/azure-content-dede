@@ -1,6 +1,20 @@
-﻿<properties title="Quick start guide for the Machine Learning Recommendations API" pageTitle="Kurzanleitung für die Machine Learning Empfehlungen API | Azure" description="Azure Machine Learning-Empfehlungen – Erste Schritte" metaKeywords="" services="machine-learning" solutions="" documentationCenter="" authors="jaymathe" manager="paulettm" editor="cgronlun" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Kurzanleitung für die Machine Learning Empfehlungen API | Azure" 
+	description="Azure Machine Learning-Empfehlungen – Erste Schritte"
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="jaymathe" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="machine-learning" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/14/2014" ms.author="jaymathe" /> 
+<tags 
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/12/2015" 
+	ms.author="jaymathe"/> 
 
 # Kurzanleitung für die Machine Learning Empfehlungen-API
 
@@ -594,3 +608,5 @@ Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft
 [8]: ./media/machine-learning-recommendation-api-quick-start-guide/Table07.png
 [9]: ./media/machine-learning-recommendation-api-quick-start-guide/Table08.png
 
+
+<!--HONumber=46--> 

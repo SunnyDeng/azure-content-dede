@@ -200,7 +200,7 @@ Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twil
 [twilio_say]: http://www.twilio.com/docs/api/twiml/say
 
 
-[azure_runtime_ref_dotnet]: http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
+[azure_runtime_ref_dotnet]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
 
 
 

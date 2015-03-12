@@ -58,11 +58,10 @@
 
 	Ersetzen Sie im obigen Code  `todolistContext` durch den Namen von DbContext für Ihr Datenmodell, der aus dem Namen des mobilen Diensts und dem Anhang  `Context` bestehen sollte. Ersetzen Sie auch den Schemanamen in der UPDATE-Anweisung durch den Namen Ihres mobilen Diensts. 
 
-	Dieser Code verwendet die [Datenbankklasse](http://msdn.microsoft.com/de-de/library/system.data.entity.database.aspx), um direkt auf die **TodoItems**-Tabelle zuzugreifen und alle Elemente als abgeschlossen zu markieren. Diese Methode unterstützt eine POST-Anfrage, und die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
+	Dieser Code verwendet die [Datenbankklasse](http://msdn.microsoft.com/library/system.data.entity.database.aspx), um direkt auf die **TodoItems**-Tabelle zuzugreifen und alle Elemente als abgeschlossen zu markieren. Diese Methode unterstützt eine POST-Anfrage, und die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
 
 	> [AZURE.NOTE] Die Standardberechtigungen werden festgelegt, und das heißt, dass jeder Benutzer der App die benutzerdefinierte API aufrufen kann. Der Anwendungsschlüssel wird jedoch nicht verteilt bzw. sicher gespeichert und gilt daher nicht als sichere Anmeldeinformation. Deshalb sollten Sie in Erwägung ziehen, den Zugriff für Vorgänge, durch die Daten geändert werden oder die sich auf den mobilen Service auswirken, auf authentifizierte Benutzer zu beschränken. 
 
 Als Nächstes ändern Sie die Quickstart-App so, dass eine neue Schaltfläche und neuer Code hinzugefügt wird, der die neue benutzerdefinierte API asynchron aufruft.
-
 
 <!--HONumber=42-->

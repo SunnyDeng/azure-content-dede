@@ -21,7 +21,7 @@
 Die Funktion zum Sichern und Wiederherstellen von Azure-Websites ermöglicht die einfache Erstellung manueller oder automatischer Websitesicherungen. Sie können die Website in einem vorherigen Zustand wiederherstellen oder eine neue Website basierend auf einer Sicherung der Originalwebsite erstellen. 
 
 
-Informationen zum Wiederherstellen einer Azure-Website aus einer Sicherung finden Sie unter [Wiederherstellen von Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-restore/).
+Informationen zum Wiederherstellen einer Azure-Website aus einer Sicherung finden Sie unter [Wiederherstellen von Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-restore/).
 
 ##Themen in diesem Artikel
 
@@ -57,7 +57,7 @@ Diese Informationen werden in dem von Ihnen angegebenen Azure-Speicherkonto gesi
 <a name="requirements"></a>
 ##Anforderungen und Einschränkungen
 
-* Die Funktion zum Sichern und Wiederherstellen erfordert, dass sich die Website auf der Stufe "Standard" befindet. Weitere Informationen zum Skalieren von Websites auf der Stufe "Standard" finden Sie unter [Skalieren von Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-scale/). 
+* Die Funktion zum Sichern und Wiederherstellen erfordert, dass sich die Website auf der Stufe "Standard" befindet. Weitere Informationen zum Skalieren von Websites auf der Stufe "Standard" finden Sie unter [Skalieren von Websites](http://azure.microsoft.com/documentation/articles/web-sites-scale/). 
 
 * Die Funktion zum Sichern und Wiederherstellen setzt ein Azure-Speicherkonto voraus, das zum selben Abonnement wie die zu sichernde Website gehören muss. Falls Sie noch nicht über ein Speicherkonto verfügen, können Sie es erstellen, indem Sie im linken Bereich des Azure-Portals auf die Schaltfläche **Speicher** (Rastersymbol) und anschließend unten in der Befehlsleiste auf **Neu** klicken. Weitere Informationen zu Azure-Speicherkonten erhalten Sie über die [Links](#moreaboutstorage) am Ende dieses Artikels.
 
@@ -134,9 +134,9 @@ Die Namen der ZIP- und der XML-Sicherungsdatei bestehen aus dem Namen der Websit
 
 Die mit der ZIP-Datei gespeicherte XML-Datei enthält den Datenbankdateinamen unter *backupdescription* > *databases* > *databasebackupdescription* > *filename*.
 
-Die Datenbank-Sicherungsdatei selbst ist im Stamm der ZIP-Datei gespeichert. Bei SQL-Datenbanken ist dies eine BACPAC-Datei (ohne Dateierweiterung), die importiert werden kann. Wenn Sie eine neue SQL-Datenbank erstellen möchten, die auf dem BACPAC-Export basiert, führen Sie die Schritte im Artikel [Importieren einer BACPAC-Datei zum Erstellen einer neuen Benutzerdatenbank](http://technet.microsoft.com/de-de/library/hh710052.aspx) aus.
+Die Datenbank-Sicherungsdatei selbst ist im Stamm der ZIP-Datei gespeichert. Bei SQL-Datenbanken ist dies eine BACPAC-Datei (ohne Dateierweiterung), die importiert werden kann. Wenn Sie eine neue SQL-Datenbank erstellen möchten, die auf dem BACPAC-Export basiert, führen Sie die Schritte im Artikel [Importieren einer BACPAC-Datei zum Erstellen einer neuen Benutzerdatenbank](http://technet.microsoft.com/library/hh710052.aspx) aus.
 
-Informationen zum Wiederherstellen einer Azure-Website (einschließlich Datenbank) mithilfe des Azure-Verwaltungsportals finden Sie unter [Wiederherstellen einer Microsoft Azure-Website]( http://azure.microsoft.com/de-de/documentation/articles/web-sites-restore/).
+Informationen zum Wiederherstellen einer Azure-Website (einschließlich Datenbank) mithilfe des Azure-Verwaltungsportals finden Sie unter [Wiederherstellen einer Microsoft Azure-Website]( http://azure.microsoft.com/documentation/articles/web-sites-restore/).
 
 > [AZURE.NOTE] Wenn Sie die Dateien im Container **websitebackups** ändern, kann die Sicherung ungültig werden und nicht mehr wiederhergestellt werden.
 
@@ -150,19 +150,19 @@ Informationen zum Wiederherstellen einer Azure-Website (einschließlich Datenban
 
 <a name="nextsteps"></a>
 ## Nächste Schritte
-Informationen zum Wiederherstellen einer Azure-Website aus einer Sicherung finden Sie unter [Wiederherstellen von Azure-Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-restore/).
+Informationen zum Wiederherstellen einer Azure-Website aus einer Sicherung finden Sie unter [Wiederherstellen von Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-restore/).
 
-Informationen zu den ersten Schritten in Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](http://azure.microsoft.com/de-de/pricing/free-trial/).
+Informationen zu den ersten Schritten in Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
 
 <a name="moreaboutstorage"></a>
 ### Weitere Informationen zu Speicherkonten
 
-[Was ist ein Speicherkonto?](http://www.windowsazure.com/de-de/documentation/articles/storage-whatis-account/)
+[Was ist ein Speicherkonto?](http://azure.microsoft.com/documentation/articles/storage-whatis-account/)
 
-[Vorgehensweise: Erstellen eines Speicherkontos](http://www.windowsazure.com/de-de/documentation/articles/storage-create-storage-account/)
+[Vorgehensweise: Erstellen eines Speicherkontos](http://azure.microsoft.com/documentation/articles/storage-create-storage-account/)
 
-[Überwachen eines Speicherkontos](http://www.windowsazure.com/de-de/documentation/articles/storage-monitor-storage-account/)
+[Überwachen eines Speicherkontos](http://azure.microsoft.com/documentation/articles/storage-monitor-storage-account/)
 
 [Grundlegendes zu den Kosten des Microsoft Azure-Speichers](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
 

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="02/05/2015" 
+	ms.date="09/25/2014" 
 	ms.author="huvalo"/>
 
 
@@ -45,13 +45,13 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 1. Befolgen Sie die [hier][portal-vm] aufgeführten Anweisungen, um einen virtuellen Azure-Computer der  *Ubuntu Server 14.04 LTS*-Verteilung zu erstellen.
 
-  **Hinweis:** Sie müssen  *only* den virtuellen Computer erstellen. Stoppen Sie im Abschnitt  *How to log on to the virtual machine after you create it*.
+  **Hinweis:** Sie müssen  *nur* den virtuellen Computer erstellen. Hören Sie mit Abschnitt  *Anmelden bei einem virtuellen Computer nach dessen Erstellung* auf.
 
 1. Weisen Sie Azure an, den Port **80**-Datenverkehr aus dem Web an Port **80** auf dem virtuellen Computer zu leiten.
-	* Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte  *ENDPOINTS*.
-	* Klicken Sie unten auf der Seite auf  *ADD*.
+	* Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte  *ENDPUNKTE*.
+	* Klicken Sie unten auf der Seite auf  *HINZUFÜGEN*.
 	![add endpoint](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
-	* Öffnen Sie den  *PUBLIC PORT 80* des  *TCP*-Protokolls als  *PRIVATE PORT 80*.
+	* Öffnen Sie  *ÖFFENTLICHER PORT 80* des  *TCP*-Protokolls als  *PRIVATER PORT 80*.
 	![port80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
 
 ## <a id="setup"> </a>Einrichten der Entwicklungsumgebung
@@ -135,4 +135,7 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 
 [portal-vm]: /de-de/manage/linux/tutorials/virtual-machine-from-gallery/
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

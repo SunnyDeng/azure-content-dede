@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Verwenden von Offlinedaten in Mobile Services (Windows Store) | Mobile Dev Center" description="Erfahren Sie, wie Sie Azure Mobile Services verwenden, um Offlinedaten in Ihrer Windows Store-Anwendung zwischenzuspeichern und zu synchronisieren." documentationCenter="windows" authors="wesmc7777" manager="dwrede" editor="" services=""/>
+<properties 
+	pageTitle="Verwenden von Offlinedaten in Mobile Services (Windows Store) | Mobile Dev Center" 
+	description="Erfahren Sie, wie Sie Azure Mobile Services verwenden, um Offlinedaten in Ihrer Windows Store-Anwendung zwischenzuspeichern und zu synchronisieren." 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor="" 
+	services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="12/10/2014" ms.author="wesmc"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="12/10/2014" 
+	ms.author="wesmc"/>
 
 # Verwenden der Offlinedatensynchronisierung in Mobile Services
 
@@ -22,7 +36,7 @@ In diesem Lernprogramm aktualisieren Sie das Universal App-Projekt aus dem Lernp
 
 >[AZURE.NOTE] In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services verwenden können, um Daten in einer Windows Store-App zu speichern und abzurufen. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 >
->Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>. 
+>Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>. 
 >
 >Das ältere Windows Phone 8-Lernprogramm für Visual Studio 2012 ist hier weiterhin verfügbar: [Windows Phone 8-Lernprogramm für Visual Studio 2012].
 
@@ -41,7 +55,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 * [Azure Mobile Services SQLite Store, Version 1.0.0 (oder höher)][SQLite Store Nuget]
 * [SQLite für Windows 8.1](www.sqlite.org/downloads)
 
->[AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>. 
+>[AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>. 
 
 ## <a name="enable-offline-app"></a>Aktualisieren der App für die Unterstützung von Offlinefunktionen
 
@@ -125,7 +139,8 @@ Offlinefunktionen von Azure Mobile Services ermöglichen Ihnen die Interaktion m
         private async Task InsertTodoItem(TodoItem todoItem)
         {
             await todoTable.InsertAsync(todoItem);
-            items.Add(todoItem);
+            ite
+	ms.Add(todoItem);
 
             await SyncAsync(); // offline sync
         }
@@ -133,8 +148,10 @@ Offlinefunktionen von Azure Mobile Services ermöglichen Ihnen die Interaktion m
         private async Task UpdateCheckedTodoItem(TodoItem item)
         {
             await todoTable.UpdateAsync(item);
-            items.Remove(item);
-            ListItems.Focus(Windows.UI.Xaml.FocusState.Unfocused);
+            ite
+	ms.Remove(item);
+            ListIte
+	ms.Focus(Windows.UI.Xaml.FocusState.Unfocused);
 
             await SyncAsync(); // offline sync
         }

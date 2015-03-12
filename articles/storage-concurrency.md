@@ -79,7 +79,7 @@ Der folgende C#-Codeausschnitt (der Client Storage Library 4.2.0 verwendet) zeig
 	        throw;
 	}  
 
-Der Speicherdienst unterstützt auch weitere bedingte Header wie **If-Modified-Since**, **If-Unmodified-Since** und **If-None-Match** sowie Kombinationen davon. Weitere Informationen finden Sie unter [Angeben von bedingten Headern für Vorgänge des Blob-Diensts](http://msdn.microsoft.com/de-de/library/dd179371.aspx) auf MSDN.  
+Der Speicherdienst unterstützt auch weitere bedingte Header wie **If-Modified-Since**, **If-Unmodified-Since** und **If-None-Match** sowie Kombinationen davon. Weitere Informationen finden Sie unter [Angeben von bedingten Headern für Vorgänge des Blob-Diensts](http://msdn.microsoft.com/library/dd179371.aspx) auf MSDN.  
 
 In der folgenden Tabelle sind die Containervorgänge zusammengefasst, die bedingte Header wie **If-Match** in der Anforderung akzeptieren und in der Antwort einen ETag-Wert zurückgeben.  
 
@@ -121,7 +121,7 @@ Get Page Ranges|	Ja|	Ja
 (*) "Lease Blob" ändert das ETag eines Blob nicht.  
 
 ##Pessimistische Nebenläufigkeit für Blobs
-Um ein Blob für die exklusive Verwendung zu sperren, können Sie dafür eine [Lease](http://msdn.microsoft.com/de-de/library/azure/ee691972.aspx) abrufen. Wenn Sie eine Lease erwerben, geben Sie an, wie lange Sie die Lease benötigen: Das kann zwischen 15 und 60 Sekunden oder unendlich sein, was zu einer exklusiven Sperre führt. Sie können eine begrenzte Lease erneuern, um sie zu verlängern, und Sie können eine Lease freigeben, wenn sie nicht mehr benötigt wird. Der Blob-Dienst gibt begrenzte Leases automatisch frei, wenn sie abgelaufen sind.  
+Um ein Blob für die exklusive Verwendung zu sperren, können Sie dafür eine [Lease](http://msdn.microsoft.com/library/azure/ee691972.aspx) abrufen. Wenn Sie eine Lease erwerben, geben Sie an, wie lange Sie die Lease benötigen: Das kann zwischen 15 und 60 Sekunden oder unendlich sein, was zu einer exklusiven Sperre führt. Sie können eine begrenzte Lease erneuern, um sie zu verlängern, und Sie können eine Lease freigeben, wenn sie nicht mehr benötigt wird. Der Blob-Dienst gibt begrenzte Leases automatisch frei, wenn sie abgelaufen sind.  
 
 Leases ermöglichen die Unterstützung verschiedener Synchronisierungsstrategien, einschließlich exklusiver Schreib-/gemeinsamer Lesezugriff, exklusiver Schreib-/exklusiver Lesezugriff und gemeinsamer Schreib-/exklusiver Lesezugriff. Ist eine Lease vorhanden, erzwingt der Speicherdienst exklusive Schreibzugriffe (put-, set- und delete-Vorgänge). Um Exklusivität von Lesevorgängen sicherzustellen, muss der Entwickler jedoch dafür sorgen, dass alle Clientanwendungen eine Lease-ID verwenden und dass jeweils nur ein Client über eine gültige Lease-ID verfügt. Lesevorgänge, die keine Lease-ID enthalten, führen zu gemeinsamen Lesevorgängen.  
 
@@ -152,7 +152,7 @@ Der folgende C#-Codeausschnitt zeigt an einem Beispiel, wie eine exklusive Lease
 	        throw;
 	}  
 
-Wenn Sie an einem Blob mit Lease einen Schreibvorgang versuchen, ohne die Lease-ID zu übergeben, erzeugt die Anforderung einen 412-Fehler. Wenn die Lease abläuft, bevor die **UploadText**-Methode aufgerufen wird, die Lease-ID aber dennoch übergeben wird, erzeugt die Anforderung ebenfalls einen **412**-Fehler. Weitere Informationen zum Verwalten von Lease-Ablaufzeiten und Lease-IDs finden Sie in der REST-Dokumentation [Leasen eines Blob](http://msdn.microsoft.com/de-de/library/azure/ee691972.aspx).  
+Wenn Sie an einem Blob mit Lease einen Schreibvorgang versuchen, ohne die Lease-ID zu übergeben, erzeugt die Anforderung einen 412-Fehler. Wenn die Lease abläuft, bevor die **UploadText**-Methode aufgerufen wird, die Lease-ID aber dennoch übergeben wird, erzeugt die Anforderung ebenfalls einen **412**-Fehler. Weitere Informationen zum Verwalten von Lease-Ablaufzeiten und Lease-IDs finden Sie in der REST-Dokumentation [Leasen eines Blob](http://msdn.microsoft.com/library/azure/ee691972.aspx).  
 
 Zur Verwaltung der pessimistischen Nebenläufigkeit können die folgenden Blob-Vorgänge Leases verwenden:  
 
@@ -189,9 +189,9 @@ Zur Verwaltung der pessimistischen Nebenläufigkeit können die folgenden Contai
 
 Weitere Informationen finden Sie unter:  
 
-- [Angeben von bedingten Headern für Vorgänge des Blob-Diensts](http://msdn.microsoft.com/de-de/library/azure/dd179371.aspx)
-- [Lease Container](http://msdn.microsoft.com/de-de/library/azure/jj159103.aspx)
-- [Lease Blob](http://msdn.microsoft.com/de-de/library/azure/ee691972.aspx) 
+- [Angeben von bedingten Headern für Vorgänge des Blob-Diensts](http://msdn.microsoft.com/library/azure/dd179371.aspx)
+- [Lease Container](http://msdn.microsoft.com/library/azure/jj159103.aspx)
+- [Lease Blob](http://msdn.microsoft.com/library/azure/ee691972.aspx) 
 
 #Verwalten der Nebenläufigkeit im Tabellendienst
 Wenn Sie mit Entitäten arbeiten, verwendet der Tabellendienst standardmäßig optimistische Nebenläufigkeitsprüfungen. Darin unterscheidet er sich vom Blob-Dienst, wo die Durchführung optimistischer Nebenläufigkeitsprüfungen explizit gewählt werden muss. Ein weiterer Unterschied zwischen Tabellendienst und Blob-Dienst besteht darin, dass Sie mit dem Tabellendienst nur das Nebenläufigkeitsverhalten von Entitäten verwalten können, während Sie mit dem Blob-Dienst die Nebenläufigkeit sowohl von Containern als auch von Blobs verwalten können.  
@@ -245,7 +245,7 @@ Bei der Entwicklung skalierbarer Anwendung sollten Entwickler grundsätzlich auf
 
 Weitere Informationen finden Sie unter:  
 
-- [Vorgänge für Entitäten](http://msdn.microsoft.com/de-de/library/azure/dd179375.aspx)  
+- [Vorgänge für Entitäten](http://msdn.microsoft.com/library/azure/dd179375.aspx)  
 
 #Verwalten der Nebenläufigkeit im Warteschlangendienst
 Ein Szenario, in dem Nebenläufigkeit ein Problem im Warteschlangendienst darstellt, ist der Abruf von Nachrichten aus einer Warteschlange durch mehrere Clients. Wenn eine Nachricht aus der Warteschlange abgerufen wird, enthält die Antwort die Nachricht und einen Pop-Belegwert, der zum Löschen der Nachricht erforderlich ist. Die Nachricht wird nicht automatisch aus der Warteschlange gelöscht, sondern erst, nachdem sie abgerufen wurde. Für das mit dem Parameter visibilitytimeout angegebene Zeitintervall ist die Nachricht für andere Clients nicht sichtbar. Es wird erwartet, dass die Nachricht vom abrufenden Client gelöscht wird, nachdem sie verarbeitet wurde und bevor die vom Element TimeNextVisible der Antwort angegebene Zeit verstrichen ist. Diese Zeit wird anhand des Werts des Parameters visibilitytimeout berechnet. Der Wert von visibilitytimeout wird zu der Zeit addiert, zu der die Nachricht abgerufen wird, um den Wert von TimeNextVisible zu ermitteln.  
@@ -254,8 +254,8 @@ Der Warteschlangendienst unterstützt weder die optimistische noch die pessimist
 
 Weitere Informationen finden Sie unter:  
 
-- [REST-API des Warteschlangendiensts](http://msdn.microsoft.com/de-de/library/azure/dd179363.aspx)
-- [Get Messages](http://msdn.microsoft.com/de-de/library/azure/dd179474.aspx)  
+- [REST-API des Warteschlangendiensts](http://msdn.microsoft.com/library/azure/dd179363.aspx)
+- [Get Messages](http://msdn.microsoft.com/library/azure/dd179474.aspx)  
 
 #Verwalten der Nebenläufigkeit im Dateidienst
 Der Zugriff auf den Dateidienst kann unter Verwendung zweier unterschiedlicher Protokollendpunkte - SMB und REST - erfolgen. Der REST-Dienst unterstützt weder die optimistische noch die pessimistische Sperrung, und alle Aktualisierungen folgen der Strategie "Letzter Schreiber gewinnt". SMB-Clients, die Dateifreigaben einbinden, können Dateisystem-Sperrmechanismen verwenden, um den Zugriff auf freigegebene Dateien zu verwalten - einschließlich der Möglichkeit, eine pessimistische Sperrung durchzuführen. Wenn ein SMB-Client eine Datei öffnet, gibt er sowohl den Dateizugriffs- als auch den Freigabemodus an. Wird für den Dateizugriff die Option "Schreiben" oder "Lesen/Schreiben" zusammen mit dem Dateifreigabemodus "Kein" festgelegt, wird die Datei von einem SMB-Client gesperrt, bis die Datei geschlossen wird. Wenn ein REST-Vorgang an einer Datei versucht wird, die von einem SMB-Client gesperrt wurde, gibt der REST-Dienst den Statuscode 409 (Konflikt) mit dem Fehlercode SharingViolation zurück.  
@@ -264,7 +264,7 @@ Wenn ein SMB-Client eine Datei zum Löschen öffnet, markiert er die Datei als z
 
 Weitere Informationen finden Sie unter:  
 
-- [Verwalten von Dateisperren].(http://msdn.microsoft.com/de-de/library/azure/dn194265.aspx)  
+- [Verwalten von Dateisperren)]http://msdn.microsoft.com/library/azure/dn194265.aspx)  
 
 #Zusammenfassung und nächste Schritte
 Der Microsoft Azure-Speicherdienst ist auf die Anforderungen äußerst komplexer Online-Anwendungen zugeschnitten, zwingt Entwickler jedoch nicht zur Einschränkung oder Neukonzeption wichtiger Entwurfsvoraussetzungen wie Nebenläufigkeit und Datenkonsistenz, die sie inzwischen für selbstverständlich halten.  
@@ -275,10 +275,9 @@ Informationen zur vollständigen Beispielanwendung, auf die in diesem Blog verwi
 
 Weitere Informationen zu Azure Storage finden Sie unter:  
 
-- [Microsoft Azure Storage-Startseite](http://azure.microsoft.com/de-de/services/storage/)
-- [Einführung in Azure Storage](http://azure.microsoft.com/de-de/documentation/articles/storage-introduction/)
-- Storage - Erste Schritte für [Blob](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/), [Tabelle](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-tables/) und [Warteschlangen](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-queues/)
+- [Microsoft Azure Storage-Startseite](http://azure.microsoft.com/services/storage/)
+- [Einführung in Azure Storage](http://azure.microsoft.com/documentation/articles/storage-introduction/)
+- Storage - Erste Schritte für [Blob](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/), [Tabelle](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/) und [Warteschlangen](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-queues/)
 - Speicherarchitektur - [Windows Azure Storage: Ein hoch verfügbarer Cloud-Speicherdienst mit starker Konsistenz](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
-
 
 <!--HONumber=42-->

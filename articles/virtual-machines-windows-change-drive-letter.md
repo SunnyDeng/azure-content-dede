@@ -24,7 +24,7 @@ Bevor Sie beginnen, benötigen Sie einen Datenträger, der an den virtuellen Com
 
 Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stellen Sie sicher, dass Sie auch die virtuelle Festplatte in das Speicherkonto hochgeladen haben. Anweisungen finden Sie in den Schritten 3 und 4 in [Erstellen und Hochladen einer Windows Server-VHD nach Azure].
 
-> [AZURE.Warnung] , wenn Sie die Größe eines virtuellen Computers ändern, wodurch der virtuelle Computer auf einen anderen Host verschoben wird, ändert sich das temporäre Laufwerk wieder auf Laufwerk D.
+> [AZURE.WARNING] Wenn Sie die Größe eines virtuellen Computers ändern und der virtuelle Computer hierdurch auf einen anderen Host verschoben wird, wird das temporäre Laufwerk wieder Laufwerk D geändert.
 
 ##Ändern des Datenträgerbuchstabens
 
@@ -45,7 +45,7 @@ Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stell
 8.	Verschieben Sie "pagefile.sys" von dem anderen Datenträger zum Datenträger E.
 
 ##Zusätzliche Ressourcen
-[Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]
+[Anmelden bei einem virtuellen Computer unter Windows Server]
 
 [Trennen eines Datenträgers von einem virtuellen Computer]
 
@@ -54,11 +54,14 @@ Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stell
 <!--Link references-->
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer]: ../storage-windows-attach-disk
 [Informationen zu Datenträgern von virtuellen Computern in Azure]: ../http://msdn.microsoft.com/library/azure/dn790303.aspx
-[Erstellen und Hochladen eines Windows Servers-VHD in Azure]: ../virtual-machines-create-upload-vhd-windows-server/
-[Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: ../virtual-machines-log-on-windows-server/
+[Erstellen und Hochladen einer Windows Server-VHD nach Azure]: ../virtual-machines-create-upload-vhd-windows-server/
+[Anmelden bei einem virtuellen Computer unter Windows Server]: ../virtual-machines-log-on-windows-server/
 [Trennen eines Datenträgers von einem virtuellen Computer]: ../storage-windows-detach-disk/
-[Informationen zu Azure-Speicherkonten]: ../storage-whatis-account/
+[Über Azure-Speicherkonten]: ../storage-whatis-account/
 
 
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->

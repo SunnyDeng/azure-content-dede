@@ -1,6 +1,18 @@
-﻿<properties title="Monitor any web site's availability and responsiveness" pageTitle="Überwachen der Verfügbarkeit und Reaktionszeit von Websites" description="Richten Sie Webtests in Application Insights ein. Erhalten Sie Benachrichtigungen, wenn eine Website nicht mehr zur Verfügung steht oder langsam reagiert." metaKeywords="analytics web test availability" authors="awills"  manager="kamrani" />
+﻿<properties 
+	pageTitle="Überwachen der Verfügbarkeit und Reaktionszeit von Websites" 
+	description="Richten Sie Webtests in Application Insights ein. Erhalten Sie Benachrichtigungen, wenn eine Website nicht mehr zur Verfügung steht oder langsam reagiert."
+	services="application-insights" 
+	authors="alancameronwills" 
+	manager="kamrani"/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-10-30" ms.author="awills" />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2015-01-27" 
+	ms.author="awills"/>
  
 # Überwachen der Verfügbarkeit und Reaktionszeit von Websites
 
@@ -192,3 +204,5 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
 
 [azurewebtest]: ../insights-create-web-tests/
+
+<!--HONumber=46--> 

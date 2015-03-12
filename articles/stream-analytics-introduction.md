@@ -1,6 +1,20 @@
-﻿<properties title="Introduction to Azure Stream Analytics" pageTitle="Einführung in Stream Analytics | Azure" description="Grundlegendes zu Azure Stream Analytics" metaKeywords="" services="stream analytics" solutions="" documentationCenter="" authors="jgao" videoId="" scriptId="" manager="paulettm" editor="cgronlun"/>
+﻿<properties 
+	pageTitle="Einführung in Stream Analytics | Azure" 
+	description="Grundlegendes zu Azure Stream Analytics"
+	services="stream-analytics" 
+	documentationCenter="" 
+	authors="mumian" 
+	manager="paulettm" 
+	editor="cgronlun"/>
 
-<tags ms.service="stream-analytics" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="data-services" ms.date="10/28/2014" ms.author="jgao" />
+<tags 
+	ms.service="stream-analytics" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="data-services" 
+	ms.date="2/10/2015" 
+	ms.author="jgao"/>
 
 
 # Einführung in Azure Stream Analytics
@@ -121,3 +135,5 @@ Die Erwartungen für eine schnelle und flexible Ausführung im Unternehmen nehme
 [stream.analytics.get.started]: ../stream-analytics-get-started/
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
+
+<!--HONumber=46--> 

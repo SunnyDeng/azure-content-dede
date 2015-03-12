@@ -28,7 +28,7 @@ Es folgt ein Beispiel einer in Azure-Websites ausgeführten Organisationswebsite
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/corp-website-visio.svg" width="100%" height="100%"></object>
 
 > [WACOM.NOTE]
-> In diesem Leitfaden werden einige der häufigsten Themenbereiche und Aufgaben im Zusammenhang mit der Ausführung einer öffentlich zugänglichen Organisationswebsite in Azure-Websites vorgestellt. Es gibt jedoch andere gängige Lösungen, die Sie in Azure-Websites implementieren können. Diese Lösungen finden Sie in den anderen Leitfäden für <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/digital-marketing-campaign-solution-overview">digitale Marketingkampagnen</a> und <a href="http://www.windowsazure.com/de-de/manage/services/web-sites/business-application-solution-overview">Geschäftsanwendungen</a>.
+> In diesem Leitfaden werden einige der häufigsten Themenbereiche und Aufgaben im Zusammenhang mit der Ausführung einer öffentlich zugänglichen Organisationswebsite in Azure-Websites vorgestellt. Es gibt jedoch andere gängige Lösungen, die Sie in Azure-Websites implementieren können. Diese Lösungen finden Sie in den anderen Leitfäden für <a href="http://azure.microsoft.com/manage/services/web-sites/digital-marketing-campaign-solution-overview">digitale Marketingkampagnen</a> und <a href="http://azure.microsoft.com/manage/services/web-sites/business-application-solution-overview">Geschäftsanwendungen</a>.
 
 ### Neuerstellung oder Nutzen von vorhandenen Ressourcen
 
@@ -122,8 +122,8 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 
 [Skalierung nach oben und unten]:/de-de/manage/services/web-sites/how-to-scale-websites/
 [Azure-Verwaltungsportal]:http://manage.windowsazure.com/
-[Dienstverwaltungs-API]:http://msdn.microsoft.com/de-de/library/windowsazure/ee460799.aspx
-[PowerShell-Skripts]:http://msdn.microsoft.com/de-de/library/windowsazure/jj152841.aspx
+[Dienstverwaltungs-API]:http://msdn.microsoft.com/library/windowsazure/ee460799.aspx
+[PowerShell-Skripts]:http://msdn.microsoft.com/library/windowsazure/jj152841.aspx
 [Troy Hunt]:https://twitter.com/troyhunt
 [10 things I learned about rapidly scaling websites with Azure]:http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure-Redis-Cache]:/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/

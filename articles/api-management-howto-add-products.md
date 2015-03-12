@@ -1,6 +1,20 @@
-<properties pageTitle="How create and publish a product in Azure API Management" metaKeywords="" description="Learn how to create and publish products in Azure API Management." metaCanonical="" services="" documentationCenter="API Management" title="How create and publish a product in Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
+﻿<properties 
+	pageTitle="Erstellen und Veröffentlichen eines Produkts in Azure API Management" 
+	description="Erfahren Sie, wie Sie Produkte in Azure API Management erstellen und veröffentlichen." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/11/2015" 
+	ms.author="sdanie"/>
 
 # Erstellen und Veröffentlichen eines Produkts in der Azure API-Verwaltung
 
@@ -109,3 +123,5 @@ Sobald Sie die gewünschten APIs hinzugefügt und das Produkt veröffentlicht ha
   [Erstellen und Verwenden von Gruppen für Entwicklerkonten in der Azure API-Verwaltung]: ../api-management-howto-create-groups
   [Entwickler]: ./media/api-management-howto-add-products/api-management-developer-list.png
   [Erstellen und Konfigurieren erweiterter Produkteinstellungen in der Azure API-Verwaltung]: ../api-management-howto-product-with-rules
+
+<!--HONumber=46--> 

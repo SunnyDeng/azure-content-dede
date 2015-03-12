@@ -44,11 +44,10 @@ Sie können die IP-Adresse sowie den **awverify**-Namen und die **.azurewebsites
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-	> [AZURE.NOTE] Wenn **Domänen verwalten** nicht aktiviert ist, verwenden Sie eine kostenlose Website. Sie können bei einer kostenlosen Website keine benutzerdefinierten Domänennamen verwenden und müssen ein Upgrade zum Freigabe-, Basic- oder Standardmodus durchführen. Weitere Informationen zu den Website-Modi, darunter auch Informationen zum Ändern des Website-Modus, finden Sie unter [Skalieren von Websites](http://www.windowsazure.com/de-de/documentation/articles/web-sites-scale/).
+	> [AZURE.NOTE] Wenn **Domänen verwalten** nicht aktiviert ist, verwenden Sie eine kostenlose Website. Sie können bei einer kostenlosen Website keine benutzerdefinierten Domänennamen verwenden und müssen ein Upgrade zum Freigabe-, Basic- oder Standardmodus durchführen. Weitere Informationen zu den Website-Modi, darunter auch Informationen zum Ändern des Website-Modus, finden Sie unter [Skalieren von Websites](http://azure.microsoft.com/documentation/articles/web-sites-scale/).
 
 6. Im Dialogfeld **Benutzerdefinierte Domänen verwalten** werden dann die **awverify**-Information, der momentan zugewiesene **.azurewebsites.net**-Domänenname und die virtuelle IP-Adresse angezeigt. Speichern Sie diese Informationen, das sie beim Erstellen der DNS-Einträge benötigt werden.
 
 	![](./media/custom-dns-web-site/managecustomdomains.png)
-
 
 <!--HONumber=42-->

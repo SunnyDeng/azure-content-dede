@@ -108,10 +108,10 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 > [AZURE.NOTE] Dieses Lernprogramm verwendet eine einzelne Instanz von [EventProcessorHost]. Um den Durchsatz zu erhöhen, wird empfohlen, dass Sie mehrere Instanzen von [EventProcessorHost] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung] gezeigt. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *all* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt worden sind. Weitere Informationen zu diesen Themen finden Sie unter [Übersicht über Ereignis-Hubs] und [Event Hubs Programming Guide].
 
 <!-- Links -->
-[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/de-de/library/azure/dn821413.aspx
+[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn821413.aspx
 [Beispiel "Skalieren der Ereignisverarbeitung"]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
-[Azure-Speicherkonto]: http://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/
-[EventProcessorHost]: http://msdn.microsoft.com/de-de/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx 
+[Azure-Speicherkonto]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/
+[EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx 
 
 <!-- Images -->
 
@@ -120,5 +120,4 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-[Event Hubs-Entwicklerhandbuch]: http://msdn.microsoft.com/de-de/library/azure/dn789972.aspx
-<!--HONumber=42-->
+[Event Hubs-Entwicklerhandbuch]: http://msdn.microsoft.com/library/azure/dn789972.aspx<!--HONumber=42-->

@@ -1,8 +1,22 @@
-﻿<properties title="Azure Notification Hubs Secure Push" pageTitle="Azure-Benachrichtigungs-Hubs - Sichere Pushbenachrichtigungen"," MetaKeywords "="Azure-Pushbenachrichtigungen, Azure-Benachrichtigungs-Hubs, sichere Pushbenachrichtigung" description="Erfahren Sie, wie Sie sichere Pushbenachrichtigungen von Azure an eine Android-App senden. Die Codebeispiele sind in Java und C# geschrieben." documentationCenter="Mobile" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="sethm" manager="timlt" />
+﻿<properties 
+	pageTitle="Azure Notification Hubs - Sichere Pushbenachrichtigungen" 
+	description="Erfahren Sie mehr über das Senden sicherer Pushbenachrichtigungen an eine Android-App von Azure. Die Codebeispiele wurden in Java und C# geschrieben." 
+	documentationCenter="android" 
+	authors="RickSaling" 
+	manager="dwrede" 
+	editor="" 
+	services="notification-hubs"/>
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-android" ms.devlang="java" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
+<tags 
+	ms.service="notification-hubs" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="" 
+	ms.devlang="java" 
+	ms.topic="article" 
+	ms.date="09/24/2014" 
+	ms.author="ricksal"/>
 
-#Azure-Benachrichtigungs-Hubs - Sichere Pushbenachrichtigungen
+#Azure Notification Hubs - Sichere Pushbenachrichtigungen
 
 <div class="dev-center-tutorial-selector sublanding"> 
     	<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push/" title="Windows Universal">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/" title="iOS">iOS</a>
@@ -26,23 +40,23 @@ Es ist wichtig zu beachten, dass wir im vorstehenden Ablauf (und diesem Lernprog
 
 Dieses Lernprogramm zu sicheren Pushbenachrichtigungen veranschaulicht das sichere Senden einer Pushbenachrichtigung. Es baut auf dem Lernprogramm **Benachrichtigen von Benutzern** auf. Daher sollten Sie die Schritte in diesem Lernprogramm zuerst durchführen.
 
-> [AZURE.NOTE] Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Benachrichtigungs-Hub, wie unter [Erste Schritte mit Benachrichtigungs-Hubs (Android)](http://azure.microsoft.com/de-de/documentation/articles/notification-hubs-android-get-started/) beschrieben, erstellt und konfiguriert haben.
+> [AZURE.NOTE] Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub, wie unter [Erste Schritte mit Notification Hubs (Android)](http://azure.microsoft.com/ documentation/articles/notification-hubs-android-get-started/) beschrieben, erstellt und konfiguriert haben.
 
-[WACOM.INCLUDE [notification-hubs-aspnet-backend-securepush](../includes/notification-hubs-aspnet-backend-securepush.md)]
+[AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../includes/notification-hubs-aspnet-backend-securepush.md)]
 
 ## Ändern des Android-Projekts
 
-Nachdem Sie Ihr App-Back-End so geändert haben, dass lediglich die *ID* einer Benachrichtigung gesendet wird, müssen Sie Ihre Android-App so ändern, dass sie diese Benachrichtigung verarbeitet und einen Rückruf an das Back-End sendet, um die anzuzeigende sichere Nachricht abzurufen.
+Nachdem Sie Ihr App-Back-End so geändert haben, dass lediglich die  *id* einer Benachrichtigung gesendet wird, müssen Sie Ihre Android-App so ändern, dass sie diese Benachrichtigung verarbeitet und einen Rückruf an das Back-End sendet, um die anzuzeigende sichere Nachricht abzurufen.
 Um dieses Ziel zu erreichen, müssen Sie sicherstellen, dass Ihre Android-App weiß, wie sie sich beim Empfang von Pushbenachrichtigungen beim Back-End authentifizieren muss.
 
-Wir ändern nun den Ablauf der *Anmeldung*, um den Wert des Authentifizierungsheaders in den freigegebenen Einstellungen Ihrer App zu speichern. Sie können entsprechende Mechanismen verwenden, um beliebige Authentifizierungstoken (z. B. OAuth-Token) zu speichern, die die App verwenden muss, ohne dass Benutzeranmeldeinformationen eingegeben werden müssen.
+Wir ändern nun den Ablauf der  *login*, um den Wert des Authentifizierungsheaders in den freigegebenen Einstellungen Ihrer App zu speichern. Sie können entsprechende Mechanismen verwenden, um beliebige Authentifizierungstoken (z. B. OAuth-Token) zu speichern, die die App verwenden muss, ohne dass Benutzeranmeldeinformationen eingegeben werden müssen.
 
 1. Fügen Sie in Ihrem Android-App-Projekt am Anfang der **MainActivity**-Klasse die folgenden Konstanten hinzu:
 
 		public static final String NOTIFY_USERS_PROPERTIES = "NotifyUsersProperties";
 		public static final String AUTHORIZATION_HEADER_PROPERTY = "AuthorizationHeader";
 
-2. Aktualisieren Sie in der **MainActivity**-Klasse die `getAuthorizationHeader()`-Methode so, dass sie folgenden Code enthält:
+2. Aktualisieren Sie in der **MainActivity**-Klasse die  `getAuthorizationHeader()`-Methode mit folgendem Code:
 
 		private String getAuthorizationHeader() throws UnsupportedEncodingException {
 			EditText username = (EditText) findViewById(R.id.usernameText);
@@ -56,13 +70,13 @@ Wir ändern nun den Ablauf der *Anmeldung*, um den Wert des Authentifizierungshe
     		return basicAuthHeader;
 		}
 
-3. Fügen Sie am Anfang der **MainActivity**-Datei die folgenden `import`-Anweisungen hinzu:
+3. Fügen Sie die folgenden  `import`-Anweisungen am Anfang der **MainActivity**-Datei hinzu:
 
 		import android.content.SharedPreferences;
 
 Nun ändern wir den Handler, der beim Empfang der Benachrichtigung aufgerufen wird.
 
-4. Ändern Sie in der **MyHandler**-Klasse die `OnReceive()`-Methode so, dass sie folgenden Code enthält:
+4. Ändern Sie in der **MyHandler**-Klasse die  `OnReceive()`-Methode so, dass sie folgenden Code enthält:
 
 		public void onReceive(Context context, Bundle bundle) {
 	    	ctx = context;   
@@ -70,7 +84,7 @@ Nun ändern wir den Handler, der beim Empfang der Benachrichtigung aufgerufen wi
 	    	retrieveNotification(secureMessageId);
 		}
 
-5. Fügen Sie dann die `retrieveNotification()`-Methode hinzu, und ersetzen Sie dabei den Platzhalter `{back-end endpoint}` durch den Back-End-Endpunkt, der beim Bereitstellen Ihres Back-Ends abgerufen wurde:
+5. Fügen Sie dann die  `retrieveNotification()`-Methode hinzu, und ersetzen Sie dabei den Platzhalter  `{back-end endpoint}` durch den Back-End-Endpunkt, den Sie beim Bereitstellen des Back-Ends erhalten haben:
 
 		private void retrieveNotification(final String secureMessageId) {
 			SharedPreferences sp = ctx.getSharedPreferences(MainActivity.NOTIFY_USERS_PROPERTIES, Context.MODE_PRIVATE);
@@ -116,4 +130,4 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 
 4. Klicken Sie auf der Benutzerfläche der Android-App auf **Anmelden**. Klicken Sie anschließend auf **Puschbenachrichtigung senden**.
 
-<!--HONumber=35.2-->
+<!--HONumber=45--> 

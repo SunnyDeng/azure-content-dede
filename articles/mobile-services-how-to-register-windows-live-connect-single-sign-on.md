@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Registrieren für die einmalige Anmeldung - Azure Mobile Services" description="Erfahren Sie mehr über die Registrierung für die Authentifizierung durch einmaliges Anmelden in Ihrer Azure Mobile Services-Anwendung." services="mobile-services" documentationCenter="" authors="ggailey777" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Registrieren für die einmalige Anmeldung - Azure Mobile Services" 
+	description="Erfahren Sie mehr über die Registrierung für die Authentifizierung durch einmaliges Anmelden in Ihrer Azure Mobile Services-Anwendung." 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="glenga"/>
 
 # Registrieren Ihrer Windows Store-App für die einmalige Anmeldung mit Windows Live Connect
 

@@ -1,30 +1,44 @@
-﻿<properties pageTitle="Verwenden von Benachrichtigungs-Hubs zum Übermitteln von aktuellen Nachrichten (Windows Phone)" metaKeywords="" description="Verwenden Sie Azure Notification Hubs mit Tags in Registrierungen zum Senden aktueller Nachrichten an eine Windows Phone-App." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Use Notification Hubs to send breaking news" authors="glenga" solutions="" manager="dwrede" editor="" />
+<properties 
+	pageTitle="Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten (Windows Phone)" 
+	description="Verwenden Sie Azure Notification Hubs zum Verwenden von Tags in Registrierungen, um aktuelle Nachrichten an eine Windows Phone-App zu senden." 
+	services="notification-hubs" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="notification-hubs" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="12/03/2014" ms.author="glenga" />
+<tags 
+	ms.service="notification-hubs" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="12/03/2014" 
+	ms.author="glenga"/>
 
-# Verwenden von Benachrichtigungs-Hubs zum Übermitteln von aktuellen Nachrichten
+# Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten
 <div class="dev-center-tutorial-selector sublanding"> 
     	<a href="/de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/" title="Windows Universal">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-windows-phone-send-breaking-news/" title="Windows Phone" class="current">Windows Phone</a><a href="/de-de/documentation/articles/notification-hubs-ios-send-breaking-news/" title="iOS">iOS</a><a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/" title="Android">Android</a>
 </div>
 
-In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Benachrichtigungen zu aktuellen Nachrichten an eine Windows Phone 8.0/8.1 Silverlight-App senden können. Wenn Ihr Ziel eine Windows Store- oder Windows Phone 8.1-App  ist, konsultieren Sie die [Windows Universal](/ de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/)-Version. Sie werden anschließend in der Lage sein, sich für Kategorien aktueller Nachrichten zu registrieren, die Sie interessieren, und nur Pushbenachrichtigungen für diese Kategorien zu empfangen. Dieses Szenario ist ein häufiges Muster für viele Anwendungen, bei denen Benachrichtigungen an Benutzergruppen gesendet werden müssen, die zuvor Interesse daran bekundet haben, zum Beispiel RSS-Reader, Apps für Musikliebhaber, etc. 
+In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Benachrichtigungen zu aktuellen Nachrichten an eine Windows Phone 8.0/8.1 Silverlight-App senden können. Wenn Ihr Ziel eine Windows Store- oder Windows Phone 8.1-App  ist, konsultieren Sie die [Windows Universal](/de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/)-Version. Sie werden anschließend in der Lage sein, sich für Kategorien aktueller Nachrichten zu registrieren, die Sie interessieren, und nur Pushbenachrichtigungen für diese Kategorien zu empfangen. Dieses Szenario ist ein häufiges Muster für viele Anwendungen, bei denen Benachrichtigungen an Benutzergruppen gesendet werden müssen, die zuvor Interesse daran bekundet haben, zum Beispiel RSS-Reader, Apps für Musikliebhaber, etc. 
 
-Übertragungsszenarien werden durch das Einfügen von einem oder mehreren _Tags_ ermöglicht, wenn eine Registrierung im Benachrichtigungs-Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Leitfaden zu Benachrichtigungs-Hubs]. 
+Übertragungsszenarien werden durch das Einfügen von einem oder mehreren Tags möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Notification Hubs-Leitfaden]. 
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung dieses Szenarios behandelt:
 
 1. [Hinzufügen der Kategorieauswahl zur App]
 2. [Registrieren für Benachrichtigungen]
 3. [Senden von Benachrichtigungen von Ihrem Back-End aus]
-4. [Ausführen der Anwendung und Erzeugen von Benachrichtigungen]
+4. [Ausführen der App und Erzeugen von Benachrichtigungen]
 
-Dieses Thema baut auf der App auf, die Sie in [Erste Schritte mit Benachrichtigungs-Hubs] erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Benachrichtigungs-Hubs] abgeschlossen haben.
+Dieses Thema baut auf der App auf, die Sie in [Erste Schritte mit Notification Hubs] erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs] abgeschlossen haben.
 
 ##<a name="adding-categories"></a>Hinzufügen der Kategorieauswahl zur App
 
-Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen Hauptseite hinzuzufügen, welche dem Benutzer die Auswahl der Kategorien für die Registrierung ermöglichen. Die durch den Benutzer ausgewählten Kategorien werden auf dem Gerät gespeichert. Beim Starten der App wird eine Geräteregistrierung in Ihrem Benachrichtigungs-Hub mit den ausgewählten Kategorien als Tags erstellt. 
+Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen Hauptseite hinzuzufügen, welche dem Benutzer die Auswahl der Kategorien für die Registrierung ermöglichen. Die durch den Benutzer ausgewählten Kategorien werden auf dem Gerät gespeichert. Beim Starten der App wird eine Geräteregistrierung in Ihrem Notification Hub mit den ausgewählten Kategorien als Tags erstellt. 
 
-1. Öffnen Sie die Projektdatei "MainPage.xaml", und ersetzen Sie die **Grid**-Elemente namens `TitlePanel` und `ContentPanel` durch den folgenden Code:
+1. Öffnen Sie die Datei "MainPage.xaml", und ersetzen Sie die **Grid**-Elemente namens  `TitlePanel` und  `ContentPanel` durch den folgenden Code:
 			
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Breaking News" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
@@ -99,11 +113,9 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 
     Diese Klasse verwendet den lokalen Speicher, um Nachrichtenkategorien zu speichern, die das Gerät empfangen soll. Sie enthält zudem Methoden zum Registrieren dieser Kategorien.
 
-4. Ersetzen Sie im obigen Code die Platzhalter `<hub name>` und `<connection string with listen access>` durch den Namen Ihres Benachrichtigungs-Hubs und die Verbindungszeichenfolge für *DefaultListenSharedAccessSignature*, die Sie zuvor erhalten haben.
+4. Ersetzen Sie im Code oben die Platzhalter <hub name> und <connection string with listen access> durch den Namen Ihres Notification Hub und die Verbindungszeichenfolge für *DefaultListenSharedAccessSignature*, die Sie zuvor erhalten haben.
 
-	<div class="dev-callout"><strong>Note</strong> 
-		<p>Because credentials that are distributed with a client app are not generally secure, you should only distribute the key for listen access with your client app. Listen access enables your app to register for notifications, but existing registrations cannot be modified and notifications cannot be sent. The full access key is used in a secured backend service for sending notifications and changing existing registrations.</p>
-	</div> 
+	> [AZURE.NOTE] Da Anmeldenamen, die mit einer Client-App verteilt werden, nicht sehr sicher sind, sollten Sie nur den Schlüssel für den Abhörzugriff mit Ihrer Client-App verteilen. Der Abhörzugriff ermöglicht der App, sich für Benachrichtigungen zu registrieren, aber es können keine vorhandenen Registrierungen geändert und keine Benachrichtigungen versendet werden. Der Vollzugriffsschlüssel wird in einem gesicherten Back-End-Dienst für das Versenden von Benachrichtigungen und das Ändern vorhandener Benachrichtigungen verwendet.
 
 4. Fügen Sie in der Projektdatei "App.xaml.cs" der **App**-Klasse die folgende Eigenschaft hinzu:
 
@@ -132,17 +144,15 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 		    MessageBox.Show("Subscribed to: " + string.Join(",", categories));
 		}
 	
-	Diese Methode erstellt eine Liste von Kategorien und verwendet die **Notifications**-Klasse zum Speichern der Liste im lokalen Speicher sowie zum Registrieren der entsprechenden Tags bei Ihrem Benachrichtigungs-Hub. Wenn Kategorien geändert werden, wird die Registrierung mit neuen Kategorien neu erstellt.
+	Diese Methode erstellt eine Liste von Kategorien und verwendet die **Notifications**-Klasse zum Speichern der Liste im lokalen Speicher sowie zum Registrieren der entsprechenden Tags bei Ihrem Notification Hub. Wenn Kategorien geändert werden, wird die Registrierung mit neuen Kategorien neu erstellt.
 
 Die App kann jetzt verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. 
 
 ##<a name="register"></a>Registrieren für Benachrichtigungen
 
-Durch diese Schritte findet beim Starten eine Registrierung beim Benachrichtigungs-Hub statt, wobei die im lokalen Speicher gespeicherten Kategorien verwendet werden. 
+Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hub statt, wobei die im lokalen Speicher gespeicherten Kategorien verwendet werden. 
 
-<div class="dev-callout"><strong>Note</strong> 
-	<p>Because the channel URI assigned by the Microsoft Push Notification Service (MPNS) can chance at any time, you should register for notifications frequently to avoid notification failures. This example registers for notification every time that the app starts. For apps that are run frequently, more than once a day, you can probably skip registration to preserve bandwidth if less than a day has passed since the previous registration.</p>
-</div>  
+> [AZURE.NOTE] Da sich der durch den Microsoft Push Notification Service (MPNS) zugeteilte Channel-URI jederzeit ändern kann, sollten Sie sich regelmäßig für Benachrichtigungen registrieren, um Benachrichtigungsfehler zu vermeiden. Dieses Beispiel registriert sich jedes Mal für Benachrichtigungen, wenn die App gestartet wird. Für häufig ausgeführte Anwendungen (öfters als einmal täglich) können Sie die Registrierung wahrscheinlich überspringen, wenn weniger als ein Tag seit der letzten Registrierung vergangen ist, um Bandbreite einzusparen.
 
 1. Fügen Sie der **Notifications**-Klasse folgenden Code hinzu:
 
@@ -156,7 +166,7 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Benachrichtigun
 
 1. Öffnen Sie die Datei "App.xaml.cs", und fügen Sie den Modifizierer **async** der **Application_Launching**-Methode hinzu.
 
-2. Suchen Sie in der **Application_Launching**-Methode den Registrierungscode des Benachrichtigungs-Hubs, den Sie in [Erste Schritte mit Benachrichtigungs-Hubs] erstellt haben, und ersetzen Sie ihn durch die folgende Codezeile:
+2. Suchen Sie in der **Application_Launching**-Methode den Registrierungscode des Notification Hubs, den Sie in [Erste Schritte mit Notification Hubs] erstellt haben, und ersetzen Sie ihn durch die folgende Codezeile:
 
 		await notifications.SubscribeToCategories(notifications.RetrieveCategories());
 
@@ -178,13 +188,13 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Benachrichtigun
 
 	Dadurch wird die Hauptseite basierend auf dem Status der zuvor gespeicherten Kategorien aktualisiert. 
 
-Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Benachrichtigungs-Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. Als nächstes wird ein Back-End definiert, das Kategoriebenachrichtigungen an diese App senden kann.
+Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. Als nächstes wird ein Back-End definiert, das Kategoriebenachrichtigungen an diese App senden kann.
 
 <h2><a name="send"></a>Senden von Benachrichtigungen von Ihrem Back-End aus</h2>
 
-[WACOM.INCLUDE [notification-hubs-back-end](../includes/notification-hubs-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-back-end](../includes/notification-hubs-back-end.md)]
 
-##<a name="test-app"></a>Ausführen der Anwendung und Erzeugen von Benachrichtigungen
+##<a name="test-app"></a>Ausführen der App und Erzeugen von Benachrichtigungen
 
 1. Drücken Sie in Visual Studio die Taste F5, um die App zu starten.
 
@@ -194,7 +204,7 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 
 2. Aktivieren Sie eine oder mehrere Kategorien, und klicken Sie dann auf **Abonnieren**.
 
-	Die App konvertiert die ausgewählten Kategorien in Tags, und fordert eine neue Geräteregistrierung für die ausgewählten Tags vom Benachrichtigungs-Hub an. Die registrierten Kategorien werden zurückgegeben und in einem Dialogfeld angezeigt.
+	Die App konvertiert die ausgewählten Kategorien in Tags, und fordert eine neue Geräteregistrierung für die ausgewählten Tags vom Notification Hub an. Die registrierten Kategorien werden zurückgegeben und in einem Dialogfeld angezeigt.
 
 	![][2]
 
@@ -212,22 +222,22 @@ Sie haben dieses Lernprogramm nun abgeschlossen.
 
 <!--## <a name="next-steps"> </a>Nächste Schritte
 
-In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategorie übermittelt werden. Sie können nun eins der folgenden Lernprogramme durchführen, die andere komplexe Benachrichtigungs-Hub-Szenarien zeigen:
+In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategorie übermittelt werden. Sie können nun eines der folgenden Lernprogramme durchführen, die andere komplexe Notification Hub-Szenarien zeigen:
 
-+ [Verwenden von Benachrichtigungs-Hubs zum Übermitteln von lokalisierten aktuellen Nachrichten]
++ [Verwenden von Notification Hubs zum Übermitteln von lokalisierten aktuellen Nachrichten]
 
 	Hier erfahren Sie, wie Sie die App zu aktuellen Nachrichten für das Versenden von lokalisierten Benachrichtigungen erweitern. 
 
-+ [Benachrichtigen von Benutzern mit Benachrichtigungs-Hubs]
++ [Benachrichtigen von Benutzern mit Notification Hubs]
 
 	Hier erfahren Sie, wie Sie Pushbenachrichtigungen an bestimmte authentifizierte Benutzer versenden. Dies ist eine gute Möglichkeit, um Benachrichtigungen nur an bestimmte Benutzer zu versenden.
 -->
 
-<!--Anker. -->
+<!-- Anchors. -->
 [Hinzufügen der Kategorieauswahl zur App]: #adding-categories
 [Registrieren für Benachrichtigungen]: #register
 [Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
-[Ausführen der Anwendung und Erzeugen von Benachrichtigungen]: #test-app
+[Ausführen der App und Erzeugen von Benachrichtigungen]: #test-app
 [Nächste Schritte]: #next-steps
 
 <!-- Images. -->
@@ -238,12 +248,12 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 
 
 <!-- URLs.-->
-[Erste Schritte mit Benachrichtigungs-Hubs]: /de-de/manage/services/notification-hubs/get-started-notification-hubs-wp8/
-[Verwenden von Benachrichtigungs-Hubs zum Übermitteln von lokalisierten aktuellen Nachrichten]: ./breakingnews-localized-wp8.md 
-[Benachrichtigen von Benutzern mit Benachrichtigungs-Hubs]: /de-de/manage/services/notification-hubs/notify-users/
-[Mobiler Dienst]: /de-de/develop/mobile/tutorials/get-started
-[Leitfaden zu Benachrichtigungs-Hubs]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
-[Benachrichtigungs-Hubs - Anleitungen für Windows Phone]: ??
+[Erste Schritte mit Notification Hubs]: /de-de/manage/services/notification-hubs/get-started-notification-hubs-wp8/
+[Verwenden von Notification Hubs zum Übermitteln von lokalisierten aktuellen Nachrichten]: ./breakingnews-localized-wp8.md 
+[Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users/
+[Mobile Service]: /de-de/develop/mobile/tutorials/get-started
+[Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs - Anleitungen für Windows Phone]: ??
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
@@ -251,4 +261,4 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 
 
 
-<!--HONumber=35.2-->
+<!--HONumber=45--> 

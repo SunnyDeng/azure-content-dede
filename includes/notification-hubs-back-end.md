@@ -1,10 +1,10 @@
-﻿
+
 In diesem Abschnitt erfahren Sie, wie Sie Benachrichtigungen von einer .NET-Konsolen-App oder anderen senden.
-Bei Verwendung von Mobile Services finden Sie weitere Informationen im Lernprogramm [Erste Schritte mit Push](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/) . Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP](/de-de/documentation/articles/notification-hubs-java-backend-how-to/). Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle] senden.
+Bei Verwendung von Mobile Services finden Sie weitere Informationen im Lernprogramm [Erste Schritte mit Push](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/) Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP](/de-de/documentation/articles/notification-hubs-java-backend-how-to/). Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle] senden.
 
 Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, iOS- und Android-Geräte. 
 
-Überspringen Sie die Schritte 1 bis 3, wenn Sie eine Konsolenanwendung erstellt haben, als Sie [Erste Schritte mit Notification Hubs][get-started]. abgeschlossen haben.
+Überspringen Sie die Schritte 1 bis 3, wenn Sie eine Konsolenanwendung erstellt haben, als Sie [Erste Schritte mit Notification Hubs][get-started] abgeschlossen haben.
 
 1. Erstellen Sie in Visual Studio eine neue Visual C#-Konsolenanwendung 
 
@@ -73,7 +73,7 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 	
 	> [AZURE.NOTE] Dieser Back-End-Code unterstützt Windows Store-, Windows Phone-, iOS- und Android-Clients. Send-Methoden geben einen Fehler zurück, wenn der Benachrichtigungshub noch nicht für eine bestimmte Clientplattform konfiguriert wurde. 
 
-6. Ersetzen Sie im Code oben die Platzhalter <hub name> und <connection string with full access> durch den Namen Ihres Notification Hub und die Verbindungszeichenfolge für *DefaultFullSharedAccessSignature*, die Sie zuvor erhalten haben.
+6. Ersetzen Sie im Code oben die Platzhalter `<hub name>` und `<connection string with full access>` durch den Namen Ihres Notification Hub und die Verbindungszeichenfolge für *DefaultFullSharedAccessSignature*, die Sie zuvor erhalten haben.
 
 7. Fügen Sie die folgenden Zeilen zur **Main**-Methode hinzu:
 
@@ -97,8 +97,8 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs-Leitfaden]: http://msdn.microsoft.com/de-de/library/jj927170.aspx
-[Notification Hubs-Anleitung für Windows Store]: http://msdn.microsoft.com/de-de/library/jj927172.aspx
-[Notification Hubs-REST-Schnittstelle]: http://msdn.microsoft.com/de-de/library/windowsazure/dn223264.aspx
+[Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs-Anleitung für Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
+[Notification Hubs-REST-Schnittstelle]: http://msdn.microsoft.com/library/windowsazure/dn223264.aspx
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

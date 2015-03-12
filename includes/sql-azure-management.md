@@ -217,7 +217,7 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
 * [Hinzufügen von Benutzern zu Ihrer SQL-Datenbank][]   
 * [Transact-SQL-Referenz (SQL-Datenbank)][]
 
-  [Verwenden von Azure SQL-Datenbank]: http://www.windowsazure.com/de-de/develop/net/how-to-guides/sql-azure/
+  [Verwenden von Azure SQL-Datenbank]: http://azure.microsoft.com/develop/net/how-to-guides/sql-azure/
   [Schritt 1: Installieren von SQL Server Management Studio]: #Step1
   [Schritt 2: Verbinden mit der SQL-Datenbank]: #Step2
   [Schritt 3: Erstellen und Verwalten von Datenbanken]: #Step3
@@ -231,18 +231,17 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
   [Abrufen des SQL-Datenbankservernamens aus dem Verwaltungsportal]: /media/portal_get_database_name.png
   [Verbindung mit SSMS herstellen]: /media/ssms_connect.png
   [Verbindung mit SSMS herstellen - Eigenschaften]: /media/ssms_connect_properties.png
-  [Transact-SQL-Referenz (SQL-Datenbank)]: http://msdn.microsoft.com/de-de/library/bb510741(v=sql.120).aspx
-  [CREATE DATABASE (SQL-Datenbank)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336274.aspx
-  [ALTER DATABASE (SQL-Datenbank)]: http://msdn.microsoft.com/de-de/library/windowsazure/ff394109.aspx
-  [DROP DATABASE (SQL-Datenbank)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336259.aspx
-  [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336235.aspx
-  [CREATE LOGIN (SQL-Datenbank)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336268.aspx
-  [CREATE USER (SQL-Datenbank)]: http://msdn.microsoft.com/de-de/library/ee336277.aspx
-  [sp_addrolemember (Transact-SQL)]: http://msdn.microsoft.com/de-de/library/ms187750.aspx
-  [ALTER LOGIN (SQL-Datenbank)]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336254.aspx
-  [Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/de-de/library/windowsazure/ff394114.aspx
-  [Einführung in die SQL-Datenbank]: http://msdn.microsoft.com/de-de/library/windowsazure/ee336230.aspx
-  [SQL-Datenbank-Bereitstellungsmodell]: http://msdn.microsoft.com/de-de/library/ee336227.aspx
+  [Transact-SQL-Referenz (SQL-Datenbank)]: http://msdn.microsoft.com/library/bb510741(v=sql.120).aspx
+  [CREATE DATABASE (SQL-Datenbank)]: http://msdn.microsoft.com/library/windowsazure/ee336274.aspx
+  [ALTER DATABASE (SQL-Datenbank)]: http://msdn.microsoft.com/library/windowsazure/ff394109.aspx
+  [DROP DATABASE (SQL-Datenbank)]: http://msdn.microsoft.com/library/windowsazure/ee336259.aspx
+  [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: http://msdn.microsoft.com/library/windowsazure/ee336235.aspx
+  [CREATE LOGIN (SQL-Datenbank)]: http://msdn.microsoft.com/library/windowsazure/ee336268.aspx
+  [CREATE USER (SQL-Datenbank)]: http://msdn.microsoft.com/library/ee336277.aspx
+  [sp_addrolemember (Transact-SQL)]: http://msdn.microsoft.com/library/ms187750.aspx
+  [ALTER LOGIN (SQL-Datenbank)]: http://msdn.microsoft.com/library/windowsazure/ee336254.aspx
+  [Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/library/windowsazure/ff394114.aspx
+  [Einführung in die SQL-Datenbank]: http://msdn.microsoft.com/library/windowsazure/ee336230.aspx
+  [SQL-Datenbank-Bereitstellungsmodell]: http://msdn.microsoft.com/library/ee336227.aspx
   [Hinzufügen von Benutzern zu Ihrer SQL-Datenbank]: http://blogs.msdn.com/b/sqlazure/archive/2010/06/21/10028038.aspx
-
 <!--HONumber=42-->

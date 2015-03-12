@@ -29,9 +29,9 @@ Als Nächstes erstellen Sie einen mobilen Dienst, um die In-Memory-Liste für di
     
 	> [AZURE.NOTE] Wenn das eingegebene Kennwort nicht den Mindestanforderungen entspricht oder es keine Übereinstimmung gibt, wird eine Warnung angezeigt.  
 	>
-	> Es wird empfohlen, sich den Anmeldenamen und das Kennwort des Administrators zu notieren. Sie benötigen diese Informationen, um die SQL-Datenbankinstanz oder den Server in Zukunft wiederzuverwenden.
+	> Es wird empfohlen, sich den Anmeldenamen und das Kennwort des Administrators zu notieren. Sie benötigen diese Informationen, um die SQL-Datenbankinstanz oder den Server in der Zukunft wiederzuverwenden.
 
 Sie haben nun einen neuen mobilen Service erstellt, den Sie mit Ihren mobilen Apps verwenden können. Als Nächstes fügen Sie eine neue Tabelle zum Speichern von App-Daten hinzu. Diese Tabelle wird von der App anstelle der In-Memory-Sammlung verwendet.
 
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

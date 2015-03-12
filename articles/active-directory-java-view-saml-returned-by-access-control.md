@@ -1,6 +1,20 @@
-<properties urlDisplayName="View ACS SAML" pageTitle="Anzeigen der vom Azure Access Control Service zurückgegebenen SAML" metaKeywords="" description="Erfahren Sie, wie Sie die vom Access Control Service in auf Azure gehosteten Java-Anwendungen zurückgegebene SAML anzeigen." metaCanonical="" services="" documentationCenter="Java" title="How to view SAML returned by the Azure Access Control Service" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties 
+	pageTitle="Anzeigen der vom Azure Access Control Service zurückgegebenen SAML" 
+	description="Erfahren Sie, wie Sie die vom Access Control Service in auf Azure gehosteten Java-Anwendungen zurückgegebene SAML anzeigen." 
+	services="" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/25/2014" 
+	ms.author="robmcm"/>
 
 # Anzeigen der vom Azure Access Control Service zurückgegebenen SAML
 
@@ -189,3 +203,5 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anspruchsvolleren Sz
 [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
 [Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse]: ../active-directory-java-authenticate-users-access-control-eclipse
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
+
+<!--HONumber=46--> 

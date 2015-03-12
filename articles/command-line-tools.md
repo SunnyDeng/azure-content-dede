@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Command-Line Tools" pageTitle="Azure-Befehlszeilen-Tools für Mac und Linux" metaKeywords="Azure command-line, Azure tools Mac, Azure tools Linux" description="Erfahren Sie mehr über die Verwendung des Befehlszeilentools für Mac und Linux in Azure." metaCanonical="" services="web-sites,virtual-machines,mobile-services,cloud-services" documentationCenter="" title="" authors="carolz" solutions="" manager="need to identify contact" editor="" />
+﻿<properties 
+	pageTitle="Azure-Befehlszeilentools für Mac und Linux" 
+	description="Erfahren Sie mehr über die Verwendung des Befehlszeilentools für Mac und Linux in Azure." 
+	services="web-sites, virtual-machines, mobile-services, cloud-services" 
+	documentationCenter="" 
+	authors="squillace" 
+	manager="timlt" 
+	editor="tysonn"/>
 
-<tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="carolz" />
+<tags 
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="command-line-interface" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="11/13/2014" 
+	ms.author="rasquill"/>
 
 #Azure-Befehlszeilentool für Mac und Linux
 
@@ -659,7 +673,7 @@ Um das Löschen zu erzwingen, verwenden Sie den Parameter `-q`.
 
 ##<a name="Commands_to_manage_your_Azure_certificates"></a>Befehle zum Verwalten Ihrer Azure-Zertifikate
 
-Zertifikate für Azure-Dienste sind SSL-Zertifikate, die mit Ihrem Azure-Konto verknüpft sind. Weitere Informationen zu Azure-Zertifikaten finden Sie unter [Verwalten von Zertifikaten](http://msdn.microsoft.com/de-de/library/azure/gg981929.aspx).
+Zertifikate für Azure-Dienste sind SSL-Zertifikate, die mit Ihrem Azure-Konto verknüpft sind. Weitere Informationen zu Azure-Zertifikaten finden Sie unter [Verwalten von Zertifikaten](http://msdn.microsoft.com/library/azure/gg981929.aspx).
 
 **service cert list [Optionen]**
 
@@ -1467,7 +1481,7 @@ Dieser Befehl löscht alle Zeilen aus der Tabelle.
 
 ###<a name="Mobile_Scripts"></a>Befehle zum Verwalten von Skripts
 
-Mit den Befehlen in diesem Abschnitt können Sie die Serverskripts eines Mobile Service verwalten. Weitere Informationen erhalten Sie unter [Verwenden von Serverskripts in Mobile Services.](http://www.windowsazure.com/de-de/develop/mobile/how-to-guides/work-with-server-scripts/).
+Mit den Befehlen in diesem Abschnitt können Sie die Serverskripts eines Mobile Service verwalten. Weitere Informationen erhalten Sie unter [Verwenden von Serverskripts in Mobile Services.](http://azure.microsoft.com/develop/mobile/how-to-guides/work-with-server-scripts/).
 
 **mobile script list [Optionen] [Dienstname]**
 
@@ -1526,7 +1540,7 @@ Dieser Befehl löscht das existierende insert-Skript aus der Tabelle TodoItem.
 
 ###<a name="Mobile_Jobs"></a>Befehle zum Verwalten von geplanten Aufträgen
 
-Mit den Befehlen in diesem Abschnitt können Sie geplante Aufträge eines Mobile Service verwalten. Weitere Informationen finden Sie unter [Geplante Aufträge](http://msdn.microsoft.com/de-de/library/windowsazure/jj860528.aspx).
+Mit den Befehlen in diesem Abschnitt können Sie geplante Aufträge eines Mobile Service verwalten. Weitere Informationen finden Sie unter [Geplante Aufträge](http://msdn.microsoft.com/library/windowsazure/jj860528.aspx).
 
 **mobile job list [Optionen] [Dienstname]**
 
@@ -1600,7 +1614,7 @@ Dieser Befehl löscht den geplanten Auftrag getUpdates vom Server TodoList.
 
 ###<a name="Mobile_Scale"></a>Befehle zum Skalieren eines Mobile Service
 
-Mit den Befehlen in diesem Abschnitt können Sie einen Mobile Service skalieren. Weitere Informationen finden Sie unter [Skalieren von Mobile Services](http://msdn.microsoft.com/de-de/library/windowsazure/jj193178.aspx).
+Mit den Befehlen in diesem Abschnitt können Sie einen Mobile Service skalieren. Weitere Informationen finden Sie unter [Skalieren von Mobile Services](http://msdn.microsoft.com/library/windowsazure/jj193178.aspx).
 
 **mobile scale show [Optionen] [Dienstname]**
 
@@ -2377,3 +2391,5 @@ Löscht einen DNS-Servereintrag aus der Netzwerkkonfiguration.
 	Delete the DNS server entry dns-4 ( 77.88.99.11 ) %s ? (y/n) y
 	+ Deleting the DNS server entry dns-4 ( 77.88.99.11 )
 	info:    network dnsserver unregister command OK
+
+<!--HONumber=46--> 

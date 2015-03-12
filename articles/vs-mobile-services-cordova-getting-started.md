@@ -36,7 +36,7 @@ Der folgende Code ruft einen Verweis auf eine Tabelle ab, die Daten für ein Tod
 
 	var todoTable = mobileServiceClient.getTable('TodoItem');
 
-Damit diese Beispiele funktionieren, müssen die Berechtigungen für die Tabelle auf **Jeder mit dem Anwendungsschlüssel** festgelegt werden. Später können Sie Authentifizierung einrichten. Weitere Informationen finden Sie unter [Erste Schritte mit Authentifizierung](http://azure.microsoft.com/de-de/documentation/articles/mobile-services-html-get-started-users/).
+Damit diese Beispiele funktionieren, müssen die Berechtigungen für die Tabelle auf **Jeder mit dem Anwendungsschlüssel** festgelegt werden. Später können Sie Authentifizierung einrichten. Weitere Informationen finden Sie unter [Erste Schritte mit Authentifizierung](http://azure.microsoft.com/documentation/articles/mobile-services-html-get-started-users/).
 
 #####Hinzufügen eines Eintrags 
 

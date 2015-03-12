@@ -214,7 +214,7 @@ Inhalt dieses Abschnitts:
 ###<a id="howto3">Azure-Vorschauportal: Erstellen eines Premium-Speicherkontos</a>
 In diesem Abschnitt wird gezeigt, wie ein Premium-Speicherkonto mit dem Azure Preview-Portal erstellt wird.
 
-1.	Melden Sie sich am [Azure Preview-Portal](https://portal.azure.com/) an. Testen Sie unser Angebot der [Kostenlosen Testversion](http://www.windowsazure.com/pricing/free-trial/), wenn Sie noch kein Abonnement besitzen. 
+1.	Melden Sie sich am [Azure Preview-Portal](https://portal.azure.com/) an. Testen Sie unser Angebot der [Kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/), wenn Sie noch kein Abonnement besitzen. 
 
 
     >[AZURE.NOTE] Wenn Sie sich am Azure-Verwaltungsportal anmelden, klicken Sie auf den Namen Ihres Benutzerkontos in der oberen rechten Ecke des Portals. Klicken Sie dann auf **In das neue Portal wechseln**.
@@ -236,7 +236,7 @@ Eine vollständige exemplarische Vorgehensweise in einer Azure-Umgebung finden S
 ###<a id="howto2">Azure PowerShell: Erstellen eines Premium-Speicherkontos und Verwenden dieses Kontos für grundlegende Vorgänge virtueller Computer</a>
 In diesem Abschnitt wird gezeigt, wie ein Premium-Speicherkonto erstellt und verwendet wird, wenn ein virtueller Computer erstellt und ein Datenträger an einen virtuellen Computer mithilfe von Azure PowerShell angefügt wird.
 
-1. Richten Sie die PowerShell-Umgebung mithilfe der unter [Installieren und Konfigurieren von Azure PowerShell](http://azure.microsoft.com/de-de/documentation/articles/install-configure-powershell/) beschriebenen Schritte ein.
+1. Richten Sie die PowerShell-Umgebung mithilfe der unter [Installieren und Konfigurieren von Azure PowerShell](http://azure.microsoft.com/documentation/articles/install-configure-powershell/) beschriebenen Schritte ein.
 2. Starten Sie die PowerShell-Konsole, stellen Sie eine Verbindung mit Ihrem Abonnement her, und führen Sie dann das folgende PowerShell-Cmdlet im Konsolenfenster aus. Wie diese PowerShell-Anweisung zeigt, müssen Sie den Parameter **Type** als **Premium_LRS** angeben, wenn Sie ein Premium-Speicherkonto erstellen.
 
 		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "West US" -Type "Premium_LRS"
@@ -277,5 +277,4 @@ In diesem Abschnitt wird gezeigt, wie ein Premium-Speicherkonto erstellt und ver
 [MSDN-Referenz](http://msdn.microsoft.com/library/azure/gg433040.aspx)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
-
 <!--HONumber=42-->

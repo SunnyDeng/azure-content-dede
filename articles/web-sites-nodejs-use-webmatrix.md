@@ -33,7 +33,7 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 Führen Sie die folgenden Schritte aus, um eine Azure-Website zu erstellen:
 
-> [AZURE.NOTE] Sie benötigen ein Azure-Konto, bei dem die Azure-Websites-Funktion aktiviert ist, um dieses Lernprogramm abzuschließen. <br /> Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E"%20target="_blank").
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, bei dem die Azure-Websites-Funktion aktiviert ist, um dieses Lernprogramm abzuschließen. <br /> Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A7171371E"%20target="_blank").
 <br />
 
 1. Starten Sie WebMatrix.
@@ -102,7 +102,7 @@ Sie können die Anwendung auf einfache Weise ändern und neu veröffentlichen. H
 
 Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](/de-de/documentation/articles/nodejs-specify-node-version-azure-apps/)..
 
-Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://www.windowsazure.com/de-de/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
+Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://azure.microsoft.com/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
 
 
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com

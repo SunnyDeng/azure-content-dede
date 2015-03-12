@@ -26,7 +26,7 @@ Dieser Leitfaden zeigt die ersten Schritte der Entwicklung einer Windows Store-A
 
 ## Herunterladen erforderlicher Tools ##
 
-- [Visual Studio 2012](http://msdn.microsoft.com/de-de/library/windows/apps/br211384) vereinfacht das Erstellen, Debuggen, Lokalisieren, Packen und Bereitstellen von Windows Store-Apps.
+- [Visual Studio 2012](http://msdn.microsoft.com/library/windows/apps/br211384) vereinfacht das Erstellen, Debuggen, Lokalisieren, Packen und Bereitstellen von Windows Store-Apps.
 - [Die Windows Azure Storage-Clientbibliothek für Windows Runtime](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/05/windows-azure-storage-client-library-for-windows-runtime.aspx) stellt eine Klassenbibliothek für die Arbeit mit Azure Storage bereit.
 - [WCF Data Services-Tools für Windows Store-Apps](http://www.microsoft.com/de-de/download/details.aspx?id=30714) erweitern die Nutzung von "Dienstverweis hinzufügen" durch clientseitige OData-Unterstützung für Windows Store Apps in Visual Studio 2012 oder neuer.
 
@@ -49,7 +49,7 @@ An diesem Punkt ist Ihre App bereit zum Aufruf der Blob- und Warteschlangendiens
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;
     
-Fügen der Seite dann eine Schaltfläche hinzu. Fügen Sie dem **Click**-Ereignis den folgenden Code hinzu, und ändern Sie die Ereignishandlermethode mit dem [async-Schlüsselwort](http://msdn.microsoft.com/en-US/library/vstudio/hh156513.aspx):
+Fügen der Seite dann eine Schaltfläche hinzu. Fügen Sie dem **Click**-Ereignis den folgenden Code hinzu, und ändern Sie die Ereignishandlermethode mit dem [async-Schlüsselwort](http://msdn.microsoft.com/library/vstudio/hh156513.aspx):
     
     var credentials = new StorageCredentials(accountName, accountKey);
     var account = new CloudStorageAccount(credentials, true);
@@ -90,5 +90,4 @@ Sie können auch einen Verweis zu "Microsoft.WindowsAzure.Storage.Table.dll" hin
 [store-apps-storage-vs-project]: ./media/storage-use-store-apps/store-apps-storage-vs-project.png
 [store-apps-storage-choose-library]: ./media/storage-use-store-apps/store-apps-storage-choose-library.png
 [store-apps-storage-package-manager]: ./media/storage-use-store-apps/store-apps-storage-package-manager.png
-
 <!--HONumber=42-->

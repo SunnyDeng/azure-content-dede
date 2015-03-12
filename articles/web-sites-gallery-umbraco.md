@@ -1,6 +1,20 @@
-﻿<properties title="Create an Umbraco website from the gallery in Microsoft Azure" pageTitle="Erstellen einer Umbraco-Website aus der Galerie in Microsoft Azure" description="erforderlich" metaKeywords="Azure, gallery, Umbraco, web site, website" services="web-sites" solutions="web" documentationCenter="" authors="tomfitz" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erstellen einer Umbraco-Website aus der Galerie in Microsoft Azure" 
+	description="erforderlich" 
+	services="web-sites" 
+	documentationCenter="" 
+	authors="tfitzmac" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-<tags ms.service="web-sites" ms.workload="web" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="10/21/2014" ms.author="tomfitz" />
+<tags 
+	ms.service="web-sites" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/21/2014" 
+	ms.author="tomfitz"/>
 
 #Erstellen einer Umbraco-Website aus der Galerie in Microsoft Azure
 
@@ -88,13 +102,13 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Website mit Umbra
 
 [Umbraco Video-Lernprogramme](https://umbraco.com/help-and-support/video-tutorials.aspx)
 
-[Übersicht über das Microsoft Azure-Vorschauportal](http://azure.microsoft.com/en-us/overview/preview-portal/)
+[Übersicht über das Microsoft Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/)
 
-[Dokumentation zum Microsoft Azure-Vorschauportal](http://azure.microsoft.com/en-us/documentation/preview-portal/)
+[Dokumentation zum Microsoft Azure-Vorschauportal](http://azure.microsoft.com/documentation/preview-portal/)
 
 [Azure-Vorschauportal (Channel 9)](http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Preview-portal) 
 
-[Dokumentation zu Microsoft Azure-Websites](http://azure.microsoft.com/en-us/documentation/services/web-sites/)
+[Dokumentation zu Microsoft Azure-Websites](http://azure.microsoft.com/documentation/services/web-sites/)
 
 
 <!-- IMAGES -->
@@ -114,3 +128,5 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Website mit Umbra
 [15CreateItemUnderOverflow]: ./media/web-sites-gallery-umbraco/15CreateItemUnderOverflow.PNG
 [16EnterAName]: ./media/web-sites-gallery-umbraco/16EnterAName.PNG
 [17MyPage]: ./media/web-sites-gallery-umbraco/17MyPage.PNG
+
+<!--HONumber=46--> 

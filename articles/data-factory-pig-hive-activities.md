@@ -1,6 +1,20 @@
-﻿<properties title="Use Pig and Hive with Azure Data Factory" pageTitle="Verwenden von Pig und Hive mit Azure Data Factory" description="Erfahren Sie mehr über die Datenverarbeitung mithilfe von Pig- und Hive-Skripten auf einem Azure HDInsight-Cluster aus einer Azure Data Factory." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties 
+	pageTitle="Verwenden von Pig und Hive mit Azure Data Factory" 
+	description="Erfahren Sie, wie Sie Daten verarbeiten, indem Sie Pig und Hive-Skripts auf einem Azure HDInsight-Cluster von einer Azure Data Factory ausführen." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
+	editor="monicar"/>
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/13/2014" ms.author="spelluru" />
+<tags 
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/10/2015" 
+	ms.author="spelluru"/>
 
 # Verwenden von Pig und Hive mit Data Factory
 Eine Pipeline in einer Azure Data Factory verarbeitet Daten in verknüpften Speicherdiensten durch Verwendung von verknüpften Serverdiensten. Sie enthält eine Abfolge von Aktivitäten, wobei jede Aktivität einen bestimmten Verarbeitungsvorgang ausführt. 
@@ -418,3 +432,5 @@ Artikel | Beschreibung
 [Azure-Portal]: http://portal.azure.com
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

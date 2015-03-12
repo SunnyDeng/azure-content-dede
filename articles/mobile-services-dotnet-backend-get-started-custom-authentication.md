@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit der benutzerdefinierten Authentifizierung | Mobile Dev Center" description="Erfahren Sie, wie Sie Benutzer mit einem Benutzernamen und einem Kennwort authentifizieren." documentationCenter="windows" authors="mattchenderson" manager="dwrede" editor="" services=""/>
+<properties 
+	pageTitle="Erste Schritte mit der benutzerdefinierten Authentifizierung | Mobile Dev Center" 
+	description="Erfahren Sie, wie Sie Benutzer mit einem Benutzernamen und einem Kennwort authentifizieren." 
+	documentationCenter="windows" 
+	authors="mattchenderson" 
+	manager="dwrede" 
+	editor="" 
+	services=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="mahender"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/21/2014" 
+	ms.author="mahender"/>
 
 # Erste Schritte mit der benutzerdefinierten Authentifizierung
 

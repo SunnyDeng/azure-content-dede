@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Tutorial: Create a cloud-only virtual network" pageTitle="Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks" metaKeywords="" description="Erfahren Sie in diesem Lernprogramm, wie Sie ein beispielhaftes komplett auf der Cloud basierendes virtuelles Azure-Netzwerk erstellen." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="Tutorial: Create a Clound-only Virtual Network in Azure" authors="cherylmc" solutions="" manager="adinah" editor="" />
+﻿<properties 
+	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks komplett in der Cloud" 
+	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein beispielhaftes komplett auf der Cloud basierendes virtuelles Azure-Netzwerk erstellen." 
+	services="virtual-machines, virtual-network" 
+	documentationCenter="" 
+	authors="cherylmc" 
+	manager="adinah" 
+	editor=""/>
 
-<tags ms.service="virtual-network" ms.workload="infrastructure-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/29/2014" ms.author="cherylmc" />
+<tags 
+	ms.service="virtual-network" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/29/2014" 
+	ms.author="cherylmc"/>
 
 <h1 id="vnettut1">Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks in Azure</h1>
 
@@ -25,7 +39,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie ein grundlegendes virtuelles Nur-Cl
 
 ##  Voraussetzungen
 
-*  Microsoft-Konto mit mindestens einem gültigen, aktiven Azure-Abonnement. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](http://www.windowsazure.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Falls Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile](http://azure.microsoft.com/de-de/pricing/member-offers/msdn-benefits-details/).
+*  Microsoft-Konto mit mindestens einem gültigen, aktiven Azure-Abonnement. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](http://www.windowsazure.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Falls Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreise: MSDN-, MPN- und Bizspark-Vorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
 ##  Erstellen des virtuellen Netzwerks für dieses Lernprogramm
 
@@ -71,9 +85,9 @@ Beachten Sie, dass der Adressraum für ein virtuelles Netzwerk aus den privaten 
 
 Weitere Informationen zu Azure-Infrastrukturdiensten finden Sie in folgenden Themen:
 
-- [Erstellen eines benutzerdefinierten virtuellen Computers](http://www.windowsazure.com/de-de/manage/windows/how-to-guides/custom-create-a-vm/) Gehen Sie beim Erstellen eines virtuellen Computers in Ihrem virtuellen Netzwerk anhand dieses Themas vor. Weitere Informationen zu virtuellen Computern und Installationsoptionen finden Sie unter [Azure Virtual Machines](http://www.windowsazure.com/de-de/manage/windows/).
+- [Erstellen eines benutzerdefinierten virtuellen Computers](http://azure.microsoft.com/manage/windows/how-to-guides/custom-create-a-vm/) Gehen Sie beim Erstellen eines virtuellen Computers in Ihrem virtuellen Netzwerk anhand dieses Themas vor. Weitere Informationen zu virtuellen Computern und Installationsoptionen finden Sie unter [Azure Virtual Machines](http://azure.microsoft.com/manage/windows/).
 
-- [Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk](http://www.windowsazure.com/de-de/manage/services/networking/active-directory-forest/) - Verwenden Sie dieses Thema, um eine neue Windows Server Active Directory-Gesamtstruktur ohne Verbindung zu einem anderen Netzwerk zu installieren. Das Lernprogramm erläutert die spezifischen Schritte, die zum Erstellen eines virtuellen Computers für eine neue Gesamtstrukturinstallation erforderlich sind. Wenn Sie dieses Lernprogramm verwenden möchten, erstellen Sie keine virtuellen Computer mit dem Verwaltungsportal. Weitere Informationen finden Sie unter [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines](http://msdn.microsoft.com/de-de/library/windowsazure/jj156090.aspx).
+- [Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk](http://azure.microsoft.com/manage/services/networking/active-directory-forest/) - Verwenden Sie dieses Thema, um eine neue Windows Server Active Directory-Gesamtstruktur ohne Verbindung zu einem anderen Netzwerk zu installieren. Das Lernprogramm erläutert die spezifischen Schritte, die zum Erstellen eines virtuellen Computers für eine neue Gesamtstrukturinstallation erforderlich sind. Wenn Sie dieses Lernprogramm verwenden möchten, erstellen Sie keine virtuellen Computer mit dem Verwaltungsportal. Weitere Informationen finden Sie unter [Richtlinien zum Bereitstellen von Windows Server Active Directory auf Azure Virtual Machines](http://msdn.microsoft.com/library/windowsazure/jj156090.aspx).
 
 Um dieses virtuelle Netzwerk zu entfernen, wählen Sie es aus, klicken auf **Löschen** und dann auf **Ja**.
 
@@ -90,7 +104,7 @@ Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie un
 
 -  [Azure Virtual Network-Konfigurationsaufgaben](http://go.microsoft.com/fwlink/?LinkId=296652)
 
--  [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/de-de/library/windowsazure/jj156097.aspx)
+-  [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](http://msdn.microsoft.com/library/windowsazure/jj156097.aspx)
 
 -  [Überblick über die Azure-Namensauflösung](http://go.microsoft.com/fwlink/?LinkId=248097)
 
@@ -103,3 +117,5 @@ Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie un
 [Image7]: ./media/create-virtual-network/createVNet_07_VNetExampleSpaces.png
 [Image8]: ./media/create-virtual-network/createVNet_07_VNetExampleSpaces.png
 
+
+<!--HONumber=46--> 

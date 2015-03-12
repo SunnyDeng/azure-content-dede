@@ -33,7 +33,7 @@ Die Nutzung von Azure-Speicher wird Ihnen auf der Basis Ihres Speicherkontos in 
 - Transaktionen beziehen sich auf alle Lese- und Schreibvorgänge im Azure-Speicher. 
 - Datenausgang bezieht sich auf Daten, die aus einer Azure-Region übertragen werden. Wenn eine Anwendung, die nicht in der gleichen Region ausgeführt wird und entweder ein Clouddienst oder ein anderer Anwendungstyp ist, auf die Daten in Ihrem Speicherkonto zugreift, fallen Gebühren für den Datenausgang an. (Für Azure-Dienste können Sie Maßnahmen durchführen, um Daten und Dienste in den gleichen Rechenzentren zu gruppieren und so Datenausgangsgebühren zu reduzieren oder zu eliminieren.)  
 
-Die Seite mit den [Speicherpreisdetails](http://www.windowsazure.com/de-de/pricing/details/#storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. In den [Datenübertragungs-Preisdetails](http://www.windowsazure.com/de-de/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
+Die Seite mit den [Speicherpreisdetails](http://azure.microsoft.com/pricing/details/#storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. In den [Datenübertragungs-Preisdetails](http://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
 
 Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/library/windowsazure/dn249410.aspx).
 
@@ -101,7 +101,7 @@ Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie 
 
 Eine *Affinitätsgruppe* ist eine geografische Gruppierung Ihrer Azure-Dienste und VMs mit Ihrem Azure-Konto. Eine Affinitätsgruppe kann die Dienstleistung verbessern, indem Computerarbeitslasten im gleichen Rechenzentrum oder in der Nähe der Zielbenutzer platziert werden. Außerdem fallen keine Gebühren für den Datenausgang an, wenn ein Dienst, der zur gleichen Affinitätsgruppe gehört, auf Daten im Speicherkonto zugreift.
 
-> [AZURE.NOTE]  Um eine Affinitätsgruppe zu erstellen, öffnen Sie den Bereich <b>Einstellungen</b> im Verwaltungsportal, klicken auf <b>Affinitätsgruppen</b> und anschließend entweder auf <b>Affinitätsgruppe hinzufügen</b> oder auf die Schaltfläche <b>Hinzufügen</b>. Sie können Affinitätsgruppen auch mithilfe der Azure Service Management-API erstellen und verwalten. Weitere Informationen erhalten Sie unter <a href="http://msdn.microsoft.com/de-de/library/windowsazure/ee460798.aspx">Operations on Affinity Groups (Vorgänge zu Affinitätsgruppen, in englischer Sprache)</a>.
+> [AZURE.NOTE]  Um eine Affinitätsgruppe zu erstellen, öffnen Sie den Bereich <b>Einstellungen</b> im Verwaltungsportal, klicken auf <b>Affinitätsgruppen</b> und anschließend entweder auf <b>Affinitätsgruppe hinzufügen</b> oder auf die Schaltfläche <b>Hinzufügen</b>. Sie können Affinitätsgruppen auch mithilfe der Azure Service Management-API erstellen und verwalten. Weitere Informationen erhalten Sie unter <a href="http://msdn.microsoft.com/library/windowsazure/ee460798.aspx">Operations on Affinity Groups (Vorgänge zu Affinitätsgruppen, in englischer Sprache)</a>.
 
 
 ### <a id="replication-options"></a>Speicherkonto-Replikationsoptionen
@@ -119,7 +119,7 @@ Verwenden Sie im [Verwaltungsportal](http://manage.windowsazure.com) die Option 
 
 ### Kopieren eines Speicherzugriffsschlüssels ###
 
-Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüssel für die Verwendung in einer Verbindungszeichenfolge zu kopieren. Die Verbindungszeichenfolge benötigt für die Authentifizierung den Namen des Speicherkontos und einen Schlüssel. Informationen zum Konfigurieren von Verbindungszeichenfolgen für den Zugriff auf Azure-Speicherdienste finden Sie unter [Konfigurieren von Verbindungszeichenfolgen].(http://msdn.microsoft.com/de-de/library/ee758697.aspx).
+Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüssel für die Verwendung in einer Verbindungszeichenfolge zu kopieren. Die Verbindungszeichenfolge benötigt für die Authentifizierung den Namen des Speicherkontos und einen Schlüssel. Informationen zum Konfigurieren von Verbindungszeichenfolgen für den Zugriff auf Azure-Speicherdienste finden Sie unter [Konfigurieren von Verbindungszeichenfolgen)]http://msdn.microsoft.com/library/ee758697.aspx).
 
 1. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com) auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
@@ -171,10 +171,9 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
 
 ## <a id="next"></a>Nächste Schritte
 
-- Weitere Informationen über den Azure-Speicher finden Sie in der entsprechenden Dokumentation auf [azure.com](http://azure.microsoft.com/de-de/documentation/services/storage/) und auf [MSDN](http://msdn.microsoft.com/de-de/library/gg433040.aspx). 
+- Weitere Informationen über den Azure-Speicher finden Sie in der entsprechenden Dokumentation auf [azure.com](http://azure.microsoft.com/documentation/services/storage/) und auf [MSDN](http://msdn.microsoft.com/library/gg433040.aspx). 
 
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
-
 
 
 

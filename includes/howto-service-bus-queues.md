@@ -68,7 +68,7 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer Wa
 
 ###So rufen Sie die Anmeldeinformationen im Server-Explorer ab
 
-Um die Verbindungsinformationen über Visual Studio anstatt über das Verwaltungsportal zu erhalten, verwenden Sie das [hier](http://http://msdn.microsoft.com/de-de/library/windowsazure/ff687127.aspx), im Abschnitt **Verbinden mit Azure aus Visual Studio** beschriebene Verfahren. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um die Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen. 
+Um die Verbindungsinformationen über Visual Studio anstatt über das Verwaltungsportal zu erhalten, verwenden Sie das [hier](http://http://msdn.microsoft.com/library/windowsazure/ff687127.aspx), im Abschnitt **Verbinden mit Azure aus Visual Studio** beschriebene Verfahren. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Microsoft Azure**-Baumdarstellung im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um die Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen. 
 
 Notieren Sie sich den Wert **SharedAccessKey**, oder kopieren Sie ihn in die Zwischenablage:
 
@@ -78,5 +78,4 @@ Notieren Sie sich den Wert **SharedAccessKey**, oder kopieren Sie ihn in die Zwi
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 
   [34]: ./media/howto-service-bus-queues/VSProperties.png
-
 <!--HONumber=42-->

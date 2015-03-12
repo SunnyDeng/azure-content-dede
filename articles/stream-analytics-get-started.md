@@ -1,6 +1,20 @@
-﻿<properties linkid="manage-services-Stream-Analytics-get-started" urlDisplayName="Get Started" pageTitle="Erste Schritte mit Azure Stream Analytics | Azure" metaKeywords="" description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Azure Stream Analytics für das Verarbeiten und Transformieren von Ereignissen in Azure Service Bus Event Hub und das Speichern der Ergebnisse in Azure SQL-Datenbank." metaCanonical="" services="stream analytics" documentationCenter="" title="Get started with Azure Stream Analytics" authors="jgao" solutions="big-data" manager="paulettm" editor="cgronlun" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Azure Stream Analytics | Azure" 
+	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Azure Stream Analytics für das Verarbeiten und Transformieren von Ereignissen in Azure Service Bus Event Hub und das Speichern der Ergebnisse in Azure SQL-Datenbank."
+	services="stream-analytics" 
+	documentationCenter="" 
+	authors="mumian" 
+	manager="paulettm" 
+	editor="cgronlun" />
 
-<tags ms.service="stream analytics" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/28/2014" ms.author="jgao" />
+<tags 
+	ms.service="stream-analytics" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="data-services" 
+	ms.date="2/17/2015" 
+	ms.author="jgao" />
 
 
 # Erste Schritte mit Azure Stream Analytics
@@ -73,7 +87,7 @@ Wenn Sie bereits eine Azure SQL-Datenbank für dieses Lernprogramm haben, übers
 1.	Klicken Sie im Verwaltungsportal auf **NEU**, **DATENDIENSTE**, **SQL-DATENBANK**, **SCHNELLERFASSUNG**.  Geben Sie einen Datenbanknamen für einen vorhandenen oder neuen SQL-Datenbankserver an.
 2.	Auswählen der neu erstellten Datenbank
 3.	Klicken Sie auf **DASHBOARD** und dann im rechten Bereich der Seite auf **Verbindungszeichenfolgen anzeigen**, und kopieren Sie dann die Verbindungszeichenfolge **ADO.NET**. Sie werden sie später im Lernprogramm benötigen.  
-4.	Stellen Sie sicher, dass die Firewalleinstellungen auf Serverebene es Ihnen ermöglichen, eine Verbindung mit der Datenbank herzustellen.  Dazu können Sie eine neue IP-Regel auf der Registerkarte "Konfigurieren" des Servers hinzufügen. Weitere Informationen, wie z. B. die Handhabung von dynamischen IP, finden Sie unter [http://msdn.microsoft.com/en-us/library/azure/ee621782.aspx](http://msdn.microsoft.com/en-us/library/azure/ee621782.aspx).
+4.	Stellen Sie sicher, dass die Firewalleinstellungen auf Serverebene es Ihnen ermöglichen, eine Verbindung mit der Datenbank herzustellen.  Dazu können Sie eine neue IP-Regel auf der Registerkarte "Konfigurieren" des Servers hinzufügen. Weitere Informationen, wie z. B. die Handhabung von dynamischen IP, finden Sie unter [http://msdn.microsoft.com/library/azure/ee621782.aspx](http://msdn.microsoft.com/library/azure/ee621782.aspx).
 
 ###Erstellen von Ausgabetabellen
 1.	Öffnen Sie Visual Studio oder SQL Server Management Studio.
@@ -264,13 +278,13 @@ In diesem Lernprogramm haben Sie gelernt, wie Stream Analytics zur Verarbeitung 
 [img.stream.analytics.operation.log.details]: ./media/stream-analytics-get-started/StreamAnalytics.operation.log.details.png
 
 
-[azure.sql.database.firewall]: http://msdn.microsoft.com/en-us/library/azure/ee621782.aspx
-[azure.event.hubs.documentation]: http://azure.microsoft.com/en-us/services/event-hubs/
-[azure.sql.database.documentation]: http://azure.microsoft.com/en-us/services/sql-database/
+[azure.sql.database.firewall]: http://msdn.microsoft.com/library/azure/ee621782.aspx
+[azure.event.hubs.documentation]: http://azure.microsoft.com/services/event-hubs/
+[azure.sql.database.documentation]: http://azure.microsoft.com/services/sql-database/
 
-[sql.database.introduction]: http://azure.microsoft.com/en-us/services/sql-database/
-[event.hubs.introduction]: http://azure.microsoft.com/en-us/services/event-hubs/
-[azure.blob.storage]: http://azure.microsoft.com/en-us/documentation/services/storage/
+[sql.database.introduction]: http://azure.microsoft.com/services/sql-database/
+[event.hubs.introduction]: http://azure.microsoft.com/services/event-hubs/
+[azure.blob.storage]: http://azure.microsoft.com/documentation/services/storage/
 [azure.sdk.net]: ../dotnet-sdk/
 
 [stream.analytics.introduction]: ../stream-analytics-introduction/
@@ -286,3 +300,5 @@ In diesem Lernprogramm haben Sie gelernt, wie Stream Analytics zur Verarbeitung 
 
 [azure.management.portal]: https://manage.windowsazure.com
 
+
+<!--HONumber=46--> 

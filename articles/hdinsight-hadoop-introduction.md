@@ -123,7 +123,7 @@ Diese BI-Tools sind hilfreich für Ihre Analyse großer Datenmengen:
 * <a target="_blank" href="http://www.microsoft.com/de-de/download/details.aspx?id=39379">Microsoft Power Query für Excel herunterladen</a> 
 * <a target="_blank" href="http://www.microsoft.com/de-de/download/details.aspx?id=40886">Microsoft Hive ODBC Driver herunterladen</a>
 * <a target="_blank" href="http://www.microsoft.com/de-de/server-cloud/solutions/business-intelligence/analysis.aspx">Weitere Informationen zu SQL Server Analysis Services</a>
-* <a target="_blank" href="http://msdn.microsoft.com/de-de/library/ms159106.aspx">Weitere Informationen zu SQL Server Reporting Services</a>
+* <a target="_blank" href="http://msdn.microsoft.com/library/ms159106.aspx">Weitere Informationen zu SQL Server Reporting Services</a>
 
 ## <a name="advantage"></a>Vorzüge von Hadoop in der Cloud
 
@@ -166,9 +166,9 @@ Weitere Informationen zu Hadoop in HDInsight finden Sie in den "Erste Schritte"-
 
 ### SQL Database in Azure	
 		
-* [Azure SQL Database](http://msdn.microsoft.com/de-de/library/windowsazure/ee336279.aspx): MSDN-Dokumentation für SQL-Datenbank.
+* [Azure SQL Database](http://msdn.microsoft.com/library/windowsazure/ee336279.aspx): MSDN-Dokumentation für SQL-Datenbank.
 	
-* [Verwaltungsportal für SQL Database](http://msdn.microsoft.com/de-de/library/windowsazure/gg442309.aspx): Einfaches und unkompliziertes Datenbankmanagementtool für die Verwaltung einer SQL-Datenbank in der Cloud.
+* [Verwaltungsportal für SQL Database](http://msdn.microsoft.com/library/windowsazure/gg442309.aspx): Einfaches und unkompliziertes Datenbankmanagementtool für die Verwaltung einer SQL-Datenbank in der Cloud.
 
 * [Adventure Works für SQL Database](http://msftdbprodsamples.codeplex.com/releases/view/37304): Download-Seite für SQL-Beispieldatenbank.	
 
@@ -194,5 +194,4 @@ Weitere Informationen zu Hadoop in HDInsight finden Sie in den "Erste Schritte"-
 [component-versioning]: ../hdinsight-component-versioning/
 
 [zookeeper]: http://zookeeper.apache.org/ 
-
 <!--HONumber=42-->

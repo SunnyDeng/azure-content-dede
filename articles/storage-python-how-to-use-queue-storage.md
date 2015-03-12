@@ -137,7 +137,6 @@ Nachdem Sie sich nun mit den Grundlagen der Warteschlangenspeicherung vertraut g
   [Vorgehensweise: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]: #advanced-get
   [Vorgehensweise: Abrufen der Warteschlangenlänge]: #get-queue-length
   [Vorgehensweise: Löschen einer Warteschlange]: #delete-queue
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg433040.aspx
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
-
 <!--HONumber=42-->

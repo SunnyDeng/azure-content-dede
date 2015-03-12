@@ -1,6 +1,20 @@
-<properties title="Error During Authentication Detection" pageTitle="Fehler während der Authentifizierungserkennung" metaKeywords="" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
+﻿<properties 
+	pageTitle="Fehler während der Authentifizierungserkennung" 
+	description="Der Verbindungs-Assistent für Active Directory hat einen inkompatiblen Authentifizierungstyp erkannt." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="kempb" 
+	manager="douge" 
+	editor="tglee"/>
   
-<tags ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="vs-getting-started" ms.devlang="na" ms.topic="article" ms.date="10/8/2014" ms.author="ghogen, kempb" />
+<tags 
+	ms.service="active-directory" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vs-getting-started" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/02/2015" 
+	ms.author="kempb"/>
 
 ###Fehler während der Authentifizierungserkennung 
 Beim Erkennen des vorherigen Authentifizierungscodes hat der Assistent einen nicht kompatiblen Authentifizierungstyp erkannt.   
@@ -78,3 +92,5 @@ Zum Erkennen der alten Form von Organisationskontoauthentifizierung sucht der As
 Wenn Sie den Authentifizierungstyp ändern möchten, entfernen Sie den inkompatiblen Authentifizierungstyp, und führen Sie den Assistenten dann erneut aus.
 
 Weitere Informationen finden Sie unter [Authentifizierungsszenarien für Azure AD](http://msdn.microsoft.com/library/azure/dn499820.aspx).
+
+<!--HONumber=46--> 

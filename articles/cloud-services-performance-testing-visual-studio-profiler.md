@@ -1,6 +1,26 @@
-﻿<properties urldisplayname="Team Foundation Service" headerexpose="" pageTitle="Lokale Profilerstellung eines Cloud-Diensts im Serveremulator" metakeywords="" footerexpose="" description="" umbraconavihide="0" disquscomments="1" title="Testing the Performance of a Cloud Service Locally in the Azure Compute Emulator Using the Visual Studio Profiler" authors="kempb" manager="douge" />
+﻿<properties 
+	urldisplayname="Team Foundation Service" 
+	headerexpose="" 
+	pageTitle="Lokale Profilerstellung eines Cloud-Diensts im Serveremulator" 
+	metakeywords="" 
+	footerexpose="" 
+	description="Erfahren Sie, wie Sie die Leistung eines Cloud-Diensts im lokalen Azure-Serveremulator mithilfe des Visual Studio-Profilers testen" 
+	umbraconavihide="0" 
+	disquscomments="1" 
+	authors="kempb" 
+	manager="douge" 
+	editor="tglee" 
+	services="cloud-services" 
+	documentationCenter=""/>
 
-<tags ms.service="cloud-services" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="12/3/2014" ms.author="kempb" />
+<tags 
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/18/2015" 
+	ms.author="kempb"/>
 
 # Lokales Testen der Leistung eines Cloud-Diensts im Azure-Serveremulator mithilfe des Visual Studio-Profiler
 
@@ -36,11 +56,11 @@ Es gibt wenige Visual Studio-Konfigurationsoptionen, die für die Profilerstellu
 
 ![][4]
 
-Sie können die Berichte, welche der Profiler erstellt, vereinfachen, indem Sie "Nur eigenen Code" einstellen. Wenn Sie "Nur eigenen Code" aktiviert haben, sind die Funktionsanruflisten vereinfacht, und Aufrufe innerhalb der Bibliotheken und .NET Framework werden nicht in den Berichten angezeigt. Wählen Sie im Menü **Extras** die Option **Optionen**. Erweitern Sie dann den Knoten **Leistungstools**, und wählen Sie **Allgemein**. Aktivieren Sie dann das Kontrollkästchen für **"Nur eigenen Code" für Profilerberichte aktivieren**.
+Sie können die Berichte, welche der Profiler erstellt, vereinfachen, indem Sie "Nur eigenen Code" einstellen. Wenn Sie "Nur eigenen Code" aktiviert haben, sind die Funktionsanruflisten vereinfacht, und Aufrufe innerhalb der Bibliotheken und .NET Framework werden nicht in den Berichten angezeigt. Wählen Sie im Menü **Extras** die Option **Optionen** aus. Erweitern Sie dann den Knoten **Leistungstools**, und wählen Sie **Allgemein** aus. Aktivieren Sie dann das Kontrollkästchen für **"Nur eigenen Code" für Profilerberichte aktivieren**.
 
 ![][17]
 
-Sie können diese Anweisungen mit einem vorhandenen Projekt oder einem neuen Projekt verwenden.  Wenn Sie ein neues Projekt erstellen, um die unten beschriebenen Techniken auszuprobieren, wählen Sie ein C#-**Azure-Cloud-Dienst**-Projekt aus, und wählen Sie eine **Webrolle** und eine **Workerrolle** aus.
+Sie können diese Anweisungen mit einem vorhandenen Projekt oder einem neuen Projekt verwenden.  Wenn Sie ein neues Projekt erstellen, um die unten beschriebenen Techniken auszuprobieren, wählen Sie ein C#-**Azure-Cloud-Dienst**projekt aus, und wählen Sie eine **Webrolle** und eine **Workerrolle** aus.
 
 ![][5]
 
@@ -89,8 +109,7 @@ Suchen Sie für eine Workerrolle den Prozess "WaWorkerHost.exe".
 
 Wenn sich der Projektordner auf einem Netzwerklaufwerk befindet, fragt Sie der Profiler nach einem anderen Speicherort für die Speicherung der Profilberichte.
 
- Sie können auch eine Webrolle anfügen, indem Sie diese zu "WaIISHost.exe" hinzufügen.
- Wenn es mehrere Workerrollenprozesse in Ihrer Anwendung gibt, müssen Sie die "processID" verwenden, um sie zu unterscheiden. Sie können die "processID" programmgesteuert abfragen, indem Sie auf das Prozessobjekt zugreifen. Wenn Sie diesen Code zum Beispiel zur Ausführungsmethode der RoleEntryPoint-abgeleiteten Klasse in einer Rolle hinzufügen, können Sie sich das Protokoll in der Serveremulator-Benutzeroberfläche ansehen, um herauszufinden, mit welchem Prozess eine Verbindung hergestellt werden muss.
+ Sie können auch eine Webrolle anfügen, indem Sie diese zu "WaIISHost.exe" hinzufügen. Wenn es mehrere Workerrollenprozesse in Ihrer Anwendung gibt, müssen Sie die "processID" verwenden, um sie zu unterscheiden. Sie können die "processID" programmgesteuert abfragen, indem Sie auf das Prozessobjekt zugreifen. Wenn Sie diesen Code zum Beispiel zur Ausführungsmethode der RoleEntryPoint-abgeleiteten Klasse in einer Rolle hinzufügen, können Sie sich das Protokoll in der Serveremulator-Benutzeroberfläche ansehen, um herauszufinden, mit welchem Prozess eine Verbindung hergestellt werden muss.
 
 	var process = System.Diagnostics.Process.GetCurrentProcess();
 	var message = String.Format("Process ID: {0}", process.Id);
@@ -114,15 +133,15 @@ Wenn Sie die Profilerstellung beenden möchten, wählen Sie den Link **Beenden S
 
 Der Leistungsbericht für Ihre Anwendung wird angezeigt.
 
-Zu diesem Zeitpunkt stoppt der Profiler die Ausführung, speichert die Daten in einer .vsp-Datei, und zeigt einen Bericht an,
-der eine Analyse dieser Daten enthält.
+Zu diesem Zeitpunkt stoppt der Profiler die Ausführung, speichert die Daten in einer .vsp-Datei, und zeigt einen Bericht an, der eine Analyse dieser Daten enthält.
 
 ![][11]
 
 
 Wenn Sie "String.wstrcpy" im Hot Path sehen, klicken Sie auf "Nur eigenen Code", um die Ansicht so zu ändern, dass nur Benutzercode angezeigt wird.  Wenn Sie "String.Concat" sehen, sollten Sie auf "Gesamten Code anzeigen" drücken.
 
-Sie werden sehen, dass die Verkettungsmethode und "String.Concat" einen großen Teil der Ausführungszeit in Anspruch nimmt.
+Sie werden sehen, dass die Verkettungsmethode und "String.Concat" einen großen Teil
+der Ausführungszeit in Anspruch nimmt.
 
 ![][12]
 
@@ -172,7 +191,7 @@ Befehlszeile verwendet haben, insbesondere in den globalen Einstellungen, sollte
 
 ## <a name="nextSteps"> </a> Nächste Schritte
 
-Die Instrumentierung von Azure-Binärdateien im Emulator wird im Visual Studio-Profiler nicht unterstützt, aber wenn Sie die Speicherzuteilung testen möchten, können Sie diese Option bei der Profilerstellung auswählen. Sie können zudem die Parallelitätsprofilerstellung auswählen, mit der Sie bestimmen können, ob Threads beim Kampf um Sperren Zeit verschwenden, oder die Profilerstellung für Ebeneninteraktion, mit der Sie Leistungsprobleme bei der Interaktion zwischen den Ebenen einer Anwendung aufspüren können, meistens zwischen der Datenebene und einer Workerrolle.  Sie können die Datenbankabfragen, welche die Anwendung generiert, anzeigen sowie die Profilerstellungsdaten zur Verbesserung der Datenbankverwendung nutzen. Informationen zur Profilerstellung für Ebeneninteraktion finden Sie unter [Walkthrough: Using the Tier Interaction Profiler in Visual Studio Team System 2010][3] (in englischer Sprache).
+Die Instrumentierung von Azure-Binärdateien im Emulator wird im Visual Studio-Profiler nicht unterstützt, aber wenn Sie die Speicherzuteilung testen möchten, können Sie diese Option bei der Profilerstellung auswählen. Sie können zudem die Parallelitätsprofilerstellung auswählen, mit der Sie bestimmen können, ob Threads beim Kampf um Sperren Zeit verschwenden, oder die Profilerstellung für Ebeneninteraktion, mit der Sie Leistungsprobleme bei der Interaktion zwischen den Ebenen einer Anwendung aufspüren können, meistens zwischen der Datenebene und einer Workerrolle.  Sie können die Datenbankabfragen, welche die Anwendung generiert, anzeigen sowie die Profilerstellungsdaten zur Verbesserung der Datenbankverwendung nutzen. Informationen zur Profilerstellung für Ebeneninteraktion finden Sie unter [Exemplarische Vorgehensweise: Verwenden der Profilerstellung für Ebeneninteraktion in Visual Studio Team System 2010][3].
 
 
 [Schritt 1: Konfigurieren von Visual Studio für die Profilerstellung]: #step1
@@ -199,4 +218,4 @@ Die Instrumentierung von Azure-Binärdateien im Emulator wird im Visual Studio-P
 [16]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally012.png
 [17]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally08.png
 
-<!--HONumber=35.1-->
+<!--HONumber=45--> 

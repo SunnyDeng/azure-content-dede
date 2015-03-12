@@ -1,6 +1,20 @@
-<properties urlDisplayName="Service Bus Relay" pageTitle="Verwenden des Service Bus-Relays (.NET) - Azure" metaKeywords="erste Schritte Azure Service Bus Relay C# " description="Erfahren Sie, wie Sie Azure Service Bus Relay Service zum Verbinden von zwei Anwendungen verwenden, die an unterschiedlichen Orten gehostet sind." metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use the Service Bus Relay Service" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+﻿<properties 
+	pageTitle="Verwenden von Service Bus Relay (.NET) – Azure" 
+	description="Erfahren Sie mehr über die Verwendung des Azure Service Bus-Relaydiensts zum Herstellen einer Verbindung zwischen zwei Anwendungen, die an unterschiedlichen Standorten gehostet sind."
+	services="service-bus" 
+	documentationCenter=".net" 
+	authors="sethmanheim" 
+	manager="timlt" 
+	editor="mattshel"/>
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
+<tags 
+	ms.service="service-bus" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/10/2015" 
+	ms.author="sethm"/>
 
 
 
@@ -260,9 +274,11 @@ verwenden Sie die folgenden Links, um mehr zu erfahren.
   [Abrufen des NuGet-Pakets "Service Bus"]: #get_nuget_package
   [Vorgehensweise: Verwenden von Service Bus zum Bereitstellen und Nutzen eines SOAP-Webdiensts mit TCP]: #how_soap
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [SAS-Authentifizierung mit Service Bus]: http://msdn.microsoft.com/de-de/library/dn170477.aspx
-  [Erstellen eines Diensts für Service Bus]: http://msdn.microsoft.com/de-de/library/windowsazure/ee173564.aspx
-  [Erstellen einer Service Bus-Clientanwendung]: http://msdn.microsoft.com/de-de/library/windowsazure/ee173543.aspx
+  [SAS-Authentifizierung mit Service Bus]: http://msdn.microsoft.com/library/dn170477.aspx
+  [Erstellen eines Diensts für Service Bus]: http://msdn.microsoft.com/library/windowsazure/ee173564.aspx
+  [Erstellen einer Service Bus-Clientanwendung]: http://msdn.microsoft.com/library/windowsazure/ee173543.aspx
   [Azure-Beispielen]: http://code.msdn.microsoft.com/windowsazure
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

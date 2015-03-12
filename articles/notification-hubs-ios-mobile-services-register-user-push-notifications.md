@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Diensts - Notification Hubs" description="Erfahren Sie, wie Sie eine Pushbenachrichtigungsregistrierung in einer iOS-App mit Azure Notification Hubs anfordern, wenn die Registrierung von Azure Mobile Services durchgeführt wird." services="mobile-services, notification-hubs" documentationCenter="" authors="ysxu" manager="dwrede" editor=""/>
+<properties 
+	pageTitle="Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Diensts - Notification Hubs" 
+	description="Erfahren Sie, wie Sie eine Pushbenachrichtigungsregistrierung in einer iOS-App mit Azure Notification Hubs anfordern, wenn die Registrierung von Azure Mobile Services durchgeführt wird." 
+	services="mobile-services, notification-hubs" 
+	documentationCenter="" 
+	authors="ysxu" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="yuaxu"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-ios" 
+	ms.devlang="objective-c" 
+	ms.topic="article" 
+	ms.date="10/10/2014" 
+	ms.author="yuaxu"/>
 
 # Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Diensts
 

@@ -1,6 +1,20 @@
-﻿<properties title="Query with DocumentDB SQL" pageTitle="Abfragen mit DocumentDB-SQL | Azure" description="DocumentDB ist ein NoSQL-Dokumentendatenbankdienst, welcher Abfragen mithilfe einer SQL-ähnlichen Syntax über hierarchische JSON-Dokumente ohne explizite Anforderung eines Schemas oder die Erstellung sekundärer Indizes unterstützt." metaKeywords="" services="documentdb"  documentationCenter="" solutions="data-management" authors="mimig" manager="jhubbard" editor="monicar" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Abfragen mit DocumentDB-SQL | Azure" 
+	description="Der NoSQL-Dokumentdatenbankdienst DocumentDB unterstützt Abfragen hierarchischer JSON-Dokumente unter Verwendung SQL-ähnlicher Syntax, ohne dass ein explizites Schema oder die Erstellung sekundärer Indizes erforderlich ist." 
+	services="documentdb" 
+	documentationCenter="" 
+	authors="mimig1" 
+	manager="jhubbard" 
+	editor="monicar"/>
 
-<tags ms.service="documentdb" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/11/2014" ms.author="mimig" />
+<tags 
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/02/2015" 
+	ms.author="mimig"/>
 
 #Abfragen von DocumentDB
 Microsoft Azure DocumentDB unterstützt Dokumentabfragen mit SQL (Structured Query Language) über hierarchische JSON-Dokumente. DocumentDB funktioniert ohne Schema. Die direkte Integration des JSON-Datenmodells in das Datenbankmodul ermöglicht eine automatische Indexierung von JSON-Dokumenten ohne explizite Schemas oder die Erstellung sekundärer Indizes. 
@@ -1955,7 +1969,7 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 5.	ANSI SQL 2011 [http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
 6.	JSON [http://json.org/](http://json.org/)
 7.	JavaScript-Spezifikation [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm) 
-8.	LINQ [http://msdn.microsoft.com/de-de/library/bb308959.aspx](http://msdn.microsoft.com/de-de/library/bb308959.aspx) 
+8.	LINQ [http://msdn.microsoft.com/library/bb308959.aspx](http://msdn.microsoft.com/library/bb308959.aspx) 
 9.	Abfragetechniken für große Datenbanken [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
 10.	Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
 11.	Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
@@ -1968,3 +1982,5 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 [consistency-levels]: ../documentdb-consistency-levels
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

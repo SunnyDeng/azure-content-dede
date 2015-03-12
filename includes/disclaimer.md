@@ -1,4 +1,4 @@
-﻿Melden Sie sich für die [kostenlose Vorschau] an, um diese und weitere neue Azure-Funktionen zu verwenden.(https://account.windowsazure.com/PreviewFeatures).
+﻿Melden Sie sich für die [kostenlose Vorschau](https://account.windowsazure.com/PreviewFeatures) an, um diese und weitere neue Azure-Funktionen zu verwenden.
 
 
-<!--HONumber=42-->
+<!--HONumber=45--> 

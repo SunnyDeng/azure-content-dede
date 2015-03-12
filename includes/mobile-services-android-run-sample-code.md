@@ -15,4 +15,4 @@
    	![](./media/download-android-sample-code/mobile-quickstart-startup-android.png)
 
    	Der gespeicherte Test wird in einer speicherinternen Sammlung gespeichert und in der folgenden Liste angezeigt.
-<!--HONumber=42-->
+\<!--HONumber=42-->

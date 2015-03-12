@@ -27,7 +27,7 @@
 > - [Warteschlangen](/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
 > - [Tabellen](/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
 
-Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet.  Weitere Informationen finden Sie unter[Verwenden von Tabellenspeicher aus .NET](http://azure.microsoft.com/de-de/documentation/articles/storage-dotnet-how-to-use-tables/#create-table "How to use Table Storage from .NET").
+Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet.  Weitere Informationen finden Sie unter[Verwenden von Tabellenspeicher aus .NET](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/#create-table "How to use Table Storage from .NET").
 
 Für den programmgesteuerten Zugriff auf Tabellen in ASP.NET 5-Projekten müssen Sie die folgenden Elemente hinzuzufügen, wenn sie nicht bereits vorhanden sind.
 
@@ -192,6 +192,5 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 	   Console.WriteLine("Couldn't delete the entity.");
 
 [Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/)
-Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/de-de/library/azure/ff683677.aspx) und [ASP.NET 5](http://www.asp.net/vnext).
-
+Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx) und [ASP.NET 5](http://www.asp.net/vnext).
 <!--HONumber=42-->

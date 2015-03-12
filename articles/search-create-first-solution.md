@@ -1,6 +1,20 @@
-﻿<properties title="Create your first search solution using Azure Search" pageTitle="Erstellen Sie Ihre erste Suchlösung mit Azure Search" description="Erstellen Sie Ihre erste Suchlösung mit Azure Search" metaKeywords="" services="" solutions="" documentationCenter="" authors="Heidist" manager="mblythe" videoId="" scriptId="" />
+﻿<properties 
+	pageTitle="Erstellen der ersten Suchlösung mit Azure Search" 
+	description="Erstellen der ersten Suchlösung mit Azure Search"
+	services="search" 
+	documentationCenter="" 
+	authors="HeidiSteen" 
+	manager="mblythe" 
+	editor=""/>
 
-<tags ms.service="azure-search" ms.devlang="" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="" ms.date="09/23/2014" ms.author="heidist" />
+<tags 
+	ms.service="search" 
+	ms.devlang="rest-api" 
+	ms.workload="search" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.date="01/16/2015" 
+	ms.author="heidist"/>
 
 # Erstellen Sie Ihre erste Suchlösung mit Azure Search
 
@@ -29,7 +43,7 @@ Die Demo ermöglicht Ihnen mit folgenden Übungen einen Einstieg in Azure Search
 
 <h2 id="sub-1">Voraussetzungen</h2>
 
-+	Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Wenn Sie nicht bereits die Software installiert haben, können Sie die kostenlosen Express-Editionen herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/de-de/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/de-de/evalcenter/dn434042.aspx).
++	Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Wenn Sie nicht bereits die Software installiert haben, können Sie die kostenlosen Express-Editionen herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/de-de/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
 +	Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Unter [Erste Schritte mit Azure Search](../search-get-started/) .
 +	[Azure Search-Demoprojekt zu Adventure Works auf CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=510972). Klicken Sie auf der Registerkarte "Source" auf **Download**, um eine ZIP-Datei mit der Lösung herunterzuladen. 
 
@@ -89,7 +103,7 @@ Sehen wir uns das Projekt **CatalogIndexer** genauer an, um zu verstehen, wie es
 
 4.	Verschieben Sie `ApplyChanges` in dieselbe Datei. Sie sehen, dass diese Funktion den Index löscht, wenn er bereits vorhanden ist (`DeleteCatalogIndex`), und danach einen neuen Index namens "catalog" (`CreateCatalogIndex`) erstellt.  
 
-5.	Gehen Sie zur Funktion `CreateCatalogIndex`. Sie sehen, dass der Index mit einem Schema erstellt wird, das den Spalten in der Tabelle "Produkte" in SQL Server entspricht. Jedes Feld hat einen Typ (d. h. `Edm.String` oder `Edm.Double`) sowie Attribute, die bestimmen, wofür diese Felder verwendet werden. Weitere Einzelheiten zu diesen Attributen finden Sie in der [Dokumentation zur REST API von Azure Search](http://msdn.microsoft.com/de-de/library/azure/dn798935.aspx).
+5.	Gehen Sie zur Funktion `CreateCatalogIndex`. Sie sehen, dass der Index mit einem Schema erstellt wird, das den Spalten in der Tabelle "Produkte" in SQL Server entspricht. Jedes Feld hat einen Typ (d. h. `Edm.String` oder `Edm.Double`) sowie Attribute, die bestimmen, wofür diese Felder verwendet werden. Weitere Einzelheiten zu diesen Attributen finden Sie in der [Dokumentation zur REST API von Azure Search](http://msdn.microsoft.com/library/azure/dn798935.aspx).
 
 6.	Kehren Sie zur Funktion `ApplyChanges` zurück. Sie sehen, dass diese Funktion alle Daten in den aufgelisteten Änderungen `ChangeSet` in einer Schleife durchläuft. Anstatt die Änderungen nacheinander anzuwenden, werden sie in Gruppen von 1000 zusammengefasst und dann auf den Suchdienst angewendet. Dies ist wesentlich effizienter als die Anwendung der Dokumente nacheinander.
 
@@ -147,7 +161,7 @@ Betrachten wir diese beiden Funktionen genauer.
 
 5.	Halten Sie die Anwendung an, wenn sie noch ausgeführt wird, und öffnen Sie unter "Ansichten | Startseite" die Datei **Index.cshtml**.  Am Ende dieser Datei sehen Sie eine JavaScript-Funktion, die `JQuery $(function ())` verwendet. Diese Funktion wird beim Laden der Seite aufgerufen. Sie verwendet die Funktion "JQuery" zum automatischen Vervollständigen und verknüpft diese Funktion als Rückruf über das Suchtextfeld, das als "q" bezeichnet wird. Wenn ein Benutzer Eingaben im Textfeld vornimmt, wird diese Funktion für automatische Empfehlungen aufgerufen, die ihrerseits mit der Eingabe "/home/suggest" aufruft.  `/home/suggest` ist ein Verweis auf die Funktion in der Datei **HomeController.cs** namens `Suggest`.
 
-6.	Öffnen Sie die Datei **HomeController.cs**, und navigieren Sie zur Funktion "Suggest". Dieser Code hat große Ähnlichkeit mit der Funktion "Search", die das Objekt `_catalogSearch` verwendet, um in der Datei **CatalogSearch.cs** eine Funktion namens `Suggest` aufzurufen. Anstatt eine Suchabfrage zu erstellen, ruft die Funktion `Suggest` die [Empfehlungen-API](http://msdn.microsoft.com/de-de/library/azure/dn798936.aspx) auf. Diese verwendet die in das Textfeld eingegebenen Ausdrücke und erzeugt eine Liste möglicher Empfehlungen. Die Werte werden an die Datei **Index.cshtml** zurückgegeben und im Suchfeld automatisch als Eingabevorschläge aufgelistet.
+6.	Öffnen Sie die Datei **HomeController.cs**, und navigieren Sie zur Funktion "Suggest". Dieser Code hat große Ähnlichkeit mit der Funktion "Search", die das Objekt `_catalogSearch` verwendet, um in der Datei **CatalogSearch.cs** eine Funktion namens `Suggest` aufzurufen. Anstatt eine Suchabfrage zu erstellen, ruft die Funktion `Suggest` die [Empfehlungen-API](http://msdn.microsoft.com/library/azure/dn798936.aspx) auf. Diese verwendet die in das Textfeld eingegebenen Ausdrücke und erzeugt eine Liste möglicher Empfehlungen. Die Werte werden an die Datei **Index.cshtml** zurückgegeben und im Suchfeld automatisch als Eingabevorschläge aufgelistet.
 
 An diesem Punkt fragen Sie sich vielleicht, wie Azure Search weiß, für welche Felder Empfehlungen erstellt werden sollen. Die Antwort darauf finden Sie beim Erstellen des Index. Die Funktion `CreateCatalogIndex` in der Datei "Program.cs" des Projekts **CatalogIndexer** enthält ein Attribut namens `Suggestions`.  Wenn dieses Attribut auf `True` eingestellt ist, kann Azure Search es als Feld zum Abrufen von Empfehlungen verwenden.
 
@@ -176,11 +190,11 @@ Wenn beim Buildvorgang von AdventureWorksWeb die Fehlermeldung "Datei oder Assem
 
 Um Ihr Selbststudium zu vertiefen, können Sie eine Seite "Details" hinzufügen, die geöffnet wird, wenn ein Benutzer auf eines der Suchergebnisse klickt. Zur Vorbereitung darauf können Sie die folgenden Aufgaben ausführen:
 
-+	Informieren Sie sich über die [Lookup-API](http://msdn.microsoft.com/de-de/library/azure/dn798929.aspx), mit der Sie eine Abfrage von Azure Search erstellen können, die ein bestimmtes Dokument zurück gibt (Sie können z. B. die Produkt-ID übergeben).
++	Informieren Sie sich über die [Lookup-API](http://msdn.microsoft.com/library/azure/dn798929.aspx), mit der Sie eine Abfrage von Azure Search erstellen können, die ein bestimmtes Dokument zurück gibt (Sie können z. B. die Produkt-ID übergeben).
 +	Versuchen Sie, der Datei **HomeController.cs** eine neue Funktion namens "Details" hinzuzufügen. Fügen Sie eine entsprechende Ansicht **Details.cshtml** hinzu, welche die Ergebnisse dieser Suche empfängt und anzeigt.
 +	Prüfen Sie das folgende zusätzliche Codebeispiel und Video zur geografischen Suche: [Channel 9 - Azure Search und Geodaten](http://channel9.msdn.com/Shows/Data-Exposed/Azure-Search-and-Geospatial-Data) und [CodePlex: Azure Search GeoSearch-Beispiel](http://azuresearchgeospatial.codeplex.com).
 
-Informationen finden Sie auch unter [Azure Search REST-API](http://msdn.microsoft.com/de-de/library/azure/dn798935.aspx) auf MSDN.
+Informationen finden Sie auch unter [Azure Search REST-API](http://msdn.microsoft.com/library/azure/dn798935.aspx) auf MSDN.
 
 
 <!--Anchors-->
@@ -201,3 +215,5 @@ Informationen finden Sie auch unter [Azure Search REST-API](http://msdn.microsof
 [12]: ./media/search-create-first-solution/AzureSearch_Create1_CodeplexDownload.PNG
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

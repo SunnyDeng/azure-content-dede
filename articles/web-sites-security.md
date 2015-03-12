@@ -31,7 +31,7 @@ Eine der Herausforderungen bei der Entwicklung einer Webanwendung liegt darin, e
  
 ##<a name="https"></a>Sichere Kommunikation
 
-Wenn Sie den Domänennamen ***.azurewebsites.net** nutzen, der für Ihre Website erstellt wurde, können Sie HTTPS sofort verwenden, da ein SSL-Zertifikat für alle Domänennamen vom Typ ***.azurewebsites.net** bereitgestellt wird. Wenn Ihre Seite einen [benutzerdefinierten Domänennamen](http://azure.microsoft.com/de-de/documentation/articles/web-sites-custom-domain-name/) verwendet, können Sie ein SSL-Zertifikat hochladen, um HTTPS für die benutzerdefinierte Domäne zu aktivieren.
+Wenn Sie den Domänennamen ***.azurewebsites.net** nutzen, der für Ihre Website erstellt wurde, können Sie HTTPS sofort verwenden, da ein SSL-Zertifikat für alle Domänennamen vom Typ ***.azurewebsites.net** bereitgestellt wird. Wenn Ihre Seite einen [benutzerdefinierten Domänennamen](http://azure.microsoft.com/documentation/articles/web-sites-custom-domain-name/) verwendet, können Sie ein SSL-Zertifikat hochladen, um HTTPS für die benutzerdefinierte Domäne zu aktivieren.
 
 ##<a name="develop"></a>Sichere Entwicklung 
 

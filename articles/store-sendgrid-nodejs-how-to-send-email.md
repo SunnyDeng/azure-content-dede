@@ -224,7 +224,7 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
 -   Spezielles SendGrid-Angebot für Azure-Kunden:
     [http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html)
 
-  [Nächste Schritte]: http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/blob-storage/#next-steps
+  [Nächste Schritte]: http://azure.microsoft.com/develop/nodejs/how-to-guides/blob-storage/#next-steps
   [Was ist der SendGrid-E-Mail-Dienst?]: #whatis
   [Erstellen eines SendGrid-Kontos]: #createaccount
   [Erstellen eines Verweises auf das SendGrid Node.js-Modul]: #reference

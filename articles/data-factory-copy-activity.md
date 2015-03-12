@@ -1,6 +1,20 @@
-﻿<properties title="Copy data with Azure Data Factory" pageTitle="Kopieren von Daten mit Azure Data Factory" description="Erfahren Sie, wie Sie in Azure Data Factory mit "Aktivität kopieren" Daten aus einer Datenquelle in eine andere kopieren." metaKeywords=""  services="data-factory" solutions=""  documentationCenter="" authors="spelluru" manager="jhubbard" editor="monicar" />
+﻿<properties 
+	pageTitle="Kopieren von Daten mit Azure Data Factory" 
+	description="Erfahren Sie, wie Sie mithilfe der Funktion zum Kopieren von Aktivitäten in Azure Data Factory Daten aus einer Datenquelle in eine andere Datenquelle kopieren." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
+	editor="monicar"/>
 
-<tags ms.service="data-factory" ms.workload="data-services" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/13/2014" ms.author="spelluru" />
+<tags 
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/08/2015" 
+	ms.author="spelluru"/>
 
 # Kopieren von Daten mit Azure Data Factory (Kopieraktivität)
 Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke (Ziel) in einem Batch kopieren. Die Kopieraktivität kann in den folgenden Szenarien verwendet werden:
@@ -724,3 +738,5 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity/ColumnMappingSample2.png
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

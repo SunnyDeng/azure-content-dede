@@ -1,4 +1,4 @@
-﻿1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com) an. Testen Sie die [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/), wenn Sie noch nicht über ein Abonnement verfügen.
+1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com) an. Testen Sie die [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/), wenn Sie noch nicht über ein Abonnement verfügen.
 
 2. Klicken Sie unten im Fenster auf der Befehlsleiste auf **Neu**.
 
@@ -18,10 +18,7 @@
 
 	![Configure the properties of the virtual machine](./media/virtual-machines-create-WindowsVM/vmconfiguration.png)
 
-
-
 6. Auf dem dritten Bildschirm können Sie die Ressourcen für Netzwerk, Speicher und Verfügbarkeit konfigurieren. Im Folgenden finden Sie einige Details, die Ihnen beim Ausfüllen helfen: 
-	
 
 	- Der **DNS-Name des Cloud-Diensts** ist der globale DNS-Name, der Teil des URIs wird, der zum Kontaktieren des virtuellen Computers verwendet wird. Sie müssen einen eigenen Namen für den Cloud-Dienst eingeben, da dieser in Azure eindeutig sein muss. Cloud-Dienste sind wichtig für Szenarien mit [mehreren virtuellen Computern](http://azure.microsoft.com/documentation/articles/cloud-services-connect-virtual-machine/).
  
@@ -35,7 +32,6 @@
 
 7. Auf dem vierten Konfigurationsbildschirm können Sie den VM-Agent und einige der verfügbaren Erweiterungen konfigurieren. Aktivieren Sie das Kontrollkästchen, um den virtuellen Computer zu erstellen.
 
-
 	![Configure VM Agent and extensions for the virtual machine](./media/virtual-machines-create-WindowsVM/agent-and-extensions.png)
 
 	>[AZURE.NOTE] Der VM-Agent stellt Ihnen die Umgebung für das Installieren von Erweiterungen bereit, die Ihnen bei der Interaktion mit dem virtuellen Computer oder bei dessen Verwaltung helfen können. Weitere Informationen erhalten Sie unter [Verwenden von Erweiterungen](http://go.microsoft.com/FWLink/p/?LinkID=390493).  
@@ -43,4 +39,5 @@
 8. Nach der Erstellung des virtuellen Computers führt das Verwaltungsportal den neuen virtuellen Computer unter **Virtuelle Computer** auf. Der entsprechende Cloud-Dienst bzw. das Speicherkonto werden ebenfalls in diesen Abschnitten erstellt und aufgeführt. Der virtuelle Computer und der Cloud-Dienst werden automatisch gestartet, und das Verwaltungsportal zeigt ihren Status als **Wird ausgeführt** an. 
 
 	![Configure VM Agent and the endpoints of the virtual machine](./media/virtual-machines-create-WindowsVM/vmcreated.png)
-<!--HONumber=45--> 
+
+<!--HONumber=42-->

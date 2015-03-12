@@ -1,6 +1,20 @@
-<properties pageTitle="Azure API Management Policy Reference" metaKeywords="" description="Learn about the policies available to configure API Management." metaCanonical="" services="" documentationCenter="API Management" title="Azure API Management Policy Reference" authors="sdanie" solutions="" manager="" editor="" />
+﻿<properties 
+	pageTitle="Richtlinienreferenz für die Azure API-Verwaltung" 
+	description="Erfahren Sie mehr über die verfügbaren Richtlinien zum Konfigurieren von API Management." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/11/2015" 
+	ms.author="sdanie"/>
 
 # Richtlinienreferenz für die Azure API-Verwaltung
 
@@ -545,3 +559,5 @@ Für eingehende Aufrufe im *API-* oder *Operations-*Geltungsbereich.
   [Domänenübergreifende Aufrufe zulassen]: #allow-cross-domain-calls
   [JSONP]: #jsonp
   [CORS]: #cors
+
+<!--HONumber=46--> 

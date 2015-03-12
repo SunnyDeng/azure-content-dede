@@ -68,7 +68,7 @@ Die Befehlszeilenschnittstelle kann mithilfe von *Node.js Package Manager (NPM)*
 
 **So installieren Sie die Befehlszeilenschnittstelle mit Windows Installer**
 
-1.	Navigieren Sie zu **http://azure.microsoft.com/de-de/downloads/**.
+1.	Navigieren Sie zu **http://azure.microsoft.com/downloads/**.
 2.	Führen Sie einen Bildlauf nach unten bis zum Abschnitt **Befehlszeilentools** durch, klicken Sie auf **Plattformübergreifende Befehlszeilenschnittstelle**, und befolgen Sie die Anweisungen des Webplattform-Installers.
 
 ##<a id="importsettings"></a> Herunterladen und Importieren der Veröffentlichungseinstellungen für das Azure-Konto
@@ -214,9 +214,9 @@ Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluste
 [azure-command-line-tools]: ../xplat-cli/
 [azure-command-line-tool]: ../command-line-tools/
 [azure-create-storageaccount]: ../storage-create-storage-account/ 
-[azure-purchase-options]: http://azure.microsoft.com/de-de/pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/de-de/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/de-de/pricing/free-trial/
+[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 
 [hdinsight-admin-portal]: ../hdinsight-administer-use-management-portal/
@@ -227,5 +227,4 @@ Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluste
 [image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png
 [image-cli-clustercreation-config]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
 [image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "List and show clusters"
-
 <!--HONumber=42-->

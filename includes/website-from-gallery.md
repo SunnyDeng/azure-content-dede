@@ -11,7 +11,7 @@ Sie erstellen einen WordPress-Blog unter Verwendung einer Standardvorlage. In de
 
 ![Wordpress blog][13]
 
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Erstellen von Azure-Konten](http://www.windowsazure.com/de-de/develop/php/tutorials/create-a-windows-azure-account/"%20target="_blank").
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Erstellen von Azure-Konten](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/"%20target="_blank").
 
 ## Erstellen einer Website im Portal
 
@@ -79,7 +79,6 @@ Nachdem Sie auf **Complete** geklickt haben, startet Azure den Erstellungs- und 
 [11]: ./media/website-from-gallery/wordpressgallery-07.png
 [12]: ./media/website-from-gallery/wordpressgallery-08.png
 [13]: ./media/website-from-gallery/wordpressgallery-09.png
-
 
 
 

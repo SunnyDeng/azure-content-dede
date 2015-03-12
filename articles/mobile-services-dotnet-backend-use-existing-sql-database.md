@@ -1,6 +1,20 @@
-<properties pageTitle="Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Back-End - Azure Mobile Services" description="Erfahren Sie, wie Sie eine vorhandene Cloud- oder lokale SQL-Datenbank mit Ihrem .NET-basierten mobilen Dienst verwenden." services="mobile-services, biztalk-services" documentationCenter="windows" authors="ggailey777" manager="dwrede" editor="mollybos"/>
+<properties 
+	pageTitle="Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Back-End - Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie eine vorhandene Cloud- oder lokale SQL-Datenbank mit Ihrem .NET-basierten mobilen Dienst verwenden." 
+	services="mobile-services, biztalk-services" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	manager="dwrede" 
+	editor="mollybos"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/22/2014" ms.author="glenga"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-multiple" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/22/2014" 
+	ms.author="glenga"/>
 
 
 # Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Back-End

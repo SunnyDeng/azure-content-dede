@@ -1,6 +1,20 @@
-<properties pageTitle="Get started with Azure API Management" metaKeywords="" description="Learn how to create APIs, operations, and get started with API Management." metaCanonical="" services="" documentationCenter="API Management" title="Get started with Azure API Management" authors="sdanie" solutions="" manager="" editor="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit der Azure API-Verwaltung" 
+	description="Erfahren Sie mehr über das Erstellen von APIs und Vorgängen sowie über die ersten Schritte mit der API-Verwaltung." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/11/2015" 
+	ms.author="sdanie"/>
 
 # Erste Schritte mit der Azure API-Verwaltung
 
@@ -244,7 +258,7 @@ Der **Analyse**-Bereich enthält die folgenden vier Registerkarten.
   [Aufrufen einer Operation aus dem Entwicklerportal]: #call-operation
   [Anzeigen von Analysen]: #view-analytics
   [Nächste Schritte]: #next-steps
-  [Kostenlose Azure-Testversion]: http://azure.microsoft.com/de-de/pricing/free-trial/?WT.mc_id=api_management_hero_a
+  [Kostenlose Azure-Testversion]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=api_management_hero_a
   [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
   [Neue Instanz der API-Verwaltung]: ./media/api-management-get-started/api-management-create-instance-menu.png
   [Neuer API-Verwaltungs-Dienst]: ./media/api-management-get-started/api-management-create-instance-step1.png
@@ -282,3 +296,5 @@ Der **Analyse**-Bereich enthält die folgenden vier Registerkarten.
   [Zusammenfassung]: ./media/api-management-get-started/api-management-api-summary-metrics.png
   [Übersicht]: ./media/api-management-get-started/api-management-analytics-overview.png
   [Erste Schritte bei der erweiterten API-Konfiguration]: ../api-management-get-started-advanced
+
+<!--HONumber=46--> 

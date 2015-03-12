@@ -1,6 +1,20 @@
-﻿<properties urlDisplayName="Service Bus Topics" pageTitle="Gewusst wie: Verwenden von Service Bus-Themen (.NET) - Azure" metaKeywords="=" Erste Schritte Azure Service Bus-Themen, Azure Messagingfunktionen veröffentlichen/abonnieren, Messaging, Azure-Messaging-Themen und Abonnements C# " description="Erfahren Sie mehr zur Verwendung von Service Bus-Themen und -Abonnements in Azure. Die Codebeispiele wurden für .NET-Anwendungen geschrieben. " metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Topics/Subscriptions" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+﻿<properties 
+	pageTitle="Verwenden von Service Bus-Themen (.NET) – Azure" 
+	description="Erfahren Sie mehr zur Verwendung von Service Bus-Themen und -Abonnements in Azure. Die Codebeispiele wurden für .NET-Anwendungen geschrieben."
+	services="service-bus" 
+	documentationCenter=".net" 
+	authors="sethmanheim" 
+	manager="timlt" 
+	editor="mattshel"/>
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="09/24/2014" ms.author="sethm" />
+<tags 
+	ms.service="service-bus" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/10/2015" 
+	ms.author="sethm"/>
 
 
 
@@ -308,6 +322,8 @@ eine Service Bus-Warteschlange sendet und Nachrichten von dieser empfängt: [.NE
   
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
   
-  [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/de-de/library/hh367516.aspx
-  [SqlFilter]: http://msdn.microsoft.com/de-de/library/microsoft.servicebus.messaging.sqlfilter.aspx
-  [.NET-Lernprogramm zu Service Bus-Brokermessaging]: http://msdn.microsoft.com/de-de/library/hh367512.aspx
+  [Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/library/hh367516.aspx
+  [SqlFilter]: http://msdn.microsoft.com/library/microsoft.servicebus.messaging.sqlfilter.aspx
+  [.NET-Lernprogramm zu Service Bus-Brokermessaging]: http://msdn.microsoft.com/library/hh367512.aspx
+
+<!--HONumber=46--> 

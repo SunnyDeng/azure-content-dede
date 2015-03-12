@@ -379,9 +379,8 @@ des Blob-Speicherdiensts aus Java].
   [Voraussetzungen]: #bkmk_prerequisites
   [Verwenden von Azure Blob-Speicher für Dateiuploads]: #bkmk_uploadfile
   [So löschen Sie einen Container]: #bkmk_deletecontainer
-  [Herunterladen des Azure SDK für Java]: http://www.windowsazure.com/de-de/develop/java/
-  [Vorgehensweise: Erstellen eines Speicherkontos]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-create-a-storage-account/
-  [Vorgehensweise: Verwalten von Speicherkonten]: http://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/
-  [Verwenden des Blobspeicherdiensts aus Java]: http://www.windowsazure.com/de-de/develop/java/how-to-guides/blob-storage/
-
+  [Herunterladen des Azure SDK für Java]: http://azure.microsoft.com/develop/java/
+  [Vorgehensweise: Erstellen eines Speicherkontos]: http://azure.microsoft.com/manage/services/storage/how-to-create-a-storage-account/
+  [Vorgehensweise: Verwalten von Speicherkonten]: http://azure.microsoft.com/manage/services/storage/how-to-manage-a-storage-account/
+  [Verwenden des Blobspeicherdiensts aus Java]: http://azure.microsoft.com/develop/java/how-to-guides/blob-storage/
 <!--HONumber=42-->

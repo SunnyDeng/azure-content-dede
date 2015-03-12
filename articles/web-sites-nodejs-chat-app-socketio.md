@@ -23,7 +23,7 @@
 
 Socket.IO ermöglicht die Echtzeitkommunikation zwischen Ihrem Node.js-Server und Clients über WebSockets. Außerdem unterstützt es Fallback auf andere Transportmechanismen (wie Long Polling), die mit älteren Browsern funktionieren. In diesem Lernprogramm wird das Hosten einer Socket.IO-basierten Chatanwendung als Azure-Website erläutert. Weitere Informationen über Socket.IO finden Sie unter [http://socket.io/][socketio].
 
-> [AZURE.NOTE] Die Verfahren in dieser Aufgabe gelten für Azure-Websites. Die Verfahren für Cloud-Dienste finden Sie unter <a href="http://www.windowsazure.com/de-de/develop/nodejs/tutorials/app-using-socketio/">Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst</a>.
+> [AZURE.NOTE] Die Verfahren in dieser Aufgabe gelten für Azure-Websites. Die Verfahren für Cloud-Dienste finden Sie unter <a href="http://azure.microsoft.com/develop/nodejs/tutorials/app-using-socketio/">Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst</a>.
 
 
 ## <a id="Download"></a>Herunterladen des Chatbeispiels
@@ -96,7 +96,7 @@ die erforderlichen Module zu installieren:
 
 Befolgen Sie diese Schritte, um eine Azure-Website zu erstellen und dann die Git-Veröffentlichung sowie die WebSocket-Unterstützung für die Website zu aktivieren.
 
-> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A7171371E" target="_blank">Kostenlose Azure-Testversion</a>.
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A7171371E" target="_blank">Kostenlose Azure-Testversion</a>.
 
 1. Wechseln Sie über die Befehlszeile zum Verzeichnis **\\node\chat**, und verwenden Sie folgenden Befehl, um eine neue Azure-Website zu erstellen und ein Git-Repository für die Website und das lokale Verzeichnis zu aktivieren. Dadurch wird auch ein Git-Remoterepository namens  'azure' erstellt.
 

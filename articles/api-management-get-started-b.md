@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit der Azure API-Verwaltung" metaKeywords="" description="Erfahren Sie mehr über das Erstellen von APIs und Vorgängen sowie über die ersten Schritte mit der API-Verwaltung." metaCanonical="" services="api-management" documentationCenter="API Management" title="Get started with Azure API Management" authors="sdanie" solutions="" manager="dwrede" editor="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit der Azure API-Verwaltung" 
+	description="Erfahren Sie mehr über das Erstellen von APIs und Vorgängen sowie über die ersten Schritte mit der API-Verwaltung." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="api-management" ms.workload="mobile" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/18/2014" ms.author="sdanie" />
+<tags 
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2/11/2015" 
+	ms.author="sdanie"/>
 
 # Erste Schritte mit der Azure API-Verwaltung
 
@@ -156,7 +170,7 @@ Nach dem Aufruf der Operation zeigt das Entwicklerportal die **Angeforderte URL*
 -   Anpassen des Entwicklerportals
 -   Verfolgung von Aufrufen mit dem API-Inspektor
 
-[Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial/
+[Kostenlose Azure-Testversion]: http://azure.microsoft.com/pricing/free-trial/
 
 [Erstellen einer API-Verwaltungsinstanz]: #create-service-instance
 [Erstellen einer API]: #create-api
@@ -203,3 +217,5 @@ Nach dem Aufruf der Operation zeigt das Entwicklerportal die **Angeforderte URL*
 [api-management-invoke-get-response]: ./media/api-management-get-started-b/api-management-invoke-get-response.png
 
 <!--HONumber=35.2-->
+
+<!--HONumber=46--> 

@@ -1,6 +1,18 @@
-﻿<properties title="How to create web test" pageTitle="Gewusst wie: Erstellen von Webtests" description="Erfahren Sie, wie Sie Webtests in Azure erstellen." authors="awills" manager="kamrani" />
+﻿<properties 
+	pageTitle="Erstellen von Webtests" 
+	description="Erfahren Sie, wie Sie Webtests in Azure erstellen." 
+	services="application-insights" 
+	authors="alancameronwills" 
+	manager="kamrani"/>
 
-<tags ms.service="application-insights" ms.workload="tbd" ms.tgt_pltfrm="ibiza" ms.devlang="na" ms.topic="article" ms.date="2014-09-29" ms.author="awills"  />
+<tags 
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="2015-01-17" 
+	ms.author="awills"/>
 
 # Webtests für Microsoft Azure-Websites
 Steht Ihre Azure-Website noch zur Verfügung? Reagiert sie ordnungsgemäß und schnell genug? Testen Sie Ihre Website regelmäßig durch Konfiguration eines Webtests. Wenn die Website ausfällt oder langsam bzw. falsch reagiert, erhalten Sie eine E-Mail-Warnung. Außerdem erhalten Sie Diagramme, aus denen Sie die Verfügbarkeit und Reaktionsfähigkeit der Site über einen längeren Zeitraum ersehen können.  
@@ -47,3 +59,5 @@ Fehlgeschlagene Tests können analysiert werden, um die Fehlerursache festzustel
 ![Open in VS](./media/insights-create-web-tests/Insights_OpenInVS.png)
 
 [availability]: ../app-insights-monitor-web-app-availability/
+
+<!--HONumber=46--> 

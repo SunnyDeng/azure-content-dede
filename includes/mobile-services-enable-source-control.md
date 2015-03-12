@@ -21,5 +21,4 @@
 	Die URL des Git-Repositorys wird ebenfalls angezeigt. Sie werden diese URL verwenden, um das Repository auf Ihrem lokalen Computer zu klonen.
 
 Mit aktivierter Quellcodeverwaltung für Ihren mobilen Dienst können Sie Git verwenden, um das Repository auf Ihrem lokalen Computer zu klonen.
- 
-<!--HONumber=42-->
+ <!--HONumber=42-->

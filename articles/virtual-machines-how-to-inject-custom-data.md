@@ -28,7 +28,7 @@ Das Einfügen eines Skripts oder anderer Daten in einem virtuellen Azure-Compute
 
 - Verwenden von speziellen Tools, die auf einigen Systemen zum automatischen Ermitteln und Verarbeiten benutzerdefinierter Daten vorfügbar sind.
 
-> [AZURE.NOTE] Dieses Thema erweitert [diesen Azure-Blogbeitrag](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/) über dieses Feature. Er wird regelmäßig aktualisiert, sobald weitere Funktionen vorhanden sind.
+> [AZURE.NOTE] Dieses Thema erweitert [diesen Azure-Blogbeitrag](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/) über dieses Feature und wird regelmäßig aktualisiert, sobald weitere Funktionen vorhanden sind.
 
 <!--Table of contents for topic, the words in brackets must match the heading wording exactly-->
 In diesem Thema:
@@ -42,7 +42,7 @@ In diesem Thema:
 
 ## <a id="injectingCustomData"></a>Einfügen benutzerdefinierter Daten in einem virtuellen Azure-Computer
 
-Dieses Feature wird zurzeit nur in der [plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat) unterstützt. Auch wenn Sie jede der Optionen für den Befehl  `azure vm create` verwenden können, ist der folgende Ansatz sehr allgemein gehalten. 
+Dieses Feature wird zurzeit nur in der [Microsoft Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat) unterstützt Auch wenn Sie jede der Optionen für den Befehl  `azure vm create` verwenden können, ist der folgende Ansatz sehr allgemein gehalten. 
 
 ```
     PASSWORD='AcceptablePassword -- more than 8 chars, a cap, a num, a special'
@@ -61,8 +61,8 @@ Dieses Feature wird zurzeit nur in der [plattformübergreifenden Microsoft Azure
 
 + Wenn es sich bei Ihrem virtuellen Azure-Computer um einen virtuellen Linux-Computer handelt, befindet sich die benutzerdefinierte Datendatei an den folgenden zwei Orten, die Daten sind jedoch base64-codiert. Daher müssen Sie die Daten zunächst decodieren.
 
-    + Unter `/var/lib/waagent/ovf-env.xml`
-    + Unter `/var/lib/waagent/CustomData` 
+    + At `/var/lib/waagent/ovf-env.xml`
+    + At `/var/lib/waagent/CustomData` 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a id="nextsteps"></a>Nächste Schritte: Verwenden von cloud-init
@@ -75,4 +75,7 @@ Wenn es sich bei Ihrem virtuellen Azure-Computer um ein Ubuntu-Image handelt, k�
 [Microsoft Azure Cross-Platform Command-line Interface](https://github.com/Azure/azure-sdk-tools-xplat) (Plattformübergreifende Microsoft Azure-Befehlszeilenschnittstelle, in englischer Sprache)
 
 
-<!--HONumber=45--> 
+
+
+
+<!--HONumber=42-->
