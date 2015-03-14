@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden des Warteschlangendiensts (Node.js) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit dem Azure-Warteschlangendienst Warteschlangen erstellen und löschen sowie Nachrichten einfügen, abrufen und löschen können. Die Beispiele sind in Node.js geschrieben." 
 	services="storage" 
@@ -353,27 +353,27 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 -   Besuchen Sie das [Azure Storage SDK for Node][]-Repository auf GitHub.
 
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
-  [Next Steps]: #next-steps
-  [What is the Queue Service?]: #what-is
-  [Concepts]: #concepts
-  [Create an Azure Storage Account]: #create-account
-  [Create a Node.js Application]: #create-app
-  [Configure your Application to Access Storage]: #configure-access
-  [Setup an Azure Storage Connection String]: #setup-connection-string
-  [How To: Create a Queue]: #create-queue
-  [How To: Insert a Message into a Queue]: #insert-message
-  [How To: Peek at the Next Message]: #peek-message
-  [How To: Dequeue the Next Message]: #get-message
-  [How To: Change the Contents of a Queued Message]: #change-contents
-  [How To: Additional Options for Dequeuing Messages]: #advanced-get
-  [How To: Get the Queue Length]: #get-queue-length
-  [How To: Delete a Queue]: #delete-queue
-  [How To: Working with Shared Access Signatures]: #sas
+  [Nächste Schritte]: #next-steps
+  [Was ist der Warteschlangendienst?]: #what-is
+  [Konzepte]: #concepts
+  [Erstellen eines Azure-Speicherkontos]: #create-account
+  [Erstellen einer Node.js-Anwendung]: #create-app
+  [Konfigurieren der Anwendung für den Speicherzugriff]: #configure-access
+  [Einrichten einer Azure-Speicherverbindungszeichenfolge]: #setup-connection-string
+  [Vorgehensweise: Erstellen einer Warteschlange]: #create-queue
+  [Vorgehensweise: Einfügen einer Nachricht in eine Warteschlange]: #insert-message
+  [Vorgehensweise: Einsehen der nächsten Nachricht]: #peek-message
+  [Vorgehensweise: Entfernen der nächsten Nachricht aus der Warteschlange]: #get-message
+  [Vorgehensweise: Ändern des Inhalts von Nachrichten in der Warteschlange]: #change-contents
+  [Vorgehensweise: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange]: #advanced-get
+  [Vorgehensweise: Abrufen der Warteschlangenlänge]: #get-queue-length
+  [Vorgehensweise: Löschen einer Warteschlange]: #delete-queue
+  [Vorgehensweise: Arbeiten mit Shared Access Signature]: #sas
   [using the REST API]: http://msdn.microsoft.com/library/windowsazure/hh264518.aspx
   [Azure Management Portal]: http://manage.windowsazure.com
-  [Create and deploy a Node.js application to an Azure Web Site]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-  [Node.js Cloud Service with Storage]: /de-de/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
-  [Node.js Web Application with Storage]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
+  [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [Node.js-Cloud-Dienst]: /de-de/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
+  [Node.js-Cloud-Dienst]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
 
   
   [Queue1]: ./media/storage-nodejs-how-to-use-queues/queue1.png
@@ -383,7 +383,7 @@ um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
   
   
   [Node.js Cloud Service]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
-  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
- [Web Site with WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
+  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
+  [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+ [Website mit WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
 <!--HONumber=42-->

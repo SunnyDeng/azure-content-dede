@@ -76,16 +76,6 @@ Weitere Informationen zu DocumentDB finden Sie in der Azure DocumentDB-Dokumenta
 [Nächste Schritte]: #NextSteps
 [documentdb-manage]:../documentdb-manage/
 
-<!--Image references-->
-[1]: ./media/documentdb-create-account/ca1.png
-[2]: ./media/documentdb-create-account/ca2.png
-[3]: ./media/documentdb-create-account/ca3.png
-[4]: ./media/documentdb-create-account/ca4.png
-[5]: ./media/documentdb-create-account/ca5.png
-[6]: ./media/documentdb-create-account/ca6.png
-[7]: ./media/documentdb-create-account/ca7.png
-[8]: ./media/documentdb-create-account/ca8.png
-
 <!--HONumber=35.2-->
 
 <!--HONumber=46--> 

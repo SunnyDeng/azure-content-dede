@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Hybride lokale/Cloudanwendung (.NET) - Azure" 
 	description="Erfahren Sie, wie eine lokale/Cloud-.NET-Hybridanwendung mithilfe von Microsoft Azure Service Bus Relay erstellen." 
 	services="service-bus" 
@@ -96,7 +96,7 @@ die Tools und müssen Ihre Entwicklungsumgebung einrichten.
 
     [Tools und SDK herunterladen][]
 
-2. 	Klicken Sie auf ** SDK installieren**.
+2. 	Klicken Sie auf **SDK installieren**.
 
 3. 	Wählen Sie den korrekten Link für Ihre Visual Studio-Version aus. Für die Schritte in diesem Lernprogramm wird Visual Studio 2013 verwendet:
 
@@ -807,5 +807,3 @@ Weitere Informationen zum Servicebus finden Sie in den folgenden Ressourcen:
   [sbwacom]: /de-de/documentation/services/service-bus/  
   [sbwacomqhowto]: /de-de/develop/net/how-to-guides/service-bus-queues/
   [executionmodels]: http://azure.microsoft.com/develop/net/fundamentals/compute/
-
-<!--HONumber=46--> 
