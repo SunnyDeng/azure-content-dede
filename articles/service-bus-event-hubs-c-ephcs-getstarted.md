@@ -1,6 +1,20 @@
-﻿<properties pageTitle="Erste Schritte mit Ereignis-Hubs" metaKeywords="Azure Service Bus, Ereignis-Hub, Erste Schritte mit Ereignis-Hubs" description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs für das Senden von Ereignissen mit C und das Empfangen in C# mithilfe von EventProcessorHost." metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Ereignis-Hubs" 
+	description="Erste Schritte mit Ereignis-HubsErste Schritte mit Ereignis-Hubs" 
+	services="service-bus" 
+	documentationCenter="" 
+	authors="fsautomata" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="service-bus" ms.workload="core" ms.tgt_pltfrm="c" ms.devlang="csharp" ms.topic="hero-article" ms.date="10/27/2014" ms.author="elioda" />
+<tags 
+	ms.service="service-bus" 
+	ms.workload="core" 
+	ms.tgt_pltfrm="c" 
+	ms.devlang="csharp" 
+	ms.topic="hero-article" 
+	ms.date="02/10/2015" 
+	ms.author="sethm"/>
 
 # <a name="getting-started"> </a>Erste Schritte mit Ereignis-Hubs
 
@@ -87,4 +101,4 @@ Jetzt können Sie die Anwendungen ausführen.
 <!-- Links -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Ereignisprozessorhost]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/de-de/library/azure/dn836025.aspx
+[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx

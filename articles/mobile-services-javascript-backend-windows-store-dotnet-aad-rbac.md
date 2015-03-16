@@ -277,8 +277,7 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 [0]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/users.png
 [1]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/group-membership.png
 [2]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/sales-group.png
-[3]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/table-per
-	ms.png
+[3]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/table-perms.png
 [4]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/insert-table-op-view.png
 [5]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/sales-group-id.png
 [6]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/client-id-and-key.png

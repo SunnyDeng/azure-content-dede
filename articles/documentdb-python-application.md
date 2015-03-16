@@ -186,15 +186,11 @@ werden.
 Erweitern Sie den Knoten für Python-Umgebungen im Projektmappen-Explorer, klicken Sie dann mit der rechten Maustaste auf
 Ihre Umgebung, und wählen Sie anschließend "Python-Paket installieren..." aus.
 
-![Alt text](./media/documentdb-python-application/image13.png)
-
 Geben Sie "--pre pydocumentdb" ein. Hierbei handelt es sich um den Namen des PyPi-Pakets. Sie können
 optional eine bekannte Version bereitstellen, wenn Sie über die
 zu installierende Version entscheiden möchten. Wenn Sie die Version nicht angeben, wird sichergestellt,
 dass die neueste stabile Version installiert wird. Beachten Sie, dass Sie den gesamten Namen
 eingeben müssen: "--pre pydocumentdb".
-
-![Alt text](./media/documentdb-python-application/image14.png)
 
 Dadurch wird das Paket "pydocumentdb" heruntergeladen und in Ihrer
 Umgebung installiert. Anschließend sollte "pydocumentdb" als Modul unter Ihrer

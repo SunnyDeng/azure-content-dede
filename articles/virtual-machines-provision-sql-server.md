@@ -387,8 +387,7 @@ Sie haben jetzt erfahren, wie Sie einen SQL Server auf einem virtuellen Azure-Co
 [Image15]: ./media/virtual-machines-provision-sql-server/15Allow-Connection.png
 [Image16]: ./media/virtual-machines-provision-sql-server/16Public-Profile.png
 [Image17]: ./media/virtual-machines-provision-sql-server/17Rule-Name.png
-[Image18]: ./media/virtual-machines-provision-sql-server/18Start-SS
-	ms.png
+[Image18]: ./media/virtual-machines-provision-sql-server/18Start-SSms.png
 [Image19]: ./media/virtual-machines-provision-sql-server/19Connect-to-Server.png
 [Image20]: ./media/virtual-machines-provision-sql-server/20Server-Properties.png
 [Image21]: ./media/virtual-machines-provision-sql-server/21Mixed-Mode.png

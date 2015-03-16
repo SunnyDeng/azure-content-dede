@@ -391,12 +391,12 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 <!--Image references-->
 [6]: ./media/search-get-started/AzureSearch_Configure1_1_New.PNG
 [7]: ./media/search-get-started/AzureSearch_Configure1_2_Everything.PNG
-[8]: ./media/search-get-started/Azuresearch_Configure1_3_Gallery.PNG
+[8]: ./media/search-get-started/Azuresearch_Configure1_3a_Gallery.PNG
 [9]: ./media/search-get-started/AzureSearch_Configure1_4_GallerySeeAll.PNG
-[10]: ./media/search-get-started/AzureSearch_Configure1_5_DataServicesList.PNG
+[10]: ./media/search-get-started/AzureSearch_Configure1_5_SearchTile.PNG
 [11]: ./media/search-get-started/AzureSearch_Configure1_6_URL.PNG
-[12]: ./media/search-get-started/AzureSearch_Configure1_7_Free.PNG
-[13]: ./media/search-get-started/AzureSearch_Configure1_8_SearchServiceList.PNG
+[12]: ./media/search-get-started/AzureSearch_Configure1_7a_Free.PNG
+[13]: ./media/search-get-started/AzureSearch_Configure1_17_HomeDashboard.PNG
 [14]: ./media/search-get-started/AzureSearch_Configure1_9_Standard.PNG
 [15]: ./media/search-get-started/AzureSearch_Configure1_10_ScaleUp.PNG
 [16]: ./media/search-get-started/AzureSearch_Configure1_11_PUTIndex.PNG
@@ -405,7 +405,7 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [19]: ./media/search-get-started/AzureSearch_Configure1_14_GETQueryResponse.PNG
 [20]: ./media/search-get-started/AzureSearch_Configure1_15_Stats.PNG
 [21]: ./media/search-get-started/AzureSearch_Configure1_16_StatsResponse.PNG
-[22]: ./media/search-get-started/AzureSearch_Configure1_17_BrowseEverything.PNG
+[22]: ./media/search-get-started/AzureSearch_Configure1_17_HomeDashboard.PNG
 [23]: ./media/search-get-started/AzureSearch_Configure1_18_Explore.PNG
 
 
