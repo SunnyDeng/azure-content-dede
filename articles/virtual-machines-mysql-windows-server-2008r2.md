@@ -149,14 +149,4 @@ Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.
 [MySQLDownloads]: http://www.mysql.com/downloads/mysql/
 
 
-[MySQLConfig5]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig5.png
-[MySQLConfig7]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig7.png
-[MySQLConfig8]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig8.png
-[MySQLConfig9]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig9.png
-[MySQLConfig10]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig10.png
-
-
-
-
-
 <!--HONumber=42-->

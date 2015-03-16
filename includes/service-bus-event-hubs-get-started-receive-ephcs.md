@@ -120,4 +120,5 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-[Event Hubs-Entwicklerhandbuch]: http://msdn.microsoft.com/library/azure/dn789972.aspx<!--HONumber=42-->
+[Event Hubs-Entwicklerhandbuch]: http://msdn.microsoft.com/library/azure/dn789972.aspx
+<!--HONumber=42-->
