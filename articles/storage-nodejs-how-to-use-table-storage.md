@@ -43,7 +43,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Microsoft
 
 <h2><a name="create-account"></a>Erstellen eines Azure-Speicherkontos</h2>
 
-[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## <a name="create-app"></a>Erstellen einer Node.js-Anwendung Erstellen einer Node.js-Anwendung.  Anleitungen zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Cloud-Dienst][Node.js Cloud Service] (mithilfe von Windows PowerShell), oder [Website mit WebMatrix].
 

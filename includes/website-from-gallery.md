@@ -1,4 +1,4 @@
-﻿In der Galerie ist eine breite Auswahl an beliebten Webanwendungen verfügbar, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Für über die Galerie erstellte Webanwendungen muss außer dem Browser, der für die Verbindung zum Azure-Verwaltungsportal verwendet wird, keinerlei Software installiert werden. 
+In der Galerie ist eine breite Auswahl an beliebten Webanwendungen verfügbar, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Für über die Galerie erstellte Webanwendungen muss außer dem Browser, der für die Verbindung zum Azure-Verwaltungsportal verwendet wird, keinerlei Software installiert werden. 
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -53,11 +53,11 @@ Nachdem Sie auf **Complete** geklickt haben, startet Azure den Erstellungs- und 
 
 2. Blättern Sie auf der Verwaltungsseite für das **Dashboard** nach unten, und klicken Sie links unterhalb von **Site Url** auf den Link, um die Begrüßungsseite der Website zu öffnen.
 
-	![site URL][11] 
+
 
 3. Geben Sie die von WordPress benötigten Konfigurationsinformationen ein, und klicken Sie auf **WordPress installieren**, um die Konfiguration abzuschließen und die Anmeldeseite der Website zu öffnen.
 
-	![login to WordPress][12]
+
 
 4. Melden Sie sich an Ihrer neuen WordPress-Website an, indem Sie Ihren Benutzernamen und Ihr Kennwort auf der Seite **Willkommen** eingeben.
 
@@ -76,7 +76,6 @@ Nachdem Sie auf **Complete** geklickt haben, startet Azure den Erstellungs- und 
 [8]: ./media/website-from-gallery/wordpressgallery-04.png
 [9]: ./media/website-from-gallery/wordpressgallery-05.png
 [10]: ./media/website-from-gallery/wordpressgallery-06.png
-
 [13]: ./media/website-from-gallery/wordpressgallery-09.png
 
 

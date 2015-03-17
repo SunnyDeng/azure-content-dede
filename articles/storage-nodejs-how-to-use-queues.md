@@ -51,7 +51,7 @@ Löschen der Warteschlangen**. Weitere Informationen zu Warteschlangen finden Si
 
 <h2><a name="create-account"></a>Erstellen eines Azure-Speicherkontos</h2>
 
-[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## <a name="create-app"></a>Erstellen einer Node.js-Anwendung
 

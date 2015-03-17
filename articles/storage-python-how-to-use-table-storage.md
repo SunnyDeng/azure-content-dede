@@ -42,7 +42,7 @@ Dieser Leitfaden demonstriert die Durchführung häufiger Szenarien mit dem Azur
 [AZURE.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
 
 ## <a name="create-account"> </a>Erstellen eines Azure-Speicherkontos
-[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 **Hinweis:** Informationen zur Installation von Python oder den Clientbibliotheken finden Sie im [Python-Installationshandbuch](../python-how-to-install/).
 

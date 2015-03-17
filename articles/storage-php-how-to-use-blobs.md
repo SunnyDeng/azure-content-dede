@@ -36,11 +36,11 @@ Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Blo
 * [Vorgehensweise: Löschen eines Blobcontainers](#DeleteContainer)
 * [Nächste Schritte](#NextSteps)
 
-[AZURE.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
 <h2><a id="CreateAccount"></a>Erstellen eines Azure-Speicherkontos</h2>
 
-[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 <h2><a id="CreateApplication"></a>Erstellen einer PHP-Anwendung</h2>
 

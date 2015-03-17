@@ -80,7 +80,7 @@ Der Azure-Dateispeicher befindet sich derzeit noch in der Vorschau. Um Zugriff a
 
 > [AZURE.NOTE] Dateispeicher ist derzeit nur für neue Speicherkonten verfügbar. Nachdem Sie in Ihrem Abonnement Zugriff auf den Dateispeicher erhalten haben, erstellen Sie ein neues Speicherkonto zur Verwendung in dieser Anleitung.
 
-[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ##<a name="use-cmdlets"></a>Erstellen einer Dateifreigabe mithilfe von PowerShell
 

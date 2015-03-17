@@ -30,6 +30,6 @@ Der Blob-Dienst umfasst die folgenden Komponenten:
     Mit der folgenden Beispiel-URL kann z. B. einer der Blobs im Diagramm oben adressiert werden: `http://sally.blob.core.windows.net/movies/MOV1.AVI`
 
 
-[Blob1]: ./media/howto-blob-storage/blob1.jpg
+[Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
 
 <!--HONumber=42-->

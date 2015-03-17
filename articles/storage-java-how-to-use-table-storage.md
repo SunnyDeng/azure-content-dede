@@ -48,7 +48,7 @@ Hinweis: Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf And
 
 ##<a name="CreateAccount"></a>Erstellen eines Azure-Speicherkontos
 
-[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## <a name="CreateApplication"></a>Erstellen einer Java-Anwendung
 

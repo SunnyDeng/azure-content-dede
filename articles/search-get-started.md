@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erste Schritte mit Azure Search" 
 	description="Erste Schritte mit Azure Search" 
 	services="search" 
@@ -32,7 +32,7 @@ Administratoren können den Suchdienst bei der Auswahl des gemeinsam genutzten D
 + [Erkunden des Suchdienst-Dashboards](#sub-4)
 + [Ausprobieren](#next-steps)
 
-< h2 Id = "Sub-1" > Erste Schritte mit dem kostenlosen Dienst</h2>
+<h2 id="sub-1">Erste Schritte mit dem kostenlosen Dienst</h2>
 
 Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstanzenfähigen Suchdienst, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können. Führen Sie die folgenden Schritte aus, um sich für die kostenlose Version anzumelden.
 
@@ -405,7 +405,7 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [19]: ./media/search-get-started/AzureSearch_Configure1_14_GETQueryResponse.PNG
 [20]: ./media/search-get-started/AzureSearch_Configure1_15_Stats.PNG
 [21]: ./media/search-get-started/AzureSearch_Configure1_16_StatsResponse.PNG
-[22]: ./media/search-get-started/AzureSearch_Configure1_17_HomeDashboard.PNG
+[22]: ./media/search-get-started/AzureSearch_Configure1_17_BrowseEverything.PNG
 [23]: ./media/search-get-started/AzureSearch_Configure1_18_Explore.PNG
 
 
@@ -416,5 +416,3 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Erstellen einer geografischen Suchanwendung mit Azure Search]: ../search-create-geospatial/
 
 <!--HONumber=35.2-->
-
-<!--HONumber=46--> 

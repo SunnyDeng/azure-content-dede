@@ -47,7 +47,7 @@ Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Lö
 
 ## <a id="CreateAccount"></a>Erstellen eines Azure-Speicherkontos
 
-[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## <a id="create-a-ruby-application"></a>Erstellen einer Ruby-Anwendung
 

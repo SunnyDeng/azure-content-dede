@@ -38,11 +38,11 @@ Hinweis: Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf And
 * [Vorgehensweise: Löschen eines Blob-Containers](#DeleteContainer)
 * [Nächste Schritte](#NextSteps)
 
-[AZURE.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
 <h2><a id="CreateAccount"></a>Erstellen eines Azure-Speicherkontos</h2>
 
-[AZURE.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## <a name="CreateApplication"> </a>Erstellen einer Java-Anwendung
 
