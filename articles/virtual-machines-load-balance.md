@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Lastenausgleich für Azure-Infrastrukturdienste" 
 	description="Beschreibt zwei unterschiedliche Typen des durch Azure unterstützten Lastenausgleichs: Lastenausgleich für Cloud-Dienste und Azure Traffic Manager für Clientdatenverkehr." 
 	services="virtual-machines" 
@@ -20,8 +20,7 @@
 
 
 
-[AZURE.INCLUDE [load-balancing-vms](../includes/load-balancing-v
-	ms.md)]
+[AZURE.INCLUDE [load-balancing-vms](../includes/load-balancing-vms.md)]
 
 
 
