@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="Mobile-Android" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="10/16/2014" 
+	ms.date="02/03/2015" 
 	ms.author="ricksal,glenga"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
