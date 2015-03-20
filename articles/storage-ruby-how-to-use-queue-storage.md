@@ -43,7 +43,7 @@ Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Lö
 * [Vorgehensweise: Löschen einer Warteschlange](#how-to-delete-a-queue)
 * [Nächste Schritte](#next-steps)
 
-[AZURE.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
 ## <a id="CreateAccount"></a>Erstellen eines Azure-Speicherkontos
 
