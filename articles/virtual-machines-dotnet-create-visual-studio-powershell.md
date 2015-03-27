@@ -1,28 +1,28 @@
-﻿<properties 
-	pageTitle="Erstellen eines virtuellen Computers für ein Webprojekt mit Visual Studio" 
-	description="Erstellen eines virtuellen Computers für eine Website" 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="ghogen" 
-	manager="douge" 
+<properties
+	pageTitle="Erstellen eines virtuellen Computers für ein Webprojekt mit Visual Studio"
+	description="Erstellen eines virtuellen Computers für eine Website"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="kempb"
+	manager="douge"
 	editor=""/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-multiple" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/24/2014" 
-	ms.author="ghogen"/>
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-multiple"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="02/19/2015" 
+	ms.author="kempb"/>
 
-# Erstellen eines virtuellen Computers für eine Website mit Visual Studio
+#Erstellen eines virtuellen Computers für eine Website mit Visual Studio
 
 Beim Erstellen eines Webprojekts für eine Azure-Website können Sie einen virtuellen Computer in Azure verteilen. Sie können anschließend den virtuellen Computer mit zusätzlicher Software konfigurieren oder den virtuellen Computer für Diagnose- oder Debugzwecke verwenden.
 
 So erstellen Sie beim Erstellen einer Website einen virtuellen Computer
 
-1. Wählen Sie in Visual Studio **Datei**, **Neues Projekt**, **Web** und dann **ASP-NET-Webanwendung** aus.
+1. Wählen Sie in Visual Studio **Datei**, **Neues Projekt**, **Web** und dann **ASP-NET**-Webanwendung aus.
 2. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** den gewünschten Webanwendungstyp aus. Stellen Sie im Abschnitt "Azure" des Dialogfelds sicher (in der unteren rechten Ecke), dass das Kontrollkästchen **In der Cloud hosten** aktiviert ist (dieses Kontrollkästchen heißt in einigen Installationen **Remoteressourcen erstellen**).
 
 	![][0]
@@ -38,7 +38,7 @@ So erstellen Sie beim Erstellen einer Website einen virtuellen Computer
 8. Wählen Sie in der Liste **Größe** die Größe des virtuellen Computers aus.
 9. Geben Sie die Anmeldeinformationen für diesen virtuellen Computer an. Notieren Sie sie, da Sie sie für den Zugriff auf den Computer per Remotedesktop benötigen.
 10. Wählen Sie in der Liste **Ort** Region, virtuelles Netzwerk oder Affinitätsgruppe aus, die bzw. das den virtuellen Computer hostet. Sie können Affinitätsgruppen verwenden, um sicherzustellen, dass Azure-Ressourcen im selben Rechenzentrum zusammenbleiben, die über eine Menge an Netzwerkdatenverkehr untereinander verfügen, oder Sie können Regionen verwenden, um den genauen Rechenzentrumsstandort anzugeben.
-11. Wählen Sie **OK** zum Starten der Erstellung des virtuellen Computer aus. Im Fenster **Ausgabe** können Sie den Status anzeigen.
+11. Wählen Sie **OK** zum Starten der Erstellung des virtuellen Computer aus. Im Fenster **Ausgabe ** können Sie den Status anzeigen.
 
 	![][3]
 
@@ -55,7 +55,7 @@ So erstellen Sie beim Erstellen einer Website einen virtuellen Computer
 <br/>
 13. (Optional) Erweitern Sie im **Server-Explorer** den Knoten **Virtuelle Computer**. Wählen Sie den Knoten für den von Ihnen erstellten virtuellen Computer aus, und wählen Sie **Verbindung mit Remotedesktop herstellen** aus, um eine Verbindung zum virtuellen Computer herzustellen.
 
-# Nächste Schritte
+#Nächste Schritte
 
 [Hier](http://msdn.microsoft.com/library/dn642480.aspx) finden Sie genauere Informationen, wenn Sie die von Ihnen erstellten Veröffentlichungsskripts anpassen möchten.
 
@@ -65,7 +65,4 @@ So erstellen Sie beim Erstellen einer Website einen virtuellen Computer
 [3]: ./media/dotnet-visual-studio-create-virtual-machine/CreateVM_Provisioning.png
 [4]: ./media/dotnet-visual-studio-create-virtual-machine/CreateVM_SolutionExplorer.png
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

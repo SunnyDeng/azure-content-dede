@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="Auslastungstests für Anwendungsmuster – Azure-Architekturmuster" 
+	pageTitle="Auslastungstests für Anwendungsmuster - Azure-Architekturmuster" 
 	description="Hier finden Sie Übersichten über die Architektur und Entwurfsmuster, die beschreiben, wie Sie ein System für Auslastungstests in Azure implementieren." 
 	services="" 
 	documentationCenter=".net" 
@@ -18,7 +18,7 @@
 
 # Auslastungstests in Azure
 
-Mit dem cloudbasierten Auslastungstestdienst können Sie die Auslastung von Webanwendungen testen. Verwenden Sie Visual Studio, um einen Auslastungstest zu erstellen, mit dem die Kapazität und Leistung von Webanwendungen getestet wird. Sie müsen also nicht Ihre eigenen Azure-VMs verwenden. Stattdessen übernimmt der [cloudbasierte Auslastungstestdienst](http://tfs.visualstudio.com/de-de/learn/load-testing) die Erstellung.
+Mit dem cloudbasierten Auslastungstestdienst können Sie die Auslastung von Webanwendungen testen. Verwenden Sie Visual Studio, um einen Auslastungstest zu erstellen, mit dem die Kapazität und Leistung von Webanwendungen getestet wird. Sie müssen also nicht Ihre eigenen Azure-VMs verwenden. Stattdessen übernimmt der [cloudbasierte Auslastungstestdienst](http://tfs.visualstudio.com/learn/load-testing) die Erstellung.
 
 <!--links-->
 
@@ -29,8 +29,6 @@ Mit dem cloudbasierten Auslastungstestdienst können Sie die Auslastung von Weba
 <!--images-->
 
 
- 
 
-<!--HONumber=35.2-->
 
-<!--HONumber=46--> 
+<!--HONumber=47-->

@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="vm-sharepoint" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="1/26/2015" 
+	ms.date="03/04/2015" 
 	ms.author="josephd"/>
 
 
-#SharePoint-Serverfarm-Konfigurationsdetails#
+# SharePoint-Serverfarm-Konfigurationsdetails
 
 Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals für die automatische Erstellung einer vorkonfigurierten SharePoint Server 2013-Farm für Sie. Es gibt zwei Farmkonfigurationen:
 
@@ -26,9 +26,9 @@ Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals f�
 
 Die folgenden Abschnitte beinhalten Konfigurationsdetails für jede Farm.
 
-Zusätzliche Informationen finden Sie im Thema zur [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
+Weitere Informationen finden Sie unter [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
 
-##Grundlegende SharePoint-Farm##
+## Grundlegende SharePoint-Farm
 
 Die grundlegende SharePoint-Farm besteht aus drei virtuellen Computern mit der folgenden Konfiguration:
 
@@ -51,7 +51,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 - Domänencontroller
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: contoso.com (Standard)
+	-	Domänenname: contoso.com (default)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -71,7 +71,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 	-	Passphrase für SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 
 
-##Hochverfügbare SharePoint-Farm##
+## Hochverfügbare SharePoint-Farm
 
 Die hochverfügbare SharePoint-Farm besteht aus neun virtuellen Computern mit der folgenden Konfiguration:
 
@@ -80,7 +80,7 @@ Die hochverfügbare SharePoint-Farm besteht aus neun virtuellen Computern mit de
 Im Folgenden finden Sie die Konfigurationsdetails:
 
 -	Azure-Abonnement: Wird während der anfänglichen Konfiguration angegeben.
--	Azure-Domänennamen (auch bekannt als Cloud-Dienste): Separate Domänennamen werden der obigen Abbildung entsprechend erstellt.
+-	Azure-Domänennamen (auch bekannt als Cloud-Dienste): Gemäß der obigen Abbildungen werden separate Domänennamen erstellt.
 -	Speicherkonto: Wird während der anfänglichen Konfiguration angegeben.
 -	Virtuelles Netzwerk	
 	-	Geben Sie Folgendes ein: Nur Cloud
@@ -100,7 +100,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 -	Domänencontroller
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: contoso.com (Standard)
+	-	Domänenname: contoso.com (default)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -119,13 +119,10 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 	-	Kontokennwort für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.		
 	-	Passphrase für SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 
-##Zusätzliche Ressourcen##
+## Zusätzliche Ressourcen
 
 [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/)
 
 [SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

@@ -1,6 +1,6 @@
-﻿<properties 
+<properties 
 	pageTitle="Installieren von MongoDB auf einem virtuellen Computer unter Windows Server" 
-	description="Anleitung zum Installieren von MongoDB auf einem virtuellen Azure-Computer unter Windows Server." 
+	description="Erfahren Sie, wie Sie MongoDB auf einem virtuellen Azure-Computer unter Windows Server installieren." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="KBDAzure" 
@@ -18,7 +18,7 @@
 
 #Installieren von MongoDB auf einem virtuellen Computer unter Windows Server
 
-[MongoDB][MongoDB] ist eine beliebte, leistungsfähige Open Source-NoSQL-Datenbank. Mit dem [Azure-Verwaltungsportal][AzureManagementPortal] können Sie über den Image-Katalog einen virtuellen Windows Server-Computer erstellen. Anschließend können Sie auf dem virtuellen Computer eine MongoDB-Datenbank installieren und konfigurieren.
+[MongoDB][MongoDB] ist eine beliebte, leistungsfähige Open Source-NoSQL-Datenbank.  Mit dem [Azure-Verwaltungsportal][AzureManagementPortal] können Sie über den Imagekatalog einen virtuellen Windows Server-Computer erstellen.  Anschließend können Sie auf dem virtuellen Computer eine MongoDB-Datenbank installieren und konfigurieren.
 
 In diesem Artikel wird Folgendes erläutert:
 
@@ -27,7 +27,7 @@ In diesem Artikel wird Folgendes erläutert:
 - Anfügen eines Datenträgers an einen virtuellen Computer
 - Installieren von MongoDB auf dem virtuellen Computer
 
-## Erstellen eines virtuellen Computers unter Windows Server
+##Erstellen eines virtuellen Computers unter Windows Server
 
 Im Folgenden finden Sie allgemeine Anweisungen. Sie können sie ändern, indem Sie einen Endpunkt erstellen, um den Remotezugriff auf MongoDB zuzulassen. (Sie können ihn auch später erstellen. Eine Beschreibung findet sich im Anschluss an die Anweisungen für das Installieren von MongoDB.) Fügen Sie auf der letzten Seite des Assistenten einen Endpunkt hinzu, und konfigurieren Sie ihn wie folgt:
 
@@ -37,25 +37,22 @@ Im Folgenden finden Sie allgemeine Anweisungen. Sie können sie ändern, indem S
  
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-WindowsVM.md)]
 
-## Datenträger anfügen
+##Datenträger anfügen
 Fügen Sie zum Bereitstellen eines Speichers für den virtuellen Computer einen Datenträger an, und initialisieren Sie ihn anschließend, damit er durch Windows verwendet werden kann. Sie können entweder einen vorhandenen Datenträger anfügen, wenn Sie bereits über zu verwendende Daten verfügen, oder Sie können einen leeren Datenträger anfügen.
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
-Anweisungen in Bezug auf die Initialisierung des Datenträgers finden Sie unter "Gewusst wie: Initialisieren eines neues Datenträgers unter Windows Server" in [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Windows-Computer](http://azure.microsoft.com/documentation/articles/storage-windows-attach-disk/).
+Anweisungen in Bezug auf die Initialisierung des Datenträgers finden Sie unter "Gewusst wie: Initialisieren eines neues Datenträgers unter Windows Server" in [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](http://azure.microsoft.com/documentation/articles/storage-windows-attach-disk/).
 
-## Installieren und Ausführen von MongoDB auf dem virtuellen Computer 
+##Installieren und Ausführen von MongoDB auf dem virtuellen Computer 
 
 [AZURE.INCLUDE [install-and-run-mongo-on-win2k8-vm](../includes/install-and-run-mongo-on-win2k8-vm.md)]
 
 ##Zusammenfassung
-In diesem Lernprogramm haben Sie erfahren, wie Sie einen virtuellen Windows Server-Computer erstellen, eine Remoteverbindung dazu herstellen und einen Datenträger anfügen.  Sie haben außerdem erfahren, wie Sie MongoDB auf dem virtuellen Windows-Computer installieren und konfigurieren. Weitere Informationen zu MongoDB finden Sie in der [MongoDB-Dokumentation][MongoDocs]..
+In diesem Lernprogramm haben Sie erfahren, wie Sie einen virtuellen Windows Server-Computer erstellen, eine Remoteverbindung dazu herstellen und einen Datenträger anfügen.  Sie haben außerdem erfahren, wie Sie MongoDB auf dem virtuellen Windows-Computer installieren und konfigurieren. Weitere Informationen zu MongoDB finden Sie in der [MongoDB-Dokumentation][MongoDocs].
 
 [MongoDocs]: http://www.mongodb.org/display/DOCS/Home
 [MongoDB]: http://www.mongodb.org/
 [AzureManagementPortal]: http://manage.windowsazure.com
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

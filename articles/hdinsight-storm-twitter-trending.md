@@ -60,7 +60,7 @@ Der Trident-Code, der die Topologie implementiert, lautet wie folgt:
 
 Dabei wird Folgendes ausgeführt:
 
-1. Erstellen Sie einen neuen Datenstrom aus dem Spout. Das Spout ruft Tweets von Twitter ab, die nach bestimmten Schlüsselwörtern gefiltert werden. In diesem Beispiel sind das "Love", "Music" und "Coffee".
+1. Erstellen Sie einen neuen Datenstrom aus dem Spout. Der Spout ruft Tweets von Twitter ab, die nach bestimmten Schlüsselwörtern gefiltert werden. In diesem Beispiel sind das "Love", "Music" und "Coffee".
 
 2. "HashtagExtractor" ist eine benutzerdefinierte Funktion, mit der Hashtags aus den einzelnen Tweets extrahiert werden. Diese werden in den Datenstrom ausgegeben.
 
@@ -70,7 +70,7 @@ Dabei wird Folgendes ausgeführt:
 
 > [AZURE.NOTE] Im Gegensatz zu Spout und "HashtagExtractor" verwenden wir integrierte Trident-Funktionen.
 > 
-> Informationen zu integrierten Operationen finden Sie unter <a href="https://storm.apache.org/apidocs/storm/trident/operation/builtin/package-summary.html" target="_blank">storm.trident.operation.builtin</a>.
+> Informationen zu integrierten Vorgängen finden Sie unter <a href="https://storm.apache.org/apidocs/storm/trident/operation/builtin/package-summary.html" target="_blank">storm.trident.operation.builtin</a>.
 > 
 > Informationen zu anderen Trident-Statusimplementierungen als "MemoryMapState" finden Sie unter:
 > 
@@ -80,17 +80,17 @@ Dabei wird Folgendes ausgeführt:
 
 ### Spout
 
-Das Spout **TwitterSpout** verwendet <a href="http://twitter4j.org/en/" target="_blank">Twitter4j</a> zum Abrufen der Tweets von Twitter. Es wird ein Filter ("Love", "Music" und "Coffee") erstellt und eingehende Tweets (Status), die dem Filter entsprechen, werden gespeichert in einer: <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/LinkedBlockingQueue.html" target="_blank">LinkedBlockingQueue</a>. Abschließend werden die Elemente aus der Warteschlange abgerufen und in der Topologie ausgegeben.
+Der Spout **TwitterSpout** verwendet <a href="http://twitter4j.org/en/" target="_blank">Twitter4j</a>, um Tweets aus Twitter abzurufen. Es wird ein Filter ("Love", "Music" und "Coffee") erstellt und eingehende Tweets (Status), die dem Filter entsprechen, werden in einer <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/LinkedBlockingQueue.html" target="_blank">LinkedBlockingQueue</a> gespeichert. Abschließend werden die Elemente aus der Warteschlange abgerufen und in der Topologie ausgegeben.
 
 ### HashtagExtractor
 
-Zum Extrahieren von Hashtags wird <a href="http://twitter4j.org/javadoc/twitter4j/EntitySupport.html#getHashtagEntities--" target="_blank">getHashtagEntities</a> zum Abrufen aller Hashtags verwendet, die im Tweet enthalten sind. Diese werden dann in den Datenstrom ausgegeben.
+Zum Extrahieren von Hashtags wird <a href="http://twitter4j.org/javadoc/twitter4j/EntitySupport.html#getHashtagEntities--" target="_blank">getHashtagEntities</a> verwendet, um alle im Tweet enthaltenen Hashtags abzurufen. Diese werden dann in den Datenstrom ausgegeben.
 
 ## Aktivieren von Twitter
 
 Verwenden Sie die folgenden Schritte zum Registrieren einer neuen Twitter-Anwendung und zum Abrufen der Verbraucher- und Zugriffstokeninformationen, die zum Lesen von Twitter erforderlich sind.
 
-1. Wechseln Sie zu <a href="" target="_blank">https://apps.twitter.com/</a> und verwenden Sie die Schaltfläche zum **Erstellen einer neuen App**. Lassen Sie beim Ausfüllen des Formulars das Feld für die **Rückruf-URL** leer.
+1. Wechseln Sie zu <a href="" target="_blank">https://apps.twitter.com/</a>, und verwenden Sie die Schaltfläche zum **Erstellen einer neuen App**. Lassen Sie beim Ausfüllen des Formulars das Feld für die **Rückruf-URL** leer.
 
 2. Nachdem die App erstellt wurde, wählen Sie die Registerkarte für **Schlüssel und Zugriffstoken** aus.
 
@@ -127,11 +127,17 @@ Nach dem Start der Topologie sollten Debuginformationen angezeigt werden, die di
 
 ## Nächste Schritte
 
-Nachdem Sie die Topologie lokal getestet haben, erhalten Sie jetzt Informationen zum [Bereitstellen dieser Topologie für Storm in HDInsight](../hdinsight-storm-deploy-monitor-topology/).
+Nachdem Sie die Topologie lokal getestet haben, lesen Sie jetzt Informationen zum [Bereitstellen dieser Topologie für Storm in HDInsight](../hdinsight-storm-deploy-monitor-topology/).
 
 Möglicherweise sind auch die folgenden Storm-Themen für Sie interessant:
 
 * [Entwickeln von Java-Topologien für Storm in HDInsight mit Maven](../hdinsight-storm-develop-java-topology/)
 
 * [Entwickeln von C#-Topologien für Storm in HDInsight mithilfe von Visual Studio](../hdinsight-storm-develop-csharp-visual-studio-topology/)
-<!--HONumber=45--> 
+
+Weitere Storm-Beispiele für HDInsight:
+
+* [Beispiele für Storm in HDInsight](https://github.com/hdinsight/hdinsight-storm-examples)
+
+* [Analysieren von Event Hub-Sensordaten mit Storm in HDInsight](../hdinsight-storm-sensor-data-analysis/)
+<!--HONumber=47-->

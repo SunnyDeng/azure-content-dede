@@ -1,7 +1,7 @@
-<properties 
+﻿<properties 
 	pageTitle="Pushbenachrichtigungen an Benutzer (Android) | Mobile Dev Center" 
 	description="Erfahren Sie, wie Sie mithilfe von Mobile Services Pushbenachrichtigungen an Benutzer Ihrer Android-App senden." 
-	services="mobile-services, notification-hubs" 
+	services="mobile-services" 
 	documentationCenter="android" 
 	authors="RickSaling" 
 	manager="dwrede" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="Mobile-Android" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="Java" 
 	ms.topic="article" 
 	ms.date="10/07/2014" 
@@ -20,7 +20,6 @@
 
 Dieses Thema ist veraltet. In diesem Fall führen Sie stattdessen die aktualisierte Anleitungen in diesen Lernprogrammen aus:
 
-+ [Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App](/de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push/)<br/>Aktualisieren Sie Ihren mobilen TodoList-Dienst, um Azure Notification Hubs zum Senden von Benachrichtigungen an Benutzer der TodoList-Beispiel-App zu verwenden.
-+ [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](/de-de/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users/)<br/>Erweitert das vorherige Lernprogramm, sodass nur angemeldete Benutzer sich für Benachrichtigungen registrieren dürfen.
-
-<!--HONumber=42-->
++ [Hinzufügen von Pushbenachrichtigungen zu Ihrer Mobile Services-App](/documentation/articles/mobile-services-javascript-backend-android-get-started-push/)<br/>Aktualisieren Sie Ihren mobilen TodoList-Dienst, um Azure Notification Hubs zum Senden von Benachrichtigungen an Benutzer der Aufgabenlisten-Beispiel-App zu verwenden.
++ [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users/)<br/>Erweitert das vorherige Lernprogramm dahingehend, dass sich nur angemeldete Benutzer für Benachrichtigungen registrieren dürfen.
+<!--HONumber=47-->

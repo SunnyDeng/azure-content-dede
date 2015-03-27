@@ -104,6 +104,5 @@ In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub 
 
 		gcc sender.c -o sender -lqpid-proton
 
-> [AZURE.NOTE] Im obigen Code verwenden wir ein Ausgabefenster von 1, um eine sofoftige Ausgabe der Meldungen zu erzwingen. Im Allgemeinen sollten Anwendungen Nachrichten stapelweise ausgeben, um den Durchsatz zu erhöhen. Weitere Informationen dazu, wie die Qpid Proton-Bibliothek in dieser und anderen Umgebungen sowie auf Plattformen, für die Bindungen bereitgestellt werden (derzeit Perl, PHP, Python und Ruby)verwendet wird, finden Sie auf der Seite [Qpid AMQP Messenger page](http://qpid.apache.org/components/messenger/index.html).
-
-<!--HONumber=42-->
+> [AZURE.NOTE] Im obigen Code verwenden wir ein Ausgabefenster von 1, um eine sofortige Ausgabe der Meldungen zu erzwingen. Im Allgemeinen sollten Anwendungen Nachrichten stapelweise ausgeben, um den Durchsatz zu erhöhen. Weitere Informationen dazu, wie die Qpid Proton-Bibliothek in dieser und anderen Umgebungen sowie auf Plattformen, für die Bindungen bereitgestellt werden (derzeit Perl, PHP, Python und Ruby)verwendet wird, finden Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html).
+<!--HONumber=47-->

@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Verwenden von Hadoop Pig in HDInsight | Azure"
    description="Erfahren Sie, wie Sie Pig mit Hadoop in HDInsight über den Remotedesktop verwenden."
    services="hdinsight"
@@ -30,9 +30,9 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 * Einen Windows 7-, Windows 8- oder Windows 10-Client
 
-## <a id="connect"></a>Verbinden mit dem Remotedesktop
+## <a id="connect"></a>Verbinden mit Remotedesktop
 
-Aktivieren Sie den Remotedesktop für den HDInsight-Cluster, und verbinden Sie ihn anschließend mithilfe der Anweisungen unter <a href="http://azure.microsoft.com/ documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung zu HDInsight-Clustern mit RDP</a>.
+Aktivieren Sie Remotedesktop für den HDInsight-Cluster, und stellen Sie anschließend mithilfe der Anweisungen unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Verbinden mit HDInsight-Clustern über RDP</a> eine Verbindung her.
 
 ## <a id="pig"></a>Verwenden des Pig-Befehls
 
@@ -42,7 +42,7 @@ Aktivieren Sie den Remotedesktop für den HDInsight-Cluster, und verbinden Sie i
 
 		%pig_home%\bin\pig
 
-	Es wird die Eingabeaufforderung `grunt>` angezeigt. 
+	Es wird eine `grunt>`-Eingabeaufforderung angezeigt. 
 
 3. Geben Sie die folgende Anweisung ein.
 
@@ -108,7 +108,7 @@ Den Pig-Befehl können Sie auch zum Ausführen von Pig Latin verwenden, das in e
 
 		pig %PIG_HOME%\pigbatch.pig
 
-	Wenn der Batchauftrag abgeschlossen ist, sollte die folgende Ausgabe angezeigt werden, die mit der Ausgabe identisch sein sollte, die Sie mit `DUMP RESULT;` in den vorherigen Schritten erhalten haben.
+	Wenn der Batchauftrag abgeschlossen ist, sollte die folgende Ausgabe angezeigt werden. Diese sollte mit der Ausgabe übereinstimmen, die Sie bei Verwendung von `DUMP RESULT;` in den vorherigen Schritten erhalten haben.
 
 		(TRACE,816)
 		(DEBUG,434)
@@ -132,4 +132,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 * [Verwenden von Hive mit Hadoop in HDInsight](../hdinsight-use-hive/)
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](../hdinsight-use-mapreduce/)
-<!--HONumber=45--> 
+<!--HONumber=47-->

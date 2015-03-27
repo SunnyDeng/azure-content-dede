@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="MapReduce mit Hadoop in HDInsight | Azure"
    description="Erfahren Sie, wie Sie mithilfe des Remotedesktops eine Verbindung mit Hadoop in HDInsight herstellen und MapReduce-Aufträge ausführen."
    services="hdinsight"
@@ -32,7 +32,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 ## <a id="connect"></a>Verbinden mit dem Remotedesktop
 
-Aktivieren Sie den Remotedesktop für den HDInsight-Cluster, und verbinden Sie ihn anschließend mithilfe der Anweisungen unter <a href="http://azure.microsoft.com/ documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung zu HDInsight-Clustern mit RDP</a>.
+Aktivieren Sie Remotedesktop für den HDInsight-Cluster, und stellen Sie dann anhand der Anweisungen unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Verbinden mit HDInsight-Clustern über RDP</a> eine Verbindung mit dem Cluster her.
 
 ## <a id="hadoop"></a>Verwenden des Hadoop-Befehls
 
@@ -48,7 +48,7 @@ Nachdem Sie mit dem Desktop des HDInsight-Clusters verbunden sind, gehen Sie wie
 
 	Dadurch wird die Klasse **wordcount** gestartet, die in der Datei **hadoop-mapreduce-examples.jar** im aktuellen Verzeichnis enthalten ist. Sie verwendet als Eingabe das Dokument **wasb://example/data/gutenberg/davinci.txt** und die Ausgabe wird im Verzeichnis **wasb:///example/data/WordCountOutput** gespeichert.
 
-	> [AZURE.NOTE] Weitere Informationen zu diesem MapReduce-Auftrag und die Beispieldaten finden Sie unter <a href="../hdinsight-use-mapreduce/">Verwenden von MapReduce mit Hadoop in HDInsight</a>.
+	> [AZURE.NOTE] Weitere Informationen über diesen MapReduce-Auftrag und die Beispieldaten finden Sie unter <a href="../hdinsight-use-mapreduce/">Verwenden von MapReduce in HDInsight Hadoop</a>.
 
 2. Während der Verarbeitung gibt der Auftrag Details aus und gibt schließlich ähnliche Informationen wie die folgenden zurück, wenn der Auftrag abgeschlossen wird.
 
@@ -94,4 +94,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 * [Verwenden von Hive mit Hadoop in HDInsight](../hdinsight-use-hive/)
 
 * [Verwenden von Pig mit Hadoop in HDInsight](../hdinsight-use-pig/)
-<!--HONumber=45--> 
+<!--HONumber=47-->

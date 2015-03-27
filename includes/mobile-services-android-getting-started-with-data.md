@@ -1,18 +1,27 @@
-﻿Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass Elemente in Mobile Services anstatt in einer lokalen Sammlung gespeichert werden. 
+Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass dieser Elemente im mobilen Dienst anstatt in einer lokalen Sammlung speichert. 
 
-1. Falls Sie das [Mobile Services Android SDK] noch nicht haben, laden Sie es jetzt herunter, und entpacken Sie die komprimierten Dateien.
+1. Stellen Sie sicher, dass Sie über die folgenden Zeilen im **dependencies**-Tag in der Datei *build.gradle (Module app)* verfügen. Wenn dies nicht der Fall ist, fügen Sie sie hinzu. Dadurch werden Verweise auf das Mobile Services Android Client SDK hinzugefügt.
 
-2. Kopieren Sie die `.jar`-Dateien aus dem `mobileservices`-Ordner des SDK in den `libs`-Ordner des GetStartedWithData-Projekts.
+		compile 'com.android.support:support-v4:21.0.3'
+    	compile 'com.google.code.gson:gson:2.2.2'
+	    compile 'com.google.guava:guava:18.0'
+	    compile 'com.microsoft.azure:azure-mobile-services-android-sdk:2.0.2-beta'
 
-3. Klicken Sie im Paket-Explorer in Eclipse mit der rechten Maustaste auf den `libs`-Ordner, und klicken Sie auf **Refresh**, um die kopierten jar-Dateien anzuzeigen.
 
-  	Damit wird das SDK für mobile Dienste zum Arbeitsbereich hinzugefügt.
+2. Jetzt erstellen Sie das Projekt neu, indem Sie auf **Sync Project with Gradle Files** klicken.
 
-4. Öffnen Sie die AndroidManifest.xml-Datei und fügen Sie die folgende Zeile hinzu, um der App den Zugriff auf mobile Dienste in Azure zu ermöglichen.
+3. Öffnen Sie die AndroidManifest.xml-Datei und fügen Sie die folgende Zeile hinzu, um der App den Zugriff auf mobile Dienste in Azure zu ermöglichen.
 
 		<uses-permission android:name="android.permission.INTERNET" />
 
-5. Öffnen Sie im Paket-Explorer die Datei TodoActivity.java im Paket com.example.getstartedwithdata und entfernen Sie die Kommentare in den folgenden Codezeilen: 
+
+6. Öffnen Sie die AndroidManifest.xml-Datei und fügen Sie die folgende Zeile hinzu, um der App den Zugriff auf mobile Dienste in Azure zu ermöglichen.
+
+		<uses-permission android:name="android.permission.INTERNET" />
+
+5. Öffnen Sie im Projektexplorer die Datei "TodoActivity.java", die sich im Ordner **GetStartedWithData = > app = > src = > java** befindet, und heben Sie die Auskommentierung der folgenden Codezeilen auf: 
+
+
 
 		import java.net.MalformedURLException;
 		import android.os.AsyncTask;
@@ -28,34 +37,34 @@
 		import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
 
  
-6. Kommentieren Sie die folgenden Zeilen:
+5. Kommentieren Sie die folgenden Zeilen:
 
 		import java.util.ArrayList;
 		import java.util.List;
 
-7. Wir werden die aktuell verwendete speicherinterne Liste entfernen und durch einen mobilen Dienst ersetzen. Kommentieren Sie in der Klasse **ToDoActivity** die folgende Codezeile aus, in der die **toDoItemList**-Liste definiert wird.
+6. Wir werden die aktuell verwendete speicherinterne Liste entfernen und durch einen mobilen Dienst ersetzen. Kommentieren Sie in der Klasse **ToDoActivity** die folgende Codezeile aus, in der die **toDoItemList**-Liste definiert wird.
 
 		public List<ToDoItem> toDoItemList = new ArrayList<ToDoItem>();
 
-8. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Stellen, an denen die Variable `toDoItemList` verwendet wird, und kommentieren Sie die entsprechenden Abschnitte aus. Nun haben Sie die speicherinterne Liste vollständig entfernt. 
+7. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Stellen, an denen die Variable  `toDoItemList` verwendet wird, und kommentieren Sie die entsprechenden Abschnitte aus. Nun haben Sie die speicherinterne Liste vollständig entfernt. 
 
-9. Wir werden nun den mobilen Dienst hinzufügen. Entfernen Sie die Kommentare in den folgenden Codezeilen:
+8. Wir werden nun den mobilen Dienst hinzufügen. Entfernen Sie die Kommentare in den folgenden Codezeilen:
 
 		private MobileServiceClient mClient;
 		private private MobileServiceTable<ToDoItem> mToDoTable;
 
-10. Suchen Sie die *ProgressFilter*-Klasse am Ende der Datei, und entfernen Sie deren Kommentarzeichen ebenfalls. Diese Klasse zeigt einen 'loading'-Hinweis an, wenn der *MobileServiceClient* Netzwerkoperationen ausführt.
+9. Suchen Sie die *ProgressFilter*-Klasse am Ende der Datei, und entfernen Sie deren Kommentarzeichen ebenfalls. Diese Klasse zeigt einen 'loading'-Hinweis an, wenn der *MobileServiceClient* Netzwerkoperationen ausführt.
 
 
-11. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
+10. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
 
-12. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site URL**. Klicken Sie anschließend auf **Schlüssel verwalten**, und notieren Sie sich den **Anwendungsschlüssel**.
+11. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site URL**. Klicken Sie anschließend auf **Schlüssel verwalten**, und notieren Sie sich den **Anwendungsschlüssel**.
 
    	![](./media/download-android-sample-code/mobile-dashboard-tab.png)
 
   	Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
 
-13. Entfernen Sie in der Methode **onCreate** die Kommentarzeichen in den folgenden Codezeilen, in denen die **MobileServiceClient**-Variable definiert wird:
+12. Entfernen Sie in der Methode **onCreate** die Kommentarzeichen in den folgenden Codezeilen, in denen die **MobileServiceClient**-Variable definiert wird:
 
 		try {
 		// Create the Mobile Service Client instance, using the provided
@@ -73,11 +82,11 @@
 
   	Dieser Code erstellt eine neue *MobileServiceClient*-Instanz, die für den Zugriff auf Ihren mobilen Dienst verwendet wird. Außerdem wird die *MobileServiceTable*-Instanz für die Proxy-Datenspeicherung im mobilen Dienst erstellt.
 
-14. Ersetzen Sie im obigen Code `MobileServiceUrl` und `AppKey` durch die URL und den Anwendungsschlüssel Ihres mobilen Dienstes, in dieser Reihenfolge.
+13. Ersetzen Sie im obigen Code `MobileServiceUrl` und `AppKey` durch die URL und den Anwendungsschlüssel Ihres mobilen Dienstes, in dieser Reihenfolge.
 
 
 
-15. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **checkItem**-Methode:
+14. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **checkItem**-Methode:
 
 	    new AsyncTask<Void, Void, Void>() {
 	        @Override
@@ -101,7 +110,7 @@
 
    	Dieser Code schickt eine Elementaktualisierung an den mobilen Dienst und entfernt markierte Elemente aus dem Adapter.
     
-16. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **addItem**-Methode:
+15. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **addItem**-Methode:
 	
 		// Insert the new item
 		new AsyncTask<Void, Void, Void>() {
@@ -126,7 +135,7 @@
 
   	Dieser Code erstellt ein neues Element und fügt es in die Tabelle im mobilen Dienst ein.
 
-18. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **refreshItemsFromTable**-Methode:
+16. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **refreshItemsFromTable**-Methode:
 
 		// Get the items that weren't marked as completed and add them in the adapter
 	    new AsyncTask<Void, Void, Void>() {
@@ -155,4 +164,5 @@
 		
 
 <!-- URLs. -->
-[Mobile Services Android SDK]: http://aka.ms/Iajk6q<!--HONumber=42-->
+[Mobile Services Android SDK]: http://aka.ms/Iajk6q
+<!--HONumber=47-->

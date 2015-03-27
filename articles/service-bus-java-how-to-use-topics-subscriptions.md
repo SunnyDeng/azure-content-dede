@@ -1,32 +1,29 @@
-﻿<properties urlDisplayName="Service Bus Topics" pageTitle="Gewusst wie: Verwenden von Service Bus-Themen (Java) - Azure" metaKeywords="Erste Schritte Azure Service Bus-Themen, Erste Schritte Service Bus-Themen, Azure Messagingfunktionen veröffentlichen/abonnieren, Messaging, Azure-Messaging-Themen und Abonnements, Service Bus-Thema Java" description="Erfahren Sie mehr zur Verwendung von Service Bus-Themen und -Abonnements in Azure. Die Codebeispiele wurden für Java-Anwendungen geschrieben." metaCanonical="" services="service-bus" documentationCenter="Java" title="How to Use Service Bus Topics/Subscriptions" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties 
+	pageTitle="Verwenden von Service Bus-Themen (Java) - Azure" 
+	description="Erfahren Sie mehr zur Verwendung von Service Bus-Themen und -Abonnements in Azure. Die Codebeispiele wurden für Java-Anwendungen geschrieben." 
+	services="service-bus" 
+	documentationCenter="java" 
+	authors="sethmanheim" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="service-bus" ms.workload="tbd" ms.tgt_pltfrm="na" ms.devlang="Java" ms.topic="article" ms.date="09/25/2014" ms.author="robmcm" />
+<tags 
+	ms.service="service-bus" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="02/10/2015" 
+	ms.author="sethm"/>
 
-# Verwenden von Servicebus-Themen und -Abonnements
+# Verwenden von Service Bus-Themen/-Abonnements
 
-In diesem Leitfaden erfahren Sie, wie Sie Service Bus-Themen und
--Abonnements verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java][]. Die aufgeführten Szenarien umfassen das **Erstellen von Themen
-und Abonnements**, **Erstellen von Abonnementfiltern**, **Senden
-von Nachrichten an ein Thema**, **das Empfangen von Nachrichten aus einem Abonnement** und
+In diesem Leitfaden erfahren Sie, wie Sie Service Bus-Themen und -Abonnements verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java][]. Die behandelten Szenarien umfassen das **Erstellen von Themen und Abonnements**, **Erstellen von Abonnementfiltern**, **Senden von Nachrichten an ein Thema**, **Empfangen von Nachrichten von einem Abonnement** und
 **das Löschen von Themen und Abonnements**.
 
-## Inhaltsverzeichnis
+[AZURE.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
--   [Was sind Service Bus-Themen und -Abonnements?][]
--   [Erstellen eines Dienstnamespace][]
--   [Abrufen der Standard-Anmeldeinformationen für den Namespace][]
--   [Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus][]
--   [Gewusst wie: Erstellen eines Themas][]
--   [Gewusst wie: Erstellen von Abonnements][]
--   [Gewusst wie: Senden von Nachrichten an ein Thema][]
--   [Gewusst wie: Empfangen von Nachrichten aus einem Abonnement][]
--   [Gewusst wie: Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten][]
--   [Gewusst wie: Löschen von Themen und Abonnements][]
--   [Nächste Schritte][]
-
-[WACOM.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
-
-## <a name="bkmk_ConfigYourApp"> </a>Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus
+## Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
 
 Fügen Sie die folgenden import-Anweisungen am Anfang der Java-Datei ein:
 
@@ -38,17 +35,11 @@ Fügen Sie die folgenden import-Anweisungen am Anfang der Java-Datei ein:
 
 Fügen Sie die Azure-Bibliotheken für Java zu Ihrem Buildpfad hinzu und binden Sie die Bibliotheken in die Bereitstellungs-Assembly Ihres Projekts ein.
 
-## <a name="bkmk_HowToCreateTopic"> </a>Erstellen eines Themas
+## Erstellen eines Themas
 
-Sie können Verwaltungsvorgänge für Service Bus-Themen über die
-**ServiceBusContract**-Klasse. Ein **ServiceBusContract**-Objekt wird
-mit einer entsprechenden Konfiguration erstellt, die die
-Token-Berechtigungen für die Verwaltung kapselt, und die **ServiceBusContract**-Klasse ist
-der einzige Kommunikationspunkt mit Azure.
+Sie können Verwaltungsvorgänge für Service Bus-Themen über die Klasse **ServiceBusContract** durchführen. **ServiceBusContract**-Objekte werden mit einer entsprechenden Konfiguration erstellt, welche die Token-Berechtigungen für deren Verwaltung kapselt. Die Klasse **ServiceBusContract** ist der einzige Kommunikationspunkt mit Azure.
 
-Die **ServiceBusService**-Klasse enthält Methoden zum Erstellen, Auflisten
-und Löschen von Themen. Das folgende Beispiel zeigt, wie ein **ServiceBusService**-Objekt
-verwendet werden kann, um ein Thema namens "TestTopic" mit einem Namespace mit dem Namen "HowToSample" zu erstellen:
+Die **ServiceBusService**-Klasse enthält Methoden zum Erstellen, Aufzählen und Löschen von Themen. Das folgende Beispiel zeigt, wie Sie mit einem **ServiceBusService**-Objekt ein Thema mit dem Namen "TestTopic" in einem Namespace mit dem Namen "HowToSample" erstellen können:
 
     Configuration config = 
     	ServiceBusConfiguration.configureWithWrapAuthentication(
@@ -70,10 +61,7 @@ verwendet werden kann, um ein Thema namens "TestTopic" mit einem Namespace mit d
 		System.exit(-1);
 	}
 
-TEs gibt Methoden auf **TopicInfo**, mit denen die Eigenschaften des Themas
-optimiert werden können. (Zum Beispiel: Der Standardwert von "time-to-live" wird auf
-an das Thema gesendete Nachrichten angewendet.) Das folgende Beispiel zeigt wie
-Sie ein Thema mit dem Namen "TestTopic" mit einer maximalen Größe von 5GB erstellen:
+Mit den Methoden in **TopicInfo** können Sie Eigenschaften des Themas einstellen (z. B. den Standardwert "time-to-live", der auf an das Thema gesendete Nachrichten angewendet wird). Das folgenden Beispiel zeigt, wie ein Thema mit der Bezeichnung "TestTopic" mit einer maximalen Größe von 5 GB erstellt wird:
 
     long maxSizeInMegabytes = 5120;  
 	TopicInfo topicInfo = new TopicInfo("TestTopic");  
@@ -81,24 +69,15 @@ Sie ein Thema mit dem Namen "TestTopic" mit einer maximalen Größe von 5GB erst
     CreateTopicResult result = service.createTopic(topicInfo);
 
 Beachten Sie, dass Sie die **listTopics**-Methode bei
-**ServiceBusContract**-Objekten verwenden können, um zu überprüfen, ob ein Thema mit einem angegebenen Namen
-innerhalb eines Dienstnamespace bereits vorhanden ist.
+**ServiceBusContract**-Objekten verwenden können, um zu überprüfen, ob ein Thema mit einem bestimmten Namen bereits innerhalb eines Dienstnamespace vorhanden ist.
 
-## <a name="bkmk_HowToCreateSubscrip"> </a>Erstellen von Abonnements
+## Erstellen von Abonnements
 
-Themenabonnements werden ebenfalls mit der **ServiceBusService**-
-Klasse erstellt. Abonnements werden benannt und können einen optionalen Filter haben, der
-den Satz an Nachrichten beschränkt, die an die virtuelle
-Warteschlange des Abonnements übergeben werden.
+Themenabonnements werden ebenfalls mit der **ServiceBusService**-Klasse erstellt. Abonnements werden benannt und können einen optionalen Filter aufweisen, der die Nachrichten einschränkt, die an die virtuelle Warteschlange des Abonnements übergeben werden.
 
 ### Erstellen eines Abonnements mit dem Standardfilter (MatchAll)
 
-Der **MatchAll**-Filter ist der Standardfilter, der verwendet wird, wenn kein Filter
-angegeben ist, wenn ein neues Abonnement erstellt wird. Wenn der **MatchAll**-
-Filter verwendet wird, werden alle für das Thema veröffentlichten Nachrichten in der
-virtuellen Warteschlange des Abonnements veröffentlicht. Das folgende Beispiel erstellt ein
-Abonnement namens "AllMessages" und verwendet den standardmäßigen **MatchAll**-
-Filter.
+**MatchAll** ist der Standardfilter, der verwendet wird, wenn beim Erstellen eines neuen Abonnements kein Filter angegeben wird. Bei Verwendung des Filters **MatchAll** werden alle für das Thema veröffentlichten Nachrichten in die virtuelle Warteschlange des Abonnements gestellt. Mit dem folgenden Beispiel wird ein Abonnement namens "AllMessages" erstellt, für das der Standardfilter **MatchAll** verwendet wird.
 
     SubscriptionInfo subInfo = new SubscriptionInfo("AllMessages");
     CreateSubscriptionResult result = 
@@ -106,18 +85,11 @@ Filter.
 
 ### Erstellen von Abonnements mit Filtern
 
-Sie können auch Filter einrichten, durch die Sie angeben können, welche
-an ein Thema gesendeten Nachrichten in einem bestimmten Themenabonnement angezeigt werden sollen.
+Sie können auch Filter einrichten, durch die Sie angeben können, welche an ein Thema gesendeten Nachrichten in einem bestimmten Themenabonnement angezeigt werden sollen.
 
-Der von Abonnements unterstützte flexibelste Filtertyp ist
-**SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter operieren
-über die Eigenschaften der Nachrichten, die für das Thema veröffentlicht werden. Weitere
-Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können,
-finden Sie in der Syntax "SqlFilter.SqlExpression".
+Der von Abonnements unterstützte flexibelste Filtertyp ist **SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können, finden Sie in der Syntax SqlFilter.SqlExpression.
 
-Mit dem folgenden Beispiel wird ein Abonnement namens "high-messages" mit einem
-**SqlFilter** erstellt, der nur Nachrichten auswählt, die über eine benutzerdefinierte
-**MessageNumber**-Eigenschaft größer als 3 verfügen:
+Mit dem folgenden Beispiel wird ein Abonnement namens "HighMessages" mit einem **SqlFilter**-Filter erstellt, der nur Nachrichten auswählt, deren benutzerdefinierte **MessageNumber**-Eigenschaft größer ist als 3:
 
     // Create a "HighMessages" filtered subscription  
 	SubscriptionInfo subInfo = new SubscriptionInfo("HighMessages");
@@ -130,11 +102,7 @@ Mit dem folgenden Beispiel wird ein Abonnement namens "high-messages" mit einem
     // Delete the default rule, otherwise the new rule won't be invoked.
     service.deleteRule("TestTopic", "HighMessages", "$Default");
 
-Ebenso erstellt das folgende Beispiel ein Abonnement namens
-"LowMessages" mit   
- einem "SqlFilter", der nur Nachrichten auswählt, die über eine "MessageNumber"
--Eigenschaft kleiner   
- als oder gleich 3 verfügen:
+Im folgenden Beispiel wird in ähnlicher Weise ein Abonnement namens "LowMessages" mit einem SqlFilter erstellt, der nur Nachrichten auswählt, deren benutzerdefinierte Messagenumber-Eigenschaft kleiner oder gleich 3 ist:
 
     // Create a "LowMessages" filtered subscription
 	SubscriptionInfo subInfo = new SubscriptionInfo("LowMessages");
@@ -148,37 +116,23 @@ Ebenso erstellt das folgende Beispiel ein Abonnement namens
     service.deleteRule("TestTopic", "LowMessages", "$Default");
 
 
-Wenn eine Nachricht nun an "TestTopic" gesendet wird, wird sie immer
-an die Empfänger mit einem Abonnement für das Thema "AllMessages"
-und selektiv an die Empfänger der
-Themenabonnements "HighMessages" und "LowMessages" gesendet (abhängig vom
-Nachrichteninhalt).
+Wenn eine Nachricht an "TestTopic" gesendet wird, wird diese nun stets an die Empfänger des Themenabonnements "AllMessages" zugestellt. Sie wird selektiv an die Empfänger der Themenabonnements "HighMessages" und "LowMessages" zugestellt (je nach Inhalt der Nachricht).
 
-## <a name="bkmk_HowToSendMsgs"> </a>Senden von Nachrichten an ein Thema
+## Senden von Nachrichten an ein Thema
 
 Um eine Nachricht an ein Service Bus-Thema zu senden, benötigt Ihre Anwendung ein
-**ServiceBusContract**-Objekt. Der folgende Code zeigt, wie Sie eine
-Nachricht für das oben erstellte Thema "TestTopic"im
+**ServiceBusContract**-Objekt. Der folgende Code zeigt, wie Sie eine Nachricht für das zuvor erstellte Thema "TestTopic" im
 Dienstnamespace "HowToSample" senden:
 
     BrokeredMessage message = new BrokeredMessage("MyMessage");
     service.sendTopicMessage("TestTopic", message);
 
-Nachrichten an Service Bus-Themen sind Instanzen
-**BrokeredMessage**-Klasse. **BrokeredMessage**-Objekte enthalten eine Reihe von
-Standardmethoden (wie **setLabel** und **TimeToLive**), ein Wörterbuch,
-das zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften verwendet wird und einen Körper
-mit beliebigen Anwendungsdaten. Eine Anwendung kann den Text der
-Nachricht festlegen, indem sie ein beliebiges serialisierbares Objekt an den Konstruktor von
-**BrokeredMessage** übergibt. Der passende **DataContractSerializer** wird
-dann verwendet, um das Objekt zu serialisieren. Alternativ kann ein
+Nachrichten an Service Bus-Themen sind Instanzen der
+**BrokeredMessage**-Klasse. **BrokeredMessage**-Objekte enthalten eine Reihe von Standardmethoden (wie **setLabel** und **TimeToLive**), ein Wörterbuch, das zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften verwendet wird, und einen Körper beliebiger Anwendungsdaten. Eine Anwendung kann den Textkörper der Nachricht festlegen, indem ein beliebiges serialisierbares Objekt an den Konstruktor von **BrokeredMessage** übergeben wird. Das entsprechende **DataContractSerializer**-Objekt wird dann zum Serialisieren des Objekts verwendet. Alternativ kann ein
 **java.io.InputStream** bereitgestellt werden.
 
-Das folgende Beispiel zeigt, wie Sie fünf Testnachrichten senden an
-"TestTopic", **MessageSender** den Sie im vorherigen Codeabschnitt erhalten haben:
-Beachten Sie, wie der Eigenschaftswert **MessageNumber** jeder Nachricht variiert, je nach
-Iteration der Schleife (Dadurch werden die erhaltenden Abonnements
-bestimmt):
+Im folgenden Beispiel wird dargelegt, wie fünf Testnachrichten an den **MessageSender** "TestTopic" gesendet werden, welche über das oben angegebene Code-Teilstück erhalten wurden:
+Beachten Sie, wie der **MessageNumber**-Eigenschaftswert jeder Nachricht gemäß der Iteration der Schleife variiert (dadurch wird bestimmt, welche Abonnements die Nachricht erhalten):
 
     for (int i=0; i<5; i++)  {
        	// Create message, passing a string message for the body
@@ -189,44 +143,17 @@ bestimmt):
 		service.sendTopicMessage("TestTopic", message);
 	}
 
-Service Bus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB. (Der Header,
-der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine
-maximale Größe von 64 KB haben). Es gibt keine Beschränkung für die Anzahl der Nachrichten in
-einem Thema, aber es gibt eine Obergrenze für die Gesamtgröße der Nachrichten
-in einem Thema. Diese Themagröße wird zum Zeitpunkt der Erstellung definiert, mit einer
-Obergrenze von 5 GB.
+Servicebus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 MB haben). Die Anzahl der Nachrichten, die ein Thema enthält, ist nicht einegschränkt. Es gilt jedoch ein Grenzwert für die Gesamtgröße der Nachrichten in einem Thema. Die Themengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB.
 
-## <a name="bkmk_HowToReceiveMsgs"> </a>Empfangen von Nachrichten aus einem Abonnement
+## Empfangen von Nachrichten aus einem Abonnement
 
-Der einfachste Weg zum Empfangen von Nachrichten aus Abonnements sind
-**ServiceBusContract**-Objekte. Empfangene Nachrichten können in zwei verschiedenen
-Modi verwendet werden: **ReceiveAndDelete** und **PeekLock**.
+Der einfachste Weg zum Empfangen von Nachrichten aus Abonnements sind **ServiceBusContract**-Objekte. Empfangene Nachrichten können in zwei verschiedenen Modi verwendet werden: **ReceiveAndDelete** und **PeekLock**.
 
-Bei Verwendung des **ReceiveAndDelete**-Modus ist der Nachrichtenempfang ein Single-Shot-Vorgang.
-Dies bedeutet, wenn Service Bus eine Leseanforderung für eine Nachricht
-in einem Abonnement erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die 
-Anwendung zurück gesendet. Der **ReceiveAndDelete**-Modus ist das einfachste Modell.
-Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine
-Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dies zu verstehen, sollten Sie sich ein
-Szenario vorstellen, in dem der Consumer die Empfangsanforderung ausstellt und dann
-abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht
-als verarbeitet gekennzeichnet hat, hat die Anwendung, wenn sie neu gestartet wurde und beginnt,
-wieder Nachrichten zu verarbeiten, die Nachricht ausgelassen, die
-vor dem Absturz verarbeitet wurde.
+Bei Verwendung des **ReceiveAndDelete**-Modus ist der Nachrichtenempfang ein Single-Shot-Vorgang. Dies bedeutet, wenn Service Bus eine Leseanforderung für eine Nachricht erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurück gesendet. **Der ReceiveAndDelete**-Modus ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht als verwendet markiert hat, wird diese Nachricht verpasst, die vor dem Absturz verwendet wurde, wenn die Anwendung neu gestartet wird und erneut mit der Verwendung von Nachrichten beginnt.
 
-Im **PeekLock**-Modus ist der Nachrichtenempfang zweistufig.
-Dadurch können Anwendungen unterstützt werden, die das Auslassen bzw. Fehlen von 
-Nachrichten nicht zulassen können. Wenn Service Bus eine Anfrage erhält, wird die nächste Nachricht ermittelt,
-die verarbeitet werden soll, und wird gesperrt, um zu verhindern, dass sie von anderen Consumern empfangen wird.
-Dann wird sie an die Anwendung zurückgegeben. Nachdem die Anwendung die
-Verarbeitung der Nachricht beendet hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat),
-führt Sie die zweite Phase des Empfangsprozesses durch Aufruf von **Delete**
-für die empfangene Nachricht aus. Wenn Service Bus den **Delete**-Aufruf erkennt, wird
-die Nachricht als verarbeitet markiert und aus dem Thema entfernt.
+Im **PeekLock**-Modus ist der Empfangsvorgang zweistufig. Dadurch können Anwendungen unterstützt werden, die das Auslassen bzw. Fehlen von Nachrichten nicht zulassen können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann zurück an die Anwendung. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt Sie die zweite Phase des Empfangsprozesses durch Aufruf von **Delete** für die empfangene Nachricht durch. Wenn Service Bus den **Delete**-Aufruf erkennt, markiert er die Nachricht als verwendet und entfernt sie aus dem Thema.
 
-Das folgende Beispiel zeigt, wie Nachrichten mithilfe des
-**PeekLock**-Modus (nicht des Standardmodus) empfangen und verarbeitet werden können.. Das folgende Beispiel
-verarbeitet Nachrichten aus dem "HighMessages"-Abonnement in einer Schleife und endet, wenn keine Nachrichten mehr vorhanden sind (alternativ könnte der Code auf neue Nachrichten warten).
+Das folgende Beispiel zeigt, wie Nachrichten mit dem nicht standardmäßig verwendeten Modus **PeekLock** empfangen und verarbeitet werden können. Das folgende Beispiel verarbeitet Nachrichten aus dem "HighMessages"-Abonnement in einer Schleife und endet, wenn keine Nachrichten mehr vorhanden sind (alternativ könnte der Code auf neue Nachrichten warten).
 
 	try
 	{
@@ -279,39 +206,17 @@ verarbeitet Nachrichten aus dem "HighMessages"-Abonnement in einer Schleife und 
 	    System.exit(-1);
 	} 
 
-## <a name="bkmk_HowToHandleAppCrash"> </a>Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten
+## Behandeln von Anwendungsabstürzen und nicht lesbaren Nachrichten
 
-Service Bus stellt Funktionen zur Verfügung, die Ihnen bei der ordnungsgemäßen Behebung von
-Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht helfen. Wenn eine
-Empfängeranwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann,
-so kann sie die **unlockMessage**-Methode für die empfangene Nachricht aufrufen
-(statt der **deleteMessage**-Methode). Dies bewirkt, dass Service Bus
-die Nachricht innerhalb des Themas entsperrt und erneut
-empfangbar macht, entweder durch dieselbe verarbeitende Anwendung oder durch eine andere
-verarbeitende Anwendung.
+Service Bus stellt Funktionen zur Verfügung, die Sie bei der ordnungsgemäßen Behandlung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht unterstützen. Wenn eine empfangene Anwendung eine Nachricht aus einem beliebigen Grund nicht verarbeiten kann, kann sie die **unlockMessage**-Methode für die empfangene Nachricht aufrufen (anstelle der **deleteMessage**-Methode). Dies führt dazu, dass Service Bus die Nachricht innerhalb des Themas entsperrt und verfügbar macht, damit sie erneut empfangen werden kann, und zwar entweder durch dieselbe verarbeitende Anwendung oder durch eine andere verarbeitende Anwendung.
 
-Zudem wird einer im Abonnement gesperrten Anwendung ein Zeitlimit zugeordnet.
-Wenn die Anwendung die Nachricht vor
-Ablauf des Sperrzeitlimits nicht verarbeiten kann (zum Beispiel wenn die Anwendung abstürzt), entsperrt Service Bus
-die Nachricht automatisch und macht sie verfügbar, um erneut
-empfangen zu werden.
+Zudem wird einer im Thema gesperrten Anwendung ein Zeitlimit zugeordnet. Wenn die Anwendung die Nachricht vor Ablauf des Sperrzeitlimits nicht verarbeiten kann (zum Beispiel, wenn die Anwendung abstürzt), entsperrt Service Bus die Nachricht automatisch und macht sie verfügbar, um erneut empfangen zu werden.
 
-Falls die Anwendung nach der Verarbeitung der Nachricht abstürzt,
-aber bevor die **deleteMessage**-Anforderung ausgestellt wird, dann wird die Nachricht
-erneut der Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig
-als **At Least Once Processing** (Verarbeitung mindestens einmal) bezeichnet und bedeutet,
-dass jede Nachricht mindestens einmal verarbeitet wird, wobei dieselbe Nachricht in bestimmten Situationen möglicherweise
-erneut zugestellt wird. Wenn das Szenario keine doppelte Verarbeitung tolerieren kann,
-sollten Anwendungsentwickler eine zusätzliche Logik zur
-Anwendung hinzufügen, um die doppelte Zustellung von Nachrichten zu verarbeiten. Dies wird häufig
-durch die Verwendung der **getMessageId**-Methode der Nachricht erzielt, die
-über mehrere Zustellungsversuche hinweg konstant bleibt.
+Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der Anforderung **deleteMessage** abstürzt, wird die Nachricht erneut an die Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig als **At Least Once Processing** (mindestens einmalige Verarbeitung) bezeichnet und bedeutet, dass jede Nachricht mindestens ein Mal verarbeitet wird, unter bestimmten Umständen jedoch ggf. auch erneut übermittelt wird. Wenn eine doppelte Verarbeitung im betreffenden Szenario nicht geeignet ist, sollten Anwendungsentwickler ihrer Anwendung zusätzliche Logik für den Umgang mit der Übermittlung doppelter Nachrichten hinzufügen. Dies wird häufig durch die Verwendung der **getMessageId**-Methode der Nachricht erzielt, die über mehrere Zustellungsversuche hinweg konstant bleibt.
 
-## <a name="bkmk_HowToDeleteTopics"> </a>Löschen von Themen und Abonnements
+## Löschen von Themen und Abonnements
 
-Der einfachste Weg zum Löschen von Themen und Abonnements sind
-**ServiceBusContract**-Objekte. Durch das Löschen eines Themas werden auch alle Abonnements gelöscht, die
-für das Thema registriert sind. Abonnements können auch unabhängig gelöscht werden.
+Der einfachste Weg zum Löschen von Themen und Abonnements sind **ServiceBusContract**-Objekte. Durch das Löschen eines Themas werden auch alle Abonnements gelöscht, die mit dem Thema registriert sind. Abonnements können auch unabhängig gelöscht werden.
 
     // Delete subscriptions
     service.deleteSubscription("TestTopic", "AllMessages");
@@ -321,16 +226,15 @@ für das Thema registriert sind. Abonnements können auch unabhängig gelöscht 
     // Delete a topic
 	service.deleteTopic("TestTopic");
 
-# <a name="bkmk_NextSteps"> </a>Nächste Schritte
+## Nächste Schritte
 
-Da Sie nun mit den Grundlagen zu Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen im MSDN
-im Thema [Service Bus-Warteschlangen, -Themen und -Abonnements][].
+Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen im MSDN-Thema [Service Bus-Warteschlangen, -Themen und -Abonnements][].
 
-  [Azure-SDK für Java]: http://www.windowsazure.com/de-de/develop/java/
+  [Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
   [Was sind Service Bus-Themen und -Abonnements?]: #what-are-service-bus-topics
-  [Erstellen eines Dienstnamespace]: #create-a-service-namespace
+  [Erstellen eines Dienstnamespaces]: #create-a-service-namespace
   [Abrufen der Standard-Anmeldeinformationen für den Namespace]: #obtain-default-credentials
-  [Konfigurieren Ihrer Anwendung für die Verwendung von Servicebus]: #bkmk_ConfigYourApp
+  [Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus]: #bkmk_ConfigYourApp
   [Gewusst wie: Erstellen eines Themas]: #bkmk_HowToCreateTopic
   [Gewusst wie: Erstellen von Abonnements]: #bkmk_HowToCreateSubscrip
   [Gewusst wie: Senden von Nachrichten an ein Thema]: #bkmk_HowToSendMsgs
@@ -345,4 +249,6 @@ im Thema [Service Bus-Warteschlangen, -Themen und -Abonnements][].
   [Screenshot der Namespaceliste]: ../../../DevCenter/dotNet/Media/sb-queues-05.png
   [Screenshot des Eigenschaftenbereichs]: ../../../DevCenter/dotNet/Media/sb-queues-06.png
   [Screenshot des Standardschlüssels]: ../../../DevCenter/dotNet/Media/sb-queues-07.png
-  [Service Bus-Warteschlangen, -Themen und -Abonnements]: http://msdn.microsoft.com/library/windowsazure/hh367516.aspx
+  [Service Bus-Warteschlangen, -Themen und -Abonnements]: http://msdn.microsoft.com/library/hh367516.aspx
+
+<!--HONumber=47-->

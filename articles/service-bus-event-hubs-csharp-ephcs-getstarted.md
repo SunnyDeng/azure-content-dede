@@ -1,57 +1,73 @@
-﻿<properties pageTitle="Erste Schritte mit Event Hubs" metaKeywords="Azure Service Bus, Event Hub, getting started Event Hubs" description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs mit C# mithilfe von EventProcessorHost." metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+﻿<properties 
+	pageTitle="Erste Schritte mit Ereignis-Hubs" 
+	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs mit C# mithilfe von EventProcessorHost." 
+	services="service-bus" 
+	documentationCenter="" 
+	authors="fsautomata" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="service-bus" ms.workload="core" ms.tgt_pltfrm="csharp" ms.devlang="csharp" ms.topic="hero-article" ms.date="10/27/2014" ms.author="elioda" />
+<tags 
+	ms.service="service-bus" 
+	ms.workload="core" 
+	ms.tgt_pltfrm="csharp" 
+	ms.devlang="csharp" 
+	ms.topic="hero-article" 
+	ms.date="02/10/2015" 
+	ms.author="sethm"/>
 
-# <a name="getting-started"> </a>Erste Schritte mit Event Hubs
+# Erste Schritte mit Ereignis-Hubs
 
-[WACOM.INCLUDE [service-bus-selector-get-started](../includes/service-bus-selector-get-started.md)]
+[AZURE.INCLUDE [service-bus-selector-get-started](../includes/service-bus-selector-get-started.md)]
 
-Event Hubs ist ein hoch skalierbares Erfassungssystem, das Millionen von Ereignissen pro Sekunde verarbeiten kann und so Ihrer Anwendung ermöglicht, die massiven Datenmengen zu verarbeiten und zu analysieren, die von verbundenen Geräten und Anwendungen erzeugt werden. Nach der Erfassung in Event Hubs können Sie Daten über einen beliebigen Echtzeit-Analyseanbieter oder ein Speichercluster transformieren und speichern. Weitere Informationen zu Event Hubs finden Sie im [Event Hubs-Entwicklerhandbuch]. 
+## Einführung
 
-Weitere Informationen finden Sie unter [Übersicht über Event Hubs].
+Ereignis-Hubs ist ein hoch skalierbares Erfassungssystem, das Millionen von Ereignissen pro Sekunde verarbeiten kann und so Ihrer Anwendung ermöglicht, die massiven Datenmengen zu verarbeiten und zu analysieren, die von verbundenen Geräten und Anwendungen erzeugt werden. Nach der Erfassung in Ereignis-Hubs können Sie Daten über einen beliebigen Echtzeit-Analyseanbieter oder ein Speichercluster transformieren und speichern. Weitere Informationen zu Ereignis-Hubs finden Sie im [Ereignis-Hubs-Entwicklerhandbuch]. 
 
-In diesem Lernprogramm erfahren Sie, wie sie Nachrichten über eine Konsolenanwendung in C# in einem Event Hub erfassen und sie parallel über die C#-[Ereignisprozessorhost]-Bibliothek abrufen.
+Weitere Informationen finden Sie unter [Übersicht über Ereignis-Hubs].
+
+In diesem Lernprogramm erfahren Sie, wie Nachrichten an einen Ereignis-Hub mithilfe einer Konsolenanwendung in C# aufgenommen werden können und wie Sie diese parallel mit der C#-[Ereignisprozessorhost]-Bibliothek abrufen.
 
 Zum Abschließen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Microsoft Visual Studio Express 2013 für Windows
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten stehen unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>zur Verfügung.
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
-## Erstellen eines Event Hub
+## Erstellen eines Ereignis-Hub
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und klicken Sie dann im unteren Bereich des Bildschirms auf **NEU**.
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und klicken Sie dann am unteren Bildschirmrand auf **+NEU**.
 
-2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
+2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Ereignis-Hub** und dann auf **Schnellerfassung**.
 
    	![][1]
 
-3. Geben Sie einen Namen für den Event Hub ein, wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Neuen Event Hub erstellen**.
+3. Geben Sie einen Namen für den Ereignis-Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Create a new Event Hub**.
 
    	![][2]
 
-4. Klicken Sie auf den soeben erstellten Namespace (normalerweise **"Name des Event Hub"-ns**).
+4. Klicken Sie auf den soeben erstellten Namespace (normalerweise ***Name des Ereignis-Hubs*-ns**).
 
    	![][3]
 
-5. Klicken Sie oben auf die Registerkarte **Event Hubs** und dann auf den soeben erstellten Event Hub.
+5. Klicken Sie am oberen Seitenrand auf die Registerkarte **Ereignis-Hubs**, und klicken Sie dann auf den soeben erstellten Ereignis-Hub.
 
    	![][4]
 
-6. Klicken Sie oben auf die Registerkarte **Konfigurieren**, fügen Sie eine Regel namens **SendRule** mit "Send"-Rechten hinzu, fügen Sie eine weitere Regel mit dem Namen **ReceiveRule** mit "Manage"-, "Send"- und "Listen"-Rechten hinzu, und klicken Sie auf **Speichern**.
+6. Klicken Sie oben auf die Registerkarte **Konfigurieren**, fügen Sie eine Regel mit dem Namen **SendRule** mit *Send*-Rechten und eine weitere Regel mit dem Namen **ReceiveRule** mit *Manage, Send, Listen*-Rechten hinzu, und klicken Sie dann auf **Speichern**.
 
    	![][5]
 
-7. Klicken Sie im oberen Bereich der Seite auf die Registerkarte **Dashboard**, und klicken Sie dann auf **Verbindungsinformationen**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
+7. Klicken Sie am oberen Seitenrand auf die Registerkarte **Dashboard**, und klicken Sie dann auf Verbindungsinformationen.**Verbindungsinformationen**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
 
    	![][6]
 
-Ihr Event Hub wird jetzt erstellt, und Sie erhalten die Verbindungszeichenfolgen, die Sie zum Senden und Empfangen von Ereignissen benötigen.
+Ihr Ereignis-Hub wird jetzt erstellt, und Sie erhalten die Verbindungszeichenfolgen, die Sie zum Senden und Empfangen von Ereignissen benötigen.
 
-[WACOM.INCLUDE [service-bus-event-hubs-get-started-send-csharp](../includes/service-bus-event-hubs-get-started-send-csharp.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-csharp](../includes/service-bus-event-hubs-get-started-send-csharp.md)]
 
 
-[WACOM.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
 
 ## Ausführen der Anwendungen
 
@@ -79,8 +95,6 @@ Sie können jetzt die Anwendung ausführen.
 <!-- Links -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Ereignisprozessorhost]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Übersicht über Event Hubs]: http://msdn.microsoft.com/de-de/library/azure/dn836025.aspx
+[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx
 
-<!--HONumber=35.1-->
-
-<!--HONumber=35.1-->
+<!--HONumber=47-->

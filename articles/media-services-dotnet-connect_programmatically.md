@@ -19,7 +19,7 @@
 
 # Herstellen einer Verbindung mit einem Media Services-Konto über das Media Services SDK für .NET
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow)  und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) . 
 
 In diesem Thema wird beschrieben, wie bei der Programmierung mit dem Media Services SDK für .NET eine programmgesteuerte Verbindung mit Microsoft Azure Media Services hergestellt wird.
 
@@ -44,7 +44,7 @@ Wenn Sie mit der Programmierung für Media Services beginnen möchten, müssen S
 >[AZURE.NOTE] Die **CloudMediaContext**-Klasse ist nicht threadsicher. Sie sollten für jeden Thread oder für jeden Satz von Vorgängen einen neuen CloudMediaContext erstellen.
 
 
-CloudMediaContext verfügt über fünf Konstruktorüberladungen. Es wird empfohlen, Konstruktoren zu verwenden, die **MediaServicesCredentials** als Parameter annehmen. Weitere Informationen finden Sie im folgenden Thema **Wiederverwenden von Token des Zugriffssteuerungsdiensts**. 
+CloudMediaContext verfügt über fünf Konstruktorüberladungen. Es wird empfohlen, Konstruktoren zu verwenden, die **MediaServicesCredentials** als Parameter akzeptieren. Weitere Informationen finden Sie im folgenden Thema **Wiederverwenden von Token des Zugriffssteuerungsdiensts**. 
 
 Im folgenden Beispiel wird der öffentliche CloudMediaContext-Konstruktor (mit MediaServicesCredentials als Anmeldeinformationen) verwendet:
 
@@ -61,9 +61,9 @@ Im folgenden Beispiel wird der öffentliche CloudMediaContext-Konstruktor (mit M
 Dieser Abschnitt zeigt, wie Token des Zugriffssteuerungsdiensts mithilfe von CloudMediaContext-Konstruktoren, die MediaServicesCredentials als Parameter annehmen, wiederverwendet werden.
 
 
-[Azure Active Directory Access Control](https://msdn.microsoft.com/de-de/library/hh147631.aspx) (auch als Access Control Service oder ACS bezeichnet) ist ein cloudbasierter Dienst, der eine einfache Möglichkeit zum Authentifizieren und Autorisieren von Benutzern für den Zugriff auf ihre Webanwendungen bietet. Microsoft Azure Media Services steuert den Zugriff auf die zugehörigen Dienste über das OAuth-Protokoll, das ein ACS-Token erfordert. Media Services empfängt die ACS-Token von einem Autorisierungsserver.
+[Azure Active Directory Access Control](https://msdn.microsoft.com/library/hh147631.aspx) (auch als Access Control Service oder ACS bezeichnet) ist ein cloudbasierter Dienst, der eine einfache Möglichkeit zum Authentifizieren und Autorisieren von Benutzern für den Zugriff auf ihre Webanwendungen bietet. Microsoft Azure Media Services steuert den Zugriff auf die zugehörigen Dienste über das OAuth-Protokoll, das ein ACS-Token erfordert. Media Services empfängt die ACS-Token von einem Autorisierungsserver.
 
-Bei der Entwicklung mit dem Media Services SDK haben Sie die Möglichkeit, die Tokenverwaltung den Code-Managern des SDKs zu überlassen. Die vollständige Verwaltung der ACS-Token durch das SDK führt jedoch zu unnötigen Tokenanforderungen. Das Anfordern von Token kostet Zeit und beansprucht Client- und Serverressourcen. Außerdem werden die Anforderungen bei einer überhohen Rate vom ACS-Server gedrosselt. Das Limit beträgt 30 Anforderungen pro Sekunde. Weitere Details finden Sie unter [ACS-Diensteinschränkungen](https://msdn.microsoft.com/de-de/library/gg185909.aspx).
+Bei der Entwicklung mit dem Media Services SDK haben Sie die Möglichkeit, die Tokenverwaltung den Code-Managern des SDKs zu überlassen. Die vollständige Verwaltung der ACS-Token durch das SDK führt jedoch zu unnötigen Tokenanforderungen. Das Anfordern von Token kostet Zeit und beansprucht Client- und Serverressourcen. Außerdem werden die Anforderungen bei einer überhohen Rate vom ACS-Server gedrosselt. Das Limit beträgt 30 Anforderungen pro Sekunde. Weitere Details finden Sie unter [ACS-Diensteinschränkungen](https://msdn.microsoft.com/library/gg185909.aspx).
 
 Ab dem Media Services SDK, Version 3.0.0.0, können Sie die ACS-Token wiederverwenden. Die **CloudMediaContext**-Konstruktoren, die **MediaServicesCredentials** als Parameter annehmen, ermöglichen die gemeinsame Verwendung von ACS-Token in mehreren Kontexten. Die MediaServicesCredentials-Klasse kapselt die Media Services-Anmeldeinformationen. Wenn ein ACS-Token verfügbar und seine Ablaufzeit bekannt ist, können Sie eine neue MediaServicesCredentials-Instanz mit dem Token erstellen und an den Konstruktor von CloudMediaContext übergeben. Beachten Sie, dass Token vom Media Services SDK automatisch aktualisiert werden, wenn sie ablaufen. Es gibt zwei Möglichkeiten zur Wiederverwendung von ACS-Token, wie in den folgenden Beispielen veranschaulicht.
 
@@ -99,7 +99,7 @@ Ab dem Media Services SDK, Version 3.0.0.0, können Sie die ACS-Token wiederverw
 		// If it is not valid, call MediaServicesCredentials's RefreshToken before caching.
 		SaveTokenDataToExternalStorage(accessToken, tokenExpiration);
 		
-	Use the saved token values to create MediaServicesCredentials.
+	Verwenden Sie die gespeicherten Tokenwerte, um MediaServicesCredentials zu erstellen.
 
 
 		var accessToken = "";
@@ -117,7 +117,7 @@ Ab dem Media Services SDK, Version 3.0.0.0, können Sie die ACS-Token wiederverw
 		
 		CloudMediaContext context2 = new CloudMediaContext(credentials);
 
-	Update the token copy in case the token was updated by the Media Services SDK. 
+	Aktualisieren Sie die Tokenkopie für den Fall, dass das Token vom Media Services SDK aktualisiert wurde. 
 	
 		if(tokenExpiration != context2.Credentials.TokenExpiration)
 		{
@@ -125,7 +125,7 @@ Ab dem Media Services SDK, Version 3.0.0.0, können Sie die ACS-Token wiederverw
 		}
 		
 
-- Wenn Sie mehrere Media Services-Konten besitzen (z. B. für die Verteilung der Nutzlast oder geografische Verteilung), können Sie MediaServicesCredentials-Objekte mithilfe der System.Collections.Concurrent.ConcurrentDictionary-Auflistung zwischenspeichern (die ConcurrentDictionary-Auflistung stellt eine threadsichere Auflistung von Schlüssel/Wert-Paaren dar, auf die von mehreren Threads gleichzeitig zugegriffen werden kann). Sie können dann die GetOrAdd-Methode verwenden, um die zwischengespeicherten Anmeldeinformationen abzurufen.  
+- Wenn Sie mehrere Media Services-Konten besitzen (z. B. für die Verteilung der Nutzlast oder geografische Verteilung), können Sie MediaServicesCredentials-Objekte mithilfe der System.Collections.Concurrent.ConcurrentDictionary-Auflistung zwischenspeichern (die ConcurrentDictionary-Auflistung stellt eine threadsichere Auflistung von Schlüssel/Wert-Paaren dar, auf die von mehreren Threads gleichzeitig zugegriffen werden kann). Sie können dann die GetOrAdd-Methode verwenden, um die zwischengespeicherten Anmeldeinformationen abzurufen. 
 
 		// Declare a static class variable of the ConcurrentDictionary type in which the Media Services credentials will be cached.  
 		private static readonly ConcurrentDictionary<string, MediaServicesCredentials> mediaServicesCredentialsCache = 
@@ -166,7 +166,7 @@ Beispiel:
 
 ## Speichern von Verbindungswerten in der Konfiguration
 
-Es wird dringend empfohlen, Verbindungswerte in der Konfiguration zu speichern. Dies gilt insbesondere für sensible Werte wie Ihren Kontonamen und das Kennwort. Außerdem wird empfohlen, sensible Konfigurationsdaten zu verschlüsseln. Sie können die gesamte Konfigurationsdatei mithilfe des verschlüsselnden Dateisystems von Windows (Encrypting File System, EFS) verschlüsseln. Klicken Sie zum Aktivieren von EFS für eine Datei mit der rechten Maustaste auf die Datei, wählen Sie **Eigenschaften** aus, und aktivieren Sie dann in den Einstellungen auf der Registerkarte **Erweitert** die Verschlüsselung. Sie können auch eine benutzerdefinierte Lösung für das Verschlüsseln ausgewählter Teile einer Konfigurationsdatei erstellen, indem Sie eine geschützte Konfiguration verwenden. Weitere Informationen finden Sie unter [Verschlüsseln von Konfigurationsinformationen mithilfe der geschützten Konfiguration](https://msdn.microsoft.com/de-de/library/53tyfkaw.aspx).
+Es wird dringend empfohlen, Verbindungswerte in der Konfiguration zu speichern. Dies gilt insbesondere für sensible Werte wie Ihren Kontonamen und das Kennwort. Außerdem wird empfohlen, sensible Konfigurationsdaten zu verschlüsseln. Sie können die gesamte Konfigurationsdatei mithilfe des verschlüsselnden Dateisystems von Windows (Encrypting File System, EFS) verschlüsseln. Klicken Sie zum Aktivieren von EFS für eine Datei mit der rechten Maustaste auf die Datei, wählen Sie **Eigenschaften** aus, und aktivieren Sie dann in den Einstellungen auf der Registerkarte **Erweitert** die Verschlüsselung. Sie können auch eine benutzerdefinierte Lösung für das Verschlüsseln ausgewählter Teile einer Konfigurationsdatei erstellen, indem Sie eine geschützte Konfiguration verwenden. Siehe [Verschlüsseln von Konfigurationsinformationen mithilfe der geschützten Konfiguration](https://msdn.microsoft.com/library/53tyfkaw.aspx).
 
 Die folgende Datei "App.config" enthält die erforderlichen Verbindungswerte. Die Werte im <appSettings>-Element sind die erforderlichen Werte, die Sie bei der Einrichtung des Media Services-Kontos erhalten haben.
 
@@ -191,4 +191,4 @@ Zum Abrufen von Verbindungswerten aus der Konfiguration können Sie die **Config
 
 <!-- URLs. -->
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

@@ -1,22 +1,33 @@
-﻿<properties title="Split and Merge Service Tutorial" pageTitle="Lernprogramm zum Azure SQL Split-Merge-Dienst" description="Aufteilen und Zusammenführen mit Elastic Scale" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+﻿<properties 
+	title="Split and Merge Service Tutorial" 
+	pageTitle="Lernprogramm zum Azure SQL Split-Merge-Dienst" 
+	description="Aufteilen und Zusammenführen mit Elastic Scale" 
+	metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" 
+	services="sql-database" documentationCenter=""  
+	manager="jhubbard" authors="torsteng"/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
+<tags 
+	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" ms.devlang="na" 
+	ms.topic="article" ms.date="03/05/2015" 
+	ms.author="torsteng" />
 
-#Lernprogramm zum Split-Merge-Dienst für elastische Skalierung
+# Lernprogramm zum Split-Merge-Dienst für elastische Skalierung
 
 ## Herunterladen der Split-Merge-Pakete 
 1. Laden Sie die neueste NuGet-Version von [NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) herunter. 
 2. Öffnen Sie eine Eingabeaufforderung, und navigieren Sie zu dem Verzeichnis, in das Sie "nuget.exe" heruntergeladen haben. 
 3. Laden Sie das neueste Split-Merge-Paket mit folgendem Befehl in das aktuelle Verzeichnis herunter: 
-'nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge'  
+`nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge`  
 
-Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle Verzeichnis heruntergeladen. Die Dateien werden in einem Verzeichnis mit dem Namen **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** abgelegt, wobei *x.x.xxx.x* der Versionsnummer entspricht. Die Split-Merge-Dienstdateien befinden sich im Unterverzeichnis **content\splitmerge\service** und die Split-Merge-PowerShell-Skripts (und erforderlichen Client-DLLs) im Unterverzeichnis **content\splitmerge\powershell**.
+Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle Verzeichnis heruntergeladen. Die Dateien befinden sich in einem Verzeichnis namens **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x**, wobei *x.x.xxx.x* der Versionsnummer entspricht. Die Split-Merge-Dienstdateien befinden sich im Unterverzeichnis **content\splitmerge\service** und die Split-Merge-PowerShell-Skripts (und erforderlichen Client-DLLs) im Unterverzeichnis **content\splitmerge\powershell**.
 
-##Voraussetzungen 
+## Voraussetzungen 
 
 1. Erstellen Sie eine Azure SQL-Datenbank, die als Split-Merge-Statusdatenbank verwendet wird. Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com). Klicken Sie unten links auf **Neu**, und klicken Sie dann auf **Data Services** -> **SQL-Datenbank** -> **Benutzerdefiniert erstellen**. Geben Sie den Namen der Datenbank ein, und erstellen Sie einen neuen Benutzer und ein neues Kennwort. Achten Sie darauf, dass Sie den Namen und das Kennwort zur späteren Verwendung notieren.
 
-2. Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Windows Azure-Diensten zulässt. Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com), und klicken Sie links auf **SQL-Datenbanken**. Klicken Sie dann auf dem Menüband am oberen Bildschirmrand auf **Server**, und wählen Sie Ihren Server aus. Klicken Sie dann oben auf **Konfigurieren**, und stellen Sie sicher, dass die Einstellung **Windows Azure-Dienste** auf **Ja** festgelegt ist.
+2. Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Azure-Diensten zulässt. Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com), und klicken Sie links auf **SQL-Datenbanken**. Klicken Sie dann auf dem Menüband am oberen Bildschirmrand auf **Server**, und wählen Sie Ihren Server aus. Klicken Sie dann oben auf **Konfigurieren**, und stellen Sie sicher, dass die Einstellung für **Azure-Dienste** auf **Ja** festgelegt ist.
 
     ![Allowed services][1]
 
@@ -42,16 +53,16 @@ Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle 
 
         "DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccessKey" 
     
-Zur Bestimmung des Zugriffsschlüssels wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com), klicken links auf die Registerkarte **Storage**, wählen den Namen Ihres Speicherkontos aus und klicken unten auf **Zugriffsschlüssel verwalten**. Klicken Sie für **Primärer Zugriffsschlüssel** auf die Schaltfläche **Kopieren**.
+Zur Bestimmung des [Zugriffsschlüssels wechseln Sie zum Azure-Verwaltungsportal](https://manage.windowsazure.com), klicken links auf die Registerkarte **Storage**, wählen den Namen Ihres Speicherkontos aus und klicken unten auf **Zugriffsschlüssel verwalten**. Klicken Sie für **Primärer Zugriffsschlüssel** auf die Schaltfläche **Kopieren**.
 
 ![manage access keys][2]
 
 6.    Geben Sie den Namen des Speicherkontos und einen der bereitgestellten Zugriffsschlüssel in die Platzhalter der Speicher-Verbindungszeichenfolge ein. Diese Verbindungszeichenfolge wird sowohl im Abschnitt für die **SplitMergeWeb**-Rolle als auch für die **SplitMergeWorker**-Rolle in der Einstellung **Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString** verwendet. Sie können unterschiedliche Speicherkonten für die unterschiedlichen Rollen verwenden. 
 
 ### Konfigurieren der Sicherheit 
-Ausführliche Anweisungen zum Konfigurieren der Dienstsicherheit finden Sie unter [Sicherheitskonfiguration bei elastischer Skalierung](./sql-database-elastic-scale-configure-security.md).
+Ausführliche Anweisungen zum Konfigurieren der Dienstsicherheit finden Sie unter [Elastic Scale - Sicherheitskonfigurationen](./sql-database-elastic-scale-configure-security.md).
 
-Für eine einfache Testbereitstellung, die zum Ausführen dieses Lernprogramms geeignet ist, führen Sie einige wenige Konfigurationsschritte aus, um den Dienst zu aktivieren und auszuführen. Durch diese Schritte werden nur ein Computer und Konto für die Kommunikation mit dem Dienst aktiviert.
+Für  eine einfache Testbereitstellung, die zum Ausführen dieses Lernprogramms geeignet ist, führen Sie einige wenige Konfigurationsschritte aus, um den Dienst zu aktivieren und auszuführen. Durch diese Schritte werden nur ein Computer und Konto für die Kommunikation mit dem Dienst aktiviert.
 
 ### Erstellen eines selbstsignierten Zertifikats 
 
@@ -66,7 +77,7 @@ Erstellen Sie ein neues Verzeichnis, und führen Sie aus diesem Verzeichnis übe
 
 Sie werden aufgefordert, ein Kennwort zum Schutz des privaten Schlüssels anzugeben. Geben Sie ein sicheres Kennwort ein, und bestätigen Sie es. Danach werden Sie aufgefordert, das zu verwendende Kennwort noch einmal einzugeben. Klicken Sie zum Schluss auf **Ja**, um das Kennwort in den Speicher vertrauenswürdiger Stammzertifizierungsstellen zu importieren.
 
-###    Erstellen einer PFX-Datei 
+### Erstellen einer PFX-Datei 
 
 Führen Sie den folgenden Befehl im gleichen Fenster aus, in dem "makecert" ausgeführt wurde. Verwenden Sie das gleiche Kennwort, das Sie zum Erstellen des Zertifikats verwendet haben:
 
@@ -93,14 +104,23 @@ Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com).
 
 ### Aktualisieren der Dienstkonfigurationsdatei
 
-Fügen Sie den oben kopierten Zertifikatfingerabdruck in das thumbprint-Attribut bzw. value-Attribut der folgenden Einstellungen ein:
+Fügen Sie den oben kopierten Zertifikatfingerabdruck in das thumbprint-Attribut bzw. value-Attribut der folgenden Einstellungen ein.
+Für die Webrolle:
+
+    <Setting name="DataEncryptionPrimaryCertificateThumbprint" value="" /> 
+    <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
+
+Für die Workerrolle:
 
     <Setting name="AdditionalTrustedRootCertificationAuthorities" value="" />
     <Setting name="AllowedClientCertificateThumbprints" value="" />
+    <Setting name="DataEncryptionPrimaryCertificateThumbprint" value="" />
     <Certificate name="SSL" thumbprint="" thumbprintAlgorithm="sha1" />
     <Certificate name="CA" thumbprint="" thumbprintAlgorithm="sha1" />
+    <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
-Beachten Sie, dass in Produktionsbereitstellungen für die Zertifizierungsstelle, das Serverzertifikat und die Clientzertifikate getrennte Zertifikate verwendet werden müssen. Ausführliche Anweisungen finden Sie unter [Sicherheitskonfiguration](./sql-database-elastic-scale-configure-security.md).
+
+Beachten Sie, dass in Produktionsbereitstellungen für die Zertifizierungsstelle, die Verschlüsselung, das Serverzertifikat und die Clientzertifikate getrennte Zertifikate verwendet werden müssen. Ausführliche Anweisungen finden Sie unter [Sicherheitskonfiguration](./sql-database-elastic-scale-configure-security.md).
 
 ### Bereitstellen des Split-Merge-Diensts
 1. Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com).
@@ -110,7 +130,7 @@ Beachten Sie, dass in Produktionsbereitstellungen für die Zertifizierungsstelle
 
     ![Staging][3]
 
-5. Geben Sie im Dialogfeld eine Bezeichnung für die Bereitstellung ein. Klicken Sie sowohl unter "Paket" als auch "Konfiguration" auf "Aus lokaler Ressource", und wählen Sie die Datei **SplitMergeService.cspkg** und die zuvor konfigurierte CSCFG-Datei aus.
+5. Geben Sie im Dialogfeld eine Bezeichnung für die Bereitstellung ein. Klicken Sie sowohl unter 'Package' als auch unter 'Configuration' auf 'From Local', und wählen Sie die Datei **SplitMergeService.cspkg** und die zuvor konfigurierte CSCFG-Datei aus.
 6. Stellen Sie sicher, dass das Kontrollkästchen **Auch dann bereitstellen, wenn für eine oder mehrere Rollen nur eine Instanz vorhanden ist** aktiviert ist.
 7. Aktivieren Sie die Schaltfläche mit dem Häkchen unten rechts, um die Bereitstellung zu starten. Die Ausführung dauert einige Minuten.
 
@@ -129,13 +149,11 @@ Wenn die Workerrolle nicht online geschaltet wird, während der Vorgang bei der 
         "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 * Stellen Sie sicher, dass der Servername nicht mit **https://** beginnt.
-* Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Windows Azure-Diensten zulässt. Zu diesem Zweck öffnen Sie "https://manage.windowsazure.com", klicken links auf "SQL-Datenbanken", klicken oben auf "Server" und wählen Ihren Server aus. Klicken Sie oben auf **Konfigurieren**, und stellen Sie sicher, dass die Einstellung **Windows Azure-Dienste** auf "Ja" festgelegt ist. (Siehe den Abschnitt "Voraussetzungen" am Anfang dieses Artikels.)
+* Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Azure-Diensten zulässt. Zu diesem Zweck öffnen Sie "https://manage.windowsazure.com", klicken links auf "SQL-Datenbanken", klicken oben auf "Server" und wählen Ihren Server aus. Klicken Sie oben auf **Konfigurieren**, und stellen Sie sicher, dass die Einstellung für **Azure-Dienste** auf "Ja" festgelegt ist. (Siehe den Abschnitt "Voraussetzungen" am Anfang dieses Artikels.)
 
-* Überprüfen Sie die Diagnoseprotokolle für Ihre Split-Merge-Dienstinstanz. Öffnen Sie eine Visual Studio-Instanz, und klicken Sie in der Menüleiste auf **Ansicht** und **Server-Explorer**. Klicken Sie auf das **Windows Azure**-Symbol, um eine Verbindung mit Ihrem Azure-Abonnement herzustellen. Navigieren Sie dann zu "Windows Azure -> Storage -> <Ihr Speicherkonto> -> Tabellen -> WADLogsTable". Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen im Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
+* Überprüfen Sie die Diagnoseprotokolle für Ihre Split-Merge-Dienstinstanz. Öffnen Sie eine Visual Studio-Instanz, und klicken Sie in der Menüleiste auf **Ansicht** und **Server-Explorer**. Klicken Sie auf das **Microsoft Azure**-Symbol, um eine Verbindung mit Ihrem Azure-Abonnement herzustellen. Navigieren Sie dann zu "Microsoft Azure -> Storage -> <Ihr Speicherkonto> -> Tabellen -> WADLogsTable". Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen im Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx). 
 
     ![][5]
-
-    ![][6]
 
 ## Testen der Split-Merge-Dienstbereitstellung
 ### Herstellen einer Verbindung mit einem Webbrowser
@@ -151,7 +169,7 @@ Die enthaltenen Skriptdateien lauten:
 1. **SetupSampleSplitMergeEnvironment.ps1**: Richtet eine Testdatenebene für Split/Merge ein (eine ausführliche Beschreibung finden Sie in der Tabelle unten).
 2. **ExecuteSampleSplitMerge.ps1**: Führt Testvorgänge auf der Testdatenebene aus (eine ausführliche Beschreibung finden Sie in der Tabelle unten).
 3. **GetMappings.ps1**: Beispielskript auf oberster Ebene, das den aktuellen Status der Shardzuordnungen ausgibt.
-4. **ShardManagement.psm1**: Hilfsskript, das die ShardManagement-API umschließt.
+4. **ShardManagement.psm1**:  Hilfsskript, das die ShardManagement-API umschließt.
 5. **SqlDatabaseHelpers.psm1**: Hilfsskript zum Erstellen und Verwalten von SQL-Datenbanken.
 
 <table style="width:100%">
@@ -161,19 +179,19 @@ Die enthaltenen Skriptdateien lauten:
   </tr>
   <tr>
     <th rowspan="5">SetupSampleSplitMergeEnvironment.ps1</th>
-    <td>1. Erstellt eine ShardMapManager-Datenbank.</td>
+    <td>1.    Erstellt eine ShardMapManager-Datenbank.</td>
   </tr>
   <tr>
-    <td>2. Erstellt zwei Sharddatenbanken. 
+    <td>2.    Erstellt zwei Sharddatenbanken. 
   </tr>
   <tr>
-    <td>3. Erstellt eine Shardzuordnung für diese Datenbanken (löscht alle vorhandenen Shardzuordnungen für diese Datenbanken). </td>
+    <td>3.    Erstellt eine Shard Map für diese Datenbanken (löscht alle vorhandenen Shard Maps für diese Datenbanken). </td>
   </tr>
   <tr>
-    <td>4. Erstellt eine kleine Beispieltabelle in beiden Shards und füllt die Tabelle in einem der Shards auf.</td>
+    <td>4.    Erstellt eine kleine Beispieltabelle in beiden Shards und füllt die Tabelle in einem der Shards auf.</td>
   </tr>
   <tr>
-    <td>5. Deklariert SchemaInfo für die Shardtabelle.</td>
+    <td>5.    Deklariert SchemaInfo für die Shardtabelle.</td>
   </tr>
 
 </table>
@@ -185,33 +203,33 @@ Die enthaltenen Skriptdateien lauten:
   </tr>
 <tr>
     <th rowspan="4">ExecuteSampleSplitMerge.ps1 </th>
-    <td>1. Sendet eine Teilungsanforderung an das Web-Front-End des Split-Merge-Diensts, wodurch eine Hälfte der Daten vom ersten auf den zweiten Shard aufgeteilt wird.</td>
+    <td>1.    Sendet eine Teilungsanforderung an das Web-Front-End des Split-Merge-Diensts, wodurch eine Hälfte der Daten vom ersten auf den zweiten Shard verteilt wird.</td>
   </tr>
   <tr>
-    <td>2. Ruft den Status der Teilungsanforderung vom Web-Front-End ab und wartet, bis die Anforderung abgeschlossen ist.</td>
+    <td>2.    Ruft den Status der Teilungsanforderung vom Web-Front-End ab und wartet, bis die Anforderung abgeschlossen ist.</td>
   </tr>
   <tr>
-    <td>3. Sendet eine Zusammenführungsanforderung an das Web-Front-End des Split-Merge-Diensts, wodurch die Daten vom zweiten wieder auf den ersten Shard verschoben werden.</td>
+    <td>3.    Sendet eine Zusammenführungsanforderung an das Web-Front-End des Split-Merge-Diensts, wodurch die Daten vom zweiten wieder auf den ersten Shard verschoben werden.</td>
   </tr>
   <tr>
-    <td>4. Ruft den Status der Zusammenführungsanforderung vom Web-Front-End ab und wartet, bis die Anforderung abgeschlossen ist.</td>
+    <td>4.    Ruft den Status der Zusammenführungsanforderung vom Web-Front-End ab und wartet, bis die Anforderung abgeschlossen ist.</td>
   </tr>
 </table>
 
-##Überprüfen der Bereitstellung mithilfe von PowerShell
+## Überprüfen der Bereitstellung mithilfe von PowerShell
 
 1.    Öffnen Sie ein neues PowerShell-Fenster, und navigieren Sie zu dem Verzeichnis, in das Sie das Split-Merge-Paket heruntergeladen haben, und wechseln Sie dann in das Verzeichnis "powershell".
 2.    Erstellen Sie einen Azure SQL-Datenbankserver (oder wählen Sie einen vorhandenen Server aus), auf dem ShardMapManager und Shards erstellt werden. 
 
-Hinweis: Um das Skript einfach zu halten, werden alle diese Datenbanken vom Skript "SetupSampleSplitMergeEnvironment.ps1" standardmäßig auf demselben Server erstellt. Dies ist keine Einschränkung des Split-Merge-Diensts selbst.
+    Hinweis: Um das Skript einfach zu halten, werden alle diese Datenbanken vom Skript "SetupSampleSplitMergeEnvironment.ps1" standardmäßig auf demselben Server erstellt. Dies ist keine Einschränkung des Split-Merge-Diensts selbst.
 
-Damit der Split-Merge-Dienst Daten verschieben und die Shardzuordnung aktualisieren kann, ist eine Anmeldung mit SQL-Authentifizierung und Lese-/Schreibzugriff auf die Datenbanken erforderlich. Da der Split-Merge-Dienst in der Cloud ausgeführt wird, bietet er derzeit keine Unterstützung für die integrierte Authentifizierung.
+    Damit der Split-Merge-Dienst Daten verschieben und die Shard Map aktualisieren kann, ist eine Anmeldung mit SQL-Authentifizierung und Lese-/Schreibzugriff auf die Datenbanken erforderlich. Da der Split-Merge-Dienst in der Cloud ausgeführt wird, bietet er derzeit keine Unterstützung für die integrierte Authentifizierung.
 
-Stellen Sie sicher, dass der Azure SQL-Server so konfiguriert ist, dass er den Zugriff über die IP-Adresse des Computers zulässt, auf dem diese Skripts ausgeführt werden. Sie finden diese Einstellung auf dem Azure SQL-Server unter "Konfiguration/Zulässige IP-Adressen".
+    Stellen Sie sicher, dass der Azure SQL-Server so konfiguriert ist, dass er den Zugriff über die IP-Adresse des Computers zulässt, auf dem diese Skripts ausgeführt werden. Sie finden diese Einstellung auf dem Azure SQL-Server unter "Konfiguration/Zulässige IP-Adressen".
 
 3.    Führen Sie das Skript "SetupSampleSplitMergeEnvironment.ps1" aus, um die Beispielumgebung zu erstellen. 
 
-Durch die Ausführung dieses Skripts werden alle vorhandenen Datenstrukturen der Shardzuordnungsverwaltung in der ShardMapManager-Datenbank und auf den Shards gelöscht. Möglicherweise ist es hilfreich, das Skript erneut auszuführen, wenn Sie die Shardzuordnung oder Shards erneut initialisieren möchten.
+    Durch die Ausführung dieses Skripts werden alle vorhandenen Datenstrukturen der Shard Map-Verwaltung in der ShardMapManager-Datenbank und auf den Shards gelöscht. Möglicherweise ist es hilfreich, das Skript erneut auszuführen, wenn Sie die Shard Map oder Shards erneut initialisieren möchten.
 
     Beispiel für eine Befehlszeile:
 
@@ -238,7 +256,7 @@ Durch die Ausführung dieses Skripts werden alle vorhandenen Datenstrukturen der
             -SplitMergeServiceEndpoint 'https://mysplitmergeservice.cloudapp.net' `
             -CertificateThumbprint '0123456789abcdef0123456789abcdef01234567'
 
-Wenn Sie den folgenden Fehler erhalten, liegt sehr wahrscheinlich ein Problem mit dem Zertifikat Ihres Webendpunkts vor. Stellen Sie unter Verwendung Ihres bevorzugten Webbrowsers eine Verbindung mit dem Webendpunkt her, und überprüfen Sie, ob ein Zertifikatfehler auftritt.
+    Wenn Sie den folgenden Fehler erhalten, liegt sehr wahrscheinlich ein Problem mit dem Zertifikat Ihres Webendpunkts vor. Stellen Sie unter Verwendung Ihres bevorzugten Webbrowsers eine Verbindung mit dem Webendpunkt her, und überprüfen Sie, ob ein Zertifikatfehler auftritt.
 
         Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLSsecure channel.
 
@@ -280,7 +298,7 @@ Wenn Sie den folgenden Fehler erhalten, liegt sehr wahrscheinlich ein Problem mi
 
 ## Erstellen eigener Anforderungen 
 
-Der Dienst kann entweder über die Web-Benutzeroberfläche verwendet werden, oder indem Sie das PowerShell-Modul "SplitMerge.psm1" importieren und verwenden.
+Der Dienst kann entweder über die Web-Benutzeroberfläche verwendet werden, oder indem Sie das PowerShell-Modul "SplitMerge.psm1" importieren und verwenden, das Ihre Anforderungen über die Webrolle übermittelt.
 
 Der Split-Merge-Dienst kann Daten sowohl in Shardtabellen als auch in Verweistabellen verschieben. Eine Shardtabelle verfügt über eine Shardingschlüsselspalte und weist auf jedem Shard unterschiedliche Zeilendaten auf. Eine Verweistabelle ist keine Shardtabelle, sodass sie auf jedem Shard dieselben Zeilendaten enthält. Verweistabellen sind hilfreich für Daten, die sich nicht häufig ändern, und werden für JOIN-Vorgänge mit Shardtabellen in Abfragen verwendet.
 
@@ -290,7 +308,7 @@ Um einen Teilungs-/Zusammenführungsvorgang auszuführen, müssen Sie die zu ver
 2.    Erstellen Sie für jede Verweistabelle ein **ReferenceTableInfo**-Objekt, das den Namen des übergeordneten Schemas der Tabelle (optional, standardmäßig "dbo") und den Tabellennamen angibt.
 3.    Fügen Sie die oben beschriebenen TableInfo-Objekte einem neuen **SchemaInfo**-Objekt hinzu.
 4.    Rufen Sie einen Verweis auf ein **ShardMapManager**-Objekt ab, und rufen Sie **GetSchemaInfoCollection** auf.
-5.    Fügen Sie **SchemaInfo** unter Angabe des Namens der Shardzuordnung **SchemaInfoCollection** hinzu.
+5.    Fügen Sie **SchemaInfo** unter Angabe des Namens der Shard Map **SchemaInfoCollection** hinzu.
 
 Ein Beispiel dazu finden Sie im Skript "SetupSampleSplitMergeEnvironment.ps1".
 
@@ -302,7 +320,7 @@ Beim Ausführen der PowerShell-Beispielskripts kann folgende Meldung angezeigt w
 
     Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.
 
-Dieser Fehler weist darauf hin, dass das SSL-Zertifikat nicht ordnungsgemäß konfiguriert ist. Folgen Sie den Anweisungen im Abschnitt "Herstellen einer Verbindung mit einem Webbrowser".
+Dieser Fehler weist darauf hin, dass das SSL-Zertifikat nicht ordnungsgemäß konfiguriert ist. Folgen Sie den Anweisungen im Abschnitt 'Connecting with a web browser'.
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  
@@ -313,3 +331,5 @@ Dieser Fehler weist darauf hin, dass das SSL-Zertifikat nicht ordnungsgemäß ko
 [4]: ./media/sql-database-elastic-scale-split-and-merge-tutorial/upload.png
 [5]: ./media/sql-database-elastic-scale-split-and-merge-tutorial/storage.png
 [6]: ./media/sql-database-elastic-scale-split-and-merge-tutorial/logs.png
+
+<!--HONumber=47-->

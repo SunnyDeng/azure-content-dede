@@ -22,9 +22,9 @@ Diese Anleitung erklärt, wie Sie die Security Assertion Markup Language (SAML) 
 
 ![Example SAML output][saml_output]
 
-Weitere Informationen zum ACS finden Sie im Abschnitt [Nächste Schritte](#next_steps).
+Weitere Informationen zum ACS finden Sie im Abschnitt [Nächste Schritte](#next_steps) .
 
-> [WACOM.NOTE]
+> [AZURE.NOTE]
 > Der Azure Access Control Service-Filter (von Microsoft Open Technologies) ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft Open Technologies oder Microsoft nicht offiziell unterstützt.
 
 ## Inhaltsverzeichnis
@@ -44,11 +44,11 @@ Um die Aufgaben in dieser Anleitung erledigen zu könne, müssen Sie zunächst d
 
 Fügen Sie die Bibliothek mit der Klasse **javax.servlet.jsp.JspWriter** zu Ihrem Buildpfad und zu Ihrer Bereitstellungs-Assembly hinzu. Falls Sie Tomcat verwenden, ist diese Klasse in der Datei **jsp-api.jar** enthalten, die sich im Apache-**lib**-Ordner befindet.
 
-1. Klicken Sie im Project Explorer in Eclipse mit der rechten Maustaste auf **MyACSHelloWorld**, klicken Sie auf **Buildpfad**, auf **Buildpfad konfigurieren**, auf die Registerkarte **Bibliotheken** und zuletzt auf **Add External JARs**.
+1. Klicken Sie im Projektexplorer in Eclipse mit der rechten Maustaste auf **MyACSHelloWorld**, anschließend auf **Build Path**, auf **Configure Build Path**, auf die Registerkarte **Libraries** und zuletzt auf **Add External JARs**.
 2. Navigieren Sie im Dialogfeld **JAR Selection** zum entsprechenden JAR, wählen Sie das JAR aus und klicken Sie auf **Open**.
 3. Klicken Sie im immer noch geöffneten **Properties for MyACSHelloWorld**-Dialogfeld auf **Deployment Assembly**.
 4. Klicken Sie im Dialogfeld **Web Deployment Assembly** auf **Add**.
-5. Klicken Sie im Dialogfeld 5. New Assembly Directive** auf **Java Build Path Entries** und anschließend auf **Next**.
+5. Klicken Sie im Dialogfeld **New Assembly Directive** auf **Java Build Path Entries** und anschließend auf **Next**.
 6. Wählen Sie die entsprechende Bibliothek aus und klicken Sie auf **Finish**.
 7. Klicken Sie auf **OK**, um das Dialogfeld **Properties for MyACSHelloWorld** zu schließen.
 
@@ -204,4 +204,4 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anspruchsvolleren Sz
 [Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse]: ../active-directory-java-authenticate-users-access-control-eclipse
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
 
-<!--HONumber=46--> 
+<!--HONumber=47-->

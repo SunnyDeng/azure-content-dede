@@ -1,6 +1,6 @@
 ﻿<properties 
-   pageTitle="Erlernen von Hadoop in HDInsight mithilfe der Beispielgalerie" 
-   description="Erlernen von Hadoop in HDInsight mithilfe der HDInsight-Beispielgalerie" 
+   pageTitle="Kennenlernen von Hadoop in HDInsight mithilfe der Beispielgalerie" 
+   description="Kennenlernen von Hadoop in HDInsight mithilfe der HDInsight-Beispielgalerie" 
    services="hdinsight" 
    documentationCenter="" 
    authors="mumian" 
@@ -16,7 +16,7 @@
    ms.date="1/29/2015" 
    ms.author="jgao"/>
 
-# Erlernen von Hadoop in HDInsight mithilfe der HDInsight-Galerie für erste Schritte
+# Kennenlernen von Hadoop mithilfe der HDInsight-Galerie für erste Schritte
 
 Die HDInsight-Galerie für erste Schritte bietet eine schnelle und einfache Möglichkeit zum Ausführen von Hadoop-Beispielanwendungen in HDInsight. Einige Beispiele verfügen über Beispieldaten. Für die restlichen Beispiele können Sie eigene Daten bereitstellen. Derzeit sind sechs Beispiele enthalten und weitere werden in Kürze folgen:
 
@@ -49,7 +49,7 @@ Der folgende Videoclip zeigt, wie das Beispiel zur Twitter-Trendanalyse ausgefü
 	![HDInsight Twitter trend analysis sample][hdinsight.twitter.sample]
 
 ## Nächste Schritte
-Andere Möglichkeiten zum Erlernen von HDInsight:
+Andere Möglichkeiten zum Kennenlernen von HDInsight:
 
 - [HDInsight-Lernkonzept][hdinsight.learning.map]
 - [HDInsight-Infografik][hdinsight.infographic]
@@ -62,4 +62,4 @@ Andere Möglichkeiten zum Erlernen von HDInsight:
 [hdinsight.learning.map]: ../hdinsight-learning-map/
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

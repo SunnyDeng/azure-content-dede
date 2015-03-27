@@ -34,15 +34,15 @@ Dieses Lernprogramm erläutert die grundlegenden Schritte:
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abschließen, um Ihr Projekt mit dem mobilen Dienst zu verbinden. Für dieses Lernprogramm benötigen Sie außerdem Visual Studio 2013. 
 
->[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F" target="_blank">"Kostenlose Azure-Testversion"</a>. 
+>[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F" target="_blank">Kostenlose Azure-Testversion</a>. 
 
 
-##<a id="register"></a>Aktivieren von Google Cloud Messaging
+## <a id="register"></a>Aktivieren von Google Cloud Messaging
 
 [AZURE.INCLUDE [Enable GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
 
-##<a id="configure"></a>Konfigurieren von Mobile Services zum Senden von Pushanforderungen
+## <a id="configure"></a>Konfigurieren von Mobile Services zum Senden von Pushanforderungen
 
 1. Melden Sie sich am [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre App.
 
@@ -66,15 +66,15 @@ Ihr mobiler Dienst ist jetzt für GCM und Benachrichtigungshubs konfiguriert.
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service](../includes/mobile-services-dotnet-backend-test-local-service.md)]
 
-##<a id="update-server"></a>Aktualisieren des Servers zum Senden von Pushbenachrichtigungen
+## <a id="update-server"></a>Aktualisieren des Servers zum Senden von Pushbenachrichtigungen
 
-1. Erweitern Sie im Projektmappen-Explorer von Visual Studio im Projekt für den mobilen Dienst den Ordner **Controller**. Öffnen Sie "TodoItemController.cs". Fügen Sie am Anfang der Datei, die folgenden  `using`-Anweisungen hinzu:
+1. Erweitern Sie im Projektmappen-Explorer von Visual Studio im Projekt für den mobilen Dienst den Ordner **Controller**. Öffnen Sie "TodoItemController.cs". Fügen Sie am Anfang der Datei die folgenden `using`-Anweisungen hinzu:
 
 
 		using System;
 		using System.Collections.Generic;
 
-2. Aktualisieren Sie die Definition der `PostTodoItem`-Methode mit dem folgenden Code:  
+2. Aktualisieren Sie die `PostTodoItem`-Methodendefinition mit dem folgenden Code:  
 
         public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
         {
@@ -106,22 +106,22 @@ Ihr mobiler Dienst ist jetzt für GCM und Benachrichtigungshubs konfiguriert.
 [AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 
-##<a name="update-app"></a>Hinzufügen von Pushbenachrichtigungen zur App
+## <a name="update-app"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
-###Prüfen der Version des Android-SDK
+### Prüfen der Version des Android-SDK
 
 [AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../includes/mobile-services-verify-android-sdk-version-EC.md)]
 
 
-Als Nächstes installieren Sie Google Play Services. Google Cloud Messaging hat für Entwicklung und Testen bezüglich der API-Ebene einige Mindestanforderungen, denen die Eigenschaft **minSdkVersion** im Manifest entsprechen muss. 
+Als Nächstes installieren Sie Google Play Services. Google Cloud Messaging verfügt über einige Mindestanforderungen an die API-Ebene für Entwicklung und Tests, denen die Eigenschaft **minSdkVersion** im Manifest entsprechen muss. 
 
 Wenn Sie mit einem älteren Gerät testen, lesen Sie [Set Up Google Play Services SDK], um zu ermitteln, wie niedrig Sie diesen Wert einstellen können. Legen Sie den Wert anschließend entsprechend fest.
 
-###Hinzufügen von Google Play Services zum Projekt
+### Hinzufügen von Google Play Services zum Projekt
 
 [AZURE.INCLUDE [Add Play Services](../includes/mobile-services-add-Google-play-services-EC.md)]
 
-###Hinzufügen des Codes
+### Hinzufügen des Codes
 
 [AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../includes/mobile-services-android-getting-started-with-push-EC.md)]
 
@@ -129,7 +129,7 @@ Wenn Sie mit einem älteren Gerät testen, lesen Sie [Set Up Google Play Service
 
 Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-Kabel verbinden oder ein virtuelles Gerät im Emulator verwenden.
 
-###Falls Sie den Emulator für die Tests verwenden...
+### Falls Sie den Emulator für die Tests verwenden...
 
 Stellen Sie sicher, dass Sie ein Android Virtual Device (AVD) verwenden, das Google APIs unterstützt.
 
@@ -137,21 +137,21 @@ Stellen Sie sicher, dass Sie ein Android Virtual Device (AVD) verwenden, das Goo
 
 	![](./media/mobile-services-android-get-started-push/mobile-services-android-virtual-device-manager.png)
 
-2. Wählen Sie **Google-APIs** (oder **Google-APIs X 86**)  in **Ziel** aus, und klicken Sie dann auf OK.
+2. Wählen Sie **Google-APIs** (oder **Google-APIs x86**)  unter **Ziel** aus, und klicken Sie dann auf "OK".
 
    	![](./media/mobile-services-android-get-started-push/mobile-services-android-virtual-device-manager-edit.png)
 
 	Dies gibt das AVD zur Verwendung von Google-APIs vor. Falls Sie mehrere Versionen des Android SDK installiert haben, stellen Sie sicher, dass die API-Ebene mit der Ebene übereinstimmt, die Sie zuvor in den Projekteigenschaften eingestellt haben.
 
-###<a id="local-testing"></a> Aktivieren von Pushbenachrichtigungen für lokale Tests
+### <a id="local-testing"></a> Aktivieren von Pushbenachrichtigungen für lokale Tests
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-configure-local-push](../includes/mobile-services-dotnet-backend-configure-local-push.md)]
 
-###Ausführen des Tests
+### Ausführen des Tests
 
 1. Klicken Sie in Eclipse im Menü **Ausführen** auf **Ausführen**, um die App zu starten.
 
-2. Geben Sie in der App einen sinnvollen Text ein, beispielsweise _Eine neue Mobile Services-Aufgabe_, und klicken Sie dann auf die Schaltfläche **Hinzufügen**.
+2. Geben Sie in der App einen sinnvollen Text ein, beispielsweise "_Eine neue Mobile Services-Aufgabe_", und klicken Sie dann auf die Schaltfläche **Hinzufügen**.
 
   	![](./media/mobile-services-android-get-started-push/mobile-quickstart-push1-android.png)
 
@@ -163,34 +163,34 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-<!---In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Android-App für die Arbeit mit Mobile Services und Notification Hubs zum Senden von Pushbenachrichtigungen aufgezeigt. Als Nächstes können Sie das Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer] ausführen, in dem die Verwendung von Tags zum Versand von Pushbenachrichtigungen von einem mobilen Dienst ausschließlich an einen authentifizierten Benutzer demonstriert wird.
+<!---This tutorial demonstrated the basics of enabling an Android app to use Mobile Services and Notification Hubs to send push notifications. Next, consider completing the next tutorial, [Send push notifications to authenticated users], which shows how to use tags to send push notifications from a Mobile Service to only an authenticated user.
 
 
-+ [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]
-	<br/>Erfahren Sie, wie Sie Tags verwenden können, um Pushbenachrichtigungen aus einem mobilen Dienst ausschließlich an einen authentifizierten Benutzer zu senden.
++ [Send push notifications to authenticated users]
+	<br/>Learn how to use tags to send push notifications from a Mobile Service to only an authenticated user.
 
-+ [Senden von Übertragungsbenachrichtigungen an Abonnenten]
-	<br/>Erfahren Sie, wie Benutzer sich registrieren und Pushbenachrichtigungen für Kategorien empfangen können, an denen sie interessiert sind.
++ [Send broadcast notifications to subscribers]
+	<br/>Learn how users can register and receive push notifications for categories they're interested in.
 
-+ [Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]
-	<br/>Erfahren Sie, wie Vorlagen zum Senden von Pushbenachrichtigungen mit einem mobilen Dienst gesendet werden, ohne dass Sie in Ihrem Back-End auf plattformspezifische Nutzlasten zurückgreifen müssen.
++ [Send template-based notifications to subscribers]
+	<br/>Learn how to use templates to send push notifications from a Mobile Service, without having to craft platform-specific payloads in your back-end.
 -->
 Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in den folgenden Themen:
 
 * [Erste Schritte mit Daten]
-  <br/>Erfahren Sie mehr über das Speichern und Abfragen von Daten mit Mobile Services.
+  <br/>Erfahren Sie mehr zum Speichern und Abfragen von Daten mit Mobile Services.
 
-* [Erste Schritte mit Authentifizierung]
+* [Erste Schritte mit der Authentifizierung]
   <br/>Erfahren Sie, wie Sie Benutzer Ihrer App mit verschiedenen Kontotypen über Mobile Services authentifizieren können.
 
 * [Was sind Notification Hubs?]
-  <br/>Erfahren Sie, wie Notification Hubs funktioniert, um Benachrichtigungen über alle großen Clientplattformen an Ihre Apps zu senden.
+  <br/>Erfahren Sie, wie Sie mit Notification Hubs Benachrichtigungen an Ihre Apps auf allen großen Clientplattformen versenden können.
 
 * [Debuggen von Notification Hubs-Anwendungen](http://go.microsoft.com/fwlink/p/?linkid=386630)
-  </br>Erhalten Sie Anweisungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen. 
+  </br>Erhalten Sie Anleitungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen. 
 
 * [Verwenden der Android-Clientbibliothek für Mobile Services]
-  <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit Android.  
+  <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit Android.  
   
 <!-- Anchors. -->
 
@@ -235,27 +235,27 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 <!-- URLs. -->
-[Überprüfen und Ändern von Daten mit Skripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
-[Optimieren von Abfragen mit Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-dotnet
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-data
-[Erste Schritte mit Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-users
-[JavaScript und HTML]: /de-de/develop/mobile/tutorials/get-started-with-data-js
-[JavaScript-Back-End-Version]: /de-de/develop/mobile/tutorials/get-started-with-data-android
+[Überprüfen und Ändern von Daten mit Skripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
+[Optimieren von Abfragen mit Paging]: /develop/mobile/tutorials/add-paging-to-data-dotnet
+[Erste Schritte mit Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
+[Erste Schritte mit Daten]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
+[Erste Schritte mit der Authentifizierung]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[JavaScript und HTML]: /develop/mobile/tutorials/get-started-with-data-js
+[JavaScript-Back-End-Version]: /develop/mobile/tutorials/get-started-with-data-android
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 [Website mit Codebeispielen für Entwickler]:  http://go.microsoft.com/fwlink/p/?LinkId=328660
-[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
+[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-net-client-library
 [MobileServiceClient-Klasse]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 
-[Verwenden der Android-Clientbibliothek für Mobile Services]: /de-de/documentation/articles/mobile-services-android-how-to-use-client-library
+[Verwenden der Android-Clientbibliothek für Mobile Services]: /documentation/articles/mobile-services-android-how-to-use-client-library
 
-[Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-push-notifications-app-users/
+[Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: /documentation/articles/mobile-services-dotnet-backend-android-push-notifications-app-users/
 
-[Was sind Notification Hubs?]: /de-de/documentation/articles/notification-hubs-overview/
-[Senden von Übertragungsbenachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
-[Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
+[Was sind Notification Hubs?]: /documentation/articles/notification-hubs-overview/
+[Senden von Übertragungsbenachrichtigungen an Abonnenten]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

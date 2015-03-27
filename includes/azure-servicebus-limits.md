@@ -1,5 +1,7 @@
-In den folgenden Themen finden Sie Informationen in Bezug auf die Servicebus-Einschränkungen:
+﻿In den folgenden Themen finden Sie Informationen in Bezug auf die Servicebus-Einschränkungen:
 
--   [Microsoft Azure Service Bus-Kontingente][Microsoft Azure Service Bus-Kontingente]
+ - [Service Bus-Kontingente][servicebusquotas]
 
-  [Microsoft Azure Service Bus-Kontingente]: http://msdn.microsoft.com/de-de/library/azure/ee732538.aspx
+  [servicebusquotas]: http://msdn.microsoft.com/library/azure/ee732538.aspx
+
+<!--HONumber=47-->

@@ -19,11 +19,8 @@
 
 #Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird#
 
-Verwenden Sie für die Anmeldung bei einem virtuellen Computer, auf dem das Betriebssystem Windows Server ausgeführt wird, die Schaltfläche "Verbinden" im Verwaltungsportal, um eine Remotedesktopverbindung zu starten. (Informationen über virtuelle Linux-Computer finden Sie unter [Anmeldung auf einem virtuellen Linux-Computer](./virtual-machines-linux-how-to-log-on/).)
+Verwenden Sie bei einem virtuellen Computer, auf dem das Betriebssystem Windows Server ausgeführt wird, die Schaltfläche "Verbinden" im Verwaltungsportal, um sich auf einem virtuellen Computer anzumelden. (Weitere Informationen zu virtuellen Linux-Computern finden Sie unter [Anmelden auf einem virtuellen Computer unter Linux](./virtual-machines-linux-how-to-log-on/).)
 
 [AZURE.INCLUDE [virtual-machines-log-on-win-server](../includes/virtual-machines-log-on-win-server.md)]
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

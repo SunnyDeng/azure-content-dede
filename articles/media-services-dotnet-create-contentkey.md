@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen von ContentKeys mit .NET" 
 	description="Erfahren Sie, wie Sie Inhaltsschlüssel erstellen, die den sicheren Zugriff auf Medienobjekte ermöglichen." 
 	services="media-services" 
@@ -19,13 +19,13 @@
 
 # Erstellen von ContentKeys mit .NET
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow).  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) .  
 
 Media Services ermöglicht das Erstellen neuer und Übermitteln verschlüsselter Medienobjekte. Ein **ContentKey** ermöglicht den sicheren Zugriff auf Ihre **Medienobjekte**. 
 
-Beim Erstellen eines neuen Medienobjekts (z. B. vor dem [Hochladen von Dateien](../media-services-dotnet-upload-files/)) können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**. 
+Wenn Sie ein neues Objekt erstellen (z. B. vor dem [Hochladen von Dateien](../media-services-dotnet-upload-files/)),können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**. 
 
-Wenn Sie Medienobjekte an Ihre Clients übermitteln, können Sie mithilfe einer der beiden folgenden Verschlüsselungen die [dynamische Verschlüsselung von Medienobjekten konfigurieren](../media-services-dotnet-configure-asset-delivery-policy): **DynamicEnvelopeEncryption** oder **DynamicCommonEncryption**.
+Wenn Sie Medienobjekte an Ihre Clients übermitteln, können Sie die [dynamische Verschlüsselung von Medienobjekten konfigurieren](../media-services-dotnet-configure-asset-delivery-policy). Hierzu können Sie eine der beiden folgenden Verschlüsselungen verwenden: **DynamicEnvelopeEncryption** oder **DynamicCommonEncryption**.
 
 Verschlüsselte Medienobjekte müssen **ContentKey**s zugeordnet werden. In diesem Artikel wird beschrieben, wie ein Inhaltsschlüssel erstellt wird.
 
@@ -99,7 +99,7 @@ Im folgenden Codeausschnitt wird ein Inhaltsschlüssel vom Typ "Umschlagverschl�
         return randomBytes;
     }
 
-call
+Aufruf
 
 	IContentKey key = CreateEnvelopeTypeContentKey(encryptedsset);
 
@@ -139,7 +139,7 @@ Im folgenden Codeausschnitt wird ein Inhaltsschlüssel vom Typ "Allgemeine Versc
 
         return returnValue;
     }
-call
+Aufruf
 
 	IContentKey key = CreateCommonTypeContentKey(encryptedsset);
-<!--HONumber=45--> 
+<!--HONumber=47-->

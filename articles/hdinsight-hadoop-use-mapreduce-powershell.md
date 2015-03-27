@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Verwenden von MapReduce mit Hadoop in HDInsight | Azure"
    description="Erfahren Sie, wie MapReduce-Aufträge mithilfe von PowerShell mit Hadoop in HDInsight remote ausgeführt werden."
    services="hdinsight"
@@ -28,19 +28,19 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 * Einen Azure HDInsight-Cluster (Hadoop in HDInsight), der auf Windows oder Linux basiert
 
-* <a href="http://azure.microsoft.com/ documentation/articles/install-configure-powershell/" target="_blank">Azure PowerShell</a>
+* <a href="http://azure.microsoft.com/documentation/articles/install-configure-powershell/" target="_blank">Azure PowerShell</a>
 
 ## <a id="powershell"></a>Ausführen eines MapReduce-Auftrags mithilfe von PowerShell
 
-Azure PowerShell stellt *cmdlets* bereit, mit denen Sie MapReduce-Aufträge in HDInsight remote ausführen können. Intern wird dies mithilfe der REST-Aufrufe von <a href="https://cwiki.apache.org/confluence/display/Hive/WebHCat" target="_blank">WebHCat</a> (ehemals Templeton) erreicht, die auf dem HDInsight-Cluster ausgeführt werden.
+Azure PowerShell stellt *Cmdlets* bereit, mit denen Sie MapReduce-Aufträge in HDInsight remote ausführen können. Intern erfolgt dies durch REST-Aufrufe von <a href="https://cwiki.apache.org/confluence/display/Hive/WebHCat" target="_blank">WebHCat</a> (früher als "Templeton" bezeichnet), das auf dem HDInsight-Cluster ausgeführt wird.
 
 Die folgenden Cmdlets werden zum Ausführen der MapReduce-Aufträge auf einem HDInsight-Remotecluster verwendet.
 
 * **Add-AzureAccount**: authentifiziert PowerShell für Ihr Azure-Abonnement
 
-* **New-AzureHDInsightMapReduceJobDefinition**: erstellt mithilfe der angegebenen MapReduce-Informationen eine neue *job definition*
+* **New-AzureHDInsightMapReduceJobDefinition** erstellt mithilfe der angegebenen MapReduce-Informationen eine neue *job definition*.
 
-* **Start-AzureHDInsightJob**: sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein  *job*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann
+* **Start-AzureHDInsightJob** sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein  *job*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann.
 
 * **Wait-AzureHDInsightJob**: verwendet das job-Objekt, um den Status des Auftrags zu prüfen Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
 
@@ -141,7 +141,7 @@ Im folgenden Beispiel werden die Speicherinformationen abgerufen und dann die Au
 		#Use the -blob switch to filter only blobs contained in example/data/WordCountOutput
 		Get-AzureStorageBlob -Container $storageContainer -Blob example/data/WordCountOutput/* -Context $context | Get-AzureStorageBlobContent -Context $context
 
-> [AZURE.NOTE] In diesem Beispiel werden die heruntergeladenen Dateien im Ordner  **example/data/WordCountOutput** in dem Verzeichnis gespeichert, in dem Sie das Skript ausführen.
+> [AZURE.NOTE] In diesem Beispiel werden die heruntergeladenen Dateien in Ordner **example/data/WordCountOutput** in dem Verzeichnis gespeichert, von dem aus Sie das Skript ausführen.
 
 Die Ausgabe des MapReduce-Auftrags wird in Dateien mit der Bezeichnung *part-r-#####* gespeichert. Öffnen Sie die Datei **example/data/WordCountOutput/part-r-00000** in einem Text-Editor, um die durch den Auftrag erzeugten Wörter und Zählerstände anzuzeigen.
 
@@ -172,4 +172,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 * [Verwenden von Hive mit Hadoop in HDInsight](../hdinsight-use-hive/)
 
 * [Verwenden von Pig mit Hadoop in HDInsight](../hdinsight-use-pig/)
-<!--HONumber=45--> 
+<!--HONumber=47-->

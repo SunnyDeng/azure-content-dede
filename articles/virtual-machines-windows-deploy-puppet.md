@@ -16,9 +16,9 @@
 	ms.date="01/23/2015" 
 	ms.author="kathydav"/>
 
-#Über Puppet und Azure Virtual Machines
+# Über Puppet und Azure Virtual Machines
 
-<p>Puppet Enterprise ist eine Automatisierungssoftware für das Erstellen, Bereitstellen und Verwalten Ihrer Infrastruktur. Sie können sie zum Verwalten Ihres IT-Infrastruktur-Lebenszyklus, einschließlich Ermittlung, Bereitstellung, Betriebssystem- und Anwendungskonfiguration, Orchestrierung und Berichterstellung verwenden.   
+<p>Puppet Enterprise ist eine Automatisierungssoftware für das Erstellen, Bereitstellen und Verwalten Ihrer Infrastruktur. Sie können damit den Lebenszyklus Ihrer IT-Infrastruktur verwalten, einschließlich: Ermittlung, Bereitstellung, Konfigurationsverwaltung für Betriebssystem und Anwendungen, Orchestrierung und Berichterstellung.   
 
 Puppet ist ein Clientserversystem. Puppet Master und der Puppet-Agent für Unternehmen stehen für die Installation über Azure zur Verfügung:
 
@@ -28,24 +28,21 @@ Puppet ist ein Clientserversystem. Puppet Master und der Puppet-Agent für Unter
 Laden Sie den "Getting Started Guide" (Leitfaden für die ersten Schritte) auf der Seite [Microsoft Windows and Azure](http://puppetlabs.com/solutions/microsoft) (Microsoft Windows und Azure, in englischer Sprache) herunter.  
 
 
-##Zusätzliche Ressourcen
+## Zusätzliche Ressourcen
 [New Integrations with Microsoft Azure and Visual Studio (Neue Integrationen in Microsoft Azure und Visual Studio, in englischer Sprache)]
 
 [Anmelden bei einem virtuellen Computer unter Windows Server]
 
-[Anmelden bei virtuellen Computer unter Linux]
+[Anmelden bei einem mit Linux betriebenen virtuellen Computer]
 
 [Verwalten von Erweiterungen]
 
 <!--Link references-->
 [New Integrations with Microsoft Azure and Visual Studio (Neue Integrationen in Microsoft Azure und Visual Studio, in englischer Sprache)]: http://puppetlabs.com/blog/new-integrations-windows-azure-and-visual-studio
 [Anmelden bei einem virtuellen Computer unter Windows Server]: ../virtual-machines-log-on-windows-server/
-[Anmelden bei virtuellen Computer unter Linux]: ../virtual-machines-linux-how-to-log-on
-[Azure-VM-Erweiterungen und Features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
+[Anmelden bei einem mit Linux betriebenen virtuellen Computer]: ../virtual-machines-linux-how-to-log-on
+[Azure-VM - Erweiterungen und Features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
 
 
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

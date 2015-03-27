@@ -1,12 +1,26 @@
-﻿<properties title="Data Dependent Routing" pageTitle="Datenabhängiges Routing" description="So verwenden Sie ShardMapManager für das datenabhängige Routing, einem Feature von Elastic Scale für Azure SQL-Datenbank" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, multi-shard, multishard, querying" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+﻿<properties 
+	pageTitle="Datenabhängiges Routing:" 
+	description="So verwenden Sie ShardMapManager für das datenabhängige Routing, einem Feature von Elastic Scale für Azure SQL-Datenbank" 
+	services="sql-database" 
+	documentationCenter="" 
+	manager="stuartozer" 
+	authors="stuartozer" 
+	editor=""/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
+<tags 
+	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="03/05/2015" 
+	ms.author="stuarto"/>
 
-#Datenabhängiges Routing
+# Datenabhängiges Routing
 
 Die **ShardMapManager**-Klasse ermöglicht ADO.NET-Anwendungen die einfache Weiterleitung von Datenbankabfragen und Befehlen an die entsprechende physische Datenbank in einer Sharding-Umgebung. Hierbei spricht man von **datenabhängigem Routing**. Es stellt ein grundlegendes Muster bei der Arbeit mit Sharding Datenbanken dar. Jede spezifische Abfrage oder Transaktion in einer Anwendung, die datenabhängiges Routing verwendet, ist auf den Zugriff auf eine einzige Datenbank pro Anforderung beschränkt.  
 
-Wenn datenabhängiges Routing verwendet wird, ist es nicht erforderlich, dass die Anwendung die einzelnen Verbindungszeichenfolgen oder Datenbankspeicherorte verfolgt, die den Slices von Daten in der Sharding-Umgebung zugeordnet sind. Stattdessen ist der [Shard-Zuordnungs-Manager](./sql-database-elastic-scale-shard-map-management.md) bei Bedarf für die Ausgabe offener Verbindungen an die richtige Datenbank verantwortlich, basierend auf den Daten in der Shard-Zuordnung und dem Wert des Sharding-Schlüssels, der das Ziel der Anwendungsanforderung ist. (Bei diesem Schlüssel handelt es sich in der Regel um *customer_id*, *tenant_id*, *date_key* oder einen anderen spezifischen Bezeichner, der ein grundlegender Parameter der Datenbankanforderung ist.) 
+Wenn datenabhängiges Routing verwendet wird, ist es nicht erforderlich, dass die Anwendung die einzelnen Verbindungszeichenfolgen oder Datenbankspeicherorte verfolgt, die den Slices von Daten in der Sharding-Umgebung zugeordnet sind. Stattdessen ist der [Shard Map Manager](./sql-database-elastic-scale-shard-map-management.md) bei Bedarf für die Ausgabe offener Verbindungen an die richtige Datenbank verantwortlich, basierend auf den Daten in der Shard Map und dem Wert des Shardingschlüssels, der das Ziel der Anwendungsanforderung ist. (Dieser Schlüssel entspricht in der Regel der *customer_id*, *tenant_id*, *date_key* oder einer anderen bestimmten ID, die einen wesentlichen Parameter der Datenbankanforderung darstellt). 
 
 ## Verwenden eines ShardMapManager in einer datenabhängigen Routing-Anwendung 
 
@@ -18,9 +32,9 @@ Für Anwendungen, die datenabhängiges Routing verwenden, muss ein **ShardMapMan
 
 In diesem Beispiel werden sowohl ein **ShardMapManager** als auch eine spezifische, darin enthaltene **ShardMap** initialisiert. 
 
-Für eine Anwendung, die nicht die Shard-Zuordnung selbst handhabt, sollte es sich bei den Anmeldeinformationen in der Factorymethode zum Aufrufen des **ShardMapManager** (im obigen Beispiel *smmConnectionString*) um Anmeldeinformationen mit schreibgeschütztem Zugriff auf die **Global Shard Map**-Datenbank, die von der Verbindungszeichenfolge referenziert wird, handeln. Diese Anmeldeinformationen unterscheiden sich in der Regel von Anmeldeinformationen, die für offene Verbindungen zum Shard-Zuordnungs-Manager verwendet werden. Siehe auch [Managing Elastic Scale Credentials](sql-database-elastic-scale-manage-credentials.md). 
+Für eine Anwendung, die die Shard Map nicht selbst bearbeitet, müssen die in der Factory-Methode verwendeten Anmeldeinformationen zum Abrufen von **ShardMapManager** (im obigen Beispiel *smmConnectionString*) den Anmeldeinformationen entsprechen, die nur schreibgeschützten Zugriff auf die **Global Shard Map**-Datenbank haben, auf die durch die Verbindungszeichenfolge verwiesen wird. Diese Anmeldeinformationen unterscheiden sich in der Regel von Anmeldeinformationen, die für offene Verbindungen zum Shard-Zuordnungs-Manager verwendet werden. Siehe auch [Verwalten von Anmeldeinformationen für Elastic Scale](sql-database-elastic-scale-manage-credentials.md). 
 
-##Aufrufen von datenabhängigem Routing 
+## Aufrufen von datenabhängigem Routing 
 
 Die Methode **ShardMap.OpenConnectionForKey(key, connectionString, connectionOptions)** gibt eine ADO.Net-Verbindung zurück, die bereit für die Befehlsausgabe an die entsprechende Datenbank basierend auf dem Wert des **key**-Parameters ist. Sharding-Informationen werden in der Anwendung vom **ShardMapManager** zwischengespeichert. Daher erfordern diese Anforderungen in der Regel keine Datenbanksuche in der Datenbank **Global Shard Map**. 
 
@@ -36,7 +50,7 @@ Wenn die Validierung der lokalen Shard-Zuordnung fehlschlägt (was angibt, dass 
 
 Dies ist ein Beispiel für einen Code, der den Shard-Zuordnungs-Manager zum Durchführen von datenabhängigem Routing basierend auf dem Wert eines Ganzzahlschlüssels **CustomerID** verwendet. Dabei wird ein **ShardMap**-Objekt mit dem Namen **customerShardMap** verwendet.  
 
-###Beispiel: Datenabhängiges Routing
+## Beispiel: Datenabhängiges Routing 
 
     int customerId = 12345; 
     int newPersonId = 4321; 
@@ -56,20 +70,22 @@ Dies ist ein Beispiel für einen Code, der den Shard-Zuordnungs-Manager zum Durc
         cmd.ExecuteNonQuery(); 
     }  
 
-Beachten Sie, dass anstelle eines Konstruktors für eine **SqlConnection**, gefolgt von einem **Open()**-Aufruf an das Verbindungsobjekt, die **OpenConnectionForKey**-Methode verwendet wird. Diese stellt eine neue, bereits offene Verbindung an die richtige Datenbank bereit. Verbindungen, die auf diese Weise verwendet werden, nutzen weiterhin alle Vorteile des Verbindungspooling in ADO.Net. Solange Transaktionen und Anforderungen jeweils durch ein einzelnes Shard erfüllt werden können, sollte dies die einzige Änderung sein, die für eine Anwendung, die bereits ADO.Net verwendet, erforderlich ist.
+Beachten Sie, dass anstelle eines Konstruktors für eine **SqlConnection**, gefolgt von einem **Open()**-Aufruf an das Verbindungsobjekt, die **OpenConnectionForKey**-Methode verwendet wird. Diese stellt eine neue, bereits offene Verbindung an die richtige Datenbank bereit. Verbindungen, die auf diese Weise verwendet werden, nutzen weiterhin alle Vorteile des Verbindungspooling in ADO.Net. Solange Transaktionen und Anforderungen jeweils durch ein einzelnes Shard erfüllt werden können, sollte dies die einzige Änderung sein, die für eine Anwendung, die bereits ADO.Net verwendet, erforderlich ist. 
 
-##Integration in die Behandlung vorübergehender Fehler 
+Die Methode **OpenConnectionForKeyAsync** ist auch verfügbar, wenn die Anwendung die asynchrone Programmierung mit ADO.Net verwendet.  Das Verhalten entspricht dem Äquivalent für das datenabhängige Routing der Methode **Connection.OpenAsync** von ADO.NET.
+
+## Integration in die Behandlung vorübergehender Fehler 
 
 Eine bewährte Methode bei der Entwicklung von Anwendungen für den Datenzugriff in der Cloud besteht darin, sicherzustellen, dass vorübergehende Fehler beim Verbinden mit oder Abfragen der Datenbank von der Anwendung abgefangen werden, und dass die Vorgänge mehrmals wiederholt werden, bevor ein Fehler ausgelöst wird. Die Behandlung vorübergehender Fehler in Cloudanwendungen wird in [Transient Fault Handling](http://msdn.microsoft.com/library/dn440719\(v=pandp.60\).aspx) besprochen. 
  
 Die Behandlung vorübergehender Fehler kann natürlich zusammen mit dem datenabhängigen Routing verwendet werden. Die wichtigste Anforderung besteht in einer Wiederholung der gesamten Datenzugriffsanforderung, darunter des **using**-Blocks, der die datenabhängige Routingverbindung abgerufen hat. Das obige Beispiel könnte wie folgt umgeschrieben werden (beachten Sie die hervorgehobenen Änderungen). 
 
-###Beispiel - Datenabhängiges Routing mit Behandlung vorübergehender Fehler 
+### Beispiel - Datenabhängiges Routing mit Behandlung vorübergehender Fehler 
 
 <pre><code>int customerId = 12345; 
 int newPersonId = 4321; 
 
-<span style="background-color:  #FFFF00">Configuration.SqlRetryPolicy.ExecuteAction(() => </span> 
+<span style="background-color:  #FFFF00">Configuration.SqlRetryPolicy.ExecuteAction(() =&gt; </span> 
 <span style="background-color:  #FFFF00">    { </span>
         // Connection to the shard for that customer ID 
         using (SqlConnection conn = customerShardMap.OpenConnectionForKey(customerId,  
@@ -94,8 +110,10 @@ int newPersonId = 4321;
 
 Pakete, die zum Implementierung der Behandlung vorübergehender Fehler erforderlich sind, werden automatisch heruntergeladen, wenn Sie die Elastic Scale Starter Kit-Anwendung erstellen. Die Pakete sind auch getrennt unter [Enterprise Library - Transient Fault Handling Application Block](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/) erhältlich. Verwenden Sie Version 6.0 oder höher. 
 
-##Transaktionskonsistenz 
+## Transaktionskonsistenz 
 
 Transaktionseigenschaften werden für alle Vorgänge lokal auf einem Shard garantiert. So werden z. B. Transaktionen, die über datenabhängiges Routing gesandt wurden, innerhalb des Bereichs des Ziel-Shards für die Verbindung ausgeführt. Zu diesem Zeitpunkt sind keine Funktionen für mehrere Verbindungen in einer Transaktion vorgesehen. Daher besteht keine Transaktionsgarantie für Vorgänge, die über mehrere Shards hinweg ausgeführt werden.  
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+
+<!--HONumber=47-->

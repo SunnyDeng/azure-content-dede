@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Gewusst wie: Installieren und Konfigurieren von Symantec Endpoint Protection auf einem virtuellen Azure-Computer" 
-	description="Beschreibt die Installation und Konfiguration von Symantec Endpoint Protection auf einem virtuellen Computer in Azure." 
+	description="Beschreibt die Installation und Konfiguration der Sicherheitserweiterung Symantec Endpoint Protection auf einem neuen oder vorhandenen virtuellen Computer in Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="KBDAzure" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-multiple" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="1/26/2015" 
+	ms.date="02/24/2015" 
 	ms.author="kathydav"/>
 
 #Gewusst wie: Installieren und Konfigurieren von Symantec Endpoint Protection auf einem virtuellen Azure-Computer
@@ -30,7 +30,7 @@ Mit dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) können Sie de
 
 Die Option **Aus Katalog** öffnet einen Assistenten, der Ihnen beim Einrichten des virtuellen Computers hilft. Sie verwenden die letzte Seite des Assistenten zum Installieren des VM-Agents und der Symantec-Sicherheitserweiterung. 
 
-Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](http://go.microsoft.com/fwlink/p/?LinkId=403943). Führen Sie auf der letzten Seite des Assistenten Folgendes aus:
+Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines-windows-tutorial/). Wenn Sie zur letzten Seite des Assistenten gelangen:
 
 1.	Unter VM-Agent müsste **VM-Agent installieren** bereits aktiviert sein.
 
@@ -41,47 +41,41 @@ Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows
 
 3.	Klicken Sie auf das Häkchen unten auf der Seite, um den virtuellen Computer zu erstellen.
 
-## Installieren von Symantec Endpoint Protection auf einem vorhandenen virtuellen Computer
+##Installieren von Symantec Endpoint Protection auf einem vorhandenen virtuellen Computer
 
-Dafür benötigen Sie Folgendes:
+Bevor Sie beginnen, benötigen Sie Folgendes:
 
-- Das Azure PowerShell-Modul Version 0.8.2 oder neuer. Anweisungen und einen Link zur neuesten Version finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](http://go.microsoft.com/fwlink/p/?LinkId=320552).  
+- Das Azure PowerShell-Modul Version 0.8.2 oder neuer. Sie können die installierte Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Anweisungen und einen Link zur neuesten Version finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/).  
 
-- Der VM-Agent. Anweisungen und einen Downloadlink finden Sie im Blogbeitrag [VM Agent and Extensions - Part 2](http://go.microsoft.com/fwlink/p/?LinkId=403947) (VM-Agent und Erweiterungen, Teil 2, in englischer Sprache).
+- Der VM-Agent. 
 
-So installieren Sie die Symantec-Sicherheitserweiterung auf einem vorhandenen virtuellen Computer:
+Überprüfen Sie zunächst, ob der VM-Agent bereits installiert ist. Füllen Sie den Cloud-Dienstnamen und den Namen des virtuellen Computers aus, und führen Sie dann die folgenden Befehle an einer Azure PowerShell-Eingabeaufforderung mit Administratorrechten aus. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < und >.
 
-1.	Rufen Sie den Namen des Cloud-Diensts und den Namen des virtuellen Computers ab. Wenn Sie den Namen des Cloud-Diensts und des virtuellen Computers nicht kennen, führen Sie den Befehl **Get-AzureVM** aus, um diese Informationen für alle virtuellen Computer im aktuellen Abonnement anzuzeigen. Ersetzen Sie dann alles zwischen den Anführungszeichen, einschließlich der spitzen Klammern (< und >), und führen Sie die folgenden Befehle aus:
+	$CSName = "<cloud service name>"
+	$VMName = "<virtual machine name>"
+	$vm = Get-AzureVM -ServiceName $CSName -Name $VMName 
+	write-host $vm.VM.ProvisionGuestAgent
 
-	<p>`$servicename = "<YourServiceName>"`
-<p>`$name = "<YourVmName>"`
-<p>`$vm = Get-AzureVM -ServiceName $servicename -Name $name`
-<p>`Get-AzureVMAvailableExtension -Publisher Symantec -ExtensionName SymantecEndpointProtection`
+Wenn Sie den Namen des Cloud-Diensts und des virtuellen Computers nicht kennen, führen Sie **Get-AzureVM** aus, um diese Informationen für alle virtuellen Computer im aktuellen Abonnement anzuzeigen.
 
-2.	Notieren Sie aus der Anzeige des Befehls Get-AzureVMAvailableExtension die Versionsnummer für die Versionseigenschaft. Führen Sie dann die folgenden Befehle aus:
+Der Befehl **write-host** zeigt **True** an, wenn der VM-Agent installiert ist. Wenn **False** angezeigt wird, nutzen Sie die Anweisungen und den Link zum Download im Azure-Blogbeitrag [VM-Agent und Erweiterungen, Teil 2](http://go.microsoft.com/fwlink/p/?LinkId=403947).
 
-	<p>`$ver=<version number from the Version property>`
-<p>`Set-AzureVMExtension -Publisher Symantec -ExtensionName SymantecEndpointProtection -Version $ver -VM $vm.VM`
-<p>`Update-AzureVM -ServiceName $servicename -Name $name -VM $vm.VM`
+Wenn der VM-Agent installiert ist, führen Sie diese Befehle aus, um den Symantec Endpoint Protection Agent zu installieren.
 
-So überprüfen Sie, dass die Symantec-Sicherheitserweiterung installiert wurde und auf dem neuesten Stand ist:
+	$Agent = Get-AzureVMAvailableExtension -Publisher Symantec -ExtensionName SymantecEndpointProtection
+	Set-AzureVMExtension -Publisher Symantec -Version $Agent.Version -ExtensionName SymantecEndpointProtection -VM $vm | Update-AzureVM
 
-1.	Melden Sie sich beim virtuellen Computer an.
-2.	Klicken Sie für Windows Server 2008 R2 auf **Start > Alle Programme > Symantec Endpoint Protection**. Geben Sie für Windows Server 2012 über den Startbildschirm **Symantec** ein und klicken Sie dann auf **Symantec Endpoint Protection**.
-3.	Wenden Sie bei Bedarf die im Statusfenster angegebenen Updates an.
+So überprüfen Sie, ob die Symantec-Sicherheitserweiterung installiert wurde und auf dem neuesten Stand ist:
 
-## Zusätzliche Ressourcen
-[Anmelden bei einem virtuellen Computer unter Windows Server]
+1.	Melden Sie sich beim virtuellen Computer an. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](../virtual-machines-log-on-windows-server/).
+2.	Klicken Sie für Windows Server 2008 R2 auf **Start > Symantec Endpoint Protection**. Geben Sie für Windows Server 2012 oder Windows Server 2012 R2 auf dem Startbildschirm **Symantec** ein, und klicken Sie dann auf **Symantec Endpoint Protection**.
+3.	Wenden Sie auf der Registerkarte **Status** des Fensters **Status-Symantec Endpoint Protection** Updates an, oder führen Sie bei Bedarf einen Neustart aus.
 
-[Verwalten von Erweiterungen]
+##Zusätzliche Ressourcen
 
-<!--Link references-->
-[Anmelden bei einem virtuellen Computer unter Windows Server]: ../virtual-machines-log-on-windows-server/
+[Anmelden bei einem virtuellen Computer unter Windows Server](../virtual-machines-log-on-windows-server/)
 
-[Verwalten von Erweiterungen]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
+[Verwalten von Erweiterungen](https://msdn.microsoft.com/library/dn606311.aspx)
 
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

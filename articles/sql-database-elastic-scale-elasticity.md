@@ -1,18 +1,32 @@
-﻿<properties title="Data Dependent Routing" pageTitle="Shard-Elastizität" description="Erklärt Konzepte und stellt Beispiele für die Shard-Elastizität bereit, der Möglichkeit des einfachen horizontalen Hochskalierens von Azure SQL-Datenbanken." metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, elasticity" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+﻿<properties 
+	pageTitle="Shard-Elastizität" 
+	description="Erklärt Konzepte und stellt Beispiele für die Shard-Elastizität bereit, der Möglichkeit des einfachen horizontalen Hochskalierens von Azure SQL-Datenbanken." 
+	services="sql-database" 
+	documentationCenter="" 
+	manager="stuartozer" 
+	authors="torsteng" 
+	editor=""/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
+<tags 
+	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/01/2015" 
+	ms.author="torsteng"/>
 
 # Shard-Elastizität 
 
-**Shard-Elastizität** ermöglicht es Anwendungsentwicklern, Datenbankressourcen dem Bedarf entsprechend dynamisch zu erweitern oder zu reduzieren, sodass die Anwendungsleistung optimiert und die Kosten minimiert werden können. Die Kombination von Elastic Scale für Azure SQL-Datenbank mit den [Dienstebenen Basic, Standard und Premium](http://msdn.microsoft.com/library/azure/dn741340.aspx) liefert sehr bestechende Elastizitätsszenarien.  Elastic Scale ermöglicht die **horizontale Skalierung**, ein Entwurfsmuster, bei dem Datenbanken (in [Elastic Scale auch "Shards" genannt](sql-database-elastic-scale-glossary.md)) einer **Shard-Gruppe** hinzugefügt oder daraus entfernt werden, um die Kapazität zu erweitern oder zu reduzieren. Auf ähnliche Weise stellen die SQL-Datenbank-Dienstebenen Funktionen zur **vertikale Skalierung** bereit, sodass die Ressourcen einer einzigen Datenbank dem Bedarf entsprechend skaliert werden können.  Die Kombination von vertikaler Skalierung einzelner Shards und horizontaler Skalierung vieler Shards bietet Anwendungsentwicklern eine sehr flexible Umgebung, die sich den Anforderungen an Leistung, Kapazität und Kostenoptimierung entsprechend skalieren lässt.
+**Shard-Elastizität** ermöglicht es Anwendungsentwicklern, Datenbankressourcen dem Bedarf entsprechend dynamisch zu erweitern oder zu reduzieren, sodass die Anwendungsleistung optimiert und die Kosten minimiert werden können. Die Kombination von Elastic Scale für Azure SQL-Datenbank mit den [Dienstebenen Basic, Standard und Premium](http://msdn.microsoft.com/library/azure/dn741340.aspx) liefert sehr bestechende Elastizitätsszenarien.  Elastic Scale ermöglicht die **horizontale Skalierung** - Datei handelt es sich um ein Entwurfsmuster, bei dem Datenbanken (in [Elastic Scale-Terminologie](sql-database-elastic-scale-glossary.md) so genannte "Shards") einem **Shardsatz** hinzugefügt oder daraus entfernt werden, um die Kapazität zu vergrößern oder zu verringern. Auf ähnliche Weise stellen die SQL-Datenbank-Dienstebenen Funktionen zur **vertikale Skalierung** bereit, sodass die Ressourcen einer einzigen Datenbank dem Bedarf entsprechend skaliert werden können.  Die Kombination von vertikaler Skalierung einzelner Shards und horizontaler Skalierung vieler Shards bietet Anwendungsentwicklern eine sehr flexible Umgebung, die sich den Anforderungen an Leistung, Kapazität und Kostenoptimierung entsprechend skalieren lässt.
 
-### Beispiele für die horizontale Skalierung: Concert Spike
+## Beispiele für die horizontale Skalierung: Concert Spike
 
 Ein kanonisches Szenario für die horizontale Skalierung ist eine Anwendung, die Transaktionen für Konzertkarten verarbeitet. Bei einem normalen Kundenaufkommen nutzt die Anwendung minimale Datenbankressourcen zum Verarbeiten von Einkaufstransaktionen.  Wenn allerdings der Verkauf von Karten für ein beliebtes Konzert beginnt, lässt sich der starke Anstieg in der Kundennachfrage nicht mit einer einzigen Datenbank handhaben. 
 
 Um den enormen Zuwachs an Transaktionen verarbeiten zu können, wird die Anwendung horizontal skaliert. Die Anwendung kann dann die Transaktionslast auf viele Shards verteilen. Wenn die zusätzlichen Ressourcen nicht mehr benötigt werden, wird die Datenbankebene auf die normale Nutzung reduziert. Hier ermöglicht es die horizontale Skalierung, dass Anwendungen der Kundennachfrage entsprechend skaliert werden.   
 
-### Beispiel für die vertikale Skalierung: Telemetrie
+## Beispiel für die vertikale Skalierung: Telemetrie
 
 Ein kanonisches Szenario für die vertikale Skalierung ist eine Anwendung, die eine **Shard-Gruppe** zum Speichern betrieblicher Telemetrie verwendet. In diesem Szenario ist es besser, alle Telemetriedaten für einen Tag in einer einzigen Shard unterzubringen. In dieser Anwendung werden die Daten für den aktuellen Tag in eine Shard aufgenommen, und für die nachfolgenden Tage werden jeweils neue Shards bereitgestellt. Die Betriebsdaten können dann nach Bedarf archiviert oder abgefragt werden. 
 
@@ -32,17 +46,17 @@ Vertikale und horizontale Skalierung sind eine Funktion von drei grundlegenden K
 2. **Regel**
 3. **Aktion**   
 
-## <a name="telemetry"> </a>Telemetrie
+## Telemetrie
 
 **Datengesteuerte Elastizität** bildet das Kernstück einer Elastic Scale-Anwendung. Abhängig von den Leistungsanforderungen, verwenden Sie Telemetrie zur datengesteuerten Entscheidung über den Einsatz vertikaler oder horizontaler Skalierung.  
 
 #### Telemetriedatenquellen
 Im Kontext von Azure SQL-Datenbank gibt es eine Handvoll wichtiger Quellen, die als Datenquellen für die Shard-Elastizität genutzt werden können. 
 
-1. **Leistungstelemetrie** wird jeweils für die Dauer von fünf Minuten in der Ansicht**sys.resource_stats** angezeigt.
+1. **Leistungstelemetrie** wird jeweils für die Dauer von fünf Minuten in der Ansicht **sys.resource_stats** angezeigt. 
 2. Stündliche **Datenbankkapazitätstelemetrie** ist in der Ansicht **sys.resource_usage** verfügbar.  
 
-Die Nutzung der Leistungsressorucen kann mit der folgenden Abfrage von der master-Datenbank abgefragt werden, wobei 'Shard_20140623' für den Namen der Zieldatenbank steht. 
+Die Nutzung der Leistungsressourcen kann mit der folgenden Abfrage von der master-Datenbank abgefragt werden, wobei 'Shard_20140623' für den Namen der Zieldatenbank steht. 
 
     SELECT TOP 10 *  
     FROM sys.resource_stats  
@@ -93,17 +107,17 @@ Da Daten in einer bestimmten Shard erfasst werden, ist es sinnvoll, eine Vorhers
     WHERE 
         Size.[order] < 8 
 
-## <a name="rule"></a>Regel  
+## Regel  
 
 Die Regel ist das Entscheidungsmodul, das bestimmt, ob eine Aktion ausgeführt werden soll. Einige Regeln sind sehr einfach, andere sind komplizierter. Wie im folgenden Codeausschnitt gezeigt, kann eine auf die Kapazität ausgerichtete Regel so konfiguriert werden, dass eine neue Shard bereitgestellt wird, sobald eine Shard den in $SafetyMargin angegebenen Wert, z. B. 80 % ihrer maximalen Kapazität, erreicht.
 
-    # Ermitteln, ob die aktuelle Datenbankgröße plus die maximalen Größe des täglichen Deltas größer als der Schwellenwert sind 
+    # Determine if the current DB size plus the maximum daily delta size is greater than the threshold 
     if( ($CurrentDbSizeMb + $MaxDbDeltaMb) -gt ($MaxDbSizeMb * $SafetyMargin))  
     {#provision new shard} 
 
 Mit den oben angegebenen Datenquellen können einige Regeln für eine Vielzahl von Szenarien für den Einsatz der Shard-Elastizität formuliert werden. 
 
-## <a name="action"></a>Aktion  
+## Aktion  
 
 Abhängig vom Ergebnis der Regel wird eine Aktion ausgeführt (oder nicht ausgeführt). Die zwei häufigsten Aktionen sind:
 
@@ -122,7 +136,7 @@ Das in der folgenden Abbildung dargestellte Beispiel hebt zwei Szenarien für de
 
 Zur horizontalen Skalierung wird eine Regel (die auf dem Datum oder der Datenbankgröße basiert) zum Bereitstellen einer neuen Shard und Registrieren bei der Shard-Zuordnung verwendet, sodass die Datenbankebene horizontal wächst. Zur vertikalen Skalierung wird eine zweite Regel implementiert, die bewirkt, dass jede Shard, die älter als einen Tag ist, von der Premium Edition auf die Standard oder Basic Edition herabgestuft wird. 
 
-Betrachten Sie nochmals das Telemetrieszenario: die Anwendung partitioniert nach Datum. Sie sammelt fortwährend Telemetriedaten, wodurch beim Laden der Anwendung eine hochleistungsfähige Edition erforderlich ist. Die Leistungsanforderungen sinken jedoch, je älter die Daten sind. Die Daten des aktuellen Tages [Tnow] werden in eine Hochleistungsdatenbank (Premium) geschrieben. Punkt Mitternacht wird die Shard des Vortages (jetzt [T-1] nicht mehr zur Erfassung verwendet. Die aktuellen Daten werden in der aktuellen [Tnow]-Shard erfasst. Vor Beginn des nächsten Tages muss eine neue Shard bereitgestellt und in der Shard-Zuordnung registriert werden ([T+1]).  
+Betrachten Sie das Telemetrieszenario erneut: Die Anwendung führt das Sharding nach Datum aus. Sie sammelt fortwährend Telemetriedaten, wodurch beim Laden der Anwendung eine hochleistungsfähige Edition erforderlich ist. Die Leistungsanforderungen sinken jedoch, je älter die Daten sind. Die Daten des aktuellen Tages [Tnow] werden in eine Hochleistungsdatenbank (Premium) geschrieben. Punkt Mitternacht wird die Shard des Vortages (jetzt [T-1] nicht mehr zur Erfassung verwendet. Die aktuellen Daten werden in der aktuellen [Tnow]-Shard erfasst. Vor Beginn des nächsten Tages muss eine neue Shard bereitgestellt und in der Shard-Zuordnung registriert werden ([T+1]).  
 
 Dazu kann eine neue Shard entweder jeweils vor Beginn eines neuen Tages oder immer dann bereitgestellt werden, wenn die aktuelle Shard ([Tnow]) ihre maximale Kapazität nahezu erreicht hat. Beim Einsatz dieser beiden Methoden bleibt die Datenlokalität für alle Telemetriedaten, die für einen bestimmten Tag erfasst wurden, gewahrt. Zudem könnte auch stündliches Sharding angewendet werden, um eine feinere Unterteilung zu erhalten. Sobald eine neue Shard bereitgestellt worden ist und nachdem [T-1] zum Abfragen und Erstellen von Berichten verwendet wird, sollte die Leistungsstufe der Datenbank herabgesetzt werden, um die Kosten zu senken. Mit zunehmendem Alter des Datenbankinhalts und je nach Anwendung kann die Leistungsstufe weiter gesenkt und/oder der Inhalt der Datenbanken in Azure Storage archiviert oder gelöscht werden. 
 
@@ -137,6 +151,8 @@ Um die tatsächliche Umsetzung von Szenarien für die horizontale und vertikale 
 [1]: ./media/sql-database-elastic-scale-elasticity/data-ingestion.png
 
 <!--anchors-->
-[Telemetry]:#telemetry
-[Rule]:#rule
-[Action]:#action
+[Telemetrie]:#telemetry
+[Regel]:#rule
+[Aktion]:#action
+
+<!--HONumber=47-->

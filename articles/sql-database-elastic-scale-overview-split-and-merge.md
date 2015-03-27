@@ -1,14 +1,47 @@
-﻿<properties title="Splitting and Merging with Elastic Scale" pageTitle="Aufteilen und Zusammenführen mit Elastic Scale" description="Erklärt, wie Sie Shards manipulieren und Daten über einen selbst gehosteten Dienst mithilfe von Elastic Scale-APIs verschieben." metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties 
+title="Splitting and Merging with Elastic Scale" 
+pageTitle="Aufteilen und Zusammenführen mit Elastic Scale" 
+description="Erklärt, wie Sie Shards manipulieren und Daten über einen selbst gehosteten Dienst mithilfe von Elastic Scale-APIs verschieben." 
+metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" 
+services="sql-database" documentationCenter="" 
+manager="jhubbard" 
+authors="torsteng"/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
+<tags 
+	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="03/05/2015" 
+	ms.author="torsteng" />
 
 # Aufteilen und Zusammenführen mit Elastic Scale
 
 In auf Azure SQL-Datenbank basierenden Anwendungen können Probleme auftreten, wenn die Daten oder die Verarbeitung nicht mehr einer einzelnen Skalierungseinheit in Azure SQL-Datenbank entsprechen. Beispiele hierfür sind Anwendungen, die stark anwachsen oder in denen eine bestimmte Gruppe von Instanzen über die Grenzen einer einzelnen Azure SQL-Datenbank hinaus anwächst. Der Elastic Scale **Split/Merge Service** erleichtert die Bewältigung dieses Problems ungemein. 
 
-In dieser Diskussion des Aufteilungs-/Zusammenführungsdiensts wird das Hoch- und Herunterskalieren durch die Änderung der Anzahl von Azure DB-Datenbanken und das Anpassen der Verteilung von **Shardlets** unter den Datenbanken gehandhabt. (Begriffsdefinitionen finden Sie im [Elastic Scale-Glossar](./sql-database-elastic-scale-glossary.md)). 
+In dieser Diskussion des Aufteilungs-/Zusammenführungsdiensts wird das Hoch- und Herunterskalieren durch die Änderung der Anzahl von Azure DB-Datenbanken und das Anpassen der Verteilung von **Shardlets** unter den Datenbanken gehandhabt. (Begriffsdefinitionen finden Sie im [Elastic Scale-Glossar](./sql-database-elastic-scale-glossary.md)zur Verfügung steht). 
 
-Bei den aktuell verfügbaren Azure SQL-Datenbankeditionen kann die Kapazität auch durch Hoch- oder Herunterskalieren der Kapazität einer einzelnen Azure SQL-DB-Datenbank reguliert werden. Auf das Hoch-/Herunterskalieren der elastischen Kapazitätsverwaltung wird vom Aufteilungs-/Zusammenführungsdienst nicht eingegangen - siehe hierzu Shard-Elastizität [Elastic Scale Shard-Elastizität](./sql-database-elastic-scale-elasticity.md)). 
+Bei den aktuell verfügbaren Azure SQL-Datenbankeditionen kann die Kapazität auch durch Hoch- oder Herunterskalieren der Kapazität einer einzelnen Azure SQL-DB-Datenbank reguliert werden. Auf das Hoch-/Herunterskalieren der elastischen Kapazitätsverwaltung wird vom Aufteilungs-/Zusammenführungsdienst nicht eingegangen – siehe hierzu Shard-Elastizität [Elastic Scale Shard-Elastizität](./sql-database-elastic-scale-elasticity.md)).
+ 
+## Neuerungen bei Split/Merge
+
+Die neueste Version von Split/Merge bietet die folgenden Verbesserungen:
+* Es wird jetzt die Liste der Shard Maps unterstützt.
+* Bereichsgrenzen in Anforderungen können einfacher mit Bereichen verglichen werden, die in der Shard Map gespeichert werden.
+* Es werden jetzt mehrere Workerrolleninstanzen unterstützt, um die Verfügbarkeit zu verbessern.
+* Im Rahmen Ihres Split/Merge-Vorgangs gespeicherte Anmeldeinformationen werden jetzt im Ruhezustand verschlüsselt.
+
+## Aktualisieren
+
+Gehen Sie folgendermaßen vor, um ein Upgrade auf die neueste Version von Split/Merge durchzuführen:
+
+1. Laden Sie die neueste Version des Split/Merge-Pakets von NuGet gemäß der Beschreibung im Abschnitt "Herunterladen der Split/Merge-Pakete" des Lernprogramms zu den ersten Schritten mit Split/Merge herunter.
+2. Ändern Sie Ihre Cloud-Dienstkonfigurationsdatei für Ihre Split/Merge-Bereitstellung, um die neuen Konfigurationsparameter widerzuspiegeln. Ein neuer erforderliche Parameter stellt die Informationen zum Zertifikat dar, das für die Verschlüsselung verwendet wird. Dies kann einfach über den Vergleich der im Download enthaltenen neuen Konfigurationsvorlagendatei mit der vorhandenen Konfiguration erreicht werden. Stellen Sie sicher, dass Sie die Einstellungen für "DataEncryptionPrimaryCertificateThumbprint" und "DataEncryptionPrimary" für die Web- und die Workerrolle hinzufügen.
+3. Bevor Sie das Update in Azure bereitstellen, stellen Sie sicher, dass alle aktuell ausgeführten Split/Merge-Vorgänge abgeschlossen wurden. Sie können dazu problemlos die Tabellen "RequestStatus" und "PendingWorkflows" in der Split/Merge-Metadatendatenbank für laufende Anforderungen abfragen.
+4. Aktualisieren Sie Ihre vorhandene Cloud-Dienstbereitstellung für Split/Merge im Azure-Abonnement mit dem neuen Paket und der aktualisierten Dienstkonfigurationsdatei.
+
+Für das Upgrade von Split/Merge müssen Sie keine neue Metadatendatenbank bereitstellen. Die neue Version aktualisiert die vorhandene Metadatendatenbank automatisch auf die neue Version. 
 
 ## Szenarien für Aufteilen/Zusammenführen (Split/Merge) 
 Anwendungen müssen die Flexibilität über die Grenzen einer einzelnen Azure SQL DB-Datenbank hinaus ausdehnen, wie in den folgenden Szenarien veranschaulicht wird: 
@@ -32,9 +65,9 @@ Abbildung 1: Konzeptueller Überblick über den Aufteilungs-/Zusammenführungsdi
 
 ## Konzepte und wichtige Features
 
-**Von Kunden gehostete Dienste**: Der Aufteilungs-/Zusammenführungsdienst wird als vom Kunden gehosteter Dienst bereitgestellt. Sie müssen den Dienst in Ihrem Microsoft Azure-Abonnement bereitstellen und hosten. Das Paket, das Sie von NuGet herunterladen, enthält eine Vorlage, die mit den Informationen für Ihre Bereitstellung ausgefüllt werden muss. Nähere Informationen finden Sie im [Split-Merge-Lernprogramm](./sql-database-elastic-scale-configure-deploy-split-and-merge.md). Da der Dienst im Azure-Abonnement ausgeführt wird, können Sie die meisten Sicherheitsaspekte des Diensts steuern und konfigurieren. Die Standardvorlage enthält die Optionen zum Konfigurieren von SSL, der zertifikatbasierten Clientauthentifizierung, des DoS-Schutzes und von IP-Einschränkungen. Weitere Informationen zu Sicherheitsaspekten finden Sie im folgenden Dokument [Sicherheitsüberlegungen zu Elastic Scale](./sql-database-elastic-scale-configure-security.md).
+**Vom Kunden gehostete Dienste**: Der Aufteilungs-/Zusammenführungsdienst wird als vom Kunden gehosteter Dienst bereitgestellt. Sie müssen den Dienst in Ihrem Microsoft Azure-Abonnement bereitstellen und hosten. Das Paket, das Sie von NuGet herunterladen, enthält eine Vorlage, die mit den Informationen für Ihre Bereitstellung ausgefüllt werden muss. Im [Split/Merge-Lernprogramm](./sql-database-elastic-scale-configure-deploy-split-and-merge.md) zur Verfügung. Da der Dienst im Azure-Abonnement ausgeführt wird, können Sie die meisten Sicherheitsaspekte des Diensts steuern und konfigurieren. Die Standardvorlage enthält die Optionen zum Konfigurieren von SSL, der zertifikatbasierten Clientauthentifizierung, der Verschlüsselung für gespeicherte Anmeldeinformationen, des DoS-Schutzes und von IP-Einschränkungen. Im folgenden Dokument [Sicherheitsüberlegungen zu Elastic Scale](./sql-database-elastic-scale-configure-security.md).
 
-Der standardmäßig bereitgestellte Dienst wird mit einer Workerrolle und einer Webrolle ausgeführt. Für beide wird die VM-Größe A1 in Azure Cloud Services verwendet. Sie können diese Einstellungen zwar nicht bei der Bereitstellung des Pakets ändern, nach einer erfolgreichen Bereitstellung können die Einstellungen jedoch im ausgeführten Clouddienst (über das Azure-Portal) geändert werden. Beachten Sie, dass die Workerrolle aus technischen Gründen nicht für mehr als eine einzelne Instanz konfiguriert werden darf. 
+Der standardmäßig bereitgestellte Dienst wird mit einer Workerrolle und einer Webrolle ausgeführt. Für beide wird die VM-Größe A1 in Azure Cloud Services verwendet. Sie können diese Einstellungen zwar nicht bei der Bereitstellung des Pakets ändern, nach einer erfolgreichen Bereitstellung können die Einstellungen jedoch im ausgeführten Cloud-Dienst (über das Azure-Portal) geändert werden. Beachten Sie, dass die Workerrolle aus technischen Gründen nicht für mehr als eine einzelne Instanz konfiguriert werden darf. 
 
 **Integration in Shard-Zuordnung**: Der Aufteilungs-/Zusammenführungsdienst interagiert mit der Shard-Zuordnung der Anwendung. Wenn der Aufteilungs-/Zusammenführungsdienst zum Aufteilen oder Zusammenführen von Bereichen oder zum Verschieben von Shardlets zwischen Shards verwendet wird, aktualisiert der Dienst die Shard-Zuordnung automatisch. Zu diesem Zweck stellt der Dienst eine Verbindung mit der Shard-Map-Manager-Datenbank der Anwendung her und verwaltet die Bereiche und Zuordnungen, während Split/Merge/Move-Anforderungen ausgeführt werden. Dadurch wird sichergestellt, dass die Shard-Zuordnung während der Ausführung von Aufteilungs-/Zusammenführungsvorgängen immer eine aktuelle Ansicht zeigt. Aufteilungs-, Zusammenführungs- und Verschiebungsvorgänge werden implementiert, indem einen Batch von Shardlets von der Quell-Shard in die Ziel-Shard verschoben werden. Während des Verschiebens von Shardlets werden die Shardlets, die im aktuellen Batch enthalten sind, in der Shard-Zuordnung als offline markiert und stehen für datenabhängige Routingverbindungen mit der **OpenConnectionForKey**-API nicht zur Verfügung. 
 
@@ -44,13 +77,13 @@ Der standardmäßig bereitgestellte Dienst wird mit einer Workerrolle und einer 
 
 **Metadatenspeicherung**: Der Aufteilungs-/Zusammenführungsdienst verwendet eine Datenbank, um seinen Status zu verwalten und um Protokolle während der Anforderungsverarbeitung zu speichern. Der Benutzer erstellt diese Datenbank in seinem Abonnement und stellt die zugehörige Verbindungszeichenfolge in der Konfigurationsdatei für die Dienstbereitstellung bereit. Administratoren der Organisation des Benutzers können auch eine Verbindung mit dieser Datenbank herstellen, um die Bearbeitung der Anforderung zu überprüfen und detaillierte Informationen zu möglichen Fehlern zu untersuchen.
 
-**Sharding-Unterstützung**: Der Aufteilungs-/Zusammenführungsdienst unterscheidet zwischen (1) partitionierten Tabellen, (2) Verweistabellen und (3) normalen Tabellen. Die Semantik eines Split/Merge/Move-Vorgangs hängt vom Typ der verwendeten Tabelle ab und wird wie folgt definiert: 
+**Shardinginformationen**: Der Aufteilungs-/Zusammenführungsdienst unterscheidet zwischen (1) partitionierten Tabellen, (2) Verweistabellen und (3) normalen Tabellen. Die Semantik eines Split/Merge/Move-Vorgangs hängt vom Typ der verwendeten Tabelle ab und wird wie folgt definiert: 
 
-* **Partitionierte Tabellen**: Mit Split/Merge/Move-Vorgängen werden Shardlets von der Quell- zur Ziel-Shard verschoben. Nach dem erfolgreichen Abschluss der gesamten Anforderung sind diese Shardlets nicht mehr in der Quelle vorhanden. Beachten Sie, dass die Zieltabellen in der Ziel-Shard vorhanden sein müssen und vor der Verarbeitung des Vorgangs keine Daten im Zielbereich enthalten dürfen. 
+* **Shardtabellen**: Mit Split/Merge/Move-Vorgängen werden Shardlets von der Quell- zur Ziel-Shard verschoben. Nach dem erfolgreichen Abschluss der gesamten Anforderung sind diese Shardlets nicht mehr in der Quelle vorhanden. Beachten Sie, dass die Zieltabellen in der Ziel-Shard vorhanden sein müssen und vor der Verarbeitung des Vorgangs keine Daten im Zielbereich enthalten dürfen. 
 
--    **Verweistabellen**: Bei Verweistabellen werden die Daten mit Aufteilungs-, Zusammenführungs- und Verschiebungsvorgängen aus der Quell- in die Ziel-Shard kopiert. Beachten Sie jedoch, dass die Ziel-Shard für eine bestimmte Tabelle nicht geändert wird, wenn in der Ziel-Shard in dieser Tabelle bereits Zeilen vorhanden sind. Die Tabelle muss leer sein, damit Kopiervorgänge aus der Verweistabelle verarbeitet werden.
+* **Verweistabellen**: Bei Verweistabellen werden die Daten mit Aufteilungs-, Zusammenführungs- und Verschiebungsvorgängen aus der Quell- in die Ziel-Shard kopiert. Beachten Sie jedoch, dass die Ziel-Shard für eine bestimmte Tabelle nicht geändert wird, wenn in der Ziel-Shard in dieser Tabelle bereits Zeilen vorhanden sind. Die Tabelle muss leer sein, damit Kopiervorgänge aus der Verweistabelle verarbeitet werden.
 
--    **Andere Tabellen**: Andere Tabellen können für die Quelle oder das Ziel eines Split/Merge-Vorgangs vorhanden sein. Der Aufteilungs-/Zusammenführungsdienst ignoriert diese Tabellen bei Datenverschiebungen oder Kopiervorgängen. Beachten Sie jedoch, dass sie diese Vorgänge bei Einschränkungen beeinträchtigen können.
+* **Weitere Tabellen**: Andere Tabellen können für die Quelle oder das Ziel eines Split/Merge-Vorgangs vorhanden sein. Der Aufteilungs-/Zusammenführungsdienst ignoriert diese Tabellen bei Datenverschiebungen oder Kopiervorgängen. Beachten Sie jedoch, dass sie diese Vorgänge bei Einschränkungen beeinträchtigen können.
 
 Die Informationen zu Verweistabellen und partitionierten Tabellen werden von den **SchemaInfo**-APIs für die Shard-Zuordnung bereitgestellt. Das folgende Beispiel veranschaulicht die Verwendung dieser APIs anhand eines bestimmten Shard-Zuordnungs-Manager-Objekts smm: 
 
@@ -76,17 +109,17 @@ Die Tabellen 'region' und 'nation' sind als Verweistabellen definiert und werden
 
 ## Beziehen der Binärdateien des Diensts
 
-Die Binärdateien für den Aufteilungs-/Zusammenführungsdienst (Split/Merge) werden von [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/) bereitgestellt. Weitere Informationen zum Herunterladen der Binärdateien finden Sie in den schrittweisen Anleitungen im[Split-Merge-Lernprogramm](./sql-database-elastic-scale-configure-deploy-split-and-merge.md).
+Die Binärdateien für den Aufteilungs-/Zusammenführungsdienst (Split/Merge) werden von [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/) bereitgestellt. Informieren Sie sich im schrittweisen [Split/Merge-Lernprogramm](./sql-database-elastic-scale-configure-deploy-split-and-merge.md) über das Herunterladen von Binärdateien.
 
 ## Die Split/Merge-Benutzeroberfläche
 
 Neben der Workerrolle enthält das Split/Merge-Dienstpaket auch eine Webrolle, die zum interaktiven Senden von Anforderungen von Split/Merge-Anforderungen verwendet werden kann. Die Benutzeroberfläche enthält die folgenden Hauptkomponenten:
 
--    Operation Type: Dies ist ein Optionsfeld, das die Art des Vorgangs steuert, der vom Dienst für diese Anforderung ausgeführt wird. Sie können die Aufteilungs-, Zusammenführungs- und Verschiebungsszenarien wählen, die unter Konzepte und Schlüsselfunktionen beschrieben werden. Darüber hinaus können Sie einen zuvor gesendeten Vorgang auch abbrechen.
+-    Operation Type: Dies ist ein Optionsfeld, das die Art des Vorgangs steuert, der vom Dienst für diese Anforderung ausgeführt wird. Sie können die Aufteilungs-, Zusammenführungs- und Verschiebungsszenarien wählen, die unter Konzepte und Schlüsselfunktionen beschrieben werden. Darüber hinaus können Sie einen zuvor gesendeten Vorgang auch abbrechen.  Sie können Anforderungen für Shard-Zuordnungen teilen, zusammenführen und verschieben. Die Liste der Shard-Zuordnungen unterstützt nur Verschiebevorgänge.
 
 -    Shard-Zuordnung: Der nächste Abschnitt zu den Anforderungsparametern enthält Informationen zur Shard-Zuordnung und der Datenbank, in der die Shard-Zuordnung gehostet wird. Sie müssen den Namen des Azure SQL-Datenbankservers und der Datenbank, in der die Shard-Zuordnung gehostet wird, die Anmeldeinformationen zum Herstellen einer Verbindung mit der Shard-Zuordnungsdatenbank und schließlich den Namen der Shard-Zuordnung angeben. Der Vorgang akzeptiert momentan nur einen einzigen Satz von Anmeldeinformationen. Diese Anmeldeinformationen müssen über ausreichende Berechtigungen verfügen, um die Shard-Zuordnung und die Benutzerdaten in den Shards ändern zu können.
 
--    Source Range (Split/Merge): Für Split- und Merge-Vorgänge muss eine Anforderung den niedrigen und hohen Schlüssel des Quellbereichs in der Quell-Shard enthalten. Derzeit müssen Sie die Schlüssel genau so angeben, wie sie in den Zuordnungen in der Shard-Zuordnung erscheinen. Sie können mit dem PowerShell-Skript GetMappings.ps1 die aktuellen Zuordnungen aus einer gegebenen Shard-Zuordnungen abrufen.
+-    Source Range (Split/Merge): Ein Aufteilungs- und Zusammenführungsvorgang verarbeitet einen Bereich mithilfe seines niedrigen und hohen Schlüssels. Um einen Vorgang mit einem unbegrenzt hohen Schlüsselwert anzugeben, aktivieren Sie das Kontrollkästchen "High key is max", und lassen Sie das Feld für den hohen Schlüssel leer. Die von Ihnen angegebenen Bereichsschlüsselwerte müssen nicht genau mit einer Zuordnung und ihren Grenzen in Ihrer Shard-Zuordnung übereinstimmen. Wenn Sie keine Bereichsgrenzen angeben, leitet der Dienst den nächsten Bereich automatisch für Sie ab. Sie können mit dem PowerShell-Skript GetMappings.ps1 die aktuellen Zuordnungen aus einer gegebenen Shard-Zuordnungen abrufen.
 
 -    Split Key and Behavior (Split): Bei Aufteilungsvorgängen müssen Sie auch definieren, an welcher Stelle der Quellbereich geteilt werden soll. Hierzu geben Sie den Sharding-Schlüssel an, an dem die Aufteilung erfolgen soll. Mit dem nebenstehenden Optionsfeld definieren sie, ob der untere Teil des Bereichs (exklusive des Aufteilungsschlüssels) oder ob der obere Teil (inklusive Aufteilungsschlüssel) verschoben werden soll.
 
@@ -113,17 +146,17 @@ Die aktuelle Implementierung des Aufteilungs-/Zusammenführungsdiensts unterlieg
 
 * Während der Verarbeitung der Anforderung können in Quell- und Ziel-Shard Shardlet-Daten vorhanden sein. Dies ist derzeit zum Schutz vor Ausfällen während der Shardlet-Verschiebung erforderlich. Wie oben erläutert, wird durch die Integration von Split/Merge in die Shard-Zuordnung von Elastic Scale sichergestellt, dass in Verbindungen, die mit der **OpenConnectionForKey**-Methode über die datenabhängigen Routing-APIs für die Shard-Zuordnung hergestellt werden, keine inkonsistenten Zwischenzustände auftreten. Wenn eine Verbindung mit der Quell- oder Ziel-Shard allerdings nicht unter Verwendung der **OpenConnectionForKey**-Methode hergestellt wird, können während der Ausführung von Split/Merge/Move-Anforderungen inkonsistente Zwischenzustände auftreten. Abhängig vom Zeitpunkt oder der Shard, die der Verbindung zugrunde liegt, können in diesen Verbindungen unvollständige oder doppelte Ergebnisse angezeigt werden. Diese Einschränkung betrifft derzeit auch die Verbindungen, die durch Elastic Scale Multi-Shard-Abfragen hergestellt werden.
 
-* Aufteilungs-/Zusammenführungsdienst unterstützt derzeit nicht mehrere Rolleninstanzen für die Workerrolle. Dies schließt Hochverfügbarkeitskonfigurationen in Azure mit Fehler- oder Upgradedomänen aus, die von der Fähigkeit, mehrere Instanzen der Rolle auszuführen, abhängig sind. Außerdem darf die Metadatendatenbank für den Aufteilungs-/Zusammenführungsdienst nicht von verschiedenen Instanzen gemeinsam verwendet werden. Beispielsweise muss eine Instanz des Aufteilungs-/Zusammenführungsdienst,die in der Staging-Umgebung ausgeführt wird, auf eine andere Metadatendatenbank verweisen als die Instanz, die in der Produktionsumgebung ausgeführt wird.
+* Die Metadatendatenbank für den Aufteilungs-/Zusammenführungsdienst darf nicht von verschiedenen Rollen gemeinsam verwendet werden. Beispielsweise muss eine Rolle des Aufteilungs-/Zusammenführungsdienst,die in der Staging-Umgebung ausgeführt wird, auf eine andere Metadatendatenbank als die Produktionsrolle verweisen.
  
 
 ## Abrechnung 
 
-Da der Aufteilungs-/Zusammenführungsdienst als Clouddienst in Ihrem Microsoft Azure-Abonnement ausgeführt wird, gelten die normalen Gebühren für Clouddienste für Ihre Instanz des Aufteilungs-/Zusammenführungsdiensts (Split/Merge). Sofern Sie nicht häufig Split/Merge/Move-Vorgänge ausführen, empfehlen wir, den Split/Merge-Clouddienst zu löschen. Dadurch können Sie Kosten für laufende oder bereitgestellte Clouddienstinstanzen sparen. Sie können ihn erneut bereitstellen und Ihre sofort ausführbare Konfiguration starten, wenn Sie Split/Merge-Operationen ausführen müssen. 
+Da der Aufteilungs-/Zusammenführungsdienst als Cloud-Dienst in Ihrem Microsoft Azure-Abonnement ausgeführt wird, gelten die normalen Gebühren für Cloud-Dienste für Ihre Instanz des Aufteilungs-/Zusammenführungsdiensts (Split/Merge). Sofern Sie nicht häufig Split/Merge/Move-Vorgänge ausführen, empfehlen wir, den Split/Merge-Cloud-Dienst zu löschen. Dadurch können Sie Kosten für laufende oder bereitgestellte Cloud-Dienstinstanzen sparen. Sie können ihn erneut bereitstellen und Ihre sofort ausführbare Konfiguration starten, wenn Sie Split/Merge-Operationen ausführen müssen. 
   
 ## Überwachung 
 ### Statustabellen 
 
-Der Aufteilungs-/Zusammenführungsdienst stellt die **RequestStatus**-Tabelle in der Metadaten-Store-Datenk zum Überwachen abgeschlossener und laufender Anforderungen bereit. Die Tabelle enthält eine Zeile für jede Teilung/Merge-Anforderung, die an diese Instanz des Aufteilungs-/Zusammenführungsdiensts übermittelt wurde. Sie stellt für jede Anforderung die folgende Informationen bereit:
+Der Aufteilungs-/Zusammenführungsdienst stellt die **RequestStatus**-Tabelle in der Metadaten-Store-Datenbank zum Überwachen abgeschlossener und laufender Anforderungen bereit. Die Tabelle enthält eine Zeile für jede Teilung/Merge-Anforderung, die an diese Instanz des Aufteilungs-/Zusammenführungsdiensts übermittelt wurde. Sie stellt für jede Anforderung die folgende Informationen bereit:
 
 * **Timestamp**: Uhrzeit und Datum, als die Anforderung gestartet wurde.
 
@@ -140,7 +173,7 @@ Der Aufteilungs-/Zusammenführungsdienst stellt die **RequestStatus**-Tabelle in
 
 ### Azure-Diagnose 
 
-Die Dienstvorlage für Split/Merge ist so vorkonfiguriert, dass WAD-Speicher (Windows Azure-Diagnose) für die zusätzliche ausführliche Protokollierung und als Diagnosespeicher verwendet wird. Sie können die auf WAD bezogene Konfiguration, z. B. das Speicherkonto und die Anmeldeinformationen, über Ihre Dienstkonfigurationsdatei für Split/Merge steuern. Die WAD-Konfiguration für den Dienst entspricht den Anleitungen in [Cloud-Dienst-Grundlagen](http://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649). Sie enthält die Definitionen zum Protokollieren von Leistungsindikatoren und die Definitionen für IIS-Protokolle, Windows-Ereignisprotokolle und Split/Merge-Anwendungsereignisprotokolle. Sie können in Visual Studio im Server-Explorer im Azure-Teil der Explorer-Struktur einfach auf diese Protokolle zugreifen:
+Die Dienstvorlage für Split/Merge ist so vorkonfiguriert, dass WAD-Speicher (Microsoft Azure-Diagnose) für die zusätzliche ausführliche Protokollierung und als Diagnosespeicher verwendet wird. Sie können die auf WAD bezogene Konfiguration, z. B. das Speicherkonto und die Anmeldeinformationen, über Ihre Dienstkonfigurationsdatei für Split/Merge steuern. Die WAD-Konfiguration für den Dienst entspricht den Anleitungen in [Cloud-Dienst-Grundlagen](http://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649). Sie enthält die Definitionen zum Protokollieren von Leistungsindikatoren und die Definitionen für IIS-Protokolle, Windows-Ereignisprotokolle und Split/Merge-Anwendungsereignisprotokolle. Sie können in Visual Studio im Server-Explorer im Azure-Teil der Explorer-Struktur einfach auf diese Protokolle zugreifen:
 
 ![Azure Diagnostics][2]   
 
@@ -171,7 +204,7 @@ Darüber hinaus ermöglicht die Eindeutigkeit des Shardingschlüssels als führe
 
 ## Referenzen 
 
-* [Split-Merge tutorial](./sql-database-elastic-scale-configure-deploy-split-and-merge.md)
+* [Split/Merge-Lernprogramm](./sql-database-elastic-scale-configure-deploy-split-and-merge.md)
 
 * [Sicherheitsüberlegungen zu Elastic Scale](./sql-database-elastic-scale-configure-security.md)  
 
@@ -181,3 +214,5 @@ Darüber hinaus ermöglicht die Eindeutigkeit des Shardingschlüssels als führe
 [1]:./media/sql-database-elastic-scale-split-and-merge/split-merge-overview.png
 [2]:./media/sql-database-elastic-scale-split-and-merge/diagnostics.png
 [3]:./media/sql-database-elastic-scale-split-and-merge/diagnostics-config.png
+
+<!--HONumber=47-->

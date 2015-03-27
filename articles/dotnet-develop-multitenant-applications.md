@@ -16,36 +16,6 @@
 	ms.date="11/19/2014" 
 	ms.author="wpickett"/>
 
-
-<div>
-<div class="left-nav">
-<div class="static-nav">
-<ul>
-<li class="menu-nodejs-compute"><a href="/de-de/develop/net/compute/">Compute</a></li>
-<li class="menu-nodejs-data"><a href="/de-de/develop/net/data/">Datendienste</a></li>
-<li class="menu-nodejs-appservices"><a href="/de-de/develop/net/app-services/">App-Dienste</a></li>
-<li><a href="/de-de/develop/net/reference/">Referenz-</a></li>
-<li><a href="/de-de/develop/net/guidance/">Anleitungen</a></li>
-<li><a href="/de-de/develop/net/architecture/">Architektur</a></li>
-<li><a href="/de-de/develop/net/samples/">Beispiele</a></li>
-<li><a href="/de-de/develop/net/end-to-end-Apps/">Szenario-basierte Lernprogramme</a></li>
-</ul>
-<ul class="links">
-<li class="forum"><a href="/de-de/support/forums/">Foren</a></li>
-</ul>
-</div>
-<div class="floating-nav jump-to"><br />
-<ul>
-<li>In diesem Abschnitt (gehe zu):</li>
-<li><a href="/de-de/develop/net/architecture/#overviews">Übersichten der Anwendungsarchitektur</a></li>
-<li><strong>Anwendungsmuster: Mehrinstanzenfähige Anwendungen</strong></li>
-<li><a href="/de-de/develop/net/architecture/load-testing-pattern/">Anwendungsmuster: Auslastungstests</a></li>
-<li><a href="/de-de/develop/net/architecture/#designpatterns">Entwurfsmuster</a></li>
-</ul>
-</div>
-</div>
-</div>
-
 # Mehrinstanzenfähige Anwendungen in Azure
 
 Eine mehrinstanzenfähige Anwendung ist eine gemeinsame Ressource, mit der unterschiedliche Benutzer, oder "Mandanten", die Anwendung so anzeigen können, als handele es sich um ihre eigene. Ein typisches Szenario für eine mehrinstanzenfähige Anwendung ist, wenn alle Benutzer das Benutzererlebnis individualisieren möchten, aber ansonsten die gleichen grundlegenden Geschäftsanforderungen haben. Beispiele für große mehrinstanzenfähige Anwendungen sind Office 365, Outlook.com und visualstudio.com.
@@ -64,11 +34,11 @@ Eine korrekt implementierte mehrinstanzenfähige Anwendung bietet Benutzern die 
 - **Verfügbarkeit**: Für einzelne Mandanten muss die Anwendung konstant verfügbar sein, unter Umständen mit Garantien, die in einem SLA festgelegt sind. Erneut, die Aktivitäten anderer Mandanten sollten die Verfügbarkeit der Anwendung nicht beeinträchtigen.
 - **Skalierbarkeit**: Die Anwendung kann über Skalierung die Anforderungen einzelner Mandanten erfüllen. Die Präsenz und Aktivitäten anderer Mandanten sollten die Leistung der Anwendung nicht beeinträchtigen. 
 - **Kosten**: Die Kosten sind niedriger als bei der Ausführung einer dedizierten Einzelinstanzanwendung, da Mehrinstanzenfähigkeit die gemeinsame Nutzung von Ressourcen ermöglicht. 
-- **Individualisierbarkeit**. Die Möglichkeit, die Anwendung für einen einzelnen Mandanten auf verschiedene Weisen zu individualisieren, beispielsweise durch das Hinzufügen oder Entfernen von Funktionen, Ändern von Farben und Logos oder sogar durch das Hinzufügen eigener Codes oder Skripte.
+- **Individualisierbarkeit**: Die Möglichkeit, die Anwendung für einen einzelnen Mandanten auf verschiedene Weisen zu individualisieren, beispielsweise durch das Hinzufügen oder Entfernen von Funktionen, Ändern von Farben und Logos oder sogar durch das Hinzufügen eigener Codes oder Skripte.
  
 Kurz, obwohl es einige Überlegungen gibt, die Sie bei der Bereitstellung eines hochskalierbaren Dienstes berücksichtigen müssen, gibt es auch einige Ziele und Anforderungen, die bei vielen mehrinstanzenfähigen Anwendungen üblich sind. Einige sind möglicherweise für bestimmte Szenarien nicht relevant, und die Wichtigkeit einzelner Ziele und Anforderungen unterscheidet sich je nach Szenario. Als Anbieter einer mehrinstanzenfähigen Anwendung gibt es für Sie ebenfalls Ziele und Anforderungen wie das Erfüllen der Ziele und Anforderungen des Mandanten, Rentabilität, mehrere Serviceebenen, Bereitstellung, Wartbarkeit, Überwachung und Automatisierung. 
 
-Weitere Informationen zu zusätzlichen Überlegungen bei der Entwicklung einer mehrinstanzenfähigen Anwendung finden Sie unter [Hosting a Multi-Tenant Application on Azure Azure][](Hosten einer mehrinstanzenfähigen Anwendung in Azure).
+Weitere Informationen zu zusätzlichen Überlegungen bei der Entwicklung einer mehrinstanzenfähigen Anwendung finden Sie unter [Hosten einer mehrinstanzenfähigen Anwendung in Azure][].
 
 Azure bietet viele Funktionen, mit denen Sie die entscheidenden Probleme lösen können, die bei der Entwicklung eines mehrinstanzenfähigen Systems auftreten. 
 
@@ -80,7 +50,7 @@ Azure bietet viele Funktionen, mit denen Sie die entscheidenden Probleme lösen 
 	- Workerrollen, die typischerweise Daten im Hintergrund einer Anwendung verarbeiten
 	- Workerrollen, die typischerweise als Frontend für Anwendungen agieren
 
-**Storage**
+**Speicher**
 
 Datenverwaltung wie eine SQL Azure-Datenbank oder Azure-Speicherdienste wie der Tabellenspeicherdienst, der Speicherdienste für große Mengen unstrukturierter Daten bietet, außerdem der Blob-Dienst, der Speicherdienste für große Mengen unstrukturierter Daten oder binäre Daten wie Videos, Audiodateien und Bilder bietet
 
@@ -127,4 +97,4 @@ Azure bietet viele verschiedene Möglichkeiten zur Bereitstellung neuer Mandante
 
 
 
-<!--HONumber=46--> 
+<!--HONumber=47-->

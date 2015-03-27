@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="Bewährte Methoden für Sicherheit (.NET) – Azure" 
+	pageTitle="Bewährte Methoden für Sicherheit (.NET) - Azure" 
 	description="Eine Einführung in Sicherheit in Azure." 
 	services="web-sites, virtual-machines, sql-database, storage, service-bus, active-directory" 
 	documentationCenter=".net" 
@@ -22,8 +22,6 @@
 
 
 
-[WACOM.INCLUDE [SecurityRX](../includes/SecurityRX.md)]
+[AZURE.INCLUDE [SecurityRX](../includes/SecurityRX.md)]
 
-<!--HONumber=35.2-->
-
-<!--HONumber=46--> 
+<!--HONumber=47-->

@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Verwenden von Hive in HDInsight | Azure"
    description="Erfahren Sie, wie Sie Hive mit HDInsight über Visual Studio verwenden."
    services="hdinsight"
@@ -22,7 +22,7 @@
 
 In diesem Artikel erfahren Sie, wie Sie mit HDInsight Tools für Visual Studio Hive-Abfragen remote an einen HDInsight-Cluster übermitteln.
 
-> [AZURE.NOTE] Dieses Dokument bietet keine detaillierte Beschreibung dazu, wie die in diesem Beispiel verwendeten HiveQL-Anweisungen vorgehen. Informationen zu der in diesem Beispiel verwendeten HiveQL finden Sie unter <a href="../hdinsight-use-hive/" target="_blank">Verwenden von Hive mit Hadoop in HDInsight</a>.
+> [AZURE.NOTE] Dieses Dokument bietet keine detaillierte Beschreibung dazu, wie die in diesem Beispiel verwendeten HiveQL-Anweisungen vorgehen. Informationen zu der in diesem Beispiel verwendeten HiveQL finden Sie unter <a href="../hdinsight-use-hive/" target="_blank">Verwenden von Hive mit Hadoop unter HDInsight</a>.
 
 ## <a id="prereq"></a>Voraussetzungen
 
@@ -30,9 +30,9 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 * Einen Azure HDInsight-Cluster (Hadoop in HDInsight), der auf Linux oder Windows basiert
 
-* Visual Studio 2012 <a href="http://www.microsoft.com/de-de/download/details.aspx?id=39305" target="_blank">Update 4</a>, Visual Studio 2013 <a href="http://www.microsoft.com/de-de/download/details.aspx?id=43721" target="_blank">Update 3</a> oder <a href="http://www.microsoft.com/de-de/download/details.aspx?id=43722" target="_blank">Visual Studio Express 2013</a>
+* Visual Studio 2012 <a href="http://www.microsoft.com/download/details.aspx?id=39305" target="_blank">Update 4</a>, Visual Studio 2013 <a href="http://www.microsoft.com/download/details.aspx?id=43721" target="_blank">Update 3</a> oder <a href="http://www.microsoft.com/download/details.aspx?id=43722" target="_blank">Visual Studio Express 2013</a>.
 
-## <a id="run"></a> Ausführen von Hive-Abfragen mit HDInsight Tools für Visual Studio
+## <a id="run"></a> Ausführen von Hive-Abfragen mit HDInsight-Tools für Visual Studio
 
 1. Öffnen Sie **Visual Studio**, wählen Sie **Neu**, **Projekt**, **HDInsight** und dann **Hive-Anwendung**. Geben Sie einen Namen für dieses Projekt an.
 
@@ -47,15 +47,15 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
     Diese Anweisungen führen die folgenden Aktionen aus.
 
     * **DROP TABLE**: löscht Tabelle und Datendatei, falls die Tabelle bereits existiert
-    * **CREATE EXTERNAL TABLE**: erstellt eine neue 'external' Tabelle in Hive Externe Tabellen speichern nur die Tabellendefinition in Hive. Die Daten verbleiben am ursprünglichen Speicherort.
+    * **CREATE EXTERNAL TABLE** erstellt eine neue  'externe' Tabelle in Hive. Externe Tabellen speichern nur die Tabellendefinition in Hive. Die Daten verbleiben am ursprünglichen Speicherort.
 
         > [AZURE.NOTE] Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle, z. B. einen automatisierten Prozess zum Hochladen von Daten, oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden.
         >
         > Durch das Ablegen einer externen Tabelle werden **nicht** die Daten, sondern nur die Tabellendefinitionen gelöscht.
 
     * **ROW FORMAT**: teilt Hive mit, wie die Daten formatiert werden In diesem Fall werden die Felder in den einzelnen Protokollen durch Leerzeichen getrennt.
-    * **STORED AS TEXTFILE LOCATION**: teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Information mit, dass die Speicherung als Text erfolgt
-    * **SELECT**: die Anzahl aller Zeilen auswählen, für die die Spalte **t4** den Wert **[ERROR]** enthält Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
+    * **STORED AS TEXTFILE LOCATION** teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Informationen mit, dass die Speicherung als Text erfolgt.
+    * Mit **SELECT** wählen Sie die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[ERROR]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
 
 3. Wählen Sie auf der Symbolleiste den **HDInsight-Cluster** aus, den Sie für diese Abfrage verwenden möchten, und wählen Sie dann **Übermitteln** aus, um die Anweisungen als Hive-Auftrag auszuführen. Die **Hive-Auftragszusammenfassung** wird mit Informationen zum aktiven Auftrag angezeigt. Verwenden Sie den Link **Aktualisieren**, um die Auftragsinformationen zu aktualisieren, bis der **Auftragsstatus** zu **Abgeschlossen** wechselt.
 
@@ -70,11 +70,11 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
     Diese Anweisungen führen die folgenden Aktionen aus.
 
-    * **CREATE TABLE IF NOT EXISTS**: erstellt eine Tabelle, sofern diese noch nicht vorhanden ist Da das Schlüsselwort **EXTERNAL** nicht verwendet wird, ist dies eine interne Tabelle, die im Hive-Data Warehouse gespeichert und vollständig von Hive verwaltet wird.
+    * **CREATE TABLE IF NOT EXISTS** erstellt eine Tabelle, sofern sie noch nicht vorhanden ist. Da das Schlüsselwort **EXTERNAL** nicht verwendet wird, ist dies eine interne Tabelle, die im Hive-Data Warehouse gespeichert und vollständig von Hive verwaltet wird.
 
         > [AZURE.NOTE] Anders als bei **externen** Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
 
-    * **STORED AS ORC**: speichert die Daten im ORC-Format (Optimized Row Columnar) Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
+    * **STORED AS ORC** speichert die Daten im ORC-Format (Optimized Row Columnar). Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
     * **INSERT OVERWRITE ... SELECT**: wählt Zeilen aus der Tabelle **log4jLogs** aus, die **[ERROR]** enthalten, dann werden die Daten in die Tabelle **errorLogs** eingefügt
 
 7. Wählen Sie auf der Symbolleiste das Dropdownmenü für **Übermitteln** aus, um den Auftrag auszuführen. Verwenden Sie **Auftragsstatus**, um zu ermitteln, ob der Auftrag erfolgreich abgeschlossen wurde.
@@ -99,20 +99,20 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 Weitere Informationen zu den HDInsight Tools für Visual Studio:
 
-* [Erste Schritte mit HDInsight Tools für Visual Studio](../hdinsight-hadoop-visual-studio-tools-get-started/)
+* [Erste Schritte mit HDInsight-Tools für Visual Studio](../hdinsight-hadoop-visual-studio-tools-get-started/)
 
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/de-de/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/library/dn479185.aspx
 
-[azure-purchase-options]: http://azure.microsoft.com/ pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/ pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/ pricing/free-trial/
+[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
 [apache-log4j]: http://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: http://azure.microsoft.com/ documentation/articles/hdinsight-connect-excel-power-query/
+[import-to-excel]: http://azure.microsoft.com/documentation/articles/hdinsight-connect-excel-power-query/
 
 
 [hdinsight-use-oozie]: ../hdinsight-use-oozie/
@@ -134,4 +134,4 @@ Weitere Informationen zu den HDInsight Tools für Visual Studio:
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

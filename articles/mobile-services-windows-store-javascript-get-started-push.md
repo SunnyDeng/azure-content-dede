@@ -1,7 +1,7 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Pushbenachrichtigungen (Legacypushvorgang) | Mobile Dev Center" 
 	description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services zum Senden von Pushbenachrichtigungen an Ihre Windows Store-JavaScript-App (Legacypush)." 
-	services="mobile-services, notification-hubs" 
+	services="mobile-services" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
 	manager="dwrede" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
 	ms.date="11/22/2014" 
@@ -19,23 +19,23 @@
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App (Legacypushvorgang)
 
 <div class="dev-center-tutorial-selector sublanding">
-    <a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
-    <a href="/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push" title="Windows Store JavaScript" class="current">Windows Store JavaScript</a>
-    <a href="/de-de/documentation/articles/mobile-services-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a>
-    <a href="/de-de/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a>
-    <a href="/de-de/documentation/articles/mobile-services-android-get-started-push" title="Android">Android</a>
-<!--    <a href="/de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push" title="Xamarin.iOS">Xamarin.iOS</a>
-    <a href="/de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started-push" title="Xamarin.Android">Xamarin.Android</a> -->
-	<a href="/de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push" title="Appcelerator">Appcelerator</a>
+    <a href="/documentation/articles/mobile-services-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
+    <a href="/documentation/articles/mobile-services-windows-store-javascript-get-started-push" title="Windows Store JavaScript" class="current">Windows Store JavaScript</a>
+    <a href="/documentation/articles/mobile-services-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a>
+    <a href="/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a>
+    <a href="/documentation/articles/mobile-services-android-get-started-push" title="Android">Android</a>
+<!--    <a href="/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push" title="Xamarin.iOS">Xamarin.iOS</a>
+    <a href="/documentation/articles/partner-xamarin-mobile-services-android-get-started-push" title="Xamarin.Android">Xamarin.Android</a> -->
+	<a href="/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push" title="Appcelerator">Appcelerator</a>
 </div>
 
-<div class="dev-center-tutorial-subselector"><a href="/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push/" title=".NET backend">.NET-Back-End</a> | <a href="/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push/"  title="JavaScript backend" class="current">JavaScript-Back-End</a></div>		
+<div class="dev-center-tutorial-subselector"><a href="/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push/" title=".NET backend">.NET-Back-End</a> |  <a href="/documentation/articles/mobile-services-windows-store-javascript-get-started-push/"  title="JavaScript backend" class="current">JavaScript-Back-End</a></div>		
 
 In diesem Thema wird die Verwendung von Azure Mobile Services über Visual Studio 2013 zum Senden von Pushbenachrichtigungen an Ihre Windows Store-App erläutert. In diesem Lernprogramm verwenden Sie den Windows-Pushbenachrichtigungsdienst, um direkt in Visual Studio Pushbenachrichtigungen zum Schnellstartprojekt hinzuzufügen. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
->[AZURE.NOTE]Dieses Thema behandelt <em>vorhandene</em> mobile Dienste, für die <em>noch kein Upgrade</em> für den Einsatz der Notification Hubs-Integration durchgeführt wurde. Wenn Sie einen <em>neuen</em> mobilen Dienst erstellen, ist diese integrierte Funktionalität automatisch aktiviert. Informationen zu neuen mobilen Diensten finden Sie unter [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push/)..
+>[AZURE.NOTE]Dieses Thema behandelt <em>vorhandene</em> mobile Dienste, für die <em>noch kein Upgrade</em> für den Einsatz der Notification Hubs-Integration durchgeführt wurde. Wenn Sie einen <em>neuen</em> mobilen Dienst erstellen, ist diese integrierte Funktionalität automatisch aktiviert. Informationen zu neuen mobilen Diensten finden Sie unter [Erste Schritte mit Pushbenachrichtigungen](/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push/).
 >
->Mobile Services werden in Azure Notification Hubs integriert, damit zusätzliche Pushbenachrichtigungsfunktionen wie Vorlagen, mehrere Plattformen und verbesserte Skalierung unterstützt werden können. <em>Sie sollten Ihre vorhandenen mobilen Dienste möglichst für die Verwendung von Notification Hubs aktualisieren</em>. Nach dem Upgrade finden Sie weitere Informationen in dieser Version von [Erste Schritte mit Pushbenachrichtigungen](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push/).
+>Mobile Services werden in Azure Notification Hubs integriert, damit zusätzliche Pushbenachrichtigungsfunktionen wie Vorlagen, mehrere Plattformen und verbesserte Skalierung unterstützt werden können. <em>Sie sollten Ihre vorhandenen mobilen Dienste nach Möglichkeit für die Verwendung von Notification Hubs aktualisieren</em>. Nach dem Upgrade finden Sie weitere Informationen in dieser Version von [Erste Schritte mit Pushbenachrichtigungen](/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push/).
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
@@ -50,10 +50,10 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 [AZURE.INCLUDE [mobile-services-create-new-push-vs2013](../includes/mobile-services-create-new-push-vs2013.md)]
 
 <ol start="6">
-<li><p>Öffnen Sie die generierte Codedatei "push.register.js", und überprüfen Sie den Code, der die Installations-ID und den Kanal für das Gerät abruft und diese Daten in die neue Tabelle <strong>Kanäle</strong> einfügt.</p> 
+<li><p>Öffnen Sie die generierte Codedatei "push.register.js", und überprüfen Sie den Code, der die Installations-ID und den Kanal für das Gerät abruft und diese Daten in die neue Tabelle <strong>channels</strong> einfügt.</p> 
 
 	<p>Diese Tabelle wurde in Ihrem mobilen Dienst vom Assistent für Pushbenachrichtigungen erstellt. Dieser Code stellt sicher, dass eine Registrierung des Gerätes versucht wird, sobald die App aktiviert wird.</p></li>
-<li><p>Erweitern Sie im Server-Explorer <strong>Azure</strong>, <strong>Mobile Services</strong>, Ihren Dienstnamen und <strong>Kanäle</strong>, und öffnen Sie dann die Datei "insert.js".</p> 
+<li><p>Erweitern Sie im Server-Explorer <strong>Azure</strong>, <strong>Mobile Services</strong>, Ihren Dienstnamen und <strong>channels</strong>, und öffnen Sie dann die Datei "insert.js".</p> 
 
 <p>Diese Datei, die in Ihrem mobilen Dienst gespeichert wird, enthält JavaScript-Code, der ausgeführt wird, wenn ein Client eine Anfrage zur Registrierung eines Gerätes durch Einfügen von Daten in die Kanaltabelle sendet.</p> 
 
@@ -74,7 +74,7 @@ Während der erzeugte Code das Anzeigen einer Benachrichtigung erleichtert, wenn
 
 1. Drücken Sie in Visual Studio die Taste F5, um die App auszuführen.
 
-2. Geben Sie in der App Text in das Feld **TodoItem einfügen** ein, und klicken Sie dann auf **Speichern**.
+2. Geben Sie in der App einen Text in **Insert a TodoItem** ein, und klicken Sie dann auf **Speichern**.
 
    	![][13]
 
@@ -109,7 +109,7 @@ Weitere Informationen zu Mobile Services:
 * [Mobile Services: Serverskriptreferenz]
   <br/>Erfahren Sie mehr über das Registrieren und Verwenden von Serverskripts.
 
-* [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]
+* [Mobile Services HTML/JavaScript: Konzeptionelle Referenz]
   <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit HTML und JavaScript.  
 
 <!-- Anchors. -->
@@ -136,22 +136,21 @@ Weitere Informationen zu Mobile Services:
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/
-[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-js/
-[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-js
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-js
-[Senden von Pushbenachrichtigungen an App-Benutzer]: /de-de/develop/mobile/tutorials/push-notifications-to-users-js
-[Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-js
-[JavaScript und HTML]: /de-de/develop/mobile/tutorials/get-started-with-push-js
+[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started/
+[Erste Schritte mit Daten]: /develop/mobile/tutorials/get-started-with-data-js/
+[Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-js
+[Erste Schritte mit Pushbenachrichtigungen]: /develop/mobile/tutorials/get-started-with-push-js
+[Senden von Pushbenachrichtigungen an App-Benutzer]: /develop/mobile/tutorials/push-notifications-to-users-js
+[Autorisieren von Benutzern mit Skripts]: /develop/mobile/tutorials/authorize-users-in-scripts-js
+[JavaScript und HTML]: /develop/mobile/tutorials/get-started-with-push-js
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client/
+[Mobile Services HTML/JavaScript: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-html-js-client/
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Erste Schritte mit Notification Hubs]: /de-de/manage/services/notification-hubs/getting-started-windows-dotnet/
-[Was sind Notification Hubs?]: /de-de/develop/net/how-to-guides/service-bus-notification-hubs/
-[Senden von Benachrichtigungen an Abonnenten]: /de-de/manage/services/notification-hubs/breaking-news-dotnet/
-[Senden von Benachrichtigungen an Benutzer]: /de-de/manage/services/notification-hubs/notify-users/
-[Senden von plattformübergreifenden Benachrichtigungen an Benutzer]: /de-de/manage/services/notification-hubs/notify-users-xplat-mobile-services/
+[Erste Schritte mit Notification Hubs]: /manage/services/notification-hubs/getting-started-windows-dotnet/
+[Was sind Notification Hubs?]: /develop/net/how-to-guides/service-bus-notification-hubs/
+[Senden von Benachrichtigungen an Abonnenten]: /manage/services/notification-hubs/breaking-news-dotnet/
+[Senden von Benachrichtigungen an Benutzer]: /manage/services/notification-hubs/notify-users/
+[Senden von plattformübergreifenden Benachrichtigungen an Benutzer]: /manage/services/notification-hubs/notify-users-xplat-mobile-services/
 
-
-<!--HONumber=42-->
+<!--HONumber=47-->

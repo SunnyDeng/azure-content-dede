@@ -1,11 +1,11 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Azure Storage" 
-	description="" 
+	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem ASP.NET-Projekt in Visual Studio" 
 	services="storage" 
 	documentationCenter="" 
 	authors="kempb" 
 	manager="douge" 
-	editor=""/>
+	editor="tglee"/>
 
 <tags 
 	ms.service="storage" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/10/2014" 
+	ms.date="02/02/2015" 
 	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
@@ -43,6 +43,5 @@ Bevor Sie eine Warteschlange verwenden können, müssen Sie die Verbindungszeich
 
 [AZURE.INCLUDE [vs-storage-getting-started-queues-include](../includes/vs-storage-getting-started-queues-include.md)]
 
-Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
-
-<!--HONumber=42-->
+Weitere Informationen finden Sie unter [ASP.NET.](http://www.asp.net)
+<!--HONumber=47-->

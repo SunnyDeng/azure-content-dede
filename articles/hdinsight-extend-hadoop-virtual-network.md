@@ -16,15 +16,15 @@
    ms.author="larryfr"/>
 
 
-#Erweitern der HDInsight-Funktionen mit Azure Virtual Network
+# Erweitern der HDInsight-Funktionen mit Azure Virtual Network
 
 Mit Azure Virtual Network können Sie Ihre Hadoop-Lösungen erweitern, um sie auf lokalen Ressourcen wie SQL Server zu integrieren oder um sichere private Netzwerke zwischen Ressourcen in der Cloud zu erstellen.
 
 > [AZURE.NOTE] HDInsight unterstützt derzeit kein affinitätsbasiertes Azure Virtual Network. Bei der Verwendung von HDInsight müssen Sie standortbasierte virtuelle Netzwerke verwenden.
 
-##<a id="whatis"></a>Was ist das virtuelle Azure-Netzwerk?
+## <a id="whatis"></a>Was ist Azure Virtual Network?
 
-[Virtual Azure Network](/de-de/documentation/services/virtual-network/) bietet ein sicheres, persistentes Netzwerk mit allen Ressourcen, die Sie für Ihre Lösung benötigen. Virtuelle Netzwerke ermöglichen Folgendes:
+[Virtual Azure Network](/documentation/services/virtual-network/) bietet ein sicheres, persistentes Netzwerk mit allen Ressourcen, die Sie für Ihre Lösung benötigen. Virtuelle Netzwerke ermöglichen Folgendes:
 
 * Verbinden von Cloud-Ressourcen in einem privaten Netzwerk (Nur-Cloud)
 
@@ -62,19 +62,19 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 >
 > Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
 
-Weitere Informationen zur Bereitstellung eines HDInsight-Clusters in einem virtuellen Netzwerk finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight](/de-de/documentation/articles/hdinsight-provision-clusters/).
+Weitere Informationen zur Bereitstellung eines HDInsight-Clusters in einem virtuellen Netzwerk finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight](/documentation/articles/hdinsight-provision-clusters/).
 
-##<a id="tasks"></a>Aufgaben und Informationen
+## <a id="tasks"></a>Aufgaben und Informationen
 
 Dieser Abschnitt enthält Informationen zu allgemeinen Aufgaben und Informationen, die möglicherweise bei der Verwendung von HDInsight mit einem virtuellen Netzwerk erforderlich sind.
 
-###Ermitteln des vollqualifizierten Domänennamens
+### Ermitteln des vollqualifizierten Domänennamens
 
 Der HDInsight-Cluster wird einen bestimmten FQDN für die virtuelle Netzwerkschnittstelle zugewiesen. Hierbei handelt es sich um die Adresse, die Sie von anderen Ressourcen im virtuellen Netzwerk aus beim Herstellen der Verbindung zum Cluster verwenden sollten. Verwenden Sie die folgende URL zum Abfragen des Ambari-Verwaltungsdiensts, um den FQDN zu ermitteln.
 
 	https://<clustername>.azurehdinsight.net/ambari/api/v1/clusters/<clustername>.azurehdinsight.net/services/<servicename>/components/<componentname>
 
-> [AZURE.NOTE] Weitere Informationen zur Verwendung von Ambari mit HDInsight finden Sie unter [Überwachen von Hadoop-Clustern in HDInsight mit der Ambari API](/de-de/documentation/articles/hdinsight-monitor-use-ambari-api/).
+> [AZURE.NOTE] Weitere Informationen zur Verwendung von Ambari mit HDInsight finden Sie unter [Überwachen von Hadoop-Clustern in HDInsight mit der Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api/).
 
 Sie müssen den Clusternamen und einen Dienst sowie eine Komponente angeben, die auf dem Cluster ausgeführt werden, z. B. den YARN Resource Manager.
 
@@ -82,7 +82,7 @@ Sie müssen den Clusternamen und einen Dienst sowie eine Komponente angeben, die
 
 Wenn Sie z. B. den FQDN von einem HDInsight Hadoop-Cluster zurückgegeben möchten, können Sie die Daten für den YARN Resource Manager mithilfe einer der folgenden Methoden abrufen.
 
-* [Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/)
+* [Azure PowerShell](/documentation/articles/install-configure-powershell/)
 
 		$ClusterDnsName = <clustername>
 		$Username = <cluster admin username>
@@ -103,13 +103,13 @@ Wenn Sie z. B. den FQDN von einem HDInsight Hadoop-Cluster zurückgegeben möcht
 
 		curl -G -u <username>:<password> https://<clustername>.azurehdinsight.net/ambari/api/v1/clusters/<clustername>.azurehdinsight.net/services/yarn/components/resourcemanager | jq .host_components[0].HostRoles.host_name
 
-###Verbinden mit HBase
+### Verbinden mit HBase
 
 Damit Sie mithilfe der Java-API eine Remoteverbindung zu HBase herstellen können, müssen Sie die Zookeeper-Quorumadressen für den HBase-Cluster ermitteln und diese in Ihrer Anwendung angeben.
 
 Verwenden Sie eine der folgenden Methoden zum Abfragen des Ambari-Verwaltungsdiensts, um die Zookeeper-Quorumadresse abzurufen.
 
-* [Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/)
+* [Azure PowerShell](/documentation/articles/install-configure-powershell/)
 
 		$ClusterDnsName = <clustername>
 		$Username = <cluster admin username>
@@ -129,7 +129,7 @@ Verwenden Sie eine der folgenden Methoden zum Abfragen des Ambari-Verwaltungsdie
 
 		curl -G -u <username>:<password> "https://<clustername>.azurehdinsight.net/ambari/api/v1/clusters/<clustername>.azurehdinsight.net/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum" | jq .items[0].properties[]
 
-> [AZURE.NOTE] Weitere Informationen zur Verwendung von Ambari mit HDInsight finden Sie unter [Überwachen von Hadoop-Clustern in HDInsight mit der Ambari API](/de-de/documentation/articles/hdinsight-monitor-use-ambari-api/).
+> [AZURE.NOTE] Weitere Informationen zur Verwendung von Ambari mit HDInsight finden Sie unter [Überwachen von Hadoop-Clustern in HDInsight mit der Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api/).
 
 Nachdem die Quoruminformationen vorliegen, verwenden Sie diese in der Clientanwendung.
 
@@ -152,24 +152,24 @@ Beispielsweise eine Java-Anwendung, die die HBase-API verwendet. Sie würden die
 </configuration>
 ```
 
-###Überprüfen der Netzwerkkonnektivität
+### Überprüfen der Netzwerkkonnektivität
 
 Einige Dienste wie SQL Server können eingehende Netzwerkverbindungen begrenzen. Dadurch wird verhindert, dass HDInsight mit diesen Diensten erfolgreich arbeiten kann.
 
 Wenn beim Zugriff auf einen Dienst von HDInsight Probleme auftreten, ziehen Sie die zum Dienst gehörende Dokumentation zu Rate, um sicherzustellen, dass Sie den Netzwerkzugriff aktiviert haben. Sie können den Netzwerkzugriff auch dadurch überprüfen, dass Sie einen virtuellen Azure-Computer in demselben virtuellen Netzwerk erstellen und Clientdienstprogramme zur Überprüfung verwenden, dass der virtuelle Computer über das virtuelle Netzwerk eine Verbindung zum Dienst herstellen kann.
 
-##<a id="nextsteps"></a>Nächste Schritte
+## <a id="nextsteps"></a>Nächste Schritte
 
 In den folgenden Beispielen wird die Verwendung von HDInsight mit Azure Virtual Network veranschaulicht.
 
-* [Analysieren von Sensordaten mit Storm und HBase in HDInsight](/de-de/documentation/articles/hdinsight-storm-sensor-data-analysis/) - Veranschaulicht die Konfiguration eines Storm- und HBase-Clusters in einem virtuellen Netzwerk sowie das Remote-Schreiben von Daten von Storm zu HBase.
+* [Analysieren von Sensordaten mit Storm und HBase in HDInsight](/documentation/articles/hdinsight-storm-sensor-data-analysis/) - Veranschaulicht die Konfiguration eines Storm- und HBase-Clusters in einem virtuellen Netzwerk sowie das Remote-Schreiben von Daten von Storm zu HBase.
 
-* [Bereitstellen von HBase-Clustern in Azure Virtual Network](/de-de/documentation/articles/hdinsight-hbase-provision-vnet/) - Bietet Informationen zur Bereitstellung eines HBase-Clusters in einem Azure Virtual Network.
+* [Bereitstellen von HBase-Clustern in Azure Virtual Network](/documentation/articles/hdinsight-hbase-provision-vnet/) - Enthält Informationen zum Bereitstellen eines HBase-Clustern in Azure Virtual Network.
 
-* [Bereitstellen von Hadoop-Clustern in HDInsight](/de-de/documentation/articles/hdinsight-provision-clusters/) - Bietet Informationen zur Bereitstellung von Hadoop-Cluster, einschließlich der Informationen zur Verwendung von Azure Virtual Network.
+* [Bereitstellen von Hadoop-Clustern in HDInsight](/documentation/articles/hdinsight-provision-clusters/) - Bietet Informationen zur Bereitstellung von Hadoop-Cluster, einschließlich der Informationen zur Verwendung von Azure Virtual Network.
 
-* [Verwenden von Sqoop mit Hadoop in HDInsight](/de-de/documentation/articles/hdinsight-use-sqoop/) - Bietet Informationen zur Verwendung von Sqoop zum Übertragen von Daten mit SQL Server über ein virtuelles Netzwerk.
+* [Verwenden von Sqoop mit Hadoop in HDInsight](/documentation/articles/hdinsight-use-sqoop/)  - Bietet Informationen zur Verwendung von Sqoop zum Übertragen von Daten mit SQL Server über ein virtuelles Netzwerk.
 
 Weitere Informationen zu Azure Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/library/azure/jj156007.aspx).
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

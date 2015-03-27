@@ -1,22 +1,21 @@
 ﻿Dieses Lernprogramm verwendet die Android-App **GetStartedWithData**. Die GUI dieser App ist identisch mit der App aus dem Schnellstart für mobile Dienste in Android, nur werden die hinzugefügten Elemente bei dieser App lokal im Speicher abgelegt. Sie werden den Code zum Persistieren der Daten im Speicher hinzufügen.
 
 
-1. Laden Sie das Repository `mobile-services-samples` von GitHub herunter, indem Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/futures" target="blank">hier</a> und dann auf **Download ZIP** klicken.
+1. Laden Sie das App-Projekt von GitHub herunter, indem Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/androidStudio" target="blank">hier</a> und dann auf **Download ZIP** klicken.
 
-3. Entpacken Sie die heruntergeladene Datei, und notieren Sie sich den Speicherort.
+2. Entpacken Sie die heruntergeladene Datei, und notieren Sie sich den Speicherort, oder verschieben Sie sie in das Verzeichnis der Android Studio-Projekte.
 
-2. Klicken Sie in Eclipse auf **File**, auf **Import**, und erweitern Sie dann **Android**. Klicken Sie auf **Existing Android Code into Workspace** und dann auf **Next**. 
+3. Öffnen Sie Android Studio. Wenn Sie mit einem anderen Projekt arbeiten und es angezeigt wird, schließen Sie das Projekt (**Datei = > Projekt schließen**).
 
- 	![](./media/download-android-sample-code/mobile-services-import-android-workspace.png)
+4. Wählen Sie die Option zum **Öffnen eines vorhandenen Projekts für Android Studio** aus, navigieren Sie zum Projektspeicherort im Ordner *AndroidStudio* von *GettingStartedWithData*, und klicken Sie dann auf **OK**. 
 
-3. Klicken Sie auf **Browse**, navigieren Sie zum Speicherort des erweiterten GitHub-Repositorys, den Sie zuvor notiert haben. Navigieren Sie zum Verzeichnis `GetStartedWithData`, und klicken Sie dann auf das Verzeichnis `Android`. Klicken Sie auf **OK**, und stellen Sie sicher, dass das Projekt `GetStartedWithData` aktiviert ist. Falls Sie das Projekt in Ihren Arbeitsbereich kopieren möchten (empfohlen), markieren Sie das Kontrollkästchen **Projekte in Arbeitsbereich kopieren**. Klicken Sie abschließend auf **Fertig stellen**. 
 
- 	![](./media/download-android-sample-code/mobile-services-import-android-project.png)
+ 	![](./media/mobile-services-android-get-started/android-studio-import-project.png)
 
-	Daraufhin werden die Projektdateien in den aktuellen Arbeitsbereich importiert.
+	Das Projekt ist jetzt einsatzbereit.
  
 >[AZURE.NOTE] Wenn Sie die Beispieldatei, die in der vorherigen Version des SDK für mobile Dienste in Android verwendet wurde, abrufen möchten, können Sie sie [hier][GitHub] herunterladen.
 
 <!-- URLs. -->
 [GitHub]:  http://go.microsoft.com/fwlink/p/?LinkID=282122
-<!--HONumber=42-->
+<!--HONumber=47-->

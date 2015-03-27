@@ -1,6 +1,20 @@
-﻿<properties title="Azure Elastic Scale Glossary" pageTitle="Azure Elastic Scale - Glossar" description="Erklärung von Begriffen, die für das Elastic Scale-Feature der Azure SQL-Datenbank verwendet werden" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+﻿<properties 
+	pageTitle="Azure Elastic Scale - Glossar" 
+	description="Begriffserläuterungen zum Elastic Scale-Feature der Azure SQL-Datenbank" 
+	services="sql-database" 
+	documentationCenter="" 
+	manager="jhubbard" 
+	authors="sidneyh" 
+	editor=""/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
+<tags 
+	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/16/2015" 
+	ms.author="sidneyh@microsoft.com"/>
 
 # Elastic Scale - Glossar
 Die folgenden Begriffe werden für das Elastic Scale-Feature der Azure SQL-Datenbank definiert.
@@ -9,54 +23,54 @@ Die folgenden Begriffe werden für das Elastic Scale-Feature der Azure SQL-Daten
 
 **Datenbank**: Eine Azure SQL-Datenbank. 
 
-**Datenabhängiges Routing**: Die Funktionalität, mit der eine Anwendung mit einem bestimmten Sharding-Schlüssel eine Verbindung mit einem Shard herzustellen kann. Siehe auch **Abfragen mehrerer Shards**.
+**Datenabhängiges Routing**: Die Funktionen, die es einer Anwendung ermöglicht, eine Verbindung mit einer Shard unter Verwendung eines bestimmten Sharding-Schlüssels herzustellen. Vgl. **Abfragen mehrerer Shards**.
 
-**Globale Shard Map**: Der Satz von Zuordnungen zwischen Sharding-Schlüsseln und den entsprechenden Shards innerhalb eines **Shard-Satzes**. Die GSM ist wird im **Shard Map Manager** gespeichert. Siehe auch **Lokale Shard Map**.
+**Globale Shard-Zuordnung**: Die Gruppe von Zuordnungen zwischen Sharding-Schlüsseln und den zugehörigen Shards in einer **Shard-Gruppe**. Die globale Shard-Zuordnung wird im **Shard-Zuordnungs-Manager** gespeichert. Vgl. **lokale Shard-Zuordnung**.
 
-**Listen-Shard-Map**: Eine Shard Map, in der Sharding-Schlüssel einzeln zugeordnet werden. Siehe auch **Bereichs-Shard-Map**.   
+**Listen-Shard-Zuordnung**: Eine Shard-Zuordnung, in der die Sharding-Schlüssel einzeln zugeordnet sind. Vgl. **Bereichs-Shard-Zuordnung**.   
 
-**Lokale Shard Map**: Die lokale Shard Map wird auf einem Shard gespeichert und enthält Zuordnungen für die Shardlets, die sich auf dem Shard befinden.
-
-
-**Abfragen mehrerer Shards**: Die Möglichkeit, eine Abfrage für mehrere Shards auszustellen. Die Ergebnisse werden über die UNION ALL-Semantik zurückgegeben (auch als "Auffächerungsabfrage" bezeichnet). Siehe auch **Datenabhängiges Routing**.
-
-**Bereichs-Shard-Map**: Eine Shard Map, in der die Shard-Verteilungsstrategie auf mehreren Bereichen mit zusammenhängenden Werten basiert. 
+**Lokale Shard-Zuordnung**: Die lokale Shard Map wird auf einem Shard gespeichert und enthält Zuordnungen für die Shardlets, die sich auf dem Shard befinden.
 
 
-**Referenztabellen**: Tabellen, die nicht freigegeben, aber über mehrere Shards repliziert werden. 
+**Abfrage mehrerer Shards**: Die Möglichkeit, eine Abfrage für mehrere Shards auszustellen. Die Ergebnisse werden über die UNION ALL-Semantik zurückgegeben (auch als "Auffächerungsabfrage" bezeichnet). Vgl. **Datenabhängiges Routing**.
 
-**Shard**: Eine Azure SQL-Datenbank, in der Daten aus einem Shard-Dataset gespeichert werden. 
+**Bereichs-Shard-Zuordnung**: Eine Shard-Zuordnung, in der die Shard-Verteilungsstrategie auf mehreren Bereichen zusammenhängender Werte basiert. 
 
-**Shard-Elastizität** (SE): Die Möglichkeit, sowohl eine **horizontale Skalierung** als auch eine **vertikale Skalierung** durchzuführen.
 
-**Shard-Tabellen**: Tabellen, für die ein Shard konfiguriert wurde, d. h. deren Daten auf der Basis ihrer Sharding-Schlüsselwerte über Shards verteilt sind. 
+**Verweistabellen**: Tabellen, die nicht partitioniert sind, aber über mehrere Shards hinweg repliziert werden. 
 
-**Sharding-Schlüssel**: Ein Spaltenwert, der bestimmt, wie Daten über Shards verteilt werden. Folgende Werttypen sind zulässig: int, bigint, varbinary oder uniqueidentifier. 
+**Shard**: Eine Azure SQL-Datenbank, in der die Daten aus einem partitionierten Dataset gespeichert werden. 
 
-**Shard-Satz**: Die Sammlung von Shards, die derselben Shard Map im Shard Map Manager zugeordnet sind.  
+**Shard-Elastizität** (SE): Die Fähigkeit, sowohl **horizontal zu skalieren** als auch **vertikal zu skalieren**.
 
-**Shardlet**: Alle mit einem einzigen Wert eines Sharding-Schlüssel auf einem Shard verbundenen Daten. Ein Shardlet ist die kleinste Einheit der Datenverschiebung, die bei der erneuten Verteilung von Shard-Tabellen möglich ist. 
+**Shardtabellen**: Tabellen, die partitioniert sind, deren Daten also anhand ihrer Sharding-Schlüsselwerte über Shards verteilt werden. 
 
-**Shard Map**: Der Satz von Zuordnungen zwischen Sharding-Schlüsseln und den entsprechenden Shards.
+**Sharding-Schlüssel**: Ein Spaltenwert, der bestimmt, wie Daten über Shards hinweg verteilt werden. Folgende Werttypen sind zulässig: int, bigint, varbinary oder uniqueidentifier. 
 
-**Shard Map Manager**: Ein Verwaltungsobjekt und Datenspeicher mit den Shard Maps, Shard-Standorten und Zuordnungen für einen oder mehrere Shard-Sätze.
+**Shard-Gruppe**: Die Auflistung von Shards, die der gleichen Shard-Zuordnung im Shard-Zuordnungs-Manager zugeordnet sind.  
+
+**Shardlet**: Alle Daten, die mit einem Wert eines Sharding-Schlüssel in einer Shard verknüpft sind. Ein Shardlet ist die kleinste Einheit der Datenverschiebung, die bei der erneuten Verteilung von Shard-Tabellen möglich ist. 
+
+**Shard-Zuordnung**: Der Satz von Zuordnungen zwischen Sharding-Schlüsseln und den entsprechenden Shards.
+
+**Shard-Zuordnungs-Manager**: Ein Verwaltungsobjekt und Datenspeicher mit den Shard Maps, Shard-Standorten und Zuordnungen für einen oder mehrere Shard-Sätze.
 
 ![Mappings][2]
 
 
-##Verben
+## Verben
 
-**Horizontales Skalieren**: Der Prozess des horizontalen Hochskalierens (oder Herunterskalierens) einer Sammlung von Shards, indem einer Shard Map Shards hinzugefügt oder daraus entfernt werden.
+**Horizontale Skalierung**: Der Prozess des horizontalen Hochskalierens (oder Herunterskalierens) einer Sammlung von Shards, indem einer Shard Map Shards hinzugefügt oder daraus entfernt werden.
 
 **Zusammenführen**: Der Prozess des Verschiebens von Shardlets von zwei Shards zu einem Shards und das entsprechende Aktualisieren der Shard Map.
 
-**Shardlet verschieben**: Der Prozess des Verschiebens eines einzigen Shardlets an einen anderen Shard. 
+**Shardlet-Verschiebung**: Das Verschieben einer einzelnen Shardlet in eine andere Shard. 
 
-**Shard konfigurieren**: Der Prozess des horizontalen Partitionierens von identisch strukturierten Daten über mehrere Datenbanken auf der Basis eines Sharding-Schlüssels.
+**Shard**: Der Prozess des horizontalen Partitionierens von identisch strukturierten Daten über mehrere Datenbanken auf der Basis eines Sharding-Schlüssels.
 
-**Aufteilen**: Der Prozess des Verschiebens mehrerer Shardlets von einem Shard zu einem anderen (normalerweise neuen) Shard. Als Aufteilungspunkt wird ein Sharding-Schlüssel vom Benutzer bereitgestellt.
+**Aufteilen**: Das Verschieben mehrerer Shardlets aus einer Shard in eine andere (in der Regel neue) Shard. Als Aufteilungspunkt wird ein Sharding-Schlüssel vom Benutzer bereitgestellt.
 
-**Vertikal skalieren**: Der Prozess des Hochskalierens (oder Herunterskalierens) der Leistungsebene eines einzelnen Shards. Dazu zählt beispielsweise das Ändern eines Shards von Standard zu Premium (wie aus Leistungsgründen erforderlich). 
+**Vertikales Skalieren**: Das Heraufskalieren (oder Herunterskalieren) der Leistungsstufe einer einzelnen Shard. Dazu zählt beispielsweise das Ändern eines Shards von Standard zu Premium (wie aus Leistungsgründen erforderlich). 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]  
 
@@ -66,4 +80,4 @@ Die folgenden Begriffe werden für das Elastic Scale-Feature der Azure SQL-Daten
 
 
 
-<!--HONumber=35.1-->
+<!--HONumber=47-->

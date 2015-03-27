@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Python-Web-App mit Django auf Mac - Azure-Lernprogramm" 
 	description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe eines virtuellen Linux-Computers eine Django-basierte Website auf Azure hosten können." 
 	services="virtual-machines" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="09/25/2014" 
+	ms.date="02/05/2015" 
 	ms.author="huvalo"/>
 
 
@@ -22,7 +22,7 @@
 
 # Django-Webanwendung "Hello World" (Mac, Linux)
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/develop/python/tutorials/web-app-with-django/" title="Windows">Windows</a><a href="/de-de/develop/python/tutorials/django-hello-world-(maclinux)/" title="Mac/Linux" class="current">Mac/Linux</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/develop/python/tutorials/web-app-with-django/" title="Windows">Windows</a><a href="/develop/python/tutorials/django-hello-world-(maclinux)/" title="Mac/Linux" class="current">Mac/Linux</a></div>
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website unter Windows 
 Azure mithilfe eines virtuellen Linux-Computers hosten können. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Django-basierte Anwendung, die in der Cloud ausgeführt wird.
@@ -32,7 +32,7 @@ Sie erhalten Informationen zu folgenden Themen:
 * Einrichten eines virtuellen Azure-Computers als Host von Django. In diesem Lernprogramm wird diese Aufgabe für **Linux** beschrieben; das Gleiche gilt jedoch auch für eine Windows Server-VM, die in Azure gehostet wird. 
 * Erstellen einer neuen Django-Anwendung unter Linux.
 
-Im Rahmen dieses Lernprogramms erstellen Sie eine einfache
+Im Rahmen dieses Lernprogramms erstellen Sie eine einfache "Hello World"-Webanwendung.
 "Hello World"-Webanwendung. Die Anwendung wird auf einem virtuellen Azure-Computer gehostet.
 
 Unten finden Sie einen Screenshot der vollständigen Anwendung:
@@ -43,15 +43,15 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ## Erstellen und Konfigurieren eines virtuellen Azure-Computers als Host von Django
 
-1. Befolgen Sie die [hier][portal-vm] aufgeführten Anweisungen, um einen virtuellen Azure-Computer der  *Ubuntu Server 14.04 LTS*-Verteilung zu erstellen.
+1. Befolgen Sie die [hier][portal-vm] aufgeführten Anweisungen, um einen virtuellen Azure-Computer der *Ubuntu Server 14.04 LTS*-Verteilung zu erstellen.
 
-  **Hinweis:** Sie müssen  *nur* den virtuellen Computer erstellen. Hören Sie mit Abschnitt  *Anmelden bei einem virtuellen Computer nach dessen Erstellung* auf.
+  **Hinweis:** Sie müssen *nur* den virtuellen Computer erstellen. Stoppen Sie im Abschnitt *Anmelden bei einem virtuellen Computer nach dessen Erstellung*.
 
 1. Weisen Sie Azure an, den Port **80**-Datenverkehr aus dem Web an Port **80** auf dem virtuellen Computer zu leiten.
-	* Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte  *ENDPUNKTE*.
-	* Klicken Sie unten auf der Seite auf  *HINZUFÜGEN*.
+	* Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte *ENDPUNKTE*.
+	* Klicken Sie unten auf der Seite auf *HINZUFÜGEN*.
 	![add endpoint](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
-	* Öffnen Sie  *ÖFFENTLICHER PORT 80* des  *TCP*-Protokolls als  *PRIVATER PORT 80*.
+	* Öffnen Sie den *TCP* des *PUBLIC PORT 80*-Protokolls als *PRIVATE PORT 80*.
 	![port80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
 
 ## <a id="setup"> </a>Einrichten der Entwicklungsumgebung
@@ -107,7 +107,7 @@ Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder Dj
 
 ## Einrichten von Apache
 
-1.  Erstellen Sie eine virtuelle Apache-Hostkonfigurationsdatei **/etc/apache2/sites-available/helloworld.conf**. Legen Sie den Inhalt wie folgt fest, und ersetzen Sie  *yourVmUrl* durch die tatsächliche URL des verwendeten Computers (z. B.  *pyubuntu.cloudapp.net*).
+1.  Erstellen Sie eine virtuelle Apache-Hostkonfigurationsdatei **/etc/apache2/sites-available/helloworld.conf**. Legen Sie den Inhalt wie folgt fest, und ersetzen Sie *yourVmUrl* durch die tatsächliche URL des verwendeten Computers (z. B. *pyubuntu.cloudapp.net*).
 
 		<VirtualHost *:80>
 		ServerName yourVmUrl
@@ -133,9 +133,6 @@ Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder Dj
 Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virtuellen Azure-Computer herunter, und/oder entfernen Sie diesen, sodass die Ressourcen für andere Lernprogramme zur Verfügung stehen und anfallende Kosten für die Verwendung von Azure vermieden werden.
 
 
-[portal-vm]: /de-de/manage/linux/tutorials/virtual-machine-from-gallery/
+[portal-vm]: /manage/linux/tutorials/virtual-machine-from-gallery/
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

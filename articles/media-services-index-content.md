@@ -19,17 +19,26 @@
 
 # Indizieren von Mediendateien mit Azure Media Indexer
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
 
 Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. Sie können eine einzelne Mediendatei oder mehrere Mediendateien in einem Batch verarbeiten. Sie können auch öffentlich im Internet verfügbare Dateien indizieren, indem Sie die URLs der Dateien in der Manifestdatei angeben.
 
 >[AZURE.NOTE] Stellen Sie beim Indizieren von Inhalten sicher, dass Mediendateien verwendet werden, die sehr klare Sprache enthalten (ohne Hintergrundmusik, Lärm, Effekte oder Mikrofonrauschen). Die folgenden Beispiele sind geeignete Inhalte: aufgezeichnete Besprechungen, Vorträge oder Präsentationen. Folgende Inhalte sind für die Indizierung ggf. nicht geeignet: Filme, Fernsehsendungen, Material mit gemischten Audio- und Soundeffekten, schlecht aufgezeichnete Inhalte mit Hintergrundgeräuschen (Rauschen).
->
-Ein Indizierungsauftrag generiert (neben anderen Dateien) SAMI- und TTML-Ausgabedateien.  SAMI und TTML enthalten ein Tag namens "Recognizability", das einen Indizierungsauftrag basierend darauf bewertet, wie gut die Sprache im Quellvideo erkennbar ist.  Sie können den Wert von "Recognizability" nutzen, um Dateien auf ihre Verwendbarkeit zu prüfen. Eine niedrige Bewertung steht für schlechte Indizierungsergebnisse aufgrund der Audioqualität.
+
+
+Ein Indizierungsauftrag erzeugt vier Ausgaben für jede Indexdatei:
+
+- Geschlossene Untertiteldatei im SAMI-Format.
+- Geschlossene Untertiteldatei im TTML-Format (Timed Text Markup Language).
+
+	SAMI und TTML enthalten ein Tag namens "Recognizability", das einen Indizierungsauftrag basierend darauf bewertet, wie gut die Sprache im Quellvideo erkennbar ist.  Sie können den Wert von "Recognizability" nutzen, um Dateien auf ihre Verwendbarkeit zu prüfen. Eine niedrige Bewertung steht für schlechte Indizierungsergebnisse aufgrund der Audioqualität.
+- Schlüsselwortdatei (XML).
+- AID-Datei (Audio Indexing Blob) zur Verwendung mit SQL Server.
+	
+	Weitere Informationen finden Sie unter [Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/).
+
 
 Dieses Thema zeigt Ihnen das Erstellen von Indizierungsaufträgen zum **Indizieren eines Medienobjekts**, **Indizieren mehrerer Dateien** und **Indizieren von öffentlich verfügbaren Dateien im Internet**.
-
-Die unterstützten Sprachen sind im Abschnitt **Unterstützte Sprachen** angegeben.
 
 Die neuesten Updates zu Azure Media Indexer finden Sie in den [Media Services-Blogs](http://azure.microsoft.com/blog/topics/media-services/).
 
@@ -39,7 +48,7 @@ Sie können weitere Details für Ihre Indizierungsaufgaben mithilfe einer Aufgab
 
 Sie können auch mehrere Mediendateien gleichzeitig mithilfe einer Manifestdatei verarbeiten.
 
-Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/de-de/library/azure/dn783454.aspx).
+Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 
 ## Indizieren eines Medienobjekts
 
@@ -57,7 +66,7 @@ Beachten Sie, dass die Mediendatei mit allen Standardeinstellungen indiziert wir
 	    // Declare a new job.
 	    IJob job = _context.Jobs.Create("My Indexing Job");
 	
-	    // Get a reference to the Windows Azure Media Indexer.
+	    // Get a reference to the Azure Media Indexer.
 	    string MediaProcessorName = "Azure Media Indexer",
 	    IMediaProcessor processor = GetLatestMediaProcessorByName(MediaProcessorName);
 	
@@ -148,7 +157,7 @@ Die AIB (Ausgabeindizierungs-Blob)-Datei ist eine binäre Datei, die in Microsof
 <br/>
 Sie erfordert die Installation des Indexer SQL-Add-Ons auf einem Computer unter Microsoft SQL Server 2008 oder höher. Das Durchsuchen der AIB-Datei mithilfe der Microsoft SQL Server-Volltextsuche bietet genauere Suchergebnisse als das Durchsuchen der mittels WAMI generierten Untertiteldateien. Der Grund hierfür ist, dass die AIB-Datei Wortalternativen enthält, die ähnlich klingen, wohingegen Untertiteldateien das höchste Konfidenzwort für jedes Segment der Audiospur enthalten. Wenn die Suche nach gesprochenen Wörtern von größter Wichtigkeit ist, dann empfiehlt sich die Verwendung der AIB-Datei zusammen mit Microsoft SQL Server.
 <br/><br/>
-Klicken Sie zum Herunterladen des Add-Ons auf <a href="http://aka.ms/indexersql">Azure Media Indexer SQL-Add-On</a>.
+Klicken Sie zum Herunterladen des Add-Ons auf <a href="http://aka.ms/indexersql">Azure Media Indexer-SQL-Add-On</a>.
 <br/><br/>
 Es ist auch möglich, andere Suchmaschinen wie Apache Lucene/Solr zu verwenden, um das Video einfach auf Basis der Untertitel- und Stichwort-XML-Dateien zu indizieren. Dies hat jedoch ungenauere Suchergebnisse zur Folge.</td></tr>
 <tr><td>InputFileName.smi<br/>InputFileName.ttml</td>
@@ -171,7 +180,7 @@ Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht de
 
 Mit der folgenden Methode werden mehrere Mediendateien als Medienobjekt hochgeladen und ein Auftrag zum Indizieren all dieser Dateien in einem Batch erstellt.
 
-Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Medienobjekt hochgeladen. Die Manifestdatei enthält die Liste sämtlicher Medienobjektdateien. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/de-de/library/azure/dn783454.aspx).
+Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Medienobjekt hochgeladen. Die Manifestdatei enthält die Liste sämtlicher Medienobjektdateien. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 	
 	static bool RunBatchIndexingJob(string[] inputMediaFiles, string outputFolder)
 	{
@@ -189,7 +198,7 @@ Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Medienobj
 	    // Declare a new job.
 	    IJob job = _context.Jobs.Create("My Indexing Job - Batch Mode");
 	
-	    // Get a reference to the Windows Azure Media Indexer.
+	    // Get a reference to the Azure Media Indexer.
 	    string MediaProcessorName = "Azure Media Indexer";
 	    IMediaProcessor processor = GetLatestMediaProcessorByName(MediaProcessorName);
 	
@@ -275,7 +284,7 @@ Alias: Entsprechender Ausgabedateiname.
 <br/><br/>
 MediaLength: Länge der Eingabemediendatei in Sekunden. Kann 0 sein, wenn ein Fehler bei dieser Eingabe auftritt.
 <br/><br/>
-Fehler: Gibt an, ob diese Mediendatei erfolgreich indiziert wurde. 0 für Erfolg, ansonsten fehlerhaft. Bei konkreten Fehlern schlagen Sie unter  <a href="#error_codes">Fehlercodes</a> nach.
+Fehler: Gibt an, ob diese Mediendatei erfolgreich indiziert wurde. 0 für Erfolg, ansonsten fehlerhaft. Informationen zu einzelnen Fehlern finden Sie unter <a href="#error_codes">Fehlercodes</a>.
 </td></tr>
 <tr><td>Media_1.aib </td>
 <td>Datei #0 - AIB-Datei</td></tr>
@@ -298,7 +307,7 @@ Es werden die gleichen Ausgaben (wie bei erfolgreichen Aufträgen) generiert. Si
 
 ## Indizieren von Dateien aus dem Internet
 
-Sie können auch öffentlich verfügbare Mediendateien im Internet indizieren, ohne sie in Azure Storage zu kopieren. Sie können die Manifestdatei verwenden, um die URLs der Mediendateien anzugeben. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/de-de/library/azure/dn783454.aspx).
+Sie können auch öffentlich verfügbare Mediendateien im Internet indizieren, ohne sie in Azure Storage zu kopieren. Sie können die Manifestdatei verwenden, um die URLs der Mediendateien anzugeben. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 
 Beachten Sie, dass HTTP- und HTTPS-URL-Protokolle unterstützt werden.
 
@@ -318,7 +327,7 @@ Mit der folgenden Methode und Konfiguration wird ein Auftrag zum Indizieren eine
 	    // Declare a new job.
 	    IJob job = _context.Jobs.Create("My Indexing Job - Public URL");
 	
-	    // Get a reference to the Windows Azure Media Indexer.
+	    // Get a reference to the Azure Media Indexer.
 	    IMediaProcessor processor = GetLatestMediaProcessorByName(MediaProcessorName);
 	
 	    // Read configuration.
@@ -370,7 +379,7 @@ Beschreibungen der Ausgabedateien, finden Sie unter [Ausgabedateien](#output_fil
 
 Der Indexer unterstützt die Standardauthentifizierung mit Benutzernamen und Kennwort beim Herunterladen von Internetdateien über HTTP oder HTTPS.
 
-Sie können den **Benutzernamen** und das **Kennwort** in der Aufgabenkonfiguration angeben, wie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/de-de/library/azure/dn783454.aspx) beschrieben.
+Sie können in der Aufgabenkonfiguration Werte für **Benutzername** und **Kennwort** festlegen, wie beschrieben unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 
 ### <a id="error_codes"></a>Fehlercodes
 
@@ -395,9 +404,13 @@ Kein Audiostream in den Eingabemedien</td></tr>
 </table>
 
 
-## Unterstützte Sprachen
+## <a id="supported_languages"></a>Unterstützte Sprachen
 
 Derzeit wird nur Englisch unterstützt.
+
+## Verwandte Links
+
+[Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/)
 
 <!-- Anchors. -->
 
@@ -405,4 +418,4 @@ Derzeit wird nur Englisch unterstützt.
 
 <!-- URLs. -->
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

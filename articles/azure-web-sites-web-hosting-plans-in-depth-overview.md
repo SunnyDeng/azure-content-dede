@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="Webhosting-Pläne für Azure-Websites: ausführliche Übersicht – Windows Azure-Featurehandbuch" 
+	pageTitle="Webhosting-Pläne für Azure-Websites: ausführliche Übersicht - Microsoft Azure-Featurehandbuch" 
 	description="Erfahren Sie, wie Webhostingpläne für Azure-Websites funktionieren und wie Ihre Managementerfahrung davon profitiert." 
 	services="web-sites" 
 	documentationCenter="" 
@@ -16,13 +16,13 @@
 	ms.date="11/17/2014" 
 	ms.author="byvinyal, yochayk"/>
 </br>
-#Webhosting-Pläne für Azure-Websites: ausführliche Übersicht
+# Webhosting-Pläne für Azure-Websites: ausführliche Übersicht#
 </br>
 Webhostingpläne (WHPs) stellen einen Satz an Funktionen und Kapazitäten dar, die Sie über Ihre Websites freigeben können.  Webhostingpläne unterstützen die 4 Preisebenen für Azure-Websites (Kostenlos, Freigegeben, Basic und Standard), wobei jede Ebene eigene Funktionen bietet.  Websites im gleichen Abonnement, in der gleichen Ressourcengruppe und am gleichen geografischen Standort können sich einen Webhostingplan teilen. Alle Websites mit gemeinsamem Webhostingplan können den Funktionsumfang nutzen, der durch die Ebene des Plans definiert ist. Alle einem bestimmten Webhostingplan zugeordneten Websites werden auf den Ressourcen ausgeführt, die im Webhostingplan definiert sind. Wenn Ihr Webhostingplan z. B. für die Verwendung zweier virtueller Computer der Größe "klein" konfiguriert ist, werden alle diesem Plan zugeordneten Websites auf beiden virtuellen Computern ausgeführt. Wie immer bei Azure Websites sind die virtuellen Computer, auf dem die Websites ausgeführt werden, vollständig verwaltet und hoch verfügbar sind.
 </br>
 In diesem Artikel erfahren Sie die Hauptmerkmale, z. B. Ebene und Skalierung eines Webhostingplans und wie sie zum Verwalten von Websites beitragen. 
 </br>
-##Websites, Webhostingpläne und Ressourcengruppen
+## Websites, Webhostingpläne und Ressourcengruppen##
 </br>
 Jede Website kann nur einem Webhostingplan gleichzeitig zugeordnet werden. Ein Webhostingplan ist einer Ressourcengruppe zugeordnet. Ressourcengruppen sind ein neues Konzept in Azure, das als Lebenszyklusgrenze für alle darin enthaltenen Ressourcen fungiert. Mit Ressourcengruppen können Sie alle Ihre Ressourcen in einer Anwendung gemeinsam verwalten. 
 </br>
@@ -36,7 +36,7 @@ Die Möglichkeit, mehrere Webhostingpläne in einer einzelnen Ressourcengruppen 
 </br>
 Mehrere Webhostingpläne in einer einzelnen Ressourcengruppen ermöglichen Ihnen die Definition einer Anwendung, die sich über Regionen erstreckt. Eine hochverfügbare Website in zwei Regionen umfasst z. B. zwei Webhostingpläne, je eine pro Region, und je eine Website pro Webhostingplan. Ein einer solchen Situation werden alle Websites einer einzigen Ressourcengruppe zugeordnet, die eine Anwendung definiert.  Dank einer einzigen Ansicht einer Ressourcengruppe mit mehreren Webhostingplänen und mehreren Websites können Sie diese Websites schnell und einfach verwalten, steuern und überwachen. Neben der Verwaltung von Website-Ressourcen und Websites für eine Anwendung können Sie auch sonstige verwandte Azure-Ressourcen zuordnen, wie z. B. Azure SQL-Datenbanken und Teamprojekte. 
 </br>
-##Wann sollte ich eine neue Ressourcengruppe erstellen, und wann einen neuen Webhostingplan?
+## Wann sollte ich eine neue Ressourcengruppe erstellen, und wann einen neuen Webhostingplan?##
 </br>
 Bei der Erstellung einer neuen Website sollten Sie die Erstellung einer neuen Ressourcengruppe erwägen, wenn die neue Website eine neue Webanwendung darstellt. In diesem Fall sollten Sie eine neue Ressourcengruppe, einen zugeordneten Webhostingplan und eine Website erstellen.  Beim Erstellen einer solchen neuen Website im neuen Azure-Vorschauportal mithilfe des Katalogs oder der neuen Option "Website + SQL" erstellt das Portal standardmäßig eine neue Ressourcengruppe und einen Webhostingplan für Ihre Website. Wenn Sie möchten, können Sie diese Standardeinstellungen jedoch überschreiben.
 </br>
@@ -52,7 +52,7 @@ Wenn Sie eine neue Website in einer anderen Region erstellen möchten und diese 
 </br>
 Unbedingt zu beachten ist, dass Webhostingpläne oder Websites nicht zwischen Ressourcengruppen verschoben werden können. Sie können auch keine Website zwischen Webhostingplänen verschieben, die sich in unterschiedlichen Regionen befinden. 
 </br>
-##Vorhandene Ressourcengruppe im Azure-Vorschauportal
+## Vorhandene Ressourcengruppe im Azure-Vorschauportal##
 </br>
 Wenn Sie bereits vorhandene Azure-Websites haben, werden Sie feststellen, dass all Ihre Websites im Azure-Vorschauportal angezeigt werden. Sie können Ihre gesamte Website als flache Liste anzeigen, indem Sie auf die Schaltfläche **Durchsuchen** im linken Navigationsbereich klicken und **Websites** auswählen:
 </br>
@@ -78,7 +78,7 @@ Da jede Website einem Webhostingplan zugeordnet werden muss, haben wir die stand
 </br>
 Der Name dieses Webhostingplans ist **DefaultServerFarm**. Dieser Name wurde gewählt, um eine Legacy-API zu unterstützen. Der Name **ServerFarm** kann etwas irreführend sein, da er sich auf einen **Webhostingplan** bezieht. Es ist jedoch wichtig, zu verstehen, dass dies der Name eines Webhostingplans und nicht einer eigenen Entität ist. 
 </br>
-##FAQ für Webhostingpläne
+## FAQ für Webhostingpläne##
 </br>
 **Frage**: Wie kann ich einen Webhostingplan erstellen?
 </br>
@@ -93,7 +93,7 @@ Um dies mit der UI in der neuen **Azure-Portalvorschau** durchzuführen, klicken
 ![Website, Web Hosting Plan and pricing tier blades](./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview06.png)
 </br>
 </br>
-In diesem Beispiel werden wir eine neue Website namens **contosomarketing** erstellen und sie im neuen Webhostingplan namens **contoso** platzieren. Wählen Sie für diesen Webhostingplan die Preisebene **Klein Standard** aus. Ausführliche Preiskategorien für Webhostingpläne und die bei jedem Besuch bereitgestellten Funktionen, Preise und Skalierungen finden Sie in den (http://go.microsoft.com/?linkid=9845586)[Spezifikationen der Azure-Websites-Webhostingpläne]. 
+In diesem Beispiel werden wir eine neue Website namens **contosomarketing** erstellen und sie im neuen Webhostingplan namens **contoso** platzieren. Wählen Sie für diesen Webhostingplan die Preisebene **Klein Standard** aus. Ausführliche Preiskategorien für Webhostingpläne und die bei jedem Besuch bereitgestellten Funktionen, Preise und Skalierungen finden Sie in den http://go.microsoft.com/?linkid=9845586)[Spezifikationen der Azure-Websites-Webhostingpläne](. 
 </br>
 Außerdem ist darauf hinzuweisen, dass ein Webhostingplan auch im vorhandenen Azure-Portal erstellt werden kann. Dies erfolgt als Teil des **Schnellerstellungs**-Assistenten, indem Sie **Neuen Webhostingplan erstellen** aus dem Dropdownmenü **WEBHOSTINGPLAN** auswählen:
 </br>
@@ -198,10 +198,8 @@ Folgende Metriken stehen zur Verfügung:
 </br>
 Diese Metriken zeigen die durchschnittliche Nutzung in den Instanzen, die zu einem Webhostingplan gehören. All diese Metriken können zum Einrichten von Alarmen sowie für Regeln zur automatischen Skalierung verwendet werden.
 </br>
-##Schlussfolgerungen
+## Schlussfolgerungen##
 </br>
-Webhostingpläne stellen einen Satz an Funktionen und Kapazitäten dar, die Sie über Ihre Websites freigeben können.  Webhostingpläne bieten die Flexibilität, bestimmte Websites zu einem bestimmten Ressourcensatz (virtuellen Computern) zuzuordnen, und die Ressourcenzuteilung und -Nutzung für Websites weiter zu optimieren.
+Webhostingpläne stellen einen Satz an Funktionen und Kapazitäten dar, die Sie über Ihre Websites freigeben können.  Webhostingpläne bieten die Flexibilität, bestimmte Websites zu einem bestimmten Ressourcensatz (virtuellen Computern) zuzuordnen, und die Ressourcenzuteilung und -Nutzung für Websites weiter zu optimieren. 
 
-<!--HONumber=35.2-->
-
-<!--HONumber=46--> 
+<!--HONumber=47-->

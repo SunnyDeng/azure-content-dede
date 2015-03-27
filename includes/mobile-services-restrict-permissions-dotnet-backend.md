@@ -1,31 +1,23 @@
 ﻿
 
-Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts auf Clients beschränkt, die den Anwendungsschlüssel vorweisen. Der sichere Zugriff auf die Ressourcen ist dadurch allerdings nicht gegeben. Um den sicheren Zugriff auf die Ressourcen zu gewährleisten, müssen Sie den Zugriff ausschließlich auf authentifizierte Clients beschränken.
+Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts auf Clients beschränkt, die den Anwendungsschlüssel vorweisen. Der sichere Zugriff auf die Ressourcen ist dadurch allerdings nicht gegeben. Um die Ressourcen zu schützen, müssen Sie den Zugriff auf authentifizierte Clients einschränken.
 
-1. Öffnen Sie in Visual Studio das Projekt, in dem Ihr mobiler Dienst enthalten ist. 
+1. Öffnen Sie in Visual Studio Ihr Projekt für mobile Dienste, erweitern Sie den Ordner "Controllers", und öffnen Sie **TodoItemController.cs**. Die Klasse **TodoItemController** implementiert den Datenzugriff für die Tabelle "TodoItem". Fügen Sie die folgende `using`-Anweisung ein:
 
-2. Erweitern Sie im Projektmappen-Explorer den Ordner "Controllers", und öffnen Sie die Projektdatei "TodoItemController.cs".
+		using Microsoft.WindowsAzure.Mobile.Service.Security;
 
-	Die Klasse **TodoItemController** implementiert den Datenzugriff auf die Tabelle "TodoItem". 
-
-3. Fügen Sie die folgende Anweisung `using` oben in die Codeseite ein:
-
-		Verwenden von Microsoft.WindowsAzure.Mobile.Service.Security;
-
-4. Wenden Sie das folgende Attribut "AuthorizeLevel" für die Klasse **TodoItemController** an:
+2. Übernehmen Sie das folgende "AuthorizeLevel"-Attribut für die Klasse **TodoItemController**: Dadurch wird sichergestellt, dass alle Vorgänge für die Tabelle "TodoItem" einen authentifizierten Benutzer erfordern.
 
 		[AuthorizeLevel(AuthorizationLevel.User)]
 
-	Dadurch wird sichergestellt, dass alle Vorgänge für die Tabelle **TodoItem** einen authentifizierten Benutzer erfordern. 
-
 	>[AZURE.NOTE]Wenden Sie das Attribut "AuthorizeLevel" für einzelne Methoden an, um bestimmte Berechtigungsebenen für die Methoden festzulegen, die vom Controller eingeblendet werden.
 
-5. Wenn Sie die Authentifizierung lokal debuggen möchten, erweitern Sie den Ordner "App_Start", öffnen Sie die Projektdatei "WebApiConfig.cs", und fügen Sie dann den folgenden Code der **Register**-Methode hinzu:
+3. Wenn Sie die Authentifizierung lokal debuggen möchten, erweitern Sie den Ordner `App_Start`, öffnen Sie die Projektdatei **WebApiConfig.cs**, und fügen Sie anschließend den folgenden Code der Methode **Registrieren** hinzu:  
 
 		config.SetIsHosted(true);
-	
-	Daraufhin wird das lokale mobile Dienstprojekt so ausgeführt, als ob dieses in Azure gehostet wird. Die AuthorizeLevel-Einstellungen werden dabei auch berücksichtigt. Ohne diese Einstellung sind alle HTTP-Anforderungen an *localhost* ohne Authentifizierung trotz der AuthorizeLevel-Einstellung zulässig.  
 
-6. Veröffentlichen Sie Ihr Dienstprojekt erneut.
+	Daraufhin wird das lokale mobile Dienstprojekt so ausgeführt, als ob dieses in Azure gehostet wird. Die *AuthorizeLevel*-Einstellungen werden dabei auch berücksichtigt. Ohne diese Einstellung sind sämtliche HTTP-Anforderungen an "localhost" ohne Authentifizierung trotz der *AuthorizeLevel*-Einstellung zulässig. 
 
-<!--HONumber=42-->
+4. Veröffentlichen Sie das Projekt erneut.
+
+<!--HONumber=47-->

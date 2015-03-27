@@ -1,10 +1,10 @@
-﻿## Empfangen von Nachrichten mit EventProcessorHost
+## Empfangen von Nachrichten mit EventProcessorHost
 
-**EventProcessorHost** ist eine .NET-Klasse, die dem Empfang von Ereignissen von Event Hubs durch die Verwaltung von permanenten Prüfpunkten vereinfacht und gleichzeitig die Ereignis-Hubs empfangen. Mit **EventProcessorHost** können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. Dieses Beispiel zeigt, wie **EventProcessorHost** für einen einzelnen Empfänger verwendet wird. Im [Beispiel "Skalieren der Ereignisverarbeitung] wird veranschaulicht, wie **EventProcessorHost** mit mehreren Empfängern verwendet wird.
+**EventProcessorHost** ist eine .NET-Klasse, die dem Empfang von Ereignissen von Ereignis-Hubs durch die Verwaltung von permanenten Prüfpunkten vereinfacht und gleichzeitig die Ereignis-Hubs empfangen. Mit **EventProcessorHost** können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. Dieses Beispiel zeigt, wie **EventProcessorHost** für einen einzelnen Empfänger verwendet wird. Im [Beispiel "Skalieren der Ereignisverarbeitung"] wird veranschaulicht, wie **EventProcessorHost** mit mehreren Empfängern verwendet wird.
 
-Weitere Informationen zu Event Hubs finden Sie im [Event Hubs-Entwicklerhandbuch].
+Weitere Informationen zu Ereignis-Hubs finden Sie im [Ereignis-Hubs-Entwicklerhandbuch].
 
-[EventProcessorHost] ist eine .NET-Klasse, die dem Empfang von Ereignissen von Event Hubs durch die Verwaltung von permanenten Prüfpunkten vereinfacht und gleichzeitig die Ereignis-Hubs empfangen. Mit [EventProcessorHost] können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. Dieses Beispiel zeigt, wie [EventProcessorHost] für einen einzelnen Empfänger verwendet wird. Im [Beispiel "Skalieren der Ereignisverarbeitung] wird veranschaulicht, wie [EventProcessorHost] mit mehreren Empfängern verwendet wird.
+[EventProcessorHost] ist eine .NET-Klasse, die dem Empfang von Ereignissen von Ereignis-Hubs durch die Verwaltung von permanenten Prüfpunkten vereinfacht und gleichzeitig die Ereignis-Hubs empfangen. Mit [EventProcessorHost] können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. Dieses Beispiel zeigt, wie [EventProcessorHost] für einen einzelnen Empfänger verwendet wird. Im [Beispiel "Skalieren der Ereignisverarbeitung"] wird veranschaulicht, wie [EventProcessorHost] mit mehreren Empfängern verwendet wird.
 
 Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkonto] besitzen:
 
@@ -32,7 +32,7 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 
 	![][13]
 
-	Daraufhin wird das <a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost">NuGet-Paket "Azure Service Bus Event Hub - EventProcessorHost"</a> mit allen Abhängigkeiten heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
+	Daraufhin wird das <a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost">NuGet-Paket "Azure Service Bus Ereignis-Hub - EventProcessorHost"</a> mit allen Abhängigkeiten heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
 
 7. Erstellen Sie eine neue Klasse namens **SimpleEventProcessor**, und fügen Sie die folgenden Anweisungen am Dateianfang hinzu:
 
@@ -105,11 +105,12 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
         Console.WriteLine("Receiving. Press enter key to stop worker.");
         Console.ReadLine();
 
-> [AZURE.NOTE] Dieses Lernprogramm verwendet eine einzelne Instanz von [EventProcessorHost]. Um den Durchsatz zu erhöhen, wird empfohlen, dass Sie mehrere Instanzen von [EventProcessorHost] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung] gezeigt. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *all* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt worden sind. Weitere Informationen zu diesen Themen finden Sie unter [Übersicht über Ereignis-Hubs] und [Event Hubs Programming Guide].
+> [AZURE.NOTE] Dieses Lernprogramm verwendet eine einzelne Instanz von [EventProcessorHost]. Um den Durchsatz zu erhöhen, wird empfohlen, dass Sie mehrere Instanzen von [EventProcessorHost] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung] gezeigt. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *all* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt worden sind. Weitere Informationen zu diesen Themen finden Sie unter [Übersicht über Ereignis-Hubs] und [Ereignis-Hubs Programming Guide].
 
 <!-- Links -->
 [Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn821413.aspx
 [Beispiel "Skalieren der Ereignisverarbeitung"]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
+[Skalieren der Ereignisverarbeitung]:https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [Azure-Speicherkonto]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx 
 
@@ -120,5 +121,5 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-[Event Hubs-Entwicklerhandbuch]: http://msdn.microsoft.com/library/azure/dn789972.aspx
-<!--HONumber=42-->
+[Ereignis-Hubs-Entwicklerhandbuch]: http://msdn.microsoft.com/library/azure/dn789972.aspx
+<!--HONumber=47-->

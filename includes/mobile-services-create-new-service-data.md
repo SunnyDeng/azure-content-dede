@@ -2,7 +2,7 @@
 
 Als Nächstes erstellen Sie einen mobilen Dienst, um die In-Memory-Liste für die Datenspeicherung zu ersetzen. Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstellen.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an. 
+1. Melden Sie sich am [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an. 
 2.	Klicken Sie am unteren Rand des Navigationsbereichs auf **+ NEU**.
 
 	![plus-new](./media/mobile-services-create-new-service-data/plus-new.png)
@@ -34,4 +34,4 @@ Als Nächstes erstellen Sie einen mobilen Dienst, um die In-Memory-Liste für di
 Sie haben nun einen neuen mobilen Service erstellt, den Sie mit Ihren mobilen Apps verwenden können. Als Nächstes fügen Sie eine neue Tabelle zum Speichern von App-Daten hinzu. Diese Tabelle wird von der App anstelle der In-Memory-Sammlung verwendet.
 
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

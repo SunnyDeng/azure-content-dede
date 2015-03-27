@@ -20,7 +20,7 @@
 
 Linux-basierte HDInsight-Cluster bieten die Möglichkeit, den SSH-Zugriff mithilfe eines Kennworts oder eines SSH-Schlüssels zu schützen. Dieses Dokument enthält Informationen zur Verwendung von SSH mit HDInsight auf Linux-, Unix- oder OS X-Clients.
 
-> [AZURE.NOTE] Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie einen Linux-, Unix- oder OS X-Client verwenden. Obwohl diese Schritte auf einem Windows-Client ausgeführt werden können, wenn Sie ein Paket installiert haben, das `ssh` und `ssh-keygen` (z. B. Git für Windows) bereitstellt, wird empfohlen, dass Windows-Clients die Schritte unter [Verwenden von SSH mit Linux-basiertem HDInsight (Hadoop) unter Windows](/de-de/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/) befolgen.
+> [AZURE.NOTE] Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie einen Linux-, Unix- oder OS X-Client verwenden. Obwohl diese Schritte auf einem Windows-Client ausgeführt werden können, wenn Sie ein Paket installiert haben, das `ssh` und `ssh-keygen` (z. B. Git für Windows) bereitstellt, wird empfohlen, dass Windows-Clients die Schritte unter [Verwenden von SSH mit Linux-basiertem HDInsight (Hadoop) unter Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/) befolgen.
 
 ## Voraussetzungen
 
@@ -72,7 +72,7 @@ Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, müssen Sie den zuvo
 
 * **Plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli)**: verwendet Befehle der Befehlszeile zum Erstellen des Clusters
 
-Jede dieser Methoden erfordert entweder ein **Kennwort** oder einen **öffentlichen Schlüssel**. Ausführliche Informationen zum Erstellen eines Linux-basierten HDInsight-Clusters finden Sie unter <a href="/de-de/documentation/articles/hdinsight-hadoop-provision-linux-clusters/" target="_blank">Bereitstellen Linux-basierter HDInsight-Cluster</a>.
+Jede dieser Methoden erfordert entweder ein **Kennwort** oder einen **öffentlichen Schlüssel**. Vollständige Informationen zum Erstellen eines Linux-basierten HDInsight-Clusters finden Sie unter <a href="/documentation/articles/hdinsight-hadoop-provision-linux-clusters/" target="_blank">Bereitstellen von Linux-basierten HDInsight-Clustern</a>.
 
 ### Azure-Verwaltungsportal
 
@@ -89,9 +89,9 @@ Dadurch wird eine Anmeldung für den angegebenen Benutzer mit dem bereitgestellt
 
 ### Plattformübergreifende Azure-Befehlszeilenschnittstelle
 
-Verwenden Sie die <a href="../xplat-cli/" target="_brad">Plattformübergreifende Azure-Befehlszeilenschnittstelle</a>, um mithilfe des Befehls `azure hdinsight cluster create` einen neuen Cluster zu erstellen.
+Können Sie die <a href="../xplat-cli/" target="_brad">Plattformübergreifende Azure-Befehlszeilenschnittstelle</a>, zum Erstellen eines neuen Clusters mithilfe des `Azure Hdinsight-Cluster erstellen`-Befehls verwenden.
 
-Weitere Informationen zur Verwendung dieses Befehls finden Sie unter <a href="../hdinsight-hadoop-provision-linux-clusters/" target="_blank">Benutzerdefinierte Bereitstellung eines Hadoop-Linux-Clusters in HDInsight</a>
+Weitere Informationen über die Verwendung dieses Befehls finden Sie unter <a href="../hdinsight-hadoop-provision-linux-clusters/" target="_blank">Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight</a>
 
 ## Verbinden mit einem Linux-basierten HDInsight-Cluster
 
@@ -109,7 +109,7 @@ Wenn Sie ein **Kennwort** für das Benutzerkonto verwendet haben, werden Sie zur
 
 Wenn Sie einen **SSH-Schlüssel** verwendet haben, der mit einer Passphrase geschützt ist, werden Sie zur Eingabe der Passphrase aufgefordert. Andernfalls versucht SSH auf dem Client eine automatische Authentifizierung mithilfe eines lokalen privaten Schlüssels.
 
-> [AZURE.NOTE] Wenn SSH die Authentifizierung nicht automatisch mit dem richtigen **privaten Schlüssel** durchführt, verwenden Sie den Parameter **-i**, und geben Sie den Pfad zum privaten Schlüssel an. Im folgenden Beispiel wird der **private Schlüssel** aus `~/.ssh/id_rsa` geladen.
+> [AZURE.NOTE] Wenn SSH die Authentifizierung nicht automatisch mit dem richtigen **privaten Schlüssel** durchführt, verwenden Sie den Parameter **-i**, und geben Sie den Pfad zum privaten Schlüssel an. Im folgenden Beispiel wird **private key** aus `~/.ssh/id_rsa` geladen.
 > 
 > `ssh -i ~/.ssh/id_rsa me@mycluster-ssh.azurehdinsight.net`
 
@@ -171,7 +171,7 @@ Verwenden Sie die folgenden Schritte, um einen SSH-Tunnel zu erstellen und Ihren
 
 	* **f**: im Hintergrund ausführen
 
-	Wenn Sie den Cluster mit einem **SSH-Schlüssel** konfiguriert haben, müssen Sie unter Umständen den Parameter `-i` verwenden und den Pfad zum privaten SSH-Schlüssel angeben.
+	Wenn Sie den Cluster mit einem **SSH-Schlüssel** konfiguriert haben, müssen Sie unter Umständen den `-i` -Parameter verwenden und den Pfad zum privaten SSH-Schlüssel angeben.
 
 	Nach Abschluss des Befehls wird der an den lokalen Port 9876 des lokalen Computers gesendete Datenverkehr über SSL an den Stammknoten des Clusters weitergeleitet, der dann seinen Ursprung darstellt.
 
@@ -181,11 +181,11 @@ Verwenden Sie die folgenden Schritte, um einen SSH-Tunnel zu erstellen und Ihren
 
 	> [AZURE.NOTE] Durch die Auswahl von **Remote-DNS** werden DNS-Anforderungen mithilfe des HDInsight-Clusters aufgelöst. Ist diese Option deaktiviert, wird DNS lokal aufgelöst.
 
-	Sie können überprüfen, ob der Datenverkehr durch den Tunnel weitergeleitet wird, indem Sie eine Website wie <a href="http://www.whatismyip.com/" target="_blank">http://www.whatismyip.com/</a> mit aktivierten Proxyeinstellungen und deaktivierten Firefox-Proxyeinstellungen besuchen. Bei entsprechender Aktivierung wird die IP-Adresse für einen Computer im Microsoft Azure-Rechenzentrum angezeigt.
+	Sie können überprüfen, ob Datenverkehr durch den Tunnel weitergeleitet wird, indem Sie eine Website wie z. B. <a href="http://www.whatismyip.com/" target="_blank">http://www.whatismyip.com/</a> mit aktivierten Proxyeinstellungen und deaktivierten in Firefox aufrufen. Bei entsprechender Aktivierung wird die IP-Adresse für einen Computer im Microsoft Azure-Rechenzentrum angezeigt.
 
 ### Browsererweiterungen
 
-Obwohl Sie den Browser für die Verwendung des Tunnels konfigurieren, möchten Sie in der Regel jedoch nicht den gesamten Datenverkehr über den Tunnel weiterleiten. Browsererweiterungen wie <a href="http://getfoxyproxy.org/" target="_blank">FoxyProxy</a>  unterstützen den Musterabgleich für URL-Anforderungen (nur FoxyProxy Standard oder Plus), sodass nur Anforderungen für bestimmte URLs durch den Tunnel gesendet werden.
+Obwohl Sie den Browser für die Verwendung des Tunnels konfigurieren, möchten Sie in der Regel jedoch nicht den gesamten Datenverkehr über den Tunnel weiterleiten. Browsererweiterungen wie <a href="http://getfoxyproxy.org/" target="_blank">FoxyProxy</a> unterstützen den Musterabgleich für URL-Anforderungen (nur FoxyProxy Standard oder Plus), sodass nur Anforderungen für bestimmte URLs durch den Tunnel gesendet werden.
 
 Wenn Sie **FoxyProxy Standard** installiert haben, konfigurieren Sie es folgendermaßen, um nur den Datenverkehr für HDInsight über den Tunnel weiterzuleiten.
 
@@ -233,6 +233,6 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 * [Verwenden von Pig mit HDInsight](../hdinsight-use-pig/)
 
-* [Verwenden von MapReduce-Aufträgen mit HDInsight](../hdinsight-use-mapreduce/)
+* [Use MapReduce jobs with HDInsight](../hdinsight-use-mapreduce/)
  
-<!--HONumber=45--> 
+<!--HONumber=47-->

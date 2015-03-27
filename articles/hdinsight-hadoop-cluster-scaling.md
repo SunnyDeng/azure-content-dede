@@ -16,7 +16,7 @@
    ms.date="02/18/2015"
    ms.author="bradsev"/>
 
-#Clusterskalierung in HDInsight
+# Clusterskalierung in HDInsight
 
 Mithilfe der Clusterskalierung können Sie die Anzahl der von einem in HDInsight ausgeführten Cluster verwendeten Datenknoten ändern, ohne den Cluster löschen und neu erstellen zu müssen. Der Vorgang kann mithilfe von PowerShell, dem HDInsight SDK oder über das Azure-Portal ausgeführt werden.
 
@@ -59,14 +59,14 @@ Es folgt ein Beispiel, wie die Storm-Topologie mithilfe des CLI-Befehls neu ausg
 
 	$ storm rebalance mytopology -n 5 -e blue-spout=3 -e yellow-bolt=10
 
-##HBase
+## HBase
 Die Clusterskalierung wird für HBase-Cluster zu diesem Zeitpunkt nicht unterstützt.
 
 ## Voraussetzungen:
 
 * Es werden ausschließlich Cluster mit der HDInsight-Version 3.1.3 oder höher unterstützt. Wenn Sie sich hinsichtlich der Version Ihres Clusters nicht sicher sind, können Sie die Clusterversion über das Azure-Portal überprüfen, indem Sie auf den Namen des HDInsight-Cluster klicken oder den Befehl  `Get-AzureHDInsightCluster -name <clustername>` von Azure PowerShell ausführen.
 
-* Azure PowerShell, Version 0.8.14 oder höher, ist erforderlich, um den Vorgang über PowerShell auszuführen. Sie können die neueste Version von PowerShell auf der Website [Azure-Downloads](http://azure.microsoft.com/ downloads/) im Abschnitt "Befehlszeilentools" herunterladen. Sie können den folgenden Befehl in einem PowerShell-Fenster ausführen, um die installierte Azure PowerShell-Version zu prüfen: `(get-module Azure).Version`
+* Azure PowerShell, Version 0.8.14 oder höher, ist erforderlich, um den Vorgang über PowerShell auszuführen. Sie können die neueste Version von PowerShell auf der Website [Azure-Downloads](http://azure.microsoft.com/downloads/) im Abschnitt "Befehlszeilentools" herunterladen. Sie können den folgenden Befehl in einem PowerShell-Fenster ausführen, um die installierte Azure PowerShell-Version zu prüfen: `(get-module Azure).Version`
 
 ## Verwenden der Clusterskalierung
 
@@ -140,5 +140,5 @@ Hier folgt ein Beispielcode, der die Verwendung der synchronen Version dieser Me
 	}
 
 
-Weitere Informationen zur Verwendung des .NET SDKs finden Sie im Abschnitt [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight](http://azure.microsoft.com/ documentation/articles/hdinsight-provision-clusters/).
-<!--HONumber=45--> 
+Weitere Informationen zur Verwendung des .NET SDKs finden Sie im Abschnitt [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight](http://azure.microsoft.com/documentation/articles/hdinsight-provision-clusters/).
+<!--HONumber=47-->

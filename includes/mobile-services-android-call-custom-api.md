@@ -1,7 +1,7 @@
 ﻿
-##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
+## <a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
-1. Wir fügen neben der vorhandenen Schaltfläche eine Schaltfläche namens "Complete All" ein und verschieben beide Schaltflächen um eine Zeile nach unten. Öffnen Sie in Eclipse die Datei *res\layout\activity_to_do.xml* in Ihrem Schnellstartprojekt, und suchen Sie das **LinearLayout**-Element, das das **Button**-Element namens `buttonAddToDo` enthält. Kopieren Sie das **LinearLayout**, und fügen Sie es direkt nach dem ursprünglichen ein. Löschen Sie das **Button**-Element aus dem ersten **LinearLayout**.
+1. Wir fügen neben der vorhandenen Schaltfläche eine Schaltfläche namens "Complete All" ein und verschieben beide Schaltflächen um eine Zeile nach unten. Öffnen Sie in Android Studio die Datei *res\layout\activity_to_do.xml* in Ihrem Schnellstartprojekt, und suchen Sie das **LinearLayout**-Element, das das **Button**-Element namens `buttonAddToDo` enthält. Kopieren Sie das **LinearLayout**, und fügen Sie es direkt nach dem ursprünglichen ein. Löschen Sie das **Button**-Element aus dem ersten **LinearLayout**.
 
 2. Löschen Sie im zweiten **LinearLayout** das **EditText**-Element, und fügen Sie den folgenden Code direkt nach dem vorhandenen **Button**-Element hinzu: 
 
@@ -42,7 +42,7 @@
 
 
 
-5. Klicken Sie im Paket-Explorer mit der rechten Maustaste auf den Projektnamen im *src*-Ordner (`com.example.{your projects name}`), wählen Sie **New** und dann **Class**. Im Dialog geben Sie **MarkAllResult** in das Klassennamensfeld ein, wählen Sie "OK", und ersetzen Sie die resultierende Klassendefinition durch den folgenden Code:
+5. Klicken Sie im Projektexplorer mit der rechten Maustaste auf den Projektnamen im Ordner *src* (`com.example.{your projects name}`), wählen Sie **Neu** und dann **Klasse**. Im Dialog geben Sie **MarkAllResult** in das Klassennamensfeld ein, wählen Sie "OK", und ersetzen Sie die resultierende Klassendefinition durch den folgenden Code:
 
 		import com.google.gson.annotations.SerializedName;
 		
@@ -97,7 +97,7 @@
 
 ## Testen der App
 
-1. Klicken Sie im Menü **Run** auf **Run**, um das Projekt im Android-Emulator zu starten.
+1. Klicken Sie im Menü **Ausführen** auf **App ausführen** um das Projekt im Android-Emulator oder auf einem angeschlossenen Android-Gerät zu starten.
 
 	Dadurch wird Ihre mit dem Android-SDK erstellte App ausgeführt, die mithilfe der Clientbibliothek Elemente aus Ihrem mobilen Dienst abfragt.
 
@@ -111,4 +111,4 @@
   	![](./media/mobile-services-android-call-custom-api/mobile-custom-api-android-completed.png)
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
-\<!--HONumber=42-->
+<!--HONumber=47-->

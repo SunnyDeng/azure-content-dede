@@ -29,11 +29,11 @@ Wenn Sie Änderungen an Ihren Netzwerkkonfigurationseinstellungen vornehmen möc
 ##Erstellen und Ändern einer Netzwerkkonfigurationsdatei 
 Die einfachste Möglichkeit zum Erstellen einer Netzwerkkonfigurationsdatei ist der Export der Netzwerkeinstellungen aus einer vorhandenen Konfiguration eines virtuellen Netzwerks und die anschließende Bearbeitung der Datei, damit sie die Einstellungen enthält, die Sie für Ihre virtuellen Netzwerke konfigurieren möchten. Sie können auch eine Beispieldatei abrufen und ändern.
 
-Wenn Sie die Netzwerkkonfigurationsdatei bearbeiten möchten, können Sie sie einfach öffnen, die notwendigen Änderungen vornehmen und diese speichern. Sie können einen beliebigen  *xml*-Editor verwenden, um Änderungen an der Netzwerkkonfigurationsdatei vorzunehmen. 
+Wenn Sie die Netzwerkkonfigurationsdatei bearbeiten möchten, können Sie sie einfach öffnen, die notwendigen Änderungen vornehmen und diese speichern. Sie können einen beliebigen *xml*-Editor verwenden, um Änderungen an der Netzwerkkonfigurationsdatei vorzunehmen. 
 
 Befolgen Sie die Anleitungen für Schemaeinstellungen zur Netzwerkkonfigurationsdatei. Wenn Sie Ihre Netzwerkkonfigurationsdatei erstellen, werden die Einstellungen für Ihr aktuelles Abonnement in Azure mit den Einstellungen in der Datei überschrieben. Wenn Sie Änderungen an Werten in der Datei vornehmen, die mit den Einstellungsrichtlinien nicht kompatibel sind, wird das virtuelle Netzwerk möglicherweise nicht auf die gewünschte Weise konfiguriert, und in einigen Fällen erlaubt Azure nicht, die Datei zu importieren. Informationen zu den in einer Netzwerkkonfigurationsdatei enthaltenen spezifischen Einstellungen finden Sie unter [Konfigurationsschema für Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj157100.aspx). 
 
-Azure betrachtet ein Subnetz, in dem etwas bereitgestellt wurde, als "in Gebrauch". Wenn Sie ein Subnetz in Gebrauch ist, kann es nicht geändert werden. Verschieben Sie vor allen Änderungen alles, was Sie im Subnetz bereitgestellt haben, in ein anderes Subnetz, das nicht verändert wird.   Siehe [Verschieben eines virtuellen Computers oder einer Rolleninstanz in ein anderes Subnetz](https://msdn.microsoft.com/de-de/library/azure/dn643636.aspx).
+Azure betrachtet ein Subnetz, in dem etwas bereitgestellt wurde, als "in Gebrauch". Wenn Sie ein Subnetz in Gebrauch ist, kann es nicht geändert werden. Verschieben Sie vor allen Änderungen alles, was Sie im Subnetz bereitgestellt haben, in ein anderes Subnetz, das nicht verändert wird.   Siehe [Verschieben eines virtuellen Computers oder einer Rolleninstanz in ein anderes Subnetz](https://msdn.microsoft.com/library/azure/dn643636.aspx).
 
 
 
@@ -46,7 +46,7 @@ Beim Export werden alle Einstellungen für die virtuellen Netzwerke in Ihrem Abo
 1. Melden Sie sich auf dem **Verwaltungsportal** an.
 2. Klicken Sie im Verwaltungsportal am unteren Rand der Seite **Netzwerke** auf **Exportieren**. 
 3. Überprüfen Sie im Fenster **Netzwerkkonfiguration exportieren**, ob Sie das Abonnement ausgewählt haben, für das Sie die Netzwerkeinstellungen exportieren möchten. Markieren Sie anschließend das Häkchen in der unteren rechten Ecke. 
-4. Wenn Sie dazu aufgefordert werden, speichern Sie die Datei  *NetworkConfig.xml* am Speicherort Ihrer Wahl.
+4. Wenn Sie dazu aufgefordert werden, speichern Sie die Datei *NetworkConfig.xml* am Speicherort Ihrer Wahl.
 ### So importieren Sie die Netzwerkeinstellungen
 
 
@@ -70,4 +70,4 @@ Weitere Informationen zu virtuellen Netzwerken finden Sie unter:
 
 
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

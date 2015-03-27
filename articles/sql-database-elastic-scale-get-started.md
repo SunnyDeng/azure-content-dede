@@ -1,6 +1,20 @@
-﻿<properties title="Get Started with  Azure SQL Database Elastic Scale" pageTitle="Erste Schritte mit Elastic Scale für die Azure SQL-Datenbank" description="Grundlegende Erklärung des Elastic Scale-Features der Azure SQL-Datenbank, einschließlich einer einfach auszuführenden Beispiel-App." metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties 
+	pageTitle="Erste Schritte mit Elastic Scale für Azure SQL-Datenbank" 
+	description="Grundlegende Erläuterung von Elastic Scale für Azure SQL-Datenbank einschließlich einer einfachen Beispiel-App." 
+	services="sql-database" 
+	documentationCenter="" 
+	manager="jhubbard" 
+	authors="sidneyh" 
+	editor=""/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
+<tags 
+	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/03/2015" 
+	ms.author="sidneyh@microsoft.com"/>
 
 # Erste Schritte mit der Vorschauversion von Elastic Scale für die Azure SQL-Datenbank
 
@@ -10,26 +24,26 @@ Elastic Scale (Vorschauversion) für Azure SQL-Datenbank ermöglicht das Hoch- u
 
 In diesem Dokument werden die Entwicklerfunktionen zu Elastic Scale für Azure SQL-Datenbank vorgestellt. 
 
-Weitere Informationen zur Funktionsweise von Elastic Scale stehen unter [Übersicht über Elastic Scale](http://go.microsoft.com/?linkid=9862592)zur Verfügung.
+Weitere Informationen über die Funktionsweise von Elastic Scale finden Sie unter [Übersicht über Elastic Scale](http://go.microsoft.com/?linkid=9862592).
 
-Eine Lister aller Themen zu Elastic Scale finden Sie in der [Dokumentationsübersicht zu Elastic Scale.](./sql-database-elastic-scale-documentation-map.md)
+Eine Liste aller Themen zu Elastic Scale finden Sie in der [Dokumentationsübersicht zu Elastic Scale](./sql-database-elastic-scale-documentation-map.md).
 
 ## Die Elastic Scale-Beispielanwendung
 
-Mit dem Beispiel wird eine einfache Sharding-Anwendung erstellt, und es werden die wichtigsten Funktionen von Elastic Scale erkundet. Führen Sie zum Herunterladen und Ausführen der Anwendung die unten oder im Video [Elastic Scale - Erste Schritte](http://go.microsoft.com/?linkid=9862983)angegebenen Schritte aus. 
+Mit dem Beispiel wird eine einfache Sharding-Anwendung erstellt, und es werden die wichtigsten Funktionen von Elastic Scale erkundet. Um die Anwendung herunterzuladen und auszuführen, führen Sie die unten oder im Video [Elastic Scale - Erste Schritte](http://go.microsoft.com/?linkid=9862983) angegebenen Schritte aus. 
 
-###Voraussetzungen
-Zum Ausführen der Beispiel-App müssen Sie Visual Studio verwenden, und Sie müssen Zugriff auf eine Azure SQL-Datenbank haben, die in Azure ausgeführt wird. Wenn Sie noch nicht über ein Azure-Abonnement verfügen, können Sie sich für ein [Testabonnement](http://azure.microsoft.com/de-de/pricing/free-trial/)registrieren.
-####Visual Studio und NuGet
+### Voraussetzungen
+Zum Ausführen der Beispiel-App müssen Sie Visual Studio verwenden, und Sie müssen Zugriff auf eine Azure SQL-Datenbank haben, die in Azure ausgeführt wird. Wenn Sie noch nicht über ein Azure-Abonnement verfügen, können Sie sich für ein [kostenloses Abonnement](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+#### Visual Studio und NuGet
 
-1. Visual Studio 2012 oder höher mit C# wird benötigt. Laden Sie eine kostenlose Version unter [Visual Studio-Downloads](http://www.visualstudio.com/de-de/downloads/download-visual-studio-vs.aspx)herunter.
-2. NuGet 2.7 oder höher. Die aktuelle Version finden Sie unter [Installieren von NuGet.](http://docs.nuget.org/docs/start-here/installing-nuget)
-####Erstellen einer Azure SQL-Datenbank
+1. Visual Studio 2012 oder höher mit C# wird benötigt. Laden Sie eine kostenlose Version unter [Visual Studio-Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs.aspx) herunter.
+2. NuGet 2.7 oder höher. Die aktuelle Version finden Sie unter [Installieren von NuGet](http://docs.nuget.org/docs/start-here/installing-nuget)
+#### Erstellen einer Azure SQL-Datenbank
 
-* Weitere Informationen stehen unter [Erste Schritte mit der Microsoft Azure SQL-Datenbank](http://azure.microsoft.com/de-de/documentation/articles/sql-database-get-started/)zur Verfügung.
+* Weitere Informationen finden Sie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](http://azure.microsoft.com/documentation/articles/sql-database-get-started/).
 
-##Herunterladen und Ausführen der Beispiel-App
-Die Beispielanwendung unter **Elastic Scale mit Azure SQL-Datenbank - Erste Schritte** veranschaulicht die wichtigsten Aspekte der Entwicklungsoberfläche für Sharding-Anwendungen, die Azure SQL DB Elastic Scale verwenden. Der Schwerpunkt liegt auf wichtigen Anwendungsbeispielen für [Shard Map Management,](http://go.microsoft.com/?linkid=9862595)[datenabhängiges Routing](http://go.microsoft.com/?linkid=9862596) und [Abfragen mehrerer Shards](http://go.microsoft.com/?linkid=9862597). Gehen Sie folgendermaßen vor, um das Beispiel herunterzuladen und auszuführen: 
+## Herunterladen und Ausführen der Beispiel-App
+Die Beispielanwendung unter **Elastic Scale mit Azure SQL-Datenbank - Erste Schritte** veranschaulicht die wichtigsten Aspekte der Entwicklungsoberfläche für Sharding-Anwendungen, die Azure SQL DB Elastic Scale verwenden. Dabei stehen die wichtigsten Anwendungsfälle für [Shard Map-Verwaltung](http://go.microsoft.com/?linkid=9862595), [datenabhängiges Routing](http://go.microsoft.com/?linkid=9862596) und [Abfragen mehrerer Shards](http://go.microsoft.com/?linkid=9862597) im Mittelpunkt. Gehen Sie folgendermaßen vor, um das Beispiel herunterzuladen und auszuführen: 
 
 1. Öffnen Sie Visual Studio, und wählen Sie **Datei -> Neu -> Projekt** aus.
 2. Klicken Sie im Dialogfeld auf **Online**.
@@ -51,13 +65,13 @@ Die Beispielanwendung unter **Elastic Scale mit Azure SQL-Datenbank - Erste Schr
 
 Herzlichen Glückwunsch! Sie haben Ihre erste Elastic Scale-Anwendung in Azure SQL-Datenbank erfolgreich erstellt und ausgeführt. Werfen Sie einen Blick auf die Shards, die im Beispiel durch Herstellen einer Verbindung zwischen SQL Server Management Studio und Ihrem Azure-Datenbankserver erstellt wurden. Sie sehen, dass mit dem Beispiel neue Beispiel-Shard-Datenbanken und eine Shard-Map-Managerdatenbank erstellt wurden.
 
-**Hinweis** Wenn Sie nicht über SQL Server Management Studio verfügen, finden Sie unter [Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio](http://azure.microsoft.com/de-de/documentation/articles/sql-database-manage-azure-ssms/)weitere Informationen, darunter Anweisungen, wie Sie dieses Tool erhalten können.  
+**Hinweis**   Wenn Sie nicht über SQL Server Management Studio verfügen, finden Sie unter [Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio](http://azure.microsoft.com/documentation/articles/sql-database-manage-azure-ssms/) Anweisungen dazu, wie Sie dieses Tool erhalten.  
 
 ### Zentrale Elemente des Codebeispiels
 
 1. **Verwalten von Shards und Shard Maps**: Der in der Datei **ShardMapManagerSample.cs** veranschaulicht, wie Sie mit Shards, Bereichen und Zuordnungen arbeiten. Weitere Informationen über dieses Thema finden Sie hier: [Shard Map-Verwaltung](http://go.microsoft.com/?linkid=9862595).  
-2. **Datenabhängiges Routing**: Das Routing von Transaktionen zum richtigen Shard wird in **DataDependentRoutingSample.cs** dargestellt. Ausführlichere Informationen stehen unter [Datenabhängiges Routing](http://go.microsoft.com/?linkid=9862596)zur Verfügung. 
-3. **Abfragen mehrerer Shards**: Das Abfragen von Shards wird in der Datei **MultiShardQuerySample.cs** veranschaulicht. Ausführlichere Informationen stehen unter [Abfragen mehrerer Shards](http://go.microsoft.com/?linkid=9862597)zur Verfügung.
+2. **Datenabhängiges Routing**: Das Routing von Transaktionen zum richtigen Shard wird in **DataDependentRoutingSample.cs** dargestellt. Weitere Einzelheiten finden Sie unter [Datenabhängiges Routing](http://go.microsoft.com/?linkid=9862596). 
+3. **Abfragen mehrerer Shards**: Das Abfragen von Shards wird in der Datei **MultiShardQuerySample.cs** veranschaulicht. Weitere Einzelheiten finden Sie unter [Abfragen mehrerer Shards](http://go.microsoft.com/?linkid=9862597).
 4. **Hinzufügen leerer Shards**: Das iterative Hinzufügen neuer leerer Shards wird mit dem Code in
 der Datei **AddNewShardsSample.cs** durchgeführt. Einzelheiten zu diesem Thema werden hier behandelt: [Shard Map-Verwaltung](http://go.microsoft.com/?linkid=9862595).
 
@@ -73,7 +87,7 @@ Die Elastic Scale-Bibliotheken und Dienstvorlagen sind kostenlos. Mit Elastic Sc
 
 Die Beispielanwendung erstellt z. B. neue Datenbanken. Die Kosten richten sich nach der Azure SQL DB-Datenbankedition, die Sie wählen, sowie nach der Azure-Nutzung Ihrer Anwendung.
 
-Preisinformationen stehen unter [SQL-Datenbank - Preisdetails](http://azure.microsoft.com/de-de/pricing/details/sql-database/)zur Verfügung.
+Preisinformationen finden Sie in der [SQL-Datenbank - Preisdetails](http://azure.microsoft.com/pricing/details/sql-database/).
 
 ## Nächste Schritte
 Weitere Informationen über die Elastic Scale-Funktion finden Sie unter:
@@ -85,7 +99,7 @@ Weitere Informationen über die Elastic Scale-Funktion finden Sie unter:
     -    [Shard-Elastizität im Script Center](http://go.microsoft.com/?linkid=9862617)
 -    Blog: [Elastic Scale-Ankündigung](http://go.microsoft.com/?linkid=9862608)
 -    Channel 9: [Elastic Scale - Übersichtsvideo](http://go.microsoft.com/?linkid=9862609)
--    Diskussionsforum: [Azure SQL-Datenbank - Forum](http://social.msdn.microsoft.com/forums/azure/de-de/home?forum=ssdsgetstarted)
+-    Diskussionsforum: [Azure SQL-Datenbank - Forum](http://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted)
 
 
 <!--Anchors-->
@@ -100,4 +114,4 @@ Weitere Informationen über die Elastic Scale-Funktion finden Sie unter:
 [3]: ./media/sql-database-elastic-scale-get-started/click-CSharp.png
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
 
-<!--HONumber=35.1-->
+<!--HONumber=47-->

@@ -1,38 +1,44 @@
+
 <properties 
 	pageTitle="Erste Schritte mit Azure Mobile Services für Android-Apps" 
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Android-Entwicklung." 
 	services="mobile-services" 
 	documentationCenter="android" 
-	authors="ggailey777" 
+	authors="RickSaling" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="Mobile-Android" 
-	ms.devlang="Java" 
+	ms.tgt_pltfrm="mobile-android" 
+	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="10/20/2014" 
-	ms.author="glenga"/>
+	ms.date="02/13/2015" 
+	ms.author="ricksal,glenga"/>
+
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-In diesem Lernprogramm erfahren Sie, wie Sie einen Cloud-basierten Backend-Service mithilfe von Azure Mobile Services zu einer Android-App hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache To-Do-Listen-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen erstellte mobile Dienst verwendet die unterstützten .NET-Sprachen unter Verwendung von Visual Studio für die serverseitige Geschäftslogik und zur Verwaltung des mobilen Diensts. Informationen zum Erstellen eines mobilen Diensts, dessen serverseitige Geschäftslogik Sie in JavaScript schreiben können, finden Sie in der [JavaScript-Back-End-Version](/de-de/documentation/articles/mobile-services-android-get-started/) dieses Themas.
+In diesem Lernprogramm erfahren Sie, wie Sie einen Cloud-basierten Backend-Service mithilfe von Azure Mobile Services zu einer Android-App hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache To-Do-Listen-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen erstellte mobile Dienst verwendet die unterstützten .NET-Sprachen unter Verwendung von Visual Studio für die serverseitige Geschäftslogik und zur Verwaltung des mobilen Diensts. Informationen zum Erstellen eines mobilen Diensts, dessen serverseitige Geschäftslogik Sie in JavaScript schreiben können, finden Sie in der [JavaScript-Back-End-Version](/documentation/articles/mobile-services-android-get-started/) dieses Themas.
 
 Unten sehen Sie einen Screenshot aus der fertigen App:
 
 ![][0]
 
-Sie benötigen [die Android Developer Tools][das Android SDK], um dieses Lernprogramm abzuschließen. Diese umfassen die integrierte Entwicklungsumgebung (IDE) von Eclipse, das Android Developer Tools (ADT)-Plug-In und die neueste Android-Plattform. Android 4.2 oder eine höhere Version ist erforderlich. 
+Sie benötigen die [Android Developer Tools][Android Studio], die die integrierte Android Studio-Entwicklungsumgebung einbeziehen, sowie die neueste Android-Plattform. Android 4.2 oder eine höhere Version ist erforderlich.  
 
-Das heruntergeladene Schnellstartprojekt enthält das Mobile Services SDK für Android. Dieses Projekt erfordert Android 4.2 oder eine höhere Version. Der Mobile Services SDK benötigt jedoch nur Android 2.2 oder eine höhere Version.
+Das heruntergeladene Schnellstartprojekt enthält das Mobile Services SDK für Android. 
 
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28"%20target="_blank).
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28"%20target="_blank).
 
-## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Diensts
+<!-- -->
+
+> [AZURE.NOTE] Die Eclipse-Version dieses Lernprogramms finden Sie unter: [Erste Schritte (Eclipse)].
+
+## <a name="create-new-service"> </a>Erstellen Sie einen neuen mobilen Diensts
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
@@ -40,17 +46,19 @@ Das heruntergeladene Schnellstartprojekt enthält das Mobile Services SDK für A
 
 Da Sie den mobilen Dienst jetzt erstellt haben, laden Sie das Projekt für den personalisierten mobilen Dienst herunter, den Sie auf dem lokalen oder dem virtuellen Computer ausführen können.
 
-1. Klicken Sie auf den mobilen Dienst, den Sie gerade erstellt haben, und dann in der Schnellstartregisterkarte unter **Plattform auswählen** auf **Android**, und erweitern Sie die Option **Neue Android-App erstellen**.
+1. Klicken Sie auf den mobilen Dienst, den Sie gerade erstellt haben. Klicken Sie dann Schnellstartregisterkarte unter **Plattform auswählen** auf **Android**, und erweitern Sie **Neue Android-App erstellen**.
 
 	![][1]  
 
-2. Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) oder eine neuere Version herunter, und installieren Sie diese.
+2. Downloaden und installieren Sie [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) oder eine neuere Version, falls Sie dies nicht bereits getan haben.
 
-3. Klicken Sie unter **Service in der Cloud herunterladen und veröffentlichen** auf **Herunterladen**.
+3. Klicken Sie in Schritt 2 auf **Download** unter **Herunterladen und Veröffentlichen des Diensts in der Cloud**.
 
 	Dadurch wird das Visual Studio-Projekt, das den mobilen Dienst implementiert, heruntergeladen. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
 
+<!--
 4. Laden Sie außerdem das Veröffentlichungsprofil herunter, speichern Sie die heruntergeladene Datei auf dem lokalen Computer, und notieren Sie sich den Speicherort.
+-->
 
 ## Testen des mobilen Diensts
 
@@ -64,7 +72,7 @@ Da Sie den mobilen Dienst jetzt erstellt haben, laden Sie das Projekt für den p
 
 In diesem Abschnitt erstellen Sie eine neue Android-App, die mit Ihrem Mobile Service verbunden ist.
 
-1. Klicken Sie im [Verwaltungsportal] auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+1. Klicken Sie im [Verwaltungsportal] auf **Mobile Services** und dann auf den mobilen Dienst, den Sie soeben erstellt haben.
 
 2. Klicken Sie in der Schnellstartregisterkarte unter **Plattform auswählen** auf **Android**, und erweitern Sie die Option **Neue Android-App erstellen**. 
  
@@ -78,35 +86,7 @@ In diesem Abschnitt erstellen Sie eine neue Android-App, die mit Ihrem Mobile Se
 
 ## Ausführen Ihrer Android-App
 
-Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der neuen App.
-
-1. Navigieren Sie zum Speicherort der komprimierten Projektdateien, und entpacken Sie die Dateien auf Ihrem Computer.
-
-2. Klicken Sie in Eclipse auf **Datei** und **Importieren**, erweitern Sie dann **Android**. Klicken Sie auf **Vorhandenen Android-Code im Arbeitsbereich** und anschließend auf **Weiter**. 
-
- 	![][14]
-
-3. Klicken Sie auf **Durchsuchen**, navigieren Sie zum Speicherort der entpackten Projektdateien, klicken Sie auf **OK**, stellen Sie sicher, dass das TodoActivity-Projekt ausgewählt ist, und klicken Sie dann auf **Fertig stellen**. 
-
- 	![][15]
-
-	Daraufhin werden die Projektdateien in den aktuellen Arbeitsbereich importiert.
-
-   	![][8]
-
-4. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um das Projekt im Android-Emulator zu starten.
-
-	> [AZURE.IMPORTANT] Sie müssen mindestens ein Android Virtual Device (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
-
-5. Geben Sie in der App einen sinnvollen Text ein, beispielsweise "_Lernprogramm beenden_", und klicken Sie dann auf **Hinzufügen**.
-
-   	![][10]
-
-   	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten aus der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
-
-	> [AZURE.NOTE] Sie können den Code überprüfen, der auf Ihren Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der ToDoActivity.java-Datei.
-
-<!--This shows how to run your new client app against the mobile service running in Azure. Before you can test the Android app with the mobile service running on a local computer, you must configure the Web server and firewall to allow access from your Android development computer. For more information, see [Configure the local web server to allow connections to a local mobile service](/de-de/documentation/articles/mobile-services-dotnet-backend-how-to-configure-iis-express).-->
+[WACOM.INCLUDE [mobile-services-run-your-app](../includes/mobile-services-android-get-started.md)]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden: 
@@ -114,10 +94,10 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 * [Erste Schritte mit Daten]
   <br/>Informationen über das Speichern und Abfragen von Daten mit Mobile Services.
 
-* [Erste Schritte mit der Authentifizierung]
+* [Erste Schritte mit Authentifizierung]
   <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Erste Schritte mit Pushbenachrichtigungen]
+* [Erste Schritte mit Pushbenachrichtigungen] 
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 * [Problembehandlung beim Mobile Services .NET-Back-End]
@@ -131,8 +111,8 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 <!-- Images. -->
 [0]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-completed-android.png
-[1]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-vs.png
-[2]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-android.png
+[1]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-vs-AS.png
+[2]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-android-AS.png
 
 
 [6]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-portal-quickstart-android.png
@@ -147,14 +127,15 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [15]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-data
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-users
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-android-get-started-push
-[Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+[Erste Schritte (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-EC/
+[Erste Schritte mit Daten]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
+[Erste Schritte mit Authentifizierung]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[Erste Schritte mit Pushbenachrichtigungen]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+[das Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+[Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Problembehandlung beim Mobile Services .NET-Back-End]: /de-de/documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot/
+[Problembehandlung beim Mobile Services .NET-Back-End]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot/
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
-
-<!--HONumber=42-->
+<!--HONumber=47-->

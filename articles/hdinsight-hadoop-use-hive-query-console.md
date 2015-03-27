@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Verwenden von Hadoop Hive in HDInsight | Azure"
    description="Erfahren Sie, wie Sie Hive mit der webbasierten HDInsight-Abfragekonsole verwenden."
    services="hdinsight"
@@ -34,7 +34,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 ## <a id="run"></a> Ausführen von Hive-Abfragen mithilfe der Abfragekonsole
 
-1. Öffnen Sie das <a href="https://manage.windowsazure.com" target="_blank">Azure-Verwaltungsportal</a> und wählen Sie Ihren HDInsight-Cluster aus. Wählen Sie am Ende der Seite die Option **Abfragekonsole** aus. Geben Sie nach der entsprechenden Aufforderung den Benutzernamen und das Kennwort ein, die Sie beim Erstellen des Clusters verwendet haben.
+1. Öffnen Sie das <a href="https://manage.windowsazure.com" target="_blank">Azure-Verwaltungsportal</a>, und wählen Sie den HDInsight-Cluster aus. Wählen Sie am Ende der Seite die Option **Abfragekonsole** aus. Geben Sie nach der entsprechenden Aufforderung den Benutzernamen und das Kennwort ein, die Sie beim Erstellen des Clusters verwendet haben.
 
     > [AZURE.NOTE] Sie können die Abfragekonsole auch durch Eingabe von **https://CLUSTERNAME.azurehdinsight.net** in Ihrem Browser aufrufen.
 
@@ -53,19 +53,19 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
     Diese Anweisungen führen die folgenden Aktionen aus.
 
     * **DROP TABLE**: löscht Tabelle und Datendatei, falls die Tabelle bereits existiert
-    * **CREATE EXTERNAL TABLE**: erstellt eine neue 'external' Tabelle in Hive Externe Tabellen speichern nur die Tabellendefinition in Hive. Die Daten verbleiben am ursprünglichen Speicherort.
+    * **CREATE EXTERNAL TABLE** erstellt eine neue  'externe' Tabelle in Hive. Externe Tabellen speichern nur die Tabellendefinition in Hive. Die Daten verbleiben am ursprünglichen Speicherort.
 
     > [AZURE.NOTE] Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle, z. B. einen automatisierten Prozess zum Hochladen von Daten, oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden.
     >
     > Durch das Ablegen einer externen Tabelle werden **nicht** die Daten, sondern nur die Tabellendefinitionen gelöscht.
 
     * **ROW FORMAT**: teilt Hive mit, wie die Daten formatiert werden In diesem Fall werden die Felder in den einzelnen Protokollen durch Leerzeichen getrennt.
-    * **STORED AS TEXTFILE LOCATION**: teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Information mit, dass die Speicherung als Text erfolgt
-    * **SELECT**: die Anzahl aller Zeilen auswählen, für die die Spalte **t4** den Wert **[ERROR]** enthält Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
+    * **STORED AS TEXTFILE LOCATION** teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Informationen mit, dass die Speicherung als Text erfolgt.
+    * Mit **SELECT** wählen Sie die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[ERROR]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
 
 2. Wählen Sie **Übermitteln** aus. Die **Auftragssitzung** am unteren Seitenrand sollte Details für den Auftrag anzeigen.
 
-3. Sobald das Feld **Status** zu **Abgeschlossen** wechselt, wählen Sie **Details anzeigen** für den Auftrag aus. Auf der Detailseite enthält die **Auftragsausgabe** die Zeichenfolge `[ERROR]	3`. Sie können die Schaltfläche **Herunterladen** unter diesem Feld verwenden, um eine Datei herunterzuladen, die die Ausgabe des Auftrags enthält.
+3. Sobald das Feld **Status** zu **Abgeschlossen** wechselt, wählen Sie **Details anzeigen** für den Auftrag aus. Auf der Detailseite enthält die **Auftragsausgabe** den Eintrag `[ERROR]	3`. Sie können die Schaltfläche **Herunterladen** unter diesem Feld verwenden, um eine Datei herunterzuladen, die die Ausgabe des Auftrags enthält.
 
 
 ## <a id="summary"></a>Zusammenfassung
@@ -88,17 +88,17 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 [1]: ../hdinsight-hadoop-visual-studio-tools-get-started/
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/de-de/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/library/dn479185.aspx
 
-[azure-purchase-options]: http://azure.microsoft.com/ pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/ pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/ pricing/free-trial/
+[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
 [apache-log4j]: http://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: http://azure.microsoft.com/ documentation/articles/hdinsight-connect-excel-power-query/
+[import-to-excel]: http://azure.microsoft.com/documentation/articles/hdinsight-connect-excel-power-query/
 
 
 [hdinsight-use-oozie]: ../hdinsight-use-oozie/
@@ -120,4 +120,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

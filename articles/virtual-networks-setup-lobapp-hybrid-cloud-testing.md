@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/17/2015" 
+	ms.date="03/04/2015" 
 	ms.author="josephd"/>
 
-#Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken
+# Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken
 
 In diesem Thema werden die Schritte zum Erstellen einer Hybrid Cloud-Umgebung zum Testen einer in Microsoft Azure gehosteten Intranetbranchenanwendung erläutert. Die resultierende Konfiguration sieht folgendermaßen aus.
 
@@ -42,26 +42,26 @@ Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
 2.	Konfigurieren des SQL Server-Computers (SQL1)
 3.	Konfigurieren den Branchenservers (LOB1)
 
-Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure testen](http://www.windowsazure.com/pricing/free-trial/) für eine kostenlose Testversion registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie die Informationen unter [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure testen](http://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie die Informationen unter [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-##Phase 1: Einrichten der Hybrid Cloud-Umgebung
+## Phase 1: Einrichten der Hybrid Cloud-Umgebung
 
-Gehen Sie nach den Anweisungen im Thema [Einrichten der Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-hybrid-cloud-environment-testing/) vor. Da das Vorhandensein des APP1-Servers im Subnetz "Corpnet" in dieser Testumgebung nicht erforderlich ist, können Sie ihn jetzt herunterfahren.
+Verwenden Sie die Anweisungen im Thema [Einrichten einer hybriden Cloud-Umgebung zum Testen](../virtual-networks-setup-hybrid-cloud-environment-testing/) . Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
 
 Dies ist die aktuelle Konfiguration.
 
 ![](./media/virtual-networks-set-up-LOB-App-hybrid-cloud-for-testing/CreateLOBAppHybridCloud_1.png)
  
-##Phase 2: Konfigurieren des SQL Server-Computers (SQL1)
+## Phase 2: Konfigurieren des SQL Server-Computers (SQL1)
 
 Starten Sie ggf. den Computer DC2 über das Azure-Verwaltungsportal.
 
-Führen Sie anschließend auf dem lokalen Computer die folgenden Befehlen in einer Azure PowerShell-Eingabeaufforderung auf Administratorebene aus, um einen virtuellen Azure-Computer für SQL1 zu erstellen. Füllen Sie vor dem Ausführen dieser Befehle die Variablenwerte aus, und entfernen Sie die Zeichen < und >.
+Erstellen Sie dann in einer Azure PowerShell-Eingabeaufforderung auf dem lokalen Computer mit den folgenden Befehlen einen virtuellen Azure-Computer für SQL1. Füllen Sie vor dem Ausführen dieser Befehle die Variablenwerte aus, und entfernen Sie die Zeichen < und >.
 
 	$storageacct="<Name of the storage account for your TestVNET virtual network>"
 	$ServiceName="<The cloud service name for your TestVNET virtual network>"
 	$LocalAdminName="<A local administrator account name>" 
-	$LocalAdminPW="<A password for the local administrator account>"
+	$LocalAdminPW="<The password for the local administrator account>"
 	$User1Password="<The password for the CORP\User1 account>"
 	Set-AzureStorageAccount -StorageAccountName $storageacct
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "SQL Server 2014 RTM Standard on Windows Server 2012 R2" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
@@ -71,32 +71,32 @@ Führen Sie anschließend auf dem lokalen Computer die folgenden Befehlen in ein
 	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 100 -DiskLabel SQLFiles -LUN 0 -HostCaching None
 	New-AzureVM -ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
-Stellen Sie dann  *using the local administrator account* eine Verbindung mit dem neuen virtuellen Computer für SQL1 her.
+Stellen Sie dann *using the local administrator account* eine Verbindung mit dem neuen virtuellen Computer für SQL1 her.
 
 1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf **Virtuelle Computer**, und klicken Sie dann in der Statusspalte für SQL1 auf **Wird ausgeführt**.
 2.	Klicken Sie in der Taskleiste auf **Verbinden**. 
-3.	Wenn Sie zum Öffnen von SQL1.rdp aufgefordert werden, klicken Sie auf **öffnen**.
-4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
-5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
+3.	Wenn Sie zum Öffnen von "SQL1.rdp" aufgefordert werden, klicken Sie auf **Öffnen**.
+4.	Wenn ein Meldungsfeld für eine Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
+5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, verwenden Sie:
 	- Name: **SQL1\\**[Name des lokalen Administratorkontos]
 	- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
-Konfigurieren Sie anschließend Windows-Firewall-Regeln, um Datenverkehr für grundlegende Konnektivitätstests und für SQL Server zuzulassen. Führen Sie auf SQL1 in einer Windows PowerShell-Eingabeaufforderung auf Administratorebene die folgenden Befehle aus.
+Konfigurieren Sie anschließend Windows-Firewall-Regeln, um Datenverkehr zum Testen der allgemeinen Konnektivität und von SQL Server zuzulassen. Führen Sie in der Windows PowerShell-Eingabeaufforderung von SQL1 die folgenden Befehle auf Administratorebene aus.
 
 	New-NetFirewallRule -DisplayName "SQL Server" -Direction Inbound -Protocol TCP -LocalPort 1433,1434,5022 -Action allow 
 	Set-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)" -enabled True
 	ping dc1.corp.contoso.com
 
-Der ping-Befehl muss in vier erfolgreichen Antworten von der IP-Adresse 10.0.0.1 resultieren.
+Der Ping-Befehl sollte zu vier erfolgreichen Antworten von der IP-Adresse 10.0.0.1 führen.
 
 Fügen Sie anschließend den zusätzlichen Datenträger als neues Volume mit dem Laufwerkbuchstaben F: hinzu.
 
-1.	Klicken Sie im linken Bereich von Server-Manager auf **Datei- und Speicherdienste**, und klicken Sie dann auf **Datenträger**.
-2.	Klicken Sie im Inhaltsbereich in der Gruppe **Datenträger** auf **Datenträger 2** (wobei **Partition** auf **Unbekannt** festgelegt ist).
-3.	Klicken Sie auf **Aufgaben**, und klicken Sie dann auf **Neues Volume**.
-4.	Klicken Sie auf der Seite "Vorbemerkungen" des Assistenten für neue Volumes auf **Weiter**.
-5.	Klicken Sie auf der Seite "Server und Datenträger auswählen" auf **Datenträger 2**, und klicken Sie dann auf **Weiter**. Klicken Sie bei der entsprechenden Aufforderung auf **OK**.
+1.	Klicken Sie im linken Bereich des Server-Managers auf **Datei- und Speicherdienste** und anschließend auf **Datenträger**.
+2.	Klicken Sie im Inhaltsbereich in der Gruppe **Datenträger** auf **Datenträger 2** (wobei **Partition** auf **Unbekannt** gesetzt sein muss).
+3.	Klicken Sie auf **Aufgaben** und anschließend auf **Neues Volume**.
+4.	Klicken Sie auf der Seite "Voraussetzungen" des Assistenten für neue Volumes auf **Weiter**.
+5.	Klicken Sie auf der Seite "Server und Datenträger auswählen" auf **Datenträger 2** und anschließend auf **Weiter**. Wenn Sie dazu aufgefordert werden, klicken Sie auf **OK**.
 6.	Klicken Sie auf der Seite "Geben Sie die Größe des Volumes an" auf **Weiter**.
 7.	Klicken Sie auf die Seite "Einem Laufwerkbuchstaben oder Ordner zuweisen" auf **Weiter**.
 8.	Klicken Sie auf der Seite "Dateisystemeinstellungen auswählen" auf **Weiter**.
@@ -109,11 +109,11 @@ Führen Sie die folgenden Befehle in der Windows PowerShell-Eingabeaufforderung 
 	md f:\Log
 	md f:\Backup
 
-Als Nächstes konfigurieren Sie SQL Server 2014 so, dass Laufwerk F: für neue Datenbanken und für Benutzerkontoberechtigungen verwendet wird.
+Konfigurieren Sie anschließend SQL Server 2014 so, dass das Laufwerk F: für neue Datenbanken und Berechtigungen für Benutzerkonten verwendet werden kann.
 
-1.	Geben Sie im Startbildschirm **SQL Server Management** ein, und klicken Sie dann auf **SQL Server 2014 Management Studio**.
-2.	Klicken Sie im Dialogfeld **Verbindung mit dem Server herstellen** auf **Verbinden**.
-3.	Klicken Sie im Strukturbereich "Objekt-Explorer" mit der rechten Maustaste auf **SQL1**, und klicken Sie dann auf **Eigenschaften**.
+1.	Geben Sie im Startbildschirm **SQL Server Management** ein, und klicken Sie auf **SQL Server 2014 Management Studio**.
+2.	Klicken Sie unter **Mit Server verbinden** auf **Verbinden**.
+3.	Klicken Sie im Strukturbereich "Objekt-Explorer" mit der rechten Maustaste auf **SQL1**, und klicken Sie anschließend auf **Eigenschaften**.
 4.	Klicken Sie im Fenster **Servereigenschaften** auf **Datenbankeinstellungen**.
 5.	Suchen Sie den Eintrag **Standardspeicherorte für Datenbank**, und legen Sie die folgenden Werte fest: 
 	- Geben Sie für **Daten** den Pfad **f:\Data** ein.
@@ -124,20 +124,20 @@ Als Nächstes konfigurieren Sie SQL Server 2014 so, dass Laufwerk F: für neue D
 7.	Öffnen Sie im Strukturbereich **Objekt-Explorer** den Abschnitt **Sicherheit**.
 8.	Klicken Sie mit der rechten Maustaste auf **Anmeldungen**, und klicken Sie dann auf **Neue Anmeldung**.
 9.	Geben Sie in das Feld **Anmeldename** den Namen **CORP\User1** ein.
-10.	Klicken Sie auf der Seite **Serverrollen** auf **Sysadmin**, und klicken Sie dann auf **OK**.
+10.	Klicken Sie auf der Seite **Serverrollen** auf **Sysadmin** und anschließend auf **OK**.
 11.	Schließen Sie Microsoft SQL Server Management Studio.
 
 Dies ist die aktuelle Konfiguration.
 
 ![](./media/virtual-networks-set-up-LOB-App-hybrid-cloud-for-testing/CreateLOBAppHybridCloud_2.png)
  
-##Phase 3: Konfigurieren den Branchenservers (LOB1)
+## Phase 3: Konfigurieren den Branchenservers (LOB1)
 
 Führen Sie als Erstes auf dem lokalen Computer die folgenden Befehlen in der Azure PowerShell-Eingabeaufforderung aus, um einen virtuellen Azure-Computer für LOB1 zu erstellen.
 
 	$ServiceName="<The cloud service name for your TestVNET virtual network>"
 	$LocalAdminName="<A local administrator account name>" 
-	$LocalAdminPW="<A password for the local administrator account>"
+	$LocalAdminPW="<The password for the local administrator account>"
 	$User1Password="<The password for the CORP\User1 account>"
 	$image = Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name LOB1 -InstanceSize Medium -ImageName $image
@@ -176,15 +176,17 @@ Dies ist die aktuelle Konfiguration.
  
 Diese Umgebung kann jetzt zum Bereitstellen von webbasierten Anwendungen auf LOB1 und für Funktions- und Leistungstests aus dem Subnetz "Corpnet" verwendet werden.
 
-##Zusätzliche Ressourcen
+## Zusätzliche Ressourcen
 
 [Blaupausen für Software-Architekten](http://msdn.microsoft.com/dn630664)
 
 [Hostinggerechte Webserverplattform (IIS)](http://technet.microsoft.com/library/hh831818)
 
-[Einrichten einer Hybrid Cloud-Umgebung für Tests](../virtual-networks-setup-hybrid-cloud-environment-testing/)
+[Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-hybrid-cloud-environment-testing/)
 
 [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
 
 [Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-dirsync-hybrid-cloud-testing/)
-<!--HONumber=45--> 
+
+[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)
+<!--HONumber=47-->

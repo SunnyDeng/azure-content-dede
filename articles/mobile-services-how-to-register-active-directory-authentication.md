@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Registrieren für die Authentifizierung in Azure Active Directory - Mobile Services" 
 	description="Erfahren Sie mehr über die Registrierung für die Azure Active Directory-Authentifizierung in Ihrer Mobile Services-Anwendung." 
 	authors="wesmc7777" 
@@ -10,18 +10,21 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="09/23/2014" 
+	ms.date="02/20/2015" 
 	ms.author="wesmc"/>
 
-# Registrieren Ihrer Apps für die Verwendung einer Azure Active Directory-Anmeldung
+#Registrieren Ihrer Apps für die Verwendung einer Azure Active Directory-Anmeldung
+##Übersicht
+
 
 In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Directory als Authentifizierungsanbieter für Azure Mobile Services zu verwenden. 
 
+##Registrieren Ihrer App
 
->[AZURE.NOTE] Die in diesem Thema beschriebenen Schritte sollten mit dem Lernprogramm [Hinzufügen von Authentifizierung zur Mobile Services-App](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/) verwendet werden, wenn Sie [Vom Dienst ausgehende Anmeldevorgänge](http://msdn.microsoft.com/library/azure/dn283952.aspx) mit Ihrer App verwenden möchten. Auch wenn Ihre App [vom Client ausgehende Anmeldevorgänge](http://msdn.microsoft.com/library/azure/jj710106.aspx) für Azure Active Directory und einen mobilen .NET Back-End-Dienst erfordert, sollten Sie mit dem Lernprogramm [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden](/de-de/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/) beginnen.
+>[AZURE.NOTE] Die in diesem Thema beschriebenen Schritte sollten mit dem Lernprogramm [Hinzufügen von Authentifizierung zur Mobile Services-App](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/) verwendet werden, wenn Sie [Vom Dienst ausgehende Anmeldevorgänge](http://msdn.microsoft.com/library/azure/dn283952.aspx) mit Ihrer App verwenden möchten. Auch wenn Ihre App [vom Client ausgehende Anmeldevorgänge](http://msdn.microsoft.com/library/azure/jj710106.aspx) für Azure Active Directory und einen mobilen .NET Backend-Dienst erfordert, sollten Sie mit dem Lernprogramm [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden](/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/) beginnen.
 
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
@@ -38,7 +41,7 @@ In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Di
 
 4. Navigieren Sie zu **Active Directory** im Verwaltungsportal, und klicken Sie auf Ihr Verzeichnis.
 
-    ![][4] 	
+    ![][4] 
 
 5. Klicken Sie oben auf die Registerkarte **Anwendungen** und anschließend auf **HINZUFÜGEN**, um eine App hinzuzufügen. 
 
@@ -46,7 +49,7 @@ In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Di
 
 6. Klicken Sie auf **Eine von meinem Unternehmen entwickelte Anwendung hinzufügen**.
 
-7. Geben Sie im Assistenten zum Hinzufügen von Anwendungen einen **Namen** für Ihre Anwendung ein, und klicken Sie auf den Typ **Webanwendung und/oder Web-API**. Klicken Sie dann auf Continue.
+7. Geben Sie im "Add Application-Assistenten" einen **Namen** für Ihre Anwendung ein, und klicken Sie auf den Typ **Web Application And/Or Web API**. Klicken Sie dann auf "Continue".
 
     ![][5]
 
@@ -57,7 +60,7 @@ In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Azure Active Di
 
 9. Nachdem die Anwendung hinzugefügt wurde, klicken Sie auf die Registerkarte **Konfigurieren**. Kopieren Sie nun die **Client-ID** für die App.
 
-    Wenn Sie den mobilen Dienst so konfiguriert haben, dass er das .NET-Back-End verwendet, bearbeiten Sie zusätzlich **Antwort-URL** unter **Einmaliges Anmelden** und legen diese URL gefolgt vom Pfad _signin-aad_ als URL Ihres mobilen Diensts fest. Beispiel:  `https://todolist.azure-mobile.net/signin-aad`
+    als URL Ihres mobilen Diensts fest.Wenn Sie den mobilen Dienst so konfiguriert haben, dass er das .NET-Back-End verwendet, bearbeiten Sie zusätzlich die **Antwort-URL** unter **Einmaliges Anmelden**, und legen diese URL gefolgt vom Pfad _signin-aad_ fest. Beispiel: `https://todolist.azure-mobile.net/signin-aad`
 
     ![][8]
 
@@ -99,5 +102,4 @@ Sie können nun Azure Active Directory für die Authentifizierung in Ihrer App v
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
 
-
-<!--HONumber=42-->
+<!--HONumber=47-->

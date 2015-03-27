@@ -20,11 +20,11 @@
 
 Linux-basierte HDInsight-Cluster bieten die Möglichkeit, den SSH-Zugriff mithilfe eines Kennworts oder eines SSH-Schlüssels zu schützen. Dieses Dokument enthält Informationen zum Herstellen einer Verbindung von Windows-Clients, die den PuTTY SSH-Client verwenden, zu HDInsight.
 
-> [AZURE.NOTE] Für die Schritte in diesem Artikel wird davon ausgegangen, dass Sie einen Windows-Client verwenden. Wenn Sie einen Linux-, Unix- oder OS X-Client verwenden, finden Sie entsprechende Informationen unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](/de-de/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/).
+> [AZURE.NOTE] Für die Schritte in diesem Artikel wird davon ausgegangen, dass Sie einen Windows-Client verwenden. Wenn Sie einen Linux-, Unix- oder OS X-Client verwenden, finden Sie entsprechende Informationen unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/).
 
 ## Voraussetzungen
 
-* **PuTTY** und **PuTTYGen** für Windows-Clients. Diese Dienstprogramme sind erhältlich unter: <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>
+* **PuTTY** und **PuTTYGen** für Windows-Clients. Diese Dienstprogramme sind erhältlich unter <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>
 
 * Ein zeitgemäßer Webbrowser, der HTML5 unterstützt
 
@@ -34,7 +34,7 @@ ODER
 
 ODER
 
-* Plattformübergreifende Tools der Azure-Befehlszeilenschnittstelle
+* Plattformübergreifende Tools der Azure-Befehlszeilenschnittstelle.
 
 ## Was ist SSH?
 
@@ -78,7 +78,7 @@ Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, müssen Sie den zuvo
 
 * **Plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli)**: verwendet Befehle der Befehlszeile zum Erstellen des Clusters.
 
-Für jede dieser Methoden ist der **öffentliche Schlüssel** erforderlich. Ausführliche Informationen zum Erstellen eines Linux-basierten HDInsight-Clusters finden Sie unter <a href="./hdinsight-hadoop-provision-linux-clusters/" target="_blank">Bereitstellen Linux-basierter HDInsight-Cluster</a>.
+Für jede dieser Methoden ist der **öffentliche Schlüssel** erforderlich. Vollständige Informationen zum Erstellen eines Linux-basierten HDInsight-Clusters finden Sie unter <a href="./hdinsight-hadoop-provision-linux-clusters/" target="_blank">Bereitstellen von Linux-basierten HDInsight-Clustern</a>.
 
 ### Azure-Verwaltungsportal
 
@@ -90,9 +90,9 @@ Dadurch wird für den angegebenen Benutzer ein Anmeldename erstellt und die Kenn
 
 ### Plattformübergreifende Azure-Befehlszeilenschnittstelle
 
-Verwenden Sie die <a href="../xplat-cli/" target="_brad">Plattformübergreifende Azure-Befehlszeilenschnittstelle</a>, um mithilfe des Befehls `azure hdinsight cluzter create` einen neuen Cluster zu erstellen.
+Können Sie die <a href="../xplat-cli/" target="_brad">Plattformübergreifende Azure-Befehlszeilenschnittstelle</a>, zum Erstellen eines neuen Clusters mithilfe des `Azure Hdinsight-Cluster erstellen`-Befehls verwenden.
 
-Weitere Informationen zur Verwendung dieses Befehls finden Sie unter <a href="../hdinsight-hadoop-provision-linux-clusters/" target="_blank">Benutzerdefinierte Bereitstellung eines Hadoop-Linux-Clusters in HDInsight</a>
+Weitere Informationen über die Verwendung dieses Befehls finden Sie unter <a href="../hdinsight-hadoop-provision-linux-clusters/" target="_blank">Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight</a>
 
 ## <a id="connect"></a>Verbinden mit einem Linux-basierten HDInsight-Cluster
 
@@ -106,7 +106,7 @@ Weitere Informationen zur Verwendung dieses Befehls finden Sie unter <a href="..
 
 	![putty interface, select private key](./media/hdinsight-hadoop-linux-use-ssh-windows/puttykey.png)
 
-3. Wählen Sie in **Category** die Option **Session** aus. Geben Sie auf dem Bildschirm **Basic options for your PuTTY session** die SSH-Adresse Ihres HDInsight-Servers in das Feld **Host name (or IP address)** ein. Die SSH-Adresse ist Ihr Clustername, gefolgt von **-ssh.azurehdinsight.net**. Beispiel: **mycluster-ssh.azurehdinsight.net**.
+3. Wählen Sie in **Category** die Option **Session** aus. Geben Sie auf dem Bildschirm **Grundoptionen für PuTTY-Sitzung** die SSH-Adresse Ihres HDInsight-Servers in das Feld **Hostname (oder IP-Adresse)** ein. Die SSH-Adresse ist Ihr Clustername, gefolgt von **-ssh.azurehdinsight.net**. Beispiel: **mycluster-ssh.azurehdinsight.net**.
 
 	![putty interface with ssh address entered](./media/hdinsight-hadoop-linux-use-ssh-windows/puttyaddress.png)
 
@@ -176,11 +176,11 @@ Verwenden Sie die folgenden Schritte, um einen SSH-Tunnel zu erstellen und Ihren
 
 	> [AZURE.NOTE] Durch die Auswahl von **Remote-DNS** werden DNS-Anforderungen mithilfe des HDInsight-Clusters aufgelöst. Ist diese Option deaktiviert, wird DNS lokal aufgelöst.
 
-	Sie können überprüfen, ob der Datenverkehr durch den Tunnel weitergeleitet wird, indem Sie eine Website wie <a href="http://www.whatismyip.com/" target="_blank">http://www.whatismyip.com/</a> mit aktivierten Proxyeinstellungen und deaktivierten Firefox-Proxyeinstellungen besuchen. Bei entsprechender Aktivierung wird die IP-Adresse für einen Computer im Microsoft Azure-Rechenzentrum angezeigt.
+	Sie können überprüfen, ob Datenverkehr durch den Tunnel weitergeleitet wird, indem Sie eine Website wie z. B. <a href="http://www.whatismyip.com/" target="_blank">http://www.whatismyip.com/</a> mit aktivierten Proxyeinstellungen und deaktivierten in Firefox aufrufen. Bei entsprechender Aktivierung wird die IP-Adresse für einen Computer im Microsoft Azure-Rechenzentrum angezeigt.
 
 ### Browsererweiterungen
 
-Obwohl Sie den Browser für die Verwendung des Tunnels konfigurieren, möchten Sie in der Regel jedoch nicht den gesamten Datenverkehr über den Tunnel weiterleiten. Browsererweiterungen wie <a href="http://getfoxyproxy.org/" target="_blank">FoxyProxy</a>  unterstützen den Musterabgleich für URL-Anforderungen (nur FoxyProxy Standard oder Plus), sodass nur Anforderungen für bestimmte URLs durch den Tunnel gesendet werden.
+Obwohl Sie den Browser für die Verwendung des Tunnels konfigurieren, möchten Sie in der Regel jedoch nicht den gesamten Datenverkehr über den Tunnel weiterleiten. Browsererweiterungen wie <a href="http://getfoxyproxy.org/" target="_blank">FoxyProxy</a> unterstützen den Musterabgleich für URL-Anforderungen (nur FoxyProxy Standard oder Plus), sodass nur Anforderungen für bestimmte URLs durch den Tunnel gesendet werden.
 
 Wenn Sie **FoxyProxy Standard** installiert haben, konfigurieren Sie es folgendermaßen, um nur den Datenverkehr für HDInsight über den Tunnel weiterzuleiten.
 
@@ -194,13 +194,13 @@ Wenn Sie **FoxyProxy Standard** installiert haben, konfigurieren Sie es folgende
 
 3. Wählen Sie die Registerkarte **Proxy-Details** aus, und geben Sie die entsprechenden Werte in die Felder ein.
 
-	* **Host- oder IP-Adresse**: localhost, da wir auf dem lokalen Computer einen SSH-Tunnel verwenden
+	* **Host- oder IP-Adresse**: Localhost, da wir auf dem lokalen Computer einen SSH-Tunnel verwenden.
 
-	* **Port**: der Port, den Sie für den SSH-Tunnel verwendet haben
+	* **Port**: Der Port, den Sie für den SSH-Tunnel verwendet haben.
 
-	* **SOCKS-Proxy**: aktivieren Sie diese Option, damit der Browser den Tunnel als Proxy verwenden kann
+	* **SOCKS-Proxy**: Aktivieren Sie diese Option, damit der Browser den Tunnel als Proxy verwenden kann.
 
-	* **SOCKS v5**: aktivieren Sie diese Option, um die erforderliche Version für den Proxy festzulegen
+	* **SOCKS v5**: Aktivieren Sie diese Option, um die erforderliche Version für den Proxy festzulegen.
 
 	![foxyproxy proxy](./media/hdinsight-hadoop-linux-use-ssh-windows/foxyproxyproxy.png)
 
@@ -208,7 +208,7 @@ Wenn Sie **FoxyProxy Standard** installiert haben, konfigurieren Sie es folgende
 
 	* **Name des Musters**: **Stammknoten** - Dies ist lediglich ein Anzeigename für das Muster.
 
-	* **URL-Muster**: **\*stammknoten\*** - Definiert ein Muster, das mit jeder URL übereinstimmt, die das Wort **Stammknoten** enthält.
+	* **URL-Muster**: <strong>\*stammknoten\*</strong> - Definiert ein Muster, das mit jeder URL übereinstimmt, die das Wort **Stammknoten** enthält.
 
 	![foxyproxy pattern](./media/hdinsight-hadoop-linux-use-ssh-windows/foxypattern.png)
 
@@ -230,4 +230,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](../hdinsight-use-mapreduce/)
  
-<!--HONumber=45--> 
+<!--HONumber=47-->

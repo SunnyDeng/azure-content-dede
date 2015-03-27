@@ -19,7 +19,7 @@
 
 # Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) . 
 
 In diesem Thema wird beschrieben, wie bei der Programmierung mit der Media Services-REST-API eine programmgesteuerte Verbindung mit Microsoft Azure Media Services hergestellt wird.
 
@@ -30,7 +30,7 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 1. Abrufen eines Zugriffstokens 
 2. Herstellen einer Verbindung mit dem Media Services-URI 
 
-	>[AZURE.NOTE] Nach der erfolgreichen Verbindung mit "https://media.windows.net" erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
+	>[AZURE.NOTE] Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
 	Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
 
 3. Senden Sie nachfolgende API-Aufrufe an die neue URL. 
@@ -40,11 +40,11 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 		HTTP/1.1 301 Moved Permanently
 		Location: https://wamsbayclus001rest-hs.cloudapp.net/api/
 
-	sollten Sie nachfolgende API-Aufrufe an "https://wamsbayclus001rest-hs.cloudapp.net/api/" senden.
+	Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/.
 
 ## Abrufen eines Zugriffstokens
 
-Um direkt über die RST-API auf Media Services  zuzugreifen, rufen Sie das Zugriffstoken von ACS ab und verwenden es während jeder im Dienst ausgeführten HTTP-Anforderung. Dieses Token ähnelt anderen Token, die von ACS auf der Basis von Zugriffsansprüchen im HTTP-Anforderungsheader und mit dem OAuth v2-Protokoll bereitgestellt werden. Für die direkte Verbindung mit Media Services gelten keine weiteren Voraussetzungen.
+Um direkt über die REST-API auf Media Services zuzugreifen, rufen Sie das Zugriffstoken von ACS ab und verwenden es während jeder im Dienst ausgeführten HTTP-Anforderung. Dieses Token ähnelt anderen Token, die von ACS auf der Basis von Zugriffsansprüchen im HTTP-Anforderungsheader und mit dem OAuth v2-Protokoll bereitgestellt werden. Für die direkte Verbindung mit Media Services gelten keine weiteren Voraussetzungen.
 
 Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abrufen eines Tokens verwendet werden.
 
@@ -63,7 +63,7 @@ Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abru
 
 Sie müssen den client_id-Wert und den client_secret-Wert im Text dieser Anforderung überprüfen. Die Werte client_id und client_secret entsprechen dem AccountName-Wert und dem AccountKey-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt. 
 
-Beachten Sie, dass der AccountKey für Ihr Media Services-Konto URL-codiert sein muss, wenn Sie ihn als client_secret-Wert in Ihrer Zugriffstokenanforderung verwenden.
+Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss, wenn Sie ihn als client_secret-Wert in Ihrer Zugriffstokenanforderung verwenden.
 
 	grant_type=client_credentials&client_id=ams_account_name&client_secret=URL_encoded_ams_account_key&scope=urn%3aWindowsAzureMediaServices
 
@@ -101,9 +101,9 @@ Es wird empfohlen, den access_token-Wert und den expires_in-Wert in einem extern
 
 ### Herstellen einer Verbindung mit dem Media Services-URI
 
-Der Stamm-URI für Media Services ist "https://media.windows.net/Token". Sie sollten zunächst eine Verbindung mit diesem URI herstellen. Falls Sie eine 301 Redirect-Antwort erhalten, senden Sie nachfolgende Aufrufe an den neuen URI. Außerdem sollten Sie keine Logik für die automatische Umleitung/Verfolgung in Ihren Anforderungen verwenden. HTTP-Verben und -Anforderungstexte werden nicht an den neuen URI weitergeleitet.
+Der Stamm-URI für Media Services lautet https://media.windows.net/. Sie sollten zunächst eine Verbindung mit diesem URI herstellen. Falls Sie eine 301 Redirect-Antwort erhalten, senden Sie nachfolgende Aufrufe an den neuen URI. Außerdem sollten Sie keine Logik für die automatische Umleitung/Verfolgung in Ihren Anforderungen verwenden. HTTP-Verben und -Anforderungstexte werden nicht an den neuen URI weitergeleitet.
 
-Beachten Sie, dass der Stamm-URI für das Hochladen und Herunterladen von Medienobjektdateien "https://yourstorageaccount.blob.core.windows.net/" ist. Dabei entspricht der Speicherkontoname dem Namen, den Sie bei der Einrichtung des Media Services-Konto verwendet haben.
+Beachten Sie, dass der Stamm-URI für das Hochladen und Herunterladen von Medienobjektdateien https://yourstorageaccount.blob.core.windows.net/ lautet. Dabei entspricht der Speicherkontoname dem Namen, den Sie bei der Einrichtung des Media Services-Kontos verwendet haben.
 
 Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für Media Services (https://media.windows.net/). Auf die Anforderung wird eine 301 Redirect-Antwort zurückgegeben. Die nachfolgende Anforderung wird mithilfe des neuen URIs (https://wamsbayclus001rest-hs.cloudapp.net/api/) gesendet.     
 
@@ -169,4 +169,4 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 
 <!-- URLs. -->
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

@@ -16,11 +16,9 @@
 	ms.date="02/10/2015" 
 	ms.author="adlevin"/>
 
-
-
 # DocumentDB-Whitepaper von David Chappell 
 
-**Zusammenfassung:** Erfahren Sie mehr über DocumentDB, eine verwaltete NoSQL-Datenbank unter Microsoft Azure. DocumentDB ist als Datenbanktechnologie in folgenden Fällen die ideale Wahl:
+**Zusammenfassung:** Informationen zu DocumentDB, einer verwalteten NoSQL-Datenbank in Microsoft Azure. DocumentDB ist die ideale Datenbanktechnologiewahl, wenn:
 
 * Ihre Anwendung würde von einem schemafreien Datenmodell profitieren.
 * Ihre Datenbank muss viel Speicherplatz und Durchsatz skalieren.
@@ -28,14 +26,14 @@
 
 In diesem Whitepaper werden außerdem die folgenden grundlegenden Konzepte behandelt:
 
-* Das DocumentDB-Datenmodell
-* Wie Anwendungen mit Daten arbeiten
-* Optionen, die für Anwendungen zum Ausgleich von Leistung und Konsistenz zur Verfügung stehen
+* Das DocumentDB-Datenmodell.
+* Wie Anwendungen mit Daten arbeiten.
+* Optionen, die für Anwendungen zum Ausgleich von Leistung und Konsistenz zur Verfügung stehen.
 
 
-**Veröffentlicht:** 10. September 2014
+**Veröffentlicht:** 10.September 2014
 
-**Download:** [Introducing DocumentDB - Eine NoSQL Datenbank für Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
+**Download:** [Einführung in DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
 
 
-<!--HONumber=46--> 
+<!--HONumber=47-->

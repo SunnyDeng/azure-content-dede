@@ -2,11 +2,11 @@
 Als Nächstes müssen Sie den Zeitpunkt für die Benachrichtigungsregistrierung ändern, um sicherzustellen, dass der Benutzer vor dem Registrierungsversuch authentifiziert wird.
 
 
-1. Öffnen Sie die Datei "ToDoActivity.java" im Paket-Explorer in Eclipse, und suchen Sie die `onCreate`-Methode. Verschieben Sie folgenden Code aus der `onCreate`-Methode an den Anfang der `createTable`-Methode.
+1. Öffnen Sie die Datei "ToDoActivity.java" im Projektexplorer in Android Studio, und suchen Sie die `onCreate`-Methode. Verschieben Sie folgenden Code aus der `onCreate`-Methode an den Anfang der `createTable`-Methode.
 
         NotificationsManager.handleNotifications(this, SENDER_ID, MyHandler.class);
 
-     The `createTable` method is called when `authenticate` method completes. Your entire `createTable` method should look similar to the following.
+     Die `createTable`-Methode wird nach Abschluss der `authenticate`-Methode aufgerufen. Die gesamte `createTable`-Methode sollte etwa wie folgt aussehen.
 
         private void createTable() {
         
@@ -26,4 +26,5 @@ Als Nächstes müssen Sie den Zeitpunkt für die Benachrichtigungsregistrierung 
             refreshItemsFromTable();
         }	
 
-<!--HONumber=42-->
+
+<!--HONumber=47-->

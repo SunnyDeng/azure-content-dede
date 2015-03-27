@@ -1,4 +1,4 @@
-## Empfangen von Nachrichten mit Apache Storm
+﻿## Empfangen von Nachrichten mit Apache Storm
 
 [**Apache Storm**](https://storm.incubator.apache.org) ist ein verteiltes Echtzeit-Berechnungssystem, das die zuverlässige Verarbeitung von unbegrenzten Datenströmen vereinfacht. In diesem Abschnitt wird gezeigt, wie Sie den Ereignis-Hub-Spout in Storm zum Empfangen von Ereignissen vom Ereignis-Hubs verwenden. Mit Apache Storm können Sie Ereignisse auf mehrere Prozesse aufteilen, die in verschiedenen Knoten gehostet werden. Die Ereignis-Hub-Integration in Storm vereinfacht die Ereignisnutzung durch transparente Prüfung des Fortschritts mithilfe der Zookeeper Installation von Storm, der Verwaltung von permanenten Prüfpunkten und dem parallelen von Ereignissen von Ereignis-Hubs.
 
@@ -216,6 +216,7 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 			}
 		}
 
+
 	Diese Klasse erstellt einen neuen Ereignis-Hubs-Spout, und verwendet die Eigenschaften in der Konfigurationsdatei zum Instanziieren. Beachten Sie unbedingt, dass in diesem Beispiel eine der Anzahl der Partitionen auf dem Ereignis-Hub entsprechende die Anzahl von Spout-Aufgaben erstellt wird, um die maximale für diesen Ereignis-Hub zulässige Parallelität zulässig zu verwenden.
 
 <!-- Links -->
@@ -228,5 +229,4 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 [12]: ./media/service-bus-event-hubs-getstarted/create-storm1.png
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
-
-<!--HONumber=42-->
+<!--HONumber=47-->

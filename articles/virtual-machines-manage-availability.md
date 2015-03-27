@@ -18,14 +18,14 @@
 
 #Verwalten der Verfügbarkeit virtueller Computer
 
-## Unterschied zwischen geplanter und ungeplanter Wartung
+##Verstehen geplanter und nicht geplanter Wartung
 Es gibt zwei Arten von Azure-Plattformereignissen, die sich auf die Verfügbarkeit von virtuellen Computern auswirken können: geplante und ungeplante Wartung.
 
-- **Geplante Wartungsereignisse** sind regelmäßige Updates, die von Microsoft für die zugrunde liegende Azure-Plattform ausgeführt werden können, um die gesamte Verfügbarkeit, Leistung und Sicherheit der Plattforminfrastruktur, unter der die virtuellen Computer ausgeführt werden, zu verbessern. Die Mehrheit dieser Updates wird ohne Auswirkungen auf die virtuellen Computer oder Cloud-Dienste ausgeführt. Es gibt jedoch Instanzen, bei denen diese Updates einen Neustart des virtuellen Computers erfordern, um die erforderlichen Updates auf die Plattforminfrastruktur anzuwenden. 
+- **Geplante Wartungsereignisse** sind regelmäßige Updates, die von Microsoft für die zugrunde liegende Azure-Plattform ausgeführt werden können, um die gesamte Verfügbarkeit, Leistung und Sicherheit der Plattforminfrastruktur zu verbessern, unter der die virtuellen Computer ausgeführt werden. Die Mehrheit dieser Updates wird ohne Auswirkungen auf die virtuellen Computer oder Cloud-Dienste ausgeführt. Es gibt jedoch Instanzen, bei denen diese Updates einen Neustart des virtuellen Computers erfordern, um die erforderlichen Updates auf die Plattforminfrastruktur anzuwenden. 
 
 - **Ungeplante Wartungsereignisse** treten auf, wenn die Hardware oder physische Infrastruktur, die dem virtuellen Computer zugrunde liegt, einen Ausfall verursacht. Diese können Ausfälle des lokalen Netzwerks, Datenträgers oder andere Fehler auf Rackebene umfassen. Wenn ein solcher Fehler festgestellt wird, migriert die Azure-Plattform Ihren virtuellen Computer automatisch vom fehlerhaften physischen Computer, der den virtuellen Computer hostet, zu einem fehlerfreien physischen Computer. Diese Ereignisse treten selten auf, verursachen jedoch u. U. den Neustart des virtuellen Computers. 
 
-## Bewährte Methoden für die Entwicklung hoch verfügbarer Anwendungen
+##Bewährte Methoden für die Entwicklung hoch verfügbarer Anwendungen
 Um die Downtime aufgrund eines oder mehrerer dieser Ereignisse zu verringern, sollten Sie die folgenden bewährten Methoden befolgen, um die hohe Verfügbarkeit virtueller Computer zu gewährleisten:
 
 * [Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz] 
@@ -33,8 +33,8 @@ Um die Downtime aufgrund eines oder mehrerer dieser Ereignisse zu verringern, so
 * [Kombinieren des Lastenausgleichs mit Verfügbarkeitsgruppen] 
 * [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen] 
 
-### Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz 
-Um Redundanz für Ihre Anwendung zu gewährleisten, empfehlen wir die Gruppierung von zwei oder mehreren virtuellen Computern in einer Verfügbarkeitsgruppe. Durch diese Konfiguration wird sichergestellt, dass während eines geplanten oder ungeplanten Wartungsereignisses mindestens ein virtueller Computer verfügbar ist und die von der Azure-SLA zugesicherte Verfügbarkeit von 99,95 % eingehalten wird. Weitere Informationen zu Vereinbarungen zum Servicelevel finden Sie im Abschnitt "Cloud-Dienste, virtuelle Computer und das virtuelle Netzwerk" unter [Vereinbarungen zum Servicelevel (SLAs)](../../../support/legal/sla/). 
+###Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz 
+Um Redundanz für Ihre Anwendung zu gewährleisten, empfehlen wir die Gruppierung von zwei oder mehreren virtuellen Computern in einer Verfügbarkeitsgruppe. Durch diese Konfiguration wird sichergestellt, dass während eines geplanten oder ungeplanten Wartungsereignisses mindestens ein virtueller Computer verfügbar ist und die von der Azure-SLA zugesicherte Verfügbarkeit von 99,95 % eingehalten wird. Weitere Informationen zu Vereinbarungen zum Servicelevel finden Sie im Abschnitt "Cloud-Dienste, virtuelle Computer und virtuelles Netzwerk" unter [Vereinbarungen zum Servicelevel (SLAs)](../../../support/legal/sla/) 
 
 Jedem virtuellen Computer in der Verfügbarkeitsgruppe wird von der zugrunde liegenden Azure-Plattform eine Aktualisierungsdomäne und eine Fehlerdomäne zugeordnet. Einer bestimmten Verfügbarkeitsgruppe werden dabei fünf nicht vom Benutzer konfigurierbare Aktualisierungsdomänen zugeordnet, um Gruppen virtueller Computer und die zugehörige physische Hardware zu kennzeichnen, die gleichzeitig neu gestartet werden kann. Wenn innerhalb einer Verfügbarkeitsgruppe mehr als fünf virtuelle Computer konfiguriert sind, wird der sechste virtuelle Computer in derselben Aktualisierungsdomäne gespeichert wie der erste virtuelle Computer, der siebte in derselben Aktualisierungsdomäne wie der zweite virtuelle Computer usw. Während einer geplanten Wartung werden die Aktualisierungsdomänen möglicherweise nicht sequenziell neu gestartet. Es wird aber jeweils nur eine Aktualisierungsdomäne neu gestartet.
 
@@ -43,24 +43,23 @@ Durch Fehlerdomänen wird die Gruppe der virtuellen Computer definiert, die eine
 <!--Image reference-->
    ![UD FD configuration](./media/virtual-machines-manage-availability/ud-fd-configuration.png)
 
->[AZURE.NOTE] Anweisungen finden Sie unter [Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer].
+>[AZURE.NOTE] Anweisungen finden Sie unter [Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer] [].
 
-### Konfigurieren einzelner Anwendungsebenen in separaten Verfügbarkeitsgruppen
+###Konfigurieren einzelner Anwendungsebenen in separaten Verfügbarkeitsgruppen
 Wenn die virtuellen Computer in der Verfügbarkeitsgruppe alle fast identisch sind und die Anwendung auf die gleiche Weise unterstützen, wird empfohlen, für jede einzelne Anwendungsebene eine Verfügbarkeitsgruppe zu konfigurieren.  Wenn Sie eine Verfügbarkeitsgruppe mit zwei verschiedenen Ebenen anlegen, können alle virtuellen Computer derselben Anwendungsebene zur gleichen Zeit neu gestartet werden. Indem Sie mindestens zwei virtuelle Computer in einer Verfügbarkeitsgruppe für jede Ebene konfigurieren, gewährleisten Sie, dass mindestens ein virtueller Computer pro Ebene verfügbar ist.   
 
-Beispielsweise können Sie alle VMs aus dem Front-End der Anwendung, auf denen IIS, Apache, Nginx usw. ausgeführt wird, einer einzelnen Verfügbarkeitsgruppe zuordnen. Stellen Sie sicher, dass derselben Verfügbarkeitsgruppe nur virtuelle Front-End-Computer zugeordnet werden. Stellen Sie analog dazu sicher, dass virtuelle Computer der Datenebene ihre eigene Verfügbarkeitsgruppe haben. Dazu gehören beispielsweise SQL Server-VMs oder MySQL-V
-	ms.
+Beispielsweise können Sie alle VMs aus dem Front-End der Anwendung, auf denen IIS, Apache, Nginx usw. ausgeführt wird, einer einzelnen Verfügbarkeitsgruppe zuordnen. Stellen Sie sicher, dass derselben Verfügbarkeitsgruppe nur virtuelle Front-End-Computer zugeordnet werden. Stellen Sie analog dazu sicher, dass virtuelle Computer der Datenebene ihre eigene Verfügbarkeitsgruppe haben. Dazu gehören beispielsweise SQL Server-VMs oder MySQL-VMs.
 
 <!--Image reference-->
    ![Application tiers](./media/virtual-machines-manage-availability/application-tiers.png)
 
  
-### Kombinieren des Lastenausgleichs mit Verfügbarkeitsgruppen
+###Kombinieren des Lastenausgleichs mit Verfügbarkeitsgruppen
 Kombinieren Sie den Azure-Lastenausgleich mit einer Verfügbarkeitsgruppe, um höchste Anwendungsresilienz zu erzielen. Der Azure-Lastenausgleich verteilt den Datenverkehr auf mehrere virtuelle Computer. In die virtuellen Computer der Standardebene ist der Azure-Lastenausgleich bereits integriert. Der Azure-Lastenausgleich ist jedoch nicht auf allen Ebenen des virtuellen Computers verfügbar. Weitere Informationen zum Lastenausgleich zwischen virtuellen Computern finden Sie unter [Lastenausgleich zwischen virtuellen Computern](../load-balance-virtual-machines/). 
 
 Wenn der Lastenausgleich nicht für die gleichmäßige Verteilung des Datenverkehrs auf mehrere virtuelle Computer konfiguriert ist, wirkt sich ein geplantes Wartungsereignis schließlich auf den einzigen virtuellen Computer, der den Datenverkehr aufrecht erhält, aus und führt zu einem Ausfall der Anwendungsebene. Werden dagegen mehrere virtuelle Computer derselben Ebene demselben Lastenausgleich und derselben Verfügbarkeitsgruppe zugeordnet, wird der Datenverkehr kontinuierlich von mindestens einer Instanz aufrechterhalten. 
 
-### Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen
+###Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen
 Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine einer Verfügbarkeitsgruppe zuzuordnen. Virtuelle Computer in dieser Konfiguration erfüllen nicht die zugesicherte SLA und verursachen während geplanter Azure-Wartungsereignisse eine Downtime.  Wenn Sie eine VM-Einzelinstanz in einer Verfügbarkeitsgruppe bereitstellen, empfangen Sie von der Plattformwartungsfunktion darüber hinaus keine gesonderte Warnung oder Benachrichtigung. In dieser Konfiguration wird der aus einer Einzelinstanz bestehende virtuelle Computer ohne spezifische Warnung neu gestartet, wenn eine Plattformwartung durchgeführt wird.
 
 [Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy 
@@ -74,7 +73,4 @@ Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine
 
 
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

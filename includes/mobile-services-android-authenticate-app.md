@@ -1,5 +1,5 @@
-﻿
-1. Öffnen Sie die Datei ToDoActivity.java im Paket-Explorer in Eclipse und fügen Sie die folgenden Import-Anweisungen hinzu.
+
+1. Öffnen Sie die Datei "ToDoActivity.java" im **Projektexplorer** in Android Studio, und fügen Sie die folgenden Import-Anweisungen hinzu.
 
 		import java.util.concurrent.ExecutionException;
 		import java.util.concurrent.atomic.AtomicBoolean;
@@ -13,28 +13,28 @@
 
 2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu: 
 	
-	private void authenticate() {
-	    // Login using the Google provider.
-	    
-		ListenableFuture<MobileServiceUser> mLogin = mClient.login(MobileServiceAuthenticationProvider.Google);
+		private void authenticate() {
+		    // Login using the Google provider.
+		    
+			ListenableFuture<MobileServiceUser> mLogin = mClient.login(MobileServiceAuthenticationProvider.Google);
+	
+	    	Futures.addCallback(mLogin, new FutureCallback<MobileServiceUser>() {
+	    		@Override
+	    		public void onFailure(Throwable exc) {
+	    			createAndShowDialog((Exception) exc, "Error");
+	    		}   		
+	    		@Override
+	    		public void onSuccess(MobileServiceUser user) {
+	    			createAndShowDialog(String.format(
+	                        "You are now logged in - %1$2s",
+	                        user.getUserId()), "Success");
+	    			createTable();	
+	    		}
+	    	});   	
+		}
 
-    	Futures.addCallback(mLogin, new FutureCallback<MobileServiceUser>() {
-    		@Override
-    		public void onFailure(Throwable exc) {
-    			createAndShowDialog((Exception) exc, "Error");
-    		}   		
-    		@Override
-    		public void onSuccess(MobileServiceUser user) {
-    			createAndShowDialog(String.format(
-                        "You are now logged in - %1$2s",
-                        user.getUserId()), "Success");
-    			createTable();	
-    		}
-    	});   	
-	}
 
-
-	Damit wird eine neue Methode erstellt, die den Authentifizierungsprozess handhabt. Der Benutzer wird mithilfe einer Google-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
+	Auf diese Weise wird eine neue Methode zur Verarbeitung des Authentifizierungsprozesses erstellt. Der Benutzer wird mithilfe einer Google-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
 
     > [AZURE.NOTE] Falls Sie einen anderen Identitätsanbieter als Google verwenden, ändern Sie den an die **login**-Methode übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Facebook_, _Twitter_ oder _windowsazureactivedirectory_.
 
@@ -44,7 +44,7 @@
 
 	Dieser Aufruf startet den Authentifizierungsprozess.
 
-4. Verschieben Sie den verbleibenden Code nach `authenticate();` in der **onCreate**-Methode in eine neue **createTable**-Methode mit dem folgenden Code:
+4. Verschieben Sie den verbleibenden Code nach `authenticate();` in der **onCreate**-Methode in eine neue **createTable**-Methode mit folgendem Code:
 
 		private void createTable() {
 	
@@ -62,7 +62,7 @@
 			refreshItemsFromTable();
 		}
 
-9. Klicken Sie im Menü **Run** auf **Run**, um die App zu starten und sich mit dem Identitätsanbieter Ihrer Wahl anzumelden. 
+9. Klicken Sie im Menü **Ausführen** auf **App ausführen**, um die App zu starten, und melden Sie sich mit Ihrem gewählten Identitätsanbieter an. 
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
-\<!--HONumber=42-->
+<!--HONumber=47-->

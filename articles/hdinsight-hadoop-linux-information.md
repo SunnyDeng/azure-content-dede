@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Was Sie über Hadoop auf Linux-basiertem HDInsight wissen müssen | Azure"
    description="Auf Linux basierende HDInsight-Cluster stellen Hadoop in einer vertrauten Linux-Umgebung bereit, die in der Azure-Cloud ausgeführt wird."
    services="hdinsight"
@@ -26,7 +26,7 @@ Der vollqualifizierte Domänenname (FQDN) für die Verbindung zum Cluster lautet
 
 ## Remote verfügbare Dienste
 
-* **Ambari (Web)** - https://&lt;Clustername>.azurehdinsight.net
+* **Ambari (Web)** - https://&lt;clustername>.azurehdinsight.net
 
 	> [AZURE.NOTE] Authentifizierung mit Benutzername und Kennwort des Clusteradministrators mit anschließender Anmeldung bei Ambari. Hierbei werden ebenfalls Benutzername und Kennwort des Clusteradministrators verwendet.
 	> 
@@ -36,17 +36,17 @@ Der vollqualifizierte Domänenname (FQDN) für die Verbindung zum Cluster lautet
 
 	Um dieses Problem zu umgehen, verwenden Sie einen SSH-Tunnel, um den Webdatenverkehr an den Stammknoten des Clusters weiterzuleiten. Verwenden Sie die folgenden Artikel, um von einem Port des lokalen Computers einen SSH-Tunnel zum Cluster einzurichten.
 
-	* <a href="../hdinsight-hadoop-linux-use-ssh-unix/#tunnel" target="_blank">Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X</a> - Schritte zum Erstellen eines SSH-Tunnels mithilfe des Befehls  `ssh`
+	* <a href="../hdinsight-hadoop-linux-use-ssh-unix/#tunnel" target="_blank">Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix, oder OS X</a> - Schritte zum Erstellen eines SSH-Tunnels mit dem `ssh`-Befehl.
 
 	* <a href="../hdinsight-hadoop-linux-use-ssh-windows/#tunnel" target="_blank">Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows</a> - Schritte zum Verwenden von Putty zum Erstellen eines SSH-Tunnels
 
-* **Ambari (REST)** - https://&lt;Clustername>.azurehdinsight.net/ambari
+* **Ambari (REST)** - https://&lt;clustername>.azurehdinsight.net/ambari
 
 	> [AZURE.NOTE] Authentifizierung mit Benutzername und Kennwort des Clusteradministrators.
 	> 
 	> Die Authentifizierung erfolgt als Nur-Text - immer HTTPS verwenden, um eine sichere Verbindung zu gewährleisten.
 
-* **WebHCat (Templeton)** - https://&lt;Clustername>.azurehdinsight.net/templeton
+* **WebHCat (Templeton)** - https://&lt;clustername>.azurehdinsight.net/templeton
 
 	> [AZURE.NOTE] Authentifizierung mit Benutzername und Kennwort des Clusteradministrators.
 	> 
@@ -60,7 +60,7 @@ Der vollqualifizierte Domänenname (FQDN) für die Verbindung zum Cluster lautet
 
 Zu Hadoop zugehörige Dateien befinden sich auf den Clusterknoten in  `/usr/hdp/current`.
 
-Beispieldaten und JAR-Dateien befinden sich auf HDFS (WASB) unter "/example" oder 'wasb:///example'.
+Beispieldaten und JAR-Dateien befinden sich auf HDFS (WASB) unter "/example" oder "wasb:///example".
 
 ## Bewährte Methoden für HDFS, WASB und Speicher
 
@@ -88,7 +88,7 @@ Während der Clustererstellung wählen Sie entweder die Verwendung eines vorhand
 
 **Azure-Portal**
 
-1. Im <a href="https://manage.windowsazure.com/" target="_blank">Azure-Verwaltungsportal</a> wählen Sie Ihren HDInsight-Cluster.
+1. Wählen Sie im <a href="https://manage.windowsazure.com/" target="_blank">Azure-Verwaltungsportal</a> Ihr HDInsight-Cluster.
 
 2. Wählen Sie oben auf der Seite die Option **Dashboard** aus.
 
@@ -98,13 +98,13 @@ Während der Clustererstellung wählen Sie entweder die Verwendung eines vorhand
 
 **Plattformübergreifende Azure-Befehlszeilenschnittstelle**
 
-*In Kürze verfügbar!*
+*In Kürze verfügbar*
 
 ### Wie kann ich auf Blob-Speicher zugreifen?
 
 Neben dem vom Cluster aus gestarteten Hadoop-Befehl stehen eine Vielzahl von Möglichkeiten für den Zugriff auf Blobs zur Verfügung:
 
-* <a href="http://azure.microsoft.com/ documentation/articles/xplat-cli/" target="_blank">Plattformübergreifende Azure-Befehlszeilenschnittstelle</a> - Nach der Installation finden Sie unter `azure storage` Hilfe zur Verwendung von Speicher, oder unter `azure blob` finden Sie Blob-bezogene Befehle.
+* <a href="http://azure.microsoft.com/documentation/articles/xplat-cli/" target="_blank">Plattformübergreifende Azure-Befehlszeilenschnittstelle </a> - Informationen zum Verwenden des Speichers oder  `azure blob` für Blob-bezogene Befehle nach Installation finden Sie unter  `azure storage`.
 
 * Eine Vielzahl von SDKs:
 
@@ -120,7 +120,7 @@ Neben dem vom Cluster aus gestarteten Hadoop-Befehl stehen eine Vielzahl von Mö
 
 	* <a href="https://github.com/Azure/azure-sdk-for-net" target="_blank">.NET</a>
 
-* <a href="https://msdn.microsoft.com/de-de/library/azure/dd135733.aspx" target="_blank">Speicher-REST-API</a>
+* <a href="https://msdn.microsoft.com/library/azure/dd135733.aspx" target="_blank">Speicher-REST-API</a>
 
 
 ## Nächste Schritte
@@ -130,4 +130,4 @@ Neben dem vom Cluster aus gestarteten Hadoop-Befehl stehen eine Vielzahl von Mö
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](../hdinsight-use-mapreduce)
 
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

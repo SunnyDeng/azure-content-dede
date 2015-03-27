@@ -28,7 +28,7 @@ Nach Abschluss der Schritte in diesem Dokument verfügen Sie über eine einfache
 
 * <a href="https://maven.apache.org/download.cgi" target="_blank">Maven</a> - Maven ist ein Projekterstellungssystem für Java-Projekte
 
-* Ein Text-Editor wie <a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs<a>, <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>, <a href="https://atom.io/" target="_blank">Atom.io</a>, <a href="http://brackets.io/" target="_blank">Brackets.io</a> oder Editor Oder eine integrierte Entwicklungsumgebung (IDE) wie <a href="https://eclipse.org/" target="_blank">Eclipse</a> (Version Luna oder höher)
+* Ein Text-Editor wie z. B. <a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs<a>, <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>, <a href="https://atom.io/" target="_blank">Atom.io</a>, <a href="http://brackets.io/" target="_blank">Brackets.io</a> oder Editor. Oder eine integrierte Entwicklungsumgebung (Integrated Development Environment, IDE) wie z. B. <a href="https://eclipse.org/" target="_blank">Eclipse</a> (Version Luna oder höher).
 
 	> [AZURE.NOTE] Der Editor oder die IDE verfügen möglicherweise über bestimmte Funktionen für die Arbeit mit Eclipse, die in diesem Dokument nicht behandelt werden. Informationen zu den Funktionen der Bearbeitungsumgebung finden Sie in der Dokumentation für das von Ihnen verwendete Produkt.
 
@@ -36,7 +36,7 @@ Nach Abschluss der Schritte in diesem Dokument verfügen Sie über eine einfache
 
 Die folgenden Umgebungsvariablen können durch die Installation von Java und des JDK festgelegt werden. Allerdings sollten Sie überprüfen, ob diese vorhanden sind und die korrekten Werte für Ihr System enthalten.
 
-* **JAVA_HOME**: sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist Für eine Unix- oder Linux-Bereitstellung sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows würde sich ein Wert wie `c:\Programme (x86)\Java\jre1.7` ergeben
+* **JAVA_HOME**: sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist Für eine Unix- oder Linux-Bereitstellung sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows würde sich ein Wert wie `C:\Program Files (x86)\Java\jre1.7` ergeben.
 
 * **PATH**: sollte die folgenden Pfade enthalten:
 
@@ -84,11 +84,11 @@ Da dies eine Storm-Topologie ist, müssen Sie eine Abhängigkeit für Storm-Komp
 
 Zum Zeitpunkt der Kompilierung verwendet Maven diese Informationen für die Suche nach **storm-core** im Maven-Repository. Zuerst wird im Repository auf dem lokalen Computer gesucht. Wenn die Dateien nicht vorhanden sind, werden sie aus dem öffentlichen Maven-Repository heruntergeladen und im lokalen Repository gespeichert.
 
-> [AZURE.NOTE] Beachten Sie, dass die Zeile `<scope>provided</scope>` im Abschnitt hinzugefügt wurde. Diese Zeile weist Maven an, dass "storm-core" aus allen erstellten JAR-Dateien ausgeschlossen wird, da es vom System bereitgestellt wird. Dadurch können kleinere Pakete erstellt und somit sichergestellt werden, dass sie die auf dem Storm-Cluster in HDInsight enthaltenen "storm-core"-Bits verwenden.
+> [AZURE.NOTE] Beachten Sie die Zeile `<scope>provided</scope>` im hinzugefügten Abschnitt. Diese Zeile weist Maven an, dass "storm-core" aus allen erstellten JAR-Dateien ausgeschlossen wird, da es vom System bereitgestellt wird. Dadurch können kleinere Pakete erstellt und somit sichergestellt werden, dass sie die auf dem Storm-Cluster in HDInsight enthaltenen "storm-core"-Bits verwenden.
 
 ## Buildkonfiguration
 
-Mithilfe von Maven-Plug-Ins können Sie die Erstellungsphasen für das Projekt anpassen, z. B. die Vorgehensweise bei der Kompilierung oder beim Verpacken in eine JAR-Datei. Öffnen Sie die Datei **pom.xml**, und fügen Sie Folgendes direkt oberhalb der Zeile `</project>` ein.
+Mithilfe von Maven-Plug-Ins können Sie die Erstellungsphasen für das Projekt anpassen, z. B. die Vorgehensweise bei der Kompilierung oder beim Verpacken in eine JAR-Datei. Öffnen Sie die Datei **pom.xml**, und fügen Sie den folgenden Code direkt oberhalb der Zeile `</project>` ein.
 
 	<build>
 	  <plugins>
@@ -99,7 +99,7 @@ Dieser Abschnitt wird zum Hinzufügen von Plug-Ins und anderen Optionen für die
 
 ### Hinzufügen von Plug-Ins
 
-Für Storm-Topologien ist das <a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank">Exec-Plug-In</a> hilfreich, da es Ihnen ermöglicht, die Topologie einfach lokal in Ihrer Entwicklungsumgebung auszuführen. Fügen Sie Folgendes zum Abschnitt `<plugins>` der Datei **pom.xml** hinzu, um das Exec-Plug-In einzubeziehen.
+Für Storm-Topologien ist das <a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank">Exec-Plug-In</a> hilfreich, da es Ihnen ermöglicht, die Topologie einfach lokal in Ihrer Entwicklungsumgebung auszuführen. Fügen Sie den folgenden Code zum Abschnitt `<plugins>` der Datei **pom.xml** hinzu, um das Exec-Plug-In einzubeziehen.
 
 	<plugin>
       <groupId>org.codehaus.mojo</groupId>
@@ -120,9 +120,9 @@ Für Storm-Topologien ist das <a href="http://mojo.codehaus.org/exec-maven-plugi
       </configuration>
     </plugin>
 
-Eine weiteres hilfreiches Plug-In ist das <a href="http://maven.apache.org/plugins/maven-compiler-plugin/" target="_blank">Compiler-Plug-In</a>, das zum Ändern der Kompilierungsoptionen verwendet wird. Der Hauptgrund für die Erforderlichkeit dieses Plug-Ins ist die Änderung der Java-Version, die Maven für die Quelle und das Ziel der Anwendung verwendet. Erforderlich ist Version 1.7.
+Ein weiteres nützliches Plug-In ist das <a href="http://maven.apache.org/plugins/maven-compiler-plugin/" target="_blank">Compiler-Plug-In</a>, das zum Ändern von Kompilierungsoptionen verwendet wird. Der Hauptgrund für die Erforderlichkeit dieses Plug-Ins ist die Änderung der Java-Version, die Maven für die Quelle und das Ziel der Anwendung verwendet. Erforderlich ist Version 1.7.
 
-Fügen Sie Folgendes in den Abschnitt `<plugins>` der Datei **pom.xml** ein, um das Compiler-Plug-In einzubeziehen und für Quelle und Ziel die Version 1.7 festzulegen.
+Fügen Sie folgenden Code zum Abschnitt `<plugins>` der Datei **pom.xml** hinzu, um das Compiler-Plug-In einzubeziehen und als Quelle und Ziel Version 1.7 festzulegen.
 
 	<plugin>
       <groupId>org.apache.maven.plugins</groupId>
@@ -145,15 +145,15 @@ Eine Java-basierte Storm-Topologie besteht aus drei Komponenten, die Sie erstell
 
 ### Erstellen des Spouts
 
-Um die Anforderungen für das Einrichten von externen Datenquellen zu verringern, gibt das folgende Spout willkürliche Sätze aus. Es handelt sich um eine modifizierte Version eines Spouts, das mit den Storm-Startbeispielen bereitgestellt wird (<a href="https://github.com/apache/storm/blob/master/examples/storm-starter/" target="_blank">https://github.com/apache/storm/blob/master/examples/storm-starter/</a>).
+Um die Anforderungen für das Einrichten von externen Datenquellen zu verringern, gibt der folgende Spout willkürliche Sätze aus. Es handelt sich um eine modifizierte Version eines Spouts, der mit den Storm-Startbeispielen bereitgestellt wird (<a href="https://github.com/apache/storm/blob/master/examples/storm-starter/" target="_blank">https://github.com/apache/storm/blob/master/examples/storm-starter/</a>).
 
 > [AZURE.NOTE] Ein Beispiel zu einem Spout, das aus einer externen Datenquelle liest, finden Sie in den folgenden Beispielen.
 >
-> * <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a> - ein Beispiel-Spout, das Daten aus Twitter liest
+> * <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>: ein Beispiel-Spout, der Daten aus Twitter liest
 >
-> * <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm Kafka</a> - ein Spout, das aus Kafka liest
+> * <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm Kafka</a>: ein Spout, der Dateien aus Kafka liest
 
-Erstellen Sie für das Spout eine neue Datei namens **RandomSentenceSpout.java** im Verzeichnis **src\main\java\com\microsoft\example**, und verwenden Sie Folgendes als Inhalt.
+Erstellen Sie für den Spout eine neue Datei namens **RandomSentenceSpout.java** im Verzeichnis **src\main\java\com\microsoft\example**, und verwenden Sie Folgendes als Inhalt.
 
     /**
      * Licensed to the Apache Software Foundation (ASF) under one
@@ -422,7 +422,7 @@ Nach dem Speichern der Dateien verwenden Sie folgenden Befehl, um die Topologie 
 
 Während der Ausführung zeigt die Topologie Startinformationen an und beginnt dann mit der Anzeige von Zeilen, die dem Folgenden ähneln, während Sätze vom Spout ausgegeben und anschließend von den Bolts verarbeitet werden.
 
-    15398 [Thread-16-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:10, stream: default, id: {}, [an apple a day keeps thedoctor away]]
+    15398 [Thread-16-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:10, stream: default, id: {}, [an apple a day keeps the doctor away]]
     15398 [Thread-16-split] INFO  backtype.storm.daemon.task - Emitting: split default [an]
     15399 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, [an]
     15399 [Thread-16-split] INFO  backtype.storm.daemon.task - Emitting: split default [apple]
@@ -444,7 +444,7 @@ Wie Sie anhand dieser Ausgabe erkennen können, ist Folgendes geschehen:
 
 3. Das für die Zählung zuständige Bolt beginnt mit der Ausgabe der einzelnen Wörter und zählt die Häufigkeit der Ausgabe.
 
-Wenn wir die Daten betrachten, die vom Bolt ausgegeben werden, das für die Zählung zuständig ist, wurde 'apple' 53 Mal ausgegeben. Der Zähler steigt weiter an, so lange die Topologie aktiv ist, da dieselben Sätze fortlaufend nach dem Zufallsprinzip ausgegeben werden und der Zähler nie zurückgesetzt wird.
+Wenn Sie die Daten betrachten, die vom Bolt für die Zählung ausgegeben werden, wurde  'apple' 53-mal ausgegeben. Der Zähler steigt weiter an, so lange die Topologie aktiv ist, da dieselben Sätze fortlaufend nach dem Zufallsprinzip ausgegeben werden und der Zähler nie zurückgesetzt wird.
 
 ## Trident
 
@@ -452,9 +452,9 @@ Trident ist eine von Storm bereitgestellte allgemeine Abstraktion, die die statu
 
 Trident-Anwendungen können mithilfe von Maven-Projekten verwendet werden, die dieselben grundlegenden Schritte wie oben verwenden, wobei sich nur der Code unterscheidet.
 
-Weitere Informationen zu Trident finden Sie unter <a href="http://storm.apache.org/documentation/Trident-API-Overview.html" target="_blank">Übersicht über die Trident-API</a>.
+Weitere Informationen zu Trident finden Sie unter <a href="http://storm.apache.org/documentation/Trident-API-Overview.html" target="_blank">Trident API Overview</a> (in englischer Sprache).
 
-Ein Beispiel einer Trident-Anwendung finden Sie unter [Beliebte Twitter-Themen mit Apache Storm in HDInsight](../hdinsight-storm-twitter-trending/)
+Ein Beispiel einer Trident-Anwendung finden Sie unter [Beliebte Twitter-Themen mit Apache Storm in HDInsight](../hdinsight-storm-twitter-trending/).
 
 ## Nächste Schritte
 
@@ -466,4 +466,4 @@ Sie haben erfahren, wie Sie eine Storm-Topologie mit Java erstellen. Jetzt erfah
 
 * [Analysieren von beliebten Twitter-Themen mit Apache Storm in HDInsight](../hdinsight-storm-twitter-trending)
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

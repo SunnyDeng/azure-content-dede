@@ -1,10 +1,24 @@
-﻿<properties title="Using Elastic Scale with Entity Framework" pageTitle="Verwenden von Elastic Scale mit Entity Framework" description="Elastic Scale erleichtert die Skalierung, Entity Framework ist benutzerfreundlich für die Codierung von Datenbanken. " metaKeywords="Using Elastic Scale with Entity Framework, Azure SQL Database sharding, elastic scale, Entity Framework and Elastic Scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+﻿<properties 
+	pageTitle="Verwenden von Elastic Scale mit Entity Framework" 
+	description="Elastic Scale erleichtert die Skalierung, Entity Framework ist benutzerfreundlich für die Codierung von Datenbanken." 
+	services="sql-database" 
+	documentationCenter="" 
+	manager="stuartozer" 
+	authors="Joseidz" 
+	editor=""/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
+<tags 
+	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/03/2015" 
+	ms.author="Joseidz@microsoft.com"/>
 
-#Verwenden von Elastic Scale mit Entity Framework 
+# Verwenden von Elastic Scale mit Entity Framework 
  
-Sie können Elastic Scale von Azure SQL-Datenbank mit Microsofts Entity Framework (EF) zum Erstellen von Anwendungen verwenden. Elastic Scale ermöglicht das Vergrößern und Verkleinern der Kapazität durch Sharding und die horizontale Skalierung der Datenebene Ihrer Anwendung. Dieses Dokument zeigt, welche Änderungen in einer Entity Framework-Anwendung erforderlich sind, damit diese die Funktionen von Elastic Scale nutzen kann. Der Schwerpunkt liegt darauf, [Elastic Scale Shard-Verwaltung](http://go.microsoft.com/?linkid=9862595) und [datenabhängiges Routing](./sql-database-elastic-scale-data-dependent-routing.md) mit dem **Code First**-Ansatz von Entity Framework zu erstellen. Das Lernprogramm [Code First - Neue Datenbank](http://msdn.microsoft.com/data/jj193542.aspx) für EF wird im gesamten Dokument als Beispiel verwendet. Der zu diesem Dokument gehörige Beispielcode ist Teil der Elastic Scale-Beispiele in den Visual Studio-Codebeispielen.
+Sie können Elastic Scale von Azure SQL-Datenbank mit Microsofts Entity Framework (EF) zum Erstellen von Anwendungen verwenden. Elastic Scale ermöglicht das Vergrößern und Verkleinern der Kapazität durch Sharding und die horizontale Skalierung der Datenebene Ihrer Anwendung. Dieses Dokument zeigt, welche Änderungen in einer Entity Framework-Anwendung erforderlich sind, damit diese die Funktionen von Elastic Scale nutzen kann. Der Schwerpunkt liegt darin, die [Elastic Scale-Shardverwaltung](http://go.microsoft.com/?linkid=9862595) und das [datenabhängige Routing](./sql-database-elastic-scale-data-dependent-routing.md) mit dem Entity Framework-Ansatz **Code First** zusammenzubringen. Das Lernprogramm [Code First - Neue Datenbank](http://msdn.microsoft.com/data/jj193542.aspx) für EF wird im gesamten Dokument als Beispiel verwendet. Der zu diesem Dokument gehörige Beispielcode ist Teil der Elastic Scale-Beispiele in den Visual Studio-Codebeispielen.
   
 ## Herunterladen und Ausführen des Beispielcodes
 So laden Sie den Code für diesen Artikel herunter:
@@ -26,7 +40,7 @@ Um das Beispiel ausführen zu können, müssen Sie drei leere Datenbanken in Azu
 
 Wenn Sie diese Datenbanken erstellt haben, ersetzen Sie die Platzhalter in der Datei **Program.cs** durch Ihre Azure SQL-Datenbank-Servernamen, die Datenbanknamen und die Anmeldeinformationen für die Verbindung mit den Datenbanken. Erstellen Sie die Projektmappe in Visual Studio. Visual Studio lädt die erforderlichen NuGet-Pakete für Elastic Scale, Entity Framework und die Behandlung zeitweise auftretender Fehler (Transient Fault) im Rahmen des Buildprozesses herunter. Stellen Sie sicher, dass das Wiederherstellen von NuGet-Paketen für Ihre Lösung aktiviert ist. Sie können diese Einstellung aktivieren, indem Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf die Projektmappendatei klicken. 
 
-##Entity Framework-Workflows 
+## Entity Framework-Workflows 
 
 Entity Framework-Entwickler verwenden einen der folgenden vier Workflows, um Anwendungen zu erstellen und die Persistenz von Anwendungsobjekten sicherzustellen: 
 
@@ -37,20 +51,20 @@ Entity Framework-Entwickler verwenden einen der folgenden vier Workflows, um Anw
 
 Alle diese Ansätze basieren auf der DbContext-Klasse, die Datenbankverbindungen und das Datenbankschema für eine Anwendung transparent verwaltet. Wie später in diesem Dokument ausführlicher besprochen wird, lassen verschiedene Konstruktoren der DbContext-Basisklasse verschiedene Ebenen der Kontrolle über das Herstellen von Verbindungen, das Datenbank-Bootstrapping und die Schemaerstellung zu. Herausforderungen ergeben sich in erster Linie aus der Tatsache, dass sich die von EF bereitgestellte Verwaltung von Datenbankverbindungen mit der Verbindungsverwaltungsfunktionen der von Elastic Scale für Azure-Datenbank bereitgestellten Schnittstellen für das datenabhängige Routing überschneidet. 
 
-##Elastic Scale - Annahmen 
+## Elastic Scale - Annahmen 
 
-Begriffsdefinitionen finden Sie im [Elastic Scale-Glossary](./sql-database-elastic-scale-glossary.md).
+Begriffsdefinitionen finden Sie im [Elastic Scale-Glossar](./sql-database-elastic-scale-glossary.md).
 
 Mit Elastic Scale für Azure SQL-Datenbank definieren Sie Partitionen für Ihre Anwendungsdaten, die als Shardlets bezeichnet werden.  Shardlets werden durch einen Sharding-Schlüssel identifiziert und bestimmten Datenbanken zugeordnet. Eine Anwendung kann so viele Datenbanken wie erforderlich nutzen und die Shardlets verteilen, um genügend Kapazität oder Leistung für die aktuell gegebenen Geschäftsanforderungen bereitzustellen. Die Zuordnung der Sharding-Schlüsselwerte zu den Datenbanken wird in einer Shard-Zuordnung gespeichert, die durch die Elastic Scale-APIs bereitgestellt wird. Diese Funktion wird hier Shard-Zuordnungsverwaltung (Shard Map Management, SMM) genannt. Die Shard-Zuordnung fungiert auch als Broker von Datenbankverbindungen für Anforderungen, die einen Sharding-Schlüssel enthalten. Dies wird als datenabhängiges Routing bezeichnet. 
  
 Die Shard-Zuordnungsverwaltung in Elastic Scale schützt den Benutzer vor inkonsistenten Sichten in Shardlet-Daten, die auftreten können, wenn gleichzeitige Shardlet-Verwaltungsvorgänge (z. B. das Verschieben von Daten zwischen Shards) ausgeführt werden. Dazu fungieren die Shard-Zuordnungen in Elastic Scale als Broker der Datenbankverbindungen für eine Elastic Scale-Anwendung. Dadurch können die Shard-Zuordnungsfunktionen automatisch eine Datenbankverbindung beenden, wenn sich Shard-Verwaltungsvorgänge auf das Shardlet auswirken können, für das die Verbindung erstellt wurde. Bei diesem Ansatz müssen einige EF-Funktionen berücksichtigt werden, wie z. B. das Erstellen neuer Verbindungen aus einer vorhandenen Datenbank, um zu prüfen, ob die Datenbank vorhanden ist. Unserer Erfahrung nach funktionieren die DbContext-Standardkonstruktoren im Allgemeinen nur mit geschlossenen Datenbankverbindungen zuverlässig, die für EF sicher geklont werden können. Dagegen setzt das Entwurfsmodell von Elastic Scale voraus, dass nur offene Verbindungen vermittelt werden. Man könnte vermuten, dass sich dieses Probleme lösen lässt, indem Verbindungen, für die Elastic Scale als Broker fungiert, geschlossen werden, bevor Sie an DbContext von EF übergeben werden. Wenn man die Verbindung schließt und EF das erneute Herstellen der Verbindung überlässt, verzichtet man jedoch die Gültigkeits- und Konsistenzprüfungen, die von Elastic Scale durchgeführt werden. Die Migrationsfunktionalität in EF verwendet diese Verbindungen jedoch, um das zugrunde liegende Datenbankschema auf eine Weise zu verwalten, die für die Anwendung transparent ist. Im Idealfall würden wir gerne alle diese Funktionen von Elastic Scale und EF in der gleichen Anwendung behalten und kombinieren. Im folgenden Abschnitt werden diese Eigenschaften und Anforderungen detaillierter erläutert. 
 
 
-##Anforderungen 
+## Anforderungen 
 
 Bei Verwendung von Elastic Scale- und Entity Framework-APIs sollten die folgenden Eigenschaften beibehalten werden: 
 
-* **Horizontales Skalieren**: Das Hinzufügen oder Entfernen von Datenbanken zu bzw. aus der Datenbankebene der partitionierten Anwendung entsprechend den Kapazitätsanforderungen der Anwendung. Dies impliziert die Kontrolle über die Erstellung und Löschung von Datenbanken und den Einsatz der APIs für die Shard-Zuordnungsverwaltung von Elastic Scale, um Datenbanken und die Zuordnung von Shardlets zu verwalten. 
+* **Horizontale Skalierung**: Das Hinzufügen oder Entfernen von Datenbanken zu bzw. aus der Datenbankebene der partitionierten Anwendung entsprechend den Kapazitätsanforderungen der Anwendung. Dies impliziert die Kontrolle über die Erstellung und Löschung von Datenbanken und den Einsatz der APIs für die Shard-Zuordnungsverwaltung von Elastic Scale, um Datenbanken und die Zuordnung von Shardlets zu verwalten. 
 
 * **Konsistenz**: Die Anwendung nutzt das Sharding und verwendet die datenabhängigen Routingfunktionen von Elastic Scale. Um die Beschädigung von Daten oder falsche Abfrageergebnisse zu vermeiden, werden Verbindungen über die Shard-Zuordnungsverwaltung von Elastic Scale vermittelt. Dadurch bleiben auch Gültigkeitsprüfung und Konsistenz gewahrt.
  
@@ -62,7 +76,7 @@ Die folgende Anleitung beschreibt, wie diese Anforderungen für Code First-Anwen
 
 ## Datenabhängiges Routing mit EF DbContext 
 
-Datenbankverbindungen mit Entity Framework werden in der Regel über Unterklassen von **DbContext** verwaltet. Erstellen Sie diese Unterklassen durch Ableiten von **DbContext**. Hierdurch definieren Sie **DbSets**, welche die om Datenbanken gesicherten Auflistungen von CLR-Objekten für Ihre Anwendung implementieren. Im Kontext des datenabhängigen Routing können wir einige nützliche Eigenschaften identifizieren, die nicht unbedingt für andere EF Code First-Anwendungsszenarien geeignet sind: 
+Datenbankverbindungen mit Entity Framework werden in der Regel über Unterklassen von **DbContext** verwaltet. Erstellen Sie diese Unterklassen durch Ableiten von **DbContext**. Hierdurch definieren Sie **DbSets**, welche die in Datenbanken gesicherten Auflistungen von CLR-Objekten für Ihre Anwendung implementieren. Im Kontext des datenabhängigen Routing können wir einige nützliche Eigenschaften identifizieren, die nicht unbedingt für andere EF Code First-Anwendungsszenarien geeignet sind: 
 
 * Die Datenbank ist bereits vorhanden und in der Shard-Zuordnung von Elastic Scale registriert. 
 * Das Schema der Anwendung wurde bereits in der Datenbank (siehe nachfolgende Erläuterung) bereitgestellt. 
@@ -107,7 +121,7 @@ Das folgende Codebeispiel veranschaulicht diese Vorgehensweise. (Dieser Code ist
             return conn;
         }    
 
-#### Hauptpunkte
+## Hauptpunkte
 * Der Standardkonstruktor der DbContext-Unterklasse wird durch einen neuen Konstruktor ersetzt. 
 * Der neue Konstruktor akzeptiert die Argumente, die für das datenabhängige Routing über Elastic Scale erforderlich sind: 
     * die Shard-Zuordnung für den Zugriff auf datenabhängige Routing-Schnittstellen, 
@@ -143,8 +157,8 @@ Verwenden Sie in Ihrem Code den neuen Konstruktor für die DbContext-Unterklasse
 
 Der neue Konstruktor öffnet die Verbindung mit der Shard, welche die Daten für das durch den Wert von **tenantid1** bezeichnete Shardlet enthält. Der Code im **using**-Block wird für den Zugriff auf **DbSet** für Blogs unter Verwendung von EF für die Shard mit dem Shardlet **tenantid1** nicht verändert. Dadurch wird die Semantik für den Code im using-Code geändert, sodass alle Datenbankvorgänge jetzt auf die eine Shard beschränkt werden, in der sich **tenantid1** befindet. Beispielsweise würde eine LINQ-Abfrage für die Blogs in **DbSet** nur die Blogs liefern, die in der aktuellen Shard gespeichert sind, nicht jedoch die in anderen Shards gespeicherten Blogs.  
 
-####Behandlung zeitweise auftretender Fehler
-Das Microsoft Patterns & Practices-Team veröffentlichte [The Transient Fault Handling Application Block](http://msdn.microsoft.com/library/dn440719(v=pandp.60).aspx). Die Bibliothek wird beim Einsatz von Elastic Scale in Kombination mit EF verwendet. Stellen Sie jedoch sicher, dass eine vorübergehende Ausnahme die Steuerung an eine Stelle zurückgibt, an der wir sicherstellen können, dass nach einem vorübergehenden Fehler der neue Konstruktor verwendet wird, damit für alle neuen Verbindungsversuche die von uns optimierten Konstruktoren verwendet werden. Andernfalls kann nicht sichergestellt werden, dass die Verbindung mit der richtigen Shard hergestellt und aufrechterhalten wird, wenn die Shard-Zuordnung verändert wird. 
+#### Behandlung zeitweise auftretender Fehler
+Das Microsoft Patterns & Practices-Team veröffentlichte [The Transient Fault Handling Application Block](http://msdn.microsoft.com/library/dn440719(v=pandp.60.aspx)). Die Bibliothek wird beim Einsatz von Elastic Scale in Kombination mit EF verwendet. Stellen Sie jedoch sicher, dass eine vorübergehende Ausnahme die Steuerung an eine Stelle zurückgibt, an der wir sicherstellen können, dass nach einem vorübergehenden Fehler der neue Konstruktor verwendet wird, damit für alle neuen Verbindungsversuche die von uns optimierten Konstruktoren verwendet werden. Andernfalls kann nicht sichergestellt werden, dass die Verbindung mit der richtigen Shard hergestellt und aufrechterhalten wird, wenn die Shard-Zuordnung verändert wird. 
 
 Im folgenden Codebeispiel wird veranschaulicht, wie eine SQL-Wiederholungsrichtlinie im Zusammenhang mit den neuen Konstruktoren für die **DbContext**-Unterklasse verwendet wird: 
 
@@ -162,22 +176,25 @@ Im folgenden Codebeispiel wird veranschaulicht, wie eine SQL-Wiederholungsrichtl
             } 
         }); 
 
-Im Code oben ist **SqlDatabaseUtils.SqlRetryPolicy** als **SqlDatabaseTransientErrorDetectionStrategy** mit 10 Wiederholungen und einer Wartezeit von 5 Sekunden zwischen den Wiederholungen definiert. Dieses Vorgehen entspricht der Anleitung für Entity Framework und benutzerinitiierte Transaktionen(siehe [Einschränkungen beim erneuten Versuch von Ausführungsstrategien (ab EF6)](http://msdn.microsoft.com/data/dn307226). Beide Situationen erfordern, dass die Anwendung den Bereich steuert, in den die vorübergehende Ausnahme zurückkehrt: entweder erneutes Öffnen der Transaktion oder (wie gezeigt) erneutes Erstellen des Kontexts aus dem Konstruktor, der die Elastic Scale-Bibliotheken verwendet.  
+Im Code oben ist **SqlDatabaseUtils.SqlRetryPolicy** als **SqlDatabaseTransientErrorDetectionStrategy** mit 10 Wiederholungen und einer Wartezeit von 5 Sekunden zwischen den Wiederholungen definiert. Dieser Ansatz ähnelt der Anleitung für EF und durch den Benutzer initiierte Transaktionen (siehe [Einschränkungen beim erneuten Versuch von Ausführungsstrategien (ab EF6)](http://msdn.microsoft.com/data/dn307226). Beide Situationen erfordern, dass das Anwendungsprogramm den Bereich steuert, in dem die vorübergehende Ausnahme zurückgegeben wird: erneutes Öffnen der Transaktion oder (wie dargestellt) Neuerstellung des Kontexts von einem geeigneten Konstruktor, der Elastic Scale-Bibliotheken verwendet.
 
+Die Notwendigkeit, den Rückgabeort für vorübergehende Ausnahmen zu steuern, schließt auch die Verwendung der integrierten **SqlAzureExecutionStrategy** ein, die im Lieferumfang von EF enthalten ist. **SqlAzureExecutionStrategy** würde eine Verbindung erneut öffnen, aber ohne **OpenConnectionForKey** zu verwenden. Dadurch werden alle Validierungen umgangen, die im Rahmen des **OpenConnectionForKey**-Aufrufs durchgeführt werden. Das Codebeispiel verwendet stattdessen die integrierte **DefaultExecutionStrategy**, die ebenfalls im Lieferumfang von EF enthalten ist. Im Gegensatz zu **SqlAzureExecutionStrategy**, funktioniert sie jedoch ordnungsgemäß zusammen mit der Wiederholungsrichtlinie aus Transient Fault Handling. Die Ausführungsrichtlinie wird in der **ElasticScaleDbConfiguration**- Klasse festgelegt. Beachten Sie, dass wir uns gegen die Verwendung von **DefaultSqlExecutionStrategy** entschieden haben, da sie im Fall vorübergehender Ausnahmen die Verwendung von **SqlAzureExecutionStrategy** nahe legt. Das wiederum führt zu dem bereits beschriebenen fehlerhaften Verhalten. Weitere Informationen über die verschiedenen Wiederholungsrichtlinien und EF finden Sie unter [Verbindungsstabilität in EF](http://msdn.microsoft.com/data/dn456835.aspx).     
+
+#### Neuschreiben von Konstruktoren
 Die oben aufgeführten Codebeispiele veranschaulichen, welche Änderungen am Standardkonstruktor vorgenommen werden müssen, damit Ihre Anwendung das datenabhängige Routing von Elastic Scale mit dem Entity Framework verwenden kann. In der folgende Tabelle wird dieser Ansatz für die anderen Konstruktoren verallgemeinert. 
 
 
-Aktueller Konstruktor | Für Daten veränderter Konstruktor | Basiskonstruktor | Hinweise
+Aktuelle Konstruktor  | Für Daten veränderter Konstruktor | Basiskonstruktor | Hinweise
 ---------- | ----------- | ------------|----------
-MyContext() |ElasticScaleContext(ShardMap, TKey) |DbContext(DbConnection, bool) |Die Verbindung muss eine Funktion der Shard-Zuordnung und des datenabhängigen Routingschlüssels sein. Sie müssen die automatische Erstellung von Verbindungen in EEF umgehen und stattdessen die Shard-Zuordnung als Verbindungsbroker verwenden. 
-MyContext(string)|ElasticScaleContext(ShardMap, TKey) |DbContext(DbConnection, bool) |Die Verbindung ist eine Funktion der Shard-Zuordnung und des datenabhängigen Routingschlüssels. Ein fester Datenbankname oder eine Verbindungszeichenfolge funktionieren nicht, da hiermit die Überprüfung der Shard-Zuordnung umgangen wird. 
-MyContext(DbCompiledModel) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel) |DbContext(DbConnection, DbCompiledModel, bool) |Die Verbindung wird mit dem bereitgestellten Modell für die angegebene Shard-Zuordnung und den Sharding-Schlüssel erstellt. Das kompilierte Modell wird an den Basiskonstruktor übergeben.
-MyContext(DbConnection, bool) |ElasticScaleContext(ShardMap, TKey, bool) |DbContext(DbConnection, bool) |Die Verbindung muss aus der Shard-Zuordnung und dem Schlüssel abgeleitet werden. Sie kann nicht als Eingabe bereitgestellt werden (es sei denn, in der Eingabe wurden bereits Shard-Zuordnung und Schlüssel verwendet). Der boolesche Wert wird übergeben. 
-MyContext(string, DbCompiledModel) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel) |DbContext(DbConnection, DbCompiledModel, bool) |Die Verbindung muss aus der Shard-Zuordnung und dem Schlüssel abgeleitet werden. Sie kann nicht als Eingabe bereitgestellt werden (es sei denn, in der Eingabe wurden bereits Shard-Zuordnung und Schlüssel verwendet). Das kompilierte Modell wird übergeben. 
+MyContext() |ElasticScaleContext (ShardMap, TKey) |DbContext(DbConnection, bool) |Die Verbindung muss eine Funktion der Shard-Zuordnung und des datenabhängigen Routingschlüssels sein. Sie müssen die automatische Erstellung von Verbindungen in EEF umgehen und stattdessen die Shard-Zuordnung als Verbindungsbroker verwenden. 
+MyContext(string)|ElasticScaleContext (ShardMap, TKey) |DbContext(DbConnection, bool) |Die Verbindung ist eine Funktion der Shard Map und des datenabhängigen Routingschlüssels. Ein fester Datenbankname oder eine Verbindungszeichenfolge funktionieren nicht, da hiermit die Überprüfung der Shard-Zuordnung umgangen wird. 
+MyContext(DbCompiledModel) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel) |DbContext(DbConnection, DbCompiledModel, bool) |Die Verbindung wird mit dem bereitgestellten Modell für die angegebene Shard Map und den Shardingschlüssel erstellt. Das kompilierte Modell wird an den Basiskonstruktor übergeben.
+MyContext(DbConnection, bool) |ElasticScaleContext(ShardMap, TKey, bool) |DbContext(DbConnection, bool) |Die Verbindung muss aus der Shard Map und dem Schlüssel abgeleitet werden. Sie kann nicht als Eingabe bereitgestellt werden (es sei denn, in der Eingabe wurden bereits Shard-Zuordnung und Schlüssel verwendet). Der boolesche Wert wird übergeben. 
+MyContext(string, DbCompiledModel) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel) |DbContext(DbConnection, DbCompiledModel, bool) |Die Verbindung muss aus der Shard Map und dem Schlüssel abgeleitet werden. Sie kann nicht als Eingabe bereitgestellt werden (es sei denn, in der Eingabe wurden bereits Shard-Zuordnung und Schlüssel verwendet). Das kompilierte Modell wird übergeben. 
 MyContext(ObjectContext, bool) |ElasticScaleContext(ShardMap, TKey, ObjectContext, bool) |DbContext(ObjectContext, bool) |Der neue Konstruktor muss sicherstellen, dass alle als Eingabe in den ObjectContext übergebenen Verbindungen an eine von Elastic Scale verwaltete Verbindung umgeleitet werden. Eine detaillierte Erläuterung von ObjectContext würde den Rahmen dieses Dokuments sprengen.
-MyContext(DbConnection, DbCompiledModel,bool) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel, bool)| DbContext(DbConnection, DbCompiledModel, bool); |Die Verbindung muss aus der Shard-Zuordnung und dem Schlüssel abgeleitet werden.. Die Verbindung kann nicht als Eingabe bereitgestellt werden (es sei denn, in der Eingabe wurden bereits Shard-Zuordnung und Schlüssel verwendet). Modell und boolescher Wert werden an den Konstruktor der Basisklasse übergeben. 
+MyContext(DbConnection, DbCompiledModel,bool) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel, bool)| DbContext(DbConnection, DbCompiledModel, bool); |Die Verbindung muss aus der Shard Map und dem Schlüssel abgeleitet werden. Die Verbindung kann nicht als Eingabe bereitgestellt werden (es sei denn, in der Eingabe wurden bereits Shard-Zuordnung und Schlüssel verwendet). Modell und boolescher Wert werden an den Konstruktor der Basisklasse übergeben. 
 
-###Shard-Schemabereitstellung durch EF-Migrationen 
+## Shard-Schemabereitstellung durch EF-Migrationen 
 
 Die automatische Schemaverwaltung wird von Entity Framework bereitgestellt. Wir möchten diese Möglichkeit im Kontext der Elastic Scale-Anwendung beibehalten, um das Schema automatisch für neu erstellte Shards bereitzustellen, wenn der partitionierten Anwendung Datenbanken hinzugefügt werden. Der Hauptzweck besteht darin, für partitionierte Anwendungen die Kapazität auf Datenebene mithilfe von EF zu vergrößern. Durch die Nutzung der EF-Funktionen zur Schemaverwaltung lässt sich der Datenbankverwaltungsaufwand für die auf EF basierende partitionierte Anwendung verringern. 
 
@@ -241,7 +258,7 @@ Das Beispiel zeigt die Methode **RegisterNewShard**, welche die Shard in der Ela
 Möglicherweise muss die Version des Konstruktors, die von der Basisklasse geerbt wird, verwendet werden. Jedoch muss der Code sicherstellen, dass der Standard-Initialisierer für EF zum Herstellen der Verbindung verwendet wird. Daher der kurze Umweg in die statische Methode, bevor der Basisklassen-Konstruktor mit der Verbindungszeichenfolge aufgerufen wird. Beachten Sie, dass die Registrierung von Shards in einer anderen Anwendungsdomäne bzw. einem anderen Prozess ausgeführt werden soll, damit kein Konflikt mit den Einstellungen der Initialisierer für EF entsteht. 
 
 
-##Einschränkungen 
+## Einschränkungen 
 
 Für die in diesem Dokument beschriebenen Vorgehensweisen gelten einige Einschränkungen: 
 
@@ -253,12 +270,14 @@ Für die in diesem Dokument beschriebenen Vorgehensweisen gelten einige Einschr�
 
 
 
-##Zusammenfassung 
+## Zusammenfassung 
 
-Entity Framework-Anwendungen können problemlos von Elastic Scale für Azure SQL-Datenbank profitieren. Durch die in diesem Dokument beschriebenen Schritte können EF-Anwendungen die Elastic Scale-Funktion für das datenabhängige Routing nutzen, indem die Konstruktoren der **DbContext**_Unterklassen, die in der EF-Anwendung verwendet werden, abgeändert werden. Dadurch werden die erforderlichen Änderungen auf die Stellen begrenzt, an denen bereits **DbContext**-Klassen vorhanden sind. Darüber hinaus können EF-Anwendungen weiterhin die automatische Schemabereitstellung nutzen, indem die Schritte, mit denen die erforderlichen EF-Migrationen aufgerufen werden, mit der Registrierung der neuen Shards und Zuordnungen in der Elastic Scale-Shard-Zuordnung kombiniert werden. 
+Entity Framework-Anwendungen können problemlos von Elastic Scale für Azure SQL-Datenbank profitieren. Durch die in diesem Dokument beschriebenen Schritte können EF-Anwendungen die Elastic Scale-Funktion für das datenabhängige Routing nutzen, indem die Konstruktoren der **DbContext**-Unterklassen, die in der EF-Anwendung verwendet werden, abgeändert werden. Dadurch werden die erforderlichen Änderungen auf die Stellen begrenzt, an denen bereits **DbContext**-Klassen vorhanden sind. Darüber hinaus können EF-Anwendungen weiterhin die automatische Schemabereitstellung nutzen, indem die Schritte, mit denen die erforderlichen EF-Migrationen aufgerufen werden, mit der Registrierung der neuen Shards und Zuordnungen in der Elastic Scale-Shard-Zuordnung kombiniert werden. 
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-using-entity-framework/sample.png
+
+<!--HONumber=47-->

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Hochladen von Dateien in ein Media Services-Konto mit der REST-API" 
 	description="Erfahren Sie, wie Sie Medieninhalte in Media Services nutzen können, indem Sie Medienobjekte erstellen und hochladen." 
 	services="media-services" 
@@ -21,23 +21,28 @@
 # Hochladen von Dateien in ein Media Services-Konto mit der REST-API
 [AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
+
+In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch. Die [Medienobjekt](https://msdn.microsoft.com/library/azure/hh974277.aspx)-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien (und die Metadaten zu diesen Dateien) enthalten.  Nachdem die Dateien in das Medienobjekt hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert. 
 
 
->[AZURE.NOTE] Beim Verwenden der Media Services-REST-API gelten die folgenden Überlegungen:
+>[AZURE.NOTE]Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft (z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters). Aus diesem Grund ist die Prozentkodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentkodierung reservierten Zeichen](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters) enthalten: !*'();:@&=+$,/?%#[]". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
+
+Der grundlegende Workflow zum Erfassen von Medienobjekten ist in folgende Abschnitte unterteilt:
+
+- Erstellen eines Medienobjekts
+- Verschlüsseln eines Medienobjekts (optional)
+- Hochladen einer Datei in den BLOB-Speicher
+
+
+## Erstellen eines Medienobjekts
+
+>[AZURE.NOTE] Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
->Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und -werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](../media-services-rest-how-to-use).
+>Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](../media-services-rest-how-to-use).
 
->Nach der erfolgreichen Verbindung mit "https://media.windows.net" erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](../media-services-rest-connect_programmatically/) beschrieben müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
+>Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](../media-services-rest-connect_programmatically/) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
  
-
-## <a id="upload"></a>Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei mit der REST-API
-
-In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch. Die [Medienobjekt](https://msdn.microsoft.com/de-de/library/azure/hh974277.aspx)-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien (und die Metadaten zu diesen Dateien) enthalten.  Nachdem die Dateien in das Medienobjekt hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert. 
-
-
-### Erstellen eines Medienobjekts
-
 Ein Medienobjekt ist ein Container für mehrere Typen oder Gruppen von Objekten in Media Services. Dazu gehören Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien. In der REST-API muss beim Erstellen eines Medienobjekts eine POST-Anforderung an Media Services gesendet werden. Dabei müssen alle Eigenschaftsinformationen zum Medienobjekt im Anforderungstext enthalten sein.
 
 Eine der Eigenschaften, die Sie beim Erstellen eines Medienobjekts angeben können, ist **Options**. **Options** ist ein Enumerationswert, der die Verschlüsselungsoptionen beschreibt, mit denen ein Medienobjekt erstellt werden kann. Gültig sind einzelne Werte aus der folgenden Liste, aber keine kombinierten Werte: 
@@ -51,7 +56,7 @@ Eine der Eigenschaften, die Sie beim Erstellen eines Medienobjekts angeben könn
 
 - **EnvelopeEncryptionProtected** = **4**: Geben Sie an, ob Sie mit AES-Dateien verschlüsseltes HLS hochladen. Beachten Sie, dass die Dateien durch Transform Manager codiert und verschlüsselt sein müssen.
 
-Wenn Ihr Medienobjekt die Verschlüsselung verwendet, müssen Sie einen **ContentKey** erstellen und mit Ihrem Medienobjekt verknüpfen, wie im folgenden Thema beschrieben: [Erstellen eines ContentKey](../media-services-rest-create-contentkey). Nachdem Sie die Dateien in das Medienobjekt hochgeladen haben, müssen Sie die Verschlüsselungseigenschaften für die **AssetFile**-Entität anhand der Werte aktualisieren, die Sie während der **Asset**-Verschlüsselung erhalten haben.  Verwenden Sie dazu die HTTP **MERGE**-Anforderung. 
+>[AZURE.NOTE]Wenn Ihr Medienobjekt die Verschlüsselung verwendet, müssen Sie einen **ContentKey** erstellen und mit Ihrem Medienobjekt verknüpfen, wie im folgenden Thema beschrieben: [Erstellen eines ContentKey](../media-services-rest-create-contentkey). Nachdem Sie die Dateien in das Medienobjekt hochgeladen haben, müssen Sie die Verschlüsselungseigenschaften für die **AssetFile**-Entität anhand der Werte aktualisieren, die Sie während der **Asset**-Verschlüsselung erhalten haben. Verwenden Sie dazu die HTTP **MERGE**-Anforderung. 
 
 
 Im folgenden Beispiel wird veranschaulicht, wie Sie ein Medienobjekt erstellen.
@@ -101,7 +106,7 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	   "StorageAccountName":"storagetestaccount001"
 	}
 	
-### Erstellen einer AssetFile
+## Erstellen einer AssetFile
 
 Die [AssetFile](http://msdn.microsoft.com/library/azure/hh974275.aspx)-Entität stellt eine Video- oder Audiodatei dar, die in einem BLOB-Container gespeichert ist. Eine Medienobjektdatei ist immer mit einem Medienobjekt verknüpft, wobei ein Medienobjekt eine oder mehrere Medienobjektdateien enthalten kann. Der Media Services Encoder-Task schlägt fehl, wenn ein Medienobjektdatei-Objekt keiner digitalen Datei in einem BLOB-Container zugeordnet ist.
 
@@ -166,9 +171,9 @@ Nachdem Sie Ihre digitale Mediendatei in einen BLOB-Container hochgeladen haben,
 	}
 
 
-### Erstellen der AccessPolicy mit Schreibberechtigung 
+## Erstellen der AccessPolicy mit Schreibberechtigung 
 
-Bevor Sie Dateien in den BLOB-Speicher hochladen, legen Sie die Zugriffsrichtlinienberechtigungen für das Schreiben in ein Medienobjekt fest. Senden Sie dazu eine HTTP POST-Anforderung an die AccessPolicies-Entitätenmenge. Definieren Sie bei der Erstellung einen DurationInMinutes-Wert, da Sie andernfalls eine Antwort mit einer "500 Interner Serverfehler"-Meldung empfangen. Weitere Informationen zu AccessPolicies finden Sie unter [AccessPolicy](http://msdn.microsoft.com/library/azure/hh974297.aspx).
+Bevor Sie Dateien in den BLOB-Speicher hochladen, legen Sie die Zugriffsrichtlinienberechtigungen für das Schreiben in ein Medienobjekt fest. Senden Sie dazu eine HTTP POST-Anforderung an die AccessPolicies-Entitätenmenge. Definieren Sie bei der Erstellung einen DurationInMinutes-Wert, da Sie andernfalls eine Antwort mit einer "500 Interner Serverfehler"-Meldung empfangen. Weitere Informationen zu "AccessPolicies" finden Sie unter [AccessPolicy](http://msdn.microsoft.com/library/azure/hh974297.aspx).
 
 Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 		
@@ -188,7 +193,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 
 **HTTP-Anforderung**
 
-	If successful, the following response is returned:
+Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -213,7 +218,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 	   "Permissions":2
 	}
 
-### Abrufen der Upload-URL
+## Abrufen der Upload-URL
 
 Um die eigentliche Upload-URL zu empfangen, erstellen Sie einen SAS-Locator. Ein Locator definiert die Startzeit und den Typ des Verbindungsendpunkts für Clients, die auf Dateien in einem Medienobjekt zugreifen möchten. Sie können mehrere Locator-Entitäten für ein bestimmtes AccessPolicy-/ Asset-Paar erstellen, um unterschiedliche Clientanforderungen und -voraussetzungen zu verarbeiten. Jeder dieser Locators verwendet den StartTime-Wert plus den DurationInMinutes-Wert des AccessPolicy-Objekts, um zu bestimmen, für welchen Zeitraum eine URL verwendet werden kann. Weitere Informationen finden Sie unter [Locator](http://msdn.microsoft.com/library/azure/hh974308.aspx).
 
@@ -281,7 +286,7 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 	   "Name":null
 	}
 
-### Hochladen einer Datei in einen BLOB-Speichercontainer
+## Hochladen einer Datei in einen BLOB-Speichercontainer
 	
 Nachdem Sie AccessPolicy und Locator konfiguriert haben, können Sie die eigentliche Datei mithilfe der Azure Storage-REST-APIs in einen Azure-BLOB-Speichercontainer hochladen. Sie können Dateien entweder in Seiten- oder Blockblobs hochladen. 
 
@@ -290,7 +295,7 @@ Nachdem Sie AccessPolicy und Locator konfiguriert haben, können Sie die eigentl
 Weitere Informationen zum Arbeiten mit Azure Storage-BLOBs finden Sie unter [REST-API für den Blob-Dienst](http://msdn.microsoft.com/library/azure/dd135733.aspx).
 
 
-### Aktualisieren der AssetFile 
+## Aktualisieren der AssetFile 
 
 Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe und andere Informationen aktualisieren. Beispiel:
 	
@@ -316,6 +321,7 @@ Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe 
 **HTTP-Antwort**
 
 Im Erfolgsfall wird Folgendes zurückgegeben:
+
 	HTTP/1.1 204 No Content
 
 ## Löschen von AccessPolicy und Locator 
@@ -359,10 +365,6 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	...
 
  
+[Abrufen eines Medienprozesses]: ../media-services-get-media-processor/
 
-## Nächste Schritte
-Sie haben nun ein Medienobjekt in Media Services hochgeladen und können mit dem Artikel [Abrufen eines Medienprozessors][] fortfahren.
-
-[Abrufen eines Medienprozessors]: ../media-services-get-media-processor/
-
-<!--HONumber=45--> 
+<!--HONumber=47-->

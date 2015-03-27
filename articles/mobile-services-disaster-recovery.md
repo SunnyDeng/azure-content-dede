@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="11/11/2014" 
@@ -76,8 +76,8 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 
 5. Überprüfen Sie, ob alle Skripts korrekt wiederhergestellt wurden, indem Sie sie mit den Originalen in der Quellcodeverwaltung vergleichen. In den meisten Fällen werden Skripts automatisch ohne Datenverlust wiederhergestellt. Falls Sie aber eine Diskrepanz finden, können Sie das entsprechende Skript manuell wiederherstellen.
 
-6. Stellen Sie sicher, dass der wiederhergestellte Dienst mit der Azure-SQL-Datenbank kommuniziert. Der Wiederherstellungsbefehl stellt den mobilen Dienst wieder her, behält aber die Verbindung zur ursprünglichen Datenbank bei. Falls sich das Problem in der primären Azure-Region auch auf die Datenbank auswirkt, funktioniert der wiederhergestellte Dienst möglicherweise nicht ordnungsgemäß. Sie können das Azure-Dienstdashboard verwenden, um den Datenbankstatus für eine bestimmte Region zu untersuchen. Falls die ursprüngliche Datenbank nicht funktioniert, können Sie sie wiederherstellen:
-	+ Stellen Sie die Azure-SQL-Datenbank in der Azure-Region wieder her, in der Sie gerade den mobilen Dienst wiederhergestellt haben, wie in [Azure SQL-Datenbank-Geschäftskontinuität] beschrieben wird.
+6. Stellen Sie sicher, dass der wiederhergestellte Dienst mit der Azure SQL-Datenbank kommuniziert. Der Wiederherstellungsbefehl stellt den mobilen Dienst wieder her, behält aber die Verbindung zur ursprünglichen Datenbank bei. Falls sich das Problem in der primären Azure-Region auch auf die Datenbank auswirkt, funktioniert der wiederhergestellte Dienst möglicherweise nicht ordnungsgemäß. Sie können das Azure-Dienstdashboard verwenden, um den Datenbankstatus für eine bestimmte Region zu untersuchen. Falls die ursprüngliche Datenbank nicht funktioniert, können Sie sie wiederherstellen:
+	+ Stellen Sie die Azure SQL-Datenbank in der Azure-Region wieder her, in der Sie gerade den mobilen Dienst wiederhergestellt haben, wie in [Azure SQL-Datenbank-Geschäftskontinuität] beschrieben wird.
 	+ Wählen Sie im Azure-Portal auf der Registerkarte **Konfigurieren** des mobilen Dienstes die Option "Datenbank ändern" und dann die neu wiederhergestellte Datenbank aus.
 
 Jetzt sollte der mobile Dienst in einer neuen Azure-Region wiederhergestellt worden sein und verarbeitet nun Datenverkehr von den Store-Apps mithilfe der ursprünglichen URL.
@@ -88,13 +88,16 @@ Jetzt sollte der mobile Dienst in einer neuen Azure-Region wiederhergestellt wor
 
 <!-- URLs. -->
 [Azure SQL-Datenbank-Geschäftskontinuität]: http://msdn.microsoft.com/library/windowsazure/hh852669.aspx
+[Leitfaden für SQL-Datenbank-Geschäftskontinuität]: http://msdn.microsoft.com/library/windowsazure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
 
-[Quellcodeverwaltungsfunktion]: http://azure.microsoft.com/develop/mobile/tutorials/store-scripts-in-source-control/
-[Arbeiten mit dem Azure-Befehlszeilentool]: http://azure.microsoft.com/develop/mobile/tutorials/command-line-administration/
+[Quellcodeverwaltungsfunktion]: http://www.windowsazure.com/develop/mobile/tutorials/store-scripts-in-source-control/
+[Quellcodeverwaltung]: http://www.windowsazure.com/develop/mobile/tutorials/store-scripts-in-source-control/
+[Azure-Befehlszeilentool]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
+[Arbeiten mit dem Azure-Befehlszeilentool]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
 [Azure-Portal]: http://manage.windowsazure.com/
-[Azure Service-Dashboard]: http://azure.microsoft.com/support/service-dashboard/
-[Automatisieren von mobilen Diensten mit Befehlszeilentools]: http://azure.microsoft.com/develop/mobile/tutorials/command-line-administration/
+[Azure-Dienstdashboard]: http://www.windowsazure.com/support/service-dashboard/
+[Azure-Service-Dashboard]: http://www.windowsazure.com/support/service-dashboard/
+[Automatisieren von mobilen Diensten mit Befehlszeilentools]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
 
-
-<!--HONumber=42-->
+<!--HONumber=47-->

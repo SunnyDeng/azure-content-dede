@@ -1,4 +1,4 @@
-﻿
+
 1. Wenn Sie Ihre App noch nicht registriert haben, navigieren Sie zu [Eine App-Seite abschicken] im "Dev-Center" für Windows Store-Apps, melden Sie sich mit Ihrem Microsoft-Konto an, und klicken Sie dann auf **App-Name**.
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-submit-win8-app.png)
@@ -29,11 +29,11 @@
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit-app.png) 
 
-8. Klicken Sie auf der Seite "Dienste" auf **Live Services-Website** unter**Azure Mobile Services**.
+8. Klicken Sie auf der Seite "Dienste" auf **Live-Dienste-Website** unter **Azure Mobile Services**.
 
 	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit2-app.png) 
 
-9. Notieren Sie in **App-Einstellungen** die Werte für **Client-ID**, **Geheimer Clientschlüssel** und **Paket-Sicherheits-ID (SID)**. 
+9. Notieren Sie sich unter **App-Einstellungen** die Werte von **Client-ID**, **Geheimer Clientschlüssel** und **Paket-Sicherheits-ID (SID)**. 
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth.png)
 
@@ -45,7 +45,7 @@
 
 	Dadurch wird die Microsoft-Kontoauthentifizierung für Ihre App aktiviert.
 
-11. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre App.
+11. Melden Sie sich am [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre App.
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-selection.png)
 
@@ -65,7 +65,8 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
  
 
 <!-- URLs. -->
-[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
-[Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Eine App-Seite abschicken]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-<!--HONumber=42-->
+
+<!--HONumber=47-->

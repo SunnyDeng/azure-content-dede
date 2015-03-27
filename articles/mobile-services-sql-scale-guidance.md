@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="11/11/2014" 
@@ -45,7 +45,7 @@ Es ist wichtig, die verschiedenen verfügbaren Datenbankstufen zu verstehen, um 
 - Web- und Business-Edition (ausgedient)
 - Basic-, Standard- und Premium-Edition 
 
-Die Web- und Business-Edition wird vollständig unterstützt; ihre Einstellung ist jedoch für den 24. April 2015 geplant, wie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](http://msdn.microsoft.com/library/azure/dn741330.aspx) beschrieben. Wir empfehlen neuen Kunden die Verwendung der Basic-, Standard- und Premium-Edition in Vorbereitung auf diese Änderung. Diese neue Edition bietet eine Reihe neuer Stufen und Überwachungsfunktionen, mit denen es noch einfacher wird, die Datenbankleistung zu verstehen und Fehler zu beheben. Alle neuen mobilen Dienste werden mit der neuen Edition erstellt.
+Die Web- und Business-Edition wird vollständig unterstützt; ihre Einstellung ist jedoch für den 24. April 2015 geplant, wie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](http://msdn.microsoft.com/library/azure/dn741330.aspx) besprochen. Wir empfehlen neuen Kunden die Verwendung der Basic-, Standard- und Premium-Edition in Vorbereitung auf diese Änderung. Diese neue Edition bietet eine Reihe neuer Stufen und Überwachungsfunktionen, mit denen es noch einfacher wird, die Datenbankleistung zu verstehen und Fehler zu beheben. Alle neuen mobilen Dienste werden mit der neuen Edition erstellt.
 
 Gehen Sie folgendermaßen vor, um einen mobilen Dienst mit der Web- und Business-Edition in die Basic-, Standard und Premium-Edition zu konvertieren.
 
@@ -61,7 +61,7 @@ Einige Empfehlungen für die Auswahl der richtigen Datenbankstufe sind:
 - **Standard** - für Produktionsdienste, wenn mehrere gleichzeitige Datenbankabfragen erwartet werden.
 - **Premium** - für umfangreiche Produktionsdienste mit zahlreichen gleichzeitigen Abfragen, hohen Spitzenlasten und erwarteter niedriger Latenz für jede Anforderung.
 
-Weitere Informationen zur Verwendung der einzelnen Preisstufen finden Sie unter [Gründe für die Verwendung neuer Dienstebenen](http://msdn.microsoft.com/library/azure/dn369873.aspx#Reasons)
+Weitere Informationen zur Verwendung der einzelnen Stufen finden Sie unter [Gründe für die Verwendung neuer Dienstebenen](http://msdn.microsoft.com/library/azure/dn369873.aspx#Reasons)
 
 ### Analysieren von Datenbankmetriken
 
@@ -73,9 +73,9 @@ Nachdem Sie sich mit den einzelnen Datenbankstufen vertraut gemacht haben, könn
 4. Wählen Sie den Namen der **SQL-Datenbank** im Abschnitt **Datenbankeinstellungen** aus. Dadurch werden Sie zur Registerkarte "Azure SQL-Datenbank" im Portal geführt.
 5. Gehen Sie zur Registerkarte **Überwachen**.
 6. Stellen Sie sicher, dass die relevanten Metriken angezeigt werden, indem Sie die Schaltfläche **Metriken hinzufügen** verwenden. Schließen Sie die folgenden Metriken ein:
-    - *CPU-Prozentsatz* (nur in den Basic-/Standard-/Premium-Preisstufen verfügbar)
-    - *Prozentsatz physischer Datenlesevorgänge* (nur in den Basic-/Standard-/Premium-Preisstufen verfügbar) 
-    - *Prozentsatz Protokollschreibvorgänge* (nur in den Basic-/Standard-/Premium-Preisstufen verfügbar)
+    - *CPU-Prozentsatz* (nur auf den Basic/Standard/Premium-Stufen verfügbar
+    - *Prozentsatz physischer Datenlesevorgänge* (nur auf den Basic/Standard/Premium-Stufen verfügbar) 
+    - *Prozentsatz Protokollschreibvorgänge* (nur auf den Basic/Standard/Premium-Stufen verfügbar)
     - *Speicher* 
 7. Prüfen Sie die Metriken über dem Zeitfenster, wenn der Dienst Probleme aufwies. 
 
@@ -91,7 +91,7 @@ Ziehen Sie so bald wie möglich die folgenden Problemminderungsschritte in Erwä
 - **Optimieren Sie die Datenbank.**
   Oft kann die Datenbankauslastung reduziert und das Skalieren auf eine höhere Stufe vermieden werden, indem Sie die Datenbank optimieren. 
 - **Prüfen Sie die Dienstarchitektur.**
-   Häufig ist die Dienstlast nicht gleichmäßig über die Zeit verteilt, sondern enthält "Spitzen" mit hoher Beanspruchung. Anstatt die Datenbank zu skalieren, um die Spitzen zu verarbeiten und bei geringerer Beanspruchung eine zu niedrige Auslastung hinzunehmen, lässt sich die Dienstarchitektur häufig anpassen, um diese Spitzen zu vermeiden, bzw. so damit umzugehen, dass keine Datenbankprobleme entstehen.
+  Häufig ist die Dienstlast nicht gleichmäßig über die Zeit verteilt, sondern enthält "Spitzen" mit hoher Beanspruchung. Anstatt die Datenbank zu skalieren, um die Spitzen zu verarbeiten und bei geringerer Beanspruchung eine zu niedrige Auslastung hinzunehmen, lässt sich die Dienstarchitektur häufig anpassen, um diese Spitzen zu vermeiden, bzw. so damit umzugehen, dass keine Datenbankprobleme entstehen.
 
 In den weiteren Abschnitten dieses Dokuments werden die genauen Schritte zum Implementieren dieser Lösungen beschrieben.
 
@@ -105,7 +105,7 @@ Häufig ist es hilfreich, Warnungen für wichtige Datenbankmetriken zu konfiguri
 3. Wählen Sie die Metrik, für die Sie eine Warnung einrichten möchten, und wählen Sie **Regel hinzufügen**.
     ![Azure Management Portal - SQL Alert][PortalSqlAddAlert]
 4. Geben Sie einen Namen und eine Beschreibung für die Warnung ein
-    ![Azure Management Portal - SQL Alert Name and Description][PortalSqlAddAlert2]
+    ![Azure Management Portal - SQL Alert Name and Beschreibung][PortalSqlAddAlert2]
 5. Geben Sie den Wert an, der als Warnschwellenwert verwendet werden soll. Empfohlen werden **80 %**, damit noch Reaktionszeit bleibt. Geben Sie außerdem eine e-Mail-Adresse an, die Sie aktiv beobachten. 
     ![Azure Management Portal - SQL Alert Threshold and Email][PortalSqlAddAlert3]
 
@@ -160,7 +160,7 @@ In dieser Ansicht können Sie auch Indizes entfernen.
 
 #### .NET-Back-End
 
-Um einen Index im Entity Framework zu definieren, verwenden Sie das "[Index]"-Attribut für die Felder, die indiziert werden sollen. Beispiel:
+Um einen Index im Entity Framework zu definieren, verwenden Sie das Attribut `[[Index]]` für die Felder, die indiziert werden sollen. Beispiel:
 
     public class TodoItem : EntityData
     {
@@ -170,7 +170,7 @@ Um einen Index im Entity Framework zu definieren, verwenden Sie das "[Index]"-At
         public bool Complete { get; set; }
     }
 		 
-Weitere Informationen zu Indizes finden Sie unter [Indexanmerkungen im Entity Framework][]. Weitere Tipps zum Optimieren von Indizes finden Sie unter [Erweiterte Indizierung](#AdvancedIndexing) am Ende dieses Dokuments.
+Weitere Informationen zu Indizes finden Sie unter [Index Annotations in Entity Framework][]. Weitere Tipps zum Optimieren von Indizes finden Sie unter [Erweiterte Indizierung](#AdvancedIndexing) am Ende dieses Dokuments.
 
 <a name="Schema"></a>
 ## Schemadesign
@@ -178,7 +178,7 @@ Weitere Informationen zu Indizes finden Sie unter [Indexanmerkungen im Entity Fr
 Bei der Auswahl der Datentypen für die Objekte, die auch das Schema der SQL-Datenbank betreffen, sind einige Punkte zu beachten. Eine Optimierung des Schemas kann häufig erhebliche Leistungsverbesserungen erbringen, da SQL benutzerdefinierte optimierte Möglichkeiten zur Handhabung der Indizierung und Speicherung für verschiedene Datentypen bietet:
 
 - **Verwenden Sie die bereitgestellte ID-Spalte**. Für jede Tabelle mit mobilen Diensten ist eine Standard-ID-Spalte als primärer Schlüssel definiert, und für diese Spalte ist ein Index festgelegt. Es ist nicht erforderlich, eine zusätzliche ID-Spalte zu erstellen.
-- **Verwenden Sie die richtigen Datentypen in Ihrem Modell.** Wenn Sie wissen, dass eine bestimmte Eigenschaft in Ihrem Modell numerisch oder boolesch ist, müssen Sie sie im Modell entsprechend und nicht als Zeichenfolge definieren. Verwenden Sie in der JavaScript-Back-End, Literale, z. B `true` anstelle von "true" und 5 statt "5". Verwenden Sie im .NET-Back-End die Typen `int` und `bool` bei der Erklärung der Eigenschaften des Modells. So können in SQL die richtigen Schemata für diese Typen erstellt werden, wodurch die Abfragen effizienter werden.
+- **Verwenden Sie die richtigen Datentypen in Ihrem Modell.** Wenn Sie wissen, dass eine bestimmte Eigenschaft in Ihrem Modell numerisch oder boolesch ist, müssen Sie sie im Modell entsprechend und nicht als Zeichenfolge definieren. Verwenden Sie in der JavaScript-Back-End, Literale, z. B `true` anstelle von `true` und `5` statt `5`. Verwenden Sie im .NET-Back-End die Typen `int` und `bool` bei der Erklärung der Eigenschaften des Modells. So können in SQL die richtigen Schemata für diese Typen erstellt werden, wodurch die Abfragen effizienter werden.
 
 <a name="Query"></a>
 ## Abfragedesign
@@ -187,7 +187,7 @@ Die folgenden Richtlinien sollten bei Datenbankabfragen beachtet werden:
 
 - **Führen Sie immer Join-Vorgänge in der Datenbank aus.** Häufig müssen Sie Datensätze aus zwei oder mehr Tabellen kombinieren, wenn die kombinierten Datensätze ein gemeinsames Feld nutzen (auch als *join* bezeichnet). Dieser Vorgang kann ineffizient sein, wenn er nicht richtig durchgeführt wird, da er das Abrufen aller Entitäten aus beiden Tabellen und dann Iterationen durch alle Entitäten bedeuten kann. Diese Art Vorgänge bleiben am besten der Datenbank selbst überlassen. Es geschieht jedoch leicht, dass sie irrtümlich auf dem Client oder im mobilen Dienstcode durchgeführt werden.
     - Führen Sie keine Joins im Anwendungscode durch.
-    - Führen Sie keine Joins im Code des mobilen Diensts durch. Wenn Sie das JavaScript-Back-End verwenden, sollten Sie beachten, dass das [Tabellenobjekt](http://msdn.microsoft.com/library/windowsazure/jj554210.aspx) keine Joins bearbeitet. Verwenden Sie unbedingt direkt das [mssql-Objekt](http://msdn.microsoft.com/library/windowsazure/jj554212.aspx), damit der Join in der Datenbank erfolgt. Weitere Informationen finden Sie unter [Verknüpfen relationaler Tabellen](http://azure.microsoft.com/documentation/articles/mobile-services-how-to-use-server-scripts/#joins). Wenn Sie das .NET.-Back-End verwenden und über LINQ abfragen, werden Joins automatisch auf Datenbankebene vom Entity Framework bearbeitet.
+    - Führen Sie keine Joins im Code des mobilen Diensts durch. Wenn Sie das JavaScript-Back-End verwenden, sollten Sie beachten, dass das [Tabellenobjekt](http://msdn.microsoft.com/library/windowsazure/jj554210.aspx) keine Joins bearbeitet. Verwenden Sie unbedingt direkt das [mssql.Objekt](http://msdn.microsoft.com/library/windowsazure/jj554212.aspx), damit der Join in der Datenbank erfolgt. Weitere Informationen finden Sie unter [Verknüpfen relationaler Tabellen](http://azure.microsoft.com/documentation/articles/mobile-services-how-to-use-server-scripts/#joins). Wenn Sie das .NET.-Back-End verwenden und über LINQ abfragen, werden Joins automatisch auf Datenbankebene vom Entity Framework bearbeitet.
 - **Implementieren Sie Paging.** Bei Datenbankabfragen werden oft sehr viele Datensätze an den Client zurückgegeben. Um die Größe und Latenz der Vorgänge zu minimieren, sollten Sie Paging implementieren.
     - Standardmäßig begrenzt der mobile Dienst alle eingehenden Abfragen auf eine Seitengröße von 50. Sie können manuell bis zu 1.000 Datensätze anfordern. Weitere Informationen finden Sie unter "Seitenweises Zurückgegeben von Daten" für [Windows Store](http://azure.microsoft.com/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#paging), [iOS](http://azure.microsoft.com/documentation/articles/mobile-services-ios-how-to-use-client-library/#paging), [Android](http://azure.microsoft.com/documentation/articles/mobile-services-android-how-to-use-client-library/#paging), [HTML/JavaScript](http://azure.microsoft.com/documentation/articles/mobile-services-html-how-to-use-client-library/#paging) und [Xamarin](http://azure.microsoft.com/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/#paging).
     - Für Abfragen von Ihrem Mobildienstcode aus gibt es keine Standardseitengröße. Wenn Ihre Anwendung Paging nicht implementiert, oder wenn Sie eine defensive Maßnahme ergreifen möchten, können Sie Standardlimits für Ihre Abfragen festlegen. Verwenden Sie im JavaScript-Back-End den Operator **take** für das [Abfrageobjekt](http://msdn.microsoft.com/library/azure/jj613353.aspx). Wenn Sie das .NET-Back-End verwenden, können Sie die [Take-Methode](http://msdn.microsoft.com/library/vstudio/bb503062(v=vs.110).aspx) als Teil der LINQ-Abfrage verwenden.  
@@ -199,7 +199,7 @@ Weitere Informationen zum Verbessern des Abfragedesigns, darunter die Analyse vo
 
 Stellen Sie sich ein Szenario vor, in dem Sie eine Pushbenachrichtigung an alle Kunden senden möchten, damit sie neue Inhalte in Ihrer Anwendung einsehen. Wenn die Kunden die Benachrichtigung antippen, wird die Anwendung gestartet. Dadurch wird möglicherweise ein Aufruf Ihres mobilen Diensts und eine Abfrageausführung in der SQL-Datenbank ausgelöst. Da potenziell Millionen von Kunden diese Aktion innerhalb weniger Minuten ausführen, ergibt sich eine SQL-Spitzenlast, die ein Vielfaches über der stabilen Last Ihrer Anwendung liegt. Dieses Problem ließe sich beheben, indem Sie Ihre Anwendung während der Spitzenlast zu einer höheren SQL-Stufe skalieren und dann wieder herunterskalieren. Diese Lösung erfordert aber einen manuellen Eingriff und führt zu höheren Kosten. Häufig können geringfügige Anpassungen der Architektur des mobilen Diensts die Last, die von den Kunden an die SQL-Datenbank weitergegeben wird, wesentlich ausgewogener gestalten, und problematische Anforderungsspitzen werden vermieden. Diese Änderungen lassen sich oft ganz leicht und mit nur minimaler Beeinträchtigung der Kundenerfahrung implementieren. Hier einige Beispiele:
 
-- **Verteilen Sie die Last über die Zeit..** Wenn Sie die Zeiten für bestimmte Vorgänge steuern (z. B. das Senden einer Pushbenachrichtigung), von denen eine Nachfragespitze erwartet wird, und wenn der genaue Zeitpunkt für das Ereignis nicht entscheidend ist, können Sie das Ereignis zeitlich verteilen. Im obigen Beispiel kann es vielleicht akzeptabel sein, die Anwendungskunden gruppenweise im Lauf eines Tages zu benachrichtigen anstatt alle praktisch zeitgleich. Teilen Sie Ihre Kunden in Gruppen auf, und senden Sie die Benachrichtigung nacheinander an die einzelnen Gruppen. Wenn Sie Notification Hubs verwenden, können Sie einfach eine zusätzliche Markierung hinzufügen, um die Gruppe zu verfolgen, und dann eine Pushbenachrichtigung an Markierung senden. Weitere Informationen zu Markierungen finden Sie unter [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten](http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/).
+- **Verteilen Sie die Last über die Zeit.** Wenn Sie die Zeiten für bestimmte Vorgänge steuern (z. B. das Senden einer Pushbenachrichtigung), von denen eine Nachfragespitze erwartet wird, und wenn der genaue Zeitpunkt für das Ereignis nicht entscheidend ist, können Sie das Ereignis zeitlich verteilen. Im obigen Beispiel kann es vielleicht akzeptabel sein, die Anwendungskunden gruppenweise im Lauf eines Tages zu benachrichtigen anstatt alle praktisch zeitgleich. Teilen Sie Ihre Kunden in Gruppen auf, und senden Sie die Benachrichtigung nacheinander an die einzelnen Gruppen. Wenn Sie Notification Hubs verwenden, können Sie einfach eine zusätzliche Markierung hinzufügen, um die Gruppe zu verfolgen, und dann eine Pushbenachrichtigung an Markierung senden. Weitere Informationen zu Markierungen finden Sie unter [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten](http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/).
 - **Verwenden Sie wo immer möglich BLOB- und Tabellenspeicher.** Häufig sind die Inhalte, die die Kunden während der Spitzenlast anzeigen, mehr oder weniger statisch und brauchen nicht in einer SQL-Datenbank gespeichert zu werden, da für den Inhalt wahrscheinlich keine relationalen Abfragekapazitäten erforderlich sind. In diesem Fall können Sie den Inhalt in BLOB- oder Tabellenspeicher ablegen. Sie können auf öffentliche BLOBs im BLOB-Speicher direkt vom Gerät aus zugreifen. Um auf sichere Weise auf BLOBs zuzugreifen oder Tabellenspeicher zu verwenden, müssen Sie eine benutzerdefinierte API für mobile Dienste nutzen, um den Speicherzugriffsschlüssel zu schützen. Weitere Informationen finden Sie unter [Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage](http://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/).
 - **Verwenden Sie ein In-Memory-Cache**. Eine weitere Alternative besteht im Speichern von Daten, auf die häufig während einer Datenverkehrsspitze zugegriffen wird, in einem In-Memory-Cache wie [Azure Cache](http://azure.microsoft.com/services/cache/). Das bedeutet, dass eingehende Anfragen die benötigten Informationen aus dem Speicher abrufen können, statt immer wieder die Datenbank abzufragen.
 
@@ -210,7 +210,7 @@ In diesem Abschnitt werden erweiterte Diagnoseaufgaben behandelt, die hilfreich 
 ### Voraussetzungen
 Um einige der Diagnoseaufgaben in diesem Abschnitt durchführen zu können, benötigten Sie Zugriff auf ein Verwaltungstool für SQL-Datenbanken wie **SQL Server Management Studio** oder die integrierte Verwaltungsfunktion des **Azure-Verwaltungsportals**.
 
-SQL Server Management Studio ist eine kostenlose Windows-Anwendung, die die fortgeschrittensten Funktionen bietet. Wenn Sie keinen Zugang zu einem Windows-Computer haben (wenn Sie z. B. einen Mac benutzen), können Sie einen virtuellen Computer in Azure wie in [Erstellen eines virtuellen Computers unter Windows Server](http://azure.microsoft.com/documentation/articles/virtual-machines-windows-tutorial/) beschrieben bereitstellen und dann eine Remoteverbindung mit ihm herstellen. Wenn Sie den virtuellen Computer hauptsächlich für die Ausführung von SQL Server Management Studio benötigen, sollte eine **Basic A0**-Instanz (früher "Sehr klein") ausreichend sein. 
+SQL Server Management Studio ist eine kostenlose Windows-Anwendung, die die fortgeschrittensten Funktionen bietet. Wenn Sie keinen Zugang zu einem Windows-Computer haben (wenn Sie z. B. einen Mac benutzen), können Sie einen virtuellen Computer in Azure wie in [Erstellen eines virtuellen Windows Server-Computers](http://azure.microsoft.com/documentation/articles/virtual-machines-windows-tutorial/)  beschrieben bereitstellen und dann eine Remoteverbindung mit ihm herstellen. Wenn Sie den virtuellen Computer hauptsächlich für die Ausführung von SQL Server Management Studio benötigen, sollte eine **Basic A0**-Instanz (früher "Sehr klein") ausreichend sein. 
 
 Das Azure-Verwaltungsportal bietet integrierte Verwaltungsfunktionen, die weniger umfassend, aber ohne lokale Installation verfügbar sind.
 
@@ -219,13 +219,13 @@ Mit den folgenden Schritten werden Sie durch das Abrufen von Verbindungsinformat
 #### Abrufen von SQL-Verbindungsinformationen 
 1. Starten Sie das [Azure-Verwaltungsportal][].
 2. Wählen Sie auf der Registerkarte "Mobile Services" den Dienst aus, mit dem Sie arbeiten möchten.
-3. Wählen Sie die Registerkarte **Konfigurieren** aus.
+3. Wählen Sie die Registerkarte ****Konfigurieren** aus.
 4. Wählen Sie den Namen der **SQL-Datenbank** im Abschnitt **Datenbankeinstellungen** aus. Dadurch werden Sie zur Registerkarte "Azure SQL-Datenbank" im Portal geführt.
-5. Wählen Sie **Microsoft Azure-Firewallregeln für diese IP-Adresse einrichten**.
+5. Wählen Sie **Azure-Firewallregeln für diese IP-Adresse einrichten** aus.
 6. Notieren Sie sich die Serveradresse im Abschnitt **Datenbankverbindung herstellen**, z. B.: *mcml4otbb9.database.windows.net*.
 
 #### SQL Server Management Studio
-1. Navigieren Sie zu [SQL Server-Editionen - Express](http://www.microsoft.com/de-de/server-cloud/products/sql-server-editions/sql-server-express.aspx)
+1. Navigieren Sie zu [SQL Server-Editionen - Express](http://www.microsoft.com/server-cloud/products/sql-server-editions/sql-server-express.aspx)
 2. Suchen Sie den Abschnitt **SQL Server Management Studio**, und klicken Sie auf die darunter liegende Schaltfläche **Download**.
 3. Führen Sie die Setupschritte durch, bis die Anwendung erfolgreich ausgeführt werden kann:
 
@@ -250,9 +250,9 @@ Mit den folgenden Schritten werden Sie durch das Abrufen von Verbindungsinformat
     ![Azure Management Portal - SQL Database][PortalSqlManagement]
 
 <a name="AdvancedDiagnosing" />
-### Advanced Diagnostics
+### Erweiterte Diagnose
 
-Mehrere Diagnoseaufgaben können problemlos direkt über das **Azure-Verwaltungsportal**ausgeführt werden; einige erweiterte Diagnoseaufgaben sind aber nur über **SQL Server Management Studio** oder das **SQL-Datenbankverwaltungsportal** möglich.  Wir nutzen dynamischen Verwaltungssichten, eine Reihe von Sichten, die automatisch mit Diagnoseinformationen zu Ihrer Datenbank ausgefüllt werden. Dieser Abschnitt enthält eine Reihe von Abfragen, die anhand dieser Sichten ausgeführt werden können, um verschiedene Metriken zu prüfen. Weitere Informationen finden Sie unter[Überwachen von SQL-Datenbanken mit dynamischen Verwaltungssichten][].
+Mehrere Diagnoseaufgaben können problemlos direkt über das **Azure-Verwaltungsportal**ausgeführt werden; einige erweiterte Diagnoseaufgaben sind aber nur über **SQL Server Management Studio** oder das **SQL-Datenbankverwaltungsportal** möglich.  Wir nutzen dynamischen Verwaltungssichten, eine Reihe von Sichten, die automatisch mit Diagnoseinformationen zu Ihrer Datenbank ausgefüllt werden. Dieser Abschnitt enthält eine Reihe von Abfragen, die anhand dieser Sichten ausgeführt werden können, um verschiedene Metriken zu prüfen. Weitere Informationen finden Sie unter [Überwachung von SQL-Datenbank mit dynamischen Verwaltungssichten][].
 
 Nach den Schritten im vorigen Abschnitt zum Verbinden der Datenbank in SQL Server Management Studio wählen Sie die Datenbank im **Objekt-Explorer** aus. Erweitern Sie **Sichten** und dann **Systemsichten**. Es wird eine Liste der Verwaltungssichten angezeigt. Um die Abfragen unten auszuführen, wählen Sie**Neue Abfrage** bei ausgewählter Datenbank im **Objekt-Explorer**. Fügen Sie dann die Abfrage ein, und klicken Sie auf **Ausführen**.
 
@@ -304,14 +304,14 @@ Eine Tabelle oder Sicht kann die folgenden Indizierungstypen enthalten:
 Betrachten Sie analog dazu: ein Buch oder ein technisches Handbuch. Der Inhalt jeder Seite entspricht einem Datensatz, die Seitenzahl ist der gruppierte Index und der Themenindex am Ende des Buchs ist der nicht gruppierte Index. Jeder Eintrag im Themenindex verweist auf den gruppierten Index, die Seitenzahl.
 
 > [AZURE.NOTE] 
-> Standardmäßig legt das JavaScript-Back-End für Azure Mobile Services **\_createdAt** als gruppierten Index fest. Wenn Sie diese Spalte entfernen oder einen anderen gruppierten Index wählen möchten, müssen Sie die [Richtlinien für das Design von gruppierten Indizes](#ClusteredIndexes) unten befolgen. Im .NET-Back-End definiert die `EntityData`-Klasse `CreatedAt` als gruppierten Index mit der Anmerkung "[Index(IsClustered = true)]".
+> Standardmäßig legt das JavaScript-Back-End für Azure Mobile Services **\_createdAt** als gruppierten Index fest. Wenn Sie diese Spalte entfernen oder einen anderen gruppierten Index wählen möchten, befolgen Sie die [Richtlinien für das Design von gruppierten Indizes ](#ClusteredIndexes) unten. Im .NET-Back-End definiert die Klasse `EntityData` `CreatedAt` als gruppierten Index mit der Anmerkung `[Index(IsClustered = true)]]`.
 
 <a name="ClusteredIndexes"></a>
 #### Richtlinien für das Design von gruppierten Indizes
 
 Jede Tabelle muss einen gruppierten Index für die Spalte (bzw. im Fall eines zusammengesetzten Schlüssels für die Spalten) mit den folgenden Eigenschaften haben:
 
-- Narrow - verwendet einen kleinen Datentyp oder ist ein [zusammengesetzter Schlüssel][Primärschlüssel- und Fremdschlüsseleinschränkungen] aus einer kleinen Anzahl schmaler Spalten.
+- Narrow - verwendet einen kleinen Datentyp oder ist ein [zusammengesetzter Schlüssel][Primär- und Fremdschlüsselbeschränkungen] aus einer kleinen Anzahl schmaler Spalten.
 - Eindeutig, oder überwiegend eindeutig
 - Static - der Wert wird nicht oft geändert
 - Ever-increasing 
@@ -374,7 +374,7 @@ In der folgenden Beispielabfrage wird ein Join für diese Tabellen ausgeführt, 
       AND migs_adv.index_advantage > 10
     ORDER BY migs_adv.index_advantage DESC;
 
-Weitere Informationen finden Sie unter [Überwachen von SQL-Datenbanken mit dynamischen Verwaltungssichten][] und [ Fehlende Indizes in dynamischen Verwaltungssichten](sys-missing-index-stats).
+Weitere Informationen finden Sie unter [Überwachung von SQL-Datenbank mit dynamischen Verwaltungssichten][] und [Fehlende Indizes in dynamischen Verwaltungssichten](sys-missing-index-stats).
 
 <a name="AdvancedQuery" />
 ### Erweitertes Abfragedesign 
@@ -400,7 +400,7 @@ Das folgende Beispiel gibt Informationen über die "Top-Fünf"-Abfragen gemessen
 	GROUP BY query_stats.query_hash
 	ORDER BY 2 DESC;
 
-Weitere Informationen finden Sie unter [Überwachen von SQL-Datenbanken mit dynamischen Verwaltungssichten][]. Zusätzlich zur Ausführung der Abfrage finden Sie im **SQL-Datenbankverwaltungsportal** eine praktische Möglichkeit, diese Daten anzuzeigen. Wählen Sie  **Zusammenfassung** für Ihre Datenbank, und klicken Sie dann auf **Abfrageleistung**:
+Weitere Informationen finden Sie unter [Überwachung von SQL-Datenbank mit dynamischen Verwaltungssichten][]. Zusätzlich zur Ausführung der Abfrage finden Sie im **SQL-Datenbankverwaltungsportal** eine praktische Möglichkeit, diese Daten anzuzeigen. Wählen Sie  **Zusammenfassung** für Ihre Datenbank, und klicken Sie dann auf **Abfrageleistung**:
 
 ![SQL Database Management Portal - query performance][PortalSqlManagementQueryPerformance]
 
@@ -455,8 +455,8 @@ Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwend
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 
 [Azure SQL-Datenbankdokumentation]: http://azure.microsoft.com/documentation/services/sql-database/
-[Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409
-[Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
+[Verwalten einer SQL-Datenbank mit SQL Server Management Studio]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409
+[Überwachung von SQL-Datenbank mit dynamischen Verwaltungssichten]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
 [Azure SQL-Datenbankleistung und -skalierung]: http://go.microsoft.com/fwlink/p/?linkid=397217&clcid=0x409
 [Problembehandlung in Azure SQL-Datenbank]: http://msdn.microsoft.com/library/azure/ee730906.aspx
 
@@ -477,10 +477,9 @@ Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwend
 <!-- EF -->
 [Leistungsüberlegungen zu Entity Framework 5]: http://msdn.microsoft.com/data/hh949853
 [Code First - Datenanmerkungen]: http://msdn.microsoft.com/data/jj591583.aspx
-[Index-Anmerkungen in Entitätsframework]:http://msdn.microsoft.com/data/jj591583.aspx#Index
+[Index Annotations in Entity Framework]:http://msdn.microsoft.com/data/jj591583.aspx#Index
 
 <!-- BLOG LINKS -->
 [Was kostet dieser Schlüssel?]: http://www.sqlskills.com/blogs/kimberly/how-much-does-that-key-cost-plus-sp_helpindex9/
 
-
-<!--HONumber=42-->
+<!--HONumber=47-->

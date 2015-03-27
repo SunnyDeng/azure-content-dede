@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/17/2015" 
+	ms.date="03/05/2015" 
 	ms.author="josephd"/>
 
-#Einrichten einer Hybrid Cloud-Umgebung für Tests
+# Einrichten einer Hybrid Cloud-Umgebung für Tests
 
 Dieses Thema führt Sie durch die Erstellung einer Hybrid Cloud-Umgebung mit Microsoft Azure für Tests. Die resultierende Konfiguration sieht folgendermaßen aus.
 
@@ -42,13 +42,13 @@ Das Einrichten dieser Hybrid Cloud-Testumgebung umfasst folgenden fünf Phasen:
 4.	Erstellen der Site-to-Site-VPN-Verbindung
 5.	Konfigurieren von DC2 
 
-Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich unter [Azure testen](http://www.windowsazure.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie die Informationen unter [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich unter [Azure testen](http://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie die Informationen unter [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
 >[AZURE.NOTE] Für virtuelle Computer und virtuelle Netzwerkgateways in Azure fallen laufende Kosten an, wenn sie ausgeführt werden. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zum Reduzieren der Kosten für das Ausführen dieser Testumgebung, wenn sie nicht verwendet wird, finden Sie im Abschnitt [Minimieren der laufenden Kosten dieser Umgebung](#costs) in diesem Thema.
 
-##Phase 1: Konfigurieren der Computer im Subnetz "Corpnet"
+## Phase 1: Konfigurieren der Computer im Subnetz "Corpnet"
 
-Befolgen Sie die Anweisungen im Abschnitt "Schritte zum Konfigurieren vom Subnetz ‚Corpnet' in [Test Lab Guide:  Basiskonfiguration für Windows Server 2012 R2](http://www.microsoft.com/download/details.aspx?id=39638), um DC1-, APP1- und CLIENT1-Computer in einem Subnetz mit dem Namen "Corpnet" zu konfigurieren. **Dieses Subnetz muss von Ihrem Organisationsnetzwerk isoliert werden, da es direkt über den RRAS1-Computer mit dem Internet verbunden wird.** 
+Befolgen Sie die Anweisungen im Abschnitt "Schritte zum Konfigurieren vom Subnetz ‚Corpnet' in [Test Lab Guide: Basiskonfiguration für Windows Server 2012 R2](http://www.microsoft.com/download/details.aspx?id=39638), um DC1-, APP1- und CLIENT1-Computer in einem Subnetz mit dem Namen "Corpnet" zu konfigurieren. **Dieses Subnetz muss von Ihrem Organisationsnetzwerk isoliert werden, da es direkt über den RRAS1-Computer mit dem Internet verbunden wird.** 
 
 Melden Sie sich zunächst bei DC1 mit den Anmeldeinformationen von CORP\User1 an. Führen Sie die folgenden Befehle von einer Windows PowerShell-Eingabeaufforderung aus, um die CORP-Domäne so zu konfigurieren, dass Computer und Benutzer ihren lokalen Domänencontroller zur Authentifizierung verwenden.
 
@@ -61,7 +61,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-set-up-hybrid-cloud-environment-for-testing/CreateHybridCloudVNet_1.png)
  
-##Phase 2: Konfigurieren von RRAS1
+## Phase 2: Konfigurieren von RRAS1
 
 RRAS1 bietet Datenverkehrs-Routingdienste und VPN-Gerätedienste zwischen den Computern im Subnetz "Corpnet" und im virtuellen Netzwerk TestVNET. Für RRAS1 müssen zwei Netzwerkkarten installiert sein.
 
@@ -101,7 +101,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-set-up-hybrid-cloud-environment-for-testing/CreateHybridCloudVNet_2.png)
 
-#Phase 3: Erstellen vom standortübergreifenden Azure Virtual Network
+# Phase 3: Erstellen vom standortübergreifenden Azure Virtual Network
 
 Melden Sie sich zunächst beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/microsoft.onmicrosoft.com#Workspaces/All/dashboard) mit den Anmeldeinformationen für Ihr Azure-Abonnement an, und erstellen Sie ein virtuelles Netzwerk mit dem Namen "TestVNET".
 
@@ -150,13 +150,13 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 ![](./media/virtual-networks-set-up-hybrid-cloud-environment-for-testing/CreateHybridCloudVNet_3.png)
 
  
-#Phase 4: Erstellen der Site-to-Site-VPN-Verbindung
+# Phase 4: Erstellen der Site-to-Site-VPN-Verbindung
 
 Erstellen Sie zunächst ein virtuelles Netzwerkgateway.
 
 1.	Klicken Sie im Azure-Verwaltungsportal auf Ihrem lokalen Computer im linken Bereich auf **Netzwerke**, und stellen Sie sicher, dass die Spalte **Status** für TestVNET auf **Erstellt** festgelegt ist.
 2.	Klicken Sie auf **TestVNET**. Auf der Seite "Dashboard" sollte der Status **Gateway nicht erstellt** angezeigt werden.
-3.	Klicken Sie in der Taskleiste auf **Gateway erstellen**, und klicken Sie dann auf **Dynamisches Routing**. Klicken Sie bei Aufforderung auf **Ja**. Warten Sie, bis das Gateway fertig gestellt ist und den Status **Verbindung wird hergestellt** aufweist. Dies kann einige Minuten in Anspruch nehmen.
+3.	Klicken Sie in der Taskleiste auf **Gateway erstellen**, und klicken Sie dann auf **Dynamisches Routing**. Klicken Sie auf **Ja**, wenn Sie dazu aufgefordert werden. Warten Sie, bis das Gateway fertig gestellt ist und den Status **Verbindung wird hergestellt** aufweist. Dies kann einige Minuten in Anspruch nehmen.
 4.	Notieren Sie die **Gateway-IP-Adresse** von der Seite "Dashboard". Dies ist die öffentliche IP-Adresse des Azure-VPN-Gateways für das virtuelle Netzwerk TestVNET. Sie benötigen diese IP-Adresse, um RRAS1 zu konfigurieren.
 5.	Klicken Sie in der Taskleiste auf **Schlüssel verwalten** und anschließend auf das Symbol "Kopieren" neben dem Schlüssel, um diesen in die Zwischenablage zu kopieren. Fügen Sie diesen Schlüssel in ein Dokument ein, und speichern Sie es. Sie benötigen diesen Schlüsselwert, um RRAS1 zu konfigurieren. 
 
@@ -213,16 +213,16 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 ![](./media/virtual-networks-set-up-hybrid-cloud-environment-for-testing/CreateHybridCloudVNet_4.png)
 
 
-#Phase 5: Konfigurieren von DC2
+# Phase 5: Konfigurieren von DC2
 
 Führen Sie als Erstes auf dem lokalen Computer die folgenden Befehle in der Azure PowerShell-Eingabeaufforderung aus, um einen virtuellen Azure-Computer für DC2 zu erstellen.
 
 	$ServiceName="<Your cloud service name from Phase 3>"
 	$LocalAdminName="<A local administrator account name>" 
-	$LocalAdminPW="<A password for the local administrator account>"
+	$LocalAdminPW="<The password for the local administrator account>"
 	$image = Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DC2 -InstanceSize Medium -ImageName $image
-	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $LocalAdminName -Password $LocalAdminPW
+	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $LocalAdminName -Password $LocalAdminPW	
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
 	$vm1 | Set-AzureStaticVNetIP -IPAddress 192.168.0.4
 	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel ADFiles -LUN 0 -HostCaching None
@@ -234,13 +234,13 @@ Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf **Virtuelle Computer**, und klicken Sie dann in der Spalte **Status** für DC2 auf **Wird ausgeführt**.
 2.	Klicken Sie in der Taskleiste auf **Verbinden**. 
 3.	Wenn Sie zum Öffnen von DC2.rdp aufgefordert werden, klicken Sie auf **öffnen**.
-4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
+4.	Wenn ein Meldungsfeld für eine Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
 	- Name: **DC2\\**[Name des lokalen Administratorkontos]
 	- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
-Konfigurieren Sie anschließend eine Windows-Firewall-Regel, um Datenverkehr für grundlegende Konnektivitätstests zuzulassen. Führen Sie auf DC2 in einer Windows PowerShell-Eingabeaufforderung auf Administratorebene den folgenden Befehl aus:
+Konfigurieren Sie anschließend eine Windows-Firewall-Regel, um Datenverkehr zum Testen der allgemeinen Konnektivität zuzulassen. Führen Sie auf DC2 in einer Windows PowerShell-Eingabeaufforderung auf Administratorebene den folgenden Befehl aus:
 
 	Set-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)" -enabled True
 	ping dc1.corp.contoso.com
@@ -260,7 +260,7 @@ Fügen Sie anschließend einen zusätzlichen Datenträger als neues Volume mit d
 9.	Klicken Sie auf der Seite "Auswahl bestätigen" auf **Erstellen**.
 10.	Wenn Sie fertig sind, klicken Sie auf **Schließen**.
 
-Konfigurieren Sie als Nächstes DC2 als replizierten Domänencontroller für die corp.contoso.com-Domäne. Führen Sie die folgenden Befehle in der Windows PowerShell-Eingabeaufforderung auf DC2 aus.
+Konfigurieren Sie als Nächstes DC2 als replizierten Domänencontroller für die corp.contoso.com-Domäne. Führen Sie in der Windows PowerShell-Eingabeaufforderung von DC2 die folgenden Befehle aus.
 
 	Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 	Install-ADDSDomainController -Credential (Get-Credential CORP\User1) -DomainName "corp.contoso.com" -InstallDns:$true -DatabasePath "F:\NTDS" -LogPath "F:\Logs" -SysvolPath "F:\SYSVOL"
@@ -285,27 +285,29 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
  
 Die Hybrid Cloud-Umgebung kann nun getestet werden.
 
-##Zusätzliche Ressourcen
+## Zusätzliche Ressourcen
 
-[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](./virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
+[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
 
 [Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-lobapp-hybrid-cloud-testing/)
 
 [Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-dirsync-hybrid-cloud-testing/)
 
-##Minimieren der laufenden Kosten dieser Umgebung
+[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)
+
+## Minimieren der laufenden Kosten dieser Umgebung
 
 Führen Sie zur Minimierung der Kosten für das Ausführen von virtuellen Computern in dieser Umgebung die erforderlichen Tests und Demonstrationen so schnell wie möglich durch, und löschen Sie oder fahren Sie die virtuellen Computer herunter, wenn Sie sie nicht verwenden. Sie können beispielsweise Azure Automation und ein Runbook zum automatischen Herunterfahren der virtuellen Computer im virtuellen Netzwerk Test_VNET am Ende des Geschäftstags verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Automation](../automation-create-runbook-from-samples/). 
 
 Das Azure-VPN-Gateway ist als Gruppe von zwei virtuellen Azure-Computern implementiert, für das laufende Kosten anfallen. Weitere Informationen hierzu finden Sie unter [Virtuelles Netzwerk - Preise](http://azure.microsoft.com/pricing/details/virtual-network/). Erstellen Sie zur Minimierung der Kosten für das VPN-Gateway die Testumgebung und führen Sie die benötigten Tests und Demonstrationen so schnell wie möglich aus, oder löschen Sie das Gateway mithilfe der folgenden Schritte aus. 
 
 1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf dem lokalen Computer auf **Netzwerke**, klicken Sie auf **TestVNET**, und klicken Sie dann auf **Dashboard**.
-2.	Klicken Sie in der Taskleiste auf **Gateway löschen**. Klicken Sie bei entsprechender Aufforderung auf **Ja**. Warten Sie, bis das Gateway gelöscht ist und den Status **Das Gateway wurde nicht erstellt** aufweist.
+2.	Klicken Sie in der Taskleiste auf **Gateway löschen**. Klicken Sie auf **Ja**, wenn Sie dazu aufgefordert werden. Warten Sie, bis das Gateway gelöscht ist und sein Status in **Das Gateway wurde nicht erstellt** geändert wird.
 
 Wenn Sie das Gateway löschen und die Testumgebung wiederherstellen möchten, müssen Sie als Erstes ein neues Gateway erstellen.
 
 1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf dem lokalen Computer auf **Netzwerke**, und klicken Sie dann auf **TestVNET**. Auf der Seite "Dashboard" sollte der Status **Das Gateway wurde nicht erstellt** angezeigt werden.
-2.	Klicken Sie in der Taskleiste auf **Gateway erstellen**, und klicken Sie dann auf **Dynamisches Routing**. Klicken Sie bei entsprechender Aufforderung auf **Ja**. Warten Sie, bis das Gateway fertig gestellt ist und den Status **Verbindung wird hergestellt** aufweist. Dies kann einige Minuten in Anspruch nehmen.
+2.	Klicken Sie in der Taskleiste auf **Gateway erstellen**, und klicken Sie dann auf **Dynamisches Routing**. Klicken Sie auf **Ja**, wenn Sie dazu aufgefordert werden. Warten Sie, bis das Gateway fertig gestellt ist und den Status **Verbindung wird hergestellt** aufweist. Dies kann einige Minuten in Anspruch nehmen.
 3.	Notieren Sie die **Gateway-IP-Adresse** von der Seite "Dashboard". Dies ist die neue öffentliche IP-Adresse des Azure-VPN-Gateways für das virtuelle Netzwerk TestVNET. Sie benötigen diese IP-Adresse, um RRAS1 neu zu konfigurieren.
 4.	Klicken Sie in der Taskleiste auf **Schlüssel verwalten** und anschließend auf das Symbol "Kopieren" neben dem Schlüssel, um diesen in die Zwischenablage zu kopieren. Fügen Sie diesen Schlüsselwert in ein Dokument ein, und speichern Sie es. Sie benötigen diesen Schlüsselwert, um RRAS1 neu zu konfigurieren. 
 
@@ -316,4 +318,4 @@ Melden Sie sich als Nächstes bei RRAS1 als lokaler Administrator an, und führe
 
 Wechseln Sie zum Azure-Verwaltungsportal auf dem lokalen Computer, und warten Sie, bis das virtuelle Netzwerk TestVNET den Status "Verbunden" aufweist.
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

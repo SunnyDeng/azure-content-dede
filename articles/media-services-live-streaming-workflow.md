@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/15/2015" 
+	ms.date="02/18/2015" 
 	ms.author="juliako"/>
 
 
@@ -28,9 +28,16 @@ Beachten Sie, dass Sie Media Services in Ihre vorhandenen Tools und Prozesse int
 Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, die am Video on Demand-Workflow beteiligt sind.
 ![Live workflow][live-overview]
 
+
+Weitere Informationen finden Sie unter [Media Services - Übersicht](../media-services-overview).
+
 ## Erstellen eines Media Services-Kontos
 
 Verwenden Sie das **Azure-Verwaltungsportal** zum [Erstellen eines Azure Media Services-Kontos](../media-services-create-account/).
+
+## Konfigurieren von Streamingendpunkten
+
+[In Bearbeitung]
 
 ## Einrichten der Entwicklungsumgebung  
 
@@ -46,13 +53,13 @@ Wählen Sie **.NET** oder **REST-API**, um eine programmgesteuerte Verbindung mi
 
 ## Arbeiten mit Live-Transcodern
 
-Weitere Informationen finden Sie unter [Verwenden von Drittanbieter-Live-Encodern mit Azure Media Services](https://msdn.microsoft.com/de-de/library/azure/dn783464.aspx).
+Weitere Informationen finden Sie unter [Verwenden von Drittanbieter-Liveencodern mit Azure Media Services](https://msdn.microsoft.com/library/azure/dn783464.aspx).
 
 ## Verwalten von Kanälen, Programmen und Medienobjekten
 
-Weitere Informationen finden Sie unter [Livestreaming](https://msdn.microsoft.com/de-de/library/azure/dn783466.aspx).
+Weitere Informationen finden Sie unter [Livestreaming](https://msdn.microsoft.com/library/azure/dn783466.aspx).
 
-## Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel 
+## Konfigurieren von Inhaltsschutz und Autorisierungsrichtlinien für Inhaltsschlüssel 
 
 Konfigurieren Sie die Autorisierungsrichtlinie für Schlüssel mithilfe von **.NET** oder **REST-API**.
 
@@ -75,9 +82,9 @@ Veröffentlichen Sie Medienobjekte (durch Locator-Erstellung) mithilfe des **Azu
 
 Sie können **Media Services** skalieren, indem Sie die Anzahl der **reservierten Einheiten für das Streaming** angeben, die für Ihr Konto bereitgestellt werden sollen. 
 
-Informationen zum Skalieren von  Streamingeinheiten finden Sie unter: [Skalieren von Streamingeinheiten](../media-services-manage-origins#scale_streaming_endpoints).
+Informationen zum Skalieren von Streamingeinheiten finden Sie unter: [Skalieren von Streamingeinheiten](../media-services-manage-origins#scale_streaming_endpoints).
 
 
 
 [live-overview]: ./media/media-services-overview/media-services-live-streaming-current.png
-<!--HONumber=45--> 
+<!--HONumber=47-->

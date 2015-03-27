@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Einfügen von benutzerdefinierten Daten in Azure Virtual Machines" 
 	description="Dieses Thema beschreibt das Einfügen von benutzerdefinierten Daten in einem virtuellen Azure-Computer, wenn die Instanz erstellt wird, und das Suchen der benutzerdefinierten Daten auf Windows oder Linux." 
 	services="virtual-machines" 
@@ -26,9 +26,9 @@ Das Einfügen eines Skripts oder anderer Daten in einem virtuellen Azure-Compute
 
 - Abrufen des zuvor genannten für Windows und Linux und 
 
-- Verwenden von speziellen Tools, die auf einigen Systemen zum automatischen Ermitteln und Verarbeiten benutzerdefinierter Daten vorfügbar sind.
+- Verwenden von speziellen Tools, die auf einigen Systemen zum automatischen Ermitteln und Verarbeiten benutzerdefinierter Daten verfügbar sind.
 
-> [AZURE.NOTE] Dieses Thema erweitert [diesen Azure-Blogbeitrag](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/) über dieses Feature und wird regelmäßig aktualisiert, sobald weitere Funktionen vorhanden sind.
+> [AZURE.NOTE] Dieses Thema erweitert diesen [Azure-Blogbeitrag](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/) über dieses Feature und wird regelmäßig aktualisiert, sobald weitere Funktionen vorhanden sind.
 
 <!--Table of contents for topic, the words in brackets must match the heading wording exactly-->
 In diesem Thema:
@@ -40,9 +40,9 @@ In diesem Thema:
 + [Nächste Schritte](#nextsteps)
 
 
-## <a id="injectingCustomData"></a>Einfügen benutzerdefinierter Daten in einem virtuellen Azure-Computer
+##<a id="injectingCustomData"></a>Einfügen benutzerdefinierter Daten in einem virtuellen Azure-Computer
 
-Dieses Feature wird zurzeit nur in der [Microsoft Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat) unterstützt Auch wenn Sie jede der Optionen für den Befehl  `azure vm create` verwenden können, ist der folgende Ansatz sehr allgemein gehalten. 
+Dieses Feature wird zurzeit nur in der [Microsoft Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat) unterstützt. Auch wenn Sie jede der Optionen für den Befehl  `azure vm create` verwenden können, ist der folgende Ansatz sehr allgemein gehalten. 
 
 ```
     PASSWORD='AcceptablePassword -- more than 8 chars, a cap, a num, a special'
@@ -53,7 +53,7 @@ Dieses Feature wird zurzeit nur in der [Microsoft Azure-Befehlszeilenschnittstel
 ```
 
 
-## <a id="usingCustomData"></a>Verwenden von benutzerdefinierten Daten im virtuellen Computer
+##<a id="usingCustomData"></a>Verwenden von benutzerdefinierten Daten im virtuellen Computer
  
 + Wenn es sich bei Ihrem virtuellen Azure-Computer um einen virtuellen Computer unter Windows handelt, wird die benutzerdefinierte Datendatei in  `%SYSTEMDRIVE%\AzureData\CustomData.bin` gespeichert, und auch wenn sie base64-codiert war, um eine Übertragung vom lokalen Computer zum neuen virtuellen Computer vorzunehmen, wird sie automatisch decodiert und kann sofort geöffnet oder verwendet werden. 
 
@@ -61,13 +61,13 @@ Dieses Feature wird zurzeit nur in der [Microsoft Azure-Befehlszeilenschnittstel
 
 + Wenn es sich bei Ihrem virtuellen Azure-Computer um einen virtuellen Linux-Computer handelt, befindet sich die benutzerdefinierte Datendatei an den folgenden zwei Orten, die Daten sind jedoch base64-codiert. Daher müssen Sie die Daten zunächst decodieren.
 
-    + At `/var/lib/waagent/ovf-env.xml`
-    + At `/var/lib/waagent/CustomData` 
+    + Unter `/var/lib/waagent/ovf-env.xml`
+    + Unter `/var/lib/waagent/CustomData` 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a id="nextsteps"></a>Nächste Schritte: Verwenden von cloud-init
+##<a id="nextsteps"></a>Nächste Schritte: Verwenden von cloud-init
 
-Wenn es sich bei Ihrem virtuellen Azure-Computer um ein Ubuntu-Image handelt, können Sie cloud-init zum Starten eines Skripts für die automatische Verwendung (oder Ausführung, wenn Ihre benutzerdefinierte Datei ein Skript ist) Ihrer benutzerdefinierten Daten verwenden. Weitere Informationen finden Sie in der [cloud-init-Dokumentation für Ubuntu](https://help.ubuntu.com/community/CloudInit) (in englischer Sprache).
+Wenn es sich bei Ihrem virtuellen Azure-Computer um ein Ubuntu-Image handelt, können Sie cloud-init zum Starten eines Skripts für die automatische Verwendung (oder Ausführung, wenn Ihre benutzerdefinierte Datei ein Skript ist) Ihrer benutzerdefinierten Daten verwenden. Weitere Informationen finden Sie unter [cloud-init-Dokumentation für Ubuntu](https://help.ubuntu.com/community/CloudInit).
 
 <!--Link references-->
 [Add Role Service Management REST API-Verweis](http://msdn.microsoft.com/library/azure/jj157186.aspx)
@@ -75,7 +75,4 @@ Wenn es sich bei Ihrem virtuellen Azure-Computer um ein Ubuntu-Image handelt, k�
 [Microsoft Azure Cross-Platform Command-line Interface](https://github.com/Azure/azure-sdk-tools-xplat) (Plattformübergreifende Microsoft Azure-Befehlszeilenschnittstelle, in englischer Sprache)
 
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=47-->

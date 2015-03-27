@@ -1,17 +1,29 @@
-﻿<properties title="Elastic Scale Security Configurations" pageTitle="Elastic Scale - Sicherheitskonfigurationen" description="Sicherheit für Split-Merge-Dienste mithilfe von Elastic Scale für Azure SQL-Datenbank" metaKeywords="Elastic Scale Security Configurations, Azure SQL Database sharding, elastic scale " services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+﻿<properties 
+	title="Elastic Scale Security Configurations" 
+	pageTitle="Elastic Scale - Sicherheitskonfigurationen" 
+	description="Sicherheit für Split-Merge-Dienste mithilfe von Elastic Scale für Azure SQL-Datenbank" 
+	metaKeywords="Elastic Scale Security Configurations, Azure SQL Database sharding, elastic scale " 
+	services="sql-database" documentationCenter="" 
+	manager="jhubbard" 
+	authors="sidneyh@microsoft.com"/>
 
-<tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh" />
+<tags 
+	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" ms.topic="article" ms.date="03/05/2015" 
+	ms.author="sidneyh" />
 
 # Elastic Scale - Sicherheitskonfigurationen  
 
 Microsoft Azure SQL Database Elastic Scale umfasst einen selbst gehosteten Dienst. Die Verteilung enthält eine Dienstkonfigurationsdatei mit sicherheitsbezogenen Einstellungen, die konfiguriert werden müssen.
 
-1. [Konfigurieren von Zertifikaten][] 
+1. [Konfigurieren von Zertifikaten][]
 2. [Zulässige IP-Adressen][]
 3. [Dienstverweigerungsschutz][]
 4. [Weitere Überlegungen zur Sicherheit][]
 
-## <a name="configuring-certificates"></a>Configuring Certificates
+## <a name="configuring-certificates"></a>Konfigurieren von Zertifikaten
 
 Zertifikate werden auf zwei Arten konfiguriert. 
 
@@ -29,83 +41,105 @@ Wenn diese Optionen nicht verfügbar sind, können Sie **selbstsignierte Zertifi
 * [makecert.exe](http://msdn.microsoft.com/library/bfsktky3.aspx)
 * [pvk2pfx.exe](http://msdn.microsoft.com/library/windows/hardware/ff550672.aspx)
 
-###So führen Sie die Tools aus
+### So führen Sie die Tools aus
 
 * Von einer Developer-Eingabeaufforderung für Visual Studio; weitere Einzelheiten finden Sie unter [Visual Studio-Eingabeaufforderung](http://msdn.microsoft.com/library/ms229859.aspx) 
 
     Falls installiert, gehen Sie zu:
 
-        % Programme (X 86) %\Windows Kits\x.y\bin\x86 
+        %ProgramFiles(x86)%\Windows Kits\x.y\bin\x86 
 
-* Laden Sie das WDK über folgende Seite herunter: [Windows 8.1: Herunterladen von Kits und Tools](http://msdn.microsoft.com/windows/hardware/gg454513#drivers)
+* Laden Sie das WDK über folgende Seite herunter: [Windows 8.1: Herunterladen von Kits und Tools](http://msdn.microsoft.com/en-US/windows/hardware/gg454513#drivers)
 
-##    <a name="to-configure-ssl-cert"></a>So konfigurieren Sie das SSL-Zertifikat
+## <a name="to-configure-ssl-cert"></a>So konfigurieren Sie das SSL-Zertifikat
 Ein SSL-Zertifikat ist zum Verschlüsseln der Kommunikation und Authentifizieren des Servers erforderlich. Wählen Sie das zutreffende unter den folgenden drei Szenarien, und führen Sie alle zugehörigen Schritte aus:
 
-###Erstellen eines neuen selbstsignierten Zertifikats
+### Erstellen eines neuen selbstsignierten Zertifikats
 
-1.    [Erstellen Sie ein selbstsigniertes Zertifikat.][]
-2.    [Erstellen Sie eine PFX-Datei für ein selbstsigniertes SSL-Zertifikat.][]
-3.    [Laden Sie das SSL-Zertifikat zum Cloud-Dienst hoch.][]
-4.    [Aktualisieren Sie das SSL-Zertifikat in der Dienstkonfigurationsdatei.][]
-5.    [Importieren Sie die SSL-Zertifizierungsstelle.][]
+1.    [Erstellen eines selbstsignierten Zertifikats][]
+2.    [Erstellen einer PFX-Datei für ein selbstsigniertes SSL-Zertifikat][]
+3.    [Hochladen des SSL-Zertifikats zum Cloud-Dienst][]
+4.    [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei][]
+5.    [Importieren der SSL-Zertifizierungsstelle][]
 
-#### So verwenden Sie ein vorhandenes Zertifikat aus dem Zertifikatspeicher
-1. [Exportieren Sie das SSL-Zertifikat aus dem Zertifikatspeicher.][]
-2. [Laden Sie das SSL-Zertifikat zum Cloud-Dienst hoch.][]
-3. [Aktualisieren Sie das SSL-Zertifikat in der Dienstkonfigurationsdatei.][]
+### So verwenden Sie ein vorhandenes Zertifikat aus dem Zertifikatspeicher
+1. [Exportieren des SSL-Zertifikats aus dem Zertifikatspeicher][]
+2. [Hochladen des SSL-Zertifikats zum Cloud-Dienst][]
+3. [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei][]
 
-#### So verwenden Sie ein vorhandenes Zertifikat in einer PFX-Datei
+### So verwenden Sie ein vorhandenes Zertifikat in einer PFX-Datei
 
-1. [Laden Sie das SSL-Zertifikat zum Cloud-Dienst hoch.][]
-2. [Aktualisieren Sie das SSL-Zertifikat in der Dienstkonfigurationsdatei.][]
+1. [Hochladen des SSL-Zertifikats zum Cloud-Dienst][]
+2. [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei][]
 
 ## <a name="configuring-client-certs"></a>So konfigurieren Sie Clientzertifikate
 Clientzertifikate sind erforderlich, um Anforderungen an den Dienst zu authentifizieren. Wählen Sie das zutreffende unter den folgenden drei Szenarien, und führen Sie alle zugehörigen Schritte aus:
 
-###Deaktivieren von Clientzertifikaten
-1.    [Deaktivieren Sie die zertifikatbasierte Clientauthentifizierung.][]
+### Deaktivieren von Clientzertifikaten
+1.    [Deaktivieren der zertifikatbasierte Clientauthentifizierung][]
 
-###Ausstellen eines neuen selbstsignierten Clientzertifikats
-1.    [Erstellen Sie eine selbstsignierte Zertifizierungsstelle.][]
-2.    [Laden Sie ein CA-Zertifikat zum Cloud-Dienst hoch.][]
-3.    [Aktualisieren Sie das CA-Zertifikat in der Dienstkonfigurationsdatei.][]
-4.    [Stellen Sie Clientzertifikate aus.][]
-5.    [Erstellen Sie die PFX-Dateien für Clientzertifikate.][]
-6.    [Importieren Sie das Clientzertifikat.][]
-7.    [Kopieren Sie die Clientfingerabdrücke.][]
-8.    [Konfigurieren Sie die zulässigen Clients in der Dienstkonfigurationsdatei.][]
+### Ausstellen eines neuen selbstsignierten Clientzertifikats
+1.    [Erstellen einer selbstsignierten Zertifizierungsstelle][]
+2.    [Hochladen eines CA-Zertifikats zum Cloud-Dienst][]
+3.    [Aktualisieren des CA-Zertifikats in der Dienstkonfigurationsdatei][]
+4.    [Ausstellen von Clientzertifikaten][]
+5.    [Erstellen von PFX-Dateien für Clientzertifikate][]
+6.    [Importieren des Clientzertifikats][]
+7.    [Kopieren der Clientfingerabdrücke][]
+8.    [Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei][]
 
-###So verwenden Sie vorhandene Clientzertifikate
-1.    [Suchen Sie den öffentlichen Schlüssel der Zertifizierungsstelle.][]
-2.    [Laden Sie ein CA-Zertifikat zum Cloud-Dienst hoch.][]
-3.    [Aktualisieren Sie das CA-Zertifikat in der Dienstkonfigurationsdatei.][]
-4.    [Kopieren Sie die Clientfingerabdrücke.][]
-5.    [Konfigurieren Sie die zulässigen Clients in der Dienstkonfigurationsdatei.][]
-6.    [Konfigurieren Sie die Sperrprüfung für Clientzertifikate.][]
+### So verwenden Sie vorhandene Clientzertifikate
+1.    [Suchen des öffentlichen Schlüssels der Zertifizierungsstelle][]
+2.    [Hochladen eines CA-Zertifikats zum Cloud-Dienst][]
+3.    [Aktualisieren des CA-Zertifikats in der Dienstkonfigurationsdatei][]
+4.    [Kopieren der Clientfingerabdrücke][]
+5.    [Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei][]
+6.    [Konfigurieren der Sperrprüfung für Clientzertifikate][]
 
-## <a name="allowed-ip-addresses"></a>Allowed IP Addresses
+## <a name="allowed-ip-addresses"></a>Zulässige IP-Adressen
 
-Access to the service endpoints can be restricted to specific ranges of IP addresses.
- 
-## The Default Configuration
+Der Zugriff auf die Dienstendpunkte kann auf bestimmte Bereiche von IP-Adressen beschränkt werden.
 
-The default configuration denies all access to the HTTP endpoint. This is the recommended setting, since the requests to these endpoints may carry sensitive information like database credentials.
-The default configuration allows all access to the HTTPS endpoint. This setting may be restricted further.
+## So konfigurieren Sie die Verschlüsselung für den Speicher
 
-### Changing the Configuration
+Ein Zertifikat ist erforderlich, um die Anmeldeinformationen zu verschlüsseln, die im Metadatenspeicher gespeichert sind. Wählen Sie das zutreffende unter den folgenden drei Szenarien, und führen Sie alle zugehörigen Schritte aus:
 
-The group of access control rules that apply to and endpoint are configured in the **<EndpointAcls>** section in the **service configuration file**.
+### Verwenden neuer selbstsignierter Zertifikate
+
+1.	 [Erstellen eines selbstsignierten Zertifikats][]
+2.	 [Erstellen einer PFX-Datei für ein selbstsigniertes Verschlüsselungszertifikat][]
+3.	 [Hochladen eines Verschlüsselungszertifikats zum Cloud-Dienst][]
+4.	 [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei][]
+
+### Verwenden eines vorhandenen Zertifikats aus dem Zertifikatspeicher
+
+1.	 [Exportieren des Verschlüsselungszertifikats aus dem Zertifikatspeicher][]
+2.	 [Hochladen eines Verschlüsselungszertifikats zum Cloud-Dienst][]
+3.	 [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei][]
+
+### Verwenden eines vorhandenen Zertifikats in einer PFX-Datei
+
+1.	 [Hochladen eines Verschlüsselungszertifikats zum Cloud-Dienst][]
+2.	 [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei][]
+
+## Die Standardkonfiguration
+
+Die Standardkonfiguration verweigert den gesamten Zugriff auf den HTTP-Endpunkt. Dies ist die empfohlene Einstellung, da die Anforderungen an diese Endpunkte vertrauliche Informationen wie Datenbankanmeldeinformationen enthalten können.
+In der Standardkonfiguration ist der gesamte Zugriff auf den HTTP-Endpunkt zugelassen. Diese Einstellung kann weiter eingeschränkt werden.
+
+### Ändern der Konfiguration
+
+Die Gruppe von Zugriffssteuerungsregeln, die auf den Endpunkt angewendet werden, werden im Abschnitt **<EndpointAcls>** der **Dienstkonfigurationsdatei** konfiguriert.
 
     <EndpointAcls>
       <EndpointAcl role="SplitMergeWeb" endPoint="HttpIn" accessControl="DenyAll" />
       <EndpointAcl role="SplitMergeWeb" endPoint="HttpsIn" accessControl="AllowAll" />
     </EndpointAcls>
 
-The rules in an access control group are configured in a <AccessControl name=""> section of the service configuration file. 
+Die Regeln einer Zugriffssteuerungsgruppe werden im Abschnitt <AccessControl-Name = ""> der Dienstkonfigurationsdatei konfiguriert. 
 
-The format is explained in Network Access Control Lists documentation.
-For example, to allow only IPs in the range 100.100.0.0 to 100.100.255.255 to access the HTTPS endpoint, the rules would look like this:
+Das Format wird in der Dokumentation über Netzwerk-Zugriffsteuerungslisten erläutert.
+Damit nur IP-Adressen im Bereich von 100.100.0.0 bis 100.100.255.255 auf den HTTPS-Endpunkt zugreifen können, würden die Regeln z. B. wie folgt aussehen:
 
     <AccessControl name="Retricted">
       <Rule action="permit" description="Some" order="1" remoteSubnet="100.100.0.0/16"/>
@@ -133,7 +167,7 @@ Dieses Verhalten wird über folgende Einstellungen konfiguriert:
     <Setting name="DynamicIpRestrictionDenyByConcurrentRequests" value="false" />
     <Setting name="DynamicIpRestrictionMaxConcurrentRequests" value="20" />
 
-Change DynamicIpRestrictionDenyByConcurrentRequests to true to enable this protection.
+Ändern Sie DynamicIpRestrictionDenyByConcurrentRequests in "true", um diesen Schutz zu aktivieren.
 
 ## Beschränken der Zugriffsrate
 
@@ -156,7 +190,7 @@ Dieses Thema dient nur zu Informationszwecken. Führen Sie die Konfigurationssch
 * Konfigurieren des SSL-Zertifikats
 * Konfigurieren von Clientzertifikaten
 
-## <a name = "create-self-signed-cert"></a>Erstellen Sie ein selbstsigniertes Zertifikat.
+## <a name = "create-self-signed-cert"></a>Erstellen eines selbstsignierten Zertifikats
 Führen Sie folgende Befehle aus:
 
     makecert ^
@@ -168,11 +202,11 @@ Führen Sie folgende Befehle aus:
 
 Zur Anpassung:
 
-*    -n mit der Dienst-URL. Platzhalter ("CN=*.cloudapp.net") und alternative Namen ("CN=myservice1.cloudapp.net, CN=myservice2.cloudapp.net") werden unterstützt.
-*    -e mit dem Ablaufdatum des Zertifikats
+*    -"n" mit der Dienst-URL. Platzhalter ("CN=*.cloudapp.net") und alternative Namen ("CN=myservice1.cloudapp.net, CN=myservice2.cloudapp.net") werden unterstützt.
+*    -"e" mit dem Ablaufdatum des Zertifikats
 Erstellen Sie ein sicheres Kennwort, und geben Sie es bei Aufforderung an.
 
-## <a name="create-pfx-for-self-signed-cert"></a>Erstellen Sie eine PFX-Datei für ein selbstsigniertes SSL-Zertifikat.
+## <a name="create-pfx-for-self-signed-cert"></a>Erstellen einer PFX-Datei für ein selbstsigniertes SSL-Zertifikat
 
 Führen Sie folgende Befehle aus:
 
@@ -184,7 +218,7 @@ Geben Sie das Kennwort ein, und exportieren Sie dann das Zertifikat mit den folg
 
 ## <a name="export-ssl-from-store"></a>Exportieren des SSL-Zertifikats aus dem Zertifikatspeicher
 
-* Suchen Sie das Zertifikat.
+* Suchen des Zertifikats
 * Klicken Sie auf "Aktionen -> Alle Aufgaben -> Exportieren..."
 * Exportieren Sie das Zertifikats mit den folgenden Optionen in eine.PFX-Datei:
     * Ja, privaten Schlüssel exportieren
@@ -207,7 +241,7 @@ Aktualisieren Sie den Fingerabdruckwert der folgenden Einstellung in der Dienstk
 
 Führen Sie die folgenden Schritten für alle Konto/Computer aus, die mit dem Dienst kommunizieren werden:
 
-* Doppelklicken Sie auf die.CER-Datei in Windows-Explorer.
+* Doppelklicken Sie auf die .CER-Datei in Windows-Explorer.
 * Klicken Sie im Dialogfeld "Zertifikat" auf "Zertifikat installieren...".
 * Importieren Sie das Zertifikat in den Speicher für vertrauenswürdige Stammzertifizierungsstellen.
 
@@ -237,7 +271,7 @@ Führen Sie die folgenden Schritte aus, um ein selbstsigniertes Zertifikat zu er
 
 Zur Anpassung:
 
-*    -e mit dem Ablaufdatum des Zertifikats
+*    -e with the certification expiration date
 
 
 ## <a name="find-ca-public-key"></a>Suchen des öffentlichen Schlüssels der Zertifizierungsstelle
@@ -246,14 +280,14 @@ Alle Clientzertifikate müssen von einer Zertifizierungsstelle ausgestellt werde
 
 Wenn die Datei mit dem öffentlichen Schlüssel nicht verfügbar ist, exportieren Sie sie aus dem Zertifikatspeicher:
 
-* Suchen Sie das Zertifikat.
+* Suchen des Zertifikats
     * Suchen Sie ein Clientzertifikat, das von derselben Zertifizierungsstelle ausgestellt wurde.
 * Doppelklicken Sie auf das Zertifikat.
 * Wählen Sie die Registerkarte "Zertifizierungspfad" im Dialogfeld "Zertifikat" aus.
 * Doppelklicken Sie auf den CA-Eintrag im Pfad. 
 * Notieren Sie die Zertifikateigenschaften.
 * Schließen Sie das Dialogfeld "Zertifikat".
-* Suchen Sie das Zertifikat.
+* Suchen des Zertifikats
     * Suchen Sie nach der oben aufgeführten Zertifizierungsstelle.
 * Klicken Sie auf "Aktionen -> Alle Aufgaben -> Exportieren..."
 * Exportieren Sie das Zertifikat mit den folgenden Optionen in eine .CER-Datei:
@@ -291,8 +325,8 @@ Die folgenden Schritte müssen auf demselben Computer ausgeführt werden, auf de
 
 Anpassen:
 
-* -n, mit einer ID für den Client, der mit diesem Zertifikat authentifiziert wird
-* -e mit dem Ablaufdatum des Zertifikats
+* -"n", mit einer ID für den Client, der mit diesem Zertifikat authentifiziert wird
+* -"e" mit dem Ablaufdatum des Zertifikats
 * MyID.pvk und MyID.cer mit eindeutigen Dateinamen für dieses Clientzertifikat
 
 Dieser Befehl fordert dazu auf, ein Kennwort zu erstellen und anschließend einmal zu verwenden. Verwenden Sie ein sicheres Kennwort.
@@ -305,7 +339,7 @@ Führen Sie für jedes generiertes Clientzertifikat folgende Befehle aus:
 
 Anpassen:
 
-    •    MyID.pvk und MyID.cer mit dem Dateinamen für das Clientzertifikat
+    MyID.pvk and MyID.cer with the filename for the client certificate
 
 Geben Sie das Kennwort ein, und exportieren Sie dann das Zertifikat mit den folgenden Optionen:
 
@@ -321,7 +355,7 @@ Jede Person, für die ein Clientzertifikat ausgestellt wurde, sollte das Schlüs
 * Importieren Sie das Zertifikat mit mindestens dieser Option in den persönlichen Zertifikatspeicher:
     * "Alle erweiterten Eigenschaften mit einbeziehen" aktiviert
 
-## <a name=copy-client-cert"> </a> Kopieren der Clientfingerabdrücke
+## <a name="copy-client-cert"> </a> Kopieren der Clientfingerabdrücke
 Jede Person, für die ein Clientzertifikat ausgegeben wurde, muss folgende Schritte zum Abrufen des Fingerabdrucks ihres Zertifikats ausführen, das der Dienstkonfigurationsdatei hinzugefügt wird:
 * Führen Sie "certmgr.exe" aus.
 * Wählen Sie die Registerkarte "Persönlich".
@@ -345,10 +379,46 @@ In der Standardeinstellung wird der Sperrstatus des Clientzertifikats bei der Ze
 
     <Setting name="ClientCertificateRevocationCheck" value="NoCheck" />
 
+## <a name="create-pfx-files-encryption"></a>Erstellen einer PFX-Datei für ein selbstsigniertes Verschlüsselungszertifikat
+
+Führen Sie für ein Verschlüsselungszertifikat Folgendes aus:
+
+    pvk2pfx -pvk MyID.pvk -spc MyID.cer
+
+Anpassen:
+
+    MyID.pvk and MyID.cer with the filename for the encryption certificate
+
+Geben Sie das Kennwort ein, und exportieren Sie dann das Zertifikat mit den folgenden Optionen:
+*	Ja, privaten Schlüssel exportieren
+*	Alle erweiterten Eigenschaften exportieren
+*	Sie benötigen das Kennwort zum Hochladen des Zertifikats in den Cloud-Dienst.
+
+## <a name="export-encryption-from-store"></a>Exportieren des Verschlüsselungszertifikats aus dem Zertifikatspeicher
+
+*	Suchen des Zertifikats
+*	Klicken Sie auf "Aktionen -> Alle Aufgaben -> Exportieren..."
+*	Exportieren Sie das Zertifikats mit den folgenden Optionen in eine.PFX-Datei: 
+  *	Ja, privaten Schlüssel exportieren
+  *	Wenn möglich, alle Zertifikate im Zertifizierungspfad einbeziehen 
+*	Alle erweiterten Eigenschaften exportieren
+
+## <a name="upload-encryption-cert"></a> Hochladen eines Verschlüsselungszertifikats zum Cloud-Dienst
+
+Laden Sie das Zertifikat mit der vorhandenen oder generierten .PFX-Datei mit dem Verschlüsselungsschlüsselpaar hoch:
+
+* Geben Sie das Kennwort zum Schützen der Informationen des private Schlüssels ein.
+
+## <a name="update-encryption-in-csft"></a>Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei
+
+Aktualisieren Sie den Fingerabdruckwert der folgenden Einstellungen in der Dienstkonfigurationsdatei mit dem Fingerabdruck des in den Cloud-Dienst hochgeladenen Zertifikats:
+
+    <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
+
 ## Allgemeine Zertifikatvorgänge
 
-•    Konfigurieren des SSL-Zertifikats
-•    Konfigurieren von Clientzertifikaten
+* Konfigurieren des SSL-Zertifikats
+* Konfigurieren von Clientzertifikaten
 
 ## Suchen des Zertifikats
 
@@ -387,8 +457,8 @@ Gehen Sie im Zertifikatsexport-Assistenten wie folgt vor:
 Gehen Sie im Zertifikatimport-Assistenten wie folgt vor:
 
 1. Wählen Sie den Speicherort aus.
-    1.     "Aktueller Benutzer", wenn nur Prozesse, die unter dem aktuellen Benutzer ausgeführt werden, auf den Dienst zugreifen werden
-    2.     "Lokaler Computer", wenn andere Prozesse auf diesem Computer auf den Dienst zugreifen werden
+    1.     "Aktueller Benutzer", wenn nur Prozesse, die unter dem aktuellen Benutzer ausgeführt werden, auf den Dienst zugreifen.
+    2.     "Lokaler Computer", wenn andere Prozesse auf diesem Computer auf den Dienst zugreifen.
 2. Klicken Sie auf "Weiter".
 3. Wenn Sie Daten aus einer Datei importieren, bestätigen Sie den Dateipfad.
 4. Beim Importieren einer.PFX-Datei:
@@ -406,7 +476,7 @@ Gehen Sie im Zertifikatimport-Assistenten wie folgt vor:
 Im [Azure-Verwaltungsportal](http://manage.windowsazure.com/)
 
 1. Wählen Sie "Cloud-Dienste".
-2. Wählen Sie den Clouddienst.
+2. Wählen Sie den Cloud-Dienst.
 3. Klicken Sie im oberen Menü auf "Zertifikate".
 4. Klicken Sie in der unteren Leiste auf "Hochladen".
 5. Wählen Sie die Zertifikatdatei aus.
@@ -419,7 +489,7 @@ Die in diesem Dokument beschriebenen SSL-Einstellungen verschlüsseln die Kommun
 
     <Setting name="ElasticScaleMetadata" value="Server=..." />
 
-Die in dieser Datenbank gespeicherten Daten werden nicht verschlüsselt. Um zu vermeiden, dass Anmeldeinformationen oder andere vertrauliche Informationen von Dienstanforderungen offengelegt werden, schützen Sie diese Datenbank und sichern Sie den Zugriff darauf jederzeit. Stellen Sie außerdem sicher, dass die Web- und Worker-Rollen der Dienstbereitstellungen immer aktualisiert und sicher sind, da beide Zugriff auf die Metadaten-Datenbank haben. 
+In dieser Datenbank gespeicherte Anmeldeinformationen werden verschlüsselt. Stellen Sie als bewährte Methode außerdem sicher, dass die Web- und Worker-Rollen der Dienstbereitstellungen immer aktualisiert und sicher sind, da beide Zugriff auf die Metadaten-Datenbank und das Zertifikat haben, das für die Verschlüsselung und Entschlüsselung von gespeicherten Anmeldeinformationen verwendet wird. 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -449,3 +519,9 @@ Die in dieser Datenbank gespeicherten Daten werden nicht verschlüsselt. Um zu v
 [So konfigurieren Sie das SSL-Zertifikat]:#to-configure-ssl-cert
 [Weitere Überlegungen zur Sicherheit]:#other-security 
 [Hochladen des Zertifikats]:#upload-certificate
+[Erstellen einer PFX-Datei für ein selbstsigniertes Verschlüsselungszertifikat]:#create-pfx-files-encryption
+[Hochladen eines Verschlüsselungszertifikats zum Cloud-Dienst]:#upload-encryption-cert 
+[Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei]:#update-encryption-in-csft
+[Exportieren des Verschlüsselungszertifikats aus dem Zertifikatspeicher]:#export-encryption-from-store
+
+<!--HONumber=47-->

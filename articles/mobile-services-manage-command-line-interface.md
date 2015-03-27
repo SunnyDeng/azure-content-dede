@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="11/21/2014" 
@@ -20,7 +20,7 @@
 
 In diesem Thema erfahren Sie, wie Sie die Azure-Befehlszeilentools verwenden, um das Erstellen und Verwalten von Azure Mobile Services zu automatisieren. In diesem Thema erfahren Sie, wie Sie mithilfe der Befehlszeilentools die Installation und die ersten Schritte vornehmen und wie Sie diese Tools einsetzen, um die folgenden Mobile Services-Aufgaben durchzuführen:
 
--	[Erstellen eines neuen mobilen Diensts]
+-	[Erstellen eines neuen mobilen Diensts] 
 -	[Erstellen einer neuen Tabelle]
 -   [Registrieren eines Skripts für einen Tabellenvorgang][Registrieren eines Skripts für einen Tabellenvorgang]
 -   [Auflisten von Tabellen]
@@ -32,7 +32,7 @@ Bei der Zusammenführung in eine einzelne Skript- oder Batch-Datei automatisiere
 
 Um die Azure-Befehlszeilentools zur Verwaltung von Mobile Services verwenden zu können, benötigen Sie ein Azure-Konto, bei dem die Azure Mobile Services-Funktion aktiviert ist.
 
-+ Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/" target="_blank">Kostenlose Azure-Testversion</a>.
++ Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/" target="_blank">Kostenlose Azure-Testversion</a>.
 
 + Wenn Sie bereits über ein Konto verfügen und die Azure Mobile Services-Vorschau aktivieren möchten, finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/php-create-account/#enable" target="_blank">Aktivieren der Azure-Vorschaufeatures</a> weitere Informationen dazu.
 
@@ -63,15 +63,15 @@ Laden Sie zunächst Ihre Veröffentlichungseinstellungen herunter, und importier
 
 Ihr Standardbrowser wird geöffnet, und Sie werden aufgefordert, sich beim Verwaltungsportal anzumelden. Nachdem Sie sich angemeldet haben, wird die `.publishsettings`-Datei heruntergeladen. Notieren Sie sich den Speicherort, unter dem die Datei gespeichert wird.
 
-Importieren Sie anschließend die `.publishsettings`-Datei, indem Sie den folgenden Befehl ausführen und dabei "<path-to-settings-file>" durch den Pfad zu Ihrer `.publishsettings`-Datei ersetzen:
+Importieren Sie anschließend die `.publishsettings`-Datei, indem Sie den folgenden Befehl ausführen und dabei `<path-to-settings-file>` durch den Pfad zu Ihrer `.publishsettings`-Datei ersetzen:
 
 		azure account import <path-to-settings-file>
 
-Sie können alle vom <code>import</code>-Befehl gespeicherten Informationen entfernen, indem Sie den <code>account clear</code>-Befehl verwenden:
+Sie können alle von dem Befehl <code>Importieren</code> gespeicherten Informationen entfernen, indem Sie den Befehl <code>"account clear"</code> Befehl aus:
 
 		azure account clear
 
-Verwenden Sie die help-Option, um eine Liste der Optionen für `account`-Befehle anzuzeigen:
+Verwenden Sie die Option `-help`, um eine Liste der Optionen für `account`-Befehle anzuzeigen.
 
 		azure account -help
 
@@ -97,21 +97,21 @@ Dieser Befehl zeigt zudem den aktuellen Status und die URL des jeweiligen mobile
 
 <h2><a name="delete-service"></a>Löschen ein vorhandenes mobiles Diensts</h2>
 
-Sie können die Befehlszeilentools verwenden, um einen vorhandenen mobilen Dienst zusammen mit der zugehörigen SQL-Datenbank und dem entsprechenden Server zu löschen. Mit dem folgenden Befehl wird der mobile Dienst gelöscht, wobei <service-name> der Name des zu löschenden mobilen Diensts ist:
+Sie können die Befehlszeilentools verwenden, um einen vorhandenen mobilen Dienst zusammen mit der zugehörigen SQL-Datenbank und dem entsprechenden Server zu löschen. Mit dem folgenden Befehl wird der mobile Dienst gelöscht, wobei `<service-name>` der Name des zu löschenden mobilen Diensts ist:
 
 		azure mobile delete <service-name> -a -q
 
-Durch Einbeziehen der Parameter -a und -q löscht dieser Befehl außerdem die SQL-Datenbank und den Server, die vom mobilen Dienst verwendet werden, ohne dass dabei eine Eingabeaufforderung angezeigt wird.
+Durch Einbeziehen der Parameter `-a` und `-q` löscht dieser Befehl außerdem die SQL-Datenbank und den entsprechenden Server, die vom mobilen Dienst verwendet werden, ohne dass dabei eine Eingabeaufforderung angezeigt wird.
 
-> [AZURE.NOTE] Wenn Sie den <code>-q</code>-Parameter nicht zusammen mit <code>-a</code> oder <code>-d</code> angeben, wird die Ausführung unterbrochen, und Sie werden aufgefordert, Löschoptionen für die SQL-Datenbank auszuwählen. Verwenden Sie ausschließlich den <code>-a</code>-Parameter, wenn kein weiterer Dienst die Datenbank oder den Server verwendet. Verwenden Sie anderenfalls den <code>-d</code>-Parameter, um nur die Daten zu löschen, welche zu dem zu löschenden mobilen Dienst gehören.
+> [AZURE.NOTE] Wenn Sie den Parameter <code>-q</code> nicht zusammen mit dem Parameter <code>-a</code> oder <code>-d angeben,</code>wird die Ausführung angehalten, und Sie werden aufgefordert, Löschoptionen für Ihre SQL-Datenbank auszuwählen. Verwenden Sie den Parameter <code>-a</code> nur, wenn kein anderer Dienst die Datenbank oder den Server verwendet. Benutzen Sie andernfalls den Parameter <code>-d,</code> um nur Daten zu löschen, die zu dem zu löschenden mobilen Dienst gehören.
 
 <h2><a name="create-table"></a>Erstellen einer Tabelle im mobilen Dienst</h2>
 
-Mit dem folgenden Befehl wird eine Tabelle im angegebenen mobilen Dienst erstellt, wobei <service-name> der Name des mobilen Diensts und <table-name><table-name>der Name der zu erstellenden Tabelle ist:
+Mit dem folgenden Befehl wird eine Tabelle im angegebenen mobilen Dienst erstellt, wobei `<service-name>` der Name des mobilen Diensts und `<table-name>` der Name der zu erstellenden Tabelle ist:
 
 		azure mobile table create <service-name> <table-name>
 
-Damit wird eine neue Tabelle mit den Standardberechtigungen, `application`, für folgende Tabellenvorgänge erstellt: `insert`, `read`, `update`, und `delete`. 
+Damit wird eine neue Tabelle mit den Standardberechtigungen, `application`, für folgende Tabellenvorgänge erstellt: `insert`, `read`, `update` und `delete`. 
 
 Mit dem folgenden Befehl wird eine neue Tabelle erstellt, die die öffentliche Berechtigung `read` aufweist, die aber zugleich die Berechtigung `delete` nur bei Administratoren gewährt:
 
@@ -121,7 +121,7 @@ Die folgende Tabelle enthält den Skriptberechtigungswert im Gegensatz zum Berec
 
 <table border="1" width="100%"><tr><th>Skriptwert</th><th>Verwaltungsportalwert</th></tr>
 <tr><td><code>public</code></td><td>Jeder Benutzer</td></tr>
-<tr><td><code>application</code> (Standard)</td><td>Jeder Benutzer mit Anwendungsschlüssel</td></tr>
+<tr><td><code>application</code> (Standardeinstellung)</td><td>Jeder Benutzer mit Anwendungsschlüssel</td></tr>
 <tr><td><code>user</code></td><td>Nur authentifizierte Benutzer</td></tr>
 <tr><td><code>admin	</code></td><td>Nur Skripts und Administratoren</td></tr></table>
 
@@ -129,7 +129,7 @@ Beim Ausführen des `mobile table create`-Befehls tritt ein Fehler auf, wenn die
 
 <h2><a name="list-tables"></a>Auflisten vorhandener Tabellen in einem mobilen Dienst</h2>
 
-Der folgende Befehl gibt eine Liste aller Tabellen in einem mobilen Dienst zurück, wobei <service-name> der Name des mobilen Diensts ist:
+Der folgende Befehl gibt eine Liste aller Tabellen in einem mobilen Dienst zurück, wobei `<service-name>` der Name des mobilen Diensts ist:
 
 		azure mobile table list <service-name>
 
@@ -137,22 +137,21 @@ Dieser Befehl zeigt außerdem die Anzahl der Indizes zu jeder Tabelle und die An
 
 <h2><a name="delete-table"></a>Löschen einer vorhandenen Tabelle aus einem mobilen Dienst</h2>
 
-Mit dem folgenden Befehl wird eine Tabelle aus dem angegebenen mobilen Dienst gelöscht, wobei <service-name> der Name des mobilen Diensts und <table-name><table-name>der Name der zu löschenden Tabelle ist:
+Mit dem folgenden Befehl wird eine Tabelle aus dem angegebenen mobilen Dienst gelöscht, wobei `<service-name>` der Name des mobilen Diensts und `<table-name>` der Name der zu löschenden Tabelle ist:
 
 		azure mobile table delete <service-name> <table-name> -q
 
-Verwenden Sie in automatisierten Skripts den Parameter -q, um die Tabelle zu löschen, ohne dass dabei eine Bestätigungsaufforderung angezeigt wird, welche die Ausführung blockiert.
+Verwenden Sie in automatisierten Skripts den Parameter `-q`, um die Tabelle zu löschen, ohne dass dabei eine Bestätigungsaufforderung angezeigt wird, welche die Ausführung blockiert.
 
 <h2><a name="register-script"></a>Registrieren eines Skripts für einen Tabellenvorgang</h2>
 
-Mit dem folgenden Befehl wird eine Funktion an einen Vorgang an einer Tabelle hochgeladen und registriert, wobei <service-name> der Name des mobilen Diensts, <table-name><table-name>" der Name der Tabelle und "<operation>" ist der Tabellenvorgang, der `read`, `insert`, `update` oder `delete` sein kann:
+Mit dem folgenden Befehl wird eine Funktion an einen Vorgang an einer Tabelle hochgeladen und registriert, wobei `<service-name>` der Name des mobilen Diensts, `<table-name>` der Name der Tabelle und `<operation>` ist der Tabellenvorgang, der `read`, `insert`, `update`, oder `delete` sein kann:
 
 		azure mobile script upload <service-name> table/<table-name>.<operation>.js
 
 Beachten Sie, dass mit diesem Vorgang eine JavaScript (.js)-Datei vom lokalen Computer hochgeladen wird. Der Name der Datei muss sich aus dem Tabellen- und Vorgangsnamen zusammensetzen, und die Datei muss sich im Unterordner `table` relativ zum Verzeichnis befinden, in dem der Befehl ausgeführt wird. Beim folgenden Vorgang wird beispielsweise ein neues `insert`-Skript hochgeladen und registriert, das zur Tabelle `TodoItems` gehört:
 
-		azure mobile script upload todolist table/todoite
-	ms.insert.js
+		azure mobile script upload todolist table/todoitems.insert.js
 
 Die Funktionsdeklaration in der Skriptdatei muss ebenfalls mit dem registrierten Tabellenvorgang übereinstimmen. Dies bedeutet, dass bei einem  `insert`-Skript das hochgeladene Skript eine Funktion mit folgender Signatur enthält:
 
@@ -171,14 +170,14 @@ Nächste Schritte...
 -->
 <!-- Anchors. -->
 [Herunterladen und Installieren der Befehlszeilentools]: #install
-[Herunterladen und Importieren der Veröffentlichungseinstellungen]: #import
-[Erstellen Sie einen neuen mobilen Diensts]: #create-service
+[Herunterladen und Importieren von Veröffentlichungseinstellungen]: #import
+[Erstellen eines neuen mobilen Diensts]: #create-service
 [Abrufen des Hauptschlüssels]: #get-master-key
 [Erstellen einer neuen Tabelle]: #create-table
-[Registrieren eines neuen Tabellenskripts]: #register-script
+[Registrieren eines Skripts für einen Tabellenvorgang]: #register-script
 [Löschen einer vorhandenen Tabelle]: #delete-table
 [Löschen eines vorhandenen mobilen Diensts]: #delete-service
-[Testen des mobilen Diensts]: #test-service
+[Testen des mobilen Dienstes]: #test-service
 [Auflisten von mobilen Diensten]: #list-services
 [Auflisten von Tabellen]: #list-tables
 [Nächste Schritte]: #next-steps
@@ -204,9 +203,8 @@ Nächste Schritte...
 
 [mac-installer]: http://go.microsoft.com/fwlink/p?LinkId=252249
 [windows-installer]: http://go.microsoft.com/fwlink/p?LinkID=275464
-[reference-docs]: /de-de/manage/linux/other-resources/command-line-tools/#Commands_to_manage_mobile_services
+[reference-docs]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
 [Installieren der Azure-Befehlszeilentools für Mac und Linux]: http://go.microsoft.com/fwlink/p/?LinkId=275795
 
 
-
-<!--HONumber=42-->
+<!--HONumber=47-->

@@ -17,7 +17,7 @@
 	ms.author="rasquill"/>
 
 <!--The next line, with one pound sign at the beginning, is the page title--> 
-# Gewusst wie: Schneller Einstieg mit Docker in Azure Marketplace 
+#Gewusst wie: Schneller Einstieg mit Docker in Azure Marketplace 
 
 Die schnellste Möglichkeit für die ersten Schritte mit [Docker] besteht darin, Azure Marketplace aufzurufen und einen virtuellen Computer mit der Imagevorlage **Docker on Ubuntu Server** zu erstellen, die von [Canonical] in Verbindung mit [MSOpenTech] erstellt wurde. Damit wird eine Ubuntu Server-VM erstellt und die [Docker VM-Erweiterung](http://azure.microsoft.com/documentation/articles/virtual-machines-docker-vm-extension/) zusammen mit dem **neuesten** Docker-Modul, das bereits auf Azure installiert und aktiv ist, automatisch installiert.  
 
@@ -31,11 +31,11 @@ In diesem Thema:
 - [Erstellen eines virtuellen Computers mit dem Docker-Image von Canonical und MSOpenTech]
 - [Verbinden mit SSH und Spaß haben]
 
-## <a id='logon'>Anmelden beim Portal</a>
+##<a id='logon'>Anmelden beim Portal</a>
 
 Dieser Teil ist leicht, sofern Sie über ein Azure-Konto verfügen. [Sie können auch leicht ein kostenloses bekommen](http://azure.microsoft.com/pricing/free-trial/)!
 
-## <a id='createvm'>Erstellen eines virtuellen Computers mit dem Docker-Image von Canonical und MSOpenTech</a>
+##<a id='createvm'>Erstellen eines virtuellen Computers mit dem Docker-Image von Canonical und MSOpenTech</a>
 
 1. Nun, da Sie angemeldet sind, klicken Sie unten links auf **Neu**, um ein neues VM-Image zu erstellen. Das richtige Image wird möglicherweise sofort im Banner angezeigt:
 
@@ -53,7 +53,7 @@ Dieser Teil ist leicht, sofern Sie über ein Azure-Konto verfügen. [Sie können
 
 > ![Docker image running in portal](./media/virtual-machines-docker-ubuntu-quickstart/DockerUbuntuRunning.png)
 
-## <a id='havingfun'>Verbinden mit SSH und Spaß haben</a>
+##<a id='havingfun'>Verbinden mit SSH und Spaß haben</a>
 
 Jetzt beginnt der Spaß. Sie können sofort eine Verbindung mit dem virtuellen Computer über SSH herstellen:
 
@@ -64,7 +64,7 @@ Beginnen Sie mit der Ausgabe von Docker-Befehlen, denken Sie daran, dass bei die
 > ![Pulling images](./media/virtual-machines-docker-ubuntu-quickstart/DockerPullSmallImages.png)
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## Nächste Schritte
+##Nächste Schritte
 
 Sie könnten mit der Verwendung von [Docker] beginnen! 
 
@@ -82,4 +82,4 @@ Sie könnten mit der Verwendung von [Docker] beginnen!
 [MSOpenTech]: http://msopentech.com/
 
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

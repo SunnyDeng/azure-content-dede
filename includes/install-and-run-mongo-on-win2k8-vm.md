@@ -6,7 +6,7 @@
 2. Klicken Sie in der oberen rechten Ecke auf **Extras**.  Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie *http://\*.mongodb.org* zur Liste vertrauenswürdiger Sites hinzu.
 3. Wechseln Sie zu [Downloads- MongoDB] [MongoDownloads].
 4. Suchen Sie die neueste Version im Abschnitt **Production Release (Recommended)**, und klicken Sie in der Spalte "Windows 64-bit" auf den Link ***2008+**.  Klicken Sie auf **Speichern unter**, und speichern Sie die Zip-Datei auf dem Desktop.
-5. Klicken Sie mit der rechten Maustaste auf die Zip-Datei und anschließend auf **Alle extrahieren...**.  Geben Sie als Ziel "C:" an und klicken Sie auf **Extrahieren**.  Wenn die Dateien extrahiert wurden, können Sie den Installationsordner umbenennen und ihm einen einfacheren Namen geben,  z. B. "MongoDB".
+5. Klicken Sie mit der rechten Maustaste auf die Zip-Datei und anschließend auf **Alle extrahieren...**  Geben Sie als Ziel "C:" an und klicken Sie auf **Extrahieren**.  Wenn die Dateien extrahiert wurden, können Sie den Installationsordner umbenennen und ihm einen einfacheren Namen geben,  z. B. "MongoDB".
 6. Erstellen Sie die Daten- und Protokollverzeichnisse für MongoDB auf dem Datenträger (z. B. Laufwerk **F:**), den Sie in den vorherigen Schritten erstellt haben. Wählen Sie unter **Start** die Option **Eingabeaufforderung**, um ein Eingabeaufforderungsfenster zu öffnen.  Geben Sie Folgendes ein:
 
 		C:\> F:
@@ -19,7 +19,7 @@
 		C:\> cd \MongoDB\bin
 		C:\my_mongo_dir\bin> mongod --dbpath F:\MongoData\ --logpath F:\MongoLogs\mongolog.log
 
-	Alle Protokollmeldungen werden in die Datei *F:\MongoLogs\mongolog.log* geleitet, sobald der Server "mongod.exe" startet und die Journaldateien reserviert. Es kann einige Minuten dauern, bis MongoDB die Journaldateien reserviert hat und mit dem Lauschen auf Verbindungen beginnt.
+	Alle Protokollmeldungen werden in die Datei  *F:\MongoLogs\mongolog.log* geleitet, sobald der Server "mongod.exe" startet und die Journaldateien reserviert. Es kann einige Minuten dauern, bis MongoDB die Journaldateien reserviert hat und mit dem Lauschen auf Verbindungen beginnt.
 
 8. Starten Sie die MongoDB-Administrator-Shell, indem Sie unter **Start** ein weiteres Befehlsfenster öffnen und Folgendes eingeben:
 
@@ -52,7 +52,7 @@
 	
 	![Windows Firewall][Image2]
 
-	Wählen Sie **TCP** und anschließend **Bestimmte lokale Ports**.  Geben Sie als Port "27017" ein (den Port, auf dem MongoDB lauscht), und klicken Sie auf **Weiter**.
+	Wählen Sie **TCP** und anschließend **Bestimmte lokale Ports** aus.  Geben Sie als Port "27017" ein (den Port, auf dem MongoDB lauscht), und klicken Sie auf **Weiter**.
 
 	![Windows Firewall][Image3]
 
@@ -94,4 +94,4 @@
 [Image8]: ./media/install-and-run-mongo-on-win2k8-vm/WinVmAddEndpoint2.png
 [Image9]: ./media/install-and-run-mongo-on-win2k8-vm/WinVmAddEndpoint3.png
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

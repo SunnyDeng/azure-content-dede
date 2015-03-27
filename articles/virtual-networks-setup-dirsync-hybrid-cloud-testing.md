@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/17/2015" 
+	ms.date="03/05/2015" 
 	ms.author="josephd"/>
 
-#Office 365-Verzeichnissynchronisierung (DirSync) in einer hybridcloud zu Testzwecken einrichten
+# Office 365-Verzeichnissynchronisierung (DirSync) in einer hybridcloud zu Testzwecken einrichten
 
 Dieses Thema führt Sie durch die Erstellung einer hybriden Cloud-Umgebung zum Testen von Office 365-Verzeichnissynchronisierung (DirSync) mit Kennwortsynchronisierung in Microsoft Azure gehostet. Hier ist die resultierende Konfiguration.
 
@@ -41,17 +41,17 @@ Es gibt drei Hauptphasen diese Hybrid Cloud-Testumgebung einrichten:
 2.	Konfigurieren Sie die Testversion von Office 365 Fast Track.
 3.	Konfigurieren Sie den DirSync-Server (DS1).
 
-Wenn Sie noch nicht über ein Azure-Abonnement verfügen, Sie können registrieren Sie sich für eine kostenlose Testversion an [versuchen Azure](http://www.windowsazure.com/pricing/free-trial/). Wenn Sie ein MSDN-Abonnement verfügen, finden Sie unter [Azure-Leistungen für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Wenn Sie noch nicht über ein Azure-Abonnement verfügen, Sie können registrieren Sie sich für eine kostenlose Testversion an [versuchen Azure](http://azure.microsoft.com/pricing/free-trial/). Wenn Sie ein MSDN-Abonnement verfügen, finden Sie unter [Azure-Leistungen für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-##Phase 1: Einrichten der Hybrid Cloud-Umgebung
+## Phase 1: Einrichten der Hybrid Cloud-Umgebung
 
-Verwenden Sie die Anweisungen in der [Einrichten einer hybriden Cloud-Umgebung zum Testen](../virtual-networks-setup-hybrid-cloud-environment-testing/) Thema. Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
+Verwenden Sie die Anweisungen im Thema [Einrichten einer hybriden Cloud-Umgebung zum Testen](../virtual-networks-setup-hybrid-cloud-environment-testing/) . Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
 
 Dies ist die aktuelle Konfiguration.
 
 ![](./media/virtual-networks-set-up-DirSync-hybrid-cloud-for-testing/CreateDirSyncHybridCloud_1.png)
 
-##Phase 2: Konfigurieren Sie die Testversion von Office 365 Fast Track
+## Phase 2: Konfigurieren Sie die Testversion von Office 365 Fast Track
 
 Um Ihre Testversion von Office 365 Fast Track zu starten, benötigen Sie einen fiktiven Firmennamen und ein Microsoft-Konto. Es wird empfohlen, dass Sie eine Variante des Unternehmensnamens Contoso für den Namen Ihres Unternehmens, einem fiktiven Unternehmen, die in Microsoft-Beispielinhalt verwendet wird, aber nicht erforderlich unbedingt.
 
@@ -74,13 +74,13 @@ Dies ist die aktuelle Konfiguration.
 
 ![](./media/virtual-networks-set-up-DirSync-hybrid-cloud-for-testing/CreateDirSyncHybridCloud_2.png)
 
-##Phase 3: Konfigurieren Sie den DirSync-Server (DS1)
+## Phase 3: Konfigurieren Sie den DirSync-Server (DS1)
 
 Erstellen Sie zunächst einen virtuellen Computer in Azure für DS1 mit diesen Befehlen an der Eingabeaufforderung von Azure PowerShell auf dem lokalen Computer. Vor dem Ausführen dieser Befehle füllen Sie die Variablenwerte und entfernen die Zeichen < und >.
 
-	$ServiceName="<The cloud service name for your TestVNET virtual network>"
+	$ServiceName="<The cloud service name for your TestVNET virtual network>"	
 	$LocalAdminName="<A local administrator account name>" 
-	$LocalAdminPW="<A password for the local administrator account>"
+	$LocalAdminPW="<The password for the local administrator account>"
 	$User1Password="<The password for the CORP\User1 account>"
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DS1 -InstanceSize Medium -ImageName $image
@@ -128,7 +128,7 @@ Aktivieren Sie als Nächstes Verzeichnissynchronisierung für Ihre Office 365 Fa
 4.	Wenn **möchten Sie die Active Directory-Synchronisierung aktivieren?**, klicken Sie auf **aktivieren**. Nachdem Sie dies tun, **Active Directory-Synchronisierung aktiviert** in Schritt 3 wird angezeigt.
 5.	Lassen Sie die **festlegen einrichten und Verwalten von Active Directory-Synchronisierung** Seite auf "client1" geöffnet.
 
-Als Nächstes melden Sie sich mit dem Konto CORP\User1 auf DC1, und öffnen Sie eine auf Windows PowerShell-Eingabeaufforderung. Führen Sie diese Befehle zum Erstellen einer neuen Organisationseinheit namens Contoso_users, und fügen Sie zwei neue Benutzerkonten für Marci Kaufman und Lynda Meyer.
+Als Nächstes melden Sie sich mit dem Konto CORP\User1 auf DC1, und öffnen Sie eine auf Windows PowerShell-Eingabeaufforderung. Führen Sie diese Befehle nacheinander zum Erstellen einer neuen Organisationseinheit namens "Contoso_users", und fügen Sie zwei neue Benutzerkonten für Marci Kaufman und Lynda Meyer.
 
 	New-ADOrganizationalUnit -Name contoso_users -Path "DC=corp,DC=contoso,DC=com"
 	New-ADUser -SamAccountName marcik -AccountPassword (Read-Host "Set user password" -AsSecureString) -name "Marci Kaufman" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false -Path "OU=contoso_users,DC=corp,DC=contoso,DC=com"
@@ -142,12 +142,12 @@ Konfigurieren Sie anschließend die Verzeichnissynchronisierung auf DS1.
 2.	Auf der **Start** geben **Verzeichnissynchronisierung**.
 3.	Mit der rechten Maustaste **Verzeichnissynchronisierungskonfiguration**, und klicken Sie dann auf **als Administrator ausführen**. Dadurch wird der Konfigurations-Assistent gestartet.
 4.	Klicken Sie auf der Seite "Willkommen" auf **Weiter**.
-5.	Geben Sie die e-Mail-Adresse und das Kennwort beim Einrichten der Testversion von Office 365 Fast Track in Phase 2 erstellten Konto auf der Seite Windows Azure Active Directory-Anmeldeinformationen. Klicken Sie auf Weiter. 
+5.	Geben Sie die e-Mail-Adresse und das Kennwort beim Einrichten der Testversion von Office 365 Fast Track in Phase 2 erstellten Konto auf der Seite Microsoft Azure Active Directory-Anmeldeinformationen. Klicken Sie auf Weiter. 
 6.	Geben Sie auf der Seite Active Directory-Anmeldeinformationen **CORP\User1** in **Benutzername** und das Kennwort für das User1 in **Kennwort**. Klicken Sie auf **Weiter**.
 7.	Wählen Sie auf der Seite Hybridbereitstellung **Hybridbereitstellung aktivieren**, und klicken Sie dann auf **Weiter**.
 8.	Wählen Sie auf der Seite Kennwortsynchronisierung **Kennwortsynchronisierung aktivieren**, und klicken Sie dann auf **Weiter**.
 9.	Die Seite Konfiguration angezeigt. Wenn die Konfiguration abgeschlossen ist, klicken Sie auf **Weiter**.
-10.	Klicken Sie auf der Seite Fertig **Fertig stellen**. Wenn Sie dazu aufgefordert werden, klicken Sie auf **OK**.
+10.	Klicken Sie auf der Seite Fertig **Fertig stellen**. Klicken Sie bei der entsprechenden Aufforderung auf **OK**.
 
 Als Nächstes stellen Sie sicher, dass die Benutzerkonten in der CORP-Domäne zu Office 365 synchronisiert werden. Beachten Sie, dass ein paar Stunden dauert, bevor die Synchronisierung erfolgt.
 
@@ -174,17 +174,18 @@ Dies ist die aktuelle Konfiguration.
  
 Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, die auf Office 365 DirSync-Funktion basieren oder DirSync-Funktionalität und Leistung von DS1 testen.
 
-##Zusätzliche Ressourcen
+## Zusätzliche Ressourcen
 
 [Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](http://technet.microsoft.com/library/dn635310.aspx)
 
 [Lösungen mit Office-Server und die Cloud](http://technet.microsoft.com/library/dn262744.aspx)
 
-[Einrichten einer hybriden Cloud-Umgebung zum Testen](../virtual-networks-setup-hybrid-cloud-environment-testing/)
+[Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-hybrid-cloud-environment-testing/)
 
-[Richten Sie eine SharePoint-Intranet-Farm in einer hybridcloud zu Testzwecken](../virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
+[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
 
-[Richten Sie eine Web-basierte LOB-Anwendung in einer hybridcloud zu Testzwecken ein](../virtual-networks-setup-lobapp-hybrid-cloud-testing/)
+[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-lobapp-hybrid-cloud-testing/)
 
+[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

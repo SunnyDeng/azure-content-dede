@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="Verwenden von Twilio für Voice-, VoIP- und SMS-Nachrichten in Azure" 
-	description="" 
+	pageTitle="Verwenden von Twilio für Sprach-, VoIP- und SMS-Nachrichten in Azure" 
+	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Codebeispiele wurden in Node.js geschrieben." 
 	services="" 
 	documentationCenter="nodejs" 
 	authors="devinrader" 
@@ -17,19 +17,9 @@
 	ms.author="MicrosoftHelp@twilio.com"/>
 
 
-# Verwenden von Twilio für Voice-, VoIP- und SMS-Nachrichten in Azure
+# Verwenden von Twilio für Sprach-, VoIP- und SMS-Nachrichten in Azure
 
 Diese Anleitung zeigt, wie Sie Apps erstellen, die in Azure mit Twilio und node.js kommunizieren.
-
-## Inhaltsverzeichnis
-
-* [Was ist Twilio?](#whatis)
-* [Anmelden bei Twilio (Microsoft-Rabatt)](#signup)
-* [Erstellen und Bereitstellen einer node.js-Azure-Website](#azuresite)
-* [Konfigurieren des Twilio-Moduls](#twiliomodule)
-* [Ausführen eines ausgehenden Anrufs](#makecall)
-* [Senden einer SMS-Nachricht](#sendmessage)
-* [Nächste Schritte](#nextsteps)
 
 <a id="whatis"/>
 ## Was ist Twilio?
@@ -38,7 +28,7 @@ Twilio ist eine API-Plattform, die Entwicklern das Ausführen und Annehmen von T
 
 ### Empfangen von Rufen und Textnachrichten
 
-Twilio erlaubt Entwicklern den [Kauf programmierbarer Telefonnummern][purchase_phone], die für das Senden und Empfangen von Anrufen und Textnachrichten verwendet werden können.  Wenn eine Twilio-Nummer einen eingehenden Anruf oder Text erhält, sendet Twilio eine HTTP POST- oder GET-Anfrage an Ihre Webanwendung, in der nach Anweisungen zur Verarbeitung des Rufs oder des Texts gefragt wird.  Ihr Server beantwortet die HTTP-Anfrage von Twilio mit [TwiML][twiml], einem einfachen Satz von XML-Tags, die Anweisungen zur Verarbeitung eines Anrufs oder einer SMS enthalten.  In Kürze sehen wir einige Beispiele für TwiML.
+Twilio erlaubt Entwicklern den [Kauf programmierbarer Telefonnummern][purchase_phone], die für das Senden und Empfangen von Anrufen und Textnachrichten verwendet werden können.  Wenn eine Twilio-Nummer einen eingehenden Anruf oder Text erhält, sendet Twilio eine HTTP POST- oder GET-Anfrage an Ihre Webanwendung, in der nach Anweisungen zur Verarbeitung des Rufs oder des Texts gefragt wird.  Ihr Server beantwortet die HTTP-Anfrage von Twilio mit [TwiML][twiml], einem einfachen Satz von XML-Tags, die Anweisungen zur Verarbeitung eines Anrufs oder Texts enthalten.  In Kürze sehen wir einige Beispiele für TwiML.
 
 ### Ausführen von Rufen und Senden von Textnachrichten
 
@@ -46,41 +36,37 @@ Durch HTTP-Anfragen an die Twilio-Webdienst-API können Entwickler Textnachricht
 
 ### Einbetten von VoIP-Funktionen in UI-Code (JavaScript iOS oder Android)
 
-Twilio bietet ein clientseitiges SDK, das aus jedem Desktop-Webbrowser, jeder iOS-App oder jeder Android-App ein VoIP-Telefon machen kann.  In diesem Artikel konzentrieren wir uns darauf, wie VoIP-Anrufe im Browser verwendet werden.  Zusätzlich zum Twilio-JavaScript-SDK, das in Ihrem Browser läuft, muss eine serverseitige Anwendung (unsere node.js-Anwendung) verwendet werden, um ein "'Capability-Token" an den JavaScript-Client abzugeben.  Weitere Informationen zur Verwendung von VoIP mit node.js erhalten Sie im [Twilio-Entwickler-Blog][voipnode].
+Twilio bietet ein clientseitiges SDK, das aus jedem Desktop-Webbrowser, jeder iOS-App oder jeder Android-App ein VoIP-Telefon machen kann.  In diesem Artikel konzentrieren wir uns darauf, wie VoIP-Anrufe im Browser verwendet werden.  Zusätzlich zum Twilio-JavaScript-SDK, das in Ihrem Browser läuft, muss eine serverseitige Anwendung (unsere node.js-Anwendung) verwendet werden, um ein "Capability-Token" an den JavaScript-Client abzugeben.  Weitere Informationen zur Verwendung von VoIP mit node.js erhalten Sie [im Twilio-Entwickler-Blog][voipnode].
 
 <a id="signup"/>
 ## Anmelden bei Twilio (Microsoft-Rabatt)
-
-Vor der Verwendung von Twilio-Diensten müssen Sie zuerst [ein Konto anmelden][signup].  Microsoft Azure-Kunden erhalten einen speziellen Rabatt - [registrieren Sie sich hier][signup]!
+Vor der Verwendung von Twilio-Diensten müssen Sie zuerst  [für ein Konto registrieren][signup].  Microsoft Azure-Kunden erhalten einen speziellen Rabatt -  [registrieren Sie sich hier][signup]!
 
 <a id="azuresite"/>
 ## Erstellen und Bereitstellen einer node.js-Azure-Website
-
 Als Nächstes müssen Sie eine node.js-Website erstellen, die auf Azure läuft.  [Die offizielle Dokumentation dafür finden Sie hier][azure_new_site].  Folgende Schritte sind notwendig:
 
 * Anmelden eines Azure-Kontos, wenn Sie nicht bereits über eines verfügen.
 * Erstellen einer neuen Website mithilfe der Azure-Konsole
 * Hinzufügen einer Quellcodeverwaltungsunterstützung (dafür wird die Verwendung von git vorausgesetzt)
-* Erstellen einer Datei namens `server.js` mit einer einfachen node.js-Webanwendung
+* Erstellen einer Datei namens `server.js`  mit einer einfachen node.js-Webanwendung
 * Bereitstellung dieser einfachen Anwendung in Azure
 
 <a id="twiliomodule"/>
 ## Konfigurieren des Twilio-Moduls
-
 Als Nächstes beginnen wir mit dem Schreiben einer einfachen node-js-Anwendung, die die Twilio-API nutzt.  Bevor wir beginnen, müssen wir die Anmeldeinformationen für unser Twilio-Konto konfigurieren.  
 
 ### Konfigurieren von Twilio-Anmeldeinformationen in Systemumgebungsvariablen
 
 Um authentische Anfragen am Twilio-Back-End auszuführen, benötigen wir die Konto-SID und das Authentifizierungstoken, die als Benutzername und Kennwort für unser Twilio-Konto fungieren. Der sicherste Weg, diese zur Verwendung mit dem Knotenmodul in Azure zu konfigurieren, sind Systemumgebungsvariablen, die Sie direkt in der Azure-Verwaltungskonsole einstellen können.
 
-Wählen Sie Ihre node.js-Website, und klicken Sie auf den Link "CONFIGURE".  Wenn Sie ein wenig herunterscrollen, sehen Sie einen Bereich, in dem Sie Konfigurationseigenschaften für Ihre Anwendung festlegen können.  Geben Sie Ihre Twilio-Anmeldeinformationen ([die Sie in Ihrem Twilio-Dashboard finden][twilio_dashboard]) wie gezeigt ein - geben Sie ihnen die Namen "TWILIO_ACCOUNT_SID" bzw. "TWILIO_AUTH_TOKEN":
+Wählen Sie Ihre node.js-Website, und klicken Sie auf den Link "CONFIGURE".  Wenn Sie ein wenig herunterscrollen, sehen Sie einen Bereich, in dem Sie Konfigurationseigenschaften für Ihre Anwendung festlegen können.  Geben Sie Ihre Twilio-Anmeldeinformationen ([in Ihrem Twilio-Dashboard][twilio_dashboard]) wie gezeigt ein - geben Sie ihnen die Namen "TWILIO_ACCOUNT_SID" bzw. "TWILIO_AUTH_TOKEN":
 
 ![Azure admin console][azure-admin-console]
 
 Wenn Sie diese Variablen konfiguriert haben, starten Sie Ihre Anwendung in der Azure-Konsole neu.
 
 ### Deklarieren des Twilio-Moduls in package.json
-
 Als Nächstes müssen wir eine Datei namens "package.json" erstellen, um unsere Knotenmodulabhängigkeiten über [npm] zu verwalten.  Legen Sie auf derselben Ebene wie die Datei "server.js", die Sie im Lernprogramm für node.js in Azure erstellt haben, eine Datei namens "package.json" an.  Platzieren Sie in dieser Datei den folgenden Code:
 
   {
@@ -97,7 +83,7 @@ Als Nächstes müssen wir eine Datei namens "package.json" erstellen, um unsere 
     }
   }
 
-Damit wird das Twilio-Modul ebenso wie das beliebte [Web-Framework Express][express] und die EJS Template Engine als Abhängigkeit deklariert.  So - nun wissen wir genug, um einen Code zu schreiben.
+Damit wird das Twilio-Modul ebenso wie das beliebte [Web-Framework Express][express]  und die EJS Template Engine als Abhängigkeit deklariert.  So, nun wissen wir genug, um einen Code zu schreiben.
 
 <a id="makecall"/>
 ## Ausführen eines ausgehenden Rufs
@@ -192,11 +178,10 @@ Erstellen Sie als Nächstes ein Verzeichnis namens "views", und erstellen Sie in
     </body>
     </html>
 
-Stellen Sie Ihre Website nun in Azure bereit, und öffnen Sie Ihre Startseite.  Sie sollten nun Ihre Telefonnummer in das Textfeld eingeben können und einen Anruf von Ihrer Twilio-Nummer erhalten!
+Stellen Sie Ihre Website nun in Azure bereit, und öffnen Sie Ihre Startseite. Sie sollten nun Ihre Telefonnummer in das Textfeld eingeben können und einen Anruf von Ihrer Twilio-Nummer erhalten!
 
 <a id="sendmessage"/>
 ## Senden einer SMS-Nachricht
-
 Lassen Sie uns nun eine Benutzerschnittstelle einrichten und eine Anwendungslogik zum Senden einer Textnachricht formulieren.  Öffnen Sie "server.js", und geben Sie nach dem letzten Anruf an "app.post" den folgenden Code ein:
 
     app.post('/sms', function(request, response) {
@@ -245,7 +230,7 @@ Wir hoffen, dass Sie Freude an node.js und Twilio in Azure haben!
 [purchase_phone]: https://www.twilio.com/user/account/phone-numbers/available/local
 [twiml]: https://www.twilio.com/docs/api/twiml
 [signup]: http://ahoy.twilio.com/azure
-[azure_new_site]: http://azure.microsoft.com/develop/nodejs/tutorials/create-a-website-(mac)/
+[azure_new_site]: http://www.windowsazure.com/develop/nodejs/tutorials/create-a-website-(mac)/
 [twilio_dashboard]: https://www.twilio.com/user/account
 [npm]: http://npmjs.org
 [express]: http://expressjs.com
@@ -258,4 +243,4 @@ Wir hoffen, dass Sie Freude an node.js und Twilio in Azure haben!
 
 
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

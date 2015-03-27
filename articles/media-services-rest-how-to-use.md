@@ -30,7 +30,7 @@ Für jeden Media Services-Aufruf müssen Sie eine Reihe obligatorischer Header i
 <table border="1">
 <tr><th>Header</th><th>Typ</th><th>Wert</th></tr>
 <tr><td>Autorisierung</td><td>Bearer</td><td>Das Bearer-Token ist der einzig zulässige Autorisierungsmechanismus. Der Wert muss außerdem das von ACS bereitgestellte Zugriffstoken enthalten.</td></tr>
-<tr><td>x-ms-version</td><td>Decimal</td><td>2.8</td></tr>
+<tr><td>x-ms-version</td><td>Decimal</td><td>2.9</td></tr>
 <tr><td>DataServiceVersion</td><td>Decimal</td><td>3.0</td></tr>
 <tr><td>MaxDataServiceVersion</td><td>Decimal</td><td>3.0</td></tr>
 </table><br/>
@@ -81,14 +81,14 @@ Im Folgenden finden eine vollständige Liste der HTTP-Verben, die für HTTP-Anfo
 <tr><td>GET</td><td>Gibt den aktuellen Wert eines Objekts zurück.</td></tr>
 <tr><td>POST</td><td>Erstellt ein Objekt auf Grundlage der bereitgestellten Daten oder sendet einen Befehl.</td></tr>
 <tr><td>PUT</td><td>Ersetzt ein Objekt oder erstellt ein benanntes Objekt (falls zutreffend).</td></tr>
-<tr><td>DELETE</td><td>Löscht ein Objekt.</td></tr>
+<tr><td>LÖSCHEN</td><td>Löscht ein Objekt.</td></tr>
 <tr><td>MERGE</td><td>Aktualisiert ein vorhandenes Objekt anhand von Änderungen der benannten Eigenschaft.</td></tr>
 <tr><td>HEAD</td><td>Gibt die Metadaten eines Objekts für eine GET-Antwort zurück.</td></tr>
 </table><br/>
 
 ## Ermitteln des Media Services-Modells
 
-Um Media Services-Entitäten schnell aufzufinden, können Sie den $metadata-Vorgang verwenden. Dadurch können Sie alle gültigen Entitätstypen, Entitätseigenschaften, Zuordnungen, Funktionen, Aktionen usw. abrufen. Im folgenden Beispiel wird gezeigt, wie Sie den URI erstellen.: https://media.windows.net/API/$metadata.
+Um Media Services-Entitäten schnell aufzufinden, können Sie den $metadata-Vorgang verwenden. Dadurch können Sie alle gültigen Entitätstypen, Entitätseigenschaften, Zuordnungen, Funktionen, Aktionen usw. abrufen. Im folgenden Beispiel wird gezeigt, wie Sie den URI erstellen https://media.windows.net/API/$metadata.
 
 Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Metadaten in einem Browser anzeigen möchten. Andernfalls sollte der x-ms-version-Header nicht in die Anforderung eingeschlossen werden.
 
@@ -103,4 +103,4 @@ Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Meta
 
 
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

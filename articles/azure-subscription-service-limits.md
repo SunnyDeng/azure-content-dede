@@ -1,6 +1,6 @@
 ﻿<properties 
 	pageTitle="Microsoft Azure-Abonnements und Diensteinschränkungen, Kontingente und Einschränkungen" 
-	description="Stellt eine Liste allgemeiner Azure-Abonnements und Diensteinschränkungen zusammen mit den Maximalwerten bereit." 
+	description="Stellt eine Liste allgemeiner Azure-Abonnements und Diensteinschränkungen, Kontingenten und Einschränkungen bereit. Dies umfasst Informationen zum Erhöhen von Einschränkungen und Höchstwerten."
 	services="" 
 	documentationCenter="" 
 	authors="rothja" 
@@ -13,29 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/16/2015" 
+	ms.date="02/20/2015" 
 	ms.author="jroth"/>
 
 # Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen
 
+## Übersicht
+
 Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft Azure. Beachten Sie, dass dieses Dokument nicht alle Azure-Dienste behandelt. Mit der Zeit wird diese Liste der Einschränkungen erweitert, um größere Teile der Plattform abzudecken.
 
-- [Einschränkungen für Abonnements](#subscription)
-- [Cloud-Diensteinschränkungen](#webworkerlimits)
-- [Einschränkungen für virtuelle Computer](#vmlimits)
-- [Website-Einschränkungen](#websiteslimits)
-- [Netzwerkeinschränkungen](#networkinglimits)
-- [Speichereinschränkungen](#storagelimits)
-- [Einschränkungen für die Batch-Vorschau](#batchlimits)
-- [DocumentDB-Vorschau-Einschränkungen](#documentdblimits)
-- [Einschränkungen für SQL-Datenbanken](#sqldblimits)
-- [Media Services-Einschränkungen](#mediaserviceslimits)
-- [Service Bus-Einschränkungen](#servicebuslimits)
-- [Active Directory-Einschränkungen](#adlimits)
+> [AZURE.NOTE] Falls Sie ein Limit über das **Standardlimit** anheben möchten, können Sie eine [gebührenfreie Online-Kundensupport-Anforderung öffnen][azurelimitsblogpost]. Die Limits können nicht über die Werte unter **Maximales Limit** in der folgenden Tabelle angehoben werden. Falls keine Spalte **Maximales Limit** existiert, bedeutet dies, dass für die entsprechende Ressource keine änderbaren Limits existieren.
 
-> [WACOM.NOTE] Falls Sie ein Limit über das **Standardlimit** anheben möchten, können Sie eine [gebührenfreie Online-Kundensupport-Anforderung öffnen][azurelimitsblogpost]. Die Limits können nicht über die Werte unter **Maximales Limit** in der folgenden Tabelle angehoben werden. Falls keine Spalte **Maximales Limit** existiert, bedeutet dies, dass für die entsprechende Ressource keine änderbaren Limits existieren.
-
-##<a name="subscription"></a>Einschränkungen für Abonnements
+## Einschränkungen für Abonnements
 
 <table cellspacing="0" border="1">
 <tr>
@@ -44,7 +33,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
    <th align="left" valign="middle">Maximales Limit</th>
 </tr>
 <tr>
-   <td valign="middle"><p>Kerne pro <a href="http://msdn.microsoft.com/library/azure/hh531793.aspx">Abonnement</a><sup>1</sup></p></td>
+   <td valign="middle"><p>Prozessorkerne pro <a href="http://msdn.microsoft.com/library/azure/hh531793.aspx">Abonnement</a><sup>1</sup></p></td>
    <td valign="middle"><p>20</p></td>
    <td valign="middle"><p>10.000</p></td>
 </tr>
@@ -54,7 +43,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
    <td valign="middle"><p>200</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/storage-whatis-account/">Speicherkonten</a> pro Abonnement</p></td>
+   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/storage-create-storage-account/">Speicherkonten</a> pro Abonnement</p></td>
    <td valign="middle"><p>100</p></td>
    <td valign="middle"><p>100</p></td>
 </tr>
@@ -110,7 +99,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 </tr>
 
 <tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/services/batch/">Batch-Vorschau</a> Konten pro Region und Abonnement</p></td>
+   <td valign="middle"><p><a href="http://azure.microsoft.com/services/batch/">Batch-Vorschau</a>-Konten pro Region pro Abonnement</p></td>
    <td valign="middle"><p>1</p></td>
    <td valign="middle"><p>50</p></td>   
 </tr>
@@ -120,7 +109,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 
 <sup>2</sup>Jedes virtuelle Netzwerk unterstützt ein einziges virtuelles Netzwerkgateway.
 
-##<a name="webworkerlimits"></a>Cloud-Diensteinschränkungen
+## Cloud-Diensteinschränkungen
 
 <table cellspacing="0" border="1">
 <tr>
@@ -152,7 +141,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 
 <sup>1</sup>Jeder Cloud-Dienst mit Web-/Workerrollen kann zwei Bereitstellungen haben: je eine für Produktions- und Stagingumgebung. Beachten Sie außerdem, dass sich dieses Limit auf die Anzahl der individuellen Rollen (Konfiguration) und nicht auf die Anzahl der Instanzen pro Rolle (Skalierung) bezieht. 
 
-##<a name="vmlimits"></a>Einschränkungen für virtuelle Computer
+## Einschränkungen für virtuelle Computer
 
 <table cellspacing="0" border="1">
 <tr>
@@ -172,15 +161,15 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 </tr>
 </table>
 
-<sup>1</sup>Wenn Sie einen virtuellen Computer erstellen, wird automatisch auch ein Clouddienst erzeugt, der diesen Computer enthält. Sie können anschließend mehrere virtuelle Computer in diesem Clouddienst hinzufügen.
+<sup>1</sup>Wenn Sie einen virtuellen Computer erstellen, wird automatisch auch ein Cloud-Dienst erzeugt, der diesen Computer enthält. Sie können anschließend mehrere virtuelle Computer in diesem Cloud-Dienst hinzufügen.
 
-<sup>2</sup>Eingabeendpunkte dienen zur Kommunikation mit virtuellen Computern außerhalb des aktuellen Cloud-Diensts. Virtuelle Computer innerhalb des gleichen Clouddiensts erlauben automatisch die Kommunikation zwischen allen UDP- und TCP-Ports für die interne Kommunikation.
+<sup>2</sup>Eingabeendpunkte dienen zur Kommunikation mit virtuellen Computern außerhalb des aktuellen Cloud-Diensts. Virtuelle Computer innerhalb des gleichen Cloud-Diensts erlauben automatisch die Kommunikation zwischen allen UDP- und TCP-Ports für die interne Kommunikation.
 
-##<a name="websiteslimits"></a>Website-Einschränkungen
+## Website-Einschränkungen
 
-[WACOM.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
+[AZURE.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
 
-##<a name="networkinglimits"></a>Netzwerkeinschränkungen
+## Netzwerkeinschränkungen
 
 <table cellspacing="0" border="1">
 <tr>
@@ -189,7 +178,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
    <th align="left" valign="middle">Maximales Limit</th>
 </tr>
 <tr>
-   <td valign="middle"><p>Gesamtanzahl der Computer<sup>1</sup> pro <a href="http://msdn.microsoft.com/library/azure/jj156007.aspx">Virtuelles Netzwerk</a><sup>2</sup></p></td>
+   <td valign="middle"><p>Gesamtanzahl der Computer<sup>1</sup> pro <a href="http://msdn.microsoft.com/library/azure/jj156007.aspx">virtuellem Netzwerk</a><sup>2</sup></p></td>
    <td valign="middle"><p>2048</p></td>
    <td valign="middle"><p>2048</p></td>
 </tr>
@@ -216,7 +205,7 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 
 <sup>3</sup>ACL wird auf Eingabeendpunkten für virtuelle Computer unterstützt. Für Web-/Workerrollen wird ACL auf Eingabe- und Instanz-Eingabeendpunkte unterstützt.
 
-##<a name="storagelimits"></a>Speichereinschränkungen
+## Speichereinschränkungen
 
 <table cellspacing="0" border="1">
 <tr>
@@ -291,15 +280,15 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 
 <sup>3</sup>GRS stellt einen [georedundanten Speicher][georedundantstorage] dar. LRS stellt einen [lokal redundanten Speicher][locallyredundantstorage] dar. Beachten Sie, dass GRS ebenfalls lokal redundant ist.
 
-##<a name="batchlimits"></a>Einschränkungen für die Batch-Vorschau
+## Einschränkungen für die Batch-Vorschau
 
-[WACOM.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
+[AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
-##<a name="documentdblimits"></a>DocumentDB-Vorschau-Einschränkungen
+## DocumentDB-Vorschau-Einschränkungen
 
-[WACOM.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
+[AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
 
-##<a name="sqldblimits"></a>Einschränkungen für SQL-Datenbanken
+## Einschränkungen für SQL-Datenbanken
 
 Weitere Informationen zu Einschränkungen für SQL-Datenbanken finden Sie in den folgenden Themen:
 
@@ -308,40 +297,38 @@ Weitere Informationen zu Einschränkungen für SQL-Datenbanken finden Sie in den
  - [Kontingente der Datenbankdurchsatzeinheit (DTU = Database Throughput Unit)][sqlDTU]
  - [Ressourceneinschränkungen für SQL-Datenbanken][sqldblimits]
 
-##<a name="mediaserviceslimits"></a>Media Services-Einschränkungen
+## Media Services-Einschränkungen
 
-[WACOM.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
+[AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
 
-##<a name="servicebuslimits"></a>Servicebus-Einschränkungen
+## Servicebus-Einschränkungen
 
-[WACOM.INCLUDE [azure-servicebus-limits](../includes/azure-servicebus-limits.md)]
+[AZURE.INCLUDE [azure-servicebus-limits](../includes/azure-servicebus-limits.md)]
 
-##<a name="adlimits"></a>Active Directory-Einschränkungen
+## Active Directory-Einschränkungen
 
 Informationen zu Azure Active Directory (AD) finden Sie unter dem folgenden Thema:
 
  - [Dienstlimits und -einschränkungen für Azure Active Directory][adlimitsandrestrictions]
 
-##<a name="seealso"></a>Siehe auch
+## Siehe auch
 
 [Grundlegendes zu Azure-Einschränkungen und -Steigerungen][azurelimitsblogpost]
 
 [Größen virtueller Computer und Cloud-Dienste für Azure][vmsizes]
 
-  [customersupportfaq]: http://azure.microsoft.com/support/faq/
-  [azurelimitsblogpost]: http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/
-  [gateway]: http://msdn.microsoft.com/library/azure/jj156210.aspx 
-  [storagelimits]: http://msdn.microsoft.com/library/azure/dn249410.aspx
-  [georedundantstorage]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx
-  [sqldblimits]: http://msdn.microsoft.com/library/azure/dn338081.aspx
-  [sqltiers]: http://msdn.microsoft.com/library/azure/dn741340.aspx
-  [sqltiersperflevels]: http://msdn.microsoft.com/library/azure/dn741336.aspx
-  [sqlDTU]: http://msdn.microsoft.com/library/azure/ee336245.aspx#DTUs
-  [vmsizes]: http://msdn.microsoft.com/library/azure/dn197896.aspx
-  [georedundantstorage]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx
+[customersupportfaq]: http://azure.microsoft.com/support/faq/
+[azurelimitsblogpost]: http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/
+[gateway]: http://msdn.microsoft.com/library/azure/jj156210.aspx 
+[storagelimits]: http://msdn.microsoft.com/library/azure/dn249410.aspx
+[georedundantstorage]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx
+[sqldblimits]: http://msdn.microsoft.com/library/azure/dn338081.aspx
+[sqltiers]: http://msdn.microsoft.com/library/azure/dn741340.aspx
+[sqltiersperflevels]: http://msdn.microsoft.com/library/azure/dn741336.aspx
+[sqlDTU]: http://msdn.microsoft.com/library/azure/ee336245.aspx#DTUs
+[vmsizes]: http://msdn.microsoft.com/library/azure/dn197896.aspx
+[georedundantstorage]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx
   [locallyredundantstorage]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/08/introducing-locally-redundant-storage-for-windows-azure-storage.aspx
   [adlimitsandrestrictions]: http://msdn.microsoft.com/library/azure/dn764971.aspx
 
-<!--HONumber=35.2-->
-
-<!--HONumber=46--> 
+<!--HONumber=47-->

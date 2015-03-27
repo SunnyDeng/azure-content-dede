@@ -24,7 +24,7 @@ In diesem Dokument erfahren Sie, wie mithilfe von Curl MapReduce-Aufträge auf e
 
 Curl dient zum Veranschaulichen der Interaktion mit HDInsight über unformatierte HTTP-Anforderungen zum Ausführen von MapReduce-Aufträgen. Dies funktioniert mithilfe der WebHCat REST-API (ehemals Templeton), die von Ihrem HDInsight-Cluster bereitgestellt wird.
 
-> [AZURE.NOTE] Wenn Sie bereits mit der Verwendung von Linux-basierten Hadoop-Servern vertraut sind, Ihnen HDInsight jedoch neu ist, finden Sie weitere Informationen unter: <a href="../hdinsight-hadoop-linux-information/" target="_blank">Was Sie über Linux-basiertes Hadoop in HDInsight wissen müssen</a>.
+> [AZURE.NOTE] Wenn Sie bereits mit der Verwendung von Linux-basierten Hadoop-Servern vertraut sind, jedoch noch nicht mit HDInsight, finden Sie weitere Informationen unter <a href="../hdinsight-hadoop-linux-information/" target="_blank">Was Sie über Hadoop auf Linux-basiertem HDInsight wissen müssen</a>.
 
 ## <a id="prereq"></a>Voraussetzungen
 
@@ -42,7 +42,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 > 
 > Ersetzen Sie für die Befehle in diesem Abschnitt die Option **BENUTZERNAME** für die Authentifizierung im Cluster durch den Benutzer und die Option **KENNWORT** durch das Kennwort für das Benutzerkonto. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres Clusters.
 > 
-> Die REST-API wird mithilfe der <a href="http://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank">Standardauthentifizierung</a>geschützt. Sie sollten Anforderungen immer über HTTPS stellen, um sicherzustellen, dass Ihre Anmeldeinformationen sicher an den Server gesendet werden.
+> Die REST-API wird durch <a href="http://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank">Standardauthentifizierung</a> gesichert. Sie sollten Anforderungen immer über HTTPS stellen, um sicherzustellen, dass Ihre Anmeldeinformationen sicher an den Server gesendet werden.
 
 1. Verwenden Sie den folgenden Befehl in einer Befehlszeile, um zu überprüfen, ob Sie die Verbindung zum HDInsight-Cluster herstellen können. 
 
@@ -57,7 +57,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
     * **-u**: der Benutzername und das Kennwort für die Authentifizierung der Anforderung
     * **-G**: gibt an, dass dies eine GET-Anforderung ist
 
-    Der Anfang des URIs, **https://CLUSTERNAME.azurehdinsight.net/templeton/v1**, ist für alle Anforderungen identisch. 
+    Der Anfang der URL, **https://CLUSTERNAME.azurehdinsight.net/templeton/v1**, ist für alle Anforderungen identisch. 
 
 2. Gehen Sie wie folgt vor, um einen MapReduce-Auftrag zu übermitteln.
 
@@ -65,18 +65,18 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
     Das Ende des URIs (/mapreduce/jar) weist WebHCat darauf hin, dass diese Anforderung einen MapReduce-Auftrag aus einer Klasse in einer JAR-Datei startet. Folgende Parameter werden in diesem Befehl verwendet:
 
-	* **-d**: da `-G` nicht verwendet wird, verwendet die Anforderung standardmäßig die POST-Methode Die Option `-d` gibt die Datenwerte an, die mit der Anforderung gesendet werden.
+	* **-d**: Da `-G` nicht verwendet wird, verwendet die Anforderung standardmäßig die POST-Methode. Die Option `-d` gibt die Datenwerte an, die mit der Anforderung gesendet werden.
 
-        * **benutzer.name**: der Benutzer, der den Befehl ausführt
-        * **jar**: der Speicherort der JAR-Datei, die die auszuführende Klasse enthält
-        * **class**: die Klasse, die die MapReduce-Logik enthält
-        * **arg**: die an den MapReduce-Auftrag zu übergebenden Argumente In diesem Fall die Eingabetextdatei und das für die Ausgabe verwendete Verzeichnis.
+        * **benutzer.name**: Der Benutzer, der den Befehl ausführt
+        * **jar**: Der Speicherort der JAR-Datei, die die auszuführende Klasse enthält.
+        * **class**: Die Klasse, die die MapReduce-Logik enthält.
+        * **arg**: Die an den MapReduce-Auftrag zu übergebenden Argumente. In diesem Fall die Eingabetextdatei und das für die Ausgabe verwendete Verzeichnis.
 
     Dieser Befehl sollte eine Auftrags-ID zurückgeben, mit der der Status des Auftrags überprüft werden kann.
 
         {"id":"job_1415651640909_0026"}
 
-3. Verwenden Sie den folgenden Befehl, um den Status des Auftrags zu prüfen. Ersetzen Sie **JOBID** durch den Wert, der im vorherigen Schritt zurückgegeben wurde. Wenn der Rückgabewert z. B. `{"id":"job_1415651640909_0026"}` lautet, dann würde JOBID den Wert `job_1415651640909_0026` ergeben.
+3. Verwenden Sie den folgenden Befehl, um den Status des Auftrags zu prüfen. Ersetzen Sie **JOBID** durch den Wert, der im vorherigen Schritt zurückgegeben wurde. Wenn der Rückgabewert z. B. `{"id":"job_1415651640909_0026"}` lautet, ist die JOBID `job_1415651640909_0026`.
 
         curl -G -u USERNAME:PASSWORD -d user.name=USERNAME https://CLUSTERNAME.azurehdinsight.net/templeton/v1/jobs/JOBID | jq .status.state
 
@@ -84,9 +84,9 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
     > [AZURE.NOTE] Diese Curl-Anforderung gibt ein JSON-Dokument mit Informationen zum Auftrag zurück. Mithilfe von "jq" wird nur der Statuswert abgerufen. 
 
-4. Sobald der Status des Auftrags zu **SUCCEEDED** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure Blob-Speicher abrufen. Der mit der Abfrage übergebene Parameter `statusdir` enthält den Speicherort der Ausgabedatei. In diesem Fall ist das **wasb:///example/curl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/curl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
+4. Sobald der Status des Auftrags zu **SUCCEEDED** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure Blob-Speicher abrufen. Der mit der Abfrage übergebene Parameter `statusdir` enthält den Speicherort der Ausgabedatei. In diesem Fall ist dies **wasb:///example/curl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/curl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
 
-Sie können diese Dateien mithilfe der <a href="../xplat-cli/" target="_blank">plattformübergreifenden Azure-Befehlszeilenschnittstelle (xplat-cli)</a>auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **example/curl** auflisten möchten, verwenden Sie den folgenden Befehl:
+Sie können diese Dateien unter <a href="../xplat-cli/" target="_blank">Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle</a> auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **example/curl** auflisten möchten, verwenden Sie den folgenden Befehl:
 
 	azure storage blob list <container-name> example/curl
 
@@ -94,7 +94,7 @@ Verwenden Sie den folgenden Befehl, um eine Datei herunterzuladen:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE] Sie müssen entweder den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** festlegen. Weitere Informationen finden Sie unter <a href="../hdinsight-upload-data/" target="_blank" for more information..
+> [AZURE.NOTE] Sie müssen entweder den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** festlegen. Weitere Informationen finden Sie unter <a href="../hdinsight-upload-data/" target="_blank" .
 
 ## <a id="summary"></a>Zusammenfassung
 
@@ -113,4 +113,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 * [Verwenden von Hive mit Hadoop in HDInsight](../hdinsight-use-hive/)
 
 * [Verwenden von Pig mit Hadoop in HDInsight](../hdinsight-use-pig/)
-<!--HONumber=45--> 
+<!--HONumber=47-->

@@ -1,4 +1,4 @@
-1. Klicken Sie im [Azure-Verwaltungsportal] auf den neuen Mobile Service oder auf die Registerkarte mit dem Cloudsymbol, um zur Übersichtsseite zu gelangen.
+﻿1. Klicken Sie im [Azure-Verwaltungsportal] auf den neuen Mobile Service oder auf die Registerkarte mit dem Cloudsymbol, um zur Übersichtsseite zu gelangen.
 
     ![](./media/mobile-services-dotnet-backend-android-get-started-data/mobile-portal-quickstart-android.png)
 
@@ -6,9 +6,9 @@
 
     ![](./media/mobile-services-dotnet-backend-android-get-started-data/download-service-project.png)
 
-3. Downloaden und installieren Sie [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) oder eine neuere Version, falls Sie dies nicht bereits getan haben.
+3. Sofern nicht bereits geschehen, laden Sie [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934)oder eine höhere Version herunter, und installieren Sie es.
 
-4. Klicken Sie auf **Herunterladen** unter **Service in der Cloud herunterladen und veröffentlichen**.
+4. Klicken Sie unter **Service herunterladen und in der Cloud veröffentlichen** auf **Herunterladen**.
 
 	Dadurch wird das Visual Studio-Projekt, das den mobilen Dienst implementiert, heruntergeladen. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
 
@@ -27,4 +27,4 @@
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

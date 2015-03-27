@@ -1,12 +1,12 @@
 ﻿> [AZURE.SELECTOR-LIST (Plattform | Back-End)]
-- [(iOS | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users/)
-- [(iOS | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users/)
-- [(Windows Store C# | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/)
-- [(Windows Store C# | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/)
-- [(Windows Store JavaScript | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-push-notifications-app-users/)
-- [(Windows Store JavaScript | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-push-notifications-app-users/)
-- [(Windows Phone | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-push-notifications-app-users/)
-- [(Windows Phone | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users/)
-- [(Android | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-android-push-notifications-app-users/)
-- [(Android | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users/)
-<!--HONumber=42-->
+- [(iOS | .NET)](/documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users/)
+- [(iOS | JavaScript)](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users/)
+- [(Windows Store C# | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/)
+- [(Windows Store C# | JavaScript)](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/)
+- [(Windows Store JavaScript | JavaScript)](/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-push-notifications-app-users/)
+- [(Windows Phone | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-phone-push-notifications-app-users/)
+- [(Windows Phone | JavaScript)](/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users/)
+- [(Android | .NET)](/documentation/articles/mobile-services-dotnet-backend-android-push-notifications-app-users/)
+- [(Android | JavaScript)](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users/)
+
+<!--HONumber=47-->

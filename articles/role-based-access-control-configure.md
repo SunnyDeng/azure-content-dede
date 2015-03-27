@@ -1,6 +1,6 @@
 ﻿<properties 
 	pageTitle="Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal" 
-	description="Beschreibt die Funktionsweise und Einrichtung der rollenbasierten Zugriffssteuerung."
+	description="Beschreibt die Funktionsweise und Einrichtung der rollenbasierten Zugriffssteuerung." 
 	services="" 
 	documentationCenter="" 
 	authors="Justinha" 
@@ -13,33 +13,24 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="Ibiza" 
 	ms.workload="infrastructure-services" 
-	ms.date="02/06/2015" 
+	ms.date="02/20/2015" 
 	ms.author="justinha"/>
 
-<!--This is a basic template that shows you how to use mark down to create a topic that includes a TOC, sections with subheadings, links to other azure.microsoft.com topics, links to other sites, bold text, italic text, numbered and bulleted lists, code snippets, and images. For fancier markdown, find a published topic and copy the markdown or HTML you want. For more details about using markdown, see http://sharepoint/sites/azurecontentguidance/wiki/Pages/Content%20Guidance%20Wiki%20Home.aspx.-->
+<!--Dies ist eine einfache Vorlage, die zeigt, wie Markdown verwendet wird, um ein Thema zu erstellen, das ein Inhaltsverzeichnis, Abschnitte mit Unterüberschriften, Links zu anderen azure.microsoft.com-Themen, Links zu anderen Websites, Fettschrift, Kursivschrift, nummerierte Listen und Aufzählungen, Codeausschnitte und Bilder enthält. Suchen Sie für ein originelleres Markdown ein veröffentlichtes Thema und kopieren Sie den Markdown- oder HTML-Code. Weitere Informationen zur Verwendung von Markdown finden Sie unter http://sharepoint/sites/azurecontentguidance/wiki/Pages/Content%20Guidance%20Wiki%20Home.aspx.-->
 
 <!--Properties section (above): this is required in all topics. Please fill it out!-->
 
 <!--The next line, with one pound sign at the beginning, is the page title--> 
 # Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal 
 
-<p>Es wird nun die rollenbasierte Zugriffssteuerung (RBAC) über das Azure-Vorschauportal unterstützt, damit Organisationen ihren Zugriffsverwaltungsanforderungen einfach und präzise nachkommen können. Lesen Sie diesen <a href="http://go.microsoft.com/fwlink/?LinkId=511576" target="_blank">Blogeintrag</a>, um sich mit dieser Funktion vertraut zu machen und eine rasche Einführung zu erhalten. Die Konzepte werden detailliert beschrieben und an zusätzlichen Anwendungsfällen verdeutlicht. 
+<p> Wir unterstützen nun die rollenbasierte Zugriffssteuerung (RBAC) über das Azure-Vorschauportal, damit Organisationen ihren Zugriffsverwaltungsanforderungen einfach und präzise nachkommen können. Lesen Sie diesen <a href="http://go.microsoft.com/fwlink/?LinkId=511576" target="_blank">Blogeintrag</a>, um sich mit dieser Funktion vertraut zu machen und eine rasche Einführung zu erhalten. Die Konzepte werden detailliert beschrieben und an zusätzlichen Anwendungsfällen verdeutlicht. </p>
 
 <!--Table of contents for topic, the words in brackets must match the heading wording exactly-->
 
-##Inhaltsverzeichnis
 
-* [RBAC in Azure](#whatisrbac)
-* [Koexistenz von RBAC mit Abonnement-Co-Administratoren](#coexist)
-* [Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge](#authmgmt)
-* [Hinzufügen und Entfernen von Zugriffsrechten](#addremoveaccess)
-* [Bekannte Probleme bei der Verwendung der rollenbasierten Zugriffssteuerung](#knownissues)
-* [Feedback geben](#feedback)
-* [Nächste Schritte](#next)
-
-<h2><a id="whatisrbac"></a>RBAC in Azure</h2>
+## RBAC in Azure
                                                                    
-Jedes Azure-Abonnement ist mit einem Azure Active Directory verknüpft. Benutzer und Dienste, die über das Azure-Verwaltungsportal oder über die Azure Resource Manager-API auf Abonnementressourcen zugreifen, müssen sich zunächst mit Azure Active Directory authentifizieren.
+Jedes Azure-Abonnement ist mit einem Azure Active Directory verknüpft. Benutzer und Dienste, die über das Azure-Verwaltungsportal oder über die Azure-Ressourcen-Manager-API auf Abonnementressourcen zugreifen, müssen sich zunächst mit Azure Active Directory authentifizieren.
 
 ![][1] 
 
@@ -47,27 +38,7 @@ Mithilfe der rollenbasierten Zugriffssteuerung von Azure kann Azure-AD-Benutzern
 
 ### Rolle
 
-Eine Rolle ist eine Sammlung von Aktionen, die an Azure-Ressourcen durchgeführt werden können. Ein Benutzer oder ein Dienst darf eine Aktion an einer Azure-Ressource durchführen, wenn ihnen eine Rolle zugewiesen ist, die diese Aktion umfasst.
-
-#### Integrierte Rollen
-
-Zurzeit umfasst die rollenbasierte Zugriffssteuerung von Azure drei integrierte Rollen, die Benutzer, Gruppen und Diensten zugewiesen werden können.
-
-+ **Besitzer**: hat Vollzugriff auf alle Azure-Ressourcen. Der Besitzer darf alle Verwaltungsvorgänge an einer Ressource, einschließlich Zugriffsverwaltung, durchführen. 
-+ **Mitwirkender**: darf alle Verwaltungsvorgänge an einer Ressource, außer Zugriffsverwaltung, durchführen. D. h., ein Mitwirkender darf anderen Personen keinen Zugriff gewähren.
-+ **Leser**: kann Ressourcen nur anzeigen. Ein Leser darf keine mit einer Ressource verknüpften geheimen Schlüssel anzeigen. 
-
-Die Definition integrierter Rollen kann nicht geändert werden. In einer zukünftigen Version von Azure RBAC können Sie benutzerdefinierte Rollen definieren. Dazu können Sie aus einer Liste mit verfügbaren Aktionen eine Reihe an Aktionen auswählen, die an Azure-Ressourcen durchgeführt werden dürfen.
-
-#### Aktionen und Nicht-Aktionen
-
-Die Eigenschaft **Aktionen** der Rollendefinition gibt die zulässigen Aktionen für eine Azure-Ressource an. Für Aktionszeichenfolgen dürfen Platzhalter verwendet werden. Die Eigenschaft **Nicht-Aktionen** der Rollendefinition gibt die Aktionen an, die von den zulässigen Aktionen ausgeschlossen werden müssen. 
-
-**Integrierte Rolle** | Aktionen | Nicht-Aktionen	
-------------- | -------------  | ------------
-Besitzer (alle Aktionen zulassen)  | *  | 
-Mitwirkender (alle Aktionen zulassen, außer Schreiben und Löschen von Rollenzuweisungen) | *  | Microsoft.Authorization/ * /Write, Microsoft.Authorization/ * /Delete
-Leser (alle Leseaktionen zulassen) | */Read  | 
+Eine Rolle ist eine Sammlung von Aktionen, die an Azure-Ressourcen durchgeführt werden können. Ein Benutzer oder ein Dienst darf eine Aktion an einer Azure-Ressource durchführen, wenn ihnen eine Rolle zugewiesen ist, die diese Aktion umfasst. Eine Liste der integrierten Rollen und **ihrer** Aktions- und **Nicht-Aktions-**Eigenschaften finden Sie unter [integrierte Rollen](#builtinroles).
 
 ### Rollenzuweisung
 
@@ -88,18 +59,18 @@ Zugriffsrechte müssen nicht für das gesamte Abonnement gewährt werden. Rollen
 
 ![][2]
 
-<h2><a id="coexist"></a>Koexistenz von RBAC mit Abonnement-Co-Administratoren</h2>
+## Koexistenz von RBAC mit Abonnement-Co-Administratoren
 
 Abonnementadministrator und -Co-Administratoren erhalten weiterhin Vollzugriff auf Azure-Portale und Verwaltungs-APIs. Im RBAC-Modell wird ihnen die Besitzerrolle auf Abonnementebene zugewiesen.  
-Das neue RBAC-Modell wird jedoch nur durch die APIs des Azure-Vorschauportals und des Azure Resource Manager unterstützt. Benutzer und Dienste, denen RBAC-Rollen zugewiesen wurden, können nicht auf das Azure-Verwaltungsportal oder auf die Service Management-APIs zugreifen. Wenn ein Benutzer über das Azure-Vorschauportal zur Besitzerrolle eines Abonnements hinzugefügt wird, ist er nicht automatisch Co-Administrator eines Abonnements im normalen Azure-Portal.
+Das neue RBAC-Modell wird jedoch nur durch die APIs des Azure-Vorschauportals und des Azure-Ressourcen-Managers unterstützt. Benutzer und Dienste, denen RBAC-Rollen zugewiesen wurden, können nicht auf das Azure-Verwaltungsportal oder auf die Service Management-APIs zugreifen. Wenn ein Benutzer über das Azure-Vorschauportal zur Besitzerrolle eines Abonnements hinzugefügt wird, ist er nicht automatisch Co-Administrator eines Abonnements im normalen Azure-Portal.
 
 Wenn Sie einem Benutzer Zugriff auf eine Azure-Ressource gewähren möchten, die noch nicht zur Verwaltung im Azure-Vorschauportal zur Verfügung steht, fügen Sie den Benutzer über das normale Azure-Verwaltungsportal zu den Abonnement-Co-Administratoren hinzu. Die Verwaltung der Ressourcen "Service Bus" und "Cloud Services" wird noch nicht für die Verwendung mit RBAC unterstützt.
 
-<h2><a id="authmgmt"></a>Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge</h2>
+## Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge
 
-Die rollenbasierte Zugriffssteuerung wird nur für Verwaltungsvorgänge von Azure-Ressourcen im Azure-Vorschauportal und in den Azure Resource Manager-APIs unterstützt. Über RBAC können nicht alle Vorgänge auf Datenebene für Azure-Ressourcen autorisiert werden. Während das Erstellen/Lesen/Aktualisieren/Löschen von Speicherkonten über RBAC gesteuert werden kann, lassen sich dieselben Vorgänge für Blobs oder Tabellen in einem Speicherkonto noch nicht über RBAC steuern. Ebenso kann das Erstellen/Lesen/Aktualisieren/Löschen einer SQL-Datenbank über RBAC gesteuert werden, während sich dieselben Vorgänge noch nicht für SQL-Tabellen in einer Datenbank über RBAC steuern lassen.
+Die rollenbasierte Zugriffssteuerung wird nur für Verwaltungsvorgänge von Azure-Ressourcen im Azure-Vorschauportal und in den Azure-Ressourcen-Manager-APIs unterstützt. Über RBAC können nicht alle Vorgänge auf Datenebene für Azure-Ressourcen autorisiert werden. Während das Erstellen/Lesen/Aktualisieren/Löschen von Speicherkonten über RBAC gesteuert werden kann, lassen sich dieselben Vorgänge für Blobs oder Tabellen in einem Speicherkonto noch nicht über RBAC steuern. Ebenso kann das Erstellen/Lesen/Aktualisieren/Löschen einer SQL-Datenbank über RBAC gesteuert werden, während sich dieselben Vorgänge noch nicht für SQL-Tabellen in einer Datenbank über RBAC steuern lassen.
 
-<h2><a id="addremoveaccess"></a>Hinzufügen und Entfernen von Zugriffsrechten</h2>
+## Hinzufügen und Entfernen von Zugriffsrechten
 
 Im Folgenden wird anhand eines Beispiels erklärt, wie ein Ressourcenbesitzer in einer Organisation den Zugriff auf eine Ressource verwalten kann. In diesem Szenario arbeiten mehrere Personen an verschiedenen Test- und Produktionsprojekten, die mithilfe von Azure-Ressourcen erstellt wurden. Die Zugriffsberechtigung sollte nach bewährten Methoden vergeben werden. Dabei sollten Benutzer auf alle erforderlichen, jedoch nicht auf zusätzliche Ressourcen zugreifen können. Machen Sie möglichst von den bereits eingerichteten Prozessen und Tools Gebrauch, um die im lokalen Active Directory verwalteten Sicherheitsgruppen nutzen zu können. In den folgenden Abschnitten wird die Zugriffsvergabe auf die zuvor erwähnten Ressourcen beschrieben:
 
@@ -107,7 +78,7 @@ Im Folgenden wird anhand eines Beispiels erklärt, wie ein Ressourcenbesitzer in
 * [Zugriff entfernen](#remove)
 * [Zugriff für externe Benutzer hinzufügen und entfernen](#addremoveext)
 
-<h3><a id="add"></a>Zugriff hinzufügen</h2>
+<h3><a id="add"></a>Zugriff hinzufügen</h3>
 
 Es folgt eine Zusammenfassung der Zugriffsanforderungen und wie diese in Azure festgelegt werden.
 
@@ -122,7 +93,7 @@ Zunächst wird für alle Ressourcen eines Abonnements Lesezugriff hinzugefügt. 
 
 ![][3] 
 
-Klicken Sie auf Name des Abonnements * ** > Leser > Hinzufügen**. Wählen Sie aus der Liste mit Benutzern und Gruppen den Namen der Active Directory-Gruppe aus, oder geben Sie ihn ein.
+Klicken Sie auf *name of your subscription*** > Leser > Hinzufügen**. Wählen Sie aus der Liste mit Benutzern und Gruppen den Namen der Active Directory-Gruppe aus, oder geben Sie ihn ein.
 
 ![][4]
 
@@ -130,7 +101,7 @@ Fügen Sie dasselbe Team zur Rolle "Mitwirkender" der Test-Ressourcengruppe hinz
 
 ![][5]
 
-Um Brock zur Rolle "Mitwirkender" der Prod-Ressourcengruppe hinzuzufügen, klicken Sie auf die Ressourcengruppe, dann auf **Mitwirkender > Hinzufügen**, und geben Sie den Namen "Brock" ein. 
+Um Brock zur Rolle "Mitwirkender" der Prod-Ressourcengruppe hinzuzufügen, klicken Sie auf die Ressourcengruppe, dann auf **Mitwirkender > Hinzufügen** und geben Sie den Namen "Brock" ein. 
 
 ![][6]
 
@@ -140,9 +111,9 @@ Rollenzuweisungen können auch mit dem Microsoft Azure-Modul für Windows PowerS
 
 Weitere Informationen über das Hinzufügen und Entfernen von Zugriffsrechten mit Windows PowerShell finden Sie unter [Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/documentation/articles/role-based-access-control-powershell/). 
 
-<h3><a id="remove"></a>Zugriff entfernen</h2>
+<h3><a id="remove"></a>Zugriff entfernen</h3>
 
-Zugriffsberechtigungen können einfach wieder entfernt werden. Angenommen, Sie möchten einen Benutzer namens Bernd Ahrend von der Leserolle der TestDB-Ressourcengruppe entfernen. Öffnen Sie das Ressourcengruppenfenster, und klicken Sie auf **Leser > Bernd Ahrend > Entfernen**.
+Zugriffsberechtigungen können einfach wieder entfernt werden. Angenommen, Sie möchten einen Benutzer namens Bernd Ahrend von der Leserolle der TestDB-Ressourcengruppe entfernen. Öffnen Sie das Ressourcengruppenfenster und klicken Sie auf **Leser > Bernd Ahrend > Entfernen**.
 
 ![][7]
 
@@ -150,7 +121,7 @@ Im folgenden Beispiel wird der Benutzer Bernd Ahrend über das Remove-AzureRoleA
 
 	PS C:\> Remove-AzureRoleAssignment -Mail badams@contoso.com -RoleDefinitionName Reader -ResourceGroupName TestDB
 
-<h3><a id="addremoveext"></a>Zugriff für externe Benutzer hinzufügen und entfernen</h2>
+<h3><a id="addremoveext"></a>Zugriff für externe Benutzer hinzufügen und entfernen</h3>
 
 Die Registerkarte **Konfigurieren** eines Verzeichnisses enthält Optionen zur Zugriffssteuerung für externe Benutzer. Diese Optionen können nur in der Benutzeroberfläche (es gibt keine Windows PowerShell- oder API-Methode) im vollständigen Azure-Portal durch einen globalen Verzeichnisadministrator geändert werden. 
 Um die Registerkarte **Konfigurieren** im vollständigen Azure-Portal zu öffnen, klicken Sie auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses.
@@ -169,7 +140,7 @@ In der Standardeinstellung können Gäste den Verzeichnisinhalt nicht auflisten 
 
 Durch die Anzeige eingeschränkter Informationen zu einem Benutzer oder einer Gruppe können Gäste andere Personen einladen und Informationen zu Personen anzeigen, mit denen sie zusammenarbeiten.  
 
-Gehen Sie wie folgt vor, um Zugriff für einen externen Benutzer hinzuzufügen. Wir fügen einen externen Benutzer zur selben Leserolle für die TestDB-Ressourcengruppe hinzu, sodass der Benutzer beim Beheben eines Fehlers helfen kann. Öffnen Sie das Ressourcengruppenfenster, klicken Sie auf **Leser > Hinzufügen > Einladen**, und geben Sie die E-Mail-Adresse des hinzuzufügenden Benutzers ein.
+Gehen Sie wie folgt vor, um Zugriff für einen externen Benutzer hinzuzufügen. Wir fügen einen externen Benutzer zur selben Leserolle für die TestDB-Ressourcengruppe hinzu, sodass der Benutzer beim Beheben eines Fehlers helfen kann. Öffnen Sie das Ressourcengruppenfenster, klicken Sie auf **Leser > Hinzufügen > Einladen** und geben Sie die E-Mail-Adresse des hinzuzufügenden Benutzers ein. 
 
 ![][9]
 
@@ -177,23 +148,840 @@ Beim Hinzufügen eines externen Benutzers wird im Verzeichnis ein Gastkonto erst
 
 Sie können einen Gast von jeder Rolle entfernen, so als würden Sie einen Benutzer entfernen. Wenn Sie einen Gast von einer Rolle einer Ressource entfernen, wird er nicht aus dem Verzeichnis entfernt. 
  
-<h2><a id="knownissues"></a>Bekannte Probleme bei der Verwendung der rollenbasierten Zugriffssteuerung</h2>
+## Bekannte Probleme bei der Verwendung der rollenbasierten Zugriffssteuerung
 
 Wenn Sie während der Testphase bei der Verwendung der rollenbasierten Zugriffssteuerung auf Probleme stoßen, finden Sie unter [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/documentation/articles/role-based-access-control-troubleshooting/) bekannte Probleme, die mit dem vorliegenden Problem in Zusammenhang stehen können.
 
 
-<h2><a id="feedback"></a>Feedback geben</h2>
+## Integrierte Rollen
 
-Testen Sie Azure RBAC, und senden Sie uns [feedback](http://aka.ms/azurerbacfeedback). 
+Die rollenbasierte Zugriffssteuerung von Azure umfasst die folgenden integrierten Rollen, die Benutzer, Gruppen und Diensten zugewiesen werden können. Die Definition integrierter Rollen kann nicht geändert werden. In einer zukünftigen Version von Azure RBAC können Sie benutzerdefinierte Rollen definieren. Dazu können Sie aus einer Liste mit verfügbaren Aktionen eine Reihe an Aktionen auswählen, die an Azure-Ressourcen durchgeführt werden dürfen.
+
+Klicken Sie auf den entsprechenden Link, um die **Aktions-** und die **Nicht-Aktions-**Eigenschaften einer Rollendefinition anzuzeigen. Die **Aktions**-Eigenschaft gibt die zulässigen Aktionen für Azure-Ressourcen an. Für Aktionszeichenfolgen dürfen Platzhalter verwendet werden. Die **Nicht-Aktions**-Eigenschaft einer Rollendefinition gibt die Aktionen an, die von den zulässigen Aktionen ausgeschlossen werden müssen. 
 
 
-<h2><a id="next"></a>Nächste Schritte</h2>
+Rollenname | Beschreibung  	
+------------- | -------------  
+[Mitwirkender des API-Verwaltungsdienstes](#APIMgmt) | Ermöglicht Ihnen die Verwaltung des API-Verwaltungsdienstes, aber nicht den Zugriff darauf.
+[Mitwirkender der Application Insights-Komponente](#AppInsights) | Ermöglicht Ihnen die Verwaltung der Application Insights-Komponenten, aber nicht den Zugriff darauf.
+[Mitwirkender von BizTalk](#BizTalk) | Ermöglicht Ihnen die Verwaltung der BizTalk-Dienste, aber nicht den Zugriff darauf.
+[Mitwirkender von ClearDB-MySQL-DB](#ClearDB) | Ermöglicht Ihnen die Verwaltung von ClearDB-MySQL-Datenbanken, aber nicht den Zugriff darauf.
+[Mitwirkender](#Contributor) | Mitwirkende können alles außer Zugriff verwalten.
+[Mitwirkender von Data Factory](#DataFactory) | Ermöglicht Ihnen die Verwaltung der Data Factories, aber nicht den Zugriff darauf.
+[Mitwirkender von DocumentDB-Konto](#DocDBContrib) | Ermöglicht Ihnen die Verwaltung von DocumentDB-Konten, aber nicht den Zugriff darauf.
+[Mitwirkender von Intelligent Systems-Konto](#IntelliSysContrib) | Ermöglicht Ihnen die Verwaltung von Intelligent Systems-Konten, aber nicht den Zugriff darauf.
+[Mitwirkender von NewRelic APM-Konto](#NewRelicContrib) | Ermöglicht Ihnen die Verwaltung von New Relic Application Performance Management-Konten und -Anwendungen, aber nicht den Zugriff darauf.
+[Besitzer](#Owner) | Besitzer können alles, einschließlich den Zugriff, verwalten.
+[Leser](#Reader) | Leser können alle Dateien anzeigen, jedoch keine Änderungen vornehmen.
+[Mitwirkender von Redis-Cache](#Redis) | Ermöglicht Ihnen die Verwaltung von Redis-Caches, aber nicht den Zugriff darauf.
+[Mitwirkender von SQL DB](#SQLDBContrib) | Ermöglicht Ihnen die Verwaltung von SQL-Datenbanken, aber nicht den Zugriff darauf. Sie können nicht auch ihre sicherheitsbezogenen Richtlinien oder ihre übergeordneten SQL-Server verwalten.
+[SQL-Sicherheits-Manager](#SQLSecMgr) | Ermöglicht Ihnen die Verwaltung der Richtlinien mit Sicherheitsbezug von SQL-Servern und -Datenbanken, aber nicht den Zugriff darauf.
+[Mitwirkender von SQL Server](#SQLSrvContrib) | Ermöglicht Ihnen die Verwaltung von SQL-Servern und -Datenbanken, aber nicht den Zugriff darauf und nicht ihrer Richtlinien mit Sicherheitsbezug.
+[Mitwirkender von Zeitplanungsauftragssammlung](#SchedContrib) | Ermöglicht Ihnen die Verwaltung von Zeitplanungsauftragssammlungen, aber nicht den Zugriff darauf.
+[Mitwirkender von Suchdienst](#SearchContrib) | Ermöglicht Ihnen die Verwaltung der Suchdienste, aber nicht den Zugriff darauf.
+[Mitwirkender von Speicherkonto](#StorageContrib) | Ermöglicht Ihnen die Verwaltung von Speicherkonten, aber nicht den Zugriff darauf.
+[Benutzerzugriffsadministrator](#UserAccessAdmin) | Ermöglicht Ihnen die Verwaltung von Benutzerzugriffen auf Azure-Ressourcen.
+[Mitwirkender von virtuellen Computern](#VMContrib) | Ermöglicht Ihnen die Verwaltung von virtuellen Computern, aber nicht den Zugriff darauf und nicht die Verwaltung des virtuellen Netzwerks oder Speicherkontos, mit dem sie verbunden sind.
+[Mitwirkender von virtuellem Netzwerk](#VNetContrib) | Ermöglicht Ihnen die Verwaltung von virtuellen Netzwerken, aber nicht den Zugriff darauf.
+[Mitwirkender von Webplan](#WebPlanContrib) | Ermöglicht Ihnen die Verwaltung von Webplänen, aber nicht den Zugriff darauf.
+[Mitwirkender von Website](#WebsiteContrib) | Ermöglicht Ihnen die Verwaltung von Websites (nicht Webplänen), aber nicht den Zugriff darauf.
+
+
+<h3><a id="APIMgmt"></a>Mitwirkender des API-Verwaltungsdienstes</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.ApiManagement/Services/*</td>
+<td>Erstellen und Verwalten von API-Verwaltungsdiensten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="AppInsights"></a>Mitwirkender der Application Insights-Komponente</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Insights/components/*</td>
+<td>Erstellen und Verwalten von Insights-Komponenten</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/webtests/*</td>
+<td>Erstellen und Verwalten von Webtests</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="BizTalk"></a>Mitwirkender von BizTalk</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.BizTalkServices/BizTalk/*</td>
+<td>Erstellen und Verwalten von BizTalk-Diensten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="ClearDB"></a>Mitwirkender von ClearDB-MySQL-DB</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>successbricks.cleardb/databases/*</td>
+<td>Erstellen und Verwalten von ClearDB MySQL-Datenbanken</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="Contributor"></a>Mitwirkender</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>*</td>
+<td>Erstellen und Verwalten von Ressourcen aller Typen</td>
+</tr>
+<tr>
+<th colspan="2">Nicht-Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/Write</td>
+<td>Rollen und Rollenzuweisungen können nicht erstellt werden. </td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/Delete</td>
+<td>Rollen und Rollenzuweisungen können nicht gelöscht werden.</td>
+</tr>
+</table>
+
+<h3><a id="DataFactory"></a>Mitwirkender von Data Factory</h3>
+
+<table style=width:100%">
+<tr>
+<td>Microsoft.DataFactory/dataFactories/*</td>
+<td>Erstellen und Verwalten von Data Factories</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="DocDBContrib"></a>Mitwirkender von DocumentDB-Konto</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.DocumentDb/databaseAccounts/*</td>
+<td>Erstellen und Verwalten von DocumentDB-Konten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="IntelliSysContrib"></a>Mitwirkender von Intelligent Systems-Konto</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.IntelligentSystems/accounts/*</td>
+<td>Erstellen und Verwalten von Intelligent Systems-Konten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="NewRelicContrib"></a>Mitwirkender von NewRelic APM-Konto</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>NewRelic.APM/accounts/*</td>
+<td>Erstellen und Verwalten von NewRelic Application Performance Management-Konten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="Owner"></a>Besitzer</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>*</td>
+<td>Erstellen und Verwalten von Ressourcen aller Typen</td>
+</tr>
+</table>
+
+<h3><a id="Reader"></a>Leser</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>*/Lesen</td>
+<td>Lesen der Ressourcen aller Typen. Geheime Schlüssel können jedoch nicht gelesen werden.</td>
+</tr>
+</table>
+
+<h3><a id="Redis"></a>Mitwirkender von Redis-Cache</h3>
+
+<table style=width:100%">
+<tr>
+<td>Microsoft.Cache/redis/*</td>
+<td>Erstellen und Verwalten von Redis-Caches</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="SQLDBContrib"></a>Mitwirkender von SQL DB</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/read</td>
+<td>Lesen von SQL Server</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/*</td>
+<td>Erstellen und Verwalten von SQL-Datenbanken</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+<tr>
+<th colspan="2">Nicht-Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/auditingPolicies/*</td>
+<td>Überwachungsrichtlinien von SQL-Datenbanken können nicht verwaltet werden.</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/connectionPolicies/*</td>
+<td>Verbindungsrichtlinien von SQL-Datenbanken können nicht verwaltet werden.</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/dataMaskingPolicies/*</td>
+<td>Maskierungsrichtlinien von SQL-Datenbanken können nicht verwaltet werden.</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/securityMetrics/*</td>
+<td>Sicherheitsmetriken von SQL-Datenbanken können nicht verwaltet werden.</td>
+</tr>
+</table>
+
+<h3><a id="SQLSecMgr"></a>SQL-Sicherheits-Manager</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/read</td>
+<td>Lesen von SQL Server</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/auditingPolicies/*</td>
+<td>Erstellen und Verwalten von SQL Server-Überwachungsrichtlinien</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/read</td>
+<td>Lesen von SQL-Datenbanken</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/auditingPolicies/*</td>
+<td>Erstellen und Verwalten von Überwachungsrichtlinien von SQL-Datenbanken</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/connectionPolicies/*</td>
+<td>Erstellen und Verwalten von Verbindungsrichtlinien von SQL-Datenbanken</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/dataMaskingPolicies/*</td>
+<td>Erstellen und Verwalten von Maskierungsrichtlinien von SQL-Datenbanken</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/securityMetrics/*</td>
+<td>Erstellen und Verwalten von Sicherheitsmetriken von SQL-Datenbanken</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="SQLSrvContrib"></a>Mitwirkender von SQL Server</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.ApiManagement/Services/*</td>
+<td>Erstellen und Verwalten von API-Verwaltungsdiensten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+<tr>
+<th colspan="2">Nicht-Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/auditingPolicies/*</td>
+<td>Überwachungsrichtlinien von SQL Server können nicht verwaltet werden.</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/auditingPolicies/*</td>
+<td>Überwachungsrichtlinien von SQL-Datenbanken können nicht verwaltet werden.</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/connectionPolicies/*</td>
+<td>Verbindungsrichtlinien von SQL-Datenbanken können nicht verwaltet werden.</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/dataMaskingPolicies/*</td>
+<td>Maskierungsrichtlinien von SQL-Datenbanken können nicht verwaltet werden.</td>
+</tr>
+<tr>
+<td>Microsoft.Sql/servers/databases/securityMetrics/*</td>
+<td>Sicherheitsmetriken von SQL-Datenbanken können nicht verwaltet werden.</td>
+</tr>
+</table>
+
+<h3><a id="SchedContrib"></a>Mitwirkender von Zeitplanungsauftragssammlung</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Scheduler/jobcollections/*</td>
+<td>Erstellen und Verwalten von Zeitplanungsauftragssammlung</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="SearchContrib"></a>Mitwirkender von Suchdienst</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Search/searchServices/*</td>
+<td>Erstellen und Verwalten von Suchdiensten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="StorageContrib"></a>Mitwirkender von Speicherkonto</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.ClassicStorage/storageAccounts/*</td>
+<td>Erstellen und Verwalten von Speicherkonten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="UserAccessAdmin"></a>Benutzerzugriffsadministrator</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>*/Lesen</td>
+<td>Lesen der Ressourcen aller Typen</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*</td>
+<td>Erstellen und Verwalten von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="VMContrib"></a>Mitwirkender von virtuellen Computern</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.ClassicStorage/storageAccounts/read</td>
+<td>Lesen von Speicherkonten</td>
+</tr>
+<tr>
+<td>Microsoft.ClassicStorage/storageAccounts/listKeys/action</td>
+<td>Abrufen von Speicherkontoschlüsseln</td>
+</tr>
+<tr>
+<td>Microsoft.ClassicNetwork/virtualNetworks/read</td>
+<td>Lesen von virtuellen Netzwerken</td>
+</tr>
+<tr>
+<td>Microsoft.ClassicNetwork/virtualNetworks/join/action</td>
+<td>Teilnahme an virtuellen Netzwerken</td>
+</tr>
+<tr>
+<td>Microsoft.ClassicNetwork/reservedIps/read</td>
+<td>Lesen von reservierten IP-Adressen</td>
+</tr>
+<tr>
+<td>Microsoft.ClassicNetwork/reservedIps/link/action</td>
+<td>Link zu reservierten IP-Adressen</td>
+</tr>
+<tr>
+<td>Microsoft.ClassicCompute/domainNames/*</td>
+<td>Erstellen und Verwalten von Cloud-Diensten</td>
+</tr>
+<tr>
+<td>Microsoft.ClassicCompute/virtualMachines/*</td>
+<td>Erstellen und Verwalten von virtuellen Computern</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="VNetContrib"></a>Mitwirkender von virtuellem Netzwerk</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.ClassicNetwork/virtualNetworks/*</td>
+<td>Erstellen und Verwalten von virtuellen Netzwerken</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="WebPlanContrib"></a>Mitwirkender von Webplan</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Web/serverFarms/*</td>
+<td>Erstellen und Verwalten von Webplänen</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+<h3><a id="WebsiteContrib"></a>Mitwirkender von Website</h3>
+
+<table style=width:100%">
+<tr>
+<th colspan="2">Aktionen</th>
+</tr>
+<tr>
+<td>Microsoft.Web/serverFarms/read</td>
+<td>Lesen von Webplänen</td>
+</tr>
+<tr>
+<td>Microsoft.Web/serverFarms/join/action</td>
+<td>Teilnahme an Webplänen</td>
+</tr>
+<tr>
+<td>Microsoft.Web/sites/*</td>
+<td>Erstellen und Verwalten von Websites</td>
+</tr>
+<tr>
+<td>Microsoft.Web/certificates/*</td>
+<td>Erstellen und Verwalten von Websitezertifikaten</td>
+</tr>
+<tr>
+<td>Microsoft.Authorization/*/read</td>
+<td>Lesen von Rollen und Rollenzuweisungen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/read</td>
+<td>Lesen von Ressourcengruppen</td>
+</tr>
+<tr>
+<td>Microsoft.Resources/subscriptions/resourceGroups/deployments/*</td>
+<td>Erstellen und Verwalten von Bereitstellungen der Ressourcengruppe</td>
+</tr>
+<tr>
+<td>Microsoft.Insights/alertRules/*</td>
+<td>Erstellen und Verwalten von Warnungsregeln</td>
+</tr>
+<tr>
+<td>Microsoft.Support/*</td>
+<td>Erstellen und Verwalten von Supporttickets</td>
+</tr>
+</table>
+
+
+## Feedback geben
+
+Wir bitten Sie, Azure RBAC zu testen und uns [Feedback](http://aka.ms/azurerbacfeedback) zu senden. 
+
+
+## Nächste Schritte
 
 Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der rollenbasierten Zugriffssteuerung: 
 
 + [Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/documentation/articles/role-based-access-control-powershell/)
-+ [Verwalten der rollenbasierten Zugriffssteuerung mit xplat-cli](http://azure.microsoft.com/documentation/articles/role-based-access-control-xplat-cli/)
-+ [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/documentation/articles/role-based-access-control-troubleshooting/)
++ [Verwalten der rollenbasierten Zugriffssteuerung mit XPLAT CLI](http://azure.microsoft.com/documentation/articles/role-based-access-control-xplat-cli/)
++ [Problembehandlung bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/documentation/articles/role-based-access-control-troubleshooting/)
 + [Azure Active Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx)
 + [Azure Active Directory Premium und Basic](http://msdn.microsoft.com/library/azure/dn532272.aspx)
 + [Verknüpfung von Azure-Abonnements mit Azure AD](http://msdn.microsoft.com/library/azure/dn629581.aspx)
@@ -215,4 +1003,4 @@ Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der r
 
 
 
-<!--HONumber=46--> 
+<!--HONumber=47-->

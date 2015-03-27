@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Vergleich von Azure-Websites, Cloud Services und Virtual Machines" 
 	description="Erfahren Sie, wann Sie Azure-Websites, Cloud Services und Virtual Machines zum Hosten von Webanwendungen einsetzen." 
 	services="web-sites, virtual-machines, cloud-services" 
@@ -16,13 +16,13 @@
 	ms.date="09/24/2014" 
 	ms.author="tdykstra"/>
 
-# Vergleich von Azure-Websites, Cloud-Diensten und Virtual Machines
+# Vergleich von Azure-Websites, Cloud Services und Virtual Machines
 
 ## Übersicht
 
 Azure bietet verschiedene Möglichkeiten zum Hosten von Websites: [Azure-Websites][], [Cloud-Dienste][] und [Virtual Machines][]. Dieser Artikel unterstützt Sie dabei, die entsprechenden Optionen erfassen und die richtige Wahl für Ihre Webanwendung treffen zu können.
 
-Azure-Websites sind die beste Wahl für die meisten Web-Apps. Die Bereitstellungs- und die Verwaltungsfunktionen sind in die Plattform integriert. Sites können rasch skaliert werden, um umfangreiche Datenaufkommen zu bewältigen. Außerdem bieten der integrierte Lastenausgleich und der Traffic Manager eine hohe Verfügbarkeit. Sie können vorhandene Sites mit einem [Online-Migrationstool](https://www.migratetoazure.net/)einfach nach Azure Websites verschieben, eine Open Source-App aus der Web App Gallery verwenden oder eine neue Site mit den gewünschten Framework und Tools erstellen. Die [Webauftragsfunktion][] erleichtert das Hinzufügen der Hintergrund-Auftragsverarbeitung zur App. 
+Azure-Websites sind die beste Wahl für die meisten Web-Apps. Die Bereitstellungs- und die Verwaltungsfunktionen sind in die Plattform integriert. Sites können rasch skaliert werden, um umfangreiche Datenaufkommen zu bewältigen. Außerdem bieten der integrierte Lastenausgleich und der Traffic Manager eine hohe Verfügbarkeit. Sie können bestehende Sites mit einem [Online-Migrationstool](https://www.migratetoazure.net/) problemlos in Azure-Websites verschieben, eine Open Source-App aus der Web App Gallery verwenden oder eine neue Site mithilfe des Frameworks und der Tools Ihrer Wahl erstellen. Die [Webauftragsfunktion][] erleichtert das Hinzufügen der Hintergrund-Auftragsverarbeitung zur App. 
 
 Wenn Sie mehr Kontrolle über die Webserver-Umgebung benötigen, wie etwa die Fähigkeit eines Fernzugriffs auf den Server oder der Konfiguration von Server-Startaufgaben, sind Azure-Cloud-Dienste üblicherweise die beste Option.
 
@@ -32,13 +32,7 @@ Das folgende Diagramm veranschaulicht den relativen Grad der Steuerung im Gegens
 
 ![ChoicesDiagram][ChoicesDiagram]
 
-## Inhaltsverzeichnis
-
-- [Szenarien und Empfehlungen](#scenarios)
-- [Funktionsvergleiche](#features)
-- [Nächste Schritte](#nextsteps)
-
-##<a name="scenarios"></a>Szenarien und Empfehlungen
+## <a name="scenarios"></a>Szenarien und Empfehlungen
 
 Im Folgenden sind einige Anwendungsszenarien mit Empfehlungen dahingehend aufgeführt, welche Azure-Webhostingoption jeweils am geeignetsten ist.
 
@@ -64,7 +58,7 @@ Azure-Websites stellen eine hervorragende Lösung für komplexe Geschäftsanwend
 * Erlangen einer ISO-, SOC2- und PCI-Konformität.
 * Integrieren in Active Directory
 
-### <a id="corp"></a> Ich benötige eine zuverlässige Möglichkeit, um meine Unternehmenswebsite zu hosten, die optimal skaliert und global ausgerichtet ist. 
+### <a id="corp"></a> Ich benötige eine zuverlässige Möglichkeit, um meine Unternehmenswebsite zu hosten, die optimal skaliert und global ausgerichtet ist.
 
 Azure-Websites stellen eine hervorragende Lösung zum Hosten von Unternehmens-Websites dar. Sie ermöglichen ein rasches und problemloses Skalieren der Websites, um die Anforderungen in einem globalen Netzwerk von Datencentern zu erfüllen. Sie bieten lokalen Zugriff, eine entsprechende Fehlertoleranz und eine intelligente Traffic-Verwaltung. Erstklassige Verwaltungstools stehen Ihnen auf einer Plattform zur Verfügung und ermöglichen Ihnen rasch und problemlos Einblicke in den Zustand und das Datenaufkommen der Website. Azure-Websites stellen drei 9's-SLAs bereit und ermöglichen es Ihnen, folgende Aktionen vorzunehmen:
 
@@ -77,7 +71,7 @@ Azure-Websites stellen eine hervorragende Lösung zum Hosten von Unternehmens-We
 
 ### <a id="iis6"></a> Ich verfüge über eine IIS6-Anwendung, die unter Windows Server 2003 ausgeführt wird.
 
-Mit Azure-Websites lassen sich die mit dem Migrieren von älteren IIS6-Anwendungen verbundenen Infrastrukturkosten ohne Weiteres vermeiden. Microsoft hat [benutzerfreundliche Migrationstools und detaillierte Migrationsanleitungen](https://www.movemetowebsites.net/) erstellt, mit denen Sie die Kompatibilität überprüfen und alle vorzunehmenden Änderungen identifizieren können. Die Integration in Visual Studio, TFS oder allgemeine CMS-Tools erleichtert die Bereitstellung von IIS6-Anwendungen direkt in der Cloud. Sobald eine Bereitstellung erfolgt ist, stellt das Azure-Verwaltungsportal stabile Verwaltungstools zur Verfügung. Mit diesen können Sie eine Skalierung nach unten oder oben vornehmen, um je nach Bedarf Kosten zu verwalten oder Anforderungen zu erfüllen. Mit dem Migrationstool können Sie folgende Aktionen vornehmen:
+Mit Azure-Websites lassen sich die mit dem Migrieren von älteren IIS6-Anwendungen verbundenen Infrastrukturkosten ohne Weiteres vermeiden. Microsoft hat [einfach zu verwendende Migrationstools und eine detaillierte Migrationsanleitung](https://www.movemetowebsites.net/) erstellt, mit deren Hilfe Sie die Kompatibilität überprüfen und etwaige vorzunehmende Änderungen identifizieren können. Die Integration in Visual Studio, TFS oder allgemeine CMS-Tools erleichtert die Bereitstellung von IIS6-Anwendungen direkt in der Cloud. Sobald eine Bereitstellung erfolgt ist, stellt das Azure-Verwaltungsportal stabile Verwaltungstools zur Verfügung. Mit diesen können Sie eine Skalierung nach unten oder oben vornehmen, um je nach Bedarf Kosten zu verwalten oder Anforderungen zu erfüllen. Mit dem Migrationstool können Sie folgende Aktionen vornehmen:
 
 * Schnelles und einfaches Migrieren der Windows Server 2003 Legacy-Webanwendungen zur Cloud.
 * Optionales Verlassen der beigefügten lokalen SQL-Datenbank, um eine Hybridanwendung zu erstellen. 
@@ -97,9 +91,9 @@ Azure-Websites sind eine tolle Lösung für dieses Szenario, da Sie mit einer ko
 Für Webentwickler und -designer lassen sich Azure-Websites leicht in eine Reihe von Frameworks und Tools integrieren. Sie umfassen eine Bereitstellungsunterstützung für Git und FTP und bieten eine nahtlose Integration in Tools und Dienste wie Visual Studio oder SQL-Datenbank. Websites bieten folgende Möglichkeiten:
 
 - Verwenden von Befehlszeilentools für [automatisierte Aufgaben][scripting].
-- Arbeiten mit gängigen Sprachen wie [.Net][.NET], [PHP][], [Node.js][Node.js] und [Python][].
+- Arbeiten mit gängigen Sprachen wie [.Net][dotnet], [PHP][], [Node.js][nodejs] und [Python][].
 - Wählen drei verschiedener Skalierungsebenen für die Skalierung auf sehr hohe Kapazitäten
-- Integrieren in andere Azure-Dienste, wie [SQL-Datenbank][SQL-Datenbank], [Service Bus][servicebus] und [Storage][], oder Partnerangebote aus dem [Azure Store][azurestore], beispielsweise MySQL und MongoDB.
+- Integrieren in andere Azure-Dienste, wie [SQL-Datenbank][sqldatabase], [Service Bus][servicebus] und [Storage][], oder Partnerangebote aus dem [Azure Store][azurestore], beispielsweise MySQL und MongoDB.
 - Integrieren in Tools wie Visual Studio, Git, WebMatrix, WebDeploy, TFS und FTP
 
 ### <a id="multitier"></a>Ich migriere meine Webanwendung mit mehreren Ebenen und einem Web-Front-End zur Cloud.
@@ -121,7 +115,7 @@ Wenn Ihre Anwendung komplexe Installation oder Konfiguration von Software und Be
 
 Wenn Ihr Open Source-Framework auf den Websites unterstützt wird, werden die von Ihrer Anwendung benötigten Sprachen und Frameworks automatisch für Sie konfiguriert. Websites bieten die folgenden Funktionen:
 
-- Verwenden vieler gängiger Open Source-Sprachen wie [.NET][.NET], [PHP][], [Node.js][Node.js] und [Python][]. 
+- Verwenden vieler gängiger Open Source-Sprachen wie [.NET][dotnet], [PHP][], [Node.js][nodejs] und [Python][]. 
 - Einrichten von WordPress, Drupal, Umbraco, DNN und vielen weiteren Webanwendungen von Drittanbietern 
 - Migrieren vorhandener Anwendungen oder Erstellen einer neuen mit der Web App Gallery 
 
@@ -129,7 +123,7 @@ Wenn Ihr Open Source-Framework nicht auf den Websites unterstützt wird, können
 
 ### <a id="lob"></a>Ich verfüge über eine Branchenanwendung, die mit dem Unternehmensnetzwerk verbunden sein muss.
 
-Wenn Sie eine Branchenanwendung erstellen möchten, benötigt Ihre Website möglicherweise direkten Zugriff auf Dienste oder Daten in Ihrem Unternehmensnetzwerk. Dies ist auf Websites, in Cloud-Diensten oder auf virtuellen Computern möglich, die den [virtuellen Azure-Netzwerkdienst](/de-de/services/virtual-network/)verwenden. Auf Websites können Sie die neue [VNET-Integrationsfunktion](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)verwenden, mit der Azure-Anwendungen wie im eigenen Unternehmensnetzwerk ausgeführt werden können.
+Wenn Sie eine Branchenanwendung erstellen möchten, benötigt Ihre Website möglicherweise direkten Zugriff auf Dienste oder Daten in Ihrem Unternehmensnetzwerk. Dies ist auf Websites, in Cloud-Diensten oder auf virtuellen Computern möglich, die den [virtuellen Azure-Netzwerkdienst](/services/virtual-network/) verwenden. Auf Websites können Sie die neue [VNET-Integrationsfunktion](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) verwenden. Die Funktion ermöglicht eine Ausführung Ihrer Azure-Anwendungen, als würden sich diese in Ihrem Unternehmensnetzwerk befinden.
 
 ### <a id="mobile"></a>Ich möchte eine REST-API oder einen Webdienst für mobile Clients hosten.
 
@@ -140,9 +134,9 @@ HTTP-basierte Webdienste ermöglichen die Unterstützung vieler unterschiedliche
 - Erreichen von SLA zur Verfügbarkeit mit einer einzelnen Instanz oder horizontale Skalierung auf mehrere dedizierte Computer 
 - Verwenden der veröffentlichten Website, um für HTTP-Clients REST-APIs bereitzustellen, auch für mobile Clients
 
-##<a name="features"></a>Funktionsvergleiche
+## <a name="features"></a>Funktionsvergleiche
 
-In der folgenden Tabelle werden die Funktionen von Websites, Cloud Services und Virtual Machines verglichen, um Sie bei Ihrer Wahl zu unterstützen. Aktuelle Informationen über die Vereinbarung zum Servicelevel (SLA) in Bezug auf die jeweilige Option finden Sie unter [Azure-Vereinbarung zum Servicelevel](/de-de/support/legal/sla/).
+In der folgenden Tabelle werden die Funktionen von Websites, Cloud Services und Virtual Machines verglichen, um Sie bei Ihrer Wahl zu unterstützen. Aktuelle Informationen über die Vereinbarung zum Servicelevel (SLA) in Bezug auf die jeweilige Option finden Sie unter [Azure-Vereinbarung zum Servicelevel](/support/legal/sla/).
 
 <table cellspacing="0" border="1">
 <tr>
@@ -234,7 +228,7 @@ In der folgenden Tabelle werden die Funktionen von Websites, Cloud Services und 
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
-   <td valign="middle">Websites können eine mittlere REST-API-Ebene hosten, und die  <a href="http://go.microsoft.com/fwlink/?linkid=390226">Webauftragsfunktion</a> von Websites kann Aufträge zur Hintergrundverarbeitung hosten. Sie können Webaufträge auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen.</td>
+   <td valign="middle">Websites können problemlos eine mittlere Ebene der REST-API hosten. Die <a href="http://go.microsoft.com/fwlink/?linkid=390226">WebJobs</a>-Funktion der Websites kann Hintergrundverarbeitungsjobs hosten. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen.</td>
 </tr>
 <tr>
    <td valign="middle"><p>Integrierte Unterstützung von MySQL-as-a-Service</p></td>
@@ -286,14 +280,14 @@ In der folgenden Tabelle werden die Funktionen von Websites, Cloud Services und 
    <td valign="middle"></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Netzwerkisolation mit <a href="/de-de/services/virtual-network/">Azure Virtual Network</a></p></td>
+   <td valign="middle"><p>Netzwerkisolation mit <a href="/services/virtual-network/">Azure Virtual Network</a></p></td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
-   <td valign="middle">Weitere Informationen <a href="/blog/2014/09/15/azure-websites-virtual-network-integration/">Azure Websites Virtual Network Integration</a></td>
+   <td valign="middle">Siehe auch <a href="/blog/2014/09/15/azure-websites-virtual-network-integration/">Azure Websites Virtual Network Integration</a></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Unterstützung für <a href="/de-de/services/traffic-manager/">Azure Traffic Manager</a></p></td>
+   <td valign="middle"><p>Unterstützung für <a href="/services/traffic-manager/">Azure Traffic Manager</a></p></td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
@@ -337,8 +331,8 @@ In der folgenden Tabelle werden die Funktionen von Websites, Cloud Services und 
 </table>
 
 
-> [WACOM.NOTE]
-> Wenn Sie, bevor Sie sich für ein Konto anmelden, zuerst erste Schritte mit Azure-Websites unternehmen möchten, gehen Sie zu <a href="https://trywebsites.azurewebsites.net/">https://trywebsites.azurewebsites.net</a>. Hier können Sie sofort eine kurzlebige ASP.NET-Starter-Site in Azure-Websites kostenlos erstellen. Sie benötigen weder eine Kreditkarte, noch gehen Sie Verpflichtungen ein.
+> [AZURE.NOTE]
+> Wenn Sie Azure-Websites ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/">https://trywebsites.azurewebsites.net</a>. Auf dieser Seite können Sie sofort und kostenlos eine befristete ASP.NET Starter Site in Azure-Websites erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 
 ## <a id="nextsteps"></a> Nächste Schritte
@@ -346,31 +340,33 @@ In der folgenden Tabelle werden die Funktionen von Websites, Cloud Services und 
 Weitere Informationen zu den drei Webhostingoptionen finden Sie in den folgenden Ressourcen:
 
 * [Einführung in Azure](../fundamentals-introduction-to-azure/)
-* [Azure-Ausführungsmodelle](../fundamentals-application-models/)
+* [Serverhostingoptionen in Azure](../fundamentals-application-models/)
 
 Informationen zu den ersten Schritten hinsichtlich der Option(en), die Sie für Ihre Anwendung wählen, finden Sie in folgenden Ressourcen:
 
-* [Azure-Websites](/de-de/documentation/services/websites/)
-* [Azure Cloud Services](/de-de/documentation/services/cloud-services/)
-* [Azure Virtual Machines](/de-de/documentation/services/virtual-machines/)
+* [Azure-Websites](/documentation/services/websites/)
+* [Azure Cloud Services](/documentation/services/cloud-services/)
+* [Azure Virtual Machines](/documentation/services/virtual-machines/)
 
   [ChoicesDiagram]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_3.png
+  [Auswahldiagramm]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_3.png
   [Azure-Websites]: http://go.microsoft.com/fwlink/?LinkId=306051
   [Cloud-Dienste]: http://go.microsoft.com/fwlink/?LinkId=306052
   [Virtual Machines]: http://go.microsoft.com/fwlink/?LinkID=306053
+  [Virtuelle Computer]: http://go.microsoft.com/fwlink/?LinkID=306053
   [ClearDB]: http://www.cleardb.com/
   [Webauftragsfunktion]: http://go.microsoft.com/fwlink/?linkid=390226&clcid=0x409
-  [Konfigurieren eines SSL-Zertifikats für eine Azure-Website]: http://azure.microsoft.com/develop/net/common-tasks/enable-ssl-web-site/
-  [azurestore]: http://azure.microsoft.com/gallery/store/
-  [scripting]: http://azure.microsoft.com/documentation/scripts/?services=web-sites
-  [.NET]: http://azure.microsoft.com/develop/net/
-  [Node.js]: http://azure.microsoft.com/develop/nodejs/
-  [PHP]: http://azure.microsoft.com/develop/php/
-  [Python]: http://azure.microsoft.com/develop/python/
-  [servicebus]: http://azure.microsoft.com/documentation/services/service-bus/
-  [SQL-Datenbank]: http://azure.microsoft.com/documentation/services/sql-database/
-  [Storage]: http://azure.microsoft.com/documentation/services/storage/
+  [WebJobs]: http://go.microsoft.com/fwlink/?linkid=390226&clcid=0x409
+  [Konfigurieren eines SSL-Zertifikats für eine Azure-Website]: http://www.windowsazure.com/develop/net/common-tasks/enable-ssl-web-site/
+  [azurestore]: http://www.windowsazure.com/gallery/store/
+  [scripting]: http://www.windowsazure.com/documentation/scripts/?services=web-sites
+  [dotnet]: http://www.windowsazure.com/develop/net/
+  [nodejs]: http://www.windowsazure.com/develop/nodejs/
+  [PHP]: http://www.windowsazure.com/develop/php/
+  [Python]: http://www.windowsazure.com/develop/python/
+  [servicebus]: http://www.windowsazure.com/documentation/services/service-bus/
+  [sqldatabase]: http://www.windowsazure.com/documentation/services/sql-database/
+  [Storage]: http://www.windowsazure.com/documentation/services/storage/
+  [Speicher]: http://www.windowsazure.com/documentation/services/storage/
 
-<!--HONumber=35.1-->
-
-<!--HONumber=46--> 
+<!--HONumber=47-->

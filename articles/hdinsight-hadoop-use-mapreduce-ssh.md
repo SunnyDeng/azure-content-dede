@@ -22,7 +22,7 @@
 
 In diesem Artikel erfahren Sie, wie Sie mit SSH eine Verbindung zu einem Hadoop-Cluster in HDInsight herstellen und dann MapReduce-Aufträge mithilfe des Hadoop-Befehls übermitteln.
 
-> [AZURE.NOTE] Wenn Sie bereits mit der Verwendung von Linux-basierten Hadoop-Servern vertraut sind, Ihnen HDInsight jedoch neu ist, finden Sie weitere Informationen unter: <a href="../hdinsight-hadoop-linux-information/" target="_blank">Was Sie über Hadoop auf Linux-basiertem HDInsight wissen müssen</a>.
+> [AZURE.NOTE] Wenn Sie bereits mit der Verwendung von Linux-basierten Hadoop-Servern vertraut sind, jedoch noch nicht mit HDInsight, finden Sie weitere Informationen unter <a href="../hdinsight-hadoop-linux-information/" target="_blank">Was Sie über Hadoop auf Linux-basiertem HDInsight wissen müssen</a>.
 
 ## <a id="prereq"></a>Voraussetzungen
 
@@ -30,7 +30,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 * Einen Linux-basierten HDInsight-Cluster (Hadoop in HDInsight)
 
-* Einen SSH-Client Linux, Unix und Mac OS sollten über einen SSH-Client verfügbar sein. Windows-Benutzer müssen einen Client herunterladen, z. B. <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">PuTTY</a>.
+* Einen SSH-Client Linux, Unix und Mac OS sollten über einen SSH-Client verfügbar sein. Windows-Benutzer müssen einen Client herunterladen, z. B. <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>.
 
 ## <a id="ssh"></a>Verbinden mit SSH
 
@@ -46,11 +46,11 @@ Stellen Sie mithilfe des SSH-Befehls eine Verbindung zum vollqualifizierten Dom�
 
 ### PuTTY (Windows-Clients)
 
-Windows bietet keinen integrierten SSH-Client. Es wird die Verwendung von **PuTTY** empfohlen, das unter <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>heruntergeladen werden kann.
+Windows bietet keinen integrierten SSH-Client. Es wird die Verwendung von **PuTTY** empfohlen, das Sie unter <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a> herunterladen können.
 
-Weitere Informationen zum Verwenden von PuTTY finden Sie im Abschnitt **Verwenden von Putty für eine Verbindung mit einem Linux-Computer** unter <a href="http://azure.microsoft.com/ documentation/articles/virtual-machines-linux-use-ssh-key/" target="_blank">Verwenden von SSH mit Linux auf Azure</a>.
+Weitere Informationen zum Verwenden von Putty finden Sie im Abschnitt **Verwenden von Putty für eine Verbindung mit einem Linux-Computer** unter <a href="http://azure.microsoft.com/documentation/articles/virtual-machines-linux-use-ssh-key/" target="_blank">Verwenden von SSH mit Linux auf Azure</a>.
 
-> [AZURE.NOTE] Wenn Sie für die SSH-Authentifizierung für den HDInsight-Cluster ein Zertifikat verwendet haben, müssen Sie auch den Abschnitt **Erstellen eines PPK für Putty** lesen, der sich unter folgendem Thema befindet: <a href="http://azure.microsoft.com/ documentation/articles/virtual-machines-linux-use-ssh-key/" target="_blank">Verwenden von SSH mit Linux auf Azure</a>
+> [AZURE.NOTE] Wenn Sie für die SSH-Authentifizierung für den HDInsight-Cluster ein Zertifikat verwendet haben, müssen Sie auch den Abschnitt **Erstellen eines PPK für Putty** unter <a href="http://azure.microsoft.com/documentation/articles/virtual-machines-linux-use-ssh-key/" target="_blank">Verwenden von SSH mit Linux auf Azure</a> lesen.
 
 ## <a id="hadoop"></a>Verwenden des Hadoop-Befehls
 
@@ -60,7 +60,7 @@ Weitere Informationen zum Verwenden von PuTTY finden Sie im Abschnitt **Verwende
 
 	Dadurch wird die Klasse **wordcount** gestartet, die in der Datei **hadoop-mapreduce-examples.jar** enthalten ist. Sie verwendet als Eingabe das Dokument **wasb://example/data/gutenberg/davinci.txt** und die Ausgabe wird im Verzeichnis **wasb:///example/data/WordCountOutput** gespeichert.
 
-	> [AZURE.NOTE] Weitere Informationen zu diesem MapReduce-Auftrag und die Beispieldaten finden Sie unter <a href="../hdinsight-use-mapreduce/" target="_blank">Verwenden von MapReduce mit Hadoop in HDInsight</a>.
+	> [AZURE.NOTE] Weitere Informationen über diesen MapReduce-Auftrag und die Beispieldaten finden Sie unter <a href="../hdinsight-use-mapreduce/" target="_blank">Verwenden von MapReduce in HDInsight Hadoop</a>.
 
 2. Während der Verarbeitung gibt der Auftrag Details aus und gibt schließlich ähnliche Informationen wie die folgenden zurück, wenn der Auftrag abgeschlossen wird.
 
@@ -106,4 +106,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 * [Verwenden von Hive mit Hadoop in HDInsight](../hdinsight-use-hive/)
 
 * [Verwenden von Pig mit Hadoop in HDInsight](../hdinsight-use-pig/)
-<!--HONumber=45--> 
+<!--HONumber=47-->

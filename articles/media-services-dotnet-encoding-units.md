@@ -19,9 +19,9 @@
 
 
 
-# Hinzufügen von Codierungseinheiten mit dem .NET SDK
+# Skalieren der Codierung mit .NET SDK
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow).
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) .
   
 ## Übersicht
 
@@ -47,8 +47,8 @@ Standardmäßig kann jedes Media Services-Konto auf bis zu 25 für das Codieren 
 
 Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor: 
 
-1. Melden Sie sich im [Verwaltungsportal](http://manage.windowsazure.com) bei Ihrem Azure-Konto an.
-2. Wechseln Sie zu [Support](http://azure.microsoft.com/support/contact/).
+1. Melden Sie sich mit Ihrem Azure-Konto am [Verwaltungsportal](http://manage.windowsazure.com) an.
+2. Wechseln Sie zu [Support](http://www.windowsazure.com/support/contact/).
 3. Klicken Sie auf "Support erhalten".
 4. Wählen Sie Ihr Abonnement aus.
 5. Wählen Sie unter Supporttyp "Technisch" aus.
@@ -60,4 +60,4 @@ Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor:
 11. Klicken Sie auf "Senden", um das Ticket zu öffnen.
 
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

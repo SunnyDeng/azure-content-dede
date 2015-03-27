@@ -4,164 +4,140 @@
 	services="active-directory, virtual-network" 
 	documentationCenter="" 
 	authors="Justinha" 
-	writer="Justinha" 
 	manager="TerryLan" 
 	editor="LisaToft"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/12/2014" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+	ms.date="03/04/2015" 
 	ms.author="Justinha"/>
 
 
-
-
-#Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk
+# Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk
 
 In diesem Thema wird das Erstellen einer neuen Windows Server Active Directory-Umgebung in einem virtuellen Azure-Netzwerk erläutert, das auf einem virtuellen Computer (Virtual Machine, VM) mit [virtuellem Azure-Netzwerk](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx) läuft. In diesem Fall ist das virtuelle Azure-Netzwerk nicht mit einem lokalen Netzwerk verbunden. 
 
 Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
-- Optional können Sie [mit dem Assistenten im Verwaltungsportal ein Standort-zu-Standort-VPN konfigurieren](http://msdn.microsoft.com/library/windowsazure/dn133795.aspx) und dann entweder eine neue Gesamtstruktur installieren oder eine lokale Gesamtstruktur zu einem virtuellen Azure-Netzwerk erweitern. Erläuterungen hierzu finden Sie unter [Installieren eines Active Directory-Replikatdomänencontrollers in einem virtuellen Azure-Netzwerk](http://azure.microsoft.com/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/).
+- Optional können Sie [mit dem Assistenten im Verwaltungsportal ein Standort-zu-Standort-VPN konfigurieren](http://msdn.microsoft.com/library/windowsazure/dn133795.aspx) und dann entweder eine neue Gesamtstruktur installieren oder eine lokale Gesamtstruktur zu einem virtuellen Azure-Netzwerk erweitern. Erläuterungen hierzu finden Sie unter [Installieren eines Active Directory-Replikatdomänencontrollers unter virtuellen Netzwerken in Azure](../virtual-networks-install-replica-active-directory-domain-controller).
 -  Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Azure-Computern](http://msdn.microsoft.com/library/windowsazure/jj156090.aspx).
--  Schrittweise Anleitungen, wie Sie auf Azure eine Testumgebung mit AD DS erstellen, finden Sie unter [Test Lab Guide: Windows Server 2012 R2-Basiskonfiguration in Azure](http://www.microsoft.com/de-de/download/details.aspx?id=41684).
 
 
+## Unterschiede zwischen der virtuellen und der lokalen Umgebung
 
-##Inhaltsverzeichnis
-
-* [Unterschiede zwischen der virtuellen und der lokalen Umgebung](#differ)
-* [Schritt 1: Erstellen eines virtuellen Azure-Netzwerks](#createvnet)
-* [Schritt 2: Erstellen eines virtuellen Computers (VM) für die Serverrollen Domänencontroller und DNS](#createvm)
-* [Schritt 3: Installieren von Windows Server Active Directory](#installad)
-* [Schritt 4: Einrichten des DNS-Servers für das virtuelle Azure-Netzwerk](#dns)
-* [Schritt 5: Erstellen von virtuellen Computern und Bereitstellen als Domänenmitglieder](#domainmembers)
-
-
-<h2><a id="differ"></a>Unterschiede zwischen der virtuellen und der lokalen Umgebung</h2>
 Die Installation eines Domänencontrollers in Azure unterscheidet sich nicht wesentlich von der lokalen Installation. Die Hauptunterschiede sind in der folgenden Tabelle aufgeführt. 
 
-Konfigurieren  | Lokal  | Virtuelles Azure-Netzwerk	
+Konfigurieren  | Lokal | Azure Virtual Network	
 ------------- | -------------  | ------------
-**IP-Adresse für den Domänencontroller**  | Zuweisen einer statischen IP-Adresse in den Netzwerkadaptereigenschaften | Ausführen des Set-AzureStaticVNetIP-Cmdlet zum Zuweisen einer statischen IP-Adresse
-**DNS Client Resolver**  | Festlegen bevorzugter und alternativer DNS-Serveradressen in den Netzwerkadaptereigenschaften von Domänenmitgliedern | Festlegen einer DNS-Serveradresse in den Eigenschaften des virtuellen Netzwerks
+**IP-Adresse für den Domänencontroller** | Zuweisen einer statischen IP-Adresse in den Netzwerkadaptereigenschaften | Ausführen des "Set-AzureStaticVNetIP"-Cmdlet zum Zuweisen einer statischen IP-Adresse
+**DNS Client Resolver** | Festlegen bevorzugter und alternativer DNS-Serveradressen in den Netzwerkadaptereigenschaften von Domänenmitgliedern | Festlegen einer DNS-Serveradresse in den Eigenschaften des virtuellen Netzwerks
 **Active Directory-Datenbankspeicher**  | Optionales Ändern des Standardspeicherorts von C:\  | Standardspeicherort C:\ muss geändert werden
 
 
 
-<h2><a id="createvnet"></a>Schritt 1: Erstellen eines virtuellen Azure-Netzwerks</h2>
-1. Melden Sie sich auf dem [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
-2. Erstellen Sie ein virtuelles Netzwerk. Klicken Sie auf <b>Netzwerke</b> > <b>Erstellen eines virtuellen Netzwerks</b>. Geben Sie bei Ausführen des Assistenten die Werte aus der folgenden Tabelle ein. 
+## Erstellen eines virtuellen Azure-Netzwerks
 
-	Auf dieser Seite des Assistenten... | Geben Sie diese Werte an
+1. Melden Sie sich beim Azure-Verwaltungsportal an.
+2. Erstellen Sie ein virtuelles Netzwerk. Klicken Sie auf **Netzwerke** > **Create a virtual network**. Geben Sie bei Ausführen des Assistenten die Werte aus der folgenden Tabelle ein. 
+
+	Auf dieser Seite des Assistenten... |Geben Sie diese Werte an
 	------------- | -------------
-	**Details zum virtuellen Netzwerk**  | <p>Name: Geben Sie einen Namen für Ihr virtuelles Netzwerk ein.</p><p>Region: Wählen Sie die nächstgelegene Region aus.</p>
-	**DNS und VPN**  | <p>Lassen Sie das Feld für den DNS-Server leer.</p><p>Wählen Sie keine VPN-Option aus.</p>
-	**Adressräume des virtuellen Netzwerks**  | <p>Subnetzname: Geben Sie einen Namen für das Subnetz ein.</p><p>Start-IP: <b>10.0.0.0</b></p><p>CIDR: <b>/24 (256)</b></p>
+	**Details zum virtuellen Netzwerk** | <p>Name: Geben Sie einen Namen für Ihr virtuelles Netzwerk ein.</p><p>Region: Wählen Sie die nächstgelegene Region aus.</p>
+	**DNS und VPN** | <p>Lassen Sie das Feld für den DNS-Server leer.</p><p>Wählen Sie keine VPN-Option aus.</p>
+	**Adressräume des virtuellen Netzwerks** | <p>Subnetzname: Geben Sie einen Namen für das Subnetz ein.</p><p>Start-IP: <b>10.0.0.0</b></p><p>CIDR: <b>/24 (256)</b></p>
 
 
 
-<h2><a id="createvm"></a>Schritt 2: Erstellen eines virtuellen Computers (VM) für die Serverrollen Domänencontroller und DNS</h2>
+## Erstellen von virtuellen Computern (VMs) für die Serverrollen Domänencontroller und DNS
  
-1. Klicken Sie auf <b>Neu</b> > <b>Compute</b> > <b>Virtuelle Computer (Virtual Machines, VMs)</b> > <b>Aus Katalog</b>. 
-2. Geben Sie bei Ausführen des Assistenten die Werte aus der folgenden Tabelle ein.
+Wiederholen Sie die folgenden Schritte, um virtuelle Computer zum Hosten der DC-Rolle nach Bedarf zu erstellen. Sie sollten mindestens zwei virtuelle DC bereitstellen, um Fehlertoleranz und Redundanz zu gewährleisten. Wenn das virtuelle Azure-Netzwerk über mindestens zwei Domänencontroller verfügt, die auf ähnliche Weise konfiguriert sind (d. h. beide sind GCs, führen DNS-Server aus und beide führen keine FSMO-Rolle aus usw.), stellen Sie die virtuellen Computer, auf denen diese DCs ausgeführt werden, in eine Verfügbarkeitsgruppe, um eine verbesserte Fehlertoleranz zu erreichen.
+
+1. Klicken Sie im Azure-Verwaltungsportal auf **Neu** > **Compute** > **Virtueller Computer** > **Aus Katalog**. Verwenden Sie die folgenden Werte, um den Assistenten abzuschließen. Übernehmen Sie den Standardwert für eine Einstellung, sofern kein anderer Wert empfohlen wird oder erforderlich ist.
+
+    Auf dieser Seite des Assistenten... | Geben Sie diese Werte an
+	------------- | -------------
+	**Image auswählen** | Windows Server 2012 R2 Datacenter
+	**Konfiguration des virtuellen Computers** | <p>Name des virtuellen Computers: Geben Sie einen Namen mit einer einzelnen Bezeichnung ein (z. B. AzureDC1).</p><p>Neuer Benutzername': Geben Sie den Namen eines Benutzers ein. Dieser Benutzer wird Mitglied der lokalen Administratorgruppe auf dem virtuellen Computer. Sie benötigen diesen Namen, um sich zum ersten Mal bei dem virtuellen Computer anzumelden. Das integrierte Konto mit dem Namen "Administrator" funktioniert nicht.</p><p>Neues Kennwort/Bestätigen: Geben Sie ein Kennwort ein.</p>
+	**Konfiguration virtueller Computer**  | <p>Cloud-Dienst: Wählen Sie <b>Einen neuen Cloud-Dienst erstellen</b> für den ersten virtuellen Computer aus, und wählen Sie denselben Cloud-Dienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die Anwendung hosten.</p><p>DNS-Name des Cloud-Diensts: Geben Sie einen global eindeutigen Namen an.</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</p><p>Speicherkonto: Wählen Sie <b>Ein automatisch generiertes Speicherkonto verwenden</b> für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</p><p>Verfügbarkeitsgruppe: Wählen Sie <b>Verfügbarkeitsgruppe erstellen</b> aus.</p><p>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</p>
+	**Konfiguration virtueller Computer** | <p>Wählen Sie <b>VM-Agent installieren</b> und alle anderen erforderlichen Erweiterungen aus.</p>
+2. Fügen Sie an jeden virtuellen Computer, der die DC-Serverrolle ausführt, einen Datenträger an. Der zusätzliche Speicherplatz ist erforderlich, um die AD-Datenbank, Protokolle und SYSVOL zu speichern. Geben Sie eine Größe für den Datenträger (z. B. 10 GB) an, und belassen Sie für die **Hostcacheeinstellungen** die Einstellung **Keine**. Nachdem Sie sich zuerst auf dem virtuellen Computer angemeldet haben, öffnen Sie **Server-Manager** > **Datei- und Speicherdienste**, um auf diesem Datenträger ein Volume mit NTFS zu erstellen.
+3. Reservieren Sie eine statische IP-Adresse für virtuelle Computer, auf denen die DC-Rolle ausgeführt wird. Laden Sie zum Reservieren einer statischen IP-Adresse den Microsoft-Webplattform-Installer herunter, und [installieren Sie Azure PowerShell](../powershell-install-configure) , und führen Sie anschließend das Cmdlet "Set-AzureStaticVNetIP" aus. Beispiel:
+
+    'Get-AzureVM -ServiceName AzureDC1 -Name AzureDC1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4 | Update-AzureVM
+
+Weitere Informationen zum Festlegen einer statischen IP-Adresse finden Sie unter [Konfigurieren einer statischen internen IP-Adresse für einen virtuellen Computer](https://msdn.microsoft.com/library/azure/dn630228.aspx).
+
+## Installieren von Windows Server Active Directory
+
+Verwenden Sie dieselbe Routine zum [Installieren von AD DS](https://technet.microsoft.com/library/jj574166.aspx), das Sie lokal verwenden (d. h. Sie können die Benutzeroberfläche, eine Antwortdatei oder Windows PowerShell verwenden). Für die Installation einer neuen Gesamtstruktur brauchen Sie Administratoranmeldeinformationen. Damit die Active Directory-Datenbank, Protokolle und SYSVOL auf dem zusätzlich an den virtuellen Computer angeschlossenen Datenträger gespeichert werden können, müssen Sie den Standardspeicherort vom Betriebssystemlaufwerk auf den zusätzlichen Datenträger verlagern. 
+
+Wenn die DC-Installation beendet ist, schließen Sie den virtuellen Computer wieder an und melden sich beim DC an. Denken Sie daran, die Domänenanmeldeinformationen anzugeben.
+
+## Zurücksetzen des DNS-Servers für das virtuelle Azure-Netzwerk
+
+1. Setzen Sie die Einstellung für die DNS-Weiterleitung auf dem neuen Domänencontroller/DNS-Server zurück. 
+  1. Klicken Sie im Server-Manager auf **Tools** > **DNS**. 
+  2. Klicken Sie im **DNS-Manager** mit der rechten Maustaste auf den Namen des DNS-Servers, und klicken Sie dann auf **Eigenschaften**. 
+  3. Klicken Sie auf der Registerkarte **Weiterleitungen** auf die IP-Adresse der Weiterleitung, und klicken Sie dann auf **Bearbeiten**.  Wählen Sie die IP-Adresse aus, und klicken Sie auf **Löschen**. 
+  4. Klicken Sie auf **OK**, um den Editor zu schließen, und dann erneut auf **OK**, um die Eigenschaften des DNS-Servers zu schließen. 
+2. Aktualisieren Sie die DNS-Servereinstellung für das virtuelle Netzwerk. 
+  1. Klicken Sie auf **Virtuelle Netzwerke**, doppelklicken Sie auf das erstellte virtuelle Netzwerk > **Konfigurieren** > **DNS-Server**. Geben Sie dann den Namen und die DIP eines der virtuellen Computer ein, der die Domänencontroller/DNS-Serverrolle ausführt, und klicken Sie abschließend auf **Speichern**. 
+  2. Wählen Sie den virtuellen Computer aus und klicken Sie auf **Neu starten**, damit der virtuelle Computer die DNS-Resolver-Einstellungen mit der IP-Adresse des neuen DNS-Servers konfiguriert. 
+
+
+## Erstellen von virtuellen Computern für Domänenmitglieder
+
+1. Wiederholen Sie die folgenden Schritte, um virtuelle Computer zu erstellen, die als Anwendungsserver ausgeführt werden. Übernehmen Sie den Standardwert für eine Einstellung, sofern kein anderer Wert empfohlen wird oder erforderlich ist.
 
 	Auf dieser Seite des Assistenten... | Geben Sie diese Werte an
 	------------- | -------------
-	**Betriebssystem**  | Wählen Sie **Windows Server 2012 R2 Datacenter** aus.
-	**Konfiguration des virtuellen Computers**  | <p>Veröffentlichungsdatum: Das heutige Datum</p><p>Computername: Geben Sie einen eindeutigen Wert ein.</p><p>Ebene: Standard</p><p>Größe: Wählen Sie eine beliebige Größe aus.</p><p>Benutzername: Geben Sie einen Namen ein. Dieses Benutzerkonto wird ein Mitglied der integrierten Gruppe "Administratoren" sein. </p><p>Kennwort: Muss mindestens 8 Zeichen lang sein und 3 der folgenden Zeichentypen enthalten:</p><ul><li>einen Großbuchstaben</li><li>einen Kleinbuchstaben</li><li>eine Zahl</li><li>ein Sonderzeichen</li></ul>
-	**Cloud-Dienst**  | <p>Cloud-Dienst: <b>Einen neuen Cloud-Dienst erstellen</b></p><p>Name des Cloud-Diensts: Übernehmen Sie den Standardwert.</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Wählen Sie das virtuelle Netzwerk aus, das Sie erstellt haben.</p><p>Subnetz des virtuellen Netzwerks: Wählen Sie das Subnetz aus, das Sie erstellt haben. </p><p>Speicherkonto: <b>Ein automatisch generiertes Speicherkonto verwenden</b></p><p>Verfügbarkeitsgruppe: <b>None</b></p><p>Endpoints: Übernehmen Sie die Standardwerte.</p>
-	**VM-Agent** | Wählen Sie **VM-Agent installieren** aus.
+	**Image auswählen** | Windows Server 2012 R2 Datacenter
+	**Konfiguration virtueller Computer** | <p>Name des virtuellen Computers: Geben Sie einen Namen mit einer einzelnen Bezeichnung ein (z. B. AppServer1).</p><p>Neuer Benutzername': Geben Sie den Namen eines Benutzers ein. Dieser Benutzer wird Mitglied der lokalen Administratorgruppe auf dem virtuellen Computer. Sie benötigen diesen Namen, um sich zum ersten Mal bei dem virtuellen Computer anzumelden. Das integrierte Konto mit dem Namen "Administrator" funktioniert nicht.</p><p>Neues Kennwort/Bestätigen: Geben Sie ein Kennwort ein.</p>
+	**Konfiguration virtueller Computer** | <p>Cloud-Dienst: Wählen Sie **Einen neuen Cloud-Dienst erstellen** für den ersten virtuellen Computer aus, und wählen Sie denselben Cloud-Dienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die Anwendung hosten.</p><p>DNS-Name des Cloud-Diensts: Geben Sie einen global eindeutigen Namen an.</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</p><p>Speicherkonto: Wählen Sie **Ein automatisch generiertes Speicherkonto verwenden** für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die Anwendung hosten.</p><p>Verfügbarkeitsgruppe: Wählen Sie **Verfügbarkeitsgruppe erstellen** aus.</p><p>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</p>
+	**Konfiguration virtueller Computer** | <p>Wählen Sie <b>VM-Agent installieren</b> und alle anderen erforderlichen Erweiterungen aus.</p>
+2. Nachdem alle virtuellen Computer bereitgestellt wurden, melden Sie sich an, und stellen eine Verbindung zur Domäne her. Klicken Sie im **Server-Manager** auf **Lokaler Server** > **ARBEITSGRUPPE** > **Ändern...**, und wählen Sie dann **Domäne** aus, und geben Sie anschließend den Namen Ihrer lokalen Domäne ein. Geben Sie die Anmeldeinformationen eines Domänenbenutzers ein, und starten Sie den virtuellen Computer neu, um das Beitreten zu der Domäne abzuschließen.
 
-1. Die dynamische IP-Adresse, die dem virtuellen Computer standardmäßig zugewiesen wird, ist für die Dauer des Cloud-Dienstes gültig. Sie ändert sich jedoch, wenn der virtuelle Computer heruntergefahren wird. Sie können eine statische IP-Adresse zuweisen, indem Sie das [Set-AzureStaticVNetIP Azure PowerShell-Cmdlet](http://msdn.microsoft.com/library/windowsazure/dn630228.aspx) ausführen. Dann bleibt die IP-Adresse auch nach dem Herunterfahren des virtuellen Computers erhalten. 
-2. Schließen Sie einen zusätzlichen Datenträger an den virtuellen Computer an, auf dem die Active Directory-Datenbank, Protokolle und SYSVOL gespeichert werden. 
-  3. Klicken Sie auf <b>VM</b> > <b>Anfügen</b> > <b>Schließen Sie einen leeren Datenträger an.</b>. 
-  4. Geben Sie eine Größe an (zum Beispiel 10 GB), und übernehmen Sie alle anderen Standardwerte.
-3. Melden Sie sich bei dem virtuellen Computer an, und formatieren Sie den zusätzlichen Datenträger. 
-  4. Klicken Sie auf <b>Verbinden,</b> um den virtuellen Computer anzumelden, klicken Sie auf <b>Öffnen,</b> um eine RDP-Sitzung zu erstellen, und klicken Sie dann erneut auf <b>Verbinden</b> .
-  4. Geben Sie als Anmeldeinformationen den neuen Benutzernamen und das neue Kennwort ein.
-  5. Klicken Sie im Server-Manager auf <b>Tools</b> > <b>Computerverwaltung</b>. 
-  6. Klicken Sie auf <b>Datenträgerverwaltung</b> , und klicken Sie dann auf <b>OK,</b> um den neuen Datenträger zu initialisieren. 
-  6. Klicken Sie mit der rechten Maustaste auf den Datenträgernamen, und klicken Sie dann auf <b>Neues einfaches Volume</b>. Beenden Sie den Assistenten mit der Formatierung des neuen Laufwerks. 
-
-<h2><a id="installad"></a>Schritt 3: Installieren von Windows Server Active Directory</h2>
-[Installieren Sie AD DS](http://technet.microsoft.com/library/jj574166.aspx) genauso wie in einer lokalen Umgebung (also über die Benutzeroberfläche, eine Antwortdatei oder Windows PowerShell). Für die Installation einer neuen Gesamtstruktur brauchen Sie Administratoranmeldeinformationen. Damit die Active Directory-Datenbank, Protokolle und SYSVOL auf dem zusätzlich an den virtuellen Computer angeschlossenen Datenträger gespeichert werden können, müssen Sie den Standardspeicherort vom Betriebssystemlaufwerk auf den zusätzlichen Datenträger verlagern. 
-<p>Wenn die DC-Installation beendet ist, schließen Sie den virtuellen Computer wieder an und melden sich beim DC an. Denken Sie daran, die Domänenanmeldeinformationen anzugeben.</p>
-
-<h2><a id="dns"></a>Schritt 4: Einrichten des DNS-Servers für das virtuelle Azure-Netzwerk</h2>
-1. Klicken Sie auf <b>Virtuelle Netzwerke</b>, doppelklicken Sie auf das erstellte virtuelle Netzwerk, und klicken Sie dann auf <b>Konfigurieren</b>. 
-2. Geben Sie unter <b>DNS-Server</b> den Namen und die DIP des DC ein, und klicken Sie auf <b>Speichern</B>. 
-3. Wählen Sie den virtuellen Computer aus, und klicken Sie auf <b>Neu starten</b> , damit der virtuelle Computer die DNS-Resolver-Einstellungen mit der IP-Adresse des neuen DNS-Servers konfiguriert. 
+Als Alternative zur Verwendung des Verwaltungsportals für die Bereitstellung von virtuellen Computern, können Sie Windows PowerShell für Microsoft Azure verwenden. Verwenden Sie [New-AzureVMConfig](https://msdn.microsoft.com/library/azure/dn495159.aspx) und [Add-AzureProvisioningConfig](https://msdn.microsoft.com/library/azure/dn495299.aspx), um einen virtuellen Computer als in eine Domäne eingebundenen Computer bereitzustellen, wenn er zum ersten Mal gestartet wird. Verwenden Sie [New-AzureVM](https://msdn.microsoft.com/library/azure/dn495254.aspx) um den virtuellen Computer selbst zu erstellen. 
 
 
-<h2><a id="domainmembers"></a>Schritt 5: Erstellen von virtuellen Computern und Bereitstellen als Domänenmitglieder</h2>
-<p>Erstellen Sie zusätzliche virtuelle Computer, und stellen Sie diese als Domänenmitglieder bereit. Sie können die Benutzeroberfläche oder Azure PowerShell verwenden. Wenn Sie die Benutzeroberfläche verwenden, führen Sie die gleichen Schritte aus wie zur Erstellung des ersten virtuellen Computers. Binden Sie die virtuellen Computer dann ebenso in die Domäne ein wie bei einer lokalen Installation. Wenn Sie Azure PowerShell verwenden, können Sie virtuelle Computer bereitstellen und diese dann beim ersten Hochfahren in die Domäne aufnehmen. </p><p>In diesem Beispiel wird ein in die Domäne eingebundener virtueller Computer mit dem Namen DC2 erstellt, auf dem Windows Server 2012 R2 Datacenter läuft. Melden Sie sich nach der Bereitstellung von DC2 als Domänenadministrator an diesem virtuellen Computer an, und stufen Sie ihn zum Replikatdomänencontroller herauf. </p><p>Sie können "Get-AzureVMImage" ausführen, um Imagenamen abzurufen. Wenn beispielsweise eine Liste von Images für Windows Server 2012 R2 zurückgegeben werden soll, führen Sie Folgendes aus: Get-AzureVMImage | where-object {$_.ImageFamily -eq "Windows Server 2012 R2 Datacenter"}.</p>
-	'
+Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Erste Schritte mit Azure Cmdlets](https://msdn.microsoft.com/library/azure/jj554332.aspx) und [Azure-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/jj554330.aspx).
 
-	cls
-
-	Set-AzureSubscription -SubscriptionName "Free Trial" -currentstorageaccountname 'constorageaccount'
-	Select-AzureSubscription -SubscriptionName "Free Trial"
-
-	#Deploy a new VM and join it to the domain
-	#-------------------------------------------
-	#Specify my DC's DNS IP (10.0.0.4)
-	$myDNS = New-AzureDNS -Name 'DC1' -IPAddress '10.0.0.4'
-	
-	# OS Image to Use
-	$image = 'a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201404.01-en.us-127GB.vhd'
-	$service = 'DC2'
-	$vnet = 'YourVirtualNetwork'
-	$pwd = 'P@ssw0rd'
-	$size = 'Small'
-
-	#VM Configuration
-	$vmname = 'DC2'
-	$MyVM3 = New-AzureVMConfig -name $vmname -InstanceSize $size -ImageName $image |
-    Add-AzureProvisioningConfig -AdminUserName 'PierreSettles' -WindowsDomain -Password $pwd -Domain 'Contoso' -DomainPassword 'P@ssw0rd' -DomainUserName 'PierreSettles' -JoinDomain 'contoso.com'|
-    Set-AzureSubnet -SubnetNames 'FrontEnd' 
-
-	New-AzureVM -ServiceName $service -VMs $MyVM3 -DnsSettings $myDNS -VNetName $vnet   
-
-Wenn Sie das Skript erneut ausführen, müssen Sei für $service einen eindeutigen Wert eingeben. Mit "Test-AzureName -Service <i>Dienstname</i>" können Sie feststellen, ob der Name bereits vergeben ist. 	
 
 ## Siehe auch
 
--  [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Azure-Computern](http://msdn.microsoft.com/library/azure/jj156090.aspx)
+-  [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Azure-Computern](https://msdn.microsoft.com/library/azure/jj156090.aspx)
 
--  [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/dn631643.aspx)
+-  [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](https://msdn.microsoft.com/library/dn631643.aspx)
 
--  [Konfigurieren eines Standort-zu-Standort-VPNs im Verwaltungsportal](http://msdn.microsoft.com/library/dn133795.aspx)
+-  [Konfigurieren eines Standort-zu-Standort-VPNs im Verwaltungsportal](https://msdn.microsoft.com/library/dn133795.aspx)
 
--  [Installieren eines Active Directory-Replikatdomänencontrollers in einem virtuellen Azure-Netzwerk](http://azure.microsoft.com/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)
+-  [Installieren eines Active Directory-Replikatdomänencontrollers in Azure](../virtual-networks-install-replica-active-directory-domain-controller)
 
 -  [Microsoft Azure IT Pro IaaS: (01) Grundlagen zu virtuellen Computern](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
 
 -  [Microsoft Azure IT Pro IaaS: (05) Erstellen virtueller Netzwerke und Herstellen standortübergreifender Verbindungen](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 
--  [Azure Virtual Network](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx)
+-  [Virtuelle Netzwerke im Überblick](https://msdn.microsoft.com/library/azure/jj156007.aspx)
 
--  [Installieren und Konfigurieren von Azure PowerShell](http://azure.microsoft.com/documentation/articles/install-configure-powershell/)
+-  [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure/)
 
--  [Azure PowerShell](http://msdn.microsoft.com/library/windowsazure/jj156055.aspx)
+-  [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
 
--  [Azure-Verwaltungs-Cmdlets](http://msdn.microsoft.com/library/windowsazure/jj152841)
+-  [Azure-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/jj554330.aspx)
 
 -  [Festlegen einer statischen IP-Adresse für einen virtuellen Computer in Azure](http://windowsitpro.com/windows-azure/set-azure-vm-static-ip-address)
 
--  [Zuweisen einer statischen IP-Adresse zu einem virtuellen Computer in Azure](http://www.bhargavs.com/index.php/2014/03/13/how-to-assign-static-ip-to-azure-vm/)
+-  [Zuweisen einer statischen IP zum virtuellen Azure-Computer](http://www.bhargavs.com/index.php/2014/03/13/how-to-assign-static-ip-to-azure-vm/)
 
--  [Installieren einer neuen Active Directory-Gesamtstruktur](http://technet.microsoft.com/library/jj574166.aspx)
+-  [Installieren einer neuen Active Directory-Gesamtstruktur](https://technet.microsoft.com/library/jj574166.aspx)
 
--  [Einführung in die Virtualisierung von Active Directory-Domänendiensten (AD DS) (Ebene 100)](http://technet.microsoft.com/library/hh831734.aspx)
+-  [Einführung in die Virtualisierung von Active Directory-Domänendiensten (AD DS) (Ebene 100).](https://technet.microsoft.com/library/hh831734.aspx)
 
--  [Test Lab Guide: Windows Server 2012 R2-Basiskonfiguration in Azure](http://www.microsoft.com/de-de/download/details.aspx?id=41684)
+-  [Test Lab Guide: Windows Server 2012 R2-Basiskonfiguration in Azure](http://www.microsoft.com/download/details.aspx?id=41684)
 
 
-<!--HONumber=35.2-->
-
-<!--HONumber=46--> 
+<!--HONumber=47-->

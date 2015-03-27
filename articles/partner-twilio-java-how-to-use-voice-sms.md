@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Verwenden von Twilio für Telefonie- und SMS-Funktionen (Java) - Azure" 
 	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Codebeispiele wurden in Java geschrieben." 
 	services="" 
@@ -19,20 +19,6 @@
 # Verwenden von Twilio für Telefonie- und SMS-Funktionen in Java
 
 Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufgaben mit dem Twilio-API-Dienst in Azure. Die Szenarien behandeln das Tätigen eines Telefonanrufs und das Senden einer Kurznachricht (SMS). Weitere Informationen zu Twilio und zur Verwendung von Telefonie und SMS in Ihren Anwendungen finden Sie im Abschnitt [Nächste Schritte](#NextSteps) .
-
-## Inhaltsverzeichnis
-* [Was ist Twilio?](#WhatIs)
-* [Twilio-Preise](#Pricing)
-* [Konzepte](#Concepts)
-* [Erstellen eines Twilio-Kontos](#CreateAccount)
-* [Überprüfen von Telefonnummern](#VerifyPhoneNumbers)
-* [Erstellen einer Java-Anwendung](#create_app)
-* [Konfigurieren Ihrer Anwendung für die Verwendung von Twilio-Bibliotheken](#configure_app)
-* [Vorgehensweise: Tätigen von ausgehenden Anrufen](#howto_make_call)
-* [Vorgehensweise: Senden einer SMS-Nachricht](#howto_send_sms)
-* [Vorgehensweise: Bereitstellen von TwiML-Antworten von der eigenen Website](#howto_provide_twiml_responses)
-* [Vorgehensweise: Verwenden zusätzlicher Twilio-Dienste](#AdditionalServices)
-* [Nächste Schritte](#NextSteps)
 
 <h2><a id="WhatIs"></a>Was ist Twilio?</h2>
 Twilio ist eine Webservice-API für Telefonie, mit deren Hilfe Sie Ihre existierenden Websprachen und -Fertigkeiten für die Erstellung von Telefonie- und SMS-Anwendungen nutzen können. Twilio ist ein externer Dienst (kein Feature von Azure und kein Microsoft-Produkt).
@@ -88,7 +74,7 @@ Wenn Sie sich für ein Twilio-Konto anmelden, erhalten Sie eine Konto-ID und ein
 
 Ausführliche Informationen zur Verwendung der Twilio-Clientbibliothek für Java finden Sie unter [Tätigen eines Telefonanrufs mit Twilio in einer Java-Anwendung in Azure][howto_phonecall_java].
 
-<h2><a id="configure_app"></a>Konfigurieren einer Anwendung für die Verwendung von Twilio-Bibliotheken</h2>
+<h2><a id="configure_app"></a>Konfigurieren Ihrer Anwendung für die Verwendung von Twilio-Bibliotheken</h2>
 In Ihrem Code können Sie **import**-Anweisungen am Anfang Ihrer Quelldateien für die Twilio-Pakete oder Klassen hinzufügen, die Sie in Ihrer Anwendung verwenden möchten. 
 
 Für Java-Quelldateien:
@@ -106,7 +92,7 @@ Für Java Server Page (JSP)-Quelldateien:
     import="com.twilio.sdk.resource.instance.*"
 Je nach verwendeten Twilio-Paketen oder -Klassen sehen Ihre **import**-Anweisungen möglicherweise unterschiedlich aus.
 
-<h2><a id="howto_make_call"></a>Gewusst wie: Tätigen von ausgehenden Anrufen</h2>
+<h2><a id="howto_make_call"></a>Vorgehensweise: Tätigen von ausgehenden Anrufen</h2>
 Nachfolgend wird erläutert, wie Sie einen ausgehenden Anruf mit der **CallFactory**-Klasse tätigen. Dieser Code verwendet eine von Twilio bereitgestellte Website für die Rückgabe der TwiML-Antwort (Twilio Markup Language). Setzen Sie Ihre Werte für die Telefonnummern **From** und **To** ein, und stellen Sie sicher, dass Sie die **From**-Telefonnummer für Ihr Twilio-Konto vor der Ausführung des Codes verifizieren.
 
     // Use your account SID and authentication token instead
@@ -193,7 +179,7 @@ Die folgende JSP-Seite erstellt eine TwiML-Antwort, die zunächst etwas Text spr
         <Say>Good bye.</Say>
     </Response>
 
-Der Parameter **ApiVersion** ist nur in Twilio-Sprachanforderungen verfügbar (nicht in SMS-Anforderungen). Eine Liste der verfügbaren Anforderungsparameter für Twilio-Sprach- und SMS-Anforderungen finden Sie unter <https://www.twilio.com/docs/api/twiml/twilio_request> bzw. <https://www.twilio.com/docs/api/twiml/sms/twilio_request>. Die Umgebungsvariable **RoleName** ist als Teil der Azure-Bereitstellung verfügbar. (Informationen zum Hinzufügen benutzerdefinierter Umgebungsvariablen, die mit **System.getenv** abgerufen werden können, finden Sie im Abschnitt zu Umgebungsvariablen unter [Verschiedene Einstellungen für die Rollen][konfigurationmisc_role_config_settings].)
+Der Parameter **ApiVersion** ist nur in Twilio-Sprachanforderungen verfügbar (nicht in SMS-Anforderungen). Eine Liste der verfügbaren Anforderungsparameter für Twilio-Sprach- und SMS-Anforderungen finden Sie unter <https://www.twilio.com/docs/api/twiml/twilio_request> bzw. <https://www.twilio.com/docs/api/twiml/sms/twilio_request>. Die Umgebungsvariable **RoleName** ist als Teil der Azure-Bereitstellung verfügbar. (Informationen zum Hinzufügen benutzerdefinierter Umgebungsvariablen, die mit **System.getenv** abgerufen werden können, finden Sie im Abschnitt zu Umgebungsvariablen unter [Verschiedene Einstellungen für die Rollen][misc_role_config_settings].)
 
 Sobald Sie Ihre JSP-Seite mit den TwiML-Antworten eingerichtet haben, können Sie die URL der JSP-Seite an die **CallFactory.create**-Methode übergeben. Beispiel: Ihre Webanwendung "MyTwiML" wird in einem unter Azure gehosteten Dienst bereitgestellt, und der Name der JSP-Seite lautet "mytwiml.jsp". In diesem Fall kann die URL, wie im folgenden Codebeispiel gezeigt, an **CallFactory.create** übergeben werden:
 
@@ -226,7 +212,7 @@ Nachdem Sie nun mit den Grundlagen des Twilio-Dienstes vertraut sind, finden Sie
 [twilio_api_service]: https://api.twilio.com
 [add_ca_cert]: ../java-add-certificate-ca-store
 [howto_phonecall_java]: ../partner-twilio-java-phone-call-example
-[konfigurationmisc_role_config_settings]: http://msdn.microsoft.com/library/windowsazure/hh690945.aspx
+[misc_role_config_settings]: http://msdn.microsoft.com/library/windowsazure/hh690945.aspx
 [twimlet_message_url]: http://twimlets.com/message
 [twimlet_message_url_hello_world]: http://twimlets.com/message?Message%5B0%5D=Hello%20World
 [twilio_rest_making_calls]: http://www.twilio.com/docs/api/rest/making-calls
@@ -246,4 +232,4 @@ Nachdem Sie nun mit den Grundlagen des Twilio-Dienstes vertraut sind, finden Sie
 [twilio_support]: http://www.twilio.com/help/contact
 [twilio_quickstarts]: http://www.twilio.com/docs/quickstart
 
-<!--HONumber=45-->
+<!--HONumber=47-->

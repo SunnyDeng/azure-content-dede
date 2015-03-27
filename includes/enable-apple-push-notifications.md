@@ -1,7 +1,7 @@
+﻿
+Der Apple Push Notification Service (APNS) verwendet Zertifikate zur Authentifizierung Ihres mobilen Diensts. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Funktion finden Sie unter [Apple Push Notification Service](http://go.microsoft.com/fwlink/p/?LinkId=272584).
 
-Der Apple Push Notification Service (APNS) verwendet Zertifikate zur Authentifizierung Ihres mobilen Diensts. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation des APNS finden Sie unter [Apple Push Notification Service](http://go.microsoft.com/fwlink/p/?LinkId=272584).
-
-## <a id="certificates"></a>Erstellen der Zertifikatsignieranforderungsdatei
+## <a id="certificates"></a>Generieren der Anforderungsdatei zur Zertifikatsignatur
 
 Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstellen, die von Apple zur Generierung eines signierten Zertifikats verwendet wird.
 
@@ -15,7 +15,7 @@ Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstell
 
   	![](./media/enable-apple-push-notifications/mobile-services-ios-push-step6.png)
 
-4. Geben Sie einen Namen für die Zertifikatsignieranforderungsdatei (CSR-Datei) in **Speichern unter** ein, wählen Sie den Speicherort unter **Ort** aus, und klicken Sie dann auf **Speichern**.
+4. Geben Sie einen Namen für die Zertifikatsignieranforderungsdatei (CSR-Datei) in **Sichern unter** ein, wählen Sie den Speicherort in **Ort**, und klicken Sie dann auf **Sichern**.
 
   	![](./media/enable-apple-push-notifications/mobile-services-ios-push-step7.png)
 
@@ -23,41 +23,48 @@ Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstell
 
 Anschließend werden Sie Ihre App bei Apple registrieren, Pushbenachrichtigungen aktivieren und diese exportierte CSR hochladen, um ein Pushzertifikat zu erstellen.
 
-## <a id="register"></a>Registrieren der App für Pushbenachrichtigungen
+## <a id="register"></a>Registrieren Sie Ihre App für Pushbenachrichtigungen
 
 Um von Mobile Services Pushbenachrichtigungen an eine iOS-App senden zu können, muss diese selbst bei Apple registriert und auch für Pushbenachrichtigungen angemeldet werden.  
 
-1. Falls Sie Ihre App noch nicht registriert haben, gehen Sie im Apple Developer Center zum <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a>, melden Sie sich mit Ihrer Apple-ID an, klicken Sie auf **Identifiers**, dann auf **App IDs** und schließlich auf das Zeichen **+**, um eine neue App zu registrieren.
+1. Wenn Sie Ihre App noch nicht registriert haben, navigieren Sie zu dem <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a> im Apple Developer Center, melden Sie sich mit Ihrer Apple-ID an, klicken Sie auf **Bezeichner**, klicken Sie dann auf **App-IDs** und schließlich auf das **+**, um eine neue App zu registrieren.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-02.png)
 
- > [AZURE.NOTE] Wenn Sie sich dafür entscheiden, einen anderen <strong>Bundle Identifier</strong>-Wert als <i>MobileServices.Quickstart</i> anzugeben, müssen Sie auch die Bundle-ID in Ihrem Xcode-Projekt aktualisieren. Es wird empfohlen, den genauen Bundle-ID-Wert zu verwenden, den Sie bereits in Ihrem Schnellstartprojekt verwendet haben.
 
-2. Geben Sie in **Description** einen Namen für Ihre App ein, tragen Sie den Wert "MobileServices.Quickstart_" in **Bundle Identifier** ein, markieren Sie die Option "Push Notifications" im Abschnitt "App Services", und klicken Sie dann auf **Continue**. In diesem Beispiel wird die ID **MobileServices.Quickstart** verwendet. Dieselbe ID kann jedoch nicht erneut benutzt werden, da App-IDs über alle Benutzer einzigartig sein müssen. Daher empfiehlt es sich, dass Sie Ihren vollen Namen oder Ihre Initialen an den App-Namen anhängen.
+
+> [AZURE.NOTE] Wenn Sie einen anderen Wert für die <strong>Bündelkennung</strong> als <i>MobileServices.Quickstart</i> angeben möchten, müssen Sie ebenfalls den Wert der Bündelkennung in Ihrem Xcode-Projekt aktualisieren. Es wird empfohlen, den genauen Bundle-ID-Wert zu verwenden, den Sie bereits in Ihrem Schnellstartprojekt verwendet haben.
+
+2. Geben Sie unter **Beschreibung** einen Namen für Ihre App ein, tragen Sie den Wert "_MobileServices.Quickstart_" unter **Bündelkennung** ein, markieren Sie die Option "Push Notifications" im Abschnitt "App-Dienste" und klicken Sie dann auf **Weiter**. In diesem Beispiel wird die ID **MobileServices.Quickstart** verwendet. Dieselbe ID kann jedoch nicht erneut benutzt werden, da App-IDs über alle Benutzer einzigartig sein müssen. Daher empfiehlt es sich, dass Sie Ihren vollen Namen oder Ihre Initialen an den App-Namen anhängen.
+
 
     ![](./media/enable-apple-push-notifications/mobile-services-ios-push-03.png)
 
-   	Hierdurch wird Ihre App-ID generiert, und Sie werden zum Übermitteln der Daten aufgefordert****. Klicken Sie auf **Submit**.
+   	Hierdurch wird Ihre App-ID generiert und Sie werden aufgefordert, die Daten per **Senden** zu übermitteln. Klicken Sie auf **Senden**.
+
 
     ![](./media/enable-apple-push-notifications/mobile-services-ios-push-04.png)
 
-   	Nachdem Sie auf **Submit** geklickt haben, erscheint die Registrierabschlussanzeige **Registration complete**, wie unten dargestellt. Klicken Sie auf **Fertig**.
+
+   	Nach dem Klicken auf **Senden** wird der Bildschirm **Registrierung abgeschlossen** geöffnet, wie nachstehend gezeigt. Klicken Sie auf **Done**.
+
 
     ![](./media/enable-apple-push-notifications/mobile-services-ios-push-05.png)
+
 
 3. Lokalisieren Sie die soeben erstellte App-ID und klicken Sie auf deren Zeile.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-06.png)
 
-   Durch Klicken auf die App-ID werden Einzelheiten zur App und die App-ID angezeigt. Klicken Sie auf die Schaltfläche **Einstellungen**.
+   	Durch Klicken auf die App-ID werden Einzelheiten zur App und die App-ID angezeigt. Klicken Sie auf die Schaltfläche **Einstellungen**.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-07.png)
 
-4. Blättern Sie bis zur Unterseite des Bildschirms, und klicken Sie auf die Schaltfläche **Create Certificate...** unter dem Abschnitt **Development Push SSL Certificate**.
+4. Führen Sie einen Bildlauf bis zum unteren Bildschirmbereich durch, und klicken Sie auf die Schaltfläche **Create Certificate...** unterhalb des Abschnitts **Development Push SSL Certificate**.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-08.png)
 
-   Hierdurch wird der Assistent "Add iOS Certificate" zur Anzeige gebracht.
+   	Hierdurch wird der Assistent "Add iOS Certificate" angezeigt.
 
     > [AZURE.NOTE] In diesem Lernprogramm wird ein Entwicklungszertifikat verwendet. Derselbe Prozess wird auch zum Registrieren eines Produktionszertifikats durchgeführt. Vergewissern Sie sich nur, dass Sie denselben Zertifikattyp einstellen, wenn Sie das Zertifikat zu Mobile Services hochladen.
 
@@ -69,7 +76,7 @@ Um von Mobile Services Pushbenachrichtigungen an eine iOS-App senden zu können,
 
   	![](./media/enable-apple-push-notifications/mobile-services-ios-push-11.png)
 
-   Hierdurch wird das Signierzertifikat heruntergeladen und auf Ihrem Computer in Ihrem Download-Ordner gespeichert.
+   	Hierdurch wird das Signierzertifikat heruntergeladen und auf Ihrem Computer in Ihrem Download-Ordner gespeichert.
 
   	![](./media/enable-apple-push-notifications/mobile-services-ios-push-step9.png)
 
@@ -77,9 +84,9 @@ Um von Mobile Services Pushbenachrichtigungen an eine iOS-App senden zu können,
 
 7. Doppelklicken Sie auf das heruntergeladene Pushzertifikat **aps_development.cer**.
 
-   Hierdurch wird das neue Zertifikat im Schlüsselbund installiert, wie unten gezeigt:
+   	Hierdurch wird das neue Zertifikat im Schlüsselbund installiert, wie unten gezeigt:
 
-   ![](./media/enable-apple-push-notifications/mobile-services-ios-push-step10.png)
+   	![](./media/enable-apple-push-notifications/mobile-services-ios-push-step10.png)
 
     > [AZURE.NOTE] Der Name in Ihrem Zertifikat kann zwar ein anderer sein, er enthält jedoch das Präfix **Apple Development iOS Push Services:**.
 
@@ -87,27 +94,27 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei erstellen und zu Mobil
 
 ## <a id="profile"></a>Erstellen eines Bereitstellungsprofils für die App
 
-1. Zurück im <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a> wählen Sie **Provisioning Profiles**, dann **All**, und klicken Sie schließlich auf die Schaltfläche **+**, um ein neues Profil zu erstellen. Hierdurch wird der Assistent **Add iOS Provisiong Profile** gestartet.
+1. Wählen Sie im <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a> **Provisioning Profiles**, wählen Sie **Alle** und klicken Sie dann auf das **+**, um ein neues Profil zu erstellen. Hierdurch wird der Assistent **Add iOS Provisiong Profile** gestartet.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-12.png)
 
-2. Wählen Sie unter **Development** die Option **iOS App Development** als Bereitstellungsprofiltyp aus, und klicken Sie dann auf **Continue**.
+2. Wählen Sie unter **Entwicklung** die Option **iOS App-Entwicklung** als Bereitstellungsprofiltyp aus und klicken Sie dann auf **Weiter**.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-13.png)
 
-3. Anschließend wählen Sie die App-ID für die Mobile Services Quickstart-App aus der Dropdownliste **App ID** aus und klicken auf **Continue**.
+3. Wählen Sie anschließend die App-ID für die Mobile Services Quickstart-App aus der Dropdownliste **App ID** aus und klicken auf **Weiter**.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-14.png)
 
-4. Auf dem Bildschirm **Select certificates** wählen Sie das zuvor erstellte Zertifikat aus und klicken auf **Continue**.
+4. Wählen Sie auf dem Bildschirm **Zertifikate auswählen** das zuvor erstellte Zertifikat aus und klicken auf **Weiter**.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-15.png)
 
-5. Anschließend wählen Sie die zum Testen zu verwendenden **Devices** aus und klicken auf **Continue**.
+5. Wählen Sie anschließend zum Testen **Geräte** aus und klicken auf **Weiter**.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-16.png)
 
-6. Geben Sie schließlich einen Namen für das Profil im Feld **Profile Name** ein, klicken Sie auf **Generate**, dann auf **Done**.
+6. Geben Sie schließlich einen Namen für das Profil im Feld **Profilname** ein, klicken Sie auf **Generieren**, dann auf **Fertig**.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-17.png)
 
@@ -122,4 +129,5 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei erstellen und zu Mobil
 9. Klicken Sie unter **Targets** auf **Quickstart**, erweitern Sie **Code Signing Identity**, und wählen Sie dann unter **Debug** das neue Profil. Hierdurch wird sichergestellt, dass das Xcode-Projekt das neue Profil für Codesignierung verwendet. Als Nächstes laden Sie das Zertifikat in Azure hoch.
 
    	![](./media/enable-apple-push-notifications/mobile-services-ios-push-step17.png)
-<!--HONumber=42-->
+
+<!--HONumber=47-->

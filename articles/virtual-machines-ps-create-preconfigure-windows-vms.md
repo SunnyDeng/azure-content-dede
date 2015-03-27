@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/17/2015" 
+	ms.date="03/05/2015" 
 	ms.author="josephd"/>
 
-#Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer
+# Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer
 
 Diese Schritte zeigen, wie Sie eine Reihe von Azure PowerShell-Befehlen anpassen, mit denen ein Windows-basierter virtueller Azure-Computer mit einem Bausteinansatz erstellt und vorab konfiguriert wird. Sie können diesen Prozess verwenden, um schnell einen Befehlssatz für einen neuen Windows-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern oder mehrere Befehlssätze zu erstellen, die schnell eine benutzerdefinierte Entwicklungs-/Test- oder IT-Expertenumgebung erstellen.
 
@@ -24,11 +24,11 @@ Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure Po
 
 Das Begleitthema zum Konfigurieren der Linux-basierten virtuellen Computer finden Sie unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Linux-basierter virtueller Computer](http://azure.microsoft.com/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms/).
 
-##Schritt 1: Installieren von Azure PowerShell
+## Schritt 1: Installieren von Azure PowerShell
 
-Wenn Sie dies noch nicht getan haben, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung auf Administratorebene.
+Wenn Sie dies noch nicht getan haben, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
 
-##Schritt 2: Festlegen Ihres Abonnements und Speicherkontos
+## Schritt 2: Festlegen Ihres Abonnements und Speicherkontos
 
 Legen Sie Ihr Azure-Abonnement und Speicherkonto fest, indem Sie diese Befehle in der Azure PowerShell-Eingabeaufforderung ausführen. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < und >, durch die korrekten Namen.
 
@@ -39,7 +39,7 @@ Legen Sie Ihr Azure-Abonnement und Speicherkonto fest, indem Sie diese Befehle i
 
 Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft "SubscriptionName" der Ausgabe des Befehls **Get-AzureSubscription**. Sie erhalten den korrekten Speicherkontonamen aus der Eigenschaft "Beschriftung" der Ausgabe des Befehls **Get-AzureStorageAccount**, nachdem Sie den Befehl **Select-AzureSubscription** ausgeben. Sie können diese Befehle auch in einer Textdatei für die zukünftige Verwendung speichern.
 
-##Schritt 3: Bestimmen der ImageFamily
+## Schritt 3: Bestimmen der ImageFamily
 
 Als Nächstes müssen Sie den Wert "ImageFamily" oder "Beschriftung" für das Image bestimmen, das dem virtuellen Computer in Azure entspricht, den Sie erstellen möchten. Hier finden Sie einige Beispiele aus der Galerie im Azure-Verwaltungsportal.
 
@@ -70,7 +70,7 @@ Wenn Sie das richtige Image mit diesem Befehl finden, öffnen Sie eine neue Inst
 	$label="<Label value>"
 	$image = Get-AzureVMImage | where { $_.Label -eq $label } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 
-##Schritt 4: Erstellen des Befehlssatzes
+## Schritt 4: Erstellen des Befehlssatzes
 
 Erstellen Sie den Rest des Befehlssatzes, indem Sie den entsprechenden Satz an Blöcken unten in Ihre neue Textdatei kopieren und dann die Variablenwerte eingeben und die Zeichen < und > entfernen. In den beiden [Beispielen](#examples) am Ende dieses Artikels erhalten Sie eine Idee des Endergebnisses.
 
@@ -90,7 +90,7 @@ Option 2: Geben Sie einen Namen, eine Größe und einen Verfügbarkeitsgruppenna
 	$availset="<set name>"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image -AvailabilitySetName $availset
 
-Die InstanceSize-Werte für virtuelle Computer der D-, DS- oder G-Serie finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+Die InstanceSize-Werte für virtuelle Computer der D-, DS- oder G-Serie finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
 
 Geben Sie optional für einen eigenständigen Windows-Computer das lokale Administratorkonto und Kennwort an.
 
@@ -98,7 +98,7 @@ Geben Sie optional für einen eigenständigen Windows-Computer das lokale Admini
 	$localadminpassword="<local administrator account password>"
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $localadminusername -Password $localadminpassword
 
-Geben Sie optional das lokale Administratorkonto und Kennwort, die Domäne und die Anmeldeinformationen eines Domänenkontos zum Hinzufügen des Windows-Computers zu einer vorhandenen Active Directory-Domäne an.
+Geben Sie optional das lokale Administratorkonto und Kennwort, die Domäne und den Namen und das Kennwort eines Domänenkontos zum Hinzufügen des Windows-Computers zu einer vorhandenen Active Directory-Domäne an.
 
 	$localadminusername="<local administrator account name>"
 	$localadminpassword="<local administrator account password>"
@@ -108,7 +108,7 @@ Geben Sie optional das lokale Administratorkonto und Kennwort, die Domäne und d
 	$domacctpassword="<password of the domain account that has permission to add the machine to the domain>"
 	$vm1 | Add-AzureProvisioningConfig -AdminUserName $localadminusername -Password $localadminpassword -WindowsDomain -Domain $domacctdomain -DomainUserName $domacctname -DomainPassword $domacctpassword -JoinDomain $domaindns
 
-Beachten Sie, dass dies die Angabe des Kontonamens und des Kennworts für ein Active Directory-Domänenkonto erfordert. Wenn Sie den resultierenden Befehlssatz als Datei speichern, stellen Sie sicher, dass Sie ihn an einem sicheren Ort zum Schutz des Domänenkontonamens und -kennworts speichern.
+Beachten Sie, dass beide Optionen die Angabe von Kontonamen und Kennwörtern erfordern. Wenn Sie den resultierenden Befehlssatz in einer Datei speichern, speichern Sie ihn an einem sicheren Ort, um ihn zu schützen.
 
 Zusätzliche Vorabkonfigurationsoptionen für Windows-basierte virtuelle Computer finden Sie in der Syntax für die **Windows**- und **WindowsDomain**-Parametersätze in [Add-AzureProvisioningConfig](https://msdn.microsoft.com/library/azure/dn495299.aspx).
 
@@ -148,23 +148,23 @@ Optional können Sie den virtuellen Computer einem vorhandenen Satz mit Lastenau
 
 Schließlich starten Sie den Erstellungsprozess für die virtuellen Computer durch Auswahl eines dieser Befehlsblöcke (erforderlich).
 
-Option 1: Erstellen Sie den virtuellen Computer in einem neuen Clouddienst. 
+Option 1: Erstellen Sie den virtuellen Computer in einem neuen Cloud-Dienst. 
 
 	New-AzureVM -Location "<An Azure location, such as US West>" -VMs $vm1
 
-Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddienst. 
+Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Cloud-Dienst. 
 
 	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
-Der kurze Name des Clouddiensts ist der Name in der Liste der Clouddienste im Azure-Verwaltungsportal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal. 
+Der kurze Name des Cloud-Diensts ist der Name in der Liste der Cloud-Dienste im Azure-Verwaltungsportal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal. 
 
-Option 3: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddienst und virtuellen Netzwerk.
+Option 3: Erstellen Sie den virtuellen Computer in einem vorhandenen Cloud-Dienst und virtuellen Netzwerk.
 
 	$svcname="<short name of the cloud service>"
 	$vnetname="<name of the virtual network>"
 	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
-##Schritt 5: Ausführen des Befehlssatzes
+## Schritt 5: Ausführen des Befehlssatzes
 
 Überprüfen Sie den Azure PowerShell-Befehl in einem Texteditor, bestehend aus mehreren Blöcken von Befehlen aus Schritt 4. Stellen Sie sicher, dass Sie alle erforderlichen Variablen angegeben haben und diese die richtigen Werte aufweisen. Stellen Sie außerdem sicher, dass Sie alle < und > entfernt haben.
 
@@ -175,11 +175,11 @@ Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen Computer erstel
 - diesen Befehlssatz als Textdatei oder PowerShell-Skriptdatei (*.ps1) speichern
 - diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des Azure-Verwaltungsportals speichern 
 
-##<a id="examples"></a>Beispiele
+## <a id="examples"></a>Beispiele
 
 Hier finden Sie zwei Beispiele für die Verwendung der vorangegangenen Schritte zum Erstellen von Azure PowerShell-Befehlssätzen, die Windows-basierte virtuelle Azure-Computer erstellen.
 
-###Beispiel 1
+### Beispiel 1
 
 Ich brauche einen PowerShell-Befehl, um den ersten virtuellen Computer für einen Active Directory-Domänencontroller zu erstellen, der:
 
@@ -189,7 +189,7 @@ Ich brauche einen PowerShell-Befehl, um den ersten virtuellen Computer für eine
 - einen zusätzlichen Datenträger mit 20 GB aufweist
 - die statische IP-Adresse 192.168.244.4 umfasst
 - sich im BackEnd-Subnetz des virtuellen Netzwerks "AZDatacenter" befindet
-- sich im Clouddienst "Azure-TailspinToys" befindet
+- sich im Cloud-Dienst "Azure-TailspinToys" befindet
 
 Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen Computers, mit Leerzeilen zwischen jedem Block für Lesbarkeit.
 
@@ -217,7 +217,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 	$vnetname="AZDatacenter"
 	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
-###Beispiel 2
+### Beispiel 2
 
 Ich brauche einen PowerShell-Befehlssatz, um einen virtuellen Computer für einen Line-of-Business-Server zu erstellen, der:
 
@@ -226,7 +226,7 @@ Ich brauche einen PowerShell-Befehlssatz, um einen virtuellen Computer für eine
 - Mitglied der Domäne "corp.contoso.com" ist
 - einen zusätzlichen Datenträger mit 200 GB aufweist 
 - sich im FrontEnd-Subnetz des virtuellen Netzwerks "AZDatacenter" befindet
-- sich im Clouddienst "Azure-TailspinToys" befindet
+- sich im Cloud-Dienst "Azure-TailspinToys" befindet
 
 Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen Computers.
 
@@ -257,7 +257,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 
-##Zusätzliche Ressourcen
+## Zusätzliche Ressourcen
 
 [Dokumentation zu virtuellen Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
@@ -265,8 +265,8 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Übersicht über Azure Virtual Machines](http://msdn.microsoft.com/library/azure/jj156143.aspx)
 
-[Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/)
+[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/)
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](../virtual-machines-ps-create-preconfigure-linux-vms/)
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

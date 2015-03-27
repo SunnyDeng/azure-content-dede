@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Hochladen von Dateien in ein Media Services-Konto mit .NET" 
 	description="Erfahren Sie, wie Sie Medieninhalte in Media Services nutzen können, indem Sie Medienobjekte erstellen und hochladen." 
 	services="media-services" 
@@ -21,7 +21,7 @@
 # Hochladen von Dateien in ein Media Services-Konto mit .NET
 [AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
 
 In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch oder erfassen sie auf diese Weise. Die **Medienobjekt**-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien (und die Metadaten zu diesen Dateien) enthalten.  Nachdem die Dateien hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert.
 
@@ -41,7 +41,7 @@ Wenn Sie für Ihr Medienobjekt eine Verschlüsselung unter Verwendung der **Comm
 
 Wenn Sie für Ihr Medienobjekt eine Verschlüsselung mit einer **StorageEncrypted**-Option angeben, wird vom Media Services SDK für .NET ein **StorateEncrypted** **ContentKey** für Ihr Medienobjekt erstellt.
 
->[AZURE.NOTE]Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft (z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters). Aus diesem Grund ist die Prozentkodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentkodierung reservierten Zeichen](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters) enthalten: !*'();:@&=+$,/?%#[]". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
+>[AZURE.NOTE]Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft (z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.) Aus diesem Grund ist die Prozentkodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentkodierung reservierten Zeichen](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters) enthalten: !*'();:@&=+$,/?%#[]". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
 
 In diesem Thema wird beschrieben, wie Sie mit dem Media Services .NET SDK und den Media Services .NET SDK-Erweiterungen Dateien in ein Media Services-Medienobjekt hochladen.
 
@@ -206,7 +206,7 @@ Das folgende Beispiel zeigt das Hinzufügen zwei neuer IngestManifestAssets, dur
 	IIngestManifestAsset bulkAsset1 =  manifest.IngestManifestAssets.Create(destAsset1, new[] { filename1 });
 	IIngestManifestAsset bulkAsset2 =  manifest.IngestManifestAssets.Create(destAsset2, new[] { filename2, filename3 });
 	
-Sie können eine beliebige hochleistungsfähige Clientanwendung nutzen, die in der Lage ist, die Medienobjektdateien unter dem durch die **IIngestManifest.BlobStorageUriForUpload**-Eigenschaft von IngestManifest angegebenen URI des BLOB-Speichercontainers hochzuladen. Der Uploadservice [Aspera On Demand for Azure](https://datamarket.azure.com/application/2cdbc511-cb12-4715-9871-c7e7fbbb82a6) bietet beispielsweise beachtliche Geschwindigkeiten. Sie können auch Code zum Hochladen der Medienobjektdateien schreiben, wie im folgenden Codebeispiel veranschaulicht.
+Sie können eine beliebige hochleistungsfähige Clientanwendung nutzen, die in der Lage ist, die Medienobjektdateien unter dem durch die **IIngestManifest.BlobStorageUriForUpload**-Eigenschaft von IngestManifest angegebenen URI des BLOB-Speichercontainers hochzuladen. Der Uploadservice [Aspera On Demand für Azure](https://datamarket.azure.com/application/2cdbc511-cb12-4715-9871-c7e7fbbb82a6) bietet beispielsweise beachtliche Geschwindigkeiten. Sie können auch Code zum Hochladen der Medienobjektdateien schreiben, wie im folgenden Codebeispiel veranschaulicht.
 	
 	static void UploadBlobFile(string destBlobURI, string filename)
 	{
@@ -307,4 +307,4 @@ Sie haben nun ein Medienobjekt in Media Services hochgeladen und können mit dem
 
 [Abrufen eines Medienprozessors]: ../media-services-get-media-processor/
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

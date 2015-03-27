@@ -1,7 +1,7 @@
-<properties 
+﻿<properties 
 	pageTitle="Aktivieren von Google Cloud Messaging" 
 	description="Befolgen Sie dieses Lernprogramm, um einen neuen Dienst mit Azure Mobile Services zu erstellen." 
-	services="mobile-services, notification-hubs" 
+	services="mobile-services" 
 	documentationCenter="android" 
 	authors="ggailey777" 
 	manager="dwrede" 
@@ -10,13 +10,13 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="11/21/2014" 
 	ms.author="glenga"/>
 
-# Aktivieren von Google Cloud Messaging
+#Aktivieren von Google Cloud Messaging
 
 Dieses Thema zeigt, wie Sie die Android-App bereit machen für Pushbenachrichtigung mithilfe von Google Cloud Messaging (GCM). Der erhaltene API-Schlüssel wird verwendet, um die Android-App für Pushbenachrichtigung im [Azure-Verwaltungsportal][Verwaltungsportal] zu registrieren. Ein vollständiges End-to-End-Lernprogramm einschließlich Aktualisierung Ihrer App finden Sie unter [Erste Schritte mit Pushbenachrichtigungen]. 
 
@@ -31,12 +31,11 @@ Jetzt können Sie diesen API-Schlüsselwert verwenden, um Dienste für die Authe
 
 
 <!-- URLs. -->
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-android-get-started-push/
+[Erste Schritte mit Pushbenachrichtigungen]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push/
 [Visual Studio 2012 Express für Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=268375
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
-[.NET-Back-End-Version]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
+[.NET-Back-End-Version]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
 
-
-<!--HONumber=42-->
+<!--HONumber=47-->

@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Verwenden von Hadoop Pig in HDInsight | Azure"
    description="Erfahren Sie, wie Sie mithilfe des .NET SDK für Hadoop Pig-Aufträge an Hadoop in HDInsight übermitteln."
    services="hdinsight"
@@ -40,7 +40,7 @@ Anweisungen hierzu finden Sie unter <a href="http://go.microsoft.com/fwlink/?Lin
 
 > [AZURE.NOTE] Stellen Sie beim Erstellen des Zertifikats sicher, dass Sie sich den verwendeten Anzeigenamen notieren, da dieser später verwendet wird.
 
-## <a id="subscriptionid"></a>Suchen Ihrer Abonnement-ID
+## <a id="subscriptionid"></a>Ermitteln Ihrer Abonnement-ID
 
 Jedes Azure-Abonnement wird durch einen GUID-Wert gekennzeichnet, der als Abonnement-ID bezeichnet wird. Ermitteln Sie diesen Wert mithilfe der folgenden Schritte.
 
@@ -229,4 +229,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](../hdinsight-use-mapreduce/)
 
-<!--HONumber=45--> 
+<!--HONumber=47-->

@@ -28,7 +28,7 @@ Hadoop stellt eine Streaming-API für MapReduce zur Verfügung, mit der Sie Map-
 
 * Ein Texteditor
 
-* Für Windows-Clients: PuTTY und PSCP Diese Dienstprogramme sind erhältlich unter: <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>
+* Für Windows-Clients: PuTTY und PSCP Diese Dienstprogramme sind erhältlich unter <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>
 
 ## Wortzählung
 
@@ -54,7 +54,7 @@ Mit Hadoop können Sie eine Datei angeben, die die von einem Auftrag verwendete 
 
 * **Datenformat**: die verwendeten und erzeugten Daten müssen ein Schlüssel-Wert-Paar darstellen, das durch ein Tabulatorzeichen getrennt werden muss
 
-Python kann diese Anforderungen einfach mithilfe des Moduls **sys** zum Lesen von STDIN und mithilfe des Moduls **print** für die Ausgabe an STDOUT behandeln. Der Rest besteht einfach aus der Formatierung der Daten mit einem Tabulatorzeichen (`\t`) zwischen Schlüssel und Wert.
+Python kann diese Anforderungen einfach mithilfe des Moduls **sys** zum Lesen von STDIN und mithilfe des Moduls **print** für die Ausgabe an STDOUT behandeln. Der Rest besteht einfach aus der Formatierung der Daten mit einem Tabulatorzeichen ((`\t`) ) zwischen Schlüssel und Wert.
 
 ## Erstellen von Mapper und Reducer
 
@@ -139,7 +139,7 @@ Verwenden Sie den folgenden Befehl auf dem Client im gleichen Verzeichnis, in de
 
 Dadurch werden die Dateien aus dem lokalen System auf den Stammknoten kopiert.
 
-> [AZURE.NOTE] Wenn Sie zum Schutz Ihres SSH-Kontos ein Kennwort verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel verwendet haben, müssen Sie möglicherweise den Parameter `-i` und Pfad zum privaten Schlüssel angeben. Beispiel: `scp -i /Pfad/zum/privaten/Schlüssel mapper.py reducer.py Benutzername@Clustername-ssh.azurehdinsight.net:`
+> [AZURE.NOTE] Wenn Sie zum Schutz Ihres SSH-Kontos ein Kennwort verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel verwendet haben, müssen Sie möglicherweise den `-i`-Parameter und Pfad zum privaten Schlüssel angeben. Beispiel: `scp -i /path/to/private/key mapper.py reducer.py username@clustername-ssh.azurehdinsight.net:`
 
 ## Ausführen von MapReduce
 
@@ -147,7 +147,7 @@ Dadurch werden die Dateien aus dem lokalen System auf den Stammknoten kopiert.
 
 		ssh username@clustername-ssh.azurehdinsight.net
 
-	> [AZURE.NOTE] Wenn Sie zum Schutz Ihres SSH-Kontos ein Kennwort verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel verwendet haben, müssen Sie möglicherweise den Parameter `-i` und Pfad zum privaten Schlüssel angeben. Beispiel: `ssh -i /path/to/private/key username@clustername-ssh.azurehdinsight.net`
+	> [AZURE.NOTE] Wenn Sie zum Schutz Ihres SSH-Kontos ein Kennwort verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel verwendet haben, müssen Sie möglicherweise den `-i` -Parameter und Pfad zum privaten Schlüssel angeben. Beispiel:  `ssh -i /path/to/private/key username@clustername-ssh.azurehdinsight.net`
 
 2. Verwenden Sie zum Starten des MapReduce-Auftrags den folgenden Befehl.
 
@@ -199,4 +199,5 @@ Nachdem Sie erfahren haben, wie Sie Streaming-MapReduce-Aufträge mit HDInsight 
 * [Verwenden von Hive mit HDInsight](../hdinsight-use-hive/)
 * [Verwenden von Pig mit HDInsight](../hdinsight-use-pig/)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](../hdinsight-use-mapreduce)
-<!--HONumber=45--> 
+
+<!--HONumber=47-->

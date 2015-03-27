@@ -4,7 +4,7 @@
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal][] an.
 
-2. Klicken Sie im unteren Bereich des Verwaltungsportal auf **Neu**.
+2. Klicken Sie im unteren Bereich des Verwaltungsportals auf **Neu**.
 
 	![command-bar-new][command-bar-new]
 
@@ -12,7 +12,7 @@
 
 	![sendgrid-store][sendgrid-store]
 
-4. Klicken Sie im Dialogfeld **Choose an Application and Service** auf **SendGrid** und anschließend auf den Pfeil nach rechts.
+4. Klicken Sie im Dialogfeld **App und Service wählen** auf **SendGrid** und anschließend auf den Pfeil nach rechts.
 
 5. Klicken Sie im Dialogfeld **Personalize Application and Service** auf den **SendGrid**-Plan, für den Sie sich anmelden möchten.
 
@@ -73,7 +73,8 @@
 [SendGrid Features]: http://sendgrid.com/features
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
 [SendGrid Getting Started]: http://sendgrid.com/docs
-[SendGrid Provisioning Process]: https://support.sendgrid.com/hc/de-de/articles/200181628-Why-is-my-account-being-provisioned-
+[SendGrid Provisioning Process]: https://support.sendgrid.com/hc/articles/200181628-Why-is-my-account-being-provisioned-
 [Alle APIs]: https://sendgrid.com/docs/API_Reference/index.html
 
-<!--HONumber=42-->
+
+<!--HONumber=47-->

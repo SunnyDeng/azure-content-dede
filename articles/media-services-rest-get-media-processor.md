@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen eines Medienprozessors - Azure" 
 	description="Erfahren Sie, wie Sie eine Medienprozessorkomponente erstellen können, um Medieninhalte für Azure Media Services zu codieren, zu ver- oder entschlüsseln, und um Formate zu konvertieren." 
 	services="media-services" 
@@ -19,7 +19,7 @@
 
 # Vorgehensweise: Abrufen einer Media Processor-Instanz
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
 
 ## Übersicht
 
@@ -39,7 +39,7 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
     <tr>
        <td>Azure Media Encoder</td>
        <td>Zur Ausführung von Codieraufgaben mit dem Media Encoder.</td>
-       <td><a href="http://msdn.microsoft.com/library/jj129582.aspx"> Aufgabenvoreinstellungen für den Azure Media Encoder</a></td>
+       <td><a href="http://msdn.microsoft.com/library/jj129582.aspx">Aufgabenvoreinstellungen für den Azure Media Encoder</a></td>
     </tr>
     <tr>
         <td>Azure Media Packager</td>
@@ -59,7 +59,7 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
     <tr>
         <td>Storage Decryption</td>
         <td>Entschlüsselt Medienobjekte, die mit der Speicherverschlüsselung verschlüsselt wurden.</td>
-		<td>-</td>
+		<td>N/V</td>
     </tr>  </tbody>
 </table>
 
@@ -69,9 +69,9 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
 
 >[AZURE.NOTE] Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
->Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services-REST-API](../media-services-rest-how-to-use).
+>Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](../media-services-rest-how-to-use).
 
->Nach der erfolgreichen Verbindung mit "https://media.windows.net" erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](../media-services-rest-connect_programmatically/) beschrieben müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
+>Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](../media-services-rest-connect_programmatically/) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
 
 
 
@@ -110,9 +110,9 @@ Antwort:
 
 
 ## Nächste Schritte
-Sie sind nun in der Lage, eine Medienprozessor-Instanz abzurufen, und können mit dem Thema [Gewusst wie: Codieren von Medienobjekten][] fortfahren. Dort lernen Sie, wie Sie Medienobjekte mit dem Azure Media Encoder codieren können.
+Sie sind nun in der Lage, eine Medienprozessorinstanz abzurufen, und können mit dem Thema [Codieren von Medienobjekten][] fortfahren. Dort lernen Sie, wie Sie Medienobjekte mit dem Azure Media Encoder codieren können.
 
-[Gewusst wie: Codieren von Medienobjekten]: ../media-services-rest-encode-asset/
+[Codieren von Medienobjekten]: ../media-services-rest-encode-asset/
 [Aufgabenvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
-[Gewusst wie: Programmgesteuertes Verbinden mit Media Services]: ../media-services-rest-connect_programmatically/
-<!--HONumber=45--> 
+[Vorgehensweise: Programmgesteuertes Verbinden mit Mediendiensten]: ../media-services-rest-connect_programmatically/
+<!--HONumber=47-->
