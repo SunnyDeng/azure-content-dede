@@ -39,7 +39,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-War
 -   [Vorgehensweise: Löschen einer Warteschlange][]
 -   [Nächste Schritte][]
 
-[AZURE.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 

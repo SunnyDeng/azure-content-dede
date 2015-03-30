@@ -45,7 +45,7 @@ Azure-Tabellenspeicherdienst demonstriert. Die Beispiele sind in C# geschrieben 
 -   [Vorgehensweise: Löschen einer Tabelle][]
 -   [Nächste Schritte][]
 
-[AZURE.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 

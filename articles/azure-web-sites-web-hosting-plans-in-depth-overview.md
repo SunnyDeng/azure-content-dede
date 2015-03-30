@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="11/17/2014" 
-	ms.author="byvinyal, yochayk"/>
+	ms.author="byvinyal"/>
 </br>
 # Webhosting-Pläne für Azure-Websites: ausführliche Übersicht#
 </br>

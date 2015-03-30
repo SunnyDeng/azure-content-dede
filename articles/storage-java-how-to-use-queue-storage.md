@@ -18,6 +18,7 @@
 
 # Verwenden des Warteschlangenspeichers in Java
 
+[AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen** und **Löschen** von Warteschlangen. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
 
 Hinweis: Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][]. 
@@ -41,7 +42,7 @@ Hinweis: Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf And
 * [Vorgehensweise: Löschen einer Warteschlange](#delete-queue)
 * [Nächste Schritte](#NextSteps)
 
-[AZURE.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
 <h2><a id="CreateAccount"></a>Erstellen eines Azure-Speicherkontos</h2>
 

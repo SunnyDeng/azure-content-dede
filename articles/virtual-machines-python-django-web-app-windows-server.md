@@ -1,5 +1,5 @@
-c<properties 
-	pageTitle="Python-Web-App mit Django - Azure-Lernprogramm" 
+<properties 
+	pageTitle="Python Web App mit Django - Azure Lernprogramm" 
 	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website auf Azure mithilfe eines virtuellen Computers mit Windows Server 2012 R2 Datacenter hosten." 
 	services="virtual-machines" 
 	documentationCenter="python" 

@@ -38,7 +38,7 @@ Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des War
 * [Vorgehensweise: Löschen einer Warteschlange](#delete-queue)
 * [Nächste Schritte](#next-steps)
 
-[AZURE.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
 <h2><a id="create-account"></a>Erstellen eines Azure-Speicherkontos</h2>
 

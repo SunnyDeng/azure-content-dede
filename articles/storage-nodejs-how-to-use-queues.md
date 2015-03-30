@@ -47,7 +47,7 @@ Löschen der Warteschlangen**. Weitere Informationen zu Warteschlangen finden Si
 * [Vorgehensweise: Arbeiten mit Shared Access Signature][]
 * [Nächste Schritte][]
 
-[AZURE.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
 <h2><a name="create-account"></a>Erstellen eines Azure-Speicherkontos</h2>
 
