@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Webhosting-Pläne für Azure-Websites: ausführliche Übersicht - Microsoft Azure-Featurehandbuch" 
 	description="Erfahren Sie, wie Webhostingpläne für Azure-Websites funktionieren und wie Ihre Managementerfahrung davon profitiert." 
 	services="web-sites" 
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="11/17/2014" 
-	ms.author="byvinyal"/>
+	ms.author="byvinyal, yochayk"/>
 </br>
 # Webhosting-Pläne für Azure-Websites: ausführliche Übersicht#
 </br>
