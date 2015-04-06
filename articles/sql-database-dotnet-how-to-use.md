@@ -69,7 +69,7 @@ Als Nächstes erstellen und konfigurieren Sie eine Datenbank und einen Server. I
 
 	Für jede in Azure erstellte SQL-Datenbank existieren eigentlich drei Replikate dieser Datenbank. Auf diese Weise wird hohe Verfügbarkeit sichergestellt.
 Das Failover erfolgt transparent und ist Teil des Diensts. Die [SLA (Vereinbarung zum
-Servicelevel)][] bietet 99,9 % Verfügbarkeit für die SQL-Datenbank.
+Servicelevel)] bietet 99,9 % Verfügbarkeit für die SQL-Datenbank.
 
 8. Wählen Sie unter Server die Option **Neuer SQL-Datenbankserver** aus. 
 
@@ -238,7 +238,7 @@ Sie kennen nun die Grundlagen für Verbindungen zu SQL Database. In den folgende
   [Firewall für SQL-Datenbank]: http://social.technet.microsoft.com/wiki/contents/articles/sql-azure-firewall.aspx
   [Tools und Hilfsprogramme (SQL-Datenbank)]: http://msdn.microsoft.com/library/windowsazure/ee621784.aspx
   [Erstellen einer SQL-Datenbank in Azure]: http://social.technet.microsoft.com/wiki/contents/articles/how-to-create-a-sql-azure-database.aspx
-  [Vereinbarung zum Servicelevel]: {localLink:1132} "SLA"
+  [SLA (Vereinbarung zum Servicelevel)]: {localLink:1132} "SLA"
   [EntityClient-Anbieter für Entity Framework]: http://msdn.microsoft.com/library/bb738561.aspx
   [Entwicklung: Gewusst wie-Themen (SQL Database)]: http://msdn.microsoft.com/library/windowsazure/ee621787.aspx
   [Entwicklung: Themen zur Vorgehensweise (SQL-Datenbank)]: http://msdn.microsoft.com/library/windowsazure/ee621787.aspx
