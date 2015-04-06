@@ -18,7 +18,7 @@
 
 # Abfragen von mehreren Shards
 ## Übersicht
-Das **Abfragen von mehreren Shards** wird für Aufgaben wie Datensammlung/Berichterstellung verwendet, für die das Ausführen einer Abfrage erforderlich ist, die sich über mehrere Shards erstreckt. (Vergleichen Sie dies mit dem [datenabhängigen Routing](./sql-database-elastic-scale-data-dependent-routing.md),das die gesamte Arbeit in einem einzelnen Shard ausführt.) 
+Das **Abfragen von mehreren Shards** wird für Aufgaben wie Datensammlung/Berichterstellung verwendet, für die das Ausführen einer Abfrage erforderlich ist, die sich über mehrere Shards erstreckt. (Vergleichen Sie dies mit dem [datenabhängigen Routing](./sql-database-elastic-scale-data-dependent-routing.md), das die gesamte Arbeit in einem einzelnen Shard ausführt.) 
 
 In der Elastic Scale-Clientbibliothek wird ein neuer Namespace mit dem Namen **Microsoft.Azure.SqlDatabase.ElasticScale.Query** eingeführt, der das Abfragen mehrerer Shards mithilfe einer einzelnen Abfrage und eines einzelnen Ergebnisses ermöglicht. Diese stellt eine Abfrageabstraktion über eine Sammlung von Shards bereit. Darüber hinaus werden auch alternative Ausführungsrichtlinien bereitgestellt, insbesondere Teilergebnisse zur Behandlung von Fehlern beim Abfragen über mehrere Shards hinweg.  
 
