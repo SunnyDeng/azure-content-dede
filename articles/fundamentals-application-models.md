@@ -1,14 +1,14 @@
-﻿<properties umbracoNaviHide="0" pageTitle="Anwendungsmodell" metaKeywords="Azure, Azure, Anwendungsmodell, Azure-Anwendungsmodell, Entwicklungsmodell, Azure-Entwicklungsmodell, gehosteter Dienst, in Azure gehosteter Dienst, Webrolle, Workerrolle" description="Hier erfahren Sie mehr über das Anwendungsmodell von gehosteten Azure-Diensten. Es werden wichtige Konzepte, Entwicklungsüberlegungen, Definition und Konfiguration Ihrer Anwendung sowie Skalierung erläutert." urlDisplayName="Application Model" headerExpose="" footerExpose="" disqusComments="1" title="Azure Fundamentals - Application Models" authors="timlt" manager="timlt" />
+<properties umbracoNaviHide="0" pageTitle="Anwendungsmodell" metaKeywords="Azure, Azure, Anwendungsmodell, Azure-Anwendungsmodell, Entwicklungsmodell, Azure-Entwicklungsmodell, gehosteter Dienst, in Azure gehosteter Dienst, Webrolle, Workerrolle" description="Hier erfahren Sie mehr über das Anwendungsmodell von gehosteten Azure-Diensten. Es werden wichtige Konzepte, Entwicklungsüberlegungen, Definition und Konfiguration Ihrer Anwendung sowie Skalierung erläutert." urlDisplayName="Application Model" headerExpose="" footerExpose="" disqusComments="1" title="Azure Fundamentals - Application Models" authors="timlt" manager="timlt" />
 
 <tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/1/2014" ms.author="timlt" />
 
 
 
-#Azure-Ausführungsmodelle
+## Azure-Ausführungsmodelle
 
 Azure bietet verschiedene Ausführungsmodelle für die Ausführung von Anwendungen. Die Modelle bieten unterschiedliche Dienste an, und daher hängt Ihre Auswahl davon ab, was Sie vorhaben. Dieser Artikel betrachtet drei Modelle, beschreibt die einzelnen Technologien und liefert Anwendungsbeispiele.
 
-##Inhaltsverzeichnis
+## Inhaltsverzeichnis
 
 - [Virtuelle Computer](#VMachine)
 - [Websites](#WebSites)
@@ -76,7 +76,7 @@ Azure Virtual Machines kann auf vielerlei Arten genutzt werden. Es folgt eine Li
 Dies sind nicht die einzigen Möglichkeiten, aber gute Beispiele für den Einsatz von virtuellen Azure-Computern.  
 
 
-###Gruppieren von virtuellen Computern: Cloud Services 
+## Gruppieren von virtuellen Computern: Cloud Services 
 
 Bei der Erstellung eines neuen virtuellen Computers mit Azure Virtual Machines haben Sie die Auswahl, diesen eigenständig oder als Teil einer Gruppe von virtuellen Computern in einem *Cloud-Dienst* anzulegen. (Verwechseln Sie dies trotz der Namensgleichheit nicht mit Cloud Services, der Azure-Paas-Technologie.)  Jedem eigenständigen virtuellen Computer wird eine öffentliche IP-Adresse zugewiesen, während alle virtuellen Computer in einem Cloud-Dienst über dieselbe öffentliche IP-Adresse erreichbar sind. [Abbildung 2](#Fig2) zeigt, wie dies aussieht.
  
