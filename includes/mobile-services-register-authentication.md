@@ -1,6 +1,4 @@
-﻿
-
-Registrieren Sie Ihre App zum Authentifizieren von Benutzern bei einem Identitätsanbieter. Registrieren Sie dann die vom Anbieter generierten Anmeldeinformationen des Clients mit Azure Mobile Services.
+﻿Registrieren Sie Ihre App zum Authentifizieren von Benutzern bei einem Identitätsanbieter. Registrieren Sie dann die vom Anbieter generierten Anmeldeinformationen des Clients mit Azure Mobile Services.
 
 1. Melden Sie sich beim Azure-Verwaltungsportal an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
@@ -20,4 +18,4 @@ Registrieren Sie Ihre App zum Authentifizieren von Benutzern bei einem Identitä
 
     > [AZURE.IMPORTANT] Überprüfen Sie, ob Sie den richtigen URI für die Umleitung auf der Entwicklerwebsite Ihres Identitätsanbieters festgelegt haben. Wie in den verknüpften Anweisungen für die einzelnen Anbieter oben beschrieben, kann sich der Umleitungs-URI für einen .NET-Back-End-Dienst von einem JavaScript-Back-End-Dienst unterscheiden. Bei einem falsch konfigurierten Umleitungs-URI kann der Anmeldebildschirm möglicherweise nicht ordnungsgemäß angezeigt werden und die App weist unerwartete Störungen auf.
 
-<!--HONumber=47-->
+<!--HONumber=49-->

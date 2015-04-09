@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Konsistenzebenen in DocumentDB" 
 	description="DocumentDB verfügt über vier Konsistenzebenen mit zugehörigen Leistungsstufen, die Anwendungsentwickler dabei unterstützen, vorhersehbare Kompromisse zwischen Konsistenz, Verfügbarkeit und Latenz einzugehen." 
 	services="documentdb" 
@@ -17,7 +17,7 @@
 	ms.author="mimig"/>
 
 # Konsistenzebenen in DocumentDB
-Entwickler werden oft mit der Herausforderung konfrontiert, zwischen zwei Extremen, der strikten und der letztendlichen Konsistenz (Eventual Consistency), zu wählen. In der Realität liegen mehrere Konsistenzebenen zwischen diesen zwei Extremen. In den meisten realen Szenarien profitieren Anwendungen von fein abgegrenzten Kompromissen zwischen Konsistenz, Verfügbarkeit und Latenz. DocumentDB bietet vier klar abgegrenzte Konsistenzebenen mit den dazugehörigen Leistungsstufen. Damit können Anwendungsentwickler vorhersagbare Kompromisse zwischen Konsistenz, Verfügbarkeit und Latenz schließen.  
+Entwickler werden oft mit der Herausforderung konfrontiert, zwischen zwei Extremen, der strikten und der letztendlichen Konsistenz (Eventual Consistency), zu wählen. In der Realität liegen mehrere Konsistenzebenen zwischen diesen zwei Extremen. In den meisten realen Szenarien profitieren Anwendungen von gut ausbalancierten Kompromissen zwischen Konsistenz, Verfügbarkeit und Latenz. DocumentDB bietet vier klar abgegrenzte Konsistenzebenen mit den dazugehörigen Leistungsstufen. Damit können Anwendungsentwickler vorhersagbare Kompromisse zwischen Konsistenz, Verfügbarkeit und Latenz schließen.  
  
 Alle Systemressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer und Berechtigungen sind für Lesevorgänge und Abfragen strikt konsistent. Die Konsistenzebenen werden nur auf benutzerdefinierte Ressourcen angewendet. Für Abfragen und Lesevorgänge für benutzerdefinierte Ressourcen wie Dokumente, Anhänge, gespeicherte Prozeduren, Trigger und UDFs bietet DocumentDB vier eigene Konsistenzebenen: 
 
@@ -26,7 +26,7 @@ Alle Systemressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer und
  - Session
  - Eventual 
 
-Mit diesen granularen, gut abgegrenzten Konsistenzebenen können fundierte Kompromisse zwischen Konsistenz, Verfügbarkeit und Leistung geschlossen werden. Diese Konsistenzebenen stützen sich auf vorhersagbare Leistungsstufen und stellen konsistente Ergebnisse für Ihre Anwendung sicher.   
+Mit diesen genau definierten und abgegrenzten Konsistenzebenen können fundierte Kompromisse zwischen Konsistenz, Verfügbarkeit und Leistung geschlossen werden. Diese Konsistenzebenen stützen sich auf vorhersagbare Leistungsstufen und stellen konsistente Ergebnisse für Ihre Anwendung sicher.   
 
 ## Konsistenzebenen
 Sie können eine Standardkonsistenzebene für Ihr Datenbankkonto konfigurieren, die für alle Sammlungen (in allen Datenbanken) in diesem Datenbankkonto gilt. Standardmäßig wird für alle Lesevorgänge und Abfragen für benutzerdefinierte Ressourcen die Standardkonsistenzebene verwendet, die für das Datenbankkonto festgelegt ist. Die Konsistenzebene einer bestimmten Lese-/Abfrageanforderung kann jedoch durch Angabe des [x-ms-consistency-level]-Anforderungsheaders herabgesetzt werden. Es werden vier Arten von Konsistenzebenen vom DocumentDB-Replikationsprotokoll unterstützt. Sie werden weiter unten genauer beschrieben. 
@@ -54,8 +54,8 @@ Bei benutzerdefinierten Ressourcen entspricht die Konsistenzebene der Abfragen s
 
 Indizierungsmodus|	Lesevorgänge|	Abfragen  
 -------------|-------|---------
-Konsistent (Standard)|	Wählen Sie "Strong", "Bounded staleness", "Session" oder "Eventual"|	Wählen Sie "Strong", "Bounded staleness", "Session" oder "Eventual"|
-Verzögert|	Wählen Sie "Strong", "Bounded staleness", "Session" oder "Eventual"|	Eventual  
+Konsistent (Standard)|	Wählen Sie "Strong", "Bounded Staleness", "Session" oder "Eventual".|	Wählen Sie "Strong", "Bounded Staleness", "Session" oder "Eventual".|
+Verzögert|	Wählen Sie "Strong", "Bounded Staleness", "Session" oder "Eventual".|	Eventual  
 
 Wie bei Leseanforderungen kann die Konsistenzebene einer bestimmten Abfrageanforderung durch Angabe des [x-ms-consistency-level]-Anforderungsheaders herabgesetzt werden.  
 
@@ -71,4 +71,4 @@ Wie bei Leseanforderungen kann die Konsistenzebene einer bestimmten Abfrageanfor
 -	Werner Vogels. Schließlich konsistent - Wiederaufnahme des Themas.    
 [http://allthingsdistributed.com/2008/12/eventually_consistent.html](http://allthingsdistributed.com/2008/12/eventually_consistent.html)
 
-<!--HONumber=47-->
+<!--HONumber=49-->

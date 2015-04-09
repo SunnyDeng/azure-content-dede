@@ -1,6 +1,6 @@
-﻿Wenn Sie eine MongoLab-Datenbank bereitstellen, sendet MongoLab einen Verbindungs-URI im MongoLab-Standardformat für Verbindungszeichenfolgen an Azure. Mithilfe dieses Werts wird eine MongoDB-Verbindung über den von Ihnen ausgewählten MongoDB-Treiber hergestellt. Weitere Informationen zu Verbindungszeichenfolgen finden Sie unter [Verbindungen](http://www.mongodb.org/display/DOCS/Connections) unter mongodb.org.
+﻿Wenn Sie eine MongoLab-Datenbank bereitstellen, sendet MongoLab einen Verbindungs-URI im MongoLab-Standardformat für Verbindungszeichenfolgen an Azure. Mithilfe dieses Werts wird eine MongoDB-Verbindung über den von Ihnen ausgewählten MongoDB-Treiber hergestellt. Weitere Informationen über Verbindungszeichenfolgen erhalten Sie auf mongodb.org unter [Verbindungen](http://www.mongodb.org/display/DOCS/Connections).
 
-**Dieser URI enthält Ihren Benutzernamen und Ihr Kennwort für die Datenbank.  Behandeln Sie diese Angaben als kritische Informationen, und teilen Sie sie niemandem mit.**
+**Dieser URI enthält Ihren Benutzernamen und Ihr Kennwort für die Datenbank.  Behandeln Sie diese Informationen als vertraulich, und geben Sie sie nicht weiter.**
 
 Gehen Sie folgendermaßen vor, um diesen URI im Azure-Portal abzurufen:
 
@@ -19,4 +19,5 @@ Ihr MongoLab-URI wird angezeigt:
 [button-connectioninfo]: ./media/howto-get-connectioninfo-mongolab/button-connectioninfo.png
 [screen-connectioninfo]: ./media/howto-get-connectioninfo-mongolab/dialog-mongolab_connectioninfo.png
 [button-addons]: ./media/howto-get-connectioninfo-mongolab/button-addons.png
-<!--HONumber=42-->
+
+<!--HONumber=49-->

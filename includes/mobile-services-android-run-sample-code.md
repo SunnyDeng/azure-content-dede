@@ -1,4 +1,4 @@
-1. Erweitern Sie im Projektexplorer **app** => **Java** => **com.example.GetStartedWithData**, **src** und **.com.example.GetStartedWithData**, und öffnen Sie dann die *ToDoActivity.java*-Datei.
+﻿1. Erweitern Sie im Projektexplorer **app** => **Java** => **com.example.GetStartedWithData**, **src** und **.com.example.GetStartedWithData**, und öffnen Sie dann die *ToDoActivity.java*-Datei.
 
    	![](./media/download-android-sample-code/mobile-services-android-studio-project.png)
 
@@ -19,9 +19,10 @@
 
 4. Wählen Sie entweder ein verbundenes Gerät oder *Launch Emulator* aus.
 
-5. Wenn die App angezeigt wird, geben Sie einen sinnvollen Text ein, beispielsweise _"Lernprogramm beenden"_, und klicken Sie dann auf **Add**.
+5. Wenn die App angezeigt wird, geben Sie einen sinnvollen Text ein, beispielsweise "Lernprogramm beenden", und klicken Sie dann auf **Add**.
 
    	![](./media/download-android-sample-code/mobile-quickstart-startup-android.png)
 
    	Der gespeicherte Test wird in einer speicherinternen Sammlung gespeichert und in der folgenden Liste angezeigt.
-<!--HONumber=47-->
+
+<!--HONumber=49-->

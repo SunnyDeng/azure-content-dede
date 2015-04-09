@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Azure Search" 
 	description="Erste Schritte mit Azure Search" 
 	services="search" 
@@ -18,21 +18,14 @@
 
 # Erste Schritte mit Azure Search
 
-[WACOM.INCLUDE [In diesem Artikel wird das Azure Vorschauportal verwendet.](../includes/preview-portal-note.md)]
+[AZURE.INCLUDE [In diesem Artikel wird das Azure Vorschauportal verwendet.](../includes/preview-portal-note.md)]
 
-Microsoft Azure Search (öffentliche Vorschau) ist ein neuer Dienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt die Suchmaschine und den Speicherplatz für Ihre Daten zur Verfügung. Der Zugriff darauf und die Verwaltung der Daten erfolgt mithilfe einer REST-API. Weitere Informationen über Gründe für die Verwendung von Azure Search finden Sie unter [Azure Search-Szenarien und -Funktionen](http://azure.microsoft.com/blog/2014/08/28/azure-search-scenarios-and-capabilities/).  
+Microsoft Azure Search ist ein neuer Dienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt die Suchmaschine und den Speicherplatz für Ihre Daten zur Verfügung. Der Zugriff darauf und die Verwaltung der Daten erfolgt mithilfe eines .NET SDK oder einer REST-API. Weitere Informationen über Gründe für die Verwendung von Azure Search finden Sie unter [Azure Search-Szenarien und -Funktionen](http://azure.microsoft.com/blog/2014/08/28/azure-search-scenarios-and-capabilities/).  
 
 Administratoren können den Suchdienst bei der Auswahl des gemeinsam genutzten Diensts kostenlos zu einem bestehenden Abonnement hinzufügen, oder bei der Auswahl fest zugeordneter Ressourcen zu einem reduzierten Preis. Dieser Artikel besteht aus den folgenden Abschnitten:
 
-<!--Table of contents -->
-
-+ [Erste Schritte mit dem kostenlosen Dienst](#sub-1)
-+ [Upgrade auf die Standardsuche](#sub-2)
-+ [Testen der Dienstfunktionen](#sub-3)
-+ [Erkunden des Suchdienst-Dashboards](#sub-4)
-+ [Ausprobieren](#next-steps)
-
-<h2 id="sub-1">Erste Schritte mit dem kostenlosen Dienst</h2>
+<a id="sub-1"></a>
+## Erste Schritte mit dem kostenlosen Dienst
 
 Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstanzenfähigen Suchdienst, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können. Führen Sie die folgenden Schritte aus, um sich für die kostenlose Version anzumelden.
 
@@ -46,21 +39,17 @@ Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstan
 
   	![][7]
 
-4. Klicken Sie im Katalog auf **Daten, Speicher, Cache + Backup**.
+4. Klicken Sie in der Galerie auf **Daten & Analysen**.
  
   	![][8]
 
-5. Klicken Sie auf **Alle anzeigen**, um die Liste der datenbezogenen Dienste zu erweitern. 
-
-  	![][9]
-
-6. Klicken Sie in den Datendiensten auf **Suchen**.
+5. Klicken Sie in den Datendiensten auf **Suchen**.
  
   	![][10]
 
 7. Klicken Sie unten auf der Suchseite auf **ERSTELLEN**.
 
-8. Geben Sie einen Dienstnamen in Kleinbuchstaben für die Dienst-URL ein. Vermeiden Sie dabei Bindestriche und Leerzeichen und beachten Sie die Längenbeschränkung von 15 Zeichen.
+8. Geben Sie einen Dienstnamen in Kleinbuchstaben für die Dienst-URL ein. Verwenden Sie dabei keine Leerzeichen, und beachten Sie die Längenbeschränkung von 15 Zeichen.
  
   	![][11]
 
@@ -78,7 +67,7 @@ Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstan
 
 Der Dienst wird innerhalb weniger Minuten erstellt. Sie können zu den Konfigurationseinstellungen zurückkehren, um die URL oder die API-Schlüssel abzurufen. Für Verbindungen mit Ihrem Suchdienst benötigen Sie sowohl URL als auch API-Schlüssel, um den Aufruf zu authentifizieren. So finden Sie diese Werte schnell und einfach:
 
-14. Klicken Sie auf **Durchsuchen** | **Alles** | **Daten, Speicher, Cache + Backup** | **Alles anzeigen** | **Dienste suchen**. Klicken Sie auf Ihren Dienst, um dessen Dashboard anzuzeigen. 
+14. Wechseln Sie zur **Startseite**, um das Dashboard zu öffnen. Klicken Sie auf den Search-Dienst, um das Dienst-Dashboard zu öffnen. 
 
   	![][13]
 
@@ -94,8 +83,8 @@ Der Dienst wird innerhalb weniger Minuten erstellt. Sie können zu den Konfigura
 
 Unter [Testen der Dienstfunktionen](#sub-3) wird beschrieben, wie Sie mithilfe dieser Werte eine Verbindung zum Dienst herstellen können.
 
-
-<h2 id="sub-2">Upgrade auf die Standardsuche</h2>
+<a id="sub-2"></a>
+## Upgrade auf die Standardsuche
 
 Mit der Standardsuche erhalten Sie fest zugeordnete Ressourcen in einem Azure-Rechenzentrum, die Ihnen exklusiv zur Verfügung stehen. Für Such-Arbeitslasten benötigen Sie sowohl Speicher- als auch Dienstreplikate. Bei der Anmeldung für die Standardsuche können Sie die Dienstkonfiguration optimieren, um mehr von der jeweils wichtigeren Ressource für Ihr Szenario zuzuweisen.
 
@@ -113,9 +102,7 @@ Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen
 
 3. Klicken Sie oben auf der Seite auf **Alles**.
 
-4. Klicken Sie im Katalog auf **Daten, Speicher, Cache + Backup**.
-
-5. Klicken Sie auf **Alle anzeigen**, um die Liste der datenbezogenen Dienste zu erweitern.
+4. Klicken Sie in der Galerie auf **Daten & Analysen**.
 
 6. Klicken Sie in den Datendiensten auf **Suchen**.
 
@@ -135,18 +122,20 @@ Die Standardsuche beginnt mit je einem Replikat und einer Partition, kann jedoch
 
 2.	Mit den Schiebereglern können Sie Replikate, Partitionen oder beides hinzufügen. 
 
-Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration wird auf der Seite angezeigt, während Sie Ressourcen hinzufügen. Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit.
+Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration wird auf der Seite angezeigt, während Sie Ressourcen hinzufügen. 
+
+Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Grenzen und Einschränkungen](http://msdn.microsoft.com/library/azure/dn798934.aspx).
 
  ![][15]
 
-  
-<h2 id="sub-3">Testen der Dienstfunktionen</h2>
+<a id="sub-3"></a>
+## Testen der Dienstfunktionen
 
 Als letzter Schritt bei der Konfiguration der Suche überprüfen Sie, ob Ihr Dienst einsatzbereit ist und über eine Clientanwendung angesprochen werden kann. Diese Prozedur verwendet Fiddler, einen [kostenlosen Download von Telerik](http://www.telerik.com/fiddler), um HTTP-Anforderungen zu senden und die Antworten anzuzeigen. Mit Fiddler können Sie die API sofort testen, ohne Code schreiben zu müssen. 
 
 Die folgende Prozedur funktioniert für die gemeinsam genutzte und für die Standardsuche. In den folgenden Schritten erstellen Sie einen Index, laden Dokumente hoch, fragen den Index ab und fragen zuletzt Dienstinformationen aus dem System ab.
 
-<h3>Erstellen eines Index</h3>
+### Erstellen eines Index
 
 1. Starten Sie Fiddler. Deaktivieren Sie im Menü "File" die Option **Capture Traffic**, um zusätzliche HTTP-Aktivität auszublenden, die nicht zur aktuellen Aufgabe gehört. Erstellen Sie die folgende Anforderung in der Registerkarte Composer: 
 
@@ -156,7 +145,7 @@ Die folgende Prozedur funktioniert für die gemeinsam genutzte und für die Stan
 
 3. Geben Sie eine URL ein, die sich aus Dienst-URL (aus der Eigenschaftenseite), Anfrageattributen und der API-Version zusammensetzt. Beachten Sie dabei Folgendes:
    + Verwenden Sie das Präfix HTTPS
-   + Das Anfrageattribut ist "/indexes/hotels". Damit weisen Sie Search an, einen Index mit dem Namen "hotels" zu erstellen.
+   + Das Anfrageattribut ist "/indexes/hotels". Damit weisen Sie Search an, einen Index mit dem Namen 'hotels' zu erstellen.
    + API-Version steht in Kleinbuchstaben mit dem Format "?api-version=2014-07-31-preview". API-Versionen sind wichtig, da regelmäßig Updates für Azure Search bereitgestellt werden. In seltenen Fällen kann es passieren, dass ein Teil der API durch ein Update nicht mehr wie gewohnt funktioniert. Mit API-Versionen können Sie weiterhin Ihre bestehende Version verwenden und selbst bestimmen, wann Sie zur neueren Version wechseln möchten.
 
     Die komplette URL sollte in etwa wie folgt aussehen:
@@ -195,7 +184,7 @@ Innerhalb weniger Sekunden sollten Sie eine "HTTP 201"-Antwort in der Sitzungsli
 
 Falls Sie eine "HTTP 504"-Antwort erhalten, prüfen Sie, ob die URL mit HTTPS beginnt. Wenn Sie eine "HTTP 400"- oder "HTTP 404"-Antwort erhalten, prüfen Sie den Hauptteil der Anforderung auf Fehler, die durch Kopieren und Einfügen entstanden sind. "HTTP 403" deutet in der Regel auf ein Problem mit dem api-key hin (entweder ein ungültiger Schlüssel oder ein Syntaxproblem bei der Angabe des API-Schlüssels).
 
-<h3>Laden von Dokumenten</h3>
+### Laden von Dokumenten
 
 Ihre Anforderung für Dokumente in der Registerkarte "Composer" sieht in etwa wie folgt aus. Der Text der Anforderung enthält die Suchdaten für 4 Hotels.
 
@@ -281,7 +270,7 @@ Ihre Anforderung für Dokumente in der Registerkarte "Composer" sieht in etwa wi
 
 Innerhalb weniger Sekunden sollten Sie eine "HTTP 200"-Antwort in der Sitzungsliste sehen. Dies bedeutet, dass die Dokumente erfolgreich erstellt wurden. Falls Sie eine 207-Antwort erhalten, ist der Upload von mindestens einem Dokument fehlgeschlagen. Wenn Sie ein 404-Antwort erhalten, enthält entweder der Header oder der Text Ihrer Anforderung einen Syntaxfehler.
 
-<h3>Indexabfragen</h3>
+### Indexabfragen
 
 Sie haben nun einen Index erstellt und Dokumente hochgeladen und können beginnen, Abfragen auszuführen.  Erstellen Sie einen GET-Befehl in der Registerkarte Composer mit dem folgenden Text:
 
@@ -316,7 +305,7 @@ Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azur
 
         GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate+desc&api-version=2014-07-31-Preview
 
-<h3>Systemabfragen</h3>
+### Systemabfragen
 
 Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch zu erhalten. Erstellen Sie eine Anforderung in der Registerkarte Composer mit dem folgenden Text. Die Antwort enthält die Anzahl der Dokumente und den verbrauchten Speicherplatz.
 
@@ -343,33 +332,36 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
  	![][21]
 
-<h2 id="sub-4">Erkunden des Suchdienst-Dashboards</h2>
+<a id="sub-4"></a>
+## Erkunden des Suchdienst-Dashboards
 
 Falls Sie eine Auffrischung brauchen, um die Konfigurationsseiten zu finden, folgen Sie den folgenden Schritten, um zum Dienst-Dashboard zu gelangen.
 
 1.	Melden Sie sich mit Ihrem bestehenden Abonnement am [Azure-Vorschauportal](https://portal.azure.com) an. 
-2.	Klicken Sie auf **Durchsuchen** | **Alles**.
+2.	Klicken Sie auf **Startseite** und anschließend auf die Kachel für Ihren Search-Dienst.
 
  	![][22]
 
-3.	Wählen Sie **Dienste suchen** aus der Liste aus. Daraufhin wird eine Liste aller in Ihren Abonnements erstellten Suchdienste angezeigt.
+4.	Durch das Klicken auf die Kachel wird das Dienst-Dashboard geöffnet. Beachten Sie die Kommandos **Start**, **Stop** und **Löschen** am oberen Rand. Das Dienst-Dashboard enthält Kacheln zum Anzeigen von Eigenschaften, Schlüsseln und ein Schnellstartmenü mit Links zu Informationen und Anweisungen. Blättern Sie nach unten, um die Nutzung anzuzeigen.
 
-4.	Klicken Sie auf einen Dienst, um dessen Dashboard anzuzeigen. Beachten Sie die Kommandos **Start**, **Stop** und **Löschen** am oberen Rand. Das Dienst-Dashboard enthält Kacheln zum Anzeigen von Eigenschaften, Schlüsseln und ein Schnellstartmenü mit Links zu Informationen und Anweisungen. Blättern Sie nach unten, um die Nutzung anzuzeigen.
-
-5.	Klicken Sie auf **EIGENSCHAFTEN**. Beachten Sie, dass die Eigenschaftenseite rechts geöffnet wird. Die Dienst-URL befindet sich oben auf der Seite. Klicken Sie auf **SCHLÜSSEL**, um die API-Schlüssel für die Authentifizierung mit diesem Dienst anzuzeigen.
+5.	Klicken Sie auf **EIGENSCHAFTEN**. Beachten Sie, dass die Eigenschaftenseite rechts geöffnet wird. Die Dienst-URL befindet sich oben auf der Seite. Sie benötigen diese URL zum Herstellen einer Verbindung mit Ihrem Azure Search-Dienst.
 
  	![][23]
+	
+7.	Klicken Sie auf **SCHLÜSSEL**, um die API-Schlüssel anzuzeigen. Sie benötigen einen Administratorschlüssel, um sich beim Dienst zu authentifizieren. Sie können entweder den primären oder den sekundären verwenden. Optional können Sie Abfrageschlüssel für einen schreibgeschützten Zugriff auf den Dienst erstellen.
+
 
 <!--Next steps and links -->
-<h2 id="next-steps">Ausprobieren</h2>
+<a id="next-steps"></a>
+## Ausprobieren
 
 Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzliches Lernmaterial für die Erstellung und Verwaltung von Suchanwendungen mit Azure Search.
 
-- [Erstellen Sie Ihre erste Suchlösung mit Azure Search](../search-create-first-solution/) 
+- [Erstellen einer ersten Azure Search-Lösung](search-create-first-solution.md) 
 
-- [Erstellen eines Azure Search GeoSearch-Beispiels](../search-create-geospatial/)
+- [Erstellen eines Azure Search GeoSearch-Beispiels](search-create-geospatial.md)
 
-- [Verwalten Ihrer Suchlösung in Microsoft Azure](../search-manage/) 
+- [Verwalten Ihrer Suchlösung in Microsoft Azure](search-manage.md) 
 
 - [Azure Search: Technische Übersicht](http://msdn.microsoft.com/library/dn798933.aspx)
 
@@ -405,14 +397,16 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [19]: ./media/search-get-started/AzureSearch_Configure1_14_GETQueryResponse.PNG
 [20]: ./media/search-get-started/AzureSearch_Configure1_15_Stats.PNG
 [21]: ./media/search-get-started/AzureSearch_Configure1_16_StatsResponse.PNG
-[22]: ./media/search-get-started/AzureSearch_Configure1_17_BrowseEverything.PNG
+[22]: ./media/search-get-started/AzureSearch_Configure1_17_HomeDashboard.PNG
 [23]: ./media/search-get-started/AzureSearch_Configure1_18_Explore.PNG
 
 
 <!--Link references-->
-[Verwalten Ihrer Suchlösung in Microsoft Azure]: ../search-manage/
-[Entwicklungsworkflow in Azure Search]: ../search-workflow/
-[Erstellen Sie Ihre erste Suchlösung mit Azure Search]: ../search-create-first-solution/
-[Erstellen einer geografischen Suchanwendung mit Azure Search]: ../search-create-geospatial/
+[Verwalten Ihrer Suchlösung in Microsoft Azure]: search-manage.md
+[Entwicklungsworkflow in Azure Search]: search-workflow.md
+[Erstellen einer ersten Azure Search-Lösung]: search-create-first-solution.md
+[Erstellen einer räumlichen Such-App mit Azure Search]: search-create-geospatial.md
 
-<!--HONumber=35.2-->
+<!--HONumber=49--> 
+
+<!--HONumber=49-->

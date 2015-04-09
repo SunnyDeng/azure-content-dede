@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Daten (Android) | Mobile Dev Center" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Android-App." 
 	services="mobile-services" 
@@ -37,15 +37,15 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 2. [Lokales Herunterladen des Diensts]
 3. [Testen des mobilen Diensts]
 4. [Veröffentlichen des mobilen Diensts in Azure]
-5. [Download des GetStartedWithData-Projekts]
+5. [Herunterladen des GetStartedWithData-Projekts]
 4. [Aktualisieren der App für den Datenzugriff über mobile Dienste]
 5. [Testen der App mit dem veröffentlichten mobilen Dienst]
 
 
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F"%20target="_blank). 
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [1 Monat kostenlose Testversion](http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F"%20target="_blank). 
 
 
-<h2><a name="create-service"></a>Erstellen Sie einen neuen mobilen Diensts</h2>
+<h2><a name="create-service"></a>Erstellen eines neuen mobilen Diensts</h2>
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
@@ -62,18 +62,18 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
-<h2><a name="download-app"></a>Download des GetStartedWithData-Projekts</h2>
+<h2><a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts</h2>
 
-### Laden Sie den Beispielcode herunter
+###Laden Sie den Beispielcode herunter
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/download-android-sample-code.md)]
 
-### Prüfen der Version des Android-SDK
+###Prüfen der Version des Android-SDK
 
 [AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../includes/mobile-services-verify-android-sdk-version.md)]
 
 
-### Prüfen und Ausführen des Beispielcodes
+###Prüfen und Ausführen des Beispielcodes
 
 [AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
@@ -94,7 +94,7 @@ Die App verwendet nun mobile Dienste als Back-End-Speicher, und Sie können sie 
 
    	Auf diese Weise wird ein neuer Eintrag an den mobilen Service gesendet.
 
-    Sie können die App neu starten, um zu sehen, dass die Änderungen in die Datenbank in Azure übernommen wurden. Außerdem können Sie die Datenbank im Azure-Verwaltungsportal überprüfen:  in den nächsten zwei Schritten werden auf diese Weise die Änderungen in Ihrer Datenbank angezeigt.
+    Sie können die App neu starten, um zu sehen, dass die Änderungen in die Datenbank in Azure übernommen wurden. Außerdem können Sie die Datenbank im Azure-Verwaltungsportal überprüfen: in den nächsten zwei Schritten werden auf diese Weise die Änderungen in Ihrer Datenbank angezeigt.
 
 
 4. Klicken Sie im Azure-Verwaltungsportal auf die Option zum Verwalten der Datenbank, die mit Ihrem mobilen Dienst verknüpft ist.
@@ -115,15 +115,15 @@ Damit ist das Android-Lernprogramm **Erste Schritte mit Daten** abgeschlossen.
 
 Dieses Lernprogramm zeigt die Grundlagen für die Integration von Daten in mobilen Diensten in Android-Apps. 
 
-<!--Als Nächstes können Sie eines der folgenden Lernprogramme ausführen, das auf der GetStartedWithData-App aufbaut, die Sie in diesem Lernprogramm erstellt haben:
+<!--Next, consider completing one of the following tutorials that is based on the GetStartedWithData app that you created in this tutorial:
 
-* [Überprüfen und Ändern von Daten mit Skripts]
-  <br/>Erfahren Sie mehr über die Verwendung von Serverskripts in Mobile Services, um die von Ihrer App gesendeten Daten zu prüfen und zu ändern.
+* [Validate and modify data with scripts]
+  <br/>Learn more about using server scripts in Mobile Services to validate and change data sent from your app.
 
-* [Optimieren von Abfragen mit Paging]
-  <br/>Erfahren Sie, wie Sie Paging in Abfragen zum Steuern der in einer einzelnen Anforderung verarbeiteten Datenmengen verwenden können.
+* [Refine queries with paging]
+  <br/>Learn how to use paging in queries to control the amount of data handled in a single request.
 
-Nachdem Sie die Datenreihe abgeschlossen haben, versuchen Sie
+Once you have completed the data series, try
 -->
 
 Probieren Sie die folgenden Lernprogramme aus:
@@ -131,7 +131,7 @@ Probieren Sie die folgenden Lernprogramme aus:
 * [Erste Schritte mit der Authentifizierung]
   <br/>Erfahren Sie, wie Benutzer in Ihrer App authentifiziert werden.
 
-* [Erste Schritte mit Pushbenachrichtigungen] 
+* [Erste Schritte mit Pushbenachrichtigungen]
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
 * [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
@@ -141,13 +141,12 @@ Probieren Sie die folgenden Lernprogramme aus:
 
 [Erstellen eines neuen mobilen Diensts]: #create-service
 [Lokales Herunterladen des Diensts]: #download-the-service-locally
-[Lokaler Download des Diensts]: #download-the-service-locally
 [Testen des mobilen Diensts]: #test-the-service
-[Download des GetStartedWithData-Projekts]: #download-app
+[Herunterladen des GetStartedWithData-Projekts]: #download-app
 [Aktualisieren der App für den Datenzugriff über mobile Dienste]: #update-app
-[Testen der Android Phone-App mit dem lokal gehosteten Dienst]: #test-locally-hosted
+[Testen der Android-App mit dem lokal gehosteten Dienst]: #test-locally-hosted
 [Veröffentlichen des mobilen Diensts in Azure]: #publish-mobile-service
-[Testen der Android Phone-App mit dem lokal gehosteten Dienst]: #test-azure-hosted
+[Testen der Android-App mit dem in Azure gehosteten Dienst]: #test-azure-hosted
 [Testen der App mit dem veröffentlichten mobilen Dienst]: #test-app
 [Nächste Schritte]:#next-steps
 
@@ -181,12 +180,11 @@ Probieren Sie die folgenden Lernprogramme aus:
 
 
 <!-- URLs. -->
-[Erste Schritte mit Daten (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data-EC/
+[Erste Schritte mit Daten (Eclipse)]: mobile-services-dotnet-backend-android-get-started-data-EC.md
 [Überprüfen und Ändern von Daten mit Skripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
 [Optimieren von Abfragen mit Paging]: /develop/mobile/tutorials/add-paging-to-data-dotnet
-[Erste Schritte mit Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
+[Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-android
-[Erste Schritte mit Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-android
 [Erste Schritte mit Pushbenachrichtigungen]: /develop/mobile/tutorials/get-started-with-push-android
 [JavaScript und HTML]: /develop/mobile/tutorials/get-started-with-data-js
 [JavaScript-Back-End-Version]: /develop/mobile/tutorials/get-started-with-data-android
@@ -197,5 +195,6 @@ Probieren Sie die folgenden Lernprogramme aus:
 [Website mit Codebeispielen für Entwickler]:  http://go.microsoft.com/fwlink/p/?LinkId=328660
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-net-client-library
 [MobileServiceClient-Klasse]: http://go.microsoft.com/fwlink/p/?LinkId=302030
-[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library  
-<!--HONumber=47-->
+[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: mobile-services-windows-dotnet-how-to-use-client-library.md  
+
+<!--HONumber=49-->

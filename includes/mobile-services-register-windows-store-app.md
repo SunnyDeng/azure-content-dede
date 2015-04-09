@@ -1,5 +1,4 @@
-
-1. Wenn Sie Ihre App noch nicht registriert haben, navigieren Sie zu [Eine App-Seite abschicken] im "Dev-Center" für Windows Store-Apps, melden Sie sich mit Ihrem Microsoft-Konto an, und klicken Sie dann auf **App-Name**.
+﻿1. Wenn Sie Ihre App noch nicht registriert haben, navigieren Sie zu [Eine App-Seite abschicken] im "Dev-Center" für Windows Store-Apps, melden Sie sich mit Ihrem Microsoft-Konto an, und klicken Sie dann auf **App-Name**.
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-submit-win8-app.png)
 
@@ -29,7 +28,7 @@
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit-app.png) 
 
-8. Klicken Sie auf der Seite "Dienste" auf **Live-Dienste-Website** unter **Azure Mobile Services**.
+8. Klicken Sie auf der Seite "Dienste" auf **Live Services-Website** unter**Azure Mobile Services**.
 
 	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit2-app.png) 
 
@@ -39,7 +38,7 @@
 
     >[AZURE.NOTE]Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Informationen nicht weiter und verteilen Sie sie nicht mit Ihrer Anwendung.
 
-10. (Optional) Klicken Sie auf **API-Einstellungen**, aktivieren Sie **Bessere Umleitungssicherheit**, geben Sie den Wert `https://<mobile_service>.azure-mobile.net/login/microsoftaccount` in **Umleitungs-URL** ein, klicken Sie dann auf **Speichern**.
+10. (Optional) Klicken Sie auf **API-Einstellungen**, aktivieren Sie **Bessere Umleitungssicherheit**, geben Sie den Wert  `https://<mobile_service>.azure-mobile.net/login/microsoftaccount` in **Umleitungs-URL** ein, klicken Sie dann auf **Speichern**.
 
 	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth-2.png)
 
@@ -66,7 +65,7 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-[Eine App-Seite abschicken]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=47-->
+<!--HONumber=49-->

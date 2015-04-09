@@ -1,7 +1,7 @@
-<properties 
-	pageTitle="Wiederherstellen einer Microsoft Azure-Website" 
-	description="Erfahren Sie, wie Ihre Azure-Websites aus einer Sicherung wiederhergestellt werden." 
-	services="web-sites" 
+﻿<properties 
+	pageTitle="Wiederherstellen einer Webanwendung in Azure App Service" 
+	description="Erfahren Sie, wie Sie Ihre Web-App aus einer Sicherung wiederherstellen." 
+	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
 	writer="cephalin" 
@@ -9,124 +9,81 @@
 	editor="mollybos"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/24/2014" 
+	ms.date="03/24/2015" 
 	ms.author="cephalin"/>
 
-#Wiederherstellen einer Microsoft Azure-Website
+# Wiederherstellen einer Webanwendung in Azure App Service
 
-In diesem Artikel erfahren Sie, wie Sie eine Website wiederherstellen, die zuvor mit der Funktion zur Sicherung von Azure-Websites gesichert wurde. Weitere Informationen finden Sie unter [Sicherungen von Microsoft Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-backup/). 
+In diesem Artikel erfahren Sie, wie Sie eine Web-App wiederherstellen, die zuvor mit der Funktion zur Sicherung von [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) gesichert wurde. Weitere Informationen finden Sie unter [Sichern von Azure-Websites](web-sites-backup.md). 
 
-Mit der Wiederherstellungsfunktion für Azure-Websites können Sie Ihre Website bei Bedarf in einem vorherigen Zustand wiederherstellen oder eine neue Website basierend auf der Sicherung der ursprünglichen Website erstellen. Das Erstellen einer neuen Website, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
+Mit der Wiederherstellungsfunktion für Web-Apps können Sie Ihre Web-App bei Bedarf in einem vorherigen Zustand wiederherstellen oder eine neue Web-App auf der Grundlage einer Sicherung Ihrer ursprünglichen Web-App erstellen. Das Erstellen einer neuen Web-App, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
 
-Die Wiederherstellungsfunktion auf der Registerkarte "Sicherungen" im Azure-Websites-Portal ist nur im Modus "Standard" verfügbar.
-
-##Themen in diesem Artikel
-- [Wiederherstellen einer Azure-Website aus einer zuvor erstellten Sicherung](#PreviousBackup)
-- [Wiederherstellen einer Azure-Website direkt aus einem Speicherkonto](#StorageAccount)
-- [Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs](#RestoreSettings)
-- [Anzeigen der Vorgangsprotokolle](#OperationLogs)
-
+Die Wiederherstellungsfunktion für Web-Apps ist auf dem Blatt **Sicherungen** im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) verfügbar, jedoch nur im Standard- oder Premium-Modus. Weitere Informationen zum Skalieren Ihrer App im Standard- oder Premium-Modus finden Sie unter [Skalieren von Websites](web-sites-scale.md). 
+Beachten Sie, dass im Premium-Modus eine größere Anzahl von täglichen Sicherungen als im Standardmodus ausgeführt werden kann.
 
 <a name="PreviousBackup"></a>
-##Wiederherstellen einer Azure-Website aus einer zuvor erstellten Sicherung
+## So stellen Sie eine Web-App aus einer zuvor erstellten Sicherung wieder her
 
-1. Klicken Sie auf der Registerkarte **Sicherungen** auf der Befehlsleiste unten auf der Portalseite auf **Jetzt wiederherstellen**. Das Dialogfeld **Jetzt wiederherstellen** wird angezeigt.
+1. Klicken Sie auf dem Blatt **Einstellungen** Ihrer Web-App im Azure-Portal auf die Option **Sicherungen**, um das Blatt **Sicherungen** anzuzeigen. Führen Sie auf diesem Blatt einen Bildlauf aus, und wählen Sie in der Sicherungsliste eine der Sicherungsoptionen anhand der Angaben für **SICHERUNGSZEIT** und **STATUS** aus.
 	
-	![Choose backup source][ChooseBackupSource]
+	![Auswählen einer Sicherungsquelle][ChooseBackupSource]
 	
-2. Wählen Sie unter **Sicherungsquelle wählen** die Option **Vorherige Sicherung für diese Website** aus.
-3. Wählen Sie das Datum der Sicherung aus, die Sie wiederherstellen möchten, und klicken Sie dann auf den Pfeil nach rechts, um fortzufahren.
-4. Befolgen Sie die Schritte im Abschnitt [Auswählen der Wiederherstellungseinstellungen der Website](#RestoreSettings) weiter unten in diesem Artikel
+2. Wählen Sie im oberen Bereich des Blatts **Sicherungen** die Option **Restore Now** aus. 
 
+	![Auswählen von "Restore Now"][ChooseRestoreNow]
+
+3. Um die vorhandene Web-App wiederherzustellen, überprüfen Sie auf dem Blatt **Wiederherstellen** alle angegebenen Details, und klicken Sie dann auf **OK**. 
+	
+Sie können Ihre Web-App auch als neue Web-App wiederherstellen, indem Sie den Bereich **WEB APP** des Blatts **Wiederherstellen** auswählen und den Bereich **Create a new web app** auswählen.
+	
 <a name="StorageAccount"></a>
-##Wiederherstellen einer Azure-Website direkt aus einem Speicherkonto
+## Herunterladen oder Löschen einer Sicherung aus einem Speicherkonto
+	
+1. Wählen Sie auf dem Hauptblatt **Durchsuchen** des Azure-Portals die Option **Speicherkonten**.
+	
+	Eine Liste Ihrer vorhandenen Speicherkonten wird angezeigt. 
+	
+2. Wählen Sie das Speicherkonto aus, das die herunterzuladende oder zu löschende Sicherung enthält.
+	
+	Das Blatt **SPEICHER** wird angezeigt.
 
-1. Klicken Sie auf der Registerkarte **Sicherungen** auf der Befehlsleiste unten auf der Portalseite auf **Jetzt wiederherstellen**. Das Dialogfeld **Jetzt wiederherstellen** wird angezeigt.
+3. Wählen Sie den Bereich **Container** auf dem Blatt **SPEICHER** aus, um das Blatt **Container** anzuzeigen.
 	
-	![Choose backup source][ChooseBackupSource]
+	Eine Liste der Container wird angezeigt. In dieser Liste werden außerdem die URL und das Datum der letzten Änderung dieses Containers angezeigt.
 	
-2. Wählen Sie unter **Sicherungsquelle wählen** die Option **Speicherkontodatei** aus. Hier können Sie direkt die URL für die Speicherkontodatei auswählen oder auf das Ordnersymbol klicken, um zum Blob-Speicher zu navigieren und die Sicherungsdatei anzugeben. In diesem Beispiel wird das Ordnersymbol verwendet.
-	
-	![Storage Account File][StorageAccountFile]
-	
-3. Klicken Sie auf das Ordnersymbol, um das Dialogfeld **Im Cloud-Speicher navigieren** zu öffnen.
-	
-	![Browse Cloud Storage][BrowseCloudStorage]
-	
+	![Anzeigen von Containern][ViewContainers]
 
-4. Erweitern Sie den Namen des Speicherkontos, das Sie verwenden möchten, und wählen Sie dann das Verzeichnis **websitebackups** aus, das Ihre Sicherungen enthält.
-5. Wählen Sie die ZIP-Datei aus, welche die wiederherzustellende Sicherung enthält, und klicken Sie dann auf **Öffnen**.
-6. Die Speicherkontodatei wurde ausgewählt und wird jetzt im Speicherkontofeld angezeigt. Klicken Sie auf den Pfeil nach rechts, um fortzufahren.
+4. Wählen Sie in der Liste den Container aus, um das Blatt mit einer Liste der Dateinamen und der Größe der einzelnen Dateien anzuzeigen.
 	
-	![Storage Account File Selected][StorageAccountFileSelected]
-	
-7. Fahren Sie mit dem folgenden Abschnitt fort, [Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs](#RestoreSettings).
-
-<a name="RestoreSettings"></a>
-## Auswählen der Wiederherstellungseinstellungen der Website und Starten des Wiederherstellungsvorgangs
-
-1. Wählen Sie unter **Wiederherstellungseinstellungen für Website wählen**, **Wiederherstellen auf** entweder **Aktuelle Website** oder **Neue Websiteinstanz** aus.
-	
-	![Choose your web site restore settings][ChooseRestoreSettings]
-	
-	Wenn Sie **Aktuelle Website** auswählen, wird Ihre vorhandene Website durch die Sicherung überschrieben, die Sie ausgewählt haben (destruktive Wiederherstellung). Alle seit der Sicherung an der Website vorgenommenen Änderungen werden dauerhaft entfernt, und der Wiederherstellungsvorgang kann nicht rückgängig gemacht werden. Während des Wiederherstellungsvorgangs ist die aktuelle Website kurzzeitig nicht erreichbar, und es wird eine Warnmeldung dazu angezeigt.
-	
-	Wenn Sie **Neue Websiteinstanz** auswählen, wird eine neue Website in derselben Region mit dem von Ihnen angegebenen Namen erstellt. (Standardmäßig lautet der neue Name **restored-***alterWebsitename*.) 
-	
-	Die von Ihnen wiederhergestellte Website enthält denselben Inhalt und die Konfiguration, die im Portal für die ursprüngliche Website festgelegt wurde. Außerdem umfasst sie alle Datenbanken, die Sie im nächsten Schritt einschließen.
-
-2. Wenn Sie zusammen mit der Website eine Datenbank wiederherstellen möchten, wählen Sie unter **Enthaltene Datenbanken** mithilfe der Dropdownliste unter **Wiederherstellen auf** den Namen des Datenbankservers aus, in dem Sie die Datenbank wiederherstellen möchten. Sie können auch einen neuen Datenbankserver für die Wiederherstellung erstellen oder **Nicht wiederherstellen** angeben, um die Datenbank nicht wiederherzustellen (dies ist die Standardauswahl). 
-	
-	Nachdem Sie den Servernamen ausgewählt haben, geben Sie den Namen der Zieldatenbank für die Wiederherstellung im Feld **Datenbankname** an.
-	
-	Wenn die Wiederherstellung eine oder mehrere Datenbanken umfasst, können Sie **Verbindungszeichenfolgen automatisch anpassen** auswählen, um die in der Sicherung gespeicherten Verbindungszeichenfolgen zu aktualisieren, sodass sie auf die neue Datenbank bzw. den Datenbankserver verweisen. Vergewissern Sie sich, dass alle auf die Datenbank bezogenen Funktionen nach der Wiederherstellung wie erwartet funktionieren.
-	
-	![Choose database server host][ChooseDBServer]
-	
-	> [AZURE.NOTE] Sie können eine SQL-Datenbank mit demselben Namen nicht auf demselben SQL-Server wiederherstellen. Sie müssen entweder einen anderen Datenbanknamen oder einen anderen SQL-Serverhost auswählen, auf dem die Datenbank wiederhergestellt wird. 
-	
-	> [AZURE.NOTE] Sie können eine MySQL-Datenbank mit demselben Namen auf demselben Server wiederherstellen, beachten Sie jedoch, dass dabei der vorhandene Inhalt aus der MySQL-Datenbank gelöscht wird.	
-	
-3. Wenn Sie eine vorhandene Datenbank wiederherstellen möchten, müssen Sie den Benutzernamen und das Kennwort angeben. Wenn Sie in einer neuen Datenbank wiederherstellen möchten, müssen Sie einen neuen Datenbanknamen angeben:
-	
-	![Restore to a new SQL database][RestoreToNewSQLDB]
-	
-	Klicken Sie auf den Pfeil nach rechts, um fortzufahren.	
-4. Falls Sie eine neue Datenbank erstellen, müssen Sie im nächsten Dialogfeld die Anmeldeinformationen und andere anfängliche Konfigurationsdaten für die Datenbank angeben. In diesem Beispiel wird eine neue SQL-Datenbank verwendet. (Die Optionen für eine neue MySQL-Datenbank sind etwas anders.)
-	
-	![New SQL database settings][NewSQLDBConfig]
-	
-5. Aktivieren Sie das Kontrollkästchen, um den Wiederherstellungsvorgang zu starten. Sobald er abgeschlossen ist, wird die neue Websiteinstanz (falls dies die gewählte Wiederherstellungsoption ist) in der Liste der Websites im Portal angezeigt.
-	
-	![Restored Contoso web site][RestoredContosoWebSite]
+5. Wenn Sie eine Datei auswählen, können Sie sie wahlweise **herunterladen** oder **löschen**. Beachten Sie, dass es zwei primäre Dateitypen gibt, ZIP-Dateien und XML-Dateien. 
 
 <a name="OperationLogs"></a>
-##Anzeigen der Vorgangsprotokolle
+## Anzeigen der Überwachungsprotokolle
 	
-1. Wenn Sie Details zur erfolgreichen oder fehlerhaften Ausführung der Websitewiederherstellung anzeigen möchten, wechseln Sie zur Registerkarte "Dashboard" Ihrer Website. Klicken Sie im Abschnitt **Auf einen Blick** unter **Verwaltungsdienste** auf **Vorgangsprotokolle**.
+1. Um Details über den Erfolg oder Misserfolg des Wiederherstellungsvorgangs für die Web-App anzuzeigen, wählen Sie den Bereich **Überwachungsprotokoll** auf dem Hauptblatt **Durchsuchen** aus. 
 	
-	![Dashboard - Operation Logs Link][DashboardOperationLogsLink]
+	Auf dem Blatt **Audio log** werden alle Vorgänge mit Ebene, Status, Ressourcen und Zeitdetails angezeigt.
 	
-2. Sie gelangen zur Seite **Vorgangsprotokolle** des Verwaltungsdienstportals, wo Sie das Protokoll für den Wiederherstellungsvorgang in der Liste der Vorgangsprotokolle anzeigen können:
+2. Führen Sie einen Bildlauf im Blatt aus, um Vorgänge im Zusammenhang mit Ihrer Web-App zu suchen.
+3. Um weitere Details zu einem Vorgang anzuzeigen, wählen Sie den Vorgang in der Liste aus.
 	
-	![Management Services Operation Logs page][ManagementServicesOperationLogsList]
+Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mit dem Vorgang angezeigt.
 	
-3. Um ausführliche Informationen zum Vorgang anzuzeigen, wählen Sie den Vorgang in der Liste aus und klicken in der Befehlsleiste auf die Schaltfläche **Details**.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 	
-	![Details Button][DetailsButton]
-	
-	Daraufhin wird das Fenster **Vorgangsdetails** geöffnet und der kopierbare Inhalt der Protokolldatei angezeigt:
-	
-	![Operation Details][OperationDetails]
-	
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 <!-- IMAGES -->
 [ChooseBackupSource]: ./media/web-sites-restore/01ChooseBackupSource.png
+[ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
+[ViewContainers]: ./media/web-sites-restore/03ViewContainers.png
 [StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png
 [BrowseCloudStorage]: ./media/web-sites-restore/03BrowseCloudStorage.png
 [StorageAccountFileSelected]: ./media/web-sites-restore/04StorageAccountFileSelected.png
@@ -140,7 +97,4 @@ Die Wiederherstellungsfunktion auf der Registerkarte "Sicherungen" im Azure-Webs
 [DetailsButton]: ./media/web-sites-restore/12DetailsButton.png
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

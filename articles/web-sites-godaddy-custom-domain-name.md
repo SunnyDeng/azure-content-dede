@@ -1,31 +1,31 @@
 ﻿<properties 
-	pageTitle="Konfigurieren eines GoDaddy-Domänennamens für eine Azure-Website" 
-	description="Erfahren Sie, wie Sie einen Domänennamen von GoDaddy mit Azure-Websites verwenden" 
-	services="web-sites" 
+	pageTitle="Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service (GoDaddy)" 
+	description="Erfahren Sie, wie Sie einen Domänennamen von GoDaddy mit Azure-Web-Apps verwenden" 
+	services="app-service\web" 
 	documentationCenter="" 
-	authors="blackmist" 
+	authors="wpickett" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-services-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/17/2014" 
-	ms.author="larryfr, jroth"/>
+	ms.date="03/24/2015" 
+	ms.author="wpickett"/>
 
-#Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website (GoDaddy)
+#Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service (GoDaddy)
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/web-sites-custom-domain-name" title="Custom Domain">Benutzerdefinierte Domäne</a><a href="/de-de/documentation/articles/web-sites-godaddy-custom-domain-name" title="GoDaddy" class="current">GoDaddy</a><a href="/de-de/documentation/articles/web-sites-network-solutions-custom-domain-name" title="Network Solutions">Network Solutions</a><a href="/de-de/documentation/articles/web-sites-registerdotcom-custom-domain-name" title="Register.com">Register.com</a><a href="/de-de/documentation/articles/web-sites-enom-custom-domain-name" title="Enom">Enom</a><a href="/de-de/documentation/articles/web-sites-moniker-custom-domain-name" title="Moniker">Moniker</a><a href="/de-de/documentation/articles/web-sites-dotster-custom-domain-name" title="Dotster">Dotster</a><a href="/de-de/documentation/articles/web-sites-domaindiscover-custom-domain-name" title="DomainDiscover">DomainDiscover</a><a href="/de-de/documentation/articles/web-sites-directnic-custom-domain-name" title="Directnic">Directnic</a></div>
-<div class="dev-center-tutorial-subselector"><a href="/de-de/documentation/articles/web-sites-godaddy-custom-domain-name/" title="Websites" class="current">Website</a> | <a href="/de-de/documentation/articles/web-sites-godaddy-traffic-manager-custom-domain-name/" title="Website using Traffic Manager">Website mit Traffic Manager</a></div>
+[AZURE.INCLUDE [web-selector](../includes/websites-custom-domain-selector.md)]
+
 
 [AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 [AZURE.INCLUDE [intro](../includes/custom-dns-web-site-intro.md)]
 
-Dieser Artikel enthält Anweisungen zur Verwendung eines über [Go Daddy](https://godaddy.com) erworbenen benutzerdefinierten Domänennamens mit Azure-Websites.
+Dieser Artikel enthält Anweisungen zur Verwendung eines über [Go Daddy](https://godaddy.com) erworbenen benutzerdefinierten Domänennamens mit [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
@@ -33,7 +33,7 @@ Themen in diesem Artikel:
 
 -   [Grundlegendes zu DNS-Einträgen](#understanding-records)
 -   [Hinzufügen eines DNS-Eintrags für Ihre benutzerdefinierte Domäne](#bkmk_configurecname)
--   [Aktivieren der Domäne auf Ihrer Website](#enabledomain)
+-   [Aktivieren der Domäne in Ihrem Web](#enabledomain)
 
 <h2><a name="understanding-records"></a>Grundlegendes zu DNS-Einträgen</h2>
 
@@ -42,9 +42,9 @@ Themen in diesem Artikel:
 
 <h2><a name="bkmk_configurecname"></a>Hinzufügen eines DNS-Eintrags für Ihre benutzerdefinierte Domäne</h2>
 
-Um Ihre benutzerdefinierte Domäne mit einer Azure-Website zu verknüpfen, müssen Sie einen neuen Eintrag in die DNS-Tabelle für Ihre benutzerdefinierte Domäne einfügen. Verwenden Sie hierzu die von GoDaddy bereitgestellten Tools. Mit den folgenden Schritten können Sie die DNS-Tools für GoDaddy.com abrufen.
+Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpfen, müssen Sie einen neuen Eintrag in die DNS-Tabelle für Ihre benutzerdefinierte Domäne einfügen. Verwenden Sie hierzu die von GoDaddy bereitgestellten Tools. Mit den folgenden Schritten können Sie die DNS-Tools für GoDaddy.com abrufen.
 
-1. Melden Sie sich bei Ihrem Konto auf GoDaddy.com an, und wählen Sie **My Account** und dann **Manage your domains** aus. Wählen Sie schließlich das Dropdownmenü für den Domänennamen, den Sie mit Ihrer Azure-Website verwenden möchten, und dann **Manage DNS** aus.
+1. Melden Sie sich bei Ihrem Konto auf GoDaddy.com an, und wählen Sie **My Account** und dann **Manage your domains** aus. Wählen Sie zum Schluss das Dropdownmenü für den Domänennamen, den Sie mit Ihrer Azure-Web-App verwenden möchten, und dann **Manage DNS** aus.
 
 	![custom domain page for GoDaddy](./media/web-sites-custom-domain-name/godaddy-customdomain.png)
 
@@ -66,25 +66,27 @@ Um Ihre benutzerdefinierte Domäne mit einer Azure-Website zu verknüpfen, müss
 
 	![add zone record](./media/web-sites-custom-domain-name/godaddy-addzonerecord.png)
 
-	* Wenn Sie einen **A-(Host-)Datensatz** hinzufügen, müssen Sie das Feld **Host** entweder auf **@** (dies steht für den Stammdomänennamen wie **contoso.com**), * (ein Platzhalter für verschiedene passende Unterdomänen) oder die zu verwendende Unterdomäne (z. B. **www**) festlegen. Geben Sie im Feld **Points To** (Verweist auf) die IP-Adresse Ihrer Azure-Website an.
+	* Wenn Sie einen **A-(Host-)Datensatz** hinzufügen, müssen Sie das Feld **Host** entweder auf **@** (dies steht für den Stammdomänennamen wie **contoso.com**), * (ein Platzhalter für verschiedene passende Unterdomänen) oder die zu verwendende Unterdomäne (z. B. **www**) festlegen. Sie müssen das Feld **points to** auf die IP-Adresse Ihrer Azure-Web-App festlegen.
 	
 		> [AZURE.NOTE] Bei Verwendung von A (Host)-Datensätzen müssen Sie auch einen CNAME-Datensatz mit der folgenden Konfiguration hinzufügen:
 		> 
-		> * Den Wert **awverify** für **Host** zum **Verweisen** auf den Wert **awverify.&lt;NameIhrerWebsite&gt;.azurewebsites.net**.
+		> * Den Wert **awverify** für **Host** mit **points to** auf den Wert **awverify.&lt;NameIhrerWebApp&gt;.azurewebsites.net**.
 		> 
 		> Dieser CNAME-Datensatz wird von Azure verwendet, um zu überprüfen, ob Sie die Domäne besitzen, die von dem A-Datensatz beschrieben wird.
 
-	* Wenn Sie einen **CNAME (Alias)-Datensatz** hinzufügen, müssen Sie im Feld **Host** die gewünschte Unterdomäne festlegen. Beispiel: **www**. Sie müssen das Feld **Points to** auf den **.azurewebsites.net**-Domänennamen Ihrer Azure-Website festlegen. Beispiel: **contoso.azurwebsites.net**.
+	* Wenn Sie einen **CNAME (Alias)-Datensatz** hinzufügen, müssen Sie im Feld **Host** die gewünschte Unterdomäne festlegen. Beispiel: **www**. Sie müssen das Feld **Points to** auf den **.azurewebsites.net**-Domänennamen Ihrer Azure-Web-App festlegen. Beispiel: **contoso.azurwebsites.net**.
 
 
 5. Nachdem Sie die gewünschten Datensätze hinzugefügt oder bearbeitet haben, klicken Sie auf **Finish**, um die Änderungen zu speichern.
 
-<h2><a name="enabledomain"></a>Aktivieren des Domänennamens auf Ihrer Website</h2>
+<h2><a name="enabledomain"></a>Aktivieren des Domänennamens in Ihrer Web-App</h2>
 
 [AZURE.INCLUDE [Modi](../includes/custom-dns-web-site-enable-on-web-site.md)]
 
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

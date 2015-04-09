@@ -1,36 +1,27 @@
 ﻿<properties 
-	pageTitle="Konfigurieren der Azure Recovery Services für schnelle und einfache Sicherung von Windows Server" 
-	description="Mithilfe dieses Lernprogramms erfahren Sie, wie der Sicherungsdienst in der Microsoft Azure Cloud verwendet wird, um den Windows Server in der Cloud zu sichern." 
-	services="site-recovery" 
+	pageTitle="Konfigurieren von Azure Backup Services für eine schnelle und einfache Sicherung von Windows Server" 
+	description="In diesem Lernprogramm erfahren Sie, wie der Sicherungsdienst in der Microsoft Azure Cloud verwendet wird, um Windows Server in der Cloud zu sichern." 
+	services="backup" 
 	documentationCenter="" 
 	authors="markgalioto" 
 	manager="jwhit" 
 	editor="tysonn"/>
 
 <tags 
-	ms.service="site-recovery" 
-	ms.workload="backup-recovery" 
+	ms.service="backup" 
+	ms.workload="storage-backup-recovery" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/21/2014" 
+	ms.date="03/04/2015" 
 	ms.author="markgal"/>
 
 
 
-<h1><a id="configure-a-backup-vault-tutorial"></a>Konfigurieren der Azure-Sicherung für schnelle und einfache Sicherung von Windows Server</h1>
-<div class="dev-callout"> 
-<strong>Hinweis</strong>
- 
-<p>Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. In diesem Lernprogramm erfahren Sie, wie Sie das Feature Azure Backup aktivieren. Früher mussten Sie ein X.509 v3-Zertifikat erstellen oder beziehen, um Ihren Sicherungsserver zu registrieren. Zertifikate werden weiterhin unterstützt, aber jetzt können Sie direkt auf der Seite "Schnellstart" Tresoranmeldeinformationen generieren, wodurch der Azure-Tresor einfacher bei einem Server registriert werden kann. </p>
-<ul> 
-<li>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="/de-de/pricing/free-trial/">Kostenlose Microsoft Azure-Testversion</a>.</li> 
- 
+<h1><a id="configure-a-backup-vault-tutorial"></a>Konfigurieren von Azure Backup Services für eine schnelle und einfache Sicherung von Windows Server</h1>
 
-</ul>
- 
-
-</div>
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. In diesem Lernprogramm erfahren Sie, wie Sie das Feature Azure Backup aktivieren. Früher mussten Sie ein X.509 v3-Zertifikat erstellen oder beziehen, um Ihren Sicherungsserver zu registrieren. Zertifikate werden weiterhin unterstützt, aber jetzt können Sie direkt auf der Seite "Schnellstart" Tresoranmeldeinformationen generieren, wodurch der Azure-Tresor einfacher bei einem Server registriert werden kann. 
+<ul><li>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="/pricing/free-trial/">Kostenlose Azure-Testversion</a>.</li></ul>
   
 
 <p>Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in dem die Daten gespeichert werden sollen, um Dateien und Daten von Windows Server in Azure zu sichern. In diesem Lernprogramm wird Folgendes erläutert: das Erstellen des Tresors, in dem Sie Sicherungen speichern, das Herunterladen von Tresoranmeldeinformationen, das Installieren eines Sicherungs-Agents sowie eine Übersicht der Sicherungsverwaltungsaufgaben, die über das Verwaltungsportal verfügbar sind.</p>
@@ -39,7 +30,7 @@
 
 <h2><a id="create"></a>Erstellen eines Sicherungstresors</h2>
 
-1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com) an.
+1. Melden Sie sich am [Verwaltungsportal](https://manage.windowsazure.com) an.
 
 2. Klicken Sie auf **Neu**, dann auf **Datendienste**, **Wiederherstellungsdienste**, **Sicherungstresor**, und klicken Sie anschließend auf **Schnellerfassung**.
 
@@ -59,7 +50,7 @@
 
 Tresoranmeldeinformationen werden nun anstelle von Zertifikaten verwendet, um einen Azure-Dienst beim Server zu registrieren. Sie können auch weiterhin Zertifikate verwenden, allerdings sind Tresoranmeldeinformationen einfacher zu verwenden, weil Sie diese mithilfe des Azure-Portals generieren und herunterladen können.  
 
-1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com) an.
+1. Melden Sie sich am [Verwaltungsportal](https://manage.windowsazure.com) an.
 
 2. Klicken Sie auf **Wiederherstellungsdienste**, und wählen Sie den Sicherungstresor aus, den Sie bei einem Server registrieren möchten.  Die Seite "Schnellstart" für diesen Sicherungstresor wird angezeigt.
 	
@@ -83,7 +74,7 @@ Wenn Sie den Agent installiert haben, können Sie die passende lokale Verwaltung
   
 
 <h2><a id="manage"></a>Verwalten von Sicherungstresoren und Sicherungsservern</h2>
-1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com) an.
+1. Melden Sie sich am [Verwaltungsportal](https://manage.windowsazure.com) an.
 
 2. Klicken Sie auf **Wiederherstellungsdienste** und dann auf den Namen des Sicherungstresors, um die Seite "Schnellstart" anzuzeigen. 
 
@@ -114,6 +105,6 @@ Wenn Sie den Agent installiert haben, können Sie die passende lokale Verwaltung
 [deleted-server]: ./media/backup-configure-vault/RS_deletedserver.png
 [protected-itmes]: ./media/backup-configure-vault/RS_protecteditems.png
 
-<!--HONumber=35.2-->
+<!--HONumber=49--> 
 
-<!--HONumber=46--> 
+<!--HONumber=49-->

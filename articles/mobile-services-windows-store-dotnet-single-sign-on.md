@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="11/22/2014" 
@@ -18,12 +18,12 @@
 
 # Authentifizieren Ihrer Windows Store-App mit einmaliger Anmeldung von Live Connect
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/" title="Windows Store C#" class="current">Windows Store C#</a><a href="/de-de/documentation/articles/mobile-services-windows-store-javascript-single-sign-on/" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/de-de/documentation/articles/mobile-services-windows-phone-single-sign-on/" title="Windows Phone">Windows Phone</a>
+	<a href="/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/" title="Windows Store C#" class="current">Windows Store C#</a><a href="/documentation/articles/mobile-services-windows-store-javascript-single-sign-on/" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/documentation/articles/mobile-services-windows-phone-single-sign-on/" title="Windows Phone">Windows Phone</a>
 </div>	
 
 In diesem Thema erfahren Sie, wie Sie die einmalige Anmeldung von Live Connect verwenden, um Benutzer in Azure Mobile Services über eine Windows Store- oder Windows Phone 8.1 Store-App zu authentifizieren.  In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe von Live Connect zum Schnellstartprojekt hinzu. Sobald die Authentifizierung durch Live Connect erfolgreich war, wird ein angemeldeter Benutzer mit seinem Namen begrüßt und der Benutzer-ID-Wert wird angezeigt.  
 
->[AZURE.NOTE]Dieses Lernprogramm zeigt die Vorteile der Verwendung der einmaligen Anwendung mithilfe von Live Connect für Windows Store-Apps. Dadurch können Sie einen bereits angemeldeten Benutzer einfacher mit Ihrem Mobile Service authentifizieren. Informationen zu einem allgemeineren Authentifizierungsverfahren, das verschiedene Authentifizierungsanbieter unterstützt, finden Sie im Thema <a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/">Erste Schritte mit der Authentifizierung</a>. 
+>[AZURE.NOTE] Dieses Lernprogramm zeigt die Vorteile der Verwendung der einmaligen Anwendung mithilfe von Live Connect für Windows Store-Apps. Dadurch können Sie einen bereits angemeldeten Benutzer einfacher mit Ihrem Mobile Service authentifizieren. Informationen zu einem allgemeineren Authentifizierungsverfahren, das verschiedene Authentifizierungsanbieter unterstützt, finden Sie im Thema <a href="mobile-services-windows-store-dotnet-get-started-users.md/">Erste Schritte mit der Authentifizierung</a>. 
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung der Live Connect-Authentifizierung behandelt:
 
@@ -43,12 +43,12 @@ Sie müssen Ihre App beim Windows Store registrieren, damit Sie Benutzer authent
 
 [AZURE.INCLUDE [mobile-services-register-windows-store-app](../includes/mobile-services-register-windows-store-app.md)]
 
-##<a name="permissions"></a>Einschränken von Berechtigungen auf authentifizierte Benutzer
+##<a name="permissions"></a> Einschränken von Berechtigungen für authentifizierte Benutzer
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
 
 <ol start="3">
-<li><p>Öffnen Sie in Visual Studio 2012 Express für Windows 8 das Projekt, das Sie im Lernprogramm <a href="/de-de/documentation/articles/mobile-services-windows-store-get-started">Erste Schritte mit Mobile Services</a> erstellt haben.</p></li> 
+<li><p>Öffnen Sie im Visual Studio 2012 Express für Windows 8 das Projekt, das Sie beim Abschluss des Lernprogramms <a href="/documentation/articles/mobile-services-windows-store-get-started">Erste Schritte mit Mobile Services</a> erstellt haben.</p></li> 
 <li><p>Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.</p>
    
    	<p>Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die <em>TodoItem</em>-Tabelle jetzt jedoch Authentifizierung erfordert.</p></li>
@@ -110,12 +110,12 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
     Auf diese Weise wird eine Membervariable zum Speichern der aktuellen Live Connect-Sitzung erstellt und eine Methode zur Verarbeitung des Authentifizierungsprozesses. Dieser Code erzwingt wenn möglich eine Abmeldung, damit der Benutzer jedes Mal zur Eingabe der Anmeldeinformationen aufgefordert wird, wenn die Anwendung ausgeführt wird. Dies erleichtert das Testen der Anwendung mit verschiedenen Microsoft-Konten, um sicherzustellen, dass die Authentifizierung ordnungsgemäß funktioniert. Dieser Mechanismus funktioniert nur, wenn der angemeldete Benutzer nicht über ein verbundenes Microsoft-Konto verfügt. 
 
-	>[AZURE.NOTE]Sie sollten nicht bei jeder Ausführung der App Live Connection-Authentifizierungstoken oder Mobile Services-Autorisierungstoken anfordern. Diese Methode ist ineffizient, und zudem können nutzungsbedingte Probleme auftreten, wenn viele Kunden die App gleichzeitig starten möchten. Ein besserer Ansatz ist es daher, die Token zwischenzuspeichern und zunächst zu versuchen, die zwischengespeicherten Mobile Services-Token zu verwenden, bevor Sie **LoginWithMicrosoftAccountAsync** aufrufen. Ein Beispiel zum Zwischenspeichern dieses Tokens finden Sie unter [Erste Schritte mit der Authentifizierung](/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/#tokens).
+	>[AZURE.NOTE] Sie sollten nicht bei jeder Ausführung der App Live Connection-Authentifizierungstoken oder Mobile Services-Autorisierungstoken anfordern. Diese Methode ist ineffizient, und zudem können nutzungsbedingte Probleme auftreten, wenn viele Kunden die App gleichzeitig starten möchten. Ein besserer Ansatz ist es daher, die Token zwischenzuspeichern und zunächst zu versuchen, die zwischengespeicherten Mobile Services-Token zu verwenden, bevor Sie **LoginWithMicrosoftAccountAsync** aufrufen. Ein Beispiel zum Zwischenspeichern dieses Tokens finden Sie unter [Erste Schritte mit der Authentifizierung](mobile-services-windows-store-dotnet-get-started-users.md#tokens)
 	
 
-7. Aktualisieren Sie die Zeichenfolge << INSERT REDIRECT DOMAIN HERE >> aus dem vorherigen Schritt mit der Umleitungsdomäne, die bei der Konfiguration der App in Live Connect angegeben wurde, im Format **https://_service-name_.azure-mobile.net/**..
+7. Aktualisieren Sie die Zeichenfolge << INSERT REDIRECT DOMAIN HERE >> aus dem vorherigen Schritt mit der Umleitungsdomäne, die bei der Konfiguration der App in Live Connect angegeben wurde. Verwenden Sie dabei das Format **https://_service-name_.azure-mobile.net/**.
 
-    > [AZURE.NOTE] In einer Windows Store-App wird eine Instanz der <strong>LiveAuthClient</strong>-Klasse erstellt, indem der URI-Wert der Umleitungsdomäne an den Klassenkonstruktor weitergegeben wird. In einer [Windows Phone 8-App](/de-de/develop/mobile/tutorials/single-sign-on-wp8/) wird die gleiche Klasse durch Übergabe der Client-ID instantiiert.
+    > [AZURE.NOTE] In einer Windows Store-App wird eine Instanz der <strong>LiveAuthClient</strong>-Klasse erstellt, indem der URI-Wert der Umleitungsdomäne an den Klassenkonstruktor weitergegeben wird. In einer [Windows Phone 8-App](/develop/mobile/tutorials/single-sign-on-wp8/)wird dieselbe Klasse durch Übergeben der Client-ID instantiiert.
 
 8. Ersetzen Sie den vorhandenen **OnNavigatedTo**-Ereignishandler durch den Handler, der die neue **Authenticate**-Methode aufruft:
 
@@ -131,7 +131,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], verwenden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert, um die von Mobile Services zurückgegebenen Daten zu filtern. Informationen zur Verwendung anderer Identitätsanbieter für die Authentifizierung finden Sie unter [Erste Schritte mit der Authentifizierung]. Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET unter [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz].
+Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Informationen zur Verwendung anderer Identitätsanbieter für die Authentifizierung finden Sie unter [Erste Schritte mit der Authentifizierung]. Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET unter [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
 
 <!-- Anchors. -->
 [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
@@ -155,20 +155,18 @@ Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], verwenden S
 
 [13]: ./media/mobile-services-windows-store-dotnet-single-sign-on/mobile-identity-tab-ma-only.png
 [14]: ./media/mobile-services-windows-store-dotnet-single-sign-on/mobile-portal-data-tables.png
-[15]: ./media/mobile-services-windows-store-dotnet-single-sign-on/mobile-portal-change-table-per
-	ms.png
+[15]: ./media/mobile-services-windows-store-dotnet-single-sign-on/mobile-portal-change-table-perms.png
 [16]: ./media/mobile-services-windows-store-dotnet-single-sign-on/mobile-add-reference-live-dotnet.png
 
 <!-- URLs. -->
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Hinzufügen von Mobile Services zu einer vorhandenen App]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-[Autorisieren von Benutzern mit Skripts]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts/
+[Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-windows-store-dotnet-get-started-data.md
+[Erste Schritte mit der Authentifizierung]: mobile-services-windows-store-dotnet-get-started-users.md
+[Autorisieren von Benutzern mit Skripts]: mobile-services-windows-store-dotnet-authorize-users-in-scripts.md
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
+[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-net-client-library
 
-
-<!--HONumber=42-->
+<!--HONumber=49-->

@@ -1,8 +1,8 @@
 <properties 
 	pageTitle="Planen von Back-End-Aufgaben mit der Scheduler - Mobile Services" 
-	description="Verwenden Sie den Windows Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." 
+	description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." 
 	services="mobile-services" 
-	documentationCenter="windows" 
+	documentationCenter="" 
 	authors="ggailey777" 
 	writer="" 
 	manager="dwrede" 
@@ -11,17 +11,17 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="09/26/2014" 
+	ms.date="2/26/2015" 
 	ms.author="glenga"/>
 
 # Planen von periodischen Aufträgen in Mobile Services 
 
-<div class="dev-center-tutorial-subselector">
-	<a href="/de-de/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/" title=".NET backend" class="current">.NET-Back-End</a> | <a href="/de-de/documentation/articles/mobile-services-schedule-recurring-tasks/"  title="JavaScript backend" >JavaScript backend</a>
-</div>
+> [AZURE.SELECTOR-LIST (Plattform | Back-End)]
+- [(Jedes | .NET)](mobile-services-dotnet-backend-schedule-recurring-tasks.md)
+- [(Jedes | Javascript)](mobile-services-schedule-recurring-tasks.md)
  
 In diesem Thema erfahren Sie, wie Sie die Auftragsplanerfunktion im Verwaltungsportal verwenden, um Serverskript-Code zu definieren, der auf der Grundlage eines von Ihnen festgelegten Plans ausgeführt wird. Im vorliegenden Fall führt das Skript einen periodischen Abgleich mit einem Remote-Dienst, hier Twitter, aus und speichert die Ergebnisse in einer neuen Tabelle. Im Folgenden sind einige weitere periodische Aufgaben aufgeführt, die geplant werden können:
 
@@ -31,21 +31,21 @@ In diesem Thema erfahren Sie, wie Sie die Auftragsplanerfunktion im Verwaltungsp
 
 In diesem Lernprogramm werden die Schritte bezüglich der Verwendung des Auftragsplaners behandelt, um mit diesem einen geplanten Auftrag zu erstellen, welcher Tweet-Daten von Twitter anfordert und die Tweets in einer neuen Aktualisierungstabelle speichert:
 
-+ [Registrieren für Twitter-Zugang und Speichern der Anmeldeinformationen]
-+ [Herunterladen und Installieren der LINQtoTwitter-Bibliothek]
-+ [Erstellen der neuen Aktualisierungstabelle]
-+ [Erstellen eines neuen geplanten Auftrags]
-+ [Lokales Testen des geplanten Auftrags]
-+ [Veröffentlichen des Diensts und Registrieren des Auftrags]
+1. [Registrieren für Twitter-Zugang und Speichern der Anmeldeinformationen]
+2. [Herunterladen und Installieren der LINQtoTwitter-Bibliothek]
+3. [Erstellen der neuen Aktualisierungstabelle]
+4. [Erstellen eines neuen geplanten Auftrags]
+5. [Lokales Testen des geplanten Auftrags]
+6. [Veröffentlichen des Diensts und Registrieren des Auftrags]
 
->[AZURE.NOTE]In diesem Lernprogramm wird die Drittanbieter-LINQtoTwitter-Bibliothek verwendet, um den OAuth 2.0-Zugriff auf Twitter v1.1-APIs zu vereinfachen. Sie müssen das LINQtoTwitter-NuGet-Paket herunterladen und installieren, um dieses Lernprogramm durchführen zu können. Weitere Informationen finden Sie unter [LINQtoTwitter-CodePlex-Projekt]..
+>[AZURE.NOTE]In diesem Lernprogramm wird die Drittanbieter-LINQtoTwitter-Bibliothek verwendet, um den OAuth 2.0-Zugriff auf Twitter v1.1- APIs zu vereinfachen. Sie müssen das LINQtoTwitter-NuGet-Paket herunterladen und installieren, um dieses Lernprogramm durchführen zu können. Weitere Informationen finden Sie unter [LINQtoTwitter-CodePlex-Projekt].
 
-##<a name="get-oauth-credentials"></a>Registrieren für Zugriff auf Twitter v1.1-APIs und Speichern von Anmeldeinformationen
+##<a name="get-oauth-credentials"></a>Registrieren für den Zugriff auf Twitter v1.1-APIs und Speichern der Anmeldeinformationen
 
 [AZURE.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
 <ol start="7">
-<li><p>Öffnen Sie im Projektmappen-Explorer in Visual Studio die Datei "web.config" für das Projekt des mobilen Diensts. Suchen Sie die App-Einstellungen <strong>MS_TwitterConsumerKey</strong> und <strong>MS_TwitterConsumerSecret</strong>, und ersetzen Sie die Werte dieser Schlüssel durch den Twitter Consumer Key und die Consumer Secret-Werte, die Sie im Portal gesetzt haben.</p></li>
+<li><p>Öffnen Sie im Projektmappen-Explorer in Visual Studio die Datei "web.config" für das Projekt des mobilen Diensts. Suchen Sie die App-Einstellungen <strong>MS_TwitterConsumerKey</strong> und <strong>MS_TwitterConsumerSecret</strong>, und ersetzen Sie die Werte dieser Schlüssel durch die Twitter-Werte für den Verbraucherschlüssel und das geheime Wort, die Sie im Portal gesetzt haben.</p></li>
 
 <li><p>Fügen Sie im selben Bereich die folgenden neuen App-Einstellungen hinzu. Ersetzen Sie die Platzhalter durch das Twitter-Zugriffstoken und durch die geheimen Werte des Zugriffstoken, die Sie als App-Einstellungen im Portal gesetzt haben:</p>
 
@@ -69,12 +69,12 @@ Als Nächstes müssen Sie eine neue Tabelle erstellen, in der Tweets gespeichert
 
 ##<a name="create-table"></a>Erstellen der neuen Aktualisierungstabelle
 
-1. Klicken Sie im Projektmappen-Explorer in Visual Studio mit der rechten Maustaste auf den Ordner "DataObjects", und erweitern Sie **Hinzufügen**. Klicken Sie auf **Klasse**, geben Sie  `Updates` unter **Name** ein. Klicken Sie danach auf **Hinzufügen**.
+1. Klicken Sie im Projektmappen-Explorer in Visual Studio mit der rechten Maustaste auf den Ordner "DataObjects", und erweitern Sie **Hinzufügen**. Klicken Sie auf **Klasse**,   geben Sie `Updates` als **Name** ein, und klicken Sie auf **Hinzufügen**.
 
 	Damit wird eine neue Projektdatei für die Updates-Klasse erstellt.
 
 2. Klicken Sie mit der rechten Maustaste auf **Verweise**, klicken Sie auf **Verweis hinzufügen...**, wählen Sie unter **Assemblys** die Option **Framework**, aktivieren Sie **System.ComponentModel.DataAnnotations**, und klicken Sie auf **OK**.
-	
+
 	![][7]
 
 	Dadurch wird ein neuer Assemblyverweis hinzugefügt.
@@ -96,13 +96,13 @@ Als Nächstes müssen Sie eine neue Tabelle erstellen, in der Tweets gespeichert
 	        public DateTime Date { get; set; }
     	}
 
-4. Erweitern Sie den Ordner "Models", öffnen Sie Datenmodellkontextdatei (mit der Bezeichnung <em>service_name</em>Context.cs), und fügen Sie die folgende Eigenschaft hinzu, die ein typisiertes **DbSet** zurückgibt:
+4. Erweitern Sie den Ordner "Models", öffnen Sie die Datenmodellkontextdatei (mit der Bezeichnung <em>service_name</em>Context.cs), und fügen Sie die folgende Eigenschaft hinzu, die ein typisiertes **DbSet** zurückgibt:
 
 		public DbSet<Updates> Updates { get; set; }
 
 	Die Aktualisierungstabelle, die in der Datenbank beim ersten Zugriff auf das DbSet erstellt wird, wird vom Dienst verwendet, um Tweet-Daten zu speichern.  
 
-	>[AZURE.NOTE] Bei Verwendung des Standard-Datenbankinitialisierers löscht Entity Framework die Datenbank und erstellt sie erneut, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Der Standard-Initialisierer kann nicht für eine SQL-Datenbank in Azure angewendet werden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells](/de-de/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations).  
+	>[AZURE.NOTE] Bei Verwendung des Standard-Datenbankinitialisierers löscht Entity Framework die Datenbank und erstellt sie erneut, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Der Standard-Initialisierer kann nicht für eine SQL-Datenbank in Azure angewendet werden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells](mobile-services-dotnet-backend-use-code-first-migrations.md).  
 
 Als Nächstes erstellen Sie den geplanten Auftrag, der auf Twitter zugreift und Tweet-Daten in der neuen Aktualisierungstabelle speichert.
 
@@ -112,7 +112,7 @@ Als Nächstes erstellen Sie den geplanten Auftrag, der auf Twitter zugreift und 
 
 	Diese Klasse, die mit **ScheduledJob** verknüpft ist, stellt einen Auftrag dar, der im Azure-Verwaltungsportal geplant werden kann, um nach einem festgelegten Zeitplan oder nach Bedarf ausgeführt zu werden.
 
-2. Ersetzen Sie den Inhalt der "SampleJob.cs" durch den folgenden Code:
+2. Ersetzen Sie den Inhalt der Datei "SampleJob.cs" durch den folgenden Code:
  
 		using System;
 		using System.Linq;
@@ -140,7 +140,7 @@ Als Nächstes erstellen Sie den geplanten Auftrag, der auf Twitter zugreift und 
 		            base.Initialize(scheduledJobDescriptor, cancellationToken);
 		
 		            // Create a new context with the supplied schema name.
-		            context = new todolistContext(Services.Settings.Name);
+		            context = new todolistContext();
 		        }
 		
 		        public async override Task ExecuteAsync()
@@ -205,7 +205,7 @@ Als Nächstes erstellen Sie den geplanten Auftrag, der auf Twitter zugreift und 
 		                        Author = tweet.User.Name,
 		                        Date = tweet.CreatedAt
 		                    };
-			
+		
 		                context.Updates.Add(newTweet);
 		            }
 		
@@ -222,9 +222,9 @@ Als Nächstes erstellen Sie den geplanten Auftrag, der auf Twitter zugreift und 
 		    }
 		}
 
-	Ersetzen Sie im obigen Code die Zeichenfolgen _todolistService_und _todolistContext_ durch den Namespace und DbContext Ihres heruntergeladenen Projekts, die <em>mobile&#95;service&#95;name</em>Service und <em>mobile&#95;service&#95;name</em>Context sind.  
+	Ersetzen Sie im obigen Code die Zeichenfolgen "_todolistService_" und "_todolistContext_" durch den Namespace und DbContext Ihres heruntergeladenen Projekts, die "<em>mobile&#95;service&#95;name</em>Service" und "<em>mobile&#95;service&#95;name</em>Context" lauten.  
    	
-	Im oben angegebenen Code ruft die Überschreibungsmethode **ExecuteAsync** die Twitter-Abfrage-API mithilfe der gespeicherten Anmeldeinformationen auf, um aktuelle Tweets anzufordern, die das Hashtag `#mobileservices` enthalten. Doppelte Tweets und Antworten werden aus den Ergebnissen entfernt, bevor sie in der Tabelle gespeichert werden.
+	Im oben angegebenen Code ruft die Überschreibungsmethode **ExecuteAsync** die Twitter-Abfrage-API unter Verwendung der gespeicherten Anmeldeinformationen auf, um aktuelle Tweets anzufordern, die das Hashtag `#mobileservices` enthalten. Doppelte Tweets und Antworten werden aus den Ergebnissen entfernt, bevor sie in der Tabelle gespeichert werden.
 
 ##<a name="run-job-locally"></a>Lokales Testen des geplanten Auftrags
 
@@ -238,7 +238,7 @@ Geplante Aufträge können lokal getestet werden, bevor Sie in Azure veröffentl
 
 	![][8]
  
-4. Klicken Sie auf **Testen Sie es**, geben Sie  `Sample` als Parameterwert für **{jobName}** ein, und klicken Sie auf **Senden**.
+4. Klicken Sie auf **Testen Sie es**, geben Sie `Sample` als Parameterwert für **{jobName}** ein, und klicken Sie auf **Senden**.
 
 	![][9]
 
@@ -252,27 +252,21 @@ Geplante Aufträge können lokal getestet werden, bevor Sie in Azure veröffentl
 
 Der Auftrag muss auf der Registerkarte **Scheduler** registriert werden, sodass Mobile Services ihn nach dem von Ihnen definierten Zeitplan ausführen kann.
 
-3. das Projekt für den mobilen Service erneut auf Azure veröffentlichen.
+3. Veröffentlichen Sie das Projekt für den mobilen Dienst erneut in Azure. 
 
 4. Klicken Sie im [Azure-Verwaltungsportal] auf "Mobile Services" und anschließend auf Ihre App.
- 
-	![][2]
 
-2. Klicken Sie auf der Registerkarte **Scheduler** auf **+Weiter**. 
-
-   	![][3]
+2. Klicken Sie auf der Registerkarte **Scheduler** auf **+Erstellen**. 
 
     >[AZURE.NOTE]Wenn Sie Ihren mobilen Dienst auf der Ebene <em>Free</em> ausführen, können Sie lediglich einen geplanten Auftrag zur Zeit ausführen. Bei bezahlten Ebenen können Sie bis zu zehn geplante Aufträge zur Zeit ausführen.
 
-3. Geben Sie im Scheduler-Dialog (Auftragsplanerdialog) den Eintrag _Sample_ für **Auftragsname** ein. Stellen Sie die Planintervalle und -einheiten ein, und klicken Sie anschließend auf den Häkchenknopf. 
+3. Geben Sie im Scheduler-Dialogfeld die Zeichenfolge "_Sample_" für **Auftragsname** ein. Legen Sie die Planintervalle und -einheiten fest, und klicken Sie anschließend auf das Häkchen. 
    
    	![][4]
 
    	Dadurch wird ein neuer Auftrag mit dem Namen **Sample** erstellt. 
 
 4. Klicken Sie auf den gerade erstellten neuen Auftrag und danach auf **Einmal ausführen**, um das Skript zu testen. 
-
-  	![][5]
 
    	Dadurch wird der Auftrag ausgeführt, während er im Scheduler deaktiviert bleibt. Sie können von dieser Seite aus den Auftrag aktivieren und dessen Zeitplan jederzeit ändern.
 
@@ -282,7 +276,7 @@ Der Auftrag muss auf der Registerkarte **Scheduler** registriert werden, sodass 
 
     ![][6]
 
-5. Führen Sie im Verwaltungsportal eine Abfrage aus, um die von der App vorgenommenen Änderungen anzuzeigen. Ihre Abfrage ist mit der folgenden Abfrage vergleichbar, allerdings wird anstelle von  `todolist` der Name Ihres mobilen Diensts als Schemaname verwendet.
+5. Führen Sie im Verwaltungsportal eine Abfrage aus, um die von der App vorgenommenen Änderungen anzuzeigen. Ihre Abfrage ist mit der folgenden Abfrage vergleichbar, allerdings wird anstelle von `todolist` der Name Ihres mobilen Diensts als Schemaname verwendet.
 
         SELECT * FROM [todolist].[Updates]
 
@@ -310,9 +304,9 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 
 <!-- URLs. -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services]: /de-de/documentation/articles/mobile-services-how-to-register-twitter-authentication
+[Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services]: mobile-services-how-to-register-twitter-authentication.md
 [Twitter-Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 [LINQtoTwitter CodePlex-Projekt]: http://linqtotwitter.codeplex.com/
 
-<!--HONumber=42-->
+<!--HONumber=49-->

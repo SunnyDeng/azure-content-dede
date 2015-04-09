@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Bereitstellen von DocumentDB und einer Azure-Website mithilfe einer Vorlage des Azure-Ressourcen-Managers | Azure" 
 	description="Erfahren Sie, wie Sie ein DocumentDB-Konto, eine Azure-Website und eine Beispielwebanwendung mithilfe einer Vorlage des Azure-Ressourcen-Managers bereitstellen." 
 	services="documentdb, websites" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/09/2015" 
+	ms.date="03/23/2015" 
 	ms.author="stbaro"/>
 
 # Bereitstellen von DocumentDB und einer Azure-Website mithilfe einer Vorlage des Azure-Ressourcen-Managers #
@@ -26,22 +26,22 @@ Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten
 -	Wie kann ich mithilfe einer Vorlage des Azure-Ressourcen-Managers ein DocumentDB-Konto, eine Azure-Website und eine WebDeploy-Anwendung bereitstellen und integrieren?
 
 ## <a id="Prerequisites"></a>Voraussetzungen ##
-> [AZURE.TIP] Zwar wird für dieses Lernprogramm keine Erfahrung im Umgang mit Vorlagen des Azure-Ressourcen-Managers, JSON oder Azure-PowerShell vorausgesetzt, wenn Sie jedoch die hierin verwendeten Vorlagen oder Bereitstellungsoptionen ändern möchten, sind Kenntnisse in jedem dieser Bereiche erforderlich.
+> [AZURE.TIP] Zwar wird für dieses Lernprogramm keine Erfahrung im Umgang mit Vorlagen des Azure-Ressourcen-Managers, JSON oder Azure PowerShell vorausgesetzt, wenn Sie jedoch die hierin verwendeten Vorlagen oder Bereitstellungsoptionen ändern möchten, sind Kenntnisse in jedem dieser Bereiche erforderlich.
 
-Bevor Sie die Anweisungen in diesem Lernprogramm ausführen, stellen Sie sicher, dass Folgendes vorhanden ist:
+Vor dem Ausführen der Anweisungen zu diesem Lernprogramm, müssen Sie sicherstellen, dass Sie über Folgendes verfügen:
 
-- Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform.  Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/), [Spezielle Angebote](http://azure.microsoft.com/pricing/member-offers/) oder [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).
-- Ein Azure-Speicherkonto. Anweisungen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-whatis-account/).
-- Eine Arbeitsstation mit Azure PowerShell. Anweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](http://azure.microsoft.com/documentation/articles/install-configure-powershell/).
+- Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform.  Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/), [Spezielle Angebote](http://azure.microsoft.com/pricing/member-offers/) oder [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).
+- Ein Azure-Speicherkonto. Anweisungen finden Sie unter [Informationen zu Azure-Speicherkonten](storage-whatis-account.md).
+- Eine Arbeitsstation mit Azure PowerShell. Anweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md).
 
 ## <a id="CreateDB"></a>Schritt 1: Herunterladen und Extrahieren der Beispieldateien ##
 Als Erstes laden wir die Beispieldateien herunter, die in diesem Lernprogramm verwendet werden.
 
-1. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, einer Website und Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) in einen lokalen Ordner (z. B. C:\DocumentDBTemplates) herunter, und extrahieren Sie die Dateien.  Mit diesem Beispiel werden ein DocumentDB-Konto, eine Azure-Website und eine Webanwendung bereitgestellt.  Außerdem wird die Webanwendung automatisch so konfiguriert, dass sie eine Verbindung mit dem DocumentDB-Konto herstellt.
+1. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, einer Website und Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) in einen lokalen Ordner (z. B. "C:\DocumentDBTemplates") herunter, und extrahieren Sie die Dateien.  Mit diesem Beispiel werden ein DocumentDB-Konto, eine Azure-Website und eine Webanwendung bereitgestellt.  Außerdem wird die Webanwendung automatisch so konfiguriert, dass sie eine Verbindung mit dem DocumentDB-Konto herstellt.
 
-2. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos und einer Website](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) in einen lokalen Ordner (z. B. C:\DocumentDBTemplates) herunter, und extrahieren Sie die Dateien.  Mit diesem Beispiel werden ein DocumentDB-Konto und eine Azure-Website bereitgestellt; außerdem wird die Konfiguration der Website so geändert, dass DocumentDB-Verbindungsinformationen problemlos angegeben werden können; eine Webanwendung ist allerdings nicht enthalten.  
+2. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos und einer Website](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) in einen lokalen Ordner (z. B. "C:\DocumentDBTemplates") herunter, und extrahieren Sie die Dateien.  Mit diesem Beispiel werden ein DocumentDB-Konto und eine Azure-Website bereitgestellt; außerdem wird die Konfiguration der Website so geändert, dass DocumentDB-Verbindungsinformationen problemlos angegeben werden können; eine Webanwendung ist allerdings nicht enthalten.  
 
-> [AZURE.TIP] Beachten Sie, dass Sie in Abhängigkeit von den Sicherheitseinstellungen des Computers möglicherweise die extrahierten Dateien entsperren müssen, indem Sie mit der rechten Maustaste darauf klicken und dann auf **Eigenschaften** und auf **Blockierung aufheben** klicken.
+> [AZURE.TIP] Beachten Sie, dass Sie je nach den Sicherheitseinstellungen des Computers möglicherweise die extrahierten Dateien entsperren müssen, indem Sie mit der rechten Maustaste darauf klicken und dann auf **Eigenschaften** und auf **Blockierung aufheben** klicken.
 
 ![Screenshot of the Properties window with the Unblock button highlighted](./media/documentdb-create-documentdb-website/image1.png)
 
@@ -52,7 +52,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 > [AZURE.TIP] Die Vorlage überprüft nicht, ob die unten eingegebenen Namen der Website und des DocumentDB-Kontos (a) gültig und (b) verfügbar sind.  Es wird dringend empfohlen, die Verfügbarkeit der gewünschten Namen zu überprüfen, bevor Sie das PowerShell-Bereitstellungsskript ausführen.
 
-1. Öffnen Sie Microsoft Azure PowerShell, und navigieren Sie zu dem Ordner, in den Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, einer Website und Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) heruntergeladen und extrahiert haben (z. B. C:\DocumentDBTemplates\CreateDocDBWebsiteTodo).
+1. Öffnen Sie Microsoft Azure PowerShell, und navigieren Sie zu dem Ordner, in den Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, einer Website und Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) heruntergeladen und extrahiert haben (z. B. "C:\DocumentDBTemplates\CreateDocDBWebsiteTodo").
 
 
 2. Wir führen das PowerShell-Skript "CreateDocDBWebsiteTodo.ps1" aus.  Das Skript verwendet die folgenden erforderlichen Parameter:
@@ -69,7 +69,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
     	PS C:\DocumentDBTemplates\CreateDocDBWebsiteTodo> .\CreateDocDBWebsiteTodo.ps1 -WebSiteName "mydemodocdbwebsite" -ResourceGroupName "myDemoResourceGroup" -docDBAccountName "mydemodocdbaccount" -location "West US"
 
-	> [AZURE.TIP] Beachten Sie, dass Sie im Rahmen der Skriptausführung zur Eingabe des Benutzernamens und Kennworts für Ihr Azure-Konto aufgefordert werden.  Die gesamte Bereitstellung nimmt zwischen 10 und 15 Minuten in Anspruch.  	
+	> [AZURE.TIP] Beachten Sie, dass Sie im Rahmen der Skriptausführung zur Eingabe des Benutzernamens und Kennworts für Ihr Azure-Konto aufgefordert werden. Die gesamte Bereitstellung nimmt zwischen 10 und 15 Minuten in Anspruch.  	
 
 4. Hier sehen Sie ein Beispiel der resultierenden Ausgabe: 
 
@@ -127,7 +127,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 	![Sample Todo application](./media/documentdb-create-documentdb-website/image2.png)
 
-7. Fahren Sie fort, und erstellen Sie eine Reihe von Aufgaben; anschließend öffnen wir das [Azure-Vorschauportal](https://portal.azure.com).
+7. Erstellen Sie nun eine Reihe von Aufgaben, anschließend öffnen wir das [Azure-Vorschauportal](https://portal.azure.com).
 
 8. Durchsuchen Sie die Ressourcengruppen, und wählen Sie die Ressourcengruppe aus, die wir bei der Bereitstellung erstellt haben (im Beispiel oben ist dies myDemoResourceGroup).
 
@@ -139,7 +139,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 	![Screenshot of the Resource Group and Account blades with the Query Explorer tile highlighted](./media/documentdb-create-documentdb-website/image8.png)
 
-11. Führen Sie die Standardabfrage "SELECT * FROM c" aus, und überprüfen Sie die Ergebnisse.  Beachten Sie, dass die Abfrage die JSON-Darstellung der Aufgaben abgerufen hat, die Sie in Schritt 7 oben erstellt haben.  Sie können gerne mit Abfragen experimentieren; führen Sie z. B. SELECT * FROM c WHERE c.isComplete = true aus, um alle Aufgaben zurückzugeben, die als abgeschlossen gekennzeichnet wurden.
+11. Führen Sie die Standardabfrage "SELECT * FROM c" aus, und überprüfen Sie die Ergebnisse.  Beachten Sie, dass die Abfrage die JSON-Darstellung der Aufgaben abgerufen hat, die Sie in Schritt 7 oben erstellt haben.  Sie können gerne mit Abfragen experimentieren; führen Sie SELECT * FROM c WHERE c.isComplete = true aus, um alle Aufgaben zurückzugeben, die als abgeschlossen gekennzeichnet wurden.
 
 
 	![Screenshot of the Query Explorer and Results blades showing the query results](./media/documentdb-create-documentdb-website/image5.png)
@@ -180,7 +180,7 @@ Jetzt stellen wir unsere zweite Vorlage bereit.
 
 	- 	Eine Reihe von standardmäßigen Überwachungsregeln wurde erstellt.
 
-6. Wir öffnen nun das [Azure-Vorschauportal](https://portal.azure.com), durchsuchen die Ressourcengruppen und wählen die Ressourcengruppe aus, die wir bei der Bereitstellung erstellt haben (im Beispiel oben ist dies myOtherDemoResourceGroup).
+6. Wir öffnen nun das [Azure-Vorschauportal](https://portal.azure.com), durchsuchen die Ressourcengruppen und wählen die Ressourcengruppe aus, die wir bei der Bereitstellung erstellt haben (im Beispiel oben ist dies "myOtherDemoResourceGroup").
 7. Klicken Sie im Bereich "Zusammenfassung" auf die soeben bereitgestellte Azure-Website.
 
 	![Screenshot of the Summary lens with the myotherdocumentdwebsite website highlighted](./media/documentdb-create-documentdb-website/image6.png)
@@ -200,4 +200,4 @@ Glückwunsch! Sie haben DocumentDB, Azure-Websites und eine Beispielwebanwendung
 - Weitere Informationen zu Azure-Websites finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=325362).
 - Weitere Informationen zu Vorlagen des Azure-Ressourcen-Managers finden Sie [hier](https://msdn.microsoft.com/library/azure/dn790549.aspx).
 
-<!--HONumber=47-->
+<!--HONumber=49-->

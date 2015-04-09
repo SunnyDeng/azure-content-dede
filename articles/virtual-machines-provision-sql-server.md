@@ -3,22 +3,18 @@
 	description="In diesem Lernprogramm erfahren Sie, wie Sie einen virtuellen Computer mit SQL Server in Azure erstellen und konfigurieren." 
 	services="virtual-machines" 
 	documentationCenter="" 
-	authors="Selcin" 
-	manager="jhubbard" 
+	authors="jeffgoll" 
+	manager="jeffreyg" 
 	editor="monicar"/>
 
 <tags 
 	ms.service="virtual-machines" 
 	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
+	ms.tgt_pltfrm="vm-windows-sql-server" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/27/2015" 
-	ms.author="selcin"/>
-
-
-
-
+	ms.date="03/06/2015" 
+	ms.author="jeffreyg"/>
 
 # Bereitstellen eines virtuellen Computers mit SQL Server auf Azure #
 
@@ -31,24 +27,22 @@ In diesem Lernprogramm lernen Sie Folgendes:
 * [Fertigstellen der Konfigurationsschritte, um mithilfe von SQL Server Management Studio auf einem anderen Computer eine Verbindung zum virtuellen Computer herzustellen](#SSMS)
 * [Nächste Schritte](#Optional)
 
-## <a id="Provision">Verbinden mit dem Azure-Verwaltungsportal und Bereitstellen eines virtuellen Computers aus der Galerie</a>
+##<a id="Provision">Verbinden mit dem Azure-Verwaltungsportal und Bereitstellen eines virtuellen Computers aus der Galerie</a>
 
-1. Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) bei Ihrem Konto an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.windowsazure.com/pricing/free-trial/) besuchen.
+1. Melden Sie sich mit Ihrem Konto auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.windowsazure.com/pricing/free-trial/) besuchen.
 
 2. Klicken Sie im Azure-Verwaltungsportal unten links auf der Webseite auf **+NEU**, klicken Sie auf **COMPUTE**, klicken Sie auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
 
 3. Klicken Sie auf der Seite **Image auswählen** auf **SQL SERVER**. Wählen Sie dann ein SQL Server-Image aus. Klicken Sie am unteren rechten Rand der Seite auf den Pfeil "Weiter". 
-![Choose an Image][Image34]
+![Auswählen eines Bildes][Image34]
 
 
-Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure finden Sie unter [Erste Schritte mit SQL Server auf Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294720) in der Dokumentation [SQL Server auf Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294719). 
+Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure finden Sie unter [Erste Schritte mit SQL Server auf virtuellen Windows Azure-Computern](http://go.microsoft.com/fwlink/p/?LinkId=294720) in der Dokumentation [SQL Server auf virtuellen Windows Azure-Computern](http://go.microsoft.com/fwlink/p/?LinkId=294719). 
 
-    >[AZURE.NOTE] Wenn Sie über einen virtuellen Computer verfügen, der von einem Plattformimage mit der SQL Server Evaluation-Edition erstellt wurde, können Sie kein Upgrade auf ein minütlich bezahltes Editionsimage in der Galerie durchführen. Sie haben zwei Möglichkeiten:
-    
-    > - Sie können einen neuen virtuellen Computer erstellen, indem Sie die minütlich bezahlte SQL Server-Edition aus der Galerie verwenden und die Datenbankdateien zu diesem neuen virtuellen Computer migrieren, wobei Sie den Schritten unter [Migrieren von SQL Server-Datenbankdateien und -Schema zwischen virtuellen Azure-Computern mit Datenträgern](http://go.microsoft.com/fwlink/p/?LinkId=294738) folgen. **Oder**
-
-    > - Sie können eine vorhandene Instanz von SQL Server Evaluation Edition gemäß der Vereinbarung [Lizenzmobilität von Software Assurance unter Azure](http://www.windowsazure.com/pricing/license-mobility/) auf eine andere SQL Server-Edition aktualisieren, indem Sie die in [Aktualisieren auf eine andere Edition von SQL Server 2014](http://go.microsoft.com/fwlink/?LinkId=396915) beschriebenen Schritte ausführen. Informationen zum Erwerb der lizenzierten Kopie von SQL Server finden Sie unter [Gewusst wie: Kauf von SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx)
    
+>[AZURE.NOTE] Wenn Sie über einen virtuellen Computer verfügen, der von einem Plattformimage mit der SQL Server Evaluation-Edition erstellt wurde, können Sie kein Upgrade auf ein minütlich bezahltes Editionsimage in der Galerie durchführen. Sie haben zwei Möglichkeiten:    
+Sie können einen neuen virtuellen Computer mithilfe der minütlich bezahlten Edition von SQL Server aus dem Katalog erstellen und die Datenbankdateien auf diesen neuen virtuellen Computer migrieren. Befolgen Sie dazu die Schritte unter [Migrieren von SQL Server-Datenbankdateien und -Schema zwischen virtuellen Azure-Computern mit Datenträgern](http://go.microsoft.com/fwlink/p/?LinkId=294738). **Oder** Sie können unter dem Vertrag [Lizenzmobilität durch Software Assurance für Azure](http://www.windowsazure.com/pricing/license-mobility/) eine vorhandene Instanz von SQL Server Evaluation Edition auf eine andere Edition von SQL Server aktualisieren. Befolgen Sie dazu die Schritte unter [Aktualisieren auf eine andere Edition von SQL Server 2014 (Setup)](http://go.microsoft.com/fwlink/?LinkId=396915). Informationen zum Erwerb der lizenzierten Kopie von SQL Server finden Sie unter [How to Buy SQL Server (in englischer Sprache)](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx)
+
 
 4. Geben Sie zunächst auf der Seite **Konfiguration des virtuellen Computers** die folgenden Informationen ein:
 	- **VERÖFFENTLICHUNGSDATUM DER VERSION** Wenn mehrere Images verfügbar sind, wählen Sie das neueste aus.
@@ -59,12 +53,12 @@ Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure f
 	- Wählen Sie in der Dropdownliste die geeignete **Größe** aus. 
 
 	>[AZURE.NOTE] Die Größe des virtuellen Computers wird während der Bereitstellung angegeben:
- 	> A2 ist die kleinste für Produktionsarbeitslasten empfohlene Größe. 
+ 	> A2 ist die kleinste empfohlene Größe für Produktionsarbeitsauslastungen. 
     > Die empfohlene Minimalgröße für einen virtuellen Computer ist A3, wenn SQL Server Enterprise Edition verwendet wird.
     > Wählen Sie A3 oder höher aus, wenn Sie SQL Server Enterprise Edition verwenden.
    	> Wählen Sie A4 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für transaktionale Arbeitslasten optimiert ist.  
    	> Wählen Sie A7 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für Data Warehousing-Arbeitslasten optimiert ist. 
-   	> TDie ausgewählte Größe begrenzt die Anzahl der Datenträger, die Sie konfigurieren können. Aktuelle Informationen zu verfügbaren Größen virtueller Computer und die Anzahl der Datenträger, die Sie an einen virtuellen Computer anfügen können, finden Sie unter [Größe virtueller Computer für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx).
+   	> Die ausgewählte Größe begrenzt die Anzahl der Datenträger, die Sie konfigurieren können. Aktuelle Informationen zu verfügbaren Größen virtueller Computer und die Anzahl der Datenträger, die Sie an einen virtuellen Computer anfügen können, finden Sie unter [Größe virtueller Computer für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx).
 
 	Klicken Sie unten rechts auf den Pfeil für die nächste Seite, um fortzufahren.
 
@@ -95,17 +89,21 @@ Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure f
 	- Wird ausgeführt
 	
 
-## <a id="RemoteDesktop">Öffnen des virtuellen Computers mithilfe von Remotedesktop und vollständige Einrichtung</a>
+##<a id="RemoteDesktop">Öffnen des virtuellen Computers mithilfe von Remotedesktop und vollständige Einrichtung</a>
 
 1. Wenn die Bereitstellung abgeschlossen ist, klicken Sie auf den Namen des virtuellen Computers, um zur Seite DASHBOARD zu gelangen. Klicken Sie unten auf der Seite auf **Verbinden**.
+2. Klicken Sie auf die Schaltfläche **Öffnen**.
+![Klicken auf die Schaltfläche "Öffnen"][Image37]
 
-3. Geben Sie im Dialogfeld **Windows-Sicherheit** das Kennwort für das lokale Administratorkonto an, das Sie zuvor festgelegt haben. (Sie werden möglicherweise dazu aufgefordert, die Anmeldedaten des virtuellen Computers zu überprüfen.)
+3. Klicken Sie im Dialogfeld **Windows-Sicherheit** auf **Use another account**.
+![Klicken auf "Use another account"][Image38] 
+4. Verwenden Sie den Namen des Computers als Domänennamen, gefolgt von Ihrem Administratornamen im folgenden Format: `machinename\username`. Geben Sie Ihr Kennwort ein, und stellen Sie eine Verbindung mit dem Computer her.
 
-4. Beim ersten Anmelden auf dem virtuellen Computer müssen eventuell einige Prozesse ausgeführt werden, darunter die Einrichtung Ihres Desktops, Windows-Updates und die Fertigstellung der ersten Windows-Konfigurationsaufgaben (sysprep). Nachdem Windows-Sysprep abgeschlossen ist, stellt die SQL Server-Einrichtung die Konfigurationsaufgaben fertig. Diese Aufgaben können während der Ausführung zu einer Verzögerung von einigen Minuten führen. `SELECT @@SERVERNAME` gibt möglicherweise nicht den richtigen zurück, bis das SQL Server-Setup abgeschlossen ist, und SQL Server Management Studio wird möglicherweise nicht auf der Startseite angezeigt.
+4. Beim ersten Anmelden werden einige Prozesse ausgeführt, darunter die Einrichtung Ihres Desktops, Windows-Updates und die Fertigstellung der ersten Windows-Konfigurationsaufgaben (sysprep). Nachdem Windows-sysprep abgeschlossen ist, stellt die SQL Server-Einrichtung die Konfigurationsaufgaben fertig. Diese Tasks können während der Ausführung eine Verzögerung von wenigen Minuten verursachen. `SELECT @@SERVERNAME` gibt den richtigen Namen möglicherweise erst zurück, wenn die Einrichtung von SQL Server abgeschlossen ist, und SQL Server Management Studio wird auf der Startseite möglicherweise nicht angezeigt.
 
 Nachdem Sie über Windows Remotedesktop mit dem virtuellen Computer verbunden sind, funktioniert der virtuelle Computer wie jeder andere Computer. Stellen Sie ganz normal eine Verbindung zur Standardinstanz von SQL Server mit SQL Server Management Studio, das auf dem virtuellen Computer ausgeführt wird, her. 
 
-## <a id="SSMS">Fertigstellen der Konfigurationsschritte, um mithilfe von SQL Server Management Studio auf einem anderen Computer eine Verbindung zum virtuellen Computer herzustellen</a>
+##<a id="SSMS">Fertigstellen der Konfigurationsschritte, um mithilfe von SQL Server Management Studio auf einem anderen Computer eine Verbindung zum virtuellen Computer herzustellen</a>
 
 Bevor Sie eine Verbindung mit der Instanz von SQL Server über das Internet herstellen können, müssen Sie folgende Aufgaben abschließen, die in den nächsten Abschnitten beschrieben werden:
 
@@ -120,128 +118,122 @@ Bevor Sie eine Verbindung mit der Instanz von SQL Server über das Internet hers
 
 Der Verbindungspfad wird von folgendem Diagramm zusammengefasst:
 
-![Connecting to a SQL Server virtual machine][Image8b]
+![Verbinden mit einem virtuellen SQL Server-Computer][Image8b]
 
-## <a id="Endpoint">Erstellen eines TCP-Endpunkts für den virtuellen Computer</a>
+##<a id="Endpoint">Erstellen eines TCP-Endpunkts für den virtuellen Computer</a>
 
 Der virtuelle Computer benötigt einen Endpunkt, um nach eingehender TCP-Kommunikation zu lauschen. Dieser Azure-Konfigurationsschritt leitet den eingehenden Datenverkehr des TCP-Ports zu einem TCP-Port, auf den der virtuelle Computer zugreifen kann.
 
 1. Klicken Sie im Azure-Verwaltungsportal auf **VIRTUELLE COMPUTER**.
-
 	
 2. Klicken Sie auf den neu erstellten virtuellen Computer. Informationen zu Ihrem virtuellen Computer werden angezeigt.
 	
-
 3. Wählen Sie oben auf der Seite die Seite **ENDPUNKTE** aus, und klicken Sie dann unten auf der Seite auf **HINZUFÜGEN**.
 	
-
 4. Klicken Sie auf der Seite **Einem virtuellen Computer einen Endpunkt hinzufügen** auf **Eigenständigen Endpunkt hinzufügen**, und klicken Sie dann auf "Weiter", um fortzufahren.
-
 	
 5. Geben Sie auf der Seite zum **Angeben der Details des Endpunkts** folgende Informationen ein:
 
 	- Geben Sie unter **NAME** einen Namen für den Endpunkt ein.
 	- Wählen Sie im Feld **PROTOKOLL** den Eintrag **TCP**. Sie können zudem **57500** im Feld **ÖFFENTLICHER PORT** eingeben. Sie können den Standardlauschport von SQL Server, **1433** im Feld **Private Port** eingeben. Viele Organisationen verwenden unterschiedliche Portnummern, um böswillige Sicherheitsangriffe zu vermeiden. 
 
-
 6. Klicken Sie auf das Häkchen, um fortzufahren. Der Endpunkt wurde erstellt.
-	
 
-## <a id="FW">Öffnen Sie TCP-Ports in der Windows-Firewall für die Standardinstanz des Datenbankmoduls</a>
+##<a id="FW">Öffnen von TCP-Ports in der Windows-Firewall für die Standardinstanz des Datenbankmoduls</a>
 
 1. Stellen Sie mit Windows Remotedesktop eine Verbindung zum virtuellen Computer her. Geben Sie nach der Anmeldung auf dem Startbildschirm **WF.msc** ein, und drücken Sie dann die EINGABETASTE. 
 
-	![Start the Firewall Program][Image12]
+	![Starten des Firewallprogramms][Image12]
 2. Klicken Sie in **Windows-Firewall mit erweiterter Sicherheit** im linken Bereich mit der rechten Maustaste auf **Eingehende Regeln**, und klicken Sie dann im Aktionsbereich auf **Neue Regel**.
 
-	![New Rule][Image13]
+	![Neue Regel][Image13]
 
 3. Wählen Sie im Dialogfeld **Assistent für neue eingehende Regel** unter **Regeltyp** die Option **Port** aus, und klicken Sie dann auf **Weiter**.
 
 4. Verwenden Sie im Dialogfeld **Protokolle und Ports** die Standardeinstellung **TCP**. Wählen Sie **Bestimmte lokale Ports** aus, und geben Sie dann die Portnummer der Instanz des Datenbankmoduls ein (**1433** für die Standardinstanz oder die von Ihnen ausgewählte Nummer für den privaten Port im Endpunktschritt). 
 
-	![TCP Port 1433][Image14]
+	![TCP-Port 1433][Image14]
 
 5. Klicken Sie auf **Weiter**.
 
 6. Klicken Sie im Dialogfeld **Aktion** auf **Verbindung zulassen** und anschließend auf **Weiter**.
 
-	**Sicherheitshinweis:** Die Auswahl von **Verbindung zulassen, wenn sie sicher ist** kann zusätzliche Sicherheit bieten. Wählen Sie diese Option, wenn Sie zusätzliche Sicherheitsoptionen in Ihrer Umgebung konfigurieren möchten.
+	**Sicherheitshinweis:** Die Auswahl von **Verbindung zulassen, wenn sie sicher ist** kann zusätzliche Sicherheit bieten. Wählen Sie diese Option aus, wenn Sie zusätzliche Sicherheitsoptionen in Ihrer Umgebung konfigurieren möchten.
 
-	![Allow Connections][Image15]
+	![Verbindungen zulassen][Image15]
 
 7. Klicken Sie im Dialogfeld **Profil** auf **Öffentlich** und anschließend auf **Weiter**. 
 
-    **Sicherheitshinweis:**  Die Auswahl von **Öffentlich** ermöglicht den Zugriff über das Internet. Sie sollten möglichst ein restriktiveres Profil auswählen.
+    **Sicherheitshinweis:** Die Auswahl von **Öffentlich** bietet Zugriff über das Internet. Wenn möglich, wählen Sie ein restriktiveres Profil.
 
-	![Public Profile][Image16]
+	![Öffentliches Profil][Image16]
 
 8. Geben Sie im Dialogfeld **Name** einen Namen und eine Beschreibung für diese Regel ein, und klicken Sie dann auf **Fertig stellen**.
 
-	![Rule Name][Image17]
+	![Regelname][Image17]
 
 Öffnen Sie gegebenenfalls zusätzliche Ports für andere Komponenten. Weitere Informationen finden Sie unter [Konfigurieren der Windows-Firewall für den SQL Server-Zugriff](http://msdn.microsoft.com/library/cc646023.aspx).
 
 
-### <a id="TCP">Konfigurieren von SQL Server für das Lauschen des TCP-Protokolls</a>
+###<a id="TCP">Konfigurieren von SQL Server für das Lauschen des TCP-Protokolls</a>
 
 1. Geben Sie während der Verbindung mit dem virtuellen Computer auf der Startseite **SQL Server-Konfigurations-Manager** ein, und drücken Sie die EINGABETASTE.
 	
-	![Open SSCM][Image9]
+	![Öffnen von SSCM][Image9]
 
 2. Erweitern Sie im SQL Server-Konfigurationsmanager im Konsolenbereich **SQL Server-Netzwerkkonfiguration**.
 
 3. Klicken Sie im Konsolenbereich auf **Protokolle für MSSQLSERVER** (der Standardinstanzenname). Klicken Sie im Detailbereich mit der rechten Maustaste auf TCP, dies sollte standardmäßig für Galerie-Images aktiviert sein. Klicken Sie für eigene Images auf **Aktivieren**, falls der Status "Deaktiviert" ist.
 
-	![Enable TCP][Image10]
+	![Aktivieren von TCP][Image10]
 
 5. Klicken Sie im linken Bereich auf **SQL Server-Dienste**. Klicken Sie im Detailbereich mit der rechten Maustaste auf **SQL Server (_Instanzenname_)** (die Standardinstanz ist **SQL Server (MSSQLSERVER)**), und klicken Sie dann auf **Neu starten**, um die Instanz von SQL Server zu beenden und neu zu starten. 
 
-	![Restart Database Engine][Image11]
+	![Neustarten der Datenbank-Engine][Image11]
 
 7. Schließen Sie den SQL Server-Konfigurations-Manager.
 
 Weitere Informationen zur Aktivierung von Protokollen für SQL Server-Datenbankmodule finden Sie unter [Aktivieren oder Deaktivieren eines Servernetzwerkprotokolls](http://msdn.microsoft.com/library/ms191294.aspx)
 
-### <a id="Mixed">Konfigurieren von SQL Server für die Authentifizierung im gemischten Modus</a>
+###<a id="Mixed">Konfigurieren von SQL Server für die Authentifizierung mit gemischtem Modus</a>
 
 Das SQL Server-Datenbankmodul kann ohne Domänenumgebung keine Windows-Authentifizierung nutzen. Um eine Verbindung zum Datenbankmodul von einem anderen Computer aus herzustellen, konfigurieren Sie SQL Server für die Authentifizierung mit gemischtem Modus. Die Authentifizierung mit gemischtem Modus ermöglicht sowohl die SQL Server-Authentifizierung als auch die Windows-Authentifizierung. (Die Konfiguration der Authentifizierung mit gemischtem Modus ist möglicherweise nicht notwendig, wenn Sie ein Azure Virtual Network konfiguriert haben. Weitere Informationen erhalten Sie unter [Konnektivitätsüberlegungen für SQL Server in virtuellen Azure-Computern](http://go.microsoft.com/fwlink/?LinkId=294723) in der Dokumentation [SQL Server in Azure Virtual Machines](http://go.microsoft.com/fwlink/?LinkId=294719).
 
 1. Geben Sie während der Verbindung mit dem virtuellen Computer auf der Startseite **SQL Server 2014 Management Studio** ein, und klicken Sie auf das ausgewählte Symbol.
 
-	![Start SSMS][Image18]
+	![Starten von SSMS][Image18]
 
 	Wenn Sie Management Studio erstmalig öffnen, muss dieses eine Management Studio-Benutzerumgebung erstellen. Dies kann einige Zeit dauern.
 
-2. Management Studio zeigt das Dialogfeld **Verbindung mit Server herstellen** an. Geben Sie im Feld **Servername** den Namen des virtuellen Computers ein, um das Datenbankmodul mit dem Objekt-Explorer zu verbinden. (Anstelle des Namens des virtuellen Computers können Sie auch **(lokal)** oder einen einzigen Punkt als **Servername** verwenden. Wählen Sie **Windows-Authentifizierung**, und lassen Sie **_your_VM_name_\your_local_administrator** im Feld **Benutzername**. Klicken Sie auf **Verbinden**.
+2. Management Studio zeigt das Dialogfeld **Verbindung mit Server herstellen** an. Geben Sie im Feld **Servername** den Namen des virtuellen Computers ein, um das Datenbankmodul mit dem Objekt-Explorer zu verbinden. (Anstelle des Namens des virtuellen Computers können Sie auch **(lokal)** oder einen einzigen Punkt als **Servername** verwenden. Wählen Sie **Windows-Authentifizierung**, und lassen Sie **_VM-Name_\lokaler_Administrator** im Feld **Benutzername** unverändert. Klicken Sie auf **Verbinden**.
 
-	![Connect to Server][Image19]
+	![Verbinden mit dem Server][Image19]
 
 3. Klicken Sie im Objekt-Explorer von SQL Server Management Studio mit der rechten Maustaste auf die Instanz von SQL Server (den Namen des virtuellen Computers), und klicken Sie dann auf **Eigenschaften**.
 
-	![Server Properties][Image20]
+	![Servereigenschaften][Image20]
 
 4. Wählen Sie auf der Seite **Sicherheit**, unter **Serverauthentifizierung**, die Option **SQL Server- und Windows-Authentifizierungsmodus**, und klicken Sie dann auf **OK**.
 
-	![Select Authentication Mode][Image21]
+	![Auswählen des Authentifizierungsmodus][Image21]
 
 5. Klicken Sie im Dialogfeld von SQL Server Management Studio auf **OK**, um zu bestätigen, dass es erforderlich ist, SQL Server neu zu starten.
 
 6. Klicken Sie im Objekt-Explorer mit der rechten Maustaste auf den Server, und klicken Sie dann auf **Neu starten**. (Wenn SQL Server-Agent ausgeführt wird, muss dieser ebenfalls neu gestartet werden.)
 
-	![Restart][Image22]
+	![Neustarten][Image22]
 
 7. Klicken Sie im Dialogfeld von SQL Server Management Studio auf **Ja**, um zu bestätigen, dass SQL Server neu gestartet werden soll.
 
-### <a id="Logins">Erstellen von Anmeldenamen für SQL Server-Authentifizierung</a>
+###<a id="Logins">Erstellen von Anmeldenamen für die SQL Server-Authentifizierung</a>
 
 Um von einem anderen Computer aus eine Verbindung zum Datenbankmodul herzustellen, müssen Sie mindestens einen Anmeldenamen für die SQL Server-Authentifizierung erstellen.
 
 1. Erweitern Sie in SQL Server Management Studio-Objekt-Explorer den Ordner der Serverinstanz, in der der neue Anmeldename erstellt werden soll.
 
-2. Klicken Sie mit der rechten Maustaste auf den Ordner **Sicherheit**, zeigen Sie auf **Neu**, und wählen Sie **Anmeldung...** aus.
+2. Klicken Sie mit der rechten Maustaste auf den Ordner **Sicherheit**, zeigen Sie auf **Neu**, und wählen Sie **Anmeldung**.
 
-	![New Login][Image23]
+	![Neue Anmeldung][Image23]
 
 3. Geben Sie im Dialogfeld **Anmeldung - Neu** auf der Seite **Allgemein** im Feld **Anmeldename** den Namen des neuen Benutzers ein.
 
@@ -259,11 +251,11 @@ Um von einem anderen Computer aus eine Verbindung zum Datenbankmodul herzustelle
 
 10. Belassen Sie in der Liste **Standardsprache** den Wert **Standard**.
     
-	![Login Properties][Image24]
+	![Anmeldeeigenschaften][Image24]
 
 11. Falls es sich um den ersten Anmeldenamen handelt, den Sie erstellen, werden Sie diesen Anmeldenamen wahrscheinlich als SQL Server-Administrator bezeichnen. Aktivieren Sie in diesem Fall **sysadmin** auf der Seite **Serverrollen**. 
 
-	**Sicherheitshinweis:** Mitglieder der festen Serverrolle "sysadmin" haben vollständige Kontrolle über das Datenbankmodul. Sie sollten die Mitgliedschaft zu dieser Rolle sorgfältig beschränken.
+	**Sicherheitshinweis:** Mitglieder der festen Serverrolle "sysadmin" haben vollständige Kontrolle über die Datenbank-Engine. Sie sollten die Mitgliedschaft in dieser Rolle sorgfältig beschränken.
 
 	![sysadmin][Image25]
 
@@ -273,7 +265,7 @@ Weitere Informationen zu Anmeldenamen für SQL Server finden Sie unter [Erstelle
 
 
 
-### <a id="DNS">Bestimmen des DNS-Namens des virtuellen Computers</a>
+###<a id="DNS">Bestimmen des DNS-Namens des virtuellen Computers</a>
 
 Um sich von einem anderen Computer aus mit dem SQL Server-Datenbankmodul zu verbinden, müssen Sie den DNS-Namen (Domain Name System) des virtuellen Computers kennen. (Dies ist der Name, den das Internet verwendet, um den virtuellen Computer zu identifizieren. Sie können die IP-Adresse verwenden, aber die IP-Adresse ändert sich möglicherweise, wenn Azure aufgrund von Redundanz oder Wartungsarbeiten Ressourcen verschiebt. Der DNS-Name bleibt bestehen, da er zu einer neuen IP-Adresse weitergeleitet werden kann.)  
 
@@ -281,21 +273,21 @@ Um sich von einem anderen Computer aus mit dem SQL Server-Datenbankmodul zu verb
 
 2. Suchen und kopieren Sie auf der Seite **INSTANZEN VIRTUELLER COMPUTER** in der Spalte **Schnelleinsicht** den DNS-Namen für den virtuellen Computer.
 
-![DNS name][Image35]
+![DNS-Name][Image35]
 	
 
 ### <a id="cde">Verbinden mit dem Datenbankmodul von einem anderen Computer aus</a>
  
 1. Öffnen Sie auf einem mit dem Internet verbundenen Computer SQL Server Management Studio.
-2. Geben Sie im Dialogfeld **Verbindung mit Server herstellen** oder **Verbindung mit Datenbankmodul herstellen** im Feld**Servername** den DNS-Namen des virtuellen Computers ein (in vorherigen Aufgabe festgelegt) sowie die Portnummer eines öffentlichen Endpunkts im Format *DNSName,portnumber* wie etwa **tutorialtestVM.cloudapp.net,57500** ein.
+2. Geben Sie im Dialogfeld **Verbindung mit Server herstellen** oder **Verbindung mit Datenbankmodul herstellen** im Feld **Servername** den DNS-Namen des virtuellen Computers (in der vorherigen Aufgabe festgelegt) sowie die Portnummer eines öffentlichen Endpunkts im Format  *DNSName,portnumber* wie etwa **tutorialtestVM.cloudapp.net,57500** ein.
 Um die Portnummer zu erhalten, melden Sie sich beim Azure-Verwaltungsportal an und suchen den virtuellen Computer. Klicken Sie auf dem Dashboard auf **ENDPUNKTE**, und verwenden Sie den **ÖFFENTLICHEN PORT**, der **MSSQL** zugewiesen ist.
-![Public Port][Image36]
+![Öffentlicher Port][Image36]
 3. Wählen Sie im Feld **Authentifizierung** den Eintrag **SQL Server-Authentifizierung** aus.
 5. Geben Sie im Feld **Anmeldename** den Anmeldenamen ein, den Sie vorher erstellt haben.
 6. Geben Sie im Feld **Kennwort** das Kennwort der Anmeldedaten ein, die Sie in einem früheren Schritt erstellt haben.
 7. Klicken Sie auf **Verbinden**.
 
-	![Connect using SSMS][Image33]
+	![Verbinden mit SSMS][Image33]
 
 ### <a id="cdea"> Verbinden mit dem Datenbankmodul von Ihrer Anwendung aus</a>
 
@@ -305,8 +297,8 @@ Wenn Sie eine Verbindung zu einer Instanz von SQL Server, die auf einem virtuell
 
 Weitere Informationen finden Sie unter [Problembehandlung bei der Verbindung zum SQL Server-Datenbankmodul](http://social.technet.microsoft.com/wiki/contents/articles/how-to-troubleshoot-connecting-to-the-sql-server-database-engine.aspx).
 
-## <a id="Optional">Nächste Schritte</a>
-Sie haben jetzt erfahren, wie Sie einen SQL Server auf einem virtuellen Azure-Computer mithilfe des Plattform-Image erstellen und konfigurieren. Wenn Sie SQL Server auf Azure Virtual Machines verwenden, empfehlen wir, der detaillierten Anleitung zu folgen, die Sie in der Dokumentation zu [SQL Server auf Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294719) in der Bibliothek finden. Diese Dokumentation enthält zahlreiche Artikel und Lernprogramme mit detaillierten Anleitungen. Diese behandeln die folgenden Themen:
+##<a id="Optional">Nächste Schritte</a>
+Sie haben jetzt erfahren, wie Sie einen SQL Server auf einem virtuellen Azure-Computer mithilfe des Plattform-Image erstellen und konfigurieren. Wenn Sie SQL Server auf Azure Virtual Machines verwenden, empfehlen wir, der detaillierten Anleitung in der Dokumentation zu [SQL Server auf Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294719) in der Bibliothek zu folgen. Diese Dokumentation enthält zahlreiche Artikel und Lernprogramme mit detaillierten Anleitungen. Diese behandeln die folgenden Themen:
 
 [SQL Server auf virtuellen Azure-Computern](http://go.microsoft.com/fwlink/p/?LinkId=294719)
 
@@ -401,5 +393,9 @@ Sie haben jetzt erfahren, wie Sie einen SQL Server auf einem virtuellen Azure-Co
 [Image34]: ./media/virtual-machines-provision-sql-server/choose-sql-vm.png
 [Image35]: ./media/virtual-machines-provision-sql-server/sql-vm-dns-name.png
 [Image36]: ./media/virtual-machines-provision-sql-server/sql-vm-port-number.png
+[Image37]: ./media/virtual-machines-provision-sql-server/click-open-to-connect.png
+[Image38]: ./media/virtual-machines-provision-sql-server/credentials.png
 
-<!--HONumber=47-->
+<!--HONumber=49--> 
+
+<!--HONumber=49-->

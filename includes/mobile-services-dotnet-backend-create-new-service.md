@@ -22,4 +22,4 @@ Sie haben nun einen neuen mobilen Service erstellt, den Sie mit Ihren mobilen Ap
 <!-- URLs. -->
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=47-->
+<!--HONumber=49-->

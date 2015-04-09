@@ -15,7 +15,7 @@
 
 4. Konfigurieren Sie IIS Express so, dass Remoteverbindungsanforderungen für den Dienst möglich sind. Suchen Sie dazu in der Datei "applicationhost.config" das Websiteelement für Ihren mobilen Dienst, und fügen Sie unter Verwendung der weiter oben notierten IP-Adresse ein neues  `binding`-Element für den Port hinzu. Speichern Sie anschließend die Datei "applicationhost.config". 
 
-    Your updated site element should look similar to the following:
+    Das aktualisierte Websiteelement sollte etwa wie folgt aussehen:
 
         <site name="todolist_Service(1)" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
@@ -38,4 +38,5 @@
 
 <!-- URLs. -->
 [Hinzufügen einer neuen Windows-Firewall-Portregel]:  http://go.microsoft.com/fwlink/?LinkId=392240
-<!--HONumber=42-->
+
+<!--HONumber=49-->

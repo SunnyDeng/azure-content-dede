@@ -83,10 +83,12 @@
             base.OnActivated(args);
         }
 
-	Wenn die **OnActivated**-Methode bereits vorhanden ist, fügen Sie einfach den "#if... #endif"-Codeblock hinzu.
+	If the **OnActivated** method already exists, just add the `#if...#endif` code block.
 
 8. Drücken Sie F5, um die Windows Store-App auszuführen, und klicken Sie auf die Schaltfläche **Anmelden**, und melden Sie sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App an. 
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
-9. Klicken Sie mit der rechten Maustaste auf das Windows Phone Store-App-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und führen Sie dann den obigen Schritt erneut aus, um sicherzustellen, dass die Windows Phone Store-App ebenfalls ordnungsgemäß ausgeführt wird.  <!--HONumber=42-->
+9. Klicken Sie mit der rechten Maustaste auf das Windows Phone Store-App-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und führen Sie dann den obigen Schritt erneut aus, um sicherzustellen, dass die Windows Phone Store-App ebenfalls ordnungsgemäß ausgeführt wird.  
+
+<!--HONumber=49-->

@@ -1,5 +1,5 @@
 ﻿1. Klicken Sie auf die Registerkarte **Anwendungen** auf der Verzeichnisseite im [Azure-Verwaltungsportal](https://manage.windowsazure.com/).
-  
+
 2. Klicken Sie auf die Registrierung zu Ihrer integrierten Anwendung.
 
 3. Klicken Sie auf der Anwendungsseite auf **Konfigurieren** und scrollen Sie nach unten zum **Schlüssel**-Abschnitt der Seite. 
@@ -30,6 +30,8 @@
     </tr>
     </table><br/>
 
- 
+
     ![](./media/mobile-services-generate-aad-app-registration-access-key/aad-app-settings.png)
-  <!--HONumber=42-->
+
+
+<!--HONumber=49-->

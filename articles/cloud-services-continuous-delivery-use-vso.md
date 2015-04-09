@@ -1,14 +1,14 @@
 <properties 
 	pageTitle="Kontinuierliche Bereitstellung in Azure mit Visual Studio Online" 
 	description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Cloud-Diensten erstellt und bereitgestellt werden." 
-	services="web-sites" 
+	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="kempb" 
 	manager="douge" 
 	editor="tglee"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
@@ -17,9 +17,9 @@
 	ms.author="kempb"/>
 
 
-# Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online
+# Kontinuierliche Bereitstellung in Azure mithilfe von Visual Studio Online
 
-  Sie können Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch auf Azure-Websites oder in Azure-Cloud-Diensten erstellt und bereitgestellt werden.  (Informationen zur Einrichtung eines Systems für kontinuierliche Erstellung und Bereitstellung mithilfe eines *on-premises* Team Foundation Servers finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](../cloud-services-dotnet-continuous-delivery).)
+  Sie können Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch in Azure-Web-Apps oder -Cloud-Diensten erstellt und bereitgestellt werden.  (Informationen zur Einrichtung eines Systems für kontinuierliche Erstellung und Bereitstellung mithilfe eines  *on-premises* Team Foundation Servers finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](cloud-services-dotnet-continuous-delivery.md).)
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass auf Ihrem Rechner Visual Studio 2013 und das Azure-SDK installiert sind. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite [www.visualstudio.com](http://www.visualstudio.com) auf den Link **Starten Sie kostenlos** klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540)
 
@@ -50,8 +50,9 @@ Befolgen Sie die Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=51298
 
 1. Öffnen Sie in Visual Studio die Anwendung, die Sie bereitstellen möchten, oder erstellen Sie eine neue Anwendung.
 Sie können eine Website oder einen Cloud-Dienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen.
-Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-Cloud-Dienstprojekt oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Cloud-Dienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus.
-Wenn Sie eine Website erstellen möchten, wählen Sie die Projektvorlage ASP.NET Web Application und anschließend MVC aus. Siehe [Erste Schritte mit Azure und ASP.NET](http://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
+Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-Cloud-Dienstprojekt
+oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Cloud-Dienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus.
+Wenn Sie eine Website erstellen möchten, wählen Sie die Projektvorlage ASP.NET Web Application und anschließend MVC aus. Siehe [Erste Schritte mit Azure Websites und ASP.NET](web-sites-dotnet-get-started.md).
 
 2. Öffnen Sie das Kontextmenü für die Anwendung, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen** aus.<br/>
 ![][5]
@@ -136,7 +137,7 @@ Die folgende Tabelle zeigt die im Bereitstellungsabschnitt verfügbaren Eigensch
 ><tr><td>Nicht löschen</td><td>Wenn dies "true" ist, wird keine vorhandene, nicht verbundene Bereitstellung überschrieben (Upgrade ist zulässig).</td></tr>
 <tr><td>Pfad zu Bereitstellungseinstellungen</td><td>Der Pfad zu Ihrer .pubxml-Datei für eine Website, entsprechend dem Stammordner des Repositorys. Wird für Cloud-Dienste ignoriert.</td></tr>
 <tr><td>Sharepoint-Bereitstellungsumgebung</td><td>Entspricht dem Dienstnamen</td></tr>
-<tr><td>Microsoft Azure-Bereitstellungsumgebung</td><td>Der Name der Website oder des Cloud-Diensts</td></tr>
+<tr><td>Azure-Bereitstellungsumgebung</td><td>Der Name der Website oder des Cloud-Diensts</td></tr>
 </table>
 <br/>
 
@@ -152,7 +153,7 @@ Wenn Sie mehrere Dienstkonfigurationen verwenden (.cscfg-Dateien), können Sie d
 13. Im [Azure-Portal](http://manage.windowsazure.com) können Sie die entsprechende Bereitstellung auf der Registerkarte "Bereitstellungen" anzeigen, wenn Sie die Stagingumgebung auswählen.<br/>
 ![][30]
 
-14.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Website handelt, klicken Sie einfach in der Befehlsleiste auf die Schaltfläche "Durchsuchen". Wenn es sich um einen Cloud-Dienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard** aus, auf der die Stagingumgebung für einen Cloud-Dienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Cloud-Dienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie die Eigenschaft "Alternate Cloud Service Environment" auf "Produktion" stellen. Dieser Screenshot zeigt, wo auf der Dashboard-Seite des Cloud-Diensts sich die Website-URL befindet: <br/>
+14.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Website handelt, klicken Sie einfach in der Befehlsleiste auf die Schaltfläche "Durchsuchen". Wenn es sich um einen Cloud-Dienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard** aus, auf der die Stagingumgebung für einen Cloud-Dienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Cloud-Dienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie die Eigenschaft "Alternate Cloud Service Environment" auf "Produktion" stellen. Dieser Screenshot zeigt, wo auf der Seite "Dashboard" des Cloud-Diensts sich die Website-URL befindet: <br/>
 ![][31]
 <br/>
 Eine neue Browser-Registerkarte wird geöffnet, die Ihre laufende Site anzeigt.<br/>
@@ -163,7 +164,7 @@ Eine neue Browser-Registerkarte wird geöffnet, die Ihre laufende Site anzeigt.<
 
 <h2> <a name="step5"> </a>Schritt 5: Erneute Bereitstellung eines früheren Builds</h2>
 
-Dieser Schritt gilt nur für Cloud-Dienste und ist optional. Wählen Sie im Verwaltungsportal eine frühere Bereitstellung aus, und klicken Sie auf die Schaltfläche **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen.  Bitte beachten Sie, dass dadurch in TFS ein neuer Build ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.<br/>
+Dieser Schritt gilt nur für Cloud-Dienste und ist optional. Wählen Sie im Verwaltungsportal eine frühere Bereitstellung aus, und klicken Sie auf die Schaltfläche **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen. Beachten Sie, dass dadurch in TFS ein neuer Build ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.<br/>
 ![][34]
 
 <h2> <a name="step6"> </a>Schritt 6: Ändern der Produktionsbereitstellung</h2>
@@ -240,7 +241,7 @@ Dieser Schritt gilt nur für Websites, nicht für Cloud-Dienste. Für eine zusä
 
 Weitere Informationen zu Komponententests in Visual Studio Online finden Sie unter [Ausführen von Komponententests im Build](http://go.microsoft.com/fwlink/p/?LinkId=510474)
 
-Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861). Wenn Sie Git verwenden, finden Sie Informationen unter [Freigeben von Code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) und [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-publish-source-control).
+Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861). Wenn Sie Git verwenden, siehe [Freigeben von Code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) und [Veröffentlichen auf Azure-Websites mit Git] (web-sites-publish-source-control.md).
 
 [Schritt 1: Erstellen eines Teamprojekts]: #step1
 [Schritt 2: Einchecken eines Projekts in der Quellcodeverwaltung]: #step2
@@ -301,4 +302,4 @@ Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsof
 [49]: ./media/cloud-services-continuous-delivery-use-vso/TestsFailed.PNG
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
 
-<!--HONumber=45--> 
+<!--HONumber=49-->

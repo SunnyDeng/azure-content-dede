@@ -1,4 +1,4 @@
-Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass dieser Elemente im mobilen Dienst anstatt in einer lokalen Sammlung speichert. 
+﻿Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, um Elemente in Mobile Services anstatt in der lokalen Auflistung zu speichern. 
 
 1. Stellen Sie sicher, dass Sie über die folgenden Zeilen im **dependencies**-Tag in der Datei *build.gradle (Module app)* verfügen. Wenn dies nicht der Fall ist, fügen Sie sie hinzu. Dadurch werden Verweise auf das Mobile Services Android Client SDK hinzugefügt.
 
@@ -46,7 +46,7 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 
 		public List<ToDoItem> toDoItemList = new ArrayList<ToDoItem>();
 
-7. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Stellen, an denen die Variable  `toDoItemList` verwendet wird, und kommentieren Sie die entsprechenden Abschnitte aus. Nun haben Sie die speicherinterne Liste vollständig entfernt. 
+7. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Orten, an denen die Variable  `toDoItemList` verwendet wird, und kommentieren Sie die entsprechenden Abschnitte aus. Nun haben Sie die speicherinterne Liste vollständig entfernt. 
 
 8. Wir werden nun den mobilen Dienst hinzufügen. Entfernen Sie die Kommentare in den folgenden Codezeilen:
 
@@ -82,7 +82,7 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 
   	Dieser Code erstellt eine neue *MobileServiceClient*-Instanz, die für den Zugriff auf Ihren mobilen Dienst verwendet wird. Außerdem wird die *MobileServiceTable*-Instanz für die Proxy-Datenspeicherung im mobilen Dienst erstellt.
 
-13. Ersetzen Sie im obigen Code `MobileServiceUrl` und `AppKey` durch die URL und den Anwendungsschlüssel Ihres mobilen Dienstes, in dieser Reihenfolge.
+13. Ersetzen Sie im obigen Code  `MobileServiceUrl` und  `AppKey` durch die URL und den Anwendungsschlüssel Ihres mobilen Diensts (in dieser Reihenfolge).
 
 
 
@@ -165,4 +165,5 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 
 <!-- URLs. -->
 [Mobile Services Android SDK]: http://aka.ms/Iajk6q
-<!--HONumber=47-->
+
+<!--HONumber=49-->

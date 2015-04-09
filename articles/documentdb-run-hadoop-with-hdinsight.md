@@ -1,7 +1,7 @@
 ﻿<properties 
-	pageTitle="Ausführen eines Hadoop-Jobs mit DocumentDB und HDInsight | Azure" 
-	description="Erfahren Sie, wie Sie einen einfachen Hive-, Pig- und MapReduce-Job mit DocumentDB und Azure HDInsight ausführen können."
-	Services = "DocumentDB" 
+	pageTitle="Ausführen eines Hadoop-Auftrags mit DocumentDB und HDInsight | Azure" 
+	description="Erfahren Sie, wie Sie einen einfachen Hive-, Pig- und MapReduce-Auftrag mit DocumentDB und Azure HDInsight ausführen können."
+	services="documentdb" 
 	authors="andrewhoh" 
 	manager="jhubbard" 
 	editor="mimig"
@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="03/02/2015" 
+	ms.date="03/11/2015" 
 	ms.author="anhoh"/>
 
-# <a name="DocumentDB-HDInsight"></a>Ausführen eines Hadoop-Jobs mit DocumentDB und HDInsight
+#<a name="DocumentDB-HDInsight"></a>Ausführen eines Hadoop-Auftrags mit DocumentDB und HDInsight
 
-In diesem Lernprogramm wird gezeigt, wie Sie [Apache Hive][apache-hive]-, [Apache Pig][apache-pig]- und [Apache Hadoop][apache-hadoop]-MapReduce-Jobs in Azure HDInsight mit dem Hadoop-Connector der DocumentDB ausführen können. Der Hadoop-Connector der DocumentDB ermöglicht es dieser, sowohl als Quelle als auch als Senke für Hive-, Pig- und MapReduce-Jobs zu fungieren. In diesem Lernprogramm wird DocumentDB sowohl als Datenquelle als auch als Ziel für Hadoop-Jobs verwendet. 
+In diesem Lernprogramm wird gezeigt, wie Sie [Apache Hive][apache-hive]-, [Apache Pig][apache-pig]- und [Apache Hadoop][apache-hadoop]-MapReduce-Aufträge in Azure HDInsight mit dem Hadoop-Connector von DocumentDB ausführen können. Der Hadoop-Connector der DocumentDB ermöglicht es dieser, sowohl als Quelle als auch als Senke für Hive-, Pig- und MapReduce-Jobs zu fungieren. In diesem Lernprogramm wird DocumentDB sowohl als Datenquelle als auch als Ziel für Hadoop-Jobs verwendet. 
 
 Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
 
@@ -32,26 +32,26 @@ Es wird empfohlen, dass Sie sich zunächst das folgende Video anschauen, in dem 
 
 Kehren Sie anschließend zu diesem Artikel zurück. Hier erhalten Sie umfassende Informationen darüber, wie Sie Analysejobs für die DocumentDB-Daten ausführen können.
 
-> [AZURE.TIP] In diesem Lernprogramm wird davon ausgegangen, dass Sie bereits über Erfahrungen im Umgang mit Apache Hadoop, Hive, und/oder Pig verfügen. Wenn Sie noch nicht mit Apache Hadoop, Hive und Pig vertraut sind, ist es zu empfehlen, dass Sie die [Apache Hadoop-Dokumentation][apache-hadoop-doc] lesen. In diesem Lernprogramm wird außerdem davon ausgegangen, dass Sie bereits über Erfahrungen mit DocumentDB und über ein DocumentDB-Konto verfügen. Wenn Sie noch nicht mit DocumentDB vertraut sind oder noch nicht über ein DocumentDB-Konto verfügen, erhalten Sie weitergehende Informationen auf der Seite [Erste Schritte][getting-started].
+> [AZURE.TIP] In diesem Lernprogramm wird davon ausgegangen, dass Sie bereits über Erfahrungen im Umgang mit Apache Hadoop, Hive, und/oder Pig verfügen. Wenn Sie noch nicht mit Apache Hadoop, Hive und Pig vertraut sind, empfiehlt es sich, die [Apache Hadoop-Dokumentation][apache-hadoop-doc] zu lesen. In diesem Lernprogramm wird ebenfalls davon ausgegangen, dass Sie bereits über Erfahrung mit DocumentDB sowie ein DocumentDB-Konto verfügen. Wenn Sie noch nicht mit DocumentDB vertraut sind oder noch kein DocumentDB-Konto besitzen, erhalten Sie weitergehende Informationen auf der Seite [Erste Schritte][getting-started].
 
-Sie haben nicht die Zeit, das gesamte Lernprogramm zu bearbeiten und möchten lediglich sämtliche PowerShell-Beispielskripts zu Hive, Pig und MapReduce abrufen? Kein Problem! Sie können diese [hier][documentdb-hdinsight-samples] abrufen. Der Download umfasst außerdem die Hql-, Pig- und Java-Dateien zu diesen Beispielen.
+Sie haben nicht die Zeit, das gesamte Lernprogramm zu bearbeiten und möchten lediglich sämtliche PowerShell-Beispielskripts zu Hive, Pig und MapReduce abrufen? Kein Problem. Sie erhalten diese [hier][documentdb-hdinsight-samples]. Der Download umfasst außerdem die Hql-, Pig- und Java-Dateien zu diesen Beispielen.
 
 ## <a name="Prerequisites"></a>Voraussetzungen
 Vor dem Ausführen der Anweisungen zu diesem Lernprogramm, müssen Sie sicherstellen, dass Sie über Folgendes verfügen:
 
 - Ein DocumentDB-Konto, eine Datenbank und eine Auflistung mit Dokumenten. Weitere Informationen finden Sie unter [Erste Schritte mit DocumentDB][getting-started].
-- Durchsatz. Lese- und Schreibvorgänge aus HDInsight werden gegen die zugeteilten Anforderungseinheiten der Kapazitätseinheit (CU, Capacity Unit) aufgerechnet. Weitere Informationen finden Sie unter [vorgesehener Durchsatz, Anforderungseinheiten und Datenbankvorgänge][documentdb-manage-throughput].
-- Kapazität für eine zusätzliche gespeicherte Prozedur innerhalb einer jeden Ausgabeauflistung. Die gespeicherten Prozeduren werden für die Übertragung von resultierenden Dokumenten verwendet. Weitere Informationen finden Sie unter [Auflistungen und vorgesehener Durchsatz][documentdb-manage-document-storage].
-- Kapazität für die resultierenden Dokumente aus den Hive-, Pig- oder MapReduce-Jobs. Weitere Informationen finden Sie unter [Verwalten der DocumentDB-Kapazität und -Performance][documentdb-manage-collections].
-- [*Optional*] Kapazität für eine zusätzliche Auflistung. Weitere Informationen finden Sie unter [vorgesehener Dokumentspeicher und Index-Overhead][documentdb-manage-document-storage].
+- Durchsatz. Lese- und Schreibvorgänge aus HDInsight werden gegen die zugeteilten Anforderungseinheiten der Kapazitätseinheit (CU, Capacity Unit) aufgerechnet. Weitere Informationen finden Sie unter [Bereitgestellter Durchsatz, Anforderungseinheiten und Datenbankvorgänge][documentdb-manage-throughput].
+- Kapazität für eine zusätzliche gespeicherte Prozedur innerhalb einer jeden Ausgabeauflistung. Die gespeicherten Prozeduren werden für die Übertragung von resultierenden Dokumenten verwendet. Weitere Informationen finden Sie unter [Sammlungen und bereitgestellter Durchsatz][documentdb-manage-document-storage].
+- Kapazität für die resultierenden Dokumente aus den Hive-, Pig- oder MapReduce-Jobs. Weitere Informationen finden Sie unter [Verwalten der Kapazität und Leistung von DocumentDB][documentdb-manage-collections].
+- [*Optional*] Kapazität für eine zusätzliche Auflistung. Weitere Informationen finden Sie unter [Bereitgestellter Dokumentspeicher und Index-Overhead][documentdb-manage-document-storage].
 	
-> [AZURE.WARNING] Um die Erstellung einer neuen Auflistung während eines der Jobs zu vermeiden, können Sie entweder die Ergebnisse über "stdout" drucken, die Ausgabe im WASB-Container speichern oder eine bereits vorhandene Auflistung angeben. Bei Angabe einer vorhandenen Auflistung werden neue Dokumente innerhalb der Auflistung erstellt. Bereits vorhandene Dokumente sind nur dann betroffen, wenn ein Konflikt in *ids* vorliegt. **Der Connector überschreibt vorhandene Dokumente automatisch mit ID-Konflikten**. Sie können dieses Feature deaktivieren, indem Sie die Upsert-Option auf "false" (falsch) festlegen. Wenn Upsert falsch ist und ein Konflikt auftritt, schlägt der Hadoop-Job fehl. Daraufhin wird ein Bericht über den ID-Konfliktfehler gesendet.
+> [AZURE.WARNING] Um die Erstellung einer neuen Sammlung während eines Auftrags zu vermeiden, können Sie entweder die Ergebnisse über "stdout" drucken, die Ausgabe im WASB-Container speichern oder eine bereits vorhandene Sammlung angeben. Bei Angabe einer vorhandenen Sammlung werden neue Dokumente innerhalb der Sammlung erstellt. Bereits vorhandene Dokumente sind nur dann betroffen, wenn ein Konflikt in *ids* vorliegt. **Der Connector überschreibt vorhandene Dokumente mit ID-Konflikten automatisch**. Sie können dieses Feature deaktivieren, indem Sie die Upsert-Option auf "false" (falsch) festlegen. Wenn Upsert falsch ist und ein Konflikt auftritt, schlägt der Hadoop-Job fehl. Daraufhin wird ein Bericht über den ID-Konfliktfehler gesendet.
 
 ## <a name="CreateStorage"></a>Schritt 1: Erstellen eines Azure-Speicherkontos
 
-> [AZURE.IMPORTANT] Wenn Sie **bereits** über ein Azure-Speicherkonto verfügen und Sie einen neuen Blob-Container innerhalb dieses Kontos erstellen möchten, können Sie fortfahren mit [Schritt 2: Erstellen eines benutzerdefinierten HDInsight-Clusters](#ProvisionHDInsight).
+> [AZURE.IMPORTANT] Wenn Sie **bereits** über ein Azure-Speicherkonto verfügen und einen neuen Blob-Container innerhalb dieses Kontos erstellen möchten, können Sie fortfahren mit [Schritt 2: Erstellen eines benutzerdefinierten HDInsight-Clusters](#ProvisionHDInsight).
 
-Azure HDInsight verwendet den Azure Blob-Speicher zum Speichern von Daten. Dieser wird als *WASB* oder *Azure-Speicher-Blob* bezeichnet. WASB ist Microsofts Implementierung von HDFS in Azure Blob-Speicher. Weitere Informationen finden Sie unter [Verwenden des Azure Blob-Speichers mit HDInsight][hdinsight-storage].
+Azure HDInsight verwendet den Azure Blob-Speicher zum Speichern von Daten. Dies wird als *WASB* oder *Azure Storage - Blob* bezeichnet. WASB ist Microsofts Implementierung von HDFS in Azure Blob-Speicher. Weitere Informationen finden Sie unter [Verwenden von Azure-Blob-Speicher mit HDInsight][hdinsight-storage].
 
 Bei der Bereitstellung eines HDInsight-Clusters geben Sie ein Azure-Speicherkonto an. Ein bestimmter Blob-Speichercontainer aus diesem Konto wird als Standarddateisystem festgelegt, genau wie in HDFS. Der HDInsight-Cluster wird standardmäßig in demselben Rechenzentrum bereitgestellt wie das angegebene Speicherkonto.
 
@@ -68,14 +68,14 @@ Bei der Bereitstellung eines HDInsight-Clusters geben Sie ein Azure-Speicherkont
 	
 	Sie werden das neue Speicherkonto in der Speicherliste sehen.
 
-	> [AZURE.IMPORTANT] Um eine optimale Leistung zu erzielen, müssen Sie sicherstellen, dass sich Ihr Speicherkonto, der HDInsight-Cluster und das DocumentDB-Konto in derselben Azure-Region befinden. Die folgenden Azure-Regionen unterstützen alle drei Dienste:  **Ostasien**, **Südostasien**, **Nordeuropa**, **Westeuropa**, **östliche USA** und **westliche USA**.
+	> [AZURE.IMPORTANT] Um eine optimale Leistung zu erzielen, müssen Sie sicherstellen, dass sich Ihr Speicherkonto, Ihr HDInsight-Cluster und Ihr DocumentDB-Konto in derselben Azure-Region befinden. Die folgenden Azure-Regionen unterstützen alle drei Dienste:  **Ostasien**, **Südostasien**, **Nordeuropa**, **Westeuropa**, **östliche USA** und **westliche USA**.
 
 4. Warten Sie, bis sich der **STATUS** des neuen Speicherkontos in **Online** geändert hat.
 
 ## <a name="ProvisionHDInsight"></a>Schritt 2: Erstellen eines benutzerdefinierten HDInsight-Clusters
-Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum Anpassen des HDInsight-Clusters. In diesem Lernprogramm wird das Azure-Verwaltungsportal zum Erstellen des angepassten Clusters verwendet. Anweisungen bezüglich der Verwendung von PowerShell-Cmdlets oder von HDInsight .NET SDK finden Sie im Artikel [Anpassen der HDInsight-Cluster mit Skriptaktionen][hdinsight-custom-provision] article.
+Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum Anpassen des HDInsight-Clusters. In diesem Lernprogramm wird das Azure-Verwaltungsportal zum Erstellen des angepassten Clusters verwendet. Anweisungen bezüglich der Verwendung von PowerShell-Cmdlets oder von HDInsight .NET SDK finden Sie im Artikel [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion][hdinsight-custom-provision].
 
-1. Melden Sie sich am [Azure-Verwaltungsportal][azure-management-portal] an. Sie sind möglicherweise bereits seit dem vorherigen Schritt angemeldet.
+1. Melden Sie sich beim [Azure-Verwaltungsportal][azure-management-portal] an. Sie sind möglicherweise bereits seit dem vorherigen Schritt angemeldet.
 
 2. Klicken Sie im unteren Seitenbereich auf **+ NEU**, und dann auf **DATENDIENSTE** und auf **HDINSIGHT**, und wählen Sie zuletzt **BENUTZERDEFINIERT ERSTELLEN**.
 
@@ -91,7 +91,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 		<tr><td>Abonnementname</td>
 			<td>Wenn Sie über mehr als ein Azure-Abonnement verfügen, wählen Sie das Abonnement, das dem Speicherkonto aus <strong>Schritt 1</strong> entspricht. </td></tr>
 		<tr><td>Clustertyp</td>
-			<td>Wählen Sie <strong>Hadoop</strong> als Clustertyp.</td></tr>
+			<td>Wählen Sie unter "Clustertyp" den Eintrag <strong>Hadoop</strong> aus.</td></tr>
 		<tr><td>Betriebssystem</td>
 			<td>Wählen Sie <strong>Windows Server 2012 R2 Datacenter</strong> als Betriebssystem.</td></tr>
 		<tr><td>HDInsight-Version</td>
@@ -100,7 +100,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 	<p>Geben Sie die Werte wie in der Tabelle gezeigt ein und klicken Sie auf den Pfeil nach rechts.</p>
 
-4. Auf der Seite **Cluster konfigurieren** können Sie die folgenden Werte auswählen bzw. eingeben:
+4. Auf der Seite **Cluster konfigurieren**  können Sie die folgenden Werte auswählen bzw. eingeben:
 
 	<table border="1">
 	<tr><th>Name</th><th>Wert</th></tr>
@@ -156,7 +156,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 			<td>Geben Sie einen Namen für die Skriptaktion an.</td></tr>
 		<tr><td>Skript-URI</td>
 			<td>Geben Sie den URI für das Skript an, das aufgerufen wird, um den Cluster anzupassen.</br></br>
-			Geben Sie Folgendes ein: </br> <strong>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v01.ps1</strong>.</td></tr>
+			Geben Sie Folgendes ein: </br> <strong>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v02.ps1</strong>.</td></tr>
 		<tr><td>Knotentyp</td>
 			<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.</br></br>
 			Wählen Sie <strong>Alle Knoten</strong>.</td></tr>
@@ -169,9 +169,9 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 ## <a name="InstallCmdlets"></a>Schritt 3: Installieren und Konfigurieren von Azure PowerShell
 
-1. Installieren Sie Azure PowerShell. Anweisungen finden Sie [hier][powershell-install-configure].
+1. Installieren Sie Azure PowerShell. Anweisungen dazu finden Sie [hier][powershell-install-configure].
 
-	> [AZURE.NOTE] Alternativ können Sie den Hive-Online-Editor von HDInsight ausschließlich für Hive-Abfragen verwenden. Melden Sie sich zu diesem Zweck am [Azure-Verwaltungsportal][azure-management-portal] an. Klicken Sie auf **HDInsight** im linken Bildschirmbereich, um eine Liste der HDInsight-Cluster anzusehen. Klicken Sie auf den Cluster, auf welchem Hive-Abfragen ausgeführt werden sollen. Klicken Sie anschließend auf **Query Console** (Abfragekonsole).
+	> [AZURE.NOTE] Alternativ können Sie den Hive-Online-Editor von HDInsight ausschließlich für Hive-Abfragen verwenden. Melden Sie sich zu diesem Zweck am [Azure-Verwaltungsportal][azure-management-portal] und klicken Sie im linken Bildschirmbereich auf **HDInsight**, um eine Liste Ihrer HDInsight-Cluster anzuzeigen. Klicken Sie auf den Cluster, auf welchem Hive-Abfragen ausgeführt werden sollen. Klicken Sie anschließend auf **Query Console** (Abfragekonsole).
 
 2. Öffnen Sie die integrierte Azure PowerShell-Skripting-Umgebung:
 	- Sie können die integrierte Suche auf einem Computer verwenden, auf dem Windows 8 oder Windows Server 2012 oder höher ausgeführt wird. Geben Sie ausgehend vom Startbildschirm **Powershell Ise** ein. Drücken Sie anschließend die **Eingabetaste**. 
@@ -206,8 +206,8 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
     <p>Zunächst soll eine Hive-Tabelle aus der entsprechenden DocumentDB-Auflistung erstellt werden. Fügen Sie den folgenden Codeausschnitt zum PowerShell-Skript-Bereich <strong>nach</strong> dem Codeausschnitt von Nr. 1 hinzu. Sie müssen den optionalen DocumentDB.Abfrage-Parameter einbinden, um die entsprechenden Dokumente gemäß _ts und _rid zuzuschneiden. </p>
 
-    > [AZURE.NOTE] **Bei der Benennung von DocumentDB.inputCollections handelt es sich nicht um einen Fehler.** Ja, das Hinzufügen mehrerer Auflistungen ist als Eingabe zulässig: </br>
-    '*DocumentDB.inputCollections*' = '*\<DocumentDB Input Collection Name 1\>*,*\<DocumentDB Input Collection Name 2\>*' </br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet.
+    > [AZURE.NOTE] **Die Benennung "DocumentDB.inputCollections" war kein Fehler.** Es ist möglich, mehrere Sammlungen als Eingabe hinzuzufügen: </br>
+    '*DocumentDB.inputCollections*' = '*\<DocumentDB-Eingabesammlung 1\>*,*\<DocumentDB-Eingabesammlung 2\>*' </br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet.
 
 		# Create a Hive table using data from DocumentDB. Pass DocumentDB the query to filter transferred data to _rid and _ts.
 		$queryStringPart1 = "drop table DocumentDB_timestamps; "  + 
@@ -222,8 +222,8 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
  
 3.  Als Nächstes wird eine Hive-Tabelle für die Ausgabeauflistung erstellt. Bei den Eigenschaften des Ausgabedokuments handelt es sich um Monat, Tag, Stunde, Minute und die Gesamtanzahl an Vorkommen.
 
-	> [AZURE.NOTE] **Auch hier handelt es sich bei der Benennung von DocumentDB.outputCollections nicht um einen Fehler.** Ja, das Hinzufügen mehrerer Auflistungen ist als Ausgabe zulässig: </br>
-    '*DocumentDB.outputCollections*' = '*\<DocumentDB Output Collection Name 1\>*,*\<DocumentDB Output Collection Name 2\>*' </br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet. </br></br>
+	> [AZURE.NOTE] **Und auch hier war die Benennung "DocumentDB.outputCollections" kein Fehler.** Es ist möglich, mehrere Sammlungen als Ausgabe hinzuzufügen: </br>
+    '*DocumentDB.outputCollections*' = '*\<DocumentDB-Ausgabesammlung 1\>*,*\<DocumentDB-Ausgabesammlung 2\>*' </br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet. </br></br>
     Die Dokumente werden in Umlauf gebracht und über mehrere Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
 		# Create a Hive table for the output data to DocumentDB.
@@ -303,7 +303,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
     <p>Laden Sie zunächst die Dokumente aus DocumentDB in HDInsight. Fügen Sie den folgenden Codeausschnitt zum PowerShell-Skript-Bereich <strong>nach</strong> dem Codeausschnitt von Nr. 1 hinzu. Achten Sie darauf, dass eine DocumentDB-Abfrage zum optionalen DocumentDB-Abfrageparameter hinzugefügt wird, um die Dokumente gemäß _ts und _rid zu verkürzen.</p>
 
     > [AZURE.NOTE] Ja, das Hinzufügen mehrerer Auflistungen ist als Eingabe zulässig: </br>
-    '*\<DocumentDB Input Collection Name 1\>*,*\<DocumentDB Input Collection Name 2\>*'</br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet. </b>
+    '*\<DocumentDB-Eingabesammlung 1\>*,*\<DocumentDB-Eingabesammlung 2\>*'</br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet. </b>
 
 	Die Dokumente werden in Umlauf gebracht und über mehrere Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
@@ -395,7 +395,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 		Select-AzureSubscription $subscriptionName
 		$TallyPropertiesJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $TallyPropertiesJobDefinition | Wait-AzureHDInsightJob -WaitTimeoutInSeconds 3600  
 
-	Zusätzlich zur MapReduce-Jobdefinition müssen Sie auch den Namen des HDInsight-Clusters angeben, auf dem Sie den MapReduce-Job ausführen möchten, sowie die Anmeldeinformationen. "Start-AzureHDInsightJob" ist ein asynchronisierter Aufruf. Um den Abschluss des Jobs zu überprüfen, verwenden Sie das *Wait-AzureHDInsightJob*-Cmdlet.
+	Zusätzlich zur MapReduce-Jobdefinition müssen Sie auch den Namen des HDInsight-Clusters angeben, auf dem Sie den MapReduce-Job ausführen möchten, sowie die Anmeldeinformationen. "Start-AzureHDInsightJob" ist ein asynchronisierter Aufruf. Verwenden Sie das Cmdlet *Wait-AzureHDInsightJob*, um zu überprüfen, ob der Job abgeschlossen ist.
 
 4. Fügen Sie den folgenden Befehl hinzu, um bei der Ausführung des MapReduce-Jobs auf etwaige Fehler hin zu prüfen.	
 	
@@ -421,23 +421,23 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 Glückwunsch! Sie haben soeben mithilfe von Azure-DocumentDB und HDInsight Ihre ersten Hive-, Pig- und MapReduce-Jobs ausgeführt. 
 
-Der Hadoop-Connector steht im Rahmen von "Open Source" zur Verfügung. Wenn Sie möchten, können Sie unter [GitHub][documentdb-github] einen Beitrag leisten.
+Der Hadoop-Connector steht im Rahmen von "Open Source" zur Verfügung. Wenn Sie möchten, können Sie im [GitHub][documentdb-github] einen Beitrag leisten.
 
 Weitere Informationen finden Sie in den folgenden Artikeln:
 
-- [Entwickeln einer Java-Anwendung mit Documentdb][documentdb-java-application]
-- [Entwickeln von Java-MapReduce-Programmen für Hadoop in HDInsight][hdinsight-develop-deploy-java-mapreduce]
-- [Erste Schritte bei der Verwendung von Hadoop mit Hive in HDInsight zum Analysieren der Nutzung von Mobiltelefonen][hdinsight-get-started]
+- [Entwickeln einer Java-Anwendung mit DocumentDB][documentdb-java-application]
+- [Entwickeln von Java MapReduce-Programmen für Hadoop in HDInsight][hdinsight-develop-deploy-java-mapreduce]
+- [Erste Schritte bei der Nutzung von Hadoop mit Hive in HDInsight zur Analyse der Verwendung von Mobiltelefonen][hdinsight-get-started]
 - [Verwenden von MapReduce mit HDInsight][hdinsight-use-mapreduce]
 - [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
 - [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
-- [Anpassen von HDInsight-Clustern unter Verwendung einer Skriptaktion][hdinsight-hadoop-customize-cluster]
+- [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion][hdinsight-hadoop-customize-cluster]
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-hadoop-doc]: http://hadoop.apache.org/docs/current/
 [apache-hive]: http://hive.apache.org/
 [apache-pig]: http://pig.apache.org/
-[getting-started]: ../documentdb-get-started/
+[getting-started]: documentdb-get-started.md
 
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-powershell-diagram]: ./media/documentdb-run-hadoop-with-hdinsight/azurepowershell-diagram-med.png
@@ -445,19 +445,19 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 
 [documentdb-hdinsight-samples]: http://portalcontent.blob.core.windows.net/samples/documentdb-hdinsight-samples.zip
 [documentdb-github]: https://github.com/Azure/azure-documentdb-hadoop
-[documentdb-java-application]: ../documentdb-java-application/
-[documentdb-manage-collections]: ../documentdb-manage/#Collections
-[documentdb-manage-document-storage]: ../documentdb-manage/#IndexOverhead
-[documentdb-manage-throughput]: ../documentdb-manage/#ProvThroughput
+[documentdb-java-application]: documentdb-java-application.md
+[documentdb-manage-collections]: documentdb-manage.md#Collections
+[documentdb-manage-document-storage]: documentdb-manage.md#IndexOverhead
+[documentdb-manage-throughput]: documentdb-manage.md#ProvThroughput
 
-[hdinsight-custom-provision]: ../hdinsight-provision-clusters/#powershell
-[hdinsight-develop-deploy-java-mapreduce]: ../hdinsight-develop-deploy-java-mapreduce/
-[hdinsight-hadoop-customize-cluster]: ../hdinsight-hadoop-customize-cluster/
-[hdinsight-get-started]: ../hdinsight-get-started/ 
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-[hdinsight-use-hive]: ../hdinsight-use-hive/
-[hdinsight-use-mapreduce]: ../hdinsight-use-mapreduce/
-[hdinsight-use-pig]: ../hdinsight-use-pig/
+[hdinsight-custom-provision]: hdinsight-provision-clusters.md#powershell
+[hdinsight-develop-deploy-java-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-hadoop-customize-cluster]: hdinsight-hadoop-customize-cluster.md
+[hdinsight-get-started]: hdinsight-get-started.md 
+[hdinsight-storage]: hdinsight-use-blob-storage.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
 
 [image-customprovision-page1]: ./media/documentdb-run-hadoop-with-hdinsight/customprovision-page1.png
 [image-customprovision-page4]: ./media/documentdb-run-hadoop-with-hdinsight/customprovision-page4.png
@@ -467,6 +467,6 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [image-mapreduce-query-results]: ./media/documentdb-run-hadoop-with-hdinsight/mapreducequeryresults.PNG
 [image-pig-query-results]: ./media/documentdb-run-hadoop-with-hdinsight/pigqueryresults.PNG
 
-[powershell-install-configure]: ../install-configure-powershell/
+[powershell-install-configure]: install-configure-powershell.md
 
-<!--HONumber=47-->
+<!--HONumber=49-->

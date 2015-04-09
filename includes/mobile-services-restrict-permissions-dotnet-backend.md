@@ -1,6 +1,4 @@
-﻿
-
-Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts auf Clients beschränkt, die den Anwendungsschlüssel vorweisen. Der sichere Zugriff auf die Ressourcen ist dadurch allerdings nicht gegeben. Um die Ressourcen zu schützen, müssen Sie den Zugriff auf authentifizierte Clients einschränken.
+﻿Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts auf Clients beschränkt, die den Anwendungsschlüssel vorweisen. Der sichere Zugriff auf die Ressourcen ist dadurch allerdings nicht gegeben. Um die Ressourcen zu schützen, müssen Sie den Zugriff auf authentifizierte Clients einschränken.
 
 1. Öffnen Sie in Visual Studio Ihr Projekt für mobile Dienste, erweitern Sie den Ordner "Controllers", und öffnen Sie **TodoItemController.cs**. Die Klasse **TodoItemController** implementiert den Datenzugriff für die Tabelle "TodoItem". Fügen Sie die folgende `using`-Anweisung ein:
 
@@ -20,4 +18,4 @@ Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts a
 
 4. Veröffentlichen Sie das Projekt erneut.
 
-<!--HONumber=47-->
+<!--HONumber=49-->

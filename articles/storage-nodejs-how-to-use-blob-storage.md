@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="Verwenden des Blob-Speichers (Node.js) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Azure-Blob-Dienst nutzen können, um Blob-Inhalte hoch- und runterzuladen, aufzulisten und zu löschen. Die Beispiele sind in Node.js geschrieben." 
+	pageTitle="Verwenden des Blob-Speichers mit Node.js | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie den Azure-Blob-Dienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blob-Inhalten verwenden. Die Beispiele sind in Node.js geschrieben." 
 	services="storage" 
 	documentationCenter="nodejs" 
 	authors="MikeWasson" 
@@ -13,52 +13,35 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="09/17/2014" 
+	ms.date="03/11/2015" 
 	ms.author="mwasson"/>
 
 
 
+# Verwenden des Blob-Speichers mit Node.js
 
+[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
-# Verwenden des Blob-Dienstes aus Node.js
+## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem
+In diesem Leitfaden zeigt die Durchführung häufiger Szenarien mit dem
 Azure Blob-Dienst. Die Beispiele wurden mit
 Node.js API. geschrieben. Die aufgeführten Szenarien umfassen das **Hochladen**, **Auflisten**,
-**Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs
-finden Sie im Abschnitt [Nächste Schritte][].
-
-## Inhaltsverzeichnis
-
-* [Was ist der Blob-Dienst?][]    
-* [Konzepte][]   
-* [Erstellen eines Azure-Speicherkontos][]    
-* [Erstellen einer Node.js-Anwendung][]  
-* [Konfigurieren der Anwendung für den Speicherzugriff][]     
-* [Einrichten einer Azure-Speicherverbindungszeichenfolge][]  
-* [Vorgehensweise: Erstellen eines Containers][]  
-* [Vorgehensweise: Hochladen eines Blobs in einen Container][]  
-* [Vorgehensweise: Auflisten der Blobs in einem Container][]  
-* [Vorgehensweise: Herunterladen von Blobs][]  
-* [Vorgehensweise: Löschen eines Blobs][]  
-* [Vorgehensweise: Paralleler Zugriff][]     
-* [Vorgehensweise: Arbeiten mit Shared Access Signatures][]     
-* [Nächste Schritte][]
+**Herunterladen** und **Löschen** von Blobs.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
-##<a name="create-account"></a>Erstellen eines Azure-Speicherkontos
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
-## <a name="create-app"> </a>Erstellen einer Node.js-Anwendung
+## Erstellen einer Node.js-Anwendung
 
 Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], in [Node.js-Cloud-Dienst][Node.js-Cloud-Dienst] (mithilfe von Windows PowerShell) oder auf der [Website mit WebMatrix].
 
-## <a name="configure-access"> </a>Konfigurieren der Anwendung für den Speicherzugriff
+## Konfigurieren der Anwendung für den Speicherzugriff
 
-Um Azure-Speicher verwenden zu können, müssen Sie das Azure Storage SDK für Node.js herunterladen. Es enthält eine Reihe von Bibliotheken, die mit den REST-Speicherdiensten kommunizieren.
+Um Azure-Speicher verwenden zu können, müssen Sie das Azure Storage-SDK für Node.js herunterladen. Es enthält eine Reihe von Bibliotheken, die mit den REST-Speicherdiensten kommunizieren.
 
-### Verwenden von Node-Paket-Manager (NPM) zum Beziehen des Pakets
+### Verwenden des Node-Paket-Managers (NPM) zum Abrufen des Pakets
 
 1.  Verwenden Sie eine Befehlszeilenschnittstelle, z. B. **PowerShell** (Windows,) **Terminal** (Mac) oder **Bash** (Unix), und navigieren Sie zu dem Ordner, in dem Sie die Beispielanwendung erstellt haben.
 
@@ -77,7 +60,7 @@ Um Azure-Speicher verwenden zu können, müssen Sie das Azure Storage SDK für N
 
 3.  Sie können den Befehl **ls** manuell ausführen, um zu überprüfen, ob der
     Ordner **node\_modules** erstellt wurde. In diesem Ordner finden Sie das
-    **Azur-Speicher**-Paket, das die für den Speicherzugriff benötigten Bibliotheken
+    **azure-storage**-Paket, das die für den Speicherzugriff benötigten Bibliotheken
     enthält.
 
 ### Importieren des Pakets
@@ -87,23 +70,21 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
     var azure = require('azure-storage');
 
-## <a name="setup-connection-string"> </a>Einrichten einer Azure-Speicherverbindung
+## Einrichten einer Azure-Speicherverbindung
 
-Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT and AZURE\_STORAGE\_ACCESS\_KEY oder AZURE\_STORAGE\_CONNECTION\_STRING die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **createBlobService** angeben.
+Das Azure-Modul entnimmt den Umgebungsvariablen `AZURE_STORAGE_ACCOUNT`, `AZURE_STORAGE_ACCESS_KEY` und `AZURE_STORAGE_CONNECTION_STRING` die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **createBlobService** angeben.
 
 Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher].
 
-## <a name="create-container"></a>Vorgehensweise: Erstellen eines Containers
+## Vorgehensweise: Erstellen eines Containers
 
-Mit dem **BlobService**-Objekt können Sie mit Containern und Blobs arbeiten. Der
-folgende Code erstellt ein **BlobService**-Objekt. Fügen Sie Folgendes
-am Anfang der Datei **server.js** ein.
+Mit dem **BlobService**-Objekt können Sie mit Containern und Blobs arbeiten. Der folgende Code erstellt ein **BlobService**-Objekt. Fügen Sie Folgendes am Anfang der Datei **server.js** ein.
 
     var blobSvc = azure.createBlobService();
 
-> [AZURE.NOTE] Sie können anonym auf einen Blob zugreifen, indem Sie **createBlobServiceAnonymous** verwenden und die Hostadresse angeben. Beispiel: `var blobSvc = azure.createBlobService('https://myblob.blob.core.windows.net/');`.
+> [AZURE.NOTE] Sie können anonym auf ein Blob zugreifen, indem Sie **createBlobServiceAnonymous** verwenden und die Hostadresse angeben. Beispiel: `var blobSvc = azure.createBlobServiceAnonymous('https://myblob.blob.core.windows.net/');`.
 
-Alle Blobs befinden sich in einem Container. Verwenden Sie zum Erstellen eines neuen Containers **createContainerIfNotExists**. Im Folgenden wird ein neuer Container namens "mycontainer" erstellt.
+Alle Blobs befinden sich in einem Container. Verwenden Sie zum Erstellen eines neuen Containers **createContainerIfNotExists**. Im Folgenden wird ein neuer Container namens 'mycontainer' erstellt.
 
 	blobSvc.createContainerIfNotExists('mycontainer', function(error, result, response){
       if(!error){
@@ -115,7 +96,7 @@ Alle Blobs befinden sich in einem Container. Verwenden Sie zum Erstellen eines n
 
 Wenn der Container erstellt wurde, ist  `result` "True". Wenn der Container bereits vorhanden ist, ist  `result` "False". `response` enthält Informationen über den Vorgang, einschließlich der [ETag](http://en.wikipedia.org/wiki/HTTP_ETag)-Informationen für den Container.
 
-###Containersicherheit
+### Containersicherheit
 
 Neue Container sind standardmäßig privat. Ein anonymer Zugriff ist auf sie so nicht möglich. Um den Container öffentlich zu machen, damit ein anonymer Zugriff darauf möglich ist, können Sie die Zugriffsebene des Containers auf **Blob** oder **Container** festlegen.
 
@@ -133,15 +114,15 @@ Das folgende Beispiel zeigt, wie Sie die Zugriffsebene auf **Blob setzen können
 
 Alternativ können Sie die Zugriffsebene eines Containers mit **setContainerAcl** bearbeiten. Das folgende Beispiel ändert die Zugriffsebene des Containers:
 
-    blobSvc.setContainerAcl('mycontainer', null, 'container', function(error, result, response){
+    blobSvc.setContainerAcl('mycontainer', null /* signedIdentifiers */, 'container' /* publicAccessLevel*/, function(error, result, response){
 	  if(!error){
 		// Container access level set to 'container'
 	  }
 	});
 
-Das Ergebnis enthält Informationen über den Vorgang, einschließlich der **ETag**-Informationen für den Container.
+Das Ergebnis enthält Informationen über den Vorgang, einschließlich der aktuellen **ETag**-Informationen für den Container.
 
-###Filter
+### Filter
 
 Auf die Vorgänge, die mit **BlobService** ausgeführt werden, können optionale Filtervorgänge angewendet werden. Filtervorgänge können Protokollierung, automatische Wiederholung usw. umfassen. Filter sind Objekte, mit denen eine Methode mit einer Signatur implementiert wird:
 
@@ -153,16 +134,16 @@ Nachdem die Vorverarbeitung der Anforderungsoptionen angeschlossen ist, muss die
 
 Nachdem das "returnObject"-Objekt (die Antwort auf die an den Server gesendete Anforderung) verarbeitet wurde, muss in dieser Rückruffunktion entweder "next" aufgerufen werden, wenn die Tabelle vorhanden ist, um weitere Filter zu verarbeiten, oder es muss einfach "finallCallback" aufgerufen werden, um den Dienstaufruf zu beenden.
 
-Zwei Filter, die eine Wiederholungsversuchlogik implementieren, sind im Azure SDK für Node.js enthalten: **ExponentialRetryPolicyFilter** und **LinearRetryPolicyFilter**. Mit folgendem Code wird ein **BlobService**-Objekt erstellt, das **ExponentialRetryPolicyFilter** verwendet:
+Zwei Filter, die eine Wiederholungslogik implementieren, sind im Azure SDK für Node.js enthalten: **ExponentialRetryPolicyFilter** und **LinearRetryPolicyFilter**. Mit folgendem Code wird ein **BlobService**-Objekt erstellt, das **ExponentialRetryPolicyFilter** verwendet:
 
 	var retryOperations = new azure.ExponentialRetryPolicyFilter();
 	var blobSvc = azure.createBlobService().withFilter(retryOperations);
 
-## <a name="upload-blob"></a>Vorgehensweise: Hochladen eines Blobs in einen Container
+## Gewusst wie: Hochladen eines Blobs in einen Container
 
-Ein Blob kann entweder block- oder seitenbasiert sein. Blockblobs ermöglichen Ihnen das effizientere Hochladen großer Daten. Seitenblobs hingegen sind für Lese-/Schreibvorgänge optimiert. Weitere Informationen finden Sie unter [Grundlegendes zu Block-Blobs und Seiten-Blobs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
+Ein Blob kann entweder block- oder seitenbasiert sein. Blockblobs ermöglichen Ihnen das effizientere Hochladen großer Daten. Seitenblobs hingegen sind für Lese-/Schreibvorgänge optimiert. Weitere Informationen finden Sie unter [Grundlegendes zu Blockblobs und Seitenblobs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
 
-###Blockblobs
+### Blockblobs
 
 Verwenden Sie zum Hochladen von Daten zu einem Blockblob Folgendes:
 
@@ -184,7 +165,7 @@ Im folgenden Beispiel wird der Inhalt der **test.txt**-Datei in **myblob** hochg
 
 Das von diesen Methoden zurückgegebene  `result` enthält Informationen über den Vorgang wie das **ETag** des Blobs.
 
-###Seitenblobs
+### Seitenblobs
 
 Verwenden Sie zum Hochladen von Daten zu einem Seitenblob Folgendes:
 
@@ -196,7 +177,7 @@ Verwenden Sie zum Hochladen von Daten zu einem Seitenblob Folgendes:
 
 * **createWriteStreamToExistingPageBlob** - stellt einen Schreibdatenstrom für einen vorhandenen Seitenblob bereit.
 
-* **createWriteStreamToNewPageBlob** - erstellt einen neuen Blob und stellt dann einen Stream bereit, um darin schreiben zu können.
+* **createWriteStreamToNewPageBlob** - erstellt ein neues Blob und stellt dann einen Stream bereit, um darin schreiben zu können.
 
 Im folgenden Beispiel wird der Inhalt der **test.txt**-Datei in **mypageblob** hochgeladen.
 
@@ -206,11 +187,11 @@ Im folgenden Beispiel wird der Inhalt der **test.txt**-Datei in **mypageblob** h
 	  }
 	});
 
-> [AZURE.NOTE] Seitenblobs bestehen aus 512-Byte-"Seiten". Es wird möglicherweise ein Fehler angezeigt, wenn Daten mit einer Größe, die kein Vielfaches von 512 ist, hochgeladen werden.
+> [AZURE.NOTE] Seitenblobs bestehen aus 'pages' von je 512 Byte. Es wird möglicherweise ein Fehler angezeigt, wenn Daten mit einer Größe, die kein Vielfaches von 512 ist, hochgeladen werden.
 
-## <a name="list-blob"></a>Vorgehensweise: Auflisten der Blobs in einem Container
+## Gewusst wie: Auflisten der Blobs in einem Container
 
-Verwenden Sie zum Auflisten des Blobs in einem Container die Methode **listBlobsSegmented**. Verwenden Sie **listBlobsSegmentedWithPrefix**, wenn Sie Blobs mit einem bestimmten Präfix ausgeben möchten.
+Verwenden Sie zum Auflisten der Blobs in einem Container die Methode **listBlobsSegmented**. Verwenden Sie **listBlobsSegmentedWithPrefix**, wenn Sie Blobs mit einem bestimmten Präfix zurückgeben möchten.
 
     blobSvc.listBlobsSegmented('mycontainer', null, function(error, result, response){
       if(!error){
@@ -218,9 +199,9 @@ Verwenden Sie zum Auflisten des Blobs in einem Container die Methode **listBlobs
 	  }
 	});
 
-Das  `result` enthält eine  `entries`-Sammlung. Hierbei handelt es sich um ein Array von Objekten, die jedes Blob beschreiben. Wenn nicht alle Blobs zurückgegeben werden können, stellt das  `result` auch ein  `continuationToken` bereit, das als zweiter Parameter zum Abrufen zusätzlicher Einträge verwendet werden kann.
+Das  `result` enthält eine  `entries`-Sammlung. Hierbei handelt es sich um ein Array von Objekten, die jedes Blob beschreiben. Wenn nicht alle Blobs zurückgegeben werden können, stellt `result` auch ein `continuationToken` bereit, das als zweiter Parameter zum Abrufen zusätzlicher Einträge verwendet werden kann.
 
-## <a name="download-blob"></a>Vorgehensweise: Herunterladen von Blobs
+## Gewusst wie: Herunterladen von Blobs
 
 Verwenden Sie zum Herunterladen von Daten aus einem Blob Folgendes:
 
@@ -234,7 +215,7 @@ Verwenden Sie zum Herunterladen von Daten aus einem Blob Folgendes:
 
 Im folgenden Beispiel wird **getBlobToStream** verwendet, um den Inhalt des **myblob**-Blobs herunterzuladen und mithilfe eines Streams in der **output.txt**-Datei zu speichern:
 
-    var fs=require('fs');
+    var fs = require('fs');
 	blobSvc.getBlobToStream('mycontainer', 'myblob', fs.createWriteStream('output.txt'), function(error, result, response){
 	  if(!error){
 	    // blob retrieved
@@ -243,9 +224,9 @@ Im folgenden Beispiel wird **getBlobToStream** verwendet, um den Inhalt des **my
 
 Das  `result` enthält Informationen über das Blob, einschließlich der **ETag**-Informationen.
 
-## <a name="delete-blob"></a>Vorgehensweise: Löschen eines Blobs
+## Vorgehensweise: Löschen eines Blobs
 
-Um einen Blob zu löschen, rufen Sie **deleteBlob** auf. Im folgenden Beispiel wird das Blob namens **myblob** gelöscht.
+Um ein Blob zu löschen, rufen Sie **deleteBlob** auf. Im folgenden Beispiel wird das Blob namens **myblob** gelöscht.
 
     blobSvc.deleteBlob(containerName, 'myblob', function(error, response){
 	  if(!error){
@@ -253,19 +234,19 @@ Um einen Blob zu löschen, rufen Sie **deleteBlob** auf. Im folgenden Beispiel w
 	  }
 	});
 
-##<a name="concurrent-access"></a>Vorgehensweise: Paralleler Zugriff
+## Gewusst wie: Paralleler Zugriff
 
-Um den parallelen Zugriff auf ein Blob von mehreren Clients oder mehreren Prozessinstanzen zu unterstützen, können Sie **ETags** oder **Leases** verwenden.
+Um den parallelen Zugriff auf ein Blob von mehreren Clients oder mehreren Prozessinstanzen aus zu unterstützen, können Sie **ETags** oder **Leases** verwenden.
 
 * **Etag** - bietet eine Möglichkeit, um zu ermitteln, ob das Blob oder der Container durch einen anderen Prozess geändert wurde.
 
 * **Lease** - bietet eine Möglichkeit zum Abrufen eines exklusiven, erneuerbaren Lese- oder Schreibzugriffs auf ein Blob für einen bestimmten Zeitraum.
 
-###ETag
+### ETag
 
 ETags sollten verwendet werden, wenn mehrere Clients oder Instanzen gleichzeitig in das Blob schreiben müssen. Das ETag erlaubt Ihnen zu ermitteln, ob der Container oder das Blob geändert wurde, seitdem Sie es erstmals gelesen oder erstellt haben. Dadurch können Sie Überschreibungsänderungen vermeiden, die durch einen anderen Client oder Prozess verübt wurden.
 
-ETag-Bedingungen können mit dem optionalen  `options.accessConditions`-Parameter festgelegt werden. Im folgenden Beispiel wird die **test.txt**-Datei nur hochgeladen, wenn das Blob bereits vorhanden ist und den ETag-Wert aufweist, der in  `etagToMatch` enthalten ist.
+ETag-Bedingungen können mit dem optionalen `options.accessConditions`-Parameter festgelegt werden. Im folgenden Beispiel wird die **test.txt**-Datei nur hochgeladen, wenn das Blob bereits vorhanden ist und den ETag-Wert aufweist, der in `etagToMatch` enthalten ist.
 
 	blobSvc.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', { accessConditions: { 'if-match': etagToMatch} }, function(error, result, response){
       if(!error){
@@ -281,23 +262,23 @@ Das allgemeine Muster bei der Verwendung von ETags lautet:
 
 Wenn der Wert geändert wurde, deutet dies darauf hin, dass ein anderer Client oder eine Instanz das Blob oder den Container geändert hat, seitdem Sie den ETag-Wert abgerufen haben.
 
-###Lease
+### Lease
 
 Eine neue Lease kann mithilfe der Methode **acquireLease** abgerufen werden, die das Blob oder den Container angibt, für das bzw. den Sie eine Lease abrufen möchten. Im Folgenden wird beispielsweise eine Lease auf **myblob** abgerufen.
 
 	blobSvc.acquireLease('mycontainer', 'myblob', function(error, result, response){
 	  if(!error) {
-	    console.log(result);
+	    console.log('leaseId: ' + result.id);
 	  }
 	});
 
-Nachfolgende Vorgänge auf **myblob** müssen den  `options.leaseId`-Parameter angeben. Die Lease-ID wird als  `result.id` von **acquireLease** zurückgegeben.
+Nachfolgende Vorgänge auf **myblob** müssen den `options.leaseId`-Parameter angeben. Die Lease-ID wird als  `result.id` von **acquireLease** zurückgegeben.
 
-> [AZURE.NOTE] Die Leasedauer ist standardmäßig unendlich. Sie können eine endliche Dauer (zwischen 15 und 60 Sekunden) angeben, indem Sie den  `options.leaseDuration`-Parameter angeben.
+> [AZURE.NOTE] Die Leasedauer ist standardmäßig unendlich. Sie können eine endliche Dauer (zwischen 15 und 60 Sekunden) angeben, indem Sie den `options.leaseDuration`-Parameter angeben.
 
-Verwenden Sie zum Entfernen einer Lease **releaseLease**. Verwenden Sie **breakLease**, um eine Lease zu unterbrechen und andere Benutzer daran zu hindern, eine neue Lease abzurufen, bis die ursprüngliche Dauer abgelaufen ist
+Verwenden Sie zum Entfernen einer Lease **releaseLease**. Verwenden Sie **breakLease**, um eine Lease zu unterbrechen und andere Benutzer daran zu hindern, eine neue Lease abzurufen, bis die ursprüngliche Dauer abgelaufen ist.
 
-## <a name="sas"></a>Vorgehensweise: Arbeiten mit Shared Access Signatures
+## Gewusst wie: Arbeiten mit Shared Access Signatures
 
 Shared Access Signature (SAS) ist eine sichere Möglichkeit zum Bereitstellen einen granularen Zugriffs auf Blobs und Container, ohne dass dabei Ihr Speicherkontoname oder -schlüssel angegeben werden müssen. SAS wird oftmals zum Bereitstellen des beschränkten Zugriffs auf Ihre Daten verwendet, dazu zählt beispielsweise auch, einer mobilen App den Zugriff auf Blobs zu gewähren.
 
@@ -305,7 +286,7 @@ Shared Access Signature (SAS) ist eine sichere Möglichkeit zum Bereitstellen ei
 
 Mit einer vertrauenswürdigen Anwendung wie einem cloudbasierten Dienst wird mittels **generateSharedAccessSignature** von **BlobService** eine SAS generiert und einer nicht vertrauenswürdigen oder teilweise vertrauenswürdigen Anwendung bereitgestellt. Zum Beispiel für eine mobile App. Die SAS wird mithilfe einer Richtlinie generiert, die das Anfangs- und das Enddatum der Gültigkeit der SAS sowie die Zugriffsstufe definiert, die dem Inhaber der SAS gewährt wird.
 
-Im folgenden Beispiel wird eine neue Richtlinie für den geteilten Zugriff generiert, mit der der SAS-Inhaber Lesevorgänge im **myblob**-Blob vornehmen kann, und die 100 Minuten nach ihrer Erstellung abläuft.
+Im folgenden Beispiel wird eine neue Richtlinie für den freigegebenen Zugriff generiert, mit der der SAS-Inhaber Lesevorgänge im **myblob**-Blob vornehmen kann und die 100 Minuten nach ihrer Erstellung abläuft.
 
 	var startDate = new Date();
 	var expiryDate = new Date(startDate);
@@ -325,7 +306,7 @@ Im folgenden Beispiel wird eine neue Richtlinie für den geteilten Zugriff gener
 
 Beachten Sie, dass auch die Hostinformationen angegeben werden müssen, da sie erforderlich sind, wenn der SAS-Inhaber versucht, auf den Container zuzugreifen.
 
-Mit der Clientanwendung kann dann die SAS mit  **BlobServiceWithSAS**  verwendet werden, um Vorgänge für das Blob auszuführen.  Im Folgenden werden Informationen über  **myblob** abgerufen.
+Die Clientanwendung verwendet dann die SAS mit **BlobServiceWithSAS**, um Vorgänge für das Blob auszuführen. Im Folgenden werden Informationen über **myblob** abgerufen.
 
 	var sharedBlobSvc = azure.createBlobServiceWithSas(host, blobSAS);
 	sharedBlobSvc.getBlobProperties('mycontainer', 'myblob', function (error, result, response) {
@@ -336,7 +317,7 @@ Mit der Clientanwendung kann dann die SAS mit  **BlobServiceWithSAS**  verwendet
 
 Da die SAS nur mit Lesezugriff generiert wurde, würde beim Versuch, das Blob zu ändern, ein Fehler zurückgegeben werden.
 
-###Zugriffssteuerungslisten
+### Zugriffssteuerungslisten
 
 Sie können auch eine Zugriffssteuerungsliste (Access Control List, ACL) verwenden, um die Zugriffsrichtlinie für eine SAS festzulegen. Dies ist nützlich, wenn mehrere Clients auf einen Container zugreifen sollen und für jeden Client unterschiedliche Zugriffsrichtlinien bereitgestellt werden.
 
@@ -379,37 +360,25 @@ Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Ric
 
 	blobSAS = blobSvc.generateSharedAccessSignature('mycontainer', { Id: 'user2' });
 
-## <a name="next-steps"> </a>Nächste Schritte
+## Nächste Schritte
 
-Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben, folgen Sie diesen Links
-um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
+Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
+-   Lesen Sie die [API-Referenz zum Azure Storage-SDK für Node][]
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
 -   Besuchen Sie den [Blog des Azure-Speicherteams][].
--   Besuchen Sie das [Azure Storage SDK for Node][]-Repository auf GitHub.
+-   Besuchen Sie das [Azure Storage-SDK für Node][]-Repository auf GitHub.
 
-  [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
-  [Next Steps]: #next-steps
-  [What is the Blob Service?]: #what-is
-  [Concepts]: #concepts
-  [Create an Azure Storage Account]: #create-account
-  [Create a Node.js Application]: #create-app
-  [Configure your Application to Access Storage]: #configure-access
-  [Setup an Azure Storage Connection String]: #setup-connection-string
-  [How To: Create a Container]: #create-container
-  [How To: Upload a Blob into a Container]: #upload-blob
-  [How To: List the Blobs in a Container]: #list-blob
-  [How To: Download Blobs]: #download-blobs
-  [How To: Delete a Blob]: #delete-blobs
-  [How To: Concurrent access]: #concurrent-access
-  [How To: Work with Shared Access Signatures]: #sas
-[Create and deploy a Node.js application to an Azure Web Site]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
-  [Node.js Cloud Service with Storage]: /de-de/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
-  [Node.js Web Application with Storage]: /de-de/documentation/articles/storage-nodejs-use-table-storage-web-site/
- [Web Site with WebMatrix]: /de-de/documentation/articles/web-sites-nodejs-use-webmatrix/
-  [using the REST API]: http://msdn.microsoft.com/library/windowsazure/hh264518.aspx
-  [Azure Management Portal]: http://manage.windowsazure.com
-  [Node.js Cloud Service]: /de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
-  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-<!--HONumber=42-->
+[Azure Storage-SDK für Node]: https://github.com/Azure/azure-storage-node
+[Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /develop/nodejs/tutorials/create-a-website-(mac)/
+[Node.js-Cloud-Dienst mit Storage]: storage-nodejs-use-table-storage-cloud-service-app.md
+[Node.js-Webanwendung mit Storage]: storage-nodejs-use-table-storage-web-site.md
+[Website mit WebMatrix]: web-sites-nodejs-use-webmatrix.md
+[mit der REST-API]: http://msdn.microsoft.com/library/azure/hh264518.aspx
+[Azure-Verwaltungsportal]: http://manage.windowsazure.com
+[Node.js-Cloud-Dienst]: cloud-services-nodejs-develop-deploy-app.md
+[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+[API-Referenz zum Azure Storage-SDK für Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
+
+<!--HONumber=49-->

@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte bei der Authentifizierung in Mobile Services für Xamarin iOS-Apps - Azure Mobile Services" 
 	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Xamarin iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
 	services="mobile-services" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-ios" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="09/23/2014" 
@@ -52,13 +52,13 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten ein Anmeldebildschirm angezeigt wird. Wenn die App gestartet wird, baut sie keine Verbindung zu ihrem mobilen Dienst auf und zeigt keinerlei Daten an. Nachdem der Benutzer die Aktualisierungsgeste durchführt, wird der Anmeldebildschirm angezeigt, nach der erfolgreichen Anmeldung dann die Liste von To-Do-Objekten.
 
-1. Öffnen Sie im Client-Projekt die Datei **QSTodoService.cs**, und fügen Sie folgende Deklarationen zu QSTodoService hinzu:
+1. Öffnen Sie im Client-Projekt die Datei **QSTodoService.cs** und fügen Sie folgende Deklarationen zu QSTodoService hinzu:
 
 		// Mobile Service logged in user
 		private MobileServiceUser user; 
 		public MobileServiceUser User { get { return user; } }
 
-2. Fügen Sie eine neue Methode **Authenticate** zu **QSTodoService** hinzu mit der folgenden Definition:
+2. Fügen Sie eine neue Methode **Authenticate** zu **QSTodoService** mit der folgenden Definition hinzu:
 
         private async Task Authenticate(UIViewController view)
         {
@@ -74,7 +74,7 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 
 > [AZURE.NOTE] Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an **LoginAsync** oben übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_.
 
-3. Öffnen Sie **QSTodoListViewController.cs**. Ändern Sie die Methodendefinition von **ViewDidLoad**, und entfernen Sie den Aufruf von **RefreshAsync()** in der Nähe des Endes:
+3. Öffnen Sie **QSTodoListViewController.cs**. Ändern Sie die Methodendefinition von **ViewDidLoad**, um den Aufruf von **RefreshAsync()** kurz vor dem Ende zu entfernen:
 
 		public override async void ViewDidLoad ()
 		{
@@ -112,9 +112,9 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 
 	Führen Sie die Aktualisierungsgeste durch Herunterziehen der Objektliste, was die Anzeige des Anmeldebildschirms auslöst. Nachdem Sie gültige Anmeldeinformationenen erfolgreich eingegeben haben, zeigt die App die Liste der To-Do-Objekte an, und Sie können die Daten ändern.
 
-<!-- ## <a name="next-steps"> </a>Nächste Schritte
+<!-- ## <a name="next-steps"> </a>Next steps
 
-Im nächsten Lernprogramm [Serviceseitige Autorisierung von Mobile Services-Benutzern][Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. 
+In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
  -->
  
 <!-- Anchors. -->
@@ -128,13 +128,12 @@ Im nächsten Lernprogramm [Serviceseitige Autorisierung von Mobile Services-Benu
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started/
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-users/
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-push/
-[Autorisieren von Benutzern mit Skripts]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
-[JavaScript und HTML]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users/
+[Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-xamarin-ios-get-started.md
+[Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-xamarin-ios-get-started-users.md
+[Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-xamarin-ios-get-started-push.md
+[Autorisieren von Benutzern mit Skripts]: mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts.md
+[JavaScript und HTML]: mobile-services-dotnet-backend-windows-store-javascript-get-started-users.md
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-
-<!--HONumber=42-->
+<!--HONumber=49-->

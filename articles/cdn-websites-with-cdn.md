@@ -1,67 +1,54 @@
 ﻿<properties 
-	pageTitle="Integrieren einer Azure-Website in Azure CDN" 
-	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie eine Website bereitstellen, die Inhalte von einem integrierten Azure CDN-Endpunkt zur Verfügung stellt." 
-	services="cdn, web-sites" 
+	pageTitle="Verwenden von Azure CDN in Azure App Service" 
+	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie eine Web-App in Azure App Service bereitstellen, die Inhalte über einen integrierten Azure CDN-Endpunkt zur Verfügung stellt." 
+	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="cdn" 
+	ms.service="app-service-web" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="10/02/2014" 
+	ms.date="03/24/2015" 
 	ms.author="cephalin"/>
 
 <a name="intro"></a>
-# Integrieren einer Azure-Website in Azure CDN #
+# Verwenden von Azure CDN in Azure App Service
 
-Azure-Websites können in [Azure CDN](http://azure.microsoft.com/services/cdn/) integriert werden und erweitern dann die in Azure-Websites integrierten globalen Skalierungsfunktionen, indem Ihre Websiteinhalte global von Serverknoten in der Nähe Ihrer Kunden zur Verfügung gestellt werden (eine aktualisierte Liste aller aktuellen Knotenstandorte finden Sie [hier](http://msdn.microsoft.com/library/azure/gg680302.aspx). Diese Integration steigert die Leistung Ihrer Azure-Website erheblich und sorgt für eine deutliche Verbesserung der weltweiten Benutzerfreundlichkeit der Website. 
+[App Service](http://go.microsoft.com/fwlink/?LinkId=529714) kann in [Azure CDN](/services/cdn/) integriert werden und die in [App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) integrierten globalen Skalierungsfunktionen erweitern, indem Ihre Web-App-Inhalte global von Serverknoten in der Nähe Ihrer Kunden zur Verfügung gestellt werden (eine aktualisierte Liste aller aktuellen Knotenstandorte finden Sie [hier](http://msdn.microsoft.com/library/azure/gg680302.aspx). In Szenarien wie dem Bereitstellen statischer Bilder kann diese Integration die Leistung Ihrer Azure App Service-Web-App erheblich steigern und für eine deutliche Verbesserung der weltweiten Benutzerfreundlichkeit der Web-App sorgen. 
 
-Die Integration von Azure-Websites in Azure CDN bietet folgende Vorteile:
+Die Integration von Web-Apps in Azure CDN bietet folgende Vorteile:
 
-- Integration der Inhaltbereitstellung (Bilder, Skripts und Stylesheets) als Teil des [kontinuierlichen Bereitstellungsprozesses](http://azure.microsoft.com/documentation/articles/web-sites-publish-source-control/) Ihrer Azure-Website
-- Einfaches Durchführen von Upgrades für die NuGet-Pakete in Ihrer Azure-Website, wie z. B. jQuery- oder Bootstrap-Versionen 
+- Integration der Inhaltsbereitstellung (Bilder, Skripts und Stylesheets) als Teil des [kontinuierlichen Bereitstellungsprozesses](web-sites-publish-source-control.md) Ihrer Web-App
+- Einfaches Durchführen von Upgrades für die NuGet-Pakete in Ihrer Web-App in Azure App Service, wie z. B. jQuery- oder Bootstrap-Versionen 
 - Verwalten der Webanwendung und des vom CDN verarbeiteten Inhalts über dieselbe Visual Studio-Oberfläche
 - Integrieren von ASP.NET-Bündelung und -Minimierung in Azure CDN
 
-## Sie lernen Folgendes ##
+## Was Sie erstellen ##
 
-In diesem Lernprogramm lernen Sie Folgendes:
+Sie stellen eine Web-App in Azure App Service unter Verwendung der ASP.NET-MVC-Standardvorlage in Visual Studio bereit, fügen Code hinzu, um Inhalt aus einem integrierten Azure CDN bereitzustellen, z. B. ein Bild, Ergebnisse von Controlleraktionen und die JavaScript- und CSS-Standarddateien. Außerdem schreiben Sie Code zum Konfigurieren des Fallbackmechanismus für verarbeitete Bündel für den Fall, dass das CDN offline ist.
 
--	[Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Website und Verarbeiten von statischem Inhalt in Webseiten über Azure CDN](#deploy)
--	[Konfigurieren von Cacheeinstellungen für statischen Inhalt in Ihrer Azure-Website](#caching)
--	[Verarbeiten von Inhalten von Controlleraktionen über Azure CDN](#controller)
--	[Verarbeiten von gebündeltem und minimiertem Inhalt über Azure CDN bei Beibehaltung des Skript-Debugvorgangs in Visual Studio](#bundling)
--	[Konfigurieren des Fallbacks für Skripts und CSS, wenn das Azure CDN offline ist](#fallback) 
-
-## Sie erstellen Folgendes ##
-
-Sie stellen eine Azure-Website unter Verwendung der ASP.NET-MVC-Standardvorlage in Visual Studio bereit, fügen Code hinzu, um Inhalt aus einem integrierten Azure CDN zu verarbeiten, z. B. ein Bild, Ergebnisse von Controlleraktionen und die JavaScript- und CSS-Standarddateien; außerdem schreiben Sie Code zum Konfigurieren des Fallbackmechanismus für verarbeitete Bündel für den Fall, dass das CDN offline ist.
-
-## Sie benötigen Folgendes ##
+## Was Sie benötigen ##
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
--	Ein aktives [Microsoft Azure-Konto](http://azure.microsoft.com/account/)
--	Visual Studio 2013 mit [Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409)
+-	Ein aktives [Microsoft Azure-Konto](/account/)
+-	Visual Studio 2013 mit dem [Azure SDK für .NET](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409)
 
-<div class="wa-note">
-  <span class="wa-icon-bulb"></span>
-  <h5><a name="note"></a>Sie benötigen ein Windows Azure-Konto, um dieses Lernprogramm durchführen zu können:</h5>
-  <ul>
-    <li>Sie können <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F">ein Azure-Konto kostenlos erstellen</a>: Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlose Azure-Dienste nutzen, wenn das Guthaben aufgebraucht ist.</li>
-    <li>Sie können Ihre <a href="http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F">Vorteile für MSDN-Abonnenten aktivieren</a> - Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.</li>
-  <ul>
-</div>
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto zum Bearbeiten dieses Lernprogramms:
+> + Sie können [ein Azure-Konto kostenlos erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlose Azure-Dienste, wie z. B. Web Apps, nutzen, wenn das Guthaben aufgebraucht ist.
+> + Sie können [Vorteile für MSDN-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Ihr MSDN-Abonnement umfasst ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.
+>
+> Wenn Sie in Azure App Service einsteigen möchten, ohne sich zuvor für ein Azure-Konto zu registrieren, wechseln Sie zur Website [App Service ausprobieren](http://go.microsoft.com/fwlink/?LinkId=523751), auf der Sie eine Web-App mit kurzer Gültigkeitsdauer für Einsteiger in App Service erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <a name="deploy"></a>
-## Bereitstellen einer Azure-Website mit einem integrierten CDN-Endpunkt ##
+## Bereitstellen einer Webanwendung in Azure mit einem integrierten CDN-Endpunkt ##
 
-In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorlage in Visual Studio 2013 für eine Azure-Website bereit und integrieren sie anschließend in einen neuen CDN-Endpunkt. Befolgen Sie die nachstehenden Anweisungen:
+In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorlage in Visual Studio 2013 für eine App Service bereit und integrieren sie anschließend in einen neuen CDN-Endpunkt. Befolgen Sie die nachstehenden Anweisungen:
 
 1. Erstellen Sie in Visual Studio 2013 eine neue ASP.NET-Webanwendung über die Menüleiste, indem Sie **Datei > Neu > Projekt > Web > ASP.NET-Webanwendung** aufrufen. Geben Sie einen Namen ein, und klicken Sie auf **OK**.
 
@@ -76,26 +63,28 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 	![](media/cdn-websites-with-cdn/3-manage-subscription.png)
 
 6. Melden Sie sich auf der Anmeldeseite mit dem Microsoft-Konto an, das Sie zum Aktivieren Ihres Azure-Kontos verwendet haben.
-7. Nach der Anmeldung klicken Sie auf **Schließen**. Klicken Sie dann auf **OK**, um fortzufahren.
+7. Sobald Sie angemeldet sind, klicken Sie auf **Schließen**. Klicken Sie dann auf **OK**, um fortzufahren.
 
 	![](media/cdn-websites-with-cdn/4-signed-in.png)
 
-8. Angenommen, dass Sie noch keine Azure-Website erstellt haben, kann Visual Studio Sie bei der Erstellung unterstützen. Stellen Sie im Dialogfeld **Microsoft Azure-Website konfigurieren** sicher, dass der Name Ihrer Website eindeutig ist. Klicken Sie anschließend auf **OK**.
+8. Falls Sie noch keine Web-App in Azure erstellt haben, kann Visual Studio Sie bei der Erstellung unterstützen. Stellen Sie im Dialogfeld **Microsoft Azure-Website konfigurieren** sicher, dass der Name Ihrer Website eindeutig ist. Klicken Sie anschließend auf **OK**.
 
+	<!--todo: need 2.5.1 screenshot-->
 	![](media/cdn-websites-with-cdn/5-create-website.png)
 
-9. Nachdem Ihre ASP.NET-Anwendung erstellt wurde, veröffentlichen Sie sie im Webveröffentlichungs-Aktivitätsbereich an Azure, indem Sie auf **<App-Name> `jetzt` an diese Website veröffentlichen** klicken. Klicken Sie auf **Veröffentlichen**, um den Prozess abzuschließen.
+9. Nachdem Ihre ASP.NET-Anwendung erstellt wurde, veröffentlichen Sie sie im Bereich "Webveröffentlichungsaktivität" in Azure, indem Sie auf **<App-Name> `jetzt` für diese Website veröffentlichen** klicken. Klicken Sie auf **Veröffentlichen**, um den Vorgang abzuschließen.
 
+	<!--todo: need 2.5.1 screenshot-->
 	![](media/cdn-websites-with-cdn/6-publish-website.png)
 
-	Wenn die Veröffentlichung abgeschlossen ist, wird Ihre veröffentlichte Azure-Website im Browser angezeigt. 
+	Wenn die Veröffentlichung abgeschlossen ist, wird Ihre veröffentlichte Web-App im Browser angezeigt. 
 
-1. Zum Erstellen eines CDN-Endpunkts melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com/) an. 
-2. Klicken Sie auf **Neu** > **Anwendungsdienste** > **CDN** > **Schnellerfassung**. Wählen Sie **http://*<Websitename>*.azurewebsites.net/** aus, und klicken Sie auf **Erstellen**.
+1. Zum Erstellen eines CDN-Endpunkts melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkId=529715) an. 
+2. Klicken Sie auf **Neu** > **App Services** > **CDN** > **Schnellerfassung**. Wählen Sie **http://*&lt;Websitename>*.azurewebsites.net/** aus, und klicken Sie auf **Erstellen**.
 
 	![](media/cdn-websites-with-cdn/7-create-cdn.png)
 
-	>[WACOM.NOTE] Nachdem der CDN-Endpunkt erstellt wurde, werden im Azure-Portal dessen URL und die Ursprungsdomäne, in der er integriert ist, angezeigt. Es kann jedoch eine Weile dauern, bis die Konfiguration des neuen CDN-Endpunkts vollständig an alle CDN-Knotenstandorte weitergegeben wurde. 
+	> [AZURE.NOTE] Nachdem der CDN-Endpunkt erstellt wurde, werden im Azure-Portal dessen URL und die Ursprungsdomäne, in der er integriert ist, angezeigt. Es kann jedoch eine Weile dauern, bis die Konfiguration des neuen CDN-Endpunkts vollständig an alle CDN-Knotenstandorte weitergegeben wurde. 
 
 3. Klicken Sie im Azure-Portal auf der Registerkarte **CDN** auf den Namen des gerade erstellten CDN-Endpunkts.
 
@@ -105,13 +94,13 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	![](media/cdn-websites-with-cdn/9-enable-query-string.png)
 
-	>[WACOM.NOTE] Auch wenn die Aktivierung der Abfragezeichenfolge für diesen Teil des Lernprogramms nicht erforderlich ist, sollten Sie diesen Schritt so früh wie möglich durchführen, da die Verteilung einer hier vorgenommenen Änderung an alle CDN-Knoten einige Zeit dauert und Sie verhindern möchten, dass Inhalte, für die Abfragezeichenfolgen nicht aktiviert wurden, den CDN-Cache verstopfen (die Aktualisierung von CDN-Inhalten wird später erläutert).
+	>[AZURE.NOTE] Auch wenn die Aktivierung der Abfragezeichenfolge für diesen Teil des Lernprogramms nicht erforderlich ist, sollten Sie diesen Schritt so früh wie möglich durchführen, da die Verteilung einer hier vorgenommenen Änderung an alle CDN-Knoten einige Zeit dauert und Sie verhindern möchten, dass Inhalte, für die Abfragezeichenfolgen nicht aktiviert wurden, den CDN-Cache verstopfen (die Aktualisierung von CDN-Inhalten wird später erläutert).
 
-2. Klicken Sie nun auf die CDN-Endpunktadresse. Wenn der Endpunkt bereit ist, sollte Ihre Website angezeigt werden. Wenn Sie einen **HTTP 404**-Fehler erhalten, ist der CDN-Endpunkt nicht bereit. Möglicherweise müssen Sie bis zu einer Stunde warten, bis die CDN-Konfiguration an alle Edgeknoten verteilt ist. 
+2. Klicken Sie nun auf die CDN-Endpunktadresse. Wenn der Endpunkt bereit ist, sollte Ihre Web-App angezeigt werden. Wenn Sie einen **HTTP 404**-Fehler erhalten, ist der CDN-Endpunkt nicht bereit. Möglicherweise müssen Sie bis zu einer Stunde warten, bis die CDN-Konfiguration an alle Edgeknoten verteilt ist. 
 
 	![](media/cdn-websites-with-cdn/11-access-success.png)
 
-1. Versuchen Sie dann, auf die Datei **~/Content/bootstrap.css** in Ihrem ASP.NET-Projekt zuzugreifen. Wechseln Sie im Browserfenster zu **http://*<cdnName>*.vo.msecnd.net/Content/bootstrap.css**. In meinem Setup lautet diese URL:
+1. Versuchen Sie dann, auf die Datei **~/Content/bootstrap.css** in Ihrem ASP.NET-Projekt zuzugreifen. Wechseln Sie im Browserfenster zu **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**. In meinem Setup lautet diese URL:
 
 		http://az673227.vo.msecnd.net/Content/bootstrap.css
 
@@ -119,40 +108,40 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 		http://cdnwebapp.azurewebsites.net/Content/bootstrap.css
 
-	Wenn Sie zu **http://*<cdnName>*.vo.msecnd.net/Content/bootstrap.css** navigieren, werden Sie zum Herunterladen der Datei bootstrap.css aufgefordert, die von Ihrer Azure-Website bereitgestellt wurde. 
+	Wenn Sie zu **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css** navigieren, werden Sie zum Herunterladen der Datei "bootstrap.css" aufgefordert, die von der Web-App in Azure bereitgestellt wurde. 
 
 	![](media/cdn-websites-with-cdn/12-file-access.png)
 
-Auf die gleiche Weise können Sie direkt von Ihrem CDN-Endpunkt aus auf jede öffentlich zugreifbare URL unter **http://*<serviceName>*.cloudapp.net/** zugreifen. Beispiel:
+Auf die gleiche Weise können Sie direkt von Ihrem CDN-Endpunkt aus auf jede öffentlich zugreifbare URL unter **http://*&lt;Dienstname>*.cloudapp.net/** zugreifen. Beispiel:
 
 -	Eine JS-Datei im Pfad "/Script"
 -	Jede Inhaltsdatei im Pfad "/Content"
--	Jede Controlleraktion 
+-	Alle Controller/Aktionen 
 -	Sofern die Abfragezeichenfolge für den CDN-Endpunkt aktiviert ist, jede URL mit Abfragezeichenfolgen
--	Die gesamte Azure-Website, wenn alle Inhalte öffentlich sind
+-	Die gesamte Azure-Web-App, wenn alle Inhalte öffentlich sind
 
-Beachten Sie, dass es möglicherweise nicht immer eine gute Idee (oder im Allgemeinen eine gute Idee) ist, eine vollständige Azure-Website über Azure CDN zur Verfügung zu stellen. Es gibt auch einige Nachteile:
+Beachten Sie, dass es möglicherweise nicht immer eine gute Idee (oder im Allgemeinen eine gute Idee) ist, eine vollständige Azure-Web-App über Azure CDN zur Verfügung zu stellen. Es gibt auch einige Nachteile:
 
--	Für diesen Ansatz muss die gesamte Website öffentlich sein, da Azure CDN keine privaten Inhalte verarbeiten kann.
--	Falls der CDN-Endpunkt aus irgendeinem Grund - sei es wegen einer geplanten Wartung oder aufgrund eines Benutzerfehlers - offline geht, wird die gesamte Website offline geschaltet, es sei denn, die Kunden können an die Ursprungs-URL **http://*<sitename>*.azurewebsites.net/** umgeleitet werden. 
--	Selbst bei Verwendung der benutzerdefinierten Cachesteuerungseinstellungen (siehe [Konfigurieren von Cacheoptionen für statische Dateien in Ihrer Azure-Website](#caching)), wird durch einen CDN-Endpunkt die Leistung von besonders dynamischem Inhalt nicht verbessert. Wenn Sie wie oben gezeigt versucht haben, die Startseite vom CDN-Endpunkt aus zu laden, beachten Sie, dass das Laden der Standardstartseite (einer ziemlich einfachen Seite) beim ersten Mal mindestens fünf Sekunden gedauert hat. Stellen Sie sich vor, diese Seite enthält dynamischen Inhalt, der im Minutentakt aktualisiert werden muss - das Ergebnis wäre nicht besonders benutzerfreundlich. Das Verarbeiten von dynamischem Inhalt von einem CDN-Endpunkt aus erfordert einen kurzen Cacheablauf, was zu häufigen Cachefehlern am CDN-Endpunkt führt. Dies beeinträchtigt die Leistung Ihrer Azure-Website und macht den Sinn und Zweck eines CDN zunichte.
+-	Für diesen Ansatz muss die gesamte Website öffentlich sein, da Azure CDN keine privaten Inhalte bereitstellen kann.
+-	Falls der CDN-Endpunkt aus irgendeinem Grund - sei es wegen einer geplanten Wartung oder aufgrund eines Benutzerfehlers - offline geht, wird die gesamte Web-App offline geschaltet, es sei denn, die Kunden können an die Ursprungs-URL **http://*&lt;Websitename>*.azurewebsites.net/** umgeleitet werden. 
+-	Selbst bei Verwendung der benutzerdefinierten Cachesteuerungseinstellungen (siehe [Konfigurieren von Cacheoptionen für statische Dateien in Ihrer Azure-Web-App](#caching)) wird durch einen CDN-Endpunkt die Leistung von besonders dynamischem Inhalt nicht verbessert. Wenn Sie wie oben gezeigt versucht haben, die Startseite vom CDN-Endpunkt aus zu laden, beachten Sie, dass das Laden der Standardstartseite (einer ziemlich einfachen Seite) beim ersten Mal mindestens fünf Sekunden gedauert hat. Stellen Sie sich vor, diese Seite enthält dynamischen Inhalt, der im Minutentakt aktualisiert werden muss - das Ergebnis wäre nicht besonders benutzerfreundlich. Das Verarbeiten von dynamischem Inhalt von einem CDN-Endpunkt aus erfordert einen kurzen Cacheablauf, was zu häufigen Cachefehlern am CDN-Endpunkt führt. Dies beeinträchtigt die Leistung Ihrer Azure-Web-App und macht den Sinn und Zweck eines CDN zunichte.
 
-Alternativ kann der von Azure CDN zu verarbeitende Inhalt von Fall zu Fall in Ihrer Azure-Website bestimmt werden. Zu diesem Zweck haben Sie bereits gelernt, wie Sie vom CDN-Endpunkt aus auf einzelne Inhaltsdateien zugreifen. Im Abschnitt [Verarbeiten von Inhalten von Controlleraktionen über Azure CDN](#controller) zeige ich Ihnen, wie Sie eine bestimmte Controlleraktion vom CDN-Endpunkt aus verarbeiten.
+Alternativ kann der von Azure CDN zu verarbeitende Inhalt von Fall zu Fall in Ihrer Azure-Web-App bestimmt werden. Zu diesem Zweck haben Sie bereits gelernt, wie Sie vom CDN-Endpunkt aus auf einzelne Inhaltsdateien zugreifen. Im Abschnitt [Verarbeiten von Inhalten von Controlleraktionen über Azure CDN](#controller) zeige ich Ihnen, wie Sie eine bestimmte Controlleraktion vom CDN-Endpunkt aus verarbeiten.
 
 <a name="caching"></a>
-## Konfigurieren von Cacheoptionen für statische Dateien in Ihrer Azure-Website ##
+## Konfigurieren von Cacheoptionen für statische Dateien in Ihrer Azure-Web-App ##
 
-Bei Integration von Azure CDN in Ihrer Azure-Website können Sie angeben, wie statischer Inhalt im CDN-Endpunkt zwischengespeichert werden soll. Öffnen Sie dafür *Web.config* in Ihrem ASP.NET-Projekt (z. B. **cdnwebapp**), und fügen Sie ein `<staticContent>`-Element zu `<system.webServer>` hinzu. Mit dem folgenden XML-Code wird festgelegt, dass der Cache in drei Tagen abläuft.  
+Bei Integration von Azure CDN in Ihre Azure-Web-App können Sie angeben, wie statischer Inhalt im CDN-Endpunkt zwischengespeichert werden soll. Öffnen Sie hierzu die Datei  *Web.config* in Ihrem ASP.NET-Projekt (z. B. **cdnwebapp**), und fügen Sie ein `<staticContent>`-Element zu `<system.webServer>` hinzu. Mit dem folgenden XML-Code wird festgelegt, dass der Cache in drei Tagen abläuft.  
 <pre class="prettyprint">
-<system.webServer>
-  <mark><staticContent>
-    <clientCache cacheControlMode=&quot;UseMaxAge&quot; cacheControlMaxAge=&quot;3.00:00:00&quot;/>
-  </staticContent></mark>
+&lt;system.webServer&gt;
+  <mark>&lt;staticContent&gt;
+    &lt;clientCache cacheControlMode=&quot;UseMaxAge&quot; cacheControlMaxAge=&quot;3.00:00:00&quot;/&gt;
+  &lt;/staticContent&gt;</mark>
   ...
-</system.webServer>
+&lt;/system.webServer&gt;
 </pre>
 
-Nachdem Sie dies konfiguriert haben, wenden alle statischen Dateien in der Azure-Website die gleiche Regel im CDN-Cache an. Wenn Sie die Cacheeinstellungen genauer steuern möchten, fügen Sie eine *Web.config*-Datei in einen Ordner ein, und fügen Sie dieser Datei Ihre Einstellungen hinzu. Fügen Sie z. B. eine *Web.config*-Datei zum Ordner *\Content* hinzu, und ersetzen Sie den Inhalt durch den folgenden XML-Code:
+Nachdem Sie dies konfiguriert haben, wenden alle statischen Dateien in der Azure-Web-App die gleiche Regel im CDN-Cache an. Wenn Sie die Cache-Einstellungen präziser steuern möchten, fügen Sie eine Datei  *Web.config* in einen Ordner ein, und fügen Sie dieser Datei Ihre Einstellungen hinzu. Fügen Sie z. B. eine Datei  *Web.config* zum Ordner *\Content* hinzu, und ersetzen Sie den Inhalt durch den folgenden XML-Code:
 
 	<?xml version="1.0"?>
 	<configuration>
@@ -165,24 +154,24 @@ Nachdem Sie dies konfiguriert haben, wenden alle statischen Dateien in der Azure
 
 Diese Einstellung bewirkt, dass alle statischen Dateien im Ordner *\Content* 15 Tage lang zwischengespeichert werden.
 
-Weitere Informationen zum Konfigurieren des Elements `<clientCache>` finden Sie im [Clientcache <clientCache>](http://www.iis.net/configreference/system.webserver/staticcontent/clientcache).
+Weitere Informationen zum Konfigurieren des `<clientCache>`-Elements finden Sie unter [Client Cache &lt;clientCache>](http://www.iis.net/configreference/system.webserver/staticcontent/clientcache).
 
-Im Abschnitt [Verarbeiten von Inhalten von Controlleraktionen über Azure CDN](#controller) zeige ich Ihnen außerdem, wie Sie Cacheeinstellungen für Controlleraktionsergebnisse im CDN-Cache konfigurieren.
+In [Verarbeiten von Inhalten von Controlleraktionen über Azure CDN](#controller)wird auch erläutert, wie Sie die Cache-Einstellungen für Controlleraktionsergebnisse im CDN-Cache konfigurieren können.
 
 <a name="controller"></a>
 ## Verarbeiten von Inhalten von Controlleraktionen über Azure CDN ##
 
-Wenn Sie eine Azure-Website in Azure CDN integrieren, ist es relativ einfach, Inhalte aus Controlleraktionen über das Azure CDN bereitzustellen. Wenn die gesamte Azure-Website über das CDN zur Verfügung gestellt werden soll, müssen Sie diesen Vorgang gar nicht durchführen, da alle Controlleraktionen bereits über das CDN erreichbar sind. Aber aus den bereits unter [Bereitstellen einer Azure-Website mit einem integrierten CDN-Endpunkt](#deploy) erwähnten Gründen entscheiden Sie sich jedoch möglicherweise dagegen und wählen stattdessen die Controlleraktion aus, die von Azure CDN bereitgestellt werden soll. [Maarten Balliauw](https://twitter.com/maartenballiauw) zeigt Ihnen unter [Reduzieren der Latenz im Web mit dem Windows Azure CDN](http://channel9.msdn.com/events/TechDays/Techdays-2014-the-Netherlands/Reducing-latency-on-the-web-with-the-Windows-Azure-CDN) mit einem lustigen MemeGenerator-Controller, wie Sie dabei vorgehen müssen. Ich werde den Controller hier einfach nur reproduzieren.
+Wenn Sie eine Azure-Web-App in Azure CDN integrieren, ist es relativ einfach, Inhalte aus Controlleraktionen über das Azure CDN bereitzustellen. Wenn die gesamte Azure-Web-App über das CDN zur Verfügung gestellt werden soll, müssen Sie diesen Vorgang gar nicht durchführen, da alle Controlleraktionen bereits über das CDN erreichbar sind. Aber aus den bereits unter [Bereitstellen einer Azure-Web-App mit einem integrierten CDN-Endpunkt](#deploy) erwähnten Gründen entscheiden Sie sich jedoch möglicherweise dagegen und wählen stattdessen die Controlleraktion aus, die von Azure CDN bereitgestellt werden soll. [Maarten Balliauw](https://twitter.com/maartenballiauw) zeigt Ihnen unter [Reduzieren der Latenz im Web mit dem Azure CDN](http://channel9.msdn.com/events/TechDays/Techdays-2014-the-Netherlands/Reducing-latency-on-the-web-with-the-Windows-Azure-CDN) mit einem lustigen MemeGenerator-Controller, wie Sie dabei vorgehen müssen. Ich werde den Controller hier einfach nur reproduzieren.
 
-Angenommen, Sie möchten in Ihrer Website Meme auf der Grundlage eines Bilds des jungen Chuck Norris generieren (Foto von [Alan Light](http://www.flickr.com/photos/alan-light/218493788/)), ungefähr so:
+Angenommen, Sie möchten in Ihrer Web-App Meme auf Grundlage eines Bilds des jungen Chuck Norris generieren (Foto von [Alan Light](http://www.flickr.com/photos/alan-light/218493788/)), ungefähr so:
 
 ![](media/cdn-cloud-service-with-cdn/cdn-5-memegenerator.PNG)
 
-Sie verfügen über eine einfache `Index`-Aktion, mit der die Kunden die Superlative im Bild angegeben können; anschließend wird das Mem generiert, sobald die Aktion gepostet wird. Da es sich um Chuck Norris handelt, können Sie davon ausgehen, dass diese Seite weltweit extrem beliebt wird. Dies ist ein gutes Beispiel für das Verarbeiten von halbdynamischem Inhalt mit Azure CDN. 
+Sie verfügen über eine einfache  `Index`-Aktion, mit der die Kunden die Superlative im Bild angegeben können. Anschließend wird das Mem generiert, sobald die Aktion gepostet wird. Da es sich um Chuck Norris handelt, können Sie davon ausgehen, dass diese Seite weltweit extrem beliebt wird. Dies ist ein gutes Beispiel für das Verarbeiten von halbdynamischem Inhalt mit Azure CDN. 
 
 Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichten:
 
-1. Erstellen Sie im Ordner *\Controllers* eine neue CS-Datei namens *MemeGeneratorController.cs*, und ersetzen Sie den Inhalt durch den folgenden Code. Achten Sie darauf, den markierten Teil durch Ihren Dateipfad und CDN-Namen zu ersetzen.
+1. Erstellen Sie im Ordner *\Controllers* eine neue CS-Datei namens  *MemeGeneratorController.cs*, und ersetzen Sie den Inhalt durch den folgenden Code. Achten Sie darauf, den markierten Teil durch Ihren Dateipfad und CDN-Namen zu ersetzen.
 	<pre class="prettyprint">
 	using System;
 	using System.Collections.Generic;
@@ -198,7 +187,7 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
 	{
 	    public class MemeGeneratorController : Controller
 	    {
-	        static readonly Dictionary<string, Tuple<string ,string>> Memes = new Dictionary<string, Tuple<string, string>>();
+	        static readonly Dictionary&lt;string, Tuple&lt;string ,string&gt;&gt; Memes = new Dictionary&lt;string, Tuple&lt;string, string&gt;&gt;();
 
 	        public ActionResult Index()
 	        {
@@ -211,17 +200,17 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
 	            var identifier = Guid.NewGuid().ToString();
 	            if (!Memes.ContainsKey(identifier))
 	            {
-	                Memes.Add(identifier, new Tuple<string, string>(top, bottom));
+	                Memes.Add(identifier, new Tuple&lt;string, string&gt;(top, bottom));
 	            }
 	
-	            return Content(&quot;<a href=\&quot;&quot; + Url.Action(&quot;Show&quot;, new {id = identifier}) + &quot;\&quot;>here&#39;s your meme</a>&quot;);
+	            return Content(&quot;&lt;a href=\&quot;&quot; + Url.Action(&quot;Show&quot;, new {id = identifier}) + &quot;\&quot;&gt;here&#39;s your meme&lt;/a&gt;&quot;);
 	        }
 
 
 	        [OutputCache(VaryByParam = &quot;*&quot;, Duration = 1, Location = OutputCacheLocation.Downstream)]
 	        public ActionResult Show(string id)
 	        {
-	            Tuple<string, string> data = null;
+	            Tuple&lt;string, string&gt; data = null;
 	            if (!Memes.TryGetValue(id, out data))
 	            {
 	                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
@@ -233,7 +222,7 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
 	            }
 	            else // Get content from Azure CDN
 	            {
-	                return Redirect(string.Format(&quot;http://<mark><yourCDNName></mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&bottom={1}&quot;, data.Item1, data.Item2));
+	                return Redirect(string.Format(&quot;http://<mark>&lt;yourCDNName&gt;</mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&amp;bottom={1}&quot;, data.Item1, data.Item2));
 	            }
 	        }
 
@@ -269,8 +258,8 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
 	                size = g.MeasureString(text, font);
 	
 	                // It fits, back out
-	                if (size.Height < i.Height &&
-	                     size.Width < i.Width) { return font; }
+	                if (size.Height &lt; i.Height &amp;&amp;
+	                     size.Width &lt; i.Width) { return font; }
 	
 	                // Try a smaller font (90% of old size)
 	                Font oldFont = font;
@@ -282,15 +271,15 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
 	}
 	</pre>
 
-2. Klicken Sie mit der rechten Maustaste auf die `Index()`-Standardaktion, und wählen Sie **Ansicht hinzufügen** aus.
+2. Klicken Sie mit der rechten Maustaste auf die Standardaktion  `Index()`, und wählen Sie **Ansicht hinzufügen**.
 
 	![](media/cdn-cloud-service-with-cdn/cdn-6-addview.PNG)
 
-3.  Akzeptieren Sie die folgenden Einstellungen, und klicken Sie auf **Hinzufügen**.
+3.  Übernehmen Sie die folgenden Einstellungen, und klicken Sie auf **Hinzufügen**.
 
 	![](media/cdn-cloud-service-with-cdn/cdn-7-configureview.PNG)
 
-4. Öffnen Sie die neue Datei *Views\MemeGenerator\Index.cshtml*, und ersetzen Sie den Inhalt durch den folgenden einfachen HTML-Code zum Übermitteln der Superlative:
+4. Öffnen Sie die neue Datei  *Views\MemeGenerator\Index.cshtml*, und ersetzen Sie den Inhalt durch den folgenden einfachen HTML-Code zum Übermitteln der Superlative:
 
 		<h2>Meme Generator</h2>
 		
@@ -302,14 +291,14 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
 		    <input class="btn" type="submit" value="Generate meme" />
 		</form>
 
-5. Veröffentlichen Sie erneut an die Azure-Website, und navigieren Sie in Ihrem Browser zu **http://*<serviceName>*.cloudapp.net/MemeGenerator/Index**. 
+5. Veröffentlichen Sie die Azure-Web-App erneut, und navigieren Sie in Ihrem Browser zu **http://*&lt;Dienstname>*.cloudapp.net/MemeGenerator/Index**. 
 
-Wenn Sie die Formularwerte `/MemeGenerator/Index` senden, gibt die Aktionsmethode `Index_Post` einen Link an die Aktionsmethode `Show` mit der entsprechenden Eingabe-ID zurück. Wenn Sie auf den Link klicken, erhalten Sie den folgenden Code:  
+Wenn Sie die Formularwerte an  `/MemeGenerator/Index` übermitteln, gibt die  `Index_Post`-Aktionsmethode einen Link zur  `Show`-Aktionsmethode mit der betreffenden Eingabe-ID zurück. Wenn Sie auf den Link klicken, erhalten Sie den folgenden Code:  
 <pre class="prettyprint">
 [OutputCache(VaryByParam = &quot;*&quot;, Duration = 1, Location = OutputCacheLocation.Downstream)]
 public ActionResult Show(string id)
 {
-    Tuple<string, string> data = null;
+    Tuple&lt;string, string&gt; data = null;
     if (!Memes.TryGetValue(id, out data))
     {
         return new HttpStatusCodeResult(HttpStatusCode.NotFound);
@@ -321,12 +310,12 @@ public ActionResult Show(string id)
     }
     else // Get content from Azure CDN
     {
-        return Redirect(string.Format(&quot;http://<mark><yourCDNName></mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&bottom={1}&quot;, data.Item1, data.Item2));
+        return Redirect(string.Format(&quot;http://<mark>&lt;yourCDNName&gt;</mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&amp;bottom={1}&quot;, data.Item1, data.Item2));
     }
 }
 </pre>
 
-Wenn Ihr lokaler Debugger angefügt ist, erhalten Sie den standardmäßigen Debugvorgang mit einer lokalen Umleitung. Bei Ausführung in der Azure-Website wird zu folgendem Ziel umgeleitet:
+Wenn Ihr lokaler Debugger angefügt ist, erhalten Sie den standardmäßigen Debugvorgang mit einer lokalen Umleitung. Bei Ausführung in der Azure-Web-App erfolgt eine Umleitung zu folgendem Ziel:
 
 	http://<yourCDNName>.vo.msecnd.net/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
 
@@ -334,22 +323,22 @@ Dies entspricht der folgenden Ursprungs-URL am CDN-Endpunkt:
 
 	http://<yourSiteName>.azurewebsites.net/cdn/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
 
-Mit der zuvor angewendeten URL Rewrite-Regel wird die folgende Datei im CDN-Endpunkt zwischengespeichert:
+Mit der zuvor angewendeten URL-Neuschreibungsregel wird die folgende Datei im CDN-Endpunkt zwischengespeichert:
 
 	http://<yourSiteName>.azurewebsites.net/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
 
-Anschließend können Sie mit dem Attribut `OutputCacheAttribute` für die Methode `Generate` angeben, wie das Aktionsergebnis zwischengespeichert werden soll; dies wird von Azure CDN berücksichtigt. Mit dem folgenden Code wird ein Cacheablauf von einer Stunde (3.600 Sekunden) angegeben.
+Anschließend können Sie mit dem  `OutputCacheAttribute`-Attribut für die  `Generate`-Methode angeben, wie das Aktionsergebnis zwischengespeichert werden soll. Dies wird von Azure CDN berücksichtigt. Mit dem folgenden Code wird ein Cacheablauf von einer Stunde (3.600 Sekunden) angegeben.
 
     [OutputCache(VaryByParam = "*", Duration = 3600, Location = OutputCacheLocation.Downstream)]
 
-Entsprechend können Sie Inhalt von jeder beliebigen Controlleraktion über Azure CDN in Ihrer Azure-Website verarbeiten, indem Sie die gewünschte Cacheoption verwenden.
+Entsprechend können Sie Inhalt aus jeder beliebigen Controlleraktion über Azure CDN in Ihrer Azure-Web-App verarbeiten, indem Sie die gewünschte Cacheoption verwenden.
 
 Im nächsten Abschnitt erfahren Sie, wie Sie die gebündelten und minimierten Skripts und CSS über Azure CDN verarbeiten. 
 
 <a name="bundling"></a>
 ## Integrieren von ASP.NET-Bündelung und -Minimierung in Azure CDN ##
 
-Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kandidaten für den Azure CDN-Cache. Die Verarbeitung der gesamten Website über Azure CDN ist die einfachste Möglichkeit, Bündelung und Minimierung in Azure CDN zu integrieren. Da Sie sich jedoch möglicherweise aus den unter [Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Website und Verarbeiten von statischem Inhalt in Webseiten über Azure CDN](#deploy) beschriebenen Gründen gegen diesen Ansatz entscheiden, zeige ich Ihnen, wie Sie die Integration unter Wahrung der gewünschten Entwicklerumgebung von ASP.NET-Bündelung und -Minimierung durchführen können, die Ihnen z. B. Folgendes bietet:
+Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kandidaten für den Azure CDN-Cache. Die Verarbeitung der gesamten Web-App über Azure CDN ist die einfachste Möglichkeit, Bündelung und Minimierung in Azure CDN zu integrieren. Da Sie sich jedoch möglicherweise aus den unter [Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Web-App und Bereitstellen von statischem Inhalt in Webseiten über Azure CDN](#deploy) beschriebenen Gründen gegen diesen Ansatz entscheiden, zeige ich Ihnen, wie Sie die Integration unter Wahrung der gewünschten Entwicklerumgebung von ASP.NET-Bündelung und -Minimierung durchführen können, die Ihnen z. B. Folgendes bietet:
 
 -	Hervorragende Benutzerfreundlichkeit des Debugmodus
 -	Vereinfachte Bereitstellung
@@ -357,7 +346,7 @@ Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kand
 -	Fallbackmechanismus bei einem Fehler des CDN-Endpunkts
 -	Minimale Codeänderung
 
-Öffnen Sie im ASP.NET-Projekt, das Sie in [Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Website und Verarbeiten von statischem Inhalt in Webseiten über Azure CDN](#deploy) erstellt haben, *App_Start\BundleConfig.cs*, und werfen Sie einen Blick auf die Methodenaufrufe `bundles.Add()`.
+Öffnen Sie im ASP.NET-Projekt, das Sie in [Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Web-App und Bereitstellen von statischem Inhalt in Webseiten über Azure CDN](#deploy)) erstellt haben,  *App_Start\BundleConfig.cs*, und werfen Sie einen Blick auf die Aufrufe der  `bundles.Add()`-Methode.
 
     public static void RegisterBundles(BundleCollection bundles)
     {
@@ -366,11 +355,11 @@ Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kand
 		...
     }
 
-Mit der ersten `bundles.Add()`-Anweisung wird ein Skriptbündel im virtuellen Verzeichnis `~/bundles/jquery` hinzugefügt. Öffnen Sie anschließend die Datei *Views\Shared_Layout.cshtml*, um sich anzusehen, wie das Skriptbündel-Tag gerendert wird. Sie sollten die folgende Zeile mit Razor-Code finden:
+Die erste  `bundles.Add()`-Anweisung fügt dem virtuellen Verzeichnis `~/bundles/jquery` ein Skriptbündel hinzu. Öffnen Sie anschließend die Datei  *Views\Shared\_Layout.cshtml*, um sich anzusehen, wie das Skriptbündel-Tag gerendert wird. Sie sollten die folgende Zeile mit Razor-Code finden:
 
     @Scripts.Render("~/bundles/jquery")
 
-Wenn dieser Razor-Code in der Azure-Website ausgeführt wird, rendert er ein `<script>`-Tag für das Skriptbündel ähnlich dem folgenden: 
+Wenn dieser Razor-Code in der Azure-Web-App ausgeführt wird, rendert er ein `<script>`-Tag für das Skriptbündel ähnlich dem folgenden: 
 
     <script src="/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
 
@@ -382,14 +371,14 @@ So können Sie den JavaScript-Code in Ihrer Entwicklungsumgebung debuggen und in
 
 Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung in Ihren CDN-Endpunkt zu integrieren.
 
-1. Ändern Sie in der Datei *App_Start\BundleConfig.cs* die `bundles.Add()`-Methoden so, dass sie einen anderen [Bundle-Konstruktor](http://msdn.microsoft.com/library/jj646464.aspx) verwenden, und zwar einen, der eine CDN-Adresse angibt. Ersetzen Sie hierzu die `RegisterBundles`-Methodendefinition durch den folgenden Code:  
+1. Ändern Sie in der Datei  *App_Start\BundleConfig.cs* die  `bundles.Add()`-Methoden so, dass sie einen anderen ["Bundle"-Konstruktor](http://msdn.microsoft.com/library/jj646464.aspx) verwenden, und zwar einen, der eine CDN-Adresse angibt. Ersetzen Sie hierzu die  `RegisterBundles`-Methodendefinition durch den folgenden Code:  
 	<pre class="prettyprint">
 	public static void RegisterBundles(BundleCollection bundles)
 	{
 	    <mark>bundles.UseCdn = true;
 	    var version = System.Reflection.Assembly.GetAssembly(typeof(Controllers.HomeController))
 	        .GetName().Version.ToString();
-	    var cdnUrl = &quot;http://<yourCDNName>.vo.msecnd.net/{0}?v=&quot; + version;</mark>
+	    var cdnUrl = &quot;http://&lt;yourCDNName&gt;.vo.msecnd.net/{0}?v=&quot; + version;</mark>
 	
 	    bundles.Add(new ScriptBundle(&quot;~/bundles/jquery&quot;<mark>, string.Format(cdnUrl, &quot;bundles/jquery&quot;)</mark>).Include(
 	                &quot;~/Scripts/jquery-{version}.js&quot;));
@@ -414,7 +403,7 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 
 	Denken Sie daran, `<yourCDNName>` durch den Namen Ihres Azure CDN zu ersetzen.
 
-	Einfach gesagt, Sie legen `bundles.UseCdn = true` fest und haben jedem Bündel eine sorgfältig gebildete CDN-URL hinzugefügt. Beispielsweise ist der erste Konstruktor im Code:
+	Einfach gesagt, Sie legen  `bundles.UseCdn = true` fest und haben jedem Bündel eine sorgfältig gebildete CDN-URL hinzugefügt. Beispielsweise ist der erste Konstruktor im Code:
 
 		new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "bundles/jquery"))
 
@@ -422,11 +411,11 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 
 		new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "http://<yourCDNName>.vo.msecnd.net/bundles/jquery?v=<W.X.Y.Z>"))
 
-		Dieser Konstruktor weist die ASP.NET-Bündelung und -Minimierung an, beim lokalen Debuggen einzelne Skriptdateien zu rendern, aber mit der angegebenen CDN-Adresse auf das betreffende Skript zuzugreifen. Beachten Sie bei dieser sorgfältig gebildeten CDN-URL jedoch zwei wichtige Merkmale:
+	Dieser Konstruktor weist die ASP.NET-Bündelung und -Minimierung an, beim lokalen Debuggen einzelne Skriptdateien zu rendern, aber mit der angegebenen CDN-Adresse auf das betreffende Skript zuzugreifen. Beachten Sie bei dieser sorgfältig gebildeten CDN-URL jedoch zwei wichtige Merkmale:
 	
-	-	Der Ursprung für diese CDN-URL ist `http://<yourSiteName>.azurewebsites.net/bundles/jquery?v=<W.X.Y.Z>`, was tatsächlich das virtuelle Verzeichnis des Skriptbündels in Ihrer Webanwendung ist.
+	-	Der Ursprung dieser CDN-URL ist  `http://<yourSiteName>.azurewebsites.net/bundles/jquery?v=<W.X.Y.Z>`. Hierbei handelt es sich um das virtuelle Verzeichnis des Skriptbündels in Ihrer Webanwendung.
 	-	Da Sie einen CDN-Konstruktor verwenden, enthält das CDN-Skripttag für das Bündel nicht länger die automatisch generierte Versionszeichenfolge in der gerenderten URL. Sie müssen bei jeder Änderung des Skriptbündels manuell eine eindeutige Versionszeichenfolge generieren, um einen Cachefehler im Azure CDN zu erzwingen. Gleichzeitig muss diese eindeutige Versionszeichenfolge während der gesamten Lebensdauer der Bereitstellung konstant bleiben, um Cachetreffer im Azure CDN zu minimieren, nachdem das Bündel bereitgestellt wurde.
-	-	Die Abfragezeichenfolge v=<W.X.Y.Z> überträgt mithilfe von Pull aus *Properties\AssemblyInfo.cs* in Ihrem ASP.NET-Projekt. Sie können den Bereitstellungsworkflow so konfigurieren, dass die Assemblyversion bei jeder Veröffentlichung in Azure schrittweise erhöht wird. Alternativ können Sie einfach *Properties\AssemblyInfo.cs* in Ihrem Projekt so ändern, dass die Versionszeichenfolge bei jeder Erstellung automatisch schrittweise erhöht wird, indem Sie das Platzhalterzeichen "*" verwenden. Beispiel:
+	-	Die Abfragezeichenfolge v=<W.X.Y.Z> ruft Daten aus  *Properties\AssemblyInfo.cs* in Ihr ASP.NET-Projekt ab. Sie können den Bereitstellungsworkflow so konfigurieren, dass die Assemblyversion bei jeder Veröffentlichung in Azure schrittweise erhöht wird. Alternativ können Sie einfach  *Properties\AssemblyInfo.cs* in Ihrem Projekt so ändern, dass die Versionszeichenfolge bei jeder Erstellung automatisch schrittweise erhöht wird, indem Sie das Platzhalterzeichen "*" verwenden. Beispiel:
 	
 			[assembly: AssemblyVersion("1.0.0.*")]
 	
@@ -434,39 +423,39 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 
 3. Veröffentlichen Sie die ASP.NET-Anwendung erneut, und greifen Sie auf die Startseite zu.
  
-4. Zeigen Sie den HTML-Code für die Seite an. Die CDN-URL sollte bei jeder erneuten Veröffentlichung von Änderungen an Ihrer Azure-Website mit einer eindeutigen Versionszeichenfolge gerendert angezeigt werden. Beispiel:  
+4. Zeigen Sie den HTML-Code für die Seite an. Die CDN-URL sollte bei jeder erneuten Veröffentlichung von Änderungen an Ihrer Azure-Web-App mit einer eindeutigen Versionszeichenfolge gerendert angezeigt werden. Beispiel:  
 	<pre class="prettyprint">
 	...
 
-    <link href=&quot;http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25449&quot; rel=&quot;stylesheet&quot;/>
+    &lt;link href=&quot;http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25449&quot; rel=&quot;stylesheet&quot;/&gt;
 
-    <script src=&quot;http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25449&quot;>&lt;/script>
+    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25449&quot;&gt;&lt;/script&gt;
 
 	...
 
-    <script src=&quot;http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25449&quot;></script>
+    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25449&quot;&gt;&lt;/script&gt;
 
-    <script src=&quot;http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25449&quot;></script>
+    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25449&quot;&gt;&lt;/script&gt;
 
 	...</pre>
 
-5. Debuggen Sie die ASP.NET-Anwendung in Visual Studio durch Drücken von `F5`., 
+5. Debuggen Sie die ASP.NET-Anwendung in Visual Studio durch Drücken von `F5`. 
 
 6. Zeigen Sie den HTML-Code für die Seite an. Jede Skriptdatei wird einzeln gerendert dargestellt, sodass Sie einen konsistenten Debugvorgang in Visual Studio erhalten.  
 	<pre class="prettyprint">
 	...
 	
-	    <link href=&quot;/Content/bootstrap.css&quot; rel=&quot;stylesheet&quot;/>
-	<link href=&quot;/Content/site.css&quot; rel=&quot;stylesheet&quot;/>
+	    &lt;link href=&quot;/Content/bootstrap.css&quot; rel=&quot;stylesheet&quot;/&gt;
+	&lt;link href=&quot;/Content/site.css&quot; rel=&quot;stylesheet&quot;/&gt;
 	
-	    <script src=&quot;/Scripts/modernizr-2.6.2.js&quot;></script>
+	    &lt;script src=&quot;/Scripts/modernizr-2.6.2.js&quot;&gt;&lt;/script&gt;
 	
 	...
 	
-	    <script src=&quot;/Scripts/jquery-1.10.2.js&quot;></script>
+	    &lt;script src=&quot;/Scripts/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;
 	
-	    <script src=&quot;/Scripts/bootstrap.js&quot;></script>
-	<script src=&quot;/Scripts/respond.js&quot;></script>
+	    &lt;script src=&quot;/Scripts/bootstrap.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;/Scripts/respond.js&quot;&gt;&lt;/script&gt;
 	
 	...    
 	</pre>
@@ -474,11 +463,11 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 <a name="fallback"></a>
 ## Fallbackmechanismus für CDN-URLs ##
 
-Bei einem Fehler des Azure CDN-Endpunkts (gleich welcher Ursache) soll Ihre Webseite so intelligent sein, dass sie als Fallbackoption zum Laden von JavaScript oder Bootstrap auf den ursprünglichen Webserver zugreift. Wenn aufgrund von CDN-Nichtverfügbarkeit Bilder auf der Website verloren gehen, ist dies eine Sache, wesentliche Seitenfunktionen zu verlieren, die durch Skripts und Stylesheets zur Verfügung gestellt werden, ist jedoch eine andere Sache.
+Bei einem Fehler des Azure CDN-Endpunkts (gleich welcher Ursache) soll Ihre Webseite so intelligent sein, dass sie als Fallbackoption zum Laden von JavaScript oder Bootstrap auf den ursprünglichen Webserver zugreift. Wenn aufgrund der Nichterreichbarkeit des CDN Bilder für die Web-App verloren gehen, ist dies eine Sache, wesentliche Seitenfunktionen zu verlieren, die durch Skripts und Stylesheets zur Verfügung gestellt werden, ist jedoch eine andere Sache.
 
 Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.aspx)-Klasse enthält eine Eigenschaft namens [CdnFallbackExpression](http://msdn.microsoft.com/library/system.web.optimization.bundle.cdnfallbackexpression.aspx), mit der Sie den Fallbackmechanismus für CDN-Fehler konfigurieren können. Zur Verwendung dieser Eigenschaft führen Sie die folgenden Schritte aus:
 
-1. 	Öffnen Sie in Ihrem ASP.NET-Projekt die Datei *App_Start\BundleConfig.cs*, in der Sie jedem [Bundle-Konstruktor](http://msdn.microsoft.com/library/jj646464.aspx) eine CDN-URL hinzugefügt haben, und nehmen Sie die folgenden hervorgehobenen Änderungen vor, um den Standardbündeln einen Fallbackmechanismus hinzuzufügen:  
+1. Öffnen Sie in Ihrem ASP.NET-Projekt die Datei  *App_Start\BundleConfig.cs*, in der Sie jedem ["Bundle"-Konstruktor](http://msdn.microsoft.com/library/jj646464.aspx) eine CDN-URL hinzugefügt haben, und nehmen Sie die folgenden hervorgehobenen Änderungen vor, um den Standardbündeln einen Fallbackmechanismus hinzuzufügen:  
 	<pre class="prettyprint">
 	public static void RegisterBundles(BundleCollection bundles)
 	{
@@ -512,22 +501,22 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 	                &quot;~/Content/site.css&quot;));
 	}</pre>
 
-	Wenn `CdnFallbackExpression` nicht null ist, wird ein Skript in den HTML-Code eingefügt, um zu testen, ob das Bündel erfolgreich geladen wurde, und bei Bedarf direkt vom ursprünglichen Webserver aus auf das Bündel zuzugreifen. Diese Eigenschaft muss auf einen JavaScript-Ausdruck festgelegt werden, der testet, ob das entsprechende CDN-Bündel ordnungsgemäß geladen wurde. Welcher Ausdruck zum Testen der einzelnen Bündel erforderlich ist, hängt von deren Inhalt ab. Für die vorstehenden Standardbündel gilt:
+	Wenn  `CdnFallbackExpression` nicht NULL ist, wird ein Skript in den HTML-Code eingefügt, um zu testen, ob das Bündel erfolgreich geladen wurde, und bei Bedarf direkt vom ursprünglichen Webserver aus auf das Bündel zuzugreifen. Diese Eigenschaft muss auf einen JavaScript-Ausdruck festgelegt werden, der testet, ob das entsprechende CDN-Bündel ordnungsgemäß geladen wurde. Welcher Ausdruck zum Testen der einzelnen Bündel erforderlich ist, hängt von deren Inhalt ab. Für die vorstehenden Standardbündel gilt:
 	
-	-	`window.jquery` ist in jquery-{version}.js definiert
-	-	`$.validator` ist in jquery.validate.js definiert
-	-	`window.Modernizr` ist in modernizer-{version}.js definiert
-	-	`$.fn.modal` ist in in bootstrap.js definiert.
+	-	`window.jquery` ist in "jquery-{version}.js" definiert
+	-	`$.validator` ist in "jquery.validate.js" definiert
+	-	`window.Modernizr` ist in "modernizer-{version}.js" definiert
+	-	`$.fn.modal` ist in "bootstrap.js" definiert
 	
-	Sie haben vielleicht bemerkt, dass ich CdnFallbackExpression für das `~/Cointent/css`-Bündel nicht festgelegt habe. Der Grund ist, dass derzeit ein [Fehler in System.Web.Optimization](https://aspnetoptimization.codeplex.com/workitem/104) besteht, der ein `<script>`-Tag für das Fallback-CSS anstelle des erwarteten `<link>`-Tags einfügt.
+	Sie haben vielleicht bemerkt, dass ich "CdnFallbackExpression" für das `~/Cointent/css`-Bündel nicht festgelegt habe. Dies liegt daran, dass es zurzeit einen [Bug in "System.Web.Optimization"](https://aspnetoptimization.codeplex.com/workitem/104) gibt, durch den anstelle des erwarteten `<script>`-Tags für das Fallback-CSS ein `<link>`-Tag eingefügt wird.
 	
-	Es wird jedoch ein gutes [Style Bundle Fallback](https://github.com/EmberConsultingGroup/StyleBundleFallback) von der [Ember Consulting Group](https://github.com/EmberConsultingGroup) angeboten. 
+	Es wird jedoch ein gutes [Style Bundle Fallback](https://github.com/EmberConsultingGroup/StyleBundleFallback) von [Ember Consulting Group](https://github.com/EmberConsultingGroup) angeboten. 
 
-2. Um die Problemumgehung zu verwenden, erstellen Sie im Ordner *App_Start* Ihres ASP.NET-Projekts eine neue CS-Datei namens *StyleBundleExtensions.cs*, und ersetzen Sie deren Inhalt durch den [Code von GitHub](https://github.com/EmberConsultingGroup/StyleBundleFallback/blob/master/Website/App_Start/StyleBundleExtensions.cs). 
+2. Um die Problemumgehung für CSS zu verwenden, erstellen Sie im Ordner  *App_Start* Ihres ASP.NET-Projekts eine neue CS-Datei namens  *StyleBundleExtensions.cs*, und ersetzen Sie deren Inhalt durch den [Code von GitHub](https://github.com/EmberConsultingGroup/StyleBundleFallback/blob/master/Website/App_Start/StyleBundleExtensions.cs). 
 
-4. Benennen Sie in *App_Start\StyleFundleExtensions.cs* den Namespace in den Namespace Ihrer ASP.NET-Anwendung um (z. B. **cdnwebapp**). 
+4. Benennen Sie in  *App_Start\StyleFundleExtensions.cs* den Namespace in den Namespace Ihrer ASP.NET-Anwendung um (z. B. **cdnwebapp**). 
 
-3. Wechseln Sie zurück zu `App_Start\BundleConfig.cs`, und ändern Sie die letzte `bundles.Add`-Anweisung mit dem hervorgehobenen Code:  
+3. Wechseln Sie zurück zu  `App_Start\BundleConfig.cs`, und ändern Sie die letzte  `bundles.Add`-Anweisung mit dem folgenden hervorgehobenen Code:  
 	<pre class="prettyprint">
 	bundles.Add(new StyleBundle("~/Content/css", string.Format(cdnUrl, "Content/css"))
 	    <mark>.IncludeFallback("~/Content/css", "sr-only", "width", "1px")</mark>
@@ -538,15 +527,15 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 
 	Diese neue Erweiterungsmethode fügt ebenfalls ein Skript in den HTML-Code ein, um im DOM nach einem Klassennamen, einem Regelnamen und einem Regelwert zu suchen, die mit den im CSS-Bündel definierten Namen/Werten übereinstimmen; wird keine Übereinstimmung gefunden, erfolgt ein Fallback zum ursprünglichen Webserver.
 
-4. Veröffentlichen Sie Ihre Azure-Website erneut, und greifen Sie auf die Startseite zu. 
+4. Veröffentlichen Sie Ihre Azure-Web-App erneut, und greifen Sie auf die Startseite zu. 
 5. Zeigen Sie den HTML-Code für die Seite an. Es sollten eingefügte Skripts ähnlich den folgenden zu sehen sein:    
 	<pre class="prettyprint">...
 	
-		<link href=&quot;http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474&quot; rel=&quot;stylesheet&quot;/>
-	<mark><script>(function() {
+		&lt;link href=&quot;http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474&quot; rel=&quot;stylesheet&quot;/&gt;
+	<mark>&lt;script&gt;(function() {
 	                var loadFallback,
 	                    len = document.styleSheets.length;
-	                for (var i = 0; i < len; i++) {
+	                for (var i = 0; i &lt; len; i++) {
 	                    var sheet = document.styleSheets[i];
 	                    if (sheet.href.indexOf(&#39;http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474&#39;) !== -1) {
 	                        var meta = document.createElement(&#39;meta&#39;);
@@ -555,44 +544,48 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 	                        var value = window.getComputedStyle(meta).getPropertyValue(&#39;width&#39;);
 	                        document.head.removeChild(meta);
 	                        if (value !== &#39;1px&#39;) {
-	                            document.write(&#39;<link href=&quot;/Content/css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; />&#39;);
+	                            document.write(&#39;&lt;link href=&quot;/Content/css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;&#39;);
 	                        }
 	                    }
 	                }
 	                return true;
-	            }())||document.write(&#39;<script src=&quot;/Content/css&quot;><\/script>&#39;);</script></mark>
+	            }())||document.write(&#39;&lt;script src=&quot;/Content/css&quot;&gt;&lt;\/script&gt;&#39;);&lt;/script&gt;</mark>
 	
-	    <script src=&quot;http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25474&quot;></script>
-	<mark><script>(window.Modernizr)||document.write(&#39;<script src=&quot;/bundles/modernizr&quot;><\/script>&#39;);</script></mark>
+	    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25474&quot;&gt;&lt;/script&gt;
+	<mark>&lt;script&gt;(window.Modernizr)||document.write(&#39;&lt;script src=&quot;/bundles/modernizr&quot;&gt;&lt;\/script&gt;&#39;);&lt;/script&gt;</mark>
 	
 	...	
 	
-	    <script src=&quot;http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25474&quot;></script>
-	<mark><script>(window.jquery)||document.write(&#39;<script src=&quot;/bundles/jquery&quot;><\/script>&#39;);</script></mark>
+	    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25474&quot;&gt;&lt;/script&gt;
+	<mark>&lt;script&gt;(window.jquery)||document.write(&#39;&lt;script src=&quot;/bundles/jquery&quot;&gt;&lt;\/script&gt;&#39;);&lt;/script&gt;</mark>
 	
-	    <script src=&quot;http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25474&quot;></script>
-	<mark><script>($.fn.modal)||document.write(&#39;<script src=&quot;/bundles/bootstrap&quot;><\/script>&#39;);</script></mark>
+	    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25474&quot;&gt;&lt;/script&gt;
+	<mark>&lt;script&gt;($.fn.modal)||document.write(&#39;&lt;script src=&quot;/bundles/bootstrap&quot;&gt;&lt;\/script&gt;&#39;);&lt;/script&gt;</mark>
 	
 	...
 	</pre>
 
-	Beachten Sie, dass das eingefügte Skript für das CSS-Bündel immer noch den fehlgeleiteten Rest aus der `CdnFallbackExpression`-Eigenschaft in der folgenden Zeile enthält:
+	Beachten Sie, dass das eingefügte Skript für das CSS-Bündel immer noch den fehlgeleiteten Rest aus der  `CdnFallbackExpression`-Eigenschaft in der folgenden Zeile enthält:
 
         }())||document.write('<script src="/Content/css"><\/script>');</script>
 
 	Da jedoch der erste Teil des ||-Ausdrucks immer "true" zurückgibt (in der Zeile unmittelbar darüber), wird die document.write()-Funktion niemals ausgeführt.
 
-6. Um zu testen, ob das Fallback-Skript funktioniert, gehen Sie zurück zum Dashboard Ihres CDN-Endpunkts, und klicken Sie auf **Endpunkt deaktivieren**.
+6. Um zu testen, ob das Fallbackskript funktioniert, gehen Sie zurück zum Dashboard Ihres CDN-Endpunkts, und klicken Sie auf **Endpunkt deaktivieren**.
 
 	![](media/cdn-websites-with-cdn/13-test-fallback.png)
 
-7. Aktualisieren Sie Ihr Browserfenster für die Azure-Website. Jetzt sollte angezeigt werden, dass alle Skripts und Stylesheets ordnungsgemäß geladen sind.
+7. Aktualisieren Sie Ihr Browserfenster für die Azure-Web-App. Jetzt sollte angezeigt werden, dass alle Skripts und Stylesheets ordnungsgemäß geladen sind.
 
 # Weitere Informationen #
 - [Übersicht über das Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/library/azure/ff919703.aspx)
-- [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung](http://azure.microsoft.com/Documentation/Articles/cdn-serve-content-from-cdn-in-your-web-application/)
-- [Integrieren eines Cloud-Diensts in Azure CDN](http://azure.microsoft.com/documentation/articles/cdn-cloud-service-with-cdn/)
+- [Bereitstellen von Inhalt aus Azure CDN in einer Webanwendung](cdn-serve-content-from-cdn-in-your-web-application.md)
+- [Integrieren eines Cloud-Diensts in Azure CDN](cdn-cloud-service-with-cdn.md)
 - [ASP.NET-Bündelung und -Minimierung](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
-- [Verwenden von CDN für Azure](http://azure.microsoft.com/documentation/articles/cdn-how-to-use/)
+- [Verwenden von CDN für Azure](cdn-how-to-use.md)
 
-<!--HONumber=46--> 
+## Was sich geändert hat
+* Informationen über die Änderung von Websites zu App Service finden Sie unter: [Azure App Service und seine Auswirkungen auf vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Informationen über die Änderung vom alten Portal zum neuen Portal finden Sie unter: [Referenz zur Navigation im Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
+
+<!--HONumber=49-->

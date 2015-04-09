@@ -16,7 +16,7 @@
 	ms.date="2/13/2015" 
 	ms.author="stbaro"/>
 
-# Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer  #
+# Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer #
 
 Dieser Artikel bietet eine Übersicht zum [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/)-Dokument-Explorer, einem Azure-Vorschauportaltool zum Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mit DocumentDB. 
 
@@ -26,7 +26,7 @@ Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten
 -	Wie kann ich die Systemeigenschaften eines DocumentDB-Dokuments über einen Webbrowser anzeigen?
 -	Wie kann ich eine Sammelerfassung von Dokumenten in DocumentDB über einen Webbrowser durchführen?
 
-## <a id="Launch"></a>Starten und Navigieren vom Dokument-Explorer##
+##<a id="Launch"></a>Starten von und Navigieren in Dokument-Explorer##
 
 Dokument-Explorer kann über jedes Blatt von DocumentDB-Konto, -Datenbank und -Auflistung gestartet werden.  
 
@@ -53,14 +53,14 @@ Dokument-Explorer kann über jedes Blatt von DocumentDB-Konto, -Datenbank und -A
 	![Screenshot of Document Explorer with filtered results](./media/documentdb-view-JSON-document-explorer/documentexplorerfilterresults.png)
 
 
-	> [AZURE.IMPORTANT] Die Filterfunktion von Dokument-Explorer filtert nur aus einem ***currently*** geladenen Dokumentenset und führt keine Abfragen für die aktuell ausgewählte Sammlung aus.
+	> [AZURE.IMPORTANT] Die Filterfunktion von Dokument-Explorer filtert nur aus dem ***aktuell*** geladenen Satz an Dokumenten und führt keine Abfragen für die aktuell ausgewählte Sammlung aus.
 
 6. Zum Aktualisieren der von Dokument-Explorer geladenen Dokumentenliste klicken Sie einfach auf den Begehl **Aktualisieren** im oberen Bereich des Blatts.
 
 	![Screenshot of Document Explorer refresh command](./media/documentdb-view-JSON-document-explorer/documentexplorerrefresh.png)
 
 
-## <a id="Create"></a>Anzeigen, Erstellen und Bearbeiten von Dokumenten mit Dokument-Explorer##
+##<a id="Create"></a>Anzeigen, Erstellen und Bearbeiten von Dokumenten mit Dokument-Explorer##
 
 Mit Dokument-Explorer können Sie problemlos Dokumente erstellen, bearbeiten und löschen.  
 
@@ -100,7 +100,7 @@ Mit Dokument-Explorer können Sie problemlos Dokumente erstellen, bearbeiten und
 
 	> [AZURE.NOTE] Die Zeitstempeleigenschaft (_ts) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
 
-## <a id="BulkAdd"></a>Massenhinzufügung von Dokumenten mit Dokument-Explorer##
+##<a id="BulkAdd"></a>Massenhinzufügung von Dokumenten mit Dokument-Explorer##
 
 Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokumenten.  
 
@@ -120,8 +120,8 @@ Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokument
 
 4. Sobald der Vorgang abgeschlossen ist, können Sie bis zu 100 weitere Dokumente auswählen, die Sie hochladen möchten.
 
-## <a name="NextSteps"></a>Nächste Schritte
+##<a name="NextSteps"></a>Nächste Schritte
 
 Weitere Informationen zu DocumentDB finden Sie [hier](http://azure.com/docdb).
 
-<!--HONumber=47-->
+<!--HONumber=49-->

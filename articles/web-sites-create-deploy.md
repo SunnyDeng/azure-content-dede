@@ -1,72 +1,72 @@
-<properties 
-	pageTitle="Erstellen von Websites - Azure-Dienstverwaltung" 
-	description="Erfahren Sie, wie Sie eine Website über das Azure-Verwaltungsportal erstellen." 
-	services="web-sites" 
-	documentationCenter="" 
-	authors="cephalin" 
-	manager="wpickett" 
+﻿<properties
+	pageTitle="Erstellen einer Web-App - Azure-Dienstverwaltung"
+	description="Erfahren Sie, wie Sie im Azure-Portal eine Web-App erstellen."
+	services="app-service\web"
+	documentationCenter=""
+	authors="cephalin"
+	manager="wpickett"
 	editor=""/>
 
-<tags 
-	ms.service="web-sites" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/24/2014" 
+<tags
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="03/24/2015"
 	ms.author="cephalin"/>
 
-#Erstellen einer Website
+#Erstellen einer Web-App
 
-In diesem Thema wird das Erstellen einer Website aus der Galerie oder über das Verwaltungsportal erläutert.
+In diesem Thema wird das Erstellen einer Web-App aus der Galerie oder über das Azure-Portal erläutert.
 
-Informationen zum Bereitstellen Ihres Inhalts für eine von Ihnen erstellte Azure-Website finden Sie im Abschnitt **Bereitstellen** unter [Azure Web Sites](/de-de/documentation/services/web-sites/).
+Informationen zum Bereitstellen Ihres Inhalts für eine von Ihnen erstellte Web-App finden Sie im Abschnitt **Bereitstellen** unter [Azure-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-## Inhaltsverzeichnis ##
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-- [Vorgehensweise: Erstellen einer Website über das Verwaltungsportal](#createawebsiteportal)
-- [Vorgehensweise: Erstellen einer Website aus der Galerie](#howtocreatefromgallery)
-- [Vorgehensweise: Löschen einer Website](#deleteawebsite)
-- [Nächste Schritte](#nextsteps)
+##<a name="createawebsiteportal"></a>Gewusst wie: Erstellen einer Web-App mithilfe des Azure-Portals
 
-##<a name="createawebsiteportal"></a>Vorgehensweise: Erstellen einer Website über das Verwaltungsportal
+Führen Sie diese Schritte aus, um eine Web-App in Azure zu erstellen.
 
-Führen Sie diese Schritte aus, um eine Website in Azure zu erstellen.
-	
-1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) an.
 
-2. Klicken Sie auf das Symbol **Neu erstellen** unten links im Verwaltungsportal.
+2. Klicken Sie unten links im Azure-Portal auf das Symbol **Neu**.
 
-3. Klicken Sie auf das Symbol **Website** und dann auf das Symbol **Schnellerfassung**, geben Sie einen Wert für die URL ein, und klicken Sie dann auf das Häkchen neben **Website erstellen** rechts unten auf der Seite.
+3. Klicken Sie auf das Symbol **Web + Mobile** und auf das Symbol **Web-App**, und geben Sie einen Wert für die URL ein. Klicken Sie dann unten rechts auf dem Blatt "Erstellen" auf **Erstellen**.
 
-4. Nach Erstellung der Website wird der Text **Die Erstellung der Website <*Websitename*> wurde erfolgreich abgeschlossen** angezeigt. Sie können zu der Website navigieren, indem Sie unten auf der Portalseite auf **Durchsuchen** klicken.
+4. Nach der Erstellung der Web-App wird der Text **Deployment to resource group <Ressourcengruppenname> was successful** angezeigt.
 
-5. Klicken Sie im Portal auf den Namen der Website, der in der Liste der Websites aufgeführt wird, um die Verwaltungsseite **Schnellstart** der Website zu öffnen.
+5. Klicken Sie im Portal in der Liste der Web-Apps auf den Namen der Web-App, um das zugehörige Blatt zu öffnen.
 
-6. Auf der Seite **Schnellstart** erhalten Sie Optionen zum Abrufen von Website-Entwicklungstools, Einrichten von Veröffentlichungen für die Website oder Einrichten der Bereitstellung von einem Quellcode-Verwaltungsanbieter wie TFS oder Git. Die FTP-Veröffentlichung wird standardmäßig für Websites eingerichtet, und der FTP-Hostname wird auf der Seite **Dashboard** im Abschnitt **Auf einen Blick** unter **FTP-Hostname** angegeben. Wählen Sie vor der Veröffentlichung über FTP oder Git die Option **Zurücksetzen der Bereitstellungsanmeldeinformationen** auf der Seite **Dashboard** aus, sodass Sie eine Authentifizierung beim FTP-Host oder dem Git-Repository durchführen können, wenn Sie Inhalte auf Ihrer Website bereitstellen.
+6. Auf dem Blatt erhalten Sie Optionen zum Abrufen von Web-App-Entwicklungstools, zum Einrichten von Veröffentlichungen für die Web-App und zum Einrichten der Bereitstellung von einem Quellcode-Verwaltungsanbieter wie TFS oder Git. Die FTP-Veröffentlichung ist das Standardverfahren für Web-Apps, und der FTP-Hostname wird im Abschnitt **Essentials** des Web-App-Blatts angezeigt. Vor dem Veröffentlichen mit FTP oder Git wählen Sie auf dem Web-App-Blatt die Option **Reset publish profile**, damit Sie sich beim FTP-Host oder Git-Repository authentifizieren können, wenn Sie Inhalte in Ihrer Web-App bereitstellen.
 
-7. Auf der Verwaltungsseite **Konfigurieren** werden die Einstellungen für Ihre Website angezeigt, beispielsweise:
+7. Das Blatt **Einstellungen** enthält Einstellungen für Ihre Web-App, wie z. B.:
 
-	- Die .NET Framework- oder PHP-Version der Webanwendung
+	- Version von .NET, PHP, Java oder Python für Ihre Web-App
+	- In Visual Studio Online bearbeiten
 	- SSL-Bindungen
 	- Benutzerdefinierte Domänennamen
+	- Authentifizierung/Autorisierung
+	- Anwendungs- und Website-Diagnose
+	- Überwachen von Endpunkten
 	- Anmeldeoptionen
-	- App-Einstellungen für die Azure-Umgebung (diese setzen beispielsweise <appSettings> die Einstellungen in der Datei "Web.config" in Ihrer Entwicklungsumgebung außer Kraft)
-	- Verbindungszeichenfolgen (diese setzen beispielsweise <connectionStrings> die Einstellungen in der Datei "Web.config" in Ihrer Entwicklungsumgebung außer Kraft)
+	- App-Einstellungen für die Azure-Umgebung (überschreibt die <appSettings> in der "Web.config" Ihrer Entwicklungsumgebung, zum Beispiel)
+	- Verbindungszeichenfolgen (überschreibt die <connectionStrings> in der "Web.config" Ihrer Entwicklungsumgebung, zum Beispiel)
 	- Skriptprozessoren für spezifische Dateierweiterungen wie *.php
 
-##<a name="howtocreatefromgallery"></a>Vorgehensweise: Erstellen einer Website aus der Galerie
+##<a name="howtocreatefromgallery"></a>Gewusst wie: Erstellen einer Web-App aus der Galerie
 
 [AZURE.INCLUDE [website-from-gallery](../includes/website-from-gallery.md)]
 
-##<a name="deleteawebsite"></a>Vorgehensweise: Löschen einer Website
-Websites werden über das Symbol **Löschen** im Azure-Verwaltungsportal gelöscht. Das Symbol **Löschen** ist im Azure-Portal verfügbar, wenn Sie auf **Websites** klicken, um alle Ihre Websites anzuzeigen, sowie unten auf jeder Website-Verwaltungsseite.
+##<a name="deleteawebsite"></a>Gewusst wie: Löschen einer Web-App
+Web-Apps werden über das Symbol **Löschen** im Azure-Portal gelöscht. Das Symbol **Löschen** finden Sie oben auf dem Web-App-Blatt.
 
 ##<a name="nextsteps"></a> Nächste Schritte
 
-Weitere Informationen finden Sie unter [Azure-Websites](/de-de/documentation/services/web-sites/)..
+Weitere Informationen finden Sie unter [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714).
 
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

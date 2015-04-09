@@ -16,11 +16,11 @@
 	ms.date="01/13/2015" 
 	ms.author="mimig"/>
 
-# Überwachen eines DocumentDB-Kontos  
+#Überwachen eines DocumentDB-Kontos  
 
 Sie können Ihre DocumentDB-Konten im [Azure-Vorschauportal](https://portal.azure.com/) überwachen. Es sind für jedes DocumentDB-Konto sowohl Leistungsmetriken (wie Anfragen und Serverfehler) als auch Nutzungsmetriken (wie verbrauchter Speicher) verfügbar.
 
-## <a id="metrics"></a> Anzeigen von Leistungsmetriken für ein DocumentDB-Konto
+## <a id="metrics"></a>  Gewusst wie: Anzeigen von Leistungsmetriken für ein DocumentDB-Konto
 1.	Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, dessen Leistungsmetriken Sie anzeigen möchten.
 2.	Innerhalb des Bereichs **Überwachung** sehen Sie standardmäßig Folgendes:
 	*	Gesamtanforderungen des aktuellen Tags.
@@ -37,7 +37,7 @@ Sie können Ihre DocumentDB-Konten im [Azure-Vorschauportal](https://portal.azur
 
 ## <a id="custom"></a>Anpassen der Leistungsmetrikansichten für ein DocumentDB-Konto
 
-1.	Klicken Sie zur Anpassung der in einem bestimmten Bereich angezeigten Metriken mit der rechten Maustaste auf das Metrikdiagramm, und wählen Sie dann **Diagramm bearbeiten**.  
+1.	Klicken Sie zur Anpassung der in einem bestimmten Bereich angezeigten Metriken mit der rechten Maustaste auf das Metrikdiagramm, und wählen Sie **Diagramm bearbeiten**.  
 	![](./media/documentdb-monitor-accounts/madocdb3.png)
 
 2.	Im Fenster **Diagramm bearbeiten** gibt es Optionen zum Ändern der in diesem Bereich angezeigten Metriken sowie deren Zeitspanne.  
@@ -52,7 +52,7 @@ Sie können Ihre DocumentDB-Konten im [Azure-Vorschauportal](https://portal.azur
 ## <a id="create"></a>Erstellen von nebeneinander liegenden Diagrammen mit Leistungsmetriken
 Im Azure-Vorschauportal können Sie nebeneinander stehende Metrikdiagramme erstellen.  
 
-1.	Klicken Sie zuerst mit der rechten Maustaste auf das Diagramm, das Sie klonen und ändern möchten, und wählen Sie dann **Anpassen**.. 
+1.	Klicken Sie zuerst mit der rechten Maustaste auf das Diagramm, das Sie klonen und ändern möchten, und wählen Sie **Anpassen**. 
 
 	![](./media/documentdb-monitor-accounts/madocdb6.png)
 
@@ -61,7 +61,7 @@ Im Azure-Vorschauportal können Sie nebeneinander stehende Metrikdiagramme erste
 	![](./media/documentdb-monitor-accounts/madocdb7.png)  
 
 
-Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und ihn sowie die dort angezeigte Zeitspanne anpassen.  Wenn Sie das tun, werden zwei verschiedene Metrikdiagramme nebeneinander angezeigt.  
+Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und ihn sowie die dort angezeigte Zeitspanne anpassen.  Auf diese Weise können Sie zwei verschiedene Metrikdiagramme nebeneinander anzeigen.  
 	![](./media/documentdb-monitor-accounts/madocdb8.png)  
 
 ## <a id="view"></a>Anzeigen von Nutzungsmetriken für ein DocumentDB-Konto
@@ -95,7 +95,7 @@ Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und i
 
  
 ## <a id="next"></a>Nächste Schritte
-Weitere Informationen zur DocumentDB-Kapazität und zur Leistung finden Sie unter [Verwalten von DocumentDB-Kapazität und -Leistung](../documentdb-manage/). 
+Weitere Informationen zur Kapazität und Leistung von DocumentDB finden Sie unter [Verwalten der Kapazität und Leistung von DocumentDB](documentdb-manage.md). 
 
 <!--Anchors-->
 [Anzeigen von Leistungsmetriken für ein DocumentDB-Konto]: #How-to-view-performance-metrics-for-a-DocumentDB-account
@@ -105,4 +105,4 @@ Weitere Informationen zur DocumentDB-Kapazität und zur Leistung finden Sie unte
 [Einrichten von Warnungen bei Leistungsmetriken für ein DocumentDB-Konto]: #How-to-setup-performance-metric-alerts-for-a-DocumentDB-account
 [Nächste Schritte]: #Next-steps
 
-<!--HONumber=47-->
+<!--HONumber=49-->

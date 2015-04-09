@@ -1,4 +1,4 @@
-
+﻿
 1. Öffnen Sie die Datei "ToDoActivity.java" im **Projektexplorer** in Android Studio, und fügen Sie die folgenden Import-Anweisungen hinzu.
 
 		import java.util.concurrent.ExecutionException;
@@ -44,25 +44,26 @@
 
 	Dieser Aufruf startet den Authentifizierungsprozess.
 
-4. Verschieben Sie den verbleibenden Code nach `authenticate();` in der **onCreate**-Methode in eine neue **createTable**-Methode mit folgendem Code:
+4. Verschieben Sie den verbleibenden Code nach "authenticate();" in der **onCreate**-Methode in eine neue **createTable**-Methode mit folgendem Code:
 
 		private void createTable() {
 	
-			// Get the Mobile Service Table instance to use
+			// Abrufen der zu verwendenden Mobile Service-Tabelleninstanz
 			mToDoTable = mClient.getTable(ToDoItem.class);
 	
 			mTextNewToDo = (EditText) findViewById(R.id.textNewToDo);
 	
-			// Create an adapter to bind the items with the view
+			// Erstellen eines Adapters zum Binden der Elemente an die Ansicht
 			mAdapter = new ToDoItemAdapter(this, R.layout.row_list_to_do);
 			ListView listViewToDo = (ListView) findViewById(R.id.listViewToDo);
 			listViewToDo.setAdapter(mAdapter);
 	
-			// Load the items from the Mobile Service
+			// Laden der Elemente aus dem Mobile Service
 			refreshItemsFromTable();
 		}
 
 9. Klicken Sie im Menü **Ausführen** auf **App ausführen**, um die App zu starten, und melden Sie sich mit Ihrem gewählten Identitätsanbieter an. 
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
-<!--HONumber=47-->
+
+<!--HONumber=49-->

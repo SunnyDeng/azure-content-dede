@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Verwenden von Hive in HDInsight Hadoop für die Analyse von Website-Protokollen | Azure" 
 	description="Erfahren Sie, wie Sie Website-Protokolle mit Hive in HDInsight analysieren können. Sie verwenden eine Protokolldatei als Eingabe für eine HDInsight-Tabelle und verwenden anschließend HiveQL, um die Daten abzufragen." 
 	services="hdinsight" 
@@ -29,16 +29,16 @@ In diesem Beispiel analysieren Sie Website-Protokolle in einem HDInsight-Cluster
 
 ![HDI.Samples.Website.Log.Analysis][img-hdi-weblogs-sample]
 
-## Voraussetzungen
+##Voraussetzungen
 
 - Sie benötigen einen bereitgestellten **HDInsight-Cluster**. Anweisungen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision]. 
 - Sie benötigen Microsoft Excel 2010 oder Microsoft Excel 2013.
-- Sie benötigen den [Microsoft Hive ODBC Driver](http://www.microsoft.com/de-de/download/details.aspx?id=40886), um die Daten aus Hive in Excel zu importieren.
+- Sie benötigen den [Microsoft Hive ODBC Driver](http://www.microsoft.com/download/details.aspx?id=40886), um die Daten aus Hive in Excel zu importieren.
 
 
-## So führen Sie das Beispiel aus
+##So führen Sie das Beispiel aus
 
-1. Klicken Sie im Azure-Verwaltungsportal auf den Namen des entsprechenden Clusters, und klicken Sie anschließend unten in der Seite auf **Abfragekonsole**. Alternativ können Sie die Abfragekonsole direkt über die folgende URL öffnen:
+1. Klicken Sie im Azure-Verwaltungsportal auf den Cluster, auf dem Sie das Beispiel ausführen möchten, und klicken Sie anschließend unten in der Seite auf **Abfragekonsole**. Alternativ können Sie die Abfragekonsole direkt über die folgende URL öffnen:
 
 	 	https://<clustername>.azurehdinsight.net
 	
@@ -47,12 +47,13 @@ In diesem Beispiel analysieren Sie Website-Protokolle in einem HDInsight-Cluster
 2. Klicken Sie in der Webseite, die sich daraufhin öffnet, auf die Registerkarte **Erste Schritte** und anschließend in der Kategorie **Beispiele** auf das Beispiel **Analyse von Websiteprotokollen**.
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
 
-## Nächste Schritte
+##Nächste Schritte
 Probieren Sie das Beispiel zum Analysieren von Sensordaten mit Azure HDInsight aus. Siehe [Analysieren von Sensordaten mit Hive und HDInsight][hdinsight-sensor-data-sample].
 
 
-[hdinsight-provision]: ../hdinsight-provision-clusters/
-[hdinsight-sensor-data-sample]: ../hdinsight-use-hive-sensor-data-analysis/
+[hdinsight-provision]: hdinsight-provision-clusters.md
+[hdinsight-sensor-data-sample]: hdinsight-use-hive-sensor-data-analysis.md
 
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
-<!--HONumber=45--> 
+
+<!--HONumber=49-->

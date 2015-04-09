@@ -4,7 +4,7 @@
 	services="web-sites, virtual-machines" 
 	documentationCenter="nodejs" 
 	authors="chrischang12" 
-	manager="partners@mongolab.com" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="09/17/2014" 
-	ms.author="chris@mongolab.com"/>
+	ms.date="02/04/2014" 
+	ms.author="mwasson"/>
 
 
 
@@ -53,7 +53,7 @@ Wenn Sie den Azure Store bereits kennengelernt haben, finden Sie in diesem Absch
 ![ConnectionInfoButton][button-connectioninfo]  
 4. Kopieren Sie den MONGOLAB_URI in die Zwischenablage.  
 ![ConnectionInfoScreen][screen-connectioninfo]  
-**Dieser URI enthält Ihren Benutzernamen und Ihr Kennwort für die Datenbank.  Behandeln Sie diese Informationen als vertraulich, und geben Sie sie nicht weiter.**
+**Dieser URI enthält Ihren Benutzernamen und Ihr Kennwort für die Datenbank.  Behandeln Sie diese Informationen vertraulich, und geben Sie sie nicht weiter.**
 5. Fügen Sie den Wert der Liste mit den Verbindungszeichenfolgen im Konfigurationsmenü der Azure-Webanwendung hinzu:  
 ![WebSiteConnectionStrings][focus-website-connectinfo]
 6. Geben Sie unter **Name** den MONGOLAB_URI ein.
@@ -68,7 +68,7 @@ Wenn Sie den Azure Store bereits kennengelernt haben, finden Sie in diesem Absch
  		...
  		mongoose.connect(connectionString);
 
-Hinweis: Azur fügt das Präfix **CUSTOMCONNSTR\_** zur ursprünglich deklarierten Verbindungszeichenfolge hinzu; deshalb referenziert der Code **CUSTOMCONNSTR\_MONGOLAB\_URI.** anstelle von **MONGOLAB\_URI**.
+Hinweis: Azure fügt das Präfix **CUSTOMCONNSTR\_** zur ursprünglich deklarierten Verbindungszeichenfolge hinzu. Deshalb referenziert der Code **CUSTOMCONNSTR\_MONGOLAB\_URI.** anstelle von **MONGOLAB\_URI**.
 
 Nun folgt das vollständige Lernprogramm ...
 
@@ -89,7 +89,7 @@ In diesem Abschnitt richten Sie Ihre Entwicklungsumgebung ein und erstellen den 
 
 		npm install express -g
  
-	`-g` gibt den globalen Modus an, der verwendet wird, damit das <strong>express</strong>-Modul ohne Angabe eines Verzeichnispfads verfügbar ist. Falls Sie die Meldung <strong>Fehler: EPERM, chmod '/usr/local/bin/express'</strong> erhalten, verwenden Sie <strong>sudo</strong>, um "npm" mit einer höheren Berechtigungsstufe auszuführen.
+	"-g" gibt den globalen Modus an, der verwendet wird, damit das <strong>express</strong>-Modul ohne Angabe eines Verzeichnispfads verfügbar ist. Falls Sie die Meldung <strong>Fehler: EPERM, chmod '/usr/local/bin/express'</strong> angezeigt wird, verwenden Sie <strong>sudo</strong>, um npm auf einer höheren Berechtigungsstufe auszuführen.
 
     Die Ausgabe dieses Befehls sollte ungefähr wie folgt aussehen:
 
@@ -120,15 +120,15 @@ In diesem Abschnitt richten Sie Ihre Entwicklungsumgebung ein und erstellen den 
  
 3. Verwenden Sie den Befehl **express**, um das Gerüst zu erstellen, das für diese Anwendung verwendet wird:
 
-    express
+    	express
 
     Beachten Sie, dass in diesem Lernprogramm Express v4.x.x verwendet wird. Wenn Sie den Express 3-App-Generator bereits in Ihrem System installiert haben, sollten Sie diesen zuerst deinstallieren:
 
-    npm uninstall -g express
+    	npm uninstall -g express
 
-    Installieren Sie nun den neuen Generator für die Version 4.x.x:
+    À présent, installez le nouveau générateur pour la version 4.x.x:
 
-    npm install -g express-generator
+    	npm install -g express-generator
 
 	Sobald der Befehl **express** ausgeführt wird, sollte eine Ausgabe ähnlich der folgenden angezeigt werden:
 
@@ -325,9 +325,9 @@ Da Ihre Umgebung und das Gerüst jetzt fertig sind, erweitern wir die grundlegen
 
 #### Ändern der Indexansicht
 
-1. Wechseln Sie zum Verzeichnis **views**, und öffnen Sie die Datei **index.jade** in einem Texteditor.
+1. Wechseln Sie zum Verzeichnis **Ansichten**, und öffnen Sie die Datei **index.jade** in einem Texteditor.
 
-2. Ersetzen Sie den Inhalt der Datei **index.jade** durch den nachstehenden Code. Damit werden die Ansicht zur Anzeige vorhandener Aufgaben sowie ein Formular für das Hinzufügen neuer Aufgaben und das Markieren von vorhandenen Aufgaben als abgeschlossen definiert.
+2. Ersetzen Sie den Inhalt der **index.jade** Datei durch den folgenden Code. Damit werden die Ansicht zur Anzeige vorhandener Aufgaben sowie ein Formular für das Hinzufügen neuer Aufgaben und das Markieren von vorhandenen Aufgaben als abgeschlossen definiert.
 
 		h1 #{title}
 		form(action="/completetask", method="post")
@@ -405,7 +405,7 @@ Verwenden Sie den folgenden Befehl, um die Befehlszeilentools zu installieren:
 	
 	npm install azure-cli -g
 
-Wenn Sie bereits das <strong>Azure-SDK für Node.js</strong> aus dem <a href="/de-de/develop/nodejs/">Azure Developer Center</a> installiert haben, sollten auch die Befehlszeilentools bereits installiert sein. Weitere Informationen finden Sie im Thema <a href="/de-de/develop/nodejs/how-to-guides/command-line-tools/">Azure-Befehlszeilentool für Mac und Linux</a>.
+Wenn Sie bereits das <strong>Azure SDK für Node.js</strong> aus dem <a href="/develop/nodejs/">Azure Developer Center</a> installiert haben, sollten auch die Befehlszeilentools bereits installiert sein. Weitere Informationen finden Sie im Thema <a href="virtual-machines-command-line-tools.md">Azure-Befehlszeilentool für Mac und Linux</a>.
 
 Obwohl die Azure-Befehlszeilentools vor allem für Mac-und Linux-Benutzer erstellt wurden, basieren sie auf "Node.js" und sollten auf allen Systemen funktionieren, die Node ausführen können.
 
@@ -417,7 +417,7 @@ Bevor Sie die Befehlszeilentools mit Azure verwenden können, müssen Sie zunäc
 
 		azure account download
 	
-	![The download page][download-publishing-settings]
+	![Die Downloadseite][download-publishing-settings]
 	
 	Der Dateidownload sollte automatisch beginnen. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen.
 
@@ -456,11 +456,11 @@ Das Erstellen einer Website in Azure ist sehr einfach. Wenn dies Ihre erste Azur
 		azure site create myuniquesitename --git  
 	Ersetzen Sie 'myuniquesitename' durch den eindeutigen Sitenamen für Ihre Website. Wenn die Website als Teil dieses Befehls erstellt wird, werden Sie nach dem Rechenzentrum gefragt, in dem sich die Website befinden wird. Wählen Sie das Rechenzentrum aus, das sich geographisch in der Nähe Ihrer MongoLab-Datenbank befindet.
 	
-	Der Parameter `--git` erstellt Folgendes:
-	A. Ein lokales Git-Repository im Ordner **tasklist**, wenn kein Repository vorhanden ist.
-	A. Ein [Git remote] namens 'azure', das zum Veröffentlichen der Anwendung in Azure verwendet wird.
-	A. Eine Datei [iisnode.yml], die Einstellungen enthält, die von Azure zum Hosten von Node-Anwendungen verwendet wird.
-	A. Eine GITIGNORE-Datei, um zu verhindern, dass der Ordner "node-modules" für .git veröffentlicht wird.  
+	Der Parameter "--git" erstellt Folgendes:
+	* Ein lokales Git-Repository im Ordner **tasklist**, wenn kein Repository vorhanden ist.
+	* Ein [Git remote] namens  'azure', das zum Veröffentlichen der Anwendung in Azure verwendet wird.
+	* Die Datei [iisnode.yml], die Einstellungen enthält, die von Azure zum Hosten von Node-Anwendungen verwendet wird.
+	* Eine GITIGNORE-Datei, um zu verhindern, dass der Ordner "node-modules" für .git veröffentlicht wird.  
 	  
 	Nach Abschluss dieses Befehls wird eine Ausgabe ähnlich der folgenden angezeigt. Beachten Sie, dass die Zeile, die mit **Created website at** beginnt, die URL für die Website enthält.
 
@@ -520,7 +520,7 @@ Erinnern Sie sich an "process.env.CUSTOMCONNSTR\_MONGOLAB\_URI" im Code? Wir mö
 
 Führen Sie `azure site browse` in Ihrem Projektverzeichnis aus, um automatisch einen Browser zu öffnen, oder öffnen Sie einen Browser. und navigieren Sie manuell zur URL Ihrer Website (myuniquesite.azurewebsites.net):
 
-![A webpage displaying an empty tasklist][node-mongo-finished]
+![Eine Webseite mit einer leeren Aufgabenliste][node-mongo-finished]
 
 <h2><a name="manage"></a>Verwalten der Datenbank</h2>
 
@@ -540,23 +540,23 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
 [focus-website-connectinfo]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/focus-mongolab-websiteconnectionstring.png
 [bereitstellen]: #provision
 [erstellen]: #create
-[bereitstellen]: #deploy
-[verwalten]: #manage
+[verwalten]: #deploy
+[manage]: #manage
 [Node.js]: http://nodejs.org
 [MongoDB]: http://www.mongodb.org
 [Git]: http://git-scm.com
 [Express]: http://expressjs.com
 [Mongoose]: http://mongoosejs.com
-[kostenlos]: /de-de/pricing/free-trial
+[for free]: /pricing/free-trial
 [Git remote]: http://git-scm.com/docs/git-remote
 [azure-sdk-for-node]: https://github.com/WindowsAzure/azure-sdk-for-node
 [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-[Azure-Befehlszeilentool für Mac und Linux]: /de-de/develop/nodejs/how-to-guides/command-line-tools/
-[Azure Developer Center]: /de-de/develop/nodejs/
-[Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /de-de/develop/nodejs/tutorials/create-a-website-(mac)/
-[Veröffentlichen auf Azure-Websites mit Git]: /de-de/develop/nodejs/common-tasks/publishing-with-git/
+[Azure-Befehlszeilentool für Mac und Linux]: virtual-machines-command-line-tools.md
+[Azure Developer Center]: /develop/nodejs/
+[Erstellen und Bereitstellen einer Node.js-Anwendung in Azure Websites]: /develop/nodejs/tutorials/create-a-website-(mac)/
+[Veröffentlichen in Azure Websites mit Git]: /develop/nodejs/common-tasks/publishing-with-git/
 [MongoLab]: http://mongolab.com
-[Node.js-Webanwendung mit Speicher für MongoDB (virtueller Computer)]: /de-de/develop/nodejs/tutorials/website-with-mongodb-(mac)/
+[Node.js-Webanwendung mit Speicher für MongoDB (virtueller Computer)]: /develop/nodejs/tutorials/website-with-mongodb-(mac)/
 [node-mongo-finished]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/todo_list_noframe.png
 [node-mongo-express-results]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/express_output.png
 [download-publishing-settings]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/azure-account-download-cli.png
@@ -567,7 +567,4 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
 
 
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

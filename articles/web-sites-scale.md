@@ -1,249 +1,201 @@
-<properties 
-	pageTitle="Skalieren von Websites" 
-	description="erforderlich" 
-	services="web-sites" 
+﻿<properties 
+	pageTitle="Skalieren einer Web-App in Azure App Service" 
+	description="Erfahren Sie, wie Sie Web-Apps in Azure App Service skalieren und horizontal skalieren, einschließlich automatischer Skalierung." 
+	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/24/2014" 
+	ms.date="03/24/2015" 
 	ms.author="cephalin"/>
 
-# Skalieren von Websites
+# Skalieren einer Web-App in Azure App Service #
 
-Zur Steigerung des Durchsatzes und der Leistung Ihrer Websites auf Microsoft Azure können Sie im Azure-Verwaltungsportal den Webhostingplan-Modus von "Kostenlos" auf "Freigegeben", "Basic" oder "Standard" skalieren. 
+Zur Steigerung der Leistung und des Durchsatzes für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom **Kostenlos**-Modus zu einem der Modi **Freigegeben**, **Basic**, **Standard** oder **Premium** hochstufen. 
 
-Das Skalieren von Azure-Websites umfasst zwei zusammenhängende Vorgänge: Ändern des Webhostingplan-Modus auf einen höheren Servicelevel und Konfigurieren bestimmter Einstellungen nach dem Wechsel zum höheren Servicelevel. Beide Themen werden in diesem Artikel erläutert. Höhere Servicelevel wie der Standardmodus bieten bessere Stabilität und Flexibilität bei der Festlegung, wie Ressourcen auf Azure verwendet werden.
+Das Skalieren von Azure-Web-Apps umfasst zwei zusammenhängende Vorgänge: Ändern des App Service-Plan-Modus auf einen höheren Servicelevel und Konfigurieren bestimmter Einstellungen nach dem Wechsel zum höheren Servicelevel. Beide Themen werden in diesem Artikel erläutert. Höhere Servicelevel wie der **Standard**- und der **Premium**-Modus bieten bessere Stabilität und Flexibilität bei der Festlegung, wie Ressourcen auf Azure verwendet werden.
 
-Die Modusänderung und die Konfiguration erfolgt ganz einfach über die Registerkarte "Skalieren" des Verwaltungsportals. Sie können nach Bedarf hoch- oder runterskalieren. Diese Änderungen werden innerhalb von Sekunden angewendet und wirken sich auf alle Websites im Webhostingplan aus. Dafür muss weder der Code geändert noch Anwendungen erneut bereitgestellt werden.
+Die Modusänderung und die Konfiguration erfolgt ganz einfach über die Registerkarte "Skalieren" des Verwaltungsportals. Sie können nach Bedarf hoch- oder runterskalieren. Diese Änderungen werden innerhalb von Sekunden angewendet und wirken sich auf alle Web-Apps im App Service-Plan aus. Dafür muss weder der Code geändert noch Anwendungen erneut bereitgestellt werden.
 
-Informationen zu Webhostingplänen finden Sie unter [Was ist ein Webhostingplan?](http://azure.microsoft.com/documentation/articles/web-sites-web-hosting-plan-overview/) und [Webhostingpläne für Azure-Websites: ausführliche Übersicht](http://www.azure.microsoft.com/de-de/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/). Informationen zur Preisgestaltung und zu den Funktionen der einzelnen Webhostingpläne finden Sie unter [Preisdetails zu Websites](http://azure.microsoft.com/pricing/details/web-sites/).  
+Informationen zu App Service-Plänen finden Sie unter [Was ist ein Webhostingplan?](web-sites-web-hosting-plan-overview.md) und [Azure App Service Plans In-Depth Overview (in englischer Sprache)](azure-web-sites-web-hosting-plans-in-depth-overview.md). Informationen zur Preisgestaltung und den Merkmalen der einzelnen App Service-Pläne finden Sie unter [Websites Preise](/pricing/details/web-sites/).  
 
-> [AZURE.NOTE] Bevor Sie den Webhostingplan-Modus einer Website von **Kostenlos** in **Basic** oder **Standard** ändern, müssen Sie zunächst das für Ihr Azure-Websites-Abonnement geltende Ausgabenlimit aufheben. Informationen zum Ändern oder Anzeigen der Optionen für Ihr Microsoft Azure-Websites-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
-
-Themen in diesem Artikel:
-
-- [Skalierung auf Shared- oder Basic-Planmodus](#scalingsharedorbasic)
-- [Skalierung auf Standard-Planmodus](#scalingstandard)
-- [Skalierung einer mit der Website verbundenen SQL-Serverdatenbank](#ScalingSQLServer)
-- [Entwicklerfunktionen](#devfeatures)
-- [Andere Funktionen](#OtherFeatures)
+> [AZURE.NOTE] Bevor Sie Web-Apps vom Modus **Kostenlos** zu einem der Modi **Basic**, **Standard** oder **Premium** ändern, müssen Sie zuerst die Kostenbeschränkung für Ihr Azure App Service-Abonnement aufheben. Informationen zum Ändern oder Anzeigen der Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
 
 <a name="scalingsharedorbasic"></a>
 <!-- ===================================== -->
-## Skalierung auf Shared- oder Basic-Planmodus
+## Skalierung auf Modus "Freigegeben" oder "Basic"
 <!-- ===================================== -->
 
-1. Öffnen Sie in Ihrem Browser das [Verwaltungsportal][portal].
+1. Öffnen Sie in Ihrem Browser das [Azure-Portal][portal].
 	
-2. Wählen Sie auf der Registerkarte **Websites** Ihre Website aus.
+2. Klicken Sie auf dem Blatt Ihrer Web-App auf **Alle Einstellungen**, klicken Sie auf **Skalieren**, klicken Sie dann auf **Upgrade from a Free plan to add instances and get better performance**.
 	
-	![Selecting a website][SelectWebsite]
+	![Auswählen eines Plans][ChooseWHP]
 	
-3. Klicken Sie auf die Registerkarte **Skalieren**.
+4. Wählen Sie auf dem Blatt **Choose your pricing tier** entweder **Freigegeben** oder einen **Basic**-Modus aus, und klicken Sie auf **Auswählen**.
 	
-	![The scale tab][SelectScaleTab]
+	Die Registerkarte **Benachrichtigungen** blinkt mit dem grün dargestellten Wort **ERFOLG**, sobald der Vorgang abgeschlossen ist. 
 	
-4. Wählen Sie im Abschnitt **Webhostingplan-Modus** entweder **FREIGEGEBEN** oder **BASIC** aus. In dieser Beispielabbildung wird "Basic" verwendet.
+5. Schieben Sie den Balken **Instanz** von links nach rechts, um die Anzahl der Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Im Modus **Freigegeben** ist die Instanzgrößenoption nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Microsoft Azure][vmsizes].
 	
-	![Choose Web Hosting Plan][ChooseWHP]
+	![Instanzgröße für Basic-Modus][ChooseBasicInstances]
 	
-	Im Abschnitt **Webhostingplan-Sites** wird eine kurze Liste der Websites im aktuellen Plan angezeigt. Alle Websites im aktuellen Plan werden in den von Ihnen ausgewählten Webhostingplan-Modus übernommen.
-	
-5. Klicken Sie im Abschnitt **Kapazität** auf **Instanzgröße**. Die verfügbaren Optionen sind **Klein**, **Mittel** und **Groß**. Im Modus "Freigegeben" ist die Instanzgrößenoption nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Microsoft Azure][vmsizes].
-	
-	![Instance size for Basic mode][ChooseBasicInstanceSize]
-	
-6. Wählen mithilfe des Schiebereglers die gewünschte **Instanzanzahl**.
-	
-	![Instance count for Basic mode][ChooseBasicInstanceCount]
-	
-7. Klicken Sie auf der Befehlsleiste auf **Speichern**. 
-	
-	![Save button][SaveButton]
- 	
-	> [AZURE.NOTE] Sie können die Einstellungen für **Webhostingplan**, **Instanzgröße** und **Instanzanzahl** auch separat speichern.
-	
-8. Sie werden in einer Bestätigungsmeldung darauf hingewiesen, dass Websites im selben Webhostingplan wie die aktuelle Website ebenfalls in den neuen Modus übernommen werden. Klicken Sie auf **Ja**, um die Änderung abzuschließen. 
-	
-	In diesem Beispiel wurde der Planmodus in **Basic** geändert:
-	
-	![Plan change complete][BasicComplete]
+	Die Registerkarte **Benachrichtigungen** blinkt mit dem grün dargestellten Wort **ERFOLG**, sobald der Vorgang abgeschlossen ist. 
 	
 <a name="scalingstandard"></a>
 <!-- ================================= -->
-## Skalierung auf Standard-Planmodus
+## Skalieren auf Standard- oder Premium-Modus
 <!-- ================================= -->
 
-> [AZURE.NOTE] Bevor Sie einen Webhostingplan in den Modus "Standard" ändern, müssen Sie das für Ihr Microsoft Azure-Websites-Abonnement geltende Ausgabenlimit entfernen. Andernfalls besteht das Risiko, dass Ihre Website nicht mehr verfügbar ist, wenn Sie Ihr Ausgabenlimit vor dem Ende der Abrechnungsperiode erreichen. Informationen zum Ändern oder Anzeigen der Optionen für Ihr Microsoft Azure-Websites-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
+> [AZURE.NOTE] Bevor Sie einen App Service-Plan in den Modus **Standard** oder **Premium** ändern, müssen Sie das für Ihr Microsoft Azure App Service-Abonnement geltende Ausgabenlimit entfernen. Andernfalls besteht das Risiko, dass Ihre Web-App nicht mehr verfügbar ist, wenn Sie Ihr Ausgabenlimit vor dem Ende der Abrechnungsperiode erreichen. Informationen zum Ändern oder Anzeigen der Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
 
-1. Befolgen Sie für die Skalierung auf "Standard" dieselben anfänglichen Schritte wie bei der Skalierung auf "Freigegeben" oder "Basic", und wählen Sie dann **Standard** als **Webhostingplan-Modus** aus. 
+1. Gehen Sie für die Skalierung zum Modus **Standard** oder **Premium** zunächst vor wie bei der Skalierung auf **Freigegeben** oder **Basic**, wählen Sie dann unter **Choose your pricing tier** einen der Modi **Standard** oder **Premium**, und klicken Sie dann auf **Auswählen**. 
 	
-	![Choose Standard Plan][ChooseStandard]
+	Die Registerkarte **Benachrichtigungen** blinkt mit dem grün dargestellten Wort **ERFOLG**, sobald der Vorgang abgeschlossen ist, und der **Autoscale Mode** wird aktiviert.
 	
-	Wie zuvor wird im Abschnitt **Webhostingplan-Sites** eine kurze Liste der Websites im aktuellen Plan angezeigt. In diesem Fall werden alle Websites im aktuellen Plan in den Standardmodus übernommen.
+	![Skalieren im Standard- oder Premium-Modus][ScaleStandard]
 	
-2. Nach der Auswahl von **Standard** wird der Abschnitt **Kapazität** erweitert, um die Optionen für **Instanzgröße** und **Instanzanzahl** anzuzeigen, die auch im Basic-Modus verfügbar sind. Die Optionen **Skalierungseinstellungen für Zeitplan bearbeiten** und **Nach Metrik skalieren** stehen nur im Standardmodus zur Verfügung.
+	Sie können weiterhin den Balken **Instanz** verschieben, um manuell für weitere Instanzen zu skalieren, genau wie weiter oben für den **Basic**-Modus beschrieben. Hier erfahren Sie jedoch, wie Sie den **Autoscale Mode** verwenden. 
 	
-	![Capacity section in Standard][CapacitySectionStandard]
+2. Wählen Sie im **Autoscale Mode** die Option **Leistung**, um die automatische Skalierung anhand der Leistungskennzahlen durchzuführen.
 	
-3. Konfigurieren Sie die **Instanzgröße**. Die verfügbaren Optionen sind **Klein**, **Mittel** und **Groß**.
+	![Festlegen des Modus für automatische Skalierung nach Leistung][Autoscale]
 	
-	![Choose instance size][ChooseInstanceSize]
+3. Verschieben Sie unter **Instance Range** die beiden Schieberegler, um die minimale und maximale Anzahl der Instanzen für die automatische Skalierung des App Service-Plans zu definieren. Verschieben Sie für dieses Lernprogramm den Schieberegler für das Maximum auf **6** Instanzen.
 	
-	Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Microsoft Azure][vmsizes].
+4. Klicken Sie in der Befehlsleiste auf **Speichern**.
 	
-4. Wenn Sie Ressourcen basierend auf Tages- oder Nachtzeiten, Wochentagen oder Wochenende und/oder bestimmten Daten und Zeiten automatisch skalieren möchten, wählen Sie **Zeiten für Zeitplan einrichten** in der Option **Skalierungseinstellungen für Zeitplan bearbeiten** aus.
+4. Klicken Sie unter **Target Metrics** auf **>**, um Regeln für die automatische Skalierung für die Standardmetrik zu konfigurieren.  
 	
-	![Set up schedule times][SetUpScheduleTimesButton]
+	![Festlegen von Zielmetriken][SetTargetMetrics]
 	
-5. Das Dialogfeld **Zeiten für Zeitplan einrichten** enthält eine Reihe von nützlichen Konfigurationsoptionen.
+	Sie können Regeln für die automatische Skalierung für verschiedene Leistungsmetriken festlegen, einschließlich CPU, Arbeitsspeicher, Datenträgerwarteschlange, HTTP-Warteschlange und Datenfluss. Hier konfigurieren Sie eine automatische Skalierung für den CPU-Prozentsatz, die Folgendes ausführt:
 	
-	![SetUpScheduleTimesDialog][SetUpScheduleTimesDialog]
+	- Skalieren um 1 Instanz nach oben, wenn die CPU in den letzten 10 Minuten über 70 % liegt
+	- Skalieren um 3 Instanzen nach oben, wenn die CPU in den letzten 5 Minuten über 90 % liegt
+	- Skalieren um 1 Instanz nach unten, wenn die CPU in den letzten 30 Minuten über 50 % liegt 
 	
-6. Wählen Sie unter **Zeitplanserie** die Option **Verschiedene Skalierungseinstellungen für Tag und Nacht** und/oder **Wochentag und Wochenende** aus, um Ressourcen basierend auf unterschiedlichen Zeitplänen für Tages- oder Nachtzeiten und/oder Wochentagen bzw. Wochenenden zu skalieren.
 	
-	> [AZURE.NOTE] Für diese Funktion beginnt das Wochenende am Ende des Freitags (standardmäßig um 20:00 Uhr) und endet mit Beginn des Montags (standardmäßig um 8:00 Uhr). Das Wochenendprofil verwendet denselben Start- und Endtag, den Sie in der Einstellung **Zeit** angeben.
+4. Lassen Sie die Dropdownliste **Metrik** auf **CPU-Prozentsatz** eingestellt.
 	
-7. Wählen Sie unter **Zeit** eine Start- und Endzeit für den Tag in halbstündigen Schritten sowie eine Zeitzone aus. Standardmäßig beginnt der Tag um 8 Uhr und endet um 20 Uhr. Die Sommerzeit wird für die ausgewählte Zeitzone berücksichtigt. 
+5. Konfigurieren Sie in **Scale up rules** die erste Regel, indem Sie **Bedingung** auf **Größer**, **Schwellenwert** auf **70** (%), **Over past** auf **10** (Minuten), **Scale up by** auf **1** (Instanzen) und **Cool down** auf **10** (Minuten) festlegen. 
 	
-8. Unter **Spezifische Datumsangaben** können Sie benannte Zeitrahmen erstellen, in denen Sie die Ressourcen skalieren möchten. Beispielsweise können Sie zusätzliche Ressourcen für einen Schlussverkauf oder für ein Ereignis bereitstellen, für das Sie stark erhöhten Webdatenverkehr erwarten.
+	![Festlegen der ersten Regel für automatische Skalierung][SetFirstRule]
 	
-9. Nachdem Sie Ihre Auswahl getroffen haben, klicken Sie auf **OK**, um das Dialogfeld **Zeiten für Zeitplan einrichten** zu schließen.
+	>[AZURE.NOTE] Die Einstellung **Cool down** gibt an, wie lange diese Regel nach der vorherigen Skalierungsaktion bis zur nächsten Skalierung warten soll.
 	
-10.   Im Dialogfeld **Skalierungseinstellungen für Zeitplan bearbeiten** werden jetzt konfigurierbare Zeitpläne oder Ereignisse basierend auf den von Ihnen vorgenommenen Änderungen angezeigt. Wählen Sie einen der wiederholten Zeitpläne oder bestimmte Daten zur Konfiguration aus. 
+6. Klicken Sie auf **Add Scale Up Rule**, und konfigurieren Sie die zweite Regel, indem Sie **Bedingung** auf **Größer**, **Schwellenwert** auf **90** (%), **Over past** auf **1** (Minuten), **Scale up by** auf **3** (Instanzen) und **Cool down** auf **1** (Minuten) festlegen.
 	
-	![Edit scale settings for schedule][EditScaleSettingsForSchedule]
+	![Festlegen der zweiten Regel für automatische Skalierung][SetSecondRule]
 	
-	Sie können jetzt die Optionen **Nach Metrik skalieren** und **Instanzgröße** verwenden, um die Skalierung der Ressourcen für jeden ausgewählten Zeitplan anzupassen. 
+5. Konfigurieren Sie in **Scale down rules** die dritte Regel, indem Sie **Bedingung** auf **Kleiner**, **Schwellenwert** auf **50** (%), **Over past** auf **30** (Minuten), **Scale down by** auf **1** (Instanzen) und **Cool down** auf **60** (Minuten) festlegen. 
 	
-11.  Um die Anzahl der Instanzen, die Ihre Website bei Laständerungen verwendet, dynamisch anzupassen, aktivieren Sie die Option **Nach Metrik skalieren** durch Auswahl von **CPU**.
+	![Festlegen der dritten Regel für automatische Skalierung][SetThirdRule]
 	
-	![Scale By Metric][ScaleByMetric]
+7. Klicken Sie in der Befehlsleiste auf **Speichern**. Die Regel für automatische Skalierung sollte jetzt auf dem Blatt **Skalierung** wiedergegeben werden. 
 	
-	Das Diagramm zeigt die Anzahl der Instanzen an, die in der letzten Woche verwendet wurden. Sie können das Diagramm zur Überwachung der Skalierungsaktivität verwenden.
-	
-12. **Nach Metrik skalieren** ändert die Funktion **Instanzanzahl**, sodass Sie die Mindest- und Höchstanzahl virtueller Computer festlegen können, die für die automatische Skalierung verwendet werden soll. Azure wird das festgelegte Limit nie über- bzw. unterschreiten.
-	
-	![Instance count][InstanceCount]
-	
-13. **Nach Metrik skalieren** aktiviert außerdem die Option **Ziel CPU**, mit der Sie einen Zielbereich für die CPU-Auslastung angeben können. Dieser Bereich stellt die durchschnittliche CPU-Auslastung der Website dar. Microsoft Azure fügt Standardinstanzen hinzu bzw. entfernt sie, um die Website in diesem Bereich zu halten.
-	
-
-	
-	**Hinweis**: Wenn **Nach Metrik skalieren** aktiviert ist, prüft Microsoft Azure die CPU der Website alle fünf Minuten und fügt bei Bedarf zu diesem Zeitpunkt Instanzen hinzu. Ist die CPU-Auslastung niedrig, entfernt Microsoft Azure alle zwei Stunden Instanzen, um sicherzustellen, dass die Website leistungsfähig bleibt. Im Allgemeinen ist eine Mindest-Instanzanzahl von 1 ausreichend. Wenn Sie jedoch plötzliche Spitzenlasten auf der Website erwarten, legen Sie die Mindestanzahl der Instanzen so fest, dass sie die Last bewältigen können. Tritt beispielsweise eine unerwartete Spitzenlast während des 5-Minuten-Intervalls auf, bevor Microsoft Azure die CPU-Auslastung erneut prüft, kann es vorkommen, dass die Website während dieser Zeit nicht reagiert. Wenn Sie also plötzliche große Datenverkehrsmengen erwarten, stellen Sie die Mindest-Instanzanzahl höher ein, um diese Spitzenlasten abzufangen. 
-	
-14. Nachdem Sie die Änderungen an den Objekten in der Liste **Skalierungseinstellungen für Zeitplan bearbeiten** vorgenommen haben, klicken Sie in der Befehlsleiste am unteren Rand der Seite auf **Speichern**, um alle Zeitplaneinstellungen gleichzeitig zu speichern (so müssen Sie nicht jeden Zeitplan einzeln speichern).
-
-> [AZURE.NOTE] [Im Azure-Vorschauportal](https://portal.azure.com/) können Sie nicht nur nach CPU-Prozentsatz skalieren, sondern auch nach den anderen Metriken für die Arbeitsspeicherauslastung, Warteschlangenlänge des Datenträgers, HTTP-Warteschlangenlänge, eingehende Daten und ausgehende Daten. Außerdem besteht die Möglichkeit, eine oder mehrere Regeln für das Hoch- und Herunterskalieren zu erstellen, die Ihnen noch mehr individuelle Kontrolle über die Skalierung bieten. Weitere Informationen finden Sie unter [Skalieren von Websites](http://azure.microsoft.com/documentation/articles/insights-how-to-scale/) in der Dokumentation zum Azure-Vorschauportal.
+	![Ergebnisse der Regeln für automatisches Skalieren][SetRulesFinal]
 
 <a name="ScalingSQLServer"></a>
-##Skalierung einer mit der Website verbundenen SQL-Serverdatenbank	
-Wenn mit Ihrer Website ein oder mehrere SQL Server-Datenbanken verknüpft sind (unabhängig vom Webhostingplan-Modus), werden diese im Abschnitt **Verknüpfte Ressourcen** unten auf der Seite "Skalieren" aufgeführt.
+##Skalierung einer mit der Web-App verbundenen SQL-Serverdatenbank
+Wenn Sie bereits eine oder mehrere SQL Server-Datenbanken mit Ihrer Web-App verknüpft haben (unabhängig vom Modus des Anwendungsdiensts Plan), können Sie dies schnell Ihren Anforderungen entsprechend skalieren.
 
-1. Um eine dieser Datenbanken zu skalieren, klicken Sie im Abschnitt **Verknüpfte Ressourcen** auf den Link **Skalierung für diese Datenbank verwalten** neben dem Namen der Datenbank.
+1. Um einer der verknüpften Datenbanken zu skalieren, öffnen Sie das Blatt Ihrer Web-App im [Azure-Portal][portal]. Klicken Sie in der reduzierbaren Dropdownliste **Essentials** auf den Link **Ressourcengruppe**. Klicken Sie dann im Bereich **Zusammenfassung** des Blatts "Ressourcengruppe" auf eine der verknüpften Datenbanken.
+
+	![Verknüpfte Datenbanken][ResourceGroup]
 	
-	![Linked database][LinkedResources]
+2. Klicken Sie auf dem Blatt der verknüpften SQL-Datenbank auf den Bereich **Pricing tier**, wählen Sie eine Ebene basierend auf Ihren Leistungsanforderungen aus, und klicken Sie auf **Auswählen**. 
 	
-2. Über den Link gelangen Sie zur SQL Server-Registerkarte im Azure-Verwaltungsportal, wo Sie **Edition** und **Maximale Größe** für die Datenbank konfigurieren können:
+	![Skalieren Ihrer SQL-Datenbank][ScaleDatabase]
 	
-	![Scale your SQL Server database][ScaleDatabase]
+3. Sie können die geografische Replikation einrichten, um die die Funktionen für hohe Verfügbarkeit und Notfallwiederherstellung der SQL-Datenbank zu erhöhen. Klicken Sie hierzu auf den Bereich **Georeplikation**.
 	
-	Für **Edition** wählen Sie **BASIC**, **STANDARD** oder **PREMIUM** abhängig von der Speicherkapazität, die Sie benötigen. Zur weiteren Entwicklung der Editionen **Web** und **BUSINESS** lesen Sie die [häufig gestellte Fragen zu Web und Business Edition Sunset](http://msdn.microsoft.com/library/azure/dn741330.aspx).
-	
-	Der ausgewählte Wert für **Maximale Größe** gibt die Obergrenze für die Datenbank an. Die Datenbankgebühren basieren auf der tatsächlich gespeicherten Datenmenge, daher wirkt sich eine Änderung der Eigenschaft **Maximale Größe** nicht unmittelbar auf die Datenbankgebühren aus. Weitere Informationen finden Sie unter [Konten und Abrechnung in Microsoft Azure SQL-Datenbanken][SQLaccountsbilling].
+	![Einrichten der Georeplikation für SQL-Datenbanken][GeoReplication]
 
 <a name="devfeatures"></a>
 ## Entwicklerfunktionen
-Je nach Webhostingplan-Modus stehen die folgenden entwicklungsbezogenen Funktionen zur Verfügung:
+Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen zur Verfügung:
 
-**Bitness**
+### Bitness ###
 
-- Der Basic- und Standard-Planmodus unterstützt 64-Bit- und 32-Bit-Anwendungen.
-- Der Free- und Shared-Planmodus unterstützt nur 32-Bit-Anwendungen.
+- Die Modi **Basic**, **Standard** und **Premium** unterstützen 64-Bit- und 32-Bit-Anwendungen.
+- Die Planmodi **Kostenlos** und **Freigegeben** unterstützen lediglich 32-Bit-Anwendungen.
 
-**Debugger-Support**
+### Debugger-Support ###
 
-- Debugger-Support ist für die Webhostingplan-Modi "Kostenlos", "Freigegeben" und "Basic" mit einer gleichzeitigen Verbindung pro Anwendung erhältlich.
-- Debugger-Support ist für den Webhostingplan-Modus "Standard" mit fünf gleichzeitigen Verbindungen pro Anwendung erhältlich.
+- Debugger-Support ist für die Modi **Kostenlos**, **Freigegeben** und **Basic** mit 1 gleichzeitigen Verbindung pro App Service-Plan verfügbar.
+- Debugger-Support ist für die Modi **Standard** und **Premium** mit 5 gleichzeitigen Verbindungen pro App Service-Plan verfügbar.
 
 <a name="OtherFeatures"></a>
 ## Andere Funktionen
 
-**Webendpunkt-Überwachung**
+### Webendpunkt-Überwachung ###
 
-- Die Webendpunkt-Überwachung ist in den Webhostingplan-Modi "Basic" und "Standard" verfügbar. Weitere Informationen zur Webendpunkt-Überwachung finden Sie unter [Überwachen von Websites](http://azure.microsoft.com/documentation/articles/web-sites-monitor/).
+- Die Webendpunkt-Überwachung ist in den Modi **Basic**, **Standard** und **Premium** verfügbar. Weitere Informationen zur Web-Endpunktüberwachung finden Sie unter [Überwachen von Websites](web-sites-monitor.md)..
 
-- Ausführliche Informationen zu den anderen Funktionen in den Webhostingplänen, darunter Preisgestaltung und allgemein interessante Funktionen (auch für Entwickler), finden Sie unter [Preisdetails zu Websites](http://azure.microsoft.com/pricing/details/web-sites/).
+- Ausführliche Informationen zu den anderen Funktionen in den App Service-Plänen, darunter Preisgestaltung und allgemein interessante Funktionen (auch für Entwickler), finden Sie unter [Websites Preise](/pricing/details/web-sites/)..
+
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <a name="Next Steps"></a>	
 ## Nächste Schritte
 
-- Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
-
+- Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](/pricing/free-trial/).
 - Informationen zu Preisen, Support und SLAs erhalten Sie unter den folgenden Links.
 	
-	[Preisdetails zur Datenübertragung](http://azure.microsoft.com/pricing/details/data-transfers/)
+	[Preisdetails zur Datenübertragung](/pricing/details/data-transfers/)
 	
-	[Microsoft Azure-Supportpläne](http://azure.microsoft.com/support/plans/)
+	[Microsoft Azure-Supportpläne](/support/plans/)
 	
-	[Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/)
+	[Vereinbarungen zum Servicelevel](/support/legal/sla/)
 	
-	[Preisdetails für SQL-Datenbanken](http://azure.microsoft.com/pricing/details/sql-database/)
+	[Preisdetails für SQL-Datenbanken](/pricing/details/sql-database/)
 	
 	[Größen virtueller Computer und Cloud-Dienste für Microsoft Azure][vmsizes]
 	
-	[Preisdetails zu Websites](http://azure.microsoft.com/pricing/details/web-sites/)
+	[App-Service-Preisdetails](/pricing/details/web-sites/)
 	
-	[Preisdetails zu Websites - SSL-Verbindungen](http://azure.microsoft.com/pricing/details/web-sites/#ssl-connections)
+	[Anwendungsdiensts Preisdetails - SSL-Verbindungen](/pricing/details/web-sites/#ssl-connections)
 
-- Informationen zu den Best Practices für Azure-Websites, einschließlich Aufbau einer skalierbaren, robusten Architektur, finden Sie unter [Best Practices: Microsoft Azure-Websites (WAWS)](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
+- Informationen zu den Best Practices für Azure App Service, einschließlich Aufbau einer skalierbaren, robusten Architektur, finden Sie unter [Best Practices: Azure App Service Web Apps (in englischer Sprache)](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
 
-- Videos zur Skalierung von Azure-Websites:
+- Videos zum Skalieren von Web-Apps:
 	
-	[Wann sollte man Azure-Websites skalieren? - Mit Stefan Schackow](http://azure.microsoft.com/documentation/videos/azure-web-sites-free-vs-standard-scaling/)
-	
-	[Automatisches Skalieren von Azure-Websites, CPU-abhängig oder geplant - Mit Stefan Schackow](http://azure.microsoft.com/documentation/videos/auto-scaling-azure-web-sites/)
+	- [Wann sollte man Azure-Websites skalieren? - Mit Stefan Schackow](/documentation/videos/azure-web-sites-free-vs-standard-scaling/)
+	- [Automatisches Skalieren von Azure-Websites, CPU-abhängig oder geplant - Mit Stefan Schackow](/documentation/videos/auto-scaling-azure-web-sites/)
+	- [Wie sollte man Azure-Websites skalieren? - Mit Stefan Schackow](/documentation/videos/how-azure-web-sites-scale/)
 
-	[Wie sollte man Azure-Websites skalieren? - Mit Stefan Schackow](http://azure.microsoft.com/documentation/videos/how-azure-web-sites-scale/)
-
-
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 <!-- LINKS -->
 [vmsizes]:http://go.microsoft.com/fwlink/?LinkId=309169
 [SQLaccountsbilling]:http://go.microsoft.com/fwlink/?LinkId=234930
 [azuresubscriptions]:http://go.microsoft.com/fwlink/?LinkID=235288
-[portal]: https://manage.windowsazure.com/
+[Portal]: https://portal.azure.com/
 
 <!-- IMAGES -->
-[SelectWebsite]: ./media/web-sites-scale/01SelectWebSite.png
-[SelectScaleTab]: ./media/web-sites-scale/02SelectScaleTab.png
-
-[ChooseWHP]: ./media/web-sites-scale/03aChooseWHP.png
-[ChooseBasicInstanceSize]: ./media/web-sites-scale/03bChooseBasicInstanceSize.png
-[ChooseBasicInstanceCount]: ./media/web-sites-scale/04ChooseBasicInstanceCount.png
+[ChooseWHP]: ./media/web-sites-scale/scale1ChooseWHP.png
+[ChooseBasicInstances]: ./media/web-sites-scale/scale2InstancesBasic.png
 [SaveButton]: ./media/web-sites-scale/05SaveButton.png
 [BasicComplete]: ./media/web-sites-scale/06BasicComplete.png
-[ChooseStandard]: ./media/web-sites-scale/07ChooseStandard.png
-[CapacitySectionStandard]: ./media/web-sites-scale/08CapacitySectionStandard.png
-[ChooseInstanceSize]: ./media/web-sites-scale/09ChooseInstanceSize.png
-[SetUpScheduleTimesButton]: ./media/web-sites-scale/10SetUpScheduleTimesButton.png
-[SetUpScheduleTimesDialog]: ./media/web-sites-scale/11SetUpScheduleTimesDialog.png
-[EditScaleSettingsForSchedule]: ./media/web-sites-scale/12EditScaleSettingsForSchedule.png
-[ScaleByMetric]: ./media/web-sites-scale/13ScaleByMetric.png
-[InstanceCount]: ./media/web-sites-scale/14InstanceCount.png
-[TargetCPU]: ./media/web-sites-scale/15TargetCPU.png
-[LinkedResources]: ./media/web-sites-scale/16LinkedResources.png
-[ScaleDatabase]: ./media/web-sites-scale/17ScaleDatabase.png
+[ScaleStandard]: ./media/web-sites-scale/scale3InstancesStandard.png
+[Autoscale]: ./media/web-sites-scale/scale4AutoScale.png
+[SetTargetMetrics]: ./media/web-sites-scale/scale5AutoScaleTargetMetrics.png
+[SetFirstRule]: ./media/web-sites-scale/scale6AutoScaleFirstRule.png
+[SetSecondRule]: ./media/web-sites-scale/scale7AutoScaleSecondRule.png
+[SetThirdRule]: ./media/web-sites-scale/scale8AutoScaleThirdRule.png
+[SetRulesFinal]: ./media/web-sites-scale/scale9AutoScaleFinal.png
+[ResourceGroup]: ./media/web-sites-scale/scale10ResourceGroup.png
+[ScaleDatabase]: ./media/web-sites-scale/scale11SQLScale.png
+[GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

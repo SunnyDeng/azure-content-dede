@@ -10,10 +10,10 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/23/2014" 
+	ms.date="02/26/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App
@@ -25,7 +25,7 @@
 
 <p>In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ihre App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.</p>
 </div>
-<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=298631" target="_blank" class="label">Lernprogramm anzeigen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-get-started-authentication-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=298631" target="_blank" class="dev-onpage-video"><span class="icon">Video wiedergeben</span></a> <span class="time">10:50</span></div>
+<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=298631" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-get-started-authentication-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=298631" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">10:50</span></div>
 </div>  
 
 Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von Authentifizierung in Ihrer App:
@@ -36,7 +36,7 @@ Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von A
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen. 
 
->[AZURE.NOTE]Dieses Lernprogramm demonstriert den von Mobile Services verwalteten Authentifizierungsfluss bei Verwendung einer Vielzahl von Identitätsanbietern. Diese Methode lässt sich einfach konfigurieren und unterstützt verschiedene Anbieter. Wenn Sie stattdessen Live Connect mit clientverwalteter Authentifizierung verwenden und eine Möglichkeit für einmaliges Anmelden in Ihrer Windows Phone-App bereitstellen möchten, finden Sie weitere Informationen im Thema [Einmalige Anmeldung für Windows Phone-Apps mithilfe von Live Connect]. Bei Verwendung der clientseitig verwalteten Authentifizierung hat die App Zugriff auf zusätzliche Benutzerdaten, die vom Identitätsanbieter verwaltet werden. Sie erhalten dieselben Benutzerdaten in Ihrem mobilen Dienst, indem Sie die **user.getIdentities()**-Funktion in Serverskripts aufrufen. Weitere Informationen finden Sie [in diesem Beitrag](http://go.microsoft.com/fwlink/p/?LinkId=506605).
+>[AZURE.NOTE] Dieses Lernprogramm demonstriert den von Mobile Services verwalteten Authentifizierungsfluss bei Verwendung einer Vielzahl von Identitätsanbietern. Diese Methode lässt sich einfach konfigurieren und unterstützt verschiedene Anbieter. Wenn Sie stattdessen Live Connect mit clientverwalteter Authentifizierung verwenden und eine Möglichkeit für einmaliges Anmelden in Ihrer Windows Phone-App bereitstellen möchten, finden Sie weitere Informationen im Thema [Einmalige Anmeldung für Windows Phone-Apps mithilfe von Live Connect]. Bei Verwendung der clientseitig verwalteten Authentifizierung hat die App Zugriff auf zusätzliche Benutzerdaten, die vom Identitätsanbieter verwaltet werden. Sie erhalten dieselben Benutzerdaten in Ihrem mobilen Dienst, indem Sie die **user.getIdentities()**-Funktion in Serverskripts aufrufen. Weitere Informationen finden Sie [in diesem Beitrag](http://go.microsoft.com/fwlink/p/?LinkId=506605).
 
 ##<a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 
@@ -44,17 +44,16 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 [AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
 
 
-##<a name="permissions"></a>Einschränken von Berechtigungen auf authentifizierte Benutzer
+##<a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
 
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
 
 
-3. Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services] erstellt haben. 
+<ol start="3">
+<li>Öffnen Sie in Visual Studio 2012 Express für Windows Phone das Projekt, das Sie im Lernprogramm <strong>Erste Schritte mit Mobile Services</strong> erstellt haben.</li>
 
-4. Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde. 
-   
-   	Dies liegt daran, dass die App versucht als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die _TodoItem_-Tabelle jetzt jedoch Authentifizierung erfordert.
+<li>Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde. Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die <em>TodoItem</em>-Tabelle jetzt jedoch Authentifizierung erfordert.</li></ol>
 
 Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
 
@@ -68,7 +67,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Im nächsten Lernprogramm, [Dienstseitige Autorisierung von Mobile Services-Benutzern][Autorisieren von Benutzern mit Skripts], verwenden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert, um die von Mobile Services zurückgegebenen Daten zu filtern. 
+Im nächsten Lernprogramm, [Dienstseitige Autorisierung von Mobile Services-Benutzern](mobile-services-javascript-backend-service-side-authorization.md), verwenden Sie den von Mobile Services anhand eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert zum Filtern der von Mobile Services zurückgegebenen Daten. 
 
 <!-- Anchors. -->
 [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
@@ -81,15 +80,13 @@ Im nächsten Lernprogramm, [Dienstseitige Autorisierung von Mobile Services-Benu
 [2]: ./media/mobile-services-wp8-get-started-users/mobile-service-uri.png
 [3]: ./media/mobile-services-wp8-get-started-users/mobile-identity-tab.png
 [4]: ./media/mobile-services-wp8-get-started-users/mobile-portal-data-tables.png
-[5]: ./media/mobile-services-wp8-get-started-users/mobile-portal-change-table-per
-	ms.png
+[5]: ./media/mobile-services-wp8-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started
-[Autorisieren von Benutzern mit Skripts]: /de-de/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
+[Erste Schritte mit Mobile Services]: mobile-services-windows-phone-get-started.md
+[Autorisieren von Benutzern mit Skripts]: mobile-services-windows-phone-authorize-users-in-scripts.md
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Einmaliges Anmelden für Windows Phone-Apps mithilfe von Live Connect]: /de-de/documentation/articles/mobile-services-windows-phone-single-sign-on
+[Einmalige Anmeldung für Windows Phone-Apps mithilfe von Live Connect]: mobile-services-windows-phone-single-sign-on.md
 
-
-<!--HONumber=42-->
+<!--HONumber=49-->

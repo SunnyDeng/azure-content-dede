@@ -13,79 +13,64 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/10/2014" 
+	ms.date="03/11/2015" 
 	ms.author="tamram"/>
 
 
 # Verwenden des Tabellenspeichers mit .NET
 
+[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
+
+## Übersicht
 
 In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem 
-Azure-Tabellenspeicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure Storage Client Library für .NET zurück. Die behandelten Szenarien umfassen das **Erstellen und Löschen einer Tabelle** sowie das **Arbeiten mit Tabellenentitäten**. Weitere Informationen zu Tabellen finden Sie im Abschnitt [Nächste Schritte][].
+Azure-Tabellenspeicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure Storage Client Library für .NET zurück. Die behandelten Szenarien umfassen das **Erstellen und Löschen einer Tabelle** sowie das **Arbeiten mit Tabellenentitäten**.
 
-> [AZURE.NOTE] Diese Anleitung gilt für die Azure .NET Storage Client Library 2.x und höher. Die empfohlene Version für die Speicher-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) oder als Teil des [Azure SDK für .NET](/de-de/downloads/) erhältlich. Unter [Vorgehensweise: Programmgesteuerter Zugriff auf Tabellenspeicher][] weiter unten erhalten Sie weitere Informationen zum Download der Speicherclientbibliothek.
-
-## Inhaltsverzeichnis
-
--   [Was ist der Tabellenspeicherdienst?][]
--   [Konzepte][]
--   [Erstellen eines Azure-Speicherkontos][]
--   [Einrichten einer Speicherverbindungszeichenfolge][]
--   [Vorgehensweise: Programmgesteuerter Zugriff auf Tabellenspeicher][]
--   [Vorgehensweise: Erstellen einer Tabelle][]
--   [Vorgehensweise: Hinzufügen einer Entität zu einer Tabelle][]
--   [Vorgehensweise: Einfügen eines Entitätsbatchs][]
--   [Vorgehensweise: Abrufen aller Entitäten in einer Partition][]
--   [Vorgehensweise: Abrufen eines Entitätsbereichs in einer Partition][]
--   [Vorgehensweise: Abrufen einer einzelnen Entität][]
--   [Vorgehensweise: Ersetzen einer Entität][]
--   [Vorgehensweise: Einfügen oder Ersetzen einer Entität][]
--   [Vorgehensweise: Abfragen einer Teilmenge von Entitätseigenschaften][]
--   [Vorgehensweise: Löschen einer Entität][]
--   [Vorgehensweise: Löschen einer Tabelle][]
--   [Nächste Schritte][]
+> [AZURE.NOTE] Diese Anleitung gilt für die Azure .NET Storage Client Library 2.x und höher. Die empfohlene Version für die Storage-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) oder als Teil des [Azure-SDK für .NET](/downloads/) erhältlich. Unter [Programmgesteuerter Zugriff auf Tabellenspeicher](#programmatically-access-table-storage) weiter unten finden Sie weitere Informationen zum Download der Storage-Clientbibliothek.
 
 [AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
-[AZURE.INCLUDE [storage-configure-connection-string](../includes/storage-configure-connection-string.md)]
+[AZURE.INCLUDE [storage-configure-connection-string-include](../includes/storage-configure-connection-string-include.md)]
 
-## <h2> <a name="configure-access"> </a>Vorgehensweise: Programmgesteuerter Zugriff auf Tabellenspeicher</h2>
+## Programmgesteuerter Zugriff auf Tabellenspeicher
 
-<h3>Abrufen der Assembly</h3>
+### Abrufen der Assembly
 Sie können die Assembly  `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **NuGet-Pakete verwalten** aus.  Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie dann auf **Installieren**, um das Azure Storage-Paket und die zugehörigen Abhängigkeiten zu installieren.
 
-`Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im <a href="http://azure.microsoft.com/develop/net/#">.NET Developer Center</a> herunterladen können. Die Assembly wird im Verzeichnis  `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` installiert.
+"Microsoft.WindowsAzure.Storage.dll" ist ebenfalls im Azure-SDK für .NET enthalten, das Sie im <a href="http://azure.microsoft.com/develop/net/#">.NET Developer Center</a> herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Azure\.NET SDK\<sdk-version>\ref\` installiert.
 
-<h3>Namespace-Deklarationen</h3>
+### Namespace-Deklarationen
 Fügen Sie die folgende Codenamespace-Deklaration am Anfang aller C\#-Dateien hinzu, mit denen Sie programmgesteuert auf Azure Storage zugreifen möchten:
 
     using Microsoft.WindowsAzure.Storage;
-    using Microsoft.WindowsAzure.Storage.Auth;
+	using Microsoft.WindowsAzure.Storage.Auth;
     using Microsoft.WindowsAzure.Storage.Table;
 
 Stellen Sie sicher, dass auf die  `Microsoft.WindowsAzure.Storage.dll`-Assembly verwiesen wird.
 
-<h3>Abrufen der Verbindungszeichenfolge</h3>
-Sie können Ihre Speicherkontoinformationen mit dem Typ **CloudStorageAccount** darstellen. Falls Sie eine Azure-Projektvorlage verwenden und/oder einen Verweis auf den Namespace Microsoft.WindowsAzure.CloudConfigurationManager haben, können Sie den Typ **CloudConfigurationManager** verwenden,um Ihre Speicherverbindungszeichenfolge und Speicherkontodaten aus der Azure-Dienstkonfiguration abzurufen:
+### Abrufen der Verbindungszeichenfolge
+Sie können Ihre Speicherkontoinformationen mit dem Typ **CloudStorageAccount** darstellen. Falls Sie eine 
+Azure-Projektvorlage verwenden und/oder über einen Verweis auf
+den Microsoft.WindowsAzure.CloudConfigurationManager-Namespace verfügen, können Sie den Typ **ConfigurationManager** verwenden, um Ihre Verbindungszeichenfolge für den Speicher und die Speicherkontoinformationen aus der Azure-Dienstkonfiguration abzurufen:
 
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-Wenn Sie eine Anwendung ohne einen Verweis auf Microsoft.WindowsAzure.CloudConfigurationManager stellen und die Verbindungszeichenfolge sich in  `web.config` oder  `app.config` befindet, wie oben gezeigt, können Sie die Verbindungszeichenfolge mit **ConfigurationManager** abrufen.  Sie müssen einen Verweis auf "System.Configuration.dll" zu Ihrem Projekt und eine andere Namespace-Deklaration dafür hinzufügen:
+Wenn Sie eine Anwendung ohne einen Verweis auf Microsoft.WindowsAzure.CloudConfigurationManager erstellen und die Verbindungszeichenfolge sich, wie oben gezeigt, in `web.config` oder `app.config` befindet, können Sie die Verbindungszeichenfolge mit **ConfigurationManager** abrufen.  Sie müssen einen Verweis auf "System.Configuration.dll" zu Ihrem Projekt und eine andere Namespace-Deklaration dafür hinzufügen:
 
 	using System.Configuration;
 	...
 	CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-		ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString);
+		ConfigurationManager.ConnectionStrings["StorageConnectionString"]);
 
-<h3>ODataLib-Abhängigkeiten</h3>
-ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst. Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen. Die spezifischen ODataLib-Pakete sind [OData], [Edm] und [Spatial].
+### ODataLib-Abhängigkeiten
+ODataLib-Abhängigkeiten in der Speicherclientbibliothek für .NET werden durch die ODataLib-Pakete (Version 5.0.2), die über NuGet verfügbar sind, und nicht durch WCF Data Services aufgelöst.  Die ODataLib-Bibliotheken können direkt heruntergeladen werden, oder es wird über Ihr Codeprojekt durch NuGet darauf verwiesen.  Die spezifischen ODataLib-Pakete sind [OData], [Edm] und [Spatial].
 
-<h2><a name="create-table"></a>Vorgehensweise: Erstellen einer Tabelle</h2>
+## Erstellen einer Tabelle
 
-Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen und Entitäten abrufen. Der folgende Code erstellt ein **CloudTableClient**-Objekt und verwendet das Objekt für die Erstellung einer neuen Tabelle. Bei allem Code in diesem Leitfaden wird davon ausgegangen, dass es sich bei der erstellten Anwendung um ein Azure-Clouddienstprojekt handelt und eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge verwendet wird.
+Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen und Entitäten abrufen. Der folgende Code erstellt ein **CloudTableClient**-Objekt und verwendet es zum Erstellen einer neuen Tabelle. Bei allem Code in diesem Leitfaden wird davon ausgegangen, dass es sich bei der erstellten Anwendung um ein Azure-Clouddienstprojekt handelt und eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge verwendet wird.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -98,9 +83,10 @@ Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen 
     CloudTable table = tableClient.GetTableReference("people");
     table.CreateIfNotExists();
 
-<h2><a name="add-entity"></a>Vorgehensweise: Hinzufügen einer Entität zu einer Tabelle</h2>
+## Hinzufügen einer Entität zu einer Tabelle
 
-Entitäten werden mithilfe einer aus **TableEntity** abgeleiteten benutzerdefinierten Klasse C\#-Objekten zugeordnet. Erstellen Sie eine Klasse, mit der die Eigenschaften der Entität definiert werden, um eine Entität zu einer Tabelle hinzuzufügen. Mit dem folgenden Code wird eine Entitätsklasse definiert, die den Vornamen des Kunden als Zeilenschlüssel und den Nachnamen als Partitionsschlüssel verwendet. In Kombination miteinander wird mit dem Partitions- und Zeilenschlüssel eine Entität in der Tabelle eindeutig identifiziert. Entitäten mit demselben Partitionsschlüssel können schneller abgerufen werden als Entitäten mit unterschiedlichen Partitionsschlüsseln, die Verwendung verschiedener Partitionsschlüssel ermöglicht jedoch eine größere parallele Vorgangsskalierbarkeit. Bei jeder Eigenschaft, die im Tabellendienst gespeichert werden soll, muss es sich um eine öffentliche Eigenschaft eines unterstützten Typs handeln, die sowohl  `get` als auch  `set` verfügbar macht.
+Entitäten werden C#-Objekten mithilfe einer benutzerdefinierten Klasse zugeordnet, die aus
+**TableEntity** abgeleitet wird. Erstellen Sie eine Klasse, mit der die Eigenschaften der Entität definiert werden, um eine Entität zu einer Tabelle hinzuzufügen. Mit dem folgenden Code wird eine Entitätsklasse definiert, die den Vornamen des Kunden als Zeilenschlüssel und den Nachnamen als Partitionsschlüssel verwendet. In Kombination miteinander wird mit dem Partitions- und Zeilenschlüssel eine Entität in der Tabelle eindeutig identifiziert. Entitäten mit demselben Partitionsschlüssel können schneller abgerufen werden als Entitäten mit unterschiedlichen Partitionsschlüsseln, die Verwendung verschiedener Partitionsschlüssel ermöglicht jedoch eine größere parallele Vorgangsskalierbarkeit.  Bei jeder Eigenschaft, die im Tabellendienst gespeichert werden soll, muss es sich um eine öffentliche Eigenschaft eines unterstützten Typs handeln, die sowohl `get` als auch `set` verfügbar macht.
 Darüber hinaus  *must* der Entitätstyp einen parameterlosen Konstruktor verfügbar machen.
 
     public class CustomerEntity : TableEntity
@@ -118,7 +104,7 @@ Darüber hinaus  *must* der Entitätstyp einen parameterlosen Konstruktor verfü
         public string PhoneNumber { get; set; }
     }
 
-Tabellenvorgänge, die Entitäten umfassen, werden mit dem **CloudTable**-Objekt durchgeführt, das Sie unter "Vorgehensweise: Erstellen einer Tabelle" erstellt haben. Der durchzuführende Vorgang wird durch ein **TableOperation**-Objekt dargestellt. Im folgenden Codebeispiel wird die Erstellung des **CloudTable**-Objekts und danach eines **CustomerEntity**-Objekts gezeigt.  Um den Vorgang vorzubereiten, wird eine **TableOperation** zum Einfügen der Kundenentität in die Tabelle erstellt.  Schließlich wird der Vorgang durch einen Aufruf von **CloudTable.Execute** ausgeführt.
+Tabellenvorgänge, die Entitäten umfassen, werden mit dem **CloudTable**-Objekt durchgeführt, das Sie unter "Vorgehensweise: Erstellen einer Tabelle" erstellt haben.  Der durchzuführende Vorgang wird durch ein **TableOperation**-Objekt dargestellt.  Im folgenden Codebeispiel wird die Erstellung des **CloudTable**-Objekts und danach eines **CustomerEntity**-Objekts gezeigt.  Um den Vorgang vorzubereiten, wird eine **TableOperation** zum Einfügen der Kundenentität in die Tabelle erstellt.  Schließlich wird der Vorgang durch einen Aufruf von **CloudTable.Execute** ausgeführt.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -141,13 +127,14 @@ Tabellenvorgänge, die Entitäten umfassen, werden mit dem **CloudTable**-Objekt
     // Execute the insert operation.
     table.Execute(insertOperation);
 
-<h2><a name="insert-batch"></a>Vorgehensweise: Einfügen eines Entitätsbatchs</h2>
+## Einfügen eines Entitätsbatchs
 
 Sie können einen Entitätsbatch in einem Schreibvorgang in eine Tabelle einfügen. Beachten Sie im Zusammenhang mit Batchvorgängen Folgendes:
 
 1.  Sie können Aktualisierungs-, Lösch- und Einfügevorgänge in einem einzigen Batchvorgang ausführen.
 2.  Ein einzelner Batchvorgang kann bis zu 100 Entitäten umfassen.
-3.  Alle Entitäten in einem Batchvorgang müssen über denselben Partitionsschlüssel verfügen.
+3.  Alle Entitäten in einem Batchvorgang müssen über denselben
+    Partitionsschlüssel verfügen.
 4.  Eine Abfrage kann als Batchvorgang durchgeführt werden, dabei muss es sich jedoch um den einzigen Vorgang im Batch handeln.
 
 <!-- -->
@@ -183,7 +170,7 @@ Im folgenden Codebeispiel werden zwei Entitätsobjekte erstellt und mit der **In
 	// Execute the batch operation.
 	table.ExecuteBatch(batchOperation);
 
-<h2><a name="retrieve-all-entities"></a>Vorgehensweise: Abrufen aller Entitäten in einer Partition</h2>
+## Abrufen aller Entitäten in einer Partition
 
 Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle für alle Entitäten in einer Partition abzurufen.
 Im folgenden Codebeispiel wird ein Filter für Entitäten erstellt, wobei  'Smith' der Partitionsschlüssel ist. In diesem Beispiel werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
@@ -208,7 +195,7 @@ Im folgenden Codebeispiel wird ein Filter für Entitäten erstellt, wobei  'Smit
             entity.Email, entity.PhoneNumber);
     }
 
-<h2><a name="retrieve-range-entities"></a>Vorgehensweise: Abrufen eines Entitätsbereichs in einer Partition</h2>
+## Abrufen eines Entitätsbereichs in einer Partition
 
 Wenn Sie nicht alle Entitäten in einer Partition abrufen möchten, können Sie einen Bereich angeben, indem Sie den Partitionsschlüsselfilter mit einem Zeilenschlüsselfilter kombinieren. Im folgenden Codebeispiel werden zwei Filter eingesetzt, um alle Entitäten in der Partition  'Smith' abzurufen, deren Zeilenschlüssel (Vorname) mit einem Buchstaben vor dem Buchstaben E im Alphabet beginnen. Danach werden die Abfrageergebnisse gedruckt.
 
@@ -236,7 +223,7 @@ Wenn Sie nicht alle Entitäten in einer Partition abrufen möchten, können Sie 
             entity.Email, entity.PhoneNumber);
     }
 
-<h2><a name="retrieve-single-entity"></a>Vorgehensweise: Abrufen einer einzelnen Entität</h2>
+## Abrufen einer einzelnen Entität
 
 Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Der folgende Code verwendet eine **TableOperation**, um den Kunden  'Ben Smith' anzugeben.
 Bei dieser Methode wird nur eine Entität anstelle einer Sammlung zurückgegeben, und bei dem zurückgegebenen Wert in **TableResult.Result** handelt es sich um eine **CustomerEntity**.
@@ -264,10 +251,10 @@ Die Angabe beider Schlüssel, Partition und Zeile, in einer Abfrage ist die schn
 	else
 	   Console.WriteLine("The phone number could not be retrieved.");
 
-<h2><a name="replace-entity"></a>Vorgehensweise: Ersetzen einer Entität</h2>
+## Ersetzen einer Entität
 
 Um eine Entität zu aktualisieren, rufen Sie sie aus dem Tabellendienst ab, ändern Sie das Entitätsobjekt, und speichern Sie die Änderungen dann im Tabellendienst. Mit dem folgenden Code wird die Telefonnummer eines vorhandenen Kunden geändert. Anstelle von **Insert** wird in diesem Code 
-**Replace** aufgerufen. Dadurch wird die Entität auf dem Server vollständig ersetzt, sofern die Entität auf dem Server sich seit dem letzten Abruf nicht geändert hat. In diesem Fall wäre der Vorgang nicht erfolgreich.  Auf diese Weise soll verhindert werden, dass eine Änderung, die zwischen dem Abruf und der Aktualisierung durch eine andere Komponente der Anwendung vorgenommen wurde, unabsichtlich überschrieben wird. In diesem Fall sollten Sie die Entität erneut abrufen, Ihre Änderungen vornehmen (falls diese noch gültig sind), und anschließend einen neuen **Replace**-Vorgang ausführen.  Im nächsten Abschnitt erfahren Sie, wie Sie dieses Verhalten überschreiben.
+**Replace** aufgerufen. Dadurch wird die Entität auf dem Server vollständig ersetzt, sofern die Entität auf dem Server sich seit dem letzten Abruf nicht geändert hat. In diesem Fall wäre der Vorgang nicht erfolgreich.  Auf diese Weise soll verhindert werden, dass eine Änderung, die zwischen dem Abruf und der Aktualisierung durch eine andere Komponente der Anwendung vorgenommen wurde, unabsichtlich überschrieben wird.  In diesem Fall sollten Sie die Entität erneut abrufen, Ihre Änderungen vornehmen (falls diese noch gültig sind) und anschließend einen neuen **Replace**-Vorgang ausführen.  Im nächsten Abschnitt erfahren Sie, wie Sie dieses Verhalten überschreiben.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -305,7 +292,7 @@ Um eine Entität zu aktualisieren, rufen Sie sie aus dem Tabellendienst ab, änd
 	else
 	   Console.WriteLine("Entity could not be retrieved.");
 
-<h2><a name="insert-or-replace-entity"></a>Vorgehensweise: Einfügen oder Ersetzen einer Entität</h2>
+## Einfügen oder Ersetzen einer Entität
 
 **Replace**-Vorgänge sind nicht erfolgreich, wenn die Entität seit dem letzten Abruf vom Server geändert wurde.  Darüber hinaus müssen Sie zuerst die Entität vom Server abrufen, damit der **Replace**-Vorgang erfolgreich ist.
 Manchmal ist jedoch nicht bekannt, ob die Entität auf dem Server vorhanden ist, und die darin aktuell gespeicherten Werte sind nicht relevant. In diesem Fall sollten diese durch die Aktualisierung vollständig überschrieben werden.  Dazu würden Sie einen **InsertOrReplace**-Vorgang verwenden.  Bei diesem Vorgang wird die Entität eingefügt, falls sie nicht vorhanden ist, oder ersetzt, falls sie vorhanden ist, unabhängig davon, wann die letzte Aktualisierung stattgefunden hat.  Im folgenden Codebeispiel wird die Kundenentität für Ben Smith ebenfalls abgerufen, anschließend jedoch mithilfe von **InsertOrReplace** auf dem Server gespeichert.  Alle Änderungen, die zwischen dem Abruf- und Aktualisierungsvorgang an der Entität vorgenommen wurden, werden überschrieben.
@@ -346,7 +333,7 @@ Manchmal ist jedoch nicht bekannt, ob die Entität auf dem Server vorhanden ist,
 	else
 	   Console.WriteLine("Entity could not be retrieved.");
 
-<h2><a name="query-entity-properties"></a>Vorgehensweise: Abfragen einer Teilmenge von Entitätseigenschaften</h2>
+## Abfragen einer Teilmenge von Entitätseigenschaften
 
 Mit einer Tabellenabfrage können nicht nur alle, sondern auch nur einige Eigenschaften aus einer Entität abgerufen werden. Bei dieser Methode, der sogenannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Mit der Abfrage im folgenden Code werden nur die E-Mail-Adressen von Entitäten in der Tabelle zurückgegeben. Dies erfolgt durch die Verwendung einer Abfrage von **DynamicTableEntity** und eines **EntityResolver**. Weitere Informationen zur Projektion finden Sie in diesem [Blogbeitrag][]. Beachten Sie, dass die Projektion nicht auf dem lokalen Speicheremulator unterstützt wird und dieser Code deshalb nur bei der Verwendung eines Kontos für den Tabellendienst ausgeführt wird.
 
@@ -371,11 +358,11 @@ Mit einer Tabellenabfrage können nicht nur alle, sondern auch nur einige Eigens
         Console.WriteLine(projectedEmail);
     }
 
-<h2><a name="delete-entity"></a>Vorgehensweise: Löschen einer Entität</h2>
+## Löschen einer Entität
 
 Sie können eine Entität problemlos nach dem Abrufen löschen. Verwenden Sie dazu dasselbe Muster wie für das Aktualisieren einer Entität.  Durch den nachstehenden Code wird eine Kundenentität aufgerufen und gelöscht.
 
-    // Retrieve storage account from connection string
+    // Speicherkonto aus Verbindungszeichenfolge abrufen.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
@@ -408,7 +395,7 @@ Sie können eine Entität problemlos nach dem Abrufen löschen. Verwenden Sie da
 	else
 	   Console.WriteLine("Could not retrieve the entity.");
 
-<h2><a name="delete-table"></a>Vorgehensweise: Löschen einer Tabelle</h2>
+## Löschen einer Tabelle
 
 Schließlich wird mit dem folgenden Codebeispiel eine Tabelle aus einem Speicherkonto gelöscht. Eine gelöschte Tabelle kann für eine bestimmte Zeitdauer nach dem Löschvorgang nicht neu erstellt werden.
 
@@ -425,50 +412,31 @@ Schließlich wird mit dem folgenden Codebeispiel eine Tabelle aus einem Speicher
     // Delete the table it if exists.
     table.DeleteIfExists();
 
-<h2><a name="next-steps"></a>Nächste Schritte</h2>
+## Nächste Schritte
 
-Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
+Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 <ul>
 <li>In der Referenzdokumentation für den Tabellenspeicherdienst finden Sie alle Details zu verfügbaren APIs:
   <ul>
-    <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">Referenz zur Speicherclientbibliothek für .NET</a>
+    <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">Referenz zur Storage-Clientbibliothek für .NET</a>
     </li>
-    <li><a href="http://msdn.microsoft.com/library/windowsazure/dd179355">REST-API-Referenz</a></li>
+    <li><a href="http://msdn.microsoft.com/library/azure/dd179355">REST-API-Referenz</a></li>
   </ul>
 </li>
-<li>Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter <a href="http://msdn.microsoft.com/library/windowsazure/gg433040.aspx">Speichern von und Zugreifen auf Daten in Azure</a>.</li>
+<li>Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter <a href="http://msdn.microsoft.com/library/azure/gg433040.aspx">Speichern von und Zugreifen auf Daten in Azure</a>.</li>
 <li>Erfahren Sie, wie Sie mithilfe des <a href="../websites-dotnet-webjobs-sdk/">Azure WebJobs SDK den geschriebenen Code so vereinfachen, dass er mit Azure-Speicher funktioniert.</li>
 <li>Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
   <ul>
-    <li>Verwenden Sie den <a href="/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/">Blobspeicher</a> zum Speichern unstrukturierter Daten.</li>
-    <li>Verwenden Sie den <a href="/de-de/documentation/articles/storage-dotnet-how-to-use-queues/">Warteschlangenspeicher</a> zum Speichern relationaler Daten.</li>
-    <li>Verwenden Sie eine <a href="/de-de/documentation/articles/sql-database-dotnet-how-to-use/">SQL-Datenbank</a> zum Speichern relationaler Daten.</li>
+    <li>Verwenden Sie den <a href="/documentation/articles/storage-dotnet-how-to-use-blobs/">Blobspeicher</a> zum Speichern unstrukturierter Daten.</li>
+    <li>Verwenden Sie den <a href="/documentation/articles/storage-dotnet-how-to-use-queues/">Warteschlangenspeicher</a> zum Speichern relationaler Daten.</li>
+    <li>Verwenden Sie eine <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL-Datenbank</a> zum Speichern relationaler Daten.</li>
   </ul>
 </li>
 </ul>
 
-  [Nächste Schritte]: #next-steps
-  [Was ist der Tabellenspeicherdienst?]: #what-is
-  [Konzepte]: #concepts
-  [Erstellen eines Azure-Speicherkontos]: #create-account
-  [Erstellen eines Azure-Projekts in Visual Studio]: #create-project
-  [Konfigurieren der Anwendung für den Speicherzugriff]: #configure-access
-  [Einrichten einer Speicherverbindungszeichenfolge]: #setup-connection-string
-  [Vorgehensweise: Programmgesteuerter Zugriff auf Tabellenspeicher]: #configure-access
-  [Vorgehensweise: Erstellen einer Tabelle]: #create-table
-  [Vorgehensweise: Hinzufügen einer Entität zu einer Tabelle]: #add-entity
-  [Vorgehensweise: Einfügen eines Entitätsbatchs]: #insert-batch
-  [Vorgehensweise: Abrufen aller Entitäten in einer Partition]: #retrieve-all-entities
-  [Vorgehensweise: Abrufen eines Entitätsbereichs in einer Partition]: #retrieve-range-entities
-  [Vorgehensweise: Abrufen einer einzelnen Entität]: #retrieve-single-entity
-  [Vorgehensweise: Ersetzen einer Entität]: #replace-entity
-  [Vorgehensweise: Einfügen oder Ersetzen einer Entität]: #insert-or-replace-entity
-  [Vorgehensweise: Abfragen einer Teilmenge von Entitätseigenschaften]: #query-entity-properties
-  [Vorgehensweise: Löschen einer Entität]: #delete-entity
-  [Vorgehensweise: Löschen einer Tabelle]: #delete-table
-  [Download und Installation des Azure SDK für .NET]: /de-de/develop/net/
-  [Erstellen eines Azure-Projekts in Visual Studio]: http://msdn.microsoft.com/library/windowsazure/ee405487.aspx
+  [Herunterladen und Installieren von Azure SDK für .NET]: /develop/net/
+  [Erstellen eines Azure-Projekts in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
   
   [Blob5]: ./media/storage-dotnet-how-to-use-table-storage/blob5.png
   [Blob6]: ./media/storage-dotnet-how-to-use-table-storage/blob6.png
@@ -478,10 +446,12 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
   
   [Blogbeitrag]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
   [Referenz zur .NET-Clientbibliothek]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-  [Speichern von und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
-  [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/library/windowsazure/ee758697.aspx
+  [Speichern von und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+  [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
-<!--HONumber=42-->
+  [Vorgehensweise: Programmgesteuerter Zugriff auf den Tabellenspeicher]: #tablestorage
+
+<!--HONumber=49-->

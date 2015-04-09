@@ -1,28 +1,28 @@
 ﻿<properties 
-	pageTitle="Hybridverbindung: Verbinden einer Azure-Website mit einer lokalen Ressource" 
-	description="Erstellen einer Verbindung zwischen einer Azure-Website und einer lokalen Ressource, die einen statischen TCP-Port verwendet" 
-	services="web-sites" 
+	pageTitle="Zugreifen auf lokale Ressourcen über Hybridverbindungen in Azure App Service" 
+	description="Herstellen einer Verbindung zwischen einer Web-App in Azure App Service und einer lokalen Ressource, die einen statischen TCP-Port verwendet" 
+	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/24/2014" 
+	ms.date="03/24/2015" 
 	ms.author="cephalin"/>
 
-#Verbinden einer Azure-Website mit einer lokalen Ressource mithilfe von Hybridverbindungen
+#Zugreifen auf lokale Ressourcen über Hybridverbindungen in Azure App Service
 
-Sie können eine Website auf Microsoft Azure mit jeder lokalen Ressource verbinden, die einen statischen TCP-Port verwendet, wie SQL Server, MySQL, HTTP Web-APIs, Mobile Services und die meisten benutzerdefinierten Webdienste. In diesem Artikel erfahren Sie, wie Sie eine Hybridverbindung zwischen einer Azure-Website und einer lokalen SQL Server-Datenbank herstellen.
+Sie können eine Web-App in Azure App Service mit jeder lokalen Ressource verbinden, die einen statischen TCP-Port verwendet, wie SQL Server, MySQL, HTTP Web-APIs, Mobile Services und die meisten benutzerdefinierten Webdienste. In diesem Artikel erfahren Sie, wie Sie eine Hybridverbindung zwischen einer Web-App in Azure App Service und einer lokalen SQL Server-Datenbank herstellen.
 
-> [AZURE.NOTE] Der Website-Teil der hybriden Verbindungsfunktion ist nur im [Azure-Vorschauportal](https://portal.azure.com) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).  
+> [AZURE.NOTE] Der Web-App-Teil der Hybridverbindungsfunktion ist nur im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).  
 
-##Voraussetzungen
+## Voraussetzungen
 - Ein Azure-Abonnement. Hinweise zum kostenlosen Abonnement finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/). 
 
 - Um eine lokale SQL Server- oder SQL Server Express-Datenbank mit einer Hybridverbindung verwenden zu können, muss TCP/IP an einem statischen Port aktiviert werden. Es wird empfohlen, die Standardinstanz auf SQL Server zu verwenden, denn sie nutzt den statischen Port 1433. Informationen zum Erstellen einer ASP.NET-Webanwendung, die eine Hybridverbindung verwendet, finden Sie unter [Verbindung mit einem lokalen SQL Server von einer Azure-Website mithilfe von Hybridverbindungen](http://go.microsoft.com/fwlink/?LinkID=397979)
@@ -30,59 +30,48 @@ Sie können eine Website auf Microsoft Azure mit jeder lokalen Ressource verbind
 - Der Computer, auf dem Sie den lokalen Hybrid Connection Manager-Agent installieren, wird weiter hinten in diesem Artikel beschrieben:
 
 	- Sie müssen in der Lage sein, über Port 5671 eine Verbindung mit Azure herzustellen.
-	- Sie müssen in der Lage sein,  *hostname*:*Portnummer* Ihrer lokalen Ressource zu erreichen. 
+	- Sie müssen in der Lage sein,  *hostname*:*portnumber* Ihrer lokalen Ressource zu erreichen. 
 
 > [AZURE.NOTE] Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie den Browser auf dem Computer verwenden, auf dem der lokale Hybridverbindungs-Agent installiert ist.
 
 
-##Themen in diesem Artikel
+## Erstellen einer Web-App im Azure-Portal ##
 
+> [AZURE.NOTE] Wenn Sie bereits eine Web-App im Azure-Portal erstellt haben, die Sie für dieses Lernprogramm verwenden möchten, können Sie direkt zu [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) wechseln und dort beginnen.
 
-[Erstellen einer Website im Azure-Vorschauportal](#CreateSite)
-
-[Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC)
-
-[Installieren des lokalen Hybridverbindungs-Managers zum Herstellen der Verbindung](#InstallHCM)
-
-[Nächste Schritte](#NextSteps)
-
-
-## Erstellen einer Website im Azure-Vorschauportal
-
-> [AZURE.NOTE] Wenn Sie bereits eine Website im Azure-Vorschauportal erstellt haben, die Sie für dieses Lernprogramm verwenden möchten, können Sie direkt zu [Erstellen einer Hybridverbindung und eines BizTalk-Diensts wechseln](#CreateHC) und dort beginnen.
-
-1. Klicken Sie in der unteren linken Ecke des [Azure-Vorschauportals](https://portal.azure.com) auf **Neu**, und wählen Sie **Website** aus.
+1. Klicken Sie in der unteren linken Ecke des [Azure-Portals](https://portal.azure.com) auf **Neu** > **Web + Mobile** > **Website**.
 	
 	![New button][New]
 	
-	![New website][NewWebsite]
+	![New web app][NewWebsite]
 	
-2. Geben Sie im Fensterbereich **Website** einen Namen für die Website an, und klicken Sie dann auf **Erstellen**. 
+2. Geben Sie auf dem Blatt **Web-App** eine URL an und klicken Sie auf **Erstellen**. 
 	
 	![Website name][WebsiteCreationBlade]
 	
-3. Nach einigen Augenblicken wird die Website erstellt und das entsprechende Website-Fenster angezeigt. Der Fensterbereich ist ein vertikal verschiebbares Dashboard, auf dem Sie die Website verwalten können.
+3. Nach einigen Augenblicken wird die Web-App erstellt und das entsprechende Web-App-Blatt angezeigt. Der Fensterbereich ist ein vertikal verschiebbares Dashboard, auf dem Sie die Website verwalten können.
 	
 	![Website running][WebSiteRunningBlade]
 	
 4. Um zu überprüfen, ob die Website live geschaltet ist, können Sie auf das Symbol **Durchsuchen** klicken, um die Standardseite anzuzeigen.
 	
-	![Click browse to see your website][Browse]
+	![Click browse to see your web app][Browse]
 	
-	![Default website page][DefaultWebSitePage]
+	![Default web app page][DefaultWebSitePage]
 	
-Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für die Website.
+Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für die Web-App.
 
 <a name="CreateHC"></a>
-## Erstellen einer Hybridverbindung und eines BizTalk-Diensts
+## Erstellen einer Hybridverbindung und eines BizTalk-Diensts ##
 
-1. Führen Sie im Vorschauportal im Fensterbereich einen Bildlauf nach unten zu Ihrer Website aus, und wählen Sie **Hybridverbindungen** aus.
+1. Führen Sie im Blatt der Web-App einen Bildlauf nach unten durch, und wählen Sie **Hybridverbindungen** aus.
 	
 	![Hybrid connections][CreateHCHCIcon]
 	
 2. Klicken Sie unter "Hybridverbindungen" auf **Hinzufügen**.
 	
-	![Add a hybrid connnection][CreateHCAddHC]
+	<!-- ![Add a hybrid connnection][CreateHCAddHC]
+-->
 	
 3. Der Fensterbereich **Hybridverbindung hinzufügen** wird geöffnet.  Da es sich um die erste Hybridverbindung handelt, ist die Option **Neue Hybridverbindung** bereits ausgewählt, und der Fensterbereich **Hybridverbindung erstellen** wird geöffnet.
 	
@@ -95,21 +84,30 @@ Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 	- Klicken Sie auf **BizTalk-Dienst**.
 
 
-4. Der Fensterbereich **BizTalk-Dienst erstellen** wird geöffnet. Geben Sie einen Namen für den BizTalk-Dienst ein, und klicken Sie auf **OK**.
+4. Das Blatt **Create BizTalk Service** wird geöffnet. Geben Sie einen Namen für den BizTalk-Dienst ein, und klicken Sie auf **OK**.
 	
 	![Create BizTalk service][CreateHCCreateBTS]
 	
-	Der Fensterbereiche **BizTalk-Dienst erstellen** wird geschlossen, und Sie kehren zum Fensterbereich **Hybridverbindung erstellen** zurück.
+	Das Blatt **Create BizTalk Service** wird geschlossen, und Sie kehren zum Blatt **Create hybrid connection** zurück.
 	
 5. Klicken Sie im Fensterbereich "Hybridverbindung erstellen" auf **OK**. 
 	
 	![Click OK][CreateBTScomplete]
 	
 6. Sobald der Prozess abgeschlossen ist, werden Sie im Benachrichtigungsbereich des Portals informiert, dass die Verbindung erfolgreich erstellt wurde.
+	<!-- TODO
+
+    Dieser Schritt schlägt fehl. Es ist nicht möglich, einen BizTalk Service im Azure-Portal zu erstellen. Nach dem Wechsel zum alten Portal
+	(vollständiges Portal) und dem Erstellen des BizTalk-Diensts scheint keine  Verbindung zwischen beiden möglich. Nach Abschluss des Schritts zum
+	Erstellen der Hybridverbindung wird folgender Fehler angezeigt:
+	"Failed to create hybrid connection RelecIoudHC. The 
+	resource type could not be found in the namespace 
+	'Microsoft.BizTaIkServices for api version 2014-06-01'."
 	
+	Der Fehler zeigt an, dass der Typ und nicht die Instanz nicht gefunden werden konnte.
 	![Success notification][CreateHCSuccessNotification]
-	
-7. Im Website-Fensterbereich zeigt das Symbol **Hybridverbindungen** jetzt an, dass eine Hybridverbindung erstellt wurde.
+	-->
+7. Auf dem Blatt der Web-App zeigt das Symbol **Hybridverbindungen** jetzt an, dass eine Hybridverbindung erstellt wurde.
 	
 	![One hybrid connection created][CreateHCOneConnectionCreated]
 	
@@ -118,15 +116,15 @@ An diesem Punkt haben Sie einen wichtigen Teil der Hybridverbindungsinfrastruktu
 <a name="InstallHCM"></a>
 ## Lokalen Hybridverbindungs-Manager zum Herstellen der Verbindung installieren ##
 
-1. Klicken Sie im Website-Fensterbereich auf das Symbol für Hybridverbindungen. 
+1. Klicken Sie auf dem Blatt der Web-App auf das Symbol "Hybridverbindungen". 
 	
 	![Hybrid connections icon][HCIcon]
 	
-2. Im Fensterbereich **Hybridverbindungen** zeigt die Spalte **Status** für den zuvor hinzugefügten Endpunkt **Nicht verbunden** an. Klicken Sie auf die Verbindung, um sie zu konfigurieren.
+2. Auf dem Blatt **Hybridverbindungen** zeigt die Spalte **Status** für den zuvor hinzugefügten Endpunkt **Nicht verbunden** an. Klicken Sie auf die Verbindung, um sie zu konfigurieren.
 	
 	![Not connected][NotConnected]
 	
-	Der Fensterbereich "Hybridverbindung" wird geöffnet.
+	Das Blatt "Hybridverbindung" wird geöffnet.
 	
 	![NotConnectedBlade][NotConnectedBlade]
 	
@@ -134,7 +132,7 @@ An diesem Punkt haben Sie einen wichtigen Teil der Hybridverbindungsinfrastruktu
 	
 	![Click Listener Setup][ClickListenerSetup]
 	
-4. Der Fensterbereich **Eigenschaften von Hybridverbindunen** wird geöffnet. Wählen Sie unter **Lokaler Hybridverbindungs-Manager** die Option ** Klicken Sie hier, um die Installation zu starten**.
+4. Der Fensterbereich **Eigenschaften von Hybridverbindunen** wird geöffnet. Wählen Sie unter **On-premises Hybrid Connection Manager** die Option **Klicken Sie hier, um die Installation zu starten** aus.
 	
 	![Click here to install][ClickToInstallHCM]
 	
@@ -156,18 +154,20 @@ An diesem Punkt haben Sie einen wichtigen Teil der Hybridverbindungsinfrastruktu
 	
 	Im Fensterbereich **Hybridverbindungen** zeigt die Spalte **Status** jetzt **Verbunden** an. 
 	
-	![Status "Verbunden"][HCStatusConnected]
+	![Connected Status][HCStatusConnected]
 
 Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie eine hybride Anwendung erstellen, die diese verwendet. 
 
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+
 <a name="NextSteps"></a>
-## Nächste Schritte
+## Nächste Schritte ##
 
 - Informationen zum Erstellen einer ASP.NET-Webanwendung, die eine Hybridverbindung verwendet, finden Sie unter [Verbindung mit einem lokalen SQL Server von einer Azure-Website mithilfe von Hybridverbindungen](http://go.microsoft.com/fwlink/?LinkID=397979).
 
-- Informationen zur Verwendung einer Hybridverbindung mit einem mobilen Dienst finden Sie unter [Verbindung mit einem lokalen SQL Server von einem mobilen Azure-Dienst mithilfe von Hybridverbindungen](http://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/).
+- Informationen zur Verwendung einer Hybridverbindung mit einem mobilen Dienst finden Sie unter [Verbindung mit einem lokalen SQL Server von einem mobilen Azure-Dienst mithilfe von Hybridverbindungen](mobile-services-dotnet-backend-hybrid-connections-get-started.md).
 
-###Zusätzliche Ressourcen
+### Zusätzliche Ressourcen
 
 [Übersicht über Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274)
 
@@ -175,11 +175,15 @@ Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie ein
 
 [Website zu Hybridverbindungen](http://azure.microsoft.com/services/biztalk-services/)
 
-[BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Konfigurieren" und "Hybridverbindungen"](http://azure.microsoft.com/documentation/articles/biztalk-dashboard-monitor-scale-tabs/)
+[BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Konfigurieren" und "Hybridverbindungen"](../biztalk-dashboard-monitor-scale-tabs/)
 
 [Erstellen einer echten hybriden Cloud mit nahtloser Anwendungsportabilität (Channel 9-Video](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
 
 [Verbindung mit einem lokalen SQL Server von einem mobilen Azure-Dienst mithilfe von Hybridverbindungen (Channel 9-Video)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
+
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the Azure portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 <!-- IMAGES -->
 [New]:./media/web-sites-hybrid-connection-get-started/B01New.png
@@ -206,7 +210,4 @@ Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie ein
 [HCMInstallComplete]:./media/web-sites-hybrid-connection-get-started/D09HCMInstallComplete.png
 [HCStatusConnected]:./media/web-sites-hybrid-connection-get-started/D10HCStatusConnected.png
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

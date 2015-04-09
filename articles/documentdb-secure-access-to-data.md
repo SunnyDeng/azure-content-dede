@@ -18,7 +18,7 @@
 
 # Sicherer Zugriff auf Daten in DocumentDB #
 
-Dieser Artikel bietet eine Übersicht zum sicheren Zugriff auf in [Microsoft Azure DocumentDB](../../services/documentdb/) gespeicherte Daten. 
+Dieser Artikel bietet eine Übersicht über den sicheren Zugriff auf in [Microsoft Azure DocumentDB](../../services/documentdb/) gespeicherte Daten. 
 
 Wenn Sie diesen Artikel gelesen haben, können Sie folgende Fragen beantworten:  
 
@@ -27,7 +27,7 @@ Wenn Sie diesen Artikel gelesen haben, können Sie folgende Fragen beantworten:
 -	Was sind Ressourcentoken in DocumentDB?
 -	Wie kann ich mithilfe von DocumentDB-Benutzern und -Berechtigungen sicheren Zugriff auf DocumentDB-Daten gewährleisten?
 
-## <a id="Sub1"></a>Zugriffssteuerungskonzepte in DocumentDB##
+##<a id="Sub1"></a>Zugriffssteuerungskonzepte in DocumentDB##
 
 DocumentDB bietet erstklassige Zugriffsteuerungskonzepte für DocumentDB-Ressourcen.  Für die Zwecke dieses Artikels werden DocumentDB-Ressourcen in zwei Kategorien unterteilt:
 
@@ -42,7 +42,7 @@ DocumentDB bietet erstklassige Zugriffsteuerungskonzepte für DocumentDB-Ressour
 	- Anhang
 	- Gespeicherte Prozedur
 	- Trigger
-	- Benutzerdefinierte Funktion
+	- Benutzerdefinierte Funktionen
 
 DocumentDB unterstützt im Rahmen dieser zwei Kategorien die folgenden drei Typen von Zugriffssteuerungsrollen: Kontoadministrator, Administrator mit Leseberechtigung und Datenbankbenutzer.  Die Zugriffssteuerungsrollen verfügen über folgende Rechte:
  
@@ -64,7 +64,7 @@ Das DocumentDB-Zugriffssteuerungsmodell definiert mit Berücksichtigung der oben
 
 ![DocumentDB resource tokens illustration](./media/documentdb-secure-access-to-data/resourcekeys.png)
 
-## <a id="Sub2"></a>Verwenden von Hauptschlüsseln und Schlüsseln mit Leseberechtigung ##
+##<a id="Sub2"></a>Arbeiten mit DocumentDB-Hauptschlüsseln und Schlüsseln mit Leseberechtigung ##
 Wie bereits erwähnt, bieten DocumentDB-Hauptschlüssel vollen Administratorzugriff auf alle Ressourcen in einem DocumentDB-Konto, während Schlüssel mit Leseberechtigung schreibgeschützten Zugriff auf alle Ressourcen in einem Konto ermöglichen.  Der folgende Codeausschnitt veranschaulicht, wie mit einem DocumentDB-Kontoendpunkt und einem Hauptschlüssel DocumentClient instanziiert und eine neue Datenbank erstellt werden kann. 
 
     //Read the DocumentDB endpointUrl and authorization keys from config.
@@ -84,7 +84,7 @@ Wie bereits erwähnt, bieten DocumentDB-Hauptschlüssel vollen Administratorzugr
         });
 
 
-## <a id="Sub3"></a>Übersicht über DocumentDB-Ressourcentoken ##
+##<a id="Sub3"></a>Übersicht über DocumentDB-Ressourcentoken ##
 Mit einem Ressourcentoken (durch Erstellung von DocumentDB-Benutzern und -Berechtigungen) können Sie einem Client, dem Sie den Hauptschlüssel nicht anvertrauen können, Zugriff auf Ressourcen in Ihrem DocumentDB-Konto gewähren. Ihre DocumentDB-Hauptschlüssel bestehen aus einem Primärschlüssel und einem sekundären Schlüssel. Beide gewähren Administratorzugriff auf Ihr Konto und alle enthaltenen Ressourcen. Wenn Sie Ihre Hauptschlüssel weitergeben, besteht die Gefahr von böswilliger oder fahrlässiger Nutzung. 
 
 DocumentDB-Schlüssel mit Lesezugriff gewähren schreibgeschützen Zugriff auf alle Ressourcen, mit Ausnahme von Berechtigungsressourcen, in einem DocumentDB-Konto und können nicht zum differenzierteren Zugriff auf bestimmte DocumentDB-Ressourcen verwendet werden.
@@ -104,7 +104,7 @@ Im Folgenden finden Sie ein typisches Entwurfsmuster, bei dem Ressourcentoken an
 
 ![DocumentDB resource tokens workflow](./media/documentdb-secure-access-to-data/resourcekeyworkflow.png)
 
-## <a id="Sub4"></a>Verwenden von DocumentDB-Benutzern und -Berechtigungen ##
+##<a id="Sub4"></a>Arbeiten mit DocumentDB-Benutzern und -Berechtigungen ##
 Eine DocumentDB-Benutzerressource ist einer DocumentDB-Datenbank zugeordnet.  Jede Datenbank kann null oder mehr DocumentDB-Benutzer enthalten.  Der folgende Codeausschnitt zeigt, wie eine DocumentDB-Benutzerressourcen erstellt werden kann.
 
 	//Create a user.
@@ -157,10 +157,10 @@ Um alle einem bestimmten Benutzer zugeordneten Berechtigungsressourcen abzurufen
 
 > [AZURE.TIP] Ressourcentoken verfügen über einen gültigen Zeitspannenwert von einer Stunde.  Die Gültigkeitsdauer des Tokens kann bis maximal fünf Stunden angegeben werden.
 
-## <a name="NextSteps"></a>Nächste Schritte
+##<a name="NextSteps"></a>Nächste Schritte
 
 - Weitere Informationen zu DocumentDB finden Sie [hier](http://azure.com/docdb).
-- Weitere Informationen zum Verwalten von Hauptschlüsseln und Schlüsseln mit Leseberechtigungen finden Sie [hier](http://azure.microsoft.com/documentation/articles/documentdb-manage-account/).
+- Weitere Informationen zum Verwalten von Hauptschlüsseln und Schlüsseln mit Leseberechtigungen finden Sie [hier](documentdb-manage-account.md).
 - Informationen zum Erstellen von DocumentDB-Autorisierungstoken finden klicken Sie [hier](https://msdn.microsoft.com/library/azure/dn783368.aspx)
 
-<!--HONumber=47-->
+<!--HONumber=49-->

@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Einrichten von Tomcat7 auf einem virtuellen Linux-Computer mit Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Tomcat7 mit Microsoft Azure unter Verwendung eines virtuellen Linux-Computers einrichten können." 
 	services="virtual-machines" 
@@ -18,29 +18,29 @@
 
 #Einrichten von Tomcat7 auf einem virtuellen Linux-Computer mit Microsoft Azure 
 
-Apache Tomcat (oder einfach Tomcat, früher auch Jakarta Tomcat) ist ein Open-Source-Webserver und Servlet-Container und wurde von der Apache Software Foundation (ASF) entwickelt. Tomcat implementiert das Java-Servlet und die JavaServer Pages (JSP)-Spezifikationen von Sun Microsystems und bietet eine reine Java HTTP-Webserverumgebung zum Ausführen von Java-Code. In der einfachsten Konfiguration wird Tomcat in einem einzelnen Betriebssystem-Prozess ausgeführt. Dieser Prozess führt eine Java Virtual Machine (JVM) aus. Jede HTTP-Anforderung von einem Browser an Tomcat wird als separater Thread im Tomcat-Prozess verarbeitet.  
+Apache Tomcat (oder einfach Tomcat, früher auch Jakarta Tomcat) ist ein Open-Source-Webserver und Servlet-Container und wurde von der Apache Software Foundation (ASF) entwickelt. Tomcat implementiert das Java-Servlet und die JavaServer Pages (JSP)-Spezifikationen von Sun Microsystems und bietet eine reine Java-HTTP-Webserverumgebung zum Ausführen von Java-Code. In der einfachsten Konfiguration wird Tomcat in einem einzelnen Betriebssystem-Prozess ausgeführt. Dieser Prozess führt eine Java Virtual Machine (JVM) aus. Jede HTTP-Anforderung von einem Browser an Tomcat wird als separater Thread im Tomcat-Prozess verarbeitet.  
 
 In diesem Handbuch installieren Sie tomcat7 in einem Linux-Image und stellen dieses unter Microsoft Azure bereit.  
 
 Sie erhalten Informationen zu folgenden Themen:  
 
 -	Erstellen eines virtuellen Computers in Azure.
--	Vorbereiten des virtuellen Computers für tomcat7.
--	Installieren von tomcat7.
+-	Gewusst wie: Vorbereiten des virtuellen Computers für tomcat7.
+-	Gewusst wie: Installieren von tomcat7.
 
-Es wird vorausgesetzt, dass der Leser bereits über ein Azure-Abonnement verfügt.  Falls dies nicht der Fall ist, können Sie sich für eine kostenlose Testversion unter [http://azure.microsoft.com](http://azure.microsoft.com) registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreis: MSDN-, MPN- und Bizspark-Vorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). Weitere Informationen zu Azure finden Sie unter [Was ist Azure?](http://azure.microsoft.com/overview/what-is-azure/).
+Es wird vorausgesetzt, dass der Leser bereits über ein Azure-Abonnement verfügt.  Falls dies nicht der Fall ist, können Sie sich für eine kostenlose Testversion unter [http://azure.microsoft.com](http://azure.microsoft.com) registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreis: MSDN-, MPN- und Bizspark-Vorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). Weitere Informationen zu Azure finden Sie unter [Was ist Azure?](http://azure.microsoft.com/overview/what-is-azure/)
 
 In diesem Artikel wird davon ausgegangen, dass Sie über allgemeine Kenntnisse zu tomcat und Linux verfügen.  
 
 ##Phase 1: Erstellen eines Images
-In dieser Phase erstellen Sie den virtuellen Computer mithilfe eines Linux-Image in Azure.  
+In dieser Phase erstellen Sie einen virtuellen Computer mit einem Linux-Image in Azure.  
 
 ###Schritt 1: Generieren eines SSH-Authentifizierungsschlüssels
 SSH ist ein wichtiges Tool für Systemadministratoren. Die Konfiguration der Zugriffssicherheit auf Grundlage eines vom Menschen bestimmten Kennworts ist jedoch keine bewährte Methode. Böswillige Benutzer können über einen Benutzernamen und ein unsicheres Kennwort in Ihr System eindringen.
 
-Die gute Nachricht ist, dass es eine Möglichkeit gibt, wie Sie den Remote-Zugriff geöffnet lassen, ohne sich über Kennwörter sorgen zu müssen. Die Methode besteht aus Authentifizierung mit asymmetrischer Kryptografie. Der private Schlüssel des Benutzers ist der Schlüssel, der die Authentifizierung vornimmt. Sie können sogar das Konto des Benutzers sperren, um Kennwortauthentifizierung vollständig zu untersagen. 
+Die gute Nachricht ist, dass es eine Möglichkeit gibt, wie Sie den Remote-Zugriff geöffnet lassen können, ohne sich über Kennwörter sorgen zu müssen. Die Methode besteht aus Authentifizierung mit asymmetrischer Kryptografie. Der private Schlüssel des Benutzers ist der Schlüssel, der die Authentifizierung vornimmt. Sie können sogar das Konto des Benutzers sperren, um Kennwortauthentifizierung vollständig zu untersagen. 
 
-Ein weiterer Vorteil dieser Methode ist, dass Sie für die Anmeldung bei verschiedenen Servern keine verschiedenen Kennwörter benötigen. Sie können sich auf allen Servern mit dem persönlichen privaten Schlüssel authentifizieren. Dies erspart es Ihnen auch, sich mehrere Kennwörter merken zu müssen. 
+Ein weiterer Vorteil dieser Methode ist, dass Sie nicht verschiedene Kennwörter benötigen, um sich auf verschiedenen Servern anzumelden. Sie können sich auf allen Servern mit dem persönlichen privaten Schlüssel authentifizieren. Dies erspart Ihnen auch, sich mehrere Kennwörter merken zu müssen. 
 
 Mit dieser Methode ist es auch möglich, sich mit einer Kennwortanforderung anzumelden.
 
@@ -52,16 +52,16 @@ Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel 
 ![][1]
 4.	Nach dem Generierungsvorgang zeigt "Puttygen.exe" den generierten Schlüssel an. Beispiel:  
 ![][2]
-5.	Markieren und kopieren Sie den öffentlichen Schlüssel unter **Key** und speichern Sie ihn dann in einer Datei namens "publicKey.pem". Klicken Sie nicht auf **Save public key**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
+5.	Wählen Sie den öffentlichen Schlüssel in **Schlüssel** aus, kopieren Sie diesen, und speichern Sie ihn in einer Datei namens "publicKey.pem". Klicken Sie nicht auf **Öffentlichen Schlüssel speichern**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
 6.	Klicken Sie auf **Save private key**, und speichern Sie den Schlüssel dann in einer Datei namens "privateKey.ppk". 
 
-###Schritt 2: Erstellen des Images im Azure Preview-Portal
-Klicken Sie im [Azure Preview-Portal](https://portal.azure.com/) auf der Taskleiste auf **Neu** und erstellen Sie ein Image. Wählen Sie dabei das Linux-Image aus, das Ihren Anforderungen gerecht wird. Dieses Beispiel verwendet das Ubuntu 14.04-Image. 
+###Schritt 2: Erstellen des Bildes im Azure-Vorschauportal
+Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf der Taskleiste auf **Neu**, und erstellen Sie ein Image. Wählen Sie dabei das Linux-Image aus, das Ihren Anforderungen gerecht wird. Dieses Beispiel verwendet das Ubuntu 14.04-Image. 
 ![][3]
  
 Geben Sie unter **Hostname** den Namen für die URL ein, die Sie und die Internetclients für den Zugriff auf diesen virtuellen Computer verwenden. Definieren Sie den letzten Teil des DNS-Namens (z. B. "tomcatdemo"), und Azure generiert die URL als "tomcatdemo.cloudapp.net".  
 
-Kopieren Sie für die Angabe **SSH-Authentifizierungsschlüssel** den Schlüsselwert aus der Datei **publicKey.pem**, die den von Puttygen generierten öffentlichen Schlüssel enthält.  
+Kopieren Sie für die Angabe **SSH Authentication Key** den Schlüsselwert aus der Datei **publicKey.pem**, die den von puttygen generierten öffentlichen Schlüssel enthält.  
 ![][4]
   
 Konfigurieren Sie weitere Einstellungen wie erforderlich, und klicken Sie dann auf "Erstellen".  
@@ -69,7 +69,7 @@ Konfigurieren Sie weitere Einstellungen wie erforderlich, und klicken Sie dann a
 ##Phase 2: Vorbereiten des virtuellen Computers für Tomcat7
 In dieser Phase konfigurieren Sie einen Endpunkt für Tomcat-Datenverkehr und stellen dann eine Verbindung mit dem neuen virtuellen Computer her.
 ###Schritt 1: Öffnen des HTTP-Ports, um Webzugriff zu erlauben
-Endpunkte in Azure bestehen aus einem Protokoll (TCP oder UDP) sowie aus einem öffentlichen und einem privaten Port. Der private Port ist der Port, an dem der Dienst auf dem virtuellen Computer lauscht. Der öffentliche Port ist der Port, an dem der Azure-Cloud-Dienst internetbasierten eingehendem Datenverkehr extern lauscht.  
+Endpunkte in Azure bestehen aus einem Protokoll (TCP oder UDP) sowie aus einem öffentlichen und einem privaten Port. Der private Port ist der Port, an dem der Dienst auf dem virtuellen Computer lauscht. Der öffentliche Port ist der Port, an dem der Azure-Cloud-Dienst extern auf internetbasierten Datenverkehr lauscht.  
 
 TCP-Port 8080 ist die Standardportnummer, an der Tomcat lauscht. Wenn Sie diesen Port mit einem Azure-Endpunkt öffnen, können Sie und andere Internetclients auf die Tomcat-Seiten zugreifen.  
 
@@ -78,12 +78,12 @@ TCP-Port 8080 ist die Standardportnummer, an der Tomcat lauscht. Wenn Sie diesen
 2.	Klicken Sie zum Hinzufügen eines Endpunkts zu einem virtuellen Computer auf das Feld **Endpunkte**.
 ![][6] 
 3.	Klicken Sie auf **Hinzufügen**.  
-	1.	Geben Sie für den **Endpunkt** einen Endpunktnamen unter "Endpunkt" ein und geben Sie dann unter **Öffentlicher Port** den Port "80" ein.  
+	1.	Geben Sie unter **Endpunkt** einen Endpunktnamen ein, und geben Sie dann unter **Öffentlicher Port** den Port "80" ein.  
 	  
-		Wenn Sie den Port auf 80 festlegen, müssen Sie die Portnummer nicht in die URL einschließen, die Ihnen den Zugriff auf Tomcat ermöglicht. Beispiel: http://tomcatdemo.cloudapp.net.    
+		Wenn Sie den Port auf 80 festlegen, müssen Sie die Portnummer nicht in die URL einschließen, die Ihnen den Zugriff auf Tomcat ermöglicht. Beispielsweise http://tomcatdemo.cloudapp.net.    
 
-		Wenn Sie den Port auf einen anderen Wert festlegen (z. B. Port 81), müssen Sie die Portnummer der URL für den Zugriff auf Tomcat hinzufügen. Beispiel: http://tomcatdemo.cloudapp.net:81/.
-	2.	Geben Sie "8080" unter "Privater Port" ein. Tomcat lauscht standardmäßig am TCP-Port 8080. Wenn Sie den Standardüberwachungsport von Tomcat geändert haben, sollten Sie den privaten Port so aktualisieren, dass er mit dem Tomcat-Überwachungsport übereinstimmt.  
+		Wenn Sie den Port auf einen anderen Wert festlegen (z. B. Port 81), müssen Sie die Portnummer der URL für den Zugriff auf Tomcat hinzufügen. Z. B. http://tomcatdemo.cloudapp.net:81/.
+	2.	Geben Sie unter "Privater Port" den Port "8080" ein. Tomcat lauscht standardmäßig am TCP-Port 8080. Wenn Sie den Standardüberwachungsport von Tomcat geändert haben, sollten Sie den privaten Port so aktualisieren, dass er mit dem Tomcat-Überwachungsport übereinstimmt.  
 	![][7]
  
 4.	Klicken Sie auf **OK**, um den Endpunkt Ihrem virtuellen Computer hinzuzufügen.
@@ -93,17 +93,17 @@ TCP-Port 8080 ist die Standardportnummer, an der Tomcat lauscht. Wenn Sie diesen
 ###Schritt 2: Herstellen einer Verbindung mit dem Image, das Sie erstellt haben
 Sie können ein beliebiges SSH-Tool für das Herstellen einer Verbindung mit Ihrem virtuellen Computer auswählen. In diesem Beispiel wird Putty verwendet.  
 
-Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure Preview-Portal ab. **Klicken Sie auf "Durchsuchen** -> **Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**, und untersuchen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.  
+Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Vorschauportal ab. **Klicken Sie auf Durchsuchen** -> **Virtuelle Computer** Name Ihres virtuellen Computers -> **Eigenschaften**, und untersuchen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.  
 
 Rufen Sie die Portnummer für SSH-Verbindungen aus dem Feld **SSH** ab. Beispiel:  
 ![][8]
  
-Laden Sie Putty [hier](http://www.putty.org/) herunter .  
+Laden Sie Putty [hier](http://www.putty.org/) herunter.  
 
 Klicken Sie nach dem Download auf die ausführbare Datei "PUTTY.EXE". Konfigurieren Sie die grundlegenden Optionen mit dem Hostnamen und der Portnummer, die Sie aus den Eigenschaften Ihres virtuellen Computers abgerufen haben. Beispiel:  
 ![][9]
  
-Klicken Sie im linken Bereich auf **Verbindung** -> **SSH** -> **Auth** und klicken Sie dann auf **Durchsuchen**, um den Speicherort der **privateKey.ppk**-Datei anzugeben, die den von PuTTYgen in Phase 1 generierten privaten Schlüssel enthält: Erstellen Sie ein Image. Beispiel:  
+Klicken Sie im linken Bereich auf **Verbindung** -> **SSH** -> **Authentifizierung**, und klicken Sie dann auf **Durchsuchen**, um den Speicherort der Datei **privateKey.ppk** anzugeben, die den von puttygen in Phase 1 generierten privaten Schlüssel enthält: Erstellen Sie ein Image. Beispiel:  
 ![][10]
  
 Klicken Sie auf **Öffnen**. Möglicherweise wird ein Meldungsfeld angezeigt. Wenn Sie den DNS-Namen und die Portnummer richtig konfiguriert haben, klicken Sie auf **Ja**.
@@ -126,7 +126,7 @@ In dieser Phase installieren Sie die Java-Laufzeitumgebung, Tomcat und andere To
 ###Java-Laufzeitumgebung
 Tomcat wird in Java geschrieben. Es gibt zwei Arten von Java Development Kits (JDKs), OpenJDK und Oracle-JDK, und Sie können das gewünschte Kit auswählen.  
 
->AZURE.NOTE: Beide JDKs haben fast den gleichen Code für die Klassen in der Java-API, aber der Code für den virtuellen Computer ist unterschiedlich. Im Hinblick auf Bibliotheken verwendet OpenJDK tendenziell offene Bibliotheken, während Oracle eher geschlossen Bibliotheken verwendet. Oracle JDK hat hingegen mehr Klassen und einige Fehler wurden behoben. Außerdem ist Oracle JDK stabiler als OpenJDK. 
+>AZURE.NOTE: Beide JDKs haben fast den gleichen Code für die Klassen in der Java-API, aber der Code für den virtuellen Computer ist unterschiedlich. Im Hinblick auf Bibliotheken verwendet OpenJDK tendenziell offene Bibliotheken, während Oracle eher geschlossene Bibliotheken verwendet. Oracle JDK hat hingegen mehr Klassen, und einige Fehler wurden behoben. Außerdem ist Oracle JDK stabiler als OpenJDK. 
 
 Mit den folgenden Befehlen werden die verschiedenen JDKs heruntergeladen.  
 
@@ -159,10 +159,10 @@ Sie können einen Befehl wie den folgenden verwenden, um zu testen, ob die Java-
 
 	java -version  
 
-Wenn Sie OpenJDK installiert haben, müsste sinngemäß die folgende Meldung angezeigt werden:
+Wenn Sie open-jdk installiert haben, müsste sinngemäß die folgende Meldung angezeigt werden:
 ![][14] 
 
-Wenn Sie Oracle JDK installiert haben, müsste sinngemäß die folgende Meldung angezeigt werden:
+Wenn Sie oracle-jdk installiert haben, müsste sinngemäß die folgende Meldung angezeigt werden:
 ![][15] 
 
 ###Tomcat7
@@ -201,7 +201,7 @@ Anzeigen des Status von Tomcat7：
 
 	sudo /etc/init.d/tomcat7 status
 
-Neustart von Tomcat-Diensten：  
+Neustarten von Tomcat-Diensten：  
 
 	sudo /etc/init.d/tomcat7 restart
 
@@ -219,7 +219,7 @@ Nach der Bearbeitung dieser Datei sollten Sie Tomcat7-Dienste mit dem folgenden 
 
 	sudo /etc/init.d/tomcat7 restart  
 
-Öffnen Sie Ihren Browser, und geben Sie die URL **http://<your tomcat server DNS name>/manager/html** ein. Das Beispiel in diesem Artikel verwendet die URL http://tomcatexample.cloudapp.net/manager/html.  
+Öffnen Sie Ihren Browser, und geben Sie die URL **http://<DNS-Name Ihres Tomcat-Servers>/manager/html** ein. Für das Beispiel in diesem Artikel ist die URL http://tomcatexample.cloudapp.net/manager/html.  
 
 Nachdem die Verbindung hergestellt wurde, müsste ungefähr Folgendes angezeigt werden:  
 ![][18]
@@ -233,7 +233,7 @@ Tomcat wird ausgeführt, die Tomcat-Standardseite wird jedoch nicht in Ihrem Bro
 -	**Mögliche Ursache** 
 	1.	Der Tomcat-Überwachungsport ist nicht identisch mit dem privaten Port des Endpunkts des virtuellen Computers für Tomcat-Datenverkehr.  
 	
-		Überprüfen Sie die Endpunkteinstellungen des öffentlichen und des privaten Ports, und stellen Sie sicher, dass der private Port mit dem Tomcat-Überwachungsport identisch ist. In Phase 1: "Erstellen eines Images" erhalten Sie eine Anleitung zum Konfigurieren von Endpunkten für Ihren virtuellen Computer.  
+		Überprüfen Sie die Endpunkteinstellungen des öffentlichen und des privaten Ports, und stellen Sie sicher, dass der private Port mit dem Tomcat-Überwachungsport identisch ist. In Phase 1: Erstellen Sie ein Image für die Anweisungen zum Konfigurieren von Endpunkten für den virtuellen Computer.  
 
 		Öffnen Sie zur Bestimmung des Tomcat-Überwachungsports "/etc/httpd/conf/httpd.conf" (Red Hat-Version) oder "/etc/tomcat7/server.xml" (Debian-Version). Standardmäßig ist der Tomcat-Überwachungsport 8080. Beispiel:  
 
@@ -243,13 +243,13 @@ Tomcat wird ausgeführt, die Tomcat-Standardseite wird jedoch nicht in Ihrem Bro
 
 			sudo vi /etc/default/tomcat7  
 
-		Heben Sie anschließend die Auskommentierung der letzten Zeile auf, und ändern Sie "nein" zu "ja".
+		Löschen Sie dann den Kommentar der letzten Zeile und ändern Sie "Nein" zu "Ja".  
 
 			AUTHBIND=yes
 
 	2.	Die Firewall hat den Überwachungsport von Tomcat deaktiviert.
 
-		Wenn Sie nur die Tomcat-Standardseite vom lokalen Host aus sehen können, besteht das Problem wahrscheinlich darin, dass der Port, an dem Tomcat lauscht, durch die Firewall blockiert ist. Sie können das Tool w3m verwenden, um die Webseite zu durchsuchen. Die folgenden Befehle installieren w3m und navigieren zur Tomcat-Standardseite:  
+		Wenn Sie nur die Tomcat-Standardseite vom lokalen Host aus sehen können, besteht das Problem wahrscheinlich darin, dass der Port, an dem Tomcat lauscht, durch die Firewall blockiert ist. Sie können das Tool w3m verwenden, um die Webseite zu durchsuchen. Die folgenden Befehle installieren w3m und navigieren zur Apache-Standardseite:  
 
 			sudo yum  install w3m w3m-img
 			w3m http://localhost:8080  
@@ -279,10 +279,10 @@ Tomcat wird ausgeführt, die Tomcat-Standardseite wird jedoch nicht in Ihrem Bro
 -	**Symptom**  
 Wenn Sie einen beliebigen SFTP-Client (z. B. FileZilla) zum Herstellen einer Verbindung mit Ihrem virtuellen Computer verwenden und zu "/var/lib/tomcat7/webapps/" navigieren, um Ihre Website zu veröffentlichen, erhalten Sie sinngemäß die folgende Fehlermeldung:  
 
-		status:	Listing directory /var/lib/tomcat7/webapps
-		Command:	put "C:\Users\liang\Desktop\info.jsp" "info.jsp"
-		Error:	/var/lib/tomcat7/webapps/info.jsp: open for write: permission denied
-		Error:	File transfer failed
+		Status:	Verzeichnis "/var/lib/tomcat7/webapps" wird überwacht.
+		Befehl:	put "C:\Users\liang\Desktop\info.jsp" "info.jsp"
+		Fehler	/var/lib/tomcat7/webapps/info.jsp: offen für Schreibvorgänge: Zugriff verweigert
+		Fehler	Dateiübertragung fehlgeschlagen
 
 -	**Mögliche Ursache** 
 Sie haben keine Zugriffsberechtigungen für den Ordner "/var/lib/tomcat7/webapps".  
@@ -324,6 +324,4 @@ Sie müssen Berechtigungen aus dem root-Konto abrufen. Sie können den Besitzer 
 [17]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-17.png
 [18]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-18.png
 
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

@@ -1,69 +1,63 @@
-In der Galerie ist eine breite Auswahl an beliebten Webanwendungen verfügbar, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Für über die Galerie erstellte Webanwendungen muss außer dem Browser, der für die Verbindung zum Azure-Verwaltungsportal verwendet wird, keinerlei Software installiert werden. 
+﻿Im Azure Marketplace ist eine breite Auswahl an beliebten Web-Apps verfügbar, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Für über den Azure Marketplace erstellte Web-Apps muss außer dem Browser, der für die Verbindung zum [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) verwendet wird, keinerlei Software installiert werden. 
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
-- Erstellen einer neuen Website über die Galerie
+- Erstellen einer neuen Web-App mit dem Azure Marketplace.
 
-- Bereitstellen der Website über das Azure-Portal
+- Bereitstellen der Web-App über das Azure-Portal
  
 Sie erstellen einen WordPress-Blog unter Verwendung einer Standardvorlage. In der folgenden Abbildung wird die fertige Anwendung dargestellt:
 
 
-![Wordpress blog][13]
+![Wordpress-Blog][13]
 
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Erstellen von Azure-Konten](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/"%20target="_blank").
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-## Erstellen einer Website im Portal
+## Erstellen einer Web-App im Portal
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
+1. Melden Sie sich beim Azure-Portal an.
 
-2. Klicken Sie unten links im Dashboard auf das Symbol **Neu**.
+2. Öffnen Sie den Azure Marketplace entweder durch Klicken auf das Symbol **Marketplace** auf das Symbol **Neu** unten links im Dashboard. Wählen Sie anschließend **Web + Mobile** und dann unten **Azure Marketplace** aus.
 	
-	![Create New][5]
-
-3. Klicken Sie auf das Symbol **Website** und dann auf **Aus Galerie**.
+	<!--todo:![Create New][5]-->
 	
-	![Create From Gallery][6]
+3. Wählen Sie im Marketplace **Web-Apps** aus.
 
-4. Suchen Sie das WordPress-Symbol in der Liste, klicken Sie darauf und dann auf **Weiter**.
+4. Klicken Sie auf das Symbol **Scalable WordPress**.
+
+	<!--todo:![WordPress from list][7]-->
 	
-	![WordPress from list][7]
+5. Wählen Sie nach dem Lesen der Beschreibung der WordPress-App **Erstellen** aus.
 
-5. Geben Sie auf der Seite **Ihre App konfigurieren** Werte für alle Felder ein, bzw. wählen Sie sie aus:
+6. Klicken Sie auf die einzelnen Teile (**WEB APP**, **DATABASE** und **SUBSCRIPTION**), und geben Sie die Werte für die erforderlichen Felder ein, oder wählen Sie sie aus:
 	
 - Geben Sie den gewünschten URL-Namen ein.	
-- Lassen Sie **Create a new MySQL database** im Feld **Database** aktiviert.
 - Wählen Sie die Ihnen am nächsten gelegene Region aus.
 
-	![configure your app][8]
+	<!--todo:![configure your app][8]-->
 
-6. Klicken Sie dann auf **Weiter**.
+7. Klicken Sie zum Abschließen der Web-App auf **Erstellen**.
 
-7. Geben Sie auf der Seite **Create New Database** einen Namen für die neue MySQL-Datenbank ein, oder verwenden Sie den Standardnamen. Wählen Sie die Ihnen am nächsten gelegene Region als Hostingstandort aus. Aktivieren Sie das Kontrollkästchen unten am Bildschirm, um den allgemeinen Geschäftsbestimmungen von ClearDB für Ihre gehostete MySQL-Datenbank zuzustimmen. Klicken Sie dann auf das Häkchen, um die Websiteerstellung abzuschließen. 
+## Starten und Verwalten Ihrer WordPress-Web-App
 	
-	![create database][9]
+1. Klicken Sie auf dem Blatt **Web-Apps** auf die neue Web-App, um das Dashboard zu öffnen.
 
-Nachdem Sie auf **Complete** geklickt haben, startet Azure den Erstellungs- und Bereitstellungsvorgang. Während die Website erstellt und bereitgestellt wird, wird der Status beider Vorgänge unten auf der Seite angezeigt. Nachdem alle Vorgänge abgeschlossen sind, wird eine letzte Statusmeldung über die erfolgreiche Bereitstellung der Website angezeigt.
+	<!--todo:![launch dashboard][10]-->
 
-## Starten und Verwalten Ihrer WordPress-Website
+2. Klicken Sie auf der Seite **Essentials** auf den Link unter **URL**, um die Willkommensseite der Web-App zu öffnen.
 
-1. Klicken Sie auf der Seite **Websites** auf Ihre neue Website, um das zugehörige Dashboard zu öffnen.
+	<!--todo:![site URL][11]--> 
 
-	![launch dashboard][10]
+3. Wenn Sie WordPress nicht installiert haben, geben Sie die von WordPress benötigten Konfigurationsinformationen ein, und klicken Sie auf **WordPress installieren**, um die Konfiguration abzuschließen und die Anmeldeseite der Web-App zu öffnen.
 
-2. Blättern Sie auf der Verwaltungsseite für das **Dashboard** nach unten, und klicken Sie links unterhalb von **Site Url** auf den Link, um die Begrüßungsseite der Website zu öffnen.
+	<!--todo:![login to WordPress][12]-->
 
+4. Klicken Sie auf **Anmelden**, und geben Sie Ihre Anmeldeinformationen ein.  
+	<!--todo:screenshot-->
 
+5. Sie besitzen nun eine neue WordPress-Web-App, die der Web-App unten ähnelt.    
 
-3. Geben Sie die von WordPress benötigten Konfigurationsinformationen ein, und klicken Sie auf **WordPress installieren**, um die Konfiguration abzuschließen und die Anmeldeseite der Website zu öffnen.
-
-
-
-4. Melden Sie sich an Ihrer neuen WordPress-Website an, indem Sie Ihren Benutzernamen und Ihr Kennwort auf der Seite **Willkommen** eingeben.
-
-5. Sie haben nun eine neue WordPress-Website, die der unten dargestellten Website ähnelt.  
-
-	![your WordPress site][13]
+	<!--todo:![your WordPress site][13]-->
 
 
 
@@ -78,8 +72,4 @@ Nachdem Sie auf **Complete** geklickt haben, startet Azure den Erstellungs- und 
 [10]: ./media/website-from-gallery/wordpressgallery-06.png
 [13]: ./media/website-from-gallery/wordpressgallery-09.png
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

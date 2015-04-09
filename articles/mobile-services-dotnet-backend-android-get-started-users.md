@@ -28,13 +28,13 @@ Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von A
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen. 
 
-## <a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
+##<a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 
 [AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-aad-server-extension](../includes/mobile-services-dotnet-backend-aad-server-extension.md)] 
 
-## <a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
+##<a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)] 
 
@@ -46,7 +46,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
 
-## <a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
+##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
 [AZURE.INCLUDE [mobile-services-android-authenticate-app](../includes/mobile-services-android-authenticate-app.md)]
 
@@ -58,9 +58,9 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 [AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../includes/mobile-services-android-authenticate-app-refresh-token.md)] 
 
-## <a name="next-steps"></a>Nächste Schritte
+##<a name="next-steps"></a>Nächste Schritte
 
-Im nächsten Lernprogramm [Dienstseitige Autorisierung von Mobile Services-Benutzern][Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um die von Mobile Services zurückgegebenen Daten zu filtern. 
+Im nächsten Lernprogramm, [Dienstseitige Autorisierung von Benutzern in Mobile Services][Autorisieren von Benutzern mit Skripts], werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. 
 
 
 <!-- Anchors. -->
@@ -72,14 +72,14 @@ Im nächsten Lernprogramm [Dienstseitige Autorisierung von Mobile Services-Benut
 [Nächste Schritte]:#next-steps
 
 <!-- URLs. -->
-[Erste Schritte mit Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-android-get-started/
-[Erste Schritte mit Daten]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data/
-[Erste Schritte mit Authentifizierung]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users/
-[Erste Schritte mit Pushbenachrichtigungen]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push/
-[Autorisieren von Benutzern mit Skripts]: /documentation/articles/mobile-services-dotnet-backend-android-authorize-users-in-scripts
+[Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-android-get-started.md
+[Erste Schritte mit Daten]: mobile-services-dotnet-backend-android-get-started-data.md
+[Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-android-get-started-users.md
+[Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-android-get-started-push.md
+[Autorisieren von Benutzern mit Skripts]: mobile-services-dotnet-backend-android-authorize-users-in-scripts.md
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-net-client-library
-[Registrieren Ihres Windows Store-App-Pakets für die Microsoft Authentifizierung]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
+[Registrieren Ihres Windows Store-App-Pakets für die Microsoft Authentifizierung]: mobile-services-how-to-register-store-app-package-microsoft-authentication.md
 
-<!--HONumber=47-->
+<!--HONumber=49-->

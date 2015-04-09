@@ -2,7 +2,7 @@
 
 ### So registrieren Sie ein SendGrid-Konto
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal][] an.
+1. Melden Sie sich am [Azure-Verwaltungsportal][] an.
 
 2. Klicken Sie im unteren Bereich des Verwaltungsportals auf **Neu**.
 
@@ -77,4 +77,4 @@
 [Alle APIs]: https://sendgrid.com/docs/API_Reference/index.html
 
 
-<!--HONumber=47-->
+<!--HONumber=49-->

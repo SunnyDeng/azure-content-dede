@@ -1,55 +1,47 @@
-<properties 
-	pageTitle="Verwenden des ASP.NET-Sitzungszustands mit Azure-Websites" 
+﻿<properties 
+	pageTitle="Sitzungsstatus mit Azure-Redis-Cache in Azure App Service" 
 	description="Erfahren Sie, wie Sie den Azure Cache Service zur Unterstützung des ASP.NET-Sitzungszustand-Caching verwenden." 
-	services="cache" 
+	services="app-service\web" 
 	documentationCenter=".net" 
-	authors="riande" 
+ 	authors="Rick-Anderson" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor=""/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="1/13/2015" 
-	ms.author="Rick-Anderson"/>
+	ms.date="03/24/2015" 
+	ms.author="riande"/>
 
 
-# Verwenden des ASP.NET-Sitzungszustands mit Azure-Websites
+# Sitzungsstatus mit Azure-Redis-Cache in Azure App Service
 
 
-In diesem Thema wird erläutert, wie Sie den Azure Redis Cache Service (Vorschau) für den Sitzungszustand verwenden.
+In diesem Thema wird erläutert, wie Sie den Azure-Redis-Cache-Dienst für den Sitzungszustand verwenden.
 
 Falls Ihre ASP.NET-Web-App den Sitzungszustand verwendet, müssen Sie einen externen Sitzungszustandsanbieter (entweder den Redis Cache Service oder einen SQL Server-Sitzungszustandsanbieter) konfigurieren. Wird der Sitzungszustand ohne einen externen Anbieter verwendet, sind Sie auf eine Instanz Ihrer Web-App beschränkt. Der Redis Cache Service lässt sich am schnellsten und einfachsten aktivieren.
 
-Die grundlegenden Schritte zur Verwendung des Cache Service (Vorschau) für das Zwischenspeichern des Sitzungszustands umfassen:
-
-* [Erstellen des Caches](#createcache)
-* [Hinzufügen des RedisSessionStateProvider-NuGet-Pakets zur Web-App](#configureproject)
-* [Ändern der Datei "web.config"](#configurewebconfig)
-* [Verwenden des Sitzungsobjekts zum Speichern und Abrufen zwischengespeicherter Elemente](#usesessionobject)
-
 <h2><a id="createcache"></a>Erstellen des Caches</h2>
-Befolgen Sie [diese Anweisungen](http://azure.microsoft.com/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-cache) zum Erstellen des Caches.
+Befolgen Sie [diese Anweisungen](cache-dotnet-how-to-use-azure-redis-cache.md#create-cache) zum Erstellen des Caches.
 
 <h2><a id="configureproject"></a>Hinzufügen des RedisSessionStateProvider-NuGet-Pakets zur Web-App</h2>
 Installieren Sie das `RedisSessionStateProvider`-NuGet-Paket.  Verwenden Sie den folgenden Befehl zur Installation über die Paket-Manager-Konsole (**Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
 
-  `PM> Install-Package RedisSessionStateProvider -IncludePrerelease`
+  `PM> Install-Package Microsoft.Web.RedisSessionStateProvider`
   
-Bei Installation über **Extras** > **NuGet-Paket-Manager** > **Nuget-Pakete für Projektmappe verwalten** suchen Sie nach `RedisSessionStateProvider`, und stellen Sie sicher, dass **Vorabversion einschließen** angegeben ist.
+Bei Installation über **Extras** > **NuGet-Paket-Manager** > **NuGet-Pakete für Projektmappe verwalten** suchen Sie nach `RedisSessionStateProvider`.
 
-Weitere Informationen finden Sie auf der [NuGet-RedisSessionStateProvider-Seite](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/ ) und unter [Konfigurieren des Cacheclients](http://azure.microsoft.com/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#NuGet).
+Weitere Informationen finden Sie auf der [NuGet-RedisSessionStateProvider-Seite](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/ ) und unter [Konfigurieren des Cacheclients](cache-dotnet-how-to-use-azure-redis-cache.md#NuGet).
 
 <h2><a id="configurewebconfig"></a>Ändern der Datei "web.config"</h2>
 Das NuGet-Paket fügt nicht nur Assemblyverweise für Cache, sondern auch Stub-Einträge in die Datei *web.config* ein. 
 
 1. Öffnen Sie *web.config*, und suchen Sie das Element **sessionState**.
 
-1. Geben Sie die Werte für `host`,  `accessKey` und `port` ein (der SSL-Port sollte 6380 lauten), und legen Sie `SSL` auf `true` fest. Diese Werte finden Sie im Azure-Verwaltungsvorschauportal im Fenster für Ihre Cacheinstanz. Weitere Informationen finden Sie unter [Verbinden mit dem Cache](http://azure.microsoft.com/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#connect-to-cache).
-Das folgende Markup zeigt die Änderungen an der Datei *web.config*.
+1. Geben Sie die Werte für `host`,  `accessKey` und `port` ein (der SSL-Port sollte 6380 lauten), und legen Sie `SSL` auf `true` fest. Diese Werte finden Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf dem Blatt für Ihre Cacheinstanz. Weitere Informationen finden Sie unter [Verbinden mit dem Cache](cache-dotnet-how-to-use-azure-redis-cache.md#connect-to-cache). Beachten Sie, dass der Nicht-SSL-Port für neue Caches standardmäßig deaktiviert ist. Weitere Informationen zum Aktivieren des Nicht-SSL-Ports finden Sie im Abschnitt [Zugriffsports](https://msdn.microsoft.com/library/azure/dn793612.aspx#AccessPorts) zum Thema [Konfigurieren eines Caches in Azure-Redis-Cache](https://msdn.microsoft.com/library/azure/dn793612.aspx). Das folgende Markup zeigt die Änderungen an der Datei *web.config*.
 
 
   <pre class="prettyprint">  
@@ -88,18 +80,24 @@ Der letzte Schritt ist die Verwendung des Sitzungsobjekts im ASP.NET-Code. Füge
     string strValue = "yourvalue";
 	Session.Add("yourkey", strValue);
 
-Der folgende Code ruft diesen Wert aus dem Sitzungszustand ab.
+The following code retrieves this value from session state.
 
     object objValue = Session["yourkey"];
     if (objValue != null)
-       strValue = (string)obj;	
+       strValue = (string)objValue;	
 
-Sie können den Redis Cache auch zum Zwischenspeichern von Objekten in Ihrer Web-App verwenden. Weitere Informationen finden Sie unter [MVC-Film-App mit Azure Redis Cache in 15 Minuten](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/).
+Sie können den Redis Cache auch zum Zwischenspeichern von Objekten in Ihrer Web-App verwenden. Weitere Informationen finden Sie unter [MVC-Film-App mit Azure-Redis-Cache in 15 Minuten](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/).
 Weitere Informationen zur Verwendung des ASP.NET-Sitzungszustands finden Sie unter [Überblick über den ASP.NET-Sitzungszustand][].
+
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
   *Von [Rick Anderson](https://twitter.com/RickAndMSFT)*
   
-  [installed the latest]: http://azure.microsoft.com/downloads/?sdk=net  
+  [Neueste installiert]: http://www.windowsazure.com/downloads/?sdk=net  
   [Überblick über den ASP.NET-Sitzungszustand]: http://msdn.microsoft.com/library/ms178581.aspx
 
   [NewIcon]: ./media/web-sites-dotnet-session-state-caching/CacheScreenshot_NewButton.png
@@ -111,7 +109,4 @@ Weitere Informationen zur Verwendung des ASP.NET-Sitzungszustands finden Sie unt
   [EndpointURL]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_EndpointURL.png
   [ManageKeys]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_ManageAccessKeys.png
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

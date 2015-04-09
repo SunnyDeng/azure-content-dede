@@ -20,9 +20,9 @@
 
 In diesem Thema erfahren Sie, wie Sie Ihre App registrieren, um Live Connect als Authentifizierungsanbieter für Azure Mobile Services verwenden zu können. 
 
->[AZURE.NOTE]Informationen zum Konfigurieren der Microsoft-Kontoauthentifizierung für eine universelle Windows-App oder zum Bereitstellen der einmaligen Anmeldung für eine Windows Store-App finden Sie unter [Registrieren Ihres Windows Store-App-Pakets für die Microsoft-Authentifizierung](/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication).
+>[AZURE.NOTE]Informationen zum Konfigurieren der Microsoft-Kontoauthentifizierung für eine universelle Windows-App oder zum Bereitstellen der einmaligen Anmeldung für eine Windows Store-App finden Sie unter [Registrieren Ihres Windows Store-App-Pakets für die Microsoft-Authentifizierung](mobile-services-how-to-register-store-app-package-microsoft-authentication.md).
 
-1. Navigieren Sie zur <a href="http://go.microsoft.com/fwlink/p/?LinkId=262039" target="_blank">Eigene Apps</a> im Live Connect Developer Center und melden Sie sich, falls erforderlich, mit Ihrem Microsoft-Konto an. 
+1. Navigieren Sie im Live Connect Developer Center zur Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=262039" target="_blank">Meine Apps</a>, und melden Sie sich, falls erforderlich, mit Ihrem Microsoft-Konto an. 
 
 2. Klicken Sie auf **Anwendung erstellen**, geben Sie einen **Anwendungsnamen** ein, und klicken Sie auf **Ich stimme zu**.
 
@@ -30,7 +30,7 @@ In diesem Thema erfahren Sie, wie Sie Ihre App registrieren, um Live Connect als
 
    	Damit wird die Anwendung bei Live Connect registriert.
 
-3. Klicken Sie auf **API-Einstellungen**, geben Sie in **Umleitungs-URL** den Wert  `https://<mobile_service>.azure-mobile.net/login/microsoftaccount` an, und klicken Sie auf **Speichern**.
+3. Klicken Sie auf **API-Einstellungen**, geben Sie den Wert `https://<mobile_service>.azure-mobile.net/login/microsoftaccount` als **Umleitungs-URL** ein, und klicken Sie auf **Speichern**.
 
 	>[AZURE.NOTE]Für einen mit Visual Studio in Azure veröffentlichten mobilen .NET-Back-End-Dienst ist die Umleitungs-URL die URL Ihres mobilen Diensts mit dem Pfadsuffix "signin-microsoft" für Ihren mobilen Dienst als .NET-Dienst, z. B. <code>https://todolist.azure-mobile.net/signin-microsoft</code>.  
 
@@ -57,9 +57,9 @@ Sie können nun eine Microsoft Account-Anmeldung für die Authentifizierung in I
 
 <!-- URLs. -->
 
-[Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Eigene Apps]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=47-->
+<!--HONumber=49-->

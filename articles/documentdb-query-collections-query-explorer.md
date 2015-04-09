@@ -26,7 +26,7 @@ Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten
 -	Wie kann ich über einen Webbrowser einfach durch Seiten der DocumentDB-Abfrageergebnisse navigieren?
 -	Wie kann Syntaxfehler meiner DocumentDB-Abfrage beheben? 
 
-## <a id="Launch"></a>Starten des Abfrage-Explorers und Navigieren##
+##<a id="Launch"></a>Starten des Abfrage-Explorers und Navigieren im Abfrage-Explorer##
 
 Der Abfrage-Explorer kann über jedes DocumentDB-Konto, jede -Datenbank und jedes -Sammlungsblatt gestartet werden.
   
@@ -36,15 +36,15 @@ Der Abfrage-Explorer kann über jedes DocumentDB-Konto, jede -Datenbank und jede
 
 2. Klicken Sie einfach auf die Kachel, um den Abfrage-Explorer zu starten.
 
-	Die Dropdown-Listen **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem der Abfrage-Explorer gestartet wird, automatisch ausgefüllt.  Wenn Sie ihn beispielsweise von einem Datenbankblatt aus starten, wird die aktuelle Datenbank eingefügt. Wenn Sie ihn von einem Sammlungsblatt aus starten, wird die aktuelle Sammlung eingefügt.
+	Die Dropdown-Listen **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem der Abfrage-Explorer gestartet wird, automatisch ausgefüllt.  Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Auflistungsblatt starten, sind die Felder der aktuellen Auflistung ausgefüllt.
 
 	![Screenshot of Query Explorer](./media/documentdb-query-collections-query-explorer/queryexplorerinitial.png)
 
-## <a id="Create"></a>Erstellen, Bearbeiten und Ausführen von Abfragen mit dem Abfrage-Explorer##
+##<a id="Create"></a>Erstellen, Bearbeiten und Ausführen von Abfragen mit dem Abfrage-Explorer##
 
 Mit dem Abfrage-Explorer können Sie problemlos Abfragen für eine DocumentDB-Sammlung erstellen, bearbeiten und ausführen. Darüber hinaus bietet er grundlegende Funktionen zum Hervorheben von Stichwörtern und Werten, um die Abfragebearbeitung zu verbessern.  
 
-- Beim ersten Öffnen des Abfrage-Explorers wird die Standardabfrage "SELECT * FROM c" bereitgestellt.  Sie können die Standardabfrage akzeptieren oder Ihre eigene erstellen und dann auf die Schaltfläche **Abfrage ausführen** klicken, um die Ergebnisse anzuzeigen. Abfrage-Explorer unterstützt die DocumentDB-SQL-Abfragesprache wie in [Abfragen von DocumentDB](../documentdb-sql-query/) beschrieben.
+- Beim ersten Öffnen des Abfrage-Explorers wird die Standardabfrage "SELECT * FROM c" bereitgestellt.  Sie können die Standardabfrage akzeptieren oder Ihre eigene erstellen und dann auf die Schaltfläche **Abfrage ausführen** klicken, um die Ergebnisse anzuzeigen. Der Abfrage-Explorer unterstützt die SQL-Abfragesprache von DocumentDB, wie in [Abfragen von DocumentDB](documentdb-sql-query.md) beschrieben.
 
 	![Screenshot of Query Explorer query results](./media/documentdb-query-collections-query-explorer/queryresults1.png) 
 
@@ -60,9 +60,9 @@ Mit dem Abfrage-Explorer können Sie problemlos Abfragen für eine DocumentDB-Sa
 
 	![Screenshot of Query Explorer query errors](./media/documentdb-query-collections-query-explorer/queryerror.png)
 
-## <a name="NextSteps"></a>Nächste Schritte
+##<a name="NextSteps"></a>Nächste Schritte
 
 - Weitere Informationen zu DocumentDB finden Sie [hier](http://azure.com/docdb).
-- Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Abfrage-Explorer unterstützt wird, finden Sie [hier](../documentdb-sql-query/).
+- Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Abfrage-Explorer unterstützt wird, finden Sie [hier](documentdb-sql-query.md).
 
-<!--HONumber=47-->
+<!--HONumber=49-->

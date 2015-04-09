@@ -1,22 +1,10 @@
-﻿# Veröffentlichen auf Azure-Websites mit Git
+﻿# Kontinuierliche Bereitstellung mit Git in Azure App Service
 
-Azure-Websites unterstützen die fortlaufende Bereitstellung über Quellcodeverwaltungs- und Repositorytools wie BitBucket, CodePlex, Dropbox, Git, GitHub, Mercurial und TFS. Sie können diese Tools verwenden, um den Inhalt und den Code für Ihre Website zu verwalten und bei Bedarf schnell und einfach Änderungen an Ihre Website mithilfe von Push zu übertragen.
+[Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) unterstützt die fortlaufende Bereitstellung von Quellcodeverwaltungs- und Repository-Tools wie BitBucket, CodePlex, Dropbox, Git, GitHub, Mercurial und TFS in Web-Apps. Sie können diese Tools verwenden, um den Inhalt und den Code für Ihre Anwendung zu verwalten und bei Bedarf schnell und einfach Änderungen an Ihrer Azure-Web-App vorzunehmen.
 
-In diesem Artikel erfahren Sie, wie Sie mithilfe von Git direkt von Ihrem lokalen Computer aus auf einer Azure-Website veröffentlichen (in Azure wird diese Methode der Veröffentlichung **lokales Git** genannt). Außerdem wird erläutert, wie Sie die fortlaufende Bereitstellung von Repositorywebsites aus ermöglichen, z. B. von BitBucket, CodePlex, Dropbox, GitHub oder Mercurial. Informationen zum Verwenden von TFS für die fortlaufende Bereitstellung finden Sie unter Continuous delivery to Azure using Visual Studio Online ([Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online]).
+In diesem Artikel erfahren Sie, wie Sie mithilfe von Git direkt von Ihrem lokalen Computer aus in Web-Apps veröffentlichen (in Azure wird diese Methode der Veröffentlichung **lokales Git** genannt). Außerdem wird erläutert, wie Sie die fortlaufende Bereitstellung von Repositorywebsites aus ermöglichen, z. B. von BitBucket, CodePlex, Dropbox, GitHub oder Mercurial. Informationen zum Verwenden von TFS für die fortlaufende Bereitstellung finden Sie unter Continuous delivery to Azure using Visual Studio Online ([Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online]).
 
-> [AZURE.NOTE] Viele der in diesem Artikel beschriebenen Git-Befehle werden automatisch ausgeführt, wenn Sie eine Website mit den <a href="/de-de/develop/nodejs/how-to-guides/command-line-tools/">Azure-Befehlszeilentools für Mac und Linux</a> erstellen.
-
-Die Aufgabe umfasst die folgenden Schritte:
-
-* [Installieren von Git](#Step1)
-* [Erstellen eines lokalen Repositorys](#Step2)
-* [Hinzufügen einer Webseite](#Step3)
-* [Aktivieren des Website-Repositorys](#Step4)
-* [Bereitstellen des Projekts](#Step5)
-	* [Übertragen lokaler Dateien zu Azure mithilfe von Push (Lokales Git)](#Step6)
-	* [Bereitstellen von Dateien aus einer Repository-Website wie BitBucket, CodePlex, Dropbox, GitHub oder Mercurial](#Step7)
-	* [Bereitstellen eines Visual Studio-Projekts aus BitBucket, CodePlex, Dropbox, GitHub oder Mercurial](#Step75)
-* [Problembehandlung](#Step8)
+> [AZURE.NOTE] Viele der in diesem Artikel beschriebenen Git-Befehle werden automatisch ausgeführt, wenn Sie eine Web-App mit den [Azure-Befehlszeilentools für Mac und Linux erstellen](/develop/nodejs/how-to-guides/command-line-tools/).
 
 <h2><a id="Step2"></a>Installieren von Git</h2>
 
@@ -24,13 +12,13 @@ Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebss
 
 > [AZURE.NOTE] In einigen Betriebssystemen sind eine Befehlszeilenversion und eine GUI-Version von Git verfügbar. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
 
-<h2><a id="Step2"></a>Erstellen eines lokalen Repositorys</h2>
+## <a id="Step2"></a>Schritt 2: Erstellen eines lokalen Repositorys
 
 Führen Sie die folgenden Aufgaben durch, um ein neues Git-Repository zu erstellen.
 
-1. Erstellen Sie ein Verzeichnis mit dem Namen "MyGitRepository" für Ihr Git-Repository und die Dateien Ihrer Website.
+1. Erstellen Sie ein Verzeichnis mit dem Namen "MyGitRepository" für Ihr Git-Repository und die Dateien Ihrer Web-App.
 
-2. Öffnen Sie eine Befehlszeile, zum Beispiel **GitBash** (Windows) oder **Bash** (Unix Shell). Auf OS X-Systemen können Sie auf die Befehlszeile über die **Terminal**-Anwendung zugreifen.
+2. Öffnen Sie eine Befehlszeile, zum Beispiel **GitBash** (Windows) oder **Bash** (Unix Shell). Auf OS X-Systemen können Sie über die **Terminal**-Anwendung auf die Befehlszeile zugreifen.
 
 3. Wechseln Sie in der Befehlszeile in das Verzeichnis "MyGitRepository".
 
@@ -42,9 +30,9 @@ Führen Sie die folgenden Aufgaben durch, um ein neues Git-Repository zu erstell
 
 	Eine Meldung wie **Leeres Git-Repository initialisiert unter [Pfad]** sollte zurückgegeben werden.
 
-<h2><a id="Step3"></a>Hinzufügen einer Webseite</h2>
+## <a id="Step3"></a>Schritt 3: Hinzufügen einer Webseite
 
-Azure-Websites unterstützen Anwendungen, die in verschiedenen Programmiersprachen erstellt wurden. In diesem Beispiel verwenden Sie eine statische HTML-Datei. Informationen zum Veröffentlichen von Websites in anderen Programmiersprachen auf Azure finden Sie im [Azure Developer Center].
+Web-Apps unterstützen in verschiedenen Programmiersprachen erstellte Anwendungen. In diesem Beispiel verwenden Sie eine statische HTML-Datei. Informationen zum Veröffentlichen von Web-Apps in anderen Programmiersprachen in Azure finden Sie im [Azure Developer Center].
 
 1. Erstellen Sie mithilfe eines Text-Editors eine neue Datei mit dem Namen **index.html** im Stammverzeichnis des Git-Repositorys (das vorher von Ihnen erstellte Verzeichnis MyGitRepository).
 
@@ -62,55 +50,49 @@ Azure-Websites unterstützen Anwendungen, die in verschiedenen Programmiersprach
 
 		git commit -m "Adding index.html to the repository"
 
-	Eine Ausgabe ähnlich der folgenden sollte angezeigt werden:
+	You should see output similar to the following:
 
 		[master (root-commit) 369a79c] Adding index.html to the repository
 		 1 file changed, 1 insertion(+)
 		 create mode 100644 index.html
 
-<h2><a id="Step4"></a>Aktivieren des Website-Repositorys</h2>
+<h2><a id="Step4"></a>Aktivieren des Web-App-Repositorys</h2>
 
-Führen Sie die folgenden Schritte durch, um ein Git-Repository für Ihre Website mithilfe des Azure-Portals zu aktivieren:
+Führen Sie die folgenden Schritte durch, um ein Git-Repository für Ihre Web-App mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) zu aktivieren:
 
 1. Melden Sie sich beim [Azure-Portal] an.
 
-2. Klicken Sie auf die Schaltfläche NEU, um eine neue Website zu erstellen, für die Sie dann ein Repository aktivieren.
+2. Führen Sie auf dem Blatt Ihrer Web-App einen Bildlauf nach unten zum Bereich **Bereitstellung** durch, und klicken Sie auf **Set up continous deployment**. Klicken Sie auf **Quelle auswählen**, klicken Sie dann auf **Local Git Repository**, und klicken Sie dann auf **OK**.  
 
-2. Warten Sie, bis der Erstellungsprozess der Website in der Ansicht **Websites** abgeschlossen ist, und wählen Sie dann die Website aus.
+2. Warten Sie, bis der Web-App-Erstellungsprozess abgeschlossen ist, und wählen Sie die Web-App auf dem Blatt "Web-Apps" aus.
 
-	![An image displaying a selected web site][portal-select-website]
+	![Ein Bild, das eine ausgewählte Web-App anzeigt](./media/publishing-with-git/azure1-local-git.png)
 
-3. Wählen Sie die Registerkarte **DASHBOARD** aus.
+4. Wenn Sie zum ersten Mal ein Repository in Azure einrichten, müssen Sie dafür Anmeldeinformationen erstellen. Sie verwenden diese, um eine Anmeldung beim Azure-Repository vorzunehmen und Änderungen aus Ihrem lokalen Git-Repository mithilfe von Push zu übertragen. Klicken Sie auf dem Blatt Ihrer Web-App auf **Set deployment credentials**, und konfigurieren Sie dann den Benutzernamen und das Kennwort für die Bereitstellung. Wenn Sie fertig sind, klicken Sie auf **OK**.
 
-4. Wählen Sie im Abschnitt **Auf einen Blick** die Option **Bereitstellung über Quellcodeverwaltung einrichten** aus.  Das folgende Dialogfeld **BEREITSTELLUNG EINRICHTEN** wird angezeigt.
-
-	![git-WhereIsYourSourceCode][git-WhereIsYourSourceCode]
-
-4. Wählen Sie **Lokales Git** aus, und klicken Sie dann auf den Pfeil für **Weiter**.
-
-4. Wenn Sie zum ersten Mal ein Repository in Azure einrichten, müssen Sie dafür Anmeldeinformationen erstellen. Sie verwenden diese, um eine Anmeldung beim Azure-Repository vorzunehmen und Änderungen aus Ihrem lokalen Git-Repository mithilfe von Push zu übertragen. 
-
-	![](./media/publishing-with-git/git_credentials.png)
-	
-5. Nach einer kurzen Verzögerung wird die Meldung angezeigt, dass Ihr Repository bereit ist. 
-
-	![git-instructions][git-instructions]
+	![](./media/publishing-with-git/azure2-credentials.png)
 
 <h2><a id="Step5"></a>Bereitstellen des Projekts</h2>
 
-<h3><a id="Step6"></a>Übertragen lokaler Dateien zu Azure mithilfe von Push (Lokales Git)</h3>
+* [Übertragen lokaler Dateien nach Azure per Push (lokales Git)](#Step6)
+* [Bereitstellen von Dateien aus einer Repository-Website wie BitBucket, CodePlex, Dropbox, GitHub oder Mercurial](#Step7)
+* [Bereitstellen eines Visual Studio-Projekts aus BitBucket, CodePlex, Dropbox, GitHub oder Mercurial](#Step75)
 
-An diesem Punkt werden im Portal Anweisungen zum Initialisieren eines lokalen Repositorys und zum Hinzufügen von Dateien angezeigt. Sie haben dies bereits in den vorherigen Schritten dieses Themas durchgeführt. Wenn Sie jedoch noch keine Anmeldeinformationen für die Bereitstellung eingerichtet haben, müssen Sie im Portal zur Registerkarte **DASHBOARD** zurückkehren und auf **Anmeldeinformationen für die Bereitstellung zurücksetzen** klicken.
+Führen Sie die folgenden Schritte durch, um Ihre Web-App mit einem lokalen Git in Azure zu veröffentlichen:
 
-Führen Sie die folgenden Schritte durch, um Ihre Website mit einem lokalen Git auf Azure zu veröffentlichen:
+1. Klicken Sie auf dem Blatt Ihrer Web-App im Abschnitt "Bereitstellung" auf **No deployment found**.
+
+	![](./media/publishing-with-git/azure3-repo-details.png)
+
+	**Git URL** ist später die Remotereferenz für die Bereitstellung aus dem lokalen Repository.
 
 1. Stellen Sie unter Verwendung der Befehlszeile sicher, dass das Stammverzeichnis Ihres lokalen Git-Repositorys, das die vorher erstellte Datei "index.html" enthält, das aktuelle Verzeichnis ist.
 
-2. Kopieren Sie den in Schritt 3 der vom Portal angezeigten Anweisungen aufgeführten Befehl "git remote add". Dieser ähnelt dem folgenden Befehl:
+2. Fügen Sie die in Schritt 1 unter **Git URL** Remotereferenz remote mit Git hinzu. Der Befehl sieht etwa wie folgt aus:
 
 		git remote add azure https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
 
-    > [AZURE.NOTE] Der Befehl **remote** fügt einem Remote-Repository einen benannten Verweis hinzu. In diesem Beispiel wird ein Verweis mit dem Namen 'azure' für das Repository Ihrer Azure-Website erstellt.
+    > [AZURE.NOTE] Der Befehl **remote** fügt einem Remote-Repository einen benannten Verweis hinzu. In diesem Beispiel wird ein Verweis mit dem Namen 'azure' für das Repository Ihrer Web-App erstellt.
 
 1. Verwenden Sie Folgendes an der Befehlszeile, um die aktuellen Repository-Inhalte aus dem lokalen Repository per Push in das 'azure'-Remote-Repository zu übertragen:
 
@@ -130,9 +112,13 @@ Führen Sie die folgenden Schritte durch, um Ihre Website mit einem lokalen Git 
 		To https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
 		* [new branch]		master -> master
 
-	> [AZURE.NOTE] Das für Ihre Azure-Website erstellte Repository erwartet Pushanforderungen für den <strong>master</strong>-Pfad des Repositorys, die dann als Inhalt der Website verwendet werden.
+	> [AZURE.NOTE] Das für Ihre Web-App erstellte Repository erwartet Pushanforderungen für den <strong>master</strong>-Pfad des Repositorys, die dann als Inhalt der Web-App verwendet werden.
 
-2. Klicken Sie unten im Portal auf **DURCHSUCHEN**, um zu überprüfen, ob **index.html** bereitgestellt wurde. Eine Seite mit "Hallo Git!" wird eingeblendet.
+2. Kehren Sie zum Blatt Ihrer Web-App im Azure-Portal zurück. **No deployment found** sollte in **Active Deployment** mit einen Protokolleintrag des letzten Pushs geändert werden. 
+
+	![](./media/publishing-with-git/azure4-deployed.png)
+
+2. Klicken Sie auf die URL im oberen Bereich des Portals, um zu überprüfen, ob **index.html** bereitgestellt wurde. Eine Seite mit "Hallo Git!" wird eingeblendet.
 
 	![A webpage containing 'Hello Git!'][hello-git]
 
@@ -150,43 +136,39 @@ Führen Sie die folgenden Schritte durch, um Ihre Website mit einem lokalen Git 
 
 <h3><a id="Step7"></a>Bereitstellen von Dateien aus einer Repository-Website wie BitBucket, CodePlex, Dropbox, GitHub oder Mercurial</h3>
 
-Wenn Sie lokales Git verwenden, um lokale Dateien mithilfe von Push an Azure zu übertragen, können Sie Updates aus einem lokalen Projekt manuell mithilfe von Push an Ihre Azure-Website übertragen. Im Gegensatz dazu ergibt sich bei der Bereitstellung aus BitBucket, CodePlex, Dropbox, GitHub oder Mercurial ein fortlaufender Bereitstellungsprozess, bei dem Azure mithilfe von Pull die aktuellen Updates aus Ihrem Projekt überträgt.
+Wenn Sie lokales Git verwenden, um lokale Dateien mithilfe von Push an Azure zu übertragen, können Sie Updates aus einem lokalen Projekt manuell mithilfe von Push an Ihre Web-App in Azure übertragen. Im Gegensatz dazu ergibt sich bei der Bereitstellung aus BitBucket, CodePlex, Dropbox, GitHub oder Mercurial ein fortlaufender Bereitstellungsprozess, bei dem Azure mithilfe von Pull die aktuellen Updates aus Ihrem Projekt überträgt.
 
-Zwar führen beide Methoden dazu, dass Ihr Projekt auf einer Azure-Website bereitgestellt wird, die fortlaufende Bereitstellung ist jedoch nützlich, wenn mehrere Personen an einem Projekt arbeiten und Sie sicherstellen möchten, dass die aktuelle Version stets veröffentlicht wird, unabhängig davon, wer das letzte Update durchgeführt hat. Die fortlaufende Bereitstellung bietet sich auch an, wenn Sie eines der oben erwähnten Tools als zentrales Repository für Ihre Anwendung verwenden.
+Zwar führen beide Methoden dazu, dass Ihr Projekt in Web-Apps bereitgestellt wird, die fortlaufende Bereitstellung ist jedoch nützlich, wenn mehrere Personen an einem Projekt arbeiten und Sie sicherstellen möchten, dass die aktuelle Version stets veröffentlicht wird, unabhängig davon, wer das letzte Update durchgeführt hat. Die fortlaufende Bereitstellung bietet sich auch an, wenn Sie eines der oben erwähnten Tools als zentrales Repository für Ihre Anwendung verwenden.
 
 Das Bereitstellen von Dateien über GitHub, CodePlex oder BitBucket setzt voraus, dass Sie Ihr lokales Projekt auf einem dieser Dienste veröffentlicht haben. Weitere Informationen zum Veröffentlichen Ihres Projekts auf diesen Diensten finden Sie unter [Erstellen eines Repositorys (GitHub)], [Verwenden von Git mit CodePlex], [Erstellen eines Repositorys (BitBucket)], [Verwenden von Dropbox zum Freigeben von Git-Repositorys] oder [Schnellstart - Mercurial].
 
-1. Kopieren Sie die Dateien Ihrer Website zunächst in das ausgewählte Repository, das für die fortlaufende Bereitstellung verwendet wird.
+1. Kopieren Sie die Dateien Ihrer Web-App zunächst in das ausgewählte Repository, das für die fortlaufende Bereitstellung verwendet wird.
 
-2. Gehen Sie im Azure-Portal zur Registerkarte **DASHBOARD** für Ihre Website. Wählen Sie im Abschnitt **Auf einen Blick** die Option **Bereitstellung über Quellcodeverwaltung einrichten** aus.  Das Dialogfeld **Bereitstellung einrichten** wird mit einer Frage bezüglich des Speicherorts Ihres Quellcodes angezeigt. 
+2. Führen Sie auf dem Blatt Ihrer Web-App im Portal einen Bildlauf nach unten zum Bereich **Bereitstellung** aus, und klicken Sie auf **Set up continous deployment**. Klicken Sie auf **Quelle auswählen**, und klicken Sie dann z. B. auf **GitHub**.  
 
-2. Wählen Sie die Quellcodeverwaltungsmethode aus, die Sie für die fortlaufende Bereitstellung verwenden möchten.
+	![](./media/publishing-with-git/azure6-setup-github.png)
 	
-3. Geben Sie bei Aufforderung die Anmeldeinformationen für den ausgewählten Dienst ein.
+2. Klicken Sie auf dem Blatt **Continous deployment** auf **Autorisierung**, und klicken Sie dann auf **Autorisieren**. Das Azure-Portal leitet Sie an die Repository-Site weiter, um die Autorisierung abzuschließen. 
 
-4. Nachdem Sie Azure den Zugriff auf Ihr Konto gestattet haben, wird eine Liste mit Repositorys angezeigt. 
+4. Wenn Sie fertig sind, wechseln Sie zurück zum Azure-Portal, und klicken Sie auf dem Blatt **Autorisierung** auf **OK**.
 
-	![git-ChooseARepositoryToDeploy][git-ChooseARepositoryToDeploy]
+5. Wählen Sie auf dem Blatt **Continuous Deployment** die Organisation, das Projekt und den Pfad für die Bereitstellung aus. Wenn Sie fertig sind, klicken Sie auf **OK**.
   
-5. Wählen Sie das Repository aus, das Sie Ihrer Azure-Website zuordnen möchten. Klicken Sie auf das Häkchen, um fortzufahren.
+	![](./media/publishing-with-git/azure7-setup-github-configure.png)
 
 	> [AZURE.NOTE] Wenn Sie die fortlaufende Bereitstellung mit GitHub oder BitBucket aktivieren, werden öffentliche und private Projekte angezeigt.
 
-6. Azure erstellt eine Zuordnung für das ausgewählte Repository und überträgt die Dateien mithilfe von Pull aus der Hauptverzweigung. Nach Abschluss dieses Prozesses wird im **Bereitstellungsverlauf** auf der Seite **Bereitstellungen** eine Meldung **Aktive Bereitstellung** angezeigt, die der folgenden Meldung ähnelt:
+Azure erstellt eine Zuordnung für das ausgewählte Repository und überträgt die Dateien mithilfe von Pull aus dem angegebenen Pfad. Nach Abschluss dieses Vorgangs wird im Bereich **Bereitstellung** des Blatts Ihrer Web-App eine Meldung **Active Deployment** angezeigt, die auf die erfolgreiche Bereitstellung hinweist.
 
-	![git-githubdeployed][git-githubdeployed]
+7. An diesem Punkt wurde Ihr Projekt aus dem Repository Ihrer Wahl in Ihrer Web-App bereitgestellt. Um zu überprüfen, ob die Web-App aktiv ist, klicken Sie oben im Portal auf die **URL**. Der Browser sollte zur Web-App wechseln.
 
-7. An diesem Punkt wurde Ihr Projekt aus dem Repository Ihrer Wahl auf Ihrer Azure-Website bereitgestellt. Um zu überprüfen, ob die Website aktiv ist, klicken Sie unten im Portal auf den Link **Durchsuchen**. Der Browser sollte zur Website wechseln.
+8. Um sicherzustellen, dass die fortlaufende Bereitstellung aus dem Repository Ihrer Wahl stattfindet, übertragen Sie eine Änderung per Push in das Repository. Ihre Web-App sollte aktualisiert werden, um die Änderung kurz nach dem Push ins Repository wiederzugeben. Sie können auf der Seite **Bereitstellungen** Ihrer Web-App überprüfen, ob die Aktualisierung abgerufen wurde.
 
-8. Um zu überprüfen, ob die fortlaufende Bereitstellung stattfindet, nehmen Sie eine Änderung am Projekt vor und übertragen das Update mithilfe von Push in das Repository, das Sie dieser Website zugeordnet haben. Ihre Website sollte aktualisiert werden, um die Änderung kurz nach dem Push ins Repository wiederzugeben. Sie können auf der Seite **Bereitstellungen** Ihrer Website überprüfen, ob das Update abgerufen wurde.
+### <a id="Step75"></a>Bereitstellen eines Visual Studio-Projekts aus BitBucket, CodePlex, Dropbox, GitHub oder Mercurial
 
-	![git-GitHubDeployed-Updated][git-GitHubDeployed-Updated]
+Die Übertragung einer Visual Studio-Projektmappe in Web-Apps in Azure App Service per Push erfordert lediglich das einfache Übertragen einer Datei "index.html". Der Web-App-Bereitstellungsprozess optimiert alle Details, darunter NuGet-Wiederherstellungsabhängigkeiten und die Erstellung der Binärdateien der Anwendung. Sie können die Best Practices der Quellcodeverwaltung befolgen und Code ausschließlich in Ihrem Git-Repository verwalten und den Rest von der Web-App-Bereitstellung erledigen lassen.
 
-<h3><a id="Step75"></a>Bereitstellen eines Visual Studio-Projekts aus BitBucket, CodePlex, Dropbox, GitHub oder Mercurial</h3>
-
-Eine Visual Studio-Projektmappe lässt sich genauso leicht mithilfe von Push an eine Azure-Website übertragen wie eine einfache index.html-Datei. Der Azure-Websites-Bereitstellungsprozess optimiert alle Details, darunter NuGet-Wiederherstellungsabhängigkeiten und die Erstellung der Binärdateien der Anwendung. Sie können die Best Practices der Quellcodeverwaltung befolgen und Code ausschließlich in Ihrem Git-Repository verwalten und den Rest von der Azure-Websites-Bereitstellung erledigen lassen.
-
-Die Schritte zum Übertragen der Visual Studio-Projektmappe an eine Azure-Website sind wie im [vorherigen Abschnitt](#Step7), vorausgesetzt, dass Sie Ihre Lösung und das Repository wie folgt konfigurieren:
+Die Schritte zum Übertragen der Visual Studio-Lösung an eine Web-App sind wie im [vorherigen Abschnitt](#Step7), vorausgesetzt, dass Sie Ihre Lösung und das Repository wie folgt konfigurieren:
 
 -	Fügen Sie dem Stammverzeichnis Ihres Repositorys eine `.gitignore` -Datei hinzu, und geben Sie alle Dateien und Ordner an, die Sie aus Ihrem Repository ausschließen möchten, beispielsweise die Ordner `Obj`, `Bin` und `packages` (Formatinformationen finden Sie in der [gitignore-Dokumentation](http://git-scm.com/docs/gitignore)). Beispiel:
 
@@ -212,46 +194,27 @@ Die Schritte zum Übertragen der Visual Studio-Projektmappe an eine Azure-Websit
 
 -	Damit Visual Studio automatisch fehlende Pakete wiederherstellt, [aktivieren Sie die NuGet-Paketwiederherstellung](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages) in Ihrem Visual Studio-Projekt.
 
-Nachdem Sie Ihr Repository wie beschrieben eingerichtet und Ihre Azure-Website für fortlaufende Veröffentlichung aus einem der Online-Git-Repositorys konfiguriert haben, können Sie Ihre ASP.NET-Anwendung lokal in Visual Studio entwickeln und Ihren Code fortlaufend bereitstellen, indem Sie einfach Ihre Änderungen mithilfe von Push an Ihr Online-Git-Repository übertragen.
+Nachdem Sie Ihr Repository wie beschrieben eingerichtet und Ihre Web-App in Azure für fortlaufende Veröffentlichung aus einem der Online-Git-Repositorys konfiguriert haben, können Sie Ihre ASP.NET-Anwendung lokal in Visual Studio entwickeln und Ihren Code fortlaufend bereitstellen, indem Sie einfach Ihre Änderungen mithilfe von Push an Ihr Online-Git-Repository übertragen.
 
-<h4>Funktionsweise der fortlaufenden Bereitstellung</h4>
-Die fortlaufende Bereitstellung funktioniert durch Angabe der **BEREITSTELLUNGSAUSLÖSER-URL** im Abschnitt **Bereitstellungen** der Registerkarte **Konfigurieren** Ihrer Website.
+<h2>Deaktivieren der fortlaufenden Bereitstellung</h2>
 
-![git-DeploymentTrigger][git-DeploymentTrigger]
+Die fortlaufende Bereitstellung kann auf dem Blatt **Bereitstellungen** deaktiviert werden. Klicken Sie auf dem Blatt Ihrer Web-App im Abschnitt **Bereitstellung** auf "Active Deployment". Klicken Sie dann auf **Trennen**.
 
-Wenn Updates am Repository vorgenommen werden, wird eine POST-Anforderung an diese URL gesendet, die Ihre Azure-Website darüber informiert, dass das Repository aktualisiert wurde. An diesem Punkt wird das Update abgerufen und auf Ihrer Website bereitgestellt.
+![git-DisconnectFromGitHub](./media/publishing-with-git/azure5-disconnect.png)	
 
-Weitere Informationen zum Modul hinter dem Git-Bereitstellungsprozess für Azure-Websites finden Sie unter [Project Kudu](https://github.com/projectkudu/kudu/wiki).
+Nachdem Sie die Bestätigungsmeldung mit **Ja** beantwortet haben, können Sie zum Blatt Ihrer Web-App zurückkehren und auf **Set up continuous deployment** klicken, wenn Sie die Veröffentlichung aus einer anderen Quelle einrichten möchten.
 
-<h4>Angeben der zu verwendenden Verzweigung</h4>
+## <a id="Step8"></a>Problembehandlung
 
-Wenn Sie die fortlaufende Bereitstellung aktivieren, befindet sie sich standardmäßig in der **master**-Verzweigung des Repositorys. Wenn Sie eine andere Verzweigung verwenden, führen Sie die folgenden Schritte aus:
-
-1. Wählen Sie im Portal Ihre Website und dann **KONFIGURIEREN** aus.
-
-2. Geben Sie im Abschnitt **Bereitstellungen** der Seite im Feld **BEREITZUSTELLENDE VERZWEIGUNG** die Verzweigung ein, die Sie verwenden möchten, und drücken Sie die Eingabetaste. Klicken Sie zuletzt auf **SPEICHERN**.
-
-	Azure sollte das Update basierend auf Änderungen an der neuen Verzweigung sofort beginnen.
-
-<h4>Deaktivieren der fortlaufenden Bereitstellung</h4>
-
-Die fortlaufende Bereitstellung kann im Azure-**Dashboard** deaktiviert werden. Wählen Sie im Abschnitt **Auf einen Blick** die Option zum Trennen vom verwendeten Repository aus:
-
-![git-DisconnectFromGitHub][git-DisconnectFromGitHub]	
-
-Nachdem Sie die Bestätigungsmeldung mit **Ja** beantwortet haben, kehren Sie zu **Auf einen Blick** zurück, und klicken Sie auf **Bereitstellung über Quellcodeverwaltung einrichten**, wenn Sie die Veröffentlichung von einer anderen Quelle aus einrichten möchten.
-
-<h2><a id="Step8"></a>Problembehandlung</h2>
-
-Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentlichen auf einer Azure-Website verwendet wird:
+Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentlichen auf einer Web-App in Azure verwendet wird:
 
 ****
 
 **Symptom**: Unable to access '[siteURL]': Failed to connect to [scmAddress]
 
-**Ursache**: Dieser Fehler kann auftreten, wenn die Website nicht ausgeführt wird.
+**Ursache**: Dieser Fehler kann auftreten, wenn die Web-App nicht ordnungsgemäß ausgeführt wird.
 
-**Lösung**: Starten Sie die Website im Azure-Portal. Die Git-Bereitstellung funktioniert nur dann, wenn die Website ausgeführt wird. 
+**Lösung**: Starten Sie die Web-App im Azure-Portal. Die Git-Bereitstellung funktioniert nur dann, wenn die Web-App ausgeführt wird. 
 
 
 ****
@@ -284,7 +247,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 
 ****
 
-**Symptom**: Error - Changes commited to remote repository but your website not updated.
+**Symptom**: Error - Changes commited to remote repository but your web app not updated.
 
 **Ursache**: Dieser Fehler kann auftreten, wenn Sie eine "Node.js"-Anwendung mit einer Datei "package.json" bereitstellen, die zusätzliche erforderliche Module angibt.
 
@@ -296,7 +259,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 
 	* npm ERR! \`cmd "/c" "node-gyp rebuild"\` failed with 1
 
-		ODER
+		OR
 
 	* npm ERR! [modulename@version] preinstall: \`make || gmake\`
 
@@ -306,14 +269,20 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 * [Verwenden von PowerShell für Azure]
 * [Verwenden des Azure-Befehlszeilentools für Mac und Linux]
 * [Git-Dokumentation]
-* [Project Kudu](https://github.com/projectkudu/kudu/wiki)
+* [Projekt Kudu](https://github.com/projectkudu/kudu/wiki)
+
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [Azure Developer Center]: http://azure.microsoft.com/develop/overview/
-[Azure-Portal]: http://manage.windowsazure.com
+[Azure-Portal]: https://portal.azure.com
 [Git-Website]: http://git-scm.com
 [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[Verwenden von PowerShell für Azure]: http://azure.microsoft.com/develop/nodejs/how-to-guides/powershell-cmdlets/
-[Verwenden des Azure-Befehlszeilentools für Mac und Linux]: /de-de/develop/nodejs/how-to-guides/command-line-tools/
+[Verwenden von PowerShell für Azure]: ../articles/install-configure-powershell.md
+[Verwenden des Azure-Befehlszeilentools für Mac und Linux]: ../articles/xplat-cli.md
 [Git-Dokumentation]: http://git-scm.com/documentation
 
 [portal-select-website]: ./media/publishing-with-git/git-select-website.png
@@ -333,5 +302,6 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Erstellen eines Repositorys (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
 [Schnellstart - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
-[Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online]: http://azure.microsoft.com/develop/net/common-tasks/publishing-with-tfs/
-<!--HONumber=42-->
+[Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online]: ../articles/cloud-services-continuous-delivery-use-vso.md
+
+<!--HONumber=49-->

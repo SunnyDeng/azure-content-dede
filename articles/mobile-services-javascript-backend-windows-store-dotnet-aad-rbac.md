@@ -1,58 +1,55 @@
-<properties 
+﻿<properties 
 	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Mobile Dev Center" 
 	description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung steuern." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
 	manager="dwrede" 
 	editor="" 
-	services=""/>
+	services="mobile-services"/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-store" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/29/2014" 
+	ms.date="02/23/2015" 
 	ms.author="wesmc"/>
 
 # Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory
 
 [AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
+#Übersicht
 
 Rollenbasierte Zugriffssteuerung (RBAC) besteht im Zuweisen von Berechtigungen für Rollen, die Benutzer innehaben können, um Beschränkungen für die Möglichkeiten bestimmter Benutzer zu definieren. In diesem Lernprogramm erfahren Sie, wie Sie grundlegende RBAC für Azure Mobile Services hinzufügen können.
 
 In diesem Lernprogramm wird die rollenbasierte Zugriffssteuerung erläutert, wobei die Mitgliedschaft der einzelnen Benutzer in der Gruppe "Sales" geprüft wird, die in Azure Active Directory (AAD) definiert ist. Die Zugriffsprüfung erfolgt mit JavaScript im Mobile Services-Back-End mithilfe der [Graph-API] für Azure Active Directory. Nur Benutzer, die der Rolle "Sales" angehören, dürfen Daten abfragen.
 
 
->[AZURE.NOTE] Dieses Lernprogramm ist dazu vorgesehen, Ihre Kenntnisse bezüglich der Authentifizierung um Autorisierungsmethoden zu erweitern. Es wird davon ausgegangen, dass Sie das Lernprogramm [Erste Schritte mit der Authentifizierung] unter Verwendung des Azure Active Directory-Authentifizierungsanbieters abgeschlossen haben. Dieses Lernprogramm aktualisiert die Anwendung "TodoItem" weiter, die im Lernprogramm [Erste Schritte mit der Authentifizierung] verwendet wurde.
+>[AZURE.NOTE] Dieses Lernprogramm ist dazu vorgesehen, Ihre Kenntnisse bezüglich der Authentifizierung um Autorisierungsmethoden zu erweitern. Es wird davon ausgegangen, dass Sie das Lernprogramm [Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App] unter Verwendung des Azure Active Directory-Authentifizierungsanbieters abgeschlossen haben. In diesem Lernprogramm wird die TodoItem-Anwendung weiter aktualisiert, die im Lernprogramm [Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App] verwendet wurde.
 
-In diesem Lernprogramm werden die folgenden Schritte behandelt:
-
-1. [Erstellen der Gruppe "Sales" mit Mitgliedschaften]
-2. [Generieren eines Schlüssels für die integrierte Anwendung]
-3. [Hinzufügen eines gemeinsam genutzten Skripts zur Prüfung der Mitgliedschaft] 
-4. [Hinzufügen einer rollenbasierten Zugriffsprüfung für Datenbankvorgänge]
-5. [Testen des Clientzugriffs]
+##Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-* Visual Studio 2013 für Windows 8.1
-* Abschluss des Lernprogramms [Erste Schritte mit der Authentifizierung] unter Verwendung des Azure Active Directory-Authentifizierungsanbieters.
+* Visual Studio 2013 für Windows 8.1.
+* Abschluss des Lernprogramms [Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App] unter Verwendung des Azure Active Directory-Authentifizierungsanbieters.
 * Abschluss des Lernprogramms [Speichern von Serverskripts] zur Verwendung eines Git-Repositorys zum Speichern von Serverskripts.
  
 
 
-## <a name="create-group"></a>Erstellen der Gruppe "Sales" mit Mitgliedschaften
+##Erstellen der Gruppe "Sales" mit Mitgliedschaften
 
 [AZURE.INCLUDE [mobile-services-aad-rbac-create-sales-group](../includes/mobile-services-aad-rbac-create-sales-group.md)]
 
 
-## <a name="generate-key"></a>Generieren eines Schlüssels für die integrierte Anwendung
+##Generieren eines Schlüssels für die integrierte Anwendung
 
 
-Im Lernprogramm [Erste Schritte mit der Authentifizierung] haben Sie eine Registrierung für die integrierte Anwendung erstellt, als Sie den Schritt [Registrieren für die Verwendung einer Azure Active Directory-Anmeldung] durchgeführt haben. In diesem Abschnitt erzeugen Sie einen Zugriffsschlüssel, der beim Lesen der Verzeichnisinformationen mit der Client-ID der integrierten Anwendung verwendet wird. 
+Im Lernprogramm [Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App] haben Sie eine Registrierung für die integrierte Anwendung erstellt, als Sie den Schritt [Registrieren für die Verwendung einer Azure Active Directory-Anmeldung] ausgeführt haben. In diesem Abschnitt erzeugen Sie einen Zugriffsschlüssel, der beim Lesen der Verzeichnisinformationen mit der Client-ID der integrierten Anwendung verwendet wird. 
+
+Wenn Sie das Lernprogramm [Zugriff auf Azure Active Directory Graph-Informationen] abgeschlossen haben, haben Sie diesen Schritt bereits durchgeführt und können diesen Abschnitt überspringen.
 
 [AZURE.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../includes/mobile-services-generate-aad-app-registration-access-key.md)]
 
@@ -60,16 +57,16 @@ Im Lernprogramm [Erste Schritte mit der Authentifizierung] haben Sie eine Regist
 
 
 
-## <a name="add-shared-script"></a>Hinzufügen eines gemeinsam genutzten Skripts zum mobilen Dienst zur Prüfung der Mitgliedschaft
+##Hinzufügen eines gemeinsam genutzten Skripts zum mobilen Dienst zur Prüfung der Mitgliedschaft
 
 In diesem Abschnitt verwenden Sie Git, um eine gemeinsam genutzte Skriptdatei namens *rbac.js* zu Ihrem mobilen Dienst hinzuzufügen. Diese gemeinsam genutzte Skriptdatei enthält die Funktionen, welche die [Graph-API] verwenden, um die Gruppenmitgliedschaft des Benutzers zu prüfen. 
 
 Wenn Sie mit der Bereitstellung von Skripts mit Git für Ihren mobilen Dienst noch nicht vertraut sind, verwenden Sie das Lernprogramm [Speichern von Serverskripts], bevor Sie diesen Abschnitt abschließen.
 
 1. Erstellen Sie eine neue Skriptdatei namens *rbac.js* im Verzeichnis *./service/shared/* des lokalen Repositorys für Ihren mobilen Dienst.
-2. Fügen Sie das folgende Skript am Anfang der Datei ein, welches die  `getAADToken`-Funktion definiert. Anhand der *tenant_domain*, der integrierten *client id* der Anwendung und dem *key* der Anwendung stellt diese Funktion ein Graph-Zugriffstoken bereit, das zum Lesen der Verzeichnisinformationen verwendet wird.
+2. Fügen Sie am Anfang der Datei das folgende Skript ein, welches die  `getAADToken`-Funktion definiert. Anhand der *tenant_domain*, der integrierten *client id* der Anwendung und dem *Schlüssel* der Anwendung stellt diese Funktion ein Graph-Zugriffstoken bereit, das zum Lesen der Verzeichnisinformationen verwendet wird.
 
-    >[AZURE.NOTE] Sie sollten das Token zwischenspeichern, statt für jede Zugriffsprüfung ein neues Token zu erstellen. Aktualisieren Sie den Zwischenspeicher, wenn bei der Verwendung des Tokens ein Authentication_ExpiredToken-Fehler 401 ausgegeben wird, wie in der[Graph-API-Fehlerreferenz] beschrieben ist. Aus Gründen der Vereinfachung wird dies im Code unten nicht dargestellt, aber es minimiert den zusätzlichen Netzwerkverkehr mit Active Directory. 
+    >[AZURE.NOTE] Sie sollten das Token zwischenspeichern, statt für jede Zugriffsprüfung ein neues Token zu erstellen. Aktualisieren Sie den Zwischenspeicher, wenn bei der Verwendung des Tokens ein Authentication_ExpiredToken-Fehler 401 ausgegeben wird, wie in der [Graph-API-Fehlerreferenz] beschrieben ist. Aus Gründen der Vereinfachung wird dies im Code unten nicht dargestellt, aber es minimiert den zusätzlichen Netzwerkverkehr mit Active Directory. 
 
         var appSettings = require('mobileservice-config').appSettings;
         var tenant_domain = appSettings.AAD_TENANT_DOMAIN;
@@ -96,7 +93,7 @@ Wenn Sie mit der Bereitstellung von Skripts mit Git für Ihren mobilen Dienst no
         }
 
 
-3. Fügen Sie den folgenden Code zu *rbac.js* hinzu, um die  `getGroupId`-Funktion zu definieren. Diese Funktion verwendet das Zugriffstoken, um die Gruppen-ID basierend auf dem Gruppennamen abzurufen, der in einem Filter verwendet wird.
+3. Fügen Sie *rbac.js* den folgenden Code hinzu, um die `getGroupId`-Funktion zu definieren. Diese Funktion verwendet das Zugriffstoken, um die Gruppen-ID basierend auf dem Gruppennamen abzurufen, der in einem Filter verwendet wird.
  
     >[AZURE.NOTE] Dieser Code schlägt die Active Directory-Gruppe nach dem Namen nach. In vielen Fällen ist es empfehlenswert, die Gruppen-ID als App-Einstellung des mobilen Diensts zu speichern und nur diese Gruppen-ID zu verwenden. Der Gruppenname kann sich ändern, die ID bleibt dagegen immer gleich. Mit der Änderung des Gruppennamens ist jedoch meist eine Änderung des Rollenumfangs verbunden, daher kann also trotzdem eine Aktualisierung des mobilen Dienstcodes erforderlich sein.   
 
@@ -119,7 +116,7 @@ Wenn Sie mit der Bereitstellung von Skripts mit Git für Ihren mobilen Dienst no
         }
 
 
-4. Fügen Sie den folgenden Code zu *rbac.js*hinzu, um die `isMemberOf`-Funktion zu definieren, welche den [IsMemberOf]-Endpunkt der Graph-REST-API aufruft.
+4. Fügen Sie *rbac.js* den folgenden Code hinzu, um die `isMemberOf`-Funktion zu definieren, welche den [IsMemberOf]-Endpunkt der Graph-REST-API aufruft.
 
     Diese Funktion ist ein einfacher Wrapper für den [IsMemberOf]-Endpunkt der Graph-REST-API. Sie verwendet das Graph-Zugriffstoken, um basierend auf der Gruppen-ID zu prüfen, ob die Verzeichnisobjekt-ID des Benutzers Mitglied der Gruppe ist.
 
@@ -145,7 +142,7 @@ Wenn Sie mit der Bereitstellung von Skripts mit Git für Ihren mobilen Dienst no
 
     
 
-7. Fügen Sie die folgende exportierte `checkGroupMembership`-Funktion zu *rbac.js* hinzu.  
+7. Fügen Sie *rbac.js* die folgende exportierte `checkGroupMembership`-Funktion hinzu.  
 
     Diese Funktion fasst die Verwendung der anderen Skriptfunktionen ein und wird aus dem freigegebenen Skript exportiert, sodass sie von anderen Skripts zur Durchführung der tatsächlichen Zugriffsprüfung aufgerufen werden kann. Anhand des Benutzerobjekts des mobilen Diensts und der Gruppen-ID ruft das Skript die Objekt-ID aus Azure Active Directory für die Benutzer-ID ab und überprüft die Mitgliedschaft in der Gruppe.
 
@@ -170,10 +167,10 @@ Wenn Sie mit der Bereitstellung von Skripts mit Git für Ihren mobilen Dienst no
 
 8. Speichern Sie die Änderungen an *rbac.js*.
 
-## <a name="add-access-checking"></a>Hinzufügen einer rollenbasierten Zugriffsprüfung für Datenbankvorgänge
+##Hinzufügen einer rollenbasierten Zugriffsprüfung für Datenbankvorgänge
 
 
-Wenn Sie das Lernprogramm [Erste Schritte mit der Authentifizierung] abgeschlossen haben, sollten Sie bereits die Tabellenvorgänge zur Verwendung von Authentifizierung eingerichtet haben, wie unten dargestellt.
+Als Sie das Lernprogramm [Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App] abgeschlossen haben, sollten Sie bereits die Tabellenvorgänge zur Verwendung von Authentifizierung eingerichtet haben, wie unten dargestellt.
 
 ![][3]
 
@@ -196,7 +193,7 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
             });
         }
 
-2. Erstellen Sie eine neue Skriptdatei namens *todoitem.read.js* im Verzeichnis *./service/table/* des lokalen Git-Repositorys für Ihren mobilen Dienst. Fügen Sie das folgende Skript in diese Datei ein:
+2. Fügen Sie im Verzeichnis *./service/table/* des lokalen Git-Repositorys für Ihren mobilen Dienst eine neue Skriptdatei namens *todoitem.read.js* hinzu. Fügen Sie das folgende Skript in diese Datei ein:
 
         function read(query, user, request) {
         
@@ -249,7 +246,7 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 
         git commit -m "Added role based access control to table operations"
   
-7. Stellen Sie an der Befehlszeilenschnittstelle für Ihr Git-Repository die Aktualisierungen für Ihr lokales Git-Repository mit dem folgenden Befehl für den mobilen Dienst bereit. Bei diesem Befehl wird davon ausgegangen, dass Sie die Aktualisierungen in der  *master*-Verzweigung vorgenommen haben.
+7. Stellen Sie an der Befehlszeilenschnittstelle für Ihr Git-Repository die Aktualisierungen für Ihr lokales Git-Repository mit dem folgenden Befehl für den mobilen Dienst bereit. Bei diesem Befehl wird davon ausgegangen, dass Sie die Aktualisierungen in der Verzweigung  *master* vorgenommen haben.
 
         git push origin master
 
@@ -257,7 +254,7 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 
     ![][4]
 
-## <a name="test-client"></a>Testen des Clientzugriffs
+##Testen des Clientzugriffs
 
 [AZURE.INCLUDE [mobile-services-aad-rbac-test-app](../includes/mobile-services-aad-rbac-test-app.md)]
 
@@ -265,12 +262,6 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 
 
 
-<!-- Anchors. -->
-[Erstellen der Gruppe "Sales" mit Mitgliedschaften]: #create-group
-[Generieren eines Schlüssels für die integrierte Anwendung]: #generate-key
-[Hinzufügen eines gemeinsam genutzten Skripts zur Prüfung der Mitgliedschaft]: #add-shared-script
-[Hinzufügen einer rollenbasierten Zugriffsprüfung für Datenbankvorgänge]: #add-access-checking
-[Testen des Clientzugriffs]: #test-client
 
 
 <!-- Images -->
@@ -283,14 +274,15 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 [6]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/client-id-and-key.png
 
 <!-- URLs. -->
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
-[Registrieren mit Azure Active Directory]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
+[Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App]: mobile-services-javascript-backend-windows-universal-dotnet-get-started-users.md
+[Registrieren mit Azure Active Directory]: mobile-services-how-to-register-active-directory-authentication.md
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Verzeichnissynchronisierungsszenarien]: http://msdn.microsoft.com/library/azure/jj573653.aspx
-[Speichern von Serverskripts]: /de-de/documentation/articles/mobile-services-store-scripts-source-control/
-[Registrieren für die Verwendung einer Azure Active Directory-Anmeldung]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
+[Speichern von Serverskripts]: mobile-services-store-scripts-source-control.md
+[Registrieren für die Verwendung einer Azure Active Directory-Anmeldung]: mobile-services-how-to-register-active-directory-authentication.md
 [Graph-API]: http://msdn.microsoft.com/library/azure/hh974478.aspx
 [Graph-API-Fehlerreferenz]: http://msdn.microsoft.com/library/azure/hh974480.aspx
 [IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
+[Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-javascript-backend-windows-store-dotnet-aad-graph-info.md
 
-<!--HONumber=42-->
+<!--HONumber=49-->

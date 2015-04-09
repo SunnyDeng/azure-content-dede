@@ -1,245 +1,249 @@
-﻿<properties 
-	pageTitle="Stagingbereitstellung auf Microsoft Azure-Websites" 
-	description="Erfahren Sie mehr über das Veröffentlichen in einer Stagingumgebung in Microsoft Azure Websites." 
-	services="web-sites" 
-	documentationCenter="" 
-	authors="cephalin" 
-	writer="cephalin" 
-	manager="wpickett" 
+﻿<properties
+	pageTitle="Einrichten von Staging-Umgebungen für Web-Apps in Azure App Service"
+	description="Erfahren Sie, wie Sie Stagingveröffentlichungen Ihrer Web-Apps in Azure App Service verwenden."
+	services="app-service\web"
+	documentationCenter=""
+	authors="cephalin"
+	writer="cephalin"
+	manager="wpickett"
 	editor="mollybos"/>
 
-<tags 
-	ms.service="web-sites" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="9/9/2014" 
+<tags
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="03/24/2015"
 	ms.author="cephalin"/>
 
 <a name="Overview"></a>
-#Stagingbereitstellung auf Microsoft Azure-Websites
-Wenn Sie Ihre Anwendung auf Azure-Websites bereitstellen, kann die Bereitstellung in einem separaten Bereitstellungsslot anstelle des Standardproduktionsslots erfolgen, bei dem es sich tatsächlich um eine Livewebsite mit einen Hostnamen handelt. Diese Option ist im Webhostingplan **Standard** verfügbar. Darüber hinaus können Sie die Websites und Websitekonfigurationen zwischen den beiden Bereitstellungsslots, einschließlich des Produktionsslots, austauschen. Die Bereitstellung von Anwendungen in einem Bereitstellungsslot hat die folgenden Vorteile:
+# Einrichten von Staging-Umgebungen für Web-Apps in Azure App Service
 
-- Sie können Websiteänderungen in einem Stagingbereitstellungsslot überprüfen, bevor Sie die Website in den Produktionsslot überführen.
+Sie können eine Bereitstellung Ihrer Web-App in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) in einem separaten Bereitstellungsslot anstelle des Standard-Produktionsslots bereitstellen, wenn die Ausführung in einem der App-Service-Planmodi **Standard** oder **Premium** erfolgt. Bereitstellungsslots sind Live-Web-Apps mit eigenen Hostnamen. Elemente für Web-App-Inhalte und -Konfigurationen können zwischen zwei Bereitstellungsslots ausgetauscht werden, einschließlich des Produktionsslots. Die Bereitstellung von Anwendungen in einem Bereitstellungsslot hat die folgenden Vorteile:
 
-- Nach der Überführung enthält der Slot mit der vorherigen Stagingwebsite die vorherige Produktionswebsite. Wenn die in den Produktionsslot überführten Änderungen nicht Ihren Erwartungen entsprechen, können Sie denselben Austausch sofort noch einmal vornehmen, um die "letzte als gut befundene Website" zurückzuerhalten. 
- 
-- Indem Sie eine Website zuerst in einem Slot bereitstellen und sie dann in den Produktionsslot überführen, stellen Sie sicher, dass alle Instanzen erst nach einer Anlaufzeit in den Produktionsslot übernommen werden. Dadurch vermeiden Sie Downtime bei der Bereitstellung der Website. Die Verkehrsweiterleitung ist nahtlos, und es werden keine Anfragen aufgrund von Überführungsoperationen fallengelassen. 
+- Sie können Web-App-Änderungen in einem Stagingbereitstellungsslot überprüfen, bevor Sie die Web-App in den Produktionsslot überführen.
 
-Zusätzlich zum Produktionsslot werden für jede Website im Plan **Standard** vier Bereitstellungsslots unterstützt. 
+- Indem Sie eine Web-App zuerst in einem Slot bereitstellen und sie dann in den Produktionsslot überführen, stellen Sie sicher, dass alle Instanzen erst nach einer Anlaufzeit in den Produktionsslot übernommen werden. Dadurch vermeiden Sie Downtime bei der Bereitstellung der Web-App. Die Verkehrsweiterleitung ist nahtlos, und es werden keine Anfragen aufgrund von Überführungsoperationen fallengelassen. Dieser gesamte Workflow kann durch Konfigurieren von [Auto Swap] automatisiert werden,(#Configure-Auto-Swap-for-your-web-app) wenn keine Überprüfung vor dem Austauschen erforderlich ist.
 
-## Inhaltsverzeichnis
-- [Hinzufügen eines Bereitstellungsslots zu einer Website](#Add)
-- [Konfiguration für Bereitstellungsslots](#AboutConfiguration)
-- [Tauschen von Bereitstellungsslots](#Swap)
-- [Zurücksetzung einer Produktionswebsite in die Stagingphase](#Rollback)
-- [Löschen eines Websiteslots](#Delete)
-- [Azure PowerShell-Cmdlets für Websiteslots](#PowerShell)
-- [Befehle der plattformübergreifenden Azure-Befehlszeilenschnittstelle (xplat-cli) für Websiteslots](#CLI)
+- Nach einem Austausch befindet sich im Slot mit der zuvor bereitgestellten Web-App jetzt die vorherige Produktions-Web-App. Wenn die in den Produktionsslot überführten Änderungen nicht Ihren Erwartungen entsprechen, können Sie denselben Austausch sofort noch einmal vornehmen, um die "letzte als gut befundene Website" zurückzuerhalten.
+
+Jeder App Service-Planmodus unterstützt eine andere Anzahl von Bereitstellungsslots. Informationen zum Herausfinden, wie viele Slots Ihr Web-App-Modus unterstützt, finden Sie unter [App-Service-Preisdetails](/pricing/details/app-service/). 
+
+- Wenn Ihre Web-App mehrere Slots aufweist, können Sie den Modus nicht ändern.
+
+- Die Skalierung ist für Nicht-Produktionsslots nicht verfügbar,
+
+- Die Verwaltung verknüpfter Ressourcen wird für Nicht-Produktionsslots nicht unterstützt.
+
+	> [AZURE.NOTE] Sie können diese negativen Auswirkungen für einen Produktionsslot nur im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) vermeiden, indem Sie den Nicht-Produktionsslot vorübergehend in einen anderen App Service-Planmodus verschieben. Beachten Sie, dass der Nicht-Produktionsslot wieder im selben Modus freigegeben werden muss wie der Produktionsslot, bevor Sie die beiden Slots austauschen können.
 
 <a name="Add"></a>
-##Hinzufügen eines Bereitstellungsslots zu einer Website
+## Hinzufügen eines Bereitstellungsslots zu einer Web-App ##
 
-Die Website muss im Hostingplan **Standard** ausgeführt werden, damit mehrere Bereitstellungsslots aktiviert werden können. 
+Die Web-App muss im **Standard**- oder **Premium**-Modus ausgeführt werden, um mehrere Bereitstellungsslots aktivieren zu können.
 
-1. Klicken Sie auf der Seite "Schnellstart" oder auf der Seite "Auf einen Blick" für die Website auf **Einen neuen Bereitstellungsslot hinzufügen**. 
-	
-	![Add a new deployment slot][QGAddNewDeploymentSlot]
-	
+1. Öffnen Sie im [Azure-Vorschauportal](https://portal.azure.com/) das Blatt Ihrer Web-App.
+2. Klicken Sie auf **Deployment slots**. Klicken Sie auf dem Blatt **Deployment slots** auf **Add Slot**.
+
+	![Hinzufügen eines neuen Bereitstellungsslots][QGAddNewDeploymentSlot]
+
 	> [AZURE.NOTE]
-	> Falls sich die Website noch nicht im Modus **Standard** befindet, wird folgende Meldung angezeigt: **Um die Veröffentlichung in einer Stagingumgebung zu aktivieren, müssen Sie sich im Standardmodus befinden**. An diesem Punkt können Sie **Upgrade** auswählen und zur Registerkarte **Skalieren** der Website navigieren, bevor Sie den Vorgang fortsetzen.
-	
-2. Weisen Sie dem Slot im Dialogfeld **Neuen Bereitstellungsslot hinzufügen** einen Namen zu, und wählen Sie aus, ob Sie die Websitekonfiguration von einem anderen vorhandenen Bereitstellungsslot klonen möchten. Klicken Sie auf das Häkchen, um fortzufahren. 
-	
-	![Configuration Source][ConfigurationSource1]
-	
-	Bei der ersten Bereitstellung eines Slots stehen Ihnen nur zwei Optionen zur Verfügung: Klonen einer Konfiguration vom Standardslot in einen Produktionsslot oder kein Klonen der Konfiguration. 
-	
+	> Wenn die Web-App nicht bereits im **Standard**- oder **Premium**-Modus ausgeführt wird, wird eine Meldung angezeigt, in der auf die unterstützten Modi für die Veröffentlichung in einer Stagingumgebung hingewiesen wird. An diesem Punkt können Sie **Upgrade** auswählen und zur Registerkarte **Skalierung** der Web-App navigieren, bevor Sie den Vorgang fortsetzen.
+
+2. Weisen Sie dem Slot auf dem Blatt **Add a slot** einen Namen zu, und wählen Sie aus, ob Sie die Web-App-Konfiguration von einem anderen vorhandenen Bereitstellungsslot klonen möchten. Klicken Sie auf das Häkchen, um fortzufahren.
+
+	![Konfigurationsquelle][ConfigurationSource1]
+
+	Beim ersten Hinzufügen eines Slots stehen Ihnen nur zwei Optionen zur Verfügung: Klonen einer Konfiguration vom Standardslot in einen Produktionsslot oder kein Klonen der Konfiguration.
+
 	Nachdem Sie mehrere Slots erstellt haben, können Sie die Konfiguration von einem anderen Slot als dem Produktionsslot klonen:
-	
-	![Configuration sources][MultipleConfigurationSources]
 
-5. Erweitern Sie in der Liste der Websites das Zeichen links vom Websitenamen, um den Bereitstellungsslot anzuzeigen. Dieser besteht aus dem Websitenamen gefolgt vom Namen des Bereitstellungsslots. 
-	
-	![Site List with Deployment Slot][SiteListWithStagedSite]
-	
-4. Wenn Sie auf den Namen des Website-Bereitstellungsslots klicken, wird wie bei jeder anderen Website eine Seite mit einigen Registerkarten geöffnet. <strong><i>Ihr-Websitename</i>(<i>Name-Bereitstellungsslot</i>)</strong> wird oben auf der Portalseite angezeigt, um Sie daran zu erinnern, dass Sie den Website-Bereitstellungsslot anzeigen.
-	
-	![Deployment Slot Title][StagingTitle]
-	
-5. Klicken Sie auf die Website-URL in der Dashboardansicht. Beachten Sie, dass der Bereitstellungsslot über einen eigenen Hostnamen verfügt und eine Livewebsite ist. Weitere Informationen darüber, wie Sie den öffentlichen Zugriff auf den Bereitstellungsslot beschränken, finden Sie unter [Azure-Websites - Blockieren des Webzugriffs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
+	![Konfigurationsquellen][MultipleConfigurationSources]
 
-	-	 
+5. Klicken Sie auf dem Blatt **Deployment slots** auf den Bereitstellungsslot, um ein Blatt für den Slot zu öffnen, die wie jede andere Web-App auch einen Satz von Metriken und Konfigurationen aufweist. <strong><i>Ihr-Web-App-Name</i>(<i>Name-Bereitstellungsslot)</i></strong> wird oben auf dem Blatt angezeigt, um Sie daran zu erinnern, dass Sie den Bereitstellungsslot anzeigen.
 
-Es gibt keinen Inhalt. Sie können die Bereitstellung im Slot von einem anderen Repositoryzweig oder einem ganz anderen Repository vornehmen. Darüber hinaus können Sie die Konfiguration des Slots ändern. Verwenden Sie für Aktualisierungen des Inhalts das Veröffentlichungsprofil oder die Bereitstellungsanmeldeinformationen, die dem Bereitstellungsslot zugeordnet sind.  Beispiel: Für die [Veröffentlichung in diesem Slot können Sie Git verwenden](http://azure.microsoft.com/documentation/articles/web-sites-publish-source-control/).
+	![Bereitstellungsslot-Titel][StagingTitle]
+
+5. Klicken Sie auf der Seite des Slots auf die App-URL. Beachten Sie, dass der Bereitstellungsslot über einen eigenen Hostnamen verfügt und eine Live-Web-App ist. Weitere Informationen darüber, wie Sie den öffentlichen Zugriff auf den Bereitstellungsslot beschränken, finden Sie unter [App Service Web App - block web access to non-production deployment slots (in englischer Sprache)](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
+
+Nach der Erstellung des Bereitstellungsslots ist kein Inhalt vorhanden. Sie können die Bereitstellung im Slot von einem anderen Repositoryzweig oder einem ganz anderen Repository vornehmen. Darüber hinaus können Sie die Konfiguration des Slots ändern. Verwenden Sie für Aktualisierungen des Inhalts das Veröffentlichungsprofil oder die Bereitstellungsanmeldeinformationen, die dem Bereitstellungsslot zugeordnet sind.  Beispiel: Für die [Veröffentlichung in diesem Slot können Sie Git verwenden](web-sites-publish-source-control.md).
 
 <a name="AboutConfiguration"></a>
-##Konfiguration für Bereitstellungsslots
-Wenn Sie die Konfiguration von einem anderen Bereitstellungsslot klonen, kann die geklonte Konfiguration bearbeitet werden. Im Folgenden ist die Konfiguration aufgeführt, die sich beim Austauschen der Slots ändert.
+## Konfiguration für Bereitstellungsslots ##
+Wenn Sie die Konfiguration von einem anderen Bereitstellungsslot klonen, kann die geklonte Konfiguration bearbeitet werden. Darüber hinaus folgen einige Konfigurationselemente bei einem Austausch dem Inhalt (nicht Slot-spezifisch), während andere Konfigurationselemente nach einem Austausch beim Slot verbleiben (Slot-spezifisch). Im Folgenden ist die Konfiguration aufgeführt, die sich beim Austauschen der Slots ändert.
 
-**Konfigurationseinstellunge, die sich beim Tauschen eines Slots ändern**:
+**Einstellungen, die ausgetauscht werden**:
 
-- Allgemeine Einstellungen
-- Verbindungszeichenfolgen
+- Allgemeine Einstellungen - z. B. Framework-Version, 32/64-Bit-Angabe, WebSockets
+- App-Einstellungen (können so konfiguriert werden, dass sie beim Slot verbleiben)
+- Verbindungszeichenfolgen (können so konfiguriert werden, dass sie beim Slot verbleiben)
 - Handlerzuordnungen
 - Überwachungs- und Diagnoseeinstellungen
+- WebJobs-Inhalte
 
-**Konfigurationseinstellunge, die sich beim Tauschen eines Slots nicht ändern**:
+**Einstellungen, die nicht ausgetauscht werden**:
 
 - Veröffentlichungsendpunkte
 - Benutzerdefinierte Domänennamen
 - SSL-Zertifikate und -Bindungen
 - Skalierungseinstellungen
+- WebJobs-Planer
 
-**Hinweise**:
+Um eine App-Einstellung oder einen Verbindungszeichenfolge so zu konfigurieren, dass sie beim Slot verbleibt (nicht ausgetauscht wird), greifen Sie auf das Blatt **Anwendungseinstellungen** für einen bestimmten Slot zu, und aktivieren Sie das Kontrollkästchen **Slot Setting** für die Konfigurationselemente, die beim Slot verbleiben sollten. Beachten Sie, dass das Markieren eines Konfigurationselements als Slot-spezifisch dafür sorgt, dass dieses Element in allen Bereitstellungsslots für die Web-App als nicht austauschbar festgelegt wird.
 
-- Mehrere Bereitstellungsslots sind nur für Websites im Webhostingplan **Standard** verfügbar.
-
-- Wenn Ihre Website über mehrere Slots verfügt, können Sie den Hostingplan nicht ändern.
-
-- Ein Slot, der in einen Produktionsslot überführt werden soll, muss genauso konfiguriert werden, wie er im Produktionsslot vorliegen soll.
-
-- Standardmäßig wird ein Bereitstellungs-Steckplatz zur selben Datenbank wie die Produktionswebsite zeigen. Sie können jedoch den Bereitstellungsslot konfigurieren, dass er zu einer anderen Datenbank zeigt, indem Sie die Verbindungszeichenfolge(n) der Datenbank für den Bereitstellungsslot ändern. Sie können dann die ursprüngliche Verbindungszeichenfolge(n) der Datenbank auf dem Bereitstellungs-Steckplatz wiederherstellen, bevor Sie diesen in die Produktion überführen.
-
+![Sloteinstellungen][SlotSettings]
 
 <a name="Swap"></a>
-##Überführung von Bereitstellungsslots
+## So tauschen Sie Bereitstellungsslots aus ##
 
-1. Um Bereitstellungsslots zu tauschen, wählen Sie den Bereitstellungsslot in der Liste der auszutauschenden Websites aus, und klicken Sie auf der Befehlsleiste auf die Schaltfläche **Austauschen**. 
-	
-	![Swap Button][SwapButtonBar]
-	
-2. Das Dialogfenster "Bereitstellungen austauschen" wird angezeigt. Sie können im Dialogfeld auswählen, welcher Websiteslot die Quelle und welcher das Ziel sein soll.
-	
-	![Swap Deployments Dialog][SwapDeploymentsDialog]
-	
-3. Klicken Sie auf das Häkchen, um den Vorgang abzuschließen. Wenn der Vorgang abgeschlossen ist, wurden die Websiteslots ausgetauscht.
+>[AZURE.IMPORTANT] Bevor Sie eine Web-App aus einem Bereitstellungsslot in die Produktion tauschen, stellen Sie sicher, dass alle nicht Slot-spezifischen Einstellungen im Austauschziel genau wie gewünscht konfiguriert sind.
 
+1. Um die Bereitstellungsslots auszutauschen, klicken Sei in der Befehlsleiste der Web-App oder der Befehlsleiste eines Bereitstellungsslots auf die Schaltfläche **Austauschen**. Stellen Sie sicher, dass die Austauschquelle und das Austauschziel ordnungsgemäß festgelegt wurden. Normalerweise ist das Austauschziel ein Produktionsslot.  
+
+	![Schaltfläche "Austauschen"][SwapButtonBar]
+
+3. Klicken Sie auf **OK**, um den Vorgang abzuschließen. Wenn der Vorgang abgeschlossen ist, wurden die Bereitstellungsslots ausgetauscht.
+
+## Konfigurieren von Auto Swap für Ihre Web-App ##
+
+Auto Swap rationalisiert DevOps-Szenarios, bei denen Ihre Webanwendung ständig ohne Kaltstarts und ohne Ausfallzeiten für Endkunden der Web-App bereitgestellt werden soll. Wenn ein Bereitstellungsslot für Auto Swap in der Produktion konfiguriert wurde, tauscht App Service bei jeder Codeaktualisierung per Push die Web-App in die Produktion, nach bereits eine Anlaufzeit im Slot verbraucht wurde.
+
+>[AZURE.IMPORTANT] Wenn Sie Auto Swap für einen Slot aktivieren, stellen Sie sicher, dass die Slotkonfiguration genau der für den Zielslot (normalerweise der Produktionsslot) erforderlichen Konfiguration entspricht.
+
+Das Konfigurieren von Auto Swap für einen Slot ist einfach. Führen Sie die folgenden Schritte aus:
+
+1. Wählen Sie auf dem Blatt **Deployment Slots** einen Nicht-Produktionsslot aus, und klicken Sie für das Blatt dieses Slots auf **Alle Einstellungen**.  
+
+	![][Autoswap1]
+
+2. Klicken Sie auf **Anwendungseinstellungen**. Wählen Sie **Ein** für **Auto Swap**, wählen Sie unter **Auto Swap Slot** den gewünschten Zielslot aus, und klicken Sie in der Befehlsleiste auf **Speichern**. Stellen Sie sicher, dass die Konfiguration für den Slot genau der für den Zielslot vorgesehenen Konfiguration entspricht.
+
+	Die Registerkarte **Benachrichtigungen** blinkt mit dem grün dargestellten Wort **ERFOLG**, sobald der Vorgang abgeschlossen ist.
+
+	![][Autoswap2]
+
+	>[AZURE.NOTE] Um Auto Swap für Ihre Web-App zu testen, können Sie zunächst unter **Auto Swap Slot** einen Nicht-Produktionszielslot auswählen, um sich mit der Funktion vertraut zu machen.  
+
+3. Führen Sie einen Code-Push für diesen Bereitstellungsslot aus. Auto Swap erfolgt nach kurzer Zeit, und die Aktualisierung wird an der URL des Zielslots wiedergegeben.
 
 <a name="Rollback"></a>
-##Zurücksetzung einer Produktionswebsite in die Stagingphase
-Wenn Sie nach dieser Aktion Fehler in der Produktionswebsite feststellen, führen Sie ein Rollback in den Zustand vor dem Austausch aus, indem Sie beiden Slots sofort austauschen. 
+## So setzen Sie eine Produktions-App nach dem Austausch wieder zurück ##
+Wenn Sie nach dieser Aktion Fehler in der Produktion feststellen, führen Sie ein Rollback in den Zustand vor dem Austausch aus, indem Sie beiden Slots sofort austauschen.
 
 <a name="Delete"></a>
-##Löschen eines Websiteslots
+## So löschen Sie einen Bereitstellungsslot ##
 
-Klicken Sie auf der Befehlsleiste unten auf der Seite des Azure-Websiteportals auf **Löschen**. Sie erhalten die Option, die Website und alle Bereitstellungsslots bzw. nur den Bereitstellungsslot zu löschen. 
+Klicken Sie auf dem Blatt für den Bereitstellungsslot in der Befehlsleiste auf **Löschen**.  
 
-![Delete a Site Slot][DeleteStagingSiteButton]
-
-**Hinweise**:
-
-- Die Skalierung ist für Nicht-Produktionsslots nicht verfügbar, sondern nur für Produktionsslots.
-
-- Die Verwaltung verknüpfter Ressourcen wird für Nicht-Produktionsslots nicht unterstützt. 
-
-- Sie können bei Bedarf weiterhin direkt im Produktionsslot veröffentlichen.
-
-- Standardmäßig verwenden Ihre Bereitstellungsslots (Websites) dieselben Ressourcen wie Ihre Produktionsslots (Websites) und werden auf denselben virtuellen Computern ausgeführt. Wenn Sie Belastungstests auf einem Stagingslot ausführen, wird die Produktionsumgebung eine vergleichbare Belastung erfahren. 
-	
-	> [AZURE.NOTE] Sie können diese negativen Auswirkungen für einen Produktionsslot nur im [Azure-Vorschauportal](https://portal.azure.com) vermeiden, indem Sie den Nicht-Produktionsslot vorübergehend in einen anderen Webhostingplan verschieben.  Beachten Sie, dass Test- und Produktionsslot auch hier denselben Webhostingplan verwenden müssen, bevor Sie den Testslot in den Produktionsslot überführen können.
+![Löschen eines Bereitstellungsslots][DeleteStagingSiteButton]
 
 <!-- ======== AZURE POWERSHELL CMDLETS =========== -->
 
 <a name="PowerShell"></a>
-##Azure PowerShell-Cmdlets für Websiteslots 
+## Azure PowerShell-Cmdlets für Bereitstellungsslots
 
-Azure PowerShell ist ein Modul, das Cmdlets für die Verwaltung von Azure über Windows PowerShell bietet, einschließlich Unterstützung bei der Verwaltung von Bereitstellungsslots für Azure-Websites. 
+Azure PowerShell ist ein Modul, das Cmdlets für die Verwaltung von Azure über Windows PowerShell bietet, einschließlich Unterstützung bei der Verwaltung von Web-App-Bereitstellungsslots für Azure App Service.
 
-- Informationen zum Installieren und Konfigurieren von Azure PowerShell sowie zur Authentifizierung von Azure PowerShell mit Ihrem Microsoft Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Microsoft Azure PowerShell](http://azure.microsoft.com/documentation/articles/install-configure-powershell).  
+- Informationen zum Installieren und Konfigurieren von Azure PowerShell sowie zur Authentifizierung von Azure PowerShell mit Ihrem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Microsoft Azure PowerShell](install-configure-powershell.md).  
 
-- Um eine Liste der verfügbaren Cmdlets für Azure-Websites in PowerShell zu erhalten, rufen Sie  `help AzureWebsite` auf. 
-
-----------
-
-###Get-AzureWebsite
-Das **Get-AzureWebsite** stellt Informationen über Azure-Websites für das aktuelle Abonnement bereit. Beispiel: 
-
-`Get-AzureWebsite siteslotstest`
+- Um eine Liste der verfügbaren Cmdlets für Azure App Service in PowerShell zu erhalten, rufen Sie  `help AzureWebsite` auf.
 
 ----------
 
-###New-AzureWebsite
-Sie können einen Websiteslot für jede Website im Standardmodus mithilfe des Cmdlets **New-AzureWebsite** erstellen und die Namen der Website und des Slots angeben. Geben Sie zudem dieselbe Region wie die Website für die Erstellung des Bereitstellungsslot an, wie in folgendem Beispiel. 
+### Get-AzureWebsite
+Das Cmdlet **Get-AzureWebsite** gibt Informationen über Azure-Web-Apps für das aktuelle Abonnement an, wie in folgendem Beispiel:
 
-`New-AzureWebsite siteslotstest -Slot staging -Location "West US"`
-
-----------
-
-###Publish-AzureWebsiteProject
-Sie können das Cmdlet **Publish-AzureWebsiteProject** wie in folgendem Beispiel für die Inhaltsbereitstellung verwenden. 
-
-`Publish-AzureWebsiteProject -Name siteslotstest -Slot staging -Package [path].zip`
+`Get-AzureWebsite webappslotstest`
 
 ----------
 
-###Show-AzureWebsite
+### New-AzureWebsite
+Sie können einen Bereitstellungsslot mithilfe des Cmdlets **New-AzureWebsite** erstellen und dabei die Namen der Web-App und des Slots angeben. Geben Sie zudem dieselbe Region wie die Web-App für die Erstellung des Bereitstellungsslot an, wie in folgendem Beispiel.
+
+`New-AzureWebsite webappslotstest -Slot staging -Location "West US"`
+
+----------
+
+### Publish-AzureWebsiteProject
+Sie können das Cmdlet **Publish-AzureWebsiteProject** wie in folgendem Beispiel für die Inhaltsbereitstellung verwenden.
+
+`Publish-AzureWebsiteProject -Name webappslotstest -Slot staging -Package [path].zip`
+
+----------
+
+### Show-AzureWebsite
 Nachdem die Aktualisierungen des Inhalts und der Konfiguration auf den neuen Slot angewendet wurden, können Sie die Aktualisierungen validieren, indem Sie mithilfe des Cmdlet **Show-AzureWebsite** zum Slot navigieren.
 
-`Show-AzureWebsite -Name siteslotstest -Slot staging`
+`Show-AzureWebsite -Name webappslotstest -Slot staging`
 
 ----------
 
-###Switch-AzureWebsiteSlot
-Das Cmdlet **Switch-AzureWebsiteSlot** kann einen Überführungsvorgang ausführen, um den aktualisierten Bereitstellungsslot wie in folgendem Beispiel zur Produktionswebsite zu machen. Die Produktionswebsite wird keine Ausfallzeit haben sowie keinen Kaltstart erleben. 
+### Switch-AzureWebsiteSlot
+Das Cmdlet **Switch-AzureWebsiteSlot** kann einen Überführungsvorgang ausführen, um den aktualisierten Bereitstellungsslot wie in folgendem Beispiel zur Produktionswebsite zu machen. Die Produktions-App weist keine Ausfallzeiten auf und durchläuft keinen Kaltstart.
 
-`Switch-AzureWebsiteSlot -Name siteslotstest`
+`Switch-AzureWebsiteSlot -Name webappslotstest`
 
 ----------
 
-###Remove-AzureWebsite
+### Remove-AzureWebsite
 Wird ein Bereitstellungsslot nicht mehr benötigt, kann dieser mithilfe des Cmdlets **Remove-AzureWebsite** wie in folgendem Beispiel gelöscht werden.
 
-`Remove-AzureWebsite -Name siteslotstest -Slot staging` 
+`Remove-AzureWebsite -Name webappslotstest -Slot staging`
 
 ----------
 
 <!-- ======== XPLAT-CLI =========== -->
 
 <a name="CLI"></a>
-##Befehle der plattformübergreifenden Azure-Befehlszeilenschnittstelle (xplat-cli) für Websiteslots
+## Befehle der plattformübergreifenden Azure-Befehlszeilenschnittstelle (xplat-cli) für Bereitstellungsslots
 
-Die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli) bietet plattformübergreifende Befehle für das Arbeiten mit Azure, einschließlich Unterstützung für die Verwaltung von Bereitstellungsslots auf Azure-Websites. 
+Die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli) bietet plattformübergreifende Befehle für das Arbeiten mit Azure, einschließlich Unterstützung für die Verwaltung von Web-App-Bereitstellungsslots.
 
-- Anweisungen zur Installation und Konfiguration von xplat-cli, einschließlich Informationen zur Verbindung von xplat-cli mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](http://azure.microsoft.com/documentation/articles/xplat-cli). 
+- Anweisungen zur Installation und Konfiguration von xplat-cli, einschließlich Informationen zur Verbindung von xplat-cli mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli.md).
 
--  Um eine Liste der verfügbaren Befehle für Azure-Websites in "xplat-cli" zu erhalten, rufen Sie  `azure site -h` auf. 
-
-----------
-###azure site list
-Zum Erhalten von Informationen zu Azure-Websites im aktuellen Abonnement rufen Sie **azure site list** wie in folgendem Beispiel auf.
- 
-`azure site list siteslotstest`
+-  Um eine Liste der verfügbaren Befehle für Azure App Service in "xplat-cli" zu erhalten, rufen Sie `azure site -h` auf.
 
 ----------
-###azure site create
-Um einen Websiteslot für eine Website im Standardmodus zu erstellen, rufen Sie **azure site create** auf, und geben Sie den Namen einer vorhandenen Website und den Namen des zu erstellenden Slots wie im folgenden Beispiel an.
+### azure site list
+Zum Erhalten von Informationen zu den Web-Apps im aktuellen Abonnement rufen Sie **azure site list** wie in folgendem Beispiel auf.
 
-`azure site create siteslotstest --slot staging`
+`azure site list webappslotstest`
+
+----------
+### azure site create
+Um einen Bereitstellungsslot zu erstellen, rufen Sie **azure site create** auf, und geben Sie den Namen einer vorhandenen Web-App und den Namen des zu erstellenden Slots wie im folgenden Beispiel an.
+
+`azure site create webappslotstest --slot staging`
 
 Um die Quellcodeverwaltung für den neuen Slot zu aktivieren, verwenden Sie die Option **--git** wie in folgendem Beispiel.
- 
-`azure site create --git siteslotstest --slot staging`
+
+`azure site create --git webappslotstest --slot staging`
 
 ----------
-###azure site swap
-Um den aktualisierten Bereitstellungsslot zur Produktionswebsite zu machen, verwenden Sie für die Überführung den Befehl **azure site swap** wie im folgenden Beispiel. Die Produktionswebsite wird keine Ausfallzeit haben sowie keinen Kaltstart erleben. 
+### azure site swap
+Um den aktualisierten Bereitstellungsslot zur Produktions-App zu machen, verwenden Sie für die Überführung den Befehl **azure site swap** wie im folgenden Beispiel. Die Produktions-App weist keine Ausfallzeiten auf und durchläuft keinen Kaltstart.
 
-`azure site swap siteslotstest`
+`azure site swap webappslotstest`
 
 ----------
-###azure site delete
+### azure site delete
 Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie wie im folgenden Beispiel den Befehl **azure site delete**.
 
-`azure site delete siteslotstest --slot staging`
+`azure site delete webappslotstest --slot staging`
 
 ----------
-## Nächste Schritte
-[Azure-Websites - Blockieren des Webzugriffs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-[Microsoft Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/)
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
+## Nächste Schritte ##
+[Azure App Service Web App - block web access to non-production deployment slots (in englischer Sprache)](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
+
+[Microsoft Azure-Testversion](/pricing/free-trial/)
+
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 <!-- IMAGES -->
 [QGAddNewDeploymentSlot]:  ./media/web-sites-staged-publishing/QGAddNewDeploymentSlot.png
@@ -252,8 +256,8 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [SwapConfirmationDialog]:  ./media/web-sites-staged-publishing/SwapConfirmationDialog.png
 [DeleteStagingSiteButton]: ./media/web-sites-staged-publishing/DeleteStagingSiteButton.png
 [SwapDeploymentsDialog]: ./media/web-sites-staged-publishing/SwapDeploymentsDialog.png
+[Autoswap1]: ./media/web-sites-staged-publishing/AutoSwap01.png
+[Autoswap2]: ./media/web-sites-staged-publishing/AutoSwap02.png
+[SlotSettings]: ./media/web-sites-staged-publishing/SlotSetting.png
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

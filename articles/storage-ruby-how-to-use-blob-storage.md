@@ -1,9 +1,9 @@
 ﻿<properties 
-	pageTitle="Verwenden des Blob-Speichers (Ruby) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blob-Inhalten verwenden. Die Beispiele wurden in Ruby geschrieben." 
+	pageTitle="Verwenden des Blob-Speichers mit Ruby | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie den Azure-Blob-Dienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blob-Inhalten verwenden. Die Beispiele wurden in Ruby geschrieben." 
 	services="storage" 
 	documentationCenter="ruby" 
-	authors="tfitzmac" 
+	authors="tfitzmac,tamram" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -13,47 +13,30 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ruby" 
 	ms.topic="article" 
-	ms.date="11/21/2014" 
+	ms.date="03/11/2015" 
 	ms.author="tomfitz"/>
 
 
+# Verwenden des Blob-Speichers mit Ruby
 
+[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
+## Übersicht
 
-#Verwenden des Blob-Diensts von Ruby
-
-Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Blob-Diensts in Azure. Die Beispiele wurden mit der Ruby-API erstellt.
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem
+Azure-Blob-Dienst demonstriert. Die Beispiele wurden mit der Ruby-API erstellt.
 Die behandelten Szenarien umfassen das **Hochladen, Auflisten, Herunterladen** und **Löschen** von Blobs.
-Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#next-steps) .
-
-##Inhaltsverzeichnis
-
-* [Was ist der Blob-Dienst?](#what-is)
-* [Konzepte](#concepts)
-* [Erstellen eines Azure-Speicherkontos](#CreateAccount)
-* [Erstellen einer Ruby-Anwendung](#CreateRubyApp)
-* [Konfigurieren der Anwendung für den Speicherzugriff](#ConfigAccessStorage)
-* [Einrichten einer Azure-Speicherverbindung](#SetupStorageConnection)
-* [Vorgehensweise: Erstellen eines Containers](#CreateContainer)
-* [Vorgehensweise: Hochladen eines Blobs in einen Container](#UploadBlob)
-* [Vorgehensweise: Auflisten der Blobs in einem Container](#ListBlobs)
-* [Vorgehensweise: Herunterladen von Blobs](#DownloadBlobs)
-* [Vorgehensweise: Löschen eines Blobs](#DeleteBlob)
-* [Nächste Schritte](#NextSteps)
-
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
-## <a id="CreateAccount"></a>Erstellen eines Azure-Speicherkontos
-
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
-## <a id="CreateRubyApp"></a>Erstellen einer Ruby-Anwendung
+## Erstellen einer Ruby-Anwendung
 
 Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie 
-unter [Erstellen einer Ruby-Anwendung in Azure](/de-de/develop/ruby/tutorials/web-app-with-linux-vm/).
+unter [Erstellen einer Ruby-Anwendung in Azure](/develop/ruby/tutorials/web-app-with-linux-vm/).
 
-## <a id="ConfigAccessStorage"></a>Konfigurieren der Anwendung für den Speicherzugriff
+## Konfigurieren der Anwendung für den Speicherzugriff
 
 Um den Azure-Speicher zu verwenden, müssen Sie das Ruby-Azure-Paket, das eine Reihe von Bibliotheken enthält, die mit den Speicher-REST-Diensten kommunizieren, herunterladen und verwenden.
 
@@ -69,7 +52,7 @@ Fügen Sie mit Ihrem bevorzugten Texteditor Folgendes oben in die Ruby-Datei an 
 
 	require "azure"
 
-## <a id="SetupStorageConnection"></a>Einrichten einer Azure-Speicherverbindung
+## Einrichten einer Azure-Speicherverbindung
 
 Das Azure-Modul entnimmt den Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS_KEY** 
 die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::BlobService** mit dem folgenden Code angeben:
@@ -80,14 +63,14 @@ die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherk
 
 So rufen Sie diese Werte ab:
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an.
+1. Melden Sie sich am [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an.
 2. Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
-3. Klicken Sie unten im Navigationsbereich auf **MANAGE KEYS**.
-4. Im eingeblendeten Dialog wird der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Verwenden Sie den primären oder sekundären Zugriffsschlüssel.
+3. Klicken Sie unten im Navigationsbereich auf **SCHLÜSSEL VERWALTEN**.
+4. Im eingeblendeten Dialog werden der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Verwenden Sie den primären oder sekundären Zugriffsschlüssel.
 
-## <a id="CreateContainer"></a>Vorgehensweise: Erstellen eines Containers
+## Vorgehensweise: Erstellen eines Containers
 
-Mit dem **Azure::BlobService**-Objekt können Sie auf Container und Blobs zugreifen. Verwenden Sie die **create\_container()**-Methode, um einen Container zu erstellen.
+Mit dem **Azure::BlobService**-Objekt können Sie mit Containern und Blobs arbeiten. Verwenden Sie die **create\_container()**-Methode, um einen Container zu erstellen.
 
 Im folgenden Beispiel wird ein Container erstellt oder ggf. ein Fehler ausgegeben.
 
@@ -100,7 +83,7 @@ Im folgenden Beispiel wird ein Container erstellt oder ggf. ein Fehler ausgegebe
 
 Wenn Sie die Dateien im Container öffentlich machen möchten, können Sie die Berechtigungen des Containers festlegen. 
 
-Ändern Sie einfach den Aufruf <strong>create\_container()</strong>, um die **:public\_access\_level**-Option zu übergeben:
+Sie können einfach den <strong>create\_container()</strong>-Aufruf ändern, um die **:public\_access\_level**-Option zu übergeben:
 
 	container = azure_blob_service.create_container("test-container", 
 	  :public_access_level => "<public access level>")
@@ -112,15 +95,15 @@ Gültige Werte für die **:public\_access\_level**-Option sind:
 
 * **container:** Gibt den öffentlichen Lesezugriff auf Blobs an. Mittels einer anonymen Anforderung können die Blob-Daten im betreffenden Container gelesen werden, die Containerdaten sind jedoch nicht verfügbar. Ein Client kann nicht mittels einer anonymen Anforderung die Blobs innerhalb des Containers aufzählen.
 
-Sie können aber auch die öffentliche Zugriffsstufe eines Containers mithilfe der **set\_container\_acl()**-Methode ändern, um die öffentliche Zugriffsstufe anzugeben.
-
+Sie können aber auch die öffentliche Zugriffsstufe eines Container mithilfe der **set\_container\_acl()**-Methode ändern, um die öffentliche Zugriffsstufe.
+ 
 Im folgenden Beispiel wird die öffentliche Zugriffsstufe auf **container** geändert:
 
 	azure_blob_service.set_container_acl('test-container', "container")
 
-## <a id="UploadBlob"></a>Vorgehensweise: Hochladen eines Blobs in einen Container
+## Vorgehensweise: Hochladen eines Blobs in einen Container
 
-Um Inhalte in ein Blob hochzuladen, verwenden Sie die **create\_block\_blob()**-Methode, um das Blob zu erstellen, und verwenden Sie eine Datei oder Zeichenfolge als Inhalt des Blobs. 
+Um Inhalte in einen Blob hochzuladen, verwenden Sie die **create\_block\_blob()**-Methode, um das Blob zu erstellen, und verwenden Sie eine Datei oder Zeichenfolge als Inhalt des Blobs. 
 
 Durch den folgenden Code wird die Datei **test.png** als neues Blob namens "image-blob" in den Container hochgeladen.
 
@@ -129,7 +112,7 @@ Durch den folgenden Code wird die Datei **test.png** als neues Blob namens "imag
 	  "image-blob", content)
 	puts blob.name
 
-## <a id="ListBlobs"></a>Vorgehensweise: Auflisten der Blobs in einem Container
+## Vorgehensweise: Auflisten der Blobs in einem Container
 
 Verwenden Sie die **list_containers()**-Methode, um die Container aufzulisten. 
 Verwenden Sie die **list\_blobs()**-Methode, um die Blobs innerhalb eines Containers aufzulisten. 
@@ -144,7 +127,7 @@ Auf diese Weise werden die URLs aller Blobs in allen Containern des Kontos ausge
 	  end
 	end
 
-## <a id="DownloadBlobs"></a>Vorgehensweise: Herunterladen von Blobs
+## Vorgehensweise: Herunterladen von Blobs
 
 Um Blobs herunterzuladen, verwenden Sie die **get\_blob()**-Methode zum Abrufen des Inhalts. 
 
@@ -153,16 +136,17 @@ Das folgende Beispiel demonstriert das Verwenden von **get\_blob()** zum Herunte
 	blob, content = azure_blob_service.get_blob(container.name,"image-blob")
 	File.open("download.png","wb") {|f| f.write(content)}
 
-## <a id="DeleteBlob"></a>Vorgehensweise: Löschen eines Blobs
-Verwenden Sie schließlich die **delete\_blob()**-Methode, um ein Blob zu löschen. Das folgende Beispiel demonstriert das Löschen eines Blobs.
+## Vorgehensweise: Löschen eines Blobs
+Verwenden Sie schließlich die **delete\_blob()**-Methode, um einen Blob zu löschen. Das folgende Beispiel demonstriert das Löschen eines Blobs.
 
 	azure_blob_service.delete_blob(container.name, "image-blob")
 
-## <a id="NextSteps"></a>Nächste Schritte
+## Nächste Schritte
 
-Nachdem Sie jetzt die Grundlagen des Blob-Speichers erlernt haben, folgen Sie diesen Links, um Informationen zum Ausführen komplexerer Speicheraufgaben zu erhalten.
+Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure](http://msdn.microsoft.com/library/windowsazure/gg433040.aspx)
--   Besuchen Sie den [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/).
--   Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub.
-<!--HONumber=42-->
+- Weitere Informationen finden Sie in der MSDN-Referenz: [Azure Storage](http://msdn.microsoft.com/library/azure/gg433040.aspx)
+- Besuchen Sie den [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/).
+- Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub.
+
+<!--HONumber=49-->

@@ -10,17 +10,17 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-html" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
-	ms.date="09/23/2014" 
+	ms.date="02/15/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App 
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
-Dieses Thema beschreibt die Authentifizierung von Benutzern in Azure Mobile Services aus Ihrer HTML- oder PhoneGap-App.  In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.  
+Dieses Thema beschreibt die Authentifizierung von Benutzern in Azure Mobile Services aus Ihrer HTML-App wie z. B. PhoneGap oder Cordova.  In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.  
 
 Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von Authentifizierung in Ihrer App:
 
@@ -44,14 +44,14 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 	+ **launch-windows** (Windows-Computer) 
 	+ **launch-mac.command** (Mac OS X-Computer)
 	+ **launch-linux.sh** (Linux-Computer)
-	
-	>[AZURE.NOTE]Bei einem Windows-Computer geben Sie `R` ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.
+
+	>[AZURE.NOTE]Auf einem Windows-Computer geben Sie `R` ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.
 
 	Hierdurch wird ein Webserver auf Ihrem lokalen Computer zum Hosten der neuen App gestartet.
 
 2. Öffnen Sie die URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> in einem Webbrowser, um die App zu starten. 
 
-	Das Laden der Daten schlägt fehl. Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die _TodoItem_-Tabelle jetzt jedoch Authentifizierung erfordert.
+	Das Laden der Daten schlägt fehl. Dies liegt daran, dass die App versucht als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die _TodoItem_-Tabelle jetzt jedoch Authentifizierung erfordert.
 
 3. (Optional) Öffnen Sie den Skript-Debugger Ihres Webbrowsers und aktualisieren Sie die Seite. Vergewissern Sie sich, dass ein "Zugriff verweigert"-Fehler auftritt. 
 
@@ -74,7 +74,7 @@ Anschließend werden Sie die App aktualisieren, sodass diese sich authentifizier
 
 	Mit diesem Code können Sie sich von der Seite aus bei einem mobilen Dienst anmelden.
 
-2. Suchen Sie am Ende der Datei app.js nach der Codezeile, in der die refreshTodoItems-Funktion aufgerufen wird, und ersetzen Sie die Zeile durch den folgenden Code: 
+2. Suchen Sie am Ende der Datei app.js nach der Codezeile, in der die refreshTodoItems-Funktion aufgerufen wird und ersetzen Sie die Zeile durch den folgenden Code: 
 	
 		function refreshAuthDisplay() {
 			var isLoggedIn = client.currentUser !== null;
@@ -107,7 +107,7 @@ Anschließend werden Sie die App aktualisieren, sodass diese sich authentifizier
 			$("#logged-in button").click(logOut);
 		});
 
-    Diese Funktionen erledigen den Authentifizierungsprozess. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die <strong>login</strong>-Methode übergebenen Wert auf einen der folgenden Werte: <em>microsoftaccount</em>, <em>facebook</em>, <em>twitter</em>, <em>google</em> oder <em>aad</em>.
+    Diese Funktionen erledigen den Authentifizierungsprozess. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den oben an die <strong>login</strong>-Methode übergebenen Wert auf einen der folgenden Werte: <em>microsoftaccount</em>, <em>facebook</em>, <em>twitter</em>, <em>google</em> oder <em>aad</em>.
 
 	>[AZURE.IMPORTANT]In einer PhoneGap-App müssen Sie dem Projekt auch die folgenden Plug-Ins hinzufügen:
 	><ul><li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git</code></li>
@@ -117,11 +117,11 @@ Anschließend werden Sie die App aktualisieren, sodass diese sich authentifizier
 
 	   Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
-	>[AZURE.NOTE]Falls Sie Internet Explorer verwenden, kann es sein, dass Sie nach der Anmeldung den folgenden Fehler erhalten: <code>Cannot reach window opener. It may be on a different Internet Explorer zone</code>. Dies liegt daran, dass das Popup in einer anderen Sicherheitszone (Internet) als Localhost (Intranet) ausgeführt wird. Dies betrifft nur Apps während der Entwicklung mit Localhost. Um dies zu vermeiden, öffnen Sie die Registerkarte <strong>Sicherheit</strong> in den <strong>Internetoptionen</strong>, klicken Sie auf <strong>Lokales Intranet</strong>, anschließend auf <strong>Sites</strong>, und deaktivieren Sie <strong>Intranetnetzwerk automatisch ermitteln</strong>. Vergessen Sie nicht, diese Einstellung nach Abschluss Ihrer Tests wiederherzustellen.
+	>[AZURE.NOTE]Falls Sie Internet Explorer verwenden, kann es sein, dass Sie nach der Anmeldung den folgenden Fehler erhalten: <code>Fensteröffner nicht erreichbar. Möglicherweise befindet sich dieser in einer anderen Internet Explorer-Zone</code>. Dies liegt daran, dass das Popup in einer anderen Sicherheitszone (Internet) als Localhost (Intranet) ausgeführt wird. Dies betrifft nur Apps während der Entwicklung mit Localhost. Um dies zu vermeiden, öffnen Sie die Registerkarte <strong>Sicherheit</strong> in den <strong>Internetoptionen</strong>, klicken Sie auf <strong>Lokales Intranet</strong>, klicken Sie auf <strong>Sites</strong>, und deaktivieren Sie <strong>Intranet automatisch ermitteln</strong>. Vergessen Sie nicht, diese Einstellung nach Abschluss Ihrer Tests wiederherzustellen.
 
-## <a name="next-steps"> </a>Nächste Schritte
+## <a name="next-steps"></a>Nächste Schritte
 
-Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Weitere Informationen zur Verwendung von Mobile Services mit HTML/JavaScript finden Sie unter [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz].
+Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Weitere Informationen zur Verwendung von Mobile Services mit HTML/JavaScript finden Sie unter [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz].
 
 <!-- Anchors. -->
 [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
@@ -135,16 +135,14 @@ Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], werden Sie 
 [5]: ./media/mobile-services-html-get-started-users/mobile-service-uri.png
 [13]: ./media/mobile-services-html-get-started-users/mobile-identity-tab.png
 [14]: ./media/mobile-services-html-get-started-users/mobile-portal-data-tables.png
-[15]: ./media/mobile-services-html-get-started-users/mobile-portal-change-table-per
-	ms.png
+[15]: ./media/mobile-services-html-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-html-get-started
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-html-get-started-data
-[Autorisieren von Benutzern mit Skripts]: /de-de/documentation/articles/mobile-services-html-authorize-users-in-scripts
+[Erste Schritte mit Mobile Services]: mobile-services-html-get-started.md
+[Erste Schritte mit Daten]: mobile-services-html-get-started-data.md
+[Autorisieren von Benutzern mit Skripts]: mobile-services-javascript-backend-service-side-authorization.md
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/documentation/articles/mobile-services-html-how-to-use-client-library
+[Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /documentation/articles/mobile-services-html-how-to-use-client-library
 
-
-<!--HONumber=42-->
+<!--HONumber=49-->

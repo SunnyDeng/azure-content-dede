@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-appcelerator" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="11/24/2014" 
@@ -36,7 +36,7 @@ Um dieses Lernprogramm durchführen zu können, benötigen Sie Appcelerator Tita
 
 [AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
 
-##<a name="permissions"></a> Einschränken von Berechtigungen für authentifizierte Benutzer
+##<a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
@@ -110,8 +110,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 <!-- Images. -->
 
 <!-- URLs. -->
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
+[Erste Schritte mit Mobile Services]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started.md
+<!--HONumber=49--> 
 
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

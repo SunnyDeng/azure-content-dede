@@ -1,6 +1,6 @@
 ﻿<properties 
 	pageTitle="Erstellen einer Umbraco-Website aus der Galerie in Microsoft Azure" 
-	description="erforderlich" 
+	description="Erstellen Sie ein Umbraco-Content-Management-System und stellen Sie es auf einer Azure-Website bereit." 
 	services="web-sites" 
 	documentationCenter="" 
 	authors="tfitzmac" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/21/2014" 
+	ms.date="02/25/2015" 
 	ms.author="tomfitz"/>
 
 #Erstellen einer Umbraco-Website aus der Galerie in Microsoft Azure
@@ -29,7 +29,7 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 ##Erstellen einer Website aus der Galerie im Azure-Portal
 
-1. Melden Sie sich am [Microsoft Azure-Verwaltungsportal](https://portal.azure.com/) an.
+1. Melden Sie sich beim [Windows Azure-Verwaltungsportal](https://portal.azure.com/) an.
 
 2. Wählen Sie das Symbol der **Azure-Galerie**.
 	
@@ -43,7 +43,7 @@ In diesem Lernprogramm lernen Sie Folgendes:
 	
 	![Click Create][03UmbracoCMS]
 	
-5. Im nächsten Schritt konfigurieren Sie alle Ressourcen, die mit Umbraco CMS verbunden sind. In diesem Fall sind die Ressourcen eine Website und eine SQL Server-Datenbank. Wählen Sie zuerst **Website**, um die Einstellungen der Website, wie die **URL** der Seite, das **Webhosting**, die **Web-Anwendungseinstellungen** und den **Ort** zu konfigurieren. 
+5. Im nächsten Schritt konfigurieren Sie alle Ressourcen, die mit Umbraco CMS verbunden sind. In diesem Fall sind die Ressourcen eine Website und eine SQL Server-Datenbank. Wählen Sie zuerst **Website**, um die Einstellungen der Website, wie die **URL** der Seite, das **Webhosting**, die **Web-App-Einstellungen** und den **Ort** zu konfigurieren. 
 	
 	![Configure resources][04AppSettings]
 	
@@ -51,7 +51,7 @@ In diesem Lernprogramm lernen Sie Folgendes:
 	
 	![Create a SQL Server on Azure][05NewServer]
 	
-7. Jetzt sind die Website und die Datenbank konfiguriert und Sie können mit der Bereitstellung der Anwendung beginnen, indem Sie am unteren Ende des ersten **Umbraco CMS**-Fensters, das Sie auf der vorherigen Seite gesehen haben, auf **Erstellen** klicken.
+7. Jetzt sind die Website und die Datenbank konfiguriert und Sie können mit der Bereitstellung der App beginnen, indem Sie am unteren Ende des ersten **Umbraco CMS**-Fensters, das Sie auf der vorherigen Seite gesehen haben, auf **Erstellen** klicken.
 	
 	![Click Create][06UmbracoCMSGroup]
 	
@@ -61,7 +61,7 @@ Nachdem die Bereitstellung abgeschlossen ist, wird Ihnen im Startboard des Porta
 
 ## Starten und Konfigurieren Ihrer Umbraco CMS-Website
 
-1. Klicken Sie im Details-Fenster Ihrer Website auf **Durchsuchen**, um Ihre Seite zu durchsuchen (in diesem Fall umbracocmsgroup.azurewebsites.net).
+1. Klicken Sie im Details-Fenster Ihrer Website auf **Durchsuchen**, um Ihre Website zu durchsuchen (in diesem Fall umbracocmsgroup.azurewebsites.net).
 	
 	![Browse to your site][08UmbracoCMSGroupRunning]
 	
@@ -98,15 +98,15 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Website mit Umbra
 
 ##Zusätzliche Ressourcen
 
-[Umbraco Dokumentation](http://our.umbraco.org/documentation)
+[Umbraco-Dokumentation](http://our.umbraco.org/documentation)
 
-[Umbraco Video-Lernprogramme](https://umbraco.com/help-and-support/video-tutorials.aspx)
+[Umbraco-Videolernprogramme](https://umbraco.com/help-and-support/video-tutorials.aspx)
 
 [Übersicht über das Microsoft Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/)
 
 [Dokumentation zum Microsoft Azure-Vorschauportal](http://azure.microsoft.com/documentation/preview-portal/)
 
-[Azure-Vorschauportal (Channel 9)](http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Preview-portal) 
+[Azure-Vorschauportal (Kanal 9)](http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Preview-portal) 
 
 [Dokumentation zu Microsoft Azure-Websites](http://azure.microsoft.com/documentation/services/web-sites/)
 
@@ -129,4 +129,4 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Website mit Umbra
 [16EnterAName]: ./media/web-sites-gallery-umbraco/16EnterAName.PNG
 [17MyPage]: ./media/web-sites-gallery-umbraco/17MyPage.PNG
 
-<!--HONumber=46--> 
+<!--HONumber=49-->

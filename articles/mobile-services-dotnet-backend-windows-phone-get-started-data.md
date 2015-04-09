@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Daten (Windows Store) | Mobile Dev Center" 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (Windows Phone) | Mobile Dev Center" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Windows Phone-App." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -10,13 +10,15 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/25/2014" 
+	ms.date="02/20/2015" 
 	ms.author="wesmc"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
+
+##Übersicht
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
 
@@ -25,26 +27,18 @@ In diesem Thema wird das Hinzufügen von Azure Mobile Services als Back-End-Date
 Der mobile Dienst, den Sie in diesem Lernprogramm erstellen, unterstützt die .NET Runtime in Mobile Services. Auf diese Weise können Sie .NET-Sprachen und Visual Studio für die serverseitige Geschäftslogik im mobilen Dienst verwenden. Informationen zum Erstellen eines mobilen Diensts, dessen serverseitige Geschäftslogik Sie in JavaScript schreiben können, finden Sie in der [JavaScript-Back-End-Version] dieses Themas.
 
 
-In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
-
-1. [Herunterladen des Windows Phone 8-App-Projekts]
-2. [Erstellen eines neuen mobilen Diensts]
-3. [Lokales Herunterladen des mobilen Diensts]
-4. [Aktualisieren der Windows Phone-App zum Verwenden des mobilen Diensts]
-5. [Testen der Windows Phone-App mit dem lokal gehosteten Dienst]
-6. [Veröffentlichen des mobilen Dienstes in Azure]
-7. [Testen der Windows Phone-App mit dem in Azure gehosteten Dienst]
+##Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + Visual Studio 2013 Update 2 oder eine höhere Version.
-+ Ein Microsoft Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F" target="_blank">Kostenlose Azure-Testversion</a>.</p></div> 
++ Ein Microsoft Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F" target="_blank">1 Monat kostenlose Testversion</a>.</p></div> 
 
-##<a name="download-app"></a>Download des GetStartedWithData-Projekts
+##Herunterladen des GetStartedWithData-Projekts
 
 Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][Site mit Codebeispielen für Entwickler] auf, bei der es sich um ein Windows Phone Silverlight 8.1-App-Projekt für Visual Studio 2013 handelt.  
 
-1. Laden Sie die C#-Version der GetStartedWithMobileServices-Beispiel-App von der [Site mit Codebeispielen für Entwickler] herunter. 
+1. Laden Sie die C#-Version der GetStartedWithMobileServices-Beispiel-App von der [Website mit den Codebeispielen für Entwickler][Site mit Codebeispielen für Entwickler] herunter. 
 
    	![][1]
 
@@ -54,7 +48,7 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][Site mit Cod
 
 3. Öffnen Sie in Visual Studio das heruntergeladene Projekt, und sehen Sie sich die Datei "MainPage.xaml.cs" an.
 
-   	Beachten Sie, dass die hinzugefügten **TodoItem**-Elemente in einem speicherinternen **ObservableCollection&lt;TodoItem>&gt;**-Element gespeichert werden.
+   	Beachten Sie, dass die hinzugefügten **TodoItem**-Objekte in einem arbeitsspeicherinternen **ObservableCollection&lt;TodoItem&gt;**-Element gespeichert werden.
 
 4. Wählen Sie in Visual Studio ein Bereitstellungsziel für die App aus. Sie können die Bereitstellung auf einem Windows Phone-Gerät oder auf einem der Emulatoren durchführen, die im Windows Phone SDK enthalten sind. In diesem Lernprogramm wird die Bereitstellung auf einem Emulator demonstriert.
 
@@ -62,24 +56,24 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][Site mit Cod
 
 5. Drücken Sie die **F5**-Taste. Dadurch wird die App zum Debuggen erstellt, bereitgestellt und gestartet.
 
-6. Geben Sie in der App Text in das Textfeld ein. Klicken Sie dann auf **Speichern**, um einige Elemente im Arbeitsspeicher der App zu speichern.
+6. Geben Sie in der App Text in das Textfeld ein. Klicken Sie dann auf **Save**, um einige Elemente im Arbeitsspeicher der App zu speichern.
 
    	![][0]  
 
    	Beachten Sie, dass der Text für jedes `TodoItem` unterhalb der Aktualisierungsschaltfläche zusammen mit einem Kontrollkästchen angezeigt wird, das es Ihnen ermöglicht, das Element als abgeschlossen zu markieren.
 
-<h2><a name="create-service"></a>Erstellen eines neuen mobilen Diensts</h2>
+##Erstellen eines neuen mobilen Diensts
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
 
-<h2><a name="download-the-service-locally"></a>Herunterladen des mobilen Dienstprojekts und Hinzufügen zur Projektmappe</h2>
+##Herunterladen des mobilen Dienstprojekts und Hinzufügen zur Projektmappe
 
 1. Klicken Sie im [Azure-Verwaltungsportal] auf den neuen Mobile Service oder auf die Registerkarte mit dem Cloudsymbol, um zur Übersichtsseite zu gelangen.
 
     ![][2]
 
-2. Klicken Sie auf die Plattform **Windows Phone 8**. Erweitern Sie im Abschnitt **Erste Schritte** die Option **Connect an existing Windows Phone 8 app**, und klicken Sie auf die Schaltfläche **Herunterladen**, um ein personalisiertes Startprojekt für den mobilen Dienst herunterzuladen. 
+2. Klicken Sie auf die Plattform **Windows Phone 8**. Erweitern Sie im Abschnitt **Erste Schritte** die Option **Connect an existing Windows Phone 8 app**, und klicken Sie auf die Schaltfläche **Download**, um ein personalisiertes Startprojekt für den mobilen Dienst herunterzuladen. 
 
     ![][3]
 
@@ -120,7 +114,7 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App][Site mit Cod
     ![][23]
 
 
-##<a name="update-app"></a>Aktualisieren der Windows Phone-App zum Verwenden des mobilen Diensts
+##Aktualisieren der Windows Phone-App zum Verwenden des mobilen Diensts
 
 In diesem Abschnitt aktualisieren Sie die Windows Phone-App für die Verwendung des mobilen Dienstes als Back-End-Dienst für die Anwendung.
 
@@ -129,7 +123,7 @@ In diesem Abschnitt aktualisieren Sie die Windows Phone-App für die Verwendung 
 
     ![][7]
 
-2. Suchen Sie im Dialogfeld "NuGet-Pakete verwalten" nach **WindowsAzure.MobileServices** in der Sammlung der Onlinepakete, und klicken Sie, um das Azure Mobile Services Nuget-Paket zu installieren. Schließen Sie dann das Dialogfeld.
+2. Suchen Sie im Dialogfeld "NuGet-Pakete verwalten" nach **WindowsAzure.MobileServices** in der Sammlung der Onlinepakete, und klicken Sie, um das Azure Mobile Services NuGet-Paket zu installieren. Schließen Sie dann das Dialogfeld.
 
     ![][8]
 
@@ -148,9 +142,9 @@ In diesem Abschnitt aktualisieren Sie die Windows Phone-App für die Verwendung 
 
 		using Microsoft.WindowsAzure.MobileServices;
 
-6. Ersetzen Sie in Visual Studio in der Datei "MainPage.xaml.cs" die`MainPage` -Klassendefinition mit der folgenden Definition, und speichern Sie die Datei.
+6. Ersetzen Sie in Visual Studio in der Datei "MainPage.xaml.cs" die `MainPage`-Klassendefinition mit der folgenden Definition, und speichern Sie die Datei.
 
-    Dieser Code verwendet das Mobile Services SDK, um der App das Speichern der Daten in einer Tabelle zu ermöglichen, die vom Dienst bereitgestellt wird, anstatt lokal im Arbeitsspeicher gespeichert zu werden. Die drei Hauptmethoden sind `InsertTodoItem`,  `RefreshTodoItems` und `UpdateCheckedTodoItem`. Diese drei Methoden ermöglichen Ihnen das asynchrone Einfügen, Abfragen und Aktualisieren Ihrer Datensammlung in einer Tabelle in Azure. 
+    Dieser Code verwendet das Mobile Services SDK, um der App das Speichern der Daten in einer Tabelle zu ermöglichen, die vom Dienst bereitgestellt wird, anstatt lokal im Arbeitsspeicher gespeichert zu werden. Die drei Hauptmethoden sind `InsertTodoItem`, `RefreshTodoItems` und `UpdateCheckedTodoItem`. Diese drei Methoden ermöglichen Ihnen das asynchrone Einfügen, Abfragen und Aktualisieren Ihrer Datensammlung in einer Tabelle in Azure. 
 
         public sealed partial class MainPage : PhoneApplicationPage
         {
@@ -164,15 +158,13 @@ In diesem Abschnitt aktualisieren Sie die Windows Phone-App für die Verwendung 
             private async void InsertTodoItem(TodoItem todoItem)
             {
                 await todoTable.InsertAsync(todoItem); 
-                ite
-	ms.Add(todoItem);
+                items.Add(todoItem);
             }
             private async void RefreshTodoItems()
             {
                 items = await todoTable 
                     .ToCollectionAsync(); 
-                ListIte
-	ms.ItemsSource = items;
+                ListItems.ItemsSource = items;
             }
             private async void UpdateCheckedTodoItem(TodoItem item)
             {
@@ -203,7 +195,7 @@ In diesem Abschnitt aktualisieren Sie die Windows Phone-App für die Verwendung 
 
 
 
-##<a name="test-locally-hosted"></a>Testen der Windows Phone-App mit dem lokal gehosteten Dienst</h2>
+##Testen der Windows Phone-App mit dem lokal gehosteten Dienst</h2>
 
 In diesem Abschnitt verwenden Sie Visual Studio zum lokalen Testen der App und des mobilen Dienstes auf der Entwicklungsarbeitsstation. Um den mobilen Dienst, der lokal in IIS Express gehostet wird, von einem Windows Phone-Gerät oder Windows Phone-Emulator aus zu testen, müssen Sie IIS Express und die Arbeitsstation so konfigurieren, dass Verbindungen zur IP-Adresse und zum Port der Arbeitsstation zulässig sind. Windows Phone-Geräte und -Emulatoren stellen Verbindungen als nicht lokale Netzwerkclients her.
 
@@ -213,7 +205,7 @@ In diesem Abschnitt verwenden Sie Visual Studio zum lokalen Testen der App und d
 
 #### Testen der App mit dem mobilen Dienst in IIS Express
 
-6. Öffnen Sie in Visual Studio die Datei "App.xaml.cs", und kommentieren Sie die  `MobileService`-Definition aus, die Sie kürzlich in die Datei eingefügt haben. Fügen Sie eine neue Definition hinzu, um die Verbindung basierend auf der IP-Adresse und dem Port herzustellen, die Sie auf der Arbeitsstation konfiguriert haben. Speichern Sie anschließend die Datei. Ihr Code sollte ähnlich dem folgenden aussehen.
+6. Öffnen Sie in Visual Studio die Datei "App.xaml.cs", und kommentieren Sie die `MobileService`-Definition aus, die Sie kürzlich in die Datei eingefügt haben. Fügen Sie eine neue Definition hinzu, um die Verbindung basierend auf der IP-Adresse und dem Port herzustellen, die Sie auf der Arbeitsstation konfiguriert haben. Speichern Sie anschließend die Datei. Ihr Code sollte ähnlich dem folgenden aussehen.
 
         public static MobileServiceClient MobileService = new MobileServiceClient(
             "http://192.168.111.11:54321");
@@ -235,25 +227,25 @@ In diesem Abschnitt verwenden Sie Visual Studio zum lokalen Testen der App und d
     ![][12]
 
 
-9. Geben Sie einen neuen Text für "todoitem" ein. Klicken Sie anschließend auf **Speichern**. Daraufhin wird ein neues todoItem in die Datenbank eingefügt, die vom mobilen Dienst, der lokal in IIS Express gehostet wird, erstellt wurde. Klicken Sie auf das Kontrollkästchen für eines der Elemente, um es als abgeschlossen zu markieren.
+9. Geben Sie einen neuen Text für "todoitem" ein. Klicken Sie anschließend auf **Save**. Daraufhin wird ein neues todoItem in die Datenbank eingefügt, die vom mobilen Dienst, der lokal in IIS Express gehostet wird, erstellt wurde. Klicken Sie auf das Kontrollkästchen für eines der Elemente, um es als abgeschlossen zu markieren.
 
     ![][15]
 
-10. Halten Sie in Visual Studio das Debuggen der App an. Sie können die Änderungen in der Datenbank, die für den Back-End-Dienst erstellt wurde, anzeigen, indem Sie den Server-Explorer öffnen und die Datenverbindungen erweitern. Klicken Sie in der TodoItems-Tabelle mit der rechten Maustaste unter **MS_TableConnectionString**, und klicken Sie dann auf **Tabellendaten anzeigen**.
+10. Halten Sie in Visual Studio das Debuggen der App an. Sie können die Änderungen in der Datenbank, die für den Back-End-Dienst erstellt wurde, anzeigen, indem Sie den Server-Explorer öffnen und die Datenverbindungen erweitern. Klicken Sie mit der rechten Maustaste auf die TodoItems-Tabelle unter **MS_TableConnectionString**, und klicken Sie dann auf **Tabellendaten anzeigen**
 
     ![][14]
 
 11. Sobald Sie Ihre Tests mit dem lokal gehosteten mobilen Dienst abgeschlossen haben, löschen Sie die Windows Firewall-Regel, die Sie zum Öffnen des Ports auf der Arbeitsstation erstellt haben.
 
 
-##<a name="publish-mobile-service"></a>Veröffentlichen des mobilen Dienstes in Azure
+##Veröffentlichen des mobilen Diensts in Azure
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 
-##<a name="test-azure-hosted"></a>Testen des mobilen in Azure veröffentlichten Diensts
+##<a name="test-azure-hosted"></a>Testen des in Azure veröffentlichten mobilen Diensts
 
-1. Öffnen Sie "App.xaml.cs" in Visual Studio.  Kommentieren Sie den Code aus, der den `MobileServiceClient` erstellt, welcher mit dem lokal gehosteten mobilen Dienst verbunden wird. Heben Sie die Auskommentierung für den Code auf, der den `MobileServiceClient` erstellt, der mit dem Dienst in Azure verbunden wird. Speichern Sie die Änderungen an der Datei.
+1. Öffnen Sie "App.xaml.cs" in Visual Studio.  Kommentieren Sie den Code aus, der den `MobileServiceClient` erstellt, welcher mit dem lokal gehosteten mobilen Dienst verbunden wird. Heben Sie die Auskommentierung für den Code auf, der den `MobileServiceClient` erstellt, welcher mit dem Dienst in Azure verbunden wird. Speichern Sie die Änderungen an der Datei.
 
         sealed partial class App : Application
         {
@@ -290,7 +282,7 @@ In diesem Abschnitt verwenden Sie Visual Studio zum lokalen Testen der App und d
 
 Damit ist das Lernprogramm **Erste Schritte mit Daten** beendet.
 
-## <a name="next-steps"> </a>Nächste Schritte
+##Nächste Schritte
 
 Dieses Lernprogramm hat die Grundlagen der Zusammenarbeit einer Windows Phone 8-App mit Daten in Mobile Services, die mit der .Net-Laufzeit erstellt werden, demonstriert. Als Nächstes können Sie eines der folgenden Lernprogramme ausführen, das auf der GetStartedWithData-App aufbaut, die Sie in diesem Lernprogramm erstellt haben:
 
@@ -306,23 +298,14 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
   <br/>Erfahren Sie, wie Benutzer in Ihrer App authentifiziert werden.
 
 <!--
-* [Erste Schritte mit Pushbenachrichtigungen]
-  <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
+* [Get started with push notifications] 
+  <br/>Learn how to send a very basic push notification to your app.
 -->
 
 * [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
   <br/>Erfahren Sie mehr über die Verwendung von Mobile Services mit .NET.
   
-<!-- Anchors. -->
 
-[Herunterladen des Windows Phone 8-App-Projekts]: #download-app
-[Erstellen eines neuen mobilen Diensts]: #create-service
-[Lokales Herunterladen des mobilen Diensts]: #download-the-service-locally
-[Aktualisieren der Windows Phone-App zum Verwenden des mobilen Diensts]: #update-app
-[Testen der Windows Phone-App mit dem lokal gehosteten Dienst]: #test-locally-hosted
-[Veröffentlichen des mobilen Dienstes in Azure]: #publish-mobile-service
-[Testen der Windows Phone-App mit dem in Azure gehosteten Dienst]: #test-azure-hosted
-[Nächste Schritte]:#next-steps
 
 <!-- Images. -->
 [0]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/app-view.png
@@ -354,23 +337,23 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie eines der folgenden Ler
 
 
 <!-- URLs. -->
-[Überprüfen und Ändern von Daten mit Skripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-wp8
-[Optimieren von Abfragen mit Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-wp8
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push/
-[JavaScript und HTML]: /de-de/develop/mobile/tutorials/get-started-with-data-js
-[JavaScript-Back-End-Version]: /de-de/develop/mobile/tutorials/get-started-with-data-wp8
+[Überprüfen und Ändern von Daten mit Skripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-wp8
+[Optimieren von Abfragen mit Paging]: /develop/mobile/tutorials/add-paging-to-data-wp8
+[Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-phone-get-started.md
+[Erste Schritte mit Daten]: mobile-services-dotnet-backend-windows-phone-get-started-data.md
+[Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-windows-phone-get-started-users.md
+[Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-windows-phone-get-started-push.md
+[JavaScript und HTML]: /develop/mobile/tutorials/get-started-with-data-js
+[JavaScript-Back-End-Version]: /develop/mobile/tutorials/get-started-with-data-wp8
 
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 [Site mit Codebeispielen für Entwickler]:  https://code.msdn.microsoft.com/Add-Azure-Mobile-to-a-8b906f72
-[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
+[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-net-client-library
 [MobileServiceClient-Klasse]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 [Vorgehensweise: Hinzufügen einer neuen Windows-Firewall-Portregel]:  http://go.microsoft.com/fwlink/?LinkId=392240
   
 
-<!--HONumber=42-->
+<!--HONumber=49-->

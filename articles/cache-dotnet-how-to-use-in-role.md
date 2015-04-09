@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="Verwenden des In-Role Caches (.NET) – Azure-Featureleitfaden" 
+	pageTitle="Verwenden des In-Role Caches (.NET) - Azure-Featureleitfaden" 
 	description="Erfahren Sie, wie Sie den Azure In-Role Cache verwenden. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API." 
 	services="cache" 
 	documentationCenter=".net" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/18/2014" 
+	ms.date="02/24/2015" 
 	ms.author="sdanie"/>
 
 
@@ -23,31 +23,16 @@
 
 # Verwenden des In-Role Caches (Azure Cache)
 
-In diesem Handbuch erfahren Sie mehr über die ersten Schritte mit 
-**In-Role Cache für Azure Cache**. Die Beispiele sind in C\#-Code geschrieben und es wird die .NET-API verwendet. Es werden folgende Szenarien vorgestellt: **Konfigurieren eines Cacheclusters**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten vom Cache, Speichern des ASP.NET-Sitzungszustands im Cache** und **Aktivieren des ASP.NET-Seitenausgabecaches mithilfe des Cache**. Weitere Informationen zur Verwendung des In-Role Cache erhalten Sie unter [Nächste Schritte][].
+Dieser Leitfaden zeigt Ihnen die ersten Schritte mit **In-Role Cache für Azure Cache**. Die Beispiele sind in C\#-Code geschrieben und verwenden die .NET-API. Es werden folgende Szenarien vorgestellt: **Konfigurieren eines Cacheclusters**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten vom Cache, Speichern des ASP.NET-Sitzungszustands im Cache** und **Aktivieren des ASP.NET-Seitenausgabecaches mithilfe des Cache**. Weitere Informationen zur Verwendung des In-Role Cache erhalten Sie unter [Nächste Schritte][].
 
 >Hilfestellung bei der Auswahl des für Ihre Anwendung geeigneten Azure Cache-Angebots finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?][].
 
-## Inhaltsverzeichnis
-
--   [Was ist ein In-Role Cache?][]
--	[Erste Schritte mit dem In-Role Cache]
-	-	[Konfigurieren eines Cacheclusters][]
-	-	[Konfigurieren der Cacheclients][]
--	[Arbeiten mit Caches][]
-	-	[Gewusst wie: Erstellen eines DataCache-Objekts][]
-	-   [Gewusst wie: Hinzufügen zu und Abrufen eines Objekts aus dem Cache][]
-	-   [Gewusst wie: Angeben des Ablaufs eines Objekts im Cache][]
-	-   [Gewusst wie: Speichern des ASP.NET-Sitzungsstatus im Cache][]
-	-   [Gewusst wie: Speichern der ASP.NET-Seitenausgabe im Cache][]
--   [Nächste Schritte][]
-
 <a name="what-is"></a>
-## Was ist ein In-Role Cache?
+## Was ist In-Role Cache?
 
 In-Role Caches bieten eine Caching-Schicht für Azure-Anwendungen. Das Caching erhöht die Leistung, indem es Daten vorübergehend im Speicher anderer Backend-Quellen speichert. Außerdem kann es die Kosten in Zusammenhang mit Datenbanktransaktionen in der Cloud reduzieren. Der In-Role Cache umfasst folgende Features:
 
--   Vorbereitete ASP.NET-Anbieter für Sitzungsstatus und Seitenausgabecaching für schnellere Webanwendungen, ohne Änderung des Anwendungscodes
+-   Vorbereitete ASP.NET-Anbieter für Sitzungszustand und Seitenausgabecaching für schnellere Webanwendungen, ohne Änderung des Anwendungscodes
 -   Zwischenspeichern beliebiger serialisierbarer verwalteter Objekte, z. B.: CLR-Objekte, Zeilen, XML und Binärdaten
 -   Konsistentes Entwicklungsmodell für Azure und Windows Server AppFabric
 
@@ -71,7 +56,7 @@ Darüber hinaus bietet das Caching von Rolleninstanzen die folgenden konfigurier
 -	Optionales Konfigurieren hoher Verfügbarkeit individueller Caches
 -	Verwenden erweiterter Caching-Funktionen wie Regionen, Tagging und Benachrichtigungen
 
-Dieser Leitfaden bietet einen Überblick über die ersten Schritte mit In-Role Cache. Detaillierte Informationen zu diesen Features, die über den Rahmen dieses Leitfadens hinausgehen, finden Sie unter [Übersicht über In-Role Cache][].
+Dieser Leitfaden bietet einen Überblick über die ersten Schritte mit In-Role Cache. Detaillierte Informationen zu diesen Features, die über den Rahmen dieses Leitfadens hinausgehen, finden Sie unter [Überblick In-Role Cache][].
 
 <a name="getting-started-cache-role-instance"></a>
 ## Erste Schritte mit dem In-Role Cache
@@ -79,7 +64,7 @@ Dieser Leitfaden bietet einen Überblick über die ersten Schritte mit In-Role C
 In-Role Cache bietet eine Möglichkeit, um das Caching über den Speicher der virtuellen Maschine zu aktivieren, der Ihre Rolleninstanzen hostet. Die Rolleninstanzen, die Ihre Caches hosten, werden als **Cachecluster** bezeichnet. Es gibt zwei Bereitstellungstopologien für das Caching auf Rolleninstanzen:
 
 -	**Dediziertes Rollencaching**: Die Rolleninstanzen werden ausschließlich für das Caching verwendet.
--	**Zusammengestelltes Rollencaching**: Der Cache teilt die VM-Ressourcen (Bandbreite, CPU und Speicher) mit der Anwendung.
+-	**Zusammengestelltes Rollencaching**: Der Cache teilt sich die VM-Ressourcen (Bandbreite, CPU und Speicher) mit der Anwendung.
 
 Um das Caching auf Rolleninstanzen zu verwenden, müssen Sie einen Cachecluster und anschließend die Cacheclients konfigurieren, damit sie auf den Cachecluster zugreifen können.
 
@@ -105,7 +90,7 @@ Wenn eine **Cache-Workerrolle** zu einem Projekt hinzugefügt wird, lautet die S
 
 ![RoleCache8][RoleCache8]
 
-Sobald das Caching aktiviert ist, kann das Cachecluster-Speicherkonto konfiguriert werden. In-Role Cache erfordert ein Azure-Speicherkonto. Das Speicherkonto wird verwendet, um Konfigurationsdaten für den Cachecluster aufzubewahren, auf den von allen virtuellen Maschinen zugegriffen wird, die dem Cachecluster zugewiesen sind. Das Speicherkonto wird auf der Cachecluster-Eigenschaftenseite auf der Registerkarte **Caching** direkt oberhalb der **Benannten Cacheeinstellungen** festgelegt.
+Sobald das Caching aktiviert ist, kann das Cachecluster-Speicherkonto konfiguriert werden. In-Role Cache erfordert ein Azure-Speicherkonto. Das Speicherkonto wird verwendet, um Konfigurationsdaten für den Cachecluster aufzubewahren, auf den von allen virtuellen Maschinen zugegriffen wird, die dem Cachecluster zugewiesen sind. Das Speicherkonto wird auf der Cachecluster-Eigenschaftenseite auf der Registerkarte **Caching** direkt oberhalb der **Benannten Cache-Einstellungen** festgelegt.
 
 ![RoleCache10][RoleCache10]
 
@@ -152,7 +137,7 @@ Wählen Sie **In-Role Cache**, klicken Sie auf **Installieren** und anschließen
 
 Funktionen des NuGet-Pakets: Es fügt die erforderliche Konfiguration zur Konfigurationsdatei der Rolle hinzu; es fügt eine Cacheclient-Einstellung für die Diagnoseebene zur Datei "ServiceConfiguration.cscfg der Azure-Anwendung hinzu und es fügt die erforderlichen Assemblyverweise hinzu.
 
->Für ASP.NET-Webrollen fügt das Caching NuGet-Pakets auch zwei auskommentierte Abschnitte zu "web.config" hinzu. Der erste Abschnitt ermöglicht das Speichern des Sitzungsstatus im Cache und der zweite Abschnitt ermöglicht das Zwischenspeichern der ASP.NET-Seitenausgabe. Weitere Informationen finden Sie unter [Gewusst wie: Speichern des ASP.NET-Sitzungsstatus im Cache] und [Gewusst wie: Speichern der ASP.NET-Seitenausgabe im Cache][].
+>Für ASP.NET-Webrollen fügt das Caching NuGet-Pakets auch zwei auskommentierte Abschnitte zu "web.config" hinzu. Der erste Abschnitt ermöglicht das Speichern des Sitzungszustands im Cache und der zweite Abschnitt ermöglicht das Zwischenspeichern der ASP.NET-Seitenausgabe. Weitere Informationen finden Sie unter [Vorgehensweise: Speichern des ASP.NET-Sitzungszustands im Cache] und [Vorgehensweise: Speichern der ASP.NET-Seitenausgabe im Cache][].
 
 Das NuGet-Paket fügt die folgenden Konfigurationselemente zur Datei "web.config" oder "app.config" der Rolle hinzu. Die Abschnitte **dataCacheClients** und **cacheDiagnostics** werden unter dem **configSections**-Element hinzugefügt. Wenn kein **configSections**-Element vorhanden ist, wird es als untergeordnetes Element des **configuration**-Elements erstellt.
 
@@ -170,7 +155,7 @@ Das NuGet-Paket fügt die folgenden Konfigurationselemente zur Datei "web.config
                allowDefinition="Everywhere" />
     </configSections>
 
-Diese neuen Abschnitte umfassen Referenzen auf ein  **dataCacheClients** Element und ein **cacheDiagnostics** Element. Diese Elemente werden außerdem zum Element **Konfiguration** hinzugefügt.
+Diese neuen Abschnitte umfassen Verweise auf ein **dataCacheClients**-Element und ein **cacheDiagnostics**-Element. Diese Elemente werden außerdem zum **configuration**-Element hinzugefügt.
 
     <dataCacheClients>
       <dataCacheClient name="default">
@@ -182,7 +167,7 @@ Diese neuen Abschnitte umfassen Referenzen auf ein  **dataCacheClients** Element
       <crashDump dumpLevel="Off" dumpStorageQuotaInMB="100" />
     </cacheDiagnostics>
 
-Ersetzen Sie nach Hinzufügen der Konfiguration **[Cachecluster-Rollenname]** mit dem Namen der Rolle, die den Cachecluster hostet.
+Ersetzen Sie nach Hinzufügen der Konfiguration **[cache cluster role name]** mit dem Namen der Rolle, die den Cachecluster hostet.
 
 >Wird **[Cachecluster-Rollenname]** nicht mit dem Namen der Rolle, die den Cachecluster hostet, ersetzt, wird eine **TargetInvocationException** ausgelöst, wenn auf den Cache mit **DatacacheException** zugegriffen wird. Es wird folgende Meldung angezeigt: "Es ist keine derartige Rolle vorhanden".
 
@@ -212,7 +197,7 @@ Handelt es sich bei Ihrer Rolle um eine ASP.NET-Webrolle, wird auch die folgende
 
 -	Microsoft.Web.DistributedCache.dll.
 
->Diese Assemblys befinden sich im Ordner "C:\\Program Files\\Microsoft SDKs\\Windows Azure\\.NET SDK\\2012-10\\ref\\Caching\\".
+>Diese Assemblys befinden sich im Ordner "C:\\Program Files\\Microsoft SDKs\\Microsoft Azure\\.NET SDK\\2012-10\\ref\\Caching\\".
 
 Nachdem die Zwischenspeicherung im Clientprojekt konfiguriert wurde, können Sie die in den folgenden Abschnitten beschriebenen Methoden verwenden, um mit dem Cache zu arbeiten.
 
@@ -221,23 +206,21 @@ Nachdem die Zwischenspeicherung im Clientprojekt konfiguriert wurde, können Sie
 
 Die folgenden Schritte in diesem Abschnitt beschreiben, wie allgemeine Aufgaben in Bezug auf das Caching durchgeführt werden.
 
--	[Gewusst wie: Erstellen eines DataCache-Objekts][]
--   [Gewusst wie: Hinzufügen zu und Abrufen eines Objekts aus dem Cache][]
--   [Gewusst wie: Angeben des Ablaufs eines Objekts im Cache][]
--   [Gewusst wie: Speichern des ASP.NET-Sitzungsstatus im Cache][]
--   [Gewusst wie: Speichern der ASP.NET-Seitenausgabe im Cache][]
+-	[Vorgehensweise: Erstellen eines DataCache-Objekts][]
+-   [Vorgehensweise: Hinzufügen zu und Abrufen eines Objekts aus dem Cache][]
+-   [Vorgehensweise: Angeben des Ablaufs eines Objekts im Cache][]
+-   [Vorgehensweise: Speichern des ASP.NET-Sitzungszustands im Cache][]
+-   [Vorgehensweise: Speichern der ASP.NET-Seitenausgabe im Cache][]
 
 <a name="create-cache-object"></a>
-## Gewusst wie: Erstellen eines DataCache-Objekts
+## Vorgehensweise: Erstellen eines DataCache-Objekts
 
 Um programmseitig mit dem Cache arbeiten zu können, benötigen Sie eine Referenz auf den Cache. Fügen Sie die folgende Zeile oben in jeder Datei hinzu, über die Sie
 In-Role Cache verwenden möchten:
 
     using Microsoft.ApplicationServer.Caching;
 
->Sollte Visual Studio die Typen in der Using-Anweisung
-selbst nach der Installation des Caching NuGet-Pakets, das die nötigen Referenzen hinzufügt, nicht erkennen, stellen Sie sicher,
-dass das Zielprofil für das Projekt .NET Framework 4.0 oder höher ist, und wählen Sie eines der Profile, das auf kein **Client Profile** verweist. Anweisungen zum Konfigurieren von Cacheclients finden Sie unter [Konfigurieren der Cacheclients][].
+>Sollte Visual Studio die Typen in der "Using"-Anweisung selbst nach der Installation des Cache NuGet-Pakets, das die nötigen Referenzen hinzufügt, nicht erkennen, stellen Sie sicher, dass das Zielprofil für das Projekt ".NET Framework 4.0" oder höher ist, und wählen Sie eines der Profile, das kein **Clientprofil** angibt. Anweisungen zum Konfigurieren von Cacheclients finden Sie unter [Konfigurieren der Cacheclients][].
 
 Es gibt zwei Möglichkeiten, um ein **DataCache**-Objekt zu erstellen. Sie können entweder einfach einen **DataCache** erstellen und den Namen des gewünschten Caches angeben.
 
@@ -254,7 +237,7 @@ Die zweite Möglichkeit besteht darin, mithilfe des Standardkonstruktors ein neu
     // cache can now be used to add and retrieve items.	
 
 <a name="add-object"></a>
-## Gewusst wie: Hinzufügen zu und Abrufen eines Objekts aus dem Cache
+## Vorgehensweise: Hinzufügen zu und Abrufen eines Objekts aus dem Cache
 
 Mit der **Add**- oder **Put**-Methode können Sie ein Element zum Cache hinzufügen. Durch die **Add**-Methode wird das angegebene Objekt zum Cache hinzugefügt, der Schlüssel ist der Wert des Schlüsselparameters.
 
@@ -263,8 +246,7 @@ Mit der **Add**- oder **Put**-Methode können Sie ein Element zum Cache hinzufü
 
 Wenn sich bereits ein Objekt mit demselben Schlüssel im Cache befindet, wird eine **DataCacheException** mit der folgenden Meldung ausgegeben:
 
-> ErrorCode:SubStatus: Es wird versucht, ein Objekt zu erstellen, dessen Schlüssel bereits im Cache vorhanden ist. Das Caching akzeptiert nur
-> eindeutige Schlüsselwerte für Objekte.
+> ErrorCode:SubStatus: Es wird versucht, ein Objekt zu erstellen, dessen Schlüssel bereits im Cache vorhanden ist. Das Caching akzeptiert nur eindeutige Schlüsselwerte für Objekte.
 
 Zum Abrufen eines Objekts mit einem bestimmten Schlüssel kann die **Get**-Methode verwendet werden. Wenn das Objekt vorhanden ist, wird es zurückgegeben, falls nicht, wird Null zurückgegeben.
 
@@ -289,7 +271,7 @@ Mit der **Put**-Methode wird das Objekt mit dem angegebenen Schlüssel dem Cache
     cache.Put("item", "value");
 
 <a name="specify-expiration"></a>
-## Gewusst wie: Angeben des Ablaufs eines Objekts im Cache
+## Vorgehensweise: Angeben des Ablaufs eines Objekts im Cache
 
 Standardmäßig laufen Elemente im Cache 10 Minuten nach der Ablage im Cache ab. Die Zeit kann in den Rolleneigenschaften der Rolle, die den Cachecluster hostet, unter **Lebensdauer (min)** konfiguriert werden.
 
@@ -311,9 +293,9 @@ Um das verbleibende Zeitüberschreitungsintervall eines Elements im Cache anzuze
     TimeSpan timeRemaining = item.Timeout;
 
 <a name="store-session"></a>
-## Gewusst wie: Speichern des ASP.NET-Sitzungsstatus im Cache
+## Vorgehensweise: Speichern des ASP.NET-Sitzungszustands im Cache
 
-Der Session State Provider für In-Role Caches ist ein außerprozessmäßiger Speichermechanismus für ASP.NET-Anwendungen. Mit diesem Anbieter können Sie den Sitzungsstatus in einem Azure-Cache speichern und müssen dies nicht im Arbeitsspeicher oder ein einer SQL Server-Datenbank tun. Konfigurieren Sie zuerst Ihren Cachecluster, um den Caching-Sitzungsstatusanbieter zu nutzen. Konfigurieren Sie anschließend mithilfe des Caching NuGet-Pakets wie unter [Erste Schritte mit dem In-Role Cache][] beschrieben Ihre ASP.NET-Anwendung. Sobald das Caching NuGet-Paket installiert ist, fügt es einen auskommentierten Abschnitt in web.config hinzu, der die nötige Konfiguration für die ASP.NET-Anwendung beinhaltet, um den Session State Provider für den In-Role Cache zu verwenden.
+Der Session State Provider für In-Role Caches ist ein außerprozessmäßiger Speichermechanismus für ASP.NET-Anwendungen. Mit diesem Anbieter können Sie den Sitzungszustand in einem Azure-Cache speichern und müssen dies nicht im Arbeitsspeicher oder ein einer SQL Server-Datenbank tun. Konfigurieren Sie zuerst Ihren Cachecluster, um den Caching-Sitzungszustandsanbieter zu nutzen. Konfigurieren Sie anschließend mithilfe des Caching NuGet-Pakets wie unter [Erste Schritte mit dem In-Role Cache][] beschrieben Ihre ASP.NET-Anwendung. Sobald das Caching NuGet-Paket installiert ist, fügt es einen auskommentierten Abschnitt in web.config hinzu, der die nötige Konfiguration für die ASP.NET-Anwendung beinhaltet, um den Session State Provider für den In-Role Cache zu verwenden.
 
     <!--Uncomment this section to use In-Role Cache for session state caching
     <system.web>
@@ -332,10 +314,10 @@ Der Session State Provider für In-Role Caches ist ein außerprozessmäßiger Sp
 
 Entfernen Sie Kommentare aus dem angegebenen Abschnitt, um den Session State Provider für In-Role Cache zu aktivieren. Der Standardcache wird im bereitgestellten Codeausschnitt angegeben. Geben Sie den gewünschten Cache im **cacheName**-Attribut an, wenn ein anderer Cache verwendet werden soll.
 
-Weitere Informationen zur Verwendung des Sitzungsstatusanbieter des Caching-Services finden Sie unter [Sitzungsstatusanbieter für In-Role Cache][].
+Weitere Informationen zur Verwendung des Sitzungszustandsanbieter des Caching-Services finden Sie unter [Sitzungszustandsanbieter für In-Role Cache][].
 
 <a name="store-page"></a>
-## Gewusst wie: Speichern der ASP.NET-Seitenausgabe im Cache
+## Vorgehensweise: Speichern der ASP.NET-Seitenausgabe im Cache
 
 Der Output Cache Provider für In-Role Caches ist ein außerprozessmäßiger Speichermechanismus für Ausgabecachedaten. Diese Daten sind für vollständige HTTP-Antworten bestimmt (Zwischenspeichern von Seitenausgaben). Der Anbieter wird zum neuen Erweiterungspunkt des Ausgabecacheanbieters hinzugefügt, der in ASP.NET 4 eingeführt wurde. Konfigurieren Sie zuerst Ihren Cachecluster, um den Ausgabecacheanbieter zu nutzen. Konfigurieren Sie anschließend mithilfe des Caching NuGet-Pakets wie unter [Erste Schritte mit dem In-Role Cache][] beschrieben Ihre ASP.NET-Anwendung. Sobald das Caching NuGet-Paket installiert ist, fügt es einen auskommentierten Abschnitt in web.config hinzu, der die nötige Konfiguration für die ASP.NET-Anwendung beinhaltet, um den Output Cache Provider für den In-Role Cache zu verwenden.
 
@@ -367,33 +349,32 @@ Weitere Informationen zur Verwendung des Ausgabecacheanbieters für In-Role Cach
 <a name="next-steps"></a>
 ## Nächste Schritte
 
-Nachdem Sie jetzt mit den Grundlagen von In-Role Cache vertraut sind,
-erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben ausgeführt werden.
+Nachdem Sie sich nun mit den Grundlagen von In-Role Cache vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Cachingaufgaben ausgeführt werden.
 
 -   Weitere Informationen finden Sie in der MSDN-Referenz: [In-Role Cache][]
--   Erfahren Sie, wie Sie die Migration auf den In-Role Cache durchführen: [Migration auf den In-Role Cache][]
--   Sehen Sie sich die Beispiele an: [In-Role Cache Beispiele][]
--	Sehen Sie sich [Maximale Leistung: Beschleunigen von Cloud-Dienstanwendungen mit Azure Caching][] von TechEd 2013 zum In-Role Caching an.
+-   Erfahren Sie, wie Sie die Migration auf den In-Role Cache durchführen: [Migrieren zum In-Role Cache][]
+-   Sehen Sie sich die Beispiele an: [In-Role Cache-Beispiele][]
+-	Sehen Sie sich [Maximale Leistung: Beschleunigen der Cloud-Dienste mit Azure-Caching][] von TechEd 2013 zum In-Role Caching an.
 
 <!-- INTRA-TOPIC LINKS -->
 [Nächste Schritte]: #next-steps
-[Was ist ein In-Role Cache?]: #what-is
+[Was ist In-Role Cache?]: #what-is
 [Erstellen eines Azure-Caches]: #create-cache
 [Welche Art von Cache ist richtig für mich?]: #choosing-cache
-[Erste Schritte mit dem In-Role Cache-Dienst]: #getting-started-cache-service
+[Erste Schritte mit dem In-Role Cache-Dienst:]: #getting-started-cache-service
 [Vorbereiten Ihres Visual Studio-Projekts zur Verwendung des In-Role Caches]: #prepare-vs
-[Konfigurieren Ihrer Anwendung zur Verwendung des Caches]: #configure-app
+[Konfigurieren der Anwendung für die Verwendung von Caching]: #configure-app
 [Erste Schritte mit dem In-Role Cache]: #getting-started-cache-role-instance
 [Konfigurieren eines Cacheclusters]: #enable-caching
 [Konfigurieren der gewünschten Cachegröße]: #cache-size
 [Konfigurieren der Cacheclients]: #NuGet
 [Arbeiten mit Caches]: #working-with-caches
-[Gewusst wie: Erstellen eines DataCache-Objekts]: #create-cache-object
-[Gewusst wie: Hinzufügen zu und Abrufen eines Objekts aus dem Cache]: #add-object
-[Gewusst wie: Angeben des Ablaufs eines Objekts im Cache]: #specify-expiration
-[Gewusst wie: Speichern des ASP.NET-Sitzungsstatus im Cache]: #store-session
-[Gewusst wie: Speichern der ASP.NET-Seitenausgabe im Cache]: #store-page
-[Ausrichten auf ein unterstütztes .NET Framework-Profil]: #prepare-vs-target-net
+[Vorgehensweise: Erstellen eines DataCache-Objekts]: #create-cache-object
+[Vorgehensweise: Hinzufügen zu und Abrufen eines Objekts aus dem Cache]: #add-object
+[Vorgehensweise: Angeben des Ablaufs eines Objekts im Cache]: #specify-expiration
+[Vorgehensweise: Speichern des ASP.NET-Sitzungszustands im Cache]: #store-session
+[Vorgehensweise: Speichern der ASP.NET-Seitenausgabe im Cache]: #store-page
+[Ausrichten auf ein unterstütztes .NET Framework-Profil:]: #prepare-vs-target-net
  
 <!-- IMAGES --> 
 [RoleCache1]: ./media/cache-dotnet-how-to-use-in-role/cache8.png
@@ -408,28 +389,26 @@ erfahren Sie unter den folgenden Links, wie komplexere Zwischenspeicheraufgaben 
   
 <!-- LINKS -->
 [Konfigurieren der Größe von virtuellen Computern]: http://go.microsoft.com/fwlink/?LinkId=164387
-[Gewusst wie: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/library/windowsazure/gg618003.aspx
-[Gewusst wie: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/library/z852zf6b.aspx
-[Gewusst wie: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/library/zd1ysf1y.aspx
-[In-Role Cache - Erwägungen bezüglich der Kapazitätsplanung]: http://go.microsoft.com/fwlink/?LinkId=252651
-[In-Role Cache Beispiele]: http://msdn.microsoft.com/library/jj189876.aspx
+[Vorgehensweise: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/library/windowsazure/gg618003.aspx
+[Vorgehensweise: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/library/z852zf6b.aspx
+[Vorgehensweise: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/library/zd1ysf1y.aspx
+[Überlegungen zur Planung der In-Role Cache-Kapazität]: http://go.microsoft.com/fwlink/?LinkId=252651
+[In-Role Cache-Beispiele]: http://msdn.microsoft.com/library/jj189876.aspx
 [In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=252658
-[In-Role Cache]: http://www.microsoft.com/de-de/showcase/Search.aspx?phrase=azure+caching
+[In-Role Cache]: http://www.microsoft.com/showcase/Search.aspx?phrase=azure+caching
 [Maximale Leistung: Beschleunigen von Cloud-Dienstanwendungen mit Azure Caching]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/WAD-B326#fbid=kmrzkRxQ6gU
-[Migration auf den In-Role Cache]: http://msdn.microsoft.com/library/hh914163.aspx
+[Migrieren zum In-Role Cache]: http://msdn.microsoft.com/library/hh914163.aspx
 [Installation des NuGet-Paket-Managers]: http://go.microsoft.com/fwlink/?LinkId=240311
 [Ausgabecacheanbieter für In-Role Cache]: http://msdn.microsoft.com/library/windowsazure/gg185662.aspx
 [OutputCache-Direktive]: http://go.microsoft.com/fwlink/?LinkId=251979
 [Übersicht über In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=254172
-[Sitzungsstatusanbieter für In-Role Cache]: http://msdn.microsoft.com/library/windowsazure/gg185668.aspx
+[Sitzungszustandsanbieter für In-Role Cache]: http://msdn.microsoft.com/library/windowsazure/gg185668.aspx
 [Team-Blog]: http://blogs.msdn.com/b/windowsazure/
-[Problembehebung und Diagnose für In-Role Caches]: http://msdn.microsoft.com/library/windowsazure/hh914135.aspx
-[Azure AppFabric Cache: Zwischenspeichern des Sitzungszustands]: http://www.microsoft.com/de-de/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
+[Problembehandlung und Diagnose für In-Role Cache:]: http://msdn.microsoft.com/library/windowsazure/hh914135.aspx
+[Azure AppFabric Cache: Zwischenspeichern des Sitzungszustands]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Azure-Verwaltungsportal]: http://windows.azure.com/
 [Azure Shared Caching]: http://msdn.microsoft.com/library/windowsazure/gg278356.aspx
 
-[Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
+[Welches Azure-Cache-Angebot ist das Richtige für mich?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
 
-<!--HONumber=35.2-->
-
-<!--HONumber=46--> 
+<!--HONumber=49-->

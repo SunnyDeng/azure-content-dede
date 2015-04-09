@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-android" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="09/23/2014" 
@@ -46,7 +46,7 @@ Dieses Lernprogramm benötigt Xamarin.Android und Android SDK 4.2 oder eine höh
 
 4. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird. 
 
-	 Dies liegt daran, dass die App versucht als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die _TodoItem_-Tabelle jetzt jedoch Authentifizierung erfordert.
+	 Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die _TodoItem_-Tabelle jetzt jedoch eine Authentifizierung erfordert.
 
 Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
 
@@ -81,7 +81,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 	Dieser Aufruf startet den Authentifizierungsprozess und wartet asynchron auf eine Antwort.
 
-4. Verschieben Sie den verbleibenden Code nach`await Authenticate();` in der Methode **OnCreate** in eine neue Methode **CreateTable** mit folgendem Code:
+4. Verschieben Sie den verbleibenden Code nach "await Authenticate();" in der **OnCreate**-Methode in eine neue **CreateTable**-Methode mit folgendem Code:
 
 	        private async Task CreateTable()
 	        {
@@ -104,16 +104,16 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 		await CreateTable();
 
 
-6. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten und sich mit dem Identitätsanbieter Ihrer Wahl anzumelden. 
+6. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten, und melden Sie sich mit Ihrem gewählten Identitätsanbieter an. 
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
 ## Abgeschlossenes Beispiel abrufen
-Laden Sie das [abgeschlossenes Beispielprojekt] herunter. Stellen Sie sicher, dass Sie die Variablen **applicationURL** und **applicationKey** mit Ihren eigenen Azure-Einstellungen aktualisieren.
+Laden Sie das [abgeschlossene Beispielprojekt] herunter. Stellen Sie sicher, dass Sie die Variablen **applicationURL** und **applicationKey** mit Ihren eigenen Azure-Einstellungen aktualisieren.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. 
+Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. 
 
 <!-- Anchors. -->
 [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
@@ -134,17 +134,16 @@ Im nächsten Lernprogramm, [Autorisieren von Benutzern mit Skripts], werden Sie 
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-android
-[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android
-[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android
-[Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android
+[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started-xamarin-android
+[Erste Schritte mit Daten]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
+[Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
+[Erste Schritte mit Pushbenachrichtigungen]: /develop/mobile/tutorials/get-started-with-push-xamarin-android
+[Autorisieren von Benutzern mit Skripts]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-[abgeschlossenes Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
+[abgeschlossene Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 
+<!--HONumber=49--> 
 
-
-
-<!--HONumber=42-->
+<!--HONumber=49-->

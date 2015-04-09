@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Lastenausgleich für Azure-Infrastrukturdienste" 
 	description="Beschreibt zwei unterschiedliche Typen des durch Azure unterstützten Lastenausgleichs: Lastenausgleich für Cloud-Dienste und Azure Traffic Manager für Clientdatenverkehr." 
 	services="virtual-machines" 
@@ -34,7 +34,7 @@ Azure Traffic Manager verwendet drei Lastenausgleichsmethoden, um den Datenverke
 
 - **Failover**:  Verwenden Sie diese Methode, wenn Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, aber Sicherungen bereitstellen möchten, falls der primäre Endpunkt nicht mehr verfügbar sein sollte.
 - **Leistung**:  Verwenden Sie diese Methode, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den "nächstgelegenen" Endpunkt (im Hinblick auf die geringste Latenzzeit) verwendet sollen.
-- **Roundrobin:**  Verwenden Sie diese Methode, wenn Sie die Last auf eine Reihe von Cloud-Diensten im gleichen Rechenzentrum oder auf Cloud-Dienste oder Websites in verschiedenen Rechenzentren verteilen möchten.
+- **Round-Robin:** Verwenden Sie diese Methode, wenn Sie die Last auf eine Reihe von Cloud-Diensten im gleichen Rechenzentrum oder auf Cloud-Dienste oder Websites in verschiedenen Rechenzentren verteilen möchten.
 
 Weitere Informationen finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/library/azure/dn339010.aspx).
 
@@ -51,7 +51,7 @@ Im Folgenden die grundlegende Vorgehensweise:
 
 Weitere Informationen finden Sie unter [Traffic Manager](http://msdn.microsoft.com/library/azure/hh745750.aspx).
 
-##Azure-Lastenausgleich für virtuelle Computer ##
+## Azure-Lastenausgleich für virtuelle Computer ##
 
 Virtuelle Computer im selben Cloud-Dienst oder virtuellen Netzwerk können über ihre privaten IP-Adressen direkt miteinander kommunizieren. Computer und Dienste außerhalb des Cloud-Diensts oder virtuellen Netzwerks können nur mit virtuellen Computern in einem Cloud-Dienst oder virtuellen Netzwerk mit einem konfigurierten Endpunkt kommunizieren. Ein Endpunkt ist eine Zuordnung einer öffentlichen IP-Adresse und eines Ports zu der privaten IP-Adresse und dem Port eines virtuellen Computers oder einer Webrolle innerhalb eines Azure-Cloud-Diensts.
 
@@ -80,4 +80,4 @@ Weitere Informationen finden Sie unter [Interner Lastenausgleich](http://msdn.mi
 <!-- LINKS -->
 
 
-<!--HONumber=47-->
+<!--HONumber=49-->
