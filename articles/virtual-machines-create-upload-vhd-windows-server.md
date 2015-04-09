@@ -142,7 +142,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
 <h3>Verwenden der Microsoft Azure AD-Methode</h3>
 
-1. Öffnen Sie die Azure PowerShell-Konsole, wie unter [Gewusst wie: Installieren von Microsoft Azure PowerShell] beschrieben(#Install).
+1. Öffnen Sie die Azure PowerShell-Konsole, wie unter [Gewusst wie: Installieren von Microsoft Azure PowerShell](#Install) beschrieben.
 
 2. Geben Sie den folgenden Befehl ein:  
 	`Add-AzureAccount`

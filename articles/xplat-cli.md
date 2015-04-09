@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Plattformübergreifende Azure-Befehlszeilenschnittstelle" 
 	description="Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle zur Verwaltung von Azure Services" 
 	editor="tysonn" 
@@ -125,7 +125,7 @@ Beachten Sie bezüglich der Auswahl der geeigneten Authentifizierungsmethode Fol
 
 	> [AZURE.NOTE] Die Login-Methode funktioniert nur mit Organisationskonto.  Ein Organisations-Konto ist ein Benutzer, der von der Organisation verwaltet wird und in der Organisation als Azure Active Directory-Mandant definiert ist. Wenn Sie derzeit kein Organisations-Konto besitzen und sich mit einem Microsoft-Konto bei Ihrem Azure-Abonnement anmelden, können Sei wie folgt mühelos ein Organisations-Konto erstellen:
 	> 
-	> 1. Melden Sie sich im [Azure-Verwaltungsportal][] an und klicken Sie auf **Active Directory**.
+	> 1. Melden Sie sich im [Azure-Verwaltungsportal][portal] an und klicken Sie auf **Active Directory**.
 	> 
 	> 2. Wenn kein Verzeichnis vorhanden ist, wählen Sie **Verzeichnis erstellen** und geben Sie die angeforderten Informationen ein.
 	> 
@@ -443,7 +443,7 @@ Wenn Sie ein Skript schreiben, das sich auf den Beendigungsstatus stützt, dann 
 [Azure-Website]: ../media/freetrial.png
 [Vorschaufunktion auswählen]: ../media/antares-iaas-preview-02.png
 [Abonnement auswählen]: ../media/antares-iaas-preview-03.png
-[free-trial]: http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A7171371E
+[kostenlose Testversion]: http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A7171371E
 [advanced-bash]: http://tldp.org/LDP/abs/html/
 [script]: http://en.wikipedia.org/wiki/Shell_script
 [batch]: http://technet.microsoft.com/library/bb490890.aspx

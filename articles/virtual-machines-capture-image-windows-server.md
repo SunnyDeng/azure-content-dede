@@ -20,7 +20,7 @@
 
 Dieser Artikel erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Windows läuft, um ihn wie eine Vorlage zum Erstellen anderer virtueller Computer zu verwenden. Diese Vorlage umfasst den Betriebssystemdatenträger und alle an den virtuellen Computer angefügten Datenträger. Da die Vorlage keine Netzwerkkonfiguration enthält, müssen Sie die Konfiguration später vornehmen, wenn Sie die anderen virtuellen Computer erstellen, die auf dieser Vorlage basieren.
 
-Azure behandelt diese Vorlage als ein lokales Image und speichert es unter **My Images**. Hier werden sämtliche Images abgelegt, die Sie hochladen. Weitere Informationen zu Images finden Sie unter [Über Images virtueller Computer in Azure] [].
+Azure behandelt diese Vorlage als ein lokales Image und speichert es unter **My Images**. Hier werden sämtliche Images abgelegt, die Sie hochladen. Weitere Informationen zu Images finden Sie unter [Über Images virtueller Computer in Azure][].
 
 ##Voraussetzungen##
 
@@ -76,7 +76,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe der Methode **Aus Katalog** einen benutzerdefinierten virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][].
 
 	
-[Informationen zu virtuellen Computern in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
+[Über Images virtueller Computer in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
 [Erstellen eines benutzerdefinierten virtuellen Computers]: ../virtual-machines-create-custom/
 [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer]: ../storage-windows-attach-disk/
 [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]:http://www.windowsazure.com/manage/windows/how-to-guides/log-on-a-windows-vm/
