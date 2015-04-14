@@ -1,8 +1,8 @@
-﻿## Erstellen eines Azure-Speicherkontos
+## Erstellen eines Azure-Speicherkontos
 
 Für Azure-Speicher benötigen Sie ein Speicherkonto. Sie 
 können ein Speicherkonto folgendermaßen erstellen. (Sie können
-ein Speicherkonto auch mithilfe der Azure Service Management-Clientbibliothek oder der Dienstverwaltung [REST-API erstellen.)
+ein Speicherkonto auch mithilfe der Azure Service Management-Clientbibliothek oder der Dienstverwaltung [REST-API] erstellen.)
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal] an.
 
@@ -32,6 +32,6 @@ ein Speicherkonto auch mithilfe der Azure Service Management-Clientbibliothek od
 [REST-API]: http://msdn.microsoft.com/library/azure/hh264518.aspx
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 [plus-new]: ./media/storage-create-account-include/plus-new.png
-[speicher-schnell-erstellen]: ./media/storage-create-account-include/quick-storage-2.png
+[quick-create-storage]: ./media/storage-create-account-include/quick-storage-2.png
 
 <!--HONumber=49-->
