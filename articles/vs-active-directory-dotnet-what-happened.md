@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="Erste Schritte mit Active Directory-Authentifizierung – Was ist passiert?" 
-	description="Beschreibt, was mit Ihrem Azure Active Directory-Projekt in Visual Studio passiert ist"
+	pageTitle="Erste Schritte mit Active Directory-Authentifizierung - Was ist passiert?" 
+	description="Beschreibt, was mit Ihrem Azure Active Directory-Projekt in Visual Studio passiert ist" 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="kempb" 
@@ -16,9 +16,11 @@
 	ms.date="02/02/2015" 
 	ms.author="kempb"/>
 
+# Was ist mit meinem Projekt passiert?
+
 > [AZURE.SELECTOR]
-> - [Erste Schritte](/documentation/articles/vs-active-directory-dotnet-getting-started/)
-> - [Was ist passiert?](/documentation/articles/vs-active-directory-dotnet-what-happened/)
+> - [Erste Schritte](vs-active-directory-dotnet-getting-started.md)
+> - [Was ist passiert?](vs-active-directory-dotnet-what-happened.md)
 
 ###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
  
@@ -53,13 +55,13 @@ Verweise wurden hinzugefügt.
 
 #####Ihrem Projekt wurden Codedateien hinzugefügt 
 
-Eine Authentifizierungsstartklasse (App_Start/Startup.Auth.cs) wurde Ihrem Projekt hinzugefügt. Sie enthält Startlogik für die Azure AD-Authentifizierung. Außerdem wurde eine Controllerklasse (Controllers/AccountController.cs) hinzugefügt, die SignIn()- und SignOut()-Methoden enthält. Schließlich wurde noch eine Teilansicht (Views/Shared/_LoginPartial.cshtml) hinzugefügt, die einen Aktionslink für SignIn/SignOut enthält. 
+Die Authentifizierungsstartklasse `App_Start/Startup.Auth.cs` wurde Ihrem Projekt hinzugefügt. Sie enthält Startlogik für die Azure AD-Authentifizierung. Außerdem wurde eine Controllerklasse ("Controllers/AccountController.cs") hinzugefügt, die die Methoden `SignIn()` und `SignOut()` enthält. Schließlich wurde die Teilansicht `Views/Shared/_LoginPartial.cshtml` hinzugefügt, die einen Aktionslink für "SignIn/SignOut" enthält. 
 
 #####Ihrem Projekt wurde Startcode hinzugefügt
  
-Wenn Sie bereits eine Startklasse in Ihrem Projekt verwendet haben, wurde die Methode **Configuration** so aktualisiert, dass sie einen Aufruf von ConfigureAuth(app) enthält. Andernfalls wurde Ihrem Projekt eine Startklasse hinzugefügt. 
+Wenn Sie bereits eine Startklasse in Ihrem Projekt verwendet haben, wurde die **Configuration**-Methode so aktualisiert, dass sie einen Aufruf von `ConfigureAuth(app)` enthält. Andernfalls wurde Ihrem Projekt eine Startklasse hinzugefügt. 
 
-#####Ihre Datei app.config oder web.config weist neue Konfigurationswerte auf 
+#####Ihre Datei "app.config" oder "web.config" weist neue Konfigurationswerte auf 
 
 Die folgenden Konfigurationseinträge wurden hinzugefügt. 
 	<pre>
@@ -75,4 +77,4 @@ Eine Azure AD-Anwendung wurde in dem Verzeichnis erstellt, das Sie im Assistente
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!--HONumber=46--> 
+<!--HONumber=49-->

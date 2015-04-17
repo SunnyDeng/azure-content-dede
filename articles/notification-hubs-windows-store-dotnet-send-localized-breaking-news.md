@@ -18,7 +18,7 @@
 # Verwenden von Notification Hubs zum Senden lokalisierter Nachrichten
 
 <div class="dev-center-tutorial-selector sublanding"> 
-    	<a href="/de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/" title="Windows Store C#" class="current">Windows Store C#</a><a href="/de-de/documentation/articles/notification-hubs-ios-send-localized-breaking-news/" title="iOS">iOS</a>
+    	<a href="/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/" title="Windows Store C#" class="current">Windows Store C#</a><a href="/documentation/articles/notification-hubs-ios-send-localized-breaking-news/" title="iOS">iOS</a>
 </div>
 
 In diesem Thema wird gezeigt, wie Sie mit der **Vorlagen**-Funktion von Azure Notification Hubs Benachrichtigungen senden können, die je nach Sprache und Gerät lokalisiert wurden. In diesem Lernprogramm beginnen Sie mit der Windows Store-App, die Sie in [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] erstellt haben. Sie werden anschließend in der Lage sein, sich für Kategorien zu registrieren, die Sie interessieren, eine Sprache für die Benachrichtigungen auszuwählen und nur Pushbenachrichtigungen für diese Kategorien in der jeweiligen Sprache zu empfangen.
@@ -28,7 +28,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 1. [Konzepte von Vorlagen]
 2. [Die App-Benutzeroberfläche]
 3. [Erstellen der Windows Store-Client-App]
-4. [Senden von Benachrichtigungen von Ihrem Back-End aus]
+4. [Senden von Benachrichtigungen vom Back-End aus]
 
 
 Dieses Szenario besteht aus zwei Teilen:
@@ -74,7 +74,7 @@ Anschließend stellen wir sicher, dass sich die Geräte mit einer Vorlage regist
 
 
 
-Vorlagen sind ein mächtiges Werkzeug, und Sie finden weitere Informationen in unserem [Notification Hubs-Leitfaden]. Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification Hub-Informationen für Windows Store].
+Vorlagen sind ein mächtiges Werkzeug, und Sie finden weitere Informationen in unserem [Notification Hubs-Leitfaden]. Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification Hub-Informationen für Windows Store][Notification Hubs-Anleitung für Windows Store].
 
 
 <h2><a name="ui"></a>Die App-Benutzeroberfläche</h2>
@@ -82,7 +82,7 @@ Vorlagen sind ein mächtiges Werkzeug, und Sie finden weitere Informationen in u
 Wir werden nun die App zu aktuellen Nachrichten aus dem Thema [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] so modifizieren, dass aktuelle Nachrichten mit Vorlagen verschickt werden.
 
 
-Um lokalisierte Nachrichten empfangen zu können, müssen Sie die  *native*-Registrierungen (d. h. die Registrierungen, in denen Sie eine Vorlage angeben) durch Vorlagenregistrierungen ersetzen.
+Um lokalisierte Nachrichten empfangen zu können, müssen Sie die *native*-Registrierungen (d. h. die Registrierungen, in denen Sie eine Vorlage angeben) durch Vorlagen-Registrierungen ersetzen.
 
 
 In Ihrer Windows Store-App:
@@ -183,13 +183,13 @@ Notifications-Singleton in der  *OnLaunched*-Methode:
 
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs: ASP.NET], [Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services] sowie unter [Notification Hubs-Leitfaden]. Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification Hub-Informationen für Windows Store].
+Weitere Informationen finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs: ASP.NET], [Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services] sowie unter [Notification Hubs-Leitfaden]. Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification Hub-Informationen für Windows Store][Notification Hubs-Anleitung für Windows Store].
 
 <!-- Anchors. -->
 [Konzepte von Vorlagen]: #concepts
 [Die App-Benutzeroberfläche]: #ui
 [Erstellen der Windows Store-Client-App]: #building-client
-[Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
+[Senden von Benachrichtigungen vom Back-End aus]: #send
 [Nächste Schritte]:#next-steps
 
 <!-- Images. -->
@@ -215,26 +215,26 @@ Weitere Informationen finden Sie unter [Benachrichtigen von Benutzern mit Notifi
 
 
 <!-- URLs. -->
-[Mobile Service]: /de-de/develop/mobile/tutorials/get-started
-[Benachrichtigen von Benutzern mit Notification Hubs: ASP.NET]: /de-de/manage/services/notification-hubs/notify-users-aspnet
-[Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services]: /de-de/manage/services/notification-hubs/notify-users
-[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-dotnet 
+[Mobile Service]: /develop/mobile/tutorials/get-started
+[Benachrichtigen von Benutzern mit Notification Hubs: ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
+[Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services]: /manage/services/notification-hubs/notify-users
+[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: /manage/services/notification-hubs/breaking-news-dotnet 
 
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
-[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-dotnet
-[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-dotnet
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-dotnet
-[Senden von Pushbenachrichtigungen an App-Benutzer]: /de-de/develop/mobile/tutorials/push-notifications-to-app-users-dotnet
-[Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-dotnet
-[JavaScript und HTML]: /de-de/develop/mobile/tutorials/get-started-with-push-js
+[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Erste Schritte mit Daten]: /develop/mobile/tutorials/get-started-with-data-dotnet
+[Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-dotnet
+[Erste Schritte mit Pushbenachrichtigungen]: /develop/mobile/tutorials/get-started-with-push-dotnet
+[Senden von Pushbenachrichtigungen an App-Benutzer]: /develop/mobile/tutorials/push-notifications-to-app-users-dotnet
+[Autorisieren von Benutzern mit Skripts]: /develop/mobile/tutorials/authorize-users-in-scripts-dotnet
+[JavaScript und HTML]: /develop/mobile/tutorials/get-started-with-push-js
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs - Anleitungen für iOS]: http://msdn.microsoft.com/library/jj927168.aspx
-[Notification Hub-Informationen für Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
+[Notification Hubs-Anleitung für Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
 
-<!--HONumber=45--> 
+<!--HONumber=49-->

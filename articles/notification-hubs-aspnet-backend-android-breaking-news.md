@@ -19,20 +19,20 @@
 
 # Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten
 <div class="dev-center-tutorial-selector sublanding">     	
-	<a href="/de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/" title="Windows Universal" >Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-windows-phone-send-breaking-news/" title="Windows Phone">Windows Phone</a><a href="/de-de/documentation/articles/notification-hubs-ios-send-breaking-news/" title="iOS">iOS</a>
-	<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/" title="Android" class="current">Android</a>
+	<a href="/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/" title="Windows Universal" >Windows Universal</a><a href="/documentation/articles/notification-hubs-windows-phone-send-breaking-news/" title="Windows Phone">Windows Phone</a><a href="/documentation/articles/notification-hubs-ios-send-breaking-news/" title="iOS">iOS</a>
+	<a href="/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/" title="Android" class="current">Android</a>
 </div>
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Benachrichtigungen zu aktuellen Nachrichten an eine Android-Anwendung senden können. Sie werden anschließend in der Lage sein, sich für Kategorien aktueller Nachrichten zu registrieren, die Sie interessieren, und nur Pushbenachrichtigungen für diese Kategorien zu empfangen. Dieses Szenario ist ein häufiges Muster für viele Anwendungen, bei denen Benachrichtigungen an Benutzergruppen gesendet werden müssen, die zuvor Interesse daran bekundet haben, zum Beispiel RSS-Reader, Apps für Musikliebhaber, etc. 
 
-Übertragungsszenarien werden durch das Einfügen von einem oder mehreren Tags möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Leitfaden zu Notification Hubs]. 
+Übertragungsszenarios werden durch das Einfügen von einem oder mehreren _Tags_ möglich, wenn eine Registrierung im Notification Hub erstellt wird. Wenn Benachrichtigungen an ein Tag gesendet werden, erhalten alle Geräte, die für das Tag registriert wurden, diese Benachrichtigung. Da es sich bei Tags um Zeichenfolgen handelt, müssen diese nicht im Voraus bereitgestellt werden. Weitere Informationen zu Tags finden Sie unter [Notification Hubs-Leitfaden]. 
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung dieses Szenarios behandelt:
 
 1. [Hinzufügen der Kategorieauswahl zur App]
 2. [Registrieren für Benachrichtigungen]
-3. [Senden von Benachrichtigungen von Ihrem Back-End aus]
-4. [Ausführen der Anwendung und Erzeugen von Benachrichtigungen]
+3. [Senden von Benachrichtigungen vom Back-End aus]
+4. [Ausführen der App und Erzeugen von Benachrichtigungen]
 
 Dieses Thema baut auf der App auf, die Sie in [Erste Schritte mit Notification Hubs][get-started] erstellt haben. Bevor Sie dieses Lernprogramm beginnen, müssen Sie [Erste Schritte mit Notification Hubs][get-started] abgeschlossen haben.
 
@@ -176,7 +176,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 		// private GoogleCloudMessaging gcm;
 		// private NotificationHub hub;
 		private Notifications notifications;
- 
+
 5. Entfernen Sie dann in der **onCreate**-Methode die Initialisierung des **hub**-Felds und der **registerWithNotificationHubs**-Methode. Fügen Sie dann die folgenden Zeilen hinzu, die eine Instanz der Klasse **Notifications** initialisieren. Die Methode sollte die folgenden Zeilen enthalten:
 
 		@Override
@@ -236,13 +236,13 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hu
 
 	Dadurch werden die in der Klasse definierten Kategorien zurückgegeben.
 
-2. Fügen Sie nun diesen Code am Ende der Methode **onCreate** in der Klasse **MainActivity** ein:
+2. Fügen Sie nun diesen Code am Ende der **onCreate**-Methode in der **MainActivity**-Klasse ein:
 
 		notifications.subscribeToCategories(notifications.retrieveCategories());
 
-	Dadurch wird sichergestellt, dass bei jedem Start der App die Kategorien vom lokalen Speicher abgerufen werden und eine Registrierung für diese Kategorien abgefragt wird. Die Methode **InitNotificationsAsync** wurde als Teil des Lernprogramms [Erste Schritte mit Notification Hubs] erstellt, wird in diesem Thema jedoch nicht benötigt.
+	Dadurch wird sichergestellt, dass bei jedem Start der App die Kategorien vom lokalen Speicher abgerufen werden und eine Registrierung für diese Kategorien abgefragt wird. Die **InitNotificationsAsync**-Methode wurde als Teil des Lernprogramms [Erste Schritte mit Notification Hubs][get-started] erstellt, wird in diesem Thema jedoch nicht benötigt.
 
-3. Fügen Sie anschließend die folgende Methode zu **MainActivity** hinzu:
+3. Fügen Sie anschließend **MainActivity** die folgende Methode hinzu:
 
 		@Override
 		protected void onStart() {
@@ -266,13 +266,13 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hu
 
 	Dadurch wird die Hauptaktivität basierend auf dem Status der zuvor gespeicherten Kategorien aktualisiert. 
 
-Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. Als nächstes wird ein Back-End definiert, das Kategoriebenachrichtigungen an diese App senden kann.
+Die App ist jetzt vollständig und kann verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert. Als nächstes wird ein Back-End definiert, das Kategoriebenachrichtigungen an diese App senden kann.
 
-<h2><a name="send"></a>Senden von Benachrichtigungen von Ihrem Back-End aus</h2>
+<h2><a name="send"></a>Senden von Benachrichtigungen vom Back-End aus</h2>
 
 [AZURE.INCLUDE [notification-hubs-back-end](../includes/notification-hubs-back-end.md)]
 
-##<a name="test-app"></a>Ausführen der Anwendung und Erzeugen von Benachrichtigungen
+##<a name="test-app"></a>Ausführen der App und Erzeugen von Benachrichtigungen
 
 1. Erstellen Sie die App in Eclipse, und starten Sie sie auf einem Gerät oder in einem Emulator.
 	
@@ -280,7 +280,7 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 
 2. Aktivieren Sie eine oder mehrere Kategorien, und klicken Sie dann auf **Abonnieren**.
 
-	Die App konvertiert die ausgewählten Kategorien in Tags, und fordert eine neue Geräteregistrierung für die ausgewählten Tags vom Notification Hub an. Die registrierten Kategorien werden zurückgegeben und in einem Dialogfeld angezeigt.
+	Die App konvertiert die ausgewählten Kategorien in Tags und fordert eine neue Geräteregistrierung für die ausgewählten Tags vom Notification Hub an. Die registrierten Kategorien werden zurückgegeben und in einem Dialogfeld angezeigt.
 
 4. Verwenden Sie eine dieser Möglichkeiten, um eine neue Benachrichtigung vom Back-End zu versenden:
 
@@ -292,7 +292,7 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategorie übermittelt werden. Sie können nun eins der folgenden Lernprogramme durchführen, die andere komplexe Notification Hub-Szenarien zeigen:
+In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategorie übermittelt werden. Sie können nun eines der folgenden Lernprogramme durchführen, die andere komplexe Notification Hub-Szenarios zeigen:
 
 + [Verwenden von Notification Hubs zum Übermitteln von lokalisierten aktuellen Nachrichten]
 
@@ -306,25 +306,25 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 <!-- Anchors. -->
 [Hinzufügen der Kategorieauswahl zur App]: #adding-categories
 [Registrieren für Benachrichtigungen]: #register
-[Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
-[Ausführen der Anwendung und Erzeugen von Benachrichtigungen]: #test-app
+[Senden von Benachrichtigungen vom Back-End aus]: #send
+[Ausführen der App und Erzeugen von Benachrichtigungen]: #test-app
 [Nächste Schritte]: #next-steps
 
 <!-- Images. -->
 [A1]: ./media/notification-hubs-aspnet-backend-android-breaking-news/android-breaking-news1.PNG
 
 <!-- URLs.-->
-[get-started]: /de-de/documentation/articles/notification-hubs-android-get-started/
-[Verwenden von Notification Hubs zum Übermitteln von lokalisierten aktuellen Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-localized-dotnet/ 
-[Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/manage/services/notification-hubs/notify-users
-[Mobile Service]: /de-de/develop/mobile/tutorials/get-started/
-[Leitfaden zu Notification Hubs]: http://msdn.microsoft.com/library/jj927170.aspx
+[get-started]: notification-hubs-android-get-started.md
+[Verwenden von Notification Hubs zum Übermitteln von lokalisierten aktuellen Nachrichten]: /manage/services/notification-hubs/breaking-news-localized-dotnet/ 
+[Benachrichtigen von Benutzern mit Notification Hubs]: /manage/services/notification-hubs/notify-users
+[Mobile Service]: /develop/mobile/tutorials/get-started/
+[Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs-Anleitung für Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 
-<!--HONumber=45--> 
+<!--HONumber=49-->
