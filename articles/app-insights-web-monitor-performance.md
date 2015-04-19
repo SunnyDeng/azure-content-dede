@@ -35,7 +35,7 @@ Falls Sie Application Insights Ihrem Projekt noch nicht hinzugefügt haben (d. h
 
 * [Application Insights Ihrem App-Projekt in Visual Studio hinzufügen][greenbrown] (empfohlene Methode). Sie können sowohl passive Leistungsüberwachung als auch Diagnoseprotokollierung und Nutzungsverfolgung einsetzen.
 * [Leistung einer Live-Website jetzt überwachen][redfield] - Bei dieser Methode müssen Sie das App-Projekt nicht aktualisieren bzw. die Webseite nicht erneut bereitstellen.
-* [Für eine Microsoft Azure-Website](../insights-how-to-customize-monitoring/)  werden Metriken bereits im Überwachungsbereich einer Website angezeigt. 
+* [Für eine Microsoft Azure-Website](insights-how-to-customize-monitoring.md)  werden Metriken bereits im Überwachungsbereich einer Website angezeigt. 
 
 
 ## <a name="view"></a>Berichte anzeigen

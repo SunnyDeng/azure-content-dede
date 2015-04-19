@@ -36,6 +36,6 @@ Sobald Sie einen CDN-Endpunkt für Ihren Ursprung, z. B. ein Speicherkonto oder 
 > Hinweis: Die für den Endpunkt erstellte Konfiguration ist nicht sofort verfügbar. Die Verteilung der Registrierung über das CDN-Netzwerk kann bis zu 60 Minuten dauern. Benutzer, die den CDN-Domänennamen sofort zu verwenden versuchen, sehen u. U. den Statuscode 400 (Unzulässige Anforderung), bis die Inhalte über das CDN verfügbar sind.
 
 # Siehe auch
-[Zuordnen von Content Delivery Network (CDN)-Inhalten zu einer benutzerdefinierten Domäne](./cdn-map-content-to-custom-domain.md)
+[Zuordnen von Content Delivery Network (CDN)-Inhalten zu einer benutzerdefinierten Domäne](cdn-map-content-to-custom-domain.md)
 
 <!--HONumber=49-->

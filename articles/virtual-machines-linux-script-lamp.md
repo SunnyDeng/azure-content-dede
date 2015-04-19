@@ -30,11 +30,11 @@ Erstellen Sie für dieses Beispiel zwei Azure-VMs, auf denen Ubuntu 14.04 ausgef
 
 Darüber hinaus benötigen Sie ein Azure Storage-Konto und einen Schlüssel für den Zugriff (Sie erhalten diesen über das Azure-Portal).
 
-Wenn Sie beim Erstellen von Linux-VMs auf Azure Unterstützung benötigen, finden Sie weitere Informationen unter [Erstellen eines virtuellen Linux-Computers](../virtual-machines-linux-tutorial/).
+Wenn Sie beim Erstellen von Linux-VMs auf Azure Unterstützung benötigen, finden Sie weitere Informationen unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md).
 
 Wenngleich bei den Installationsbefehlen von Ubuntu ausgegangen wird, können Sie die allgemeinen Schritte für beliebige Distributionen anpassen.
 
-Auf der  *script-vm*-VM muss xplat-cli installiert sein, mit einer funktionierenden Verbindung zu Azure. Hilfe zu diesem Thema finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli/).
+Auf der  *script-vm*-VM muss xplat-cli installiert sein, mit einer funktionierenden Verbindung zu Azure. Hilfe zu diesem Thema finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli.md).
 
 ## Hochladen eines Skripts
 
@@ -104,6 +104,6 @@ Nachfolgend finden Sie einige zusätzliche Ressourcen für xplat-cli, Linux und 
 
 [Azure-Erweiterungen für Linux (GitHub)](https://github.com/Azure/azure-linux-extensions)
 
-[Linux und Open-Source-Computing auf Azure](../virtual-machines-linux-opensource/)
+[Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
 
 <!--HONumber=47-->

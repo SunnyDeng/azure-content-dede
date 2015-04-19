@@ -18,7 +18,7 @@
 
 # Verwenden von Elastic Scale mit Entity Framework 
  
-Sie können Elastic Scale von Azure SQL-Datenbank mit Microsofts Entity Framework (EF) zum Erstellen von Anwendungen verwenden. Elastic Scale ermöglicht das Vergrößern und Verkleinern der Kapazität durch Sharding und die horizontale Skalierung der Datenebene Ihrer Anwendung. Dieses Dokument zeigt, welche Änderungen in einer Entity Framework-Anwendung erforderlich sind, damit diese die Funktionen von Elastic Scale nutzen kann. Der Schwerpunkt liegt darin, die [Elastic Scale-Shardverwaltung](http://go.microsoft.com/?linkid=9862595) und das [datenabhängige Routing](./sql-database-elastic-scale-data-dependent-routing.md) mit dem Entity Framework-Ansatz **Code First** zusammenzubringen. Das Lernprogramm [Code First - Neue Datenbank](http://msdn.microsoft.com/data/jj193542.aspx) für EF wird im gesamten Dokument als Beispiel verwendet. Der zu diesem Dokument gehörige Beispielcode ist Teil der Elastic Scale-Beispiele in den Visual Studio-Codebeispielen.
+Sie können Elastic Scale von Azure SQL-Datenbank mit Microsofts Entity Framework (EF) zum Erstellen von Anwendungen verwenden. Elastic Scale ermöglicht das Vergrößern und Verkleinern der Kapazität durch Sharding und die horizontale Skalierung der Datenebene Ihrer Anwendung. Dieses Dokument zeigt, welche Änderungen in einer Entity Framework-Anwendung erforderlich sind, damit diese die Funktionen von Elastic Scale nutzen kann. Der Schwerpunkt liegt darin, die [Elastic Scale-Shardverwaltung](http://go.microsoft.com/?linkid=9862595) und das [datenabhängige Routing](sql-database-elastic-scale-data-dependent-routing.md) mit dem Entity Framework-Ansatz **Code First** zusammenzubringen. Das Lernprogramm [Code First - Neue Datenbank](http://msdn.microsoft.com/data/jj193542.aspx) für EF wird im gesamten Dokument als Beispiel verwendet. Der zu diesem Dokument gehörige Beispielcode ist Teil der Elastic Scale-Beispiele in den Visual Studio-Codebeispielen.
   
 ## Herunterladen und Ausführen des Beispielcodes
 So laden Sie den Code für diesen Artikel herunter:
@@ -53,7 +53,7 @@ Alle diese Ansätze basieren auf der DbContext-Klasse, die Datenbankverbindungen
 
 ## Elastic Scale - Annahmen 
 
-Begriffsdefinitionen finden Sie im [Elastic Scale-Glossar](./sql-database-elastic-scale-glossary.md).
+Begriffsdefinitionen finden Sie im [Elastic Scale-Glossar](sql-database-elastic-scale-glossary.md).
 
 Mit Elastic Scale für Azure SQL-Datenbank definieren Sie Partitionen für Ihre Anwendungsdaten, die als Shardlets bezeichnet werden.  Shardlets werden durch einen Sharding-Schlüssel identifiziert und bestimmten Datenbanken zugeordnet. Eine Anwendung kann so viele Datenbanken wie erforderlich nutzen und die Shardlets verteilen, um genügend Kapazität oder Leistung für die aktuell gegebenen Geschäftsanforderungen bereitzustellen. Die Zuordnung der Sharding-Schlüsselwerte zu den Datenbanken wird in einer Shard-Zuordnung gespeichert, die durch die Elastic Scale-APIs bereitgestellt wird. Diese Funktion wird hier Shard-Zuordnungsverwaltung (Shard Map Management, SMM) genannt. Die Shard-Zuordnung fungiert auch als Broker von Datenbankverbindungen für Anforderungen, die einen Sharding-Schlüssel enthalten. Dies wird als datenabhängiges Routing bezeichnet. 
  

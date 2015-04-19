@@ -25,7 +25,7 @@
 In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer (Azure-VM) zu erstellen. In diesem Lernprogramm wird ein Windows Server-Image verwendet, aber dies ist nur eines der über Azure verfügbaren zahlreichen Images. Dies umfasst Windows-Betriebssysteme, Linux-basierte Betriebssysteme und Images mit vorinstallierten Anwendungen. Welche Images Sie auswählen können, hängt jeweils von der Art Ihres Abonnements ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
 
-Sie können auch mithilfe [eigener Images als Vorlagen entsprechende virtuelle Windows-Computer erstellen](../virtual-machines-create-upload-vhd-windows-server/). Weitere Informationen zu virtuellen Azure-Computern finden Sie unter [Übersicht über Azure Virtual Machines](http://msdn.microsoft.com/library/azure/jj156143.aspx).
+Sie können auch mithilfe [eigener Images als Vorlagen entsprechende virtuelle Windows-Computer erstellen](virtual-machines-create-upload-vhd-windows-server.md). Weitere Informationen zu virtuellen Azure-Computern finden Sie unter [Übersicht über Azure Virtual Machines](http://msdn.microsoft.com/library/azure/jj156143.aspx).
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
@@ -106,11 +106,11 @@ In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträger an den virtu
 
 Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azure finden Sie in den folgenden Artikeln:
 
-[Verbinden virtueller Computer mit einem virtuellen Netzwerk oder einem Cloud-Dienst](../cloud-services-connect-virtual-machine/)
+[Verbinden virtueller Computer mit einem virtuellen Netzwerk oder einem Cloud-Dienst](cloud-services-connect-virtual-machine.md)
 
-[Erstellen und Hochladen einer Windows Server-VHD nach Azure](../virtual-machines-create-upload-vhd-windows-server/)
+[Erstellen und Hochladen einer Windows Server-VHD nach Azure](virtual-machines-create-upload-vhd-windows-server.md)
 
-[Verwalten der Verfügbarkeit virtueller Computer](../manage-availability-virtual-machines/)
+[Verwalten der Verfügbarkeit virtueller Computer](manage-availability-virtual-machines.md)
 
 [Starten, Beenden und Löschen virtueller Computer](http://msdn.microsoft.com/library/azure/dn763935.aspx)
 

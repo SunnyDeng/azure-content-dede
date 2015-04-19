@@ -38,7 +38,7 @@ Dieses Lernprogramm beschreibt Folgendes:
 
 Nachdem der virtuelle Computer erstellt wurde, können Sie optional einen zusätzlichen Datenträger anfügen. Dies empfiehlt sich für Produktionsarbeitslasten und um zu vermeiden, dass zu wenig Speicherplatz auf dem OS-Laufwerk (C:) verfügbar ist. Dieses ist aktuell auf 127 GB begrenzt und beinhaltet das Betriebssystem.
 
-Weitere Informationen finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../storage-windows-attach-disk/) Folgen Sie den Anweisungen für das Anfügen einer leeren Festplatte. Legen Sie die Host-Cache-Einstellung auf **Keine** oder **Schreibgeschützt** fest.
+Weitere Informationen finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md) Folgen Sie den Anweisungen für das Anfügen einer leeren Festplatte. Legen Sie die Host-Cache-Einstellung auf **Keine** oder **Schreibgeschützt** fest.
 
 ## Melden Sie sich beim virtuellen Computer an.
 
@@ -91,7 +91,7 @@ Befolgen Sie diese Schritte, um die Community-Version von MySQL Server zu instal
 Wenn der MySQL Server-Dienst für die MySQL-Clientcomputer im Internet verfügbar sein soll, müssen Sie einen Endpunkt für den TCP-Port konfigurieren, auf dem der MySQL Server-Dienst lauscht, und eine zusätzliche Windows-Firewallregel erstellen. Dies ist der TCP-Port 3306, es sei denn, Sie haben einen anderen Port auf der Seite "Typ und Netzwerke" (Schritt 10 des vorherigen Verfahrens) angegeben. 
 
 
-> [AZURE.NOTE] Sie sollten die einhergehenden Auswirkungen auf die Sicherheit sorgfältig abwägen, da dadurch der MySQL-Server-Dienst auf allen Computern im Internet verfügbar ist. Sie können den Satz der Quell-IP-Adressen definieren, die den Endpunkt mit einer Zugriffssteuerungsliste (ACL) verwenden dürfen. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](../virtual-machines-set-up-endpoints/).
+> [AZURE.NOTE] Sie sollten die einhergehenden Auswirkungen auf die Sicherheit sorgfältig abwägen, da dadurch der MySQL-Server-Dienst auf allen Computern im Internet verfügbar ist. Sie können den Satz der Quell-IP-Adressen definieren, die den Endpunkt mit einer Zugriffssteuerungsliste (ACL) verwenden dürfen. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
 
 
 So konfigurieren Sie einen Endpunkt für den MySQL Server-Dienst:

@@ -18,11 +18,11 @@
 
 # Verwenden von Azure-BLOB-Speicher mit dem Webaufträge-SDK
 
-Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-BLOB erstellt oder aktualisiert wird. Die Codebeispiele verwenden das [Webaufträge-SDK](../websites-dotnet-webjobs-sdk/) 1.x.
+Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-BLOB erstellt oder aktualisiert wird. Die Codebeispiele verwenden das [Webaufträge-SDK](websites-dotnet-webjobs-sdk.md) 1.x.
 
-Codebeispiele, die zeigen, wie BLOBs erstellt werden , finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](../websites-dotnet-webjobs-sdk-storage-queues-how-to/). .
+Codebeispiele, die zeigen, wie BLOBs erstellt werden , finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md). .
 		
-Im Leitfaden wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](../websites-dotnet-webjobs-sdk-get-started/)..
+Im Leitfaden wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](websites-dotnet-webjobs-sdk-get-started.md)..
 
 ## Inhaltsverzeichnis
 
@@ -223,7 +223,7 @@ Wenn Sie eine erneute Verarbeitung eines BLOBs erzwingen möchten, können Sie d
 
 ## <a id="queues"></a>Verwandte in den Artikeln zu Warteschlangen behandelte Themen
 
-Informationen zur Handhabung der BLOB-Verarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarien für das Webaufträge-SDK, die nicht spezifisch für die BLOB-Verarbeitung sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](../websites-dotnet-webjobs-sdk-storage-queues-how-to/). .
+Informationen zur Handhabung der BLOB-Verarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarien für das Webaufträge-SDK, die nicht spezifisch für die BLOB-Verarbeitung sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md). .
 
 In diesem Artikel werden u. a. die folgenden Themen behandelt:
 

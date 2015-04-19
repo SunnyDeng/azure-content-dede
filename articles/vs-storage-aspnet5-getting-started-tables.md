@@ -17,15 +17,15 @@
 	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
-> - [Was ist passiert?](/documentation/articles/vs-storage-aspnet5-what-happened/)
+> - [Erste Schritte](vs-storage-aspnet5-getting-started-tables.md)
+> - [Was ist passiert?](vs-storage-aspnet5-what-happened.md)
 
 ## Erste Schritte mit Azure Storage (ASP.NET vNext-Projekte)
 
 > [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
-> - [Warteschlangen](/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
-> - [Tabellen](/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+> - [Blobs](vs-storage-aspnet5-getting-started-blobs.md)
+> - [Warteschlangen](vs-storage-aspnet5-getting-started-queues.md)
+> - [Tabellen](vs-storage-aspnet5-getting-started-tables.md)
 
 Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet.  Weitere Informationen finden Sie unter[Verwenden von Tabellenspeicher aus .NET](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/#create-table "How to use Table Storage from .NET").
 

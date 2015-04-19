@@ -114,7 +114,7 @@ Wenn Sie im Abschnitt **Spouts** oder **Bolts** einen Spout auswählen, werden d
 
 ## HDInsight Tools für Visual Studio
 
-Mithilfe der HDInsight Tools können C#- oder hybride Topologien an Ihre Storm-Cluster übermittelt werden. Für die folgenden Schritte wird eine Beispielanwendung verwendet. Informationen zum Erstellen Ihrer eigenen Topologien mithilfe der HDInsight Tools finden Sie unter [Entwickeln von C#-Topologien mithilfe der HDInsight Tools für Visual Studio](../hdinsight-storm-develop-csharp-visual-studio-topology/).
+Mithilfe der HDInsight Tools können C#- oder hybride Topologien an Ihre Storm-Cluster übermittelt werden. Für die folgenden Schritte wird eine Beispielanwendung verwendet. Informationen zum Erstellen Ihrer eigenen Topologien mithilfe der HDInsight Tools finden Sie unter [Entwickeln von C#-Topologien mithilfe der HDInsight Tools für Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md).
 
 Gehen Sie wie folgt vor, um ein Beispiel für den Storm-Cluster in HDInsight bereitzustellen und dann die Topologie anzuzeigen und zu verwalten.
 
@@ -166,7 +166,7 @@ Von der REST-API zurückgegebene Informationen sind möglicherweise nur innerhal
 
 ## Nächste Schritte
 
-Nachdem Sie erfahren haben, wie Sie Topologien mithilfe des Storm-Dashboards bereitstellen und überwachen, lesen Sie jetzt die Informationen zum [Entwickeln von C#-Topologien mithilfe der HDInsight Tools für Visual Studio](../hdinsight-storm-develop-csharp-visual-studio-topology/)oder zum [Entwickeln von Java-basierten Topologien mit Maven](../hdinsight-storm-develop-java-topology/).
+Nachdem Sie erfahren haben, wie Sie Topologien mithilfe des Storm-Dashboards bereitstellen und überwachen, lesen Sie jetzt die Informationen zum [Entwickeln von C#-Topologien mithilfe der HDInsight Tools für Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md)oder zum [Entwickeln von Java-basierten Topologien mit Maven](hdinsight-storm-develop-java-topology.md).
 
 
 [hdinsight-dashboard]: ./media/hdinsight-storm-deploy-monitor/dashboard-link.png

@@ -349,9 +349,9 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 ##Hochladen der JAR-Datei und Starten des Auftrags
 
-> [AZURE.NOTE] Es gibt viele Möglichkeiten, eine Datei in einen HDInsight-Cluster hochzuladen (siehe [Hochladen von Daten für Hadoop-Aufträge in HDInsight](/de-de/documentation/articles/hdinsight-upload-data/). Bei den Schritten unten kommt [Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/) zum Einsatz.
+> [AZURE.NOTE] Es gibt viele Möglichkeiten, eine Datei in einen HDInsight-Cluster hochzuladen (siehe [Hochladen von Daten für Hadoop-Aufträge in HDInsight](hdinsight-upload-data.md). Bei den Schritten unten kommt [Azure PowerShell](install-configure-powershell.md) zum Einsatz.
 
-1. Nachdem Sie [Azure PowerShell](/de-de/documentation/articles/install-configure-powershell/) installiert und konfiguriert haben, erstellen Sie eine neue Datei namens __hbase-runner.psm1__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
+1. Nachdem Sie [Azure PowerShell](install-configure-powershell.md) installiert und konfiguriert haben, erstellen Sie eine neue Datei namens __hbase-runner.psm1__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
 
 		<#
 		.SYNOPSIS

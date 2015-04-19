@@ -17,8 +17,8 @@
 # Dienstseitige Autorisierung von Benutzern in Mobile Services
 
 > [AZURE.SELECTOR-LIST (Plattform | Back-End)]
-- [(Alle | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-service-side-authorization/)
-- [(Alle | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-service-side-authorization/)
+- [(Alle | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
+- [(Alle | JavaScript)](mobile-services-javascript-backend-service-side-authorization.md)
 
 In diesem Thema wird veranschaulicht, wie serverseitige Logik verwendet werden kann, um Benutzer zu autorisieren.  In diesem Lernprogramm ändern Sie Datenzugriffsmethoden in .NET, filtern Sie Abfragen anhand von Benutzer-IDs, und gewähren Sie Benutzern nur Zugriff auf deren eigene Daten.
 

@@ -1,4 +1,4 @@
-
+﻿
 
 In der Back-End-Anwendung müssen Sie jetzt Vorlagenbenachrichtigungen statt systemeigener Nutzlasten senden. Auf diese Weise wird der Back-End-Code vereinfacht, da Sie nicht mehrere Nutzlasten für die verschiedenen Plattformen senden müssen.
 
@@ -52,4 +52,4 @@ Beachten Sie, dass dieser einfache Aufruf die korrekten lokalisierten Nachrichte
 	
 Beachten Sie, dass es in diesem Fall nicht erforderlich ist, mehrere Benachrichtigungen für verschiedene Gebietsschemas und Plattformen zu senden.
 
-<!--HONumber=49-->
+<!--HONumber=45--> 

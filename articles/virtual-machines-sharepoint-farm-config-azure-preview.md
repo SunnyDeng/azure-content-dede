@@ -26,7 +26,7 @@ Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals f�
 
 Die folgenden Abschnitte beinhalten Konfigurationsdetails für jede Farm.
 
-Weitere Informationen finden Sie unter [SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/).
+Weitere Informationen finden Sie unter [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md).
 
 ## Grundlegende SharePoint-Farm
 
@@ -121,7 +121,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 
 ## Zusätzliche Ressourcen
 
-[SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-azure-preview/)
+[SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md)
 
 [SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
 

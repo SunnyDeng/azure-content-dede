@@ -63,7 +63,7 @@ Während Sie weitere Informationen zu jedem der Azure-CLI-Befehle mithilfe der O
 ## Nächste Schritte
 
  
-* [Linux und Open-Source-Computing auf Azure](../virtual-machines-linux-opensource/)
-* [Anmelden bei einem virtuellen Computer unter Linux](../virtual-machines-linux-how-to-log-on/)
+* [Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
+* [Anmelden bei einem virtuellen Computer unter Linux](virtual-machines-linux-how-to-log-on.md)
 
 <!--HONumber=47-->

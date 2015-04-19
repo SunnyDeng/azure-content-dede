@@ -339,8 +339,8 @@ In der folgenden Tabelle werden die Funktionen von Websites, Cloud Services und 
 
 Weitere Informationen zu den drei Webhostingoptionen finden Sie in den folgenden Ressourcen:
 
-* [Einführung in Azure](../fundamentals-introduction-to-azure/)
-* [Serverhostingoptionen in Azure](../fundamentals-application-models/)
+* [Einführung in Azure](fundamentals-introduction-to-azure.md)
+* [Serverhostingoptionen in Azure](fundamentals-application-models.md)
 
 Informationen zu den ersten Schritten hinsichtlich der Option(en), die Sie für Ihre Anwendung wählen, finden Sie in folgenden Ressourcen:
 

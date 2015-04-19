@@ -20,7 +20,7 @@
 
 Linux-basierte HDInsight-Cluster bieten die Möglichkeit, den SSH-Zugriff mithilfe eines Kennworts oder eines SSH-Schlüssels zu schützen. Dieses Dokument enthält Informationen zur Verwendung von SSH mit HDInsight auf Linux-, Unix- oder OS X-Clients.
 
-> [AZURE.NOTE] Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie einen Linux-, Unix- oder OS X-Client verwenden. Obwohl diese Schritte auf einem Windows-Client ausgeführt werden können, wenn Sie ein Paket installiert haben, das `ssh` und `ssh-keygen` (z. B. Git für Windows) bereitstellt, wird empfohlen, dass Windows-Clients die Schritte unter [Verwenden von SSH mit Linux-basiertem HDInsight (Hadoop) unter Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/) befolgen.
+> [AZURE.NOTE] Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie einen Linux-, Unix- oder OS X-Client verwenden. Obwohl diese Schritte auf einem Windows-Client ausgeführt werden können, wenn Sie ein Paket installiert haben, das `ssh` und `ssh-keygen` (z. B. Git für Windows) bereitstellt, wird empfohlen, dass Windows-Clients die Schritte unter [Verwenden von SSH mit Linux-basiertem HDInsight (Hadoop) unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md) befolgen.
 
 ## Voraussetzungen
 
@@ -229,10 +229,10 @@ Nachdem Sie diese Schritte ausgeführt haben, werden ausschließlich Anforderung
 
 Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüssels erfolgt, erfahren Sie, wie Sie MapReduce mit Hadoop für HDInsight verwenden.
 
-* [Verwenden von Hive mit HDInsight](../hdinsight-use-hive/)
+* [Verwenden von Hive mit HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von Pig mit HDInsight](../hdinsight-use-pig/)
+* [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 
-* [Use MapReduce jobs with HDInsight](../hdinsight-use-mapreduce/)
+* [Use MapReduce jobs with HDInsight](hdinsight-use-mapreduce.md)
  
 <!--HONumber=47-->

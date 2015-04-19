@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Azure Notification Hubs - Benachrichtigen von Benutzern" 
 	description="Erfahren Sie mehr über das Senden von sicheren Pushbenachrichtigungen in Azure. Die Codebeispiele wurden in Objective-C mithilfe der .NET-API geschrieben." 
 	documentationCenter="ios" 
@@ -19,31 +19,31 @@
 #Azure Notification Hubs - Benachrichtigen von Benutzern
 
 <div class="dev-center-tutorial-selector sublanding">
-    	<a href="/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/" title="Windows Universal">Windows Universal</a><a href="/documentation/articles/notification-hubs-/" title="iOS" class="current">iOS</a>
-		<a href="/documentation/articles/notification-hubs-aspnet-backend-android-notify-users/" title="Android">Android</a>
+    	<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/" title="Windows Universal">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-/" title="iOS" class="current">iOS</a>
+		<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-android-notify-users/" title="Android">Android</a>
 </div>
 
 Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff auf eine einfache, plattformübergreifende und skalierbare Infrastruktur, die die Verarbeitung von Pushbenachrichtigungen sowohl auf Privat- als auch auf Unternehmensanwendungen für mobile Plattformen erheblich erleichtert, In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Zum Authentifizieren von Clients und zum Generieren von Benachrichtigungen wird ein ASP.NET WebAPI-Back-End verwendet, wie im Thema [Registrieren von App-Back-End aus](http://msdn.microsoft.com/library/dn743807.aspx) gezeigt.
 
-> [AZURE.NOTE] In diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (iOS)](notification-hubs-ios-get-started.md) beschrieben erstellt und konfiguriert haben. Dieses Lernprogramm ist außerdem die Voraussetzung für das Lernprogramm [Sichere Pushbenachrichtigungen (iOS)](notification-hubs-aspnet-backend-ios-secure-push.md) .
-> Wenn Sie Mobile Services als Back-End-Dienst verwenden, finden Sie weitere Informationen unter [Mobile Services-Version](mobile-services-javascript-backend-ios-push-notifications-app-users.md) in diesem Lernprogramm.
+> [AZURE.NOTE] Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub, wie unter [Erste Schritte mit Notification Hubs (iOS)](http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/) beschrieben, erstellt und konfiguriert haben. Dieses Lernprogramm ist außerdem die Voraussetzung für das Lernprogramm [Sichere Pushbenachrichtigungen (iOS)](http://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/).
+> Wenn Sie Mobile Services als Ihren Back-End-Dienst verwenden, finden Sie weitere Informationen in diesem Lernprogramm unter [Mobile Services-Version](mobile-services-javascript-backend-ios-push-notifications-app-users.md).
 
 
 ## Erstellen und Konfigurieren des Notification Hubs
 
-Halten Sie sich an die Abschnitte 1 bis 5 unter [Erste Schritte mit Notification Hubs (iOS)](notification-hubs-ios-get-started.md). Zusätzliche Ressourcen zur iOS-Gerätebereitstellung finden Sie im Leitfaden unter [Big Nerd Ranch](http://www.bignerdranch.com/we-teach/how-to-prepare/ios-device-provisioning.html).
+Halten Sie sich an die Abschnitte 1 bis 5 unter [Erste Schritte mit Notification Hubs (iOS)](http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/). Zusätzliche Ressourcen zur iOS-Gerätebereitstellung finden Sie im Leitfaden unter [Big Nerd Ranch](http://www.bignerdranch.com/we-teach/how-to-prepare/ios-device-provisioning.html).
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
 ## Ändern der iOS-App
 
-1. Öffnen Sie die Einzelseitenanzeige-App, die Sie mithilfe der Abschnitte 1 bis 5 unter [Erste Schritte mit Notification Hubs (iOS)](notification-hubs-ios-get-started.md) erstellt haben.
+1. Öffnen Sie die Einzelseitenanzeige-App, die Sie mithilfe der Abschnitte 1 bis 5 unter [Erste Schritte mit Notification Hubs (iOS)](http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/).
 
 > [AZURE.NOTE] In diesem Abschnitt wird davon ausgegangen, dass Sie Ihr Projekt mit einem leeren Organisationsnamen konfiguriert haben. Falls nicht, müssen Sie allen Klassennamen Ihren Organisationsnamen voranstellen.
 
 2. Fügen Sie die folgenden Komponenten aus der Objektbibliothek zu Ihrem MainStoryboard hinzu:
 	+ Ein UITextField mit dem Platzhaltertext **Username**
-	+ Ein UITextField mit dem Platzhaltertext **Password** und aktivierter Option **Secure** im "Inspector"-Attribut unter "Textfield Return Key"
+	+ Ein UITextField mit dem Platzhaltertext **Password** und aktivierter Option **Secure** im Attribute "Inspector" unter "Textfield Return Key"
 	+ Ein UIButton mit der Bezeichnung **1. Log in** und deaktivierter Option **Enabled** in den Attributen "Inspector" unter "Control then Content"
 	+ Ein UIButton mit der Bezeichnung **2. Send Push** und deaktivierter Option **Enabled**
 
@@ -77,7 +77,7 @@ Halten Sie sich an die Abschnitte 1 bis 5 unter [Erste Schritte mit Notification
 
 		@end
 
-6. Fügen Sie den folgendem Code im Implementierungsabschnitt "RegisterClient.m" hinzu, und ersetzen Sie den Platzhalter *{backend endpoint}* durch die Ziel-URL, die Sie zum Bereitstellen Ihres App-Back-Ends im vorherigen Abschnitt verwendet haben.
+6. Fügen Sie den folgendem Code im Implementierungsabschnitt "RegisterClient.m" hinzu, und ersetzen Sie den Platzhalter {backend endpoint} durch die Ziel-URL, die Sie zum Bereitstellen Ihres App-Back-Ends im vorherigen Abschnitt verwendet haben.
 
 		NSString *const RegistrationIdLocalStorageKey = @"RegistrationId";
 		NSString *const BackEndEndpoint = @"{backend endpoint}/api/register";
@@ -206,7 +206,7 @@ Halten Sie sich an die Abschnitte 1 bis 5 unter [Erste Schritte mit Notification
 		    [dataTask resume];
 		}
 
-	Der vorstehende Code implementiert die im Artikel [Registrieren von Ihrem App-Back-End](http://msdn.microsoft.com/library/dn743807.aspx) erläuterte Logik unter Verwendung von NSURLSession zum Durchführen von REST-Aufrufen an das App-Back-End und von NSUserDefaults zum lokalen Speichern der vom Notification Hub zurückgegebenen registrationId.
+	Der vorstehende Code implementiert die im Artikel [Registrieren von App-Back-End aus](http://msdn.microsoft.com/library/dn743807.aspx) erläuterte Logik unter Verwendung von NSURLSession zum Durchführen von REST-Aufrufen an das App-Back-End und von NSUserDefaults zum lokalen Speichern der vom Notification Hub zurückgegebenen registrationId.
 
 	Beachten Sie, dass die Eigenschaft **authorizationHeader** dieser Klasse festgelegt werden muss, damit die Klasse ordnungsgemäß funktioniert. Diese Eigenschaft wird von der **ViewController**-Klasse nach der Anmeldung festgelegt.
 
@@ -334,4 +334,4 @@ Halten Sie sich an die Abschnitte 1 bis 5 unter [Erste Schritte mit Notification
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users1.png
 
-<!--HONumber=49-->
+<!--HONumber=45--> 

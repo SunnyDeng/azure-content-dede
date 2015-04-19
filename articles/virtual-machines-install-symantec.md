@@ -30,7 +30,7 @@ Mit dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) können Sie de
 
 Die Option **Aus Katalog** öffnet einen Assistenten, der Ihnen beim Einrichten des virtuellen Computers hilft. Sie verwenden die letzte Seite des Assistenten zum Installieren des VM-Agents und der Symantec-Sicherheitserweiterung. 
 
-Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines-windows-tutorial/). Wenn Sie zur letzten Seite des Assistenten gelangen:
+Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](virtual-machines-windows-tutorial.md). Wenn Sie zur letzten Seite des Assistenten gelangen:
 
 1.	Unter VM-Agent müsste **VM-Agent installieren** bereits aktiviert sein.
 
@@ -45,7 +45,7 @@ Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows
 
 Bevor Sie beginnen, benötigen Sie Folgendes:
 
-- Das Azure PowerShell-Modul Version 0.8.2 oder neuer. Sie können die installierte Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Anweisungen und einen Link zur neuesten Version finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/).  
+- Das Azure PowerShell-Modul Version 0.8.2 oder neuer. Sie können die installierte Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Anweisungen und einen Link zur neuesten Version finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md).  
 
 - Der VM-Agent. 
 
@@ -67,13 +67,13 @@ Wenn der VM-Agent installiert ist, führen Sie diese Befehle aus, um den Symante
 
 So überprüfen Sie, ob die Symantec-Sicherheitserweiterung installiert wurde und auf dem neuesten Stand ist:
 
-1.	Melden Sie sich beim virtuellen Computer an. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](../virtual-machines-log-on-windows-server/).
+1.	Melden Sie sich beim virtuellen Computer an. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](virtual-machines-log-on-windows-server.md).
 2.	Klicken Sie für Windows Server 2008 R2 auf **Start > Symantec Endpoint Protection**. Geben Sie für Windows Server 2012 oder Windows Server 2012 R2 auf dem Startbildschirm **Symantec** ein, und klicken Sie dann auf **Symantec Endpoint Protection**.
 3.	Wenden Sie auf der Registerkarte **Status** des Fensters **Status-Symantec Endpoint Protection** Updates an, oder führen Sie bei Bedarf einen Neustart aus.
 
 ##Zusätzliche Ressourcen
 
-[Anmelden bei einem virtuellen Computer unter Windows Server](../virtual-machines-log-on-windows-server/)
+[Anmelden bei einem virtuellen Computer unter Windows Server](virtual-machines-log-on-windows-server.md)
 
 [Verwalten von Erweiterungen](https://msdn.microsoft.com/library/dn606311.aspx)
 

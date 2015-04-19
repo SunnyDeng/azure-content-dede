@@ -44,7 +44,7 @@ Die Demo ermöglicht Ihnen mit folgenden Übungen einen Einstieg in Azure Search
 <h2 id="sub-1">Voraussetzungen</h2>
 
 +	Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Wenn Sie nicht bereits die Software installiert haben, können Sie die kostenlosen Express-Editionen herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/de-de/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
-+	Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Unter [Erste Schritte mit Azure Search](../search-get-started/) .
++	Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Unter [Erste Schritte mit Azure Search](search-get-started.md) .
 +	[Azure Search-Demoprojekt zu Adventure Works auf CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=510972). Klicken Sie auf der Registerkarte "Source" auf **Download**, um eine ZIP-Datei mit der Lösung herunterzuladen. 
 
     ![][12]

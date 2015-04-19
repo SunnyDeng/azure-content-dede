@@ -23,7 +23,7 @@
 
 Dieses Verfahren beschreibt die einfachste Möglichkeit zum Aktivieren der Engagement-Funktionen zur Analyse und Überwachung in Ihrer Windows Phone-Anwendung.
 
-Die folgenden Schritte sind ausreichend zum Aktivieren des Berichts von Protokollen, die zum Berechnen aller Statistiken in Bezug auf Benutzer, Sitzungen, Aktivitäten, Abstürze und technische Statistiken erforderlich sind. Der Bericht von Protokollen, die zum Berechnen weiterer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich sind, muss manuell über die Engagement-API ausgeführt werden (Informationen hierzu finden Sie unten unter [Verwenden der erweiterten Mobile Engagement-Tagging-API in Ihrer Windows Phone-App](../mobile-engagement-windows-phone-use-engagement-api/) unten), da diese Statistiken anwendungsabhängig sind.
+Die folgenden Schritte sind ausreichend zum Aktivieren des Berichts von Protokollen, die zum Berechnen aller Statistiken in Bezug auf Benutzer, Sitzungen, Aktivitäten, Abstürze und technische Statistiken erforderlich sind. Der Bericht von Protokollen, die zum Berechnen weiterer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich sind, muss manuell über die Engagement-API ausgeführt werden (Informationen hierzu finden Sie unten unter [Verwenden der erweiterten Mobile Engagement-Tagging-API in Ihrer Windows Phone-App](mobile-engagement-windows-phone-use-engagement-api.md) unten), da diese Statistiken anwendungsabhängig sind.
 
 ## Unterstützte Versionen
 
@@ -209,7 +209,7 @@ Es empfiehlt sich, `StartActivity` innerhalb Ihrer Methode `OnNavigatedTo` von P
 
 Optional können Sie besondere Anwendungsereignisse, Fehler und Aufträge in den Bericht aufnehmen. Verwenden Sie zu diesem Zweck die anderen Methoden in der `EngagementAgent`-Klasse. Die Engagement-API ermöglicht die Verwendung aller erweiterten Funktionen von Engagement.
 
-Weitere Informationen finden Sie unter [Verwenden der erweiterten Mobile Engagement-Tagging-API in Ihrer Windows Phone-App](../mobile-engagement-windows-phone-use-the-engagement-api/).
+Weitere Informationen finden Sie unter [Verwenden der erweiterten Mobile Engagement-Tagging-API in Ihrer Windows Phone-App](mobile-engagement-windows-phone-use-the-engagement-api.md).
 
 ## Erweiterte Konfiguration
 

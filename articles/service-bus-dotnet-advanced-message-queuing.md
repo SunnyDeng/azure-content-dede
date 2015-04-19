@@ -66,7 +66,7 @@ Beim Wert der Einstellung **Microsoft.ServiceBus.ConnectionString** handelt es s
 
 	Endpoint=sb://[namespace].servicebus.windows.net;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 
-Die Werte für [namespace] und [SAS key] werden über das Azure-Verwaltungsportal zur Verfügung gestellt. Weitere Informationen finden Sie unter [Verwenden von Servicebus-Warteschlangen][Verwenden von Service Bus-Warteschlangen].
+Die Werte für [namespace] und [SAS key] werden über das Azure-Verwaltungsportal zur Verfügung gestellt. Weitere Informationen finden Sie unter [Verwenden von Service Bus-Warteschlangen][].
 
 Wenn AMQP zum Einsatz kommt, wird ";TransportType=Amqp" an die Verbindungszeichenfolge angehängt, sodass die Clientbibliothek angewiesen wird, mithilfe von AMQP 1.0 eine Verbindung mit dem Servicebus herzustellen.
 
@@ -299,21 +299,21 @@ Die folgenden Funktionen der .NET-Servicebus-API werden bei der Verwendung von A
 * Verlängern der Sitzungssperre
 * Einige geringfügige Unterschiede bezüglich des Verhaltens
 
-Weitere Informationen finden Sie im [Entwicklerhandbuch zu Service Bus AMQP 1.0](http://msdn.microsoft.com/library/jj841071.aspx). Dieses Thema enthält eine detaillierte Liste mit nicht unterstützten APIs.
+Weitere Informationen finden Sie im [Entwicklerhandbuch für Servicebus mit AMQP 1.0](http://msdn.microsoft.com/library/jj841071.aspx). Dieses Thema enthält eine detaillierte Liste mit nicht unterstützten APIs.
 
 <h2>Zusammenfassung</h2>
 
 In dieser Anleitung wurde gezeigt, wie Sie auf die gebrokerten Messagingfunktionen (Warteschlangen und Veröffentlichen/Abonnieren) für Servicebus aus .NET mithilfe von AMQP 1.0 und der .NET-API für Servicebus zugreifen.
 
-Sie können Servicebus AMQP 1.0 auch in anderen Sprachen verwenden, einschließlich Java, C, Python und PHP. Die mithilfe dieser Sprachen erzeugten Komponenten können Nachrichten zuverlässig und sicher austauschen, indem AMQP 1.0 für Service Bus verwendet wird. Weitere Informationen finden Sie im [EEntwicklerhandbuch zu Service Bus AMQP 1.0](http://msdn.microsoft.com/library/jj841071.aspx).
+Sie können Servicebus AMQP 1.0 auch in anderen Sprachen verwenden, einschließlich Java, C, Python und PHP. Die mithilfe dieser Sprachen erzeugten Komponenten können Nachrichten zuverlässig und sicher austauschen, indem AMQP 1.0 für Servicebus verwendet wird. Weitere Informationen finden Sie im [Entwicklerhandbuch für Servicebus mit AMQP 1.0](http://msdn.microsoft.com/library/jj841071.aspx).
 
 <h2>Weitere Informationen</h2>
 
 * [AMQP 1.0-Unterstützung in Azure Service Bus](http://aka.ms/pgr3dp)
 * [Verwenden der JMS-Programmierschnittstelle (Java Message Service) mit Service Bus & AMQP 1.0](http://aka.ms/ll1fm3)
 * [Entwicklerhandbuch zu Service Bus AMQP 1.0](http://msdn.microsoft.com/library/jj841071.aspx)
-* [Einsatz von Servicebus-Warteschlangen](http://azure.microsoft.com/develop/net/how-to-guides/service-bus-queues/)
+* [Verwenden von Service Bus-Warteschlangen](http://azure.microsoft.com/develop/net/how-to-guides/service-bus-queues/)
 
 [Verwenden von Service Bus-Warteschlangen]: http://azure.microsoft.com/develop/net/how-to-guides/service-bus-queues/
 
-<!--HONumber=49-->
+<!--HONumber=47-->

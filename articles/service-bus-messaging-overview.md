@@ -31,10 +31,10 @@ Service Bus Messaging verfügt über zwei separate Funktionen: Warteschlangen un
 
 Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 
-- [Übersicht über die Architektur von Azure Service Bus](../fundamentals-service-bus-hybrid-solutions/)
+- [Übersicht über die Architektur von Azure Service Bus](fundamentals-service-bus-hybrid-solutions.md)
 
-- [Verwenden von Service Bus-Warteschlangen](../service-bus-dotnet-how-to-use-queues)
+- [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
 
-- [Verwenden von Service Bus-Themen](../service-bus-dotnet-how-to-use-topics-subscriptions)
+- [Verwenden von Service Bus-Themen](service-bus-dotnet-how-to-use-topics-subscriptions.md)
 
 <!--HONumber=47-->

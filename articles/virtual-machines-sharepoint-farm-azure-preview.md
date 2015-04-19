@@ -32,7 +32,7 @@ Die hochverfügbare SharePoint-Farm besteht aus neun virtuellen Computern mit de
 
 Sie können diese Farmkonfiguration verwenden, um höhere Clientlasten, Hochverfügbarkeit eines externen SharePoint-Standorts sowie SQL Server AlwaysOn für eine SharePoint-Farm zu testen. Außerdem können Sie diese Konfiguration für die SharePoint-App-Entwicklung in einer Hochverfügbarkeitsumgebung nutzen.
  
-Konfigurationsdetails zu diesen beiden Farmen finden Sie unter [Konfigurationsdetails zur SharePoint-Serverfarm](../virtual-machines-sharepoint-farm-config-azure-preview/).
+Konfigurationsdetails zu diesen beiden Farmen finden Sie unter [Konfigurationsdetails zur SharePoint-Serverfarm](virtual-machines-sharepoint-farm-config-azure-preview.md).
 
 ## Schrittweise Anleitung zur Konfiguration##
 
@@ -87,7 +87,7 @@ Die SharePoint-Serverfarm verwendet den Azure Resource Manager und Skripte, um d
 
 [SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
 
-[SharePoint-Serverfarm-Konfigurationsdetails](../virtual-machines-sharepoint-farm-config-azure-preview/)
+[SharePoint-Serverfarm-Konfigurationsdetails](virtual-machines-sharepoint-farm-config-azure-preview.md)
 
 [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](http://azure.microsoft.com/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
 

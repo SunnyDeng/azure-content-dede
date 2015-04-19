@@ -46,7 +46,7 @@ Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure test
 
 ## Phase 1: Einrichten der Hybrid Cloud-Umgebung
 
-Verwenden Sie die Anweisungen im Thema [Einrichten einer hybriden Cloud-Umgebung zum Testen](../virtual-networks-setup-hybrid-cloud-environment-testing/) . Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
+Verwenden Sie die Anweisungen im Thema [Einrichten einer hybriden Cloud-Umgebung zum Testen](virtual-networks-setup-hybrid-cloud-environment-testing.md) . Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
 
 Dies ist die aktuelle Konfiguration.
 
@@ -182,11 +182,11 @@ Diese Umgebung kann jetzt zum Bereitstellen von webbasierten Anwendungen auf LOB
 
 [Hostinggerechte Webserverplattform (IIS)](http://technet.microsoft.com/library/hh831818)
 
-[Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-hybrid-cloud-environment-testing/)
+[Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md)
 
-[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
+[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
 
-[Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-dirsync-hybrid-cloud-testing/)
+[Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-dirsync-hybrid-cloud-testing.md)
 
-[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)
+[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md)
 <!--HONumber=47-->

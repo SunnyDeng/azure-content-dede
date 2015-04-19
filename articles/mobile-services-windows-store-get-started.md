@@ -19,7 +19,7 @@
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
-Dieses Thema wird nicht mehr unterstützt. Es steht kein eigenständiges Windows Store-Projekt mehr zum Herunterladen aus dem Portal zur Verfügung. Sie können stattdessen ein universelles Windows-Projekt herunterladen. Weitere Informationen finden Sie unter [Erste Schritte mit Mobile Services](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/). 
+Dieses Thema wird nicht mehr unterstützt. Es steht kein eigenständiges Windows Store-Projekt mehr zum Herunterladen aus dem Portal zur Verfügung. Sie können stattdessen ein universelles Windows-Projekt herunterladen. Weitere Informationen finden Sie unter [Erste Schritte mit Mobile Services](mobile-services-javascript-backend-windows-store-dotnet-get-started.md). 
 
-Anweisungen zum Hinzufügen von Mobile Services zu einer vorhandenen Windows Store-App finden Sie unter [Hinzufügen von Mobile Services zu einer vorhandenen App](/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/).
+Anweisungen zum Hinzufügen von Mobile Services zu einer vorhandenen Windows Store-App finden Sie unter [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-windows-store-dotnet-get-started-data.md).
 <!--HONumber=47-->

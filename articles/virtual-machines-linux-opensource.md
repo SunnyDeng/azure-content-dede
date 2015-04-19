@@ -71,7 +71,7 @@ Debian ist eine wichtige Distribution für Linux und Open-Source basierend auf d
 Die CentOS-Linux-Distribution ist eine stabile, vorhersehbare, verwaltbare und reproduzierbare Plattform, die aus den Quellen von Red Hat Enterprise Linux (RHEL) abgeleitet wurde.
 
 1. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=centos)
-2. [Image-Galerie](http://azure.microsoft.com/en-in/marketplace/partners/OpenLogic/)
+2. [Image-Galerie](http://azure.microsoft.com/marketplace/partners/OpenLogic/)
 3. [Gewusst wie: Vorbereiten eines benutzerdefinierten CentOS-basierten virtuellen Computers für Azure](http://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-vhd-centos/)
 4. [Blog: Bereitstellen eines CentOS-VM-Images aus OpenLogic](http://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
 6. [Gewusst wie: Installieren von Apache Qpid Proton-C für AMQP und Service Bus](http://msdn.microsoft.com/library/azure/dn235560.aspx)
@@ -90,7 +90,7 @@ Die CentOS-Linux-Distribution ist eine stabile, vorhersehbare, verwaltbare und r
 
 CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalierung mit einem hohen Maß an Kontrolle hinsichtlich der Anpassung.
 
-10. [Image-Galerie](http://azure.microsoft.com/en-in/marketplace/partners/coreos/)
+10. [Image-Galerie](http://azure.microsoft.com/marketplace/partners/coreos/)
 11. [Vorgehensweise: Verwenden von CoreOS auf Azure](http://azure.microsoft.com/documentation/articles/virtual-machines-linux-coreos-how-to/)
 12. [Blog: TechEd Europa -- Windows-Docker-Client und Linux-Container](http://azure.microsoft.com/blog/2014/10/28/new-docker-coreos-topics-linux-on-azure/)
 13. [Blog: Azure wird größer, schneller und offener](http://azure.microsoft.com/blog/2014/10/20/azures-getting-bigger-faster-and-more-open/)

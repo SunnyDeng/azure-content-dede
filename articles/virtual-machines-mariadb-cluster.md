@@ -368,8 +368,8 @@ Sehen Sie sich eine [weitere Möglichkeit zur Gruppierung von MySQL unter Linux]
 [Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/documentation/articles/xplat-cli/
 [Befehlsreferenz der Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/
 [SSH-Schlüssel für die Authentifizierung]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
-[Strategie für die Leistungsoptimierung]: http://azure.microsoft.com/sv-se/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
-[Optimieren und Testen der MySQL-Leistung auf virtuellen Azure-Computern mit Linux]:http://azure.microsoft.com/sv-se/documentation/articles/virtual-machines-linux-optimize-mysql-perf/:http://azure.microsoft.com/sv-se/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
+[Strategie für die Leistungsoptimierung]: http://azure.microsoft.com/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
+[Optimieren und Testen der MySQL-Leistung auf virtuellen Azure-Computern mit Linux]:http://azure.microsoft.com/documentation/articles/virtual-machines-linux-optimize-mysql-perf/:http://azure.microsoft.com/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
 [Problem 1268 in den Azure-Befehlszeilenschnittstellen-Tools]:https://github.com/Azure/azure-xplat-cli/issues/1268
 [Weitere Möglichkeit zur Gruppierung von MySQL unter Linux]: http://azure.microsoft.com/documentation/articles/virtual-machines-linux-mysql-cluster/
 

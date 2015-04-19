@@ -18,7 +18,7 @@
 
 # Verwendung der Engagement-API unter Windows
 
-Dieses Dokument ist ein Add-on für das Dokument [Integration der Engagement-Reichweite in Windows](../mobile-engagement-windows-store-integrate-engagement/): Es bietet tiefergehende Details zur Verwendung der Engagement-API, um Ihre Anwendungsstatistik zu melden.
+Dieses Dokument ist ein Add-on für das Dokument [Integration der Engagement-Reichweite in Windows](mobile-engagement-windows-store-integrate-engagement.md): Es bietet tiefergehende Details zur Verwendung der Engagement-API, um Ihre Anwendungsstatistik zu melden.
 
 Beachten Sie: Wenn Engagement nur die Sitzungsaktivitäten der Anwendung, Abstürze und technische Informationen melden soll, ist es am einfachsten, wenn alle Ihre  `Page`-Unterklassen von der  `EngagementPage`-Klasse erben.
 
@@ -30,7 +30,7 @@ Auch wenn das Agent-Modul nicht initialisiert wurde, wird jeder Aufruf zur API v
 
 ## Engagement-Konzepte
 
-In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](../mobile-engagement-concepts/)  für die Windows-Plattform genauer dargestellt.
+In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](mobile-engagement-concepts.md)  für die Windows-Plattform genauer dargestellt.
 
 ### `Sitzung` und `Aktivität`
 

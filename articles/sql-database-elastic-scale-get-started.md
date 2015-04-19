@@ -26,7 +26,7 @@ In diesem Dokument werden die Entwicklerfunktionen zu Elastic Scale für Azure S
 
 Weitere Informationen über die Funktionsweise von Elastic Scale finden Sie unter [Übersicht über Elastic Scale](http://go.microsoft.com/?linkid=9862592).
 
-Eine Liste aller Themen zu Elastic Scale finden Sie in der [Dokumentationsübersicht zu Elastic Scale](./sql-database-elastic-scale-documentation-map.md).
+Eine Liste aller Themen zu Elastic Scale finden Sie in der [Dokumentationsübersicht zu Elastic Scale](sql-database-elastic-scale-documentation-map.md).
 
 ## Die Elastic Scale-Beispielanwendung
 
@@ -92,7 +92,7 @@ Preisinformationen finden Sie in der [SQL-Datenbank - Preisdetails](http://azure
 ## Nächste Schritte
 Weitere Informationen über die Elastic Scale-Funktion finden Sie unter:
 
-* [Elastic Scale-Lernseite](./sql-database-elastic-scale-documentation-map.md) 
+* [Elastic Scale-Lernseite](sql-database-elastic-scale-documentation-map.md) 
 -    Codebeispiele: 
     -    [Elastic Scale mit Azure SQL-Datenbank - Erste Schritte](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE)
     -    [Elastic Scale mit Azure SQL-Datenbank - Integration in Entity Framework](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE)

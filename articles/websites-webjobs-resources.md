@@ -73,7 +73,7 @@ Siehe auch die folgenden Abschnitten zum [Bereitstellen von Webaufträgen](#depl
 * [Hosten von interaktivem Code in der Cloud](http://blogs.msdn.com/b/jmstall/archive/2014/04/26/hosting-interactive-code-in-the-cloud.aspx)
 * [Abrufen eines Dashboards für die lokale Entwicklung mit dem Webaufträge-SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx)
 * [Hinzufügen der Ablaufverfolgung zu Azure-Websites und Webaufträgen](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)
-* [Microsoft Azure-Speicher: Überwachung, Diagnose und Problembehandlung](../storage-monitoring-diagnosing-troubleshooting/)
+* [Microsoft Azure-Speicher: Überwachung, Diagnose und Problembehandlung](storage-monitoring-diagnosing-troubleshooting.md)
 * Videos
 	* [Webauftrags-Tools und Remotedebuggen](http://channel9.msdn.com/Shows/Web+Camps+TV/WebJobs-GA-Series-Episode-1-WebJobs-Tooling-with-Brady-Gaster) 
 

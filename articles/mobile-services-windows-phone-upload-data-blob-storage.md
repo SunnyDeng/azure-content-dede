@@ -25,7 +25,7 @@ In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden k�
 
 Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blob-Speicherdienst können mit der Client-App nicht sicher zugewiesen werden. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die dann zum Hochladen eines neuen Bildes verwendet wird. Die SAS, eine Anmeldeinformation mit einer kurzen Laufzeit &mdash;in diesem Falle fünf Minuten -, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. In diesem Beispiel sind Downloads vom Blob-Dienst öffentlich.
 
-In diesem Lernprogramm fügen Sie dem [GetStartedWithData-App-Beispielprojekt ](/de-de/documentation/articles/mobile-services-windows-phone-get-started-data/) Funktionen zum Aufnehmen von Bildern und Hochladen dieser Bilder in Azure unter Verwendung einer von Mobile Services erzeugten SAS hinzu. Dieses Lernprogramm führt Sie durch die folgenden grundlegenden Schritte zum Aktualisieren der einfachen TodoList-App zum Hochladen von Bildern in den BLOB-Speicherdienst:
+In diesem Lernprogramm fügen Sie dem [GetStartedWithData-App-Beispielprojekt ](mobile-services-windows-phone-get-started-data.md) Funktionen zum Aufnehmen von Bildern und Hochladen dieser Bilder in Azure unter Verwendung einer von Mobile Services erzeugten SAS hinzu. Dieses Lernprogramm führt Sie durch die folgenden grundlegenden Schritte zum Aktualisieren der einfachen TodoList-App zum Hochladen von Bildern in den BLOB-Speicherdienst:
 
 1. [Installieren der Speicherclientbibliothek]
 2. [Aktualisieren des Einfügeskripts zum Generieren einer SAS]
@@ -38,7 +38,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Windows Phone SDK 8.0] oder höher
 + NuGet Package Manager installiert für Microsoft Visual Studio.
 + [Azure-Speicherkonto][So erstellen Sie ein Speicherkonto]
-+ Abschluss des Lernprogramms [Hinzufügen von Mobile Services zu einer vorhandenen App](/de-de/documentation/articles/mobile-services-windows-phone-get-started-data/)  
++ Abschluss des Lernprogramms [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-windows-phone-get-started-data.md)  
 
 
 ##<a name="install-storage-client"></a>Installieren des Speicherclients für Windows Phone-Apps

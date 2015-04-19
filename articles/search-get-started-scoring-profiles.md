@@ -28,7 +28,7 @@ Die Beispielanwendung zeigt Wertungsverhaltensweisen anhand fiktiver Daten namen
 
 Die Beispielanwendung wird in C# geschrieben, mit Visual Studio 2013. Wenn Sie noch nicht über Visual Studio verfügen, versuchen Sie es der kostenlosen [Visual Studio 2013 Express Edition](http://www.visualstudio.com/de-de/products/visual-studio-express-vs.aspx).
 
-Sie benötigen ein Azure-Abonnement und einen Azure Search-Dienst zum Abschließen dieses Lernprogramms. Unter [Erste Schritte mit Azure Search](../search-get-started/) erhalten Sie nach Hilfe beim Einrichten des Diensts.
+Sie benötigen ein Azure-Abonnement und einen Azure Search-Dienst zum Abschließen dieses Lernprogramms. Unter [Erste Schritte mit Azure Search](search-get-started.md) erhalten Sie nach Hilfe beim Einrichten des Diensts.
 
 [WACOM.INCLUDE [Sie benötigen ein Windows Azure-Konto, um dieses Lernprogramm durchführen zu können.:](../includes/free-trial-note.md)]
 

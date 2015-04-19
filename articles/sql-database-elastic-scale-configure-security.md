@@ -49,7 +49,7 @@ Wenn diese Optionen nicht verfügbar sind, können Sie **selbstsignierte Zertifi
 
         %ProgramFiles(x86)%\Windows Kits\x.y\bin\x86 
 
-* Laden Sie das WDK über folgende Seite herunter: [Windows 8.1: Herunterladen von Kits und Tools](http://msdn.microsoft.com/en-US/windows/hardware/gg454513#drivers)
+* Laden Sie das WDK über folgende Seite herunter: [Windows 8.1: Herunterladen von Kits und Tools](http://msdn.microsoft.com/windows/hardware/gg454513#drivers)
 
 ## <a name="to-configure-ssl-cert"></a>So konfigurieren Sie das SSL-Zertifikat
 Ein SSL-Zertifikat ist zum Verschlüsseln der Kommunikation und Authentifizieren des Servers erforderlich. Wählen Sie das zutreffende unter den folgenden drei Szenarien, und führen Sie alle zugehörigen Schritte aus:

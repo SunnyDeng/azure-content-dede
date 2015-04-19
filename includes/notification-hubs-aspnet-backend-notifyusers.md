@@ -1,6 +1,6 @@
 ## Erstellen des WebAPI-Projekts
 
-Gehen Sie wie unten beschrieben vor, um ein neues ASP.NET WebAPI-Back-End zu erstellen, Clients zu authentifizieren und Benachrichtigungen zu generieren, oder ändern Sie ein aus früheren Projekten oder dem Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer] vorhandenes(../articles/mobile-services-dotnet-backend-ios-push-notifications-app-users.md) Back-End.
+Gehen Sie wie unten beschrieben vor, um ein neues ASP.NET WebAPI-Back-End zu erstellen, Clients zu authentifizierungen und Benachrichtigugnen zu generieren, oder ändern Sie ein aus früheren Projekten oder dem Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](http://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users/) vorhandenes Back-End.
 
 > [AZURE.NOTE] **Wichtig**: Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie sicherstellen, dass Sie die neueste Version des NuGet-Paket-Manager installiert haben. Um dies zu überprüfen, starten Sie Visual Studio. Klicken Sie im Menü **Extras** auf **Erweiterungen und Updates**. Suchen Sie nach **NuGet-Paket-Manager für Visual Studio 2013**, und vergewissern Sie sich, dass Sie Version 2.8.50313.46 oder höher installiert haben. Falls dies nicht der Fall ist, installieren Sie den NuGet-Paket-Manager neu.
 > 
@@ -116,7 +116,7 @@ Gehen Sie wie unten beschrieben vor, um ein neues ASP.NET WebAPI-Back-End zu ers
 
 		config.MessageHandlers.Add(new AuthenticationTestHandler());
 
-15. Next we create a new controller **RegisterController**. In Solution Explorer, right-click the **Controllers** folder, then click **Add**, then click **Controller**. Click the **Web API 2 Controller -- Empty** item, and then click **Add**. Name the new class **RegisterController**, and then click **Add** again to generate the controller.
+15. Als Nächstes erstellen wir einen neuen Controller namens **RegisterController**. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Ordner **Controller**, klicken Sie dann auf **Hinzufügen** und dann auf **Controller**. Klicken Sie auf das Element **Web-API-2-Controller -- Leer**, und klicken Sie dann auf **Hinzufügen**. Geben Sie der neuen Klasse den Namen **RegisterController**, und klicken Sie dann erneut auf **Hinzufügen**, um den Controller zu erstellen.
 
 	![][7]
 
@@ -250,17 +250,21 @@ Gehen Sie wie unten beschrieben vor, um ein neues ASP.NET WebAPI-Back-End zu ers
             var user = HttpContext.Current.User.Identity.Name;
             var userTag = "username:"+user;
 
+
             // windows
             var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">Hello, " + user + "</text></binding></visual></toast>";
             await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, userTag);
+
 
             // apns
             var alert = "{\"aps\":{\"alert\":\"Hello\"}}";
             await Notifications.Instance.Hub.SendAppleNativeNotificationAsync(alert, userTag);
 
+
             // gcm
             var notif = "{ \"data\" : {\"msg\":\"Hello\"}}";
             await Notifications.Instance.Hub.SendGcmNativeNotificationAsync(notif, userTag);
+
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }
@@ -295,4 +299,4 @@ Gehen Sie wie unten beschrieben vor, um ein neues ASP.NET WebAPI-Back-End zu ers
 [B16]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users16.PNG
 [B18]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users18.PNG
 
-<!--HONumber=49-->
+<!--HONumber=45--> 

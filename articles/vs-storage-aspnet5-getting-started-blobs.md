@@ -17,15 +17,15 @@
 	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
-> - [Was ist passiert?](/documentation/articles/vs-storage-aspnet5-what-happened/)
+> - [Erste Schritte](vs-storage-aspnet5-getting-started-blobs.md)
+> - [Was ist passiert?](vs-storage-aspnet5-what-happened.md)
 
 ## Erste Schritte mit Azure Storage (ASP.NET 5-Projekte)
 
 > [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
-> - [Warteschlangen](/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
-> - [Tabellen](/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+> - [Blobs](vs-storage-aspnet5-getting-started-blobs.md)
+> - [Warteschlangen](vs-storage-aspnet5-getting-started-queues.md)
+> - [Tabellen](vs-storage-aspnet5-getting-started-tables.md)
 
 Die BLOB-Speicherung in Azure ist ein Dienst zur Speicherung großer Mengen unstrukturierter Daten, auf die von überall auf der Welt über HTTP oder HTTPS zugegriffen werden kann. Ein einzelner BLOB kann eine beliebige Größe aufweisen. BLOBs können Bilder, Audio- und Videodateien, Rohdaten und Dokumentdateien enthalten.
 

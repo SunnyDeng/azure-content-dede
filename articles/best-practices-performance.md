@@ -218,7 +218,7 @@ Azure stellt direkte Unterstützung für Hadoop bereit und ermöglicht auch die 
 
 * [Große Datenmengen](/de-de/solutions/big-data/) 
 * [Azure HDInsight-Dienst](/de-de/documentation/services/hdinsight/)
-* [Erste Schritte mit dem Azure HDInsight-Dienst](/de-de/documentation/articles/hdinsight-get-started/)
+* [Erste Schritte mit dem Azure HDInsight-Dienst](hdinsight-get-started.md)
 
 Eine Diskussion von Fragen, die mit den verschiedenen Nicht-SQL-Speichermethoden verbunden sind, finden Sie unter: 
 

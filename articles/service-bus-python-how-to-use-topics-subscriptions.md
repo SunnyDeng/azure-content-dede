@@ -26,7 +26,7 @@ In diesem Leitfaden erfahren Sie, wie Sie Service Bus-Themen und -Abonnements ve
 
 [AZURE.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
-**Hinweis:** Informationen zur Installation von Python bzw. des [Python Azure-Paket][] finden Sie im [Python-Installationshandbuch](../python-how-to-install/)
+**Hinweis:** Informationen zur Installation von Python bzw. des [Python Azure-Paket][] finden Sie im [Python-Installationshandbuch](python-how-to-install.md)
 
 
 ## Erstellen eines Themas

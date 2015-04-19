@@ -18,9 +18,9 @@
 
 # Verwenden von Azure-Tabellenspeicher mit dem Webaufträge-SDK
 
-Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie Sie Azure-Speichertabellen mithilfe des [Webaufträge-SDK](../websites-dotnet-webjobs-sdk/),Version 1.x, gelesen und geschrieben werden.
+Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie Sie Azure-Speichertabellen mithilfe des [Webaufträge-SDK](websites-dotnet-webjobs-sdk.md),Version 1.x, gelesen und geschrieben werden.
 
-In der Anleitung wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](../websites-dotnet-webjobs-sdk-get-started/)..
+In der Anleitung wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](websites-dotnet-webjobs-sdk-get-started.md)..
 		
 Einige der Codeausschnitte zeigen das  `Table`-Attribut in Funktionen, die  [manuell aufgerufen werden](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#manual), d. h. nicht mithilfe eines der Auslöserattribute. 
 
@@ -149,11 +149,11 @@ Im folgenden Codebeispiel wird ein  `CloudTable`-Objekt verwendet, um eine einze
 		    tableBinding.Execute(insertOperation);
 		}
 
-Weitere Informationen zur Verwendung des  `CloudTable`-Objekts finden Sie unter [Verwenden von Tabellenspeicher aus .NET](../storage-dotnet-how-to-use-tables/). 
+Weitere Informationen zur Verwendung des  `CloudTable`-Objekts finden Sie unter [Verwenden von Tabellenspeicher aus .NET](storage-dotnet-how-to-use-tables.md). 
 
 ## <a id="queues"></a>Verwandte in den Artikeln zu Warteschlangen behandelte Themen
 
-Informationen zur Handhabung der Tabellenverarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarien für das Webaufträge-SDK, die nicht spezifisch für die Tabellenverarbeitung sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](../websites-dotnet-webjobs-sdk-storage-queues-how-to/). .
+Informationen zur Handhabung der Tabellenverarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarien für das Webaufträge-SDK, die nicht spezifisch für die Tabellenverarbeitung sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md). .
 
 In diesem Artikel werden u. a. die folgenden Themen behandelt:
 

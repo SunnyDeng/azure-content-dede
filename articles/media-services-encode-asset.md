@@ -19,7 +19,7 @@
 
 # Codieren eines Medienobjekts mit Azure Media Encoder
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md). 
 
 ## Übersicht
 Um digitale Videos über das Internet zu übermitteln, müssen Sie die Medien komprimieren. Digitale Videodateien sind sehr umfangreich und möglicherweise zu groß, um sie über das Internet zu übermitteln oder auf den Geräten Ihrer Kunden ordnungsgemäß wiederzugeben. Bei der Codierung werden Video- und Audiodaten komprimiert, damit Ihre Kunden Ihre Medien anzeigen können.
@@ -206,7 +206,7 @@ Durch die folgende **CreateChainedTaskEncodingJob**-Methode wird ein Auftrag mit
 
 
 ## Nächste Schritte
-Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](../media-services-check-job-progress/) fortfahren.
+Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](media-services-check-job-progress.md) fortfahren.
 
 [Azure Marketplace]: https://datamarket.azure.com/
 [Codierungsvoreinstellungen]: http://msdn.microsoft.com/library/dn619392.aspx

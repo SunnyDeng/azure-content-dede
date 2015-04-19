@@ -20,7 +20,7 @@
 
 In diesem Artikel erfahren Sie, wie Sie eine ASP.NET MVC-Line-of-Business (LOB)-Anwendung in [Azure-Websites](http://azure.microsoft.com/services/websites/) mit einem lokalen [Active Directory Federation Service](http://technet.microsoft.com/ library/hh831502.aspx) als Identitätsanbieter erstellen. Dieses Szenario kann funktionieren, wenn Sie LOB-Anwendungen in Azure-Websites erstellen möchten, Ihre Organisation jedoch verlangt, alle Daten vor Ort zu speichern.
 
-Einen Überblick über die unterschiedlichen Enterprise-Authentifizierungs- und Autorisierungsoptionen für Azure-Websites finden Sie unter [Authenticate and Authorize Users in LOB Applications in Azure Websites](./web-sites-authentication-authorization) (Authentifizieren und Autorisieren von Benutzern in LOB-Anwendungen in Azure-Websites, in englischer Sprache).
+Einen Überblick über die unterschiedlichen Enterprise-Authentifizierungs- und Autorisierungsoptionen für Azure-Websites finden Sie unter [Authenticate and Authorize Users in LOB Applications in Azure Websites](web-sites-authentication-authorization) (Authentifizieren und Autorisieren von Benutzern in LOB-Anwendungen in Azure-Websites, in englischer Sprache).
 
 <a name="bkmk_build"></a>
 ## Sie erstellen Folgendes ##
@@ -341,8 +341,8 @@ Azure-Websites unterstützt zwei Methoden für den Zugriff auf lokale Datenbanke
 ## Weitere Ressourcen
 
 - [Schützen der Anwendung durch SSL und das Attribut Authorize](../web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [Authenticate and Authorize Users in LOB Applications in Azure Websites](../web-sites-authentication-authorization/) (Authentifizieren und Autorisieren von Benutzern in LOB-Anwendungen in Azure-Websites, in englischer Sprache)
-- [Create an ASP.NET MVC Line-of-Business Application in Azure Websites that Authenticates with Azure Active Directory](../web-sites-dotnet-lob-application-azure-ad/) (Erstellen einer ASP.NET-MVC-LOB-Anwendung in Azure-Websites, die mit Azure Active Directory authentifiziert wird, in englischer Sprache)
+- [Authenticate and Authorize Users in LOB Applications in Azure Websites](web-sites-authentication-authorization.md) (Authentifizieren und Autorisieren von Benutzern in LOB-Anwendungen in Azure-Websites, in englischer Sprache)
+- [Create an ASP.NET MVC Line-of-Business Application in Azure Websites that Authenticates with Azure Active Directory](web-sites-dotnet-lob-application-azure-ad.md) (Erstellen einer ASP.NET-MVC-LOB-Anwendung in Azure-Websites, die mit Azure Active Directory authentifiziert wird, in englischer Sprache)
 - [Use the On-Premises Organizational Authentication Option (ADFS) With ASP.NET in Visual Studio 2013](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/) (Verwenden der lokalen Organisationsauthentifizierungsoption (ADFS) mit ASP.NET in Visual Studio 2013, in englischer Sprache)
 - [Blog von Vittorio Bertocci](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/) (Migrieren eines VS2013-Webprojekts von WIF nach Katana, in englischer Sprache)

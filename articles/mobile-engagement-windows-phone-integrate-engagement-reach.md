@@ -18,7 +18,7 @@
 
 # Integration des Engagement Reach-SDK in Ihrem Windows Phone-Projekt
 
-Bevor Sie die in diesem Leitfaden beschriebenen Schritte ausführen, müssen Sie das im Dokument [Integration von Engagement in Windows Phone](../mobile-engagement-windows-phone-integrate-engagement/) beschriebene Verfahren ausführen.
+Bevor Sie die in diesem Leitfaden beschriebenen Schritte ausführen, müssen Sie das im Dokument [Integration von Engagement in Windows Phone](mobile-engagement-windows-phone-integrate-engagement.md) beschriebene Verfahren ausführen.
 
 ## Einbetten des Engagement Reach-SDK in das Windows Phone-Projekt
 

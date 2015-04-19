@@ -21,7 +21,7 @@
 # Dynamische Verschlüsselung: Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy.md)] 
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) . 
 
 ## Übersicht
 
@@ -29,7 +29,7 @@ Mit Microsoft Azure Media Services können Sie Inhalte (dynamisch) verschlüssel
 
 Derzeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG-DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
 
-Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier](../media-services-dotnet-create-contentkey/) beschrieben)und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben). 
+Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier](media-services-dotnet-create-contentkey.md) beschrieben)und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben). 
 
 Wenn ein Player einen Stream anfordert, verwendet Media Services den angegebenen Schlüssel, um Ihren Inhalt mit AES- oder PlayReady-Verschlüsselung dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
 
@@ -47,8 +47,8 @@ Weitere Informationen finden Sie unter
 
 ### Folgende Überlegungen sollten berücksichtigt werden:
 
-- Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](../media-services-manage-origins#scale_streaming_endpoints). 
-- Ihr Medienobjekt muss einen Satz von MP4- oder Smooth Streaming-Dateien mit variablen Bitraten enthalten. Weitere Informationen finden Sie unter [Codieren eines Medienobjekts](../media-services-encode-asset/).  
+- Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins#scale_streaming_endpoints.md). 
+- Ihr Medienobjekt muss einen Satz von MP4- oder Smooth Streaming-Dateien mit variablen Bitraten enthalten. Weitere Informationen finden Sie unter [Codieren eines Medienobjekts](media-services-encode-asset.md).  
 - Zum Hochladen und Codieren Ihrer Medienobjekte verwenden Sie die Option **AssetCreationOptions.StorageEncrypted**.
 - Wenn Sie mehrere Inhaltsschlüssel verwenden möchten, die dieselbe Richtlinienkonfiguration erfordern, wird empfohlen, eine einzelne Autorisierungsrichtlinie zu erstellen und für mehrere Inhaltsschlüssel wiederzuverwenden.
 - ContentKeyAuthorizationPolicy und die zugehörigen Objekte (Richtlinienoptionen und Einschränkungen) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert.  Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine "Token"-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine "Open"-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur "Open"-Version der Richtlinie wechselt.
@@ -393,6 +393,6 @@ Um ein Testtoken abzurufen, das auf der Token-Einschränkung basiert, die für d
 
 
 ## Nächste Schritte
-Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](../media-services-dotnet-configure-asset-delivery-policy/) fort.
+Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md) fort.
 
 <!--HONumber=47-->

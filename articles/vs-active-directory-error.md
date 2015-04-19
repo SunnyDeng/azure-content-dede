@@ -16,15 +16,14 @@
 	ms.date="02/02/2015" 
 	ms.author="kempb"/>
 
-# Fehler während der Authentifizierungserkennung
-
+###Fehler während der Authentifizierungserkennung 
 Beim Erkennen des vorherigen Authentifizierungscodes hat der Assistent einen nicht kompatiblen Authentifizierungstyp erkannt.   
 
 ###Was wird überprüft?
 
 ####Projekttypen
 
-Der Assistent überprüft, welche Art von Projekt Sie entwickeln, um die richtige Authentifizierungslogik in das Projekt einzufügen.  Bei einem Domänencontroller, der im Projekt von `ApiController` abgeleitet wird, gilt es als WebAPI-Projekt.  Wenn nur Domänencontroller vorhanden sind, die im Projekt von `MVC.Controller` abgeleitet sind, wird es als MVC-Projekt betrachtet.  Alles andere wird vom Assistenten als nicht unterstützt betrachtet.  WebForms-Projekte werden derzeit nicht unterstützt.
+Der Assistent überprüft, welche Art von Projekt Sie entwickeln, um die richtige Authentifizierungslogik in das Projekt einzufügen.  Bei einem Domänencontroller, der im Projekt von "ApiController" abgeleitet wird, gilt es als WebAPI-Projekt.  Wenn nur Domänencontroller vorhanden sind, die im Projekt von "MVC.Controller" abgeleitet sind, wird es als MVC-Projekt betrachtet.  Alles andere wird vom Assistenten als nicht unterstützt betrachtet.  WebForms-Projekte werden zurzeit nicht unterstützt.
 
 #####Kompatibler Authentifizierungscode
 
@@ -52,7 +51,7 @@ Der Assistent versucht schließlich, Versionen von Authentifizierungscode zu erk
 * Organisationskonten 
  
 
-Zum Erkennen der Windows-Authentifizierung in einem MVC-Projekt sucht der Assistent nach dem `authentication`-Element aus Ihrer Datei **web.config**.
+Zum Erkennen von Windows-Authentifizierung in einem MVC-Projekt sucht der Assistent nach dem Element "authentication" aus Ihrer Datei **web.config**.
 
 <PRE class="prettyprint">
 	&lt;configuration&gt;
@@ -62,7 +61,7 @@ Zum Erkennen der Windows-Authentifizierung in einem MVC-Projekt sucht der Assist
 	&lt;/configuration&gt;
 </pre>
 
-Zum Erkennen der Windows-Authentifizierung in einem Web-API-Projekt sucht der Assistent nach dem `IISExpressWindowsAuthentication`-Element aus der Datei **.csproj** Ihres Projekts:
+Zum Erkennen von Windows-Authentifizierung in einem Web-API-Projekt sucht der Assistent nach dem Element "IISExpressWindowsAuthentication" aus Ihrer Datei **.csproj** des Projekts:
 
 <PRE class="prettyprint">
 	&lt;Project&gt;
@@ -80,7 +79,7 @@ Zum Erkennen der Authentifizierung einzelner Benutzerkonten sucht der Assistent 
 	&lt;/packages&gt;
 </PRE>
 
-Zum Erkennen der alten Form der Organisationskontoauthentifizierung sucht der Assistent in der Datei **web.config** nach dem folgenden Element:
+Zum Erkennen der alten Form von Organisationskontoauthentifizierung sucht der Assistent nach dem folgenden Element aus der Datei **web.config**:
 
 <PRE class="prettyprint">
 	&lt;configuration*gt;
@@ -92,6 +91,6 @@ Zum Erkennen der alten Form der Organisationskontoauthentifizierung sucht der As
 
 Wenn Sie den Authentifizierungstyp ändern möchten, entfernen Sie den inkompatiblen Authentifizierungstyp, und führen Sie den Assistenten dann erneut aus.
 
-Weitere Informationen finden Sie unter [Authentifizierungsszenarios für Azure AD](http://msdn.microsoft.com/library/azure/dn499820.aspx).
+Weitere Informationen finden Sie unter [Authentifizierungsszenarien für Azure AD](http://msdn.microsoft.com/library/azure/dn499820.aspx).
 
-<!--HONumber=49-->
+<!--HONumber=46--> 

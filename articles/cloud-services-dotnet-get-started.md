@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erste Schritte mit Azure-Cloud-Diensten und ASP.NET" 
 	description="Hier erfahren Sie, wie Sie mit ASP.NET MVC und Azure eine Anwendung mit mehreren Ebenen erstellen. Die Anwendung wird in einem Cloud-Dienst mit Webrolle und Workerrolle ausgeführt. Sie verwendet Entity Framework, SQL-Datenbank und Azure-Speicherwarteschlangen und Blobs." 
 	services="cloud-services, storage" 
@@ -34,7 +34,7 @@ Die Anwendung verwendet das [warteschlangenorientierte Arbeitsmuster](http://www
 
 ## Alternative Architektur: Websites und WebJobs
 
-In diesem Lernprogramm erfahren Sie, wie Sie Front-End und Back-End in einem Azure-Cloud-Dienst ausführen können. Alternativ können Sie das Front-End auf einer [Azure-Website](/de-de/services/web-sites/) ausführen und die [WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226)-Funktion (momentan in der Vorschauphase) für das Back-End verwenden. Ein Lernprogramm zu "WebJobs" finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK](/de-de/documentation/articles/websites-dotnet-webjobs-sdk-get-started/). Informationen zur Auswahl der optimalen Dienste für Ihr Szenario finden Sie unter [Vergleich von Websites, Cloud-Diensten und virtuellen Computern in Azure](http://azure.microsoft.com/ documentation/articles/choose-web-site-cloud-service-vm/).
+In diesem Lernprogramm erfahren Sie, wie Sie Front-End und Back-End in einem Azure-Cloud-Dienst ausführen können. Alternativ können Sie das Front-End auf einer [Azure-Website](/de-de/services/web-sites/) ausführen und die [WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226)-Funktion (momentan in der Vorschauphase) für das Back-End verwenden. Ein Lernprogramm zu "WebJobs" finden Sie unter [Erste Schritte mit dem Azure WebJobs SDK](websites-dotnet-webjobs-sdk-get-started.md). Informationen zur Auswahl der optimalen Dienste für Ihr Szenario finden Sie unter [Vergleich von Websites, Cloud-Diensten und virtuellen Computern in Azure](http://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/).
 
 ## Sie lernen Folgendes
 
@@ -47,7 +47,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie Front-End und Back-End in einem Azu
 
 ## Voraussetzungen
 
-Dieses Lernprogramm setzt voraus, dass Sie mit den [Grundkonzepten von Azure-Cloud-Diensten](http://azure.microsoft.com/ documentation/articles/fundamentals-application-models/#CloudServices), wie z. B. den Begriffen  *web role* und  *worker role* vertraut sind.  Außerdem wird vorausgesetzt, dass Sie mit der Arbeit mit [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)- oder [Web Forms](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)-Projekten in Visual Studio vertraut sind. Die Beispielanwendung verwendet MVC, aber ein Großteil des Lernprogramms gilt auch für Web Forms. 
+Dieses Lernprogramm setzt voraus, dass Sie mit den [Grundkonzepten von Azure-Cloud-Diensten](http://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices), wie z. B. den Begriffen  *web role* und  *worker role* vertraut sind.  Außerdem wird vorausgesetzt, dass Sie mit der Arbeit mit [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)- oder [Web Forms](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)-Projekten in Visual Studio vertraut sind. Die Beispielanwendung verwendet MVC, aber ein Großteil des Lernprogramms gilt auch für Web Forms. 
 
 Sie können die Anwendung ohne Azure-Abonnement lokal ausführen, aber für die Bereitstellung der Anwendung in der Cloud benötigen Sie ein Abonnement. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) oder [sich für eine kostenlose Testversion registrieren](/de-de/pricing/free-trial/?WT.mc_id=A55E3C668).
 
@@ -795,7 +795,7 @@ Die Contoso Ads-Anwendung wurde für dieses Lernprogramm bewusst einfach gehalte
 Hier finden Sie einige Beispielanwendungen für Cloud-Dienste mit realitätsnäheren Programmierpraktiken, geordnet vom einfachsten hin zum komplexesten Projekt:
 
 * [PhluffyFotos](http://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31). Ähnlich der Contoso Ads-Anwendung, jedoch mit mehr Funktionen und realitätsnäheren Programmierpraktiken.
-* [Azure-Cloud-Dienstanwendung mit mehreren Ebenen mit Tabellen, Warteschlangen und Blobs](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Einführung zu Azure-Speichertabellen, Blobs und Warteschlangen inklusive einer [Schritt-für-Schritt-Anleitungsreihe](http://azure.microsoft.com/ documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/).
+* [Azure-Cloud-Dienstanwendung mit mehreren Ebenen mit Tabellen, Warteschlangen und Blobs](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Einführung zu Azure-Speichertabellen, Blobs und Warteschlangen inklusive einer [Schritt-für-Schritt-Anleitungsreihe](http://azure.microsoft.com/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/).
 * [Cloud-Dienstgrundlagen in Microsoft Azure](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ein umfassendes Beispiel mit einer breiten Palette bewährter Methoden, erarbeitet von der Microsoft Patterns and Practices-Gruppe.
 
 Weitere Informationen zur Entwicklung für die Cloud finden Sie unter [Erstellen von Cloud-Anwendungen mit Microsoft Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction).
@@ -807,7 +807,7 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 * [Azure Cloud Services Teil 1: Einführung](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Azure Cloud Services](/de-de/documentation/services/cloud-services/)
 * [Azure-Speicher](/de-de/documentation/services/storage/)
-* [Verwenden des Blob-Speichers mit .NET](/de-de/documentation/articles/storage-dotnet-how-to-use-blobs/)
-* [Verwenden des Warteschlangenspeichers mit .NET](/de-de/documentation/articles/storage-dotnet-how-to-use-queues/)
+* [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)
+* [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
 
 <!--HONumber=45--> 

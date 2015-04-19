@@ -444,7 +444,7 @@ Das Erstellen einer Website in Azure ist sehr einfach. Wenn dies Ihre erste Azur
 
 1. Klicken Sie im Azure-Portal auf **Neu**.    
 ![New][button-new]
-2. Wählen Sie **Berechnen > Website > Schnellerfassung** aus. 
+2. Wählen Sie **Compute > Website > Schnellerfassung** aus. 
 ![CreateSite][screen-mongolab-newwebsite]
 3. Geben Sie einen URL-Präfix ein. Wählen Sie einen Namen aus, aber denken Sie daran, dass er eindeutig sein muss ("mymongoapp" ist wahrscheinlich nicht verfügbar).
 4. Klicken Sie auf **Website erstellen**.

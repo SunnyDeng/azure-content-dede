@@ -25,7 +25,7 @@
 
 Nach Durchführung dieser Anleitung werden Sie eine einfache Node.js-Anwendung erhalten, die in einem Azure-Cloud-Dienst ausgeführt wird. Cloud-Dienste sind die Bausteine skalierbarer Cloud-Anwendungen in Azure. Sie ermöglichen die Trennung und unabhängige Verwaltung und Skalierung von Front-End- und Back-End-Komponenten von Anwendungen.  Cloud-Dienste bieten stabile und dedizierte virtuelle Computer, um jede Rolle zuverlässig zu hosten.
 
-Weitere Informationen zu Cloud-Diensten und einen Vergleich hinsichtlich Azure-Websites und virtueller Computern finden Sie unter [Vergleich von Websites, Cloud-Diensten und virtuellen Computern in Azure](http://azure.microsoft.com/ documentation/articles/choose-web-site-cloud-service-vm/).
+Weitere Informationen zu Cloud-Diensten und einen Vergleich hinsichtlich Azure-Websites und virtueller Computern finden Sie unter [Vergleich von Websites, Cloud-Diensten und virtuellen Computern in Azure](http://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/).
 
 >[AZURE.TIP] Möchten Sie eine einfache Website erstellen? Wenn Ihr Szenario nur ein einfaches Website-Front-End umfasst, sollten Sie <a href="/de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/">die Verwendung einer einfachen Azure-Website ins Auge fassen.</a> Sie können einen Cloud-Dienst leicht upgraden, wenn die Website größer wird und sich Ihre Anforderungen ändern.
 

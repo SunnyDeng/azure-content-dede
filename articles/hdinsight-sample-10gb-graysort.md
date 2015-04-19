@@ -40,7 +40,7 @@ Ein- und Ausgabeformate der drei Anwendungen lesen und schreiben die Textdateien
 
 - Sie benötigen ein Azure-Abonnement. Hinweise zum Erstellen eines Kontos finden Sie auf der Seite [Testen Sie Azure noch heute kostenlos](http://azure.microsoft.com/pricing/free-trial/).
 
-- Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen von HDInsight-Clustern](../hdinsight-provision-clusters/)
+- Sie benötigen einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen von HDInsight-Clustern](hdinsight-provision-clusters.md)
 
 - Sie müssen die Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 

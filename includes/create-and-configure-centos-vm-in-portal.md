@@ -74,6 +74,6 @@ Geben Sie das Kennwort erneut ein. Warten Sie, während die Aktualisierungen ins
 
   [Überblick über virtuelle Azure-Netzwerke]: http://go.microsoft.com/fwlink/p/?LinkID=294063
   [Neuen virtuellen Computer erstellen]: ./media/create-and-configure-centos-vm-in-portal/CreateVM.png
-  [sicheres Kennwort]: http://msdn.microsoft.com/de-de/library/ms161962.aspx
+  [sicheres Kennwort]: http://msdn.microsoft.com/library/ms161962.aspx
   [PuTTY Download Page]: http://www.puttyssh.org/download.html
   [PuTTY Screen]: ./media/create-and-configure-centos-vm-in-portal/putty.png

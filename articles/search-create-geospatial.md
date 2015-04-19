@@ -40,7 +40,7 @@ Dieses Lernprogramm baut auf der [Azure Search - Adventure Works Demo](http://az
 <h2 id="sub-1">Voraussetzungen</h2>
 
 Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Wenn Sie nicht bereits die Software installiert haben, können Sie die kostenlosen Express-Editionen herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/de-de/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
-Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Einzelheiten finden Sie unter [Erste Schritte mit Azure Search](../search-get-started/).
+Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Einzelheiten finden Sie unter [Erste Schritte mit Azure Search](search-get-started.md).
 +	Einen Bing-Kartendienst sowie einen zugehörigen Zugriffsschlüssel. Anweisungen dazu finden Sie im nächsten Abschnitt.
 [Azure Search GeoSearch-Beispiel auf CodePlex](https://azuresearchgeospatial.codeplex.com/). Klicken Sie auf der Registerkarte "Source" (Quelle) auf **Download**, um eine ZIP-Datei der Lösung herunterzuladen. 
 

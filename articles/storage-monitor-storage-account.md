@@ -24,7 +24,7 @@ Sie können Ihr Speicherkonto im Azure-Verwaltungsportal überwachen. Wenn Sie I
 
 > Der Azure-Dateidienst unterstützt derzeit keine Speicheranalyse.
 
-> Eine detaillierte Anleitung für den Einsatz der Speicheranalyse und anderer Tools für Identifizieren, Diagnose und Problembehandlung bei Azure-Speicher finden Sie unter [Überwachung, Diagnose und Problembehandlung mit Microsoft Azure Storage](../storage-monitoring-diagnosing-troubleshooting/).
+> Eine detaillierte Anleitung für den Einsatz der Speicheranalyse und anderer Tools für Identifizieren, Diagnose und Problembehandlung bei Azure-Speicher finden Sie unter [Überwachung, Diagnose und Problembehandlung mit Microsoft Azure Storage](storage-monitoring-diagnosing-troubleshooting.md).
 
 
 ##Inhaltsverzeichnis##

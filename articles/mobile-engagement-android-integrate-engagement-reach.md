@@ -155,8 +155,8 @@ Wenn das obige Integrationsverfahren befolgt wird, stellt der Engagement-Dienst 
 
 Damit Sie die "jederzeit mögliche" Pushübertragung nutzen können, müssen Sie in Abhängigkeit von den Zielgeräten mindestens einen systemeigenen Pushdienst verwenden:
 
-  - Google Play-Geräte: Verwenden Sie [Google Cloud Messaging], indem Sie die Anleitung unter [Integrieren von GCM mit Engagement](../mobile-engagement-android-gcm-integrate/) verwenden.
-  - Amazon-Geräte: Verwenden Sie [Amazon Device Messaging], indem Sie die Anleitung unter [Integrieren von ADM mit Engagement](../mobile-engagement-android-adm-integrate/) verwenden.
+  - Google Play-Geräte: Verwenden Sie [Google Cloud Messaging], indem Sie die Anleitung unter [Integrieren von GCM mit Engagement](mobile-engagement-android-gcm-integrate.md) verwenden.
+  - Amazon-Geräte: Verwenden Sie [Amazon Device Messaging], indem Sie die Anleitung unter [Integrieren von ADM mit Engagement](mobile-engagement-android-adm-integrate.md) verwenden.
 
 Wenn Sie Ihre Vorgehensweise auf Amazon- und Google Play-Geräte ausrichten möchten, ist es möglich, für die Entwicklung alles in eine "AndroidManifest.xml/APK" zu verpacken. Bei der Übermittlung an Amazon wird die Anwendung möglicherweise zurückgewiesen, wenn der GCM-Code erkannt wird.
 

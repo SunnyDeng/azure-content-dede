@@ -47,5 +47,5 @@ Mit diesen Schritten wird ein neuer benutzerdefinierter [ApiController][ApiContr
     > [WACOM.NOTE] Diese POST-Methode kann von jedem beliebigen Client aufgerufen werden, der den Anwendungsschlüssel kennt. Sie ist nicht sicher. Fügen Sie zur Absicherung des Endpunkts der Methode oder Klasse das Attribut `[AuthorizeLevel(AuthorizationLevel.User)]` hinzu, um die Authentifizierung zu erzwingen.
 
   [ApiController]: http://go.microsoft.com/fwlink/p/?LinkId=512673
-  [TableController]: http://msdn.microsoft.com/de-de/library/azure/dn643359.aspx
+  [TableController]: http://msdn.microsoft.com/library/azure/dn643359.aspx
   [Web-API-Dialogfeld "Add Scaffold"]: ./media/mobile-services-dotnet-backend-update-server-push-vs2013/add-custom-api-controller.png

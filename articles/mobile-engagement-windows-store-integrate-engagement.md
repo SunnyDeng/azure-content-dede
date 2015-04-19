@@ -22,7 +22,7 @@
 
 Dieses Verfahren beschreibt die einfachste Möglichkeit zum Aktivieren der Engagement-Analyse- und Überwachungsfunktionen in Ihrer Windows-Anwendung.
 
-Die folgenden Schritte sind ausreichend, um den Bericht von Protokollen zu aktivieren, die zur Berechnung aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen notwendig sind. Der Bericht von Protokollen, die zur Berechnung anderer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich ist, muss manuell mithilfe der Engagement-API erfolgen (siehe  [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer Windows Store-App](../mobile-engagement-windows-store-use-engagement-api/)), da diese Statistiken von der Anwendung abhängig sind.
+Die folgenden Schritte sind ausreichend, um den Bericht von Protokollen zu aktivieren, die zur Berechnung aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen notwendig sind. Der Bericht von Protokollen, die zur Berechnung anderer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich ist, muss manuell mithilfe der Engagement-API erfolgen (siehe  [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer Windows Store-App](mobile-engagement-windows-store-use-engagement-api.md)), da diese Statistiken von der Anwendung abhängig sind.
 
 ## Unterstützte Versionen
 

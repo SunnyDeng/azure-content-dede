@@ -31,7 +31,7 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 ## Voraussetzungen:
 
-* Ein HDInsight (Hadoop)-Cluster - Unter [Bereitstellen von Hadoop-Clustern in HDInsight](/de-de/documentation/articles/hdinsight-provision-clusters/) finden Sie weitere Informationen zur Erstellung von Clustern.
+* Ein HDInsight (Hadoop)-Cluster - Unter [Bereitstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md) finden Sie weitere Informationen zur Erstellung von Clustern.
 
 * Microsoft Excel 2013 (PowerPivot für Datenanalysten - Microsoft Excel 2010)
 

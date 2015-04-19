@@ -20,7 +20,7 @@
  
 Ein dynamischer Bedarf ist für moderne Anwendungen eine Realität.  Ob saisonaler und variabler Bedarf oder unerwartete Trends in sozialen Medien - moderne Anwendungen müssen sowohl ungewisse als auch zu erwartende Spitzenlasten problemlos bewältigen können. Da Azure Service Bus als Platform-as-a-Service (PaaS) konzipiert ist, können Sie Anwendungen erstellen, die sich problemlos skalieren lassen und Spitzenlasten oder vorübergehende Ausfälle von Komponenten verkraften.  
  
-[Erstellen einer .NET-Anwendung mit mehreren Ebenen unter Verwendung von Servicebus-Warteschlangen](/documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/)
+[Erstellen einer .NET-Anwendung mit mehreren Ebenen unter Verwendung von Servicebus-Warteschlangen](cloud-services-dotnet-multi-tier-app-using-service-bus-queues.md)
  
 ## Erkunden
 - [Grundlagen zu Microsoft Azure Service Bus](http://azure.microsoft.com/documentation/articles/fundamentals-service-bus-hybrid-solutions/)

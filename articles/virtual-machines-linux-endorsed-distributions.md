@@ -22,7 +22,7 @@
 
 #Linux auf Azure - unterstützte Verteilungen
 
-Die Verteilungsimages im Azure-Katalog werden von den folgenden Partnern zur Verfügung gestellt. Außerdem arbeiten wir mit verschiedenen Linux-Communitys daran, noch mehr bestätigte Verteilungen bereitzustellen. In der Zwischenzeit können Sie für Distributionen, die im Katalog nicht verfügbar sind, stets Ihre eigene Linux-Distribution bereitstellen ("Bring Your Own"), indem Sie die Richtlinien auf [dieser Seite](../virtual-machines-linux-create-upload-vhd/) befolgen.
+Die Verteilungsimages im Azure-Katalog werden von den folgenden Partnern zur Verfügung gestellt. Außerdem arbeiten wir mit verschiedenen Linux-Communitys daran, noch mehr bestätigte Verteilungen bereitzustellen. In der Zwischenzeit können Sie für Distributionen, die im Katalog nicht verfügbar sind, stets Ihre eigene Linux-Distribution bereitstellen ("Bring Your Own"), indem Sie die Richtlinien auf [dieser Seite](virtual-machines-linux-create-upload-vhd.md) befolgen.
 
 ## Canonical ##
  

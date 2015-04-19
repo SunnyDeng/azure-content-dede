@@ -132,7 +132,7 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 
 [Was ist ein Speicherkonto?](storage-whatis-account.md)
 
-[Gewusst wie: Erstellen eines Speicherkontos](../storage-create-storage-account/)
+[Gewusst wie: Erstellen eines Speicherkontos](storage-create-storage-account.md)
 
 [Überwachen eines Speicherkontos](storage-monitor-storage-account.md)
 

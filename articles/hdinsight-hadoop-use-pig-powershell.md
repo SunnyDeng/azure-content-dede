@@ -134,11 +134,11 @@ Wie Sie sehen können, bietet Azure PowerShell eine einfache Möglichkeit, um Pi
 
 Allgemeine Informationen zu Pig in HDInsight:
 
-* [Verwenden von Pig mit Hadoop in HDInsight](../hdinsight-use-pig/)
+* [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
 
 Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeiten können:
 
-* [Verwenden von Hive mit Hadoop in HDInsight](../hdinsight-use-hive/)
+* [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](../hdinsight-use-mapreduce/)
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 <!--HONumber=47-->

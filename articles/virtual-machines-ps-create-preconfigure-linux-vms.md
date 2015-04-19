@@ -22,11 +22,11 @@ Diese Schritte zeigen, wie Sie eine Reihe von Azure PowerShell-Befehlen anpassen
 
 Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Erweiterte PowerShell-Benutzer können die Befehle verwenden und sie durch eigene Werte für die Variablen ersetzen (Zeilen, die mit "$" beginnen).
 
-Das Begleitthema zum Konfigurieren der Windows-basierten virtuellen Computer finden Sie unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](../virtual-machines-ps-create-preconfigure-windows-vms/).
+Das Begleitthema zum Konfigurieren der Windows-basierten virtuellen Computer finden Sie unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md).
 
 ## Schritt 1: Installieren von Azure PowerShell
 
-Wenn Sie dies noch nicht getan haben, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
+Wenn Sie dies noch nicht getan haben, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
 
 ## Schritt 2: Festlegen Ihres Abonnements und Speicherkontos
 
@@ -89,7 +89,7 @@ Geben Sie optional einen Satz von SSH-Schlüsselpaaren an, die bereits im Abonne
 
 	$vm1 | Add-AzureProvisioningConfig -Linux -SSHKeyPairs "<SSH key pairs>"
 
-Weitere Informationen finden Sie unter [Verwenden von SSH mit Linux in Azure](../virtual-machines-linux-use-ssh-key/).
+Weitere Informationen finden Sie unter [Verwenden von SSH mit Linux in Azure](virtual-machines-linux-use-ssh-key.md).
 
 Geben Sie optional eine Liste von öffentlichen SSH-Schlüsseln an, die bereits im Abonnement bereitgestellt wurden.
 
@@ -157,7 +157,7 @@ Option 3: Erstellen Sie den virtuellen Computer in einem vorhandenen Cloud-Diens
 
 Kopieren Sie den Befehlssatz in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer. Wenn Sie den virtuellen Computer in falschen Abonnements, Speicherkonten, Cloud-Diensten, Verfügbarkeitsgruppen, virtuellen Netzwerken oder Subnetzen erstellen, löschen Sie den virtuellen Computer, korrigieren Sie die Befehlsblocksyntax, und führen Sie dann den korrigierten Befehlssatz aus. 
 
-Informieren Sie sich nach dem Erstellen des virtuellen Computer unter [Gewusst wie: Anmeldung auf einem virtuellen Linux-Computer](../virtual-machines-linux-how-to-log-on/). 
+Informieren Sie sich nach dem Erstellen des virtuellen Computer unter [Gewusst wie: Anmeldung auf einem virtuellen Linux-Computer](virtual-machines-linux-how-to-log-on.md). 
 
 Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen Computer erstellen, können Sie: 
 
@@ -260,11 +260,11 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Übersicht über Azure Virtual Machines](http://msdn.microsoft.com/library/azure/jj156143.aspx)
 
-[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/)
+[Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-[Anmelden bei virtuellen Computer unter Linux](../virtual-machines-linux-how-to-log-on/)
+[Anmelden bei virtuellen Computer unter Linux](virtual-machines-linux-how-to-log-on.md)
 
-[Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](../virtual-machines-ps-create-preconfigure-windows-vms/)
+[Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
 
 <!--HONumber=47-->

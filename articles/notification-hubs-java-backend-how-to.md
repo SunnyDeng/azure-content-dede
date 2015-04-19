@@ -1,9 +1,9 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden von Notification Hubs mit Java" 
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs von einem Java-Back-End." 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="yuaxu" 
+	authors="piyushjo" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -14,17 +14,17 @@
 	ms.devlang="java" 
 	ms.topic="article" 
 	ms.date="01/12/2015" 
-	ms.author="yuaxu"/>
+	ms.author="piyushjo"/>
 
 # Verwenden von Notification Hubs von Java aus
 <div class="dev-center-tutorial-selector sublanding"> 
-    	<a href="/documentation/articles/notification-hubs-java-backend-how-to/" title="Java" class="current">Java</a><a href="/documentation/articles/notification-hubs-php-backend-how-to/" title="PHP">PHP</a><a href="/documentation/articles/notification-hubs-python-backend-how-to/" title="Python">Python</a><a href="/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs/" title="Node.js">Node.js</a>
+    	<a href="/de-de/documentation/articles/notification-hubs-java-backend-how-to/" title="Java" class="current">Java</a><a href="/de-de/documentation/articles/notification-hubs-php-backend-how-to/" title="PHP">PHP</a><a href="/de-de/documentation/articles/notification-hubs-python-backend-how-to/" title="Python">Python</a>
 </div>
 
 In diesem Thema werden die wichtigsten Features des neuen, vollständig unterstützten, offiziellen Azure Notification Hub Java-SDKs beschrieben. 
 Dies ist ein Open-Source-Projekt, und Sie können den gesamten SDK-Code unter [Java-SDK] anzeigen. 
 
-Sie können von einem Java/PHP/Python/Ruby-Back-End aus über die REST-Schnittstelle für Notification Hubs, die im MSDN-Thema [REST-APIs für Notification Hubs](http://msdn.microsoft.com/library/dn223264.aspx) beschrieben ist, auf alle Notification Hubs-Features zugreifen. Dieses Java-SDK stellt einen dünnen Wrapper über diese REST-Schnittstellen in Java bereit. 
+Sie können von einem Java-/PHP-/Python-/Ruby-Back-End aus über die REST-Schnittstelle für Notification Hubs, die im MSDN-Thema [REST-APIs für Notification Hubs](http://msdn.microsoft.com/library/dn223264.aspx) beschrieben ist, auf alle Notification Hubs-Features zugreifen. Dieses Java-SDK stellt einen dünnen Wrapper über diese REST-Schnittstellen in Java bereit. 
 
 Das SDK unterstützt derzeit:
 
@@ -45,7 +45,7 @@ Verwenden von [Maven]
 
 Zum Erstellen von:
 
-	mvn package
+	MVN-Paketen
 
 ## Code
 
@@ -113,29 +113,29 @@ Entfernt Duplikate aufgrund verlorener Antworten beim Speichern von Registrierun
 	WindowsRegistration reg = new WindowsRegistration(id, new URI(CHANNELURI));
 	hub.upsertRegistration(reg);
 
-**Aktualisieren von Registrierungen:**
+**Registrierungen aktualisieren:**
 	
 	hub.updateRegistration(reg);
 
-**Löschen von Registrierungen:**
+**Registrierungen löschen:**
 	
 	hub.deleteRegistration(regid);
 
-**Abfragen von Registrierungen:**
+**Registrierungen abfragen:**
 
-* 	**Abrufen einer einzelnen Registrierung:**
+* 	**Einzelne Registrierung abrufen:**
 	
 		hub.getRegistration(regid);
 	
-* 	**Abrufen aller Registrierungen im Hub:**
+* 	**Alle Registrierungen im Hub abrufen:**
 	
 		hub.getRegistrations();
 	
-* 	**Abrufen von Registrierungen mit Tags:**
+* 	**Registrierungen mit Tag abrufen:**
 	
 		hub.getRegistrationsByTag("myTag");
 	
-* 	**Abrufen von Registrierungen nach Kanal:**
+* 	**Registrierungen nach Kanal abrufen:**
 	
 		hub.getRegistrationsByChannel("devicetoken");
 
@@ -274,7 +274,7 @@ Das Benachrichtigungsobjekt ist lediglich ein Text mit Headern. Einige Dienstpro
 		tags.add("foo");
 		hub.sendNotification(n, tags);
 
-* **Senden an Tagausdruck**       
+* **Senden an Tagausdruck**
 
 		hub.sendNotification(n, "foo && ! bar");
 
@@ -301,11 +301,11 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Java REST-Client für
 
 [Java-SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
 [Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
-[Erste Schritte mit Notification Hubs]: http://www.windowsazure.com/manage/services/notification-hubs/getting-started-windows-dotnet/
-[Senden aktueller Nachrichten]: http://www.windowsazure.com/manage/services/notification-hubs/breaking-news-dotnet/
-[Senden lokalisierter aktueller Nachrichten]: http://www.windowsazure.com/manage/services/notification-hubs/breaking-news-localized-dotnet/
-[Senden von Benachrichtigungen an authentifizierte Benutzer]: http://www.windowsazure.com/manage/services/notification-hubs/notify-users/
-[Senden plattformübergreifender Benachrichtigungen an authentifizierte Benutzer]: http://www.windowsazure.com/manage/services/notification-hubs/notify-users-xplat-mobile-services/
+[Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/manage/services/notification-hubs/getting-started-windows-dotnet/
+[Senden aktueller Nachrichten]: http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-dotnet/
+[Senden lokalisierter aktueller Nachrichten]: http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-localized-dotnet/
+[Senden von Benachrichtigungen an authentifizierte Benutzer]: http://azure.microsoft.com/manage/services/notification-hubs/notify-users/
+[Senden plattformübergreifender Benachrichtigungen an authentifizierte Benutzer]: http://azure.microsoft.com/manage/services/notification-hubs/notify-users-xplat-mobile-services/
 [Maven]: http://maven.apache.org/
 
-<!--HONumber=49-->
+<!--HONumber=45--> 

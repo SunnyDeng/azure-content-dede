@@ -51,7 +51,7 @@ Wir empfehlen die folgenden Links für die Kapazitätsplanung und zum Verständn
 [Limits und Einschränkungen](http://msdn.microsoft.com/library/dn798934.aspx)
 [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkdID=509792)
 
-Wenn Sie sich anmelden möchten, finden Sie Informationen unter [Erste Schritte mit Azure Search](../search-get-started/).
+Wenn Sie sich anmelden möchten, finden Sie Informationen unter [Erste Schritte mit Azure Search](search-get-started.md).
 
 
 <h2 id="sub-2">Verwaltungsaufgaben</h2>

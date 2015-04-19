@@ -65,8 +65,8 @@ So verwenden Sie das Verwaltungsportal
 
 Beachten Sie Folgendes, um Azure PowerShell-Befehle zum Erstellen eines virtuellen Azure-Computers zu verwenden und ihn zu einer neuen oder vorhandenen Verfügbarkeitsgruppe hinzuzufügen:
 
-- [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](../virtual-machines-ps-create-preconfigure-windows-vms/)
-- [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](../virtual-machines-ps-create-preconfigure-linux-vms/)
+- [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
+- [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](virtual-machines-ps-create-preconfigure-linux-vms.md)
 
 <<<<<<< HEAD
 	>[AZURE.NOTE] Führen Sie  `Get-AzureVMImage` ohne Parameter aus, um eine Liste sämtlicher Images aufzurufen, die für Ihr Abonnement gelten. Das kann eine lange Liste ausgeben. Um sie zu kürzen, verwenden Sie Eigenschaften wie den Image-Familiennamen. Tipps und Beispiele, die zeigen, wie Sie so ein spezifisches Image finden, finden Sie unter [Verwalten von Images mithilfe von Windows PowerShell](http://msdn.microsoft.com/library/azure/dn790330.aspx).

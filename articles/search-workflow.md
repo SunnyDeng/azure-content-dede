@@ -22,7 +22,7 @@
 
 Dieser Artikel enthält einen Überblick und einige bewährte Methoden für die Erstellung und Wartung des Search-Dienstes und der Indizes. 
 
-Wir setzen voraus, dass Sie den Dienst bereits eingerichtet haben. Wenn Sie ihn noch nicht eingerichtet haben, finden Sie weitere Anweisungen unter [Erste Schritte mit Azure Search](../search-get-started/).
+Wir setzen voraus, dass Sie den Dienst bereits eingerichtet haben. Wenn Sie ihn noch nicht eingerichtet haben, finden Sie weitere Anweisungen unter [Erste Schritte mit Azure Search](search-get-started.md).
 
 + [Schritt 1: Erstellen des Index](#sub-1)
 + [Schritt 2: Hinzufügen von Dokumenten](#sub-2)
@@ -35,7 +35,7 @@ Wir setzen voraus, dass Sie den Dienst bereits eingerichtet haben. Wenn Sie ihn 
 
 Abfragen zielen auf einen Suchindex, der Suchdaten und Attribute enthält. Daher sind die ersten Schritte nach der Bereitstellung des Diensts die Definition des Indexschemas im JSON-Format und das Ausführen einer HTTPS-PUT-Anforderung zum Erstellen des Indexes im Dienst. 
 
-Indizes werden vom Anwendungscode erstellt. Es gibt keine integrierten Tools oder Editoren mit denen Sie einen Index in einer Benutzeroberfläche definieren können. Beispiele für die verschiedenen Möglichkeiten zum Erstellen des Indexes finden Sie im Artikel [Erstellen Sie Ihre erste Suchlösung mit Azure Search](../search-create-first-solution/), in dem das Schema in der Datei Program.cs angegeben ist, und [Erste Schritte mit Wertungsprofilen in Azure Search](../search-get-started-scoring-profiles), in dem der Index in einer eigenständigen JSON-Schemadatei bereitgestellt wird. Weitere Informationen zum Erstellen des Index finden Sie unter [Erstellen eines Index (Azure Search-API)](http://msdn.microsoft.com/library/dn798941.aspx) im MSDN.
+Indizes werden vom Anwendungscode erstellt. Es gibt keine integrierten Tools oder Editoren mit denen Sie einen Index in einer Benutzeroberfläche definieren können. Beispiele für die verschiedenen Möglichkeiten zum Erstellen des Indexes finden Sie im Artikel [Erstellen Sie Ihre erste Suchlösung mit Azure Search](search-create-first-solution.md), in dem das Schema in der Datei Program.cs angegeben ist, und [Erste Schritte mit Wertungsprofilen in Azure Search](search-get-started-scoring-profiles.md), in dem der Index in einer eigenständigen JSON-Schemadatei bereitgestellt wird. Weitere Informationen zum Erstellen des Index finden Sie unter [Erstellen eines Index (Azure Search-API)](http://msdn.microsoft.com/library/dn798941.aspx) im MSDN.
 
 <h2 id="sub-2">Schritt 2: Hinzufügen von Dokumenten</h2>
 

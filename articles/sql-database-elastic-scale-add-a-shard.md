@@ -44,7 +44,7 @@ Im Beispiel unten wurden eine Datenbank namens **sample_shard_2** und alle erfor
 
 ## So fügen Sie einen Shard für einen leeren Teil eines vorhandenen Bereichs hinzu  
 
-In einigen Fällen haben Sie einem Shard vielleicht bereits einen Bereich zugeordnet und diesen teilweise mit Daten gefüllt. Jetzt möchten Sie aber weitere Daten an einen anderen Shard umleiten. Angenommen, Sie führen das Sharding nach einem Bereich von Tagen durch und haben einem Shard bereits 50 Tage zugeordnet. Am 24. Tag sollen zukünftige Daten jedoch an einen anderen Shard weitergeleitet werden. Mit dem Split-Merge-Dienst der [Elastic Scale-Vorschau](./sql-database-elastic-scale-overview-split-and-merge.md) können Sie diesen Vorgang durchführen. Wenn jedoch keine Datenverschiebung erforderlich ist (weil noch keine Daten für den Bereich der Tage [25, 50), d. h. einschließlich Tag 25 bis ausschließlich Tag 50, vorliegen), können Sie den ganzen Vorgang direkt mithilfe der Shard Map Management-APIs durchführen.
+In einigen Fällen haben Sie einem Shard vielleicht bereits einen Bereich zugeordnet und diesen teilweise mit Daten gefüllt. Jetzt möchten Sie aber weitere Daten an einen anderen Shard umleiten. Angenommen, Sie führen das Sharding nach einem Bereich von Tagen durch und haben einem Shard bereits 50 Tage zugeordnet. Am 24. Tag sollen zukünftige Daten jedoch an einen anderen Shard weitergeleitet werden. Mit dem Split-Merge-Dienst der [Elastic Scale-Vorschau](sql-database-elastic-scale-overview-split-and-merge.md) können Sie diesen Vorgang durchführen. Wenn jedoch keine Datenverschiebung erforderlich ist (weil noch keine Daten für den Bereich der Tage [25, 50), d. h. einschließlich Tag 25 bis ausschließlich Tag 50, vorliegen), können Sie den ganzen Vorgang direkt mithilfe der Shard Map Management-APIs durchführen.
 
 ### Beispiel:  Aufteilen eines Bereichs und Zuweisen des leeren Teils zu einem neu hinzugefügten Shard
 
@@ -73,7 +73,7 @@ Eine Datenbank namens "sample_shard_2" sowie alle erforderlichen, darin enthalte
     upd.Shard = shard2; 
     sm.MarkMappingOnline(sm.UpdateMapping(sm.GetMappingForKey(25), upd)); 
 
-**Wichtig**:  Verwenden Sie dieses Verfahren nur, wenn Sie sicher sind, dass der Bereich für die aktualisierte Zuordnung leer ist.  Durch die oben genannten Methoden werden keine Daten für den verschobenen Bereich überprüft. Deshalb empfiehlt es sich, Prüfroutinen im Code zu implementieren.  Wenn der verschobene Bereich Zeilen enthält, stimmt die tatsächliche Datenverteilung nicht mit der aktualisierten Shard Map überein. Verwenden Sie in diesem Fällen den [Split-Merge-Dienst](./sql-database-elastic-scale-overview-split-and-merge.md), um den Vorgang durchzuführen.  
+**Wichtig**:  Verwenden Sie dieses Verfahren nur, wenn Sie sicher sind, dass der Bereich für die aktualisierte Zuordnung leer ist.  Durch die oben genannten Methoden werden keine Daten für den verschobenen Bereich überprüft. Deshalb empfiehlt es sich, Prüfroutinen im Code zu implementieren.  Wenn der verschobene Bereich Zeilen enthält, stimmt die tatsächliche Datenverteilung nicht mit der aktualisierten Shard Map überein. Verwenden Sie in diesem Fällen den [Split-Merge-Dienst](sql-database-elastic-scale-overview-split-and-merge.md), um den Vorgang durchzuführen.  
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]

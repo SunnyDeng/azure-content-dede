@@ -78,7 +78,7 @@ Wenn der Datenverkehr je nach Tageszeit oder Wochentag schwankt und Ihre Back-En
 * Führen Sie das Programm als Webauftrag in einer separaten Web-App aus, die ausschließlich zu diesem Zweck dient. Auf diese Weise können Sie Ihre Back-End-Web-App unabhängig von Ihrer Front-End-Web-App skalieren.
 * Führen Sie das Programm in einer Azure-Clouddienst-Workerrolle aus. Mit dieser Option können Sie das Front-End entweder in einer Cloud-Dienst-Webrolle oder in einer Web-App ausführen.
 
-Dieses Lernprogramm beschreibt, wie Sie das Front-End in einer Web-App und das Back-End als Webauftrag in derselben Web-App ausführen können. Informationen zur Auswahl der optimalen Umgebung für Ihr Szenario finden Sie unter [Vergleich von Web-Apps, Cloud-Diensten und virtuellen Computern in Azure](../choose-web-site-cloud-service-vm/).
+Dieses Lernprogramm beschreibt, wie Sie das Front-End in einer Web-App und das Back-End als Webauftrag in derselben Web-App ausführen können. Informationen zur Auswahl der optimalen Umgebung für Ihr Szenario finden Sie unter [Vergleich von Web-Apps, Cloud-Diensten und virtuellen Computern in Azure](choose-web-site-cloud-service-vm.md).
 
 [AZURE.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
 

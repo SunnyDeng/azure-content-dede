@@ -19,7 +19,7 @@
 
 # Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Blob-Dienst
 
-In [Teil 1](../storage-dotnet-shared-access-signature-part-1/) dieses Lernprogramms haben Sie das Konzept der Shared Access Signatures (SAS) sowie bewährte Methoden für deren Einsatz kennengelernt. In Teil 2 erfahren Sie, wie Sie Shared Access Signatures mit dem Azure Blob-Dienst erstellen und dann verwenden können. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die gezeigten Szenarios umfassen die folgenden Aspekte der Arbeit mit Shared Access Signatures:
+In [Teil 1](storage-dotnet-shared-access-signature-part-1.md) dieses Lernprogramms haben Sie das Konzept der Shared Access Signatures (SAS) sowie bewährte Methoden für deren Einsatz kennengelernt. In Teil 2 erfahren Sie, wie Sie Shared Access Signatures mit dem Azure Blob-Dienst erstellen und dann verwenden können. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die gezeigten Szenarios umfassen die folgenden Aspekte der Arbeit mit Shared Access Signatures:
 
 - Generieren einer Shared Access Signature für einen Container
 - Generieren einer Shared Access Signature für ein Blob
@@ -533,7 +533,7 @@ Führen Sie die Konsolenanwendung aus, und beobachten Sie die Ausgabe, um heraus
 
 # Nächste Schritte #
 
-[Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](../storage-dotnet-shared-access-signature-part-1/)
+[Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
 
 [Verwalten des Zugriffs auf Azure-Speicherressourcen](http://msdn.microsoft.com/library/windowsazure/ee393343.aspx)
 

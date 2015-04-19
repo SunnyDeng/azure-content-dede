@@ -1,8 +1,8 @@
-1. Öffnen Sie den Android SDK Manager, indem Sie auf das Symbol auf der Symbolleiste von Android Studio klicken (es befindet sich auf der rechten Seite: im Zweifelsfall zeigen Sie mit dem Mauszeiger auf das Symbol). Suchen Sie die Zielversion des Android SDKs, das in Ihrem Projekt verwendet wird, öffnen Sie es, und wählen Sie **Google APIs**, falls es noch nicht installiert ist.
+﻿1. Öffnen Sie den Android SDK Manager, indem Sie auf das Symbol auf der Symbolleiste von Android Studio klicken (es befindet sich auf der rechten Seite: im Zweifelsfall zeigen Sie mit dem Mauszeiger auf das Symbol). Suchen Sie die Zielversion des Android SDKs, das in Ihrem Projekt verwendet wird, öffnen Sie es, und wählen Sie **Google APIs**, falls es noch nicht installiert ist.
 
 2. Scrollen Sie nach unten zu **Extras**, erweitern Sie diese, und wählen Sie **Google Play Services**, wie unten gezeigt. Klicken Sie auf **Install Packages**. Beachten Sie den SDK-Pfad für den folgenden Schritt. 
 
-   ![](./media/notification-hubs-android-get-started/notification-hub-create-android-app4.png)
+   	![](./media/notification-hubs-android-get-started/notification-hub-create-android-app4.png)
 
 
 3. Öffnen Sie die Datei **build.gradle** im App-Verzeichnis.
@@ -26,4 +26,5 @@
 
 
 
-<!--HONumber=49-->
+
+<!--HONumber=47-->

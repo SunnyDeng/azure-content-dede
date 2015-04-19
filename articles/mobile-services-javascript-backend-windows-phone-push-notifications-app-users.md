@@ -28,7 +28,7 @@ In diesem Lernprogramm werden Sie durch den folgenden Prozess geführt:
 + [Aktualisieren der App zum Anmelden vor der Registrierung]
 + [Testen der App]
  
-Dieses Lernprogramm unterstützt Apps für Windows Phone 8.0 und Windows Phone 8.1 ("Silverlight"). Informationen für Windows Phone 8.1 Store-Apps finden Sie in der [Windows Store-Version dieses Themas](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users).
+Dieses Lernprogramm unterstützt Apps für Windows Phone 8.0 und Windows Phone 8.1 ("Silverlight"). Informationen für Windows Phone 8.1 Store-Apps finden Sie in der [Windows Store-Version dieses Themas](mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users.md).
 
 ##Voraussetzungen 
 

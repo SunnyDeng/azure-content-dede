@@ -104,7 +104,7 @@ Mit dem folgenden geplanten Job werden vorläufig gelöschte Datensätze, die ä
         }
     }
 
-Weitere Informationen zum Planen von Jobs mit Mobile Services mit .NET-Backend finden Sie unter [Planen von periodischen Aufträgen in Mobile Services](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/) 
+Weitere Informationen zum Planen von Jobs mit Mobile Services mit .NET-Backend finden Sie unter [Planen von periodischen Aufträgen in Mobile Services](mobile-services-dotnet-backend-schedule-recurring-tasks.md) 
 
 
 
@@ -145,7 +145,7 @@ Dies ist ein beispielhafter geplanter Job für das Löschen von Datensätzen, di
         }});
     }
 
-Weitere Informationen zu geplanten Jobs mit Mobile Services mit JavaScript-Backend finden Sie unter [Planen von periodischen Aufträgen in Mobile Services](/documentation/articles/mobile-services-schedule-recurring-tasks/).
+Weitere Informationen zu geplanten Jobs mit Mobile Services mit JavaScript-Backend finden Sie unter [Planen von periodischen Aufträgen in Mobile Services](mobile-services-schedule-recurring-tasks.md).
 
 
 

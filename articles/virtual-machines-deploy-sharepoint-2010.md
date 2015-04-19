@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="SharePoint 2010-Bereitstellung auf Azure Virtual Machines" 
 	description="Verstehen Sie die unterstützten Szenarien für die Verwendung von SharePoint 2010 auf virtuellen Azure-Computern." 
 	services="virtual-machines" 
@@ -137,7 +137,7 @@ Sie können SharePoint 2010 auf Azure mit den folgenden Schritten bereitstellen:
 </ul>
 </li>
 
-<li>Klicken Sie zum Erstellen einer VM mit dem Basisbetriebssystem im Azure-Verwaltungsportal auf <strong>NEU > BERECHNEN > VIRTUELLER COMPUTER > AUS KATALOG</strong>.</li>
+<li>Klicken Sie zum Erstellen einer VM mit dem Basisbetriebssystem im Azure-Verwaltungsportal auf <strong>NEU > COMPUTE > VIRTUELLER COMPUTER > AUS KATALOG</strong>.</li>
 
 <li>Es wird das Dialogfenster <strong>Wählen Sie ein Image aus</strong> angezeigt. Klicken Sie das Plattformabbild <strong>Windows Server 2008 R2 SP1</strong> und dann den Pfeil nach rechts.</li>
 

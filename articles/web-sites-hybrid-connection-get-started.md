@@ -175,7 +175,7 @@ Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie ein
 
 [Website zu Hybridverbindungen](http://azure.microsoft.com/services/biztalk-services/)
 
-[BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Konfigurieren" und "Hybridverbindungen"](../biztalk-dashboard-monitor-scale-tabs/)
+[BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Konfigurieren" und "Hybridverbindungen"](biztalk-dashboard-monitor-scale-tabs.md)
 
 [Erstellen einer echten hybriden Cloud mit nahtloser Anwendungsportabilität (Channel 9-Video](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
 

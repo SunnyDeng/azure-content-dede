@@ -86,7 +86,7 @@ Sie können Bereitstellungen über die Seite **Cloud-Dienste** oder über das Da
 
 Um die Abhängigkeiten des Cloud-Diensts von anderen Ressourcen anzuzeigen, können Sie eine Azure-SQL-Datenbankinstanz oder ein Speicherkonto mit dem Cloud-Dienst verknüpfen. Auf der Seite **Verknüpfte Ressourcen** können Sie Ressourcen verknüpfen und Verknüpfungen aufheben und dann deren Verwendung im Cloud-Dienst-Dashboard überwachen. Wenn für ein verknüpftes Speicherkonto die Überwachung aktiviert ist, können Sie die gesamten Anforderungen im Cloud-Dienst-Dashboard überwachen.
 
-Verwenden Sie **Verknüpfen**, um eine neue oder vorhandene SQL-Datenbankinstanz oder ein Speicherkonto mit Ihrem Cloud-Dienst zu verknüpfen. Anschließend können Sie die Datenbank sowie die Cloud-Dienstrolle, die diese verwendet, auf der Seite **Skalieren** skalieren. (Ein Speicherkonto wird mit zunehmender Nutzung automatisch skaliert.) Weitere Informationen finden Sie unter [Skalieren eines Cloud-Diensts und verknüpfter Ressourcen](../cloud-services-how-to-scale/). 
+Verwenden Sie **Verknüpfen**, um eine neue oder vorhandene SQL-Datenbankinstanz oder ein Speicherkonto mit Ihrem Cloud-Dienst zu verknüpfen. Anschließend können Sie die Datenbank sowie die Cloud-Dienstrolle, die diese verwendet, auf der Seite **Skalieren** skalieren. (Ein Speicherkonto wird mit zunehmender Nutzung automatisch skaliert.) Weitere Informationen finden Sie unter [Skalieren eines Cloud-Diensts und verknüpfter Ressourcen](cloud-services-how-to-scale.md). 
 
 Sie können die Datenbank außerdem im Knoten **Datenbanken** des Verwaltungsportals überwachen, verwalten und skalieren. 
 
@@ -120,7 +120,7 @@ Im Folgenden wird beschrieben, wie eine neue SQL-Datenbankinstanz, die auf einem
 
 	![Link Progress](./media/cloud-services-how-to-manage/CloudServices_LinkedResources_LinkProgress.png)
 
-	Wenn das Verknüpfen abgeschlossen ist, können Sie den Status der verknüpften Ressource im Cloud-Dienst-Dashboard überwachen. Informationen zum Skalieren einer verknüpften SQL-Datenbank finden Sie unter [Skalieren eines Cloud-Diensts und verknüpfter Ressourcen](../cloud-services-how-to-scale/).
+	Wenn das Verknüpfen abgeschlossen ist, können Sie den Status der verknüpften Ressource im Cloud-Dienst-Dashboard überwachen. Informationen zum Skalieren einer verknüpften SQL-Datenbank finden Sie unter [Skalieren eines Cloud-Diensts und verknüpfter Ressourcen](cloud-services-how-to-scale.md).
 
 ### Aufheben der Verknüpfung einer verknüpften Ressource###
 
@@ -158,7 +158,7 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 5. Klicken Sie zum Löschen des Cloud-Diensts auf **Cloud-Dienst löschen**. Klicken Sie dann an der Bestätigungsaufforderung auf **Ja**.
 
 > [AZURE.NOTE]
-> Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie unter "Vorgehensweise: Zugreifen auf ausführliche Überwachungsdaten außerhalb des Verwaltungsportals" in <a href="http://azure.microsoft.com/ documentation/articles/cloud-services-how-to-monitor/">Überwachung von Cloud-Diensten</a>.
+> Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie unter "Vorgehensweise: Zugreifen auf ausführliche Überwachungsdaten außerhalb des Verwaltungsportals" in <a href="http://azure.microsoft.com/documentation/articles/cloud-services-how-to-monitor/">Überwachung von Cloud-Diensten</a>.
 
 
 <!--HONumber=45--> 

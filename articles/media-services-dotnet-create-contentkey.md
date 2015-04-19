@@ -19,13 +19,13 @@
 
 # Erstellen von ContentKeys mit .NET
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) .  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) .  
 
 Media Services ermöglicht das Erstellen neuer und Übermitteln verschlüsselter Medienobjekte. Ein **ContentKey** ermöglicht den sicheren Zugriff auf Ihre **Medienobjekte**. 
 
-Wenn Sie ein neues Objekt erstellen (z. B. vor dem [Hochladen von Dateien](../media-services-dotnet-upload-files/)),können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**. 
+Wenn Sie ein neues Objekt erstellen (z. B. vor dem [Hochladen von Dateien](media-services-dotnet-upload-files.md)),können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**. 
 
-Wenn Sie Medienobjekte an Ihre Clients übermitteln, können Sie die [dynamische Verschlüsselung von Medienobjekten konfigurieren](../media-services-dotnet-configure-asset-delivery-policy). Hierzu können Sie eine der beiden folgenden Verschlüsselungen verwenden: **DynamicEnvelopeEncryption** oder **DynamicCommonEncryption**.
+Wenn Sie Medienobjekte an Ihre Clients übermitteln, können Sie die [dynamische Verschlüsselung von Medienobjekten konfigurieren](media-services-dotnet-configure-asset-delivery-policy.md). Hierzu können Sie eine der beiden folgenden Verschlüsselungen verwenden: **DynamicEnvelopeEncryption** oder **DynamicCommonEncryption**.
 
 Verschlüsselte Medienobjekte müssen **ContentKey**s zugeordnet werden. In diesem Artikel wird beschrieben, wie ein Inhaltsschlüssel erstellt wird.
 

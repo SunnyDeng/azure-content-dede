@@ -1,35 +1,31 @@
-<properties 
-	pageTitle="Erste Schritte mit Azure Notification Hubs" 
-	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." 
-	services="notification-hubs" 
-	documentationCenter="ios" 
-	authors="wesmc" 
-	manager="dwrede" 
-	editor=""/>
+<properties pageTitle="Erste Schritte mit Azure Notification Hubs" description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." services="notification-hubs" documentationCenter="ios" authors="ysxu" manager="dwrede" editor=""/>
 
 <tags 
 	ms.service="notification-hubs" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-ios" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="objective-c" 
 	ms.topic="hero-article" 
-	ms.date="03/16/2015" 
-	ms.author="wesmc"/>
+	ms.date="10/10/2014" 
+	ms.author="yuaxu"/>
 
 # Erste Schritte mit Notification Hubs
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
-
-##Übersicht
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/" title="Windows Universal">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-windows-phone-get-started/" title="Windows Phone">Windows Phone</a><a href="/de-de/documentation/articles/notification-hubs-ios-get-started/" title="iOS" class="current">iOS</a><a href="/de-de/documentation/articles/notification-hubs-android-get-started/" title="Android">Android</a><a href="/de-de/documentation/articles/notification-hubs-kindle-get-started/" title="Kindle">Kindle</a><a href="/de-de/documentation/articles/notification-hubs-baidu-get-started/" title="Baidu">Baidu</a><a href="/de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/" title="Xamarin.iOS">Xamarin.iOS</a><a href="/de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/" title="Xamarin.Android">Xamarin.Android</a></div>
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an eine iOS-App senden.
 In diesem Lernprogramm erstellen Sie eine leere iOS-App, die Pushbenachrichtigungen mithilfe des Apple-Pushbenachrichtigungsdiensts (APNs) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
 
-Das Lernprogramm zeigt ein einfaches Übertragungsszenario mithilfe von Notification Hubs. 
+In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
-##Voraussetzungen
+1. [Erstellen der Zertifikatsignieranforderungsdatei]
+2. [Registrieren der App und Aktivieren von Pushbenachrichtigungen]
+3. [Erstellen eines Bereitstellungsprofils für die App]
+4. [Konfigurieren Ihres Notification Hub]
+5. [Verbinden Ihrer App mit dem Notification Hub]
+6. [Senden von Benachrichtigungen von Ihrem Back-End aus]
 
-Für dieses Lernprogramm ist Folgendes erforderlich:
+Das Lernprogramm zeigt ein einfaches Übertragungsszenario mithilfe von Notification Hubs. Bearbeiten Sie auch das nachfolgende Lernprogramm, um mehr über die Verwendung von Notification Hubs zur Adressierung von speziellen Benutzern und Gerätegruppen zu erfahren. Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + [Mobile Services iOS SDK]
 + [XCode 4.5][Installieren von Xcode]
@@ -40,11 +36,11 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hub-Lernprogramme für iOS-Apps.
 
-> [AZURE.NOTE] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [1 Monat kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started).
+> [AZURE.NOTE] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F%20target="_blank).
 
-[AZURE.INCLUDE [Enable Apple Push Notifications](../includes/enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [Aktivieren von Apple-Pushbenachrichtigungen](../includes/enable-apple-push-notifications.md)]
 
-##Konfigurieren Ihres Notification Hub
+##<a name="configure-hub"></a>Konfigurieren Ihres Notification Hub
 
 1. Klicken Sie in der Schlüsselbundverwaltung mit der rechten Maustaste auf das neue Zertifikat der Schnellstart-App unter **Meine Zertifikate**. Klicken Sie auf **Exportieren**, benennen Sie die Datei, wählen Sie das Format **.p12** aus, und klicken Sie dann auf **Speichern**.
 
@@ -64,25 +60,25 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
    	![][28]
 
-5. Klicken Sie auf den soeben erstellten Namespace (für gewöhnlich ***Name des Notification Hub*-ns**), und anschließend oben auf die Registerkarte **Konfigurieren**.
+5. Klicken Sie auf den gerade erstellten Namespace (normalerweise ***Name des Notification Hub*-ns**), und klicken Sie dann oben auf die Registerkarte **Konfigurieren**.
 
    	![][29]
 
-6. Klicken Sie oben auf die Registerkarte **Notification Hubs** und dann auf den soeben erstellen Notification Hub.
+6. Klicken Sie oben auf die Registerkarte **Notification Hubs** und dann auf den soeben erstellten Notification Hub.
 
    	![][210]
 
-7. Wählen Sie oben die Registerkarte **Configure** aus, und klicken Sie dann für die Apple-Benachrichtigungseinstellungen auf **Upload**. Wählen Sie anschließend das zuvor exportierte **.p12**-Zertifikat und das Kennwort für das Zertifikat aus. Wählen Sie aus, ob Sie den Pushdienst **Production** (wenn Sie Pushbenachrichtigungen an Benutzer versenden möchten, die Ihre App aus dem Store erworben haben) oder **Sandbox** (während der Entwicklung) verwenden möchten.
+7. Wählen Sie oben die Registerkarte **Konfigurieren** aus, und klicken Sie dann für die Apple-Benachrichtigungseinstellungen auf **Upload**. Wählen Sie anschließend das zuvor exportierte **.p12**-Zertifikat und das Kennwort für das Zertifikat aus. Wählen Sie aus, ob Sie den Pushdienst **Production** (wenn Sie Pushbenachrichtigungen an Benutzer versenden möchten, die Ihre App aus dem Store erworben haben) oder **Sandbox** (während der Entwicklung) verwenden möchten.
 
    	![][211]
 
-8. Klicken Sie oben auf die Registerkarte **Dashboard**, und klicken Sie danach auf **Connection Information**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
+8. Wählen Sie oben die Registerkarte **Dashboard** aus, und klicken Sie danach auf **Verbindungsinformationen**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
 
    	![][212]
 
 Der Notification Hub ist nun konfiguriert, um mit APNs arbeiten zu können. Außerdem besitzen Sie die Verbindungszeichenfolgen zum Registrieren der App und zum Senden von Benachrichtigungen.
 
-##Verbinden Ihrer App mit dem Notification Hub
+##<a name="connecting-app"></a>Verbinden Ihrer App mit dem Notification Hub
 
 1. Erstellen Sie in XCode ein neues iOS-Projekt, und wählen Sie die Vorlage **Single View Application** aus.
 
@@ -100,19 +96,9 @@ Der Notification Hub ist nun konfiguriert, um mit APNs arbeiten zu können. Auß
 
          #import <WindowsAzureMessaging/WindowsAzureMessaging.h>
 
-5. Fügen Sie in der Datei "AppDelegate.m" der Methode `didFinishLaunchingWithOptions` folgenden Code hinzu:
+5. Fügen Sie in der Datei "AppDelegate.m" folgenden Code der Methode  `didFinishLaunchingWithOptions` hinzu:
 
          [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
-
-	Für iOS 8
-   
-	 	UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound |
-                                            UIUserNotificationTypeAlert |
-                                            UIUserNotificationTypeBadge
-					    					categories:nil];
- 
-    	[[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    	[[UIApplication sharedApplication] registerForRemoteNotifications];
 
 6. Fügen Sie in derselben Datei die folgende Methode hinzu:
 
@@ -140,11 +126,11 @@ Der Notification Hub ist nun konfiguriert, um mit APNs arbeiten zu können. Auß
 
 8. Führen Sie die App auf Ihrem Gerät aus.
 
-##Senden von Benachrichtigungen vom Back-End aus
+##<a name="send"></a>Senden von Benachrichtigungen vom Back-End aus
 
-Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebigen Back-End aus über die [REST-Schnittstelle](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx) senden. In diesem Lernprogramm senden Sie Benachrichtigungen mit einer .NET-Konsolenanwendung. Ein Beispiel für das Senden von Benachrichtigungen von einem mit Notification Hubs integrierten Azure Mobile Services-Back-End finden Sie unter **Erste Schritte mit Pushbenachrichtigungen in Mobile Services** ([.NET-Back-End](mobile-services-javascript-backend-ios-get-started-push.md) | [JavaScript-Back-End](mobile-services-javascript-backend-ios-get-started-push.md)).  Ein Beispiel für das Senden von Benachrichtigungen über die REST-APIs finden Sie unter **Verwenden von Notification Hubs von Java/PHP aus** ([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md)).
+Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebigen Back-End aus über die <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST-Schnittstelle</a> senden. In diesem Lernprogramm senden Sie Benachrichtigungen mit einer .NET-Konsolenanwendung. Ein Beispiel zum Senden von Benachrichtigungen von einem mit Notification Hubs integrierten Azure Mobile Services-Back-End aus finden Sie unter **Erste Schritte mit Pushbenachrichtigungen in Mobile Services** ([.NET-Back-End](mobile-services-javascript-backend-ios-get-started-push.md) | [JavaScript-Back-End](mobile-services-javascript-backend-ios-get-started-push.md)).  Ein Beispiel zum Senden von Benachrichtigungen über die REST-APIs finden Sie unter **Verwenden von Notification Hubs von Java/PHP** ([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md)).
 
-1. Wählen Sie in Visual Studio aus dem Menü **Datei** die Option **Neu** und dann **Projekt...** aus, klicken Sie unter **Visual C#** auf **Windows** und **Konsolenanwendung**, und klicken Sie dann auf **OK**.  
+1. Wählen Sie in Visual Studio aus dem Menü **Datei** die Option **Neu** und dann **Projekt...** aus, klicken Sie dann unter **Visual C#** auf **Windows** und **Konsolenanwendung**, und klicken Sie dann auf **OK**.  
 
    	![][20]
 
@@ -177,7 +163,7 @@ Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebig
 
 	>[AZURE.NOTE]Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff (**Full**) verwenden, nicht die mit Abhörzugriff (**Listen**). Die Verbindungszeichenfolge mit Abhörzugriff verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
 
-5. Fügen Sie danach der **Main**-Methode die folgenden Zeilen hinzu:
+5. Fügen Sie danach die folgenden Zeilen zur **Main**-Methode hinzu:
 
          SendNotificationAsync();
 		 Console.ReadLine();
@@ -186,13 +172,20 @@ Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebig
 
 	Sie sollten eine Warnung auf Ihrem Gerät erhalten. Überprüfen Sie die Verbindung, wenn Sie WLAN verwenden.
 
-Sie finden alle möglichen Nutzlasten im [Local and Push Notification Programming Guide] von Apple.
+Sie finden alle möglichen Nutzlasten im Apple [Local and Push Notification Programming Guide].
 
-##Nächste Schritte
+## <a name="next-steps"> </a>Nächste Schritte
 
-In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Geräte übertragen. Informationen zum Adressieren bestimmter Benutzer finden Sie im Lernprogramm [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]. Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, können Sie [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] lesen. Weitere Informationen zur Verwendung von Notification Hubs finden Sie in der [Notification Hubs-Anleitung][Notification Hubs-Leitfaden].
+In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Geräte übertragen. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]. Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, lesen Sie [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]. Weitere Informationen zur Verwendung von Notification Hubs finden Sie in der [Notification Hubs-Anleitung].
 
-
+<!-- Anchors. -->
+[Erstellen der Zertifikatsignieranforderungsdatei]: #certificates
+[Registrieren der App und Aktivieren von Pushbenachrichtigungen]: #register
+[Erstellen eines Bereitstellungsprofils für die App]: #profile
+[Konfigurieren Ihres Notification Hub]: #configure-hub
+[Verbinden Ihrer App mit dem Notification Hub]: #connecting-app
+[Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
+[Nächste Schritte]:#next-steps
 
 <!-- Images. -->
 [5]: ./media/notification-hubs-ios-get-started/mobile-services-ios-push-step5.png
@@ -271,16 +264,15 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Gerä
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started-ios
+[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-ios
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs-Anleitung]: http://msdn.microsoft.com/library/jj927170.aspx
 [Installieren von Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS-Bereitstellungsportal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 
-[Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-ios-mobile-services-register-user-push-notifications.md
-[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: notification-hubs-ios-send-breaking-news.md
+[Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: /de-de/manage/services/notification-hubs/notify-users-aspnet
+[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-dotnet
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 
-
-<!--HONumber=49-->
+<!--HONumber=45--> 

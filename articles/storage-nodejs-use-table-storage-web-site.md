@@ -523,7 +523,7 @@ Verwenden Sie den folgenden Befehl, um die Befehlszeilentools zu installieren:
 	
 	npm install azure-cli -g
 
-> [AZURE.NOTE] Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](/de-de/documentation/articles/xplat-cli/);
+> [AZURE.NOTE] Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli.md);
 
 > [AZURE.NOTE] Obwohl die Befehlszeilentools vor allem für Mac-und Linux-Benutzer erstellt wurden, basieren sie auf "Node.js" und sollten auf allen Systemen funktionieren, die Node ausführen können.
 

@@ -53,16 +53,16 @@ Das Schlüsselelement in dieser Architekturabbildung ist der Dienst Azure Servic
 ###Voraussetzungen
 Sie sollten die folgenden Lernprogramme durcharbeiten, um sich mit den Konzepten sowie den allgemeinen Erstellungs- und Konfigurationsschritten vertraut zu machen:
 
-1. [Verwenden von Service Bus-Themen und -Abonnements] - Es werden die Details des Arbeitens mit Service Bus-Themen/Abonnements erläutert, und es wird erläutert, wie ein Namespace erstellt wird, der Themen/Abonnements enthalten soll, und wie Nachrichten von diesen gesendet bzw. empfangen werden.
-2. [Erste Schritte mit Notification Hubs] - Hier wird erläutert, wie eine Windows Store-App eingerichtet und Benachrichtigungshubs (Notification Hubs) verwendet werden, um sich zu registrieren und dann Benachrichtigungen zu empfangen.
+1. [Verwenden von Service Bus-Themen und -Abonnements] - Es werden die Details des Arbeitens mit Service Bus-Themen/Abonnements erläutert, und es wird erläutert, wie ein Namespace erstellt wird, der Themen/Abonnements enthalten soll, und wie Nachrichten von diesen gesendet bzw. empfangen werden. 
+2. [Erste Schritte mit Notification Hubs] - Hier wird erläutert, wie eine Windows Store-App eingerichtet und Benachrichtigungshubs (Notification Hubs) verwendet werden, sich zu registrieren und dann Benachrichtigungen zu empfangen. 
 
 ###Beispielcode
 
-Der vollständige Beispielcode ist unter [Notification Hubs Samples][Notification Hub - Beispiele] verfügbar. Der Code ist in drei Komponenten aufgeteilt:
+Der vollständige Beispielcode ist unter [Notification Hubs Samples] verfügbar. Der Code ist in drei Komponenten aufgeteilt:
 
 1. **EnterprisePushBackendSystem**
 	
-	a. In diesem Projekt, das auf [Verwenden von Service Bus-Themen und -Abonnements] basiert, wird das *WindowsAzure.ServiceBus*-Nuget-Paket verwendet. 
+	a. In diesem Projekt, das auf [Verwenden von Service Bus-Themen und -Abonnements] basiert, wird das Nuget-Paket *WindowsAzure.ServiceBus* verwendet. 
 
 	b. Das Paket enthält eine einfache C#-Konsolenanwendung, um ein Branchensystem (LoB-System) zu simulieren, das ein Senden der Nachricht an die mobile APp veranlasst. 
 	
@@ -78,7 +78,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples][Notificatio
             SendMessage(connectionString);
         }
 	
-	c. `CreateTopic` wird verwendet, um das Service Bus-Thema zu erstellen, in dem Nachrichten gesendet werden.
+	c. `CreateTopic` wird verwendet, um das Service Bus-Thema zu erstellen, in dem Nachrichten gesendet werden. 
 
         public static void CreateTopic(string connectionString)
         {
@@ -126,7 +126,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples][Notificatio
 
 2. **ReceiveAndSendNotification**
 
-	a. In diesem Projekt, das auf [Verwenden von Service Bus-Themen und -Abonnements] basiert, werden die Nuget-Pakete *WindowsAzure.ServiceBus* und *Microsoft.Web.WebJobs.Publish* verwendet. 
+	a. In diesem Projekt, das auf [Verwenden von Service Bus-Themen und -Abonnements] basiert, werden dier Nuget-Pakete *WindowsAzure.ServiceBus* und *Microsoft.Web.WebJobs.Publish* verwendet. 
 
 	b. Dies ist eine weitere C#-Konsolenanwendung, die als ein [Azure WebJob] ausgeführt wird, weil sie kontinuierlich ausgeführt werden muss, um auf Nachrichten von den Branchen- bzw. Back-End-Systemen zu lauschen. Das Projekt ist Bestandteil Ihres Mobil-Back-Ends. 
 
@@ -225,7 +225,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples][Notificatio
 	
 	b. Stellen Sie sicher, dass Ihre Anwendung so konfiguriert ist, dass sie Popupbenachrichtigungen empfangen kann. 
 
-	c. Stellen Sie sicher, dass der folgende Notification Hub-Registrierungscode beim App-Start aufgerufen wird (nachdem *HubName* und *DefaultListenSharedAccessSignature*) ersetzt wurden:
+	c. Stellen Sie sicher, dass der folgende Benachrichtigungshub-Registrierungscode bei einem App-Start aufgerufen wird (nachdem *HubName* und *DefaultListenSharedAccessSignature*) ersetzt wurden:
 
         private async void InitNotificationsAsync()
         {
@@ -264,11 +264,11 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples][Notificatio
 [6]: ./media/notification-hubs-enterprise-push-architecture/WebJobsLog.png
 
 <!-- Links -->
-[Notification Hub - Beispiele]: https://github.com/Azure/azure-notificationhubs-samples
+[Notification Hubs Samples]: https://github.com/Azure/azure-notificationhubs-samples
 [Azure Mobile Service]: http://azure.microsoft.com/documentation/services/mobile-services/
 [Azure Service Bus]: http://azure.microsoft.com/documentation/articles/fundamentals-service-bus-hybrid-solutions/
 [Verwenden von Service Bus-Themen und -Abonnements]: http://azure.microsoft.com/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
 [Azure WebJob]: http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/
 [Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 
-<!--HONumber=49-->
+<!--HONumber=45--> 

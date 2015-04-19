@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden von Python mit Hive und Pig in Azure HDInsight" 
 	description="Erfahren Sie, wie Sie Benutzerdefinierte Python-Funktionen mit Hive und Pig in Azure HDInsight verwenden können." 
 	services="hdinsight" 
@@ -267,10 +267,9 @@ Die Fehlermeldung (STDERR) und das Ergebnis des Jobs (STDERR) werden ebenfalls i
 <tr>
 <td>Für diesen Job...</td><td>Sehen Sie sich diese Dateien im BLOB-Container an</td>
 </tr>
-<tr>
-<td>Hive</td><td>/HivePython/stderr<br />/HivePython/stdout</td>
+<td>Hive</td><td>/HivePython/stderr</br>/HivePython/stdout</td>
 </tr>
-<td>Pig</td><td>/PigPython/stderr<br />/PigPython/stdout</td>
+<td>Pig</td><td>/PigPython/stderr</br>/PigPython/stdout</td>
 </tr>
 </table>
 

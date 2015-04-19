@@ -18,9 +18,9 @@
 
 # Verwenden von Azure Service Bus mit dem Webaufträge-SDK
 
-Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-BLOB erstellt oder aktualisiert wird. Die Codebeispiele verwenden das [Webaufträge-SDK](../websites-dotnet-webjobs-sdk/) 1.x.
+Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-BLOB erstellt oder aktualisiert wird. Die Codebeispiele verwenden das [Webaufträge-SDK](websites-dotnet-webjobs-sdk.md) 1.x.
 
-Im Leitfaden wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](../websites-dotnet-webjobs-sdk-get-started/).
+Im Leitfaden wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](websites-dotnet-webjobs-sdk-get-started.md).
 
 Die Codeausschnitte zeigen nur Funktionen, nicht den Code, mit dem das `JobHost`-Objekt in diesem Beispiel erstellt wird:
 
@@ -138,7 +138,7 @@ Zum Erstellen einer Nachricht zu einem Thema verwenden Sie das `ServiceBus`-Attr
 
 ## <a id="queues"></a>Verwandte Themen im Artikel zu Speicherwarteschlangen
 
-Informationen zu Webaufträge-SDK-Szenarien, die nicht spezifisch für Service Bus sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](../websites-dotnet-webjobs-sdk-storage-queues-how-to/). 
+Informationen zu Webaufträge-SDK-Szenarien, die nicht spezifisch für Service Bus sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md). 
 
 In diesem Artikel werden unter anderem diese Themen behandelt:
 

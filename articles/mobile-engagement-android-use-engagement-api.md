@@ -18,7 +18,7 @@
 
 # Verwenden der Engagement-API unter Android
 
-Dieses Dokument ist eine Ergänzung zum Dokument [Integrieren von Engagement unter Android](../mobile-engagement-android-integrate-engagement/): Es bietet detaillierte Informationen zum Melden der Anwendungsstatistiken mithilfe der Engagement-API.
+Dieses Dokument ist eine Ergänzung zum Dokument [Integrieren von Engagement unter Android](mobile-engagement-android-integrate-engagement.md): Es bietet detaillierte Informationen zum Melden der Anwendungsstatistiken mithilfe der Engagement-API.
 
 Bedenken Sie, dass die einfachste Methode darin besteht, dass Ihre `Activity`-Unterklassen von der entsprechenden `EngagementActivity`-Klasse erben, wenn Engagement lediglich die Sitzungen, Aktivitäten, Abstürze und technischen Informationen Ihrer Anwendung melden soll.
 
@@ -28,7 +28,7 @@ Die Engagement-API wird von der `EngagementAgent`-Klasse bereitgestellt. Eine In
 
 ## Engagement-Konzepte
 
-Die folgenden Komponenten erweitern die allgemeinen [Mobile Engagement-Konzepte] (../mobile-engagement-concepts/)für die Android-Plattform.
+Die folgenden Komponenten erweitern die allgemeinen [Mobile Engagement-Konzepte] (mobile-engagement-concepts.md)für die Android-Plattform.
 
 ### `Sitzung` und `Aktivität`
 

@@ -65,7 +65,7 @@ Bei Verbunden wird eine Verbindung mit einem bestimmten Verbundmitglied wie folg
 
     USE FEDERATION CustomerFederation(cid=100) WITH RESET, FILTERING=OFF`
 
-Bei den Elastic Scale-APIs wird eine Verbindung zu einem bestimmten Shard über die [datenabhängige Weiterleitung](./sql-database-elastic-scale-data-dependent-routing.md) mit der Methode **OpenConnectionForKey** in der Klasse **RangeShardMap** eingerichtet. 
+Bei den Elastic Scale-APIs wird eine Verbindung zu einem bestimmten Shard über die [datenabhängige Weiterleitung](sql-database-elastic-scale-data-dependent-routing.md) mit der Methode **OpenConnectionForKey** in der Klasse **RangeShardMap** eingerichtet. 
 
     //Connect and issue queries on the shard with key=100 
     using (SqlConnection conn = rangeShardMap.OpenConnectionForKey(100, csb))  
@@ -82,7 +82,7 @@ Bei den Elastic Scale-APIs wird eine Verbindung zu einem bestimmten Shard über 
         } 
     }
 
-Die Schritte in diesem Abschnitt sind erforderlich, lösen aber möglicherweise nicht alle aufkommenden Migrationsszenarien. Weitere Informationen stehen in der [Konzeptionellen Übersicht über Elastic Scale](./sql-database-elastic-scale-introduction.md) und der [API-Referenz](http://go.microsoft.com/?linkid=9862604) zur Verfügung.
+Die Schritte in diesem Abschnitt sind erforderlich, lösen aber möglicherweise nicht alle aufkommenden Migrationsszenarien. Weitere Informationen stehen in der [Konzeptionellen Übersicht über Elastic Scale](sql-database-elastic-scale-introduction.md) und der [API-Referenz](http://go.microsoft.com/?linkid=9862604) zur Verfügung.
 
 ## Auswechseln vorhandener Verbundmitglieder 
 
@@ -102,7 +102,7 @@ Das Federations Migration Utility bietet die folgenden Funktionen:
 
 
 ## Funktionsvergleiche  
-Obwohl Elastic Scale viele zusätzliche Features bereitstellt (z. B. [Abfragen mehrerer Shards](./sql-database-elastic-scale-multishard-querying.md), [Aufteilen und Zusammenführen von Shards](./sql-database-elastic-scale-overview-split-and-merge.md), [Shard-Flexibilität](./sql-database-elastic-scale-elasticity.md), [clientseitiges Caching](./sql-database-elastic-scale-shard-map-management.md)und mehr), gibt es einige nennenswerte Verbundfeatures, die in Elastic Scale nicht unterstützt werden.
+Obwohl Elastic Scale viele zusätzliche Features bereitstellt (z. B. [Abfragen mehrerer Shards](sql-database-elastic-scale-multishard-querying.md), [Aufteilen und Zusammenführen von Shards](sql-database-elastic-scale-overview-split-and-merge.md), [Shard-Flexibilität](sql-database-elastic-scale-elasticity.md), [clientseitiges Caching](sql-database-elastic-scale-shard-map-management.md)und mehr), gibt es einige nennenswerte Verbundfeatures, die in Elastic Scale nicht unterstützt werden.
   
 
 - Die Verwendung von **FILTERING=ON**. Elastic Scale bietet derzeit keine Unterstützung für das Filtern auf Zeilenebene. Eine Lösung besteht darin, die Filterlogik wie folgt in der Abfrage zu erstellen, die für den Shard verwendet wird: 

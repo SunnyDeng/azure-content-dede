@@ -1,4 +1,4 @@
-﻿# Microsoft Azure-Einführung
+# Microsoft Azure-Einführung
 
 Microsoft Azure ist die Anwendungsplattform von Microsoft für die öffentliche Cloud.  Das Ziel dieses Artikels besteht darin, Ihnen ein grundlegendes Verständnis von Azure zu vermitteln, auch wenn Sie in Bezug auf Cloud-Computing über keine Erfahrungen verfügen.
 
@@ -16,7 +16,7 @@ Ihr Feedback ist sehr wichtig. Dieser Artikel soll Ihnen einen optimalen Überbl
 **Grundlegende Dienste**
 -   [Die Komponenten von Azure](#components)
 -   [Verwaltungsportal](#portal)
--   [Berechnen](#compute)
+-   [Compute](#compute)
 -   [Datenverwaltung](#data)
 -   [Netzwerke](#networking)
 -   [Entwicklerdienste](#DevService)

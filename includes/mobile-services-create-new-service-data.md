@@ -1,4 +1,4 @@
-﻿
+
 
 Als Nächstes erstellen Sie einen mobilen Dienst, um die In-Memory-Liste für die Datenspeicherung zu ersetzen. Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstellen.
 
@@ -7,7 +7,7 @@ Als Nächstes erstellen Sie einen mobilen Dienst, um die In-Memory-Liste für di
 
 	![plus-new](./media/mobile-services-create-new-service-data/plus-new.png)
 
-3.	Erweitern Sie **Berechnen** und **Mobiler Service**, und klicken Sie dann auf **Erstellen**.
+3.	Erweitern Sie **Compute** und **Mobiler Service**, und klicken Sie dann auf **Erstellen**.
 
 	![mobile-create](./media/mobile-services-create-new-service-data/mobile-create.png)
 

@@ -232,7 +232,7 @@ Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätz
 +  Druckbare Zeichen: **"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
 +  Die IDs "." und ".."
 
-Alternativ können Sie auch ganzzahlige IDs für Ihre Tabellen verwenden. Um ganzzahlige IDs zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [Verwalten von Mobile Services-Tabellen mit der Befehlszeilenschnittstelle](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables).
+Alternativ können Sie auch ganzzahlige IDs für Ihre Tabellen verwenden. Um ganzzahlige IDs zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [Verwalten von Mobile Services-Tabellen mit der Befehlszeilenschnittstelle](virtual-machines-command-line-tools.md/#Mobile_Tables).
 
 
 ### <a name="access-headers"></a>Gewusst wie: Zugreifen auf benutzerdefinierte Parameter

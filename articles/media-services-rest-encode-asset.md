@@ -19,7 +19,7 @@
 
 # Codieren eines Medienobjekts mit Azure Media Encoder
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
 
 ## Übersicht
 Um digitale Videos über das Internet zu übermitteln, müssen Sie die Medien komprimieren. Digitale Videodateien sind sehr umfangreich und möglicherweise zu groß, um sie über das Internet zu übermitteln oder auf den Geräten Ihrer Kunden ordnungsgemäß wiederzugeben. Bei der Codierung werden Video- und Audiodaten komprimiert, damit Ihre Kunden Ihre Medien anzeigen können.
@@ -32,9 +32,9 @@ Es wird empfohlen, Zwischendateien immer in einen MP4-Satz mit adaptiver Bitrate
 
 >[AZURE.NOTE] Beim Verwenden der Media Services-REST-API gelten die folgenden Überlegungen:
 >
->Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](../media-services-rest-how-to-use).
+>Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](media-services-rest-how-to-use.md).
 
->Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](../media-services-rest-connect_programmatically/) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
+>Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](media-services-rest-connect_programmatically.md) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
 
 
 Das folgende Beispiel zeigt, wie Sie einen Auftrag mit einer Aufgabe erstellen und bereitstellen, die für die Codierung eines Videos mit einer bestimmten Auflösung und Qualität konfiguriert wurde. Bei der Codierung mit Azure Media Encoder können Sie die [hier](https://msdn.microsoft.com/library/azure/dn619389.aspx) angegebenen Voreinstellungen für die Aufgabenkonfiguration verwenden.
@@ -110,7 +110,7 @@ In zahlreichen Anwendungsszenarien möchten Entwickler eine Reihe von Verarbeitu
 
 
 ## Nächste Schritte
-Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](../media-services-rest-check-job-progress/) fortfahren.
+Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](media-services-rest-check-job-progress.md) fortfahren.
 
 [Azure Marketplace]: https://datamarket.azure.com/
 [Encoder-Voreinstellung]: http://msdn.microsoft.com/library/dn619392.aspx

@@ -25,7 +25,7 @@ Die TodoItem-Klasse definiert das Datenobjekt, und Sie müssen dieser Klasse die
 
 	Diese Eigenschaften werden zum Generieren der SAS und zum Speichern der Bilddaten verwendet. Beachten Sie, dass die Groß-/Kleinschreibung dieser Eigenschaften der JavaScript-Backend-Version entspricht. 
 
-	>[AZURE.NOTE] Bei Verwendung des Standard-Datenbankinitialisierers können Sie mit Entity Framework die Datenbank löschen und erneut erstellen, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Der Standard-Initialisierer kann nicht für eine SQL-Datenbank in Azure angewendet werden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells](/de-de/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)..
+	>[AZURE.NOTE] Bei Verwendung des Standard-Datenbankinitialisierers können Sie mit Entity Framework die Datenbank löschen und erneut erstellen, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Der Standard-Initialisierer kann nicht für eine SQL-Datenbank in Azure angewendet werden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells](mobile-services-dotnet-backend-how-to-use-code-first-migrations.md)..
 
 ##<a name="update-scripts"></a>Aktualisieren des TodoItem-Controllers zur Erzeugung einer freigegebenen Zugriffssignatur SAS 
 

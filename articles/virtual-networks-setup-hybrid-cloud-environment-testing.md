@@ -124,7 +124,7 @@ Melden Sie sich zunächst beim [Azure-Verwaltungsportal](https://manage.windowsa
 	- Klicken Sie auf **Gatewaysubnetz hinzufügen**.
 11.	Klicken Sie auf das Symbol "Fertig stellen". Fahren Sie erst fort, wenn das virtuelle Netzwerk erstellt ist.
 
-Befolgen Sie anschließend die Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/), um Azure PowerShell auf Ihrem lokalen Computer zu installieren.
+Befolgen Sie anschließend die Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md), um Azure PowerShell auf Ihrem lokalen Computer zu installieren.
 
 Erstellen Sie dann einen neuen Cloud-Dienst für das virtuelle Netzwerk TestVNET. Sie müssen einen eindeutigen Namen auswählen. Sie können beispielsweise den Namen TestVNET-*UniqueSequence* wählen, wobei *UniqueSequence* eine Abkürzung für Ihre Organisation ist. Wenn Ihre Organisation z. B. "Tailspin Toys" heißt, können Sie den Cloud-Dienst "TestVNET-Tailspin" nennen.
 
@@ -287,17 +287,17 @@ Die Hybrid Cloud-Umgebung kann nun getestet werden.
 
 ## Zusätzliche Ressourcen
 
-[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
+[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
 
-[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-lobapp-hybrid-cloud-testing/)
+[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
 
-[Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-dirsync-hybrid-cloud-testing/)
+[Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-dirsync-hybrid-cloud-testing.md)
 
-[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)
+[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md)
 
 ## Minimieren der laufenden Kosten dieser Umgebung
 
-Führen Sie zur Minimierung der Kosten für das Ausführen von virtuellen Computern in dieser Umgebung die erforderlichen Tests und Demonstrationen so schnell wie möglich durch, und löschen Sie oder fahren Sie die virtuellen Computer herunter, wenn Sie sie nicht verwenden. Sie können beispielsweise Azure Automation und ein Runbook zum automatischen Herunterfahren der virtuellen Computer im virtuellen Netzwerk Test_VNET am Ende des Geschäftstags verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Automation](../automation-create-runbook-from-samples/). 
+Führen Sie zur Minimierung der Kosten für das Ausführen von virtuellen Computern in dieser Umgebung die erforderlichen Tests und Demonstrationen so schnell wie möglich durch, und löschen Sie oder fahren Sie die virtuellen Computer herunter, wenn Sie sie nicht verwenden. Sie können beispielsweise Azure Automation und ein Runbook zum automatischen Herunterfahren der virtuellen Computer im virtuellen Netzwerk Test_VNET am Ende des Geschäftstags verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Automation](automation-create-runbook-from-samples.md). 
 
 Das Azure-VPN-Gateway ist als Gruppe von zwei virtuellen Azure-Computern implementiert, für das laufende Kosten anfallen. Weitere Informationen hierzu finden Sie unter [Virtuelles Netzwerk - Preise](http://azure.microsoft.com/pricing/details/virtual-network/). Erstellen Sie zur Minimierung der Kosten für das VPN-Gateway die Testumgebung und führen Sie die benötigten Tests und Demonstrationen so schnell wie möglich aus, oder löschen Sie das Gateway mithilfe der folgenden Schritte aus. 
 

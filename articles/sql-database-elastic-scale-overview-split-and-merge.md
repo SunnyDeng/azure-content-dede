@@ -20,9 +20,9 @@ authors="torsteng"/>
 
 In auf Azure SQL-Datenbank basierenden Anwendungen können Probleme auftreten, wenn die Daten oder die Verarbeitung nicht mehr einer einzelnen Skalierungseinheit in Azure SQL-Datenbank entsprechen. Beispiele hierfür sind Anwendungen, die stark anwachsen oder in denen eine bestimmte Gruppe von Instanzen über die Grenzen einer einzelnen Azure SQL-Datenbank hinaus anwächst. Der Elastic Scale **Split/Merge Service** erleichtert die Bewältigung dieses Problems ungemein. 
 
-In dieser Diskussion des Aufteilungs-/Zusammenführungsdiensts wird das Hoch- und Herunterskalieren durch die Änderung der Anzahl von Azure DB-Datenbanken und das Anpassen der Verteilung von **Shardlets** unter den Datenbanken gehandhabt. (Begriffsdefinitionen finden Sie im [Elastic Scale-Glossar](./sql-database-elastic-scale-glossary.md)zur Verfügung steht). 
+In dieser Diskussion des Aufteilungs-/Zusammenführungsdiensts wird das Hoch- und Herunterskalieren durch die Änderung der Anzahl von Azure DB-Datenbanken und das Anpassen der Verteilung von **Shardlets** unter den Datenbanken gehandhabt. (Begriffsdefinitionen finden Sie im [Elastic Scale-Glossar](sql-database-elastic-scale-glossary.md)zur Verfügung steht). 
 
-Bei den aktuell verfügbaren Azure SQL-Datenbankeditionen kann die Kapazität auch durch Hoch- oder Herunterskalieren der Kapazität einer einzelnen Azure SQL-DB-Datenbank reguliert werden. Auf das Hoch-/Herunterskalieren der elastischen Kapazitätsverwaltung wird vom Aufteilungs-/Zusammenführungsdienst nicht eingegangen – siehe hierzu Shard-Elastizität [Elastic Scale Shard-Elastizität](./sql-database-elastic-scale-elasticity.md)).
+Bei den aktuell verfügbaren Azure SQL-Datenbankeditionen kann die Kapazität auch durch Hoch- oder Herunterskalieren der Kapazität einer einzelnen Azure SQL-DB-Datenbank reguliert werden. Auf das Hoch-/Herunterskalieren der elastischen Kapazitätsverwaltung wird vom Aufteilungs-/Zusammenführungsdienst nicht eingegangen – siehe hierzu Shard-Elastizität [Elastic Scale Shard-Elastizität](sql-database-elastic-scale-elasticity.md)).
  
 ## Neuerungen bei Split/Merge
 
@@ -65,7 +65,7 @@ Abbildung 1: Konzeptueller Überblick über den Aufteilungs-/Zusammenführungsdi
 
 ## Konzepte und wichtige Features
 
-**Vom Kunden gehostete Dienste**: Der Aufteilungs-/Zusammenführungsdienst wird als vom Kunden gehosteter Dienst bereitgestellt. Sie müssen den Dienst in Ihrem Microsoft Azure-Abonnement bereitstellen und hosten. Das Paket, das Sie von NuGet herunterladen, enthält eine Vorlage, die mit den Informationen für Ihre Bereitstellung ausgefüllt werden muss. Im [Split/Merge-Lernprogramm](./sql-database-elastic-scale-configure-deploy-split-and-merge.md) zur Verfügung. Da der Dienst im Azure-Abonnement ausgeführt wird, können Sie die meisten Sicherheitsaspekte des Diensts steuern und konfigurieren. Die Standardvorlage enthält die Optionen zum Konfigurieren von SSL, der zertifikatbasierten Clientauthentifizierung, der Verschlüsselung für gespeicherte Anmeldeinformationen, des DoS-Schutzes und von IP-Einschränkungen. Im folgenden Dokument [Sicherheitsüberlegungen zu Elastic Scale](./sql-database-elastic-scale-configure-security.md).
+**Vom Kunden gehostete Dienste**: Der Aufteilungs-/Zusammenführungsdienst wird als vom Kunden gehosteter Dienst bereitgestellt. Sie müssen den Dienst in Ihrem Microsoft Azure-Abonnement bereitstellen und hosten. Das Paket, das Sie von NuGet herunterladen, enthält eine Vorlage, die mit den Informationen für Ihre Bereitstellung ausgefüllt werden muss. Im [Split/Merge-Lernprogramm](sql-database-elastic-scale-configure-deploy-split-and-merge.md) zur Verfügung. Da der Dienst im Azure-Abonnement ausgeführt wird, können Sie die meisten Sicherheitsaspekte des Diensts steuern und konfigurieren. Die Standardvorlage enthält die Optionen zum Konfigurieren von SSL, der zertifikatbasierten Clientauthentifizierung, der Verschlüsselung für gespeicherte Anmeldeinformationen, des DoS-Schutzes und von IP-Einschränkungen. Im folgenden Dokument [Sicherheitsüberlegungen zu Elastic Scale](sql-database-elastic-scale-configure-security.md).
 
 Der standardmäßig bereitgestellte Dienst wird mit einer Workerrolle und einer Webrolle ausgeführt. Für beide wird die VM-Größe A1 in Azure Cloud Services verwendet. Sie können diese Einstellungen zwar nicht bei der Bereitstellung des Pakets ändern, nach einer erfolgreichen Bereitstellung können die Einstellungen jedoch im ausgeführten Cloud-Dienst (über das Azure-Portal) geändert werden. Beachten Sie, dass die Workerrolle aus technischen Gründen nicht für mehr als eine einzelne Instanz konfiguriert werden darf. 
 
@@ -109,7 +109,7 @@ Die Tabellen 'region' und 'nation' sind als Verweistabellen definiert und werden
 
 ## Beziehen der Binärdateien des Diensts
 
-Die Binärdateien für den Aufteilungs-/Zusammenführungsdienst (Split/Merge) werden von [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/) bereitgestellt. Informieren Sie sich im schrittweisen [Split/Merge-Lernprogramm](./sql-database-elastic-scale-configure-deploy-split-and-merge.md) über das Herunterladen von Binärdateien.
+Die Binärdateien für den Aufteilungs-/Zusammenführungsdienst (Split/Merge) werden von [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/) bereitgestellt. Informieren Sie sich im schrittweisen [Split/Merge-Lernprogramm](sql-database-elastic-scale-configure-deploy-split-and-merge.md) über das Herunterladen von Binärdateien.
 
 ## Die Split/Merge-Benutzeroberfläche
 
@@ -204,9 +204,9 @@ Darüber hinaus ermöglicht die Eindeutigkeit des Shardingschlüssels als führe
 
 ## Referenzen 
 
-* [Split/Merge-Lernprogramm](./sql-database-elastic-scale-configure-deploy-split-and-merge.md)
+* [Split/Merge-Lernprogramm](sql-database-elastic-scale-configure-deploy-split-and-merge.md)
 
-* [Sicherheitsüberlegungen zu Elastic Scale](./sql-database-elastic-scale-configure-security.md)  
+* [Sicherheitsüberlegungen zu Elastic Scale](sql-database-elastic-scale-configure-security.md)  
 
 
 <!--Anchors-->

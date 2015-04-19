@@ -17,15 +17,15 @@
 	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](/documentation/articles/vs-storage-aspnet-getting-started-queues/)
-> - [Was ist passiert?](/documentation/articles/vs-storage-aspnet-what-happened/)
+> - [Erste Schritte](vs-storage-aspnet-getting-started-queues.md)
+> - [Was ist passiert?](vs-storage-aspnet-what-happened.md)
 
 ## Erste Schritte mit Azure Storage (ASP.NET-Projekte)
 
 > [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-aspnet-getting-started-blobs/)
-> - [Warteschlangen](/documentation/articles/vs-storage-aspnet-getting-started-queues/)
-> - [Tabellen](/documentation/articles/vs-storage-aspnet-getting-started-tables/)
+> - [Blobs](vs-storage-aspnet-getting-started-blobs.md)
+> - [Warteschlangen](vs-storage-aspnet-getting-started-queues.md)
+> - [Tabellen](vs-storage-aspnet-getting-started-tables.md)
 
 Der Azure-Warteschlangenspeicher ist ein Dienst zum Speichern einer großen Anzahl von Nachrichten, auf die weltweit mit authentifizierten Aufrufen mithilfe von HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Kapazität des Speicherkontos begrenzt. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeichers aus .NET](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-queues/).
 

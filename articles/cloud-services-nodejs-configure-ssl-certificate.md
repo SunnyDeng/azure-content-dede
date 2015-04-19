@@ -23,7 +23,7 @@
 
 Secure Socket Layer (SSL)-Verschlüsselung ist die am häufigsten verwendete Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Node.js-Anwendung angeben können, die als Azure Cloud-Dienst in einer Webrolle gehostet ist, und wie Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können.
 
-> [AZURE.NOTE] Die Schritte in diesem Beitrag gelten nur für Knotenanwendungen, die als Azure-Cloud-Dienst in einer Webrolle gehostet werden. Weitere Informationen zu Websites finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](../web-sites-configure-ssl-certificate/).
+> [AZURE.NOTE] Die Schritte in diesem Beitrag gelten nur für Knotenanwendungen, die als Azure-Cloud-Dienst in einer Webrolle gehostet werden. Weitere Informationen zu Websites finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](web-sites-configure-ssl-certificate.md).
 
 Diese Aufgabe umfasst die folgenden Schritte:
 

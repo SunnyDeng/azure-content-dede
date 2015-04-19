@@ -25,7 +25,7 @@ In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden k�
 
 Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blob-Speicherdienst können mit der Client-App nicht sicher zugewiesen werden. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die dann zum Hochladen eines neuen Bildes verwendet wird. Die SAS, eine Anmeldeinformation mit einer kurzen Laufzeit - in diesem Falle 5 Minuten -, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. In diesem Beispiel sind Downloads vom Blob-Dienst öffentlich.
 
-In diesem Lernprogramm fügen Sie dem [GetStartedWithData-Beispiel-App-Projekt](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/) zur Aufnahme von Bildern und zum Hochladen dieser Bilder unter Verwendung einer von Mobile Services erzeugten SAS in Azure Funktionen hinzu. Dieses Lernprogramm führt Sie durch die folgenden grundlegenden Schritte zur Aktualisierung des Mobile Services-Schnellstarts für das Hochladen von Bildern in den Blob-Speicherdienst:
+In diesem Lernprogramm fügen Sie dem [GetStartedWithData-Beispiel-App-Projekt](mobile-services-dotnet-backend-windows-phone-get-started-data.md) zur Aufnahme von Bildern und zum Hochladen dieser Bilder unter Verwendung einer von Mobile Services erzeugten SAS in Azure Funktionen hinzu. Dieses Lernprogramm führt Sie durch die folgenden grundlegenden Schritte zur Aktualisierung des Mobile Services-Schnellstarts für das Hochladen von Bildern in den Blob-Speicherdienst:
 
 1. [Installieren der Speicherclientbibliothek]
 2. [Aktualisieren der Client-App zur Aufnahme von Bildern]
@@ -40,7 +40,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Windows Phone SDK 8.0] oder höher
 + NuGet Package Manager installiert für Microsoft Visual Studio.
 + [Azure-Speicherkonto][So erstellen Sie ein Speicherkonto]
-+ Schließen Sie das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App] ab.(/de-de/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/)  
++ Schließen Sie das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App] ab.(mobile-services-dotnet-backend-windows-phone-get-started-data.md)  
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../includes/mobile-services-dotnet-backend-configure-blob-storage.md)]
 

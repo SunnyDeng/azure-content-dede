@@ -209,11 +209,11 @@ Während Hive die Datenabfrage mit einer SQL-ähnlichen Abfragesprache erleichte
 * [Erste Schritte mit den HDInsight Hadoop-Tools für Visual Studio][1]
 * [Verwenden von Oozie mit HDInsight][hdinsight-use-oozie]
 * [Programmgesteuerte Übermittlung von Hadoop-Aufträgen][hdinsight-submit-jobs]
-* [Verwenden von Pig mit HDInsight](../hdinsight-use-pig/)
+* [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Analysieren von Daten zu Flugverspätungen mit HDInsight][hdinsight-analyze-flight-data]
 * [Dokumentation zum Azure HDInsight SDK][hdinsight-sdk-documentation]
 * [Hochladen von Daten in HDInsight][hdinsight-upload-data]
-* [Erste Schritte mit Azure HDInsight](../hdinsight-get-started/)
+* [Erste Schritte mit Azure HDInsight](hdinsight-get-started.md)
 
 
 [1]: ../hdinsight-hadoop-visual-studio-tools-get-started/

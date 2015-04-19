@@ -22,7 +22,7 @@
 
 # Verwalten von Inhalten in Media Services #
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md). 
 
 In diesem Thema wird veranschaulicht, wie Sie mit dem Azure-Verwaltungsportal Medieninhalte in Ihrem Media Services-Konto verwalten.
 
@@ -84,7 +84,7 @@ Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Date
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
 - Codieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm beschrieben)
-- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](../media-services-manage-origins#scale_streaming_endpoints/).
+- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins#scale_streaming_endpoints.md).
 
 Mit dynamischer Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client. 
 
@@ -128,8 +128,8 @@ Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre In
 Wenn Sie Medienobjekte für Media Services dynamisch mit einem AES-Schlüssel oder PlayReady-DRM verschlüsseln möchten, gehen Sie wie folgt vor:
 
 - Codieren Sie Ihre Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten im Abschnitt [Codieren](#encode) beschrieben).
-- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](../media-services-manage-origins#scale_streaming_endpoints/).
-- Konfigurieren Sie die Standardrichtlinie für den Dienst für unverschlüsselte AES-Schlüssel bzw. die für den Dienst für PlayReady-Lizenzen. Weitere Informationen finden Sie unter [Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel](../media-services-portal-configure-content-key-auth-policy).  
+- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins#scale_streaming_endpoints.md).
+- Konfigurieren Sie die Standardrichtlinie für den Dienst für unverschlüsselte AES-Schlüssel bzw. die für den Dienst für PlayReady-Lizenzen. Weitere Informationen finden Sie unter [Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel](media-services-portal-configure-content-key-auth-policy.md).  
 
 
 	Wenn Sie die Verschlüsselung aktivieren möchten, klicken Sie auf die Schaltfläche **VERSCHLÜSSELUNG** auf der Seite **INHALT**.

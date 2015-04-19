@@ -42,7 +42,7 @@ Sie benötigen Folgendes, um dieses Lernprogramm abzuschließen.
 
 * Windows Azure PowerShell
 
-* Falls Sie nicht mit Apache Storm vertraut sind, sollten Sie zunächst den Artikel [Storm in HDInsight: Übersicht](/de-de/documentation/articles/hdinsight-storm-overview) lesen.
+* Falls Sie nicht mit Apache Storm vertraut sind, sollten Sie zunächst den Artikel [Storm in HDInsight: Übersicht](hdinsight-storm-overview.md) lesen.
 
 ## <a id="provision"></a>Bereitstellen eines Storm-Clusters im Azure-Portal
 
@@ -72,7 +72,7 @@ Sie benötigen Folgendes, um dieses Lernprogramm abzuschließen.
 
 	![storage account](./media/hdinsight-storm-getting-started/wizard4.png)
 
-8. Klicken Sie auf der Seite **Skriptaktionen** auf **Skriptaktion hinzufügen**, um Einzelheiten zum benutzerdefinierten Skript anzugeben, das Sie zum Anpassen eines Clusters bei seiner Erstellung ausführen möchten. Sie können beispielsweise Skriptaktion verwenden, um ein Cluster zum Installieren von <a href="http://spark.apache.org/docs/latest/index.html" target="_blank">Apache Spark</a>anzupassen. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion](/de-de/documentation/articles/hdinsight-hadoop-customize-cluster/). 
+8. Klicken Sie auf der Seite **Skriptaktionen** auf **Skriptaktion hinzufügen**, um Einzelheiten zum benutzerdefinierten Skript anzugeben, das Sie zum Anpassen eines Clusters bei seiner Erstellung ausführen möchten. Sie können beispielsweise Skriptaktion verwenden, um ein Cluster zum Installieren von <a href="http://spark.apache.org/docs/latest/index.html" target="_blank">Apache Spark</a>anzupassen. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion](hdinsight-hadoop-customize-cluster.md). 
 	
 	![Configure Script Action to customize an HDInsight HBase cluster](./media/hdinsight-storm-getting-started/wizard5.png "Use Script Action to customize an HDInsight cluster") 
 
@@ -197,9 +197,9 @@ Wenn Sie die Storm UI-Webseite direkt nach dem Ausführen dieses Befehls anzeige
 
 	> [AZURE.NOTE] Javadocs bestehen aus Webseiten. Öffnen Sie nach dem Extrahieren die Datei **index.html** in einem Browser.
 
-* [Analysieren von Sensordaten mit Storm und HBase in HDInsight (Hadoop)](/de-de/documentation/articles/hdinsight-storm-sensor-data-analysis)
+* [Analysieren von Sensordaten mit Storm und HBase in HDInsight (Hadoop)](hdinsight-storm-sensor-data-analysis.md)
 
-* [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](/de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application)
+* [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application.md)
 
 [apachestorm]: https://storm.incubator.apache.org
 [stormdocs]: http://storm.incubator.apache.org/documentation/Documentation.html

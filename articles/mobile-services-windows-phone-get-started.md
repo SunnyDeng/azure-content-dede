@@ -18,8 +18,8 @@
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
 
-Dieses Thema wird nicht mehr unterstützt. Es steht kein Windows Phone 8.0-Schnellstartprojekt mehr zum Herunterladen aus dem Portal zur Verfügung. Informationen zum Hinzufügen von Mobile Services zu einer vorhanden Windows Phone 8.0- oder Windows Phone 8.1 Silverlight-App finden Sie im Thema [Hinzufügen von Mobile Services zu einer vorhandenen App](/de-de/documentation/articles/mobile-services-windows-phone-get-started-data/). 
+Dieses Thema wird nicht mehr unterstützt. Es steht kein Windows Phone 8.0-Schnellstartprojekt mehr zum Herunterladen aus dem Portal zur Verfügung. Informationen zum Hinzufügen von Mobile Services zu einer vorhanden Windows Phone 8.0- oder Windows Phone 8.1 Silverlight-App finden Sie im Thema [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-windows-phone-get-started-data.md). 
 
-Ein Download für ein Schnellstartprojekt ist für Windows Phone Store 8.1-Apps als Teil eines universellen Windows-Projekts verfügbar. Weitere Informationen finden Sie unter [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/). 
+Ein Download für ein Schnellstartprojekt ist für Windows Phone Store 8.1-Apps als Teil eines universellen Windows-Projekts verfügbar. Weitere Informationen finden Sie unter [Erste Schritte mit Mobile Services](mobile-services-javascript-backend-windows-store-dotnet-get-started.md). 
 
 <!--HONumber=42-->

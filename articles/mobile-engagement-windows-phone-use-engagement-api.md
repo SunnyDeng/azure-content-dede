@@ -18,7 +18,7 @@
 
 # Verwendung der Engagement-API auf Windows Phone
 
-Dieses Dokument ist ein Zusatz zum Dokument [Integration von Mobile Engagement in Ihrer Windows Phone-App](../mobile-engagement-windows-phone-integrate-engagement/). Es bietet tiefergehende Details zur Verwendung der Engagement-API, um Ihre Anwendungsstatistik zu melden.
+Dieses Dokument ist ein Zusatz zum Dokument [Integration von Mobile Engagement in Ihrer Windows Phone-App](mobile-engagement-windows-phone-integrate-engagement.md). Es bietet tiefergehende Details zur Verwendung der Engagement-API, um Ihre Anwendungsstatistik zu melden.
 
 Wenn Engagement nur die Sitzungsaktivitäten der Anwendung, Abstürze und technische Informationen melden soll, ist es am einfachsten, wenn alle Ihre  `PhoneApplicationPage`-Unterklassen von der  `EngagementPage`-Klasse erben.
 

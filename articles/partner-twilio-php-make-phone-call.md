@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Tätigen eines Telefonanrufs über Twilio (PHP) - Azure" 
 	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Beispiele sind für eine PHP-Anwendung vorgesehen." 
 	documentationCenter="php" 
@@ -115,7 +115,7 @@ Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twil
 Weitere Informationen zu Twilio finden Sie unter [https://www.twilio.com/docs][twilio_docs].
 
 ## Weitere Informationen
-* [Verwenden von Twilio für Telefonie- und SMS-Funktionen in PHP](../partner-twilio-php-how-to-use-voice-sms)
+* [Verwenden von Twilio für Telefonie- und SMS-Funktionen in PHP](partner-twilio-php-how-to-use-voice-sms.md)
 
 [twilio_pricing]: http://www.twilio.com/pricing
 [try_twilio]: http://www.twilio.com/try-twilio
@@ -129,8 +129,8 @@ Weitere Informationen zu Twilio finden Sie unter [https://www.twilio.com/docs][t
 [twilio_api_service]: http://api.twilio.com
 [build_php_azure_app]: http://azurephp.interoperabilitybridges.com/articles/build-and-deploy-a-windows-azure-php-application
 [howto_twilio_voice_sms_php]: ../partner-twilio-php-how-to-use-voice-sms
-[howto_blob_storage_php]: http://azure.microsoft.com/ documentation/articles/storage-php-how-to-use-blobs/
-[howto_sql_azure_php]: http://azure.microsoft.com/ documentation/articles/sql-database-php-how-to-use/
+[howto_blob_storage_php]: http://azure.microsoft.com/documentation/articles/storage-php-how-to-use-blobs/
+[howto_sql_azure_php]: http://azure.microsoft.com/documentation/articles/sql-database-php-how-to-use/
 [twilio_call_properties]: https://www.twilio.com/docs/api/rest/call#instance-properties
 [twilio_docs_security]: http://www.twilio.com/docs/security
 [twilio_docs]: http://www.twilio.com/docs

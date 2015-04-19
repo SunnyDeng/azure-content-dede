@@ -100,7 +100,7 @@ Sie können die Anwendung auf einfache Weise ändern und neu veröffentlichen. H
 
 ##Nächste Schritte
 
-Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](/de-de/documentation/articles/nodejs-specify-node-version-azure-apps/)..
+Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](nodejs-specify-node-version-azure-apps.md)..
 
 Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](http://azure.microsoft.com/develop/nodejs/how-to-guides/Debug-Website/) Informationen zur Problemdiagnose.
 

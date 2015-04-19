@@ -20,7 +20,7 @@
 
 Diese Anleitungen enthält C#-Codebeispiele, die zeigen, wie das Azure-Webaufträge-SDK, Version 1.x, mit dem Azure-Warteschlangenspeicherdienst verwendet wird.
 
-Im Leitfaden wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](../websites-dotnet-webjobs-sdk-get-started/).
+Im Leitfaden wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](websites-dotnet-webjobs-sdk-get-started.md).
 
 Wie in diesem Beispiel zeigen die meisten Codeausschnitte nur Funktionen und nicht den Code, der das  `JobHost`-Objekt erstellt:
 
@@ -294,7 +294,7 @@ Die `IBinder`-Schnittstelle kann auch mit den Attributen `Table` und  `Blob` ver
 
 ## <a id="blobs"></a> Lesen und Schreiben von BLOBs und Tabellen beim Verarbeiten einer Warteschlangennachricht
 
-Mithilfe der Attribute `Blob` und `Table` können Sie BLOBs und Tabellen lesen und schreiben. Die Beispiele in diesem Abschnitt gelten für BLOBs. Codebeispiele, die zeigen, wie Sie Prozesse auslösen, wenn BLOBs erstellt oder aktualisiert werden, finden Sie unter [Verwenden von Azure-BLOB-Speicher mit dem Webaufträge-SDK](../websites-dotnet-webjobs-sdk-storage-blobs-how-to/). Codebeispiele für das Lesen und Schreiben von Tabellen finden Sie unter [Verwenden von Azure-Tabellenspeicher mit dem Webaufträge-SDK](../websites-dotnet-webjobs-sdk-storage-tables-how-to/).
+Mithilfe der Attribute `Blob` und `Table` können Sie BLOBs und Tabellen lesen und schreiben. Die Beispiele in diesem Abschnitt gelten für BLOBs. Codebeispiele, die zeigen, wie Sie Prozesse auslösen, wenn BLOBs erstellt oder aktualisiert werden, finden Sie unter [Verwenden von Azure-BLOB-Speicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md). Codebeispiele für das Lesen und Schreiben von Tabellen finden Sie unter [Verwenden von Azure-Tabellenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-tables-how-to.md).
 
 ### Zeichenfolge-Warteschlangennachrichten, die BLOB-Vorgänge auslösen
 
@@ -310,7 +310,7 @@ Im folgenden Beispiel werden  `Stream`-Objekte zum Lesen und Schreiben von BLOBs
 		    blobInput.CopyTo(blobOutput, 4096);
 		}
 
-Der  `Blob`-Attributkonstruktor verwendet den  `blobPath`-Parameter, der den Container und BLOB-Namen angibt. Weitere Informationen zu diesen Platzhalter finden Sie unter [Verwenden von Azure-BLOB-Speicher mit dem Webaufträge-SDK](../websites-dotnet-webjobs-sdk-storage-blobs-how-to/), .
+Der  `Blob`-Attributkonstruktor verwendet den  `blobPath`-Parameter, der den Container und BLOB-Namen angibt. Weitere Informationen zu diesen Platzhalter finden Sie unter [Verwenden von Azure-BLOB-Speicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md), .
 
 Wenn das Attribut ein  `Stream`-Objekt anpasst, gibt ein anderer Konstruktorparameter den  `FileAccess`-Modus als Lesen, Schreiben oder Lesen/ Schreiben an. 
 

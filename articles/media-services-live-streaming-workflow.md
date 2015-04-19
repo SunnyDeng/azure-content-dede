@@ -29,11 +29,11 @@ Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, 
 ![Live workflow][live-overview]
 
 
-Weitere Informationen finden Sie unter [Media Services - Übersicht](../media-services-overview).
+Weitere Informationen finden Sie unter [Media Services - Übersicht](media-services-overview.md).
 
 ## Erstellen eines Media Services-Kontos
 
-Verwenden Sie das **Azure-Verwaltungsportal** zum [Erstellen eines Azure Media Services-Kontos](../media-services-create-account/).
+Verwenden Sie das **Azure-Verwaltungsportal** zum [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md).
 
 ## Konfigurieren von Streamingendpunkten
 
@@ -82,7 +82,7 @@ Veröffentlichen Sie Medienobjekte (durch Locator-Erstellung) mithilfe des **Azu
 
 Sie können **Media Services** skalieren, indem Sie die Anzahl der **reservierten Einheiten für das Streaming** angeben, die für Ihr Konto bereitgestellt werden sollen. 
 
-Informationen zum Skalieren von Streamingeinheiten finden Sie unter: [Skalieren von Streamingeinheiten](../media-services-manage-origins#scale_streaming_endpoints).
+Informationen zum Skalieren von Streamingeinheiten finden Sie unter: [Skalieren von Streamingeinheiten](media-services-manage-origins#scale_streaming_endpoints.md).
 
 
 

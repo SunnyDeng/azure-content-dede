@@ -53,7 +53,7 @@ In diesem Lernprogramm wird die Methode **Aus Katalog** zum Erstellen eines virt
 
 [AZURE.INCLUDE [virtual-machines-Linux-tutorial-log-on-attach-disk](../includes/virtual-machines-Linux-tutorial-log-on-attach-disk.md)]
 
-> [AZURE.NOTE] Sie können die Verbindung zum virtuellen Linux-Computer auch mithilfe eines SSH-Schlüssels für die Identifikation herstellen. Weitere Informationen zum Konfigurieren und Verbinden mit einem SSH-Schlüssel finden Sie unter [Gewusst wie: Verwenden von SSH mit Linux auf Azure](./virtual-machines-linux-use-ssh-key/).
+> [AZURE.NOTE] Sie können die Verbindung zum virtuellen Linux-Computer auch mithilfe eines SSH-Schlüssels für die Identifikation herstellen. Weitere Informationen zum Konfigurieren und Verbinden mit einem SSH-Schlüssel finden Sie unter [Gewusst wie: Verwenden von SSH mit Linux auf Azure](virtual-machines-linux-use-ssh-key).
 
 ##Nächste Schritte 
 
@@ -65,7 +65,7 @@ Weitere Informationen zu Linux auf Azure erhalten Sie in den folgenden Artikeln:
 
 - [Informationen zu Konfigurationseinstellungen von virtuellen Azure-Computern](http://msdn.microsoft.com/library/azure/dn763935.aspx)
 
-- [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](../virtual-machines-docker-vm-extension/)
+- [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
 
 
 [Nächste Schritte]: #next

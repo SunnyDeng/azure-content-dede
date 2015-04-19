@@ -29,7 +29,7 @@ Wenn Sie über ein vorhandenes Abonnement von Trend Micro für eine lokale Lösu
 
 Mit dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) können Sie den VM-Agent und die Trend Micro-Sicherheitserweiterung installieren, wenn Sie die Option **Aus Katalog** zum Erstellen des virtuellen Computers verwenden. Die Verwendung dieses Ansatzes ist eine einfache Möglichkeit, einen Schutz von Trend Micro hinzuzufügen, wenn Sie einen einzelnen virtuellen Computer erstellen.
 
-Die Option **Aus Katalog** öffnet einen Assistenten, der Ihnen beim Einrichten des virtuellen Computers hilft. Sie verwenden die letzte Seite des Assistenten zum Installieren des VM-Agents und der Trend Micro-Sicherheitserweiterung. Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines-windows-tutorial/). Führen Sie auf der letzten Seite des Assistenten Folgendes aus:
+Die Option **Aus Katalog** öffnet einen Assistenten, der Ihnen beim Einrichten des virtuellen Computers hilft. Sie verwenden die letzte Seite des Assistenten zum Installieren des VM-Agents und der Trend Micro-Sicherheitserweiterung. Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](virtual-machines-windows-tutorial.md). Führen Sie auf der letzten Seite des Assistenten Folgendes aus:
 
 1.	Aktivieren Sie **VM-Agent installieren** unter "VM-Agent".
 
@@ -43,7 +43,7 @@ Die Option **Aus Katalog** öffnet einen Assistenten, der Ihnen beim Einrichten 
 
 Dafür benötigen Sie Folgendes:
 
-- Das Azure PowerShell-Modul, Version 0.8.2 oder höher, muss auf Ihrem lokalen Compute installiert sein.. Sie können die installierte Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Anweisungen und einen Link zur neuesten Version finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/). 
+- Das Azure PowerShell-Modul, Version 0.8.2 oder höher, muss auf Ihrem lokalen Compute installiert sein.. Sie können die installierte Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Anweisungen und einen Link zur neuesten Version finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md). 
 
 - Der VM-Agent muss auf dem virtuellen Zielcomputer installiert sein. 
 

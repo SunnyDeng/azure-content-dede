@@ -70,7 +70,7 @@ Nachdem Sie die Datei mit Veröffentlichungseinstellungen importiert haben, kön
 
 
 
-Informationen zum Erstellen von Azure-Speicherkonten mithilfe des Verwaltungsportals finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account/).
+Informationen zum Erstellen von Azure-Speicherkonten mithilfe des Verwaltungsportals finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage-create-storage-account.md).
 
 Falls Sie bereits ein Speicherkonto haben und den Kontonamen und den Kontoschlüssel nicht kennen, können Sie diese Informationen mit den folgenden Befehlen abrufen:
 

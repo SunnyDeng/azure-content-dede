@@ -511,7 +511,7 @@ Um die Topologien zu beenden, wählen Sie jede Topologie im **Storm-Topologie-Vi
 
 In diesem Dokument haben Sie erfahren, wie Sie die Java Event Hub-Spouts und -Bolts aus einer C#-Topologie verwenden, um mit Daten in Azure Event Hub zu arbeiten. Weitere Informationen zum Erstellen von C#-Topologien finden Sie in folgenden Themen.
 
-* [Entwickeln von C#-Topologien für Apache Storm in HDInsight mithilfe von Visual Studio](../hdinsight-storm-develop-csharp-visual-studio-topology/)
+* [Entwickeln von C#-Topologien für Apache Storm in HDInsight mithilfe von Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md)
 
 * [HDInsight-Storm-Beispiele](https://github.com/hdinsight/hdinsight-storm-examples)
 

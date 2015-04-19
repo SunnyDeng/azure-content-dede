@@ -31,7 +31,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder[Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abschließen, um Ihr Projekt mit Mobile Services zu verbinden. Wenn kein mobiler Dienst verbunden wurde, stellt der Assistent für Pushbenachrichtigungen diese Verbindung für Sie her. 
 
->[AZURE.NOTE]Befolgen Sie zum Senden von Pushbenachrichtigungen an eine Windows Phone 8.1 Store-App die Anweisungen unter [Windows Store-App](/de-de/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push) in diesem Lernprogramm.
+>[AZURE.NOTE]Befolgen Sie zum Senden von Pushbenachrichtigungen an eine Windows Phone 8.1 Store-App die Anweisungen unter [Windows Store-App](mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md) in diesem Lernprogramm.
 
 ##<a id="update-app"></a> Aktualisieren Ihrer App zur Registrierung für Benachrichtigungen
 

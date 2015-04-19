@@ -46,7 +46,7 @@ Stammknoten werden standardmäßig als große VMs eingerichtet. Diese Größe is
 
 Sehr große VMs können entweder über Azure PowerShell-Cmdlets oder mit dem HDInsight SDK konfiguriert werden.
 
-Die Erstellung und Bereitstellung eines Clusters mithilfe von PowerShell ist unter [Verwalten von HDInsight mit PowerShell](../hdinsight-administer-use-powershell/) dokumentiert. Um einen sehr großen Hauptknoten zu konfigurieren, müssen Sie den `-HeadNodeVMSize ExtraLarge`-Parameter dem in diesem Code verwendeten Cmdlet  `New-AzureHDInsightcluster` hinzufügen.
+Die Erstellung und Bereitstellung eines Clusters mithilfe von PowerShell ist unter [Verwalten von HDInsight mit PowerShell](hdinsight-administer-use-powershell.md) dokumentiert. Um einen sehr großen Hauptknoten zu konfigurieren, müssen Sie den `-HeadNodeVMSize ExtraLarge`-Parameter dem in diesem Code verwendeten Cmdlet  `New-AzureHDInsightcluster` hinzufügen.
 
     # Create a new HDInsight cluster in Azure PowerShell
 	# Configured with an ExtraLarge Headnode VM

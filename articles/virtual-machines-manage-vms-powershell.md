@@ -18,7 +18,7 @@
 
 # Verwalten Ihrer virtuellen Computer mit Azure PowerShell
 
-Bevor Sie beginnen, müssen Sie sicherstellen, dass Azure PowerShell installiert ist. Besuchen Sie hierzu [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/)
+Bevor Sie beginnen, müssen Sie sicherstellen, dass Azure PowerShell installiert ist. Besuchen Sie hierzu [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
 ## Abrufen eines Images
 

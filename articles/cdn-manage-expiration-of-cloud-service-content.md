@@ -48,7 +48,7 @@ Fügen Sie beispielsweise folgenden Code hinzu, um Inhalt eine Stunde lang zwisc
 
 # Siehe auch
 
-[Verwalten des Ablaufs von BLOB-Inhalten im Azure CDN (Content Delivery Network)](./cdn-manage-expiration-of-blob-content.md
+[Verwalten des Ablaufs von BLOB-Inhalten im Azure CDN (Content Delivery Network)](cdn-manage-expiration-of-blob-content.md
 )
 
 <!--HONumber=49-->

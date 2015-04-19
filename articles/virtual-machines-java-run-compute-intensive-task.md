@@ -45,7 +45,7 @@ Es folgt ein Beispiel der Java-Anwendung, die die rechenintensive Aufgabe überw
 ##So erstellen Sie einen virtuellen Computer
 
 1. Melden Sie sich am [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
-2. Klicken Sie auf **Neu**, auf **Berechnen** auf **Virtueller Computer** und dann auf **Aus Katalog**.
+2. Klicken Sie auf **Neu**, auf **Compute** auf **Virtueller Computer** und dann auf **Aus Katalog**.
 3. Wählen Sie im Dialogfeld **Image des virtuellen Computers auswählen** die Option **JDK 7 Windows Server 2012** aus.
 Beachten Sie, dass **JDK 6 Windows Server 2012** verfügbar ist, wenn Sie Legacyanwendungen haben, die noch nicht in JDK 7 ausgeführt werden können.
 4. Klicken Sie auf **Weiter**.

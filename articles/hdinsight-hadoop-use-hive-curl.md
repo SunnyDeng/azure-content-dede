@@ -148,13 +148,13 @@ Weitere Informationen zur REST-Schnittstelle, die in diesem Artikel verwendet wi
 
 Allgemeine Informationen zu Hive mit HDInsight:
 
-* [Verwenden von Hive mit Hadoop in HDInsight](../hdinsight-use-hive/)
+* [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
 Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeiten können:
 
-* [Verwenden von Pig mit Hadoop in HDInsight](../hdinsight-use-pig/)
+* [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](../hdinsight-use-mapreduce/)
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
 
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/library/dn479185.aspx

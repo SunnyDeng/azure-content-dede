@@ -17,8 +17,8 @@
 # Dienstseitige Autorisierung von Benutzern in Mobile Services
 
 > [AZURE.SELECTOR-LIST (Plattform | Back-End)]
-- [(Alle | .NET)](/de-de/documentation/articles/mobile-services-dotnet-backend-service-side-authorization/)
-- [(Alle | JavaScript)](/de-de/documentation/articles/mobile-services-javascript-backend-service-side-authorization/)
+- [(Alle | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
+- [(Alle | JavaScript)](mobile-services-javascript-backend-service-side-authorization.md)
 
 In diesem Thema wird veranschaulicht, wie serverseitige Skripts verwendet werden können, um Benutzer zu autorisieren. In diesem Lernprogramm registrieren Sie Skripts für Azure Mobile Services, filtern Sie Abfragen anhand von Benutzer-IDs, und gewähren Sie Benutzern nur Zugriff auf deren eigene Daten.
 

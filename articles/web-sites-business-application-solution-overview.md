@@ -82,7 +82,7 @@ Im Hostingplan **Standard** erhalten für die Websiteüberwachung verantwortlich
 ## Weitere Ressourcen
 
 - [Dokumentation der Azure-Websites](/de-de/documentation/services/websites/)
-- [Lernkonzept für Azure-Websites](/de-de/documentation/articles/websites-learning-map/)
+- [Lernkonzept für Azure-Websites](websites-learning-map.md)
 - [Azure-Web-Blog](/blog/topics/web/)
 
 

@@ -66,7 +66,7 @@ Führen Sie zum Abschließen dieses Abschnitts folgende notwendige Aufgaben durc
 3. Überprüfen Sie, ob [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653) auf Ihrem Computer installiert ist, da die Azure-Schnellstart-Beispielprojekte dieses benötigen. Wenn Sie nicht sicher sind, welche Version von .NET Framework auf dem Computer installiert ist, finden Sie entsprechende Informationen unter [ Feststellen, welche Versionen von .NET Framework installiert sind](https://msdn.microsoft.com/vstudio/hh925568.aspx). Klicken Sie auf die Schaltfläche **Start**, oder drücken Sie die Windows-Taste, und geben Sie **Systemsteuerung** ein. Klicken Sie auf **Programme** > **Programme und Funktionen**. Überprüfen Sie, ob .NET Framework 4.5 in der Liste installierter Programme enthalten ist.
 4.	Legen Sie ein Azure-Abonnement an (wenn Sie nicht bereits über eins verfügen), und erstellen Sie darüber hinaus ein **Standardspeicher**-Konto:
 	- Informationen zum Erhalt eines Azure-Abonnements finden Sie unter [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/), [Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/) und [Spezielle Angebote](http://azure.microsoft.com/pricing/member-offers/) (für Mitglieder von MSDN, Microsoft Partner Network, BizSpark und anderen Microsoft-Programmen).
-	- Informationen zum Erstellen eines **Standardspeicher**-Kontos in Azure finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](./storage-create-storage-account.md). **Hinweis:** Zwei Typen von Speicherkonten stehen in Azure zur Verfügung: Standardspeicherkonto und Premium-Speicherkonto. Ein Standardspeicherkonto enthält Zugriff auf Azure-Blob-, Tabellen- und Warteschlangenspeicher. Das Premium-Speicherkonto steht zurzeit nur zum Speichern von Daten auf Datenträgern zur Verfügung, die von virtuellen Azure-Maschinen verwendet werden. Weitere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](./storage-premium-storage-preview-portal.md).
+	- Informationen zum Erstellen eines **Standardspeicher**-Kontos in Azure finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage-create-storage-account.md). **Hinweis:** Zwei Typen von Speicherkonten stehen in Azure zur Verfügung: Standardspeicherkonto und Premium-Speicherkonto. Ein Standardspeicherkonto enthält Zugriff auf Azure-Blob-, Tabellen- und Warteschlangenspeicher. Das Premium-Speicherkonto steht zurzeit nur zum Speichern von Daten auf Datenträgern zur Verfügung, die von virtuellen Azure-Maschinen verwendet werden. Weitere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
 
 Nun erstellen wir eine einfache Azure Storage-Anwendung mithilfe eines der Azure-Schnellstart-Beispielprojekte in Visual Studio. Dieses Lernprogramm konzentriert sich auf Beispielprojekte mit **Azure-Blob-Speicher**, **Azure-Tabellenspeicher** und **Azure Storage-Warteschlangen**. Die folgenden Anweisungen gelten für jedes Beispielprojekt. Sie unterscheiden sich lediglich in der Auswahl unterschiedlicher Vorlagen bei Schritt 3.a:
 
@@ -88,7 +88,7 @@ Führen Sie nun die Beispielanwendung aus:
 2.	Kommentieren Sie die Verbindungszeichenfolge für den Azure Storage-Dienst aus, und geben Sie den Speicherkontonamen und den Zugriffsschlüssel in der App.config-Datei an:
 	`<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]"` 
 
-	Informationen zum Ermitteln des Speicherkontonamens und des Zugriffsschlüssels finden Sie unter [Was ist ein Speicherkonto](./storage-whatis-account.md). 
+	Informationen zum Ermitteln des Speicherkontonamens und des Zugriffsschlüssels finden Sie unter [Was ist ein Speicherkonto](storage-whatis-account.md). 
 
 3.	Nach Angabe des Speicherkontonamens und des Zugriffsschlüssels in der App.config-Datei klicken Sie im Menü **Datei** auf **Alle speichern**, um die Projektdateien zu speichern. 
 4.	Klicken Sie im Menü **Build** auf **Projektmappe erstellen**. 
@@ -100,10 +100,10 @@ In diesem Lernprogramm haben Sie gelernt, wie die Programmierung mit Azure-Blob-
 
 Weitere Informationen hierzu finden Sie unter folgenden Links:
 
-* [Einführung in Microsoft Azure Storage](./storage-introduction.md)
-* [Verwenden des Blob-Speichers mit .NET](./storage-dotnet-how-to-use-blobs.md)
-* [Verwenden des Tabellenspeichers mit .NET](./storage-dotnet-how-to-use-tables.md)
-* [Verwenden des Warteschlangenspeichers mit .NET](./storage-dotnet-how-to-use-queues.md)
+* [Einführung in Microsoft Azure Storage](storage-introduction.md)
+* [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)
+* [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md)
+* [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
 * [Azure Storage-Dokumentation](http://azure.microsoft.com/documentation/services/storage/)
 * [MSDN-Referenz für Azure Storage](http://msdn.microsoft.com/library/azure/gg433040.aspx)
 * [Azure Storage-Clientbibliothek](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)

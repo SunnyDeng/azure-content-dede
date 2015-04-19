@@ -17,8 +17,8 @@
 	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](/documentation/articles/vs-mobile-services-cordova-getting-started/)
-> - [Was ist passiert?](/documentation/articles/vs-mobile-services-cordova-what-happened/)
+> - [Erste Schritte](vs-mobile-services-cordova-getting-started.md)
+> - [Was ist passiert?](vs-mobile-services-cordova-what-happened.md)
 
 ## Erste Schritte mit Mobile Services (Cordova-Projekte)
 

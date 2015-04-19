@@ -60,7 +60,7 @@ Zur Bestimmung des [Zugriffsschlüssels wechseln Sie zum Azure-Verwaltungsportal
 6.    Geben Sie den Namen des Speicherkontos und einen der bereitgestellten Zugriffsschlüssel in die Platzhalter der Speicher-Verbindungszeichenfolge ein. Diese Verbindungszeichenfolge wird sowohl im Abschnitt für die **SplitMergeWeb**-Rolle als auch für die **SplitMergeWorker**-Rolle in der Einstellung **Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString** verwendet. Sie können unterschiedliche Speicherkonten für die unterschiedlichen Rollen verwenden. 
 
 ### Konfigurieren der Sicherheit 
-Ausführliche Anweisungen zum Konfigurieren der Dienstsicherheit finden Sie unter [Elastic Scale - Sicherheitskonfigurationen](./sql-database-elastic-scale-configure-security.md).
+Ausführliche Anweisungen zum Konfigurieren der Dienstsicherheit finden Sie unter [Elastic Scale - Sicherheitskonfigurationen](sql-database-elastic-scale-configure-security.md).
 
 Für  eine einfache Testbereitstellung, die zum Ausführen dieses Lernprogramms geeignet ist, führen Sie einige wenige Konfigurationsschritte aus, um den Dienst zu aktivieren und auszuführen. Durch diese Schritte werden nur ein Computer und Konto für die Kommunikation mit dem Dienst aktiviert.
 
@@ -120,7 +120,7 @@ Für die Workerrolle:
     <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
 
-Beachten Sie, dass in Produktionsbereitstellungen für die Zertifizierungsstelle, die Verschlüsselung, das Serverzertifikat und die Clientzertifikate getrennte Zertifikate verwendet werden müssen. Ausführliche Anweisungen finden Sie unter [Sicherheitskonfiguration](./sql-database-elastic-scale-configure-security.md).
+Beachten Sie, dass in Produktionsbereitstellungen für die Zertifizierungsstelle, die Verschlüsselung, das Serverzertifikat und die Clientzertifikate getrennte Zertifikate verwendet werden müssen. Ausführliche Anweisungen finden Sie unter [Sicherheitskonfiguration](sql-database-elastic-scale-configure-security.md).
 
 ### Bereitstellen des Split-Merge-Diensts
 1. Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com).

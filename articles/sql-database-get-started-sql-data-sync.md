@@ -179,9 +179,9 @@ Herzlichen Glückwunsch. Sie haben nun eine Synchronisierungsgruppe erstellt, di
 ##Nächste Schritte
 Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
-* [Registrieren Sie sich für die Premium-Angebot für SQL-Datenbank] (../sign-up-for-sql-database-premium/)
+* [Registrieren Sie sich für die Premium-Angebot für SQL-Datenbank] (sign-up-for-sql-database-premium.md)
 * [SQL Data Sync (WA-Portal)](http://msdn.microsoft.com/library/windowsazure/jj856263.aspx)
-* [Erste Schritte mit Azure SQL-Datenbank](../getting-started-w-sql-databases/)
+* [Erste Schritte mit Azure SQL-Datenbank](getting-started-w-sql-databases.md)
 * [Lebenszyklus von SQL Server-Datenbanken](http://go.microsoft.com/fwlink/?LinkId=275193)
 
 

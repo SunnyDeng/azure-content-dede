@@ -17,8 +17,8 @@
 	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](/documentation/articles/vs-mobile-services-dotnet-getting-started/)
-> - [Was ist passiert?](/documentation/articles/vs-mobile-services-dotnet-what-happened/)
+> - [Erste Schritte](vs-mobile-services-dotnet-getting-started.md)
+> - [Was ist passiert?](vs-mobile-services-dotnet-what-happened.md)
 
 ###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
 

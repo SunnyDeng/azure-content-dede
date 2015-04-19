@@ -36,7 +36,7 @@
 > [AZURE.NOTE] Wenn Sie den Quellcode der fertigen App anzeigen möchten, wechseln Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStartedWithData/Android/GetStartedWithData">hier</a> herunter.
 
 Die Eclipse-Version dieses Lernprogramms finden Sie unter: 
-[Erste Schritte mit Daten mit Eclipse](/documentation/articles/mobile-services-android-get-started-data-EC/).
+[Erste Schritte mit Daten mit Eclipse](mobile-services-android-get-started-data-EC.md).
 
 > [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AED8DE357" target="_blank">Kostenlose Azure-Testversion</a>.
 

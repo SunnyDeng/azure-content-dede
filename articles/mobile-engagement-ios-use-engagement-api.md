@@ -31,7 +31,7 @@ Vor jeglichen API-Aufrufen muss das  `EngagementAgent`-Objekt durch Aufrufen der
 
 ## Engagement-Konzepte
 
-Nachfolgend werden die gängigen [Mobile Engagement-Konzepte](../mobile-engagement-concepts/) für die iOS-Plattform näher erläutert.
+Nachfolgend werden die gängigen [Mobile Engagement-Konzepte](mobile-engagement-concepts.md) für die iOS-Plattform näher erläutert.
 
 ### `Session` und `Activity`
 

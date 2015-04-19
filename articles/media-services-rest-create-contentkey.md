@@ -19,13 +19,13 @@
 
 # Erstellen von ContentKeys mit REST
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) .  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) .  
 
 Media Services ermöglicht das Erstellen neuer und Übermitteln verschlüsselter Medienobjekte. Ein **ContentKey** ermöglicht den sicheren Zugriff auf Ihre **Medienobjekte**. 
 
-Wenn Sie ein neues Objekt erstellen (z. B. vor dem [Hochladen von Dateien](../media-services-rest-upload-files/)),können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**. 
+Wenn Sie ein neues Objekt erstellen (z. B. vor dem [Hochladen von Dateien](media-services-rest-upload-files.md)),können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**. 
 
-Wenn Sie Medienobjekte an Ihre Clients übermitteln, können Sie die [dynamische Verschlüsselung von Medienobjekten konfigurieren](../media-services-rest-configure-asset-delivery-policy). Hierzu können Sie eine der beiden folgenden Verschlüsselungen verwenden: **DynamicEnvelopeEncryption** oder **DynamicCommonEncryption**.
+Wenn Sie Medienobjekte an Ihre Clients übermitteln, können Sie die [dynamische Verschlüsselung von Medienobjekten konfigurieren](media-services-rest-configure-asset-delivery-policy.md). Hierzu können Sie eine der beiden folgenden Verschlüsselungen verwenden: **DynamicEnvelopeEncryption** oder **DynamicCommonEncryption**.
 
 Verschlüsselte Medienobjekte müssen **ContentKey**s zugeordnet werden. In diesem Artikel wird beschrieben, wie ein Inhaltsschlüssel erstellt wird.
 
@@ -67,9 +67,9 @@ In diesem Thema wurden die Beispiele zum Generieren eines AES-Schlüssels, zur S
 
 >[AZURE.NOTE] Beim Verwenden der Media Services-REST-API gelten die folgenden Überlegungen:
 >
->Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](../media-services-rest-how-to-use).
+>Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](media-services-rest-how-to-use.md).
 
->Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](../media-services-rest-connect_programmatically/) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
+>Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](media-services-rest-connect_programmatically.md) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
 
 ## Abrufen der ProtectionKeyId 
  

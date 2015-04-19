@@ -659,7 +659,7 @@ Eine SAS kann zwei Formen aufweisen:
 - **Ad-Hoc-SAS**: Beim Erstellen einer Ad-Hoc-SAS werden Startzeit, Ablaufzeit und Berechtigungen für die SAS direkt in der SAS-URI angegeben. Diese Art von SAS kann für Container, Blobs, Tabellen oder Warteschlangen erstellt werden und kann nicht aufgehoben werden.
 - **SAS mit gespeicherten Zugriffsrichtlinien**: Gespeicherte Zugriffsrichtlinien werden für Ressourcencontainer (Blob-Container, Tabellen oder Warteschlangen) definiert, und Sie können sie zum Verwalten von Einschränkungen für eine oder mehrere SAS verwenden. Wenn Sie eine SAS mit einer gespeicherten Zugriffsrichtlinie verknüpfen, erbt die SAS die Einschränkungen (Startzeit, Ablaufzeit und Berechtigungen) dieser gespeicherten Zugriffsrichtlinie. Diese Art von SAS kann aufgehoben werden.
 
-Weitere Informationen finden Sie unter [Shared Access Signatures],(./storage-dotnet-shared-access-signature-part-1.md/)[Teil 1: Grundlagen zum SAS-Modell],(./storage-dotnet-shared-access-signature-part-1.md/)und [Verwalten des Zugriffs auf Azure-Speicherressourcen](http://msdn.microsoft.com/library/azure/ee393343.aspx).
+Weitere Informationen finden Sie unter [Shared Access Signatures],(storage-dotnet-shared-access-signature-part-1.md)[Teil 1: Grundlagen zum SAS-Modell],(storage-dotnet-shared-access-signature-part-1.md)und [Verwalten des Zugriffs auf Azure-Speicherressourcen](http://msdn.microsoft.com/library/azure/ee393343.aspx).
 
 In den nächsten Abschnitten erfahren Sie, wie Sie ein SAS-Token und eine gespeicherte Zugriffsrichtlinie für Azure-Tabellen erstellen. Azure PowerShell stellt ähnliche Cmdlets auch für Container, Blobs und Warteschlangen bereit. Um die Skripts in diesem Abschnitt auszuführen, laden Sie [Azure PowerShell Version 0.8.14](http://go.microsoft.com/?linkid=9811175&clcid=0x409) oder höher herunter.
 
@@ -721,7 +721,7 @@ Um Azure Storage mit [Azure Government für die US-Regierung](http://azure.micro
 
 Weitere Informationen finden Sie unter:
 
-- [Microsoft Azure Government-Entwicklerhandbuch](../azure-government-developer-guide/). 
+- [Microsoft Azure Government-Entwicklerhandbuch](azure-government-developer-guide.md). 
 - [Unterschiede zwischen AzureCloud für globales Azure und AzureChinaCloud für Azure, in China von 21Vianet betrieben](https://msdn.microsoft.com/library/azure/dn578439.aspx)
 
 ## <a name="next"></a>Nächste Schritte

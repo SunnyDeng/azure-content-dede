@@ -1,4 +1,4 @@
-﻿#Erstellen einer MySQL-Datenbank in Azure
+#Erstellen einer MySQL-Datenbank in Azure
 
 In diesem Leitfaden erfahren Sie, wie Sie [ClearDB] zum Erstellen einer MySQL-Datenbank aus dem [Azure Store] verwenden und wie Sie eine MySQL-Datenbank als verknüpfte Ressource während der Erstellung einer [Azure-Website][Waws] erstellen. [ClearDB] ist ein fehlertoleranter Database-as-a-Service-Anbieter, mit dem Sie MySQL-Datenbanken in Azure-Datencentern ausführen und verwalten und von jeder beliebigen Anwendung Verbindungen zu diesen Datenbanken herstellen können.  
 
@@ -43,7 +43,7 @@ Zum Erstellen einer MySQL-Datenbank aus dem [Azure Store] gehen Sie folgenderma�
 Zum Erstellen einer MySQL-Datenbank als verknüpfte Ressource bei der Erstellung einer [Azure-Website][Waws] gehen Sie folgendermaßen vor:
 
 1. Melden Sie sich am [Azure-Verwaltungsportal][Portal] an.
-2. Klicken Sie auf **+ Neu** am unteren Rand der Seite, und wählen Sie dann **Berechnen**, **Website** und **Mit Datenbank erstellen** aus.
+2. Klicken Sie auf **+ Neu** am unteren Rand der Seite, und wählen Sie dann **Compute**, **Website** und **Mit Datenbank erstellen** aus.
 
 	![Create website with database](./media/create-mysql-db/custom_create.png)
 

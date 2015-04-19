@@ -21,7 +21,7 @@
 # Hochladen von Dateien in ein Media Services-Konto mit der REST-API
 [AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
 
 In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch. Die [Medienobjekt](https://msdn.microsoft.com/library/azure/hh974277.aspx)-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien (und die Metadaten zu diesen Dateien) enthalten.  Nachdem die Dateien in das Medienobjekt hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert. 
 
@@ -39,9 +39,9 @@ Der grundlegende Workflow zum Erfassen von Medienobjekten ist in folgende Abschn
 
 >[AZURE.NOTE] Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
->Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](../media-services-rest-how-to-use).
+>Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](media-services-rest-how-to-use.md).
 
->Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](../media-services-rest-connect_programmatically/) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
+>Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](media-services-rest-connect_programmatically.md) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
  
 Ein Medienobjekt ist ein Container für mehrere Typen oder Gruppen von Objekten in Media Services. Dazu gehören Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien. In der REST-API muss beim Erstellen eines Medienobjekts eine POST-Anforderung an Media Services gesendet werden. Dabei müssen alle Eigenschaftsinformationen zum Medienobjekt im Anforderungstext enthalten sein.
 
@@ -56,7 +56,7 @@ Eine der Eigenschaften, die Sie beim Erstellen eines Medienobjekts angeben könn
 
 - **EnvelopeEncryptionProtected** = **4**: Geben Sie an, ob Sie mit AES-Dateien verschlüsseltes HLS hochladen. Beachten Sie, dass die Dateien durch Transform Manager codiert und verschlüsselt sein müssen.
 
->[AZURE.NOTE]Wenn Ihr Medienobjekt die Verschlüsselung verwendet, müssen Sie einen **ContentKey** erstellen und mit Ihrem Medienobjekt verknüpfen, wie im folgenden Thema beschrieben: [Erstellen eines ContentKey](../media-services-rest-create-contentkey). Nachdem Sie die Dateien in das Medienobjekt hochgeladen haben, müssen Sie die Verschlüsselungseigenschaften für die **AssetFile**-Entität anhand der Werte aktualisieren, die Sie während der **Asset**-Verschlüsselung erhalten haben. Verwenden Sie dazu die HTTP **MERGE**-Anforderung. 
+>[AZURE.NOTE]Wenn Ihr Medienobjekt die Verschlüsselung verwendet, müssen Sie einen **ContentKey** erstellen und mit Ihrem Medienobjekt verknüpfen, wie im folgenden Thema beschrieben: [Erstellen eines ContentKey](media-services-rest-create-contentkey.md). Nachdem Sie die Dateien in das Medienobjekt hochgeladen haben, müssen Sie die Verschlüsselungseigenschaften für die **AssetFile**-Entität anhand der Werte aktualisieren, die Sie während der **Asset**-Verschlüsselung erhalten haben. Verwenden Sie dazu die HTTP **MERGE**-Anforderung. 
 
 
 Im folgenden Beispiel wird veranschaulicht, wie Sie ein Medienobjekt erstellen.

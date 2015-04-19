@@ -269,7 +269,7 @@ Rolleninstanzen.
 Wie bereit erwähnt, ist die Dienstdefinitionsdatei (CSDEF) eine XML-
 Datei, die die verschiedenen Rollen beschreibt, aus denen die gesamte
 Anwendung besteht. Das vollständige Schema für die XML-Datei ist unter folgendem Link zu finden:
-[http://msdn.microsoft.com/de-de/library/windowsazure/ee758711.aspx][].
+[http://msdn.microsoft.com/library/windowsazure/ee758711.aspx][].
 Die CSDEF-Datei enthält ein WebRole- oder WorkerRole-Element für jede Rolle,
 die Sie in der Anwendung verwenden möchten. Das Bereitstellen einer Rolle als Webrolle (mit
 dem WebRole-Element) bedeutet, dass der Code auf einer Rolleninstanz ausgeführt wird,
@@ -486,7 +486,7 @@ erforderlichen Komponenten für eine Rolleninstanz, wenn sie gestartet wird. Die
 Die Dienstkonfigurationsdatei (CSCFG) ist eine XML-Datei, die Einstellungen
 beschreibt, die geändert werden können, ohne die Anwendung erneut bereitzustellen. Das
 vollständige Schema für die XML-Datei ist unter folgendem Link zu finden:
-[http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx][].
+[http://msdn.microsoft.com/library/windowsazure/ee758710.aspx][].
 Die CSCFG-Datei enthält ein Rollenelement für jede Rolle in Ihrer
 Anwendung Einige der Elemente, die Sie in der CSCFG-Datei angeben können,
 werden im Folgenden beschrieben:
@@ -503,7 +503,7 @@ deaktivieren, indem Sie eine bestimmte Gastbetriebssystemversion auswählen. Bei
     Das Festlegen des OsVersion-Attributs auf den Wert
     "WA-GUEST-OS-2.8\_201109-01" bewirkt, dass alle Rolleninstanzen das abrufen,
     was auf dieser Webseite beschrieben wird:
-    [http://msdn.microsoft.com/de-de/library/hh560567.aspx][]. Weitere
+    [http://msdn.microsoft.com/library/hh560567.aspx][]. Weitere
 Informationen zum Gastbetriebssystemversionen finden Sie unter [Verwalten von Aktualisierungen des
 Azure-Gastbetriebssystems].
 
@@ -585,14 +585,14 @@ Rollen finden Sie im Artikel [Bereitstellen und Aktualisieren von Azure-Anwendun
   [4]: ./media/application-model/application-model-7.jpg
   
   [Azure-Preise]: http://www.windowsazure.com/de-de/pricing/calculator/
-  [Verwalten von Zertifikaten in Azure]: http://msdn.microsoft.com/de-de/library/windowsazure/gg981929.aspx
-  [http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx]: http://msdn.microsoft.com/de-de/library/windowsazure/ee758710.aspx
-  [http://msdn.microsoft.com/de-de/library/hh560567.aspx]: http://msdn.microsoft.com/de-de/library/hh560567.aspx
-  [Verwalten von Aktualisierungen des Azure-Gastbetriebssystems]: http://msdn.microsoft.com/de-de/library/ee924680.aspx
+  [Verwalten von Zertifikaten in Azure]: http://msdn.microsoft.com/library/windowsazure/gg981929.aspx
+  [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx]: http://msdn.microsoft.com/library/windowsazure/ee758710.aspx
+  [http://msdn.microsoft.com/library/hh560567.aspx]: http://msdn.microsoft.com/library/hh560567.aspx
+  [Verwalten von Aktualisierungen des Azure-Gastbetriebssystems]: http://msdn.microsoft.com/library/ee924680.aspx
   [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
   [5]: ./media/application-model/application-model-8.jpg
   [Bereitstellen und Aktualisieren von Azure-Anwendungen]: http://www.windowsazure.com/de-de/develop/net/fundamentals/deploying-applications/
-  [Erstellen eines gehosteten Diensts für Azure]: http://msdn.microsoft.com/de-de/library/gg432967.aspx
-  [Verwalten von gehosteten Diensten in Azure]: http://msdn.microsoft.com/de-de/library/gg433038.aspx
-  [Migrieren von Anwendungen zu Azure]: http://msdn.microsoft.com/de-de/library/gg186051.aspx
-  [Konfigurieren einer Azure-Anwendung]: http://msdn.microsoft.com/de-de/library/windowsazure/ee405486.aspx
+  [Erstellen eines gehosteten Diensts für Azure]: http://msdn.microsoft.com/library/gg432967.aspx
+  [Verwalten von gehosteten Diensten in Azure]: http://msdn.microsoft.com/library/gg433038.aspx
+  [Migrieren von Anwendungen zu Azure]: http://msdn.microsoft.com/library/gg186051.aspx
+  [Konfigurieren einer Azure-Anwendung]: http://msdn.microsoft.com/library/windowsazure/ee405486.aspx

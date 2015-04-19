@@ -22,7 +22,7 @@
 
 <h1>Vorgehensweise: Bereitstellen von Apple HLS-Streaminginhalten</h1>
 
-Dieser Artikel ist Teil einer Reihe zum Thema Programmierung mit Azure Media Services. Das vorherige Thema war [Gewusst wie: Bereitstellen von Streaminginhalten](../media-services-deliver-streaming-content/).
+Dieser Artikel ist Teil einer Reihe zum Thema Programmierung mit Azure Media Services. Das vorherige Thema war [Gewusst wie: Bereitstellen von Streaminginhalten](media-services-deliver-streaming-content.md).
 
 In diesem Thema lernen Sie das Erstellen eines Locators zu Apple HTTP Live Streaming (HLS)-Inhalten auf einem Media Services-Ursprungsserver. Mit diesem Verfahren können Sie eine URL zu Apple HLS-Inhalten erstellen und Apple iOS-Geräten für die Wiedergabe bereitstellen. Die grundlegende Methode zum Erstellen der Locator-URL ist identisch. Erstellen Sie einen Locator zum Pfad des Apple HLS-Streaming-Medienobjekts auf einem Ursprungsserver, und erstellen Sie dann eine vollständige URL als Link zum Manifest für den Streaminginhalt.
 
@@ -92,8 +92,8 @@ Dies ist das letzte Thema der Reihe zur Verwendung von Azure Media Services. Sie
 -   [Erstellen von Anwendungen mit dem Media Services SDK für .NET][]
 -   [Erstellen von Anwendungen mit der Azure Media Services-REST-API][]
 -   [Media Services-Forum][]
--	[Überwachen eines Media Services-Kontos](../media-services-monitor-services-account/)
--	[Verwalten von Inhalten in Media Services](../media-services-manage-content/)
+-	[Überwachen eines Media Services-Kontos](media-services-monitor-services-account.md)
+-	[Verwalten von Inhalten in Media Services](media-services-manage-content.md)
 
 [Azure Media Services-Dokumentation]: http://go.microsoft.com/fwlink/?linkid=245437
 [Erste Schritte mit dem Media Services SDK für .NET]: http://go.microsoft.com/fwlink/?linkid=252966

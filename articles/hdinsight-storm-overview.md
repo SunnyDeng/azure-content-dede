@@ -86,7 +86,7 @@ Der HDInsight Storm-Cluster unterstützt standardmäßig .NET, Java und Python. 
 
 SCP ist ein Projekt, mit dem .NET-Entwickler Topologien (inklusive Spouts und Bolts) entwickeln und implementieren können. Storm-Cluster unterstützen SCP standardmäßig.
 
-Weitere Informationen zur Entwicklung mit SCP finden Sie unter [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](/de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application).
+Weitere Informationen zur Entwicklung mit SCP finden Sie unter [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application.md).
 
 ### Java
 
@@ -120,7 +120,7 @@ Das folgende Java-Beispiel verwendet "fieldsGrouping", um Tupel von den Komponen
 
 Batchverarbeitung kann auf unterschiedliche Arten implementiert werden. In einer einfachen Storm-Java-Topologie können Sie einen einfachen Zähler verwenden, um X Tupel vor der Ausgabe zu einem Batch zusammenzufassen, oder einen internen Timer-Mechanismus verwenden, der auch als Tick-Tupel bezeichnet wird, um alle X Sekunden einen Batch auszugeben.
 
-Ein Beispiel für Tick-Tupel finden Sie unter [Analysieren von Sensordaten mit Storm und HDInsight](/de-de/documentation/articles/hdinsight-storm-sensor-data-analysis.md).
+Ein Beispiel für Tick-Tupel finden Sie unter [Analysieren von Sensordaten mit Storm und HDInsight](hdinsight-storm-sensor-data-analysis.md.md).
 
 Falls Sie Trident verwenden, erfolgt die Verarbeitung immer als Batches von Tupeln.
 
@@ -138,9 +138,9 @@ Ein Beispiel hierfür finden Sie im [RollingTopWords](https://github.com/nathanm
 
 * [Erste Schritte mit Storm in HDInsight][gettingstarted]
 
-* [Analysieren von Sensordaten mit Storm und HBase in HDInsight (Hadoop)](/de-de/documentation/articles/hdinsight-storm-sensor-data-analysis)
+* [Analysieren von Sensordaten mit Storm und HBase in HDInsight (Hadoop)](hdinsight-storm-sensor-data-analysis.md)
 
-* [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](/de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application)
+* [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application.md)
 
 [apachestorm]: https://storm.incubator.apache.org
 [stormtrident]: https://storm.incubator.apache.org/documentation/Trident-API-Overview.html

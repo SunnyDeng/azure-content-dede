@@ -24,13 +24,13 @@ In diesem Thema wird gezeigt, wie Sie eine benutzerdefinierte API aus einer Wind
 
 Über die im Rahmen dieses Themas erstellte benutzerdefinierte API erhalten Sie die Möglichkeit, eine einzelne POST-Anforderung zu senden, die das Erledigt-Kennzeichen für sämtliche todo-Einträge in der Tabelle auf `true` setzt. Ohne diese benutzerdefinierte API müsste der Client einzelne Anforderungen senden, um das Kennzeichen für jeden einzelnen todo-Eintrag in der Tabelle zu aktualisieren.
 
-Diese Funktionalität wird der App hinzugefügt, nachdem Sie das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App](/de-de/documentation/articles/mobile-services-windows-phone-get-started-data/) beendet haben. Dafür führen Sie die folgenden Schritte aus:
+Diese Funktionalität wird der App hinzugefügt, nachdem Sie das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-windows-phone-get-started-data.md) beendet haben. Dafür führen Sie die folgenden Schritte aus:
 
 1. [Definieren der benutzerdefinierten API]
 2. [Aktualisieren der App zum Aufruf der benutzerdefinierten API]
 3. [Testen der App]
 
-Dieses Lernprogramm baut auf dem "GetStartedWithData"-Beispiel auf, einer einfachen TodoList-App. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App](/de-de/documentation/articles/mobile-services-windows-phone-get-started-data/) abschließen.
+Dieses Lernprogramm baut auf dem "GetStartedWithData"-Beispiel auf, einer einfachen TodoList-App. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-windows-phone-get-started-data.md) abschließen.
 
 ## <a name="define-custom-api"></a>Definieren der benutzerdefinierten API
 

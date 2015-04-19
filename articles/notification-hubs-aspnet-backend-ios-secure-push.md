@@ -2,7 +2,7 @@
 	pageTitle="Azure Notification Hubs - Sichere Pushbenachrichtigungen" 
 	description="Erfahren Sie mehr über das Senden sicherer Pushbenachrichtigungen an eine iOS-App von Azure. Die Codebeispiele wurden in Objekctive-C und C# geschrieben." 
 	documentationCenter="ios" 
-	authors="wesmc7777" 
+	authors="ysxu" 
 	manager="dwrede" 
 	editor="" 
 	services="notification-hubs"/>
@@ -13,17 +13,15 @@
 	ms.tgt_pltfrm="" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="02/26/2015" 
-	ms.author="wesmc,yuaxu"/>
+	ms.date="10/10/2014" 
+	ms.author="yuaxu"/>
 
 #Azure Notification Hubs - Sichere Pushbenachrichtigungen
 
 <div class="dev-center-tutorial-selector sublanding">
-    	<a href="/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push/" title="Windows Universal">Windows Universal</a><a href="/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/" title="iOS" class="current">iOS</a>
-		<a href="/documentation/articles/notification-hubs-aspnet-backend-android-secure-push/" title="Android">Android</a>
+    	<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push/" title="Windows Universal">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/" title="iOS" class="current">iOS</a>
+		<a href="/de-de/documentation/articles/notification-hubs-aspnet-backend-android-secure-push/" title="Android">Android</a>
 </div>
-
-##Übersicht
 
 Durch die Unterstützung von Pushbenachrichtigungen in Microsoft Azure haben Sie Zugriff auf eine benutzerfreundliche, plattformübergreifende und horizontal skalierte Pushinfrastruktur, die die Implementierung von Pushbenachrichtigungen sowohl für Endbenutzer- als auch für Unternehmensanwendungen für mobile Plattformen erheblich vereinfacht.
 
@@ -42,13 +40,13 @@ Es ist wichtig zu beachten, dass wir im vorstehenden Ablauf (und diesem Lernprog
 
 Dieses Lernprogramm zu sicheren Pushbenachrichtigungen veranschaulicht das sichere Senden einer Pushbenachrichtigung. Es baut auf dem Lernprogramm **Benachrichtigen von Benutzern** auf. Daher sollten Sie die Schritte in diesem Lernprogramm zuerst durchführen.
 
-> [AZURE.NOTE] In diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (iOS)](notification-hubs-ios-get-started.md) beschrieben erstellt und konfiguriert haben.
+> [AZURE.NOTE] Bei diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub, wie unter [Erste Schritte mit Notification Hubs (iOS)](http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/) beschrieben, erstellt und konfiguriert haben.
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../includes/notification-hubs-aspnet-backend-securepush.md)]
 
 ## Ändern des iOS-Projekts
 
-Nachdem Sie Ihr App-Back-End so geändert haben, dass lediglich die  *ID* einer Benachrichtigung gesendet wird, müssen Sie Ihre iOS-App so ändern, dass sie diese Benachrichtigung verarbeitet und einen Rückruf an das Back-End sendet, um die anzuzeigende sichere Nachricht abzurufen.
+Nachdem Sie Ihr App-Back-End so geändert haben, dass lediglich die  *id* einer Benachrichtigung gesendet wird, müssen Sie Ihre Android-App so ändern, dass sie diese Benachrichtigung verarbeitet und einen Rückruf an das Back-End sendet, um die anzuzeigende sichere Nachricht abzurufen.
 
 Hierzu müssen wir die Logik zum Abrufen des sicheren Inhalts aus dem App-Back-End schreiben.
 
@@ -68,7 +66,7 @@ Hierzu müssen wir die Logik zum Abrufen des sicheren Inhalts aus dem App-Back-E
 
 		- (void) retrieveSecurePayloadWithId:(int)payloadId completion: (void(^)(NSString*, NSError*)) completion;
 		{
-		    // check if authenticated
+		    // prüfen, ob authentifiziert
 		    ANHViewController* rvc = (ANHViewController*) self.window.rootViewController;
 		    NSString* authenticationHeader = rvc.registerClient.authenticationHeader;
 		    if (!authenticationHeader) return;
@@ -126,7 +124,7 @@ Hierzu müssen wir die Logik zum Abrufen des sicheren Inhalts aus dem App-Back-E
 
 		    [self retrieveSecurePayloadWithId:[[userInfo objectForKey:@"secureId"] intValue] completion:^(NSString * payload, NSError *error) {
 		        if (!error) {
-		            // show local notification
+		            // lokale Benachrichtigung anzeigen
 		            UILocalNotification* localNotification = [[UILocalNotification alloc] init];
 		            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:0];
 		            localNotification.alertBody = payload;
@@ -155,4 +153,4 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-secure-push/secure-push-ios-1.png
 
-<!--HONumber=49-->
+<!--HONumber=45--> 

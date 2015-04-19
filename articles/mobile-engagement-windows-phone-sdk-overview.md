@@ -17,17 +17,17 @@
 	ms.author="kapiteir" />
 
 # Windows Phone-SDK für Azure Mobile Engagement v2.0.0
-Beginnen Sie hier, um alle Details zur Integration von Azure Mobile Engagement in einer Windows Phone-App abzurufen. Wenn Sie es zunächst nur probieren möchten, stellen Sie sicher, dass Sie das [15-Minuten-Lernprogramm](../mobile-engagement-windows-phone-get-started/) durchführen.
+Beginnen Sie hier, um alle Details zur Integration von Azure Mobile Engagement in einer Windows Phone-App abzurufen. Wenn Sie es zunächst nur probieren möchten, stellen Sie sicher, dass Sie das [15-Minuten-Lernprogramm](mobile-engagement-windows-phone-get-started.md) durchführen.
 
-Klicken Sie, um den [SDK-Inhalt](../mobile-engagement-windows-phone-sdk-content/) anzuzeigen
+Klicken Sie, um den [SDK-Inhalt](mobile-engagement-windows-phone-sdk-content.md) anzuzeigen
 
 ## Integrationsverfahren
 
-1. Beginnen Sie hier: [Integration von Mobile Engagement in Ihrer Windows Phone-App](../mobile-engagement-windows-phone-integrate-engagement/)
+1. Beginnen Sie hier: [Integration von Mobile Engagement in Ihrer Windows Phone-App](mobile-engagement-windows-phone-integrate-engagement.md)
 
-2. Für Benachrichtigungen: [Integration von Reach (Benachrichtigungen) in der Windows Phone-App](../mobile-engagement-windows-phone-integrate-engagement-reach/)
+2. Für Benachrichtigungen: [Integration von Reach (Benachrichtigungen) in der Windows Phone-App](mobile-engagement-windows-phone-integrate-engagement-reach.md)
 
-3. Tag-Plan-Implementierung: [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer Windows Phone-App](../mobile-engagement-windows-phone-use-engagement-api/)
+3. Tag-Plan-Implementierung: [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer Windows Phone-App](mobile-engagement-windows-phone-use-engagement-api.md)
 
 ## Versionshinweise
 
@@ -36,7 +36,7 @@ Klicken Sie, um den [SDK-Inhalt](../mobile-engagement-windows-phone-sdk-content/
 -   appId/sdkKey-Konfiguration wird durch die Konfiguration einer Verbindungszeichenfolge ersetzt.
 -   Verbesserungen der Sicherheit.
 
-Eine frühere Version finden Sie unter [Vollständige Versionshinweise](../mobile-engagement-windows-phone-release-notes/)
+Eine frühere Version finden Sie unter [Vollständige Versionshinweise](mobile-engagement-windows-phone-release-notes.md)
 
 ## Upgrade-Verfahren
 

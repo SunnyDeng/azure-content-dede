@@ -25,7 +25,7 @@ Die Bibliothek für das **Azure Media Services .NET SDK** ermöglicht es Ihnen, 
 
 ## Voraussetzungen
 
--   Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Erstellen eines Media Services-Kontos](../media-services-create-account/).
+-   Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Erstellen eines Media Services-Kontos](media-services-create-account.md).
 -   Betriebssysteme: Windows 7, Windows 2008 R2 oder Windows 8.
 -   .NET Framework 4.5.
 -   Visual Studio 2013, Visual Studio 2012 oder Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express). 

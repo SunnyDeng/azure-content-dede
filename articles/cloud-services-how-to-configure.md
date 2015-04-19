@@ -41,7 +41,7 @@ Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit
 	
 	Auf der Seite **Konfigurieren** können Sie die Überwachung konfigurieren, Rolleneinstellungen aktualisieren sowie das Gast-Betriebssystem und die Familie für Rolleninstanzen wählen. 
 
-2. Legen Sie in **Überwachung** die Überwachungsstufe auf "Ausführlich" oder "Minimal" fest, und konfigurieren Sie die Diagnoseverbindungszeichenfolgen, die für eine ausführliche Überwachung benötigt werden. Anweisungen hierzu finden Sie unter [Überwachen von Cloud-Diensten](../how-to-monitor-a-cloud-service/)
+2. Legen Sie in **Überwachung** die Überwachungsstufe auf "Ausführlich" oder "Minimal" fest, und konfigurieren Sie die Diagnoseverbindungszeichenfolgen, die für eine ausführliche Überwachung benötigt werden. Anweisungen hierzu finden Sie unter [Überwachen von Cloud-Diensten](how-to-monitor-a-cloud-service.md)
 
 
 3. Bei Dienstrollen (gruppiert nach Rolle) können Sie die folgenden Einstellungen aktualisieren:

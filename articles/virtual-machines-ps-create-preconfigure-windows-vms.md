@@ -26,7 +26,7 @@ Das Begleitthema zum Konfigurieren der Linux-basierten virtuellen Computer finde
 
 ## Schritt 1: Installieren von Azure PowerShell
 
-Wenn Sie dies noch nicht getan haben, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
+Wenn Sie dies noch nicht getan haben, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
 
 ## Schritt 2: Festlegen Ihres Abonnements und Speicherkontos
 
@@ -265,8 +265,8 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Übersicht über Azure Virtual Machines](http://msdn.microsoft.com/library/azure/jj156143.aspx)
 
-[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell/)
+[Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-[Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](../virtual-machines-ps-create-preconfigure-linux-vms/)
+[Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](virtual-machines-ps-create-preconfigure-linux-vms.md)
 
 <!--HONumber=47-->

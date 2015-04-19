@@ -135,7 +135,7 @@ Die Lösung dieses Problems ist einfach: Kehren Sie einfach zu einer Version zur
 
 Wenn Sie das Mobile Services .NET-Back-End mit einer SQL-Datenbank verwenden, wird ein Entity Framework (EF) als Datenzugriffstechnologie verwendet, mit der Sie die Datenbank abfragen und Objekte dort speichern können. Ein wichtiger Aspekt, den EF für den Entwickler übernimmt, ist die Art und Weise, wie die Datenbankspalten (auch als *schema* bekannt) mit Änderung der im Code festgelegten Modellklassen verändert werden. Dieser Prozess ist unter der Bezeichnung [Code First Migrations](http://msdn.microsoft.com/data/jj591621) bekannt.
 
-Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank synchron mit dem EF-Modell gehalten wird, damit sie erfolgreich sind. Eine Anleitung für das Durchführen von Migrationen mit Ihrem mobilen Dienst und die Fehler, die dabei auftreten können, finden Sie unter [Ändern des Datenmodells eines mobilen .NET-Back-End-Dienstes](/de-de/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)..
+Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank synchron mit dem EF-Modell gehalten wird, damit sie erfolgreich sind. Eine Anleitung für das Durchführen von Migrationen mit Ihrem mobilen Dienst und die Fehler, die dabei auftreten können, finden Sie unter [Ändern des Datenmodells eines mobilen .NET-Back-End-Dienstes](mobile-services-dotnet-backend-how-to-use-code-first-migrations.md)..
 
 <!-- IMAGES -->
 

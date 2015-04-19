@@ -56,7 +56,7 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ## <a id="setup"> </a>Einrichten der Entwicklungsumgebung
 
-**Hinweis:** Wenn Sie Python installieren müssen oder die Clientbibliotheken verwenden möchten, finden Sie weitere Informationen im [Installationshandbuch für Python](../python-how-to-install/).
+**Hinweis:** Wenn Sie Python installieren müssen oder die Clientbibliotheken verwenden möchten, finden Sie weitere Informationen im [Installationshandbuch für Python](python-how-to-install.md).
 
 Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder Django sind jedoch noch nicht installiert.  Befolgen Sie diese Schritte, um eine Verbindung zum virtuellen Computer herzustellen sowie um Apache und Django zu installieren.
 

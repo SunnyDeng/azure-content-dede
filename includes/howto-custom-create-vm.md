@@ -1,4 +1,4 @@
-﻿<properties authors="kathydav" editor="tysonn" manager="jeffreyg" />
+<properties authors="kathydav" editor="tysonn" manager="jeffreyg" />
 
 #Erstellen eines benutzerdefinierten virtuellen Computers
 
@@ -15,7 +15,7 @@ Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den S
 
 2. Klicken Sie in der Befehlsleiste auf **Neu**.
 
-3. Klicken Sie auf **Berechnen**, auf **Virtueller Computer** und anschließend auf **Aus Galerie**.
+3. Klicken Sie auf **Compute**, auf **Virtueller Computer** und anschließend auf **Aus Galerie**.
 
 4. Wählen Sie das Image aus, das Sie verwenden möchten, und klicken Sie dann auf den Pfeil, um den Vorgang fortzusetzen.
 
@@ -38,7 +38,7 @@ Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den S
 
 	**Hinweis**: Weitere Informationen über die Platzierung virtueller Computer im selben Clouddienst finden Sie unter [Verbinden virtueller Computer in einem Clouddienst](http://www.windowsazure.com/de-de/manage/windows/how-to-guides/connect-to-a-cloud-service/).
 
-12. Wählen Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** die Region, die Affinitätsgruppe oder das virtuelle Netzwerk aus, in der bzw. dem sich der virtuelle Computer befinden soll. Weitere Informationen zu Affinitätsgruppen finden Sie unter [Informationen zu Affinitätsgruppen für virtuelle Netzwerke](http://msdn.microsoft.com/de-de/library/azure/jj156085.aspx).
+12. Wählen Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** die Region, die Affinitätsgruppe oder das virtuelle Netzwerk aus, in der bzw. dem sich der virtuelle Computer befinden soll. Weitere Informationen zu Affinitätsgruppen finden Sie unter [Informationen zu Affinitätsgruppen für virtuelle Netzwerke](http://msdn.microsoft.com/library/azure/jj156085.aspx).
 
 13. Wählen Sie unter **Speicherkonto** ein vorhandenes Speicherkonto für die VHD-Datei, oder verwenden Sie ein automatisch erzeugtes Speicherkonto. Es wird nur ein Speicherkonto pro Region automatisch erstellt. Alle weiteren virtuellen Computer, die Sie mit dieser Einstellung erstellen, befinden sich in diesem Speicherkonto. Es sind maximal 20 Speicherkonten möglich.
 
@@ -46,7 +46,7 @@ Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den S
 
 	**Hinweis**: Virtuelle Computer, die Mitglieder eines Verfügbarkeitsgruppe sind, werden in verschiedenen Fehlerdomänen eingesetzt. Die Platzierung mehrerer virtueller Computer in einer Verfügbarkeitsgruppe sorgt dafür, dass Ihre Anwendung auch bei Netzwerkausfällen, bei Ausfällen der lokalen Hardware und während geplanter Ausfallzeiten verfügbar ist.
 
-15.  Prüfen Sie unter **Endpunkte** die neuen Endpunkte, die erstellt werden, um Verbindungen mit dem virtuellen Computer über Remote Desktop oder einen Secure Shell (SSH)-Client zu ermöglichen. Sie können entweder jetzt Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](http://azure.microsoft.com/de-de/documentation/articles/virtual-machines-set-up-endpoints/). 
+15.  Prüfen Sie unter **Endpunkte** die neuen Endpunkte, die erstellt werden, um Verbindungen mit dem virtuellen Computer über Remote Desktop oder einen Secure Shell (SSH)-Client zu ermöglichen. Sie können entweder jetzt Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](http://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/). 
 
 16.  Entscheiden Sie unter **VM Agent**, ob der VM Agent installiert werden soll. Dieser Agent stellt die Umgebung bereit, in der Sie Erweiterungen installieren können, die Ihnen bei der Interaktion mit dem virtuellen Computer helfen können. Nähere Informationen finden Sie unter [Verwalten von Erweiterungen](http://go.microsoft.com/FWLink/p/?LinkID=390493).
 
@@ -58,7 +58,7 @@ Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den S
 ##Nächste Schritte
 Nachdem der virtuelle Computer erstellt wurde, wird er automatisch gestartet. Wenn im Portal der Status "Wird ausgeführt" angezeigt wird, können Sie sich beim virtuellen Computer anmelden. Weitere Anweisungen finden Sie in den folgenden Artikeln:
 
-- [Anmelden bei einem mit Linux betriebenen virtuellen Computer](../virtual-machines-linux-how-to-log-on)
-- [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](../virtual-machines-log-on-windows-server)
+- [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md)
+- [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](virtual-machines-log-on-windows-server.md)
 
 

@@ -20,7 +20,7 @@
 
 # Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell
 
-Shared Access Signatures (SAS) sind eine leistungsstarke Methode, um anderen Clients eingeschränkten Zugriff auf Blobs, Tabellen und Warteschlangen in Ihrem Speicherkonto zu bieten, ohne Ihren Kontoschlüssel weitergeben zu müssen. Teil 1 dieses Lernprogramms zu Shared Access Signatures bietet eine Übersicht über das SAS-Modell und bewährte Methoden für SAS. [Teil 2](../storage-dotnet-shared-access-signature-part-2/) des Lernprogramms beschreibt die Erstellung von Shared Access Signatures mit dem Blob-Dienst.
+Shared Access Signatures (SAS) sind eine leistungsstarke Methode, um anderen Clients eingeschränkten Zugriff auf Blobs, Tabellen und Warteschlangen in Ihrem Speicherkonto zu bieten, ohne Ihren Kontoschlüssel weitergeben zu müssen. Teil 1 dieses Lernprogramms zu Shared Access Signatures bietet eine Übersicht über das SAS-Modell und bewährte Methoden für SAS. [Teil 2](storage-dotnet-shared-access-signature-part-2.md) des Lernprogramms beschreibt die Erstellung von Shared Access Signatures mit dem Blob-Dienst.
 
 ## Was ist eine Shared Access Signature? ##
 
@@ -223,7 +223,7 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 
 ## Next Steps ##
 
-[Shared Access Signatures, Part 2: Create and Use a SAS with the Blob Service](../storage-dotnet-shared-access-signature-part-2/)
+[Shared Access Signatures, Part 2: Create and Use a SAS with the Blob Service](storage-dotnet-shared-access-signature-part-2.md)
 
 [Manage Access to Azure Storage Resources](http://msdn.microsoft.com/library/windowsazure/ee393343.aspx)
 

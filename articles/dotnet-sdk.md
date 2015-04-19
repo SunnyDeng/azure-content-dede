@@ -51,9 +51,9 @@ Wenn Visual Studio nicht auf Ihrem Computer installiert ist, installiert das SDK
 
 Mit diesen Anleitungen können Sie mit Azure-Websites arbeiten:
 
-* [Veröffentlichen von Webprojekten auf Azure-Websites](../web-sites-dotnet-get-started/).
-* [Veröffentlichen von Konsolenanwendungsprojekten mit Azure-WebJobs](../websites-dotnet-deploy-webjobs/).
-* [Erstellen einer Azure-Website und Erstellen von SQL-Datenbankressourcen bei der Erstellung eines neuen Webprojekts oder der Veröffentlichung eines Webprojekts](../web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
+* [Veröffentlichen von Webprojekten auf Azure-Websites](web-sites-dotnet-get-started.md).
+* [Veröffentlichen von Konsolenanwendungsprojekten mit Azure-WebJobs](websites-dotnet-deploy-webjobs.md).
+* [Erstellen einer Azure-Website und Erstellen von SQL-Datenbankressourcen bei der Erstellung eines neuen Webprojekts oder der Veröffentlichung eines Webprojekts](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md).
 * [Erstellen von PowerShell-Bereitstellungsskripts während der Erstellung neuer Websites](http://msdn.microsoft.com/library/dn642480.aspx).
 * [Azure Websites im Server Explorer verwalten und Fehler beheben](../web-sites-dotnet-troubleshoot-visual-studio/#sitemanagement).
 * [Ausführen im Debugmodus aus der Ferne für Websites und WebJobs](../web-sites-dotnet-troubleshoot-visual-studio/#remotedebug). 
@@ -64,9 +64,9 @@ Mit diesen Anleitungen können Sie mit Azure-Websites arbeiten:
 
 Mit diesen Anleitungen können Sie mit Azure-Clouddiensten und virtuellen Azure-Computern arbeiten:
 
-* [Erstellen, Öffnen und Veröffentlichen von Clouddienstprojekten](../cloud-services-dotnet-get-started/).
+* [Erstellen, Öffnen und Veröffentlichen von Clouddienstprojekten](cloud-services-dotnet-get-started.md).
 * [Erstellen von Bereitstellungspaketen für Clouddienstprojekte](http://msdn.microsoft.com/library/ff683672.aspx).
-* [Erstellen von virtuellen Azure-Maschinen während der Erstellung neuer Webprojekte](../virtual-machines-dotnet-create-visual-studio-powershell/).
+* [Erstellen von virtuellen Azure-Maschinen während der Erstellung neuer Webprojekte](virtual-machines-dotnet-create-visual-studio-powershell.md).
 * [Erstellen von PowerShell-Skripts während der Erstellung neuer virtueller Maschinen](http://msdn.microsoft.com/library/dn642480.aspx).
 * [Anzeigen und Verwalten von Einstellungen für Clouddienstprojekte in Projekteigenschaftsfenstern in Visual Studio](http://msdn.microsoft.com/library/ee405486.aspx).
 * Anzeigen und Verwalten von [Cloud-Diensten](http://msdn.microsoft.com/library/ff683675.aspx), [virtuellen Computern](http://msdn.microsoft.com/library/jj131259.aspx) und [Service Bus](http://msdn.microsoft.com/library/jj149828.aspx) in Server Explorer. 
@@ -113,13 +113,13 @@ Sie benötigen möglicherweise einige Elemente für die Entwicklung in Azure, di
 
   	**Lokale Kopien von Clientbibliotheken.** Das Azure-SDK für .NET kopiert die NuGet-Pakete für einige Azure-Clientbibliotheken, wie Speicher, Service Bus und Zwischenspeicherung, auf Ihren Computer. Diese Clientbibliotheken werden automatisch in neue Clouddienstprojekte integriert. Die lokalen NuGet-Pakete ermöglichen es Visual Studio, Projekte auch dann zu erstellen, wenn keine Verbindung zum Internet besteht. Clientbibliotheken werden im Allgemeinen häufiger aktualisiert als neue SDK-Versionen veröffentlicht werden. Daher sind die Clientbibliotheken auf NuGet.org meist aktueller als die im SDK enthaltenen. 
 
-	**Projektvorlagen, die Clientbibliotheken enthalten.** Nur Projektvorlagen für den [Azure-Clouddienst](../cloud-services-dotnet-get-started/) und den [Azure Mobile Service](../mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/) enthalten automatisch einige Clientbibliotheken. Installieren Sie für andere Bibliotheken oder Vorlagen die erforderlichen [NuGet-Pakete mit Clientbibliotheken](http://go.microsoft.com/fwlink/?LinkId=510472).
+	**Projektvorlagen, die Clientbibliotheken enthalten.** Nur Projektvorlagen für den [Azure-Clouddienst](cloud-services-dotnet-get-started.md) und den [Azure Mobile Service](mobile-services-dotnet-backend-windows-store-dotnet-leaderboard.md) enthalten automatisch einige Clientbibliotheken. Installieren Sie für andere Bibliotheken oder Vorlagen die erforderlichen [NuGet-Pakete mit Clientbibliotheken](http://go.microsoft.com/fwlink/?LinkId=510472).
 
-* [Azure PowerShell](../install-configure-powershell/). 
+* [Azure PowerShell](install-configure-powershell.md). 
 
 	Mit Azure PowerShell können Sie die [Entwicklung und Bereitstellung von Azure-Umgebungen automatisieren.](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything).
 
-* [Projektvorlagen für Azure Mobile Service](../mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/).
+* [Projektvorlagen für Azure Mobile Service](mobile-services-dotnet-backend-windows-store-dotnet-leaderboard.md).
 
 	Mobile Service-Vorlagen sind nur in Visual Studio 2013 Update 2 und höher verfügbar. Sie sind nicht in Visual Studio 2012 oder früheren Versionen und auch nicht in Visual Studio 2013 Update 1 verfügbar. Auch dann nicht, wenn Sie das Azure-SDK für .NET installieren.
 

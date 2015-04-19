@@ -18,7 +18,7 @@
 
 # Integration der Engagement-Reichweite in Windows
 
-Sie müssen das Integrationsverfahren befolgen, das im Dokument [Integration der Engagement-Reichweite in Windows](../mobile-engagement-windows-store-integrate-engagement/) beschrieben ist, bevor Sie dieser Anleitung folgen.
+Sie müssen das Integrationsverfahren befolgen, das im Dokument [Integration der Engagement-Reichweite in Windows](mobile-engagement-windows-store-integrate-engagement.md) beschrieben ist, bevor Sie dieser Anleitung folgen.
 
 ## Einbetten des Engagement-Reichweiten-SDK in Ihr Windows-Projekt
 

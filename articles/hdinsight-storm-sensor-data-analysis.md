@@ -1353,7 +1353,7 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Ereignis-Hub lesen
 
 * Weitere Informationen zu D3.js finden Sie unter [D3.js - Data Driven Documents](http://d3js.org/).
 
-* Weitere Informationen zur Erstellung von Topologien in .NET finden Sie unter [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](/de-de/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/)
+* Weitere Informationen zur Erstellung von Topologien in .NET finden Sie unter [Entwickeln von Anwendungen zur Verarbeitung von Datenströmen in C# mit Stream Computing Platform und Storm in HDInsight](hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application.md)
 
 [azure-portal]: https://manage.windowsazure.com/
 <!--HONumber=42-->

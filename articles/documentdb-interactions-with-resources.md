@@ -259,7 +259,7 @@ Erkunden Sie die [Azure DocumentDB-REST-API-Referenz](https://msdn.microsoft.com
 -	Entitätstags [http://en.wikipedia.org/wiki/HTTP_ETag](http://en.wikipedia.org/wiki/HTTP_ETag)
 -	[Abfragen von DocumentDB](documentdb-sql-query.md)
 -	[DocumentDB-SQL-Referenz](https://msdn.microsoft.com/library/azure/dn782250.aspx)
--	[DocumentDB-Programmierung: Gespeicherte Prozeduren, Trigger und UDFs](../documentdb-programming/)
+-	[DocumentDB-Programmierung: Gespeicherte Prozeduren, Trigger und UDFs](documentdb-programming.md)
 -	[DocumentDB-Referenzdokumentation](https://msdn.microsoft.com/library/azure/dn781482.aspx)
 
 

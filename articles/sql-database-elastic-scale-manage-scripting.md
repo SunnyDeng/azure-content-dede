@@ -73,7 +73,7 @@ Im Rahmen der bereitgestellten Beispiele fallen für die Verwendung von [Azure A
 ## So laden Sie die Runbooks 
 
 1. Laden Sie die Datei **ShardElasticity.zip** herunter, und extrahieren Sie den Inhalt.
-2. [Fügen Sie Verweise auf die Binärdateien für die elastische Skalierung mithilfe von NuGet hinzu](./sql-database-elastic-scale-add-references-visual-studio.md)
+2. [Fügen Sie Verweise auf die Binärdateien für die elastische Skalierung mithilfe von NuGet hinzu](sql-database-elastic-scale-add-references-visual-studio.md)
 3. Suchen Sie die Clientbinärdatei für die elastische Skalierung (**Microsoft.Azure.SqlDatabase.ElasticScale.Client.dll**).
 4. Legen Sie die DLL im Ordner "ShardElasticityModule" ab, und zippen Sie den Ordner. 
 3. Laden Sie die Datei "ShardElasticityModule.zip"  als **Ressource** in Ihr Azure Automation-Konto hoch. 

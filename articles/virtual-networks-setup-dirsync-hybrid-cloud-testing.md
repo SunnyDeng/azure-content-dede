@@ -45,7 +45,7 @@ Wenn Sie noch nicht über ein Azure-Abonnement verfügen, Sie können registrier
 
 ## Phase 1: Einrichten der Hybrid Cloud-Umgebung
 
-Verwenden Sie die Anweisungen im Thema [Einrichten einer hybriden Cloud-Umgebung zum Testen](../virtual-networks-setup-hybrid-cloud-environment-testing/) . Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
+Verwenden Sie die Anweisungen im Thema [Einrichten einer hybriden Cloud-Umgebung zum Testen](virtual-networks-setup-hybrid-cloud-environment-testing.md) . Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
 
 Dies ist die aktuelle Konfiguration.
 
@@ -180,12 +180,12 @@ Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, di
 
 [Lösungen mit Office-Server und die Cloud](http://technet.microsoft.com/library/dn262744.aspx)
 
-[Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-hybrid-cloud-environment-testing/)
+[Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md)
 
-[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
+[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
 
-[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](../virtual-networks-setup-lobapp-hybrid-cloud-testing/)
+[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
 
-[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](../virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)
+[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md)
 
 <!--HONumber=47-->

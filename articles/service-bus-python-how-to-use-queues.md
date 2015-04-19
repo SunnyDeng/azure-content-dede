@@ -25,7 +25,7 @@ In diesem Leitfaden wird beschrieben, wie Sie Service Bus-Warteschlangen verwend
 
 [AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
-**Hinweis:** Informationen zur Installation von Python bzw. des [Python Azure-Paket][] finden Sie im [Python-Installationshandbuch](../python-how-to-install/)
+**Hinweis:** Informationen zur Installation von Python bzw. des [Python Azure-Paket][] finden Sie im [Python-Installationshandbuch](python-how-to-install.md)
 
 
 ## Erstellen von Warteschlangen

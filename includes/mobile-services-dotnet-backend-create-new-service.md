@@ -1,8 +1,8 @@
-﻿
+
 
 Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstellen.
 
-1.	Melden Sie sich beim [Verwaltungsportal] an. Klicken Sie am unteren Rand des Navigationsbereichs auf **+ NEU**. Erweitern Sie **Berechnen** und **Mobiler Service**, und klicken Sie dann auf **Erstellen**.
+1.	Melden Sie sich beim [Verwaltungsportal] an. Klicken Sie am unteren Rand des Navigationsbereichs auf **+ NEU**. Erweitern Sie **Compute** und **Mobiler Service**, und klicken Sie dann auf **Erstellen**.
 	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create.png)
 
 	Daraufhin wird das Dialogfeld **Einen mobilen Service erstellen** angezeigt.

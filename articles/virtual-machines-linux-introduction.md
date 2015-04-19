@@ -38,7 +38,7 @@ Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtuel
 
 Wenn Sie mithilfe des Azure-Verwaltungsportals einen virtuellen Linux-Computer erstellen, werden Sie aufgefordert, einen Benutzernamen, ein Kennwort und (optional) einen öffentlichen SSH-Schlüssel anzugeben. Bei der Auswahl eines Benutzernamens während der Bereitstellung virtueller Linux-Computer gibt es folgende Einschränkungen: Bereits im virtuellen Computer vorhandene Namen von Systemkonten (UID <100) sind nicht zulässig, z. B.  'root'.
 
- - Siehe [Gewusst wie: Verwenden von SSH mit Linux auf Azure](../linux-use-ssh-key/).
+ - Siehe [Gewusst wie: Verwenden von SSH mit Linux auf Azure](linux-use-ssh-key.md).
 
 
 ### <a id="keygeneration"></a>Erzeugen eines SSH-Schlüssels
@@ -92,14 +92,14 @@ Das Benutzerkonto, das während der Bereitstellung der virtuellen Computerinstan
 
 Optional können Sie über **sudo -s** eine Root-Shell abrufen.
 
-- Siehe [Verwenden von Stammberechtigungen auf virtuellen Linux-Computern in Azure](../virtual-machines-linux-use-root-privileges/).
+- Siehe [Verwenden von Stammberechtigungen auf virtuellen Linux-Computern in Azure](virtual-machines-linux-use-root-privileges.md).
 
 
 ## <a id="firewallconfiguration"></a>Firewall-Konfiguration
 
 Azure bietet einen integrierten Paketfilter, der die Konnektivität auf die im Verwaltungsportal angegebenen Ports beschränkt. Standardmäßig ist SSH der einzige erlaubte Port. Sie können den Zugriff auf zusätzliche Ports auf Ihrem virtuellen Linux-Computer aktivieren, indem Sie im Verwaltungsportal Endpunkte konfigurieren.
 
- - Siehe: [Einrichten von Endpunkten für einen virtuellen Computer](../virtual-machines-set-up-endpoints/)
+ - Siehe: [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md)
 
 Die Linux-Images im Azure-Katalog aktivieren die Firewall  *iptables* nicht standardmäßig. Bei Bedarf kann die Firewall für die Bereitstellung einer zusätzlichen Filterung konfiguriert werden.
 
@@ -114,7 +114,7 @@ Wenn nach der Bereitstellung eines virtuellen Computers Hostnamenänderungen gew
 
 Der Azure Linux-Agent enthält eine Funktion zur automatischen Erkennung dieser Namensänderung und zur entsprechenden Konfiguration des virtuellen Computers für eine Beibehaltung dieser Änderung und für ihre Veröffentlichung auf DNS-Plattformservern.
 
- - [Benutzerhandbuch für Azure Linux-Agent](../virtual-machines-linux-agent-user-guide/)
+ - [Benutzerhandbuch für Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md)
 
 ### Ubuntu-Images
 Ubuntu-Images nutzen cloud-init, was zusätzliche Funktionalitäten für das Bootstrapping eines virtuellen Computers bietet.
@@ -132,7 +132,7 @@ Azure bietet die Möglichkeit, den Status eines vorhandenen virtuellen Computers
 
 3. Klicken Sie im Verwaltungsportal auf  *Capture*, oder verwenden Sie die PowerShell oder Befehlszeilenschnittstellen-Tools zum Erfassen des virtuellen Computers als Image.
 
- - Siehe: [Erfassen eines virtuellen Linux-Computers, um ihn als Vorlage zu verwenden](../virtual-machines-linux-capture-image/)
+ - Siehe: [Erfassen eines virtuellen Linux-Computers, um ihn als Vorlage zu verwenden](virtual-machines-linux-capture-image.md)
 
 
 ## <a id="attachingdisks"></a>Anfügen von Datenträgern
@@ -143,9 +143,9 @@ Unter Linux wird der Ressourcendatenträger normalerweise vom Azure Linux-Agent 
 
 	>[AZURE.NOTE] Beachten Sie, dass der Ressourcendatenträger ein **temporärer** Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird.
 
-Der Datenträger unter Linux kann vom Kernel den Namen  `/dev/sdc` erhalten, und die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Dies wird im folgenden Lernprogramm Schritt für Schritt erläutert: [Anfügen eines Datenträgers an einen virtuellen Computer](../virtual-machines-linux-how-to-attach-disk/).
+Der Datenträger unter Linux kann vom Kernel den Namen  `/dev/sdc` erhalten, und die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Dies wird im folgenden Lernprogramm Schritt für Schritt erläutert: [Anfügen eines Datenträgers an einen virtuellen Computer](virtual-machines-linux-how-to-attach-disk.md).
 
- - Weitere Informationen: [Konfigurieren des Software-RAID unter Linux](../virtual-machines-linux-configure-raid/)
+ - Weitere Informationen: [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
 
 
 

@@ -28,11 +28,11 @@ Beachten Sie, dass Sie Media Services in Ihre vorhandenen Tools und Prozesse int
 Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, die am Video on Demand-Workflow beteiligt sind.
 ![VoD workflow][vod-overview]
 
-Weitere Informationen finden Sie unter [Media Services - Übersicht](../media-services-overview).
+Weitere Informationen finden Sie unter [Media Services - Übersicht](media-services-overview.md).
 
 ## Erstellen eines Media Services-Kontos
 
-Verwenden Sie das **Azure-Verwaltungsportal** zum [Erstellen eines Azure Media Services-Kontos](../media-services-create-account/). 
+Verwenden Sie das **Azure-Verwaltungsportal** zum [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md). 
 
 ## Konfigurieren von Streamingendpunkten
 
@@ -82,7 +82,7 @@ Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthäl
 
 ### Codieren 
 
-Siehe [Codierung mit Azure Media Services](../media-services-encode-asset).
+Siehe [Codierung mit Azure Media Services](media-services-encode-asset.md).
 
 ## Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel 
 
@@ -108,12 +108,12 @@ Sie können **Media Services** skalieren, indem Sie die Anzahl **reservierter Ei
 
 Außerdem können Sie Ihr Media Services-Konto skalieren, indem Sie Speicherkonten hinzufügen. Jedes Speicherkonto ist auf 500 TB beschränkt. Um den Speicher über die Standardbeschränkungen hinaus zu erweitern, können Sie mehrere Speicherkonten mit einem einzelnen Media Services-Konto verknüpfen.
 
-[Dieses](../media-services-how-to-scale) Thema enthält Links zu relevanten Themen.
+[Dieses](media-services-how-to-scale.md) Thema enthält Links zu relevanten Themen.
 
 
 ## Wiedergabe von Inhalten
 
-Weitere Informationen finden Sie unter [Wiedergabe Ihrer Inhalte mit vorhandenen Playern](../media-services-playback-content).
+Weitere Informationen finden Sie unter [Wiedergabe Ihrer Inhalte mit vorhandenen Playern](media-services-playback-content.md).
 
 [vod-overview]: ./media/media-services-overview/media-services-video-on-demand.png
 <!--HONumber=47-->

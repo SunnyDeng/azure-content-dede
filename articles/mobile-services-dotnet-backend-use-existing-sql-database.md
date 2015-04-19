@@ -32,7 +32,7 @@ Dieses Lernprogramm umfasst die folgenden Abschnitte:
 <a name="ExistingModel"></a>
 ## Erkunden des vorhandenen Datenbankmodells
 
-Für dieses Lernprogramm verwenden wir die Datenbank, die mit Ihrem mobilen Dienst erstellt wurde, aber wir verwenden nicht das Standardmodell. Stattdessen erstellen wir manuell ein beliebiges Modell, das eine vorhandene Anwendung darstellt. Ausführliche Informationen zur alternativen Verbindung mit einer lokalen Datenbank finden Sie unter [Verbindung mit einem lokalen SQL Server von einem mobilen Azure-Dienst mithilfe von Hybridverbindungen](/de-de/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/).
+Für dieses Lernprogramm verwenden wir die Datenbank, die mit Ihrem mobilen Dienst erstellt wurde, aber wir verwenden nicht das Standardmodell. Stattdessen erstellen wir manuell ein beliebiges Modell, das eine vorhandene Anwendung darstellt. Ausführliche Informationen zur alternativen Verbindung mit einer lokalen Datenbank finden Sie unter [Verbindung mit einem lokalen SQL Server von einem mobilen Azure-Dienst mithilfe von Hybridverbindungen](mobile-services-dotnet-backend-hybrid-connections-get-started.md).
 
 1. Erstellen Sie zuerst ein Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder mithilfe des Schnellstartprojekts, das Sie auf der Mobile Services-Registerkarte für Ihren Dienst im [Azure-Verwaltungsportal](http://manage.windowsazure.com) herunterladen können. Zum Zweck dieses Lernprogramms verwenden wir den Serverprojektnamen **ShoppingService**.
 

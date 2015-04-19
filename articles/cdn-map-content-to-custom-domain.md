@@ -88,7 +88,7 @@ Stellen Sie zunächst sicher, dass öffentliche Inhalte zum Zwischenspeichern au
 # Siehe auch
 
 
-[Aktivieren von des CDN (Content Delivery Network) für Azure ](./cdn-create-new-endpoint.md)  
+[Aktivieren von des CDN (Content Delivery Network) für Azure ](cdn-create-new-endpoint.md)  
 **Übersicht über das Azure CDN**
 
 

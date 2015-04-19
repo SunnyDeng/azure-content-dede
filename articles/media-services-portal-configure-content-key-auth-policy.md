@@ -21,7 +21,7 @@
 # Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy.md)]
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) . 
 
 
 ## Übersicht
@@ -35,14 +35,14 @@ Wenn ein Player einen Datenstrom anfordert, der für die dynamische Verschlüsse
 
 Wenn Sie mehrere Inhaltsschlüssel verwenden oder eine andere **Schlüssel-/Lizenzübermittlungsdienst**-URL als der des Schlüsselübermittlungsdiensts von Media Services angeben möchten, verwenden Sie das Media Services .NET SDK oder REST-APIs.
 
-[Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel mit dem .NET-SDK](../media-services-dotnet-configure-content-key-auth-policy/)
+[Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel mit dem .NET-SDK](media-services-dotnet-configure-content-key-auth-policy.md)
 
-[Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel mit der REST-API](../media-services-rest-configure-content-key-auth-policy/)
+[Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel mit der REST-API](media-services-rest-configure-content-key-auth-policy.md)
 
 ### Folgende Überlegungen sollten berücksichtigt werden:
 
-- Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](../media-services-manage-origins#scale_streaming_endpoints). 
-- Ihr Medienobjekt muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren eines Medienobjekts](../media-services-encode-asset/).  
+- Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins#scale_streaming_endpoints.md). 
+- Ihr Medienobjekt muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren eines Medienobjekts](media-services-encode-asset.md).  
 - ContentKeyAuthorizationPolicy und die zugehörigen Objekte (Richtlinienoptionen und Einschränkungen) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert.  Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine "Token"-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine "Open"-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur "Open"-Version der Richtlinie wechselt.
 
 
@@ -87,7 +87,7 @@ Wenn Sie Inhalte mit **PlayReady** schützen, müssen Sie in Ihrer Autorisierung
 Klicken Sie auf die Schaltfläche zum **Importieren der Richtlinien-XML**, und geben Sie eine andere XML an, die dem [hier](https://msdn.microsoft.com/library/azure/dn783459.aspx) definierten XML-Schema entspricht.
 
 ## Nächste Schritte
-Nachdem Sie die Autorisierungsrichtlinie für Inhaltsschlüssel jetzt konfiguriert haben, fahren Sie mit dem Thema [Gewusst wie: Aktivieren der Verschlüsselung im Azure-Verwaltungsportal](../media-services-manage-content#encrypt/) .
+Nachdem Sie die Autorisierungsrichtlinie für Inhaltsschlüssel jetzt konfiguriert haben, fahren Sie mit dem Thema [Gewusst wie: Aktivieren der Verschlüsselung im Azure-Verwaltungsportal](media-services-manage-content#encrypt.md) .
 
 
 [open_policy]: ./media/media-services-key-authorization-policy/media-services-protect-content-with-open-restriction.png

@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
-In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe der Active Directory-Authentifizierungsbibliothek Authentifizierung hinzu, um [vom Client angewiesene Anmeldevorgänge](http://msdn.microsoft.com/library/azure/jj710106.aspx) mit Azure Active Directory zu unterstützen. Um [vom Dienst angewiesene Anmeldevorgänge](http://msdn.microsoft.com/library/azure/dn283952.aspx) mit Azure Active Directory zu unterstützen, beginnen Sie mit dem Lernprogramm [Hinzufügen von Authentifizierung zur Mobile Services-App](/de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/).
+In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe der Active Directory-Authentifizierungsbibliothek Authentifizierung hinzu, um [vom Client angewiesene Anmeldevorgänge](http://msdn.microsoft.com/library/azure/jj710106.aspx) mit Azure Active Directory zu unterstützen. Um [vom Dienst angewiesene Anmeldevorgänge](http://msdn.microsoft.com/library/azure/dn283952.aspx) mit Azure Active Directory zu unterstützen, beginnen Sie mit dem Lernprogramm [Hinzufügen von Authentifizierung zur Mobile Services-App](mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md).
 
 Um Benutzer authentifizieren zu können, müssen Sie Ihre Anwendung in Azure Active Directory (AAD) registrieren. Dazu sind zwei Schritte erforderlich. Zunächst müssen Sie Ihren mobilen Dienst registrieren und entsprechende Berechtigungen vergeben. Anschließend müssen Sie Ihre Windows Store-App registrieren und der App Zugriff auf diese Berechtigungen gewähren
 

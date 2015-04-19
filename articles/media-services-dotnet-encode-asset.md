@@ -19,7 +19,7 @@
 
 # Codieren eines Medienobjekts mit Azure Media Encoder
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
 
 ## Übersicht
 
@@ -207,7 +207,7 @@ Durch die folgende **CreateChainedTaskEncodingJob**-Methode wird ein Auftrag mit
 
 
 ## Nächste Schritte
-Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](../media-services-check-job-progress/) fortfahren.
+Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](media-services-check-job-progress.md) fortfahren.
 
 [Azure Marketplace]: https://datamarket.azure.com/
 [Encoder-Voreinstellung]: http://msdn.microsoft.com/library/dn619392.aspx

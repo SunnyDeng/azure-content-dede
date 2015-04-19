@@ -18,7 +18,7 @@
 
 Würden Sie gern wissen, wie viele Benutzer Ihre Website besucht haben?  Oder wie lange das Laden einer Seite durchschnittlich dauert, oder welche Browser verwendet werden?  Sie brauchen nur einige wenige Skriptzeilen in Ihre Webseiten einzufügen, um zu erfahren, wie Ihre Kunden Ihre Website nutzen. 
 
-* Sie können dies für Nicht-Azure-Websites zu folgendem Zweck ausführen: [Überwachen der Verwendung des Web-app mit Application Insights](../app-insights-web-track-usage/).*
+* Sie können dies für Nicht-Azure-Websites zu folgendem Zweck ausführen: [Überwachen der Verwendung des Web-app mit Application Insights](app-insights-web-track-usage.md).*
 
 ![End User Analytics](./media/insights-usage-analytics/Insights_ConfiguredExperience.png)
 

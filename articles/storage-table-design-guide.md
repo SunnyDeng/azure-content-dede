@@ -24,7 +24,7 @@ Beim Entwurf von skalierbaren und leistungsfähigen Tabellen müssen Sie eine Re
 
 ## Informationen zum Azure-Tabellenspeicherdienst
 
-In diesem Abschnitt werden einige der wichtigsten Funktionen des Tabellenspeicherdienstes beleuchtet, die für den Entwurf mit Leistung und Skalierbarkeit besonders relevant sind. Falls Sie keine Erfahrung mit Azure Storage und dem Tabellenspeicherdienst haben, lesen Sie zuerst die Informationen unter [Einführung in Microsoft Azure Storage](../storage-introduction/) und [Verwenden des Tabellenspeichers mit .NET](../storage-dotnet-how-to-use-tables/) , bevor Sie mit diesem Artikel fortfahren. Obwohl der Schwerpunkt dieses Handbuchs auf dem Tabellenspeicherdienst liegt, werden auch Azure-Warteschlange und Blob-Dienste erörtert und wie Sie diese zusammen mit dem Tabellenspeicherdienst in einer Lösung verwenden.  
+In diesem Abschnitt werden einige der wichtigsten Funktionen des Tabellenspeicherdienstes beleuchtet, die für den Entwurf mit Leistung und Skalierbarkeit besonders relevant sind. Falls Sie keine Erfahrung mit Azure Storage und dem Tabellenspeicherdienst haben, lesen Sie zuerst die Informationen unter [Einführung in Microsoft Azure Storage](storage-introduction.md) und [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md) , bevor Sie mit diesem Artikel fortfahren. Obwohl der Schwerpunkt dieses Handbuchs auf dem Tabellenspeicherdienst liegt, werden auch Azure-Warteschlange und Blob-Dienste erörtert und wie Sie diese zusammen mit dem Tabellenspeicherdienst in einer Lösung verwenden.  
  
 Was ist der Tabellenspeicherdienst? Wie aus dem Namen zu ersehen ist, verwendet der Tabellenspeicherdienst ein tabellarisches Format zum Speichern von Daten. In der Standard-Terminologie stellt jede Zeile der Tabelle eine Entität dar und die Spalten speichern die verschiedenen Eigenschaften dieser Entität. Jede Entität besitzt ein Schlüsselpaar zur eindeutigen Identifizierung und eine Zeitstempel-Spalte, die vom Tabellenspeicherdienst verwendet wird, um nachzuverfolgen, wann die Entität zuletzt aktualisiert wurde (Dies geschieht automatisch und Sie können den Zeitstempel nicht manuell mit einem beliebigen Wert überschreiben). Der Tabellenspeicherdienst verwendet diesen Zeitstempel der letzten Änderung (LMT) zum Verwalten der optimistischen Nebenläufigkeit.  
 
@@ -1133,7 +1133,7 @@ Sie sollten auch berücksichtigen, wie Ihr Design beeinflusst wird und wie Ihre 
 
 #### Verwalten von Nebenläufigkeit  
 
-Der Dienst implementiert standardmäßig Prüfungen der optimistischen Nebenläufigkeit auf der Ebene der einzelnen Entitäten für die Vorgänge **Einfügen**, **Zusammenführen** und **Löschen**, obwohl es für einen Client möglich ist, den Tabellenspeicherdienst zu zwingen, diese Prüfungen zu umgehen. Weitere Informationen zur Verwaltung von Nebenläufigkeit durch den Tabellenspeicherdienst finden Sie unter [Verwalten von Nebenläufigkeit in Microsoft Azure Storage](../storage-concurrency/) auf der Microsoft Azure-Website.  
+Der Dienst implementiert standardmäßig Prüfungen der optimistischen Nebenläufigkeit auf der Ebene der einzelnen Entitäten für die Vorgänge **Einfügen**, **Zusammenführen** und **Löschen**, obwohl es für einen Client möglich ist, den Tabellenspeicherdienst zu zwingen, diese Prüfungen zu umgehen. Weitere Informationen zur Verwaltung von Nebenläufigkeit durch den Tabellenspeicherdienst finden Sie unter [Verwalten von Nebenläufigkeit in Microsoft Azure Storage](storage-concurrency.md) auf der Microsoft Azure-Website.  
 
 #### Zusammenführen oder ersetzen  
 
@@ -1449,7 +1449,7 @@ Sie können Shared Access Signature (SAS)-Token verwenden, um Clientanwendungen 
 -	Sie können einige der Aufgaben auslagern, die Web- und Workerrollen beim Verwalten von Entitäten in Client-Geräten durchführen, z. B. für Computer der Endbenutzer und mobile Geräte.  
 -	Sie können einen eingeschränkten und einen zeitbegrenzten Satz von Berechtigungen für einen Client zuweisen (z. B. den schreibgeschützten Zugriff auf bestimmte Ressourcen).  
 
-Weitere Informationen zur Verwendung von SAS-Token mit dem Tabellenspeicherdienst finden Sie unter [Shared Access Signature, Teil 1: Grundlagen zum SAS-Modell](../storage-dotnet-shared-access-signature-part-1/).  
+Weitere Informationen zur Verwendung von SAS-Token mit dem Tabellenspeicherdienst finden Sie unter [Shared Access Signature, Teil 1: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md).  
 
 Sie müssen jedoch weiterhin die SAS-Token generieren, die eine Clientanwendung für die Entitäten im Tabellenspeicherdienst gewähren. Sie sollten dies in einer Umgebung tun, die sicheren Zugriff auf Ihre Speicherkontoschlüssel gewährleistet. In der Regel verwenden Sie eine Web- oder Worker-Rolle zum Generieren der SAS-Token und übermittelt sie an die Client-Anwendungen, die Zugriff auf Ihre Entitäten benötigen. Da immer noch Aufwand zum Generieren und Bereitstellen von SAS-Token für Clients notwendig ist, sollten Sie erwägen, wie Sie diesen Aufwand am besten reduzieren, besonders in Szenarien mit großen Datenmengen.  
 

@@ -125,9 +125,9 @@ Neben dem vom Cluster aus gestarteten Hadoop-Befehl stehen eine Vielzahl von Mö
 
 ## Nächste Schritte
 
-* [Verwenden von Hive mit HDInsight](../hdinsight-use-hive/)
-* [Verwenden von Pig mit HDInsight](../hdinsight-use-pig/)
-* [Verwenden von MapReduce-Aufträgen mit HDInsight](../hdinsight-use-mapreduce)
+* [Verwenden von Hive mit HDInsight](hdinsight-use-hive.md)
+* [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
+* [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
 
 <!--HONumber=47-->

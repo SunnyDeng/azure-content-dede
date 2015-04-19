@@ -1,23 +1,16 @@
-<properties 
-	pageTitle="Erste Schritte mit Azure Notification Hubs" 
-	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." 
-	services="notification-hubs" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
-	editor=""/>
+<properties pageTitle="Erste Schritte mit Azure Notification Hubs" description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." services="notification-hubs" documentationCenter="android" authors="RickSaling" manager="dwrede" editor=""/>
+
 <tags 
 	ms.service="notification-hubs" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="03/15/2014" 
+	ms.date="11/21/2014" 
 	ms.author="ricksal"/>
-
 # Erste Schritte mit Notification Hubs
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/" title="Windows Universal">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-windows-phone-get-started/" title="Windows Phone">Windows Phone</a><a href="/de-de/documentation/articles/notification-hubs-ios-get-started/" title="iOS">iOS</a><a href="/de-de/documentation/articles/notification-hubs-android-get-started/" title="Android" class="current">Android</a><a href="/de-de/documentation/articles/notification-hubs-kindle-get-started/" title="Kindle">Kindle</a><a href="/de-de/documentation/articles/notification-hubs-baidu-get-started/" title="Baidu">Baidu</a><a href="/de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/" title="Xamarin.iOS">Xamarin.iOS</a><a href="/de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/" title="Xamarin.Android">Xamarin.Android</a></div>
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an eine Android-App senden. 
 In diesem Lernprogramm erstellen Sie eine leere Android-App, die Pushbenachrichtigungen über Google Cloud Messaging (GCM) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
@@ -27,7 +20,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 * [Aktivieren von Google Cloud Messaging](#register)
 * [Konfigurieren Ihres Notification Hub](#configure-hub)
 * [Verbinden Ihrer App mit dem Notification Hub](#connecting-app)
-* [Senden von Benachrichtigungen an die App](#send)
+* [Versenden von Benachrichtigungen an die App](#send)
 * [Testen der App](#run-app)
 
 Das Lernprogramm zeigt ein einfaches Übertragungsszenario mithilfe von Notification Hubs. Bearbeiten Sie auch das nachfolgende Lernprogramm, um mehr über die Verwendung von Notification Hubs zur Adressierung von speziellen Benutzern und Gerätegruppen zu erfahren. 
@@ -39,16 +32,42 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hub-Lernprogramme für Android-Apps. 
 
-> [AZURE.NOTE] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F).
+> [AZURE.NOTE] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F%20target="_blank").
 
 ##<a id="register"></a>Aktivieren von Google Cloud Messaging
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-Google-cloud-messaging.md)]
+[AZURE.INCLUDE [Aktivieren von GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
+
+Zunächst verwenden Sie diesen API-Schlüsselwert, um den Notification Hub für die Authentifizierung mit GCM zu aktivieren und Pushbenachrichtigungen im Auftrag Ihrer App zu senden.
+
+##<a id="configure-hub"></a>Konfigurieren Ihres Notification Hub
+
+1. Melden Sie sich im [Azure-Verwaltungsportal] an, und klicken Sie im unteren Teil des Bildschirms auf **+NEU**.
+
+2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Notification Hub** und dann auf **Schnellerfassung**.
+
+   	![][7]
+
+3. Geben Sie einen Namen für den Notification Hub ein. Wählen Sie die gewünschte Region, und klicken Sie dann auf **Neuen Notification Hub erstellen**.
+
+   	![][8]
+
+4. Klicken Sie auf den soeben erstellten Namespace (normalerweise ***Name des Notification Hub*-ns**), und klicken Sie dann im oberen Bereich auf **Konfigurieren**.
+
+   	![][9]
+
+5. Klicken Sie oben auf die Registerkarte **Notification Hubs** und dann auf den soeben erstellten Notification Hub.
+
+   	![][10]
+
+6. Klicken Sie auf die Registerkarte **Konfigurieren**, geben Sie den Wert **API-Schlüssel** ein, den Sie im vorherigen Abschnitt erhalten haben, und klicken Sie auf **Speichern**.
+
+   	![][11]
+
+7. Wählen Sie oben die Registerkarte **Dashboard** aus, und klicken Sie anschließend auf **Verbindungszeichenfolge anzeigen**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
 
 
-##<a id="configure-hub"></a>Konfigurieren Ihres Notification Hubs
-
-[AZURE.INCLUDE [notification-hubs-android-configure-push](../includes/notification-hubs-android-configure-push.md)]
+Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie besitzen die Verbindungszeichenfolge, um die App zu registrieren und Pushbenachrichtigungen zu versenden.
 
 ##<a id="connecting-app"></a>Verbinden Ihrer App mit dem Notification Hub
 
@@ -58,25 +77,25 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
    	![][13]
 
-2. Das **Minimum Required SDK** muss auf  *API 8: Android 2.2 (Froyo)* festgelegt sein, und die nächsten zwei SDK-Einträge müssen auf die neueste verfügbare Version eingestellt sein. Folgen Sie dem Assistenten, und stellen Sie für **Aktivität erstellen** ein, dass eine leere Aktivität erstellt wird. Akzeptieren Sie im nächsten Feld das Standardsymbol für das Startprogramm, und klicken Sie im letzten Feld auf **Fertig stellen**.
+2. Für das **Minimum Required SDK** muss  *API 8: Android 2.2 (Froyo)* festgelegt sein, und die nächsten zwei SDK-Einträge müssen auf die neueste verfügbare Version eingestellt sein. Folgen Sie dem Assistenten, und stellen Sie für **Aktivität erstellen** ein, dass eine leere Aktivität erstellt wird. Akzeptieren Sie im nächsten Feld das Standardsymbol für das Startprogramm, und klicken Sie im letzten Feld auf **Fertig stellen**.
 
    	![][14]
 
 ###Hinzufügen von Google Play Services zum Projekt
 
-[AZURE.INCLUDE [Add Play Services](../includes/mobile-services-add-Google-play-services.md)]
+[AZURE.INCLUDE [Hinzufügen von Play Services](../includes/mobile-services-add-Google-play-services.md)]
 
 ###Hinzufügen des Codes
 
 1. Laden Sie <a href="https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409">hier</a> das Notification Hubs Android SDK herunter. Extrahieren Sie die .zip-Datei, und kopieren Sie die Datei "notificationhubs\notification-hubs-0.1.jar" in das Verzeichnis \libs des Projekts im Paket-Explorer.
 
-2. Laden Sie das [Mobile Services Android SDK] herunter, und öffnen Sie es. Öffnen Sie den Ordner **notifications**, kopieren Sie die Datei **notifications-1.0.1.jar** in den Ordner *libs* Ihres Eclipse-Projekts, und aktualisieren Sie den Ordner *libs*.
+2. Laden Sie das [Mobile Services Android SDK] herunter, und entpacken Sie es. Öffnen Sie den Ordner **notifications**, kopieren Sie die Datei **notifications-1.0.1.jar** in den Ordner *libs* Ihres Eclipse-Projekts, und aktualisieren Sie den Ordner *libs*.
 
     > [AZURE.NOTE] Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
 
-	Richten Sie jetzt ein, dass die Anwendung eine *registrationId* von GCM erhält, und verwenden Sie diese, um die App-Instanz beim Notification Hub zu registrieren.
+	Richten Sie jetzt ein, dass die Anwendung eine  *registrationId* von GCM erhält, und verwenden Sie diese, um die App-Instanz beim Notification Hub zu registrieren.
 
-3. Fügen Sie in der Datei "AndroidManifest.xml" die folgende Zeile direkt unter dem Element <uses-sdk/> ein. Ersetzen Sie `<your package>` durch das Paket, das Sie in Schritt 1 für die App ausgewählt haben (in diesem Beispiel `com.yourCompany.wams_notificationhubs`).
+3. Fügen Sie in der Datei "AndroidManifest.xml" die folgende Zeile direkt unter dem Element <uses-sdk/> ein. Ersetzen Sie `<your package>` durch das Paket, das Sie in Schritt 1 für die App ausgewählt haben (`com.yourCompany.wams_notificationhubs` in diesem Beispiel).
 
         <uses-permission android:name="android.permission.INTERNET"/>
 		<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
@@ -102,7 +121,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 		private GoogleCloudMessaging gcm;
 		private NotificationHub hub;
 
-6. Fügen Sie in der **OnCreate**-Methode folgenden Code hinzu, und ersetzen Sie die Platzhalter durch die Verbindungszeichenfolge mit Abhörzugriff, die Sie im vorherigen Abschnitt erhalten haben, und durch den Namen des Notification Hub, der oben auf der Seite in Azure für den Hub angezeigt wird (**nicht** die vollständige URL).
+6. Fügen Sie in der Methode **OnCreate** folgenden Code hinzu, und ersetzen Sie die Platzhalter durch die Verbindungszeichenfolge mit Abhörzugriff, die Sie im vorherigen Abschnitt erhalten haben, und durch den Namen des Notification Hub, der oben auf der Seite in Azure für den Hub angezeigt wird (**nicht** die vollständige URL).
 
 		NotificationsManager.handleNotifications(this, SENDER_ID, MyHandler.class);
 
@@ -131,9 +150,9 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 		   }.execute(null, null, null);
 		}
 
-8. Da Android keine Benachrichtigungen anzeigt, müssen Sie einen eigenen Empfänger schreiben. Fügen Sie in **AndroidManifest.xml** das folgende Element in das `<application/>`-Element ein.
+8. Da Android keine Benachrichtigungen anzeigt, müssen Sie einen eigenen Empfänger schreiben. Fügen Sie in **AndroidManifest.xml** das folgende Element im Element `<application/>` hinzu.
 
-	> [AZURE.NOTE] Ersetzen Sie den Platzhalter mit dem Namen Ihres Pakets.
+	> [AZURE.NOTE] Ersetzen Sie den Platzhalter durch den Namen Ihres Pakets.
 
         <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -144,9 +163,9 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
         </receiver>
 
 
-9. Klicken Sie im Paket-Explorer mit der rechten Maustaste auf das Paket (unter dem Knoten `src`), klicken Sie auf **Neu** und anschließend auf **Klasse**.
+9. Klicken Sie im Paket-Explorer mit der rechten Maustaste auf das Paket (unter dem Knoten `src`), klicken Sie auf **Neu** und dann auf **Klasse**.
 
-10. Geben Sie für **Name** den Wert `MyHandler` und in **Übergeordnete Klasse** den Wert `com.microsoft.windowsazure.notifications.NotificationsHandler` ein, und klicken Sie auf **Fertig stellen**.
+10. Geben Sie unter **Name** `MyHandler` ein, geben Sie in **Übergeordnete Klasse** `com.microsoft.windowsazure.notifications.NotificationsHandler` ein, und klicken Sie dann auf **Fertig stellen**.
 
 	![][6]
 
@@ -198,11 +217,11 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 		}
 	
 
-##<a name="send"></a>Senden einer Benachrichtigung an Ihre App
+##<a name="send"></a>Versenden von Benachrichtigungen an die App
 
->[AZURE.NOTE]Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebigen Back-End aus über die <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST-Schnittstelle</a> senden. In diesem Lernprogramm senden Sie Benachrichtigungen mit einer .NET-Konsolenanwendung. Ein Beispiel für das Senden von Benachrichtigungen von einem mit Notification Hubs integrierten Azure Mobile Services-Back-End finden Sie unter [Erste Schritte mit Pushbenachrichtigungen in Mobile Services](mobile-services-javascript-backend-android-get-started-push.md).  Ein Beispiel zum Senden von Benachrichtigungen über die REST-APIs finden Sie unter [Verwenden von Notification Hubs von Java aus](notification-hubs-java-backend-how-to.md) sowie unter [Verwenden von Notification Hubs von PHP aus](notification-hubs-php-backend-how-to.md).
+Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebigen Back-End aus über die <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST-Schnittstelle</a> senden. In diesem Lernprogramm senden Sie Benachrichtigungen mit einer .NET-Konsolenanwendung. Ein Beispiel zum Senden von Benachrichtigungen von einem mit Notification Hubs integrierten Azure Mobile Services-Back-End aus finden Sie unter **Erste Schritte mit Pushbenachrichtigungen in Mobile Services** ([.NET-Back-End](mobile-services-javascript-backend-android-get-started-push.md) | [JavaScript-Back-End](mobile-services-javascript-backend-android-get-started-push.md)).  Ein Beispiel zum Senden von Benachrichtigungen über die REST-APIs finden Sie unter **Verwenden von Notification Hubs von Java/PHP** ([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md)).
 
-1. Wählen Sie in Visual Studio aus dem Menü **Datei** die Option **Neu** und dann **Projekt** aus, klicken Sie dann unter **Visual C#** auf **Windows** und **Konsolenanwendung**, und klicken Sie auf **OK**.  
+1. Wählen Sie in Visual Studio aus dem Menü **Datei** die Option **Neu** und dann **Projekt...** aus, klicken Sie dann unter **Visual C#** auf **Windows** und **Konsolenanwendung**, und klicken Sie dann auf **OK**.  
 
    	![][20]
 
@@ -234,7 +253,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
 	>[AZURE.NOTE]Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff (**Full**) verwenden, nicht die mit Abhörzugriff (**Listen**). Die Verbindungszeichenfolge mit Abhörzugriff verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
 
-5. Fügen Sie danach der **Main**-Methode die folgenden Zeilen hinzu:
+5. Fügen Sie danach die folgenden Zeilen zur **Main**-Methode hinzu:
 
          SendNotificationAsync();
 		 Console.ReadLine();
@@ -253,14 +272,14 @@ Bevor Sie die App mit einem Emulator testen, müssen Sie den Emulator wir folgt 
 
    	![][19]
 
-4. 	Um Pushbenachrichtigungen zu erhalten, müssen Sie ein Google-Konto auf Ihrem Android Virtual Device einrichten (Navigieren Sie im Emulator zu <strong>Einstellungen</strong>, und klicken Sie auf <strong>Konto hinzufügen</strong>). Überprüfen Sie zudem, ob der Emulator mit dem Internet verbunden ist.
+4. 	Um Pushbenachrichtigungen zu erhalten, müssen Sie ein Google-Konto auf Ihrem Android Virtual Device einrichten (Navigieren Sie im Emulator zu <strong>Einstellungen</strong>, und klicken Sie auf <strong>Konto hinzufügen</strong>). Überprüfen Sie zudem, dass der Emulator mit dem Internet verbunden ist.
 
 
 Gehen Sie wie folgt vor, um die App auf einem Gerät oder dem Emulator auszuführen:
 
 1. Klicken Sie in der oberen Eclipse-Symbolleiste auf **Ausführen**, und wählen Sie die App aus. 
  
-	Damit wird der Emulator gestartet (falls verwendet) und die App geladen und ausgeführt. Die App ruft die *registrationId* von GCM ab und registriert sich beim Notification Hub.
+	Damit wird der Emulator gestartet (falls verwendet) und die App geladen und ausgeführt. Die App ruft die  *registrationId* von GCM ab und registriert sich beim Notification Hub.
 
 3. Drücken Sie in Visual Studio die Taste F5, um die Konsolenanwendung auszuführen. 
 
@@ -272,7 +291,7 @@ Gehen Sie wie folgt vor, um die App auf einem Gerät oder dem Emulator auszufüh
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Geräte versendet. Informationen zum Adressieren bestimmter Benutzer finden Sie im Lernprogramm [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]. Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, können Sie [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] lesen. Weitere Informationen zur Verwendung von Notification Hubs finden Sie in der [Notification Hubs-Leitfaden].
+In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Geräte versendet. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]. Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, können Sie [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] lesen. Weitere Informationen zur Verwendung von Notification Hubs finden Sie in der [Notification Hubs-Anleitung].
 
 
 <!-- Images. -->
@@ -282,7 +301,11 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [4]: ./media/notification-hubs-android-get-started/mobile-services-google-create-server-key3.png
 [5]: ./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png
 [6]: ./media/notification-hubs-android-get-started/notification-hub-android-new-class.png
-
+[7]: ./media/notification-hubs-android-get-started/notification-hub-create-from-portal.png
+[8]: ./media/notification-hubs-android-get-started/notification-hub-create-from-portal2.png
+[9]: ./media/notification-hubs-android-get-started/notification-hub-select-from-portal.png
+[10]: ./media/notification-hubs-android-get-started/notification-hub-select-from-portal2.png
+[11]: ./media/notification-hubs-android-get-started/notification-hub-configure-android.png
 [12]: ./media/notification-hubs-android-get-started/notification-hub-connection-strings.png
 
 [13]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app.png
@@ -302,12 +325,23 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 
 <!-- URLs. -->
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
+[Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
+[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-android
+[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-android
+[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-android
+[Senden von Pushbenachrichtigungen an App-Benutzer]: /de-de/develop/mobile/tutorials/push-notifications-to-users-android
+[Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-android
+[JavaScript und HTML]: /de-de/develop/mobile/tutorials/get-started-with-push-js
 [Verweisen auf ein Bibliothekprojekt]: http://go.microsoft.com/fwlink/?LinkId=389800
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
+[wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[Notification Hubs-Anleitung]: http://msdn.microsoft.com/library/jj927170.aspx
 
-[Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-android-notify-users.md
-[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
+[Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: /de-de/manage/services/notification-hubs/notify-users-aspnet
+[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-dotnet
 
 
-<!--HONumber=49-->
+<!--HONumber=45--> 

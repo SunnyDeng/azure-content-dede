@@ -87,11 +87,11 @@ Wie Sie sehen können, bietet der Hadoop-Befehl eine einfache Möglichkeit zum A
 
 Allgemeine Informationen zu MapReduce-Aufträgen in HDInsight:
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](../hdinsight-use-mapreduce/)
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
 Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeiten können:
 
-* [Verwenden von Hive mit Hadoop in HDInsight](../hdinsight-use-hive/)
+* [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von Pig mit Hadoop in HDInsight](../hdinsight-use-pig/)
+* [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
 <!--HONumber=47-->

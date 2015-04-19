@@ -72,14 +72,14 @@ Wenn Sie ein Twilio-Konto erstellen möchten, registrieren Sie sich unter [Twili
 Wenn Sie sich für ein Twilio-Konto anmelden, erhalten Sie eine Konto-ID und ein Authentifizierungstoken. Beide Angaben benötigen Sie zum Tätigen von Twilio-API-Anrufen. Um den unbefugten Zugriff auf Ihr Konto zu verhindern, bewahren Sie Ihr Authentifizierungstoken sicher auf. Ihre Konto-ID und Ihr Authentifizierungstoken werden auf der [Twilio-Kontoseite][twilio_account] in den Feldern **ACCOUNT SID** beziehungsweise **AUTH TOKEN** angezeigt.
 
 <h2><a id="create_app"></a>Erstellen eines mobilen Diensts</h2>
-Ein Mobile Service, der eine Twilio-fähige Anwendung hostet, unterscheidet sich nicht von anderen Mobile Services. Sie fügen einfach die Twilio Node.js-Bibliothek hinzu, um aus Ihren benutzerdefinierten Mobile Services API-Skripts auf diese Bibliothek verweisen zu können. Informationen zum Erstellen eines ersten mobilen Diensts finden Sie unter [Erste Schritte mit Mobile Services](/de-de/documentation/articles/mobile-services-ios-get-started/).
+Ein Mobile Service, der eine Twilio-fähige Anwendung hostet, unterscheidet sich nicht von anderen Mobile Services. Sie fügen einfach die Twilio Node.js-Bibliothek hinzu, um aus Ihren benutzerdefinierten Mobile Services API-Skripts auf diese Bibliothek verweisen zu können. Informationen zum Erstellen eines ersten mobilen Diensts finden Sie unter [Erste Schritte mit Mobile Services](mobile-services-ios-get-started.md).
 
 <h2><a id="ConfigureMobileService"></a>Konfigurieren Ihres mobilen Diensts für die Verwendung der Twilio Node.js-Bibliothek</h2>
 Twilio stellt eine Node.js-Bibliothek zur Verfügung, die verschiedene Aspekte von Twilio abdeckt, um eine einfache und problemlose Interaktion mit der Twilio-REST-API und dem Twilio-Client zum Generieren von TwiML-Antworten zu bieten.
 
 Sie müssen das npm-Modul von Mobile Services verwenden, um die Twilio Node.js-Bibliothek in Ihrem Mobile Service nutzen zu können. Legen Sie Ihre Skripts dazu in einer Quellcodeverwaltung ab. 
 
-1. Schließen Sie das Lernprogramm [Speichern von Skripts in der Quellcodeverwaltung](/de-de/documentation/articles/mobile-services-store-scripts-source-control/) ab. Dieses Lernprogramm führt Sie durch die Einrichtung der Quellcodeverwaltung für Mobile Services und das Speichern Ihrer Serverskripts in einem Git-Repository.
+1. Schließen Sie das Lernprogramm [Speichern von Skripts in der Quellcodeverwaltung](mobile-services-store-scripts-source-control.md) ab. Dieses Lernprogramm führt Sie durch die Einrichtung der Quellcodeverwaltung für Mobile Services und das Speichern Ihrer Serverskripts in einem Git-Repository.
 
 2. Nachdem Sie die Quellcodeverwaltung für Ihren mobilen Dienst eingerichtet haben, öffnen Sie das Repository auf dem lokalen Computer, navigieren Sie zum Unterordner `\services`, öffnen Sie die package.json-Datei in einem Text-Editor, und fügen Sie das folgende Feld zum Objekt **dependencies** hinzu:
 

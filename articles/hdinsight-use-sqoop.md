@@ -82,7 +82,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 		* Wenn SQL Server auf einem **virtuellen Azure-Computer** läuft, können Sie eine beliebige Konfiguration für das virtuelle Netzwerk verwenden, sofern sich der virtuelle Computer, auf dem SQL Server läuft, im gleichen virtuellen Netzwerk befindet wie HDInsight.
 
-	* Hinweise zum **Bereitstellen eines HDInsight-Clusters in einem virtuellen Netzwerk** finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight](/de-de/documentation/articles/hdinsight-provision-clusters/).
+	* Hinweise zum **Bereitstellen eines HDInsight-Clusters in einem virtuellen Netzwerk** finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight](hdinsight-provision-clusters.md).
 
 	> [AZURE.NOTE] Der SQL Server muss für SQL-Authentifizierung konfiguriert sein. Für die Schritte in diesem Artikel benötigen Sie eine SQL-Anmeldung.
 
@@ -363,7 +363,7 @@ In diesem Abschnitt verwenden Sie Azure PowerShell zur Ausführung des Sqoop-Exp
 > [AZURE.NOTE] Mit Ausnahme der Verbindungszeichenfolgen sollten die Schritte in diesem Abschnitt sowohl für Azure SQL-Datenbanken als auch für SQL Server funktionieren. Diese Schritte wurden mit der folgenden Konfiguration getestet:
 > 
 > * **Azure Virtual Network-Punkt-zu-Standort-Konfiguration** - Ein virtuelles Netzwerk verbindet das HDInsight-Cluster mit einem SQL Server in einem privaten Rechenzentrum. Weitere Informationen finden Sie unter [Konfigurieren eines Punkt-zu-Standort-VPN im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn133792.aspx).
-> * **Azure HDInsight 3.1** - Siehe [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight](/de-de/documentation/articles/hdinsight-provision-clusters/) für weitere Informationen zur Erstellung eines Clusters in einem virtuellen Netzwerk
+> * **Azure HDInsight 3.1** - Siehe [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight](hdinsight-provision-clusters.md) für weitere Informationen zur Erstellung eines Clusters in einem virtuellen Netzwerk
 > * **SQL Server 2014** - Konfiguriert für SQL-Authentifizierung und mit dem Konfigurationspaket für VPN-Clients für eine sichere Verbindung zum virtuellen Netzwerk
 
 **So exportieren Sie die Protokolldatei log4j**

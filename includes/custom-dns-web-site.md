@@ -301,8 +301,8 @@ Nach Abschluss der Konfiguration wird der benutzerdefinierte Domänenname im Abs
 [digweb]: http://www.digwebinterface.com/
 [cloudservicedns]: ../custom-dns/
 [trafficmanager]: /de-de/documentation/articles/web-sites-traffic-manager/
-[addendpoint]: http://msdn.microsoft.com/de-de/library/windowsazure/hh744839.aspx
-[createprofile]: http://msdn.microsoft.com/de-de/library/windowsazure/dn339012.aspx
+[addendpoint]: http://msdn.microsoft.com/library/windowsazure/hh744839.aspx
+[createprofile]: http://msdn.microsoft.com/library/windowsazure/dn339012.aspx
 
 <!-- images -->
 

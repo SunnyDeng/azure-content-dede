@@ -238,7 +238,7 @@ In den meisten Fällen ist die Nutzung des Shard Map-Managers auf jene Anwendung
 
 Beachten Sie, dass bei diesen Anwendungen (unter Verwendung von **ShardMapManager**, der mit schreibgeschützten Anmeldeinformationen geöffnet wird) keine Änderungen an den Maps oder Mappings vorgenommen werden können.  Erstellen Sie für diese Anforderungen administrativ-spezifische Anwendungen oder PowerShell-Skripts, die Anmeldeinformationen mit höheren Berechtigungen, wie bereits erwähnt, zur Verfügung stellen.   
 
-Ausführlichere Informationen stehen unter [Datenabhängiges Routing](./sql-database-elastic-scale-data-dependent-routing.md). 
+Ausführlichere Informationen stehen unter [Datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md). 
 
 ## Ändern einer Shard Map 
 
@@ -270,9 +270,9 @@ Diese Methoden arbeiten zusammen als Bausteine für die Änderung der Gesamtvert
 
 Anwendungen müssen häufig einfach neue Shards hinzufügen, um Daten zu verwalten, die von neuen Schlüsseln oder Schlüsselbereichen für eine Shard Map erwartet werden, welche bereits vorhanden ist. Eine Anwendung beispielsweise, bei der Sharding über die Mandanten-ID durchgeführt wird, muss unter Umständen einen neuen Shard für einen neuen Mandanten bereitstellen, oder Daten, bei denen das Sharding monatlich durchgeführt wird, benötigen möglicherweise einen neuen Shard, der vor dem Start eines jeweils neuen Monats bereitgestellt wird. 
 
-Wenn der neue Bereich von Schlüsselwerten nicht bereits Teil einer vorhandenen Zuordnung (Mapping) ist und keine Datenmigration erforderlich ist, ist es sehr einfach, den neuen Shard hinzuzufügen und den neuen Schlüssel oder Bereich zu dem Shard zuzuordnen. Weitere Informationen zum Hinzufügen neuer Shards finden Sie unter [Hinzufügen eines neuen Shards](./sql-database-elastic-scale-add-a-shard.md).
+Wenn der neue Bereich von Schlüsselwerten nicht bereits Teil einer vorhandenen Zuordnung (Mapping) ist und keine Datenmigration erforderlich ist, ist es sehr einfach, den neuen Shard hinzuzufügen und den neuen Schlüssel oder Bereich zu dem Shard zuzuordnen. Weitere Informationen zum Hinzufügen neuer Shards finden Sie unter [Hinzufügen eines neuen Shards](sql-database-elastic-scale-add-a-shard.md).
 
-Bei Szenarien, die eine Datenverschiebung erforderlich machen, wird jedoch der Split-Merge-Dienst benötigt, um die Datenverschiebung zwischen Shards in Kombination mit den erforderlichen Shard Map-Updates zu koordinieren. Weitere Informationen zur Verwendung des Split-Merge-Dienstes finden Sie unter [Übersicht über Split-Merge](./sql-database-elastic-scale-overview-split-and-merge.md) 
+Bei Szenarien, die eine Datenverschiebung erforderlich machen, wird jedoch der Split-Merge-Dienst benötigt, um die Datenverschiebung zwischen Shards in Kombination mit den erforderlichen Shard Map-Updates zu koordinieren. Weitere Informationen zur Verwendung des Split-Merge-Dienstes finden Sie unter [Übersicht über Split-Merge](sql-database-elastic-scale-overview-split-and-merge.md) 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

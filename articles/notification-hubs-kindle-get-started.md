@@ -3,29 +3,25 @@
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="wesmc7777" 
+	authors="piyushjo" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags 
 	ms.service="notification-hubs" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-kindle" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="Java" 
 	ms.topic="hero-article" 
-	ms.date="03/16/2015" 
-	ms.author="wesmc"/>
+	ms.date="09/24/2014" 
+	ms.author="piyushjo"/>
 
 # Erste Schritte mit Notification Hubs
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
-
-##Übersicht
+<div class="dev-center-tutorial-selector sublanding"><a href="/de-de/documentation/articles/notification-hubs-windows-store-dotnet-get-started/" title="Windows Universal">Windows Universal</a><a href="/de-de/documentation/articles/notification-hubs-windows-phone-get-started/" title="Windows Phone">Windows Phone</a><a href="/de-de/documentation/articles/notification-hubs-ios-get-started/" title="iOS">iOS</a><a href="/de-de/documentation/articles/notification-hubs-android-get-started/" title="Android">Android</a><a href="/de-de/documentation/articles/notification-hubs-kindle-get-started/" title="Kindle" class="current">Kindle</a><a href="/de-de/documentation/articles/notification-hubs-baidu-get-started/" title="Baidu">Baidu</a><a href="/de-de/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/" title="Xamarin.iOS">Xamarin.iOS</a><a href="/de-de/documentation/articles/partner-xamarin-notification-hubs-android-get-started/" title="Xamarin.Android">Xamarin.Android</a></div>
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Pushbenachrichtigungen an eine Kindle-Anwendung senden können. 
 In diesem Lernprogramm erstellen Sie eine leere Kindle-App, die Pushbenachrichtigungen über Amazon Device Messaging (ADM) empfängt.
-
-##Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -79,7 +75,7 @@ Geben Sie im Portal den geheimen Clientschlüssel und die Client-ID in die Regis
 
 Fügen Sie die ADM-Bibliotheken zum Eclipse-Projekt hinzu.
 
-1. Um die ADM-Bibliothek zu erhalten, [laden Sie das SDK herunter][Herunterladen des SDK]. Extrahieren Sie die SDK-ZIP-Datei.
+1. Um die ADM-Bibliothek zu erhalten, [laden Sie das SDK herunter]. Extrahieren Sie die SDK-ZIP-Datei.
 2. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Properties**. Wählen Sie den **Java Build Path** auf der linken Seite, und klicken Sie oben auf die Registerkarte **Libraries**. Klicken Sie auf **Add External Jar**, und wählen Sie die Datei  `\SDK\Android\DeviceMessaging\lib\amazon-device-messaging-*.jar` aus dem Verzeichnis aus, in das Sie das Amazon-SDK extrahiert haben.
 3. Laden Sie das NotificationHubs Android-SDK (Link) herunter.
 4. Entpacken Sie das Paket, und ziehen Sie die Datei  `notification-hubs-sdk.jar` in den Ordner "libs" in Eclipse.
@@ -135,11 +131,11 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 
 ## Erstellen des ADM-Meldungshandlers:
 
-1. Erstellen Sie eine neue Klasse durch Vererben von `com.amazon.device.messaging.ADMMessageHandlerBase`, und nennen Sie sie `MyADMMessageHandler`, wie in der folgenden Abbildung gezeigt:
+1. Erstellen Sie eine neue Klasse als Erbe von  `com.amazon.device.messaging.ADMMessageHandlerBase`, und nennen Sie sie  `MyADMMessageHandler`, wie in der folgenden Abbildung gezeigt:
 
 	![][6]
 
-2. Fügen Sie die folgenden  `import`-Anweisungen ein:
+2. Fügen Sie die folgenden `import`-Anweisungen ein:
 
 		import android.app.NotificationManager;
 		import android.app.PendingIntent;
@@ -271,7 +267,7 @@ So senden Sie eine Nachricht mit .NET:
 
 <!-- URLs. -->
 [Entwicklerportal]: https://developer.amazon.com/home.html
-[Herunterladen des SDK]: https://developer.amazon.com/public/resources/development-tools/sdk
+[laden Sie das SDK herunter]: https://developer.amazon.com/public/resources/development-tools/sdk
 
 [0]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal1.png
 [1]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal2.png
@@ -282,4 +278,4 @@ So senden Sie eine Nachricht mit .NET:
 [6]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-new-java-class.png
 [7]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-notification.png
 
-<!--HONumber=49-->
+<!--HONumber=45--> 

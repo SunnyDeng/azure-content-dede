@@ -68,7 +68,7 @@ Die folgende Abbildung zeigt die Beziehungen zwischen Azure-Speicherressourcen i
 
 ![Azure Storage Resources](./media/storage-introduction/storage-concepts.png)
 
-Wenn Sie bereit sind, ein Standardspeicherkonto zu erstellen, finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account/) weitere Informationen.
+Wenn Sie bereit sind, ein Standardspeicherkonto zu erstellen, finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage-create-storage-account.md) weitere Informationen.
 
 ### Premium-Speicherkonten (Vorschau)
 
@@ -128,7 +128,7 @@ Standardmäßig kann nur der Besitzer eines Speicherkontos auf Ressourcen in die
 
 Ihr Speicherkonto wird bei der Erstellung zwei privaten Zugangsschlüsseln zugeordnet, die zur Authentifizierung verwendet werden. Die Verwendung von zwei Schlüsseln stellt sicher, dass Ihre Anwendung auch dann verfügbar bleibt, wenn Sie die Schlüssel im Rahmen der regelmäßigen Sicherheitsverwaltung regelmäßig erneuern.
 
-Wenn Sie anderen Benutzern kontrollierten Zugriff zu Ihren Speicherressourcen gewähren müssen, können Sie eine [Shared Access Signature](../storage-dotnet-shared-access-signature-part-1/) erstellen. Eine Shared Access Signature ist ein Token, das an eine URL angehängt werden kann und delegierten Zugriff auf einen Container, einen Blob, eine Tabelle oder eine Warteschlange erlaubt. Jeder Benutzer, der dieses Token besitzt, kann mit festgelegten Berechtigungen und während der Gültigkeitsdauer auf die Ressource zugreifen, auf die das Token verweist. Beachten Sie, dass der Azure-Dateispeicher momentan keine Shared Access Signatures unterstützt.
+Wenn Sie anderen Benutzern kontrollierten Zugriff zu Ihren Speicherressourcen gewähren müssen, können Sie eine [Shared Access Signature](storage-dotnet-shared-access-signature-part-1.md) erstellen. Eine Shared Access Signature ist ein Token, das an eine URL angehängt werden kann und delegierten Zugriff auf einen Container, einen Blob, eine Tabelle oder eine Warteschlange erlaubt. Jeder Benutzer, der dieses Token besitzt, kann mit festgelegten Berechtigungen und während der Gültigkeitsdauer auf die Ressource zugreifen, auf die das Token verweist. Beachten Sie, dass der Azure-Dateispeicher momentan keine Shared Access Signatures unterstützt.
 
 Abschließend können Sie noch einen Container und seine Blobs - oder einen speziellem Blob - öffentlich verfügbar machen. Wenn Sie einen Container oder einen Blob zu einer öffentlichen Ressource erklären, kann jeder Benutzer anonym drauf zugreifen, ohne eine Authentifizierung zu benötigen.  Öffentliche Container und Blobs sind hilfreich zur Verfügbarmachung von Ressourcen wie Medien und Dokumenten, die auf Websites gehostet werden.  Um die Netzwerklatenz für ein globales Publikum zu reduzieren, können Sie Blob-Daten, die von Websites verwendet werden, in einem Cache zwischenspeichern.
 
@@ -183,38 +183,38 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 <h3>Für .NET-Entwickler</h3>
 
 - [Referenz zur .NET-Clientbibliothek](http://msdn.microsoft.com/library/wa_storage_30_reference_home.aspx)
-- [Verwenden des Blob-Speichers mit .NET](../storage-dotnet-how-to-use-blobs/)
-- [Verwenden des Tabellenspeichers mit .NET](../storage-dotnet-how-to-use-tables/)
-- [Verwenden des Warteschlangenspeichers mit .NET](../storage-dotnet-how-to-use-queues/)
+- [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)
+- [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md)
+- [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
 
 <h3>Für Java-/Android-Entwickler</h3>
 
 - [Referenz zur Java-Clientbibliothek]()
-- [Verwenden des Blob-Speichers von Java/Android](../storage-java-how-to-use-blob-storage/)
-- [Verwenden des Tabellenspeichers von Java/Android](../storage-java-how-to-use-table-storage/)
-- [Verwenden des Warteschlangenspeichers von Java/Android](../storage-java-how-to-use-queue-storage/)
+- [Verwenden des Blob-Speichers von Java/Android](storage-java-how-to-use-blob-storage.md)
+- [Verwenden des Tabellenspeichers von Java/Android](storage-java-how-to-use-table-storage.md)
+- [Verwenden des Warteschlangenspeichers von Java/Android](storage-java-how-to-use-queue-storage.md)
 
 <h3>Für Node.js-Entwickler</h3>
 
-- [Verwenden des Blob-Diensts aus Node.js](../storage-nodejs-how-to-use-blob-storage/)
-- [Verwenden des Tabellenspeicherdiensts aus Node.js](../storage-nodejs-how-to-use-table-storage/)
-- [Verwenden des Warteschlangendiensts aus Node.js](../storage-nodejs-how-to-use-queues/)
+- [Verwenden des Blob-Diensts aus Node.js](storage-nodejs-how-to-use-blob-storage.md)
+- [Verwenden des Tabellenspeicherdiensts aus Node.js](storage-nodejs-how-to-use-table-storage.md)
+- [Verwenden des Warteschlangendiensts aus Node.js](storage-nodejs-how-to-use-queues.md)
 
 <h3>Für PHP-Entwickler</h3>
 
-- [Verwenden des Blob-Diensts aus PHP](../storage-php-how-to-use-blobs/)
-- [Verwenden des Tabellendiensts von PHP](../storage-php-how-to-use-table-storage/)
-- [Verwenden des Warteschlangendiensts aus PHPP](../storage-php-how-to-use-queues/)
+- [Verwenden des Blob-Diensts aus PHP](storage-php-how-to-use-blobs.md)
+- [Verwenden des Tabellendiensts von PHP](storage-php-how-to-use-table-storage.md)
+- [Verwenden des Warteschlangendiensts aus PHPP](storage-php-how-to-use-queues.md)
 
 <h3>Für Ruby-Entwickler</h3>
 
-- [Verwenden des Blob-Diensts von Ruby](../storage-ruby-how-to-use-blob-storage/)
-- [Verwenden des Tabellenspeicherdiensts von Ruby](../storage-ruby-how-to-use-table-storage/)
-- [Verwenden des Warteschlangenspeicherdiensts aus Ruby](../storage-ruby-how-to-use-queue-storage/)
+- [Verwenden des Blob-Diensts von Ruby](storage-ruby-how-to-use-blob-storage.md)
+- [Verwenden des Tabellenspeicherdiensts von Ruby](storage-ruby-how-to-use-table-storage.md)
+- [Verwenden des Warteschlangenspeicherdiensts aus Ruby](storage-ruby-how-to-use-queue-storage.md)
 
 <h3>Für Python-Entwickler</h3>
 
-- [Verwenden des Blob-Speicherdiensts aus Python](../storage-python-how-to-use-blob-storage/)
-- [Verwenden des Tabellenspeicherdiensts aus Python](../storage-python-how-to-use-table-storage/)
-- [Verwenden des Warteschlangenspeicherdiensts aus Python](../storage-python-how-to-use-queue-storage/)
+- [Verwenden des Blob-Speicherdiensts aus Python](storage-python-how-to-use-blob-storage.md)
+- [Verwenden des Tabellenspeicherdiensts aus Python](storage-python-how-to-use-table-storage.md)
+- [Verwenden des Warteschlangenspeicherdiensts aus Python](storage-python-how-to-use-queue-storage.md)
 <!--HONumber=42-->

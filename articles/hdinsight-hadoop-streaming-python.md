@@ -196,8 +196,8 @@ Dabei sollte eine Liste angezeigt werden, die die Wörter und die Häufigkeit ih
 
 Nachdem Sie erfahren haben, wie Sie Streaming-MapReduce-Aufträge mit HDInsight verwenden, können Sie mithilfe der nachfolgenden Links andere Möglichkeiten für die Arbeit mit Azure HDInsight untersuchen.
 
-* [Verwenden von Hive mit HDInsight](../hdinsight-use-hive/)
-* [Verwenden von Pig mit HDInsight](../hdinsight-use-pig/)
-* [Verwenden von MapReduce-Aufträgen mit HDInsight](../hdinsight-use-mapreduce)
+* [Verwenden von Hive mit HDInsight](hdinsight-use-hive.md)
+* [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
+* [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
 <!--HONumber=47-->

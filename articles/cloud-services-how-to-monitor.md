@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Überwachen eines Cloud-Diensts - Azure" 
 	description="Hier erfahren Sie mehr über die Überwachung von Cloud-Diensten im Azure-Verwaltungsportal." 
 	services="cloud-services" 
@@ -38,7 +38,7 @@ Die Überwachungsanzeigen im Verwaltungsportal können ausführlich konfiguriert
 Standardmäßig werden neue Cloud-Dienste mit minimaler Überwachung eingerichtet. Dabei werden Leistungsindikatoren des Hostbetriebssystems für die Rolleninstanzen (virtuelle Computer) gesammelt. Die minimalen Metriken beschränken sich auf CPU-Auslastung, Dateneingang, Datenausgang, Lese- und Schreibdurchsatz von Laufwerken. Mit der ausführlichen Überwachung erhalten Sie zusätzliche Metriken auf Basis von Leistungsdaten der einzelnen virtuellen Computer (Rolleninstanzen). Die ausführliche Überwachung ermöglicht eine genauere Analyse von Problemen beim Betrieb von Anwendungen.
 
 > [AZURE.NOTE]
-> Wenn Sie ausführliche Überwachung verwenden, können Sie weitere Leistungsindikatoren beim Start der Rolleninstanz in Form einer Diagnose-Konfigurationsdatei hinzufügen. Um diese Metriken im Verwaltungsportal überwachen zu können, müssen Sie die Leistungsindikatoren hinzufügen, bevor Sie die ausführliche Überwachung aktivieren. Weitere Informationen finden Sie unter <a href="http://azure.microsoft.com/ documentation/articles/cloud-services-dotnet-diagnostics/">Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines</a>.
+> Wenn Sie ausführliche Überwachung verwenden, können Sie weitere Leistungsindikatoren beim Start der Rolleninstanz in Form einer Diagnose-Konfigurationsdatei hinzufügen. Um diese Metriken im Verwaltungsportal überwachen zu können, müssen Sie die Leistungsindikatoren hinzufügen, bevor Sie die ausführliche Überwachung aktivieren. Weitere Informationen finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/cloud-services-dotnet-diagnostics/">Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines</a>.
 
 Die Daten der Leistungsindikatoren aus Rolleninstanzen werden standardmäßig alle 3 Minuten von der Rolleninstanz gemessen und übertragen. Bei der ausführlichen Überwachung werden die Leistungsindikatorendaten für die einzelnen Rolleninstanzen und rolleninstanzübergreifend für die einzelnen Rollen in Intervallen von 5 Minuten, 1 Stunde und 12 Stunden aggregiert. Die aggregierten Daten werden nach 10 Tagen gelöscht.
 
@@ -56,13 +56,13 @@ Führen Sie die folgenden Schritte aus, um im Verwaltungsportal ausführliche od
 - Erstellen Sie ein Speicherkonto zum Speichern der Überwachungsdaten. Sie können unterschiedliche Speicherkonten für unterschiedliche Rollen verwenden. Weitere Informationen finden Sie in der Hilfe zu **Speicherkonten** oder unter [Erstellen eines Speicherkontos](/de-de/manage/services/storage/how-to-create-a-storage-account/).
 
 
-- Aktivieren Sie die Azure-Diagnose für Ihre Cloud-Dienstrollen. <br /><br />Weitere Informationen finden Sie unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](/de-de/documentation/articles/cloud-services-dotnet-diagnostics/).
+- Aktivieren Sie die Azure-Diagnose für Ihre Cloud-Dienstrollen. <br /><br />Weitere Informationen finden Sie unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](cloud-services-dotnet-diagnostics.md).
 
 Im Verwaltungsportal können Sie die Diagnose-Verbindungszeichenfolgen hinzufügen oder bearbeiten, die von der Azure-Diagnose für den Zugriff auf die Speicherkonten für ausführliche Überwachungsdaten verwendet werden. Außerdem können Sie die Überwachungsstufe auf ausführlich oder minimal stellen. Da die Daten bei der ausführlichen Überwachung in einem Speicherkonto gespeichert werden, müssen Sie die Diagnose-Verbindungszeichenfolgen konfigurieren, bevor Sie die Überwachungsstufe auf ausführlich stellen.
 
 ###Konfigurieren von Diagnose-Verbindungszeichenfolgen für die ausführliche Überwachung###
 
-1. Kopieren Sie einen Speicherzugriffsschlüssel für das Speicherkonto, das Sie zum Speichern der ausführlichen Überwachungsdaten verwenden möchten. Verwenden Sie dazu im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) die Funktion **Schlüssel verwalten** auf der Seite **Speicherkonten**. Weitere Informationen finden Sie unter [Verwaltung von Cloud-Diensten](/de-de/documentation/articles/cloud-services-how-to-manage/) oder in der Hilfe auf der Seite **Speicherkonten**. 
+1. Kopieren Sie einen Speicherzugriffsschlüssel für das Speicherkonto, das Sie zum Speichern der ausführlichen Überwachungsdaten verwenden möchten. Verwenden Sie dazu im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) die Funktion **Schlüssel verwalten** auf der Seite **Speicherkonten**. Weitere Informationen finden Sie unter [Verwaltung von Cloud-Diensten](cloud-services-how-to-manage.md) oder in der Hilfe auf der Seite **Speicherkonten**. 
 
 2. Öffnen Sie **Cloud-Dienste**. Klicken Sie anschließend auf den Namen des zu konfigurierenden Cloud-Diensts, um das Dashboard zu öffnen.
 

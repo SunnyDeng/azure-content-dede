@@ -17,8 +17,8 @@
 	ms.author="kempb"/>
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](/documentation/articles/vs-mobile-services-javascript-getting-started/)
-> - [Was ist passiert?](/documentation/articles/vs-mobile-services-javascript-what-happened/)
+> - [Erste Schritte](vs-mobile-services-javascript-getting-started.md)
+> - [Was ist passiert?](vs-mobile-services-javascript-what-happened.md)
 
 ## Erste Schritte mit Mobile Services
 
