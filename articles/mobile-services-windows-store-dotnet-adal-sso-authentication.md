@@ -227,4 +227,5 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
 [Windows Dev Center-Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734
 
+
 <!--HONumber=42-->

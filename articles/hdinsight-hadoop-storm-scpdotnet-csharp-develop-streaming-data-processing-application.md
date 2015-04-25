@@ -1003,4 +1003,5 @@ Die folgenden mit SCP geschriebenen Beispielanwendungen finden Sie in Ihrem Stor
 
 
 [1]: ./media/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application-01.png
+
 <!--HONumber=42-->

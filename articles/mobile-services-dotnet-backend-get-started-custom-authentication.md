@@ -321,4 +321,5 @@ Sie müssen in Ihrer Client-Anwendung einen angepassten Anmeldebildschirm defini
 [Erste Schritte mit Benutzern]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 
+
 <!--HONumber=42-->

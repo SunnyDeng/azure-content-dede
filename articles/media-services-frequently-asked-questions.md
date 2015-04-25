@@ -23,5 +23,5 @@
 
 F: Wie wird die Indizierung skaliert?
 
-A: Die reservierten Einheiten für Codierungs- und Indizierungsaufgaben sind identisch. Folgen Sie den Anweisungen unter [Skalieren von für die Codierung reservierten Einheiten](../media-services-how-to-scale). Beachten Sie, dass die Indizierungsleistung für Typen reservierter Einheiten nicht herabgesetzt ist.
+A: Die reservierten Einheiten für Codierungs- und Indizierungsaufgaben sind identisch. Folgen Sie den Anweisungen unter [Skalieren von für die Codierung reservierten Einheiten](media-services-how-to-scale.md). Beachten Sie, dass die Indizierungsleistung für Typen reservierter Einheiten nicht herabgesetzt ist.
 <!--HONumber=47-->

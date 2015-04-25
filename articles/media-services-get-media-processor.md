@@ -19,7 +19,7 @@
 
 # Vorgehensweise: Abrufen einer Media Processor-Instanz
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md). 
 
 ## Übersicht
 

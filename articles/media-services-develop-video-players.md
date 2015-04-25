@@ -35,5 +35,5 @@ Azure Media Services stellt die Tools zur Verfügung, die zum Erstellen leistung
 
 ## Wiedergabe Ihrer Inhalte mit vorhandenen Playern
 
-Weitere Informationen finden Sie unter [Wiedergabe Ihrer Inhalte mit vorhandenen Playern](../media-services-playback-content-with-existing-players).
+Weitere Informationen finden Sie unter [Wiedergabe Ihrer Inhalte mit vorhandenen Playern](media-services-playback-content-with-existing-players.md).
 <!--HONumber=47-->

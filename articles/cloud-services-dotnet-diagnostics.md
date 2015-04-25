@@ -257,7 +257,7 @@ Navigieren Sie in Visual Studio im **Server-Explorer** zum Speicherkonto "wadexa
 In dieser Anleitung wird beschrieben, wie Sie von einem Entwicklungscomputer aus die Remoteinstallation der Diagnose auf einem virtuellen Azure-Computer durchführen. Außerdem erfahren Sie, wie Sie eine Anwendung implementieren, die auf diesem virtuellen Azure-Computer ausgeführt wird und mithilfe der .NET-[EventSource-Klasse][] Telemetriedaten ausgibt. Die Telemetriedaten werden mit der Azure-Diagnose erfasst und in einem Azure-Speicherkonto gespeichert.
 
 <h3>Voraussetzungen</h3>
-In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Visual Studio 2013 mit dem Azure-SDK verwenden. Falls Sie nicht über ein Azure-Abonnement verfügen, können Sie sich für eine [kostenlose Testversion][] registrieren. Achten Sie darauf, dass Sie [Azure PowerShell Version 0.8.7 oder höher installieren und konfigurieren][].
+In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Visual Studio 2013 mit dem Azure-SDK verwenden. Falls Sie nicht über ein Azure-Abonnement verfügen, können Sie sich für eine [kostenlose Testversion][] registrieren. Achten Sie darauf, dass Sie [Installieren und Konfigurieren von Azure PowerShell Version 0.8.7 oder höher][].
 
 <h3>Schritt 1: Erstellen eines virtuellen Computers</h3>
 1.	Starten Sie auf dem Entwicklungscomputer Visual Studio 2013.
@@ -787,8 +787,8 @@ In der folgenden Tabelle werden die Features gegenübergestellt, die von den Ver
 [Debuggen von Azure-Anwendungen]: http://msdn.microsoft.com/library/windowsazure/ee405479.aspx   
 [Sammeln von Protokollierungsdaten mit der Azure-Diagnose]: http://msdn.microsoft.com/library/windowsazure/gg433048.aspx
 [Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen]: http://msdn.microsoft.com/library/windowsazure/hh771389.aspx
-[Kostenlose Testversion]: http://azure.microsoft.com/pricing/free-trial/
-[Azure PowerShell Version 0.8.7 oder höher installieren und konfigurieren]: http://azure.microsoft.com/documentation/articles/install-configure-powershell/
+[Kostenlose Testversion]: http://azure.microsoft.com/ pricing/free-trial/
+[Installieren und Konfigurieren von Azure PowerShell Version 0.8.7 oder höher]: http://azure.microsoft.com/ documentation/articles/install-configure-powershell/
 [Konfigurationsschema für die Azure-Diagnose 1.2]: http://msdn.microsoft.com/library/azure/dn782207.aspx
 [Set-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/library/dn495270.aspx
 [Get-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/library/dn495145.aspx

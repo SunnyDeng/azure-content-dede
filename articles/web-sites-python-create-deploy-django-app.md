@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="Python-Websites mit Django - Azure-Lernprogramm" 
+	pageTitle="Python-Websites mit Django - Azure-Lernprogramm! 
 	description="In diesem Lernprogramm werden Sie in die Ausführung einer Python-Website in Azure eingeführt." 
 	services="app-service\web" 
 	documentationCenter="python" 

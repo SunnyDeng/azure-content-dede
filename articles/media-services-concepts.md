@@ -99,7 +99,7 @@ Codecs verfügen über zwei Komponenten: eine zum Komprimieren digitaler Mediend
 
 ### Media Services-Encoder
 
-Informationen zu unterstützten Encodern finden Sie unter [Encoder](../media-services-encode-asset).
+Informationen zu unterstützten Encodern finden Sie unter [Encoder](media-services-encode-asset.md).
 
 
 ## Livestreaming
@@ -166,7 +166,7 @@ Bei der Arbeit mit Media Services empfiehlt es sich, Zwischendateien immer in ei
 
 Ein StreamingEndpoint stellt einen Streamingdienst dar, der Inhalte zur weiteren Verteilung direkt in einer Client-Player-Anwendung oder einem Content Delivery Network (CDN) bereitstellen kann. (Azure Media Services bietet jetzt die Azure-CDN-Integration.) Der ausgehende Stream des StreamingEndpoint-Diensts kann ein Livestream oder ein Video on Demand-Medienobjekt in Ihrem Media Services-Konto sein. Darüber hinaus können Sie die Kapazität des StreamingEndpoint-Diensts für die Verarbeitung wachsender Bandbreitenanforderungen steuern, indem Sie Skalierungseinheiten (auch als Streamingeinheiten bezeichnet)anpassen. Es wird empfohlen, für Anwendungen in der Produktionsumgebung eine oder mehrere Skalierungseinheiten zu reservieren. Skalierungseinheiten stellen Ihnen dedizierte Ausgangskapazitäten bereit, die zu jeweils 200 Mbit/s erworben werden können, und zusätzliche Funktionen, die aktuell dynamische Paketfunktionen umfassen. 
 
-Wenn Sie die dynamische Paketerstellung und/oder die dynamische Verschlüsselung verwenden möchten, müssen Sie über mindestens eine Streamingeinheit für den Endpunkt verfügen, von dem Sie streamen möchten. Weitere Informationen finden Sie unter [Skalieren von Streamingeinheiten](../media-services-manage-origins#scale_streaming_endpoints).
+Wenn Sie die dynamische Paketerstellung und/oder die dynamische Verschlüsselung verwenden möchten, müssen Sie über mindestens eine Streamingeinheit für den Endpunkt verfügen, von dem Sie streamen möchten. Weitere Informationen finden Sie unter [Skalieren von Streamingeinheiten](media-services-manage-origins#scale_streaming_endpoints.md).
 
 ### Übermittlungsrichtlinie für Medienobjekte
 

@@ -19,19 +19,19 @@
 
 # <a id="nonendorsed"> </a>Informationen zu nicht bestätigten Verteilungen #
 
-**Wichtig**: Das Azure-Plattform-SLA gilt für virtuelle Computer unter dem Betriebssystem Linux nur dann, wenn eine der [bestätigten Verteilungen](../virtual-machines-linux-endorsed-distributions) verwendet wird. Alle Linux-Verteilungen, die im Azure-Image-Katalog bereitgestellt werden, sind bestätigte Verteilungen mit der erforderlichen Konfiguration.
+**Wichtig**: Das Azure-Plattform-SLA gilt für virtuelle Computer unter dem Betriebssystem Linux nur dann, wenn eine der [bestätigten Verteilungen](virtual-machines-linux-endorsed-distributions.md) verwendet wird. Alle Linux-Verteilungen, die im Azure-Image-Katalog bereitgestellt werden, sind bestätigte Verteilungen mit der erforderlichen Konfiguration.
 
-- [Linux auf Azure - bestätigte Verteilungen](../virtual-machines-linux-endorsed-distributions)
+- [Linux auf Azure - bestätigte Verteilungen](virtual-machines-linux-endorsed-distributions.md)
 - [Unterstützung für Linux-Bilder in Microsoft Azure](http://support2.microsoft.com/kb/2941892)
 
 Alle auf Azure ausgeführten Verteilungen müssen eine Reihe an Voraussetzungen erfüllen, damit sie entsprechend auf der Plattform ausgeführt werden.  Dieser Artikel umfasst in keinem Fall alle Aspekte, da jede Verteilung unterschiedlich ist. Es ist durchaus möglich, dass Sie, selbst wenn Sie alle unten aufgeführten Kriterien erfüllen, Ihr Linus-System noch erheblich optimieren müssen, um gewährleisten zu können, dass es ordnungsgemäß auf der Plattform ausgeführt wird.
 
-Daher wird empfohlen, dass Sie nach Möglichkeit mit einer unserer [bestätigten Linux-Verteilungen auf Azure](../linux-endorsed-distributions) beginnen. Die folgenden Artikel führen Sie durch die Vorbereitung der verschiedenen bestätigten Linux-Verteilungen, die auf Azure unterstützt werden:
+Daher wird empfohlen, dass Sie nach Möglichkeit mit einer unserer [bestätigten Linux-Verteilungen auf Azure](linux-endorsed-distributions.md) beginnen. Die folgenden Artikel führen Sie durch die Vorbereitung der verschiedenen bestätigten Linux-Verteilungen, die auf Azure unterstützt werden:
 
-- **[CentOS-basierte Verteilungen](../virtual-machines-linux-create-upload-vhd-centos)**
-- **[Oracle Linux](../virtual-machines-linux-create-upload-vhd-oracle)**
-- **[SLES und openSUSE](../virtual-machines-linux-create-upload-vhd-suse)**
-- **[Ubuntu](../virtual-machines-linux-create-upload-vhd-ubuntu)**
+- **[CentOS-basierte Verteilungen](virtual-machines-linux-create-upload-vhd-centos.md)**
+- **[Oracle Linux](virtual-machines-linux-create-upload-vhd-oracle.md)**
+- **[SLES und openSUSE](virtual-machines-linux-create-upload-vhd-suse.md)**
+- **[Ubuntu](virtual-machines-linux-create-upload-vhd-ubuntu.md)**
 
 Der Rest dieses Artikels bietet eine allgemeine Hilfe für das Ausführen Ihrer Linux-Verteilung auf Azure.
 
@@ -40,7 +40,7 @@ Der Rest dieses Artikels bietet eine allgemeine Hilfe für das Ausführen Ihrer 
 
 - Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
 
-- Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird.  LVM oder [RAID](../virtual-machines-linux-configure-raid) können bei Bedarf auf Datenträgern verwendet werden.
+- Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird.  LVM oder [RAID](virtual-machines-linux-configure-raid.md) können bei Bedarf auf Datenträgern verwendet werden.
 
 - NUMA wird bei ausgedehnteren VM-Größen aufgrund eines Fehlers in den Linux Kernel-Versionen unterhalb von 2.6.37 nicht unterstützt. Dieses Problem betrifft in erster Linie jene Verteilungen, die den vorgeschalteten Red Hat 2.6.32 Kernel verwenden. Bei der manuellen Installation des Azure Linux-Agents (waagent) wird NUMA in der Grub-Konfiguration für den Linux-Kernel automatisch deaktiviert.
 
@@ -103,7 +103,7 @@ Wenn Sie nicht in einer Windows-Umgebung arbeiten, sollten Sie die Konvertierung
 
 ## Linux-Kernelanforderungen ##
 
-Die Treiber für die Linux-Integrationsdienste (Linux Integration Services, LIS) für Hyper-V und Azure tragen direkt zum Linux-Upstream-Kernel bei. Viele Verteilungen, die eine neue Linux-Kernelversion (d. h. 3.x) enthalten, verfügen bereits über diese Treiber oder bieten ansonsten zurückportierte Versionen dieser Treiber mit ihren Kerneln.  Diese Treiber werden ständig im Upstream-Kernel mit neuen Fehlerbehebungen und Features aktualisiert. Daher empfiehlt sich, nach Möglichkeit eine [bestätigte Verteilung](../linux-endorsed-distributions) auszuführen, die diese Fehlerbehebungen und Updates enthält.
+Die Treiber für die Linux-Integrationsdienste (Linux Integration Services, LIS) für Hyper-V und Azure tragen direkt zum Linux-Upstream-Kernel bei. Viele Verteilungen, die eine neue Linux-Kernelversion (d. h. 3.x) enthalten, verfügen bereits über diese Treiber oder bieten ansonsten zurückportierte Versionen dieser Treiber mit ihren Kerneln.  Diese Treiber werden ständig im Upstream-Kernel mit neuen Fehlerbehebungen und Features aktualisiert. Daher empfiehlt sich, nach Möglichkeit eine [bestätigte Verteilung](linux-endorsed-distributions.md) auszuführen, die diese Fehlerbehebungen und Updates enthält.
 
 Wenn Sie eine Variante der Red Hat Enterprise Linux-Versionen **6.0-6.3** ausführen, müssen Sie die neuesten LIS-Treiber für Hyper-V installieren. Die Treiber finden Sie [hier](http://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409). Ab RHEL **6.4+** (und Ableitungen) sind die LIS-Treiber bereits im Kernel enthalten. Daher sind keine zusätzlichen Installationspakete nötig, um diese Systeme auf Azure auszuführen.
 
@@ -129,7 +129,7 @@ Das Fehlen der folgenden Patches haben in einem sehr geringen Ausmaß Probleme a
 
 ## Der Azure Linux-Agent ##
 
-Der [Azure Linux-Agent](../virtual-machines-linux-agent-user-guide) (waagent) ist für die entsprechende Bereitstellung eines virtuellen Linux-Computers in Azure erforderlich. Unter [Linux Agent GitHub repo](https://github.com/Azure/WALinuxAgent) können Sie die neueste Version abrufen, Probleme einreichen oder Pull-Anforderungen senden.
+Der [Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md) (waagent) ist für die entsprechende Bereitstellung eines virtuellen Linux-Computers in Azure erforderlich. Unter [Linux Agent GitHub repo](https://github.com/Azure/WALinuxAgent) können Sie die neueste Version abrufen, Probleme einreichen oder Pull-Anforderungen senden.
 
 - Der Linux-Agent wird unter der Apache 2.0-Lizenz veröffentlicht. Viele Verteilungen stellen RPM- oder DEB-Pakete bereits für den Agent bereit, in einigen Fällen können diese mit ein wenig Aufwand installiert und aktualisiert werden.
 
@@ -158,7 +158,7 @@ Der [Azure Linux-Agent](../virtual-machines-linux-agent-user-guide) (waagent) is
 
 - Installieren des Azure Linux-Agents
 
-	Der Azure Linux-Agent ist für das Bereitstellen eines Linux-Images auf Azure erforderlich. Viele Verteilungen stellen den Agent als ein RPM- oder DEB-Paket (das Paket heißt für gewöhnlich  'WALinuxAgent' oder  'walinuxagent') bereit. Der Agent kann zudem manuell installiert werden, indem die folgenden Schritte im [Linux Agent Guide] eingehalten werden(../virtual-machines-linux-agent-user-guide).
+	Der Azure Linux-Agent ist für das Bereitstellen eines Linux-Images auf Azure erforderlich. Viele Verteilungen stellen den Agent als ein RPM- oder DEB-Paket (das Paket heißt für gewöhnlich  'WALinuxAgent' oder  'walinuxagent') bereit. Der Agent kann zudem manuell installiert werden, indem die folgenden Schritte im [Linux Agent Guide] eingehalten werden(virtual-machines-linux-agent-user-guide.md).
 
 - Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung.
 
@@ -184,6 +184,7 @@ Der [Azure Linux-Agent](../virtual-machines-linux-agent-user-guide) (waagent) is
 		# logout
 
 - Sie müssen den virtuellen Computer anschließend herunterfahren und die virtuelle Festplatte in Azure hochladen.
+
 
 
 

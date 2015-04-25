@@ -21,7 +21,7 @@
 # Hochladen von Dateien in ein Media Services-Konto mit .NET
 [AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
 
 In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch oder erfassen sie auf diese Weise. Die **Medienobjekt**-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien (und die Metadaten zu diesen Dateien) enthalten.  Nachdem die Dateien hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert.
 
@@ -37,7 +37,7 @@ Wenn Sie planen, eine MP4-Datei über progressives Herunterladen zu übermitteln
 
 	Mit Media Services werden Ihre Medienobjekte auf dem Datenträger und nicht über das Netzwerk verschlüsselt, wie mit Digital Rights Manager (DRM).
 
-Wenn Sie für Ihr Medienobjekt eine Verschlüsselung unter Verwendung der **CommonEncrypted**-Option oder **EnvelopeEncypted**-Option angeben, müssen Sie dem Medienobjekt einen **ContentKey** zuordnen. Weitere Informationen finden Sie unter [Erstellen eines ContentKey](../media-services-dotnet-create-contentkey). 
+Wenn Sie für Ihr Medienobjekt eine Verschlüsselung unter Verwendung der **CommonEncrypted**-Option oder **EnvelopeEncypted**-Option angeben, müssen Sie dem Medienobjekt einen **ContentKey** zuordnen. Weitere Informationen finden Sie unter [Erstellen eines ContentKey](media-services-dotnet-create-contentkey.md). 
 
 Wenn Sie für Ihr Medienobjekt eine Verschlüsselung mit einer **StorageEncrypted**-Option angeben, wird vom Media Services SDK für .NET ein **StorateEncrypted** **ContentKey** für Ihr Medienobjekt erstellt.
 

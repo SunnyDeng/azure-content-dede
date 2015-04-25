@@ -135,4 +135,5 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-store-javascript-send-localized-breaking-news/
 
 
+
 <!--HONumber=42-->

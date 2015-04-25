@@ -226,4 +226,5 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
 [image-hdi-sample-wordcount-output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png
 
 
+
 <!--HONumber=42-->

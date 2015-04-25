@@ -42,4 +42,5 @@ Bevor Sie eine Tabelle verwenden können, müssen Sie die Verbindungszeichenfolg
       CloudConfigurationManager.GetSetting("<storageAccountName>_AzureStorageConnectionString"));
 
 [AZURE.INCLUDE [vs-storage-getting-started-tables-include](../includes/vs-storage-getting-started-tables-include.md)]
+
 <!--HONumber=42-->

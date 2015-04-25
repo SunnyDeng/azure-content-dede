@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden des Azure-Redis-Caches" 
 	description="Erfahren Sie, wie zur Verbesserung der Leistung Ihrer Azure-Anwendungen mit Azure-Redis-Cache beitragen." 
 	services="redis-cache" 
@@ -359,14 +359,14 @@ Nachdem Sie sich nun mit den Grundlagen des Azure-Redis-Caches vertraut gemacht 
 
 [StackExchange.Redis-Konfigurationsmodell]: http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
 
-[Arbeiten mit .NET-Objekten im Cache]: http://msdn.microsoft.com/library/dn690521.aspx#Objects
+[Arbeiten .NET-Objekten im Cache]: http://msdn.microsoft.com/library/dn690521.aspx#Objects
 
 
 [Installation des NuGet-Paket-Managers]: http://go.microsoft.com/fwlink/?LinkId=240311
 [Cache - Preisdetails]: http://www.windowsazure.com/pricing/details/cache/
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
-[Übersicht über Azure-Redis-Cache]: http://go.microsoft.com/fwlink/?LinkId=320830
+[Azure Redis Cache: Übersicht]: http://go.microsoft.com/fwlink/?LinkId=320830
 [Azure-Redis-Cache]: http://go.microsoft.com/fwlink/?LinkId=398247
 
 [Migrieren zu Azure-Redis-Cache]: http://go.microsoft.com/fwlink/?LinkId=317347
@@ -378,8 +378,8 @@ Nachdem Sie sich nun mit den Grundlagen des Azure-Redis-Caches vertraut gemacht 
 
 [Redis]: http://redis.io/documentation
 [Redis-Datentypen]: http://redis.io/topics/data-types
-[eine 15-minütige Einführung in Redis-Datentypen]: http://redis.io/topics/data-types-intro
+[15-minütige Einführung in Redis-Datentypen]: http://redis.io/topics/data-types-intro
 
-[Microsoft Azure-Websites: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen]: http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/
+[Azure-Webseiten: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen]: http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/
 
 <!--HONumber=49-->

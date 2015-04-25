@@ -67,4 +67,5 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 > [AZURE.NOTE] Die Anzahl der Datenträger, die Sie an einen virtuellen Computer anfügen können, hängt von der Größe des virtuellen Computers ab. So können Sie beispielsweise nur 4 Datenträger beim Standard A2 anfügen, aber 32 Datenträger beim Standard D14 und 64 Datenträger beim Standard G5. Nähere Informationen zur Anzahl der Datenträger, die pro virtuellem Computer angefügt werden können, finden Sie [hier](https://msdn.microsoft.com/de-de/library/azure/dn197896.aspx).
 
 
+
 <!--HONumber=42-->

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Problembehandlung von Web-Apps in Azure Web Service in Visual Studio" 
 	description="Erfahren Sie mehr über die Problembehandlung für eine Azure-Web-App mithilfe von Remotedebugging-, Ablaufverfolgungs- und Protokollierungstools, die in Visual Studio 2013 integriert sind." 
 	services="app-service\web" 
@@ -207,9 +207,9 @@ Dieser Abschnitt zeigt, wie Sie das Projekt und die Web-App, die Sie in [Erste S
 
 	![Set breakpoint](./media/web-sites-dotnet-troubleshoot-visual-studio/wjbreakpoint.png)
 
-1. In **Solution Explorer**, right-click the web project (not the WebJob project), and click **Publish**.
+1. Klicken Sie im  **Projektmappen-Explorer**, mit der rechten Maustaste auf das Webprojekt (nicht das WebJob-Projekt), und klicken Sie anschließend auf **Veröffentlichen**.
 
-2. In the **Profile** drop-down list, select the same profile that you used in [Get Started with the Azure WebJobs SDK](websites-dotnet-webjobs-sdk.md).
+2. Wählen Sie in der Dropdownliste **Profil** das gleiche Profil aus, das Sie in [Get Started with the Azure WebJobs SDK](websites-dotnet-webjobs-sdk.md).
 
 3. Wechseln Sie zur Registerkarte **Einstellungen**, ändern Sie **Konfiguration** auf **Debug**, und klicken Sie anschließend auf **Veröffentlichen**.
 

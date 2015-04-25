@@ -16,7 +16,7 @@
 	ms.date="03/23/2015" 
 	ms.author="stbaro"/>
 
-#Verwalten eines DocumentDB-Kontos
+# Verwalten eines DocumentDB-Kontos
 
 Erfahren Sie, wie mit Schlüsseln, Konsistenzeinstellungen und Kapazitätseinstellungen arbeiten und ein Konto löschen.
 
@@ -29,11 +29,11 @@ Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf den Bereich
 
 ### Anzeigen und Kopieren eines Zugriffsschlüssels
 
-1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
+1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
 
-2.      Klicken Sie im Bereich **Zusammenfassung** auf **Schlüssel**.
+2.      Klicken Sie im Bereich **Zusammenfassung** auf **Schlüssel**.
 
-3.      Klicken Sie im Blatt **Schlüssel** auf die Schaltfläche **Kopieren** rechts neben dem Schlüssel, den Sie kopieren möchten.
+3.      Klicken Sie im Blatt **Schlüssel** auf die Schaltfläche **Kopieren** rechts neben dem Schlüssel, den Sie kopieren möchten.
 
   ![](./media/documentdb-manage-account/image004.jpg)
 
@@ -45,17 +45,17 @@ Sie sollten regelmäßig die Zugriffsschlüssel für Ihr DocumentDB-Konto änder
 
 Falls Sie über Webanwendungen oder Cloud-Dienste verfügen, die das DocumentDB-Konto verwenden, verlieren Sie die Verbindungen beim erneuten Generieren von Schlüsseln - es sei denn, Sie führen einen Rollup für die Schlüssel aus. Die folgenden Schritte stellen den Prozess für das Rollup der Schlüssel dar.
 
-1.      Aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den sekundären Zugriffsschlüssel des DocumentDB-Kontos verweist.
+1.      Aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den sekundären Zugriffsschlüssel des DocumentDB-Kontos verweist.
 
-2.      Generieren Sie den primären Zugriffsschlüssel für Ihr DocumentDB-Konto neu. Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
+2.      Generieren Sie den primären Zugriffsschlüssel für Ihr DocumentDB-Konto neu. Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
 
-3.      Klicken Sie in der Zusammenfassung auf **Schlüssel**.
+3.      Klicken Sie in der Zusammenfassung auf **Schlüssel**.
 
-4.      Klicken Sie im Blatt **Schlüssel** auf den Befehl **Primären Zugriffsschlüssel neu generieren**, und klicken Sie dann auf **OK**, um das Generieren eines neuen Schlüssels zu bestätigen.
+4.      Klicken Sie im Blatt **Schlüssel** auf den Befehl **Primären Zugriffsschlüssel neu generieren**, und klicken Sie dann auf **OK**, um das Generieren eines neuen Schlüssels zu bestätigen.
 
-5.      Sobald Sie sichergestellt haben, dass der neue Schlüssel verwendet werden kann (etwa 5 Minuten nach der erneuten Erzeugung), aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den neuen primären Zugriffsschlüssel verweist.
+5.      Sobald Sie sichergestellt haben, dass der neue Schlüssel verwendet werden kann (etwa 5 Minuten nach der erneuten Erzeugung), aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den neuen primären Zugriffsschlüssel verweist.
 
-6.      Generieren Sie den sekundären Zugriffsschlüssel neu.
+6.      Generieren Sie den sekundären Zugriffsschlüssel neu.
 
 *Beachten Sie, dass die Bereitstellung eines neu generierten Schlüssels einige Minuten in Anspruch nehmen kann, bevor Sie damit auf Ihr DocumentDB-Konto zugreifen können.*
 
@@ -74,56 +74,58 @@ DocumentDB unterstützt vier detailliert definierte, benutzerkonfigurierbare Dat
 
 ### Festlegen der standardmäßigen Konsistenz für ein DocumentDB-Konto
 
-1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
+1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
 
-2.      Klicken Sie unter **Konfiguration** auf **Standardkonsistenz**.
+2.      Klicken Sie unter **Konfiguration** auf **Standardkonsistenz**.
 
-3.      Wählen Sie im Blatt **Standardkonsistenz** die für das DocumentDB-Konto standardmäßig zu verwendende Konsistenzebene aus.
+3.      Wählen Sie im Blatt **Standardkonsistenz** die für das DocumentDB-Konto standardmäßig zu verwendende Konsistenzebene aus.
 
 ![](./media/documentdb-manage-account/image005.png)
 
 ![](./media/documentdb-manage-account/image006.png)
 
-4.      Klicken Sie auf **Speichern**.
+4.      Klicken Sie auf **Speichern**.
 
-5.      Sie können den Fortschritt des Vorgangs im  Notification Hub des Azure-Vorschauportals überwachen.
+5.      Sie können den Fortschritt des Vorgangs im  Notification Hub des Azure-Vorschauportals überwachen.
 
 *Beachten Sie, dass es einige Minuten in Anspruch nehmen kann, bis sich die Änderung der Standardkonsistenz auf Ihr DocumentDB-Konto auswirkt.*
 
-## <a id="capacity"></a>Verwalten von DocumentDB-Kapazitätseinstellungen: Microsoft Azure DocumentDB ermöglicht Ihnen eine flexible Skalierung entsprechend den Anforderungen Ihrer Anwendung über ihren gesamten Lebenszyklus. Die Skalierung von DocumentDB erfolgt durch Erhöhung der Kapazität Ihres DocumentDB-Datenbankkontos im Azure-Vorschauportal.
+## <a id="capacity"></a>Verwalten von DocumentDB-Kapazitätseinstellungen: 
+Microsoft Azure DocumentDB ermöglicht Ihnen eine flexible Skalierung entsprechend den Anforderungen Ihrer Anwendung über ihren gesamten Lebenszyklus. Die Skalierung von DocumentDB erfolgt durch Erhöhung der Kapazität Ihres DocumentDB-Datenbankkontos im Azure-Vorschauportal.
 
 Wenn Sie ein Datenbankkonto erstellen, wird es mit Datenbankspeicherplatz und reserviertem Durchsatz bereitgestellt. Sie können jederzeit den bereitgestellten Datenbankspeicher und Durchsatz für Ihr Konto ändern, indem Sie Kapazitätseinheiten über das Azure-Vorschauportal hinzufügen oder entfernen.
 
 ### Hinzufügen oder Entfernen von Kapazitätseinheiten
 
-1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
+1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
 
-2.      Klicken Sie im Bereich **Nutzung** auf **Skalieren**.
+2.      Klicken Sie im Bereich **Nutzung** auf **Skalieren**.
 
-3.      Geben Sie im Blatt **Skalierung** die Anzahl der für Ihr DocumentDB-Konto zu verwendenden Kapazitätseinheiten an.
+3.      Geben Sie im Blatt **Skalierung** die Anzahl der für Ihr DocumentDB-Konto zu verwendenden Kapazitätseinheiten an.
 
 
 ![](./media/documentdb-manage-account/image007.png)
 
-4.      Klicken Sie auf **Speichern**. (Beachten Sie, dass es ggf. einige Minuten dauert, bis der Skalierungsvorgang abgeschlossen ist. Sie können den Fortschritt im Notification Hub des Azure-Vorschauportals überwachen.)
+4.      Klicken Sie auf **Speichern**. (Beachten Sie, dass es ggf. einige Minuten dauert, bis der Skalierungsvorgang abgeschlossen ist. Sie können den Fortschritt im Notification Hub des Azure-Vorschauportals überwachen.)
 
  *Beachten Sie, dass die DocumentDB-Vorschau maximal 5 Kapazitätseinheiten
 je DocumentDB-Konto unterstützt.*
 
 
-## <a id="delete"></a> Gewusst wie: Löschen eines DocumentDB-Kontos Verwenden Sie zum Löschen eines nicht mehr verwendeten DocumentDB-Kontos den Befehl **Löschen** im Blatt **DocumentDB-Konto**.
+## <a id="delete"></a> Gewusst wie: Löschen eines DocumentDB-Kontos 
+Verwenden Sie zum Löschen eines nicht mehr verwendeten DocumentDB-Kontos den Befehl **Löschen** im Blatt **DocumentDB-Konto**.
 
 > [AZURE.WARNING] In der Vorschauversion gibt es keine Möglichkeit zur Wiederherstellung des Inhalts aus einem gelöschten DocumentDB-Konto. Beim Löschen eines DocumentDB-Kontos werden alle Ressourcen des Kontos einschließlich Datenbanken, Sammlungen, Dokumenten und Anhängen gelöscht.
 
 ![](./media/documentdb-manage-account/image009.png)
 
-1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf das zu löschende DocumentDB-Konto zu.
+1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf das zu löschende DocumentDB-Konto zu.
 
-2.      Klicken Sie im Blatt **DocumentDB-Konto** auf den Befehl **Löschen**.
+2.      Klicken Sie im Blatt **DocumentDB-Konto** auf den Befehl **Löschen**.
 
-3.      Geben Sie im daraufhin angezeigten Bestätigungsblatt den Namen des DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
+3.      Geben Sie im daraufhin angezeigten Bestätigungsblatt den Namen des DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
 
-4.      Klicken Sie im Bestätigungsblatt auf die Schaltfläche **Löschen**.
+4.      Klicken Sie im Bestätigungsblatt auf die Schaltfläche **Löschen**.
 
 ## <a id="next"></a>Nächste Schritte
 

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Ressourcenmodell und Konzepte von DocumentDB | Azure" 
 	description="Microsoft Azure DocumentDB ist eine vollständig verwaltete NoSQL-Dokumentdatenbank, die ein hierarchisches Modell aus Datenbankkonten, Datenbanken, Sammlungen, gespeicherten Prozeduren, Triggern, benutzerdefinierten Funktionen (User Defined Functions, UDFs), Dokumenten, Anlagen, Medien, Benutzern und Berechtigungen zur Ressourcenverwaltung einsetzt."  
 	services="documentdb" 
@@ -351,7 +351,7 @@ Die Ausführung einer gespeicherten Prozedur erfolgt über das Auslösen einer H
 	    });
 
 ###Unregistering a stored procedure
-Un-registering a stored procedure is simply done by issuing an HTTP DELETE against an existing stored procedure resource.   
+Das Aufheben der Registrierung für eine gespeicherte Prozedur erfolgt über das einfache Auslösen einer HTTP DELETE-Methode für eine vorhandene gespeicherte Prozedurressource.   
 
 	client.deleteStoredProcedureAsync(createdStoredProcedure.resource._self)
 	    .then(function (response) {

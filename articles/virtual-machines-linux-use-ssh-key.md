@@ -16,11 +16,11 @@
 	ms.date="10/15/2014" 
 	ms.author="szarkos"/>
 
-#Verwenden von SSH mit Linux auf Azure
+#Gewusst wie: Verwenden von SSH mit Linux auf Azure
 
 Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SSH-Schlüssel, die in einem X509-Zertifikat enthalten sind. Gehen Sie wie nachstehend beschrieben vor, um SSH-Schlüssel mit Azure zu erzeugen und zu verwenden.
 
-## Erzeugung von Azure-kompatiblen Schlüsseln in Linux ##
+## Erzeugen von Azure-kompatiblen Schlüsseln in Linux ##
 
 1. Installieren Sie bei Bedarf das Hilfsprogramm  `openssl`:
 
@@ -41,7 +41,7 @@ Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SS
 
 		# openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem
 
-3.	Ändern Sie die Berechtigungen auf dem privaten Schlüssel, um diesen zu sichern.
+3.	Ändern Sie die Berechtigungen für den privaten Schlüssel, um diesen zu sichern.
 
 		# chmod 600 myPrivateKey.key
 
@@ -59,34 +59,34 @@ Private OpenSSH-Schlüssel können direkt vom Hilfsprogramm  `openssl` gelesen w
 
 	# openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem
 
-Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verwendet werden kann, um einen virtuellen Linux-Computer auf Azure bereitzustellen. Während der Bereitstellung wird die Datei  `.pem` in einen  `openssh`-kompatiblen öffentlichen Schlüssel übersetzt und in `~/.ssh/authorized_keys`. platziert.
+Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verwendet werden kann, um einen virtuellen Linux-Computer auf Windows Azure bereitzustellen. Während der Bereitstellung wird die Datei  `.pem` in einen mit  `openssh` kompatiblen öffentlichen Schlüssel übersetzt und in `~/.ssh/authorized_keys` platziert.
 
 
-## Verbindung mit einem virtuellen Azure-Computer über Linux
+## Herstellen einer Verbindung mit einem virtuellen Azure-Computer über Linux
 
-1. In manchen Fällen kann es sein, dass der SSH-Endpunkt eines virtuellen Linux-Computer für einen anderen als Port 22 konfiguriert ist. Sie finden die korrekte Portnummer auf dem Dashboard des virtuellen Computers im Verwaltungsportal (unter "SSH-Details").
+1. In manchen Fällen kann es sein, dass der SSH-Endpunkt eines virtuellen Linux-Computers für einen anderen Port als Port 22 konfiguriert ist. Sie finden die korrekte Portnummer auf dem Dashboard des virtuellen Computers im Verwaltungsportal (unter "SSH-Details").
 
 2.	Stellen Sie die Verbindung mit dem virtuellen Linux-Computer mithilfe von  `ssh` her. Beim ersten Anmelden werden Sie aufgefordert, den Fingerabdruck des öffentlichen Schlüssels des Hosts zu übernehmen.
 
 		# ssh -i  myPrivateKey.key -p <port> username@servicename.cloudapp.net
 
-3.	(Optional) Sie können  `myPrivateKey.key` in "~/.ssh/id_rsa" kopieren, sodass Ihr OpenSSH-Client dies automatisch übernimmt, ohne die "-i"-Option zu verwenden.
+3.	(Optional) Sie können  `myPrivateKey.key` in `~/.ssh/id_rsa` kopieren, sodass Ihr OpenSSH-Client dies automatisch übernimmt, ohne die Option `-i` zu verwenden.
 
-## OpenSSL unter Windows aufrufen ##
+## Aufrufen von OpenSSL unter Windows ##
 ### Verwenden von msysgit ###
 
-1.	Laden und installieren Sie msysgit von folgendem Speicherort: [http://msysgit.github.com/](http://msysgit.github.com/)
+1.	Laden Sie msysgit von folgendem Speicherort herunter, und installieren Sie es: [http://msysgit.github.com/](http://msysgit.github.com/)
 2.	Führen Sie  `msys` aus dem installierten Verzeichnis aus (Beispiel: c:\msysgit\msys.exe).
-3.	Nehmen Sie eine Änderung zum Verzeichnis  `bin` vor, indem Sie  `cd bin` eingeben.
+3.	Wechseln Sie zum Verzeichnis  `bin`, indem Sie  `cd bin` eingeben.
 
 ###Verwenden von GitHub für Windows###
 
-1.	Laden und installieren Sie GitHub für Windows von folgendem Speicherort: [http://windows.github.com/](http://windows.github.com/)
+1.	Laden Sie GitHub für Windows von folgendem Speicherort herunter, und installieren Sie es: [http://windows.github.com/](http://windows.github.com/)
 2.	Führen Sie die Git-Shell aus: Startmenü > Alle Programme > GitHub, Inc
 
 ###Verwenden von cygwin###
 
-1.	Laden und installieren Sie Cygwin von folgendem Speicherort: [http://cygwin.com/](http://cygwin.com/)
+1.	Laden Sie Cygwin von folgendem Speicherort herunter, und installieren Sie es: [http://cygwin.com/](http://cygwin.com/)
 2.	Stellen Sie sicher, dass das OpenSSL-Paket und alle seine Abhängigkeiten installiert sind.
 3.	Ausführen von  `cygwin`
 
@@ -109,9 +109,9 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 
 ## Erstellen eines PPK für Putty ##
 
-1. Laden und installieren Sie Puttygen von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+1. Laden Sie Puttygen von folgendem Speicherort herunter, und installieren Sie es: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 
-2. PuTTYgen ist möglicherweise nicht in der Lage, den zuvor erstellten privaten Schlüssel (`myPrivateKey.key`) zu lesen. Führen Sie den folgenden Befehl aus, um ihn in einen privaten RSA-Schlüssel zu übersetzen, den Puttygen verstehen kann:
+2. Puttygen ist möglicherweise nicht in der Lage, den zuvor erstellten privaten Schlüssel (`myPrivateKey.key`) zu lesen. Führen Sie den folgenden Befehl aus, um ihn in einen privaten RSA-Schlüssel zu übersetzen, den Puttygen verstehen kann:
 
 		# openssl rsa -in ./myPrivateKey.key -out myPrivateKey_rsa
 		# chmod 600 ./myPrivateKey_rsa
@@ -122,7 +122,7 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 
 4. Klicken Sie auf das Menü: Datei > Privaten Schlüssel laden
 
-5. Suchen Sie nach dem privaten Schlüssel, den wir oben als  `myPrivateKey_rsa` benannt haben. Ändern Sie den Dateifilter, sodass er **All Files (\*.\*)** anzeigt.
+5. Suchen Sie nach dem privaten Schlüssel, den wir oben als  `myPrivateKey_rsa` benannt haben. Ändern Sie den Dateifilter, sodass er **Alle Dateien (\*.\*)** anzeigt.
 
 6. Klicken Sie auf **Öffnen**. Sie erhalten eine Aufforderung, die ungefähr folgendermaßen aussieht:
 
@@ -139,7 +139,7 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 
 ## Verwenden von Putty für eine Verbindung mit einem Linux-Computer ##
 
-1.	Laden und installieren Sie putty von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+1.	Laden Sie putty von folgendem Speicherort herunter, und installieren Sie es: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 2.	Führen Sie putty.exe aus.
 3.	Geben Sie den Hostnamen ein. Verwenden Sie dafür die IP aus dem Verwaltungsportal:
 
@@ -151,7 +151,4 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

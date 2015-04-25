@@ -95,4 +95,5 @@ Löschen Sie eine Zeile aus einer Datentabelle mithilfe der **del**-Methode. Ruf
 
 
 
+
 <!--HONumber=42-->

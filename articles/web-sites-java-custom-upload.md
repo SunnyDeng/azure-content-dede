@@ -21,7 +21,7 @@
 In diesem Thema wird erläutert, wie Sie eine benutzerdefinierte Java-Website in Azure hochladen. Es enthält Informationen, die für alle Java-Websites gelten, und einige Beispiele für spezifische Anwendungen.
 
 Beachten Sie, dass Azure Möglichkeiten bietet, Java-Websites mithilfe der Konfigurationsbenutzeroberfläche des Azure-Portals und der Azure-Anwendungsgalerie zu erstellen. Informationen hierzu finden Sie unter [Erste Schritte mit Azure-Websites und Java
-](../web-sites-java-get-started). Dieses Lernprogramm eignet sich für Szenarien, in denen Sie nicht die Azure-Konfigurationsbenutzeroberfläche oder die Azure-Anwendungsgalerie verwenden möchten.  
+](web-sites-java-get-started.md). Dieses Lernprogramm eignet sich für Szenarien, in denen Sie nicht die Azure-Konfigurationsbenutzeroberfläche oder die Azure-Anwendungsgalerie verwenden möchten.  
 
 # Konfigurationsrichtlinien
 
@@ -231,6 +231,7 @@ Es sollte darauf hingewiesen werden, dass die JRE_HOME-Umgebungsvariable in der 
 Sobald Sie diese Änderungen vorgenommen haben, starten Sie Ihre Website neu mit Liferay, und öffnen Sie http://yoursite.  Das Liferay-Portal ist über das Website-Root-Verzeichnis verfügbar. 
 
 Weitere Informationen zu Liferay finden Sie unter [http://www.liferay.com](http://www.liferay.com).
+
 
 
 

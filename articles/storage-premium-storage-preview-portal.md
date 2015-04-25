@@ -277,4 +277,5 @@ In diesem Abschnitt wird gezeigt, wie ein Premium-Speicherkonto erstellt und ver
 [MSDN-Referenz](http://msdn.microsoft.com/library/azure/gg433040.aspx)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
+
 <!--HONumber=42-->

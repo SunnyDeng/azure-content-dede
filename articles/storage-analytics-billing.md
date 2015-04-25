@@ -45,6 +45,6 @@ Wenn Sie Speicheranalysedaten überprüfen, können Sie anhand der Tabellen im T
 
 [Informationen zur Protokollierung durch die Speicheranalyse ](https://msdn.microsoft.com/library/azure/hh343262.aspx) 
 
-[Informationen zu Metriken der Speicheranalyse](../storage-about-analytics-metrics.md) 
+[Informationen zu Metriken der Speicheranalyse](storage-about-analytics-metrics.md.md) 
 
 <!--HONumber=47-->

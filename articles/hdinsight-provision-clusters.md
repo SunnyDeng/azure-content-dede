@@ -678,4 +678,5 @@ In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsi
 [img-hdi-cluster]: ./media/hdinsight-provision-clusters/HDI.Cluster.png
 
   [89e2276a]: /de-de/documentation/articles/hdinsight-use-sqoop/ "Use Sqoop with HDInsight"
+
 <!--HONumber=42-->

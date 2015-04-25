@@ -404,4 +404,5 @@ Pig ist hilfreich für die Datenanalyse, aber andere in HDInsight enthaltene Spr
 [image-hdi-pig-powershell]: ./media/hdinsight-use-pig/hdi.pig.powershell.png
 [image-hdi-pig-architecture]: ./media/hdinsight-use-pig/HDI.Pig.Architecture.png
 
+
 <!--HONumber=42-->

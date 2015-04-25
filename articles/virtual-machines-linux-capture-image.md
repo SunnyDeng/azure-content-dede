@@ -23,18 +23,18 @@ Dieser Artikel erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf
 
 Azure behandelt diese Vorlage als ein lokales Image und speichert es unter**My Images**. Hier werden sämtliche Images abgelegt, die Sie hochladen. Weitere Informationen zu Images finden Sie unter [Informationen zu Images virtueller Computer in Azure] [].
 
-##Voraussetzungen##
+## Voraussetzungen##
 
 Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer erstellt, das Betriebssystem konfiguriert und beliebige Datenträger angefügt haben. Falls dies noch nicht geschehen ist, finden Sie hier Anweisungen:
 
 - [Gewusst wie: Erstellen eines benutzerdefinierten virtuellen Computers] []
 - [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer] []
 
-##Erfassen des virtuellen Computers##
+## Erfassen des virtuellen Computers##
 
 1. Stellen Sie eine Verbindung mit dem virtuellen Computer her, indem Sie auf der Befehlsleiste auf **Verbinden**  klicken. Ausführliche Informationen finden Sie unter [Gewusst wie: Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird][].
 
-2. Geben Sie im SSH-Fenster den folgenden Befehl ein, und geben Sie anschließend das Kennwort für das Konto ein, das Sie auf dem virtuellen Computer erstellt haben.  Beachten Sie, dass die Ausgabe von  waagent` je nach Version dieses Hilfsprogramms geringfügig abweichen kann:
+2. Geben Sie im SSH-Fenster den folgenden Befehl ein, und geben Sie anschließend das Kennwort für das Konto ein, das Sie auf dem virtuellen Computer erstellt haben.  Beachten Sie, dass die Ausgabe von `waagent` je nach Version dieses Hilfsprogramms geringfügig abweichen kann:
 
 	`sudo waagent -deprovision`
 
@@ -61,13 +61,13 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 	![Image capture successful](./media/virtual-machines-linux-capture-image/VMCapturedImageAvailable.png)
 
-##Nächste Schritte##
+## Nächste Schritte##
 Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe der Methode **Aus Katalog** einen benutzerdefinierten virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen hierzu finden Sie unter [Gewusst wie: Erstellen eines benutzerdefinierten virtuellen Computers][].
 	
-[Gewusst wie: Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird]: ../virtual-machines-linux-how-to-log-on
+[Gewusst wie: Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird]: virtual-machines-linux-how-to-log-on.md
 [Informationen zu Images virtueller Computer in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
-[Gewusst wie: Erstellen eines benutzerdefinierten virtuellen Computers]: ../virtual-machines-create-custom/
-[Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer]: ../storage-windows-attach-disk/
+[Gewusst wie: Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
+[Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
 
 
 <!--HONumber=45--> 

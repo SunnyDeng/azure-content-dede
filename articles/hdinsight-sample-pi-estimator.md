@@ -482,4 +482,5 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hi
 [hdinsight-use-pig]: ../hdinsight-use-pig/
  
 
+
 <!--HONumber=42-->

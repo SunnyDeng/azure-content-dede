@@ -61,4 +61,5 @@ Bevor Sie den mobilen Dienst erstellen können, müssen Sie die .publishsettings
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
 
+
 <!--HONumber=42-->

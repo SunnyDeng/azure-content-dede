@@ -18,4 +18,6 @@ In diesem Abschnitt testen Sie Ihre neue App für den lokal ausgeführten mobile
 4. Geben Sie in der App unter **TodoItem einfügen** einen sinnvollen Text ein, beispielsweise "_Tutorial beenden_", und klicken Sie dann auf **Speichern**.
 
 	Daraufhin wird eine POST-Anforderung an den lokalen mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Werte werden vom mobilen Dienst zurückgegeben, und die Daten werden in der zweiten Spalte der App angezeigt.
-\<!--HONumber=42-->
+
+
+<!--HONumber=42-->

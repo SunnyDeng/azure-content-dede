@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über Git" 
 	description="In diesem Lernprogramm wird gezeigt, wie Sie eine PHP-Web-App erstellen, die Daten in MySQL speichert, und wie Sie die Git-Bereitstellung in Azure verwenden." 
 	services="app-service\web" 
@@ -76,7 +76,7 @@ Befolgen Sie diese Schritte, um eine Web-App und eine MySQL-Datenbank zu erstell
 
 9. Um die Git-Veröffentlichung aktivieren zu können, müssen Sie einen Benutzernamen und ein Kennwort angeben. Notieren Sie sich den Benutzernamen und das Kennwort, die Sie erstellen. (Wenn Sie schon einmal ein Git-Verzeichnis eingerichtet haben, wird dieser Schritt übersprungen.)
 
-	![Erstellen von Anmeldedaten für die Veröffentlichung][credentials]
+	![Erstellen von Anmeldedaten für die Veröffentlichung][portal-ftp-username-password]
 
 
 ##Abrufen von MySQL-Remoteverbindungsinformationen

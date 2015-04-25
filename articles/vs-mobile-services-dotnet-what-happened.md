@@ -40,4 +40,5 @@ In Ihrer Datei "App.xaml.cs" wurde ein **MobileServiceClient**-Objekt mit der An
 
 
 
+
 <!--HONumber=42-->

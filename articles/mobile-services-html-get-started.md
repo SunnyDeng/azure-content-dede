@@ -163,4 +163,5 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Cross-Origin Resource Sharing (CORS)]: http://msdn.microsoft.com/library/windowsazure/dn155871.aspx
 
 
+
 <!--HONumber=42-->

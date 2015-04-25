@@ -131,4 +131,5 @@ Jetzt, da Ihr mobiler Dienst bereit ist, können Sie die App aktualisieren, um E
 
 
 Nachdem nun die App für die Verwendung von Mobile Services als Back-End-Speicher aktualisiert ist, können Sie die App mit Mobile Services testen.
+
 <!--HONumber=42-->

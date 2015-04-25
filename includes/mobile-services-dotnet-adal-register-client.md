@@ -30,4 +30,6 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-\<!--HONumber=42-->
+
+
+<!--HONumber=42-->

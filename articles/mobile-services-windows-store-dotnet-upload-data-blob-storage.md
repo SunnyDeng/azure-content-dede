@@ -39,7 +39,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen. 
 
-##<a name="install-storage-client"></a>Installieren des Speicherclients für Windows Store-Apps
+## <a name="install-storage-client"></a>Installieren des Speicherclients für Windows Store-Apps
 
 Um eine SAS für das Hochladen von Bildern auf den Blob-Speicher verwenden zu können, müssen Sie zuerst das NuGet-Paket hinzufügen, das die Speicherclientbibliothek für Windows Store-Apps installiert.
 
@@ -53,7 +53,7 @@ Um eine SAS für das Hochladen von Bildern auf den Blob-Speicher verwenden zu k�
 
 Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen von Bildern.
 
-##<a name="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
+## <a name="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
@@ -104,6 +104,7 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 [Azure-Speicherclientbibliothek für Store-Apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
 [App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+
 
 
 <!--HONumber=42-->

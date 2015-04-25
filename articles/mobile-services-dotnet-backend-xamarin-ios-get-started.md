@@ -139,4 +139,5 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532&clcid=0x409
 [Xamarin für Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
 
+
 <!--HONumber=42-->

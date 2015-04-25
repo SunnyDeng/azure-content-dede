@@ -1,4 +1,4 @@
-#Azure-Servicebus
+﻿#Azure-Servicebus
 
 Ob eine Anwendung oder ein Dienst in einer Cloud betrieben wird oder lokal installiert ist - sie bzw. er muss oft mit anderen Anwendungen oder Diensten interagieren. Damit dies in allgemein nützlicher Weise geschieht, bietet Azure die Option Service Bus. In diesem Artikel betrachten wir diese Technologie und beschreiben, worum es sich dabei handelt und warum Sie sie gut gebrauchen könnten.
 
@@ -99,6 +99,6 @@ Das Verbinden von Anwendungen zählte schon immer zur Erstellung von Komplettlö
 [queues]: ./media/hybrid-solutions/SvcBus_02_queues.png
 [topics-subs]: ./media/hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
 [relay]: ./media/hybrid-solutions/SvcBus_04_relay.png
-[Übersicht über Event Hubs]: https://msdn.microsoft.com/library/azure/dn836025.aspx
+[Event Hubs overview]: https://msdn.microsoft.com/library/azure/dn836025.aspx
 
 <!--HONumber=47-->

@@ -136,4 +136,5 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 [Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/)
 Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
 
+
 <!--HONumber=42-->

@@ -33,7 +33,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 >[AZURE.NOTE]Befolgen Sie zum Senden von Pushbenachrichtigungen an eine Windows Phone 8.1 Store-App die Anweisungen unter [Windows Store-App](mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md) in diesem Lernprogramm.
 
-##<a id="update-app"></a> Aktualisieren Ihrer App zur Registrierung für Benachrichtigungen
+## <a id="update-app"></a> Aktualisieren Ihrer App zur Registrierung für Benachrichtigungen
 
 Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachrichtigungskanal registrieren.
 
@@ -84,7 +84,7 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
    	Damit stellen Sie sicher, dass Ihre App Popupbenachrichtigungen anzeigen kann. 
 
-##<a id="update-scripts"></a> Aktualisieren von Serverskripts zum Senden von Pushbenachrichtigungen
+## <a id="update-scripts"></a> Aktualisieren von Serverskripts zum Senden von Pushbenachrichtigungen
 
 Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle "TodoItem" registriert wird, aktualisieren, um Benachrichtigungen zu senden.
 
@@ -130,7 +130,7 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 
 	>[AZURE.NOTE]Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. In diesem Modus beschränkt MPNS die Anzahl der Benachrichtigungen, die an einen Gerätekanal gesendet werden können. Um diese Beschränkung aufzuheben, müssen Sie ein Zertifikat generieren und hochladen, indem Sie auf**Hochladen** klicken und das Zertifikat auswählen. Weitere Informationen zum Generieren des Zertifikats finden Sie unter [Einrichten eines authentifizierten Webdienstes zum Senden von Pushbenachrichtigungen für Windows Phone].
 
-##<a id="test"></a> Testen von Pushbenachrichtigungen in der App
+## <a id="test"></a> Testen von Pushbenachrichtigungen in der App
 
 1. Drücken Sie in Visual Studio die Taste F5, um die App auszuführen.
 
@@ -208,6 +208,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Was sind Notification Hubs?]: /de-de/documentation/articles/notification-hubs-overview/
 [Senden von Übertragungsbenachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-phone-send-breaking-news/
 [Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-windows-phone-send-localized-breaking-news/
+
 
 
 <!--HONumber=42-->

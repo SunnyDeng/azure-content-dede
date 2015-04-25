@@ -18,20 +18,20 @@
 
 
 # Erstellen eines Azure Machine Learning-Arbeitsbereichs 
-Ein Azure Machine Learning-Arbeitsbereichs (ML-Arbeitsbereich) enthält die Werkzeuge zum Verwalten und Veröffentlichen von Experimenten. Weitere Informationen zum Machine Learning-Arbeitsbereich finden Sie unter diesem Link.
+Ein Azure Machine Learning-Arbeitsbereich (ML-Arbeitsbereich) enthält die Werkzeuge zum Verwalten und Veröffentlichen von Experimenten. Weitere Informationen zu Machine Learning-Arbeitsbereichen finden Sie unter dem Link.
 ## Erstellen eines Arbeitsbereichs ##
-1. Melden Sie sich mit Ihrem Azure-Konto an.
+1. Melden Sie sich mit Ihrem Microsoft Azure-Konto an.
 2. Klicken Sie im Microsoft Azure-Dienstbereich auf **MACHINE LEARNING**.
 
 ![][1]
  
 
-1. Klicken Sie auf **ML-ARBEITSBEREICH ERSTELLEN**.
-2. Auf der Seite **SCHNELLERFASSUNG**:
+1. Klicken Sie auf **CREATE AN ML WORKSPACE**.
+2. Gehen Sie auf der Seite **QUICK CREATE** folgendermaßen vor:
 	1. Geben Sie die Daten für Ihren Arbeitsbereich ein.    
-	HINWEIS: Der **BESITZER DES ARBEITSBEREICHS** ist Ihr Microsoft-Konto (name@outlook.com</a>) bzw. Ihr Organisations-Konto.
-	2. Klicken Sie auf **ML-ARBEITSBEREICH ERSTELLEN**.
-3. Nach der Erstellung wird ihr ML-Arbeitsbereich auf der Seite **Machine Learning** angezeigt.
+	> [AZURE.NOTE] Der **WORKSPACE OWNER** ist Ihr Microsoft-Kontoname (name@outlook.com) bzw. Ihr Organisations-Kontoname.
+	2. Klicken Sie auf **CREATE AN ML WORKSPACE**.
+3. Nach der Erstellung wird ihr Machine Learning-Arbeitsbereich auf der Seite **Machine Learning** angezeigt.
  
 ![][2]
 
@@ -46,4 +46,4 @@ Ein Azure Machine Learning-Arbeitsbereichs (ML-Arbeitsbereich) enthält die Werk
 
 <!--Link references-->
 
-<!--HONumber=46--> 
+<!--HONumber=49-->

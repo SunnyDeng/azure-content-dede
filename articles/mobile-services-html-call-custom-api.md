@@ -96,4 +96,5 @@ Sie haben eine benutzerdefinierte API erstellt und diese über Ihre HTML-App auf
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-html-get-started
 [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-html-get-started-data
 
+
 <!--HONumber=42-->

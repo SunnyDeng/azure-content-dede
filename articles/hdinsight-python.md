@@ -171,7 +171,7 @@ Diese Schritte verwenden Microsoft Azure PowerShell. Wenn es nicht bereits auf I
 
 	Dieses Skript ruft Informationen für Ihren HDInsight-Cluster ab, extrahiert dann das Konto und den Schlüssel für das standardmäßigen Speicherkonto und lädt die Dateien in den Stamm des Containers.
 
-	> [AZURE.NOTE] Andere Methoden zum Hochladen der Skripts finden sich im Dokument [Hochladen von Daten für Hadoop-Aufträge in HDInsight](/de-de/documentation/articles/hdinsight-upload-data/).
+	> [AZURE.NOTE] Andere Methoden zum Hochladen der Skripts finden sich im Dokument [Hochladen von Daten für Hadoop-Aufträge in HDInsight](hdinsight-upload-data.md).
 
 ###Verwenden des Hive-Dashboards (nur Hive-Beispiel)
 
@@ -278,4 +278,5 @@ Die Fehlermeldung (STDERR) und das Ergebnis des Jobs (STDERR) werden ebenfalls i
 Wenn Sie Python-Module laden müssen, die standardmäßig nicht bereitgestellt werden, finden Sie dazu im englischsprachigen Blog-Beitrag [How to deploy a Python module to Windows Azure HDInsight](http://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx) (Bereitstellen eines Moduls für Azure HDInsight) ein Beispiel.
 
 Wenn Sie Aufträge remote auf HDInsight ohne PowerShell ausführen möchten, finden Sie im englischsprachigen Blog-Beitrag [How to use Azure HDInsight from Linux](http://blogs.msdn.com/b/benjguin/archive/2014/02/18/how-to-use-hdinsight-from-linux.aspx) (Verwenden von Azure HDInsight unter Linux) ein Beispiel, wie Sie mit Python-Aufträge über die WebHCat REST API ausführen.
+
 <!--HONumber=42-->

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden des In-Role Caches (.NET) - Azure-Featureleitfaden" 
 	description="Erfahren Sie, wie Sie den Azure In-Role Cache verwenden. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API." 
 	services="cache" 
@@ -392,23 +392,23 @@ Nachdem Sie sich nun mit den Grundlagen von In-Role Cache vertraut gemacht haben
 [Vorgehensweise: Programmgesteuertes Konfigurieren eines Cacheclients]: http://msdn.microsoft.com/library/windowsazure/gg618003.aspx
 [Vorgehensweise: Programmgesteuertes Festlegen der Cachefähigkeit einer Seite]: http://msdn.microsoft.com/library/z852zf6b.aspx
 [Vorgehensweise: Deklaratives Festlegen der Cachefähigkeit einer ASP.NET-Seite]: http://msdn.microsoft.com/library/zd1ysf1y.aspx
-[Überlegungen zur Planung der In-Role Cache-Kapazität]: http://go.microsoft.com/fwlink/?LinkId=252651
+[In-Role Cache - Erwägungen bezüglich der Kapazitätsplanung]: http://go.microsoft.com/fwlink/?LinkId=252651
 [In-Role Cache-Beispiele]: http://msdn.microsoft.com/library/jj189876.aspx
 [In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=252658
 [In-Role Cache]: http://www.microsoft.com/showcase/Search.aspx?phrase=azure+caching
-[Maximale Leistung: Beschleunigen von Cloud-Dienstanwendungen mit Azure Caching]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/WAD-B326#fbid=kmrzkRxQ6gU
+[Maximale Leistung: Beschleunigen der Cloud-Dienste mit Azure-Caching]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/WAD-B326#fbid=kmrzkRxQ6gU
 [Migrieren zum In-Role Cache]: http://msdn.microsoft.com/library/hh914163.aspx
 [Installation des NuGet-Paket-Managers]: http://go.microsoft.com/fwlink/?LinkId=240311
 [Ausgabecacheanbieter für In-Role Cache]: http://msdn.microsoft.com/library/windowsazure/gg185662.aspx
 [OutputCache-Direktive]: http://go.microsoft.com/fwlink/?LinkId=251979
-[Übersicht über In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=254172
+[Überblick In-Role Cache]: http://go.microsoft.com/fwlink/?LinkId=254172
 [Sitzungszustandsanbieter für In-Role Cache]: http://msdn.microsoft.com/library/windowsazure/gg185668.aspx
 [Team-Blog]: http://blogs.msdn.com/b/windowsazure/
-[Problembehandlung und Diagnose für In-Role Cache:]: http://msdn.microsoft.com/library/windowsazure/hh914135.aspx
+[Problembehebung und Diagnose für In-Role Caches]: http://msdn.microsoft.com/library/windowsazure/hh914135.aspx
 [Azure AppFabric Cache: Zwischenspeichern des Sitzungszustands]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
 [Azure-Verwaltungsportal]: http://windows.azure.com/
 [Azure Shared Caching]: http://msdn.microsoft.com/library/windowsazure/gg278356.aspx
 
-[Welches Azure-Cache-Angebot ist das Richtige für mich?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
+[Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
 
 <!--HONumber=49-->

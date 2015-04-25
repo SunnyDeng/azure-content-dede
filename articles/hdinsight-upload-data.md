@@ -308,4 +308,5 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lernen Sie anhand der 
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
 
+
 <!--HONumber=42-->

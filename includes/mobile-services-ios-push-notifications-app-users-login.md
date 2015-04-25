@@ -32,4 +32,5 @@ Als Nächstes müssen Sie die Methode zur Registrierung von Push-Benachrichtigun
 		    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
 		    UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
 		}
+
 <!--HONumber=42-->

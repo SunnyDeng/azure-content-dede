@@ -16,24 +16,24 @@
 	ms.date="1/26/2015" 
 	ms.author="kathydav"/>
 
-#Anfügen eines Datenträgers an einen virtuellen Linux-Computer
+#Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer
 
-Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann. 
+Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich .vhd-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann. 
 
 > [AZURE.NOTE] Es empfiehlt sich, einen oder mehrere separate Datenträger zu verwenden, um die Daten eines virtuellen Computers zu speichern. Wenn Sie einen virtuellen Azure-Computer erstellen, verfügt dieser über einen Betriebssystem-Datenträger und über einen temporären Datenträger. **Verwenden Sie den temporären Datenträger nicht zum Speichern von Daten.** Wie der Name schon sagt, bietet er nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet. 
-> Unter Linux wird der temporäre Datenträger normalerweise vom Azure Linux-Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt. Andererseits kann dem Datenträger unter Linux vom Kernel der Name  `/dev/sdc` zugewiesen werden. In diesem Fall muss diese Ressource partitioniert, formatiert und eingebunden werden. Weitere Informationen erhalten Sie im [Benutzerhandbuch für Azure Linux-Agent](http://azure.microsoft.com/manage/linux/how-to-guides/linux-agent-guide/).
+> Unter Linux wird der temporäre Datenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt. Andererseits kann dem Datenträger unter Linux vom Kernel der Name  `/dev/sdc` zugewiesen werden. In diesem Fall muss diese Ressource partitioniert, formatiert und eingebunden werden. Weitere Informationen erhalten Sie im [Benutzerhandbuch für Azure Linux Agent](http://azure.microsoft.com/manage/linux/how-to-guides/linux-agent-guide/).
 
-- [Vorgehensweise: Anfügen eines leeren Datenträgers](#attachempty)
-- [Vorgehensweise: Anfügen eines vorhandenen Datenträgers](#attachexisting)
-- [Vorgehensweise: Initialisieren eines neues Datenträgers unter Linux](#initializeinlinux)
+- [Gewusst wie: Anfügen eines leeren Datenträgers](#attachempty)
+- [Gewusst wie: Anfügen eines vorhandenen Datenträgers](#attachexisting)
+- [Gewusst wie: Initialisieren eines neues Datenträgers unter Linux](#initializeinlinux)
 
 [WACOM.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
-##<a id="initializeinlinux"></a>Vorgehensweise: Initialisieren eines neues Datenträgers unter Linux
+##<a id="initializeinlinux"></a>Gewusst wie: Initialisieren eines neues Datenträgers unter Linux
 
 
 
-1. Stellen Sie eine Verbindung mit dem virtuellen Computer her. Eine Beschreibung der dafür erforderlichen Schritte finden Sie unter [Anmeldung auf einem virtuellen Linux-Computer][logonlinux].
+1. Stellen Sie eine Verbindung mit dem virtuellen Computer her. Eine Beschreibung der dafür erforderlichen Schritte finden Sie unter [Anmeldung auf einem virtuellen Linux-Computer].
 
 
 
@@ -55,7 +55,7 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 		# sudo fdisk /dev/sdc
 
-	>[AZURE.NOTE] In diesem Beispiel müssen Sie eventuell auf manchen Distributionen  `sudo -i` verwenden, wenn /sbin oder /usr/sbin sich nicht in Ihrem `$PATH` befinden.
+	>[AZURE.NOTE] In diesem Beispiel müssen Sie eventuell auf manchen Verteilungen  `sudo -i` verwenden, wenn /sbin oder /usr/sbin sich nicht in Ihrem `$PATH` befinden.
 
 
 4. Geben Sie **n** ein, um eine neue Partition zu erstellen.
@@ -63,7 +63,7 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 	![Create new device](./media/virtual-machines-linux-how-to-attach-disk/DiskPartition.png)
 
-5. Geben Sie **p** ein, um die Partition zur primären zu machen, geben Sie **1** ein, um sie zur ersten Partition zu machen, und drücken Sie die Eingabetaste, um den Standardwert für den Zylinder zu übernehmen.
+5. Geben Sie **p** ein, um die Partition zur primären Partition zu machen, geben Sie **1** ein, um sie zur ersten Partition zu machen, und drücken Sie die Eingabetaste, um den Standardwert für den Zylinder zu übernehmen.
 
 
 	![Create partition](./media/virtual-machines-linux-how-to-attach-disk/DiskCylinder.png)
@@ -88,11 +88,10 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 	![Create file system](./media/virtual-machines-linux-how-to-attach-disk/DiskFileSystem.png)
 
-	>[AZURE.NOTE] Beachten Sie, dass SUSE Linux Enterprise 11-Systeme nur schreibgeschützte Zugriffe für ext4-Dateisysteme unterstützen.  Für diese Systeme wird empfohlen, das neue Dateisystem als ext3 statt als ext4 zu formatieren.
+	>[AZURE.NOTE] Beachten Sie, dass SUSE Linux Enterprise 11-Systeme nur schreibgeschützten Zugriff für ext4-Dateisysteme unterstützen.  Für diese Systeme wird empfohlen, das neue Dateisystem als ext3 statt als ext4 zu formatieren.
 
 
-9. Erstellen Sie ein Verzeichnis zum Einbinden des neuen Dateisyste
-	ms. Geben Sie beispielsweise folgenden Befehl und dann das Kontokennwort ein:
+9. Erstellen Sie ein Verzeichnis zum Einbinden des neuen Dateisystems. Geben Sie beispielsweise folgenden Befehl und dann das Kontokennwort ein:
 
 		# sudo mkdir /datadrive
 
@@ -106,7 +105,7 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 11. Fügen Sie das neue Laufwerk zu /etc/fstab hinzu:
 
-	Um sicherzustellen, dass das Laufwerk nach einem Neustart automatisch wieder eingebunden wird, muss es zur Datei /etc/fstab hinzugefügt werden. Außerdem wird dringend empfohlen, den UUID (Universally Unique IDentifier) in /etc/fstab zu verwenden, um auf das Laufwerk und nicht auf den Gerätenamen (d. h. auf /dev/sdc1) zu verweisen. Sie können das Hilfsprogramm **blkid** verwenden, um den UUID des neuen Laufwerks zu ermitteln:
+	Um sicherzustellen, dass das Laufwerk nach einem Neustart automatisch wieder eingebunden wird, muss es zur Datei /etc/fstab hinzugefügt werden. Außerdem wird dringend empfohlen, den UUID (Universally Unique IDentifier) in /etc/fstab zu verwenden, um auf das Laufwerk und nicht auf den Gerätenamen (d. h. auf /dev/sdc1) zu verweisen. Sie können das Hilfsprogramm **blkid** verwenden, um den UUID des neuen Laufwerks herauszufinden:
 	
 		# sudo -i blkid
 
@@ -117,7 +116,7 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 		/dev/sdc1: UUID="33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e" TYPE="ext4"
 
 
-	>[AZURE.NOTE] Eine falsche Bearbeitung der Datei **/etc/fstab** könnte zu einem nicht startfähigen System führen. Wenn Sie sich nicht sicher sind, finden Sie in der Dokumentation der Distribution Informationen zur korrekten Bearbeitung dieser Datei. Außerdem wird empfohlen, ein Backup der Datei /etc/fstab zu erstellen, bevor Sie sie bearbeiten.
+	>[AZURE.NOTE] Eine falsche Bearbeitung der Datei **/etc/fstab** könnte zu einem nicht startfähigen System führen. Wenn Sie sich nicht sicher sind, finden Sie in der Dokumentation der Verteilung Informationen zur korrekten Bearbeitung dieser Datei. Außerdem wird empfohlen, ein Backup der Datei "/etc/fstab" zu erstellen, bevor Sie sie bearbeiten.
 
 	Öffnen Sie als Nächstes die Datei **/etc/fstab** in einem Texteditor. Beachten Sie, dass "/etc/fstab" eine Systemdatei ist, sodass Sie  `sudo` zum Bearbeiten der Datei verwenden müssen. Beispiel:
 
@@ -136,14 +135,11 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 		# sudo umount /datadrive
 		# sudo mount /datadrive
 
-	Wenn der  `mount`-Befehl zu einem Fehler führt, prüfen Sie die Datei "/etc/fstab" auf korrekte Syntax. Wenn zusätzliche Datenlaufwerke oder Partitionen erstellt werden, müssen Sie diese ebenfalls einzeln in /etc/fstab einfügen.
+	Wenn der Befehl  `mount` zu einem Fehler führt, prüfen Sie die Datei "/etc/fstab" auf korrekte Syntax. Wenn zusätzliche Datenlaufwerke oder Partitionen erstellt werden, müssen Sie diese ebenfalls einzeln in "/etc/fstab" einfügen.
 
 
-	>[AZURE.NOTE] Wenn Sie später einen Datenträger entfernen, ohne fstab zu bearbeiteten, kann der Start des virtuellen Computers fehlschlagen. Für den Fall, dass dieses Problem häufiger auftritt, bieten die meisten Distributionen die fstab-Optionen  `nofail` und/oder  `nobootwait`, die einen Systemstart auch dann erlauben, wenn der Datenträger zur Startzeit nicht eingebunden werden kann. Weitere Informationen zu diesen Parametern finden Sie in der Dokumentation zu Ihrer Distribution.
+	>[AZURE.NOTE] Wenn Sie später einen Datenträger entfernen, ohne "fstab" zu bearbeiteten, kann der Start des virtuellen Computers fehlschlagen. Für den Fall, dass dieses Problem häufiger auftritt, bieten die meisten Verteilungen die fstab-Optionen  `nofail` und/oder  `nobootwait`, die einen Systemstart auch dann erlauben, wenn der Datenträger zur Startzeit nicht eingebunden werden kann. Weitere Informationen zu diesen Parametern finden Sie in der Dokumentation zu Ihrer Verteilung.
 
 [logonlinux]: ../virtual-machines-linux-how-to-log-on/
 
-
-
-
-<!--HONumber=42-->
+<!--HONumber=45--> 

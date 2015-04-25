@@ -530,4 +530,5 @@ Weitere Informationen finden Sie unter dem neuen Thema zur Verarbeitung von Kopf
 [CLI zum Verwalten von Mobile Services-Tabellen]: http://azure.microsoft.com/manage/linux/other-resources/command-line-tools/#Mobile_Tables
 
 
+
 <!--HONumber=42-->

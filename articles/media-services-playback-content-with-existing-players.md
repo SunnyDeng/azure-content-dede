@@ -25,14 +25,14 @@ Azure Media Services unterstützt zahlreiche gängige Streamingformate wie Smoot
 
 Dieses Thema zeigt die vorhandenen Player, mit denen Sie Ihre Inhalte wiedergeben können.
 
->[AZURE.NOTE]Für die Wiedergabe dynamisch paketierter oder verschlüsselter Inhalte müssen Sie sicherstellen, dass mindestens eine Streamingeinheit für den Streamingendpunkt abgerufen wurde, über den die Inhalte bereitgestellt werden sollen. Informationen zum Skalieren von Streamingeinheiten finden Sie unter: [Skalieren von Streamingeinheiten](../media-services-manage-origins#scale_streaming_endpoints).
+>[AZURE.NOTE]Für die Wiedergabe dynamisch paketierter oder verschlüsselter Inhalte müssen Sie sicherstellen, dass mindestens eine Streamingeinheit für den Streamingendpunkt abgerufen wurde, über den die Inhalte bereitgestellt werden sollen. Informationen zum Skalieren von Streamingeinheiten finden Sie unter: [Skalieren von Streamingeinheiten](media-services-manage-origins#scale_streaming_endpoints.md).
 
 
 ### Azure-Verwaltungsportal - Media Services-Inhaltsplayer
 
 Im **Azure-Verwaltungsportal** wird ein Inhaltsplayer bereitgestellt, mit dem Sie Ihre Videos testen können.
 
-Klicken Sie auf das gewünschte Video (stellen Sie sicher, dass dieses [veröffentlicht wurde](../media-services-manage-content#publish)), und klicken Sie auf die **Play**-Taste im unteren Bereich des Portals. 
+Klicken Sie auf das gewünschte Video (stellen Sie sicher, dass dieses [veröffentlicht wurde](media-services-manage-content#publish.md)), und klicken Sie auf die **Play**-Taste im unteren Bereich des Portals. 
  
 Folgende Überlegungen sollten berücksichtigt werden:
 
@@ -48,7 +48,7 @@ Verwenden Sie den [Azure Media Services-Player](http://amsplayer.azurewebsites.n
 
 ## Entwickeln von Videoplayern
 
-Informationen zum Entwickeln eigener Player finden Sie unter [Entwickeln von Videoplayern](../media-services-develop-video-players).
+Informationen zum Entwickeln eigener Player finden Sie unter [Entwickeln von Videoplayern](media-services-develop-video-players.md).
  
 [AMSPlayer]: ./media/media-services-players/media-services-portal-player.png
 <!--HONumber=47-->

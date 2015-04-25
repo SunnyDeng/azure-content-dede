@@ -26,15 +26,15 @@ Microsoft Azure Media Services stellt eine öffentliche Vorschau des **Media Enc
 
 Die folgenden Themen stellen nähere Informationen zum **Media Encoder Premium-Workflow** bereit: 
 
-- [Von Media Encoder Premium Workflow unterstützte Formate](../media-services-premium-workflow-encoder-formats) - Erläutert die von **Media Encoder Premium Workflow** unterstützten Dateiformate und Codecs.
+- [Von Media Encoder Premium Workflow unterstützte Formate](media-services-premium-workflow-encoder-formats.md) - Erläutert die von **Media Encoder Premium Workflow** unterstützten Dateiformate und Codecs.
 
-- Im Abschnitt [Encoder-Vergleich](../media-services-encode-asset#compare_encoders) werden die Codierungsfunktionen von**Media Encoder Premium Workflow** und **Azure Media Encoder** verglichen.
+- Im Abschnitt [Encoder-Vergleich](media-services-encode-asset#compare_encoders.md) werden die Codierungsfunktionen von**Media Encoder Premium Workflow** und **Azure Media Encoder** verglichen.
 
 Dieses Thema zeigt die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
 
 ## Codieren
 
-Das Codieren von Aufgaben für den **Media Encoder Premium Workflow** erfordert eine separate Konfigurationsdatei, die sogenannte Workflowdatei. Diese Dateien haben die Erweiterung .workflow werden mit dem [Workflow-Designer](../media-services-workflow-designer) erstellt.
+Das Codieren von Aufgaben für den **Media Encoder Premium Workflow** erfordert eine separate Konfigurationsdatei, die sogenannte Workflowdatei. Diese Dateien haben die Erweiterung .workflow werden mit dem [Workflow-Designer](media-services-workflow-designer.md) erstellt.
 
 Sie können die standardmäßigen Workflowdateien [hier](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows) abrufen. Der Ordner enthält auch Beschreibungen dieser Dateien.
 
@@ -59,7 +59,7 @@ Die Konfigurationszeichenfolge für diese Aufgabe sollte leer sein.
 
 6. Übermitteln des Codierungsauftrags.
 
-Im folgenden finden Sie ein vollständiges Beispiel. Informationen zur Einrichtung von Media Services für die .NET-Entwicklung finden Sie unter [Media Services-Entwicklung mit .NET](../media-services-dotnet-how-to-use).
+Im folgenden finden Sie ein vollständiges Beispiel. Informationen zur Einrichtung von Media Services für die .NET-Entwicklung finden Sie unter [Media Services-Entwicklung mit .NET](media-services-dotnet-how-to-use.md).
 
 
  	using System; 

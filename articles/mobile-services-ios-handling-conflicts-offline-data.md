@@ -472,4 +472,5 @@ Nebenbei haben Sie eine Hilfsklasse **QSUIAlertViewWithBlock** hinzugefügt, dam
 [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-ios-get-started-data/
 
 
+
 <!--HONumber=42-->

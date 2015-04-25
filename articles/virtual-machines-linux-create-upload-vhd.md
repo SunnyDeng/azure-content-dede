@@ -38,7 +38,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie über die folgenden Elemente 
 
 	**Wichtig**: Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
 
-	Eine Liste der bestätigten Verteilungen finden Sie unter [Linux auf Azure - unterstützte Verteilungen](../linux-endorsed-distributions). Alternativ dazu können Sie den Abschnitt am Ende dieses Artikels mit [Informationen zu nicht-bestätigten Verteilungen](../virtual-machines-linux-create-upload-vhd-generic) lesen.
+	Eine Liste der bestätigten Verteilungen finden Sie unter [Linux auf Azure - unterstützte Verteilungen](linux-endorsed-distributions.md). Alternativ dazu können Sie den Abschnitt am Ende dieses Artikels mit [Informationen zu nicht-bestätigten Verteilungen](virtual-machines-linux-create-upload-vhd-generic.md) lesen.
 
 - **Linux Azure-Befehlszeilentool**: Wenn Sie ein Linux-Betriebssystem zum Erstellen Ihres Images verwenden, können Sie die [Azure-Befehlszeilentools für Linux und Mac](http://go.microsoft.com/fwlink/?LinkID=253691&clcid=0x409) zum Hochladen der virtuellen Festplatte verwenden.
 
@@ -54,13 +54,13 @@ Diese Aufgabe umfasst die folgenden Schritte:
 
 ## <a id="prepimage"> </a>Schritt 1: Vorbereiten des hochzuladenden Images ##
 
-Microsoft Azure unterstützt eine Vielzahl von Linux-Verteilungen (siehe [Bestätigte Verteilungen](../linux-endorsed-distributions)). Die folgenden Artikel führen Sie durch die Vorbereitung der verschiedenen Linux-Verteilungen, die auf Azure unterstützt werden:
+Microsoft Azure unterstützt eine Vielzahl von Linux-Verteilungen (siehe [Bestätigte Verteilungen](linux-endorsed-distributions.md)). Die folgenden Artikel führen Sie durch die Vorbereitung der verschiedenen Linux-Verteilungen, die auf Azure unterstützt werden:
 
-- **[CentOS-basierte Verteilungen](../virtual-machines-linux-create-upload-vhd-centos)**
-- **[Oracle Linux](../virtual-machines-linux-create-upload-vhd-oracle)**
-- **[SLES und openSUSE](../virtual-machines-linux-create-upload-vhd-suse)**
-- **[Ubuntu](../virtual-machines-linux-create-upload-vhd-ubuntu)**
-- **[Sonstige - nicht bestätigte Verteilungen](../virtual-machines-linux-create-upload-vhd-generic)**
+- **[CentOS-basierte Verteilungen](virtual-machines-linux-create-upload-vhd-centos.md)**
+- **[Oracle Linux](virtual-machines-linux-create-upload-vhd-oracle.md)**
+- **[SLES und openSUSE](virtual-machines-linux-create-upload-vhd-suse.md)**
+- **[Ubuntu](virtual-machines-linux-create-upload-vhd-ubuntu.md)**
+- **[Sonstige - nicht bestätigte Verteilungen](virtual-machines-linux-create-upload-vhd-generic.md)**
 
 Beachten Sie auch die **[Installationshinweise für Linux](../virtual-machines-linux-create-upload-vhd-generic/#linuxinstall)**. Dort erhalten Sie weitere Tipps zur Vorbereitung der Linux-Images für Azure.
 
@@ -143,6 +143,7 @@ Führen Sie einen der folgenden Schritte aus:
 [Schritt 2: Erstellen eines Speicherkontos in Azure]: #createstorage
 [Schritt 3: Vorbereiten der Verbindung mit Azure]: #connect
 [Schritt 4: Hochladen des Image zu Azure]: #upload
+
 
 
 

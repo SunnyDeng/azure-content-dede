@@ -1,4 +1,4 @@
-﻿<properties 
+﻿<<properties 
 	pageTitle="Normal Distribution Web Service Suite | Azure" 
 	description="Normal Distribution Web Service Suite" 
 	services="machine-learning" 

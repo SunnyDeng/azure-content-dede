@@ -19,7 +19,7 @@
 
 # Skalieren der Codierung
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) .
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) .
 
 ## Übersicht
 
@@ -51,7 +51,7 @@ Führen Sie folgende Schritte aus, um den Typ reservierter Einheiten und die Anz
 
 ## Kontingente und Einschränkungen
 
-Informationen zu Kontingenten und Einschränkungen sowie zum Öffnen von Supporttickets finden Sie unter [Kontingente und Einschränkungen](../media-services-quotas-and-limitations).
+Informationen zu Kontingenten und Einschränkungen sowie zum Öffnen von Supporttickets finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
 
 
 

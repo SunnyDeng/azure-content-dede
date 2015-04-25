@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Azure-Cloud-Diensten und ASP.NET" 
 	description="Hier erfahren Sie, wie Sie mit ASP.NET MVC und Azure eine Anwendung mit mehreren Ebenen erstellen. Die Anwendung wird in einem Cloud-Dienst mit Webrolle und Workerrolle ausgeführt. Sie verwendet Entity Framework, SQL-Datenbank und Azure-Speicherwarteschlangen und Blobs." 
 	services="cloud-services, storage" 

@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Aktivieren von Remotedebugging mit kontinuierlicher Zustellung" 
 	description="Hier erfahren Sie, wie Sie Remotedebugging aktivieren, wenn kontinuierliche Zustellung für die Bereitstellung in Azure verwendet wird." 
 	services="cloud-services" 
@@ -17,7 +17,7 @@
 	ms.author="kempb"/>
 # Aktivieren von Remotedebuggen, wenn kontinuierliche Zustellung für die Veröffentlichung in Azure verwendet wird
 
-Sie können mithilfe folgender Schritte Remotedebuggen in Azure aktivieren, wenn Sie [kontinuierliche Zustellung](http://azure.microsoft.com/documentation/articles/cloud-services-dotnet-continuous-delivery/) für die Veröffentlichung in Azure verwenden.
+Sie können mithilfe folgender Schritte Remotedebuggen in Azure aktivieren, wenn Sie [kontinuierliche Zustellung](http://azure.microsoft.com/ documentation/articles/cloud-services-dotnet-continuous-delivery/) für die Veröffentlichung in Azure verwenden.
 
 In diesem Thema:
 
@@ -39,7 +39,7 @@ In diesem Thema:
 
 <h2> <a name="virtualmachine"></a>Aktivieren von Remotedebuggen für virtuelle Computer</h2>
 
-1. Erstellen Sie einen virtuellen Azure-Computer. Informationen finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](http://azure.microsoft.com/documentation/articles/virtual-machines-windows-tutorial/) oder [Erstellen virtueller Azure-Computer in Visual Studio](http://msdn.microsoft.com/library/azure/dn569263.aspx).
+1. Erstellen Sie einen virtuellen Azure-Computer. Informationen finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](http://azure.microsoft.com/ documentation/articles/virtual-machines-windows-tutorial/) oder [Erstellen virtueller Azure-Computer in Visual Studio](http://msdn.microsoft.com/library/azure/dn569263.aspx).
 2. Sehen Sie sich auf der [Azure-Portalseite](http://go.microsoft.com/fwlink/p/?LinkID=269851) das Dashboard des virtuellen Computers an, um den RDP-Zertifikatfingerabdruck des virtuellen Computers anzuzeigen. Dies wird für den ServerThumbprint-Wert in der Erweiterungskonfiguration verwendet.
 3. Erstellen Sie ein Clientzertifikat, wie in [Erstellen eines Dienstzertifikats für Azure](http://msdn.microsoft.com/library/azure/gg432987.aspx) gezeigt (behalten Sie die .pfx-Datei und den RDP-Zertifikatfingerabdruck bei).
 4. Installieren Sie [Azure Powershell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) (Version 0.7.4 oder höher) aus dem Microsoft Download Center.

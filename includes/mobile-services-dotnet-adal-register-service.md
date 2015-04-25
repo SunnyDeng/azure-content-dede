@@ -38,4 +38,6 @@ In diesem Abschnitt registrieren Sie den mobilen Dienst in Azure Active Director
 <!-- URLs. -->
 [Registrieren bei Azure Active Directory]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-\<!--HONumber=42-->
+
+
+<!--HONumber=42-->

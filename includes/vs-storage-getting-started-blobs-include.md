@@ -94,4 +94,5 @@ Wenn Sie einen BLOB löschen möchten, rufen Sie zuerst einen Verweis auf den BL
 [Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/)
 Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
 
+
 <!--HONumber=42-->

@@ -18,7 +18,7 @@
 
 # Vorgehensweise: Prüfen des Auftragsfortschritts
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
 
 Beim Ausführen von Aufträgen ist es nützlich, deren Fortschritt verfolgen zu können. Sie können den Auftragsstatus mithilfe der State-Eigenschaft des Auftrags feststellen. Weitere Informationen zur State-Eigenschaft finden Sie unter [Eigenschaften von Auftragsentitäten](https://msdn.microsoft.com/library/azure/5100ddd7-92ff-4c37-84d2-4f84fee250a7#job_entity_properties).
 

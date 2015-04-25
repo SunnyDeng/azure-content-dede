@@ -3,7 +3,7 @@
 	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten (iOS)." 
 	services="notification-hubs" 
 	documentationCenter="ios" 
-	authors="ysxu" 
+	authors="wesmc7777" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,23 +13,17 @@
 	ms.tgt_pltfrm="" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="10/10/2014" 
-	ms.author="yuaxu"/>
+	ms.date="02/26/2015" 
+	ms.author="wesmc"/>
 # Verwenden von Notification Hubs zum Senden von lokalisierten Nachrichten an iOS-Geräte
 
 <div class="dev-center-tutorial-selector sublanding">
-    	<a href="/de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/" title="Windows Store C#">Windows Store C#</a><a href="/de-de/documentation/articles/notification-hubs-ios-send-localized-breaking-news/" title="iOS" class="current">iOS</a>
+    	<a href="/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/" title="Windows Store C#">Windows Store C#</a><a href="/documentation/articles/notification-hubs-ios-send-localized-breaking-news/" title="iOS" class="current">iOS</a>
 </div>
 
+##Übersicht
 
 In diesem Thema wird gezeigt, wie Sie mit der **Vorlagen**-Funktion von Azure Notification Hubs Benachrichtigungen senden können, die je nach Sprache und Gerät lokalisiert wurden. In diesem Lernprogramm beginnen Sie mit der Windows Store-App, die Sie in [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] erstellt haben. Sie werden anschließend in der Lage sein, sich für Kategorien zu registrieren, die Sie interessieren, eine Sprache für die Benachrichtigungen auszuwählen und nur Pushbenachrichtigungen für diese Kategorien in der jeweiligen Sprache zu empfangen.
-
-In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung dieses Szenarios behandelt:
-
-1. [Konzepte von Vorlagen]
-2. [Die App-Benutzeroberfläche]
-3. [Erstellen der iOS-App]
-4. [Senden von Benachrichtigungen von Ihrem Back-End aus]
 
 
 Dieses Szenario besteht aus zwei Teilen:
@@ -40,7 +34,7 @@ Dieses Szenario besteht aus zwei Teilen:
 
 
 
-##Voraussetzungen ##
+##Voraussetzungen
 
 Sie müssen zuvor das Lernprogramm [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] abschließen und den Code verfügbar haben, da dieses Lernprogramm direkt auf dem Code aufbaut.
 
@@ -48,7 +42,7 @@ Außerdem benötigen Sie Visual Studio 2012.
 
 
 
-<h2><a name="concepts"></a>Konzepte von Vorlagen</h2>
+##Konzepte von Vorlagen
 
 Im Lernprogramm [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] haben Sie eine App erstellt, in der Benutzer mit **tags** Nachrichten aus verschiedenen Kategorien abonnieren können.
 Viele Apps richten sich jedoch an verschiedene Märkte und müssen lokalisiert werden. In diesen Fällen muss auch der Inhalt der Benachrichtigungen lokalisiert und an die korrekten Geräte ausgeliefert werden.
@@ -72,9 +66,9 @@ Anschließend stellen wir sicher, dass sich die Geräte mit einer Vorlage regist
 		}
 	}
 
-Vorlagen sind ein mächtiges Werkzeug, und Sie finden weitere Informationen in unserem [Notification Hubs-Leitfaden]. Eine Referenz für die Vorlagenausdruckssprache finden Sie unter [Vorgehensweise: Service Bus Notification Hubs (iOS-Apps)].
+Vorlagen sind ein mächtiges Werkzeug, und Sie finden weitere Informationen in unserem [Notification Hubs-Leitfaden].Eine Referenz für die Vorlagenausdruckssprache finden Sie unter [Vorgehensweise: Service Bus Notification Hubs (iOS-Apps)](Gewusst wie: Service Bus Notification Hubs (iOS-Apps).
 
-<h2><a name="ui"></a>Die App-Benutzeroberfläche</h2>
+##Die App-Benutzeroberfläche
 
 Wir werden nun die App zu aktuellen Nachrichten aus dem Thema [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] so modifizieren, dass aktuelle Nachrichten mit Vorlagen verschickt werden.
 
@@ -87,11 +81,11 @@ Fügen Sie dann auf jeden Fall wie unten gezeigt ein IBOutlet in "ViewController
 
 ![][14]
 
-<h2><a name="building-client"></a><span class="building app">App-Benutzeroberfläche</span>Erstellen der iOS-App</h2>
+##Erstellen der iOS-App
 
-Um lokalisierte Nachrichten empfangen zu können, müssen Sie die  *native*-Registrierungen (d. h. die Registrierungen, in denen Sie eine Vorlage angeben) durch Vorlagenregistrierungen ersetzen.
+Um lokalisierte Nachrichten empfangen zu können, müssen Sie die *native*-Registrierungen (d. h. die Registrierungen, in denen Sie eine Vorlage angeben) durch Vorlagen-Registrierungen ersetzen.
 
-1. Fügen Sie in "Notification.h" die  *retrieveLocale*-Methode hinzu. Ändern Sie dann die store- und subscribe-Methoden wie unten gezeigt:
+1. Fügen Sie in "Notification.h" die *retrieveLocale*-Methode hinzu. Ändern Sie dann die Methoden "store" und "subscribe" wie unten gezeigt:
 
 		- (void) storeCategoriesAndSubscribeWithLocale:(int) locale categories:(NSSet*) categories completion: (void (^)(NSError* error))completion;
 
@@ -101,7 +95,7 @@ Um lokalisierte Nachrichten empfangen zu können, müssen Sie die  *native*-Regi
 
 		- (int) retrieveLocale;
 
-	Ändern Sie in "Notification.m" die  *storeCategoriesAndSubscribe*-Methode, indem Sie den locale-Parameter hinzufügen und ihn in den Benutzerstandards speichern:
+	Ändern Sie in "Notification.m" die *storeCategoriesAndSubscribe*-Methode, indem Sie den "locale"-Parameter hinzufügen und ihn in den Benutzerstandards speichern:
 
 		- (void) storeCategoriesAndSubscribeWithLocale:(int) locale categories:(NSSet *)categories completion:(void (^)(NSError *))completion {
 		    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -112,7 +106,7 @@ Um lokalisierte Nachrichten empfangen zu können, müssen Sie die  *native*-Regi
 		    [self subscribeWithLocale: locale categories:categories completion:completion];
 		}
 
-	Ändern Sie dann die  *subscribe*-Methode, um das Gebietsschema einzuschließen:
+	Ändern Sie dann die *subscribe*-Methode, um das Gebietsschema einzuschließen:
 
 		- (void) subscribeWithLocale: (int) locale categories:(NSSet *)categories completion:(void (^)(NSError *))completion{
 		    SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:@"<connection string>" notificationHubPath:@"<hub name>"];
@@ -135,7 +129,7 @@ Um lokalisierte Nachrichten empfangen zu können, müssen Sie die  *native*-Regi
 		    [hub registerTemplateWithDeviceToken:self.deviceToken name:@"newsTemplate" jsonBodyTemplate:template expiryTemplate:@"0" tags:categories completion:completion];
 		}
 
-	Beachten Sie, dass jetzt die  *registerTemplateWithDeviceToken*-Methode statt der  *registerNativeWithDeviceToken*-Methode verwendet wird. Bei der Registrierung für eine Vorlage muss die json-Vorlage und ein Name für die Vorlage bereitgestellt werden (da die App möglicherweise unterschiedliche Vorlagen registrieren möchte). Registrieren Sie Ihre Kategorien auf jeden Fall als Tags, da Sie so sicherstellen, dass Sie Benachrichtigungen für diese Nachrichten erhalten.
+	Beachten Sie, dass jetzt die *registerTemplateWithDeviceToken*-Methode anstelle von *registerNativeWithDeviceToken* verwendet wird. Bei der Registrierung für eine Vorlage muss die json-Vorlage und ein Name für die Vorlage bereitgestellt werden (da die App möglicherweise unterschiedliche Vorlagen registrieren möchte). Registrieren Sie Ihre Kategorien auf jeden Fall als Tags, da Sie so sicherstellen, dass Sie Benachrichtigungen für diese Nachrichten erhalten.
 
 	Fügen Sie schließlich eine Methode hinzu, um das Gebietsschema aus den Benutzerstandardeinstellungen abzurufen:
 
@@ -147,11 +141,11 @@ Um lokalisierte Nachrichten empfangen zu können, müssen Sie die  *native*-Regi
 		    return locale < 0?0:locale;
 		}
 
-3. Da die Benachrichtigungsklasse jetzt geändert wurde, müssen Sie sicherstellen, dass der ViewController das neue UISegmentControl verwendet. Fügen Sie in der  *viewDidLoad*-Methode die folgende Zeile hinzu, um sicherzustellen, dass das aktuell ausgewählte Gebietsschema angezeigt wird:
+3. Da die Benachrichtigungsklasse jetzt geändert wurde, müssen Sie sicherstellen, dass der ViewController das neue UISegmentControl verwendet. Fügen Sie in der *viewDidLoad*-Methode die folgende Zeile hinzu, um sicherzustellen, dass das aktuell ausgewählte Gebietsschema angezeigt wird:
 
 		self.Locale.selectedSegmentIndex = [notifications retrieveLocale];
 
-	Ändern Sie dann in der  *subscribe*-Methode den Aufruf von  *storeCategoriesAndSubscribe* in Folgendes:
+	Ändern Sie dann in der *subscribe*-Methode den Aufruf von *storeCategoriesAndSubscribe* in Folgendes:
 
 		[notifications storeCategoriesAndSubscribeWithLocale: self.Locale.selectedSegmentIndex categories:[NSSet setWithArray:categories] completion: ^(NSError* error) {
 	        if (!error) {
@@ -164,7 +158,7 @@ Um lokalisierte Nachrichten empfangen zu können, müssen Sie die  *native*-Regi
 	        }
 	    }];
 
-4. Schließlich müssen Sie die  *didRegisterForRemoteNotificationsWithDeviceToken*-Methode in "AppDelegate.m" aktualisieren, damit Ihre Registrierung beim Starten der App korrekt aktualisiert wird. Ändern Sie den Aufruf der  *subscribe*-Methode für Benachrichtigungen folgendermaßen:
+4. Schließlich müssen Sie die *didRegisterForRemoteNotificationsWithDeviceToken*-Methode in "AppDelegate.m" aktualisieren, damit Ihre Registrierung beim Starten der App korrekt aktualisiert wird. Ändern Sie den Aufruf der *subscribe*-Methode für Benachrichtigungen folgendermaßen:
 
 		NSSet* categories = [notifications retrieveCategories];
 	    int locale = [notifications retrieveLocale];
@@ -174,7 +168,7 @@ Um lokalisierte Nachrichten empfangen zu können, müssen Sie die  *native*-Regi
 	        }
 	    }];
 
-<h2><a name="send"></a>Senden von lokalisierten Benachrichtigungen von Ihrem Back-End aus</h2>
+##Senden von lokalisierten Benachrichtigungen von Ihrem Back-End aus
 
 [AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
 
@@ -187,27 +181,14 @@ Weitere Informationen zum Verwenden von Vorlagen finden Sie unter:
 - [Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services]
 - [Notification Hubs-Leitfaden]
 
-Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification Hub-Informationen für iOS].
+Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification Hub-Informationen für iOS][Notification Hubs - Anleitungen für iOS].
 
 
 
 
-<!-- Anchors. -->
-[Konzepte von Vorlagen]: #concepts
-[Die App-Benutzeroberfläche]: #ui
-[Erstellen der iOS-App]: #building-client
-[Senden von Benachrichtigungen von Ihrem Back-End aus]: #send
-[Nächste Schritte]: #next-steps
+
 
 <!-- Images. -->
-
-
-
-
-
-
-
-
 
 [13]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized1.png
 [14]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
@@ -218,26 +199,26 @@ Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification 
 
 
 <!-- URLs. -->
-[Vorgehensweise: Service Bus Notification Hubs (iOS-Apps)]: http://msdn.microsoft.com/library/jj927168.aspx
-[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: /de-de/manage/services/notification-hubs/breaking-news-ios
-[Mobile Service]: /de-de/develop/mobile/tutorials/get-started
-[Benachrichtigen von Benutzern mit Notification Hubs: ASP.NET]: /de-de/manage/services/notification-hubs/notify-users-aspnet
-[Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services]: /de-de/manage/services/notification-hubs/notify-users
+[Gewusst wie: Service Bus Notification Hubs (iOS-Apps)]: http://msdn.microsoft.com/library/jj927168.aspx
+[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: /manage/services/notification-hubs/breaking-news-ios
+[Mobile Service]: /develop/mobile/tutorials/get-started
+[Benachrichtigen von Benutzern mit Notification Hubs: ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
+[Benachrichtigen von Benutzern mit Notification Hubs: Mobile Services]: /manage/services/notification-hubs/notify-users
 [Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started/#create-new-service
-[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-ios
-[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-ios
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-ios
-[Senden von Pushbenachrichtigungen an App-Benutzer]: /de-de/develop/mobile/tutorials/push-notifications-to-users-ios
-[Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-ios
-[JavaScript und HTML]: /de-de/develop/mobile/tutorials/get-started-with-push-js.md
+[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Erste Schritte mit Daten]: /develop/mobile/tutorials/get-started-with-data-ios
+[Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-ios
+[Erste Schritte mit Pushbenachrichtigungen]: /develop/mobile/tutorials/get-started-with-push-ios
+[Senden von Pushbenachrichtigungen an App-Benutzer]: /develop/mobile/tutorials/push-notifications-to-users-ios
+[Autorisieren von Benutzern mit Skripts]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
+[JavaScript und HTML]: /develop/mobile/tutorials/get-started-with-push-js.md
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Registrierungsschritte zu Windows Developer Preview für Mobile Services]: ../HowTo/mobile-services-windows-developer-preview-registration.md
+[Registrierungsschritte zu Windows Developer Preview für Mobile Services]: mobile-services-windows-developer-preview-registration.md
 [wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hub-Informationen für iOS]: http://msdn.microsoft.com/library/jj927168.aspx
+[Notification Hubs - Anleitungen für iOS]: http://msdn.microsoft.com/library/jj927168.aspx
 
-<!--HONumber=45--> 
+<!--HONumber=49-->

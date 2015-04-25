@@ -27,7 +27,7 @@ Dieses Tool kann auch zum Ändern [vorhandener Workflows](#existing_workflows) e
 >[AZURE.NOTE]Um eine Kopie des Workflow-Designer-Tools zu erhalten, wenden Sie sich an mepd@microsoft.com.
 
 
-Sobald eine Workflowdatei erstellt wurde, kann sie als Medienobjekt hochgeladen werden und anschließend zum Codieren von Mediendateien verwendet werden. Informationen zum Codieren mit **Media Encoder Premium Workflow** unter Verwendung von **.NET** finden Sie im Thema [Erweiterte Codierung mit dem Media Encoder Premium Workflow](../media-services-encode-with-premium-workflow).
+Sobald eine Workflowdatei erstellt wurde, kann sie als Medienobjekt hochgeladen werden und anschließend zum Codieren von Mediendateien verwendet werden. Informationen zum Codieren mit **Media Encoder Premium Workflow** unter Verwendung von **.NET** finden Sie im Thema [Erweiterte Codierung mit dem Media Encoder Premium Workflow](media-services-encode-with-premium-workflow.md).
 
 ## <a id="existing_workflows"></a>Ändern vorhandener Workflows
 

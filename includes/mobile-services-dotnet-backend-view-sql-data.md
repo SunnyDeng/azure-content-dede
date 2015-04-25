@@ -12,4 +12,6 @@ Der letzte optionale Schritt dieses Lernprogramms besteht darin, die mit dem mob
     ![query SQL Database for stored items](./media/mobile-services-dotnet-backend-view-sql-data/sql-azure-query.png)
 
 	Beachten Sie, dass die Tabelle die Spalten "Id", "__createdAt", "__updatedAt" und "__version" enthält. Diese Spalten unterstützen die Synchronisierung von Offlinedaten und sind in der Basisklasse [EntityData](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.entitydata.aspx) implementiert. Weitere Informationen finden Sie unter [Erste Schritte mit der Synchronisierung von Offlinedaten].
-\<!--HONumber=42-->
+
+
+<!--HONumber=42-->

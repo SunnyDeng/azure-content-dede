@@ -33,7 +33,7 @@ Sie benötigen Folgendes, um den Code in diesem Artikel ausführen zu können:
 3. Falls Sie Eclipse für diese Java-Anwendung verwenden, können Sie die SendGrid-Bibliotheken mit der Bereitstellungs-Assembly-Funktion von Eclipse in Ihre Bereitstellungsdatei (WAR) einbinden. Falls Sie Eclipse für diese Java-Anwendung nicht verwenden, müssen Sie sicherstellen, dass die Bibliotheken in derselben Azure-Rolle enthalten sind wie Ihre Java-Anwendung und dass Sie diese zum Classpath Ihrer Anwendung hinzugefügt haben.
 
 
-Außerdem benötigen Sie einen Benutzernamen und ein Kennwort für SendGrid, um E-Mails zu verschicken. Hinweise zu ersten Schritten mit SendGrid finden Sie unter [Senden von E-Mails mit SendGrid aus Java](../store-sendgrid-java-how-to-send-email).
+Außerdem benötigen Sie einen Benutzernamen und ein Kennwort für SendGrid, um E-Mails zu verschicken. Hinweise zu ersten Schritten mit SendGrid finden Sie unter [Senden von E-Mails mit SendGrid aus Java](store-sendgrid-java-how-to-send-email.md).
 
 Außerdem sollten Sie sich mit den Informationen unter [Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse](http://msdn.microsoft.com/library/windowsazure/hh690944) oder mit anderen Techniken zum Hosten von Java-Anwendungen in Azure vertraut machen, falls Sie Eclipse nicht verwenden.
 
@@ -215,7 +215,7 @@ Dieser Code zeigt, wie Sie SendGrid mit Java in Azure verwenden können. Bevor S
 
 * Anstelle eines Web-Formulars könnten Sie auch Azure-Speicher-Blobs oder SQL Database zum Speichern von E-Mail-Adressen und -Nachrichten verwenden. Weitere Informationen zur Verwendung von Azure-Speicher-Blobs in Java finden Sie unter [Verwenden des Blob-Speicherdiensts in Java](http://www.windowsazure.com/develop/java/how-to-guides/blob-storage/). Informationen zur Verwendung von SQL-Datenbank in Java finden Sie unter [Verwenden von SQL-Datenbank in Java](http://www.windowsazure.com/develop/java/how-to-guides/using-sql-azure-in-java/).
 * Sie können  `RoleEnvironment.getConfigurationSettings` verwenden, um den SendGrid-Benutzernamen und das Kennwort aus den Konfigurationseinstellungen Ihrer Bereitstellung abzurufen, anstatt diese Werte mithilfe des Webformulars abzurufen. Weitere Informationen zur  `RoleEnvironment`-Klasse finden Sie unter [Verwenden der Azure-Dienst-Runtimebibliothek in JSP](http://msdn.microsoft.com/library/windowsazure/hh690948) und in der Dokumentation zur Azure-Dienst-Runtimebibliothek unter <http://dl.windowsazure.com/javadoc>.
-* Weitere Informationen zur Verwendung von SendGrid in Java finden Sie unter [Senden von E-Mails mit SendGrid aus Java](../store-sendgrid-java-how-to-send-email)..
+* Weitere Informationen zur Verwendung von SendGrid in Java finden Sie unter [Senden von E-Mails mit SendGrid aus Java](store-sendgrid-java-how-to-send-email.md)..
 
 [emailform]: ./media/store-sendgrid-java-how-to-send-email-example/SendGridJavaEmailform.jpg
 [emailsent]: ./media/store-sendgrid-java-how-to-send-email-example/SendGridJavaEmailSent.jpg

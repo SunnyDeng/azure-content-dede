@@ -218,4 +218,5 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 [SharePoint Online]: http://office.microsoft.com/de-de/sharepoint/
 [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
 
+
 <!--HONumber=42-->

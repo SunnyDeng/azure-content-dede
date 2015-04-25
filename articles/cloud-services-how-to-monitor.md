@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Überwachen eines Cloud-Diensts - Azure" 
 	description="Hier erfahren Sie mehr über die Überwachung von Cloud-Diensten im Azure-Verwaltungsportal." 
 	services="cloud-services" 

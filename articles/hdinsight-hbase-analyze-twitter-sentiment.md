@@ -1364,4 +1364,5 @@ In diesem Artikel haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von T
 [hdinsight-power-query]: ../hdinsight-connect-excel-power-query/
 [hdinsight-hive-odbc]: ../hdinsight-connect-excel-hive-ODBC-driver/
 
+
 <!--HONumber=42-->

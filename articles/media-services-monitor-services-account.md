@@ -22,7 +22,7 @@
 
 # <a id="monitormediaservicesaccount"></a>Überwachen eines Media Services-Kontos
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md). 
 
 Das Azure Media Services-Dashboard stellt Nutzungsmetriken und Kontoinformationen dar, die Sie zum Verwalten Ihres Media Services-Konto verwenden können.
 

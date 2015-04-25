@@ -19,7 +19,7 @@
 
 # Vorgehensweise: Dynamisches Verschlüsseln eines Medienobjekts mit PlayReady oder AES-128
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) and [Media Services Live Streaming workflow](../media-services-live-streaming-workflow) .
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) and [Media Services Live Streaming workflow](media-services-live-streaming-workflow.md) .
   
 ## Übersicht
 

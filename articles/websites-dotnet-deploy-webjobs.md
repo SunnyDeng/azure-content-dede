@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Bereitstellen von Webaufträgen mit Visual Studio" 
 	description="Erfahren Sie, wie Sie Azure-Wenaufträge mithilfe von Visual Studio in Azure App Service-Web-Apps bereitstellen." 
 	services="app-service\web" 
@@ -74,7 +74,7 @@ Sie haben zwei Möglichkeiten:
 
 	![Selecting project in Add Azure WebJob dialog](./media/websites-dotnet-deploy-webjobs/aaw1.png)
 
-2. Vervollständigen Sie das Dialogfeld [Azure-Webauftrag hinzufügen],(#configure) und klicken Sie dann auf **OK**. 
+2. Vervollständigen Sie das Dialogfeld [Azure-Webauftrag hinzufügen](#configure), und klicken Sie dann auf **OK**. 
 
 ### <a id="convertnolink"></a> Aktivieren der Bereitstellung von Webaufträgen ohne Webprojekt
   	
@@ -84,9 +84,9 @@ Sie haben zwei Möglichkeiten:
 	
 	Das Dialogfeld [Azure-Webauftrag hinzufügen](#configure) wird mit dem Projekt angezeigt, das im Feld **Projektname** ausgewählt ist.
 
-2.  Vervollständigen Sie das Dialogfeld [Azure-Webauftrag hinzufügen],(#configure) und klicken Sie dann auf **OK**.
+2.  Vervollständigen Sie das Dialogfeld [Azure-Webauftrag hinzufügen](#configure), und klicken Sie dann auf **OK**.
 
-	Der Assistent **Web veröffentlichen** wird angezeigt.  Wenn Sie keine sofortige Veröffentlichung wünschen, schließen Sie den Assistenten. Die eingegebenen Einstellungen werden für den Zeitpunkt der gewünschten [Bereitstellung des Projekts] gespeichert.(#deploy).
+	Der Assistent **Web veröffentlichen** wird angezeigt.  Wenn Sie keine sofortige Veröffentlichung wünschen, schließen Sie den Assistenten. Die eingegebenen Einstellungen werden für den Zeitpunkt der gewünschten [Bereitstellung des Projekts](#deploy) gespeichert..
 
 ## <a id="create"></a>Erstellen eines neuen webauftragsfähigen Projekts
 
@@ -109,7 +109,7 @@ In der SDK-Version 2.4 bietet die Webauftragsvorlage "new-project" keine wesentl
 
 	![New Project dialog showing WebJob template](./media/websites-dotnet-deploy-webjobs/np.png)
 	
-2. Befolgen Sie die zuvor gezeigten Anweisungen, um das [Konsolenanwendungsprojekt als unabhängiges Webauftragsprojekt] zu erstellen.(#convertnolink).
+2. Befolgen Sie die zuvor gezeigten Anweisungen, um das [Konsolenanwendungsprojekt als unabhängiges Webauftragsprojekt](#convertnolink) zu erstellen..
 
 ### <a id="createlink"></a> Verwenden der Webauftragsvorlage "new-project" für einen mit einem Webprojekt verknüpften Webauftrag
 
@@ -119,7 +119,7 @@ In der SDK-Version 2.4 bietet die Webauftragsvorlage "new-project" keine wesentl
 
 	Das Dialogfeld [Azure-Webauftrag hinzufügen](#configure) angezeigt.
 
-2. Vervollständigen Sie das Dialogfeld [Azure-Webauftrag hinzufügen],(#configure) und klicken Sie dann auf **OK**.
+2. Vervollständigen Sie das Dialogfeld [Azure-Webauftrag hinzufügen](#configure), und klicken Sie dann auf **OK**.
 
 ## <a id="configure"></a>Das Dialogfeld "Azure-Webauftrag hinzufügen"
 
@@ -127,7 +127,7 @@ Im Dialogfeld **Azure-Webauftrag hinzufügen** können Sie den Namen des Webauft
 
 ![Add Azure WebJob dialog](./media/websites-dotnet-deploy-webjobs/aaw2.png)
 
-The fields in this dialog correspond to fields on the **New Job** dialog of the Azure Management Portal. For more information, see [Run Background tasks with WebJobs](web-sites-create-web-jobs.md).
+Die Felder in diesem Dialogfeld entsprechen den Feldern im Dialogfeld **Neuer Auftrag** im Azure-Verwaltungsportal. Weitere Informationen finden Sie unter [Run Background tasks with WebJobs](web-sites-create-web-jobs.md).
 
 Für geplante Webaufträge (nicht für kontinuierliche Webaufträge) erstellt Visual Studio eine [Azure Scheduler](/services/scheduler/)-Auftragssammlung, sofern noch nicht vorhanden, und einen Auftrag in der Sammlung:
 

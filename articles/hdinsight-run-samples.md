@@ -88,4 +88,5 @@ In diesem Artikel und den Artikeln zu den einzelnen Beispielen haben Sie gelernt
 [hdinsight-use-hive]: ../hdinsight-use-hive/
 [hdinsight-use-pig]: ../hdinsight-use-pig/
 
+
 <!--HONumber=42-->

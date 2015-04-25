@@ -722,4 +722,5 @@ In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsi
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png
 
 [apache-hive]: http://hive.apache.org/
+
 <!--HONumber=42-->

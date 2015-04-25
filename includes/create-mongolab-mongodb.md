@@ -33,4 +33,5 @@ Zum Erstellen einer MongoDB-Datenbank aus dem [Azure Store] gehen Sie folgenderm
 [waws]: /de-de/manage/services/web-sites/
 [Azure Store]: /de-de/store/overview/
 [Portal]: http://windows.azure.com/
+
 <!--HONumber=42-->

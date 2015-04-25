@@ -19,7 +19,7 @@
 
 # Skalieren eines Mediendiensts  
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow).
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
 
 ## Übersicht
 
@@ -27,7 +27,7 @@ Sie können Mediendienste skalieren, indem Sie die Anzahl **reservierter Einheit
 
 ## Reservierte Einheiten für das Streaming
 
-Weitere Informationen finden Sie unter [Skalieren von Streamingeinheiten](../media-services-manage-origins#scale_streaming_endpoints).
+Weitere Informationen finden Sie unter [Skalieren von Streamingeinheiten](media-services-manage-origins#scale_streaming_endpoints.md).
 
 ## <a id="encoding_reserved_units"></a>Für das Codieren reservierte Einheiten
 

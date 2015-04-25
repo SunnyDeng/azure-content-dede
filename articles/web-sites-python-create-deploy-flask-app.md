@@ -23,7 +23,7 @@
 
 In diesem Lernprogramm werden die ersten Schritte bei der Ausführung von Python auf Azure-Websites beschrieben.  Azure-Websites bieten uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden!  Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
 
-Sie erstellen eine Anwendung mit dem Webframework Flask (siehe auch alternative Versionen dieses Lernprogramms für [Django](../web-sites-python-create-deploy-django-app) und [Bottle](../web-sites-python-create-deploy-bottle-app)).  Sie erstellen die Website aus dem Azure-Katalog, richten die Git-Bereitstellung ein und klonen das Repository lokal.  Dann führen Sie die Anwendung lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen in Azure.  Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
+Sie erstellen eine Anwendung mit dem Webframework Flask (siehe auch alternative Versionen dieses Lernprogramms für [Django](web-sites-python-create-deploy-django-app.md) und [Bottle](web-sites-python-create-deploy-bottle-app.md)).  Sie erstellen die Website aus dem Azure-Katalog, richten die Git-Bereitstellung ein und klonen das Repository lokal.  Dann führen Sie die Anwendung lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen in Azure.  Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -424,6 +424,7 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 <!--External Link references-->
 [Python Tools für Visual Studio - Dokumentation]: http://pytools.codeplex.com/documentation 
 [Dokumentation zu Flask]: http://flask.pocoo.org/ 
+
 
 
 

@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Tätigen eines Telefonanrufs über Twilio (PHP) - Azure" 
 	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Beispiele sind für eine PHP-Anwendung vorgesehen." 
 	documentationCenter="php" 

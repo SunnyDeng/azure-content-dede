@@ -405,4 +405,5 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
   [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/windowsazure/gg433040.aspx
   [Node.js Web Application]: http://azure.microsoft.com/develop/nodejs/tutorials/getting-started/
  
+
 <!--HONumber=42-->

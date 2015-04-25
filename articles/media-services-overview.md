@@ -36,7 +36,7 @@ Das folgende Poster zeigt Azure Media Services-Workflows, von der Medienerstellu
 
 ## Konzepte
 
-Weitere Informationen finden Sie unter [Konzepte](../media-services-concepts).
+Weitere Informationen finden Sie unter [Konzepte](media-services-concepts.md).
 
 ## Auswählen der Medienfunktionen
 
@@ -126,7 +126,7 @@ Die folgende Tabelle zeigt jeden Gerätetyp sowie die Clienttechnologien, die vo
 1. Veröffentlichen Sie das Medienobjekt.
 1. Führen Sie einen progressiven Download der Inhalte durch.
 
-[Media Services-VoD (Video on Demand)](../media-services-video-on-demand-workflow) enthält Links zu Themen, die zeigen, wie die oben genannten Aufgaben ausgeführt werden.
+[Media Services-VoD (Video on Demand)](media-services-video-on-demand-workflow.md) enthält Links zu Themen, die zeigen, wie die oben genannten Aufgaben ausgeführt werden.
 
 ### Livestreaming
 
@@ -142,7 +142,7 @@ Die folgende Tabelle zeigt jeden Gerätetyp sowie die Clienttechnologien, die vo
 1. Beenden Sie das Programm, wenn Sie Streaming und Archivierung für das Ereignis beenden möchten.
 1. Löschen Sie das Programm (und optional das Medienobjekt).
 
-[Media Services-Livestreaming](../media-services-live-streaming-wrokflow) enthält Links zu Themen, die zeigen, wie die oben genannten Aufgaben ausgeführt werden.
+[Media Services-Livestreaming](media-services-live-streaming-wrokflow.md) enthält Links zu Themen, die zeigen, wie die oben genannten Aufgaben ausgeführt werden.
 
 ## Clients
 
@@ -157,7 +157,7 @@ Azure Media Services stellt die Tools zur Verfügung, die zum Erstellen leistung
 - Erstellen von Videoanwendungen unter Windows 8 
 - [Entwickeln von Videoanwendungen für XBox](http://xbox.create.msdn.com/) 
 
-Weitere Informationen finden Sie unter [Entwickeln von Videoplayeranwendungen](../media-services-develop-video-players)
+Weitere Informationen finden Sie unter [Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md)
 
 ## Muster & Leitfäden
 

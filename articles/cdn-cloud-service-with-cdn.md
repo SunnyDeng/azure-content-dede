@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Integrieren eines Cloud-Diensts in Azure CDN" 
 	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie einen Cloud-Dienst bereitstellen, der Inhalte von einem integrierten Azure CDN-Endpunkt zur Verfügung stellt." 
 	services="cdn, cloud-services" 
@@ -397,7 +397,7 @@ Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kand
 -	Fallbackmechanismus bei einem Fehler des CDN-Endpunkts
 -	Minimale Codeänderung
 
-Im Projekt **WebRole1**, das Sie in [Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Website und Bereitstellen von statischem Inhalt in Webseiten über Azure CDN] erstellt haben,(#deploy)öffnen Sie  *App_Start\BundleConfig.cs* und werden einen Blick auf die Aufrufe der  `bundles.Add()`-Methode.
+Im Projekt **WebRole1**, das Sie in [Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Website und Bereitstellen von statischem Inhalt in Webseiten über Azure CDN](#deploy) erstellt haben,öffnen Sie  *App_Start\BundleConfig.cs* und werden einen Blick auf die Aufrufe der  `bundles.Add()`-Methode.
 
     public static void RegisterBundles(BundleCollection bundles)
     {

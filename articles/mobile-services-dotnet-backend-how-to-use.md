@@ -34,4 +34,5 @@ Das Mobile Services .NET-Back-End bietet eine universelle "Tabellen"-Abstraktion
 
 Am Stamm dieses Programmiermodells befindet sich die Klasse [**TableController<T>**](http://msdn.microsoft.com/library/dn643359.aspx), die einfach eine reguläre Web API [**ApiController**](http://msdn.microsoft.com/library/system.web.http.apicontroller.aspx) ist, die für ein CRUD-Datenzugriffsmuster angepasst wurde. Der **TableController** kann eine Vielzahl von Datenspeichern verwenden, darunter SQL (über [Entity Framework](http://msdn.microsoft.com/data/ef.aspx)), [Azure Table Storage](http://azure.microsoft.com/documentation/services/storage/), [MongoDB](http://www.mongodb.org) oder ein eigener, angepasster Speicher.
 
+
 <!--HONumber=42-->

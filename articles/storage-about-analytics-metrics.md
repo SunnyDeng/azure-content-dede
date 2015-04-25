@@ -22,7 +22,7 @@
 
 Von der Speicheranalyse können Metriken gespeichert werden, zu denen aggregierte Transaktionsstatistiken und Kapazitätsdaten für die an einen Speicherdienst gesendeten Anforderungen zählen. Berichte zu Transaktionen werden sowohl auf API-Vorgangsebene als auch auf Speicherdienstebene erstellt, während Berichte zur Kapazität nur auf Speicherdienstebene erstellt werden. Mit den Metrikdaten können die Speicherdienstnutzung analysiert, Probleme mit Anforderungen für den Speicherdienst diagnostiziert und die Leistung von Anwendungen verbessert werden, die einen Dienst verwenden.
 
-Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Die Aktivierung ist im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) möglich. Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen eines Speicherkontos](../how-to-monitor-a-storage-account). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. [Über die Vorgänge "BLOB-Diensteigenschaften abrufen", "Warteschlangendiensteigenschaften abrufen"](https://msdn.microsoft.com/library/hh452239.aspx) und [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
+Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Die Aktivierung ist im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) möglich. Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen eines Speicherkontos](how-to-monitor-a-storage-account.md). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. [Über die Vorgänge "BLOB-Diensteigenschaften abrufen", "Warteschlangendiensteigenschaften abrufen"](https://msdn.microsoft.com/library/hh452239.aspx) und [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
 
 ##Transaktionsmetriken
 
@@ -82,5 +82,5 @@ Auf alle Daten in den Metriktabellen kann mithilfe der Tabellendienst-APIs zugeg
 
 ###Weitere Ressourcen
 
-[Überwachen eines Speicherkontos](../how-to-monitor-a-storage-account) 
+[Überwachen eines Speicherkontos](how-to-monitor-a-storage-account.md) 
 <!--HONumber=47-->

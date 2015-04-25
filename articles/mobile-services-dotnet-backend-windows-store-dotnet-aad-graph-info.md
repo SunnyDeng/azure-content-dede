@@ -203,4 +203,5 @@ Im nächsten Lernprogramm, [Rollenbasierte Zugriffssteuerung mit AAD in Mobile S
 [Rollenbasierte Zugriffssteuerung mit AAD in Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-aad-rbac/
 
 
+
 <!--HONumber=42-->

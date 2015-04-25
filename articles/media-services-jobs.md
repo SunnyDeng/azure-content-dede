@@ -59,6 +59,6 @@ Codieren Sie mit dem **Azure Media Encoder** unter Verwendung von **Azure-Verwal
 
 ## Verwandte Links
 
-[Kontingente und Einschränkungen](../media-services-quotas-and-limitations) - beschreibt verwendete Kontingente und Einschränkungen für den Media Services Encoder
+[Kontingente und Einschränkungen](media-services-quotas-and-limitations.md) - beschreibt verwendete Kontingente und Einschränkungen für den Media Services Encoder
 
 <!--HONumber=47-->

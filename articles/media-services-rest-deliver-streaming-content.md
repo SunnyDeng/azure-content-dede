@@ -19,12 +19,12 @@
 
 # Vorgehensweise: Bereitstellen von Streaming-Inhalten
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) und [Media Services: Livestreaming-Workflow](../media-services-live-streaming-workflow) .  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) .  
 
 ## Übersicht
 
 
-Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](../media-services-rest-encode-asset) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Bevor Sie einen Locator erstellen, sollten Sie eine Übermittlungsrichtlinie für Medienobjekte konfigurieren, wie in [diesem] Thema(../media-services-rest-configure-asset-delivery-policy) beschrieben. 
+Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-rest-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Bevor Sie einen Locator erstellen, sollten Sie eine Übermittlungsrichtlinie für Medienobjekte konfigurieren, wie in [diesem] Thema(media-services-rest-configure-asset-delivery-policy.md) beschrieben. 
 
 Sie können auch einen OnDemand-Streaminglocator zum Erstellen von URLs verwenden, die auf MP4-Dateien verweisen, die progressiv heruntergeladen werden können.  
 

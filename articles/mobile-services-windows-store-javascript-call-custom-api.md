@@ -70,4 +70,5 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Windows Sto
 [Speichern von Serverskripts in der Quellcodeverwaltung]: /de-de/documentation/articles/mobile-services-store-scripts-source-control
 
 
+
 <!--HONumber=42-->

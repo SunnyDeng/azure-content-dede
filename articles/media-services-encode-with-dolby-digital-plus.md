@@ -25,7 +25,7 @@ Der Azure Media Encoder unterstützt die **Dolby(r) Digital Plus**-Codierung. Do
 
 ### Abrufen des Azure Media Encoder-Prozessors 
 
-Dolby Digital Plus wird vom Azure Media Encoder unterstützt. Informationen zum Abrufen eines Verweises auf den **Azure Media Encoder** finden Sie im Thema [Abrufen eines Medienprozessors](../media-services-get-media-processor) .
+Dolby Digital Plus wird vom Azure Media Encoder unterstützt. Informationen zum Abrufen eines Verweises auf den **Azure Media Encoder** finden Sie im Thema [Abrufen eines Medienprozessors](media-services-get-media-processor.md) .
 
 ### <a id="configure_preset"></a>Konfigurieren von Azure Media Encoder-Einstellungen
 
@@ -46,7 +46,7 @@ Legen Sie zum Codieren in Dolby Digital Plus 5.1 Multichannel die Attribute "Cod
 
 Die folgende XML-Voreinstellung enthält eine vollständige Azure Media Encoder-XML-Voreinstellung, die eine MP4-Datei mit H264 Broadband 1080p-Video und Dolby Digital Plus 5.1 Multichannel-Audio erzeugt. Sie codiert außerdem einen LFE-Kanal (Low Frequency Effects), der durch Festlegen des Attributs "LFEOn" auf "true" angegeben wird. Für alle nicht angegebenen Attribute werden deren Standardwerte verwendet.
 
-Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, um eine Codierungsaufgabe zu erstellen, wie sie in [diesem](../media-services-dotnet-encode-asset) Thema beschrieben wird (nur übergeben Sie anstelle einer vordefinierten Voreinstellungszeichenfolge die vollständige XML-Voreinstellung, siehe [hier](#configure_preset)).
+Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, um eine Codierungsaufgabe zu erstellen, wie sie in [diesem](media-services-dotnet-encode-asset.md) Thema beschrieben wird (nur übergeben Sie anstelle einer vordefinierten Voreinstellungszeichenfolge die vollständige XML-Voreinstellung, siehe [hier](#configure_preset)).
 
 
 	<?xml version="1.0" encoding="utf-16"?>
@@ -129,7 +129,7 @@ Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, 
 
 Legen Sie zum Codieren in Dolby Digital Plus Stereo die Attribute "Codec" und "EncoderMode" auf "DolbyDigitalPlus" fest. Die Anzahl der codierten Kanäle wird mit dem AudioCodingMode-Attribut angegeben. Für eine Stereocodierung legen Sie "AudioCodingMode" auf "Mode20" fest. Das folgende vordefinierte XML-Beispiel zeigt, wie <DolbyDigitalPlusAudioProfile> zur Codierung in 5.1-Audio verwendet wird. Für alle nicht angegebenen Attribute werden deren Standardwerte verwendet.
 
-Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, um eine Codierungsaufgabe zu erstellen, wie sie in [diesem](../media-services-dotnet-encode-asset) Thema beschrieben wird (nur übergeben Sie anstelle einer vordefinierten Voreinstellungszeichenfolge die vollständige XML-Voreinstellung, siehe [hier](#configure_preset)).
+Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, um eine Codierungsaufgabe zu erstellen, wie sie in [diesem](media-services-dotnet-encode-asset.md) Thema beschrieben wird (nur übergeben Sie anstelle einer vordefinierten Voreinstellungszeichenfolge die vollständige XML-Voreinstellung, siehe [hier](#configure_preset)).
 
 	<?xml version="1.0" encoding="utf-16"?>
 	<!--Created for Azure Media Encoder, May 26 2013 -->

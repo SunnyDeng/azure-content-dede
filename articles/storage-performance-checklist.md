@@ -384,4 +384,5 @@ Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen.
 
 ##Zusammenfassung
 In diesem Artikel wurden einige der häufigsten bewährten Vorgehensweisen zur Leistungsoptimierung bei der Verwendung des Azure-Speichers erläutert. Wir empfehlen jedem Anwendungsentwickler seine Anwendung anhand dieser Vorgehensweisen zu überprüfen und ggf. die Empfehlungen umzusetzen, um bessere Leistung für ihre Anwendungen zu erzielen, die Azure-Speicher verwenden.
+
 <!--HONumber=42-->

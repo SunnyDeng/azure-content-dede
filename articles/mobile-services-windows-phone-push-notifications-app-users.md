@@ -23,4 +23,5 @@ Dieses Thema ist veraltet. Führen Sie stattdessen die aktualisierten Anweitunge
 + [Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App](mobile-services-javascript-backend-windows-phone-get-started-push.md)<br/>Aktualisieren Sie Ihren mobilen TodoList-Dienst so, das Azure Notification Hubs zum Senden von Benachrichtigungen an Benutzer der TodoList-Beispiel-App verwendet wird.
 + [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](mobile-services-javascript-backend-windows-phone-push-notifications-app-users.md)<br/>Erweitert das vorherige Lernprogramm dahingehend, dass sich nur angemeldete Benutzer für Benachrichtigungen registrieren dürfen.
 
+
 <!--HONumber=42-->

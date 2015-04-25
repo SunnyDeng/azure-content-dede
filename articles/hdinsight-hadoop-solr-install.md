@@ -365,7 +365,7 @@ Geben Sie einen Clusternamen ein, und drücken Sie die EINGABETASTE zum Bereitst
 ## Weitere Informationen##
 - [Installieren und Verwenden von Spark in HDInsight-Clustern][hdinsight-install-spark] Verwenden Sie die Clusteranpassung, um Spark in HDInsight Hadoop-Clustern zu installieren. Spark ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von Big Data zu steigern.
 - [Installieren und Verwenden von R in HDInsight-Clustern][hdinsight-install-r]. Verwenden Sie die Clusteranpassung, um R in HDInsight Hadoop-Clustern zu installieren. R ist eine Open-Source-Sprache und -Umgebung für statistische Berechnungen. Sie bietet Hunderte integrierter Statistikfunktionen und eine eigene Programmiersprache, die Aspekte der funktionalen und objektorientierten Programmierung kombiniert. Darüber hinaus werden umfangreiche Grafikfunktionen geboten.
-- [Installieren und Verwenden von Giraph in HDInsight-Clustern](../hdinsight-hadoop-giraph-install). Verwenden Sie die Clusteranpassung, um Giraph in HDInsight Hadoop-Clustern zu installieren. Giraph ermöglicht es Ihnen, mithilfe von Hadoop Graphverarbeitungen durchzuführen. Es kann zudem mit Azure HDInsight eingesetzt werden.
+- [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md). Verwenden Sie die Clusteranpassung, um Giraph in HDInsight Hadoop-Clustern zu installieren. Giraph ermöglicht es Ihnen, mithilfe von Hadoop Graphverarbeitungen durchzuführen. Es kann zudem mit Azure HDInsight eingesetzt werden.
 
 
 
@@ -374,4 +374,5 @@ Geben Sie einen Clusternamen ein, und drücken Sie die EINGABETASTE zum Bereitst
 [hdinsight-install-r]: ../hdinsight-hadoop-r-scripts/
 [hdinsight-install-spark]: ../hdinsight-hadoop-spark-install/
 [hdinsight-cluster-customize]: ../hdinsight-hadoop-customize-cluster
+
 <!--HONumber=42-->

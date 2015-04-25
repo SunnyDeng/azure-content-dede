@@ -19,7 +19,7 @@
 
 # Indizieren von Mediendateien mit Azure Media Indexer
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](../media-services-video-on-demand-workflow) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
 
 Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. Sie können eine einzelne Mediendatei oder mehrere Mediendateien in einem Batch verarbeiten. Sie können auch öffentlich im Internet verfügbare Dateien indizieren, indem Sie die URLs der Dateien in der Manifestdatei angeben.
 

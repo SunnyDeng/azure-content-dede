@@ -1,28 +1,30 @@
-﻿<properties 
+<properties 
 	pageTitle="Gewusst wie: Verwenden von Azure Storage für die SQL Server-Sicherung und -Wiederherstellung | Azure" 
-	description="" 
-	services="storage" 
+	description="Sichern von SQL Server und SQL-Datenbanken in Azure Storage Erläutert die Vorteile der Sicherung von SQL-Datenbanken in Azure-Speicher und welche Komponenten von SQL Server und Azure-Speicher erforderlich sind." 
+	services="sql-database, virtual-machines" 
 	documentationCenter="" 
 	authors="jeffgoll" 
 	manager="jeffreyg" 
 	editor="tysonn"/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="storage" 
+	ms.service="sql-database" 
+	ms.workload="data-management" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/30/2014" 
+	ms.date="03/06/2015" 
 	ms.author="jeffreyg"/>
 
 
 
-<h1 id="SQLServerBackupandRestoretostorage">  Verwenden von Azure-Speicher für SQL Server-Sicherung und -Wiederherstellung</h1>
+# Verwenden von Azure-Speicher für SQL Server-Sicherung und -Wiederherstellung
 
-Die Funktion, die das Schreiben von SQL Server-Sicherungen in den Azure-Blob-Speicherdienst ermöglicht, wurde in SQL Server 2012 SP1 CU2 eingeführt. Mithilfe dieser Funktion können Sie Daten aus einer lokalen SQL Server-Datenbank oder einer SQL Server-Datenbank auf einem virtuellen Azure-Computer im Azure-Blob-Dienst sichern und daraus wiederherstellen. Die Sicherung in der Cloud bietet zahlreiche Vorteile: Verfügbarkeit, unbegrenzter georeplizierter Offsitespeicher und problemlose Migration von Daten in die und aus der Cloud.   In dieser Version können Sie BACKUP- oder RESTORE-Anweisungen mit T-SQL oder SMO ausgeben. Das Sichern im oder Wiederherstellen aus dem Azure-Blob-Speicherdienst mithilfe des Sicherungs- oder Wiederherstellungs-Assistenten von SQL Server Management Studio ist nicht möglich.
+## Übersicht
 
-<h2> Vorteile der Verwendung des Azure-Blob-Diensts für SQL Server-Sicherungen</h2>
+Die Funktion, die das Schreiben von SQL Server-Sicherungen in den Azure-Blob-Speicherdienst ermöglicht, wurde in SQL Server 2012 SP1 CU2 eingeführt. Mithilfe dieser Funktion können Sie Daten aus einer lokalen SQL Server-Datenbank oder einer SQL Server-Datenbank auf einem virtuellen Azure-Computer im Azure-Blob-Dienst sichern und daraus wiederherstellen. Die Sicherung in der Cloud bietet zahlreiche Vorteile: Verfügbarkeit, unbegrenzter georeplizierter Offsitespeicher und problemlose Migration von Daten in die und aus der Cloud.   In dieser Version können Sie BACKUP- oder RESTORE-Anweisungen mit T-SQL oder SMO ausgeben.
+
+## Vorteile der Verwendung des Azure-Blob-Diensts für SQL Server-Sicherungen
 
 Speicherverwaltung, Risiko eines Speicherausfalls, Zugriff auf Offsitespeicher und Konfiguration von Geräten - dies sind nur einige der generellen Probleme bei Sicherungen.  Bei einem auf einem virtuellen Azure-Computer ausgeführten SQL Server stellen die Konfiguration und Sicherung einer VHD oder die Konfiguration angeschlossener Laufwerke zusätzliche Herausforderungen dar. Im Folgenden werden einige der wichtigsten Vorteile aufgeführt, die die Verwendung des Azure-Blob-Speicherdiensts für SQL Server-Sicherungen bietet:
 
@@ -44,25 +46,25 @@ Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und Durchführen
 ## Komponenten des Azure-Blob-Speicherdiensts 
 
 * Speicherkonto: Das Speicherkonto ist der Ausgangspunkt für alle Speicherdienste. Um auf einen Azure-Blob-Speicherdienst zuzugreifen, erstellen Sie als Erstes ein Azure-Speicherkonto. Der Name und Zugriffsschlüssel des Speicherkontos werden für die Authentifizierung beim Azure-Blob-Speicherdienst und dessen Komponenten benötigt. 
-Weitere Informationen zum Azure-Blob-Speicherdienst finden Sie unter [Verwenden des Azure-BLOB-Speicherdiensts](http://azure.microsoft.com/develop/net/how-to-guides/blob-storage/).
+Weitere Informationen zum Azure Blob-Speicherdienst finden Sie unter [Verwenden des Azure Blob-Speicherdiensts](http://azure.microsoft.com/develop/net/how-to-guides/blob-storage/).
 
 * Container: Ein Container stellt einen Satz Blobs als Gruppe bereit und kann eine unbegrenzte Anzahl von Blobs enthalten. Um eine SQL Server-Sicherung in einen Azure-Blob-Dienst zu speichern, muss mindestens ein Stammcontainer erstellt worden sein. 
 
 * BLOB: Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von Blobs, die im Azure-BLOB-Speicher gespeichert werden können: Block- und Seitenblobs.  Für die SQL Server-Sicherung werden Seiten-Blobs verwendet. Blobs sind über das folgende URL-Format adressierbar: `https://<storage account>.blob.core.windows.net/<container>/<blob>`
-Weitere Informationen zu Seiten-Blobs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs](http://msdn.microsoft.com/library/windowsazure/ee691964.aspx).
+Weitere Informationen zu Seitenblobs finden Sie unter [Grundlegendes zu Block- und Seitenblobs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
 
 ## SQL Server-Komponenten
 
 * URL: Eine URL gibt einen Uniform Resource Identifier (URI) zu einer eindeutigen Sicherungsdatei an. Die URL dient zur Angabe des Speicherorts und Namens der SQL Server-Sicherungsdatei. In dieser Implementierung ist lediglich eine URL gültig, die auf einen Seiten-Blob in einem Azure-Speicherkonto verweist. Die URL darf nicht auf ein Blob, sondern lediglich auf einen Container verweisen. Wenn das Blob nicht vorhanden ist, wird es erstellt. Bei Angabe eines vorhandenen Blobs schlägt BACKUP fehl, es sei denn, die Option > WITH FORMAT wird angegeben. 
 Nachfolgend sehen Sie ein Beispiel für die URL zur Angabe im BACKUP-Befehl: 
-**`http[s]://ACCOUNTNAME.Blob.core.windows.net/<CONTAINER>/<FILENAME.bak>`
+**`http[s]://ACCOUNTNAME.Blob.core.windows.net/<CONTAINER>/<FILENAME.bak>`**
 
 <b>Hinweis:</b> HTTPS ist nicht erforderlich, wird jedoch empfohlen.
 <b>Wichtig</b>
 Wenn Sie eine Sicherungsdatei kopieren und in den Azure-Blob-Speicherdienst hochladen, müssen Sie einen Seiten-Blob als Speichertyp verwenden, falls Sie diese Datei für Wiederherstellungen nutzen möchten. Ein RESTORE aus einem Block-Blob schlägt mit einer Fehlermeldung fehl. 
 
-* Anmeldeinformationen: Die Informationen, die zum Herstellen einer Verbindung zum Azure-Blob-Speicherdienst und zum Authentifizieren bei diesem erforderlich sind, werden als Anmeldeinformationen gespeichert.  Damit SQL Server Sicherungen in einen Azure-Blob schreiben oder daraus wiederherstellen kann, müssen SQL Server-Anmeldeinformationen erstellt werden. In den Anmeldeinformationen werden der Name des Speicherkontos sowie der zugehörige Zugriffsschlüssel gespeichert.  Nach Erstellung der Anmeldeinformationen müssen diese bei Ausgabe der BACKUP/RESTORE-Anweisungen in der Option WITH CREDENTIAL angegeben werden. Weitere Informationen zum Anzeigen, Kopieren oder erneuten Generieren von Zugriffsschlüsseln für Speicherkonten finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](http://msdn.microsoft.com/library/windowsazure/hh531566.aspx).
-Schritt-für-Schritt-Anweisungen zum Erstellen von SQL Server-Anmeldeinformationen finden Sie unter [Erste Schritte mit der SQL Server-Sicherung und -Wiederherstellung im Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271615).
+* Anmeldeinformationen: Die Informationen, die zum Herstellen einer Verbindung zum Azure-Blob-Speicherdienst und zum Authentifizieren bei diesem erforderlich sind, werden als Anmeldeinformationen gespeichert.  Damit SQL Server Sicherungen in einen Azure-Blob schreiben oder daraus wiederherstellen kann, müssen SQL Server-Anmeldeinformationen erstellt werden. In den Anmeldeinformationen werden der Name des Speicherkontos sowie der zugehörige Zugriffsschlüssel gespeichert.  Nach Erstellung der Anmeldeinformationen müssen diese bei Ausgabe der BACKUP/RESTORE-Anweisungen in der Option WITH CREDENTIAL angegeben werden. 
+Eine schrittweise Anleitung zum Erstellen von SQL Server-Anmeldeinformationen finden Sie unter [Erste Schritte mit der SQL Server-Sicherung und -Wiederherstellung im Azure Blob-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271615).
 
 ## SQL Server-Sicherung und -Wiederherstellung mit Azure-Blobs - Konzepte und Aufgaben:
 
@@ -86,4 +88,5 @@ Schritt-für-Schritt-Anweisungen zum Erstellen von SQL Server-Anmeldeinformation
 
 
 
-<!--HONumber=42-->
+
+<!--HONumber=49-->

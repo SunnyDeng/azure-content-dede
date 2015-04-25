@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erstellen einer AngularJS-Single-Page-App mit Azure AD" 
 	description="Veranschaulicht die Verwendung von Active Directory Authentication Library (ADAL) für JavaScript zum Sichern einer AngularJS-basierten Single-Page-App, die mit einem ASP.NET Web-API-Back-End implementiert ist und eine andere ASP.NET Web-API mit CORS aufruft." 
 	services="" 
@@ -119,7 +119,7 @@ Um die To Do SPA und die To Go API in Azure-Websites bereitzustellen, erstellen 
 
 ### Erstellen der Azure-Website für To Go API
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com).
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an(https://manage.windowsazure.com).
 2. Klicken Sie in der linken Navigationsleiste auf **Websites**.
 3. Klicken Sie in der unteren linken Ecke auf **Neu**, wählen Sie **Server** > **Website** > **Benutzerdefiniert erstellen**, wählen Sie den Hostingplan und die Region aus, und weisen Sie der Website einen Namen zu, z. B. togo-contoso.azurewebsites.net.  Wählen Sie eine Datenbank aus, die Sie verwenden möchten, oder erstellen Sie eine neue.  Klicken Sie auf **Website erstellen**.
 4. Nachdem die Website erstellt wurde, klicken Sie darauf, um sie zu verwalten.  Laden Sie zum Ausführen der nächsten Schrittfolge die PUBLISHSETTINGS-Datei herunter, und speichern Sie sie.  Sie können die Bereitstellung auch mit anderen Methoden wie z. B. aus der Quellcodeverwaltung durchführen. Weitere Informationen zur Verwendung einer PUBLISHSETTINGS-Datei finden Sie unter [Gewusst wie: Verbinden mit Ihrem Abonnement](http://azure.microsoft.com/documentation/articles/install-configure-powershell/#Connect). 

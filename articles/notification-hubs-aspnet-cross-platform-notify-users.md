@@ -19,7 +19,7 @@ Führen Sie die folgenden Schritte aus, um plattformunabhängige Benachrichtigun
 
 1. Erweitern Sie im Projektmappen-Explorer in Visual Studio den Ordner **Controllers**, und öffnen Sie die Datei "RegisterController.cs". 
 
-2. Suchen Sie den Codeblock in der Methode **Post**, der eine neue Registrierung erstellt, und ersetzen Sie den Inhalt von  `switch` durch den folgenden Code:
+2. Suchen Sie den Codeblock in der **Post**-Methode, der eine neue Registrierung erstellt, und ersetzen Sie den Inhalt von  `switch` durch den folgenden Code:
 
 		switch (deviceUpdate.Platform)
         {
@@ -50,7 +50,7 @@ Führen Sie die folgenden Schritte aus, um plattformunabhängige Benachrichtigun
 	
 	Dieser Code ruft die plattformspezifische Methode zur Erstellung einer Vorlagenregistrierung anstelle der Systemregistrierung auf. Existierende Registrierungen müssen nicht verändert werden, da Vorlagenregistrierungen von Systemregistrierungen abgeleitet sind.
 
-3. Ersetzen Sie im **Notifications**-Controller die Methode **sendNotification** durch den folgenden Code:
+3. Ersetzen Sie im **Notifications**-Controller die **sendNotification**-Methode durch den folgenden Code:
 
         public async Task<HttpResponseMessage> Post()
         {
@@ -93,15 +93,15 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 
 
 <!-- URLs. -->
-[Pushbenachrichtigungen an Benutzer - ASP.NET]: /de-de/manage/services/notification-hubs/notify-users-aspnet
-[Pushbenachrichtigungen an Benutzer - Mobile Services]: /de-de/manage/services/notification-hubs/notify-users/
+[Pushbenachrichtigungen an Benutzer - ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
+[Pushbenachrichtigungen an Benutzer - Mobile Services]: /manage/services/notification-hubs/notify-users/
 [Visual Studio 2012 Express für Windows 8]: http://go.microsoft.com/fwlink/?LinkId=257546
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
-[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: /de-de/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Azure Notification Hubs]: http://go.microsoft.com/fwlink/p/?LinkId=314257
-[Benachrichtigen von Benutzern mit Notification Hubs]: /de-de/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
+[Benachrichtigen von Benutzern mit Notification Hubs]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
 [Vorlagen]: http://go.microsoft.com/fwlink/p/?LinkId=317339
 [Notification Hubs - Anleitungen für Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
 
-<!--HONumber=45--> 
+<!--HONumber=49-->

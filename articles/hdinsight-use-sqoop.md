@@ -654,4 +654,5 @@ Nun wissen Sie, wie Sqoop verwendet wird. Weitere Informationen finden Sie unter
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
+
 <!--HONumber=42-->
