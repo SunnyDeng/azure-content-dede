@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Indizierungsrichtlinien für DocumentDB | Azure" 
 	description="Erfahren Sie, wie die Indizierung in DocumentDB funktioniert, und wie Sie die Indizierungsrichtlinie konfigurieren." 
 	services="documentdb" 
@@ -152,7 +152,7 @@ Durch die Auswahl des Indextyps **Bereich** werden Bereichsabfragen (mit >, <, >
 Wenn Ihr Anwendungsfall keine effizienten Bereichsabfragen erfordert, bieten die standardmäßigen Hashindizes den besten Kompromiss zwischen Speicherung und Leistung. Beachten Sie, dass Sie zur Unterstützung von Bereichsabfragen eine benutzerdefinierte Indexrichtlinie angeben müssen.
 
 > [AZURE.NOTE] Bereichsindizes werden nur für numerische Werte unterstützt.
-  
+  
 Das folgende Beispiel zeigt, wie die Genauigkeit für Bereichsindizes in einer Sammlung mithilfe des .NET SDKs erhöht wird. Beachten Sie, dass hierbei ein spezieller Pfad ("/") verwendet wird. Dies wird im nächsten Abschnitt erläutert.
 
 
